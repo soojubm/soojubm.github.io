@@ -17,7 +17,7 @@
 .post-head-time {margin-left:12px;}
 .post-head-progress {display:none;height:3px;background:rgb(200,0,0);position:absolute;bottom:-3px;}
 .post-head-icons {/*position:fixed;left:50%;top:100px;margin-left:480px;*/}
-.post-head-icon {display:inline-block;margin:0 8px;text-align:center;}
+.post-head-icon {}
 .post-head-icon i {display:inline-block;width:32px;height:32px;border-radius:$radius400;line-height:32px;font-size:16px;color:$gray40;vertical-align:middle;}
 .post-head-icon span {display:inline-block;}
 
@@ -31,7 +31,7 @@
 
 
 .post-byline {padding:2rem 0 2rem;position:relative;}
-.post-byline-avatar {display:inline-block;width:48px;height:48px;border-radius:$radius400;background:$gray80;overflow:hidden;}
+.post-byline-avatar {display:inline-block;width:32px;height:32px;border-radius:$radius400;background:$gray80;overflow:hidden;}
 .post-byline-name {color:$gray40;}
 .post-byline-name-link {color:$color-primary;}
 .post-byline-description {margin:-.25rem 0 0 0;}
@@ -45,14 +45,13 @@
 // .post-body-kicker::first-letter {margin-left:80px;}
 // .post-body-kicker:before {content:'';display:block;width:160px;height:1px;background:$gray80;position:absolute;top:14px;left:64px;}
 // .post-body-img {float:left;width:400px;height:600px;overflow:hidden;margin:0 0 0 -240px;background:$gray80;}
-.post-body-img {height:240px;overflow:hidden;margin:4rem 0;background:$gray80;}
+.post-body-img {height:240px;overflow:hidden;margin:4rem -10rem;background:$gray80;}
 .post-body-subhead {margin:3rem 0 1rem 0px;font-size:1.25rem;}
 .post-body-paragraph {margin:0rem 0 1rem 0px;}
 
 .post-foot {padding:0 0 0 0;}
 .post-hashtag {margin:2rem 0 2rem 0px;}
-.post-hashtag:after {content:'';display:block;clear:both;}
-.post-hashtag-item {float:left;display:block;margin:0 4px 4px 0px;padding:0 1rem;border:1px solid #e9e9e6;border-radius:2px;font-size:12px;}
+// .post-hashtag-item {float:left;display:block;margin:0 4px 4px 0px;padding:0 1rem;border:1px solid #e9e9e6;border-radius:2px;font-size:12px;}
 .post-share {margin:3rem 0 6rem 0px;}
 .post-share-heading {margin:0 0 .75rem 0;}
 .post-share-button {display:block;margin:0 0 1rem 0;}

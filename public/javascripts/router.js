@@ -6,7 +6,7 @@ const router = function() {
 
 	const routePage = () => {
 		let { hash } = window.location;
-		const page = hash ? `/views/${hash.substring(1)}.html` : '/views/home.html';
+		const page = hash ? `/views/${hash.substring(1)}.html` : '/views/profile.html';
 
 		// hash 말고 클릭하는 순간에 값을 알아야 함. data attr or hash
 		fetch(page)

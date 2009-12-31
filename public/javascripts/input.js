@@ -1,6 +1,5 @@
 import { autoExpand } from './utils';
 
-
 // TODO: 여러번 반복해서 올렸을 때 filelist 누적되는지?
 // TODO: 동일한 파일을 업로드 했을 때 체크, 삭제했을 때 fileList에서 삭제, fileInput.files는 쌓이지 않음.
 export const attachFile = () => {
@@ -65,105 +64,49 @@ export const attachFile = () => {
 	}
 };
 
-
-// document.addEventListener('click', event => {
-// 	const target = event.target;
-// 	const minValue = 0;
-// 	const maxValue = 10;
-// 	let targetInput;
-// 	if (target.closest('.js-variation-decrement')) {
-// 		targetInput = target.parentNode.querySelector('.js-variation-input');
-// 		if (targetInput.value <= minValue) {
-// 			target.classList.add('is-disabled');
-// 			return;
-// 		}
-// 		--targetInput.value;
-// 		// TODO: target 클래스 토글이 안 되므니다
-// 		console.log('target', target);
-// 	}
-// 	if (target.closest('.js-variation-increment')) {
-// 		targetInput = target.parentNode.querySelector('.js-variation-input');
-// 		if (targetInput.value >= maxValue) {
-// 			target.classList.add('is-disabled');
-// 			return;
-// 		}
-// 		++targetInput.value;
-
-// 		// targetInput.value < maxValue + 1 && target.classList.remove('is-disabled');
-// 		/*
-// 		let targetInputValue = parseInt(eventTargetInput.value);
-// 		targetInputValue > minValue && eventTargetInput.value--;
-// 		targetInputValue === minValue + 1 && eventTarget.classList.add('is-disabled');
-// 		targetInputValue < maxValue + 1 && eventTargetIncrement.classList.remove('is-disabled');
-// 		*/
-// 		/*
-// 		const eventTargetParentElement = eventTarget.parentNode;
-// 		const eventTargetInput = eventTargetParentElement.querySelector('.js-variation-input');
-// 		const eventTargetDecrement = eventTargetParentElement.querySelector('.js-variation-decrement');
-// 		const eventTargetIncrement = eventTargetParentElement.querySelector('.js-variation-increment');
-// 		let targetInputValue = parseInt(eventTargetInput.value);
-// 		targetInputValue < maxValue ? eventTargetInput.value++ : targetInputValue;
-// 		targetInputValue === maxValue - 1 && eventTarget.classList.add('is-disabled');
-// 		targetInputValue > minValue - 1 ? eventTargetDecrement.classList.remove('is-disabled') : targetInputValue;
-// 		*/
-// 	}
-// });
-
-
-export const inputVariation = () => {
-	const variation = document.querySelector('.js-variation');
-	const input = variation.querySelector('.js-variation-input');
-	const decrement = variation.querySelector('.js-variation-decrement');
-	const increment = variation.querySelector('.js-variation-increment');
-
-	let value = input.value;
-	const MIN_VALUE = 0;
-	const MAX_VALUE = 10;
-	let	isMinimun;
-	let isMaximum;
-	// const	isMinimun = Number(value) <= MIN_VALUE;
-	// const isMaximum = Number(value) >= MAX_VALUE;
-
-	// if(isMinimun) setDisableDecrement();
-	// if(isMaximum) setDisableIecrement();
-
-	decrement.addEventListener('click', event => {
-		isMinimun = Number(value) <= MIN_VALUE;
-		isMaximum = Number(value) >= MAX_VALUE;
-		if(isMinimun) {
-			decrement.classList.add('is-disabled');
+// parseInt vs Number
+		// TODO: target 클래스 토글이 안 되므니다
+document.addEventListener('click', event => {
+	const target = event.target;
+	// const eventTargetParentElement = eventTarget.parentNode;
+	// const eventTargetInput = eventTargetParentElement.querySelector('.js-variation-input');
+	// const eventTargetDecrement = eventTargetParentElement.querySelector('.js-variation-decrement');
+	// const eventTargetIncrement = eventTargetParentElement.querySelector('.js-variation-increment');
+	// let targetInputValue = parseInt(eventTargetInput.value);
+	const minValue = 0;
+	const maxValue = 10;
+	let targetInput;
+	if (target.closest('.js-variation-decrement')) {
+		targetInput = target.parentNode.querySelector('.js-variation-input');
+		if (targetInput.value <= minValue) {
+			target.classList.add('is-disabled');
 			return;
 		}
-		if(!isMaximum) {
-			increment.classList.remove('is-disabled');
-		}
-		
-		value = Number(value) - 1;
-	});
-	increment.addEventListener('click', event => {
-		isMinimun = Number(value) <= MIN_VALUE;
-		isMaximum = Number(value) >= MAX_VALUE;
-		console.log(isMinimun, isMaximum, value);
-		if(isMaximum) {
-			increment.classList.add('is-disabled');
+		--targetInput.value;
+	}
+	if (target.closest('.js-variation-increment')) {
+		targetInput = target.parentNode.querySelector('.js-variation-input');
+		if (targetInput.value >= maxValue) {
+			target.classList.add('is-disabled');
 			return;
 		}
-		if(!isMinimun) {
-			decrement.classList.remove('is-disabled');
-		}
+		++targetInput.value;
 
-		value = Number(value) + 1;
-	});
+		// targetInput.value < maxValue + 1 && target.classList.remove('is-disabled');
+		/*
+		let targetInputValue = parseInt(eventTargetInput.value);
+		targetInputValue > minValue && eventTargetInput.value--;
+		targetInputValue === minValue + 1 && eventTarget.classList.add('is-disabled');
+		targetInputValue < maxValue + 1 && eventTargetIncrement.classList.remove('is-disabled');
 
-	function setDisableDecrement() {
-		decrement.classList.add('is-disabled');
-		return;
+		targetInputValue < maxValue ? eventTargetInput.value++ : targetInputValue;
+		targetInputValue === maxValue - 1 && eventTarget.classList.add('is-disabled');
+		targetInputValue > minValue - 1 ? eventTargetDecrement.classList.remove('is-disabled') : targetInputValue;
+		*/
 	}
-	function setDisableIecrement() {
-		decrement.classList.add('is-disabled');
-		return;
-	}
-};
+});
+
+
 
 export const inputTextarea = () => {
 };
@@ -250,8 +193,6 @@ export const inputNumber = () => {
 			if(isMaximum) event.target.value = MAXIMUM;
 		}
 	});
-
-	
 	
 };
 
@@ -262,7 +203,6 @@ export const checkAllcheckbox = ({checkAllElement, checkElements}) => {
 
 	checkAll.addEventListener('change', setCheckAll);
 	checkItems.forEach(checkItem => checkItem.addEventListener('change', setCheckEach));
-	// document.addEventListener('DOMContentLoaded', setCheckEach);
 
 	function setCheckEach() {
 		const check = Array.from(checkItems);
@@ -299,3 +239,82 @@ export const checkAllcheckbox = ({checkAllElement, checkElements}) => {
 //   // No custom constraint violation
 //   FS.setCustomValidity("");
 // }
+
+
+
+
+// react 정리
+// const tempArray = ["jack", "jill"];
+// 동일한 네임값의 배열을 통합해보기.
+// const temp = [
+// 	{name: 'jack', age: '16'},
+// 	{name: 'jill', age: '2'},
+// ];
+// const temp2 = [
+// 	{name: 'jill', phone: '025589090'}
+// 	{name: 'jack', phone: '01031211223'},
+// ];
+
+
+
+
+
+
+
+
+
+
+// export const inputVariation = () => {
+// 	const variation = document.querySelector('.js-variation');
+// 	const input = variation.querySelector('.js-variation-input');
+// 	const decrement = variation.querySelector('.js-variation-decrement');
+// 	const increment = variation.querySelector('.js-variation-increment');
+
+// 	let value = input.value;
+// 	const MIN_VALUE = 0;
+// 	const MAX_VALUE = 10;
+// 	let	isMinimun;
+// 	let isMaximum;
+// 	// const	isMinimun = Number(value) <= MIN_VALUE;
+// 	// const isMaximum = Number(value) >= MAX_VALUE;
+
+// 	// if(isMinimun) setDisableDecrement();
+// 	// if(isMaximum) setDisableIecrement();
+
+// 	decrement.addEventListener('click', event => {
+// 		isMinimun = Number(value) <= MIN_VALUE;
+// 		isMaximum = Number(value) >= MAX_VALUE;
+// 		if(isMinimun) {
+// 			decrement.classList.add('is-disabled');
+// 			return;
+// 		}
+// 		if(!isMaximum) {
+// 			increment.classList.remove('is-disabled');
+// 		}
+		
+// 		value = Number(value) - 1;
+// 	});
+// 	increment.addEventListener('click', event => {
+// 		isMinimun = Number(value) <= MIN_VALUE;
+// 		isMaximum = Number(value) >= MAX_VALUE;
+// 		console.log(isMinimun, isMaximum, value);
+// 		if(isMaximum) {
+// 			increment.classList.add('is-disabled');
+// 			return;
+// 		}
+// 		if(!isMinimun) {
+// 			decrement.classList.remove('is-disabled');
+// 		}
+
+// 		value = Number(value) + 1;
+// 	});
+
+// 	function setDisableDecrement() {
+// 		decrement.classList.add('is-disabled');
+// 		return;
+// 	}
+// 	function setDisableIecrement() {
+// 		decrement.classList.add('is-disabled');
+// 		return;
+// 	}
+// };

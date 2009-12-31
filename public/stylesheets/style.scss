@@ -59,20 +59,6 @@
 .bottom-navigation a:hover i {color:rgba(0,0,0,1);margin-top:-1px;}
 .bottom-navigation a:hover span {font-size:11px;color:rgba(0,0,0,1);}
 
-.slider {position:relative;}
-.slider-viewer {width:100%;height:100px;margin:0 auto;background:#f9f9f6;overflow:hidden;position:relative;}
-.slider-viewer .inbox {width:1500px;position:absolute;}
-.slider-viewer .slide {float:left;width:300px;height:200px;}
-.slider-navigation {}
-.slider-navigation button {width:48px;height:48px;border-radius:50%;background:#fff;color:#fff;font-size:10px;position:absolute;top:0;z-index:4;}
-.slider-navigation button.is-disabled {opacity:.2;}
-.slider-navigation button:hover {}
-.slider-navigation .prev {left:0;}
-.slider-navigation .next {right:0;}
-.slider-dots {width:100px;height:10px;margin-left:-36px;text-align:center;position:absolute;left:50%;bottom:-25px;z-index:5;}
-.slider-dots .dot {float:left;width:10px;height:10px;margin:0px 4px;border-radius:50%;background:rgba(0,0,0,1);cursor:pointer;}
-.slider-dots .dot:hover {width:30px;border-radius:5px;opacity:.5;}
-.slider-dots .dot.is-active {}
 
 
 .qna {padding:16px 0;border-bottom:1px solid $gray20;}
@@ -101,7 +87,6 @@
 .rating-star-front i {color:rgba(255,200,0,1);}
 .rating-star-back {position:absolute;left:0;top:0;z-index:0;}
 .rating-count {display:inline-block;font-size:12px;}
-
 
 .scroll {position:fixed;bottom:2rem;right:2rem;z-index:8;box-shadow:$shadow400;transition:right .4s ease;}
 .scroll-indicator {transform:rotate(90deg);}
@@ -150,7 +135,6 @@
 .--vertical .tablist-tab-badge {float:right;font-size:14px;}
 
 
-
 .user-card {display:block;padding:0 0 10rem 0;border:1px solid #eee;position:relative;}
 .user-card-background {background:#000;position:absolute;left:0;right:0;top:0;bottom:5rem;}
 .user-card .avatar {position:absolute;left:1rem;top:3rem;}
@@ -166,3 +150,8 @@
 .todo-control-add {}
 .todo-control-remove {}
 .completed {text-decoration: line-through;}
+
+
+.statistic {display:inline-block;width:64px;}
+.statistic-label {display:block;color:$gray40;}
+.statistic-value {font-size:1.5rem;line-height:1.4;color:$gray80;}

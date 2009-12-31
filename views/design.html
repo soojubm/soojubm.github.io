@@ -132,9 +132,9 @@
 
     <article class="design-article js-scroll-animation">
       <h1 class="design-article-heading">Emphasis</h1>
-      <p class="design-article-description">수줍이는 이렇게 강조해요. 특정 단어를 강조하기 보담 시선을 끄는 카피를 선택하는 안목을 기르세요.</p>
+      <p class="design-article-description">수줍이는 이렇게 강조해요. 특정 단어를 강조하기 보담 시선을 끄는 카피를 선택하는 안목을 기르세요. 커밍 순...</p>
       <ol class="list-sample">  
-        <li>수줍이는 <em>이렇게</em> 강조해요. <small>링크 텍스트로 오인될 수 있으니 주의해요.</small></li>
+        <!-- <li>수줍이는 <em>이렇게</em> 강조해요. <small>링크 텍스트로 오인될 수 있으니 주의해요.</small></li> -->
         <!-- <li>수줍이는 <b>이렇게</b> 강조해요. <small>하나의 폰트 패밀리만 사용하기 때문에 볼드로 강조할 수 없어요.</small></li>
         <li>수줍이는 <u>이렇게</u> 강조해요. <small>언더라인으로 강조해요. 못 생겼으니 고쳐 써야 겠지요?</small></li>
         <li>수줍이는 <i style="font-style:italic;">이렇게</i> 강조해요. <small>한글에는 이탤릭의 개념이 없으니 주의해요.</small></li>
@@ -142,27 +142,60 @@
       </ol>
     </article>
 
-    
-		<section class="category">
-			<div class="category-list">
-				<button type="button">초1</button>
-				<button type="button">초2</button>
-				<button type="button">초3</button>
-				<button type="button">초4</button>
-				<button type="button">초5</button>
-				<button type="button">초6</button>
-				<button type="button" style="background:green;">중1</button>
-				<button type="button" style="background:green;">중2</button>
-				<button type="button" style="background:green;">중3</button>
-				<button type="button" style="background:blue;">고1</button>
-				<button type="button" style="background:blue;">고2</button>
-				<button type="button" style="background:blue;">고3</button>
-			</div>
-			<nav class="category-navigation">
-				<button class="category-navigation-prev" type="button">prev</button>
-				<button class="category-navigation-next" type="button">next</button>
-			</nav>
-		</section>
+    <article class="design-article js-scroll-animation">
+      <h1 class="design-article-heading">Statistic</h1>
+      <p class="design-article-description">Temp</p>
+      <div class="statistic"><i class="statistic-label">팔로워</i><span class="statistic-value">2</span></div>
+    </article>
+
+
+    <article class="design-article js-scroll-animation">
+      <h1 class="design-article-heading">Carousel</h1>
+      <p class="design-article-description">만드는 중.</p>
+      <section class="slider">
+        <div class="slider-viewer">
+          <button class="slider-viewer-slide" type="button">초1</button>
+          <button class="slider-viewer-slide" type="button">초2</button>
+          <button class="slider-viewer-slide" type="button">초3</button>
+          <button class="slider-viewer-slide" type="button">초4</button>
+          <button class="slider-viewer-slide" type="button">초5</button>
+          <button class="slider-viewer-slide" type="button">초6</button>
+          <button class="slider-viewer-slide" type="button" style="background:green;">중1</button>
+          <button class="slider-viewer-slide" type="button" style="background:green;">중2</button>
+          <button class="slider-viewer-slide" type="button" style="background:green;">중3</button>
+          <button class="slider-viewer-slide" type="button" style="background:blue;">고1</button>
+          <button class="slider-viewer-slide" type="button" style="background:blue;">고2</button>
+          <button class="slider-viewer-slide" type="button" style="background:blue;">고3</button>
+        </div>
+        <nav class="slider-dots">
+          <button class="slider-dots-dot">1</button>
+          <button class="slider-dots-dot">1</button>
+          <button class="slider-dots-dot">1</button>
+        </nav>
+        <nav class="slider-arrows">
+          <button class="slider-arrows-prev" type="button">prev</button>
+          <button class="slider-arrows-next" type="button">next</button>
+        </nav>
+
+        <style>
+          
+.slider {max-width:800px;position:relative;}
+.slider-viewer {overflow:auto;white-space:nowrap;position:relative;transition:all .4s ease;}
+/* .slider-viewer .inbox {width:1500px;position:absolute;} */
+.slider-viewer-slide {display:inline-block;width:5rem;height:5rem;margin:0 .5rem;border-radius:50px;background:gold;color:#fff;}
+.slider-dots {width:100px;height:10px;margin-left:-36px;text-align:center;position:absolute;left:50%;bottom:-25px;z-index:5;}
+.slider-dots-dot {float:left;width:10px;height:10px;margin:0px 4px;border-radius:50%;background:rgba(0,0,0,1);cursor:pointer;}
+.slider-dots-dot:hover {width:30px;border-radius:5px;opacity:.5;}
+.slider-dots-dot.is-active {}
+.slider-arrows {}
+.slider-arrows-prev {position:absolute;left:0;bottom:-50px;}
+.slider-arrows-next {position:absolute;right:0;bottom:-50px;}
+.slider-arrows button.is-disabled {opacity:.2;}
+
+        </style>
+      </section>
+    </article>
+		
 
     <article class="design-article js-scroll-animation">
       <h1 class="design-article-heading">Tags</h1>
@@ -183,7 +216,7 @@
 
     <article class="design-article js-scroll-animation">
       <h1 class="design-article-heading">Lists</h1>
-      <p class="design-article-description">군집을 이루는 엘리먼트라면 모두 리스트로 취급할 수 있으니 주의해요. 리스트업된 텍스트 엘리먼트에만 리스트 태그로 마크업해요.</p>
+      <p class="design-article-description">군집을 이루는 엘리먼트라면 모두 리스트로 취급될 수 있으니 주의해요. 리스트업된 텍스트 엘리먼트에만 리스트 태그로 마크업해요.</p>
       <ul class="list-sample">
         <li>unordered list, level 1
           <ul>
@@ -619,7 +652,7 @@
             <td>ゆ</td>
             <td>-</td>
             <td>よ</td>
-            <td class="right"><button class="primary-button --small">test</button></td>
+            <td class="right"></td>
           </tr>
           <tr>
             <td><input type="checkbox"><label for=""></label></td>

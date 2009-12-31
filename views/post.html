@@ -32,7 +32,7 @@
 					<figure class="post-byline-avatar"><img src="" alt=""></figure>
 					<div class="post-byline-name"><a href="#" class="post-byline-name-link">soojubm</a></div>
 					<p class="post-byline-description">부끄러우니까 보지마요</p>
-					<button class="secondary-button">구독하기</button>
+					<!-- <button class="secondary-button">구독하기 상세 프로필로 이동해서 구독가능토록</button> -->
 					<!-- <button class=""><i class="icon-close"></i></button> -->
 				</section>
 			</header>
@@ -46,14 +46,12 @@
 					<a href="">UI Controls</a>
 					<a href="">API</a>
 				</nav>
-					
-
 				<p class="post-body-kicker">구조와 표현, 행동을 엄격하게 구분합니다. <span class="linebreak">하나의 엘리먼트는 하나의 시멘틱한 클래스를 가집니다.</span></p>
 				<figure class="post-body-img">
 					<img src="" alt="">
 					<figcaption class="post-body-caption"></figcaption>
 				</figure>
-				<p class="post-body-heading"><i class="material-icons">subject</i>본문 들어가기</p>
+				<!-- <p class="post-body-heading"><i class="material-icons">subject</i>본문 들어가기</p> -->
 				<p class="post-body-paragraph">일관된 코드로 생산성을 높히기 위한 가이드를 작성합니다. 에어비앤비와 구글의 스타일시트/자바스크립트 가이드를 참고했습니다. 효율적인 코드를 위해 고민하고 기록하며 현재 제가 사용하는 방법론을 적용한 스타일 가이드를 만들어 봅니다.</p>
 				<p class="post-body-paragraph">이 프로젝트는 코드를 간소화하고 효율적인 유지보수를 위한 코드를 연구한다.</p>
 				
@@ -90,19 +88,10 @@
 					const bodySection = documentBody.querySelector('section');
 				</code>
 				<p class="post-body-paragraph">스크립팅 클래스는 js- 접두어를 사용하여 구분하고 별도의 스타일은 적용하지 않습니다.</p>
-				<code class="post-body-code">
-					<pre><div class="js-open-banner">열기</div></pre>
-				</code>
 				<p class="post-body-paragraph">변수가 오브젝트라는 것을 알 수 있도록 Object를 사용한다. (??)</p>
-
 				<code class="post-body-code">
-					<pre>Object.values(data).forEach(() => {})</pre>
+					Object.values(data).forEach(() => {})
 				</code>
-				
-				<figure class="post-body-img">
-					<img src="" alt="">
-					<figcaption class="post-body-caption"></figcaption>
-				</figure>
 				<p class="post-body-kicker">매거진이나 블로그에 사용되는 포스트 유아이입니다. 포스트를 구성하는 컴포넌트들을 배치하고, 비대칭적 레이아웃과 타이포그래피 이론까지 실습해봅니다.</p>
 				<!--<h3 class="post-body-subhead">포스트 유아이</h3>
 				<p class="post-body-paragraph">우선 포스트의 구성 요소를 쪼개보자.</p>
@@ -128,15 +117,11 @@
 			</section>
 			<footer class="post-foot">
 				<section class="post-hashtag">
-					<a class="post-hashtag-item">#HTML5</a>
-					<a class="post-hashtag-item">#CSS3</a>
-					<a class="post-hashtag-item">#vanillaJS</a>
-					<a class="post-hashtag-item">#Babel</a>
-					<a class="post-hashtag-item">#Webpack</a>
-					<a class="post-hashtag-item">#jquey</a>
-					<a class="post-hashtag-item">#responsive</a>
-					<a class="post-hashtag-item">#accessibility</a>				
-					<a class="post-hashtag-item">#typography</a>
+					<code class="post-hashtag-item">#HTML5</code>
+					<code class="post-hashtag-item">#CSS3</code>
+					<code class="post-hashtag-item">#Webpack</code>
+					<code class="post-hashtag-item">#accessibility</code>				
+					<code class="post-hashtag-item">#typography</code>
 				</section>
 				<section class="post-share">
 					<h4 class="post-share-heading">share:</h4>
@@ -155,7 +140,7 @@
 							<a class="post-comment-list-item-author" href="#">soojubm</a>
 							<time class="post-comment-list-item-date" datetime="2016">1 day ago</time>
 							<p class="post-comment-list-item-text">우와 처음으로 덧글 남겨요! 덧글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요. 우와 처음으로 덧글 남겨요! 덧글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요.</p>
-							<button type="button" class="post-comment-list-item-reply">답글달기</button>
+							<button type="button" class="post-comment-list-item-reply teritary-button --small">답글달기</button>
 							<button type="button" class="post-comment-list-item-morevert js-toggle"><i class="icon-more"></i></button>
 							<menu class="post-comment-list-item-menu">
 								<button type="button" class="">수정</button>
@@ -234,7 +219,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	const commentField = document.querySelector('.js-comment-write');
 	const commentTextField = document.querySelectorAll('.js-comment-textfield');
-	commentTextField.forEach(function(element, index, array){
+	commentTextField.forEach(function(element,){
 		element.addEventListener('focus', (event) => {
 			commentField.classList.add('is-focused');
 		});
