@@ -1,0 +1,57 @@
+.pricing {position:relative;}
+.pricing-head {margin:0 auto;padding:4rem 30rem 8rem;background:crimson;}
+.pricing-head h1 {font-size:1rem;}
+.pricing-head-headline {margin:0 0 .5rem 0;font-size:1.75rem;}
+.pricing-head-description {font-size:1rem;}
+.pricing-body {display:flex;max-width:1080px;margin:-4rem auto;justify-content:space-between;}
+// .pricing-item:before {content:'';display:block;height:8px;background:$gray80;position:absolute;left:-1px;right:-1px;top:-1px;}
+.pricing-item {width:320px;min-height:300px;background:$gray10;padding:2rem 2.5rem 10rem;box-sizing:border-box;border-radius:2px;box-shadow:$shadow400;position:relative;}
+.pricing-item-heading {font-size:1.25rem;}
+.pricing-item-price {display:inline-block;color:$gray80;font-size:1.75rem;}
+.pricing-item-period {display:inline-block;color:$gray80;}
+.pricing-item-period:before {content:' / ';margin:0 .5rem;color:$gray40;}
+.pricing-item-description {margin:8px 0 0 0;}
+.pricing-item-description:before {content:'';display:block;width:40px;height:1px;background:$gray80;margin:1.25rem 0 1.75rem;}
+.pricing-item-button {display:block;width:calc(100% - 5rem);position:absolute;left:2.5rem;right:2.5rem;bottom:3rem;}
+.pricing-item ul {margin:16px 0 0 0;}
+
+.pricing-info {display:flex;width:100%;max-width:1080px;margin:8rem auto;overflow:hidden;justify-content:space-between;}
+.pricing-info-item {width:320px;}
+.pricing-info-item svg {}
+.pricing-info-item h3 {margin:1rem 0;}
+.pricing-info-item p {line-height:1.6;}
+
+.coin {}
+.coin-top {display:flex;max-width:400px;margin:2rem auto;padding:1rem 1.5rem;box-sizing:border-box;box-shadow:$shadow400;border:1px solid $gray20;}
+.coin-top div {width:60%;}
+.coin-top div + div {width: 40%;}
+.coin-top h6 {font-size:1rem;color:$gray40;}
+.coin-top b {display:block;font-size:1.5rem;}
+.coin-top em {color:$color-positive;}
+.coin-create {max-width:400px;margin:0 auto;padding:1rem 1.5rem;box-sizing:border-box;border:1px dashed $gray40;}
+
+/*
+.pricing-item:nth-of-type(3) {
+	width:2000px;
+	padding-left: 720px;
+	padding-top:48px;
+	padding-bottom: 68px;
+	background:#032F62;
+	position:absolute;
+	left:0;
+	right:0;
+	bottom:-60px;
+	z-index: -1;
+	&:after {
+		content: '';
+		display: block;
+	}
+	.pricing-item-heading {font-size:1.5rem;}
+	.pricing-item-description {}
+}
+.pricing-item:nth-of-type(3) * {color:#fff;}
+.pricing-item:nth-of-type(3) .pricing-item-button {border-color:#fff;background:#fff;color:#032F62 !important;}
+*/
+@media (max-width:$breakpoint-small) {
+	.pricing-item {width:100%;margin-right:0;margin-bottom:24px;}
+}

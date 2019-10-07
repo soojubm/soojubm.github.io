@@ -1,0 +1,27 @@
+.terms {}
+.terms-head {max-width:$width-medium;margin:0 auto;padding:4rem 4% 0;}
+.terms-head-heading {font-size: 1.5rem;}
+.terms-head p time {}
+
+.terms-archive {max-width:$width-medium;margin:0 auto 2rem;padding:2rem 0;}
+.terms-archive-heading {margin: 2rem 0 .75rem 0;font-size:14px;text-decoration:underline;}
+.terms-archive-link {display:block;margin:0 0 .25rem 0;}
+
+.terms-body {max-width:$width-medium;margin:4rem auto;padding:0 4%;}
+.terms-body h2 {margin: 2rem 0 .75rem 0;font-size:1.25rem;}
+.terms-body p {}
+
+.terms-sidebar {width:100%;max-width:320px;background:#fff;padding:8rem 1.5rem;border-right:1px solid #eee;box-sizing:border-box;overflow-y:auto;position:fixed;top:0;bottom:0;z-index:1;}
+.terms-sidebar a {display:block;line-height:40px;}
+
+@media (max-width:$breakpoint-medium) {
+  .terms-sidebar {max-width:280px;}
+  .terms-head {max-width:640px;margin:0;margin-left:320px;}
+  .terms-body {max-width:640px;margin:0;margin-left:320px;}
+  
+}
+@media (max-width:$breakpoint-small) {
+  .terms-sidebar {display:none;}
+  .terms-head {margin:0 auto;}
+  .terms-body {margin:0 auto;}
+}

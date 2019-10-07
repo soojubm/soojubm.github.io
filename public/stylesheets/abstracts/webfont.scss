@@ -1,0 +1,206 @@
+
+// Google Webfont Loader
+// <link rel="stylesheet" type="text/css" href="fonts.css" media="none" onload="this.media='all';">
+
+
+@import url(https://fonts.googleapis.com/earlyaccess/notosanskr.css);
+@font-face {
+	font-family: NanumSquareWeb;
+	src: url(NanumSquareR.eot); /* IE 호환성 보기 */
+  src: local(NanumSquareR), // local 삭제
+       local(NanumSquare),
+       url(NanumSquareR.eot?#iefix) format('embedded-opentype'),
+       url(NanumSquareR.woff) format('woff'), // woff2 WOFF1 버전에 비해 평균 30%정도 압축 형식을 제공(경우에 따라 최대 50%)
+       url(NanumSquareR.ttf) format('truetype');
+  font-style: normal;
+  font-weight: normal;
+	unicode-range: U+AC07-AC0A, U+AC00;;  // 범위가 없으면 다운로드 하지 않는다고
+	font-display: fallback;
+}
+
+
+@font-face { 
+  font-family: NanumSquare;
+  src: url(NanumSquareR.eot); /* IE 6 ~ 8, IE 호환성 보기 */
+  src: local(☺),
+       url(NanumSquareR.woff2) format('woff2'), /* IE Edge, WOFF2 지원 브라우저 */
+       url(NanumSquareR.woff) format('woff'), /* IE 9+, 모던 브라우저 */
+       url(NanumSquareR.ttf) format('truetype');
+}
+
+/* 500 normal */
+
+@font-face {
+  font-family: NanumSquareWeb;
+  src: local(NanumSquareR),
+       local(NanumSquare),
+       url(NanumSquareR.eot?#iefix) format('embedded-opentype'),
+       url(NanumSquareR.woff) format('woff'),
+       url(NanumSquareR.ttf) format('truetype');
+  font-style: normal;
+  font-weight: normal;
+  unicode-range: U+0-10FFFF;
+}
+
+/* 나눔 고딕*/
+@font-face {font-family:'Nanum Gothic';font-weight:400;
+	src:url(/webfonts/NanumGothic-Regular.eot);
+	src:url(/webfonts/NanumGothic-Regular.eot?#iefix) format('embedded-opentype'),
+		url(/webfonts/NanumGothic-Regular.woff2) format('woff2'),
+		url(/webfonts/NanumGothic-Regular.woff) format('woff'),
+		url(/webfonts/NanumGothic-Regular.ttf) format('truetype');
+}
+@font-face {font-family:'Nanum Gothic';font-weight:600;
+	src:url(/webfonts/NanumGothic-Bold.eot);
+	src:url(/webfonts/NanumGothic-Bold.eot?#iefix) format('embedded-opentype'),
+		url(/webfonts/NanumGothic-Bold.woff2) format('woff2'),
+		url(/webfonts/NanumGothic-Bold.woff) format('woff'),
+		url(/webfonts/NanumGothic-Bold.ttf) format('truetype');
+}
+@font-face {font-family:'Nanum Gothic';font-weight:800;
+	src:url(/webfonts/NanumGothic-ExtraBold.eot);
+	src:url(/webfonts/NanumGothic-ExtraBold.eot?#iefix) format('embedded-opentype'),
+		url(/webfonts/NanumGothic-ExtraBold.woff2) format('woff2'),
+		url(/webfonts/NanumGothic-ExtraBold.woff) format('woff'),
+		url(/webfonts/NanumGothic-ExtraBold.ttf) format('truetype');
+}
+
+/* 나눔 바른고딕 */
+@font-face {font-family:'NanumBareunGothic';font-weight:400;
+	src: url(../webfonts/NanumBarunGothicWebLight.eot);
+	src: url(../webfonts/NanumBarunGothicWebLight.eot?#iefix) format('embedded-opentype'),
+			 url(../webfonts/NanumBarunGothicWebLight.woff) format('woff'),
+			 url(../webfonts/NanumBarunGothicWebLight.ttf) format('truetype');
+ }
+@font-face {font-family: 'NanumBareunGothic';font-weight:600;
+ src: url(../webfonts/NanumBarunGothicWeb.eot);
+ src: url(../webfonts/NanumBarunGothicWeb.eot?#iefix) format('embedded-opentype'),
+      url(../webfonts/NanumBarunGothicWeb.woff) format('woff'),
+      url(../webfonts/NanumBarunGothicWeb.ttf) format('truetype');
+}
+@font-face {font-family: 'NanumBareunGothic';font-weight:800;
+ src: url(../webfonts/NanumBarunGothicWebBold.eot);
+ src: url(../webfonts/NanumBarunGothicWebBold.eot?#iefix) format('embedded-opentype'),
+      url(../webfonts/NanumBarunGothicWebBold.woff) format('woff'),
+      url(../webfonts/NanumBarunGothicWebBold.ttf) format('truetype');
+}
+
+/* 나눔 명조 */
+@font-face {font-family:'NanumBareunGothic';font-weight:400;
+	src: url(/webfonts/NanumBarunGothicWebLight.eot);
+	src: url(/webfonts/NanumBarunGothicWebLight.eot?#iefix) format('embedded-opentype'),
+			 url(/webfonts/NanumBarunGothicWebLight.woff) format('woff'),
+			 url(/webfonts/NanumBarunGothicWebLight.ttf) format('truetype');
+ }
+@font-face {font-family: 'NanumBareunGothic';font-weight:600;
+ src: url(/webfonts/NanumBarunGothicWeb.eot);
+ src: url(/webfonts/NanumBarunGothicWeb.eot?#iefix) format('embedded-opentype'),
+      url(/webfonts/NanumBarunGothicWeb.woff) format('woff'),
+      url(/webfonts/NanumBarunGothicWeb.ttf) format('truetype');
+}
+@font-face {font-family: 'NanumBareunGothic';font-weight:800;
+ src: url(/webfonts/NanumBarunGothicWebBold.eot);
+ src: url(/webfonts/NanumBarunGothicWebBold.eot?#iefix) format('embedded-opentype'),
+      url(/webfonts/NanumBarunGothicWebBold.woff) format('woff'),
+      url(/webfonts/NanumBarunGothicWebBold.ttf) format('truetype');
+}
+
+/* 나눔 스퀘어 */
+@font-face {font-family:'NanumBareunGothic';font-weight:400;
+	src: url(/webfonts/NanumBarunGothicWebLight.eot);
+	src: url(/webfonts/NanumBarunGothicWebLight.eot?#iefix) format('embedded-opentype'),
+			 url(/webfonts/NanumBarunGothicWebLight.woff) format('woff'),
+			 url(/webfonts/NanumBarunGothicWebLight.ttf) format('truetype');
+ }
+@font-face {font-family: 'NanumBareunGothic';font-weight:600;
+ src: url(/webfonts/NanumBarunGothicWeb.eot);
+ src: url(/webfonts/NanumBarunGothicWeb.eot?#iefix) format('embedded-opentype'),
+      url(/webfonts/NanumBarunGothicWeb.woff) format('woff'),
+      url(/webfonts/NanumBarunGothicWeb.ttf) format('truetype');
+}
+@font-face {font-family: 'NanumBareunGothic';font-weight:800;
+ src: url(/webfonts/NanumBarunGothicWebBold.eot);
+ src: url(/webfonts/NanumBarunGothicWebBold.eot?#iefix) format('embedded-opentype'),
+      url(/webfonts/NanumBarunGothicWebBold.woff) format('woff'),
+      url(/webfonts/NanumBarunGothicWebBold.ttf) format('truetype');
+}
+
+
+
+/* 노토 산스 헤스티아 */
+@font-face {
+	font-family: 'Noto Sans Korean';
+	font-style: normal;
+	font-weight: 100;
+	src: local('Noto Sans Thin'), local('NotoSans-Thin'),
+	url(../webfonts/NotoSansKR-Thin-Hestia.eot),
+	url(../webfonts/NotoSansKR-Thin-Hestia.eot?#iefix) format('embedded-opentype'),
+	url(../webfonts/NotoSansKR-Thin-Hestia.woff) format('woff'),
+	url(../webfonts/NotoSansKR-Thin-Hestia.otf) format('opentype');
+}
+
+@font-face {
+	font-family: 'Noto Sans Korean';
+	font-style: normal;
+	font-weight: 300;
+	src: local('Noto Sans Light'), local('NotoSans-Light'),
+	url(../webfonts/NotoSansKR-Light-Hestia.eot),
+	url(../webfonts/NotoSansKR-Light-Hestia.eot?#iefix) format('embedded-opentype'),
+	url(../webfonts/NotoSansKR-Light-Hestia.woff) format('woff'),
+	url(../webfonts/NotoSansKR-Light-Hestia.otf) format('opentype');
+}
+
+@font-face {
+	font-family: 'Noto Sans Korean';
+	font-style: normal;
+	font-weight: 350;
+	src: local('Noto Sans DemiLight'), local('NotoSans-DemiLight'),
+	url(../webfonts/NotoSansKR-DemiLight-Hestia.eot),
+	url(../webfonts/NotoSansKR-DemiLight-Hestia.eot?#iefix) format('embedded-opentype'),
+	url(../webfonts/NotoSansKR-DemiLight-Hestia.woff) format('woff'),
+	url(../webfonts/NotoSansKR-DemiLight-Hestia.otf) format('opentype');
+}
+
+@font-face {
+	font-family: 'Noto Sans Korean';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Noto Sans Regular'), local('NotoSans-Regular'),
+	url(../webfonts/NotoSansKR-Regular-Hestia.eot),
+	url(../webfonts/NotoSansKR-Regular-Hestia.eot?#iefix) format('embedded-opentype'),
+	url(../webfonts/NotoSansKR-Regular-Hestia.woff) format('woff'),
+	url(../webfonts/NotoSansKR-Regular-Hestia.otf) format('opentype');
+}
+
+@font-face {
+	font-family: 'Noto Sans Korean';
+	font-style: normal;
+	font-weight: 500;
+	src: local('Noto Sans Medium'), local('NotoSans-Medium'),
+	url(../webfonts/NotoSansKR-Medium-Hestia.eot),
+	url(../webfonts/NotoSansKR-Medium-Hestia.eot?#iefix) format('embedded-opentype'),
+	url(../webfonts/NotoSansKR-Medium-Hestia.woff) format('woff'),
+	url(../webfonts/NotoSansKR-Medium-Hestia.otf) format('opentype');
+}
+
+@font-face {
+	font-family: 'Noto Sans Korean';
+	font-style: normal;
+	font-weight: 700;
+	src: local('Noto Sans Bold'), local('NotoSans-Bold'),
+	url(../webfonts/NotoSansKR-Bold-Hestia.eot),
+	url(../webfonts/NotoSansKR-Bold-Hestia.eot?#iefix) format('embedded-opentype'),
+	url(../webfonts/NotoSansKR-Bold-Hestia.woff) format('woff'),
+	url(../webfonts/NotoSansKR-Bold-Hestia.otf) format('opentype');
+}
+
+@font-face {
+	font-family: 'Noto Sans Korean';
+	font-style: normal;
+	font-weight: 900;
+	src: local('Noto Sans Black'), local('NotoSans-Black'),
+	url(../webfonts/NotoSansKR-Black-Hestia.eot),
+	url(../webfonts/NotoSansKR-Black-Hestia.eot?#iefix) format('embedded-opentype'),
+	url(../webfonts/NotoSansKR-Black-Hestia.woff) format('woff'),
+	url(../webfonts/NotoSansKR-Black-Hestia.otf) format('opentype');
+}

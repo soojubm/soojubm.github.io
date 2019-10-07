@@ -1,0 +1,683 @@
+<main class="design">
+    <!-- <h1 class="kor">디자인시스템<br />혹은<br />스타일가이드</h1>
+    <h1 class="eng">Design System<br />& <br />Style Guide<br /></h1> -->
+  <header></header>
+
+  <section class="design-body">
+    <article class="design-article grayscale">
+      <h1 class="design-body-heading">Colors</h1>
+      <p class="design-body-description">칼라칼라컬러컬러</p>
+      <section class="color">
+        <figure class="color-item --gray100">
+          <div></div>
+          <figcaption>gray100</figcaption>
+        </figure>
+        <figure class="color-item --gray200">
+          <div></div>
+          <figcaption>gray400</figcaption>
+        </figure>
+        <figure class="color-item --gray300">
+          <div></div>
+          <figcaption>gray600</figcaption>
+        </figure>
+        <figure class="color-item --gray400">
+          <div></div>
+          <figcaption>gray800</figcaption>
+        </figure>
+      </section>
+      <section class="color">
+        <figure class="color-item --negative100">
+          <div></div>
+          <figcaption>#000000</figcaption>
+        </figure>
+        <figure class="color-item --negative200">
+          <div></div>
+          <figcaption>#000000</figcaption>
+        </figure>
+        <figure class="color-item --positive">
+          <div></div>
+          <figcaption>#000000</figcaption>
+        </figure>
+        <figure class="color-item --primary100">
+          <div></div>
+          <figcaption>#000000</figcaption>
+        </figure>
+        <figure class="color-item --primary200">
+          <div></div>
+          <figcaption>#000000</figcaption>
+        </figure>
+        <figure class="color-item --gradient">
+          <div></div>
+          <figcaption>#000000</figcaption>
+        </figure>
+      </section>
+    </article>
+
+    <article class="design-article">
+      <h1 class="design-body-heading">Avatars</h1>
+      <p class="design-body-description">사진을 사용할 때와 아이콘을 사용할 때 두 가지의 아바타를 사용해요. 아이콘 타입(48px)과 포토 타입이 있는데 4가지는 너무 많아요 흑흑.</p>
+      <a href="" class="avatar --large --photo">
+        <img src="/public/images/caleb-woods-182648-unsplash.jpg" alt="">
+      </a>
+      <a href="" class="avatar --medium --photo">
+        <img src="/public/images/caleb-woods-182648-unsplash.jpg" alt="">
+      </a>
+      <a href="" class="avatar --photo">
+        <img src="/public/images/caleb-woods-182648-unsplash.jpg" alt="">
+      </a>
+      <a href="" class="avatar --small --photo">
+        <img src="/public/images/caleb-woods-182648-unsplash.jpg" alt="">
+      </a>
+    </article>
+
+    <article class="design-article">
+      <h1 class="design-body-heading">Breadcrumbs</h1>
+      <p class="design-body-description">페이지 레벨이 3단계 이상일 때 사용해요. 홈 아이콘 지양하는 게 깔끔해 보이는 것 같아요. 모바일에서 사용하지 않아요.</p>
+      <nav class="breadcrumbs">
+        <a class="breadcrumbs-item breadcrumbs-home" href="/"><span aria-hidden="true">홈</span>Home</a>
+        <a class="breadcrumbs-item " href="#">페이지 이름</a>
+        <a class="breadcrumbs-item breadcrumbs-last" href="#">페이지 이름</a>
+      </nav>
+    </article>
+
+    <article class="design-article">
+      <h1 class="design-body-heading">Lists</h1>
+      <p class="design-body-description">텍스트 리스트인 경우에 한정해서 리스트 태그로 마크업히세요. 왜냐하면 모든 게 리스트가 될 수 있다요용용</p>
+      <ul class="list-sample">
+        <li>unordered list, level 1
+          <ul>
+            <li>unordered list, level 2</li>
+            <li>unordered list, level 2</li>
+          </ul>
+        </li>
+        <li>unordered list, level 1</li>
+      </ul>
+      <hr style="margin: 1rem 0;" />
+      <ol class="list-sample">
+        <li>ordered list, level 1
+          <ol>
+            <li>ordered list, level 2</li>
+            <li>ordered list, level 2</li>
+          </ol>
+        </li>
+        <li>ordered list, level 1</li>
+      </ol>
+    </article>
+
+    <!-- <article class="design-article">
+      <h1 class="design-body-heading">Tablist</h1>
+      <p class="design-body-description">Filtering, Sorting과 동일한 마크업 및 그루핑이 가능한데요?<br />버튼으로 마크업하는 것이 좋을지, 라디오/체크박스로 마크업하는 것이 좋을지?<br />가로형, 세로형, 액티브: 언더라인, 보더(sm, md), 백그라운드, 포인트</p>
+      <p class="design-body-description">데이터 비교 시 적합치 않아</p>
+      <nav class="tablist --vertical" style="margin-top:1rem" role="tablist">
+        <div class="tablist-active"></div>
+        <button class="tablist-tab is-active" role="tab" aria-selected="true" data-index="1">웹사이트 <i class="tablist-tab-badge">4</i></button>
+        <button class="tablist-tab" role="tab" aria-selected="false" data-index="2">페이지 <i class="tablist-tab-badge">6</i></button>
+        <button class="tablist-tab" role="tab" aria-selected="false" data-index="3">컴포넌트 <i class="tablist-tab-badge">18</i></button>
+        <button class="tablist-tab" role="tab" aria-selected="false" data-index="4">빈 상태 <i class="tablist-tab-badge">18</i></button>
+      </nav>
+    </article> -->
+
+    <article class="design-article">
+      <h1 class="design-body-heading">Snackbars</h1>
+      <p class="design-body-description">긍정 상황에 사용합니다. 부정 혹은 경고, 주의, 성공, 알림 등을 추가할까요?</p>
+      <div class="snackbar">
+        <!-- <i class="note-icon material-icons">snackbars</i> -->
+        <span class="snackbar-text"> <b>snackbar</b>: This includes the <a href="">global HTML attributes</a>.</span>
+        <button class="snackbar-close" type="button" aria-label="close"><i class="icon-close"></i></button>
+      </div>
+      <div class="snackbar --warning" style="margin-top:1rem;">
+        <span class="snackbar-text"> <em>Warning</em>: This includes the <a href="">global HTML attributes</a>.</span>
+        <button class="snackbar-close" type="button" aria-label="close"><i class="icon-close"></i></button>
+      </div>
+    </article>
+
+    <article class="design-article">
+      <h1 class="design-body-heading">Tooltip</h1>
+      <p class="design-body-description">툴팁의 위치를 지정할 수 있어야 하겠죠? 아래에서만 나와도 무방하겠어요.</p>
+      <aside class="tooltip">
+        <span class="tooltip-target">마우스 오버 <i class="material-icons">error_outline</i></span>
+        <div class="tooltip-content">
+          <p>마우스를 올렸을 때 나오는 툴팁입니다.</p>
+          <p>스타일시트의 인접 선택자로 만들어져 있다요.</p>
+        </div>
+      </aside>
+    </article>
+
+    <article class="design-article button-article">
+      <style>
+        .design-article.button-article div {margin:0 0 2rem 0;}
+        .design-article.button-article div h2 {margin:0 0 .5rem 0;font-size:12px;}
+        .design-article.button-article button {width: 120px;}
+        .design-article.button-article button.icon-button {width: 48px;}
+        .dd {overflow:hidden;width:100%;}
+        .dd button {float:left;}
+      </style>
+      <h1 class="design-body-heading">Buttons</h1>
+      <p class="design-body-description">아톰Atom 단위의 컴포넌트는 클래스 네이밍 없이 자체 엘리먼트에 스타일링 된 요소들로 한정하고 리액트에서 스타일드 컴포넌트 단위가 된다.</p>
+      <div>
+        <h2>Solid Button</h2>
+        <button class="primary-button" type="button">Primary</button>
+        <button class="danger-button" type="button" aria-label="danger">Danger</button>
+        <button class="success-button" type="button" aria-label="success">Success</button>
+        <button class="primary-button" type="button" disabled>Primary</button>
+      </div>
+      <div>
+        <h2>Solid Button</h2>
+        <button class="secondary-button" type="button">Secondary</button>
+        <button class="secondary-button" type="button" disabled>Secondary</button>
+        <button class="teritary-button" type="button">Teritary</button>
+        <button class="teritary-button" type="button" disabled>Teritary</button>
+      </div>
+      <div>
+        <h2>Solid Button</h2>
+        <button class="ghost-button" type="button">Ghost</button>
+        <button class="ghost-button" type="button" disabled>Ghost</button>
+      </div>
+      <div>
+        <button class="primary-button --small" type="button">Filled</button>
+        <button class="secondary-button --small" type="button">Secondary</button>
+        <button class="teritary-button --small" type="button">Teritary</button>
+        <button class="ghost-button --small" type="button">Ghost</button>
+        <button class="danger-button --small" type="button" aria-label="danger">Danger</button>
+        <button class="success-button --small" type="button" aria-label="danger">Success</button>
+      </div>
+      <div class="button-group" role="group">
+        <button class="primary-button --small is-active" type="button">Button Group</button>
+        <button class="teritary-button --small" type="button">Button Group</button>
+        <button class="teritary-button --small" type="button">Button Group</button>
+      </div>
+      <div class="dd" role="group">
+        <button class="icon-button" type="button"><i class="icon-person"></i></button>
+        <button class="icon-button" type="button"><i class="icon-search"></i></button>
+        <button class="icon-button" type="button"><i class="icon-caret"></i></button>
+        <button class="icon-button" type="button"><i class="icon-chevron"></i></button>
+        <button class="icon-button" type="button"><i class="icon-arrow"></i></button>
+        <button class="icon-button" type="button"><i class="icon-more"></i></button>
+        <button class="icon-button" type="button"><i class="icon-plus"></i></button>
+        <button class="icon-button" type="button"><i class="icon-close"></i></button>
+        <!-- <button class="icon-button" type="button"><i class="icon-home"><span></span><span></span></i></button> -->
+      </div>
+    </article>
+
+    <article class="design-article">
+      <h1 class="design-body-heading">Checkbox</h1>
+      <p class="design-body-description">checkbox, checkall, intermediate</p>
+      <div class="checkbox">
+        <input type="checkbox" id="line01" value="" checked />
+        <label for="line01">Everyday is like sunday</label>
+      </div>
+      <div class="checkbox">
+        <input type="checkbox" id="line02" value="" indeterminate checked data-indeterminate="true" />
+        <label for="line02">Everyday is like sunday</label>
+      </div>
+      <div class="checkbox">
+        <input type="checkbox" id="line03" value="" checked disabled />
+        <label for="line03">Everyday is like sunday</label>
+      </div>
+      <div class="checkbox textfiled">
+        <input type="checkbox" id="other" name="interest" value="other">
+        <label for="other">Other</label>
+        <!-- <input type="text" id="otherValue" name="other" class="textfield-input"> -->
+      </div>
+    </article>
+
+    <article class="design-article">
+      <h1 class="design-body-heading">Radio</h1>
+      <p class="design-body-description">description? addon? container</p>
+      <div class="radio">
+        <input type="radio" id="gender-man" name="gender" value="" checked>
+        <label for="gender-man">Video kills the radio button</label>
+        <p class="radio-helper">My email campaigns are meant to be seen by the public. The more the merrier, in fact. If/when Mailchimp builds tools that help people discover me and sign up for this list, I'd like to take part in that.</p>
+      </div>
+      <div class="radio">
+        <input type="radio" id="gender-man" name="gender" value="">
+        <label for="gender-man">Video kills the radio button</label>
+      </div>
+      <div class="radio">
+        <input type="radio" id="gender-women" name="gender2" value="" checked disabled>
+        <label for="gender-women">Video kills the radio button</label>
+      </div>
+    </article>
+    <article class="design-article">
+      <h1 class="design-body-heading">Switch</h1>
+      <p class="design-body-description">on/off 설정 등에 사용합니다.</p>
+      <span class="switch" style="margin: 0 0 .75rem 0;">
+        <input type="checkbox" id="switch1" name="" role="switch" value="on" checked />
+        <label for="switch1">Receive weekly newsletter</label>
+      </span>
+      <span class="switch">
+        <input type="checkbox" id="switch2" name="" role="switch" value="off" disabled />
+        <label for="switch2">Receive weekly newsletter</label>
+      </span>
+    </article>
+    <article class="design-article">
+      <h1 class="design-body-heading">Range</h1>
+      <p class="design-body-description">체크박스</p>
+
+      <div class="range">
+        <label for="">숙박 인원</label>
+        <input type="range" min="1" max="10" value="2" step="any" list="tickmarks" id="myRange">
+        <datalist id="tickmarks">
+          <option value="0" label="0"></option>
+          <option value="5" label="5"></option>
+          <option value="10" label="10"></option>
+        </datalist>
+      </div>
+      <script>
+      var slider = document.getElementById("myRange");
+      var output = document.getElementById("demo");
+      output.innerHTML = slider.value; // Display the default slider value
+
+      // Update the current slider value (each time you drag the slider handle)
+      slider.oninput = function() {
+        output.innerHTML = this.value;
+      }
+    </script>
+    </article>
+
+    <article class="design-article">
+      <h1 class="design-body-heading">Textfield</h1>
+      <p class="design-body-description">Input text, Textarea, Select, with Icon, with Unit, with Button</p>
+      <div class="textfield is-invalid">
+        <label class="textfield-label" for="search1">레이블</label>
+        <!-- <i class="textfiled-icon">a</i> -->
+        <input class="textfield-input" type="text" placeholder="Textarea Placeholder..."></input>
+        <!-- <button class="textfield-button primary-button">ddd</button> -->
+        <!-- 레이블이 있을 때, 헬퍼가 있을 때 버튼의 위치를 어떻게 잡을지 인접연산자로 하나하나 세팅해주는 방법 -->
+        <small class="textfield-helper">You can @mention other users and organizations to link to them.</small>
+      </div>
+      <div class="textfield" style="margin:1rem 0;">
+        <label class="textfield-label" for="search1">셀렉트박스 레이블</label>
+        <select class="textfield-input" name="" id="">
+          <option class="select-option" value="" disabled selected hidden>Choose an option</option>
+          <option class="select-option" value="solong" >My Morning Jackt</option>
+          <optgroup class="select-optgroup" label="Category 1">
+            <option class="select-option" value="option1" disabled>Option 1</option>
+            <option class="select-option" value="option2">Option 2</option>
+          </optgroup>
+          <optgroup class="select-optgroup" label="Category 2">
+            <option class="select-option" value="option1">Option 1</option>
+            <option class="select-option" value="option2">Option 2</option>
+          </optgroup>
+        </select>
+        <i class="selectbox-indicator icon-caret"></i>
+      </div>
+      <div class="textfield" style="margin:1rem 0;">
+        <label class="textfield-label" for="search1">텍스트에어리어 레이블</label>
+        <small class="textfield-byte"><b>0 KB</b> / 100 KB</small>
+        <textarea class="textfield-input" rows="3" placeholder="Textarea Placeholder..."></textarea>
+      </div>
+    </article>
+
+    <article class="design-article">
+      <h1 class="design-body-heading">File Uploader</h1>
+      <p class="design-body-description">파일 업로드</p>
+      <!-- 파일 콘텐츠는 url 매개변수로 보낼 수 없다. 여러 조각-->
+      <form class="file" method="" enctype="multipart/form-data">
+        <!-- <h3 class="file-heading">프로필 사진</h3> -->
+        <div>
+          <input class="file-input js-file-input" type="file" id="file2" multiple accept=".jpg,.png" />
+          <!-- <input type="file" accept="image/*" capture="camera"> -->
+          <label class="file-label" for="file2">파일을 추가하세요. 여기로 드래그 하셔도 되어요.</label>
+          <p class="file-helper"><small>Only .jpg and .png files. 500kb max file size.</small></p>
+        </div>
+        <section class="file-attachment">
+          <h1 class="file-attachment-heading">첨부한 파일</h1>
+          <p class="file-attachment-helper js-file-attachment-helper">No files currently selected for upload.</p>
+          <ul class="file-attachment-list js-file-attachment-list">
+            <!-- <div class="file-attachment-item">
+              <img class="file-attachment-item-image" src="" alt="">
+              <a class="file-attachment-item-name js-file-output" href="#">파일명 1.jpg</a>
+              <button class="file-attachment-item-delete js-remove-this" type="button"><i class="icon-x"></i></button>
+            </div> -->
+          </ul>
+        </section>
+        <!-- <button class="js-file-submit primary-button" type="submit">등록하기</button> -->
+      </form>
+    </article>
+
+
+    <article class="design-article">
+      <h1 class="design-body-heading">Accordions</h1>
+      <p class="design-body-description">질의응답은 물론이거니와 아코디언 간단한 공지사항 등의 게시글에도 사용할 수 있어요.</p>
+      <button class="components-trigger js-accordion" type="button" aria-expanded="false"><i class="icon-plus"></i> 투두 리스트: 바닐라 자바스크립트로 만드는 투두 리스트</button>
+      <article class="components-panel">
+        안녕
+      </article>
+      <button class="components-trigger js-accordion" type="button" aria-expanded="false"><i class="icon-plus"></i> 투두 리스트: 바닐라 자바스크립트로 만드는 투두 리스트</button>
+      <article class="components-panel">
+        안녕
+      </article>
+    </article>
+
+    <article class="design-article">
+      <h1 class="design-body-heading">Container Components</h1>
+      <p class="design-body-description">특히 리액트에서는 컨테이너 컴포넌트의 활용이 중요항다.</p>
+      <div style="margin:1rem 0;padding:1rem 1.5rem 1.5rem;box-sizing:border-box;background:crimson;color:#fff;">
+        <p>타이틀</p>
+        <p>margin:4rem 0; padding:1rem 1.5rem 1.5rem;</p>
+      </div>
+      <form class="contact-form boxed-form" action="">
+        <h4>회원 정보</h4>
+        <div class="textfield">
+          <label class="textfield-label" for="">Street Number</label>
+          <input class="textfield-input" type="text" value="659">
+        </div>
+        <div class="textfield is-invalid" style="margin-top:-1px;border-color:crimson;z-index:1;">
+          <label class="textfield-label" for="">First Name</label>
+          <input class="textfield-input" type="text" placeholder="이름을 입력하세요." value="이명박">
+          <p class="textfield-helper">이름이 이상합니다. 너무 이상해요. 개 이상해요.</p>
+        </div>
+        <div class="textfield" style="margin-top:-1px;">
+          <label class="textfield-label" for="">First Name</label>
+          <input class="textfield-input" type="text" placeholder="이름을 입력하세요.">
+        </div>
+        <footer class="action" style="margin-top:1rem;">
+          <button class="primary-button" type="submit" style="float:right;margin-left:.75rem;">전송하기</button>
+          <button class="secondary-button" type="button" style="float:right;">취소하기</button>
+        </footer>
+      </form>
+      <div style="margin:1rem 0;padding:1rem 1.5rem 1.5rem;box-sizing:border-box;border:1px solid #eee;">
+        <p style="margin:0 0 .125rem 0;color:#000;font-size:1.25rem;">다이얼로그</p>
+        <p style="margin:0 0 1.5rem 0;">보조 텍스트인니다!</p>
+        <div class="textfield --small --inline" style="margin-bottom:8px;">
+          <label class="textfield-label" for="">테스트</label>
+          <input class="textfield-input" type="text" placeholder="인풋 인라인스타일 스몰사이즈">
+        </div>
+        <div class="textfield --small --inline">
+          <label class="textfield-label" for="">테스트</label>
+          <input class="textfield-input" type="text" placeholder="인풋 인라인스타일 스몰사이즈">
+        </div>
+        <button class="primary-button --small" type="submit" style="margin-top:1rem;margin-left:100px;">전송하기</button>
+        <button class="ghost-button --small" type="button" style="margin-top:8px;">취소</button>
+      </div>
+      <div class="design-spacing">
+        <div class="design-spacing-one">간격Spacing</div>
+        <div class="design-spacing-two">REM 단위를 어떻게 사용할까?</div>
+        <div class="design-spacing-three">어떤 개발자들은 rem이 모듈화를 어렵게 만들기 때문에 완전히 피한다. 또 다른 이들은 rem이 단순하기 때문에 항상 rem만을 사용한다.</div>
+        <div class="design-spacing-four">14, April, 2019</div>
+      </div>
+      <a href="" class="user-card">
+        <div class="user-card-background"></div>
+        <span class="avatar --medium --photo">
+          <img src="/public/images/caleb-woods-182648-unsplash.jpg" alt="">
+        </span>
+      </a>
+    </article>
+
+    <article class="design-article">
+      <h1 class="design-body-heading">Steps</h1>
+      <p class="design-body-description">단계다단계</p>
+      <div class="step">
+        <div class="step-item is-active">
+          <i class="step-item-icon material-icons">email</i>
+          <p class="step-item-title">주문</p>
+        </div>
+        <div class="step-space is-active"><span></span><span></span><span></span></div>
+        <div class="step-item is-active">
+          <i class="step-item-icon material-icons">email</i>
+          <p class="step-item-title">조리</p>
+        </div>
+        <div class="step-space"><span></span><span></span><span></span></div>
+        <div class="step-item">
+          <i class="step-item-icon material-icons">email</i>
+          <p class="step-item-title">배달</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="design-article">
+      <h1 class="design-body-heading">Table</h1>
+      <p class="design-body-description">페이지네이션의 첫 페이지와 마지막 페이지는 더블 화살표 아이콘보다 총 페이지 수를 노출 방식을 사용한다.</p>
+      <table>
+        <caption>히라가나 오십음도</caption>
+        <thead>
+          <tr>
+            <th class="table-checkbox">
+              <div>
+                <input type="checkbox" id="temp1">
+                <label for="temp1"></label>
+              </div>
+            </th>
+            <th>あ단</th>
+            <th>い단</th>
+            <th>う단</th>
+            <th>え단</th>
+            <th>お단</th>
+            <th class="right">숫자</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <div>
+                <input type="checkbox">
+                <label for=""></label>
+              </div>
+            </td>
+            <td>な</td>
+            <td>に</td>
+            <td>ぬ</td>
+            <td>ね</td>
+            <td>の</td>
+            <td class="right">9,600</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox"><label for=""></label></td>
+            <td>さ</td>
+            <td>し</td>
+            <td>す</td>
+            <td>せ</td>
+            <td>そ</td>
+            <td class="right">9,600</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox"><label for=""></label></td>
+            <td>た</td>
+            <td>ち</td>
+            <td>つ</td>
+            <td>て</td>
+            <td>と</td>
+            <td class="right">9,600</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox"><label for=""></label></td>
+            <td>は</td>
+            <td>ひ</td>
+            <td>ふ</td>
+            <td>へ</td>
+            <td>ほ</td>
+            <td class="right">12,000</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox"><label for=""></label></td>
+            <td>ま</td>
+            <td>み</td>
+            <td>む</td>
+            <td>め</td>
+            <td>も</td>
+            <td class="right"><code>12,000</code></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox"><label for=""></label></td>
+            <td>や</td>
+            <td>-</td>
+            <td>ゆ</td>
+            <td>-</td>
+            <td>よ</td>
+            <td class="right"><button class="primary-button --small">test</button></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox"><label for=""></label></td>
+            <td>ら</td>
+            <td>り</td>
+            <td>る</td>
+            <td>れ</td>
+            <td>ろ</td>
+            <td class="right">12,000</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox"><label for=""></label></td>
+            <td>わ</td>
+            <td>ゐ wi</td>
+            <td>-</td>
+            <td>ゑ we</td>
+            <td>を wo(o)</td>
+            <td class="right"> ん n/nn</td>
+          </tr>
+        </tbody>
+      </table>
+      <nav class="pagination">
+        <!--forward forward -->
+        <a href="#" class="pagination-prev" title="앞 페이지로 이동">Previous</a>
+        <a href="#" class="pagination-first" title="맨 앞 페이지로 이동"><i aria-hidden="">1</i></a>
+        <a href="#" class="pagination-page" title="1 페이지로 이동">5</a>
+        <a href="#" class="pagination-page" title="1 페이지로 이동">6</a>
+        <a href="#" class="pagination-page is-current" title="1 페이지로 이동">7</a>
+        <a href="#" class="pagination-page" title="1 페이지로 이동">8</a>
+        <a href="#" class="pagination-page" title="1 페이지로 이동">9</a>
+        <a href="#" aria-label="" class="pagination-last" title="맨 뒤 페이지로 이동"><i aria-hidden="">50</i></a>
+        <a href="#" class="pagination-next" title="뒷 페이지로 이동">Next</a>
+      </nav>
+      <nav class="pagination2">
+        <a href="#" class="pagination2-prev" title="앞 페이지로 이동">이전</a>
+        <span class="pagination2-current">1</span>
+        <span class="pagination2-divider"> / </span>
+        <span class="pagination2-all">44</span>
+        <a href="#" class="pagination2-next" title="뒷 페이지로 이동">다음</a>
+      </nav>
+    </article>
+
+    <article class="design-article">
+      <h1 class="design-body-heading">Graph</h1>
+      <p>옿이</p>
+      <div class="graph">
+        <div class="graph-heading">1월 26일 <em>컴퓨터통신 분야</em>에서는<br><em>7백명의 지식iN</em>들이 답변하셨습니다.</div>
+        <div class="graph-item">
+          <span class="graph-item-value">40%</span>
+          <div class="graph-item-bar"></div>
+          <span class="graph-item-label">10대</span>
+        </div>
+        <div class="graph-item">
+          <span class="graph-item-value">30%</span>
+          <div class="graph-item-bar"></div>
+          <span class="graph-item-label">20대</span>
+        </div>
+        <div class="graph-item">
+          <span class="graph-item-value">20%</span>
+          <div class="graph-item-bar"></div>
+          <span class="graph-item-label">30대</span>
+        </div>
+        <div class="graph-item">
+          <span class="graph-item-value">10%</span>
+          <div class="graph-item-bar"></div>
+          <span class="graph-item-label">40대</span>
+        </div>
+        <div class="graph-item">
+          <span class="graph-item-value">0%</span>
+          <div class="graph-item-bar"></div>
+          <span class="graph-item-label">50대</span>
+        </div>
+      </div>
+    </article>
+
+
+    <article class="design-article">
+      <h1 class="design-body-heading">Timeline or Feed</h1>
+      <p class="design-body-description">왼쪽에 아바타가 있는 경우 항상 사용할 수 있게 만들기.</p>
+      <section class="timeline">
+        <h1 class="timeline-heading">1회차 주문 현황 (임시 텍스트)</h1>
+        <div class="timeline-item payment --complete">
+          <header class="timeline-item-head">
+            <span class="timeline-item-head-icon --complete"><i class="far fa-credit-card"></i></span>
+            <h1 class="timeline-item-head-title">결제</h1>
+          </header>
+          <section class="timeline-item-body">
+            <div class="timeline-item-body-panel --success">
+              결제가 완료되었습니다.
+            </div>
+            <div class="timeline-item-body-cancel">
+              <p>집행 중 취소 시 수수료가 발생합니다. <button class="ghost-button">주문취소</button></p>
+            </div>
+          </section>
+        </div>
+        <div class="timeline-item">
+          <header class="timeline-item-head">
+            <span class="timeline-item-head-icon"><i class="fas fa-file-upload"></i></span>
+            <h1 class="timeline-item-head-title">소재등록</h1>
+            <div class="timeline-item-head-note"><i class="far fa-question-circle"></i></div>
+          </header>
+          <section class="timeline-item-body">
+            <div class="timeline-item-body-panel --required">
+              <span>3개의 매체에 대한 소재등록이 필요합니다.</span>
+              <i class="fas fa-angle-down"></i>
+            </div>
+            <!-- 소재 확정 -->
+            <div class="timeline-item-body-panel --success">
+              <span>[확정] 등록한 소재가 확정되었습니다.</span>
+              <i class="fas fa-angle-down"></i>
+            </div>
+          </section>
+        </div>
+      </section>
+    </article>
+
+    <article class="design-article typography">
+        <style>
+          .typography {}
+          .typography h6 {margin:0 0 .25rem 0;font-size:12px;}
+          .typography div {margin:1rem 0 1.5rem 0;}
+        </style>
+        <h1 class="design-body-heading typography-heading">Typhography</h1>
+        <div>
+          <h6>헤드라인</h6>
+          <h1 class="typography-headline">헤드라인</h1>
+        </div>
+  
+        <div>
+          <h6>헤딩</h6>
+          <!-- <div>페이지 타이틀</div> -->
+          <h1 class="typography-title">다람쥐 헌 쳇바퀴에 타고파.</h1>
+        </div>
+        <div>
+          <h6>서브헤드</h6>
+          <h1 class="typography-subhead">다람쥐 헌 다람쥐 없다.</h1>
+        </div>
+        <div>
+          <h6>패러그라프</h6>
+          <p class="typography-paragraph">서점은 거대한 파라솔로 뒤덮인 것처럼 어두침침했다. 여기엔 수많은 책들이 있다. 책들은 W의 아버지처럼 떄리지 않는다. 브룩스 일당처럼 괴롭히거나 "같이 할래?"라는 달콤한 말로 기만하지도 않느낟. 책들은 라디오에서 흘러 나오는 선율처럼 우리에게 속삭인다. 파라솔 그늘 밑에서도 넌 혼자가 아니라고.</p>
+        </div>
+        <div>
+          <h6>캡션</h6>
+          <h6 class="typography-caption">캡션 이��지 설명</h6>
+        </div>
+      </article>
+
+      <i class="icon-check1"></i>
+      <span class="letter-piece"><i>스</i></span>
+      <span class="letter-piece"><i>타</i></span>
+      <span class="letter-piece"><i>일</i></span>
+
+        <!-- 기본 폼 태그 테스트 -->
+        <form action="">
+          <input type="checkbox">
+          <input type="radio">
+          <input type="text">
+          <input type="date">
+          <input type="tel">
+          <select name="" id="">
+            <option value=""></option>
+          </select>
+          <textarea name="" id="" cols="30" rows="10"></textarea>
+          <button type="submit">제출</button>
+        </form>
+
+        <style>
+        .icon-check1 {display:block;width:40px;height:40px;border-radius:50%;border:2px dotted #000;position:relative;}
+        .icon-check1:before {content:'';display:inline-block;width:28px;height:9px;border-left:2px solid;border-bottom:2px solid;border-color:#000;transform:rotate(-45deg);position:absolute;right:-2px;top:4px;z-index:2;}
+        .icon-check1:after {content:'';display:block;width:16px;height:18px;background:#fff;position:absolute;right:-6px;top:0px;z-index:1;}
+        </style>
+      </fieldset>
+    </section>
+  </section>
+</main>

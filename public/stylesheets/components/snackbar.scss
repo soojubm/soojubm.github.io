@@ -1,0 +1,14 @@
+.notice-bar {display:block;max-width:480px;padding:.5rem 1rem;border:1px solid red;border-left-width:4px;box-sizing:border-box;border-radius:2px;background:#fff;position:relative;}
+.notice-bar:before {content:'';width:9px;height:9px;border:1px solid red;border-left:none;border-bottom:none;background:#fff;position:absolute;left:20px;bottom:-6px;transform:rotate(135deg);}
+.notice-bar:after {content:'';width:12px;height:1px;position:absolute;left:19px;bottom:-1px;background:#fff;}
+.notice-bar em {color:$red800;margin-right:12px;}
+.notice-bar button {width:32px;height:32px;box-sizing:border-box;position:absolute;right:8px;top:50%;transform:translateY(-50%);}
+.notice-bar button:hover {background:#f9f9f6;border-radius:50%;}
+
+.snackbar {max-width:800px;padding:.75rem 1.5rem;/*border-left:4px solid $gray80;box-sizing:border-box;*/background:#f2f8fc;font-family:'Courier New', Courier, monospace;position:relative;}
+.snackbar-icon {display:inline-block;margin:0 8px 0 0;vertical-align: middle;font-size:1.5rem;}
+.snackbar-close {position:absolute;right:8px;top:50%;transform:translateY(-50%);}
+
+.snackbar.--warning {background:lavenderblush;}
+.snackbar.--warning em {color:crimson;}
+.snackbar.--warning a {color:inherit;}

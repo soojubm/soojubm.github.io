@@ -23,6 +23,7 @@ module.exports = smp.wrap({
 	resolve: {
 		extensions: ['.js', '.jsx', '.ts', '.tsx']
 	},
+	watch: true,
 	module: {
 		rules: [
 			{ test: /\.(sa|sc|c)ss$/, use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'] },
@@ -56,6 +57,7 @@ module.exports = smp.wrap({
 	},
 	devServer: {
 		contentBase: path.join(__dirname, './build/'),
-		port: 9000
+		port: 9000,
+		host: '0.0.0.0'
 	}
 });

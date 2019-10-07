@@ -1,0 +1,22 @@
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin clearfix {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin ellipsis {overflow:overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+@mixin title_style($size, $color) {overflow:hidden;white-space:nowrap;text-overflow:ellipsis;font-size:$size;color:$color;}
+
+@mixin container {
+  margin: $margin400;
+  padding: $padding400;
+  border: none;
+  box-shadow: $shadow400;
+}
