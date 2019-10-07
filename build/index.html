@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>수줍이</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0" />
+    <meta name="format-detection" content="telephone=no, email=no, address=no" />
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="rgba(255,255,255,.8)" />
+    <meta name="apple-mobile-web-app-status-bar-stylnpe" content="black-translucent" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="msapplication-square310x310logo" content="/icon_largetile.png" />
+    <meta name="author" content="soojubm" />
+    <meta name="subject" content="your document's subject" />
+    <meta name="description" content="UI Designer" />
+    <meta name="keywords" content="" />
+    <meta name="copyright" content="soojubm" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:site_name" content="soojubm" />
+    <meta property="og:url" content="https://soojubm.github.io" />
+    <meta property="og:title" content="수줍이의 포트폴리오" />
+    <meta property="og:image" content="/images/open-graph.png" />
+    <meta property="og:description" content="부끄러우니까 보지마요." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@" />
+    <meta name="twitter:url" content="@" />
+    <meta name="twitter:title" content="@" />
+    <meta name="twitter:description" content="@" />
+    <meta name="twitter:creator" content="@" />
+
+    <link rel="canonical" href="https://soojubm.github.io/" />
+    <!--link rel="shortcut icon" href="images/favicon/favicon.ico">-->
+    <link rel="icon" sizes="192x192" href="" />
+    <link rel="apple-touch-icon" href="" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <script src="./build/bundle.js"></script>
+    <link rel="stylesheet" href="./build/main.css" />
+  <link href="/main.css" rel="stylesheet"></head>
+  <body>
+    <noscript>This website requires JavaScript.</noscript>
+    <aside class="loading js-loading"><div class="loading-object"></div></aside>
+    <aside class="browser js-browser" role="complementary">
+      <p>이 사이트는 크롬 브라우저에 최적화되어 있습니다.</p>
+      <a href="https://www.google.co.kr/chrome/index.html" class="button">크롬 브라우저 다운로드</a>
+    </aside>
+    <nav class="skip">
+      <a class="skip-link" href="#header">본문 바로가기</a>
+      <a class="skip-link" href="#navigation">대메뉴 바로가기</a>
+      <a class="skip-link" href="#footer">하단정보 바로가기</a>
+    </nav>
+
+    <!-- <form class="todo js-todo" style="max-width:560px;margin:0 auto;">
+      <fieldset class="todo-body">
+        <legend>위시리스트</legend>
+        <div class="textfield">
+          <label class="todoList-label textfield-label">What do you want for your birthday?</label>
+          <input class="todoList-input textfield-input js-todo-input" type="text" placeholder="write a to do">
+        </div>
+        <ol class="todo-list js-todo-list">
+        </ol>
+      </fieldset>
+      <footer class="todo-control">
+        <button class="todo-control-add primary-button js-todo-submit" type="submit">Add to todoList</button>
+        <button class="todo-control-remove ghost-button js-todo-clear" type="button">remove all items</button>
+      </footer>
+    </form> -->
+
+    <!-- <section class="topbanner">
+      <div class="topbanner-background"></div>
+      <h1 class="topbanner-heading">부끄러우니까 보지마요</h1>
+      <p class="topbanner-body">내용을 입력하세요. 두 줄이 될 때까지 아무 말 대단치를 하고 있어요.</p>
+      <button class="topbanner-cta ghost-button" type="button">무료체험 신청하기</button>
+      <button class="topbanner-close js-close" type="button"><i class="icon-close"></i></button>
+      <span class="topbanner-checkbox">
+        <input type="checkbox">
+        <label for="">오늘은 그만 볼게요.</label>
+      </span>
+      <img src="/public/images/arabica-18.png" alt="">
+    </section> -->
+
+    <aside class="toast">
+      <h1 class="toast-heading">부끄러우니까 보지마요!</h1>
+      <p class="toast-description">토스트 유아이를 만드는 거에요. 쿠키 사용 승인 요청 내용이 들어갈 수도 있고 뭐, 그렇답니다.</p>
+      <button class="toast-check teritary-button" type="button" style="width:100%">쿠키 승인(안 볼게요)</button>
+      <button class="toast-close js-close" type="button"><i class="icon-close"></i></button>
+    </aside>
+
+    <header class="header" role="banner">
+      <a class="header-logo" href="/">수줍은유아이</a>
+      <div class="header-user">
+        <!-- 로그인 전 -->
+        <!-- <a href="" class="header-user-link">로그인</a>
+        <a href="" class="header-user-link">로그아웃</a>
+        <a href="" class="header-user-link --join">시작하기</a>
+        <a href="" class="header-user-cart">카트 <i class="header-user-cart-qty">0</i></a>
+        <a href="" class="header-user-link">정보수정</a> -->
+        <style>
+        .header-user-search-form {display:none;background:crimson;padding:10% 0 0 0;box-sizing:border-box;position:fixed;left:0;right:0;top:0;bottom:0}
+        .header-user-search-form .textfield {max-width:1080px;margin:0 auto;}
+        .header-user-search-form input {background:none;padding-left:0;border:none;border-bottom:5px solid rgba(255, 255, 255, .4);font-size:2rem;color:rgba(255, 255, 255, .4);}
+        .header-user-search-form input::placeholder {color:inherit;}
+        .header-user-search-option {max-width:1080px;margin:4rem auto;}
+        .header-user-search-option-heading {margin:0 0 1rem;font-size:1.25rem;color:rgba(255, 255, 255, .4);}
+        .header-user-search-option a {padding:.25rem 0;color:#fff;}
+        </style>
+        <div class="header-user-search">
+          <a class="js-accordion" href="#"><i class="material-icons">search</i></a>
+          <form class="header-user-search-form" action="">
+            <!-- <p>수줍이와(과) 일치하는 검색결과가 없습니다.</p> -->
+            <fieldset class="textfield">
+              <legend class="filter-fieldset-legend" aria-hidden="true">검색하기</legend>
+              <label class="textfiled-label" for="help-search" aria-hidden="true">검색하기</label>
+              <input class="textfield-input" type="search" id="help-search" placeholder="문제를 설명해 주세요.">
+              <button class="textfield-clear" type="button" title="clear search input">
+                <i class="icon-close"></i>
+              </button>
+            </fieldset>
+            <section class="header-user-search-option">
+                <h2 class="header-user-search-option-heading">당신을 위한 추천</h2>
+                <a class="search-result-item" href="#">검색어는 어떻게 입력하나요?</a>
+                <a class="search-result-item" href="#">검색어는 어떻게 입력하나요?</a>
+                <a class="search-result-item" href="#">검색어는 어떻게 입력하나요?</a>
+              </section>
+          </form>
+        </div>
+
+        <div class="header-user-notification">
+          <a class="header-user-notification-trigger" href="#" aria-haspopup="true" aria-expanded="false">
+            <i class="material-icons">notifications_none</i>
+            <em>new</em>
+          </a>
+          <menu class="header-user-notification-empty">
+            <p>최근 알림 메세지가 없습니다.</p>
+          </menu>
+        </div>
+
+        <!-- 마우스 오버 시, 클릭 시 -->
+        <!-- dropdown toggle menu item-->
+        <div class="header-user-account">
+          <a class="header-user-account-trigger" href="#" aria-haspopup="menu" aria-expanded="false"><img src="" alt=""/><i class="icon-caret"></i></a>
+          <menu class="header-user-account-menu">
+            <h6 class="header-user-account-menu-heading">Dropdown header</h6>
+            <a class="header-user-account-menu-item" href="" disabled>프로필 관리</a>
+            <a class="header-user-account-menu-item is-active" href="">고객센터</a>
+            <hr />
+            <a class="header-user-account-menu-item" href="">수줍이에서 로그아웃</a>
+          </menu>
+        </div>
+      </div>
+      <nav class="navigation" role="navigation">
+        <button class="navigation-toggle js-toggle js-accordion" type="button"><i class="icon-hamberger"></i></button>
+        <ul>
+          <!-- a태그 안에 a태그 -->
+          <li class="js-hover-trigger">
+            <a route="" href="#"> 페이지<i class="icon-caret"></i></a>
+            <div class="bg"></div>
+            <menu>
+              <a href="#profile">유저 프로필</a>
+              <a href="#cart">카트</a>
+              <a href="#cake">케이크</a>
+              <a href="#terms">약관</a>
+              <a href="#product">상품</a>
+              <!-- <a href="#pricing">프라이싱</a> -->
+              <a href="#help">고객센터</a>
+            </menu>
+          </li>
+          <li>
+            <a href="#post">블로그</a>
+          </li>
+          <li>
+            <a href="#contact">연락</a>
+          </li>
+          <li>
+            <a href="#design"><em>디자인시스템</em></a>
+          </li>
+          <li>
+        <div class="switch-wrap" style="display:inline-block">
+            <span class="switch --darkmode js-darkmode">
+              <!-- <input type="checkbox" id="darkmode" name="" role="switch" value="off" />
+              <label class="" for="darkmode">Darkmode</label> -->
+              <img src="/public/images/u1F31E-sunwithface.svg" class="day" style="width: 32px;" alt="" />
+              <img src="/public/images/u1F31A-newmoonwithface.svg" class="night" style="width: 32px;" alt="" />
+            </span>
+            <script>
+              const darkmodeButton = document.querySelector('.js-darkmode');
+              darkmodeButton.addEventListener('click', () => {
+                document.body.classList.toggle('darkmode');
+                
+                const isDarkmode = document.body.classList.contains('darkmode');
+                if(isDarkmode) {
+                  localStorage.setItem('theme', 'darkmode');
+                } else {
+                  localStorage.removeItem('theme');
+                  // localStorage.clear();
+                }
+
+              });
+              const getTheme = localStorage.getItem('theme');
+              document.body.classList.remove('darkmode');
+              document.body.classList.add(getTheme);
+            </script>
+          </div>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div id="view"></div>
+
+    <aside class="scroll">
+      <p class="scroll-indicator" aria-hidden="true">스크롤하세요</p>
+      <button class="scroll-bottom js-to-bottom" type="button">아래로</button>
+      <button class="scroll-top icon-button js-to-top" type="button" name="top"><i class="icon-arrow2"></i> <b aria-hidden="true">맨위로</b></button>
+    </aside>
+
+    <section class="banner">
+      <p class="banner-text">수줍이에는 처음 방문이신가요?</p>
+      <button class="secondary-button" type="button">이용방법을 알아보세요!</button>
+    </section>
+
+    <footer class="footer" role="contentinfo">
+      <div class="footer-background"></div>
+      <h1 class="footer-heading" aria-hidden="true">헤딩</h1>
+      <form class="footer-newsletter">
+        <p class="footer-newsletter-heading">뉴스레터를 정기구독하세요.</p>
+        <p class="footer-newsletter-description">사실 그런 건 없고 유아이 콤포넌트 입니다.</p>
+        <div class="footer-newsletter-field textfield">
+          <input class="textfield-input" placeholder="Enter Your Email.." />
+          <button class="textfield-button primary-button" type="submit">신청하기</button>
+        </div>
+      </form>
+      <nav class="footer-sitemap">
+        <h1 class="footer-sitemap-heading" aria-hidden="true">하단 사이트맵 <small aria-hidden="true">More Articles by themes</small></h1>
+        <div class="footer-sitemap-item">
+          <h2 class="footer-sitemap-item-heading">포트폴리오</h2>
+          <a class="footer-sitemap-item-link" href="#">교통버스</a>
+          <a class="footer-sitemap-item-link" href="#">택시</a>
+          <a class="footer-sitemap-item-link" href="#">지하철차량</a>
+          <a class="footer-sitemap-item-link" href="#">광고버스</a>
+          <a class="footer-sitemap-item-link" href="#">택배차량</a>
+          <a class="footer-sitemap-item-link" href="#">버스승강장</a>
+        </div>
+        <div class="footer-sitemap-item">
+          <h2 class="footer-sitemap-item-heading">페이지</h2>
+          <a class="footer-sitemap-item-link" href="#">포스트</a>
+          <a class="footer-sitemap-item-link" href="#">제품 상세</a>
+          <a class="footer-sitemap-item-link" href="#">로그인</a>
+          <a class="footer-sitemap-item-link" href="#">회원가입</a>
+        </div>
+        <div class="footer-sitemap-item">
+          <h2 class="footer-sitemap-item-heading">짧은 코드</h2>
+          <a class="footer-sitemap-item-link" href="#">표Table</a>
+          <a class="footer-sitemap-item-link" href="#">투두리스트</a>
+          <a class="footer-sitemap-item-link" href="#">파일첨부</a>
+        </div>
+        <div class="footer-sitemap-item">
+          <h2 class="footer-sitemap-item-heading">-</h2>
+        </div>
+      </nav>
+      <address class="footer-address">
+        <span class="footer-address-logo"><img src="/public/images/common/logo.png" alt="수줍음"/></span>
+        <div class="footer-address-social">
+          <h5 class="footer-address-social-heading" aria-hidden="false">소셜 미디어 링크</h5>
+          <a class="footer-address-social-link" href="https://www.facebook.com/soojubm" title="facebook" target="_blank"><span class="">Facebook</span><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+          <a class="footer-address-social-link" href="#" title="instagram" target="_blank"><span class="">Instagram</span><i class="fa fa-instagram" aria-hidden="true"></i></a>
+          <a class="footer-address-social-link" href="https://kr.pinterest.com/soojubm" title="pinterest" target="_blank"><span class="">Pinterest</span><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+          <a class="footer-address-social-link" href="https://github.com/soojubm" title="github" target="_blank"><span class="">Github</span><i class="fa fa-github" aria-hidden="true"></i></a>
+        </div>
+        <div class="footer-address-info">
+          스튜디오 수줍음(주)<br />
+          서울시 강서구 화곡로 1818, 3층 | 대표 이경수 000-00-0000 | 대표전화 02-1234-5678<br />
+          통신판매업 2018-서울강서구-1234
+          <!-- <dl>
+            <dt>핸드폰</dt> <dd>+82 10 3121 7045</dd>
+            <dt>이메일</dt> <dd>soojubm@gmail.com</dd>
+          </dl> -->
+          <abbr title="phone"></abbr>
+        </div>
+        <!-- <section class="footer-link">
+          <h5 class="footer-link-heading" aria-hidden="false">약관 등등</h5>
+          <a class="footer-link-item" href="https://www.facebook.com/soojubm"  title="facebook" target="_blank"><span class="">이용약관</span><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+          <a class="footer-link-item" href="#" title="instagram" target="_blank">개인정보취급방침</a>
+          <a class="footer-link-item" href="https://kr.pinterest.com/soojubm" title="pinterest" target="_blank">이메일무단수집거부</a>
+        </section> -->
+        <small class="footer-copyright">© 2019 soojubm. ALL RIGHTS RESERVED.</small>
+      </address>
+    </footer>
+  <script type="text/javascript" src="/bundle.js"></script></body>
+</html>

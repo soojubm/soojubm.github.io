@@ -1,12 +1,10 @@
 <main class="design">
-    <!-- <h1 class="kor">디자인시스템<br />혹은<br />스타일가이드</h1>
-    <h1 class="eng">Design System<br />& <br />Style Guide<br /></h1> -->
-  <header></header>
-
+  <header class="design-head">
+  </header>
   <section class="design-body">
     <article class="design-article grayscale">
-      <h1 class="design-body-heading">Colors</h1>
-      <p class="design-body-description">칼라칼라컬러컬러</p>
+      <h1 class="design-article-heading">Colors</h1>
+      <p class="design-article-description">칼라칼라컬러컬러</p>
       <section class="color">
         <figure class="color-item --gray100">
           <div></div>
@@ -54,8 +52,8 @@
     </article>
 
     <article class="design-article">
-      <h1 class="design-body-heading">Avatars</h1>
-      <p class="design-body-description">사진을 사용할 때와 아이콘을 사용할 때 두 가지의 아바타를 사용해요. 아이콘 타입(48px)과 포토 타입이 있는데 4가지는 너무 많아요 흑흑.</p>
+      <h1 class="design-article-heading">Avatars</h1>
+      <p class="design-article-description">사진을 사용할 때와 아이콘을 사용할 때 두 가지의 아바타를 사용해요. 아이콘 타입(48px)과 포토 타입이 있는데 4가지는 너무 많아요 흑흑.</p>
       <a href="" class="avatar --large --photo">
         <img src="/public/images/caleb-woods-182648-unsplash.jpg" alt="">
       </a>
@@ -71,8 +69,20 @@
     </article>
 
     <article class="design-article">
-      <h1 class="design-body-heading">Breadcrumbs</h1>
-      <p class="design-body-description">페이지 레벨이 3단계 이상일 때 사용해요. 홈 아이콘 지양하는 게 깔끔해 보이는 것 같아요. 모바일에서 사용하지 않아요.</p>
+      <h1 class="design-article-heading">Emphasis</h1>
+      <p class="design-article-description">수줍이는 이렇게 강조해요. 특정 단어를 강조하기 보담 시선을 끄는 카피를 선택하는 안목을 기르세요.</p>
+      <ol class="list-sample">  
+        <li>수줍이는 <em>이렇게</em> 강조해요. <small>링크 텍스트로 오인될 수 있으니 주의해요.</small></li>
+        <li>수줍이는 <b>이렇게</b> 강조해요. <small>하나의 폰트 패밀리만 사용하기 때문에 볼드로 강조할 수 없어요.</small></li>
+        <li>수줍이는 <u>이렇게</u> 강조해요. <small>언더라인으로 강조해요. 못 생겼으니 고쳐 써야 겠지요?</small></li>
+        <li>수줍이는 <i style="font-style:italic;">이렇게</i> 강조해요. <small>한글에는 이탤릭의 개념이 없으니 주의해요.</small></li>
+        <li>수줍이는 <sup>이렇게</sup> 강조해요. <small>수치를 표현할 때만 사용하세요.</small></li>
+      </ol>
+    </article>
+
+    <article class="design-article">
+      <h1 class="design-article-heading">Breadcrumbs</h1>
+      <p class="design-article-description">페이지 레벨이 3단계 이상일 때 사용해요. 홈 아이콘 대신 텍스트를 사용하면 훨씬 깔끔해요. 모바일에서 사용하지 않아요.</p>
       <nav class="breadcrumbs">
         <a class="breadcrumbs-item breadcrumbs-home" href="/"><span aria-hidden="true">홈</span>Home</a>
         <a class="breadcrumbs-item " href="#">페이지 이름</a>
@@ -81,8 +91,8 @@
     </article>
 
     <article class="design-article">
-      <h1 class="design-body-heading">Lists</h1>
-      <p class="design-body-description">텍스트 리스트인 경우에 한정해서 리스트 태그로 마크업히세요. 왜냐하면 모든 게 리스트가 될 수 있다요용용</p>
+      <h1 class="design-article-heading">Lists</h1>
+      <p class="design-article-description">군집을 이루는 엘리먼트라면 모두 리스트로 취급할 수 있으니 주의해요. 수줍이는 리스트업된 텍스트 엘리먼트에만 리스트 태그로 마크업해요.</p>
       <ul class="list-sample">
         <li>unordered list, level 1
           <ul>
@@ -105,9 +115,9 @@
     </article>
 
     <!-- <article class="design-article">
-      <h1 class="design-body-heading">Tablist</h1>
-      <p class="design-body-description">Filtering, Sorting과 동일한 마크업 및 그루핑이 가능한데요?<br />버튼으로 마크업하는 것이 좋을지, 라디오/체크박스로 마크업하는 것이 좋을지?<br />가로형, 세로형, 액티브: 언더라인, 보더(sm, md), 백그라운드, 포인트</p>
-      <p class="design-body-description">데이터 비교 시 적합치 않아</p>
+      <h1 class="design-article-heading">Tablist</h1>
+      <p class="design-article-description">Filtering, Sorting과 동일한 마크업 및 그루핑이 가능한데요?<br />버튼으로 마크업하는 것이 좋을지, 라디오/체크박스로 마크업하는 것이 좋을지?<br />가로형, 세로형, 액티브: 언더라인, 보더(sm, md), 백그라운드, 포인트</p>
+      <p class="design-article-description">데이터 비교 시 적합치 않아</p>
       <nav class="tablist --vertical" style="margin-top:1rem" role="tablist">
         <div class="tablist-active"></div>
         <button class="tablist-tab is-active" role="tab" aria-selected="true" data-index="1">웹사이트 <i class="tablist-tab-badge">4</i></button>
@@ -118,8 +128,8 @@
     </article> -->
 
     <article class="design-article">
-      <h1 class="design-body-heading">Snackbars</h1>
-      <p class="design-body-description">긍정 상황에 사용합니다. 부정 혹은 경고, 주의, 성공, 알림 등을 추가할까요?</p>
+      <h1 class="design-article-heading">Snackbars</h1>
+      <p class="design-article-description">긍정 상황에 사용합니다. 부정 혹은 경고, 주의, 성공, 알림 등을 추가할까요?</p>
       <div class="snackbar">
         <!-- <i class="note-icon material-icons">snackbars</i> -->
         <span class="snackbar-text"> <b>snackbar</b>: This includes the <a href="">global HTML attributes</a>.</span>
@@ -132,8 +142,8 @@
     </article>
 
     <article class="design-article">
-      <h1 class="design-body-heading">Tooltip</h1>
-      <p class="design-body-description">툴팁의 위치를 지정할 수 있어야 하겠죠? 아래에서만 나와도 무방하겠어요.</p>
+      <h1 class="design-article-heading">Tooltip</h1>
+      <p class="design-article-description">툴팁의 위치를 지정할 수 있어야 하겠죠? 아래에서만 나와도 무방하겠어요.</p>
       <aside class="tooltip">
         <span class="tooltip-target">마우스 오버 <i class="material-icons">error_outline</i></span>
         <div class="tooltip-content">
@@ -152,8 +162,8 @@
         .dd {overflow:hidden;width:100%;}
         .dd button {float:left;}
       </style>
-      <h1 class="design-body-heading">Buttons</h1>
-      <p class="design-body-description">아톰Atom 단위의 컴포넌트는 클래스 네이밍 없이 자체 엘리먼트에 스타일링 된 요소들로 한정하고 리액트에서 스타일드 컴포넌트 단위가 된다.</p>
+      <h1 class="design-article-heading">Buttons</h1>
+      <p class="design-article-description">아톰Atom 단위의 컴포넌트는 클래스 네이밍 없이 자체 엘리먼트에 스타일링 된 요소들로 한정하고 리액트에서 스타일드 컴포넌트 단위가 된다.</p>
       <div>
         <h2>Solid Button</h2>
         <button class="primary-button" type="button">Primary</button>
@@ -174,6 +184,7 @@
         <button class="ghost-button" type="button" disabled>Ghost</button>
       </div>
       <div>
+        <h2>small buttons</h2>
         <button class="primary-button --small" type="button">Filled</button>
         <button class="secondary-button --small" type="button">Secondary</button>
         <button class="teritary-button --small" type="button">Teritary</button>
@@ -187,6 +198,7 @@
         <button class="teritary-button --small" type="button">Button Group</button>
       </div>
       <div class="dd" role="group">
+        <h2>icon buttons</h2>
         <button class="icon-button" type="button"><i class="icon-person"></i></button>
         <button class="icon-button" type="button"><i class="icon-search"></i></button>
         <button class="icon-button" type="button"><i class="icon-caret"></i></button>
@@ -200,8 +212,8 @@
     </article>
 
     <article class="design-article">
-      <h1 class="design-body-heading">Checkbox</h1>
-      <p class="design-body-description">checkbox, checkall, intermediate</p>
+      <h1 class="design-article-heading">Checkboxes</h1>
+      <p class="design-article-description">checkbox, checkall, intermediate</p>
       <div class="checkbox">
         <input type="checkbox" id="line01" value="" checked />
         <label for="line01">Everyday is like sunday</label>
@@ -222,8 +234,8 @@
     </article>
 
     <article class="design-article">
-      <h1 class="design-body-heading">Radio</h1>
-      <p class="design-body-description">description? addon? container</p>
+      <h1 class="design-article-heading">Radio</h1>
+      <p class="design-article-description">description? addon? container</p>
       <div class="radio">
         <input type="radio" id="gender-man" name="gender" value="" checked>
         <label for="gender-man">Video kills the radio button</label>
@@ -239,8 +251,8 @@
       </div>
     </article>
     <article class="design-article">
-      <h1 class="design-body-heading">Switch</h1>
-      <p class="design-body-description">on/off 설정 등에 사용합니다.</p>
+      <h1 class="design-article-heading">Switch</h1>
+      <p class="design-article-description">on/off 설정 등에 사용합니다.</p>
       <span class="switch" style="margin: 0 0 .75rem 0;">
         <input type="checkbox" id="switch1" name="" role="switch" value="on" checked />
         <label for="switch1">Receive weekly newsletter</label>
@@ -251,8 +263,8 @@
       </span>
     </article>
     <article class="design-article">
-      <h1 class="design-body-heading">Range</h1>
-      <p class="design-body-description">체크박스</p>
+      <h1 class="design-article-heading">Range</h1>
+      <p class="design-article-description">체크박스</p>
 
       <div class="range">
         <label for="">숙박 인원</label>
@@ -276,8 +288,8 @@
     </article>
 
     <article class="design-article">
-      <h1 class="design-body-heading">Textfield</h1>
-      <p class="design-body-description">Input text, Textarea, Select, with Icon, with Unit, with Button</p>
+      <h1 class="design-article-heading">Textfield</h1>
+      <p class="design-article-description">Input text, Textarea, Select, with Icon, with Unit, with Button</p>
       <div class="textfield is-invalid">
         <label class="textfield-label" for="search1">레이블</label>
         <!-- <i class="textfiled-icon">a</i> -->
@@ -310,8 +322,8 @@
     </article>
 
     <article class="design-article">
-      <h1 class="design-body-heading">File Uploader</h1>
-      <p class="design-body-description">파일 업로드</p>
+      <h1 class="design-article-heading">File Uploader</h1>
+      <p class="design-article-description">파일 업로드</p>
       <!-- 파일 콘텐츠는 url 매개변수로 보낼 수 없다. 여러 조각-->
       <form class="file" method="" enctype="multipart/form-data">
         <!-- <h3 class="file-heading">프로필 사진</h3> -->
@@ -338,8 +350,8 @@
 
 
     <article class="design-article">
-      <h1 class="design-body-heading">Accordions</h1>
-      <p class="design-body-description">질의응답은 물론이거니와 아코디언 간단한 공지사항 등의 게시글에도 사용할 수 있어요.</p>
+      <h1 class="design-article-heading">Accordions</h1>
+      <p class="design-article-description">질의응답에 주로 사용해요. 공지사항 정도의 간단한 게시글에서도 사용할 수 있으나 그 이상의 경우에는 다른 유아이를 고민해봐요.</p>
       <button class="components-trigger js-accordion" type="button" aria-expanded="false"><i class="icon-plus"></i> 투두 리스트: 바닐라 자바스크립트로 만드는 투두 리스트</button>
       <article class="components-panel">
         안녕
@@ -351,8 +363,8 @@
     </article>
 
     <article class="design-article">
-      <h1 class="design-body-heading">Container Components</h1>
-      <p class="design-body-description">특히 리액트에서는 컨테이너 컴포넌트의 활용이 중요항다.</p>
+      <h1 class="design-article-heading">Container Components</h1>
+      <p class="design-article-description">특히 리액트에서는 컨테이너 컴포넌트의 활용이 중요항다.</p>
       <div style="margin:1rem 0;padding:1rem 1.5rem 1.5rem;box-sizing:border-box;background:crimson;color:#fff;">
         <p>타이틀</p>
         <p>margin:4rem 0; padding:1rem 1.5rem 1.5rem;</p>
@@ -373,8 +385,8 @@
           <input class="textfield-input" type="text" placeholder="이름을 입력하세요.">
         </div>
         <footer class="action" style="margin-top:1rem;">
-          <button class="primary-button" type="submit" style="float:right;margin-left:.75rem;">전송하기</button>
-          <button class="secondary-button" type="button" style="float:right;">취소하기</button>
+          <button class="primary-button" type="submit">전송하기</button>
+          <button class="secondary-button" type="button" style="margin-left:8px;">취소하기</button>
         </footer>
       </form>
       <div style="margin:1rem 0;padding:1rem 1.5rem 1.5rem;box-sizing:border-box;border:1px solid #eee;">
@@ -406,8 +418,8 @@
     </article>
 
     <article class="design-article">
-      <h1 class="design-body-heading">Steps</h1>
-      <p class="design-body-description">단계다단계</p>
+      <h1 class="design-article-heading">Steps</h1>
+      <p class="design-article-description">단계다단계</p>
       <div class="step">
         <div class="step-item is-active">
           <i class="step-item-icon material-icons">email</i>
@@ -427,8 +439,8 @@
     </article>
 
     <article class="design-article">
-      <h1 class="design-body-heading">Table</h1>
-      <p class="design-body-description">페이지네이션의 첫 페이지와 마지막 페이지는 더블 화살표 아이콘보다 총 페이지 수를 노출 방식을 사용한다.</p>
+      <h1 class="design-article-heading">Table</h1>
+      <p class="design-article-description">페이지네이션의 첫 페이지와 마지막 페이지는 더블 화살표 아이콘보다 총 페이지 수를 노출 방식을 사용한다.</p>
       <table>
         <caption>히라가나 오십음도</caption>
         <thead>
@@ -549,7 +561,7 @@
     </article>
 
     <article class="design-article">
-      <h1 class="design-body-heading">Graph</h1>
+      <h1 class="design-article-heading">Graph</h1>
       <p>옿이</p>
       <div class="graph">
         <div class="graph-heading">1월 26일 <em>컴퓨터통신 분야</em>에서는<br><em>7백명의 지식iN</em>들이 답변하셨습니다.</div>
@@ -583,8 +595,8 @@
 
 
     <article class="design-article">
-      <h1 class="design-body-heading">Timeline or Feed</h1>
-      <p class="design-body-description">왼쪽에 아바타가 있는 경우 항상 사용할 수 있게 만들기.</p>
+      <h1 class="design-article-heading">Timeline or Feed</h1>
+      <p class="design-article-description">왼쪽에 아바타가 있는 경우 항상 사용할 수 있게 만들기.</p>
       <section class="timeline">
         <h1 class="timeline-heading">1회차 주문 현황 (임시 텍스트)</h1>
         <div class="timeline-item payment --complete">
@@ -623,35 +635,29 @@
     </article>
 
     <article class="design-article typography">
-        <style>
-          .typography {}
-          .typography h6 {margin:0 0 .25rem 0;font-size:12px;}
-          .typography div {margin:1rem 0 1.5rem 0;}
-        </style>
-        <h1 class="design-body-heading typography-heading">Typhography</h1>
-        <div>
-          <h6>헤드라인</h6>
-          <h1 class="typography-headline">헤드라인</h1>
-        </div>
-  
-        <div>
-          <h6>헤딩</h6>
-          <!-- <div>페이지 타이틀</div> -->
-          <h1 class="typography-title">다람쥐 헌 쳇바퀴에 타고파.</h1>
-        </div>
-        <div>
-          <h6>서브헤드</h6>
-          <h1 class="typography-subhead">다람쥐 헌 다람쥐 없다.</h1>
-        </div>
-        <div>
-          <h6>패러그라프</h6>
-          <p class="typography-paragraph">서점은 거대한 파라솔로 뒤덮인 것처럼 어두침침했다. 여기엔 수많은 책들이 있다. 책들은 W의 아버지처럼 떄리지 않는다. 브룩스 일당처럼 괴롭히거나 "같이 할래?"라는 달콤한 말로 기만하지도 않느낟. 책들은 라디오에서 흘러 나오는 선율처럼 우리에게 속삭인다. 파라솔 그늘 밑에서도 넌 혼자가 아니라고.</p>
-        </div>
-        <div>
-          <h6>캡션</h6>
-          <h6 class="typography-caption">캡션 이��지 설명</h6>
-        </div>
-      </article>
+      <h1 class="design-article-heading typography-heading">Typhography</h1>
+      <div>
+        <h6>헤드라인</h6>
+        <h1 class="typography-headline">부끄러우니까 보지마요.</h1>
+      </div>
+      <div>
+        <h6>헤딩</h6>
+        <!-- <div>페이지 타이틀</div> -->
+        <h1 class="typography-title">부끄러우니까 보지마요.</h1>
+      </div>
+      <div>
+        <h6>서브헤드</h6>
+        <h1 class="typography-subhead">부끄러우니까 보지마요.</h1>
+      </div>
+      <div>
+        <h6>패러그라프</h6>
+        <p class="typography-paragraph">서점은 거대한 파라솔로 뒤덮인 것처럼 어두침침했다. 여기엔 수많은 책들이 있다. 책들은 W의 아버지처럼 떄리지 않는다. 브룩스 일당처럼 괴롭히거나 "같이 할래?"라는 달콤한 말로 기만하지도 않느낟. 책들은 라디오에서 흘러 나오는 선율처럼 우리에게 속삭인다. 파라솔 그늘 밑에서도 넌 혼자가 아니라고.</p>
+      </div>
+      <div>
+        <h6>캡션</h6>
+        <h6 class="typography-caption">캡션 이��지 설명</h6>
+      </div>
+    </article>
 
       <i class="icon-check1"></i>
       <span class="letter-piece"><i>스</i></span>

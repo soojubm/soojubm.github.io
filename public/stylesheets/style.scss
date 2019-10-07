@@ -263,10 +263,6 @@ ol.list-sample li ol li:before {content: counter(sub-list-item,lower-alpha) '.';
 	display: block;
 }
 
-.design-article {margin:0 0 6rem 0;}
-.design-body-heading {margin:0 0 .5rem 0;font-size:1.25rem;}
-.design-body-description {margin:0 0 1.5rem 0;line-height:1.6;}
-
 .user-card {display:block;padding:0 0 10rem 0;border:1px solid #eee;position:relative;}
 .user-card-background {background:#000;position:absolute;left:0;right:0;top:0;bottom:5rem;}
 .user-card .avatar {position:absolute;left:1rem;top:3rem;}
