@@ -1,8 +1,8 @@
 
-.login {max-width:400px;margin:0 auto;padding:4rem 10%;position:relative;}
+.login {max-width:400px;margin:0 auto;padding:5rem 10% 10rem;position:relative;}
 .login-figure {width:50%;position:absolute;left:0;top:0;}
-.login-heading {font-size:1rem;}
-.login-description {font-size:1.5rem;}
+.login-heading {font-size:2rem;text-indent:-2px;}
+.login-description {margin:.25rem 0 2rem 0;font-size:1rem;}
 // separator
 .login-divider {margin:12px auto;text-align:center;position:relative;z-index:1;}
 .login-divider:before {content:'';display:block;width:100%;height:1px;background:#e9e9e9;position:absolute;top:50%;transform:translateY(-1px);}

@@ -35,6 +35,6 @@ body.darkmode {
 @media (prefers-color-scheme: light) {
   .themed {
     background: white;
-    color: black;
+    color: $gray80;
   }
 }

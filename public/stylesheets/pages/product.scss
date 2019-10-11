@@ -1,4 +1,4 @@
-.product {max-width:1280px;margin:10rem auto 10rem;position:relative;}
+.product {max-width:1280px;margin:5rem auto 10rem;position:relative;}
 .product:before {content:'';display:block;height:800px;background:$gray10;position:absolute;left:10%;right:-50%;top:-5rem;z-index:-1;}
 .product-image {width:480px;height:480px;position:absolute;left:50%;margin-left:-240px;}
 .product-iamge-list {position:absolute;}
@@ -18,8 +18,16 @@
 .product-order-discount {margin:1rem 0 1rem 0;background:#f9f9f6;border:1px solid #e9e9e6;text-align:center;padding:8px 0;}
 .product-order-size {margin:1.5rem 0;}
 .product-order-size-heading {margin:.5rem 0;font-size:12px;}
-.product-order-size-item {width:32px;height:32px;border-radius:$radius400;margin:0 8px 0 0;border:1px solid $gray40;font-size:12px;}
-.product-order-size-item.is-selected {border-color:$color-primary;color:$color-primary;}
+.product-order-size-item {width:32px;height:32px;border-radius:$radius400;margin:0 8px 0 0;border:1px solid $gray40;font-size:12px;position:relative;}
+.product-order-size-item.is-selected:before {    content: "";
+	display: block;
+	border: 1px solid $color-primary;
+	position: absolute;
+	left: 2px;
+	right: 2px;
+	top: 2px;
+	bottom: 2px;}
+// .product-order-size-item.is-selected {border-color:$color-primary;color:$color-primary;}
 .product-order-color {margin:1.5rem 0;}
 .product-order-color-heading {margin:.5rem 0;font-size:12px;}
 .product-order-color-item {width:32px;height:32px;border-radius:$radius400;margin:0 8px 0 0;position:relative;}
@@ -36,8 +44,8 @@
 .product-order-price-label {float:left;line-height:40px;color:$gray80;text-transform:uppercase;letter-spacing:10px;}
 .product-order-price-value {float:right;font-size:21px;color:$gray80;line-height:40px;text-align:right;}
 .product-order-control {margin:6rem 0 0 0;position:relative;}
-.product-order-control-cart {float:right;min-width:22%;}
-.product-order-control-purchase {width:75%;}
+.product-order-control-cart {float:right;min-width:16%;}
+.product-order-control-purchase {width:80%;}
 .product-navigation {margin-top:3rem;margin-bottom:-3rem;}
 .product-navigation a {display:inline-block;margin:0 16px;padding:4px;}
 .product-navigation a:first-child {margin-left:0;}
@@ -61,18 +69,19 @@
 .product-quickorder-controls-purchase {width:100%;}
 
 @media (max-width:$breakpoint-medium) {
+	.product {padding:0 5%}
 	.product:before {display:none;}
 	.product-image {margin-left:0;left:0;}
 	.product-image:before {content:'';display:block;background:$gray10;position:absolute;left:0;right:-240px;top:-80px;bottom:240px;z-index:-1;}
-	.product-info {width:40%;left:60%;}
+	.product-info {left:55%;}
 	.product-info ol {display:none;}
 	.product-info b {display:none;}
-	.product-order {width:40%;margin:0 0 0 60%;padding-top:140px;}
+	.product-order {width:40%;margin:0 0 0 55%;padding-top:140px;}
 }
 
 
 @media (max-width:$breakpoint-small) {
-	.product {max-width:100%;margin-top:3rem;padding:0 5%;}
+	.product {max-width:100%;margin-top:3rem;}
 	.product-image:before {top:-320px}
 	.product-info {width:100%;padding:4rem 0;text-align:center;position:static;left:auto;top:auto;}
 	.product-info-name {width:100%;position:static;left:auto;top:auto;}
@@ -86,13 +95,14 @@
 
 
 
-.review {margin:2rem 0;position:relative;}
-.review-sorting {margin:.5rem 0 1rem 0;padding:.75rem 0;padding-bottom:150px;border-bottom:1px solid $gray20;}
-.review-sorting button {margin:0 24px 0 0;color:rgba(0,0,0,.4);position:relative;}
+.review {position:relative;}
+.review-sorting {border-bottom:1px solid $gray20;}
+.review-sorting button {margin:0 !important;color:$gray40;position:relative;}
+.review-sorting button:before {content:'';display:inline-block;width:2px;height:2px;background:$gray40;margin:0 8px 0 0;vertical-align:middle;}
 .review-sorting button.is-active {color:$gray80;}
-.review-sorting button.is-active:before {content:'';display:inline-block;width:10px;height:4px;margin:0 8px 0 0;border-left:2px solid;border-bottom:2px solid;border-color:$gray80;vertical-align:3px;transform:rotate(-45deg);}
+.review-sorting button.is-active:before {width:10px;height:4px;background:none;border-left:2px solid;border-bottom:2px solid;border-color:$gray80;vertical-align:3px;transform:rotate(-45deg);}
 .review-sorting div {display:inline-block;}
-.review-filter {position:absolute;right:0;top:40px;}
+.review-filter {font-size:12px;position:absolute;right:0;top:0;}
 
 
 [role=group] {}

@@ -1,8 +1,8 @@
 .topbanner {max-width:800px;margin:0 auto;padding:1rem 2rem;box-sizing:border-box;text-align:center;position:relative;}
-.topbanner-background {max-width:1920px;height:100%;background:$gray10;margin:0 auto;border-bottom:1px solid $gray20;position:absolute;left:-500%;right:-500%;top:0;bottom:0;z-index:2;}
+.topbanner-background {max-width:1920px;height:100%;background:$gray10;margin:0 auto;/*border-bottom:1px solid $gray20;*/position:absolute;left:-500%;right:-500%;top:0;bottom:0;z-index:2;}
 .topbanner-heading {display:none;margin: 0 0 .5rem 0;position:relative;z-index:2;}
 .topbanner-body {display:inline-block;position:relative;z-index:2;}
-.topbanner-cta {position:relative;z-index:2;}
+.topbanner-cta {margin:0 0 0 2rem;position:relative;z-index:2;}
 .topbanner-close {position:absolute;right:0;top:50%;z-index:2;transform:translateY(-50%);}
 .topbanner-checkbox {display:none;}
 .topbanner label {position:relative;z-index:2;}

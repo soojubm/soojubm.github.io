@@ -4,21 +4,28 @@
   <section class="design-body">
     <article class="design-article grayscale">
       <h1 class="design-article-heading">Colors</h1>
-      <p class="design-article-description">칼라칼라컬러컬러</p>
+      <p class="design-article-description">칼라칼라컬러컬러🐣</p>
       <section class="color">
         <figure class="color-item --gray100">
           <div></div>
-          <figcaption>gray100</figcaption>
+          <figcaption>
+            <span>gray100</span>
+            <b>#ffffff</b>
+          </figcaption>
         </figure>
         <figure class="color-item --gray200">
           <div></div>
+          <figcaption>gray100</figcaption>
+        </figure>
+        <figure class="color-item --gray400">
+          <div></div>
           <figcaption>gray400</figcaption>
         </figure>
-        <figure class="color-item --gray300">
+        <figure class="color-item --gray600">
           <div></div>
           <figcaption>gray600</figcaption>
         </figure>
-        <figure class="color-item --gray400">
+        <figure class="color-item --gray800">
           <div></div>
           <figcaption>gray800</figcaption>
         </figure>
@@ -51,7 +58,10 @@
       </section>
     </article>
 
-    <article class="design-article">
+
+    
+
+    <article class="design-article js-scroll-animation">
       <h1 class="design-article-heading">Avatars</h1>
       <p class="design-article-description">사진을 사용할 때와 아이콘을 사용할 때 두 가지의 아바타를 사용해요. 아이콘 타입(48px)과 포토 타입이 있는데 4가지는 너무 많아요 흑흑.</p>
       <a href="" class="avatar --large --photo">
@@ -59,6 +69,7 @@
       </a>
       <a href="" class="avatar --medium --photo">
         <img src="/public/images/caleb-woods-182648-unsplash.jpg" alt="">
+        <!-- <span class="avatar-badge"></span> -->
       </a>
       <a href="" class="avatar --photo">
         <img src="/public/images/caleb-woods-182648-unsplash.jpg" alt="">
@@ -68,7 +79,51 @@
       </a>
     </article>
 
-    <article class="design-article">
+
+    <article class="design-article js-scroll-animation grayscale">
+      <h1 class="design-article-heading">Cards</h1>
+      <p class="design-article-description">하나의 마크업으로 가로형 세로형이 가능하도록...</p>
+      <div class="card" style="width:320px;margin:2rem 0;">
+        <figure class="card-byline"><img src="" alt=""><figcaption class="card-byline-name">수줍이</figcaption></figure>
+        <figure class="card-thumbnail"><img alt=""></figure>
+        <h3 class="card-title">카드 유아이</h3>
+        <!-- <div class="card-price">
+          <del>19,000원</del>
+          16,000원
+          <em>할인율 20%</em>
+        </div> -->
+        <time class="card-date">September 12, 2017</time>
+        <div class="card-tags">
+          <code>기획</code>
+          <code>디자인</code>
+          <code>개발(워드프레스)</code>
+        </div>
+        <hr />
+        <figure class="card-item">
+          <img src="" alt="" class="avatar --medium">
+          <figcaption class="card-item-name">퓨어 오렌지 주스</figcaption>
+          <figcaption class="card-item-price">
+            <del>19,000원</del>
+            16,000원
+            <em>할인율 20%</em>
+          </figcaption>
+        </figure>
+        <figure class="card-item">
+          <img src="" alt="" class="avatar --medium">
+          <figcaption class="card-item-name">퓨어 오렌지 주스</figcaption>
+          <figcaption class="card-item-price">
+            <del>19,000원</del>
+            16,000원
+            <em>할인율 20%</em>
+          </figcaption>
+        </figure>
+        <div class="card-note" style="border:1px solid #f3f2f1;border-radius:50px;text-align:center;font-size:12px;">마일리지 적립 200P</div>
+        <!-- <div class="card-state">판매 상태(재고수/품절/재고없음/판매중단)</div> -->
+        <button class="card-more icon-button" type="button"><i class="icon-more"></i></button>
+      </div>
+    </article>
+
+    <article class="design-article js-scroll-animation">
       <h1 class="design-article-heading">Emphasis</h1>
       <p class="design-article-description">수줍이는 이렇게 강조해요. 특정 단어를 강조하기 보담 시선을 끄는 카피를 선택하는 안목을 기르세요.</p>
       <ol class="list-sample">  
@@ -80,7 +135,14 @@
       </ol>
     </article>
 
-    <article class="design-article">
+    <article class="design-article js-scroll-animation">
+      <h1 class="design-article-heading">Tags</h1>
+      <p class="design-article-description">임시로 code태그로 마크업해서 사용 중이에요. 닫기 아이콘 연하게.</p>
+      <code>I'm hashtag</code>
+      <code style="position:relative;">태그 <i class="icon-close" style="display:inline-block;margin-left:4px;padding:4px;"></i></code>
+    </article>
+
+    <article class="design-article js-scroll-animation">
       <h1 class="design-article-heading">Breadcrumbs</h1>
       <p class="design-article-description">페이지 레벨이 3단계 이상일 때 사용해요. 홈 아이콘 대신 텍스트를 사용하면 훨씬 깔끔해요. 모바일에서 사용하지 않아요.</p>
       <nav class="breadcrumbs">
@@ -90,7 +152,7 @@
       </nav>
     </article>
 
-    <article class="design-article">
+    <article class="design-article js-scroll-animation">
       <h1 class="design-article-heading">Lists</h1>
       <p class="design-article-description">군집을 이루는 엘리먼트라면 모두 리스트로 취급할 수 있으니 주의해요. 수줍이는 리스트업된 텍스트 엘리먼트에만 리스트 태그로 마크업해요.</p>
       <ul class="list-sample">
@@ -114,7 +176,7 @@
       </ol>
     </article>
 
-    <!-- <article class="design-article">
+    <!-- <article class="design-article js-scroll-animation">
       <h1 class="design-article-heading">Tablist</h1>
       <p class="design-article-description">Filtering, Sorting과 동일한 마크업 및 그루핑이 가능한데요?<br />버튼으로 마크업하는 것이 좋을지, 라디오/체크박스로 마크업하는 것이 좋을지?<br />가로형, 세로형, 액티브: 언더라인, 보더(sm, md), 백그라운드, 포인트</p>
       <p class="design-article-description">데이터 비교 시 적합치 않아</p>
@@ -127,7 +189,7 @@
       </nav>
     </article> -->
 
-    <article class="design-article">
+    <article class="design-article js-scroll-animation">
       <h1 class="design-article-heading">Snackbars</h1>
       <p class="design-article-description">긍정 상황에 사용합니다. 부정 혹은 경고, 주의, 성공, 알림 등을 추가할까요?</p>
       <div class="snackbar">
@@ -141,7 +203,7 @@
       </div>
     </article>
 
-    <article class="design-article">
+    <article class="design-article js-scroll-animation" style="padding-bottom:80px;">
       <h1 class="design-article-heading">Tooltip</h1>
       <p class="design-article-description">툴팁의 위치를 지정할 수 있어야 하겠죠? 아래에서만 나와도 무방하겠어요.</p>
       <aside class="tooltip">
@@ -153,7 +215,7 @@
       </aside>
     </article>
 
-    <article class="design-article button-article">
+    <article class="design-article button-article js-scroll-animation">
       <style>
         .design-article.button-article div {margin:0 0 2rem 0;}
         .design-article.button-article div h2 {margin:0 0 .5rem 0;font-size:12px;}
@@ -165,40 +227,67 @@
       <h1 class="design-article-heading">Buttons</h1>
       <p class="design-article-description">아톰Atom 단위의 컴포넌트는 클래스 네이밍 없이 자체 엘리먼트에 스타일링 된 요소들로 한정하고 리액트에서 스타일드 컴포넌트 단위가 된다.</p>
       <div>
-        <h2>Solid Button</h2>
+        <h2>Primary Buttons</h2>
         <button class="primary-button" type="button">Primary</button>
         <button class="danger-button" type="button" aria-label="danger">Danger</button>
         <button class="success-button" type="button" aria-label="success">Success</button>
         <button class="primary-button" type="button" disabled>Primary</button>
       </div>
       <div>
-        <h2>Solid Button</h2>
+        <h2>Secondary Buttons</h2>
         <button class="secondary-button" type="button">Secondary</button>
         <button class="secondary-button" type="button" disabled>Secondary</button>
         <button class="teritary-button" type="button">Teritary</button>
         <button class="teritary-button" type="button" disabled>Teritary</button>
       </div>
       <div>
-        <h2>Solid Button</h2>
+        <h2>Text Buttons</h2>
         <button class="ghost-button" type="button">Ghost</button>
         <button class="ghost-button" type="button" disabled>Ghost</button>
       </div>
       <div>
-        <h2>small buttons</h2>
+        <h2>Small Buttons</h2>
         <button class="primary-button --small" type="button">Filled</button>
+        <button class="danger-button --small" type="button" aria-label="danger">Danger</button>
+        <button class="success-button --small" type="button" aria-label="danger">Success</button>
         <button class="secondary-button --small" type="button">Secondary</button>
         <button class="teritary-button --small" type="button">Teritary</button>
         <button class="ghost-button --small" type="button">Ghost</button>
-        <button class="danger-button --small" type="button" aria-label="danger">Danger</button>
-        <button class="success-button --small" type="button" aria-label="danger">Success</button>
       </div>
-      <div class="button-group" role="group">
-        <button class="primary-button --small is-active" type="button">Button Group</button>
-        <button class="teritary-button --small" type="button">Button Group</button>
-        <button class="teritary-button --small" type="button">Button Group</button>
+      <div>
+        <h2>Button Group</h2>
+        <div class="button-group" role="group">
+          <button class="primary-button --small is-active" type="button">Button Group</button>
+          <button class="teritary-button --small" type="button">Button Group</button>
+          <button class="teritary-button --small" type="button">Button Group <i class="icon-caret"></i></button>
+        </div>
+      </div>
+      <div class="review">
+        <!-- <h3 class="review-heading">상품평<sup>261</sup></h3> -->
+        <div class="review-sorting" role="group">
+          <button class="ghost-button --small is-active" type="button">최신순</button>
+          <button class="ghost-button --small" type="button">별점낮은순</button>
+          <button class="ghost-button --small" type="button">별점높은순</button>
+          <!-- <div>
+            <input type="radio" id="recent" name="filter" checked>
+            <label for="recent">최신순</label>
+          </div>
+          <div>
+            <input type="radio" id="recent1" name="filter" checked>
+            <label for="recent1">인기순</label>
+          </div>
+          <div>
+            <input type="radio" id="recent2" name="filter">
+            <label for="recent2">별점낮은순</label>
+          </div> -->
+        </div>
+        <div class="review-filter">
+          <input type="checkbox" id="photo">
+          <label for="photo">포토리뷰만 보기</label>
+        </div>
       </div>
       <div class="dd" role="group">
-        <h2>icon buttons</h2>
+        <h2>Icon Buttons</h2>
         <button class="icon-button" type="button"><i class="icon-person"></i></button>
         <button class="icon-button" type="button"><i class="icon-search"></i></button>
         <button class="icon-button" type="button"><i class="icon-caret"></i></button>
@@ -211,7 +300,7 @@
       </div>
     </article>
 
-    <article class="design-article">
+    <article class="design-article js-scroll-animation">
       <h1 class="design-article-heading">Checkboxes</h1>
       <p class="design-article-description">checkbox, checkall, intermediate</p>
       <div class="checkbox">
@@ -229,11 +318,11 @@
       <div class="checkbox textfiled">
         <input type="checkbox" id="other" name="interest" value="other">
         <label for="other">Other</label>
-        <!-- <input type="text" id="otherValue" name="other" class="textfield-input"> -->
+        <input type="text" name="other" class="textfield-input" placeholder="다른 거 뭔지 입력해주세요.">
       </div>
     </article>
 
-    <article class="design-article">
+    <article class="design-article js-scroll-animation">
       <h1 class="design-article-heading">Radio</h1>
       <p class="design-article-description">description? addon? container</p>
       <div class="radio">
@@ -250,7 +339,7 @@
         <label for="gender-women">Video kills the radio button</label>
       </div>
     </article>
-    <article class="design-article">
+    <article class="design-article js-scroll-animation">
       <h1 class="design-article-heading">Switch</h1>
       <p class="design-article-description">on/off 설정 등에 사용합니다.</p>
       <span class="switch" style="margin: 0 0 .75rem 0;">
@@ -262,7 +351,7 @@
         <label for="switch2">Receive weekly newsletter</label>
       </span>
     </article>
-    <article class="design-article">
+    <article class="design-article js-scroll-animation">
       <h1 class="design-article-heading">Range</h1>
       <p class="design-article-description">체크박스</p>
 
@@ -287,7 +376,7 @@
     </script>
     </article>
 
-    <article class="design-article">
+    <article class="design-article js-scroll-animation">
       <h1 class="design-article-heading">Textfield</h1>
       <p class="design-article-description">Input text, Textarea, Select, with Icon, with Unit, with Button</p>
       <div class="textfield is-invalid">
@@ -297,6 +386,11 @@
         <!-- <button class="textfield-button primary-button">ddd</button> -->
         <!-- 레이블이 있을 때, 헬퍼가 있을 때 버튼의 위치를 어떻게 잡을지 인접연산자로 하나하나 세팅해주는 방법 -->
         <small class="textfield-helper">You can @mention other users and organizations to link to them.</small>
+      </div>
+      <div class="textfield" style="margin:1rem 0;">
+        <label class="textfield-label" for="date-start"><i class="">시작일</i></label>
+        <label class="textfield-icon" for="date-start"><i class="material-icons">today</i></label>
+        <input class="textfield-input" type="date" id="date-start" placeholder="날짜를 설정해주세요.">
       </div>
       <div class="textfield" style="margin:1rem 0;">
         <label class="textfield-label" for="search1">셀렉트박스 레이블</label>
@@ -321,7 +415,7 @@
       </div>
     </article>
 
-    <article class="design-article">
+    <article class="design-article js-scroll-animation">
       <h1 class="design-article-heading">File Uploader</h1>
       <p class="design-article-description">파일 업로드</p>
       <!-- 파일 콘텐츠는 url 매개변수로 보낼 수 없다. 여러 조각-->
@@ -348,99 +442,35 @@
       </form>
     </article>
 
+    
 
-    <article class="design-article">
-      <h1 class="design-article-heading">Accordions</h1>
-      <p class="design-article-description">질의응답에 주로 사용해요. 공지사항 정도의 간단한 게시글에서도 사용할 수 있으나 그 이상의 경우에는 다른 유아이를 고민해봐요.</p>
-      <button class="components-trigger js-accordion" type="button" aria-expanded="false"><i class="icon-plus"></i> 투두 리스트: 바닐라 자바스크립트로 만드는 투두 리스트</button>
-      <article class="components-panel">
-        안녕
-      </article>
-      <button class="components-trigger js-accordion" type="button" aria-expanded="false"><i class="icon-plus"></i> 투두 리스트: 바닐라 자바스크립트로 만드는 투두 리스트</button>
-      <article class="components-panel">
-        안녕
-      </article>
-    </article>
-
-    <article class="design-article">
-      <h1 class="design-article-heading">Container Components</h1>
-      <p class="design-article-description">특히 리액트에서는 컨테이너 컴포넌트의 활용이 중요항다.</p>
-      <div style="margin:1rem 0;padding:1rem 1.5rem 1.5rem;box-sizing:border-box;background:crimson;color:#fff;">
-        <p>타이틀</p>
-        <p>margin:4rem 0; padding:1rem 1.5rem 1.5rem;</p>
-      </div>
-      <form class="contact-form boxed-form" action="">
-        <h4>회원 정보</h4>
-        <div class="textfield">
-          <label class="textfield-label" for="">Street Number</label>
-          <input class="textfield-input" type="text" value="659">
-        </div>
-        <div class="textfield is-invalid" style="margin-top:-1px;border-color:crimson;z-index:1;">
-          <label class="textfield-label" for="">First Name</label>
-          <input class="textfield-input" type="text" placeholder="이름을 입력하세요." value="이명박">
-          <p class="textfield-helper">이름이 이상합니다. 너무 이상해요. 개 이상해요.</p>
-        </div>
-        <div class="textfield" style="margin-top:-1px;">
-          <label class="textfield-label" for="">First Name</label>
-          <input class="textfield-input" type="text" placeholder="이름을 입력하세요.">
-        </div>
-        <footer class="action" style="margin-top:1rem;">
-          <button class="primary-button" type="submit">전송하기</button>
-          <button class="secondary-button" type="button" style="margin-left:8px;">취소하기</button>
-        </footer>
-      </form>
-      <div style="margin:1rem 0;padding:1rem 1.5rem 1.5rem;box-sizing:border-box;border:1px solid #eee;">
-        <p style="margin:0 0 .125rem 0;color:#000;font-size:1.25rem;">다이얼로그</p>
-        <p style="margin:0 0 1.5rem 0;">보조 텍스트인니다!</p>
-        <div class="textfield --small --inline" style="margin-bottom:8px;">
-          <label class="textfield-label" for="">테스트</label>
-          <input class="textfield-input" type="text" placeholder="인풋 인라인스타일 스몰사이즈">
-        </div>
-        <div class="textfield --small --inline">
-          <label class="textfield-label" for="">테스트</label>
-          <input class="textfield-input" type="text" placeholder="인풋 인라인스타일 스몰사이즈">
-        </div>
-        <button class="primary-button --small" type="submit" style="margin-top:1rem;margin-left:100px;">전송하기</button>
-        <button class="ghost-button --small" type="button" style="margin-top:8px;">취소</button>
-      </div>
-      <div class="design-spacing">
-        <div class="design-spacing-one">간격Spacing</div>
-        <div class="design-spacing-two">REM 단위를 어떻게 사용할까?</div>
-        <div class="design-spacing-three">어떤 개발자들은 rem이 모듈화를 어렵게 만들기 때문에 완전히 피한다. 또 다른 이들은 rem이 단순하기 때문에 항상 rem만을 사용한다.</div>
-        <div class="design-spacing-four">14, April, 2019</div>
-      </div>
-      <a href="" class="user-card">
-        <div class="user-card-background"></div>
-        <span class="avatar --medium --photo">
-          <img src="/public/images/caleb-woods-182648-unsplash.jpg" alt="">
-        </span>
-      </a>
-    </article>
-
-    <article class="design-article">
-      <h1 class="design-article-heading">Steps</h1>
-      <p class="design-article-description">단계다단계</p>
-      <div class="step">
-        <div class="step-item is-active">
-          <i class="step-item-icon material-icons">email</i>
-          <p class="step-item-title">주문</p>
-        </div>
-        <div class="step-space is-active"><span></span><span></span><span></span></div>
-        <div class="step-item is-active">
-          <i class="step-item-icon material-icons">email</i>
-          <p class="step-item-title">조리</p>
-        </div>
-        <div class="step-space"><span></span><span></span><span></span></div>
-        <div class="step-item">
-          <i class="step-item-icon material-icons">email</i>
-          <p class="step-item-title">배달</p>
-        </div>
-      </div>
-    </article>
-
-    <article class="design-article">
-      <h1 class="design-article-heading">Table</h1>
+    <article class="design-article js-scroll-animation">
+      <h1 class="design-article-heading">Paginations</h1>
       <p class="design-article-description">페이지네이션의 첫 페이지와 마지막 페이지는 더블 화살표 아이콘보다 총 페이지 수를 노출 방식을 사용한다.</p>
+      <nav class="pagination">
+        <!--forward forward -->
+        <a href="#" class="pagination-prev" title="앞 페이지로 이동">Previous</a>
+        <a href="#" class="pagination-first" title="맨 앞 페이지로 이동"><i aria-hidden="">1</i></a>
+        <a href="#" class="pagination-page" title="1 페이지로 이동">5</a>
+        <a href="#" class="pagination-page" title="1 페이지로 이동">6</a>
+        <a href="#" class="pagination-page is-current" title="1 페이지로 이동">7</a>
+        <a href="#" class="pagination-page" title="1 페이지로 이동">8</a>
+        <a href="#" class="pagination-page" title="1 페이지로 이동">9</a>
+        <a href="#" aria-label="" class="pagination-last" title="맨 뒤 페이지로 이동"><i aria-hidden="">50</i></a>
+        <a href="#" class="pagination-next" title="뒷 페이지로 이동">Next</a>
+      </nav>
+      <nav class="pagination2">
+        <a href="#" class="pagination2-prev" title="앞 페이지로 이동">이전</a>
+        <span class="pagination2-current">1</span>
+        <span class="pagination2-divider"> / </span>
+        <span class="pagination2-all">44</span>
+        <a href="#" class="pagination2-next" title="뒷 페이지로 이동">다음</a>
+      </nav>
+    </article>
+
+    <article class="design-article js-scroll-animation">
+      <h1 class="design-article-heading">Table</h1>
+      <p class="design-article-description">보더를 사용하지 말아요.</p>
       <table>
         <caption>히라가나 오십음도</caption>
         <thead>
@@ -539,28 +569,112 @@
           </tr>
         </tbody>
       </table>
-      <nav class="pagination">
-        <!--forward forward -->
-        <a href="#" class="pagination-prev" title="앞 페이지로 이동">Previous</a>
-        <a href="#" class="pagination-first" title="맨 앞 페이지로 이동"><i aria-hidden="">1</i></a>
-        <a href="#" class="pagination-page" title="1 페이지로 이동">5</a>
-        <a href="#" class="pagination-page" title="1 페이지로 이동">6</a>
-        <a href="#" class="pagination-page is-current" title="1 페이지로 이동">7</a>
-        <a href="#" class="pagination-page" title="1 페이지로 이동">8</a>
-        <a href="#" class="pagination-page" title="1 페이지로 이동">9</a>
-        <a href="#" aria-label="" class="pagination-last" title="맨 뒤 페이지로 이동"><i aria-hidden="">50</i></a>
-        <a href="#" class="pagination-next" title="뒷 페이지로 이동">Next</a>
-      </nav>
-      <nav class="pagination2">
-        <a href="#" class="pagination2-prev" title="앞 페이지로 이동">이전</a>
-        <span class="pagination2-current">1</span>
-        <span class="pagination2-divider"> / </span>
-        <span class="pagination2-all">44</span>
-        <a href="#" class="pagination2-next" title="뒷 페이지로 이동">다음</a>
-      </nav>
     </article>
 
-    <article class="design-article">
+    <article class="design-article js-scroll-animation">
+      <h1 class="design-article-heading">Rating</h1>
+      <p class="design-article-description">테스트.</p>
+      <div class="rating">
+        <h1 class="rating-heading" aria-hidden="true">별점</h1>
+        <span class="rating-score">4.3</span>
+        <div class="rating-star">
+          <span class="rating-star-front">별별별별별</span>
+          <span class="rating-star-back">별별별별별</span>
+        </div>
+        <small class="rating-count">총 24개의 평가</small>
+      </div>
+    </article>
+
+    <article class="design-article js-scroll-animation">
+      <h1 class="design-article-heading">Accordions</h1>
+      <p class="design-article-description">질의응답에 주로 사용해요. 공지사항 정도의 간단한 게시글에서도 사용할 수 있으나 그 이상의 경우에는 다른 유아이를 고민해봐요.</p>
+      <button class="components-trigger js-accordion" type="button" aria-expanded="false"><i class="icon-plus"></i> 투두 리스트: 바닐라 자바스크립트로 만드는 투두 리스트</button>
+      <article class="components-panel">
+        안녕
+      </article>
+      <button class="components-trigger js-accordion" type="button" aria-expanded="false"><i class="icon-plus"></i> 투두 리스트: 바닐라 자바스크립트로 만드는 투두 리스트</button>
+      <article class="components-panel">
+        안녕
+      </article>
+    </article>
+
+    <article class="design-article js-scroll-animation">
+      <h1 class="design-article-heading">Container Components</h1>
+      <p class="design-article-description">특히 리액트에서는 컨테이너 컴포넌트의 활용이 중요항다.</p>
+      <div style="margin:1rem 0;padding:1rem 1.5rem 1.5rem;box-sizing:border-box;background:crimson;color:#fff;">
+        <p>타이틀</p>
+        <p>margin:4rem 0; padding:1rem 1.5rem 1.5rem;</p>
+      </div>
+      <form class="contact-form boxed-form" action="">
+        <h4>회원 정보</h4>
+        <div class="textfield">
+          <label class="textfield-label" for="">Street Number</label>
+          <input class="textfield-input" type="text" value="659">
+        </div>
+        <div class="textfield is-invalid" style="margin-top:-1px;border-color:crimson;z-index:1;">
+          <label class="textfield-label" for="">First Name</label>
+          <input class="textfield-input" type="text" placeholder="이름을 입력하세요." value="이명박">
+          <p class="textfield-helper">이름이 이상합니다. 너무 이상해요. 개 이상해요.</p>
+        </div>
+        <div class="textfield" style="margin-top:-1px;">
+          <label class="textfield-label" for="">First Name</label>
+          <input class="textfield-input" type="text" placeholder="이름을 입력하세요.">
+        </div>
+        <footer class="action" style="margin-top:1rem;">
+          <button class="primary-button" type="submit">전송하기</button>
+          <button class="secondary-button" type="button" style="margin-left:8px;">취소하기</button>
+        </footer>
+      </form>
+      <div style="margin:1rem 0;padding:1rem 1.5rem 1.5rem;box-sizing:border-box;border:1px solid #eee;">
+        <p style="margin:0 0 .125rem 0;color:#000;font-size:1.25rem;">다이얼로그</p>
+        <p style="margin:0 0 1.5rem 0;">보조 텍스트인니다!</p>
+        <div class="textfield --small --inline" style="margin-bottom:8px;">
+          <label class="textfield-label" for="">테스트</label>
+          <input class="textfield-input" type="text" placeholder="인풋 인라인스타일 스몰사이즈">
+        </div>
+        <div class="textfield --small --inline">
+          <label class="textfield-label" for="">테스트</label>
+          <input class="textfield-input" type="text" placeholder="인풋 인라인스타일 스몰사이즈">
+        </div>
+        <button class="primary-button --small" type="submit" style="margin-top:1rem;margin-left:100px;">전송하기</button>
+        <button class="ghost-button --small" type="button" style="margin-top:8px;">취소</button>
+      </div>
+      <div class="design-spacing">
+        <div class="design-spacing-one">간격Spacing</div>
+        <div class="design-spacing-two">REM 단위를 어떻게 사용할까?</div>
+        <div class="design-spacing-three">어떤 개발자들은 rem이 모듈화를 어렵게 만들기 때문에 완전히 피한다. 또 다른 이들은 rem이 단순하기 때문에 항상 rem만을 사용한다.</div>
+        <div class="design-spacing-four">14, April, 2019</div>
+      </div>
+      <a href="" class="user-card">
+        <div class="user-card-background"></div>
+        <span class="avatar --medium --photo">
+          <img src="/public/images/caleb-woods-182648-unsplash.jpg" alt="">
+        </span>
+      </a>
+    </article>
+
+    <article class="design-article js-scroll-animation">
+      <h1 class="design-article-heading">Steps</h1>
+      <p class="design-article-description">단계다단계</p>
+      <div class="step">
+        <div class="step-item is-active">
+          <i class="step-item-icon material-icons">email</i>
+          <p class="step-item-title">주문</p>
+        </div>
+        <div class="step-space is-active"><span></span><span></span><span></span></div>
+        <div class="step-item is-active">
+          <i class="step-item-icon material-icons">email</i>
+          <p class="step-item-title">조리</p>
+        </div>
+        <div class="step-space"><span></span><span></span><span></span></div>
+        <div class="step-item">
+          <i class="step-item-icon material-icons">email</i>
+          <p class="step-item-title">배달</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="design-article js-scroll-animation">
       <h1 class="design-article-heading">Graph</h1>
       <p>옿이</p>
       <div class="graph">
@@ -594,7 +708,7 @@
     </article>
 
 
-    <article class="design-article">
+    <article class="design-article js-scroll-animation">
       <h1 class="design-article-heading">Timeline or Feed</h1>
       <p class="design-article-description">왼쪽에 아바타가 있는 경우 항상 사용할 수 있게 만들기.</p>
       <section class="timeline">

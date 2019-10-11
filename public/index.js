@@ -118,7 +118,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	}, true);
 
-
 	window.addEventListener('load', () => {
 		const scrollTarget = document.querySelectorAll('.js-scroll-animation');
 		scrollTarget.forEach(element => {
