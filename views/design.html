@@ -2,6 +2,17 @@
   <header class="design-head">
   </header>
   <section class="design-body">
+    <section class="hero">
+      <div class="hero-image"></div>
+      <i class="hero-eyebrow">🐣</i>
+      <h1 class="hero-heading">
+        <span class="t1">부끄러우니까, </span>
+        <span class="t2">보지마요.</span>
+      </h1>
+      <p class="hero-description">히어로 섹션의 마크업을 간단하게 해보았어요. Hero & Features. 배너 대신 빌보드로 네이밍하자.</p>
+      <a class="hero-cta primary-button">call to action</a>
+      <a class="hero-detail ghost-button">view detail</a>
+    </section>
     <article class="design-article grayscale">
       <h1 class="design-article-heading">Colors</h1>
       <p class="design-article-description">칼라칼라컬러컬러🐣</p>
@@ -174,6 +185,10 @@
         </li>
         <li>ordered list, level 1</li>
       </ol>
+      <dl>
+        <dt>Definition term</dt>
+        <dd>Definition text</dd>
+      </dl>
     </article>
 
     <!-- <article class="design-article js-scroll-animation">
@@ -190,17 +205,17 @@
     </article> -->
 
     <article class="design-article js-scroll-animation">
-      <h1 class="design-article-heading">Snackbars</h1>
+      <h1 class="design-article-heading">Snackbars? Notification Bars</h1>
       <p class="design-article-description">긍정 상황에 사용합니다. 부정 혹은 경고, 주의, 성공, 알림 등을 추가할까요?</p>
-      <div class="snackbar">
+      <aside class="snackbar">
         <!-- <i class="note-icon material-icons">snackbars</i> -->
         <span class="snackbar-text"> <b>snackbar</b>: This includes the <a href="">global HTML attributes</a>.</span>
         <button class="snackbar-close" type="button" aria-label="close"><i class="icon-close"></i></button>
-      </div>
-      <div class="snackbar --warning" style="margin-top:1rem;">
+      </aside>
+      <aside class="snackbar --warning" style="margin-top:1rem;">
         <span class="snackbar-text"> <em>Warning</em>: This includes the <a href="">global HTML attributes</a>.</span>
         <button class="snackbar-close" type="button" aria-label="close"><i class="icon-close"></i></button>
-      </div>
+      </aside>
     </article>
 
     <article class="design-article js-scroll-animation" style="padding-bottom:80px;">
@@ -596,6 +611,21 @@
       <article class="components-panel">
         안녕
       </article>
+      <details>
+        <summary>
+          <h3>Heading</h3>
+        </summary>
+        <p>Proin in dapibus nulla. Nam vitae est vitae tellus mollis
+          eleifend in eu erat. Vestibulum ante ipsum primis in faucibus
+          orci luctus et ultrices posuere cubilia Curae; Aenean feugiat
+          ante porttitor purus elementum, eget vestibulum ex volutpat.
+          Sed gravida convallis rutrum. Quisque pharetra eros eget
+          malesuada vulputate.</p>
+        <h4>Sub Heading</h4>
+        <p>Cras maximus interdum interdum. Maecenas vitae ligula et
+          eros porta feugiat. Nullam facilisis odio non ante varius
+          tempor ut ac turpis.</p>
+      </details>
     </article>
 
     <article class="design-article js-scroll-animation">
@@ -650,6 +680,7 @@
         <span class="avatar --medium --photo">
           <img src="/public/images/caleb-woods-182648-unsplash.jpg" alt="">
         </span>
+        <p>Picto Card</p>
       </a>
     </article>
 
