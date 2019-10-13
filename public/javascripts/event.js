@@ -148,12 +148,39 @@ export const parallax = (targetElement) => {
 	window.addEventListener('scroll', () => {
 		target.forEach((element) => {
 			//console.log(window.pageYOffset, element.offsetTop);
-			let aaa = window.pageYOffset * -0.2 - 600; // scrolled = window.pageYOffset
+			let rate = window.pageYOffset * -0.2 - 600;
 			//let aaa = (window.pageYOffset - element.offsetTop) * -1.5; // scrolled = window.pageYOffset
 			//let bbb = aaa > 0 ? -aaa : aaa;
 			element.style.backgroundPosition = 'center ' + aaa + 'px'; 
+			element.style.transform = 'translate3d(0px, '+rate+'px, 0px)';
+			// DataTransferItemList.rate
 		});
 	});
 };
 
 // $('html, body').stop().animate({scrollTop:$('.scroll-pin').eq(index).offset().top}, 1000,'easeOutCubic');
+
+
+
+
+
+export const enterTarget = (target) => {
+	const hoverElement = document.querySelector(target);
+	const bodyElement = document.body;
+	if(!hoverElement) return;
+
+	const isNavigation = hoverElement === document.querySelector('.navigation li');
+
+	hoverElement.addEventListener('mouseenter', () => {
+		hoverElement.setAttribute('aria-expanded', 'true');
+		hoverElement.classList.add('is-expanded');
+		isNavigation && bodyElement.classList.add('is-shown');
+
+		hoverElement.addEventListener('mouseleave', () => {
+			hoverElement.setAttribute('aria-expanded', 'false');
+			hoverElement.classList.remove('is-expanded');
+
+			isNavigation && bodyElement.classList.remove('is-shown');
+		});
+	});
+};

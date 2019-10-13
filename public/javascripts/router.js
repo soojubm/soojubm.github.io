@@ -1,23 +1,22 @@
 import { checkAllcheckbox } from './input';
+import { enterTarget } from './event';
 
 const router = function() {
 	const view = null || document.getElementById('view');
 
 	const routePage = () => {
-		const { hash } = window.location;
+
+		let { hash } = window.location;
 		const page = hash ? `/views/${hash.substring(1)}.html` : '/views/home.html';
 		fetch(page)
 			.then(response => {
 				// 404 || 500
-				if(response.ok) {
-					return response.text();
-				} else {
-					return Promise.reject(response);	
-				}
+				if(response.ok) return response.text();
+				else return Promise.reject(response);	
 			})
 			.then(html => {
 				view.innerHTML = html;
-				console.log('!router');
+
 				checkAllcheckbox({
 					checkAllElement: '.js-check-all', 
 					checkElements: '.js-check'
@@ -28,42 +27,67 @@ const router = function() {
 				window.addEventListener('scroll', () => {
 					requestAnimationFrame(hasScrolled);
 				});
+
 				const hasScrolled = () => {
 					window.pageYOffset > lastScrollTop ? headerElement.classList.add('nav-up') : headerElement.classList.remove('nav-up');
 					lastScrollTop = window.pageYOffset;
 				};
 
-				function enterTarget(target) {
-					const hoverElement = document.querySelector(target);
-					const bodyElement = document.body;
-					if(!hoverElement) return;
-
-					const isNavigation = hoverElement === document.querySelector('.navigation li');
-
-					hoverElement.addEventListener('mouseenter', () => {
-						hoverElement.setAttribute('aria-expanded', 'true');
-						hoverElement.classList.add('is-expanded');
-						isNavigation && bodyElement.classList.add('is-shown');
-			
-						hoverElement.addEventListener('mouseleave', () => {
-							hoverElement.setAttribute('aria-expanded', 'false');
-							hoverElement.classList.remove('is-expanded');
-
-							isNavigation && bodyElement.classList.remove('is-shown');
-						});
-					});
-				}
-
 				enterTarget('.js-hover-trigger');
 				enterTarget('.header-user-notification');
 				enterTarget('.header-user-account');
 
+				const scrollTarget = document.querySelectorAll('.js-scroll-animation');
+				scrollTarget.forEach((element) => {
+					console.log(element.getBoundingClientRect().bottom, window.innerHeight);
+					if(element.getBoundingClientRect().bottom + 100 < window.innerHeight) {
+						element.classList.add('is-scrolled');
+					}
+				});
+				window.addEventListener('scroll', () => {
+					scrollTarget.forEach((element) => {
+						//console.log(window.pageYOffset, window.pageYOffset + element.getBoundingClientRect().top - window.innerHeight  + 50);
+						if(window.pageYOffset > window.pageYOffset + element.getBoundingClientRect().top - window.innerHeight + 50){
+							element.classList.add('is-scrolled');
+						}
+					});
+				});
+
+				const cursor = document.querySelector('.cursor');
+				document.addEventListener('mousemove', event => {
+					const x = event.clientX;
+					const y = event.clientY;
+					// cursor.style.transform = `translate(${x - 15}px, ${y - 15}px`;
+					// cursor.setAttribute('style', 'top:'+x+'px;top:'+y+'px');
+					cursor.style.left = `${event.pageX}px`;
+					cursor.style.top = `${event.pageY}px`;
+				}, false);
+
+				document.addEventListener('click', () => {
+					cursor.classList.add('expand');
+					setTimeout(() => {
+						cursor.classList.remove('expand');
+					}, 500);
+				});
+
 			})
 			.catch(error => console.warn('router: ', error));
+
+		// gogo
+		const slashedHash = `/${hash.substring(1)}`;
+		console.log(slashedHash, window.location.pathname, window.location.history);
+		// window.location.pathname = slashedHash;
+
 	};
 
 	routePage();
 	window.addEventListener('hashchange', routePage);
+	window.addEventListener('hashchange', () => {
+		if(document.querySelector('.navigation-toggle').classList.contains('is-active')) {
+			document.querySelector('.navigation-toggle').classList.remove('is-active');
+			document.querySelector('.navigation-toggle').nextElementSibling.classList.remove('is-visible');
+		}
+	});
 };
 
 // {

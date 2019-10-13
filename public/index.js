@@ -21,6 +21,9 @@ const eventToTop = () => {
 // if(window.matchMedia('(min-width:800px)').matches) {}
 
 document.addEventListener('DOMContentLoaded', () => {
+	if(window.location.pathname === '/') {
+		console.log('this is home page.');
+	}
 	// const todo = document.querySelector('.js-todo');
 	// const todoList = document.querySelector('.js-todo-list');
 	// const todoListInput = document.querySelector('.js-todo-input');
@@ -118,23 +121,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	}, true);
 
-	window.addEventListener('load', () => {
-		const scrollTarget = document.querySelectorAll('.js-scroll-animation');
-		scrollTarget.forEach(element => {
-			if (element.getBoundingClientRect().top < window.innerHeight) {
-				element.classList.add('is-scrolled');
-			}
-		});
-	});
-	window.addEventListener('scroll', () => {
-		const scrollTarget = document.querySelectorAll('.js-scroll-animation');
-		scrollTarget.forEach(element => {
-			//console.log(window.pageYOffset, window.pageYOffset + element.getBoundingClientRect().top - window.innerHeight  + 50);
-			if (window.pageYOffset > window.pageYOffset + element.getBoundingClientRect().top - window.innerHeight + 50) {
-				element.classList.add('is-scrolled');
-			}
-		});
-	});
 
 	const sayHello = new Promise(function(resolve, reject) {
 		reject('Unable to say hi.');

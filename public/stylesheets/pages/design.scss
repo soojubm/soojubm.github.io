@@ -19,14 +19,29 @@
 .color-item:hover figcaption span {margin-top:-24px;}
 
 
+.hero {height:0;overflow:hidden;background:$gray80;margin:0 -40rem 5rem -10rem;padding:4rem 5rem 6rem;box-sizing:border-box;position:relative;z-index:4;transition:all .hes ease .1s;}
+.hero-background {}
+.hero-eyebrow {display:block;margin:0 0 .5rem 0;font-size:1.5rem;color:#fff;}
+.hero-heading {font-family:'DunkelSans';font-size:2.25rem;color:#fff;}
+.hero-description {margin:.5rem 0 4rem 0;color:rgba(255,255,255,.6);}
+.hero-cta {}
+.hero-detail {margin-left:.5rem;}
+
+.hero-head {}
+.hero-body {}
+.hero-foot {}
+
 .design {}
-.design-head {background:url('/public/images/caleb-woods-182648-unsplash.jpg') no-repeat center center;background-size:cover;padding:10rem 4rem;box-sizing:border-box;position:fixed;left:0;right:50%;top:0;bottom:0;z-index:1;}
+.design-head {width:0;overflow:hidden;background:url('/public/images/caleb-woods-182648-unsplash.jpg') no-repeat center center;background-size:cover;position:fixed;left:0;top:0;bottom:0;z-index:1;transition:all .2s;}
+
 .design-body {width:50%;max-width:520px;margin-left:50%;padding:6rem;}
 
 .design-article {margin:0 0 6rem 0;}
 .design-article-heading {margin:0 0 .75rem 0;font-size:1.25rem;}
 .design-article-description {margin:0 0 1.5rem 0;}
 
+.design-head.is-scrolled {width:50%;}
+.design-body .hero.is-scrolled {height:364px;}
 .design-article.is-scrolled {animation:fadeup .8s;}
 
 .button-article button + button {margin:0 0 0 0.25rem;}
@@ -72,14 +87,3 @@
 
 
 
-.hero {background:$gray80;margin:0 -40rem 5rem -10rem;padding:4rem 5rem 6rem;position:relative;z-index:10;}
-.hero-background {}
-.hero-eyebrow {display:block;margin:0 0 .5rem 0;font-size:1.25rem;color:#fff;}
-.hero-heading {font-family:'DunkelSans';font-size:2.25rem;color:#fff;}
-.hero-description {margin:.5rem 0 4rem 0;color:rgba(255,255,255,.6);}
-.hero-cta {}
-.hero-detail {margin-left:.5rem;}
-
-.hero-head {}
-.hero-body {}
-.hero-foot {}

@@ -1,22 +1,39 @@
 <main class="home">
-  <section class="home-hero">
-    <h1 class="home-hero-headline">
-      <span class="t1">부끄러우니까, </span>
-      <span class="t2">보지마요.</span>
-    </h1>
-    <!-- <p class="home-hero-description">부끄러우니까 제발 보지마요.</p> -->
-    <!-- <nav>
-      <a href="">유저프로필 / </a>
-      <a href="">유저프로필</a>
-    </nav> -->
-    <style>
+  <style>
+    .home-hero {padding:0 5%;}
+    .home-hero-heading {margin:8rem auto 4rem;font-family:"DunkelSans";font-size:4rem;}
+    h1 .t1 {
+      -webkit-text-stroke: 1px #000;
+      -webkit-text-fill-color: #fff;
+    }
+    h1 .t2 {
+      color: #000;
+    }
+    .home-hero-eyebrow {
+      display: block;
+    }
+    .home-hero-description {font-family:"DunkelSans";font-size:2rem;}
     .board {width:1080px;margin:4rem 0;}
     .board-head {display:flex;}
     .board-head div {width:25%;}
     .board-body {display:flex;padding:.5rem 0;}
     .board-body div {width:25%;color:#333;}
     .board-body small {display:block;color:#999;}
-    </style>
+
+    .home-hero-image {height:800px;transition:all .4s;}
+    .home-hero-image.is-scrolled {margin:-5%;}
+  </style>
+  <section class="home-hero">
+    <h1 class="home-hero-heading">
+      <i class="home-hero-eyebrow">🐣</i>
+      <span class="t1">부끄러우니까, </span>
+      <span class="t2">보지마요.</span>
+    </h1>
+    <p class="home-hero-description"></p>
+    <div class="home-hero-image js-scroll-animation"><img src="/public/images/caleb-woods-182648-unsplash.jpg" alt=""></div>
+  </section>
+
+
     <article class="board">
       <div class="board-head">
         <div class="board-head-title">Title</div>
@@ -87,20 +104,8 @@
           </tr>
         </tbody>
       </table>
-  </section>
   <style>
     .banner {display: none;}
-    .footer {display: none;}
-    /* background:url(/public/images/caleb-woods-182648-unsplash.jpg) no-repeat 50%;position:fixed;left:0;right:50%; */
-    .home-hero {height:50vh;padding:0 5%;}
-    .home-hero-headline {margin:10rem auto 2rem;font-family:"DunkelSans";font-size:4rem;}
-  h1 .t1 {
-    -webkit-text-stroke: 1px #000;
-    -webkit-text-fill-color: #fff;
-  }
-  h1 .t2 {
-    color: #000;
-  }
   .home nav {width:1440px;margin:0 auto;padding-left:50%;}
   .home nav a {font-family:"DunkelSans";font-size:2rem;color:#000;}
   </style>

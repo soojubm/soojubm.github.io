@@ -330,22 +330,3 @@ KT 올레 LTE선택형100분250M
 			<li><time>2011.04.29</time><cite>장자크 상페 특별전 대구 순회전</cite><span>대구문화예술회관</span></li> -->
 			</section>
 		</main>
-	
-	<script>
-	const scrollTarget = document.querySelectorAll('.js-scroll-animation');
-	window.addEventListener('load', function(){
-		scrollTarget.forEach((element) => {
-			if(element.getBoundingClientRect().top < window.innerHeight) {
-				element.classList.add('is-scrolled');
-			}
-		});
-	});
-	window.addEventListener('scroll', () => {
-		scrollTarget.forEach((element) => {
-			//console.log(window.pageYOffset, window.pageYOffset + element.getBoundingClientRect().top - window.innerHeight  + 50);
-			if(window.pageYOffset > window.pageYOffset + element.getBoundingClientRect().top - window.innerHeight + 50){
-				element.classList.add('is-scrolled');
-			}
-		});
-	});
-	</script>
