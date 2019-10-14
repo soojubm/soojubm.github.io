@@ -2,7 +2,7 @@
 
 import './stylesheets/style.scss';
 import router from './javascripts/router';
-import { modal, tabMenu, stickyElement, parallax } from './javascripts/event.js';
+import { tabMenu, stickyElement, parallax } from './javascripts/event.js';
 import { attachFile, inputNumber } from './javascripts/input';
 import { loader, checkBrowser, adjustTopPadding } from './javascripts/load'; // loadSpinner
 
@@ -101,7 +101,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	attachFile();
 
 	tabMenu();
-	modal();
 	inputNumber();
 
 	eventToTop();

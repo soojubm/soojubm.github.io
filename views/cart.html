@@ -1,178 +1,122 @@
 	<main class="cart">
-		<!-- <section class="category">
-			<div class="category-list">
-				<button type="button">초1</button>
-				<button type="button">초2</button>
-				<button type="button">초3</button>
-				<button type="button">초4</button>
-				<button type="button">초5</button>
-				<button type="button">초6</button>
-				<button type="button" style="background:green;">중1</button>
-				<button type="button" style="background:green;">중2</button>
-				<button type="button" style="background:green;">중3</button>
-				<button type="button" style="background:blue;">고1</button>
-				<button type="button" style="background:blue;">고2</button>
-				<button type="button" style="background:blue;">고3</button>
+		<header class="cart-head">
+			<p class="cart-description">Free delivery and free returns.</p>
+			<h1 class="cart-heading">Here's what's in your bag.</h1>
+			<!-- <ul>
+				<li style="text-decoration:underline;margin:2rem 0 .25rem 0;"><b><small>UX checklist.</small></b></li>
+				<li>개별 삭제기능 기능만 제공.</li>
+				<li>주문페이지에서 주문자, 주소, 쿠폰적용, 적립금사용 반영?</li>
+				<li>쿠폰이 적용되었을 때 마이너스(-) 금액을 표시.</li>
+				<li>Remove 버튼에 보조 아이콘 제공하는 것이 좋을까?</li>
+				<li>수량, 색상 등의 옵션을 변경할 수 있도록 할 것. AND 셀렉트박스로 충분. AND 서비스 초기에 필수 기능이 아닐 수 있음.</li>
+			</ul> -->
+			<time>16, April 2019</time>
+		</header>
+		<figure class="cart-item">
+			<button class="cart-item-delete"><i class="icon-close"></i></button>
+			<!-- <button class="cart-item-checkout"><i class="icon-close"></i></button> -->
+			<a href="" class="cart-item-thumbnail"><img src="/public/images/product_sample.png" alt=""></a>
+			<div class="cart-item-name">
+				<span class="cart-item-name-label">product</span>
+				<b class="cart-item-name-value">폰타나 베네치아 로스티드 쉬림프 크림</b>
 			</div>
-			<nav class="category-navigation">
-				<button class="category-navigation-prev" type="button">prev</button>
-				<button class="category-navigation-next" type="button">next</button>
-			</nav>
-		</section> -->
-		<script>
-			document.addEventListener('DOMContentLoaded', function(){
-				const category = document.querySelector('.category');
-				const categoryList = category.querySelector('.category-list');
-				const categoryNavigationPrev = category.querySelector('.category-navigation-prev');
-				const categoryNavigationNext = category.querySelector('.category-navigation-next');
-				const temp2 = categoryList.offsetWidth;
-				let sum = 0; 
-				// TODO: foreach ie 지원안함
-				document.querySelectorAll('.category-list > button').forEach(function(item){
-					sum = sum + item.offsetWidth;
-				});
-				categoryList.addEventListener('scroll', function(){
-					const temp = categoryList.scrollLeft;
-					console.log('scroll-left', temp);
-					console.log('offset-width', temp2);
-				});
-				console.log(sum, temp2);
-				categoryNavigationNext.addEventListener('click', () => {
-					if(sum > temp2) {
-						categoryList.scrollLeft += 100;
-						//var ttt = 100 + 'px';
-						//document.querySelector('.category-list').style.transform += 'translateX('+ttt+')';
-					}
-				});
-				categoryNavigationPrev.addEventListener('click', () => {
-					if(sum > temp2) {
-						categoryList.scrollLeft -= 100;
-					}
-				});
-			});
-		</script>
-
-		<section class="cart">
-			<header class="cart-head">
-				<p class="cart-description">Free delivery and free returns.</p>
-				<h1 class="cart-heading">Here's what's in your bag.</h1>
-				<!-- <ul>
-					<li style="text-decoration:underline;margin:2rem 0 .25rem 0;"><b><small>UX checklist.</small></b></li>
-					<li>개별 삭제기능 기능만 제공.</li>
-					<li>주문페이지에서 주문자, 주소, 쿠폰적용, 적립금사용 반영?</li>
-					<li>쿠폰이 적용되었을 때 마이너스(-) 금액을 표시.</li>
-					<li>Remove 버튼에 보조 아이콘 제공하는 것이 좋을까?</li>
-					<li>수량, 색상 등의 옵션을 변경할 수 있도록 할 것. AND 셀렉트박스로 충분. AND 서비스 초기에 필수 기능이 아닐 수 있음.</li>
-				</ul> -->
-				<time>16, April 2019</time>
-			</header>
-			<figure class="cart-item">
-				<button class="cart-item-delete"><i class="icon-close"></i></button>
-				<!-- <button class="cart-item-checkout"><i class="icon-close"></i></button> -->
-				<a href="" class="cart-item-thumbnail"><img src="/public/images/product_sample.png" alt=""></a>
-				<div class="cart-item-name">
-					<span class="cart-item-name-label">product</span>
-					<b class="cart-item-name-value">폰타나 베네치아 로스티드 쉬림프 크림</b>
-				</div>
-				<div class="cart-item-color">
-					<span class="cart-item-color-label">color</span>
-					<select name="" id="" class="cart-item-color-value">
-						<option value="">보라색</option>
-						<option value="">베이지색</option>
+			<div class="cart-item-color">
+				<span class="cart-item-color-label">color</span>
+				<select name="" id="" class="cart-item-color-value">
+					<option value="">보라색</option>
+					<option value="">베이지색</option>
+				</select>
+				<!-- <b class="cart-item-color-value">Brown</b> -->
+			</div>
+			<div class="cart-item-qty">
+				<span class="cart-item-qty-label">qty</span>
+				<select name="" id="" class="cart-item-qty-value">
+						<option value="">3</option>
+						<option value="">4</option>
 					</select>
-					<!-- <b class="cart-item-color-value">Brown</b> -->
-				</div>
-				<div class="cart-item-qty">
-					<span class="cart-item-qty-label">qty</span>
-					<select name="" id="" class="cart-item-qty-value">
-							<option value="">3</option>
-							<option value="">4</option>
-						</select>
-					<!-- <b class="cart-item-qty-value">3</b> -->
-				</div>
-				<div class="cart-item-price">
-					<span class="cart-item-price-label">price</span>
-					<b class="cart-item-price-value">₩ 22,500</b>
-				</div>
-				<button class="cart-item-more" type="button">Show product details<i class="icon-caret"></i></button>
-				<button class="cart-item-remove" type="button">Remove Options</button>
-				<div class="cart-item-addition">
-					<p class="cart-item-addition-heading">AppleCare+ for Macbook/MacBook Air</p>
-					<p class="cart-item-addition-description">Automatically registered width your Apple hardware.</p>
-					<span class="cart-item-addition-price">₩ 20,000</span>
-					<span></span>
-				</div>
-				<div class="cart-item-ship">
-					<p class="cart-item-ship-heading">배송비</p>
-					<p class="cart-item-ship-description">도서 산간 지방 배송 안 될거에요.</p>
-					<span class="cart-item-ship-price">₩ 2,500</span>
-				</div>
-			</figure>
+				<!-- <b class="cart-item-qty-value">3</b> -->
+			</div>
+			<div class="cart-item-price">
+				<span class="cart-item-price-label">price</span>
+				<b class="cart-item-price-value">₩ 22,500</b>
+			</div>
+			<button class="cart-item-more" type="button">Show product details<i class="icon-caret"></i></button>
+			<button class="cart-item-remove" type="button">Remove Options</button>
+			<div class="cart-item-addition">
+				<p class="cart-item-addition-heading">AppleCare+ for Macbook/MacBook Air</p>
+				<p class="cart-item-addition-description">Automatically registered width your Apple hardware.</p>
+				<span class="cart-item-addition-price">₩ 20,000</span>
+				<span></span>
+			</div>
+			<div class="cart-item-ship">
+				<p class="cart-item-ship-heading">배송비</p>
+				<p class="cart-item-ship-description">도서 산간 지방 배송 안 될거에요.</p>
+				<span class="cart-item-ship-price">₩ 2,500</span>
+			</div>
+		</figure>
 
-			<figure class="cart-item">
-				<button class="cart-item-delete"><i class="icon-close"></i></button>
-				<!-- <button class="cart-item-checkout"><i class="icon-close"></i></button> -->
-				<a href="" class="cart-item-thumbnail"><img src="/public/images/product_sample.png" alt=""></a>
-				<div class="cart-item-name"><span class="cart-item-name-label">product</span><b class="cart-item-name-value">농심 새우깡 깐풍기 맛</b></div>
-				<div class="cart-item-color"><span class="cart-item-color-label">color</span><b class="cart-item-color-value">88</b></div>
-				<div class="cart-item-qty"><span class="cart-item-qty-label">qty</span><b class="cart-item-qty-value">99</b></div>
-				<div class="cart-item-price">
-					<span class="cart-item-price-label">price</span>
-					<b class="cart-item-price-value">₩ 40,000</b>
-				</div>
-				<button class="cart-item-more" type="button">Show product details<i class="icon-caret"></i></button>
-				<button class="cart-item-remove" type="button">Remove Options</button>
-				<div class="cart-item-addition">
-					<p>AppleCare+ for Macbook/MacBook Air</p>
-					<p class="cart-item-addition-description">Automatically registered width your Apple hardware.</p>
-					<span class="cart-item-addition-price">₩ 20,000</span>
-					<span></span>
-				</div>
-				<div class="cart-item-ship">
-					<p>배송비</p>
-					<p class="cart-item-ship-description">도서 산간 지방 배송 안 될거에요.</p>
-					<span>₩ 2,500</span>
-				</div>
-				<!-- <div class="cart-item-coupon">
-					할인쿠폰 적용하기
-				</div> -->
-			</figure>
+		<figure class="cart-item">
+			<button class="cart-item-delete"><i class="icon-close"></i></button>
+			<!-- <button class="cart-item-checkout"><i class="icon-close"></i></button> -->
+			<a href="" class="cart-item-thumbnail"><img src="/public/images/product_sample.png" alt=""></a>
+			<div class="cart-item-name"><span class="cart-item-name-label">product</span><b class="cart-item-name-value">농심 새우깡 깐풍기 맛</b></div>
+			<div class="cart-item-color"><span class="cart-item-color-label">color</span><b class="cart-item-color-value">88</b></div>
+			<div class="cart-item-qty"><span class="cart-item-qty-label">qty</span><b class="cart-item-qty-value">99</b></div>
+			<div class="cart-item-price">
+				<span class="cart-item-price-label">price</span>
+				<b class="cart-item-price-value">₩ 40,000</b>
+			</div>
+			<button class="cart-item-more" type="button">Show product details<i class="icon-caret"></i></button>
+			<button class="cart-item-remove" type="button">Remove Options</button>
+			<div class="cart-item-addition">
+				<p>AppleCare+ for Macbook/MacBook Air</p>
+				<p class="cart-item-addition-description">Automatically registered width your Apple hardware.</p>
+				<span class="cart-item-addition-price">₩ 20,000</span>
+				<span></span>
+			</div>
+			<div class="cart-item-ship">
+				<p>배송비</p>
+				<p class="cart-item-ship-description">도서 산간 지방 배송 안 될거에요.</p>
+				<span>₩ 2,500</span>
+			</div>
+			<!-- <div class="cart-item-coupon">
+				할인쿠폰 적용하기
+			</div> -->
+		</figure>
 
-			<!-- <section class="checkout">
-				<h1>주문서</h1>
-				<p>주소</p>
-			</section>
-			<section>
-				<h3>적립금/포인트 사용</h3>
-				<p>적립금 (0원)</p>
-				<p>CJ 기프트카드 <button>카드조회</button></p>
-			</section>
-			<section>
-				<h3>결제수단 선택</h3>
-				<p>고객님이 최근 사용하신 네이버페이로 결제합니다.</p>
-				<button class="secondary-button" type="button">결제수단 변경</button>
-			</section> -->
-
-			<footer class="cart-summary">
-				<div class="cart-summary-subtotal">
-					<span class="cart-summary-label">Subtotal</span>
-					<b class="cart-summary-value">₩ 30,000</b>
-				</div>
-				<div class="cart-summary-shipping">
-					<span class="cart-summary-label">Shipping</span>
-					<b class="cart-summary-value">₩ 3,000</b>
-				</div>
-				<div class="cart-summary-discount">
-					<span class="cart-summary-label">Discount</span>
-					<b class="cart-summary-value">(ㅡ) ₩ 2,000</b>
-				</div>
-				<div class="cart-summary-total">
-					<span class="cart-summary-label">Total</span>
-					<b class="cart-summary-value">₩ 37,000</b>
-				</div>
-				<div class="cart-summary-controls">
-					<button class="cart-summary-checkout primary-button" type="button">Checkout</button>
-				</div>
-			</footer>
+		<!-- <section class="checkout">
+			<h1>주문서</h1>
+			<p>주소</p>
 		</section>
+		<section>
+			<h3>적립금/포인트 사용</h3>
+			<p>적립금 (0원)</p>
+			<p>CJ 기프트카드 <button>카드조회</button></p>
+		</section>
+		<section>
+			<h3>결제수단 선택</h3>
+			<p>고객님이 최근 사용하신 네이버페이로 결제합니다.</p>
+			<button class="secondary-button" type="button">결제수단 변경</button>
+		</section> -->
+		<footer class="cart-summary">
+			<div class="cart-summary-subtotal">
+				<span class="cart-summary-label">Subtotal</span>
+				<b class="cart-summary-value">₩ 30,000</b>
+			</div>
+			<div class="cart-summary-shipping">
+				<span class="cart-summary-label">Shipping</span>
+				<b class="cart-summary-value">₩ 3,000</b>
+			</div>
+			<div class="cart-summary-discount">
+				<span class="cart-summary-label">Discount</span>
+				<b class="cart-summary-value">(ㅡ) ₩ 2,000</b>
+			</div>
+			<div class="cart-summary-total">
+				<span class="cart-summary-label">Total</span>
+				<b class="cart-summary-value">₩ 37,000</b>
+			</div>
+			<div class="cart-summary-controls">
+				<button class="cart-summary-checkout primary-button" type="button">Checkout</button>
+			</div>
+		</footer>
 	</main>

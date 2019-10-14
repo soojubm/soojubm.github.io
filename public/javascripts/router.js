@@ -1,5 +1,5 @@
 import { checkAllcheckbox } from './input';
-import { enterTarget } from './event';
+import { enterTarget, stickyHeader, modal } from './event';
 
 const router = function() {
 	const view = null || document.getElementById('view');
@@ -22,16 +22,8 @@ const router = function() {
 					checkElements: '.js-check'
 				});
 
-				let lastScrollTop = 0;
-				const headerElement = document.querySelector('.header');
-				window.addEventListener('scroll', () => {
-					requestAnimationFrame(hasScrolled);
-				});
-
-				const hasScrolled = () => {
-					window.pageYOffset > lastScrollTop ? headerElement.classList.add('nav-up') : headerElement.classList.remove('nav-up');
-					lastScrollTop = window.pageYOffset;
-				};
+				// stickyHeader();
+				modal();
 
 				enterTarget('.js-hover-trigger');
 				enterTarget('.header-user-notification');
@@ -39,15 +31,17 @@ const router = function() {
 
 				const scrollTarget = document.querySelectorAll('.js-scroll-animation');
 				scrollTarget.forEach((element) => {
-					console.log(element.getBoundingClientRect().bottom, window.innerHeight);
-					if(element.getBoundingClientRect().bottom + 100 < window.innerHeight) {
+					const isContainedWindowHeight = element.getBoundingClientRect().bottom <= window.innerHeight;
+					if(isContainedWindowHeight) {
 						element.classList.add('is-scrolled');
 					}
 				});
 				window.addEventListener('scroll', () => {
 					scrollTarget.forEach((element) => {
-						//console.log(window.pageYOffset, window.pageYOffset + element.getBoundingClientRect().top - window.innerHeight  + 50);
-						if(window.pageYOffset > window.pageYOffset + element.getBoundingClientRect().top - window.innerHeight + 50){
+						console.log(window.pageYOffset, element.getBoundingClientRect().top);
+						const pageY = window.pageYOffset;
+						const isScrolled = pageY > pageY + element.getBoundingClientRect().top - window.innerHeight + 50;
+						if(isScrolled){
 							element.classList.add('is-scrolled');
 						}
 					});
@@ -58,9 +52,8 @@ const router = function() {
 					const x = event.clientX;
 					const y = event.clientY;
 					// cursor.style.transform = `translate(${x - 15}px, ${y - 15}px`;
-					// cursor.setAttribute('style', 'top:'+x+'px;top:'+y+'px');
-					cursor.style.left = `${event.pageX}px`;
-					cursor.style.top = `${event.pageY}px`;
+					cursor.style.left = `${x}px`;
+					cursor.style.top = `${y}px`;
 				}, false);
 
 				document.addEventListener('click', () => {

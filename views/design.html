@@ -146,6 +146,60 @@
       </ol>
     </article>
 
+    
+		<!-- <section class="category">
+			<div class="category-list">
+				<button type="button">초1</button>
+				<button type="button">초2</button>
+				<button type="button">초3</button>
+				<button type="button">초4</button>
+				<button type="button">초5</button>
+				<button type="button">초6</button>
+				<button type="button" style="background:green;">중1</button>
+				<button type="button" style="background:green;">중2</button>
+				<button type="button" style="background:green;">중3</button>
+				<button type="button" style="background:blue;">고1</button>
+				<button type="button" style="background:blue;">고2</button>
+				<button type="button" style="background:blue;">고3</button>
+			</div>
+			<nav class="category-navigation">
+				<button class="category-navigation-prev" type="button">prev</button>
+				<button class="category-navigation-next" type="button">next</button>
+			</nav>
+		</section>
+		<script>
+			document.addEventListener('DOMContentLoaded', function(){
+				const category = document.querySelector('.category');
+				const categoryList = category.querySelector('.category-list');
+				const categoryNavigationPrev = category.querySelector('.category-navigation-prev');
+				const categoryNavigationNext = category.querySelector('.category-navigation-next');
+				const temp2 = categoryList.offsetWidth;
+				let sum = 0; 
+				// TODO: foreach ie 지원안함
+				document.querySelectorAll('.category-list > button').forEach(function(item){
+					sum = sum + item.offsetWidth;
+				});
+				categoryList.addEventListener('scroll', function(){
+					const temp = categoryList.scrollLeft;
+					console.log('scroll-left', temp);
+					console.log('offset-width', temp2);
+				});
+				console.log(sum, temp2);
+				categoryNavigationNext.addEventListener('click', () => {
+					if(sum > temp2) {
+						categoryList.scrollLeft += 100;
+						//var ttt = 100 + 'px';
+						//document.querySelector('.category-list').style.transform += 'translateX('+ttt+')';
+					}
+				});
+				categoryNavigationPrev.addEventListener('click', () => {
+					if(sum > temp2) {
+						categoryList.scrollLeft -= 100;
+					}
+				});
+			});
+		</script> -->
+
     <article class="design-article js-scroll-animation">
       <h1 class="design-article-heading">Tags</h1>
       <p class="design-article-description">임시로 code태그로 마크업해서 사용 중이에요. 닫기 아이콘 연하게.</p>

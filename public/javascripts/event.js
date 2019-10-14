@@ -1,96 +1,118 @@
 //TODO: 모달 밖의 컨텐츠에 aria-hidden 모달의 위치는 바디 안에?
-//if(!modalTrigger) return;
 //var abc = window.innerWidth - document.body.clientWidth;
+
 export const modal = () => {
-	document.addEventListener('click', event => {
-		// const target = event.target;
-		const { target } = event;
-		if (!target.closest('.js-modal')) return;
+	const bodyElement = document.body;
+	let pageY = undefined;
 
-		const bodyElement = document.body;
-		const targetParent = target.parentNode;
-		let getScrollTop;
-		let findCurrentTarget = null;
-		// pointer-events: none; 으로 대체가능 if > ie11
+	const modals = document.querySelectorAll('.js-modal');
+	if(!modals) return;
 
+	modals.forEach(modal => modal.addEventListener('click', event => {
 		event.stopPropagation();
-		if (targetParent.classList.contains('js-modal')) {
-			findCurrentTarget = targetParent;
-		} else {
-			findCurrentTarget = targetParent.parentNode;
-		}
+		modal.nextElementSibling.classList.add('is-visible');
+		pageY = window.pageYOffset;
 
-		findClassRecursive(event.target, 'js-modal', 0);
+		setLockBody();
 
-		getScrollTop = window.pageYOffset;
-
-		findCurrentTarget.nextElementSibling.classList.add('is-visible');
-		bodyElement.classList.add('body-lock');
-		bodyElement.style.top = -getScrollTop + 'px';
-
-		const closeModal = () => {
-			if (!findCurrentTarget.nextElementSibling.classList.contains('is-visible')) return;
-			findCurrentTarget.nextElementSibling.classList.remove('is-visible');
+		document.addEventListener('click', closeModal);
+		function closeModal() {
+			if (!modal.nextElementSibling.classList.contains('is-visible')) return;
+			modal.nextElementSibling.classList.remove('is-visible');
 			bodyElement.classList.remove('body-lock');
-			window.scrollTo(0, getScrollTop);
-		};
-
-		document.addEventListener('click', () => {
-			closeModal();
-		});
-
-		document.querySelectorAll('.modal-dialog').forEach(element => {
-			element.addEventListener('click', event => {
-				event.stopPropagation();
-			});
-		});
-	},
-	true,
-	);
-
-	const findClassRecursive = (element, className, depth) => {
-	// parentNode.classList.contains('js-modal')
-		console.log('depth: ' + depth, element);
-		if (element.classList.contains(className)) return element;
-		else return findClassRecursive(element.parentNode, className, depth + 1);
-	};
-
-	var getClosest = function(elem, selector) {
-		for (; elem && elem !== document; elem = elem.parentNode) {
-			if (elem.matches(selector)) return elem;
+			window.scrollTo(0, pageY);
 		}
-		return null;
-	};
+	}));
+
+	const modalDialog = document.querySelectorAll('.modal-dialog');
+	modalDialog.forEach(element => element.addEventListener('click', event => event.stopPropagation()));
+	
+	function setLockBody() {
+		bodyElement.classList.add('body-lock');
+		bodyElement.style.top = `-${pageY}px`;
+	}
+
+	// document.addEventListener('click', event => {
+	// 	const { target } = event;
+	// 	if (!target.closest('.js-modal')) return;
+
+	// 	const bodyElement = document.body;
+	// 	const targetParent = target.parentNode;
+	// 	let getScrollTop;
+	// 	let findCurrentTarget = null;
+
+	// 	event.stopPropagation();
+	// 	if (targetParent.classList.contains('js-modal')) {
+	// 		findCurrentTarget = targetParent;
+	// 	} else {
+	// 		findCurrentTarget = targetParent.parentNode;
+	// 	}
+
+	// 	findClassRecursive(target, 'js-modal', 0);
+
+	// 	getScrollTop = window.pageYOffset;
+
+	// 	findCurrentTarget.nextElementSibling.classList.add('is-visible');
+
+	// 	setLockBody();
+
+	// 	const modalDialog = document.querySelectorAll('.modal-dialog');
+	// 	modalDialog.forEach(element => {
+	// 		element.addEventListener('click', event => event.stopPropagation());
+	// 	});
+
+	// 	function setLockBody() {
+	// 		const bodyElement = document.body;
+	// 		bodyElement.classList.add('body-lock');
+	// 		bodyElement.style.top = `-${getScrollTop}px`;
+	// 	}
+
+	// 	document.addEventListener('click', closeModal);
+	// 	function closeModal() {
+	// 		if (!findCurrentTarget.nextElementSibling.classList.contains('is-visible')) return;
+	// 		findCurrentTarget.nextElementSibling.classList.remove('is-visible');
+	// 		bodyElement.classList.remove('body-lock');
+	// 		window.scrollTo(0, getScrollTop);
+	// 	}
+	// }, true);
+
+	// const findClassRecursive = (element, className, depth) => {
+	// // parentNode.classList.contains('js-modal')
+	// 	console.log('depth: ' + depth, element);
+	// 	if (element.classList.contains(className)) return element;
+	// 	else return findClassRecursive(element.parentNode, className, depth + 1);
+	// };
+
+	// var getClosest = function(elem, selector) {
+	// 	for (; elem && elem !== document; elem = elem.parentNode) {
+	// 		if (elem.matches(selector)) return elem;
+	// 	}
+	// 	return null;
+	// };
 };
 
 
 export const tabMenu = () => {
-	document.addEventListener('click', (event) => {
+	document.addEventListener('click', event => {
+		const target = event.target;
 		const tabActiceBar = document.querySelector('.profile-tablist-active');
-		if(event.target.closest('[role=tab]')) {
-			// 탭 액티브바 애니메이션
-			tabActiceBar.style.left = event.target.offsetLeft + 'px';
+		const tabs = target.parentNode.querySelectorAll('[role=tab]');
+		const tabIndex = target.getAttribute('data-index');
 
-			// 전체 탭의 선택을 해제한다.
-			const tabs = event.target.parentNode.querySelectorAll('[role=tab]');
-			tabs.forEach((tab) => {
-				tab.setAttribute('aria-selected', 'false');
-			});
-			//console.log(Array.from(checks).indexOf(event.target));
+		if(target.closest('[role=tab]')) {
+			target.setAttribute('aria-selected', 'true');
+			tabActiceBar.style.left = `${target.offsetLeft}px`;
+			tabs.forEach(tab => tab.setAttribute('aria-selected', 'false'));
 		
-			const tabIndex = event.target.getAttribute('data-index');
-			event.target.parentNode.parentNode.querySelectorAll('[role=tabpanel]').forEach((element) => {
+			target.parentNode.parentNode.querySelectorAll('[role=tabpanel]').forEach(element => {
 				element.setAttribute('aria-hidden', 'true');
 				if(tabIndex === element.getAttribute('data-index')){
 					element.setAttribute('aria-hidden', 'hidden');
 				}
 			});
-			// 클릭한 탭이 선택된다.
-			event.target.setAttribute('aria-selected', 'true');
 		}
 	}, true);
 };
-
 
 
 // var isScrolling;
@@ -103,9 +125,7 @@ export const tabMenu = () => {
 
 
 // TODO: post-head의 offset-top까지 더해서 마진값을 주어야
-export const stickyElement = ({
-	targetElement, addClass, isHeader}
-) => {
+export const stickyElement = ({targetElement, addClass, isHeader}) => {
 	const bodyElement = document.body;
 	const mainElement = document.querySelector('main');
 	const stickyElement = mainElement.querySelector(targetElement);
@@ -149,18 +169,32 @@ export const parallax = (targetElement) => {
 		target.forEach((element) => {
 			//console.log(window.pageYOffset, element.offsetTop);
 			let rate = window.pageYOffset * -0.2 - 600;
-			//let aaa = (window.pageYOffset - element.offsetTop) * -1.5; // scrolled = window.pageYOffset
+			let aaa = (window.pageYOffset - element.offsetTop) * -1.5; // scrolled = window.pageYOffset
 			//let bbb = aaa > 0 ? -aaa : aaa;
 			element.style.backgroundPosition = 'center ' + aaa + 'px'; 
-			element.style.transform = 'translate3d(0px, '+rate+'px, 0px)';
+			// element.style.transform = 'translate3d(0px, '+rate+'px, 0px)';
 			// DataTransferItemList.rate
 		});
 	});
 };
 
-// $('html, body').stop().animate({scrollTop:$('.scroll-pin').eq(index).offset().top}, 1000,'easeOutCubic');
+export const stickyHeader = () => {
+	const headerElement = document.querySelector('.header');
+	let lastScrollTop = 0;
+	
+	window.addEventListener('scroll', () => {
+		requestAnimationFrame(hasScrolled);
+	});
 
-
+	function hasScrolled() {
+		if(window.pageYOffset > lastScrollTop) {
+			headerElement.classList.add('nav-up');
+		} else {
+			headerElement.classList.remove('nav-up');
+		}
+		lastScrollTop = window.pageYOffset;
+	}
+};
 
 
 
