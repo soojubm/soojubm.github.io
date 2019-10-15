@@ -139,25 +139,33 @@ export const inputNumber = () => {
 	const increaseElement = document.querySelector('.js-number-input');
 
 	document.addEventListener('keydown', event => {
-		if (!event.target.closest('.js-number-input')) return;
-		const eventKeyCode = event.keyCode;
-		eventKeyCode >= 48 || eventKeyCode <= 57 || event.preventDefault();
-		eventKeyCode === 69 && event.preventDefault();
-		eventKeyCode === 189 && event.preventDefault();
-		eventKeyCode === 187 && event.preventDefault();
-		eventKeyCode === 190 && event.preventDefault();
-		//event.target.value.length === 0 && event.keyCode === 48 && event.preventDefault();
+		const { target } = event;
+		const inNumberInput = target.closest('.js-number-input');
+		if (!inNumberInput) return;
 
-		document.addEventListener('keyup', () => {
-			// click 이벤트에서도 함수로 만들어서 적용
-			const isFirstPlacedZero = /(^0+)/.test(event.target.value);
-			const isMaximum = Number(event.target.value) >= 300;
-			const isLength = event.target.value.length > 3;
+		setPreventNotNumber();
+		document.addEventListener('keyup', setLimitNumber);
 
-			if (isFirstPlacedZero) event.target.value = '0';
-			if (isLength) event.target.value = event.target.value.slice(0, 3);
-			if (isMaximum) event.target.value = '300';
-		});
+		function setPreventNotNumber() {
+			const keyCode = event.keyCode;
+			keyCode >= 48 || keyCode <= 57 || event.preventDefault();
+			keyCode === 69 && event.preventDefault();
+			keyCode === 189 && event.preventDefault();
+			keyCode === 187 && event.preventDefault();
+			keyCode === 190 && event.preventDefault();
+			//event.target.value.length === 0 && event.keyCode === 48 && event.preventDefault();
+		}
+		function setLimitNumber() {
+			const MAXIMUM = 300;
+			const MINIMUN = 0;
+			const isFirstPlacedZero = /(^0+)/.test(target.value);
+			const isMaximum = Number(target.value) >= MAXIMUM;
+			const isLength = event.target.value.length > MINIMUN;
+
+			if(isFirstPlacedZero) event.target.value = MINIMUN;
+			if(isLength) event.target.value = event.target.value.slice(0, 3);
+			if(isMaximum) event.target.value = MAXIMUM;
+		}
 	});
 
 	document.addEventListener('click', event => {
