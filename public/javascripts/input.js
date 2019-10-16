@@ -216,26 +216,30 @@ export const inputNumber = () => {
 export const checkAllcheckbox = ({checkAllElement, checkElements}) => {
 	const checkAll = document.querySelector(checkAllElement);
 	const checkItems = document.querySelectorAll(checkElements);
-	let checkedCount = 0;
-
 	if(!checkAll || !checkItems) return;
 
+	checkAll.addEventListener('change', setCheckAll);
 	checkItems.forEach(checkItem => {
-		checkItem.addEventListener('change', () => {
-			checkItem.checked ? checkedCount++ : checkedCount--;
-			checkedCount === checkItems.length ? checkAll.checked = true : checkAll.checked = false;
-
-			checkAll.indeterminate = checkedCount > 0 && checkedCount < checkItems.length;
-			console.log(checkAll.indeterminate);
-		});
+		checkItem.addEventListener('change', setCheckEach);
 	});
 
-	checkAll.addEventListener('change', () => {
+	function setCheckEach() {
+		const isCheckedEvery = Array.from(checkItems).every(checkItem => checkItem.checked);
+		checkAll.checked = isCheckedEvery;
+
+		const isCheckedSome = Array.from(checkItems).some(checkItem => checkItem.checked);
+		checkAll.indeterminate = isCheckedSome && !isCheckedEvery;
+	}
+	function setCheckAll() {
 		checkItems.forEach(checkItem => {
 			checkAll.checked ? checkItem.checked = true : checkItem.checked = false;
 		});
-	});
+	}
 };
+
+
+// matches나 closest, classList.contains, gA 등으로 checkAll 같은 엘리먼스틀 체크할 수는 없다. ???
+// closest를 사용하면 자식 엘리먼트가 있을 때도 작동한다.
 
 // var otherCheckbox = document.querySelector('input[value="other"]');
 // var otherText = document.querySelector('input[id="otherValue"]');

@@ -1,5 +1,5 @@
 import { checkAllcheckbox } from './input';
-import { enterTarget, stickyHeader, modal } from './event';
+import { enterTarget, stickyHeader, modal, eventToggle } from './event';
 
 const router = function() {
 	const view = null || document.getElementById('view');
@@ -24,6 +24,7 @@ const router = function() {
 
 				// stickyHeader();
 				modal();
+				eventToggle();
 
 				enterTarget('.js-hover-trigger');
 				enterTarget('.header-user-notification');

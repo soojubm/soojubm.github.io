@@ -171,51 +171,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	// }, true);
 
-	const toggleEvent = function(target, toggle) {
-		const targetElement = document.querySelector(target);
-		const toggleElement = document.querySelector(toggle);
-
-		targetElement.addEventListener('click', event => {
-			targetElement.classList.add('is-active');
-			toggleElement.classList.add('is-active');
-			document.querySelectorAll(targetElement).forEach((element) => {
-				if(event.target !== element) {
-					event.target.parentNode.classList.remove('is-expanded');
-				}
-			});
-		});
-	};
-
-	// const toggleElements = document.querySelectorAll('.js-accordion');
-	// toggleElements.forEach(element => {
-	// 	element.addEventListener('click', () => {
-	// 		if(target !== element) {
-	// 			targetNextElement.classList.remove('is-visible');
-	// 		}
-	// 	});
-	// 	element.nextElementSibling.addEventListener('click', (event) => {
-	// 		event.stopPropagation();
-	// 	});
-	// });
-
-	document.addEventListener('click', event => {
-		const target = event.target;
-		const targetNextElement = target.nextElementSibling;
-		const isTarget = target.closest('.js-accordion');
-		if (!isTarget) return;
-		// parentNode.classList.add() 로 통일.
-
-		if(isTarget) {
-			target.classList.toggle('is-active');
-			targetNextElement.classList.toggle('is-visible');
-		}
-	});
-
-	// click 이벤트 외부에 넣으니까 파폭에서만 오류. event undefined
-	// TODO: 토글 안에 토글 이벤트 존재 시
-	// TODO: 도큐먼트가 아니라 event.target.parent 가 아닌 것을 클릭했을 때 다당야 하나
-	// // 모든 토글 이벤트는 하나의 공통된 클래스 선택자를 사용한다.
-	// // 속도 이슈를 고민해보자.
 
 	const closeElement = document.querySelectorAll('.js-close');
 	closeElement.forEach(element => {
