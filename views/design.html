@@ -218,7 +218,7 @@
 
     <article class="design-article js-scroll-animation">
       <h1 class="design-article-heading">Lists</h1>
-      <p class="design-article-description">군집을 이루는 엘리먼트라면 모두 리스트로 취급할 수 있으니 주의해요. 수줍이는 리스트업된 텍스트 엘리먼트에만 리스트 태그로 마크업해요.</p>
+      <p class="design-article-description">군집을 이루는 엘리먼트라면 모두 리스트로 취급할 수 있으니 주의해요. 리스트업된 텍스트 엘리먼트에만 리스트 태그로 마크업해요.</p>
       <ul class="list-sample">
         <li>unordered list, level 1
           <ul>
@@ -372,19 +372,23 @@
       <h1 class="design-article-heading">Checkboxes</h1>
       <p class="design-article-description">checkbox, checkall, intermediate</p>
       <div class="checkbox">
-        <input type="checkbox" id="line01" value="" checked />
+        <input class="js-checkall" type="checkbox" id="line00" value="" />
+        <label for="line00">Check All</label>
+      </div>
+      <div class="checkbox">
+        <input class="js-check" type="checkbox" id="line01" value="" checked />
         <label for="line01">Everyday is like sunday</label>
       </div>
       <div class="checkbox">
-        <input type="checkbox" id="line02" value="" indeterminate checked data-indeterminate="true" />
+        <input class="js-check" type="checkbox" id="line02" value="" />
         <label for="line02">Everyday is like sunday</label>
       </div>
       <div class="checkbox">
-        <input type="checkbox" id="line03" value="" checked disabled />
+        <input class="js-check" type="checkbox" id="line03" value="" checked disabled />
         <label for="line03">Everyday is like sunday</label>
       </div>
       <div class="checkbox textfiled">
-        <input type="checkbox" id="other" name="interest" value="other">
+        <input class="js-check" type="checkbox" id="other" name="interest" value="other">
         <label for="other">Other</label>
         <input type="text" name="other" class="textfield-input" placeholder="다른 거 뭔지 입력해주세요.">
       </div>

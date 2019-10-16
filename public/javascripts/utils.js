@@ -26,9 +26,8 @@ var stringToHTML = function (str) {
 // text.replace(/[^a-z0-9]/)
 
 export const autoExpand = field => {
-	console.log(field.scrollHeight);
-	
 	field.style.height = 'inherit';
+	
 	const computed = window.getComputedStyle(field);
 	let height = field.scrollHeight + parseInt(computed.getPropertyValue('border-top-width'));
 	field.style.height = height + 'px';

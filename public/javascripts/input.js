@@ -1,95 +1,77 @@
 import { autoExpand } from './utils';
 
+
+// TODO: 여러번 반복해서 올렸을 때 filelist 누적되는지?
+// TODO: 동일한 파일을 업로드 했을 때 체크, 삭제했을 때 fileList에서 삭제, fileInput.files는 쌓이지 않음.
 export const attachFile = () => {
-	document.addEventListener('change', event => {
-		const target = event.target;
+	const fileInput = document.querySelector('.js-file-input');
+	if(!fileInput) return;
+	
+	const fileSubmit = document.querySelector('.js-file-submit');
+	const attachmentList = document.querySelector('.js-file-attachment-list');
+	const attachmentHelper = document.querySelector('.js-file-attachment-helper');
+	let attachedfiles;
+	let fileList = [];
 
-		if (!target.closest('.js-file-input')) return;
-		const fileInput = document.querySelector('.js-file-input');
-		const fileSubmit = document.querySelector('.js-file-submit');
-		const attachmentList = document.querySelector('.js-file-attachment-list');
-		const attachmentHelper = document.querySelector('.js-file-attachment-helper');
-		let attachedfiles;
-		let fileList = [];
+	fileInput.addEventListener('change', attach);
 
-		// TODO: 여러번 반복해서 올렸을 때 filelist 누적되는지?
-		// TODO: 동일한 파일을 업로드 했을 때 체크
-		// TODO: 삭제했을 때 fileList에서 삭제
-		// fileInput.files는 쌓이지 않음.
-
-		const validFileType = file => {
-			const fileTypes = ['image/jpeg', 'image/gif', 'image/png'];
-			console.log(fileTypes.indexOf(file.type));
-
-			if (fileTypes.indexOf(file.type) > -1) return true;
-		};
-		const returnFileSize = size => {
-			if (size < 1024) return size + 'bytes';
-			else if (size >= 1024 && size < 1048576) return (size / 1024).toFixed(2) + 'KB';
-			else return (size / 1048576).toFixed(2) + 'MB';
-		};
-
-		attachedfiles = target.files;
-		// attachedfiles = fileInput.files;
+	function attach() {
+		attachedfiles = fileInput.files;
+		attachmentHelper.style.display = attachedfiles.length === 0 ? 'block' : 'none';
 		console.log('attachedfiles', attachedfiles);
+		
+		Array.from(attachedfiles).forEach((file) => {
+			if(!validFileType(file)) return alert('파일타입 jpeg pjpeg png 중 하나가 아니야~');
 
-		if (attachedfiles.length === 0) {
-			attachmentHelper.style.display = 'block';
-		} else {
-			attachmentHelper.style.display = 'none';
-			for (var i = 0; i < attachedfiles.length; i++) {
-				console.log('attachedfiles[i]', attachedfiles[i]);
+			const template = `
+				<figure class="file-attachment-item">
+					<img class="file-attachment-item-image" src=${window.URL.createObjectURL(file)} alt="">
+					<b class="file-attachment-item-name" href="#">${file.name}</b>
+					<small class="file-attachment-item-size" >${returnFileSize(file.size)}</small>
+					<button class="file-attachment-item-delete js-remove-this" type="button"><i class="icon-x"></i></button>
+				</figure>`;
+			attachmentList.innerHTML = template + attachmentList.innerHTML;
+		});
+	}
 
-				// 190428 test filelist array
+	function validFileType(file) {
+		const fileTypes = ['image/jpeg', 'image/gif'];
+		// const fileTypes = ['image/jpeg', 'image/gif', 'image/png'];
+		if(fileTypes.indexOf(file.type) > -1) return true;
+	}
+	function returnFileSize(size) {
+		const isBytes = size < 1024;
+		const isKiloBytes = size >= 1024 && size < 1048576;
+		if(isBytes) return size + 'bytes';
+		else if(isKiloBytes) return (size / 1024).toFixed(2) + 'KB';
+		else return (size / 1048576).toFixed(2) + 'MB';
+	}
 
-				if (validFileType(attachedfiles[i])) {
-					const template = `
-            <figure class="file-attachment-item">
-              <img class="file-attachment-item-image" src=${window.URL.createObjectURL(attachedfiles[i])} alt="">
-              <b class="file-attachment-item-name" href="#">${attachedfiles[i].name}</b>
-              <small class="file-attachment-item-size" >${returnFileSize(attachedfiles[i].size)}</small>
-              <button class="file-attachment-item-delete js-remove-this" type="button"><i class="icon-x"></i></button>
-            </figure>`;
-					attachmentList.innerHTML = template + attachmentList.innerHTML;
-					//attachmentList.appendChild(template);
-				} else {
-					alert('파일타입 jpeg pjpeg png 중 하나가 아니야~');
-				}
-			}
-		}
-		/*
-    document.addEventListener('click', (event) => {
-      if(event.target.closest('.js-remove-this')){ // 함수로
-        event.target.closest('.js-remove-this').parentNode.remove();
-        if(attachedfiles.length === 1) attachmentHelper.style.display = 'block';
-      }
-    }, true);
-    */
-		/*
-    // 190428 file ajax
-    fileSubmit.addEventListener('submit', (event) => {
-      event.preventDefault();
-      fileList.forEach(function(file){
-        sendFile(file);
-        console.log(fileList);
-        console.log(attachedfiles);
-      });
-    });
-    sendFile = function(file) {
-      var formData = new FormData();
-      console.log('formData', formData);
-      var request = new XMLHttpRequest();
-
-      formData.set('file', file);
-      request.open('post', '');
-      request.send(formData);
-    };
-    */
+	/*
+	// 190428 file ajax
+	fileSubmit.addEventListener('submit', (event) => {
+		event.preventDefault();
+		fileList.forEach(function(file){
+			sendFile(file);
+			console.log(fileList);
+			console.log(attachedfiles);
+		});
 	});
+	sendFile = function(file) {
+		var formData = new FormData();
+		var request = new XMLHttpRequest();
+
+		formData.set('file', file);
+		request.open('post', '');
+		request.send(formData);
+	};
+	*/
 };
 
 
+export const inputTextarea = () => {
 
+};
 document.addEventListener('input', event => {
 	// tagName과 nodeName은 텍스트 노드를 각각 undefined와 #text 반환한다.
 	const target = event.target;
@@ -148,12 +130,13 @@ export const inputNumber = () => {
 
 		function setPreventNotNumber() {
 			const keyCode = event.keyCode;
+			// todo 정규 표현식으로
 			keyCode >= 48 || keyCode <= 57 || event.preventDefault();
 			keyCode === 69 && event.preventDefault();
 			keyCode === 189 && event.preventDefault();
 			keyCode === 187 && event.preventDefault();
 			keyCode === 190 && event.preventDefault();
-			//event.target.value.length === 0 && event.keyCode === 48 && event.preventDefault();
+			// target.value.length === 0 && keyCode === 48 && event.preventDefault();
 		}
 		function setLimitNumber() {
 			const MAXIMUM = 300;
@@ -212,7 +195,6 @@ export const inputNumber = () => {
 	});
 };
 
-
 export const checkAllcheckbox = ({checkAllElement, checkElements}) => {
 	const checkAll = document.querySelector(checkAllElement);
 	const checkItems = document.querySelectorAll(checkElements);
@@ -222,6 +204,7 @@ export const checkAllcheckbox = ({checkAllElement, checkElements}) => {
 	checkItems.forEach(checkItem => {
 		checkItem.addEventListener('change', setCheckEach);
 	});
+	document.addEventListener('DOMContentLoaded', setCheckEach);
 
 	function setCheckEach() {
 		const isCheckedEvery = Array.from(checkItems).every(checkItem => checkItem.checked);
@@ -229,27 +212,13 @@ export const checkAllcheckbox = ({checkAllElement, checkElements}) => {
 
 		const isCheckedSome = Array.from(checkItems).some(checkItem => checkItem.checked);
 		checkAll.indeterminate = isCheckedSome && !isCheckedEvery;
+		checkAll.dataset.indeterminate = isCheckedSome && !isCheckedEvery;
 	}
 	function setCheckAll() {
 		checkItems.forEach(checkItem => {
-			checkAll.checked ? checkItem.checked = true : checkItem.checked = false;
+			checkItem.checked = checkAll.checked;
+			checkAll.indeterminate = false;
+			checkAll.dataset.indeterminate = false;
 		});
 	}
 };
-
-
-// matches나 closest, classList.contains, gA 등으로 checkAll 같은 엘리먼스틀 체크할 수는 없다. ???
-// closest를 사용하면 자식 엘리먼트가 있을 때도 작동한다.
-
-// var otherCheckbox = document.querySelector('input[value="other"]');
-// var otherText = document.querySelector('input[id="otherValue"]');
-// otherText.style.visibility = 'hidden';
-
-// otherCheckbox.onchange = function() {
-// 	if (otherCheckbox.checked) {
-// 		otherText.style.visibility = 'visible';
-// 		otherText.value = '';
-// 	} else {
-// 		otherText.style.visibility = 'hidden';
-// 	}
-// };

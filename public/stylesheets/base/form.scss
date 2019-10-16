@@ -97,7 +97,7 @@ input[type=date]::-webkit-inner-spin-button {display:none;}
 input[type=checkbox] {width:0;height:0;opacity:0;-webkit-appearance:checkbox;position:absolute;outline:auto;}
 input[type=checkbox] + label {display:block;height:16px;padding-left:1.75rem;line-height:16px;position:relative;}
 input[type=checkbox] + label:before {content:'';display:block;width:16px;height:16px;border-radius:$radius400;border:1px solid $gray40;box-sizing:border-box;position:absolute;left:0;top:0;}
-input[type=checkbox] + label:after {content:'';display:none;width:8px;height:2px;border-left:2px solid;border-bottom:2px solid;border-color:$gray20;position:absolute;left:3px;top:5px;transform:rotate(-45deg);transition:all 0.2s;}
+input[type=checkbox] + label:after {content:'';display:none;width:8px;height:2px;border-left:2px solid;border-bottom:2px solid;border-color:$gray20;position:absolute;left:3px;top:5px;transform:rotate(-45deg);}
 input[type=checkbox]:checked + label:before {border-color:$color-primary;}
 input[type=checkbox]:checked + label:after {display:block;border-color:$color-primary;}
 input[type=checkbox]:disabled + label {color:#bebebe;cursor:not-allowed;}
@@ -105,6 +105,8 @@ input[type=checkbox]:disabled + label:before {background:#bebebe;border-color:#b
 input[type=checkbox]:disabled + label:after {border-color:#fff;}
 input[type=checkbox][indeterminate=true] + label:before {}
 input[type=checkbox][indeterminate=true] + label:after {display:block;background:$color-primary;border:none;left:4px;top:7px;transform:rotate(0deg);}
+input[type=checkbox][data-indeterminate=true] + label:before {}
+input[type=checkbox][data-indeterminate=true] + label:after {display:block;background:$color-primary;border:none;left:4px;top:7px;transform:rotate(0deg);}
 
 input[type=radio] {width:0;height:0;opacity:0;-webkit-appearance:radio;position:absolute;}
 input[type=radio] + label {display:block;height:16px;padding-left:1.75rem;line-height:16px;position:relative;}

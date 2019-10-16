@@ -3,7 +3,7 @@
 import './stylesheets/style.scss';
 import router from './javascripts/router';
 import { tabMenu, stickyElement, parallax } from './javascripts/event.js';
-import { attachFile, inputNumber } from './javascripts/input';
+import { inputNumber } from './javascripts/input';
 import { loader, checkBrowser, adjustTopPadding } from './javascripts/load'; // loadSpinner
 
 const eventToTop = () => {
@@ -97,8 +97,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	loader();
 	checkBrowser();
+	adjustTopPadding();
 
-	attachFile();
 
 	tabMenu();
 	inputNumber();
@@ -107,7 +107,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	setGraph();
 
-	adjustTopPadding();
 
 	document.addEventListener('focus', (event) => {
 		if(event.target.closest('.js-searchbar')) {

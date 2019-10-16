@@ -1,4 +1,4 @@
-import { checkAllcheckbox } from './input';
+import { checkAllcheckbox, attachFile } from './input';
 import { enterTarget, stickyHeader, modal, eventToggle } from './event';
 
 const router = function() {
@@ -18,13 +18,15 @@ const router = function() {
 				view.innerHTML = html;
 
 				checkAllcheckbox({
-					checkAllElement: '.js-check-all', 
+					checkAllElement: '.js-checkall', 
 					checkElements: '.js-check'
 				});
 
 				// stickyHeader();
 				modal();
 				eventToggle();
+
+				attachFile();
 
 				enterTarget('.js-hover-trigger');
 				enterTarget('.header-user-notification');
