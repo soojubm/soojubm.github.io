@@ -1,6 +1,6 @@
 
 	<main>
-		<form class="login" name="login" action="" method="">
+		<form class="login" name="login" action="" method="" novalidat="true">
 			<!-- <figure class="login-figure">
 				<img src="/public/images/SaraAndreasson_NYLON_RunTheNight_Final3_670.jpg" alt="">
 			</figure> -->
@@ -16,7 +16,7 @@
 			</div>
 			<div class="textfield" style="margin-bottom:12px;">
 				<label class="textfield-label" for="loginin-password">비밀번호</label>
-				<input class="textfield-input js-input-password" type="password" name="password" id="loginin-password" placeholder="8자 이상" />
+				<input class="textfield-input js-input-password" type="password" title="비밀번호" name="password" id="loginin-password" placeholder="8자 이상" />
 				<small class="textfield-helper" role="alert">비밀번호를 입력하세요.<span aria-hidden="true">Enter a password.</span></small>
 				<a class="textfield-link" href="forgot.html">비밀번호를 잊으셨나요? <small aria-hidden="true">Forgot your password?</small></a>
 			</div>
@@ -29,11 +29,15 @@
 				<div class="login-divider">또는</div>
 				<div class="login-social" role="group">
 					<button type="button" class="primary-button -facebook" style="width:100%;">페이스북으로 시작하기<small aria-hidden="true">Sing in with Facebook</small></button>
-					<!-- <button type="button" class="button btn-naver">네이버로 시작하기</button>
-					<button type="button" class="button btn-kakao">카카오로 시작하기</button>
-					<button type="button" class="button btn-twitter">트위터로 시작하기</button> -->
+					<!-- <button type="button" class="primary-button --naver">네이버로 시작하기</button>
+					<button type="button" class="primary-button --kakao">카카오로 시작하기</button>
+					<button type="button" class="primary-button --twitter">트위터로 시작하기</button> -->
 				</div>
 				<p class="login-option">여기에 처음이신가요?<small aria-hidden="true">Need an account?</small> <a class="login-option-link" href="signup.html">가입하기<small aria-hidden="true">Join Soojubm for free</small></a></p>
 			</footer>
 		</form>
 	</main>
+
+	<style>
+	.textfield-helper {display:none;}
+	</style>

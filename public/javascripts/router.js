@@ -1,5 +1,6 @@
 import { checkAllcheckbox, attachFile } from './input';
 import { enterTarget, stickyHeader, modal, eventToggle } from './event';
+import { loginFormValidation } from '../index';
 
 const router = function() {
 	const view = null || document.getElementById('view');
@@ -28,6 +29,7 @@ const router = function() {
 
 				attachFile();
 
+
 				enterTarget('.js-hover-trigger');
 				enterTarget('.header-user-notification');
 				enterTarget('.header-user-account');
@@ -41,7 +43,6 @@ const router = function() {
 				});
 				window.addEventListener('scroll', () => {
 					scrollTarget.forEach((element) => {
-						console.log(window.pageYOffset, element.getBoundingClientRect().top);
 						const pageY = window.pageYOffset;
 						const isScrolled = pageY > pageY + element.getBoundingClientRect().top - window.innerHeight + 50;
 						if(isScrolled){
@@ -50,21 +51,29 @@ const router = function() {
 					});
 				});
 
-				const cursor = document.querySelector('.cursor');
-				document.addEventListener('mousemove', event => {
-					const x = event.clientX;
-					const y = event.clientY;
-					// cursor.style.transform = `translate(${x - 15}px, ${y - 15}px`;
-					cursor.style.left = `${x}px`;
-					cursor.style.top = `${y}px`;
-				}, false);
+				const customCursor = () => {
+					const cursor = document.querySelector('.cursor');
+					document.addEventListener('DOMContentLoaded', setCursor);
+					document.addEventListener('mousemove', setCursor);
+					document.addEventListener('click', setRipple);
 
-				document.addEventListener('click', () => {
-					cursor.classList.add('expand');
-					setTimeout(() => {
-						cursor.classList.remove('expand');
-					}, 500);
-				});
+					function setCursor() {
+						const x = event.clientX;
+						const y = event.clientY;
+						cursor.style.left = `${x}px`;
+						cursor.style.top = `${y}px`;
+						// cursor.style.transform = `translate(${x - 15}px, ${y - 15}px`;
+
+					}
+					function setRipple(){
+						cursor.classList.add('expand');
+						setTimeout(() => {
+							cursor.classList.remove('expand');
+						}, 500);
+					}
+				};
+				
+				customCursor();
 
 			})
 			.catch(error => console.warn('router: ', error));

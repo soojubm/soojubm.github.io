@@ -451,9 +451,19 @@
     <article class="design-article js-scroll-animation">
       <h1 class="design-article-heading">Textfield</h1>
       <p class="design-article-description">Input text, Textarea, Select, with Icon, with Unit, with Button</p>
+      <div class="variation js-variation">
+        <input class="variation-input js-variation-input js-number-input" name="variation1" type="number" value="0">
+        <button class="variation-decrement js-variation-decrement" type="button"><i class="icon-minus"></i></button>
+        <button class="variation-increment js-variation-increment" type="button"><i class="icon-plus"></i></button>
+      </div>
+      <div class="variation js-variation">
+        <input class="variation-input js-variation-input js-number-input" name="variation2" type="number" value="0">
+        <button class="variation-decrement js-variation-decrement" type="button"><i class="icon-minus"></i></button>
+        <button class="variation-increment js-variation-increment" type="button"><i class="icon-plus"></i></button>
+      </div>
       <div class="textfield">
         <label class="textfield-label" for="number">넘버</label>
-        <input class="textfield-input js-number-input" id="number" type="number" placeholder="숫자만 입력가능합니다."></input>
+        <input class="textfield-input js-number-input" id="number" type="number" min="5" max="20" placeholder="숫자만 입력가능합니다."></input>
       </div>
       <div class="textfield is-invalid" style="margin:1rem 0;">
         <label class="textfield-label" for="">레이블</label>
@@ -524,16 +534,15 @@
       <h1 class="design-article-heading">Paginations</h1>
       <p class="design-article-description">페이지네이션의 첫 페이지와 마지막 페이지는 더블 화살표 아이콘보다 총 페이지 수를 노출 방식을 사용한다.</p>
       <nav class="pagination">
-        <!--forward forward -->
-        <a href="#" class="pagination-prev" title="앞 페이지로 이동">Previous</a>
-        <a href="#" class="pagination-first" title="맨 앞 페이지로 이동"><i aria-hidden="">1</i></a>
-        <a href="#" class="pagination-page" title="1 페이지로 이동">5</a>
-        <a href="#" class="pagination-page" title="1 페이지로 이동">6</a>
-        <a href="#" class="pagination-page is-current" title="1 페이지로 이동">7</a>
-        <a href="#" class="pagination-page" title="1 페이지로 이동">8</a>
-        <a href="#" class="pagination-page" title="1 페이지로 이동">9</a>
-        <a href="#" aria-label="" class="pagination-last" title="맨 뒤 페이지로 이동"><i aria-hidden="">50</i></a>
-        <a href="#" class="pagination-next" title="뒷 페이지로 이동">Next</a>
+        <a class="pagination-prev" href="#" title="앞 페이지로 이동">Previous</a>
+        <a class="pagination-first" href="#" title="맨 앞 페이지로 이동"><i aria-hidden="">1</i></a>
+        <a class="pagination-page" href="#" title="1 페이지로 이동">5</a>
+        <a class="pagination-page" href="#" title="1 페이지로 이동">6</a>
+        <a class="pagination-page is-current" href="#" title="1 페이지로 이동">7</a>
+        <a class="pagination-page" href="#" title="1 페이지로 이동">8</a>
+        <a class="pagination-page" href="#" title="1 페이지로 이동">9</a>
+        <a class="pagination-last" href="#" title="맨 뒤 페이지로 이동"><i aria-hidden="">50</i></a>
+        <a class="pagination-next" href="#" title="뒷 페이지로 이동">Next</a>
       </nav>
       <nav class="pagination2">
         <a href="#" class="pagination2-prev" title="앞 페이지로 이동">이전</a>

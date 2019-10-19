@@ -4,10 +4,10 @@
 .pagination-page.is-current {background-color:$color-primary;border-radius:$radius400;color:#fff;}
 .pagination-first {display:flex !important;height:32px;line-height:32px;color:rgba(0,0,0,.4);}
 .pagination-first i {display:block;width:32px;height:32px;} // TODO: 태그 만들어야하겠다.
-.pagination-first:after {content:'...';display:block;width:32px;height:32px;}
+.pagination-first:after {content:'...';display:block;width:32px;height:32px;cursor:default;}
 .pagination-last {display:flex !important;height:32px;line-height:32px;color:rgba(0,0,0,.4);}
 .pagination-last i {display:block;width:32px;height:32px;}
-.pagination-last:before {content:'...';display:block;width:32px;height:32px;}
+.pagination-last:before {content:'...';display:block;width:32px;height:32px;cursor:default;}
 .pagination-prev {margin-right:12px;padding:0 1rem;line-height:32px;}
 .pagination-next {margin-left:12px;padding:0 1rem;line-height:32px;position:relative;}
 

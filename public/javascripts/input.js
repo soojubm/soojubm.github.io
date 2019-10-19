@@ -11,6 +11,7 @@ export const attachFile = () => {
 	const attachmentList = document.querySelector('.js-file-attachment-list');
 	const attachmentHelper = document.querySelector('.js-file-attachment-helper');
 	let attachedfiles;
+	let fileTemplate;
 	let fileList = [];
 
 	fileInput.addEventListener('change', attach);
@@ -22,15 +23,14 @@ export const attachFile = () => {
 		
 		Array.from(attachedfiles).forEach((file) => {
 			if(!validFileType(file)) return alert('파일타입 jpeg pjpeg png 중 하나가 아니야~');
-
-			const template = `
+			fileTemplate = `
 				<figure class="file-attachment-item">
 					<img class="file-attachment-item-image" src=${window.URL.createObjectURL(file)} alt="">
 					<b class="file-attachment-item-name" href="#">${file.name}</b>
 					<small class="file-attachment-item-size" >${returnFileSize(file.size)}</small>
 					<button class="file-attachment-item-delete js-remove-this" type="button"><i class="icon-x"></i></button>
 				</figure>`;
-			attachmentList.innerHTML = template + attachmentList.innerHTML;
+			attachmentList.innerHTML = fileTemplate + attachmentList.innerHTML;
 		});
 	}
 
@@ -53,8 +53,6 @@ export const attachFile = () => {
 		event.preventDefault();
 		fileList.forEach(function(file){
 			sendFile(file);
-			console.log(fileList);
-			console.log(attachedfiles);
 		});
 	});
 	sendFile = function(file) {
@@ -69,9 +67,9 @@ export const attachFile = () => {
 };
 
 
-export const inputTextarea = () => {
+export const inputTextarea = () => {};
 
-};
+
 document.addEventListener('input', event => {
 	// tagName과 nodeName은 텍스트 노드를 각각 undefined와 #text 반환한다.
 	const target = event.target;

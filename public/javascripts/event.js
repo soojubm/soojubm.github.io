@@ -123,18 +123,13 @@ export const tabMenu = () => {
 // 	}, 50);
 // });
 
-
-// TODO: post-head의 offset-top까지 더해서 마진값을 주어야
-export const stickyElement = ({targetElement, addClass, isHeader}) => {
+export const stickyElement = ({targetElement, addClass}) => {
+	const stickyElement = document.querySelector(targetElement);
+	if(!stickyElement) return;
 	const bodyElement = document.body;
-	const mainElement = document.querySelector('main');
-	const stickyElement = mainElement.querySelector(targetElement);
+
 	let stickyElementHeight = stickyElement.offsetHeight;
 	let isScrolling;
-	
-	if(!stickyElement) return;
-
-	//if(!isOver) stickyElementHeight = 0;
 
 	window.addEventListener('resize', () => {
 		isScrolling && window.cancelAnimationFrame(isScrolling);
@@ -148,10 +143,8 @@ export const stickyElement = ({targetElement, addClass, isHeader}) => {
 		isScrolling = window.requestAnimationFrame(() => {
 			if(window.pageYOffset > stickyElement.offsetTop + stickyElementHeight){
 				bodyElement.classList.add(addClass);
-				isHeader && (mainElement.style.paddingTop = stickyElementHeight + 'px');
 			} else {
 				bodyElement.classList.remove(addClass);
-				// isHeader && (mainElement.style.paddingTop = '0px');
 			}
 		}, 60);
 	});
@@ -195,8 +188,6 @@ export const stickyHeader = () => {
 		lastScrollTop = window.pageYOffset;
 	}
 };
-
-
 
 export const enterTarget = (target) => {
 	const hoverElement = document.querySelector(target);

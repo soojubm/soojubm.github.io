@@ -6,6 +6,8 @@ import { tabMenu, stickyElement, parallax } from './javascripts/event.js';
 import { inputNumber } from './javascripts/input';
 import { loader, checkBrowser, adjustTopPadding } from './javascripts/load'; // loadSpinner
 
+import { validations } from './javascripts/validations';
+//document.documentElement.className += ' supports-date';
 const eventToTop = () => {
 	document.addEventListener('click', event => {
 		const target = event.target;
@@ -20,7 +22,7 @@ const eventToTop = () => {
 
 // if(window.matchMedia('(min-width:800px)').matches) {}
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {	
 	if(window.location.pathname === '/') {
 		console.log('this is home page.');
 	}
@@ -107,19 +109,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	setGraph();
 
-
-	document.addEventListener('focus', (event) => {
-		if(event.target.closest('.js-searchbar')) {
-			event.target.parentNode.nextElementSibling.style.display = 'block';
-		}
-	}, true);
-	document.addEventListener('blur', (event) => {
-		if(event.target.closest('.js-searchbar')) {
-			event.target.parentNode.nextElementSibling.style.display = 'none';
-		}
-	}, true);
-
-
 	const sayHello = new Promise(function(resolve, reject) {
 		reject('Unable to say hi.');
 
@@ -148,28 +137,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		stickyElement('.post-head', 'is-sticky', true);
 	});
 
-	// document.addEventListener('mouseenter', (event) => {
-	// 	const target = event.target;
-	// 	const bodyElement = document.body;
-	// 	const hasHoverClass = target.closest('.js-hover-trigger');
-	// 	if(!hasHoverClass) return;
-
-	// 	const isNavigation = target.closest('.navigation li');
-
-	// 	target.setAttribute('aria-expanded', 'true');
-	// 	target.classList.add('is-expanded');
-
-	// 	isNavigation && bodyElement.classList.add('is-shown');
-
-	// 	document.addEventListener('mouseleave', () => {
-	// 		target.setAttribute('aria-expanded', 'false');
-	// 		target.classList.remove('is-expanded');
-
-	// 		isNavigation && bodyElement.classList.remove('is-shown');
-	// 	}, true);
-
-	// }, true);
-
 
 	const closeElement = document.querySelectorAll('.js-close');
 	closeElement.forEach(element => {
@@ -194,7 +161,6 @@ const setGraph = () => {
 	graphItems.forEach((element) => {
 		graphItemBar = element.querySelector('.graph-item-bar');
 		graphItemValue = element.querySelector('.graph-item-value');
-
 		graphValue = parseInt(graphItemValue.innerHTML);
 
 		(function setGraph() {
@@ -206,45 +172,146 @@ const setGraph = () => {
 
 // document.forms.id
 function loginFormValidation() {
+	const login = document.login;
+	if(!login) return;
+	
+	const loginEmail = document.login.email;
+	const loginPassword = document.login.password;
 	const helpers = document.querySelectorAll('.textfield-helper');
-	helpers.forEach(helper => {
-		helper.style.display = 'none';
-	});
+	// helpers.forEach(helper => helper.style.display = 'none');
+	
+	let loginData = {
+		email: '',
+		password: ''
+	};
+	
+	let loginValid = {
+		email: false,
+		password: false
+	};
+
 	document.addEventListener('input', event => {
 		const target = event.target;
-		const loginEmail = document.login.email;
-		const loginPassword = document.login.password;
+		const isEmail = target === loginEmail;
 		const isPassword = target === loginPassword;
-		const isEmptyEmail = loginEmail.value === null || loginEmail.value === '';
 
-		// 이메일이 invalid 일 때 helper 보여주기
-		// 비밀번혹 invalid 일 때 helper 보여주기
-		// 모두 valid 일 때 submit
-		if (isPassword) {
-			console.log(loginPassword, loginPassword.value.length);
+		if(validations.isNumber(loginEmail.value)) {
+			// return loginEmail.value = null;
+			loginData[target.name] = target.value;
+			console.log(loginData);		
+			// loginEmail.value = '';
 		}
-		if (isEmptyEmail) {
-			console.log('empty');
-			// FIXME: tasrget
+	
+		console.log(event.target.value);
+		// if(isEmpty) {}
+		if(isEmail) {
+			if(validations.isRequired(loginEmail.value)) {
+				setInvalid({message: '필수값이어요'});
+				return;
+			}
+			setValid();
+		}
+		if(isPassword) {
+			console.log(target, target.parentNode);
+			if(validations.isLength(loginPassword.value, 8)) {
+				console.log('at least 8 length');
+				setInvalid({message: '너무 짧아요'});
+				return;
+			}
+			setValid();
+		}
+		
+		// todo 텍스트 바꿔주기
+		function setValid() {
+			target.parentNode.classList.remove('is-invalid');
+			target.nextElementSibling.style.display = 'none';
+
+			field.removeAttribute('aria-describedby');
+		}
+		function setInvalid({message}) {
 			console.log(target.nextElementSibling);
+
+			const id = target.id || target.name;
+			target.parentNode.classList.add('is-invalid');
+
+			target.setAttribute('aria-describedby', 'error-' + id);
+
 			target.nextElementSibling.style.display = 'block';
-			return false;
+			target.nextElementSibling.innerHTML = message;
 		}
-		if (loginPassword.value.length < 8) {
-			console.log('at least 8 length');
-			return false;
-		}
-		return true;
+		var hasError = function (field) {
+
+			// Don't validate submits, buttons, file and reset inputs, and disabled fields
+			if (field.disabled || field.type === 'file' || field.type === 'reset' || field.type === 'submit' || field.type === 'button') return;
+	
+			// Get validity
+			var validity = field.validity;
+	
+			// If valid, return null
+			if (validity.valid) return;
+	
+			// If field is required and empty
+			if (validity.valueMissing) return 'Please fill out this field.';
+	
+			// If not the right type
+			if (validity.typeMismatch) return 'Please use the correct input type.';
+	
+			// If too short
+			if (validity.tooShort) return 'Please lengthen this text.';
+	
+			// If too long
+			if (validity.tooLong) return 'Please shorten this text.';
+	
+			// If number input isn't a number
+			if (validity.badInput) return 'Please enter a number.';
+	
+			// If a number value doesn't match the step interval
+			if (validity.stepMismatch) return 'Please select a valid value.';
+	
+			// If a number field is over the max
+			if (validity.rangeOverflow) return 'Please select a smaller value.';
+	
+			// If a number field is below the min
+			if (validity.rangeUnderflow) return 'Please select a larger value.';
+	
+			// If pattern doesn't match
+			if (validity.patternMismatch) return 'Please match the requested format.';
+	
+			// If all else fails, return a generic catchall error
+			return 'The value you entered for this field is invalid.';
+	
+		};
 	});
+
 }
 
+// event.target.validity
+// badInput: false
+// customError: false
+// patternMismatch: false
+// rangeOverflow: false
+// rangeUnderflow: false
+// stepMismatch: false
+// tooLong: false
+// tooShort: false
+// typeMismatch: false
+// valid: true
+// valueMissing: false
+document.addEventListener('blur', event => {
+	console.log('test', event.target.validity, event.target.form);
+	event.target.form.submit;
+}, true); // blur is not bubble
+
 document.addEventListener('submit', event => {
-	const target = event.target;
-	const isSubmitLogin = target === document.login;
-	if (isSubmitLogin) {
+	const isSubmitLogin = event.target === document.login;
+	if(!isSubmitLogin) return;
+
+	if(isInvalid) {
 		event.preventDefault();
-		loginFormValidation();
+		// target.focus();
 	}
+	
+	loginFormValidation();
 });
 
 
