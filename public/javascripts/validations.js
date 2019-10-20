@@ -1,7 +1,3 @@
-// validations
-// isValid // tooLong
-//
-
 export const validations = {
 	isRequired(value) {
 		return value == '' || value == null || value == undefined || ( value != null && typeof value == 'object' && !Object.keys(value).length);

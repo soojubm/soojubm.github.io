@@ -262,3 +262,15 @@ const toggleEvent = function(target, toggle) {
 // click 이벤트 외부에 넣으니까 파폭에서만 오류. event undefined
 // TODO: 토글 안에 토글 이벤트 존재 시
 // TODO: 도큐먼트가 아니라 event.target.parent 가 아닌 것을 클릭했을 때 다당야 하나
+
+
+
+export const eventToTop = () => {
+	const toTopElement = document.querySelector('.js-to-top');
+	toTopElement.addEventListener('click', event => {
+		event.preventDefault();
+		window.scrollTo(0, 0);
+
+		window.location.hash = toTopElement.name || toTopElement.href;
+	});
+};

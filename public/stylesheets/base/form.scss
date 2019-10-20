@@ -195,12 +195,16 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 .textfield.--floating input {padding:0.75rem 0rem;border-top:none;border-left:none;border-right:none;}
 .textfield.--floating label {height:20px;position:absolute;left:0;top:6px;transition:all 0.2s ease;cursor:text;}
 .textfield.--floating input:focus + label {color:$gray40;font-size:11px;top:-12px;}
-
+.textfield-prefix {display:inline-block;display:none;width:100px;}
+.textfield-prefix + .textfield-input {display:inline-block;padding-right:100px;}
+.textfield-suffix {display:inline-block;line-height:48px;cursor:default;color:$gray40;position:absolute;right:24px;top:50%;}
 
 .is-valid {}
 .is-invalid {}
 .is-expanded {}
 .is-invalid .textfield-input {border-color:$color-negative;}
+
+input[type=email]:invalid {border-color:crimson;}
 
 .boxed-form {}
 .boxed-form h4 {margin:24px 0 0.75rem 0;color:#fff;}

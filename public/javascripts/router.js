@@ -1,6 +1,5 @@
 import { checkAllcheckbox, attachFile } from './input';
-import { enterTarget, stickyHeader, modal, eventToggle } from './event';
-import { loginFormValidation } from '../index';
+import { enterTarget, stickyHeader, modal, eventToggle, eventToTop } from './event';
 
 const router = function() {
 	const view = null || document.getElementById('view');
@@ -26,9 +25,9 @@ const router = function() {
 				// stickyHeader();
 				modal();
 				eventToggle();
+				eventToTop();
 
 				attachFile();
-
 
 				enterTarget('.js-hover-trigger');
 				enterTarget('.header-user-notification');
@@ -84,6 +83,8 @@ const router = function() {
 		// window.location.pathname = slashedHash;
 
 	};
+
+	console.log(typeof document.querySelector('.header'));
 
 	routePage();
 	window.addEventListener('hashchange', routePage);
