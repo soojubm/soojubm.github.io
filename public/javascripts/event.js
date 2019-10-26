@@ -230,6 +230,16 @@ export const eventToggle = () => {
 	});
 };
 
+export const eventClose = () => {
+	const closeElement = document.querySelectorAll('.js-close');
+	if(!closeElement) return;
+
+	closeElement.forEach(element => {
+		element.addEventListener('click', event => {
+			(element.parentNode).style.display = 'none';
+		});
+	});
+};
 
 const toggleEvent = function(target, toggle) {
 	const targetElement = document.querySelector(target);

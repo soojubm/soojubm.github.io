@@ -1,5 +1,5 @@
 import { checkAllcheckbox, attachFile, inputVariation } from './input';
-import { enterTarget, stickyHeader, modal, eventToggle, eventToTop } from './event';
+import { enterTarget, stickyHeader, modal, eventToggle, eventToTop, eventClose } from './event';
 import { autoExpand } from './utils';
 
 const router = function() {
@@ -26,10 +26,11 @@ const router = function() {
 				modal();
 				eventToggle();
 				eventToTop();
+				eventClose();
 
 				attachFile();
 
-				inputVariation();
+				// inputVariation();
 
 				enterTarget('.js-hover-trigger');
 				enterTarget('.header-user-notification');
@@ -78,47 +79,13 @@ const router = function() {
 				};
 				
 				customCursor();
-
 			})
 			.catch(error => console.warn('router: ', error));
-
-		// gogo
-		const slashedHash = `/${hash.substring(1)}`;
-		console.log(slashedHash, window.location.pathname, window.location.history);
-		// window.location.pathname = slashedHash;
-
-
-		
-		const category = document.querySelector('.category');
-		const categoryList = category.querySelector('.category-list');
-		const categoryNavigationPrev = category.querySelector('.category-navigation-prev');
-		const categoryNavigationNext = category.querySelector('.category-navigation-next');
-		const temp2 = categoryList.offsetWidth;
-		let sum = 0; 
-		document.querySelectorAll('.category-list > button').forEach(function(item){
-			sum = sum + item.offsetWidth;
-		});
-		categoryList.addEventListener('scroll', function(){
-			const temp = categoryList.scrollLeft;
-			console.log('scroll-left', temp);
-			console.log('offset-width', temp2);
-		});
-		console.log(sum, temp2);
-		categoryNavigationNext.addEventListener('click', () => {
-			if(sum > temp2) {
-				categoryList.scrollLeft += 100;
-				//var ttt = 100 + 'px';
-				//document.querySelector('.category-list').style.transform += 'translateX('+ttt+')';
-			}
-		});
-		categoryNavigationPrev.addEventListener('click', () => {
-			if(sum > temp2) {
-				categoryList.scrollLeft -= 100;
-			}
-		});
 	};
-
-	console.log(typeof document.querySelector('.header'));
+		// gogo
+		// const slashedHash = `/${hash.substring(1)}`;
+		// console.log(slashedHash, window.location.pathname, window.location.history);
+		// window.location.pathname = slashedHash;
 
 	routePage();
 	window.addEventListener('hashchange', routePage);
@@ -128,7 +95,11 @@ const router = function() {
 			document.querySelector('.navigation-toggle').nextElementSibling.classList.remove('is-visible');
 		}
 	});
+
 };
+
+export default router;
+
 
 // {
 // 	method: 'POST',
@@ -144,7 +115,6 @@ const router = function() {
 // response.text() // response.json()
 // toLowerCase() 해주기
 
-export default router;
 
 /*
 	const Router = (name, routes) => {

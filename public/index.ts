@@ -122,16 +122,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		if (!document.querySelector('.post-head')) return;
 		stickyElement('.post-head', 'is-sticky', true);
 	});
-
-
-	const eventClose = () => {
-		const closeElement = document.querySelectorAll<HTMLElement>('.js-close');
-		closeElement.forEach(element => {
-			element.addEventListener('click', event => {
-				(element.parentNode as HTMLElement).style.display = 'none';
-			});
-		});
-	}
 });
 
 const setGraph = () => {
@@ -319,3 +309,34 @@ export const getTodayDate = () => {
 	console.log(date.toLocaleString()); // 1980년 1월 3일 목요일 오전 1:28:35
 	*/
 };
+
+
+
+
+	// 	const category = document.querySelector('.category');
+	// 	const categoryList = category.querySelector('.category-list');
+	// 	const categoryNavigationPrev = category.querySelector('.category-navigation-prev');
+	// 	const categoryNavigationNext = category.querySelector('.category-navigation-next');
+	// 	const temp2 = categoryList.offsetWidth;
+	// 	let sum = 0; 
+	// 	document.querySelectorAll('.category-list > button').forEach(function(item){
+	// 		sum = sum + item.offsetWidth;
+	// 	});
+	// 	categoryList.addEventListener('scroll', function(){
+	// 		const temp = categoryList.scrollLeft;
+	// 		console.log('scroll-left', temp);
+	// 		console.log('offset-width', temp2);
+	// 	});
+	// 	console.log(sum, temp2);
+	// 	categoryNavigationNext.addEventListener('click', () => {
+	// 		if(sum > temp2) {
+	// 			categoryList.scrollLeft += 100;
+	// 			//var ttt = 100 + 'px';
+	// 			//document.querySelector('.category-list').style.transform += 'translateX('+ttt+')';
+	// 		}
+	// 	});
+	// 	categoryNavigationPrev.addEventListener('click', () => {
+	// 		if(sum > temp2) {
+	// 			categoryList.scrollLeft -= 100;
+	// 		}
+	// 	});

@@ -98,14 +98,6 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         event_js_1.stickyElement('.post-head', 'is-sticky', true);
     });
-    var eventClose = function () {
-        var closeElement = document.querySelectorAll('.js-close');
-        closeElement.forEach(function (element) {
-            element.addEventListener('click', function (event) {
-                element.parentNode.style.display = 'none';
-            });
-        });
-    };
 });
 var setGraph = function () {
     var graphItems = document.querySelectorAll('.graph-item');
@@ -222,47 +214,6 @@ function loginFormValidation() {
         };
     });
 }
-document.addEventListener('click', function (event) {
-    var target = event.target;
-    var minValue = 0;
-    var maxValue = 10;
-    var targetInput;
-    if (target.closest('.js-variation-decrement')) {
-        targetInput = target.parentNode.querySelector('.js-variation-input');
-        if (targetInput.value <= minValue) {
-            target.classList.add('is-disabled');
-            return;
-        }
-        --targetInput.value;
-        // TODO: target 클래스 토글이 안 되므니다
-        console.log('target', target);
-    }
-    if (target.closest('.js-variation-increment')) {
-        targetInput = target.parentNode.querySelector('.js-variation-input');
-        if (targetInput.value >= maxValue) {
-            target.classList.add('is-disabled');
-            return;
-        }
-        ++targetInput.value;
-        // targetInput.value < maxValue + 1 && target.classList.remove('is-disabled');
-        /*
-        let targetInputValue = parseInt(eventTargetInput.value);
-        targetInputValue > minValue && eventTargetInput.value--;
-        targetInputValue === minValue + 1 && eventTarget.classList.add('is-disabled');
-        targetInputValue < maxValue + 1 && eventTargetIncrement.classList.remove('is-disabled');
-        */
-        /*
-        const eventTargetParentElement = eventTarget.parentNode;
-        const eventTargetInput = eventTargetParentElement.querySelector('.js-variation-input');
-        const eventTargetDecrement = eventTargetParentElement.querySelector('.js-variation-decrement');
-        const eventTargetIncrement = eventTargetParentElement.querySelector('.js-variation-increment');
-        let targetInputValue = parseInt(eventTargetInput.value);
-        targetInputValue < maxValue ? eventTargetInput.value++ : targetInputValue;
-        targetInputValue === maxValue - 1 && eventTarget.classList.add('is-disabled');
-        targetInputValue > minValue - 1 ? eventTargetDecrement.classList.remove('is-disabled') : targetInputValue;
-        */
-    }
-});
 // badInput: false
 // customError: false
 // patternMismatch: false
@@ -311,8 +262,8 @@ exports.getTodayDate = function () {
     var day = today.getDay(); // 월 : 0
     var hours = today.getHours();
     var minutes = today.getMinutes();
-    // const seconds = today.getSeconds();
-    var ampm = hours < 12 ? 'am' : 'pm';
+    var seconds = today.getSeconds();
+    var ampm = hours < 12 ? 'am' : 'pm'; // 
     // let theBigDay = new Date("July 1, 1999");
     // let sameAsBigDay = new Date();
     // sameAsBigDay.setTime(theBigDay.getTime());

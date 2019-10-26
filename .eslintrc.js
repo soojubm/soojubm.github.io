@@ -15,11 +15,11 @@ module.exports = {
   rules: {
     'no-console': 'off',
     'no-empty': 'warn', // { "allowEmptyCatch": true }
-    indent: [
-      'warn',
-      'tab', // tab or 2
-    ],
-    'linebreak-style': ['warn', 'unix'],
+    // indent: [
+    //   'warn',
+    //   'tab', // tab or 2
+    // ],
+    'linebreak-style': ['warn', 'windows'],
     quotes: ['warn', 'single'],
     semi: ['warn', 'always'],
     'no-unused-vars': 'off',
