@@ -222,6 +222,47 @@ function loginFormValidation() {
         };
     });
 }
+document.addEventListener('click', function (event) {
+    var target = event.target;
+    var minValue = 0;
+    var maxValue = 10;
+    var targetInput;
+    if (target.closest('.js-variation-decrement')) {
+        targetInput = target.parentNode.querySelector('.js-variation-input');
+        if (targetInput.value <= minValue) {
+            target.classList.add('is-disabled');
+            return;
+        }
+        --targetInput.value;
+        // TODO: target 클래스 토글이 안 되므니다
+        console.log('target', target);
+    }
+    if (target.closest('.js-variation-increment')) {
+        targetInput = target.parentNode.querySelector('.js-variation-input');
+        if (targetInput.value >= maxValue) {
+            target.classList.add('is-disabled');
+            return;
+        }
+        ++targetInput.value;
+        // targetInput.value < maxValue + 1 && target.classList.remove('is-disabled');
+        /*
+        let targetInputValue = parseInt(eventTargetInput.value);
+        targetInputValue > minValue && eventTargetInput.value--;
+        targetInputValue === minValue + 1 && eventTarget.classList.add('is-disabled');
+        targetInputValue < maxValue + 1 && eventTargetIncrement.classList.remove('is-disabled');
+        */
+        /*
+        const eventTargetParentElement = eventTarget.parentNode;
+        const eventTargetInput = eventTargetParentElement.querySelector('.js-variation-input');
+        const eventTargetDecrement = eventTargetParentElement.querySelector('.js-variation-decrement');
+        const eventTargetIncrement = eventTargetParentElement.querySelector('.js-variation-increment');
+        let targetInputValue = parseInt(eventTargetInput.value);
+        targetInputValue < maxValue ? eventTargetInput.value++ : targetInputValue;
+        targetInputValue === maxValue - 1 && eventTarget.classList.add('is-disabled');
+        targetInputValue > minValue - 1 ? eventTargetDecrement.classList.remove('is-disabled') : targetInputValue;
+        */
+    }
+});
 // badInput: false
 // customError: false
 // patternMismatch: false

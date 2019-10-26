@@ -2,10 +2,9 @@
 
 import './stylesheets/style.scss';
 import router from './javascripts/router';
-import { tabMenu, stickyElement, parallax } from './javascripts/event.js';
+import { tabMenu, stickyElement } from './javascripts/event.js';
 import { inputNumber } from './javascripts/input';
 import { loader, checkBrowser, adjustTopPadding } from './javascripts/load'; // loadSpinner
-
 import { validations } from './javascripts/validations';
 //document.documentElement.className += ' supports-date';
 
@@ -304,12 +303,10 @@ export const getTodayDate = () => {
 	const month = String(today.getMonth() + 1).padStart(2, '0');
 	const date = String(today.getDate()).padStart(2, '0');
 	const day = today.getDay(); // 월 : 0
-
 	const hours = today.getHours();
 	const minutes = today.getMinutes();
-	// const seconds = today.getSeconds();
-	const ampm = hours < 12 ? 'am' : 'pm';
-
+	const seconds = today.getSeconds();
+	const ampm = hours < 12 ? 'am' : 'pm'; // 
 	// let theBigDay = new Date("July 1, 1999");
 	// let sameAsBigDay = new Date();
 	// sameAsBigDay.setTime(theBigDay.getTime());

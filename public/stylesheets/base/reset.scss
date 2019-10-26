@@ -1,16 +1,7 @@
-// @font-face {font-family: 'AritaBuri';src: url(/public/webfonts/AritaBuriL.otf); }
 @font-face {font-family: 'AritaDotum';src: url(/public/webfonts/AritaDotumMedium.ttf); }
 @font-face {font-family: 'DunkelSans';src: url(/public/webfonts/Dunkelsansv0.5-Heavy.woff2); }
-// @font-face {font-family: 'DKHM';src: url(/public/webfonts/Dunkelsansv0.5-HeavyMedium.woff2); }
 @font-face {font-family: 'Asap';src: url(/public/webfonts/Asap-Regular.otf); }
 
-// 고정폭 숫자 폰트 아카이빙
-// @import url('https://fonts.googleapis.com/css?family=Nunito+Sans');
-// @import url('https://fonts.googleapis.com/css?family=Asap');
-// todo url 등록 시 www 및 https:// 기본 입력
-// article 안에 정보는 adress
-
-// writing-mode: horizontal-tb / vertical-rl / vertical-lr;
 body,dl,dd,figure,blockquote,h1,h2,h3,h4,h5,h6,p,input[type=radio] {margin:0;}
 ul,ol,menu,fieldset,legend {margin:0;padding:0;}
 fieldset,iframe,img,hr {border:0 none} dl,ol,ul,menu {list-style:none}
@@ -43,18 +34,24 @@ table tbody tr td:first-child {padding-left:0;}
 table tbody tr td:last-child {padding-right:0;}
 table .right {text-align:right;}
 
-// ::-webkit-scrollbar {width:auto;height:auto;}
-// ::-webkit-scrollbar-track {background:inherit;}
-// ::-webkit-scrollbar-thumb {background:inherit;}
-// ::-webkit-scrollbar-button {display:none;background-color:inherit;}
-// ::-webkit-scrollbar-corner {background-color:inherit;}
+ul {}
+ul li {margin:.125rem 0;padding: 0 0 0 1.25rem;position: relative;}
+ul li:before {content: '\2013';display:inline-block;margin-right:.5rem;position:absolute;left:0;}
+ul li ul {}
+ul li ul li {}
+ul li ul li:before {content: '\25AA';}
+
+ol {}
+ol li {margin:.125rem 0;padding: 0 0 0 1.25rem;position: relative;counter-increment: listitem;}
+ol li:before {content: counter(listitem) '.';margin-right:.5rem;position:absolute;left:0;}
+ol li ol {}
+ol li ol li {counter-increment: sub-list-item;}
+ol li ol li:before {content: counter(sub-list-item,lower-alpha) '.';}
 
 [aria-haspopup=true] {} // dialog . menu, grid, listbox, tree
 [aria-pressed="true"] {} // 음소거 등
 [aria-modal="true"] {}
 
-// [aria-live="polite | assertive | off"] {} 
-// 라이브러리 사용 시, 모달 등에서 선언되어 있는 경우가 있음. 믹스인 만들어서 적용하기.
 [aria-label="close"] {}
 [aria-hidden="true"] {width:1px;height:1px;clip:rect(1px 1px 1px 1px);overflow:hidden;position:absolute;user-select:none;} // if(true) 리더기가 무시.
 [aria-hidden="false"] {width:1px;height:1px;clip:rect(1px 1px 1px 1px);overflow:hidden;position:absolute;user-select:none;}
@@ -65,19 +62,35 @@ table .right {text-align:right;}
 [role=group] {}
 [role=listitem] {}
 
-.cursor {display:block;width:32px;height:32px;border-radius:50%;background:rgba(0,0,0,.1);position:absolute;z-index:100;animation:cursor .4s infinite alternate;}
-.cursor:after {content:'';width:16px;height:16px;border:8px solid gray;border-radius:50%;opacity:.5;position:absolute;animation:cursor .4s infinite alternate;}
-@keyframes cursor {
-  from {transform:scale(1);}
-  to {transform:scale(.8);}
-}
-@keyframes cursor2 {
-  from {transform:scale(1);}
-  to {transform:scale(.4);}
-}
-@keyframes cursor3 {
-  0% {transform:scale(1);}
-  50% {transform:scale(3);}
-  100% {transform:scale(1.25);opacity:0;}
-}
-.expand {animation:cursor3 .4s fowards;background:$color-primary}
+
+
+.loading {position:fixed;left:0;right:0;top:0;bottom:0;background:$color-primary;z-index:10;transition:all .4s;}
+.loading-object {width:50px;height:50px;border-radius:50%;position:absolute;left:50%;top:50%;margin:-40px 0 0 -40px;background:#fff;animation:scaleout .8s infinite ease;}
+.loading.is-hidden {opacity:0;visibility:hidden;}
+
+.browser {display:none;text-align:center;padding:2rem;background:#fff;box-shadow:2px -2px 16px -4px rgba(0,0,0,.5);position:fixed;left:0;right:0;bottom:0;z-index:7;}
+
+.skip {width:100%;position:fixed;left:0;top:0;z-index:9;}
+.skip-link {display:block;background:rgba(0,0,0,1);color:rgba(255,255,255,.8);text-align:center;height:0;font-size:0;}
+.skip-link:focus {height:50px;line-height:50px;font-size:14px;}
+
+.floating-action-button {width:48px;height:48px;border-radius:50%;background:rgba(0,80,200,.8);position:fixed;right:100px;bottom:100px;z-index:6;transition:all .2s;}
+.floating-action-button:hover {transition:all .4s;transform:scale(20);background:$color-primary;transform-origin:center center;}
+
+
+
+// writing-mode: horizontal-tb / vertical-rl / vertical-lr;
+
+::-webkit-scrollbar {width:auto;height:auto;}
+::-webkit-scrollbar-track {background:inherit;}
+::-webkit-scrollbar-thumb {background:inherit;}
+::-webkit-scrollbar-button {display:none;background-color:inherit;}
+::-webkit-scrollbar-corner {background-color:inherit;}
+// [aria-live="polite | assertive | off"] {} 
+
+// 고정폭 숫자 폰트 아카이빙
+// @font-face {font-family: 'AritaBuri';src: url(/public/webfonts/AritaBuriL.otf); }
+// @import url('https://fonts.googleapis.com/css?family=Nunito+Sans');
+// @import url('https://fonts.googleapis.com/css?family=Asap');
+// todo url 등록 시 www 및 https:// 기본 입력
+// article 안에 정보는 adress

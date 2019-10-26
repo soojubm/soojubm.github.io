@@ -68,9 +68,6 @@
       </section>
     </article>
 
-
-    
-
     <article class="design-article js-scroll-animation">
       <h1 class="design-article-heading">Avatars</h1>
       <p class="design-article-description">사진을 사용할 때와 아이콘을 사용할 때 두 가지의 아바타를 사용해요. 아이콘 타입(48px)과 포토 타입이 있는데 4가지는 너무 많아요 흑흑.</p>
@@ -138,15 +135,15 @@
       <p class="design-article-description">수줍이는 이렇게 강조해요. 특정 단어를 강조하기 보담 시선을 끄는 카피를 선택하는 안목을 기르세요.</p>
       <ol class="list-sample">  
         <li>수줍이는 <em>이렇게</em> 강조해요. <small>링크 텍스트로 오인될 수 있으니 주의해요.</small></li>
-        <li>수줍이는 <b>이렇게</b> 강조해요. <small>하나의 폰트 패밀리만 사용하기 때문에 볼드로 강조할 수 없어요.</small></li>
+        <!-- <li>수줍이는 <b>이렇게</b> 강조해요. <small>하나의 폰트 패밀리만 사용하기 때문에 볼드로 강조할 수 없어요.</small></li>
         <li>수줍이는 <u>이렇게</u> 강조해요. <small>언더라인으로 강조해요. 못 생겼으니 고쳐 써야 겠지요?</small></li>
         <li>수줍이는 <i style="font-style:italic;">이렇게</i> 강조해요. <small>한글에는 이탤릭의 개념이 없으니 주의해요.</small></li>
-        <li>수줍이는 <sup>이렇게</sup> 강조해요. <small>수치를 표현할 때만 사용하세요.</small></li>
+        <li>수줍이는 <sup>이렇게</sup> 강조해요. <small>수치를 표현할 때만 사용하세요.</small></li> -->
       </ol>
     </article>
 
     
-		<!-- <section class="category">
+		<section class="category">
 			<div class="category-list">
 				<button type="button">초1</button>
 				<button type="button">초2</button>
@@ -166,38 +163,6 @@
 				<button class="category-navigation-next" type="button">next</button>
 			</nav>
 		</section>
-		<script>
-			document.addEventListener('DOMContentLoaded', function(){
-				const category = document.querySelector('.category');
-				const categoryList = category.querySelector('.category-list');
-				const categoryNavigationPrev = category.querySelector('.category-navigation-prev');
-				const categoryNavigationNext = category.querySelector('.category-navigation-next');
-				const temp2 = categoryList.offsetWidth;
-				let sum = 0; 
-				// TODO: foreach ie 지원안함
-				document.querySelectorAll('.category-list > button').forEach(function(item){
-					sum = sum + item.offsetWidth;
-				});
-				categoryList.addEventListener('scroll', function(){
-					const temp = categoryList.scrollLeft;
-					console.log('scroll-left', temp);
-					console.log('offset-width', temp2);
-				});
-				console.log(sum, temp2);
-				categoryNavigationNext.addEventListener('click', () => {
-					if(sum > temp2) {
-						categoryList.scrollLeft += 100;
-						//var ttt = 100 + 'px';
-						//document.querySelector('.category-list').style.transform += 'translateX('+ttt+')';
-					}
-				});
-				categoryNavigationPrev.addEventListener('click', () => {
-					if(sum > temp2) {
-						categoryList.scrollLeft -= 100;
-					}
-				});
-			});
-		</script> -->
 
     <article class="design-article js-scroll-animation">
       <h1 class="design-article-heading">Tags</h1>
@@ -281,6 +246,25 @@
           <p>스타일시트의 인접 선택자로 만들어져 있다요.</p>
         </div>
       </aside>
+    </article>
+
+    <article class="design-article js-scroll-animation">
+      <h1 class="design-article-heading">Bottom Navigation</h1>
+      <p class="design-article-description">제곧내.</p>
+      <nav class="bottom-navigation">
+        <a href="">
+          <i>🐣</i>
+          <span>홈</span>
+        </a>
+        <a href="">
+          <i>🐣</i>
+          <span>피드</span>
+        </a>
+        <a href="">
+          <i>🐣</i>
+          <span>설정</span>
+        </a>
+      </nav>
     </article>
 
     <article class="design-article button-article js-scroll-animation">
@@ -456,11 +440,6 @@
         <button class="variation-decrement js-variation-decrement" type="button"><i class="icon-minus"></i></button>
         <button class="variation-increment js-variation-increment" type="button"><i class="icon-plus"></i></button>
       </div>
-      <div class="variation js-variation">
-        <input class="variation-input js-variation-input js-number-input" name="variation2" type="number" value="0">
-        <button class="variation-decrement js-variation-decrement" type="button"><i class="icon-minus"></i></button>
-        <button class="variation-increment js-variation-increment" type="button"><i class="icon-plus"></i></button>
-      </div>
       <div class="textfield">
         <label class="textfield-label" for="number">넘버</label>
         <input class="textfield-input js-number-input" id="number" type="number" min="5" max="20" placeholder="숫자만 입력가능합니다."></input>
@@ -523,11 +502,6 @@
           <h1 class="file-attachment-heading">첨부한 파일</h1>
           <p class="file-attachment-helper js-file-attachment-helper">No files currently selected for upload.</p>
           <ul class="file-attachment-list js-file-attachment-list">
-            <!-- <div class="file-attachment-item">
-              <img class="file-attachment-item-image" src="" alt="">
-              <a class="file-attachment-item-name js-file-output" href="#">파일명 1.jpg</a>
-              <button class="file-attachment-item-delete js-remove-this" type="button"><i class="icon-x"></i></button>
-            </div> -->
           </ul>
         </section>
         <!-- <button class="js-file-submit primary-button" type="submit">등록하기</button> -->

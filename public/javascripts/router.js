@@ -1,11 +1,11 @@
-import { checkAllcheckbox, attachFile } from './input';
+import { checkAllcheckbox, attachFile, inputVariation } from './input';
 import { enterTarget, stickyHeader, modal, eventToggle, eventToTop } from './event';
+import { autoExpand } from './utils';
 
 const router = function() {
 	const view = null || document.getElementById('view');
 
 	const routePage = () => {
-
 		let { hash } = window.location;
 		const page = hash ? `/views/${hash.substring(1)}.html` : '/views/home.html';
 		fetch(page)
@@ -29,9 +29,14 @@ const router = function() {
 
 				attachFile();
 
+				inputVariation();
+
 				enterTarget('.js-hover-trigger');
 				enterTarget('.header-user-notification');
 				enterTarget('.header-user-account');
+				
+				const textarea = document.querySelectorAll('textarea');
+				textarea.forEach(element => element.addEventListener('input', autoExpand(element)));
 
 				const scrollTarget = document.querySelectorAll('.js-scroll-animation');
 				scrollTarget.forEach((element) => {
@@ -82,6 +87,35 @@ const router = function() {
 		console.log(slashedHash, window.location.pathname, window.location.history);
 		// window.location.pathname = slashedHash;
 
+
+		
+		const category = document.querySelector('.category');
+		const categoryList = category.querySelector('.category-list');
+		const categoryNavigationPrev = category.querySelector('.category-navigation-prev');
+		const categoryNavigationNext = category.querySelector('.category-navigation-next');
+		const temp2 = categoryList.offsetWidth;
+		let sum = 0; 
+		document.querySelectorAll('.category-list > button').forEach(function(item){
+			sum = sum + item.offsetWidth;
+		});
+		categoryList.addEventListener('scroll', function(){
+			const temp = categoryList.scrollLeft;
+			console.log('scroll-left', temp);
+			console.log('offset-width', temp2);
+		});
+		console.log(sum, temp2);
+		categoryNavigationNext.addEventListener('click', () => {
+			if(sum > temp2) {
+				categoryList.scrollLeft += 100;
+				//var ttt = 100 + 'px';
+				//document.querySelector('.category-list').style.transform += 'translateX('+ttt+')';
+			}
+		});
+		categoryNavigationPrev.addEventListener('click', () => {
+			if(sum > temp2) {
+				categoryList.scrollLeft -= 100;
+			}
+		});
 	};
 
 	console.log(typeof document.querySelector('.header'));
