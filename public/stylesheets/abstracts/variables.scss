@@ -121,7 +121,9 @@ $box-shadow-sm:             1px;
 $box-shadow:                1px;
 $box-shadow-lg:             1px;
 
-$transition-base:             all .2s ease-in-out !default;
+$bezier-base: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+
+$transition-base:             all .4s $bezier-base !default;
 $transition-fade:             opacity .15s linear !default;
 $transition-collapse:         height .35s ease !default;
 

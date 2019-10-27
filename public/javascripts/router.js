@@ -1,6 +1,6 @@
 import { checkAllcheckbox, attachFile, inputVariation } from './input';
 import { enterTarget, stickyHeader, modal, eventToggle, eventToTop, eventClose } from './event';
-import { autoExpand } from './utils';
+
 
 const router = function() {
 	const view = null || document.getElementById('view');
@@ -8,6 +8,8 @@ const router = function() {
 	const routePage = () => {
 		let { hash } = window.location;
 		const page = hash ? `/views/${hash.substring(1)}.html` : '/views/home.html';
+
+		// hash 말고 클릭하는 순간에 값을 알아야 함. data attr or hash
 		fetch(page)
 			.then(response => {
 				// 404 || 500
@@ -36,10 +38,12 @@ const router = function() {
 				enterTarget('.header-user-notification');
 				enterTarget('.header-user-account');
 				
-				const textarea = document.querySelectorAll('textarea');
-				textarea.forEach(element => element.addEventListener('input', autoExpand(element)));
+				// const textarea = document.querySelectorAll('textarea');
+				// textarea.forEach(element => element.addEventListener('input', autoExpand(element)));
 
+				const eventScrollAnimation = () => {};
 				const scrollTarget = document.querySelectorAll('.js-scroll-animation');
+				if(!scrollTarget) return;
 				scrollTarget.forEach((element) => {
 					const isContainedWindowHeight = element.getBoundingClientRect().bottom <= window.innerHeight;
 					if(isContainedWindowHeight) {

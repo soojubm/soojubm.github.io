@@ -1,4 +1,4 @@
-.profile {margin:0 auto;padding:48px 10% 0;position:relative;}
+.profile {margin:0 auto;padding:5.25rem 10% 0;position:relative;}
 .profile-head {height:240px;overflow:hidden;margin:0 0 3rem 0;padding:3rem 4rem;border-radius:4px;box-sizing:border-box;position:relative;}
 .profile-head-background {max-width:100%;margin:0 auto;background-image:linear-gradient(to left bottom, #2658a3, #2852a2, #2c4ba0, #32449e, #383d9b);background:url('/public/images/marina-mazur-1666698-unsplash.jpg') no-repeat center center fixed;position:absolute;left:-50%;right:-50%;top:0;bottom:0;}
 .profile-head-headline {margin:0px auto .5rem;font-size:1.75rem;text-indent:-2px;color:#fff;position:relative;}
@@ -60,7 +60,7 @@
 .components-trigger:hover {color:$gray80;}
 .components-panel {height:0;opacity:0;}
 .components-trigger.is-active {text-indent:2rem;color:$color-primary;}
-.components-panel.is-visible {height:auto;margin:0 0 1rem 0;padding:2rem 0 4rem;box-sizing:border-box;animation:fadeup 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955) forwards;}
+.components-panel.is-visible {height:auto;margin:0 0 1rem 0;padding:2rem 0 4rem;box-sizing:border-box;animation:fadeup 0.4s $bezier-base forwards;}
 .components-panel.buttons button {margin:0.5rem 0;}
 .components-panel.buttons button + button {margin-left:1rem;}
 .components-panel.buttons button + aside + button {margin-left:1rem;}
