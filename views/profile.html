@@ -27,15 +27,16 @@
 	<main class="profile">
 		<figure class="profile-head">
 			<div class="profile-head-background js-parallax"></div>
-			<h1 class="profile-head-headline">유저 프로필</h1>
+			<h1 class="profile-head-headline">부끄러우니까 보지마요.</h1>
 			<p class="profile-head-description">유저 프로필 페이지 유아이를 연습하다 임시 포트폴리오 페이지로 사용합니다.</p>
-			<button class="profile-head-share" type="button" style="padding-top:.5rem;padding-bottom:.5rem;" onclick="javascript:alert('준비중');"><i class="material-icons">share</i> 프로필 공유하기</button>
+			<!-- <button class="profile-head-share" type="button" onclick="javascript:alert('준비중');">프로필 공유하기</button> -->
 		</figure>
 		<header class="profile-user">
 			<figure class="profile-user-avatar"><img src="" alt=""></figure>
 			<!-- <span class="profile-user-category">UI Designer</span> -->
 			<div class="profile-user-name">수줍이</div>
 			<span class="profile-user-id">@soojubm</span>
+			<span class="profile-user-career">UI 디자인 / Frontend 개발</span>
 			<!-- <button class="profile-user-setting" type="button" onclick="javascript:alert('준비중');"><i class="material-icons">settings</i></button> -->
 			<p class="profile-user-description">
 				구조를 단순화하고 하나의 엘리먼트는 SCSS로 모듈화된 하나의 독립적이고 시멘틱한 클래스를 가지는 스타일 방법론을 실험하고 있습니다. 바닐라 자바스크립트로 만듭니다.
@@ -284,113 +285,6 @@
 
 			<section class="profile-tablist-panel" role="tabpanel" aria-hidden="false" data-index="3">
 				<div class="components">
-					<button class="components-trigger js-accordion" type="button" aria-expanded="false"><i class="icon-plus"></i> 폼Forms과 필터Filters</button>
-					<article class="components-panel">
-						<form class="filter" style="max-width:480px;">
-							<h1 class="filter-heading">Filters</h1>
-							<fieldset class="filter-fieldset">
-								<legend class="filter-fieldset-legend">예약하기</legend>
-								<div class="textfield" style="float:left;width:50%;">
-									<label class="textfield-label" for="date-start"><i class="">시작일</i></label>
-									<label class="textfield-icon" for="date-start"><i class="material-icons">today</i></label>
-									<input class="textfield-input" type="date" id="date-start" placeholder="날짜를 설정해주세요." />
-									<span class="textfield-unit">cm</span>
-								</div>
-								<div class="textfield" style="float:left;width:50%;">
-									<label class="textfield-label" for="date-end">종료일</label>
-									<label class="textfield-icon " for="date-start"><i class="material-icons">today</i></label>
-									<input class="textfield-input" type="date" id="date-end" placeholder="날짜를 설정해주세요." style="border-left:none;" />
-								</div>
-							</fieldset>
-							<fieldset class="filter-fieldset">
-								<legend class="filter-fieldset-legend">체크박스</legend>
-								<div class="checkbox">
-									<input type="checkbox" id="line01" value="" checked />
-									<label for="line01">Everyday is like sunday</label>
-								</div>
-								<div class="checkbox">
-									<input type="checkbox" id="line02" value="" indeterminate />
-									<label for="line02">Everyday is like sunday</label>
-								</div>
-								<div class="checkbox">
-									<input type="checkbox" id="line03" value="" checked disabled />
-									<label for="line03">Everyday is like sunday</label>
-								</div>
-								<div class="checkbox textfiled">
-									<input type="checkbox" id="other" name="interest" value="other">
-									<label for="other">Other</label>
-									<!-- <input type="text" id="otherValue" name="other" class="textfield-input"> -->
-								</div>
-							</fieldset>
-							<fieldset class="filter-fieldset">
-								<legend class="filter-fieldset-legend">라디오버튼</legend>
-								<div class="radio">
-									<input type="radio" id="gender-man" name="gender" value="" checked>
-									<label for="gender-man">Video kills the radio button</label>
-									<p class="radio-helper">My email campaigns are meant to be seen by the public. The more the merrier, in fact. If/when Mailchimp builds tools that help people discover me and sign up for this list, I'd like to take part in that.</p>
-								</div>
-								<div class="radio">
-									<input type="radio" id="gender-women" name="gender" value="" checked disabled>
-									<label for="gender-women">Video kills the radio button</label>
-								</div>
-							</fieldset>
-							<fieldset class="filter-fieldset">
-								<legend class="filter-fieldset-legend">증감</legend>
-								<div class="variation js-variation">
-									<input class="variation-input js-variation-input js-number-input" name="variation1" type="number" value="0">
-									<button class="variation-decrement js-variation-decrement" type="button"><i class="icon-minus"></i></button>
-									<button class="variation-increment js-variation-increment" type="button"><i class="icon-plus"></i></button>
-								</div>
-								<div class="variation js-variation">
-									<input class="variation-input js-variation-input js-number-input" name="variation2" type="number" value="0">
-									<button class="variation-decrement js-variation-decrement" type="button"><i class="icon-minus"></i></button>
-									<button class="variation-increment js-variation-increment" type="button"><i class="icon-plus"></i></button>
-								</div>
-							</fieldset>
-							<fieldset class="filter-fieldset">
-								<legend class="filter-fieldset-legend">스위치 체크박스</legend>
-								<span class="switch">
-									<input type="checkbox" id="switch1" name="" role="switch" value="off" />
-									<label for="switch1">Receive weekly newsletter</label>
-								</Receive>
-								<span class="switch">
-									<input type="checkbox" id="switch2" name="" role="switch" value="off" disabled />
-									<label for="switch2">Receive weekly newsletter</label>
-								</span>
-							</fieldset>
-							<fieldset class="filter-fieldset">
-								<legend class="filter-fieldset-legend">텍스트 에어리어</legend>
-								<div class="textfield">
-									<label class="textfield-label" for="search1">레이블</label>
-									<textarea class="textfield-input" rows="3" placeholder="Textarea Placeholder..."></textarea>
-									<small class="textfield-byte"><b>0 KB</b> / 100 KB</small>
-								</div>
-							</fieldset>
-							<fieldset class="filter-fieldset">
-								<legend class="filter-fieldset-legend">셀렉트 박스</legend>
-								<div class="textfield">
-									<label class="textfield-label" for="search1">레이블</label>
-									<select class="textfield-input" name="" id="">
-										<option class="select-option" value="" disabled selected hidden>Choose an option</option>
-										<option class="select-option" value="solong" >My Morning Jackt</option>
-										<optgroup class="select-optgroup" label="Category 1">
-											<option class="select-option" value="option1" disabled>Option 1</option>
-											<option class="select-option" value="option2">Option 2</option>
-										</optgroup>
-										<optgroup class="select-optgroup" label="Category 2">
-											<option class="select-option" value="option1">Option 1</option>
-											<option class="select-option" value="option2">Option 2</option>
-										</optgroup>
-									</select>
-									<i class="selectbox-indicator icon-caret"></i>
-								</div>
-							</fieldset>
-							<footer class="filter-foot">
-								<button type="button" class="primary-button">필터링하기</button>
-								<button type="button" class="ghost-button">clear filters</button>
-							</footer>
-						</form>
-					</article>
 					<button class="components-trigger js-accordion" type="button" aria-expanded="false"><i class="icon-plus"></i> 폼Forms과 필터Filters</button>
 					<article class="components-panel">
 						<form class="filter" style="max-width:480px;">

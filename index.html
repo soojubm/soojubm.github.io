@@ -68,17 +68,17 @@
       </footer>
     </form> -->
 
-    <section class="topbanner">
+    <!-- <section class="topbanner">
       <div class="topbanner-background"></div>
       <h1 class="topbanner-heading">부끄러우니까 보지마요</h1>
       <p class="topbanner-body">내용을 입력하세요. 두 줄이 될 때까지 아무 말 대단치를 하고 있어요.</p>
       <button class="topbanner-cta primary-button" type="button">무료체험 신청하기</button>
       <button class="topbanner-close js-close" type="button"><i class="icon-close"></i></button>
-      <!-- <span class="topbanner-checkbox checkbox">
+      <span class="topbanner-checkbox checkbox">
         <input type="checkbox">
         <label for="">오늘은 그만 볼게요.</label>
-      </span> -->
-    </section>
+      </span>
+    </section> -->
 
     <aside class="toast">
       <h1 class="toast-heading">부끄러우니까 보지마요!</h1>
@@ -145,10 +145,10 @@
           </menu>
         </div>
       </div>
+      <!-- 네비게이션을 안에 넣는 경우 -->
       <nav class="navigation" role="navigation">
         <button class="navigation-toggle js-toggle js-accordion" type="button"><i class="icon-hamberger"></i></button>
         <ul>
-          <!-- a태그 안에 a태그 -->
           <li class="js-hover-trigger">
             <a route="" href="#"> 페이지<i class="icon-caret"></i></a>
             <div class="bg"></div>
@@ -158,8 +158,6 @@
               <a href="#cake">케이크</a>
               <a href="#terms">약관</a>
               <a href="#product">상품</a>
-              <!-- <a href="#pricing">프라이싱</a> -->
-              <!-- <a href="#help">고객센터</a> -->
             </menu>
           </li>
           <li>
@@ -172,38 +170,59 @@
             <a href="#design"><em>디자인시스템</em></a>
           </li>
           <li>
-        <div class="switch-wrap" style="display:inline-block">
-            <span class="switch --darkmode js-darkmode">
-              <!-- <input type="checkbox" id="darkmode" name="" role="switch" value="off" />
-              <label class="" for="darkmode">Darkmode</label> -->
-              <!-- <img src="/public/images/u1F31E-sunwithface.svg" class="day" style="width: 32px;" alt="" /> -->
-              <!-- <img src="/public/images/u1F31A-newmoonwithface.svg" class="night" style="width: 32px;" alt="" /> -->
-              <span class="day" style="width: 32px;">🌑</span>
-              <span class="night" style="width: 32px;">🌙</span>
-            </span>
-            <script>
-              const darkmodeButton = document.querySelector('.js-darkmode');
-              darkmodeButton.addEventListener('click', () => {
-                document.body.classList.toggle('darkmode');
-                
-                const isDarkmode = document.body.classList.contains('darkmode');
-                if(isDarkmode) {
-                  localStorage.setItem('theme', 'darkmode');
-                } else {
-                  localStorage.removeItem('theme');
-                  // localStorage.clear();
-                }
-
-              });
-              const getTheme = localStorage.getItem('theme');
-              document.body.classList.remove('darkmode');
-              document.body.classList.add(getTheme);
-            </script>
-          </div>
+            <div class="switch-wrap" style="display:inline-block">
+              <span class="switch --darkmode js-darkmode">
+                <!-- <input type="checkbox" id="darkmode" name="" role="switch" value="off" /> -->
+                <!-- <label class="" for="darkmode">Darkmode</label> -->
+                <span class="day" style="width: 32px;">🌑</span>
+                <span class="night" style="width: 32px;">🌙</span>
+              </span>
+              <script>
+                const darkmodeButton = document.querySelector('.js-darkmode');
+                darkmodeButton.addEventListener('click', () => {
+                  document.body.classList.toggle('darkmode');
+                  
+                  const isDarkmode = document.body.classList.contains('darkmode');
+                  if(isDarkmode) {
+                    localStorage.setItem('theme', 'darkmode');
+                  } else {
+                    localStorage.removeItem('theme');
+                    // localStorage.clear();
+                  }
+  
+                });
+                const getTheme = localStorage.getItem('theme');
+                document.body.classList.remove('darkmode');
+                document.body.classList.add(getTheme);
+              </script>
+            </div>
           </li>
         </ul>
       </nav>
     </header>
+    <nav class="quick" style="padding-top:60px">
+      <a href=""><i class="material-icons">notifications_none</i> <span style="display:none;">다크모드</span></a>
+      <a href=""><i class="material-icons">notifications_none</i> <span style="display:none;">작게보기</span></a>
+    </nav>
+
+    <header class="page-head">
+      <button class="page-head-back icon-button" style="transform:rotate(180deg);">
+        <i class="icon-arrow --left"></i>
+      </button>
+      <h1 class="page-heading">내 프로필</h1>
+    </header>
+
+    <script>
+    const pageHead = document.querySelector('.page-head');
+    document.addEventListener('scroll', event => {
+      if(!pageHead) return;
+      if(window.pageYOffset > 0) {
+        pageHead.classList.add('is-fixed');
+      } else {
+        pageHead.classList.remove('is-fixed');
+      }
+    });
+    </script>
 
     <div id="view"></div>
 

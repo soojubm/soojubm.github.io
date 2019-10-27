@@ -1,17 +1,17 @@
-.profile {background:$gray20;margin:0 auto;padding:2rem 5%;position:relative;}
-.profile-head {height:240px;overflow:hidden;margin:0 0 2rem 0;padding:4rem;border-radius:4px;box-sizing:border-box;position:relative;}
+.profile {margin:0 auto;padding:48px 10% 0;position:relative;}
+.profile-head {height:240px;overflow:hidden;margin:0 0 3rem 0;padding:3rem 4rem;border-radius:4px;box-sizing:border-box;position:relative;}
 .profile-head-background {max-width:100%;margin:0 auto;background-image:linear-gradient(to left bottom, #2658a3, #2852a2, #2c4ba0, #32449e, #383d9b);background:url('/public/images/marina-mazur-1666698-unsplash.jpg') no-repeat center center fixed;position:absolute;left:-50%;right:-50%;top:0;bottom:0;}
-.profile-head-headline {margin:0px auto .125rem;font-size:1.75rem;text-indent:-2px;color:#fff;position:relative;}
-.profile-head-description {color:#fff;}
-.profile-head-share {@extend .ghost-button;color:#fff;border-color:#fff;}
-.profile-head-share i {margin-left:-0.25rem;margin-right:0.25rem;vertical-align:middle;font-size:12px;}
-.profile-user {float:left;width:340px;padding:2rem;border:1px solid #ddd;box-sizing:border-box;position:relative;z-index:1;}
-.profile-user-avatar {width:80px;height:80px;border-radius:$radius400;background:url('/public/images/caleb-woods-182648-unsplash.jpg') no-repeat center center;background-size:cover;transition:all 0.4s;transition:all 0.4s ease;}
+.profile-head-headline {margin:0px auto .5rem;font-size:1.75rem;text-indent:-2px;color:#fff;position:relative;}
+.profile-head-description {margin:0 0 2rem 0;color:#fff;position: relative;}
+.profile-head-share {@extend .secondary-button;color:#fff;border-color:#fff;}
+.profile-user {float:left;width:320px;box-sizing:border-box;position:relative;z-index:1;}
+.profile-user-avatar {float:right;width:80px;height:80px;border-radius:$radius400;background:url('/public/images/caleb-woods-182648-unsplash.jpg') no-repeat center center;background-size:cover;transition:all 0.4s;transition:all 0.4s ease;}
 .profile-user-avatar:hover {box-shadow:$shadow450;}
 .profile-user-avatar:hover ~ .profile-user-description {}
-.profile-user-name {margin:.75rem 0 0 0;font-size:1.5rem;line-height:1.4;color:$gray80;}
+.profile-user-name {font-size:1.5rem;line-height:1.4;color:$gray80;}
 .profile-user-id {display:block;margin:-2px 0 0;color:$gray40;}
-.profile-user-description {height:4.8em;white-space:normal;overflow:hidden;text-overflow:ellipsis;word-wrap:break-word;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;margin:1rem 0;line-height:1.6;position:relative;}
+.profile-user-career {display:block;margin:4px 0 0;color:$gray40;}
+.profile-user-description {height:4.8em;white-space:normal;overflow:hidden;text-overflow:ellipsis;word-wrap:break-word;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;margin:2rem 0 0rem;line-height:1.6;position:relative;}
 .profile-user-toggle {width:100%;display:inline-block;text-align:center;}
 .profile-user-toggle i {display:inline-block;vertical-align:middle;}
 .profile-user-description-more {display:block;margin:-0.5rem 0 1rem 0;}
@@ -95,30 +95,23 @@
 
 .card:hover {transform:translateY(-1px);}
 
-@media (max-width:1800px) {
+@media (max-width:1400px) {
   .profile-user {float:none;width:100%;margin:0px auto 0;padding:0 5% 0;box-sizing:border-box;}
   .profile-body {width:100%;margin-top:0;padding:0 5%;}
-  .card {width:25%;}
+  .card {width:50%;}
 }
 
 @media (max-width:$breakpoint-small) {
   
   .profile {max-width:1200px;}
-  .profile-head {padding-left:320px;}
-  .profile-user {width:240px;}
-  .profile-body {padding-left:320px;}
+  .profile-user {width:100%;}
   .works {margin:0 -0.75rem;}
-  .card {width:278px;margin:0 0.75rem 0.75rem;}
   .profile {padding-left:0;padding-right:0;}
   .profile-head {padding:0 5% 2.5rem;}
   .profile-head-background {max-width:100%;background-size:auto 100%;}
   .profile-head-headline {padding-top:2rem;font-size:1.5rem;}
   .profile-head-description {margin:0 auto 16px;}
   .profile-head-share {position:static;bottom:auto;}
-  
-  .profile-user-avatar {width:120px;height:120px;border-radius:50%;}
-  .profile-user-setting {right:4%;top:60px;}
 
-  .works {margin:0;}
   .card {flex:1 0 50%;margin:0 0 20px;}
 }

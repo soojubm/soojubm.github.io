@@ -65,7 +65,7 @@ button.--small {width:auto !important;min-width:72px !important;padding:4px 1rem
 .ghost-button:focus:not(:disabled) {background:#f3f3f3;}
 .ghost-button:active:not(:disabled) {}
 
-.icon-button {display:inline-block;width:48px;height:48px;background:$gray20;line-height:0;border-radius:$radius400;box-sizing:border-box;}
+.icon-button {display:inline-block;width:48px;height:48px;line-height:0;border-radius:$radius400;box-sizing:border-box;}
 
 .linebreak {display:block;}
 @media (max-width:$breakpoint-small) {
