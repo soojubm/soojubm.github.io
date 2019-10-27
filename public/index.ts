@@ -83,9 +83,9 @@ document.addEventListener('DOMContentLoaded', () => {
 	// 	});
 	// }
 
+	loader();
 	router();
 
-	loader();
 	checkBrowser();
 	adjustTopPadding();
 

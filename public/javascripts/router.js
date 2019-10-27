@@ -1,7 +1,6 @@
 import { checkAllcheckbox, attachFile, inputVariation } from './input';
 import { enterTarget, stickyHeader, modal, eventToggle, eventToTop, eventClose } from './event';
 
-
 const router = function() {
 	const view = null || document.getElementById('view');
 
@@ -13,11 +12,50 @@ const router = function() {
 		fetch(page)
 			.then(response => {
 				// 404 || 500
+				
+
 				if(response.ok) return response.text();
 				else return Promise.reject(response);	
 			})
 			.then(html => {
+				
 				view.innerHTML = html;
+
+				
+		const customCursor = () => {
+			// const cursor = document.querySelector('.cursor');
+			document.addEventListener('DOMContentLoaded', setCursor);
+			document.addEventListener('mousemove', setCursor);
+			document.addEventListener('click', setRipple);
+
+			function setCursor() {
+				const x = event.clientX;
+				const y = event.clientY;
+				cursor.style.left = `${x}px`;
+				cursor.style.top = `${y}px`;
+				// cursor.style.transform = `translate(${x - 15}px, ${y - 15}px`;
+
+			}
+			function setRipple(){
+				cursor.classList.add('expand');
+				setTimeout(() => {
+					cursor.classList.remove('expand');
+				}, 500);
+			}
+		};
+				customCursor();
+				const cursor = document.querySelector('.loading-object');
+				cursor.classList.add('is-default');
+		
+				const hoverElement = document.querySelectorAll('button, a');
+				
+				hoverElement.forEach(element => element.addEventListener('mouseleave', () => {
+					cursor.classList.remove('is-clickable');
+				}));
+				hoverElement.forEach(element => element.addEventListener('mouseenter', () => {
+					cursor.classList.add('is-clickable');
+				}));
+				
 
 				checkAllcheckbox({
 					checkAllElement: '.js-checkall', 
@@ -59,30 +97,6 @@ const router = function() {
 						}
 					});
 				});
-
-				const customCursor = () => {
-					const cursor = document.querySelector('.cursor');
-					document.addEventListener('DOMContentLoaded', setCursor);
-					document.addEventListener('mousemove', setCursor);
-					document.addEventListener('click', setRipple);
-
-					function setCursor() {
-						const x = event.clientX;
-						const y = event.clientY;
-						cursor.style.left = `${x}px`;
-						cursor.style.top = `${y}px`;
-						// cursor.style.transform = `translate(${x - 15}px, ${y - 15}px`;
-
-					}
-					function setRipple(){
-						cursor.classList.add('expand');
-						setTimeout(() => {
-							cursor.classList.remove('expand');
-						}, 500);
-					}
-				};
-				
-				customCursor();
 			})
 			.catch(error => console.warn('router: ', error));
 	};

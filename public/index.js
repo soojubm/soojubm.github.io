@@ -67,8 +67,8 @@ document.addEventListener('DOMContentLoaded', function () {
     // 		renderTodo(item.text);
     // 	});
     // }
-    router_1["default"]();
     load_1.loader();
+    router_1["default"]();
     load_1.checkBrowser();
     load_1.adjustTopPadding();
     event_js_1.tabMenu();

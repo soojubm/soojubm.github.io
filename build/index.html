@@ -40,7 +40,8 @@
   <link href="/main.css" rel="stylesheet"></head>
   <body>
     <noscript>This website requires JavaScript.</noscript>
-    <aside class="loading js-loading"><div class="loading-object"></div></aside>
+    <aside class="loading js-loading"></aside>
+    <div class="loading-object"></div>
     <aside class="browser js-browser" role="complementary">
       <p>이 사이트는 크롬 브라우저에 최적화되어 있습니다.</p>
       <a href="https://www.google.co.kr/chrome/index.html" class="button">크롬 브라우저 다운로드</a>
@@ -206,9 +207,7 @@
     </nav>
 
     <header class="page-head">
-      <button class="page-head-back icon-button" style="transform:rotate(180deg);">
-        <i class="icon-arrow --left"></i>
-      </button>
+      <button class="page-head-back icon-button" style="transform:rotate(180deg);"  onclick="javascript:alert('이전페이지로~');"><i class="icon-arrow --left"></i></button>
       <h1 class="page-heading">내 프로필</h1>
     </header>
 
