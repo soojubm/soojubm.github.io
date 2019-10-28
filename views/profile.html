@@ -28,8 +28,30 @@
 		<figure class="profile-head">
 			<div class="profile-head-background js-parallax"></div>
 			<h1 class="profile-head-headline">부끄러우니까 보지마요.</h1>
-			<p class="profile-head-description">유저 프로필 페이지 유아이를 연습하다 임시 포트폴리오 페이지로 사용합니다.</p>
-			<!-- <button class="profile-head-share" type="button" onclick="javascript:alert('준비중');">프로필 공유하기</button> -->
+			<p class="profile-head-description">이것저것 해보는 중이라 완성도가 떨어져요.</p>
+			<button class="profile-head-share" type="button" onclick="javascript:alert('준비중');">프로필 공유하기</button>
+			<div class="profile-head-temp" style="position:absolute;left:75%;top:3rem;">
+				<h5 style="margin:0 0 1rem 0;color:#fff;">내 프로필을 공유한 사람</h5>
+				<div style="display:flex;">
+					<div class="avatar --medium" style="box-sizing:border-box;background:aquamarine;position:relative;z-index:8;">
+						<img src="" alt="" />
+					</div>
+					<div class="avatar --medium" style="width:32px;background:blueviolet;box-sizing:border-box;position:relative;z-index:7;">
+					</div>
+					<div class="avatar --medium" style="width:32px;background:burlywood;box-sizing:border-box;position:relative;z-index:6;">
+						<img src="/public/images/chaplin.png" alt="" style="margin-left:0;" />
+					</div>
+					<div class="avatar --medium" style="width:32px;background:chocolate;box-sizing:border-box;position:relative;z-index:5;">
+					</div>
+					<div class="avatar --medium" style="width:32px;background:darkolivegreen;box-sizing:border-box;position:relative;z-index:4;">
+					</div>
+					<div class="avatar --medium" style="width:32px;background:deepskyblue;box-sizing:border-box;position:relative;z-index:3;">
+					</div>
+					<div class="avatar --medium" style="width:32px;background:lightcoral;box-sizing:border-box;position:relative;z-index:2;">
+					</div>
+				</div>
+				<p style="margin-top:0.5rem;color:#fff;">화니 외 6명</p>
+			</div>
 		</figure>
 		<header class="profile-user">
 			<figure class="profile-user-avatar"><img src="" alt=""></figure>
@@ -40,16 +62,18 @@
 			<!-- <button class="profile-user-setting" type="button" onclick="javascript:alert('준비중');"><i class="material-icons">settings</i></button> -->
 			<p class="profile-user-description">
 				구조를 단순화하고 하나의 엘리먼트는 SCSS로 모듈화된 하나의 독립적이고 시멘틱한 클래스를 가지는 스타일 방법론을 실험하고 있습니다. 바닐라 자바스크립트로 만듭니다.
+				<a class="profile-user-description-more" href="javascript:alert('준비중');">더보기</a>
 			</p>
-			<a class="profile-user-description-more" href="javascript:alert('준비중');">더보기</a>
 			<div class="profile-user-hashtags">
 				<code>#HTML5</code>
 				<code>#SASS</code>
-				<code>#vanillaJS</code>
-				<code>#react</code>
+				<code>#VanillaJS</code>
+				<code>#ReactJS</code>
+				<code>#Mobx</code>
 			</div>
-			<div class="profile-controls">
-				<button class="profile-controls-follow secondary-button" type="button">Follow</button>
+			<div class="profile-controls" style="display:flex;">
+				<button class="profile-controls-follow primary-button" type="button" style="width:65%;">Follow</button>
+				<button class="profile-controls-follow secondary-button" type="button" style="width:30%;margin-left:auto;">Message</button>
 			</div>
 			<!-- <button class="profile-user-toggle" type="button">More <i class="icon-caret"></i></button> -->
 			<section class="profile-user-info">
