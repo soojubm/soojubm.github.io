@@ -1,5 +1,6 @@
 import { checkAllcheckbox, attachFile, inputVariation } from './input';
-import { enterTarget, stickyHeader, modal, eventToggle, eventToTop, eventClose } from './event';
+import { enterTarget, stickyHeader, modal, eventToggle, eventToTop, eventClose, eventScrollAnimation, customCursor, stickyElement } from './event';
+import { todayDate } from './utils';
 
 const router = function() {
 	const view = null || document.getElementById('view');
@@ -12,8 +13,6 @@ const router = function() {
 		fetch(page)
 			.then(response => {
 				// 404 || 500
-				
-
 				if(response.ok) return response.text();
 				else return Promise.reject(response);	
 			})
@@ -21,82 +20,73 @@ const router = function() {
 				
 				view.innerHTML = html;
 
+				if(window.location.pathname === '/') {
+					console.log('this is home page.', window.location);
+				}
 				
-		const customCursor = () => {
-			// const cursor = document.querySelector('.cursor');
-			document.addEventListener('DOMContentLoaded', setCursor);
-			document.addEventListener('mousemove', setCursor);
-			document.addEventListener('click', setRipple);
+				if(window.location.hash === '#design') {
+					document.querySelector('.page-head').classList.add('--white');
+				} else {
+					document.querySelector('.page-head').classList.remove('--white');
+				}
+				console.log(window.location.origin);
 
-			function setCursor() {
-				const x = event.clientX;
-				const y = event.clientY;
-				cursor.style.left = `${x}px`;
-				cursor.style.top = `${y}px`;
-				// cursor.style.transform = `translate(${x - 15}px, ${y - 15}px`;
-
-			}
-			function setRipple(){
-				cursor.classList.add('expand');
-				setTimeout(() => {
-					cursor.classList.remove('expand');
-				}, 500);
-			}
-		};
-				customCursor();
-				const cursor = document.querySelector('.loading-object');
-				cursor.classList.add('is-default');
-		
-				const hoverElement = document.querySelectorAll('button, a');
-				
-				hoverElement.forEach(element => element.addEventListener('mouseleave', () => {
-					cursor.classList.remove('is-clickable');
-				}));
-				hoverElement.forEach(element => element.addEventListener('mouseenter', () => {
-					cursor.classList.add('is-clickable');
-				}));
-				
-
-				checkAllcheckbox({
-					checkAllElement: '.js-checkall', 
-					checkElements: '.js-check'
+				window.addEventListener('scroll', () => {
+					stickyElement({targetElement:'.post-head', addClass: 'is-sticky'});
 				});
+				
+				const carousel = () => {};
+
+				// const category = document.querySelector('.slider');
+				// const categoryList = category.querySelector('.slider-viewer');
+				// const categoryListSlide = category.querySelectorAll('.slider-viewer > button');
+				// const categoryNavigationPrev = category.querySelector('.slider-arrows-prev');
+				// const categoryNavigationNext = category.querySelector('.slider-arrows-next');
+				// const categoryDots = category.querySelectorAll('.slider-dots-dot');
+
+				// const categoryContainerWidth = categoryList.offsetWidth;
+				// let sum = 0;
+				
+				// categoryListSlide.forEach(item => sum += item.offsetWidth);
+				
+				// categoryNavigationNext.addEventListener('click', toNext);
+				// categoryNavigationPrev.addEventListener('click', toPrev);
+				// categoryDots.forEach(element => element.addEventListener('click', () => {}));
+
+				// categoryList.addEventListener('scroll', () => {
+				// 	const { scrollLeft } = categoryList;
+				// 	console.log('scroll-left', scrollLeft, 'offset-width', categoryContainerWidth);
+				// });
+
+				// function toPrev() {
+				// 	categoryList.scrollLeft -= 100;
+				// }
+				// function toNext() {
+				// 	categoryList.scrollLeft += 100;
+				// 	// if(sum > categoryContainerWidth) {}
+				// 	// const ttt = 100 + 'px';
+				// 	// document.querySelector('.slider-viewer').style.transform += 'translateX('+ttt+')';
+				// }
+				
+				customCursor();
+				checkAllcheckbox({checkAllElement: '.js-checkall', checkElements: '.js-check'});
 
 				// stickyHeader();
-				modal();
 				eventToggle();
 				eventToTop();
 				eventClose();
+				eventScrollAnimation();
 
 				attachFile();
-
+				modal();
 				// inputVariation();
 
 				enterTarget('.js-hover-trigger');
 				enterTarget('.header-user-notification');
 				enterTarget('.header-user-account');
-				
 				// const textarea = document.querySelectorAll('textarea');
 				// textarea.forEach(element => element.addEventListener('input', autoExpand(element)));
-
-				const eventScrollAnimation = () => {};
-				const scrollTarget = document.querySelectorAll('.js-scroll-animation');
-				if(!scrollTarget) return;
-				scrollTarget.forEach((element) => {
-					const isContainedWindowHeight = element.getBoundingClientRect().bottom <= window.innerHeight;
-					if(isContainedWindowHeight) {
-						element.classList.add('is-scrolled');
-					}
-				});
-				window.addEventListener('scroll', () => {
-					scrollTarget.forEach((element) => {
-						const pageY = window.pageYOffset;
-						const isScrolled = pageY > pageY + element.getBoundingClientRect().top - window.innerHeight + 50;
-						if(isScrolled){
-							element.classList.add('is-scrolled');
-						}
-					});
-				});
+				
 			})
 			.catch(error => console.warn('router: ', error));
 	};
@@ -107,12 +97,16 @@ const router = function() {
 
 	routePage();
 	window.addEventListener('hashchange', routePage);
-	window.addEventListener('hashchange', () => {
-		if(document.querySelector('.navigation-toggle').classList.contains('is-active')) {
-			document.querySelector('.navigation-toggle').classList.remove('is-active');
-			document.querySelector('.navigation-toggle').nextElementSibling.classList.remove('is-visible');
-		}
-	});
+	window.addEventListener('hashchange', initailizePage);
+
+	function initailizePage() {
+		const navigationTrigger = document.querySelector('.navigation-toggle');
+		const isOpenedNavigation = navigationTrigger.classList.contains('is-active');
+		if(!isOpenedNavigation) return;
+		
+		navigationTrigger.classList.remove('is-active');
+		navigationTrigger.nextElementSibling.classList.remove('is-visible');
+	}
 
 };
 

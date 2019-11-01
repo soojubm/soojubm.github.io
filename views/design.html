@@ -1,17 +1,15 @@
 <main class="design">
-  <header class="design-head js-scroll-animation">
+  <header class="design-head">
   </header>
+  <section class="hero">
+    <div class="hero-background"></div>
+    <!-- <i class="hero-eyebrow">🐣</i> -->
+    <h1 class="hero-heading">히어로 영역</h1>
+    <p class="hero-description">히어로 섹션의 마크업을 간단하게 해보았어요. Hero & Features. 배너 대신 빌보드로 네이밍하자.</p>
+    <a class="hero-cta primary-button">call to action</a>
+    <a class="hero-detail ghost-button">view detail</a>
+  </section>
   <section class="design-body">
-    <section class="hero js-scroll-animation">
-      <div class="hero-image"></div>
-      <i class="hero-eyebrow">🐣</i>
-      <h1 class="hero-heading">
-        <span class="t1">디자인 시스템</span>
-      </h1>
-      <p class="hero-description">히어로 섹션의 마크업을 간단하게 해보았어요. Hero & Features. 배너 대신 빌보드로 네이밍하자.</p>
-      <a class="hero-cta primary-button">call to action</a>
-      <a class="hero-detail ghost-button">view detail</a>
-    </section>
     <article class="design-article grayscale">
       <h1 class="design-article-heading">Colors</h1>
       <p class="design-article-description">칼라칼라컬러컬러🐣</p>
@@ -476,15 +474,11 @@
       <h1 class="design-article-heading">Textfield</h1>
       <p class="design-article-description">Input text, Textarea, Select, with Icon, with Unit, with Button</p>
       <div class="variation js-variation">
-        <input class="variation-input js-variation-input js-number-input" name="variation1" type="number" value="0">
+        <input class="variation-input js-variation-input js-number-input" name="variation1" type="number" value="0" min="5" max="20" >
         <button class="variation-decrement js-variation-decrement" type="button"><i class="icon-minus"></i></button>
         <button class="variation-increment js-variation-increment" type="button"><i class="icon-plus"></i></button>
       </div>
-      <div class="textfield">
-        <label class="textfield-label" for="number">넘버</label>
-        <input class="textfield-input js-number-input" id="number" type="number" min="5" max="20" placeholder="숫자만 입력가능합니다."></input>
-      </div>
-      <div class="textfield">
+      <div class="textfield" style="margin:1rem 0;">
         <label class="textfield-label" for="number">prefix와 suffix</label>
         <span class="textfield-prefix">http://</span>
         <input class="textfield-input js-number-input" id="number" type="number" min="5" max="20" placeholder="숫자만 입력가능합니다."></input>

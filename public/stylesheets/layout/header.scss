@@ -31,7 +31,16 @@ $fixedHeaderHeight: 50px;
 .page-heading {margin-top:-3px;font-size:1.25rem;}
 .page-head-back {display:block;margin-left:-12px;}
 
-.page-head.is-fixed {height:64px;background:#fff;margin:0;padding:0 5%;top:0;left:0;right:0;z-index:5;}
+.page-head.--white {}
+.--white .page-heading {color:#fff;}
+.--white .icon-arrow:before {border-color:#fff;}
+.--white .icon-arrow:after {background-color:#fff;}
+
+
+.page-head.is-fixed {height:64px;background:#fff;margin:0;padding:0 10%;top:0;left:0;right:0;z-index:5;}
+.--white.is-fixed .page-heading {color:$gray80;}
+.--white.is-fixed .icon-arrow:before {border-color:$gray80;}
+.--white.is-fixed .icon-arrow:after {background-color:$gray80;}
 
 .setting {max-width:$width-medium;margin: 0 auto;}
 

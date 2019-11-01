@@ -14,5 +14,8 @@
 .banner button {border-color:#fff;color:#fff;}
 
 
+@media (max-width:$breakpoint-small) {
+  .banner {width:90%;}
+}
 .is-closed-topbanner .header {background:#ffff;margin-top:-225px;transition:margin .2s, background-color .4s;}
 .is-closed-topbanner .topbanner {z-index:-1;}

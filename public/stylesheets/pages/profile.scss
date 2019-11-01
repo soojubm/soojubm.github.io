@@ -107,10 +107,8 @@
 }
 
 @media (max-width:$breakpoint-small) {
-  
-  .profile {max-width:1200px;}
   .profile-user {width:100%;}
-  .works {margin:0 -0.75rem;}
+  .works {margin:0;}
   .profile {padding-left:0;padding-right:0;}
   .profile-head {padding:0 5% 2.5rem;}
   .profile-head-background {max-width:100%;background-size:auto 100%;}

@@ -2,18 +2,15 @@
 
 import './stylesheets/style.scss';
 import router from './javascripts/router';
-import { tabMenu, stickyElement } from './javascripts/event.js';
+import { tabMenu } from './javascripts/event.js';
 import { inputNumber } from './javascripts/input';
-import { loader, checkBrowser, adjustTopPadding } from './javascripts/load'; // loadSpinner
+import { loader, checkBrowser, adjustTopPadding } from './javascripts/load';
 import { validations } from './javascripts/validations';
 //document.documentElement.className += ' supports-date';
 
 // if(window.matchMedia('(min-width:800px)').matches) {}
 
 document.addEventListener('DOMContentLoaded', () => {	
-	if(window.location.pathname === '/') {
-		console.log('this is home page.');
-	}
 	// const todo = document.querySelector('.js-todo');
 	// const todoList = document.querySelector('.js-todo-list');
 	// const todoListInput = document.querySelector('.js-todo-input');
@@ -89,7 +86,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	checkBrowser();
 	adjustTopPadding();
 
-
 	tabMenu();
 	inputNumber();
 
@@ -116,12 +112,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	// 	return responses.map(function (response) {
 	// 		return response.json();
 	// 	});
-
-
-	window.addEventListener('scroll', () => {
-		if (!document.querySelector('.post-head')) return;
-		stickyElement('.post-head', 'is-sticky', true);
-	});
 });
 
 const setGraph = () => {
@@ -143,6 +133,8 @@ const setGraph = () => {
 		})();
 	});
 };
+
+
 
 // document.forms.id
 function loginFormValidation() {
@@ -285,58 +277,3 @@ document.addEventListener('click', (event) => {
 	}
 });
 */
-
-
-export const getTodayDate = () => {
-	const today = new Date();
-	const year = today.getFullYear(); // toString().padStart
-	const month = String(today.getMonth() + 1).padStart(2, '0');
-	const date = String(today.getDate()).padStart(2, '0');
-	const day = today.getDay(); // 월 : 0
-	const hours = today.getHours();
-	const minutes = today.getMinutes();
-	const seconds = today.getSeconds();
-	const ampm = hours < 12 ? 'am' : 'pm'; // 
-	// let theBigDay = new Date("July 1, 1999");
-	// let sameAsBigDay = new Date();
-	// sameAsBigDay.setTime(theBigDay.getTime());
-
-	/*
-	const dateString = date.toLocaleDateString().split('.');
-	const [year, month, day] = dateString;
-	console.log(date.toLocaleDateString()); // 1980년 1월 3일 목요일
-	console.log(date.toLocaleTimeString()); // 오전 1:28:35
-	console.log(date.toLocaleString()); // 1980년 1월 3일 목요일 오전 1:28:35
-	*/
-};
-
-
-
-
-	// 	const category = document.querySelector('.category');
-	// 	const categoryList = category.querySelector('.category-list');
-	// 	const categoryNavigationPrev = category.querySelector('.category-navigation-prev');
-	// 	const categoryNavigationNext = category.querySelector('.category-navigation-next');
-	// 	const temp2 = categoryList.offsetWidth;
-	// 	let sum = 0; 
-	// 	document.querySelectorAll('.category-list > button').forEach(function(item){
-	// 		sum = sum + item.offsetWidth;
-	// 	});
-	// 	categoryList.addEventListener('scroll', function(){
-	// 		const temp = categoryList.scrollLeft;
-	// 		console.log('scroll-left', temp);
-	// 		console.log('offset-width', temp2);
-	// 	});
-	// 	console.log(sum, temp2);
-	// 	categoryNavigationNext.addEventListener('click', () => {
-	// 		if(sum > temp2) {
-	// 			categoryList.scrollLeft += 100;
-	// 			//var ttt = 100 + 'px';
-	// 			//document.querySelector('.category-list').style.transform += 'translateX('+ttt+')';
-	// 		}
-	// 	});
-	// 	categoryNavigationPrev.addEventListener('click', () => {
-	// 		if(sum > temp2) {
-	// 			categoryList.scrollLeft -= 100;
-	// 		}
-	// 	});

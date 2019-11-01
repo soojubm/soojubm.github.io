@@ -1,14 +1,14 @@
 export const loader = () => {
-	const bodyElement = document.body;
+	const { body } = document;
 	const loaderElement = document.querySelector('.js-loading');
 	window.addEventListener('load', function() {
 		setTimeout(function() {
 			loaderElement.classList.add('is-hidden');
-			bodyElement.classList.remove('body-lock');
+			body.classList.remove('body-lock');
 		}, 0);
 	});
 	document.addEventListener('DOMContentLoaded', function() {
-		bodyElement.classList.add('body-lock');
+		body.classList.add('body-lock');
 	});
 };
 
@@ -37,13 +37,6 @@ export const adjustTopPadding = () => {
 	const isFixedHeader = getComputedStyle(headerElement).position === 'fixed';
 	const mainElement = document.querySelector('body');
 
-	function addPadding() {
-		if (isFixedHeader) {
-			mainElement.style.marginTop = headerElement.clientHeight + 'px';
-		} else {
-			mainElement.style.marginTop = 0 + 'px';
-		}
-	}
 	addPadding();
 	window.addEventListener('scroll', () => {
 		requestAnimationFrame(addPadding);
@@ -51,4 +44,12 @@ export const adjustTopPadding = () => {
 	window.addEventListener('resize', () => {
 		requestAnimationFrame(addPadding);
 	});
+
+	function addPadding() {
+		if (isFixedHeader) {
+			mainElement.style.marginTop = headerElement.clientHeight + 'px';
+		} else {
+			mainElement.style.marginTop = 0 + 'px';
+		}
+	}
 };

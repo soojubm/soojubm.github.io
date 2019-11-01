@@ -96,3 +96,26 @@ const maskedNumber = last4Digits.padStart(fullNumber.length, '*');
 		}
 	}
 	*/
+
+
+
+
+export const todayDate = {
+	today: new Date(),
+	year: new Date().getFullYear(),
+	month: String(new Date().getMonth() + 1).padStart(2, '0'),
+	date: String(new Date().getDate()).padStart(2, '0'),
+	day: new Date().getDay(), // 월 : 0
+	hours: new Date().getHours(),
+	minutes: new Date().getMinutes(),
+	seconds: new Date().getSeconds(),
+	ampm: new Date().getHours() < 12 ? 'am' : 'pm'
+
+	/*
+	const dateString = date.toLocaleDateString().split('.');
+	const [year, month, day] = dateString;
+	console.log(date.toLocaleDateString()); // 1980년 1월 3일 목요일
+	console.log(date.toLocaleTimeString()); // 오전 1:28:35
+	console.log(date.toLocaleString()); // 1980년 1월 3일 목요일 오전 1:28:35
+	*/
+};

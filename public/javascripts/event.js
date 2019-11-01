@@ -2,9 +2,8 @@
 //var abc = window.innerWidth - document.body.clientWidth;
 
 export const modal = () => {
-	const bodyElement = document.body;
+	const { body } = document;
 	let pageY = undefined;
-
 	const modals = document.querySelectorAll('.js-modal');
 	if(!modals) return;
 
@@ -12,14 +11,15 @@ export const modal = () => {
 		event.stopPropagation();
 		modal.nextElementSibling.classList.add('is-visible');
 		pageY = window.pageYOffset;
-
 		setLockBody();
-
 		document.addEventListener('click', closeModal);
+
 		function closeModal() {
-			if (!modal.nextElementSibling.classList.contains('is-visible')) return;
+			const isOpened = modal.nextElementSibling.classList.contains('is-visible');
+			if(!isOpened) return;
+
 			modal.nextElementSibling.classList.remove('is-visible');
-			bodyElement.classList.remove('body-lock');
+			body.classList.remove('body-lock');
 			window.scrollTo(0, pageY);
 		}
 	}));
@@ -28,67 +28,9 @@ export const modal = () => {
 	modalDialog.forEach(element => element.addEventListener('click', event => event.stopPropagation()));
 	
 	function setLockBody() {
-		bodyElement.classList.add('body-lock');
-		bodyElement.style.top = `-${pageY}px`;
+		body.classList.add('body-lock');
+		body.style.top = `-${pageY}px`;
 	}
-
-	// document.addEventListener('click', event => {
-	// 	const { target } = event;
-	// 	if (!target.closest('.js-modal')) return;
-
-	// 	const bodyElement = document.body;
-	// 	const targetParent = target.parentNode;
-	// 	let getScrollTop;
-	// 	let findCurrentTarget = null;
-
-	// 	event.stopPropagation();
-	// 	if (targetParent.classList.contains('js-modal')) {
-	// 		findCurrentTarget = targetParent;
-	// 	} else {
-	// 		findCurrentTarget = targetParent.parentNode;
-	// 	}
-
-	// 	findClassRecursive(target, 'js-modal', 0);
-
-	// 	getScrollTop = window.pageYOffset;
-
-	// 	findCurrentTarget.nextElementSibling.classList.add('is-visible');
-
-	// 	setLockBody();
-
-	// 	const modalDialog = document.querySelectorAll('.modal-dialog');
-	// 	modalDialog.forEach(element => {
-	// 		element.addEventListener('click', event => event.stopPropagation());
-	// 	});
-
-	// 	function setLockBody() {
-	// 		const bodyElement = document.body;
-	// 		bodyElement.classList.add('body-lock');
-	// 		bodyElement.style.top = `-${getScrollTop}px`;
-	// 	}
-
-	// 	document.addEventListener('click', closeModal);
-	// 	function closeModal() {
-	// 		if (!findCurrentTarget.nextElementSibling.classList.contains('is-visible')) return;
-	// 		findCurrentTarget.nextElementSibling.classList.remove('is-visible');
-	// 		bodyElement.classList.remove('body-lock');
-	// 		window.scrollTo(0, getScrollTop);
-	// 	}
-	// }, true);
-
-	// const findClassRecursive = (element, className, depth) => {
-	// // parentNode.classList.contains('js-modal')
-	// 	console.log('depth: ' + depth, element);
-	// 	if (element.classList.contains(className)) return element;
-	// 	else return findClassRecursive(element.parentNode, className, depth + 1);
-	// };
-
-	// var getClosest = function(elem, selector) {
-	// 	for (; elem && elem !== document; elem = elem.parentNode) {
-	// 		if (elem.matches(selector)) return elem;
-	// 	}
-	// 	return null;
-	// };
 };
 
 
@@ -124,9 +66,9 @@ export const tabMenu = () => {
 // });
 
 export const stickyElement = ({targetElement, addClass}) => {
+	const { body } = document;
 	const stickyElement = document.querySelector(targetElement);
 	if(!stickyElement) return;
-	const bodyElement = document.body;
 
 	let stickyElementHeight = stickyElement.offsetHeight;
 	let isScrolling;
@@ -142,9 +84,9 @@ export const stickyElement = ({targetElement, addClass}) => {
 		isScrolling && window.cancelAnimationFrame(isScrolling);
 		isScrolling = window.requestAnimationFrame(() => {
 			if(window.pageYOffset > stickyElement.offsetTop + stickyElementHeight){
-				bodyElement.classList.add(addClass);
+				body.classList.add(addClass);
 			} else {
-				bodyElement.classList.remove(addClass);
+				body.classList.remove(addClass);
 			}
 		}, 60);
 	});
@@ -190,8 +132,8 @@ export const stickyHeader = () => {
 };
 
 export const enterTarget = (target) => {
+	const { body } = document;
 	const hoverElement = document.querySelector(target);
-	const bodyElement = document.body;
 	if(!hoverElement) return;
 
 	const isNavigation = hoverElement === document.querySelector('.navigation li');
@@ -199,13 +141,13 @@ export const enterTarget = (target) => {
 	hoverElement.addEventListener('mouseenter', () => {
 		hoverElement.setAttribute('aria-expanded', 'true');
 		hoverElement.classList.add('is-expanded');
-		isNavigation && bodyElement.classList.add('is-shown');
+		isNavigation && body.classList.add('is-shown');
 
 		hoverElement.addEventListener('mouseleave', () => {
 			hoverElement.setAttribute('aria-expanded', 'false');
 			hoverElement.classList.remove('is-expanded');
 
-			isNavigation && bodyElement.classList.remove('is-shown');
+			isNavigation && body.classList.remove('is-shown');
 		});
 	});
 };
@@ -234,12 +176,46 @@ export const eventClose = () => {
 	const closeElement = document.querySelectorAll('.js-close');
 	if(!closeElement) return;
 
-	closeElement.forEach(element => {
-		element.addEventListener('click', event => {
-			(element.parentNode).style.display = 'none';
+	closeElement.forEach(element => element.addEventListener('click', event => {
+		(element.parentNode).style.display = 'none';
+	}));
+};
+
+
+export const eventToTop = () => {
+	const toTopElement = document.querySelector('.js-to-top');
+	toTopElement.addEventListener('click', event => {
+		event.preventDefault();
+		window.scrollTo(0, 0);
+
+		window.location.hash = toTopElement.name || toTopElement.href;
+	});
+};
+
+
+export const eventScrollAnimation = () => {
+	const scrollTarget = document.querySelectorAll('.js-scroll-animation');
+	if(!scrollTarget) return;
+
+	scrollTarget.forEach(element => {
+		const isContainedWindowHeight = element.getBoundingClientRect().bottom <= window.innerHeight;
+		if(!isContainedWindowHeight) return;
+		
+		element.classList.add('is-scrolled');
+	});
+	
+	window.addEventListener('scroll', () => {
+		scrollTarget.forEach(element => {
+			const pageY = window.pageYOffset;
+			const isScrolled = pageY > pageY + element.getBoundingClientRect().top - window.innerHeight + 50;
+			if(!isScrolled) return;
+
+			element.classList.add('is-scrolled');
 		});
 	});
 };
+
+
 
 const toggleEvent = function(target, toggle) {
 	const targetElement = document.querySelector(target);
@@ -274,13 +250,49 @@ const toggleEvent = function(target, toggle) {
 // TODO: 도큐먼트가 아니라 event.target.parent 가 아닌 것을 클릭했을 때 다당야 하나
 
 
+	// const findClassRecursive = (element, className, depth) => {
+	// // parentNode.classList.contains('js-modal')
+	// 	console.log('depth: ' + depth, element);
+	// 	if (element.classList.contains(className)) return element;
+	// 	else return findClassRecursive(element.parentNode, className, depth + 1);
+	// };
 
-export const eventToTop = () => {
-	const toTopElement = document.querySelector('.js-to-top');
-	toTopElement.addEventListener('click', event => {
-		event.preventDefault();
-		window.scrollTo(0, 0);
+	// var getClosest = function(elem, selector) {
+	// 	for (; elem && elem !== document; elem = elem.parentNode) {
+	// 		if (elem.matches(selector)) return elem;
+	// 	}
+	// 	return null;
+	// };
 
-		window.location.hash = toTopElement.name || toTopElement.href;
-	});
+export const customCursor = () => {
+	// const cursor = document.querySelector('.cursor');
+	document.addEventListener('DOMContentLoaded', setCursor);
+	document.addEventListener('mousemove', setCursor);
+	document.addEventListener('click', setRipple);
+
+	const cursor = document.querySelector('.loading-object');
+	const hoverElement = document.querySelectorAll('button, a');
+
+	cursor.classList.add('is-default');
+	hoverElement.forEach(element => element.addEventListener('mouseleave', () => {
+		cursor.classList.remove('is-clickable');
+	}));
+	hoverElement.forEach(element => element.addEventListener('mouseenter', () => {
+		cursor.classList.add('is-clickable');
+	}));
+
+	function setCursor() {
+		const x = event.clientX;
+		const y = event.clientY;
+		cursor.style.left = `${x}px`;
+		cursor.style.top = `${y}px`;
+		// cursor.style.transform = `translate(${x - 15}px, ${y - 15}px`;
+
+	}
+	function setRipple(){
+		cursor.classList.add('expand');
+		setTimeout(() => {
+			cursor.classList.remove('expand');
+		}, 500);
+	}
 };

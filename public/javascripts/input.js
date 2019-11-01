@@ -27,10 +27,9 @@ export const attachFile = () => {
 					<figure class="file-attachment-item-image"><img src=${window.URL.createObjectURL(file)} alt=${file.name}></figure>
 					<b class="file-attachment-item-name" href="#">${file.name}</b>
 					<small class="file-attachment-item-size" >${returnFileSize(file.size)}</small>
-					<button class="file-attachment-item-delete js-remove-this" type="button"><i class="icon-x"></i></button>
+					<button class="file-attachment-item-delete js-remove-this" type="button"><i class="icon-close"></i></button>
 				</a>`;
 			attachmentList.innerHTML += fileTemplate;
-			// attachmentList.innerHTML = fileTemplate + attachmentList.innerHTML;
 			// attachmentList.append(fileTemplate);
 		});
 	}
@@ -67,75 +66,53 @@ export const attachFile = () => {
 // parseInt vs Number
 		// TODO: target 클래스 토글이 안 되므니다
 document.addEventListener('click', event => {
-	const target = event.target;
-	// const eventTargetParentElement = eventTarget.parentNode;
-	// const eventTargetInput = eventTargetParentElement.querySelector('.js-variation-input');
-	// const eventTargetDecrement = eventTargetParentElement.querySelector('.js-variation-decrement');
-	// const eventTargetIncrement = eventTargetParentElement.querySelector('.js-variation-increment');
-	// let targetInputValue = parseInt(eventTargetInput.value);
+	const { target } = event;
 	const minValue = 0;
 	const maxValue = 10;
 	let targetInput;
-	if (target.closest('.js-variation-decrement')) {
+
+	if(target.closest('.js-variation-decrement')) {
 		targetInput = target.parentNode.querySelector('.js-variation-input');
-		if (targetInput.value <= minValue) {
+		if(targetInput.value <= minValue) {
 			target.classList.add('is-disabled');
 			return;
 		}
 		--targetInput.value;
 	}
-	if (target.closest('.js-variation-increment')) {
+	if(target.closest('.js-variation-increment')) {
 		targetInput = target.parentNode.querySelector('.js-variation-input');
-		if (targetInput.value >= maxValue) {
+		if(targetInput.value >= maxValue) {
 			target.classList.add('is-disabled');
 			return;
 		}
 		++targetInput.value;
-
-		// targetInput.value < maxValue + 1 && target.classList.remove('is-disabled');
-		/*
-		let targetInputValue = parseInt(eventTargetInput.value);
-		targetInputValue > minValue && eventTargetInput.value--;
-		targetInputValue === minValue + 1 && eventTarget.classList.add('is-disabled');
-		targetInputValue < maxValue + 1 && eventTargetIncrement.classList.remove('is-disabled');
-
-		targetInputValue < maxValue ? eventTargetInput.value++ : targetInputValue;
-		targetInputValue === maxValue - 1 && eventTarget.classList.add('is-disabled');
-		targetInputValue > minValue - 1 ? eventTargetDecrement.classList.remove('is-disabled') : targetInputValue;
-		*/
 	}
 });
-
-
 
 export const inputTextarea = () => {
 };
 
 // tagName과 nodeName은 텍스트 노드를 각각 undefined와 #text 반환한다.
-
 const BYTE_MAXIMUM = 30;
 document.addEventListener('input', event => {
-	const target = event.target;
-	const byteElement = document.querySelector('.textfield-byte b');
+	const { target } = event;
+	const { value } = target;
 
+	const byteElement = document.querySelector('.textfield-byte b');
 	const isTextarea = target.nodeName.toLowerCase() === 'textarea';
 	if(!isTextarea) return;
 
 	let stringByteLength = 0;
 
-	autoExpand(target);
+	const isMaximum = value.length > BYTE_MAXIMUM;
 
-	const string = target.value;
-	const isMaximum = string.length > BYTE_MAXIMUM;
-
-	// 한글 3BYTE
-	stringByteLength = string.replace(/[\0-\x7f]|([0-\u07ff]|(.))/g,'$&$1$2').length;
+	stringByteLength = value.replace(/[\0-\x7f]|([0-\u07ff]|(.))/g,'$&$1$2').length;
 	byteElement.innerText = stringByteLength;
 
 	if(isMaximum) target.parentNode.classList.add('is-invalid');
 
-	// string = string.slice(0, string.length);
-
+	// value = value.slice(0, value.length);
+	autoExpand(target);
 });
 
 function setStringBytes() {}
@@ -161,7 +138,6 @@ export const inputNumber = () => {
 	// 	console.log('input: ', event.target.value);
 	// 	console.log('input - keycode: ', event.keyCode);
 	// });
-
 
 	document.addEventListener('keydown', event => {
 		const { target } = event;
@@ -254,13 +230,6 @@ export const checkAllcheckbox = ({checkAllElement, checkElements}) => {
 // 	{name: 'jill', phone: '025589090'}
 // 	{name: 'jack', phone: '01031211223'},
 // ];
-
-
-
-
-
-
-
 
 
 
