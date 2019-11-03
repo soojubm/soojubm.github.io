@@ -14,16 +14,18 @@
       <h1 class="design-article-heading">Colors</h1>
       <p class="design-article-description">칼라칼라컬러컬러🐣</p>
       <section class="color">
+        <h4>Gray Colors</h4>
         <figure class="color-item --gray100">
           <div></div>
           <figcaption>
-            <span>gray100</span>
-            <b>#ffffff</b>
+            gray100
+            <!-- <span>gray100</span>
+            <b>#ffffff</b> -->
           </figcaption>
         </figure>
         <figure class="color-item --gray200">
           <div></div>
-          <figcaption>gray100</figcaption>
+          <figcaption>gray200</figcaption>
         </figure>
         <figure class="color-item --gray400">
           <div></div>
@@ -422,6 +424,7 @@
       <div class="radio">
         <input type="radio" id="gender-man" name="gender" value="" checked>
         <label for="gender-man">Video kills the radio button</label>
+        <!-- 다음에 텍스트가 오는 경우와 텍스트가 아닌 것이 오는 경우 -->
         <p class="radio-helper">My email campaigns are meant to be seen by the public. The more the merrier, in fact. If/when Mailchimp builds tools that help people discover me and sign up for this list, I'd like to take part in that.</p>
       </div>
       <div class="radio">
@@ -473,11 +476,13 @@
     <article class="design-article js-scroll-animation">
       <h1 class="design-article-heading">Textfield</h1>
       <p class="design-article-description">Input text, Textarea, Select, with Icon, with Unit, with Button</p>
+      
       <div class="variation js-variation">
         <input class="variation-input js-variation-input js-number-input" name="variation1" type="number" value="0" min="5" max="20" >
         <button class="variation-decrement js-variation-decrement" type="button"><i class="icon-minus"></i></button>
         <button class="variation-increment js-variation-increment" type="button"><i class="icon-plus"></i></button>
       </div>
+      
       <div class="textfield" style="margin:1rem 0;">
         <label class="textfield-label" for="number">prefix와 suffix</label>
         <span class="textfield-prefix">http://</span>
@@ -685,6 +690,19 @@
     </article>
 
     <article class="design-article js-scroll-animation">
+      <h1 class="design-article-heading">Rating</h1>
+      <p class="design-article-description">테스트.</p>
+      <div class="textfield --small --inline" style="margin-bottom:8px;">
+        <label class="textfield-label" for="">테스트</label>
+        <input class="textfield-input" type="text" placeholder="인풋 인라인스타일 스몰사이즈">
+      </div>
+      <div class="textfield --small --inline">
+        <label class="textfield-label" for="">테스트</label>
+        <input class="textfield-input" type="text" placeholder="인풋 인라인스타일 스몰사이즈">
+      </div>
+    </article>
+
+    <article class="design-article js-scroll-animation">
       <h1 class="design-article-heading">Accordions</h1>
       <p class="design-article-description">질의응답에 주로 사용해요. 공지사항 정도의 간단한 게시글에서도 사용할 수 있으나 그 이상의 경우에는 다른 유아이를 고민해봐요.</p>
       <button class="components-trigger js-accordion" type="button" aria-expanded="false"><i class="icon-plus"></i> 투두 리스트: 바닐라 자바스크립트로 만드는 투두 리스트</button>
@@ -695,20 +713,17 @@
       <article class="components-panel">
         안녕
       </article>
-      <details>
-        <summary>
-          <h3>Heading</h3>
+      <details class="dropdown details-reset details-overlay d-inline-block">
+        <summary class="btn" aria-haspopup="true">
+          Dropdown
+          <div class="dropdown-caret"></div>
         </summary>
-        <p>Proin in dapibus nulla. Nam vitae est vitae tellus mollis
-          eleifend in eu erat. Vestibulum ante ipsum primis in faucibus
-          orci luctus et ultrices posuere cubilia Curae; Aenean feugiat
-          ante porttitor purus elementum, eget vestibulum ex volutpat.
-          Sed gravida convallis rutrum. Quisque pharetra eros eget
-          malesuada vulputate.</p>
-        <h4>Sub Heading</h4>
-        <p>Cras maximus interdum interdum. Maecenas vitae ligula et
-          eros porta feugiat. Nullam facilisis odio non ante varius
-          tempor ut ac turpis.</p>
+      
+        <ul class="dropdown-menu dropdown-menu-se">
+          <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+          <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+          <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+        </ul>
       </details>
     </article>
 
@@ -734,22 +749,15 @@
           <label class="textfield-label" for="">First Name</label>
           <input class="textfield-input" type="text" placeholder="이름을 입력하세요.">
         </div>
-        <footer class="action" style="margin-top:1rem;">
+        <!-- <footer class="action" style="margin-top:1rem;">
           <button class="primary-button" type="submit">전송하기</button>
           <button class="secondary-button" type="button" style="margin-left:8px;">취소하기</button>
-        </footer>
+        </footer> -->
       </form>
       <div style="margin:1rem 0;padding:1rem 1.5rem 1.5rem;box-sizing:border-box;border:1px solid #eee;">
         <p style="margin:0 0 .125rem 0;color:#000;font-size:1.25rem;">다이얼로그</p>
         <p style="margin:0 0 1.5rem 0;">보조 텍스트인니다!</p>
-        <div class="textfield --small --inline" style="margin-bottom:8px;">
-          <label class="textfield-label" for="">테스트</label>
-          <input class="textfield-input" type="text" placeholder="인풋 인라인스타일 스몰사이즈">
-        </div>
-        <div class="textfield --small --inline">
-          <label class="textfield-label" for="">테스트</label>
-          <input class="textfield-input" type="text" placeholder="인풋 인라인스타일 스몰사이즈">
-        </div>
+     
         <button class="primary-button --small" type="submit" style="margin-top:1rem;margin-left:100px;">전송하기</button>
         <button class="ghost-button --small" type="button" style="margin-top:8px;">취소</button>
       </div>

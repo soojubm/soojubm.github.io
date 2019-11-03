@@ -9,14 +9,19 @@ body.darkmode {
 }
 .darkmode * {
   // font-size: inherit;
+  $gray80: #fff; // ?
+  .profile-user-name, .card-title {
+    color: #fff;
+  }
+  
 }
 
 .darkmode .navigation ul li a {color:#fff;transition: all 1.4s ease;}
 
 .darkmode header,
-.darkmode div,
 .darkmode aside,
-.darkmode nav {
+.darkmode nav,
+.darkmode footer {
   background: rgba(0,0,0,1);
   color: rgba(255,255,255,.75);
   transition: all 1.4s ease;
@@ -24,6 +29,10 @@ body.darkmode {
 .darkmode .design-body-heading, .darkmode h1 {
   color: #fff;
   transition: all 1.4s ease;
+}
+
+.darkmode .toast {
+  background: $gray80;
 }
 // 백그라운드 컬러가 들어간 컴포넌트들. transparent 로 유지할지. border  zjffjrk qkswjsehla
 // sass 변수 :: 다크모듈 고려하여 네이밍

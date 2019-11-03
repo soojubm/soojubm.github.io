@@ -119,3 +119,20 @@ export const todayDate = {
 	console.log(date.toLocaleString()); // 1980년 1월 3일 목요일 오전 1:28:35
 	*/
 };
+
+const formatDate = timestamp => {
+	const date = new Date(timestamp);
+	const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October',	'November', 'December'];
+	return months[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear();
+
+};
+
+const randomNumber = function (min, max) {
+	return Math.floor(Math.random() * (max - min + 1) + min);
+};
+
+const timestamp = 9462;
+const hours = Math.floor(timestamp / 60 / 60);
+const minutes = Math.floor(timestamp / 60) - (hours * 60);
+const seconds = timestamp % 60;
+const formatted = hours.toString().padStart(2, '0') + ':' + minutes.toString().padStart(2, '0') + ':' + seconds.toString().padStart(2, '0');

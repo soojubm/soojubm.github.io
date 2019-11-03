@@ -8,6 +8,7 @@ export const modal = () => {
 	if(!modals) return;
 
 	modals.forEach(modal => modal.addEventListener('click', event => {
+		// event.preventDefault();
 		event.stopPropagation();
 		modal.nextElementSibling.classList.add('is-visible');
 		pageY = window.pageYOffset;

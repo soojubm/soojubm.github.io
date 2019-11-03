@@ -84,10 +84,10 @@
 .card-more .icon-more {background:#fff;}
 .card-more .icon-more:before {background:#fff;}
 .card-more .icon-more:after {background:#fff;}
-.card-item {margin:1rem 0;position:relative;}
+.card-item {height:48px;margin:1rem 0;position:relative;}
 .card-item img {float:left;display:block;margin-right:1rem;background:$gray80;}
-.card-item-name {display:block;margin-top:-4px;color:$gray80;position: relative;;top:-4px;}
-.card-item-price {position:relative;top:-8px;}
+.card-item-name {display:block;color:$gray80;position: relative;top:0px;}
+.card-item-price {position:relative;top:-4px;}
 
 .card:hover {transform:translateY(-1px);}
 
@@ -110,10 +110,10 @@
   .profile-user {width:100%;}
   .works {margin:0;}
   .profile {padding-left:0;padding-right:0;}
-  .profile-head {padding:0 5% 2.5rem;}
+  .profile-head {padding-left:5%;padding-right:5%;}
   .profile-head-background {max-width:100%;background-size:auto 100%;}
-  .profile-head-headline {padding-top:2rem;font-size:1.5rem;}
-  .profile-head-description {margin:0 auto 16px;}
+  .profile-head-headline {}
+  .profile-head-description {}
   .profile-head-share {position:static;bottom:auto;}
 
   .card {flex:1 0 50%;margin:0 0 20px;}

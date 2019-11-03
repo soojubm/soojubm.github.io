@@ -2,14 +2,16 @@ import { checkAllcheckbox, attachFile, inputVariation } from './input';
 import { enterTarget, stickyHeader, modal, eventToggle, eventToTop, eventClose, eventScrollAnimation, customCursor, stickyElement } from './event';
 import { todayDate } from './utils';
 
-const router = function() {
+// hash 말고 클릭하는 순간에 값을 알아야 함. data attr or hash
+
+const router = () => {
 	const view = null || document.getElementById('view');
 
 	const routePage = () => {
 		let { hash } = window.location;
 		const page = hash ? `/views/${hash.substring(1)}.html` : '/views/profile.html';
+		console.log(hash, page);
 
-		// hash 말고 클릭하는 순간에 값을 알아야 함. data attr or hash
 		fetch(page)
 			.then(response => {
 				// 404 || 500
@@ -17,13 +19,12 @@ const router = function() {
 				else return Promise.reject(response);	
 			})
 			.then(html => {
-				
-				view.innerHTML = html;
+				const { pathname } = window.location;
+				console.log(pathname);
 
-				if(window.location.pathname === '/') {
-					console.log('this is home page.', window.location);
-				}
-				
+				view.innerHTML = html;
+				// window.history.pushState({ name: 'tester' }, 'dd', hash.substring(1));
+
 				if(window.location.hash === '#design') {
 					document.querySelector('.page-head').classList.add('--white');
 				} else {

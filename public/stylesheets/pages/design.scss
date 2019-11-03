@@ -1,5 +1,5 @@
-.color {display:flex;}
-.color-item {margin-right:1px;}
+.color {overflow:hidden;}
+.color-item {float:left;margin-right:1px;margin-bottom:1px;position:relative;}
 .color-item.--gray100 div {background:$gray10;}
 .color-item.--gray200 div {background:$gray20;}
 .color-item.--gray400 div {background:$gray40;}
@@ -12,7 +12,7 @@
 .color-item.--primary200 div {background:$color-primary;}
 .color-item.--gradient div {background-image:linear-gradient(106deg,#ff3a4e,#7e4cff);}
 .color-item div {width:80px;height:80px;border-radius:$radius400;background:$color-primary;position:relative;}
-.color-item figcaption {height:24px;overflow:hidden;margin:.5rem 0 .75rem;font-size:12px;position:relative;}
+.color-item figcaption {background:#fff;border-radius:4px;letter-spacing:1px;overflow:hidden;padding:0 .5rem;font-size:10px;position:absolute;left:.5rem;bottom:.5rem;}
 .color-item figcaption span {display:block;transition:all .4s;}
 .color-item figcaption b {}
 
@@ -23,7 +23,7 @@
   width: auto;
   max-width: 1440px;
   overflow: hidden;
-  margin: 0 0 3rem;
+  margin: 0 0 4rem;
   padding: 3rem 4rem 4.5rem;
   border-radius: 4px;
   box-sizing: border-box;
