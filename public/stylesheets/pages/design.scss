@@ -21,16 +21,12 @@
 
 .hero {
   width: auto;
-  max-width: 1440px;
   overflow: hidden;
-  margin: 0 0 4rem;
+  margin: 0 10%;
   padding: 3rem 4rem 4.5rem;
   border-radius: 4px;
   box-sizing: border-box;
   position: relative;
-  left: 10%;
-  right: 10%;
-  top: 80px;
   z-index: 1;}
 .hero-background {max-width: 100%;
   margin: 0 auto;
@@ -57,10 +53,10 @@
 .hero-body {}
 .hero-foot {}
 
-.design {}
+.design {padding:5.5rem 0;}
 .design-head {overflow:hidden;background:url('/public/images/caleb-woods-182648-unsplash.jpg') no-repeat center center;background-size:cover;position:fixed;left:0;right:50%;top:0;bottom:0;z-index:1;}
 
-.design-body {width:50%;max-width:520px;margin-left:50%;padding:6rem;}
+.design-body {width:50%;max-width:680px;margin-left:50%;padding:6rem;box-sizing:border-box;}
 
 .design-article {margin:0 0 6rem 0;}
 .design-article-heading {margin:0 0 .75rem 0;font-size:1.25rem;}
@@ -101,13 +97,14 @@
 /* .design-spacing-four:after {content:'0.125rem';font-size:10px;position:absolute;left:-50px;top:100%;    transform: translateY(-50%);} */
 
 
-@media (max-width: $breakpoint-large) {
-  .design-head {position:relative;left:0;right:0;top:0;bottom:50%;}
+@media (max-width:$breakpoint-large) {
+  .design-head {height:50vh;position:relative;left:0;right:0;top:0;bottom:50%;}
   .design-body {width:50%;max-width:100%;margin-left:0;}
-  
-
-
 }
 
 
+@media (max-width:$breakpoint-small) {
+  .design-head {}
+  .design-body {width:100%;max-width:100%;padding:0 5%;}
+}
 

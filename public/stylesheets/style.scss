@@ -43,8 +43,8 @@
 .letter-piece {float:left;display:block;width:48px;height:64px;line-height:64px;box-shadow:1px 1px 0px rgba(0,0,0,.1);font-size:32px;text-align:center;position:relative;}
 .letter-piece i {position:relative;z-index:2;}
 .letter-piece ~ .letter-piece {margin-left:2px;}
-.letter-piece:before {content:'';display:block;width:100%;height:31px;border-top-left-radius:2px;border-top-right-radius:2px;border-bottom:1px solid #e9e9e6;background:#eee;position:absolute;left:0;top:0;z-index:1;}
-.letter-piece:after {content:'';display:block;width:100%;height:31px;border-bottom-left-radius:2px;border-bottom-right-radius:2px;border-top:1px solid #fff;background:#eee;position:absolute;left:0;bottom:0;z-index:1;}
+.letter-piece:before {content:'';display:block;width:100%;height:31px;border-top-left-radius:2px;border-top-right-radius:2px;border-bottom:1px solid #e9e9e6;background:$gray10;position:absolute;left:0;top:0;z-index:1;}
+.letter-piece:after {content:'';display:block;width:100%;height:31px;border-bottom-left-radius:2px;border-bottom-right-radius:2px;border-top:1px solid #fff;background:$gray10;position:absolute;left:0;bottom:0;z-index:1;}
 
 /* 바텀 네비게이션 */
 .bottomsheet {}
@@ -132,7 +132,7 @@
 .--vertical .tablist-tab-badge {float:right;font-size:14px;}
 
 
-.user-card {display:block;padding:0 0 10rem 0;border:1px solid #eee;position:relative;}
+.user-card {display:block;padding:0 0 10rem 0;border:1px solid $gray10;position:relative;}
 .user-card-background {background:#000;position:absolute;left:0;right:0;top:0;bottom:5rem;}
 .user-card .avatar {position:absolute;left:1rem;top:3rem;}
 

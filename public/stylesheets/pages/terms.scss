@@ -11,7 +11,7 @@
 .terms-body h2 {margin: 2rem 0 .75rem 0;font-size:1.25rem;}
 .terms-body p {}
 
-.terms-sidebar {width:100%;max-width:320px;background:#fff;padding:8rem 1.5rem;border-right:1px solid #eee;box-sizing:border-box;overflow-y:auto;position:fixed;top:0;bottom:0;z-index:1;}
+.terms-sidebar {width:100%;max-width:320px;background:#fff;padding:8rem 1.5rem;border-right:1px solid $gray10;box-sizing:border-box;overflow-y:auto;position:fixed;top:0;bottom:0;z-index:1;}
 .terms-sidebar a {display:block;line-height:40px;}
 
 @media (max-width:$breakpoint-medium) {
