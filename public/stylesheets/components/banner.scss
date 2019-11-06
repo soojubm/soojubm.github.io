@@ -9,7 +9,7 @@
 .topbanner img {display:none;max-width:240px;position:absolute;left:0;top:.5rem;}
 
 
-.banner {width:80%;margin:0 auto;padding:2rem 0;border-radius:4px;background:url("/public/images/caleb-woods-182648-unsplash.jpg") no-repeat center center fixed;background-size:cover;text-align:center;}
+.banner {width:80%;margin:0 auto;padding:2rem 0;border-radius:4px;background:url("/public/images/caleb-woods-182648-unsplash.jpg") no-repeat center center fixed;background-size:cover;text-align:center;position:relative;z-index:4;}
 .banner p {display:inline-block;margin:0 2rem 0 0;font-size:1.25rem;color:#fff;}
 .banner button {border-color:#fff;color:#fff;}
 

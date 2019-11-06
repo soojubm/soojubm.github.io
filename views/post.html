@@ -27,14 +27,14 @@
 					<div class="post-head-icon"><i class="material-icons">chat</i> <span>512</span></div>
 				</div> -->
 				<!-- 정사각형 / 가로형 직사각형 -->
-				<section class="post-byline">
-					<figure class="post-byline-avatar"><img src="" alt=""></figure>
-					<div class="post-byline-name"><a href="#" class="post-byline-name-link">soojubm</a></div>
-					<p class="post-byline-description">부끄러우니까 보지마요</p>
-					<!-- <button class="secondary-button">구독하기 상세 프로필로 이동해서 구독가능토록</button> -->
-					<!-- <button class=""><i class="icon-close"></i></button> -->
-				</section>
 			</header>
+			<section class="post-byline">
+				<figure class="post-byline-avatar"><img src="" alt=""></figure>
+				<div class="post-byline-name"><a href="#" class="post-byline-name-link">soojubm</a></div>
+				<p class="post-byline-description">부끄러우니까 보지마요</p>
+				<!-- <button class="secondary-button">구독하기 상세 프로필로 이동해서 구독가능토록</button> -->
+				<!-- <button class=""><i class="icon-close"></i></button> -->
+			</section>
 			<hr />
 			<section class="post-body">
 				<!-- <nav class="post-body-navigation">
@@ -176,7 +176,7 @@
 								<input class="textfield-input js-comment-textfield" type="text" name="" id="comment-password" placeholder="비밀번호을 입력하세요.">
 							</div>							
 							<button class="comment-write-submit" type="submit">덧글입력</button>
-							<button  class="comment-write-cancel" type="button">취소</button>
+							<!-- <button class="comment-write-cancel" type="button">취소</button> -->
 						</form>
 					</div>
 				</section>
@@ -184,10 +184,12 @@
 
 			<nav class="post-navigation">
 				<a class="post-navigation-prev" href="#">
+					<i class="icon-arrow"></i>
 					<h3 class="w-article-navigation__heading">Prev article</h3>
 					Return to all articles
 				</a>
 				<a class="post-navigation-next" href="#">
+					<i class="icon-arrow"></i>
 					<h3 class="w-article-navigation__heading">Next article</h3>
 					<p>Avoid invisible text during font loading</p>
 				</a>
@@ -196,32 +198,6 @@
 
 <style>
 .post-body-code {margin: 0 0 2rem 0;}
-code {display:block;}
-pre {margin:0;padding:0;}
-
-.post-navigation {display:flex;}
-.post-navigation-prev {width:40%;padding:4rem 0;box-sizing:border-box;text-align:left;position:relative;}
-.post-navigation-next {width:60%;padding:4rem 0;box-sizing:border-box;text-align:right;position:relative;}
+.post-body code {display:block;}
+.post-body pre {margin:0;padding:0;}
 </style>
-<script>
-const setProgress = function() {
-	const pageProgressBar = document.querySelector('.post-head-progress');
-	let scrollPercent;
-	scrollPercent = window.pageYOffset / (document.body.scrollHeight - window.innerHeight) * 100 + '%';
-	pageProgressBar.style.width = scrollPercent;
-}
-window.addEventListener('scroll', setProgress, true);
-/*
-document.addEventListener('DOMContentLoaded', () => {
-	toggleElement('.js-open-comment');
-
-	const commentField = document.querySelector('.js-comment-write');
-	const commentTextField = document.querySelectorAll('.js-comment-textfield');
-	commentTextField.forEach(function(element,){
-		element.addEventListener('focus', (event) => {
-			commentField.classList.add('is-focused');
-		});
-	});
-});
-*/
-</script>

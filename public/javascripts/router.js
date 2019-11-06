@@ -1,5 +1,5 @@
 import { checkAllcheckbox, attachFile, inputVariation } from './input';
-import { enterTarget, stickyHeader, modal, eventToggle, eventToTop, eventClose, eventScrollAnimation, customCursor, stickyElement } from './event';
+import { enterTarget, stickyHeader, modal, eventToggle, eventToTop, eventClose, eventScrollAnimation, customCursor, stickyElement, scrollProgress } from './event';
 import { todayDate } from './utils';
 
 // hash 말고 클릭하는 순간에 값을 알아야 함. data attr or hash
@@ -20,7 +20,6 @@ const router = () => {
 			})
 			.then(html => {
 				const { pathname } = window.location;
-				console.log(pathname);
 
 				view.innerHTML = html;
 				// window.history.pushState({ name: 'tester' }, 'dd', hash.substring(1));
@@ -30,11 +29,22 @@ const router = () => {
 				} else {
 					document.querySelector('.page-head').classList.remove('--white');
 				}
-				console.log(window.location.origin);
 
-				window.addEventListener('scroll', () => {
-					stickyElement({targetElement:'.post-head', addClass: 'is-sticky'});
-				});
+				window.addEventListener('scroll', stickyElement({targetElement:'.post-head', addClass: 'is-sticky'}));
+
+				window.addEventListener('scroll', scrollProgress, true);
+
+				// toggleElement('.js-open-comment');
+
+				const commentField = document.querySelector('.js-comment-write');
+				const commentTextField = document.querySelectorAll('.js-comment-textfield');
+				if(commentField && commentField) {
+					commentTextField.forEach(element => {
+						element.addEventListener('focus', (event) => {
+							commentField.classList.add('is-focused');
+						});
+					});
+				}
 				
 				const carousel = () => {};
 
@@ -91,10 +101,6 @@ const router = () => {
 			})
 			.catch(error => console.warn('router: ', error));
 	};
-		// gogo
-		// const slashedHash = `/${hash.substring(1)}`;
-		// console.log(slashedHash, window.location.pathname, window.location.history);
-		// window.location.pathname = slashedHash;
 
 	routePage();
 	window.addEventListener('hashchange', routePage);

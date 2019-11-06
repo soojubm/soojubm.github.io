@@ -179,15 +179,15 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 .textfield-input.-textarea {height:auto;}
 .textfield-input.-inline {display:inline;width:80px;padding:2px 12px;}
 .textfield-unit {width:40px;height:46px;padding:0 16px;line-height:50px;text-align:right;color:rgba(0, 0, 0, 0.4);position:absolute;right:0;bottom:0;}
-.textfield-helper {margin-top:4px;color:$color-negative;}
+.textfield-helper {display:block;margin-top:4px;color:$color-negative;}
 .textfield-button {width:80px;min-width:auto;height:100%;}
 .textfield-button {width:auto;min-width:auto;position:absolute;right:0;bottom:0;}
 .textfield-helper ~ .textfield-button {bottom:11px;}
 .textfield-link {font-size:12px;position:absolute;right:0;top:0;}
 .selectbox-indicator {position:absolute;right:16px;bottom:22px;}
 .textfield.--small {padding:0 !important;font-size:12px !important;}
-.textfield.--small .textfield-label {}
-.textfield.--small .textfield-input {padding:4px 1.25rem 5px;}
+.textfield.--small .textfield-label {margin-bottom:0;}
+.textfield.--small .textfield-input {padding:5px 1.25rem 6px;}
 .textfield.--inline.textfield {padding-left:100px !important;}
 .textfield.--inline .textfield-label {line-height:32px;position:absolute;left:0;top:0;}
 .textfield.--inline .textfield-input {}

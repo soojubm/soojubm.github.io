@@ -82,6 +82,7 @@ export const stickyElement = ({targetElement, addClass}) => {
 	});
 
 	window.addEventListener('scroll', () => {
+		console.log(stickyElementHeight); // 133
 		isScrolling && window.cancelAnimationFrame(isScrolling);
 		isScrolling = window.requestAnimationFrame(() => {
 			if(window.pageYOffset > stickyElement.offsetTop + stickyElementHeight){
@@ -296,4 +297,12 @@ export const customCursor = () => {
 			cursor.classList.remove('expand');
 		}, 500);
 	}
+};
+
+export const scrollProgress = () => {
+	const pageProgressBar = document.querySelector('.post-head-progress');
+	if(!pageProgressBar) return;
+	let scrollPercent;
+	scrollPercent = window.pageYOffset / (document.body.scrollHeight - window.innerHeight) * 100 + '%';
+	pageProgressBar.style.width = scrollPercent;
 };

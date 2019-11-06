@@ -287,3 +287,7 @@ export const checkAllcheckbox = ({checkAllElement, checkElements}) => {
 // 		return;
 // 	}
 // };
+
+// value = isNaN(value) ? 0 : value;
+// value < 1 ? value = 1 : '';
+// value--;

@@ -108,3 +108,27 @@
   .design-body {width:100%;max-width:100%;padding:0 5%;}
 }
 
+
+
+
+.row {
+  display:flex;
+  padding:1rem 0;
+  border-top:1px solid $gray10;
+  border-bottom:1px solid $gray10;
+  margin-right:-200px;
+  margin-top:-1px;
+  line-height:16px;
+  --spacer: 0 1.5rem;
+}
+.row-avatar {width:10%;height:16px;}
+.row-id {width:20%;padding:var(--spacer);}
+.row-phone {width:20%;padding:var(--spacer);}
+.row-address {width:30%;padding:var(--spacer);}
+.row-delete {width:15%;padding:var(--spacer);}
+.row-checkbox {width:10%;height:16px;}
+
+.row.--head {
+  font-size: 12px;
+  color: $gray40;
+}
