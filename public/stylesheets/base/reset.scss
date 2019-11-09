@@ -79,3 +79,9 @@ dd {color:$gray40;}
 // @import url('https://fonts.googleapis.com/css?family=Asap');
 // todo url 등록 시 www 및 https:// 기본 입력
 // article 안에 정보는 adress
+
+
+
+@media (max-width:$breakpoint-small) {
+  html {font-size:12px;}
+}
