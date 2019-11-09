@@ -103,6 +103,7 @@
               <i class="material-icons" style="pointer-events: none;">search</i>
             </a>
           <form class="header-user-search-form" action="">
+            <button class="header-user-search-form-close js-close"><i class="icon-close"></i></button>
             <!-- <p>수줍이와(과) 일치하는 검색결과가 없습니다.</p> -->
             <fieldset class="textfield">
               <legend class="filter-fieldset-legend" aria-hidden="true">검색하기</legend>
@@ -174,31 +175,13 @@
             <a href="#design"><em>디자인시스템</em></a>
           </li>
           <li>
-            <div class="switch-wrap" style="display:inline-block">
+            <div class="switch-wrap">
               <span class="switch --darkmode js-darkmode">
                 <!-- <input type="checkbox" id="darkmode" name="" role="switch" value="off" /> -->
                 <!-- <label class="" for="darkmode">Darkmode</label> -->
                 <span class="day" style="width: 32px;">🌑</span>
                 <span class="night" style="width: 32px;">🌙</span>
               </span>
-              <script>
-                const darkmodeButton = document.querySelector('.js-darkmode');
-                darkmodeButton.addEventListener('click', () => {
-                  document.body.classList.toggle('darkmode');
-                  
-                  const isDarkmode = document.body.classList.contains('darkmode');
-                  if(isDarkmode) {
-                    localStorage.setItem('theme', 'darkmode');
-                  } else {
-                    localStorage.removeItem('theme');
-                    // localStorage.clear();
-                  }
-  
-                });
-                const getTheme = localStorage.getItem('theme');
-                document.body.classList.remove('darkmode');
-                document.body.classList.add(getTheme);
-              </script>
             </div>
           </li>
         </ul>

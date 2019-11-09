@@ -98,8 +98,11 @@
 
 
 @media (max-width:$breakpoint-large) {
+  .design {padding:0;}
   .design-head {height:50vh;position:relative;left:0;right:0;top:0;bottom:50%;}
   .design-body {width:50%;max-width:100%;margin-left:0;}
+
+  .hero {margin-top:-4rem;}
 }
 
 
@@ -113,7 +116,8 @@
 
 .row {
   display:flex;
-  padding:1rem 0;
+  align-items: center;
+  height:48px;
   border-top:1px solid $gray10;
   border-bottom:1px solid $gray10;
   margin-right:-200px;
@@ -129,6 +133,7 @@
 .row-checkbox {width:10%;height:16px;}
 
 .row.--head {
+  border-top: none;
   font-size: 12px;
   color: $gray40;
 }

@@ -1,6 +1,6 @@
 @font-face {font-family: 'AritaDotum';src: url(/public/webfonts/AritaDotumMedium.woff); }
-@font-face {font-family: 'DunkelSans';src: url(/public/webfonts/Dunkelsansv0.5-Heavy.woff2); }
 @font-face {font-family: 'Asap';src: url(/public/webfonts/Asap-Regular.otf); }
+// @font-face {font-family: 'DunkelSans';src: url(/public/webfonts/Dunkelsansv0.5-Heavy.woff2); }
 
 body,dl,dd,figure,blockquote,h1,h2,h3,h4,h5,h6,p,input[type=radio] {margin:0;}
 ul,ol,menu,fieldset,legend {margin:0;padding:0;}
@@ -51,25 +51,10 @@ dl {}
 dt {color:$gray80;}
 dd {color:$gray40;}
 
-[aria-haspopup=true] {} // dialog . menu, grid, listbox, tree
-[aria-pressed="true"] {} // 음소거 등
-[aria-modal="true"] {}
-
-[aria-label="close"] {}
-[aria-hidden="true"] {width:1px;height:1px;clip:rect(1px 1px 1px 1px);overflow:hidden;position:absolute;user-select:none;} // if(true) 리더기가 무시.
-[aria-hidden="false"] {width:1px;height:1px;clip:rect(1px 1px 1px 1px);overflow:hidden;position:absolute;user-select:none;}
-[aria-expanded="false"] {}
-[aria-expanded="true"] {}
-
-[role=switch] {}
-[role=group] {}
-[role=listitem] {}
-
 
 .loading {position:fixed;left:0;right:0;top:0;bottom:0;background:$gray10;z-index:10;transition:all .4s;}
-.loading-object {width:2rem;height:2rem;border-radius:50%;position:fixed;left:50%;top:50%;z-index:10;/*margin:-40px 0 0 -40px;*/background:$color-primary;animation:scaleout .8s infinite ease;}
 .loading.is-hidden {opacity:0;visibility:hidden;}
-
+.loading-object {width:2rem;height:2rem;border-radius:50%;position:fixed;left:50%;top:50%;z-index:10;/*margin:-40px 0 0 -40px;*/background:$color-primary;animation:scaleout .8s infinite ease;}
 .loading-object.is-default {background:$gray10;}
 .loading-object.is-clickable {background:crimson;}
 
@@ -78,10 +63,6 @@ dd {color:$gray40;}
 .skip {width:100%;position:fixed;left:0;top:0;z-index:9;}
 .skip-link {display:block;background:rgba(0,0,0,1);color:rgba(255,255,255,.8);text-align:center;height:0;font-size:0;}
 .skip-link:focus {height:50px;line-height:50px;font-size:14px;}
-
-.floating-action-button {width:48px;height:48px;border-radius:50%;background:rgba(0,80,200,.8);position:fixed;right:100px;bottom:100px;z-index:6;transition:all .2s;}
-.floating-action-button:hover {transition:all .4s;transform:scale(20);background:$color-primary;transform-origin:center center;}
-
 
 // writing-mode: horizontal-tb / vertical-rl / vertical-lr;
 

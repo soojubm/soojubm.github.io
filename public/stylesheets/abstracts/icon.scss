@@ -7,7 +7,7 @@
 
 
 .icon-minus {position:relative;}
-.icon-minus:before {content:'';display:inline-block;width:8px;height:2px;background-color:$color-primary;position:absolute;left:50%;top:50%;transform: translate(-50%, -50%);transition:all .5s ease;}
+.icon-minus:before {content:'';display:inline-block;width:8px;height:2px;background-color:$gray80;position:absolute;left:50%;top:50%;transform: translate(-50%, -50%);transition:all .5s ease;}
 
 .icon-plus {position:relative;transition:all .5s ease;}
 .icon-plus:before {content:'';display:inline-block;width:10px;height:2px;background-color:$gray80;position:absolute;left:50%;top:50%;transform: translate(-50%, -50%);}

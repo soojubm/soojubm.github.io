@@ -62,10 +62,11 @@ $fixedHeaderHeight: 50px;
 .header-user-search {position:relative;}
 .header-user-search-trigger {display:flex;justify-content:center;align-items:center;width:32px;height:32px;}
 .header-user-search a i {vertical-align:middle;color:$gray80;}
-.header-user-search-form {display:none;background:crimson;padding:5% 0 0 0;box-sizing:border-box;position:fixed;left:0;right:0;top:0;bottom:50%}
+.header-user-search-form {display:none;background:crimson;padding:6rem 10%;box-sizing:border-box;position:fixed;left:0;right:0;top:0;bottom:50%}
 .header-user-search-form .textfield {max-width:800px;margin:0 auto;}
 .header-user-search-form input {background:none;padding-left:0;border:none;border-bottom:4px solid rgba(255, 255, 255, .4);font-size:1.5rem;color:rgba(255, 255, 255, .4);}
 .header-user-search-form input::placeholder {color:inherit;}
+.header-user-search-form-close {position:absolute;right:5%;top:10%;}
 .header-user-search-option {max-width:800px;margin:4rem auto;}
 .header-user-search-option-heading {margin:0 0 .5rem;font-size:1.25rem;color:rgba(255, 255, 255, .4);}
 .header-user-search-option-item {display:block;padding:.25rem 0;color:#fff;}

@@ -12,22 +12,14 @@
 .product-info-price del {color:$gray40;}
 .product-info-price .per {margin:0 .5rem 0 0;font-size:1.25rem;}
 .product-info-price span {color:$gray80;font-size:1.5rem;}
-.product-info-description {margin:.5rem 0 2rem 0;padding-bottom:2rem;border-bottom:1px solid $gray10;line-height:1.6;}
+.product-info-description {margin:.5rem 0 1.25rem 0;padding-bottom:1.5rem;border-bottom:1px solid $gray10;line-height:1.6;}
 .product-order {width:25%;margin:0 0 0 75%;}
 .product-order-info {margin:0rem 0 1rem 0;padding:1rem 0;border-top:1px solid $gray10;border-bottom:1px solid $gray10;border-radius:2px;}
 .product-order-discount {margin:1rem 0 1rem 0;background:#f9f9f6;border:1px solid #e9e9e6;text-align:center;padding:8px 0;}
 .product-order-size {margin:1.5rem 0;}
 .product-order-size-heading {margin:.5rem 0;font-size:12px;}
 .product-order-size-item {width:32px;height:32px;border-radius:$radius400;margin:0 8px 0 0;border:1px solid $gray40;font-size:12px;position:relative;}
-.product-order-size-item.is-selected:before {    content: "";
-	display: block;
-	border: 1px solid $color-primary;
-	position: absolute;
-	left: 2px;
-	right: 2px;
-	top: 2px;
-	bottom: 2px;}
-// .product-order-size-item.is-selected {border-color:$color-primary;color:$color-primary;}
+.product-order-size-item.is-selected {border-color:$color-primary;color:$color-primary;}
 .product-order-color {margin:1.5rem 0;}
 .product-order-color-heading {margin:.5rem 0;font-size:12px;}
 .product-order-color-item {width:32px;height:32px;border-radius:$radius400;margin:0 8px 0 0;position:relative;}

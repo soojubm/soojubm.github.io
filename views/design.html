@@ -15,52 +15,55 @@
   <section class="design-body">
     <article class="design-article">
       <div class="row --head">
+        <!-- <div class="row-checkbox">Ranking</div> -->
+        <div class="row-checkbox">Check</div>
         <div class="row-avatar">Avatar</div>
         <div class="row-id">Id</div>
         <div class="row-phone">Phone</div>
         <div class="row-address">Address</div>
-        <div class="row-checkbox">Check</div>
         <div class="row-delete">Delete</div>
       </div>
       <div class="row">
+        <div class="row-checkbox">
+          <div>
+            <input type="checkbox" id="temp1">
+            <label for="temp1"></label>
+          </div>
+        </div>
         <div class="row-avatar"><div class="avatar --small"><img src="/public/images/caleb-woods-182648-unsplash.jpg" alt=""></div></div>
         <div class="row-id">soojubm</div>
         <div class="row-phone">010.3121.7045</div>
         <div class="row-address">서울시 강서구 까치산로</div>
+        <div class="row-delete"><button class="teritary-button --small">삭제</button></div>
+        <!-- <div class="row-progress"><button class="primary-button --small">출제하기</button></div> -->
+      </div>
+      <div class="row">
         <div class="row-checkbox">
           <div>
             <input type="checkbox" id="temp1">
             <label for="temp1"></label>
           </div>
         </div>
-        <div class="row-delete"><button class="teritary-button --small">삭제</button></div>
-        <!-- <div class="row-progress"><button class="primary-button --small">출제하기</button></div> -->
-      </div>
-      <div class="row">
         <div class="row-avatar"><div class="avatar --small"><img src="/public/images/caleb-woods-182648-unsplash.jpg" alt=""></div></div>
         <div class="row-id">springsteen</div>
         <div class="row-phone">010.3121.7045</div>
         <div class="row-address">서울시 강서구 까치산로</div>
-        <div class="row-checkbox">
-          <div>
-            <input type="checkbox" id="temp1">
-            <label for="temp1"></label>
-          </div>
-        </div>
+        
         <div class="row-delete"><button class="teritary-button --small">삭제</button></div>
         <!-- <div class="row-progress"><button class="primary-button --small">출제하기</button></div> -->
       </div>
       <div class="row">
-        <div class="row-avatar"><div class="avatar --small"><img src="/public/images/caleb-woods-182648-unsplash.jpg" alt=""></div></div>
-        <div class="row-id">google</div>
-        <div class="row-phone">010.3121.7045</div>
-        <div class="row-address">서울시 강서구 까치산로</div>
         <div class="row-checkbox">
           <div>
             <input type="checkbox" id="temp1" checked>
             <label for="temp1"></label>
           </div>
         </div>
+        <div class="row-avatar"><div class="avatar --small"><img src="/public/images/caleb-woods-182648-unsplash.jpg" alt=""></div></div>
+        <div class="row-id">google</div>
+        <div class="row-phone">010.3121.7045</div>
+        <div class="row-address">서울시 강서구 까치산로</div>
+        
         <div class="row-delete"><button class="teritary-button --small">삭제</button></div>
         <!-- <div class="row-progress"><button class="primary-button --small">출제하기</button></div> -->
       </div>
@@ -292,6 +295,7 @@
         </li>
         <li>ordered list, level 1</li>
       </ol>
+      <hr style="margin: 1rem 0;" />
       <dl>
         <dt>Definition term</dt>
         <dd>Definition text</dd>
@@ -436,14 +440,16 @@
       </div>
       <div class="dd" role="group">
         <h2>Icon Buttons</h2>
-        <button class="icon-button" type="button"><i class="icon-person"></i></button>
-        <button class="icon-button" type="button"><i class="icon-search"></i></button>
-        <button class="icon-button" type="button"><i class="icon-caret"></i></button>
-        <button class="icon-button" type="button"><i class="icon-chevron"></i></button>
-        <button class="icon-button" type="button"><i class="icon-arrow"></i></button>
-        <button class="icon-button" type="button"><i class="icon-more"></i></button>
-        <button class="icon-button" type="button"><i class="icon-plus"></i></button>
-        <button class="icon-button" type="button"><i class="icon-close"></i></button>
+        <div class="button-group">
+          <button class="icon-button" type="button"><i class="icon-person"></i></button>
+          <button class="icon-button" type="button"><i class="icon-search"></i></button>
+          <button class="icon-button" type="button"><i class="icon-chevron"></i></button>
+          <button class="icon-button" type="button"><i class="icon-arrow"></i></button>
+          <button class="icon-button" type="button"><i class="icon-more"></i></button>
+          <button class="icon-button" type="button"><i class="icon-plus"></i></button>
+          <button class="icon-button" type="button"><i class="icon-close"></i></button>
+          <button class="icon-button" type="button"><i class="icon-caret"></i></button>
+        </div>
         <!-- <button class="icon-button" type="button"><i class="icon-home"><span></span><span></span></i></button> -->
       </div>
     </article>
@@ -544,6 +550,10 @@
         <span class="textfield-prefix">http://</span>
         <input class="textfield-input js-number-input" id="number" type="number" min="5" max="20" placeholder="숫자만 입력가능합니다."></input>
         <span class="textfield-suffix">@soojubm.com</span>
+      </div>
+      <div class="textfield is-invalid" style="margin:1rem 0;">
+        <label class="textfield-label" for="">아이디</label>
+        <input class="textfield-input" type="text" placeholder="soojubm" readonly></input>
       </div>
       <div class="textfield is-invalid" style="margin:1rem 0;">
         <label class="textfield-label" for="">레이블</label>

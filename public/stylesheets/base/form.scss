@@ -1,27 +1,22 @@
 ::selection {background:$gray80;color:#fff;}
 ::placeholder {color:rgba(0,0,0,.4);}
 
+// button, input, textarea, select {border-radius:0px;-webkit-appearance:none;-moz-appearance:none;appearance:none;font:inherit;color:inherit;}
 input::-ms-clear {display:none;}
-input, textarea{-webkit-appearance:none;-webkit-border-radius:0}
+input, textarea {-webkit-appearance:none;-webkit-border-radius:0}
 input, select, textarea {border-radius:0px;-webkit-border-radius:0;font:inherit;color:inherit;background:none;border:none;}
 select {-webkit-appearance:none;appearance:none;}
 button {background:none;overflow:hidden;padding:0;border:none;outline:0;cursor:pointer;font:inherit;position:relative;}
-button:before {content:'';display:block;width:8px;height:8px;background:rgba(0,0,0,.2);position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);opacity:0;}
-// button:active:before {width:100%;height:100%;animation:ripple .6s;}
 button > * {pointer-events:none;}
+// button:before {content:'';display:block;width:8px;height:8px;background:rgba(0,0,0,.2);position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);opacity:0;}
+// button:active:before {width:100%;height:100%;animation:ripple .6s;}
 
 input:focus,
 textarea:focus,
 select:focus {}
 
-// 사파리 초기화 / 크롬 텍스트 지우기 버튼
-// button, input, textarea, select {border-radius:0px;-webkit-appearance:none;-moz-appearance:none;appearance:none;font:inherit;color:inherit;}
-
-// ! transform origin ! width:150px;transform-origin:75px 75px;transform:rotate(-90deg);
-//$spacer400 .75rem 1.5rem
-
-button.--blocked {display:block;width:100%;}
-button.--small {width:auto !important;min-width:72px !important;padding:4px 1rem 5px !important;font-size:12px !important;}
+.button.--blocked {display:block;width:100%;}
+.button.--small {width:auto !important;min-width:72px !important;padding:4px 1rem 5px !important;font-size:12px !important;}
 
 .button {display:inline-block;min-width:104px;background:$color-primary;padding:$spacer400;color:#fff;border-radius:$radius400;cursor:pointer;outline:0;position:relative;}
 .button-group {display:flex;}// justify-content:space-between;}
@@ -31,7 +26,7 @@ button.--small {width:auto !important;min-width:72px !important;padding:4px 1rem
 .button-group button:last-child {border-top-right-radius:$radius400;border-bottom-right-radius:$radius400;}
 .button-group button + button {margin-left:0 !important;}
 .primary-button {@extend .button;background:$color-primary;border:1px solid $color-primary;color:#fff;}
-.primary-button:disabled {background:$gray40;border-color:$gray40;color:$gray20;cursor:not-allowed;}
+.primary-button:disabled {background:$gray40;border-color:$gray40;color:$gray80;cursor:not-allowed;}
 .primary-button:hover:not(:disabled) {background:#2a4ea1;}
 .primary-button:focus:not(:disabled) {background:#2a4ea1;}
 .primary-button:active:not(:disabled) {}
@@ -45,7 +40,7 @@ button.--small {width:auto !important;min-width:72px !important;padding:4px 1rem
 .secondary-button:focus:not(:disabled) {background:$color-primary;color:#fff;}
 .secondary-button:active:not(:disabled) {}
 .teritary-button {@extend .button;border:1px solid $gray10;background:$gray10;color:$gray80;}
-.teritary-button:disabled {color:$gray40;cursor:not-allowed;}
+.teritary-button:disabled {color:$gray20;cursor:not-allowed;}
 .teritary-button:hover:not(:disabled) {background:$color-primary;color:#fff;}
 .teritary-button:focus:not(:disabled) {background:$color-primary;color:#fff;}
 .teritary-button:active:not(:disabled) {}
@@ -64,8 +59,7 @@ button.--small {width:auto !important;min-width:72px !important;padding:4px 1rem
 .ghost-button:hover:not(:disabled) {background:#f3f3f3;}
 .ghost-button:focus:not(:disabled) {background:#f3f3f3;}
 .ghost-button:active:not(:disabled) {}
-
-.icon-button {display:inline-block;width:48px;height:48px;line-height:0;border-radius:$radius400;box-sizing:border-box;}
+.icon-button {display:block;width:48px;height:48px;line-height:0;border-radius:$radius400;box-sizing:border-box;}
 
 .linebreak {display:block;}
 @media (max-width:$breakpoint-small) {
@@ -126,11 +120,6 @@ input[type=checkbox]:checked + label + * {display:block;margin:0.5rem 0 1.5rem 0
 input[type=radio]:checked + label + input,
 input[type=checkbox]:checked + label + input {display:block;margin:0.75rem 0 1.5rem 0px;}
 
-
-input[type=file] {width:0;height:0;opacity:0;position:absolute;}
-input[type=file] + label {display:inline-block;}
-input[type=file] + label:after {display:none;}
-
 .range {}
 .range input[type=range] {width:100%;height:8px;background:$gray10;}
 .range input[type=range]::-webkit-slider-thumb {appearance:none;-webkit-appearance:none;width:16px;height:16px;padding:4px;background:$color-positive;border-radius:$radius400;cursor:pointer;}
@@ -176,6 +165,8 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 .textfield-icon i {display:inline-block;font-size:19px;vertical-align:middle;opacity:0.4;}
 .textfield-icon + .textfield-input {padding-left:48px;}
 .textfield-input {display:block;width:100%;padding:$spacer400;padding-right:40px;background:$gray10;border-radius:4px;box-sizing:border-box;font:inherit;color:$gray80;-webkit-appearance:none;appearance:none;transition:all 0.2s;}
+.textfield-input:not(select):read-only {background:none;padding:0;border:none;outline:none;}
+.textfield-input:not(select):read-only::placeholder {color:$gray80;}
 .textfield-input.-textarea {height:auto;}
 .textfield-input.-inline {display:inline;width:80px;padding:2px 12px;}
 .textfield-unit {width:40px;height:46px;padding:0 16px;line-height:50px;text-align:right;color:rgba(0, 0, 0, 0.4);position:absolute;right:0;bottom:0;}
@@ -184,6 +175,10 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 .textfield-button {width:auto;min-width:auto;position:absolute;right:0;bottom:0;}
 .textfield-helper ~ .textfield-button {bottom:11px;}
 .textfield-link {font-size:12px;position:absolute;right:0;top:0;}
+.textfield-prefix {display:inline-block;display:none;width:100px;}
+.textfield-prefix + .textfield-input {display:inline-block;padding-right:100px;}
+.textfield-suffix {display:inline-block;line-height:48px;cursor:default;color:$gray40;position:absolute;right:24px;top:50%;}
+.textfield-clear {display:none;}
 .selectbox-indicator {position:absolute;right:16px;bottom:22px;}
 .textfield.--small {padding:0 !important;font-size:12px !important;}
 .textfield.--small .textfield-label {margin-bottom:0;}
@@ -196,14 +191,11 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 .textfield.--floating input {padding:0.75rem 0rem;border-top:none;border-left:none;border-right:none;}
 .textfield.--floating label {height:20px;position:absolute;left:0;top:6px;transition:all 0.2s ease;cursor:text;}
 .textfield.--floating input:focus + label {color:$gray40;font-size:11px;top:-12px;}
-.textfield-prefix {display:inline-block;display:none;width:100px;}
-.textfield-prefix + .textfield-input {display:inline-block;padding-right:100px;}
-.textfield-suffix {display:inline-block;line-height:48px;cursor:default;color:$gray40;position:absolute;right:24px;top:50%;}
-.textfield-clear {display:none;}
+
 
 .is-valid {}
-.is-invalid {}
 .is-expanded {}
+.is-invalid {}
 .is-invalid .textfield-input {border-color:$color-negative;}
 .is-invalid .textfield-byte {color:$color-negative;}
 .is-invalid .textfield-byte b {color:$color-negative;}
@@ -221,6 +213,12 @@ input[type=email]:invalid {border-color:crimson;}
 .filter-fieldset {margin:1.5rem 0;padding:1.75rem 0 2rem 0;border-bottom:1px solid #e9e9e6;position:relative;}
 .filter-fieldset-legend {line-height:1;position:absolute;top:0;}
 .filter-fieldset-description {margin:0 0 8px 0;}
+
+
+
+input[type=file] {width:0;height:0;opacity:0;position:absolute;}
+input[type=file] + label {display:inline-block;}
+input[type=file] + label:after {display:none;}
 
 .file {}
 .file-heading {}
@@ -240,9 +238,23 @@ input[type=email]:invalid {border-color:crimson;}
 .file-attachment-item-delete {position:absolute;right:0;top:0;}
 .file-attachment-item-delete:hover {background:#f9f9f6;}
 
+
+// qty
 .variation {max-width:10rem;height:32px;margin:.75rem 0 0rem 0;text-align:center;position:relative;}
 .variation-input {width:calc(100% - 64px);height:100%;background:none;border:none;box-sizing:border-box;text-align:center;}
-.variation-decrement {width:32px;height:32px;border:1px solid $gray20;position:absolute;left:0px;top:0px;}
-.variation-increment {width:32px;height:32px;border:1px solid $gray20;position:absolute;right:0;top:0px;}
+.variation-decrement {width:32px;height:32px;border:1px solid $gray20;border-radius:$radius400;position:absolute;left:0px;top:0px;}
+.variation-increment {width:32px;height:32px;border:1px solid $gray20;border-radius:$radius400;position:absolute;right:0;top:0px;}
 .variation-decrement.is-disabled {opacity:.5;cursor:not-allowed;}
 .variation-increment.is-disabled {opacity:.5;cursor:not-allowed;}
+
+
+
+
+[aria-haspopup=true] {} // dialog . menu, grid, listbox, tree
+[aria-pressed=true] {} // 음소거 등
+[aria-modal=true] {}
+[aria-label=close] {}
+[aria-hidden=true] {width:1px;height:1px;clip:rect(1px 1px 1px 1px);overflow:hidden;position:absolute;user-select:none;} // if(true) 리더기가 무시.
+[aria-hidden=false] {width:1px;height:1px;clip:rect(1px 1px 1px 1px);overflow:hidden;position:absolute;user-select:none;}
+[role=group] {}
+[role=listitem] {}
