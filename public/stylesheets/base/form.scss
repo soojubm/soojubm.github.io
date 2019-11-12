@@ -26,7 +26,7 @@ select:focus {}
 .button-group button:last-child {border-top-right-radius:$radius400;border-bottom-right-radius:$radius400;}
 .button-group button + button {margin-left:0 !important;}
 .primary-button {@extend .button;background:$color-primary;border:1px solid $color-primary;color:#fff;}
-.primary-button:disabled {background:$gray40;border-color:$gray40;color:$gray80;cursor:not-allowed;}
+.primary-button:disabled {background:$gray40;border-color:$gray40;color:$gray60;cursor:not-allowed;}
 .primary-button:hover:not(:disabled) {background:#2a4ea1;}
 .primary-button:focus:not(:disabled) {background:#2a4ea1;}
 .primary-button:active:not(:disabled) {}

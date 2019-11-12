@@ -28,10 +28,9 @@ body.is-sticky {padding-top:133px;}
 // .is-sticky .post-byline {max-width:1000px;margin:0 auto;position:fixed;left:0;right:0;top:160px;}
 
 
-.post-byline {padding:2rem 0 2rem;position:relative;}
+.post-byline {margin:2rem 0 3rem;position:relative;}
 .post-byline-avatar {display:inline-block;width:32px;height:32px;border-radius:$radius400;background:$gray80;overflow:hidden;}
-.post-byline-name {color:$gray40;}
-.post-byline-name-link {color:$color-primary;}
+.post-byline-name {display:block;color:$color-primary;}
 .post-byline-description {margin:-.25rem 0 0 0;}
 .post-byline button {margin:1rem 0 0 0;}
 
