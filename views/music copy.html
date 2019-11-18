@@ -3,7 +3,7 @@
     <div class="album-background"></div>
     <div class="album-list">
       <time class="album-list-date">2019</time>
-      <h1 class="album-list-title">Bruce Springsteen</h1>
+      <h1 class="album-list-title">Sign of Light</h1>
       <span class="album-list-artist">Head and the Heart</span>
       <div class="album-list-cover">
         <img src="/public/images/yes.jpg" alt="">
@@ -11,7 +11,7 @@
       <button class="primary-button --blocked">앨범 구매하기</button>
     </div>
     <div class="album-track">
-      <!-- <dl>
+      <dl>
         <dt>저자</dt>
         <dd>북저널리즘</dd>
         <dt>발행일</dt>
@@ -20,7 +20,7 @@
         <dd>28분</dd>
         <dt>태그</dt>
         <dd></dd>
-      </dl> -->
+      </dl>
       <h1 class="album-track-heading">Track List.</h1>
       <div class="album-track-label">
         <span class="album-track-label-item">No.</span>
@@ -58,36 +58,73 @@
       <div style="display:flex;width:calc(100% + 500px);">
         <div class="album-others-album">
           <img src="/public/images/yes.jpg" alt="">
-          <h1 class="album-others-title">Sign of Light</h1>
-          <span class="album-others-artist">Head and the Heart</span>
-        </div>
-        <div class="album-others-album">
-          <img src="/public/images/yes.jpg" alt="">
-          <h1 class="album-others-title">Sign of Light</h1>
-          <span class="album-others-artist">Head and the Heart</span>
-        </div>
-        <div class="album-others-album">
-          <img src="/public/images/yes.jpg" alt="">
-          <h1 class="album-others-title">Sign of Light</h1>
-          <span class="album-others-artist">Head and the Heart</span>
-        </div>
-        <div class="album-others-album">
-          <img src="/public/images/yes.jpg" alt="">
-          <h1 class="album-others-title">Sign of Light</h1>
-          <span class="album-others-artist">Head and the Heart</span>
-        </div>
-        <div class="album-others-album">
-          <img src="/public/images/yes.jpg" alt="">
-          <h1 class="album-others-title">Sign of Light</h1>
-          <span class="album-others-artist">Head and the Heart</span>
-        </div>
-        <div class="album-others-album">
-          <img src="/public/images/yes.jpg" alt="">
-          <h1 class="album-others-title">Sign of Light</h1>
-          <span class="album-others-artist">Head and the Heart</span>
           <time class="album-others-date">2019</time>
+          <h1 class="album-others-title">Sign of Light</h1>
+          <span class="album-others-artist">Head and the Heart</span>
+        </div>
+        <div class="album-others-album">
+          <img src="/public/images/yes.jpg" alt="">
+          <time class="album-others-date">2019</time>
+          <h1 class="album-others-title">Sign of Light</h1>
+          <span class="album-others-artist">Head and the Heart</span>
+        </div>
+        <div class="album-others-album">
+          <img src="/public/images/yes.jpg" alt="">
+          <time class="album-others-date">2019</time>
+          <h1 class="album-others-title">Sign of Light</h1>
+          <span class="album-others-artist">Head and the Heart</span>
+        </div>
+        <div class="album-others-album">
+          <img src="/public/images/yes.jpg" alt="">
+          <time class="album-others-date">2019</time>
+          <h1 class="album-others-title">Sign of Light</h1>
+          <span class="album-others-artist">Head and the Heart</span>
+        </div>
+        <div class="album-others-album">
+          <img src="/public/images/yes.jpg" alt="">
+          <time class="album-others-date">2019</time>
+          <h1 class="album-others-title">Sign of Light</h1>
+          <span class="album-others-artist">Head and the Heart</span>
+        </div>
+        <div class="album-others-album">
+          <img src="/public/images/yes.jpg" alt="">
+          <time class="album-others-date">2019</time>
+          <h1 class="album-others-title">Sign of Light</h1>
+          <span class="album-others-artist">Head and the Heart</span>
         </div>
       </div>
     </div>
   </section>
 </main>
+
+
+<style>
+.album {max-width:1080px;margin:10rem auto 16rem;padding-left:30%;box-sizing:border-box;position:relative;}
+
+.album-background {background:url('/public/images/springsteen.jpg') no-repeat center center;background-size:cover;position:fixed;left:0;right:70%;top:0;bottom:0;z-index:3;}
+
+.album-list {max-width:50%;position:absolute;left:0;top:0;z-index:4;}
+.album-list-date {}
+.album-list-title {margin:0 0 .5rem 0;font-size:32px;line-height:1.2;}
+.album-list-artist {}
+.album-list-cover {width:400px;height:400px;margin:2rem auto 1.5rem;border-radius:4px;}
+
+.album-track {}
+.album-track-heading {margin:0 0 .5rem 0;font-size:1.25rem;}
+.album-track-label {display:flex;}
+.album-track-label-item {padding:.5rem 0;color:$gray80;}
+.album-track-label-item:nth-of-type(1) {width:10%;}
+.album-track-label-item:nth-of-type(2) {width:75%;}
+.album-track-label-item:nth-of-type(3) {width:15%;text-align:right;}
+.album-track-list {display:flex;}
+.album-track-list-item {padding:.5rem 0;}
+.album-track-list-item:nth-of-type(1) {width:10%;}
+.album-track-list-item:nth-of-type(2) {width:75%;}
+.album-track-list-item:nth-of-type(3) {width:15%;text-align:right;}
+
+.album-others {margin:4rem 0;}
+.album-others-heading {margin:0 0 1rem 0;font-size:1.25rem;}
+.album-others-album {width:160px;margin-right:.5rem;}
+.album-others-title {font-size:1rem;}
+.album-others-artist {font-size:12px;}
+</style>
