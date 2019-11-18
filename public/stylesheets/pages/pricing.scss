@@ -1,21 +1,23 @@
 .pricing {position:relative;}
-.pricing-head {margin:0 auto;padding:4rem 30rem 8rem;background:crimson;}
+.pricing-head {margin:8rem 10%;padding:4rem 10rem 8rem;background:crimson;}
 .pricing-head h1 {font-size:1rem;}
 .pricing-head-headline {margin:0 0 .5rem 0;font-size:1.75rem;}
 .pricing-head-description {font-size:1rem;}
-.pricing-body {display:flex;max-width:1080px;margin:-4rem auto;justify-content:space-between;}
+.pricing-body {display:flex;max-width:1080px;margin:4rem auto;justify-content:space-between;}
 // .pricing-item:before {content:'';display:block;height:8px;background:$gray80;position:absolute;left:-1px;right:-1px;top:-1px;}
-.pricing-item {width:320px;min-height:300px;background:$gray10;padding:2rem 2.5rem 10rem;box-sizing:border-box;border-radius:2px;box-shadow:$shadow400;position:relative;}
+.pricing-item {width:320px;min-height:300px;background:#fff;padding:2rem 2.5rem 10rem;box-sizing:border-box;border-radius:2px;box-shadow:$shadow400;position:relative;}
 .pricing-item-heading {font-size:1.25rem;}
 .pricing-item-price {display:inline-block;color:$gray80;font-size:1.75rem;}
 .pricing-item-period {display:inline-block;color:$gray80;}
 .pricing-item-period:before {content:' / ';margin:0 .5rem;color:$gray40;}
 .pricing-item-description {margin:8px 0 0 0;}
-.pricing-item-description:before {content:'';display:block;width:40px;height:1px;background:$gray80;margin:1.25rem 0 1.75rem;}
+.pricing-item-description:before {content:'';display:none;width:40px;height:1px;background:$gray80;margin:1.25rem 0 1.75rem;}
 .pricing-item-button {display:block;width:calc(100% - 5rem);position:absolute;left:2.5rem;right:2.5rem;bottom:3rem;}
-.pricing-item ul {margin:16px 0 0 0;}
+.pricing-item ul {margin:2rem 0 0 0;}
+.pricing-item ul li {padding:.125rem 0;}
+.pricing-item ul li:before {content:'';}
 
-.pricing-info {display:flex;width:100%;max-width:1080px;margin:8rem auto;overflow:hidden;justify-content:space-between;}
+.pricing-info {display:flex;width:100%;margin:8rem auto;overflow:hidden;justify-content:space-between;}
 .pricing-info-item {width:320px;}
 .pricing-info-item svg {}
 .pricing-info-item h3 {margin:1rem 0;}

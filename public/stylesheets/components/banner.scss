@@ -9,13 +9,15 @@
 .topbanner img {display:none;max-width:240px;position:absolute;left:0;top:.5rem;}
 
 
-.banner {width:80%;margin:0 auto;padding:2rem 0;border-radius:4px;background:url("/public/images/caleb-woods-182648-unsplash.jpg") no-repeat center center fixed;background-size:cover;text-align:center;position:relative;z-index:4;}
+.banner {width:80%;margin:0 auto;padding:2rem 0;border-radius:4px;background:$gray80;text-align:center;position:relative;z-index:4;}
 .banner p {display:inline-block;margin:0 2rem 0 0;font-size:1.25rem;color:#fff;}
-.banner button {border-color:#fff;color:#fff;}
+.banner button {}
 
 
 @media (max-width:$breakpoint-small) {
-  .banner {width:90%;}
+  .banner {width:90%;padding-bottom:3rem;}
+  .banner p {display:block;margin:0 0 1rem 0;}
+  .banner button {}
 }
 .is-closed-topbanner .header {background:#ffff;margin-top:-225px;transition:margin .2s, background-color .4s;}
 .is-closed-topbanner .topbanner {z-index:-1;}

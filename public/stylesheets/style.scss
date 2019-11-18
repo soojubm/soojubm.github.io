@@ -25,8 +25,8 @@
 @import 'components/cursor';
 @import 'components/empty';
 
+@import 'pages/about';
 @import 'pages/home';
-@import 'pages/setting';
 @import 'pages/post';
 @import 'pages/cake';
 @import 'pages/profile';
@@ -111,7 +111,7 @@
 }
 
 
-.avatar {display:inline-block;width:32px;height:32px;overflow:hidden;border-radius:$radius400;position:relative;}
+.avatar {display:inline-block;width:32px;height:32px;overflow:hidden;border-radius:4px;position:relative;}
 .avatar.--small {width:16px;height:16px;}
 .avatar.--medium {width:48px;height:48px;}
 .avatar.--large {width:80px;height:80px;}

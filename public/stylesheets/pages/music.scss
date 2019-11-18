@@ -1,14 +1,13 @@
 .album {max-width:1080px;margin:10rem auto 16rem;padding-left:30%;box-sizing:border-box;position:relative;}
-
-.album-background {background:crimson;position:fixed;left:0;right:70%;top:0;bottom:0;z-index:3;}
+.album-background {background:url('/public/images/springsteen.jpg') no-repeat center center;background-size:cover;position:fixed;;left:0;right:0;top:0;bottom:30%;z-index:-1;}
 
 .album-list {max-width:50%;position:absolute;left:0;top:0;z-index:4;}
-.album-list-date {}
-.album-list-title {margin:0 0 .5rem 0;font-size:32px;line-height:1.2;}
-.album-list-artist {}
+.album-list-date {color:#fff;}
+.album-list-title {margin:0 0 .5rem 0;font-size:32px;line-height:1.2;color:#fff;}
+.album-list-artist {color:#fff;}
 .album-list-cover {width:400px;height:400px;margin:2rem auto 1.5rem;border-radius:4px;}
 
-.album-track {}
+.album-track {color:#fff;}
 .album-track-heading {margin:0 0 .5rem 0;font-size:1.25rem;}
 .album-track-label {display:flex;}
 .album-track-label-item {padding:.5rem 0;color:$gray80;}
@@ -21,7 +20,7 @@
 .album-track-list-item:nth-of-type(2) {width:75%;}
 .album-track-list-item:nth-of-type(3) {width:15%;text-align:right;}
 
-.album-others {margin:4rem 0;}
+.album-others {margin:20rem 0;}
 .album-others-heading {margin:0 0 1rem 0;font-size:1.25rem;}
 .album-others-album {width:160px;margin-right:.5rem;}
 .album-others-title {font-size:1rem;}

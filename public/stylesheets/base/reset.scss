@@ -33,6 +33,13 @@ table tbody tr td:first-child {padding-left:0;}
 table tbody tr td:last-child {padding-right:0;}
 table .right {text-align:right;}
 
+h1 {}
+h2 {}
+h3 {}
+h4 {}
+h5 {}
+h6 {}
+
 ul {}
 ul li {margin:.125rem 0;padding: 0 0 0 1.25rem;position: relative;}
 ul li:before {content: '\2013';display:inline-block;margin-right:.5rem;position:absolute;left:0;}
@@ -85,3 +92,20 @@ dd {color:$gray40;}
 @media (max-width:$breakpoint-small) {
   html {font-size:12px;}
 }
+
+
+
+
+.account {background:$gray10;margin:0 auto;padding:0 10% 16rem;}
+.account-head {padding:2rem 0 2rem;}
+.account-body {}
+.account-body-heading {}
+.account-body-description {margin:0 0 4rem 0;}
+.account-body div {display:flex;align-items:center;height:72px;border-bottom:1px solid $gray10;position:relative;}
+.account-body div small {width:100px;color:$gray40;}
+.account-body div p {color:$gray80;}
+.account-body div button {margin-left:auto;}
+
+
+
+//backface-visibility:hidden

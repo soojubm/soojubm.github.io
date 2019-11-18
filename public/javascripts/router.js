@@ -68,6 +68,20 @@ const router = () => {
 				// const textarea = document.querySelectorAll('textarea');
 				// textarea.forEach(element => element.addEventListener('input', autoExpand(element)));
 				
+
+					// var i =0;
+					// var images = ['cover1.jpg','cover2.jpg'];
+					// var image = document.querySelector('.cover_image');
+					// // image.css('background-image', 'url(/img/cover1.jpg)');
+					// setInterval(function(){ 
+					// 	image.fadeOut(1000, () => {
+					// 		image.css('background-image', 'url(' + images [i++] +')');
+					// 		image.fadeIn(1000);
+					// 	});
+					// 	if(i == images.length) i = 0;
+					// }, 5000); 
+					
+
 			})
 			.catch(error => console.warn('router: ', error));
 	};
