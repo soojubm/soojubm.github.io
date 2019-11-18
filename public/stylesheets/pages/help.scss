@@ -24,7 +24,7 @@
 
 .help-board {max-width:$width-medium;margin:2rem auto;padding:0 5%;position:relative;}
 .help-board-heading {margin:0 0 1rem 1.5rem;font-size:1.25rem;}
-.help-board-item {display:block;padding:1rem 1.5rem;border:1px solid $gray10;background:$gray10;position:relative;transition:all .4s;}
+.help-board-item {display:block;padding:1rem 1.5rem;border:1px solid $gray20;background:$gray10;position:relative;transition:all .4s;}
 .help-board-item + .help-board-item {margin-top:-1px;}
 .help-board-item:hover {background:#fff;}
 .help-board-item-tag {margin:0 0 0 .5rem;padding:.25rem .75rem;border-radius:2px;background:$gray80;vertical-align:middle;color:#fff;font-size:11px;cursor:default;}
@@ -34,8 +34,8 @@
 .help-board-item-link {position:absolute;left:0;right:0;top:0;bottom:0;}
 .help-board-item-meta {position: absolute;right: 1.5rem;top:13px}
 .help-board-item-meta-label {font-size:12px;color:$gray40;}
-.help-board-item-meta-value {font-size:12px;}
-.help-board-item-meta-divider {margin:0 8px;color:rgba(0,0,0,.2);}
+.help-board-item-meta-value {font-size:12px;color:$gray80;}
+.help-board-item-meta-divider {margin:0 8px;color:$gray20;}
 .help-board-item-content {display:none;margin:1rem 0 0 0;color:$gray80;animation:fadeup .4s ease;}
 .is-active.help-board-item {background:#fff;}
 .is-active .help-board-item-content {display:block;}
