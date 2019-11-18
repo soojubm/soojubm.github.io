@@ -1,6 +1,7 @@
 import { checkAllcheckbox, attachFile, inputVariation } from './input';
 import { enterTarget, stickyHeader, modal, eventToggle, eventToTop, eventClose, eventScrollAnimation, customCursor, stickyElement, scrollProgress } from './event';
 import { todayDate } from './utils';
+import { carousel, setDarkmode } from './event/index.js';
 
 // hash 말고 클릭하는 순간에 값을 알아야 함. data attr or hash
 
@@ -10,8 +11,6 @@ const router = () => {
 	const routePage = () => {
 		let { hash } = window.location;
 		const page = hash ? `/views/${hash.substring(1)}.html` : '/views/profile.html';
-		console.log(hash, page);
-
 		fetch(page)
 			.then(response => {
 				// 404 || 500
@@ -19,89 +18,34 @@ const router = () => {
 				else return Promise.reject(response);	
 			})
 			.then(html => {
-				const { pathname } = window.location;
-
 				view.innerHTML = html;
 				// window.history.pushState({ name: 'tester' }, 'dd', hash.substring(1));
 
-				if(window.location.hash === '#design') {
+				if(window.locationhash === '#design') {
 					document.querySelector('.page-head').classList.add('--white');
 				} else {
 					document.querySelector('.page-head').classList.remove('--white');
 				}
 
 				window.addEventListener('scroll', stickyElement({targetElement:'.post-head', addClass: 'is-sticky'}));
-
 				window.addEventListener('scroll', scrollProgress, true);
-
 				// toggleElement('.js-open-comment');
 
-				const commentField = document.querySelector('.js-comment-write');
-				const commentTextField = document.querySelectorAll('.js-comment-textfield');
-				if(commentField && commentField) {
+
+				const focusComment = () => {
+					const commentWrite = document.querySelector('.js-comment-write');
+					const commentTextField = document.querySelectorAll('.js-comment-textfield');
+					if(!commentWrite || !commentTextField) return;
+
 					commentTextField.forEach(element => {
 						element.addEventListener('focus', (event) => {
-							commentField.classList.add('is-focused');
+							commentWrite.classList.add('is-focused');
 						});
 					});
-				}
-				
-				const carousel = () => {
-					const category = document.querySelector('.slider');
-					if(!category) return;
-					const categoryList = category.querySelector('.slider-viewer');
-					const categoryListSlide = category.querySelectorAll('.slider-viewer > button');
-					const categoryNavigationPrev = category.querySelector('.slider-arrows-prev');
-					const categoryNavigationNext = category.querySelector('.slider-arrows-next');
-					const categoryDots = category.querySelectorAll('.slider-dots-dot');
-	
-					const categoryContainerWidth = categoryList.offsetWidth;
-					let sum = 0;
-					
-					categoryListSlide.forEach(item => sum += item.offsetWidth);
-					
-					categoryNavigationNext.addEventListener('click', toNext);
-					categoryNavigationPrev.addEventListener('click', toPrev);
-					categoryDots.forEach(element => element.addEventListener('click', () => {}));
-	
-					categoryList.addEventListener('scroll', () => {
-						const { scrollLeft } = categoryList;
-						console.log('scroll-left', scrollLeft, 'offset-width', categoryContainerWidth);
-					});
-	
-					function toPrev() {
-						categoryList.scrollLeft -= 100;
-					}
-					function toNext() {
-						categoryList.scrollLeft += 100;
-						// if(sum > categoryContainerWidth) {}
-						// const ttt = 100 + 'px';
-						// document.querySelector('.slider-viewer').style.transform += 'translateX('+ttt+')';
-					}
 				};
+				
+				focusComment();
 				carousel();
-				
-				
-				const setDarkmode = () => {
-					const darkmodeButton = document.querySelector('.js-darkmode');
-					if(!darkmodeButton) return;
-					darkmodeButton.addEventListener('click', setDarkmode);
-	
-					function setDarkmode() {
-						document.body.classList.toggle('darkmode');
-						
-						const isDarkmode = document.body.classList.contains('darkmode');
-						if(isDarkmode) {
-							localStorage.setItem('theme', 'darkmode');
-						} else {
-							localStorage.removeItem('theme');
-							// localStorage.clear();
-						}
-					}
-					const lastTheme = localStorage.getItem('theme');
-					if(!lastTheme) return;
-					document.body.classList.add(lastTheme);
-				};
 
 				setDarkmode();
 				

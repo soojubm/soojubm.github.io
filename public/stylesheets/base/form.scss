@@ -161,23 +161,22 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 
 .textfield {margin:0px 0;position:relative;}
 .textfield-label {display:block;margin:0 0 0.25rem 0;}
-.textfield-icon {width:48px;height:48px;line-height:46px;text-align:center;position:absolute;left:0;bottom:0;}
+.textfield-icon {width:48px;height:48px;line-height:46px;text-align:center;position:absolute;left:0;top:28px;}
 .textfield-icon i {display:inline-block;font-size:19px;vertical-align:middle;opacity:0.4;}
 .textfield-icon + .textfield-input {padding-left:48px;}
-.textfield-input {display:block;width:100%;padding:$spacer400;padding-right:40px;background:$gray10;border-radius:4px;box-sizing:border-box;font:inherit;color:$gray80;-webkit-appearance:none;appearance:none;transition:all 0.2s;}
+.textfield-input {display:block;width:100%;padding:$spacer400;padding-right:40px;background:$gray10;border:1px solid $gray10;border-radius:4px;box-sizing:border-box;font:inherit;color:$gray80;-webkit-appearance:none;appearance:none;transition:all 0.2s;}
 .textfield-input:not(select):read-only {background:none;padding:0;border:none;outline:none;}
 .textfield-input:not(select):read-only::placeholder {color:$gray80;}
 .textfield-input.-textarea {height:auto;}
 .textfield-input.-inline {display:inline;width:80px;padding:2px 12px;}
 .textfield-unit {width:40px;height:46px;padding:0 16px;line-height:50px;text-align:right;color:rgba(0, 0, 0, 0.4);position:absolute;right:0;bottom:0;}
-.textfield-helper {display:block;margin-top:4px;color:$color-negative;}
-.textfield-button {width:80px;min-width:auto;height:100%;}
-.textfield-button {width:auto;min-width:auto;position:absolute;right:0;bottom:0;}
-.textfield-helper ~ .textfield-button {bottom:11px;}
+.textfield-helper {display:block;margin-top:.25rem;color:$color-negative;}
+.textfield-button {width:auto;min-width:auto;position:absolute;right:0;top:0;}
+.textfield-label ~ .textfield-button {top:28px;}
 .textfield-link {font-size:12px;position:absolute;right:0;top:0;}
 .textfield-prefix {display:inline-block;display:none;width:100px;}
 .textfield-prefix + .textfield-input {display:inline-block;padding-right:100px;}
-.textfield-suffix {display:inline-block;line-height:48px;cursor:default;color:$gray40;position:absolute;right:24px;top:50%;}
+.textfield-suffix {display:inline-block;padding:0 1.5rem;line-height:46px;cursor:default;color:$gray40;position:absolute;right:0;top:28px;}
 .textfield-clear {display:none;}
 .selectbox-indicator {position:absolute;right:16px;bottom:22px;}
 .textfield.--small {padding:0 !important;font-size:12px !important;}
@@ -193,8 +192,8 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 .textfield.--floating input:focus + label {color:$gray40;font-size:11px;top:-12px;}
 
 
-.is-valid {}
 .is-expanded {}
+.is-valid {}
 .is-invalid {}
 .is-invalid .textfield-input {border-color:$color-negative;}
 .is-invalid .textfield-byte {color:$color-negative;}

@@ -141,20 +141,24 @@ export const inputNumber = () => {
 
 	document.addEventListener('keydown', event => {
 		const { target } = event;
-		const inNumberInput = target.closest('.js-number-input');
-		if (!inNumberInput) return;
+		const isNumberInput = target.closest('.js-number-input');
+		if (!isNumberInput) return;
 
-		setInputOnlyNumbers();
 		document.addEventListener('keyup', setLimitNumber);
+		setInputOnlyNumbers();
 
 		function setInputOnlyNumbers() {
-			const keyCode = event.keyCode;
-			// todo 정규 표현식으로
-			keyCode >= 48 || keyCode <= 57 || event.preventDefault();
-			keyCode === 69 && event.preventDefault();
-			keyCode === 189 && event.preventDefault();
-			keyCode === 187 && event.preventDefault();
-			keyCode === 190 && event.preventDefault();
+			const { keyCode } = event;
+			const keyCodes = [69, 189, 187, 190];
+			// keyCode >= 48 || keyCode <= 57 || event.preventDefault();
+			// keyCode === 69 && event.preventDefault();
+			// keyCode === 189 && event.preventDefault();
+			// keyCode === 187 && event.preventDefault();
+			// keyCode === 190 && event.preventDefault();
+
+			const isValid = keyCodes.includes(keyCode);
+			console.log(isValid);
+			if(isValid) event.preventDefault();
 			// target.value.length === 0 && keyCode === 48 && event.preventDefault();
 		}
 		function setLimitNumber() {
@@ -162,11 +166,11 @@ export const inputNumber = () => {
 			const MINIMUN = 0;
 			const isFirstPlacedZero = /(^0+)/.test(target.value);
 			const isMaximum = Number(target.value) >= MAXIMUM;
-			const isLength = event.target.value.length > MINIMUN;
+			const isLength = target.value.length > MINIMUN;
 
-			if(isFirstPlacedZero) event.target.value = MINIMUN;
-			if(isLength) event.target.value = event.target.value.slice(0, 3);
-			if(isMaximum) event.target.value = MAXIMUM;
+			if(isFirstPlacedZero) target.value = MINIMUN;
+			if(isLength) target.value = target.value.slice(0, 3);
+			if(isMaximum) target.value = MAXIMUM;
 		}
 	});
 	

@@ -89,12 +89,12 @@
 
 .review {position:relative;}
 .review-sorting {border-bottom:1px solid $gray10;}
-.review-sorting button {margin:0 !important;color:$gray40;position:relative;}
+.review-sorting button {height:32px;margin:0 !important;color:$gray40;position:relative;}
 .review-sorting button:before {content:'';display:inline-block;width:2px;height:2px;background:$gray40;margin:0 8px 0 0;vertical-align:middle;}
 .review-sorting button.is-active {color:$gray80;}
 .review-sorting button.is-active:before {width:10px;height:4px;background:none;border-left:2px solid;border-bottom:2px solid;border-color:$gray80;vertical-align:3px;transform:rotate(-45deg);}
-.review-sorting div {display:inline-block;}
-.review-filter {font-size:12px;position:absolute;right:0;top:0;}
+.review-sorting button i {margin-left:1rem;}
+.review-filter {display:flex;align-items:center;height:32px;font-size:12px;position:absolute;right:0;top:0;}
 
 
 [role=group] {}

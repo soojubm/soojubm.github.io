@@ -148,14 +148,7 @@
 
 .statistic {display:inline-block;width:64px;}
 .statistic-label {display:block;color:$gray40;}
-.statistic-value {font-size:1.5rem;line-height:1.4;color:$gray80;}
-
-
-
-
-
-
-
+.statistic-value {font-size:1.75rem;line-height:1.4;color:$gray80;}
 
 
 
@@ -169,3 +162,21 @@
 	right: 50%;
 	width: 100vw;
 }
+
+
+
+
+.slider {max-width:800px;position:relative;}
+.slider-viewer {overflow:auto;white-space:nowrap;position:relative;transition:all .4s ease;}
+/* .slider-viewer .inbox {width:1500px;position:absolute;} */
+.slider-viewer-slide {display:inline-block;width:4rem;height:4rem;margin:0 .25rem;border-radius:50px;background:gold;color:#fff;}
+.slider-dots {width:100px;height:10px;margin-left:-36px;text-align:center;position:absolute;left:50%;bottom:-25px;z-index:5;}
+.slider-dots-dot {float:left;width:10px;height:10px;margin:0px 4px;border-radius:50%;background:rgba(0,0,0,1);cursor:pointer;}
+.slider-dots-dot:hover {width:30px;border-radius:5px;opacity:.5;}
+.slider-dots-dot.is-active {}
+.slider-arrows {}
+.slider-arrows-prev {position:absolute;left:0;top:50%;transform:translateY(-50%);}
+.slider-arrows-prev:hover {background:crimson;}
+.slider-arrows-next {position:absolute;right:0;top:50%;transform:translateY(-50%);}
+.slider-arrows-next:hover {background:crimson;}
+.slider-arrows button.is-disabled {opacity:.2;}

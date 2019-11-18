@@ -226,32 +226,15 @@
           <button class="slider-viewer-slide" type="button" style="background:blue;">고2</button>
           <button class="slider-viewer-slide" type="button" style="background:blue;">고3</button>
         </div>
-        <nav class="slider-dots">
+        <!-- <nav class="slider-dots">
           <button class="slider-dots-dot">1</button>
           <button class="slider-dots-dot">1</button>
           <button class="slider-dots-dot">1</button>
-        </nav>
+        </nav> -->
         <nav class="slider-arrows">
           <button class="slider-arrows-prev" type="button">prev</button>
           <button class="slider-arrows-next" type="button">next</button>
         </nav>
-
-        <style>
-          
-.slider {max-width:800px;position:relative;}
-.slider-viewer {overflow:auto;white-space:nowrap;position:relative;transition:all .4s ease;}
-/* .slider-viewer .inbox {width:1500px;position:absolute;} */
-.slider-viewer-slide {display:inline-block;width:5rem;height:5rem;margin:0 .5rem;border-radius:50px;background:gold;color:#fff;}
-.slider-dots {width:100px;height:10px;margin-left:-36px;text-align:center;position:absolute;left:50%;bottom:-25px;z-index:5;}
-.slider-dots-dot {float:left;width:10px;height:10px;margin:0px 4px;border-radius:50%;background:rgba(0,0,0,1);cursor:pointer;}
-.slider-dots-dot:hover {width:30px;border-radius:5px;opacity:.5;}
-.slider-dots-dot.is-active {}
-.slider-arrows {}
-.slider-arrows-prev {position:absolute;left:0;bottom:-50px;}
-.slider-arrows-next {position:absolute;right:0;bottom:-50px;}
-.slider-arrows button.is-disabled {opacity:.2;}
-
-        </style>
       </section>
     </article>
 		
@@ -360,10 +343,26 @@
       </nav>
     </article>
 
+    <article class="design-article js-scroll-animation">
+      <h1 class="design-article-heading">CSS Icons</h1>
+      <p class="design-article-description">제곧내.</p>
+      <div class="dd" role="group">
+        <button class="icon-button" type="button"><i class="icon-person"></i></button>
+        <button class="icon-button" type="button"><i class="icon-search"></i></button>
+        <button class="icon-button" type="button"><i class="icon-chevron"></i></button>
+        <button class="icon-button" type="button"><i class="icon-arrow"></i></button>
+        <button class="icon-button" type="button"><i class="icon-more"></i></button>
+        <button class="icon-button" type="button"><i class="icon-plus"></i></button>
+        <button class="icon-button" type="button"><i class="icon-close"></i></button>
+        <button class="icon-button" type="button"><i class="icon-caret"></i></button>
+        <!-- <button class="icon-button" type="button"><i class="icon-home"><span></span><span></span></i></button> -->
+      </div>
+    </article>
+
     <article class="design-article button-article js-scroll-animation">
       <style>
-        .design-article.button-article div {margin:0 0 2rem 0;}
-        .design-article.button-article div h2 {margin:0 0 .5rem 0;font-size:12px;}
+        .design-article.button-article > div {margin:0 0 2rem 0;}
+        .design-article.button-article > div h2 {margin:0 0 .5rem 0;font-size:12px;}
         .design-article.button-article button {width: 120px;}
         .design-article.button-article button.icon-button {width: 48px;}
         .dd {overflow:hidden;width:100%;}
@@ -391,13 +390,6 @@
         <button class="ghost-button" type="button" disabled>Ghost</button>
       </div>
       <div>
-        <h2>Prev/Next Buttons</h2>
-        <div style="display:flex;">
-        <button class="ghost-button" type="button">Previous</button>
-        <button class="primary-button" style="margin-left:auto;" type="button">Next</button>
-        </div>
-      </div>
-      <div>
         <h2>Small Buttons</h2>
         <button class="primary-button --small" type="button">Filled</button>
         <button class="danger-button --small" type="button" aria-label="danger">Danger</button>
@@ -420,37 +412,11 @@
           <button class="ghost-button --small is-active" type="button">최신순</button>
           <button class="ghost-button --small" type="button">별점낮은순</button>
           <button class="ghost-button --small" type="button">별점높은순</button>
-          <!-- <div>
-            <input type="radio" id="recent" name="filter" checked>
-            <label for="recent">최신순</label>
-          </div>
-          <div>
-            <input type="radio" id="recent1" name="filter" checked>
-            <label for="recent1">인기순</label>
-          </div>
-          <div>
-            <input type="radio" id="recent2" name="filter">
-            <label for="recent2">별점낮은순</label>
-          </div> -->
         </div>
         <div class="review-filter">
           <input type="checkbox" id="photo">
           <label for="photo">포토리뷰만 보기</label>
         </div>
-      </div>
-      <div class="dd" role="group">
-        <h2>Icon Buttons</h2>
-        <div class="button-group">
-          <button class="icon-button" type="button"><i class="icon-person"></i></button>
-          <button class="icon-button" type="button"><i class="icon-search"></i></button>
-          <button class="icon-button" type="button"><i class="icon-chevron"></i></button>
-          <button class="icon-button" type="button"><i class="icon-arrow"></i></button>
-          <button class="icon-button" type="button"><i class="icon-more"></i></button>
-          <button class="icon-button" type="button"><i class="icon-plus"></i></button>
-          <button class="icon-button" type="button"><i class="icon-close"></i></button>
-          <button class="icon-button" type="button"><i class="icon-caret"></i></button>
-        </div>
-        <!-- <button class="icon-button" type="button"><i class="icon-home"><span></span><span></span></i></button> -->
       </div>
     </article>
 
@@ -545,30 +511,29 @@
         <button class="variation-increment js-variation-increment" type="button"><i class="icon-plus"></i></button>
       </div>
       
-      <div class="textfield" style="margin:1rem 0;">
+      <div class="textfield" style="margin:2rem 0;">
         <label class="textfield-label" for="number">prefix와 suffix</label>
         <span class="textfield-prefix">http://</span>
+        <!-- <i class="textfield-icon">prefix</i> -->
         <input class="textfield-input js-number-input" id="number" type="number" min="5" max="20" placeholder="숫자만 입력가능합니다."></input>
         <span class="textfield-suffix">@soojubm.com</span>
       </div>
-      <div class="textfield is-invalid" style="margin:1rem 0;">
+      <div class="textfield is-invalid" style="margin:2rem 0;">
         <label class="textfield-label" for="">아이디</label>
         <input class="textfield-input" type="text" placeholder="soojubm" readonly></input>
       </div>
-      <div class="textfield is-invalid" style="margin:1rem 0;">
+      <div class="textfield is-invalid" style="margin:2rem 0;">
         <label class="textfield-label" for="">레이블</label>
-        <!-- <i class="textfiled-icon">a</i> -->
         <input class="textfield-input" type="text" placeholder="Textarea Placeholder..."></input>
         <!-- <button class="textfield-button primary-button">ddd</button> -->
-        <!-- 레이블이 있을 때, 헬퍼가 있을 때 버튼의 위치를 어떻게 잡을지 인접연산자로 하나하나 세팅해주는 방법 -->
         <small class="textfield-helper">You can @mention other users and organizations to link to them.</small>
       </div>
-      <div class="textfield" style="margin:1rem 0;">
+      <div class="textfield" style="margin:2rem 0;">
         <label class="textfield-label" for="date-start"><i class="">시작일</i></label>
         <label class="textfield-icon" for="date-start"><i class="material-icons">today</i></label>
         <input class="textfield-input" type="date" id="date-start" placeholder="날짜를 설정해주세요.">
       </div>
-      <div class="textfield" style="margin:1rem 0;">
+      <div class="textfield" style="margin:2rem 0;">
         <label class="textfield-label" for="search1">셀렉트박스 레이블</label>
         <select class="textfield-input" name="" id="">
           <option class="select-option" value="" disabled selected hidden>Choose an option</option>
@@ -584,7 +549,7 @@
         </select>
         <i class="selectbox-indicator icon-caret"></i>
       </div>
-      <div class="textfield" style="margin:1rem 0;">
+      <div class="textfield" style="margin:2rem 0;">
         <label class="textfield-label" for="search1">텍스트에어리어 레이블</label>
         <small class="textfield-byte"><b>0 KB</b> / 100 KB</small>
         <textarea class="textfield-input" rows="3" placeholder="Textarea Placeholder..."></textarea>
@@ -621,11 +586,13 @@
       <nav class="pagination">
         <a class="pagination-prev" href="#" title="앞 페이지로 이동">Previous</a>
         <a class="pagination-first" href="#" title="맨 앞 페이지로 이동"><i aria-hidden="">1</i></a>
+        <i class="pagination-dots" href="#" title="맨 앞 페이지로 이동">...</i>
         <a class="pagination-page" href="#" title="1 페이지로 이동">5</a>
         <a class="pagination-page" href="#" title="1 페이지로 이동">6</a>
         <a class="pagination-page is-current" href="#" title="1 페이지로 이동">7</a>
         <a class="pagination-page" href="#" title="1 페이지로 이동">8</a>
         <a class="pagination-page" href="#" title="1 페이지로 이동">9</a>
+        <i class="pagination-dots" href="#" title="맨 앞 페이지로 이동">...</i>
         <a class="pagination-last" href="#" title="맨 뒤 페이지로 이동"><i aria-hidden="">50</i></a>
         <a class="pagination-next" href="#" title="뒷 페이지로 이동">Next</a>
       </nav>
@@ -768,12 +735,11 @@
           Dropdown
           <div class="dropdown-caret"></div>
         </summary>
-      
-        <ul class="dropdown-menu dropdown-menu-se">
-          <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
-          <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
-          <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
-        </ul>
+        <div class="dropdown-menu dropdown-menu-se">
+          <a class="dropdown-item" href="#url">Dropdown item</a>
+          <a class="dropdown-item" href="#url">Dropdown item</a>
+          <a class="dropdown-item" href="#url">Dropdown item</a>
+        </div>
       </details>
     </article>
 

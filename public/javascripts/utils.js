@@ -109,7 +109,9 @@ export const todayDate = {
 	hours: new Date().getHours(),
 	minutes: new Date().getMinutes(),
 	seconds: new Date().getSeconds(),
-	ampm: new Date().getHours() < 12 ? 'am' : 'pm'
+	ampm: new Date().getHours() < 12 ? 'am' : 'pm',
+	isAm: new Date().getHours() < 12,
+	isPm: new Date().getHours() > 12,
 
 	/*
 	const dateString = date.toLocaleDateString().split('.');
