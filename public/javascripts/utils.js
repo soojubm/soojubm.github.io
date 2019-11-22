@@ -29,17 +29,10 @@ export const autoExpand = field => {
 	field.style.height = 'inherit';
 	
 	const computed = window.getComputedStyle(field);
-	let height = field.scrollHeight + parseInt(computed.getPropertyValue('border-top-width'));
+	const height = field.scrollHeight + parseInt(computed.getPropertyValue('border-top-width'));
 	field.style.height = height + 'px';
 };
 
-
-var add = function(num1, num2) {
-	num1 = num1 || 0; // conditional operator
-	num2 = num2 ? num2 : 0; // ternary operator
-
-	return num1 + num2;
-};
 
 var getElementHeight = function(element) {
 	element.style.display = 'block';
@@ -47,8 +40,6 @@ var getElementHeight = function(element) {
 	
 	return height;
 };
-
-const hasItem = (arr, item) => arr.includes(item);
 
 // function frameSizing() {
 // 	var $frame = $('.player iframe');
@@ -97,9 +88,6 @@ const maskedNumber = last4Digits.padStart(fullNumber.length, '*');
 	}
 	*/
 
-
-
-
 export const todayDate = {
 	today: new Date(),
 	year: new Date().getFullYear(),
@@ -121,6 +109,9 @@ export const todayDate = {
 	console.log(date.toLocaleString()); // 1980년 1월 3일 목요일 오전 1:28:35
 	*/
 };
+
+
+// date.setDate(date.getDate() + 1) // if(today.getTime() < date.getTime())
 
 const formatDate = timestamp => {
 	const date = new Date(timestamp);

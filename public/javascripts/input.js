@@ -17,6 +17,7 @@ export const attachFile = () => {
 	function attach() {
 		attachedfiles = fileInput.files;
 		const hasFile = attachedfiles.length === 0;
+		if(!hasFile) return;
 		attachmentHelper.style.display = hasFile ? 'block' : 'none';
 		console.log('attachedfiles', attachedfiles);
 		
@@ -43,16 +44,29 @@ export const attachFile = () => {
 	function validFileType(file) {
 		const fileTypes = ['image/jpeg', 'image/gif', 'image/png'];
 		// const isValid = fileTypes.includes(file.type);
-		if(fileTypes.indexOf(file.type) > -1) return true; // includes
+		if(fileTypes.indexOf(file.type) > -1) return true;
 	}
-	function validFileSize(file) {}
+
+	function validFileSize(file) {
+		attachedfiles = file.files;
+		if(attachedfiles.length === 0) return;
+		
+		if(files[0].size > 75 * 1024) {
+			fileInput.setCustomValidity('The selected file must not be larger than 75 kB');
+			return;
+		}
+		fileInput.setCustomValidity('');
+	}
+
 	function returnFileSize(size) {
 		const isBytes = size < 1024;
 		const isKiloBytes = size >= 1024 && size < 1048576;
+		
 		if(isBytes) return size + 'bytes';
 		else if(isKiloBytes) return (size / 1024).toFixed(2) + 'KB';
 		else return (size / 1048576).toFixed(2) + 'MB';
 	}
+
 	function sendFile(file) {
 		const formData = new FormData();
 		const request = new XMLHttpRequest();
@@ -64,7 +78,7 @@ export const attachFile = () => {
 };
 
 // parseInt vs Number
-		// TODO: target 클래스 토글이 안 되므니다
+// TODO: target 클래스 토글이 안 되므니다
 document.addEventListener('click', event => {
 	const { target } = event;
 	const minValue = 0;
@@ -93,25 +107,25 @@ export const inputTextarea = () => {
 };
 
 // tagName과 nodeName은 텍스트 노드를 각각 undefined와 #text 반환한다.
-const BYTE_MAXIMUM = 30;
 document.addEventListener('input', event => {
 	const { target } = event;
-	const { value } = target;
 
-	const byteElement = document.querySelector('.textfield-byte b');
 	const isTextarea = target.nodeName.toLowerCase() === 'textarea';
 	if(!isTextarea) return;
 
-	let stringByteLength = 0;
+	const BYTE_MAXIMUM = 30;
 
-	const isMaximum = value.length > BYTE_MAXIMUM;
-
-	stringByteLength = value.replace(/[\0-\x7f]|([0-\u07ff]|(.))/g,'$&$1$2').length;
+	const byteElement = document.querySelector('.textfield-byte b');
+	const stringByteLength = target.value.replace(/[\0-\x7f]|([0-\u07ff]|(.))/g,'$&$1$2').length || 0; // || 0 임시
 	byteElement.innerText = stringByteLength;
 
-	if(isMaximum) target.parentNode.classList.add('is-invalid');
+	const isMaximum = stringByteLength > BYTE_MAXIMUM;
+	if(isMaximum) {
+		target.parentNode.classList.add('is-invalid');
+	} else {
+		target.parentNode.classList.remove('is-invalid');
+	}
 
-	// value = value.slice(0, value.length);
 	autoExpand(target);
 });
 
@@ -139,6 +153,7 @@ export const inputNumber = () => {
 	// 	console.log('input - keycode: ', event.keyCode);
 	// });
 
+	// 방향키로 조절할 때 min max 조건에 걸린다.
 	document.addEventListener('keydown', event => {
 		const { target } = event;
 		const isNumberInput = target.closest('.js-number-input');
@@ -147,19 +162,19 @@ export const inputNumber = () => {
 		document.addEventListener('keyup', setLimitNumber);
 		setInputOnlyNumbers();
 
-		function setInputOnlyNumbers() {
+		function setInputOnlyNumbers(){
 			const { keyCode } = event;
 			const keyCodes = [69, 189, 187, 190];
+			const isValid = keyCodes.includes(keyCode);
+			if(isValid) event.preventDefault();
+
+			console.log(keyCode, isValid);
+			// target.value.length === 0 && keyCode === 48 && event.preventDefault();
 			// keyCode >= 48 || keyCode <= 57 || event.preventDefault();
 			// keyCode === 69 && event.preventDefault();
 			// keyCode === 189 && event.preventDefault();
 			// keyCode === 187 && event.preventDefault();
 			// keyCode === 190 && event.preventDefault();
-
-			const isValid = keyCodes.includes(keyCode);
-			console.log(isValid);
-			if(isValid) event.preventDefault();
-			// target.value.length === 0 && keyCode === 48 && event.preventDefault();
 		}
 		function setLimitNumber() {
 			const MAXIMUM = 300;
@@ -173,8 +188,9 @@ export const inputNumber = () => {
 			if(isMaximum) target.value = MAXIMUM;
 		}
 	});
-	
 };
+
+
 
 export const checkAllcheckbox = ({checkAllElement, checkElements}) => {
 	const checkAll = document.querySelector(checkAllElement);
@@ -202,24 +218,6 @@ export const checkAllcheckbox = ({checkAllElement, checkElements}) => {
 		});
 	}
 };
-
-
-
-
-// function checkFileSize() {
-//   var FS = document.getElementById("FS");
-//   var files = FS.files;
-//   if (files.length === 0) return;
-
-//   // If there is (at least) one file selected
-//      if (files[0].size > 75 * 1024) { // Check the constraint
-//        FS.setCustomValidity("The selected file must not be larger than 75 kB");
-//        return;
-//      }
-//   // No custom constraint violation
-//   FS.setCustomValidity("");
-// }
-
 
 
 

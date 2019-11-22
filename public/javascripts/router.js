@@ -21,7 +21,10 @@ const router = () => {
 				view.innerHTML = html;
 				// window.history.pushState({ name: 'tester' }, 'dd', hash.substring(1));
 
-				if(window.locationhash === '#design') {
+				const white = ['#design'];
+				const isWhite = white.includes(window.location.hash);
+
+				if(isWhite) {
 					document.querySelector('.page-head').classList.add('--white');
 				} else {
 					document.querySelector('.page-head').classList.remove('--white');
