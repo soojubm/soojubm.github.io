@@ -16,7 +16,7 @@ export const attachFile = () => {
 
 	function attach() {
 		attachedfiles = fileInput.files;
-		const hasFile = attachedfiles.length === 0;
+		const hasFile = attachedfiles.length;
 		attachmentHelper.style.display = hasFile ? 'block' : 'none';
 		console.log('attachedfiles', attachedfiles);
 		

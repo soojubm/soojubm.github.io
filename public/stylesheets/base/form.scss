@@ -6,8 +6,10 @@ input::-ms-clear {display:none;}
 input, textarea {-webkit-appearance:none;-webkit-border-radius:0}
 input, select, textarea {border-radius:0px;-webkit-border-radius:0;font:inherit;color:inherit;background:none;border:none;}
 select {-webkit-appearance:none;appearance:none;}
-button {background:none;overflow:hidden;padding:0;border:none;outline:0;cursor:pointer;font:inherit;position:relative;}
+button {background:none;overflow:hidden;padding:0;border:none;cursor:pointer;font:inherit;position:relative;}
 button > * {pointer-events:none;}
+button:not(:active),
+button:not(:focus) {outline:0;}
 // button:before {content:'';display:block;width:8px;height:8px;background:rgba(0,0,0,.2);position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);opacity:0;}
 // button:active:before {width:100%;height:100%;animation:ripple .6s;}
 
@@ -18,8 +20,14 @@ select:focus {}
 .button.--blocked {display:block;width:100%;}
 .button.--small {width:auto !important;min-width:72px !important;padding:4px 1rem 5px !important;font-size:12px !important;}
 
-.button {display:inline-block;min-width:104px;background:$color-primary;padding:$padding200;color:#fff;border-radius:$radius400;cursor:pointer;outline:0;position:relative;}
-.button-group {display:flex;}// justify-content:space-between;}
+.button {display:inline-block;min-width:104px;background:$color-primary;padding:$padding200;color:#fff;border-radius:$radius400;cursor:pointer;position:relative;}
+.button-group {display:flex;width:100%;overflow:hidden;}// justify-content:space-between;}
+.button-group.--left {padding:.5rem 0;}
+.button-group.--left button {margin:0 1rem;}
+.button-group.--center {justify-content:center;padding:.5rem 0;}
+.button-group.--center button {margin:0 1rem;}
+.button-group.--right {justify-content:flex-end;padding:.5rem 0;}
+.button-group.--right button {margin:0 1rem;}
 .button-group button {margin:0;border-radius:0;}// flex:1 1 auto;}
 .button-group button.is-active {background-color:$color-primary;color:#fff;}
 .button-group button:first-child {border-top-left-radius:$radius400;border-bottom-left-radius:$radius400;}
@@ -35,15 +43,15 @@ select:focus {}
 .primary-button.-kakao {background:#3664a2;border-color:#3664a2;}
 .primary-button.-naver {background:#3664a2;border-color:#3664a2;}
 .secondary-button {@extend .button;border:1px solid $color-primary;background:transparent;color:$color-primary;}
-.secondary-button:disabled {background:transparent;border-color:$gray40;color:$gray40;cursor:not-allowed;}
+.secondary-button:disabled {background:transparent;border-color:$gray20;color:$gray20;cursor:not-allowed;}
 .secondary-button:hover:not(:disabled) {background:$color-primary;color:#fff;}
 .secondary-button:focus:not(:disabled) {background:$color-primary;color:#fff;}
 .secondary-button:active:not(:disabled) {}
-.teritary-button {@extend .button;border:1px solid $gray10;background:$gray10;color:$gray80;}
-.teritary-button:disabled {color:$gray20;cursor:not-allowed;}
-.teritary-button:hover:not(:disabled) {background:$color-primary;color:#fff;}
-.teritary-button:focus:not(:disabled) {background:$color-primary;color:#fff;}
-.teritary-button:active:not(:disabled) {}
+.tertiary-button {@extend .button;border:1px solid $gray10;background:$gray10;color:$gray80;}
+.tertiary-button:disabled {color:$gray20;cursor:not-allowed;}
+.tertiary-button:hover:not(:disabled) {background:$color-primary;border-color:$color-primary;color:#fff;}
+.tertiary-button:focus:not(:disabled) {background:$color-primary;color:#fff;}
+.tertiary-button:active:not(:disabled) {}
 .danger-button {@extend .button;background:$color-negative;border:1px solid $color-negative;color:#fff;}
 .danger-button:disabled {background:$gray40;border-color:$gray40;color:#fff;cursor:not-allowed;}
 .danger-button:hover:not(:disabled) {background:$color-negative;}
@@ -54,8 +62,8 @@ select:focus {}
 .success-button:hover:not(:disabled) {background:$color-positive;}
 .success-button:focus:not(:disabled) {background:$color-positive;}
 .success-button:active:not(:disabled) {}
-.ghost-button {@extend .button;min-width:80px;background:none;color:$color-primary;}
-.ghost-button:disabled {color:$gray40;cursor:not-allowed;}
+.ghost-button {@extend .button;background:none;color:$color-primary;}
+.ghost-button:disabled {color:$gray20;cursor:not-allowed;}
 .ghost-button:hover:not(:disabled) {background:#f3f3f3;}
 .ghost-button:focus:not(:disabled) {background:#f3f3f3;}
 .ghost-button:active:not(:disabled) {}
@@ -165,7 +173,7 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 .textfield-icon i {display:inline-block;font-size:19px;vertical-align:middle;opacity:0.4;}
 .textfield-icon + .textfield-input {padding-left:48px;}
 .textfield-input {display:block;width:100%;padding:$padding200;padding-right:40px;background:$gray10;border-radius:4px;box-sizing:border-box;font:inherit;color:$gray80;-webkit-appearance:none;appearance:none;transition:all 0.2s;}
-.textfield-input:not(select):read-only {background:none;padding:0;border:none;outline:none;}
+.textfield-input:not(select):read-only {background:none;padding-left:0;padding-right:0;border:none;outline:none;}
 .textfield-input:not(select):read-only::placeholder {color:$gray80;}
 .textfield-input.-textarea {height:auto;}
 .textfield-input.-inline {display:inline;width:80px;padding:2px 12px;}
@@ -242,7 +250,7 @@ input[type=file] + label:after {display:none;}
 
 // qty
 .variation {max-width:10rem;height:32px;margin:.75rem 0 0rem 0;text-align:center;position:relative;}
-.variation-input {width:calc(100% - 64px);height:100%;background:none;border:none;box-sizing:border-box;text-align:center;}
+.variation-input {width:calc(100% - 64px);height:100%;background:$gray10;border:1px solid $gray20;border-left:0;border-right:0;box-sizing:border-box;text-align:center;}
 .variation-decrement {width:32px;height:32px;border:1px solid $gray20;border-radius:$radius400;position:absolute;left:0px;top:0px;}
 .variation-increment {width:32px;height:32px;border:1px solid $gray20;border-radius:$radius400;position:absolute;right:0;top:0px;}
 .variation-decrement.is-disabled {opacity:.5;cursor:not-allowed;}
