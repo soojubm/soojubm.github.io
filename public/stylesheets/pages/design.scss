@@ -47,7 +47,7 @@
 // .profile-head {height:240px;overflow:hidden;margin:0 0 3rem 0;padding:3rem 4rem;border-radius:4px;box-sizing:border-box;position:relative;}
 // .profile-head-headline {margin:0px auto .5rem;font-size:1.75rem;text-indent:-2px;color:#fff;position:relative;}
 // .profile-head-description {width:50%;margin:0 0 2rem 0;color:#fff;position: relative;}
-// .profile-head-share {@extend .teritary-button;}
+// .profile-head-share {@extend .tertiary-button;}
 
 .hero-head {}
 .hero-body {}
@@ -82,15 +82,15 @@
 .typography-paragraph {max-width:560px;}
 .typography-caption {font-size:12px;color:$gray40;}
 
-.design-spacing {background:$gray20;margin:1rem 0;padding:1rem 1.5rem 1.5rem;border:1px solid #f6f6f6;line-height:1.5;}
+.design-spacing {background:$gray10;margin:1rem 0;padding:1rem 1.5rem 1.5rem;}
 .design-spacing-one {margin:0 0 0.25rem 0;color:crimson;position:relative;}
-.design-spacing-one:before {content:'';display:block;height:0.125rem;background:$gray10;font-size:10px;position:absolute;left:0;right:0;top:100%;}
+.design-spacing-one:before {content:'';display:block;height:0.125rem;background:$gray20;font-size:10px;position:absolute;left:0;right:0;top:100%;}
 .design-spacing-one:after {content:'0.25rem';font-size:10px;color:$gray40;text-align:right;position:absolute;right:-40px;top:100%;transform:translateY(-6px);}
 .design-spacing-two {margin:0 0 0.75rem 0;font-size:1.25rem;color:#000;position:relative;}
-.design-spacing-two:before {content:'';display:block;height:0.75rem;background:$gray10;font-size:10px;position:absolute;left:0;right:0;top:100%;}
+.design-spacing-two:before {content:'';display:block;height:0.75rem;background:$gray20;font-size:10px;position:absolute;left:0;right:0;top:100%;}
 .design-spacing-two:after {content:'0.75rem';font-size:10px;color:$gray40;text-align:right;position:absolute;right:-40px;top:100%;transform:translateY(-3px);}
 .design-spacing-three {margin:0 0 1.5rem 0;position:relative;}
-.design-spacing-three:before {content:'';display:block;height:1.5rem;background:$gray10;font-size:10px;position:absolute;left:0;right:0;top:100%;}
+.design-spacing-three:before {content:'';display:block;height:1.5rem;background:$gray20;font-size:10px;position:absolute;left:0;right:0;top:100%;}
 .design-spacing-three:after {content:'0.5rem';font-size:10px;color:$gray40;text-align:right;position:absolute;right:-40px;top:100%;transform:translateY(1px);}
 .design-spacing-four {margin:0 0 0 0;color:$gray40;position:relative;}
 /* .design-spacing-four:before {content:'';display:block;height:0.125rem;background:darksalmon;font-size:10px;position:absolute;left:0;right:0;top:100%;} */

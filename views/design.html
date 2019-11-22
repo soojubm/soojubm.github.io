@@ -13,7 +13,7 @@
 
 
   <section class="design-body">
-    <article class="design-article">
+    <article class="design-article" style="overflow:auto;">
       <div class="row --head">
         <!-- <div class="row-checkbox">Ranking</div> -->
         <div class="row-checkbox">Check</div>
@@ -34,7 +34,7 @@
         <div class="row-id">soojubm</div>
         <div class="row-phone">010.3121.7045</div>
         <div class="row-address">서울시 강서구 까치산로</div>
-        <div class="row-delete"><button class="teritary-button --small">삭제</button></div>
+        <div class="row-delete"><button class="tertiary-button --small">삭제</button></div>
         <!-- <div class="row-progress"><button class="primary-button --small">출제하기</button></div> -->
       </div>
       <div class="row">
@@ -49,7 +49,7 @@
         <div class="row-phone">010.3121.7045</div>
         <div class="row-address">서울시 강서구 까치산로</div>
         
-        <div class="row-delete"><button class="teritary-button --small">삭제</button></div>
+        <div class="row-delete"><button class="tertiary-button --small">삭제</button></div>
         <!-- <div class="row-progress"><button class="primary-button --small">출제하기</button></div> -->
       </div>
       <div class="row">
@@ -64,7 +64,7 @@
         <div class="row-phone">010.3121.7045</div>
         <div class="row-address">서울시 강서구 까치산로</div>
         
-        <div class="row-delete"><button class="teritary-button --small">삭제</button></div>
+        <div class="row-delete"><button class="tertiary-button --small">삭제</button></div>
         <!-- <div class="row-progress"><button class="primary-button --small">출제하기</button></div> -->
       </div>
     </article>
@@ -242,8 +242,10 @@
     <article class="design-article js-scroll-animation">
       <h1 class="design-article-heading">Tags</h1>
       <p class="design-article-description">임시로 code태그로 마크업해서 사용 중이에요. 닫기 아이콘 연하게.</p>
-      <code>I'm hashtag</code>
-      <code style="position:relative;">태그 <i class="icon-close" style="display:inline-block;margin-left:4px;padding:4px;"></i></code>
+      <div class="tags" role="list">
+        <code class="tags-item" role="listitem">I'm hashtag</code>
+        <code class="tags-item" style="position:relative;" role="listitem">태그 <i class="icon-close" style="display:inline-block;margin-left:4px;padding:4px;"></i></code>
+      </div>
     </article>
 
     <article class="design-article js-scroll-animation">
@@ -279,7 +281,7 @@
         <li>ordered list, level 1</li>
       </ol>
       <hr style="margin: 1rem 0;" />
-      <dl>
+      <dl style="display:flex;justify-content:space-between;">
         <dt>Definition term</dt>
         <dd>Definition text</dd>
       </dl>
@@ -381,13 +383,17 @@
         <h2>Secondary Buttons</h2>
         <button class="secondary-button" type="button">Secondary</button>
         <button class="secondary-button" type="button" disabled>Secondary</button>
-        <button class="teritary-button" type="button">Teritary</button>
-        <button class="teritary-button" type="button" disabled>Teritary</button>
+        <button class="tertiary-button" type="button">tertiary</button>
+        <button class="tertiary-button" type="button" disabled>tertiary</button>
       </div>
       <div>
         <h2>Text Buttons</h2>
         <button class="ghost-button" type="button">Ghost</button>
         <button class="ghost-button" type="button" disabled>Ghost</button>
+      </div>
+      <div class="button-group --center" role="group">
+        <button class="tertiary-button --small" type="button">Prev</button>
+        <button class="primary-button --small" type="button">Next</button>
       </div>
       <div>
         <h2>Small Buttons</h2>
@@ -395,16 +401,17 @@
         <button class="danger-button --small" type="button" aria-label="danger">Danger</button>
         <button class="success-button --small" type="button" aria-label="danger">Success</button>
         <button class="secondary-button --small" type="button">Secondary</button>
-        <button class="teritary-button --small" type="button">Teritary</button>
+        <button class="tertiary-button --small" type="button">tertiary</button>
         <button class="ghost-button --small" type="button">Ghost</button>
         <button class="secondary-button --small" type="button" style="min-width:auto !important;height:34px;padding-right:56px !important;text-align:left;;">Music <i class="icon-close" style="display:inline-block;background:#f1f3f4;position:absolute;right:0;top:0;"></i></button>
       </div>
       <div>
         <h2>Button Group</h2>
         <div class="button-group" role="group">
+          <!-- <p>2개 기준, 버튼 간 간격(gap) 버튼의 위치(left center right between), width, filtering</p> -->
           <button class="primary-button --small is-active" type="button">Button Group</button>
-          <button class="teritary-button --small" type="button">Button Group</button>
-          <button class="teritary-button --small" type="button">Button Group <i class="icon-caret"></i></button>
+          <button class="tertiary-button --small" type="button">Button Group</button>
+          <button class="tertiary-button --small" type="button">Button Group <i class="icon-caret"></i></button>
         </div>
       </div>
       <div class="review">
@@ -420,6 +427,24 @@
         </div>
       </div>
     </article>
+
+
+    <article class="design-article js-scroll-animation">
+      <h1 class="design-article-heading">Dialog</h1>
+      <p class="design-article-description">예 아니오 예!</p>
+      <div role="dialog">
+        <p class="dialog-heading">즐겨찾기 삭제</p>
+        <p style="margin:0 0 2.5rem 0;">즐겨찾기를 삭제하시겠습니까?</p>
+        <footer class="button-group" role="group">
+          <button class="primary-button" type="submit" style="width:50%;">삭제하기</button>
+          <button class="ghost-button" type="button" style="width:50%;float:right;">취소</button>
+          <button class="toast-close js-close" type="button" style="position:aboslute;right:0;top:0;"><i class="icon-close"></i></button>
+        </footer>
+      </div>
+    </article>
+
+
+    
 
     <article class="design-article js-scroll-animation">
       <h1 class="design-article-heading">Checkboxes</h1>
@@ -457,12 +482,12 @@
         <p class="radio-helper">My email campaigns are meant to be seen by the public. The more the merrier, in fact. If/when Mailchimp builds tools that help people discover me and sign up for this list, I'd like to take part in that.</p>
       </div>
       <div class="radio">
-        <input type="radio" id="gender-man" name="gender" value="">
-        <label for="gender-man">Video kills the radio button</label>
+        <input type="radio" id="gender-women" name="gender" value="">
+        <label for="gender-women">Video kills the radio button</label>
       </div>
       <div class="radio">
-        <input type="radio" id="gender-women" name="gender2" value="" checked disabled>
-        <label for="gender-women">Video kills the radio button</label>
+        <input type="radio" id="gender-etc" name="gender2" value="" checked disabled>
+        <label for="gender-etc">Video kills the radio button</label>
       </div>
     </article>
     <article class="design-article js-scroll-animation">
@@ -716,19 +741,21 @@
         <label class="textfield-label" for="">직위</label>
         <input class="textfield-input" type="text" placeholder="인풋 인라인스타일 스몰사이즈">
       </div>
-      <button class="primary-button --small">변경 내용 저장</button>
-      <button class="ghost-button --small">취소</button>
+      <div class="button-group --right">
+        <button class="ghost-button --small">취소</button>
+        <button class="primary-button --small">변경 내용 저장</button>
+      </div>
     </article>
 
     <article class="design-article js-scroll-animation">
       <h1 class="design-article-heading">Accordions</h1>
       <p class="design-article-description">질의응답에 주로 사용해요. 공지사항 정도의 간단한 게시글에서도 사용할 수 있으나 그 이상의 경우에는 다른 유아이를 고민해봐요.</p>
-      <button class="components-trigger js-accordion" type="button" aria-expanded="false"><i class="icon-plus"></i> 투두 리스트: 바닐라 자바스크립트로 만드는 투두 리스트</button>
-      <article class="components-panel">
+      <button class="accordion-trigger js-accordion" type="button" aria-expanded="false"><i class="icon-plus"></i> 투두 리스트: 바닐라 자바스크립트로 만드는 투두 리스트</button>
+      <article class="accordion-panel">
         안녕
       </article>
-      <button class="components-trigger js-accordion" type="button" aria-expanded="false"><i class="icon-plus"></i> 투두 리스트: 바닐라 자바스크립트로 만드는 투두 리스트</button>
-      <article class="components-panel">
+      <button class="accordion-trigger js-accordion" type="button" aria-expanded="false"><i class="icon-plus"></i> 투두 리스트: 바닐라 자바스크립트로 만드는 투두 리스트</button>
+      <article class="accordion-panel">
         안녕
       </article>
       <details class="dropdown details-reset details-overlay d-inline-block">
@@ -752,13 +779,6 @@
         <p>margin:4rem 0; padding:1rem 1.5rem 1.5rem;</p>
       </div>
 
-      <div style="margin:1rem 0;padding:1rem 1.5rem 1.5rem;box-sizing:border-box;border:1px solid #eee;">
-        <p style="margin:0 0 .125rem 0;color:#000;font-size:1.25rem;">다이얼로그</p>
-        <p style="margin:0 0 1.5rem 0;">보조 텍스트인니다!</p>
-     
-        <button class="primary-button --small" type="submit" style="margin-top:1rem;margin-left:100px;">전송하기</button>
-        <button class="ghost-button --small" type="button" style="margin-top:8px;">취소</button>
-      </div>
       <div class="design-spacing">
         <div class="design-spacing-one">간격Spacing</div>
         <div class="design-spacing-two">REM 단위를 어떻게 사용할까?</div>
