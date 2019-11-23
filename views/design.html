@@ -129,7 +129,7 @@
 
     <article class="design-article js-scroll-animation">
       <h1 class="design-article-heading">Avatars</h1>
-      <p class="design-article-description">사진을 사용할 때와 아이콘을 사용할 때 두 가지의 아바타를 사용해요. 아이콘 타입(48px)과 포토 타입이 있는데 4가지는 너무 많아요 흑흑.</p>
+      <p class="design-article-description">사진이 들어간 아바타를 사용할 때와 아이콘을 사용할 때 지정된 4가지의 사이즈만 사용해요.</p>
       <a href="" class="avatar --large --photo">
         <img src="/public/images/caleb-woods-182648-unsplash.jpg" alt="">
       </a>
@@ -189,22 +189,28 @@
       </div>
     </article>
 
-    <article class="design-article js-scroll-animation">
+    <!-- <article class="design-article js-scroll-animation">
       <h1 class="design-article-heading">Emphasis</h1>
       <p class="design-article-description">수줍이는 이렇게 강조해요. 특정 단어를 강조하기 보담 시선을 끄는 카피를 선택하는 안목을 기르세요. 커밍 순...</p>
       <ol class="list-sample">  
-        <!-- <li>수줍이는 <em>이렇게</em> 강조해요. <small>링크 텍스트로 오인될 수 있으니 주의해요.</small></li> -->
-        <!-- <li>수줍이는 <b>이렇게</b> 강조해요. <small>하나의 폰트 패밀리만 사용하기 때문에 볼드로 강조할 수 없어요.</small></li>
+        <li>수줍이는 <em>이렇게</em> 강조해요. <small>링크 텍스트로 오인될 수 있으니 주의해요.</small></li>
+        <li>수줍이는 <b>이렇게</b> 강조해요. <small>하나의 폰트 패밀리만 사용하기 때문에 볼드로 강조할 수 없어요.</small></li>
         <li>수줍이는 <u>이렇게</u> 강조해요. <small>언더라인으로 강조해요. 못 생겼으니 고쳐 써야 겠지요?</small></li>
         <li>수줍이는 <i style="font-style:italic;">이렇게</i> 강조해요. <small>한글에는 이탤릭의 개념이 없으니 주의해요.</small></li>
-        <li>수줍이는 <sup>이렇게</sup> 강조해요. <small>수치를 표현할 때만 사용하세요.</small></li> -->
+        <li>수줍이는 <sup>이렇게</sup> 강조해요. <small>수치를 표현할 때만 사용하세요.</small></li>
       </ol>
+    </!-->
+
+    <article class="design-article js-scroll-animation">
+      <h1 class="design-article-heading">Text Link</h1>
+      <p class="design-article-description">형무소 안에서는 소장의 말이 곧 법이었으며 죄수들의 잘못과 실수는 결코 용납되지 않는다. 어머니의 사망 소식을 듣고 인해 2번이나 탈옥을 시도했다가 체포된 루크의 발에 쇠통이 채워지며 루크는…<a style="margin-left:.25rem;">더 보기</a></p>
+      <p class="design-article-description">형무소 안에서는 소장의 말이 곧 법이었으며 죄수들의 잘못과 실수는 결코 용납되지 않는다. 어머니의 사망 소식을 듣고 인해 2번이나 탈옥을 시도했다가 체포된 루크의 발에 쇠통이 채워지며 루크는…<a style="margin-left:.25rem;color:#000;text-decoration:underline;">더 보기</a></p>
     </article>
 
     <article class="design-article js-scroll-animation">
       <h1 class="design-article-heading">Statistic</h1>
       <p class="design-article-description">Temp</p>
-      <div class="statistic"><i class="statistic-label">팔로워</i><span class="statistic-value">2</span></div>
+      <div class="statistic"><i class="statistic-label">팔로워</i><span class="statistic-value">21,682</span></div>
     </article>
 
 
@@ -281,7 +287,11 @@
         <li>ordered list, level 1</li>
       </ol>
       <hr style="margin: 1rem 0;" />
-      <dl style="display:flex;justify-content:space-between;">
+      <dl style="margin:0 0 .5rem 0;">
+        <dt>Definition term</dt>
+        <dd>Definition text</dd>
+      </dl>
+      <dl>
         <dt>Definition term</dt>
         <dd>Definition text</dd>
       </dl>
@@ -301,7 +311,7 @@
     </article> -->
 
     <article class="design-article js-scroll-animation">
-      <h1 class="design-article-heading">Snackbars? Notification Bars</h1>
+      <h1 class="design-article-heading">Notification Bars</h1>
       <p class="design-article-description">긍정 상황에 사용합니다. 부정 혹은 경고, 주의, 성공, 알림 등을 추가할까요?</p>
       <aside class="snackbar">
         <!-- <i class="note-icon material-icons">snackbars</i> -->
@@ -328,7 +338,7 @@
 
     <article class="design-article js-scroll-animation">
       <h1 class="design-article-heading">Bottom Navigation</h1>
-      <p class="design-article-description">제곧내.</p>
+      <p class="design-article-description">제곧내. 모바일에서만 사용.</p>
       <nav class="bottom-navigation">
         <a href="">
           <i>🐣</i>
@@ -383,8 +393,8 @@
         <h2>Secondary Buttons</h2>
         <button class="secondary-button" type="button">Secondary</button>
         <button class="secondary-button" type="button" disabled>Secondary</button>
-        <button class="tertiary-button" type="button">tertiary</button>
-        <button class="tertiary-button" type="button" disabled>tertiary</button>
+        <button class="tertiary-button" type="button">Tertiary</button>
+        <button class="tertiary-button" type="button" disabled>Tertiary</button>
       </div>
       <div>
         <h2>Text Buttons</h2>
@@ -403,7 +413,7 @@
         <button class="secondary-button --small" type="button">Secondary</button>
         <button class="tertiary-button --small" type="button">tertiary</button>
         <button class="ghost-button --small" type="button">Ghost</button>
-        <button class="secondary-button --small" type="button" style="min-width:auto !important;height:34px;padding-right:56px !important;text-align:left;;">Music <i class="icon-close" style="display:inline-block;background:#f1f3f4;position:absolute;right:0;top:0;"></i></button>
+        <button class="secondary-button --small" type="button" style="margin-top:.5rem;min-width:auto !important;height:32px;padding-right:56px !important;text-align:left;;">Music <i class="icon-close" style="display:inline-block;background:#f1f3f4;padding:12px;position:absolute;right:3px;top:3px;"></i></button>
       </div>
       <div>
         <h2>Button Group</h2>
@@ -428,23 +438,38 @@
       </div>
     </article>
 
-
-    <article class="design-article js-scroll-animation">
-      <h1 class="design-article-heading">Dialog</h1>
-      <p class="design-article-description">예 아니오 예!</p>
-      <div role="dialog">
-        <p class="dialog-heading">즐겨찾기 삭제</p>
-        <p style="margin:0 0 2.5rem 0;">즐겨찾기를 삭제하시겠습니까?</p>
-        <footer class="button-group" role="group">
-          <button class="primary-button" type="submit" style="width:50%;">삭제하기</button>
-          <button class="ghost-button" type="button" style="width:50%;float:right;">취소</button>
-          <button class="toast-close js-close" type="button" style="position:aboslute;right:0;top:0;"><i class="icon-close"></i></button>
-        </footer>
+    <article class="design-article js-scroll-animation" style="padding-bottom:160px;">
+      <h1 class="design-article-heading">Dropdown</h1>
+      <p class="design-article-description">+ hidden menu</p>
+      <div class="header-user-account dropdown">
+        <button class="ghost-button js-accordion dropdown-trigger" aria-haspopup="menu" aria-expanded="false">
+          드롭다운
+          <i class="icon-caret" style="margin-left:1rem;"></i>
+        </button>
+        <menu class="dropdown-panel">
+          <h6 class="dropdown-panel-heading">Dropdown header</h6>
+          <a class="dropdown-panel-link" href="" disabled>프로필 관리</a>
+          <a class="dropdown-panel-link" href="">고객센터</a>
+          <hr />
+          <a class="dropdown-panel-link" href="">수줍이에서 로그아웃</a>
+        </menu>
       </div>
     </article>
 
 
-    
+    <article class="design-article js-scroll-animation">
+      <h1 class="design-article-heading">Dialog</h1>
+      <p class="design-article-description">예 아니오 예!</p>
+      <div class="dialog" role="dialog">
+        <p class="dialog-heading">즐겨찾기 삭제</p>
+        <p style="margin:0 0 2.5rem 0;">즐겨찾기를 삭제하시겠습니까?</p>
+        <footer class="button-group" role="group">
+          <button class="primary-button" type="submit">삭제하기</button>
+          <button class="ghost-button" type="button" style="float:right;">취소</button>
+          <button class="toast-close js-close" type="button" style="position:aboslute;right:0;top:0;"><i class="icon-close"></i></button>
+        </footer>
+      </div>
+    </article>
 
     <article class="design-article js-scroll-animation">
       <h1 class="design-article-heading">Checkboxes</h1>
@@ -579,6 +604,15 @@
         <label class="textfield-label" for="search1">텍스트에어리어 레이블</label>
         <small class="textfield-byte"><b>0 KB</b> / 100 KB</small>
         <textarea class="textfield-input" rows="3" placeholder="Textarea Placeholder..."></textarea>
+      </div>
+
+      <div class="textfield --small --inline" style="margin-bottom:8px;">
+        <label class="textfield-label" for="">회사</label>
+        <input class="textfield-input" type="text" placeholder="인풋 인라인스타일 스몰사이즈">
+      </div>
+      <div class="textfield --small --inline">
+        <label class="textfield-label" for="">직위</label>
+        <input class="textfield-input" type="text" placeholder="인풋 인라인스타일 스몰사이즈">
       </div>
     </article>
 
@@ -719,32 +753,46 @@
     <article class="design-article js-scroll-animation">
       <h1 class="design-article-heading">Rating</h1>
       <p class="design-article-description">테스트.</p>
-      <div class="rating">
+      <!-- <div class="rating">
         <h1 class="rating-heading" aria-hidden="true">별점</h1>
         <span class="rating-score">4.3</span>
         <div class="rating-star">
+            <i class="material-icons">star</i>
+            <i class="material-icons">star</i>
+            <i class="material-icons">star</i>
+            <i class="material-icons">star</i>
+            <i class="material-icons">star</i>
           <span class="rating-star-front">별별별별별</span>
           <span class="rating-star-back">별별별별별</span>
         </div>
         <small class="rating-count">총 24개의 평가</small>
+      </div> -->
+      <div class="rating2 --large">
+        <i class="rating2-star material-icons">star</i>
+        <span class="rating2-score">4.71점(평가 277개)</span>
       </div>
-    </article>
-
-    <article class="design-article js-scroll-animation">
-      <h1 class="design-article-heading">Rating</h1>
-      <p class="design-article-description">테스트.</p>
-      <div class="textfield --small --inline" style="margin-bottom:8px;">
-        <label class="textfield-label" for="">회사</label>
-        <input class="textfield-input" type="text" placeholder="인풋 인라인스타일 스몰사이즈">
+      <div class="rating2">
+        <i class="rating2-star material-icons">star</i>
+        <span class="rating2-score">4.3</span>
       </div>
-      <div class="textfield --small --inline">
-        <label class="textfield-label" for="">직위</label>
-        <input class="textfield-input" type="text" placeholder="인풋 인라인스타일 스몰사이즈">
-      </div>
-      <div class="button-group --right">
-        <button class="ghost-button --small">취소</button>
-        <button class="primary-button --small">변경 내용 저장</button>
-      </div>
+      <dl style="max-width:80%;margin:1rem 0;">
+        <dt>청결도</dt>
+        <dd>
+          <div class="graph-item --horizental">
+            <span class="graph-item-value">3.2</span>
+            <div class="graph-item-bar" style="width:70%;"></div>
+          </div>
+        </dd>
+      </dl>
+      <dl style="max-width:80%;margin:1rem 0;">
+        <dt>의사소통</dt>
+        <dd>
+          <div class="graph-item --horizental">
+            <span class="graph-item-value">4.8</span>
+            <div class="graph-item-bar"></div>
+          </div>
+        </dd>
+      </dl>
     </article>
 
     <article class="design-article js-scroll-animation">

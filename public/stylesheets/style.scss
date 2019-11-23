@@ -74,15 +74,23 @@
 .star.is-rated {color:#ffe623;transform:scale(1.2);}
 .star.is-hovered {color:#fc0;transform:scale(1.2);}
 
-.rating {position:relative;}
-.rating-heading {opacity:0;}
-.rating-score {display:block;font-size:2rem;color:$gray80;}
-.rating-star {height:32px;position:relative;}
-.rating-star i {display:inline-block;color:rgba(0,0,0,.2);}
+.rating {text-align:center;position:relative;}
+.rating-heading {}
+.rating-score {display:block;font-size:1.75rem;color:$gray80;}
+.rating-star {display:flex;justify-content:center;height:32px;position:relative;}
+.rating-star i {color:$gray20;}
 .rating-star-front {position:absolute;left:0;top:0;z-index:1;}
 .rating-star-front i {color:rgba(255,200,0,1);}
 .rating-star-back {position:absolute;left:0;top:0;z-index:0;}
-.rating-count {display:inline-block;font-size:12px;}
+.rating-count {}
+
+.rating2 {display:flex;align-items:center;}
+.rating2-star {margin:0 .25rem 0 0;font-size:1rem;color:crimson;}
+.rating2-score {font-size:1rem;letter-spacing:1px;}
+
+.rating2.--large {display:flex;align-items:center;}
+.rating2.--large .rating2-star {margin:0 .5rem 0 0;font-size:1.5rem;color:crimson;}
+.rating2.--large .rating2-score {font-size:1.25em;letter-spacing:0;}
 
 .scroll {position:absolute;bottom:2rem;right:2rem;z-index:8;box-shadow:$shadow400;transition:right .4s ease;}
 .scroll-indicator {transform:rotate(90deg);}

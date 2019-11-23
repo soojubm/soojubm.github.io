@@ -97,11 +97,11 @@ $fixedHeaderHeight: 50px;
 .dropdown {margin:1rem 0;position:relative;}
 .dropdown-trigger {}
 .dropdown-panel {min-width:200px;width:auto;height:0;padding:8px 0;background:#fff;position:absolute;z-index:5;box-shadow:$shadow400;transition:all .2s ease;transform:scale(0);}
-.dropdown-panel-link {display:block;padding:8px 16px;}
+.dropdown-panel-heading {padding:.5rem 1rem;font-size:12px;}
+.dropdown-panel-link {display:block;padding:.25rem 1rem;font-size:12px;color:$gray60;position:relative;z-index:1;}
 .dropdown-panel-link:hover {background:rgba(0,0,0,.05);}
-.is-active > .dropdown-toggle {background:$red800;}
-.is-active > .dropdown-panel {height:auto;transform:scale(1);transform-origin:left top;}
 
+.dropdown-panel.is-visible {height:auto;transform:scale(1);transform-origin:left top;}
 
 
 .nav-up {top: -64px;}
