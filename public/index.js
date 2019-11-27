@@ -69,7 +69,7 @@ document.addEventListener('input', event => {
 			setValid();
 		}
 	}
-
+	
 	// validate ? a : b
 	function setValid() {
 		target.parentNode.classList.remove('is-invalid');

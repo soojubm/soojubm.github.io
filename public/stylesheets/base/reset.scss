@@ -18,9 +18,9 @@ u:before {content:'';width:104%;margin-left:-2%;height:4px;background-image:line
 hr {height:1px;overflow:visible;position:relative;}
 hr:after {content:'';display:block;width:100%;height:1px;background:$gray10;}
 
-html {min-width:320px;height:100%;overflow-x:hidden;font:14px/1.8 'Asap', 'AritaDotum', 'Apple SD Gothic Neo', sans-serif;color:$gray60;-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;}
+html {min-width:320px;height:100%;overflow-x:hidden;font:14px/1.8 'Asap', 'AritaDotum', 'Apple SD Gothic Neo', sans-serif;color:$gray60;-webkit-text-size-adjust:100%;/*-webkit-font-smoothing:antialiased;*/}
 // body {font-size:.875rem;}
-//     text-rendering: optimizeLegibility;
+// text-rendering: optimizeLegibility;
 
 table {width:100%;border-collapse:collapse;border-spacing:0;border-left-style:hidden;border-right-style:hidden;}
 table caption {padding:.5rem 0;font-size:12px;text-align:left;}

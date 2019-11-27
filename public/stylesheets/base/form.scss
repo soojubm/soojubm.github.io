@@ -6,7 +6,7 @@ input::-ms-clear {display:none;}
 input, textarea {-webkit-appearance:none;-webkit-border-radius:0}
 input, select, textarea {border-radius:0px;-webkit-border-radius:0;font:inherit;color:inherit;background:none;border:none;}
 select {-webkit-appearance:none;appearance:none;}
-button {background:none;overflow:hidden;padding:0;border:none;cursor:pointer;font:inherit;position:relative;}
+button {background:none;padding:0;border:none;cursor:pointer;font:inherit;position:relative;}
 button > * {pointer-events:none;}
 button:not(:active),
 button:not(:focus) {outline:0;}
@@ -17,8 +17,13 @@ input:focus,
 textarea:focus,
 select:focus {}
 
+[aria-pressed=false] {}
+
 .button.--blocked {display:block;width:100%;}
 .button.--small {width:auto !important;min-width:72px !important;padding:4px 1rem 5px !important;font-size:12px !important;}
+
+.button.--addable {margin:.5rem;min-width:auto !important;height:32px;padding-right:56px !important;text-align:left;}
+.button.--addable.is-added {background:$color-primary;border-color:$color-primary;color:#fff;}
 
 .button {display:inline-block;min-width:104px;background:$color-primary;padding:$padding200;color:#fff;border-radius:$radius400;cursor:pointer;position:relative;}
 .button-group {display:flex;width:100%;overflow:hidden;}// justify-content:space-between;}
@@ -102,8 +107,8 @@ input[type=checkbox] + label:before {content:'';display:block;width:16px;height:
 input[type=checkbox] + label:after {content:'';display:none;width:8px;height:2px;border-left:2px solid;border-bottom:2px solid;border-color:$gray20;position:absolute;left:3px;top:5px;transform:rotate(-45deg);}
 input[type=checkbox]:checked + label:before {border-color:$color-primary;}
 input[type=checkbox]:checked + label:after {display:block;border-color:$color-primary;}
-input[type=checkbox]:disabled + label {color:$gray40;cursor:not-allowed;}
-input[type=checkbox]:disabled + label:before {background:$gray40;border-color:$gray40;}
+input[type=checkbox]:disabled + label {color:$gray20;cursor:not-allowed;}
+input[type=checkbox]:disabled + label:before {background:$gray20;border-color:$gray20;}
 input[type=checkbox]:disabled + label:after {border-color:#fff;}
 input[type=checkbox][indeterminate=true] + label:before {}
 input[type=checkbox][indeterminate=true] + label:after {display:block;background:$color-primary;border:none;left:4px;top:7px;transform:rotate(0deg);}
@@ -116,8 +121,8 @@ input[type=radio] + label:before {content:'';display:block;width:16px;height:16p
 input[type=radio] + label:after {content:'';display:none;width:6px;height:6px;border-radius:50%;background:$gray20;position:absolute;left:5px;top:50%;transform:translateY(-50%);transition:all 0.2s;}
 input[type=radio]:checked + label:before {border-color:$color-primary;}
 input[type=radio]:checked + label:after {display:block;background:$color-primary;}
-input[type=radio]:disabled + label {color:$gray40;cursor:not-allowed;}
-input[type=radio]:disabled + label:before {background:$gray40;border-color:$gray40;}
+input[type=radio]:disabled + label {color:$gray20;cursor:not-allowed;}
+input[type=radio]:disabled + label:before {background:$gray20;border-color:$gray20;}
 input[type=radio]:disabled + label:after {background:#fff;}
 
 // .checkbox-helper,.radio-helper {padding:0.5rem 0 1.5rem 28px;}
@@ -172,9 +177,10 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 .textfield-icon {width:48px;height:48px;line-height:46px;text-align:center;position:absolute;left:0;top:28px;}
 .textfield-icon i {display:inline-block;font-size:19px;vertical-align:middle;opacity:0.4;}
 .textfield-icon + .textfield-input {padding-left:48px;}
-.textfield-input {display:block;width:100%;padding:$padding200;padding-right:40px;background:$gray10;border-radius:4px;box-sizing:border-box;font:inherit;color:$gray80;-webkit-appearance:none;appearance:none;transition:all 0.2s;}
+.textfield-input {display:block;width:100%;padding:$padding200;padding-right:40px;background:$gray10;border:1px solid $gray10;border-radius:4px;box-sizing:border-box;font:inherit;color:$gray80;-webkit-appearance:none;appearance:none;transition:all 0.2s;}
 .textfield-input:not(select):read-only {background:none;padding-left:0;padding-right:0;border:none;outline:none;}
 .textfield-input:not(select):read-only::placeholder {color:$gray80;}
+.textfield-input:focus {background:#fff;border-color:$gray20;box-shadow:$shadow200;outline:0;}
 .textfield-input.-textarea {height:auto;}
 .textfield-input.-inline {display:inline;width:80px;padding:2px 12px;}
 .textfield-unit {width:40px;height:46px;padding:0 16px;line-height:50px;text-align:right;color:rgba(0, 0, 0, 0.4);position:absolute;right:0;bottom:0;}
