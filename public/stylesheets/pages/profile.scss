@@ -5,7 +5,7 @@
 .profile-head-description {width:50%;margin:0 0 2rem 0;color:#fff;position: relative;}
 .profile-head-share {@extend .tertiary-button;}
 .profile-user {float:left;width:320px;box-sizing:border-box;position:relative;z-index:1;}
-.profile-user-avatar {float:right;width:80px;height:80px;border-radius:$radius400;background:url('/public/images/caleb-woods-182648-unsplash.jpg') no-repeat center center;background-size:cover;transition:all 0.4s;transition:all 0.4s ease;}
+.profile-user-avatar {float:right;width:80px;height:80px;border-radius:$radius400;background:url('/public/images/caleb-woods-182648-unsplash.jpg') no-repeat center center;background-size:cover;transition:all 0.4s ease;}
 .profile-user-avatar:hover {box-shadow:$shadow450;}
 .profile-user-name {font-size:1.5rem;line-height:1.4;color:$gray80;}
 .profile-user-id {display:block;margin:-2px 0 0;color:$gray40;}

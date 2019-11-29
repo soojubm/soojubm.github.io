@@ -55,20 +55,40 @@ body.is-sticky {padding-top:133px;}
 .post-comment-heading {margin:0 0 1rem 0;line-height:32px;color:$color-primary;}
 .post-comment-heading i {display:inline-block;width:32px;height:32px;line-height:32px;margin-right:16px;border-radius:$radius400;background:rgba(0,80,200,.8);vertical-align:middle;font-size:1.25rem;vertical-align:middle;color:#fff}
 .post-comment-list {box-sizing:border-box;}
-.post-comment-list-item {margin-bottom:1.5rem;padding:0 0 0 48px;position:relative;}
+.post-comment-list-item {margin-bottom:1.5rem;margin-left:48px;border-radius:4px;border-top-right-radius: 1rem;
+	border-bottom-right-radius: 1rem;
+	border-bottom-left-radius: 1rem;position:relative;}
 .post-comment-list-item.-reply {position:relative;margin-top:.75rem;}
-.post-comment-list-item-avatar {width:32px;height:32px;background:$gray80;border-radius:$radius400;overflow:hidden;position:absolute;left:0;top:6px;}
+.post-comment-list-item-avatar {width:32px;height:32px;background:$gray80;border-radius:4px;overflow:hidden;position:absolute;left:-48px;top:6px;top:0;}
 .post-comment-list-item-avatar img {}
 .post-comment-list-item-author {}
 .post-comment-list-item-date {margin-left:6px;color:rgba(0,0,0,.4);font-size:12px;}
-.post-comment-list-item-text {margin:.25rem 0 0rem 0;line-height:1.6;}
-.post-comment-list-item-morevert {font-size:12px;color:$gray40;position:absolute;right:0;top:0;}
+.post-comment-list-item-text {margin:.25rem 0;line-height:1.6;}
+.post-comment-list-item-morevert {padding:1.25rem;font-size:12px;color:$gray40;position:absolute;right:0;top:0;} // 네이밍 다시
 .post-comment-list-item-menu {display:none;}
 .post-comment-list-item-reply {margin:.5rem 0;color:$gray80;}
 .post-comment-list-item-button.is-active {}
 .post-comment-list-item-menu.is-visible {display:block;width:80px;background:#fff;box-shadow:$shadow400;padding:8px 0;position:absolute;right:24px;top:0;z-index:1;}
 .post-comment-list-item-menu.is-visible button {display:block;width:100%;padding:8px 16px;font-size:12px;text-align:left;}
 .post-comment-list-item-menu.is-visible button:hover {background:#f7f7f5;}
+
+.post-comment-list-item.--typeb {background:$gray10;padding:1rem 1.5rem 1.25rem 1.5rem;}
+// .post-comment-list-item.-reply {position:relative;margin-top:.75rem;}
+// .post-comment-list-item-avatar {width:32px;height:32px;background:$gray80;border-radius:$radius400;overflow:hidden;position:absolute;left:0;top:6px;}
+// .post-comment-list-item-avatar img {}
+// .post-comment-list-item-author {}
+// .post-comment-list-item-date {margin-left:6px;color:rgba(0,0,0,.4);font-size:12px;}
+// .post-comment-list-item-text {margin:.25rem 0 0rem 0;line-height:1.6;}
+// .post-comment-list-item-morevert {font-size:12px;color:$gray40;position:absolute;right:0;top:0;}
+// .post-comment-list-item-menu {display:none;}
+// .post-comment-list-item-reply {margin:.5rem 0;color:$gray80;}
+// .post-comment-list-item-button.is-active {}
+// .post-comment-list-item-menu.is-visible {display:block;width:80px;background:#fff;box-shadow:$shadow400;padding:8px 0;position:absolute;right:24px;top:0;z-index:1;}
+// .post-comment-list-item-menu.is-visible button {display:block;width:100%;padding:8px 16px;font-size:12px;text-align:left;}
+// .post-comment-list-item-menu.is-visible button:hover {background:#f7f7f5;}
+
+
+
 
 .post-comment-list {height:0;overflow:hidden;}
 .post-comment-list.is-visible {height:auto;}

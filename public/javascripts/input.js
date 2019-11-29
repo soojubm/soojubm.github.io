@@ -18,7 +18,8 @@ export const attachFile = () => {
 		attachedfiles = fileInput.files;
 		const hasFile = attachedfiles.length;
 		if(!hasFile) return;
-		attachmentHelper.style.display = hasFile ? 'block' : 'none';
+
+		attachmentHelper.style.display = hasFile ? 'none' : 'block';
 		console.log('attachedfiles', attachedfiles);
 		
 		Array.from(attachedfiles).forEach(file => {
@@ -51,7 +52,7 @@ export const attachFile = () => {
 		attachedfiles = file.files;
 		if(attachedfiles.length === 0) return;
 		
-		if(files[0].size > 75 * 1024) {
+		if(attachedfilesnpm[0].size > 75 * 1024) {
 			fileInput.setCustomValidity('The selected file must not be larger than 75 kB');
 			return;
 		}
