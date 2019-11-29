@@ -32,14 +32,7 @@
 .icon-search:before {content: '';display: block;width:10px;height:10px;border-radius:50%;margin:0px auto 0;border:2px solid $gray80;transform:translateX(-1px)}
 .icon-search:after {content: '';display: block;width:6px;height:2px;background: $gray80;margin:0 auto 0;transform: rotate(45deg) translate(3px,-5px);}
 
-.icon-arrow0 {
-  border: solid black;
-  border-width: 0 3px 3px 0;
-  display: inline-block;
-  padding: 3px;
-  transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-}
+
 
 .icon-caret {display:inline-block;width:0;height:0;border-top:4px solid $gray80;border-left:4px solid transparent;border-right:4px solid transparent;vertical-align:middle;}
 // .icon-caret {width:32px;height:32px;position:relative;}
@@ -59,18 +52,16 @@
 .icon-circled-arrow:before {content:'';display:block;width:8px;height:1px;background:$color-primary;position:absolute;left:4px;top:8px;transition:all .4s ease;}
 .icon-circled-arrow:after {content:'';display:block;width:3px;height:1px;background:$color-primary;position:absolute;left:8px;top:6px;transform:rotate(45deg);transition:all .4s ease;}
 
-.icon-chevron {}
-.icon-chevron:before {content:'';display:block;width:6px;height:6px;margin:auto;position:absolute;left:0;right:0;top:0;bottom:0;border-left:2px solid $gray40;border-top:2px solid $gray40;transform: rotate(-45deg);}
-.icon-chevron.--left:before {transform: rotate(-45deg);}
-.icon-chevron.--right:before {transform: rotate(135deg);}
+.icon-chevron {width:6px;height:6px;margin:auto;position:absolute;left:0;right:0;top:0;bottom:0;border-left:2px solid $gray40;border-top:2px solid $gray40;transform: rotate(-45deg);}
+.icon-arrow0 {display:inline-block;padding:3px;border:solid $gray80;border-width:0 2px 2px 0;transform:rotate(-45deg);}
 
 
 .icon-arrow {position: relative;}
 .icon-arrow:before {
   content: '';
   position: absolute;
-  border-top: 2px solid #000;
-  border-left: 2px solid #000;
+  border-top: 2px solid $gray80;
+  border-left: 2px solid $gray80;
   top: 50%;
   width: 6px;
   height: 6px;
@@ -79,7 +70,7 @@
 .icon-arrow:after {
   content: '';
   position: absolute;
-  background-color: #000;
+  background-color: $gray80;
   top: 50%;
   right: -5px;
   width: 12px;
@@ -89,8 +80,6 @@
 .icon-arrow.--left {transform:rotate(180deg);}
 
 
-
-
 .icon-person {position:relative;}
 .icon-person:before {content:'';display:block;width:6px;height:6px;border-radius:50%;margin:0 auto 1px;border:2px solid $gray80;}
 .icon-person:after {content:'';display:block;width:14px;height:4px;margin:0 auto;border-top-left-radius:4px;border-top-right-radius:4px;border:2px solid $gray80;}
@@ -98,7 +87,6 @@
 .icon-more {display:block;width:3px;height:3px;margin:4px auto;background:$gray40;border-radius:50%;position:relative;}
 .icon-more::before {content:'';display:block;width:3px;height:3px;background:$gray40;border-radius:50%;position: absolute;top:-5px;left:50%;margin-left:-1.5px;}
 .icon-more::after {content:'';display:block;width:3px;height:3px;background:$gray40;border-radius:50%;position: absolute;top:5px;left:50%;margin-left:-1.5px;}
-
 
 
 // filled-icon

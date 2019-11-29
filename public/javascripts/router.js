@@ -2,6 +2,7 @@ import { checkAllcheckbox, attachFile, inputVariation } from './input';
 import { enterTarget, stickyHeader, modal, eventToggle, eventToTop, eventClose, eventScrollAnimation, customCursor, stickyElement, scrollProgress } from './event';
 import { todayDate } from './utils';
 import { carousel, setDarkmode } from './event/index.js';
+import { films } from '../../views/films'; 
 
 // hash 말고 클릭하는 순간에 값을 알아야 함. data attr or hash
 
@@ -101,6 +102,42 @@ const router = () => {
 		navigationTrigger.classList.remove('is-active');
 		navigationTrigger.nextElementSibling.classList.remove('is-visible');
 	}
+
+
+
+
+	// 연도별
+	// 감독별
+	// 나라별
+	document.addEventListener('click', event => {
+		const filteredCountry = films.filter(item => item.country === '미국');
+		console.log(filteredCountry);
+		if(event.target.name === 'usa') {
+			document.querySelector('.board').innerHTML = '';
+			filteredCountry.map(item => {
+				document.querySelector('.board').innerHTML += `
+					<div class="board-body">
+						<div class="board-head-title">${item.id}</div>
+						<div class="board-head-title">${item.releaseDate}</div>
+						<div class="board-head-title">${item.titleKorean}<div>${item.titleEnglish}</div></div>
+						<div class="board-head-title">${item.director}</div>
+						<div class="board-head-title">${item.country}</div>
+					</div>`;
+			});
+		}
+	});
+	setTimeout(() => {
+		films.map(item => {
+			document.querySelector('.board').innerHTML += `
+			<div class="board-body">
+				<div class="board-head-title">${item.id}</div>
+				<div class="board-head-title">${item.releaseDate}</div>
+				<div class="board-head-title">${item.titleKorean}<div>${item.titleEnglish}</div></div>
+				<div class="board-head-title">${item.director}</div>
+				<div class="board-head-title">${item.country}</div>
+			</div>`;
+		});
+	}, 200);
 
 };
 

@@ -54,8 +54,8 @@
 .accordion-trigger i {float:right;margin-top:13px;margin-right:.5rem;}
 .accordion-trigger:hover {color:$gray80;}
 .accordion-trigger.is-active {color:$color-primary;}
-.accordion-panel {height:0;opacity:0;}
-.accordion-panel.is-visible {height:auto;margin:0 0 1rem 0;padding:2rem 0 4rem;box-sizing:border-box;animation:fadeup 0.4s $bezier-base forwards;}
+.accordion-panel {height:0;opacity:0;transition:all .25s;}
+.accordion-panel.is-visible {height:auto;opacity:1;margin:0 0 1rem 0;padding:2rem 0 4rem;box-sizing:border-box;/*animation:fadeup 0.4s $bezier-base forwards;*/}
 
 
 .image-centered {width:auto;height:auto;max-width:150%;max-height:150%;margin:auto;position:absolute;left:0;right:0;top:0;bottom:0;}

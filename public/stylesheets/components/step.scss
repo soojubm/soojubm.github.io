@@ -1,7 +1,7 @@
 .step {display:flex;justify-content:center;}
 .step-item {width:56px;padding:8px 4px;text-align:center;}
 .step-item-icon {display:block;width:32px;height:32px;margin:0 auto;border-radius:$radius400;background:$gray40;font-size:16px !important;color:#fff;line-height:32px !important;}
-.step-item-title {margin-top:8px;font-size:12px;line-height:1;}
+.step-item-title {margin-top:.5rem;font-size:12px;}
 .step-space {display:inline-block;width:21px;height:56px;}
 .step-space span {float:left;display:block;width:3px;height:3px;margin:21px 2px;border-radius:50%;background:$gray40;}
 
