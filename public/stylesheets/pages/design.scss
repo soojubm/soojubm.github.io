@@ -124,3 +124,20 @@
 .user-email + button + div {padding:1rem 0;border-bottom:1px solid $gray10;}
 .user footer {padding:1rem 0;font-size:12px;}
 .user footer a {margin:0 .5rem;color:$gray40;}
+
+
+
+
+.test {padding:1rem 1.5rem;box-shadow:$shadow400;position:relative;}
+.test h3 {margin:.5rem 0 .75rem 0;}
+.test time {}
+.test > span {margin-right:1rem;}
+.test > div {color:#999;}
+.test > div time {margin:0 1rem;}
+.test > div i {}
+.test button {}
+
+
+.countdown {display:flex;padding:1rem 5%;justify-content:flex-end;}
+.countdown > div {padding:0 .5rem;}
+.countdown > div > div {font-size:20px;}

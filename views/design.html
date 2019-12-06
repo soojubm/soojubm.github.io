@@ -14,6 +14,26 @@
 
   <section class="design-body">
     <article class="design-article" style="overflow:auto;">
+      
+    <div class="countdown">
+      <div class="days">
+        <div class="days-value"></div>
+        <div class="days-label">days</div>
+      </div>
+      <div class="hours">
+        <div class="hours-value"></div>
+        <div class="hours-label">hours</div>
+      </div>
+      <div class="minutes">
+        <div class="minutes-value"></div>
+        <div class="minutes-label">minutes</div>
+      </div>
+      <div class="seconds">
+        <div class="seconds-value"></div>
+        <div class="seconds-label">seconds</div>
+      </div>
+    </div>
+
       <div class="row --head">
         <!-- <div class="row-checkbox">Ranking</div> -->
         <div class="row-checkbox">Check</div>
@@ -127,23 +147,39 @@
       </section>
     </article>
 
-    <!-- 코맨트 / 대화형 유아이 / 피드 / 유저 카드 공용 마크업 가능할 듯 -->
-    <div class="post-comment-list-item --typeb">
-      <a class="post-comment-list-item-avatar" href="#"><img src=""></a>
-      <a class="post-comment-list-item-author" href="#">mb</a>
-      <time class="post-comment-list-item-date" datetime="2016">2018. 06. 28</time>
-      <p class="post-comment-list-item-text">얼른 퇴근하고 싶어 일이 손에 안 잡히네요ㅜㅜ</p>
-      <button type="button" class="post-comment-list-item-morevert js-toggle"><i class="icon-more"></i></button>
-      <menu class="post-comment-list-item-menu">
-        <button type="button" class="">수정</button>
-        <button type="button" class="">삭제</button>
-        <button type="button" class="">신고</button>
-      </menu>
-    </div>
+    <article class="design-article js-scroll-animation">
+      <h1 class="design-article-heading">Comment</h1>
+      <p class="design-article-description">코맨트 / 대화형 유아이 / 피드 / 유저 카드 공용 마크업 가능하려면 컨테이너 필요.</p>
+      <div class="post-comment-list-item --typeb">
+        <a class="post-comment-list-item-avatar" href="#"><img src=""></a>
+        <a class="post-comment-list-item-author" href="#">mb</a>
+        <time class="post-comment-list-item-date" datetime="2016">2018. 06. 28</time>
+        <p class="post-comment-list-item-text">부끄러우니까 코멘트 달지 마요.</p>
+        <button type="button" class="post-comment-list-item-morevert js-toggle"><i class="icon-more"></i></button>
+        <menu class="post-comment-list-item-menu">
+          <button type="button" class="">수정</button>
+          <button type="button" class="">삭제</button>
+          <button type="button" class="">신고</button>
+        </menu>
+      </div>
+      <div class="post-comment-list-item --typeb">
+        <a class="post-comment-list-item-avatar" href="#"><img src=""></a>
+        <a class="post-comment-list-item-author" href="#">mb</a>
+        <time class="post-comment-list-item-date" datetime="2016">2018. 06. 28</time>
+        <p class="post-comment-list-item-text">부끄러우니까 코멘트 달지 마요.</p>
+        <button type="button" class="post-comment-list-item-morevert js-toggle"><i class="icon-more"></i></button>
+        <menu class="post-comment-list-item-menu">
+          <button type="button" class="">수정</button>
+          <button type="button" class="">삭제</button>
+          <button type="button" class="">신고</button>
+        </menu>
+      </div>
+    </article>
 
     <article class="design-article js-scroll-animation">
       <h1 class="design-article-heading">Avatars</h1>
-      <p class="design-article-description">사진이 들어간 아바타를 사용할 때와 아이콘을 사용할 때 지정된 4가지의 사이즈만 사용해요.</p>
+      <p class="design-article-description">사진이 들어간 아바타를 사용할 때와 아이콘을 사용할 때 지정된 4가지의 사이즈만 사용하세요.</p>
+      <p class="design-article-description">리액트에서 좌우 컨테이너를 만들기. 좌측 아바타의 크기에따라 아바타 컨테이너의 패딩 조절.</p>
       <a href="" class="avatar --large --photo">
         <img src="/public/images/caleb-woods-182648-unsplash.jpg" alt="">
       </a>
@@ -230,6 +266,21 @@
         </div>
         <button class="tertiary-button" style="margin:2rem 0 0 0;width:50%;">자세히보기</button>
       </div>
+
+      
+
+      <div class="test">
+        <code>단원취약</code>
+        <code>난이도 <i>중하</i></code>
+        <code>기본</code>
+        <h3>다항식의 연산 - 복소수의 연산</h3>
+        <div>
+          <span>문항수 30</span>
+          <time>출제일 19. 11. 28</time>
+          <span>점수 <i>98</i></span>
+        </div>
+        <!-- <button class="ghost-button">출제하기</button> -->
+      </div>
     </article>
 
     <!-- <article class="design-article js-scroll-animation">
@@ -245,7 +296,7 @@
     </!-->
     <article class="design-article js-scroll-animation">
       <h1 class="design-article-heading">Breadcrumbs</h1>
-      <p class="design-article-description">페이지 레벨이 3단계 이상일 때 사용해요. 홈 아이콘 대신 텍스트를 사용하면 훨씬 깔끔해요. 모바일에서 사용하지 않아요.</p>
+      <p class="design-article-description">페이지 레벨이 3단계 이상일 때 사용해요. 홈 아이콘 대신 텍스트를 사용하니 깔끔해보인다. 모바일에서 사용하지 마세요.</p>
       <nav class="breadcrumbs">
         <a class="breadcrumbs-item breadcrumbs-home" href="/"><span aria-hidden="true">홈</span>Home</a>
         <a class="breadcrumbs-item " href="#">페이지 이름</a>
@@ -270,7 +321,7 @@
 
     <article class="design-article js-scroll-animation" style="padding-bottom:80px;">
       <h1 class="design-article-heading">Tooltip</h1>
-      <p class="design-article-description">툴팁의 위치를 지정할 수 있어야 하겠죠? 아래에서만 나와도 무방하겠어요.</p>
+      <p class="design-article-description">툴팁의 위치.</p>
       <aside class="tooltip">
         <span class="tooltip-target">마우스 오버 <i class="material-icons">error_outline</i></span>
         <div class="tooltip-content">
@@ -282,7 +333,7 @@
 
     <article class="design-article js-scroll-animation">
       <h1 class="design-article-heading">Lists</h1>
-      <p class="design-article-description">군집을 이루는 엘리먼트라면 모두 리스트로 취급될 수 있으니 주의해요. 리스트업된 텍스트 엘리먼트에만 리스트 태그로 마크업해요.</p>
+      <p class="design-article-description">군집을 이루는 엘리먼트라면 모두 리스트로 취급될 수 있으니 주의하요. 리스트업된 텍스트 노드만 리스트 태그로 마크업.</p>
       <ul class="list-sample">
         <li>unordered list, level 1
           <ul>
@@ -350,7 +401,7 @@
         <dd style="display: flex;align-items: center;">
           <div class="graph-item --horizental">
             <span class="graph-item-value">3.2</span>
-            <div class="graph-itefmm-bar" style="width:70%;"></div>
+            <div class="graph-item-bar" style="width:70%;"></div>
           </div>
         </dd>
       </dl>
@@ -437,7 +488,6 @@
         <button class="secondary-button --small --addable is-added" type="button">Rock <i class="icon-close" style="display:inline-block;background:#f1f3f4;padding:12px;position:absolute;right:3px;top:3px;"></i></button>
         <button class="secondary-button --small --addable" type="button">Typhography <i class="icon-plus" style="display:inline-block;background:#f1f3f4;padding:12px;position:absolute;right:3px;top:3px;"></i></button>
         <button class="secondary-button --small --addable is-added" type="button">Cinema <i class="icon-close" style="display:inline-block;background:#f1f3f4;padding:12px;position:absolute;right:3px;top:3px;"></i></button>
-        <button class="secondary-button --small --addable is-added" type="button">Novel <i class="icon-close" style="display:inline-block;background:#f1f3f4;padding:12px;position:absolute;right:3px;top:3px;"></i></button>
       </div>
    </article>
 
@@ -571,8 +621,8 @@
         <p class="dialog-heading">즐겨찾기 삭제</p>
         <p class="dialog-description">즐겨찾기를 삭제하시겠습니까?</p>
         <footer class="dialog-footer" role="group">
-          <button class="ghost-button" type="button">취소</button>
           <button class="primary-button" type="submit">삭제하기</button>
+          <button class="ghost-button" type="button">취소</button>
           <button class="toast-close js-close" type="button" style="position:aboslute;right:0;top:0;"><i class="icon-close"></i></button>
         </footer>
       </div>
@@ -859,7 +909,7 @@
 
     <article class="design-article js-scroll-animation">
       <h1 class="design-article-heading">Accordions</h1>
-      <p class="design-article-description">질의응답에 주로 사용해요. 공지사항 정도의 간단한 게시글에서도 사용할 수 있으나 그 이상의 경우에는 다른 유아이를 고민해봐요.</p>
+      <p class="design-article-description">질의응답에 주로 사용해요. 공지사항 정도의 간단한 게시글에서도 사용할 수 있으나 그 이상의 경우에는 다른 유아이를 고민하세요.</p>
       <button class="accordion-trigger js-accordion" type="button" aria-expanded="false"><i class="icon-plus"></i> 회원탈퇴는 어떻게 할 수 있나요?</button>
       <article class="accordion-panel">
         안녕
@@ -879,26 +929,6 @@
           <a class="dropdown-item" href="#url">Dropdown item</a>
         </div>
       </details>
-
-      <div class="test">
-        <code>단원취약</code>
-        <h3>다항식의 연산 - 복소수의 연산</h3>
-        <span>문항수 30</span>
-        <span>난이도 <i>중하</i></span>
-        <span>기본</span>
-        <div>
-          <time>출제일 19. 11. 28</time>
-          <span>점수 <i>98</i></span>
-        </div>
-      </div>
-      <style>
-      .test {border-top:1px solid #eee;border-bottom:1px solid #eee;padding:1rem 0;position:relative;}
-      .test h3 {margin:.5rem 0 .25rem 0;}
-      .test time {}
-      .test span {margin-right:1rem;}
-      .test > div {width:100px;position:absolute;right:0;top:50%;transform:translateY(-50%);}
-      .test > div i {}
-      </style>
     </article>
 
     <article class="design-article js-scroll-animation">

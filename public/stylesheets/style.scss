@@ -194,7 +194,7 @@
 .dialog-heading {margin:-.25rem 0 .125rem 0;color:$gray80;font-size:1.25rem;}
 .dialog-footer {overflow:hidden;margin:2rem 0 0 0;}
 .dialog-footer button {}
-.dialog-footer button:not(:nth-of-type(3)) {float:right;width:50%;}
+.dialog-footer button:not(:nth-of-type(3)) {border-radius:4px;}
 
 
 .quote {max-width:320px;padding:2rem;border-radius:4px;box-sizing:border-box;box-shadow:$shadow400;background:#fff;}

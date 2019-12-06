@@ -52,7 +52,7 @@ export const attachFile = () => {
 		attachedfiles = file.files;
 		if(attachedfiles.length === 0) return;
 		
-		if(attachedfilesnpm[0].size > 75 * 1024) {
+		if(attachedfiles[0].size > 75 * 1024) {
 			fileInput.setCustomValidity('The selected file must not be larger than 75 kB');
 			return;
 		}

@@ -72,7 +72,7 @@ body.is-sticky {padding-top:133px;}
 .post-comment-list-item-menu.is-visible button {display:block;width:100%;padding:8px 16px;font-size:12px;text-align:left;}
 .post-comment-list-item-menu.is-visible button:hover {background:#f7f7f5;}
 
-.post-comment-list-item.--typeb {background:$gray10;padding:1rem 1.5rem 1.25rem 1.5rem;}
+.post-comment-list-item.--typeb {margin-top:0;margin-bottom:1rem;background:$gray10;padding:1rem 1.5rem 1.25rem 1.5rem;}
 // .post-comment-list-item.-reply {position:relative;margin-top:.75rem;}
 // .post-comment-list-item-avatar {width:32px;height:32px;background:$gray80;border-radius:$radius400;overflow:hidden;position:absolute;left:0;top:6px;}
 // .post-comment-list-item-avatar img {}

@@ -8,7 +8,7 @@ $fixedHeaderHeight: 50px;
 .header .navigation-toggle {display:none;width:48px;height:48px;position:absolute;left:10px;top:50%;z-index:6;transform:translateY(-50%);margin-top: -2px;}
 .header .navigation-toggle:hover {background:#f9f9f6;}
 .header .navigation ul {display:flex;width:100%;max-width:50%;margin-left:72px;}
-.header .navigation ul li {margin:0;padding:0;position:relative;} // m p reset
+.header .navigation ul li {margin:0;padding:0;position:relative;z-index:1;} // m p reset
 .header .navigation ul li:before {display:none;} /* TODO: remove ul li default style */
 .header .navigation ul li > a {display:block;padding:15px 16px 18px;text-align:left;font-size:1.25rem;color:$gray80;transition:all .2s ease;}
 .header .navigation ul li > a i {margin-left:8px;}

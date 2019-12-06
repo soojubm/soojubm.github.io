@@ -2,6 +2,7 @@
 
 import './stylesheets/style.scss';
 import router from './javascripts/router';
+// import { router, routerPage} from './javascripts/router';
 import { tabMenu } from './javascripts/event';
 import { setGraph } from './javascripts/ui';
 import { inputNumber } from './javascripts/input';
