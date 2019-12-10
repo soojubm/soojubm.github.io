@@ -203,3 +203,7 @@
 .quote-byline {margin:1rem 0 0 0;}
 .quote-byline div {color:$gray80;}
 .quote-byline div + div {color:$gray40;}
+
+
+.offline {display:none;padding:1rem 1.5rem;border-radius:4px;background:$color-negative;text-align:center;position:fixed;left:10%;right:10%;top:6rem;z-index:9;}
+.offline p {font-size:1.25rem;color:#fff;}

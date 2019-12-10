@@ -81,6 +81,9 @@
       </span>
       <button class="topbanner-close js-close" type="button"><i class="icon-close"></i></button>
     </section> -->
+    <aside class="offline js-offline">
+      <p>인터넷에 연결되어 있지 않습니다.</p>
+    </aside>
 
     <aside class="toast">
       <h1 class="toast-heading">부끄러우니까 보지마요!</h1>
@@ -107,6 +110,7 @@
             <!-- <p>수줍이와(과) 일치하는 검색결과가 없습니다.</p> -->
             <h1 class="header-user-search-form-heading">How can we help?</h1>
             <fieldset class="textfield">
+              <p>Try This: soojubm</p>
               <legend class="filter-fieldset-legend" aria-hidden="true">검색하기</legend>
               <label class="textfiled-label" for="help-search" aria-hidden="true">검색하기</label>
               <input class="textfield-input" type="search" id="help-search" placeholder="검색어를 입력해 주세요.">
@@ -264,13 +268,19 @@
       </nav>
       <address class="footer-address">
         <span class="footer-address-logo"><img src="/public/images/common/logo.png" alt="수줍음"/></span>
-        <div class="footer-address-social">
+        <div class="footer-terms">
+          <h5 class="footer-terms-heading" aria-hidden="false">약관 등등</h5>
+          <a class="footer-terms-link" href="https://www.facebook.com/soojubm"  title="facebook" target="_blank"><span class="">이용약관</span><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+          <a class="footer-terms-link" href="#" title="instagram" target="_blank">개인정보취급방침</a>
+          <a class="footer-terms-link" href="https://kr.pinterest.com/soojubm" title="pinterest" target="_blank">이메일무단수집거부</a>
+        </div>
+        <!-- <div class="footer-address-social">
           <h5 class="footer-address-social-heading" aria-hidden="false">소셜 미디어 링크</h5>
           <a class="footer-address-social-link" href="https://www.facebook.com/soojubm" title="facebook" target="_blank"><span class="">Facebook</span><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
           <a class="footer-address-social-link" href="#" title="instagram" target="_blank"><span class="">Instagram</span><i class="fa fa-instagram" aria-hidden="true"></i></a>
           <a class="footer-address-social-link" href="https://kr.pinterest.com/soojubm" title="pinterest" target="_blank"><span class="">Pinterest</span><i class="fa fa-pinterest" aria-hidden="true"></i></a>
           <a class="footer-address-social-link" href="https://github.com/soojubm" title="github" target="_blank"><span class="">Github</span><i class="fa fa-github" aria-hidden="true"></i></a>
-        </div>
+        </div> -->
         <div class="footer-address-info">
           스튜디오 수줍음(주)<br />
           서울시 강서구 화곡로 1818, 3층 | 대표 이경수 000-00-0000 | 대표전화 02-1234-5678<br />
@@ -281,13 +291,25 @@
           </dl> -->
           <abbr title="phone"></abbr>
         </div>
-        <!-- <section class="footer-terms">
-          <h5 class="footer-link-heading" aria-hidden="false">약관 등등</h5>
-          <a class="footer-link-item" href="https://www.facebook.com/soojubm"  title="facebook" target="_blank"><span class="">이용약관</span><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
-          <a class="footer-link-item" href="#" title="instagram" target="_blank">개인정보취급방침</a>
-          <a class="footer-link-item" href="https://kr.pinterest.com/soojubm" title="pinterest" target="_blank">이메일무단수집거부</a>
-        </section> -->
         <small class="footer-copyright">© 2019 soojubm. ALL RIGHTS RESERVED.</small>
+        <div class="countdown">
+          <div class="days">
+            <div class="days-value js-days"></div>
+            <div class="days-label">days</div>
+          </div>
+          <div class="hours">
+            <div class="hours-value js-hours"></div>
+            <div class="hours-label">hours</div>
+          </div>
+          <div class="minutes">
+            <div class="minutes-value js-minutes"></div>
+            <div class="minutes-label">minutes</div>
+          </div>
+          <div class="seconds">
+            <div class="seconds-value js-seconds"></div>
+            <div class="seconds-label">seconds</div>
+          </div>
+        </div>
       </address>
     </footer>
   <script type="text/javascript" src="/bundle.js"></script></body>

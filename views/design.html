@@ -13,81 +13,12 @@
 
 
   <section class="design-body">
-    <article class="design-article" style="overflow:auto;">
-      
-    <div class="countdown">
-      <div class="days">
-        <div class="days-value"></div>
-        <div class="days-label">days</div>
-      </div>
-      <div class="hours">
-        <div class="hours-value"></div>
-        <div class="hours-label">hours</div>
-      </div>
-      <div class="minutes">
-        <div class="minutes-value"></div>
-        <div class="minutes-label">minutes</div>
-      </div>
-      <div class="seconds">
-        <div class="seconds-value"></div>
-        <div class="seconds-label">seconds</div>
-      </div>
-    </div>
+    <div class="reactRow">
 
-      <div class="row --head">
-        <!-- <div class="row-checkbox">Ranking</div> -->
-        <div class="row-checkbox">Check</div>
-        <div class="row-avatar">Avatar</div>
-        <div class="row-id">Id</div>
-        <div class="row-phone">Phone</div>
-        <div class="row-address">Address</div>
-        <div class="row-delete">Delete</div>
-      </div>
-      <div class="row">
-        <div class="row-checkbox">
-          <div>
-            <input type="checkbox" id="temp1">
-            <label for="temp1"></label>
-          </div>
-        </div>
-        <div class="row-avatar"><div class="avatar"><img src="/public/images/caleb-woods-182648-unsplash.jpg" alt=""></div></div>
-        <div class="row-id">soojubm</div>
-        <div class="row-phone">010.3121.7045</div>
-        <div class="row-address">서울시 강서구 까치산로</div>
-        <div class="row-delete"><button class="tertiary-button --small">삭제</button></div>
-        <!-- <div class="row-progress"><button class="primary-button --small">출제하기</button></div> -->
-      </div>
-      <div class="row">
-        <div class="row-checkbox">
-          <div>
-            <input type="checkbox" id="temp1">
-            <label for="temp1"></label>
-          </div>
-        </div>
-        <div class="row-avatar"><div class="avatar"><img src="/public/images/caleb-woods-182648-unsplash.jpg" alt=""></div></div>
-        <div class="row-id">springsteen</div>
-        <div class="row-phone">010.3121.7045</div>
-        <div class="row-address">서울시 강서구 까치산로</div>
-        
-        <div class="row-delete"><button class="tertiary-button --small">삭제</button></div>
-        <!-- <div class="row-progress"><button class="primary-button --small">출제하기</button></div> -->
-      </div>
-      <div class="row">
-        <div class="row-checkbox">
-          <div>
-            <input type="checkbox" id="temp1" checked>
-            <label for="temp1"></label>
-          </div>
-        </div>
-        <div class="row-avatar"><div class="avatar"><img src="/public/images/caleb-woods-182648-unsplash.jpg" alt=""></div></div>
-        <div class="row-id">google</div>
-        <div class="row-phone">010.3121.7045</div>
-        <div class="row-address">서울시 강서구 까치산로</div>
-        
-        <div class="row-delete"><button class="tertiary-button --small">삭제</button></div>
-        <!-- <div class="row-progress"><button class="primary-button --small">출제하기</button></div> -->
-      </div>
-    </article>
+    </div>
+    <style>
+    .reactRow {display:flex;}
+    </style>
     <article class="design-article grayscale">
       <h1 class="design-article-heading">Colors</h1>
       <p class="design-article-description">칼라칼라컬러컬러🐣</p>
@@ -179,7 +110,6 @@
     <article class="design-article js-scroll-animation">
       <h1 class="design-article-heading">Avatars</h1>
       <p class="design-article-description">사진이 들어간 아바타를 사용할 때와 아이콘을 사용할 때 지정된 4가지의 사이즈만 사용하세요.</p>
-      <p class="design-article-description">리액트에서 좌우 컨테이너를 만들기. 좌측 아바타의 크기에따라 아바타 컨테이너의 패딩 조절.</p>
       <a href="" class="avatar --large --photo">
         <img src="/public/images/caleb-woods-182648-unsplash.jpg" alt="">
       </a>
@@ -195,12 +125,10 @@
       </a>
     </article>
 
-
     <article class="design-article js-scroll-animation grayscale">
       <h1 class="design-article-heading">Cards</h1>
       <p class="design-article-description">하나의 마크업으로 가로형 세로형이 가능하도록...</p>
       <div class="card" style="width:320px;margin:2rem 0;">
-        <figure class="card-byline"><img src="" alt=""><figcaption class="card-byline-name">수줍이</figcaption></figure>
         <figure class="card-thumbnail"><img alt=""></figure>
         <h3 class="card-title">카드 유아이</h3>
         <!-- <div class="card-price">
@@ -209,10 +137,11 @@
           <em>할인율 20%</em>
         </div> -->
         <time class="card-date">September 12, 2017</time>
+        <figure class="card-byline"><img src="" alt=""><figcaption class="card-byline-name">수줍이</figcaption></figure>
         <div class="card-tags">
-          <code>기획</code>
-          <code>디자인</code>
-          <code>개발(워드프레스)</code>
+          <span class="tag">기획</span>
+          <span class="tag">디자인</span>
+          <span class="tag">개발(워드프레스)</span>
         </div>
         <hr />
         <figure class="card-item">
@@ -251,8 +180,9 @@
           <button class="tertiary-button">Sign out</button>
         </div>
         <footer>
-          <a>Privacy Policy</a>
-          <a>Terms of Service</a>
+          <a href="#">Privacy Policy</a>
+          <i class="icon-bullet"></i>
+          <a href="#">Terms of Service</a>
         </footer>
       </div>
       <div class="quote" style="margin:2rem 0;">
@@ -267,33 +197,31 @@
         <button class="tertiary-button" style="margin:2rem 0 0 0;width:50%;">자세히보기</button>
       </div>
 
-      
-
-      <div class="test">
-        <code>단원취약</code>
-        <code>난이도 <i>중하</i></code>
-        <code>기본</code>
+      <!-- <div class="test">
+        <span class="tag">단원취약</span>
+        <span class="tag">난이도 <i>중하</i></span>
+        <span class="tag">기본</span>
         <h3>다항식의 연산 - 복소수의 연산</h3>
         <div>
           <span>문항수 30</span>
           <time>출제일 19. 11. 28</time>
           <span>점수 <i>98</i></span>
         </div>
-        <!-- <button class="ghost-button">출제하기</button> -->
-      </div>
+      </div> -->
     </article>
 
-    <!-- <article class="design-article js-scroll-animation">
+    <article class="design-article js-scroll-animation">
       <h1 class="design-article-heading">Emphasis</h1>
       <p class="design-article-description">수줍이는 이렇게 강조해요. 특정 단어를 강조하기 보담 시선을 끄는 카피를 선택하는 안목을 기르세요. 커밍 순...</p>
       <ol class="list-sample">  
-        <li>수줍이는 <em>이렇게</em> 강조해요. <small>링크 텍스트로 오인될 수 있으니 주의해요.</small></li>
-        <li>수줍이는 <b>이렇게</b> 강조해요. <small>하나의 폰트 패밀리만 사용하기 때문에 볼드로 강조할 수 없어요.</small></li>
-        <li>수줍이는 <u>이렇게</u> 강조해요. <small>언더라인으로 강조해요. 못 생겼으니 고쳐 써야 겠지요?</small></li>
-        <li>수줍이는 <i style="font-style:italic;">이렇게</i> 강조해요. <small>한글에는 이탤릭의 개념이 없으니 주의해요.</small></li>
-        <li>수줍이는 <sup>이렇게</sup> 강조해요. <small>수치를 표현할 때만 사용하세요.</small></li>
+        <li>수줍이는 <em>이렇게</em> 강조해요. <div>링크 텍스트로 오인될 수 있으니 주의하세요.</div></li>
+        <li>수줍이는 <b>이렇게</b> 강조해요. <div>하나의 폰트 패밀리만 사용하기 때문에 볼드로 강조할 수 없다요.</div></li>
+        <li>수줍이는 <u>이렇게</u> 강조해요. <div>언더라인으로 강조해요.</div></li>
+        <li>수줍이는 <i style="font-style:italic;">이렇게</i> 강조해요. <div>한글에는 이탤릭의 개념이 없습니다.</div></li>
+        <li>수줍이는 <sup>이렇게</sup> 강조해요. <div>수치를 표현할 때만 사용하세요.</div></li>
       </ol>
-    </!-->
+    </article>
+    
     <article class="design-article js-scroll-animation">
       <h1 class="design-article-heading">Breadcrumbs</h1>
       <p class="design-article-description">페이지 레벨이 3단계 이상일 때 사용해요. 홈 아이콘 대신 텍스트를 사용하니 깔끔해보인다. 모바일에서 사용하지 마세요.</p>
@@ -314,8 +242,8 @@
       <h1 class="design-article-heading">Tags</h1>
       <p class="design-article-description">임시로 code태그로 마크업해서 사용 중이에요. 닫기 아이콘 연하게.</p>
       <div class="tags" role="list">
-        <code class="tags-item" role="listitem">I'm hashtag</code>
-        <code class="tags-item" style="position:relative;" role="listitem">태그 <i class="icon-close" style="display:inline-block;margin-left:4px;padding:4px;"></i></code>
+        <span class="tag tags-item" role="listitem">I'm hashtag</span>
+        <span class="tag tags-item" style="position:relative;" role="listitem">태그 <i class="icon-close" style="display:inline-block;margin-left:4px;padding:4px;"></i></span>
       </div>
     </article>
 
@@ -323,7 +251,7 @@
       <h1 class="design-article-heading">Tooltip</h1>
       <p class="design-article-description">툴팁의 위치.</p>
       <aside class="tooltip">
-        <span class="tooltip-target">마우스 오버 <i class="material-icons">error_outline</i></span>
+        <span class="tooltip-target"><i class="material-icons">error_outline</i></span>
         <div class="tooltip-content">
           <p>마우스를 올렸을 때 나오는 툴팁입니다.</p>
           <p>스타일시트의 인접 선택자로 만들어져 있다요.</p>
@@ -418,7 +346,7 @@
         <dt>클라우드 스토리지</dt>
         <dd style="display:block;align-items: center;margin-top:-.5rem;">
           <div class="graph-item --horizental" style="margin:0;width:100%;">
-            <span class="graph-item-value">4.8</span>
+            <span class="graph-item-value" style="right:0;bottom:12px;">4.8</span>
             <div class="graph-item-bar"></div>
           </div>
           <small>2GB 중 5,218KB 사용됨</small>
@@ -485,7 +413,6 @@
 
     <article class="design-article">
       <div style="display:flex;justify-content:center;">
-        <button class="secondary-button --small --addable is-added" type="button">Rock <i class="icon-close" style="display:inline-block;background:#f1f3f4;padding:12px;position:absolute;right:3px;top:3px;"></i></button>
         <button class="secondary-button --small --addable" type="button">Typhography <i class="icon-plus" style="display:inline-block;background:#f1f3f4;padding:12px;position:absolute;right:3px;top:3px;"></i></button>
         <button class="secondary-button --small --addable is-added" type="button">Cinema <i class="icon-close" style="display:inline-block;background:#f1f3f4;padding:12px;position:absolute;right:3px;top:3px;"></i></button>
       </div>
@@ -517,13 +444,13 @@
         <button class="icon-button" type="button"><i class="icon-person"></i></button>
         <button class="icon-button" type="button"><i class="icon-search"></i></button>
         <button class="icon-button" type="button"><i class="icon-chevron"></i></button>
-        <button class="icon-button" type="button"><i class="icon-arrow0"></i></button>
         <button class="icon-button" type="button"><i class="icon-arrow"></i></button>
         <button class="icon-button" type="button"><i class="icon-more"></i></button>
         <button class="icon-button" type="button"><i class="icon-plus"></i></button>
         <button class="icon-button" type="button"><i class="icon-close"></i></button>
         <button class="icon-button" type="button"><i class="icon-caret"></i></button>
         <button class="icon-button" type="button"><i class="icon-hamberger"></i></button>
+        <button class="icon-button" type="button"><i class="icon-bullet"></i></button>
         <!-- <button class="icon-button" type="button"><i class="icon-home"><span></span><span></span></i></button> -->
       </div>
     </article>
@@ -599,7 +526,7 @@
       <h1 class="design-article-heading">Dropdown</h1>
       <p class="design-article-description">+ hidden menu</p>
       <div class="header-user-account dropdown">
-        <button class="ghost-button js-accordion dropdown-trigger" aria-haspopup="menu" aria-expanded="false">
+        <button class="js-accordion dropdown-trigger" aria-haspopup="menu" aria-expanded="false">
           드롭다운
           <i class="icon-caret" style="margin-left:1rem;"></i>
         </button>
@@ -618,12 +545,12 @@
       <h1 class="design-article-heading">Dialog</h1>
       <p class="design-article-description">예 아니오 예!</p>
       <div class="dialog" role="dialog">
-        <p class="dialog-heading">즐겨찾기 삭제</p>
-        <p class="dialog-description">즐겨찾기를 삭제하시겠습니까?</p>
+        <p class="dialog-heading">부끄러우니까 보지마요?</p>
+        <p class="dialog-description">토스트 유아이를 만드는 거에요. 쿠키 사용 승인 요청 내용이 들어갈 수도 있고 뭐, 그렇답니다.</p>
         <footer class="dialog-footer" role="group">
-          <button class="primary-button" type="submit">삭제하기</button>
+          <button class="secondary-button" type="submit">삭제</button>
           <button class="ghost-button" type="button">취소</button>
-          <button class="toast-close js-close" type="button" style="position:aboslute;right:0;top:0;"><i class="icon-close"></i></button>
+          <!-- <button class="toast-close js-close" type="button" style="position:aboslute;right:0;top:0;"><i class="icon-close"></i></button> -->
         </footer>
       </div>
     </article>
@@ -653,6 +580,78 @@
         <input type="text" name="other" class="textfield-input" placeholder="다른 거 뭔지 입력해주세요.">
       </div>
     </article>
+
+    <article class="design-article js-scroll-animation">
+      <h1 class="design-article-heading">Calendar</h1>
+      <p class="design-article-description">checkbox, checkall, intermediate</p>
+      <div class="calendar">
+        <h3>12월</h3>
+        <div class="calendar-head">
+          <div>일</div>
+          <div>월</div>
+          <div>화</div>
+          <div>수</div>
+          <div>목</div>
+          <div>금</div>
+          <div>토</div>
+        </div>
+        <div class="calendar-body">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+          <div>6</div>
+          <div>7</div>
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+          <div>6</div>
+          <div>7</div>
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+          <div>6</div>
+          <div>7</div>
+        </div>
+      </div>
+    </article>
+
+    <style>
+    .calendar {
+      width: 250px;
+      --date-width: 32px;
+      --date-height: 32px;
+      --date-background: #eee;
+    }
+    .calendar-head {margin-top: 16px !important;
+      display: grid !important;
+      grid-template-columns: repeat(7, 1fr) !important;
+      gap: 4px !important;
+      font-size:12px;
+    }
+    .calendar-head div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width:32px;height:32px;border-radius:4px;
+    }
+    .calendar-body {
+      display: grid !important;
+      grid-template-columns: repeat(7, 1fr) !important;
+      gap: 4px !important;
+    }
+    .calendar-body div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width:32px;height:32px;border-radius:4px;background:#eee;font-size:12px;
+    }
+    </style>
 
     <article class="design-article js-scroll-animation">
       <h1 class="design-article-heading">Radio</h1>
@@ -726,7 +725,7 @@
         <input class="textfield-input js-number-input" id="number" type="number" min="5" max="20" placeholder="숫자만 입력가능합니다."></input>
         <span class="textfield-suffix">@soojubm.com</span>
       </div>
-      <div class="textfield is-invalid" style="margin:2rem 0;">
+      <div class="textfield" style="margin:2rem 0;">
         <label class="textfield-label" for="">아이디</label>
         <input class="textfield-input" type="text" placeholder="soojubm" readonly></input>
       </div>
@@ -874,7 +873,7 @@
             <td>む</td>
             <td>め</td>
             <td>も</td>
-            <td class="right"><code>12,000</code></td>
+            <td class="right"><span class="tag">12,000</span></td>
           </tr>
           <tr>
             <td><input type="checkbox"><label for=""></label></td>
@@ -905,16 +904,71 @@
           </tr>
         </tbody>
       </table>
+      <div style="overflow:auto;">
+        <div class="row --head">
+          <!-- <div class="row-checkbox">Ranking</div> -->
+          <div class="row-checkbox">Check</div>
+          <div class="row-avatar">Avatar</div>
+          <div class="row-id">Id</div>
+          <div class="row-phone">Phone</div>
+          <div class="row-address">Address</div>
+          <div class="row-delete">Delete</div>
+        </div>
+        <div class="row">
+          <div class="row-checkbox">
+            <div>
+              <input type="checkbox" id="temp1">
+              <label for="temp1"></label>
+            </div>
+          </div>
+          <div class="row-avatar"><div class="avatar"><img src="/public/images/caleb-woods-182648-unsplash.jpg" alt=""></div></div>
+          <div class="row-id">soojubm</div>
+          <div class="row-phone">010.3121.7045</div>
+          <div class="row-address">서울시 강서구 까치산로</div>
+          <div class="row-delete"><button class="tertiary-button --small">삭제</button></div>
+          <!-- <div class="row-progress"><button class="primary-button --small">출제하기</button></div> -->
+        </div>
+        <div class="row">
+          <div class="row-checkbox">
+            <div>
+              <input type="checkbox" id="temp1">
+              <label for="temp1"></label>
+            </div>
+          </div>
+          <div class="row-avatar"><div class="avatar"><img src="/public/images/caleb-woods-182648-unsplash.jpg" alt=""></div></div>
+          <div class="row-id">springsteen</div>
+          <div class="row-phone">010.3121.7045</div>
+          <div class="row-address">서울시 강서구 까치산로</div>
+          
+          <div class="row-delete"><button class="tertiary-button --small">삭제</button></div>
+          <!-- <div class="row-progress"><button class="primary-button --small">출제하기</button></div> -->
+        </div>
+        <div class="row">
+          <div class="row-checkbox">
+            <div>
+              <input type="checkbox" id="temp1" checked>
+              <label for="temp1"></label>
+            </div>
+          </div>
+          <div class="row-avatar"><div class="avatar"><img src="/public/images/caleb-woods-182648-unsplash.jpg" alt=""></div></div>
+          <div class="row-id">google</div>
+          <div class="row-phone">010.3121.7045</div>
+          <div class="row-address">서울시 강서구 까치산로</div>
+          
+          <div class="row-delete"><button class="tertiary-button --small">삭제</button></div>
+          <!-- <div class="row-progress"><button class="primary-button --small">출제하기</button></div> -->
+        </div>
+      </div>
     </article>
 
     <article class="design-article js-scroll-animation">
       <h1 class="design-article-heading">Accordions</h1>
       <p class="design-article-description">질의응답에 주로 사용해요. 공지사항 정도의 간단한 게시글에서도 사용할 수 있으나 그 이상의 경우에는 다른 유아이를 고민하세요.</p>
-      <button class="accordion-trigger js-accordion" type="button" aria-expanded="false"><i class="icon-plus"></i> 회원탈퇴는 어떻게 할 수 있나요?</button>
+      <button class="accordion-trigger js-accordion" type="button" aria-expanded="false"><i class="icon-caret"></i> 회원탈퇴는 어떻게 할 수 있나요?</button>
       <article class="accordion-panel">
         안녕
       </article>
-      <button class="accordion-trigger js-accordion" type="button" aria-expanded="false"><i class="icon-plus"></i> 주문을 취소하고 싶어요.</button>
+      <button class="accordion-trigger js-accordion" type="button" aria-expanded="false"><i class="icon-caret"></i> 주문을 취소하고 싶어요.</button>
       <article class="accordion-panel">
         안녕
       </article>
@@ -978,7 +1032,7 @@
     <article class="design-article js-scroll-animation">
       <h1 class="design-article-heading">Graph</h1>
       <p class="design-article-description">옿이</p>
-      <div class="graph">
+      <div class="graph js-graph">
         <div class="graph-heading">1월 26일 <em>컴퓨터통신 분야</em>에서는<br><em>7백명의 지식iN</em>들이 답변하셨습니다.</div>
         <div class="graph-item">
           <span class="graph-item-value">40%</span>
@@ -1089,14 +1143,11 @@
     .typography div {margin:0 0 2rem;}
     .typography div div {padding:1rem 1.5rem 1.25rem;background:#f1f3f4;border-radius:4px;}
     </style>
-
       <i class="icon-check1"></i>
       <span class="letter-piece"><i>스</i></span>
-      <span class="letter-piece"><i>타</i></span>
-      <span class="letter-piece"><i>일</i></span>
 
       <!-- 기본 폼 태그 테스트 -->
-      <form action="">
+      <!-- <form action="">
         <input type="checkbox">
         <input type="radio">
         <input type="text">
@@ -1107,7 +1158,7 @@
         </select>
         <textarea name="" id="" cols="30" rows="10"></textarea>
         <button type="submit">제출</button>
-      </form>
+      </form> -->
 
       <style>
       .icon-check1 {display:block;width:40px;height:40px;border-radius:50%;border:2px dotted #000;position:relative;}

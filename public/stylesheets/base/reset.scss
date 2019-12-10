@@ -12,7 +12,6 @@ strong,b,th,legend {font-weight:normal;color:$gray80;}
 cite,i,address,em,dfn {font-style:normal;} em {color:$color-primary;} small {font-size:12px;} time {} del {color:$gray40;} abbr {text-decoration:none;}
 a {text-decoration:none $color-primary;text-decoration-skip-ink:auto;color:$color-primary;} a:link,a:visited {} a:hover,a:focus {} a:active {}
 mark {padding:0 .25rem;border-radius:2px;background:rgba(0,0,0,1);color:#fff;}
-code, kbd {padding:4px .5rem 5px;font-family:'consolas';font-size:12px;color:$gray60;background-color:$gray10;border-radius:$radius400;font-family:inherit;vertical-align:middle;}
 u {text-decoration:none;position:relative;z-index:1;}
 u:before {content:'';width:104%;margin-left:-2%;height:4px;background-image:linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);background-repeat: no-repeat;}
 hr {height:1px;overflow:visible;position:relative;}
@@ -21,6 +20,8 @@ hr:after {content:'';display:block;width:100%;height:1px;background:$gray10;}
 html {min-width:320px;height:100%;overflow-x:hidden;font:14px/1.8 'Asap', 'AritaDotum', 'Apple SD Gothic Neo', sans-serif;color:$gray60;-webkit-text-size-adjust:100%;/*-webkit-font-smoothing:antialiased;*/}
 // body {font-size:.875rem;}
 // text-rendering: optimizeLegibility;
+
+.tag {padding:4px .5rem 5px;font-family:'consolas';font-size:12px;color:$gray60;background-color:$gray10;border-radius:$radius400;font-family:inherit;vertical-align:middle;}
 
 table {width:100%;border-collapse:collapse;border-spacing:0;border-left-style:hidden;border-right-style:hidden;}
 table caption {padding:.5rem 0;font-size:12px;text-align:left;}

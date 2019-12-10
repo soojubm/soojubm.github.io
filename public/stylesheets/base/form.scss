@@ -205,10 +205,13 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 .textfield.--floating label {height:20px;position:absolute;left:0;top:6px;transition:all 0.2s ease;cursor:text;}
 .textfield.--floating input:focus + label {color:$gray40;font-size:11px;top:-12px;}
 
-
+.is-disabled {}
+.is-actived {}
+.is-succesed {}
 .is-expanded {}
 .is-valid {}
 .is-invalid {}
+.is-invalid .textfield-label {color:$color-negative;}
 .is-invalid .textfield-input {border-color:$color-negative;}
 .is-invalid .textfield-byte {color:$color-negative;}
 .is-invalid .textfield-byte b {color:$color-negative;}

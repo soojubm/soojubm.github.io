@@ -4,9 +4,7 @@
 .horizental-text h1 {width:200%;text-align:right;font-family:'AritaBuri';font-size:10rem;position: absolute;right:-100%;transition: all .2s;}
 </style>
 <script>
-
 	document.addEventListener('DOMContentLoaded', function(){
-		console.log('fafaf');
 		const target = document.querySelector('.horizental-text h1');
 		window.addEventListener('scroll', () => {
 			console.log('aaa');
@@ -15,13 +13,12 @@
 			if(window.pageYOffset > target.offsetTop - target.clientHeight) {
 			}
 			target.style.right = aaa + 'px';
-				//console.log(window.pageYOffset, element.offsetTop);
-				//let aaa = (window.pageYOffset - element.offsetTop) * -1.5;
-				//let bbb = aaa > 0 ? -aaa : aaa;
-				//element.style.backgroundPosition = 'center ' + aaa + 'px'; 
+			//console.log(window.pageYOffset, element.offsetTop);
+			//let aaa = (window.pageYOffset - element.offsetTop) * -1.5;
+			//let bbb = aaa > 0 ? -aaa : aaa;
+			//element.style.backgroundPosition = 'center ' + aaa + 'px'; 
 		});	
 	})
-
 </script>
 <!-- 
 	<form class="filter">
@@ -121,11 +118,11 @@
 				<a class="profile-user-description-more" href="javascript:alert('준비중');">더보기</a>
 			</p>
 			<div class="profile-user-hashtags">
-				<code>#HTML5</code>
-				<code>#SASS</code>
-				<code>#VanillaJS</code>
-				<code>#ReactJS</code>
-				<code>#Mobx</code>
+				<span class="tag">#HTML5</span>
+				<span class="tag">#SASS</span>
+				<span class="tag">#VanillaJS</span>
+				<span class="tag">#ReactJS</span>
+				<span class="tag">#Mobx</span>
 			</div>
 			<div class="profile-controls" style="display:flex;">
 				<button class="profile-controls-follow primary-button" type="button" style="width:65%;">Follow</button>
@@ -163,7 +160,6 @@
 				<button class="profile-tablist-tab" role="tab" aria-selected="false" data-index="2">컴포넌트 <i class="profile-tablist-tab-badge">18</i></button>
 				<button class="profile-tablist-tab" role="tab" aria-selected="false" data-index="3">빈 상태 <i class="profile-tablist-tab-badge">18</i></button>
 			</nav>
-
 			<div class="profile-display">
 				<h6 class="profile-display-heading" aria-hidden="true">제목</h6>
 				<button class="profile-display-button" onclick="javascript:alert('준비중');"><i class="material-icons">list</i> <b aria-hidden="true">List</b></button>
@@ -171,17 +167,17 @@
 			</div>
 
 			<section class="profile-tablist-panel" role="tabpanel" aria-hidden="" data-index="1">
-				<!-- <p style="margin:1rem 0;padding:1rem 0 0;">Viewing <em class=""> 1,000 </em> Projects</p> -->
+				<p style="margin:1rem 0;padding:1rem 0 0;">Viewing <em class=""> 1,000 </em> Projects</p>
 				<section class="works">
 					<a class="card js-modal" href="#modalTest">
-						<figure class="card-byline"><img src="/public/images/" alt="" /><figcaption class="card-byline-name">수줍이</figcaption></figure>
 						<figure class="card-thumbnail"><img src="/public/images/caleb-woods-182648-unsplash.jpg" alt="" /></figure>
 						<h3 class="card-title">문화예술위원회 창작산실.</h3>
 						<time class="card-date">September 12, 2017</time>
+						<figure class="card-byline"><img src="/public/images/" alt="" /><figcaption class="card-byline-name">수줍이</figcaption></figure>
 						<div class="card-tags">
-							<code>기획</code>
-							<code>디자인</code>
-							<code>개발(워드프레스)</code>
+							<span class="tag">기획</span>
+							<span class="tag">디자인</span>
+							<span class="tag">개발(워드프레스)</span>
 						</div>
 						<button class="card-more icon-button" type="button"><i class="icon-more"></i></button>
 					</a>
@@ -207,14 +203,14 @@
 						</article>
 					</aside>
 					<span class="card js-modal">
-						<figure class="card-byline"><img src="" alt="" /><figcaption class="card-byline-name">수줍이</figcaption></figure>
 						<figure class="card-thumbnail"><img src="/public/images/caleb-woods-182648-unsplash.jpg" alt="" /></figure>
 						<h3 class="card-title">스터디움 프로모션 웹사이트</h3>
 						<time class="card-date">September 12, 2017</time>
 						<button class="card-more icon-button" type="button"><i class="icon-more"></i></button>
+						<figure class="card-byline"><img src="" alt="" /><figcaption class="card-byline-name">수줍이</figcaption></figure>
 						<div class="card-tags">
-							<code>기획</code>
-							<code>디자인</code>
+							<span class="tag">기획</span>
+							<span class="tag">디자인</span>
 						</div>
 					</span>
 					<aside class="modal" role="dialog">
@@ -232,14 +228,14 @@
 						</article>
 					</aside>
 					<span class="card js-modal">
-						<figure class="card-byline"><img src="" alt="" /><figcaption class="card-byline-name">수줍이</figcaption></figure>
 						<figure class="card-thumbnail"><img src="/public/images/caleb-woods-182648-unsplash.jpg" alt="" /></figure>
 						<h3 class="card-title">페이머스 프로덕트 디자인</h3>
 						<time class="card-date">재능 플랫폼 , September 12, 2017</time>
 						<button class="card-more icon-button" type="button"><i class="icon-more"></i></button>
+						<figure class="card-byline"><img src="" alt="" /><figcaption class="card-byline-name">수줍이</figcaption></figure>
 						<div class="card-tags">
-							<code>기획</code>
-							<code>디자인</code>
+							<span class="tag">기획</span>
+							<span class="tag">디자인</span>
 						</div>
 					</span>
 					<aside class="modal" role="dialog">
@@ -258,14 +254,14 @@
 						</article>
 					</aside>
 					<span class="card js-modal">
-						<figure class="card-byline"><img src="" alt="" /><figcaption class="card-byline-name">수줍이</figcaption></figure>
 						<figure class="card-thumbnail"><img src="/public/images/caleb-woods-182648-unsplash.jpg" alt="" /></figure>
 						<h3 class="card-title">기타 모음</h3>
 						<time class="card-date">-</time>
 						<button class="card-more icon-button" type="button"><i class="icon-more"></i></button>
+						<figure class="card-byline"><img src="" alt="" /><figcaption class="card-byline-name">수줍이</figcaption></figure>
 						<div class="card-tags">
-							<code>기획</code>
-							<code>디자인</code>
+							<span class="tag">기획</span>
+							<span class="tag">디자인</span>
 						</div>
 					</span>
 					<aside class="modal" role="dialog">
@@ -286,12 +282,10 @@
 					</aside>
 				</section>
 			</section>
-
 			<section class="profile-tablist-panel" role="tabpanel" aria-hidden="false" data-index="2">
 				<div class="components">
 				</div>
 			</section>
-
 			<section class="profile-tablist-panel" role="tabpanel" aria-hidden="false" data-index="3">
 				<section class="empty">
 					<i class="empty-icon material-icons">delete_outline</i>
@@ -302,13 +296,3 @@
 			</section>
 		</section>
 	</main>
-	<!-- <article class="appicon"
-	style="width: 80px;
-	height: 80px;
-	background:gold;
-	border: 1px solid #000;
-	box-shadow: 0.2rem 0.2rem #000;">
-	</article>
-	<section class="horizental-text">
-		<h1>부끄러우니까 보지마요</h1>
-	</section> -->

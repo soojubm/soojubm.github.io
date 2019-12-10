@@ -34,6 +34,7 @@ export const googleAnalytics = () => {
 
 export const adjustTopPadding = () => {
 	const headerElement = document.querySelector('.header');
+	if(!headerElement) return;
 	const isFixedHeader = getComputedStyle(headerElement).position === 'fixed';
 	const mainElement = document.querySelector('body');
 

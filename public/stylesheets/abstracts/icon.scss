@@ -52,9 +52,14 @@
 .icon-circled-arrow:before {content:'';display:block;width:8px;height:1px;background:$color-primary;position:absolute;left:4px;top:8px;transition:all .4s ease;}
 .icon-circled-arrow:after {content:'';display:block;width:3px;height:1px;background:$color-primary;position:absolute;left:8px;top:6px;transform:rotate(45deg);transition:all .4s ease;}
 
-.icon-chevron {width:6px;height:6px;margin:auto;position:absolute;left:0;right:0;top:0;bottom:0;border-left:2px solid $gray40;border-top:2px solid $gray40;transform: rotate(-45deg);}
+.icon-chevron {display:inline-block;padding:3px;border:solid $gray80;border-width:0 2px 2px 0;transform:rotate(-45deg);}
+.icon-chevron.--left {transform:rotate(135deg);}
+.icon-chevron.--up {margin-top:4px;transform:rotate(-135deg);}
+.icon-chevron.--down {margin-top:-2px;transform:rotate(45deg);}
+// .icon-chevron {width:6px;height:6px;margin:auto;position:absolute;left:0;right:0;top:0;bottom:0;border-left:2px solid $gray40;border-top:2px solid $gray40;transform: rotate(-45deg);}
 .icon-arrow0 {display:inline-block;padding:3px;border:solid $gray80;border-width:0 2px 2px 0;transform:rotate(-45deg);}
 
+.icon-bullet:before {content:'\25AA';color:rgba(84,94,111,.2);}
 
 .icon-arrow {position: relative;}
 .icon-arrow:before {

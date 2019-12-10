@@ -19,9 +19,14 @@ module.exports = {
     //   'warn',
     //   'tab', // tab or 2
     // ],
-    'linebreak-style': ['warn', 'windows'],
+    'linebreak-style': ['warn', 'unix'],
     quotes: ['warn', 'single'],
     semi: ['warn', 'always'],
     'no-unused-vars': 'off',
   },
 };
+
+
+
+// formatOnSave: true // prettier
+// autoFixOnSave: true // eslint

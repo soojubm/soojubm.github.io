@@ -13,6 +13,8 @@
 .footer-sitemap-item-heading {display:inline-block;margin:0 0 .75rem 0;font-size:14px;color:$gray40;}
 .footer-sitemap-item-link {display:block;color:$gray60;}
 .footer-sitemap-item-link:hover {color:#409EFF}
+.footer-terms {margin:0 0 1rem 0;}
+.footer-terms-link {margin:0 1rem 0 0;}
 .footer-address {float:right;width:50%;}
 .footer-address:before {content:' ';display:block;height:inherit;/*border-top:1px solid $gray20;*/position:absolute;left:-50%;right:-50%;top:0;bottom:0;z-index:-1;}
 .footer-address-logo {display:inline-block;display:none;width:40px;margin:0 0 16px 0;filter: grayscale(100%);opacity:.5;}

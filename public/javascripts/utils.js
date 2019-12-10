@@ -1,20 +1,3 @@
-var hName = /^[가-힣]+$/;
-var hName2 =  /^[가-힣a-zA-Z]+$/;
-var onlyNumbers = /^[0-9]*$/;
-
-var englishNumber = /^[a-zA-Z0-9]{4,12}$/;
-var password = /^(?=.*[a-zA-Z])((?=.*\d)|(?=.*\W)).{6,20}$/; // 영숫특
-
-var email = /^[a-z0-9_+.-]+@([a-z0-9-]+\.)+[a-z0-9]{2,4}$/;
-var phone = /^\d{2,3}-\d{3,4}-\d{4}$/; //  ex)123-123-1234
-var phone2 =  /^01([0|1|6|7|8|9]?)-?([0-9]{3,4})-?([0-9]{4})$/; // 010-0000-0000
-
-var url = /^(file|gopher|news|nntp|telnet|https?|ftps?|sftp):\/\/([a-z0-9-]+\.)+[a-z0-9]{2,4}.*$/;
-
-var isNumber = /[0-9]/gi;
-var isAlphabet = /[a-z]/gi;
-var isNumberAndAlphabet = /[a-z0-9]/;
-
 var stringToHTML = function (str) {
 	var parser = new DOMParser();
 	var doc = parser.parseFromString(str, 'text/html');
@@ -129,3 +112,22 @@ const hours = Math.floor(timestamp / 60 / 60);
 const minutes = Math.floor(timestamp / 60) - (hours * 60);
 const seconds = timestamp % 60;
 const formatted = hours.toString().padStart(2, '0') + ':' + minutes.toString().padStart(2, '0') + ':' + seconds.toString().padStart(2, '0');
+
+
+
+export const getByteLength = data => {
+  let len = 0;
+  const str = data.substring(0);
+
+  if (str == null) return 0;
+
+  for (let i = 0; i < str.length; i++) {
+    const ch = escape(str.charAt(i));
+
+    if (ch.length === 1) len += 1;
+    else if (ch.indexOf('%u') !== -1) len += 2;
+    else if (ch.indexOf('%') !== -1) len += ch.length / 3;
+  }
+
+  return len;
+};

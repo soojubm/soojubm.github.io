@@ -1,8 +1,9 @@
 export const countDownClock = (number = 100, format = 'seconds') => {
-	const daysElement = document.querySelector('.days');
-	const hoursElement = document.querySelector('.hours');
-	const minutesElement = document.querySelector('.minutes');
-	const secondsElement = document.querySelector('.seconds');
+	const daysElement = document.querySelector('.js-days');
+	const hoursElement = document.querySelector('.js-hours');
+	const minutesElement = document.querySelector('.js-minutes');
+	const secondsElement = document.querySelector('.js-seconds');
+	if(!daysElement) return;
 	
 	convertFormat(format);
 	
