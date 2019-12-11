@@ -102,7 +102,7 @@ $fixedHeaderHeight: 50px;
 .dropdown-panel-link {display:block;padding:.25rem 1rem;font-size:12px;color:$gray60;position:relative;z-index:1;}
 .dropdown-panel-link:hover {background:rgba(0,0,0,.05);}
 
-.dropdown-panel.is-visible {height:auto;transform:scale(1);}
+.dropdown-panel.is-active {height:auto;transform:scale(1);}
 .dropdown-divider {}
 
 .nav-up {top: -64px;}

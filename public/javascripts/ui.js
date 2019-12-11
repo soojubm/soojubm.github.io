@@ -1,6 +1,6 @@
 export const setGraph = () => {
-	const graph = document.querySelector('.js-graph');
-	const graphItems = graph.querySelectorAll('.graph-item');
+	// const graph = document.querySelector('.js-graph');
+	const graphItems = document.querySelectorAll('.js-graph .graph-item');
 	if(!graphItems) return;
 
 	graphItems.forEach(element => {

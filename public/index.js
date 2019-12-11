@@ -7,12 +7,13 @@ import { inputNumber } from './javascripts/input';
 import { loader, checkBrowser, adjustTopPadding } from './javascripts/load';
 import { validations } from './javascripts/validations';
 import { checkAllcheckbox, attachFile, inputVariation } from './javascripts/input';
-import { enterTarget, stickyHeader, modal, eventToggle, eventToTop, eventClose, eventScrollAnimation, customCursor, stickyElement, scrollProgress } from './javascripts/event';
+import { enterTarget, stickyHeader, modal, eventToTop, eventClose, eventScrollAnimation, customCursor, stickyElement, scrollProgress, toggleClass } from './javascripts/event';
 import { todayDate } from './javascripts/utils';
 import { carousel, setDarkmode } from './javascripts/event/index.js';
 import { films } from '../views/films';
 import { countDownClock } from './javascripts/countdown';
 import { setGraph } from './javascripts/ui';
+
 //document.documentElement.className += ' supports-date';
 // if(window.matchMedia('(min-width:800px)').matches) {}
 
@@ -25,18 +26,18 @@ window.addEventListener('offline', () => {
 document.addEventListener('DOMContentLoaded', async () => {	
 	loader();
 	checkBrowser();
+	setDarkmode();
+	customCursor();
+
 
 	routePage().then(() => {
 		focusComment();
 		setGraph();
 		carousel();
 	
-		setDarkmode();
-		
-		customCursor();
 		checkAllcheckbox({checkAllElement: '.js-checkall', checkElements: '.js-check'});
-	
-		eventToggle();
+		toggleClass({target: '.js-accordion'});
+
 		eventToTop();
 		eventClose();
 		eventScrollAnimation();
@@ -119,6 +120,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 	} else {
 		document.querySelector('.page-head').classList.remove('--white');
 	}
+
+
 
 	// Promise.all([
 	// 	fetch('https://jsonplaceholder.typicode.com/posts'),
@@ -228,3 +231,5 @@ document.addEventListener('submit', event => event.preventDefault());
 
 // 	return 'The value you entered for this field is invalid.';
 // };
+
+

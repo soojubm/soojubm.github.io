@@ -4,9 +4,7 @@ var stringToHTML = function (str) {
 	return doc.body;
 };
 
-// text.replace(/[^0-9]/gi)
 // text.replace(/[^a-z]/gi)
-// text.replace(/[^a-z0-9]/)
 
 export const autoExpand = field => {
 	field.style.height = 'inherit';
@@ -16,27 +14,13 @@ export const autoExpand = field => {
 	field.style.height = height + 'px';
 };
 
-
 var getElementHeight = function(element) {
 	element.style.display = 'block';
-	var height = element.scrollHeight + 'px';
+	const height = element.scrollHeight + 'px';
 	
 	return height;
 };
-
-// function frameSizing() {
-// 	var $frame = $('.player iframe');
-// 	var frameWidth = $frame.width();
-// 	var frameHeight = frameWidth * 9 / 16;
-// 	$frame.height(frameHeight);
-
-// 	$(window).resize(function(){
-// 			frameWidth = $(window).width();
-// 			frameHeight = frameWidth * 9 / 16;
-// 			$frame.height(frameHeight);
-// 	});
-// }
-
+// frameHeight = frameWidth * 9 / 16;
 
 class Calculator {
 	add(x, y) {
@@ -48,7 +32,6 @@ class Calculator {
 }
 
 // elements.filter((value, index, array) => array.indexOf(value) === index) // uniq
-
 
 // "javascrip".replace(/a/gi,"b")
 const fullNumber = '2034399002125581';
@@ -69,51 +52,11 @@ const maskedNumber = last4Digits.padStart(fullNumber.length, '*');
 			helperText.parentNode.removeChild(helperText);
 		}
 	}
-	*/
-
-export const todayDate = {
-	today: new Date(),
-	year: new Date().getFullYear(),
-	month: String(new Date().getMonth() + 1).padStart(2, '0'),
-	date: String(new Date().getDate()).padStart(2, '0'),
-	day: new Date().getDay(), // 월 : 0
-	hours: new Date().getHours(),
-	minutes: new Date().getMinutes(),
-	seconds: new Date().getSeconds(),
-	ampm: new Date().getHours() < 12 ? 'am' : 'pm',
-	isAm: new Date().getHours() < 12,
-	isPm: new Date().getHours() > 12,
-
-	/*
-	const dateString = date.toLocaleDateString().split('.');
-	const [year, month, day] = dateString;
-	console.log(date.toLocaleDateString()); // 1980년 1월 3일 목요일
-	console.log(date.toLocaleTimeString()); // 오전 1:28:35
-	console.log(date.toLocaleString()); // 1980년 1월 3일 목요일 오전 1:28:35
-	*/
-};
-
-
-// date.setDate(date.getDate() + 1) // if(today.getTime() < date.getTime())
-
-const formatDate = timestamp => {
-	const date = new Date(timestamp);
-	const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October',	'November', 'December'];
-	return months[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear();
-
-};
+*/
 
 const randomNumber = function (min, max) {
 	return Math.floor(Math.random() * (max - min + 1) + min);
 };
-
-const timestamp = 9462;
-const hours = Math.floor(timestamp / 60 / 60);
-const minutes = Math.floor(timestamp / 60) - (hours * 60);
-const seconds = timestamp % 60;
-const formatted = hours.toString().padStart(2, '0') + ':' + minutes.toString().padStart(2, '0') + ':' + seconds.toString().padStart(2, '0');
-
-
 
 export const getByteLength = data => {
   let len = 0;

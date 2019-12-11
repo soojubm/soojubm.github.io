@@ -1,5 +1,3 @@
-import { validateLocaleAndSetLanguage } from 'typescript';
-
 // g모든전역 i대소문자구분없이 m멀티라인 u유니코드 y스틱검색
 var hName = /^[가-힣]+$/;
 var hName2 =  /^[가-힣a-zA-Z]+$/;
@@ -17,7 +15,6 @@ var isNumber = /[0-9]/gi;
 var isAlphabet = /[a-z]/gi;
 
 export const regExr = {};
-
 // 정규표현식
 /**
  * validations.isEmail(loginEmail);
@@ -52,7 +49,6 @@ export const validations = {
 export const inputHelper = {
 	isShort: '',
 };
-
 
 // bool isURL(String str,
 // 	{List<String> protocols = const ['http', 'https', 'ftp'],
