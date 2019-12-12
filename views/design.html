@@ -526,11 +526,11 @@
       <h1 class="design-article-heading">Dropdown</h1>
       <p class="design-article-description">+ hidden menu</p>
       <div class="header-user-account dropdown">
-        <button class="dropdown-trigger js-dropdown1" aria-haspopup="menu" aria-expanded="false">
+        <button class="dropdown-trigger js-toggle" aria-haspopup="menu" aria-expanded="false">
           드롭다운
           <i class="icon-caret" style="margin-left:1rem;"></i>
         </button>
-        <menu class="dropdown-panel js-dropdown11">
+        <menu class="dropdown-panel">
           <h6 class="dropdown-panel-heading">Dropdown header</h6>
           <a class="dropdown-panel-link" href="" disabled>프로필 관리</a>
           <a class="dropdown-panel-link" href="">고객센터</a>
@@ -560,15 +560,11 @@
       <p class="design-article-description">checkbox, checkall, intermediate</p>
       <div class="checkbox">
         <input class="js-checkall" type="checkbox" id="line00" value="" />
-        <label for="line00">Check All</label>
+        <label for="line00"><em>Check All</em></label>
       </div>
       <div class="checkbox">
         <input class="js-check" type="checkbox" id="line01" value="" checked />
         <label for="line01">Everyday is like sunday</label>
-      </div>
-      <div class="checkbox">
-        <input class="js-check" type="checkbox" id="line02" value="" />
-        <label for="line02">Everyday is like sunday</label>
       </div>
       <div class="checkbox">
         <input class="js-check" type="checkbox" id="line03" value="" checked disabled />
@@ -581,46 +577,6 @@
       </div>
     </article>
 
-    <article class="design-article js-scroll-animation">
-      <h1 class="design-article-heading">Calendar</h1>
-      <p class="design-article-description">checkbox, checkall, intermediate</p>
-      <div class="calendar">
-        <h3>12월</h3>
-        <div class="calendar-head">
-          <div>일</div>
-          <div>월</div>
-          <div>화</div>
-          <div>수</div>
-          <div>목</div>
-          <div>금</div>
-          <div>토</div>
-        </div>
-        <div class="calendar-body">
-          <div>1</div>
-          <div>2</div>
-          <div>3</div>
-          <div>4</div>
-          <div>5</div>
-          <div>6</div>
-          <div>7</div>
-          <div>1</div>
-          <div>2</div>
-          <div>3</div>
-          <div>4</div>
-          <div>5</div>
-          <div>6</div>
-          <div>7</div>
-          <div>1</div>
-          <div>2</div>
-          <div>3</div>
-          <div>4</div>
-          <div>5</div>
-          <div>6</div>
-          <div>7</div>
-        </div>
-      </div>
-    </article>
-
     <style>
     .calendar {
       width: 250px;
@@ -628,7 +584,10 @@
       --date-height: 32px;
       --date-background: #eee;
     }
-    .calendar-head {margin-top: 16px !important;
+    .calendar h3 {
+      font-size: 1rem;
+    }
+    .calendar-head {margin-top: .5rem !important;
       display: grid !important;
       grid-template-columns: repeat(7, 1fr) !important;
       gap: 4px !important;
@@ -671,6 +630,48 @@
         <label for="gender-etc">Video kills the radio button</label>
       </div>
     </article>
+
+
+    <article class="design-article js-scroll-animation">
+      <h1 class="design-article-heading">Calendar</h1>
+      <p class="design-article-description">checkbox, checkall, intermediate</p>
+      <div class="calendar">
+        <h3>12월</h3>
+        <div class="calendar-head">
+          <div>일</div>
+          <div>월</div>
+          <div>화</div>
+          <div>수</div>
+          <div>목</div>
+          <div>금</div>
+          <div>토</div>
+        </div>
+        <div class="calendar-body">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+          <div>6</div>
+          <div>7</div>
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+          <div>6</div>
+          <div>7</div>
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+          <div>6</div>
+          <div>7</div>
+        </div>
+      </div>
+    </article>
+
     <article class="design-article js-scroll-animation">
       <h1 class="design-article-heading">Switch</h1>
       <p class="design-article-description">on/off 설정 등에 사용합니다.</p>
@@ -964,11 +965,11 @@
     <article class="design-article js-scroll-animation">
       <h1 class="design-article-heading">Accordions</h1>
       <p class="design-article-description">질의응답에 주로 사용해요. 공지사항 정도의 간단한 게시글에서도 사용할 수 있으나 그 이상의 경우에는 다른 유아이를 고민하세요.</p>
-      <button class="accordion-trigger js-accordion" type="button" aria-expanded="false"><i class="icon-caret"></i> 회원탈퇴는 어떻게 할 수 있나요?</button>
+      <button class="accordion-trigger js-toggle" type="button" aria-expanded="false"><i class="icon-caret"></i> 회원탈퇴는 어떻게 할 수 있나요?</button>
       <article class="accordion-panel">
         안녕
       </article>
-      <button class="accordion-trigger js-accordion" type="button" aria-expanded="false"><i class="icon-caret"></i> 주문을 취소하고 싶어요.</button>
+      <button class="accordion-trigger js-toggle" type="button" aria-expanded="false"><i class="icon-caret"></i> 주문을 취소하고 싶어요.</button>
       <article class="accordion-panel">
         안녕
       </article>

@@ -1,90 +1,3 @@
-//TODO: 모달 밖의 컨텐츠에 aria-hidden 모달의 위치는 바디 안에?
-//var abc = window.innerWidth - document.body.clientWidth;
-
-export const toggleClass = ({ target: targetElement }) => {
-	const toggles = document.querySelectorAll(targetElement);
-	toggles.forEach(element => element.addEventListener('click', event => {
-		event.stopPropagation();
-
-		const ee = element.nextSibling.nextSibling;
-		const { target } = event;
-
-		toggles.forEach(el => {
-			if(target === el) return;
-			removeAllClass(el);
-		});
-
-		element.classList.toggle('is-active');
-		ee.classList.toggle('is-visible');
-
-		ee.addEventListener('click', event => event.stopPropagation());
-	}));
-		
-	document.body.addEventListener('click', () => {
-		toggles.forEach(element => removeAllClass(element));
-	});
-
-	function removeAllClass(el) {
-		el.classList.remove('is-active');
-		el.nextSibling.nextSibling.classList.remove('is-visible');
-	}
-};
-
-
-export const modal = () => {
-	const { body } = document;
-	let pageY = undefined;
-	const modals = document.querySelectorAll('.js-modal');
-	if(!modals) return;
-
-	modals.forEach(modal => modal.addEventListener('click', event => {
-		event.stopPropagation();
-		modal.nextElementSibling.classList.add('is-visible');
-		pageY = window.pageYOffset;
-		setLockBody();
-		document.addEventListener('click', closeModal);
-
-		function closeModal() {
-			const isOpened = modal.nextElementSibling.classList.contains('is-visible');
-			if(!isOpened) return;
-
-			modal.nextElementSibling.classList.remove('is-visible');
-			body.classList.remove('body-lock');
-			window.scrollTo(0, pageY);
-		}
-	}));
-
-	const modalDialog = document.querySelectorAll('.modal-dialog');
-	modalDialog.forEach(element => element.addEventListener('click', event => event.stopPropagation()));
-	
-	function setLockBody() {
-		body.classList.add('body-lock');
-		body.style.top = `-${pageY}px`;
-	}
-};
-
-
-export const tabMenu = () => {
-	document.addEventListener('click', event => {
-		const target = event.target;
-		const tabActiceBar = document.querySelector('.profile-tablist-active');
-		const tabs = target.parentNode.querySelectorAll('[role=tab]');
-		const tabIndex = target.getAttribute('data-index');
-
-		if(target.closest('[role=tab]')) {
-			target.setAttribute('aria-selected', 'true');
-			tabActiceBar.style.left = `${target.offsetLeft}px`;
-			tabs.forEach(tab => tab.setAttribute('aria-selected', 'false'));
-		
-			target.parentNode.parentNode.querySelectorAll('[role=tabpanel]').forEach(element => {
-				element.setAttribute('aria-hidden', 'true');
-				if(tabIndex === element.getAttribute('data-index')){
-					element.setAttribute('aria-hidden', 'hidden');
-				}
-			});
-		}
-	}, true);
-};
 
 
 // var isScrolling;
@@ -162,29 +75,8 @@ export const stickyHeader = () => {
 	}
 };
 
-export const enterTarget = (target) => {
-	const { body } = document;
-	const hoverElement = document.querySelector(target);
-	if(!hoverElement) return;
-
-	const isNavigation = hoverElement === document.querySelector('.navigation li');
-
-	hoverElement.addEventListener('mouseenter', () => {
-		hoverElement.setAttribute('aria-expanded', 'true');
-		hoverElement.classList.add('is-expanded');
-		isNavigation && body.classList.add('is-shown');
-
-		hoverElement.addEventListener('mouseleave', () => {
-			hoverElement.setAttribute('aria-expanded', 'false');
-			hoverElement.classList.remove('is-expanded');
-
-			isNavigation && body.classList.remove('is-shown');
-		});
-	});
-};
-
-export const eventClose = () => {
-	const closeElement = document.querySelectorAll('.js-close');
+export const eventClose = ({ targetElement: target }) => {
+	const closeElement = document.querySelectorAll(target);
 	if(!closeElement) return;
 
 	closeElement.forEach(element => element.addEventListener('click', event => {
@@ -193,8 +85,8 @@ export const eventClose = () => {
 };
 
 
-export const eventToTop = () => {
-	const toTopElement = document.querySelector('.js-to-top');
+export const eventToTop = ({targetElement: target}) => {
+	const toTopElement = document.querySelector(target);
 	toTopElement.addEventListener('click', event => {
 		event.preventDefault();
 		window.scrollTo(0, 0);

@@ -1,27 +1,40 @@
 'use strict';
 
 import './stylesheets/style.scss';
-import { router, routePage} from './javascripts/router';
-import { tabMenu } from './javascripts/event';
+import { routePage} from './javascripts/router';
 import { inputNumber } from './javascripts/input';
 import { loader, checkBrowser, adjustTopPadding } from './javascripts/load';
 import { validations } from './javascripts/validations';
-import { checkAllcheckbox, attachFile, inputVariation } from './javascripts/input';
-import { enterTarget, stickyHeader, modal, eventToTop, eventClose, eventScrollAnimation, customCursor, stickyElement, scrollProgress, toggleClass } from './javascripts/event';
-import { todayDate } from './javascripts/utils';
+import { checkAllcheckbox, attachFile, inputVariation, inputTextarea, input } from './javascripts/input';
+import { stickyHeader, eventToTop, eventClose, eventScrollAnimation, customCursor, stickyElement, scrollProgress } from './javascripts/event';
 import { carousel, setDarkmode } from './javascripts/event/index.js';
 import { films } from '../views/films';
 import { countDownClock } from './javascripts/countdown';
 import { setGraph } from './javascripts/ui';
 
+import toggleClass from './javascripts/toggleClass';
+import modal from './javascripts/modal';
+import tabMenu from './javascripts/tabMenu';
+import enterTarget from './javascripts/enterTarget';
+
 //document.documentElement.className += ' supports-date';
 // if(window.matchMedia('(min-width:800px)').matches) {}
-
 
 window.addEventListener('offline', () => {
 	const offlineElement = document.querySelector('.js-offline');
 	offlineElement.style.display = 'block';
 });
+
+window.addEventListener('hashchange', routePage);
+window.addEventListener('hashchange', initailizePage);
+function initailizePage() {
+	const navigationTrigger = document.querySelector('.navigation-toggle');
+	const isOpenedNavigation = navigationTrigger.classList.contains('is-active');
+	if(!isOpenedNavigation) return;
+	
+	navigationTrigger.classList.remove('is-active');
+	navigationTrigger.nextElementSibling.classList.remove('is-visible');
+}
 
 document.addEventListener('DOMContentLoaded', async () => {	
 	loader();
@@ -29,64 +42,55 @@ document.addEventListener('DOMContentLoaded', async () => {
 	setDarkmode();
 	customCursor();
 
-
 	routePage().then(() => {
+		adjustTopPadding();
+
+		// 특정 유아이 이벤트
+		const focusComment = () => {
+			const commentWrite = document.querySelector('.js-comment-write');
+			const commentTextField = document.querySelectorAll('.js-comment-textfield');
+			if(!commentWrite || !commentTextField) return;
+
+			commentTextField.forEach(element => element.addEventListener('focus', () => {
+				commentWrite.classList.add('is-focused');
+			}));
+		};
 		focusComment();
 		setGraph();
 		carousel();
-	
-		checkAllcheckbox({checkAllElement: '.js-checkall', checkElements: '.js-check'});
-		toggleClass({target: '.js-accordion'});
 
-		eventToTop();
-		eventClose();
-		eventScrollAnimation();
+	
+		checkAllcheckbox({ checkAllElement: '.js-checkall', checkElements: '.js-check' });
+		toggleClass({ triggerElement: '.js-toggle' });
+		eventClose({ targetElement: '.js-close' });
+		eventToTop({ targetElement: '.js-to-top' });
+		enterTarget({ triggerElement: '.js-hover-trigger' });
+		modal({ triggerElement: '.js-modal' });
+		countDownClock(20, 'days');
 	
 		attachFile();
-		modal();
-		// inputVariation();
-		// stickyHeader();
-	
-		enterTarget('.js-hover-trigger');
-		enterTarget('.header-user-notification');
-		enterTarget('.header-user-account');
-		// const textarea = document.querySelectorAll('textarea');
-		// textarea.forEach(element => element.addEventListener('input', autoExpand(element)));
-		
-		// var i =0;
+		tabMenu();
+
+		inputTextarea();
+		inputNumber();
+
+		eventScrollAnimation();
+
+		window.addEventListener('scroll', stickyElement({targetElement:'.post-head', addClass: 'is-sticky'}));
+		window.addEventListener('scroll', scrollProgress, true);
+		// var i = 0;
 		// var images = ['cover1.jpg','cover2.jpg'];
-		// var image = document.querySelector('.cover_image');
+		// var imageElement = document.querySelector('.cover_image');
 		// // image.css('background-image', 'url(/img/cover1.jpg)');
 		// setInterval(function(){ 
-		// 	image.fadeOut(1000, () => {
-		// 		image.css('background-image', 'url(' + images [i++] +')');
-		// 		image.fadeIn(1000);
+		// 	imageElement.fadeOut(1000, () => {
+		// 		imageElement.css('background-image', `url(${images[i++]})`);
+		// 		imageElement.fadeIn(1000);
 		// 	});
-		// 	if(i == images.length) i = 0;
+		// 	if(i === images.length) i = 0;
 		// }, 5000); 
-		countDownClock(20, 'days');  
-	
-		adjustTopPadding();
-	
-		tabMenu();
-		inputNumber();
 	});
-	// await routePage();
-
-	window.addEventListener('scroll', stickyElement({targetElement:'.post-head', addClass: 'is-sticky'}));
-	window.addEventListener('scroll', scrollProgress, true);
-	// toggleElement('.js-open-comment');
-	const focusComment = () => {
-		const commentWrite = document.querySelector('.js-comment-write');
-		const commentTextField = document.querySelectorAll('.js-comment-textfield');
-		if(!commentWrite || !commentTextField) return;
-
-		commentTextField.forEach(element => element.addEventListener('focus', () => {
-			commentWrite.classList.add('is-focused');
-		}));
-	};
 	
-
 	const sayHello = new Promise(function(resolve, reject) {
 		reject('Unable to say hi.');
 
@@ -100,19 +104,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 		console.warn(error);
 	});
 
-
-	window.addEventListener('hashchange', routePage);
-	window.addEventListener('hashchange', initailizePage);
-
-	function initailizePage() {
-		const navigationTrigger = document.querySelector('.navigation-toggle');
-		const isOpenedNavigation = navigationTrigger.classList.contains('is-active');
-		if(!isOpenedNavigation) return;
-		
-		navigationTrigger.classList.remove('is-active');
-		navigationTrigger.nextElementSibling.classList.remove('is-visible');
-	}
-
 	const white = ['#design'];
 	const isWhite = white.includes(window.location.hash);
 	if(isWhite) {
@@ -120,8 +111,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 	} else {
 		document.querySelector('.page-head').classList.remove('--white');
 	}
-
-
 
 	// Promise.all([
 	// 	fetch('https://jsonplaceholder.typicode.com/posts'),
@@ -131,7 +120,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 	// 	return responses.map(response => {
 	// 		return response.json();
 	// 	});
-
 
 	// 연도별 감독별 나라별
 	// const boardElement = document.querySelector('.board');
@@ -167,7 +155,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 	// }, 200);
 });
 
-	// let loginData = {email: '', password: ''};
+// let loginData = {email: '', password: ''};
 
 document.addEventListener('input', event => {
 	const helpers = document.querySelectorAll('.textfield-helper'); // helpers.forEach(helper => helper.style.display = 'none');
@@ -211,8 +199,6 @@ document.addEventListener('input', event => {
 document.addEventListener('blur', event => {}, true); // blur is not bubble
 document.addEventListener('submit', event => event.preventDefault());
 
-
-
 // var hasError = function(field) {
 // 	if (field.disabled || field.type === 'file' || field.type === 'reset' || field.type === 'submit' || field.type === 'button') return;
 
@@ -231,5 +217,3 @@ document.addEventListener('submit', event => event.preventDefault());
 
 // 	return 'The value you entered for this field is invalid.';
 // };
-
-

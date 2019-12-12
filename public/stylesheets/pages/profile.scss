@@ -24,7 +24,7 @@
 .profile-user-statistic {}
 .profile-controls {margin:2rem 0 1rem;}
 .profile-controls-follow {width:100%;}
-.profile-body {padding:0 0 64px 400px;box-sizing:border-box;position:relative;min-height:1000px;}
+.profile-body {min-height:640px;padding:0 0 64px 400px;box-sizing:border-box;position:relative;}
 .profile-tablist {margin:0 0 0.5rem 0;position:relative;}
 .profile-tablist-active {width:4px;height:4px;margin:0 auto;border-radius:50%;transition:all 0.4s ease;background:$color-primary;position:absolute;top:8px;left:0;}
 .profile-tablist:before {display:none;content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:#e9e9e6;}
@@ -113,6 +113,8 @@
   .profile-head-headline {}
   .profile-head-description {}
   .profile-head-share {position:static;bottom:auto;}
+
+  .profile-user-avatar {width:64px;height:64px;}
 
   .card {flex:1 0 50%;margin:0 0 20px;}
 }

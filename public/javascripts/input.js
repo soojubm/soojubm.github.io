@@ -1,5 +1,6 @@
 import { autoExpand } from './utils';
 
+
 // TODO: 여러번 반복해서 올렸을 때 filelist 누적되는지?
 // TODO: 동일한 파일을 업로드 했을 때 체크, 삭제했을 때 fileList에서 삭제, fileInput.files는 쌓이지 않음.
 export const attachFile = () => {
@@ -47,7 +48,6 @@ export const attachFile = () => {
 		// const isValid = fileTypes.includes(file.type);
 		if(fileTypes.indexOf(file.type) > -1) return true;
 	}
-
 	function validFileSize(file) {
 		attachedfiles = file.files;
 		if(attachedfiles.length === 0) return;
@@ -58,7 +58,6 @@ export const attachFile = () => {
 		}
 		fileInput.setCustomValidity('');
 	}
-
 	function returnFileSize(size) {
 		const isBytes = size < 1024;
 		const isKiloBytes = size >= 1024 && size < 1048576;
@@ -67,7 +66,6 @@ export const attachFile = () => {
 		else if(isKiloBytes) return (size / 1024).toFixed(2) + 'KB';
 		else return (size / 1048576).toFixed(2) + 'MB';
 	}
-
 	function sendFile(file) {
 		const formData = new FormData();
 		const request = new XMLHttpRequest();
@@ -105,30 +103,29 @@ document.addEventListener('click', event => {
 });
 
 export const inputTextarea = () => {
+	// tagName과 nodeName은 텍스트 노드를 각각 undefined와 #text 반환한다.
+	document.addEventListener('input', event => {
+		const { target } = event;
+		const isTextarea = target.nodeName.toLowerCase() === 'textarea';
+		if(!isTextarea) return;
+
+		const BYTE_MAXIMUM = 30;
+
+		const byteElement = document.querySelector('.textfield-byte b');
+		const stringByteLength = target.value.replace(/[\0-\x7f]|([0-\u07ff]|(.))/g,'$&$1$2').length || 0; // || 0 임시
+		byteElement.innerText = stringByteLength;
+
+		const isMaximum = stringByteLength > BYTE_MAXIMUM;
+		if(isMaximum) {
+			target.parentNode.classList.add('is-invalid');
+		} else {
+			target.parentNode.classList.remove('is-invalid');
+		}
+
+		autoExpand(target);
+	});
 };
 
-// tagName과 nodeName은 텍스트 노드를 각각 undefined와 #text 반환한다.
-document.addEventListener('input', event => {
-	const { target } = event;
-
-	const isTextarea = target.nodeName.toLowerCase() === 'textarea';
-	if(!isTextarea) return;
-
-	const BYTE_MAXIMUM = 30;
-
-	const byteElement = document.querySelector('.textfield-byte b');
-	const stringByteLength = target.value.replace(/[\0-\x7f]|([0-\u07ff]|(.))/g,'$&$1$2').length || 0; // || 0 임시
-	byteElement.innerText = stringByteLength;
-
-	const isMaximum = stringByteLength > BYTE_MAXIMUM;
-	if(isMaximum) {
-		target.parentNode.classList.add('is-invalid');
-	} else {
-		target.parentNode.classList.remove('is-invalid');
-	}
-
-	autoExpand(target);
-});
 
 function setStringBytes() {}
 
@@ -168,8 +165,6 @@ export const inputNumber = () => {
 			const keyCodes = [69, 189, 187, 190];
 			const isValid = keyCodes.includes(keyCode);
 			if(isValid) event.preventDefault();
-
-			console.log(keyCode, isValid);
 			// target.value.length === 0 && keyCode === 48 && event.preventDefault();
 			// keyCode >= 48 || keyCode <= 57 || event.preventDefault();
 			// keyCode === 69 && event.preventDefault();
@@ -191,9 +186,7 @@ export const inputNumber = () => {
 	});
 };
 
-
-
-export const checkAllcheckbox = ({checkAllElement, checkElements}) => {
+export const checkAllcheckbox = ({ checkAllElement, checkElements }) => {
 	const checkAll = document.querySelector(checkAllElement);
 	const checkItems = document.querySelectorAll(checkElements);
 	if(!checkAll || !checkItems) return;
@@ -210,7 +203,6 @@ export const checkAllcheckbox = ({checkAllElement, checkElements}) => {
 		checkAll.indeterminate = isCheckedSome && !isCheckedEvery;
 		checkAll.dataset.indeterminate = isCheckedSome && !isCheckedEvery;
 	}
-	
 	function setCheckAll() {
 		checkItems.forEach(checkItem => {
 			checkItem.checked = checkAll.checked;
@@ -219,22 +211,6 @@ export const checkAllcheckbox = ({checkAllElement, checkElements}) => {
 		});
 	}
 };
-
-
-
-// react 정리
-// const tempArray = ["jack", "jill"];
-// 동일한 네임값의 배열을 통합해보기.
-// const temp = [
-// 	{name: 'jack', age: '16'},
-// 	{name: 'jill', age: '2'},
-// ];
-// const temp2 = [
-// 	{name: 'jill', phone: '025589090'}
-// 	{name: 'jack', phone: '01031211223'},
-// ];
-
-
 
 // export const inputVariation = () => {
 // 	const variation = document.querySelector('.js-variation');
@@ -294,3 +270,11 @@ export const checkAllcheckbox = ({checkAllElement, checkElements}) => {
 // value = isNaN(value) ? 0 : value;
 // value < 1 ? value = 1 : '';
 // value--;
+
+
+
+
+export const input = {
+	textarea: inputTextarea(),
+	number: inputNumber()
+};

@@ -1,27 +1,32 @@
 export const loader = () => {
-	const { body } = document;
 	const loaderElement = document.querySelector('.js-loading');
-	window.addEventListener('load', function() {
-		setTimeout(function() {
+	if(!loaderElement) return;
+	const { body } = document;
+
+	window.addEventListener('load', () => {
+		setTimeout(() => {
 			loaderElement.classList.add('is-hidden');
 			body.classList.remove('body-lock');
 		}, 0);
 	});
-	document.addEventListener('DOMContentLoaded', function() {
+	document.addEventListener('DOMContentLoaded', () => {
 		body.classList.add('body-lock');
 	});
 };
 
 export const checkBrowser = () => {
 	const BrowserElement = document.querySelector('.js-browser');
-	let agent = navigator.userAgent.toLowerCase();
-	if (agent.indexOf('msie') > -1 || agent.indexOf('trident') > -1) {
+	if(!BrowserElement) return;
+	
+	const userAgent = navigator.userAgent.toLowerCase();
+
+	if (userAgent.indexOf('msie') > -1 || userAgent.indexOf('trident') > -1) {
 		BrowserElement.style.display = 'block';
-	} else if (agent.indexOf('chrome') !== -1) {
-		console.log(agent, '크롬');
+		console.log(userAgent);
+	} else if (userAgent.indexOf('chrome') !== -1) {
+		console.log(userAgent, '크롬');
 	}
 };
-
 
 export const googleAnalytics = () => {
 	// <script async src="https://www.googletagmanager.com/gtag/js?id=UA-83531239-1"></script>
@@ -31,26 +36,23 @@ export const googleAnalytics = () => {
 	// gtag('config', 'UA-83531239-1');
 };
 
-
 export const adjustTopPadding = () => {
 	const headerElement = document.querySelector('.header');
 	if(!headerElement) return;
-	const isFixedHeader = getComputedStyle(headerElement).position === 'fixed';
-	const mainElement = document.querySelector('body');
 
-	addPadding();
-	window.addEventListener('scroll', () => {
-		requestAnimationFrame(addPadding);
-	});
-	window.addEventListener('resize', () => {
-		requestAnimationFrame(addPadding);
-	});
+	setPaddingTop();
+	window.addEventListener('scroll', () => requestAnimationFrame(setPaddingTop));
+	window.addEventListener('resize', () => requestAnimationFrame(setPaddingTop));
 
-	function addPadding() {
+	// 스코프
+	function setPaddingTop() {
+		const { body } = document;
+		const isFixedHeader = getComputedStyle(headerElement).position === 'fixed';
+
 		if (isFixedHeader) {
-			mainElement.style.marginTop = headerElement.clientHeight + 'px';
-		} else {
-			mainElement.style.marginTop = 0 + 'px';
+			body.style.marginTop = headerElement.clientHeight + 'px';
+			return;
 		}
+		body.style.marginTop = 0 + 'px';
 	}
 };

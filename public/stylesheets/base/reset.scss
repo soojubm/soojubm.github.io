@@ -56,7 +56,7 @@ ol li ol {}
 ol li ol li {counter-increment: sub-list-item;}
 ol li ol li:before {content: counter(sub-list-item,lower-alpha) '.';}
 
-dl {display:flex;justify-content:space-between;}
+dl {display:flex;justify-content:space-between;align-items:center;}
 dt {color:$gray80;}
 dd {color:$gray40;}
 
