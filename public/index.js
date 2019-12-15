@@ -5,17 +5,13 @@ import { routePage} from './javascripts/router';
 import { inputNumber } from './javascripts/input';
 import { loader, checkBrowser, adjustTopPadding } from './javascripts/load';
 import { validations } from './javascripts/validations';
-import { checkAllcheckbox, attachFile, inputVariation, inputTextarea, input } from './javascripts/input';
-import { stickyHeader, eventToTop, eventClose, eventScrollAnimation, customCursor, stickyElement, scrollProgress } from './javascripts/event';
-import { carousel, setDarkmode } from './javascripts/event/index.js';
+import { checkAllcheckbox, attachFile, inputVariation, inputTextarea } from './javascripts/input';
 import { films } from '../views/films';
 import { countDownClock } from './javascripts/countdown';
 import { setGraph } from './javascripts/ui';
+import { setDarkmode } from './javascripts/setDarkMode';
 
-import toggleClass from './javascripts/toggleClass';
-import modal from './javascripts/modal';
-import tabMenu from './javascripts/tabMenu';
-import enterTarget from './javascripts/enterTarget';
+import event from './javascripts/event/index.js';
 
 //document.documentElement.className += ' supports-date';
 // if(window.matchMedia('(min-width:800px)').matches) {}
@@ -40,7 +36,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 	loader();
 	checkBrowser();
 	setDarkmode();
-	customCursor();
 
 	routePage().then(() => {
 		adjustTopPadding();
@@ -57,25 +52,54 @@ document.addEventListener('DOMContentLoaded', async () => {
 		};
 		focusComment();
 		setGraph();
-		carousel();
-
+		// carousel();
 	
 		checkAllcheckbox({ checkAllElement: '.js-checkall', checkElements: '.js-check' });
-		toggleClass({ triggerElement: '.js-toggle' });
-		eventClose({ targetElement: '.js-close' });
-		eventToTop({ targetElement: '.js-to-top' });
-		enterTarget({ triggerElement: '.js-hover-trigger' });
-		modal({ triggerElement: '.js-modal' });
+		event.toggleClass({ triggerElement: '.js-toggle' });
+		event.enterTarget({ triggerElement: '.js-hover-trigger' });
+		event.modal({ triggerElement: '.js-modal' });
+		event.tabMenu();
+		event.toTop({ targetElement: '.js-to-top' });
+
+		event.ScrollAnimation();
+
+		event.close({ targetElement: '.js-close' });
+		event.customCursor();
+
 		countDownClock(20, 'days');
 	
 		attachFile();
-		tabMenu();
-
 		inputTextarea();
 		inputNumber();
 
-		eventScrollAnimation();
 
+
+
+
+
+		// click 이벤트 외부에 넣으니까 파폭에서만 오류. event undefined
+		// TODO: 도큐먼트가 아니라 event.target.parent 가 아닌 것을 클릭했을 때 다당야 하나
+		// const findClassRecursive = (element, className, depth) => {
+		// // parentNode.classList.contains('js-modal')
+		// 	console.log('depth: ' + depth, element);
+		// 	if (element.classList.contains(className)) return element;
+		// 	else return findClassRecursive(element.parentNode, className, depth + 1);
+		// };
+
+		// var getClosest = function(elem, selector) {
+		// 	for (; elem && elem !== document; elem = elem.parentNode) {
+		// 		if (elem.matches(selector)) return elem;
+		// 	}
+		// 	return null;
+		// };
+
+		const scrollProgress = () => {
+			const pageProgressBar = document.querySelector('.post-head-progress');
+			if(!pageProgressBar) return;
+			let scrollPercent;
+			scrollPercent = window.pageYOffset / (document.body.scrollHeight - window.innerHeight) * 100 + '%';
+			pageProgressBar.style.width = scrollPercent;
+		};
 		window.addEventListener('scroll', stickyElement({targetElement:'.post-head', addClass: 'is-sticky'}));
 		window.addEventListener('scroll', scrollProgress, true);
 		// var i = 0;

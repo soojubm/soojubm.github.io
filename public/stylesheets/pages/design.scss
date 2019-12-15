@@ -139,3 +139,21 @@
 
 
 .countdown {display:flex;margin:1rem 0;font-size:12px;}
+
+
+
+@keyframes spinAround{0%{-webkit-transform:rotate(0deg);transform:rotate(0deg)}to{-webkit-transform:rotate(359deg);transform:rotate(359deg)}}
+.loader {
+  -webkit-animation: spinAround .5s linear infinite;
+    animation: spinAround .5s linear infinite;
+    border-radius: 290486px;
+    border-color: transparent transparent #dfdbe3 #dfdbe3;
+    border-style: solid;
+    border-width: 2px;
+    content: "";
+    display: block;
+    height: 1em;
+    position: relative;
+    width: 1em;
+    border-color: rgba(67,47,101,.1) rgba(67,47,101,.1) #8c50b9 #8c50b9;
+}

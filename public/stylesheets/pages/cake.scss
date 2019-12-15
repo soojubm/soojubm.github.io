@@ -5,10 +5,11 @@
 .cake-head-heading {font-size:1.75rem;}
 .cake-head-description {color:rgba(255,255,255,.4);}
 .cake ul {height:184px;margin:0rem -3rem 0;padding:2rem 3rem;background:#fff;position:relative;}
-.cake ul li {margin:0 0 .25rem 0}
+.cake ul li {margin:0 0 .25rem 0;padding:0;}
+.cake ul li::before {display:none;}
 .cake ul li b {float:left;width:72px;margin:0 1rem 0 0;}
 .cake ul li code {margin:0 0 0 .25rem;}
-.cake-summary {height:256px;background: #fcfbfa;padding: 2rem 50% 2rem 3rem;position: absolute;left: -3rem;  right: -3rem;}
+.cake-summary {height:256px;background:$gray10;padding: 2rem 50% 2rem 3rem;position: absolute;left: -3rem;  right: -3rem;}
 .cake-summary b {}
 .cake-score {text-align:center;position:absolute;right:420px;top:56px;}
 .cake-score-label {display:block;margin:.25rem 0 0 0;}

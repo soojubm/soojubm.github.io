@@ -1,4 +1,8 @@
-
+function removeAllClass(el) {
+	el.setAttribute('aria-expanded', 'true');
+	el.classList.remove('is-active');
+	el.nextSibling.nextSibling.classList.remove('is-visible');
+}
 
 const toggleClass = ({ triggerElement: trigger }) => {
 	const toggles = document.querySelectorAll(trigger);
@@ -25,12 +29,6 @@ const toggleClass = ({ triggerElement: trigger }) => {
 	document.body.addEventListener('click', () => {
 		toggles.forEach(element => removeAllClass(element));
 	});
-
-	function removeAllClass(el) {
-		el.setAttribute('aria-expanded', 'true');
-		el.classList.remove('is-active');
-		el.nextSibling.nextSibling.classList.remove('is-visible');
-	}
 };
 
 export default toggleClass;

@@ -40,19 +40,24 @@ export const adjustTopPadding = () => {
 	const headerElement = document.querySelector('.header');
 	if(!headerElement) return;
 
-	setPaddingTop();
-	window.addEventListener('scroll', () => requestAnimationFrame(setPaddingTop));
-	window.addEventListener('resize', () => requestAnimationFrame(setPaddingTop));
+	const fn = () => setBodyMarginTop(headerElement);
+
+	setBodyMarginTop(headerElement);
+	window.addEventListener('scroll', () => requestAnimationFrame(fn));
+	window.addEventListener('resize', () => requestAnimationFrame(fn));
 
 	// 스코프
-	function setPaddingTop() {
-		const { body } = document;
-		const isFixedHeader = getComputedStyle(headerElement).position === 'fixed';
-
-		if (isFixedHeader) {
-			body.style.marginTop = headerElement.clientHeight + 'px';
-			return;
-		}
-		body.style.marginTop = 0 + 'px';
-	}
+	// 함수는 인자를 받는 것이 좋다...
+	// 인풋이 있고 리턴이 있다...
 };
+
+function setBodyMarginTop(headerElement) {
+	const { body } = document;
+	const isFixedHeader = getComputedStyle(headerElement).position === 'fixed';
+
+	if (isFixedHeader) {
+		body.style.marginTop = headerElement.clientHeight + 'px';
+		return;
+	}
+	body.style.marginTop = 0 + 'px';
+}

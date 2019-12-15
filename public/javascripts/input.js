@@ -191,26 +191,29 @@ export const checkAllcheckbox = ({ checkAllElement, checkElements }) => {
 	const checkItems = document.querySelectorAll(checkElements);
 	if(!checkAll || !checkItems) return;
 
-	checkAll.addEventListener('change', setCheckAll);
-	checkItems.forEach(checkItem => checkItem.addEventListener('change', setCheckEach));
-
-	function setCheckEach() {
-		const check = Array.from(checkItems);
-		const isCheckedEvery = check.every(checkItem => checkItem.checked);
-		const isCheckedSome = check.some(checkItem => checkItem.checked);
-
-		checkAll.checked = isCheckedEvery;
-		checkAll.indeterminate = isCheckedSome && !isCheckedEvery;
-		checkAll.dataset.indeterminate = isCheckedSome && !isCheckedEvery;
-	}
-	function setCheckAll() {
-		checkItems.forEach(checkItem => {
-			checkItem.checked = checkAll.checked;
-			checkAll.indeterminate = false;
-			checkAll.dataset.indeterminate = false;
-		});
-	}
+	checkAll.addEventListener('change', () => setCheckAll(checkItems, checkAll));
+	checkItems.forEach(checkItem => {
+		checkItem.addEventListener('change', () => setCheckEach(checkItems, checkAll));
+	});
 };
+
+function setCheckEach(checkItems, checkAll) {
+	const check = Array.from(checkItems);
+	const isCheckedEvery = check.every(checkItem => checkItem.checked);
+	const isCheckedSome = check.some(checkItem => checkItem.checked);
+
+	checkAll.checked = isCheckedEvery;
+	checkAll.indeterminate = isCheckedSome && !isCheckedEvery;
+	checkAll.dataset.indeterminate = isCheckedSome && !isCheckedEvery;
+}
+
+function setCheckAll(checkItems, checkAll) {
+	checkItems.forEach(checkItem => {
+		checkItem.checked = checkAll.checked;
+		checkAll.indeterminate = false;
+		checkAll.dataset.indeterminate = false;
+	});
+}
 
 // export const inputVariation = () => {
 // 	const variation = document.querySelector('.js-variation');
