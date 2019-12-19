@@ -2,16 +2,15 @@
 
 import './stylesheets/style.scss';
 import { routePage} from './javascripts/router';
-import { inputNumber } from './javascripts/input';
 import { loader, checkBrowser, adjustTopPadding } from './javascripts/load';
-import { validations } from './javascripts/validations';
-import { checkAllcheckbox, attachFile, inputVariation, inputTextarea } from './javascripts/input';
+import { validations } from './javascripts/utils/validations';
 import { films } from '../views/films';
 import { countDownClock } from './javascripts/countdown';
 import { setGraph } from './javascripts/ui';
 import { setDarkmode } from './javascripts/setDarkMode';
 
 import event from './javascripts/event/index.js';
+import input from './javascripts/input/index.js';
 
 //document.documentElement.className += ' supports-date';
 // if(window.matchMedia('(min-width:800px)').matches) {}
@@ -54,23 +53,23 @@ document.addEventListener('DOMContentLoaded', async () => {
 		setGraph();
 		// carousel();
 	
-		checkAllcheckbox({ checkAllElement: '.js-checkall', checkElements: '.js-check' });
 		event.toggleClass({ triggerElement: '.js-toggle' });
 		event.enterTarget({ triggerElement: '.js-hover-trigger' });
 		event.modal({ triggerElement: '.js-modal' });
 		event.tabMenu();
 		event.toTop({ targetElement: '.js-to-top' });
 
-		event.ScrollAnimation();
+		event.scrollAnimation();
 
 		event.close({ targetElement: '.js-close' });
 		event.customCursor();
 
 		countDownClock(20, 'days');
 	
-		attachFile();
-		inputTextarea();
-		inputNumber();
+		input.checkbox({ checkAllElement: '.js-checkall', checkElements: '.js-check' });
+		input.file();
+		input.textarea();
+		input.number();
 
 
 
@@ -100,7 +99,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 			scrollPercent = window.pageYOffset / (document.body.scrollHeight - window.innerHeight) * 100 + '%';
 			pageProgressBar.style.width = scrollPercent;
 		};
-		window.addEventListener('scroll', stickyElement({targetElement:'.post-head', addClass: 'is-sticky'}));
+		window.addEventListener('scroll', event.stickyElement({targetElement:'.post-head', addClass: 'is-sticky'}));
 		window.addEventListener('scroll', scrollProgress, true);
 		// var i = 0;
 		// var images = ['cover1.jpg','cover2.jpg'];
