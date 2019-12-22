@@ -67,10 +67,10 @@ select:focus {}
 .success-button:hover:not(:disabled) {background:$color-positive;}
 .success-button:focus:not(:disabled) {background:$color-positive;}
 .success-button:active:not(:disabled) {}
-.ghost-button {@extend .button;background:none;color:$color-primary;}
+.ghost-button {@extend .button;background:none;border:1px solid transparent;color:$color-primary;}
 .ghost-button:disabled {color:$gray20;cursor:not-allowed;}
-.ghost-button:hover:not(:disabled) {background:#f3f3f3;}
-.ghost-button:focus:not(:disabled) {background:#f3f3f3;}
+.ghost-button:hover:not(:disabled) {border-color:$gray10;background:$gray10;}
+.ghost-button:focus:not(:disabled) {background:$gray10;}
 .ghost-button:active:not(:disabled) {}
 .icon-button {display:block;width:48px;height:48px;line-height:0;border-radius:$radius400;box-sizing:border-box;}
 
@@ -276,3 +276,14 @@ input[type=file] + label:after {display:none;}
 [aria-hidden=false] {width:1px;height:1px;clip:rect(1px 1px 1px 1px);overflow:hidden;position:absolute;user-select:none;}
 [role=group] {}
 [role=listitem] {}
+
+
+
+
+input:invalid {
+  box-shadow: 0 0 5px 1px red;
+}
+
+input:focus:invalid {
+  box-shadow: none;
+}

@@ -15,6 +15,8 @@ import input from './javascripts/input/index.js';
 //document.documentElement.className += ' supports-date';
 // if(window.matchMedia('(min-width:800px)').matches) {}
 
+// element.hidden = !visible
+
 window.addEventListener('offline', () => {
 	const offlineElement = document.querySelector('.js-offline');
 	offlineElement.style.display = 'block';

@@ -1,3 +1,4 @@
+// 리팩토링하긔
 const tabMenu = () => {
 	document.addEventListener('click', event => {
 		const target = event.target;
@@ -6,10 +7,9 @@ const tabMenu = () => {
 		const tabIndex = target.getAttribute('data-index');
 
 		if(target.closest('[role=tab]')) {
-			target.setAttribute('aria-selected', 'true');
 			tabActiceBar.style.left = `${target.offsetLeft}px`;
 			tabs.forEach(tab => tab.setAttribute('aria-selected', 'false'));
-		
+			target.setAttribute('aria-selected', 'true');
 			target.parentNode.parentNode.querySelectorAll('[role=tabpanel]').forEach(element => {
 				element.setAttribute('aria-hidden', 'true');
 				if(tabIndex === element.getAttribute('data-index')){

@@ -13,20 +13,21 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
-    'no-console': 'off',
+    semi: ['error', 'always'],
+    quotes: ['error', 'single'],
+    camelcase: { "properties": "always" },
+    indent: ['error', 2],  // tab or 2
     'no-empty': 'warn', // { "allowEmptyCatch": true }
-    // indent: [
-    //   'warn',
-    //   'tab', // tab or 2
-    // ],
+    
     'linebreak-style': ['warn', 'unix'],
-    quotes: ['warn', 'single'],
-    semi: ['warn', 'always'],
-    'no-unused-vars': 'off',
+    'no-useless-return': 'error',
+    'no-unused-vars': ["error", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }],
+    'no-use-before-define': [{ "variables": false }, { "functions": false }, { "classes": false }],
+
+    'no-var': 'error',
+
   },
 };
-
-
 
 // formatOnSave: true // prettier
 // autoFixOnSave: true // eslint
