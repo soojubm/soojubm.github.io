@@ -25,7 +25,6 @@ module.exports = {
     'no-use-before-define': [{ "variables": false }, { "functions": false }, { "classes": false }],
 
     'no-var': 'error',
-
   },
 };
 

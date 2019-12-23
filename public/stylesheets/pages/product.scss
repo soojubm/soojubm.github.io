@@ -6,7 +6,7 @@
 .product-image-navigation {width:inherit;text-align:center;position:fixed;left:10%;top:520px;}
 .product-image-navigation button {width:8px;height:8px;margin:0 .25rem;border:1px solid rgba(0,0,0,.1);background:$gray10;}
 .product-image-navigation button.is-current {background:$gray80;}
-.product-info {width:25%;position:absolute;left:5%;top:5rem;}
+.product-info {width:25%;position:absolute;left:5%;top:0;}
 .product-info-name {font-size:2rem;width:28px;line-height:1.2;text-align:center;position:absolute;left:-64px;top:0px;}
 .product-info-price {margin:-.25rem 0 0 0;font-size:1.25rem;}
 .product-info-price del {color:$gray40;}
