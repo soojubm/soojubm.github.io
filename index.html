@@ -205,7 +205,7 @@
     const pageHead = document.querySelector('.page-head');
     document.addEventListener('scroll', event => {
       if(!pageHead) return;
-      if(window.pageYOffset > 0) {
+      if(window.pageYOffset > 20) {
         pageHead.classList.add('is-fixed');
       } else {
         pageHead.classList.remove('is-fixed');

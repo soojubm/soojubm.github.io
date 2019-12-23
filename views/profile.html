@@ -92,20 +92,18 @@
 			<h1 class="profile-head-headline">부끄러우니까 보지마요.</h1>
 			<p class="profile-head-description">이것저것 해보는 중이라 완성도가 떨어져요.</p>
 			<button class="profile-head-share" type="button" onclick="javascript:alert('준비중');">프로필 공유하기</button>
-			<div class="profile-head-temp" style="position:absolute;left:65%;top:3.25rem;">
+			<!-- <div class="profile-head-temp">
 				<h5 style="margin:0 0 1rem 0;color:#fff;">내 프로필을 공유한 사람</h5>
-				<div style="display:flex;">
-					<div class="avatar" style="background:aquamarine;"></div>
-					<div class="avatar" style="margin-left:4px;background:blueviolet;"></div>
-					<div class="avatar" style="margin-left:4px;background:burlywood;">
+				<div role="group">
+					<div class="avatar" style="background:rgb(84, 136, 119);"></div>
+					<div class="avatar" style="background:blueviolet;"></div>
+					<div class="avatar" style="background:burlywood;">
 						<img src="/public/images/chaplin.png" alt="" style="margin-left:0;" />
 					</div>
-					<div class="avatar" style="margin-left:4px;background:chocolate;"></div>
-					<div class="avatar" style="margin-left:4px;background:darkolivegreen;"></div>
-					<div class="avatar" style="margin-left:4px;background:deepskyblue;"></div>
+					<div class="avatar" style="background:chocolate;color:#fff;">+ 32</div>
 				</div>
 				<p style="margin-top:0.5rem;color:#fff;">화니 외 5명</p>
-			</div>
+			</div> -->
 		</figure>
 		<header class="profile-user">
 			<figure class="profile-user-avatar"><img src="" alt=""></figure>
@@ -123,10 +121,11 @@
 				<span class="tag">#VanillaJS</span>
 				<span class="tag">#ReactJS</span>
 				<span class="tag">#Mobx</span>
+				<span class="tag">#Storybook</span>
 			</div>
 			<div class="profile-controls" style="display:flex;">
-				<button class="profile-controls-follow primary-button" type="button" style="width:65%;">Follow</button>
-				<button class="profile-controls-follow secondary-button" type="button" style="width:30%;margin-left:auto;">Message</button>
+				<button class="profile-controls-follow primary-button" type="button" style="width:68%;">Follow</button>
+				<button class="profile-controls-follow secondary-button" type="button" style="min-width:auto;width:30%;margin-left:auto;">Message</button>
 			</div>
 			<!-- <button class="profile-user-toggle" type="button">More <i class="icon-caret"></i></button> -->
 			<section class="profile-user-info">
@@ -162,12 +161,12 @@
 			</nav>
 			<div class="profile-display">
 				<h6 class="profile-display-heading" aria-hidden="true">제목</h6>
+				<p style="padding:0 0 1rem 0;">Viewing 1,000 Projects</p>
 				<button class="profile-display-button" onclick="javascript:alert('준비중');"><i class="material-icons">list</i> <b aria-hidden="true">List</b></button>
 				<button class="profile-display-button is-selected" onclick="javascript:alert('준비중');"><i class="material-icons">view_module</i> <b aria-hidden="true">Grid</b></button>
 			</div>
 
 			<section class="profile-tablist-panel" role="tabpanel" aria-hidden="" data-index="1">
-				<p style="margin:1rem 0;padding:1rem 0 0;">Viewing <em class=""> 1,000 </em> Projects</p>
 				<section class="works">
 					<a class="card js-modal" href="#modalTest">
 						<figure class="card-thumbnail"><img src="/public/images/caleb-woods-182648-unsplash.jpg" alt="" /></figure>

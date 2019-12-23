@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 		console.warn(error);
 	});
 
-	const white = ['#design'];
+	const white = ['#design', '#contact'];
 	const isWhite = white.includes(window.location.hash);
 	if(isWhite) {
 		document.querySelector('.page-head').classList.add('--white');
@@ -183,7 +183,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 // let loginData = {email: '', password: ''};
 
 document.addEventListener('input', event => {
-	const helpers = document.querySelectorAll('.textfield-helper'); // helpers.forEach(helper => helper.style.display = 'none');
+	// const helpers = document.querySelectorAll('.textfield-helper'); // helpers.forEach(helper => helper.style.display = 'none');
 	const { email, password } = document.login;
 	const { target } = event;
 	const isEmail = target === email;

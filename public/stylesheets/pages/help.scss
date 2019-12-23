@@ -20,7 +20,7 @@
 
 .help-category {max-width:$width-medium;margin:4rem auto;padding:0 2rem;position:relative;}
 .help-category-heading {margin:0 0 1rem 1.5rem;font-size:1.25rem;}
-.help-category-link {display:inline-block;margin:0 .5rem 0 0;padding:1rem 2rem;border:1px solid $gray10;background:$gray10;color:$gray80;}
+.help-category-link {display:flex;margin:0 .5rem 0 0;padding:1rem 2rem;border:1px solid $gray10;background:$gray10;color:$gray80;}
 
 .help-board {max-width:$width-medium;margin:2rem auto;padding:0 5%;position:relative;}
 .help-board-heading {margin:0 0 1rem 1.5rem;font-size:1.25rem;}

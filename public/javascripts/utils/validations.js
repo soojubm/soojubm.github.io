@@ -1,18 +1,18 @@
 // g모든전역 i대소문자구분없이 m멀티라인 u유니코드 y스틱검색
-var hName = /^[가-힣]+$/;
-var hName2 =  /^[가-힣a-zA-Z]+$/;
-var onlyNumbers = /^[0-9]*$/;
+// var hName = /^[가-힣]+$/;
+// var hName2 =  /^[가-힣a-zA-Z]+$/;
+// var onlyNumbers = /^[0-9]*$/;
 
-var password = /^(?=.*[a-zA-Z])((?=.*\d)|(?=.*\W)).{6,20}$/; // 영숫특
+// var password = /^(?=.*[a-zA-Z])((?=.*\d)|(?=.*\W)).{6,20}$/; // 영숫특
 
-var email = /^[a-z0-9_+.-]+@([a-z0-9-]+\.)+[a-z0-9]{2,4}$/;
-var phone = /^\d{2,3}-\d{3,4}-\d{4}$/; //  ex)123-123-1234
-var phone2 =  /^01([0|1|6|7|8|9]?)-?([0-9]{3,4})-?([0-9]{4})$/; // 010-0000-0000
+// var email = /^[a-z0-9_+.-]+@([a-z0-9-]+\.)+[a-z0-9]{2,4}$/;
+// var phone = /^\d{2,3}-\d{3,4}-\d{4}$/; //  ex)123-123-1234
+// var phone2 =  /^01([0|1|6|7|8|9]?)-?([0-9]{3,4})-?([0-9]{4})$/; // 010-0000-0000
 
-var url = /^(file|gopher|news|nntp|telnet|https?|ftps?|sftp):\/\/([a-z0-9-]+\.)+[a-z0-9]{2,4}.*$/;
+// var url = /^(file|gopher|news|nntp|telnet|https?|ftps?|sftp):\/\/([a-z0-9-]+\.)+[a-z0-9]{2,4}.*$/;
 
-var isNumber = /[0-9]/gi;
-var isAlphabet = /[a-z]/gi;
+// var isNumber = /[0-9]/gi;
+// var isAlphabet = /[a-z]/gi;
 
 export const regExr = {};
 // 정규표현식
@@ -31,8 +31,8 @@ export const validations = {
 	isLength(value, length) {
 		return value.length < length;
 	},
-	isBtyeLength(value, length) {
-	},
+	// isBtyeLength(value, length) {
+	// },
 	isNumeric(value) {
 		return /[^0-9]/g.test(value);
 	},
@@ -42,8 +42,8 @@ export const validations = {
 	isNull(value) {
 		return value === null || value.length === 0;
 	},
-	isUrl(value) {
-	}
+	// isUrl(value) {
+	// }
 };
 
 export const inputHelper = {

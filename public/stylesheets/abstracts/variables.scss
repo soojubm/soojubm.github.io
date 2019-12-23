@@ -26,6 +26,10 @@ $container-max-widths: (
   xl: 1140px
 );
 
+@custom-media --breakpoint-large (max-width:1440px);
+@custom-media --breakpoint-medium (max-width:1280px);
+@custom-media --breakpoint-small (max-width:1080px);
+
 
 $breakpoints: (
   'medium': (max-width: 800px),

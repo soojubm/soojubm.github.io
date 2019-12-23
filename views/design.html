@@ -19,6 +19,17 @@
     <style>
     .reactRow {display:flex;}
     </style>
+    <nav class="help-category" style="padding: 0;">
+      <h1 class="help-category-heading">카테고리 메뉴 샘플</h1>
+      <div style="display:flex;overflow:auto;white-space:nowrap;">
+        <a class="help-category-link" href="">📚 서점</a>
+        <a class="help-category-link" href="">🤩 장르</a>
+        <a class="help-category-link" href="">👑 최다 판매 도서</a>
+        <a class="help-category-link" href="">👼🏼 신작</a>
+        <a class="help-category-link" href="">💗 로맨스</a>
+        <a class="help-category-link" href="">🧜‍♀️ 만화</a>
+      </div>
+    </nav>
     <article class="design-article grayscale">
       <div class="loader is-large is-colorful"></div>
       <h1 class="design-article-heading">Colors</h1>
@@ -111,19 +122,468 @@
     <article class="design-article js-scroll-animation">
       <h1 class="design-article-heading">Avatars</h1>
       <p class="design-article-description">사진이 들어간 아바타를 사용할 때와 아이콘을 사용할 때 지정된 4가지의 사이즈만 사용하세요.</p>
-      <a href="" class="avatar --large --photo">
-        <img src="/public/images/caleb-woods-182648-unsplash.jpg" alt="">
-      </a>
-      <a href="" class="avatar --medium --photo">
-        <img src="/public/images/caleb-woods-182648-unsplash.jpg" alt="">
-        <!-- <span class="avatar-badge"></span> -->
-      </a>
-      <a href="" class="avatar --photo">
-        <img src="/public/images/caleb-woods-182648-unsplash.jpg" alt="">
-      </a>
-      <a href="" class="avatar --small --photo">
-        <img src="/public/images/caleb-woods-182648-unsplash.jpg" alt="">
-      </a>
+      <div role="group">
+        <a href="" class="avatar --large --photo">
+          <img src="/public/images/caleb-woods-182648-unsplash.jpg" alt="">
+        </a>
+        <a href="" class="avatar --medium --photo">
+          <img src="/public/images/caleb-woods-182648-unsplash.jpg" alt="">
+          <!-- <span class="avatar-badge"></span> -->
+        </a>
+        <a href="" class="avatar --photo">
+          <img src="/public/images/caleb-woods-182648-unsplash.jpg" alt="">
+        </a>
+        <a href="" class="avatar --small --photo">
+          <img src="/public/images/caleb-woods-182648-unsplash.jpg" alt="">
+        </a>
+      </div>
+    </article>
+
+<!-- 
+    <article class="design-article js-scroll-animation">
+      <h1 class="design-article-heading">Emphasis</h1>
+      <p class="design-article-description">수줍이는 이렇게 강조해요. 특정 단어를 강조하기 보담 시선을 끄는 카피를 선택하는 안목을 기르세요. 커밍 순...</p>
+      <ol class="list-sample">  
+        <li>수줍이는 <em>이렇게</em> 강조해요. <div>링크 텍스트로 오인될 수 있으니 주의하세요.</div></li>
+        <li>수줍이는 <b>이렇게</b> 강조해요. <div>하나의 폰트 패밀리만 사용하기 때문에 볼드로 강조할 수 없다요.</div></li>
+        <li>수줍이는 <u>이렇게</u> 강조해요. <div>언더라인으로 강조해요.</div></li>
+        <li>수줍이는 <i style="font-style:italic;">이렇게</i> 강조해요. <div>한글에는 이탤릭의 개념이 없습니다.</div></li>
+        <li>수줍이는 <sup>이렇게</sup> 강조해요. <div>수치를 표현할 때만 사용하세요.</div></li>
+      </ol>
+    </article> -->
+    
+    <article class="design-article js-scroll-animation">
+      <h1 class="design-article-heading">Breadcrumbs</h1>
+      <p class="design-article-description">페이지 레벨이 3단계 이상일 때 사용해요. 홈 아이콘 대신 텍스트를 사용하니 깔끔해보인다. 모바일에서 사용하지 마세요.</p>
+      <nav class="breadcrumbs">
+        <a class="breadcrumbs-item breadcrumbs-home" href="/"><span aria-hidden="true">홈</span>Home</a>
+        <a class="breadcrumbs-item " href="#">페이지 이름</a>
+        <a class="breadcrumbs-item breadcrumbs-last" href="#">페이지 이름</a>
+      </nav>
+    </article>
+
+    <article class="design-article js-scroll-animation">
+      <h1 class="design-article-heading">Text Links</h1>
+      <p class="design-article-description">안녕하세요?</p>
+      <p>형무소 안에서는 소장의 말이 곧 법이었으며 죄수들의 잘못과 실수는 결코 용납되지 않는다. 어머니의 사망 소식을 듣고 인해 2번이나 탈옥을 시도했다가 체포된 <a href="">루크</a>의 발에 쇠통이 채워지며 루크는…<a class="more" href="#">더 보기</a></p>
+    </article>
+
+    <article class="design-article js-scroll-animation">
+      <h1 class="design-article-heading">Tags</h1>
+      <p class="design-article-description">임시로 code태그로 마크업해서 사용 중이에요. 닫기 아이콘 연하게.</p>
+      <div class="tags" role="group">
+        <!-- <div role="list"></div> -->
+        <span class="tag tags-item" role="listitem">I'm hashtag</span>
+        <span class="tag tags-item" style="position:relative;" role="listitem">태그 <i class="icon-close" style="display:inline-block;margin-left:4px;padding:4px;"></i></span>
+      </div>
+      <div role="group" style="margin-top:.5rem;">
+        <button class="secondary-button --small --addable" type="button">Typhography <i class="icon-plus" style="display:inline-block;background:#f1f3f4;padding:12px;position:absolute;right:3px;top:3px;"></i></button>
+        <button class="secondary-button --small --addable is-added" type="button">Cinema <i class="icon-close" style="display:inline-block;background:#f1f3f4;padding:12px;position:absolute;right:3px;top:3px;"></i></button>
+      </div>
+    </article>
+
+    <article class="design-article js-scroll-animation" style="padding-bottom:80px;">
+      <h1 class="design-article-heading">Tooltip</h1>
+      <p class="design-article-description">툴팁의 위치.</p>
+      <aside class="tooltip">
+        <span class="tooltip-target"><i class="material-icons">error_outline</i></span>
+        <div class="tooltip-content">
+          <p>마우스를 올렸을 때 나오는 툴팁입니다.</p>
+          <p>스타일시트의 인접 선택자로 만들어져 있다요.</p>
+        </div>
+      </4aside>
+    </article>
+
+    <article class="design-article js-scroll-animation">
+      <h1 class="design-article-heading">Lists</h1>
+      <p class="design-article-description">군집을 이루는 엘리먼트라면 모두 리스트로 취급될 수 있으니 주의하요. 리스트업된 텍스트 노드만 리스트 태그로 마크업.</p>
+      <ul class="list-sample">
+        <li>unordered list, level 1
+          <ul>
+            <li>unordered list, level 2</li>
+            <li>unordered list, level 2</li>
+          </ul>
+        </li>
+        <li>unordered list, level 1</li>
+      </ul>
+      <hr style="margin: 1rem 0;" />
+      <ol class="list-sample">
+        <li>ordered list, level 1
+          <ol>
+            <li>ordered list, level 2</li>
+            <li>ordered list, level 2</li>
+          </ol>
+        </li>
+        <li>ordered list, level 1</li>
+      </ol>
+      <hr style="margin: 1rem 0;" />
+      <dl style="margin:0 0 .5rem 0;">
+        <dt>Definition term</dt>
+        <dd>Definition text</dd>
+      </dl>
+      <dl>
+        <dt>Definition term</dt>
+        <dd>Definition text</dd>
+      </dl>
+    </article>
+
+    <article class="design-article js-scroll-animation">
+      <h1 class="design-article-heading">Statistic</h1>
+      <p class="design-article-description">레이블과 밸류로 이루어진 유아이들을...</p>
+      <div class="statistic"><i class="statistic-label">팔로워</i><span class="statistic-value">21,682</span></div>
+    </article>
+
+
+    <!-- <article class="design-article js-scroll-animation">
+      <h1 class="design-article-heading">Tablist</h1>
+      <p class="design-article-description">Filtering, Sorting과 동일한 마크업 및 그루핑이 가능한데요?<br />버튼으로 마크업하는 것이 좋을지, 라디오/체크박스로 마크업하는 것이 좋을지?<br />가로형, 세로형, 액티브: 언더라인, 보더(sm, md), 백그라운드, 포인트</p>
+      <p class="design-article-description">데이터 비교 시 적합치 않아</p>
+      <nav class="tablist --vertical" style="margin-top:1rem" role="tablist">
+        <div class="tablist-active"></div>
+        <button class="tablist-tab is-active" role="tab" aria-selected="true" data-index="1">웹사이트 <i class="tablist-tab-badge">4</i></button>
+        <button class="tablist-tab" role="tab" aria-selected="false" data-index="2">페이지 <i class="tablist-tab-badge">6</i></button>
+        <button class="tablist-tab" role="tab" aria-selected="false" data-index="3">컴포넌트 <i class="tablist-tab-badge">18</i></button>
+        <button class="tablist-tab" role="tab" aria-selected="false" data-index="4">빈 상태 <i class="tablist-tab-badge">18</i></button>
+      </nav>
+    </article> -->
+
+    <article class="design-article js-scroll-animation">
+      <h1 class="design-article-heading">Notification Bars</h1>
+      <p class="design-article-description">긍정 상황에 사용합니다. 부정 혹은 경고, 주의, 성공, 알림 등을 추가할까요?</p>
+      <aside class="snackbar">
+        <!-- <i class="note-icon material-icons">snackbars</i> -->
+        <span class="snackbar-text"> This includes the <a href="">global HTML attributes</a>.</span>
+        <button class="snackbar-close" type="button" aria-label="close"><i class="icon-close"></i></button>
+      </aside>
+    </article>
+
+    <article class="design-article js-scroll-animation">
+      <h1 class="design-article-heading">CSS Icons</h1>
+      <p class="design-article-description">제곧내.</p>
+      <div class="dd" role="group">
+        <button class="icon-button" type="button"><i class="icon-person"></i></button>
+        <button class="icon-button" type="button"><i class="icon-search"></i></button>
+        <button class="icon-button" type="button"><i class="icon-chevron"></i></button>
+        <button class="icon-button" type="button"><i class="icon-arrow"></i></button>
+        <button class="icon-button" type="button"><i class="icon-more"></i></button>
+        <button class="icon-button" type="button"><i class="icon-plus"></i></button>
+        <button class="icon-button" type="button"><i class="icon-close"></i></button>
+        <button class="icon-button" type="button"><i class="icon-caret"></i></button>
+        <button class="icon-button" type="button"><i class="icon-hamberger"></i></button>
+        <button class="icon-button" type="button"><i class="icon-bullet"></i></button>
+        <!-- <button class="icon-button" type="button"><i class="icon-home"><span></span><span></span></i></button> -->
+      </div>
+    </article>
+
+    <article class="design-article button-article js-scroll-animation">
+      <style>
+        .design-article.button-article > div {margin:0 0 2rem 0;}
+        .design-article.button-article > div h2 {margin:0 0 .5rem 0;font-size:12px;}
+        .design-article.button-article button {width: 120px;}
+        .design-article.button-article button.icon-button {width: 48px;}
+        .dd {overflow:hidden;width:100%;}
+        .dd button {float:left;}
+      </style>
+      <h1 class="design-article-heading">Buttons</h1>
+      <p class="design-article-description">아톰Atom 단위의 컴포넌트는 클래스 네이밍 없이 자체 엘리먼트에 스타일링 된 요소들로 한정하고 리액트에서 스타일드 컴포넌트 단위가 된다.</p>
+      <div>
+        <h2>Primary Buttons</h2>
+        <div role="group">
+          <button class="primary-button" type="button">Primary</button>
+          <button class="danger-button" type="button" aria-label="danger">Danger</button>
+          <button class="success-button" type="button" aria-label="success">Success</button>
+          <button class="primary-button" type="button" disabled>Primary</button>
+        </div>
+      </div>
+      <div>
+        <h2>Secondary Buttons</h2>
+        <div role="group">
+          <button class="secondary-button" type="button">Secondary</button>
+          <button class="secondary-button" type="button" disabled>Secondary</button>
+          <button class="tertiary-button" type="button">Tertiary</button>
+          <button class="tertiary-button" type="button" disabled>Tertiary</button>
+        </div>
+      </div>
+      <div>
+        <h2>Text Buttons</h2>
+        <div role="group">
+          <button class="ghost-button" type="button">Ghost</button>
+          <button class="ghost-button" type="button" disabled>Ghost</button>
+        </div>
+      </div>
+      <!-- <div class="button-group --center" role="group">
+        <button class="tertiary-button --small" type="button">Prev</button>
+        <button class="primary-button --small" type="button">Next</button>
+      </div> -->
+      <div>
+        <h2>Small Buttons</h2>
+        <div role="group">
+          <button class="primary-button --small" type="button">Filled</button>
+          <button class="danger-button --small" type="button" aria-label="danger">Danger</button>
+          <button class="success-button --small" type="button" aria-label="danger">Success</button>
+          <button class="secondary-button --small" type="button">Secondary</button>
+          <button class="tertiary-button --small" type="button">tertiary</button>
+          <button class="ghost-button --small" type="button">Ghost</button>
+        </div>
+      </div>
+      <div>
+        <h2>Button Group</h2>
+        <div class="button-group" role="group">
+          <!-- <p>2개 기준, 버튼 간 간격(gap) 버튼의 위치(left center right between), width, filtering</p> -->
+          <button class="primary-button --small is-active" type="button">Button Group</button>
+          <button class="tertiary-button --small" type="button">Button Group</button>
+          <button class="tertiary-button --small" type="button">Button Group</button>
+          <!-- <button class="tertiary-button --small" type="button">Button Group <i class="icon-caret"></i></button> -->
+        </div>
+      </div>
+      <!-- <div class="review">
+        <div class="review-sorting" role="group">
+          <button class="ghost-button --small is-active" type="button">최신순</button>
+          <button class="ghost-button --small" type="button">별점낮은순</button>
+          <button class="ghost-button --small" type="button">별점높은순</button>
+        </div>
+        <div class="review-filter">
+          <input type="checkbox" id="photo">
+          <label for="photo">포토리뷰만 보기</label>
+        </div>
+      </div> -->
+    </article>
+
+    <article class="design-article js-scroll-animation">
+      <h1 class="design-article-heading">Checkboxes</h1>
+      <p class="design-article-description">checkbox, checkall, intermediate</p>
+      <div class="checkbox">
+        <input class="js-checkall" type="checkbox" id="line00" value="" />
+        <label for="line00">Check All</label>
+      </div>
+      <hr />
+      <div class="checkbox">
+        <input class="js-check" type="checkbox" id="line01" value="" checked />
+        <label for="line01">Everyday is like sunday</label>
+      </div>
+      <div class="checkbox">
+        <input class="js-check" type="checkbox" id="line03" value="" checked disabled />
+        <label for="line03">Everyday is like sunday</label>
+      </div>
+      <div class="checkbox textfiled">
+        <input class="js-check" type="checkbox" id="other" name="interest" value="other">
+        <label for="other">Other</label>
+        <input type="text" name="other" class="textfield-input" placeholder="다른 거 뭔지 입력해주세요.">
+      </div>
+    </article>
+
+
+    <article class="design-article js-scroll-animation">
+      <h1 class="design-article-heading">Radio</h1>
+      <p class="design-article-description">description? addon? container</p>
+      <div class="radio">
+        <input type="radio" id="gender-man" name="gender" value="" checked>
+        <label for="gender-man">Video kills the radio button</label>
+        <!-- 다음에 텍스트가 오는 경우와 텍스트가 아닌 것이 오는 경우 -->
+        <p class="radio-helper">My email campaigns are meant to be seen by the public. The more the merrier, in fact. If/when Mailchimp builds tools that help people discover me and sign up for this list, I'd like to take part in that.</p>
+      </div>
+      <div class="radio">
+        <input type="radio" id="gender-women" name="gender" value="">
+        <label for="gender-women">Video kills the radio button</label>
+      </div>
+      <div class="radio">
+        <input type="radio" id="gender-etc" name="gender2" value="" checked disabled>
+        <label for="gender-etc">Video kills the radio button</label>
+      </div>
+    </article>
+
+    <article class="design-article js-scroll-animation">
+      <h1 class="design-article-heading">Switch</h1>
+      <p class="design-article-description">on/off 설정 등에 사용합니다.</p>
+      <span class="switch" style="margin: 0 0 .75rem 0;">
+        <input type="checkbox" id="switch1" name="" role="switch" value="on" checked />
+        <label for="switch1">Receive weekly newsletter</label>
+      </span>
+      <span class="switch">
+        <input type="checkbox" id="switch2" name="" role="switch" value="off" disabled />
+        <label for="switch2">Receive weekly newsletter</label>
+      </span>
+    </article>
+    <article class="design-article js-scroll-animation">
+      <h1 class="design-article-heading">Range</h1>
+      <p class="design-article-description">체크박스</p>
+
+      <div class="range">
+        <label for="">숙박 인원</label>
+        <input type="range" min="1" max="10" value="2" step="any" list="tickmarks" id="myRange">
+        <datalist id="tickmarks">
+          <option value="0" label="0"></option>
+          <option value="5" label="5"></option>
+          <option value="10" label="10"></option>
+        </datalist>
+      </div>
+      <script>
+      var slider = document.getElementById("myRange");
+      var output = document.getElementById("demo");
+      output.innerHTML = slider.value; // Display the default slider value
+
+      // Update the current slider value (each time you drag the slider handle)
+      slider.oninput = function() {
+        output.innerHTML = this.value;
+      }
+    </script>
+    </article>
+
+    <article class="design-article js-scroll-animation">
+      <h1 class="design-article-heading">Textfield</h1>
+      <p class="design-article-description">Input text, Textarea, Select, with Icon, with Unit, with Button</p>
+      
+      <div class="variation js-variation">
+        <input class="variation-input js-variation-input js-number-input" name="variation1" type="number" value="0" min="5" max="20" >
+        <button class="variation-decrement js-variation-decrement" type="button"><i class="icon-minus"></i></button>
+        <button class="variation-increment js-variation-increment" type="button"><i class="icon-plus"></i></button>
+      </div>
+      
+      <!-- <div class="textfield" style="margin:2rem 0;">
+        <label class="textfield-label" for="number">prefix와 suffix</label>
+        <span class="textfield-prefix">http://</span>
+        <i class="textfield-icon">prefix</i>
+        <input class="textfield-input js-number-input" id="number" type="number" min="5" max="20" placeholder="숫자만 입력가능합니다."></input>
+        <span class="textfield-suffix">@soojubm.com</span>
+      </div> -->
+      <!-- <div class="textfield" style="margin:2rem 0;">
+        <label class="textfield-label" for="">아이디<abbr title="This field is mandatory" aria-label="required"></abbr></label>
+        <input class="textfield-input" type="text" placeholder="soojubm" readonly></input>
+      </div> -->
+      <div class="textfield is-invalid" style="margin:2rem 0;">
+        <label class="textfield-label" for="">레이블</label>
+        <input class="textfield-input" type="text" placeholder="Textarea Placeholder..."></input>
+        <!-- <button class="textfield-button primary-button">ddd</button> -->
+        <small class="textfield-helper">You can @mention other users and organizations to link to them.</small>
+      </div>
+      <div class="textfield" style="margin:2rem 0;">
+        <label class="textfield-label" for="date-start"><i class="">시작일</i></label>
+        <label class="textfield-icon" for="date-start"><i class="material-icons">today</i></label>
+        <input class="textfield-input" type="date" id="date-start" placeholder="날짜를 설정해주세요.">
+      </div>
+      <div class="textfield" style="margin:2rem 0;">
+        <label class="textfield-label" for="search1">셀렉트박스 레이블</label>
+        <select class="textfield-input" name="" id="">
+          <option class="select-option" value="" disabled selected hidden>Choose an option</option>
+          <option class="select-option" value="solong" >My Morning Jackt</option>
+          <optgroup class="select-optgroup" label="Category 1">
+            <option class="select-option" value="option1" disabled>Option 1</option>
+            <option class="select-option" value="option2">Option 2</option>
+          </optgroup>
+          <optgroup class="select-optgroup" label="Category 2">
+            <option class="select-option" value="option1">Option 1</option>
+            <option class="select-option" value="option2">Option 2</option>
+          </optgroup>
+        </select>
+        <i class="selectbox-indicator icon-caret"></i>
+      </div>
+      <div class="textfield" style="margin:2rem 0;">
+        <label class="textfield-label" for="search1">텍스트에어리어 레이블</label>
+        <small class="textfield-byte"><b>0 KB</b> / 100 KB</small>
+        <textarea class="textfield-input" rows="3" placeholder="Textarea Placeholder..."></textarea>
+      </div>
+
+      <div class="textfield --small --inline" style="margin-bottom:8px;">
+        <label class="textfield-label" for="">회사</label>
+        <input class="textfield-input" type="text" placeholder="인풋 인라인스타일 스몰사이즈">
+      </div>
+      <div class="textfield --small --inline">
+        <label class="textfield-label" for="">직위</label>
+        <input class="textfield-input" type="text" placeholder="인풋 인라인스타일 스몰사이즈">
+      </div>
+    </article>
+
+    <article class="design-article js-scroll-animation">
+      <h1 class="design-article-heading">Calendar</h1>
+      <p class="design-article-description">checkbox, checkall, intermediate</p>
+      <div class="calendar">
+        <h3>2020년 12월</h3>
+        <nav class="calendar-navigation">
+          <button class="calendar-navigation-prev"><i class="icon-caret --left"></i></button>
+          <button class="calendar-navigation-next"><i class="icon-caret --right"></i></button>
+        </nav>
+        <div class="calendar-head" role="row">
+          <div>일</div>
+          <div>월</div>
+          <div>화</div>
+          <div>수</div>
+          <div>목</div>
+          <div>금</div>
+          <div>토</div>
+        </div>
+        <div class="calendar-body" role="row">
+          <div class="calendar-body-column">1</div>
+          <div class="calendar-body-column">2</div>
+          <div class="calendar-body-column">3</div>
+          <div class="calendar-body-column">4</div>
+          <div class="calendar-body-column">5</div>
+          <div class="calendar-body-column">6</div>
+          <div class="calendar-body-column">7</div>
+          <div class="calendar-body-column">1</div>
+          <div class="calendar-body-column">2</div>
+          <div class="calendar-body-column">3</div>
+          <div class="calendar-body-column">4</div>
+          <div class="calendar-body-column">5</div>
+          <div class="calendar-body-column">6</div>
+          <div class="calendar-body-column">7</div>
+          <div class="calendar-body-column">1</div>
+          <div class="calendar-body-column">2</div>
+          <div class="calendar-body-column">3</div>
+          <div class="calendar-body-column">4</div>
+          <div class="calendar-body-column">5</div>
+          <div class="calendar-body-column">6</div>
+          <div class="calendar-body-column">7</div>
+        </div>
+      </div>
+    </article>
+
+    <article class="design-article js-scroll-animation">
+      <h1 class="design-article-heading">Dropdown</h1>
+      <p class="design-article-description">도롭다운 드로어...</p>
+      <div class="header-user-account dropdown">
+        <button class="dropdown-trigger js-toggle" aria-haspopup="menu" aria-expanded="false">
+          드롭다운
+          <i class="icon-caret" style="margin-left:1rem;"></i>
+        </button>
+        <menu class="dropdown-panel">
+          <h6 class="dropdown-panel-heading">Dropdown header</h6>
+          <a class="dropdown-panel-link" href="" disabled>프로필 관리</a>
+          <a class="dropdown-panel-link" href="">고객센터</a>
+          <hr />
+          <a class="dropdown-panel-link" href="">수줍이에서 로그아웃</a>
+        </menu>
+      </div>
+      <div class="header-user-account dropdown">
+        <button class="dropdown-trigger js-toggle" aria-haspopup="menu" aria-expanded="false" style="width:32px;height:32px;">
+          <i class="icon-more"></i>
+        </button>
+        <menu class="dropdown-panel">
+          <a class="dropdown-panel-link" href="">수정</a>
+          <a class="dropdown-panel-link" href="">삭제</a>
+        </menu>
+      </div>
+    </article>
+
+    <article class="design-article js-scroll-animation">
+      <h1 class="design-article-heading">File Uploader</h1>
+      <p class="design-article-description">파일 업로드</p>
+      <!-- 파일 콘텐츠는 url 매개변수로 보낼 수 없다. 여러 조각-->
+      <form class="file" method="" enctype="multipart/form-data">
+        <!-- <h3 class="file-heading">프로필 사진</h3> -->
+        <div>
+          <input class="file-input js-file-input" type="file" id="file2" multiple accept=".jpg,.png" />
+          <!-- <input type="file" accept="image/*" capture="camera"> -->
+          <label class="file-label" for="file2">파일을 추가하세요. 여기로 드래그 하셔도 되어요.</label>
+          <p class="file-helper"><small>Only .jpg and .png files. 500kb max file size.</small></p>
+        </div>
+        <section class="file-attachment">
+          <h1 class="file-attachment-heading">첨부한 파일</h1>
+          <p class="file-attachment-helper js-file-attachment-helper">No files currently selected for upload.</p>
+          <ul class="file-attachment-list js-file-attachment-list">
+          </ul>
+        </section>
+        <!-- <button class="js-file-submit primary-button" type="submit">등록하기</button> -->
+      </form>
     </article>
 
     <article class="design-article js-scroll-animation grayscale">
@@ -210,333 +670,6 @@
         </div>
       </div> -->
     </article>
-<!-- 
-    <article class="design-article js-scroll-animation">
-      <h1 class="design-article-heading">Emphasis</h1>
-      <p class="design-article-description">수줍이는 이렇게 강조해요. 특정 단어를 강조하기 보담 시선을 끄는 카피를 선택하는 안목을 기르세요. 커밍 순...</p>
-      <ol class="list-sample">  
-        <li>수줍이는 <em>이렇게</em> 강조해요. <div>링크 텍스트로 오인될 수 있으니 주의하세요.</div></li>
-        <li>수줍이는 <b>이렇게</b> 강조해요. <div>하나의 폰트 패밀리만 사용하기 때문에 볼드로 강조할 수 없다요.</div></li>
-        <li>수줍이는 <u>이렇게</u> 강조해요. <div>언더라인으로 강조해요.</div></li>
-        <li>수줍이는 <i style="font-style:italic;">이렇게</i> 강조해요. <div>한글에는 이탤릭의 개념이 없습니다.</div></li>
-        <li>수줍이는 <sup>이렇게</sup> 강조해요. <div>수치를 표현할 때만 사용하세요.</div></li>
-      </ol>
-    </article> -->
-    
-    <article class="design-article js-scroll-animation">
-      <h1 class="design-article-heading">Breadcrumbs</h1>
-      <p class="design-article-description">페이지 레벨이 3단계 이상일 때 사용해요. 홈 아이콘 대신 텍스트를 사용하니 깔끔해보인다. 모바일에서 사용하지 마세요.</p>
-      <nav class="breadcrumbs">
-        <a class="breadcrumbs-item breadcrumbs-home" href="/"><span aria-hidden="true">홈</span>Home</a>
-        <a class="breadcrumbs-item " href="#">페이지 이름</a>
-        <a class="breadcrumbs-item breadcrumbs-last" href="#">페이지 이름</a>
-      </nav>
-    </article>
-
-    <article class="design-article js-scroll-animation">
-      <h1 class="design-article-heading">Text Links</h1>
-      <p class="design-article-description">안녕하세요?</p>
-      <p>형무소 안에서는 소장의 말이 곧 법이었으며 죄수들의 잘못과 실수는 결코 용납되지 않는다. 어머니의 사망 소식을 듣고 인해 2번이나 탈옥을 시도했다가 체포된 <a href="">루크</a>의 발에 쇠통이 채워지며 루크는…<a href="" style="margin-left:.25rem;color:#000;text-decoration:underline;">더 보기</a></p>
-    </article>
-
-    <article class="design-article js-scroll-animation">
-      <h1 class="design-article-heading">Tags</h1>
-      <p class="design-article-description">임시로 code태그로 마크업해서 사용 중이에요. 닫기 아이콘 연하게.</p>
-      <div class="tags" role="list">
-        <span class="tag tags-item" role="listitem">I'm hashtag</span>
-        <span class="tag tags-item" style="position:relative;" role="listitem">태그 <i class="icon-close" style="display:inline-block;margin-left:4px;padding:4px;"></i></span>
-      </div>
-    </article>
-
-    <article class="design-article js-scroll-animation" style="padding-bottom:80px;">
-      <h1 class="design-article-heading">Tooltip</h1>
-      <p class="design-article-description">툴팁의 위치.</p>
-      <aside class="tooltip">
-        <span class="tooltip-target"><i class="material-icons">error_outline</i></span>
-        <div class="tooltip-content">
-          <p>마우스를 올렸을 때 나오는 툴팁입니다.</p>
-          <p>스타일시트의 인접 선택자로 만들어져 있다요.</p>
-        </div>
-      </4aside>
-    </article>
-
-    <article class="design-article js-scroll-animation">
-      <h1 class="design-article-heading">Lists</h1>
-      <p class="design-article-description">군집을 이루는 엘리먼트라면 모두 리스트로 취급될 수 있으니 주의하요. 리스트업된 텍스트 노드만 리스트 태그로 마크업.</p>
-      <ul class="list-sample">
-        <li>unordered list, level 1
-          <ul>
-            <li>unordered list, level 2</li>
-            <li>unordered list, level 2</li>
-          </ul>
-        </li>
-        <li>unordered list, level 1</li>
-      </ul>
-      <hr style="margin: 1rem 0;" />
-      <ol class="list-sample">
-        <li>ordered list, level 1
-          <ol>
-            <li>ordered list, level 2</li>
-            <li>ordered list, level 2</li>
-          </ol>
-        </li>
-        <li>ordered list, level 1</li>
-      </ol>
-      <hr style="margin: 1rem 0;" />
-      <dl style="margin:0 0 .5rem 0;">
-        <dt>Definition term</dt>
-        <dd>Definition text</dd>
-      </dl>
-      <dl>
-        <dt>Definition term</dt>
-        <dd>Definition text</dd>
-      </dl>
-    </article>
-
-
-    <article class="design-article js-scroll-animation">
-      <h1 class="design-article-heading">Statistic</h1>
-      <p class="design-article-description">레이블과 밸류로 이루어진 유아이들을...</p>
-      <div class="statistic"><i class="statistic-label">팔로워</i><span class="statistic-value">21,682</span></div>
-    </article>
-
-    <article class="design-article js-scroll-animation">
-      <h1 class="design-article-heading">Rating</h1>
-      <p class="design-article-description">테스트.</p>
-      <!-- <div class="rating">
-        <h1 class="rating-heading" aria-hidden="true">별점</h1>
-        <span class="rating-score">.3</span>
-        <div class="rating-star">
-            <i class="material-icons">star</i>
-            <i class="material-icons">star</i>
-            <i class="material-icons">star</i>
-            <i class="material-icons">star</i>
-            <i class="material-icons">star</i>
-          <span class="rating-star-front">별별별별별</span>
-          <span class="rating-star-back">별별별별별</span>
-        </div>
-        <small class="rating-count">총 24개의 평가</small>
-      </div> -->
-      <div class="rating2 --large">
-        <i class="rating2-star material-icons">star</i>
-        <span class="rating2-score">4.71점(평가 277개)</span>
-      </div>
-      <div class="rating2">
-        <i class="rating2-star material-icons">star</i>
-        <span class="rating2-score">4.3</span>
-      </div>
-      <dl style="margin:1rem 0;">
-        <dt>청결도</dt>
-        <dd style="display: flex;align-items: center;">
-          <div class="graph-item --horizental">
-            <span class="graph-item-value">3.2</span>
-            <div class="graph-item-bar" style="width:70%;"></div>
-          </div>
-        </dd>
-      </dl>
-      <dl style="margin:1rem 0;">
-        <dt>의사소통</dt>
-        <dd style="display: flex;align-items: center;">
-          <div class="graph-item --horizental">
-            <span class="graph-item-value">4.8</span>
-            <div class="graph-item-bar"></div>
-          </div>
-        </dd>
-      </dl>
-      <dl style="display:block;margin:1rem 0;">
-        <dt>클라우드 스토리지</dt>
-        <dd style="display:block;align-items: center;margin-top:-.5rem;">
-          <div class="graph-item --horizental" style="margin:0;width:100%;">
-            <span class="graph-item-value" style="right:0;bottom:12px;">4.8</span>
-            <div class="graph-item-bar"></div>
-          </div>
-          <small>2GB 중 5,218KB 사용됨</small>
-        </dd>
-      </dl>
-    </article>
-
-    <article class="design-article js-scroll-animation">
-      <h1 class="design-article-heading">Carousel</h1>
-      <p class="design-article-description">만드는 중.</p>
-      <section class="slider">
-        <div class="slider-viewer">
-          <button class="slider-viewer-slide" type="button">초1</button>
-          <button class="slider-viewer-slide" type="button">초2</button>
-          <button class="slider-viewer-slide" type="button">초3</button>
-          <button class="slider-viewer-slide" type="button">초4</button>
-          <button class="slider-viewer-slide" type="button">초5</button>
-          <button class="slider-viewer-slide" type="button">초6</button>
-          <button class="slider-viewer-slide" type="button" style="background:green;">중1</button>
-          <button class="slider-viewer-slide" type="button" style="background:green;">중2</button>
-          <button class="slider-viewer-slide" type="button" style="background:green;">중3</button>
-          <button class="slider-viewer-slide" type="button" style="background:blue;">고1</button>
-          <button class="slider-viewer-slide" type="button" style="background:blue;">고2</button>
-          <button class="slider-viewer-slide" type="button" style="background:blue;">고3</button>
-        </div>
-        <!-- <nav class="slider-dots">
-          <button class="slider-dots-dot">1</button>
-          <button class="slider-dots-dot">1</button>
-          <button class="slider-dots-dot">1</button>
-        </nav> -->
-        <nav class="slider-arrows">
-          <button class="slider-arrows-prev" type="button"><i class="icon-chevron"></i></button>
-          <button class="slider-arrows-next" type="button"><i class="icon-chevron"></i></button>
-        </nav>
-      </section>
-    </article>
-
-    <!-- <article class="design-article js-scroll-animation">
-      <h1 class="design-article-heading">Tablist</h1>
-      <p class="design-article-description">Filtering, Sorting과 동일한 마크업 및 그루핑이 가능한데요?<br />버튼으로 마크업하는 것이 좋을지, 라디오/체크박스로 마크업하는 것이 좋을지?<br />가로형, 세로형, 액티브: 언더라인, 보더(sm, md), 백그라운드, 포인트</p>
-      <p class="design-article-description">데이터 비교 시 적합치 않아</p>
-      <nav class="tablist --vertical" style="margin-top:1rem" role="tablist">
-        <div class="tablist-active"></div>
-        <button class="tablist-tab is-active" role="tab" aria-selected="true" data-index="1">웹사이트 <i class="tablist-tab-badge">4</i></button>
-        <button class="tablist-tab" role="tab" aria-selected="false" data-index="2">페이지 <i class="tablist-tab-badge">6</i></button>
-        <button class="tablist-tab" role="tab" aria-selected="false" data-index="3">컴포넌트 <i class="tablist-tab-badge">18</i></button>
-        <button class="tablist-tab" role="tab" aria-selected="false" data-index="4">빈 상태 <i class="tablist-tab-badge">18</i></button>
-      </nav>
-    </article> -->
-
-    <article class="design-article js-scroll-animation">
-      <h1 class="design-article-heading">Notification Bars</h1>
-      <p class="design-article-description">긍정 상황에 사용합니다. 부정 혹은 경고, 주의, 성공, 알림 등을 추가할까요?</p>
-      <aside class="snackbar">
-        <!-- <i class="note-icon material-icons">snackbars</i> -->
-        <span class="snackbar-text"> This includes the <a href="">global HTML attributes</a>.</span>
-        <button class="snackbar-close" type="button" aria-label="close"><i class="icon-close"></i></button>
-      </aside>
-      <aside class="snackbar --warning" style="margin-top:1rem;">
-        <span class="snackbar-text"> <em>Warning</em>: This includes the <a href="">global HTML attributes</a>.</span>
-        <button class="snackbar-close" type="button" aria-label="close"><i class="icon-close"></i></button>
-      </aside>
-    </article>
-
-    <article class="design-article js-scroll-animation">
-      <h1 class="design-article-heading">Bottom Navigation</h1>
-      <p class="design-article-description">제곧내. 모바일에서만 사용.</p>
-      <nav class="bottom-navigation">
-        <a href="">
-          <i>🐣</i>
-          <span>홈</span>
-        </a>
-        <a href="">
-          <i>🐣</i>
-          <span>피드</span>
-        </a>
-        <a href="">
-          <i>🐣</i>
-          <span>설정</span>
-        </a>
-      </nav>
-    </article>
-
-    <article class="design-article js-scroll-animation">
-      <h1 class="design-article-heading">CSS Icons</h1>
-      <p class="design-article-description">제곧내.</p>
-      <div class="dd" role="group">
-        <button class="icon-button" type="button"><i class="icon-person"></i></button>
-        <button class="icon-button" type="button"><i class="icon-search"></i></button>
-        <button class="icon-button" type="button"><i class="icon-chevron"></i></button>
-        <button class="icon-button" type="button"><i class="icon-arrow"></i></button>
-        <button class="icon-button" type="button"><i class="icon-more"></i></button>
-        <button class="icon-button" type="button"><i class="icon-plus"></i></button>
-        <button class="icon-button" type="button"><i class="icon-close"></i></button>
-        <button class="icon-button" type="button"><i class="icon-caret"></i></button>
-        <button class="icon-button" type="button"><i class="icon-hamberger"></i></button>
-        <button class="icon-button" type="button"><i class="icon-bullet"></i></button>
-        <!-- <button class="icon-button" type="button"><i class="icon-home"><span></span><span></span></i></button> -->
-      </div>
-    </article>
-
-    <article class="design-article button-article js-scroll-animation">
-      <style>
-        .design-article.button-article > div {margin:0 0 2rem 0;}
-        .design-article.button-article > div h2 {margin:0 0 .5rem 0;font-size:12px;}
-        .design-article.button-article button {width: 120px;}
-        .design-article.button-article button.icon-button {width: 48px;}
-        .dd {overflow:hidden;width:100%;}
-        .dd button {float:left;}
-      </style>
-      <h1 class="design-article-heading">Buttons</h1>
-      <p class="design-article-description">아톰Atom 단위의 컴포넌트는 클래스 네이밍 없이 자체 엘리먼트에 스타일링 된 요소들로 한정하고 리액트에서 스타일드 컴포넌트 단위가 된다.</p>
-      <div>
-        <h2>Primary Buttons</h2>
-        <button class="primary-button" type="button">Primary</button>
-        <button class="danger-button" type="button" aria-label="danger">Danger</button>
-        <button class="success-button" type="button" aria-label="success">Success</button>
-        <button class="primary-button" type="button" disabled>Primary</button>
-      </div>
-      <div>
-        <h2>Secondary Buttons</h2>
-        <button class="secondary-button" type="button">Secondary</button>
-        <button class="secondary-button" type="button" disabled>Secondary</button>
-        <button class="tertiary-button" type="button">Tertiary</button>
-        <button class="tertiary-button" type="button" disabled>Tertiary</button>
-      </div>
-      <div>
-        <h2>Text Buttons</h2>
-        <button class="ghost-button" type="button">Ghost</button>
-        <button class="ghost-button" type="button" disabled>Ghost</button>
-      </div>
-      <!-- <div class="button-group --center" role="group">
-        <button class="tertiary-button --small" type="button">Prev</button>
-        <button class="primary-button --small" type="button">Next</button>
-      </div> -->
-      <div>
-        <h2>Small Buttons</h2>
-        <button class="primary-button --small" type="button">Filled</button>
-        <button class="danger-button --small" type="button" aria-label="danger">Danger</button>
-        <button class="success-button --small" type="button" aria-label="danger">Success</button>
-        <button class="secondary-button --small" type="button">Secondary</button>
-        <button class="tertiary-button --small" type="button">tertiary</button>
-        <button class="ghost-button --small" type="button">Ghost</button>
-      </div>
-      <div>
-        <h2>Button Group</h2>
-        <div class="button-group" role="group">
-          <!-- <p>2개 기준, 버튼 간 간격(gap) 버튼의 위치(left center right between), width, filtering</p> -->
-          <button class="primary-button --small is-active" type="button">Button Group</button>
-          <button class="tertiary-button --small" type="button">Button Group</button>
-          <button class="tertiary-button --small" type="button">Button Group</button>
-          <!-- <button class="tertiary-button --small" type="button">Button Group <i class="icon-caret"></i></button> -->
-        </div>
-      </div>
-      <div style="display:flex">
-        <button class="secondary-button --small --addable" type="button" style="margin:0;margin-right:.5rem;">Typhography <i class="icon-plus" style="display:inline-block;background:#f1f3f4;padding:12px;position:absolute;right:3px;top:3px;"></i></button>
-        <button class="secondary-button --small --addable is-added" type="button" style="margin:0;">Cinema <i class="icon-close" style="display:inline-block;background:#f1f3f4;padding:12px;position:absolute;right:3px;top:3px;"></i></button>
-      </div>
-      <!-- <div class="review">
-        <div class="review-sorting" role="group">
-          <button class="ghost-button --small is-active" type="button">최신순</button>
-          <button class="ghost-button --small" type="button">별점낮은순</button>
-          <button class="ghost-button --small" type="button">별점높은순</button>
-        </div>
-        <div class="review-filter">
-          <input type="checkbox" id="photo">
-          <label for="photo">포토리뷰만 보기</label>
-        </div>
-      </div> -->
-    </article>
-
-    <article class="design-article js-scroll-animation">
-      <h1 class="design-article-heading">Dropdown</h1>
-      <p class="design-article-description">+ hidden menu</p>
-      <div class="header-user-account dropdown">
-        <button class="dropdown-trigger js-toggle" aria-haspopup="menu" aria-expanded="false">
-          드롭다운
-          <i class="icon-caret" style="margin-left:1rem;"></i>
-        </button>
-        <menu class="dropdown-panel">
-          <h6 class="dropdown-panel-heading">Dropdown header</h6>
-          <a class="dropdown-panel-link" href="" disabled>프로필 관리</a>
-          <a class="dropdown-panel-link" href="">고객센터</a>
-          <hr />
-          <a class="dropdown-panel-link" href="">수줍이에서 로그아웃</a>
-        </menu>
-      </div>
-    </article>
-
 
     <article class="design-article js-scroll-animation">
       <h1 class="design-article-heading">Dialog</h1>
@@ -544,7 +677,7 @@
       <div class="dialog" role="dialog">
         <p class="dialog-heading">부끄러우니까 보지마요?</p>
         <p class="dialog-description">토스트 유아이를 만드는 거에요. 쿠키 사용 승인 요청 내용이 들어갈 수도 있고 뭐, 그렇답니다.</p>
-        <footer class="dialog-footer" role="group">
+        <footer class="dialog-footer">
           <button class="ghost-button" type="button">취소</button>
           <button class="ghost-button" type="submit">삭제</button>
           <!-- <button class="toast-close js-close" type="button" style="position:aboslute;right:0;top:0;"><i class="icon-close"></i></button> -->
@@ -552,248 +685,6 @@
       </div>
     </article>
 
-    <article class="design-article js-scroll-animation">
-      <h1 class="design-article-heading">Checkboxes</h1>
-      <p class="design-article-description">checkbox, checkall, intermediate</p>
-      <div class="checkbox">
-        <input class="js-checkall" type="checkbox" id="line00" value="" />
-        <label for="line00">Check All</label>
-      </div>
-      <hr />
-      <div class="checkbox">
-        <input class="js-check" type="checkbox" id="line01" value="" checked />
-        <label for="line01">Everyday is like sunday</label>
-      </div>
-      <div class="checkbox">
-        <input class="js-check" type="checkbox" id="line03" value="" checked disabled />
-        <label for="line03">Everyday is like sunday</label>
-      </div>
-      <div class="checkbox textfiled">
-        <input class="js-check" type="checkbox" id="other" name="interest" value="other">
-        <label for="other">Other</label>
-        <input type="text" name="other" class="textfield-input" placeholder="다른 거 뭔지 입력해주세요.">
-      </div>
-    </article>
-
-    <style>
-    .calendar {
-      width: 250px;
-      --date-width: 32px;
-      --date-height: 32px;
-      --date-background: #eee;
-    }
-    .calendar h3 {
-      font-size: 1rem;
-    }
-    .calendar-head {margin-top: .5rem !important;
-      display: grid !important;
-      grid-template-columns: repeat(7, 1fr) !important;
-      gap: 4px !important;
-      font-size:12px;
-    }
-    .calendar-head div {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width:32px;height:32px;border-radius:4px;
-    }
-    .calendar-body {
-      display: grid !important;
-      grid-template-columns: repeat(7, 1fr) !important;
-      gap: 4px !important;
-    }
-    .calendar-body div {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width:32px;height:32px;border-radius:4px;background:#eee;font-size:12px;
-    }
-    </style>
-
-    <article class="design-article js-scroll-animation">
-      <h1 class="design-article-heading">Radio</h1>
-      <p class="design-article-description">description? addon? container</p>
-      <div class="radio">
-        <input type="radio" id="gender-man" name="gender" value="" checked>
-        <label for="gender-man">Video kills the radio button</label>
-        <!-- 다음에 텍스트가 오는 경우와 텍스트가 아닌 것이 오는 경우 -->
-        <p class="radio-helper">My email campaigns are meant to be seen by the public. The more the merrier, in fact. If/when Mailchimp builds tools that help people discover me and sign up for this list, I'd like to take part in that.</p>
-      </div>
-      <div class="radio">
-        <input type="radio" id="gender-women" name="gender" value="">
-        <label for="gender-women">Video kills the radio button</label>
-      </div>
-      <div class="radio">
-        <input type="radio" id="gender-etc" name="gender2" value="" checked disabled>
-        <label for="gender-etc">Video kills the radio button</label>
-      </div>
-    </article>
-
-
-    <article class="design-article js-scroll-animation">
-      <h1 class="design-article-heading">Calendar</h1>
-      <p class="design-article-description">checkbox, checkall, intermediate</p>
-      <div class="calendar">
-        <h3>12월</h3>
-        <div class="calendar-head">
-          <div>일</div>
-          <div>월</div>
-          <div>화</div>
-          <div>수</div>
-          <div>목</div>
-          <div>금</div>
-          <div>토</div>
-        </div>
-        <div class="calendar-body">
-          <div>1</div>
-          <div>2</div>
-          <div>3</div>
-          <div>4</div>
-          <div>5</div>
-          <div>6</div>
-          <div>7</div>
-          <div>1</div>
-          <div>2</div>
-          <div>3</div>
-          <div>4</div>
-          <div>5</div>
-          <div>6</div>
-          <div>7</div>
-          <div>1</div>
-          <div>2</div>
-          <div>3</div>
-          <div>4</div>
-          <div>5</div>
-          <div>6</div>
-          <div>7</div>
-        </div>
-      </div>
-    </article>
-
-    <article class="design-article js-scroll-animation">
-      <h1 class="design-article-heading">Switch</h1>
-      <p class="design-article-description">on/off 설정 등에 사용합니다.</p>
-      <span class="switch" style="margin: 0 0 .75rem 0;">
-        <input type="checkbox" id="switch1" name="" role="switch" value="on" checked />
-        <label for="switch1">Receive weekly newsletter</label>
-      </span>
-      <span class="switch">
-        <input type="checkbox" id="switch2" name="" role="switch" value="off" disabled />
-        <label for="switch2">Receive weekly newsletter</label>
-      </span>
-    </article>
-    <article class="design-article js-scroll-animation">
-      <h1 class="design-article-heading">Range</h1>
-      <p class="design-article-description">체크박스</p>
-
-      <div class="range">
-        <label for="">숙박 인원</label>
-        <input type="range" min="1" max="10" value="2" step="any" list="tickmarks" id="myRange">
-        <datalist id="tickmarks">
-          <option value="0" label="0"></option>
-          <option value="5" label="5"></option>
-          <option value="10" label="10"></option>
-        </datalist>
-      </div>
-      <script>
-      var slider = document.getElementById("myRange");
-      var output = document.getElementById("demo");
-      output.innerHTML = slider.value; // Display the default slider value
-
-      // Update the current slider value (each time you drag the slider handle)
-      slider.oninput = function() {
-        output.innerHTML = this.value;
-      }
-    </script>
-    </article>
-
-    <article class="design-article js-scroll-animation">
-      <h1 class="design-article-heading">Textfield</h1>
-      <p class="design-article-description">Input text, Textarea, Select, with Icon, with Unit, with Button</p>
-      
-      <div class="variation js-variation">
-        <input class="variation-input js-variation-input js-number-input" name="variation1" type="number" value="0" min="5" max="20" >
-        <button class="variation-decrement js-variation-decrement" type="button"><i class="icon-minus"></i></button>
-        <button class="variation-increment js-variation-increment" type="button"><i class="icon-plus"></i></button>
-      </div>
-      
-      <div class="textfield" style="margin:2rem 0;">
-        <label class="textfield-label" for="number">prefix와 suffix</label>
-        <span class="textfield-prefix">http://</span>
-        <!-- <i class="textfield-icon">prefix</i> -->
-        <input class="textfield-input js-number-input" id="number" type="number" min="5" max="20" placeholder="숫자만 입력가능합니다."></input>
-        <span class="textfield-suffix">@soojubm.com</span>
-      </div>
-      <div class="textfield" style="margin:2rem 0;">
-        <label class="textfield-label" for="">아이디<abbr title="This field is mandatory" aria-label="required"></abbr></label>
-        <input class="textfield-input" type="text" placeholder="soojubm" readonly></input>
-      </div>
-      <div class="textfield is-invalid" style="margin:2rem 0;">
-        <label class="textfield-label" for="">레이블</label>
-        <input class="textfield-input" type="text" placeholder="Textarea Placeholder..."></input>
-        <!-- <button class="textfield-button primary-button">ddd</button> -->
-        <small class="textfield-helper">You can @mention other users and organizations to link to them.</small>
-      </div>
-      <div class="textfield" style="margin:2rem 0;">
-        <label class="textfield-label" for="date-start"><i class="">시작일</i></label>
-        <label class="textfield-icon" for="date-start"><i class="material-icons">today</i></label>
-        <input class="textfield-input" type="date" id="date-start" placeholder="날짜를 설정해주세요.">
-      </div>
-      <div class="textfield" style="margin:2rem 0;">
-        <label class="textfield-label" for="search1">셀렉트박스 레이블</label>
-        <select class="textfield-input" name="" id="">
-          <option class="select-option" value="" disabled selected hidden>Choose an option</option>
-          <option class="select-option" value="solong" >My Morning Jackt</option>
-          <optgroup class="select-optgroup" label="Category 1">
-            <option class="select-option" value="option1" disabled>Option 1</option>
-            <option class="select-option" value="option2">Option 2</option>
-          </optgroup>
-          <optgroup class="select-optgroup" label="Category 2">
-            <option class="select-option" value="option1">Option 1</option>
-            <option class="select-option" value="option2">Option 2</option>
-          </optgroup>
-        </select>
-        <i class="selectbox-indicator icon-caret"></i>
-      </div>
-      <div class="textfield" style="margin:2rem 0;">
-        <label class="textfield-label" for="search1">텍스트에어리어 레이블</label>
-        <small class="textfield-byte"><b>0 KB</b> / 100 KB</small>
-        <textarea class="textfield-input" rows="3" placeholder="Textarea Placeholder..."></textarea>
-      </div>
-
-      <div class="textfield --small --inline" style="margin-bottom:8px;">
-        <label class="textfield-label" for="">회사</label>
-        <input class="textfield-input" type="text" placeholder="인풋 인라인스타일 스몰사이즈">
-      </div>
-      <div class="textfield --small --inline">
-        <label class="textfield-label" for="">직위</label>
-        <input class="textfield-input" type="text" placeholder="인풋 인라인스타일 스몰사이즈">
-      </div>
-    </article>
-
-    <article class="design-article js-scroll-animation">
-      <h1 class="design-article-heading">File Uploader</h1>
-      <p class="design-article-description">파일 업로드</p>
-      <!-- 파일 콘텐츠는 url 매개변수로 보낼 수 없다. 여러 조각-->
-      <form class="file" method="" enctype="multipart/form-data">
-        <!-- <h3 class="file-heading">프로필 사진</h3> -->
-        <div>
-          <input class="file-input js-file-input" type="file" id="file2" multiple accept=".jpg,.png" />
-          <!-- <input type="file" accept="image/*" capture="camera"> -->
-          <label class="file-label" for="file2">파일을 추가하세요. 여기로 드래그 하셔도 되어요.</label>
-          <p class="file-helper"><small>Only .jpg and .png files. 500kb max file size.</small></p>
-        </div>
-        <section class="file-attachment">
-          <h1 class="file-attachment-heading">첨부한 파일</h1>
-          <p class="file-attachment-helper js-file-attachment-helper">No files currently selected for upload.</p>
-          <ul class="file-attachment-list js-file-attachment-list">
-          </ul>
-        </section>
-        <!-- <button class="js-file-submit primary-button" type="submit">등록하기</button> -->
-      </form>
-    </article>
-
-    
 
     <article class="design-article js-scroll-animation">
       <h1 class="design-article-heading">Paginations</h1>
@@ -858,15 +749,6 @@
           </tr>
           <tr>
             <td><input type="checkbox"><label for=""></label></td>
-            <td>さ</td>
-            <td>し</td>
-            <td>す</td>
-            <td>せ</td>
-            <td>そ</td>
-            <td class="right">9,600</td>
-          </tr>
-          <tr>
-            <td><input type="checkbox"><label for=""></label></td>
             <td>ま</td>
             <td>み</td>
             <td>む</td>
@@ -903,8 +785,8 @@
           </tr>
         </tbody>
       </table>
-      <div style="overflow:auto;">
-        <div class="row --head">
+      <div style="overflow:auto;" role="rowgroup">
+        <div class="row --head" role="row">
           <!-- <div class="row-checkbox">Ranking</div> -->
           <div class="row-checkbox">Check</div>
           <div class="row-avatar">Avatar</div>
@@ -961,6 +843,36 @@
     </article>
 
     <article class="design-article js-scroll-animation">
+      <h1 class="design-article-heading">Carousel</h1>
+      <p class="design-article-description">만드는 중.</p>
+      <section class="slider">
+        <div class="slider-viewer">
+          <button class="slider-viewer-slide" type="button">초1</button>
+          <button class="slider-viewer-slide" type="button">초2</button>
+          <button class="slider-viewer-slide" type="button">초3</button>
+          <button class="slider-viewer-slide" type="button">초4</button>
+          <button class="slider-viewer-slide" type="button">초5</button>
+          <button class="slider-viewer-slide" type="button">초6</button>
+          <button class="slider-viewer-slide" type="button" style="background:green;">중1</button>
+          <button class="slider-viewer-slide" type="button" style="background:green;">중2</button>
+          <button class="slider-viewer-slide" type="button" style="background:green;">중3</button>
+          <button class="slider-viewer-slide" type="button" style="background:blue;">고1</button>
+          <button class="slider-viewer-slide" type="button" style="background:blue;">고2</button>
+          <button class="slider-viewer-slide" type="button" style="background:blue;">고3</button>
+        </div>
+        <!-- <nav class="slider-dots">
+          <button class="slider-dots-dot">1</button>
+          <button class="slider-dots-dot">1</button>
+          <button class="slider-dots-dot">1</button>
+        </nav> -->
+        <nav class="slider-arrows">
+          <button class="slider-arrows-prev" type="button"><i class="icon-chevron"></i></button>
+          <button class="slider-arrows-next" type="button"><i class="icon-chevron"></i></button>
+        </nav>
+      </section>
+    </article>
+
+    <article class="design-article js-scroll-animation">
       <h1 class="design-article-heading">Accordions</h1>
       <p class="design-article-description">질의응답에 주로 사용해요. 공지사항 정도의 간단한 게시글에서도 사용할 수 있으나 그 이상의 경우에는 다른 유아이를 고민하세요.</p>
       <button class="accordion-trigger js-toggle" type="button" aria-expanded="false"><i class="icon-caret"></i> 회원탈퇴는 어떻게 할 수 있나요?</button>
@@ -982,6 +894,105 @@
           <a class="dropdown-item" href="#url">Dropdown item</a>
         </div>
       </details>
+    </article>
+
+
+    <article class="design-article js-scroll-animation">
+      <h1 class="design-article-heading">Bottom Navigation</h1>
+      <p class="design-article-description">제곧내. 모바일에서만 사용.</p>
+      <nav class="bottom-navigation">
+        <a href="">
+          <i class="icon-person"></i>
+          <span>홈</span>
+        </a>
+        <a href="">
+            <i class="icon-person"></i>
+          <span>피드</span>
+        </a>
+        <a href="">
+          <i class="icon-person"></i>
+          <span>설정</span>
+        </a>
+      </nav>
+    </article>
+
+    <article class="design-article js-scroll-animation">
+      <h1 class="design-article-heading">Rating</h1>
+      <p class="design-article-description">테스트.</p>
+      <!-- <div class="rating">
+        <h1 class="rating-heading" aria-hidden="true">별점</h1>
+        <span class="rating-score">.3</span>
+        <div class="rating-star">
+            <i class="material-icons">star</i>
+            <i class="material-icons">star</i>
+            <i class="material-icons">star</i>
+            <i class="material-icons">star</i>
+            <i class="material-icons">star</i>
+          <span class="rating-star-front">별별별별별</span>
+          <span class="rating-star-back">별별별별별</span>
+        </div>
+        <small class="rating-count">총 24개의 평가</small>
+      </div> -->
+      <div class="rating2 --large">
+        <i class="rating2-star material-icons">star</i>
+        <span class="rating2-score">4.71점(평가 277개)</span>
+      </div>
+      <div class="rating2">
+        <i class="rating2-star material-icons">star</i>
+        <span class="rating2-score">4.3</span>
+      </div>
+      <dl style="margin:1rem 0;">
+        <dt>의사소통</dt>
+        <dd style="display: flex;align-items: center;">
+          <div class="graph-item --horizental">
+            <span class="graph-item-value">4.8</span>
+            <div class="graph-item-bar"></div>
+          </div>
+        </dd>
+      </dl>
+      <dl style="display:block;margin:1rem 0;">
+        <dt>클라우드 스토리지</dt>
+        <dd style="display:block;align-items: center;margin-top:-.5rem;">
+          <div class="graph-item --horizental" style="margin:0;width:100%;">
+            <span class="graph-item-value" style="right:0;bottom:12px;">4.8</span>
+            <div class="graph-item-bar"></div>
+          </div>
+          <small>2GB 중 5,218KB 사용됨</small>
+        </dd>
+      </dl>
+    </article>
+
+    <article class="design-article js-scroll-animation">
+      <h1 class="design-article-heading">Graph</h1>
+      <p class="design-article-description">옿이</p>
+      <div class="graph js-graph">
+        <div class="graph-heading">1월 26일 <em>컴퓨터통신 분야</em>에서는<br><em>7백명의 지식iN</em>들이 답변하셨습니다.</div>
+        <div class="graph-item">
+          <span class="graph-item-value">40%</span>
+          <div class="graph-item-bar"></div>
+          <span class="graph-item-label">10대</span>
+        </div>
+        <div class="graph-item">
+          <span class="graph-item-value">30%</span>
+          <div class="graph-item-bar"></div>
+          <span class="graph-item-label">20대</span>
+        </div>
+        <div class="graph-item">
+          <span class="graph-item-value">20%</span>
+          <div class="graph-item-bar"></div>
+          <span class="graph-item-label">30대</span>
+        </div>
+        <div class="graph-item">
+          <span class="graph-item-value">10%</span>
+          <div class="graph-item-bar"></div>
+          <span class="graph-item-label">40대</span>
+        </div>
+        <div class="graph-item">
+          <span class="graph-item-value">0%</span>
+          <div class="graph-item-bar"></div>
+          <span class="graph-item-label">50대</span>
+        </div>
+      </div>
     </article>
 
     <article class="design-article js-scroll-animation">
@@ -1028,38 +1039,6 @@
       </div>
     </article>
 
-    <article class="design-article js-scroll-animation">
-      <h1 class="design-article-heading">Graph</h1>
-      <p class="design-article-description">옿이</p>
-      <div class="graph js-graph">
-        <div class="graph-heading">1월 26일 <em>컴퓨터통신 분야</em>에서는<br><em>7백명의 지식iN</em>들이 답변하셨습니다.</div>
-        <div class="graph-item">
-          <span class="graph-item-value">40%</span>
-          <div class="graph-item-bar"></div>
-          <span class="graph-item-label">10대</span>
-        </div>
-        <div class="graph-item">
-          <span class="graph-item-value">30%</span>
-          <div class="graph-item-bar"></div>
-          <span class="graph-item-label">20대</span>
-        </div>
-        <div class="graph-item">
-          <span class="graph-item-value">20%</span>
-          <div class="graph-item-bar"></div>
-          <span class="graph-item-label">30대</span>
-        </div>
-        <div class="graph-item">
-          <span class="graph-item-value">10%</span>
-          <div class="graph-item-bar"></div>
-          <span class="graph-item-label">40대</span>
-        </div>
-        <div class="graph-item">
-          <span class="graph-item-value">0%</span>
-          <div class="graph-item-bar"></div>
-          <span class="graph-item-label">50대</span>
-        </div>
-      </div>
-    </article>
 
 
     <!-- <article class="design-article js-scroll-animation">
@@ -1101,7 +1080,7 @@
       </section>
     </article> -->
 
-    <article class="design-article typography">
+    <!-- <article class="design-article typography">
       <h1 class="design-article-heading typography-heading">Typhography</h1>
       <p class="design-article-description">샘플이엥요.</p>
       <div>
@@ -1134,7 +1113,7 @@
           <h6 class="typography-caption">캡션 이��지 설명</h6>
         </div>
       </div>
-    </article>
+    </article> -->
 
     <style>
     .typography {}
@@ -1142,8 +1121,6 @@
     .typography div {margin:0 0 2rem;}
     .typography div div {padding:1rem 1.5rem 1.25rem;background:#f1f3f4;border-radius:4px;}
     </style>
-      <i class="icon-check1"></i>
-      <span class="letter-piece"><i>스</i></span>
 
       <!-- 기본 폼 태그 테스트 -->
       <!-- <form action="">
@@ -1159,11 +1136,40 @@
         <button type="submit">제출</button>
       </form> -->
 
+      <!-- <table role="table" aria-label="Semantic Elements" aria-describedby="semantic_elements_table_desc" aria-rowcount="81">   
+        <caption id="semantic_elements_table_desc">Semantic Elements to use instead of ARIA's roles</caption>   
+        <thead role="rowgroup">      
+           <tr role="row">        
+             <th role="columnheader" aria-sort="none">ARIA Role</th>
+             <th role="columnheader" aria-sort="none">Semantic Element</th>      
+           </tr>    
+        </thead>
+        <tbody role="rowgroup">     
+           <tr role="row" aria-rowindex="11">        
+             <td role="cell">header</td>
+             <td role="cell">h1</td>
+           </tr>
+           <tr role="row" aria-rowindex="16">
+             <td role="cell">header</td>
+             <td role="cell">h6</td>
+           </tr>
+           <tr role="row" aria-rowindex="18">
+             <td role="cell">rowgroup</td>
+             <td role="cell">thead</td>
+           </tr>
+           <tr role="row" aria-rowindex="24">
+             <td role="cell">term</td>
+             <td role="cell">dt</td>
+           </tr>
+         </tbody>
+       </table> -->
+      <!-- <i class="icon-check1"></i>
+      <span class="letter-piece"><i>스</i></span>
       <style>
       .icon-check1 {display:block;width:40px;height:40px;border-radius:50%;border:2px dotted #000;position:relative;}
       .icon-check1:before {content:'';display:inline-block;width:28px;height:9px;border-left:2px solid;border-bottom:2px solid;border-color:#000;transform:rotate(-45deg);position:absolute;right:-2px;top:4px;z-index:2;}
       .icon-check1:after {content:'';display:block;width:16px;height:18px;background:#fff;position:absolute;right:-6px;top:0px;z-index:1;}
-      </style>
+      </style> -->
       </fieldset>
     </section>
   </section>

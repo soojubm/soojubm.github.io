@@ -22,7 +22,7 @@ select:focus {}
 .button.--blocked {display:block;width:100%;}
 .button.--small {width:auto !important;min-width:72px !important;padding:4px 1rem 5px !important;font-size:12px !important;}
 
-.button.--addable {margin:.5rem;min-width:auto !important;height:32px;padding-right:56px !important;text-align:left;}
+.button.--addable {min-width:auto !important;height:32px;padding-right:56px !important;text-align:left;}
 .button.--addable.is-added {background:$color-primary;border-color:$color-primary;color:#fff;}
 
 .button {display:inline-block;min-width:104px;background:$color-primary;padding:$padding200;color:#fff;border-radius:$radius400;cursor:pointer;position:relative;}
@@ -33,11 +33,10 @@ select:focus {}
 .button-group.--center button {margin:0 1rem;}
 .button-group.--right {justify-content:flex-end;padding:.5rem 0;}
 .button-group.--right button {margin:0 1rem;}
-.button-group button {margin:0;border-radius:0;}// flex:1 1 auto;}
+.button-group button {margin:0 !important;border-radius:0;}// flex:1 1 auto;}
 .button-group button.is-active {background-color:$color-primary;color:#fff;}
 .button-group button:first-child {border-top-left-radius:$radius400;border-bottom-left-radius:$radius400;}
 .button-group button:last-child {border-top-right-radius:$radius400;border-bottom-right-radius:$radius400;}
-.button-group button + button {margin-left:0 !important;}
 .primary-button {@extend .button;background:$color-primary;border:1px solid $color-primary;color:#fff;}
 .primary-button:disabled {background:$gray40;border-color:$gray40;color:$gray60;cursor:not-allowed;}
 .primary-button:hover:not(:disabled) {background:#2a4ea1;}
@@ -232,8 +231,6 @@ input[type=email]:invalid {border-color:crimson;}
 .filter-fieldset-legend {line-height:1;position:absolute;top:0;}
 .filter-fieldset-description {margin:0 0 8px 0;}
 
-
-
 input[type=file] {width:0;height:0;opacity:0;position:absolute;}
 input[type=file] + label {display:inline-block;}
 input[type=file] + label:after {display:none;}
@@ -250,7 +247,7 @@ input[type=file] + label:after {display:none;}
 .file-attachment-item {display:block;width:100%;background:$gray10;overflow:hidden;position:relative;}
 .file-attachment-item:not(:first-child) {margin-top:.5rem;}
 .file-attachment-item-image {float:left;width:80px;height:80px;margin-right:1.5rem;overflow:hidden;position:relative;}
-.file-attachment-item-image img {width:auto;height:auto;max-width:150%;max-height:150%;margin:auto;position:absolute;left:0;right:0;top:0;bottom:0;}
+.file-attachment-item-image img {width:auto;height:auto;max-width:400%;max-height:80px;margin:auto;position:absolute;left:0;right:0;top:0;bottom:0;}
 .file-attachment-item-name {display:block;margin:.75rem 0 -.25rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 .file-attachment-item-size {color:$gray40;}
 .file-attachment-item-delete {position:absolute;right:0;top:0;}
@@ -266,24 +263,60 @@ input[type=file] + label:after {display:none;}
 .variation-increment.is-disabled {opacity:.5;cursor:not-allowed;}
 
 
-
-
 [aria-haspopup=true] {} // dialog . menu, grid, listbox, tree
 [aria-pressed=true] {} // 음소거 등
 [aria-modal=true] {}
 [aria-label=close] {}
 [aria-hidden=true] {width:1px;height:1px;clip:rect(1px 1px 1px 1px);overflow:hidden;position:absolute;user-select:none;} // if(true) 리더기가 무시.
 [aria-hidden=false] {width:1px;height:1px;clip:rect(1px 1px 1px 1px);overflow:hidden;position:absolute;user-select:none;}
-[role=group] {}
 [role=listitem] {}
 
 
 
+// input:invalid {box-shadow: 0 0 5px 1px red;}
+// input:focus:invalid {box-shadow: none;}
 
-input:invalid {
-  box-shadow: 0 0 5px 1px red;
+
+
+.calendar {
+  width: 250px;
+  --date-width: 32px;
+  --date-height: 32px;
+  --date-background: #eee;
+  position: relative;
 }
-
-input:focus:invalid {
-  box-shadow: none;
+.calendar h3 {
+  font-size: 1rem;
+  line-height: 32px;
+}
+.calendar-navigation {display:flex;position:absolute;right:0;top:0;font-size:12px}
+.calendar-navigation-prev {width:var(--date-width);height:var(--date-width);margin-right:4px;background:var(--date-background);border-radius:4px;}
+.calendar-navigation-next {width:var(--date-width);height:var(--date-width);background:var(--date-background);border-radius:4px;}
+.calendar-head {margin-top: .5rem !important;
+  display: grid !important;
+  grid-template-columns: repeat(7, 1fr) !important;
+  gap: 4px !important;
+  font-size:12px;
+}
+.calendar-head div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:var(--date-width);height:var(--date-width);border-radius:4px;
+}
+.calendar-body {
+  display: grid !important;
+  grid-template-columns: repeat(7, 1fr) !important;
+  gap: 4px !important;
+}
+.calendar-body-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:var(--date-width);height:var(--date-width);border-radius:4px;background:#eee;font-size:12px;
+  cursor: pointer;
+  &:hover {
+    background: $color-primary;
+    color: #fff;
+  }
 }

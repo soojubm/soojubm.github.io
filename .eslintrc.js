@@ -16,7 +16,7 @@ module.exports = {
     semi: ['error', 'always'],
     quotes: ['error', 'single'],
     camelcase: { "properties": "always" },
-    indent: ['error', 2],  // tab or 2
+    // indent: ['warn', 'tab'],  // tab or 2
     'no-empty': 'warn', // { "allowEmptyCatch": true }
     
     'linebreak-style': ['warn', 'unix'],

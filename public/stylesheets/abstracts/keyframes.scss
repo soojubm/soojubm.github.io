@@ -49,8 +49,12 @@
 	100% {transform:translate(-50%,2px);}
 }
 
-
 @keyframes scaleout {
 	0% { transform: scale(0)}
 	100% { transform: scale(1.0);}
+}
+
+@keyframes marquee {
+	0% {left: 0;}
+	100% {left: -100%;}
 }

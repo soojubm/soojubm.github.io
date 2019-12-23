@@ -12,6 +12,24 @@ const TerserPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
+// TODO
+// rules: [
+// 	{
+// 		test: /\.css$/,
+// 		use: [
+// 			'style-loader',
+// 			{ loader: 'css-loader', options: { importLoaders: 1 } },
+// 			{ loader: 'postcss-loader', options: {
+// 				ident: 'postcss',
+// 				plugins: () => [
+// 					postcssPresetEnv(/* pluginOptions */)
+// 				]
+// 			} }
+// 		]
+// 	}
+// ]
+const postcssPresetEnv = require('postcss-preset-env');
+
 const path = require('path');
 const smp = new SpeedMeasurePlugin();
 

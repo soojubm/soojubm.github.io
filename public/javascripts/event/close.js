@@ -1,8 +1,8 @@
 const close = ({ targetElement: target }) => {
-	const closeElement = document.querySelectorAll(target);
-	if(!closeElement) return;
+	const closeElements = document.querySelectorAll(target);
+	if(!closeElements) return;
 
-	closeElement.forEach(element => element.addEventListener('click', event => {
+	closeElements.forEach(element => element.addEventListener('click', () => {
 		(element.parentNode).style.display = 'none';
 	}));
 };

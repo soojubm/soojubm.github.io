@@ -21,7 +21,9 @@ html {min-width:320px;height:100%;overflow-x:hidden;font:14px/1.8 'Asap', 'Arita
 // body {font-size:.875rem;}
 // text-rendering: optimizeLegibility;
 
-.tag {padding:4px .5rem 5px;font-family:'consolas';font-size:12px;color:$gray60;background-color:$gray10;border-radius:$radius400;font-family:inherit;vertical-align:middle;}
+.tags {display:flex;margin:-.25rem;}
+.tag {margin:.25rem;padding:4px .5rem 5px;font-family:'consolas';font-size:12px;color:$gray60;background-color:$gray10;border-radius:$radius400;font-family:inherit;vertical-align:middle;}
+.more {margin-left:.25rem;color:#000;text-decoration:underline;}
 
 table {width:100%;border-collapse:collapse;border-spacing:0;border-left-style:hidden;border-right-style:hidden;}
 table caption {padding:.5rem 0;font-size:12px;text-align:left;}
