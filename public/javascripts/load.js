@@ -56,8 +56,8 @@ function setBodyMarginTop(headerElement) {
 	const isFixedHeader = getComputedStyle(headerElement).position === 'fixed';
 
 	if (isFixedHeader) {
-		body.style.marginTop = headerElement.clientHeight + 'px';
+		body.style.marginTop = `${headerElement.clientHeight}px`;
 		return;
 	}
-	body.style.marginTop = 0 + 'px';
+	body.style.marginTop = 0;
 }

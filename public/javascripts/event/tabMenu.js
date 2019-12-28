@@ -1,7 +1,7 @@
 // 리팩토링하긔
 const tabMenu = () => {
 	document.addEventListener('click', event => {
-		const target = event.target;
+		const { target } = event;
 		const tabActiceBar = document.querySelector('.profile-tablist-active');
 		const tabs = target.parentNode.querySelectorAll('[role=tab]');
 		const tabIndex = target.getAttribute('data-index');
@@ -12,7 +12,7 @@ const tabMenu = () => {
 			target.setAttribute('aria-selected', 'true');
 			target.parentNode.parentNode.querySelectorAll('[role=tabpanel]').forEach(element => {
 				element.setAttribute('aria-hidden', 'true');
-				if(tabIndex === element.getAttribute('data-index')){
+				if(tabIndex === element.getAttribute('data-index')) {
 					element.setAttribute('aria-hidden', 'hidden');
 				}
 			});

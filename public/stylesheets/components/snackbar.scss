@@ -1,6 +1,6 @@
-.snackbar {padding:11px 1.5rem 12px;box-sizing:border-box;background:#f2f8fc;/*font-family:'Courier New', Courier, monospace;*/position:relative;}
-.snackbar-icon {display:inline-block;margin:0 8px 0 0;vertical-align: middle;font-size:1.5rem;}
-.snackbar-close {position:absolute;right:8px;top:50%;transform:translateY(-50%);}
+.message {padding:11px 1.5rem 12px;box-sizing:border-box;background:#f2f8fc;/*font-family:'Courier New', Courier, monospace;*/position:relative;}
+.message-icon {display:inline-block;margin:0 8px 0 0;vertical-align: middle;font-size:1.5rem;}
+.message-close {position:absolute;right:8px;top:50%;transform:translateY(-50%);}
 .snackbar.--warning {background:lavenderblush;}
 .snackbar.--warning em {color:crimson;}
 .snackbar.--warning a {color:inherit;}

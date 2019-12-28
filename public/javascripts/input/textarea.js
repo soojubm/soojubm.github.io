@@ -29,7 +29,7 @@ const autoExpand = field => {
 	
 	const computed = window.getComputedStyle(field);
 	const height = field.scrollHeight + parseInt(computed.getPropertyValue('border-top-width'));
-	field.style.height = height + 'px';
+	field.style.height = `${height}px`;
 };
 
 export default inputTextarea;

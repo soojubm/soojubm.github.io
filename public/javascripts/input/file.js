@@ -4,7 +4,7 @@ const attachFile = () => {
 	const fileInput = document.querySelector('.js-file-input');
 	if(!fileInput) return;
 	
-	const fileSubmit = document.querySelector('.js-file-submit');
+	// const fileSubmit = document.querySelector('.js-file-submit');
 	const attachmentList = document.querySelector('.js-file-attachment-list');
 	const attachmentHelper = document.querySelector('.js-file-attachment-helper');
 	let attachedfiles;
@@ -45,32 +45,32 @@ const attachFile = () => {
 		// const isValid = fileTypes.includes(file.type);
 		if(fileTypes.indexOf(file.type) > -1) return true;
 	}
-	function validFileSize(file) {
-		attachedfiles = file.files;
-		if(attachedfiles.length === 0) return;
+	// function validFileSize(file) {
+	// 	attachedfiles = file.files;
+	// 	if(attachedfiles.length === 0) return;
 		
-		if(attachedfiles[0].size > 75 * 1024) {
-			fileInput.setCustomValidity('The selected file must not be larger than 75 kB');
-			return;
-		}
-		fileInput.setCustomValidity('');
-	}
+	// 	if(attachedfiles[0].size > 75 * 1024) {
+	// 		fileInput.setCustomValidity('The selected file must not be larger than 75 kB');
+	// 		return;
+	// 	}
+	// 	fileInput.setCustomValidity('');
+	// }
 	function returnFileSize(size) {
 		const isBytes = size < 1024;
 		const isKiloBytes = size >= 1024 && size < 1048576;
 		
-		if(isBytes) return size + 'bytes';
-		else if(isKiloBytes) return (size / 1024).toFixed(2) + 'KB';
-		else return (size / 1048576).toFixed(2) + 'MB';
+		if(isBytes) return `${size}bytes`;
+		else if(isKiloBytes) return `${(size / 1024).toFixed(2)}KB`;
+		else return `${(size / 1048576).toFixed(2)}MB`;
 	}
-	function sendFile(file) {
-		const formData = new FormData();
-		const request = new XMLHttpRequest();
+	// function sendFile(file) {
+	// 	const formData = new FormData();
+	// 	const request = new XMLHttpRequest();
 
-		formData.set('file', file);
-		request.open('post', '');
-		request.send(formData);
-	}
+	// 	formData.set('file', file);
+	// 	request.open('post', '');
+	// 	request.send(formData);
+	// }
 };
 
 export default attachFile;

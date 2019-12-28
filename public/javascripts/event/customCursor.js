@@ -1,6 +1,7 @@
 const customCursor = () => {
 	const cursor = document.querySelector('.loading-object');
 	const hoverElement = document.querySelectorAll('button, a');
+	if(!hoverElement) return;
 
 	document.addEventListener('DOMContentLoaded', setCursor);
 	document.addEventListener('mousemove', setCursor);

@@ -1,18 +1,18 @@
 // g모든전역 i대소문자구분없이 m멀티라인 u유니코드 y스틱검색
-// var hName = /^[가-힣]+$/;
-// var hName2 =  /^[가-힣a-zA-Z]+$/;
-// var onlyNumbers = /^[0-9]*$/;
+// const hName = /^[가-힣]+$/;
+// const hName2 =  /^[가-힣a-zA-Z]+$/;
+// const onlyNumbers = /^[0-9]*$/;
 
-// var password = /^(?=.*[a-zA-Z])((?=.*\d)|(?=.*\W)).{6,20}$/; // 영숫특
+// const password = /^(?=.*[a-zA-Z])((?=.*\d)|(?=.*\W)).{6,20}$/; // 영숫특
 
-// var email = /^[a-z0-9_+.-]+@([a-z0-9-]+\.)+[a-z0-9]{2,4}$/;
-// var phone = /^\d{2,3}-\d{3,4}-\d{4}$/; //  ex)123-123-1234
-// var phone2 =  /^01([0|1|6|7|8|9]?)-?([0-9]{3,4})-?([0-9]{4})$/; // 010-0000-0000
+// const email = /^[a-z0-9_+.-]+@([a-z0-9-]+\.)+[a-z0-9]{2,4}$/;
+// const phone = /^\d{2,3}-\d{3,4}-\d{4}$/; //  ex)123-123-1234
+// const phone2 =  /^01([0|1|6|7|8|9]?)-?([0-9]{3,4})-?([0-9]{4})$/; // 010-0000-0000
 
-// var url = /^(file|gopher|news|nntp|telnet|https?|ftps?|sftp):\/\/([a-z0-9-]+\.)+[a-z0-9]{2,4}.*$/;
+// const url = /^(file|gopher|news|nntp|telnet|https?|ftps?|sftp):\/\/([a-z0-9-]+\.)+[a-z0-9]{2,4}.*$/;
 
-// var isNumber = /[0-9]/gi;
-// var isAlphabet = /[a-z]/gi;
+// const isNumber = /[0-9]/gi;
+// const isAlphabet = /[a-z]/gi;
 
 export const regExr = {};
 // 정규표현식
@@ -21,11 +21,11 @@ export const regExr = {};
  */
 export const validations = {
 	isRequired(value) {
-		return value == '' || value == null || value == undefined || ( value != null && typeof value == 'object' && !Object.keys(value).length);
+		return value === '' || value === null || value === undefined || ( value !== null && typeof value === 'object' && !Object.keys(value).length);
 	},
 	isEmail(value){
 		// toLowerCase()
-		return /^[가-힣a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[가-힣A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value);
+		return (/^[가-힣a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[가-힣A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value));
 	},
 	// add min & max
 	isLength(value, length) {
@@ -34,7 +34,7 @@ export const validations = {
 	// isBtyeLength(value, length) {
 	// },
 	isNumeric(value) {
-		return /[^0-9]/g.test(value);
+		return (/[^0-9]/g.test(value));
 	},
 	isLowerCase(value) {
 		return value === value.toLowerCase();
@@ -57,20 +57,20 @@ export const inputHelper = {
 // 		bool allowUnderscore = false,
 // 		List<String> hostWhitelist = const [],
 // 		List<String> hostBlacklist = const []}) {
-// if (str == null || str.length == 0 || str.length > 2083 || str.startsWith('mailto:')) {
+// if (str === null || str.length === 0 || str.length > 2083 || str.startsWith('mailto:')) {
 // 	return false;
 // }
 
-// var protocol, user, auth, host, hostname, port, port_str, path, query, hash, split;
+// const protocol, user, auth, host, hostname, port, port_str, path, query, hash, split;
 
 // // check protocol
 // split = str.split('://');
 // if (split.length > 1) {
 // 	protocol = shift(split);
-// 	if (protocols.indexOf(protocol) == -1) {
+// 	if (protocols.indexOf(protocol) === -1) {
 // 		return false;
 // 	}
-// } else if (requireProtocol == true) {
+// } else if (requireProtocol === true) {
 // 	return false;
 // }
 // str = split.join('://');
@@ -79,7 +79,7 @@ export const inputHelper = {
 // split = str.split('#');
 // str = shift(split);
 // hash = split.join('#');
-// if (hash != null && hash != "" && new RegExp(r'\s').hasMatch(hash)) {
+// if (hash !== null && hash !== "" && new RegExp(r'\s').hasMatch(hash)) {
 // 	return false;
 // }
 
@@ -87,7 +87,7 @@ export const inputHelper = {
 // split = str.split('?');
 // str = shift(split);
 // query = split.join('?');
-// if (query != null && query != "" && new RegExp(r'\s').hasMatch(query)) {
+// if (query !== null && query !== "" && new RegExp(r'\s').hasMatch(query)) {
 // 	return false;
 // }
 
@@ -95,7 +95,7 @@ export const inputHelper = {
 // split = str.split('/');
 // str = shift(split);
 // path = split.join('/');
-// if (path != null && path != "" && new RegExp(r'\s').hasMatch(path)) {
+// if (path !== null && path !== "" && new RegExp(r'\s').hasMatch(path)) {
 // 	return false;
 // }
 
@@ -131,7 +131,7 @@ export const inputHelper = {
 // 	}
 // }
 
-// if (!isIP(host) && !isFQDN(host, requireTld: requireTld, allowUnderscores: allowUnderscore) && host != 'localhost') {
+// if (!isIP(host) && !isFQDN(host, requireTld: requireTld, allowUnderscores: allowUnderscore) && host !== 'localhost') {
 // 	return false;
 // }
 

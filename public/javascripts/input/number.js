@@ -149,7 +149,7 @@ document.addEventListener('click', event => {
 	}
 });
 
-function setStringBytes() {}
+// function setStringBytes() {}
 
 // export const input = {
 // 	textarea: inputTextarea(),

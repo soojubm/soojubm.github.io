@@ -64,3 +64,81 @@ const maskedNumber = last4Digits.padStart(fullNumber.length, '*');
 const randomNumber = function (min, max) {
 	return Math.floor(Math.random() * (max - min + 1) + min);
 };
+
+
+
+
+
+// // 문자열
+// typeof variable === 'string'
+// tui.util.isString(variable)
+
+
+// // 숫자
+// typeof variable === 'number'
+// tui.util.isNumber(variable)
+
+
+// // 불린
+// typeof variable === 'boolean'
+// tui.util.isBoolean(variable)
+
+
+// // 객체
+// typeof variable === 'object'
+// tui.util.isObject(variable)
+
+
+// // 배열
+// Array.isArray(arrayObject)
+// tui.util.isArray(variable)
+
+
+// // 널 Null
+// variable === null
+// tui.util.isNull(variable)
+
+
+// // 미할당 Undefined
+// typeof variable === 'undefined'
+// variable === undefined
+// tui.util.isUndefined(variable)
+
+
+// // 엘리먼트 노드
+// element.nodeType === 1
+// tui.util.isHTMLNode(element)
+
+
+
+
+// // 문자열 - 빈 문자열이 아닌가?
+// if (string) ...
+// if (tui.util.isNotEmpty(string)) ...
+
+// // 문자열 - 빈 문자열인가?
+// if (!string) ...
+// if (tui.util.isEmpty(string)) ...
+
+// // 배열 - 순회할 요소가 있는가?
+// if (array.length) ...
+// if (tui.util.isNotEmpty(array)) ...
+
+// // 배열 - 빈 배열인가?
+// if (!array.length) ...
+// if (tui.util.isEmpty(array)) ...
+
+// // 객체 - 순회할 속성이 있는가?
+// if (tui.util.isNotEmpty(object)) ...
+
+// // 객체 - 빈 객체인가?
+// if (tui.util.isEmpty(object)) ...
+
+// // 할당된 값이 있는가?
+// if (tui.util.isExisty(variable)) ...
+
+// // 참조변수가 참(true)인가?
+// if (variable) ...
+
+// // 참조변수가 거짓(false)인가?
+// if (!variable) ...

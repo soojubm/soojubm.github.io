@@ -4,7 +4,7 @@ import './stylesheets/style.scss';
 import { routePage} from './javascripts/router';
 import { loader, checkBrowser, adjustTopPadding } from './javascripts/load';
 import { validations } from './javascripts/utils/validations';
-import { films } from '../views/films';
+// import { films } from '../views/films';
 import { countDownClock } from './javascripts/countdown';
 import { setGraph } from './javascripts/ui';
 import { setDarkmode } from './javascripts/setDarkMode';
@@ -42,16 +42,16 @@ document.addEventListener('DOMContentLoaded', async () => {
 		adjustTopPadding();
 
 		// 특정 유아이 이벤트
-		const focusComment = () => {
-			const commentWrite = document.querySelector('.js-comment-write');
-			const commentTextField = document.querySelectorAll('.js-comment-textfield');
-			if(!commentWrite || !commentTextField) return;
+		// const focusComment = () => {
+		// 	const commentWrite = document.querySelector('.js-comment-write');
+		// 	const commentTextField = document.querySelectorAll('.js-comment-textfield');
+		// 	if(!commentWrite || !commentTextField) return;
 
-			commentTextField.forEach(element => element.addEventListener('focus', () => {
-				commentWrite.classList.add('is-focused');
-			}));
-		};
-		focusComment();
+		// 	commentTextField.forEach(element => element.addEventListener('focus', () => {
+		// 		commentWrite.classList.add('is-focused');
+		// 	}));
+		// };
+		// focusComment();
 		setGraph();
 		// carousel();
 	
@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 			const pageProgressBar = document.querySelector('.post-head-progress');
 			if(!pageProgressBar) return;
 			let scrollPercent;
-			scrollPercent = window.pageYOffset / (document.body.scrollHeight - window.innerHeight) * 100 + '%';
+			scrollPercent = `${window.pageYOffset / (document.body.scrollHeight - window.innerHeight) * 100}%`;
 			pageProgressBar.style.width = scrollPercent;
 		};
 		window.addEventListener('scroll', event.stickyElement({targetElement:'.post-head', addClass: 'is-sticky'}));
@@ -116,10 +116,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 		// }, 5000); 
 	});
 	
-	const sayHello = new Promise(function(resolve, reject) {
+	const sayHello = new Promise((resolve, reject) => {
 		reject('Unable to say hi.');
 
-		setTimeout(function () {
+		setTimeout(() => {
 			resolve('Hello, World');
 		}, 5000);
 	});
@@ -221,7 +221,7 @@ document.addEventListener('input', event => {
 	}
 });
 
-document.addEventListener('blur', event => {}, true); // blur is not bubble
+// document.addEventListener('blur', event => {}, true); // blur is not bubble
 document.addEventListener('submit', event => event.preventDefault());
 
 // var hasError = function(field) {

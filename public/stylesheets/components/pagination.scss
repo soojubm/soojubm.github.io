@@ -1,15 +1,10 @@
-.pagination {display:flex;justify-content:center;padding:32px 0;text-align:center;}
-.pagination-page {display:block;width:32px;height:32px;line-height:32px;color:$gray40;}
-.pagination-page.is-current {background-color:$color-primary;border-radius:$radius400;color:#fff;}
-.pagination-first {display:flex;height:32px;line-height:32px;color:$gray40;}
-.pagination-first i {display:block;width:32px;height:32px;} // TODO: 태그 만들어야하겠다.
-// .pagination-first:after {content:'...';display:block;width:32px;height:32px;cursor:default;}
-.pagination-last {display:flex;height:32px;line-height:32px;color:$gray40;}
-.pagination-last i {display:block;width:32px;height:32px;}
+.pagination {display:flex;justify-content:center;padding:32px 0;text-align:center;position:relative;}
+.pagination-previous {padding:0 1rem;line-height:32px;position:absolute;left:0;}
+.pagination-next {padding:0 1rem;line-height:32px;position:absolute;right:0;}
+.pagination-link {display:block;width:32px;height:32px;line-height:32px;color:$gray40;}
+.pagination-link.is-current {background-color:$color-primary;border-radius:$radius400;color:#fff;}
+.pagination-ellipsis {display:flex;align-items:center;justify-content:center;width:32px;height:32px;line-height:32px;color:$gray40;letter-spacing:1px;}
 // .pagination-last:before {content:'...';display:block;width:32px;height:32px;cursor:default;}
-.pagination-prev {margin-right:12px;padding:0 1rem;line-height:32px;}
-.pagination-next {margin-left:12px;padding:0 1rem;line-height:32px;position:relative;}
-.pagination-dots {display:flex;align-items:center;justify-content:center;width:32px;height:32px;line-height:32px;color:$gray40;letter-spacing:1px;}
 
 .pagination2 {display:flex;justify-content:center;}
 .pagination2-prev {margin-right:2rem;}

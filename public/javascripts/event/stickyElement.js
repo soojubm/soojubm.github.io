@@ -43,22 +43,22 @@ const stickyElement = ({targetElement, addClass}) => {
 // 	stickyElement({targetElement, addClass, true});
 // };
 
-const stickyHeader = () => {
-	const headerElement = document.querySelector('.header');
-	let lastScrollTop = 0;
+// const stickyHeader = () => {
+// 	const headerElement = document.querySelector('.header');
+// 	let lastScrollTop = 0;
 	
-	window.addEventListener('scroll', () => {
-		requestAnimationFrame(hasScrolled);
-	});
+// 	window.addEventListener('scroll', () => {
+// 		requestAnimationFrame(hasScrolled);
+// 	});
 
-	function hasScrolled() {
-		if(window.pageYOffset > lastScrollTop) {
-			headerElement.classList.add('nav-up');
-		} else {
-			headerElement.classList.remove('nav-up');
-		}
-		lastScrollTop = window.pageYOffset;
-	}
-};
+// 	function hasScrolled() {
+// 		if(window.pageYOffset > lastScrollTop) {
+// 			headerElement.classList.add('nav-up');
+// 		} else {
+// 			headerElement.classList.remove('nav-up');
+// 		}
+// 		lastScrollTop = window.pageYOffset;
+// 	}
+// };
 
 export default stickyElement;
