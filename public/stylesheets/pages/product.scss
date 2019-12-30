@@ -100,7 +100,6 @@
 [role=group] {display:flex;flex-flow: wrap-reverse;margin:-.25rem;}
 [role=group] > * {margin:.25rem;}
 
-
 [role=group] input[type="radio"] + label {margin:0 16px 0 0;color:$gray40;padding-left:0;}
 [role=group] input[type="radio"] + label:before {content:'';display:inline-block;width:2px;height:2px;background:$gray40;margin:0 10px 0 0;vertical-align:3px;position:static;left:auto;top:auto;}
 [role=group] input[type="radio"] + label:after {display:none;}

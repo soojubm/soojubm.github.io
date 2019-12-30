@@ -142,3 +142,10 @@ const randomNumber = function (min, max) {
 
 // // 참조변수가 거짓(false)인가?
 // if (!variable) ...
+
+
+
+
+function isEmpty(obj) {
+	return Object.keys(obj).length === 0;
+}

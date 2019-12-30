@@ -34,8 +34,8 @@
       <div class="loader is-large is-colorful"></div>
       <h1 class="design-article-heading">Colors</h1>
       <p class="design-article-description">칼라칼라컬러컬러🐣</p>
-      <section class="color">
-        <h2 style="margin:0 0 .5rem 0;font-size:12px;">Gray Colors</h2>
+      <h2 date-ui="caption">Gray Colors</h2>
+      <div role="group">
         <figure class="color-item --gray100">
           <div></div>
           <figcaption>
@@ -60,9 +60,10 @@
           <div></div>
           <figcaption>gray800</figcaption>
         </figure>
-      </section>
-      <section class="color">
-        <h2 style="margin:2rem 0 .5rem 0;font-size:12px;">Gray Colors</h2>
+      </div>
+      <br />
+      <h2 date-ui="caption">Gray Colors</h2>
+      <div role="group">
         <figure class="color-item --negative100">
           <div></div>
           <figcaption>red40</figcaption>
@@ -87,7 +88,7 @@
           <div></div>
           <figcaption>gradient</figcaption>
         </figure>
-      </section>
+      </div>
     </article>
 
     <article class="design-article js-scroll-animation">
@@ -157,7 +158,9 @@
       <p class="design-article-description">페이지 레벨이 3단계 이상일 때 사용해요. 홈 아이콘 대신 텍스트를 사용하니 깔끔해보인다. 모바일에서 사용하지 마세요.</p>
       <nav class="breadcrumbs" aria-label="breadcrumbs">
         <a class="breadcrumbs-item breadcrumbs-home" href="/"><span aria-hidden="true">홈</span>Home</a>
+        <i class="breadcrumbs-divider icon-bullet"></i>
         <a class="breadcrumbs-item " href="#">페이지 이름</a>
+        <i class="breadcrumbs-divider icon-bullet"></i>
         <a class="breadcrumbs-item breadcrumbs-last" href="#">페이지 이름</a>
       </nav>
     </article>
@@ -177,8 +180,8 @@
         <span class="tag tags-item" style="position:relative;" role="listitem">태그 <i class="icon-close" style="display:inline-block;margin-left:4px;padding:4px;"></i></span>
       </div>
       <div role="group" style="margin-top:.5rem;">
-        <button class="secondary-button --small --addable" type="button">Typhography <i class="icon-plus" style="display:inline-block;background:#f1f3f4;padding:12px;position:absolute;right:3px;top:3px;"></i></button>
-        <button class="secondary-button --small --addable is-added" type="button">Cinema <i class="icon-close" style="display:inline-block;background:#f1f3f4;padding:12px;position:absolute;right:3px;top:3px;"></i></button>
+        <button class="secondary-button --small --addable" type="button">Typhography <i class="icon-plus" style="display:inline-block;background:#f1f3f4;padding:12px;border-radius:4px;position:absolute;right:3px;top:3px;"></i></button>
+        <button class="secondary-button --small --addable is-added" type="button">Cinema <i class="icon-close" style="display:inline-block;background:#f1f3f4;padding:12px;border-radius:4px;position:absolute;right:3px;top:3px;"></i></button>
       </div>
     </article>
 
@@ -550,7 +553,7 @@
       <div class="header-user-account dropdown">
         <button class="dropdown-trigger js-toggle" aria-haspopup="menu" aria-expanded="false">
           드롭다운
-          <i class="icon-caret" style="margin-left:1rem;"></i>
+          <i class="icon-caret" style="margin-left:.5rem;"></i>
         </button>
         <menu class="dropdown-menu" role="menu">
           <h6 class="dropdown-menu-heading">Dropdown header</h6>
@@ -564,9 +567,9 @@
         <button class="dropdown-trigger js-toggle" aria-haspopup="menu" aria-expanded="false" style="width:32px;height:32px;">
           <i class="icon-more"></i>
         </button>
-        <menu class="dropdown-panel">
-          <a class="dropdown-panel-link" href="">수정</a>
-          <a class="dropdown-panel-link" href="">삭제</a>
+        <menu class="dropdown-menu">
+          <a class="dropdown-menu-link" href="">수정</a>
+          <a class="dropdown-menu-link" href="">삭제</a>
         </menu>
       </div>
     </article>
@@ -606,7 +609,7 @@
         </div> -->
         <time class="card-date">September 12, 2017</time>
         <figure class="card-byline"><img src="" alt=""><figcaption class="card-byline-name">수줍이</figcaption></figure>
-        <div class="card-tags">
+        <div class="card-tags" role="group" style="margin-bottom:1rem">
           <span class="tag">기획</span>
           <span class="tag">디자인</span>
           <span class="tag">개발(워드프레스)</span>
@@ -686,7 +689,7 @@
         <p class="dialog-heading">부끄러우니까 보지마요?</p>
         <p class="dialog-description">토스트 유아이를 만드는 거에요. 쿠키 사용 승인 요청 내용이 들어갈 수도 있고 뭐, 그렇답니다.</p>
         <footer class="dialog-footer">
-          <button class="ghost-button" type="button">취소</button>
+          <button class="ghost-button" type="button" style="color:#999;">취소</button>
           <button class="ghost-button" type="submit">삭제</button>
         </footer>
       </aside>
@@ -726,11 +729,12 @@
         <a class="pagination-link" href="#" title="맨 뒤 페이지로 이동">50</a>
       </nav>
       <nav class="pagination2">
-        <a href="#" class="pagination2-prev" title="앞 페이지로 이동">이전</a>
+        <a href="#" class="pagination2-prev" title="앞 페이지로 이동">이전Newer</a>
         <span class="pagination2-current">1</span>
         <span class="pagination2-divider"> / </span>
         <span class="pagination2-all">44</span>
-        <a href="#" class="pagination2-next" title="뒷 페이지로 이동">다음</a>
+        <!-- <span>page 2 of 22</span> -->
+        <a href="#" class="pagination2-next" title="뒷 페이지로 이동">다음Older</a>
       </nav>
     </article>
 
@@ -898,11 +902,16 @@
     <article class="design-article js-scroll-animation">
       <h1 class="design-article-heading">Accordions</h1>
       <p class="design-article-description">질의응답에 주로 사용해요. 공지사항 정도의 간단한 게시글에서도 사용할 수 있으나 그 이상의 경우에는 다른 유아이를 고민하세요.</p>
-      <button class="accordion-trigger js-toggle" type="button" aria-expanded="false"><i class="icon-caret"></i> 회원탈퇴는 어떻게 할 수 있나요?</button>
+      <button class="accordion-trigger js-toggle" type="button" aria-expanded="false">
+        회원탈퇴는 어떻게 할 수 있나요?
+        <i class="icon-caret"></i></button>
       <article class="accordion-panel">
         안녕
       </article>
-      <button class="accordion-trigger js-toggle" type="button" aria-expanded="false"><i class="icon-caret"></i> 주문을 취소하고 싶어요.</button>
+      <button class="accordion-trigger js-toggle" type="button" aria-expanded="false">
+        주문을 취소하고 싶어요.
+        <i class="icon-caret"></i>
+      </button>
       <article class="accordion-panel">
         안녕
       </article>

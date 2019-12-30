@@ -14,6 +14,7 @@ import input from './javascripts/input/index.js';
 
 //document.documentElement.className += ' supports-date';
 // if(window.matchMedia('(min-width:800px)').matches) {}
+// div.classList.replace("foo", "bar");
 
 // element.hidden = !visible
 
@@ -24,6 +25,7 @@ window.addEventListener('offline', () => {
 
 window.addEventListener('hashchange', routePage);
 window.addEventListener('hashchange', initailizePage);
+
 function initailizePage() {
 	const navigationTrigger = document.querySelector('.navigation-toggle');
 	const isOpenedNavigation = navigationTrigger.classList.contains('is-active');
@@ -78,7 +80,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 
 
-		// click 이벤트 외부에 넣으니까 파폭에서만 오류. event undefined
+		// ! click 이벤트 외부에 넣으니까 파폭에서만 오류. event undefined
 		// TODO: 도큐먼트가 아니라 event.target.parent 가 아닌 것을 클릭했을 때 다당야 하나
 		// const findClassRecursive = (element, className, depth) => {
 		// // parentNode.classList.contains('js-modal')
@@ -94,13 +96,16 @@ document.addEventListener('DOMContentLoaded', async () => {
 		// 	return null;
 		// };
 
+		console.log(document.scrollHeight, document.body.scrollHeight);
+
 		const scrollProgress = () => {
-			const pageProgressBar = document.querySelector('.post-head-progress');
-			if(!pageProgressBar) return;
-			let scrollPercent;
-			scrollPercent = `${window.pageYOffset / (document.body.scrollHeight - window.innerHeight) * 100}%`;
-			pageProgressBar.style.width = scrollPercent;
+			const progressBar = document.querySelector('.post-head-progress');
+			if(!progressBar) return;
+
+			const scrollPercent = `${window.pageYOffset / (document.body.scrollHeight - window.innerHeight) * 100}%`;
+			progressBar.style.width = scrollPercent;
 		};
+
 		window.addEventListener('scroll', event.stickyElement({targetElement:'.post-head', addClass: 'is-sticky'}));
 		window.addEventListener('scroll', scrollProgress, true);
 		// var i = 0;
@@ -129,12 +134,15 @@ document.addEventListener('DOMContentLoaded', async () => {
 		console.warn(error);
 	});
 
-	const white = ['#design', '#contact'];
-	const isWhite = white.includes(window.location.hash);
+	const pageHeadElement = document.querySelector('.page-head');
+	if(!pageHeadElement) return;
+	
+	const pages = ['#design', '#contact'];
+	const isWhite = pages.includes(window.location.hash);
 	if(isWhite) {
-		document.querySelector('.page-head').classList.add('--white');
+		pageHeadElement.classList.add('--white');
 	} else {
-		document.querySelector('.page-head').classList.remove('--white');
+		pageHeadElement.classList.remove('--white');
 	}
 
 	// Promise.all([
@@ -189,29 +197,26 @@ document.addEventListener('input', event => {
 	const isEmail = target === email;
 	const isPassword = target === password;
 
-	// 정규표현식으로 유효성 검사를 모두 할 수 있으면 더 간단하겠다.
-	if(isEmail) {
-		if(validations.isRequired(email.value)) {
-			setInvalid({message: '필수값이어요.'});
-		} else {
-			setValid();
-		}
+	if(isEmail && validations.isRequired(email.value)) {
+		setInvalid({message: '필수값이어요.'});
+	} else {
+		setValid();
 	}
-	if(isPassword) {
-		if(validations.isLength(password.value, 8)) {
-			setInvalid({message: '너무 짧아요.'});
-		} else {
-			setValid();
-		}
+
+	if(isPassword && validations.isLength(password.value, 8)) {
+		setInvalid({message: '너무 짧아요.'});
+	} else {
+		setValid();
 	}
-	
-	// validate ? a : b
+
+	// todo validate ? a : b
+	// ? 두 개로 나눌 필요 없다.
 	function setValid() {
 		target.parentNode.classList.remove('is-invalid');
 		target.nextElementSibling.innerHTML = '';
 		target.nextElementSibling.style.display = 'none';
 	}
-	function setInvalid({message}) {
+	function setInvalid({ message }) {
 		if(!target.nextElementSibling) return;
 		// const id = target.id || target.name;
 		// target.setAttribute('aria-describedby', 'error-' + id);

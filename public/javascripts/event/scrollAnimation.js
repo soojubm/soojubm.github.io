@@ -3,16 +3,18 @@ const eventScrollAnimation = () => {
 	if(!scrollTarget) return;
 
 	scrollTarget.forEach(element => {
-		const isContainedWindowHeight = element.getBoundingClientRect().bottom <= window.innerHeight;
-		if(!isContainedWindowHeight) return;
+		const isScrolled = element.getBoundingClientRect().bottom <= window.innerHeight;
+		if(!isScrolled) return;
 		
 		element.classList.add('is-scrolled');
 	});
 	
 	window.addEventListener('scroll', () => {
 		scrollTarget.forEach(element => {
-			const pageY = window.pageYOffset;
-			const isScrolled = pageY > pageY + element.getBoundingClientRect().top - window.innerHeight + 50;
+			const { pageYOffset } = window;
+			const isScrolled = pageYOffset > pageYOffset + element.getBoundingClientRect().top - window.innerHeight + 50;
+			// const isScrolled = element.getBoundingClientRect().bottom <= window.innerHeight;
+			console.log(element.getBoundingClientRect().bottom, window.innerHeight);
 			if(!isScrolled) return;
 
 			element.classList.add('is-scrolled');

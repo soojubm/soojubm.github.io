@@ -7,6 +7,7 @@ export const setGraph = () => {
 		const graphItemBar = element.querySelector('.graph-item-bar');
 		const graphItemValue = element.querySelector('.graph-item-value');
 		const graphValue = parseInt(graphItemValue.innerHTML);
+		
 		graphItemBar.style.height = `${graphValue}px`;
 		graphItemValue.style.bottom = `${graphValue}'px`;
 	});

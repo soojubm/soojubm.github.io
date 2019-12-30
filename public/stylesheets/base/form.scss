@@ -71,7 +71,7 @@ select:focus {}
 .ghost-button:hover:not(:disabled) {border-color:$gray10;background:$gray10;}
 .ghost-button:focus:not(:disabled) {background:$gray10;}
 .ghost-button:active:not(:disabled) {}
-.icon-button {display:block;width:48px;height:48px;line-height:0;border-radius:$radius400;box-sizing:border-box;}
+.icon-button {display:flex;align-items:center;justify-content:center;width:48px;height:48px;line-height:0;border-radius:$radius400;box-sizing:border-box;}
 
 .linebreak {display:block;}
 @media (max-width:$breakpoint-small) {
@@ -195,7 +195,7 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 .textfield.--small {padding:0 !important;font-size:12px !important;}
 .textfield.--small .textfield-label {margin-bottom:0;}
 .textfield.--small .textfield-input {padding:5px 1.25rem 6px;}
-.textfield.--inline.textfield {padding-left:100px !important;}
+.textfield.--inline.textfield {padding-left:5rem !important;}
 .textfield.--inline .textfield-label {line-height:32px;position:absolute;left:0;top:0;}
 .textfield.--inline .textfield-input {}
 .textfield.--floating {}
@@ -241,7 +241,7 @@ input[type=file] + label:after {display:none;}
 .file-input {opacity:0;}
 .file-label {@extend .secondary-button;cursor:pointer;}
 .file-attachment {margin:2rem 0 0;}
-.file-attachment-heading {margin:8px 0;text-decoration:underline;}
+.file-attachment-heading {margin:8px 0;font-size:1rem;text-decoration:underline;}
 .file-attachment-helper {margin:-4px 0 0;}
 .file-attachment-list:after {content:'';display:block;clear:both;}
 .file-attachment-item {display:block;width:100%;background:$gray10;overflow:hidden;position:relative;}
@@ -257,8 +257,8 @@ input[type=file] + label:after {display:none;}
 // qty
 .variation {max-width:10rem;height:32px;margin:.75rem 0 0rem 0;text-align:center;position:relative;}
 .variation-input {width:calc(100% - 64px);height:100%;background:$gray10;border:1px solid $gray20;border-left:0;border-right:0;box-sizing:border-box;text-align:center;}
-.variation-decrement {width:32px;height:32px;border:1px solid $gray20;border-radius:$radius400;position:absolute;left:0px;top:0px;}
-.variation-increment {width:32px;height:32px;border:1px solid $gray20;border-radius:$radius400;position:absolute;right:0;top:0px;}
+.variation-decrement {width:32px;height:32px;border:1px solid $gray20;border-radius:$radius400 0 0 $radius400;position:absolute;left:0px;top:0px;}
+.variation-increment {width:32px;height:32px;border:1px solid $gray20;border-radius:0 $radius400 $radius400 0;position:absolute;right:0;top:0px;}
 .variation-decrement.is-disabled {opacity:.5;cursor:not-allowed;}
 .variation-increment.is-disabled {opacity:.5;cursor:not-allowed;}
 

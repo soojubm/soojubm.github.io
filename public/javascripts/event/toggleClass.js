@@ -1,36 +1,32 @@
-
-
 const toggleClass = ({ triggerElement: trigger }) => {
-	const toggles = document.querySelectorAll(trigger);
-	toggles.forEach(element => element.addEventListener('click', event => {
+	const triggers = document.querySelectorAll(trigger);
+	if(!triggers) return;
+
+	triggers.forEach(trigger => trigger.addEventListener('click', event => {
 		event.stopPropagation();
 
-		const ee = element.nextSibling.nextSibling;
-		const { target } = event;
+		trigger.classList.toggle('is-active');
+		trigger.setAttribute('aria-expanded', !!trigger.classList.contains('is-active'));
 
-		toggles.forEach(el => {
-			if(target === el) return;
-			removeAllClass(el);
+		const triggerNextElement = trigger.nextSibling.nextSibling;
+		triggerNextElement.classList.toggle('is-visible');
+		triggerNextElement.addEventListener('click', event => event.stopPropagation());
+
+		triggers.forEach(trigger => {
+			if(event.target === trigger) return;
+
+			removeAllClass(trigger);
 		});
-
-		element.classList.toggle('is-active');
-		ee.classList.toggle('is-visible');
-
-		const ariaExpanded = !!element.classList.contains('is-active');
-		element.setAttribute('aria-expanded', ariaExpanded);
-
-		ee.addEventListener('click', event => event.stopPropagation());
 	}));
 		
-	document.body.addEventListener('click', () => {
-		toggles.forEach(element => removeAllClass(element));
-	});
+	document.body.addEventListener('click', () => triggers.forEach(trigger => removeAllClass(trigger)));
 };
 
-function removeAllClass(el) {
-	el.setAttribute('aria-expanded', 'true');
-	el.classList.remove('is-active');
-	el.nextSibling.nextSibling.classList.remove('is-visible');
-}
+const removeAllClass = targetElement => {
+	targetElement.setAttribute('aria-expanded', 'true');
+	targetElement.classList.remove('is-active');
+	
+	targetElement.nextSibling.nextSibling.classList.remove('is-visible');
+};
 
 export default toggleClass;

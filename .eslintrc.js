@@ -39,7 +39,7 @@ module.exports = {
     // 'arrow-parens': [2, "as-needed", { "requireForBlockBody": true }],
     'implicit-arrow-linebreak': ["error", "beside"],
 
-    'array-bracket-newline': ["error", { "multiline": false, "minItems": 0 }],
+    // 'array-bracket-newline': ["error", { "multiline": false, "minItems": 0 }],
     'array-element-newline': ["error", "consistent"],
     'object-property-newline': ["error", { "allowAllPropertiesOnSameLine": true }],
     'object-shorthand': ["error", "always", { "avoidExplicitReturnArrows": true }],

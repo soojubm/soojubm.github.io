@@ -1,4 +1,3 @@
-
 // 비동기 함수는 리턴을 해야한다. 프로미스를 반환.
 export const routePage = () => {
 	let { hash } = window.location;

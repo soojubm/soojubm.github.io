@@ -5,6 +5,7 @@ const tabMenu = () => {
 		const tabActiceBar = document.querySelector('.profile-tablist-active');
 		const tabs = target.parentNode.querySelectorAll('[role=tab]');
 		const tabIndex = target.getAttribute('data-index');
+		if(!tabs) return;
 
 		if(target.closest('[role=tab]')) {
 			tabActiceBar.style.left = `${target.offsetLeft}px`;
