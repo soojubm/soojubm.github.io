@@ -211,7 +211,7 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 .is-valid {}
 .is-invalid {}
 .is-invalid .textfield-label {color:$color-negative;}
-.is-invalid .textfield-input {border-color:$color-negative;}
+.is-invalid .textfield-input {border-color:$color-negative;color:$color-negative;}
 .is-invalid .textfield-byte {color:$color-negative;}
 .is-invalid .textfield-byte b {color:$color-negative;}
 

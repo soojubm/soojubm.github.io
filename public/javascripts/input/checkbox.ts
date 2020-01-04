@@ -11,7 +11,8 @@ const checkbox = ({ checkAllElement, checkElements }) => {
 };
 
 function setCheckEach(checkItems, checkAll) {
-	const checks = Array.from(checkItems);
+	const checks: any[] = Array.from(checkItems);
+	console.log(checks, typeof checks, typeof checks[0]);
 	const isCheckedEvery = checks.every(checkItem => checkItem.checked);
 	const isCheckedSome = checks.some(checkItem => checkItem.checked);
 

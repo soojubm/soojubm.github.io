@@ -1,8 +1,8 @@
 export const countDownClock = (number = 100, format = 'seconds') => {
-	const daysElement = document.querySelector('.js-days');
-	const hoursElement = document.querySelector('.js-hours');
-	const minutesElement = document.querySelector('.js-minutes');
-	const secondsElement = document.querySelector('.js-seconds');
+	const daysElement = document.querySelector<HTMLElement>('.js-days');
+	const hoursElement = document.querySelector<HTMLElement>('.js-hours');
+	const minutesElement = document.querySelector<HTMLElement>('.js-minutes');
+	const secondsElement = document.querySelector<HTMLElement>('.js-seconds');
 	if(!daysElement) return;
 	
 	convertFormat(format);
@@ -29,10 +29,11 @@ export const countDownClock = (number = 100, format = 'seconds') => {
 				clearInterval(countdown);
 				return;
 			}
-			daysElement.textContent = Math.floor(secondsLeft / 86400);
-			hoursElement.textContent = Math.floor((secondsLeft % 86400) / 3600);
-			minutesElement.textContent = Math.floor((secondsLeft % 86400) % 3600 / 60);
-			secondsElement.textContent = secondsLeft % 60 < 10 ? `0${secondsLeft % 60}` : secondsLeft % 60;
+			if(!daysElement || !hoursElement || !minutesElement || !secondsElement) return;
+			daysElement.innerHTML = Math.floor(secondsLeft / 86400);
+			hoursElement.innerText = Math.floor((secondsLeft % 86400) / 3600);
+			minutesElement.innerText = Math.floor((secondsLeft % 86400) % 3600 / 60);
+			secondsElement.innerText = secondsLeft % 60 < 10 ? `0${secondsLeft % 60}` : secondsLeft % 60;
 		},1000);
 	}
 };

@@ -4,8 +4,10 @@ export const setGraph = () => {
 	if(!graphItems) return;
 
 	graphItems.forEach(element => {
-		const graphItemBar = element.querySelector('.graph-item-bar');
-		const graphItemValue = element.querySelector('.graph-item-value');
+		const graphItemBar = element.querySelector<HTMLElement>('.graph-item-bar');
+		const graphItemValue = element.querySelector<HTMLElement>('.graph-item-value');
+		if(!graphItemBar || !graphItemValue) return;
+
 		const graphValue = parseInt(graphItemValue.innerHTML);
 		
 		graphItemBar.style.height = `${graphValue}px`;

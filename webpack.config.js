@@ -36,7 +36,7 @@ const smp = new SpeedMeasurePlugin();
 module.exports = smp.wrap({
 	mode: 'none',
 	devtool: 'inline-source-map',
-	entry: './public/index.js',
+	entry: './public/index.ts',
 	output: { path: path.resolve(__dirname, 'build'), publicPath: '/', filename: 'bundle.js'},
 	resolve: {
 		extensions: ['.js', '.jsx', '.ts', '.tsx']

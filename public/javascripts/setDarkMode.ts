@@ -1,11 +1,15 @@
 export const carousel = () => {
   const category = document.querySelector('.slider');
   if(!category) return;
-  const categoryList = category.querySelector('.slider-viewer');
-  const categoryListSlide = category.querySelectorAll('.slider-viewer > button');
+  
+  const categoryList = category.querySelector<HTMLElement>('.slider-viewer');
+  const categoryListSlide = category.querySelectorAll<HTMLElement>('.slider-viewer > button');
   const categoryNavigationPrev = category.querySelector('.slider-arrows-prev');
   const categoryNavigationNext = category.querySelector('.slider-arrows-next');
   const categoryDots = category.querySelectorAll('.slider-dots-dot');
+
+  if(!categoryList || !categoryListSlide || !categoryNavigationPrev || !categoryNavigationNext || !categoryDots) return;
+
 
   const categoryContainerWidth = categoryList.offsetWidth;
   let sum = 0;
@@ -22,9 +26,11 @@ export const carousel = () => {
   });
 
   function toPrev() {
+    if(!categoryList) return;
     categoryList.scrollLeft -= 100;
   }
   function toNext() {
+    if(!categoryList) return;
     categoryList.scrollLeft += 100;
     // if(sum > categoryContainerWidth) {}
     // const ttt = 100 + 'px';

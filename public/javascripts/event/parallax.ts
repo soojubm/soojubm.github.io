@@ -2,6 +2,7 @@
 export const parallax = (targetElement) => {
 	const target = document.querySelectorAll(targetElement);
 	if(!target) return;
+	
 	window.addEventListener('scroll', () => {
 		target.forEach((element) => {
 			//console.log(window.pageYOffset, element.offsetTop);

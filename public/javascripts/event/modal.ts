@@ -3,7 +3,7 @@
 
 const modal = ({ triggerElement: trigger }) => {
 	const { body } = document;
-	let pageY = undefined;
+	let pageY = 0;
 	const modals = document.querySelectorAll(trigger);
 	if(!modals) return;
 

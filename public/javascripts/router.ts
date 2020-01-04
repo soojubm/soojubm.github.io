@@ -1,5 +1,5 @@
 // 비동기 함수는 리턴을 해야한다. 프로미스를 반환.
-export const routePage = () => {
+const routePage = () => {
 	let { hash } = window.location;
 	const page = hash ? `/views/${hash.substring(1)}.html` : '/views/profile.html';
 	
@@ -11,11 +11,15 @@ export const routePage = () => {
 		})
 		.then(html => {
 			const view = document.getElementById('view');
+			if(!view) return;
+			
 			view.innerHTML = html;
 			// window.history.pushState({ name: 'tester' }, 'dd', hash.substring(1));
 		})
 		.catch(error => console.warn('router: ', error));
 };
+
+export default routePage;
 
 // hash 말고 클릭하는 순간에 값을 알아야 함. data attr or hash
 // const Router = (name, routes) => {

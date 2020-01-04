@@ -19,13 +19,12 @@ export const regExr = {};
 /**
  * validations.isEmail(loginEmail);
  */
-export const validations = {
+export const validity = {
 	isRequired(value) {
 		return value === '' || value === null || value === undefined || ( value !== null && typeof value === 'object' && !Object.keys(value).length);
 	},
 	isEmail(value){
-		// toLowerCase()
-		return (/^[가-힣a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[가-힣A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value));
+		return (/^[가-힣a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[가-힣A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value.toLowerCase()));
 	},
 	// add min & max
 	isLength(value, length) {

@@ -23,7 +23,8 @@ const inputNumber = () => {
 
 	// 방향키로 조절할 때 min max 조건에 걸린다.
 	document.addEventListener('keydown', event => {
-		const { target } = event;
+		const { target }: any = event;
+		
 		const isNumberInput = target.closest('.js-number-input');
 		if (!isNumberInput) return;
 
@@ -126,7 +127,7 @@ export default inputNumber;
 // parseInt vs Number
 // TODO: target 클래스 토글이 안 되므니다
 document.addEventListener('click', event => {
-	const { target } = event;
+	const { target }: any = event;
 	const minValue = 0;
 	const maxValue = 10;
 	let targetInput;

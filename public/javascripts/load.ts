@@ -15,7 +15,7 @@ export const loader = () => {
 };
 
 export const checkBrowser = () => {
-	const BrowserElement = document.querySelector('.js-browser');
+	const BrowserElement = document.querySelector<HTMLElement>('.js-browser');
 	if(!BrowserElement) return;
 	
 	const userAgent = navigator.userAgent.toLowerCase();
@@ -52,7 +52,7 @@ export const adjustTopPadding = () => {
 };
 
 function setBodyMarginTop(headerElement) {
-	const { body } = document;
+	const { body }: any = document;
 	const isFixedHeader = getComputedStyle(headerElement).position === 'fixed';
 
 	if (isFixedHeader) {

@@ -10,7 +10,7 @@ const stickyElement = ({targetElement, addClass}) => {
 		isScrolling && window.cancelAnimationFrame(isScrolling);
 		isScrolling = window.requestAnimationFrame(() => {
 			stickyElementHeight = stickyElement.offsetHeight;
-		}, 60);
+		});
 	});
 
 	window.addEventListener('scroll', () => {
@@ -22,7 +22,7 @@ const stickyElement = ({targetElement, addClass}) => {
 			} else {
 				body.classList.remove(addClass);
 			}
-		}, 60);
+		});
 	});
 };
 

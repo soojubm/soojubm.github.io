@@ -1,25 +1,27 @@
 'use strict';
 
 import './stylesheets/style.scss';
-import { routePage} from './javascripts/router';
-import { loader, checkBrowser, adjustTopPadding } from './javascripts/load';
-import { validations } from './javascripts/utils/validations';
-// import { films } from '../views/films';
-import { countDownClock } from './javascripts/countdown';
-import { setGraph } from './javascripts/ui';
-import { setDarkmode } from './javascripts/setDarkMode';
+import routePage from './javascripts/router.ts';
+import { loader, checkBrowser, adjustTopPadding } from './javascripts/load.ts';
+import { setGraph } from './javascripts/ui.ts';
+import { setDarkmode } from './javascripts/setDarkMode.ts';
 
-import event from './javascripts/event/index.js';
-import input from './javascripts/input/index.js';
+import { validity } from './javascripts/utils/validations';
+// import { films } from '../views/films';
+import { countDownClock } from './javascripts/countdown.ts';
+import event from './javascripts/event/index.ts';
+import input from './javascripts/input/index.ts';
 
 //document.documentElement.className += ' supports-date';
 // if(window.matchMedia('(min-width:800px)').matches) {}
 // div.classList.replace("foo", "bar");
-
+ 
 // element.hidden = !visible
 
 window.addEventListener('offline', () => {
-	const offlineElement = document.querySelector('.js-offline');
+	const offlineElement = document.querySelector<HTMLElement>('.js-offline');
+	if(!offlineElement) return;
+
 	offlineElement.style.display = 'block';
 });
 
@@ -27,12 +29,12 @@ window.addEventListener('hashchange', routePage);
 window.addEventListener('hashchange', initailizePage);
 
 function initailizePage() {
-	const navigationTrigger = document.querySelector('.navigation-toggle');
-	const isOpenedNavigation = navigationTrigger.classList.contains('is-active');
-	if(!isOpenedNavigation) return;
+	const navigationTrigger = document.querySelector<HTMLElement>('.navigation-toggle');
+	// const isOpenedNavigation = navigationTrigger.classList.contains('is-active');
+	if(!navigationTrigger) return;
 	
 	navigationTrigger.classList.remove('is-active');
-	navigationTrigger.nextElementSibling.classList.remove('is-visible');
+	navigationTrigger?.nextElementSibling?.classList.remove('is-visible');
 }
 
 document.addEventListener('DOMContentLoaded', async () => {	
@@ -66,7 +68,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 		event.scrollAnimation();
 
 		event.close({ targetElement: '.js-close' });
-		event.customCursor();
+		// event.customCursor();
 
 		countDownClock(20, 'days');
 	
@@ -96,17 +98,19 @@ document.addEventListener('DOMContentLoaded', async () => {
 		// 	return null;
 		// };
 
-		console.log(document.scrollHeight, document.body.scrollHeight);
+		// console.log(document.scrollHeight, document.body.scrollHeight);
 
 		const scrollProgress = () => {
-			const progressBar = document.querySelector('.post-head-progress');
+			const progressBar = document.querySelector<HTMLElement>('.post-head-progress');
 			if(!progressBar) return;
 
 			const scrollPercent = `${window.pageYOffset / (document.body.scrollHeight - window.innerHeight) * 100}%`;
 			progressBar.style.width = scrollPercent;
 		};
 
-		window.addEventListener('scroll', event.stickyElement({targetElement:'.post-head', addClass: 'is-sticky'}));
+		window.addEventListener('scroll', () => {
+			event.stickyElement({targetElement:'.post-head', addClass: 'is-sticky'})
+		});
 		window.addEventListener('scroll', scrollProgress, true);
 		// var i = 0;
 		// var images = ['cover1.jpg','cover2.jpg'];
@@ -121,20 +125,20 @@ document.addEventListener('DOMContentLoaded', async () => {
 		// }, 5000); 
 	});
 	
-	const sayHello = new Promise((resolve, reject) => {
-		reject('Unable to say hi.');
+	// const sayHello = new Promise((resolve, reject) => {
+	// 	reject('Unable to say hi.');
 
-		setTimeout(() => {
-			resolve('Hello, World');
-		}, 5000);
-	});
-	sayHello.then(resolve => {
-		console.log('res', resolve);
-	}).catch(error => {
-		console.warn(error);
-	});
+	// 	setTimeout(() => {
+	// 		resolve('Hello, World');
+	// 	}, 5000);
+	// });
+	// sayHello.then(resolve => {
+	// 	console.log('res', resolve);
+	// }).catch(error => {
+	// 	console.warn(error);
+	// });
 
-	const pageHeadElement = document.querySelector('.page-head');
+	const pageHeadElement = document.querySelector<HTMLElement>('.page-head');
 	if(!pageHeadElement) return;
 	
 	const pages = ['#design', '#contact'];
@@ -188,46 +192,50 @@ document.addEventListener('DOMContentLoaded', async () => {
 	// }, 200);
 });
 
-// let loginData = {email: '', password: ''};
 
-document.addEventListener('input', event => {
-	// const helpers = document.querySelectorAll('.textfield-helper'); // helpers.forEach(helper => helper.style.display = 'none');
-	const { email, password } = document.login;
-	const { target } = event;
-	const isEmail = target === email;
-	const isPassword = target === password;
+// document.addEventListener('input', event => {
+// 	// const helpers = document.querySelectorAll('.textfield-helper');
+// 	// helpers.forEach(helper => helper.style.display = 'none');
+// 	// let loginData = {email: '', password: ''};
 
-	if(isEmail && validations.isRequired(email.value)) {
-		setInvalid({message: '필수값이어요.'});
-	} else {
-		setValid();
-	}
+// 	const { email, password } = document.login;
+// 	console.log(email);
+// 	if(!document) return;
 
-	if(isPassword && validations.isLength(password.value, 8)) {
-		setInvalid({message: '너무 짧아요.'});
-	} else {
-		setValid();
-	}
+// 	// const isEmail = event.target === email;
+// 	const isPassword = event.target === password;
 
-	// todo validate ? a : b
-	// ? 두 개로 나눌 필요 없다.
-	function setValid() {
-		target.parentNode.classList.remove('is-invalid');
-		target.nextElementSibling.innerHTML = '';
-		target.nextElementSibling.style.display = 'none';
-	}
-	function setInvalid({ message }) {
-		if(!target.nextElementSibling) return;
-		// const id = target.id || target.name;
-		// target.setAttribute('aria-describedby', 'error-' + id);
-		target.parentNode.classList.add('is-invalid');
-		target.nextElementSibling.innerText = message;
-		target.nextElementSibling.style.display = 'block';
-	}
-});
+// 	const handleValidate = ({ target: any, validate: void, message: any }) => {
+// 		if(validate) {
+// 			target.parentNode.classList.remove('is-invalid');
+// 			target.nextElementSibling.innerText = '';
+// 			target.nextElementSibling.style.display = 'none';
+// 		} else {
+// 			if(!target.nextElementSibling) return;
+// 			// const id = target.id || target.name;
+// 			// target.setAttribute('aria-describedby', 'error-' + id);
+// 			target.parentNode.classList.add('is-invalid');
+// 			target.nextElementSibling.innerText = message;
+// 			target.nextElementSibling.style.display = 'block';
+// 		}
+// 	};
+
+// 	if(isPassword) {
+// 		handleValidate({
+// 			target: password,
+// 			validate: isPassword && !(validity.isLength(password.value, 8)),
+// 			message: '비밀번호를 똑바로 입력해라.'
+// 		});
+// 	}
+
+// });
 
 // document.addEventListener('blur', event => {}, true); // blur is not bubble
 document.addEventListener('submit', event => event.preventDefault());
+
+// const errorHelper = () => {
+
+// };
 
 // var hasError = function(field) {
 // 	if (field.disabled || field.type === 'file' || field.type === 'reset' || field.type === 'submit' || field.type === 'button') return;
