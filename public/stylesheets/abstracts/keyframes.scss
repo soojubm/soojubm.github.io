@@ -6,6 +6,18 @@
   100% {transform:scale(8, 8);opacity:0;}
 }
 
+$md-radio-checked-color: rgb(51, 122, 183);
+$md-radio-border-color: rgba(0, 0, 0, 0.54);
+$md-radio-size: 20px;
+$md-radio-checked-size: 10px; 
+$md-radio-ripple-size: 15px;
+@keyframes ripple2 {
+  0% {box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.0);}
+  50% {box-shadow: 0px 0px 0px $md-radio-ripple-size rgba(0, 0, 0, 0.1);}
+  100% {box-shadow: 0px 0px 0px $md-radio-ripple-size rgba(0, 0, 0, 0);}
+}
+
+
 @keyframes fadeup {
 	0% {opacity:0;transform: translateY(60px);/*transform:matrix(1, 0, 0, 1, 0, 40);*/}
 	100% {opacity:1;transform: translateY(0px);}
