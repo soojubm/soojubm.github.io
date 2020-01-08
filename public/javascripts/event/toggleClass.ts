@@ -1,20 +1,26 @@
-const toggleClass = ({ triggerElement: trigger }) => {
+type Parameter = {
+	selector: string
+};
+
+// selector
+const toggleClass = ({ selector: trigger }: Parameter) => {
 	const triggers = document.querySelectorAll(trigger);
 	if(!triggers) return;
 
-	triggers.forEach(trigger => trigger.addEventListener('click', event => {
+	triggers.forEach(element => element.addEventListener('click', event => {
 		event.stopPropagation();
 
-		trigger.classList.toggle('is-active');
-		trigger.setAttribute('aria-expanded', !!trigger.classList.contains('is-active'));
+		element.classList.toggle('is-active');
+		element.setAttribute('aria-expanded', `${element.classList.contains('is-active')}`);
 
-		const triggerNextElement = trigger.nextSibling.nextSibling;
+		const triggerNextElement = element.nextSibling && element.nextSibling.nextSibling as HTMLElement;
+		if(!triggerNextElement) return;
+		
 		triggerNextElement.classList.toggle('is-visible');
 		triggerNextElement.addEventListener('click', event => event.stopPropagation());
 
-		triggers.forEach(trigger => {
-			if(event.target === trigger) return;
-
+		triggers.forEach(element => {
+			if(event.target === element) return;
 			removeAllClass(trigger);
 		});
 	}));

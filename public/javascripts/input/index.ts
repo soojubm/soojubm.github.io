@@ -1,7 +1,7 @@
-import checkbox from './checkbox.ts';
-import textarea from './textarea.ts';
-import file from './file.ts';
-import number from './number.ts';
+import checkbox from './checkbox';
+import textarea from './textarea';
+import file from './file';
+import number from './number';
 
 export default {
   checkbox, textarea, file, number

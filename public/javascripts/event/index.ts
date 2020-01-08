@@ -1,12 +1,12 @@
-import toggleClass from './toggleClass.ts';
-import enterTarget from './enterTarget.ts';
-import tabMenu from './tabMenu.ts';
-import modal from './modal.ts';
-import toTop from './toTop.ts';
-import stickyElement from './stickyElement.ts';
-import scrollAnimation from './scrollAnimation.ts';
-import close from './close.ts';
-// import customCursor from './customCursor.ts';
+import toggleClass from './toggleClass';
+import enterTarget from './enterTarget';
+import tabMenu from './tabMenu';
+import modal from './modal';
+import toTop from './toTop';
+import stickyElement from './stickyElement';
+import scrollAnimation from './scrollAnimation';
+import close from './close';
+// import customCursor from './customCursor';
 
 export default {
   toggleClass,

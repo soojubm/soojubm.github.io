@@ -1,16 +1,16 @@
 'use strict';
 
 import './stylesheets/style.scss';
-import routePage from './javascripts/router.ts';
-import { loader, checkBrowser, adjustTopPadding } from './javascripts/load.ts';
-import { setGraph } from './javascripts/ui.ts';
-import { setDarkmode } from './javascripts/setDarkMode.ts';
+import routePage from './javascripts/router';
+import { loader, checkBrowser, adjustTopPadding } from './javascripts/load';
+import { setGraph } from './javascripts/ui';
+import { setDarkmode } from './javascripts/setDarkMode';
 
 import { validity } from './javascripts/utils/validations';
 // import { films } from '../views/films';
-import { countDownClock } from './javascripts/countdown.ts';
-import event from './javascripts/event/index.ts';
-import input from './javascripts/input/index.ts';
+import { countDownClock } from './javascripts/countdown';
+import event from './javascripts/event/index';
+import input from './javascripts/input/index';
 
 //document.documentElement.className += ' supports-date';
 // if(window.matchMedia('(min-width:800px)').matches) {}
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 		setGraph();
 		// carousel();
 	
-		event.toggleClass({ triggerElement: '.js-toggle' });
+		event.toggleClass({ selector: '.js-toggle' });
 		event.enterTarget({ triggerElement: '.js-hover-trigger' });
 		event.modal({ triggerElement: '.js-modal' });
 		event.tabMenu();
@@ -72,13 +72,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 		countDownClock(20, 'days');
 	
-		input.checkbox({ checkAllElement: '.js-checkall', checkElements: '.js-check' });
+		input.checkbox({ checkAllSelector: '.js-checkall', checkSelector: '.js-check' });
 		input.file();
 		input.textarea();
 		input.number();
-
-
-
 
 
 

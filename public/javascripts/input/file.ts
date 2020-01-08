@@ -4,36 +4,53 @@ const attachFile = () => {
 	const fileInput = document.querySelector<HTMLInputElement>('.js-file-input');
 	if(!fileInput) return;
 	// const fileSubmit = document.querySelector('.js-file-submit');
+	fileInput.addEventListener('change', () => attach(fileInput));
+
+};
+
+function attach(fileInput: HTMLInputElement) {
+	const { files } = fileInput;
 	const attachmentList = document.querySelector<HTMLElement>('.js-file-attachment-list');
 	const attachmentHelper = document.querySelector<HTMLElement>('.js-file-attachment-helper');
-	let attachedfiles;
-	let fileTemplate;
+	if(!files || !attachmentList || !attachmentHelper) return;
 
-	fileInput.addEventListener('change', attach);
-
-	function attach() {
-		attachedfiles = fileInput?.files;
-		const hasFile: boolean = attachedfiles.length !== 0;
-
-		attachmentHelper && attachmentHelper.style.display = hasFile ? 'none' : 'block';
-		console.log('attachedfiles', attachedfiles);
+	attachmentHelper.style.display = files.length !== 0 ? 'none' : 'block';
+	
+	Array.from(files).forEach(file => {
+		if(!validFileType(file)) return alert('파일타입 jpeg pjpeg png 중 하나가 아니야~');
 		
-		Array.from(attachedfiles).forEach(file => {
-			if(!validFileType(file)) return alert('파일타입 jpeg pjpeg png 중 하나가 아니야~');
+		const fileTemplate = `
+			<a class="file-attachment-item" href="">
+				<figure class="file-attachment-item-image"><img src=${window.URL.createObjectURL(file)} alt=${file.name}></figure>
+				<b class="file-attachment-item-name" href="#">${file.name}</b>
+				<small class="file-attachment-item-size" >${returnFileSize(file.size)}</small>
+				<button class="file-attachment-item-delete js-remove-this" type="button"><i class="icon-close"></i></button>
+			</a>`;
 			
-			fileTemplate = `
-				<a class="file-attachment-item" href="">
-					<figure class="file-attachment-item-image"><img src=${window.URL.createObjectURL(file)} alt=${file.name}></figure>
-					<b class="file-attachment-item-name" href="#">${file.name}</b>
-					<small class="file-attachment-item-size" >${returnFileSize(file.size)}</small>
-					<button class="file-attachment-item-delete js-remove-this" type="button"><i class="icon-close"></i></button>
-				</a>`;
-				
-			if(!attachmentList) return;
-			attachmentList.innerHTML += fileTemplate;
-			// attachmentList.append(fileTemplate);
-		});
-	}
+		attachmentList.innerHTML += fileTemplate;
+		// attachmentList.append(fileTemplate);
+	});
+}
+
+function validFileType(file) {
+	const fileTypes = ['image/jpeg', 'image/gif', 'image/png'];
+	const isValid = fileTypes.indexOf(file.type) > -1;
+	// const isValid = fileTypes.includes(file.type);
+
+	if(isValid) return true;
+}
+
+function returnFileSize(size) {
+	const isBytes = size < 1024;
+	const isKiloBytes = size >= 1024 && size < 1048576;
+	
+	if(isBytes) return `${size}bytes`;
+	else if(isKiloBytes) return `${(size / 1024).toFixed(2)}KB`;
+	else return `${(size / 1048576).toFixed(2)}MB`;
+}
+
+export default attachFile;
+
 
 	// fileSubmit.addEventListener('submit', (event) => {
 	// 	event.preventDefault();
@@ -41,13 +58,6 @@ const attachFile = () => {
 	// 		sendFile(file);
 	// 	});
 	// });
-	function validFileType(file) {
-		const fileTypes = ['image/jpeg', 'image/gif', 'image/png'];
-		const isValid = fileTypes.indexOf(file.type) > -1;
-		// const isValid = fileTypes.includes(file.type);
-
-		if(isValid) return true;
-	}
 
 	// function validFileSize(file) {
 	// 	attachedfiles = file.files;
@@ -60,14 +70,6 @@ const attachFile = () => {
 	// 	fileInput.setCustomValidity('');
 	// }
 
-	function returnFileSize(size) {
-		const isBytes = size < 1024;
-		const isKiloBytes = size >= 1024 && size < 1048576;
-		
-		if(isBytes) return `${size}bytes`;
-		else if(isKiloBytes) return `${(size / 1024).toFixed(2)}KB`;
-		else return `${(size / 1048576).toFixed(2)}MB`;
-	}
 	
 	// function sendFile(file) {
 	// 	const formData = new FormData();
@@ -77,6 +79,3 @@ const attachFile = () => {
 	// 	request.open('post', '');
 	// 	request.send(formData);
 	// }
-};
-
-export default attachFile;

@@ -1,7 +1,11 @@
+type Parameter = {
+	checkAllSelector: string,
+	checkSelector: string
+};
 
-const checkbox = ({ checkAllElement, checkElements }) => {
-	const checkAll = document.querySelector(checkAllElement);
-	const checkItems = document.querySelectorAll(checkElements);
+const checkbox = ({ checkAllSelector, checkSelector }: Parameter) => {
+	const checkAll = document.querySelector(checkAllSelector);
+	const checkItems = document.querySelectorAll(checkSelector);
 	if(!checkAll || !checkItems) return;
 
 	checkAll.addEventListener('change', () => setCheckAll(checkItems, checkAll));
@@ -11,8 +15,7 @@ const checkbox = ({ checkAllElement, checkElements }) => {
 };
 
 function setCheckEach(checkItems, checkAll) {
-	const checks: any[] = Array.from(checkItems);
-	console.log(checks, typeof checks, typeof checks[0]);
+	const checks: HTMLInputElement[] = Array.from(checkItems);
 	const isCheckedEvery = checks.every(checkItem => checkItem.checked);
 	const isCheckedSome = checks.some(checkItem => checkItem.checked);
 
