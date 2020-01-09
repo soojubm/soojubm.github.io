@@ -26,7 +26,7 @@
 
 .icon-ribbon {}
 .icon-ribbon:before {content: '';display: block;width:8px;height:12px;background: $gray80;margin:6px auto 0;}
-.icon-ribbon:after {content: '';display: block;width:8px;height:8px;background: #fff;margin: -2px auto 0;transform: rotate(45deg);}
+.icon-ribbon:after {content: '';display: block;width:8px;height:8px;background: $gray0;margin: -2px auto 0;transform: rotate(45deg);}
 
 .icon-search {}
 .icon-search:before {content: '';display: block;width:10px;height:10px;border-radius:50%;margin:0px auto 0;border:2px solid $gray80;transform:translateX(-1px)}
@@ -99,14 +99,14 @@
 // filled-icon
 // .icon-home {display:inline-block;position:relative;}
 // .icon-home span:nth-of-type(1):before {content:'';display:block;width:10px;height:10px;background:$gray60;transform:rotate(45deg);position:absolute;left:2px;top:-9px;}
-// .icon-home span:nth-of-type(1):after {content:'';display:block;width:16px;height:8px;background:#fff;position:absolute;left:-2px;top:-4px;}
+// .icon-home span:nth-of-type(1):after {content:'';display:block;width:16px;height:8px;background:$gray0;position:absolute;left:-2px;top:-4px;}
 // .icon-home span:nth-of-type(2):before {content:'';display:block;width:10px;height:6px;background:$gray60;position:absolute;left:2px;top:-4px;}
-// .icon-home span:nth-of-type(2):after {content:'';display:block;width:4px;height:4px;background:#fff;position:absolute;left:5px;top:-1px;}
+// .icon-home span:nth-of-type(2):after {content:'';display:block;width:4px;height:4px;background:$gray0;position:absolute;left:5px;top:-1px;}
 
 
 .icon-home {display:inline-block;position:relative;}
 .icon-home span:nth-of-type(1):before {content:'';display:block;width:10px;height:10px;border:2px solid $color-primary;box-sizing:border-box;transform:rotate(45deg);position:absolute;left:2px;top:-9px;}
-.icon-home span:nth-of-type(1):after {content:'';display:block;width:16px;height:8px;background:#fff;position:absolute;left:-2px;top:-3px;}
+.icon-home span:nth-of-type(1):after {content:'';display:block;width:16px;height:8px;background:$gray0;position:absolute;left:-2px;top:-3px;}
 .icon-home span:nth-of-type(2):before {content:'';display:block;width:10px;height:6px;border:2px solid $color-primary;border-top:none;box-sizing:border-box;position:absolute;left:2px;top:-4px;}
 
 /*

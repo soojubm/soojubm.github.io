@@ -1,22 +1,15 @@
-body {
-  transition: background .6s ease;
-}
-
 body.darkmode {
-  transition: all 1.4s ease;
-  background: rgba(0,0,0,1);
-  color: rgba(255,255,255,.75);
+  background: rgba(0,0,0,9);
+  color: $gray40;
 }
 .darkmode * {
-  // font-size: inherit;
-  $gray80: #fff; // ?
+  $gray80: $gray0; // ?
   .profile-user-name, .card-title {
-    color: #fff;
+    color: $gray0;
   }
-  
 }
 
-.darkmode .navigation ul li a {color:#fff;transition: all 1.4s ease;}
+.darkmode .navigation ul li a {color:$gray0;}
 
 .darkmode header,
 .darkmode aside,
@@ -24,22 +17,19 @@ body.darkmode {
 .darkmode footer {
   background: rgba(0,0,0,1);
   color: rgba(255,255,255,.75);
-  transition: all 1.4s ease;
 }
 .darkmode .design-body-heading, .darkmode h1 {
-  color: #fff;
-  transition: all 1.4s ease;
+  color: $gray0;
 }
 
 .darkmode .toast {
   background: $gray80;
 }
 // 백그라운드 컬러가 들어간 컴포넌트들. transparent 로 유지할지. border  zjffjrk qkswjsehla
-// sass 변수 :: 다크모듈 고려하여 네이밍
+// 변수 :: 다크모듈 고려하여 네이밍
 
 
 // TOdo aaa 부터 정리하기.
-
 
 @media (prefers-color-scheme: light) {
   .themed {

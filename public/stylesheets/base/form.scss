@@ -1,4 +1,4 @@
-::selection {background:$gray80;color:#fff;}
+::selection {background:$gray80;color:$gray0;}
 ::placeholder {color:rgba(0,0,0,.4);}
 
 // button, input, textarea, select {border-radius:0px;-webkit-appearance:none;-moz-appearance:none;appearance:none;font:inherit;color:inherit;}
@@ -23,9 +23,9 @@ select:focus {}
 .button.--small {width:auto !important;min-width:72px !important;padding:4px 1rem 5px !important;font-size:12px !important;}
 
 .button.--addable {min-width:auto !important;height:32px;padding-right:56px !important;text-align:left;}
-.button.--addable.is-added {background:$color-primary;border-color:$color-primary;color:#fff;}
+.button.--addable.is-added {background:$color-primary;border-color:$color-primary;color:$gray0;}
 
-.button {display:inline-block;min-width:104px;background:$color-primary;padding:$padding200;color:#fff;border-radius:$radius400;cursor:pointer;position:relative;}
+.button {display:inline-block;min-width:104px;background:$color-primary;padding:$padding200;color:$gray0;border-radius:$radius400;cursor:pointer;position:relative;}
 .button-group {display:flex;width:100%;overflow:hidden;}// justify-content:space-between;}
 .button-group.--left {padding:.5rem 0;}
 .button-group.--left button {margin:0 1rem;}
@@ -34,11 +34,11 @@ select:focus {}
 .button-group.--right {justify-content:flex-end;padding:.5rem 0;}
 .button-group.--right button {margin:0 1rem;}
 .button-group button {margin:0 !important;border-radius:0;}// flex:1 1 auto;}
-.button-group button.is-active {background-color:$color-primary;color:#fff;}
+.button-group button.is-active {background-color:$color-primary;color:$gray0;}
 .button-group button:first-child {border-top-left-radius:$radius400;border-bottom-left-radius:$radius400;}
 .button-group button:last-child {border-top-right-radius:$radius400;border-bottom-right-radius:$radius400;}
-.primary-button {@extend .button;background:$color-primary;border:1px solid $color-primary;color:#fff;}
-.primary-button:disabled {background:$gray40;border-color:$gray40;color:$gray60;cursor:not-allowed;}
+.primary-button {@extend .button;background:$color-primary;border:1px solid $color-primary;color:$gray0;}
+.primary-button:disabled {background:$gray40;border-color:$gray20;color:$gray20;cursor:not-allowed;}
 .primary-button:hover:not(:disabled) {background:#2a4ea1;}
 .primary-button:focus:not(:disabled) {background:#2a4ea1;}
 .primary-button:active:not(:disabled) {}
@@ -48,21 +48,21 @@ select:focus {}
 .primary-button.-naver {background:#3664a2;border-color:#3664a2;}
 .secondary-button {@extend .button;border:1px solid $color-primary;background:transparent;color:$color-primary;}
 .secondary-button:disabled {background:transparent;border-color:$gray20;color:$gray20;cursor:not-allowed;}
-.secondary-button:hover:not(:disabled) {background:$color-primary;color:#fff;}
-.secondary-button:focus:not(:disabled) {background:$color-primary;color:#fff;}
+.secondary-button:hover:not(:disabled) {background:$color-primary;color:$gray0;}
+.secondary-button:focus:not(:disabled) {background:$color-primary;color:$gray0;}
 .secondary-button:active:not(:disabled) {}
 .tertiary-button {@extend .button;border:1px solid $gray10;background:$gray10;color:$gray80;}
 .tertiary-button:disabled {color:$gray20;cursor:not-allowed;}
-.tertiary-button:hover:not(:disabled) {background:$color-primary;border-color:$color-primary;color:#fff;}
-.tertiary-button:focus:not(:disabled) {background:$color-primary;color:#fff;}
+.tertiary-button:hover:not(:disabled) {background:$color-primary;border-color:$color-primary;color:$gray0;}
+.tertiary-button:focus:not(:disabled) {background:$color-primary;color:$gray0;}
 .tertiary-button:active:not(:disabled) {}
-.danger-button {@extend .button;background:$color-negative;border:1px solid $color-negative;color:#fff;}
-.danger-button:disabled {background:$gray40;border-color:$gray40;color:#fff;cursor:not-allowed;}
+.danger-button {@extend .button;background:$color-negative;border:1px solid $color-negative;color:$gray0;}
+.danger-button:disabled {background:$gray40;border-color:$gray40;color:$gray0;cursor:not-allowed;}
 .danger-button:hover:not(:disabled) {background:$color-negative;}
 .danger-button:focus:not(:disabled) {background:$color-negative;}
 .danger-button:active:not(:disabled) {}
-.success-button {@extend .button;background:$color-positive;border:1px solid $color-positive;color:#fff;}
-.success-button:disabled {background:$gray40;border-color:$gray40;color:#fff;cursor:not-allowed;}
+.success-button {@extend .button;background:$color-positive;border:1px solid $color-positive;color:$gray0;}
+.success-button:disabled {background:$gray40;border-color:$gray40;color:$gray0;cursor:not-allowed;}
 .success-button:hover:not(:disabled) {background:$color-positive;}
 .success-button:focus:not(:disabled) {background:$color-positive;}
 .success-button:active:not(:disabled) {}
@@ -104,11 +104,11 @@ input[type=checkbox] {width:0;height:0;opacity:0;-webkit-appearance:checkbox;pos
 input[type=checkbox] + label {display:block;height:16px;padding-left:2rem;line-height:16px;position:relative;}
 input[type=checkbox] + label:before {content:'';display:block;width:16px;height:16px;border-radius:$radius400;border:1px solid $gray40;box-sizing:border-box;position:absolute;left:0;top:0;}
 input[type=checkbox] + label:after {content:'';display:none;width:8px;height:2px;border-left:2px solid;border-bottom:2px solid;border-color:$gray20;position:absolute;left:3px;top:5px;transform:rotate(-45deg);}
-input[type=checkbox]:checked + label:before {animation: ripple2 0.2s linear forwards;  border-color:$color-primary;}
+input[type=checkbox]:checked + label:before {border-color:$color-primary;animation:ripple2 0.2s linear forwards;}
 input[type=checkbox]:checked + label:after {display:block;border-color:$color-primary;}
 input[type=checkbox]:disabled + label {color:$gray20;cursor:not-allowed;}
 input[type=checkbox]:disabled + label:before {background:$gray20;border-color:$gray20;}
-input[type=checkbox]:disabled + label:after {border-color:#fff;}
+input[type=checkbox]:disabled + label:after {border-color:$gray0;}
 input[type=checkbox][indeterminate=true] + label:before {}
 input[type=checkbox][indeterminate=true] + label:after {display:block;background:$color-primary;border:none;left:4px;top:7px;transform:rotate(0deg);}
 input[type=checkbox][data-indeterminate=true] + label:before {}
@@ -118,11 +118,11 @@ input[type=radio] {width:0;height:0;opacity:0;-webkit-appearance:radio;position:
 input[type=radio] + label {display:block;height:16px;padding-left:2rem;line-height:16px;position:relative;}
 input[type=radio] + label:before {content:'';display:block;width:16px;height:16px;border-radius:50%;border:1px solid $gray40;box-sizing:border-box;position:absolute;left:0;top:0;}
 input[type=radio] + label:after {content:'';display:none;width:6px;height:6px;border-radius:50%;background:$gray20;position:absolute;left:5px;top:50%;transform:translateY(-50%);transition:all 0.2s;}
-input[type=radio]:checked + label:before {border-color:$color-primary;}
+input[type=radio]:checked + label:before {border-color:$color-primary;animation:ripple2 0.2s linear forwards;}
 input[type=radio]:checked + label:after {display:block;background:$color-primary;}
 input[type=radio]:disabled + label {color:$gray20;cursor:not-allowed;}
 input[type=radio]:disabled + label:before {background:$gray20;border-color:$gray20;}
-input[type=radio]:disabled + label:after {background:#fff;}
+input[type=radio]:disabled + label:after {background:$gray0;}
 
 // .checkbox-helper,.radio-helper {padding:0.5rem 0 1.5rem 28px;}
 input[type=radio] + label + *,
@@ -143,7 +143,7 @@ input[type=checkbox]:checked + label + input {display:block;margin:0.75rem 0 1.5
 .switch {display:block;position:relative;}
 input[type=checkbox][role=switch] + label {display:block;height:20px;padding-left:64px;line-height:20px;cursor:pointer;}
 input[type=checkbox][role=switch] + label:before {content:'';display:block;width:48px;height:20px;border:none;border-radius:$radius400;box-sizing:border-box;background:$gray20;position:absolute;left:0;top:0;transition:background .2s;}
-input[type=checkbox][role=switch] + label:after {content:'';display:block;/*18px*/width:16px;height:16px;border:none;border-radius:$radius400;background:#fff;box-shadow:$shadow400;position:absolute;left:2px;top:2px;transition:left .2s;transform:rotate(0deg);}
+input[type=checkbox][role=switch] + label:after {content:'';display:block;/*18px*/width:16px;height:16px;border:none;border-radius:$radius400;background:$gray0;box-shadow:$shadow400;position:absolute;left:2px;top:2px;transition:left .2s;transform:rotate(0deg);}
 input[type=checkbox][role=switch]:checked + label {color:$color-primary;}
 input[type=checkbox][role=switch]:checked + label:before {background:$color-primary;}
 input[type=checkbox][role=switch]:checked + label:after {left:30px;}
@@ -179,7 +179,7 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 .textfield-input {display:block;width:100%;padding:$padding200;padding-right:40px;background:$gray10;border:1px solid $gray10;border-radius:4px;box-sizing:border-box;font:inherit;color:$gray80;-webkit-appearance:none;appearance:none;transition:all 0.2s;}
 .textfield-input:not(select):read-only {background:none;padding-left:0;padding-right:0;border:none;outline:none;}
 .textfield-input:not(select):read-only::placeholder {color:$gray80;}
-.textfield-input:focus {background:#fff;border-color:$gray20;box-shadow:$shadow200;outline:0;}
+.textfield-input:focus {background:$gray0;border-color:$gray20;box-shadow:$shadow200;outline:0;}
 .textfield-input.-textarea {height:auto;}
 .textfield-input.-inline {display:inline;width:80px;padding:2px 12px;}
 .textfield-unit {width:40px;height:46px;padding:0 16px;line-height:50px;text-align:right;color:rgba(0, 0, 0, 0.4);position:absolute;right:0;bottom:0;}
@@ -219,13 +219,13 @@ input[type=email]:invalid {border-color:crimson;}
 
 .boxed-form {}
 .boxed-form h4 {margin:2rem 0 0.75rem 0;}
-.boxed-form div {background:#fff;padding:$padding400;border:1px solid #e9e9e6;}
+.boxed-form div {background:$gray0;padding:$padding400;border:1px solid #e9e9e6;}
 .boxed-form div:nth-of-type(1) {border-radius:4px;border-bottom-left-radius:0;border-bottom-right-radius:0;}
 .boxed-form div:nth-last-of-type(1) {border-radius:4px;border-top-left-radius:0;border-top-right-radius:0;}
 .boxed-form div label {margin:0;color:$gray40;}
 .boxed-form div input {margin-top:-2px;padding:0;background:inherit;border:none;}
 
-.filter {width:320px;background:#fff;overflow-y:scroll;margin:0 auto;padding:2rem 3rem;position:fixed;right:0;top:0;bottom:0;z-index:1;}
+.filter {width:320px;background:$gray0;overflow-y:scroll;margin:0 auto;padding:2rem 3rem;position:fixed;right:0;top:0;bottom:0;z-index:1;}
 .filter-heading {font-size:1.5rem;}
 .filter-fieldset {margin:1.5rem 0;padding:1.75rem 0 2rem 0;border-bottom:1px solid #e9e9e6;position:relative;}
 .filter-fieldset-legend {line-height:1;position:absolute;top:0;}
@@ -256,9 +256,9 @@ input[type=file] + label:after {display:none;}
 
 // qty
 .variation {max-width:10rem;height:32px;margin:.75rem 0 0rem 0;text-align:center;position:relative;}
-.variation-input {width:calc(100% - 64px);height:100%;background:$gray10;border:1px solid $gray20;border-left:0;border-right:0;box-sizing:border-box;text-align:center;}
-.variation-decrement {width:32px;height:32px;border:1px solid $gray20;border-radius:$radius400 0 0 $radius400;position:absolute;left:0px;top:0px;}
-.variation-increment {width:32px;height:32px;border:1px solid $gray20;border-radius:0 $radius400 $radius400 0;position:absolute;right:0;top:0px;}
+.variation-input {width:calc(100% - 64px);height:100%;background:$gray10;border:1px solid $gray20;box-sizing:border-box;text-align:center;}
+.variation-decrement {width:32px;height:32px;margin-right:-1px;border:1px solid $gray20;border-radius:$radius400 0 0 $radius400;position:absolute;left:0px;top:0px;}
+.variation-increment {width:32px;height:32px;margin-left:-1px;border:1px solid $gray20;border-radius:0 $radius400 $radius400 0;position:absolute;right:0;top:0px;}
 .variation-decrement.is-disabled {opacity:.5;cursor:not-allowed;}
 .variation-increment.is-disabled {opacity:.5;cursor:not-allowed;}
 
@@ -317,6 +317,6 @@ input[type=file] + label:after {display:none;}
   cursor: pointer;
   &:hover {
     background: $color-primary;
-    color: #fff;
+    color: $gray0;
   }
 }

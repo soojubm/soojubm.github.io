@@ -21,7 +21,7 @@ const toggleClass = ({ selector: trigger }: Parameter) => {
 
 		triggers.forEach(element => {
 			if(event.target === element) return;
-			removeAllClass(trigger);
+			removeAllClass(element);
 		});
 	}));
 		

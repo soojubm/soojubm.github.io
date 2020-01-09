@@ -1,6 +1,6 @@
 .step {display:flex;justify-content:center;}
 .step-item {width:56px;padding:8px 4px;text-align:center;}
-.step-item-icon {display:block;width:32px;height:32px;margin:0 auto;border-radius:$radius400;background:$gray40;font-size:16px !important;color:#fff;line-height:32px !important;}
+.step-item-icon {display:block;width:32px;height:32px;margin:0 auto;border-radius:$radius400;background:$gray40;font-size:16px !important;color:$gray0;line-height:32px !important;}
 .step-item-title {margin-top:.5rem;font-size:12px;}
 .step-space {display:inline-block;width:21px;height:56px;}
 .step-space span {float:left;display:block;width:3px;height:3px;margin:21px 2px;border-radius:50%;background:$gray40;}
@@ -77,7 +77,7 @@
     padding: 14px 22px 16px;
     border: solid 1px #e8e8e8;
     box-sizing: border-box;
-    background-color: #ffffff;
+    background-color: $gray0;
     &.message {
       &:after {
         content: '';
@@ -172,7 +172,7 @@
       box-sizing: border-box;
       border-radius: 2px;
       border: solid 1px #e8e8e8;
-      background: #fff;
+      background: $gray0;
       text-align: center;
       position: relative;
       p {
@@ -187,7 +187,7 @@
         height: 64px;
         background-color: #30a4ff;
         font-size: 21px;
-        color: #fff;
+        color: $gray0;
         text-align: center;
         position: absolute;
         left: -1px;
@@ -246,7 +246,7 @@
       &.is-active {
         border-color: #30a4ff;
         background-color: #30a4ff;
-        color: #fff;
+        color: $gray0;
       }
     }
     button + button {

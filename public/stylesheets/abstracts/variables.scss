@@ -1,5 +1,6 @@
 // mediaquery, desktop first
 
+$gray0: #fff; // white for dark theme
 $gray10: #f1f3f4; // bg 
 $gray20: #dadce0; // divider border
 $gray40: #848c94; // caption
@@ -116,7 +117,7 @@ $zindex-tooltip: 1070;
 
 :root {
   --font-size: 1.2rem;
-  --background-color: #fff;
+  --background-color: $gray0;
   --text-color: #222;
 }
 aside {

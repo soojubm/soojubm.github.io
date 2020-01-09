@@ -41,20 +41,26 @@ export const carousel = () => {
 export const setDarkmode = () => {
   const darkmodeButton = document.querySelector('.js-darkmode');
   if(!darkmodeButton) return;
-  darkmodeButton.addEventListener('click', setDarkmode);
 
-  function setDarkmode() {
-    document.body.classList.toggle('darkmode');
-    
-    const isDarkmode = document.body.classList.contains('darkmode');
-    if(isDarkmode) {
-      localStorage.setItem('theme', 'darkmode');
-    } else {
-      localStorage.removeItem('theme');
-      // localStorage.clear();
-    }
+  loadTheme();
+  darkmodeButton.addEventListener('click', tt);
+};
+
+function tt() {
+  document.body.classList.toggle('darkmode');
+  
+  const isDarkmode = document.body.classList.contains('darkmode');
+  if(isDarkmode) {
+    localStorage.setItem('theme', 'darkmode');
+  } else {
+    localStorage.removeItem('theme');
+    // localStorage.clear();
   }
+};
+
+function loadTheme() {
   const lastTheme = localStorage.getItem('theme');
   if(!lastTheme) return;
+  
   document.body.classList.add(lastTheme);
 };

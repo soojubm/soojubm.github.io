@@ -1,5 +1,4 @@
 export const setGraph = () => {
-	// const graph = document.querySelector('.js-graph');
 	const graphItems = document.querySelectorAll('.js-graph .graph-item');
 	if(!graphItems) return;
 
@@ -8,9 +7,9 @@ export const setGraph = () => {
 		const graphItemValue = element.querySelector<HTMLElement>('.graph-item-value');
 		if(!graphItemBar || !graphItemValue) return;
 
-		const graphValue = parseInt(graphItemValue.innerHTML);
+		const graphValue = parseInt(graphItemValue.innerText);
 		
 		graphItemBar.style.height = `${graphValue}px`;
-		graphItemValue.style.bottom = `${graphValue}'px`;
+		graphItemValue.style.bottom = `${graphValue}px`;
 	});
 };

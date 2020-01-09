@@ -7,12 +7,12 @@
 .login-remember {margin:1rem 0;}
 .login-divider {margin:12px auto;text-align:center;position:relative;z-index:1;} // separator
 .login-divider:before {content:'';display:block;width:100%;height:1px;background:#e9e9e9;position:absolute;top:50%;transform:translateY(-1px);}
-.login-divider:after {content:'또는';width:4rem;line-height:24px;background:#fff;font-size:12px;color:$gray40;position:absolute;left:50%;top:0;transform:translateX(-50%);}
+.login-divider:after {content:'또는';width:4rem;line-height:24px;background:$gray0;font-size:12px;color:$gray40;position:absolute;left:50%;top:0;transform:translateX(-50%);}
 .login-social {}
 .login-social-facebook {}
 .login-social-twitter {background:#4ab3f4;}
 .login-social-naver {margin-bottom:8px;background:#3bcc15;}
-.login-social-kakao {float:left;width:49%;color:#fff;margin-right:2%;background:#f9df34;}
+.login-social-kakao {float:left;width:49%;color:$gray0;margin-right:2%;background:#f9df34;}
 .login-option {margin:2rem 0;text-align:center;}
 .login-option-link {margin:0 1rem;}
 

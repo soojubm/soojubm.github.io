@@ -1,8 +1,8 @@
 .profile {margin:0 auto;padding:5.25rem 10% 0;position:relative;}
-.profile-head {height:240px;overflow:hidden;margin:0 0 3rem 0;padding:3rem 4rem;border-radius:4px;box-sizing:border-box;position:relative;}
-.profile-head-background {max-width:100%;margin:0 auto;background:url('/public/images/caleb-woods-182648-unsplash.jpg') no-repeat center -500px fixed;background-size:cover;position:absolute;left:-50%;right:-50%;top:0;bottom:0;}
-.profile-head-headline {margin:0px auto .5rem;font-size:1.75rem;text-indent:-2px;color:#fff;position:relative;}
-.profile-head-description {width:50%;margin:0 0 2rem 0;color:#fff;position: relative;}
+.profile-head {@extend .hero;margin:0 0 3rem 0 !important;}
+.profile-head-background {@extend .hero-background;background:url('/public/images/caleb-woods-182648-unsplash.jpg') no-repeat center -500px fixed !important;background-size:cover !important;}
+.profile-head-headline {@extend .hero-heading;color:$gray0;position:relative;}
+.profile-head-description {@extend .hero-description;color:$gray0;position:relative;}
 .profile-head-share {@extend .tertiary-button;}
 .profile-head-temp {position:absolute;left:65%;top:3.25rem;}
 
@@ -14,12 +14,12 @@
 .profile-user-career {display:block;margin:6px 0 0;color:$gray40;}
 .profile-user-description {height:4.8em;margin:1.5rem 0;white-space:normal;overflow:hidden;text-overflow:ellipsis;word-wrap:break-word;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;line-height:1.6;position:relative;}
 .profile-user-description-more {/*display:block;position:absolute;right:0;bottom:1px;z-index:1;*/}
-// .profile-user-description::after {content:'';display:block;width:50px;height:24px;background:#fff;filter:blur(4px);position:absolute;right:0;bottom:0;z-index:0;}
+// .profile-user-description::after {content:'';display:block;width:50px;height:24px;background:$gray0;filter:blur(4px);position:absolute;right:0;bottom:0;z-index:0;}
 .profile-user-toggle {width:100%;display:inline-block;text-align:center;}
 .profile-user-toggle i {display:inline-block;vertical-align:middle;}
 // .profile-user-description-more {position:absolute;right:0;bottom:1px;z-index:1;}
-// .profile-user-description-more:before {content:'';display:block;padding:8px;background:#fff;position:absolute;left:-.5rem;right:0;top:0;bottom:0;z-index:-1;}
-.profile-user-category {padding:4px 16px;background:coral;font-size:12px;color:#fff;border-radius:50px;}
+// .profile-user-description-more:before {content:'';display:block;padding:8px;background:$gray0;position:absolute;left:-.5rem;right:0;top:0;bottom:0;z-index:-1;}
+.profile-user-category {padding:4px 16px;background:coral;font-size:12px;color:$gray0;border-radius:50px;}
 .profile-user-address {margin:1rem 0 1.25rem 0;padding:1rem 0 1rem 0;border-top:1px solid #e9e9e6;border-bottom:1px solid #e9e9e6;}
 .profile-user-address i {margin:0 8px 0 0;font-size:14px;color:$gray40;vertical-align:middle;}
 .profile-user-hashtags {display:flex;flex-wrap:wrap;margin:-.25rem;}
@@ -70,9 +70,9 @@
 .card-byline img {display:block;float:left;width:16px;height:16px;border-radius:$radius400;background:$gray10;}
 .card-byline-name {padding-left:24px;line-height:16px;color:$gray40;}
 .card-more {width:32px;height:32px;background:#f1f3f4;position:absolute;right:.5rem;top:.5rem;}
-.card-thumbnail {padding-top:50%;overflow:hidden;background:$gray80;border-radius:4px;border:1px solid rgba(0, 0, 0, 0.05);border-color:#fff;box-sizing:border-box;position:relative;}
+.card-thumbnail {padding-top:50%;overflow:hidden;background:$gray80;border-radius:4px;border:1px solid rgba(0, 0, 0, 0.05);border-color:$gray0;box-sizing:border-box;position:relative;}
 .card-thumbnail img {@extend .image-centered;display:block;background:$gray80;left:-1px;right:-1px;top:-1px;bottom:-1px;}
-.card-category {padding:2px 0;background:$color-primary;font-size:10px;color:#fff;position:absolute;left:16px;top:64px;}
+.card-category {padding:2px 0;background:$color-primary;font-size:10px;color:$gray0;position:absolute;left:16px;top:64px;}
 .card-title {padding:.75rem 0 0;font-size:1rem;}
 .card-date {display:block;padding:0 0;font-size:12px;color:$gray40;}
 .card-text {padding:4px 0 12px;line-height:1.4;color:$gray60;}
@@ -81,7 +81,7 @@
 .card-tags {margin-top:1rem !important;}
 .card-foot {margin:1.25rem 0 0 0;}
 .card-foot-add {width:100%;padding:12px 16px;text-align:left;color:$color-primary;font-size:12px;border-top:1px solid #e9e9e6;}
-// .card-more .icon-more {background:#fff;}
+// .card-more .icon-more {background:$gray0;}
 .card-item {height:48px;margin:1rem 0;position:relative;}
 .card-item img {float:left;display:block;margin-right:1rem;background:$gray80;}
 .card-item-name {display:block;color:$gray80;position: relative;top:0px;}
@@ -98,10 +98,14 @@
 // padding-top: 20%;
 // }
 
-@media (max-width:1400px) {
+@media (max-width:1600px) {
+  .card {flex:1 0 50%;}
+}
+
+@media (max-width:$breakpoint-large) {
   .profile-user {float:none;width:100%;margin:0px auto 0;padding:0 5% 0;box-sizing:border-box;}
   .profile-body {width:100%;margin-top:0;padding:0 5%;}
-  .card {width:50%;}
+  .card {flex:1 0 50%;}
 }
 
 @media (max-width:$breakpoint-small) {
@@ -117,5 +121,5 @@
   .profile-user-career {margin-top:3px}
   .profile-user-avatar {width:64px;height:64px;}
 
-  .card {flex:1 0 50%;margin:0 0 20px;}
+  .card {margin:0 0 20px;}
 }
