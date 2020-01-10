@@ -1,5 +1,9 @@
+type Parameter = {
+	selector: string
+};
 
-const enterTarget = ({ triggerElement: target }) => {
+
+const enterTarget = ({ selector: target }: Parameter) => {
 	const { body } = document;
 	const hoverElements = document.querySelectorAll(target);
 	if(!hoverElements) return;

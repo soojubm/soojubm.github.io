@@ -1,5 +1,11 @@
-const toTop = ({targetElement: target}) => {
-	const toTopElement = document.querySelector(target);
+type Parameter = {
+	selector: string
+}
+
+const toTop = ({selector: target}: Parameter) => {
+	const toTopElement = document.querySelector<HTMLFormElement>(target);
+	if(!toTopElement) return;
+	
 	toTopElement.addEventListener('click', event => {
 		event.preventDefault();
 		window.scrollTo(0, 0);

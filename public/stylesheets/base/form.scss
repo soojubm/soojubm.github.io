@@ -7,6 +7,7 @@ input, textarea {-webkit-appearance:none;-webkit-border-radius:0}
 input, select, textarea {border-radius:0px;-webkit-border-radius:0;font:inherit;color:inherit;background:none;border:none;}
 select {-webkit-appearance:none;appearance:none;}
 button {background:none;padding:0;border:none;cursor:pointer;font:inherit;position:relative;}
+
 button > * {pointer-events:none;}
 button:not(:active),
 button:not(:focus) {outline:0;}
@@ -41,6 +42,7 @@ select:focus {}
 .primary-button:disabled {background:$gray40;border-color:$gray20;color:$gray20;cursor:not-allowed;}
 .primary-button:hover:not(:disabled) {background:#2a4ea1;}
 .primary-button:focus:not(:disabled) {background:#2a4ea1;}
+.primary-button:active {animation:ripple2 0.2s linear forwards;}
 .primary-button:active:not(:disabled) {}
 .primary-button.-facebook {background:#3664a2;border-color:#3664a2;}
 .primary-button.-twitter {background:#3664a2;border-color:#3664a2;}
@@ -257,8 +259,8 @@ input[type=file] + label:after {display:none;}
 // qty
 .variation {max-width:10rem;height:32px;margin:.75rem 0 0rem 0;text-align:center;position:relative;}
 .variation-input {width:calc(100% - 64px);height:100%;background:$gray10;border:1px solid $gray20;box-sizing:border-box;text-align:center;}
-.variation-decrement {width:32px;height:32px;margin-right:-1px;border:1px solid $gray20;border-radius:$radius400 0 0 $radius400;position:absolute;left:0px;top:0px;}
-.variation-increment {width:32px;height:32px;margin-left:-1px;border:1px solid $gray20;border-radius:0 $radius400 $radius400 0;position:absolute;right:0;top:0px;}
+.variation-decrement {width:32px;height:32px;border:1px solid $gray20;border-radius:$radius400 0 0 $radius400;position:absolute;left:1px;top:0px;}
+.variation-increment {width:32px;height:32px;border:1px solid $gray20;border-radius:0 $radius400 $radius400 0;position:absolute;right:1px;top:0px;}
 .variation-decrement.is-disabled {opacity:.5;cursor:not-allowed;}
 .variation-increment.is-disabled {opacity:.5;cursor:not-allowed;}
 

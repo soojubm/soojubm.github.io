@@ -22,7 +22,7 @@ $fixedHeaderHeight: 50px;
 .is-shown .header-user i {color:$gray0;}
 .is-shown .header-user .header-user-account-trigger img {background:$gray0;}
 .is-shown .navigation ul li.is-active .bg {display:block;}
-.is-shown .navigation ul li > a {color:$gray0;position:relative;z-index:3;} // z-index
+.is-shown .navigation ul li > a {color:$gray0;position:relative;z-index:6;} // z-index
 .is-shown .navigation ul li > a em {color:$gray0;}
 .is-shown .navigation ul li menu {top:0;}
 .is-shown .navigation ul li menu a {opacity:1;}

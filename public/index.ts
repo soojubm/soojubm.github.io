@@ -1,6 +1,7 @@
 'use strict';
 
 import './stylesheets/style.scss';
+// import polyfill from './javascripts/polyfill';
 import routePage from './javascripts/router';
 import { loader, checkBrowser, adjustTopPadding } from './javascripts/load';
 import { setGraph } from './javascripts/ui';
@@ -17,6 +18,7 @@ import input from './javascripts/input/index';
 // div.classList.replace("foo", "bar");
  
 // element.hidden = !visible
+
 
 window.addEventListener('offline', () => {
 	const offlineElement = document.querySelector<HTMLElement>('.js-offline');
@@ -38,6 +40,7 @@ function initailizePage() {
 }
 
 document.addEventListener('DOMContentLoaded', async () => {	
+	// polyfill();
 	loader();
 	checkBrowser();
 	setDarkmode();
@@ -60,14 +63,14 @@ document.addEventListener('DOMContentLoaded', async () => {
 		// carousel();
 	
 		event.toggleClass({ selector: '.js-toggle' });
-		event.enterTarget({ triggerElement: '.js-hover-trigger' });
-		event.modal({ triggerElement: '.js-modal' });
+		event.enterTarget({ selector: '.js-hover-trigger' });
+		event.modal({ selector: '.js-modal' });
 		event.tabMenu();
-		event.toTop({ targetElement: '.js-to-top' });
+		event.toTop({ selector: '.js-to-top' });
 
 		event.scrollAnimation();
 
-		event.close({ targetElement: '.js-close' });
+		event.close({ selector: '.js-close' });
 		// event.customCursor();
 
 		countDownClock(20, 'days');

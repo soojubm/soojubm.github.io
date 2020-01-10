@@ -1,7 +1,10 @@
 //TODO: 모달 밖의 컨텐츠에 aria-hidden 모달의 위치는 바디 안에?
 //var abc = window.innerWidth - document.body.clientWidth;
+type Parameter = {
+	selector: string
+}
 
-const modal = ({ triggerElement: trigger }) => {
+const modal = ({ selector: trigger }) => {
 	const { body } = document;
 	let pageY = 0;
 	const modals = document.querySelectorAll(trigger);

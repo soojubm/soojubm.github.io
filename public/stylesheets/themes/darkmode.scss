@@ -11,13 +11,14 @@ body.darkmode {
 
 .darkmode .navigation ul li a {color:$gray0;}
 
-.darkmode header,
-.darkmode aside,
-.darkmode nav,
-.darkmode footer {
-  background: rgba(0,0,0,1);
-  color: rgba(255,255,255,.75);
-}
+// .darkmode header,
+// .darkmode aside,
+// .darkmode nav,
+// .darkmode footer {
+//   background: rgba(0,0,0,1);
+//   color: rgba(255,255,255,.75);
+// }
+
 .darkmode .design-body-heading, .darkmode h1 {
   color: $gray0;
 }
