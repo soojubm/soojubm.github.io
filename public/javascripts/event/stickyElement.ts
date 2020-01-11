@@ -1,34 +1,30 @@
-const stickyElement = ({targetElement, addClass}) => {
-	const { body } = document;
-	const stickyElement = document.querySelector(targetElement);
-	if(!stickyElement) return;
+const stickyElement = ({ targetElement, addClass }) => {
+  const { body } = document
+  const stickyElement = document.querySelector(targetElement)
+  if (!stickyElement) return
 
-	let stickyElementHeight = stickyElement.offsetHeight;
-	let isScrolling;
+  let stickyElementHeight = stickyElement.offsetHeight
+  let isScrolling
 
-	window.addEventListener('resize', () => {
-		isScrolling && window.cancelAnimationFrame(isScrolling);
-		isScrolling = window.requestAnimationFrame(() => {
-			stickyElementHeight = stickyElement.offsetHeight;
-		});
-	});
+  window.addEventListener('resize', () => {
+    isScrolling && window.cancelAnimationFrame(isScrolling)
+    isScrolling = window.requestAnimationFrame(() => {
+      stickyElementHeight = stickyElement.offsetHeight
+    })
+  })
 
-	window.addEventListener('scroll', () => {
-		console.log(stickyElementHeight); // 133
-		isScrolling && window.cancelAnimationFrame(isScrolling);
-		isScrolling = window.requestAnimationFrame(() => {
-			if(window.pageYOffset > stickyElement.offsetTop + stickyElementHeight){
-				body.classList.add(addClass);
-			} else {
-				body.classList.remove(addClass);
-			}
-		});
-	});
-};
-
-
-
-
+  window.addEventListener('scroll', () => {
+    console.log(stickyElementHeight) // 133
+    isScrolling && window.cancelAnimationFrame(isScrolling)
+    isScrolling = window.requestAnimationFrame(() => {
+      if (window.pageYOffset > stickyElement.offsetTop + stickyElementHeight) {
+        body.classList.add(addClass)
+      } else {
+        body.classList.remove(addClass)
+      }
+    })
+  })
+}
 
 // var isScrolling;
 // window.addEventListener('scroll', (event) => {
@@ -38,7 +34,6 @@ const stickyElement = ({targetElement, addClass}) => {
 // 	}, 50);
 // });
 
-
 // export const stickyHeaderElement = (targetElement, addClass) => {
 // 	stickyElement({targetElement, addClass, true});
 // };
@@ -46,7 +41,7 @@ const stickyElement = ({targetElement, addClass}) => {
 // const stickyHeader = () => {
 // 	const headerElement = document.querySelector('.header');
 // 	let lastScrollTop = 0;
-	
+
 // 	window.addEventListener('scroll', () => {
 // 		requestAnimationFrame(hasScrolled);
 // 	});
@@ -61,4 +56,4 @@ const stickyElement = ({targetElement, addClass}) => {
 // 	}
 // };
 
-export default stickyElement;
+export default stickyElement

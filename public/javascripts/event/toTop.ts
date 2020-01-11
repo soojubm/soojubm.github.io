@@ -1,17 +1,17 @@
 type Parameter = {
-	selector: string
+  selector: string
 }
 
-const toTop = ({selector: target}: Parameter) => {
-	const toTopElement = document.querySelector<HTMLFormElement>(target);
-	if(!toTopElement) return;
-	
-	toTopElement.addEventListener('click', event => {
-		event.preventDefault();
-		window.scrollTo(0, 0);
+const toTop = ({ selector: target }: Parameter) => {
+  const toTopElement = document.querySelector<HTMLFormElement>(target)
+  if (!toTopElement) return
 
-		window.location.hash = toTopElement.name || toTopElement.href;
-	});
-};
+  toTopElement.addEventListener('click', event => {
+    event.preventDefault()
+    window.scrollTo(0, 0)
 
-export default toTop;
+    window.location.hash = toTopElement.name || toTopElement.href
+  })
+}
+
+export default toTop

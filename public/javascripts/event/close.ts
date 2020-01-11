@@ -1,14 +1,16 @@
 type Parameter = {
-	selector: string
+  selector: string
 }
 
 const close = ({ selector: target }: Parameter) => {
-	const closeElements = document.querySelectorAll<HTMLFormElement>(target);
-	if(!closeElements) return;
+  const closeElements = document.querySelectorAll<HTMLFormElement>(target)
+  if (!closeElements) return
 
-	closeElements.forEach(element => element.addEventListener('click', () => {
-		(<HTMLElement>element.parentNode).style.display = 'none';
-	}));
-};
+  closeElements.forEach(element =>
+    element.addEventListener('click', () => {
+      ;(<HTMLElement>element.parentNode).style.display = 'none'
+    }),
+  )
+}
 
-export default close;
+export default close

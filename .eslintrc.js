@@ -3,7 +3,7 @@ module.exports = {
     browser: true,
     es6: true,
   },
-  extends: 'eslint:recommended',
+  extends: ['eslint:recommended', 'plugin:prettier/recommended'],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
@@ -13,7 +13,7 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
-    semi: ['error', 'always'],
+    semi: ['error', 'never'],
     quotes: ['error', 'single'],
     camelcase: { "properties": "always" },
     eqeqeq: ["error", "always"],
