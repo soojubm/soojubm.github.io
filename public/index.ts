@@ -40,6 +40,9 @@ function initailizePage() {
 }
 
 document.addEventListener('DOMContentLoaded', async () => {	
+
+
+
 	// polyfill();
 	loader();
 	checkBrowser();
@@ -48,17 +51,35 @@ document.addEventListener('DOMContentLoaded', async () => {
 	routePage().then(() => {
 		adjustTopPadding();
 
-		// 특정 유아이 이벤트
-		// const focusComment = () => {
-		// 	const commentWrite = document.querySelector('.js-comment-write');
-		// 	const commentTextField = document.querySelectorAll('.js-comment-textfield');
-		// 	if(!commentWrite || !commentTextField) return;
+		// 임시
+		const list = document.querySelector('.js-display-list');
+		const grid = document.querySelector('.js-display-grid');
+		const works = document.querySelector('.profile-body');
+		console.log(list, grid, works)
+		// if(!list || !grid || !works) return;
+		if(list && grid && works) {
+			list.addEventListener('click', event => {
+				list.classList.add('is-selected');
+				grid.classList.remove('is-selected');
+				works.classList.add('list');
+			});
+			grid.addEventListener('click', event => {
+				list.classList.remove('is-selected');
+				grid.classList.add('is-selected');
+				works.classList.remove('list');
+			})
+		}
 
-		// 	commentTextField.forEach(element => element.addEventListener('focus', () => {
-		// 		commentWrite.classList.add('is-focused');
-		// 	}));
-		// };
-		// focusComment();
+		const focusComment = () => {
+			const commentWrite = document.querySelector('.js-comment-write');
+			const commentTextField = document.querySelectorAll('.js-comment-textfield');
+			if(commentWrite || commentTextField) {
+				commentTextField.forEach(element => element.addEventListener('focus', () => {
+					commentWrite && commentWrite.classList.add('is-focused');
+				}));
+			}
+		};
+		focusComment();
 		setGraph();
 		// carousel();
 	
@@ -75,7 +96,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 		countDownClock(20, 'days');
 	
-		input.checkbox({ checkAllSelector: '.js-checkall', checkSelector: '.js-check' });
+		input.checkbox({ checkAllSelector: '.js-checkall', checkSelector: '.js-check' }).addEvent();
+		
+		
 		input.file();
 		input.textarea();
 		input.number();

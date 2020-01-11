@@ -62,29 +62,6 @@
 .product-quickorder-controls {position:absolute;left:80%;right:0;bottom:50%;transform:translateY(50%);}
 .product-quickorder-controls-purchase {width:100%;}
 
-@media (max-width:$breakpoint-medium) {
-	.product {padding:0 5%}
-	.product:before {display:none;}
-	.product-image {margin-left:0;left:0;}
-	.product-image:before {content:'';display:block;background:$gray10;position:absolute;left:0;right:-240px;top:-80px;bottom:240px;z-index:-1;}
-	.product-info {left:55%;}
-	.product-info ol {display:none;}
-	.product-info b {display:none;}
-	.product-order {width:40%;margin:0 0 0 55%;padding-top:140px;}
-}
-
-
-@media (max-width:$breakpoint-small) {
-	.product {max-width:100%;margin-top:3rem;}
-	.product-image:before {top:-320px;left:-240px;}
-	.product-info {width:100%;padding:4rem 0;text-align:center;position:static;left:auto;top:auto;}
-	.product-info-name {width:100%;position:static;left:auto;top:auto;}
-	.product-info-price {margin:.25rem 0 0 0;}
-	.product-image {width:100%;height:400px;position:relative;left:auto;margin-left:0;}
-	.product-order {width:100%;margin:0 0 0 0;padding-top:0;}
-	.product-order-size {overflow:auto;white-space:nowrap;}
-	.product-order-color {overflow:auto;white-space:nowrap;}
-}
 
 
 .review {position:relative;}
@@ -118,20 +95,11 @@
 .review-item-time {font-size:12px;}
 
 
-
-
-
 .product-brand {background:crimson;border-radius:4px;}
 .product-review {margin:4rem 0 8rem 0;padding-left:50%;position:relative;}
 .product-review-eyebrow {}
 .product-review-heading {font-size: 1.75rem;line-height: 1.8;}
 .product-review-list {margin:2rem 0;}
-
-.product-review2 {margin:4rem 0 8rem 0;padding-left:170px;box-sizing:border-box;position:relative;}
-.product-review-eyebrow2 {}
-.product-review-heading2 {font-size: 1.75rem;line-height: 1.8;}
-.product-review-list2 {margin:2rem 0;}
-
 
 .product-detail {}
 .product-detail-headline {width:50%;font-size:1.75rem;line-height:1.8;}
@@ -142,3 +110,29 @@
 .product-detail dl {width:66.6666%;overflow:hidden;box-sizing:border-box;}
 .product-detail dt {float:left;width:20%;margin:.25rem 0;}
 .product-detail dd {float:left;width:80%;margin:.25rem 0;}
+
+@media (max-width:$breakpoint-medium) {
+	.product {padding:0 5%}
+	.product:before {display:none;}
+	.product-image {margin-left:0;left:0;}
+	.product-image:before {content:'';display:block;background:$gray10;position:absolute;left:0;right:-240px;top:-80px;bottom:240px;z-index:-1;}
+	.product-info {left:55%;}
+	.product-info ol {display:none;}
+	.product-info b {display:none;}
+	.product-order {width:40%;margin:0 0 0 55%;padding-top:140px;}
+}
+
+
+@media (max-width:$breakpoint-small) {
+	.product {max-width:100%;margin-top:3rem;}
+	.product-image:before {top:-320px;left:-240px;}
+	.product-info {width:100%;padding:4rem 0;text-align:center;position:static;left:auto;top:auto;}
+	.product-info-name {width:100%;position:static;left:auto;top:auto;}
+	.product-info-price {margin:.25rem 0 0 0;}
+	.product-image {width:100%;height:400px;position:relative;left:auto;margin-left:0;}
+	.product-order {width:100%;margin:0 0 0 0;padding-top:0;}
+	.product-order-size {overflow:auto;white-space:nowrap;}
+	.product-order-color {overflow:auto;white-space:nowrap;}
+	
+	.product-detail {margin-left:0;margin-right:0;}
+}

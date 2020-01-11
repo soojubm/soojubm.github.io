@@ -120,7 +120,8 @@ $fixedHeaderHeight: 50px;
 
 	.is-shown .navigation ul li menu {display:block;margin:0 0 1rem 0;padding:0rem 5%;background:none;position:static;top:auto;transition:initial;}
 	.is-shown .navigation ul li menu a {display:block;color:$gray80;line-height:32px;opacity:1;}
-
+	.is-shown .navigation ul li > a {color:$gray80;}
+	.is-shown .navigation ul li > a em {color:$gray60;}
 	.nav-up {top: -48px;}
 }
 
