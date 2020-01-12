@@ -228,7 +228,7 @@ input[type=email]:invalid {border-color:crimson;}
 .boxed-form div input {margin-top:-2px;padding:0;background:inherit;border:none;}
 
 .filter {width:320px;background:$gray0;overflow-y:scroll;margin:0 auto;padding:2rem 3rem;position:fixed;right:0;top:0;bottom:0;z-index:1;}
-.filter-heading {font-size:1.5rem;}
+.filter-title {font-size:1.5rem;}
 .filter-fieldset {margin:1.5rem 0;padding:1.75rem 0 2rem 0;border-bottom:1px solid #e9e9e6;position:relative;}
 .filter-fieldset-legend {line-height:1;position:absolute;top:0;}
 .filter-fieldset-description {margin:0 0 8px 0;}
@@ -238,12 +238,12 @@ input[type=file] + label {display:inline-block;}
 input[type=file] + label:after {display:none;}
 
 .file {}
-.file-heading {}
+.file-title {}
 .file-helper {margin:4px 0 16px 0;}
 .file-input {opacity:0;}
 .file-label {@extend .secondary-button;cursor:pointer;}
 .file-attachment {margin:2rem 0 0;}
-.file-attachment-heading {margin:8px 0;font-size:1rem;text-decoration:underline;}
+.file-attachment-title {margin:8px 0;font-size:1rem;text-decoration:underline;}
 .file-attachment-helper {margin:-4px 0 0;}
 .file-attachment-list:after {content:'';display:block;clear:both;}
 .file-attachment-item {display:block;width:100%;background:$gray10;overflow:hidden;position:relative;}

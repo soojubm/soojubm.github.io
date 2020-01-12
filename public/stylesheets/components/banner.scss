@@ -1,6 +1,6 @@
 .topbanner {margin:0 auto;padding:2rem 10%;box-sizing:border-box;position:relative;}
 .topbanner-background {max-width:1920px;height:100%;background:$gray10;margin:0 auto;/*border-bottom:1px solid $gray20;*/position:absolute;left:-500%;right:-500%;top:0;bottom:0;z-index:2;}
-.topbanner-heading {display:none;margin: 0 0 .5rem 0;position:relative;z-index:2;}
+.topbanner-title {display:none;margin: 0 0 .5rem 0;position:relative;z-index:2;}
 .topbanner-body {margin:0 0 1.5rem 0;position:relative;z-index:2;}
 .topbanner-checkbox {display:inline-block;text-align:left;}
 .topbanner-cta {display:inline-block;margin:0 2rem 0 0;position:relative;z-index:2;}
