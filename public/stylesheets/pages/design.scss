@@ -19,23 +19,12 @@
 .color-item:hover figcaption span {margin-top:-24px;}
 
 
-.hero {width: auto;overflow:hidden;margin: 0 10%;padding: 3rem 4rem 4rem;border-radius: 4px;box-sizing: border-box;position: relative;z-index: 1;}
-.hero-background {max-width: 100%;margin: 0 auto;background: $gray80;position: absolute;left: -50%;right: -50%;top: 0;bottom: 0;z-index: -1;}
-.hero-eyebrow {display:block;font-size:1.5rem;color:$gray0;}
-.hero-heading {font-size:1.75rem;color:$gray0;text-indent:-2px;}
-.hero-description {width:50%;margin:1rem 0 4rem 0;color:rgba(255,255,255,.6);}
-.hero-cta {}
-.hero-detail {margin-left:.5rem;}
-
 // 통일하기
 // .profile-head {height:240px;overflow:hidden;margin:0 0 3rem 0;padding:3rem 4rem;border-radius:4px;box-sizing:border-box;position:relative;}
 // .profile-head-headline {margin:0px auto .5rem;font-size:1.75rem;text-indent:-2px;color:$gray0;position:relative;}
 // .profile-head-description {width:50%;margin:0 0 2rem 0;color:$gray0;position: relative;}
 // .profile-head-share {@extend .tertiary-button;}
 
-.hero-head {}
-.hero-body {}
-.hero-foot {}
 
 .design {padding:5.5rem 0;}
 .design-head {overflow:hidden;background:url('/public/images/caleb-woods-182648-unsplash.jpg') no-repeat center center;background-size:cover;position:fixed;left:0;right:50%;top:0;bottom:0;z-index:1;}
@@ -83,8 +72,6 @@
   .design {padding:0;}
   .design-head {height:50vh;position:relative;left:0;right:0;top:0;bottom:50%;}
   .design-body {width:60%;max-width:100%;margin-left:0;}
-
-  .hero {margin:-4rem 5% 2rem;}
 }
 
 

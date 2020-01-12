@@ -1,6 +1,6 @@
 .product {margin:5rem auto 10rem;padding:5rem 0 0;position:relative;}
 // .product:before {content:'';display:block;height:800px;background:$gray10;position:absolute;left:10%;right:-50%;top:-5rem;z-index:-1;}
-.product-image {width:480px;height:480px;position:absolute;left:50%;margin-left:-240px;}
+.product-image {width:480px;height:480px;overflow:hidden;position:absolute;left:50%;margin-left:-240px;}
 .product-iamge-list {position:absolute;}
 .product-image img {width:auto;height:auto;max-width:100%;max-height:100%;margin:auto;position:absolute;left:0;right:0;top:0;bottom:0;margin-top:-50px;}
 .product-image-navigation {width:inherit;text-align:center;position:fixed;left:10%;top:520px;}
@@ -74,8 +74,8 @@
 .review-filter {display:flex;align-items:center;height:32px;font-size:12px;position:absolute;right:0;top:0;}
 
 
-[role=group] {display:flex;flex-flow: wrap-reverse;margin:-.25rem;}
-[role=group] > * {margin:.25rem;}
+[role=group] {display:flex;flex-flow: wrap-reverse;margin:-.125rem;}
+[role=group] > * {margin:.125rem;}
 
 [role=group] input[type="radio"] + label {margin:0 16px 0 0;color:$gray40;padding-left:0;}
 [role=group] input[type="radio"] + label:before {content:'';display:inline-block;width:2px;height:2px;background:$gray40;margin:0 10px 0 0;vertical-align:3px;position:static;left:auto;top:auto;}
@@ -134,5 +134,9 @@
 	.product-order-size {overflow:auto;white-space:nowrap;}
 	.product-order-color {overflow:auto;white-space:nowrap;}
 	
+	.pricing-info {flex-wrap:wrap;}
+	.pricing-info-item {margin:0 0 4rem 0;}
 	.product-detail {margin-left:0;margin-right:0;}
+	.product-detail-headline {width:100%;}
+	.product-detail dl {width:100%;}
 }
