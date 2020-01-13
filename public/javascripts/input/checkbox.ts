@@ -10,8 +10,7 @@ type Parameter = {
 const checkbox = ({ checkAllSelector, checkSelector }: Parameter) => ({
   checkAll: document.querySelector(checkAllSelector),
   checkItems: document.querySelectorAll(checkSelector),
-  isEventAdd: false,
-  addEvent() {
+  setEvent() {
     if (!this.checkAll || !this.checkItems) return
     this.checkAll.addEventListener('change', () => this.setCheckAll(this.checkItems, this.checkAll))
     this.checkItems.forEach(checkItem => {

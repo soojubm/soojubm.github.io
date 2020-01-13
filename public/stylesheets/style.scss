@@ -7,7 +7,8 @@
 @import 'base/reset';
 @import 'base/form';
 
-@import 'layout/header';
+@import 'layout/navbar';
+@import 'layout/header'; // page-title || navigation bar titles
 @import 'layout/footer';
 
 @import 'themes/darkmode';

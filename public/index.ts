@@ -39,20 +39,19 @@ function initailizePage() {
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
-  // polyfill();
-  loader()
+  // polyfill()
+  // loader()
   checkBrowser()
   setDarkmode()
 
+
   routePage().then(() => {
     adjustTopPadding()
-
+    
     // 임시
     const list = document.querySelector('.js-display-list')
     const grid = document.querySelector('.js-display-grid')
     const works = document.querySelector('.profile-body')
-    console.log(list, grid, works)
-    // if(!list || !grid || !works) return;
     if (list && grid && works) {
       list.addEventListener('click', event => {
         list.classList.add('is-selected')
@@ -79,23 +78,18 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
     focusComment()
     setGraph()
+    countDownClock(20, 'days')
     // carousel();
 
+    event.modal({ selector: '.js-modal' })
     event.toggleClass({ selector: '.js-toggle' })
     event.enterTarget({ selector: '.js-hover-trigger' })
-    event.modal({ selector: '.js-modal' })
     event.tabMenu()
-    event.toTop({ selector: '.js-to-top' })
-
-    event.scrollAnimation()
-
     event.close({ selector: '.js-close' })
+    event.toTop({ selector: '.js-to-top' })
+    event.scrollAnimation()
     // event.customCursor();
-
-    countDownClock(20, 'days')
-
-    input.checkbox({ checkAllSelector: '.js-checkall', checkSelector: '.js-check' }).addEvent()
-
+    input.checkbox({ checkAllSelector: '.js-checkall', checkSelector: '.js-check' }).setEvent()
     input.file()
     input.textarea()
     input.number()

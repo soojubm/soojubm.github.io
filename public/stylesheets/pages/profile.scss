@@ -108,12 +108,10 @@
 @media (max-width:$breakpoint-large) {
   .profile-user {float:none;width:100%;margin:0px auto 0;padding:0 5% 0;box-sizing:border-box;}
   .profile-body {width:100%;margin-top:0;padding:0 5% 8rem;}
-  .card {flex:1 0 50%;}
 }
 
 @media (max-width:$breakpoint-small) {
   .profile-user {width:100%;}
-  .works {margin:0;}
   .profile {padding-left:0;padding-right:0;}
   .profile-head {height:auto;margin-left:5%;margin-right:5%;padding:2rem 5% 3rem;}
   .profile-head-background {max-width:100%;background-size:auto 100%;}
@@ -124,5 +122,10 @@
   .profile-user-career {margin-top:3px}
   .profile-user-avatar {width:64px;height:64px;}
 
+  .works {margin:0;}
   .card {margin:0 0 20px;}
+}
+
+@media (max-width:$breakpoint-tiny) {
+  .card {flex:none;width:100%;}
 }

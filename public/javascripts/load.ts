@@ -37,7 +37,7 @@ export const googleAnalytics = () => {
 }
 
 export const adjustTopPadding = () => {
-  const headerElement = document.querySelector('.header')
+  const headerElement = document.querySelector('.js-navbar')
   if (!headerElement) return
 
   const fn = () => setBodyMarginTop(headerElement)

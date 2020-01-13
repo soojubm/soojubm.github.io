@@ -5,7 +5,7 @@ $gray10: #f1f3f4; // bg
 $gray20: #dadce0; // divider border
 $gray40: #848c94; // caption
 $gray60: #666d75; // body
-$gray80: #343a40; // bg || title
+$gray80: #343a40; // bg || heading
 
 $red800: crimson;
 $green800: green;
@@ -41,6 +41,7 @@ $breakpoints: (
 $breakpoint-large: 1440px;
 $breakpoint-medium: 1280px;
 $breakpoint-small: 1080px;
+$breakpoint-tiny: 720px;
 
 $height-header: 60px;
 
@@ -74,7 +75,7 @@ $avatar600: 80px;
 // ^ html에서 선언 or 제목용 / 본문용 디자인이 다를 때만 필요.
 $fontstack: ('Helvetica', sans-serif);
 $headline-size: 2rem;
-$title-size: 1.5rem;
+$heading-size: 1.5rem;
 $subhead-size: 1.25rem;
 $body-size: 1rem;
 $caption: .75rem;

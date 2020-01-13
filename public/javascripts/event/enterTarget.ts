@@ -8,7 +8,8 @@ const enterTarget = ({ selector: target }: Parameter) => {
   if (!hoverElements) return
 
   hoverElements.forEach(element => {
-    const isNavigation = element === document.querySelector('.navigation li')
+    // todo
+    const isNavigation = element === document.querySelector('.js-navbar .navbar-menu-item')
 
     element.addEventListener('mouseenter', () => {
       enterEvent()

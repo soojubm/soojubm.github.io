@@ -13,6 +13,8 @@ const modal = ({ selector: trigger }) => {
   modals.forEach(modal =>
     modal.addEventListener('click', event => {
       event.stopPropagation()
+      event.preventDefault()
+      
       modal.nextElementSibling.classList.add('is-visible')
       pageY = window.pageYOffset
       setLockBody()
