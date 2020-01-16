@@ -17,7 +17,7 @@
 .pricing-item ul li {padding:.125rem 0;}
 .pricing-item ul li:before {content:'';}
 
-.pricing-info {display:flex;width:100%;margin:8rem auto;overflow:hidden;justify-content:space-between;}
+.pricing-info {display:flex;width:100%;max-width:1280px;margin:8rem auto;overflow:hidden;justify-content:space-between;}
 .pricing-info-item {width:320px;}
 .pricing-info-item svg {}
 .pricing-info-item h3 {margin:1rem 0;}

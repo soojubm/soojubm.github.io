@@ -47,7 +47,33 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   routePage().then(() => {
     adjustTopPadding()
-    
+
+    const uiData = [
+      { label: "상품 상세페이지", description:"", date:"2020.01-01", href: "#product", tags: ["기획", "디자인"] },
+      { label: "상품 카트", description:"", date:"2020-01-01", href: "#cart", tags: ["기획", "디자인"] },
+      { label: "로그인", description:"", date:"2020-01-01", href: "#login", tags: ["기획", "디자인"] },
+      { label: "비밀번호 찾기", description:"", date:"2020-01-01", href: "#forgot", tags: ["기획", "디자인"] }
+    ]
+    const ccc: any = document.querySelector<HTMLElement>('.js-ui');
+    if(ccc) {
+      const temp = uiData.map(item => {
+        console.log(item);
+        const ttt = item.tags.map(i => `<span class="tag">${i}</span>`)
+        const uiTemplate = `<a class="card" href="${item.href}">
+            <figure class="card-thumbnail" style="font-family:'DunkelSans';display:flex;align-items:center;justify-content:center;">${item.label}</figure>
+            <h3 class="card-title">${item.label}</h3>
+            <time class="card-date">${item.date}<time>
+            <div class="card-tags" role="group">
+              ${ttt}
+            </div>
+            <button class="card-more icon-button" type="button"><i class="icon-more"></i></button>
+          </a>`
+        return uiTemplate;
+      })
+      console.log(temp);
+      ccc.innerHTML = temp;
+    }
+
     // 임시
     const list = document.querySelector('.js-display-list')
     const grid = document.querySelector('.js-display-grid')

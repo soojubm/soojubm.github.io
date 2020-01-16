@@ -10,20 +10,46 @@
     <a class="hero-detail ghost-button">view detail</a>
   </section>
 
+  <!-- <nav class="help-category" style="padding: 0;">
+    <h1 class="help-category-title">카테고리 메뉴 샘플</h1>
+    <div style="display:flex;overflow:auto;white-space:nowrap;">
+      <a class="help-category-link" href="">📚 서점</a>
+      <a class="help-category-link" href="">🤩 장르</a>
+      <a class="help-category-link" href="">👑 최다 판매 도서</a>
+      <a class="help-category-link" href="">👼🏼 신작</a>
+      <a class="help-category-link" href="">💗 로맨스</a>
+      <a class="help-category-link" href="">🧜‍♀️ 만화</a>
+    </div>
+  </nav> -->
+
   <section class="design-body">
-    <!-- <nav class="help-category" style="padding: 0;">
-      <h1 class="help-category-title">카테고리 메뉴 샘플</h1>
-      <div style="display:flex;overflow:auto;white-space:nowrap;">
-        <a class="help-category-link" href="">📚 서점</a>
-        <a class="help-category-link" href="">🤩 장르</a>
-        <a class="help-category-link" href="">👑 최다 판매 도서</a>
-        <a class="help-category-link" href="">👼🏼 신작</a>
-        <a class="help-category-link" href="">💗 로맨스</a>
-        <a class="help-category-link" href="">🧜‍♀️ 만화</a>
+
+    <article class="design-article typography">
+      <h1 class="design-article-title">Typhography</h1>
+      <p class="design-article-description">하나의 무게Weight를 사용합니다.</p>
+      <!-- <p>200 light / 400 normal / 700 bold</p> -->
+      <div style="display:flex;">
+        <div style="width:50%">
+          <i style="display:block;margin-bottom:.5rem;width:16px;height:16px;border-radius:4px;background:cadetblue"></i>
+          한글 <b style="display:block;font-size:1.25rem;">아리타 산스</b>
+        </div>
+        <div style="width:50%">
+          <i style="display:block;margin-bottom:.5rem;width:16px;height:16px;border-radius:4px;background:cadetblue"></i>
+          영문 <b style="display:block;font-size:1.25rem;">Asap</b style="display:block;font-size:1.25rem;margin-top:.5rem;">
+        </div>
       </div>
-    </nav> -->
+      
+      <div>
+        <!-- <p>헤드라인</p> -->
+        <!-- <h1 style="font-size:2rem;">테스트.</h1> -->
+        <h4 class="typography-subhead" style="    margin: 3rem 0 1rem;margin-top:0;
+        font-size: 1.25rem;">선약이 있어서 자아실현은 못할 것 같아요.</h4>
+        <p class="typography-paragraph" style="margin: 0 0 1rem">서브헤드와 디스크립션 혹은 패러그라프는 이렇게 사용하세요. 서브헤드와 디스크립션 혹은 패러그라프는 이렇게 사용하세요. 서브헤드와 디스크립션 혹은 패러그라프는 이렇게 사용하세요. 서브헤드와 디스크립션 혹은 패러그라프는 이렇게 사용하세요.</p>
+        <h6 class="typography-caption" style="margin-top:1.5rem;font-size:1rem;">10 January, 2020</h6>
+      </div>
+    </article>
+
     <article class="design-article grayscale">
-      <div class="spinner"></div>
       <h1 class="design-article-title">Colors</h1>
       <p class="design-article-description">칼라칼라컬러컬러🐣</p>
       <h2 date-ui="caption">Gray Colors</h2>
@@ -156,6 +182,18 @@
     </article>
 
     <article class="design-article js-scroll-animation">
+      <h1 class="design-article-title">Side Navigation</h1>
+      <p class="design-article-description">탭리스트와 동일하게 마크업하세요. 스크롤스파이 개발하기.</p>
+      <nav class="tablist --vertical" style="margin-top:1rem" role="tablist">
+        <!-- <div class="tablist-active"></div> -->
+        <button class="tablist-tab is-active" role="tab" aria-selected="true" data-index="1">웹사이트 <i class="tablist-tab-badge">4</i></button>
+        <button class="tablist-tab" role="tab" aria-selected="false" data-index="2">페이지 <i class="tablist-tab-badge">6</i></button>
+        <button class="tablist-tab" role="tab" aria-selected="false" data-index="3">컴포넌트 <i class="tablist-tab-badge">18</i></button>
+        <button class="tablist-tab" role="tab" aria-selected="false" data-index="4">빈 상태 <i class="tablist-tab-badge">18</i></button>
+      </nav>
+    </article>
+
+    <article class="design-article js-scroll-animation">
       <h1 class="design-article-title">Text Links</h1>
       <p class="design-article-description">안녕하세요?</p>
       <p>형무소 안에서는 소장의 말이 곧 법이었으며 죄수들의 잘못과 실수는 결코 용납되지 않는다. 어머니의 사망 소식을 듣고 인해 2번이나 탈옥을 시도했다가 체포된 <a href="">루크</a>의 발에 쇠통이 채워지며 루크는…<a class="more" href="#">더 보기</a></p>
@@ -226,20 +264,6 @@
       <div class="statistic"><i class="statistic-label">팔로워</i><span class="statistic-value">21,682</span></div>
     </article>
 
-
-    <!-- <article class="design-article js-scroll-animation">
-      <h1 class="design-article-title">Tablist</h1>
-      <p class="design-article-description">Filtering, Sorting과 동일한 마크업 및 그루핑이 가능한데요?<br />버튼으로 마크업하는 것이 좋을지, 라디오/체크박스로 마크업하는 것이 좋을지?<br />가로형, 세로형, 액티브: 언더라인, 보더(sm, md), 백그라운드, 포인트</p>
-      <p class="design-article-description">데이터 비교 시 적합치 않아</p>
-      <nav class="tablist --vertical" style="margin-top:1rem" role="tablist">
-        <div class="tablist-active"></div>
-        <button class="tablist-tab is-active" role="tab" aria-selected="true" data-index="1">웹사이트 <i class="tablist-tab-badge">4</i></button>
-        <button class="tablist-tab" role="tab" aria-selected="false" data-index="2">페이지 <i class="tablist-tab-badge">6</i></button>
-        <button class="tablist-tab" role="tab" aria-selected="false" data-index="3">컴포넌트 <i class="tablist-tab-badge">18</i></button>
-        <button class="tablist-tab" role="tab" aria-selected="false" data-index="4">빈 상태 <i class="tablist-tab-badge">18</i></button>
-      </nav>
-    </article> -->
-
     <article class="design-article js-scroll-animation">
       <h1 class="design-article-title">Message</h1>
       <p class="design-article-description">긍정 상황에 사용합니다. 부정 혹은 경고, 주의, 성공, 알림 등을 추가할까요?</p>
@@ -287,28 +311,24 @@
       <h1 class="design-article-title">Buttons</h1>
       <p class="design-article-description">아톰Atom 단위의 컴포넌트는 클래스 네이밍 없이 자체 엘리먼트에 스타일링 된 요소들로 한정하고 리액트에서 스타일드 컴포넌트 단위가 된다.</p>
       <div>
-        <h2>Primary Buttons</h2>
+        <h2>Default States</h2>
         <div role="group">
           <button class="primary-button" type="button">Primary</button>
-          <button class="danger-button" type="button" aria-label="danger">Danger</button>
-          <button class="success-button" type="button" aria-label="success">Success</button>
-          <button class="primary-button" type="button" disabled>Primary</button>
-        </div>
-      </div>
-      <div>
-        <h2>Secondary Buttons</h2>
-        <div role="group">
           <button class="secondary-button" type="button">Secondary</button>
-          <button class="secondary-button" type="button" disabled>Secondary</button>
           <button class="tertiary-button" type="button">Tertiary</button>
-          <button class="tertiary-button" type="button" disabled>Tertiary</button>
+          <button class="ghost-button" type="button">Ghost</button>
+          <!-- <button class="danger-button" type="button" aria-label="danger">Danger</button>
+          <button class="success-button" type="button" aria-label="success">Success</button> -->
         </div>
       </div>
       <div>
-        <h2>Text Buttons</h2>
+        <h2>Disabled States</h2>
         <div role="group">
-          <button class="ghost-button" type="button">Ghost</button>
+          <button class="primary-button" type="button" disabled>Primary</button>
+          <button class="secondary-button" type="button" disabled>Secondary</button>
+          <button class="tertiary-button" type="button" disabled>Tertiary</button>
           <button class="ghost-button" type="button" disabled>Ghost</button>
+
         </div>
       </div>
       <!-- <div class="button-group --center" role="group">
@@ -319,8 +339,8 @@
         <h2>Small Buttons</h2>
         <div role="group">
           <button class="primary-button --small" type="button">Filled</button>
-          <button class="danger-button --small" type="button" aria-label="danger">Danger</button>
-          <button class="success-button --small" type="button" aria-label="danger">Success</button>
+          <!-- <button class="danger-button --small" type="button" aria-label="danger">Danger</button>
+          <button class="success-button --small" type="button" aria-label="danger">Success</button> -->
           <button class="secondary-button --small" type="button">Secondary</button>
           <button class="tertiary-button --small" type="button">tertiary</button>
           <button class="ghost-button --small" type="button">Ghost</button>
@@ -494,8 +514,14 @@
     </article>
 
     <article class="design-article js-scroll-animation">
+      <h1 class="design-article-title">Spinner</h1>
+      <p class="design-article-description">샘플</p>
+      <div class="spinner"></div>
+    </article>
+
+    <article class="design-article js-scroll-animation">
       <h1 class="design-article-title">Calendar</h1>
-      <p class="design-article-description">checkbox, checkall, intermediate</p>
+      <p class="design-article-description">미완성</p>
       <div class="calendar">
         <h3>2020년 12월</h3>
         <nav class="calendar-navigation">
@@ -1091,47 +1117,7 @@
       </section>
     </article> -->
 
-    <!-- <article class="design-article typography">
-      <h1 class="design-article-title typography-title">Typhography</h1>
-      <p class="design-article-description">샘플이엥요.</p>
-      <div>
-        <h6>헤드라인</h6>
-        <div>
-          <h1 class="typography-headline">부끄러우니까 보지마요.</h1>
-        </div>
-      </div>
-      <div>
-        <h6>헤딩</h6>
-        <div>
-          <h1 class="typography-title">부끄러우니까 보지마요.</h1>
-        </div>
-      </div>
-      <div>
-        <h6>서브헤드</h6>
-        <div>
-          <h1 class="typography-subhead">부끄러우니까 보지마요.</h1>
-        </div>
-      </div>
-      <div>
-        <h6>패러그라프</h6>
-        <div>
-          <p class="typography-paragraph">서점은 거대한 파라솔로 뒤덮인 것처럼 어두침침했다. 여기엔 수많은 책들이 있다. 책들은 W의 아버지처럼 떄리지 않는다. 브룩스 일당처럼 괴롭히거나 "같이 할래?"라는 달콤한 말로 기만하지도 않느낟. 책들은 라디오에서 흘러 나오는 선율처럼 우리에게 속삭인다. 파라솔 그늘 밑에서도 넌 혼자가 아니라고.</p>
-        </div>
-        </div>
-      <div>
-        <h6>캡션</h6>
-        <div>
-          <h6 class="typography-caption">캡션 이��지 설명</h6>
-        </div>
-      </div>
-    </article> -->
-
-    <style>
-    .typography {}
-    .typography div > h6 {margin:0 0 .25rem 0;font-size:1rem;}
-    .typography div {margin:0 0 2rem;}
-    .typography div div {padding:1rem 1.5rem 1.25rem;background:#f1f3f4;border-radius:4px;}
-    </style>
+  
 
       <!-- 기본 폼 태그 테스트 -->
       <!-- <form action="">
