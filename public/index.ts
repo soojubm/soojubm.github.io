@@ -26,7 +26,7 @@ window.addEventListener('offline', () => {
   offlineElement.style.display = 'block'
 })
 
-window.addEventListener('hashchange', routePage)
+window.addEventListener('hashchange', temp)
 window.addEventListener('hashchange', initailizePage)
 
 function initailizePage() {
@@ -38,13 +38,8 @@ function initailizePage() {
   navigationTrigger?.nextElementSibling?.classList.remove('is-visible')
 }
 
-document.addEventListener('DOMContentLoaded', async () => {
-  // polyfill()
-  // loader()
-  checkBrowser()
-  setDarkmode()
-
-
+function temp() {
+  
   routePage().then(() => {
     adjustTopPadding()
 
@@ -138,6 +133,17 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // console.log(document.scrollHeight, document.body.scrollHeight);
 
+    const pageHeadElement = document.querySelector<HTMLElement>('.header')
+    if (!pageHeadElement) return
+
+    const pages = ['#design', '#contact']
+    const isWhite = pages.includes(window.location.hash)
+    if (isWhite) {
+      pageHeadElement.classList.add('--white')
+    } else {
+      pageHeadElement.classList.remove('--white')
+    }
+
     const scrollProgress = () => {
       const progressBar = document.querySelector<HTMLElement>('.post-head-progress')
       if (!progressBar) return
@@ -145,6 +151,8 @@ document.addEventListener('DOMContentLoaded', async () => {
       const scrollPercent = `${(window.pageYOffset / (document.body.scrollHeight - window.innerHeight)) * 100}%`
       progressBar.style.width = scrollPercent
     }
+    
+ 
 
     window.addEventListener('scroll', () => {
       event.stickyElement({ targetElement: '.post-head', addClass: 'is-sticky' })
@@ -163,18 +171,17 @@ document.addEventListener('DOMContentLoaded', async () => {
     // }, 5000);
     
   })
+}
 
+document.addEventListener('DOMContentLoaded', async () => {
+  // polyfill()
+  // loader()
+  checkBrowser()
+  setDarkmode()
+
+
+  temp()
   
-  const pageHeadElement = document.querySelector<HTMLElement>('.header')
-  if (!pageHeadElement) return
-
-  const pages = ['#design', '#contact']
-  const isWhite = pages.includes(window.location.hash)
-  if (isWhite) {
-    pageHeadElement.classList.add('--white')
-  } else {
-    pageHeadElement.classList.remove('--white')
-  }
   // const sayHello = new Promise((resolve, reject) => {
   // 	reject('Unable to say hi.');
 
