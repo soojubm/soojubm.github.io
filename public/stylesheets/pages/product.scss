@@ -97,10 +97,15 @@
 
 
 .product-brand {border-radius:4px;}
-.product-review {margin:4rem 0 8rem 0;position:relative;}
+
+.product-review {margin:4rem 0 8rem 10%;position:relative;}
 .product-review-eyebrow {}
-.product-review-title {font-size: 1.75rem;line-height: 1.8;}
-.product-review-list {margin:2rem 0;}
+.product-review-title {font-size: 1.25rem;line-height: 1.8;}
+
+.product-review-list {}
+.product-review-list .inner {overflow:auto;white-space:nowrap;font-size:0;}
+.product-review-list .inner .quote {display:inline-block;width:320px;font-size:1rem;}
+.product-review-list .inner .quote-body {white-space:wrap;}
 
 .product-review nav {}
 .product-review nav .prev {background:$color-primary;border-radius:4px;position:absolute;left:-24px;top:50%;}
@@ -128,7 +133,7 @@
 	.product-info {left:55%;}
 	.product-info ol {display:none;}
 	.product-info b {display:none;}
-	.product-order {width:40%;margin:0 0 0 55%;padding-top:140px;}
+	.product-order {width:40%;margin:10rem 0 0 55%;padding-top:140px;}
 }
 
 

@@ -30,7 +30,7 @@ window.addEventListener('hashchange', routePage)
 window.addEventListener('hashchange', initailizePage)
 
 function initailizePage() {
-  const navigationTrigger = document.querySelector<HTMLElement>('.navigation-toggle')
+  const navigationTrigger = document.querySelector<HTMLElement>('.navbar-burger')
   // const isOpenedNavigation = navigationTrigger.classList.contains('is-active');
   if (!navigationTrigger) return
 
@@ -48,31 +48,31 @@ document.addEventListener('DOMContentLoaded', async () => {
   routePage().then(() => {
     adjustTopPadding()
 
-    const uiData = [
-      { label: "상품 상세페이지", description:"", date:"2020.01-01", href: "#product", tags: ["기획", "디자인"] },
-      { label: "상품 카트", description:"", date:"2020-01-01", href: "#cart", tags: ["기획", "디자인"] },
-      { label: "로그인", description:"", date:"2020-01-01", href: "#login", tags: ["기획", "디자인"] },
-      { label: "비밀번호 찾기", description:"", date:"2020-01-01", href: "#forgot", tags: ["기획", "디자인"] }
-    ]
-    const ccc: any = document.querySelector<HTMLElement>('.js-ui');
-    if(ccc) {
-      const temp = uiData.map(item => {
-        console.log(item);
-        const ttt = item.tags.map(i => `<span class="tag">${i}</span>`)
-        const uiTemplate = `<a class="card" href="${item.href}">
-            <figure class="card-thumbnail" style="font-family:'DunkelSans';display:flex;align-items:center;justify-content:center;">${item.label}</figure>
-            <h3 class="card-title">${item.label}</h3>
-            <time class="card-date">${item.date}<time>
-            <div class="card-tags" role="group">
-              ${ttt}
-            </div>
-            <button class="card-more icon-button" type="button"><i class="icon-more"></i></button>
-          </a>`
-        return uiTemplate;
-      })
-      console.log(temp);
-      ccc.innerHTML = temp;
-    }
+    // const uiData = [
+    //   { label: '상품 상세페이지', description :'', date :'2020.01-01', href: '#product', tags: ['기획', '디자인'] },
+    //   { label: '상품 카트', description :'', date :'2020-01-01', href: '#cart', tags: ['기획', '디자인'] },
+    //   { label: '로그인', description :'', date :'2020-01-01', href: '#login', tags: ['기획', '디자인'] },
+    //   { label: '비밀번호 찾기', description :'', date :'2020-01-01', href: '#forgot', tags: ['기획', '디자인'] }
+    // ]
+    // const ccc: any = document.querySelector<HTMLElement>('.js-ui');
+    // if(ccc) {
+    //   const temp = uiData.map(item => {
+    //     console.log(item);
+    //     const ttt = item.tags.map(i => `<span class="tag">${i}</span>`).join('')
+    //     const uiTemplate = `<a class="card" href="${item.href}">
+    //         <figure class="card-thumbnail" style="font-family:'DunkelSans';display:flex;align-items:center;justify-content:center;">${item.label}</figure>
+    //         <h3 class="card-title">${item.label}</h3>
+    //         <time class="card-date">${item.date}<time>
+    //         <div class="card-tags" role="group">
+    //           ${ttt}
+    //         </div>
+    //         <button class="card-more icon-button" type="button"><i class="icon-more"></i></button>
+    //       </a>`
+    //     return uiTemplate;
+    //   }).join('')
+    //   console.log(temp);
+    //   ccc.innerHTML = temp;
+    // }
 
     // 임시
     const list = document.querySelector('.js-display-list')
@@ -161,8 +161,20 @@ document.addEventListener('DOMContentLoaded', async () => {
     // 	});
     // 	if(i === images.length) i = 0;
     // }, 5000);
+    
   })
 
+  
+  const pageHeadElement = document.querySelector<HTMLElement>('.header')
+  if (!pageHeadElement) return
+
+  const pages = ['#design', '#contact']
+  const isWhite = pages.includes(window.location.hash)
+  if (isWhite) {
+    pageHeadElement.classList.add('--white')
+  } else {
+    pageHeadElement.classList.remove('--white')
+  }
   // const sayHello = new Promise((resolve, reject) => {
   // 	reject('Unable to say hi.');
 
@@ -176,16 +188,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   // 	console.warn(error);
   // });
 
-  const pageHeadElement = document.querySelector<HTMLElement>('.page-head')
-  if (!pageHeadElement) return
-
-  const pages = ['#design', '#contact']
-  const isWhite = pages.includes(window.location.hash)
-  if (isWhite) {
-    pageHeadElement.classList.add('--white')
-  } else {
-    pageHeadElement.classList.remove('--white')
-  }
 
   // Promise.all([
   // 	fetch('https://jsonplaceholder.typicode.com/posts'),

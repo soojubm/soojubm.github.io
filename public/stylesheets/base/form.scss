@@ -13,6 +13,7 @@ button:not(:active),
 button:not(:focus) {outline:0;}
 // button:before {content:'';display:block;width:8px;height:8px;background:rgba(0,0,0,.2);position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);opacity:0;}
 // button:active:before {width:100%;height:100%;animation:ripple .6s;}
+button:active {outline:0;animation:ripple2 0.2s linear forwards;}
 
 input:focus,
 textarea:focus,
@@ -42,7 +43,6 @@ select:focus {}
 .primary-button:disabled {background:$gray40;border-color:$gray20;color:$gray20;cursor:not-allowed;}
 .primary-button:hover:not(:disabled) {background:#2a4ea1;}
 .primary-button:focus:not(:disabled) {background:#2a4ea1;}
-.primary-button:active {animation:ripple2 0.2s linear forwards;}
 .primary-button:active:not(:disabled) {}
 .primary-button.-facebook {background:#3664a2;border-color:#3664a2;}
 .primary-button.-twitter {background:#3664a2;border-color:#3664a2;}
