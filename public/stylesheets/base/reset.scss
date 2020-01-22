@@ -67,6 +67,7 @@ dd {color:$gray40;}
 .is-fixed-top {position:fixed;top:0;}
 .has-navbar-fixed-top {}
 
+.off-screen {display:none;width:0;height:0;overflow:hidden;opacity:0;visibility:hidden;}
 
 .loading {position:fixed;left:0;right:0;top:0;bottom:0;background:$gray10;z-index:10;transition:all .4s;}
 .loading.is-hidden {opacity:0;visibility:hidden;}

@@ -173,15 +173,13 @@ function temp() {
   })
 }
 
-document.addEventListener('DOMContentLoaded', async () => {
+document.addEventListener('DOMContentLoaded', () => {
   // polyfill()
   // loader()
   checkBrowser()
   setDarkmode()
 
-
   temp()
-  
   // const sayHello = new Promise((resolve, reject) => {
   // 	reject('Unable to say hi.');
 

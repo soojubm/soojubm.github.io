@@ -1,6 +1,7 @@
 export const loader = () => {
   const loaderElement = document.querySelector('.js-loading')
   if (!loaderElement) return
+  
   const { body } = document
 
   window.addEventListener('load', () => {

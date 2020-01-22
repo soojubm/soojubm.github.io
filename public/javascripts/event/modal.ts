@@ -19,7 +19,10 @@ const modal = ({ selector: trigger }) => {
       pageY = window.pageYOffset
       setLockBody()
       document.addEventListener('click', closeModal)
+      // 임시
+      modal.nextElementSibling.querySelector('.js-modal-close')?.addEventListener('click', closeModal)
 
+      // todo 외부로 뺴기
       function closeModal() {
         const isOpened = modal.nextElementSibling.classList.contains('is-visible')
         if (!isOpened) return

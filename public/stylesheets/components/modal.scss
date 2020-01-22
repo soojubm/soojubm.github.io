@@ -11,13 +11,15 @@
 .modal-foot {padding:16px 2rem;text-align: right;}
 .modal-foot-title {}
 .modal-foot button {}
-.modal-close {color:$gray0;position:absolute;right:0;top:-25px;z-index:9;}
+.modal-close {display:none;color:$gray0;position:absolute;right:.5rem;top:.5rem;z-index:9;}
 .is-visible.modal {transition:all .4s ease;opacity:1;visibility:visible;}
 .is-visible.modal .modal-dialog {box-shadow:$shadow400;transition:all .2s ease;transform:scale(1);}
 
 
 @media (max-width:$breakpoint-small) {
-  .modal-dialog {margin:10% auto;}
+  .modal-dialog {margin:0 auto;}
   .modal-head-title {padding:1rem 1.5rem;font-size:1.25rem;}
   .modal-head-description {padding:0 1.5rem 1.5rem;}
+
+  .modal-close {display:block;position:fixed;}
 }

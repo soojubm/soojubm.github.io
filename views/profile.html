@@ -90,7 +90,7 @@
 		<figure class="profile-head">
 			<div class="profile-head-background js-parallax"></div>
 			<h1 class="profile-head-headline">부끄러우니까 보지마요.</h1>
-			<p class="profile-head-description">이 프로젝트는 가상의 디자인시스템을 구축하고 지속적으로 발전시킵니다. 디자인시스템을 바탕으로, 다양한 디바이스 고려하여 웹앱을 구성하는 유아이를 러프하게 그려봅니다. 동시에 재사용 가능하고 유지보수에 좋은 코드를 실험합니다. 순수자바스크립트로 작성합니다.</p>
+			<p class="profile-head-description">순수자바스크립트로 작성한 정적페이지입니다. 가상의 디자인시스템을 구축하고 지속적으로 발전시키며 웹앱을 구성하는 컴포넌트와 페이지 유아이를 반응형으로 러프하게 그려봅니다.</p>
 			<button class="profile-head-share" type="button" onclick="javascript:alert('준비중');">프로필 공유하기</button>
 			<!-- <div class="profile-head-temp">
 				<h5 style="margin:0 0 1rem 0;color:$gray0;">내 프로필을 공유한 사람</h5>
@@ -155,10 +155,10 @@
 			<nav class="profile-tablist" role="tablist">
 				<!-- u 태그-->
 				<div class="profile-tablist-active"></div>
-				<button class="profile-tablist-tab" role="tab" aria-selected="true" data-index="1">웹사이트 <i class="profile-tablist-tab-badge">4</i></button>
-				<button class="profile-tablist-tab" role="tab" aria-selected="false" data-index="2">웹페이지 <i class="profile-tablist-tab-badge">18</i></button>
-				<button class="profile-tablist-tab" role="tab" aria-selected="false" data-index="4">케이스스터디 <i class="profile-tablist-tab-badge">18</i></button>
-				<button class="profile-tablist-tab" role="tab" aria-selected="false" data-index="3">빈 상태 <i class="profile-tablist-tab-badge">18</i></button>
+				<button class="profile-tablist-tab" role="tab" aria-selected="true" data-index="1">웹사이트 <i class="profile-tablist-tab-badge">5</i></button>
+				<button class="profile-tablist-tab" role="tab" aria-selected="false" data-index="2">웹페이지 <i class="profile-tablist-tab-badge">5</i></button>
+				<button class="profile-tablist-tab" role="tab" aria-selected="false" data-index="4">케이스스터디 <i class="profile-tablist-tab-badge">1</i></button>
+				<button class="profile-tablist-tab" role="tab" aria-selected="false" data-index="3">빈 상태 <i class="profile-tablist-tab-badge">0</i></button>
 			</nav>
 			<div class="profile-display">
 				<h6 class="profile-display-title" aria-hidden="true">제목</h6>
@@ -170,7 +170,7 @@
 			<section class="profile-tablist-panel" role="tabpanel" aria-hidden="" data-index="1">
 				<div class="works">
 					<a class="card js-modal" href="#">
-						<figure class="card-thumbnail"><img src="/public/images/caleb-woods-182648-unsplash.jpg" alt="" /></figure>
+						<figure class="card-thumbnail"><img src="/public/images/arko-main.jpg" alt="" /></figure>
 						<h3 class="card-title">문화예술위원회 창작산실.</h3>
 						<time class="card-date">September 12, 2017</time>
 						<div class="card-tags" role="group">
@@ -183,7 +183,7 @@
 					<aside class="modal" role="dialog">
 						<article class="modal-dialog">
 							<header class="modal-head">
-								<button class="js-modal-close" aria-hidden="true"><span class="off-screen">닫기</span></button>
+								<button class="modal-close js-modal-close"><i class="icon-close"></i><span class="off-screen">닫기</span></button>
 								<h1 class="modal-head-title">한국문화예술위원회 창작산실 - 올해의 신작 2018</h1>
 								<p class="modal-head-description">보름 남짓한 일정에 게시판이 필요해서 워드프래스로 개발했다.</p>
 								<p class="modal-head-description">창작산실(아르코셀렉션) 브랜드 아이덴티티의 라틴 알파벳 심볼 A 가로 선을, 제목과 본문의 구분선 및 디자인 요소로 활용합니다.</p>
@@ -204,7 +204,7 @@
 						<div class="modal-dim"></div>
 					</aside>
 					<a class="card js-modal" href="#">
-						<figure class="card-thumbnail"><img src="/public/images/caleb-woods-182648-unsplash.jpg" alt="" /></figure>
+						<figure class="card-thumbnail"><img src="/public/images/work-studium.jpg" alt="" /></figure>
 						<h3 class="card-title">스터디움 프로모션 웹사이트</h3>
 						<time class="card-date">September 12, 2017</time>
 						<button class="card-more icon-button" type="button"><i class="icon-more"></i></button>
@@ -216,7 +216,7 @@
 					<aside class="modal" role="dialog">
 						<article class="modal-dialog">
 							<header class="modal-head">
-								<button class="js-modal-close" aria-hidden="true"><span class="off-screen">닫기</span></button>
+								<button class="modal-close js-modal-close"><i class="icon-close"></i><span class="off-screen">닫기</span></button>
 								<h1 class="modal-head-title">스터디움 프로모션 웹사이트</h1>
 								<p class="modal-head-description">가맹점주 모집을 위한 홍보용 원페이지 사이트. 로고를 모티브로 각 섹션의 타이틀 영역을 구성하고 로고의 쉼표를 그래픽 요소를 활용했다. 일반 독서실과 차별화되는 프리미엄 독서실이라는 이미지를 강조하기 위해 어두운 색, 셰리프 폰트를 바탕으로 고급스러운 분위기를 환기했다. 신사업에 가맹점주 확보가 주목적이기 떄문에 사이트에서 보여지는 컨텐츠가 부족했는데, 원페이지 사이트로 페이지 전환 시 애니메이션을 활용하여 보완했다.</p>
 							</header>
@@ -228,7 +228,7 @@
 						</article>
 					</aside>
 					<a class="card js-modal" href="#">
-						<figure class="card-thumbnail"><img src="/public/images/caleb-woods-182648-unsplash.jpg" alt="" /></figure>
+						<figure class="card-thumbnail"><img src="/public/images/work-famus.jpg" alt="" /></figure>
 						<h3 class="card-title">재능 플랫폼 페이머스 프로덕트</h3>
 						<time class="card-date">September 12, 2017</time>
 						<button class="card-more icon-button" type="button"><i class="icon-more"></i></button>
@@ -240,7 +240,7 @@
 					<aside class="modal" role="dialog">
 						<article class="modal-dialog">
 							<header class="modal-head">
-								<button class="js-modal-close" aria-hidden="true"><span class="off-screen">닫기</span></button>
+								<button class="modal-close js-modal-close"><i class="icon-close"></i><span class="off-screen">닫기</span></button>
 								<h1 class="modal-head-title">페이머스 프로덕트 디자인</h1>
 								<p class="modal-head-description">재능플랫폼 페이머스의 기획, 디자인과 퍼블리싱을 담당했다.</p>  
 								<p class="modal-head-description">입사 초기 외주로 진행했던 플랫폼의 디자인을 퍼블리싱하는 일을 시작으로 부분적인 UI를 다시 만들고 UX를 개선했다. 정적 페이지도 일부 만들었다.</p>  
@@ -253,7 +253,7 @@
 						</article>
 					</aside>
 					<a class="card js-modal" href="#">
-						<figure class="card-thumbnail"><img src="/public/images/caleb-woods-182648-unsplash.jpg" alt="" /></figure>
+						<figure class="card-thumbnail"><img src="/public/images/work-etc.jpg" alt="" /></figure>
 						<h3 class="card-title">기타 모음</h3>
 						<time class="card-date">-</time>
 						<button class="card-more icon-button" type="button"><i class="icon-more"></i></button>
@@ -265,7 +265,7 @@
 					<aside class="modal" role="dialog">
 						<article class="modal-dialog">
 							<header class="modal-head">
-								<button class="js-modal-close" aria-hidden="true"><span class="off-screen">닫기</span></button>
+								<button class="modal-close js-modal-close"><i class="icon-close"></i><span class="off-screen">닫기</span></button>
 								<h1 class="modal-head-title">기타 모음</h1>
 								<p class="modal-head-description">에이전시에서 작업한 웹사이트.</p>
 							</header>
@@ -273,13 +273,14 @@
 								<figure class="modal-body-image">
 									<img src="/public/images/work-etc.jpg" alt="" />
 									<img src="/public/images/form.jpg" alt="" />
+									<img src="/public/images/temp.png" alt="" />
 								</figure>
 							</section>
 						</article>
 					</aside>
 
 					<a class="card js-modal" href="#">
-						<figure class="card-thumbnail"><img src="/public/images/caleb-woods-182648-unsplash.jpg" alt="" /></figure>
+						<figure class="card-thumbnail"><img src="/public/images/budha.png" alt="" /></figure>
 						<h3 class="card-title">레터링</h3>
 						<time class="card-date">-</time>
 						<button class="card-more icon-button" type="button"><i class="icon-more"></i></button>
@@ -290,12 +291,13 @@
 					<aside class="modal" role="dialog">
 						<article class="modal-dialog">
 							<header class="modal-head">
-								<button class="js-modal-close" aria-hidden="true"><span class="off-screen">닫기</span></button>
+								<button class="modal-close js-modal-close"><i class="icon-close"></i><span class="off-screen">닫기</span></button>
 								<h1 class="modal-head-title">레터링</h1>
 								<p class="modal-head-description">레터링.</p>
 							</header>
 							<section class="modal-body">
 								<figure class="modal-body-image">
+									<img src="/public/images/budha.png" alt="" />
 									<img src="/public/images/lettering.png" alt="" />
 								</figure>
 							</section>

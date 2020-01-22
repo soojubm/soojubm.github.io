@@ -63,8 +63,8 @@
 
 .image-centered {width:auto;height:auto;max-width:150%;max-height:150%;margin:auto;position:absolute;left:0;right:0;top:0;bottom:0;}
 
-.works {display:flex;flex-wrap:wrap;}
-.works:after {content:'';display:block;clear:both;}
+
+
 .card {display:block;width:25%;margin:0 0 1.5rem;position:relative;}
 .card-byline {margin:12px 0 12px;}
 .card-byline img {display:block;float:left;width:16px;height:16px;border-radius:$radius400;background:$gray10;}
@@ -90,6 +90,20 @@
 // .card:hover {transform:translateY(-1px);}
 .card:hover .card-more {display:block;}
 
+
+
+.works {margin:0 -1%}
+.works:after {content:'';display:block;clear:both;}
+.works .card {
+  float: left;
+  display: block;
+  width: 23%;
+  margin: 0 1% 1.5rem;
+}
+
+.works.list .card {float:none;width:100%;padding-left:96px;}
+
+
 .list .card {width:100%;padding-left:96px;}
 .list .card-thumbnail {width:80px;height:80px;padding-top:0;position:absolute;left:0;top:0;}
 .list .card-thumbnail img {max-width:150%;}
@@ -103,10 +117,6 @@
 // padding-top: 20%;
 // }
 
-@media (max-width:1600px) {
-  .card {flex:1 0 50%;}
-}
-
 @media (max-width:$breakpoint-large) {
   .profile-user {float:none;width:100%;margin:0px auto 0;padding:0 5% 0;box-sizing:border-box;}
   .profile-body {width:100%;margin-top:0;padding:0 5% 8rem;}
@@ -115,7 +125,7 @@
 @media (max-width:$breakpoint-small) {
   .profile-user {width:100%;}
   .profile {padding-left:0;padding-right:0;}
-  .profile-head {height:auto;margin-left:5%;margin-right:5%;padding:2rem 5% 3rem;}
+  .profile-head {height:auto;margin-left:5%;margin-right:5%;padding:2rem 5% 3rem;border-radius:0;}
   .profile-head-background {max-width:100%;}
   .profile-head-headline {}
   .profile-head-description {width:100%;}
@@ -123,11 +133,8 @@
   .profile-user-id {margin-top:-2px;}
   .profile-user-career {margin-top:3px}
   .profile-user-avatar {width:64px;height:64px;}
-
-  .works {margin:0;}
-  .card {margin:0 0 20px;}
 }
 
 @media (max-width:$breakpoint-tiny) {
-  .card {flex:none;width:100%;}
+  .works .card {width:48% !important;}
 }
