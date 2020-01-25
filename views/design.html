@@ -23,6 +23,8 @@
   </nav> -->
 
   <section class="design-body">
+    <div role="textbox" contenteditable="true" aria-placeholder="5-digit zipcode" aria-labelledby="txtboxLabel">contentEditable</div> 
+
 
     <article class="design-article typography">
       <h1 class="design-article-title">Typhography</h1>
@@ -188,7 +190,7 @@
     <article class="design-article js-scroll-animation" style="padding-bottom:80px;">
       <h1 class="design-article-title">Tooltip</h1>
       <p class="design-article-description">툴팁의 위치.</p>
-      <aside class="tooltip">
+      <aside class="tooltip" role="tooltip">
         <span class="tooltip-target"><i class="material-icons">error_outline</i></span>
         <div class="tooltip-content">
           <p>마우스를 올렸을 때 나오는 툴팁입니다.</p>
@@ -368,20 +370,22 @@
     <article class="design-article js-scroll-animation">
       <h1 class="design-article-title">Radio</h1>
       <p class="design-article-description">description? addon? container</p>
-      <div class="radio">
-        <input type="radio" id="gender-man" name="gender" value="" checked>
-        <label for="gender-man">Video Killed the Radio Button</label>
-        <!-- 다음에 텍스트가 오는 경우와 텍스트가 아닌 것이 오는 경우 -->
-        <p class="radio-helper">My email campaigns are meant to be seen by the public. The more the merrier, in fact. If/when Mailchimp builds tools that help people discover me and sign up for this list, I'd like to take part in that.</p>
-      </div>
-      <div class="radio">
-        <input type="radio" id="gender-women" name="gender" value="">
-        <label for="gender-women">Video Killed the Radio Button</label>
-      </div>
-      <div class="radio">
-        <input type="radio" id="gender-etc" name="gender2" value="" checked disabled>
-        <label for="gender-etc">Video Killed the Radio Button</label>
-      </div>
+      <fieldset role="radiogroup">
+        <div class="radio">
+          <input type="radio" id="gender-man" name="gender" value="" checked>
+          <label for="gender-man">Video Killed the Radio Button</label>
+          <!-- 다음에 텍스트가 오는 경우와 텍스트가 아닌 것이 오는 경우 -->
+          <p class="radio-helper">My email campaigns are meant to be seen by the public. The more the merrier, in fact. If/when Mailchimp builds tools that help people discover me and sign up for this list, I'd like to take part in that.</p>
+        </div>
+        <div class="radio">
+          <input type="radio" id="gender-women" name="gender" value="">
+          <label for="gender-women">Video Killed the Radio Button</label>
+        </div>
+        <div class="radio">
+          <input type="radio" id="gender-etc" name="gender2" value="" checked disabled>
+          <label for="gender-etc">Video Killed the Radio Button</label>
+        </div>
+      </fieldset>
     </article>
 
     <article class="design-article js-scroll-animation">
