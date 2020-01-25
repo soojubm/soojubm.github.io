@@ -33,16 +33,16 @@
     <link rel="icon" sizes="192x192" href="" />
     <link rel="apple-touch-icon" href="" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-    <script src="./build/bundle2.js"></script>
-    <link rel="stylesheet" href="./build/main2.css" />
-      <!-- <meta http-equiv="refresh" content="0; URL=/"> -->
+    <script src="./build/bundle.js"></script>
+    <link rel="stylesheet" href="./build/main.css" />
+    <!-- <meta http-equiv="refresh" content="0; URL=/"> -->
     <!--link rel="shortcut icon" href="images/favicon/favicon.ico">-->
   </head>
   <body>
     <noscript>This website requires JavaScript.</noscript>
-    <!-- <aside class="loading js-loading">
-      <div class="loading-object"></div>
-    </aside> -->
+    <aside class="loading js-loading">
+    </aside>
+    <div class="loading-object"></div>
 
     <aside class="browser js-browser" role="complementary">
       <p>이 사이트는 크롬 브라우저에 최적화되어 있습니다.</p>
@@ -81,7 +81,7 @@
               <!-- <p>Try This: soojubm</p> -->
               <legend class="filter-fieldset-legend" aria-hidden="true">검색하기</legend>
               <label class="textfiled-label" for="help-search" aria-hidden="true">검색하기</label>
-              <input class="textfield-input" type="search" id="help-search" placeholder="검색어를 입력해 주세요.">
+              <input class="textfield-input" type="search" id="help-search" placeholder="검색어를 입력해 주세요." />
               <button class="textfield-clear" type="button" title="clear search input">
                 <i class="icon-close"></i>
               </button>
@@ -147,23 +147,22 @@
     </nav>
 
     <header class="header">
-      <button class="header-back icon-button" style="transform:rotate(180deg);"  onclick="javascript:alert('이전페이지로~');"><i class="icon-arrow --left"></i></button>
+      <button class="header-back icon-button" style="transform:rotate(180deg);" onclick="javascript:alert('이전페이지로~');"><i class="icon-arrow --left"></i></button>
       <h1 class="header-title">페이지타이틀</h1>
     </header>
 
     <script>
-    const pageHead = document.querySelector('.header');
-    document.addEventListener('scroll', event => {
-      if(!pageHead) return;
-      
-      if(window.pageYOffset > 20) {
-        pageHead.classList.add('is-fixed');
-      } else {
-        pageHead.classList.remove('is-fixed');
-      }
-    });
+      const pageHead = document.querySelector('.header')
+      document.addEventListener('scroll', event => {
+        if (!pageHead) return
+
+        if (window.pageYOffset > 20) {
+          pageHead.classList.add('is-fixed')
+        } else {
+          pageHead.classList.remove('is-fixed')
+        }
+      })
     </script>
-    
 
     <div id="view"></div>
 
@@ -221,7 +220,7 @@
         <span class="footer-address-logo"><img src="/public/images/common/logo.png" alt="수줍음"/></span>
         <div class="footer-terms">
           <h5 class="footer-terms-title" aria-hidden="false">약관 등등</h5>
-          <a class="footer-terms-link" href="https://www.facebook.com/soojubm"  title="facebook" target="_blank"><span class="">이용약관</span><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+          <a class="footer-terms-link" href="https://www.facebook.com/soojubm" title="facebook" target="_blank"><span class="">이용약관</span><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
           <a class="footer-terms-link" href="#" title="instagram" target="_blank">개인정보취급방침</a>
           <a class="footer-terms-link" href="https://kr.pinterest.com/soojubm" title="pinterest" target="_blank">이메일무단수집거부</a>
         </div>
@@ -266,22 +265,20 @@
   </body>
 </html>
 
-
-
-    <!-- <nav class="quick" style="padding-top:60px">
+<!-- <nav class="quick" style="padding-top:60px">
       <a href=""><i class="material-icons">notifications_none</i> <span style="display:none;">다크모드</span></a>
       <a href=""><i class="material-icons">notifications_none</i> <span style="display:none;">작게보기</span></a>
     </nav> -->
-    
-        <!-- 로그인 전 -->
-        <!-- <a href="" class="header-user-link">로그인</a>
+
+<!-- 로그인 전 -->
+<!-- <a href="" class="header-user-link">로그인</a>
         <a href="" class="header-user-link">로그아웃</a>
         <a href="" class="header-user-link --join">시작하기</a>
         <a href="" class="header-user-cart">카트 <i class="header-user-cart-qty">0</i></a>
         <a href="" class="header-user-link">정보수정</a> -->
 
-          <!-- <i class="cursor"></i> -->
-    <!-- <form class="todo js-todo" style="max-width:560px;margin:0 auto;">
+<!-- <i class="cursor"></i> -->
+<!-- <form class="todo js-todo" style="max-width:560px;margin:0 auto;">
       <fieldset class="todo-body">
         <legend>위시리스트</legend>
         <div class="textfield">
@@ -296,7 +293,7 @@
         <button class="todo-control-remove ghost-button js-todo-clear" type="button">remove all items</button>
       </footer>
     </form> -->
-    <!-- <section class="topbanner">
+<!-- <section class="topbanner">
       <div class="topbanner-background"></div>
       <h1 class="topbanner-title">부끄러우니까 보지마요</h1>
       <p class="topbanner-body">오늘 하루만 신청가능한 당신만의 비밀 무료체험! 내용을 입력하세요.</p>

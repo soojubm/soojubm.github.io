@@ -4,15 +4,16 @@ export const loader = () => {
   
   const { body } = document
 
+  document.addEventListener('DOMContentLoaded', () => {
+    body.classList.add('body-lock')
+  })
   window.addEventListener('load', () => {
     setTimeout(() => {
       loaderElement.classList.add('is-hidden')
       body.classList.remove('body-lock')
     }, 0)
   })
-  document.addEventListener('DOMContentLoaded', () => {
-    body.classList.add('body-lock')
-  })
+
 }
 
 export const checkBrowser = () => {

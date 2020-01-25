@@ -70,10 +70,14 @@ dd {color:$gray40;}
 .off-screen {display:none;width:0;height:0;overflow:hidden;opacity:0;visibility:hidden;}
 
 .loading {position:fixed;left:0;right:0;top:0;bottom:0;background:$gray10;z-index:10;transition:all .4s;}
-.loading.is-hidden {opacity:0;visibility:hidden;}
+.loading.is-hidden {opacity:0;visibility:hidden;z-index:-1;}
 .loading-object {width:2rem;height:2rem;border-radius:50%;position:fixed;left:50%;top:50%;z-index:10;/*margin:-40px 0 0 -40px;*/background:$color-primary;animation:scaleout .8s infinite ease;}
 .loading-object.is-default {background:$gray10;}
 .loading-object.is-clickable {background:crimson;}
+
+@media (max-width:$breakpoint-small) {
+  .loading-object {display:none;}
+}
 
 .browser {display:none;text-align:center;padding:2rem;background:$gray0;box-shadow:2px -2px 16px -4px rgba(0,0,0,.5);position:fixed;left:0;right:0;bottom:0;z-index:7;}
 

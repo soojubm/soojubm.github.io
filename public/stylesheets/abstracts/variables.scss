@@ -1,7 +1,7 @@
 // mediaquery, desktop first
 
 $gray0: #fff; // white for dark theme
-$gray10: #f1f3f4; // bg 
+$gray10: #f1f3f4; // bg
 $gray20: #dadce0; // divider border
 $gray40: #848c94; // caption
 $gray60: #666d75; // body
@@ -10,8 +10,8 @@ $gray80: #343a40; // bg || heading
 $red800: crimson;
 $green800: green;
 
-$color-primary: #2E8540;
-$color-positive: #00783E; // sucess
+$color-primary: #0070c9;
+$color-positive: #00783e; // sucess
 $color-negative: #da1e28; // danger, warning
 $color-google: #fff;
 $color-facebook: red;
@@ -19,23 +19,27 @@ $color-twitter: red;
 $color-naver: red;
 $color-kakao: red;
 
-
 $container-max-widths: (
   sm: 540px,
   md: 720px,
   lg: 960px,
-  xl: 1140px
+  xl: 1140px,
 );
 
-@custom-media --breakpoint-large (max-width:1440px);
-@custom-media --breakpoint-medium (max-width:1280px);
-@custom-media --breakpoint-small (max-width:1080px);
-
+@custom-media --breakpoint-large (max-width: 1440px);
+@custom-media --breakpoint-medium (max-width: 1280px);
+@custom-media --breakpoint-small (max-width: 1080px);
 
 $breakpoints: (
-  'medium': (max-width: 800px),
-  'large': (max-width: 1000px),
-  'huge': (max-width: 1440px),
+  'medium': (
+    max-width: 800px,
+  ),
+  'large': (
+    max-width: 1000px,
+  ),
+  'huge': (
+    max-width: 1440px,
+  ),
 );
 
 $breakpoint-large: 1440px;
@@ -65,7 +69,7 @@ $border100: 1px solid $gray10;
 $border150: 1px solid $gray20;
 
 $radius400: 4px;
-$radius450: .125rem;
+$radius450: 0.125rem;
 
 $avatar100: 16px;
 $avatar200: 32px;
@@ -78,7 +82,7 @@ $headline-size: 2rem;
 $heading-size: 1.5rem;
 $subhead-size: 1.25rem;
 $body-size: 1rem;
-$caption: .75rem;
+$caption: 0.75rem;
 
 @mixin heading1() {
   font-size: 2rem;
@@ -104,9 +108,9 @@ $line-height400: 1.6;
 $line-height600: 1.8;
 
 $bezier-base: cubic-bezier(0.455, 0.03, 0.515, 0.955);
-$transition-base: all .4s $bezier-base;
-$transition-fade: opacity .15s linear;
-$transition-collapse: height .35s ease;
+$transition-base: all 0.4s $bezier-base;
+$transition-fade: opacity 0.15s linear;
+$transition-collapse: height 0.35s ease;
 
 $zindex-dropdown: 1000;
 $zindex-sticky: 1020;
@@ -134,24 +138,40 @@ aside {
   // background-color: var(--background-color);
 }
 
-
 .row {
-  display:flex;
+  display: flex;
   align-items: center;
-  height:56px;
-  border-top:1px solid $gray10;
-  border-bottom:1px solid $gray10;
-  margin-right:-200px;
-  margin-top:-1px;
-  line-height:16px;
+  height: 56px;
+  border-top: 1px solid $gray10;
+  border-bottom: 1px solid $gray10;
+  margin-right: -200px;
+  margin-top: -1px;
+  line-height: 16px;
   --spacer: 0 1.5rem;
 }
-.row-checkbox {width:4rem;height:16px;}
-.row-avatar {width:4rem;}
-.row-id {width:6rem;padding:var(--spacer);}
-.row-phone {width:10rem;padding:var(--spacer);}
-.row-address {width:10rem;padding:var(--spacer);}
-.row-delete {width:6rem;padding:var(--spacer);}
+.row-checkbox {
+  width: 4rem;
+  height: 16px;
+}
+.row-avatar {
+  width: 4rem;
+}
+.row-id {
+  width: 6rem;
+  padding: var(--spacer);
+}
+.row-phone {
+  width: 10rem;
+  padding: var(--spacer);
+}
+.row-address {
+  width: 10rem;
+  padding: var(--spacer);
+}
+.row-delete {
+  width: 6rem;
+  padding: var(--spacer);
+}
 
 .row.--head {
   border-top: none;

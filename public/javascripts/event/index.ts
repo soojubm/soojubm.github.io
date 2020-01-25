@@ -6,7 +6,7 @@ import toTop from './toTop'
 import stickyElement from './stickyElement'
 import scrollAnimation from './scrollAnimation'
 import close from './close'
-// import customCursor from './customCursor';
+import customCursor from './customCursor'
 
 export default {
   toggleClass,
@@ -17,5 +17,5 @@ export default {
   stickyElement,
   scrollAnimation,
   close,
-  // customCursor
+  customCursor
 }

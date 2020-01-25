@@ -109,7 +109,7 @@ function temp() {
     event.close({ selector: '.js-close' })
     event.toTop({ selector: '.js-to-top' })
     event.scrollAnimation()
-    // event.customCursor();
+    event.customCursor()
     input.checkbox({ checkAllSelector: '.js-checkall', checkSelector: '.js-check' }).setEvent()
     input.file()
     input.textarea()
@@ -175,7 +175,7 @@ function temp() {
 
 document.addEventListener('DOMContentLoaded', () => {
   // polyfill()
-  // loader()
+  loader()
   checkBrowser()
   setDarkmode()
 
