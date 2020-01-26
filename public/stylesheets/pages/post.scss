@@ -5,7 +5,7 @@
 .post {max-width:720px;margin:0 auto;padding:100px 5%;}
 .post-head {margin:0 0 3rem 0;position:relative;}
 .post-head-runninghead {color:$color-primary;}
-.post-head-headline {padding:0rem 0 1rem 0;font-size:2rem;color:$gray80;} /* 상하단 패딩 똑같이해야 스키티때 */
+.post-head-headline {padding:0rem 0 1rem 0;font-size:2rem;color:$gray80;text-indent:-1px;} /* 상하단 패딩 똑같이해야 스키티때 */
 .post-head-time {color:$gray40;}
 .post-head-progress {display:none;height:3px;background:rgb(200,0,0);position:absolute;bottom:-3px;}
 .post-head-icons {/*position:fixed;left:50%;top:100px;margin-left:480px;*/}
