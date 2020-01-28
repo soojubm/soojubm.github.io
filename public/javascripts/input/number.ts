@@ -118,25 +118,31 @@ export default inputNumber
 // value--;
 
 // parseInt vs Number
-// TODO: target 클래스 토글이 안 되므니다
 document.addEventListener('click', event => {
   const { target }: any = event
-  const minValue = 0
-  const maxValue = 10
+  const MIN_VALUE = 0
+  const MAX_VALUE = 10
   let targetInput
 
   if (target.closest('.js-variation-decrement')) {
     targetInput = target.parentNode.querySelector('.js-variation-input')
-    if (targetInput.value <= minValue) {
+    if (targetInput.value <= MIN_VALUE) {
       target.classList.add('is-disabled')
+      target.setAttribute('disabled', 'true')
+      // target.parentNode.querySelector('.js-variation-increment').classList.remove('is-disabled')
+      // target.parentNode.querySelector('.js-variation-increment').removeAttribute('disabled')
       return
     }
     --targetInput.value
   }
   if (target.closest('.js-variation-increment')) {
     targetInput = target.parentNode.querySelector('.js-variation-input')
-    if (targetInput.value >= maxValue) {
+    if (targetInput.value >= MAX_VALUE) {
       target.classList.add('is-disabled')
+      target.removeAttribute('disabled')
+
+      // target.parentNode.querySelector('.js-variation-decrement').classList.remove('is-disabled')
+      // target.parentNode.querySelector('.js-variation-decrement').removeAttribute('disabled')
       return
     }
     ++targetInput.value

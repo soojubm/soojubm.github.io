@@ -1,0 +1,19 @@
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+}
+.breadcrumbs i {
+  margin: 0 0.5rem;
+}
+.breadcrumbs-divider {
+  margin: 0 1rem;
+}
+.breadcrumbs-item {
+  padding: 0.75rem 0;
+  position: relative;
+}
+.breadcrumbs-last:after {
+  display: none;
+}

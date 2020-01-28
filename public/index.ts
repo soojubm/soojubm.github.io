@@ -17,8 +17,6 @@ import input from './javascripts/input/index'
 // if(window.matchMedia('(min-width:800px)').matches) {}
 // div.classList.replace("foo", "bar");
 
-// element.hidden = !visible
-
 window.addEventListener('offline', () => {
   const offlineElement = document.querySelector<HTMLElement>('.js-offline')
   if (!offlineElement) return
@@ -102,15 +100,16 @@ function temp() {
     countDownClock(20, 'days')
     // carousel();
 
-    event.modal({ selector: '.js-modal' })
+    input.checkbox({ checkAllSelector: '.js-checkall', checkSelector: '.js-check' }).setEvent()
     event.toggleClass({ selector: '.js-toggle' })
+
+    event.modal({ selector: '.js-modal' })
     event.enterTarget({ selector: '.js-hover-trigger' })
     event.tabMenu()
     event.close({ selector: '.js-close' })
     event.toTop({ selector: '.js-to-top' })
     event.scrollAnimation()
     event.customCursor()
-    input.checkbox({ checkAllSelector: '.js-checkall', checkSelector: '.js-check' }).setEvent()
     input.file()
     input.textarea()
     input.number()
