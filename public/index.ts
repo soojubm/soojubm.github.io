@@ -5,7 +5,7 @@ import './stylesheets/style.scss'
 import routePage from './javascripts/router'
 import { loader, checkBrowser, adjustTopPadding } from './javascripts/load'
 import { setGraph } from './javascripts/ui'
-import { setDarkmode } from './javascripts/setDarkMode'
+import { setDarkmode, carousel } from './javascripts/setDarkMode'
 
 import { validity } from './javascripts/utils/validations'
 // import { films } from '../views/films';
@@ -29,7 +29,7 @@ window.addEventListener('hashchange', initailizePage)
 
 function initailizePage() {
   const navigationTrigger = document.querySelector<HTMLElement>('.navbar-burger')
-  // const isOpenedNavigation = navigationTrigger.classList.contains('is-active');
+  // const isOpenedNavigation = navigationTrigger?.classList.contains('is-active');
   if (!navigationTrigger) return
 
   navigationTrigger.classList.remove('is-active')
@@ -98,7 +98,7 @@ function temp() {
     focusComment()
     setGraph()
     countDownClock(20, 'days')
-    // carousel();
+    carousel();
 
     input.checkbox({ checkAllSelector: '.js-checkall', checkSelector: '.js-check' }).setEvent()
     event.toggleClass({ selector: '.js-toggle' })

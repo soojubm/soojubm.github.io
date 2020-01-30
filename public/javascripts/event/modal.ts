@@ -1,3 +1,5 @@
+import close from './close'
+
 //TODO: 모달 밖의 컨텐츠에 aria-hidden 모달의 위치는 바디 안에?
 //var abc = window.innerWidth - document.body.clientWidth;
 type Parameter = {
@@ -16,34 +18,42 @@ const modal = ({ selector: trigger }: Parameter) => {
       event.preventDefault()
 
       const { nextElementSibling } = modal
+      const closeTrigger = nextElementSibling?.querySelector('.js-modal-close')
       pageY = window.pageYOffset
       
-      nextElementSibling?.classList.add('is-visible')
-      setLockBody()
+      showModal(nextElementSibling)
       
-      document.addEventListener('click', closeModal)
-      nextElementSibling?.querySelector('.js-modal-close')?.addEventListener('click', closeModal)
-
-      function closeModal() {
-        const isOpened = nextElementSibling?.classList.contains('is-visible')
-        if (!isOpened) return
-
-        nextElementSibling?.classList.remove('is-visible')
-        setUnlockBody()
-      }
+      document.addEventListener('click', () => closeModal(nextElementSibling))
+      closeTrigger?.addEventListener('click', () => closeModal(nextElementSibling))
     })
   )
-
+  
   const modalDialog = document.querySelectorAll('.modal-dialog')
   modalDialog.forEach(element => element.addEventListener('click', event => event.stopPropagation()))
 
-  function setLockBody() {
+  function showModal(element) {
+    element?.classList.add('is-visible')
+    lockBody()
+  }
+  function closeModal(element) {
+    const isOpened = element?.classList.contains('is-visible')
+    if (!isOpened) return
+
+    element?.classList.remove('is-visible')
+    unlockBody()
+  }
+  
+  function lockBody() {
     document.body.classList.add('body-lock')
     document.body.style.top = `-${pageY}px`
   }
 
-  function setUnlockBody() {
+  function unlockBody() {
     document.body.classList.remove('body-lock')
+    setScrollY(pageY)
+  }
+
+  function setScrollY(pageY) {
     window.scrollTo(0, pageY)
   }
 }

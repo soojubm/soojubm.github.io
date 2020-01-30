@@ -92,7 +92,7 @@
 
 .rating2.--large {display:flex;align-items:center;}
 .rating2.--large .rating2-star {margin:0 .5rem 0 0;font-size:1.5rem;color:crimson;}
-.rating2.--large .rating2-score {font-size:1.25em;letter-spacing:0;}
+.rating2.--large .rating2-score {font-size:1.25em;}
 
 .scroll {position:absolute;bottom:2rem;right:2rem;z-index:8;box-shadow:$shadow400;transition:right .4s ease;}
 .scroll-indicator {transform:rotate(90deg);}
