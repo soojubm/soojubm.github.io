@@ -109,7 +109,7 @@ function temp() {
     event.close({ selector: '.js-close' })
     event.toTop({ selector: '.js-to-top' })
     event.scrollAnimation()
-    event.customCursor()
+    // event.customCursor()
     input.file()
     input.textarea()
     input.number()
