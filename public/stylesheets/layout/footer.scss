@@ -24,7 +24,7 @@
 .footer-address-info {}
 .footer-copyright {display:block;margin:.5rem 0 0 0;}
 
-@media (max-width: $breakpoint-medium) {
+@media (max-width: $breakpoint-small) {
 	.footer {padding:3rem 5% 6rem;}
 	.footer-newsletter-field {width:100%;}
 	.footer-sitemap {float:none;width:100%;position:relative;}

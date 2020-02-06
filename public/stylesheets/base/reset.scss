@@ -102,13 +102,9 @@ dd {color:$gray40;}
 // article 안에 정보는 adress
 
 
-
 @media (max-width:$breakpoint-small) {
   html {font-size:12px;}
 }
-
-
-
 
 .account {background:$gray10;margin:0 auto;padding:0 10% 16rem;}
 .account-head {padding:2rem 0 2rem;}
@@ -119,8 +115,6 @@ dd {color:$gray40;}
 .account-body div small {width:100px;color:$gray40;}
 .account-body div p {color:$gray80;}
 .account-body div button {margin-left:auto;}
-
-
 
 //backface-visibility:hidden
 
