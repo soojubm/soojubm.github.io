@@ -17,6 +17,37 @@ import input from './javascripts/input/index'
 // if(window.matchMedia('(min-width:800px)').matches) {}
 // div.classList.replace("foo", "bar");
 
+// let formChanged = false;
+// myForm.addEventListener('change', () => formChanged = true);
+// window.addEventListener('beforeunload', (event) => {
+//   if (formChanged) {
+//     event.returnValue = 'You have unfinished changes!';
+//   }
+// });
+
+window.addEventListener('unload', function logData() {
+  // navigator.sendBeacon('/log', analyticsData)
+})
+
+const pendingOps = new Set()
+
+window.addEventListener('beforeunload', event => {
+  if (pendingOps.size) {
+    event.returnValue = 'There is pending work. Sure you want to leave?'
+  }
+})
+
+// function addToPendingWork(promise) {
+//   busyspinner.hidden = false
+//   pendingOps.add(promise)
+
+//   const cleanup = () => {
+//     pendingOps.delete(promise)
+//     busyspinner.hidden = pendingOps.size === 0
+//   }
+//   promise.then(cleanup).catch(cleanup)
+// }
+
 window.addEventListener('offline', () => {
   const offlineElement = document.querySelector<HTMLElement>('.js-offline')
   if (!offlineElement) return
@@ -37,7 +68,6 @@ function initailizePage() {
 }
 
 function temp() {
-  
   routePage().then(() => {
     adjustTopPadding()
 
@@ -98,7 +128,7 @@ function temp() {
     focusComment()
     setGraph()
     countDownClock(20, 'days')
-    carousel();
+    carousel()
 
     input.checkbox({ checkAllSelector: '.js-checkall', checkSelector: '.js-check' }).setEvent()
     event.toggleClass({ selector: '.js-toggle' })
@@ -150,8 +180,6 @@ function temp() {
       const scrollPercent = `${(window.pageYOffset / (document.body.scrollHeight - window.innerHeight)) * 100}%`
       progressBar.style.width = scrollPercent
     }
-    
- 
 
     window.addEventListener('scroll', () => {
       event.stickyElement({ targetElement: '.post-head', addClass: 'is-sticky' })
@@ -168,7 +196,6 @@ function temp() {
     // 	});
     // 	if(i === images.length) i = 0;
     // }, 5000);
-    
   })
 }
 
@@ -191,7 +218,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // }).catch(error => {
   // 	console.warn(error);
   // });
-
 
   // Promise.all([
   // 	fetch('https://jsonplaceholder.typicode.com/posts'),
