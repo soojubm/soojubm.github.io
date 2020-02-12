@@ -1,10 +1,41 @@
+<link href="https://fonts.googleapis.com/css?family=Gothic+A1:300,400,700,900&display=swap&subset=korean" rel="stylesheet">
+
 <main class="home">
+  <header style="width:80%;margin:0 auto;padding:2rem 0;">
+    <h1 class="test1">우리가 시간이 없지, 세상이 안 궁금하냐!</h1>
+    <p class="test-description">세상 돌아가는 소식, 알고는 싶지만 신문 볼 새 없이 바쁜 게 우리 탓은 아니잖아요!</p>
+    <p class="test-description">NEWNEEK은 바쁜 사람들이 세상과 연결되어 더 나은 선택을 하도록 돕고 있어요. </p>
+    <p class="test-description">일상의 대화처럼 시사 이슈를 전하는 이메일 뉴스레터가 <b>월수금</b> 아침마다 찾아갑니다.</p>
+    <h1 class="test2"></h1>
+  </header>
+  <div class="marquee">
+    <p>포항대게횟집 풍물거리 58호, 영덕군 강구면 소재</p>
+  </div>
   <style>
+    b {font-weight: 700;}
+    .test1 {
+      margin: 4rem 0 1rem 0;
+      font-size: 3rem;
+      font-weight: 900;
+      letter-spacing: -2px;
+  
+    }
+    .test2 {
+      font-size: 5rem;
+      font-weight: 900;
+      letter-spacing: -2px;
+      -webkit-text-stroke: 1px #000;
+      -webkit-text-fill-color: #fff
+    }
+    .test-description {font-size:16px;}
+    .header {display:none;}
+    .header-title {font-weight:700;}
+    html {font-family: 'Gothic A1', sans-serif;letter-spacing:-.05rem}
     .home-hero {padding:0 5%;}
     .home-hero-title {margin:8rem auto 4rem;font-family:"DunkelSans";font-size:4rem;}
     h1 .t1 {
       -webkit-text-stroke: 1px #000;
-      -webkit-text-fill-color: $gray0;
+      /* -webkit-text-fill-color: $gray0; */
     }
     h1 .t2 {
       color: #000;
@@ -30,11 +61,43 @@
     .board-head-title:nth-of-type(4) {width:300px;}
     .board-head-title:nth-of-type(5) {width:100px;}
     .board-head-title:nth-of-type(5) {width:50px;}
+
+    .footer-newsletter {display:none;}
+    .banner {display: none;}
+    .home nav {width:1440px;margin:0 auto;padding-left:50%;}
+    .home nav a {font-family:"DunkelSans";font-size:2rem;color:#000;}
+
+.marquee {
+  padding:0.5em 0;
+  overflow:hidden;
+  margin-bottom:10px;
+  position:relative;
+}
+.marquee p:hover {
+/* animation-play-state: paused; */
+}
+.marquee p:after {
+  content:"";
+  white-space:nowrap;
+  padding-right:50px;
+}
+
+.marquee p {
+  margin:0;
+  padding-left:100%;
+  display:inline-block;
+  white-space:nowrap;
+  animation-name:marquee;
+  animation-timing-function:linear;
+  animation-duration:10s;
+  animation-iteration-count:infinite;
+}
+
+@keyframes marquee {
+  from   { transform: translate(0%);}
+  99%,to { transform: translate(-100%);}
+}
   </style>
-  <script>
-  
-  
-  </script>
   <!-- <section class="home-hero">
     <h1 class="home-hero-title">
       <i class="home-hero-eyebrow">🐣</i>
@@ -45,7 +108,7 @@
     <div class="home-hero-image js-scroll-animation"><img src="/public/images/caleb-woods-182648-unsplash.jpg" alt=""></div>
   </section> -->
 
-    <button name="usa">미국</button>
+    <!-- <button name="usa">미국</button>
     <article class="board">
       <div class="board-head">
         <div class="board-head-title">Title</div>
@@ -54,41 +117,5 @@
         <div class="board-head-title">Title</div>
         <div class="board-head-title">Title</div>
       </div>
-    </article>
-    <table>
-        <caption>히라가나 오십음도</caption>
-        <thead>
-          <tr>
-            <th>TITLE</th>
-            <th>DIRECTOR</th>
-            <th>う단</th>
-            <th>え단</th>
-            <th>お단</th>
-            <th class="right">RELEASE DATE</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>도요사사키 스텍 유리컵</td>
-            <td>に</td>
-            <td>ぬ</td>
-            <td>ね</td>
-            <td>の</td>
-            <td class="right">9,600</td>
-          </tr>
-          <tr>
-            <td>ら</td>
-            <td>り</td>
-            <td>る</td>
-            <td>れ</td>
-            <td>ろ</td>
-            <td class="right">12,000</td>
-          </tr>
-        </tbody>
-      </table>
-  <style>
-    .banner {display: none;}
-  .home nav {width:1440px;margin:0 auto;padding-left:50%;}
-  .home nav a {font-family:"DunkelSans";font-size:2rem;color:#000;}
-  </style>
+    </article> -->
 </main>

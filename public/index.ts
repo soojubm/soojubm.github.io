@@ -13,6 +13,22 @@ import { countDownClock } from './javascripts/countdown'
 import event from './javascripts/event/index'
 import input from './javascripts/input/index'
 
+// close 보다 delete가 포괄적인 네이밍
+
+// var evens = _.remove(array, function(n) {
+//   return n % 2 == 0;
+// });
+
+// function removeItem(items, removable) {
+//   const index = items.indexOf(removable);
+//   return [...items.slice(0, index), ...items.slice(index+1)];
+// }
+
+// npx -p @storybook/cli sb init --type react
+// throw new Error
+// .box:hover { will-change: transform;}
+// If you do not return anything, a function will return undefined, which validates as falsey.
+
 //document.documentElement.className += ' supports-date';
 // if(window.matchMedia('(min-width:800px)').matches) {}
 // div.classList.replace("foo", "bar");

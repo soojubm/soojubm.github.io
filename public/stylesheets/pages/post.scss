@@ -2,7 +2,7 @@
 
 .post p:first-line {}
 .post p:not(:nth-of-type(1))::first-letter {padding-left:0;}
-.post {max-width:720px;margin:0 auto;padding:100px 5%;}
+.post {max-width:720px;margin:0 auto;padding:100px 5% 40px;}
 .post-head {margin:0 0 3rem 0;position:relative;}
 .post-head-runninghead {color:$color-primary;}
 .post-head-headline {padding:0rem 0 1rem 0;font-size:2rem;color:$gray80;text-indent:-1px;} /* 상하단 패딩 똑같이해야 스키티때 */
@@ -126,14 +126,13 @@ body.is-sticky {padding-top:133px;}
 .post-scrollspy p {font-size:12px;}
 .post-scrollspy a {display:block;margin:0 1rem;font-size:12px;}
 
-.post-pagination {display:flex;margin:4rem -10rem 0;
+.post-pagination {display:flex;margin:4rem 10% 0;
 	--padding:4rem 0;
 	--label-font-size: 1rem;
-	--label-color: $gray40;
 }
 .post-pagination-previous {width:40%;padding:var(--padding);box-sizing:border-box;text-align:left;}
-.post-pagination-previous-label {font-size:var(--label-font-size);color:var(--label-color);}
-.post-pagination-previous-link {font-size:1.25rem;}
+.post-pagination-previous-label {margin:0 0 .25rem 0;font-size:var(--label-font-size);color:$gray40;}
+.post-pagination-previous-link {font-size:1.25rem;color:$gray80;}
 .post-pagination-next {width:60%;padding:var(--padding);box-sizing:border-box;text-align:right;}
-.post-pagination-next-label {font-size:var(--label-font-size);color:var(--label-color);}
-.post-pagination-next-link {font-size:1.25rem;}
+.post-pagination-next-label {margin:0 0 .25rem 0;font-size:var(--label-font-size);color:$gray40;}
+.post-pagination-next-link {font-size:1.25rem;color:$gray80;}

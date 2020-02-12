@@ -1,25 +1,25 @@
 // 비동기 함수는 리턴을 해야한다. 프로미스를 반환.
 const routePage = () => {
-	let { hash } = window.location;
-	const page = hash ? `/views/${hash.substring(1)}.html` : '/views/profile.html';
-	
-	return fetch(page)
-		.then(response => {
-			// 404 || 500
-			if(response.ok) return response.text();
-			else return Promise.reject(response);	
-		})
-		.then(html => {
-			const view = document.getElementById('view');
-			if(!view) return;
-			
-			view.innerHTML = html;
-			// window.history.pushState({ name: 'tester' }, 'dd', hash.substring(1));
-		})
-		.catch(error => console.warn('router: ', error));
-};
+  let { hash } = window.location
+  const page = hash ? `/views/${hash.substring(1)}.html` : '/views/profile.html'
 
-export default routePage;
+  return fetch(page)
+    .then(response => {
+      // 404 || 500
+      if (response.ok) return response.text()
+      else return Promise.reject(response)
+    })
+    .then(html => {
+      const view = document.getElementById('view')
+      if (!view) return
+
+      view.innerHTML = html
+      // window.history.pushState({ name: 'tester' }, 'dd', hash.substring(1));
+    })
+    .catch(error => console.warn('router: ', error))
+}
+
+export default routePage
 
 // hash 말고 클릭하는 순간에 값을 알아야 함. data attr or hash
 // const Router = (name, routes) => {
@@ -58,3 +58,20 @@ export default routePage;
 // view.innerHTML = new XMLSerializer().serializeToString(doc);
 // response.text() // response.json()
 // toLowerCase() 해주기
+
+// history.pushState({
+// 	id: 'homepage'
+// }, 'Home | My App', 'http://my-app-url.com/?p=homepage');
+
+// window.addEventListener('popstate', function (event) {
+// 	if (history.state && history.state.id === 'homepage') {
+// 			// Render new content for the hompage
+// 	}
+// }, false);
+
+// replaceState
+
+// window.addEventListener('popstate', function (event) {
+// 	// Log the state data to the console
+// 	console.log(event.state);
+// });
