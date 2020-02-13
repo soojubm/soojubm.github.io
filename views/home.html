@@ -1,12 +1,24 @@
-<link href="https://fonts.googleapis.com/css?family=Gothic+A1:300,400,700,900&display=swap&subset=korean" rel="stylesheet" />
+<!-- <link href="https://fonts.googleapis.com/css?family=Gothic+A1:300,400,700,900&d?isplay=swap&subset=korean" rel="stylesheet" /> -->
 
 <nav class="navbar1">
   <p style="font-family: 'Ma Shan Zheng', cursive;color:#000;font-size:12rem;">工事中</p>
 </nav>
 <main class="home">
-  <div style="height:640px;background:url('/public/images/vintage.jpeg');background-size:cover;"></div>
+  <div style="height:640px;background:url('/public/images/vintage.jpeg') no-repeat center center fixed;background-size:cover;"></div>
   <div class="marquee" style="margin-top:-100px;">
-    <p>이게 트랜드다!!!</p>
+    <p>이게 트렌드다!!!</p>
+  </div>
+  <p><img style="width:32px;display:block;" src="/public/images/cursor.png" alt=""></p>
+  <div class="quote" style="margin:2rem;border:3px solid #000;font-family:san-serif;font-weight:700;">
+    <div class="quote-avatar avatar">
+      <i class="icon-person"></i>
+    </div>
+    <div class="quote-body">"Amazing experience I love it a lot. Thanks to the team dreams come true, great! I really."</div>
+    <div class="quote-byline">
+      <div>Lassy Chester,</div>
+      <div>Art Director</div>
+    </div>
+    <button class="tertiary-button" style="margin:2rem 0 0 0;width:50%;border:3px solid #000;">자세히보기</button>
   </div>
 
   <!-- <figure style="height:90vh;margin-top:-120px;background: url(/public/images/caleb-woods-182648-unsplash.jpg) no-repeat 50%;background-size: cover;"></figure> -->
@@ -15,12 +27,18 @@
     @import url('https://fonts.googleapis.com/css?family=ZCOOL+QingKe+HuangYou&display=swap');
     html {
       -webkit-font-smoothing:antialiased;
+      font-family: sans-serif;
+      /* cursor: url(public/images/cursor.png), auto;	 */
+
     }
     body {
       background: #f4f3f3;
     }
+    /* .icon-person:before {border-width:2.5px;}
+    .icon-person:after {border-width:2.5px;} */
     .navbar {
       background: #f4f3f3;
+
     }
     .navbar1 {
       display: flex;
@@ -35,7 +53,18 @@
       width: 80%;
       margin: -3px auto 0;
       border: 3px solid #000;
+      /* position: relative; */
+      
     }
+    /* main:before {
+      content: '';
+      display: block;
+      width: 3px;
+      height: 100%;
+      background: #000;
+      position: absolute;
+      left: 50%;
+    } */
     footer {
       width: 80%;
       padding: 1.5rem 4rem;
@@ -170,13 +199,17 @@
   <div style="margin:2rem;">
     <button class="temp-button" onClick="javascript:alert('없음')">아무렇게나 해보는 버튼</button>
   </div>
+  <div class="statistic"><span class="statistic-value">21,682</span><i class="statistic-label">성공한 펀딩횟수</i></div>
   <style>
-    .temp-button {width:200px;height:56px;background:#76faad;text-align:center;font-size:18px;font-weight:700;font-family:'serif';position:relative;}
+    .temp-button {width:200px;height:56px;background:#76faad;text-align:center;font-size:16px;font-weight:700;position:relative;}
     /* .temp-button:hover {background:#fff;} */
     .temp-button:before {content:'';width:200px;height:56px;background:#ddd;position:absolute;left:6px;top:6px;z-index:-1;transition:all .2s ease;}
     .temp-button:hover:before {left:-6px;top:-6px;}
     .temp-button:after {content:'';width:200px;height:56px;border:3px solid #000;box-sizing:border-box;position:absolute;left:0;top:0;z-index:1;transition:all .2s ease;}
     .temp-button:hover:after {left:6px;top:6px;z-index:-1;}
+    .statistic {width:auto;margin:2rem;border:3px solid #000;text-align:center;}
+    .statistic-label {padding:.5rem 1rem;border-top:3px solid #000;font-size:16px;color:#000;font-weight:bold;}
+    .statistic-value {display:block;padding:1rem;font-family:'DunkelSans';color:#000;font-size:2rem;}
   </style>
 </main>
 <footer>
