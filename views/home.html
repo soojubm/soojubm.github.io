@@ -1,102 +1,139 @@
-<link href="https://fonts.googleapis.com/css?family=Gothic+A1:300,400,700,900&display=swap&subset=korean" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Gothic+A1:300,400,700,900&display=swap&subset=korean" rel="stylesheet" />
 
+<nav class="navbar1">
+  <p style="font-family: 'Ma Shan Zheng', cursive;color:#000;font-size:12rem;">工事中</p>
+</nav>
 <main class="home">
-  <header style="width:80%;margin:0 auto;padding:2rem 0;">
-    <h1 class="test1">우리가 시간이 없지, 세상이 안 궁금하냐!</h1>
-    <p class="test-description">세상 돌아가는 소식, 알고는 싶지만 신문 볼 새 없이 바쁜 게 우리 탓은 아니잖아요!</p>
-    <p class="test-description">NEWNEEK은 바쁜 사람들이 세상과 연결되어 더 나은 선택을 하도록 돕고 있어요. </p>
-    <p class="test-description">일상의 대화처럼 시사 이슈를 전하는 이메일 뉴스레터가 <b>월수금</b> 아침마다 찾아갑니다.</p>
-    <h1 class="test2"></h1>
-  </header>
-  <div class="marquee">
-    <p>포항대게횟집 풍물거리 58호, 영덕군 강구면 소재</p>
+  <div style="height:640px;background:url('/public/images/vintage.jpeg');background-size:cover;"></div>
+  <div class="marquee" style="margin-top:-100px;">
+    <p>이게 트랜드다!!!</p>
   </div>
+
+  <!-- <figure style="height:90vh;margin-top:-120px;background: url(/public/images/caleb-woods-182648-unsplash.jpg) no-repeat 50%;background-size: cover;"></figure> -->
   <style>
-    b {font-weight: 700;}
-    .test1 {
-      margin: 4rem 0 1rem 0;
-      font-size: 3rem;
-      font-weight: 900;
-      letter-spacing: -2px;
-  
+    @import url('https://fonts.googleapis.com/css?family=Ma+Shan+Zheng&display=swap');
+    @import url('https://fonts.googleapis.com/css?family=ZCOOL+QingKe+HuangYou&display=swap');
+    .navbar1 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 80%;
+      height: 80px;
+      margin: 8rem auto 0;
+      border: 3px solid #000;
     }
-    .test2 {
-      font-size: 5rem;
-      font-weight: 900;
-      letter-spacing: -2px;
-      -webkit-text-stroke: 1px #000;
-      -webkit-text-fill-color: #fff
+    main {
+      width: 80%;
+      margin: -3px auto 0;
+      border: 3px solid #000;
     }
-    .test-description {font-size:16px;}
-    .header {display:none;}
-    .header-title {font-weight:700;}
-    html {font-family: 'Gothic A1', sans-serif;letter-spacing:-.05rem}
-    .home-hero {padding:0 5%;}
-    .home-hero-title {margin:8rem auto 4rem;font-family:"DunkelSans";font-size:4rem;}
-    h1 .t1 {
-      -webkit-text-stroke: 1px #000;
-      /* -webkit-text-fill-color: $gray0; */
+    footer {
+      width: 80%;
+      padding: 1.5rem 4rem;
+      margin: -3px auto 6rem;
+      border: 3px solid #000;
     }
-    h1 .t2 {
-      color: #000;
+    footer p {
+      width: 80%;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 1.25rem;
     }
-    .home-hero-eyebrow {
-      display: block;
+
+    /* html {font-family: 'Gothic A1', sans-serif;letter-spacing:-.05rem} */
+    .board {
+      max-width: 1080px;
+      margin: 4rem 0;
     }
-    .home-hero-description {font-family:"DunkelSans";font-size:2rem;}
-    .board {max-width:1080px;margin:4rem 0;}
-    .board-head {display:flex;}
+    .board-head {
+      display: flex;
+    }
     /* .board-head div {width:25%;} */
-    .board-body {display:flex;padding:.5rem 0;}
+    .board-body {
+      display: flex;
+      padding: 0.5rem 0;
+    }
     /* .board-body div {width:25%;color:#333;} */
-    .board-body small {display:block;color:#999;}
+    .board-body small {
+      display: block;
+      color: #999;
+    }
 
-    .home-hero-image {height:800px;transition:all .4s;}
-    .home-hero-image.is-scrolled {margin:-5%;}
+    .home-hero-image {
+      height: 800px;
+      transition: all 0.4s;
+    }
+    .home-hero-image.is-scrolled {
+      margin: -5%;
+    }
 
+    .board-head-title:nth-of-type(1) {
+      width: 20px;
+    }
+    .board-head-title:nth-of-type(2) {
+      width: 60px;
+    }
+    .board-head-title:nth-of-type(3) {
+      width: 300px;
+    }
+    .board-head-title:nth-of-type(4) {
+      width: 300px;
+    }
+    .board-head-title:nth-of-type(5) {
+      width: 100px;
+    }
+    .board-head-title:nth-of-type(5) {
+      width: 50px;
+    }
 
-    .board-head-title:nth-of-type(1) {width:20px;}
-    .board-head-title:nth-of-type(2) {width:60px;}
-    .board-head-title:nth-of-type(3) {width:300px;}
-    .board-head-title:nth-of-type(4) {width:300px;}
-    .board-head-title:nth-of-type(5) {width:100px;}
-    .board-head-title:nth-of-type(5) {width:50px;}
+    .banner,
+    .header {
+      display: none;
+    }
+    .marquee {
+      padding: 0.5em 0;
+      overflow: hidden;
+      margin-bottom: 10px;
+      position: relative;
+      -webkit-text-stroke: 3px #000;
+      color:#fff;
 
-    .footer-newsletter {display:none;}
-    .banner {display: none;}
-    .home nav {width:1440px;margin:0 auto;padding-left:50%;}
-    .home nav a {font-family:"DunkelSans";font-size:2rem;color:#000;}
+    }
+    .marquee p {
+      margin: 0;
+      padding-left: 100%;
+      display: inline-block;
+      white-space: nowrap;
+      animation-name: marquee;
+      animation-timing-function: linear;
+      animation-duration: 12s;
+      animation-iteration-count: infinite;
+      font-family: 'DunkelSans';
+      font-size: 10rem;
+    }
+    .marquee p:hover {
+      /* animation-play-state: paused; */
+    }
+    .marquee p:after {
+      content: '';
+      white-space: nowrap;
+      padding-right: 50px;
+    }
 
-.marquee {
-  padding:0.5em 0;
-  overflow:hidden;
-  margin-bottom:10px;
-  position:relative;
-}
-.marquee p:hover {
-/* animation-play-state: paused; */
-}
-.marquee p:after {
-  content:"";
-  white-space:nowrap;
-  padding-right:50px;
-}
+    .footer,
+    .toast {
+      display: none;
+    }
 
-.marquee p {
-  margin:0;
-  padding-left:100%;
-  display:inline-block;
-  white-space:nowrap;
-  animation-name:marquee;
-  animation-timing-function:linear;
-  animation-duration:10s;
-  animation-iteration-count:infinite;
-}
-
-@keyframes marquee {
-  from   { transform: translate(0%);}
-  99%,to { transform: translate(-100%);}
-}
+    @keyframes marquee {
+      from {
+        transform: translate(0%);
+      }
+      99%,
+      to {
+        transform: translate(-100%);
+      }
+    }
   </style>
   <!-- <section class="home-hero">
     <h1 class="home-hero-title">
@@ -108,7 +145,7 @@
     <div class="home-hero-image js-scroll-animation"><img src="/public/images/caleb-woods-182648-unsplash.jpg" alt=""></div>
   </section> -->
 
-    <!-- <button name="usa">미국</button>
+  <!-- <button name="usa">미국</button>
     <article class="board">
       <div class="board-head">
         <div class="board-head-title">Title</div>
@@ -119,3 +156,7 @@
       </div>
     </article> -->
 </main>
+
+<footer>
+  <p style="font-family: 'ZCOOL QingKe HuangYou', cursive;color:#000;">匹伊更中載織際墜芸聞投同通護掲社競必著。辞投見研逸報団座相検自渡理。盟三難載年会組宣施読郁郎対成独職軽。證平良入頻一皇覇社六請寄質致子接。拉財辺角間接景千聞罪口直民宮入負歩立教村。議視置暮規重着経前済式碁際万遺差係始貢。極増現問橋示毎外尾書立第。買達申米級周権詳査業季挙回辺朝経。属石保悪錯題軽工団象長意巨間確権更芸。</p>
+</footer>

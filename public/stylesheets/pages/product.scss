@@ -59,7 +59,7 @@
 .product-quickorder-head-description {}
 .product-quickorder-total {text-align:right;position:absolute;right:25%;bottom:50%;transform:translateY(50%);}
 .product-quickorder-total-count {margin-right:24px;vertical-align:middle;}
-.product-quickorder-total-price {font-size:28px;color:$gray80;vertical-align:middle;}
+.product-quickorder-total-price {font-size:1.75rem;color:$gray80;vertical-align:middle;}
 .product-quickorder-controls {position:absolute;left:80%;right:0;bottom:50%;transform:translateY(50%);}
 .product-quickorder-controls-purchase {width:100%;}
 
@@ -130,17 +130,24 @@
 	.product {padding:0 5%}
 	.product:before {display:none;}
 	.product-image {margin-left:0;left:0;}
-	.product-image:before {content:'';display:block;background:$gray10;position:absolute;left:0;right:-240px;top:-80px;bottom:240px;z-index:-1;}
 	.product-info {left:55%;}
 	.product-info ol {display:none;}
 	.product-info b {display:none;}
 	.product-order {width:40%;margin:10rem 0 0 55%;padding-top:140px;}
+
+	.product-detail {margin-left:0;margin-right:0;}
+	.product-detail-headline {width:100%;}
+	.product-detail dl {width:100%;}
+
+	.product-center {width:90%;margin:4rem 5%;}
+	.product-center h1 {}
+	.product-center p {}
 }
 
 
 @media (max-width:$breakpoint-small) {
 	.product {max-width:100%;margin-top:3rem;}
-	.product-image:before {top:-320px;left:-240px;}
+	.product-image:before {content:'';display:block;background:$gray10;position:absolute;top:-320px;left:-240px;bottom:240px;z-index:-1;}
 	.product-info {width:100%;padding:4rem 0;text-align:center;position:static;left:auto;top:auto;}
 	.product-info-name {width:100%;position:static;left:auto;top:auto;}
 	.product-info-price {margin:.25rem 0 0 0;}
@@ -150,14 +157,8 @@
 	.product-order-color {overflow:auto;white-space:nowrap;}
 	
 	.pricing-info {flex-wrap:wrap;}
-	.pricing-info-item {margin:0 0 4rem 0;}
-	.product-detail {margin-left:0;margin-right:0;}
-	.product-detail-headline {width:100%;}
-	.product-detail dl {width:100%;}
+	.pricing-info-item {width:100%;margin:0 0 4rem 0;}
 
-	.product-center {width:90%;margin:4rem 5%;}
-	.product-center h1 {}
-	.product-center p {}
 
 	.product-quickorder {display:none;}
 }
