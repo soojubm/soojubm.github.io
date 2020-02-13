@@ -13,6 +13,15 @@
   <style>
     @import url('https://fonts.googleapis.com/css?family=Ma+Shan+Zheng&display=swap');
     @import url('https://fonts.googleapis.com/css?family=ZCOOL+QingKe+HuangYou&display=swap');
+    html {
+      -webkit-font-smoothing:antialiased;
+    }
+    body {
+      background: #f4f3f3;
+    }
+    .navbar {
+      background: #f4f3f3;
+    }
     .navbar1 {
       display: flex;
       align-items: center;
@@ -155,8 +164,21 @@
         <div class="board-head-title">Title</div>
       </div>
     </article> -->
+  <!-- <form>
+    <input type="text" style="display:block;width:50%;margin:2rem auto;height:56px;border:3px solid #000;font-size:2rem;">
+  </form> -->
+  <div style="margin:2rem;">
+    <button class="temp-button" onClick="javascript:alert('없음')">아무렇게나 해보는 버튼</button>
+  </div>
+  <style>
+    .temp-button {width:200px;height:56px;background:#76faad;text-align:center;font-size:18px;font-weight:700;font-family:'serif';position:relative;}
+    /* .temp-button:hover {background:#fff;} */
+    .temp-button:before {content:'';width:200px;height:56px;background:#ddd;position:absolute;left:6px;top:6px;z-index:-1;transition:all .2s ease;}
+    .temp-button:hover:before {left:-6px;top:-6px;}
+    .temp-button:after {content:'';width:200px;height:56px;border:3px solid #000;box-sizing:border-box;position:absolute;left:0;top:0;z-index:1;transition:all .2s ease;}
+    .temp-button:hover:after {left:6px;top:6px;z-index:-1;}
+  </style>
 </main>
-
 <footer>
   <p style="font-family: 'ZCOOL QingKe HuangYou', cursive;color:#000;">匹伊更中載織際墜芸聞投同通護掲社競必著。辞投見研逸報団座相検自渡理。盟三難載年会組宣施読郁郎対成独職軽。證平良入頻一皇覇社六請寄質致子接。拉財辺角間接景千聞罪口直民宮入負歩立教村。議視置暮規重着経前済式碁際万遺差係始貢。極増現問橋示毎外尾書立第。買達申米級周権詳査業季挙回辺朝経。属石保悪錯題軽工団象長意巨間確権更芸。</p>
 </footer>
