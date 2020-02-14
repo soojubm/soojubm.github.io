@@ -71,7 +71,7 @@ window.addEventListener('offline', () => {
   offlineElement.style.display = 'block'
 })
 
-window.addEventListener('hashchange', temp)
+window.addEventListener('hashchange', routePage)
 window.addEventListener('hashchange', initailizePage)
 
 function initailizePage() {
@@ -83,7 +83,14 @@ function initailizePage() {
   navigationTrigger?.nextElementSibling?.classList.remove('is-visible')
 }
 
-function temp() {
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  // polyfill()
+  loader()
+  checkBrowser()
+  setDarkmode()
+
   routePage().then(() => {
     adjustTopPadding()
 
@@ -147,7 +154,7 @@ function temp() {
     carousel()
 
     input.checkbox({ checkAllSelector: '.js-checkall', checkSelector: '.js-check' }).setEvent()
-    event.toggleClass({ selector: '.js-toggle' })
+    event.toggleClass({ selector: '.js-toggle' }).setEvent()
 
     event.modal({ selector: '.js-modal' })
     event.enterTarget({ selector: '.js-hover-trigger' })
@@ -213,15 +220,6 @@ function temp() {
     // 	if(i === images.length) i = 0;
     // }, 5000);
   })
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  // polyfill()
-  loader()
-  checkBrowser()
-  setDarkmode()
-
-  temp()
   // const sayHello = new Promise((resolve, reject) => {
   // 	reject('Unable to say hi.');
 

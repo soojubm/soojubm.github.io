@@ -47,23 +47,23 @@ $fixedHeaderHeight: 50px;
 .navbar-user-notification-trigger {display:flex;justify-content:center;align-items:center;width:32px;height:32px;}
 .navbar-user-notification-trigger i {vertical-align:middle;color:$gray80;}
 .navbar-user-notification-trigger em {display:block;width:4px;height:4px;border-radius:50px;background:$red800;border:1px solid $gray0;text-indent:-9999px;position:absolute;right:.25rem;top:.25rem;}
-.navbar-user-notification-menu {width:320px;height:0;padding:.5rem 1rem;box-sizing:border-box;background:$gray0;box-shadow:$shadow400;position:absolute;top:36px;right:0;z-index:4;transition:all .2s ease;transform:scale(0);transform-origin:right top}
+.navbar-user-notification-menu {width:320px;height:0;padding:.5rem 1rem;box-sizing:border-box;background:$gray0;box-shadow:$shadow400;position:absolute;top:36px;right:0;z-index:4;transform:scale(0);transform-origin:right top}
 .navbar-user-notification-menu:before {content:'';display:block;position:absolute;left:50%;right:0;top:-8px;bottom:0;}
-.navbar-user-notification-empty {width:320px;height:0;padding:2rem 0;box-sizing:border-box;background:$gray0;box-shadow:$shadow400;position:absolute;top:36px;right:0;z-index:4;transition:all .2s ease;transform:scale(0);text-align:center;font-size:12px;color:$gray40;transform-origin:right top}
+.navbar-user-notification-empty {width:320px;height:0;padding:2rem 0;box-sizing:border-box;background:$gray0;box-shadow:$shadow400;position:absolute;top:36px;right:0;z-index:4;transform:scale(0);text-align:center;font-size:12px;color:$gray40;transform-origin:right top}
 .navbar-user-notification-empty:before {content:'';display:block;position:absolute;left:50%;right:0;top:-8px;bottom:0;}
-.navbar-user-notification.is-expanded menu {height:auto;transform:scale(1);}
+.navbar-user-notification-empty.is-visible {height:auto;transform:scale(1);}
 
 .navbar-user-account {position:relative;}
 .navbar-user-account-trigger {display:flex;justify-content:center;align-items:center;height:32px;}
 .navbar-user-account-trigger span {float:left;display:block;width:32px;height:32px;overflow:hidden;border-radius:$radius400;background:$color-primary;position:relative;}
 .navbar-user-account-trigger span img {width:auto;height:32px;position:absolute;}
 .navbar-user-account-trigger i {float:left;display:block;margin:0 0 0 8px;}
-.navbar-user-account-menu {width:200px;height:0;padding:.5rem 0;box-sizing:border-box;border-radius:$radius400;background:$gray0;box-shadow:$shadow400;position:absolute;top:40px;right:0;z-index:4;transition:all .2s ease;transform:scale(0);transform-origin:right top;}
+.navbar-user-account-menu {width:200px;height:0;padding:.5rem 0;box-sizing:border-box;border-radius:$radius400;background:$gray0;box-shadow:$shadow400;position:absolute;top:40px;right:0;z-index:4;transform:scale(0);transform-origin:right top;}
 .navbar-user-account-menu:before {content:'';display:block;position:absolute;left:50%;right:0;top:-8px;bottom:0;z-index:0;}
 .navbar-user-account-menu-title {padding:.5rem 1rem;font-size:12px;}
 .navbar-user-account-menu-item {display:block;padding:.25rem 1rem;font-size:12px;color:$gray60;position:relative;z-index:1;}
 .navbar-user-account-menu-item:hover {background:$gray10;}
-.navbar-user-account.is-expanded menu {height:auto;transform:scale(1);}
+.navbar-user-account-menu.is-visible {height:auto;transform:scale(1);}
 
 // view hamberger
 @media (max-width:$breakpoint-small) {
