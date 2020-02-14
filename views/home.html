@@ -8,11 +8,25 @@
   <div class="marquee" style="margin-top:-100px;">
     <p>이게 트렌드다!!!</p>
   </div>
+  
+  <!-- <div class="half">
+    <header>제목</header>
+    <section>1</section>
+    <section>2</section>
+  </div>
+  <style>
+    .half {height:400px;border-bottom:3px solid #000;position:relative;}
+    .half header {display:flex;align-items:center;justify-content:center;width:320px;height:120px;border:3px solid #000;position:absolute;left:50%;top:100px;margin-left:-160px;font-family:'DunkelSans';background:#fff;font-size:4rem;color:#000;}
+    .half section {float:left;width:50%;height:400px;}
+    .half section + section {border-left:3px solid #000;box-sizing:border-box;}
+  </style> -->
+  
   <p><img style="width:32px;display:block;" src="/public/images/cursor.png" alt=""></p>
+  
   <div class="quote" style="margin:2rem;border:3px solid #000;font-family:san-serif;font-weight:700;">
-    <div class="quote-avatar avatar">
+    <!-- <div class="quote-avatar avatar">
       <i class="icon-person"></i>
-    </div>
+    </div> -->
     <div class="quote-body">"Amazing experience I love it a lot. Thanks to the team dreams come true, great! I really."</div>
     <div class="quote-byline">
       <div>Lassy Chester,</div>
@@ -164,13 +178,9 @@
     }
 
     @keyframes marquee {
-      from {
-        transform: translate(0%);
-      }
+      from { transform: translate(0%); }
       99%,
-      to {
-        transform: translate(-100%);
-      }
+      to { transform: translate(-100%); }
     }
   </style>
   <!-- <section class="home-hero">
@@ -199,6 +209,9 @@
   <div style="margin:2rem;">
     <button class="temp-button" onClick="javascript:alert('없음')">아무렇게나 해보는 버튼</button>
   </div>
+  <div class="zigzag"></div>
+  <div class="zigzag2"></div>
+  <div class="zig-zag"></div>
   <div class="statistic"><span class="statistic-value">21,682</span><i class="statistic-label">성공한 펀딩횟수</i></div>
   <style>
     .temp-button {width:200px;height:56px;background:#76faad;text-align:center;font-size:16px;font-weight:700;position:relative;}
@@ -210,6 +223,52 @@
     .statistic {width:auto;margin:2rem;border:3px solid #000;text-align:center;}
     .statistic-label {padding:.5rem 1rem;border-top:3px solid #000;font-size:16px;color:#000;font-weight:bold;}
     .statistic-value {display:block;padding:1rem;font-family:'DunkelSans';color:#000;font-size:2rem;}
+    .zigzag {
+    height:150px;
+    width:200px;
+    background:
+        linear-gradient(-135deg, #000 5px, transparent 0) 0 5px,
+        linear-gradient(135deg, #000 5px, #fff 0) 0 5px;
+    background-color: #000;
+    background-position: left bottom;
+    background-repeat: repeat-x;
+    background-size: 10px 10px;
+    }
+    .zigzag2 {
+     position: relative;
+     background: linear-gradient(45deg, #ccc 5px, transparent 0) 0 5px, linear-gradient(135deg, #ccc 5px, #fff 0) 0 5px;
+     background-position: right top;
+     background-repeat: repeat-y;
+     background-size: 10px 10px;
+}
+.zigzag2:before {
+    content:"";
+    position: absolute;
+    background: linear-gradient(45deg, #fff 5px, transparent 0) 0 5px,linear-gradient(135deg, #fff 5px, transparent 0) 0 5px;
+    background-color: transparent;
+    background-position: right top;
+    background-repeat: repeat-y;
+    background-size: 10px 10px;
+    width: 10px;
+    right: 3px;
+    top: 0;
+    bottom: 0;
+ }
+ .zig-zag {
+    border: none;
+    width: 50%;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    height: 40px;
+    background: linear-gradient(135deg, #fff 25%, transparent 25%) -20px 0,
+    linear-gradient(225deg, #fff 25%, transparent 25%) -20px 0,
+    linear-gradient(315deg, #fff 25%, transparent 25%),
+    linear-gradient(45deg, #fff 25%, transparent 25%);
+    background-size: 40px 40px;
+    background-color: #EC173A;
+    transform:scale(.5)
+}
   </style>
 </main>
 <footer>

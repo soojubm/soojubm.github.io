@@ -5,13 +5,4 @@
   from {transform:scale(1);}
   to {transform:scale(.8);}
 }
-@keyframes cursor2 {
-  from {transform:scale(1);}
-  to {transform:scale(.4);}
-}
-@keyframes cursor3 {
-  0% {transform:scale(1);}
-  50% {transform:scale(3);}
-  100% {transform:scale(1.25);opacity:0;}
-}
 .expand {animation:cursor3 .4s fowards;background:$color-primary}

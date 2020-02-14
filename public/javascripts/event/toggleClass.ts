@@ -2,7 +2,6 @@ type Parameter = {
   selector: string
 }
 
-// selector
 const toggleClass = ({ selector: trigger }: Parameter) => {
   const triggers = document.querySelectorAll(trigger)
   if (!triggers) return
@@ -10,10 +9,8 @@ const toggleClass = ({ selector: trigger }: Parameter) => {
   triggers.forEach(element =>
     element.addEventListener('click', event => {
       event.stopPropagation()
-
+      alert()
       toggleClassTrigger(element)
-      
-
 
       const triggerNextElement = element?.nextElementSibling as HTMLElement
       if (!triggerNextElement) return
