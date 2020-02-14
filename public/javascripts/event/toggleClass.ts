@@ -2,45 +2,46 @@ type Parameter = {
   selector: string
 }
 
-const toggleClass = ({ selector: trigger }: Parameter) => {
-  const triggers = document.querySelectorAll(trigger)
-  if (!triggers) return
+const toggleClass = ({ selector: trigger }: Parameter) => ({
+  triggers: document.querySelectorAll(trigger),
+  ACTIVE_CLASS: 'is-active',
+  ACTIVE_CLASS2: 'is-visible',
+  setEvent() {
+    if (!this.triggers) return
 
-  triggers.forEach(element =>
-    element.addEventListener('click', event => {
-      event.stopPropagation()
-      alert()
-      toggleClassTrigger(element)
+    this.triggers.forEach(element =>
+      element.addEventListener('click', event => {
+        event.preventDefault() // a tag에 사용하는 경우
+        event.stopPropagation()
 
-      const triggerNextElement = element?.nextElementSibling as HTMLElement
-      if (!triggerNextElement) return
-      toggleClassTarget(triggerNextElement)
+        const triggerNextElement = element?.nextElementSibling as HTMLElement
+        if (!triggerNextElement) return
 
-      triggers.forEach(element => {
-        if (event.target === element) return
-        removeAllClass(element)
-      })
-    }),
-  )
+        this.toggleClassTrigger(element)
+        this.toggleClassTarget(triggerNextElement)
+  
+        this.triggers.forEach(element => {
+          if (event.target === element) return
+          this.removeAllClass(element)
+        })
+      }),
+    )
+    document.body.addEventListener('click', () => this.triggers.forEach(trigger => this.removeAllClass(trigger)))
 
-  document.body.addEventListener('click', () => triggers.forEach(trigger => removeAllClass(trigger)))
-}
-
-const toggleClassTrigger = element => {
-  element.classList.toggle('is-active')
-  element.setAttribute('aria-expanded', `${element.classList.contains('is-active')}`)
-}
-
-const toggleClassTarget = element => {
-  element.classList.toggle('is-visible')
-  element.addEventListener('click', event => event.stopPropagation())
-}
-
-const removeAllClass = element => {
-  element.setAttribute('aria-expanded', 'true')
-  element.classList.remove('is-active')
-
-  element.nextElementSibling.classList.remove('is-visible')
-}
+  },
+  toggleClassTrigger(element) {
+    element.classList.toggle(this.ACTIVE_CLASS)
+    element.setAttribute('aria-expanded', `${element.classList.contains(this.ACTIVE_CLASS)}`)
+  },
+  toggleClassTarget(element) {
+    element.classList.toggle(this.ACTIVE_CLASS2)
+    element.addEventListener('click', event => event.stopPropagation())
+  },
+  removeAllClass(element) {
+    element.setAttribute('aria-expanded', 'true')
+    element.classList.remove(this.ACTIVE_CLASS)
+    element.nextElementSibling.classList.remove(this.ACTIVE_CLASS2)
+  }
+})
 
 export default toggleClass
