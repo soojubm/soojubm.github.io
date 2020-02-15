@@ -165,7 +165,7 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 
 .textfield {margin:0px 0;position:relative;}
 .textfield-label {display:block;margin:0 0 0.25rem 0;}
-.textfield-icon {width:48px;height:48px;line-height:46px;text-align:center;position:absolute;left:0;top:28px;}
+.textfield-icon {width:48px;height:48px;line-height:46px;text-align:center;position:absolute;left:0;}
 .textfield-icon i {display:inline-block;font-size:19px;vertical-align:middle;opacity:0.4;}
 .textfield-icon + .textfield-input {padding-left:48px;}
 .textfield-input {display:block;width:100%;padding:$padding200;padding-right:40px;background:$gray10;border:1px solid $gray10;border-radius:4px;box-sizing:border-box;font:inherit;color:$gray80;-webkit-appearance:none;appearance:none;transition:all 0.2s;}

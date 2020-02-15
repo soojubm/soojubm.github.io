@@ -1,10 +1,16 @@
 .profile {margin:0 auto;padding:5.25rem 10% 0;position:relative;}
 .profile-head {@extend .hero;margin:0 0 3rem 0 !important;}
 .profile-head-background {@extend .hero-background;background:url('/public/images/caleb-woods-182648-unsplash.jpg') no-repeat center center;background-size:cover;}
-.profile-head-headline {@extend .hero-title;color:$gray0;position:relative;}
-.profile-head-description {@extend .hero-description;color:$gray0;position:relative;}
+.profile-head-headline {@extend .hero-title;position:relative;}
+.profile-head-description {@extend .hero-description;position:relative;}
 .profile-head-share {@extend .tertiary-button;}
+
 .profile-head-temp {position:absolute;left:65%;top:3.25rem;}
+.profile-head h5 {margin:0 0 1rem 0;color:#fff;}
+
+@media (max-width:$breakpoint-small) {
+  .profile-head-temp {display:none;}
+}
 
 .profile-user {float:left;width:320px;box-sizing:border-box;position:relative;z-index:1;}
 .profile-user-avatar {float:right;width:80px;height:80px;border-radius:4px;background:url('/public/images/caleb-woods-182648-unsplash.jpg') no-repeat center center;background-size:cover;transition:all 0.4s ease;}

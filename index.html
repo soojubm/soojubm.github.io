@@ -97,8 +97,23 @@
             <i class="material-icons" style="pointer-events:none;">notifications_none</i>
             <em>new</em>
           </a>
-          <menu class="navbar-user-notification-empty">
+          <!-- <menu class="navbar-user-notification-empty">
             <p>최근 알림 메세지가 없습니다.</p>
+          </menu> -->
+          <menu class="navbar-user-account-menu" style="width:320px;">
+            <h6 class="navbar-user-account-menu-title">새 알림</h6>
+            <div class="notification-item">
+              <div class="avatar" style="float:left;margin-right:.75rem;background:crimson"></div>
+              <p style="font-size:12px;line-height:1.4;"><b>John Cassavetes - The Godfather of...</b>에 <b>Kevin Malin</b>님이 올린 새로운 게시물이 있습니다.</p>
+              <time style="display:block;margin:0 0 0 3.5rem;font-size:11px;color:crimson;">5일 전</time>
+            </div>
+            <style>
+            .notification-item {padding:.5rem 1rem;cursor:pointer;position:relative;}
+            .notification-item:hover {background:#f1f3f4;}
+            </style>
+            <!-- <a class="navbar-user-account-menu-item" href="" disabled>프로필 관리</a>
+            <a class="navbar-user-account-menu-item is-active" href="">고객센터</a>
+            <a class="navbar-user-account-menu-item" href="">수줍이에서 로그아웃</a> -->
           </menu>
         </div>
         <div class="navbar-user-account">
@@ -106,13 +121,24 @@
             <span style="pointer-events:none;"><img src="/public/images/caleb-woods-182648-unsplash.jpg" alt=""/></span>
             <!-- <i class="icon-caret"></i> -->
           </a>
-          <menu class="navbar-user-account-menu">
-            <h6 class="navbar-user-account-menu-title">Dropdown header</h6>
-            <a class="navbar-user-account-menu-item" href="" disabled>프로필 관리</a>
-            <a class="navbar-user-account-menu-item is-active" href="">고객센터</a>
-            <hr />
-            <a class="navbar-user-account-menu-item" href="">수줍이에서 로그아웃</a>
-          </menu>
+          <div class="navbar-user-account-menu user" style="width:320px;">
+            <div class="user-avatar avatar --large" style="overflow:none;">
+              <img src="/public/images/caleb-woods-182648-unsplash.jpg" alt="">
+              <!-- <div class="user-avatar-change"></div> -->
+            </div>
+            <div class="user-name">soojubm</div> 
+            <div class="user-email">soojubm@gamil.com</div>
+            <!-- <button class="button-tertiary">Manage your Google Account</button> -->
+            <button>Add another account</button>
+            <div>
+              <button class="tertiary-button">Sign out</button>
+            </div>
+            <footer>
+              <a href="#">Privacy Policy</a>
+              <i class="icon-bullet"></i>
+              <a href="#">Terms of Service</a>
+            </footer>
+          </div>
         </div>
       </div>
       <button class="navbar-burger js-toggle" aria-expanded="false"><i class="icon-hamberger"></i></button>
