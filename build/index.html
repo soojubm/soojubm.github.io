@@ -70,7 +70,7 @@
       <a class="navbar-logo" href="/">🐣</a>
       <div class="navbar-user">
         <div class="navbar-user-search" role="search" aria-label="site">
-          <a class="navbar-user-search-trigger js-toggle" href="#">
+          <a class="navbar-user-search-trigger js-navbar-toggle" href="#">
             <i class="material-icons" style="pointer-events:none;">search</i>
           </a>
           <form class="navbar-user-search-form" action="">
@@ -93,7 +93,7 @@
           </form>
         </div>
         <div class="navbar-user-notification">
-          <a class="navbar-user-notification-trigger js-toggle" href="#" aria-haspopup="true" aria-expanded="false">
+          <a class="navbar-user-notification-trigger js-navbar-toggle" href="#" aria-haspopup="true" aria-expanded="false">
             <i class="material-icons" style="pointer-events:none;">notifications_none</i>
             <em>new</em>
           </a>
@@ -117,7 +117,7 @@
           </menu>
         </div>
         <div class="navbar-user-account">
-          <a class="navbar-user-account-trigger js-toggle" href="#" aria-haspopup="menu" aria-expanded="false">
+          <a class="navbar-user-account-trigger js-navbar-toggle" href="#" aria-haspopup="menu" aria-expanded="false">
             <span style="pointer-events:none;"><img src="/public/images/caleb-woods-182648-unsplash.jpg" alt=""/></span>
             <!-- <i class="icon-caret"></i> -->
           </a>
@@ -141,7 +141,7 @@
           </div>
         </div>
       </div>
-      <button class="navbar-burger js-toggle" aria-expanded="false"><i class="icon-hamberger"></i></button>
+      <button class="navbar-burger js-navbar-toggle" aria-expanded="false"><i class="icon-hamberger"></i></button>
       <div class="navbar-menu" role="navigation">
         <div class="navbar-menu-item js-hover-trigger">
           <a route="" href="#"> 페이지<i class="icon-caret"></i></a>
@@ -174,17 +174,6 @@
     </header>
 
     <script>
-      const pageHeadElement = document.querySelector('.header')
-      if (!pageHeadElement) return
-
-      const pages = ['#design', '#contact']
-      const isWhite = pages.includes(window.location.hash)
-      if (isWhite) {
-        pageHeadElement.classList.add('is-white')
-      } else {
-        pageHeadElement.classList.remove('is-white')
-      }
-        
       const pageHead = document.querySelector('.header')
       document.addEventListener('scroll', event => {
         if (!pageHead) return

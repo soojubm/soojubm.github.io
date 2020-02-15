@@ -3,7 +3,7 @@
 import './stylesheets/style.scss'
 // import polyfill from './javascripts/polyfill';
 import routePage from './javascripts/router'
-import { loader, checkBrowser, adjustTopPadding } from './javascripts/load'
+import { loader, detectBrowser, adjustTopPadding } from './javascripts/load'
 import { setGraph } from './javascripts/ui'
 import { setDarkmode, carousel } from './javascripts/setDarkMode'
 
@@ -14,7 +14,6 @@ import event from './javascripts/event/index'
 import input from './javascripts/input/index'
 
 // close 보다 delete가 포괄적인 네이밍
-
 // var evens = _.remove(array, function(n) {
 //   return n % 2 == 0;
 // });
@@ -71,8 +70,43 @@ window.addEventListener('offline', () => {
   offlineElement.style.display = 'block'
 })
 
-window.addEventListener('hashchange', routePage)
+
+const domEvents = () => {
+  routePage().then(() => {
+    event.modal({ selector: '.js-modal' })
+
+    input.checkbox({ checkAllSelector: '.js-checkall', checkSelector: '.js-check' }).setEvent()
+    event.toggleClass({ selector: '.js-toggle' }).setEvent()
+  
+    event.enterTarget({ selector: '.js-hover-trigger' })
+    event.tabMenu()
+    event.close({ selector: '.js-close' })
+    event.toTop({ selector: '.js-to-top' })
+    event.scrollAnimation()
+    // event.customCursor()
+    input.file()
+    input.textarea()
+    input.number()
+  })
+}
+
+window.addEventListener('hashchange', domEvents)
 window.addEventListener('hashchange', initailizePage)
+window.addEventListener('hashchange', detectHeaderTheme)
+
+function detectHeaderTheme() {
+  const pageHeadElement = document.querySelector('.header')
+  if (!pageHeadElement) return
+
+  const pages = ['#design', '#contact']
+  const isWhite = pages.includes(window.location.hash)
+
+  if (isWhite) {
+    pageHeadElement.classList.add('is-white')
+  } else {
+    pageHeadElement.classList.remove('is-white')
+  }
+}
 
 function initailizePage() {
   const navigationTrigger = document.querySelector<HTMLElement>('.navbar-burger')
@@ -88,127 +122,95 @@ function initailizePage() {
 document.addEventListener('DOMContentLoaded', () => {
   // polyfill()
   loader()
-  checkBrowser()
+  detectBrowser()
+  detectHeaderTheme()
+
   setDarkmode()
 
-  routePage().then(() => {
-    adjustTopPadding()
+  adjustTopPadding()
 
-    // const uiData = [
-    //   { label: '상품 상세페이지', description :'', date :'2020.01-01', href: '#product', tags: ['기획', '디자인'] },
-    //   { label: '상품 카트', description :'', date :'2020-01-01', href: '#cart', tags: ['기획', '디자인'] },
-    //   { label: '로그인', description :'', date :'2020-01-01', href: '#login', tags: ['기획', '디자인'] },
-    //   { label: '비밀번호 찾기', description :'', date :'2020-01-01', href: '#forgot', tags: ['기획', '디자인'] }
-    // ]
-    // const ccc: any = document.querySelector<HTMLElement>('.js-ui');
-    // if(ccc) {
-    //   const temp = uiData.map(item => {
-    //     console.log(item);
-    //     const ttt = item.tags.map(i => `<span class="tag">${i}</span>`).join('')
-    //     const uiTemplate = `<a class="card" href="${item.href}">
-    //         <figure class="card-thumbnail" style="font-family:'DunkelSans';display:flex;align-items:center;justify-content:center;">${item.label}</figure>
-    //         <h3 class="card-title">${item.label}</h3>
-    //         <time class="card-date">${item.date}<time>
-    //         <div class="card-tags" role="group">
-    //           ${ttt}
-    //         </div>
-    //         <button class="card-more icon-button" type="button"><i class="icon-more"></i></button>
-    //       </a>`
-    //     return uiTemplate;
-    //   }).join('')
-    //   console.log(temp);
-    //   ccc.innerHTML = temp;
-    // }
+  // hashchange 될 때마다 이벤트 만들어짐;
+  event.toggleClass({ selector: '.js-navbar-toggle' }).setEvent()
 
-    // 임시
-    const list = document.querySelector('.js-display-list')
-    const grid = document.querySelector('.js-display-grid')
-    const works = document.querySelector('.profile-body')
-    if (list && grid && works) {
-      list.addEventListener('click', event => {
-        list.classList.add('is-selected')
-        grid.classList.remove('is-selected')
-        works.classList.add('list')
-      })
-      grid.addEventListener('click', event => {
-        list.classList.remove('is-selected')
-        grid.classList.add('is-selected')
-        works.classList.remove('list')
-      })
-    }
+  domEvents()
 
-    const focusComment = () => {
-      const commentWrite = document.querySelector('.js-comment-write')
-      const commentTextField = document.querySelectorAll('.js-comment-textfield')
-      if (commentWrite || commentTextField) {
-        commentTextField.forEach(element =>
-          element.addEventListener('focus', () => {
-            commentWrite && commentWrite.classList.add('is-focused')
-          }),
-        )
-      }
-    }
-    focusComment()
-    setGraph()
-    countDownClock(20, 'days')
-    carousel()
 
-    input.checkbox({ checkAllSelector: '.js-checkall', checkSelector: '.js-check' }).setEvent()
-    event.toggleClass({ selector: '.js-toggle' }).setEvent()
-
-    event.modal({ selector: '.js-modal' })
-    event.enterTarget({ selector: '.js-hover-trigger' })
-    event.tabMenu()
-    event.close({ selector: '.js-close' })
-    event.toTop({ selector: '.js-to-top' })
-    event.scrollAnimation()
-    // event.customCursor()
-    input.file()
-    input.textarea()
-    input.number()
-
-    // ! click 이벤트 외부에 넣으니까 파폭에서만 오류. event undefined
-    // TODO: 도큐먼트가 아니라 event.target.parent 가 아닌 것을 클릭했을 때 다당야 하나
-    // const findClassRecursive = (element, className, depth) => {
-    // // parentNode.classList.contains('js-modal')
-    // 	console.log('depth: ' + depth, element);
-    // 	if (element.classList.contains(className)) return element;
-    // 	else return findClassRecursive(element.parentNode, className, depth + 1);
-    // };
-
-    // var getClosest = function(elem, selector) {
-    // 	for (; elem && elem !== document; elem = elem.parentNode) {
-    // 		if (elem.matches(selector)) return elem;
-    // 	}
-    // 	return null;
-    // };
-
-    // console.log(document.scrollHeight, document.body.scrollHeight);
-
-    const scrollProgress = () => {
-      const progressBar = document.querySelector<HTMLElement>('.post-head-progress')
-      if (!progressBar) return
-
-      const scrollPercent = `${(window.pageYOffset / (document.body.scrollHeight - window.innerHeight)) * 100}%`
-      progressBar.style.width = scrollPercent
-    }
-
-    window.addEventListener('scroll', () => {
-      event.stickyElement({ targetElement: '.post-head', addClass: 'is-sticky' })
+  // 임시
+  const list = document.querySelector('.js-display-list')
+  const grid = document.querySelector('.js-display-grid')
+  const works = document.querySelector('.profile-body')
+  if (list && grid && works) {
+    list.addEventListener('click', event => {
+      list.classList.add('is-selected')
+      grid.classList.remove('is-selected')
+      works.classList.add('list')
     })
-    window.addEventListener('scroll', scrollProgress, true)
-    // var i = 0;
-    // var images = ['cover1.jpg','cover2.jpg'];
-    // var imageElement = document.querySelector('.cover_image');
-    // // image.css('background-image', 'url(/img/cover1.jpg)');
-    // setInterval(function(){
-    // 	imageElement.fadeOut(1000, () => {
-    // 		imageElement.css('background-image', `url(${images[i++]})`);
-    // 		imageElement.fadeIn(1000);
-    // 	});
-    // 	if(i === images.length) i = 0;
-    // }, 5000);
+    grid.addEventListener('click', event => {
+      list.classList.remove('is-selected')
+      grid.classList.add('is-selected')
+      works.classList.remove('list')
+    })
+  }
+
+  const focusComment = () => {
+    const commentWrite = document.querySelector('.js-comment-write')
+    const commentTextField = document.querySelectorAll('.js-comment-textfield')
+    if (commentWrite || commentTextField) {
+      commentTextField.forEach(element =>
+        element.addEventListener('focus', () => {
+          commentWrite && commentWrite.classList.add('is-focused')
+        }),
+      )
+    }
+  }
+  focusComment()
+  setGraph()
+  countDownClock(20, 'days')
+  carousel()
+
+  // ! click 이벤트 외부에 넣으니까 파폭에서만 오류. event undefined
+  // TODO: 도큐먼트가 아니라 event.target.parent 가 아닌 것을 클릭했을 때 다당야 하나
+  // const findClassRecursive = (element, className, depth) => {
+  // // parentNode.classList.contains('js-modal')
+  // 	console.log('depth: ' + depth, element);
+  // 	if (element.classList.contains(className)) return element;
+  // 	else return findClassRecursive(element.parentNode, className, depth + 1);
+  // };
+
+  // var getClosest = function(elem, selector) {
+  // 	for (; elem && elem !== document; elem = elem.parentNode) {
+  // 		if (elem.matches(selector)) return elem;
+  // 	}
+  // 	return null;
+  // };
+
+  // console.log(document.scrollHeight, document.body.scrollHeight);
+
+  const scrollProgress = () => {
+    const progressBar = document.querySelector<HTMLElement>('.post-head-progress')
+    if (!progressBar) return
+
+    const scrollPercent = `${(window.pageYOffset / (document.body.scrollHeight - window.innerHeight)) * 100}%`
+    progressBar.style.width = scrollPercent
+  }
+
+  window.addEventListener('scroll', () => {
+    event.stickyElement({ targetElement: '.post-head', addClass: 'is-sticky' })
   })
+  window.addEventListener('scroll', scrollProgress, true)
+  // var i = 0;
+  // var images = ['cover1.jpg','cover2.jpg'];
+  // var imageElement = document.querySelector('.cover_image');
+  // // image.css('background-image', 'url(/img/cover1.jpg)');
+  // setInterval(function(){
+  // 	imageElement.fadeOut(1000, () => {
+  // 		imageElement.css('background-image', `url(${images[i++]})`);
+  // 		imageElement.fadeIn(1000);
+  // 	});
+  // 	if(i === images.length) i = 0;
+  // }, 5000);
+
+
   // const sayHello = new Promise((resolve, reject) => {
   // 	reject('Unable to say hi.');
 
@@ -327,3 +329,31 @@ document.addEventListener('submit', event => event.preventDefault())
 
 // 	return 'The value you entered for this field is invalid.';
 // };
+
+
+
+    // const uiData = [
+    //   { label: '상품 상세페이지', description :'', date :'2020.01-01', href: '#product', tags: ['기획', '디자인'] },
+    //   { label: '상품 카트', description :'', date :'2020-01-01', href: '#cart', tags: ['기획', '디자인'] },
+    //   { label: '로그인', description :'', date :'2020-01-01', href: '#login', tags: ['기획', '디자인'] },
+    //   { label: '비밀번호 찾기', description :'', date :'2020-01-01', href: '#forgot', tags: ['기획', '디자인'] }
+    // ]
+    // const ccc: any = document.querySelector<HTMLElement>('.js-ui');
+    // if(ccc) {
+    //   const temp = uiData.map(item => {
+    //     console.log(item);
+    //     const ttt = item.tags.map(i => `<span class="tag">${i}</span>`).join('')
+    //     const uiTemplate = `<a class="card" href="${item.href}">
+    //         <figure class="card-thumbnail" style="font-family:'DunkelSans';display:flex;align-items:center;justify-content:center;">${item.label}</figure>
+    //         <h3 class="card-title">${item.label}</h3>
+    //         <time class="card-date">${item.date}<time>
+    //         <div class="card-tags" role="group">
+    //           ${ttt}
+    //         </div>
+    //         <button class="card-more icon-button" type="button"><i class="icon-more"></i></button>
+    //       </a>`
+    //     return uiTemplate;
+    //   }).join('')
+    //   console.log(temp);
+    //   ccc.innerHTML = temp;
+    // }

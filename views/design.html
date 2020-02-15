@@ -119,17 +119,17 @@
       <h1 class="design-article-title">Avatars</h1>
       <p class="design-article-description">사진이 들어간 아바타를 사용할 때와 아이콘을 사용할 때 지정된 4가지의 사이즈만 사용하세요.</p>
       <div role="group">
-        <a href="" class="avatar is-large --photo">
+        <a href="" class="avatar is-large">
           <img src="/public/images/caleb-woods-182648-unsplash.jpg" alt="">
         </a>
-        <a href="" class="avatar is-medium --photo">
+        <a href="" class="avatar is-medium">
           <img src="/public/images/caleb-woods-182648-unsplash.jpg" alt="">
           <!-- <span class="avatar-badge"></span> -->
         </a>
-        <a href="" class="avatar --photo">
+        <a href="" class="avatar">
           <img src="/public/images/caleb-woods-182648-unsplash.jpg" alt="">
         </a>
-        <a href="" class="avatar is-small --photo">
+        <a href="" class="avatar is-small">
           <img src="/public/images/caleb-woods-182648-unsplash.jpg" alt="">
         </a>
       </div>
@@ -457,10 +457,17 @@
         <!-- <button class="textfield-button primary-button">ddd</button> -->
         <small class="textfield-helper">You can @mention other users and organizations to link to them.</small>
       </div>
-      <div class="textfield" style="margin:2rem 0;">
-        <label class="textfield-label" for="date-start"><i class="">시작일</i></label>
-        <label class="textfield-icon is-left is-right" for="date-start"><i class="material-icons">today</i></label>
-        <input class="textfield-input" type="date" id="date-start" placeholder="날짜를 설정해주세요.">
+      <div role="group">
+        <div class="textfield" style="flex-grow: 1;">
+          <label class="textfield-label" for="date-start"><i class="">체크인</i></label>
+          <label class="textfield-icon is-left is-right" for="date-start"><i class="material-icons">today</i></label>
+          <input class="textfield-input" type="date" id="date-start" placeholder="날짜를 설정해주세요.">
+        </div>
+        <div class="textfield" style="flex-grow: 1;">
+          <label class="textfield-label" for="date-start"><i class="">체크아웃</i></label>
+          <label class="textfield-icon is-left is-right" for="date-start"><i class="material-icons">today</i></label>
+          <input class="textfield-input" type="date" id="date-start" placeholder="날짜를 설정해주세요.">
+        </div>
       </div>
       <div class="textfield" style="margin:2rem 0;">
         <label class="textfield-label" for="search1">셀렉트박스 레이블</label>
