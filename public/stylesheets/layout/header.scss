@@ -6,12 +6,12 @@
 .header-title {margin-top:-3px;font-size:1.25rem;}
 .header-description {}
 
-.--white .header-title {color:$gray0;}
-.--white .icon-arrow:before {border-color:$gray0;}
-.--white .icon-arrow:after {background-color:$gray0;}
-.--white.is-fixed .header-title {color:$gray80;}
-.--white.is-fixed .icon-arrow:before {border-color:$gray80;}
-.--white.is-fixed .icon-arrow:after {background-color:$gray80;}
+.is-white .header-title {color:$gray0;}
+.is-white .icon-arrow:before {border-color:$gray0;}
+.is-white .icon-arrow:after {background-color:$gray0;}
+.is-white.is-fixed .header-title {color:$gray80;}
+.is-white.is-fixed .icon-arrow:before {border-color:$gray80;}
+.is-white.is-fixed .icon-arrow:after {background-color:$gray80;}
 
 @media (max-width:$breakpoint-medium) {
 	.header.is-fixed {padding:0 5%;}

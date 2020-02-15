@@ -1,16 +1,16 @@
 .color {overflow:hidden;}
 .color-item {position:relative;}
-.color-item.--gray100 div {background:$gray10;}
-.color-item.--gray200 div {background:$gray20;}
-.color-item.--gray400 div {background:$gray40;}
-.color-item.--gray600 div {background:$gray60;}
-.color-item.--gray800 div {background:$gray80;}
-.color-item.--positive div {background:$color-positive;}
-.color-item.--negative100 div {background:lavenderblush;}
-.color-item.--negative200 div {background:$color-negative;}
-.color-item.--primary100 div {background:#f2f8fc;}
-.color-item.--primary200 div {background:$color-primary;}
-.color-item.--gradient div {background-image:linear-gradient(106deg,#ff3a4e,#7e4cff);}
+.color-item.is-gray100 div {background:$gray10;}
+.color-item.is-gray200 div {background:$gray20;}
+.color-item.is-gray400 div {background:$gray40;}
+.color-item.is-gray600 div {background:$gray60;}
+.color-item.is-gray800 div {background:$gray80;}
+.color-item.is-positive div {background:$color-positive;}
+.color-item.is-negative100 div {background:lavenderblush;}
+.color-item.is-negative200 div {background:$color-negative;}
+.color-item.is-primary100 div {background:#f2f8fc;}
+.color-item.is-primary200 div {background:$color-primary;}
+.color-item.is-gradient div {background-image:linear-gradient(106deg,#ff3a4e,#7e4cff);}
 .color-item div {width:48px;height:48px;border-radius:4px;background:$color-primary;position:relative;}
 .color-item figcaption {display:none;background:$gray0;border-radius:4px;letter-spacing:1px;overflow:hidden;padding:0 .5rem;font-size:10px;position:absolute;left:.5rem;bottom:.5rem;}
 .color-item figcaption span {display:block;transition:all .4s;}

@@ -11,7 +11,7 @@ iframe,img,video {width:100%;} img {vertical-align:middle;}
 h1,h2,h3,h4,h5,h6 {line-height:1.4;font-weight:normal;color:$gray80;}
 strong,b,th,legend {font-weight:normal;color:$gray80;}
 cite,i,address,em,dfn {font-style:normal;} em {color:$color-primary;} small {font-size:12px;} time {} del {color:$gray40;} abbr {text-decoration:none;}
-a {text-decoration:none $color-primary;text-decoration-skip-ink:auto;color:$color-primary;} a:link,a:visited {} a:hover,a:focus {} a:active {}
+a {text-decoration:none;text-decoration-skip-ink:auto;color:$color-primary;} a:link,a:visited {} a:hover,a:focus {} a:active {}
 mark {padding:0 .25rem;border-radius:2px;background:rgba(0,0,0,1);color:$gray0;}
 u {text-decoration:none;position:relative;z-index:1;}
 u:before {content:'';width:104%;margin-left:-2%;height:4px;background-image:linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);background-repeat: no-repeat;}
@@ -118,10 +118,9 @@ dd {color:$gray40;}
 
 //backface-visibility:hidden
 
-.--inverted {}
-.--loading {}
-.--fullwidth {display:block;width:100%;}
-.--multiline {flex-wrap:wrap;}
-
+.is-fullwidth {display:block;width:100%;}
+.is-loading {}
+.is-inverted {}
+.is-multiline {flex-wrap:wrap;}
 
 [date-ui=caption] {margin:.5rem 0;font-size:12px;}

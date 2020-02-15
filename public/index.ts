@@ -185,17 +185,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // console.log(document.scrollHeight, document.body.scrollHeight);
 
-    const pageHeadElement = document.querySelector<HTMLElement>('.header')
-    if (!pageHeadElement) return
-
-    const pages = ['#design', '#contact']
-    const isWhite = pages.includes(window.location.hash)
-    if (isWhite) {
-      pageHeadElement.classList.add('--white')
-    } else {
-      pageHeadElement.classList.remove('--white')
-    }
-
     const scrollProgress = () => {
       const progressBar = document.querySelector<HTMLElement>('.post-head-progress')
       if (!progressBar) return
