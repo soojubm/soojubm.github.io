@@ -16,7 +16,7 @@ export const loader = () => {
 
 }
 
-export const checkBrowser = () => {
+export const detectBrowser = () => {
   const BrowserElement = document.querySelector<HTMLElement>('.js-browser')
   if (!BrowserElement) return
 

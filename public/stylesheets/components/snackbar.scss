@@ -1,8 +1,8 @@
 .message {padding:11px 1.5rem 12px;box-sizing:border-box;background:#f2f8fc;/*font-family:'Courier New', Courier, monospace;*/position:relative;}
 .message-icon {display:inline-block;margin:0 8px 0 0;vertical-align: middle;font-size:1.5rem;}
 .message-close {position:absolute;right:8px;top:50%;transform:translateY(-50%);}
-.snackbar.--warning {background:lavenderblush;}
-.snackbar.--warning em {color:crimson;}
-.snackbar.--warning a {color:inherit;}
+.snackbar.is-warning {background:lavenderblush;}
+.snackbar.is-warning em {color:crimson;}
+.snackbar.is-warning a {color:inherit;}
 // .snackbar:before {content:'';width:9px;height:9px;border:1px solid red;border-left:none;border-bottom:none;background:$gray0;position:absolute;left:20px;bottom:-6px;transform:rotate(135deg);}
 // .snackbar:after {content:'';width:12px;height:1px;position:absolute;left:19px;bottom:-1px;background:$gray0;}

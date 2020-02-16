@@ -21,20 +21,19 @@ select:focus {}
 
 [aria-pressed=false] {}
 
-.button.--blocked {display:block;width:100%;}
-.button.--small {width:auto !important;min-width:72px !important;padding:4px 1rem 5px !important;font-size:12px !important;}
+.button.is-small {width:auto !important;min-width:72px !important;padding:4px 1rem 5px !important;font-size:12px !important;}
 
-.button.--addable {min-width:auto !important;height:32px;padding-right:56px !important;text-align:left;}
-.button.--addable.is-added {background:$color-primary;border-color:$color-primary;color:$gray0;}
+.button.is-addable {min-width:auto !important;height:32px;padding-right:56px !important;text-align:left;}
+.button.is-addable.is-added {background:$color-primary;border-color:$color-primary;color:$gray0;}
 
 .button {display:inline-block;min-width:104px;background:$color-primary;padding:$padding200;color:$gray0;border-radius:$radius400;cursor:pointer;position:relative;}
 .button-group {display:flex;width:100%;overflow:hidden;}// justify-content:space-between;}
-.button-group.--left {padding:.5rem 0;}
-.button-group.--left button {margin:0 1rem;}
-.button-group.--center {justify-content:center;padding:.5rem 0;}
-.button-group.--center button {margin:0 1rem;}
-.button-group.--right {justify-content:flex-end;padding:.5rem 0;}
-.button-group.--right button {margin:0 1rem;}
+.button-group.is-left {padding:.5rem 0;}
+.button-group.is-left button {margin:0 1rem;}
+.button-group.is-center {justify-content:center;padding:.5rem 0;}
+.button-group.is-center button {margin:0 1rem;}
+.button-group.is-right {justify-content:flex-end;padding:.5rem 0;}
+.button-group.is-right button {margin:0 1rem;}
 .button-group button {margin:0 !important;border-radius:0;}// flex:1 1 auto;}
 .button-group button.is-active {background-color:$color-primary;color:$gray0;}
 .button-group button:first-child {border-top-left-radius:$radius400;border-bottom-left-radius:$radius400;}
@@ -184,17 +183,17 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 .textfield-suffix {display:inline-block;padding:0 1.5rem;line-height:46px;cursor:default;color:$gray40;position:absolute;right:0;top:28px;}
 .textfield-reset {display:none;}
 .selectbox-indicator {position:absolute;right:16px;bottom:22px;}
-.textfield.--small {padding:0 !important;font-size:12px !important;}
-.textfield.--small .textfield-label {margin-bottom:0;}
-.textfield.--small .textfield-input {padding:5px 1.25rem 6px;}
-.textfield.--inline.textfield {padding-left:5rem !important;}
-.textfield.--inline .textfield-label {line-height:32px;position:absolute;left:0;top:0;}
-.textfield.--inline .textfield-input {}
-.textfield.--floating {}
-.textfield.--floating input {padding:0.75rem 0rem;border-top:none;border-left:none;border-right:none;}
-.textfield.--floating input {padding:0.75rem 0rem;border-top:none;border-left:none;border-right:none;}
-.textfield.--floating label {height:20px;position:absolute;left:0;top:6px;transition:all 0.2s ease;cursor:text;}
-.textfield.--floating input:focus + label {color:$gray40;font-size:11px;top:-12px;}
+.textfield.is-small {padding:0 !important;font-size:12px !important;}
+.textfield.is-small .textfield-label {margin-bottom:0;}
+.textfield.is-small .textfield-input {padding:5px 1.25rem 6px;}
+.textfield.is-inline.textfield {padding-left:5rem !important;}
+.textfield.is-inline .textfield-label {line-height:32px;position:absolute;left:0;top:0;}
+.textfield.is-inline .textfield-input {}
+.textfield.is-floating {}
+.textfield.is-floating input {padding:0.75rem 0rem;border-top:none;border-left:none;border-right:none;}
+.textfield.is-floating input {padding:0.75rem 0rem;border-top:none;border-left:none;border-right:none;}
+.textfield.is-floating label {height:20px;position:absolute;left:0;top:6px;transition:all 0.2s ease;cursor:text;}
+.textfield.is-floating input:focus + label {color:$gray40;font-size:11px;top:-12px;}
 
 .is-disabled {}
 .is-actived {}
