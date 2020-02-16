@@ -69,7 +69,7 @@
 
 
 @media (max-width:$breakpoint-large) {
-  .design {padding:0;}
+  .design {margin-top:-64px;padding:0;}
   .design-head {height:50vh;position:relative;left:0;right:0;top:0;bottom:50%;}
   .design-body {width:60%;max-width:100%;margin-left:0;}
 }

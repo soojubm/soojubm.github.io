@@ -111,14 +111,6 @@
       color: #999;
     }
 
-    .home-hero-image {
-      height: 800px;
-      transition: all 0.4s;
-    }
-    .home-hero-image.is-scrolled {
-      margin: -5%;
-    }
-
     .board-head-title:nth-of-type(1) {
       width: 20px;
     }
@@ -183,15 +175,6 @@
       to { transform: translate(-100%); }
     }
   </style>
-  <!-- <section class="home-hero">
-    <h1 class="home-hero-title">
-      <i class="home-hero-eyebrow">🐣</i>
-      <span class="t1">부끄러우니까, </span>
-      <span class="t2">보지마요.</span>
-    </h1>
-    <p class="home-hero-description"></p>
-    <div class="home-hero-image js-scroll-animation"><img src="/public/images/caleb-woods-182648-unsplash.jpg" alt=""></div>
-  </section> -->
 
   <!-- <button name="usa">미국</button>
     <article class="board">
@@ -278,20 +261,51 @@
   <p style="font-family: 'ZCOOL QingKe HuangYou', cursive;color:#000;">匹伊更中載織際墜芸聞投同通護掲社競必著。辞投見研逸報団座相検自渡理。盟三難載年会組宣施読郁郎対成独職軽。證平良入頻一皇覇社六請寄質致子接。拉財辺角間接景千聞罪口直民宮入負歩立教村。議視置暮規重着経前済式碁際万遺差係始貢。極増現問橋示毎外尾書立第。買達申米級周権詳査業季挙回辺朝経。属石保悪錯題軽工団象長意巨間確権更芸。</p>
 </footer>
 
-<section role="group" style="justify-content: center;margin:0 10% 4rem;">
-  <div style="width:25%;margin:0 2.5%;">
-    <span style="font-size: 40px;">💃</span>
-    <div style="font-size:20px;font-weight:700;color:#333;">무료로 숙소 등록하기</div>
-    <div style="margin-top: .5rem;font-size:16px;">남는 방 하나부터 별장까지, 다양한 형태의 공간을 무료로 등록하고 공유하세요.</div>
-  </div>
-  <div style="width:25%;margin:0 2.5%;">
-    <span style="font-size: 40px;">🧞‍</span>
-    <div style="font-size:20px;font-weight:700;color:#333;">호스팅 세부사항 설정하기</div>
-    <div style="margin-top: .5rem;font-size:16px;">호스팅할 수 있는 날짜, 숙소 요금, 게스트 필수요건을 선택하세요. 에어비앤비가 호스팅 전반에 걸쳐 도움을 드립니다.</div>
-  </div>
-  <div style="width:25%;margin:0 2.5%;">
-    <span style="font-size: 40px;">🧚‍</span>
-    <div style="font-size:20px;font-weight:700;color:#333;">첫 게스트 맞이하기</div>
-    <div style="margin-top: .5rem;font-size:16px;">숙소가 게시되면 설정하신 예약 조건에 부합하는 게스트가 연락을 할 거예요. 게스트를 맞이하기 전에 궁금한 점이 있으면 언제든 메시지로 물어볼 수 있습니다.</div>
+<style>
+.features {padding:2rem 0;margin:0 10% 4rem;}
+/* .features-title {margin:0 0 2rem 0;font-size:2rem;font-weight:700;} */
+.features-item {width:25%;margin:0 2.5%;}
+.features-item-avatar {font-size:40px;}
+.features-item-title {font-size:1.25rem;font-weight:700;color:#333;}
+.features-item-description {margin-top: .5rem;}
+.features-item-link {display:block;margin-top: .5rem;}
+</style>
+<section class="features">
+  <!-- <h1 class="features-title">숙소 호스팅</h1> -->
+  <div role="group" style="justify-content: center;">
+    <div class="features-item">
+      <span class="features-item-avatar">💃</span>
+      <div class="features-item-title">무료로 숙소 등록하기</div>
+      <div class="features-item-description">남는 방 하나부터 별장까지, 다양한 형태의 공간을 무료로 등록하고 공유하세요.</div>
+      <a class="features-item-link" href="">숙소 등록</a>
+    </div>
+    <div class="features-item">
+      <span class="features-item-avatar">🧞‍</span>
+      <div class="features-item-title">호스팅 세부사항 설정하기</div>
+      <div class="features-item-description">호스팅할 수 있는 날짜, 숙소 요금, 게스트 필수요건을 선택하세요. 에어비앤비가 호스팅 전반에 걸쳐 도움을 드립니다.</div>
+    </div>
+    <div class="features-item">
+      <span class="features-item-avatar">🧚‍</span>
+      <div class="features-item-title">첫 게스트 맞이하기</div>
+      <div class="features-item-description">숙소가 게시되면 설정하신 예약 조건에 부합하는 게스트가 연락을 할 거예요. 게스트를 맞이하기 전에 궁금한 점이 있으면 언제든 메시지로 물어볼 수 있습니다.</div>
+    </div>
   </div>
 </section>
+
+
+<!-- <div class="pricing-item">
+  <i style="font-size:40px;">🧞‍</i>
+  <h1 class="pricing-item-title">Standard</h1>
+  <p class="pricing-item-description">부끄러우니까 구매하지마요.</p>
+  <span class="pricing-item-price">
+    <span style="font-size:40px;font-family:'Ma Shan Zheng', cursive">6,800</span>
+    <small class="pricing-item-price-unit">원</small>
+    <small class="pricing-item-price-">(1인/월)</small>
+  </span>
+  <ul>
+    <li><i class="icon-check"></i>아무거나 하나 써 봅니다.</li>
+    <li><i class="icon-check"></i>아무거나 하나 써 봅니다.</li>
+    <li><i class="icon-check"></i>아무거나 하나 써 봅니다.</li>
+  </ul>
+  <button class="pricing-item-button secondary-button" type="button">업그레이드</button>
+</div> -->

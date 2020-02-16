@@ -23,10 +23,6 @@ html {min-width:320px;height:100%;overflow-x:hidden;font:14px/1.8 'Asap', 'Arita
 // body {font-size:.875rem;}
 // text-rendering: optimizeLegibility;
 
-.tags {display:flex;margin:-.25rem;}
-.tag {margin:.25rem;padding:1px .5rem 2px;font-family:'consolas';font-size:.8rem;color:$gray60;background-color:$gray10;border-radius:4px;font-family:inherit;vertical-align:middle;}
-.more {margin-left:.25rem;color:#000;text-decoration:underline;}
-
 table {width:100%;border-collapse:collapse;border-spacing:0;border-left-style:hidden;border-right-style:hidden;}
 table caption {padding:.5rem 0;font-size:12px;text-align:left;}
 table thead tr {}
@@ -64,6 +60,10 @@ dl {display:flex;justify-content:space-between;align-items:center;}
 dt {color:$gray80;}
 dd {color:$gray40;}
 
+.tags {display:flex;margin:-.25rem;}
+.tag {margin:.25rem;padding:1px .5rem 2px;font-family:'consolas';font-size:.8rem;color:$gray60;background-color:$gray10;border-radius:4px;font-family:inherit;vertical-align:middle;}
+.more {margin-left:.25rem;color:#000;text-decoration:underline;}
+
 .is-fixed-top {position:fixed;top:0;}
 .has-navbar-fixed-top {}
 
@@ -95,12 +95,10 @@ dd {color:$gray40;}
 // [aria-live="polite | assertive | off"] {} 
 
 // 고정폭 숫자 폰트 아카이빙
-// @font-face {font-family: 'AritaBuri';src: url(/public/webfonts/AritaBuriL.otf); }
 // @import url('https://fonts.googleapis.com/css?family=Nunito+Sans');
 // @import url('https://fonts.googleapis.com/css?family=Asap');
 // todo url 등록 시 www 및 https:// 기본 입력
-// article 안에 정보는 adress
-
+// article 안에 정보는 address
 
 @media (max-width:$breakpoint-small) {
   html {font-size:12px;}
