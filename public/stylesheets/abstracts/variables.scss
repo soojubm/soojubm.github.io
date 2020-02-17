@@ -42,6 +42,9 @@ $breakpoints: (
   ),
 );
 
+$width-large: 1800px;
+$width-small: 800px;
+
 $breakpoint-large: 1440px;
 $breakpoint-medium: 1280px;
 $breakpoint-small: 1080px;
@@ -91,12 +94,6 @@ $caption: 0.75rem;
 $quote: 0;
 $placeholder: 0;
 
-@mixin alignMiddleContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 $width-tiny: 200px;
 $width-small: 480px;
 $width-medium: 800px;
@@ -125,6 +122,7 @@ $zindex-tooltip: 1070;
   --background-color: $gray0;
   --text-color: #222;
 }
+
 aside {
   --font-size: 1rem;
   --background-color: #222;
