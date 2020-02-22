@@ -8,9 +8,9 @@
 .product-image-navigation button.is-current {background:$gray800;}
 .product-info {width:25%;position:absolute;left:5%;top:0;}
 .product-info-name {font-size:2rem;width:28px;line-height:1.2;text-align:center;position:absolute;left:-64px;top:0px;}
-.product-info-price {margin:-.25rem 0 0 0;font-size:1.25rem;}
+.product-info-price {margin:-.25rem 0 0 0;font-size:$subhead;}
 .product-info-price del {color:$gray400;}
-.product-info-price .per {margin:0 .5rem 0 0;font-size:1.25rem;}
+.product-info-price .per {margin:0 .5rem 0 0;font-size:$subhead;}
 .product-info-price span {color:$gray800;font-size:1.5rem;}
 .product-info-description {margin:.5rem 0 1.25rem 0;padding-bottom:1.5rem;border-bottom:1px solid $gray100;line-height:1.6;}
 .product-order {width:25%;margin:0 0 0 75%;}
@@ -89,7 +89,7 @@
 
 .review-item {width:320px;}
 .review-item-thumbnail {height:200px;margin:0 0 1rem 0;background:$gray800;}
-.review-item-title {margin:0 0 .5rem 0;font-size:1.25rem;}
+.review-item-title {margin:0 0 .5rem 0;font-size:$subhead;}
 .review-item-comment {line-height:1.6;}
 .review-item-byline {font-size:12px;}
 .review-item-byline:after {content:'';display:inline-block;width:1px;height:7px;margin:0 6px 0 10px;vertical-align:middle;background:#ddd;}
@@ -100,11 +100,11 @@
 
 .product-review {margin:4rem 10% 8rem;position:relative;}
 .product-review-eyebrow {}
-.product-review-title {font-size: 1.25rem;line-height: 1.8;}
+.product-review-title {font-size:$subhead;}
 
 .product-review-list {}
 .product-review-list .inner {overflow:auto;white-space:nowrap;font-size:0;}
-.product-review-list .inner .quote {display:inline-block;width:320px;font-size:1rem;}
+.product-review-list .inner .quote {display:inline-block;width:320px;font-size:$body;}
 .product-review-list .inner .quote-body {white-space:wrap;}
 
 .product-review-arrows {display:flex;position:absolute;right:0;top:0;}

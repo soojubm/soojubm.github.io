@@ -1,5 +1,4 @@
 // mediaquery, desktop first
-
 $gray0: #fff; // white for dark theme
 $gray100: #f1f3f4; // bg
 $gray200: #dadce0; // divider border
@@ -7,43 +6,16 @@ $gray400: #848c94; // caption
 $gray600: #666d75; // body
 $gray800: #343a40; // bg || heading
 
-$red800: crimson;
-$green800: green;
-
 $color-primary: #0070c9;
 $color-positive: #00783e; // sucess
 $color-negative: #da1e28; // danger, warning
 $color-google: #fff;
-$color-facebook: red;
-$color-twitter: red;
-$color-naver: red;
-$color-kakao: red;
-
-$container-max-widths: (
-  sm: 540px,
-  md: 720px,
-  lg: 960px,
-  xl: 1140px,
-);
+$color-facebook: hsl(214, 89%, 52%);
+$color-twitter: rgb(29, 161, 242);
+$color-naver: #03cf5d;
+$color-kakao: #ffdf00;
 
 @custom-media --breakpoint-large (max-width: 1440px);
-@custom-media --breakpoint-medium (max-width: 1280px);
-@custom-media --breakpoint-small (max-width: 1080px);
-
-$breakpoints: (
-  'medium': (
-    max-width: 800px,
-  ),
-  'large': (
-    max-width: 1000px,
-  ),
-  'huge': (
-    max-width: 1440px,
-  ),
-);
-
-$width-large: 1800px;
-$width-small: 800px;
 
 $breakpoint-large: 1440px;
 $breakpoint-medium: 1280px;
@@ -64,7 +36,6 @@ $padding600: 4rem 0;
 
 //box-shadow: inset 0 2px 4px 0 hsla(0, 0%, 0%, 0.08);
 $shadow100: 0px 1px 1px rgba(136, 26, 26, 0.075); // unused
-$shadow200: 1px 1px 1px rgba(0, 0, 0, 0.1); // unused
 $shadow400: 1px 1px 4px rgba(0, 0, 0, 0.2);
 $shadow450: 2px 4px 8px rgba(0, 0, 0, 0.2); // hover
 
@@ -81,41 +52,34 @@ $avatar600: 80px;
 
 // ^ html에서 선언 or 제목용 / 본문용 디자인이 다를 때만 필요.
 $fontstack: ('Helvetica', sans-serif);
-$headline-size: 2rem;
-$heading-size: 1.5rem;
-$subhead-size: 1.25rem;
-$body-size: 1rem;
+$headline: 3rem;
+$title: 2rem;
+$subhead: 1.25rem;
+$body: 1rem;
 $caption: 0.75rem;
-
-@mixin heading1() {
-  font-size: 2rem;
-}
 
 $quote: 0;
 $placeholder: 0;
 
-$width-tiny: 200px;
-$width-small: 480px;
 $width-medium: 800px;
 $width-large: 1080px;
 $width-huge: 1440px;
 
-$line-height200: 1.6;
-$line-height400: 1.6;
-$line-height600: 1.8;
+$line-height400: 1.4;
+$line-height800: 1.8;
 
 $bezier-base: cubic-bezier(0.455, 0.03, 0.515, 0.955);
 $transition-base: all 0.4s $bezier-base;
 $transition-fade: opacity 0.15s linear;
 $transition-collapse: height 0.35s ease;
 
-$zindex-dropdown: 1000;
-$zindex-sticky: 1020;
-$zindex-fixed: 1030;
-$zindex-modal-backdrop: 1040;
-$zindex-modal: 1050;
-$zindex-popover: 1060;
-$zindex-tooltip: 1070;
+$zindex-dropdown: 1;
+$zindex-sticky: 4;
+$zindex-fixed: 4;
+$zindex-modal-backdrop: 5;
+$zindex-modal: 6;
+$zindex-popover: 6;
+$zindex-tooltip: 6;
 
 
 .is-disabled {cursor:not-allowed;}

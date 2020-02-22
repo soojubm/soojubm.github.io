@@ -1,6 +1,6 @@
 
 .pricing-item {width:400px;min-height:300px;margin:0 auto;background:$gray0;padding:2rem 2.5rem 10rem;box-sizing:border-box;border-radius:$radius400;position:relative;}
-.pricing-item-title {font-size:1.25rem;font-weight:700;}
+.pricing-item-title {font-size:$subhead;font-weight:700;}
 .pricing-item-price {display:block;color:$gray800;font-size:1.75rem;font-weight:700;}
 .pricing-item-price-unit {margin-left:-.5rem;font-size:14px;}
 .pricing-item-price- {font-size:14px;font-weight:400;color:$gray400;}

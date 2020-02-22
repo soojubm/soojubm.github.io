@@ -14,7 +14,7 @@
 .cake-score {text-align:center;position:absolute;right:420px;top:56px;}
 .cake-score-label {display:block;margin:.25rem 0 0 0;}
 .cake-score-value {display:inline-block;width:48px;height:48px;background:$gray0;line-height:48px;border-radius:4px;font-size:1.5rem;}
-.cake-poster2 {width:400px;height:600px;overflow:hidden;box-shadow:$shadow200;position: absolute;right:0;top:4rem;z-index:1;}
+.cake-poster2 {width:400px;height:600px;overflow:hidden;box-shadow:$shadow400;position: absolute;right:0;top:4rem;z-index:1;}
 .cake-poster2 img {animation: fadeup 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955) forwards .2s;}
 
 // .cake-poster {height:240px;margin:2rem -3rem 0;background:$gray0;position:absolute;left:0;right:0;}
@@ -24,7 +24,7 @@
 
 .cake-info {width:1080px;margin:0 auto;padding:2rem 0 2.25rem;border-top:1px solid $gray200;border-bottom:1px solid $gray200;position:relative;}
 .cake-info + .cake-info {border-top:none;}
-.cake-info h2 {padding:2rem 0;font-size:1.25rem;position:absolute;left:0;top:0;}
+.cake-info h2 {padding:2rem 0;font-size:$subhead;position:absolute;left:0;top:0;}
 .cake-info p {padding-left:320px;}
 
 @media (max-width:$breakpoint-medium) {

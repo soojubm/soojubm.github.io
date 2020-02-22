@@ -170,7 +170,7 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 .textfield-input {display:block;width:100%;padding:$padding200;padding-right:40px;background:$gray100;border:1px solid $gray100;border-radius:4px;box-sizing:border-box;font:inherit;color:$gray800;-webkit-appearance:none;appearance:none;transition:all 0.2s;}
 .textfield-input:not(select):read-only {background:none;padding-left:0;padding-right:0;border:none;outline:none;}
 .textfield-input:not(select):read-only::placeholder {color:$gray800;}
-.textfield-input:focus {background:$gray0;border-color:$gray200;box-shadow:$shadow200;outline:0;}
+.textfield-input:focus {background:$gray0;border-color:$gray200;box-shadow:$shadow100;outline:0;}
 .textfield-input.-textarea {height:auto;}
 .textfield-input.-inline {display:inline;width:80px;padding:2px 12px;}
 .textfield-unit {width:40px;height:46px;padding:0 16px;line-height:50px;text-align:right;color:rgba(0, 0, 0, 0.4);position:absolute;right:0;bottom:0;}
@@ -226,7 +226,7 @@ input[type=file] + label:after {display:none;}
 .file-input {opacity:0;}
 .file-label {@extend .secondary-button;cursor:pointer;}
 .file-attachment {margin:2rem 0 0;}
-.file-attachment-title {margin:8px 0;font-size:1rem;text-decoration:underline;}
+.file-attachment-title {margin:8px 0;font-size:$body;text-decoration:underline;}
 .file-attachment-helper {margin:-4px 0 0;}
 .file-attachment-list:after {content:'';display:block;clear:both;}
 .file-attachment-item {display:block;width:100%;background:$gray100;overflow:hidden;position:relative;}

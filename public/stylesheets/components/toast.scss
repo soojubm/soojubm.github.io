@@ -1,6 +1,6 @@
 .toast {width:100%;max-width:400px;padding:$padding400;border-radius:4px;box-sizing:border-box;background:$gray0;border-radius:$radius400;box-shadow:$shadow400;position:fixed;left:24px;bottom:24px;z-index:8;}
-.toast-title {font-size:1.25rem;}
-.toast-description {margin:0.5rem 0 2rem 0;line-height:$line-height400;}
+.toast-title {font-size:$subhead;}
+.toast-description {margin:0.5rem 0 2rem 0;}
 .toast-check {/*position:absolute;right:24px;bottom:20px;*/}
 .toast-close {position:absolute;right:0;top:0;}
 @media (max-width:$breakpoint-small) {
