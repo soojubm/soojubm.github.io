@@ -1,15 +1,34 @@
 <!-- <link href="https://fonts.googleapis.com/css?family=Gothic+A1:300,400,700,900&d?isplay=swap&subset=korean" rel="stylesheet" /> -->
 
 
+<p>맛있다 🌯 맛있다 🌯</p>
+
 <style>
 @import url('https://fonts.googleapis.com/css?family=Chelsea+Market&display=swap');
 .sample {margin:0 10%;padding:4rem;font-family:"DunkelSans";font-size:6rem;background:#000;color:#fff;line-height:1;position:relative;}
+.ticket {height:240px;margin:8rem 20% 0;border:5px solid #000;position:relative;}
+.ticket:first-child:before {content:'';display:block;width:1140px;height:248px;background:gold;position:absolute;left:-2rem;top:-2rem;z-index:-1;}
+.ticket .svg {height:240px;border-left:5px solid #000;padding:40px;box-sizing:border-box;position:absolute;right:0;top:0;}
 </style>
+<img src="/public/icons/instagram.svg" alt="인스타그램" style="width:32px;">
+<img src="/public/icons/facebook.svg" alt="페이스북" style="width:32px;">
+<!-- <section class="ticket">
+  <div style="display:flex;padding:2rem 3rem;align-items:center;">
+  </div>
+  <div class="svg">
+    <svg role="presentation" style="width:160px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 34">
+      <path fill="none" stroke="#111" stroke-width="1" d="M18.35 1l-2.99 2.91-3.66-2.02-1.55 3.88-4.16-.36.17 4.16-3.96 1.36 1.86 3.74L1 17.52l3.22 2.66-1.64 3.84 4.03 1.13.07 4.17 4.14-.61 1.77 3.78 3.53-2.22L19.28 33l2.32-3.47 4 1.22.7-4.11 4.15-.51-1.03-4.04L33 19.94l-2.59-3.27 2.4-3.42-3.71-1.94.8-4.1-4.17-.26-.94-4.07-3.93 1.45L18.35 1z"></path>
+    </svg>
+  </div>
+</section>
+<section class="ticket" style="height:auto;padding:3rem 0;margin-top:-5px;">
+</section> -->
 
-<section class="hero" style="height:auto;margin:12rem 20%;padding:0;overflow:inherit;position:relative;">
+
+<section class="hero" style="height:auto;margin:12rem 20%;padding:0;overflow:inherit;position:rlative;">
   <div style="position:absolute;right:-24px;top:0;width:40px;height:40px;background:gold;border-radius:50%;"></div>
   <div style="position:absolute;right:480px;bottom:-8px;width:80px;height:80px;background:gold;border-radius:50%;"></div>
-  <div style="position:absolute;right:420px;top:24px;width:16px;height:16px;background:crimson;border-radius:50%;"></div>
+  <div style="position:absolute;right:420px;top:24px;width:16px;height:16px;background:#0057ff;border-radius:50%;"></div>
   <div class="hero-background" style="background:none;">
     <img src="/public/images/open-doodles-sitting-and-reading.svg" alt="" style="width:40%;margin-top:-8px;float:right;">
   </div>
@@ -54,7 +73,6 @@
   <!-- <figure style="height:90vh;margin-top:-120px;background: url(/public/images/caleb-woods-182648-unsplash.jpg) no-repeat 50%;background-size: cover;"></figure> -->
   <style>
     @import url('https://fonts.googleapis.com/css?family=Ma+Shan+Zheng&display=swap');
-    @import url('https://fonts.googleapis.com/css?family=ZCOOL+QingKe+HuangYou&display=swap');
     html {
       -webkit-font-smoothing:antialiased;
       font-family: sans-serif;
@@ -77,12 +95,12 @@
       width: 80%;
       height: 80px;
       margin: 8rem auto 0;
-      border: 3px solid #000;
+      border: 4px solid #000;
     }
     main {
       width: 80%;
-      margin: -3px auto 0;
-      border: 3px solid #000;
+      margin: -4px auto 0;
+      border: 4px solid #000;
       /* position: relative; */
       
     }
@@ -98,8 +116,8 @@
     footer {
       width: 80%;
       padding: 1.5rem 4rem;
-      margin: -3px auto 6rem;
-      border: 3px solid #000;
+      margin: -4px auto 6rem;
+      border: 4px solid #000;
     }
     footer p {
       width: 80%;
@@ -117,21 +135,25 @@
       overflow: hidden;
       margin-bottom: 10px;
       position: relative;
-      -webkit-text-stroke: 3px #000;
+      -webkit-text-stroke: 4px #000;
       color:#fff;
 
     }
     .marquee p {
-      margin: 0;
-      padding-left: 100%;
-      display: inline-block;
+      display: flex;
+      /* padding-left: 100%; */
       white-space: nowrap;
       animation-name: marquee;
       animation-timing-function: linear;
-      animation-duration: 12s;
       animation-iteration-count: infinite;
+      animation-duration: 9s;
+      /* animation-direction: alternate; */
+      will-change: auto;
       font-family: 'DunkelSans';
       font-size: 10rem;
+    }
+    .marquee p i {
+      margin-left: 16px;
     }
     .marquee p:hover {
       /* animation-play-state: paused; */
@@ -148,9 +170,8 @@
     }
 
     @keyframes marquee {
-      from { transform: translate(0%); }
-      99%,
-      to { transform: translate(-100%); }
+      from { transform: translateX(0%); }
+      to { transform: translateX(-100%); }
     }
   </style>
 
@@ -177,46 +198,40 @@
     /* .temp-button:hover {background:#fff;} */
     .temp-button:before {content:'';width:200px;height:56px;background:#ddd;position:absolute;left:6px;top:6px;z-index:-1;transition:all .2s ease;}
     .temp-button:hover:before {left:-6px;top:-6px;}
-    .temp-button:after {content:'';width:200px;height:56px;border:3px solid #000;box-sizing:border-box;position:absolute;left:0;top:0;z-index:1;transition:all .2s ease;}
+    .temp-button:after {content:'';width:200px;height:56px;border:4px solid #000;box-sizing:border-box;position:absolute;left:0;top:0;z-index:1;transition:all .2s ease;}
     .temp-button:hover:after {left:6px;top:6px;z-index:-1;}
-    .statistic {width:auto;margin:2rem;border:3px solid #000;text-align:center;}
-    .statistic-label {padding:.5rem 1rem;border-top:3px solid #000;font-size:16px;color:#000;font-weight:bold;}
+    .statistic {width:auto;margin:2rem;border:4px solid #000;text-align:center;}
+    .statistic-label {padding:.5rem 1rem;border-top:4px solid #000;font-size:16px;color:#000;font-weight:bold;}
     .statistic-value {display:block;padding:1rem;font-family:'DunkelSans';color:#000;font-size:2rem;}
   </style>
 </main>
 
 <footer>
-  <p style="font-family: 'ZCOOL QingKe HuangYou', cursive;color:#000;">匹伊更中載織際墜芸聞投同通護掲社競必著。辞投見研逸報団座相検自渡理。盟三難載年会組宣施読郁郎対成独職軽。證平良入頻一皇覇社六請寄質致子接。拉財辺角間接景千聞罪口直民宮入負歩立教村。議視置暮規重着経前済式碁際万遺差係始貢。極増現問橋示毎外尾書立第。買達申米級周権詳査業季挙回辺朝経。属石保悪錯題軽工団象長意巨間確権更芸。</p>
+  <p>test</p>
 </footer>
 
-
-
-<style>
-    .features {padding:2rem 0;margin:0 10% 4rem;}
-    .features-item {width:25%;margin:0 2.5%;}
-    .features-item-avatar {font-size:40px;}
-    .features-item-title {font-size:1.25rem;font-weight:700;color:#333;}
-    .features-item-description {margin-top: .5rem;}
-    .features-item-link {display:block;margin-top: .5rem;}
-    </style>
     <section class="features">
+      <header>
+        <h2><u>선약</u>이 있어서</h2>
+        <p>남는 방 하나부터 별장까지, 다양한 형태의 공간을 무료로 등록하고 공유하세요.</p>
+      </header>
       <!-- <h1 class="features-title">숙소 호스팅</h1> -->
       <div role="group" style="justify-content: center;">
         <div class="features-item">
           <span class="features-item-avatar">💃</span>
-          <div class="features-item-title">무료로 숙소 등록하기</div>
-          <div class="features-item-description">남는 방 하나부터 별장까지, 다양한 형태의 공간을 무료로 등록하고 공유하세요.</div>
+          <h3 class="features-item-title">무료로 숙소 등록하기</h3>
+          <p class="features-item-description">남는 방 하나부터 별장까지, 다양한 형태의 공간을 무료로 등록하고 공유하세요.</p>
           <a class="features-item-link" href="">숙소 등록</a>
         </div>
         <div class="features-item">
           <span class="features-item-avatar">🧞‍</span>
-          <div class="features-item-title">호스팅 세부사항 설정하기</div>
-          <div class="features-item-description">호스팅할 수 있는 날짜, 숙소 요금, 게스트 필수요건을 선택하세요. 에어비앤비가 호스팅 전반에 걸쳐 도움을 드립니다.</div>
+          <h3 class="features-item-title">호스팅 세부사항 설정하기</h3>
+          <p class="features-item-description">호스팅할 수 있는 날짜, 숙소 요금, 게스트 필수요건을 선택하세요. 에어비앤비가 호스팅 전반에 걸쳐 도움을 드립니다.</p>
         </div>
         <div class="features-item">
           <span class="features-item-avatar">🧚‍</span>
-          <div class="features-item-title">첫 게스트 맞이하기</div>
-          <div class="features-item-description">숙소가 게시되면 설정하신 예약 조건에 부합하는 게스트가 연락을 할 거예요. 게스트를 맞이하기 전에 궁금한 점이 있으면 언제든 메시지로 물어볼 수 있습니다.</div>
+          <h3 class="features-item-title">첫 게스트 맞이하기</h3>
+          <p class="features-item-description">숙소가 게시되면 설정하신 예약 조건에 부합하는 게스트가 연락을 할 거예요. 게스트를 맞이하기 전에 궁금한 점이 있으면 언제든 메시지로 물어볼 수 있습니다.</p>
         </div>
       </div>
     </section>
@@ -248,3 +263,36 @@
   </ul>
   <button class="pricing-item-button secondary-button" type="button">업그레이드</button>
 </div> -->
+
+
+<!-- 
+<h1 style="display:flex;align-items:center;justify-content:center;font-family:'DunkelSans';font-size:4rem;padding:0 3rem;color:#0057ff;line-height:1.1;-webkit-text-stroke:1px #0057ff;">
+  안녕
+  <svg role="presentation" style="width:68px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 34">
+    <path fill="#0057ff" d="M18.35 1l-2.99 2.91-3.66-2.02-1.55 3.88-4.16-.36.17 4.16-3.96 1.36 1.86 3.74L1 17.52l3.22 2.66-1.64 3.84 4.03 1.13.07 4.17 4.14-.61 1.77 3.78 3.53-2.22L19.28 33l2.32-3.47 4 1.22.7-4.11 4.15-.51-1.03-4.04L33 19.94l-2.59-3.27 2.4-3.42-3.71-1.94.8-4.1-4.17-.26-.94-4.07-3.93 1.45L18.35 1z"></path>
+  </svg>하세요<i>!</i>
+</h1>
+<h1 style="display:flex;align-items:center;justify-content:center;font-family:'DunkelSans';font-size:4rem;padding:0 3rem;color:#0057ff;line-height:1.1;-webkit-text-stroke:1px #0057ff;">
+  안녕
+  <svg role="presentation" style="width:68px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 34">
+    <path fill="#0057ff" d="M18.35 1l-2.99 2.91-3.66-2.02-1.55 3.88-4.16-.36.17 4.16-3.96 1.36 1.86 3.74L1 17.52l3.22 2.66-1.64 3.84 4.03 1.13.07 4.17 4.14-.61 1.77 3.78 3.53-2.22L19.28 33l2.32-3.47 4 1.22.7-4.11 4.15-.51-1.03-4.04L33 19.94l-2.59-3.27 2.4-3.42-3.71-1.94.8-4.1-4.17-.26-.94-4.07-3.93 1.45L18.35 1z"></path>
+  </svg>하세요<i>!</i>
+</h1>
+<h1 style="display:flex;align-items:center;justify-content:center;font-family:'DunkelSans';font-size:4rem;padding:0 3rem;color:#0057ff;line-height:1.1;-webkit-text-stroke:1px #0057ff;">
+  안녕
+  <svg role="presentation" style="width:68px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 34">
+    <path fill="#0057ff" d="M18.35 1l-2.99 2.91-3.66-2.02-1.55 3.88-4.16-.36.17 4.16-3.96 1.36 1.86 3.74L1 17.52l3.22 2.66-1.64 3.84 4.03 1.13.07 4.17 4.14-.61 1.77 3.78 3.53-2.22L19.28 33l2.32-3.47 4 1.22.7-4.11 4.15-.51-1.03-4.04L33 19.94l-2.59-3.27 2.4-3.42-3.71-1.94.8-4.1-4.17-.26-.94-4.07-3.93 1.45L18.35 1z"></path>
+  </svg>하세요<i>!</i>
+</h1>
+<h1 style="display:flex;align-items:center;justify-content:center;font-family:'DunkelSans';font-size:4rem;padding:0 3rem;color:#0057ff;line-height:1.1;-webkit-text-stroke:1px #0057ff;">
+  안녕
+  <svg role="presentation" style="width:68px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 34">
+    <path fill="#0057ff" d="M18.35 1l-2.99 2.91-3.66-2.02-1.55 3.88-4.16-.36.17 4.16-3.96 1.36 1.86 3.74L1 17.52l3.22 2.66-1.64 3.84 4.03 1.13.07 4.17 4.14-.61 1.77 3.78 3.53-2.22L19.28 33l2.32-3.47 4 1.22.7-4.11 4.15-.51-1.03-4.04L33 19.94l-2.59-3.27 2.4-3.42-3.71-1.94.8-4.1-4.17-.26-.94-4.07-3.93 1.45L18.35 1z"></path>
+  </svg>하세요<i>!</i>
+</h1>
+<h1 style="display:flex;align-items:center;justify-content:center;font-family:'DunkelSans';font-size:4rem;padding:0 3rem;color:#0057ff;line-height:1.1;-webkit-text-stroke:1px #0057ff;">
+  안녕
+  <svg role="presentation" style="width:68px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 34">
+    <path fill="#0057ff" d="M18.35 1l-2.99 2.91-3.66-2.02-1.55 3.88-4.16-.36.17 4.16-3.96 1.36 1.86 3.74L1 17.52l3.22 2.66-1.64 3.84 4.03 1.13.07 4.17 4.14-.61 1.77 3.78 3.53-2.22L19.28 33l2.32-3.47 4 1.22.7-4.11 4.15-.51-1.03-4.04L33 19.94l-2.59-3.27 2.4-3.42-3.71-1.94.8-4.1-4.17-.26-.94-4.07-3.93 1.45L18.35 1z"></path>
+  </svg>하세요<i>!</i>
+</h1> -->

@@ -1,6 +1,6 @@
 
 .darkmode * {
-  $gray80: $gray0; // ?
+  $gray800: $gray0; // ?
   .profile-user-name, .card-title {
     color: $gray0;
   }
@@ -11,7 +11,7 @@
 .darkmode {
 
   background: rgba(0,0,0,9);
-  color: $gray40;
+  color: $gray400;
 
   h1, h2, h3, h4, h5, h6 {
     color: #fff;
@@ -23,7 +23,7 @@
   .header.is-fixed {background:#000;}
   .is-white.is-fixed .header-title {color:#fff;}
 
-  .toast {background: $gray80;}
+  .toast {background: $gray800;}
 
   .design-body-title,
   .darkmode h1 {
@@ -41,14 +41,14 @@
   }
 
   .dialog {
-    background: $gray80;
+    background: $gray800;
 
   }
   .dialog-title {
-    color:$gray20;
+    color:$gray200;
   }
   .dialog-footer {
-    border-top-color:$gray60;
+    border-top-color:$gray600;
   }
 }
 
@@ -69,6 +69,6 @@
 @media (prefers-color-scheme: light) {
   .themed {
     background: white;
-    color: $gray80;
+    color: $gray800;
   }
 }
