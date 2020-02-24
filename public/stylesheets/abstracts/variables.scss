@@ -1,4 +1,13 @@
 // mediaquery, desktop first
+
+// ^ html에서 선언 or 제목용 / 본문용 디자인이 다를 때만 필요.
+$fontstack: ('Helvetica', sans-serif);
+$headline: 3rem;
+$title: 2rem;
+$subhead: 1.25rem;
+$body: 1rem;
+$caption: 0.75rem;
+
 $gray0: #fff; // white for dark theme
 $gray100: #f1f3f4; // bg
 $gray200: #dadce0; // divider border
@@ -15,48 +24,31 @@ $color-twitter: rgb(29, 161, 242);
 $color-naver: #03cf5d;
 $color-kakao: #ffdf00;
 
-@custom-media --breakpoint-large (max-width: 1440px);
-
 $breakpoint-large: 1440px;
 $breakpoint-medium: 1280px;
 $breakpoint-small: 1080px;
 $breakpoint-tiny: 720px;
 
+@custom-media --breakpoint-large (max-width: 1440px);
+
 $height-header: 60px;
 
-$spacer400: 10px 1.5rem 11px; // 버튼, 텍스트인풋 등 200
-$spacer600: 1rem 1.5rem 1.25rem; // innerbox spacer; 400
-
-$margin200: 2rem auto;
-$margin400: 4rem auto;
-$margin800: 8rem auto;
-$padding200: 10px 1.5rem 11px;
+$padding200: 10px 1.5rem 11px; // 버튼, 텍스트인풋
 $padding400: 1rem 1.5rem 1.25rem;
-$padding600: 4rem 0;
 
 //box-shadow: inset 0 2px 4px 0 hsla(0, 0%, 0%, 0.08);
 $shadow100: 0px 1px 1px rgba(136, 26, 26, 0.075); // unused
 $shadow400: 1px 1px 4px rgba(0, 0, 0, 0.2);
 $shadow450: 2px 4px 8px rgba(0, 0, 0, 0.2); // hover
 
-$border100: 1px solid $gray100;
-$border150: 1px solid $gray200;
+$border400: 1px solid $gray100;
 
 $radius400: 4px;
-$radius450: 0.125rem;
 
 $avatar100: 16px;
 $avatar200: 32px;
 $avatar400: 48px;
 $avatar600: 80px;
-
-// ^ html에서 선언 or 제목용 / 본문용 디자인이 다를 때만 필요.
-$fontstack: ('Helvetica', sans-serif);
-$headline: 3rem;
-$title: 2rem;
-$subhead: 1.25rem;
-$body: 1rem;
-$caption: 0.75rem;
 
 $quote: 0;
 $placeholder: 0;
@@ -64,9 +56,6 @@ $placeholder: 0;
 $width-medium: 800px;
 $width-large: 1080px;
 $width-huge: 1440px;
-
-$line-height400: 1.4;
-$line-height800: 1.8;
 
 $bezier-base: cubic-bezier(0.455, 0.03, 0.515, 0.955);
 $transition-base: all 0.4s $bezier-base;

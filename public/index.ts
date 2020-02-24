@@ -87,6 +87,23 @@ const domEvents = () => {
     input.file()
     input.textarea()
     input.number()
+
+    // 임시
+    const list = document.querySelector('.js-display-list')
+    const grid = document.querySelector('.js-display-grid')
+    const works = document.querySelector('.profile-body')
+    if (list && grid && works) {
+      list.addEventListener('click', () => {
+        list.classList.add('is-selected')
+        grid.classList.remove('is-selected')
+        works.classList.add('list')
+      })
+      grid.addEventListener('click', () => {
+        list.classList.remove('is-selected')
+        grid.classList.add('is-selected')
+        works.classList.remove('list')
+      })
+    }
   })
 }
 
@@ -133,24 +150,6 @@ document.addEventListener('DOMContentLoaded', () => {
   event.toggleClass({ selector: '.js-navbar-toggle' }).setEvent()
 
   domEvents()
-
-
-  // 임시
-  const list = document.querySelector('.js-display-list')
-  const grid = document.querySelector('.js-display-grid')
-  const works = document.querySelector('.profile-body')
-  if (list && grid && works) {
-    list.addEventListener('click', event => {
-      list.classList.add('is-selected')
-      grid.classList.remove('is-selected')
-      works.classList.add('list')
-    })
-    grid.addEventListener('click', event => {
-      list.classList.remove('is-selected')
-      grid.classList.add('is-selected')
-      works.classList.remove('list')
-    })
-  }
 
   const focusComment = () => {
     const commentWrite = document.querySelector('.js-comment-write')
