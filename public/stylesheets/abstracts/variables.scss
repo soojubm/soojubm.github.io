@@ -31,8 +31,6 @@ $breakpoint-tiny: 720px;
 
 @custom-media --breakpoint-large (max-width: 1440px);
 
-$height-header: 60px;
-
 $padding200: 10px 1.5rem 11px; // 버튼, 텍스트인풋
 $padding400: 1rem 1.5rem 1.25rem;
 
@@ -77,6 +75,12 @@ $zindex-tooltip: 6;
 .is-expanded {}
 .is-valid {}
 .is-invalid {}
+
+
+$height-header: 64px;
+@media (max-width:$breakpoint-small) {
+  $height-header: 56px;
+}
 
 
 

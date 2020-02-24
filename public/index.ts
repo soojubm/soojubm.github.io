@@ -104,6 +104,19 @@ const domEvents = () => {
         works.classList.remove('list')
       })
     }
+
+    const focusComment = () => {
+      const commentWrite = document.querySelector('.js-comment-write')
+      const commentTextField = document.querySelectorAll('.js-comment-textfield')
+      if (commentWrite || commentTextField) {
+        commentTextField.forEach(element =>
+          element.addEventListener('focus', () => {
+            commentWrite && commentWrite.classList.add('is-focused')
+          }),
+        )
+      }
+    }
+    focusComment()
   })
 }
 
@@ -151,18 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   domEvents()
 
-  const focusComment = () => {
-    const commentWrite = document.querySelector('.js-comment-write')
-    const commentTextField = document.querySelectorAll('.js-comment-textfield')
-    if (commentWrite || commentTextField) {
-      commentTextField.forEach(element =>
-        element.addEventListener('focus', () => {
-          commentWrite && commentWrite.classList.add('is-focused')
-        }),
-      )
-    }
-  }
-  focusComment()
+
   setGraph()
   countDownClock(20, 'days')
   carousel()

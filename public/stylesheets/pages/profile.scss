@@ -8,10 +8,6 @@
 .profile-head-temp {position:absolute;left:65%;top:3.25rem;}
 .profile-head h5 {margin:0 0 1rem 0;color:#fff;}
 
-@media (max-width:$breakpoint-small) {
-  .profile-head-temp {display:none;}
-}
-
 .profile-user {float:left;width:320px;box-sizing:border-box;position:relative;z-index:1;}
 .profile-user-avatar {float:right;width:80px;height:80px;border-radius:4px;background:url('/public/images/caleb-woods-182648-unsplash.jpg') no-repeat center center;background-size:cover;transition:all 0.4s ease;}
 .profile-user-avatar:hover {box-shadow:$shadow450;}
@@ -21,7 +17,7 @@
 .profile-user-description {max-height:4.8em;margin:1.5rem 0;white-space:normal;overflow:hidden;text-overflow:ellipsis;word-wrap:break-word;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;line-height:1.6;position:relative;}
 .profile-user-description-more {/*display:block;position:absolute;right:0;bottom:1px;z-index:1;*/}
 // .profile-user-description::after {content:'';display:block;width:50px;height:24px;background:$gray0;filter:blur(4px);position:absolute;right:0;bottom:0;z-index:0;}
-.profile-user-toggle {width:100%;display:inline-block;text-align:center;}
+.profile-user-toggle {display:none;width:100%;text-align:center;}
 .profile-user-toggle i {display:inline-block;vertical-align:middle;}
 // .profile-user-description-more {position:absolute;right:0;bottom:1px;z-index:1;}
 // .profile-user-description-more:before {content:'';display:block;padding:8px;background:$gray0;position:absolute;left:-.5rem;right:0;top:0;bottom:0;z-index:-1;}
@@ -32,13 +28,13 @@
 .profile-user-statistic {}
 .profile-controls {margin:2rem 0 1rem;}
 .profile-controls-follow {width:100%;}
-.profile-body {min-height:640px;padding:0 0 64px 400px;box-sizing:border-box;position:relative;}
+.profile-body {padding:0 0 64px 400px;box-sizing:border-box;position:relative;}
 .profile-tablist {margin:0 0 0.5rem 0;position:relative;}
 .profile-tablist-active {width:4px;height:4px;margin:0 auto;border-radius:50%;transition:all 0.4s ease;background:$color-primary;position:absolute;top:8px;left:0;}
 .profile-tablist:before {display:none;content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:#e9e9e6;}
 .profile-tablist-tab {margin:0 1.5rem 0 0;padding:1rem 0;border-radius:$radius400;color:$gray400;}
 .profile-tablist-tab[aria-selected='true'] {color:$gray800;text-decoration:underline;}
-.profile-tablist-panel {min-height:600px;}
+.profile-tablist-panel {}
 
 
 .profile-display {display:flex;margin:0 0 1.5rem 0;padding:0 0 1rem 0px;border-bottom:1px solid #e9e9e6;}
@@ -125,7 +121,7 @@
 
 @media (max-width:$breakpoint-large) {
   .profile-user {float:none;width:100%;margin:0px auto 0;padding:0 5% 0;box-sizing:border-box;}
-  .profile-body {width:100%;margin-top:0;padding:0 5% 8rem;}
+  .profile-body {width:100%;margin-top:0;padding:0 5%;}
 }
 
 @media (max-width:$breakpoint-small) {
@@ -136,9 +132,13 @@
   .profile-head-headline {}
   .profile-head-description {width:100%;}
   .profile-head-share {bottom:auto;}
-  .profile-user-id {margin-top:-2px;}
+  .profile-user-toggle {display:block;}
   .profile-user-career {margin-top:3px}
   .profile-user-avatar {width:64px;height:64px;}
+  .profile-user-description {margin:1rem 0;}
+  .profile-user-id {margin-top:-2px;}
+  .profile-user-info {display:none;}
+  .profile-user-info.is-visible {display:block;}
 }
 
 @media (max-width:$breakpoint-tiny) {

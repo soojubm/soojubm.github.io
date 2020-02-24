@@ -14,6 +14,7 @@ const routePage = () => {
       if (!view) return
 
       view.innerHTML = html
+      window.scrollTo(0, 0);
       // window.history.pushState({ name: 'tester' }, 'dd', hash.substring(1));
     })
     .catch(error => console.warn('router: ', error))
