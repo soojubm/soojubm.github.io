@@ -88,6 +88,11 @@ const domEvents = () => {
     input.textarea()
     input.number()
 
+
+    setGraph()
+    countDownClock(20, 'days')
+    carousel()
+
     // 임시
     const list = document.querySelector('.js-display-list')
     const grid = document.querySelector('.js-display-grid')
@@ -163,11 +168,6 @@ document.addEventListener('DOMContentLoaded', () => {
   event.toggleClass({ selector: '.js-navbar-toggle' }).setEvent()
 
   domEvents()
-
-
-  setGraph()
-  countDownClock(20, 'days')
-  carousel()
 
   // ! click 이벤트 외부에 넣으니까 파폭에서만 오류. event undefined
   // TODO: 도큐먼트가 아니라 event.target.parent 가 아닌 것을 클릭했을 때 다당야 하나

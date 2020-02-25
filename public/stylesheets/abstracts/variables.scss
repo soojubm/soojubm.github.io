@@ -11,9 +11,9 @@ $caption: 0.75rem;
 $gray0: #fff; // white for dark theme
 $gray100: #f1f3f4; // bg
 $gray200: #dadce0; // divider border
-$gray400: #848c94; // caption
-$gray600: #666d75; // body
-$gray800: #343a40; // bg || heading
+$gray400: #999; // caption
+$gray600: #666; // body
+$gray800: #333; // bg || heading
 
 $color-primary: #00783e;
 $color-positive: #00783e; // sucess
@@ -69,12 +69,17 @@ $zindex-popover: 6;
 $zindex-tooltip: 6;
 
 
+.is-fullwidth {display:block;width:100%;}
 .is-disabled {cursor:not-allowed;}
+.is-multiline {flex-wrap:wrap;}
+
+.is-loading {}
 .is-actived {}
 .is-succesed {}
 .is-expanded {}
 .is-valid {}
 .is-invalid {}
+.is-inverted {}
 
 
 $height-header: 64px;

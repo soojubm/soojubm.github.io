@@ -1,7 +1,6 @@
-.cart {max-width:1080px;margin:0rem auto 20rem;padding:8rem 5% 10rem;}
+.cart {max-width:1080px;margin:0rem auto;padding:4rem 5% 10rem;}
 .cart-head {}
 .cart-title {margin:0 0 .25rem 0;font-size:2rem;line-height:1.2;position:relative;}
-// .cart-title:before {content:'';width:100%;height:8px;border-radius:4px;background:$color-primary;position:absolute;left:0;right:0;bottom:2px;z-index:-1;}
 .cart-description {}
 .cart-head time {display:block;margin:3rem 0 0;padding:.5rem 0;border-bottom:2px solid $gray800;text-align:right;color:$gray800;}
 
@@ -40,9 +39,9 @@
 
 
 			
-.cart-item-more {margin:.75rem 0 .5rem;padding:0 2rem;box-sizing:border-box;text-align:left;color:#0070c9;}
+.cart-item-more {margin:.75rem 0 .5rem;padding:0 2rem;box-sizing:border-box;text-align:left;color:$color-primary;}
 .cart-item-more i {margin:0 0 0 .5rem;}
-.cart-item-remove {float:right;margin:.75rem 0 .5rem;color:#0070c9;}
+.cart-item-remove {float:right;margin:.75rem 0 .5rem;color:$color-primary;}
 .cart-item-addition {width:calc(100% - 20% - 2rem);margin:0 0 0 calc(20% + 2rem);padding:.5rem 0 .75rem;border-top:1px solid $gray100;box-sizing:border-box;position:relative;}
 .cart-item-addition-description {font-size:12px;line-height:1.4;color:$gray400;}
 .cart-item-addition p {width:80%;}

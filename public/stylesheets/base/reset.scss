@@ -110,9 +110,9 @@ dd {color:$gray400;}
 
 //backface-visibility:hidden
 
-.is-fullwidth {display:block;width:100%;}
-.is-loading {}
-.is-inverted {}
-.is-multiline {flex-wrap:wrap;}
-
 [date-ui=caption] {margin:.5rem 0;font-size:12px;}
+
+
+
+.subhead {font-size:$subhead;}
+.subhead + .description {margin:1rem 0 0 0;}

@@ -32,6 +32,9 @@
 .icon-search:before {content: '';display: block;width:10px;height:10px;border-radius:50%;margin:0px auto 0;border:2px solid $gray800;transform:translateX(-1px)}
 .icon-search:after {content: '';display: block;width:6px;height:2px;background: $gray800;margin:0 auto 0;transform: rotate(45deg) translate(3px,-5px);}
 
+.is-active .icon-search:before {content:'';width:10px;height:2px;background-color:$gray800;position:absolute;left:50%;top:50%;transform: translate(-50%, -50%) rotate(45deg);border:none;border-radius:0;}
+.is-active .icon-search:after {content:'';width:2px;height:10px;background:$gray800;position:absolute;left:50%;top:50%;transform:translate(-50%, -50%) rotate(45deg);}
+
 
 
 .icon-caret {display:inline-block;width:0;height:0;border-top:4px solid $gray800;border-left:4px solid transparent;border-right:4px solid transparent;border-radius:4px;vertical-align:middle;}
@@ -54,10 +57,10 @@
 .icon-circled-arrow:before {content:'';display:block;width:8px;height:1px;background:$color-primary;position:absolute;left:4px;top:8px;transition:all .4s ease;}
 .icon-circled-arrow:after {content:'';display:block;width:3px;height:1px;background:$color-primary;position:absolute;left:8px;top:6px;transform:rotate(45deg);transition:all .4s ease;}
 
-.icon-chevron {display:inline-block;padding:3px;border:solid $gray800;border-width:0 2px 2px 0;transform:rotate(-45deg);}
-.icon-chevron.is-left {transform:rotate(135deg);}
-.icon-chevronis-up {margin-top:4px;transform:rotate(-135deg);}
-.icon-chevronis-down {margin-top:-2px;transform:rotate(45deg);}
+.icon-chevron {display:block;margin:0 3px 0 0;padding:3px;border:solid $gray800;border-width:0 2px 2px 0;transform:rotate(-45deg);}
+.icon-chevron.is-left {margin:0 0 0 3px;transform:rotate(135deg);}
+.icon-chevron.is-up {margin-top:4px;transform:rotate(-135deg);}
+.icon-chevron.is-down {margin-top:-2px;transform:rotate(45deg);}
 // .icon-chevron {width:6px;height:6px;margin:auto;position:absolute;left:0;right:0;top:0;bottom:0;border-left:2px solid $gray400;border-top:2px solid $gray400;transform: rotate(-45deg);}
 .icon-arrow0 {display:inline-block;padding:3px;border:solid $gray800;border-width:0 2px 2px 0;transform:rotate(-45deg);}
 
@@ -96,13 +99,11 @@
 .icon-more::after {content:'';display:block;width:3px;height:3px;background:inherit;border-radius:50%;position: absolute;top:5px;left:50%;margin-left:-1.5px;}
 
 
-// filled-icon
 // .icon-home {display:inline-block;position:relative;}
 // .icon-home span:nth-of-type(1):before {content:'';display:block;width:10px;height:10px;background:$gray600;transform:rotate(45deg);position:absolute;left:2px;top:-9px;}
 // .icon-home span:nth-of-type(1):after {content:'';display:block;width:16px;height:8px;background:$gray0;position:absolute;left:-2px;top:-4px;}
 // .icon-home span:nth-of-type(2):before {content:'';display:block;width:10px;height:6px;background:$gray600;position:absolute;left:2px;top:-4px;}
 // .icon-home span:nth-of-type(2):after {content:'';display:block;width:4px;height:4px;background:$gray0;position:absolute;left:5px;top:-1px;}
-
 
 .icon-home {display:inline-block;position:relative;}
 .icon-home span:nth-of-type(1):before {content:'';display:block;width:10px;height:10px;border:2px solid $color-primary;box-sizing:border-box;transform:rotate(45deg);position:absolute;left:2px;top:-9px;}

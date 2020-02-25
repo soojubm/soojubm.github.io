@@ -71,10 +71,11 @@
       <div class="navbar-user">
         <div class="navbar-user-search" role="search" aria-label="site">
           <a class="navbar-user-search-trigger js-navbar-toggle" href="#">
-            <i class="material-icons" style="pointer-events:none;">search</i>
+            <i class="icon-search" style="pointer-events:none;"></i>
+            <!-- <i class="material-icons" style="pointer-events:none;">search</i> -->
           </a>
           <form class="navbar-user-search-form" action="">
-            <button class="navbar-user-search-form-close js-close" aria-label="delete"><i class="icon-close"></i></button>
+            <!-- <button class="navbar-user-search-form-close js-close" aria-label="delete"><i class="icon-close"></i></button> -->
             <!-- <p role="status">수줍이와(과) 일치하는 검색결과가 없습니다.</p> -->
             <fieldset class="textfield">
               <legend class="filter-fieldset-legend" aria-hidden="true">검색하기</legend>
@@ -84,12 +85,12 @@
                 <i class="icon-close"></i>
               </button>
             </fieldset>
-            <div class="navbar-user-search-option">
+            <!-- <div class="navbar-user-search-option">
               <h2 class="navbar-user-search-option-title">당신을 위한 추천</h2>
               <a class="navbar-user-search-option-item" href="#">검색어는 어떻게 입력하나요?</a>
               <a class="navbar-user-search-option-item" href="#">검색어는 어떻게 입력하나요?</a>
               <a class="navbar-user-search-option-item" href="#">검색어는 어떻게 입력하나요?</a>
-            </div>
+            </div> -->
           </form>
         </div>
         <div class="navbar-user-notification">
@@ -170,14 +171,17 @@
 
     <!-- <header class="header">
       <button class="header-back icon-button" style="transform:rotate(180deg);" onclick="javascript:alert('이전페이지로~');"><i class="icon-arrow is-left"></i></button>
-      <h1 class="header-title">페이지타이틀</h1>
+      <h1 class="header-title">Back to Prev</h1>
     </header>
-
+    <header class="header-backdrop">
+    </header> -->
+<!-- 
     <script>
       const pageHead = document.querySelector('.header')
       document.addEventListener('scroll', event => {
         if (!pageHead) return
 
+        document.body.style.marginTop = pageHead.clientHeight + 'px'
         if (window.pageYOffset > 20) {
           pageHead.classList.add('is-fixed')
         } else {

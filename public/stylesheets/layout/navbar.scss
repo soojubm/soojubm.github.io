@@ -1,15 +1,15 @@
-.navbar {width:100%;height:$height-header;background:$gray0;margin:0 auto;position:fixed;left:0;right:0;top:0;z-index:4;/*box-shadow:$shadow400;*/}
+.navbar {height:$height-header;background:$gray0;margin:0 auto;position:relative;left:0;right:0;top:0;z-index:4;/*box-shadow:$shadow400;*/}
 .navbar-logo {display:flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:4px;font-size:2rem;position:absolute;left:24px;top:50%;z-index:6;transform:translateY(-50%);margin-top:-1px;}
 .navbar-logo img {display:block;float:left;width:40px;}
 .navbar-logo span {float:left;display:block;font-size:1.5rem;color:$gray800;transition:all .2s;}
 .navbar-burger {display:none;width:48px;height:48px;position:absolute;left:10px;top:50%;z-index:6;transform:translateY(-50%);margin-top: -2px;}
 .navbar-burger:hover {background:#f9f9f6;}
-.navbar-menu {display:flex;align-items:center;width:100%;height:100%;margin-top:-2px;margin-left:7rem;position:relative;}
+.navbar-menu {display:flex;align-items:center;width:100%;height:100%;margin-top:-2px;margin-left:6rem;position:relative;}
 .navbar-menu-item {padding:.5rem 1rem;font-size:$subhead;color:$gray800;position:relative;z-index:1;} // m p reset
 .navbar-menu-item a {color:inherit;}
 .navbar-menu-item:before {display:none;} /* TODO: remove ul li default style */
 .navbar-menu-item i {margin-left:8px;}
-.navbar-menu-item menu {display:flex;padding:48px 7rem 0;background-color:$color-primary;position:fixed;left:0;right:0;top:-240px;z-index:5;transition:$transition-base;}
+.navbar-menu-item menu {display:flex;padding:48px 6rem 0;background-color:$color-primary;position:fixed;left:0;right:0;top:-240px;z-index:5;transition:$transition-base;}
 .navbar-menu-item menu a {margin:0 1rem;font-size:14px;line-height:60px;color:$gray0;opacity:0;transition:all .4s ease .4s;}
 
 .is-shown .navbar-logo {color:$gray0;z-index:8;}
@@ -28,7 +28,7 @@
 .navbar-user-cart {margin:0 8px;color:$gray400;}
 .navbar-user-cart i {display:inline-block;min-width:18px;height:18px;line-height:18px;margin:0 0 0 2px;border-radius:10px;vertical-align:middle;padding:0 4px;box-sizing:border-box;background:$gray800;text-align:center;font-size:12px;color:$gray0;}
 .navbar-user-search {position:relative;}
-.navbar-user-search-trigger {display:flex;justify-content:center;align-items:center;width:32px;height:32px;border-radius:$radius400;}
+.navbar-user-search-trigger {display:flex;justify-content:center;align-items:center;width:32px;height:32px;border-radius:$radius400;position:relative;z-index:5;}
 .navbar-user-search-trigger:hover {background:$gray100;}
 .navbar-user-search a i {vertical-align:middle;color:$gray800;}
 .navbar-user-search-form {display:none;background:$gray0;box-shadow:$shadow400;padding:.5rem 10%;box-sizing:border-box;position:fixed;left:0;right:0;top:0;bottom:calc(100vh - 64px);z-index:1;}
@@ -47,7 +47,7 @@
 .navbar-user-notification-trigger:hover {background:$gray100;}
 .navbar-user-notification-trigger i {vertical-align:middle;color:$gray800;}
 .navbar-user-notification-trigger em {display:block;width:4px;height:4px;border-radius:50px;background:$color-negative;border:1px solid $gray0;text-indent:-9999px;position:absolute;right:.25rem;top:.25rem;}
-.navbar-user-notification-menu {width:320px;height:0;padding:.5rem 0;box-sizing:border-box;background:$gray0;box-shadow:$shadow400;position:absolute;top:36px;right:-48px;z-index:4;transform:scale(0);transform-origin:right top}
+.navbar-user-notification-menu {width:320px;height:0;padding:.5rem 0;box-sizing:border-box;border-radius:$radius400;background:$gray0;box-shadow:$shadow400;position:absolute;top:40px;right:-46px;z-index:4;transform:scale(0);transform-origin:right top}
 .navbar-user-notification-menu-title {padding:.5rem 1rem;font-size:12px;}
 .navbar-user-notification-menu.is-visible {height:auto;transform:scale(1);}
 .navbar-user-notification-menu:before {content:'';display:block;position:absolute;left:50%;right:0;top:-8px;bottom:0;}
@@ -73,7 +73,7 @@
 .is-darktheme .navbar-user-notification-trigger i {color:#fff;}
 
 @media (max-width:$breakpoint-small) {
-	.navbar {height:56px;}
+	.navbar {height:48px;}
 	.navbar-logo {margin-left:2rem;margin-top:0;z-index:6;}
 	.navbar-user {top:8px;}
 	
