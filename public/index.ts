@@ -93,6 +93,15 @@ const domEvents = () => {
     countDownClock(20, 'days')
     carousel()
 
+    var now = new Date();
+    var then = new Date("April 14, 2020");
+    var gap = then.getTime() - now.getTime();
+    gap = Math.floor(gap / (1000 * 60 * 60 * 24));
+    const aaa = document.querySelector('.dday')
+    if(aaa) {
+      aaa.innerText = gap
+    }
+
     // 임시
     const list = document.querySelector('.js-display-list')
     const grid = document.querySelector('.js-display-grid')
