@@ -6,6 +6,10 @@
   --white: #000;
 	--black: #101010;
 }
+
+
+$border-width: 4px;
+$border: $border-width solid #000;
 	
 // text-shadow: 3px 4px var(--orange), 6px 7px var(--red), 9px 10px var(--darkRed);
 
@@ -67,32 +71,55 @@
 
 
 
-$boder-width: 4px;
-$border: $boder-width solid #000;
-
-.pledge {margin-top:-10rem;}
-.pledge header {padding:6rem 0 0rem;text-align:center;}
+// .pledge {margin-top:-10rem;}
+.pledge header {text-align:center;}
 .pledge header h2 {}
 .pledge header p {}
-.pledge span {display:block;margin:-$boder-width 20% 0;padding:3rem 0 3.5rem;text-align:center;border:4px solid #000;font-family:'DunkelSans';color:#000;font-size:3rem;position:relative;}
+.pledge span {display:block;margin:-$border-width 0 0;padding:3rem 0 3.5rem;text-align:center;border:4px solid #000;;color:#000;font-size:3rem;position:relative;}
 .pledge span time {display:block;font-size:1rem;position:relative;z-index:1;}
 .pledge span h3 {color:#000;position:relative;z-index:1;}
 .pledge div {display:flex;justify-content:center;margin:5% 20%;overflow:hidden;}
-.pledge div div {flex-wrap:nowrap;width:25%;margin:1rem;text-align:center;border:4px solid #000;font-family:'DunkelSans';font-size:2rem;color:#000;}
+.pledge div div {flex-wrap:nowrap;width:25%;margin:1rem;text-align:center;border:4px solid #000;;font-size:2rem;color:#000;}
 
 .style-heading {
 	border: $border;
-	margin: 0 20%;
+	// margin: 0 20%;
 	padding: 4rem 0;
-	background: #fff;
-	font-family: 'DunkelSans';
 	font-size: 3rem;
 }
 .style-description {
 	border: $border;
 	font-size: 16px;
 	color: #000;
-	margin: 0 20%;
+	// margin: 0 20%;
 	padding: 2rem 0;
-	margin-top: -$boder-width;
+	margin-top: -$border-width;
 }
+
+
+
+
+.style-list {
+	// margin: 0 20%;
+	font-size:1.25rem;
+	color:#000;
+	> div {
+		display:flex;
+		margin-top:-$border-width;
+		position:relative;
+		span {
+			display:block;
+			width:32px;
+			height:32px;
+			border-radius:50%;
+			background:gold;
+			position: absolute;
+			left: -16px;
+			top: 14px;
+		}
+	}
+}
+
+.style-label {width:25%;padding:1rem 2rem;box-sizing:border-box;border:$border;}
+.style-blank {width:45%;padding:1rem 2rem;box-sizing:border-box;border:$border;margin-left:-$border-width;}
+.style-value {width:calc(30% + 8px);padding:1rem 2rem;box-sizing:border-box;border:$border;margin-left:-$border-width;}
