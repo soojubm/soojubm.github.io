@@ -87,6 +87,7 @@ const domEvents = () => {
     input.file()
     input.textarea()
     input.number()
+    
 
 
     setGraph()
