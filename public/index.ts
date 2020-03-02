@@ -95,7 +95,7 @@ const domEvents = () => {
     carousel()
 
     var now = new Date();
-    var then = new Date("April 14, 2020");
+    var then = new Date("April 16, 2020");
     var gap = then.getTime() - now.getTime();
     gap = Math.floor(gap / (1000 * 60 * 60 * 24));
     const aaa = document.querySelector('.dday')
