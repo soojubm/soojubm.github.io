@@ -87,6 +87,10 @@ $height-header: 64px;
   $height-header: 56px;
 }
 
+.linebreak {display:block;}
+@media (max-width:$breakpoint-small) {
+  .linebreak {display:inline;}
+}
 
 
 :root {

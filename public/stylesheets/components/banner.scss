@@ -1,12 +1,13 @@
 .banner {width:80%;margin:0 auto;padding:2rem 0;border-radius:4px;background:$gray800;text-align:center;position:relative;z-index:4;}
-.banner p {display:inline-block;margin:0 2rem 0 0;font-size:$subhead;color:$gray0;}
-.banner button {}
+.banner-image {margin:0 2rem 0 0;}
+.banner-text {display:inline-block;margin:0 2rem 0 0;font-size:$subhead;color:$gray0;}
+.banner-button {}
 
 
 @media (max-width:$breakpoint-small) {
   .banner {width:90%;padding-bottom:2.5rem;}
-  .banner p {display:block;margin:0 0 1rem 0;}
-  .banner button {}
+  .banner-text {display:block;margin:0 0 1rem 0;}
+  .banner-button {}
 }
 .is-closed-topbanner .header {background:$gray0;margin-top:-225px;transition:margin .2s, background-color .4s;}
 .is-closed-topbanner .topbanner {z-index:-1;}

@@ -1,6 +1,9 @@
 ::selection {background:$gray800;color:$gray0;}
 ::placeholder {color:rgba(0,0,0,.4);}
 
+// button:before {content:'';display:block;width:8px;height:8px;background:rgba(0,0,0,.2);position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);opacity:0;}
+// button:active:before {width:100%;height:100%;animation:ripple .6s;}
+
 // button, input, textarea, select {border-radius:0px;-webkit-appearance:none;-moz-appearance:none;appearance:none;font:inherit;color:inherit;}
 input::-ms-clear {display:none;}
 input, textarea {-webkit-appearance:none;-webkit-border-radius:0}
@@ -10,8 +13,6 @@ button {background:none;padding:0;border:none;cursor:pointer;font:inherit;positi
 button > * {pointer-events:none;}
 button:not(:active),
 button:not(:focus) {outline:0;}
-// button:before {content:'';display:block;width:8px;height:8px;background:rgba(0,0,0,.2);position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);opacity:0;}
-// button:active:before {width:100%;height:100%;animation:ripple .6s;}
 button:active {outline:0;animation:ripple2 0.2s linear forwards;}
 
 input:focus,
@@ -21,11 +22,10 @@ select:focus {}
 [aria-pressed=false] {}
 
 .button.is-small {width:auto !important;min-width:72px !important;padding:4px 1rem 5px !important;font-size:12px !important;}
-
 .button.is-addable {min-width:auto !important;height:32px;padding-right:56px !important;text-align:left;}
 .button.is-addable.is-added {background:$color-primary;border-color:$color-primary;color:$gray0;}
 
-.button {display:inline-block;min-width:104px;background:$color-primary;padding:$padding200;color:$gray0;border-radius:$radius400;cursor:pointer;position:relative;}
+@mixin button {display:inline-block;min-width:104px;background:$color-primary;padding:$padding200;border-radius:$radius400;text-align:center;color:$gray0;cursor:pointer;position:relative;}
 
 .button-group {display:flex;width:100%;overflow:hidden;}// justify-content:space-between;}
 .button-group.is-left {padding:.5rem 0;}
@@ -38,9 +38,9 @@ select:focus {}
 .button-group button.is-active {background-color:$color-primary;color:$gray0;}
 .button-group button:first-child {border-top-left-radius:$radius400;border-bottom-left-radius:$radius400;}
 .button-group button:last-child {border-top-right-radius:$radius400;border-bottom-right-radius:$radius400;}
-.primary-button {@extend .button;background:$color-primary;border:1px solid $color-primary;color:$gray0;}
-.button[data-theme=primary] {background:$color-primary;border:1px solid $color-primary;color:$gray0;}
 
+.primary-button {@include button;background:$color-primary;border:1px solid $color-primary;color:$gray0;}
+.button[data-theme=primary] {background:$color-primary;border:1px solid $color-primary;color:$gray0;}
 .primary-button:disabled {background:$gray600;border-color:$gray600;color:$gray200;cursor:not-allowed;}
 .primary-button:hover:not(:disabled) {background:#1a650b;}
 .primary-button:focus:not(:disabled) {background:#1a650b;}
@@ -49,37 +49,32 @@ select:focus {}
 .primary-button.-twitter {background:#3664a2;border-color:#3664a2;}
 .primary-button.-kakao {background:#3664a2;border-color:#3664a2;}
 .primary-button.-naver {background:#3664a2;border-color:#3664a2;}
-.secondary-button {@extend .button;border:1px solid $color-primary;background:transparent;color:$color-primary;}
+.secondary-button {@include button;border:1px solid $color-primary;background:transparent;color:$color-primary;}
 .secondary-button:disabled {background:transparent;border-color:$gray200;color:$gray200;cursor:not-allowed;}
 .secondary-button:hover:not(:disabled) {background:$color-primary;color:$gray0;}
 .secondary-button:focus:not(:disabled) {background:$color-primary;color:$gray0;}
 .secondary-button:active:not(:disabled) {}
-.tertiary-button {@extend .button;border:1px solid $gray100;background:$gray100;color:$gray800;}
+.tertiary-button {@include button;border:1px solid $gray100;background:$gray100;color:$gray800;}
 .tertiary-button:disabled {color:$gray400;cursor:not-allowed;}
 .tertiary-button:hover:not(:disabled) {background:$color-primary;border-color:$color-primary;color:$gray0;}
 .tertiary-button:focus:not(:disabled) {background:$color-primary;color:$gray0;}
 .tertiary-button:active:not(:disabled) {}
-.danger-button {@extend .button;background:$color-negative;border:1px solid $color-negative;color:$gray0;}
+.danger-button {@include button;background:$color-negative;border:1px solid $color-negative;color:$gray0;}
 .danger-button:disabled {background:$gray400;border-color:$gray400;color:$gray0;cursor:not-allowed;}
 .danger-button:hover:not(:disabled) {background:$color-negative;}
 .danger-button:focus:not(:disabled) {background:$color-negative;}
 .danger-button:active:not(:disabled) {}
-.success-button {@extend .button;background:$color-positive;border:1px solid $color-positive;color:$gray0;}
+.success-button {@include button;background:$color-positive;border:1px solid $color-positive;color:$gray0;}
 .success-button:disabled {background:$gray400;border-color:$gray400;color:$gray0;cursor:not-allowed;}
 .success-button:hover:not(:disabled) {background:$color-positive;}
 .success-button:focus:not(:disabled) {background:$color-positive;}
 .success-button:active:not(:disabled) {}
-.ghost-button {@extend .button;background:none;border:1px solid transparent;color:$color-primary;}
+.ghost-button {@include button;background:none;border:1px solid transparent;color:$color-primary;}
 .ghost-button:disabled {color:$gray200;cursor:not-allowed;}
 .ghost-button:hover:not(:disabled) {border-color:$gray100;background:$gray100;}
 .ghost-button:focus:not(:disabled) {background:$gray100;}
 .ghost-button:active:not(:disabled) {}
 .icon-button {display:flex;align-items:center;justify-content:center;width:48px;height:48px;line-height:0;border-radius:$radius400;box-sizing:border-box;}
-
-.linebreak {display:block;}
-@media (max-width:$breakpoint-small) {
-  .linebreak {display:inline;}
-}
 
 input[type=text] {}
 input[type=password] {}

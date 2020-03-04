@@ -1,6 +1,7 @@
 @charset 'utf-8';
 
 @import 'abstracts/variables';
+@import 'abstracts/mixin';
 @import 'abstracts/icon';
 @import 'abstracts/keyframes';
 
@@ -129,7 +130,7 @@
 .avatar-badge {width:16px;height:16px;border-radius:50%;border:4px solid $gray0;box-sizing:border-box;position:absolute;right:0;bottom:0;}
 
 
-.tablist {position:relative;}
+.tablist {position:relative;overflow:auto;white-space:nowrap;position:relative;}
 .tablist-active {width:80px;height:2px;background:$color-primary;position:absolute;left:0;bottom:0;}
 .tablist-tab {padding:.5rem 1rem;text-align:center;}
 .tablist-tab-badge {font-size:10px;color:$color-primary;}

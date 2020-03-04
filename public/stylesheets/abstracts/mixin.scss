@@ -11,6 +11,19 @@
   }
 }
 
+@mixin centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin fixed-bottom {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 6;
+}
+
 @mixin ellipsis {overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
 @mixin title_style($size, $color) {overflow:hidden;white-space:nowrap;text-overflow:ellipsis;font-size:$size;color:$color;}
 
