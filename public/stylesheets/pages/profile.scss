@@ -53,7 +53,7 @@
 .accordion-trigger:not(:nth-of-type(1)) {border-top:none;}
 .accordion-trigger i {float:right;transition:all .2s}
 .accordion-trigger:hover {color:$gray800;}
-.accordion-trigger.is-active {color:$color-primary;}
+.accordion-trigger.is-active {border-bottom:none;color:$color-primary;}
 .accordion-trigger.is-active i {transform:rotate(180deg)}
 .accordion-panel {height:0;opacity:0;transition:all .25s;}
 .accordion-panel.is-visible {height:auto;opacity:1;margin:0 0 1rem 0;padding:1rem 0 2rem;box-sizing:border-box;/*animation:fadeup 0.4s $bezier-base forwards;*/}

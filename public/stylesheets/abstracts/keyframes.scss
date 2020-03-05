@@ -13,6 +13,8 @@ $md-radio-ripple-size: .25rem;
   100% {box-shadow: 0px 0px 0px $md-radio-ripple-size rgba(0, 0, 0, 0);}
 }
 
+
+
 @keyframes marquee {
 	from {
 		transform: translateX(0%);
@@ -21,13 +23,10 @@ $md-radio-ripple-size: .25rem;
 		transform: translateX(-100%);
 	}
 }
-@keyframes rotate{
-   from {
-      transform: rotate(0deg);
-   }
-   to {
-      transform: rotate(360deg);
-   }
+
+@keyframes rotation {
+	from {transform: rotate(0deg);}
+	to {transform: rotate(360deg);}
 }
 
 @keyframes starfieldRotate {
