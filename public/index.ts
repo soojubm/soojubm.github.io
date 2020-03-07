@@ -6,7 +6,6 @@ import routePage from './javascripts/router'
 import { loader, detectBrowser, adjustTopPadding } from './javascripts/load'
 import { setGraph } from './javascripts/ui'
 import { setDarkmode, carousel } from './javascripts/setDarkMode'
-
 import { validity } from './javascripts/utils/validations'
 // import { films } from '../views/films';
 import { countDownClock } from './javascripts/countdown'
@@ -87,8 +86,8 @@ const domEvents = () => {
     input.file()
     input.textarea()
     input.number()
-    
 
+    event.scrollspy()
 
     setGraph()
     countDownClock(20, 'days')
@@ -207,6 +206,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('scroll', () => {
     event.stickyElement({ targetElement: '.post-head', addClass: 'is-sticky' })
+    // event.stickyElement({ targetElement: '.js-navbar', addClass: 'is-sticky-navbar' })
   })
   window.addEventListener('scroll', scrollProgress, true)
   // var i = 0;

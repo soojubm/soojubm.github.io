@@ -1,5 +1,6 @@
 const eventScrollAnimation = () => {
   const scrollTarget = document.querySelectorAll('.js-scroll-animation')
+  console.log(scrollTarget)
   const SCROLLED_CLASS = 'is-scrolled'
   if (!scrollTarget) return
 
@@ -14,14 +15,14 @@ const eventScrollAnimation = () => {
 
   window.addEventListener('scroll', () => {
     scrollTarget.forEach(element => {
-      
+      const isScrolled = element.getBoundingClientRect().top - 200 <= window.innerHeight;
+      // const isScrolled = window.pageYOffset > window.pageYOffset + element.getBoundingClientRect().top - window.innerHeight + 50
+      if (!isScrolled) return
+
+      element.classList.add(SCROLLED_CLASS)
       temp && window.cancelAnimationFrame(temp)
       temp = window.requestAnimationFrame(() => {
-        const isScrolled = element.getBoundingClientRect().bottom <= window.innerHeight;
-        // const isScrolled = window.pageYOffset > window.pageYOffset + element.getBoundingClientRect().top - window.innerHeight + 50
-        if (!isScrolled) return
 
-        element.classList.add(SCROLLED_CLASS)
 
         // element.addEventListener('animationend', () => {
         //   element.classList.remove(SCROLLED_CLASS);
