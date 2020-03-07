@@ -1,15 +1,15 @@
 
-.pricing-item {width:320px;margin:0 auto;background:$gray0;padding:2rem 2.5rem 3rem;box-sizing:border-box;border-radius:$radius400;box-shadow:$shadow400;position:relative;}
+.pricing-item {width:320px;background:$gray0;padding:2rem;box-sizing:border-box;border-radius:$radius400;box-shadow:$shadow400;position:relative;}
 .pricing-item-title {font-size:$subhead;}
 .pricing-item-price {display:block;color:$gray800;font-size:2rem;}
 .pricing-item-price-unit {}
 .pricing-item-price- {font-size:14px;font-weight:400;color:$gray400;}
 .pricing-item-period {display:inline-block;color:$gray800;}
 .pricing-item-period:before {content:' / ';margin:0 .5rem;color:$gray400;}
-.pricing-item-description {margin:.5rem 0 1rem 0;}
+.pricing-item-description {margin:.5rem 0;}
 .pricing-item-description:before {content:'';display:none;width:40px;height:1px;background:$gray800;margin:1.25rem 0 1.75rem;}
 .pricing-item-button {display:block;width:100%;}
-.pricing-item ul {margin:2rem 0 3rem 0;}
+.pricing-item ul {margin:1rem 0 3rem 0;}
 .pricing-item ul li {padding:.125rem 0;}
 .pricing-item ul li:before {content:'';}
 .pricing-item .icon-check {border-color:$color-primary;}

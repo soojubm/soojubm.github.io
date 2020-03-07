@@ -56,11 +56,9 @@
 .accordion-trigger.is-active {border-bottom:none;color:$color-primary;}
 .accordion-trigger.is-active i {transform:rotate(180deg)}
 .accordion-panel {height:0;opacity:0;transition:all .25s;}
-.accordion-panel.is-visible {height:auto;opacity:1;margin:0 0 1rem 0;padding:1rem 0 2rem;box-sizing:border-box;/*animation:fadeup 0.4s $bezier-base forwards;*/}
-
+.accordion-panel.is-visible {height:auto;opacity:1;padding:1rem 0 3rem;box-sizing:border-box;/*animation:fadeup 0.4s $bezier-base forwards;*/}
 
 .image-centered {width:auto;height:auto;max-width:150%;max-height:150%;margin:auto;position:absolute;left:0;right:0;top:0;bottom:0;}
-
 
 
 .card {display:block;width:25%;margin:0 0 1.5rem;position:relative;}

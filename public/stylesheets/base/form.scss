@@ -21,9 +21,9 @@ select:focus {}
 
 [aria-pressed=false] {}
 
-.button.is-small {width:auto !important;min-width:72px !important;padding:4px 1rem 5px !important;font-size:12px !important;}
-.button.is-addable {min-width:auto !important;height:32px;padding-right:56px !important;text-align:left;}
-.button.is-addable.is-added {background:$color-primary;border-color:$color-primary;color:$gray0;}
+.is-small {width:auto !important;min-width:72px !important;padding:4px 1rem 5px !important;font-size:12px !important;}
+.is-addable {min-width:auto !important;height:32px;padding-right:56px !important;text-align:left;}
+.is-addable.is-added {background:$color-primary;border-color:$color-primary;color:$gray0;}
 
 @mixin button {display:inline-block;min-width:104px;background:$color-primary;padding:$padding200;border-radius:$radius400;text-align:center;color:$gray0;cursor:pointer;position:relative;}
 

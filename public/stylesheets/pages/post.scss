@@ -2,9 +2,9 @@
 
 .post p:first-line {}
 .post p:not(:nth-of-type(1))::first-letter {padding-left:0;}
-.post {max-width:720px;margin:0 auto;padding:100px 5% 40px;}
+.post {max-width:720px;margin:0 auto;padding:4rem 5% 40px;}
 .post-head {margin:0 0 3rem 0;position:relative;}
-.post-head-runninghead {color:$color-primary;}
+.post-head-runninghead {}
 .post-head-headline {padding:0rem 0 1rem 0;font-size:2rem;color:$gray800;text-indent:-1px;} /* 상하단 패딩 똑같이해야 스키티때 */
 .post-head-time {color:$gray400;}
 .post-head-progress {display:none;height:3px;background:rgb(200,0,0);position:absolute;bottom:-3px;}
@@ -42,7 +42,7 @@ body.is-sticky {padding-top:133px;}
 .post-foot {padding:0 0 0 0;}
 .post-hashtag {display:flex;margin:2rem 0 2rem 0px;}
 .post-hashtag-item {display:block;margin:0 4px 4px 0px;padding:0 1rem !important;border:1px solid #e9e9e6;border-radius:2px;font-size:12px;}
-.post-share {margin:3rem 0 6rem 0px;}
+.post-share {margin:3rem 0 2rem;}
 .post-share-title {}
 .post-share-button {display:block;margin:1rem 0 0 0;}
 .post-share-button i {display:inline-block;width:32px;height:32px;line-height:32px;margin-right:16px;border-radius:$radius400;background:rgba(0,80,200,.8);color:$gray0;vertical-align:middle;}
