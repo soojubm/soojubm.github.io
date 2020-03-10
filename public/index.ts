@@ -206,7 +206,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('scroll', () => {
     event.stickyElement({ targetElement: '.post-head', addClass: 'is-sticky' })
-    // event.stickyElement({ targetElement: '.js-navbar', addClass: 'is-sticky-navbar' })
+    event.stickyElement({ targetElement: '.js-navbar', addClass: 'is-sticky-navbar' })
   })
   window.addEventListener('scroll', scrollProgress, true)
   // var i = 0;

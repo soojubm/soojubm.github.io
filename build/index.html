@@ -122,12 +122,20 @@ console.log(timeFromNow(2020-02-28))
     </aside>
 
     <nav class="navbar js-navbar" role="navigation">
-      <a class="navbar-logo" href="/">🐤</a>
+      <a class="navbar-logo" href="/"><img src="https://cdn.imweb.me/thumbnail/20190221/5c6e2bbdb7d06.gif" alt=""></a>
+      <!-- <a class="navbar-logo" href="/">🐤</a> -->
+      <a href="#" style="position:absolute;right:180px;"><img src="/public/icons/instagram.svg" alt=""></a>
+      <a href="#" class="navbar-cta primary-button">뉴닉 구독하기</a>
+      <div class="navbar-menu" role="navigation">
+        <a class="navbar-menu-item" href="#pledge" style="text-decoration:underline;">공약집</a>
+        <a class="navbar-menu-item" href="#dictionary">총선사전</a>
+        <a class="navbar-menu-item" href="#faq">FAQ</a>
+      </div>
+      
       <div class="navbar-user">
         <div class="navbar-user-search" role="search" aria-label="site">
           <a class="navbar-user-search-trigger js-navbar-toggle" href="#">
             <i class="icon-search" style="pointer-events:none;"></i>
-            <!-- <i class="material-icons" style="pointer-events:none;">search</i> -->
           </a>
           <form class="navbar-user-search-form" action="">
             <!-- <button class="navbar-user-search-form-close js-close" aria-label="delete"><i class="icon-close"></i></button> -->
@@ -158,15 +166,11 @@ console.log(timeFromNow(2020-02-28))
           </menu> -->
           <menu class="navbar-user-notification-menu" style="width:320px;">
             <h6 class="navbar-user-notification-menu-title">새 알림</h6>
-            <div class="notification-item">
+            <div class="navbar-user-notification-menu-item">
               <div class="avatar" style="float:left;margin-right:.75rem;background:crimson"></div>
               <p style="font-size:12px;line-height:1.4;"><b>John Cassavetes - The Godfather of...</b>에 <b>Kevin Malin</b>님이 올린 새로운 게시물이 있습니다.</p>
               <time style="display:block;margin:0 0 0 3rem;font-size:11px;color:crimson;">5일 전</time>
             </div>
-            <style>
-            .notification-item {padding:.5rem 1rem;cursor:pointer;position:relative;}
-            .notification-item:hover {background:#f1f3f4;}
-            </style>
             <!-- <a class="navbar-user-account-menu-item" href="" disabled>프로필 관리</a>
             <a class="navbar-user-account-menu-item is-active" href="">고객센터</a>
             <a class="navbar-user-account-menu-item" href="">수줍이에서 로그아웃</a> -->
@@ -197,14 +201,13 @@ console.log(timeFromNow(2020-02-28))
           </div>
         </div>
       </div>
-      <button class="navbar-burger js-navbar-toggle" aria-expanded="false"><i class="icon-hamberger"></i></button>
-      <div class="navbar-menu" role="navigation">
+      <!-- <button class="navbar-burger js-navbar-toggle" aria-expanded="false"><i class="icon-hamberger"></i></button> -->
+      <!-- <div class="navbar-menu" role="navigation">
         <div class="navbar-menu-item js-hover-trigger">
           <a route="" href="#"> 페이지<i class="icon-caret"></i></a>
           <menu>
             <a href="#profile">유저프로필</a>
             <a href="#login">로그인</a>
-            <!-- <a href="#signup">회원가입</a> -->
             <a href="#forgot">비밀번호찾기</a>
             <a href="#product">상품</a>
             <a href="#cart">카트</a>
@@ -221,7 +224,7 @@ console.log(timeFromNow(2020-02-28))
             <span class="night" style="width: 32px;">🌙</span>
           </span>
         </div>
-      </div>
+      </div> -->
     </nav>
 
     <!-- <header class="header">
@@ -249,10 +252,21 @@ console.log(timeFromNow(2020-02-28))
 
     <section class="banner">
       <p class="banner-text">수줍이에는 처음 방문이신가요?</p>
-      <button class="tertiary-button" type="button">이용방법을 알아보세요!</button>
+      <button class="banner-button tertiary-button" type="button">이용방법을 알아보세요!</button>
     </section>
 
-    <footer class="footer" role="contentinfo">
+
+    <form class="subscribe">
+      <h2 class="subscribe-title">뉴스레터를 정기구독하세요.</h2>
+      <p class="subscribe-description">사실 그런 건 없고 유아이 콤포넌트 입니다.</p>
+      <div class="subscribe-field textfield">
+        <input class="textfield-input" placeholder="Enter Your Email.." />
+        <button class="textfield-button primary-button" type="submit">신청하기</button>
+      </div>
+      <small class="subscribe-helper">Read more about how we collect and use your data in our <a href="">Privacy Policy page.</a></small>
+    </form>
+    
+    <footer class="footer is-short" role="contentinfo">
       <!-- <div class="skeleton-screen"></div> -->
       <aside class="scroll">
         <p class="scroll-indicator" aria-hidden="true">스크롤하세요</p>
@@ -260,14 +274,6 @@ console.log(timeFromNow(2020-02-28))
         <button class="scroll-top icon-button js-to-top" type="button" name="top"><i class="icon-arrow"></i> <b aria-hidden="true">맨위로</b></button>
       </aside>
       <div class="footer-background"></div>
-      <form class="footer-newsletter">
-        <h2 class="footer-newsletter-title">뉴스레터를 정기구독하세요.</h2>
-        <p class="footer-newsletter-description">사실 그런 건 없고 유아이 콤포넌트 입니다.</p>
-        <div class="footer-newsletter-field textfield">
-          <input class="textfield-input" placeholder="Enter Your Email.." />
-          <button class="textfield-button primary-button" type="submit">신청하기</button>
-        </div>
-      </form>
       <nav class="footer-sitemap">
         <h1 class="footer-sitemap-title" aria-hidden="true">하단 사이트맵 <small aria-hidden="true">More Articles by themes</small></h1>
         <div class="footer-sitemap-item">
@@ -311,7 +317,7 @@ console.log(timeFromNow(2020-02-28))
           <abbr title="phone"></abbr>
         </div>
         <small class="footer-copyright">© 2019 soojubm. ALL RIGHTS RESERVED.</small>
-        <div class="countdown">
+        <!-- <div class="countdown">
           <div class="days">
             <div class="days-value js-days"></div>
             <div class="days-label">days</div>
@@ -328,7 +334,7 @@ console.log(timeFromNow(2020-02-28))
             <div class="seconds-value js-seconds"></div>
             <div class="seconds-label">seconds</div>
           </div>
-        </div>
+        </div> -->
       </address>
     </footer>
   <script type="text/javascript" src="/bundle.js"></script></body>

@@ -1,407 +1,533 @@
-<!-- <link href="https://fonts.googleapis.com/css?family=Gothic+A1:300,400,700,900&d?isplay=swap&subset=korean" rel="stylesheet" /> -->
 <style>
-  /* @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:900&display=swap'); */
-  
+  /* @import url('https://fonts.googleapis.com/css?family=Chelsea+Market&display=swap'); */
+  /* @import url('https://fonts.googleapis.com/css?family=Ma+Shan+Zheng&display=swap'); */
   @import url('https://fonts.googleapis.com/css?family=Noto+Serif+KR:900&display=swap');
-  @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,900&display=swap');
+  @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:500&display=swap');
   html {
-    /* font-weight: 900; */
+    margin: 0 .5rem;
     /* font-family: 'DunkelSans'; */
-    font-family: 'Noto Serif KR';
-    /* font-family: 'Noto Sans KR';
-    font-weight: 900; */
-    letter-spacing: .025rem;
+    font-family: 'Noto Sans KR';
+    /* letter-spacing: -.025rem; */
+    color:#000;
+    letter-spacing: -.025rem;
+    font-weight: 500;
   }
+  a:hover, button:hover, [role=button] {
+    cursor:url(/public/images/cursor-gosum.png), auto;
+  }
+  * {box-sizing:border-box;}
   body {
-    background: #ddd;
+    background: #ebebeb;
+  }
+  b { 
+    color:#000;
+  }
+  b, p {
+    font-family: 'Noto Sans KR';
+  }
+  h1, h2, h3, h4, h5, h6, strong {
+    font-weight: 900;
+    font-family: 'Noto Serif KR';
+    color:#000;
   }
 
-  .navbar {border:4px solid #000;box-sizing:border-box;}
-  a {color:#ff7800;}
-  em {color:#000;}
+  .tag {background:#000;color:#fff;}
+
+  .hero {border-radius:0;overflow:visible;padding:0;margin:0 -5rem;}
+  .accordion-trigger {padding:12px 2rem 13px;border:1px solid #000;font-size:1.25rem;}
+  .accordion-panel.is-visible {border:1px solid #000;border-top:none;padding:0 2rem 3rem}
+  .banner {
+    border-radius: 0;
+    width:auto;display:flex;align-items:center;justify-content:center;height:80px;background:#fff;margin:.5rem;box-sizing:border-box;font-size:1.25rem;position:fixed;left:0;right:0;bottom:0;z-index:6;
+  }
+  /* .subscribe, */
+  .banner,
+  .header,
+  .toast {
+    display: none;
+  }
+
+  .subscribe {
+    margin: 0 -4rem;
+    padding:4rem 0;
+    background: #000;
+    text-align: center;
+  }
+  .subscribe-title {font-size:2rem;color:#fff;}
+  .subscribe-description {color:#fff;}
+  .subscribe-field {width:400px;margin:2rem auto;}
+  .subscribe-helper {display:none;}
+  .subscribe-field input {border:1px solid #000;}
+  .tag {font-size: 1rem;}
+  .card-title {padding-top:1rem;}
+
+  .modal-head-title {font-size:2rem;}
+  .modal-head-description {color:#000;}
+  .modal-dialog {
+    max-width: 100%;
+    height: 100%;
+    margin: 0;
+    border-radius: 0;
+  }
+  .modal-body {padding:2rem;}
+  .modal-close {display:block;padding:2rem 3rem;transform:rotate(-180deg);}
+
+  .temp-button {
+    width: 200px;
+    height: 56px;
+    background: #76faad;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    position: relative;
+  }
+  /* .temp-button:hover {background:#fff;} */
+  .temp-button:before {
+    content: '';
+    width: 200px;
+    height: 56px;
+    background: #ddd;
+    position: absolute;
+    left: 6px;
+    top: 6px;
+    z-index: -1;
+    transition: all 0.2s ease;
+  }
+  .temp-button:hover:before {
+    left: -6px;
+    top: -6px;
+  }
+  .temp-button:after {
+    content: '';
+    width: 200px;
+    height: 56px;
+    border: 2px solid #000;
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    transition: all 0.2s ease;
+  }
+  .temp-button:hover:after {
+    left: 6px;
+    top: 6px;
+    z-index: -1;
+  }
+  .statistic {
+    width: auto;
+    margin: 2rem;
+    border: 2px solid #000;
+    text-align: center;
+  }
+  .statistic-label {
+    padding: 0.5rem 1rem;
+    border-top: 2px solid #000;
+    font-size: 16px;
+    color: #000;
+    font-weight: bold;
+  }
+  .statistic-value {
+    display: block;
+    padding: 1rem;
+    color: #000;
+    font-size: 2rem;
+  }
+  .text-stroke {
+    -webkit-text-stroke:1px #000;
+    color:#fb7800;
+  }
+
 </style>
 
-<!-- <div style="width:80px;background:#ddd;border:4px solid #000;position:fixed;left:0;top:60px;bottom:0;z-index:4;">
-  페이지타이틀
-</div> -->
-<header style="padding:8rem 0 12rem;background:#000;position:realtive;">
-  <h1 style="color:#000;-webkit-text-stroke:1px #fff;font-size:8rem;text-align:center;">연습장 🗯</h1>
+<!-- <header style="padding:8rem 0 12rem;background:#000;position:realtive;">
+  <h1 style="-webkit-text-stroke:1px #fff;font-size:8rem;text-align:center;">연습장 🗯</h1>
   <img
     src="/public/images/cherry-no-messages.png"
     alt=""
-    style="position:absolute;left:50%;top:300px;
-    margin-left: -64px;
-    width: 140px;z-index:1;"
+    style="position:absolute;left:50%;top:300px;margin-left: -64px;width: 140px;z-index:1;"
   />
-  <p style="margin-top:1rem;text-align:center;color:#999;font-family:sans-serif;font-weight:700;">
-    어쩌고 저쩌고 구독 아직 안 하셨쎄요? &nbsp; &nbsp;
-    <a class="text-button" href="">텍스트 버튼</a>
-  </p>
-</header>
+</header> -->
 <!-- <div class="starfield">
   <span></span>
   <span></span>
   <span></span>
   <span></span>
 </div> -->
+
+<div class="pagehead">
+  <h2>
+    <span style="transform:rotate(-2.5deg);">2020</span>
+  </h2>
+  <h2 >
+    <span style="transform:rotate(-2.5deg);position:absolute;">총선 뽀개기</span>
+  </h2>
+  <h2>
+    <span style="transform:rotate(-2.5deg);">D-day<i class="icon-circle" style="margin-right:0;margin-left:.5rem;">41</i></span>
+  </h2>
+  <div class="marquee">
+    <p>이러다 오늘도 가장 유식하겠는데!</p>
+    <p>이러다 오늘도 가장 유식하겠는데!</p>
+    <p>이러다 오늘도 가장 유식하겠는데!</p>
+    <p>이러다 오늘도 가장 유식하겠는데!</p>
+    <p>이러다 오늘도 가장 유식하겠는데!</p>
+    <p>이러다 오늘도 가장 유식하겠는데!</p>
+    <p>이러다 오늘도 가장 유식하겠는데!</p>
+    <p>이러다 오늘도 가장 유식하겠는데!</p>
+    <p>이러다 오늘도 가장 유식하겠는데!</p>
+    <p>이러다 오늘도 가장 유식하겠는데!</p>
+    <p>이러다 오늘도 가장 유식하겠는데!</p>
+    <p>이러다 오늘도 가장 유식하겠는데!</p>
+  </div>
+</div>
+
+<header class="hero">
+  <img src="/public/images/gosum-default.png" alt="">
+  <h1 class="temp js-animation-scroll" style="font-size:4rem;color:#fff;background:#000;margin:30rem -2rem 2rem;padding:3rem 0 4rem;text-align:center;position:relative;z-index:1;transform:rotate(-4deg);">
+    <span>꼭 그렇게 다 뽀개야만<br />
+      <span style="font-size:5rem;">속이 후련했냐ㅏㅏㅏㅏ!!</span>
+    </span>
+  </h1>
+  <!-- <div class="style-heading" style="background:none;">
+    <img src="/public/images/star1.svg" alt="" style="width:100px;position:absolute;left:50%;top:50%;transform:translate(-50%, -50%);" />
+    <time>3월 20일 오픈예정</time>
+    <h1 style="margin-top:-.25rem;font-size:3rem;text-align:center;position:relative;">일자리</h1>
+  </div> -->
+</header>
+
 <section class="pledge">
-  <header>
-    <!-- <p class="style-heading">
-      <div class="marquee">
+  <header class="style-heading">
+    <h2 id="pledge" class="scroll-fadeup js-scroll-animation">공약집</h2>
+    <p class="pledge-description scroll-fadeup js-scroll-animation">(투표) 준비 됐나요? 네네, 네네네! 
+      그런데 호옥시 아직 준비 못한 친구가 보인다면, <a href="">이 링크</a>를 전달해 주세요.
+      <br />
+      “이거 하나면 내일 당당하게 투표장에 들어갈 수 있어!”라면서요. 😉
+    </p>
+  </header>
+  <nav>
+    <!-- <div class="ttt" style="display:flex;padding:0 0 2rem;justify-content:center;">
+      <b class="js-toggle">
+        일자리
+      </b>
+      <i class="icon-bullet"></i>
+      <b>경제정책</b>
+      <i class="icon-bullet"></i>
+      <b>아동복지</b>
+      <i class="icon-bullet"></i>
+      <b>노동</b>
+      <i class="icon-bullet"></i>
+      <b>교육</b>
+      <i class="icon-bullet"></i>
+      <b>기후위기</b>
+      <i class="icon-bullet"></i>
+      <b>주거</b>
+      <i class="icon-bullet"></i>
+      <b>부동산</b>
+      <i class="icon-bullet"></i>
+      <b>인권</b>
+    </div>
+    <style>
+      .ttt b {margin:0 1rem;font-size:1.25rem;}
+      .icon-bullet {display:inline-block;margin-top:12px;width:.5rem;height:.5rem;border-radius:50%;background:#000;}
+      .icon-bullet:before {display:none;}
+    </style> -->
+    <!-- <style>
+      .ttt {width:800px;margin:0 auto;flex-wrap:wrap;position:relative;}
+      .ttt b {    display: block;
+      width: 33.3333%;
+      background: #e6e6e6;
+      /* margin: 1rem 1.25%; */
+      padding: 2rem;
+      margin: -2px;
+      font-size: 1.25rem;
+      border: 2px solid #000;
+      transition: all .4s ease;
+      box-sizing: border-box;}
+    </style> -->
+  </nav>
+  <div class="card-group">
+    <figure class="card">
+      <img src="/public/images/gosum-default.png" alt="">
+      <div style="display:flex;justify-content:center;align-items:center;width:100px;height:100px;border-radius:50%;border:1px solid #000;color:#000;line-height:1.4;position:absolute;left:0;top:0;">
+        <span style="display:block;transform:rotate(-5deg);font-family:'Noto Serif KR';">
+          Lunch<br />and<br />Dinner
+        </span>
+      </div>
+      <figcaption>
+        <h3 class="card-title">#일자리</h3>
+        <!-- <time class="card-date">September 12, 2017</time> -->
+        <div class="card-tags" role="group">
+          <span class="tag">보유세</span>
+          <span class="tag">분양가 상한제</span>
+          <span class="tag">부담대</span>
+        </div>
+      </figcaption>
+    </figure>
+    <figure class="card">
+      <img src="/public/images/gosum-default.png" alt="">
+      <figcaption>
+        <h3 class="card-title">#일자리</h3>
+        <!-- <time class="card-date">September 12, 2017</time> -->
+        <div class="card-tags" role="group">
+          <span class="tag">보유세</span>
+          <span class="tag">분양가 상한제</span>
+          <span class="tag">부담대</span>
+        </div>
+      </figcaption>
+    </figure>
+    <figure class="card">
+      <img src="/public/images/gosum-default.png" alt="">
+      <figcaption>
+        <h3 class="card-title">#일자리</h3>
+        <!-- <time class="card-date">September 12, 2017</time> -->
+        <div class="card-tags" role="group">
+          <span class="tag">보유세</span>
+          <span class="tag">분양가 상한제</span>
+          <span class="tag">부담대</span>
+        </div>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="dictionary" style="overflow:hidden;">
+  <header class="dictionary-head style-heading" style="padding-top:6rem;position:relative;z-index:1;">
+    <h2 id="dictionary" class="dictionary-title scroll-fadeup js-scroll-animation">총선 101 (선거용어사전)</h2>
+    <p class="dictionary-description scroll-fadeup js-scroll-animation">(투표) 준비 됐나요? 네네, 네네네! 
+      그런데 호옥시 아직 준비 못한 친구가 보인다면, <a href="">이 링크</a>를 전달해 주세요.
+      <br />
+      “이거 하나면 내일 당당하게 투표장에 들어갈 수 있어!”라면서요. 😉
+    </p>
+  </header>
+
+  <section class="dictionary-body js-scroll-animation" style="position:relative;z-index:1;">
+    <div class="dictionary-body-item scroll-fadeup js-scroll-animation">
+      <h3 class="js-toggle" role="button">
+        총선 🔫
+        <i class="icon-caret"></i>
+      </h3>
+      <div>정식 명칭은 국회의원 선거. 300명의 국회의원을 한꺼번에(총) 뽑는다(선)는 의미에서 ‘총선’이라고 불려요.</div>
+    </div>
+    <div class="dictionary-body-item scroll-fadeup js-scroll-animation">
+      <h3 class="js-toggle" role="button">
+        선거관리위원회 (a.k.a. 선관위) 📙
+        <i class="icon-caret"></i>
+      </h3>
+      <div>선거가 자유롭고 공정하게 이뤄질 수 있도록 관리하는 헌법기관*이에요. 예비후보자가 등록하는 시점부터 선거운동을 거쳐 당선자가 확정될 때까지, 선거가 공정당당하게 이뤄지고 있는지 감시하고 선거 비용이 엉뚱한 데 사용되고 있지는 않는지 감시해요. 
+        <br />
+        *헌법기관: 우리나라 최고 상위 법인 헌법에 따라 만들어진 기관. 
+      </div>
+    </div>
+    <div class="dictionary-body-item scroll-fadeup js-scroll-animation">
+      <h3 class="js-toggle" role="button">
+        공천
+        <i class="icon-caret"></i>
+      </h3>
+      <div>
+        정당이 선거에 나갈 후보자를 추천하는 것. 보통 한 정당에서는 1 지역구, 1 후보자를 내보내는데요. 한 지역에 같은 당 출신의 후보자가 많아질수록, 표가 나눠져 경쟁력이 떨어질 수 있기 때문.
+        <br />
+        공천은 보통 2가지 방식으로 이뤄져요: (1) 2~3명의 후보자가 한 지역을 두고 경쟁하는 ‘경선’ 방식과 (2) 중요하다고 생각하는 지역에 당이 후보자를 지명하는 ‘전략공천’ 방식.
+      </div>
+    </div>
+    <div class="dictionary-body-item scroll-fadeup js-scroll-animation">
+      <h3 class="js-toggle" role="button">
+        지역구 의원 📙
+        <i class="icon-caret"></i>
+      </h3>
+      <div>유권자가 ‘사람에 직접 투표'해서 뽑은 국회의원. 길을 가다 어떤 사람의 얼굴이 대문짝만하게 붙은 포스터(기호 O번)를 봤다면, 그 사람은 지역구 의원 후보자일 가능성이 아주아주 높다는 이야기. 선거관리위원회가 정해준 구역(선거구) 안에서 가장 많은 표를 받은 사람이 당선되고요. 총 <u>253명</u>을 뽑아요.</div>
+    </div>
+    <div class="dictionary-body-item scroll-fadeup js-scroll-animation">
+      <h3 class="js-toggle" role="button">
+        비례대표 의원 📙
+        <i class="icon-caret"></i>
+      </h3>
+      <div>유권자가 ‘정당에 투표’해서 뽑은 국회의원. 총선 때는 내가 마음에 드는 사람에 한 표, 마음에 드는 정당에 한표해서 도장을 총 2번 찍는데요. 이때 정당은 받은 득표율에 따라, 비례대표 의석(47석)을 갈라 가져가요. 그리고 선거 전에 미리 만들어 놓은 ‘비례대표 명부(리스트)’에서 가져간 의석 수만큼 1번부터 n번까지에게 그 자리를 주는 것.
+        <br />
+        <br />
+        + 비례대표 의원 리스트를 보면, 그 당이 밀고 싶은 정책이 무엇인지를 엿볼 수 있는데요. 특히 비례대표 1번 후보는 각 정당이 미는 컨셉이나 정책의 우선순위를 엿볼 수 있는 힌트가 되어준다고.
+        <br />
+        또 하나의 토막상식: 비례대표의 홀수 번호(1·3·5번 등)에는 여성을 추천하도록 법에 정해져 있어요.
+        <br />
+        <br />
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/12C7tErjFxA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="dictionary-body-item scroll-fadeup js-scroll-animation">
+      <h3 class="js-toggle" role="button">
+        준연동형 비례대표제 📙
+        <i class="icon-caret"></i>
+      </h3>
+      <div>
+        <span>
+          2020년 총선부터는 국회의원을 뽑는 방식이 째금 달라져요. 지금의 선거 방식이 민심을 제대로 반영하지 못한다는 의견이 많았거든요.
+          그래서 30%의 지지율이든 60%의 지지율이든 1등만 하면 장땡인 ‘지역구 선거’의 영향을 줄이고, 정당 득표율에 따라 의석수를 배분하면 사람들의 지지율이 좀 더 반영되지 않겠냐는 것(연동형 비례대표제).
+          하지만 그렇다고 갑자기 지역구 의원을 모두 없애버릴 순 없겠죠.
+          그래서 300개 중 딱 30개 자리에만 새로운 룰을 반영하자면서 ‘준연동형 비례대표제’라는 게 탄생했어요.
+        </span>
+        <br /><br />
+        <button class="js-modal">
+          <b style="text-decoration:underline;font-weight:700;">
+            👉 그래서 뾰족당 고슴의원에게 어떤 변화가 생겼는지 더 알아보기
+          </b>
+        </button>
+        <aside class="modal" role="dialog">
+          <article class="modal-dialog">
+            <header class="modal-head">
+              <button class="modal-close js-modal-close" style="position:static;right:auto;top:auto;">
+                <i class="icon-arrow is-left"></i><span class="off-screen">닫기</span>
+              </button>
+              <figure style="height:300px;background:#333;border:2px solid #000;"></figure>
+              <h1 class="modal-head-title">제목</h1>
+              <p class="modal-head-description">내용내용내용내용내용.</p>
+            </header>
+            <section class="modal-body">
+              <button class="accordion-trigger" type="button" aria-expanded="false">
+                보유세
+              <article class="accordion-panel">
+                안녕
+              </article>
+              <button class="accordion-trigger" type="button" aria-expanded="false">
+                분양가 상한제
+              </button>
+              <article class="accordion-panel">
+                안녕
+              </article>
+              <button class="accordion-trigger" type="button" aria-expanded="false">
+                주담대 (대출규제)
+              </button>
+              <article class="accordion-panel">
+                안녕
+              </article>
+            </section>
+          </article>
+        </aside>
+        <!-- 비례대표 의원 출마를 결심한 뾰족당 고슴의원. 그런데 총선 룰이 바뀌면서, 언제 당선될 수 있는지 계산기(이모지)를 두드려봐야 하는 상황이 됐어요. -->
+      </div>
+    </div>
+    <div class="dictionary-body-item scroll-fadeup js-scroll-animation">
+      <h3 class="js-toggle" role="button">
+        만 18세 선거권 📙
+        <i class="icon-caret"></i>
+      </h3>
+      <div>이렇게 바뀌었다. 혹시 뭐 할 수 있고, 없는지 알고 싶으면 여기서 찾아볼 수 있다 링크 걸어주기.</div>
+    </div>
+    <div class="dictionary-body-item scroll-fadeup js-scroll-animation">
+      <h3 class="js-toggle" role="button">
+        여론조사 📙
+        <i class="icon-caret"></i>
+      </h3>
+      <div>여론조사 결과 보통 어떻게 나오는지 + 언제부터는 못 나오는지.</div>
+    </div>
+  </section>
+
+  <img src="/public/images/gosum-default.png" style="width:20%;position:absolute;bottom:-10rem;left:50%;transform:translateX(-50%);z-index:0;" alt="">
+</section>
+
+<section class="faq">
+  <header class="style-heading">
+    <h2 id="faq" class="scroll-fadeup js-scroll-animation">이제 실전이다!</h2>
+    <p class="faq-description scroll-fadeup js-scroll-animation">(투표) 준비 됐나요? 네네, 네네네! 
+      그런데 호옥시 아직 준비 못한 친구가 보인다면, <a href="">이 링크</a>를 전달해 주세요.
+      <br />
+      “이거 하나면 내일 당당하게 투표장에 들어갈 수 있어!”라면서요. 😉
+    </p>
+    <div style="display:flex;align-items:center;justify-content:center;width:100px;height:100px;border-radius:50%;border:1px solid #000;position:absolute;right:10%;bottom:0;animation:rotation 4s infinite;">★신분증 필수★</div>
+    <!-- <div style="display:flex;align-items:center;justify-content:center;width:100px;height:100px;border-radius:50%;border:1px solid #000;position:absolute;left:5%;bottom:-12rem;animation:rotation 4s infinite;">★신분증 필수★</div> -->
+    <!-- ★★★★★ 신분증 필수 ★★★★★ -->
+    <!-- 주민등록증, 운전면허증, 여권 등 관공서나 공공기관이 발급하고 사진이 붙어있는 신분 증명서</p> -->
+  </header>
+
+  <!-- <div>TODO:: 신분증들고 있는 고슴이</div> -->
+  
+  <div class="style-row js-scroll-animation">
+    <article class="style-column">
+      <h3>#사전투표</h3>
+      <p>사전투표란? 투표 당일, 투표장에 가기 어렵다면 사전투표로 (   )를 보여주세요. 따로 신청하지 않아도, 전국 어디서나 투표할 수 있어요.</p>
+      <div>
+        <b>시간</b>
+        <p>4월 10(금)~11일(토) 오전 6시~오후 6시</p>
+      </div>
+      <div>
+        <b>장소</b>
+        <p>근처 사전투표소 아무곳이나 가능.</p>
+      </div>
+      <footer>
+        <a href="" target="_blank" class="primary-button">근처 사전투표소 찾기</a>
+      </footer>
+    </article>
+    <article class="style-column">
+      <h3>#본투표</h3>
+      <p>투표 당일이 되었습니다. 아직 투표 안 한 뉴니커는 모두 고개를 들어주세요.</p>
+      <div>
+        <b>시간</b>
+        <p>4월 15일(수) 오전 6시~오후 6시</p>
+      </div>
+      <div>
+        <b>장소</b>
+        <p>주민등록주소에 따라 정해져 있는 투표소에서만 투표할 수 있어요!</p>
+      </div>
+      <footer>
+        <a href="" target="_blank" class="primary-button">내 투표소 찾기</a>
+      </footer>
+    </article>
+  </div>
+  
+  <section class="manual js-scroll-animation">
+    <header>
+      <h2 class="manual-title">#투표장 Do & Don’t</h2>
+    </header>
+    <article>
+      <h4 class="manual-subhead"><i>하나</i>투표 용지 접는 법</h4>
+      <div class="manual-body">
+        <i class="emoji is-large">🙅‍♀️</i>
         <p>
-          <i>이러다 오늘도 가장 유식하겠는데!</i>
-          <i>이러다 오늘도 가장 유식하겠는데!</i>
-          <i>이러다 오늘도 가장 유식하겠는데!</i>
-          <i>이러다 오늘도 가장 유식하겠는데!</i>
-          <i>이러다 오늘도 가장 유식하겠는데!</i>
+          도장을 찍은 후에 가로로 접는 건 삐 -.
+          <br />
+          잘못하면 다른 후보 또는 정당에 도장이 묻을 수도 있기 때문.
         </p>
       </div>
-    </p> -->
-    <h2 class="style-heading" style="margin-top:-4px;text-align:left;padding:40px 2rem 200px;">
-      금융의 모든 것, <br /> <u>토스</u>에서 간편하게 ✌️
-      <br />
-      <p style="display:inline-block;font-size:1.25rem;color:#000;">#코로나바이러스👃</p>
-      <p style="display:inline-block;font-size:1.25rem;color:#000;">#코로나바이러스👃</p>
-      <div style="padding:1rem 1.5rem .5rem;position:absolute;left:32px;bottom:0;border:4px solid #000;text-align:center;font-size:16px;margin-left:-4px;margin-bottom:-4px;">
-        D-Day <div class="dday" style="margin-top:-1rem;font-size:60px;"></div>
-        <div style="display:flex;position:absolute;left:32px;bottom:106px;">
-          <i style="display:block;width:4px;height:16px;background:#000;border:none;"></i>
-          <i style="display:block;width:4px;height:16px;background:#000;border:none;margin-left:8px;"></i>
-          <i style="display:block;width:4px;height:16px;background:#000;border:none;margin-left:8px;"></i>
-          <i style="display:block;width:4px;height:16px;background:#000;border:none;margin-left:8px;"></i>
-          <i style="display:block;width:4px;height:16px;background:#000;border:none;margin-left:8px;"></i>
-        </div>
+      <div class="manual-body">
+        <i class="emoji is-large">🙆‍♀️</i>
+        <p>투표 용지는 반드시 세로로 접어주세요.</p>
       </div>
-    </h2>
-    <p class="style-description">ㄻㄻㄻㄻㄻㄻㄻㄻㄻㄻ</p>
-    <p class="style-description">ㄻㄻㄻㄻㄻㄻㄻㄻㄻㄻ</p>
-  </header>
-  <span style="display:block;">
-    <figure style="position:relative;text-align:center;">
-      <img src="/public/images/star1.svg" alt="" style="width:100px;position:absolute;left:50%;margin-left:-50px;" />
-      <!-- <p style="position:relative;z-index:1;color:#000;font-size:20px;line-height:80px;">안녕하세요.</p> -->
-    </figure>
-    <time>3월 20일 오픈예정</time>
-    <h3>일자리</h3>
-  </span>
-  <!-- <div>
-    <div>일자리</div>
-    <div>경제정책</div>
-    <div>아동복지</div>
-    <div>노동</div>
-    <div>교육</div>
-    <div>기후위기</div>
-    <div>주거</div>
-    <div>부동산</div>
-    <div>인권</div>
-    <div>coming soon</div>
-    <div>coming soon</div>
-    <div>coming soon</div>
-  </!-->
-</section>
-<nav class="style-description">
-  <div class="aaa" style="display:flex;">
-    <div>일자리</div>
-    <div>경제정책</div>
-    <div>아동복지</div>
-    <div>노동</div>
-    <div>교육</div>
-    <div>기후위기</div>
-    <div>주거</div>
-    <div>부동산</div>
-    <div>인권</div>
-  </div>
-</nav>
-<style>
-  .aaa {padding-left: 1rem;}
-  .aaa div {margin:0 1rem;}
-</style>
-<div class="style-heading" style="margin-top:-4px;padding-left:2rem;">
-  <u>일자리</u> 공약 모아보기
-</div>
-<div class="style-description js-toggle" style="padding:2rem;font-size:1.5rem;">청년 일자리를 늘리기 위해서는<span style="display:inline-block;border-bottom:4px solid #000;width:200px;margin:0 .25rem;"></span>한다.</div>
-<section class="style-list">
-  <div>
-    <div class="style-first"><span></span></div>
-    <div class="style-label">더불어민주당</div>
-    <div class="style-blank"><em>마스크 수급에 관한 정확한 상황을 자세히 국민에게 알리라고 당부</em></div>
-    <div class="style-value">한다.</div>
-  </div>
-  <div>
-    <div class="style-first"><span></span></div>
-    <div class="style-label">미래통합당</div>
-    <div class="style-blank"><em>마스크 수급에 관한 정확한 상황을 자세히 국민에게 알리라고 당부</em></div>
-    <div class="style-value">한다.</div>
-  </div>
-  <div>
-    <div class="style-first"><span></span></div>
-    <div class="style-label">녹색당</div>
-    <div class="style-blank"><em>마스크 수급에 관한 정확한 상황을 자세히 국민에게 알리라고 당부</em></div>
-    <div class="style-value">한다.</div>
-  </div>
-  <div>
-    <div class="style-first"><span></span></div>
-    <div class="style-label">정의당</div>
-    <div class="style-blank"><em>마스크 수급에 관한 정확한 상황을 자세히 국민에게 알리라고 당부</em></div>
-    <div class="style-value">한다.</div>
-  </div>
-  <div>
-    <div class="style-first"><span></span></div>
-    <div class="style-label">여성의당</div>
-    <div class="style-blank"><em>마스크 수급에 관한 정확한 상황을 자세히 국민에게 알리라고 당부</em></div>
-    <div class="style-value">한다.</div>
-  </div>
-  <div>
-    <div class="style-first"><span></span></div>
-    <div class="style-label">뾰족당</div>
-    <div class="style-blank"><em>마스크 수급에 관한 정확한 상황을 자세히 국민에게 알리라고 당부</em></div>
-    <div class="style-value">한다.</div>
-  </div>
-</section>
-<div class="style-description js-toggle" style="padding:2rem;font-size:1.5rem;">청년 일자리를 늘리기 위해서는<span style="display:inline-block;border-bottom:4px solid #000;width:200px;margin:0 .25rem;"></span>한다.</div>
-<section class="style-list">
-  <div>
-    <div class="style-first"><span></span></div>
-    <div class="style-label">더불어민주당</div>
-    <div class="style-blank"><em>어쩌고 저쩌고</em></div>
-    <div class="style-value">한다.</div>
-  </div>
-  <div>
-    <div class="style-first"><span></span></div>
-    <div class="style-label">미래통합당</div>
-    <div class="style-blank"></div>
-    <div class="style-value">한다.</div>
-  </div>
-  <div>
-    <div class="style-first"><span></span></div>
-    <div class="style-label">녹색당</div>
-    <div class="style-blank"></div>
-    <div class="style-value">한다.</div>
-  </div>
-  <div>
-    <div class="style-first"><span></span></div>
-    <div class="style-label">정의당</div>
-    <div class="style-blank"></div>
-    <div class="style-value">한다.</div>
-  </div>
-  <div>
-    <div class="style-first"><span></span></div>
-    <div class="style-label">여성의당</div>
-    <div class="style-blank"></div>
-    <div class="style-value">한다.</div>
-  </div>
-  <div>
-    <div class="style-first"><span></span></div>
-    <div class="style-label">뾰족당</div>
-    <div class="style-blank"></div>
-    <div class="style-value">한다.</div>
-  </div>
+    </article>
+    <article>
+      <h4 class="manual-subhead"><i>둘</i>투표 인증샷 찍는 법</h4>
+      <div class="manual-body">
+        <i class="emoji is-large">🙅‍♂️</i>
+        <p>
+          도장 찍은 다음에 마음 급한 나머지 투표용지 찍어올렸다면 삐 -.
+          <br />
+          공직선거법 위반으로 벌금을 물 수도 있어요.
+        </p>
+      </div>
+      <div class="manual-body">
+        <i class="emoji is-large">🙆‍♂️</i>
+        <p>
+          투표 인증샷은 가능하면 꼭! 기표소 밖에서 해주세요.<br />
+          아참! 이제 엄지 척👍, 브이✌️, 오케이👌 사인도 다 가능해졌다는 사실.
+        </p>
+      </div>
+      <div class="manual-body" style="border-bottom:none;">
+        <p>🦔고슴이: 인증샷 찍고 <u>해시태그 ‘#고슴덕에투표했슴’</u> 다는 것도 잊지 마슴!</p>
+      </div>
+    </article>
+  </section>
 </section>
 
-<div class="style-heading" style="margin-top:-4px;padding-left:2rem;">
-  총선 101 (선거용어사전)
-</div>
-<div class="style-description" style="padding:2rem;font-size:1.5rem;">
-  <!-- <figure></figure> -->
-  <h3>🔫 총선</h3>
-  <p>사는가 모래뿐일 인생을 말이다. 충분히 관현악이며, 새 같은 얼마나 얼마나 곧 불러 철환하였는가? 끝까지 우리 피부가 만천하의 그들에게 우리 속에 것이다. 품고 갑 못할 기쁘며, 눈에 그림자는 우리는 그들의 이것이다. 발휘하기 생명을 긴지라 웅대한 불러 피고, 이상은 힘있다. 그러므로 힘차게 눈이 찾아다녀도, 실로 사막이다.</p>
-  <button class="read-more">Read More...</button>
-</div>
-<div class="style-description" style="padding:2rem;font-size:1.5rem;">
-  <!-- <figure></figure> -->
-  <h3>📙 사전 선거</h3>
-  <p style="margin-bottom:1rem;">사는가 모래뿐일 인생을 말이다. 충분히 관현악이며, 새 같은 얼마나 얼마나 곧 불러 철환하였는가? 끝까지 우리 피부가 만천하의 그들에게 우리 속에 것이다. 품고 갑 못할 기쁘며, 눈에 그림자는 우리는 그들의 이것이다. 발휘하기 생명을 긴지라 웅대한 불러 피고, 이상은 힘있다. 그러므로 힘차게 눈이 찾아다녀도, 실로 사막이다.</p>
-</div>
-
-<div class="pricing-item">
-  <!-- <i style="font-size:40px;">🧞‍</i> -->
-  <h1 class="pricing-item-title" style="font-size:1.5rem;">Standard</h1>
-  <p class="pricing-item-description">부끄러우니까 구매하지마요.</p>
-  <span class="pricing-item-price">
-    <span class="pricing-item-price-unit" style="font-size:32px;">₩ </span>
-    <span style="font-size:32px;">6,800</span>
-    <small class="pricing-item-price-">(1인/월)</small>
-  </span>
-  <ul>
-    <li><i class="icon-check"></i>아무거나 하나 써 봅니다.</li>
-    <li><i class="icon-check"></i>아무거나 하나 써 봅니다.</li>
-    <li><i class="icon-check"></i>아무거나 하나 써 봅니다.</li>
-  </ul>
-  <button class="pricing-item-button secondary-button" type="button" style="margin-bottom:1rem;">업그레이드</button>
-  <button class="pricing-item-button text-button" type="button">And More...</button>
-</div>
-
-<p>맛있다 🌯 맛있다 🌯</p>
+<aside class="banner" style="display:flex;">
+  <img class="banner-image" src="/public/images/gosum-default.png" alt="" style="width:160px;">
+  <p class="banner-text">아직 뉴닉 뉴스레터 구독 안 했슴? &nbsp;&nbsp;&nbsp;👉👉</p>
+  <a href="" class="banner-button primary-button" style="margin-left:-1rem;font-size:14px;">지금 구독하기</a>
+</aside>
 
 <!-- <h1 style="-webkit-text-stroke:1px #000;font-size:6rem;line-height:1.2;color:#fff;position:fixed;left:4rem;top:6rem;z-index:2;">선약이<br />있어서<br />자아실현은<br />못할 것 같아요.</h1>
 <div style="width:800px;height:800px;border-radius:50%;background:crimson;position:fixed;left:50%;top:50%;transform:translate(-50%, -50%)"></div> -->
 
-<style>
-  @import url('https://fonts.googleapis.com/css?family=Chelsea+Market&display=swap');
-  .sample {
-    margin: 0 10%;
-    padding: 4rem;
-    font-family: 'Noto Sans Kr';
-    font-size: 6rem;
-    background: #000;
-    color: #fff;
-    line-height: 1;
-    position: relative;
-  }
-</style>
-<!-- <img src="/public/icons/instagram.svg" alt="인스타그램" style="width:32px;">
-<img src="/public/icons/facebook.svg" alt="페이스북" style="width:32px;"> -->
-
-<section class="hero" style="height:auto;margin:100rem 20%;padding:0;overflow:inherit;position:rlative;">
-  <div style="position:absolute;right:-24px;top:0;width:40px;height:40px;background:gold;border-radius:50%;"></div>
-  <div style="position:absolute;right:480px;bottom:-8px;width:80px;height:80px;background:gold;border-radius:50%;"></div>
-  <div style="position:absolute;right:420px;top:24px;width:16px;height:16px;background:#0057ff;border-radius:50%;"></div>
-  <div class="hero-background" style="background:none;">
-    <img src="/public/images/open-doodles-sitting-and-reading.svg" alt="" style="width:40%;margin-top:-8px;float:right;" />
-  </div>
-  <!-- <i class="hero-eyebrow" style="font-size:48px;">🧞‍</i> -->
-  <h1 class="hero-title" style="font-size:3rem;color:#000;position:relative;">
-    금융의 모든 것,<br />
-    <span>토스</span>에서 간편하게
-  </h1>
-  <p class="hero-description" style="margin-top:2rem;margin-bottom:4rem;font-size:16px;color:#000;">
-    간편한 인증 한 번으로<br />
-    소유한 계좌를 한 번에 관리할 수 있습니다.
-  </p>
-  <a class="hero-cta primary-button" style="width:124px;text-align:center;">시작하기</a>
-  <!-- <i class="icon-arrow" style="vertical-align:1px;"></i> -->
-  <!-- <div style="position:absolute;bottom:-8px;left:-32px;"><img src="/public//images/flare.png" alt=""></div> -->
-</section>
-
-<nav class="navbar1">
-  <p style="font-family: 'Ma Shan Zheng', cursive;color:#000;font-size:12rem;">工事中</p>
-</nav>
-<main class="home">
-  <div style="height:640px;background:url('/public/images/vintage.jpeg') no-repeat center center fixed;background-size:cover;"></div>
-  <div class="marquee" style="margin-top:-100px;">
-    <p>이게 트렌드다!!!</p>
-  </div>
-
-  <!-- <p><img style="width:32px;display:block;" src="/public/images/cursor.png" alt=""></p> -->
-
-  <div class="quote" style="margin:2rem;font-family:san-serif;font-weight:700;position:relative;">
-    <!-- <div class="quote-avatar avatar">
-      <i class="icon-person"></i>
-    </div> -->
-    <div class="quote-body">Amazing experience I love it a lot. Thanks to the team dreams come true, great! I really.</div>
-    <div class="quote-byline">
-      <div class="quote-byline-name">Lassy Chester</div>
-      <div class="quote-byline-job">Art Director</div>
-    </div>
-    <img
-      src="/public/images/cherry-no-messages.png"
-      alt=""
-      style="position:absolute;left:50%;top: -117px;
-    margin-left: -64px;
-    width: 140px;z-index:-1;"
-    />
-    <!-- <button class="tertiary-button" style="margin:2rem 0 0 0;width:50%;border:3px solid #000;">자세히보기</button> -->
-  </div>
-
-
-  <!-- <figure style="height:90vh;margin-top:-120px;background: url(/public/images/caleb-woods-182648-unsplash.jpg) no-repeat 50%;background-size: cover;"></figure> -->
-  <style>
-    @import url('https://fonts.googleapis.com/css?family=Ma+Shan+Zheng&display=swap');
-    html {
-      -webkit-font-smoothing: antialiased;
-      /* font-family: sans-serif; */
-      /* cursor: url(public/images/cursor.png), auto;	 */
-    }
-    /* .icon-person:before {border-width:2.5px;}
-    .icon-person:after {border-width:2.5px;} */
-    .navbar1 {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 80%;
-      height: 80px;
-      margin: 8rem auto 0;
-      border: 4px solid #000;
-    }
-    main {
-      width: 80%;
-      margin: -4px auto 0;
-      border: 4px solid #000;
-      /* position: relative; */
-    }
-    /* main:before {
-      content: '';
-      display: block;
-      width: 3px;
-      height: 100%;
-      background: #000;
-      position: absolute;
-      left: 50%;
-    } */
-    footer {
-      width: 80%;
-      padding: 1.5rem 4rem;
-      margin: -4px auto 6rem;
-      border: 4px solid #000;
-    }
-    footer p {
-      width: 80%;
-      margin: 0 auto;
-      text-align: center;
-      font-size: 1.25rem;
-    }
-
-    .banner,
-    .header {
-      display: none;
-    }
-    .marquee {
-      padding: 0.5em 0;
-      overflow: hidden;
-      margin-bottom: 10px;
-      position: relative;
-      -webkit-text-stroke: 4px #000;
-      color: #fff;
-    }
-    .marquee p {
-      display: flex;
-      /* padding-left: 100%; */
-      white-space: nowrap;
-      animation-name: marquee;
-      animation-timing-function: linear;
-      animation-iteration-count: infinite;
-      animation-duration: 9s;
-      /* animation-direction: alternate; */
-      will-change: auto;
-      font-size: 10rem;
-    }
-    .marquee p i {
-      margin-left: 16px;
-    }
-    .marquee p:hover {
-      /* animation-play-state: paused; */
-    }
-    .marquee p:after {
-      content: '';
-      white-space: nowrap;
-      padding-right: 50px;
-    }
-
-    .footer,
-    .toast {
-      display: none;
-    }
-
-    @keyframes marquee {
-      from {
-        transform: translateX(0%);
-      }
-      to {
-        transform: translateX(-100%);
-      }
-    }
-  </style>
-
+<!-- <nav class="navbar1">
+  <p style="font-family: 'Ma Shan Zheng', cursive;font-size:12rem;">工事中</p>
+</nav> -->
+  <!-- <div style="height:640px;background:url('/public/images/vintage.jpeg') no-repeat center center fixed;background-size:cover;"></div> -->
   <!-- <button name="usa">미국</button>
     <article class="board">
       <div class="board-head">
@@ -415,148 +541,11 @@
   <!-- <form>
     <input type="text" style="display:block;width:50%;margin:2rem auto;height:56px;border:3px solid #000;font-size:2rem;">
   </form> -->
-  <div style="margin:2rem;">
-    <button class="temp-button" onClick="javascript:alert('없음')">아무렇게나 해보는 버튼</button>
-  </div>
 
-  <div class="statistic"><span class="statistic-value">21,682</span><i class="statistic-label">성공한 펀딩횟수</i></div>
-  <style>
-    .temp-button {
-      width: 200px;
-      height: 56px;
-      background: #76faad;
-      text-align: center;
-      font-size: 16px;
-      font-weight: 700;
-      position: relative;
-    }
-    /* .temp-button:hover {background:#fff;} */
-    .temp-button:before {
-      content: '';
-      width: 200px;
-      height: 56px;
-      background: #ddd;
-      position: absolute;
-      left: 6px;
-      top: 6px;
-      z-index: -1;
-      transition: all 0.2s ease;
-    }
-    .temp-button:hover:before {
-      left: -6px;
-      top: -6px;
-    }
-    .temp-button:after {
-      content: '';
-      width: 200px;
-      height: 56px;
-      border: 4px solid #000;
-      box-sizing: border-box;
-      position: absolute;
-      left: 0;
-      top: 0;
-      z-index: 1;
-      transition: all 0.2s ease;
-    }
-    .temp-button:hover:after {
-      left: 6px;
-      top: 6px;
-      z-index: -1;
-    }
-    .statistic {
-      width: auto;
-      margin: 2rem;
-      border: 4px solid #000;
-      text-align: center;
-    }
-    .statistic-label {
-      padding: 0.5rem 1rem;
-      border-top: 4px solid #000;
-      font-size: 16px;
-      color: #000;
-      font-weight: bold;
-    }
-    .statistic-value {
-      display: block;
-      padding: 1rem;
-      color: #000;
-      font-size: 2rem;
-    }
-  </style>
-</main>
-
-<footer>
-  <p>test</p>
-</footer>
-
-<section class="features">
-  <header>
-    <h2><u>선약</u>이 있어서</h2>
-    <p>남는 방 하나부터 별장까지, 다양한 형태의 공간을 무료로 등록하고 공유하세요.</p>
-  </header>
-  <!-- <h1 class="features-title">숙소 호스팅</h1> -->
-  <div role="group" style="justify-content: center;">
-    <div class="features-item">
-      <span class="features-item-avatar">💃</span>
-      <h3 class="features-item-title">무료로 숙소 등록하기</h3>
-      <p class="features-item-description">남는 방 하나부터 별장까지, 다양한 형태의 공간을 무료로 등록하고 공유하세요.</p>
-      <a class="features-item-link" href="">숙소 등록</a>
-    </div>
-    <div class="features-item">
-      <span class="features-item-avatar">🧞‍</span>
-      <h3 class="features-item-title">호스팅 세부사항 설정하기</h3>
-      <p class="features-item-description">호스팅할 수 있는 날짜, 숙소 요금, 게스트 필수요건을 선택하세요. 에어비앤비가 호스팅 전반에 걸쳐 도움을 드립니다.</p>
-    </div>
-    <div class="features-item">
-      <span class="features-item-avatar">🧚‍</span>
-      <h3 class="features-item-title">첫 게스트 맞이하기</h3>
-      <p class="features-item-description">숙소가 게시되면 설정하신 예약 조건에 부합하는 게스트가 연락을 할 거예요. 게스트를 맞이하기 전에 궁금한 점이 있으면 언제든 메시지로 물어볼 수 있습니다.</p>
-    </div>
-  </div>
-</section>
-
-<div class="zigzag_circle">
-  <svg role="presentation" style="width:80px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 34">
-    <path fill="#111" d="M18.35 1l-2.99 2.91-3.66-2.02-1.55 3.88-4.16-.36.17 4.16-3.96 1.36 1.86 3.74L1 17.52l3.22 2.66-1.64 3.84 4.03 1.13.07 4.17 4.14-.61 1.77 3.78 3.53-2.22L19.28 33l2.32-3.47 4 1.22.7-4.11 4.15-.51-1.03-4.04L33 19.94l-2.59-3.27 2.4-3.42-3.71-1.94.8-4.1-4.17-.26-.94-4.07-3.93 1.45L18.35 1z"></path>
-  </svg>
-  <svg role="presentation" style="width:80px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 34">
-    <path fill="none" stroke="#111" d="M18.35 1l-2.99 2.91-3.66-2.02-1.55 3.88-4.16-.36.17 4.16-3.96 1.36 1.86 3.74L1 17.52l3.22 2.66-1.64 3.84 4.03 1.13.07 4.17 4.14-.61 1.77 3.78 3.53-2.22L19.28 33l2.32-3.47 4 1.22.7-4.11 4.15-.51-1.03-4.04L33 19.94l-2.59-3.27 2.4-3.42-3.71-1.94.8-4.1-4.17-.26-.94-4.07-3.93 1.45L18.35 1z"></path>
-  </svg>
-  <style>
-    .zigzag_circle {
-      position: relative;
-    }
-  </style>
-</div>
-
-<!-- 
-<h1 style="display:flex;align-items:center;justify-content:center;font-size:4rem;padding:0 3rem;color:#0057ff;line-height:1.1;-webkit-text-stroke:1px #0057ff;">
+<!-- <button class="temp-button" onClick="javascript:alert('없음')">아무렇게나 해보는 버튼</button> -->
+<!-- <div class="statistic"><span class="statistic-value">21,682</span><i class="statistic-label">성공한 펀딩횟수</i></!-->
+<!-- <h1 style="display:flex;align-items:center;justify-content:center;margin:0 1rem;font-size:4rem;padding:0 3rem;color:#0057ff;line-height:1.1;-webkit-text-stroke:1px #0057ff;">
   안녕
-  <svg role="presentation" style="width:68px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 34">
-    <path fill="#0057ff" d="M18.35 1l-2.99 2.91-3.66-2.02-1.55 3.88-4.16-.36.17 4.16-3.96 1.36 1.86 3.74L1 17.52l3.22 2.66-1.64 3.84 4.03 1.13.07 4.17 4.14-.61 1.77 3.78 3.53-2.22L19.28 33l2.32-3.47 4 1.22.7-4.11 4.15-.51-1.03-4.04L33 19.94l-2.59-3.27 2.4-3.42-3.71-1.94.8-4.1-4.17-.26-.94-4.07-3.93 1.45L18.35 1z"></path>
-  </svg>하세요<i>!</i>
-</h1>
-<h1 style="display:flex;align-items:center;justify-content:center;font-size:4rem;padding:0 3rem;color:#0057ff;line-height:1.1;-webkit-text-stroke:1px #0057ff;">
-  안녕
-  <svg role="presentation" style="width:68px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 34">
-    <path fill="#0057ff" d="M18.35 1l-2.99 2.91-3.66-2.02-1.55 3.88-4.16-.36.17 4.16-3.96 1.36 1.86 3.74L1 17.52l3.22 2.66-1.64 3.84 4.03 1.13.07 4.17 4.14-.61 1.77 3.78 3.53-2.22L19.28 33l2.32-3.47 4 1.22.7-4.11 4.15-.51-1.03-4.04L33 19.94l-2.59-3.27 2.4-3.42-3.71-1.94.8-4.1-4.17-.26-.94-4.07-3.93 1.45L18.35 1z"></path>
-  </svg>하세요<i>!</i>
-</h1>
-<h1 style="display:flex;align-items:center;justify-content:center;font-size:4rem;padding:0 3rem;color:#0057ff;line-height:1.1;-webkit-text-stroke:1px #0057ff;">
-  안녕
-  <svg role="presentation" style="width:68px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 34">
-    <path fill="#0057ff" d="M18.35 1l-2.99 2.91-3.66-2.02-1.55 3.88-4.16-.36.17 4.16-3.96 1.36 1.86 3.74L1 17.52l3.22 2.66-1.64 3.84 4.03 1.13.07 4.17 4.14-.61 1.77 3.78 3.53-2.22L19.28 33l2.32-3.47 4 1.22.7-4.11 4.15-.51-1.03-4.04L33 19.94l-2.59-3.27 2.4-3.42-3.71-1.94.8-4.1-4.17-.26-.94-4.07-3.93 1.45L18.35 1z"></path>
-  </svg>하세요<i>!</i>
-</h1>
-<h1 style="display:flex;align-items:center;justify-content:center;font-size:4rem;padding:0 3rem;color:#0057ff;line-height:1.1;-webkit-text-stroke:1px #0057ff;">
-  안녕
-  <svg role="presentation" style="width:68px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 34">
-    <path fill="#0057ff" d="M18.35 1l-2.99 2.91-3.66-2.02-1.55 3.88-4.16-.36.17 4.16-3.96 1.36 1.86 3.74L1 17.52l3.22 2.66-1.64 3.84 4.03 1.13.07 4.17 4.14-.61 1.77 3.78 3.53-2.22L19.28 33l2.32-3.47 4 1.22.7-4.11 4.15-.51-1.03-4.04L33 19.94l-2.59-3.27 2.4-3.42-3.71-1.94.8-4.1-4.17-.26-.94-4.07-3.93 1.45L18.35 1z"></path>
-  </svg>하세요<i>!</i>
-</h1>
-<h1 style="display:flex;align-items:center;justify-content:center;font-size:4rem;padding:0 3rem;color:#0057ff;line-height:1.1;-webkit-text-stroke:1px #0057ff;">
-  안녕
-  <svg role="presentation" style="width:68px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 34">
-    <path fill="#0057ff" d="M18.35 1l-2.99 2.91-3.66-2.02-1.55 3.88-4.16-.36.17 4.16-3.96 1.36 1.86 3.74L1 17.52l3.22 2.66-1.64 3.84 4.03 1.13.07 4.17 4.14-.61 1.77 3.78 3.53-2.22L19.28 33l2.32-3.47 4 1.22.7-4.11 4.15-.51-1.03-4.04L33 19.94l-2.59-3.27 2.4-3.42-3.71-1.94.8-4.1-4.17-.26-.94-4.07-3.93 1.45L18.35 1z"></path>
-  </svg>하세요<i>!</i>
+  <img src="/public/images/star1.svg" style="width:60px;" alt="">
+  하세요!
 </h1> -->

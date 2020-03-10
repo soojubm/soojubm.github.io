@@ -1,7 +1,7 @@
 // 비동기 함수는 리턴을 해야한다. 프로미스를 반환.
 const routePage = () => {
   let { hash } = window.location
-  const page = hash ? `/views/${hash.substring(1)}.html` : '/views/home.html'
+  const page = hash ? `/views/${hash.substring(1)}.html` : '/views/profile.html'
 
   return fetch(page)
     .then(response => {
