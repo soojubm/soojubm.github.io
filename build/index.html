@@ -45,57 +45,57 @@
     </aside>
 
     <script>
-var timeFromNow = function (time) {
+      var timeFromNow = function (time) {
 
-// Get timestamps
-var unixTime = new Date(time).getTime();
-if (!unixTime) return;
-var now = new Date().getTime();
+      // Get timestamps
+      var unixTime = new Date(time).getTime();
+      if (!unixTime) return;
+      var now = new Date().getTime();
 
-// Calculate difference
-var difference = (unixTime / 1000) - (now / 1000);
+      // Calculate difference
+      var difference = (unixTime / 1000) - (now / 1000);
 
-// Setup return object
-var tfn = {};
+      // Setup return object
+      var tfn = {};
 
-// Check if time is in the past, present, or future
-tfn.when = 'now';
-if (difference > 0) {
-  tfn.when = 'future';
-} else if (difference < -1) {
-  tfn.when = 'past';
-}
+      // Check if time is in the past, present, or future
+      tfn.when = 'now';
+      if (difference > 0) {
+        tfn.when = 'future';
+      } else if (difference < -1) {
+        tfn.when = 'past';
+      }
 
-// Convert difference to absolute
-difference = Math.abs(difference);
+      // Convert difference to absolute
+      difference = Math.abs(difference);
 
-// Calculate time unit
-if (difference / (60 * 60 * 24 * 365) > 1) {
-  // Years
-  tfn.unitOfTime = 'years';
-  tfn.time = Math.floor(difference / (60 * 60 * 24 * 365));
-} else if (difference / (60 * 60 * 24 * 45) > 1) {
-  // Months
-  tfn.unitOfTime = 'months';
-  tfn.time = Math.floor(difference / (60 * 60 * 24 * 45));
-} else if (difference / (60 * 60 * 24) > 1) {
-  // Days
-  tfn.unitOfTime = 'days';
-  tfn.time = Math.floor(difference / (60 * 60 * 24));
-} else if (difference / (60 * 60) > 1) {
-  // Hours
-  tfn.unitOfTime = 'hours';
-  tfn.time = Math.floor(difference / (60 * 60));
-} else {
-  // Seconds
-  tfn.unitOfTime = 'seconds';
-  tfn.time = Math.floor(difference);
-}
-	// Return time from now data
-	return tfn;
-};
+      // Calculate time unit
+      if (difference / (60 * 60 * 24 * 365) > 1) {
+        // Years
+        tfn.unitOfTime = 'years';
+        tfn.time = Math.floor(difference / (60 * 60 * 24 * 365));
+      } else if (difference / (60 * 60 * 24 * 45) > 1) {
+        // Months
+        tfn.unitOfTime = 'months';
+        tfn.time = Math.floor(difference / (60 * 60 * 24 * 45));
+      } else if (difference / (60 * 60 * 24) > 1) {
+        // Days
+        tfn.unitOfTime = 'days';
+        tfn.time = Math.floor(difference / (60 * 60 * 24));
+      } else if (difference / (60 * 60) > 1) {
+        // Hours
+        tfn.unitOfTime = 'hours';
+        tfn.time = Math.floor(difference / (60 * 60));
+      } else {
+        // Seconds
+        tfn.unitOfTime = 'seconds';
+        tfn.time = Math.floor(difference);
+      }
+        // Return time from now data
+        return tfn;
+      };
 
-console.log(timeFromNow(2020-02-28))
+      console.log(timeFromNow(2020-02-28))
 
     </script>
 
@@ -120,18 +120,33 @@ console.log(timeFromNow(2020-02-28))
       <button class="toast-check tertiary-button" type="button" style="width:100%">안 볼래요</button>
       <button class="toast-close js-close" type="button" aria-label="delete"><i class="icon-close"></i></button>
     </aside>
-
     <nav class="navbar js-navbar" role="navigation">
-      <a class="navbar-logo" href="/"><img src="https://cdn.imweb.me/thumbnail/20190221/5c6e2bbdb7d06.gif" alt=""></a>
-      <!-- <a class="navbar-logo" href="/">🐤</a> -->
-      <a href="#" style="position:absolute;right:180px;"><img src="/public/icons/instagram.svg" alt=""></a>
-      <a href="#" class="navbar-cta primary-button">뉴닉 구독하기</a>
+      <a class="navbar-logo" href="/">🐤</a>
+      <!-- <a href="https://newneek.co/" class="navbar-cta primary-button">뉴닉 구독하기</a> -->
+      <button class="navbar-burger js-navbar-toggle" aria-expanded="false"><i class="icon-hamberger"></i></button>
       <div class="navbar-menu" role="navigation">
-        <a class="navbar-menu-item" href="#pledge" style="text-decoration:underline;">공약집</a>
-        <a class="navbar-menu-item" href="#dictionary">총선사전</a>
-        <a class="navbar-menu-item" href="#faq">FAQ</a>
+        <div class="navbar-menu-item js-hover-trigger">
+          <a route="" href="#"> 페이지<i class="icon-caret"></i></a>
+          <menu>
+            <a href="#profile">유저프로필</a>
+            <a href="#login">로그인</a>
+            <a href="#forgot">비밀번호찾기</a>
+            <a href="#product">상품</a>
+            <a href="#cart">카트</a>
+            <a href="#cake">케이크</a>
+            <a href="#terms">약관</a>
+          </menu>
+        </div>
+        <a class="navbar-menu-item" href="#post">블로그</a>
+        <a class="navbar-menu-item" href="#contact">오시는 길</a>
+        <a class="navbar-menu-item" href="#design"><em>디자인시스템</em></a>
+        <div class="switch-wrap">
+          <span class="switch js-darkmode">
+            <span class="day" style="width: 32px;">🌑</span>
+            <span class="night" style="width: 32px;">🌙</span>
+          </span>
+        </div>
       </div>
-      
       <div class="navbar-user">
         <div class="navbar-user-search" role="search" aria-label="site">
           <a class="navbar-user-search-trigger js-navbar-toggle" href="#">
@@ -201,30 +216,6 @@ console.log(timeFromNow(2020-02-28))
           </div>
         </div>
       </div>
-      <!-- <button class="navbar-burger js-navbar-toggle" aria-expanded="false"><i class="icon-hamberger"></i></button> -->
-      <!-- <div class="navbar-menu" role="navigation">
-        <div class="navbar-menu-item js-hover-trigger">
-          <a route="" href="#"> 페이지<i class="icon-caret"></i></a>
-          <menu>
-            <a href="#profile">유저프로필</a>
-            <a href="#login">로그인</a>
-            <a href="#forgot">비밀번호찾기</a>
-            <a href="#product">상품</a>
-            <a href="#cart">카트</a>
-            <a href="#cake">케이크</a>
-            <a href="#terms">약관</a>
-          </menu>
-        </div>
-        <a class="navbar-menu-item" href="#post">블로그</a>
-        <a class="navbar-menu-item" href="#contact">오시는 길</a>
-        <a class="navbar-menu-item" href="#design"><em>디자인시스템</em></a>
-        <div class="switch-wrap">
-          <span class="switch js-darkmode">
-            <span class="day" style="width: 32px;">🌑</span>
-            <span class="night" style="width: 32px;">🌙</span>
-          </span>
-        </div>
-      </div> -->
     </nav>
 
     <!-- <header class="header">
@@ -266,7 +257,7 @@ console.log(timeFromNow(2020-02-28))
       <small class="subscribe-helper">Read more about how we collect and use your data in our <a href="">Privacy Policy page.</a></small>
     </form>
     
-    <footer class="footer is-short" role="contentinfo">
+    <footer class="footer" role="contentinfo">
       <!-- <div class="skeleton-screen"></div> -->
       <aside class="scroll">
         <p class="scroll-indicator" aria-hidden="true">스크롤하세요</p>

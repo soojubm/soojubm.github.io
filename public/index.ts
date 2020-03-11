@@ -93,6 +93,55 @@ const domEvents = () => {
     countDownClock(20, 'days')
     carousel()
 
+    document.addEventListener('scroll', () => {
+      const navOffset1 = document.querySelector('.pledge')?.getBoundingClientRect().top
+      const navOffset2 = document.querySelector('.dictionary')?.getBoundingClientRect().top
+      const navOffset3 = document.querySelector('.faq')?.getBoundingClientRect().top
+
+      const offset = document.querySelector('.dictionary')?.getBoundingClientRect().bottom
+      const offset2 = document.querySelector('.newneek-subscribe')?.getBoundingClientRect().bottom + 2000
+
+      console.log(offset, offset2)
+      if(window.pageYOffset > offset && window.pageYOffset < offset2) {
+        document.querySelector('.newneek-banner')?.classList.add('is-up')
+      } else {
+        document.querySelector('.newneek-banner')?.classList.remove('is-up')
+      }
+
+      if(window.pageXOffset > navOffset1 && window.pageXOffset < navOffset2) {
+        document.querySelectorAll('.newneek-navbar-menu-item').forEach((item, index) => {
+          item.classList.remove('is-active')
+        })
+        document.querySelector('.newneek-navbar-menu-item:first-child')?.classList.add('is-active')
+      } else if(window.pageXOffset > navOffset2 && window.pageXOffset < navOffset3) {
+        document.querySelectorAll('.newneek-navbar-menu-item').forEach((item, index) => {
+          item.classList.remove('is-active')
+        })
+        document.querySelector('.newneek-navbar-menu-item:nth-of-type(2)')?.classList.add('is-active')
+      } else if(window.pageXOffset > navOffset3) {
+        document.querySelectorAll('.newneek-navbar-menu-item').forEach((item, index) => {
+          item.classList.remove('is-active')
+        })
+        document.querySelector('.newneek-navbar-menu-item:last-child')?.classList.add('is-active')
+      }
+      // else if(window.pageXOffset > navOffset2) {
+      //   document.querySelectorAll('.navbar-menu-item').forEach((item, index) => {
+      //     item.classList.remove('is-active')
+      //     item[1].classList.add('is-active')
+      //   }) 
+      // } else if(window.pageXOffset > navOffset3) {
+      //   document.querySelectorAll('.navbar-menu-item').forEach((item, index) => {
+      //     item.classList.remove('is-active')
+      //     item[2].classList.add('is-active')
+      //   }) 
+      // }
+      // if(window.pageYOffset > offset2) {
+      //   document.querySelector('.newneek-banner')?.classList.remove('is-up')
+      // }
+    })
+
+    
+
     var now = new Date();
     var then = new Date("April 16, 2020");
     var gap = then.getTime() - now.getTime();
@@ -171,7 +220,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   setDarkmode()
 
-  adjustTopPadding()
+  // adjustTopPadding()
 
   // hashchange 될 때마다 이벤트 만들어짐;
   event.toggleClass({ selector: '.js-navbar-toggle' }).setEvent()
