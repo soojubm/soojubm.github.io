@@ -69,10 +69,9 @@ window.addEventListener('offline', () => {
   offlineElement.style.display = 'block'
 })
 
-
 const domEvents = () => {
   routePage().then(() => {
-    event.modal({ selector: '.js-modal' })
+    event.modal({ selector: '.js-modal' }).setEvent()
 
     input.checkbox({ checkAllSelector: '.js-checkall', checkSelector: '.js-check' }).setEvent()
     event.toggleClass({ selector: '.js-toggle' }).setEvent()
@@ -94,62 +93,45 @@ const domEvents = () => {
     carousel()
 
     document.addEventListener('scroll', () => {
-      const navOffset1 = document.querySelector('.pledge')?.getBoundingClientRect().top
-      const navOffset2 = document.querySelector('.dictionary')?.getBoundingClientRect().top
-      const navOffset3 = document.querySelector('.faq')?.getBoundingClientRect().top
-
       const offset = document.querySelector('.dictionary')?.getBoundingClientRect().bottom
       const offset2 = document.querySelector('.newneek-subscribe')?.getBoundingClientRect().bottom + 2000
 
-      console.log(offset, offset2)
       if(window.pageYOffset > offset && window.pageYOffset < offset2) {
         document.querySelector('.newneek-banner')?.classList.add('is-up')
       } else {
         document.querySelector('.newneek-banner')?.classList.remove('is-up')
       }
-
-      if(window.pageXOffset > navOffset1 && window.pageXOffset < navOffset2) {
-        document.querySelectorAll('.newneek-navbar-menu-item').forEach((item, index) => {
-          item.classList.remove('is-active')
-        })
-        document.querySelector('.newneek-navbar-menu-item:first-child')?.classList.add('is-active')
-      } else if(window.pageXOffset > navOffset2 && window.pageXOffset < navOffset3) {
-        document.querySelectorAll('.newneek-navbar-menu-item').forEach((item, index) => {
-          item.classList.remove('is-active')
-        })
-        document.querySelector('.newneek-navbar-menu-item:nth-of-type(2)')?.classList.add('is-active')
-      } else if(window.pageXOffset > navOffset3) {
-        document.querySelectorAll('.newneek-navbar-menu-item').forEach((item, index) => {
-          item.classList.remove('is-active')
-        })
-        document.querySelector('.newneek-navbar-menu-item:last-child')?.classList.add('is-active')
-      }
-      // else if(window.pageXOffset > navOffset2) {
-      //   document.querySelectorAll('.navbar-menu-item').forEach((item, index) => {
-      //     item.classList.remove('is-active')
-      //     item[1].classList.add('is-active')
-      //   }) 
-      // } else if(window.pageXOffset > navOffset3) {
-      //   document.querySelectorAll('.navbar-menu-item').forEach((item, index) => {
-      //     item.classList.remove('is-active')
-      //     item[2].classList.add('is-active')
-      //   }) 
-      // }
-      // if(window.pageYOffset > offset2) {
-      //   document.querySelector('.newneek-banner')?.classList.remove('is-up')
-      // }
     })
 
-    
+    // ! scrollspy
+    window.addEventListener('scroll', () => {
 
-    var now = new Date();
-    var then = new Date("April 16, 2020");
-    var gap = then.getTime() - now.getTime();
-    gap = Math.floor(gap / (1000 * 60 * 60 * 24));
+      let rate = window.pageYOffset * 0.005
+      console.log(rate)
+      if(window.scrollTop < 1200) {
+        document.querySelector('.newneek-hero h1').style.transform = `rotate(-4deg) scale(${rate})`;
+
+      }
+      
+      const sections = document.querySelectorAll('.js-section')
+      const menus = document.querySelectorAll('.newneek-navbar-menu-item')
+      if(!sections || !menus) return
+
+      sections.forEach((section, index) => {
+        if(section.offsetTop <= window.pageYOffset) {
+          // console.log(section.offsetTop, section.getBoundingClientRect().top)
+          menus.forEach(menu => menu.classList.remove('is-active'))
+          menus[index].classList.add('is-active')
+        }
+      })
+    })
+
+    var now = new Date()
+    var then = new Date("April 16, 2020")
+    var gap = then.getTime() - now.getTime()
+    gap = Math.floor(gap / (1000 * 60 * 60 * 24))
     const aaa = document.querySelector('.dday')
-    if(aaa) {
-      aaa.innerText = gap
-    }
+    aaa && aaa.innerText = `${gap}`
 
     // 임시
     const list = document.querySelector('.js-display-list')

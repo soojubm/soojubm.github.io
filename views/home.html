@@ -1,10 +1,12 @@
+<script src="../build/bundle.js"></script>
+<link rel="stylesheet" href="../build/main.css" />
+
 <style>
   /* @import url('https://fonts.googleapis.com/css?family=Chelsea+Market&display=swap'); */
   /* @import url('https://fonts.googleapis.com/css?family=Ma+Shan+Zheng&display=swap'); */
   @import url('https://fonts.googleapis.com/css?family=Noto+Serif+KR:900&display=swap');
-  @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:500&display=swap');
+  @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:400&display=swap');
   html {
-    /* font-family: 'DunkelSans'; */
     font-family: 'Noto Sans KR';
     /* letter-spacing: -.025rem; */
     color:#000;
@@ -23,6 +25,7 @@
   }
   b, p {
     font-family: 'Noto Sans KR';
+    font-size: 1.125rem;
   }
   h1, h2, h3, h4, h5, h6, strong {
     font-weight: 900;
@@ -32,12 +35,8 @@
 
   .tag {background:#000;color:#fff;}
 
-  .hero {border-radius:0;overflow:visible;padding:0;margin:0 -5rem;}
-  /* .accordion-trigger {padding:12px 2rem 13px;border:1px solid #000;font-size:1.25rem;} */
-  /* .accordion-panel.is-visible {border:1px solid #000;border-top:none;padding:0 2rem 3rem} */
-
   .navbar,
-  .banner {display:none;}
+  .banner,
   .subscribe,
   .header,
   .toast,
@@ -120,11 +119,17 @@
     color: #000;
     font-size: 2rem;
   }
-  .text-stroke {
-    -webkit-text-stroke:1px #000;
-    color:#fb7800;
-  }
 </style>
+
+<script>
+  var now = new Date()
+  var then = new Date("April 16, 2020")
+  var gap = then.getTime() - now.getTime()
+  gap = Math.floor(gap / (1000 * 60 * 60 * 24))
+  const aaa = document.querySelector('.dday')
+  aaa && aaa.innerText = `${gap}`
+
+</script>
 
 <nav class="newneek-navbar js-navbar" role="navigation">
   <a class="newneek-navbar-logo" href="/"><img src="https://cdn.imweb.me/thumbnail/20190221/5c6e2bbdb7d06.gif" alt=""></a>
@@ -162,7 +167,7 @@
   </div>
 </div>
 
-<header class="hero">
+<header class="newneek-hero">
   <img src="/public/images/gosum-default.png" alt="">
   <h1 class="temp js-animation-scroll">
     <span>꼭 그렇게 다 뽀개야만<br />
@@ -176,13 +181,14 @@
   </div> -->
 </header>
 
-<section class="pledge">
+<section class="pledge js-section">
   <header class="style-heading">
-    <h2 id="pledge" class="scroll-fadeup js-scroll-animation">공약집</h2>
-    <p class="pledge-description scroll-fadeup js-scroll-animation">(투표) 준비 됐나요? 네네, 네네네! 
-      그런데 호옥시 아직 준비 못한 친구가 보인다면, <a href="">이 링크</a>를 전달해 주세요.
-      <br />
-      “이거 하나면 내일 당당하게 투표장에 들어갈 수 있어!”라면서요. 😉
+    <h2 id="pledge" class="scroll-fadeup js-scroll-animation">이번에 어떤 공약 나왔어?</h2>
+    <p class="pledge-description scroll-fadeup js-scroll-animation">
+      공약, 많아도 너~무 많죠🏊.<br />
+      그중에 뉴니커가 관심 가지면 좋을 공약을 골라왔어요.<br />
+      3월 24일부터 매주 화요일, 3개씩 오픈될 예정인데요.<br />
+      누구보다 빠르게, 남들과는 다르게 받아보고 싶다면?
     </p>
   </header>
   <div class="card-group">
@@ -301,13 +307,13 @@
   </div>
 </section>
 
-<section class="dictionary">
+<section class="dictionary js-section">
   <header class="dictionary-head style-heading">
-    <h2 id="dictionary" class="dictionary-title scroll-fadeup js-scroll-animation">총선 101 (선거용어사전)</h2>
-    <p class="dictionary-description scroll-fadeup js-scroll-animation">(투표) 준비 됐나요? 네네, 네네네! 
-      그런데 호옥시 아직 준비 못한 친구가 보인다면, <a href="">이 링크</a>를 전달해 주세요.
+    <h2 id="dictionary" class="dictionary-title scroll-fadeup js-scroll-animation">선거뉴스, 쫌 어려운 것 같애 😭</h2>
+    <p class="dictionary-description scroll-fadeup js-scroll-animation">
+      '이건 한국어인가 외계어인가'하면서 조용히 내려놓은 기억, 한 번씩은 다 있죠.
       <br />
-      “이거 하나면 내일 당당하게 투표장에 들어갈 수 있어!”라면서요. 😉
+      그래서 이번에도 "뉴닉이 뉴닉"했습니다. 딱 5분이면, 우리 모두 선거 뉴스 마스터 🧞
     </p>
   </header>
 
@@ -383,7 +389,7 @@
         </p>
         <br /><br />
         <button class="js-modal">
-          <b style="text-decoration:underline;font-weight:700;">
+          <b style="text-decoration:underline;">
             👉 그래서 뾰족당 고슴의원에게 어떤 변화가 생겼는지 더 알아보기
           </b>
         </button>
@@ -449,13 +455,15 @@
   <img src="/public/images/gosum-default.png" style="width: 20%;position: absolute;top: 45%;right:-10rem;z-index: 0;transform: rotate(-105deg);" alt="">
 </section>
 
-<section class="faq">
+<section class="faq js-section">
   <header class="style-heading">
-    <h2 id="faq" class="scroll-fadeup js-scroll-animation">이제 실전이다!</h2>
-    <p class="faq-description scroll-fadeup js-scroll-animation">(투표) 준비 됐나요? 네네, 네네네! 
-      그런데 호옥시 아직 준비 못한 친구가 보인다면, <a href="">이 링크</a>를 전달해 주세요.
+    <h2 id="faq" class="scroll-fadeup js-scroll-animation">
+      준비 끝!<br />이제 투표장가면 되는 건가?
+    </h2>
+    <p class="faq-description scroll-fadeup js-scroll-animation">
+      호옥시 주변에 아직 누구 뽑을지 잘 모르겠다고 말하는 친구가 있다면,
       <br />
-      “이거 하나면 내일 당당하게 투표장에 들어갈 수 있어!”라면서요. 😉
+      이 링크를 전달해 주세요. "이거 하나면 투표 문제 없슴!"이라면서요. 
     </p>
     <!-- <div style="display:flex;align-items:center;justify-content:center;width:100px;height:100px;border-radius:50%;border:1px solid #000;position:absolute;right:10%;bottom:0;animation:rotation 4s infinite;">★신분증 필수★</div> -->
     <!-- <div style="display:flex;align-items:center;justify-content:center;width:100px;height:100px;border-radius:50%;border:1px solid #000;position:absolute;left:5%;bottom:-12rem;animation:rotation 4s infinite;">★신분증 필수★</div> -->
@@ -471,7 +479,11 @@
       <p>사전투표란? 투표 당일, 투표장에 가기 어렵다면 사전투표로 (   )를 보여주세요. 따로 신청하지 않아도, 전국 어디서나 투표할 수 있어요.</p>
       <div>
         <b>시간</b>
-        <p>4월 10(금)~11일(토) 오전 6시~오후 6시</p>
+        <p>
+          4월 10일(금) 오전 6시 ~ 오후 6시
+          <br />
+          4월 11일(토) 오전 6시 ~ 오후 6시
+        </p>
       </div>
       <div>
         <b>장소</b>
@@ -486,7 +498,7 @@
       <p>투표 당일이 되었습니다. 아직 투표 안 한 뉴니커는 모두 고개를 들어주세요.</p>
       <div>
         <b>시간</b>
-        <p>4월 15일(수) 오전 6시~오후 6시</p>
+        <p>4월 15일(수) 오전 6시 ~ 오후 6시</p>
       </div>
       <div>
         <b>장소</b>
@@ -512,7 +524,7 @@
           잘못하면 다른 후보 또는 정당에 도장이 묻을 수도 있기 때문.
         </p>
       </div>
-      <div class="manual-body">
+      <div class="manual-body" style="border-top:none;">
         <i class="emoji is-large">🙆‍♀️</i>
         <p>투표 용지는 반드시 세로로 접어주세요.</p>
       </div>
@@ -534,16 +546,15 @@
           아참! 이제 엄지 척👍, 브이✌️, 오케이👌 사인도 다 가능해졌다는 사실.
         </p>
       </div>
-      <div class="manual-body" style="border-bottom:none;">
+      <div class="manual-body" style="border-top:none;border-bottom:none;">
         <p>🦔고슴이: 인증샷 찍고 <u>해시태그 ‘#고슴덕에투표했슴’</u> 다는 것도 잊지 마슴!</p>
       </div>
     </article>
   </section>
-
-  <div style="width:200px;overflow:hidden;position:absolute;bottom:-10rem;left:50%;transform:translateX(-50%)"><img src="/public/images/gosum-default.png" alt=""></div>
 </section>
 
 <aside class="newneek-banner">
+  <div class="newneek-banner-background"></div>
   <img class="newneek-banner-image" src="/public/images/gosum-default.png" alt="">
   <p class="newneek-banner-text">아직 뉴닉 뉴스레터 구독 안 했슴? 👉👉 </p>
   <a href="https://newneek.co/" class="newneek-banner-button primary-button">지금 구독하기</a>
@@ -559,20 +570,15 @@
   <!-- <small class="newneek-subscribe-helper">Read more about how we collect and use your data in our <a href="">Privacy Policy page.</a></small> -->
 </form>
 
-<footer class="newneek-footer" style="display:flex;padding:2rem 2rem 5rem;position:relative;">
-  <div>
-    <div>NEWNEEK</div>
-    <address>서울특별시 중구 남대문로9길 40</address>
-    <small>Copyright ⓒ NEWNEEK Co., Ltd. 2018-2020.</small>
-  </div>
+<footer class="newneek-footer">
+  <p>우리가 시간이 없지, 뉴스가 안 궁금하냐!</p>
+  <div>NEWNEEK</div>
+  <address>서울특별시 중구 남대문로9길 40</address>
+  <small>Copyright ⓒ NEWNEEK Co., Ltd. 2018-2020.</small>
   <div style="padding:0 0 2rem;margin-left:auto;">
     <a href="#" style="display:inline-block;width:2rem;margin-right:2rem;"><img src="/public/icons/instagram.svg" alt=""></a>
     <a href="#" style="display:inline-block;width:2rem;"><img src="/public/icons/facebook.svg" alt=""></a>
   </div>
-
-  <!-- <div style="display:flex;position:absolute;left:0;bottom:-20rem;">
-    <img src="/public/images/gosum-default.png" alt="" style="width:140px;">
-  </div> -->
 </footer>
 
 <!-- <h1 style="-webkit-text-stroke:1px #000;font-size:6rem;line-height:1.2;color:#fff;position:fixed;left:4rem;top:6rem;z-index:2;">선약이<br />있어서<br />자아실현은<br />못할 것 같아요.</h1>

@@ -4,7 +4,6 @@ export const parallax = targetElement => {
 
   window.addEventListener('scroll', () => {
     target.forEach(element => {
-      //console.log(window.pageYOffset, element.offsetTop);
       let rate = window.pageYOffset * -0.2 - 600
       let aaa = (window.pageYOffset - element.offsetTop) * -1.5 // scrolled = window.pageYOffset
       //let bbb = aaa > 0 ? -aaa : aaa;

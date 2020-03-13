@@ -6,72 +6,64 @@ type Parameter = {
   selector: string
 }
 
-const modal = ({ selector: trigger }: Parameter) => {
-  const modals = document.querySelectorAll(trigger)
-  if (!modals) return
+const modal = ({ selector: trigger }: Parameter) => ({
+  modals: document.querySelectorAll(trigger),
+  modalDialog: document.querySelector('.modal-dialog'),
+  pageY: 0,
+  setEvent() {
+    if (!this.modals) return
 
-  let pageY = 0
+    this.modals.forEach(modal =>
+      modal.addEventListener('click', event => {
+        event.stopPropagation()
+        event.preventDefault()
 
-  modals.forEach(modal =>
-    modal.addEventListener('click', event => {
-      event.stopPropagation()
-      event.preventDefault()
+        const { nextElementSibling } = modal
+        const closeTrigger = nextElementSibling?.querySelector('.js-modal-close')
+        if(!nextElementSibling || !closeTrigger) return
 
-      const { nextElementSibling } = modal
-      const closeTrigger = nextElementSibling?.querySelector('.js-modal-close')
-      pageY = window.pageYOffset
-      
-      showModal(nextElementSibling)
+        this.pageY = window.pageYOffset
 
-      controlHistory()
-      window.onpopstate = history.onpushstate = function() {
-        if(window.location.href.split('/').pop().indexOf('modal') === -1) {
-          // 마지막 segment가 cards라면 모달이 아닌 리스트인 상태이어야한다.
-          closeModal(nextElementSibling); // 현재의 모달을 닫는다.
-        }
-      }
-      
-      document.addEventListener('click', () => closeModal(nextElementSibling))
-      closeTrigger?.addEventListener('click', () => closeModal(nextElementSibling))
+        this.showModal(nextElementSibling)
+        document.addEventListener('click', () => this.closeModal(nextElementSibling))
+        closeTrigger?.addEventListener('click', () => this.closeModal(nextElementSibling))
+        // window.onpopstate = history.onpushstate = function(e) {
+        //   const isModal = window.location.href.split('/').pop().indexOf('modal') === -1
+        //   if(isModal) {
+        //     this.closeModal(nextElementSibling);
+        //   }
+        // }
 
-    })
-  )
-  
-  const modalDialog = document.querySelectorAll('.modal-dialog')
-  modalDialog.forEach(element => element.addEventListener('click', event => event.stopPropagation()))
-
-  function controlHistory() {
-    const state = { 'page_id': 1, 'user_id': 5 }
-    const title = ''
-    const url = 'hello-world.html'
-
-    history.pushState(state, title, url)
-  }
-  function showModal(element) {
+        // window.addEventListener('popstate', function(event) {
+        //   if (history.state && history.state.id === 'modal') {
+        //     alert()
+        //     closeModal(nextElementSibling);
+        //   }
+        // }, false);
+      })
+    )
+    this.modalDialog?.addEventListener('click', event => event.stopPropagation())
+  },
+  showModal(element) {
     element?.classList.add('is-visible')
-    lockBody()
-  }
-  function closeModal(element) {
+    this.lockBody(this.pageY)
+  },
+  closeModal(element) {
     const isOpened = element?.classList.contains('is-visible')
     if (!isOpened) return
 
     element?.classList.remove('is-visible')
-    unlockBody()
-  }
-  
-  function lockBody() {
+    this.unlockBody(this.pageY)
+    // window.history.back()
+  },
+  lockBody(pageY) {
     document.body.classList.add('body-lock')
     document.body.style.top = `-${pageY}px`
-  }
-
-  function unlockBody() {
+  },
+  unlockBody(pageY) {
     document.body.classList.remove('body-lock')
-    setScrollY(pageY)
-  }
-
-  function setScrollY(pageY) {
     window.scrollTo(0, pageY)
   }
-}
+})
 
 export default modal

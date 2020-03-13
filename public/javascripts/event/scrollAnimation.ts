@@ -15,6 +15,8 @@ const eventScrollAnimation = () => {
 
   window.addEventListener('scroll', () => {
     scrollTarget.forEach(element => {
+      console.log(window.pageYOffset, element.getBoundingClientRect().top)
+
       const isScrolled = element.getBoundingClientRect().top + element.clientHeight * 0.5 <= window.innerHeight;
       // const isScrolled = window.pageYOffset > window.pageYOffset + element.getBoundingClientRect().top - window.innerHeight + 50
       if (!isScrolled) return
