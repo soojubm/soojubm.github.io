@@ -1,40 +1,47 @@
-<script src="../build/bundle.js"></script>
-<link rel="stylesheet" href="../build/main.css" />
-
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>수줍이</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0" />
+    <meta name="format-detection" content="telephone=no, email=no, address=no" />
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="rgba(255,255,255,.8)" />
+    <meta name="apple-mobile-web-app-status-bar-stylnpe" content="black-translucent" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="msapplication-square310x310logo" content="/icon_largetile.png" />
+    <meta name="author" content="soojubm" />
+    <meta name="subject" content="your document's subject" />
+    <meta name="description" content="UI Designer" />
+    <meta name="keywords" content="" />
+    <meta name="copyright" content="soojubm" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:site_name" content="soojubm" />
+    <meta property="og:url" content="https://soojubm.github.io" />
+    <meta property="og:title" content="수줍이의 포트폴리오" />
+    <meta property="og:image" content="/images/open-graph.png" />
+    <meta property="og:description" content="부끄러우니까 보지마요." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@" />
+    <meta name="twitter:url" content="@" />
+    <meta name="twitter:title" content="@" />
+    <meta name="twitter:description" content="@" />
+    <meta name="twitter:creator" content="@" />
+    <link rel="canonical" href="https://soojubm.github.io/" />
+    <link rel="icon" sizes="192x192" href="" />
+    <link rel="apple-touch-icon" href="" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <script src="../public/javascripts/polyfill.js"></script>
+    <!-- <script src="../build/bundle.js"></script> -->
+    <link rel="stylesheet" href="../build/main.css" />
+    <!-- <meta http-equiv="refresh" content="0; URL=/"> -->
+    <!--link rel="shortcut icon" href="images/favicon/favicon.ico">-->
+  </head>
+  <body>
+    <noscript>This website requires JavaScript.</noscript>
 <style>
-  /* @import url('https://fonts.googleapis.com/css?family=Chelsea+Market&display=swap'); */
-  /* @import url('https://fonts.googleapis.com/css?family=Ma+Shan+Zheng&display=swap'); */
-  @import url('https://fonts.googleapis.com/css?family=Noto+Serif+KR:900&display=swap');
-  @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:400&display=swap');
-  html {
-    font-family: 'Noto Sans KR';
-    /* letter-spacing: -.025rem; */
-    color:#000;
-    letter-spacing: -.025rem;
-    /* font-weight: 500; */
-  }
-  a:hover, button:hover, [role=button] {
-    cursor:url(/public/images/cursor-gosum.png), auto;
-  }
-  * {box-sizing:border-box;}
-  body {
-    background: #ebebeb;
-  }
-  b { 
-    color:#000;
-  }
-  b, p {
-    font-family: 'Noto Sans KR';
-    font-size: 1.125rem;
-  }
-  h1, h2, h3, h4, h5, h6, strong {
-    font-weight: 900;
-    font-family: 'Noto Serif KR';
-    color:#000;
-  }
-
-  .tag {background:#000;color:#fff;}
-
   .navbar,
   .banner,
   .subscribe,
@@ -43,7 +50,6 @@
   .footer {
     display: none;
   }
-
 
   .tag {font-size: 1rem;}
 
@@ -67,7 +73,6 @@
     font-weight: 700;
     position: relative;
   }
-  /* .temp-button:hover {background:#fff;} */
   .temp-button:before {
     content: '';
     width: 200px;
@@ -121,16 +126,6 @@
   }
 </style>
 
-<script>
-  var now = new Date()
-  var then = new Date("April 16, 2020")
-  var gap = then.getTime() - now.getTime()
-  gap = Math.floor(gap / (1000 * 60 * 60 * 24))
-  const aaa = document.querySelector('.dday')
-  aaa && aaa.innerText = `${gap}`
-
-</script>
-
 <nav class="newneek-navbar js-navbar" role="navigation">
   <a class="newneek-navbar-logo" href="/"><img src="https://cdn.imweb.me/thumbnail/20190221/5c6e2bbdb7d06.gif" alt=""></a>
   <a href="https://newneek.co/" class="newneek-navbar-cta primary-button">뉴닉 구독하기</a>
@@ -148,8 +143,8 @@
   <h2 >
     <span>총선 뽀개기</span>
   </h2>
-  <h2>
-    <span>D-day<i class="icon-circle" style="margin-right:0;margin-left:.5rem;">41</i></span>
+  <h2 class="dday">
+    <span>D-day<i class="icon-circle" style="margin-right:0;margin-left:.5rem;"></i></span>
   </h2>
   <div class="marquee">
     <p>이러다 오늘도 가장 유식하겠는데!</p>
@@ -168,7 +163,11 @@
 </div>
 
 <header class="newneek-hero">
-  <img src="/public/images/gosum-default.png" alt="">
+  <div class="newneek-hero-image">
+    <img src="/public/images/gosum-hero-without-nose.png" alt="">
+    <img src="/public/images/gosum-hero-nose.png" alt="" class="nose">
+    <img src="/public/images/gosum-hero-water.png" alt="" class="water">
+  </div>
   <h1 class="temp js-animation-scroll">
     <span>꼭 그렇게 다 뽀개야만<br />
       <span>속이 후련했냐ㅏㅏㅏㅏ!!</span>
@@ -340,7 +339,7 @@
     </div>
     <div class="dictionary-body-item scroll-fadeup js-scroll-animation">
       <h3 class="js-toggle" role="button">
-        공천
+        공천 ☝️
         <i class="icon-caret"></i>
       </h3>
       <div>
@@ -377,17 +376,14 @@
     </div>
     <div class="dictionary-body-item scroll-fadeup js-scroll-animation">
       <h3 class="js-toggle" role="button">
-        준연동형 비례대표제 📙
+        준연동형비례대표제 ⭐
         <i class="icon-caret"></i>
       </h3>
       <div>
         <p>
-          2020년 총선부터는 국회의원을 뽑는 방식이 째금 달라져요. 지금의 선거 방식이 민심을 제대로 반영하지 못한다는 의견이 많았거든요.
-          그래서 30%의 지지율이든 60%의 지지율이든 1등만 하면 장땡인 ‘지역구 선거’의 영향을 줄이고, 정당 득표율에 따라 의석수를 배분하면 사람들의 지지율이 좀 더 반영되지 않겠냐는 것(연동형 비례대표제).
-          하지만 그렇다고 갑자기 지역구 의원을 모두 없애버릴 순 없겠죠.
-          그래서 300개 중 딱 30개 자리에만 새로운 룰을 반영하자면서 ‘준연동형 비례대표제’라는 게 탄생했어요.
+          올해 총선부터는 국회의원을 뽑는 방식이 달라졌어요. 이전의 선거방식이 민심을 제대로 반영 못한다는 의견이 많았거든요. 그래서 지지율이 30%든 60%든 상관없이 1등만 하면 장땡인 '지역구 선거'의 영향을 줄이고, 정당 득표율에 따라 의석수를 배분하면 민심이 더 잘 반영되지 않겠냐는 말이 나왔는데요(연동형 비례대표제). 그렇다고 갑자기 지역구 의원을 모두 없앨 수는 없겠죠. 그래서 300개 중 딱 30개 자리에만 새로운 룰을 반영하자는 '준연동형비례대표제'가 탄생했어요.
         </p>
-        <br /><br />
+        <br />
         <button class="js-modal">
           <b style="text-decoration:underline;">
             👉 그래서 뾰족당 고슴의원에게 어떤 변화가 생겼는지 더 알아보기
@@ -424,25 +420,68 @@
             </section>
           </article>
         </aside>
-        <p>비례대표 의원 출마를 결심한 뾰족당 고슴의원. 그런데 총선 룰이 바뀌면서, 언제 당선될 수 있는지 계산기(이모지)를 두드려봐야 하는 상황이 됐어요.</p>
       </div>
     </div>
     <div class="dictionary-body-item scroll-fadeup js-scroll-animation">
       <h3 class="js-toggle" role="button">
-        만 18세 선거권 📙
+        만 18세 🎒
         <i class="icon-caret"></i>
       </h3>
       <div>
-        <p>이렇게 바뀌었다. 혹시 뭐 할 수 있고, 없는지 알고 싶으면 여기서 찾아볼 수 있다 링크 걸어주기.</p>
+        <p>투표할 수 있는 최소 나이. 단, 2002년 4월 16일 태어난 뉴니커까지만 가능해요. 원래 만 19세였던 투표연령이 만 18세로 내려가면서, 유권자 약 500만 명이 늘어날 예정이에요. 또, 고등학생(5만 명)도 선거에 참여할 수 있게 되었는데요. 청소년의 표심이 어디로 향하는지 처음으로 확인해 보는 거라, 정당들도 설렘 반 긴장 반하면서 지켜보고 있어요.</p>
+        <br />
+        <button class="js-modal">
+          <b style="text-decoration:underline;">
+            👉 나 지금 고등학생 뉴니커인데
+          </b>
+        </button>
+        <aside class="modal" role="dialog">
+          <article class="modal-dialog">
+            <header class="modal-head">
+              <button class="modal-close js-modal-close" style="position:static;right:auto;top:auto;">
+                <i class="icon-arrow is-left"></i><span class="off-screen">닫기</span>
+              </button>
+              <h1 class="modal-head-title">나 지금 고등학생 뉴니커인데!</h1>
+              <!-- <p class="modal-head-description">내용내용내용내용내용.</p> -->
+            </header>
+            <section class="modal-body">
+              <h2>가이드라인 등판</h2>
+              <p>3월 11일, 선관위가 가이드라인을 발표했어요: 학교 안에서 어떤 선거 활동은 되고, 어떤 건 안 되는지 정리한 건데요. 꼭 알아두면 좋을 몇 가지만 소개할게요.</p>
+              <ul>
+                <li>👩‍🎓 <b>학생 편:</b> 만 18세가 되기 전에는 정당에 가입하거나 선거운동을 할 수 없어요. 즉, 고등학생 중에 생일이 지난 사람만 정당에 가입하거나 선거운동을 할 수 있다는 이야기. 하지만 본격 선거운동이 시작되는 4월 2일~4월 14일에 학교 방송이나 녹음기를 이용해 선거운동을 하면 삐- 선거법 위반입니다.</li>
+                <li>👩‍🏫 <b>교사 편:</b> 선생님은 수업 시간에 특정 정당이나 후보자를 지지하거나 반대하면 안 돼요. 학생들 핸드폰이나 이메일로 특정 정당/후보자에 대해 유리하게 말하면 안 되고요.</li>
+                <li>🧔 <b>후보자 편:</b> 학교 안에서 명함을 나눠주기, 연설하기 등은 학교가 어떻게 허락하면 가능해요. 하지만 몇몇 후보자에게만 선거 운동할 기회를 주는 건 금지라고.</li>
+              </ul>
+              <h2>만 18세 선거권이 시끌시끌했던 이유</h2>
+              <p>정치권, 교육계, 학부모, 학생. 너나 할 것 없이 만 18세의 투표 참여를 두고 무려 23년간 입씨름을 벌여왔어요.</p>
+              <ul>
+                <li>🙆 <b>찬성:</b> 세금 내는 거, 군대 가는 거 모두 만 18세부터잖아. 의무를 줬으면 권리도 줘야지. 그리고 요즘 세계 트렌드가 만 18세부터 선거한다는 거, hoxy 아니? (OECD 회원국 중 선거연령 가장 높은 나라).</li>
+                <li>🙅‍♀️ <b>반대:</b> 선생님은 수업 시간에 특정 정당이나 후보자를 지지하거나 반대하면 안 돼요. 학생들 핸드폰이나 이메일로 특정 정당/후보자에 대해 유리하게 말하면 안 되고요.</li>
+              </ul>
+              <p>하지만 정작 당사자인 청소년들은 (2017년 조사 결과) 약 66%가 선거연령을 낮추는 데 동의했다고.</p>
+            </section>
+          </article>
+        </aside>
       </div>
     </div>
     <div class="dictionary-body-item scroll-fadeup js-scroll-animation">
       <h3 class="js-toggle" role="button">
-        여론조사 📙
+        여론조사 📞
         <i class="icon-caret"></i>
       </h3>
       <div>
-        <p>여론조사 결과 보통 어떻게 나오는지 + 언제부터는 못 나오는지.</p>
+        <p>일반적으로 여론조사를 통해, 이번 선거에서 누가 대세인지 알 수 있죠. 그런데 선거 6일 전부터는 여론 조사 결과를 공개할 수 없다는 사실, 아셨나요? (1) 여론조사에 높은 지지율을 보인 후보자에게 표가 더 쏠리거나, (2) 지지율이 낮은 후보자에게 표가 쏠리는 등 선거 결과에 영향을 줄 수 있어서 법으로 금지했다고.</p>
+        <br />
+        <p>+ **요즘 여론조사가 잘 안 보이는 이유:** 법이 까다로워지면서 여론조사 자체가 적게 시행됐기 때문. 지난 총선 때는 후보자가, 각자 여론을 조사해서 결과를 발표했는데요. 총선 끝나고 보니 실제 결과와 다른 경우가 많았다는 것. 그래도 여론을 알고 싶다면 <a href="https://www.nesdc.go.kr/portal/main.do">[중앙선거여론조사심의위원회 홈페이지]</a>에서 확인할 수 있어요.</p>
+      </div>
+    </div>
+    <div class="dictionary-body-item scroll-fadeup js-scroll-animation">
+      <h3 class="js-toggle" role="button">
+        사전선거 📅
+        <i class="icon-caret"></i>
+      </h3>
+      <div>
+        <p>선거 당일 투표할 수 없다면, 4월 10일(금)-11일(토)에 미리 투표할 수 있어요! 미리 신청해야 하는 거 아니냐고요? 댓츠 노노. 주민등록증, 운전면허증, 여권 등 신분증 하나만 들고, 주변 사전투표소 아무데나 찾아가면 끝! 참 쉽죠? 🎨</p>
       </div>
     </div>
   </section>
@@ -560,6 +599,8 @@
   <a href="https://newneek.co/" class="newneek-banner-button primary-button">지금 구독하기</a>
 </aside>
 
+<div style="width:40%;margin:0 auto -4rem;"><img src="/public/images/gosumduck.png" alt=""></div>
+
 <form class="newneek-subscribe">
   <h2 class="newneek-subscribe-title">구독 타이틀.</h2>
   <p class="newneek-subscribe-description">구독 디스크립션.</p>
@@ -581,26 +622,166 @@
   </div>
 </footer>
 
+<script>
+
+document.addEventListener('DOMContentLoaded', function() {
+  // console.log('history', window.location)
+
+  // if ( window.location == 'http://www.abc.com/' ) {
+  //   window.location.href='http://www.codingfactory.net/';
+  // }
+
+
+  const toggleClass = function() {
+    const triggers = document.querySelectorAll('.js-toggle')
+    const ACTIVE_CLASS = 'is-active'
+    const ACTIVE_CLASS2 = 'is-visible'
+    if (!triggers) return
+
+    triggers.forEach(function(element) {
+      element.addEventListener('click', function(event) {
+        event.preventDefault() // a tag에 사용하는 경우
+        event.stopPropagation()
+
+        const triggerNextElement = element?.nextElementSibling
+        if (!triggerNextElement) return
+
+        element.classList.toggle(ACTIVE_CLASS)
+        element.setAttribute('aria-expanded', `${element.classList.contains(ACTIVE_CLASS)}`)
+
+        element.nextElementSibling.classList.toggle(ACTIVE_CLASS2)
+        element.nextElementSibling.addEventListener('click', function(event) {
+          event.stopPropagation()
+        })
+  
+        triggers.forEach(function(element) {
+          if (event.target === element) return
+          element.setAttribute('aria-expanded', 'true')
+          element.classList.remove(ACTIVE_CLASS)
+          element.nextElementSibling.classList.remove(ACTIVE_CLASS2)
+        })
+      })
+    })
+    document.body.addEventListener('click', function() {
+      triggers.forEach(function(trigger) {
+        trigger.setAttribute('aria-expanded', 'true')
+        trigger.classList.remove(ACTIVE_CLASS)
+        trigger.nextElementSibling.classList.remove(ACTIVE_CLASS2)
+      })
+    })
+  }
+
+  toggleClass()
+
+  window.addEventListener('scroll', function() {
+    let rate = window.pageYOffset * 0.005
+    if(window.scrollTop < 1200) {
+      document.querySelector('.newneek-hero h1').style.transform = `rotate(-4deg) scale(${rate})`;
+    }
+
+    const offset = document.querySelector('.dictionary')?.getBoundingClientRect().bottom
+    const offset2 = document.querySelector('.newneek-subscribe')?.getBoundingClientRect().bottom + 2000
+
+    if(window.pageYOffset > offset && window.pageYOffset < offset2) {
+      document.querySelector('.newneek-banner')?.classList.add('is-up')
+    } else {
+      document.querySelector('.newneek-banner')?.classList.remove('is-up')
+    }
+  })
+
+  const scrollTarget = document.querySelectorAll('.js-scroll-animation')
+  const SCROLLED_CLASS = 'is-scrolled'
+  if (!scrollTarget) return
+
+  let temp
+  scrollTarget.forEach(function(element) {
+    const isScrolled = element.getBoundingClientRect().bottom <= window.innerHeight
+    if (!isScrolled) return
+
+    element.classList.add(SCROLLED_CLASS)
+  })
+
+  window.addEventListener('scroll', function() {
+    scrollTarget.forEach(function(element) {
+      const isScrolled = element.getBoundingClientRect().top + element.clientHeight * 0.5 <= window.innerHeight;
+      if (!isScrolled) return
+
+      element.classList.add(SCROLLED_CLASS)
+      temp && window.cancelAnimationFrame(temp)
+      temp = window.requestAnimationFrame(function() {
+      })
+    })
+  })
+
+
+  const sections = document.querySelectorAll('.js-section')
+  const menus = document.querySelectorAll('.newneek-navbar-menu-item')
+  // if(!sections || !menus) return
+
+  menus.forEach(function(element, index) {
+    element.addEventListener('click', function(event) {
+      event.preventDefault()
+      const targetOffsetY = sections[index].offsetTop
+      window.scrollTo(0, targetOffsetY)
+    })
+  })
+  window.addEventListener('scroll', function() {
+    sections.forEach(function(section, index) {
+      if(section.offsetTop <= window.pageYOffset + 200) {
+        menus.forEach(function(menu) {
+          menu.classList.remove('is-active')
+        })
+        menus[index].classList.add('is-active')
+      }
+    })
+  })
+
+  //sticky
+  const { body } = document
+  const stickyElement = document.querySelector('.js-navbar')
+  if (!stickyElement) return
+
+  let stickyElementHeight = stickyElement.offsetHeight
+  let isScrolling
+
+  window.addEventListener('resize', function() {
+    isScrolling && window.cancelAnimationFrame(isScrolling)
+    isScrolling = window.requestAnimationFrame(function() {
+      stickyElementHeight = stickyElement.offsetHeight
+    })
+  })
+
+  window.addEventListener('scroll', function() {
+    // console.log(stickyElementHeight) // 133
+    isScrolling && window.cancelAnimationFrame(isScrolling)
+    isScrolling = window.requestAnimationFrame(function() {
+      if (window.pageYOffset > stickyElement.offsetTop + stickyElementHeight) {
+        body.classList.add('is-sticky-navbar')
+      } else {
+        body.classList.remove('is-sticky-navbar')
+      }
+    })
+  })
+
+
+  
+  var now = new Date()
+  var then = new Date("April 16, 2020")
+  var gap = then.getTime() - now.getTime()
+  gap = Math.floor(gap / (1000 * 60 * 60 * 24))
+  const aaa = document.querySelector('.dday i')
+  console.log(aaa, aaa.innerText, gap)
+  aaa.innerText = gap
+
+
+})
+</script>
+</body>
+</html>
+
+
 <!-- <h1 style="-webkit-text-stroke:1px #000;font-size:6rem;line-height:1.2;color:#fff;position:fixed;left:4rem;top:6rem;z-index:2;">선약이<br />있어서<br />자아실현은<br />못할 것 같아요.</h1>
 <div style="width:800px;height:800px;border-radius:50%;background:crimson;position:fixed;left:50%;top:50%;transform:translate(-50%, -50%)"></div> -->
-
-<!-- <nav class="navbar1">
-  <p style="font-family: 'Ma Shan Zheng', cursive;font-size:12rem;">工事中</p>
-</nav> -->
-  <!-- <div style="height:640px;background:url('/public/images/vintage.jpeg') no-repeat center center fixed;background-size:cover;"></div> -->
-  <!-- <button name="usa">미국</button>
-    <article class="board">
-      <div class="board-head">
-        <div class="board-head-title">Title</div>
-        <div class="board-head-title">Title</div>
-        <div class="board-head-title">Title</div>
-        <div class="board-head-title">Title</div>
-        <div class="board-head-title">Title</div>
-      </div>
-    </article> -->
-  <!-- <form>
-    <input type="text" style="display:block;width:50%;margin:2rem auto;height:56px;border:3px solid #000;font-size:2rem;">
-  </form> -->
 
 <!-- <button class="temp-button" onClick="javascript:alert('없음')">아무렇게나 해보는 버튼</button> -->
 <!-- <div class="statistic"><span class="statistic-value">21,682</span><i class="statistic-label">성공한 펀딩횟수</i></!-->

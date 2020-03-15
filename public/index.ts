@@ -1,18 +1,16 @@
 'use strict'
 
 import './stylesheets/style.scss'
-// import polyfill from './javascripts/polyfill';
 import routePage from './javascripts/router'
 import { loader, detectBrowser, adjustTopPadding } from './javascripts/load'
 import { setGraph } from './javascripts/ui'
 import { setDarkmode, carousel } from './javascripts/setDarkMode'
-import { validity } from './javascripts/utils/validations'
-// import { films } from '../views/films';
 import { countDownClock } from './javascripts/countdown'
 import event from './javascripts/event/index'
 import input from './javascripts/input/index'
 
 // close 보다 delete가 포괄적인 네이밍
+
 // var evens = _.remove(array, function(n) {
 //   return n % 2 == 0;
 // });
@@ -22,14 +20,14 @@ import input from './javascripts/input/index'
 //   return [...items.slice(0, index), ...items.slice(index+1)];
 // }
 
-// npx -p @storybook/cli sb init --type react
 // throw new Error
-// .box:hover { will-change: transform;}
+
 // If you do not return anything, a function will return undefined, which validates as falsey.
 
 //document.documentElement.className += ' supports-date';
-// if(window.matchMedia('(min-width:800px)').matches) {}
 // div.classList.replace("foo", "bar");
+
+// if(window.matchMedia('(min-width:800px)').matches) {}
 
 // let formChanged = false;
 // myForm.addEventListener('change', () => formChanged = true);
@@ -39,10 +37,6 @@ import input from './javascripts/input/index'
 //   }
 // });
 
-window.addEventListener('unload', function logData() {
-  // navigator.sendBeacon('/log', analyticsData)
-})
-
 const pendingOps = new Set()
 
 window.addEventListener('beforeunload', event => {
@@ -51,6 +45,13 @@ window.addEventListener('beforeunload', event => {
   }
 })
 
+window.addEventListener('beforeunload', function(event) {
+  console.log('beforeunload EVENT');
+  // navigator.sendBeacon('/log', analyticsData)
+});
+window.addEventListener('unload', function(event) {
+  console.log('unload EVENT');
+});
 // function addToPendingWork(promise) {
 //   busyspinner.hidden = false
 //   pendingOps.add(promise)
@@ -80,58 +81,19 @@ const domEvents = () => {
     event.tabMenu()
     event.close({ selector: '.js-close' })
     event.toTop({ selector: '.js-to-top' })
+
     event.scrollAnimation()
-    // event.customCursor()
+    event.scrollspy({ menusSelector: '.js-section', sectionsSelector: '.newneek-navbar-menu-item' })
+
     input.file()
     input.textarea()
     input.number()
-
-    event.scrollspy()
 
     setGraph()
     countDownClock(20, 'days')
     carousel()
 
-    document.addEventListener('scroll', () => {
-      const offset = document.querySelector('.dictionary')?.getBoundingClientRect().bottom
-      const offset2 = document.querySelector('.newneek-subscribe')?.getBoundingClientRect().bottom + 2000
-
-      if(window.pageYOffset > offset && window.pageYOffset < offset2) {
-        document.querySelector('.newneek-banner')?.classList.add('is-up')
-      } else {
-        document.querySelector('.newneek-banner')?.classList.remove('is-up')
-      }
-    })
-
-    // ! scrollspy
-    window.addEventListener('scroll', () => {
-
-      let rate = window.pageYOffset * 0.005
-      console.log(rate)
-      if(window.scrollTop < 1200) {
-        document.querySelector('.newneek-hero h1').style.transform = `rotate(-4deg) scale(${rate})`;
-
-      }
-      
-      const sections = document.querySelectorAll('.js-section')
-      const menus = document.querySelectorAll('.newneek-navbar-menu-item')
-      if(!sections || !menus) return
-
-      sections.forEach((section, index) => {
-        if(section.offsetTop <= window.pageYOffset) {
-          // console.log(section.offsetTop, section.getBoundingClientRect().top)
-          menus.forEach(menu => menu.classList.remove('is-active'))
-          menus[index].classList.add('is-active')
-        }
-      })
-    })
-
-    var now = new Date()
-    var then = new Date("April 16, 2020")
-    var gap = then.getTime() - now.getTime()
-    gap = Math.floor(gap / (1000 * 60 * 60 * 24))
-    const aaa = document.querySelector('.dday')
-    aaa && aaa.innerText = `${gap}`
+    // event.customCursor()
 
     // 임시
     const list = document.querySelector('.js-display-list')
@@ -195,19 +157,34 @@ function initailizePage() {
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  // polyfill()
   loader()
   detectBrowser()
   detectHeaderTheme()
-
   setDarkmode()
-
   // adjustTopPadding()
 
   // hashchange 될 때마다 이벤트 만들어짐;
   event.toggleClass({ selector: '.js-navbar-toggle' }).setEvent()
 
   domEvents()
+
+  window.addEventListener('scroll', () => {
+    event.stickyElement({ targetElement: '.post-head', addClass: 'is-sticky' })
+    event.stickyElement({ targetElement: '.js-navbar', addClass: 'is-sticky-navbar' })
+  })
+  const scrollProgress = () => {
+    const progressBar = document.querySelector<HTMLElement>('.post-head-progress')
+    if (!progressBar) return
+
+    const scrollPercent = `${(window.pageYOffset / (document.body.scrollHeight - window.innerHeight)) * 100}%`
+    progressBar.style.width = scrollPercent
+  }
+  window.addEventListener('scroll', scrollProgress, true)
+})
+
+
+
+
 
   // ! click 이벤트 외부에 넣으니까 파폭에서만 오류. event undefined
   // TODO: 도큐먼트가 아니라 event.target.parent 가 아닌 것을 클릭했을 때 다당야 하나
@@ -224,34 +201,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // 	}
   // 	return null;
   // };
-
-  // console.log(document.scrollHeight, document.body.scrollHeight);
-
-  const scrollProgress = () => {
-    const progressBar = document.querySelector<HTMLElement>('.post-head-progress')
-    if (!progressBar) return
-
-    const scrollPercent = `${(window.pageYOffset / (document.body.scrollHeight - window.innerHeight)) * 100}%`
-    progressBar.style.width = scrollPercent
-  }
-
-  window.addEventListener('scroll', () => {
-    event.stickyElement({ targetElement: '.post-head', addClass: 'is-sticky' })
-    event.stickyElement({ targetElement: '.js-navbar', addClass: 'is-sticky-navbar' })
-  })
-  window.addEventListener('scroll', scrollProgress, true)
-  // var i = 0;
-  // var images = ['cover1.jpg','cover2.jpg'];
-  // var imageElement = document.querySelector('.cover_image');
-  // // image.css('background-image', 'url(/img/cover1.jpg)');
-  // setInterval(function(){
-  // 	imageElement.fadeOut(1000, () => {
-  // 		imageElement.css('background-image', `url(${images[i++]})`);
-  // 		imageElement.fadeIn(1000);
-  // 	});
-  // 	if(i === images.length) i = 0;
-  // }, 5000);
-
 
   // const sayHello = new Promise((resolve, reject) => {
   // 	reject('Unable to say hi.');
@@ -307,7 +256,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 		</div>`;
   // 	});
   // }, 200);
-})
+
 
 // document.addEventListener('input', event => {
 // 	// const helpers = document.querySelectorAll('.textfield-helper');
@@ -350,7 +299,6 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('submit', event => event.preventDefault())
 
 // const errorHelper = () => {
-
 // };
 
 // var hasError = function(field) {
@@ -399,3 +347,16 @@ document.addEventListener('submit', event => event.preventDefault())
     //   console.log(temp);
     //   ccc.innerHTML = temp;
     // }
+
+
+  // var i = 0;
+  // var images = ['cover1.jpg','cover2.jpg'];
+  // var imageElement = document.querySelector('.cover_image');
+  // // image.css('background-image', 'url(/img/cover1.jpg)');
+  // setInterval(function(){
+  // 	imageElement.fadeOut(1000, () => {
+  // 		imageElement.css('background-image', `url(${images[i++]})`);
+  // 		imageElement.fadeIn(1000);
+  // 	});
+  // 	if(i === images.length) i = 0;
+  // }, 5000);

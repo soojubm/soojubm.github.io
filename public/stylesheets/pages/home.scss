@@ -5,6 +5,43 @@
 	--newneek-orange: #fb7800;
 }
 
+@font-face { font-family: 'Noto Sans KR'; src:url('/public/webfonts/NotoSans-Medium.woff');}
+@font-face { font-family: 'Noto Serif KR'; src:url('/public/webfonts/NotoSerifCJKkr-Black.woff');}
+
+html {
+	font-family: 'Noto Sans KR';
+	/* letter-spacing: -.025rem; */
+	color:#000;
+	letter-spacing: -.025rem;
+	/* font-weight: 500; */
+}
+a:hover, button, [role=button] {
+	cursor:url(/public/images/cursor-gosum.png), auto;
+}
+* {box-sizing:border-box;}
+body {
+	background: #ebebeb;
+	// cursor:url(/public/images/cursor-pointer.png), auto;
+}
+b { 
+	color:#000;
+}
+b, p {
+	font-family: 'Noto Sans KR';
+	font-size: 1.125rem;
+}
+h1, h2, h3, h4, h5, h6, strong {
+	font-weight: 900;
+	font-family: 'Noto Serif KR';
+	color:#000;
+}
+
+.tag {background:#000;color:#fff;}
+
+.modal-body h2 {margin:2rem 0 1rem 0;font-size:1.25rem;}
+.modal-body p {}
+.modal-body ul {margin:1rem 0;}
+
 $newneek-gray: #ebebeb;
 $newneek-black: #000;
 $newneek-orange: #fb7800;
@@ -50,7 +87,9 @@ a {color:$newneek-orange;}
 em {color:#000;}
 
 .newneek-hero {border-radius:0;overflow:hidden;padding:0;background:$newneek-gray;}
-.newneek-hero img {display:block;width:560px;margin:0 auto;position:relative;top:-1rem;}
+.newneek-hero-image {display:block;width:560px;margin:0 auto;position:relative;top:-1rem;}
+.newneek-hero-image .nose {width:80px;position:absolute;right:-16px;top: 235px;animation:pulse 1s infinite;}
+// .newneek-hero-image .water {width:80px;position:absolute;right:-16px;top: 235px;animation:pulse 1s infinite;}
 .newneek-hero h1 {font-size:5rem;color:#fff;background:#000;margin:-14rem -100rem 4rem;padding:4rem 0 5rem;text-align:center;position:relative;z-index:1;transform:rotate(-4deg);}
 .newneek-hero h1 span span {font-size:1.125em;}
 
@@ -76,18 +115,16 @@ em {color:#000;}
 
 .pagehead {display:flex;justify-content:center;margin:0 .5rem;}
 .pagehead h2 {display:flex;align-items:center;justify-content:center;font-size:1.25rem;line-height:1.4;width:80px;height:$height-header;border:$border;position:relative;}
-.pagehead h2 + h2 {width:160px;margin-left:-$border-width;}
+.pagehead h2 + h2 {width:160px;margin-left:0;border-left:0;}
 .pagehead .marquee {display:flex;align-items:center;width:calc(100% - 234px);height:$height-header;border:$border;margin-left:-$border-width;}
 
 .newneek-banner {display:flex;align-items:center;justify-content:center;height:80px;margin:.5rem;font-size:1.25rem;position:fixed;left:0;right:0;bottom:-150px;z-index:6;transition:all .8s;
 }
 .newneek-banner.is-up {transform: translateY(-150px);}
 .newneek-banner-background {background:$newneek-orange;border:$border;position:absolute;left:0;right:0;top:0;bottom:0;z-index:-1;}
-.newneek-banner-text {
-	color: #000;
-}
+.newneek-banner-text {font-size:1.25rem;color:#000;}
 .newneek-banner-image {width:160px;position:absolute;left:50%;bottom:0;z-index:-2;transform:translate(-50%, 2rem);transition:all .4s}
-.newneek-banner-button {background:#fff;margin-left:1rem;font-size:14px;}
+.newneek-banner-button {background:#fff;margin-left:1rem;}
 
 .newneek-banner:hover .newneek-banner-image {transform:translate(-50%, 0rem);}
 
@@ -121,14 +158,15 @@ em {color:#000;}
 .style-row.is-scrolled {opacity:1;transform:translateZ(0) scale(1);}
 .style-row.is-scrolled a {animation:rotation 2s;}
 .style-row.is-scrolled .style-column:nth-of-type(2) a {animation-delay:1s;}
-.style-row .primary-button {background:#fff;}
+// .style-row .primary-button {background:#fff;}
 
-.style-column {width:50%;margin:-1rem 1rem 2rem;border:$border;box-sizing:border-box;background:#fff;position:relative;z-index:1;}
+.style-column {width:542px;margin:0 1rem 2rem;background:url(/public/images/frame.png) no-repeat;position:relative;z-index:1;}
 .style-column-back {display:block;width:100%;height:100%;position:absolute;right:-1rem;bottom:-1rem;border:2px solid #000;}
 // .style-column + .style-column {border-left-width:1px;border-right-width:2px;}
 .style-column h1 {margin:2rem 3rem .75rem;font-size:1.25rem;/*position:absolute;left:50%;top:0;transform:translate(-50%, -50%);*/}
 .style-column figure + div {margin-top:-1rem;}
-.style-column div {margin-top:-$border-width;border-top:$border;border-bottom:$border;display:flex;}
+.style-column div {border-top:$border;border-bottom:$border;display:flex;}
+.style-column div + div {border-top:none;}
 .style-column div b {width:20%;padding:1rem 1rem;border-right:$border;box-sizing:border-box;text-align:center;}
 .style-column div p {width:80%;padding:1rem 1rem;box-sizing:border-box;}
 .style-column h3 {
@@ -148,7 +186,7 @@ em {color:#000;}
 .pledge {padding-bottom: 8rem;background:$newneek-gray;}
 .pledge-description {font-size:$description;line-height:$description-line;}
 
-.faq {padding-bottom:8rem;background:$newneek-gray;position:relative;z-index:1;}
+.faq {padding-bottom:8rem;background:$newneek-gray;position:relative;}
 .faq-description {font-size:$description;line-height:$description-line;}
 
 .manual {margin:0rem 20%;border:$border;overflow:hidden;background:#fff;opacity:0;transform:translateZ(0) scale(2);transition:all .3s ease-in-out;position:relative;}
@@ -249,7 +287,7 @@ em {color:#000;}
 .newneek-footer {background: #000;color: #fff;padding:2rem 2rem 5rem;text-align:center;position:relative;}
 
 @media (max-width:1400px) {
-	.hero img {width:480px;}
+	.newneek-hero-image {width:480px;}
 	// .hero h1 {font-size:3rem;padding:3rem 0 4rem;}
 }
 @media (max-width:$breakpoint-small) {
@@ -257,6 +295,8 @@ em {color:#000;}
 	.style-row {display:block;padding:0;}
 	
 	.style-column {width:100%;margin:-1rem 2rem 2rem;}
+
+	.modal-body {height:100vh;}
 
 	.manual {margin-left:0;margin-right:0;}
 
@@ -270,12 +310,12 @@ em {color:#000;}
 
 	.newneek-navbar-logo {width:120px;left:1rem}
 
-	.pagehead {display:block;}
-	.pagehead h2 {float:left;width:calc(20% + 2px);}
+	.pagehead {display:block;margin-top:-2px;}
+	.pagehead h2 {float:left;width:20%;}
 	.pagehead h2 + h2 {width:40%;}
 	.pagehead .marquee {width:100%;margin-left:0;border-top:none;}
 
-	.hero h1 {font-size:3rem;padding:3rem 0 4rem;}
+	.newneek-hero h1 {font-size:3rem;padding:3rem 0 4rem;}
 
 	.icon-circle {
     width: 32px;
@@ -293,5 +333,6 @@ em {color:#000;}
 
 
 @media (max-width:720px) {
-	.hero img {width:60%;}
+	.newneek-hero-image {width:60%;}
+	.marquee p {animation-duration: 4s;}
 }
