@@ -1,6 +1,6 @@
 @font-face {font-family: 'AritaDotum';src: url(/public/webfonts/AritaDotumMedium.woff); }
 @font-face {font-family: 'Asap';src: url(/public/webfonts/Asap-Regular.otf); }
-@font-face {font-family: 'DunkelSans';src: url(/public/webfonts/Dunkelsansv0.5-Heavy.woff2); }
+// @font-face {font-family: 'DunkelSans';src: url(/public/webfonts/Dunkelsansv0.5-Heavy.woff2); }
 // @font-face {font-family: 'AritaDotumBold';src: url(/public/webfonts/Arita-dotum-SemiBold_OTF.woff); }
 // @import url('https://fonts.googleapis.com/css?family=Gothic+A1:300,400,700,900&display=swap&subset=korean');
 
@@ -16,13 +16,12 @@ a {text-decoration:none;text-decoration-skip-ink:auto;color:$color-primary;} a:l
 mark {padding:0 .25rem;border-radius:2px;background:rgba(0,0,0,1);color:$gray0;}
 hr {height:1px;overflow:visible;position:relative;}
 hr:after {content:'';display:block;width:100%;height:1px;background:$gray100;}
-
 u {text-decoration:none;position:relative;z-index:1;}
 u:after {content:'';height:1.5rem;border-radius:$radius400;background:#fb7800;display:block;position:absolute;left:0;right:0;bottom:0rem;z-index:-1;}
 
 code {padding:1rem 1.5rem;background:$gray100;border-radius:$radius400;}
 html {min-width:320px;height:100%;overflow-x:hidden;font:14px/1.8 'Asap', 'AritaDotum', 'Apple SD Gothic Neo', sans-serif;color:$gray600;-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
-// body {font-size:.875rem;}
+body {letter-spacing: -.0125rem;}
 
 table {width:100%;border-collapse:collapse;border-spacing:0;border-left-style:hidden;border-right-style:hidden;}
 table caption {padding:.5rem 0;font-size:12px;text-align:left;}
@@ -54,6 +53,7 @@ dl {display:flex;justify-content:space-between;align-items:center;}
 dt {color:$gray800;}
 dd {color:$gray400;}
 
+
 .tags {display:flex;margin:-.25rem;}
 .tag {margin:.25rem;padding:1px .5rem 2px;font-family:'consolas';font-size:.8rem;color:$gray600;background-color:$gray100;border-radius:4px;font-family:inherit;vertical-align:middle;}
 .more {margin-left:.25rem;color:#000;text-decoration:underline;}
@@ -79,20 +79,6 @@ dd {color:$gray400;}
 .skip-link {display:block;background:rgba(0,0,0,1);color:rgba(255,255,255,.8);text-align:center;height:0;font-size:0;}
 .skip-link:focus {height:50px;line-height:50px;font-size:14px;}
 
-// writing-mode: horizontal-tb / vertical-rl / vertical-lr;
-
-// ::-webkit-scrollbar {width:auto;height:auto;}
-// ::-webkit-scrollbar-track {background:inherit;}
-// ::-webkit-scrollbar-thumb {background:inherit;}
-// ::-webkit-scrollbar-button {display:none;background-color:inherit;}
-// ::-webkit-scrollbar-corner {background-color:inherit;}
-// [aria-live="polite | assertive | off"] {} 
-
-// 고정폭 숫자 폰트 아카이빙
-// @import url('https://fonts.googleapis.com/css?family=Nunito+Sans');
-// @import url('https://fonts.googleapis.com/css?family=Asap');
-// todo url 등록 시 www 및 https:// 기본 입력
-// article 안에 정보는 address
 
 @media (max-width:$breakpoint-small) {
   html {font-size:12px;}
@@ -116,3 +102,22 @@ dd {color:$gray400;}
 
 .subhead {font-size:$subhead;}
 .subhead + .description {margin:1rem 0 0 0;}
+
+
+
+
+
+// writing-mode: horizontal-tb / vertical-rl / vertical-lr;
+
+// ::-webkit-scrollbar {width:auto;height:auto;}
+// ::-webkit-scrollbar-track {background:inherit;}
+// ::-webkit-scrollbar-thumb {background:inherit;}
+// ::-webkit-scrollbar-button {display:none;background-color:inherit;}
+// ::-webkit-scrollbar-corner {background-color:inherit;}
+// [aria-live="polite | assertive | off"] {} 
+
+// 고정폭 숫자 폰트 아카이빙
+// @import url('https://fonts.googleapis.com/css?family=Nunito+Sans');
+// @import url('https://fonts.googleapis.com/css?family=Asap');
+// todo url 등록 시 www 및 https:// 기본 입력
+// article 안에 정보는 address

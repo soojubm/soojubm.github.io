@@ -1,4 +1,4 @@
-import close from './close'
+// @ts-ignore
 
 //TODO: 모달 밖의 컨텐츠에 aria-hidden 모달의 위치는 바디 안에?
 //var abc = window.innerWidth - document.body.clientWidth;
@@ -7,9 +7,11 @@ type Parameter = {
 }
 
 const modal = ({ selector: trigger }: Parameter) => ({
+  // init(element) {
+  //   if(!element) throw Error('element')
+  // },
   modals: document.querySelectorAll(trigger),
-  modalDialog: document.querySelector('.modal-dialog'),
-  pageY: 0,
+
   setEvent() {
     if (!this.modals) return
 
@@ -22,47 +24,48 @@ const modal = ({ selector: trigger }: Parameter) => ({
         const closeTrigger = nextElementSibling?.querySelector('.js-modal-close')
         if(!nextElementSibling || !closeTrigger) return
 
-        this.pageY = window.pageYOffset
+        const { pageYOffset } = window
 
-        this.showModal(nextElementSibling)
-        document.addEventListener('click', () => this.closeModal(nextElementSibling))
-        closeTrigger?.addEventListener('click', () => this.closeModal(nextElementSibling))
-        // window.onpopstate = history.onpushstate = function(e) {
-        //   const isModal = window.location.href.split('/').pop().indexOf('modal') === -1
-        //   if(isModal) {
-        //     this.closeModal(nextElementSibling);
-        //   }
-        // }
+        this.showModal(nextElementSibling, pageYOffset)
+        closeTrigger.addEventListener('click', this.backHistory)
 
-        // window.addEventListener('popstate', function(event) {
-        //   if (history.state && history.state.id === 'modal') {
-        //     alert()
-        //     closeModal(nextElementSibling);
-        //   }
-        // }, false);
+        const state = { name: 'tester' }
+        const title = 'dd'
+        const url = 'modal'
+        history.pushState(state, title, url)
+
+        window.addEventListener('popstate', () => {
+          this.closeModal(nextElementSibling, pageYOffset)
+        });
+        document.addEventListener('click', this.backHistory)
       })
     )
-    this.modalDialog?.addEventListener('click', event => event.stopPropagation())
+    const modalDialog = document.querySelectorAll('.modal-dialog')
+    modalDialog.forEach(element => {
+      element.addEventListener('click', event => event.stopPropagation())
+    })
   },
-  showModal(element) {
+  backHistory() {
+    history.back()
+  },
+  showModal(element, pageYOffset) {
     element?.classList.add('is-visible')
-    this.lockBody(this.pageY)
+    this.lockBody(pageYOffset)
   },
-  closeModal(element) {
-    const isOpened = element?.classList.contains('is-visible')
+  closeModal(element, pageYOffset) {
+    const isOpened = element.classList.contains('is-visible')
     if (!isOpened) return
 
-    element?.classList.remove('is-visible')
-    this.unlockBody(this.pageY)
-    // window.history.back()
+    element.classList.remove('is-visible')
+    this.unlockBody(pageYOffset)
   },
-  lockBody(pageY) {
+  lockBody(pageYOffset) {
     document.body.classList.add('body-lock')
-    document.body.style.top = `-${pageY}px`
+    document.body.style.top = `-${pageYOffset}px`
   },
-  unlockBody(pageY) {
+  unlockBody(pageYOffset) {
     document.body.classList.remove('body-lock')
-    window.scrollTo(0, pageY)
+    window.scrollTo(0, pageYOffset)
   }
 })
 
