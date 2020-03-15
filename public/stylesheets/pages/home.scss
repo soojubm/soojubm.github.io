@@ -21,6 +21,7 @@ a:hover, button, [role=button] {
 * {box-sizing:border-box;}
 body {
 	background: #ebebeb;
+	overflow: hidden;
 	// cursor:url(/public/images/cursor-pointer.png), auto;
 }
 b { 
@@ -211,7 +212,7 @@ em {color:#000;}
 .manual-body i {width:20%;padding-bottom:4px;border-right:$border;text-align:center;}
 .manual-body p {width:80%;padding:1rem 2rem;}
 
-.dictionary {margin:0 -1rem;padding-bottom:10rem;background:#fff;position:relative;}
+.dictionary {margin:0 -1rem;padding-bottom:10rem;background:#fff;overflow:hidden;position:relative;}
 .dictionary a {margin-top:1rem;}
 // .dictionary h2 {color:#fff;border-top-color:#fff;border-bottom-color:#fff;}
 .dictionary-description {font-size:$description;line-height:$description-line;}
