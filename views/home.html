@@ -796,7 +796,54 @@ document.addEventListener('DOMContentLoaded', function() {
   })
 
 
-  
+
+  const modals = document.querySelectorAll('.js-modal')
+  if (!modals) return
+
+  modals.forEach(modal =>
+    modal.addEventListener('click', event => {
+      event.stopPropagation()
+      event.preventDefault()
+
+      const nextElementSibling = modal.nextElementSibling
+      const closeTrigger = nextElementSibling?.querySelector('.js-modal-close')
+      if(!nextElementSibling || !closeTrigger) return
+
+      const { pageYOffset } = window
+
+      
+      nextElementSibling.classList.add('is-visible')
+      
+      document.body.classList.add('body-lock')
+      document.body.style.top = pageYOffset + 'px'
+      closeTrigger.addEventListener('click', backHistory)
+
+      const state = { name: 'tester' }
+      const title = 'dd'
+      const url = 'modal'
+      history.pushState(state, title, url)
+
+      window.addEventListener('popstate', () => {
+        const isOpened = element.classList.contains('is-visible')
+        if (!isOpened) return
+
+        element.classList.remove('is-visible')
+        
+        document.body.classList.remove('body-lock')
+        window.scrollTo(0, pageYOffset)
+      });
+      document.addEventListener('click', backHistory)
+
+      function backHistory() {
+        history.back()
+      }
+    })
+  )
+  const modalDialog = document.querySelectorAll('.modal-dialog')
+  modalDialog.forEach(element => {
+    element.addEventListener('click', event => event.stopPropagation())
+  })
+    
   var now = new Date()
   var then = new Date("April 16, 2020")
   var gap = then.getTime() - now.getTime()
