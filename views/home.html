@@ -631,6 +631,38 @@ document.addEventListener('DOMContentLoaded', function() {
   //   window.location.href='http://www.codingfactory.net/';
   // }
 
+  if (typeof NodeList !== "undefined" && NodeList.prototype && !NodeList.prototype.forEach) {
+    // Yes, there's really no need for `Object.defineProperty` here
+    NodeList.prototype.forEach = Array.prototype.forEach;
+  }
+  // document.addEventListener('DOMContentLoaded', function(){
+  // const scrollTarget = document.querySelectorAll('.js-scroll-animation')
+
+  // console.log(scrollTarget)
+  // const SCROLLED_CLASS = 'is-scrolled'
+  // if (!scrollTarget) return
+
+  // let temp
+
+  // scrollTarget.forEach(function(element) {
+  //   const isScrolled = element.getBoundingClientRect().bottom <= window.innerHeight
+  //   if (!isScrolled) return
+
+  //   element.classList.add(SCROLLED_CLASS)
+  // })
+
+  // window.addEventListener('scroll', function() {
+  //   scrollTarget.forEach(function(element) {
+  //     console.log(window.pageYOffset, element.getBoundingClientRect().top)
+
+  //     const isScrolled = element.getBoundingClientRect().top + element.clientHeight * 0.5 <= window.innerHeight;
+  //     // const isScrolled = window.pageYOffset > window.pageYOffset + element.getBoundingClientRect().top - window.innerHeight + 50
+  //     if (!isScrolled) return
+
+  //     element.classList.add(SCROLLED_CLASS)
+  //     })
+  //   })
+  // })
 
   const toggleClass = function() {
     const triggers = document.querySelectorAll('.js-toggle')
@@ -643,11 +675,11 @@ document.addEventListener('DOMContentLoaded', function() {
         event.preventDefault() // a tag에 사용하는 경우
         event.stopPropagation()
 
-        const triggerNextElement = element?.nextElementSibling
+        const triggerNextElement = element.nextElementSibling
         if (!triggerNextElement) return
 
         element.classList.toggle(ACTIVE_CLASS)
-        element.setAttribute('aria-expanded', `${element.classList.contains(ACTIVE_CLASS)}`)
+        element.setAttribute('aria-expanded', element.classList.contains(ACTIVE_CLASS))
 
         element.nextElementSibling.classList.toggle(ACTIVE_CLASS2)
         element.nextElementSibling.addEventListener('click', function(event) {
@@ -676,16 +708,16 @@ document.addEventListener('DOMContentLoaded', function() {
   window.addEventListener('scroll', function() {
     let rate = window.pageYOffset * 0.005
     if(window.scrollTop < 1200) {
-      document.querySelector('.newneek-hero h1').style.transform = `rotate(-4deg) scale(${rate})`;
+      document.querySelector('.newneek-hero h1').style.transform = 'rotate(-4deg) scale(' + rate + '})';
     }
 
-    const offset = document.querySelector('.dictionary')?.getBoundingClientRect().bottom
-    const offset2 = document.querySelector('.newneek-subscribe')?.getBoundingClientRect().bottom + 2000
+    const offset = document.querySelector('.dictionary').getBoundingClientRect().bottom
+    const offset2 = document.querySelector('.newneek-subscribe').getBoundingClientRect().bottom + 2000
 
     if(window.pageYOffset > offset && window.pageYOffset < offset2) {
-      document.querySelector('.newneek-banner')?.classList.add('is-up')
+      document.querySelector('.newneek-banner').classList.add('is-up')
     } else {
-      document.querySelector('.newneek-banner')?.classList.remove('is-up')
+      document.querySelector('.newneek-banner').classList.remove('is-up')
     }
   })
 
@@ -737,7 +769,7 @@ document.addEventListener('DOMContentLoaded', function() {
   })
 
   //sticky
-  const { body } = document
+  const body = document.body
   const stickyElement = document.querySelector('.js-navbar')
   if (!stickyElement) return
 
