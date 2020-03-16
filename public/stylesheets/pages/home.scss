@@ -161,7 +161,7 @@ em {color:#000;}
 .style-row.is-scrolled .style-column:nth-of-type(2) a {animation-delay:1s;}
 // .style-row .primary-button {background:#fff;}
 
-.style-column {width:542px;margin:0 1rem 2rem;background:url(/public/images/frame.png) no-repeat;position:relative;z-index:1;}
+.style-column {width:50%;margin:0 1rem 2rem;border:$border;background:#fff;position:relative;z-index:1;}
 .style-column-back {display:block;width:100%;height:100%;position:absolute;right:-1rem;bottom:-1rem;border:2px solid #000;}
 // .style-column + .style-column {border-left-width:1px;border-right-width:2px;}
 .style-column h1 {margin:2rem 3rem .75rem;font-size:1.25rem;/*position:absolute;left:50%;top:0;transform:translate(-50%, -50%);*/}
@@ -285,10 +285,11 @@ em {color:#000;}
 .newneek-subscribe-description + button {width: 15rem;}
 
 
-.newneek-footer {background: #000;color: #fff;padding:2rem 2rem 5rem;text-align:center;position:relative;}
+.newneek-footer {background: #000;color: #fff;font-size:1.25rem;padding:2rem 2rem 5rem;text-align:center;position:relative;}
 
 @media (max-width:1400px) {
 	.newneek-hero-image {width:480px;}
+	.newneek-hero-image .nose {top:209px;}
 	// .hero h1 {font-size:3rem;padding:3rem 0 4rem;}
 }
 @media (max-width:$breakpoint-small) {
@@ -305,6 +306,7 @@ em {color:#000;}
 	.pagehead .marquee {
 		height:48px;
 	}
+
 	.newneek-navbar {height:50px;}
 	.newneek-navbar-menu {margin:-2px 0 0;justify-content:flex-end;}
 	.newneek-navbar > a:not(.newneek-navbar-logo) {display:none;} // cta instagram
@@ -338,5 +340,11 @@ em {color:#000;}
 
 @media (max-width:720px) {
 	.newneek-hero-image {width:60%;}
+	.newneek-hero-image .nose {
+		width: 58px;
+		top: 144px;
+	}
 	.marquee p {animation-duration: 4s;}
+
+	.pledge br, .dictionary br, .faq br {display:none;}
 }

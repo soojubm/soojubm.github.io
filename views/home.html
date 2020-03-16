@@ -166,7 +166,7 @@
   <div class="newneek-hero-image">
     <img src="/public/images/gosum-hero-without-nose.png" alt="">
     <img src="/public/images/gosum-hero-nose.png" alt="" class="nose">
-    <img src="/public/images/gosum-hero-water.png" alt="" class="water">
+    <!-- <img src="/public/images/gosum-hero-water.png" alt="" class="water"> -->
   </div>
   <h1 class="temp js-animation-scroll">
     <span>꼭 그렇게 다 뽀개야만<br />
@@ -599,12 +599,12 @@
   <a href="https://newneek.co/" class="newneek-banner-button primary-button">지금 구독하기</a>
 </aside>
 
-<div style="width:40%;margin:0 auto -4rem;"><img src="/public/images/gosumduck.png" alt=""></div>
+<!-- <div style="width:40%;margin:0 auto -4rem;"><img src="/public/images/gosumduck.png" alt=""></div> -->
 
 <form class="newneek-subscribe">
-  <h2 class="newneek-subscribe-title">구독 타이틀.</h2>
-  <p class="newneek-subscribe-description">구독 디스크립션.</p>
-  <button class="primary-button" type="submit">신청하기</button>
+  <h2 class="newneek-subscribe-title">우리가 시간이 없지,<br />세상이 안 궁금하냐!</h2>
+  <p class="newneek-subscribe-description">일상의 대화처럼 시사 이슈를 전하는 이메일 뉴스레터가 월수금 아침마다 찾아갑니다.</p>
+  <a class="primary-button" href="https://newneek.co/">구독하기</a>
   <!-- <div class="newneek-subscribe-field textfield">
     <input class="textfield-input" placeholder="Enter Your Email..">
   </div> -->
@@ -612,10 +612,9 @@
 </form>
 
 <footer class="newneek-footer">
-  <p>우리가 시간이 없지, 뉴스가 안 궁금하냐!</p>
   <div>NEWNEEK</div>
   <address>서울특별시 중구 남대문로9길 40</address>
-  <small>Copyright ⓒ NEWNEEK Co., Ltd. 2018-2020.</small>
+  <p>Copyright ⓒ NEWNEEK Co., Ltd. 2018-2020.</p>
   <div style="padding:0 0 2rem;margin-left:auto;">
     <a href="#" style="display:inline-block;width:2rem;margin-right:2rem;"><img src="/public/icons/instagram.svg" alt=""></a>
     <a href="#" style="display:inline-block;width:2rem;"><img src="/public/icons/facebook.svg" alt=""></a>
@@ -795,7 +794,13 @@ document.addEventListener('DOMContentLoaded', function() {
     })
   })
 
-
+  var now = new Date()
+  var then = new Date("April 16, 2020")
+  var gap = then.getTime() - now.getTime()
+  gap = Math.floor(gap / (1000 * 60 * 60 * 24))
+  const aaa = document.querySelector('.dday i')
+  console.log(aaa, aaa.innerText, gap)
+  aaa.innerText = gap
 
   const modals = document.querySelectorAll('.js-modal')
   if (!modals) return
@@ -846,13 +851,7 @@ document.addEventListener('DOMContentLoaded', function() {
     })
   })
     
-  var now = new Date()
-  var then = new Date("April 16, 2020")
-  var gap = then.getTime() - now.getTime()
-  gap = Math.floor(gap / (1000 * 60 * 60 * 24))
-  const aaa = document.querySelector('.dday i')
-  console.log(aaa, aaa.innerText, gap)
-  aaa.innerText = gap
+
 
 
 })
