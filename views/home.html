@@ -800,16 +800,16 @@ document.addEventListener('DOMContentLoaded', function() {
   const modals = document.querySelectorAll('.js-modal')
   if (!modals) return
 
-  modals.forEach(modal =>
-    modal.addEventListener('click', event => {
+  modals.forEach(function(modal) {
+    modal.addEventListener('click', function(event) {
       event.stopPropagation()
       event.preventDefault()
 
       const nextElementSibling = modal.nextElementSibling
-      const closeTrigger = nextElementSibling?.querySelector('.js-modal-close')
+      const closeTrigger = nextElementSibling.querySelector('.js-modal-close')
       if(!nextElementSibling || !closeTrigger) return
 
-      const { pageYOffset } = window
+      const pageYOffset = window.pageYOffset
 
       
       nextElementSibling.classList.add('is-visible')
@@ -823,11 +823,11 @@ document.addEventListener('DOMContentLoaded', function() {
       const url = 'modal'
       history.pushState(state, title, url)
 
-      window.addEventListener('popstate', () => {
-        const isOpened = element.classList.contains('is-visible')
+      window.addEventListener('popstate', function() {
+        const isOpened = nextElementSibling.classList.contains('is-visible')
         if (!isOpened) return
 
-        element.classList.remove('is-visible')
+        nextElementSibling.classList.remove('is-visible')
         
         document.body.classList.remove('body-lock')
         window.scrollTo(0, pageYOffset)
@@ -838,10 +838,12 @@ document.addEventListener('DOMContentLoaded', function() {
         history.back()
       }
     })
-  )
+  })
   const modalDialog = document.querySelectorAll('.modal-dialog')
-  modalDialog.forEach(element => {
-    element.addEventListener('click', event => event.stopPropagation())
+  modalDialog.forEach(function(element) {
+    element.addEventListener('click', function() {
+      event.stopPropagation()
+    })
   })
     
   var now = new Date()
