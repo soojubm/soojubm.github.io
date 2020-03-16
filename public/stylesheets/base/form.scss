@@ -43,8 +43,8 @@ button.is-small {width:auto !important;min-width:72px !important;padding:4px 1re
 .primary-button {@include button;background:$color-primary;border:1px solid $color-primary;color:$gray0;}
 .button[data-theme=primary] {background:$color-primary;border:1px solid $color-primary;color:$gray0;}
 .primary-button:disabled {background:$gray600;border-color:$gray600;color:$gray200;cursor:not-allowed;}
-.primary-button:hover:not(:disabled) {background:#1a650b;}
-.primary-button:focus:not(:disabled) {background:#1a650b;}
+// .primary-button:hover:not(:disabled) {background:#1a650b;}
+// .primary-button:focus:not(:disabled) {background:#1a650b;}
 .primary-button:active:not(:disabled) {}
 .primary-button.-facebook {background:#3664a2;border-color:#3664a2;}
 .primary-button.-twitter {background:#3664a2;border-color:#3664a2;}
