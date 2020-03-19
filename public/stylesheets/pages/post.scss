@@ -4,8 +4,8 @@
 .post p:not(:nth-of-type(1))::first-letter {padding-left:0;}
 .post {max-width:720px;margin:0 auto;padding:4rem 5% 40px;}
 .post-head {margin:0 0 3rem 0;position:relative;}
-.post-head-runninghead {}
-.post-head-headline {padding:0rem 0 1rem 0;font-size:2rem;color:$gray800;text-indent:-1px;} /* 상하단 패딩 똑같이해야 스키티때 */
+.post-head-runninghead {color:$gray400;}
+.post-head-headline {padding:.5rem 0 1rem 0;font-size:2rem;color:$gray800;text-indent:-1px;} /* 상하단 패딩 똑같이해야 스키티때 */
 .post-head-time {color:$gray400;}
 .post-head-progress {display:none;height:3px;background:rgb(200,0,0);position:absolute;bottom:-3px;}
 .post-head-icons {/*position:fixed;left:50%;top:100px;margin-left:480px;*/}

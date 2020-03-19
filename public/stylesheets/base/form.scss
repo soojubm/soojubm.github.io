@@ -13,7 +13,7 @@ button {background:none;padding:0;border:none;cursor:pointer;font:inherit;positi
 button > * {pointer-events:none;}
 button:not(:active),
 button:not(:focus) {outline:0;}
-button:active {outline:0;animation:ripple2 0.2s linear forwards;}
+// button:active {outline:0;animation:ripple2 0.2s linear forwards;}
 
 input:focus,
 textarea:focus,
