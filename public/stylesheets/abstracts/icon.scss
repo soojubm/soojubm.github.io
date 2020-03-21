@@ -64,7 +64,13 @@
 // .icon-chevron {width:6px;height:6px;margin:auto;position:absolute;left:0;right:0;top:0;bottom:0;border-left:2px solid $gray400;border-top:2px solid $gray400;transform: rotate(-45deg);}
 .icon-arrow0 {display:inline-block;padding:3px;border:solid $gray800;border-width:0 2px 2px 0;transform:rotate(-45deg);}
 
-.icon-bullet:before {content:'\25AA';color:rgba(84,94,111,.2);}
+.icon-bullet {
+  width: 2px;
+  height: 2px;
+  background: $gray400;
+  box-sizing: border-box;margin:0 .5rem;
+}
+// .icon-bullet:before {content:'\25AA';color:rgba(84,94,111,.2);}
 
 .icon-arrow {position: relative;}
 .icon-arrow:before {

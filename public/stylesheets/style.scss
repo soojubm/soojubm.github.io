@@ -140,11 +140,6 @@
 .is-vertical .tablist-tab.is-active .tablist-tab-badge {color:$gray0;}
 .is-vertical .tablist-tab-badge {float:right;font-size:14px;}
 
-
-.user-card {display:block;padding:0 0 10rem 0;border:1px solid $gray100;position:relative;}
-.user-card-background {background:#000;position:absolute;left:0;right:0;top:0;bottom:5rem;}
-.user-card .avatar {position:absolute;left:1rem;top:3rem;}
-
 .todo {}
 .todo legend {margin:24px 0 4px 0;color:$gray400;}
 .todo-body {}
@@ -261,15 +256,15 @@
 
 
 
-.features {padding:6rem 0 10rem;margin:0 10% 4rem;}
+.features {margin:4rem 0 8rem;}
 .features header {padding:0 0 6rem;text-align:center;}
 .features header h2 {margin:0 0 1rem 0;font-size:3rem;}
 .features header p {color:#333;}
-.features-item {width:28%;margin:0 2.5%;}
-.features-item-avatar {font-size:4rem;}
+.features-item {width:320px;margin:0 2.5%;}
+.features-item-avatar {border-radius:4px;font-size:3rem;}
 .features-item-title {font-size:$subhead;}
 .features-item-description {margin-top:1rem;}
-.features-item-link {display:block;margin-top: .5rem;}
+.features-item-link {display:block;margin-top:1rem;}
 
 
 @media (max-width:$breakpoint-small) {

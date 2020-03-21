@@ -23,8 +23,8 @@ select:focus {}
 
 // todo::
 button.is-small {width:auto !important;min-width:72px !important;padding:4px 1rem 5px !important;font-size:12px !important;}
-.is-addable {min-width:auto !important;height:32px;padding-right:56px !important;text-align:left;}
-.is-addable.is-added {background:$color-primary;border-color:$color-primary;color:$gray0;}
+button.is-addable {min-width:auto !important;height:32px;padding-right:40px !important;text-align:left;}
+button.is-addable.is-added {background:$color-primary;border-color:$color-primary;color:$gray0;}
 
 @mixin button {display:inline-block;min-width:104px;background:$color-primary;padding:$padding200;border-radius:$radius400;text-align:center;color:$gray0;cursor:pointer;position:relative;}
 
@@ -75,7 +75,7 @@ button.is-small {width:auto !important;min-width:72px !important;padding:4px 1re
 .ghost-button:hover:not(:disabled) {border-color:$gray100;background:$gray100;}
 .ghost-button:focus:not(:disabled) {background:$gray100;}
 .ghost-button:active:not(:disabled) {}
-.icon-button {display:flex;align-items:center;justify-content:center;width:48px;height:48px;line-height:0;border-radius:$radius400;box-sizing:border-box;}
+.icon-button {display:flex;align-items:center;justify-content:center;width:32px;height:32px;line-height:0;border-radius:$radius400;box-sizing:border-box;}
 
 input[type=text] {}
 input[type=password] {}

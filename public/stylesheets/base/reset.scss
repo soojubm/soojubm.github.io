@@ -1,8 +1,10 @@
 @font-face {font-family: 'AritaDotum';src: url(/public/webfonts/AritaDotumMedium.woff); }
 @font-face {font-family: 'Asap';src: url(/public/webfonts/Asap-Regular.otf); }
 // @font-face {font-family: 'DunkelSans';src: url(/public/webfonts/Dunkelsansv0.5-Heavy.woff2); }
-// @font-face {font-family: 'AritaDotumBold';src: url(/public/webfonts/Arita-dotum-SemiBold_OTF.woff); }
+@font-face {font-family: 'AritaDotumBold';src: url(/public/webfonts/Arita-dotum-SemiBold_OTF.woff); }
 // @import url('https://fonts.googleapis.com/css?family=Gothic+A1:300,400,700,900&display=swap&subset=korean');
+// @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap');
 
 body,dl,dd,figure,blockquote,h1,h2,h3,h4,h5,h6,p,input[type=radio] {margin:0;}
 ul,ol,menu,fieldset,legend {margin:0;padding:0;}
@@ -11,7 +13,7 @@ main {display:block;}
 iframe,img,video {width:100%;} img {vertical-align:middle;}
 h1,h2,h3,h4,h5,h6 {line-height:1.4;font-weight:normal;color:$gray800;}
 strong,b,th,legend {font-weight:normal;color:$gray800;}
-cite,i,address,em,dfn {font-style:normal;} em {color:$color-primary;} small {font-size:12px;} time {} del {color:$gray400;} abbr {text-decoration:none;}
+cite,i,address,em,dfn {font-style:normal;} em {color:$color-primary;} small {font-size:.9rem;} time {} del {color:$gray400;} abbr {text-decoration:none;}
 a {text-decoration:none;text-decoration-skip-ink:auto;color:$color-primary;} a:link,a:visited {} a:hover,a:focus {} a:active {}
 mark {padding:0 .25rem;border-radius:2px;background:rgba(0,0,0,1);color:$gray0;}
 hr {height:1px;overflow:visible;position:relative;}

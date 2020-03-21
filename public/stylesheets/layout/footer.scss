@@ -1,7 +1,7 @@
 .subscribe {margin:4rem 10% 2rem;position:relative;}
-.subscribe-title {font-size:$subhead;}
+.subscribe-title {font-size:1.5rem;}
 .subscribe-description {margin:.5rem 0 0 0;}
-.subscribe-field {width:50%;margin:1.5rem 0 0 0;}
+.subscribe-field {width:50%;margin:2rem 0 0 0;}
 .subscribe-field input {}
 .subscribe-field button {}
 .subscribe-helper {display:block;margin:.5rem 0 0 0;}
@@ -29,7 +29,7 @@
 .is-short .footer-address {float:none;width:100%;text-align:center;}
 .is-short .footer-address-info {display:none;}
 
-@media (max-width: $breakpoint-small) {
+@media (max-width:$breakpoint-small) {
 	.footer {padding:3rem 5% 6rem;}
 	.subscribe {margin-left:5%;margin-right:5%;}
 	.subscribe-field {width:100%;}

@@ -1,8 +1,5 @@
 # soojubm.github.io
 
-===
-
-
 ## 커밋 메세지
 - 설정 : 패키지의 변화가 있을 때 사용한다.
 
@@ -25,9 +22,22 @@
 - @babel/polyfill은 소스코드가 실행되기 전에 동작해야 하기때문에 --save로 패키지에 추가.
 
 ## extensions
+
 - ('./myFile')
 - '[hash].[ext]' ext: 현재 확장자 그대로 사용
 
 ## ?
 - TODO 웹팩으로 코드 스플리팅 하기
 - 캐쉬 갱신
+
+
+## eslint
+
+
+## stylelint
+stylelint 
+stylelint-webpack-plugin 웹팩 빌드 시 린트 오류를 리스트업 해준다.
+-----
+eslint-config-prettier
+
+eslint-config-prettier is a config that disables rules that conflict with Prettier
