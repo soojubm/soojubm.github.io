@@ -2,6 +2,9 @@
   <header class="design-head">
   </header>
   <section class="hero">
+    <div style="position:absolute;right:-24px;top:0;width:40px;height:40px;background:gold;border-radius:50%;"></div>
+    <div style="position:absolute;right:480px;bottom:-8px;width:80px;height:80px;background:gold;border-radius:50%;"></div>
+    <div style="position:absolute;right:420px;top:24px;width:16px;height:16px;background:#0057ff;border-radius:50%;"></div>
     <div class="hero-background"></div>
     <h1 class="hero-title">히어로 영역 🗯</h1>
     <p class="hero-description">히어로 섹션의 마크업을 간단하게 해보았어요.<br />Hero & Features. 배너 대신 빌보드로 네이밍하자.</p>
@@ -13,7 +16,7 @@
     />
   </section>
 
-  <div class="starfield">
+  <!-- <div class="starfield">
     <span></span>
     <span></span>
     <span></span>
@@ -71,7 +74,7 @@
   .starfield > *:nth-child(5) {
     animation-duration: 120s;
   }
-  </style>
+  </style> -->
 
   <!-- <nav class="help-category" style="padding: 0;">
     <h1 class="help-category-title">카테고리 메뉴 샘플</h1>
@@ -86,26 +89,35 @@
   </nav> -->
 
   <section class="design-body">
-    <!-- <div role="textbox" contenteditable="true" aria-placeholder="5-digit zipcode" aria-labelledby="txtboxLabel">contentEditable</div>  -->
-
-    <!-- <section class="hero" style="height:auto;margin:100rem 20%;padding:0;overflow:inherit;position:rlative;">
-      <div style="position:absolute;right:-24px;top:0;width:40px;height:40px;background:gold;border-radius:50%;"></div>
-      <div style="position:absolute;right:480px;bottom:-8px;width:80px;height:80px;background:gold;border-radius:50%;"></div>
-      <div style="position:absolute;right:420px;top:24px;width:16px;height:16px;background:#0057ff;border-radius:50%;"></div>
-      <div class="hero-background" style="background:none;">
-        <img src="/public/images/open-doodles-sitting-and-reading.svg" alt="" style="width:40%;margin-top:-8px;float:right;" />
+    <style>
+      .card.is-vertical {width:auto;overflow:hidden;}
+      .card.is-vertical .card-thumbnail {float:left;margin-right:2rem;padding-top:0;width:240px;height:240px;border:2px solid #000;}
+      .card.is-vertical .card-thumbnail img {max-width:150%;max-height:150%;}
+      .card.is-vertical .card-tags {margin-left:-.25rem;}
+      .card.is-vertical .card-title {margin:0 0 .5rem 0;font-size:2rem;}
+      .card.is-vertical .card-date {margin:1rem 0 0 0;font-size:1rem;}
+    </style>
+    <div class="card is-vertical">
+      <figure class="card-thumbnail">
+        <img src="/public/images/unnamed.jpg">
+      </figure>
+      <img src="/public/images/star1.svg" alt="" style="position:absolute;left:-2rem;top:-2rem;width:80px;">
+      <div class="card-tags" role="group">
+        <span class="tag" style="font-size:1rem;">경제</span>
       </div>
-      <i class="hero-eyebrow" style="font-size:48px;">🧞‍</i>
-      <h1 class="hero-title" style="font-size:3rem;position:relative;">
-        금융의 모든 것,<br />
-        <span>토스</span>에서 간편하게
-      </h1>
-      <p class="hero-description" style="margin-top:2rem;margin-bottom:4rem;font-size:16px;">
-        간편한 인증 한 번으로<br />
-        소유한 계좌를 한 번에 관리할 수 있습니다.
-      </p>
-      <a class="hero-cta primary-button" style="width:124px;text-align:center;">시작하기</a>
-    </section> -->
+      <h3 class="card-title">이자? 넣어둬, 넣어둬</h3>
+      <div>
+        <span>#기준금리</span>
+        <span>#한국은행</span>
+        <span>#경제</span>
+      </div>
+      <!-- <time class="card-date">
+        2020 03 21 금요일</b>
+      </time> -->
+      <!-- <div class="card-note" style="border:1px solid #f3f2f1;border-radius:50px;text-align:center;font-size:12px;">마일리지 적립 200P</div>
+      <button class="card-more icon-button" type="button"><i class="icon-more"></i></button> -->
+    </div>
+    <!-- <div role="textbox" contenteditable="true" aria-placeholder="5-digit zipcode" aria-labelledby="txtboxLabel">contentEditable</div>  -->
 
     <article class="design-article typography">
       <h1 class="design-article-title">Typhography</h1>
@@ -123,7 +135,7 @@
         </div>
       </div>
 
-      <h1>Heading H1</h1>
+      <!-- <h1>Heading H1</h1>
       <h2>Heading H2</h2>
       <h3>Heading H3</h3>
       <h4>Heading H4</h4>
@@ -132,7 +144,7 @@
         h2 {font-size:2rem;}
         h3 {font-size:1.5rem;}
         h4 {font-size:1.25rem;}
-      </style>
+      </style> -->
 
       
       <div style="margin:3rem 0 0 0;">
@@ -254,21 +266,21 @@
 
     <article class="design-article">
       <h1 class="design-article-title">Text Links</h1>
-      <p class="design-article-description">안녕하세요?</p>
+      <p class="design-article-description">문단 내부 링크와 문단 외부 링크를 구분합니다.</p>
       <p>형무소 안에서는 소장의 말이 곧 법이었으며 죄수들의 잘못과 실수는 결코 용납되지 않는다. 어머니의 사망 소식을 듣고 인해 2번이나 탈옥을 시도했다가 체포된 <a href="">루크</a>의 발에 쇠통이 채워지며 루크는…<a class="more" href="#">더 보기</a></p>
     </article>
 
-    <article class="design-article">
+    <!-- <article class="design-article">
       <h1 class="design-article-title">Side Navigation</h1>
       <p class="design-article-description">탭리스트와 동일하게 마크업하세요. 스크롤스파이 개발하기.</p>
       <nav class="tablist is-vertical" style="margin-top:1rem" role="tablist">
-        <!-- <div class="tablist-active"></div> -->
+        <div class="tablist-active"></div>
         <button class="tablist-tab is-active" role="tab" aria-selected="true" data-index="1">웹사이트 <i class="tablist-tab-badge">4</i></button>
         <button class="tablist-tab" role="tab" aria-selected="false" data-index="2">페이지 <i class="tablist-tab-badge">6</i></button>
         <button class="tablist-tab" role="tab" aria-selected="false" data-index="3">컴포넌트 <i class="tablist-tab-badge">18</i></button>
         <button class="tablist-tab" role="tab" aria-selected="false" data-index="4">빈 상태 <i class="tablist-tab-badge">18</i></button>
       </nav>
-    </article>
+    </article> -->
 
     <article class="design-article">
       <h1 class="design-article-title">Tags</h1>
@@ -288,7 +300,7 @@
       <h1 class="design-article-title">Tooltip</h1>
       <p class="design-article-description">툴팁의 위치.</p>
       <aside class="tooltip" role="tooltip">
-        <span class="tooltip-target"><i class="material-icons">error_outline</i></span>
+        <span class="tooltip-target">동그라미 안에 물음표 아이콘</span>
         <div class="tooltip-content">
           <p>마우스를 올렸을 때 나오는 툴팁입니다.</p>
           <p>스타일시트의 인접 선택자로 만들어져 있다요.</p>
@@ -597,7 +609,7 @@
       <div class="spinner"></div>
     </article>
 
-    <article class="design-article">
+    <!-- <article class="design-article">
       <h1 class="design-article-title">Calendar</h1>
       <p class="design-article-description">미완성</p>
       <div class="calendar">
@@ -639,7 +651,7 @@
           <div class="calendar-body-column">7</div>
         </div>
       </div>
-    </article>
+    </article> -->
 
     <article class="design-article">
       <h1 class="design-article-title">Dropdown</h1>
@@ -764,6 +776,7 @@
       </div>
 
       <div class="pricing-item">
+        <span style="position:absolute;right:1rem;top:1rem;">most popular</span>
         <!-- <i style="margin-top:-.5rem;font-size:40px;">🧞‍</i> -->
         <h1 class="pricing-item-title">Standard</h1>
         <p class="pricing-item-description">부끄러우니까 구매하지마요.</p>
