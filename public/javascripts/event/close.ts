@@ -8,9 +8,9 @@ const close = ({ selector: target }: Parameter) => {
 
   closeElements.forEach(element =>
     element.addEventListener('click', () => {
-      (<HTMLElement>element.parentNode).hidden = true
+      ;(<HTMLElement>element.parentNode).hidden = true
       // isHidden = HTMLElement.hidden
-    })
+    }),
   )
 }
 

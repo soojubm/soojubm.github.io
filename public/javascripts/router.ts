@@ -2,7 +2,7 @@
 const routePage = () => {
   let { hash } = window.location
   const page = hash ? `/views/${hash.substring(1)}.html` : '/views/profile.html'
-
+  console.log(history.state)
   return fetch(page)
     .then(response => {
       // 404 || 500
@@ -60,10 +60,6 @@ export default routePage
 // response.text() // response.json()
 // toLowerCase() 해주기
 
-// history.pushState({
-// 	id: 'homepage'
-// }, 'Home | My App', 'http://my-app-url.com/?p=homepage');
-
 // window.addEventListener('popstate', function (event) {
 // 	if (history.state && history.state.id === 'homepage') {
 // 			// Render new content for the hompage
@@ -71,8 +67,3 @@ export default routePage
 // }, false);
 
 // replaceState
-
-// window.addEventListener('popstate', function (event) {
-// 	// Log the state data to the console
-// 	console.log(event.state);
-// });

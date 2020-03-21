@@ -1,3 +1,5 @@
+// @ts-ignore
+
 //TODO: 모달 밖의 컨텐츠에 aria-hidden 모달의 위치는 바디 안에?
 //var abc = window.innerWidth - document.body.clientWidth;
 type Parameter = {
@@ -8,7 +10,7 @@ const modal = ({ selector: trigger }: Parameter) => ({
   // init(element) {
   //   if(!element) throw Error('element')
   // },
-  modals: document.querySelectorAll<HTMLElement>(trigger),
+  modals: document.querySelectorAll(trigger),
 
   setEvent() {
     if (!this.modals) return
@@ -17,37 +19,6 @@ const modal = ({ selector: trigger }: Parameter) => ({
       modal.addEventListener('click', event => {
         event.stopPropagation()
         event.preventDefault()
-
-        fetch(`/views/${modal.dataset.modal}.html`)
-          .then(response => {
-            if (response.ok) return response.text()
-            else return Promise.reject(response)
-          })
-          .then(html => {
-            const view = document.querySelector('#modal')
-            if (!view) return
-
-            view.innerHTML = html
-
-            const closeElement = document.querySelector('.js-modal-close')
-            const modalElement = document.querySelector<HTMLElement>('#modal')
-            if (!closeElement || !modalElement) return
-
-            function backHistory() {
-              const modalElement = document.querySelector<HTMLElement>('#modal')
-              if (!modalElement) return
-              modalElement.innerHTML = ''
-              history.back()
-            }
-
-            closeElement.addEventListener('click', backHistory)
-
-            const state = { name: 'tester' }
-            const title = 'dd'
-            const url = `${modal.dataset.modal}.html`
-            history.pushState(state, title, url)
-          })
-          .catch(error => console.warn('modal Error'))
 
         const { nextElementSibling } = modal
         const closeTrigger = nextElementSibling?.querySelector('.js-modal-close')

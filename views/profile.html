@@ -53,7 +53,7 @@
 				<span class="tag">#Storybook</span>
 			</div>
 			<div class="profile-controls" style="display:flex;">
-				<button class="profile-controls-follow button" data-theme="primary" type="button" style="width:68%;">Follow</button>
+				<button class="profile-controls-follow primary-button" type="button" style="width:68%;">Follow</button>
 				<button class="profile-controls-message secondary-button" type="button" style="min-width:auto;width:30%;margin-left:auto;">Message</button>
 			</div>
 			<button class="profile-user-toggle js-toggle" type="button">더보기 <i class="icon-caret"></i></button>
@@ -99,10 +99,14 @@
 
 			<section class="profile-tablist-panel" role="tabpanel" aria-hidden="" data-index="1">
 				<div class="works">
-					<a class="card js-modal" href="#">
+					<a class="card js-modal" href="#" data-modal="arko">
 						<figure class="card-thumbnail"><img src="/public/images/arko-main.jpg" alt="" /></figure>
 						<h3 class="card-title">문화예술위원회 창작산실.</h3>
-						<time class="card-date">September 12, 2017</time>
+						<!-- <time class="card-date">September 12, 2017</time> -->
+						<figure class="card-byline">
+							<div class="card-byline-avater"><img src="/public/images/newman.jpg" alt=""></div>
+							<figcaption class="card-byline-name">수줍이</figcaption>
+						</figure>
 						<div class="card-tags" role="group">
 							<span class="tag">기획</span>
 							<span class="tag">디자인</span>
@@ -110,135 +114,64 @@
 						</div>
 						<button class="card-more icon-button" type="button"><i class="icon-more"></i></button>
 					</a>
-					<aside class="modal" role="dialog">
-						<article class="modal-dialog">
-							<!-- <div class="modal-background"></div> -->
-							<header class="modal-head">
-								<button class="modal-close js-modal-close"><i class="icon-close"></i><span class="off-screen">닫기</span></button>
-								<h1 class="modal-head-title">한국문화예술위원회 창작산실 - 올해의 신작 2018</h1>
-								<p class="modal-head-description">보름 남짓한 일정에 게시판이 필요해서 워드프래스로 개발했다.</p>
-								<p class="modal-head-description">창작산실(아르코셀렉션) 브랜드 아이덴티티의 라틴 알파벳 심볼 A 가로 선을, 제목과 본문의 구분선 및 디자인 요소로 활용합니다.</p>
-								<p class="modal-head-description">스마트폰과 데스크톱 이용 시 일관된 디자인 경험을 제공하기 위해 반응형 웹사이트로 제작합니다. 올해의 신작을 소개하고 전체일정을 제공하여 티켓구매(예매)를 유도하는 것이 주목적이며 지난 선정작을 아카이빙하여 창작산실이 걸어온 길을 환기하는 것이 부목적입니다.</p>
-								<p class="modal-head-description">상단 이미지 영역은 웹사이트에 접속자들의 시선을 사로잡아야 하는 영역입니다. 창작산실 웹사이트에서 이 영역은 극무대를 메타포로 합니다. 깜깜한 배경은 연극 무대를 연상하는 동시에 인물을 강조합니다. 이미지 구도 역시 오른쪽으로 치우친 비대칭성을 강조하여 극적인 효과와 긴장감을 유도하는 동시에 왼쪽에는 깔끔한 텍스트 영역을 확보합니다. 이 구도를 웹사이트의 일관성을 위한 가이드로 제시합니다.</p>
-								<!-- <p class="modal-head-description">고해상도의 이미지를 사용하여 세련되며 압도적인 시각적 효과를 얻을 수 있는 반면, 특정 선정작에 치중될 여지가 있습니다. 이는 극예술 안에 공존하는 기쁨과 노여움, 슬픔과 즐거움의 희노애락과 비교할 수 있는, 모든 디자인 산출물의 특성이기도 합니다. 공연일정이 가까운 순서대로 배치하여 시의성을 높이고 시선이 머무는 네비게이션 아래에 선정작을 모아보는 링크를 제공하여 보완합니다.</p> -->
-								<p class="modal-head-description">고해상도의 이미지를 사용하여 세련되며 압도적인 시각적 효과를 얻을 수 있는 반면, 특정 선정작에 치중될 여지가 있습니다. 이는 극예술 안에 공존하는 기쁨과 노여움, 슬픔과 즐거움의 희노애락과 비교할 수 있는, 모든 디자인 산출물의 특성이기도 합니다. 공연일정이 가까운 순서대로 배치하여 시의성을 높이고 시선이 머무는 네비게이션 아래에 선정작을 모아보는 링크를 제공하여 보완합니다.</p>
-								<p class="modal-head-description">알림마당 영역은 공지사항과 보도자료로 채워집니다. 웹사이트 운영의 초기 단계에는 적정량의 언론 보도를 인용한 긍적적인 이미지 메이킹으로 신규 방문자 및 창장산실이 낯선 방문자에게 흥미를 유발합니다.</p>
-								<p class="modal-head-description">선정작을 공연하는 극장을 소개하고 월별 공연일정 링크를 제공합니다. 한국문화예술위원회의 공연장인,대학로예술극장을 비롯 3군데 공간에 관심을 유도합니다.</p>
-							</header>
-							<section class="modal-body">
-								<figure class="modal-body-image">
-									<img src="/public/images/arko-main.jpg" alt="" />
-									<img src="/public/images/arko-sub.jpg" alt="" />
-								</figure>
-							</section>
-							<footer class="modal-card-foot">
-								<button class="button is-success">Save changes</button>
-								<button class="button">Cancel</button>
-							</footer>
-						</article>
-						<div class="modal-dim"></div>
-					</aside>
-					<a class="card js-modal" href="#">
+					<a class="card js-modal" href="#" data-modal="studium">
 						<figure class="card-thumbnail"><img src="/public/images/work-studium.jpg" alt="" /></figure>
 						<h3 class="card-title">스터디움 프로모션 웹사이트</h3>
-						<time class="card-date">September 12, 2017</time>
+						<!-- <time class="card-date">September 12, 2017</time> -->
 						<button class="card-more icon-button" type="button"><i class="icon-more"></i></button>
+						<figure class="card-byline">
+							<div class="card-byline-avater"><img src="/public/images/newman.jpg" alt=""></div>
+							<figcaption class="card-byline-name">수줍이</figcaption>
+						</figure>
 						<div class="card-tags" role="group">
 							<span class="tag">기획</span>
 							<span class="tag">디자인</span>
 						</div>
 					</a>
-					<aside class="modal" role="dialog">
-						<article class="modal-dialog">
-							<header class="modal-head">
-								<button class="modal-close js-modal-close"><i class="icon-close"></i><span class="off-screen">닫기</span></button>
-								<h1 class="modal-head-title">스터디움 프로모션 웹사이트</h1>
-								<p class="modal-head-description">가맹점주 모집을 위한 홍보용 원페이지 사이트. 로고를 모티브로 각 섹션의 타이틀 영역을 구성하고 로고의 쉼표를 그래픽 요소를 활용했다. 일반 독서실과 차별화되는 프리미엄 독서실이라는 이미지를 강조하기 위해 어두운 색, 셰리프 폰트를 바탕으로 고급스러운 분위기를 환기했다. 신사업에 가맹점주 확보가 주목적이기 떄문에 사이트에서 보여지는 컨텐츠가 부족했는데, 원페이지 사이트로 페이지 전환 시 애니메이션을 활용하여 보완했다.</p>
-							</header>
-							<section class="modal-body">
-								<figure class="modal-body-image">
-									<img src="/public/images/work-studium.jpg" alt="" />
-								</figure>
-							</section>
-						</article>
-					</aside>
 
-					<a class="card js-modal" href="#">
+					<a class="card js-modal" href="#" data-modal="famus">
 						<figure class="card-thumbnail"><img src="/public/images/work-famus.jpg" alt="" /></figure>
 						<h3 class="card-title">재능 플랫폼 페이머스 프로덕트</h3>
-						<time class="card-date">September 12, 2017</time>
+						<!-- <time class="card-date">September 12, 2017</time> -->
 						<button class="card-more icon-button" type="button"><i class="icon-more"></i></button>
+						<figure class="card-byline">
+							<div class="card-byline-avater"><img src="/public/images/newman.jpg" alt=""></div>
+							<figcaption class="card-byline-name">수줍이</figcaption>
+						</figure>
 						<div class="card-tags" role="group">
 							<span class="tag">기획</span>
 							<span class="tag">디자인</span>
 						</div>
 					</a>
-					<aside class="modal" role="dialog">
-						<article class="modal-dialog">
-							<header class="modal-head">
-								<button class="modal-close js-modal-close"><i class="icon-close"></i><span class="off-screen">닫기</span></button>
-								<h1 class="modal-head-title">페이머스 프로덕트 디자인</h1>
-								<p class="modal-head-description">재능플랫폼 페이머스의 기획, 디자인과 퍼블리싱을 담당했다.</p>  
-								<p class="modal-head-description">입사 초기 외주로 진행했던 플랫폼의 디자인을 퍼블리싱하는 일을 시작으로 부분적인 UI를 다시 만들고 UX를 개선했다. 정적 페이지도 일부 만들었다.</p>  
-							</header>
-							<section class="modal-body">
-								<figure class="modal-body-image">
-									<img src="/public/images/work-famus.jpg" alt="" />
-								</figure>
-							</section>
-						</article>
-					</aside>
-					<a class="card js-modal" href="#">
+
+					<a class="card js-modal" href="#" data-modal="etc">
 						<figure class="card-thumbnail"><img src="/public/images/work-etc.jpg" alt="" /></figure>
 						<h3 class="card-title">기타 모음</h3>
-						<time class="card-date">-</time>
+						<!-- <time class="card-date">-</time> -->
 						<button class="card-more icon-button" type="button"><i class="icon-more"></i></button>
+						<figure class="card-byline">
+							<div class="card-byline-avater"><img src="/public/images/newman.jpg" alt=""></div>
+							<figcaption class="card-byline-name">수줍이</figcaption>
+						</figure>
 						<div class="card-tags" role="group">
 							<span class="tag">기획</span>
 							<span class="tag">디자인</span>
 						</div>
 					</a>
-					<aside class="modal" role="dialog">
-						<article class="modal-dialog">
-							<header class="modal-head">
-								<button class="modal-close js-modal-close"><i class="icon-close"></i><span class="off-screen">닫기</span></button>
-								<h1 class="modal-head-title">기타 모음</h1>
-								<p class="modal-head-description">에이전시에서 작업한 웹사이트.</p>
-							</header>
-							<section class="modal-body">
-								<figure class="modal-body-image">
-									<img src="/public/images/work-etc.jpg" alt="" />
-									<img src="/public/images/form.jpg" alt="" />
-									<img src="/public/images/temp.png" alt="" />
-								</figure>
-							</section>
-						</article>
-					</aside>
 
-					<a class="card js-modal" href="#">
+					<a class="card js-modal" href="#" data-modal="lettering">
 						<figure class="card-thumbnail"><img src="/public/images/budha.png" alt="" /></figure>
 						<h3 class="card-title">레터링</h3>
-						<time class="card-date">-</time>
+						<!-- <time class="card-date">-</time> -->
 						<button class="card-more icon-button" type="button"><i class="icon-more"></i></button>
+						<figure class="card-byline">
+							<div class="card-byline-avater"><img src="/public/images/newman.jpg" alt=""></div>
+							<figcaption class="card-byline-name">수줍이</figcaption>
+						</figure>
 						<div class="card-tags" role="group">
 							<span class="tag">레터링</span>
 						</div>
 					</a>
-					<aside class="modal" role="dialog">
-						<article class="modal-dialog">
-							<header class="modal-head">
-								<button class="modal-close js-modal-close"><i class="icon-close"></i><span class="off-screen">닫기</span></button>
-								<h1 class="modal-head-title">레터링</h1>
-								<p class="modal-head-description">레터링.</p>
-							</header>
-							<section class="modal-body">
-								<figure class="modal-body-image" style="text-align:center;">
-									<img src="/public/images/budha.png" style="max-width:560px;" alt="" />
-									<img src="/public/images/lettering.png" style="max-width:560px;margin:2rem 0 8rem;" alt="" />
-								</figure>
-							</section>
-						</article>
-					</aside>
 				</div>
 			</section>
 

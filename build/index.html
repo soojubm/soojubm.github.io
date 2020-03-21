@@ -44,58 +44,56 @@
     </aside>
 
     <script>
-      var timeFromNow = function (time) {
+      var timeFromNow = function(time) {
+        // Get timestamps
+        var unixTime = new Date(time).getTime()
+        if (!unixTime) return
+        var now = new Date().getTime()
 
-      // Get timestamps
-      var unixTime = new Date(time).getTime();
-      if (!unixTime) return;
-      var now = new Date().getTime();
+        // Calculate difference
+        var difference = unixTime / 1000 - now / 1000
 
-      // Calculate difference
-      var difference = (unixTime / 1000) - (now / 1000);
+        // Setup return object
+        var tfn = {}
 
-      // Setup return object
-      var tfn = {};
+        // Check if time is in the past, present, or future
+        tfn.when = 'now'
+        if (difference > 0) {
+          tfn.when = 'future'
+        } else if (difference < -1) {
+          tfn.when = 'past'
+        }
 
-      // Check if time is in the past, present, or future
-      tfn.when = 'now';
-      if (difference > 0) {
-        tfn.when = 'future';
-      } else if (difference < -1) {
-        tfn.when = 'past';
-      }
+        // Convert difference to absolute
+        difference = Math.abs(difference)
 
-      // Convert difference to absolute
-      difference = Math.abs(difference);
-
-      // Calculate time unit
-      if (difference / (60 * 60 * 24 * 365) > 1) {
-        // Years
-        tfn.unitOfTime = 'years';
-        tfn.time = Math.floor(difference / (60 * 60 * 24 * 365));
-      } else if (difference / (60 * 60 * 24 * 45) > 1) {
-        // Months
-        tfn.unitOfTime = 'months';
-        tfn.time = Math.floor(difference / (60 * 60 * 24 * 45));
-      } else if (difference / (60 * 60 * 24) > 1) {
-        // Days
-        tfn.unitOfTime = 'days';
-        tfn.time = Math.floor(difference / (60 * 60 * 24));
-      } else if (difference / (60 * 60) > 1) {
-        // Hours
-        tfn.unitOfTime = 'hours';
-        tfn.time = Math.floor(difference / (60 * 60));
-      } else {
-        // Seconds
-        tfn.unitOfTime = 'seconds';
-        tfn.time = Math.floor(difference);
-      }
+        // Calculate time unit
+        if (difference / (60 * 60 * 24 * 365) > 1) {
+          // Years
+          tfn.unitOfTime = 'years'
+          tfn.time = Math.floor(difference / (60 * 60 * 24 * 365))
+        } else if (difference / (60 * 60 * 24 * 45) > 1) {
+          // Months
+          tfn.unitOfTime = 'months'
+          tfn.time = Math.floor(difference / (60 * 60 * 24 * 45))
+        } else if (difference / (60 * 60 * 24) > 1) {
+          // Days
+          tfn.unitOfTime = 'days'
+          tfn.time = Math.floor(difference / (60 * 60 * 24))
+        } else if (difference / (60 * 60) > 1) {
+          // Hours
+          tfn.unitOfTime = 'hours'
+          tfn.time = Math.floor(difference / (60 * 60))
+        } else {
+          // Seconds
+          tfn.unitOfTime = 'seconds'
+          tfn.time = Math.floor(difference)
+        }
         // Return time from now data
-        return tfn;
-      };
+        return tfn
+      }
 
-      console.log('@@@@', timeFromNow(2020-02-28))
-
+      console.log('@@@@', timeFromNow(2020 - 02 - 28))
     </script>
 
     <aside class="browser js-browser" role="complementary">
@@ -149,7 +147,8 @@
       <div class="navbar-user">
         <div class="navbar-user-search" role="search" aria-label="site">
           <a class="navbar-user-search-trigger js-navbar-toggle" href="#">
-            <i class="icon-search" style="pointer-events:none;"></i>
+            <!-- <i class="icon-search"></i> -->
+            <img src="/public/icons/search.svg" style="width:20px;pointer-events:none;" alt="">
           </a>
           <form class="navbar-user-search-form" action="">
             <!-- <button class="navbar-user-search-form-close js-close" aria-label="delete"><i class="icon-close"></i></button> -->
@@ -172,7 +171,7 @@
         </div>
         <div class="navbar-user-notification">
           <a class="navbar-user-notification-trigger js-navbar-toggle" href="#" aria-haspopup="true" aria-expanded="false">
-            <i class="material-icons" style="pointer-events:none;">notifications_none</i>
+            <img src="/public/icons/bell.svg" style="width:20px;pointer-events:none;" />
             <em>new</em>
           </a>
           <!-- <menu class="navbar-user-notification-empty">
@@ -197,10 +196,10 @@
           </a>
           <div class="navbar-user-account-menu user" style="width:320px;">
             <div class="user-avatar avatar is-large" style="overflow:none;">
-              <img src="/public/images/caleb-woods-182648-unsplash.jpg" alt="">
+              <img src="/public/images/caleb-woods-182648-unsplash.jpg" alt="" />
               <!-- <div class="user-avatar-change"></div> -->
             </div>
-            <div class="user-name">soojubm</div> 
+            <div class="user-name">soojubm</div>
             <div class="user-email">soojubm@gamil.com</div>
             <!-- <button class="button-tertiary">Manage your Google Account</button> -->
             <button>Add another account</button>
@@ -223,7 +222,7 @@
     </header>
     <header class="header-backdrop">
     </header> -->
-<!-- 
+    <!-- 
     <script>
       const pageHead = document.querySelector('.header')
       document.addEventListener('scroll', event => {
@@ -245,7 +244,6 @@
       <button class="banner-button tertiary-button" type="button">이용방법을 알아보세요!</button>
     </section>
 
-
     <form class="subscribe">
       <h2 class="subscribe-title">뉴스레터를 정기구독하세요.</h2>
       <p class="subscribe-description">사실 그런 건 없고 유아이 콤포넌트 입니다.</p>
@@ -255,7 +253,7 @@
       </div>
       <small class="subscribe-helper">Read more about how we collect and use your data in our <a href="">Privacy Policy page.</a></small>
     </form>
-    
+
     <footer class="footer" role="contentinfo">
       <!-- <div class="skeleton-screen"></div> -->
       <aside class="scroll">
@@ -302,7 +300,11 @@
         </div>
         <div class="footer-address-info">
           스튜디오 수줍음(주)<br />
-          서울시 강서구 화곡로 1818, 3층 | 대표 이경수 000-00-0000 | 대표전화 02-1234-5678<br />
+          서울시 강서구 화곡로 1818, 3층
+          <i class="icon-bullet"></i>
+          대표 이경수 000-00-0000<br />
+          대표전화 02-1234-5678
+          <i class="icon-bullet"></i>
           통신판매업 2018-서울강서구-1234
           <abbr title="phone"></abbr>
         </div>
@@ -327,6 +329,7 @@
         </div> -->
       </address>
     </footer>
+    <aside id="modal"></aside>
   <script type="text/javascript" src="/bundle.js"></script></body>
 </html>
 
