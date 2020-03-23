@@ -30,14 +30,6 @@ export const detectBrowser = () => {
   }
 }
 
-export const googleAnalytics = () => {
-  // <script async src="https://www.googletagmanager.com/gtag/js?id=UA-83531239-1"></script>
-  // window.dataLayer = window.dataLayer || [];
-  // function gtag(){dataLayer.push(arguments);}
-  // gtag('js', new Date());
-  // gtag('config', 'UA-83531239-1');
-}
-
 export const adjustTopPadding = () => {
   const headerElement = document.querySelector('.js-navbar')
   if (!headerElement) return

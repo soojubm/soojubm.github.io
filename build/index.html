@@ -36,6 +36,30 @@
     <script src="./public/javascripts/polyfill.js"></script>
     <script src="./build/bundle.js"></script>
     <!--link rel="shortcut icon" href="images/favicon/favicon.ico">-->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-83531239-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-83531239-1');
+
+      function insertCallback(parent, funcname, callback, ...args) {
+        let oldFunc = parent[funcname] ? parent[funcname] : function() { }
+        parent[funcname] = function () {
+            oldFunc.apply(this, arguments)
+            return callback(...args)
+        }
+      }
+
+      function notify_analytics(l) {
+        let newPage = l.pathname + l.hash
+        // replace XXXXX into your id
+        gtag('config', 'UA-83531239-1', { 'page_path': newPage }); 
+      }
+
+      insertCallback(window.history, "pushState", notify_analytics, location)
+      insertCallback(window.history, "replaceState", notify_analytics, location)
+    </script>
   <link href="/main.css" rel="stylesheet"></head>
   <body>
     <noscript>This website requires JavaScript.</noscript>
