@@ -1,15 +1,16 @@
-::selection {background:$gray800;color:$gray0;}
-::placeholder {color:rgba(0,0,0,.4);}
-
 // button:before {content:'';display:block;width:8px;height:8px;background:rgba(0,0,0,.2);position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);opacity:0;}
 // button:active:before {width:100%;height:100%;animation:ripple .6s;}
 
 // button, input, textarea, select {border-radius:0px;-webkit-appearance:none;-moz-appearance:none;appearance:none;font:inherit;color:inherit;}
+
+
 input::-ms-clear {display:none;}
 input, textarea {-webkit-appearance:none;-webkit-border-radius:0}
-input, select, textarea {border-radius:0px;-webkit-border-radius:0;font:inherit;color:inherit;background:none;border:none;}
+input, select, textarea {
+  border-radius:0px;-webkit-border-radius:0;font:inherit;color:inherit;background:none;border:none;
+}
 select {-webkit-appearance:none;appearance:none;}
-button {background:none;padding:0;border:none;cursor:pointer;font:inherit;position:relative;}
+button {padding:0;border:none;background:none;cursor:pointer;font:inherit;position:relative;}
 button > * {pointer-events:none;}
 button:not(:active),
 button:not(:focus) {outline:0;}
@@ -18,8 +19,6 @@ button:not(:focus) {outline:0;}
 input:focus,
 textarea:focus,
 select:focus {}
-
-[aria-pressed=false] {}
 
 // todo::
 button.is-small {width:auto !important;min-width:72px !important;padding:4px 1rem 5px !important;font-size:12px !important;}
@@ -64,7 +63,6 @@ button.is-addable.is-added {background:$color-primary;border-color:$color-primar
 .ghost-button:active:not(:disabled) {}
 .icon-button {display:flex;align-items:center;justify-content:center;width:32px;height:32px;line-height:0;border-radius:$radius400;box-sizing:border-box;}
 
-
 .button-group {display:flex;width:100%;overflow:hidden;}// justify-content:space-between;}
 .button-group.is-left {padding:.5rem 0;}
 .button-group.is-left button {margin:0 1rem;}
@@ -76,7 +74,6 @@ button.is-addable.is-added {background:$color-primary;border-color:$color-primar
 .button-group button.is-active {background-color:$color-primary;color:$gray0;}
 .button-group button:first-child {border-top-left-radius:$radius400;border-bottom-left-radius:$radius400;}
 .button-group button:last-child {border-top-right-radius:$radius400;border-bottom-right-radius:$radius400;}
-
 
 input[type=text] {}
 input[type=password] {}
@@ -96,10 +93,8 @@ input[type=date] {max-height:48px;}  // 패딩으로 설정한 세로값 크롬�
 input[type=date]::-webkit-calendar-picker-indicator {width:100%;opacity:0;position:absolute;left:0;bottom:0;}
 input[type=date]::-webkit-inner-spin-button {display:none;}
 
-
 // rem 으로 모듈화하기 어렵다. ex 1.5rem => top:0.125rem
-// line-heght로 리셋스타일에 종속되지 않도록 함. + block
-// height 테이블 내에서 세로 정렬에 필요
+// line-heght로 리셋스타일에 종속되지 않도록 함. + block // height 테이블 내에서 세로 정렬에 필요
 .checkbox,.radio {display:block;padding:.5rem 0;position:relative;}
 input[type=checkbox] {width:0;height:0;opacity:0;-webkit-appearance:checkbox;position:absolute;outline:auto;}
 input[type=checkbox] + label {display:block;height:16px;padding-left:2rem;line-height:16px;position:relative;}
@@ -155,7 +150,6 @@ input[type=checkbox][role=switch]:disabled:checked + label:before {background:$c
 input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 
 .switch-wrap {display:inline-block;width:32px;height:32px;overflow:hidden;margin-top:7px;margin-left:1rem;cursor:pointer;}
-
 .day {display:block;transition:all .4s ease;position:absolute;top:0;transition:all .4s ease .3s;}
 .night {display:block;position:absolute;top:32px;transition:all .4s ease 0s;}
 .darkmode .day {top:32px;transition:all .4s ease 0s;}
