@@ -1,6 +1,7 @@
 @font-face {font-family: 'AritaDotum';src: url(/public/webfonts/AritaDotumMedium.woff); }
 @font-face {font-family: 'AritaDotumBold';src: url(/public/webfonts/Arita-dotum-SemiBold_OTF.woff); }
 @font-face {font-family: 'Asap';src: url(/public/webfonts/Asap-Regular.otf); }
+@font-face {font-family: 'Arvana';src: url(/public/webfonts/Arvanav0.2-Regular.woff2); }
 // @font-face {font-family: 'DunkelSans';src: url(/public/webfonts/Dunkelsansv0.5-Heavy.woff2); }
 // @import url('https://fonts.googleapis.com/css?family=Gothic+A1:300,400,700,900&display=swap&subset=korean');
 // @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&display=swap');
@@ -22,7 +23,7 @@ u {text-decoration:none;position:relative;z-index:1;}
 u:after {content:'';height:1.5rem;border-radius:$radius400;background:#fb7800;display:block;position:absolute;left:0;right:0;bottom:0rem;z-index:-1;}
 
 code {padding:1rem 1.5rem;background:$gray100;border-radius:$radius400;}
-html {min-width:320px;height:100%;overflow-x:hidden;font:14px/1.8 'Asap', 'AritaDotum', 'Apple SD Gothic Neo', sans-serif;color:$gray600;-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+html {min-width:320px;height:100%;overflow-x:hidden;font:14px/1.8 'Arvana', 'AritaDotum', 'Apple SD Gothic Neo', sans-serif;color:$gray600;-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
 body {letter-spacing: -.0125rem;}
 
 table {width:100%;border-collapse:collapse;border-spacing:0;border-left-style:hidden;border-right-style:hidden;}
