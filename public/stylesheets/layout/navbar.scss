@@ -105,6 +105,7 @@
 .is-sticky-navbar {padding-top:88px;}
 .is-sticky-navbar .navbar {box-sizing:border-box;background:#fff;position:fixed;top:0;left:0;right:0;}
 .is-sticky-navbar .navbar-menu-item {color:$gray800;}
+.is-sticky-navbar .navbar-menu-item .icon-caret {border-top-color:$gray800;}
 
 //.navigation.is-hidden ul li button:after {content: '';display: block;width:90%;height:8px;background: currentColor;position: absolute;bottom:0px;opacity: .6;transform: scaleX(0);transform-origin: right center;transition: .55s transform cubic-bezier(.19,1,.22,1);}
 //.navigation.is-hidden ul li button:hover:after {transform: scaleX(1);transform-origin:left center;}
