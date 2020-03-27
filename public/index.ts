@@ -43,12 +43,10 @@ window.addEventListener('beforeunload', event => {
   if (pendingOps.size) {
     event.returnValue = 'There is pending work. Sure you want to leave?'
   }
+  // navigator.sendBeacon('/log', analyticsData)
+
 })
 
-window.addEventListener('beforeunload', function(event) {
-  console.log('beforeunload EVENT');
-  // navigator.sendBeacon('/log', analyticsData)
-});
 window.addEventListener('unload', function(event) {
   console.log('unload EVENT');
 });
@@ -147,16 +145,26 @@ function detectHeaderTheme() {
 
 function initailizePage() {
   const navigationTrigger = document.querySelector<HTMLElement>('.navbar-burger')
-  // const isOpenedNavigation = navigationTrigger?.classList.contains('is-active');
   if (!navigationTrigger) return
 
   navigationTrigger.classList.remove('is-active')
   navigationTrigger?.nextElementSibling?.classList.remove('is-visible')
+
+  notifyThisPage()
 }
 
+function notifyThisPage() {
+  const { hash } = window.location
+  const { body } = document
+  const className = `page-${hash.substring(1)}`
 
+  body.className = ''
+  body.classList.add(className)
+}
 
 document.addEventListener('DOMContentLoaded', () => {
+  notifyThisPage()
+
   loader()
   detectBrowser()
   detectHeaderTheme()
