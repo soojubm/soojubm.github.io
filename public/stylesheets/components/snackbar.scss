@@ -1,4 +1,4 @@
-.message {padding:11px 1.5rem 12px;box-sizing:border-box;background:#f2f8fc;/*font-family:'Courier New', Courier, monospace;*/position:relative;}
+.message {padding:$padding200;box-sizing:border-box;background:#f2f8fc;/*font-family:'Courier New', Courier, monospace;*/position:relative;}
 .message-icon {display:inline-block;margin:0 8px 0 0;vertical-align: middle;font-size:1.5rem;}
 .message-close {position:absolute;right:8px;top:50%;transform:translateY(-50%);}
 .snackbar.is-warning {background:lavenderblush;}

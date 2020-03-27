@@ -6,6 +6,7 @@
 // @import url('https://fonts.googleapis.com/css?family=Gothic+A1:300,400,700,900&display=swap&subset=korean');
 // @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&display=swap');
 // @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora@1&display=swap');
 
 body,dl,dd,figure,blockquote,h1,h2,h3,h4,h5,h6,p,input[type=radio] {margin:0;}
 ul,ol,menu,fieldset,legend {margin:0;padding:0;}
@@ -23,7 +24,7 @@ u {text-decoration:none;position:relative;z-index:1;}
 u:after {content:'';height:1.5rem;border-radius:$radius400;background:#fb7800;display:block;position:absolute;left:0;right:0;bottom:0rem;z-index:-1;}
 
 code {padding:1rem 1.5rem;background:$gray100;border-radius:$radius400;}
-html {min-width:320px;height:100%;overflow-x:hidden;font:14px/1.8 'Arvana', 'AritaDotum', 'Apple SD Gothic Neo', sans-serif;color:$gray600;-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+html {min-width:320px;height:100%;overflow-x:hidden;font:14px/1.8 'Lora', 'Arvana', 'AritaDotum', 'Apple SD Gothic Neo', sans-serif;color:$gray600;-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
 body {letter-spacing: -.0125rem;}
 
 table {width:100%;border-collapse:collapse;border-spacing:0;border-left-style:hidden;border-right-style:hidden;}
@@ -57,7 +58,7 @@ dd {color:$gray400;}
 
 
 .tags {display:flex;margin:-.25rem;}
-.tag {margin:.25rem;padding:1px .5rem 2px;font-family:'consolas';font-size:.8rem;color:$gray600;background-color:$gray100;border-radius:4px;font-family:inherit;vertical-align:middle;}
+.tag {margin:.25rem;padding:1px .5rem 2px;font-family:'consolas';font-size:.9rem;color:$gray600;background-color:$gray100;border-radius:4px;font-family:inherit;vertical-align:middle;}
 
 .is-fixed-top {position:fixed;top:0;}
 .has-navbar-fixed-top {}

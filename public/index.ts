@@ -154,16 +154,16 @@ function initailizePage() {
 }
 
 function notifyThisPage() {
-  const { hash } = window.location
+  let { hash } = window.location
   const { body } = document
-  const className = `page-${hash.substring(1)}`
+  const className = `page-${hash === '' ? 'design' : hash.substring(1)}`
 
   body.className = ''
   body.classList.add(className)
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  notifyThisPage()
+  initailizePage()
 
   loader()
   detectBrowser()

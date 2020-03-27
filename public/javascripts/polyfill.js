@@ -28,8 +28,7 @@ if (typeof NodeList !== "undefined" && NodeList.prototype && !NodeList.prototype
 }
 
 
-// includes
-
+// ! includes
 if (!Array.prototype.includes) {
   Object.defineProperty(Array.prototype, 'includes', {
     value: function(searchElement, fromIndex) {

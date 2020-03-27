@@ -77,19 +77,29 @@
   }
   </style> -->
 
-  <!-- <nav class="help-category" style="padding: 0;">
-    <h1 class="help-category-title">카테고리 메뉴 샘플</h1>
-    <div style="display:flex;overflow:auto;white-space:nowrap;">
-      <a class="help-category-link" href="">📚 서점</a>
-      <a class="help-category-link" href="">🤩 장르</a>
-      <a class="help-category-link" href="">👑 최다 판매 도서</a>
-      <a class="help-category-link" href="">👼🏼 신작</a>
-      <a class="help-category-link" href="">💗 로맨스</a>
-      <a class="help-category-link" href="">🧜‍♀️ 만화</a>
-    </div>
-  </nav> -->
-
   <section class="design-body">
+    <nav class="pagenav">
+      <h1 class="pagenav-title">이 페이지에는-</h1>
+      <div class="pagenav-nav">
+        <a class="pagenav-link" href="">📚 서점</a>
+        <a class="pagenav-link" href="">🤩 장르</a>
+        <a class="pagenav-link" href="">👑 최다 판매 도서</a>
+        <a class="pagenav-link" href="">👼🏼 신작</a>
+        <a class="pagenav-link" href="">💗 로맨스</a>
+        <a class="pagenav-link" href="">🧜‍♀️ 만화</a>
+        <a class="pagenav-link" href="">Back to Top</a>
+      </div>
+      <br />
+      <p>기능 정의<br />스크롤스파이. 스크롤되면 고정(> mobile devices). 모바일에서 가로 정렬 후 좌우 스크롤.</p>
+    </nav>
+    <style>
+      .pagenav {padding:0 0 4rem 0;}
+      .pagenav-nav {/*display:flex;overflow:auto;white-space:nowrap;*/}
+      .pagenav-title {padding:.5rem 0;font-size:1rem;color:#999;}
+      .pagenav-link {display:block;line-height:2;}
+      .pagenav-link:hover {text-decoration:underline;}
+      .pagenav-link:last-child {margin:.5rem 0 0 0;}
+    </style>
     <!-- <style>
       .card.is-vertical {width:auto;overflow:hidden;}
       .card.is-vertical .card-thumbnail {float:left;margin-right:2rem;padding-top:0;width:240px;height:240px;border:2px solid #000;}
@@ -136,21 +146,9 @@
           영문 <b style="display:block;font-size:1.25rem;">Asap</b style="display:block;font-size:$subhead;margin-top:.5rem;">
         </div>
       </div>
-
-      <!-- <h1>Heading H1</h1>
-      <h2>Heading H2</h2>
-      <h3>Heading H3</h3>
-      <h4>Heading H4</h4>
-      <style>
-        h1 {font-size:3rem;}
-        h2 {font-size:2rem;}
-        h3 {font-size:1.5rem;}
-        h4 {font-size:1.25rem;}
-      </style> -->
-
       
       <div style="margin:3rem 0 0 0;">
-        <i style="font-size:3rem;">🧞‍</i>
+        <!-- <i style="display:block;margin-bottom:.5rem;width:16px;height:16px;border-radius:4px;background:cadetblue"></i> -->
         <h4 class="typography-subhead" style="margin:0 0 1rem;font-size: 1.25rem;">선약이 있어서 자아실현은 못할 것 같아요.</h4>
         <p class="typography-paragraph" style="margin: 0 0 1.5rem">서브헤드와 디스크립션 혹은 패러그라프는 이렇게 사용하세요. 서브헤드와 디스크립션 혹은 패러그라프는 이렇게 사용하세요. 서브헤드와 디스크립션 혹은 패러그라프는 이렇게 사용하세요. 서브헤드와 디스크립션 혹은 패러그라프는 이렇게 사용하세요.</p>
         <time class="typography-caption">10 January, 2020</time>
@@ -290,7 +288,6 @@
       <div class="tags" role="group">
         <!-- <div role="list"></div> -->
         <span class="tag tags-item" role="listitem">I'm hashtag</span>
-        <span class="tag tags-item" style="position:relative;" role="listitem">태그 <i class="icon-close" style="display:inline-block;margin-left:4px;padding:4px;"></i></span>
       </div>
       <div role="group" style="margin-top:.5rem;">
         <button class="secondary-button is-small is-addable" type="button">Typhography <i class="icon-plus" style="display:inline-block;background:#f1f3f4;padding:12px;border-radius:4px;position:absolute;right:3px;top:3px;"></i></button>
@@ -350,19 +347,19 @@
     </article>
 
     <article class="design-article">
-      <h1 class="design-article-title">Message</h1>
-      <p class="design-article-description">긍정 상황에 사용합니다. 부정 혹은 경고, 주의, 성공, 알림 등을 추가할까요?</p>
+      <h1 class="design-article-title">Temp</h1>
+      <p class="design-article-description">Temp</p>
+      <!-- <p class="design-article-description">긍정 상황에 사용합니다. 부정 혹은 경고, 주의, 성공, 알림 등을 추가할까요?</p> -->
       <aside class="message">
-        <!-- <i class="note-icon material-icons">snackbars</i> -->
         <span class="message-text"> This includes the <a href="">global HTML attributes</a>.</span>
         <button class="message-close" type="button" aria-label="close"><i class="icon-close"></i></button>
-        <!-- <div class="message-head">
+        <div class="message-head">
           <p>Hello World</p>
           <button class="delete" aria-label="delete"></button>
         </div>
         <div class="message-body">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.
-        </div> -->
+        </div>
       </aside>
     </article>
 
@@ -1015,13 +1012,13 @@
       <p class="design-article-description">질의응답에 주로 사용해요. 공지사항 정도의 간단한 게시글에서도 사용할 수 있으나 그 이상의 경우에는 다른 유아이를 고민하세요.</p>
       <button class="accordion-trigger js-toggle" type="button" aria-expanded="false">
         회원탈퇴는 어떻게 할 수 있나요?
-        <i class="icon-chevron"></i></button>
+        <i class="icon-caret"></i></button>
       <article class="accordion-panel">
         안녕
       </article>
       <button class="accordion-trigger js-toggle" type="button" aria-expanded="false">
         주문을 취소하고 싶어요.
-        <i class="icon-chevron"></i>
+        <i class="icon-caret"></i>
       </button>
       <article class="accordion-panel">
         안녕
@@ -1128,7 +1125,7 @@
       </div>
     </article>
 
-    <article class="design-article">
+    <!-- <article class="design-article">
       <h1 class="design-article-title">Comment</h1>
       <p class="design-article-description">코맨트 / 대화형 유아이 / 피드 / 유저 카드 공용 마크업 가능하려면 컨테이너 필요.</p>
       <div class="post-comment-list-item is-typeb">
@@ -1143,16 +1140,7 @@
           <button type="button" class="">신고</button>
         </menu>
       </div>
-    </article>
-
-    <article class="design-article">
-      <div class="design-spacing">
-        <div class="design-spacing-one">간격Spacing</div>
-        <div class="design-spacing-two">REM 단위를 어떻게 사용할까?</div>
-        <div class="design-spacing-three">어떤 개발자들은 rem이 모듈화를 어렵게 만들기 때문에 완전히 피한다. 또 다른 이들은 rem이 단순하기 때문에 항상 rem만을 사용한다.</div>
-        <div class="design-spacing-four">14, April, 2019</div>
-      </div>
-    </article>
+    </article> -->
 
     <article class="design-article">
       <h1 class="design-article-title">Steps</h1>
