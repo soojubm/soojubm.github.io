@@ -133,7 +133,7 @@ function detectHeaderTheme() {
   const pageHeadElement = document.querySelector('.header')
   if (!pageHeadElement) return
 
-  const pages = ['#design', '#contact']
+  const pages = ['#design']
   const isWhite = pages.includes(window.location.hash)
 
   if (isWhite) {
@@ -151,6 +151,7 @@ function initailizePage() {
   navigationTrigger?.nextElementSibling?.classList.remove('is-visible')
 
   notifyThisPage()
+  detectHeaderTheme()
 }
 
 function notifyThisPage() {
@@ -167,7 +168,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   loader()
   detectBrowser()
-  detectHeaderTheme()
   setDarkmode()
   // adjustTopPadding()
 

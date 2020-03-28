@@ -4,8 +4,8 @@
 .post p:not(:nth-of-type(1))::first-letter {padding-left:0;}
 .post {max-width:720px;margin:0 auto;padding:4rem 5% 40px;}
 .post-head {margin:0 0 3rem 0;position:relative;}
-.post-head-runninghead {color:$gray400;}
-.post-head-headline {padding:0 0 1rem 0;font-size:2rem;color:$gray800;text-indent:-1px;} /* 상하단 패딩 똑같이해야 스키티때 */
+.post-head-runninghead {color:$gray800;text-decoration:underline;}
+.post-head-headline {padding:.25rem 0 1rem 0;font-size:2rem;color:$gray800;text-indent:-1px;} /* 상하단 패딩 똑같이해야 스키티때 */
 .post-head-time {color:$gray400;}
 .post-head-progress {display:none;height:3px;background:rgb(200,0,0);position:absolute;bottom:-3px;}
 .post-head-icons {/*position:fixed;left:50%;top:100px;margin-left:480px;*/}
@@ -39,13 +39,22 @@ body.is-sticky {padding-top:133px;}
 .post-body-subhead {margin:3rem 0 1rem 0px;font-size:$subhead;}
 .post-body-paragraph {margin:0rem 0 1rem 0px;}
 
+
 .post-foot {padding:0 0 0 0;}
 .post-hashtag {display:flex;margin:2rem 0 2rem 0px;}
-.post-hashtag-item {display:block;margin:0 4px 4px 0px;padding:0 1rem !important;border:1px solid #e9e9e6;border-radius:2px;font-size:12px;}
-.post-share {margin:3rem 0 2rem;}
+.post-hashtag-item {display:block;margin:0 4px 4px 0px;padding:0 1rem !important;border-radius:2px;font-size:12px;}
+.post-share {margin:3rem 0 2rem;
+	// position: fixed;
+	// left: 50%;
+	// top: 5rem;
+	// margin-left: -600px;
+}
 .post-share-title {}
-.post-share-button {display:block;margin:1rem 0 0 0;}
-.post-share-button i {display:inline-block;width:32px;height:32px;line-height:32px;margin-right:16px;border-radius:$radius400;background:rgba(0,80,200,.8);color:$gray0;vertical-align:middle;}
+.post-share-button {display:flex;align-items:center;margin:1rem 0 0 0;}
+.post-share-button i {width:32px;height:32px;line-height:32px;margin-right:16px;border-radius:$radius400;background:$gray100;color:$gray0;}
+
+.is-fixed-share .post-share {}
+.is-fixed-share .post-share {}
 
 .post-comment {margin:1.5rem 0 2.5rem;}
 .post-comment-title {margin:0 0 1rem 0;line-height:32px;color:$color-primary;}
@@ -123,9 +132,6 @@ body.is-sticky {padding-top:133px;}
 .post-item:hover .post-item-date {right:0;}
 
 // pager
-.post-scrollspy {display:flex;align-items:center;margin:1rem 0;}
-.post-scrollspy p {font-size:12px;}
-.post-scrollspy a {display:block;margin:0 1rem;font-size:12px;}
 
 .post-pagination {display:flex;margin:0 10%;
 	--padding:4rem 0;

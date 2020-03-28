@@ -14,7 +14,6 @@ const stickyElement = ({ targetElement, addClass }) => {
   })
 
   window.addEventListener('scroll', () => {
-    // console.log(stickyElementHeight) // 133
     isScrolling && window.cancelAnimationFrame(isScrolling)
     isScrolling = window.requestAnimationFrame(() => {
       if (window.pageYOffset > stickyElement.offsetTop + stickyElementHeight) {

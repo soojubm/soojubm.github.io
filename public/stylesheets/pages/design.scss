@@ -26,7 +26,7 @@
 // .profile-head-share {@extend .tertiary-button;}
 
 
-.design {padding:5.5rem 0;}
+.design {padding:1rem 0;}
 .design-head {overflow:hidden;background:url('/public/images/caleb-woods-182648-unsplash.jpg') no-repeat center center;background-size:cover;position:fixed;left:0;right:50%;top:0;bottom:0;z-index:1;}
 .design-body {width:50%;max-width:680px;margin-left:50%;padding:6rem;box-sizing:border-box;}
 
@@ -46,7 +46,7 @@
 
 
 @media (max-width:$breakpoint-large) {
-  .design {margin-top:-64px;padding:0;}
+  .design {padding:0;}
   .design-head {height:50vh;position:relative;left:0;right:0;top:0;bottom:50%;}
   .design-body {width:60%;margin-top:6rem;margin-left:40%;padding:0;}
 }

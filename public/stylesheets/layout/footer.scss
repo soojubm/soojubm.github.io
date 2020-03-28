@@ -1,10 +1,10 @@
-.subscribe {margin:4rem 10% 2rem;position:relative;}
-.subscribe-title {font-size:1.5rem;}
+.subscribe {margin:4rem 10%;position:relative;}
+.subscribe-title {font-size:1.25rem;}
 .subscribe-description {margin:.5rem 0 0 0;}
 .subscribe-field {width:50%;margin:2rem 0 0 0;}
 .subscribe-field input {}
 .subscribe-field button {}
-.subscribe-helper {display:block;margin:.5rem 0 0 0;}
+.subscribe-helper {display:block;margin:.5rem 0 0 0;color:$gray400;}
 
 .footer {overflow:hidden;margin:0 auto;padding:2rem 10% 6rem;box-sizing:border-box;position:relative;z-index:4;}
 .footer-background {position:absolute;left:-50%;right:-50%;top:0;bottom:0;z-index:-1;}
@@ -14,7 +14,7 @@
 .footer-sitemap-item {float:left;width:25%;}
 .footer-sitemap-item-title {display:inline-block;margin:0 0 .75rem 0;font-size:14px;color:$gray400;}
 .footer-sitemap-item-link {display:block;color:$gray600;}
-.footer-sitemap-item-link:hover {color:#409EFF}
+.footer-sitemap-item-link:hover {color:$color-primary;}
 .footer-terms {margin:0 0 1rem 0;}
 .footer-terms-link {margin:0 1rem 0 0;}
 .footer-address {float:right;width:50%;}

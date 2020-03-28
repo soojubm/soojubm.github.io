@@ -76,12 +76,12 @@
     <nav class="pagenav">
       <h1 class="pagenav-title">이 페이지에는-</h1>
       <div class="pagenav-nav">
-        <a class="pagenav-link" href="">📚 서점</a>
-        <a class="pagenav-link" href="">🤩 장르</a>
-        <a class="pagenav-link" href="">👑 최다 판매 도서</a>
-        <a class="pagenav-link" href="">👼🏼 신작</a>
-        <a class="pagenav-link" href="">💗 로맨스</a>
-        <a class="pagenav-link" href="">🧜‍♀️ 만화</a>
+        <a class="pagenav-link" href=""><i class="avatar">📚</i> 서점</a>
+        <a class="pagenav-link" href=""><i class="avatar">🤩</i> 장르</a>
+        <a class="pagenav-link" href=""><i class="avatar">👑</i> 최다 판매 도서</a>
+        <a class="pagenav-link" href=""><i class="avatar">👼🏼</i> 신작</a>
+        <a class="pagenav-link" href=""><i class="avatar">💗</i> 로맨스</a>
+        <a class="pagenav-link" href=""><i class="avatar">🧜‍♀️</i> 만화</a>
         <a class="pagenav-link" href="">Back to Top</a>
       </div>
       <br />
@@ -91,9 +91,10 @@
       .pagenav {padding:0 0 4rem 0;}
       .pagenav-nav {/*display:flex;overflow:auto;white-space:nowrap;*/}
       .pagenav-title {padding:.5rem 0;font-size:1rem;color:#999;}
-      .pagenav-link {display:block;line-height:2;}
+      .pagenav-link {display:flex;align-items:center;margin:0 0 .5rem 0;}
       .pagenav-link:hover {text-decoration:underline;}
       .pagenav-link:last-child {margin:.5rem 0 0 0;}
+      .pagenav-link i {display:flex;align-items:center;justify-content:center;}
     </style>
     <!-- <style>
       .card.is-vertical {width:auto;overflow:hidden;}
@@ -817,7 +818,7 @@
 
     <article class="design-article">
       <h1 class="design-article-title">Paginations</h1>
-      <p class="design-article-description">페이지네이션의 첫 페이지와 마지막 페이지는 더블 화살표 아이콘보다 총 페이지 수를 노출 방식을 사용한다.</p>
+      <p class="design-article-description">페이지네이션의 첫 페이지와 마지막 페이지는 더블 화살표 아이콘보다 총 페이지 수를 노출한다.</p>
       <nav class="pagination" aria-label="pagination">
         <a class="pagination-previous" href="#" title="앞 페이지로 이동">Previous</a>
         <a class="pagination-next" href="#" title="뒷 페이지로 이동">Next</a>
