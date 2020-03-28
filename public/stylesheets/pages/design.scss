@@ -48,13 +48,13 @@
 @media (max-width:$breakpoint-large) {
   .design {padding:0;}
   .design-head {height:50vh;position:relative;left:0;right:0;top:0;bottom:50%;}
-  .design-body {width:60%;margin-top:6rem;margin-left:40%;padding:0;}
+  .design-body {width:60%;margin:4rem 5%;padding:0;}
 }
 
 
 @media (max-width:$breakpoint-small) {
   .design-head {}
-  .design-body {width:100%;margin-left:0;margin-top:4rem;padding:0 5%;}
+  .design-body {width:100%;}
 }
 
 

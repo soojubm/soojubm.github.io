@@ -75,7 +75,7 @@
 .review-filter {display:flex;align-items:center;height:32px;font-size:12px;position:absolute;right:0;top:0;}
 
 
-[role=group] {display:flex;flex-flow: wrap-reverse;margin:-.25rem;}
+[role=group] {display:flex;margin:-.25rem;}
 [role=group] > * {margin:.25rem;}
 
 [role=group] input[type=radio] + label {margin:0 16px 0 0;color:$gray400;padding-left:0;}

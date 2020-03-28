@@ -19,9 +19,10 @@
 }
 
 @media (max-width:$breakpoint-small) {
-	.header {left:0;right:0;}
+	.header {margin:0;left:1rem;right:0;}
 	.header.is-fixed {height:48px;}
 	.header-title {}
+	
 }
 
 .dropdown {margin:1rem 0;position:relative;}

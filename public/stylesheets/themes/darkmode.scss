@@ -1,11 +1,21 @@
 
 .darkmode * {
-  $gray800: $gray0; // ?
+  // $gray100: #333;
+  // $gray800: #f1f3f4;
   .profile-user-name, .card-title {
     color: $gray0;
   }
+  .hero-background {
+    background:$gray800;
+  }
 }
 
+// $gray0: #fff; // white for dark theme
+// $gray100: #f1f3f4; // bg
+// $gray200: #dadce0; // divider border
+// $gray400: #999; // caption
+// $gray600: #666; // body
+// $gray800: #333; // bg || heading
 
 
 .darkmode {
