@@ -224,7 +224,7 @@ input[type=file] + label:after {display:none;}
 .file-attachment-title {margin:8px 0;font-size:$body;text-decoration:underline;}
 .file-attachment-helper {margin:-4px 0 0;}
 .file-attachment-list:after {content:'';display:block;clear:both;}
-.file-attachment-item {display:block;width:100%;background:$gray100;overflow:hidden;position:relative;}
+.file-attachment-item {display:block;width:100%;background:$gray100;border-radius:$radius400;overflow:hidden;position:relative;}
 .file-attachment-item:not(:first-child) {margin-top:.5rem;}
 .file-attachment-item-image {float:left;width:80px;height:80px;margin-right:1.5rem;overflow:hidden;position:relative;}
 .file-attachment-item-image img {width:auto;height:auto;max-width:auto;min-height:80px;margin:auto;position:absolute;left:0;right:0;top:0;bottom:0;}

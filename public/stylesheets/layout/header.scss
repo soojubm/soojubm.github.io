@@ -1,11 +1,12 @@
 
 
-.header {display:flex;align-items:center;height:48px;border-radius:4px;margin:0 10%;transition:$transition-base;position:absolute;z-index:3;}
+.header {display:flex;align-items:center;width:80%;height:48px;border-radius:4px;margin:0 10%;transition:$transition-base;position:absolute;z-index:3;}
 .header.is-fixed {height:64px;background:$gray0;margin:0;padding:0 10%;position:fixed;top:0;left:0;right:0;z-index:5;}
 .header-back {display:block;}
 .header-title {margin-left:1rem;font-size:$body;}
 .header-description {}
 .header-backdrop {height:48px;}
+.header .tertiary-button {margin-left:auto;}
 
 .is-white .header-title {color:$gray0;}
 .is-white .icon-arrow:before {border-color:$gray0;}

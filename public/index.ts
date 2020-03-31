@@ -133,7 +133,7 @@ function detectHeaderTheme() {
   const pageHeadElement = document.querySelector('.header')
   if (!pageHeadElement) return
 
-  const pages = ['#design']
+  const pages = ['#design', '']
   const isWhite = pages.includes(window.location.hash)
 
   if (isWhite) {
@@ -177,14 +177,18 @@ document.addEventListener('DOMContentLoaded', () => {
   domEvents()
 
   window.addEventListener('scroll', () => {
-    event.stickyElement({ targetElement: '.post-head', addClass: 'is-sticky' })
     event.stickyElement({ targetElement: '.js-navbar', addClass: 'is-sticky-navbar' })
+    event.stickyElement({ targetElement: '.post-head', addClass: 'is-sticky' })
   })
   const scrollProgress = () => {
+    const post = document.querySelector<HTMLElement>('.post')
     const progressBar = document.querySelector<HTMLElement>('.post-head-progress')
-    if (!progressBar) return
 
-    const scrollPercent = `${(window.pageYOffset / (document.body.scrollHeight - window.innerHeight)) * 100}%`
+    if (!post || !progressBar) return
+
+
+    const scrollPercent = `${(window.pageYOffset / (post.scrollHeight - window.innerHeight)) * 100}%`
+    // const scrollPercent = `${(window.pageYOffset / (document.body.scrollHeight - window.innerHeight)) * 100}%`
     progressBar.style.width = scrollPercent
   }
   window.addEventListener('scroll', scrollProgress, true)

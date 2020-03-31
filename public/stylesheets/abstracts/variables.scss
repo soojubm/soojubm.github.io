@@ -29,6 +29,9 @@ $color-twitter: rgb(29, 161, 242);
 $color-naver: #03cf5d;
 $color-kakao: #ffdf00;
 
+.is-facebook {color:$color-facebook !important;}
+.is-twitter {color:$color-twitter !important;}
+
 $breakpoint-large: 1440px;
 $breakpoint-medium: 1280px;
 $breakpoint-small: 1080px;
@@ -37,7 +40,7 @@ $breakpoint-tiny: 720px;
 @custom-media --breakpoint-large (max-width: 1440px);
 
 $padding100: .2rem 1rem; // is-small
-$padding200: .7rem 1.5rem; // 버튼, 텍스트인풋
+$padding200: .7rem 1.5rem .6rem; // 버튼, 텍스트인풋
 $padding400: 1.5rem 2rem;
 
 //box-shadow: inset 0 2px 4px 0 hsla(0, 0%, 0%, 0.08);

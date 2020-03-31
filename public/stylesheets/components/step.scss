@@ -1,6 +1,6 @@
 .step {display:flex;justify-content:center;}
 .step-item {width:56px;padding:8px 4px;text-align:center;}
-.step-item-icon {display:block;width:32px;height:32px;margin:0 auto;border-radius:$radius400;background:$gray400;font-size:16px !important;color:$gray0;line-height:32px !important;}
+.step-item-icon {display:block;width:32px;height:32px;margin:0 auto;border-radius:$radius400;background:$gray400;font-size:1.25rem !important;color:$gray0;line-height:32px !important;}
 .step-item-title {margin-top:.5rem;font-size:12px;}
 .step-space {display:inline-block;width:21px;height:56px;}
 .step-space span {float:left;display:block;width:3px;height:3px;margin:21px 2px;border-radius:50%;background:$gray400;}

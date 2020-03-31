@@ -18,8 +18,10 @@ const stickyElement = ({ targetElement, addClass }) => {
     isScrolling = window.requestAnimationFrame(() => {
       if (window.pageYOffset > stickyElement.offsetTop + stickyElementHeight) {
         body.classList.add(addClass)
+        // body.style.paddingTop = `${stickyElementHeight}px`
       } else {
         body.classList.remove(addClass)
+        // body.style.paddingTop = '0px'
       }
     })
   })

@@ -10,7 +10,7 @@
 .footer-background {position:absolute;left:-50%;right:-50%;top:0;bottom:0;z-index:-1;}
 .footer-sitemap {float:left;width:50%;position:relative;}
 .footer-sitemap:after {content:'';display:block;clear:both;}
-.footer-sitemap-title {margin:0 0 16px 0;font-size:16px;}
+.footer-sitemap-title {margin:0 0 16px 0;font-size:1.25rem;}
 .footer-sitemap-item {float:left;width:25%;}
 .footer-sitemap-item-title {display:inline-block;margin:0 0 .75rem 0;font-size:14px;color:$gray400;}
 .footer-sitemap-item-link {display:block;color:$gray600;}

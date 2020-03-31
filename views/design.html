@@ -121,7 +121,7 @@
       <time class="card-date">
         2020 03 21 금요일</b>
       </time>
-      <div class="card-note" style="border:1px solid #f3f2f1;border-radius:50px;text-align:center;font-size:12px;">마일리지 적립 200P</div>
+      <div class="card-note">마일리지 적립 200P</div>
       <button class="card-more icon-button" type="button"><i class="icon-more"></i></button>
     </div> -->
     
@@ -190,10 +190,10 @@
           <div></div>
           <figcaption>red800</figcaption>
         </figure>
-        <figure class="color-item is-positive">
+        <!-- <figure class="color-item is-positive">
           <div></div>
           <figcaption>green80</figcaption>
-        </figure>
+        </figure> -->
         <figure class="color-item is-primary100">
           <div></div>
           <figcaption>blue40</figcaption>
@@ -284,6 +284,7 @@
       <div class="tags" role="group">
         <!-- <div role="list"></div> -->
         <span class="tag tags-item" role="listitem">I'm hashtag</span>
+        <span class="tag tags-item is-red" role="listitem">I'm hashtag</span>
       </div>
       <div role="group" style="margin-top:.5rem;">
         <button class="secondary-button is-small is-addable" type="button">Typhography <i class="icon-plus" style="display:inline-block;background:#f1f3f4;padding:12px;border-radius:4px;position:absolute;right:3px;top:3px;"></i></button>
@@ -476,7 +477,7 @@
         <div class="radio">
           <input type="radio" id="gender-man" name="gender" value="" checked>
           <label for="gender-man">Video Killed the Radio Button</label>
-          <p class="radio-helper">My email campaigns are meant to be seen by the public. The more the merrier, in fact. If/when Mailchimp builds tools that help people discover me and sign up for this list, I'd like to take part in that.</p>
+          <p class="radio-helper">My email campaigns are meant to be seen by the public.</p>
         </div>
         <div class="radio">
           <input type="radio" id="gender-women" name="gender" value="">
@@ -694,7 +695,7 @@
         </div>
         <!-- <button class="js-file-submit primary-button" type="submit">등록하기</button> -->
       </form>
-    </article>
+  </article>
 
     <article class="design-article grayscale">
       <h1 class="design-article-title">Cards</h1>
@@ -702,6 +703,9 @@
       <div class="card" style="width:320px;margin:2rem 0;">
         <figure class="card-thumbnail"><img alt=""></figure>
         <h3 class="card-title">카드 유아이</h3>
+        <p class="card-text">
+          하나의 마크업으로 가로형 세로형이 가능하도록 하나의 마크업으로 가로형 세로형이 가능하도록 하나의 마크업으로 가로형 세로형이 가능하도록 하나의 마크업으로 가로형 세로형이 가능하도록
+        </p>
         <!-- <div class="card-price">
           <del>19,000원</del>
           16,000원
@@ -733,7 +737,7 @@
             <em>할인율 20%</em>
           </figcaption>
         </figure>
-        <div class="card-note" style="border:1px solid #f3f2f1;border-radius:50px;text-align:center;font-size:12px;">마일리지 적립 200P</div>
+        <div class="card-note">마일리지 적립 200P</div>
         <!-- <div class="card-state">판매 상태(재고수/품절/재고없음/판매중단)</div> -->
         <button class="card-more icon-button" type="button"><i class="icon-more"></i></button>
       </div>
@@ -770,7 +774,7 @@
       </div>
 
       <div class="pricing-item">
-        <span style="position:absolute;right:1rem;top:1rem;">most popular</span>
+        <span class="tag is-red" style="position:absolute;right:.5rem;top:.5rem;">most popular</span>
         <!-- <i style="margin-top:-.5rem;font-size:40px;">🧞‍</i> -->
         <h1 class="pricing-item-title">Standard</h1>
         <p class="pricing-item-description">부끄러우니까 구매하지마요.</p>
@@ -847,9 +851,9 @@
       <p class="design-article-description">보더를 사용하지 말아요.</p>
       <table>
         <caption>히라가나 오십음도</caption>
-        <thead>
-          <tr>
-            <th class="table-checkbox">
+        <thead role="rowgroup">
+          <tr role="row">
+            <th role="columnheader" aria-sort="none" class="table-checkbox">
               <div>
                 <input type="checkbox" id="temp1">
                 <label for="temp1"></label>
@@ -863,9 +867,9 @@
             <th class="right">숫자</th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td>
+        <tbody role="rowgroup">
+          <tr role="row" aria-rowindex="11">
+            <td role="cell">
               <div>
                 <input type="checkbox">
                 <label for=""></label>
@@ -916,6 +920,7 @@
           </tr>
         </tbody>
       </table>
+
       <div style="overflow:auto;" role="rowgroup">
         <div class="row is-head" role="row">
           <!-- <div class="row-checkbox">Ranking</div> -->
@@ -1186,11 +1191,12 @@
           <label for="line02">Everyday is like sunday</label>
         </div>
       </fieldset>
-      <footer class="filter-foot">
+      <footer class="filter-foot is-child-pull">
         <button type="button" class="primary-button">필터링하기</button>
         <button type="button" class="ghost-button">clear filters</button>
       </footer>
-    </form> -->
+    </!-->
+
 
     <!-- <form class="todo js-todo" style="max-width:560px;margin:0 auto;">
       <fieldset class="todo-body">
@@ -1208,7 +1214,7 @@
       </footer>
     </form> -->
 
-    <!-- <article class="design-article">
+    <article class="design-article">
       <h1 class="design-article-title">Timeline or Feed</h1>
       <p class="design-article-description">왼쪽에 아바타가 있는 경우 항상 사용할 수 있게 만들기.</p>
       <section class="timeline">
@@ -1245,12 +1251,11 @@
           </div>
         </div>
       </section>
-    </article> -->
+    </article>
 
   
 
-      <!-- 기본 폼 태그 테스트 -->
-      <!-- <form action="">
+      <form action="">
         <input type="checkbox">
         <input type="radio">
         <input type="text">
@@ -1261,38 +1266,10 @@
         </select>
         <textarea name="" id="" cols="30" rows="10"></textarea>
         <button type="submit">제출</button>
-      </form> -->
-
-      <!-- <table role="table" aria-label="Semantic Elements" aria-describedby="semantic_elements_table_desc" aria-rowcount="81">   
-        <caption id="semantic_elements_table_desc">Semantic Elements to use instead of ARIA's roles</caption>   
-        <thead role="rowgroup">      
-           <tr role="row">        
-             <th role="columnheader" aria-sort="none">ARIA Role</th>
-             <th role="columnheader" aria-sort="none">Semantic Element</th>      
-           </tr>    
-        </thead>
-        <tbody role="rowgroup">     
-           <tr role="row" aria-rowindex="11">        
-             <td role="cell">header</td>
-             <td role="cell">h1</td>
-           </tr>
-           <tr role="row" aria-rowindex="16">
-             <td role="cell">header</td>
-             <td role="cell">h6</td>
-           </tr>
-           <tr role="row" aria-rowindex="18">
-             <td role="cell">rowgroup</td>
-             <td role="cell">thead</td>
-           </tr>
-           <tr role="row" aria-rowindex="24">
-             <td role="cell">term</td>
-             <td role="cell">dt</td>
-           </tr>
-         </tbody>
-       </table> -->
+      </form>
       <!-- <span class="letter-piece"><i>스</i></span> -->
 
-      <i class="icon-check1"></i>
+      <!-- <i class="icon-check1"></i> -->
       <style>
       .icon-check1 {display:block;width:40px;height:40px;border-radius:50%;border:2px solid #000;position:relative;}
       .icon-check1:before {content:'';display:inline-block;width:28px;height:9px;border-left:2px solid;border-bottom:2px solid;border-color:#000;transform:rotate(-45deg);position:absolute;right:-2px;top:4px;z-index:2;}
@@ -1303,8 +1280,6 @@
   </section>
 </main>
 <!-- 
-
-
 <nav class="panel">
     <p class="panel-title">Repositories</p>
     <div class="panel-block">
@@ -1318,16 +1293,8 @@
     <p class="panel-tabs">
       <a class="is-active">All</a>
       <a>Public</a>
-      <a>Private</a>
-      <a>Sources</a>
-      <a>Forks</a>
     </p>
-    <a class="panel-block is-active">
-      <span class="panel-icon">
-        <i class="fas fa-book" aria-hidden="true"></i>
-      </span>
-      bulma
-    </a>
+
     <a class="panel-block">
       <span class="panel-icon">
         <i class="fas fa-book" aria-hidden="true"></i>
@@ -1339,24 +1306,6 @@
         <i class="fas fa-book" aria-hidden="true"></i>
       </span>
       minireset.css
-    </a>
-    <a class="panel-block">
-      <span class="panel-icon">
-        <i class="fas fa-book" aria-hidden="true"></i>
-      </span>
-      jgthms.github.io
-    </a>
-    <a class="panel-block">
-      <span class="panel-icon">
-        <i class="fas fa-code-branch" aria-hidden="true"></i>
-      </span>
-      daniellowtw/infboard
-    </a>
-    <a class="panel-block">
-      <span class="panel-icon">
-        <i class="fas fa-code-branch" aria-hidden="true"></i>
-      </span>
-      mojs
     </a>
     <label class="panel-block">
       <input type="checkbox">
@@ -1370,59 +1319,4 @@
   </nav> -->
 
 
-  <!-- <div class="field is-horizontal">
-      <div class="field-label is-normal">
-        <label class="label">From</label>
-      </div>
-      <div class="field-body">
-        <div class="field">
-          <p class="control is-expanded has-icons-left">
-            <input class="input" type="text" placeholder="Name">
-            <span class="icon is-small is-left">
-              <i class="fas fa-user"></i>
-            </span>
-          </p>
-        </div>
-        <div class="field">
-          <p class="control is-expanded has-icons-left has-icons-right">
-            <input class="input is-success" type="email" placeholder="Email" value="alex@smith.com">
-            <span class="icon is-small is-left">
-              <i class="fas fa-envelope"></i>
-            </span>
-            <span class="icon is-small is-right">
-              <i class="fas fa-check"></i>
-            </span>
-          </p>
-        </div>
-      </div>
-    </!-->
-<!-- 
-    <div class="columns is-gapless is-multiline is-mobile">
-      <div class="column is-one-quarter">
-        is-one-quarter
-      </div>
-      <div class="column is-one-quarter">
-        is-one-quarter
-      </div>
-      <div class="column is-one-quarter">
-        is-one-quarter
-      </div>
-      <div class="column is-one-quarter">
-        is-one-quarter
-      </div>
-      <div class="column is-half">
-        is-half
-      </div>
-      <div class="column is-one-quarter">
-        is-one-quarter
-      </div>
-      <div class="column is-one-quarter">
-        is-one-quarter
-      </div>
-      <div class="column is-one-quarter">
-        is-one-quarter
-      </div>
-      <div class="column">
-        Auto
-      </div>
-    </div> -->
+  
