@@ -372,3 +372,19 @@ document.addEventListener('submit', event => event.preventDefault())
   // 	});
   // 	if(i === images.length) i = 0;
   // }, 5000);
+
+
+// document.querySelector(".thislink").addEventListener("click", function() {
+//   alert('복사 완료! 이제 "붙여넣기" 해주세요.😉');
+//   copyToClipboard("https://napp.newneek.co/2020election/#temp");
+// });
+function copyToClipboard(val) {
+  const textareaElement = document.createElement("textarea");
+  document.body.appendChild(textareaElement);
+
+  textareaElement.value = val;
+  textareaElement.select();
+  document.execCommand("copy");
+  
+  document.body.removeChild(textareaElement);
+}
