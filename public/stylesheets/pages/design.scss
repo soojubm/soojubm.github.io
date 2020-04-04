@@ -54,11 +54,18 @@
 
 @media (max-width:$breakpoint-small) {
   .design-head {}
-  .design-body {width:100%;}
+  .design-body {width:90%;}
 }
 
 
 
+.pagenav {padding:0 0 4rem 0;}
+.pagenav-nav {/*display:flex;overflow:auto;white-space:nowrap;*/}
+.pagenav-title {padding:.5rem 0;font-size:1rem;color:#999;}
+.pagenav-link {display:flex;align-items:center;margin:0 0 .5rem 0;}
+.pagenav-link:hover {text-decoration:underline;}
+.pagenav-link:last-child {margin:.5rem 0 0 0;}
+.pagenav-link i {display:flex;align-items:center;justify-content:center;margin-right:1rem;background:$gray100;}
 
 
 .user {max-width:320px;padding:2rem 0 0;border-radius:4px;box-shadow:$shadow400;text-align:center;}

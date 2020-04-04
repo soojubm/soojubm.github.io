@@ -5,7 +5,7 @@
 .post {max-width:720px;margin:0 auto;padding:4rem 5% 40px;}
 .post-head {margin:0 0 3rem 0;position:relative;}
 .post-head-runninghead {color:$gray800;text-decoration:underline;}
-.post-head-headline {padding:.25rem 0 1rem 0;font-size:2rem;color:$gray800;text-indent:-1px;} /* 상하단 패딩 똑같이해야 스키티때 */
+.post-head-headline {padding:.5rem 0 2rem 0;font-size:2rem;color:$gray800;text-indent:-1px;} /* 상하단 패딩 똑같이해야 스키티때 */
 .post-head-date {color:$gray400;}
 .post-head-progress {display:none;height:3px;background:rgb(200,0,0);position:absolute;bottom:-3px;}
 .post-head-icons {/*position:fixed;left:50%;top:100px;margin-left:480px;*/}
@@ -35,7 +35,8 @@ body.is-sticky {padding-top:200px;}
 .post-body-title {display:block;margin:0 0 24px 0px;}
 .post-body-title i {display:inline-block;width:40px;height:40px;line-height:40px;margin-right:12px;border-radius:$radius400;background:#f3f3f3;text-align:center;color:$gray800;font-size:$subhead;vertical-align:middle;}
 .post-body-kicker {margin:3rem 0 3.5rem 0;padding:0 0 0 0;font-size:$subhead;color:$gray800;position:relative;}
-// .post-body-kicker:before {content:'';display:block;width:160px;height:1px;background:$gray800;position:absolute;top:14px;left:64px;}
+// .post-body-kicker:before {content:'';display:block;width:16px;height:16px;margin:0 0 1rem 0;background:lightskyblue;border-radius:$radius400;}
+// .post-body-kicker:after {content:'"';display:block;position:absolute;right:-1rem;bottom:0;}
 // .post-body-img {float:left;width:400px;height:600px;overflow:hidden;margin:0 0 0 -240px;background:$gray800;}
 .post-body-img {height:240px;overflow:hidden;margin:4rem -10rem;background:$gray800;}
 .post-body-subhead {margin:3rem 0 1rem 0px;font-size:$subhead;}
@@ -103,7 +104,7 @@ body.is-sticky {padding-top:200px;}
 .is-focused .comment-write-password {display:block;}
 
 
-.post-feedback {display:flex;max-width:$width-medium;margin:8rem auto 2rem;padding:1rem 2rem;box-sizing:border-box;background:$gray100;box-shadow:$shadow400;position:relative;}
+.post-feedback {display:flex;max-width:$width-medium;margin:2rem auto;padding:1rem 2rem;box-sizing:border-box;background:$gray100;box-shadow:$shadow400;position:relative;}
 .post-feedback-body {}
 .post-feedback-body em {color:$gray800;text-decoration:underline;}
 .post-feedback-link {margin-left:auto;}

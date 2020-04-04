@@ -25,7 +25,8 @@ button.is-small {width:auto !important;min-width:72px !important;padding: .2rem 
   height: 32px;font-size:12px !important;}
 button.is-addable {min-width:auto !important;height:32px;padding-right:40px !important;text-align:left;}
 button.is-addable.is-added {background:$color-primary;border-color:$color-primary;color:$gray0;}
-
+button.is-addable .icon-plus {display:inline-block;background:$gray100;padding:12px;border-radius:4px;position:absolute;right:3px;top:3px;}
+button.is-addable .icon-close {display:inline-block;background:$gray100;padding:12px;border-radius:4px;position:absolute;right:3px;top:3px;}
 @mixin button {display:inline-block;min-width:104px;background:$color-primary;padding:$padding200;border-radius:$radius400;text-align:center;color:$gray0;cursor:pointer;position:relative;}
 
 .primary-button {@include button;background:$color-primary;border:1px solid $color-primary;color:$gray0;}
@@ -125,7 +126,7 @@ input[type=radio]:disabled + label:after {background:$gray0;}
 input[type=radio] + label + *,
 input[type=checkbox] + label + * {display:none;}
 input[type=radio]:checked + label + *,
-input[type=checkbox]:checked + label + * {display:block;margin:0.5rem 0 1.5rem 0px;}
+input[type=checkbox]:checked + label + * {display:block;margin:1rem 0 1.5rem 0px;}
 input[type=radio]:checked + label + input,
 input[type=checkbox]:checked + label + input {display:block;margin:0.75rem 0 1.5rem 0px;}
 
@@ -189,6 +190,10 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 .textfield.is-floating input {padding:0.75rem 0rem;border-top:none;border-left:none;border-right:none;}
 .textfield.is-floating label {height:20px;position:absolute;left:0;top:6px;transition:all 0.2s ease;cursor:text;}
 .textfield.is-floating input:focus + label {color:$gray400;font-size:11px;top:-12px;}
+
+.textfield.is-text {display:flex;align-items:center;}
+.textfield.is-text .textfield-input {width:auto;margin-left:1rem;margin-top:-.25rem;padding:0;background:none;border:none;box-shadow:none;color:$color-primary;}
+.textfield.is-text .selectbox-indicator {margin-bottom:5px;margin-left:.5rem;position:static;right:auto;bottom:auto;}
 
 .is-invalid .textfield-label {color:$color-negative;}
 .is-invalid .textfield-input {border-color:$color-negative;color:$color-negative;}

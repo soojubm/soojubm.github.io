@@ -9,7 +9,7 @@ $body: 1rem;
 $caption: 0.75rem;
 
 $gray0: #fff; // white for dark theme
-$gray100: #f1f3f4; // bg
+$gray100: #f1f5f6; // bg
 $gray200: #dadce0; // divider border
 $gray400: #999; // caption
 $gray600: #666; // body
@@ -125,10 +125,9 @@ aside {
   display: flex;
   align-items: center;
   height: 56px;
-  border-top: 1px solid $gray100;
-  border-bottom: 1px solid $gray100;
+  // border-top: 1px solid $gray100;
+  // border-bottom: 1px solid $gray100;
   margin-right: -200px;
-  margin-top: -1px;
   line-height: 16px;
   --spacer: 0 1.5rem;
 }
@@ -160,4 +159,11 @@ aside {
   border-top: none;
   font-size: 12px;
   color: $gray400;
+}
+
+
+.row1.is-pull {display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;}
+.col {
+  flex-basis: 0;
+  flex-grow: 1;
 }

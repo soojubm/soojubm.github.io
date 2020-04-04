@@ -6,12 +6,11 @@
     <div style="position:absolute;right:480px;bottom:-8px;width:80px;height:80px;background:gold;border-radius:50%;"></div>
     <div style="position:absolute;right:420px;top:24px;width:16px;height:16px;background:#0057ff;border-radius:50%;"></div>
     <div class="hero-background"></div>
-    <h1 class="hero-title">아르바나 폰트 구매 기념 🗯</h1>
+    <h1 class="hero-title">부끄러우니까 보지마요 🗯</h1>
     <p class="hero-description">히어로 섹션의 마크업을 간단하게 해보았어요.<br />Hero & Features. 배너 대신 빌보드로 네이밍하자.</p>
     <a class="hero-cta primary-button">Call to Action</a>
     <img src="/public/images/blob-shape.svg" alt="" style="position:absolute;right:4rem;top:-6rem;width:25rem;">
   </section>
-
   <!-- <div class="starfield">
     <span></span>
     <span></span>
@@ -87,15 +86,6 @@
       <br />
       <p>기능 정의<br />스크롤스파이. 스크롤되면 고정(> mobile devices). 모바일에서 가로 정렬 후 좌우 스크롤.</p>
     </nav>
-    <style>
-      .pagenav {padding:0 0 4rem 0;}
-      .pagenav-nav {/*display:flex;overflow:auto;white-space:nowrap;*/}
-      .pagenav-title {padding:.5rem 0;font-size:1rem;color:#999;}
-      .pagenav-link {display:flex;align-items:center;margin:0 0 .5rem 0;}
-      .pagenav-link:hover {text-decoration:underline;}
-      .pagenav-link:last-child {margin:.5rem 0 0 0;}
-      .pagenav-link i {display:flex;align-items:center;justify-content:center;}
-    </style>
     <!-- <style>
       .card.is-vertical {width:auto;overflow:hidden;}
       .card.is-vertical .card-thumbnail {float:left;margin-right:2rem;padding-top:0;width:240px;height:240px;border:2px solid #000;}
@@ -211,7 +201,7 @@
 
     <article class="design-article">
       <h1 class="design-article-title">Divider or Seperator</h1>
-      <p class="design-article-description">hr 태그로 마크업하세요. 중량감에 따라 마진을 달리 주기</p>
+      <p class="design-article-description">html 문서에서 구분이 필요할 때 border 스타일을 사용하지 마세요. hr 태그로 마크업하세요. 중량감에 따라 마진을 달리 주기</p>
       <hr />
     </article>
 
@@ -287,8 +277,8 @@
         <span class="tag tags-item is-red" role="listitem">I'm hashtag</span>
       </div>
       <div role="group" style="margin-top:.5rem;">
-        <button class="secondary-button is-small is-addable" type="button">Typhography <i class="icon-plus" style="display:inline-block;background:#f1f3f4;padding:12px;border-radius:4px;position:absolute;right:3px;top:3px;"></i></button>
-        <button class="secondary-button is-small is-addable is-added" type="button">Cinema <i class="icon-close" style="display:inline-block;background:#f1f3f4;padding:12px;border-radius:4px;position:absolute;right:3px;top:3px;"></i></button>
+        <button class="secondary-button is-small is-addable" type="button">Typhography <i class="icon-plus"></i></button>
+        <button class="secondary-button is-small is-addable is-added" type="button">Cinema <i class="icon-close"></i></button>
       </div>
     </article>
 
@@ -327,11 +317,11 @@
         <li>ordered list, level 1</li>
       </ol>
       <hr style="margin: 1rem 0;" />
-      <dl style="margin:0 0 .5rem 0;">
+      <dl class="row1 is-pull" style="margin:0 0 .5rem 0;">
         <dt>Definition term</dt>
         <dd>Definition text</dd>
       </dl>
-      <dl>
+      <dl class="row1 is-pull" >
         <dt>Definition term</dt>
         <dd>Definition text</dd>
       </dl>
@@ -390,7 +380,7 @@
       <h1 class="design-article-title">Buttons</h1>
       <p class="design-article-description">아톰Atom 단위의 컴포넌트는 클래스 네이밍 없이 자체 엘리먼트에 스타일링 된 요소들로 한정하고 리액트에서 스타일드 컴포넌트 단위가 된다.</p>
       <div>
-        <h2>Default States</h2>
+        <h2>Default Sizes</h2>
         <div role="group">
           <button class="primary-button" type="button">Primary</button>
           <button class="secondary-button" type="button">Secondary</button>
@@ -582,6 +572,14 @@
         </select>
         <i class="selectbox-indicator icon-caret"></i>
       </div>
+    </div>
+    <div class="textfield is-text" style="margin:2rem 0;">
+      <label class="textfield-label" for="search1">Sort by</label>
+      <select class="textfield-input" name="" id="">
+        <option class="select-option" value="">Choose an option</option>
+      </select>
+      <i class="selectbox-indicator icon-caret"></i>
+    </div>
       <div class="textfield" style="margin:2rem 0;">
         <label class="textfield-label" for="search1">텍스트에어리어 레이블</label>
         <small class="textfield-byte"><b>0 KB</b> / 100 KB</small>
@@ -1012,6 +1010,7 @@
       <h1 class="design-article-title">Accordions</h1>
       <p class="design-article-description">질의응답에 주로 사용해요. 공지사항 정도의 간단한 게시글에서도 사용할 수 있으나 그 이상의 경우에는 다른 유아이를 고민하세요.</p>
       <button class="accordion-trigger js-toggle" type="button" aria-expanded="false">
+        <i class=""></i>
         회원탈퇴는 어떻게 할 수 있나요?
         <i class="icon-caret"></i></button>
       <article class="accordion-panel">
@@ -1072,7 +1071,7 @@
         <span class="rating2-score">4.3</span>
       </div>
       <hr style="margin:2rem 0;" />
-      <dl style="margin:1rem 0;">
+      <dl class="row1 is-pull">
         <dt>의사소통</dt>
         <dd style="display: flex;align-items: center;">
           <div class="graph-item is-horizontal">
@@ -1214,7 +1213,7 @@
       </footer>
     </form> -->
 
-    <article class="design-article">
+    <!-- <article class="design-article">
       <h1 class="design-article-title">Timeline or Feed</h1>
       <p class="design-article-description">왼쪽에 아바타가 있는 경우 항상 사용할 수 있게 만들기.</p>
       <section class="timeline">
@@ -1251,9 +1250,7 @@
           </div>
         </div>
       </section>
-    </article>
-
-  
+    </article> -->
 
       <form action="">
         <input type="checkbox">

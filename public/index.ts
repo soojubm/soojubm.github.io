@@ -127,7 +127,7 @@ const domEvents = () => {
 
 window.addEventListener('hashchange', domEvents)
 window.addEventListener('hashchange', initailizePage)
-window.addEventListener('hashchange', detectHeaderTheme)
+// window.addEventListener('hashchange', detectHeaderTheme)
 
 function detectHeaderTheme() {
   const pageHeadElement = document.querySelector('.header')
@@ -151,7 +151,7 @@ function initailizePage() {
   navigationTrigger?.nextElementSibling?.classList.remove('is-visible')
 
   notifyThisPage()
-  detectHeaderTheme()
+  // detectHeaderTheme()
 }
 
 function notifyThisPage() {
@@ -163,7 +163,21 @@ function notifyThisPage() {
   body.classList.add(className)
 }
 
+
+function bustCache() {
+  const linkElements = document.querySelectorAll('link')
+  linkElements.forEach(element => {
+    const isStylesheet = element.getAttribute('rel') === 'stylesheet'
+    if(!isStylesheet) return
+
+    const href = element.getAttribute('href')
+    const timestamp = new Date().getTime()
+    const cacheBuster = `${href}?cacheBuster=${timestamp}`
+    element.setAttribute('href', cacheBuster)
+  })
+}
 document.addEventListener('DOMContentLoaded', () => {
+  bustCache()
   initailizePage()
 
   loader()
@@ -177,7 +191,7 @@ document.addEventListener('DOMContentLoaded', () => {
   domEvents()
 
   window.addEventListener('scroll', () => {
-    event.stickyElement({ targetElement: '.js-navbar', addClass: 'is-sticky-navbar' })
+    // event.stickyElement({ targetElement: '.js-navbar', addClass: 'is-sticky-navbar' })
     event.stickyElement({ targetElement: '.post-head', addClass: 'is-sticky' })
   })
   const scrollProgress = () => {
@@ -213,19 +227,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // 	}
   // 	return null;
   // };
-
-  // const sayHello = new Promise((resolve, reject) => {
-  // 	reject('Unable to say hi.');
-
-  // 	setTimeout(() => {
-  // 		resolve('Hello, World');
-  // 	}, 5000);
-  // });
-  // sayHello.then(resolve => {
-  // 	console.log('res', resolve);
-  // }).catch(error => {
-  // 	console.warn(error);
-  // });
 
   // Promise.all([
   // 	fetch('https://jsonplaceholder.typicode.com/posts'),
@@ -374,7 +375,7 @@ document.addEventListener('submit', event => event.preventDefault())
   // }, 5000);
 
 
-// document.querySelector(".thislink").addEventListener("click", function() {
+// document.querySelector(".js-copty-link").addEventListener("click", () => {
 //   alert('복사 완료! 이제 "붙여넣기" 해주세요.😉');
 //   copyToClipboard("https://napp.newneek.co/2020election/#temp");
 // });

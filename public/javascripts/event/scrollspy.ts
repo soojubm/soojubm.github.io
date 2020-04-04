@@ -28,3 +28,18 @@ const scrollspy = ({ menusSelector: menusClass, sectionsSelector: sectionsClass 
 }
 
 export default scrollspy
+
+
+// const absoluteTop = window.pageYOffset + element.getBoundingClientRect().top;
+// function getAbsoluteTop(element) {
+//   return window.pageYOffset + element.getBoundingClientRect().top;
+// }
+// ​
+// const parentElement = element.parentElement;
+// const parentAbsoluteTop = getAbsoluteTop(parentElement);
+// const absoulteTop = getAbsoluteTop(element);
+// ​
+// const relativeTop = absoluteTop - parentAbsoluteTop;
+
+
+// 출처: https://mommoo.tistory.com/85 [개발자로 홀로 서기]

@@ -5,97 +5,81 @@ type Parameter = {
 }
 
 const modal = ({ selector: trigger }: Parameter) => ({
-  // init(element) {
-  //   if(!element) throw Error('element')
-  // },
+  initialize() {},
   modals: document.querySelectorAll<HTMLElement>(trigger),
-
+  modalContainer: document.querySelector<HTMLElement>('#modal'),
   setEvent() {
+    // require('./modal.scss');
     if (!this.modals) return
 
-    this.modals.forEach(modal =>
-      modal.addEventListener('click', event => {
-        event.stopPropagation()
-        event.preventDefault()
-
-        fetch(`/views/${modal.dataset.modal}.html`)
-          .then(response => {
-            if (response.ok) return response.text()
-            else return Promise.reject(response)
-          })
-          .then(html => {
-            const view = document.querySelector('#modal')
-            if (!view) return
-
-            view.innerHTML = html
-
-            const closeElement = document.querySelector('.js-modal-close')
-            const modalElement = document.querySelector<HTMLElement>('#modal')
-            if (!closeElement || !modalElement) return
-
-            function backHistory() {
-              const modalElement = document.querySelector<HTMLElement>('#modal')
-              if (!modalElement) return
-              modalElement.innerHTML = ''
-              history.back()
-            }
-
-            closeElement.addEventListener('click', backHistory)
-
-            const state = { name: 'tester' }
-            const title = 'dd'
-            const url = `${modal.dataset.modal}.html`
-            history.pushState(state, title, url)
-          })
-          .catch(error => console.warn('modal Error'))
-
-        const { nextElementSibling } = modal
-        const closeTrigger = nextElementSibling?.querySelector('.js-modal-close')
-        if (!nextElementSibling || !closeTrigger) return
-
-        const { pageYOffset } = window
-
-        this.showModal(nextElementSibling, pageYOffset)
-        closeTrigger.addEventListener('click', this.backHistory)
-
-        const state = { name: 'tester' }
-        const title = 'dd'
-        const url = 'modal'
-        history.pushState(state, title, url)
-
-        window.addEventListener('popstate', () => {
-          this.closeModal(nextElementSibling, pageYOffset)
+    this.modals.forEach(modal => modal.addEventListener('click', event => {
+      event.stopPropagation()
+      event.preventDefault()
+      
+      fetch(`/views/${modal.dataset.modal}.html`)
+        .then(response => {
+          if (response.ok) return response.text()
+          else return Promise.reject(response)
         })
-        document.addEventListener('click', this.backHistory)
+        .then(html => {
+          if(!this.modalContainer) return
+
+          const { pageYOffset } = window
+
+          document.body.classList.remove('is-modal-visible')
+
+          this.modalContainer.innerHTML = html
+          this.setModal(pageYOffset)
+
+          document.querySelector('.js-modal-close')?.addEventListener('click', this.backHistory)
+
+          // 이벤트 remove해줘야함
+          // document.addEventListener('keydown', event => {
+          //   const isKeyEsc = event.keyCode === 27
+          //   if(!isKeyEsc) return
+          //   this.backHistory()
+          // })
+          // document.addEventListener('click', () => {
+          //   if(!document.body.classList.contains('is-modal-visible')) return
+          //   this.backHistory()
+          // })
+
+          window.addEventListener('popstate', () => {
+            if(!document.body.classList.contains('is-modal-visible')) return
+            this.clearModal(this.modalContainer, pageYOffset)
+          })
+
+          const modalDialog = document.querySelector<HTMLElement>('.modal-dialog')
+          if(!modalDialog) return
+          modalDialog.addEventListener('click', event => event.stopPropagation())
+        })
+        .catch(error => console.warn('modal Error'))
       }),
     )
-    const modalDialog = document.querySelectorAll('.modal-dialog')
-    modalDialog.forEach(element => {
-      element.addEventListener('click', event => event.stopPropagation())
-    })
   },
-  backHistory() {
-    history.back()
-  },
-  showModal(element, pageYOffset) {
-    element?.classList.add('is-visible')
-    this.lockBody(pageYOffset)
-  },
-  closeModal(element, pageYOffset) {
-    const isOpened = element.classList.contains('is-visible')
-    if (!isOpened) return
+  setModal(pageYOffset) {
+    this.setHistory()
 
-    element.classList.remove('is-visible')
-    this.unlockBody(pageYOffset)
-  },
-  lockBody(pageYOffset) {
+    document.body.classList.add('is-modal-visible')
     document.body.classList.add('body-lock')
     document.body.style.top = `-${pageYOffset}px`
   },
-  unlockBody(pageYOffset) {
+  clearModal(container, pageYOffset) {
+    document.body.classList.remove('is-modal-visible')
     document.body.classList.remove('body-lock')
+
+    container.innerHTML = ''
     window.scrollTo(0, pageYOffset)
   },
+  setHistory() {
+    const state = { name: 'tester' }
+    const title = 'dd'
+    const url = '/modal'
+    history.pushState(state, title, url)
+  },
+  backHistory() {
+    history.back()
+  }
 })
 
 export default modal

@@ -15,8 +15,8 @@
 .profile-user-career {display:block;margin:6px 0 0;color:$gray400;}
 .profile-user-description {max-height:4.8em;margin:1.5rem 0;white-space:normal;overflow:hidden;text-overflow:ellipsis;word-wrap:break-word;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;line-height:1.6;position:relative;}
 .profile-user-description-more {}
-.profile-user-toggle {display:none;width:100%;text-align:center;}
-.profile-user-toggle i {display:inline-block;vertical-align:middle;}
+.profile-user-toggle {display:none;width:100%;margin:1rem 0;text-align:center;}
+.profile-user-toggle i {display:inline-block;vertical-align:middle;margin-left:.5rem;}
 .profile-user-category {padding:4px 16px;background:coral;font-size:12px;color:$gray0;border-radius:50px;}
 .profile-user-address {margin:1rem 0 1.25rem 0;padding:1rem 0 1rem 0;border-top:1px solid #e9e9e6;border-bottom:1px solid #e9e9e6;}
 .profile-user-address i {margin:0 8px 0 0;font-size:14px;color:$gray400;vertical-align:middle;}
@@ -48,12 +48,14 @@
 
 
 .accordion {position:relative;}
-.accordion-trigger {display:flex;align-items:center;justify-content:space-between;width:100%;margin:0 0 0 0;padding:$padding200;padding-left:0;padding-right:0;border-top:1px solid $gray100;border-bottom:1px solid $gray100;cursor:pointer;text-align:left;position:relative;transition:all .4s;}
+// border-top:1px solid $gray100;border-bottom:1px solid $gray100;
+.accordion-trigger {display:flex;align-items:center;width:100%;margin:0 0 0 0;padding:$padding200;padding-left:0;padding-right:0;cursor:pointer;text-align:left;position:relative;transition:all .4s;}
+// .accordion-trigger:before {content:'';display:block;width:8px;height:8px;border-radius:$radius400;background:#999;margin-right:1rem;}
 .accordion-trigger:not(:nth-of-type(1)) {border-top:none;}
-.accordion-trigger i {float:right;transition:all .2s}
+.accordion-trigger .icon-caret {margin-left:auto;transition:all .2s}
 .accordion-trigger:hover {color:$gray800;}
 .accordion-trigger.is-active {border-bottom:none;color:$color-primary;}
-.accordion-trigger.is-active i {transform:rotate(180deg)}
+.accordion-trigger.is-active .icon-caret {transform:rotate(180deg)}
 .accordion-panel {height:0;opacity:0;transition:all .25s;}
 .accordion-panel.is-visible {height:auto;opacity:1;padding:1rem 0 3rem;box-sizing:border-box;/*animation:fadeup 0.4s $bezier-base forwards;*/}
 
@@ -64,7 +66,7 @@
 .card-byline-avater {display:block;float:left;width:16px;height:16px;overflow:hidden;border-radius:$radius400;background:$gray100;position:relative;}
 .card-byline-avater img {@include image-centered;}
 .card-byline-name {padding-left:24px;line-height:16px;color:$gray400;}
-.card-more {display:none;width:32px;height:32px;background:#f1f3f4;position:absolute;right:.5rem;top:.5rem;}
+.card-more {display:none;width:32px;height:32px;background:$gray100;position:absolute;right:.5rem;top:.5rem;}
 .card-thumbnail {padding-top:50%;overflow:hidden;background:$gray800;border-radius:4px;border:1px solid rgba(0, 0, 0, 0.05);border-color:$gray0;box-sizing:border-box;position:relative;}
 .card-thumbnail img {display:block;width:auto;height:auto;max-width:100%;max-height:130%;margin:auto;background:$gray800;position:absolute;left:-1px;right:-1px;top:-1px;bottom:-1px;}
 .card-category {padding:2px 0;background:$color-primary;font-size:10px;color:$gray0;position:absolute;left:16px;top:64px;}
@@ -73,7 +75,7 @@
 .card-text {padding:.5rem 0 1rem;}
 .card-key {padding:4px 0;font-size:12px;line-height:1.4;color:$gray400;}
 .card-key span {float:right;color:$gray800;}
-.card-tags {margin-top:1.25rem !important;}
+.card-tags {margin-top:1rem !important;}
 .card-foot {margin:1.25rem 0 0 0;}
 .card-foot-add {width:100%;padding:12px 16px;text-align:left;color:$color-primary;font-size:12px;border-top:1px solid #e9e9e6;}
 // .card-more .icon-more {background:$gray0;}
@@ -104,6 +106,7 @@
 .list .card-thumbnail {width:80px;height:80px;padding-top:0;position:absolute;left:0;top:0;}
 .list .card-thumbnail img {max-width:150%;}
 .list .card-title {padding-top:0;}
+.list .card-byline {margin:.5rem 0;}
 // .card {width:50%;}
 // .card-title {padding-top:0;}
 // .card-thumbnail {
