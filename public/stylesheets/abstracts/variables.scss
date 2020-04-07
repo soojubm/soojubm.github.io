@@ -18,7 +18,8 @@ $gray800: #333; // bg || heading
 $red100: #fff0f5;
 $red800: #da1e28;
 
-// rgba(0,80,200,.8)
+$blue100: #f2f8fc;
+$blue800: blue;
 
 $color-primary: #00783e;
 $color-positive: #00783e; // sucess
@@ -29,9 +30,6 @@ $color-twitter: rgb(29, 161, 242);
 $color-naver: #03cf5d;
 $color-kakao: #ffdf00;
 
-.is-facebook {color:$color-facebook !important;}
-.is-twitter {color:$color-twitter !important;}
-
 $breakpoint-large: 1440px;
 $breakpoint-medium: 1280px;
 $breakpoint-small: 1080px;
@@ -40,7 +38,7 @@ $breakpoint-tiny: 720px;
 @custom-media --breakpoint-large (max-width: 1440px);
 
 $padding100: .2rem 1rem; // is-small
-$padding200: .7rem 1.5rem .6rem; // 버튼, 텍스트인풋
+$padding200: 10px 1.5rem 11px; // 버튼, 텍스트인풋
 $padding400: 1.5rem 2rem;
 
 //box-shadow: inset 0 2px 4px 0 hsla(0, 0%, 0%, 0.08);
@@ -67,20 +65,30 @@ $width-huge: 1440px;
 $bezier-base: cubic-bezier(0.455, 0.03, 0.515, 0.955);
 $transition-base: all 0.4s $bezier-base;
 $transition-fade: opacity 0.15s linear;
-$transition-collapse: height 0.35s ease;
 
 $zindex-dropdown: 1;
 $zindex-sticky: 4;
-$zindex-fixed: 4;
-$zindex-modal-backdrop: 5;
-$zindex-modal: 6;
+$zindex-modal: 8;
+$zindex-modal-backdrop: 7;
 $zindex-popover: 6;
-$zindex-tooltip: 6;
+$zindex-tooltip: 8;
 
+
+.is-facebook {color:$color-facebook !important;}
+.is-twitter {color:$color-twitter !important;}
 
 .is-fullwidth {display:block;width:100%;}
 .is-disabled {cursor:not-allowed;}
 .is-multiline {flex-wrap:wrap;}
+
+// text
+.is-bold {font-weight:bold;}
+.is-italic {font-style:italic;}
+.is-colored {}
+
+.is-nowrap {}
+.is-truncate {}
+
 
 .is-loading {}
 .is-actived {}

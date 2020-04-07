@@ -49,7 +49,7 @@
 .cart-item-addition-price {float:right;color:$gray800;position:absolute;right:0;top:.5rem;}
 .cart-item-ship {width:calc(100% - 20% - 2rem);margin:0 0 0 calc(20% + 2rem);padding:.5rem 0 .75rem;border-top:1px solid $gray100;position:relative;}
 .cart-item-ship p {}
-.cart-item-ship p + p {margin:.125rem 0 .25rem;}
+// .cart-item-ship p + p {margin:.125rem 0 .25rem;}
 .cart-item-ship-description {font-size:12px;line-height:1.4;color:$gray400;}
 .cart-item-ship span {float:right;color:$gray800;position:absolute;right:0;top:.5rem;}
 .cart-item-coupon {margin-left:calc(20% + 2rem);padding:.5rem 1rem;border:1px solid $gray100;box-sizing:border-box;color:$gray400;}

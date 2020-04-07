@@ -127,7 +127,7 @@ const domEvents = () => {
 
 window.addEventListener('hashchange', domEvents)
 window.addEventListener('hashchange', initailizePage)
-// window.addEventListener('hashchange', detectHeaderTheme)
+window.addEventListener('hashchange', detectHeaderTheme)
 
 function detectHeaderTheme() {
   const pageHeadElement = document.querySelector('.header')
@@ -151,7 +151,7 @@ function initailizePage() {
   navigationTrigger?.nextElementSibling?.classList.remove('is-visible')
 
   notifyThisPage()
-  // detectHeaderTheme()
+  detectHeaderTheme()
 }
 
 function notifyThisPage() {

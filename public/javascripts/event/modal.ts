@@ -10,6 +10,7 @@ const modal = ({ selector: trigger }: Parameter) => ({
   modalContainer: document.querySelector<HTMLElement>('#modal'),
   setEvent() {
     // require('./modal.scss');
+    document.removeEventListener('click', this.backHistory)
     if (!this.modals) return
 
     this.modals.forEach(modal => modal.addEventListener('click', event => {
@@ -39,10 +40,12 @@ const modal = ({ selector: trigger }: Parameter) => ({
           //   if(!isKeyEsc) return
           //   this.backHistory()
           // })
-          // document.addEventListener('click', () => {
-          //   if(!document.body.classList.contains('is-modal-visible')) return
-          //   this.backHistory()
-          // })
+          document.addEventListener('click', () => {
+            if(!document.body.classList.contains('is-modal-visible')) return
+            this.backHistory()
+          })
+
+          // document.addEventListener('click', this.backHistory)
 
           window.addEventListener('popstate', () => {
             if(!document.body.classList.contains('is-modal-visible')) return

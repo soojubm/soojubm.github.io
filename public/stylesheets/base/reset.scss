@@ -1,19 +1,22 @@
+@font-face {font-family: 'Arvana';src: url(/public/webfonts/Arvanav0.2-Regular.woff2); }
+
 @font-face {font-family: 'AritaDotum';src: url(/public/webfonts/AritaDotumMedium.woff); }
 // @font-face {font-family: 'AritaDotumBold';src: url(/public/webfonts/Arita-dotum-SemiBold_OTF.woff); }
-// @font-face {font-family: 'Asap';src: url(/public/webfonts/Asap-Regular.otf); }
-@font-face {font-family: 'Arvana';src: url(/public/webfonts/Arvanav0.2-Regular.woff2); }
+@font-face {font-family: 'Asap';src: url(/public/webfonts/Asap-Regular.otf); }
 // @font-face {font-family: 'DunkelSans';src: url(/public/webfonts/Dunkelsansv0.5-Heavy.woff2); }
-@import url('https://fonts.googleapis.com/css?family=Gothic+A1:300,400,700,900&display=swap&subset=korean');
+
+// @import url('https://fonts.googleapis.com/css?family=Gothic+A1:300,400,700,900&display=swap&subset=korean');
 // @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&display=swap');
 // @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap');
 // @import url('https://fonts.googleapis.com/css2?family=Lora:ital@1&display=swap');
+
 
 body,dl,dd,figure,blockquote,h1,h2,h3,h4,h5,h6,p,input[type=radio] {margin:0;}
 ul,ol,menu,fieldset,legend {margin:0;padding:0;}
 fieldset,iframe,img,hr {border:0 none} dl,ol,ul,menu {list-style:none}
 main {display:block;}
 iframe,img,video {width:100%;} /*img {vertical-align:middle;}*/
-h1,h2,h3,h4,h5,h6 {line-height:1.4;font-weight:normal;color:$gray800;}
+h1,h2,h3,h4,h5,h6 {line-height:1.4;font-weight:normal;color:$gray800;word-break:keep-all;}
 strong,b,th,legend {font-weight:normal;color:$gray800;}
 cite,i,address,em,dfn {font-style:normal;} em {color:$color-primary;} small {font-size:.9rem;} time {} del {color:$gray400;} abbr {text-decoration:none;}
 a {text-decoration:none;text-decoration-skip-ink:auto;color:$color-primary;} a:link,a:visited {} a:hover,a:focus {} a:active {}
@@ -24,8 +27,10 @@ u {text-decoration:none;position:relative;z-index:1;}
 u:after {content:'';height:1.5rem;border-radius:$radius400;background:#fb7800;display:block;position:absolute;left:0;right:0;bottom:0rem;z-index:-1;}
 
 code {padding:1rem 1.5rem;background:$gray100;border-radius:$radius400;}
-html {min-width:320px;height:100%;overflow-x:hidden;font:14px/1.8 'Arvana', 'AritaDotum', 'Apple SD Gothic Neo', sans-serif;color:$gray600;-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+html {min-width:320px;height:100%;overflow-x:hidden;font:14px/1.8 'Asap', 'AritaDotum', 'Apple SD Gothic Neo', sans-serif;color:$gray600;-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
 body {letter-spacing: -.0125rem;}
+
+h6 {margin:0 0 .5rem 0;font-size:12px;}
 
 table {width:100%;border-collapse:collapse;border-spacing:0;border-left-style:hidden;border-right-style:hidden;}
 table caption {padding:.5rem 0;font-size:12px;text-align:left;}
@@ -36,17 +41,17 @@ table tbody tr td {padding:13px 1rem 15px;border:1px solid #e9e9e6;border-left:n
 table .right {text-align:right;}
 
 ul {}
-ul li {margin:.125rem 0;padding: 0 0 0 1.25rem;position: relative;}
-ul li:before {content: '\25AA';display:inline-block;margin-right:.5rem;position:absolute;left:0;}
+ul li {margin:.125rem 0;padding: 0 0 0 1.25rem;position:relative;}
+ul li:before {content:'\25AA';position:absolute;left:0;}
 ul li ul {}
 ul li ul li {}
-ul li ul li:before {content: '\2013';}
+ul li ul li:before {content:'\2013';}
 
 ol {}
-ol li {margin:.125rem 0;padding: 0 0 0 1.25rem;position: relative;counter-increment: listitem;}
-ol li:before {content: counter(listitem) '.';margin-right:.5rem;position:absolute;left:0;}
+ol li {margin:.125rem 0;padding: 0 0 0 1.25rem;position:relative;counter-increment:listitem;}
+ol li:before {content: counter(listitem) '.';position:absolute;left:0;}
 ol li ol {}
-ol li ol li {counter-increment: sub-list-item;}
+ol li ol li {counter-increment:sub-list-item;}
 ol li ol li:before {content: counter(sub-list-item,lower-alpha) '.';}
 
 ::selection {background:$gray800;color:$gray0;}

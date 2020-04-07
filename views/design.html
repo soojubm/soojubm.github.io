@@ -11,65 +11,6 @@
     <a class="hero-cta primary-button">Call to Action</a>
     <img src="/public/images/blob-shape.svg" alt="" style="position:absolute;right:4rem;top:-6rem;width:25rem;">
   </section>
-  <!-- <div class="starfield">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-  <style>
-  .starfield {
-    user-select: none;
-    display: block;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    animation: fadein 15s;
-  }
-
-  .starfield > * {
-    background-size: 200px 200px;
-    background-image: radial-gradient(
-        2px 2px at 40px 60px,
-        #ccc,
-        rgba(0, 0, 0, 0)
-      ),
-      radial-gradient(2px 2px at 20px 50px, var(--white), rgba(0, 0, 0, 0)),
-      radial-gradient(2px 2px at 30px 100px, var(--white), rgba(0, 0, 0, 0)),
-      radial-gradient(2px 2px at 40px 60px, var(--white), rgba(0, 0, 0, 0)),
-      radial-gradient(2px 2px at 110px 90px, var(--white), rgba(0, 0, 0, 0)),
-      radial-gradient(2px 2px at 190px 150px, var(--white), rgba(0, 0, 0, 0));
-    background-repeat: repeat;
-    position: absolute;
-    top: -450%;
-    left: 0;
-    height: 1000%;
-    width: 100%;
-  }
-
-  .starfield > * {
-    transform-origin: 50% 50%;
-    animation-name: starfieldRotate;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-  }
-
-  .starfield > *:nth-child(1) {
-    animation-duration: 16s;
-  }
-  .starfield > *:nth-child(2) {
-    animation-duration: 20s;
-  }
-  .starfield > *:nth-child(3) {
-    animation-duration: 35s;
-  }
-  .starfield > *:nth-child(4) {
-    animation-duration: 55s;
-  }
-  .starfield > *:nth-child(5) {
-    animation-duration: 120s;
-  }
-  </style> -->
 
   <section class="design-body">
     <nav class="pagenav">
@@ -86,40 +27,12 @@
       <br />
       <p>기능 정의<br />스크롤스파이. 스크롤되면 고정(> mobile devices). 모바일에서 가로 정렬 후 좌우 스크롤.</p>
     </nav>
-    <!-- <style>
-      .card.is-vertical {width:auto;overflow:hidden;}
-      .card.is-vertical .card-thumbnail {float:left;margin-right:2rem;padding-top:0;width:240px;height:240px;border:2px solid #000;}
-      .card.is-vertical .card-thumbnail img {max-width:150%;max-height:150%;}
-      .card.is-vertical .card-tags {margin-left:-.25rem;}
-      .card.is-vertical .card-title {margin:0 0 .5rem 0;font-size:2rem;}
-      .card.is-vertical .card-date {margin:1rem 0 0 0;font-size:1rem;}
-    </style>
-    <div class="card is-vertical">
-      <figure class="card-thumbnail">
-        <img src="/public/images/unnamed.jpg">
-      </figure>
-      <img src="/public/images/star1.svg" alt="" style="position:absolute;left:-2rem;top:-2rem;width:80px;">
-      <div class="card-tags" role="group">
-        <span class="tag" style="font-size:1rem;">경제</span>
-      </div>
-      <h3 class="card-title">이자? 넣어둬, 넣어둬</h3>
-      <div>
-        <span>#기준금리</span>
-        <span>#한국은행</span>
-        <span>#경제</span>
-      </div>
-      <time class="card-date">
-        2020 03 21 금요일</b>
-      </time>
-      <div class="card-note">마일리지 적립 200P</div>
-      <button class="card-more icon-button" type="button"><i class="icon-more"></i></button>
-    </div> -->
-    
+
     <!-- <div role="textbox" contenteditable="true" aria-placeholder="5-digit zipcode" aria-labelledby="txtboxLabel">contentEditable</div>  -->
 
     <article class="design-article typography">
       <h1 class="design-article-title">Typhography</h1>
-      <!-- <button class="design-article-more">View All ></!-->
+      <button class="design-article-more">View All</button>
       <p class="design-article-description">하나의 무게Weight를 사용합니다.</p>
       <!-- <p>200 light / 400 normal / 700 bold</p> -->
       <div style="display:flex;">
@@ -371,8 +284,7 @@
     <article class="design-article button-article">
       <style>
         .design-article.button-article > div {margin:0 0 2rem 0;}
-        .design-article.button-article > div h2 {margin:0 0 .5rem 0;font-size:12px;}
-        .design-article.button-article button {width: 120px;}
+        .design-article.button-article button {}
         .design-article.button-article button.icon-button {width: 48px;}
         .dd {overflow:hidden;width:100%;}
         .dd button {float:left;}
@@ -380,7 +292,7 @@
       <h1 class="design-article-title">Buttons</h1>
       <p class="design-article-description">아톰Atom 단위의 컴포넌트는 클래스 네이밍 없이 자체 엘리먼트에 스타일링 된 요소들로 한정하고 리액트에서 스타일드 컴포넌트 단위가 된다.</p>
       <div>
-        <h2>Default Sizes</h2>
+        <h6>Default Sizes</h6>
         <div role="group">
           <button class="primary-button" type="button">Primary</button>
           <button class="secondary-button" type="button">Secondary</button>
@@ -404,7 +316,7 @@
         <button class="primary-button is-small" type="button">Next</button>
       </div> -->
       <div>
-        <h2>Small Buttons</h2>
+        <h6>Small Buttons</h6>
         <div role="group">
           <button class="primary-button is-small" type="button">Filled</button>
           <!-- <button class="danger-button is-small" type="button" aria-label="danger">Danger</button>

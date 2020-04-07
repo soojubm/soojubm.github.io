@@ -10,15 +10,16 @@ input, select, textarea {
   border-radius:0px;-webkit-border-radius:0;font:inherit;color:inherit;background:none;border:none;
 }
 select {-webkit-appearance:none;appearance:none;}
+
+input:focus,
+textarea:focus,
+select:focus {}
+
 button {padding:0;border:none;background:none;cursor:pointer;font:inherit;position:relative;}
 button > * {pointer-events:none;}
 button:not(:active),
 button:not(:focus) {outline:0;}
 // button:active {outline:0;animation:ripple2 0.2s linear forwards;}
-
-input:focus,
-textarea:focus,
-select:focus {}
 
 // todo::
 button.is-small {width:auto !important;min-width:72px !important;padding: .2rem 1rem .1rem!important;
@@ -27,6 +28,7 @@ button.is-addable {min-width:auto !important;height:32px;padding-right:40px !imp
 button.is-addable.is-added {background:$color-primary;border-color:$color-primary;color:$gray0;}
 button.is-addable .icon-plus {display:inline-block;background:$gray100;padding:12px;border-radius:4px;position:absolute;right:3px;top:3px;}
 button.is-addable .icon-close {display:inline-block;background:$gray100;padding:12px;border-radius:4px;position:absolute;right:3px;top:3px;}
+
 @mixin button {display:inline-block;min-width:104px;background:$color-primary;padding:$padding200;border-radius:$radius400;text-align:center;color:$gray0;cursor:pointer;position:relative;}
 
 .primary-button {@include button;background:$color-primary;border:1px solid $color-primary;color:$gray0;}
@@ -181,7 +183,7 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 .selectbox-indicator {position:absolute;right:16px;bottom:22px;}
 .textfield.is-small {padding:0 !important;font-size:12px !important;}
 .textfield.is-small .textfield-label {margin-bottom:0;}
-.textfield.is-small .textfield-input {padding:5px 1.25rem 6px;}
+.textfield.is-small .textfield-input {height:32px;padding:6px 1.25rem;}
 .textfield.is-inline.textfield {padding-left:5rem !important;}
 .textfield.is-inline .textfield-label {line-height:32px;position:absolute;left:0;top:0;}
 .textfield.is-inline .textfield-input {}
@@ -222,11 +224,11 @@ input[type=file] + label:after {display:none;}
 
 .file {}
 .file-title {}
-.file-helper {margin:4px 0 16px 0;}
+.file-helper {margin:.5rem 0 1rem;}
 .file-input {opacity:0;}
 .file-label {@extend .secondary-button;cursor:pointer;}
 .file-attachment {margin:2rem 0 0;}
-.file-attachment-title {margin:8px 0;font-size:$body;text-decoration:underline;}
+.file-attachment-title {margin:.5rem 0;font-size:$body;text-decoration:underline;}
 .file-attachment-helper {margin:-4px 0 0;}
 .file-attachment-list:after {content:'';display:block;clear:both;}
 .file-attachment-item {display:block;width:100%;background:$gray100;border-radius:$radius400;overflow:hidden;position:relative;}
