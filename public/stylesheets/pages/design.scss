@@ -11,15 +11,15 @@
 .color-item.is-primary100 div {background:#f2f8fc;}
 .color-item.is-primary200 div {background:$color-primary;}
 .color-item.is-gradient div {background-image:linear-gradient(106deg,#ff3a4e,#7e4cff);}
-.color-item div {width:48px;height:48px;border-radius:4px;background:$color-primary;position:relative;}
-.color-item figcaption {display:none;background:$gray0;border-radius:4px;letter-spacing:1px;overflow:hidden;padding:0 .5rem;font-size:10px;position:absolute;left:.5rem;bottom:.5rem;}
+.color-item div {width:48px;height:48px;border-radius:$radius400;background:$color-primary;position:relative;}
+.color-item figcaption {display:none;background:$gray0;border-radius:$radius400;letter-spacing:1px;overflow:hidden;padding:0 .5rem;font-size:10px;position:absolute;left:.5rem;bottom:.5rem;}
 .color-item figcaption span {display:block;transition:all .4s;}
 .color-item figcaption b {}
 
 .color-item:hover figcaption span {margin-top:-24px;}
 
 // 통일하기
-// .profile-head {height:240px;overflow:hidden;margin:0 0 3rem 0;padding:3rem 4rem;border-radius:4px;box-sizing:border-box;position:relative;}
+// .profile-head {height:240px;overflow:hidden;margin:0 0 3rem 0;padding:3rem 4rem;border-radius:$radius400;box-sizing:border-box;position:relative;}
 // .profile-head-headline {margin:0px auto .5rem;font-size:1.75rem;text-indent:-2px;color:$gray0;position:relative;}
 // .profile-head-description {width:50%;margin:0 0 2rem 0;color:$gray0;position: relative;}
 // .profile-head-share {@extend .tertiary-button;}
@@ -65,9 +65,9 @@
 .pagenav-link i {display:flex;align-items:center;justify-content:center;margin-right:1rem;background:$gray100;}
 
 
-.user {max-width:320px;padding:2rem 0 0;border-radius:4px;box-shadow:$shadow400;text-align:center;}
+.user {max-width:320px;padding:2rem 0 0;border-radius:$radius400;box-shadow:$shadow400;text-align:center;}
 .user-avatar {position:relative;}
-.user-avatar-change {width:32px;height:32px;border-radius:4px;position:absolute;right:-8px;bottom:-8px;}
+.user-avatar-change {width:32px;height:32px;border-radius:$radius400;position:absolute;right:-8px;bottom:-8px;}
 .user-name {font-size:$subhead;color:$gray800;}
 .user-email {display:block;margin:-.25rem 0 0 0;}
 .user-email + button {display:block;width:100%;margin:1.5rem 0 0 0;padding:1rem 0;border-top:1px solid $gray100;border-bottom:1px solid $gray100;}

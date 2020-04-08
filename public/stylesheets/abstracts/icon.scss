@@ -37,7 +37,7 @@
 
 
 
-.icon-caret {display:inline-block;width:0;height:0;border-top:4px solid $gray800;border-left:4px solid transparent;border-right:4px solid transparent;border-radius:4px;vertical-align:middle;}
+.icon-caret {display:inline-block;width:0;height:0;border-top:4px solid $gray800;border-left:4px solid transparent;border-right:4px solid transparent;border-radius:$radius400;vertical-align:middle;}
 .icon-caret.is-left {transform:rotate(90deg);}
 .icon-caret.is-right {transform:rotate(-90deg);}
 // .icon-caret {width:32px;height:32px;position:relative;}

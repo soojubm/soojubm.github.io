@@ -1,0 +1,5 @@
+.faq {margin:0 10%;}
+.faq-item {padding:2rem 5%;/*border-top:1px solid $gray800;border-bottom:1px solid $gray800;*/}
+.faq-item + .faq-item {border-top:none;}
+.faq-item-question {margin:0 0 1rem 0;font-size:1rem;text-decoration:underline;}
+.faq-item-answer {}

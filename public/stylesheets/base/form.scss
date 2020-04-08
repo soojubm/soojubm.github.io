@@ -1,33 +1,37 @@
 // button:before {content:'';display:block;width:8px;height:8px;background:rgba(0,0,0,.2);position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);opacity:0;}
 // button:active:before {width:100%;height:100%;animation:ripple .6s;}
 
-// button, input, textarea, select {border-radius:0px;-webkit-appearance:none;-moz-appearance:none;appearance:none;font:inherit;color:inherit;}
+// button, input, textarea, select {
+//   border-radius:0px;
+//   -webkit-appearance:none;-moz-appearance:none;appearance:none;
+//   font:inherit;color:inherit;
+// }
 
-
-input::-ms-clear {display:none;}
-input, textarea {-webkit-appearance:none;-webkit-border-radius:0}
 input, select, textarea {
-  border-radius:0px;-webkit-border-radius:0;font:inherit;color:inherit;background:none;border:none;
+  // border-radius:0px;
+  // -webkit-border-radius:0;
+  // color:inherit;
+  // font:inherit;
 }
-select {-webkit-appearance:none;appearance:none;}
-
 input:focus,
 textarea:focus,
 select:focus {}
 
+input::-ms-clear {display:none;}
+select {-webkit-appearance:none;appearance:none;}
 button {padding:0;border:none;background:none;cursor:pointer;font:inherit;position:relative;}
 button > * {pointer-events:none;}
 button:not(:active),
 button:not(:focus) {outline:0;}
-// button:active {outline:0;animation:ripple2 0.2s linear forwards;}
+button:active {outline:0;animation:ripple2 0.2s linear forwards;}
 
 // todo::
 button.is-small {width:auto !important;min-width:72px !important;padding: .2rem 1rem .1rem!important;
   height: 32px;font-size:12px !important;}
 button.is-addable {min-width:auto !important;height:32px;padding-right:40px !important;text-align:left;}
 button.is-addable.is-added {background:$color-primary;border-color:$color-primary;color:$gray0;}
-button.is-addable .icon-plus {display:inline-block;background:$gray100;padding:12px;border-radius:4px;position:absolute;right:3px;top:3px;}
-button.is-addable .icon-close {display:inline-block;background:$gray100;padding:12px;border-radius:4px;position:absolute;right:3px;top:3px;}
+button.is-addable .icon-plus {display:inline-block;background:$gray100;padding:12px;border-radius:$radius400;position:absolute;right:3px;top:3px;}
+button.is-addable .icon-close {display:inline-block;background:$gray100;padding:12px;border-radius:$radius400;position:absolute;right:3px;top:3px;}
 
 @mixin button {display:inline-block;min-width:104px;background:$color-primary;padding:$padding200;border-radius:$radius400;text-align:center;color:$gray0;cursor:pointer;position:relative;}
 
@@ -96,6 +100,7 @@ input[type=number]::-webkit-outer-spin-button {-webkit-appearance:none;}
 input[type=date] {max-height:48px;}  // 패딩으로 설정한 세로값 크롬에서(only?) 다른 텍스트 필드와 달라짐.
 input[type=date]::-webkit-calendar-picker-indicator {width:100%;opacity:0;position:absolute;left:0;bottom:0;}
 input[type=date]::-webkit-inner-spin-button {display:none;}
+input[type=email]:invalid {border-color:crimson;}
 
 // rem 으로 모듈화하기 어렵다. ex 1.5rem => top:0.125rem
 // line-heght로 리셋스타일에 종속되지 않도록 함. + block // height 테이블 내에서 세로 정렬에 필요
@@ -133,12 +138,10 @@ input[type=radio]:checked + label + input,
 input[type=checkbox]:checked + label + input {display:block;margin:0.75rem 0 1.5rem 0px;}
 
 .range {}
-.range input[type=range] {width:100%;height:8px;background:$gray100;}
-.range input[type=range]::-webkit-slider-thumb {appearance:none;-webkit-appearance:none;width:16px;height:16px;padding:4px;background:$color-positive;border-radius:$radius400;cursor:pointer;}
+.range input[type=range] {width:100%;height:8px;background:$gray100;appearance:none;}
+.range input[type=range]::-webkit-slider-thumb {appearance:none;width:16px;height:16px;padding:4px;background:$color-positive;border-radius:$radius400;cursor:pointer;}
 .range input[type=range]:focus::-webkit-slider-thumb {transform:scale(1.25);box-shadow:0 0 0 0.25rem rgba(0,153,255,0.3), 0 0.125rem 0.5rem rgba(0,0,0,0.1);}
-// ::-webkit-slider-runnable-track
-// ::-moz-range-thumb
-// ::-ms-thumb
+
 
 .switch {display:block;position:relative;}
 input[type=checkbox][role=switch] + label {display:block;height:20px;padding-left:64px;line-height:20px;cursor:pointer;}
@@ -153,23 +156,17 @@ input[type=checkbox][role=switch]:disabled:checked + label {color:$color-primary
 input[type=checkbox][role=switch]:disabled:checked + label:before {background:$color-primary;}
 input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 
-.switch-wrap {display:inline-block;width:32px;height:32px;overflow:hidden;margin-top:7px;margin-left:1rem;cursor:pointer;}
-.day {display:block;transition:all .4s ease;position:absolute;top:0;transition:all .4s ease .3s;}
-.night {display:block;position:absolute;top:32px;transition:all .4s ease 0s;}
-.darkmode .day {top:32px;transition:all .4s ease 0s;}
-.darkmode .night {top:0;transition:all .4s ease .3s;}
-
-
 .textfield {margin:0px 0;position:relative;}
 .textfield-label {display:block;margin:0 0 0.25rem 0;}
 .textfield-icon {width:48px;height:48px;line-height:46px;text-align:center;position:absolute;left:0;}
 .textfield-icon i {display:inline-block;font-size:19px;vertical-align:middle;opacity:0.4;}
 .textfield-icon + .textfield-input {padding-left:48px;}
-.textfield-input {display:block;width:100%;padding:$padding200;padding-right:40px;background:$gray100;border:1px solid $gray100;border-radius:4px;box-sizing:border-box;font:inherit;color:$gray800;-webkit-appearance:none;appearance:none;transition:all 0.2s;}
+.textfield-input {display:block;width:100%;padding:$padding200;padding-right:40px;background:$gray100;border:1px solid $gray100;border-radius:$radius400;box-sizing:border-box;font:inherit;color:$gray800;/*-appearance:none;*/transition:all 0.2s;}
 .textfield-input:not(select):read-only {background:none;padding-left:0;padding-right:0;border:none;outline:none;}
 .textfield-input:not(select):read-only::placeholder {color:$gray800;}
 .textfield-input:focus {background:$gray0;border-color:$gray200;box-shadow:$shadow100;outline:0;}
 .textfield-input.-textarea {height:auto;}
+.textfield-input.-selectbox {height:auto;}
 .textfield-input.-inline {display:inline;width:80px;padding:2px 12px;}
 .textfield-unit {width:40px;height:46px;padding:0 16px;line-height:50px;text-align:right;color:rgba(0, 0, 0, 0.4);position:absolute;right:0;bottom:0;}
 .textfield-helper {display:block;margin-top:.25rem;color:$color-negative;}
@@ -202,13 +199,19 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 .is-invalid .textfield-byte {color:$color-negative;}
 .is-invalid .textfield-byte b {color:$color-negative;}
 
-input[type=email]:invalid {border-color:crimson;}
+
+.switch-wrap {display:inline-block;width:32px;height:32px;overflow:hidden;margin-top:7px;margin-left:1rem;cursor:pointer;}
+.day {display:block;transition:all .4s ease;position:absolute;top:0;transition:all .4s ease .3s;}
+.night {display:block;position:absolute;top:32px;transition:all .4s ease 0s;}
+.darkmode .day {top:32px;transition:all .4s ease 0s;}
+.darkmode .night {top:0;transition:all .4s ease .3s;}
+
 
 .boxed-form {}
 .boxed-form h4 {margin:2rem 0 0.75rem 0;}
 .boxed-form div {background:$gray0;padding:$padding400;border:1px solid #e9e9e6;}
-.boxed-form div:nth-of-type(1) {border-radius:4px;border-bottom-left-radius:0;border-bottom-right-radius:0;}
-.boxed-form div:nth-last-of-type(1) {border-radius:4px;border-top-left-radius:0;border-top-right-radius:0;}
+.boxed-form div:nth-of-type(1) {border-radius:$radius400;border-bottom-left-radius:0;border-bottom-right-radius:0;}
+.boxed-form div:nth-last-of-type(1) {border-radius:$radius400;border-top-left-radius:0;border-top-right-radius:0;}
 .boxed-form div label {margin:0;color:$gray400;}
 .boxed-form div input {margin-top:-2px;padding:0;background:inherit;border:none;}
 
@@ -218,6 +221,9 @@ input[type=email]:invalid {border-color:crimson;}
 .filter-fieldset-legend {line-height:1;position:absolute;top:0;}
 .filter-fieldset-description {margin:0 0 8px 0;}
 
+
+
+// file
 input[type=file] {width:0;height:0;opacity:0;position:absolute;}
 input[type=file] + label {display:inline-block;}
 input[type=file] + label:after {display:none;}
@@ -250,21 +256,7 @@ input[type=file] + label:after {display:none;}
 .variation-increment.is-disabled {opacity:.5;cursor:not-allowed;}
 
 
-[aria-haspopup=true] {} // dialog . menu, grid, listbox, tree
-[aria-pressed=true] {} // 음소거 등
-[aria-modal=true] {}
-[aria-label=close] {}
-[aria-hidden=true] {width:1px;height:1px;clip:rect(1px 1px 1px 1px);overflow:hidden;position:absolute;user-select:none;} // if(true) 리더기가 무시.
-[aria-hidden=false] {width:1px;height:1px;clip:rect(1px 1px 1px 1px);overflow:hidden;position:absolute;user-select:none;}
-[role=listitem] {}
-
-
-
-// input:invalid {box-shadow: 0 0 5px 1px red;}
-// input:focus:invalid {box-shadow: none;}
-
-
-
+// date
 .calendar {
   width: 250px;
   --date-width: 32px;
@@ -277,8 +269,8 @@ input[type=file] + label:after {display:none;}
   line-height: 32px;
 }
 .calendar-navigation {display:flex;position:absolute;right:0;top:0;font-size:12px}
-.calendar-navigation-prev {width:var(--date-width);height:var(--date-width);margin-right:4px;background:var(--date-background);border-radius:4px;}
-.calendar-navigation-next {width:var(--date-width);height:var(--date-width);background:var(--date-background);border-radius:4px;}
+.calendar-navigation-prev {width:var(--date-width);height:var(--date-width);margin-right:4px;background:var(--date-background);border-radius:$radius400;}
+.calendar-navigation-next {width:var(--date-width);height:var(--date-width);background:var(--date-background);border-radius:$radius400;}
 .calendar-head {margin-top: .5rem !important;
   display: grid !important;
   grid-template-columns: repeat(7, 1fr) !important;
@@ -289,7 +281,7 @@ input[type=file] + label:after {display:none;}
   display: flex;
   justify-content: center;
   align-items: center;
-  width:var(--date-width);height:var(--date-width);border-radius:4px;
+  width:var(--date-width);height:var(--date-width);border-radius:$radius400;
 }
 .calendar-body {
   display: grid !important;
@@ -300,7 +292,7 @@ input[type=file] + label:after {display:none;}
   display: flex;
   justify-content: center;
   align-items: center;
-  width:var(--date-width);height:var(--date-width);border-radius:4px;background:#eee;font-size:12px;
+  width:var(--date-width);height:var(--date-width);border-radius:$radius400;background:#eee;font-size:12px;
   cursor: pointer;
   &:hover {
     background: $color-primary;

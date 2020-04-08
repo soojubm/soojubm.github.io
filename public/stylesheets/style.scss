@@ -42,6 +42,7 @@
 @import 'pages/help';
 @import 'pages/music';
 @import 'pages/login';
+@import 'pages/faq';
 
 .letter-piece {float:left;display:block;width:48px;height:64px;line-height:64px;box-shadow:1px 1px 0px rgba(0,0,0,.1);font-size:32px;text-align:center;position:relative;}
 .letter-piece i {position:relative;z-index:2;}
@@ -122,7 +123,7 @@
 }
 
 
-.avatar {display:inline-block;width:32px;height:32px;overflow:hidden;border-radius:4px;position:relative;}
+.avatar {display:inline-block;width:32px;height:32px;overflow:hidden;border-radius:$radius400;position:relative;}
 .avatar.is-small {width:16px;height:16px;}
 .avatar.is-medium {width:48px;height:48px;}
 .avatar.is-large {width:80px;height:80px;}
@@ -191,14 +192,14 @@
 .slider-arrows button.is-disabled {opacity:.2;}
 
 
-.dialog {max-width:320px;margin:1rem 0;padding:1.5rem 2rem 0;border-radius:4px;box-sizing:border-box;box-shadow:$shadow400;text-align:center;position:relative;}
+.dialog {max-width:320px;margin:1rem 0;padding:1.5rem 2rem 0;border-radius:$radius400;box-sizing:border-box;box-shadow:$shadow400;text-align:center;position:relative;}
 .dialog-title {margin:-.25rem 0 .125rem 0;color:$gray800;font-size:$subhead;}
 .dialog-footer {display:flex;margin:2rem -2rem 0;border-top:1px solid $gray100}
 .dialog-footer button {width:50%;}
-.dialog-footer button:not(:nth-of-type(3)) {border-radius:4px;}
+.dialog-footer button:not(:nth-of-type(3)) {border-radius:$radius400;}
 
 
-.quote {max-width:320px;padding:2rem;border-radius:4px;box-sizing:border-box;box-shadow:$shadow400;background:$gray0;}
+.quote {max-width:320px;padding:2rem;border-radius:$radius400;box-sizing:border-box;box-shadow:$shadow400;background:$gray0;}
 .quote-avatar {}
 .quote-body {}
 .quote-byline {margin:1rem 0 0 0;}
@@ -206,7 +207,7 @@
 .quote-byline div + div {color:$gray400;}
 
 
-.offline {display:none;max-width:320px;margin:0 auto;padding:.5rem 1rem;border-radius:4px;background:$color-negative;text-align:center;position:fixed;left:10%;right:10%;top:45%;z-index:8;}
+.offline {display:none;max-width:320px;margin:0 auto;padding:.5rem 1rem;border-radius:$radius400;background:$color-negative;text-align:center;position:fixed;left:10%;right:10%;top:45%;z-index:8;}
 .offline p {color:$gray0;}
 
 .skeleton-screen:empty{
@@ -261,7 +262,7 @@
 .features header h2 {margin:0 0 1rem 0;font-size:3rem;}
 .features header p {color:#333;}
 .features-item {width:320px;margin:0 2.5%;}
-.features-item-avatar {border-radius:4px;font-size:3rem;}
+.features-item-avatar {border-radius:$radius400;font-size:3rem;}
 .features-item-title {font-size:$subhead;}
 .features-item-description {margin-top:1rem;}
 .features-item-link {display:block;margin-top:1rem;}

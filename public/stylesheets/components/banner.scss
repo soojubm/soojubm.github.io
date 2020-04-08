@@ -1,4 +1,4 @@
-.banner {width:80%;margin:0 auto;padding:2rem 0;border-radius:4px;background:$gray800;text-align:center;position:relative;z-index:4;}
+.banner {width:80%;margin:0 auto;padding:2rem 0;border-radius:$radius400;background:$gray800;text-align:center;position:relative;z-index:4;}
 .banner-image {margin:0 1rem 0 -4rem;}
 .banner-text {display:inline-block;margin:0 2rem 0 0;font-size:$subhead;color:$gray0;}
 .banner-button {}

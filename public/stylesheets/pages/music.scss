@@ -5,7 +5,7 @@
 .album-list-date {color:$gray0;}
 .album-list-title {margin:0 0 .5rem 0;font-size:32px;line-height:1.2;color:$gray0;}
 .album-list-artist {color:$gray0;}
-.album-list-cover {width:400px;height:400px;margin:2rem auto 1.5rem;border-radius:4px;}
+.album-list-cover {width:400px;height:400px;margin:2rem auto 1.5rem;border-radius:$radius400;}
 
 .album-track {padding:9rem 0 0 0;color:$gray0;}
 .album-track-title {margin:0 0 .5rem 0;font-size:$subhead;color:inherit;}

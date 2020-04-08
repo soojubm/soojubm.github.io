@@ -96,7 +96,7 @@
 .review-item-time {font-size:12px;}
 
 
-.product-brand {border-radius:4px;}
+.product-brand {border-radius:$radius400;}
 
 .product-review {margin:4rem 10% 8rem;position:relative;}
 .product-review-eyebrow {}
@@ -108,8 +108,8 @@
 .product-review-list .inner .quote-body {white-space:wrap;}
 
 .product-review-arrows {display:flex;position:absolute;right:0;top:0;}
-.product-review nav .prev {background:$color-primary;border-radius:4px;/*position:absolute;left:-24px;top:50%;*/}
-.product-review nav .next {background:$color-primary;border-radius:4px;/*position:absolute;right:-24px;top:50%;*/}
+.product-review nav .prev {background:$color-primary;border-radius:$radius400;/*position:absolute;left:-24px;top:50%;*/}
+.product-review nav .next {background:$color-primary;border-radius:$radius400;/*position:absolute;right:-24px;top:50%;*/}
 
 
 .product-detail {}

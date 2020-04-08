@@ -4,7 +4,7 @@
 .timeline-item {padding:0 0 40px 0;position:relative;}
 .timeline-item:before {content:'';display:block;position:absolute;left:23px;top:0;bottom:0;width:1px;background:$gray200;}
 .timeline-item-head {padding:0 0 0 64px;position:relative;}
-.timeline-item-head-icon {display:block;width:48px;height:48px;line-height:48px;border-radius:4px;background:$gray800;position:absolute;left:0;top:0;}
+.timeline-item-head-icon {display:block;width:48px;height:48px;line-height:48px;border-radius:$radius400;background:$gray800;position:absolute;left:0;top:0;}
 .timeline-item-head-title {line-height:46px;padding:0 24px;border:1px solid $gray800;font-size:14px;}
 .timeline-item-head-note {font-size:24px;color:#409eff;position:absolute;right:0px;top:50%;transform:translateY(-43%);}
 .timeline-item-body {padding:0 0 0 64px;}
