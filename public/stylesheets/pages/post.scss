@@ -45,7 +45,7 @@ body.is-sticky {padding-top:200px;}
 
 .post-foot {padding:0 0 0 0;}
 .post-hashtag {display:flex;margin:2rem 0 2rem 0px;}
-.post-hashtag-item {display:block;margin:0 4px 4px 0px;padding:0 1rem !important;border-radius:2px;font-size:12px;}
+.post-hashtag-item {display:block;margin:0 4px 4px 0px;padding:0 1rem !important;border-radius:$radius400;font-size:12px;}
 .post-share {margin:3rem 0 2rem;
 	// position: fixed;
 	// left: 50%;

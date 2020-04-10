@@ -29,6 +29,7 @@
 .navbar-user-cart i {display:inline-block;min-width:18px;height:18px;line-height:18px;margin:0 0 0 2px;border-radius:10px;vertical-align:middle;padding:0 4px;box-sizing:border-box;background:$gray800;text-align:center;font-size:12px;color:$gray0;}
 .navbar-user-search {position:relative;}
 .navbar-user-search-trigger {display:flex;justify-content:center;align-items:center;width:32px;height:32px;background:$gray100;border-radius:$radius400;position:relative;z-index:5;}
+.navbar-user-search-trigger img {width:20px;pointer-events:none;;}
 .navbar-user-search-trigger:after {content:'';display:block;position:absolute;left:-.5rem;right:-.5rem;top:-.5rem;bottom:-.5rem;}
 .navbar-user-search-trigger:hover {background:$gray100;}
 .navbar-user-search a i {vertical-align:middle;color:$gray800;}
@@ -47,6 +48,7 @@
 .navbar-user-notification-trigger {display:flex;justify-content:center;align-items:center;width:32px;height:32px;background:$gray100;border-radius:$radius400;}
 .navbar-user-notification-trigger:hover {background:$gray100;}
 .navbar-user-notification-trigger i {vertical-align:middle;color:$gray800;}
+.navbar-user-notification-trigger img {width:20px;pointer-events:none;}
 .navbar-user-notification-trigger em {display:block;width:.5rem;height:.5rem;border-radius:50%;border:1px solid $gray0;box-sizing:border-box;background:$color-negative;text-indent:-9999px;position:absolute;right:.5rem;top:.5rem;}
 .navbar-user-notification-menu {width:320px;height:0;padding:.5rem 0;box-sizing:border-box;border-radius:$radius400;background:$gray0;box-shadow:$shadow400;position:absolute;top:40px;right:-46px;z-index:4;transform:scale(0);transform-origin:right top}
 .navbar-user-notification-menu.is-visible {height:auto;transform:scale(1);}
@@ -60,10 +62,10 @@
 
 .navbar-user-account {position:relative;}
 .navbar-user-account-trigger {display:flex;justify-content:center;align-items:center;height:32px;}
-.navbar-user-account-trigger span {float:left;display:block;width:32px;height:32px;overflow:hidden;border-radius:$radius400;background:$color-primary;position:relative;}
+.navbar-user-account-trigger span {float:left;display:block;width:32px;height:32px;overflow:hidden;border-radius:$radius400;background:$color-primary;position:relative;pointer-events:none;}
 .navbar-user-account-trigger span img {width:auto;height:32px;position:absolute;}
-.navbar-user-account-trigger i {float:left;display:block;margin:0 0 0 8px;}
-.navbar-user-account-menu {width:200px;height:0;padding:.5rem 0;box-sizing:border-box;border-radius:$radius400;background:$gray0;box-shadow:$shadow400;position:absolute;top:40px;right:0;z-index:4;transform:scale(0);transform-origin:right top;}
+.navbar-user-account-trigger i {float:left;display:block;margin:0 0 0 8px;width:20px;pointer-events:none;}
+.navbar-user-account-menu {width:320px;height:0;padding:.5rem 0;box-sizing:border-box;border-radius:$radius400;background:$gray0;box-shadow:$shadow400;position:absolute;top:40px;right:0;z-index:4;transform:scale(0);transform-origin:right top;}
 .navbar-user-account-menu:before {content:'';display:block;position:absolute;left:50%;right:0;top:-8px;bottom:0;z-index:0;}
 .navbar-user-account-menu-title {padding:.5rem 1rem;font-size:12px;}
 .navbar-user-account-menu-item {display:block;padding:.25rem 1rem;font-size:12px;color:$gray600;position:relative;z-index:1;}

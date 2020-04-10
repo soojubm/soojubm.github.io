@@ -131,6 +131,9 @@
         <a href="" class="avatar">
           <img src="/public/images/caleb-woods-182648-unsplash.jpg" alt="" />
         </a>
+        <a href="" class="avatar is-small" style="width:22px;height:22px;">
+          <img src="/public/images/caleb-woods-182648-unsplash.jpg" alt="" />
+        </a>
         <a href="" class="avatar is-small">
           <img src="/public/images/caleb-woods-182648-unsplash.jpg" alt="" />
         </a>
@@ -210,23 +213,23 @@
       <h1 class="design-article-title">Lists</h1>
       <p class="design-article-description">군집을 이루는 엘리먼트라면 모두 리스트로 취급될 수 있으니 주의하요. 리스트업된 텍스트 노드만 리스트 태그로 마크업.</p>
       <ul class="list-sample">
-        <li>unordered list, level 1
+        <li title="unordered list, level 1">순서가 없는 리스트, 1레벨
           <ul>
-            <li>unordered list, level 2</li>
-            <li>unordered list, level 2</li>
+            <li title="unordered list, level 2">순서가 없는 리스트, 2레벨</li>
+            <li>순서가 없는 리스트, 2레벨</li>
           </ul>
         </li>
-        <li>unordered list, level 1</li>
+        <li>순서가 없는 리스트, 1레벨</li>
       </ul>
       <hr style="margin: 1rem 0;" />
       <ol class="list-sample">
-        <li>ordered list, level 1
+        <li>순서가 있는 리스트, 1레벨
           <ol>
-            <li>ordered list, level 2</li>
-            <li>ordered list, level 2</li>
+            <li>순서가 있는 리스트, 2레벨</li>
+            <li>순서가 있는 리스트, 2레벨</li>
           </ol>
         </li>
-        <li>ordered list, level 1</li>
+        <li>순서가 있는 리스트, 1레벨</li>
       </ol>
       <hr style="margin: 1rem 0;" />
       <dl class="row1 is-pull" style="margin:0 0 .5rem 0;">
@@ -293,10 +296,10 @@
       <div>
         <h6>Default Sizes</h6>
         <div role="group">
-          <button class="primary-button" type="button">Primary</button>
-          <button class="secondary-button" type="button">Secondary</button>
-          <button class="tertiary-button" type="button">Tertiary</button>
-          <button class="ghost-button" type="button">Text</button>
+          <button class="primary-button" type="button">프라이머리</button>
+          <button class="secondary-button" type="button">세컨더리</button>
+          <button class="tertiary-button" type="button">터시어리</button>
+          <button class="ghost-button" type="button">텍스트</button>
           <!-- <button class="danger-button" type="button" aria-label="danger">Danger</button>
           <button class="success-button" type="button" aria-label="success">Success</button> -->
         </div>
@@ -317,12 +320,12 @@
       <div>
         <h6>Small Buttons</h6>
         <div role="group">
-          <button class="primary-button is-small" type="button">Filled</button>
+          <button class="primary-button is-small" type="button">프라이머리</button>
           <!-- <button class="danger-button is-small" type="button" aria-label="danger">Danger</button>
           <button class="success-button is-small" type="button" aria-label="danger">Success</button> -->
-          <button class="secondary-button is-small" type="button">Secondary</button>
-          <button class="tertiary-button is-small" type="button">tertiary</button>
-          <button class="ghost-button is-small" type="button">Text</button>
+          <button class="secondary-button is-small" type="button">세컨더리</button>
+          <button class="tertiary-button is-small" type="button">터시어리</button>
+          <button class="ghost-button is-small" type="button">텍스트</button>
         </div>
       </div>
       <!-- <div>
@@ -352,20 +355,20 @@
       <p class="design-article-description">checkbox, checkall, intermediate</p>
       <div class="checkbox">
         <input class="js-checkall" type="checkbox" id="line00" value="" />
-        <label for="line00">Check All</label>
+        <label for="line00" title="Check All">전체 선택</label>
       </div>
       <hr />
       <div class="checkbox">
         <input class="js-check" type="checkbox" id="line01" value="" checked />
-        <label for="line01">Everyday is like sunday</label>
+        <label for="line01" title="Everyday is like sunday">매일매일이 일요일 같아</label>
       </div>
       <div class="checkbox">
         <input class="js-check" type="checkbox" id="line03" value="" checked disabled />
-        <label for="line03">Everyday is like sunday</label>
+        <label for="line03" title="Everyday is like sunday">매일매일이 일요일 같아</label>
       </div>
       <div class="checkbox textfiled">
         <input class="js-check" type="checkbox" id="other" name="interest" value="other">
-        <label for="other">Other</label>
+        <label for="other">기타</label>
         <input type="text" name="other" class="textfield-input" placeholder="다른 거 뭔지 입력해주세요.">
       </div>
     </article>
@@ -377,16 +380,16 @@
       <fieldset role="radiogroup">
         <div class="radio">
           <input type="radio" id="gender-man" name="gender" value="" checked>
-          <label for="gender-man">Video Killed the Radio Button</label>
-          <p class="radio-helper">My email campaigns are meant to be seen by the public.</p>
+          <label for="gender-man" title="Video Killed the Radio Button">비디오는 라디오 버튼을 죽여요</label>
+          <p class="radio-helper">선택한 버튼에 대한 보조 텍스트를 제공합니다.</p>
         </div>
         <div class="radio">
           <input type="radio" id="gender-women" name="gender" value="">
-          <label for="gender-women">Video Killed the Radio Button</label>
+          <label for="gender-women" title="Video Killed the Radio Button">비디오는 라디오 버튼을 죽여요</label>
         </div>
         <div class="radio">
           <input type="radio" id="gender-etc" name="gender2" value="" checked disabled>
-          <label for="gender-etc">Video Killed the Radio Button</label>
+          <label for="gender-etc" title="Video Killed the Radio Button">비디오는 라디오 버튼을 죽여요</label>
         </div>
       </fieldset>
     </article>
@@ -396,11 +399,11 @@
       <p class="design-article-description">on/off 설정 등에 사용합니다.</p>
       <span class="switch" style="margin: 0 0 .75rem 0;">
         <input type="checkbox" id="switch1" name="" role="switch" value="on" checked />
-        <label for="switch1">Receive weekly newsletter</label>
+        <label for="switch1" title="Receive weekly newsletter">주간 뉴스레터 받아보기</label>
       </span>
       <span class="switch">
         <input type="checkbox" id="switch2" name="" role="switch" value="off" disabled />
-        <label for="switch2">Receive weekly newsletter</label>
+        <label for="switch2" title="Receive weekly newsletter">주간 뉴스레터 받아보기</label>
       </span>
     </article>
     <article class="design-article">
@@ -653,7 +656,7 @@
 
       <div class="user">
         <div class="user-avatar avatar is-large" style="overflow:none;">
-          <img src="/public/images/caleb-woods-182648-unsplash.jpg" alt="" />
+          <img src="/public/images/soo.png" alt="" />
           <div class="user-avatar-change"></div>
         </div>
         <div class="user-name">soojubm</div> 

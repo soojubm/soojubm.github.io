@@ -1,14 +1,14 @@
 .profile {max-width:1622px;margin:0 auto;padding:4rem 1rem;box-sizing:border-box;position:relative;}
-.profile-head {@extend .hero;margin:0 0 3rem 0 !important;}
-.profile-head-background {@extend .hero-background;background:url('/public/images/caleb-woods-182648-unsplash.jpg') no-repeat center center;background-size:cover;}
-.profile-head-headline {@extend .hero-title;position:relative;}
-.profile-head-description {@extend .hero-description;position:relative;}
-.profile-head-share {@extend .tertiary-button;}
-.profile-head-temp {position:absolute;left:65%;top:3.25rem;}
-.profile-head h5 {margin:0 0 1rem 0;color:#fff;}
+// .profile-head {@extend .hero;margin:0 0 3rem 0 !important;}
+// .profile-head-background {@extend .hero-background;background:url('/public/images/caleb-woods-182648-unsplash.jpg') no-repeat center center;background-size:cover;}
+// .profile-head-headline {@extend .hero-title;position:relative;}
+// .profile-head-description {@extend .hero-description;position:relative;}
+// .profile-head-share {@extend .tertiary-button;}
+// .profile-head-temp {position:absolute;left:65%;top:3.25rem;}
+// .profile-head h5 {margin:0 0 1rem 0;color:#fff;}
 
 .profile-user {float:left;width:320px;box-sizing:border-box;position:relative;z-index:1;}
-.profile-user-avatar {float:right;width:80px;height:80px;border-radius:$radius400;background:url('/public/images/caleb-woods-182648-unsplash.jpg') no-repeat center center;background-size:cover;transition:all 0.4s ease;}
+.profile-user-avatar {float:right;width:80px;height:80px;border-radius:$radius400;background:url('/public/images/soo.png') no-repeat center center;background-size:contain;transition:all 0.4s ease;}
 .profile-user-avatar:hover {box-shadow:$shadow450;}
 .profile-user-name {font-size:$subhead;line-height:1.4;color:$gray800;}
 .profile-user-id {display:block;color:$gray400;}
@@ -116,38 +116,28 @@
 // padding-top: 20%;
 // }
 
-@media (max-width:1800px) {
-  .profile {max-width:1305px;}
+@media (max-width:1680px) {
+  .profile {max-width:906px;}
+  .profile-user {float:none;width:100%;margin:0px auto 0;box-sizing:border-box;}
+  .profile-body {margin:0 auto;padding-left:0;}
+
+  .profile-user-toggle {display:block;}
+  .profile-user-info {display:none;}
+  .profile-user-info.is-visible {display:block;}
 }
 
-@media (max-width:$breakpoint-large) {
-  .profile-user {float:none;width:890px;margin:0px auto 0;box-sizing:border-box;}
-  .profile-body {width:890px;margin:0 auto;padding-left:0;}
-}
 
 @media (max-width:$breakpoint-small) {
-  .profile {padding:2rem 5%;}
-
-  .profile-head {height:auto;margin-left:5%;margin-right:5%;padding:2rem 5% 3rem;border-radius:0;}
-  .profile-head-background {max-width:100%;}
-  .profile-head-headline {}
-  .profile-head-description {width:100%;}
-  .profile-head-share {bottom:auto;}
-  .profile-user-toggle {display:block;}
+  .profile {max-width:572px;padding:2rem 5%;}
   .profile-user-career {margin-top:3px}
   .profile-user-avatar {width:64px;height:64px;}
   .profile-user-description {margin:1rem 0;}
   .profile-user-id {margin-top:-2px;}
-  .profile-user-info {display:none;}
-  .profile-user-info.is-visible {display:block;}
 
-  .profile-user {width:572px;}
-  .profile-body {width:572px;}
+  // .profile-head {height:auto;margin-left:5%;margin-right:5%;padding:2rem 5% 3rem;border-radius:0;}
+  // .profile-head-share {bottom:auto;}
 }
 
 @media (max-width:$breakpoint-tiny) {
-
-  .profile-user {width:100%;}
-  .profile-body {width:100%;}
-  .works .card {width:50% !important;margin-left:0;margin-right:0;}
+  .works .card {width:100% !important;margin-left:0;margin-right:0;}
 }
