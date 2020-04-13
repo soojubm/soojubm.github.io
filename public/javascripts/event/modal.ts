@@ -42,6 +42,7 @@ const modal = ({ selector: trigger }: Parameter) => ({
           // })
           document.addEventListener('click', () => {
             if(!document.body.classList.contains('is-modal-visible')) return
+            // const isClickedOutside = !ele.contains(evt.target);
             this.backHistory()
           })
 

@@ -91,6 +91,8 @@ const domEvents = () => {
     countDownClock(20, 'days')
     carousel()
 
+    revealPassword()
+
     // event.customCursor()
 
     // 임시
@@ -141,6 +143,21 @@ function detectHeaderTheme() {
   } else {
     pageHeadElement.classList.remove('is-white')
   }
+}
+
+function revealPassword() {
+  const toggleElement = document.querySelectorAll<HTMLElement>('.view-password')
+  if(!toggleElement) return
+
+  toggleElement.forEach(element => addEventListener('click', () => {
+    const passwordElement = element.parentNode?.querySelector<HTMLElement>('input')
+    console.log(passwordElement)
+    if(!passwordElement) return
+
+    const typeAttribute = passwordElement.getAttribute('type')
+    const type = typeAttribute === 'password' ? 'text' : 'password'
+    passwordElement.setAttribute('type', type)
+  }))
 }
 
 function initailizePage() {
@@ -384,8 +401,14 @@ function copyToClipboard(val) {
   document.body.appendChild(textareaElement);
 
   textareaElement.value = val;
-  textareaElement.select();
+  textareaElement.select(); // focus?도 해야함?
   document.execCommand("copy");
-  
   document.body.removeChild(textareaElement);
+
+  // try {
+  //   document.execCommand('copy');
+  // } catch (error) {
+  // } finally {
+  //   document.body.removeChild(textareaElement);
+  // }
 }

@@ -44,7 +44,7 @@ body.is-sticky {padding-top:200px;}
 
 
 .post-foot {padding:0 0 0 0;}
-.post-hashtag {display:flex;margin:2rem 0 2rem 0px;}
+.post-hashtag {display:flex;margin:2rem 0;}
 .post-hashtag-item {display:block;margin:0 4px 4px 0px;padding:0 1rem !important;border-radius:$radius400;font-size:12px;}
 .post-share {margin:3rem 0 2rem;
 	// position: fixed;
@@ -113,14 +113,7 @@ body.is-sticky {padding-top:200px;}
 @media (max-width:$breakpoint-small) {
 	.post {padding:40px 5%;}
 
-	.post-head-headline {font-size:1.5rem;}
-	.post-body-title {margin:24px 0;;}
 	.post-body-img {float:none;margin:2rem -8%;}
-	.post-body-kicker {font-size:1.15rem;}
-	.post-body-subhead {margin:3rem 0 1rem 0;font-size:$body;}
-	.post-body-paragraph {margin:0rem 0 1.5rem 0;}
-	.post-hashtag {margin:2rem 0 2rem 0;}
-	.post-share {margin:3rem 0 5rem 0px;}
 }
 
 .post-item {width:auto;margin:0 10%;padding-left:320px;padding-right:2rem;padding-bottom:4rem;box-sizing:border-box;position:relative;}

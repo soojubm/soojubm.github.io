@@ -1,5 +1,48 @@
-.faq {margin:0 10%;}
-.faq-item {padding:2rem 5%;/*border-top:1px solid $gray800;border-bottom:1px solid $gray800;*/}
+.faq {margin:4rem 10%;}
+.faq-head {
+  margin: 2rem 0;
+  border-bottom: 1px solid #000;
+  border-top: 1px solid #000;
+  border-radius: $radius400;
+  background: $gray800;
+  color: $gray0;
+  font-size: 2rem;
+}
+.faq-item {margin:3rem 0;/*border-top:1px solid $gray800;border-bottom:1px solid $gray800;*/}
 .faq-item + .faq-item {border-top:none;}
 .faq-item-question {margin:0 0 1rem 0;font-size:1rem;text-decoration:underline;}
 .faq-item-answer {}
+
+.faq-contact {margin:8rem 0;border:1px solid #000;}
+.faq-contact-title {
+  border-bottom: 1px solid #000;
+  border-top: 1px solid #000;
+  border-radius: $radius400;
+  background: $gray800;
+  color: $gray0;
+  font-size: 2rem;
+}
+.faq-contact-description {margin:4rem 25%;}
+.faq-contact-form {margin:4rem 25% 8rem;}
+
+.faq-reaction {margin:8rem 0;text-align:center;background:$gray100;padding:2rem;}
+.faq-reaction-title {margin:0 0 .5rem 0;font-size:1.25rem;color:$gray800;}
+.faq-reaction button {margin:0 1rem;}
+.faq-reaction span {font-size:2rem;}
+
+.marquee {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+
+}
+.marquee p {
+  animation: marquee 4s linear infinite;
+  white-space: nowrap;
+  // will-change: auto;
+}
+.marquee p:after {
+  content: '';
+  white-space: nowrap;
+  padding-right: 50px;
+}

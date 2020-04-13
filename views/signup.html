@@ -13,9 +13,9 @@
           type="text"
           placeholder="soojubm@gmail.com"
         />
-        <small class="textfield-helper" role="alert">이메일을 입력하시와아요.</small>
-        <!is-small class="error-text" role="alert">필수 입력란입니다.</small>
-        <small class="textfield-helper" role="alert">이메일을 입력하시와아요.</small-->
+        <!-- <small class="textfield-helper" role="alert">이메일을 입력하시와아요.</small> -->
+        <!-- <small class="error-text" role="alert">필수 입력란입니다.</small> -->
+        <!-- <small class="textfield-helper" role="alert">이메일을 입력하시와아요.</small-->
         <!--span class="check-text -o"><i class="icon-check" style="border-color:#3fbb65;"></i></span>
         <span class="check-text -x"><i class="icon-close"></i></span-->
       </div>
@@ -29,15 +29,28 @@
           id="signup-password"
           placeholder="비밀번호"
         />
+        <button class="view-password" type="button">비밀번호 보기</button>
+        <!-- <input
+          class="textfield-input"
+          type="password"
+          id="signup-password-confirm"
+          placeholder="비밀번호 확인"
+        /> -->
+      </div>
+      <div class="textfield">
+        <label class="textfield-label" for="signup-password"
+          >비밀번호 확인<abbr title="required" aria-hidden="true">*</abbr></label
+        >
         <input
           class="textfield-input"
           type="password"
           id="signup-password-confirm"
           placeholder="비밀번호 확인"
         />
+        <button class="view-password" type="button">비밀번호 보기</button>
       </div>
     </fieldset>
-    <hr />
+    <!-- <hr />
     <fieldset class="optional">
       <legend aria-hidden="true">선택입력</legend>
       <div class="textfield">
@@ -52,8 +65,7 @@
           placeholder="부서"
         />
       </div>
-    </fieldset>
-    <hr />
+    </fieldset> -->
     <fieldset class="signup-terms">
       <legend class="terms-title" aria-hidden="true">약관 동의</legend>
       <div class="checkbox">

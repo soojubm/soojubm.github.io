@@ -12,7 +12,7 @@ const toggleClass = ({ selector: trigger }: Parameter) => ({
 
     this.triggers.forEach(element =>
       element.addEventListener('click', event => {
-        event.preventDefault() // a tag에 사용하는 경우
+        event.preventDefault()
         event.stopPropagation()
 
         const triggerNextElement = element?.nextElementSibling as HTMLElement
