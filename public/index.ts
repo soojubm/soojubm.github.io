@@ -93,6 +93,11 @@ const domEvents = () => {
 
     revealPassword()
 
+    document.querySelector('.js-copyClipboard')?.addEventListener("click", () => {
+      copyToClipboard("https://napp.newneek.co/2020election/#temp");
+    })
+
+
     // event.customCursor()
 
     // 임시
@@ -149,9 +154,8 @@ function revealPassword() {
   const toggleElement = document.querySelectorAll<HTMLElement>('.view-password')
   if(!toggleElement) return
 
-  toggleElement.forEach(element => addEventListener('click', () => {
+  toggleElement.forEach(element => element.addEventListener('click', () => {
     const passwordElement = element.parentNode?.querySelector<HTMLElement>('input')
-    console.log(passwordElement)
     if(!passwordElement) return
 
     const typeAttribute = passwordElement.getAttribute('type')
@@ -180,6 +184,20 @@ function notifyThisPage() {
   body.classList.add(className)
 }
 
+function calculateReadTime() {
+  const readTimeElement = document.querySelector<HTMLElement>('.post-head')
+  const postContent = document.querySelector<HTMLElement>('.post-body-paragraph')
+  if(!postContent || !readTimeElement) return
+  const text = postContent.textContent || postContent.innerText
+  let textLength = text.split(" ").length || 1
+  const wordsPerMinute = 200
+  let value = Math.ceil(textLength / wordsPerMinute)
+  const result = `${value} min read`
+  console.log(result)
+
+  readTimeElement.innerText = result
+}
+
 
 function bustCache() {
   const linkElements = document.querySelectorAll('link')
@@ -193,6 +211,8 @@ function bustCache() {
     element.setAttribute('href', cacheBuster)
   })
 }
+
+
 document.addEventListener('DOMContentLoaded', () => {
   bustCache()
   initailizePage()
@@ -392,19 +412,16 @@ document.addEventListener('submit', event => event.preventDefault())
   // }, 5000);
 
 
-// document.querySelector(".js-copty-link").addEventListener("click", () => {
-//   alert('복사 완료! 이제 "붙여넣기" 해주세요.😉');
-//   copyToClipboard("https://napp.newneek.co/2020election/#temp");
-// });
-function copyToClipboard(val) {
-  const textareaElement = document.createElement("textarea");
-  document.body.appendChild(textareaElement);
+function copyToClipboard(text) {
+  const textareaElement = document.createElement("textarea")
+  document.body.appendChild(textareaElement)
 
-  textareaElement.value = val;
+  textareaElement.value = text
   textareaElement.select(); // focus?도 해야함?
-  document.execCommand("copy");
-  document.body.removeChild(textareaElement);
+  document.execCommand("copy")
+  document.body.removeChild(textareaElement)
 
+  alert('복사 완료! 이제 "붙여넣기" 해주세요.😉');
   // try {
   //   document.execCommand('copy');
   // } catch (error) {
