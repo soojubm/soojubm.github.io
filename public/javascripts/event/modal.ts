@@ -33,10 +33,11 @@ const modal = ({ selector: trigger }: Parameter) => ({
           this.setModal(pageYOffset)
           this.setHistory(modal.dataset.modal)
 
-          document.querySelector('.js-modal-close')?.addEventListener('click', event => event.stopPropagation())
-          document.querySelector('.js-modal-close')?.addEventListener('click', this.backHistory)
-          document.addEventListener('click', this.backHistory)
-
+          if(document.body.classList.contains('is-modal-visible')) {
+            document.querySelector('.js-modal-close')?.addEventListener('click', event => event.stopPropagation())
+            document.querySelector('.js-modal-close')?.addEventListener('click', this.backHistory)
+            // document.body.addEventListener('click', this.backHistory)
+          }
           // 이벤트 remove해줘야함
           // document.addEventListener('keydown', event => {
           //   const isKeyEsc = event.keyCode === 27
