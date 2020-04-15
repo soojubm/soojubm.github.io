@@ -61,6 +61,18 @@ window.addEventListener('unload', function(event) {
 //   promise.then(cleanup).catch(cleanup)
 // }
 
+const focusComment = () => {
+  const commentWrite = document.querySelector('.js-comment-write')
+  const commentTextField = document.querySelectorAll('.js-comment-textfield')
+  if (!commentWrite || !commentTextField) return
+
+  commentTextField.forEach(element =>
+    element.addEventListener('focus', () => {
+      commentWrite && commentWrite.classList.add('is-focused')
+    }),
+  )
+}
+
 window.addEventListener('offline', () => {
   const offlineElement = document.querySelector<HTMLElement>('.js-offline')
   if (!offlineElement) return
@@ -117,20 +129,11 @@ const domEvents = () => {
       })
     }
 
-    const focusComment = () => {
-      const commentWrite = document.querySelector('.js-comment-write')
-      const commentTextField = document.querySelectorAll('.js-comment-textfield')
-      if (commentWrite || commentTextField) {
-        commentTextField.forEach(element =>
-          element.addEventListener('focus', () => {
-            commentWrite && commentWrite.classList.add('is-focused')
-          }),
-        )
-      }
-    }
+
     focusComment()
   })
 }
+
 
 window.addEventListener('hashchange', domEvents)
 window.addEventListener('hashchange', initailizePage)
@@ -138,37 +141,32 @@ window.addEventListener('hashchange', detectHeaderTheme)
 
 function detectHeaderTheme() {
   const pageHeadElement = document.querySelector('.header')
-  if (!pageHeadElement) return
-
   const pages = ['#design', '']
   const isWhite = pages.includes(window.location.hash)
 
   if (isWhite) {
-    pageHeadElement.classList.add('is-white')
+    pageHeadElement?.classList.add('is-white')
   } else {
-    pageHeadElement.classList.remove('is-white')
+    pageHeadElement?.classList.remove('is-white')
   }
 }
 
 function revealPassword() {
   const toggleElement = document.querySelectorAll<HTMLElement>('.view-password')
-  if(!toggleElement) return
 
-  toggleElement.forEach(element => element.addEventListener('click', () => {
+  toggleElement?.forEach(element => element.addEventListener('click', () => {
     const passwordElement = element.parentNode?.querySelector<HTMLElement>('input')
-    if(!passwordElement) return
-
-    const typeAttribute = passwordElement.getAttribute('type')
+    const typeAttribute = passwordElement?.getAttribute('type')
     const type = typeAttribute === 'password' ? 'text' : 'password'
-    passwordElement.setAttribute('type', type)
+
+    passwordElement?.setAttribute('type', type)
   }))
 }
 
 function initailizePage() {
   const navigationTrigger = document.querySelector<HTMLElement>('.navbar-burger')
-  if (!navigationTrigger) return
 
-  navigationTrigger.classList.remove('is-active')
+  navigationTrigger?.classList.remove('is-active')
   navigationTrigger?.nextElementSibling?.classList.remove('is-visible')
 
   notifyThisPage()
@@ -188,7 +186,7 @@ function calculateReadTime() {
   const readTimeElement = document.querySelector<HTMLElement>('.post-head')
   const postContent = document.querySelector<HTMLElement>('.post-body-paragraph')
   if(!postContent || !readTimeElement) return
-  const text = postContent.textContent || postContent.innerText
+  const text = postContent?.textContent || postContent?.innerText
   let textLength = text.split(" ").length || 1
   const wordsPerMinute = 200
   let value = Math.ceil(textLength / wordsPerMinute)
@@ -234,9 +232,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const scrollProgress = () => {
     const post = document.querySelector<HTMLElement>('.post')
     const progressBar = document.querySelector<HTMLElement>('.post-head-progress')
-
     if (!post || !progressBar) return
-
 
     const scrollPercent = `${(window.pageYOffset / (post.scrollHeight - window.innerHeight)) * 100}%`
     // const scrollPercent = `${(window.pageYOffset / (document.body.scrollHeight - window.innerHeight)) * 100}%`

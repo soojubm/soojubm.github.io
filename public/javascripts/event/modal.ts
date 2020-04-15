@@ -31,8 +31,11 @@ const modal = ({ selector: trigger }: Parameter) => ({
 
           this.modalContainer.innerHTML = html
           this.setModal(pageYOffset)
+          this.setHistory(modal.dataset.modal)
 
+          document.querySelector('.js-modal-close')?.addEventListener('click', event => event.stopPropagation())
           document.querySelector('.js-modal-close')?.addEventListener('click', this.backHistory)
+          document.addEventListener('click', this.backHistory)
 
           // 이벤트 remove해줘야함
           // document.addEventListener('keydown', event => {
@@ -40,11 +43,6 @@ const modal = ({ selector: trigger }: Parameter) => ({
           //   if(!isKeyEsc) return
           //   this.backHistory()
           // })
-          document.addEventListener('click', () => {
-            if(!document.body.classList.contains('is-modal-visible')) return
-            // const isClickedOutside = !ele.contains(evt.target);
-            this.backHistory()
-          })
 
           // document.addEventListener('click', this.backHistory)
 
@@ -54,16 +52,13 @@ const modal = ({ selector: trigger }: Parameter) => ({
           })
 
           const modalDialog = document.querySelector<HTMLElement>('.modal-dialog')
-          if(!modalDialog) return
-          modalDialog.addEventListener('click', event => event.stopPropagation())
+          modalDialog?.addEventListener('click', event => event.stopPropagation())
         })
         .catch(error => console.warn('modal Error'))
       }),
     )
   },
   setModal(pageYOffset) {
-    this.setHistory()
-
     document.body.classList.add('is-modal-visible')
     document.body.classList.add('body-lock')
     document.body.style.top = `-${pageYOffset}px`
@@ -75,10 +70,10 @@ const modal = ({ selector: trigger }: Parameter) => ({
     container.innerHTML = ''
     window.scrollTo(0, pageYOffset)
   },
-  setHistory() {
+  setHistory(modalUrl) {
     const state = { name: 'tester' }
     const title = 'dd'
-    const url = '/modal'
+    const url = modalUrl
     history.pushState(state, title, url)
   },
   backHistory() {

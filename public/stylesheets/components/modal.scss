@@ -13,7 +13,7 @@
 .modal-body-image {margin:0 -2.5rem;}
 .modal-foot {padding:16px 0;text-align:right;}
 .modal-foot button {}
-.modal-close {color:$gray0;}
+.modal-close {background:$gray100;border-radius:$radius400;}
 
 #modal {opacity:0;position:relative;z-index:8;}
 .is-modal-visible #modal {transition:opacity .4s ease;opacity:1;}
