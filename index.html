@@ -37,43 +37,44 @@
     <script src="./build/bundle.js"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-83531239-1"></script>
     <script>
+      if(document.location.hostname === '127.0.0.1') return
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'UA-83531239-1');
 
-      // function insertCallback(parent, funcname, callback, ...args) {
-      //   let oldFunc = parent[funcname] ? parent[funcname] : function() { }
-      //   parent[funcname] = function () {
-      //       oldFunc.apply(this, arguments)
-      //       return callback(...args)
-      //   }
-      // }
+      function insertCallback(parent, funcname, callback, ...args) {
+        let oldFunc = parent[funcname] ? parent[funcname] : function() { }
+        parent[funcname] = function () {
+            oldFunc.apply(this, arguments)
+            return callback(...args)
+        }
+      }
 
-      // function notify_analytics(l) {
-      //   let newPage = l.pathname + l.hash
-      //   // replace XXXXX into your id
-      //   gtag('config', 'UA-83531239-1', { 'page_path': newPage }); 
-      // }
+      function notify_analytics(l) {
+        let newPage = l.pathname + l.hash
+        // replace XXXXX into your id
+        gtag('config', 'UA-83531239-1', { 'page_path': newPage }); 
+      }
 
-      // insertCallback(window.history, "pushState", notify_analytics, location)
-      // insertCallback(window.history, "replaceState", notify_analytics, location)
+      insertCallback(window.history, "pushState", notify_analytics, location)
+      insertCallback(window.history, "replaceState", notify_analytics, location)
 
-      // var trackOutboundLink = function(url) {
-      //   gtag('event', 'click', {
-      //     'event_category': 'outbound',
-      //     'event_label': url,
-      //     'transport_type': 'beacon',
-      //     'event_callback': function(){document.location = url;}
-      //   });
-      // }
-      // // Create new link element
-      // const link = document.createElement('link');
-      // link.setAttribute('rel', 'stylesheet');
-      // link.setAttribute('href', '/path/to/js/file.css');
+      var trackOutboundLink = function(url) {
+        gtag('event', 'click', {
+          'event_category': 'outbound',
+          'event_label': url,
+          'transport_type': 'beacon',
+          'event_callback': function(){document.location = url;}
+        });
+      }
+      // Create new link element
+      const link = document.createElement('link');
+      link.setAttribute('rel', 'stylesheet');
+      link.setAttribute('href', '/path/to/js/file.css');
 
-      // // Append to the `head` element
-      // document.head.appendChild(link);
+      // Append to the `head` element
+      document.head.appendChild(link);
     </script>
   </head>
   <body>
