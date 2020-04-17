@@ -3,7 +3,7 @@
     <header class="signup-head">
       <h3 class="signup-head-title"><em>웹사이트</em> 회원가입</h3>
     </header>
-    <fieldset class="">
+    <fieldset class="signup-required">
       <legend aria-hidden="true">필수입력</legend>
       <!-- 구조를 최소화하기 위해 포지션으로 정렬. helper를 위해 세로값을 고정해야 함. -->
       <div class="textfield email">
@@ -51,7 +51,7 @@
       </div>
     </fieldset>
     <!-- <hr />
-    <fieldset class="optional">
+    <fieldset class="signup-optional optional">
       <legend aria-hidden="true">선택입력</legend>
       <div class="textfield">
         <label class="textfield-label" for="signup-company"
@@ -93,16 +93,16 @@
       </div>
       <div class="checkbox">
         <input type="checkbox" class="js-check" id="check-three" />
-        <label for="check-three">이메일 마케팅 수신 동의 <em>(선택)</em></label>
+        <label for="check-three">이메일 마케팅 수신 동의 <span>(선택)</span></label>
       </div>
     </fieldset>
-    <!--span class="input-check">
+    <!-- <div class="checkbox">
       <input type="checkbox" id="user-agree" />
       <label for="user-agree"><strong>웹사이트 <a href="#">이용약관</a>과 <a href="#">개인정보처리방침</a>에 동의합니다.</strong></label>
-    </span-->
-    <section class="signup-foot">
+    </div> -->
+    <footer class="signup-foot">
       <button type="submit" class="primary-button is-fullwidth">가입하기</button>
-    </section>
+    </footer>
   </form>
 </main>
 <script>

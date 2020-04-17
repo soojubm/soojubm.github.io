@@ -1,6 +1,9 @@
-.faq {margin:4rem 10%;}
+:root {
+  --container-padding: 0 10%;
+}
+
+.faq {margin:0 10%;}
 .faq-head {
-  margin: 2rem 0;
   border-bottom: 1px solid #000;
   border-top: 1px solid #000;
   border-radius: $radius400;
@@ -8,9 +11,9 @@
   color: $gray0;
   font-size: 2rem;
 }
-.faq-item {margin:3rem 0;/*border-top:1px solid $gray800;border-bottom:1px solid $gray800;*/}
+.faq-item {margin:4rem 0;padding:0 0 4rem 0;border-bottom:$border100;}
 .faq-item + .faq-item {border-top:none;}
-.faq-item-question {margin:0 0 1rem 0;font-size:1rem;text-decoration:underline;}
+.faq-item-question {margin:0 0 1rem 0;font-size:1.25rem;}
 .faq-item-answer {}
 
 .faq-contact {margin:8rem 0;border:1px solid #000;}

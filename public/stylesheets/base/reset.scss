@@ -41,16 +41,16 @@ table tbody tr td {padding:13px 1rem 15px;border:1px solid #e9e9e6;border-left:n
 table .right {text-align:right;}
 
 ul {}
-ul li {margin:.125rem 0;padding: 0 0 0 1.25rem;position:relative;}
+ul li {margin:.25rem 0;padding: 0 0 0 1.25rem;position:relative;}
 ul li:before {content:'\25AA';position:absolute;left:0;}
-ul li ul {}
+ul li ul {margin:0 0 .5rem 0;}
 ul li ul li {}
 ul li ul li:before {content:'\2013';}
 
 ol {}
-ol li {margin:.125rem 0;padding: 0 0 0 1.25rem;position:relative;counter-increment:listitem;}
+ol li {margin:.25rem 0;padding: 0 0 0 1.25rem;position:relative;counter-increment:listitem;}
 ol li:before {content: counter(listitem) '.';position:absolute;left:0;}
-ol li ol {}
+ol li ol {margin:0 0 .5rem 0;}
 ol li ol li {counter-increment:sub-list-item;}
 ol li ol li:before {content: counter(sub-list-item,lower-alpha) '.';}
 
@@ -119,4 +119,18 @@ ol li ol li:before {content: counter(sub-list-item,lower-alpha) '.';}
 
 
 
-.target { /* 한 줄 자르기 */ display: inline-block; width: 200px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; /* 여러 줄 자르기 추가 스타일 */ white-space: normal; line-height: 1.2; height: 3.6em; text-align: left; word-wrap: break-word; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
+.target {
+  /* 한 줄 자르기 */
+  display: inline-block;
+  width: 200px; 
+  white-space: nowrap; 
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+  /* 여러 줄 자르기 추가 스타일 */
+  white-space: normal;
+  height: 5.4em;
+  word-wrap: break-word;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical; 
+}

@@ -2,7 +2,7 @@
 .toast-title {font-size:$subhead;}
 .toast-description {margin:0.5rem 0 1.5rem 0;}
 .toast-check {/*position:absolute;right:24px;bottom:20px;*/}
-.toast-close {position:absolute;right:0;top:0;}
+.toast-close {background:$gray100;border-radius:$radius400;position:absolute;right:.5rem;top:.5rem;}
 @media (max-width:$breakpoint-small) {
   .toast {width:auto;max-width:100%;left:0;right:0;bottom:0;}
 }

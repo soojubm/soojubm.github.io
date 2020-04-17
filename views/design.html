@@ -12,7 +12,205 @@
     <img class="hero-obj4" src="/public/images/blob-shape.svg" alt="" />
   </section>
   <section class="design-body">
-    <nav class="pagenav">
+<!-- 
+  <div class="stamp">
+    <div class="circle">
+      <p id="circle-content">EXPERIMENTS . EXPERIMENTS .</p>
+    </div>
+    <p>2018</p>
+  </div>
+    <script>
+function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}const cursor = document.getElementById("cursor");
+const amount = 20;
+const sineDots = Math.floor(amount * 0.3);
+const width = 26;
+const idleTimeout = 150;
+let lastFrame = 0;
+let mousePosition = { x: 0, y: 0 };
+let dots = [];
+let timeoutID;
+let idle = false;
+let hoverButton;
+let hoverTL;
+
+class HoverButton {
+  constructor(id) {_defineProperty(this, "onMouseEnter",
+    () => {
+      this.hoverInAnim();
+    });_defineProperty(this, "hoverInAnim",
+
+    () => {
+      if (!this.hovered) {
+        this.hovered = true;
+        this.animatingHover = true;
+        this.forceOut = false;
+        TweenMax.fromTo(
+        this.bg,
+        this.timing,
+        { x: "-112%" },
+        {
+          x: "-12%",
+          ease: Power3.easeOut,
+          onComplete: () => {
+            this.animatingHover = false;
+            if (this.forceOut) {
+              this.foceOut = false;
+              this.hoverOutAnim();
+            }
+          } });
+
+
+      }
+    });_defineProperty(this, "onMouseLeave",
+
+    () => {
+      if (!this.animatingHover) {
+        this.hoverOutAnim();
+      } else {
+        this.forceOut = true;
+      }
+    });_defineProperty(this, "hoverOutAnim",
+
+    () => {
+      this.hovered = false;
+      TweenMax.to(this.bg, this.timing, {
+        x: "100%",
+        ease: Power3.easeOut,
+        onComplete: () => {
+        } });
+
+    });this.hovered = false;this.animatingHover = false;this.forceOut = false;this.timing = 0.65;this.el = document.getElementById(id);this.bg = this.el.getElementsByClassName("bg")[0];this.el.addEventListener("mouseenter", this.onMouseEnter);this.el.addEventListener("mouseleave", this.onMouseLeave);}}
+
+
+class Dot {
+  constructor(index = 0) {
+    this.index = index;
+    this.anglespeed = 0.05;
+    this.x = 0;
+    this.y = 0;
+    this.scale = 1 - 0.05 * index;
+    this.range = width / 2 - width / 2 * this.scale + 2;
+    this.limit = width * 0.75 * this.scale;
+    this.element = document.createElement("span");
+    TweenMax.set(this.element, { scale: this.scale });
+    cursor.appendChild(this.element);
+  }
+
+  lock() {
+    this.lockX = this.x;
+    this.lockY = this.y;
+    this.angleX = Math.PI * 2 * Math.random();
+    this.angleY = Math.PI * 2 * Math.random();
+  }
+
+  draw(delta) {
+    if (!idle || this.index <= sineDots) {
+      TweenMax.set(this.element, { x: this.x, y: this.y });
+    } else {
+      this.angleX += this.anglespeed;
+      this.angleY += this.anglespeed;
+      this.y = this.lockY + Math.sin(this.angleY) * this.range;
+      this.x = this.lockX + Math.sin(this.angleX) * this.range;
+      TweenMax.set(this.element, { x: this.x, y: this.y });
+    }
+  }}
+
+
+class Circle {
+  constructor(id) {
+    const el = document.getElementById(id);
+    const parent = el.parentElement;
+    parent.removeChild(el);
+    const chars = el.innerText.split("");
+    chars.push(" ");
+    for (let i = 0; i < chars.length; i++) {
+      const span = document.createElement("span");
+      span.innerText = chars[i];
+      span.className = `char${i + 1}`;
+      parent.appendChild(span);
+    }
+  }}
+
+
+function init() {
+  window.addEventListener("mousemove", onMouseMove);
+  window.addEventListener("touchmove", onTouchMove);
+  hoverButton = new HoverButton("button");
+  // eslint-disable-next-line no-new
+  new Circle("circle-content");
+  lastFrame += new Date();
+  buildDots();
+  render();
+}
+
+/*function limit(value, min, max) {
+      return Math.min(Math.max(min, value), max);
+  }*/
+
+function startIdleTimer() {
+  timeoutID = setTimeout(goInactive, idleTimeout);
+  idle = false;
+}
+
+function resetIdleTimer() {
+  clearTimeout(timeoutID);
+  startIdleTimer();
+}
+
+function goInactive() {
+  idle = true;
+  for (let dot of dots) {
+    dot.lock();
+  }
+}
+
+function buildDots() {
+  for (let i = 0; i < amount; i++) {
+    let dot = new Dot(i);
+    dots.push(dot);
+  }
+}
+
+const onMouseMove = event => {
+  mousePosition.x = event.clientX - width / 2;
+  mousePosition.y = event.clientY - width / 2;
+  resetIdleTimer();
+};
+
+const onTouchMove = () => {
+  mousePosition.x = event.touches[0].clientX - width / 2;
+  mousePosition.y = event.touches[0].clientY - width / 2;
+  resetIdleTimer();
+};
+
+const render = timestamp => {
+  const delta = timestamp - lastFrame;
+  positionCursor(delta);
+  lastFrame = timestamp;
+  requestAnimationFrame(render);
+};
+
+const positionCursor = delta => {
+  let x = mousePosition.x;
+  let y = mousePosition.y;
+  dots.forEach((dot, index, dots) => {
+    let nextDot = dots[index + 1] || dots[0];
+    dot.x = x;
+    dot.y = y;
+    dot.draw(delta);
+    if (!idle || index <= sineDots) {
+      const dx = (nextDot.x - dot.x) * 0.35;
+      const dy = (nextDot.y - dot.y) * 0.35;
+      x += dx;
+      y += dy;
+    }
+  });
+};
+
+init();
+
+    </script> -->
+    <!-- <nav class="pagenav">
       <h1 class="pagenav-title">이 페이지에는-</h1>
       <div class="pagenav-nav">
         <a class="pagenav-link" href=""><i class="avatar">📚</i> 서점</a>
@@ -25,10 +223,8 @@
       </div>
       <br />
       <p>기능 정의<br />스크롤스파이. 스크롤되면 고정(> mobile devices). 모바일에서 가로 정렬 후 좌우 스크롤.</p>
-    </nav>
-
+    </nav> -->
     <!-- <div role="textbox" contenteditable="true" aria-placeholder="5-digit zipcode" aria-labelledby="txtboxLabel">contentEditable</div>  -->
-
     <article class="design-article typography">
       <h1 class="design-article-title">Typhography</h1>
       <button class="design-article-more">View All</button>
@@ -256,11 +452,11 @@
         <span class="message-text"> This includes the <a href="">global HTML attributes</a>.</span>
         <button class="message-close" type="button" aria-label="close"><i class="icon-close"></i></button>
         <div class="message-head">
-          <p>Hello World</p>
-          <button class="delete" aria-label="delete"></button>
+          <!-- <p>Hello World</p> -->
+          <!-- <button class="delete" aria-label="delete"></button> -->
         </div>
-        <div class="message-body">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.
+        <div class="message-body" style="margin-top:.5rem;">
+          <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus.
         </div>
       </aside>
     </article>
@@ -721,7 +917,7 @@
       <h1 class="design-article-title">Dialog</h1>
       <p class="design-article-description">예 아니오 예!</p>
       <aside class="dialog" role="dialog">
-        <img src="/public/images/soo.png" alt="" style="width:6rem;margin:-3rem 0 0 -1rem;">
+        <!-- <img src="/public/images/soo.png" alt="" style="width:6rem;margin:-3rem 0 0 -1rem;"> -->
         <!-- <button class="toast-close js-close" type="button" style="position:aboslute;right:0;top:0;"><i class="icon-close"></i></button> -->
         <p class="dialog-title">부끄러우니까 보지마요?</p>
         <p class="dialog-description">다이얼로그 유아이입니다. 디스크립션을 입력해주세요.</p>

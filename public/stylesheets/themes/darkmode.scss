@@ -10,7 +10,7 @@
   }
 }
 
-// $gray0: #fff; // white for dark theme
+// $gray0: $gray0; // white for dark theme
 // $gray100: #f1f3f4; // bg
 // $gray200: #dadce0; // divider border
 // $gray400: #999; // caption
@@ -24,14 +24,14 @@
   color: $gray400;
 
   h1, h2, h3, h4, h5, h6 {
-    color: #fff;
+    color: $gray0;
   }
   .navbar {background:#000;}
   .navbar-menu-item,
   .navbar-menu-item a {color:$gray0;}
 
   .header.is-fixed {background:#000;}
-  .is-white.is-fixed .header-title {color:#fff;}
+  .is-white.is-fixed .header-title {color:$gray0;}
 
   .toast {background: $gray800;}
 

@@ -1,6 +1,9 @@
 // mediaquery, desktop first
 
 // ^ html에서 선언 or 제목용 / 본문용 디자인이 다를 때만 필요.
+:root {
+  --gold: #333
+}
 $fontstack: ('Helvetica', sans-serif);
 $headline: 3rem;
 $title: 2rem;
@@ -13,7 +16,7 @@ $gray100: #f1f5f6; // bg
 $gray200: #dadce0; // divider border
 $gray400: #999; // caption
 $gray600: #666; // body
-$gray800: #333; // bg || heading
+$gray800: var(--gold); // bg || heading
 
 $red100: #fff0f5;
 $red800: #da1e28;
@@ -103,6 +106,10 @@ $zindex-tooltip: 8;
 $height-header: 64px;
 @media (max-width:$breakpoint-small) {
   $height-header: 56px;
+
+  // :root {
+  //   --gold: gold
+  // }
 }
 
 .linebreak {display:block;}

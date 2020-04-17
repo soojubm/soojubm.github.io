@@ -5,7 +5,7 @@
 // .profile-head-description {@extend .hero-description;position:relative;}
 // .profile-head-share {@extend .tertiary-button;}
 // .profile-head-temp {position:absolute;left:65%;top:3.25rem;}
-// .profile-head h5 {margin:0 0 1rem 0;color:#fff;}
+// .profile-head h5 {margin:0 0 1rem 0;color:$gray0;}
 
 .profile-user {float:left;width:320px;box-sizing:border-box;position:relative;z-index:1;}
 .profile-user-avatar {float:right;width:80px;height:80px;border-radius:$radius400;background:url('/public/images/soo.png') no-repeat center center;background-size:contain;transition:all 0.4s ease;}

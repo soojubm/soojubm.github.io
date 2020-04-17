@@ -23,7 +23,7 @@
 // .profile-head-headline {margin:0px auto .5rem;font-size:1.75rem;text-indent:-2px;color:$gray0;position:relative;}
 // .profile-head-description {width:50%;margin:0 0 2rem 0;color:$gray0;position: relative;}
 // .profile-head-share {@extend .tertiary-button;}
-.design {padding:1rem 0;}
+.design {}
 .design-head {overflow:hidden;background:url('/public/images/caleb-woods-182648-unsplash.jpg') no-repeat center center;background-size:cover;position:fixed;left:0;right:50%;top:0;bottom:0;z-index:1;}
 .design-body {width:50%;max-width:680px;margin-left:50%;padding:6rem;box-sizing:border-box;}
 
@@ -105,4 +105,157 @@
     height: 1em;
     border-color: rgba(67,47,101,.1) rgba(67,47,101,.1) $color-positive $color-positive;
     position: relative;
+}
+
+
+
+.stamp {
+  position: absolute;
+  right: 6vmax;
+  top: 6vmax;
+  z-index: 10;
+}
+.stamp p {
+  color: #ee3d3d;
+  font-size: 2vmax;
+  font-family: 'Asul', sans-serif;
+  margin: 0;
+}
+.stamp .circle {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  display: block;
+  left: 50%;
+  top: 50%;
+  background-color: transparent;
+  -webkit-animation: rotation 9.5s linear infinite;
+          animation: rotation 9.5s linear infinite;
+}
+.stamp .circle span {
+  font-family: 'Rubik', sans-serif;
+  font-weight: bold;
+  font-size: 0.8vmax;
+  color: #ee3d3d;
+  height: 5vmax;
+  position: absolute;
+  display: inline-block;
+  left: 0;
+  bottom: 0;
+  -webkit-transform-origin: bottom center;
+          transform-origin: bottom center;
+}
+
+
+.char1 {
+  -webkit-transform: rotate(13deg);
+          transform: rotate(13deg);
+}
+.char2 {
+  -webkit-transform: rotate(26deg);
+          transform: rotate(26deg);
+}
+.char3 {
+  -webkit-transform: rotate(39deg);
+          transform: rotate(39deg);
+}
+.char4 {
+  -webkit-transform: rotate(52deg);
+          transform: rotate(52deg);
+}
+.char5 {
+  -webkit-transform: rotate(65deg);
+          transform: rotate(65deg);
+}
+.char6 {
+  -webkit-transform: rotate(78deg);
+          transform: rotate(78deg);
+}
+.char7 {
+  -webkit-transform: rotate(91deg);
+          transform: rotate(91deg);
+}
+.char8 {
+  -webkit-transform: rotate(104deg);
+          transform: rotate(104deg);
+}
+.char9 {
+  -webkit-transform: rotate(117deg);
+          transform: rotate(117deg);
+}
+.char10 {
+  -webkit-transform: rotate(130deg);
+          transform: rotate(130deg);
+}
+.char11 {
+  -webkit-transform: rotate(143deg);
+          transform: rotate(143deg);
+}
+.char12 {
+  -webkit-transform: rotate(156deg);
+          transform: rotate(156deg);
+}
+.char13 {
+  -webkit-transform: rotate(169deg);
+          transform: rotate(169deg);
+}
+.char14 {
+  -webkit-transform: rotate(182deg);
+          transform: rotate(182deg);
+}
+.char15 {
+  -webkit-transform: rotate(195deg);
+          transform: rotate(195deg);
+}
+.char16 {
+  -webkit-transform: rotate(208deg);
+          transform: rotate(208deg);
+}
+.char17 {
+  -webkit-transform: rotate(221deg);
+          transform: rotate(221deg);
+}
+.char18 {
+  -webkit-transform: rotate(234deg);
+          transform: rotate(234deg);
+}
+.char19 {
+  -webkit-transform: rotate(247deg);
+          transform: rotate(247deg);
+}
+.char20 {
+  -webkit-transform: rotate(260deg);
+          transform: rotate(260deg);
+}
+.char21 {
+  -webkit-transform: rotate(273deg);
+          transform: rotate(273deg);
+}
+.char22 {
+  -webkit-transform: rotate(286deg);
+          transform: rotate(286deg);
+}
+.char23 {
+  -webkit-transform: rotate(299deg);
+          transform: rotate(299deg);
+}
+.char24 {
+  -webkit-transform: rotate(312deg);
+          transform: rotate(312deg);
+}
+.char25 {
+  -webkit-transform: rotate(325deg);
+          transform: rotate(325deg);
+}
+.char26 {
+  -webkit-transform: rotate(338deg);
+          transform: rotate(338deg);
+}
+.char27 {
+  -webkit-transform: rotate(351deg);
+          transform: rotate(351deg);
+}
+.char28 {
+  -webkit-transform: rotate(364deg);
+          transform: rotate(364deg);
 }

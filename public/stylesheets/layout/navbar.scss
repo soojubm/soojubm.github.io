@@ -74,8 +74,8 @@
 
 .is-darktheme .navbar-menu-item {color:$gray0;}
 .is-darktheme .navbar-menu-item em {color:inherit;}
-.is-darktheme .navbar-user-search-trigger i {color:#fff;}
-.is-darktheme .navbar-user-notification-trigger i {color:#fff;}
+.is-darktheme .navbar-user-search-trigger i {color:$gray0;}
+.is-darktheme .navbar-user-notification-trigger i {color:$gray0;}
 
 @media (max-width:$breakpoint-small) {
 	.navbar {height:48px;background:$gray0;}
@@ -106,7 +106,7 @@
 }
 
 .is-sticky-navbar {padding-top:64px;}
-.is-sticky-navbar .navbar {box-sizing:border-box;background:#fff;position:fixed;top:0;left:0;right:0;}
+.is-sticky-navbar .navbar {box-sizing:border-box;background:$gray0;position:fixed;top:0;left:0;right:0;}
 .page-design.is-sticky-navbar .navbar-menu-item {color:$gray800;}
 .page-design.is-sticky-navbar .navbar-menu-item .icon-caret {border-top-color:$gray800;}
 
