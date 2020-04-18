@@ -110,6 +110,39 @@ const domEvents = () => {
     })
 
 
+function smoothScroll(target, duration) {
+  var target = document.querySelector(target)
+  var targetPosition = target.getBoundingClientRect().top
+  var startPosition = window.pageYOffset
+  var distance = targetPosition - startPosition
+  var startTime = null
+
+  function animation(currentTime) {
+    if(startTime === null) startTime = currentTime
+
+    var timeElapsed = currentTime - startTime
+    var run = easeInOutQuad(timeElapsed, startPosition, distance, duration)
+  
+    window.scrollTo(0, run)
+
+    if(timeElapsed < duration) requestAnimationFrame(animation)
+  }
+  function easeInOutQuad(t, b, c, d) {
+    t /= d/2;
+    if (t < 1) return c/2*t*t + b;
+    t--;
+    return -c/2 * (t*(t-2) - 1) + b;
+  };
+
+  requestAnimationFrame(animation)
+}
+
+// var section1 = document.querySelector('.design-article')
+// section1?.addEventListener('click', function() {
+//   smoothScroll('.footer', 1000)
+// })
+
+
     // event.customCursor()
 
     // 임시
@@ -425,3 +458,25 @@ function copyToClipboard(text) {
   //   document.body.removeChild(textareaElement);
   // }
 }
+
+
+
+
+// var createArticle = function (article) {
+// 	fetch('https://jsonplaceholder.typicode.com/posts', {
+// 		method: 'POST',
+// 		body: JSON.stringify(article),
+// 		headers: {
+// 			'Content-type': 'application/json; charset=UTF-8'
+// 		}
+// 	}).then(function (response) {
+// 		if (response.ok) {
+// 			return response.json();
+// 		}
+// 		return Promise.reject(response);
+// 	}).then(function (data) {
+// 		console.log(data);
+// 	}).catch(function (error) {
+// 		console.warn(error);
+// 	});
+// };

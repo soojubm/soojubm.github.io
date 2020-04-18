@@ -30,6 +30,7 @@ const scrollspy = ({ menusSelector: menusClass, sectionsSelector: sectionsClass 
 export default scrollspy
 
 
+
 // const absoluteTop = window.pageYOffset + element.getBoundingClientRect().top;
 // function getAbsoluteTop(element) {
 //   return window.pageYOffset + element.getBoundingClientRect().top;
