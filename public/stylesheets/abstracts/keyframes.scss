@@ -25,15 +25,6 @@ $md-radio-ripple-size: .25rem;
 	to {transform: rotate(360deg);}
 }
 
-@keyframes starfieldRotate {
-	from {
-		transform: rotate(0deg);
-	}
-	to {
-		transform: rotate(360deg);
-	}
-}
-
 @keyframes swing {
 	from {transform: translateY(0px);}
 	to {transform: translateY(-40px);}

@@ -113,6 +113,7 @@
       </button>
       <div class="navbar-menu" role="navigation">
         <a class="navbar-menu-item" href="#profile">작업</a>
+        <a class="navbar-menu-item" href="#about">역사</a>
         <a class="navbar-menu-item" href="#post">블로그</a>
         <!-- <a class="navbar-menu-item" href="#contact">오시는 길</a> -->
         <div class="navbar-menu-item has-submenu js-hover-trigger">
@@ -323,6 +324,16 @@
       </address>
     </footer>
     <aside id="modal"></aside>
+    <div class="clock"></div>
+    <script>
+      var renderTime = function () {
+        var time = new Date();
+        document.querySelector('.clock').textContent = time.toLocaleString('en-US', {year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true});
+        // time.toLocaleString(navigator.language || 'en-US', {year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true});
+      };
+      renderTime()
+      setInterval(renderTime, 1000);
+    </script>
   </body>
 </html>
 

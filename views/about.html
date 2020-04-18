@@ -7,7 +7,7 @@
 <style>
 .starfield {
 	user-select: none;
-	display: block;
+	display: none;
 	width: 100%;
 	height: 100%;
 	overflow: hidden;
@@ -37,7 +37,7 @@
 
 .starfield > * {
 	transform-origin: 50% 50%;
-	animation-name: starfieldRotate;
+	animation-name: rotation;
 	animation-iteration-count: infinite;
 	animation-timing-function: linear;
 }
@@ -59,182 +59,95 @@
 }
 </style>
 
-
 <main class="about">
 
-			<section class="about-era1">
-				<div class="about-era1-background js-scroll-animation"></div>
-				<p class="about-era1-title js-scroll-animation">자기소개</p>
-				<div class="about-era1-description js-scroll-animation"></div>
-				<ul>
-					<li>
-						<time>1916</time> 황해도 해주에서 태어남
-					</li>
-					<li>
-						<time>1919</time> 3·1운동이 일어남
-					</li>
-					<li>
-						<time>1923</time> 서울교동공립보통학교 졸업
-					</li>
-					<li>
-						<time>1929</time> 경성제일고등보통학교 졸업
-					</li>
-				</ul>
-			</section>
+	<section class="about-era1" style="max-width:800px;margin:0 10%;padding:4rem 0 8rem;">
+		<!-- <div class="about-era1-background js-scroll-animation"></div> -->
+		<!-- <p class="about-era1-title js-scroll-animation">자기소개</p> -->
+		<p style="font-size:1.5rem;line-height:2;color:#000;">UI를 그립니다. 웹에이전시에서 경력을 시작했고 작은 스타트업들을 거쳐 프리랜서로 근무하다 다시 스타트업에서 프로덕트를 만들고 있습니다. 스타트업의 근무환경이나 태도에 관심이 많습니다만 여전히 스물의 목적잃은 표본인 양 갈피를 못 잡은 채 프리랜서로 혼자서 일하다보니 부쩍, 동료들과 함께 시너지를 발휘하여 문제를 해결하고 싶다는 데, 우리의 프로덕트를 함께 만들어 가고 싶다는 데 마음이 동했습니다. 나이 서른이 되어도 세상을, 자신을 잘 모르겠지만 재미있는 일을 하고 싶다는 마음만은 알 것도 같습니다. 디자인을 전공하지 않은 사람으로서 유아이디자인과 유아이개발을 겸하고 있으며 바닐라 자바스크립트만으로 유아이를 개발할 수 있습니다. 현재 리액트 기반의 프론트앤드개발자로 근무하고 있으며, 타입스크립트와 스토리북을 공부하고 있습니다. 재사용가능하고 효율적인 디자인과 코드를 찾기 위해 고군분투하고 있습니다. 오래된 영화와 소설을 좋아하고 타이포그래피에 관심이 많습니다.</p>
+		<!-- <div class="about-era1-description js-scroll-animation"></div> -->
+		<ul>
 
-			<section class="about-era2">
-				<div class="about-era2-background"></div>
-				<p class="about-era2-title js-scroll-animation">어린시절 최정호</p>
-				<div class="about-era2-description js-scroll-animation">
-					<p>최정호는 어려서부터 공부보다는 글씨 쓰기에 더 뛰어난 재능을 보였다. 은행원이었던 그의 아버지는 매일 아침 출근길에 일곱 개의 글자를 써서 건네주고는 퇴근한 뒤 검사를 했다. 어린 최정호는 처음에는 마지못해 붓을 들었지만, 어느 날부터 재미가 붙어 스스로더 많은 숙제를 청하게 되었다. 교동공립보통학교를 다니던 때에는 이런 일도 있었다. 여름 방학이 끝나 학교에 간 날, 글씨 쓰기 숙제를 검사하던 담임선생이 다짜고짜 최정호의 따귀를 때렸다. 숙제를 부모가 대신 써주었으리라 착각한 것이다. 결국 최정호는 담임선생과 반 친구들이 보는 앞에서 직접 글씨를 써 보여 오해를 풀어야 했다.</p>
-				</div>
-				<ul>
-					<li>
-						<time>1916</time> 황해도 해주에서 태어남
-					</li>
-					<li>
-						<time>1919</time> 3·1운동이 일어남
-					</li>
-					<li>
-						<time>1923</time> 서울교동공립보통학교 졸업
-					</li>
-					<li>
-						<time>1929</time> 경성제일고등보통학교 졸업
-					</li>
-				</ul>
-			</section>
+			<li><time>2014.01 ~ 2014.06</time><cite>크로스브라우징 디지털 퍼블리싱 4기</cite><span>경원직업전문학교</span></li>
+			<li><time>2016.03 ~ 2016.03</time><cite>GUI 디자인</cite><span>SK 상생협력센터 T아카데미</span></li>
+			<li><time>2017.07 ~ 2017.09</time><cite>글자, 그리고 표현</cite><span>한글타이포그래피학교</span> 현승ㅈ[</li>
+			<li><time>2018.07 ~ 2018.09</time><cite>자바스크립트 기본 (토요일, 5주), 김영보</cite><span>양재동코드랩, 서울창업허브 세미나실 3</span></li>
+			<li>
+				<time>2020</time> 그로스해킹 - 데이터와 실험을 통해 성장하는 서비스를 만드는 방법(인프런 양승화)
+			</li>
+		</ul>
+		<br>
+		<ul>
+			<li>공간체 바람체 옵티크체 둥켈산스 아르바나</li>
+		</ul>
+	</section>
+<!-- 
+	<section class="about-era2">
+		<div class="about-era2-background"></div>
+		<p class="about-era2-title js-scroll-animation">어린시절 최정호</p>
+		<div class="about-era2-description js-scroll-animation">
+			<p>최정호는 어려서부터 공부보다는 글씨 쓰기에 더 뛰어난 재능을 보였다. 은행원이었던 그의 아버지는 매일 아침 출근길에 일곱 개의 글자를 써서 건네주고는 퇴근한 뒤 검사를 했다. 어린 최정호는 처음에는 마지못해 붓을 들었지만, 어느 날부터 재미가 붙어 스스로더 많은 숙제를 청하게 되었다. 교동공립보통학교를 다니던 때에는 이런 일도 있었다. 여름 방학이 끝나 학교에 간 날, 글씨 쓰기 숙제를 검사하던 담임선생이 다짜고짜 최정호의 따귀를 때렸다. 숙제를 부모가 대신 써주었으리라 착각한 것이다. 결국 최정호는 담임선생과 반 친구들이 보는 앞에서 직접 글씨를 써 보여 오해를 풀어야 했다.</p>
+		</div>
+		<ul>
+			<li>
+				<time>1916</time> 황해도 해주에서 태어남
+			</li>
+			<li>
+				<time>1919</time> 3·1운동이 일어남
+			</li>
+			<li>
+				<time>1923</time> 서울교동공립보통학교 졸업
+			</li>
+			<li>
+				<time>1929</time> 경성제일고등보통학교 졸업
+			</li>
+		</ul>
+	</section>
 
-			<section class="row">
-				<div class="col">
-					<h2>3개의 칼럼으로 몇 가지를 만들어 본다. 두 줄로 나오게 한다.</h2>
-				</div>
-				<div class="col">
-					<p>Ein Beispiel hierfür ist diese Figur eines Mannes, der mit seiner Flinte gerade Jagd auf Vögel macht.</p>
-					<p>Bei gutem Licht und entsprechendem Sehvermögen können aufmerksame MuseumsbesucherInnen sogar das Feuer erkennen, das aus seiner Flinte schießt.</p>
-				</div>
-				<div class="col">
-					<p>Ein Beispiel hierfür ist diese Figur eines Mannes, der mit seiner Flinte gerade Jagd auf Vögel macht.</p>
-					<p>Bei gutem Licht und entsprechendem Sehvermögen können aufmerksame MuseumsbesucherInnen sogar das Feuer erkennen, das aus seiner Flinte schießt.</p>
-				</div>
-			</section>
-				<section class="row2">
-					<div class="col">
-						<h2>3개의 칼럼으로 몇 가지를 만들어 본다. 두 줄로 나오게 한다.</h2>
-					</div>
-					<div class="col">
-						<p>Ein Beispiel hierfür ist diese Figur eines Mannes, der mit seiner Flinte gerade Jagd auf Vögel macht.</p>
-						<p>Bei gutem Licht und entsprechendem Sehvermögen können aufmerksame MuseumsbesucherInnen sogar das Feuer erkennen, das aus seiner Flinte schießt.</p>
-					</div>
-					<div class="col2">
-						<p>Ein Beispiel hierfür ist diese Figur eines Mannes, der mit seiner Flinte gerade Jagd auf Vögel macht.</p>
-						<p>Bei gutem Licht und entsprechendem Sehvermögen können aufmerksame MuseumsbesucherInnen sogar das Feuer erkennen, das aus seiner Flinte schießt.</p>
-					</div>
-					<div class="col2">
-						<p>Ein Beispiel hierfür ist diese Figur eines Mannes, der mit seiner Flinte gerade Jagd auf Vögel macht.</p>
-						<p>Bei gutem Licht und entsprechendem Sehvermögen können aufmerksame MuseumsbesucherInnen sogar das Feuer erkennen, das aus seiner Flinte schießt.</p>
-					</div>
-					<div class="col3">
-						<h2>3개의 칼럼으로 몇 가지를 만들어 본다. 두 줄로 나오게 한다.</h2>
-					</div>
-					<div class="col2">
-						<p>Ein Beispiel hierfür ist diese Figur eines Mannes, der mit seiner Flinte gerade Jagd auf Vögel macht.</p>
-						<p>Bei gutem Licht und entsprechendem Sehvermögen können aufmerksame MuseumsbesucherInnen sogar das Feuer erkennen, das aus seiner Flinte schießt.</p>
-					</div>
-					<div class="col2">
-						<p>Ein Beispiel hierfür ist diese Figur eines Mannes, der mit seiner Flinte gerade Jagd auf Vögel macht.</p>
-						<p>Bei gutem Licht und entsprechendem Sehvermögen können aufmerksame MuseumsbesucherInnen sogar das Feuer erkennen, das aus seiner Flinte schießt.</p>
-					</div>
-				</section>]
-	
-				<section class="abab">
-					<div></div>
-					<div></div>
-				</section>
+	<section class="row">
+		<div class="col">
+			<h2>3개의 칼럼으로 몇 가지를 만들어 본다. 두 줄로 나오게 한다.</h2>
+		</div>
+		<div class="col">
+			<p>Ein Beispiel hierfür ist diese Figur eines Mannes, der mit seiner Flinte gerade Jagd auf Vögel macht.</p>
+			<p>Bei gutem Licht und entsprechendem Sehvermögen können aufmerksame MuseumsbesucherInnen sogar das Feuer erkennen, das aus seiner Flinte schießt.</p>
+		</div>
+		<div class="col">
+			<p>Ein Beispiel hierfür ist diese Figur eines Mannes, der mit seiner Flinte gerade Jagd auf Vögel macht.</p>
+			<p>Bei gutem Licht und entsprechendem Sehvermögen können aufmerksame MuseumsbesucherInnen sogar das Feuer erkennen, das aus seiner Flinte schießt.</p>
+		</div>
+	</section>
+	<section class="row2">
+		<div class="col">
+			<h2>3개의 칼럼으로 몇 가지를 만들어 본다. 두 줄로 나오게 한다.</h2>
+		</div>
+		<div class="col">
+			<p>Ein Beispiel hierfür ist diese Figur eines Mannes, der mit seiner Flinte gerade Jagd auf Vögel macht.</p>
+			<p>Bei gutem Licht und entsprechendem Sehvermögen können aufmerksame MuseumsbesucherInnen sogar das Feuer erkennen, das aus seiner Flinte schießt.</p>
+		</div>
+		<div class="col2">
+			<p>Ein Beispiel hierfür ist diese Figur eines Mannes, der mit seiner Flinte gerade Jagd auf Vögel macht.</p>
+			<p>Bei gutem Licht und entsprechendem Sehvermögen können aufmerksame MuseumsbesucherInnen sogar das Feuer erkennen, das aus seiner Flinte schießt.</p>
+		</div>
+		<div class="col2">
+			<p>Ein Beispiel hierfür ist diese Figur eines Mannes, der mit seiner Flinte gerade Jagd auf Vögel macht.</p>
+			<p>Bei gutem Licht und entsprechendem Sehvermögen können aufmerksame MuseumsbesucherInnen sogar das Feuer erkennen, das aus seiner Flinte schießt.</p>
+		</div>
+		<div class="col3">
+			<h2>3개의 칼럼으로 몇 가지를 만들어 본다. 두 줄로 나오게 한다.</h2>
+		</div>
+		<div class="col2">
+			<p>Ein Beispiel hierfür ist diese Figur eines Mannes, der mit seiner Flinte gerade Jagd auf Vögel macht.</p>
+			<p>Bei gutem Licht und entsprechendem Sehvermögen können aufmerksame MuseumsbesucherInnen sogar das Feuer erkennen, das aus seiner Flinte schießt.</p>
+		</div>
+		<div class="col2">
+			<p>Ein Beispiel hierfür ist diese Figur eines Mannes, der mit seiner Flinte gerade Jagd auf Vögel macht.</p>
+			<p>Bei gutem Licht und entsprechendem Sehvermögen können aufmerksame MuseumsbesucherInnen sogar das Feuer erkennen, das aus seiner Flinte schießt.</p>
+		</div>
+	</section>
 
-			<section class="about-top">
-
-
-
-				 
-
-
-<!-- 싫어하는 것들, 높은건물 자동차 바퀴벌레 알츠하이머 보험
-1988. 01. 11 PM 05:08하프마라톤 02:05:52.76 
-KT 올레 LTE선택형100분250M
-키엘울트라페이셜크림, 닥터포헤어폴리젠샴푸
-일리윤세라마이드아토로션 히타치 하이맥스 CL-7000K은혜직물십장생파우치
-무인양품감아서묶을수있는롱타월락포트페니로퍼
-트라이베이직드로즈헌혈혈장비혼주의자왼손잡이A형INFP민방위2년차
-
-제 2작전사령부 2007년 06월 18일   2009년 05월 22일 0776045742 
-계명대학교 게임모바일컨텐츠학과 4801726</p>
-삼익동태 2013 08 15</p>
-세븐트리 2015 08 05</p>
-페이머스 12-22 6-30 </p>
-코레일 맴버십 1570429949</p>
-개인통관고유번호 P881150103132</p> -->
-
-
-<!-- 파허티<i>Faherty Adirondack Blanket Orange Blue Serape 52" x70"
-
-2015.05 수상내역/공모전 '데이터프리' 웹사이트 공모전 / 협의 후 공동우승(상금 60만원) 라우드소싱
-2011.04 웹디자인기능사 한국산업인력공단
-2010.10 컴퓨터그래픽스운용기능사 한국산업인력공단
-2007.03 워드프로세서1급 대한상공회의소
-2012.09 컴퓨터활용능력2급 대한상공회의소
-2007.04 1종보통운전면허 경찰청(운전면허시험관리단)
-2008.06 태권도 1단 대한태권도협회 -->
-
-<!-- 2009.09.20~2009.11.08 HBO 지루해 죽겠어Bored To Death
-2009.09.07~2010.03.19 MBC 지붕뚫고 하이킥 126부작 박병욱
-2010.01.22~2010.04.16 Starz 스파르타쿠스: 블러드 앤 샌드Spartacus: Blood and Sand
-2010.01.06~2010.03.25 KBS2 추노 곽정환
-2010.10.31~2010.12.05 AMC 워킹데드 1The Walking Dead 프랭크 다라본트
-2001.09.09~2001.11.04 HBO 밴드오브브라더스Band of Brothers
-2009.09.30~2010.05.19 ABC The Middle 시즌1
-2005.03.24~2005.04.26 NBC The Office 1
-2005.09.20~2006.05.11 NBC The Office 2
-2006.09.21~2007.05.17 NBC The Office 3
-2010.06.29~2010.09.07 FX Louie 1
-2011.10.16~2012.03.18 The Walking Dead Season 2
-2012.10.14~2013.03.31 The Walking Dead Season 3
-2007.09.27~2008.05.15 NBC The Office 4
-2011.06.23~2011.09.08 FX Louie 2
-2012.06.28~2012.09.27 FX Louie 3
-2013.04.26~2013.07.12 tvN 더 지니어스: 게임의 법칙
-2006.02.03~2006.03.03 Channel4 The IT Crowd
-2007.08.24~2007.09.28 Channel4 The IT Crowd 2
-2010.07.25~2010.08.08 BBC Sherlock 1
-2006.03.12~2007.06.10 The Sopranos 1
-2013.12.07~2014.02.22 tvN 더 지니어스: 룰 브레이커
-2008.09.25~2009.05.14 NBC The office 시즌5
-2009.09.17~2010.05.20 NBC The office 시즌6
-2010.09.23~2011.05.19 NBC The office 시즌7
-2008.11.21~2008.12.26 Channel4 IT 크라우드 3
-2010.00.00 BBC 시와점심The Song of Lunch 영화인데
-1999.02.16~1999.02.16 KBS2 검정고무신 1
-2000.12.00~2001.03.00 KBS2 검정고무신 2
-2014.10.01~2014.12.17 tvN 더 지니어스: 블랙가넷
-2014.10.17~2014.12.20 tvN 미생
-2014.05.05~2014.06.16 FX Networks 루이4
-오피스 8
-왕좌의게임1,2,3,4,5,6
-오피스 9
-나르코스 1
-나르코스 2
-블랙미러 1
-블랙미러 2
-기묘한 이야기
-빨간머리 앤
-왕좌의게임7
-글로우
-더 오피스 8, 9
-나르코스 1,2
-블랙미러 1,2
-기묘한 이야기 1
-썰전
-소사이어티 게임 -->
-				<article class="projects">
+	<section class="about-top"> -->
+				<!-- <article class="projects">
 				<h3 style="margin:16px;">코딩 알바</h3>
 				<ul>
 				 <li><time>2016 12</time> <cite>한국브랜드만족지수1위</cite> <span>웹사이트 퍼블리싱 100%</span></li>
@@ -256,7 +169,7 @@ KT 올레 LTE선택형100분250M
 			<li><time>2017 07 ~ 2017 09</time> <cite>서울특별시 한강사업본부 서울이색달리기 반응형 웹</cite> 기획50% 디자인100% 코딩100%</li>
 			<li><time>2017 10 ~ 2017 11</time> <cite>문화예술위원회 창작산실 - 올해의신작 반응형 웹(워드프레스)</cite> 기획50% 디자인100% 코딩100%</li>
 			<li><time>2016.12 ~ 2017.06</time> <cite>재능 포트폴리오 플랫폼 `페이머스`</cite> 프로덕트 디자인 프론트앤드개발</li>
-			
+			 -->
 			<!--
 			2016.03 ~ 2016.05 위올커뮤니케이션 / 2016.06 ~ 2016.09 (주)퍼니프렌즈
 			2014년 7월 ~ 2015년 8월
@@ -276,7 +189,7 @@ KT 올레 LTE선택형100분250M
 			
 			2016.11 이지스테이 반응형 웹사이트 리뉴얼 코딩
 			-->
-			<li><time>2014 08</time><cite>메가젠 R2임플란트</cite><span>반응형웹 컨텐츠 작업</span></li>
+			<!-- <li><time>2014 08</time><cite>메가젠 R2임플란트</cite><span>반응형웹 컨텐츠 작업</span></li>
 			<li><time>2014 08</time><cite>제스아일랜드</cite><span>코딩 100%</span></li>
 			<li><time>2014 08</time><cite>디비미디어</cite><span>코딩100%</span></li>
 			<li><time>2014 08</time><cite>닥터뉴욕치과 모바일웹</cite><span>디자인100% 코딩100%</span></li>
@@ -304,13 +217,8 @@ KT 올레 LTE선택형100분250M
 			<li><time>2015 06</time><cite>고객만족지수1위 반응형웹</cite><span>디자인100% 코딩100%</span></li>
 			<li><time>2015 07</time><cite>라이테크 반응형웹/웹접근성</cite><span>디자인100% 코딩100%</span></li>
 			<li><time>2015 07</time><cite>하라체어 리뉴얼</cite><span>디자인100%</span></li>
-			<hr>
-			<h3 style="margin-bottom:16px;">교육</h3>
-			<li><time>2014.01 ~ 2014.06</time><cite>크로스브라우징 디지털 퍼블리싱 4기</cite><span>경원직업전문학교</span></li>
-			<li><time>2016.03 ~ 2016.03</time><cite>GUI 디자인</cite><span>SK 상생협력센터 T아카데미</span></li>
-			<li><time>2017.07 ~ 2017.09</time><cite>글자, 그리고 표현</cite><span>한글타이포그래피학교</span></li>
-			<li><time>2018.07 ~ 2018.09</time><cite>자바스크립트 기본 (토요일, 5주), 김영보</cite><span>양재동코드랩, 서울창업허브 세미나실 3</span></li>
-			<hr>
+			<hr> -->
+
 			<!-- <h3 style="margin-bottom:16px;">전시 (as a visitor)</h3>
 			언리미티드에디션
 

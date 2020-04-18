@@ -184,7 +184,7 @@
 .slider-dots-dot:hover {width:30px;border-radius:5px;opacity:.5;}
 .slider-dots-dot.is-active {}
 
-.slider-arrows {}
+.slider-arrows {display:none;}
 .slider-arrows-prev {@extend .icon-button;width:32px;height:32px;background:$gray0;box-shadow:$shadow400;position:absolute;left:-16px;top:50%;transform:translateY(-50%);}
 .slider-arrows-prev:hover {background:$gray100;}
 .slider-arrows-next {@extend .icon-button;width:32px;height:32px;background:$gray0;box-shadow:$shadow400;position:absolute;right:-16px;top:50%;transform:translateY(-50%);}
