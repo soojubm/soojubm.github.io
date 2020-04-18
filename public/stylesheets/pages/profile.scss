@@ -63,8 +63,8 @@
 
 .card {display:block;width:280px;margin:0 0 1.5rem;position:relative;transition:all .4s;}
 .card-byline {display:flex;margin:.75rem 0;position:relative;}
-.card-byline-avater {display:block;width:16px;height:16px;overflow:hidden;margin-right:.5rem;border-radius:$radius400;background:$gray100;position:relative;}
-.card-byline-avater img {@include image-centered;}
+.card-byline-avatar {display:block;width:16px;height:16px;overflow:hidden;margin-right:.5rem;border-radius:$radius400;background:$gray100;position:relative;}
+.card-byline-avatar img {@include image-centered;}
 .card-byline-name {line-height:16px;color:$gray400;}
 .card-more {display:none;width:32px;height:32px;background:$gray100;position:absolute;right:.5rem;top:.5rem;}
 .card-thumbnail {padding-top:50%;overflow:hidden;background:$gray800;border-radius:$radius400;border:1px solid rgba(0, 0, 0, 0.05);border-color:$gray0;box-sizing:border-box;position:relative;}
