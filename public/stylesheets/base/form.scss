@@ -69,7 +69,7 @@ button.is-addable .icon-close {display:inline-block;background:$gray100;padding:
 .ghost-button:hover:not(:disabled) {border-color:$gray100;background:$gray100;}
 .ghost-button:focus:not(:disabled) {background:$gray100;}
 .ghost-button:active:not(:disabled) {}
-.icon-button {display:flex;align-items:center;justify-content:center;width:32px;height:32px;line-height:0;border-radius:$radius400;box-sizing:border-box;}
+.icon-button {display:flex;align-items:center;justify-content:center;width:32px;height:32px;line-height:0;background:$gray100;border-radius:$radius400;box-sizing:border-box;}
 
 .button-group {display:flex;width:100%;overflow:hidden;}// justify-content:space-between;}
 .button-group.is-left {padding:.5rem 0;}

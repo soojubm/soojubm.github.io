@@ -4,17 +4,15 @@
 
 .faq {margin:0 10%;}
 .faq-head {
-  border-bottom: 1px solid #000;
-  border-top: 1px solid #000;
+  border: 1px solid #000;
   border-radius: $radius400;
-  background: $gray800;
-  color: $gray0;
   font-size: 2rem;
 }
+.faq i {display:none;}
 .faq-item {margin:4rem 0;padding:0 0 4rem 0;border-bottom:$border100;}
 .faq-item + .faq-item {border-top:none;}
 .faq-item-question {margin:0 0 1rem 0;font-size:1.25rem;}
-.faq-item-answer {}
+.faq-item-answer {font-size:1.25rem;}
 
 .faq-contact {margin:8rem 0;}
 .faq-contact-title {
@@ -49,3 +47,8 @@
   white-space: nowrap;
   padding-right: 50px;
 }
+
+
+
+
+

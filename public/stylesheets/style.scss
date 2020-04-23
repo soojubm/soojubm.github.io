@@ -96,10 +96,11 @@
 .rating2.is-large .rating2-star {margin:0 .5rem 0 0;font-size:1.5rem;color:crimson;}
 .rating2.is-large .rating2-score {font-size:1.25em;}
 
-.scroll {position:absolute;bottom:2rem;right:2rem;z-index:8;box-shadow:$shadow400;transition:right .4s ease;}
-.scroll-indicator {transform:rotate(90deg);}
-.scroll-indicator i {width:2px;height:8px;background:$gray800;margin:8px auto 0;animation:bounce 0.5s infinite alternate;}
-.scroll-top {padding:24px;background:$gray0;transform:rotate(-90deg);}
+.scroll {position:fixed;bottom:1rem;right:1rem;z-index:8;}
+.scroll-indicator {}
+.scroll-indicator i {width:2px;height:8px;background:$gray800;margin:8px auto 0;animation:bounce 0.5s infinite alternate;transform:rotate(90deg);}
+.scroll-top {width:32px;height:32px;border-radius:$radius400;box-shadow:1px 1px 1rem rgba(0,0,0,.1)}
+.scroll-top i {transform:rotate(-90deg);}
 .scroll-bottom {display:none;}
 .scroll-top .is-visible {right:50px;}
 
@@ -127,7 +128,7 @@
 .avatar.is-small {width:16px;height:16px;}
 .avatar.is-medium {width:48px;height:48px;}
 .avatar.is-large {width:80px;height:80px;}
-.avatar img {width:auto;height:80px;margin-left:-16px;}
+.avatar img {width:auto;height:80px;}
 .avatar-badge {width:16px;height:16px;border-radius:50%;border:4px solid $gray0;box-sizing:border-box;position:absolute;right:0;bottom:0;}
 
 
@@ -278,4 +279,6 @@
   .features-item-title {}
   .features-item-description {}
   .features-item-link {}
+
+  .scroll {display:none}
 }

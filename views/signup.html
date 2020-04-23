@@ -6,29 +6,16 @@
     <fieldset class="signup-required">
       <legend aria-hidden="true">필수입력</legend>
       <!-- 구조를 최소화하기 위해 포지션으로 정렬. helper를 위해 세로값을 고정해야 함. -->
-      <div class="textfield email">
-        <label class="textfield-label email-label">이메일</label>
-        <input
-          class="textfield-input email-input"
-          type="text"
-          placeholder="soojubm@gmail.com"
-        />
+      <div class="textfield">
+        <label class="textfield-label">이메일</label>
+        <input class="textfield-input" type="text" placeholder="soojubm@gmail.com" />
         <!-- <small class="textfield-helper" role="alert">이메일을 입력하시와아요.</small> -->
-        <!-- <small class="error-text" role="alert">필수 입력란입니다.</small> -->
-        <!-- <small class="textfield-helper" role="alert">이메일을 입력하시와아요.</small-->
         <!--span class="check-text -o"><i class="icon-check" style="border-color:#3fbb65;"></i></span>
         <span class="check-text -x"><i class="icon-close"></i></span-->
       </div>
       <div class="textfield">
-        <label class="textfield-label" for="signup-password"
-          >비밀번호<abbr title="required" aria-hidden="true">*</abbr></label
-        >
-        <input
-          class="textfield-input"
-          type="password"
-          id="signup-password"
-          placeholder="비밀번호"
-        />
+        <label class="textfield-label" for="signup-password">비밀번호<abbr title="required" aria-hidden="true">*</abbr></label>
+        <input class="textfield-input" type="password" id="signup-password" placeholder="비밀번호" />
         <button class="view-password" type="button">비밀번호 보기</button>
         <!-- <input
           class="textfield-input"
@@ -38,15 +25,8 @@
         /> -->
       </div>
       <div class="textfield">
-        <label class="textfield-label" for="signup-password"
-          >비밀번호 확인<abbr title="required" aria-hidden="true">*</abbr></label
-        >
-        <input
-          class="textfield-input"
-          type="password"
-          id="signup-password-confirm"
-          placeholder="비밀번호 확인"
-        />
+        <label class="textfield-label" for="signup-password">비밀번호 확인<abbr title="required" aria-hidden="true">*</abbr></label>
+        <input class="textfield-input" type="password" id="signup-password-confirm" placeholder="비밀번호 확인" />
         <button class="view-password" type="button">비밀번호 보기</button>
       </div>
     </fieldset>
@@ -58,10 +38,9 @@
           >부서<abbr title="">(선택입력)</abbr></label
         >
         <input
-          class="textfield-input"
+          class="textfield-input optional"
           type="text"
           id="signup-company"
-          class="optional"
           placeholder="부서"
         />
       </div>
@@ -75,13 +54,10 @@
       <div class="checkbox">
         <input type="checkbox" class="js-check js-required" id="agree-terms" />
         <label for="agree-terms">이용약관 동의</label>
-        <div
-          style="height:120px;margin:8px 0 24px;padding:8px 16px;border:1px solid #e9e9e6;box-sizing:border-box;font-size:12px;color:$gray400;overflow-y:scroll;"
-        >
+        <div class="signup-terms-content">
           <p>
             - 개인정보를 제공받는 자: 엔에이치엔페이코(주)<br />
-            - 제공항목: 광고ID, 이용자 단말기 내 설치된 어플리케이션 정보(앱 설치·실행시각
-            포함)<br />
+            - 제공항목: 광고ID, 이용자 단말기 내 설치된 어플리케이션 정보(앱 설치·실행시각 포함)<br />
             - 제공받는 자의 개인정보 이용목적: 이용자 관심 등에 기반한 맞춤형 서비스 제공<br />
             - 제공받는자의 개인정보 보유이용기간: 수집일로부터 2년
           </p>
@@ -107,20 +83,19 @@
 </main>
 <script>
   function onChangePhoneNumberFormat(num) {
-    let update = '';
+    let update = ''
     for (var i = 0; i < num.length; i++) {
-      var changed = num.charAt(i).replace('-', '');
-      update += changed;
+      var changed = num.charAt(i).replace('-', '')
+      update += changed
     }
-    return update;
+    return update
   }
   // TODO other input
-  document.addEventListener('DOMContentLoaded', () => {
-  });
-  const signUpForm = document.querySelector('.signup');
-  const userId = document.querySelector('.js-email');
-  const userPassword = document.querySelector('.js-password');
-  const checkItemsRequired = document.querySelectorAll('.js-required');
+  document.addEventListener('DOMContentLoaded', () => {})
+  const signUpForm = document.querySelector('.signup')
+  const userId = document.querySelector('.js-email')
+  const userPassword = document.querySelector('.js-password')
+  const checkItemsRequired = document.querySelectorAll('.js-required')
 
   document.addEventListener(
     'blur',
@@ -131,28 +106,28 @@
       }
     },
     true,
-  );
+  )
   document.addEventListener(
     'keyup',
     event => {
       if (event.target.matches('.email-input')) {
         if (event.target.value.length < 6) {
-          alert('너무 짧아요');
+          alert('너무 짧아요')
         }
       }
     },
     true,
-  );
+  )
 
   // 회원가입 버튼을 눌렀을 때 유효성을 체크한다.
   signUpForm.addEventListener('submit', function(event) {
-    event.preventDefault();
-    if (checkItemsRequired.length === checkedItemsRequired.length) alert('ok');
-    alert(checkItemsRequired.length);
+    event.preventDefault()
+    if (checkItemsRequired.length === checkedItemsRequired.length) alert('ok')
+    alert(checkItemsRequired.length)
 
     if (userId.value.length < 5) {
       //	userId.nextSibling.nextSibling.innerHTML = '5~20자의 영문 소문자와 숫자, 특수기호(_),(-)만 사용 가능합니다.';
     }
     // 8~16자 영문 대 소문자, 숫자, 특수문자를 사용하세요.
-  });
+  })
 </script>

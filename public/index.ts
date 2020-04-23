@@ -9,6 +9,8 @@ import { countDownClock } from './javascripts/countdown'
 import event from './javascripts/event/index'
 import input from './javascripts/input/index'
 
+import { validity } from './javascripts/utils/validations'
+
 // close 보다 delete가 포괄적인 네이밍
 
 // var evens = _.remove(array, function(n) {
@@ -44,12 +46,11 @@ window.addEventListener('beforeunload', event => {
     event.returnValue = 'There is pending work. Sure you want to leave?'
   }
   // navigator.sendBeacon('/log', analyticsData)
-
 })
 
 window.addEventListener('unload', function(event) {
-  console.log('unload EVENT');
-});
+  console.log('unload EVENT')
+})
 // function addToPendingWork(promise) {
 //   busyspinner.hidden = false
 //   pendingOps.add(promise)
@@ -82,11 +83,13 @@ window.addEventListener('offline', () => {
 
 const domEvents = () => {
   routePage().then(() => {
+    const test = validity.isEmail('faf')
+    console.log('isNumber', test)
     event.modal({ selector: '.js-modal' }).setEvent()
 
     input.checkbox({ checkAllSelector: '.js-checkall', checkSelector: '.js-check' }).setEvent()
     event.toggleClass({ selector: '.js-toggle' }).setEvent()
-  
+
     event.enterTarget({ selector: '.js-hover-trigger' })
     event.tabMenu()
     event.close({ selector: '.js-close' })
@@ -105,43 +108,62 @@ const domEvents = () => {
 
     revealPassword()
 
-    document.querySelector('.js-copyClipboard')?.addEventListener("click", () => {
-      copyToClipboard("https://napp.newneek.co/2020election/#temp");
+
+    const pageHead = document.querySelector<HTMLElement>('.header')
+    const pageTitle = document.querySelector<HTMLElement>('.js-page-title')
+    document.addEventListener('scroll', event => {
+      if (!pageHead) return
+
+      console.log(pageTitle)
+
+      // document.body.style.marginTop = pageHead.clientHeight + 'px'
+      if (window.pageYOffset > pageHead.offsetTop) {
+        pageHead.classList.add('is-fixed')
+        pageTitle?.classList.add('is-fixed')
+      } else {
+        pageHead.classList.remove('is-fixed')
+        pageTitle?.classList.remove('is-fixed')
+      }
+
+      if(pageTitle) {
+      }
     })
 
+    document.querySelector('.js-copyClipboard')?.addEventListener('click', () => {
+      copyToClipboard('https://napp.newneek.co/2020election/#temp')
+    })
 
-function smoothScroll(target, duration) {
-  var target = document.querySelector(target)
-  var targetPosition = target.getBoundingClientRect().top
-  var startPosition = window.pageYOffset
-  var distance = targetPosition - startPosition
-  var startTime = null
+    // function smoothScroll(target, duration) {
+    //   var target = document.querySelector(target)
+    //   var targetPosition = target.getBoundingClientRect().top
+    //   var startPosition = window.pageYOffset
+    //   var distance = targetPosition - startPosition
+    //   var startTime = null
 
-  function animation(currentTime) {
-    if(startTime === null) startTime = currentTime
+    //   function animation(currentTime) {
+    //     if (!startTime) startTime = currentTime
 
-    var timeElapsed = currentTime - startTime
-    var run = easeInOutQuad(timeElapsed, startPosition, distance, duration)
-  
-    window.scrollTo(0, run)
+    //     var timeElapsed = currentTime - startTime
+    //     var run = easeInOutQuad(timeElapsed, startPosition, distance, duration)
 
-    if(timeElapsed < duration) requestAnimationFrame(animation)
-  }
-  function easeInOutQuad(t, b, c, d) {
-    t /= d/2;
-    if (t < 1) return c/2*t*t + b;
-    t--;
-    return -c/2 * (t*(t-2) - 1) + b;
-  };
+    //     window.scrollTo(0, run)
 
-  requestAnimationFrame(animation)
-}
+    //     if (timeElapsed < duration) requestAnimationFrame(animation)
+    //   }
+    //   function easeInOutQuad(t, b, c, d) {
+    //     t /= d / 2
+    //     if (t < 1) return (c / 2) * t * t + b
+    //     t--
+    //     return (-c / 2) * (t * (t - 2) - 1) + b
+    //   }
 
-// var section1 = document.querySelector('.design-article')
-// section1?.addEventListener('click', function() {
-//   smoothScroll('.footer', 1000)
-// })
+    //   requestAnimationFrame(animation)
+    // }
 
+    // var section1 = document.querySelector('.design-article')
+    // section1?.addEventListener('click', function() {
+    //   smoothScroll('.footer', 1000)
+    // })
 
     // event.customCursor()
 
@@ -162,11 +184,9 @@ function smoothScroll(target, duration) {
       })
     }
 
-
     focusComment()
   })
 }
-
 
 window.addEventListener('hashchange', domEvents)
 window.addEventListener('hashchange', initailizePage)
@@ -187,13 +207,15 @@ function detectHeaderTheme() {
 function revealPassword() {
   const toggleElement = document.querySelectorAll<HTMLElement>('.view-password')
 
-  toggleElement?.forEach(element => element.addEventListener('click', () => {
-    const passwordElement = element.parentNode?.querySelector<HTMLElement>('input')
-    const typeAttribute = passwordElement?.getAttribute('type')
-    const type = typeAttribute === 'password' ? 'text' : 'password'
+  toggleElement?.forEach(element =>
+    element.addEventListener('click', () => {
+      const passwordElement = element.parentNode?.querySelector<HTMLElement>('input')
+      const typeAttribute = passwordElement?.getAttribute('type')
+      const type = typeAttribute === 'password' ? 'text' : 'password'
 
-    passwordElement?.setAttribute('type', type)
-  }))
+      passwordElement?.setAttribute('type', type)
+    }),
+  )
 }
 
 function initailizePage() {
@@ -218,9 +240,9 @@ function notifyThisPage() {
 function calculateReadTime() {
   const readTimeElement = document.querySelector<HTMLElement>('.post-head')
   const postContent = document.querySelector<HTMLElement>('.post-body-paragraph')
-  if(!postContent || !readTimeElement) return
+  if (!postContent || !readTimeElement) return
   const text = postContent?.textContent || postContent?.innerText
-  let textLength = text.split(" ").length || 1
+  let textLength = text.split(' ').length || 1
   const wordsPerMinute = 200
   let value = Math.ceil(textLength / wordsPerMinute)
   const result = `${value} min read`
@@ -229,23 +251,21 @@ function calculateReadTime() {
   readTimeElement.innerText = result
 }
 
+// function bustCache() {
+//   const linkElements = document.querySelectorAll('link')
+//   linkElements.forEach(element => {
+//     const isStylesheet = element.getAttribute('rel') === 'stylesheet'
+//     if (!isStylesheet) return
 
-function bustCache() {
-  const linkElements = document.querySelectorAll('link')
-  linkElements.forEach(element => {
-    const isStylesheet = element.getAttribute('rel') === 'stylesheet'
-    if(!isStylesheet) return
-
-    const href = element.getAttribute('href')
-    const timestamp = new Date().getTime()
-    const cacheBuster = `${href}?cacheBuster=${timestamp}`
-    element.setAttribute('href', cacheBuster)
-  })
-}
-
+//     const href = element.getAttribute('href')
+//     const timestamp = new Date().getTime()
+//     const cacheBuster = `${href}?cacheBuster=${timestamp}`
+//     element.setAttribute('href', cacheBuster)
+//   })
+// }
 
 document.addEventListener('DOMContentLoaded', () => {
-  bustCache()
+  // bustCache()
   initailizePage()
 
   loader()
@@ -274,68 +294,63 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', scrollProgress, true)
 })
 
+// ! click 이벤트 외부에 넣으니까 파폭에서만 오류. event undefined
+// TODO: 도큐먼트가 아니라 event.target.parent 가 아닌 것을 클릭했을 때 다당야 하나
+// const findClassRecursive = (element, className, depth) => {
+// // parentNode.classList.contains('js-modal')
+// 	console.log('depth: ' + depth, element);
+// 	if (element.classList.contains(className)) return element;
+// 	else return findClassRecursive(element.parentNode, className, depth + 1);
+// };
 
+// var getClosest = function(elem, selector) {
+// 	for (; elem && elem !== document; elem = elem.parentNode) {
+// 		if (elem.matches(selector)) return elem;
+// 	}
+// 	return null;
+// };
 
+// Promise.all([
+// 	fetch('https://jsonplaceholder.typicode.com/posts'),
+// 	fetch('https://jsonplaceholder.typicode.com/users')
+// ])
+// .then(responses => {
+// 	return responses.map(response => {
+// 		return response.json();
+// 	});
 
-
-  // ! click 이벤트 외부에 넣으니까 파폭에서만 오류. event undefined
-  // TODO: 도큐먼트가 아니라 event.target.parent 가 아닌 것을 클릭했을 때 다당야 하나
-  // const findClassRecursive = (element, className, depth) => {
-  // // parentNode.classList.contains('js-modal')
-  // 	console.log('depth: ' + depth, element);
-  // 	if (element.classList.contains(className)) return element;
-  // 	else return findClassRecursive(element.parentNode, className, depth + 1);
-  // };
-
-  // var getClosest = function(elem, selector) {
-  // 	for (; elem && elem !== document; elem = elem.parentNode) {
-  // 		if (elem.matches(selector)) return elem;
-  // 	}
-  // 	return null;
-  // };
-
-  // Promise.all([
-  // 	fetch('https://jsonplaceholder.typicode.com/posts'),
-  // 	fetch('https://jsonplaceholder.typicode.com/users')
-  // ])
-  // .then(responses => {
-  // 	return responses.map(response => {
-  // 		return response.json();
-  // 	});
-
-  // 연도별 감독별 나라별
-  // const boardElement = document.querySelector('.board');
-  // if(!boardElement) return null;
-  // document.addEventListener('click', event => {
-  // 	const filteredCountry = films.filter(item => item.country === '미국');
-  // 	console.log(filteredCountry);
-  // 	if(event.target.name === 'usa') {
-  // 		boardElement.innerHTML = '';
-  // 		filteredCountry.map(item => {
-  // 			boardElement.innerHTML += `
-  // 				<div class="board-body">
-  // 					<div class="board-head-title">${item.id}</div>
-  // 					<div class="board-head-title">${item.releaseDate}</div>
-  // 					<div class="board-head-title">${item.titleKorean}<div>${item.titleEnglish}</div></div>
-  // 					<div class="board-head-title">${item.director}</div>
-  // 					<div class="board-head-title">${item.country}</div>
-  // 				</div>`;
-  // 		});
-  // 	}
-  // });
-  // setTimeout(() => {
-  // 	films.map(item => {
-  // 		boardElement.innerHTML += `
-  // 		<div class="board-body">
-  // 			<div class="board-head-title">${item.id}</div>
-  // 			<div class="board-head-title">${item.releaseDate}</div>
-  // 			<div class="board-head-title">${item.titleKorean}<div>${item.titleEnglish}</div></div>
-  // 			<div class="board-head-title">${item.director}</div>
-  // 			<div class="board-head-title">${item.country}</div>
-  // 		</div>`;
-  // 	});
-  // }, 200);
-
+// 연도별 감독별 나라별
+// const boardElement = document.querySelector('.board');
+// if(!boardElement) return null;
+// document.addEventListener('click', event => {
+// 	const filteredCountry = films.filter(item => item.country === '미국');
+// 	console.log(filteredCountry);
+// 	if(event.target.name === 'usa') {
+// 		boardElement.innerHTML = '';
+// 		filteredCountry.map(item => {
+// 			boardElement.innerHTML += `
+// 				<div class="board-body">
+// 					<div class="board-head-title">${item.id}</div>
+// 					<div class="board-head-title">${item.releaseDate}</div>
+// 					<div class="board-head-title">${item.titleKorean}<div>${item.titleEnglish}</div></div>
+// 					<div class="board-head-title">${item.director}</div>
+// 					<div class="board-head-title">${item.country}</div>
+// 				</div>`;
+// 		});
+// 	}
+// });
+// setTimeout(() => {
+// 	films.map(item => {
+// 		boardElement.innerHTML += `
+// 		<div class="board-body">
+// 			<div class="board-head-title">${item.id}</div>
+// 			<div class="board-head-title">${item.releaseDate}</div>
+// 			<div class="board-head-title">${item.titleKorean}<div>${item.titleEnglish}</div></div>
+// 			<div class="board-head-title">${item.director}</div>
+// 			<div class="board-head-title">${item.country}</div>
+// 		</div>`;
+// 	});
+// }, 200);
 
 // document.addEventListener('input', event => {
 // 	// const helpers = document.querySelectorAll('.textfield-helper');
@@ -399,58 +414,54 @@ document.addEventListener('submit', event => event.preventDefault())
 // 	return 'The value you entered for this field is invalid.';
 // };
 
+// const uiData = [
+//   { label: '상품 상세페이지', description :'', date :'2020.01-01', href: '#product', tags: ['기획', '디자인'] },
+//   { label: '상품 카트', description :'', date :'2020-01-01', href: '#cart', tags: ['기획', '디자인'] },
+//   { label: '로그인', description :'', date :'2020-01-01', href: '#login', tags: ['기획', '디자인'] },
+//   { label: '비밀번호 찾기', description :'', date :'2020-01-01', href: '#forgot', tags: ['기획', '디자인'] }
+// ]
+// const ccc: any = document.querySelector<HTMLElement>('.js-ui');
+// if(ccc) {
+//   const temp = uiData.map(item => {
+//     console.log(item);
+//     const ttt = item.tags.map(i => `<span class="tag">${i}</span>`).join('')
+//     const uiTemplate = `<a class="card" href="${item.href}">
+//         <figure class="card-thumbnail" style="font-family:'DunkelSans';display:flex;align-items:center;justify-content:center;">${item.label}</figure>
+//         <h3 class="card-title">${item.label}</h3>
+//         <time class="card-date">${item.date}<time>
+//         <div class="card-tags" role="group">
+//           ${ttt}
+//         </div>
+//         <button class="card-more icon-button" type="button"><i class="icon-more"></i></button>
+//       </a>`
+//     return uiTemplate;
+//   }).join('')
+//   console.log(temp);
+//   ccc.innerHTML = temp;
+// }
 
-
-    // const uiData = [
-    //   { label: '상품 상세페이지', description :'', date :'2020.01-01', href: '#product', tags: ['기획', '디자인'] },
-    //   { label: '상품 카트', description :'', date :'2020-01-01', href: '#cart', tags: ['기획', '디자인'] },
-    //   { label: '로그인', description :'', date :'2020-01-01', href: '#login', tags: ['기획', '디자인'] },
-    //   { label: '비밀번호 찾기', description :'', date :'2020-01-01', href: '#forgot', tags: ['기획', '디자인'] }
-    // ]
-    // const ccc: any = document.querySelector<HTMLElement>('.js-ui');
-    // if(ccc) {
-    //   const temp = uiData.map(item => {
-    //     console.log(item);
-    //     const ttt = item.tags.map(i => `<span class="tag">${i}</span>`).join('')
-    //     const uiTemplate = `<a class="card" href="${item.href}">
-    //         <figure class="card-thumbnail" style="font-family:'DunkelSans';display:flex;align-items:center;justify-content:center;">${item.label}</figure>
-    //         <h3 class="card-title">${item.label}</h3>
-    //         <time class="card-date">${item.date}<time>
-    //         <div class="card-tags" role="group">
-    //           ${ttt}
-    //         </div>
-    //         <button class="card-more icon-button" type="button"><i class="icon-more"></i></button>
-    //       </a>`
-    //     return uiTemplate;
-    //   }).join('')
-    //   console.log(temp);
-    //   ccc.innerHTML = temp;
-    // }
-
-
-  // var i = 0;
-  // var images = ['cover1.jpg','cover2.jpg'];
-  // var imageElement = document.querySelector('.cover_image');
-  // // image.css('background-image', 'url(/img/cover1.jpg)');
-  // setInterval(function(){
-  // 	imageElement.fadeOut(1000, () => {
-  // 		imageElement.css('background-image', `url(${images[i++]})`);
-  // 		imageElement.fadeIn(1000);
-  // 	});
-  // 	if(i === images.length) i = 0;
-  // }, 5000);
-
+// var i = 0;
+// var images = ['cover1.jpg','cover2.jpg'];
+// var imageElement = document.querySelector('.cover_image');
+// // image.css('background-image', 'url(/img/cover1.jpg)');
+// setInterval(function(){
+// 	imageElement.fadeOut(1000, () => {
+// 		imageElement.css('background-image', `url(${images[i++]})`);
+// 		imageElement.fadeIn(1000);
+// 	});
+// 	if(i === images.length) i = 0;
+// }, 5000);
 
 function copyToClipboard(text) {
-  const textareaElement = document.createElement("textarea")
+  const textareaElement = document.createElement('textarea')
   document.body.appendChild(textareaElement)
 
   textareaElement.value = text
-  textareaElement.select(); // focus?도 해야함?
-  document.execCommand("copy")
+  textareaElement.select() // focus?도 해야함?
+  document.execCommand('copy')
   document.body.removeChild(textareaElement)
 
-  alert('복사 완료! 이제 "붙여넣기" 해주세요.😉');
+  alert('복사 완료! 이제 "붙여넣기" 해주세요.😉')
   // try {
   //   document.execCommand('copy');
   // } catch (error) {
@@ -458,9 +469,6 @@ function copyToClipboard(text) {
   //   document.body.removeChild(textareaElement);
   // }
 }
-
-
-
 
 // var createArticle = function (article) {
 // 	fetch('https://jsonplaceholder.typicode.com/posts', {
