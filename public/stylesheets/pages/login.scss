@@ -31,6 +31,7 @@
 .signup-foot {padding:2rem 0;}
 .signup .textfield {margin:2rem 0;}
 .signup-terms {}
+.signup-terms-content {height:120px;margin:8px 0 24px;padding:8px 16px;border:1px solid #e9e9e6;box-sizing:border-box;font-size:12px;color:$gray400;overflow-y:scroll;}
 
 .firstname-label {width:49%;}
 .firstname-input {width:49%;}
@@ -46,3 +47,21 @@
 .password-submit {float:left;width:200px;max-width:50%;}
 .password-link {float:right;margin-top:16px;}
 .password-foot {margin:1rem 0 0;}
+
+
+.delete {
+  margin:0 0 10rem 0;
+}
+
+.delete-head {padding:2rem 10% 4rem;}
+.delete-head-title {}
+.delete-head-description {margin:1rem 0;}
+
+.delete-suggest {padding:4rem 10%;}
+.delete-suggest-subhead {margin:1rem 0;font-size:1.25rem;}
+
+.delete-why {padding:0 10%;}
+.delete-why-title {font-size:1.25rem;}
+.delete-why-description {margin:1rem 0;}
+
+.delete-action {padding:8rem 10%;}
