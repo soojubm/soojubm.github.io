@@ -67,7 +67,7 @@ ol li ol li:before {content: counter(sub-list-item,lower-alpha) '.';}
 .tag.is-red {background:$red100;color:$red800;}
 .is-fixed-top {position:fixed;top:0;}
 
-@media (max-width:$breakpoint-small) {
+@media (--viewport-small) {
   html {font-size:12px;}
   small {font-size:10px;}
   .tag {font-size:10px;}
@@ -78,7 +78,7 @@ ol li ol li:before {content: counter(sub-list-item,lower-alpha) '.';}
 .loading-object {width:2rem;height:2rem;border-radius:50%;position:fixed;left:50%;top:50%;z-index:10;/*margin:-40px 0 0 -40px;*/background:$color-primary;animation:scaleout .8s infinite ease;}
 .loading-object.is-default {background:$gray100;}
 .loading-object.is-clickable {background:crimson;}
-@media (max-width:$breakpoint-small) {
+@media (--viewport-small) {
   .loading-object {display:none;}
 }
 

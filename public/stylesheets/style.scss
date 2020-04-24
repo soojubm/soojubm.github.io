@@ -269,7 +269,7 @@
 .features-item-link {display:block;margin-top:1rem;}
 
 
-@media (max-width:$breakpoint-small) {
+@media (--viewport-small) {
   .features {flex-direction:column;}
   // .features header {padding:0 0 6rem;text-align:center;}
   // .features header h2 {margin:0 0 1rem 0;font-family:'DunkelSans';font-size:3rem;}

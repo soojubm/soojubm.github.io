@@ -4,7 +4,7 @@
 .banner-button {}
 
 
-@media (max-width:$breakpoint-small) {
+@media (--viewport-small) {
   .banner {width:90%;padding-bottom:2.5rem;}
   .banner-text {display:block;margin:0 0 1rem 0;}
   .banner-button {}

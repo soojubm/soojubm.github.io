@@ -1,5 +1,7 @@
 // mediaquery, desktop first
 
+
+
 // ^ html에서 선언 or 제목용 / 본문용 디자인이 다를 때만 필요.
 :root {
   --gold: #333
@@ -38,7 +40,10 @@ $breakpoint-medium: 1280px;
 $breakpoint-small: 1080px;
 $breakpoint-tiny: 720px;
 
-@custom-media --breakpoint-large (max-width: 1440px);
+@custom-media --viewport-large (max-width: 1440px);
+@custom-media --viewport-medium (max-width: 1280px);
+@custom-media --viewport-small (max-width: 1080px);
+@custom-media --viewport-tiny (max-width: 720px);
 
 $padding100: .2rem 1rem; // is-small
 $padding200: 11px 1.5rem 10px; // 버튼, 텍스트인풋
@@ -77,6 +82,11 @@ $zindex-modal-backdrop: 7;
 $zindex-popover: 6;
 $zindex-tooltip: 8;
 
+$container-spacer: 10%;
+@media (--viewport-small) {
+  $container-spacer: 5%;
+}
+
 
 .is-facebook {color:$color-facebook !important;}
 .is-twitter {color:$color-twitter !important;}
@@ -104,7 +114,7 @@ $zindex-tooltip: 8;
 
 
 $height-header: 64px;
-@media (max-width:$breakpoint-small) {
+@media (--viewport-small) {
   $height-header: 56px;
 
   // :root {
@@ -113,7 +123,7 @@ $height-header: 64px;
 }
 
 .linebreak {display:block;}
-@media (max-width:$breakpoint-small) {
+@media (--viewport-small) {
   .linebreak {display:inline;}
 }
 

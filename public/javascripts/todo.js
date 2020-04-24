@@ -11,7 +11,7 @@
 
 	// 	const li = document.createElement('li');
 	// 	const todoDelete = document.createElement('button');
-	// 	// todoDelete.classList.add('ghost-button');
+	// 	// todoDelete.classList.add('text-button');
 	// 	todoDelete.setAttribute('type','button');
 	// 	todoDelete.innerHTML = '<i class="icon-close" />';
 

@@ -99,7 +99,7 @@ body.is-sticky {padding-top:200px;}
 .comment-write-name {display:none;float:left;width:calc(50% - 4px);margin:0 0 8px 0;}
 .comment-write-password {display:none;float:right;width:calc(50% - 4px);margin:0 0 8px 0;}
 .comment-write-submit {float:right;@extend .primary-button;}
-.comment-write-cancel {@extend .ghost-button;}
+.comment-write-cancel {@extend .text-button;}
 .is-focused .comment-write-name {display:block;}
 .is-focused .comment-write-password {display:block;}
 
@@ -144,7 +144,7 @@ body.is-sticky {padding-top:200px;}
 
 
 
-@media (max-width:$breakpoint-small) {
+@media (--viewport-small) {
 	.post {padding:40px 5%;}
 
 	.post-body-img {float:none;margin:2rem -8%;}

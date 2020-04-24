@@ -14,13 +14,13 @@
 .terms-sidebar {width:100%;max-width:320px;background:$gray0;padding:8rem 1.5rem;border-right:1px solid $gray100;box-sizing:border-box;overflow-y:auto;position:fixed;top:0;bottom:0;z-index:1;}
 .terms-sidebar a {display:block;line-height:40px;}
 
-@media (max-width:$breakpoint-medium) {
+@media (--viewport-medium) {
   .terms-sidebar {max-width:280px;}
   .terms-head {max-width:640px;margin:0;margin-left:320px;}
   .terms-body {max-width:640px;margin:0;margin-left:320px;}
   
 }
-@media (max-width:$breakpoint-small) {
+@media (--viewport-small) {
   .terms-sidebar {display:none;}
   .terms-head {margin:0 auto;}
   .terms-body {margin:0 auto;}

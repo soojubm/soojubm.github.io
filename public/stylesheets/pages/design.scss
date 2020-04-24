@@ -42,14 +42,14 @@
 .design-button-subhead {font-size:$body;text-decoration:underline;}
 
 
-@media (max-width:$breakpoint-large) {
+@media (--viewport-large) {
   .design {padding:0;}
   .design-head {height:50vh;position:relative;left:0;right:0;top:0;bottom:50%;}
   .design-body {width:60%;margin:4rem 10%;padding:0;}
 }
 
 
-@media (max-width:$breakpoint-small) {
+@media (--viewport-small) {
   .design-head {}
   .design-body {width:90%;max-width:480px;margin-left:5%;}
 }

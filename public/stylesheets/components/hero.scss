@@ -14,11 +14,11 @@
 .hero-body {}
 .hero-foot {}
 
-@media (max-width:$breakpoint-large) {
+@media (--viewport-large) {
   .hero {margin:-4rem 10% 0;}
 }
 
-@media (max-width:$breakpoint-small) {
+@media (--viewport-small) {
   .hero {margin:-4rem 5% 0;}
   // .hero {padding:2rem 3rem 3rem;}
 }

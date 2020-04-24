@@ -29,7 +29,7 @@
 .is-short .footer-address {float:none;width:100%;text-align:center;}
 .is-short .footer-address-info {display:none;}
 
-@media (max-width:$breakpoint-small) {
+@media (--viewport-small) {
 	.footer {padding:3rem 5% 6rem;}
 	.subscribe {padding-left:5%;padding-right:5%;}
 	.subscribe-field {width:100%;}

@@ -27,7 +27,7 @@
 .cake-info h2 {padding:2rem 0;font-size:$subhead;position:absolute;left:0;top:0;}
 .cake-info p {padding-left:320px;}
 
-@media (max-width:$breakpoint-medium) {
+@media (--viewport-medium) {
   .cake-head {width:100%;height:auto;padding:2rem 5%;box-sizing:border-box;}
 
   .cake-background {height:400px;background:url('/public/images/newman.jpg') no-repeat 0 0 fixed;position:absolute;left:-100%;right:-100%;top:0;z-index:-1;}
@@ -51,7 +51,7 @@
   .cake-info p {padding-left:240px;}
 }
 
-@media (max-width:$breakpoint-small) {
+@media (--viewport-small) {
   .cake-info {width:100%;padding:2rem 2rem;box-sizing:border-box;}
   .cake-info + .cake-info {border-top:none;}
   .cake-info h2 {padding:0 0 1rem 0;position: static;left:auto;top:auto;}

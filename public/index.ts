@@ -109,6 +109,47 @@ const domEvents = () => {
     revealPassword()
 
 
+    const inputTest = document.querySelector<HTMLInputElement>('.js-input-test');
+
+    if(inputTest) {
+      inputTest.addEventListener('keypress', function(e) {
+        const key = e.which || e.keyCode;
+    
+        // 0, 1, ..., 9 have key code of 48, 49, ..., 57, respectively
+        // Space has key code of 32
+        if (key != 32 && (key < 48 || key > 57)) {
+          e.preventDefault();
+        }
+      });
+
+      // let selection = {};
+      // inputTest.addEventListener('keydown', function(e) {
+      //   const target = e.target as HTMLInputElement;
+      //   selection = {
+      //     start: target.selectionStart,
+      //     end: target.selectionEnd,
+      //   };
+      // });
+
+      // Track the current value
+      let currentValue = inputTest.value || ''
+      inputTest.addEventListener('input', function(e) {
+        const target = e.target as HTMLInputElement
+        if(/^[0-9\s]*$/.test(target.value)) currentValue = target.value
+        else target.value = currentValue;
+        // Note that in this case, `e.preventDefault()` doesn't help
+      
+        // 한글 입력했을 때 커서가 맨 뒤로 감.
+        // if (/^[0-9s]*$/.test(target.value)) {
+        //   currentValue = target.value
+        // } else {
+        //   target.value = currentValue
+        //   target.setSelectionRange(selection.start, selection.end)
+        // }
+      });
+    }
+
+
     const pageHead = document.querySelector<HTMLElement>('.header')
     const pageTitle = document.querySelector<HTMLElement>('.js-page-title')
     document.addEventListener('scroll', event => {

@@ -64,11 +64,11 @@ button.is-addable .icon-close {display:inline-block;background:$gray100;padding:
 .success-button:hover:not(:disabled) {background:$color-positive;}
 .success-button:focus:not(:disabled) {background:$color-positive;}
 .success-button:active:not(:disabled) {}
-.ghost-button {@include button;background:none;border:1px solid transparent;color:$color-primary;}
-.ghost-button:disabled {color:$gray200;cursor:not-allowed;}
-.ghost-button:hover:not(:disabled) {border-color:$gray100;background:$gray100;}
-.ghost-button:focus:not(:disabled) {background:$gray100;}
-.ghost-button:active:not(:disabled) {}
+.text-button {@include button;background:none;border:1px solid transparent;color:$color-primary;}
+.text-button:disabled {color:$gray200;cursor:not-allowed;}
+.text-button:hover:not(:disabled) {border-color:$gray100;background:$gray100;}
+.text-button:focus:not(:disabled) {background:$gray100;}
+.text-button:active:not(:disabled) {}
 .icon-button {display:flex;align-items:center;justify-content:center;width:32px;height:32px;line-height:0;background:$gray100;border-radius:$radius400;box-sizing:border-box;}
 
 .button-group {display:flex;width:100%;overflow:hidden;}// justify-content:space-between;}
@@ -193,6 +193,7 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 .textfield.is-text {display:flex;align-items:center;}
 .textfield.is-text .textfield-input {width:auto;margin-left:1rem;margin-top:-.25rem;padding:0;background:none;border:none;box-shadow:none;color:$color-primary;}
 .textfield.is-text .selectbox-indicator {margin-bottom:5px;margin-left:.5rem;position:static;right:auto;bottom:auto;}
+
 
 .is-invalid .textfield-label {color:$color-negative;}
 .is-invalid .textfield-input {border-color:$color-negative;color:$color-negative;}
