@@ -29,6 +29,25 @@
         <input class="textfield-input" type="password" id="signup-password-confirm" placeholder="비밀번호 확인" />
         <button class="view-password" type="button">비밀번호 보기</button>
       </div>
+      <div class="textfield">
+        <label class="textfield-label">직업 <small>선택입력</small></label>
+        <input class="textfield-input" type="text" placeholder="유엑스 엔지니어" />
+      </div>
+      <div style="display:flex;justify-content:space-between;margin-top:-2rem;">
+        <div class="textfield" style="width:48%;">
+          <label class="textfield-label" for="signup-password">출생년도 <small>선택입력</small></label>
+          <input class="textfield-input" type="password" id="signup-password-confirm" placeholder="출생년도" />
+        </div>
+        <div class="textfield" style="width:48%;">
+          <label class="textfield-label" for="signup-password">성별 <small>선택입력</small></label>
+          <select class="textfield-input" name="" id="">
+            <option value="man">남성</option>
+            <option value="women" >여성</option>
+            <option value="other" >기타</option>
+          </select>
+          <i class="selectbox-indicator icon-caret"></i>
+        </div>
+      </div>
     </fieldset>
     <!-- <hr />
     <fieldset class="signup-optional optional">
@@ -46,6 +65,11 @@
       </div>
     </fieldset> -->
     <fieldset class="signup-terms">
+      <!-- <div class="checkbox">
+        <input type="checkbox" class="js-check" id="check-three" />
+        <label for="check-three">160,000명이 구독 중인 뉴스레터 받아보기</label>
+      </div> -->
+      <!-- <strong>회원가입 시 <a href="#">이용약관</a>과 <a href="#">개인정보처리방침</a>에 동의하는 것으로 간주합니다.</strong> -->
       <legend class="terms-title" aria-hidden="true">약관 동의</legend>
       <div class="checkbox">
         <input type="checkbox" class="js-checkall" id="check-all" />
@@ -77,7 +101,7 @@
       <label for="user-agree"><strong>웹사이트 <a href="#">이용약관</a>과 <a href="#">개인정보처리방침</a>에 동의합니다.</strong></label>
     </div> -->
     <footer class="signup-foot">
-      <button type="submit" class="primary-button is-fullwidth">가입하기</button>
+      <button type="submit" class="primary-button is-fullwidth">회원가입하기</button>
     </footer>
   </form>
 </main>

@@ -4,6 +4,7 @@
 
 .faq {margin:0 10%;}
 .faq-head {
+  margin: 0 -15%;
   border: 1px solid #000;
   border-radius: $radius400;
   font-size: 2rem;
@@ -16,15 +17,14 @@
 
 .faq-contact {margin:8rem 0;}
 .faq-contact-title {
+  margin: 0 -15%;
   border-bottom: 1px solid #000;
   border-top: 1px solid #000;
   border-radius: $radius400;
-  background: $gray800;
-  color: $gray0;
   font-size: 2rem;
 }
-.faq-contact-description {margin:4rem 25%;}
-.faq-contact-form {margin:4rem 25% 8rem;}
+.faq-contact-description {width:50%;margin:4rem 0;font-size:$subhead;}
+.faq-contact-form {width:50%;margin:4rem 0 8rem;}
 
 .faq-reaction {margin:8rem 0;text-align:center;background:$gray100;padding:2rem;}
 .faq-reaction-title {margin:0 0 .5rem 0;font-size:1.25rem;color:$gray800;}
