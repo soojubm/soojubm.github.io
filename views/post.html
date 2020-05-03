@@ -60,6 +60,27 @@
 		<p class="post-body-paragraph">마진과 패딩에 rem을 단위를 사용합니다.</p>
 
 		<!-- <p class="post-body-paragraph"><small><i class="icon-bullet"></i> 속성 간 개행하지 않습니다.</small></p> -->
+		<h3 class="post-body-subhead">에셋</h3>
+		<p class="post-body-paragraph">들어가기.</p>
+		<ul class="post-body-paragraph" type="1">
+			네이밍은 영문(소문자) 와 숫자, 언더스코어(_)만을 사용합니다.
+			prefix, name, suffix는 언더스코어(_)로 구분합니다.
+			웹에서의 포맷은 svg를 기본 권장합니다.
+			웹 외에서의 포맷은 png를 기본으로 합니다.
+			direction / shape / status / color / size
+			에셋의 용량을 줄여야 하는 경우는 jpg를 사용합니다.
+			suffix에서는 direction, shape, status, color, size 등의 요소를 정의합니다.
+			2개 이상의 suffix가 사용되는 경우 direction, shape, status, color, size의 순서로 작성합니다.
+			suffix에서는 단어를 축약하지 않습니다.
+			status는 에셋의 동작에 따른 상태를 정의합니다.
+			size는 셋의 크기를 숫자와 단위를 조합하여 작성합니다.
+			단위는 플랫폼에 맞춰서 작성합니다.
+			예시) android → dp, iOS → px, web → px
+			size는 가로를 기준으로 작성하고 세로는 표기하지 않습니다.
+			해상도별로 구분해야 하는 경우 1x, 2x를 사용합니다.
+			제플린과 같이 프로그램에 의해 자동으로 suffix가 붙는 경우는 1x, 2x 가이드를 따르지 않아도 됩니다.
+			이미 배포되어 적용된 에셋에서 suffix가 추가되는 경우, 기존 에셋을 변형하지 않고 구별자를 추가합니다.
+		</ul>
 
 		<h3 class="post-body-subhead">자바스크립트</h3>
 		<p class="post-body-paragraph">카멜케이스camelCase를 사용합니다.</p>
@@ -104,24 +125,33 @@
 			<code class="post-hashtag-item">#typography</code>
 		</section>
 
-		<div class="avatar is-large" style="display:block;margin:8rem auto 0;background:#f3f2f1;text-align:center;line-height:80px;">좋아요</div>
-
 		<section class="post-share">
-			<h4 class="post-share-title">share:</h4>
+			<!-- <h4 class="post-share-title">share:</h4> -->
 			<button type="button" class="post-share-button">
-				<span><img src="/public/icons/facebook.svg" alt="" style="width:18px;"></span>
+				<span><img src="/public/icons/facebook.svg" alt="" /></span>
 				페이스북으로 공유하기
 			</button>
 			<button type="button" class="post-share-button">
-				<span><img src="/public/icons/twitter.svg" alt="" style="width:18px;"></span>
+				<span><img src="/public/icons/twitter.svg" alt="" /></span>
 				트위터로 공유하기
 			</button>
 		</section>
+
 		<hr />
-		<footer class="post-feedback">
+
+		<div class="post-action">
+			<div class="avatar is-medium"><img src="/public/icons/coffee.svg" alt="" /></div>
+			<div class="post-action-count">2.5K</div>
+			<div style="margin-left:auto;">
+				<a href="">별로였어요.</a>
+			</div>
+		</div>
+
+		<section class="post-feedback">
 			<p class="post-feedback-body"><em>이 뉴스가 마음에 드셨나요?</em> 후에 좋아하는 뉴스만 골라 보여주겠슴!</p>
 			<a class="post-feedback-link" href="#">지금 질문하기</a>
-		</footer>
+		</section>
+
 		<section class="post-comment">
 			<h4 class="post-comment-title js-open-comment">
 				<!-- <button type="button" class="post-foot-comment-title-button"><i class="material-icons">chat</i>댓글 열기: <span>덧글이 없습니다.</span></button> -->
@@ -162,9 +192,8 @@
 			</div>
 		</section>
 	</footer>
-
-
 </main>
+
 <nav class="post-pagination">
 	<a class="post-pagination-previous" href="#">
 		<!-- <i class="icon-arrow"></i> -->
@@ -177,6 +206,38 @@
 		<span class="post-pagination-next-link">Avoid invisible text during font loading</span>
 	</a>
 </nav>
+
+<div class="post-relation">
+	<h2 class="post-relation-title">많이 본 콘텐츠</h2>
+	<div style="display:flex;justify-content:center;">
+		<div class="quote">
+			<div class="quote-avatar avatar">
+				<i class="icon-person"></i>
+			</div>
+			<div class="quote-title">테스트 텍스트</div>
+			<div class="quote-body">Amazing experience I love it a lot. Thanks to the team dreams come true, great! I really.</div>
+			<!-- <div class="quote-byline">
+				<div class="quote-byline-name">Lassy Chester</div>
+				<div class="quote-byline-job">Art Director</div>
+			</div> -->
+			<!-- <button class="tertiary-button" style="margin:2rem 0 0 0;width:50%;">자세히보기</button> -->
+		</div>
+		<div class="quote">
+			<div class="quote-avatar avatar">
+				<i class="icon-person"></i>
+			</div>
+			<div class="quote-title">테스트 텍스트</div>
+			<div class="quote-body">Amazing experience I love it a lot. Thanks to the team dreams come true, great! I really.</div>
+		</div>
+		<div class="quote">
+			<div class="quote-avatar avatar">
+				<i class="icon-person"></i>
+			</div>
+			<div class="quote-title">테스트 텍스트</div>
+			<div class="quote-body">Amazing experience I love it a lot. Thanks to the team dreams come true, great! I really.</div>
+		</div>
+	</div>
+</div>
 <!-- <figure class="post-item">
 	<span class="post-item-thumbnail"><img src="/public/images/springsteen.jpg" alt="" /></span>
 	<span class="post-item-category">Sports</span>

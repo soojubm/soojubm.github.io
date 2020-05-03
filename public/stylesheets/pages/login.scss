@@ -16,12 +16,13 @@
 .login-option {margin:2rem 0;text-align:center;}
 .login-option-link {margin:0 1rem;}
 
+.login-fail {display:block;margin:2rem 0 1rem;color:$color-negative;}
 
 
 .signup {max-width:400px;margin:0 auto;padding:5rem 10% 10rem;}
 .signup-head {}
 .signup-head-title {margin:0 0 1rem 0;font-size:1.5rem;}
-.signup-head-description {font-size:24px;color:$gray800;}
+.signup-head-description {color:$gray800;}
 .signup-phone {}
 .signup-email {}
 .signup-password {}
@@ -47,21 +48,24 @@
 .password-submit {float:left;width:200px;max-width:50%;}
 .password-link {float:right;margin-top:16px;}
 .password-foot {margin:1rem 0 0;}
-
+.password-result {margin:4rem 5%;text-align:center;}
+.password-result-title {margin:0 0 2rem 0;line-height:1.8;}
 
 .delete {
-  margin:0 0 10rem 0;
+
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 5rem 10% 10rem;
 }
 
-.delete-head {padding:2rem 10% 4rem;}
+.delete-head {padding:2rem 0% 4rem;}
 .delete-head-title {}
 .delete-head-description {margin:1rem 0;}
 
-.delete-suggest {padding:4rem 10%;}
+.delete-suggest {padding:4rem 0%;}
 .delete-suggest-subhead {margin:1rem 0;font-size:1.25rem;}
 
-.delete-why {padding:0 10%;}
+.delete-why {padding:0 0%;}
 .delete-why-title {font-size:1.25rem;}
 .delete-why-description {margin:1rem 0;}
-
-.delete-action {padding:8rem 10%;}
+.delete-why-action {padding:4rem 0;}

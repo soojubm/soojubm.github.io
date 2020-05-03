@@ -41,12 +41,13 @@ body.is-sticky {padding-top:200px;}
 .post-body-img {height:240px;overflow:hidden;margin:4rem -10rem;background:$gray800;border-radius:$radius400;}
 .post-body-subhead {margin:3rem 0 1rem 0px;font-size:$subhead;}
 .post-body-paragraph {margin:0rem 0 1rem 0px;}
+.post-body-link {}
 
 
-.post-foot {padding:0 0 0 0;}
+.post-foot {margin:6rem 0 0 0;}
 .post-hashtag {display:flex;margin:2rem 0;}
 .post-hashtag-item {display:block;margin:0 4px 4px 0px;padding:0 1rem !important;border-radius:$radius400;font-size:12px;}
-.post-share {margin:3rem 0 2rem;
+.post-share {margin:2rem 0;
 	// position: fixed;
 	// left: 50%;
 	// top: 5rem;
@@ -55,11 +56,12 @@ body.is-sticky {padding-top:200px;}
 .post-share-title {}
 .post-share-button {display:flex;align-items:center;margin:.5rem 0 0 0;}
 .post-share-button span {display:flex;align-items:center;justify-content:center;width:32px;height:32px;line-height:32px;margin-right:1rem;border-radius:$radius400;background:$gray100;color:$gray0;}
+.post-share-button span img {width:18px;}
 .post-share-button span svg {width:18px;}
 .is-fixed-share .post-share {}
 .is-fixed-share .post-share {}
 
-.post-comment {margin:1.5rem 0 2.5rem;}
+.post-comment {display:none;margin:1.5rem 0 2.5rem;}
 .post-comment-title {margin:0 0 1rem 0;line-height:32px;color:$color-primary;}
 .post-comment-title i {display:inline-block;width:32px;height:32px;line-height:32px;margin-right:16px;border-radius:$radius400;background:rgba(0,80,200,.8);vertical-align:middle;font-size:$subhead;vertical-align:middle;color:$gray0}
 .post-comment-list {height:0;overflow:hidden;box-sizing:border-box;}
@@ -129,7 +131,7 @@ body.is-sticky {padding-top:200px;}
 
 // pager
 
-.post-pagination {display:flex;margin:0 -10% 4rem;
+.post-pagination {display:flex;margin:4rem -10%;
 	--padding:4rem 0;
 	--label-font-size: 1rem;
 	background:$gray100;
@@ -142,7 +144,14 @@ body.is-sticky {padding-top:200px;}
 .post-pagination-next-label {margin:0 0 .25rem 0;font-size:var(--label-font-size);color:$gray400;}
 .post-pagination-next-link {font-size:$subhead;color:$gray800;}
 
+.post-action {display:flex;align-items:center;margin:2rem 0 0;}
+.post-action .avatar {display:flex;align-items:center;justify-content:center;background:none;border:1px solid $gray100;}
+.post-action .avatar img {display:flex;width:24px;margin-top:1px;margin-left:2px;}
+.post-action-count {margin-left:1rem;font-size:1.25rem;}
 
+
+.post-relation {width:0 10%;margin:4rem 10% 8rem;}
+.post-relation-title {margin:2rem 0;text-align:center;}
 
 @media (--viewport-small) {
 	.post {padding:40px 5%;}

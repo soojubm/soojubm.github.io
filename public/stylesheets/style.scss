@@ -124,7 +124,7 @@
 }
 
 
-.avatar {display:inline-block;width:32px;height:32px;overflow:hidden;border-radius:$radius400;position:relative;}
+.avatar {display:flex;align-items:center;justify-content:center;width:32px;height:32px;background:$gray100;overflow:hidden;border-radius:$radius400;position:relative;}
 .avatar.is-small {width:16px;height:16px;}
 .avatar.is-medium {width:48px;height:48px;}
 .avatar.is-large {width:80px;height:80px;}
@@ -202,7 +202,7 @@
 
 .quote {max-width:320px;padding:2rem;border-radius:$radius400;box-sizing:border-box;box-shadow:$shadow400;background:$gray0;}
 .quote-avatar {}
-.quote-title {margin:0 0 1rem 0;font-size:$subhead;color:$gray800;}
+.quote-title {margin:1rem 0;font-size:$subhead;color:$gray800;}
 .quote-body {}
 .quote-byline {margin:1rem 0 0 0;}
 .quote-byline div {color:$gray800;}

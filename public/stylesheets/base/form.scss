@@ -163,6 +163,7 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 .textfield-icon i {display:inline-block;font-size:19px;vertical-align:middle;opacity:0.4;}
 .textfield-icon + .textfield-input {padding-left:48px;}
 .textfield-input {display:block;width:100%;padding:$padding200;padding-right:40px;background:$gray100;border:1px solid $gray100;border-radius:$radius400;box-sizing:border-box;font:inherit;color:$gray800;/*-appearance:none;*/transition:all 0.2s;}
+.textfield-input:disabled {border-color:$gray200;background:$gray200;color:$gray100;cursor:not-allowed;}
 .textfield-input:not(select):read-only {background:none;padding-left:0;padding-right:0;border:none;outline:none;}
 .textfield-input:not(select):read-only::placeholder {color:$gray800;}
 .textfield-input:focus {background:$gray0;border-color:$gray200;box-shadow:$shadow100;outline:0;}
