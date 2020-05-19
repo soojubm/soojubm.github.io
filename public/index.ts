@@ -529,3 +529,26 @@ function copyToClipboard(text) {
 // 		console.warn(error);
 // 	});
 // };
+
+
+
+
+
+
+// let company = {
+//   name: 'Github',
+//   revenue: 2000,
+//   users: [
+//     { name: 'John', handle: '@john' },
+//     { name: 'doe', handle: '@doe' },
+//   ],
+//   getUserNames() {
+//     return users.map(user => user.name)
+//   },
+// }
+// // Static access with default value
+// const value = company?.name ?? 'default name'
+// // Dynamic access with default value
+// const companyName = company?.['name'] ?? 'default value'
+// // Function call
+// company.getUserNames?.()

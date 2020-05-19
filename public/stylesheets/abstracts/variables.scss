@@ -35,10 +35,10 @@ $color-twitter: rgb(29, 161, 242);
 $color-naver: #03cf5d;
 $color-kakao: #ffdf00;
 
-$breakpoint-large: 1440px;
-$breakpoint-medium: 1280px;
-$breakpoint-small: 1080px;
-$breakpoint-tiny: 720px;
+// $breakpoint-large: 1440px;
+// $breakpoint-medium: 1280px;
+// $breakpoint-small: 1080px;
+// $breakpoint-tiny: 720px;
 
 @custom-media --viewport-large (max-width: 1440px);
 @custom-media --viewport-medium (max-width: 1280px);

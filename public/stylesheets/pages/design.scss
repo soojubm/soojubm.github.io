@@ -66,7 +66,7 @@
 
 
 .user {max-width:320px;padding:2rem 0 0;border-radius:$radius400;box-shadow:$shadow400;text-align:center;}
-.user-avatar {margin:0 auto 1rem;position:relative;}
+.user-avatar {margin:0 auto .75rem;position:relative;}
 .user-avatar-change {width:32px;height:32px;border-radius:$radius400;position:absolute;right:-8px;bottom:-8px;}
 .user-name {font-size:$subhead;color:$gray800;}
 .user-email {display:block;margin:-.25rem 0 0 0;}

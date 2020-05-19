@@ -103,7 +103,7 @@
 	.navbar-user-search-form {bottom:calc(100% - 56px);}
 }
 
-@media (min-width:$breakpoint-large) {
+@media (min-width:--viewport-large) {
 	.page-design .navbar-menu-item {color:$gray0;}
 	.page-design .navbar-menu-item .icon-caret {border-top-color:$gray0;}
 }
