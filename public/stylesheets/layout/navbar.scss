@@ -1,5 +1,5 @@
 .navbar {display:flex;align-items:center;height:$height-header;margin:0 auto;position:relative;left:0;right:0;top:0;z-index:4;/*box-shadow:$shadow400;*/transition:all .4s;}
-.navbar-logo {@include box-light;font-size:1.5rem;left:1rem;}
+.navbar-logo {@include box-light;display:block;font-size:1.5rem;left:1rem;}
 .navbar-logo span {float:left;display:block;font-size:1.5rem;color:$gray800;transition:all .2s;}
 .navbar-burger {display:none;width:32px;height:32px;background:$gray100;border-radius:$radius400;position:absolute;left:1rem;top:50%;z-index:6;transform:translateY(-50%);}
 .navbar-burger:hover {background:#f9f9f6;}

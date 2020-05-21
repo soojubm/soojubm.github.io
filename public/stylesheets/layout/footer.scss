@@ -3,7 +3,7 @@
 .subscribe-description {margin:1rem 0 0 0;}
 .subscribe-field {width:50%;margin:2rem 0 0 0;}
 .subscribe-field input {}
-.subscribe-field button {}
+.subscribe-field-cta {@include button-primary;}
 .subscribe-helper {display:block;margin:.5rem 0 0 0;color:$gray400;}
 
 .footer {background:$gray0;;overflow:hidden;margin:0 auto;padding:2rem 10% 8rem;box-sizing:border-box;position:relative;z-index:4;}

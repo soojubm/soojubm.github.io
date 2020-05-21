@@ -259,3 +259,8 @@
   -webkit-transform: rotate(364deg);
           transform: rotate(364deg);
 }
+
+
+.design-article-icon {
+  @include box-light;
+}

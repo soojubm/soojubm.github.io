@@ -100,8 +100,8 @@ body.is-sticky {padding-top:200px;}
 .comment-write-text {margin:0 0 8px 0;}
 .comment-write-name {display:none;float:left;width:calc(50% - 4px);margin:0 0 8px 0;}
 .comment-write-password {display:none;float:right;width:calc(50% - 4px);margin:0 0 8px 0;}
-.comment-write-submit {float:right;@extend .primary-button;}
-.comment-write-cancel {@extend .text-button;}
+.comment-write-submit {float:right;@include button-primary;}
+.comment-write-cancel {@include button-tertiary;}
 .is-focused .comment-write-name {display:block;}
 .is-focused .comment-write-password {display:block;}
 

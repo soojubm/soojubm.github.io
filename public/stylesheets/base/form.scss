@@ -33,43 +33,44 @@ button.is-addable.is-added {background:$color-primary;border-color:$color-primar
 button.is-addable .icon-plus {display:inline-block;background:$gray100;padding:12px;border-radius:$radius400;position:absolute;right:3px;top:3px;}
 button.is-addable .icon-close {display:inline-block;background:$gray100;padding:12px;border-radius:$radius400;position:absolute;right:3px;top:3px;}
 
-@mixin button {display:inline-block;min-width:104px;background:$color-primary;padding:$padding200;border-radius:$radius400;text-align:center;color:$gray0;cursor:pointer;position:relative;}
+@mixin button {
+  display:inline-block;min-width:104px;background:$color-primary;padding:$padding200;border-radius:$radius400;text-align:center;cursor:pointer;position:relative;
+  &:hover {background:#1a650b;}
+  &:focus {background:#1a650b;}
+  &:active {}
+  &:disabled {background:$gray600;border-color:$gray600;color:$gray200;cursor:not-allowed;}
+}
+@mixin button-primary {
+  @include button;background:$color-primary;border:1px solid $color-primary;color:$gray0;
+  &:hover,
+  &:focus {background:#1a650b;}
+  &:active {}
+  &:disabled {background:$gray600;border-color:$gray600;color:$gray200;}
+}
+@mixin button-secondary {
+  @include button;border:1px solid $color-primary;background:transparent;color:$color-primary;
+  &:hover, 
+  &:focus {background:$color-primary;color:$gray0;}
+  &:active {}
+  &:disabled {background:transparent;border-color:$gray200;color:$gray200;}
+}
+@mixin button-tertiary {
+  @include button;border:1px solid $gray100;background:$gray100;color:$gray800;
+  &:hover,
+  &:focus {background:$color-primary;border-color:$color-primary;color:$gray0;}
+  &:active {}
+  &:disabled {color:$gray400;}
+}
 
-.primary-button {@include button;background:$color-primary;border:1px solid $color-primary;color:$gray0;}
-.primary-button:disabled {background:$gray600;border-color:$gray600;color:$gray200;cursor:not-allowed;}
-.primary-button:hover:not(:disabled) {background:#1a650b;}
-.primary-button:focus:not(:disabled) {background:#1a650b;}
-.primary-button:active:not(:disabled) {}
-.primary-button.-facebook {background:#3664a2;border-color:#3664a2;}
-.primary-button.-twitter {background:#3664a2;border-color:#3664a2;}
-.primary-button.-kakao {background:#3664a2;border-color:#3664a2;}
-.primary-button.-naver {background:#3664a2;border-color:#3664a2;}
-.secondary-button {@include button;border:1px solid $color-primary;background:transparent;color:$color-primary;}
-.secondary-button:disabled {background:transparent;border-color:$gray200;color:$gray200;cursor:not-allowed;}
-.secondary-button:hover:not(:disabled) {background:$color-primary;color:$gray0;}
-.secondary-button:focus:not(:disabled) {background:$color-primary;color:$gray0;}
-.secondary-button:active:not(:disabled) {}
-.tertiary-button {@include button;border:1px solid $gray100;background:$gray100;color:$gray800;}
-.tertiary-button:disabled {color:$gray400;cursor:not-allowed;}
-.tertiary-button:hover:not(:disabled) {background:$color-primary;border-color:$color-primary;color:$gray0;}
-.tertiary-button:focus:not(:disabled) {background:$color-primary;color:$gray0;}
-.tertiary-button:active:not(:disabled) {}
 .danger-button {@include button;background:$color-negative;border:1px solid $color-negative;color:$gray0;}
-.danger-button:disabled {background:$gray400;border-color:$gray400;color:$gray0;cursor:not-allowed;}
-.danger-button:hover:not(:disabled) {background:$color-negative;}
-.danger-button:focus:not(:disabled) {background:$color-negative;}
-.danger-button:active:not(:disabled) {}
+
 .success-button {@include button;background:$color-positive;border:1px solid $color-positive;color:$gray0;}
-.success-button:disabled {background:$gray400;border-color:$gray400;color:$gray0;cursor:not-allowed;}
-.success-button:hover:not(:disabled) {background:$color-positive;}
-.success-button:focus:not(:disabled) {background:$color-positive;}
-.success-button:active:not(:disabled) {}
+
 .text-button {@include button;background:none;border:1px solid transparent;color:$color-primary;}
+.text-button:hover {border-color:$gray100;background:$gray100;}
+.text-button:focus {background:$gray100;}
+.text-button:active {}
 .text-button:disabled {color:$gray200;cursor:not-allowed;}
-.text-button:hover:not(:disabled) {border-color:$gray100;background:$gray100;}
-.text-button:focus:not(:disabled) {background:$gray100;}
-.text-button:active:not(:disabled) {}
-.icon-button {display:flex;align-items:center;justify-content:center;width:32px;height:32px;line-height:0;background:$gray100;border-radius:$radius400;box-sizing:border-box;}
 
 .button-group {display:flex;width:100%;overflow:hidden;}// justify-content:space-between;}
 .button-group.is-left {padding:.5rem 0;}
@@ -236,7 +237,7 @@ input[type=file] + label:after {display:none;}
 .file-title {}
 .file-helper {margin:.5rem 0 1rem;}
 .file-input {opacity:0;}
-.file-label {@extend .secondary-button;cursor:pointer;}
+.file-label {@include button-secondary;cursor:pointer;}
 .file-attachment {margin:2rem 0 0;}
 .file-attachment-title {margin:.5rem 0;font-size:$body;text-decoration:underline;}
 .file-attachment-helper {margin:-4px 0 0;}

@@ -8,7 +8,7 @@
     <div class="hero-background"></div>
     <h1 class="hero-title">부끄러우니까 보지마요 🗯</h1>
     <p class="hero-description">바닐라 자바스크립트로 개발하였습니다.<br />이 폰트는 윈도우즈에서 예쁘게 나오지 않아요.</p>
-    <a class="hero-cta primary-button">Call to Action</a>
+    <a class="hero-cta">Call to Action</a>
     <img class="hero-obj4" src="/public/images/blob-shape.svg" alt="" />
   </section>
   <section class="design-body">
@@ -388,8 +388,8 @@ init();
         <span class="tag tags-item is-red" role="listitem">I'm hashtag</span>
       </div>
       <div role="group" style="margin-top:.5rem;">
-        <button class="secondary-button is-small is-addable" type="button">Typhography <i class="icon-plus"></i></button>
-        <button class="secondary-button is-small is-addable is-added" type="button">Cinema <i class="icon-close"></i></button>
+        <button class="secondary-button is-small is-addable">Typhography <i class="icon-plus"></i></button>
+        <button class="secondary-button is-small is-addable is-added">Cinema <i class="icon-close"></i></button>
       </div>
     </article>
 
@@ -450,7 +450,7 @@ init();
       <!-- <p class="design-article-description">긍정 상황에 사용합니다. 부정 혹은 경고, 주의, 성공, 알림 등을 추가할까요?</p> -->
       <aside class="message">
         <span class="message-text"> This includes the <a href="">global HTML attributes</a>.</span>
-        <button class="message-close" type="button" aria-label="close"><i class="icon-close"></i></button>
+        <button class="message-close" aria-label="close"><i class="icon-close"></i></button>
         <div class="message-head">
           <!-- <p>Hello World</p> -->
           <!-- <button class="delete" aria-label="delete"></button> -->
@@ -465,17 +465,17 @@ init();
       <h1 class="design-article-title">CSS Icons</h1>
       <p class="design-article-description">제곧내.</p>
       <div class="dd" role="group">
-        <button class="icon-button" type="button"><i class="icon-person"></i></button>
-        <button class="icon-button" type="button"><i class="icon-search"></i></button>
-        <button class="icon-button" type="button"><i class="icon-chevron"></i></button>
-        <button class="icon-button" type="button"><i class="icon-arrow"></i></button>
-        <button class="icon-button" type="button"><i class="icon-more"></i></button>
-        <button class="icon-button" type="button"><i class="icon-plus"></i></button>
-        <button class="icon-button" type="button"><i class="icon-close"></i></button>
-        <button class="icon-button" type="button"><i class="icon-caret"></i></button>
-        <button class="icon-button" type="button"><i class="icon-hamberger"></i></button>
-        <button class="icon-button" type="button"><i class="icon-bullet"></i></button>
-        <!-- <button class="icon-button" type="button"><i class="icon-home"><span></span><span></span></i></button> -->
+        <button class="design-article-icon"><i class="icon-person"></i></button>
+        <button class="design-article-icon"><i class="icon-search"></i></button>
+        <button class="design-article-icon"><i class="icon-chevron"></i></button>
+        <button class="design-article-icon"><i class="icon-arrow"></i></button>
+        <button class="design-article-icon"><i class="icon-more"></i></button>
+        <button class="design-article-icon"><i class="icon-plus"></i></button>
+        <button class="design-article-icon"><i class="icon-close"></i></button>
+        <button class="design-article-icon"><i class="icon-caret"></i></button>
+        <button class="design-article-icon"><i class="icon-hamberger"></i></button>
+        <button class="design-article-icon"><i class="icon-bullet"></i></button>
+        <!-- <button class="icon-button"><i class="icon-home"><span></span><span></span></i></button> -->
       </div>
     </article>
 
@@ -492,52 +492,53 @@ init();
       <div>
         <h6>Default Sizes</h6>
         <div role="group">
-          <button class="primary-button" type="button">프라이머리</button>
-          <button class="secondary-button" type="button">세컨더리</button>
-          <button class="tertiary-button" type="button">터시어리</button>
-          <button class="text-button" type="button">텍스트</button>
-          <!-- <button class="danger-button" type="button" aria-label="danger">Danger</button>
-          <button class="success-button" type="button" aria-label="success">Success</button> -->
+          <button class="primary-button">프라이머리</button>
+          <button class="primary-button" disabled>프라이머리</button>
+          <button class="secondary-button">세컨더리</button>
+          <button class="tertiary-button">터시어리</button>
+          <button class="text-button">텍스트</button>
+          <!-- <button class="danger-button" aria-label="danger">Danger</button>
+          <button class="success-button" aria-label="success">Success</button> -->
         </div>
       </div>
       <!-- <div>
         <h2>Disabled States</h2>
         <div role="group">
-          <button class="primary-button" type="button" disabled>Primary</button>
-          <button class="secondary-button" type="button" disabled>Secondary</button>
-          <button class="tertiary-button" type="button" disabled>Tertiary</button>
-          <button class="text-button" type="button" disabled>Text</button>
+          <button class="primary-button" disabled>Primary</button>
+          <button class="secondary-button" disabled>Secondary</button>
+          <button class="tertiary-button" disabled>Tertiary</button>
+          <button class="text-button" disabled>Text</button>
         </div>
       </div> -->
       <!-- <div class="button-group is-center" role="group">
-        <button class="tertiary-button is-small" type="button">Prev</button>
-        <button class="primary-button is-small" type="button">Next</button>
+        <button class="tertiary-button is-small">Prev</button>
+        <button class="primary-button is-small">Next</button>
       </div> -->
       <div>
         <h6>Small Buttons</h6>
         <div role="group">
-          <button class="primary-button is-small" type="button">프라이머리</button>
-          <!-- <button class="danger-button is-small" type="button" aria-label="danger">Danger</button>
-          <button class="success-button is-small" type="button" aria-label="danger">Success</button> -->
-          <button class="secondary-button is-small" type="button">세컨더리</button>
-          <button class="tertiary-button is-small" type="button">터시어리</button>
-          <button class="text-button is-small" type="button">텍스트</button>
+          <button class="primary-button is-small">프라이머리</button>
+          <!-- <button class="danger-button is-small" aria-label="danger">Danger</button>
+          <button class="success-button is-small" aria-label="danger">Success</button> -->
+          <button class="secondary-button is-small">세컨더리</button>
+          <button class="tertiary-button is-small">터시어리</button>
+          <button class="text-button is-small">텍스트</button>
         </div>
       </div>
       <!-- <div>
         <h2>Button Group</h2>
         <div class="button-group" role="group">
           <p>2개 기준, 버튼 간 간격(gap) 버튼의 위치(left center right between), width, filtering</p>
-          <button class="primary-button is-small is-active" type="button">Button Group</button>
-          <button class="tertiary-button is-small" type="button">Button Group</button>
-          <button class="tertiary-button is-small" type="button">Button Group <i class="icon-caret"></i></button>
+          <button class="primary-button is-small is-active">Button Group</button>
+          <button class="tertiary-button is-small">Button Group</button>
+          <button class="tertiary-button is-small">Button Group <i class="icon-caret"></i></button>
         </div>
       </div> -->
       <!-- <div class="review">
         <div class="review-sorting" role="group">
-          <button class="text-button is-small is-active" type="button">최신순</button>
-          <button class="text-button is-small" type="button">별점낮은순</button>
-          <button class="text-button is-small" type="button">별점높은순</button>
+          <button class="text-button is-small is-active">최신순</button>
+          <button class="text-button is-small">별점낮은순</button>
+          <button class="text-button is-small">별점높은순</button>
         </div>
         <div class="review-filter">
           <input type="checkbox" id="photo">
@@ -635,8 +636,8 @@ init();
       
       <div class="variation js-variation">
         <input class="variation-input js-variation-input js-number-input" name="variation1" type="number" value="0" min="5" max="20" >
-        <button class="variation-decrement js-variation-decrement" type="button"><i class="icon-minus"></i></button>
-        <button class="variation-increment js-variation-increment" type="button"><i class="icon-plus"></i></button>
+        <button class="variation-decrement js-variation-decrement"><i class="icon-minus"></i></button>
+        <button class="variation-increment js-variation-increment"><i class="icon-plus"></i></button>
       </div>
       <!-- addons === 검색 버튼 포함 가능 -->
       <!-- <div class="textfield" style="margin:2rem 0;">
@@ -851,7 +852,7 @@ init();
         </figure>
         <div class="card-note">마일리지 적립 200P</div>
         <!-- <div class="card-state">판매 상태(재고수/품절/재고없음/판매중단)</div> -->
-        <button class="card-more icon-button" type="button"><i class="icon-more"></i></button>
+        <button class="card-more"><i class="icon-more"></i></button>
       </div>
 
       <div class="quote" style="margin:2rem 0;">
@@ -882,8 +883,8 @@ init();
           <li><i class="icon-check"></i>아무거나 하나 써 봅니다.</li>
           <li><i class="icon-check"></i>아무거나 하나 써 봅니다.</li>
         </ul>
-        <button class="pricing-item-button secondary-button" type="button" style="margin-bottom:1rem;">업그레이드</button>
-        <button class="pricing-item-button text-button" type="button">And More...</button>
+        <button class="pricing-item-button secondary-button" style="margin-bottom:1rem;">업그레이드</button>
+        <button class="pricing-item-button text-button">And More...</button>
       </div>
 
       <!-- <div class="test">
@@ -904,11 +905,11 @@ init();
       <p class="design-article-description">예 아니오 예!</p>
       <aside class="dialog" role="dialog">
         <!-- <img src="/public/images/soo.png" alt="" style="width:6rem;margin:-3rem 0 0 -1rem;"> -->
-        <!-- <button class="toast-close js-close" type="button" style="position:aboslute;right:0;top:0;"><i class="icon-close"></i></button> -->
+        <!-- <button class="toast-close js-close" style="position:aboslute;right:0;top:0;"><i class="icon-close"></i></button> -->
         <p class="dialog-title">부끄러우니까 보지마요?</p>
         <p class="dialog-description">다이얼로그 유아이입니다. 디스크립션을 입력해주세요.</p>
         <footer class="dialog-footer">
-          <button class="text-button" type="button" style="color:#999;">취소</button>
+          <button class="text-button" style="color:#999;">취소</button>
           <button class="text-button" type="submit">삭제</button>
         </footer>
       </aside>
@@ -1078,18 +1079,18 @@ init();
       <p class="design-article-description">만드는 중.</p>
       <section class="slider">
         <div class="slider-viewer">
-          <button class="slider-viewer-slide" type="button">초1</button>
-          <button class="slider-viewer-slide" type="button">초2</button>
-          <button class="slider-viewer-slide" type="button">초3</button>
-          <button class="slider-viewer-slide" type="button">초4</button>
-          <button class="slider-viewer-slide" type="button">초5</button>
-          <button class="slider-viewer-slide" type="button">초6</button>
-          <button class="slider-viewer-slide" type="button" style="background:green;">중1</button>
-          <button class="slider-viewer-slide" type="button" style="background:green;">중2</button>
-          <button class="slider-viewer-slide" type="button" style="background:green;">중3</button>
-          <button class="slider-viewer-slide" type="button" style="background:blue;">고1</button>
-          <button class="slider-viewer-slide" type="button" style="background:blue;">고2</button>
-          <button class="slider-viewer-slide" type="button" style="background:blue;">고3</button>
+          <button class="slider-viewer-slide">초1</button>
+          <button class="slider-viewer-slide">초2</button>
+          <button class="slider-viewer-slide">초3</button>
+          <button class="slider-viewer-slide">초4</button>
+          <button class="slider-viewer-slide">초5</button>
+          <button class="slider-viewer-slide">초6</button>
+          <button class="slider-viewer-slide" style="background:green;">중1</button>
+          <button class="slider-viewer-slide" style="background:green;">중2</button>
+          <button class="slider-viewer-slide" style="background:green;">중3</button>
+          <button class="slider-viewer-slide" style="background:blue;">고1</button>
+          <button class="slider-viewer-slide" style="background:blue;">고2</button>
+          <button class="slider-viewer-slide" style="background:blue;">고3</button>
         </div>
         <!-- <nav class="slider-dots">
           <button class="slider-dots-dot">1</button>
@@ -1097,8 +1098,8 @@ init();
           <button class="slider-dots-dot">1</button>
         </nav> -->
         <nav class="slider-arrows">
-          <button class="slider-arrows-prev" type="button"><i class="icon-chevron is-left"></i></button>
-          <button class="slider-arrows-next" type="button"><i class="icon-chevron"></i></button>
+          <button class="slider-arrows-prev"><i class="icon-chevron is-left"></i></button>
+          <button class="slider-arrows-next"><i class="icon-chevron"></i></button>
         </nav>
       </section>
     </article>
@@ -1106,14 +1107,14 @@ init();
     <article class="design-article">
       <h1 class="design-article-title">Accordions</h1>
       <p class="design-article-description">질의응답에 주로 사용해요. 공지사항 정도의 간단한 게시글에서도 사용할 수 있으나 그 이상의 경우에는 다른 유아이를 고민하세요.</p>
-      <button class="accordion-trigger js-toggle" type="button" aria-expanded="false">
+      <button class="accordion-trigger js-toggle" aria-expanded="false">
         <i class=""></i>
         회원탈퇴는 어떻게 할 수 있나요?
         <i class="icon-caret"></i></button>
       <article class="accordion-panel">
         안녕
       </article>
-      <button class="accordion-trigger js-toggle" type="button" aria-expanded="false">
+      <button class="accordion-trigger js-toggle" aria-expanded="false">
         주문을 취소하고 싶어요.
         <i class="icon-caret"></i>
       </button>
@@ -1230,11 +1231,11 @@ init();
         <a class="post-comment-list-item-author" href="#">mb</a>
         <time class="post-comment-list-item-date" datetime="2016">2018. 06. 28</time>
         <p class="post-comment-list-item-text">부끄러우니까 코멘트 달지 마요.</p>
-        <button type="button" class="post-comment-list-item-morevert js-toggle"><i class="icon-more"></i></button>
+        <button class="post-comment-list-item-morevert js-toggle"><i class="icon-more"></i></button>
         <menu class="post-comment-list-item-menu">
-          <button type="button" class="">수정</button>
-          <button type="button" class="">삭제</button>
-          <button type="button" class="">신고</button>
+          <button class="">수정</button>
+          <button class="">삭제</button>
+          <button class="">신고</button>
         </menu>
       </div>
     </article> -->
@@ -1288,8 +1289,8 @@ init();
         </div>
       </fieldset>
       <footer class="filter-foot is-child-pull">
-        <button type="button" class="primary-button">필터링하기</button>
-        <button type="button" class="text-button">clear filters</button>
+        <button class="primary-button">필터링하기</button>
+        <button class="text-button">clear filters</button>
       </footer>
     </!-->
 
@@ -1306,7 +1307,7 @@ init();
       </fieldset>
       <footer class="todo-control">
         <button class="todo-control-add primary-button js-todo-submit" type="submit">Add to todoList</button>
-        <button class="todo-control-remove text-button js-todo-clear" type="button">remove all items</button>
+        <button class="todo-control-remove text-button js-todo-clear">remove all items</button>
       </footer>
     </form> -->
 

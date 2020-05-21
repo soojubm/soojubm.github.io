@@ -35,7 +35,7 @@
   .cart-summary-label {}
   .cart-summary-value {float:right;font-size:1.25rem;}
 .cart-summary-controls {padding:1rem 0;}
-.cart-summary-checkout {width:100%;}
+.cart-summary-checkout {@include button-primary;width:100%;}
 
 
 			

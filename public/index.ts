@@ -473,7 +473,7 @@ document.addEventListener('submit', event => event.preventDefault())
 //         <div class="card-tags" role="group">
 //           ${ttt}
 //         </div>
-//         <button class="card-more icon-button" type="button"><i class="icon-more"></i></button>
+//         <button class="card-more icon-button"><i class="icon-more"></i></button>
 //       </a>`
 //     return uiTemplate;
 //   }).join('')

@@ -38,8 +38,8 @@
 .product-order-price-label {float:left;line-height:40px;color:$gray800;text-transform:uppercase;letter-spacing:10px;}
 .product-order-price-value {float:right;font-size:21px;color:$gray800;line-height:40px;text-align:right;}
 .product-order-control {margin:6rem 0 0 0;position:relative;}
-.product-order-control-cart {float:right;min-width:16%;}
-.product-order-control-purchase {width:80%;}
+.product-order-control-cart {@include button-secondary;float:right;min-width:16%;}
+.product-order-control-purchase {@include button-primary;width:80%;}
 .product-navigation {margin-top:3rem;margin-bottom:-3rem;}
 .product-navigation a {display:inline-block;margin:0 16px;padding:4px;}
 .product-navigation a:first-child {margin-left:0;}
@@ -61,7 +61,7 @@
 .product-quickorder-total-count {margin-right:24px;vertical-align:middle;}
 .product-quickorder-total-price {font-size:1.75rem;color:$gray800;vertical-align:middle;}
 .product-quickorder-controls {position:absolute;left:80%;right:0;bottom:50%;transform:translateY(50%);}
-.product-quickorder-controls-purchase {width:100%;}
+.product-quickorder-controls-purchase {@include button-primary;width:100%;}
 
 
 
