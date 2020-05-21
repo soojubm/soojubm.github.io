@@ -55,7 +55,7 @@ body.is-sticky {padding-top:200px;}
 }
 .post-share-title {}
 .post-share-button {display:flex;align-items:center;margin:.5rem 0 0 0;}
-.post-share-button span {display:flex;align-items:center;justify-content:center;width:32px;height:32px;line-height:32px;margin-right:1rem;border-radius:$radius400;background:$gray100;color:$gray0;}
+.post-share-button span {@include box-light;margin-right:1rem;}
 .post-share-button span img {width:18px;}
 .post-share-button span svg {width:18px;}
 .is-fixed-share .post-share {}

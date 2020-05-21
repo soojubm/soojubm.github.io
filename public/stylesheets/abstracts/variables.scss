@@ -1,6 +1,46 @@
 // mediaquery, desktop first
 
+$cell-large: 80px;
+$cell-medium: 48px;
+$cell-light: 32px;
+$cell-small:16px;
 
+$avatar100: 16px;
+$avatar200: 32px;
+$avatar400: 48px;
+$avatar600: 80px;
+
+@mixin box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:$gray100;
+  overflow:hidden;
+  border-radius:$radius400;
+  position:relative;
+}
+@mixin box-large {
+  @include box;
+  width: $cell-large;
+  height: $cell-large;
+}
+@mixin box-light {
+  @include box;
+  width: $cell-light;
+  height: $cell-light;
+}
+@mixin box-medium {
+  @include box;
+  width: $cell-medium;
+  height: $cell-medium;
+}
+
+
+@mixin box-small {
+  @include box;
+  width: $cell-small;
+  height: $cell-small;
+}
 
 // ^ html에서 선언 or 제목용 / 본문용 디자인이 다를 때만 필요.
 :root {
@@ -35,18 +75,13 @@ $color-twitter: rgb(29, 161, 242);
 $color-naver: #03cf5d;
 $color-kakao: #ffdf00;
 
-// $breakpoint-large: 1440px;
-// $breakpoint-medium: 1280px;
-// $breakpoint-small: 1080px;
-// $breakpoint-tiny: 720px;
-
 @custom-media --viewport-large (max-width: 1440px);
 @custom-media --viewport-medium (max-width: 1280px);
 @custom-media --viewport-small (max-width: 1080px);
 @custom-media --viewport-tiny (max-width: 720px);
 
 $padding100: .2rem 1rem; // is-small
-$padding200: 11px 1.5rem 10px; // 버튼, 텍스트인풋
+$padding200: 10px 1.5rem; // 버튼, 텍스트인풋
 // $padding200: 10px 1.5rem 11px; // 아리따
 $padding400: 1.5rem 2rem;
 
@@ -59,10 +94,6 @@ $border100: 1px solid $gray100;
 
 $radius400: 4px;
 
-$avatar100: 16px;
-$avatar200: 32px;
-$avatar400: 48px;
-$avatar600: 80px;
 
 $quote: 0;
 $placeholder: 0;
@@ -87,64 +118,14 @@ $container-spacer: 10%;
   $container-spacer: 5%;
 }
 
-
-.is-facebook {color:$color-facebook !important;}
-.is-twitter {color:$color-twitter !important;}
-
-.is-fullwidth {display:block;width:100%;}
-.is-disabled {cursor:not-allowed;}
-.is-multiline {flex-wrap:wrap;}
-
-// text
-.is-bold {font-weight:bold;}
-.is-italic {font-style:italic;}
-.is-colored {}
-
-.is-nowrap {}
-.is-truncate {}
-
-
-.is-loading {}
-.is-actived {}
-.is-succesed {}
-.is-expanded {}
-.is-valid {}
-.is-invalid {}
-.is-inverted {}
-
-
 $height-header: 64px;
 @media (--viewport-small) {
   $height-header: 56px;
-
-  // :root {
-  //   --gold: gold
-  // }
 }
 
 .linebreak {display:block;}
 @media (--viewport-small) {
   .linebreak {display:inline;}
-}
-
-
-:root {
-  --font-size: 1.2rem;
-  --background-color: $gray0;
-  --text-color: #222;
-}
-
-aside {
-  --font-size: 1rem;
-  --background-color: #222;
-  --text-color: #fafafa;
-}
-
-main,
-aside {
-  // font-size: var(--font-size);
-  // color: var(--text-color);
-  // background-color: var(--background-color);
 }
 
 .row {
@@ -193,3 +174,28 @@ aside {
   flex-basis: 0;
   flex-grow: 1;
 }
+
+
+
+.is-facebook {color:$color-facebook !important;}
+.is-twitter {color:$color-twitter !important;}
+
+.is-fullwidth {display:block;width:100%;}
+.is-disabled {cursor:not-allowed;}
+.is-multiline {flex-wrap:wrap;}
+
+// text
+.is-bold {font-weight:bold;}
+.is-italic {font-style:italic;}
+.is-colored {}
+
+.is-nowrap {}
+.is-truncate {}
+
+.is-loading {}
+.is-actived {}
+.is-succesed {}
+.is-expanded {}
+.is-valid {}
+.is-invalid {}
+.is-inverted {}

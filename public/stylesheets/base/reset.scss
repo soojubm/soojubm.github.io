@@ -2,13 +2,12 @@
 // @font-face {font-family: 'AritaDotumBold';src: url(/public/webfonts/Arita-dotum-SemiBold_OTF.woff); }
 @font-face {font-family: 'Asap';src: url(/public/webfonts/Asap-Regular.otf); }
 // @font-face {font-family: 'DunkelSans';src: url(/public/webfonts/Dunkelsansv0.5-Heavy.woff2); }
-// @font-face {font-family: 'Arvana';src: url(/public/webfonts/Arvanav0.2-Regular.woff2); }
+@font-face {font-family: 'Arvana';src: url(/public/webfonts/Arvanav0.2-Regular.woff2); }
 
 // @import url('https://fonts.googleapis.com/css?family=Gothic+A1:300,400,700,900&display=swap&subset=korean');
 // @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&display=swap');
 // @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap');
 // @import url('https://fonts.googleapis.com/css2?family=Lora:ital@1&display=swap');
-
 
 body,dl,dd,figure,blockquote,h1,h2,h3,h4,h5,h6,p,input[type=radio] {margin:0;}
 ul,ol,menu,fieldset,legend {margin:0;padding:0;}
@@ -27,8 +26,8 @@ u {text-decoration:none;position:relative;z-index:1;}
 u:after {content:'';height:1.5rem;border-radius:$radius400;background:#fb7800;display:block;position:absolute;left:0;right:0;bottom:0rem;z-index:-1;}
 code {padding:1rem 1.5rem;background:$gray100;border-radius:$radius400;}
 
-html {min-width:320px;height:100%;overflow-x:hidden;font:14px/1.8 'Asap', 'AritaDotum', 'Apple SD Gothic Neo', sans-serif;color:$gray600;-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
-body {letter-spacing: -.0125rem;}
+html {min-width:320px;height:100%;overflow-x:hidden;font:14px/1.8 'Arvana', 'Asap', 'AritaDotum', 'Apple SD Gothic Neo', sans-serif;color:$gray600;-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+body {}
 
 h6 {margin:0 0 .5rem 0;font-size:12px;}
 
@@ -73,14 +72,7 @@ ol li ol li:before {content: counter(sub-list-item,lower-alpha) '.';}
   .tag {font-size:10px;}
 }
 
-.loading {position:fixed;left:0;right:0;top:0;bottom:0;background:$gray100;z-index:10;transition:all .4s;}
-.loading.is-hidden {opacity:0;visibility:hidden;z-index:-1;}
-.loading-object {width:2rem;height:2rem;border-radius:50%;position:fixed;left:50%;top:50%;z-index:10;/*margin:-40px 0 0 -40px;*/background:$color-primary;animation:scaleout .8s infinite ease;}
-.loading-object.is-default {background:$gray100;}
-.loading-object.is-clickable {background:crimson;}
-@media (--viewport-small) {
-  .loading-object {display:none;}
-}
+
 
 .browser {display:none;text-align:center;padding:2rem;background:$gray0;box-shadow:2px -2px 16px -4px rgba(0,0,0,.5);position:fixed;left:0;right:0;bottom:0;z-index:7;}
 
@@ -88,11 +80,7 @@ ol li ol li:before {content: counter(sub-list-item,lower-alpha) '.';}
 .skip-link {display:block;background:rgba(0,0,0,1);color:rgba(255,255,255,.8);text-align:center;height:0;font-size:0;}
 .skip-link:focus {height:50px;line-height:50px;font-size:14px;}
 
-
 //backface-visibility:hidden
-
-.subhead {font-size:$subhead;}
-.subhead + .description {margin:1rem 0 0 0;}
 // writing-mode: horizontal-tb / vertical-rl / vertical-lr;
 
 // ::-webkit-scrollbar {width:auto;height:auto;}
@@ -100,7 +88,7 @@ ol li ol li:before {content: counter(sub-list-item,lower-alpha) '.';}
 // ::-webkit-scrollbar-thumb {background:inherit;}
 // ::-webkit-scrollbar-button {display:none;background-color:inherit;}
 // ::-webkit-scrollbar-corner {background-color:inherit;}
-// [aria-live="polite | assertive | off"] {} 
+
 
 // 고정폭 숫자 폰트 아카이빙
 // @import url('https://fonts.googleapis.com/css?family=Nunito+Sans');
@@ -108,15 +96,15 @@ ol li ol li:before {content: counter(sub-list-item,lower-alpha) '.';}
 // todo url 등록 시 www 및 https:// 기본 입력
 // article 안에 정보는 address
 
-
+// [aria-live="polite | assertive | off"] {} 
 [aria-haspopup=true] {} // dialog . menu, grid, listbox, tree
 [aria-pressed=true] {} // 음소거 등
 [aria-modal=true] {}
 [aria-label=close] {}
-[aria-hidden=true] {width:1px;height:1px;clip:rect(1px 1px 1px 1px);overflow:hidden;position:absolute;user-select:none;} // if(true) 리더기가 무시.
-[aria-hidden=false] {width:1px;height:1px;clip:rect(1px 1px 1px 1px);overflow:hidden;position:absolute;user-select:none;}
-[role=listitem] {}
 
+.hidden {width:1px;height:1px;clip:rect(1px 1px 1px 1px);overflow:hidden;position:absolute;user-select:none;} // if(true) 리더기가 무시.
+// [aria-hidden=false] {width:1px;height:1px;clip:rect(1px 1px 1px 1px);overflow:hidden;position:absolute;user-select:none;}
+[role=listitem] {}
 
 
 .target {

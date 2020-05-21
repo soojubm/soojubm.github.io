@@ -19,10 +19,13 @@ $md-radio-ripple-size: .25rem;
   to {transform: translateX(-100%);}
 }
 
-
 @keyframes rotation {
 	from {transform: rotate(0deg);}
 	to {transform: rotate(360deg);}
+}
+@keyframes spin {
+	0% {transform:rotate(0deg);}
+	100% {transform:rotate(360deg);}
 }
 
 @keyframes swing {
@@ -68,10 +71,6 @@ $md-radio-ripple-size: .25rem;
 	100%{transform:scaleY(0);transform-origin:0 0}
 }
 
-@keyframes spin {
-	0% {transform:rotate(0deg);}
-	100% {transform:rotate(360deg);}
-}
 
 @keyframes bounce {
 	0% {transform:translate(-50%,0px);}

@@ -20,11 +20,12 @@
   display: flex;
   align-items: center;
 }
-.header-back span {
+.header-back-icon {
+  @include box-light;
   margin: 0 1rem 0 0;
-}
-.header-back i {
-  transform: rotate(180deg);
+  i {
+    transform: rotate(180deg);
+  }
 }
 .header-title {
   display: none;
@@ -46,7 +47,7 @@
   height: 32px;
   padding: 1rem 0;
 }
-.header .tertiary-button {
+.header-cta {
   margin-left: auto;
 }
 

@@ -1,5 +1,7 @@
 //TODO: 모달 밖의 컨텐츠에 aria-hidden 모달의 위치는 바디 안에?
 //var abc = window.innerWidth - document.body.clientWidth;
+// require('./modal.scss');
+
 type Parameter = {
   selector: string
 }
@@ -9,7 +11,6 @@ const modal = ({ selector: trigger }: Parameter) => ({
   modals: document.querySelectorAll<HTMLElement>(trigger),
   modalContainer: document.querySelector<HTMLElement>('#modal'),
   setEvent() {
-    // require('./modal.scss');
     document.removeEventListener('click', this.backHistory)
     if (!this.modals) return
 
@@ -17,7 +18,9 @@ const modal = ({ selector: trigger }: Parameter) => ({
       event.stopPropagation()
       event.preventDefault()
       
-      fetch(`/views/${modal.dataset.modal}.html`)
+      const id = modal.dataset.modal
+      const uri = `/views/${id}.html`
+      fetch(uri)
         .then(response => {
           if (response.ok) return response.text()
           else return Promise.reject(response)
@@ -31,28 +34,30 @@ const modal = ({ selector: trigger }: Parameter) => ({
 
           this.modalContainer.innerHTML = html
           this.setModal(pageYOffset)
-          this.setHistory(modal.dataset.modal)
+          this.setHistory(id)
 
-          if(document.body.classList.contains('is-modal-visible')) {
+          const isOpened = document.body.classList.contains('is-modal-visible')
+          if(isOpened) {
             document.querySelector('.js-modal-close')?.addEventListener('click', event => event.stopPropagation())
             document.querySelector('.js-modal-close')?.addEventListener('click', this.backHistory)
-            // document.body.addEventListener('click', this.backHistory)
+            // document.addEventListener('click', this.backHistory)
           }
           // 이벤트 remove해줘야함
-          // document.addEventListener('keydown', event => {
-          //   const isKeyEsc = event.keyCode === 27
-          //   if(!isKeyEsc) return
-          //   this.backHistory()
-          // })
+          document.addEventListener('keydown', event => {
+            const isKeyEsc = event.keyCode === 27
+            if(!isKeyEsc) return
+            this.backHistory()
+          })
 
           // document.addEventListener('click', this.backHistory)
 
           window.addEventListener('popstate', () => {
-            if(!document.body.classList.contains('is-modal-visible')) return
+            if(!isOpened) return
             this.clearModal(this.modalContainer, pageYOffset)
           })
 
-          const modalDialog = document.querySelector<HTMLElement>('.modal-dialog')
+          const modalDialog = modal.querySelector<HTMLElement>('.modal-dialog')
+          modalDialog?.addEventListener('click', event => event.stopPropagation())
           modalDialog?.addEventListener('click', event => event.stopPropagation())
         })
         .catch(error => console.warn('modal Error'))

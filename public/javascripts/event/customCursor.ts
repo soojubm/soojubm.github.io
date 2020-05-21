@@ -1,5 +1,5 @@
 const customCursor = () => {
-  const cursor = document.querySelector<HTMLElement>('.loading-object');
+  const cursor = document.querySelector<HTMLElement>('.loader-object');
   if(!cursor) return;
   
 	const hoverElement = document.querySelectorAll<HTMLElement>('button, a');

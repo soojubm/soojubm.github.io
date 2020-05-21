@@ -1,5 +1,5 @@
 export const loader = () => {
-  const loaderElement = document.querySelector('.js-loading')
+  const loaderElement = document.querySelector('.js-loader')
   if (!loaderElement) return
   
   const { body } = document

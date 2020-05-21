@@ -1,5 +1,5 @@
 .navbar {display:flex;align-items:center;height:$height-header;margin:0 auto;position:relative;left:0;right:0;top:0;z-index:4;/*box-shadow:$shadow400;*/transition:all .4s;}
-.navbar-logo {display:flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:$radius400;background:$gray800;font-size:1.5rem;position:relative;left:1rem;}
+.navbar-logo {@include box-light;font-size:1.5rem;left:1rem;}
 .navbar-logo span {float:left;display:block;font-size:1.5rem;color:$gray800;transition:all .2s;}
 .navbar-burger {display:none;width:32px;height:32px;background:$gray100;border-radius:$radius400;position:absolute;left:1rem;top:50%;z-index:6;transform:translateY(-50%);}
 .navbar-burger:hover {background:#f9f9f6;}
@@ -28,7 +28,7 @@
 .navbar-user-cart {margin:0 8px;color:$gray400;}
 .navbar-user-cart i {display:inline-block;min-width:18px;height:18px;line-height:18px;margin:0 0 0 2px;border-radius:10px;vertical-align:middle;padding:0 4px;box-sizing:border-box;background:$gray800;text-align:center;font-size:12px;color:$gray0;}
 .navbar-user-search {position:relative;}
-.navbar-user-search-trigger {display:flex;justify-content:center;align-items:center;width:32px;height:32px;background:$gray100;border-radius:$radius400;position:relative;z-index:5;}
+.navbar-user-search-trigger {@include box-light;z-index:5;}
 .navbar-user-search-trigger img {width:20px;pointer-events:none;;}
 .navbar-user-search-trigger:after {content:'';display:block;position:absolute;left:-.5rem;right:-.5rem;top:-.5rem;bottom:-.5rem;}
 .navbar-user-search-trigger:hover {background:$gray100;}
@@ -46,7 +46,7 @@
 .is-active + .navbar-user-search-form {display:block;}
 
 .navbar-user-notification {margin:0 .5rem;position:relative;}
-.navbar-user-notification-trigger {display:flex;justify-content:center;align-items:center;width:32px;height:32px;background:$gray100;border-radius:$radius400;}
+.navbar-user-notification-trigger {@include box-light;}
 .navbar-user-notification-trigger:hover {background:$gray100;}
 .navbar-user-notification-trigger i {vertical-align:middle;color:$gray800;}
 .navbar-user-notification-trigger img {width:20px;pointer-events:none;}

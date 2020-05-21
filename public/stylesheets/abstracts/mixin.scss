@@ -11,11 +11,6 @@
   }
 }
 
-@mixin centered {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
 @mixin fixed-bottom {
   position: fixed;
@@ -33,6 +28,8 @@
   border: none;
   box-shadow: $shadow400;
 }
+
+
 
 @mixin image-centered {
   width:auto;height:auto;max-width:150%;max-height:150%;margin:auto;position:absolute;left:0;right:0;top:0;bottom:0;

@@ -35,7 +35,7 @@
 
 .profile-display {display:flex;margin:0 0 1.5rem 0;padding:0 0 1rem 0px;border-bottom:1px solid #e9e9e6;}
 .profile-display-title {margin:0 0 0.25rem 0;font-size:12px;}
-.profile-display-button {display:flex;justify-content:center;align-items:center;width:32px;height:32px;margin:0 4px 0 0;border-radius:$radius400;background:$gray200;color:$gray800;opacity:0.2;}
+.profile-display-button {@include box-light;color:$gray800;opacity:0.2;}
 .profile-display-button.is-selected {opacity:1;}
 .profile-display-button i {font-size:20px;vertical-align:middle;}
 .profile-display-button img {width:1rem;}
