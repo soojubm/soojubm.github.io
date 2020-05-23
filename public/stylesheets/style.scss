@@ -127,10 +127,7 @@
 
 
 .avatar {@include box;width:32px;height:32px;}
-.avatar.is-small {width:16px;height:16px;}
-.avatar.is-medium {width:48px;height:48px;}
-.avatar.is-large {@include box-large;}
-.avatar img {width:auto;height:80px;}
+
 .avatar-badge {width:16px;height:16px;border-radius:50%;border:4px solid $gray0;box-sizing:border-box;position:absolute;right:0;bottom:0;}
 
 
@@ -209,6 +206,7 @@
 .quote-byline {margin:1rem 0 0 0;}
 .quote-byline div {color:$gray800;}
 .quote-byline div + div {color:$gray400;}
+.quote-action {width:50%;margin:2rem 0 0 0;}
 
 
 .offline {display:none;max-width:320px;margin:0 auto;padding:.5rem 1rem;border-radius:$radius400;background:$color-negative;text-align:center;position:fixed;left:10%;right:10%;top:45%;z-index:8;}
@@ -266,7 +264,7 @@
 .features header h2 {margin:0 0 1rem 0;font-size:3rem;}
 .features header p {color:#333;}
 .features-item {width:320px;margin:0 2.5%;}
-.features-item-avatar {border-radius:$radius400;font-size:3rem;}
+.features-item-avatar {@include box-large;margin:0 0 2rem 0;font-size:3rem;}
 .features-item-title {font-size:$subhead;}
 .features-item-description {margin-top:1rem;}
 .features-item-link {display:block;margin-top:1rem;}

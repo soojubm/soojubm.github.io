@@ -1,5 +1,7 @@
+$container-auth: 400px;
 
-.login {max-width:400px;margin:0 auto;padding:4rem 10% 10rem;position:relative;}
+
+.login {max-width:$container-auth;margin:0 auto;padding:5rem 10% 20rem;position:relative;}
 .login-title {font-size:2rem;text-indent:-2px;}
 .login-description {margin:.25rem 0 2rem 0;font-size:$body;}
 .login-email {margin:2rem 0;}
@@ -16,34 +18,19 @@
 .login-social-kakao {float:left;width:49%;color:$gray0;margin-right:2%;background:#f9df34;}
 .login-option {margin:2rem 0;text-align:center;}
 .login-option-link {margin:0 1rem;}
-
 .login-fail {display:block;margin:2rem 0 1rem;color:$color-negative;}
 
-
-.signup {max-width:400px;margin:0 auto;padding:5rem 10% 10rem;}
+.signup {max-width:$container-auth;margin:0 auto;padding:5rem 10% 10rem;}
 .signup-head {}
 .signup-head-title {margin:0 0 1rem 0;font-size:1.5rem;}
 .signup-head-description {color:$gray800;}
-.signup-phone {}
-.signup-email {}
-.signup-password {}
-.signup-password {}
-.signup-name {}
-.signup-firstname {}
 .signup-foot {margin:3rem 0;}
-.signup-foot-cta {@include button-primary;}
+.signup-foot-submit {@include button-primary;width:100%;}
 .signup .textfield {margin:2rem 0;}
 .signup-terms {}
 .signup-terms-content {height:120px;margin:8px 0 24px;padding:8px 16px;border:1px solid #e9e9e6;box-sizing:border-box;font-size:12px;color:$gray400;overflow-y:scroll;}
 
-.firstname-label {width:49%;}
-.firstname-input {width:49%;}
-.lastname-label {width:49%;position:absolute;right:0;top:0;}
-.lastname-input {width:49%;position:absolute;right:0;bottom:25px;}
-
-
-
-.password {max-width:560px;margin:0 auto;padding:4rem 10% 20rem;}
+.password {max-width:560px;margin:0 auto;padding:5rem 10% 20rem;position:relative;}
 .password-head {margin-bottom:3rem;}
 .password-title {margin:0 0 .5rem 0;font-size:14px;}
 .password-description {font-size:1.5rem;line-height:1.4;color:$gray800;}
@@ -54,20 +41,12 @@
 .password-result {margin:4rem 5%;text-align:center;}
 .password-result-title {margin:0 0 2rem 0;line-height:1.8;}
 
-.delete {
-
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 5rem 10% 10rem;
-}
-
+.delete {max-width:$container-auth;margin: 0 auto;padding: 5rem 10% 20rem;position:relative;}
 .delete-head {padding:2rem 0% 4rem;}
 .delete-head-title {}
 .delete-head-description {margin:1rem 0;}
-
 .delete-suggest {padding:4rem 0%;}
 .delete-suggest-subhead {margin:1rem 0;font-size:1.25rem;}
-
 .delete-why {padding:0 0%;}
 .delete-why-title {font-size:1.25rem;}
 .delete-why-description {margin:1rem 0;}

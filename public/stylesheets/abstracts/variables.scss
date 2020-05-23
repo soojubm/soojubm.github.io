@@ -14,7 +14,7 @@ $avatar600: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background:$gray100;
+  background-color:$gray100;
   overflow:hidden;
   border-radius:$radius400;
   position:relative;
@@ -42,10 +42,17 @@ $avatar600: 80px;
   height: $cell-small;
 }
 
-// ^ html에서 선언 or 제목용 / 본문용 디자인이 다를 때만 필요.
 :root {
   --gold: #333
 }
+
+
+@mixin subhead {
+  margin: 0 0 1rem 0;
+  font-size: 1.25rem;
+}
+
+
 $fontstack: ('Helvetica', sans-serif);
 $headline: 3rem;
 $title: 2rem;

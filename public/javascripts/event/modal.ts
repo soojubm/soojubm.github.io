@@ -40,6 +40,7 @@ const modal = ({ selector: trigger }: Parameter) => ({
           if(isOpened) {
             document.querySelector('.js-modal-close')?.addEventListener('click', event => event.stopPropagation())
             document.querySelector('.js-modal-close')?.addEventListener('click', this.backHistory)
+            document.querySelector('.modal-dim')?.addEventListener('click', this.backHistory)
             // document.addEventListener('click', this.backHistory)
           }
           // 이벤트 remove해줘야함

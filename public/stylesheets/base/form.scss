@@ -19,16 +19,17 @@ select:focus {}
 
 input::-ms-clear {display:none;}
 select {appearance:none;-webkit-appearance:none;}
+
 button {padding:0;border:none;background:none;cursor:pointer;font:inherit;position:relative;}
 button > * {pointer-events:none;}
-button:not(:active),
-button:not(:focus) {outline:0;}
-button:active {outline:0;animation:ripple2 0.2s linear forwards;}
+// button:not(:active),
+// button:not(:focus) {outline:0;}
+// button:active {outline:0;animation:ripple2 0.2s linear forwards;}
 
 // todo::
 button.is-small {width:auto !important;min-width:72px !important;padding: .2rem 1rem .1rem!important;
-  height: 32px;font-size:12px !important;}
-button.is-addable {min-width:auto !important;height:32px;padding-right:40px !important;text-align:left;}
+  height: $cell-light;font-size:12px !important;}
+button.is-addable {min-width:auto !important;height:$cell-light;padding-right:40px !important;text-align:left;}
 button.is-addable.is-added {background:$color-primary;border-color:$color-primary;color:$gray0;}
 button.is-addable .icon-plus {display:inline-block;background:$gray100;padding:12px;border-radius:$radius400;position:absolute;right:3px;top:3px;}
 button.is-addable .icon-close {display:inline-block;background:$gray100;padding:12px;border-radius:$radius400;position:absolute;right:3px;top:3px;}
@@ -107,7 +108,7 @@ input[type=email]:invalid {border-color:crimson;}
 // line-heght로 리셋스타일에 종속되지 않도록 함. + block // height 테이블 내에서 세로 정렬에 필요
 .checkbox,.radio {display:block;padding:.5rem 0;position:relative;}
 input[type=checkbox] {width:0;height:0;opacity:0;-webkit-appearance:checkbox;position:absolute;outline:auto;}
-input[type=checkbox] + label {display:block;height:16px;padding-left:2rem;line-height:16px;position:relative;}
+input[type=checkbox] + label {display:block;height:16px;padding-left:1.75rem;line-height:16px;position:relative;}
 input[type=checkbox] + label:before {content:'';display:block;width:16px;height:16px;border-radius:$radius400;border:1px solid $gray400;box-sizing:border-box;position:absolute;left:0;top:0;}
 input[type=checkbox] + label:after {content:'';display:none;width:8px;height:2px;border-left:2px solid;border-bottom:2px solid;border-color:$gray200;position:absolute;left:3px;top:5px;transform:rotate(-45deg);}
 input[type=checkbox]:checked + label:before {border-color:$color-primary;animation:ripple2 0.2s linear forwards;}
@@ -121,7 +122,7 @@ input[type=checkbox][data-indeterminate=true] + label:before {}
 input[type=checkbox][data-indeterminate=true] + label:after {display:block;background:$color-primary;border:none;left:4px;top:7px;transform:rotate(0deg);}
 
 input[type=radio] {width:0;height:0;opacity:0;-webkit-appearance:radio;position:absolute;}
-input[type=radio] + label {display:block;height:16px;padding-left:2rem;line-height:16px;position:relative;}
+input[type=radio] + label {display:block;height:16px;padding-left:1.75rem;line-height:16px;position:relative;}
 input[type=radio] + label:before {content:'';display:block;width:16px;height:16px;border-radius:50%;border:1px solid $gray400;box-sizing:border-box;position:absolute;left:0;top:0;}
 input[type=radio] + label:after {content:'';display:none;width:6px;height:6px;border-radius:50%;background:$gray200;position:absolute;left:5px;top:50%;transform:translateY(-50%);transition:all 0.2s;}
 input[type=radio]:checked + label:before {border-color:$color-primary;animation:ripple2 0.2s linear forwards;}
@@ -184,9 +185,9 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 .selectbox-indicator {position:absolute;right:16px;bottom:22px;}
 .textfield.is-small {padding:0 !important;font-size:12px !important;}
 .textfield.is-small .textfield-label {margin-bottom:0;}
-.textfield.is-small .textfield-input {height:32px;padding:6px 1.25rem;}
+.textfield.is-small .textfield-input {height:$cell-light;padding:6px 1.25rem;}
 .textfield.is-inline.textfield {padding-left:5rem !important;}
-.textfield.is-inline .textfield-label {line-height:32px;position:absolute;left:0;top:0;}
+.textfield.is-inline .textfield-label {line-height:$cell-light;position:absolute;left:0;top:0;}
 .textfield.is-inline .textfield-input {}
 .textfield.is-floating {}
 .textfield.is-floating input {padding:0.75rem 0rem;border-top:none;border-left:none;border-right:none;}
@@ -198,17 +199,16 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 .textfield.is-text .textfield-input {width:auto;margin-left:1rem;margin-top:-.25rem;padding:0;background:none;border:none;box-shadow:none;color:$color-primary;}
 .textfield.is-text .selectbox-indicator {margin-bottom:5px;margin-left:.5rem;position:static;right:auto;bottom:auto;}
 
-
 .is-invalid .textfield-label {color:$color-negative;}
 .is-invalid .textfield-input {border-color:$color-negative;color:$color-negative;}
 .is-invalid .textfield-byte {color:$color-negative;}
 .is-invalid .textfield-byte b {color:$color-negative;}
 
 
-.switch-wrap {display:inline-block;width:32px;height:32px;overflow:hidden;margin-top:7px;margin-left:1rem;cursor:pointer;}
-.day {display:block;width:32px;transition:all .4s ease;position:absolute;top:0;transition:all .4s ease .3s;}
-.night {display:block;width:32px;position:absolute;top:32px;transition:all .4s ease 0s;}
-.darkmode .day {top:32px;transition:all .4s ease 0s;}
+.switch-wrap {display:inline-block;width:$cell-light;height:$cell-light;overflow:hidden;margin-top:7px;margin-left:1rem;cursor:pointer;}
+.day {display:block;width:$cell-light;transition:all .4s ease;position:absolute;top:0;transition:all .4s ease .3s;}
+.night {display:block;width:$cell-light;position:absolute;top:32px;transition:all .4s ease 0s;}
+.darkmode .day {top:$cell-light;transition:all .4s ease 0s;}
 .darkmode .night {top:0;transition:all .4s ease .3s;}
 
 
@@ -253,10 +253,10 @@ input[type=file] + label:after {display:none;}
 
 
 // qty
-.variation {max-width:10rem;height:32px;text-align:center;position:relative;}
+.variation {max-width:10rem;height:$cell-light;text-align:center;position:relative;}
 .variation-input {width:calc(100% - 64px);height:100%;background:$gray100;border:1px solid $gray200;box-sizing:border-box;font-family:inherit;font-size:1rem;text-align:center;}
-.variation-decrement {width:32px;height:32px;border:1px solid $gray200;border-radius:$radius400 0 0 $radius400;position:absolute;left:1px;top:0px;}
-.variation-increment {width:32px;height:32px;border:1px solid $gray200;border-radius:0 $radius400 $radius400 0;position:absolute;right:1px;top:0px;}
+.variation-decrement {width:$cell-light;height:$cell-light;border:1px solid $gray200;border-radius:$radius400 0 0 $radius400;position:absolute;left:1px;top:0px;}
+.variation-increment {width:$cell-light;height:$cell-light;border:1px solid $gray200;border-radius:0 $radius400 $radius400 0;position:absolute;right:1px;top:0px;}
 .variation-decrement.is-disabled {opacity:.5;cursor:not-allowed;}
 .variation-increment.is-disabled {opacity:.5;cursor:not-allowed;}
 
@@ -264,14 +264,14 @@ input[type=file] + label:after {display:none;}
 // date
 .calendar {
   width: 250px;
-  --date-width: 32px;
-  --date-height: 32px;
+  --date-width: $cell-light;
+  --date-height: $cell-light;
   --date-background: #eee;
   position: relative;
 }
 .calendar h3 {
   font-size: 1rem;
-  line-height: 32px;
+  line-height: $cell-light;
 }
 .calendar-navigation {display:flex;position:absolute;right:0;top:0;font-size:12px}
 .calendar-navigation-prev {width:var(--date-width);height:var(--date-width);margin-right:4px;background:var(--date-background);border-radius:$radius400;}

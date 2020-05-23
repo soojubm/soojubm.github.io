@@ -5,22 +5,18 @@
       <p class="signup-head-description">이름, 사진과 같이 Google 서비스에서 사용하는 기본 정보</p>
     </header>
     <fieldset class="signup-required">
-      <legend aria-hidden="true">필수입력</legend>
-      <!-- 구조를 최소화하기 위해 포지션으로 정렬. helper를 위해 세로값을 고정해야 함. -->
+      <legend hidden>필수입력</legend>
       <div class="textfield">
         <label class="textfield-label">이메일</label>
         <input class="textfield-input" type="text" placeholder="soojubm@gmail.com" />
-        <!-- <small class="textfield-helper" role="alert">이메일을 입력하시와아요.</small> -->
-        <!--span class="check-text -o"><i class="icon-check" style="border-color:#3fbb65;"></i></span>
-        <span class="check-text -x"><i class="icon-close"></i></span-->
+        <small class="textfield-helper" role="alert">이메일을 입력하시와아요.</small>
+        <span class="check-text -o" style="position: absolute;right:.5rem;bottom:40px;"><i class="icon-check" style="border-color:#3fbb65;"></i></span>
+        <!-- <span class="check-text -x"><i class="icon-close"></i></span> -->
       </div>
       <div class="textfield">
         <label class="textfield-label" for="signup-password">비밀번호<abbr title="required" aria-hidden="true">*</abbr></label>
         <input class="textfield-input" type="password" id="signup-password" placeholder="비밀번호" />
-        <button class="view-password">
-          <img src="/public/icons/eye.svg" alt="" style="width:16px;margin-top:-1px;vertical-align:middle;opacity:.4;">
-          <span style="opacity:0;position:absolute;">비밀번호 보기</span>
-        </button>
+        <button class="view-password">비밀번호 보기</button>
         <!-- <input
           class="textfield-input"
           type="password"
@@ -33,6 +29,9 @@
         <input class="textfield-input" type="password" id="signup-password-confirm" placeholder="비밀번호 확인" />
         <button class="view-password">비밀번호 보기</button>
       </div>
+    </fieldset>
+    <fieldset class="signup-optional optional">
+      <legend hidden>선택입력</legend>
       <div class="textfield">
         <label class="textfield-label">직업 <small>선택입력</small></label>
         <input class="textfield-input" type="text" placeholder="유엑스 엔지니어" />
@@ -44,33 +43,18 @@
         </div>
         <div class="textfield" style="width:48%;">
           <label class="textfield-label" for="signup-password">성별 <small>선택입력</small></label>
-          <select class="textfield-input" name="" id="">
+          <select class="textfield-input" id="signup-password">
+            <option value="women">여성</option>
+            <option value="other">기타</option>
             <option value="man">남성</option>
-            <option value="women" >여성</option>
-            <option value="other" >기타</option>
           </select>
           <i class="selectbox-indicator icon-caret"></i>
         </div>
       </div>
     </fieldset>
-    <!-- <fieldset class="signup-optional optional">
-      <legend aria-hidden="true">선택입력</legend>
-      <div class="textfield">
-        <label class="textfield-label" for="signup-company"
-          >부서<abbr title="">(선택입력)</abbr></label
-        >
-        <input
-          class="textfield-input optional"
-          type="text"
-          id="signup-company"
-          placeholder="부서"
-        />
-      </div>
-    </fieldset> -->
-    <!-- <hr /> -->
     <fieldset class="signup-terms">
+      <legend class="signup-terms-title" hidden >약관 동의</legend>
       <!-- <strong>회원가입 시 <a href="#">이용약관</a>과 <a href="#">개인정보처리방침</a>에 동의하는 것으로 간주합니다.</strong> -->
-      <legend class="terms-title" aria-hidden="true">약관 동의</legend>
       <div class="checkbox">
         <input type="checkbox" class="js-checkall" id="check-all" />
         <label for="check-all"><em>아래 약관에 모두 동의합니다.</em></label>
@@ -99,17 +83,13 @@
         <input type="checkbox" class="js-check" id="check-three" />
         <label for="check-three">이벤트 혜택 알림 수신 동의 <span>(선택)</span></label>
       </div>
-      <!-- <div class="checkbox">
-        <input type="checkbox" class="js-check js-required" id="agree-terms" />
-        <label for="agree-terms">160,000명이 구독하는 시사 뉴스레터 받아보기</label>
-      </div> -->
     </fieldset>
     <!-- <div class="checkbox">
       <input type="checkbox" id="user-agree" />
       <label for="user-agree"><strong>웹사이트 <a href="#">이용약관</a>과 <a href="#">개인정보처리방침</a>에 동의합니다.</strong></label>
     </div> -->
     <footer class="signup-foot">
-      <button type="submit" class="signup-foot-cta is-fullwidth">회원가입하기</button>
+      <button type="submit" class="signup-foot-submit">회원가입하기</button>
     </footer>
   </form>
 </main>

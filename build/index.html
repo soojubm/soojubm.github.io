@@ -35,9 +35,8 @@
     <link rel="stylesheet" href="./build/main.css" />
     <script src="./public/javascripts/polyfill.js"></script>
     <script src="./build/bundle.js"></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-83531239-1"></script>
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-83531239-1"></script> -->
     <script>
-      // if(document.location.hostname === '127.0.0.1') return
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
@@ -71,8 +70,7 @@
       // Create new link element
       const link = document.createElement('link');
       link.setAttribute('rel', 'stylesheet');
-      link.setAttribute('href', '/path/to/js/file.css');
-
+      link.setAttribute('href', '');
       // Append to the `head` element
       document.head.appendChild(link);
     </script>
@@ -145,8 +143,8 @@
             <!-- <button class="navbar-user-search-form-close js-close" aria-label="delete"><i class="icon-close"></i></button> -->
             <!-- <p role="status">수줍이와(과) 일치하는 검색결과가 없습니다.</p> -->
             <fieldset class="textfield">
-              <legend class="filter-fieldset-legend" aria-hidden="true">검색하기</legend>
-              <label class="textfiled-label" for="help-search" aria-hidden="true">검색하기</label>
+              <legend class="filter-fieldset-legend" hidden aria-hidden="true">검색하기</legend>
+              <label class="textfiled-label" for="help-search" hidden aria-hidden="true">검색하기</label>
               <input class="textfield-input" type="search" id="help-search" placeholder="검색어를 입력해 주세요." />
               <button class="textfield-reset" type="reset" title="clear search input">
                 <i class="icon-close"></i>
@@ -176,28 +174,24 @@
           <menu class="navbar-user-notification-menu">
             <h6 class="navbar-user-notification-menu-title">새 알림</h6>
             <div class="navbar-user-notification-menu-item">
-              <div class="avatar" style="float:left;margin-right:.75rem;background:crimson"></div>
-              <p style="font-size:12px;line-height:1.4;"><b>John Cassavetes - The Godfather of...</b>에 <b>Kevin Malin</b>님이 올린 새로운 게시물이 있습니다.</p>
-              <time style="display:block;margin:0 0 0 3rem;font-size:11px;color:crimson;">5일 전</time>
+              <div class="avatar" style="background:crimson"></div>
+              <p><b>John Cassavetes - The Godfather of...</b>에 <b>Kevin Malin</b>님이 올린 새로운 게시물이 있습니다.</p>
+              <time>5일 전</time>
             </div>
-            <!-- <a class="navbar-user-account-menu-item" href="" disabled>프로필 관리</a>
-            <a class="navbar-user-account-menu-item is-active" href="">고객센터</a>
-            <a class="navbar-user-account-menu-item" href="">수줍이에서 로그아웃</a> -->
           </menu>
         </div>
         <div class="navbar-user-account">
           <a class="navbar-user-account-trigger js-navbar-toggle" href="#" aria-haspopup="menu" aria-expanded="false">
             <span><img src="/public/images/soo.png" alt=""/></span>
-            <!-- <i class="icon-caret"></i> -->
           </a>
           <div class="navbar-user-account-menu user">
-            <div class="user-avatar avatar is-large">
+            <div class="user-avatar">
               <img src="/public/images/soo.png" alt="" />
               <!-- <div class="user-avatar-change"></div> -->
             </div>
             <div class="user-name">soojubm</div>
             <div class="user-email">soojubm@gamil.com</div>
-            <button class="ghost-button is-small" style="text-decoration:underline;">내 정보</small>
+            <button class="user-myinfo ghost-button is-small">내 정보</small>
             <button class="user-action">Add another account</button>
             <div class="user-logout">
               <button class="tertiary-button" title="sign out">로그아웃</button>
@@ -226,7 +220,7 @@
 
     <section class="banner">
       <p class="banner-text">수줍이에는 처음 방문이신가요?</p>
-      <button class="banner-button tertiary-button">이용방법을 알아보세요!</button>
+      <button class="banner-button">이용방법을 알아보세요!</button>
     </section>
 
     <form class="subscribe">
@@ -243,9 +237,11 @@
     <footer class="footer" role="contentinfo">
       <!-- <div class="skeleton-screen"></div> -->
       <aside class="scroll">
-        <p class="scroll-indicator" aria-hidden="true">스크롤하세요</p>
+        <p class="scroll-indicator hidden" aria-hidden="true">스크롤하세요</p>
         <button class="scroll-bottom js-to-bottom">아래로</button>
-        <button class="scroll-top js-to-top" name="top"><i class="icon-arrow"></i> <b aria-hidden="true">맨위로</b></button>
+        <button class="scroll-top js-to-top" name="top">
+          <i class="icon-arrow"></i> <b class="hidden" aria-hidden="true">맨위로</b>
+        </button>
       </aside>
       <div class="footer-background"></div>
       <nav class="footer-sitemap">

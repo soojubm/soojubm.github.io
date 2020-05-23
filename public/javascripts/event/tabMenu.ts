@@ -19,8 +19,11 @@ const tabMenu = () => {
 
         target.parentNode.parentNode.querySelectorAll('[role=tabpanel]').forEach(element => {
           element.setAttribute('aria-hidden', 'true')
+          element.classList.add('hidden')
+          element.setAttribute('aria-hidden', 'true')
           if (tabIndex === element.getAttribute('data-index')) {
             element.setAttribute('aria-hidden', 'hidden')
+            element.classList.remove('hidden')
           }
         })
       }

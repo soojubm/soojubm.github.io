@@ -317,10 +317,10 @@ init();
       <h1 class="design-article-title">Avatars & Cells</h1>
       <p class="design-article-description">사진이 들어간 아바타를 사용할 때와 아이콘을 사용할 때 지정된 4가지의 사이즈만 사용하세요.</p>
       <div role="group">
-        <a href="" class="avatar is-large">
+        <a href="" class="avatar-large">
           <img src="/public/images/caleb-woods-182648-unsplash.jpg" alt="" />
         </a>
-        <a href="" class="avatar is-medium">
+        <a href="" class="avatar-medium">
           <img src="/public/images/caleb-woods-182648-unsplash.jpg" alt="" />
           <!-- <span class="avatar-badge"></span> -->
         </a>
@@ -330,7 +330,7 @@ init();
         <a href="" class="avatar is-small" style="width:22px;height:22px;">
           <img src="/public/images/caleb-woods-182648-unsplash.jpg" alt="" />
         </a>
-        <a href="" class="avatar is-small">
+        <a href="" class="avatar-small">
           <img src="/public/images/caleb-woods-182648-unsplash.jpg" alt="" />
         </a>
       </div>
@@ -479,24 +479,16 @@ init();
       </div>
     </article>
 
-    <article class="design-article button-article">
-      <style>
-        .design-article.button-article > div {margin:0 0 2rem 0;}
-        .design-article.button-article button {}
-        .design-article.button-article button.icon-button {width: 48px;}
-        .dd {overflow:hidden;width:100%;}
-        .dd button {float:left;}
-      </style>
+    <article class="design-article">
       <h1 class="design-article-title">Buttons</h1>
       <p class="design-article-description">제곧내.</p>
       <div>
         <h6>Default Sizes</h6>
-        <div role="group">
-          <button class="primary-button">프라이머리</button>
-          <button class="primary-button" disabled>프라이머리</button>
-          <button class="secondary-button">세컨더리</button>
-          <button class="tertiary-button">터시어리</button>
-          <button class="text-button">텍스트</button>
+        <div role="group" style="margin:0 0 2rem 0;">
+          <button class="design-article-primary primary-button">프라이머리</button>
+          <button class="design-article-secondary secondary-button">세컨더리</button>
+          <button class="design-article-tertiary tertiary-button">터시어리</button>
+          <button class="design-article-text text-button">텍스트</button>
           <!-- <button class="danger-button" aria-label="danger">Danger</button>
           <button class="success-button" aria-label="success">Success</button> -->
         </div>
@@ -833,7 +825,7 @@ init();
         </div>
         <hr />
         <figure class="card-item">
-          <img src="" alt="" class="avatar is-medium" />
+          <img src="" alt="" class="card-item-avatar" />
           <figcaption class="card-item-name">퓨어 오렌지 주스</figcaption>
           <figcaption class="card-item-price">
             <del>19,000원</del>
@@ -842,7 +834,7 @@ init();
           </figcaption>
         </figure>
         <figure class="card-item">
-          <img src="" alt="" class="avatar is-medium" />
+          <img src="" alt="" class="card-item-avatar" />
           <figcaption class="card-item-name">퓨어 오렌지 주스</figcaption>
           <figcaption class="card-item-price">
             <del>19,000원</del>
@@ -865,7 +857,7 @@ init();
           <div class="quote-byline-name">Lassy Chester</div>
           <div class="quote-byline-job">Art Director</div>
         </div>
-        <button class="tertiary-button" style="margin:2rem 0 0 0;width:50%;">자세히보기</button>
+        <button class="quote-action">자세히보기</button>
       </div>
 
       <div class="pricing-item">

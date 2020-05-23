@@ -145,8 +145,8 @@ body.is-sticky {padding-top:200px;}
 .post-pagination-next-link {font-size:$subhead;color:$gray800;}
 
 .post-action {display:flex;align-items:center;margin:2rem 0 0;}
-.post-action .avatar {display:flex;align-items:center;justify-content:center;background:none;border:1px solid $gray100;}
-.post-action .avatar img {display:flex;width:24px;margin-top:1px;margin-left:2px;}
+.post-action-icon {@include box-medium;background:none;border:1px solid $gray100;}
+.post-action-icon img {display:flex;width:24px;margin-top:1px;margin-left:2px;}
 .post-action-count {margin-left:1rem;font-size:1.25rem;}
 
 

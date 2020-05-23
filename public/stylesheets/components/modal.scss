@@ -1,25 +1,18 @@
 /* prettier-ignore */
 .body-lock {width:100%;position:fixed;overflow-y:scroll;overflow:hidden;margin-right:17px;}
 
-.modal {/*opacity:0;*/overflow:auto;background:rgba(0,0,0,.6);cursor:zoom-out;position:fixed;left:0;top:0;right:0;bottom:0;z-index:8;transition:opacity .2s ease .4s} /* pointer-events:none */
-.modal-dialog {max-width:1080px;margin:5% auto;padding:2rem 2.5rem;background:$gray0;border-radius:$radius400;box-shadow:$shadow400;transform:scale(1.05);transition:all .1s ease .4s;cursor:auto;}
+.modal {/*opacity:0;*/overflow:auto;position:fixed;left:0;top:0;right:0;bottom:0;z-index:8;} /* pointer-events:none */
+.modal-dim {background:rgba(0,0,0,.6);position:fixed;left:0;right:0;top:0;bottom:0;z-index:-1;cursor:zoom-out;}
+.modal-dialog {max-width:1080px;margin:5% auto;padding:2rem 2.5rem;box-sizing:border-box;background:$gray0;border-radius:$radius400;box-shadow:$shadow400;animation:modal .3s forwards;position:relative;z-index:2;}
 .modal-head {}
 .modal-head-title {margin:2rem 0;font-size:1.5rem;}
 .modal-body {margin:2rem 0;}
 .modal-body-description {max-width:560px;margin:2rem 0;}
 .modal-body-image {margin:0 -2.5rem;}
 .modal-foot {padding:16px 0;text-align:right;}
-.modal-foot button {}
 .modal-close {background:$gray100;border-radius:$radius400;}
 
-// #modal {transition:all .4s ease;visibility:visible;position:relative;z-index:8;}
-#modal .modal-dialog {box-shadow:$shadow400;transition:all .2s ease;transform:scale(1);}
-
-.is-modal-visible #modal {}
-.is-modal-visible #modal .modal-dialog {}
-
-is-modal-visible .modal {transition:all .4s ease .4s;visibility:visible;}
-is-modal-visible .modal .modal-dialog {box-shadow:$shadow400;transition:all .2s ease .4s;transform:scale(1);}
+is-modal-visible .modal-dialog {animation-delay:.4s;}
 
 @media (--viewport-small) {
   .modal-dialog {margin:0 auto;padding-left:5%;padding-right:5%;}
@@ -28,5 +21,9 @@ is-modal-visible .modal .modal-dialog {box-shadow:$shadow400;transition:all .2s 
   // .modal-close {position:fixed;}
 }
 
+@keyframes modal {
+  from {opacity:0;transform:scale(1.05);}
+  to {opacity:1;transform:scale(1);}
+}
 
 /*팝업을 띄우면서 스크롤을 막으려면 스크롤바를 없애줘야 하는데, 이게 생각보다 복잡하다. 크롬에서는 html에 overflow:hidden를 잘 주면 끝인데, 익스플로러에선 스크롤 제어하려면 body에 먹여야 한다. html에 overflow:hidden;을주고 모달에 overflow-y를 주면(조건:모달이 윈도우창보다 작아질때)*/

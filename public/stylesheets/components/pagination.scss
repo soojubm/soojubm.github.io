@@ -1,9 +1,9 @@
-.pagination {display:flex;justify-content:center;padding:32px 0;text-align:center;position:relative;}
+.pagination {display:flex;justify-content:center;padding:32px 0;position:relative;}
 .pagination-previous {padding:0 1rem;line-height:32px;position:absolute;left:0;}
 .pagination-next {padding:0 1rem;line-height:32px;position:absolute;right:0;}
-.pagination-link {display:block;width:32px;height:32px;line-height:32px;color:$gray400;}
-.pagination-link.is-current {background-color:$color-primary;border-radius:$radius400;color:$gray0;}
-.pagination-ellipsis {display:flex;align-items:center;justify-content:center;width:32px;height:32px;line-height:32px;color:$gray400;letter-spacing:1px;}
+.pagination-link {@include box-light;background-color:$gray0;color:$gray400;}
+.pagination-link.is-current {background-color:$color-primary;color:$gray0;}
+.pagination-ellipsis {@include box-light;background-color:$gray0;color:$gray400;letter-spacing:1px;}
 // .pagination-last:before {content:'...';display:block;width:32px;height:32px;cursor:default;}
 
 
