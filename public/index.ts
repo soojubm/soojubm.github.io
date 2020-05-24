@@ -170,10 +170,10 @@ const domEvents = () => {
       }
     })
 
-    document.querySelector('.js-copyClipboard')?.addEventListener('click', () => {
-      copyToClipboard('https://napp.newneek.co/2020election/#temp')
+    const copy = document.querySelector('.js-copy')
+    copy?.addEventListener('click', function() {
+      copyToClipboard('fafaf')
     })
-
     // function smoothScroll(target, duration) {
     //   var target = document.querySelector(target)
     //   var targetPosition = target.getBoundingClientRect().top
@@ -510,6 +510,7 @@ function copyToClipboard(text) {
   //   document.body.removeChild(textareaElement);
   // }
 }
+
 
 // var createArticle = function (article) {
 // 	fetch('https://jsonplaceholder.typicode.com/posts', {

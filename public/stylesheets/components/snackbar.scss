@@ -1,8 +1,6 @@
 .message {padding:$padding400;box-sizing:border-box;border-radius:$radius400;background:$gray100;/*font-family:'Courier New', Courier, monospace;*/position:relative;}
-.message-icon {display:inline-block;margin:0 8px 0 0;vertical-align: middle;font-size:1.5rem;}
-.message-close {background:#fff;position:absolute;right:.5rem;top:.5rem;}
-.snackbar.is-warning {background:lavenderblush;}
-.snackbar.is-warning em {color:crimson;}
-.snackbar.is-warning a {color:inherit;}
+.message-text {}
+.message-close {@include box-light;position:absolute;right:.5rem;top:.5rem;}
+
 // .snackbar:before {content:'';width:9px;height:9px;border:1px solid red;border-left:none;border-bottom:none;background:$gray0;position:absolute;left:20px;bottom:-6px;transform:rotate(135deg);}
 // .snackbar:after {content:'';width:12px;height:1px;position:absolute;left:19px;bottom:-1px;background:$gray0;}

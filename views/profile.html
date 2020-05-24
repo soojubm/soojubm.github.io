@@ -85,20 +85,19 @@
 		
 		<section class="profile-body">
 			<nav class="profile-tablist" role="tablist">
-				<!-- u 태그-->
-				<div class="profile-tablist-active"></div>
 				<button class="profile-tablist-tab" role="tab" aria-selected="true" data-index="1">웹사이트 <i class="profile-tablist-tab-badge">5</i></button>
 				<button class="profile-tablist-tab" role="tab" aria-selected="false" data-index="2">웹페이지 <i class="profile-tablist-tab-badge">5</i></button>
 				<button class="profile-tablist-tab" role="tab" aria-selected="false" data-index="4">케이스스터디 <i class="profile-tablist-tab-badge">1</i></button>
 				<button class="profile-tablist-tab" role="tab" aria-selected="false" data-index="3">빈 상태 <i class="profile-tablist-tab-badge">0</i></button>
+				<i class="profile-tablist-active"></i>
 			</nav>
 			<div class="profile-display">
-				<!-- <p role="status">Viewing 1,000 Projects</p> -->
+				<p class="profile-display-status" role="status" hidden>Viewing 1,000 Projects</p>
 				<button class="profile-display-button js-display-list"><img src="/public/icons/list.svg" alt="list" /> <b aria-hidden="true">List</b></button>
 				<button class="profile-display-button js-display-grid is-selected"><img src="/public/icons/grid.svg" alt="grid" /> <b aria-hidden="true">Grid</b></button>
 			</div>
 
-			<section class="profile-tablist-panel" role="tabpanel" aria-hidden="" data-index="1">
+			<section class="profile-tabpanel" role="tabpanel" aria-hidden="" data-index="1">
 				<div class="works">
 					<a class="card js-modal" href="#" data-modal="newneek">
 						<figure class="card-thumbnail"><img src="" alt="" /></figure>
@@ -191,7 +190,7 @@
 				</div>
 			</section>
 
-			<section class="profile-tablist-panel hidden" role="tabpanel" aria-hidden="false" data-index="2">
+			<section class="profile-tabpanel hidden" role="tabpanel" aria-hidden="false" data-index="2">
 				<div class="works js-ui">
 					<a class="card" href="#product">
             <figure class="card-thumbnail"></figure>
@@ -237,7 +236,7 @@
 				</div>
 			</section>
 
-			<section class="profile-tablist-panel hidden" role="tabpanel" aria-hidden="false" data-index="4">
+			<section class="profile-tabpanel hidden" role="tabpanel" aria-hidden="false" data-index="4">
 				<div class="works">
 					<a class="card" href="javascript:alert('작업중')">
 						<figure class="card-thumbnail"><img src="/public/images/caleb-woods-182648-unsplash.jpg" alt="" /></figure>
@@ -251,7 +250,7 @@
 				</div>
 			</section>
 
-			<section class="profile-tablist-panel hidden" role="tabpanel" aria-hidden="false" data-index="3">
+			<section class="profile-tabpanel hidden" role="tabpanel" aria-hidden="false" data-index="3">
 				<section class="empty">
 					<i class="empty-icon material-icons">delete_outline</i>
 					<h1 class="empty-title">아직 새 글이 없어요.</h1>

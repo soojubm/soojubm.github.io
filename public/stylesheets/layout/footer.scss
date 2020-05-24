@@ -1,10 +1,14 @@
 .subscribe {background:$gray0;padding:4rem 10% 5rem;position:relative;z-index:1;}
+.subscribe-avatar {@include box-large;margin: 0 0 2rem 0;font-size:3rem;}
 .subscribe-title {font-size:1.5rem;}
-.subscribe-description {margin:1rem 0 0 0;}
-.subscribe-field {width:50%;margin:2rem 0 0 0;}
-.subscribe-field input {}
-.subscribe-field-cta {@include button-primary;}
+.subscribe-description {margin:1rem 0 2rem 0;}
+.subscribe-field {width:50%;margin:.5rem 0;}
+.subscribe-field-cta {@include button-primary;width:20%;}
 .subscribe-helper {display:block;margin:.5rem 0 0 0;color:$gray400;}
+.subscribe-wrap {display:flex;margin:-.5rem 0;}
+.subscribe-wrap .subscribe-field {width:calc(25% -.25rem);}
+.subscribe-wrap .subscribe-field + .subscribe-field {margin-left:.5rem;}
+
 
 .footer {background:$gray0;;overflow:hidden;margin:0 auto;padding:2rem 10% 8rem;box-sizing:border-box;position:relative;z-index:4;}
 .footer-background {position:absolute;left:-50%;right:-50%;top:0;bottom:0;z-index:-1;}

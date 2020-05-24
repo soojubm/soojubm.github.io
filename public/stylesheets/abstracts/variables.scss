@@ -42,9 +42,6 @@ $avatar600: 80px;
   height: $cell-small;
 }
 
-:root {
-  --gold: #333
-}
 
 
 @mixin subhead {
@@ -60,12 +57,16 @@ $subhead: 1.25rem;
 $body: 1rem;
 $caption: 0.75rem;
 
+// :root {
+//   --gold: #333
+// }
+
 $gray0: #fff; // white for dark theme
 $gray100: #f1f5f6; // bg
 $gray200: #dadce0; // divider border
 $gray400: #999; // caption
 $gray600: #666; // body
-$gray800: var(--gold); // bg || heading
+$gray800: #333; // bg || heading
 
 $red100: #fff0f5;
 $red800: #da1e28;

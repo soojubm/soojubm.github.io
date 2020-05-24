@@ -230,6 +230,10 @@ init();
       <button class="design-article-more">View All</button>
       <p class="design-article-description">하나의 무게Weight를 사용합니다.</p>
       <!-- <p>200 light / 400 normal / 700 bold</p> -->
+      <button class="copyurl js-copy" data-copy-btn class="bx--copy-btn" type="button" tabindex="0">
+        <span hidden class="bx--assistive-text bx--copy-btn__feedback">Copied!</span>
+        <svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" class="bx--snippet__icon" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M14,5v9H5V5h9m0-1H5A1,1,0,0,0,4,5v9a1,1,0,0,0,1,1h9a1,1,0,0,0,1-1V5a1,1,0,0,0-1-1Z"></path><path d="M2,9H1V2A1,1,0,0,1,2,1H9V2H2Z"></path></svg>
+      </button>
       <div style="display:flex;">
         <div style="width:50%">
           <i style="display:block;margin-bottom:.5rem;width:16px;height:16px;border-radius:4px;background:cadetblue"></i>
@@ -317,20 +321,20 @@ init();
       <h1 class="design-article-title">Avatars & Cells</h1>
       <p class="design-article-description">사진이 들어간 아바타를 사용할 때와 아이콘을 사용할 때 지정된 4가지의 사이즈만 사용하세요.</p>
       <div role="group">
-        <a href="" class="avatar-large">
+        <a href="" class="design-article-avatar-large">
           <img src="/public/images/caleb-woods-182648-unsplash.jpg" alt="" />
         </a>
-        <a href="" class="avatar-medium">
+        <a href="" class="design-article-avatar-medium">
           <img src="/public/images/caleb-woods-182648-unsplash.jpg" alt="" />
           <!-- <span class="avatar-badge"></span> -->
         </a>
-        <a href="" class="avatar">
+        <a href="" class="design-article-avatar">
           <img src="/public/images/caleb-woods-182648-unsplash.jpg" alt="" />
         </a>
-        <a href="" class="avatar is-small" style="width:22px;height:22px;">
+        <!-- <a href="" class="design-article-avatar is-small" style="width:22px;height:22px;">
           <img src="/public/images/caleb-woods-182648-unsplash.jpg" alt="" />
-        </a>
-        <a href="" class="avatar-small">
+        </a> -->
+        <a href="" class="design-article-avatar-small">
           <img src="/public/images/caleb-woods-182648-unsplash.jpg" alt="" />
         </a>
       </div>
@@ -353,7 +357,7 @@ init();
       <h1 class="design-article-title">Breadcrumbs</h1>
       <p class="design-article-description">페이지 레벨이 3단계 이상일 때 사용해요. 홈 아이콘 대신 텍스트를 사용하니 깔끔해보인다. 모바일에서 사용하지 마세요.</p>
       <nav class="breadcrumbs" aria-label="breadcrumbs">
-        <a class="breadcrumbs-item breadcrumbs-home" href="/"><span aria-hidden="true">홈</span>Home</a>
+        <a class="breadcrumbs-item breadcrumbs-home" href="/">Home</a>
         <i class="breadcrumbs-divider icon-bullet"></i>
         <a class="breadcrumbs-item " href="#">페이지 이름</a>
         <i class="breadcrumbs-divider icon-bullet"></i>
@@ -387,10 +391,10 @@ init();
         <span class="tag tags-item" role="listitem">I'm hashtag</span>
         <span class="tag tags-item is-red" role="listitem">I'm hashtag</span>
       </div>
-      <div role="group" style="margin-top:.5rem;">
+      <!-- <div role="group" style="margin-top:.5rem;">
         <button class="secondary-button is-small is-addable">Typhography <i class="icon-plus"></i></button>
         <button class="secondary-button is-small is-addable is-added">Cinema <i class="icon-close"></i></button>
-      </div>
+      </div> -->
     </article>
 
     <article class="design-article" style="padding-bottom:80px;">

@@ -208,7 +208,8 @@
 
     <header class="header">
       <button class="header-back" onclick="javascript:alert('이전페이지로~');">
-        <span class="header-back-icon"><i class="icon-arrow is-left"></i></span> 뒤로가기
+        <span class="header-back-icon"><i class="icon-arrow is-left"></i></span>
+        뒤로가기
       </button>
       <h1 class="header-title">디자인시스템</h1>
       <button class="header-cta">프로필 공유</button>
@@ -224,12 +225,21 @@
     </section>
 
     <form class="subscribe">
+      <i class="subscribe-avatar">📮</i>
       <h2 class="subscribe-title">수줍이 뉴스레터를 정기구독하세요.</h2>
       <p class="subscribe-description">사실 그런 건 없고 유아이 콤포넌트 입니다. <br />수줍이의 뉴스레터가 당신을 개쩌는 곳으로 인도할 거에요(아무말).</p>
+      <div class="subscribe-wrap">
+        <div class="subscribe-field textfield">
+          <input class="textfield-input" placeholder="이름" />
+        </div>
+        <div class="subscribe-field textfield">
+          <input class="textfield-input" placeholder="하시는 일" />
+        </div>
+      </div>
       <div class="subscribe-field textfield">
         <input class="textfield-input" placeholder="Enter Your Email.." />
-        <button class="subscribe-field-cta textfield-button" type="submit">신청하기</button>
       </div>
+      <button class="subscribe-field-cta" type="submit">신청하기</button>
       <!-- <small class="subscribe-helper">Read more about how we collect and use your data in our <a href="">Privacy Policy page.</a></small> -->
       <p class="subscribe-helper">2,657 active members are waiting for you</p>
     </form>
@@ -237,7 +247,7 @@
     <footer class="footer" role="contentinfo">
       <!-- <div class="skeleton-screen"></div> -->
       <aside class="scroll">
-        <p class="scroll-indicator hidden" aria-hidden="true">스크롤하세요</p>
+        <p class="scroll-indicator hidden" hidden aria-hidden="true">스크롤하세요</p>
         <button class="scroll-bottom js-to-bottom">아래로</button>
         <button class="scroll-top js-to-top" name="top">
           <i class="icon-arrow"></i> <b class="hidden" aria-hidden="true">맨위로</b>
@@ -245,7 +255,7 @@
       </aside>
       <div class="footer-background"></div>
       <nav class="footer-sitemap">
-        <h1 class="footer-sitemap-title" aria-hidden="true">하단 사이트맵 <small aria-hidden="true">More Articles by themes</small></h1>
+        <h1 class="footer-sitemap-title" aria-hidden="true">하단 사이트맵 <small hidden aria-hidden="true">More Articles by themes</small></h1>
         <div class="footer-sitemap-item">
           <h2 class="footer-sitemap-item-title">포트폴리오</h2>
           <a class="footer-sitemap-item-link" href="#">교통버스</a>

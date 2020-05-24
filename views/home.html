@@ -643,11 +643,6 @@ href="/web/tweet-button">
 
 document.addEventListener('DOMContentLoaded', function() {
 
-  document.querySelector('.thislink').addEventListener('click', function() {
-    alert('복사 완료! 이제 "붙여넣기" 해주세요.😉')
-    copyToClipboard('https://napp.newneek.co/2020election/#temp')
-  })
-
   // console.log('history', window.location)
 
   // if ( window.location == 'http://www.abc.com/' ) {
@@ -826,15 +821,6 @@ document.addEventListener('DOMContentLoaded', function() {
   console.log(aaa, aaa.innerText, gap)
   aaa.innerText = gap
 
-
-  function copyToClipboard(val) {
-    var t = document.createElement("textarea");
-    document.body.appendChild(t);
-    t.value = val;
-    t.select();
-    document.execCommand('copy');
-    document.body.removeChild(t);
-  }
 
 
 

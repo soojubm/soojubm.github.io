@@ -266,8 +266,19 @@
   @include box-light;
 }
 
-
+.design-article-avatar {@include box-light;}
+.design-article-avatar img {width:auto;height:80px;}
+.design-article-avatar-large {@include box-large;}
+.design-article-avatar-large img {width:auto;height:80px;}
+.design-article-avatar-medium {@include box-medium;}
+.design-article-avatar-medium img {width:auto;height:80px;}
+.design-article-avatar-small {@include box-small;}
+.design-article-avatar-small img {width:auto;height:80px;}
 .design-article-primary {@include button-primary;}
 .design-article-secondary {@include button-secondary;}
 .design-article-tertiary {@include button-tertiary;}
 // .design-article-text {@include button-text;}
+
+.copyurl {
+  @include box-light;
+}

@@ -45,21 +45,25 @@ body.is-sticky {padding-top:200px;}
 
 
 .post-foot {margin:6rem 0 0 0;}
+
 .post-hashtag {display:flex;margin:2rem 0;}
 .post-hashtag-item {display:block;margin:0 4px 4px 0px;padding:0 1rem !important;border-radius:$radius400;font-size:12px;}
-.post-share {margin:2rem 0;
-	// position: fixed;
-	// left: 50%;
-	// top: 5rem;
-	// margin-left: -600px;
-}
+
+.post-share {margin:2rem 0;}
 .post-share-title {}
-.post-share-button {display:flex;align-items:center;margin:.5rem 0 0 0;}
-.post-share-button span {@include box-light;margin-right:1rem;}
-.post-share-button span img {width:18px;}
-.post-share-button span svg {width:18px;}
-.is-fixed-share .post-share {}
-.is-fixed-share .post-share {}
+.post-share-facebook {display:flex;align-items:center;margin:.5rem 0 0 0;}
+.post-share-twitter {display:flex;align-items:center;margin:.5rem 0 0 0;}
+.post-share button span {@include box-light;margin-right:1rem;}
+.post-share button span img {width:18px;}
+
+.post-reaction {margin:2rem 0 0;}
+.post-reaction-like {display:flex;align-items:center;cursor:pointer;}
+.post-reaction-like-icon {@include box-medium;background:none;border:1px solid $gray100;}
+.post-reaction-like-icon img {display:flex;width:24px;margin-top:1px;margin-left:2px;}
+.post-reaction-like-count {margin-left:1rem;font-size:1.25rem;}
+
+.is-reacted {}
+.is-reacted .post-reaction-like-count {color:crimson;}
 
 .post-comment {display:none;margin:1.5rem 0 2.5rem;}
 .post-comment-title {margin:0 0 1rem 0;line-height:32px;color:$color-primary;}
@@ -143,11 +147,6 @@ body.is-sticky {padding-top:200px;}
 .post-pagination-next {width:60%;padding:var(--padding);box-sizing:border-box;text-align:right;}
 .post-pagination-next-label {margin:0 0 .25rem 0;font-size:var(--label-font-size);color:$gray400;}
 .post-pagination-next-link {font-size:$subhead;color:$gray800;}
-
-.post-action {display:flex;align-items:center;margin:2rem 0 0;}
-.post-action-icon {@include box-medium;background:none;border:1px solid $gray100;}
-.post-action-icon img {display:flex;width:24px;margin-top:1px;margin-left:2px;}
-.post-action-count {margin-left:1rem;font-size:1.25rem;}
 
 
 .post-relation {width:0 10%;margin:4rem 10% 8rem;}
