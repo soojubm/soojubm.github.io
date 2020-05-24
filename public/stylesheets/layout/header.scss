@@ -48,6 +48,9 @@
   padding: 1rem 0;
 }
 .header-cta {
+  @include box-light;
+  width: auto;
+  padding: 0 1rem;
   margin-left: auto;
 }
 
