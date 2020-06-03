@@ -44,11 +44,11 @@ const modal = ({ selector: trigger }: Parameter) => ({
             // document.addEventListener('click', this.backHistory)
           }
           // 이벤트 remove해줘야함
-          document.addEventListener('keydown', event => {
-            const isKeyEsc = event.keyCode === 27
-            if(!isKeyEsc) return
-            this.backHistory()
-          })
+          // document.addEventListener('keydown', event => {
+          //   const isKeyEsc = event.keyCode === 27
+          //   if(!isKeyEsc) return
+          //   this.backHistory()
+          // })
 
           // document.addEventListener('click', this.backHistory)
 

@@ -8,7 +8,8 @@
 .pricing-item-period:before {content:' / ';margin:0 .5rem;color:$gray400;}
 .pricing-item-description {margin:.5rem 0;}
 .pricing-item-description:before {content:'';display:none;width:40px;height:1px;background:$gray800;margin:1.25rem 0 1.75rem;}
-.pricing-item-button {display:block;width:100%;}
+.pricing-item-upgrade {@include button-primary;width:100%;margin:0 0 1rem 0;}
+.pricing-item-more {width:100%;}
 .pricing-item ul {margin:1rem 0 3rem 0;}
 .pricing-item ul li {padding:.125rem 0;}
 .pricing-item ul li:before {content:'';}

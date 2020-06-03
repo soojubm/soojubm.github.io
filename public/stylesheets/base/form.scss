@@ -108,7 +108,7 @@ input[type=email]:invalid {border-color:crimson;}
 // line-heght로 리셋스타일에 종속되지 않도록 함. + block // height 테이블 내에서 세로 정렬에 필요
 .checkbox,.radio {display:block;padding:.5rem 0;position:relative;}
 input[type=checkbox] {width:0;height:0;opacity:0;-webkit-appearance:checkbox;position:absolute;outline:auto;}
-input[type=checkbox] + label {display:block;height:16px;padding-left:1.75rem;line-height:16px;position:relative;}
+input[type=checkbox] + label {display:block;height:16px;padding-left:24px;line-height:16px;position:relative;}
 input[type=checkbox] + label:before {content:'';display:block;width:16px;height:16px;border-radius:$radius400;border:1px solid $gray400;box-sizing:border-box;position:absolute;left:0;top:0;}
 input[type=checkbox] + label:after {content:'';display:none;width:8px;height:2px;border-left:2px solid;border-bottom:2px solid;border-color:$gray200;position:absolute;left:3px;top:5px;transform:rotate(-45deg);}
 input[type=checkbox]:checked + label:before {border-color:$color-primary;animation:ripple2 0.2s linear forwards;}
@@ -122,7 +122,7 @@ input[type=checkbox][data-indeterminate=true] + label:before {}
 input[type=checkbox][data-indeterminate=true] + label:after {display:block;background:$color-primary;border:none;left:4px;top:7px;transform:rotate(0deg);}
 
 input[type=radio] {width:0;height:0;opacity:0;-webkit-appearance:radio;position:absolute;}
-input[type=radio] + label {display:block;height:16px;padding-left:1.75rem;line-height:16px;position:relative;}
+input[type=radio] + label {display:block;height:16px;padding-left:24px;line-height:16px;position:relative;}
 input[type=radio] + label:before {content:'';display:block;width:16px;height:16px;border-radius:50%;border:1px solid $gray400;box-sizing:border-box;position:absolute;left:0;top:0;}
 input[type=radio] + label:after {content:'';display:none;width:6px;height:6px;border-radius:50%;background:$gray200;position:absolute;left:5px;top:50%;transform:translateY(-50%);transition:all 0.2s;}
 input[type=radio]:checked + label:before {border-color:$color-primary;animation:ripple2 0.2s linear forwards;}
@@ -223,7 +223,7 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 .filter {width:320px;background:$gray0;overflow-y:scroll;margin:0 auto;padding:2rem 3rem;position:fixed;right:0;top:0;bottom:0;z-index:1;}
 .filter-title {font-size:1.5rem;}
 .filter-fieldset {margin:1.5rem 0;padding:1.75rem 0 2rem 0;border-bottom:1px solid #e9e9e6;position:relative;}
-.filter-fieldset-legend {line-height:1;position:absolute;top:0;}
+.filter-fieldset-legend {width:100%;line-height:1;position:absolute;top:0;}
 .filter-fieldset-description {margin:0 0 8px 0;}
 
 
@@ -240,7 +240,7 @@ input[type=file] + label:after {display:none;}
 .file-label {@include button-secondary;cursor:pointer;}
 .file-attachment {margin:2rem 0 0;}
 .file-attachment-title {margin:.5rem 0;font-size:$body;text-decoration:underline;}
-.file-attachment-helper {margin:-4px 0 0;}
+.file-attachment-helper {}
 .file-attachment-list:after {content:'';display:block;clear:both;}
 .file-attachment-item {display:block;width:100%;background:$gray100;border-radius:$radius400;overflow:hidden;position:relative;}
 .file-attachment-item:not(:first-child) {margin-top:.5rem;}

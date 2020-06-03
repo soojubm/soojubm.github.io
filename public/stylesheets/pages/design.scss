@@ -78,22 +78,9 @@
 
 
 
-
-.test {padding:1rem 1.5rem;box-shadow:$shadow400;position:relative;}
-.test h3 {margin:.5rem 0 .75rem 0;}
-.test time {}
-.test > span {margin-right:1rem;}
-.test > div {color:$gray400;}
-.test > div time {margin:0 1rem;}
-.test > div i {}
-.test button {}
-
-
-.countdown {display:flex;margin:1rem 0;font-size:12px;}
-
-
-
-@keyframes spinAround{0%{-webkit-transform:rotate(0deg);transform:rotate(0deg)}to{-webkit-transform:rotate(359deg);transform:rotate(359deg)}}
+@keyframes spinAround{
+  0%{-webkit-transform:rotate(0deg);transform:rotate(0deg)}
+  o{-webkit-transform:rotate(359deg);transform:rotate(359deg)}}
 .spinner {
     animation: spinAround .8s linear infinite;
     border-radius: 50%;
@@ -109,7 +96,6 @@
 }
 
 
-
 .stamp {
   position: absolute;
   right: 6vmax;
@@ -117,9 +103,8 @@
   z-index: 10;
 }
 .stamp p {
-  color: #ee3d3d;
-  font-size: 2vmax;
-  font-family: 'Asul', sans-serif;
+  font-size: 2.5rem;
+  color: $color-primary;
   margin: 0;
 }
 .stamp .circle {
@@ -130,134 +115,102 @@
   left: 50%;
   top: 50%;
   background-color: transparent;
-  -webkit-animation: rotation 9.5s linear infinite;
           animation: rotation 9.5s linear infinite;
 }
 .stamp .circle span {
-  font-family: 'Rubik', sans-serif;
-  font-weight: bold;
-  font-size: 0.8vmax;
-  color: #ee3d3d;
+  font-size: 1rem;
   height: 5vmax;
+  color: $color-primary;
   position: absolute;
   display: inline-block;
   left: 0;
   bottom: 0;
-  -webkit-transform-origin: bottom center;
-          transform-origin: bottom center;
+  transform-origin: bottom center;
 }
 
 
 .char1 {
-  -webkit-transform: rotate(13deg);
-          transform: rotate(13deg);
+  transform: rotate(13deg);
 }
 .char2 {
-  -webkit-transform: rotate(26deg);
-          transform: rotate(26deg);
+  transform: rotate(26deg);
 }
 .char3 {
-  -webkit-transform: rotate(39deg);
-          transform: rotate(39deg);
+  transform: rotate(39deg);
 }
 .char4 {
-  -webkit-transform: rotate(52deg);
-          transform: rotate(52deg);
+  transform: rotate(52deg);
 }
 .char5 {
-  -webkit-transform: rotate(65deg);
-          transform: rotate(65deg);
+  transform: rotate(65deg);
 }
 .char6 {
-  -webkit-transform: rotate(78deg);
           transform: rotate(78deg);
 }
 .char7 {
-  -webkit-transform: rotate(91deg);
           transform: rotate(91deg);
 }
 .char8 {
-  -webkit-transform: rotate(104deg);
           transform: rotate(104deg);
 }
 .char9 {
-  -webkit-transform: rotate(117deg);
           transform: rotate(117deg);
 }
 .char10 {
-  -webkit-transform: rotate(130deg);
           transform: rotate(130deg);
 }
 .char11 {
-  -webkit-transform: rotate(143deg);
           transform: rotate(143deg);
 }
 .char12 {
-  -webkit-transform: rotate(156deg);
           transform: rotate(156deg);
 }
 .char13 {
-  -webkit-transform: rotate(169deg);
           transform: rotate(169deg);
 }
 .char14 {
-  -webkit-transform: rotate(182deg);
           transform: rotate(182deg);
 }
 .char15 {
-  -webkit-transform: rotate(195deg);
           transform: rotate(195deg);
 }
 .char16 {
-  -webkit-transform: rotate(208deg);
           transform: rotate(208deg);
 }
 .char17 {
-  -webkit-transform: rotate(221deg);
           transform: rotate(221deg);
 }
 .char18 {
-  -webkit-transform: rotate(234deg);
           transform: rotate(234deg);
 }
 .char19 {
-  -webkit-transform: rotate(247deg);
           transform: rotate(247deg);
 }
 .char20 {
-  -webkit-transform: rotate(260deg);
           transform: rotate(260deg);
 }
 .char21 {
-  -webkit-transform: rotate(273deg);
           transform: rotate(273deg);
 }
 .char22 {
-  -webkit-transform: rotate(286deg);
           transform: rotate(286deg);
 }
 .char23 {
-  -webkit-transform: rotate(299deg);
           transform: rotate(299deg);
 }
 .char24 {
-  -webkit-transform: rotate(312deg);
           transform: rotate(312deg);
 }
 .char25 {
-  -webkit-transform: rotate(325deg);
           transform: rotate(325deg);
 }
 .char26 {
-  -webkit-transform: rotate(338deg);
           transform: rotate(338deg);
 }
 .char27 {
-  -webkit-transform: rotate(351deg);
           transform: rotate(351deg);
 }
 .char28 {
-  -webkit-transform: rotate(364deg);
           transform: rotate(364deg);
 }
 

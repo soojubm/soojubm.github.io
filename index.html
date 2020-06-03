@@ -140,9 +140,10 @@
             <img src="/public/icons/search.svg" alt="" />
           </a>
           <form class="navbar-user-search-form" action="">
-            <!-- <button class="navbar-user-search-form-close js-close" aria-label="delete"><i class="icon-close"></i></button> -->
+            <button class="navbar-user-search-form-close js-close" aria-label="delete"><i class="icon-arrow"></i></button>
             <!-- <p role="status">수줍이와(과) 일치하는 검색결과가 없습니다.</p> -->
-            <fieldset class="textfield">
+
+            <fieldset class="navbar-user-search-form-field textfield">
               <legend class="filter-fieldset-legend" hidden aria-hidden="true">검색하기</legend>
               <label class="textfiled-label" for="help-search" hidden aria-hidden="true">검색하기</label>
               <input class="textfield-input" type="search" id="help-search" placeholder="검색어를 입력해 주세요." />
@@ -151,9 +152,6 @@
               </button>
             </fieldset>
             <section class="navbar-user-search-form-result">
-              <div class="navbar-user-search-form-result-recommend">
-                n번방
-              </div>
               <div class="navbar-user-search-option">
                 <h2 class="navbar-user-search-option-title">당신을 위한 추천</h2>
                 <a class="navbar-user-search-option-item" href="#">검색어는 어떻게 입력하나요?</a>
@@ -206,7 +204,7 @@
       </div>
     </nav>
 
-    <header class="header">
+    <header class="header js-header">
       <button class="header-back" onclick="javascript:alert('이전페이지로~');">
         <span class="header-back-icon"><i class="icon-arrow is-left"></i></span>
         뒤로가기
@@ -225,17 +223,17 @@
     </section>
 
     <form class="subscribe">
-      <i class="subscribe-avatar">📮</i>
+      <!-- <i class="subscribe-avatar">📮</i> -->
       <h2 class="subscribe-title">수줍이 뉴스레터를 정기구독하세요.</h2>
       <p class="subscribe-description">사실 그런 건 없고 유아이 콤포넌트 입니다. <br />텍스트를 한 줄 더 만들기 위해서 아무말이나 해봅니다. 🦔</p>
-      <div class="subscribe-wrap">
+      <!-- <div class="subscribe-wrap">
         <div class="subscribe-field textfield">
           <input class="textfield-input" placeholder="이름" />
         </div>
         <div class="subscribe-field textfield">
           <input class="textfield-input" placeholder="하시는 일" />
         </div>
-      </div>
+      </div> -->
       <div class="subscribe-field textfield">
         <input class="textfield-input" placeholder="Enter Your Email.." />
       </div>
@@ -319,7 +317,7 @@
       </address>
     </footer>
     <aside id="modal"></aside>
-    <div class="clock"></div>
+    <!-- <div class="clock"></div>
     <script>
       var renderTime = function () {
         var time = new Date();
@@ -328,7 +326,7 @@
       };
       renderTime()
       setInterval(renderTime, 1000);
-    </script>
+    </script> -->
   </body>
 </html>
 

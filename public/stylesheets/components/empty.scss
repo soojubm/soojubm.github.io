@@ -2,4 +2,4 @@
 .empty-icon {@include box-large;margin:0 0 2rem;background:$color-negative;color:$gray0;font-size:40px;}
 .empty-title {font-size:1.5rem;}
 .empty-description {margin:.5rem 0 2.5rem;}
-.empty-action {}
+.empty-action {@include button-secondary;}

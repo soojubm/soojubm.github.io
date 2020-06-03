@@ -5,6 +5,10 @@ $cell-medium: 48px;
 $cell-light: 32px;
 $cell-small:16px;
 
+$container800: 1440px;
+$container500: 800px;
+$container200: 480px;
+
 $avatar100: 16px;
 $avatar200: 32px;
 $avatar400: 48px;
@@ -134,6 +138,11 @@ $height-header: 64px;
 .linebreak {display:block;}
 @media (--viewport-small) {
   .linebreak {display:inline;}
+}
+
+@media (--viewport-small) {
+  $gray0: #333;
+  $gray800: #f1f5f6;
 }
 
 .row {

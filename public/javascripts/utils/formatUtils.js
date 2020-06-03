@@ -1,49 +1,60 @@
+export function stringByteLength(str) {
+  let l = 0
 
-export const getByteLength = data => {
-  let len = 0;
-  const str = data.substring(0);
+  for (let idx = 0; idx < str.length; idx += 1) {
+    const c = escape(str.charAt(idx))
 
-  if (str == null) return 0;
-
-  for (let i = 0; i < str.length; i++) {
-    const ch = escape(str.charAt(i));
-
-    if (ch.length === 1) len += 1;
-    else if (ch.indexOf('%u') !== -1) len += 2;
-    else if (ch.indexOf('%') !== -1) len += ch.length / 3;
+    if (c.length === 1) l += 1
+    else if (c.indexOf('%u') !== -1) l += 2
+    else if (c.indexOf('%') !== -1) l += c.length / 3
   }
+  return l
+}
 
-  return len;
-};
+// export const getByteLength = data => {
+//   let len = 0;
+//   const str = data.substring(0);
 
-var stringToHTML = function (str) {
-	var parser = new DOMParser();
-	var doc = parser.parseFromString(str, 'text/html');
-	return doc.body;
-};
+//   if (str == null) return 0;
+
+//   for (let i = 0; i < str.length; i++) {
+//     const ch = escape(str.charAt(i));
+
+//     if (ch.length === 1) len += 1;
+//     else if (ch.indexOf('%u') !== -1) len += 2;
+//     else if (ch.indexOf('%') !== -1) len += ch.length / 3;
+//   }
+
+//   return len;
+// };
+
+var stringToHTML = function(str) {
+  var parser = new DOMParser()
+  var doc = parser.parseFromString(str, 'text/html')
+  return doc.body
+}
 
 var getElementHeight = function(element) {
-	element.style.display = 'block';
-	const height = element.scrollHeight + 'px';
-	
-	return height;
-};
+  element.style.display = 'block'
+  const height = element.scrollHeight + 'px'
+
+  return height
+}
 // frameHeight = frameWidth * 9 / 16;
 
 class Calculator {
-	add(x, y) {
-		return x + y;
-	}
-	subtract(x, y) {
-		return x - y;
-	}
+  add(x, y) {
+    return x + y
+  }
+  subtract(x, y) {
+    return x - y
+  }
 }
 
-// elements.filter((value, index, array) => array.indexOf(value) === index) // uniq
-
-const fullNumber = '2034399002125581';
-const last4Digits = fullNumber.slice(-4);
-const maskedNumber = last4Digits.padStart(fullNumber.length, '*');
+// elements.filter((value, index, array) => array.indexOf(value) === index) // uniqs
+const fullNumber = '2034399002125581'
+const last4Digits = fullNumber.slice(-4)
+const maskedNumber = last4Digits.padStart(fullNumber.length, '*')
 /*
 	var isDateSupported = function() {
 		var input = document.createElement('input');
@@ -61,56 +72,42 @@ const maskedNumber = last4Digits.padStart(fullNumber.length, '*');
 	}
 */
 
-const randomNumber = function (min, max) {
-	return Math.floor(Math.random() * (max - min + 1) + min);
-};
-
-
-
-
+const randomNumber = function(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min)
+}
 
 // // 문자열
 // typeof variable === 'string'
 // tui.util.isString(variable)
 
-
 // // 숫자
 // typeof variable === 'number'
 // tui.util.isNumber(variable)
-
 
 // // 불린
 // typeof variable === 'boolean'
 // tui.util.isBoolean(variable)
 
-
 // // 객체
 // typeof variable === 'object'
 // tui.util.isObject(variable)
-
 
 // // 배열
 // Array.isArray(arrayObject)
 // tui.util.isArray(variable)
 
-
 // // 널 Null
 // variable === null
 // tui.util.isNull(variable)
-
 
 // // 미할당 Undefined
 // typeof variable === 'undefined'
 // variable === undefined
 // tui.util.isUndefined(variable)
 
-
 // // 엘리먼트 노드
 // element.nodeType === 1
 // tui.util.isHTMLNode(element)
-
-
-
 
 // // 문자열 - 빈 문자열이 아닌가?
 // if (string) ...
@@ -143,9 +140,6 @@ const randomNumber = function (min, max) {
 // // 참조변수가 거짓(false)인가?
 // if (!variable) ...
 
-
-
-
 function isEmpty(obj) {
-	return Object.keys(obj).length === 0;
+  return Object.keys(obj).length === 0
 }

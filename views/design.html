@@ -6,210 +6,48 @@
     <div class="hero-obj2"></div>
     <div class="hero-obj3"></div>
     <div class="hero-background"></div>
-    <h1 class="hero-title">부끄러우니까 보지마요 🗯</h1>
+    <h1 class="hero-title">부끄러우니까 보지마요 <span role="img" aria-label="bomb">🗯</span></h1>
     <p class="hero-description">바닐라 자바스크립트로 개발하였습니다.<br />이 사이트에서 의미를 찾지 마십시오!<br />이 폰트는 윈도우즈에서 예쁘게 나오지 않아요.</p>
     <a class="hero-cta">공사중</a>
     <img class="hero-obj4" src="/public/images/blob-shape.svg" alt="" />
   </section>
   <section class="design-body">
-<!-- 
-  <div class="stamp">
-    <div class="circle">
-      <p id="circle-content">EXPERIMENTS . EXPERIMENTS .</p>
-    </div>
-    <p>2018</p>
-  </div>
-    <script>
-function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}const cursor = document.getElementById("cursor");
-const amount = 20;
-const sineDots = Math.floor(amount * 0.3);
-const width = 26;
-const idleTimeout = 150;
-let lastFrame = 0;
-let mousePosition = { x: 0, y: 0 };
-let dots = [];
-let timeoutID;
-let idle = false;
-let hoverButton;
-let hoverTL;
-
-class HoverButton {
-  constructor(id) {_defineProperty(this, "onMouseEnter",
-    () => {
-      this.hoverInAnim();
-    });_defineProperty(this, "hoverInAnim",
-
-    () => {
-      if (!this.hovered) {
-        this.hovered = true;
-        this.animatingHover = true;
-        this.forceOut = false;
-        TweenMax.fromTo(
-        this.bg,
-        this.timing,
-        { x: "-112%" },
-        {
-          x: "-12%",
-          ease: Power3.easeOut,
-          onComplete: () => {
-            this.animatingHover = false;
-            if (this.forceOut) {
-              this.foceOut = false;
-              this.hoverOutAnim();
-            }
-          } });
-
-
-      }
-    });_defineProperty(this, "onMouseLeave",
-
-    () => {
-      if (!this.animatingHover) {
-        this.hoverOutAnim();
-      } else {
-        this.forceOut = true;
-      }
-    });_defineProperty(this, "hoverOutAnim",
-
-    () => {
-      this.hovered = false;
-      TweenMax.to(this.bg, this.timing, {
-        x: "100%",
-        ease: Power3.easeOut,
-        onComplete: () => {
-        } });
-
-    });this.hovered = false;this.animatingHover = false;this.forceOut = false;this.timing = 0.65;this.el = document.getElementById(id);this.bg = this.el.getElementsByClassName("bg")[0];this.el.addEventListener("mouseenter", this.onMouseEnter);this.el.addEventListener("mouseleave", this.onMouseLeave);}}
-
-
-class Dot {
-  constructor(index = 0) {
-    this.index = index;
-    this.anglespeed = 0.05;
-    this.x = 0;
-    this.y = 0;
-    this.scale = 1 - 0.05 * index;
-    this.range = width / 2 - width / 2 * this.scale + 2;
-    this.limit = width * 0.75 * this.scale;
-    this.element = document.createElement("span");
-    TweenMax.set(this.element, { scale: this.scale });
-    cursor.appendChild(this.element);
-  }
-
-  lock() {
-    this.lockX = this.x;
-    this.lockY = this.y;
-    this.angleX = Math.PI * 2 * Math.random();
-    this.angleY = Math.PI * 2 * Math.random();
-  }
-
-  draw(delta) {
-    if (!idle || this.index <= sineDots) {
-      TweenMax.set(this.element, { x: this.x, y: this.y });
-    } else {
-      this.angleX += this.anglespeed;
-      this.angleY += this.anglespeed;
-      this.y = this.lockY + Math.sin(this.angleY) * this.range;
-      this.x = this.lockX + Math.sin(this.angleX) * this.range;
-      TweenMax.set(this.element, { x: this.x, y: this.y });
-    }
-  }}
-
-
-class Circle {
-  constructor(id) {
-    const el = document.getElementById(id);
-    const parent = el.parentElement;
-    parent.removeChild(el);
-    const chars = el.innerText.split("");
-    chars.push(" ");
-    for (let i = 0; i < chars.length; i++) {
-      const span = document.createElement("span");
-      span.innerText = chars[i];
-      span.className = `char${i + 1}`;
-      parent.appendChild(span);
-    }
-  }}
-
-
-function init() {
-  window.addEventListener("mousemove", onMouseMove);
-  window.addEventListener("touchmove", onTouchMove);
-  hoverButton = new HoverButton("button");
-  // eslint-disable-next-line no-new
-  new Circle("circle-content");
-  lastFrame += new Date();
-  buildDots();
-  render();
-}
-
-/*function limit(value, min, max) {
-      return Math.min(Math.max(min, value), max);
-  }*/
-
-function startIdleTimer() {
-  timeoutID = setTimeout(goInactive, idleTimeout);
-  idle = false;
-}
-
-function resetIdleTimer() {
-  clearTimeout(timeoutID);
-  startIdleTimer();
-}
-
-function goInactive() {
-  idle = true;
-  for (let dot of dots) {
-    dot.lock();
-  }
-}
-
-function buildDots() {
-  for (let i = 0; i < amount; i++) {
-    let dot = new Dot(i);
-    dots.push(dot);
-  }
-}
-
-const onMouseMove = event => {
-  mousePosition.x = event.clientX - width / 2;
-  mousePosition.y = event.clientY - width / 2;
-  resetIdleTimer();
-};
-
-const onTouchMove = () => {
-  mousePosition.x = event.touches[0].clientX - width / 2;
-  mousePosition.y = event.touches[0].clientY - width / 2;
-  resetIdleTimer();
-};
-
-const render = timestamp => {
-  const delta = timestamp - lastFrame;
-  positionCursor(delta);
-  lastFrame = timestamp;
-  requestAnimationFrame(render);
-};
-
-const positionCursor = delta => {
-  let x = mousePosition.x;
-  let y = mousePosition.y;
-  dots.forEach((dot, index, dots) => {
-    let nextDot = dots[index + 1] || dots[0];
-    dot.x = x;
-    dot.y = y;
-    dot.draw(delta);
-    if (!idle || index <= sineDots) {
-      const dx = (nextDot.x - dot.x) * 0.35;
-      const dy = (nextDot.y - dot.y) * 0.35;
-      x += dx;
-      y += dy;
-    }
-  });
-};
-
-init();
-
-    </script> -->
+    <!-- <div class="stamp">
+      <div class="circle">
+        <p id="circle-content">
+          <span class="char1">부</span>
+          <span class="char2">끄</span>
+          <span class="char3">러</span>
+          <span class="char4">우</span>
+          <span class="char5">니</span>
+          <span class="char6">까 </span>
+          <span class="char7">보</span>
+          <span class="char8">지</span>
+          <span class="char9">마</span>
+          <span class="char10">요</span>
+          <span class="char11"></span>
+          <span class="char12">부</span>
+          <span class="char13">끄</span>
+          <span class="char14">러</span>
+          <span class="char15">우</span>
+          <span class="char16">니</span>
+          <span class="char17">까 </span>
+          <span class="char18">보</span>
+          <span class="char19">지</span>
+          <span class="char20">마</span>
+          <span class="char21">요</span>
+          <span class="char22"></span>
+          <span class="char23"></span>
+          <span class="char24"></span>
+          <span class="char25"></span>
+        </p>
+      </div>
+      <p>수줍이</p>
+    </div> -->
+    <button class="copyurl js-copy" data-copy-btn class="bx--copy-btn" type="button" tabindex="0">
+      <span hidden class="bx--assistive-text bx--copy-btn__feedback">Copied!</span>
+      <svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" class="bx--snippet__icon" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M14,5v9H5V5h9m0-1H5A1,1,0,0,0,4,5v9a1,1,0,0,0,1,1h9a1,1,0,0,0,1-1V5a1,1,0,0,0-1-1Z"></path><path d="M2,9H1V2A1,1,0,0,1,2,1H9V2H2Z"></path></svg>
+    </button>
     <!-- <nav class="pagenav">
       <h1 class="pagenav-title">이 페이지에는-</h1>
       <div class="pagenav-nav">
@@ -219,21 +57,17 @@ init();
         <a class="pagenav-link" href=""><i class="avatar">👼🏼</i> 신작</a>
         <a class="pagenav-link" href=""><i class="avatar">💗</i> 로맨스</a>
         <a class="pagenav-link" href=""><i class="avatar">🧜‍♀️</i> 만화</a>
-        <a class="pagenav-link" href="">Back to Top</a>
       </div>
-      <br />
-      <p>기능 정의<br />스크롤스파이. 스크롤되면 고정(> mobile devices). 모바일에서 가로 정렬 후 좌우 스크롤.</p>
     </nav> -->
+
     <!-- <div role="textbox" contenteditable="true" aria-placeholder="5-digit zipcode" aria-labelledby="txtboxLabel">contentEditable</div>  -->
+    
     <article class="design-article typography">
       <h1 class="design-article-title">Typhography</h1>
       <button class="design-article-more">View All</button>
       <p class="design-article-description">하나의 무게Weight를 사용합니다.</p>
       <!-- <p>200 light / 400 normal / 700 bold</p> -->
-      <button class="copyurl js-copy" data-copy-btn class="bx--copy-btn" type="button" tabindex="0">
-        <span hidden class="bx--assistive-text bx--copy-btn__feedback">Copied!</span>
-        <svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" class="bx--snippet__icon" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M14,5v9H5V5h9m0-1H5A1,1,0,0,0,4,5v9a1,1,0,0,0,1,1h9a1,1,0,0,0,1-1V5a1,1,0,0,0-1-1Z"></path><path d="M2,9H1V2A1,1,0,0,1,2,1H9V2H2Z"></path></svg>
-      </button>
+
       <div style="display:flex;">
         <div style="width:50%">
           <i style="display:block;margin-bottom:.5rem;width:16px;height:16px;border-radius:4px;background:cadetblue"></i>
@@ -642,8 +476,8 @@ init();
         <i class="textfield-icon">prefix</i>
         <input class="textfield-input js-number-input" id="number" type="number" min="5" max="20" placeholder="숫자만 입력가능합니다."></input>
         <span class="textfield-suffix">@soojubm.com</span>
-      </div> -->
-      <!-- <div class="textfield" style="margin:2rem 0;">
+      </div>
+      <div class="textfield" style="margin:2rem 0;">
         <label class="textfield-label" for="">아이디<abbr title="This field is mandatory" aria-label="required"></abbr></label>
         <input class="textfield-input" type="text" placeholder="soojubm" readonly></input>
       </div> -->
@@ -879,21 +713,10 @@ init();
           <li><i class="icon-check"></i>아무거나 하나 써 봅니다.</li>
           <li><i class="icon-check"></i>아무거나 하나 써 봅니다.</li>
         </ul>
-        <button class="pricing-item-button secondary-button" style="margin-bottom:1rem;">업그레이드</button>
-        <button class="pricing-item-button text-button">And More...</button>
+        <button class="pricing-item-upgrade">업그레이드</button>
+        <button class="pricing-item-more">And More...</button>
       </div>
 
-      <!-- <div class="test">
-        <span class="tag">단원취약</span>
-        <span class="tag">난이도 <i>중하</i></span>
-        <span class="tag">기본</span>
-        <h3>다항식의 연산 - 복소수의 연산</h3>
-        <div>
-          <span>문항수 30</span>
-          <time>출제일 19. 11. 28</time>
-          <span>점수 <i>98</i></span>
-        </div>
-      </div> -->
     </article>
 
     <article class="design-article">
