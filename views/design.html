@@ -7,7 +7,7 @@
     <div class="hero-obj3"></div>
     <div class="hero-background"></div>
     <h1 class="hero-title">부끄러우니까 보지마요 <span role="img" aria-label="bomb">🗯</span></h1>
-    <p class="hero-description">바닐라 자바스크립트로 개발하였습니다.<br />이 사이트에서 의미를 찾지 마십시오!<br />이 폰트는 윈도우즈에서 예쁘게 나오지 않아요.</p>
+    <p class="hero-description">이 사이트는 연습장이니 의미를 찾지 마셔요.<br />바닐라 자바스크립트로 만들었어요.</p>
     <a class="hero-cta">공사중</a>
     <img class="hero-obj4" src="/public/images/blob-shape.svg" alt="" />
   </section>
@@ -347,11 +347,11 @@
       <div>
         <h6>Small Buttons</h6>
         <div role="group">
-          <button class="primary-button is-small">프라이머리</button>
+          <button class="design-article-primary-small primary-button is-small">프라이머리</button>
           <!-- <button class="danger-button is-small" aria-label="danger">Danger</button>
           <button class="success-button is-small" aria-label="danger">Success</button> -->
-          <button class="secondary-button is-small">세컨더리</button>
-          <button class="tertiary-button is-small">터시어리</button>
+          <button class="design-article-secondary-small secondary-button is-small">세컨더리</button>
+          <button class="design-article-tertiary-small tertiary-button is-small">터시어리</button>
           <button class="text-button is-small">텍스트</button>
         </div>
       </div>
@@ -464,10 +464,10 @@
       <h1 class="design-article-title">Textfield</h1>
       <p class="design-article-description">Input text, Textarea, Select, with Icon, with Unit, with Button</p>
       
-      <div class="variation js-variation">
-        <input class="variation-input js-variation-input js-number-input" name="variation1" type="number" value="0" min="5" max="20" >
-        <button class="variation-decrement js-variation-decrement"><i class="icon-minus"></i></button>
-        <button class="variation-increment js-variation-increment"><i class="icon-plus"></i></button>
+      <div class="quantity js-quantity">
+        <input class="quantity-input js-quantity-input js-number-input" name="quantity1" type="number" value="0" min="5" max="20" >
+        <button class="quantity-decrement js-quantity-decrement"><i class="icon-minus"></i></button>
+        <button class="quantity-increment js-quantity-increment"><i class="icon-plus"></i></button>
       </div>
       <!-- addons === 검색 버튼 포함 가능 -->
       <!-- <div class="textfield" style="margin:2rem 0;">
@@ -1079,7 +1079,17 @@
         </div>
       </div>
     </article>
-
+    <fieldset class="filter-fieldset">
+      <legend class="filter-fieldset-legend">체크박스</legend>
+      <div class="checkbox">
+        <input type="checkbox" id="line01" value="" checked />
+        <label for="line01">Everyday is like sunday</label>
+      </div>
+      <div class="checkbox">
+        <input type="checkbox" id="line02" value="" indeterminate />
+        <label for="line02">Everyday is like sunday</label>
+      </div>
+    </fieldset>
     <!-- <form class="filter">
       <h1 class="filter-title">Filters</h1>
       <fieldset class="filter-fieldset">
@@ -1096,17 +1106,7 @@
           <input class="textfield-input" type="date" id="date-end" placeholder="날짜를 설정해주세요." style="border-left:none;" />
         </div>
       </fieldset>
-      <fieldset class="filter-fieldset">
-        <legend class="filter-fieldset-legend">체크박스</legend>
-        <div class="checkbox">
-          <input type="checkbox" id="line01" value="" checked />
-          <label for="line01">Everyday is like sunday</label>
-        </div>
-        <div class="checkbox">
-          <input type="checkbox" id="line02" value="" indeterminate />
-          <label for="line02">Everyday is like sunday</label>
-        </div>
-      </fieldset>
+
       <footer class="filter-foot is-child-pull">
         <button class="primary-button">필터링하기</button>
         <button class="text-button">clear filters</button>

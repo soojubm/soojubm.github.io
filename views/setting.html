@@ -1,52 +1,72 @@
 <main>
+  // 버튼 태그로 바꾸기
   <section class="setting">
     <header class="setting-head">
       <h1 class="setting-head-title">설정</h1>
       <p class="setting-head-description">이름, 사진과 같이 서비스에서 사용하는 기본 정보</p>
     </header>
     <div class="setting-body">
-      <h2>프로필</h2>
-      <!-- <p style="margin:.5rem 0 0 0;">안녕하세요.</p> -->
+      <h2 class="setting-body-heading">프로필</h2>
+      <div class="setting-row">
+        <h2 class="setting-row-label">닉네임</h2>
+        <div class="setting-row-value">
+          <!-- 수줍이 -->
+          <section class="password-body" style="font-size:14px;">
+            <div class="textfield">
+              <!-- <label class="textfield-label" for="find-email" title="Email Address">이메일</label> -->
+              <input class="textfield-input" type="text" id="find-email" class="required" placeholder="soojubm@gmail.com" autofocus />
+              <p role="alert" class="textfield-helper">올바른 이메일 주소를 입력해주세요.</p>
+            </div>
+            <footer class="password-foot">
+              <button type="submit" class="password-foot-submit">초기화 메일 받기</button>
+              <!-- <span class="password-link" title="Remember your password after all?">이메일이 기억 안 나세요? <a href="signin.html">가입하기</a></span> -->
+            </footer>
+          </section>
+        </div>
+        <span class="setting-row-change"><b>변경하기</b> <i class="icon-arrow"></i></span>
+      </div>
 
       <div class="setting-row">
-        <h2>닉네임</h2>
-        <div>
-          수줍이
-          <!-- <div class="textfield" style="flex-grow: 1;">
-            <label class="textfield-label" for="date-start"><i class="">체크인</i></label>
-            <input class="textfield-input" type="text" id="date-start" placeholder="수줍이">
-          </div> -->
-        </div>
-        <span><b>변경하기</b> <i class="icon-arrow"></i></span>
+        <h2 class="setting-row-label">생년월일</h2>
+        <div class="setting-row-value">2020년 5월 24일</div>
+        <span class="setting-row-change"><b>변경하기</b> <i class="icon-arrow"></i></span>
       </div>
       <div class="setting-row">
-        <h2>생년월일</h2>
-        <div>2020년 5월 24일</div>
-        <span><b>변경하기</b> <i class="icon-arrow"></i></span>
+        <h2 class="setting-row-label">성별</h2>
+        <div class="setting-row-value">기타</div>
+        <span class="setting-row-change"><b>변경하기</b> <i class="icon-arrow"></i></span>
       </div>
       <div class="setting-row">
-        <h2>성별</h2>
-        <div>기타</div>
-        <span><b>변경하기</b> <i class="icon-arrow"></i></span>
-      </div>
-      <div class="setting-row">
-        <h2>비밀번호</h2>
-        <div>••••••••</div>
-        <span><b>변경하기</b> <i class="icon-arrow"></i></span>
+        <h2 class="setting-row-label">비밀번호</h2>
+        <div class="setting-row-value">••••••••</div>
+        <span class="setting-row-change"><b>변경하기</b> <i class="icon-arrow"></i></span>
       </div>
     </div>
 
-
     <div class="setting-body">
-      <h2>이메일 수신여부</h2>
-      <!-- <p style="margin:.5rem 0 0 0;">안녕하세요.</p> -->
+      <h2 class="setting-body-heading">뉴니커 정보</h2>
+      <p class="setting-body-description">뉴니커 정보를 입력하고 뽐내보세요.</p>
       <div class="setting-row">
-        <h2>이메일</h2>
-        <div>soojubm@gmail.com</div>
+        <h2 class="setting-row-label">이모지</h2>
+        <div class="setting-row-value">🐻</div>
+        <span class="setting-row-change"><b>변경하기</b> <i class="icon-arrow"></i></span>
       </div>
       <div class="setting-row">
-        <h2>뉴스레터</h2>
-        <div>
+        <h2 class="setting-row-label">관심분야</h2>
+        <div class="setting-row-value">부동산과 투자</div>
+        <span class="setting-row-change"><b>변경하기</b> <i class="icon-arrow"></i></span>
+      </div>
+    </div>
+
+    <div class="setting-body">
+      <h2 class="setting-body-heading">이메일 수신여부</h2>
+      <div class="setting-row">
+        <h2 class="setting-row-label">이메일</h2>
+        <div class="setting-row-value">soojubm@gmail.com</div>
+      </div>
+      <div class="setting-row">
+        <h2 class="setting-row-label">뉴스레터</h2>
+        <div class="setting-row-value">
           <span class="switch">
             <input type="checkbox" id="switch1" name="" role="switch" value="on" checked />
             <label for="switch1" title="Receive weekly newsletter">시사 뉴스레터</label>
@@ -56,7 +76,7 @@
     </div>
 
     <footer class="setting-foot">
-      <p class="setting-body-delete">계정 삭제하기</p>
+      <p class="setting-foot-delete">계정 삭제하기</p>
     </footer>
   </section>
 </main>

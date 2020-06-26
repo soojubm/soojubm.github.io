@@ -5,14 +5,16 @@ const stickyElement = ({ targetElement, addClass }) => {
   let stickyElementHeight = stickyElement.offsetHeight
   let isScrolling
 
-  window.addEventListener('resize', () => {
-    isScrolling && window.cancelAnimationFrame(isScrolling)
-    isScrolling = window.requestAnimationFrame(() => {
-      stickyElementHeight = stickyElement.offsetHeight
-    })
-  })
+  // window.addEventListener('resize', () => {
+  //   isScrolling && window.cancelAnimationFrame(isScrolling)
+  //   isScrolling = window.requestAnimationFrame(() => {
+  //     stickyElementHeight = stickyElement.offsetHeight
+  //   })
+  // })
 
-  window.addEventListener('scroll', () => {
+  window.addEventListener('scroll', hasScrolled)
+
+  function hasScrolled() {
     isScrolling && window.cancelAnimationFrame(isScrolling)
     isScrolling = window.requestAnimationFrame(() => {
       if (window.pageYOffset > stickyElement.offsetTop + stickyElementHeight) {
@@ -23,7 +25,7 @@ const stickyElement = ({ targetElement, addClass }) => {
         // body.style.paddingTop = '0px'
       }
     })
-  })
+  }
 }
 
 // var isScrolling;

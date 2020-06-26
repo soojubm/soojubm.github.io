@@ -2,7 +2,7 @@
 
 .post p:first-line {}
 .post p:not(:nth-of-type(1))::first-letter {padding-left:0;}
-.post {max-width:720px;margin:0 auto;padding:4rem 5% 40px;}
+.post {max-width:640px;margin:0 auto;padding:4rem 5% 40px;}
 .post-head {margin:0 0 3rem 0;position:relative;}
 .post-head-runninghead {color:$gray800;text-decoration:underline;}
 .post-head-headline {padding:.5rem 0 2rem 0;font-size:2rem;color:$gray800;text-indent:-1px;} /* 상하단 패딩 똑같이해야 스키티때 */
@@ -13,7 +13,7 @@
 .post-head-icon i {display:inline-block;width:32px;height:32px;border-radius:$radius400;line-height:32px;font-size:1.25rem;color:$gray400;vertical-align:middle;}
 .post-head-icon span {display:inline-block;}
 
-.is-sticky-post-head {padding-top:200px;}
+.is-sticky-post-head.page-post {padding-top:200px;}
 .is-sticky-post-head .post-head {background:$gray0;box-shadow:$shadow400;text-align:left;position:fixed;left:0;right:0;top:0;z-index:7}
 .is-sticky-post-head .post-head-runninghead {display:none;}
 .is-sticky-post-head .post-head-headline {padding:1rem 5%;box-sizing:border-box;font-size:1.25rem;text-align:center;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;}

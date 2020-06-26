@@ -18,11 +18,6 @@
 
 .color-item:hover figcaption span {margin-top:-24px;}
 
-// 통일하기
-// .profile-head {height:240px;overflow:hidden;margin:0 0 3rem 0;padding:3rem 4rem;border-radius:$radius400;box-sizing:border-box;position:relative;}
-// .profile-head-headline {margin:0px auto .5rem;font-size:1.75rem;text-indent:-2px;color:$gray0;position:relative;}
-// .profile-head-description {width:50%;margin:0 0 2rem 0;color:$gray0;position: relative;}
-// .profile-head-share {@extend .tertiary-button;}
 .design {}
 .design-head {overflow:hidden;background:url('/public/images/caleb-woods-182648-unsplash.jpg') no-repeat center center;background-size:cover;position:fixed;left:0;right:50%;top:0;bottom:0;z-index:1;}
 .design-body {width:50%;max-width:40rem;margin-left:50%;padding:6rem;}
@@ -230,6 +225,9 @@
 .design-article-primary {@include button-primary;}
 .design-article-secondary {@include button-secondary;}
 .design-article-tertiary {@include button-tertiary;}
+.design-article-primary-small {@include box-light;@include button-primary;}
+.design-article-secondary-small {@include box-light;@include button-secondary;}
+.design-article-tertiary-small {@include box-light;@include button-tertiary;}
 // .design-article-text {@include button-text;}
 
 .copyurl {

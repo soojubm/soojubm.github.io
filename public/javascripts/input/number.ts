@@ -58,11 +58,11 @@ const inputNumber = () => {
 
 export default inputNumber
 
-// export const inputVariation = () => {
-// 	const variation = document.querySelector('.js-variation');
-// 	const input = variation.querySelector('.js-variation-input');
-// 	const decrement = variation.querySelector('.js-variation-decrement');
-// 	const increment = variation.querySelector('.js-variation-increment');
+// export const inputquantity = () => {
+// 	const quantity = document.querySelector('.js-quantity');
+// 	const input = quantity.querySelector('.js-quantity-input');
+// 	const decrement = quantity.querySelector('.js-quantity-decrement');
+// 	const increment = quantity.querySelector('.js-quantity-increment');
 
 // 	let value = input.value;
 // 	const MIN_VALUE = 0;
@@ -124,25 +124,25 @@ document.addEventListener('click', event => {
   const MAX_VALUE = 10
   let targetInput
 
-  if (target.closest('.js-variation-decrement')) {
-    targetInput = target.parentNode.querySelector('.js-variation-input')
+  if (target.closest('.js-quantity-decrement')) {
+    targetInput = target.parentNode.querySelector('.js-quantity-input')
     if (targetInput.value <= MIN_VALUE) {
       target.classList.add('is-disabled')
       target.setAttribute('disabled', 'true')
-      // target.parentNode.querySelector('.js-variation-increment').classList.remove('is-disabled')
-      // target.parentNode.querySelector('.js-variation-increment').removeAttribute('disabled')
+      // target.parentNode.querySelector('.js-quantity-increment').classList.remove('is-disabled')
+      // target.parentNode.querySelector('.js-quantity-increment').removeAttribute('disabled')
       return
     }
     --targetInput.value
   }
-  if (target.closest('.js-variation-increment')) {
-    targetInput = target.parentNode.querySelector('.js-variation-input')
+  if (target.closest('.js-quantity-increment')) {
+    targetInput = target.parentNode.querySelector('.js-quantity-input')
     if (targetInput.value >= MAX_VALUE) {
       target.classList.add('is-disabled')
       target.removeAttribute('disabled')
 
-      // target.parentNode.querySelector('.js-variation-decrement').classList.remove('is-disabled')
-      // target.parentNode.querySelector('.js-variation-decrement').removeAttribute('disabled')
+      // target.parentNode.querySelector('.js-quantity-decrement').classList.remove('is-disabled')
+      // target.parentNode.querySelector('.js-quantity-decrement').removeAttribute('disabled')
       return
     }
     ++targetInput.value
