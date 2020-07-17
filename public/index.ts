@@ -253,9 +253,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (isScrollEnd) {
       console.log('detect bottom')
     }
-    // event.stickyElement({ targetElement: '.js-navbar', addClass: 'is-sticky-navbar' })
+    // event.stickyElement({ targetElement: '.js-navbar', addClass: 'is-sticky-navbar' }
+    event.stickyElement({ targetElement: '.js-topbar', addClass: 'is-sticky-topbar' })
     event.stickyElement({ targetElement: '.js-post-head', addClass: 'is-sticky-post-head' })
-    event.stickyElement({ targetElement: '.js-header', addClass: 'is-sticky-header' })
   })
   const scrollProgress = () => {
     const post = document.querySelector<HTMLElement>('.post')

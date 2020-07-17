@@ -1,10 +1,5 @@
 // mediaquery, desktop first
 
-$cell-large: 80px;
-$cell-medium: 48px;
-$cell-light: 32px;
-$cell-small:16px;
-
 $container800: 1440px;
 $container500: 800px;
 $container200: 480px;
@@ -13,6 +8,19 @@ $avatar100: 16px;
 $avatar200: 32px;
 $avatar400: 48px;
 $avatar600: 80px;
+
+@mixin container {
+  background-color:$gray0;
+  border-radius: $radius400;
+  box-shadow: $shadow100;
+  position: relative;
+}
+
+
+$cell-large: 80px;
+$cell-medium: 48px;
+$cell-light: 32px;
+$cell-small:16px;
 
 @mixin box {
   display: flex;
@@ -39,14 +47,11 @@ $avatar600: 80px;
   height: $cell-medium;
 }
 
-
 @mixin box-small {
   @include box;
   width: $cell-small;
   height: $cell-small;
 }
-
-
 
 @mixin subhead {
   margin: 0 0 1rem 0;
@@ -61,16 +66,13 @@ $subhead: 1.25rem;
 $body: 1rem;
 $caption: 0.75rem;
 
-// :root {
-//   --gold: #333
-// }
 
 $gray0: #fff; // white for dark theme
 $gray100: #f1f5f6; // bg
 $gray200: #dadce0; // divider border
 $gray400: #999; // caption
 $gray600: #666; // body
-$gray800: #333; // bg || heading
+$gray800: #161616; // bg || heading
 
 $red100: #fff0f5;
 $red800: #da1e28;
@@ -92,9 +94,8 @@ $color-kakao: #ffdf00;
 @custom-media --viewport-small (max-width: 1080px);
 @custom-media --viewport-tiny (max-width: 720px);
 
-$padding100: .2rem 1rem; // is-small
-$padding200: 10px 1.5rem 11px; // 버튼, 텍스트인풋
-// $padding200: 10px 1.5rem 11px; // 아리따
+$padding100: 4px 1rem 5px; // is-small 32
+$padding200: 9px 1.5rem 12px; // 버튼, 텍스트인풋 48
 $padding400: 1.5rem 2rem;
 
 //box-shadow: inset 0 2px 4px 0 hsla(0, 0%, 0%, 0.08);
@@ -102,10 +103,9 @@ $shadow100: 0px 1px 1px rgba(136, 26, 26, 0.075); // unused
 $shadow400: 1px 1px 4px rgba(0, 0, 0, 0.2);
 $shadow450: 2px 4px 8px rgba(0, 0, 0, 0.2); // hover
 
-$border100: 1px solid $gray100;
+$border400: 1px solid $gray200;
 
 $radius400: 4px;
-
 
 $quote: 0;
 $placeholder: 0;
@@ -186,7 +186,6 @@ $height-header: 64px;
 }
 
 
-.row1.is-pull {display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;}
 .col {
   flex-basis: 0;
   flex-grow: 1;
@@ -209,6 +208,7 @@ $height-header: 64px;
 .is-nowrap {}
 .is-truncate {}
 
+.is-fetching {}
 .is-loading {}
 .is-actived {}
 .is-succesed {}
@@ -216,3 +216,22 @@ $height-header: 64px;
 .is-valid {}
 .is-invalid {}
 .is-inverted {}
+
+
+
+
+
+// mixin
+
+@mixin truncate {
+  white-space:nowrap;overflow:hidden;text-overflow:llipsis; 
+}
+@mixin truncate-multi {
+  @include truncate;
+  height: 2.7em;
+  white-space: normal;
+  word-wrap: break-word;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical; 
+}

@@ -3,6 +3,3 @@
 .loader-object {width:2rem;height:2rem;border-radius:50%;position:fixed;left:50%;top:50%;z-index:10;/*margin:-40px 0 0 -40px;*/background:$color-primary;animation:scaleout .8s infinite ease;}
 .loader-object.is-default {background:$gray100;}
 .loader-object.is-clickable {background:crimson;}
-@media (--viewport-small) {
-  .loader-object {display:none;}
-}

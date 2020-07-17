@@ -64,10 +64,9 @@
     
     <article class="design-article typography">
       <h1 class="design-article-title">Typhography</h1>
-      <button class="design-article-more">View All</button>
+      <!-- <button class="design-article-more">View All</button> -->
       <p class="design-article-description">하나의 무게Weight를 사용합니다.</p>
       <!-- <p>200 light / 400 normal / 700 bold</p> -->
-
       <div style="display:flex;">
         <div style="width:50%">
           <i style="display:block;margin-bottom:.5rem;width:16px;height:16px;border-radius:4px;background:cadetblue"></i>
@@ -80,7 +79,6 @@
       </div>
       
       <div style="margin:3rem 0 0 0;">
-        <!-- <i style="display:block;margin-bottom:.5rem;width:16px;height:16px;border-radius:4px;background:cadetblue"></i> -->
         <h4 class="typography-subhead" style="margin:0 0 1rem;font-size: 1.25rem;">선약이 있어서 자아실현은 못할 것 같아요.</h4>
         <p class="typography-paragraph" style="margin: 0 0 1.5rem">서브헤드와 디스크립션 혹은 패러그라프는 이렇게 사용하세요. 서브헤드와 디스크립션 혹은 패러그라프는 이렇게 사용하세요. 서브헤드와 디스크립션 혹은 패러그라프는 이렇게 사용하세요. 서브헤드와 디스크립션 혹은 패러그라프는 이렇게 사용하세요.</p>
         <time class="typography-caption">10 January, 2020</time>
@@ -174,28 +172,15 @@
       </div>
     </article>
 
-<!-- 
     <article class="design-article">
-      <h1 class="design-article-title">Emphasis</h1>
-      <p class="design-article-description">수줍이는 이렇게 강조해요. 특정 단어를 강조하기 보담 시선을 끄는 카피를 선택하는 안목을 기르세요. 커밍 순...</p>
-      <ol class="list-sample">  
-        <li>수줍이는 <em>이렇게</em> 강조해요. <div>링크 텍스트로 오인될 수 있으니 주의하세요.</div></li>
-        <li>수줍이는 <b>이렇게</b> 강조해요. <div>하나의 폰트 패밀리만 사용하기 때문에 볼드로 강조할 수 없다요.</div></li>
-        <li>수줍이는 <u>이렇게</u> 강조해요. <div>언더라인으로 강조해요.</div></li>
-        <li>수줍이는 <i style="font-style:italic;">이렇게</i> 강조해요. <div>한글에는 이탤릭의 개념이 없습니다.</div></li>
-        <li>수줍이는 <sup>이렇게</sup> 강조해요. <div>수치를 표현할 때만 사용하세요.</div></li>
-      </ol>
-    </article> -->
-    
-    <article class="design-article">
-      <h1 class="design-article-title">Breadcrumbs</h1>
+      <h1 class="design-article-title">breadcrumb</h1>
       <p class="design-article-description">페이지 레벨이 3단계 이상일 때 사용해요. 홈 아이콘 대신 텍스트를 사용하니 깔끔해보인다. 모바일에서 사용하지 마세요.</p>
-      <nav class="breadcrumbs" aria-label="breadcrumbs">
-        <a class="breadcrumbs-item breadcrumbs-home" href="/">Home</a>
-        <i class="breadcrumbs-divider icon-bullet"></i>
-        <a class="breadcrumbs-item " href="#">페이지 이름</a>
-        <i class="breadcrumbs-divider icon-bullet"></i>
-        <a class="breadcrumbs-item breadcrumbs-last" href="#">페이지 이름</a>
+      <nav class="breadcrumb" aria-label="breadcrumb">
+        <a class="breadcrumb-item breadcrumb-home" href="/">Home</a>
+        <i class="breadcrumb-divider">/</i>
+        <a class="breadcrumb-item " href="#">페이지 이름</a>
+        <i class="breadcrumb-divider">/</i>
+        <a class="breadcrumb-item breadcrumb-last" href="#">페이지 이름</a>
       </nav>
     </article>
 
@@ -221,9 +206,7 @@
       <h1 class="design-article-title">Tags</h1>
       <p class="design-article-description">임시로 code태그로 마크업해서 사용 중이에요. 닫기 아이콘 연하게.</p>
       <div class="tags" role="group">
-        <!-- <div role="list"></div> -->
-        <span class="tag tags-item" role="listitem">I'm hashtag</span>
-        <span class="tag tags-item is-red" role="listitem">I'm hashtag</span>
+        <span class="tag tags-item" role="listitem">#해시태그</span>
       </div>
       <!-- <div role="group" style="margin-top:.5rem;">
         <button class="secondary-button is-small is-addable">Typhography <i class="icon-plus"></i></button>
@@ -265,15 +248,6 @@
         </li>
         <li>순서가 있는 리스트, 1레벨</li>
       </ol>
-      <!-- <hr style="margin: 1rem 0;" /> -->
-      <!-- <dl class="row1 is-pull" style="margin:0 0 .5rem 0;">
-        <dt>Definition term</dt>
-        <dd>Definition text</dd>
-      </dl>
-      <dl class="row1 is-pull" >
-        <dt>Definition term</dt>
-        <dd>Definition text</dd>
-      </dl> -->
     </article>
 
     <article class="design-article">
@@ -284,17 +258,20 @@
 
     <article class="design-article">
       <h1 class="design-article-title">Temp</h1>
-      <p class="design-article-description">Temp</p>
-      <!-- <p class="design-article-description">긍정 상황에 사용합니다. 부정 혹은 경고, 주의, 성공, 알림 등을 추가할까요?</p> -->
+      <p class="design-article-description">긍정 상황에 사용합니다. 몇 개 추가</p>
       <aside class="message">
-        <span class="message-text"> This includes the <a href="">global HTML attributes</a>.</span>
         <button class="message-close" aria-label="close"><i class="icon-close"></i></button>
         <div class="message-head">
-          <!-- <p>Hello World</p> -->
-          <!-- <button class="delete" aria-label="delete"></button> -->
+          This includes the <a href="">global HTML attributes</a>.
         </div>
-        <div class="message-body" style="margin-top:.5rem;">
+        <div class="message-body">
           <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus.
+        </div>
+      </aside>
+      <br />
+      <aside class="message">
+        <div class="message-head">
+          가입하지 않은 아이디이거나, 잘못된 비밀번호입니다.
         </div>
       </aside>
     </article>
@@ -340,10 +317,6 @@
           <button class="text-button" disabled>Text</button>
         </div>
       </div> -->
-      <!-- <div class="button-group is-center" role="group">
-        <button class="tertiary-button is-small">Prev</button>
-        <button class="primary-button is-small">Next</button>
-      </div> -->
       <div>
         <h6>Small Buttons</h6>
         <div role="group">
@@ -355,26 +328,6 @@
           <button class="text-button is-small">텍스트</button>
         </div>
       </div>
-      <!-- <div>
-        <h2>Button Group</h2>
-        <div class="button-group" role="group">
-          <p>2개 기준, 버튼 간 간격(gap) 버튼의 위치(left center right between), width, filtering</p>
-          <button class="primary-button is-small is-active">Button Group</button>
-          <button class="tertiary-button is-small">Button Group</button>
-          <button class="tertiary-button is-small">Button Group <i class="icon-caret"></i></button>
-        </div>
-      </div> -->
-      <!-- <div class="review">
-        <div class="review-sorting" role="group">
-          <button class="text-button is-small is-active">최신순</button>
-          <button class="text-button is-small">별점낮은순</button>
-          <button class="text-button is-small">별점높은순</button>
-        </div>
-        <div class="review-filter">
-          <input type="checkbox" id="photo">
-          <label for="photo">포토리뷰만 보기</label>
-        </div>
-      </div> -->
     </article>
 
     <article class="design-article">
@@ -401,7 +354,6 @@
         </div>
       </fieldset>
     </article>
-
 
     <article class="design-article">
       <h1 class="design-article-title">Radio</h1>
@@ -471,13 +423,6 @@
       </div>
       <!-- addons === 검색 버튼 포함 가능 -->
       <!-- <div class="textfield" style="margin:2rem 0;">
-        <label class="textfield-label" for="number">prefix와 suffix</label>
-        <span class="textfield-prefix">http://</span>
-        <i class="textfield-icon">prefix</i>
-        <input class="textfield-input js-number-input" id="number" type="number" min="5" max="20" placeholder="숫자만 입력가능합니다."></input>
-        <span class="textfield-suffix">@soojubm.com</span>
-      </div>
-      <div class="textfield" style="margin:2rem 0;">
         <label class="textfield-label" for="">아이디<abbr title="This field is mandatory" aria-label="required"></abbr></label>
         <input class="textfield-input" type="text" placeholder="soojubm" readonly></input>
       </div> -->
@@ -490,12 +435,12 @@
       <div role="group">
         <div class="textfield" style="flex-grow: 1;">
           <label class="textfield-label" for="date-start"><i class="">체크인</i></label>
-          <label class="textfield-icon is-left is-right" for="date-start"><i class="material-icons">today</i></label>
+          <!-- <label class="textfield-icon is-left is-right" for="date-start"><i class="material-icons">today</i></label> -->
           <input class="textfield-input" type="date" id="date-start" placeholder="날짜를 설정해주세요.">
         </div>
         <div class="textfield" style="flex-grow: 1;">
           <label class="textfield-label" for="date-start"><i class="">체크아웃</i></label>
-          <label class="textfield-icon is-left is-right" for="date-start"><i class="material-icons">today</i></label>
+          <!-- <label class="textfield-icon is-left is-right" for="date-start"><i class="material-icons">today</i></label> -->
           <input class="textfield-input" type="date" id="date-start" placeholder="날짜를 설정해주세요.">
         </div>
       </div>
@@ -529,12 +474,8 @@
         <textarea class="textfield-input" rows="3" placeholder="Textarea Placeholder..."></textarea>
       </div>
 
-      <div class="textfield is-small is-inline" style="margin-bottom:8px;">
-        <label class="textfield-label" for="">회사</label>
-        <input class="textfield-input" type="text" placeholder="인풋 인라인스타일 스몰사이즈">
-      </div>
       <div class="textfield is-small is-inline">
-        <label class="textfield-label" for="">직위</label>
+        <label class="textfield-label" for="">회사</label>
         <input class="textfield-input" type="text" placeholder="인풋 인라인스타일 스몰사이즈">
       </div>
     </article>
@@ -634,56 +575,13 @@
           <ul class="file-attachment-list js-file-attachment-list">
           </ul>
         </div>
-        <!-- <button class="js-file-submit primary-button" type="submit">등록하기</button> -->
       </form>
   </article>
 
     <article class="design-article grayscale">
       <h1 class="design-article-title">Cards</h1>
       <p class="design-article-description">하나의 마크업으로 가로형 세로형이 가능하도록...</p>
-      <div class="card" style="width:320px;margin:2rem 0;">
-        <figure class="card-thumbnail"><img alt="" /></figure>
-        <h3 class="card-title">카드 유아이</h3>
-        <p class="card-text">
-          하나의 마크업으로 가로형 세로형이 가능하도록 하나의 마크업으로 가로형 세로형이 가능하도록 하나의 마크업으로 가로형 세로형이 가능하도록
-        </p>
-        <!-- <div class="card-price">
-          <del>19,000원</del>
-          16,000원
-          <em>할인율 20%</em>
-        </div> -->
-        <time class="card-date">September 12, 2017</time>
-        <figure class="card-byline">
-          <div class="card-byline-avatar"><img src="/public/images/soo.png" alt="" /></div>
-          <figcaption class="card-byline-name">수줍이</figcaption></figure>
-        <div class="card-tags" role="group" style="margin-bottom:1rem">
-          <span class="tag">기획</span>
-          <span class="tag">디자인</span>
-          <span class="tag">개발(워드프레스)</span>
-        </div>
-        <hr />
-        <figure class="card-item">
-          <img src="" alt="" class="card-item-avatar" />
-          <figcaption class="card-item-name">퓨어 오렌지 주스</figcaption>
-          <figcaption class="card-item-price">
-            <del>19,000원</del>
-            16,000원
-            <em>할인율 20%</em>
-          </figcaption>
-        </figure>
-        <figure class="card-item">
-          <img src="" alt="" class="card-item-avatar" />
-          <figcaption class="card-item-name">퓨어 오렌지 주스</figcaption>
-          <figcaption class="card-item-price">
-            <del>19,000원</del>
-            16,000원
-            <em>할인율 20%</em>
-          </figcaption>
-        </figure>
-        <div class="card-note">마일리지 적립 200P</div>
-        <!-- <div class="card-state">판매 상태(재고수/품절/재고없음/판매중단)</div> -->
-        <button class="card-more"><i class="icon-more"></i></button>
-      </div>
+    
 
       <div class="quote" style="margin:2rem 0;">
         <div class="quote-avatar avatar">
@@ -699,7 +597,7 @@
       </div>
 
       <div class="pricing-item">
-        <span class="tag is-red" style="position:absolute;right:.5rem;top:.5rem;">most popular</span>
+        <span class="tag" style="position:absolute;right:.5rem;top:.5rem;">most popular</span>
         <!-- <i style="margin-top:-.5rem;font-size:40px;">🧞‍</i> -->
         <h1 class="pricing-item-title">Standard</h1>
         <p class="pricing-item-description">부끄러우니까 구매하지마요.</p>
@@ -718,22 +616,6 @@
       </div>
 
     </article>
-
-    <article class="design-article">
-      <h1 class="design-article-title">Dialog</h1>
-      <p class="design-article-description">예 아니오 예!</p>
-      <aside class="dialog" role="dialog">
-        <!-- <img src="/public/images/soo.png" alt="" style="width:6rem;margin:-3rem 0 0 -1rem;"> -->
-        <!-- <button class="toast-close js-close" style="position:aboslute;right:0;top:0;"><i class="icon-close"></i></button> -->
-        <p class="dialog-title">부끄러우니까 보지마요?</p>
-        <p class="dialog-description">다이얼로그 유아이입니다. 디스크립션을 입력해주세요.</p>
-        <footer class="dialog-footer">
-          <button class="text-button" style="color:#999;">취소</button>
-          <button class="text-button" type="submit">삭제</button>
-        </footer>
-      </aside>
-    </article>
-
 
     <article class="design-article">
       <h1 class="design-article-title">Paginations</h1>
@@ -875,21 +757,6 @@
           <div class="row-delete"><button class="tertiary-button is-small">삭제</button></div>
           <!-- <div class="row-progress"><button class="primary-button is-small">출제하기</button></div> -->
         </div>
-        <div class="row">
-          <div class="row-checkbox">
-            <div>
-              <input type="checkbox" id="temp1" checked>
-              <label for="temp1"></label>
-            </div>
-          </div>
-          <div class="row-avatar"><div class="avatar"><img src="/public/images/caleb-woods-182648-unsplash.jpg" alt="" /></div></div>
-          <div class="row-id">google</div>
-          <div class="row-phone">010.3121.7045</div>
-          <div class="row-address">서울시 강서구 까치산로</div>
-          
-          <div class="row-delete"><button class="tertiary-button is-small">삭제</button></div>
-          <!-- <div class="row-progress"><button class="primary-button is-small">출제하기</button></div> -->
-        </div>
       </div>
     </article>
 
@@ -941,7 +808,6 @@
         안녕
       </article>
     </article>
-
 
     <article class="design-article">
       <h1 class="design-article-title">Bottom Navigation</h1>
@@ -1034,30 +900,8 @@
           <div class="graph-item-bar"></div>
           <span class="graph-item-label">40대</span>
         </div>
-        <div class="graph-item">
-          <span class="graph-item-value">0%</span>
-          <div class="graph-item-bar"></div>
-          <span class="graph-item-label">50대</span>
-        </div>
       </div>
     </article>
-
-    <!-- <article class="design-article">
-      <h1 class="design-article-title">Comment</h1>
-      <p class="design-article-description">코맨트 / 대화형 유아이 / 피드 / 유저 카드 공용 마크업 가능하려면 컨테이너 필요.</p>
-      <div class="post-comment-list-item is-typeb">
-        <a class="post-comment-list-item-avatar" href="#"><img src=""></a>
-        <a class="post-comment-list-item-author" href="#">mb</a>
-        <time class="post-comment-list-item-date" datetime="2016">2018. 06. 28</time>
-        <p class="post-comment-list-item-text">부끄러우니까 코멘트 달지 마요.</p>
-        <button class="post-comment-list-item-morevert js-toggle"><i class="icon-more"></i></button>
-        <menu class="post-comment-list-item-menu">
-          <button class="">수정</button>
-          <button class="">삭제</button>
-          <button class="">신고</button>
-        </menu>
-      </div>
-    </article> -->
 
     <article class="design-article">
       <h1 class="design-article-title">Steps</h1>
@@ -1079,19 +923,11 @@
         </div>
       </div>
     </article>
-    <fieldset class="filter-fieldset">
-      <legend class="filter-fieldset-legend">체크박스</legend>
-      <div class="checkbox">
-        <input type="checkbox" id="line01" value="" checked />
-        <label for="line01">Everyday is like sunday</label>
-      </div>
-      <div class="checkbox">
-        <input type="checkbox" id="line02" value="" indeterminate />
-        <label for="line02">Everyday is like sunday</label>
-      </div>
-    </fieldset>
+
     <!-- <form class="filter">
-      <h1 class="filter-title">Filters</h1>
+      <header class="filter-head">
+        <h1 class="filter-title">Filters</h1>
+      </header>
       <fieldset class="filter-fieldset">
         <legend class="filter-fieldset-legend">예약하기</legend>
         <div class="textfield" style="float:left;width:50%;">
@@ -1107,11 +943,11 @@
         </div>
       </fieldset>
 
-      <footer class="filter-foot is-child-pull">
+      <footer class="filter-foot">
         <button class="primary-button">필터링하기</button>
         <button class="text-button">clear filters</button>
       </footer>
-    </!-->
+    </form> -->
 
 
     <!-- <form class="todo js-todo" style="max-width:560px;margin:0 auto;">
@@ -1189,48 +1025,6 @@
       .icon-check1:before {content:'';display:inline-block;width:28px;height:9px;border-left:2px solid;border-bottom:2px solid;border-color:#000;transform:rotate(-45deg);position:absolute;right:-2px;top:4px;z-index:2;}
       .icon-check1:after {content:'';display:block;width:16px;height:18px;background:$gray0;position:absolute;right:-6px;top:0px;z-index:1;}
       </style>
-      </fieldset>
     </section>
   </section>
 </main>
-<!-- 
-<nav class="panel">
-    <p class="panel-title">Repositories</p>
-    <div class="panel-block">
-      <p class="control has-icons-left">
-        <input class="input" type="text" placeholder="Search">
-        <span class="icon is-left">
-          <i class="fas fa-search" aria-hidden="true"></i>
-        </span>
-      </p>
-    </div>
-    <p class="panel-tabs">
-      <a class="is-active">All</a>
-      <a>Public</a>
-    </p>
-
-    <a class="panel-block">
-      <span class="panel-icon">
-        <i class="fas fa-book" aria-hidden="true"></i>
-      </span>
-      marksheet
-    </a>
-    <a class="panel-block">
-      <span class="panel-icon">
-        <i class="fas fa-book" aria-hidden="true"></i>
-      </span>
-      minireset.css
-    </a>
-    <label class="panel-block">
-      <input type="checkbox">
-      remember me
-    </label>
-    <div class="panel-block">
-      <button class="button is-link is-outlined is-fullwidth">
-        Reset all filters
-      </button>
-    </div>
-  </nav> -->
-
-
-  

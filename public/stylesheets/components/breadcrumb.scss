@@ -1,8 +1,8 @@
-.breadcrumbs {display:flex;align-items:center;width:100%;overflow:hidden;}
-.breadcrumbs-divider {margin:0 1rem;}
-.breadcrumbs-item {padding:.75rem 0;position:relative;}
-.breadcrumbs-last {}
-.breadcrumbs-last:after {display:none;}
+.breadcrumb {display:flex;align-items:center;width:100%;overflow:hidden;}
+.breadcrumb-divider {margin:0 1rem;color:$gray200;}
+.breadcrumb-item {padding:.75rem 0;position:relative;}
+.breadcrumb-last {}
+.breadcrumb-last:after {display:none;}
 
 // .breadcrumbs-item:after {content:'/';margin:0 .75rem;color:$gray200;}
 // .breadcrumbs-item:after {content:'';display:inline-block;width:6px;height:6px;margin:0 12px 0 16px;border:1px solid $gray400;border-left:none;border-bottom:none;box-sizing:border-box;transform:rotate(45deg);vertical-align:middle;}

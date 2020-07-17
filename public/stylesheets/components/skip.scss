@@ -1,0 +1,4 @@
+
+.skip {width:100%;position:fixed;left:0;top:0;z-index:9;}
+.skip-link {display:block;background:rgba(0,0,0,1);color:rgba(255,255,255,.8);text-align:center;height:0;font-size:0;}
+.skip-link:focus {height:50px;line-height:50px;font-size:14px;}

@@ -2,30 +2,31 @@ const stickyElement = ({ targetElement, addClass }) => {
   const stickyElement = document.querySelector(targetElement)
   if (!stickyElement) return
 
-  let stickyElementHeight = stickyElement.offsetHeight
+  let elementHeight = stickyElement.offsetHeight
   let isScrolling
 
+  function hasScrolled() {
+    isScrolling && window.cancelAnimationFrame(isScrolling)
+    isScrolling = window.requestAnimationFrame(() => {
+      // if (window.pageYOffset > stickyElement.offsetTop + elementHeight) {
+      if (window.pageYOffset > stickyElement.offsetTop) {
+        document.body.classList.add(addClass)
+        // body.style.paddingTop = `${elementHeight}px`
+      } else {
+        document.body.classList.remove(addClass)
+      }
+    })
+  }
   // window.addEventListener('resize', () => {
   //   isScrolling && window.cancelAnimationFrame(isScrolling)
   //   isScrolling = window.requestAnimationFrame(() => {
-  //     stickyElementHeight = stickyElement.offsetHeight
+  //     elementHeight = stickyElement.offsetHeight
   //   })
   // })
 
   window.addEventListener('scroll', hasScrolled)
 
-  function hasScrolled() {
-    isScrolling && window.cancelAnimationFrame(isScrolling)
-    isScrolling = window.requestAnimationFrame(() => {
-      if (window.pageYOffset > stickyElement.offsetTop + stickyElementHeight) {
-        document.body.classList.add(addClass)
-        // body.style.paddingTop = `${stickyElementHeight}px`
-      } else {
-        document.body.classList.remove(addClass)
-        // body.style.paddingTop = '0px'
-      }
-    })
-  }
+
 }
 
 // var isScrolling;

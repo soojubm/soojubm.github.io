@@ -1,0 +1,67 @@
+
+button {padding:0;border:none;background:none;cursor:pointer;font:inherit;position:relative;}
+button > * {pointer-events:none;}
+// button:not(:active),
+// button:not(:focus) {outline:0;}
+// button:active {outline:0;animation:ripple2 0.2s linear forwards;}
+
+button.is-small {width:auto !important;min-width:72px !important;padding: $padding100!important;
+  height: $cell-light;font-size:12px !important;}
+button.is-addable {min-width:auto !important;height:$cell-light;padding-right:40px !important;text-align:left;}
+button.is-addable.is-added {background:$color-primary;border-color:$color-primary;color:$gray0;}
+button.is-addable .icon-plus {display:inline-block;background:$gray100;padding:12px;border-radius:$radius400;position:absolute;right:3px;top:3px;}
+button.is-addable .icon-close {display:inline-block;background:$gray100;padding:12px;border-radius:$radius400;position:absolute;right:3px;top:3px;}
+
+@mixin button {
+  display: inline-block;
+  min-width:104px;padding:$padding200;box-sizing:border-box;border-radius:$radius400;text-align:center;cursor:pointer;position:relative;
+  &:disabled {cursor:not-allowed;}
+}
+@mixin button-primary {
+  @include button;
+  background:$color-primary;border:1px solid $color-primary;color:$gray0;
+  &:hover,
+  &:focus {border-color:darken($color-primary, 5%);background:darken($color-primary, 5%);}
+  &:active {}
+  &:disabled {background:$gray600;border-color:$gray600;color:$gray200;}
+}
+@mixin button-secondary {
+  @include button;
+  border:1px solid $color-primary;background:transparent;color:$color-primary;
+  &:hover, 
+  &:focus {border-color:darken($color-primary, 5%);color:darken($color-primary, 5%);}
+  &:active {}
+  &:disabled {background:transparent;border-color:$gray200;color:$gray200;}
+}
+@mixin button-tertiary {
+  @include button;
+  border:1px solid $gray100;background:$gray100;color:$gray800;
+  &:hover,
+  &:focus {border-color:darken($gray100, 5%);background:darken($gray100, 5%);}
+  &:active {}
+  &:disabled {color:$gray400;}
+}
+@mixin button-text {
+  @include button;
+}
+
+.danger-button {@include button;background:$color-negative;border:1px solid $color-negative;color:$gray0;}
+.success-button {@include button;background:$color-positive;border:1px solid $color-positive;color:$gray0;}
+
+.text-button {@include button;background:none;border:1px solid transparent;color:$color-primary;}
+.text-button:hover {border-color:$gray100;background:$gray100;}
+.text-button:focus {background:$gray100;}
+.text-button:active {}
+.text-button:disabled {color:$gray200;cursor:not-allowed;}
+
+.button-group {display:flex;width:100%;overflow:hidden;}// justify-content:space-between;}
+.button-group.is-left {padding:.5rem 0;}
+.button-group.is-left button {margin:0 1rem;}
+.button-group.is-center {justify-content:center;padding:.5rem 0;}
+.button-group.is-center button {margin:0 1rem;}
+.button-group.is-right {justify-content:flex-end;padding:.5rem 0;}
+.button-group.is-right button {margin:0 1rem;}
+.button-group button {margin:0 !important;border-radius:0;}// flex:1 1 auto;}
+.button-group button.is-active {background-color:$color-primary;color:$gray0;}
+.button-group button:first-child {border-top-left-radius:$radius400;border-bottom-left-radius:$radius400;}
+.button-group button:last-child {border-top-right-radius:$radius400;border-bottom-right-radius:$radius400;}

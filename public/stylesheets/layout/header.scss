@@ -1,24 +1,21 @@
-.header {display:flex;align-items:center;width:80%;padding:1rem 10%;border-radius:$radius400;position:absolute;z-index:3;}
-.header-back {display:flex;align-items:center;}
-.header-back-icon {@include box-light;margin:0 1rem 0 0;}
-.header-back-icon {transform:rotate(180deg);}
-.header-title {display:none;height:32px;padding:1rem 0;font-size:$subhead;position:fixed;left:50%;transform:translateX(-50%);z-index:5;}
-.header-backdrop {height:32px;padding:1rem 0;}
-.header-cta {@include box-light;width:auto;padding:0 1rem;margin-left:auto;font-size:12px;}
-.is-sticky-header .header {background:$gray0;border-radius:0;position:fixed;top:0;left:0;right:0;z-index:5;}
-.is-sticky-header  .header-title {display:flex;align-items:center;}
-.is-white .header-back {color:$gray0;}
-// .is-white .icon-arrow:before {border-color:$gray0;}
-// .is-white .icon-arrow:after {background-color:$gray0;}
-.is-sticky-header .is-white .header-back {color:$gray800;}
-// .is-white.is-fixed .icon-arrow:before {border-color:$gray800;}
-// .is-white.is-fixed .icon-arrow:after {background-color:$gray800;}
+.topbar {display:flex;align-items:center;width:80%;padding:1rem 10%;border-radius:$radius400;position:absolute;z-index:3;}
+.topbar-back {display:flex;align-items:center;}
+.topbar-back-icon {@include box-light;margin:0 1rem 0 0;}
+.topbar-back-icon {transform:rotate(180deg);}
+.topbar-title {font-size:$subhead;position:absolute;left:50%;transform:translateX(-50%);z-index:5;}
+.topbar-backdrop {height:32px;padding:1rem 0;}
+.topbar-cta {@include button-tertiary;min-width:auto;margin-left:auto;padding:$padding100;font-size:12px;}
+
+
+.is-sticky-topbar .topbar {background:$gray0;border-radius:0;position:fixed;top:0;left:0;right:0;z-index:5;}
+.is-sticky-topbar .topbar-title {display:flex;align-items:center;}
+.is-white .topbar-back {color:$gray0;}
+.is-sticky-topbar .is-white .topbar-back {color:$gray800;}
 
 @media (--viewport-small) {
-  .header {width:auto;padding:1rem;left:0;right:0;}
-  .is-sticky-header .header {height:32px;}
+  .topbar {width:auto;padding:1rem;left:0;right:0;}
+  .is-sticky-topbar .topbar {height:32px;}
 }
-
 
 
 .dropdown {

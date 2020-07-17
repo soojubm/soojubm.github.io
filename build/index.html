@@ -35,7 +35,6 @@
     <link rel="stylesheet" href="./build/main.css" />
     <script src="./public/javascripts/polyfill.js"></script>
     <script src="./build/bundle.js"></script>
-    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-83531239-1"></script> -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -77,6 +76,7 @@
   <link href="/main.css" rel="stylesheet"></head>
   <body>
     <noscript>This website requires JavaScript.</noscript>
+
     <aside class="loader js-loader">
       <div class="loader-object"></div>
     </aside>
@@ -85,6 +85,9 @@
       <p>이 사이트는 크롬 브라우저에 최적화되어 있습니다.</p>
       <a href="https://www.google.co.kr/chrome/index.html" class="button">크롬 브라우저 다운로드</a>
     </aside>
+    <aside class="offline js-offline">
+      <p>인터넷에 연결되어 있지 않습니다.</p>
+    </aside>
 
     <nav class="skip">
       <a class="skip-link" href="#header">본문 바로가기</a>
@@ -92,15 +95,15 @@
       <a class="skip-link" href="#footer">하단정보 바로가기</a>
     </nav>
 
-    <aside class="offline js-offline">
-      <p>인터넷에 연결되어 있지 않습니다.</p>
-    </aside>
-
-    <aside class="toast" role="banner">
-      <h1 class="toast-title">부끄러우니까 보지마요!</h1>
-      <p class="toast-description">페이지 로딩 시 쿠키 사용 승인 요청에 사용할 수 있습니다. 스낵바처럼 가벼운 노티에도 사용할 수 있습니다.</p>
-      <button class="toast-check">안 볼래요</button>
-      <button class="toast-close js-close" aria-label="delete"><i class="icon-close"></i></button>
+    <aside class="dialog toast" role="dialog">
+      <!-- <img class="dialog-object" src="/public/images/soo.png" alt=""> -->
+      <h1 class="dialog-title">부끄러우니까 보지마요!</h1>
+      <p class="dialog-description">페이지 로딩 시 쿠키 사용 승인 요청에 사용할 수 있습니다. 스낵바처럼 가벼운 노티에도 사용할 수 있습니다.</p>
+      <footer class="dialog-footer">
+        <button class="text-button" style="color:#999;">취소</button>
+        <button class="toast-check text-button">안 볼래요</button>
+      </footer>
+      <button class="dialog-close js-close" aria-label="delete"><i class="icon-close"></i></button>
     </aside>
 
     <nav class="navbar js-navbar" role="navigation">
@@ -141,11 +144,10 @@
             <!-- <i class="icon-search"></i> -->
             <img src="/public/icons/search.svg" alt="" />
           </a>
-          <form class="navbar-user-search-form" action="">
-            <button class="navbar-user-search-form-close js-close" aria-label="delete"><i class="icon-arrow"></i></button>
+          <form class="search-form">
+            <button class="search-form-close js-close" aria-label="delete"><i class="icon-arrow"></i></button>
             <!-- <p role="status">수줍이와(과) 일치하는 검색결과가 없습니다.</p> -->
-
-            <fieldset class="navbar-user-search-form-field textfield">
+            <fieldset class="search-form-field textfield">
               <legend class="filter-fieldset-legend" hidden aria-hidden="true">검색하기</legend>
               <label class="textfiled-label" for="help-search" hidden aria-hidden="true">검색하기</label>
               <input class="textfield-input" type="search" id="help-search" placeholder="검색어를 입력해 주세요." />
@@ -153,13 +155,11 @@
                 <i class="icon-close"></i>
               </button>
             </fieldset>
-            <section class="navbar-user-search-form-result">
-              <div class="navbar-user-search-option">
-                <h2 class="navbar-user-search-option-title">당신을 위한 추천</h2>
-                <a class="navbar-user-search-option-item" href="#">검색어는 어떻게 입력하나요?</a>
-                <a class="navbar-user-search-option-item" href="#">검색어는 어떻게 입력하나요?</a>
-                <a class="navbar-user-search-option-item" href="#">검색어는 어떻게 입력하나요?</a>
-              </div>
+            <section class="search-recommend">
+              <h2 class="search-recommend-title">당신을 위한 추천</h2>
+              <a class="search-recommend-item" href="#">개구리</a>
+              <a class="search-recommend-item" href="#">달팽이</a>
+              <a class="search-recommend-item" href="#">매미</a>
             </section>
           </form>
         </div>
@@ -206,45 +206,35 @@
       </div>
     </nav>
 
-    <header class="header js-header">
-      <button class="header-back" onclick="javascript:alert('이전페이지로~');">
-        <span class="header-back-icon"><i class="icon-arrow is-left"></i></span>
-        뒤로가기
+    <header class="topbar">
+      <h1 class="topbar-title">디자인시스템</h1>
+      <button class="topbar-back" onclick="javascript:alert('이전페이지로~');">
+        <span class="topbar-back-icon"><i class="icon-arrow is-left"></i></span>
       </button>
-      <h1 class="header-title">디자인시스템</h1>
-      <button class="header-cta">프로필 공유</button>
+      <button class="topbar-cta">버튼</button>
     </header>
-    <header class="header-backdrop">
-    </header>
+    <header class="topbar-backdrop js-topbar"></header>
 
     <div id="view"></div>
 
-    <section class="banner">
-      <p class="banner-text">수줍이에는 처음 방문이신가요?</p>
+    <!-- <section class="banner">
+      <h2 class="banner-text">수줍이에는 처음 방문이신가요?</h2>
       <button class="banner-button">이용방법을 알아보세요!</button>
-    </section>
+    </section> -->
 
     <form class="subscribe">
-      <!-- <i class="subscribe-avatar">📮</i> -->
       <h2 class="subscribe-title">수줍이 뉴스레터를 정기구독하세요.</h2>
       <p class="subscribe-description">사실 그런 건 없고 유아이 콤포넌트 입니다. <br />텍스트를 한 줄 더 만들기 위해서 아무말이나 해봅니다. 🦔</p>
-      <!-- <div class="subscribe-wrap">
-        <div class="subscribe-field textfield">
-          <input class="textfield-input" placeholder="이름" />
-        </div>
-        <div class="subscribe-field textfield">
-          <input class="textfield-input" placeholder="하시는 일" />
-        </div>
-      </div> -->
       <div class="subscribe-field textfield">
         <input class="textfield-input" placeholder="Enter Your Email.." />
       </div>
-      <button class="subscribe-field-cta" type="submit">신청하기</button>
-      <!-- <small class="subscribe-helper">Read more about how we collect and use your data in our <a href="">Privacy Policy page.</a></small> -->
-      <p class="subscribe-helper">2,657 active members are waiting for you</p>
+      <button class="subscribe-submit" type="submit">신청하기</button>
+      <p class="subscribe-helper">Read more about how we collect and use your data in our <a href="">Privacy Policy page.</a></p>
     </form>
 
     <footer class="footer" role="contentinfo">
+      <div class="footer-background"></div>
+
       <!-- <div class="skeleton-screen"></div> -->
       <aside class="scroll">
         <p class="scroll-indicator hidden" hidden aria-hidden="true">스크롤하세요</p>
@@ -253,9 +243,8 @@
           <i class="icon-arrow"></i> <b class="hidden" aria-hidden="true">맨위로</b>
         </button>
       </aside>
-      <div class="footer-background"></div>
       <nav class="footer-sitemap">
-        <h1 class="footer-sitemap-title" aria-hidden="true">하단 사이트맵 <small hidden aria-hidden="true">More Articles by themes</small></h1>
+        <h1 class="footer-sitemap-title" aria-hidden="true" hidden>하단 사이트맵 <small hidden aria-hidden="true">More Articles by themes</small></h1>
         <div class="footer-sitemap-item">
           <h2 class="footer-sitemap-item-title">포트폴리오</h2>
           <a class="footer-sitemap-item-link" href="#">교통버스</a>
@@ -282,10 +271,9 @@
       <address class="footer-address">
         <span class="footer-address-logo"><img src="" alt="수줍음" /></span>
         <div class="footer-terms">
-          <h5 class="footer-terms-title" aria-hidden="false">약관 등등</h5>
-          <a class="footer-terms-link" href="https://www.facebook.com/soojubm" title="facebook" target="_blank"><span class="">이용약관</span><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
-          <a class="footer-terms-link" href="#" title="instagram" target="_blank">개인정보취급방침</a>
-          <a class="footer-terms-link" href="https://kr.pinterest.com/soojubm" title="pinterest" target="_blank">이메일무단수집거부</a>
+          <h5 class="footer-terms-title" aria-hidden="false" hidden>약관 등등</h5>
+          <a class="footer-terms-link" href="https://www.facebook.com/soojubm" target="_blank"><span class="">이용약관</span><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+          <a class="footer-terms-link" href="#" target="_blank">개인정보취급방침</a>
         </div>
         <div class="footer-address-info">
           스튜디오 수줍음(주)<br />

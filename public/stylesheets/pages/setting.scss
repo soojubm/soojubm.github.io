@@ -1,0 +1,30 @@
+
+
+
+.setting {margin:2rem 10% 8rem;}
+.setting-head {margin:0 0 2rem;}
+.setting-head-title {font-size:2rem;}
+.setting-head-description {margin:1rem 0 0 0;}
+
+.setting-body {margin:4rem 0 0;}
+.setting-body-heading {margin:0 0 1.5rem 0;font-size:1.25rem;}
+.setting-body-description {margin:-1rem 0 1.5rem 0;}
+
+.setting-row {display:flex;align-items:center;min-height:74px;padding:1.5rem 0;box-sizing:border-box;overflow:hidden;border-bottom:$border400;font-size:1.25rem;cursor:pointer;position:relative;}
+.setting-row:nth-of-type(1) {border-top:$border400;}
+.setting-row-label {width:12rem;font-size:1rem;}
+.setting-row-value {color:$gray800;}
+.setting-row-change {float:right;font-size:1rem;position:absolute;right:1rem;top:50%;transform:translateY(-50%);}
+.setting-row-change b {display:inline-block;background:$gray0;transform:translateX(200px);transition:all .5s;position:relative;z-index:1;}
+.setting-row-change i {margin-left:1.5rem;transform:translateX(-1rem);transition:all .4s;}
+.setting-row:hover .setting-row-change b {transform:translateX(0);}
+
+.setting-foot {margin:2rem 0;}
+.setting-foot-delete {text-decoration:underline;color:#000;}
+
+@media (--viewport-small) {
+  .setting {margin-left:1rem;margin-right:1rem;}
+  .setting-row {min-height:56px}
+  .setting-row-label {width:8rem;}
+  .setting-row-change {display:none;}
+}
