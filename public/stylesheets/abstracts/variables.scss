@@ -30,6 +30,9 @@ $cell-small:16px;
   overflow:hidden;
   border-radius:$radius400;
   position:relative;
+  // &:hover {
+  //   background:darken($gray100, 5%)
+  // }
 }
 @mixin box-large {
   @include box;
@@ -71,13 +74,13 @@ $gray0: #fff; // white for dark theme
 $gray100: #f1f5f6; // bg
 $gray200: #dadce0; // divider border
 $gray400: #999; // caption
-$gray600: #666; // body
+$gray600: #454545; // body
 $gray800: #161616; // bg || heading
 
 $red100: #fff0f5;
 $red800: #da1e28;
 
-$blue100: #f2f8fc;
+$blue100: honeydew;
 $blue800: blue;
 
 $color-primary: #00783e;

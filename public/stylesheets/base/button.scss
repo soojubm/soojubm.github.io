@@ -21,7 +21,7 @@ button.is-addable .icon-close {display:inline-block;background:$gray100;padding:
   @include button;
   background:$color-primary;border:1px solid $color-primary;color:$gray0;
   &:hover,
-  &:focus {border-color:darken($color-primary, 5%);background:darken($color-primary, 5%);}
+  &:focus {border-color:darken($color-primary, 2%);background:darken($color-primary, 2%);}
   &:active {}
   &:disabled {background:$gray600;border-color:$gray600;color:$gray200;}
 }
@@ -35,9 +35,9 @@ button.is-addable .icon-close {display:inline-block;background:$gray100;padding:
 }
 @mixin button-tertiary {
   @include button;
-  border:1px solid $gray100;background:$gray100;color:$gray800;
+  border:1px solid $gray100;background:$gray100;color:$gray600;
   &:hover,
-  &:focus {border-color:darken($gray100, 5%);background:darken($gray100, 5%);}
+  &:focus {border-color:darken($gray100, 2%);background:darken($gray100, 2%);}
   &:active {}
   &:disabled {color:$gray400;}
 }

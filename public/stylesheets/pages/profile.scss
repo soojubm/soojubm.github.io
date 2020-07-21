@@ -1,4 +1,4 @@
-.profile {max-width:1330px;margin:0 auto;padding:4rem 0;box-sizing:border-box;position:relative;}
+.profile {max-width:1330px;margin:0 auto;padding:2rem 0;box-sizing:border-box;position:relative;}
 // .profile-head {@extend .hero;margin:0 0 3rem 0 !important;}
 // .profile-head-background {@extend .hero-background;background:url('/public/images/caleb-woods-182648-unsplash.jpg') no-repeat center center;background-size:cover;}
 // .profile-head-headline {@extend .hero-title;position:relative;}
@@ -9,9 +9,9 @@
 .profile-user {float:left;width:320px;box-sizing:border-box;position:relative;z-index:1;}
 .profile-user-avatar {@include box-large;float:right;background:url('/public/images/soo.png') no-repeat center center;background-size:contain;transition:all 0.4s ease;}
 .profile-user-avatar:hover {box-shadow:$shadow450;}
-.profile-user-name {font-size:$subhead;line-height:1.4;color:$gray800;}
+.profile-user-name {font-size:$subhead;}
 .profile-user-id {display:block;color:$gray400;}
-.profile-user-career {display:block;margin:6px 0 0;color:$gray400;}
+.profile-user-career {display:block;margin:.5rem 0 0;color:$gray400;}
 .profile-user-description {max-height:4.8em;margin:1.5rem 0;white-space:normal;overflow:hidden;text-overflow:ellipsis;word-wrap:break-word;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;line-height:1.6;position:relative;}
 .profile-user-description-more {margin:0 .5rem;color:#000;text-decoration:underline;}
 .profile-user-toggle {display:none;width:100%;margin:1rem 0;text-align:center;}
@@ -24,7 +24,7 @@
 .profile-user-statistic {}
 .profile-controls {display:flex;margin:2rem 0 1rem;}
 .profile-controls-follow {@include button-primary;width:68%;}
-.profile-controls-message {@include button-secondary;min-width:auto;width:30%;margin-left:auto;}
+.profile-controls-message {@include button-tertiary;min-width:auto;width:30%;margin-left:auto;}
 .profile-body {padding:0 0 64px 400px;box-sizing:border-box;position:relative;}
 .profile-tablist {margin:0 0 0.5rem 0;position:relative;}
 .profile-tablist-active {width:4px;height:4px;margin:0 auto;border-radius:50%;transition:all 0.4s ease;background:$color-primary;position:absolute;top:8px;left:0;}

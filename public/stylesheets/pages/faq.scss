@@ -1,29 +1,13 @@
-:root {
-  --container-padding: 0 10%;
-}
-
-.faq {margin:0 10%;}
-.faq-head {
-  margin: 0 -15%;
-  border: 1px solid #000;
-  border-radius: $radius400;
-  font-size: 2rem;
-}
-.faq i {display:none;}
-.faq-item {margin:4rem 0;padding:0 0 4rem 0;border-bottom:$border400;}
-.faq-item + .faq-item {border-top:none;}
-.faq-item-question {margin:0 0 1rem 0;font-size:1.25rem;}
-.faq-item-answer {font-size:1.25rem;}
-
-.faq-contact {margin:8rem 0;}
-.faq-contact-title {
-  margin: 0 -15%;
-  border-bottom: 1px solid #000;
-  border-top: 1px solid #000;
-  border-radius: $radius400;
-  font-size: 2rem;
-}
-.faq-contact-description {width:50%;margin:4rem 0;font-size:$subhead;}
+.faq {padding:0 10%;}
+.faq-head {max-width:1480px;margin:0 auto;padding:2rem 0 0;}
+.faq-head-title {font-size:2rem;}
+.faq-item {max-width:1480px;margin:2rem auto;padding:3rem 5% 3.5rem;border:1px solid #000;box-sizing:border-box;background:#fff;}
+.faq-item-question {margin:0 0 1rem 0;font-size:1.25rem;font-weight:bold;}
+.faq-item-answer {max-width:60%;}
+.faq-item i {margin: 0 1rem 0 0;}
+.faq-contact {margin: 6rem 0 8rem;text-align: center;}
+.faq-contact-title {font-size: 2rem;font-weight: 900;}
+.faq-contact-description {width: 50%;margin: 1rem auto;font-size: 1.25rem;}
 .faq-contact-form {width:50%;margin:4rem 0 8rem;}
 
 .faq-reaction {margin:8rem 0;border-top:1px solid $gray100;border-bottom:1px solid $gray100;text-align:center;padding:3rem 5% 4rem;}
@@ -31,22 +15,22 @@
 .faq-reaction-button {margin:0 2rem;color:$gray400;}
 .faq-reaction-button span {display:block;font-size:2rem;}
 
-.marquee {
-  display: flex;
-  align-items: center;
-  overflow: hidden;
+// .marquee {
+//   display: flex;
+//   align-items: center;
+//   overflow: hidden;
 
-}
-.marquee p {
-  animation: marquee 4s linear infinite;
-  white-space: nowrap;
-  // will-change: auto;
-}
-.marquee p:after {
-  content: '';
-  white-space: nowrap;
-  padding-right: 50px;
-}
+// }
+// .marquee p {
+//   animation: marquee 4s linear infinite;
+//   white-space: nowrap;
+//   // will-change: auto;
+// }
+// .marquee p:after {
+//   content: '';
+//   white-space: nowrap;
+//   padding-right: 50px;
+// }
 
 
 

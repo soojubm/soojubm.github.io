@@ -37,7 +37,7 @@
 		<header class="profile-user">
 			<figure class="profile-user-avatar"></figure>
 			<h2 class="profile-user-name">수줍이</h2>
-			<span class="profile-user-id">@soojubm</span>
+			<span class="profile-user-id">soojubm@gmail.com</span>
 			<span class="profile-user-career">UI 디자인 / Frontend 개발</span>
 			<p class="profile-user-description">
 				유저 프로필 페이지 유아이를 그려보다 임시 포트폴리오로 사용합니다.
@@ -66,7 +66,6 @@
 					<div><img src="/public/icons/map-pin.svg" alt="map" /><b hidden aria-hidden="false">Location:</b> <span>서울시 강서구 화곡동</span></div>
 				</div>
 				<div class="profile-user-statistic">
-					<div class="statistic"><i class="statistic-label">경력</i><span class="statistic-value">24</span></div>
 					<div class="statistic"><i class="statistic-label">팔로워</i><span class="statistic-value">24</span></div>
 					<div class="statistic"><i class="statistic-label">팔로잉</i><span class="statistic-value">24</span></div>
 				</div>
@@ -99,7 +98,7 @@
 
 			<section class="profile-tabpanel" role="tabpanel" aria-hidden="" data-index="1">
 				<div class="works">
-					<a class="card js-modal" href="#" fdata-modal="newneek">
+					<a class="card js-modal" href="#" data-modal="newneek">
 						<figure class="card-thumbnail"><img src="" alt="" /></figure>
 						<h3 class="card-title">뉴닉 프로덕트 디자인.</h3>
 						<!-- <time class="card-date">2017-12-18</time> -->
@@ -254,10 +253,11 @@
         <p class="card-text">
           하나의 마크업으로 가로형 세로형이 가능하도록 하나의 마크업으로 가로형 세로형이 가능하도록 하나의 마크업으로 가로형 세로형이 가능하도록
         </p>
-        <time class="card-date">September 12, 2017</time>
+        <!-- <time class="card-date">September 12, 2017</time> -->
         <figure class="card-byline">
           <div class="card-byline-avatar"><img src="/public/images/soo.png" alt="" /></div>
-          <figcaption class="card-byline-name">수줍이</figcaption></figure>
+					<figcaption class="card-byline-name">수줍이</figcaption>
+				</figure>
         <div class="card-tags" role="group" style="margin-bottom:1rem">
           <span class="tag">기획</span>
           <span class="tag">디자인</span>
@@ -265,16 +265,13 @@
         </div>
         <hr />
         <figure class="card-item">
-          <img src="" alt="" class="card-item-avatar" />
+          <img class="card-item-avatar" src="" alt=""  />
           <figcaption class="card-item-name">퓨어 오렌지 주스</figcaption>
           <figcaption class="card-item-price">
-            <del>19,000원</del>
-            16,000원
-            <em>할인율 20%</em>
+            <del>19,000원</del> 16,000원 <em>할인율 20%</em>
           </figcaption>
         </figure>
         <div class="card-note">마일리지 적립 200P</div>
-        <!-- <div class="card-state">판매 상태(재고수/품절/재고없음/판매중단)</div> -->
         <button class="card-more"><i class="icon-more"></i></button>
       </div>
 

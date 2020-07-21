@@ -38,7 +38,7 @@
 .product-order-price-label {float:left;line-height:40px;color:$gray800;text-transform:uppercase;letter-spacing:10px;}
 .product-order-price-value {float:right;font-size:21px;color:$gray800;line-height:40px;text-align:right;}
 .product-order-control {margin:6rem 0 0 0;position:relative;}
-.product-order-control-cart {@include button-secondary;float:right;min-width:16%;}
+.product-order-control-cart {@include button-tertiary;float:right;min-width:16%;}
 .product-order-control-purchase {@include button-primary;width:80%;}
 .product-navigation {margin-top:3rem;margin-bottom:-3rem;}
 .product-navigation a {display:inline-block;margin:0 16px;padding:4px;}

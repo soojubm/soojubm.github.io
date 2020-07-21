@@ -40,6 +40,7 @@ $container-auth: 400px;
 .password-foot-submit {@include button-primary;}
 .password-result {margin:4rem 5%;text-align:center;}
 .password-result-title {margin:0 0 2rem 0;line-height:1.8;}
+.password-result-login {@include button-tertiary;}
 
 .delete {max-width:$container-auth;margin: 0 auto;padding: 5rem 5% 20rem;position:relative;}
 .delete-head {padding:2rem 0% 4rem;}

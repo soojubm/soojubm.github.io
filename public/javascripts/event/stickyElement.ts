@@ -1,3 +1,5 @@
+// 스티키전의옵셋기억해주기
+
 const stickyElement = ({ targetElement, addClass }) => {
   const stickyElement = document.querySelector(targetElement)
   if (!stickyElement) return
