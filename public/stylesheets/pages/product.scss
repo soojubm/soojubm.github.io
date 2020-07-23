@@ -4,7 +4,7 @@
 .product-iamge-list {position:absolute;}
 .product-image img {width:auto;height:auto;max-width:100%;max-height:100%;margin:auto;position:absolute;left:0;right:0;top:0;bottom:0;margin-top:-50px;}
 .product-image-navigation {width:inherit;text-align:center;position:fixed;left:10%;top:520px;}
-.product-image-navigation button {width:8px;height:8px;margin:0 .25rem;border:$border400;background:$gray100;}
+.product-image-navigation button {width:8px;height:8px;margin:0 .25rem;border:$border100;background:$gray100;}
 .product-image-navigation button.is-current {background:$gray800;}
 .product-info {width:25%;position:absolute;left:5%;top:0;}
 .product-info-name {font-size:2rem;width:28px;line-height:1.2;text-align:center;word-break:normal;position:absolute;left:-64px;top:0px;}
@@ -15,7 +15,7 @@
 .product-info-description {margin:.5rem 0 1.25rem 0;padding-bottom:1.5rem;border-bottom:1px solid $gray100;line-height:1.6;}
 .product-order {width:25%;margin:0 0 0 75%;}
 .product-order-info {margin:0rem 0 1rem 0;padding:1rem 0;border-top:1px solid $gray100;border-bottom:1px solid $gray100;border-radius:$radius400;}
-.product-order-discount {margin:1rem 0 1rem 0;background:#f9f9f6;border:$border400;text-align:center;padding:8px 0;}
+.product-order-discount {margin:1rem 0 1rem 0;background:#f9f9f6;border:$border100;text-align:center;padding:8px 0;}
 .product-order-size {margin:1.5rem 0;}
 .product-order-size:after {content:'';display:block;clear:both;}
 .product-order-size-title {margin:.5rem 0;font-size:12px;}

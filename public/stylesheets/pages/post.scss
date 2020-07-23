@@ -58,7 +58,7 @@
 
 .post-reaction {margin:2rem 0 0;}
 .post-reaction-like {display:flex;align-items:center;cursor:pointer;}
-.post-reaction-like-icon {@include box-medium;background:none;border:$border400;}
+.post-reaction-like-icon {@include box-medium;background:none;border:$border100;}
 .post-reaction-like-icon img {display:flex;width:24px;margin-top:1px;margin-left:2px;}
 .post-reaction-like-count {margin-left:1rem;font-size:1.25rem;}
 

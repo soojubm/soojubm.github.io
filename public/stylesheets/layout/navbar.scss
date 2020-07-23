@@ -34,7 +34,7 @@
 .navbar-user-notification-trigger {@include box-light;}
 .navbar-user-notification-trigger i {vertical-align:middle;color:$gray800;}
 .navbar-user-notification-trigger img {width:20px;pointer-events:none;}
-.navbar-user-notification-trigger em {display:block;width:.5rem;height:.5rem;border-radius:50%;border:$border400;box-sizing:border-box;background:$color-negative;text-indent:-9999px;position:absolute;right:.5rem;top:.5rem;}
+.navbar-user-notification-trigger em {display:block;width:.5rem;height:.5rem;border-radius:50%;border:$border100;box-sizing:border-box;background:$color-negative;text-indent:-9999px;position:absolute;right:.5rem;top:.5rem;}
 .navbar-user-notification-menu {width:320px;height:0;padding:.5rem 0;box-sizing:border-box;border-radius:$radius400;background:$gray0;box-shadow:$shadow400;position:absolute;top:40px;right:-40px;z-index:4;transform:scale(0);transform-origin:right top}
 .navbar-user-notification-menu.is-visible {height:auto;transform:scale(1);}
 .navbar-user-notification-menu:before {content:'';display:block;position:absolute;left:50%;right:0;top:-8px;bottom:0;}
@@ -47,7 +47,7 @@
 
 .navbar-user-account {position:relative;}
 .navbar-user-account-trigger {display:flex;justify-content:center;align-items:center;height:32px;}
-.navbar-user-account-trigger span {@include box-light;float:left;background:$gray0;border:$border400;pointer-events:none;}
+.navbar-user-account-trigger span {@include box-light;float:left;background:$gray0;border:$border100;pointer-events:none;}
 .navbar-user-account-menu {width:320px;height:0;padding:.5rem 0;box-sizing:border-box;border-radius:$radius400;background:$gray0;box-shadow:$shadow400;position:absolute;top:40px;right:0;z-index:4;transform:scale(0);transform-origin:right top;}
 .navbar-user-account-menu.is-visible {height:auto;transform:scale(1);}
 

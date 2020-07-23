@@ -67,7 +67,7 @@
 .card-byline-avatar img {@include image-centered;}
 .card-byline-name {line-height:16px;color:$gray400;}
 .card-more {@include box-light;display:none;position:absolute;right:.5rem;top:.5rem;}
-.card-thumbnail {padding-top:50%;overflow:hidden;background:$gray800;border-radius:$radius400;border:$border400;border-color:$gray0;box-sizing:border-box;position:relative;}
+.card-thumbnail {padding-top:50%;overflow:hidden;background:$gray800;border-radius:$radius400;border:$border100;border-color:$gray0;box-sizing:border-box;position:relative;}
 .card-thumbnail img {display:block;width:auto;height:auto;max-width:100%;max-height:130%;margin:auto;background:$gray800;position:absolute;left:-1px;right:-1px;top:-1px;bottom:-1px;}
 .card-category {padding:2px 0;background:$color-primary;font-size:10px;color:$gray0;position:absolute;left:16px;top:64px;}
 .card-title {padding:1rem 0 0;font-size:$body;}
@@ -87,7 +87,7 @@
 .card-item img {float:left;display:block;margin-right:1rem;background:$gray800;}
 .card-item-name {display:block;color:$gray800;position: relative;top:0px;}
 .card-item-price {position:relative;}
-.card-note {border:$border400;border-radius:$radius400;text-align:center;font-size:12px;}
+.card-note {border:$border100;border-radius:$radius400;text-align:center;font-size:12px;}
 
 .card:hover {transform:translateY(-.25rem);}
 .card:hover .card-more {display:block;}

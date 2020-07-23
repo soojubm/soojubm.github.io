@@ -106,7 +106,7 @@ $shadow100: 0px 1px 1px rgba(136, 26, 26, 0.075); // unused
 $shadow400: 1px 1px 4px rgba(0, 0, 0, 0.2);
 $shadow450: 2px 4px 8px rgba(0, 0, 0, 0.2); // hover
 
-$border400: 1px solid $gray200;
+$border100: 1px solid $gray200;
 
 $radius400: 4px;
 
@@ -151,12 +151,16 @@ $height-header: 64px;
 .row {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 800px;
   height: 56px;
-  // border-top: 1px solid $gray100;
-  // border-bottom: 1px solid $gray100;
-  margin-right: -200px;
-  line-height: 16px;
-  --spacer: 0 1.5rem;
+  margin: 2rem auto;
+  padding: 0 2rem;
+  box-sizing: border-box;
+  border: 1px solid $gray100;
+  // margin-right: -200px;
+  // --spacer: 0 1.5rem;
 }
 .row-checkbox {
   width: 4rem;
@@ -187,7 +191,6 @@ $height-header: 64px;
   font-size: 12px;
   color: $gray400;
 }
-
 
 .col {
   flex-basis: 0;
