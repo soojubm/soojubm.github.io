@@ -20,7 +20,7 @@
 .profile-user-address {margin:1rem 0 1.25rem 0;padding:1rem 0 1rem 0;border-top:1px solid #e9e9e6;border-bottom:1px solid #e9e9e6;}
 .profile-user-address div img {width:1rem;margin-right:.5rem;opacity:.4;}
 .profile-user-address i {margin:0 8px 0 0;font-size:14px;color:$gray400;vertical-align:middle;}
-.profile-user-hashtags {display:flex;flex-wrap:wrap;margin:-.25rem;}
+.profile-user-hashtags {display:flex;flex-wrap:wrap;margin:-.5rem;}
 .profile-user-statistic {}
 .profile-controls {display:flex;margin:2rem 0 1rem;}
 .profile-controls-follow {@include button-primary;width:68%;}
@@ -35,7 +35,7 @@
 
 .profile-display {display:flex;margin:0 0 1.5rem 0;padding:0 0 1rem 0px;border-bottom:1px solid #e9e9e6;}
 .profile-display-title {margin:0 0 0.25rem 0;font-size:12px;}
-.profile-display-button {@include box-light;margin:0 .25rem 0 0;color:$gray800;}
+.profile-display-button {@include box-light;margin:0 .5rem 0 0;color:$gray800;}
 .profile-display-button.is-selected {background:$gray200;}
 .profile-display-button i {font-size:20px;vertical-align:middle;}
 .profile-display-button img {width:1rem;}
@@ -63,7 +63,7 @@
 
 .card {display:block;width:297px;margin:0 0 1.5rem;position:relative;transition:all .4s;}
 .card-byline {display:flex;margin:.75rem 0 1rem 0;position:relative;}
-.card-byline-avatar {display:block;width:16px;height:16px;overflow:hidden;margin-right:.5rem;border-radius:$radius400;background:$gray100;position:relative;}
+.card-byline-avatar {@include box-small;display:block;margin-right:.5rem;border:$border100;position:relative;}
 .card-byline-avatar img {@include image-centered;}
 .card-byline-name {line-height:16px;color:$gray400;}
 .card-more {@include box-light;display:none;position:absolute;right:.5rem;top:.5rem;}

@@ -24,7 +24,7 @@ mark {padding:0 2px 2px;border-radius:$radius400;background:$gray800;color:$gray
 hr {height:1px;overflow:visible;position:relative;}
 hr:after {content:'';display:block;width:100%;height:1px;background:$gray100;}
 u {text-decoration:none;position:relative;}
-u:after {content:'';height:.4em;border-radius:$radius400;background:gold;position:absolute;left:0;right:0;bottom:.125rem;z-index:-1;}
+u:after {content:'';height:.6em;border-radius:$radius400;background:$blue100;position:absolute;left:-.25rem;right:-.25rem;bottom:-.25rem;z-index:-1;}
 code {padding:1rem 1.5rem;background:$gray100;border-radius:$radius400;}
 
 html {min-width:320px;height:100%;font:14px/1.8 'Asap', 'AritaDotum', 'Apple SD Gothic Neo', sans-serif;color:$gray600;-webkit-text-size-adjust:100%;/*-webkit-font-smoothing:antialiased;*/text-rendering:optimizeLegibility;}

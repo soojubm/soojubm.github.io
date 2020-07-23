@@ -64,7 +64,7 @@
 .bottom-navigation a span {display:block;margin-top:-.25rem;font-size:11px;transition:all .4s ease;}
 .bottom-navigation a:hover i {color:rgba(0,0,0,1);margin-top:-1px;}
 .bottom-navigation a:hover span {font-size:11px;color:rgba(0,0,0,1);}
-.bottom-navigation em {display:block;width:4px;height:4px;background:$color-negative;border-radius:$radius400;}
+.bottom-navigation em {display:flex;width:4px;height:4px;background:$color-negative;border-radius:$radius400;position:absolute;left:50%;top:50%;transform:translate(1rem, -1.5rem)}
 
 .qna {padding:16px 0;border-bottom:1px solid $gray200;}
 .question-item {position:relative;}
@@ -259,10 +259,11 @@
 .features header h2 {margin:0 0 1rem 0;font-size:3rem;}
 .features header p {color:#333;}
 .features-item {width:320px;margin:0 2.5%;}
-.features-item-avatar {@include box-large;margin:0 0 2rem 0;font-size:3rem;}
+.features-item-avatar {margin:0 0 2rem 0;padding:2rem 0;font-size:3rem;position:relative;}
+.features-item-avatar:before {content:'';display:block;@include box-medium;background:$blue100;position:absolute;right:-1.5rem;z-index:-1;}
 .features-item-title {font-size:$subhead;}
 .features-item-description {margin-top:1rem;}
-.features-item-link {display:block;margin-top:1rem;}
+.features-item-link {display:block;margin-top:2rem;}
 
 
 @media (--viewport-small) {

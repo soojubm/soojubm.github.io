@@ -28,12 +28,12 @@
 .product-order-color-item.is-selected:before {content:'';display:block;border:1px solid $gray0;border-radius:$radius400;position:absolute;left:2px;right:2px;top:2px;bottom:2px;}
 .product-order-color-item.is-crimson {background:$color-primary;border:1px solid $color-primary}
 .product-order-color-item.is-salmon {background:salmon;border:1px solid salmon}
-.product-order-count {padding:1rem 0;border-top:1px solid $gray600;border-bottom:1px solid $gray600;position:relative;}
+.product-order-count {padding:1rem 0 1.25rem;border-top:1px solid $gray600;border-bottom:1px solid $gray600;position:relative;}
 .product-order-count-title {margin:0 0 1rem 0;}
-.product-order-count-title .aaa {display:inline-block;width:8px;height:8px;margin:0 4px 0 0;background:salmon;vertical-align:1px}
+.product-order-count-title .aaa {display:inline-block;width:8px;height:8px;margin:0 .5rem 0 0;border-radius:$radius400;background:salmon;vertical-align:1px}
 .product-order-count-close {position:absolute;right:-10px;top:10px;}
 .product-order-count-quantity {width:50%;margin:0 0;}
-.product-order-count-price {position:absolute;right:0;bottom:20px;}
+.product-order-count-price {position:absolute;right:0;bottom:18px;}
 .product-order-price {margin:.5rem 0 0 0;}
 .product-order-price-label {float:left;line-height:40px;color:$gray800;text-transform:uppercase;letter-spacing:10px;}
 .product-order-price-value {float:right;font-size:21px;color:$gray800;line-height:40px;text-align:right;}
