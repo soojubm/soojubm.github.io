@@ -49,6 +49,7 @@
 @import 'pages/sign';
 @import 'pages/faq';
 @import 'pages/setting';
+@import 'pages/checkout';
 
 .letter-piece {float:left;display:block;width:48px;height:64px;line-height:64px;box-shadow:1px 1px 0px rgba(0,0,0,.1);font-size:32px;text-align:center;position:relative;}
 .letter-piece i {position:relative;z-index:2;}
@@ -78,7 +79,7 @@
 .answer-item-date {margin:0 0 0 16px;font-size:13px;color:$gray400;}
 .answer-item-body {margin:8px 0 0 0;}
 
-.star {padding:0;font-size:1.25rem;line-height:1;color:$gray400;transition:all .2s ease;}
+.star {padding:0;font-size:$subhead;line-height:1;color:$gray400;transition:all .2s ease;}
 .star + .star {}
 .star.is-rated {color:#ffe623;transform:scale(1.2);}
 .star.is-hovered {color:#fc0;transform:scale(1.2);}
@@ -196,7 +197,7 @@
 
 .quote {max-width:320px;padding:2rem;border-radius:$radius400;box-sizing:border-box;box-shadow:$shadow400;background:$gray0;}
 .quote-avatar {}
-.quote-title {margin:1rem 0;font-size:$subhead;color:$gray800;}
+.quote-title {margin:1rem 0;font-size:$subhead;;color:$gray800;}
 .quote-body {}
 .quote-byline {margin:1rem 0 0 0;}
 .quote-byline div {color:$gray800;}
@@ -261,7 +262,7 @@
 .features-item {width:320px;margin:0 2.5%;}
 .features-item-avatar {margin:0 0 2rem 0;padding:2rem 0;font-size:3rem;position:relative;}
 .features-item-avatar:before {content:'';display:block;@include box-medium;background:$blue100;position:absolute;right:-1.5rem;z-index:-1;}
-.features-item-title {font-size:$subhead;}
+.features-item-title {font-size:$subhead;;}
 .features-item-description {margin-top:1rem;}
 .features-item-link {display:block;margin-top:2rem;}
 

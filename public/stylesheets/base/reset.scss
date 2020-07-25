@@ -60,7 +60,7 @@ ol li ol li:before {content: counter(sub-list-item,lower-alpha) '.';}
 .off-screen {display:none;width:0;height:0;overflow:hidden;opacity:0;visibility:hidden;}
 
 @media (--viewport-small) {
-  html {font-size:12px;}
+  html {font-size:12px;font-weight:bold;}
   small {font-size:10px;}
   .tag {font-size:10px;}
 }

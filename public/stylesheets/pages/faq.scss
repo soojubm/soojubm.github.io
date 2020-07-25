@@ -2,7 +2,7 @@
 .faq-head {max-width:1480px;margin:0 auto;padding:2rem 0 0;}
 .faq-head-title {font-size:2rem;}
 .faq-item {max-width:1480px;margin:2rem auto;padding:3rem 5% 3.5rem;border:1px solid #000;box-sizing:border-box;background:#fff;}
-.faq-item-question {margin:0 0 1rem 0;font-size:1.25rem;font-weight:bold;}
+.faq-item-question {margin:0 0 1rem 0;font-size:$subhead;font-weight:bold;}
 .faq-item-answer {max-width:60%;}
 .faq-item i {margin: 0 1rem 0 0;}
 .faq-contact {margin: 6rem 0 8rem;text-align: center;}
@@ -11,7 +11,7 @@
 .faq-contact-form {width:50%;margin:4rem 0 8rem;}
 
 .faq-reaction {margin:8rem 0;border-top:1px solid $gray100;border-bottom:1px solid $gray100;text-align:center;padding:3rem 5% 4rem;}
-.faq-reaction-title {margin:0 0 1rem 0;font-size:1.25rem;color:$gray800;}
+.faq-reaction-title {margin:0 0 1rem 0;font-size:$subhead;color:$gray800;}
 .faq-reaction-button {margin:0 2rem;color:$gray400;}
 .faq-reaction-button span {display:block;font-size:2rem;}
 

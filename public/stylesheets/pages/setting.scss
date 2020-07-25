@@ -7,10 +7,10 @@
 .setting-head-description {margin:1rem 0 0 0;}
 
 .setting-body {margin:4rem 0 0;}
-.setting-body-heading {margin:0 0 1.5rem 0;font-size:1.25rem;}
+.setting-body-heading {margin:0 0 1.5rem 0;font-size:$subhead;}
 .setting-body-description {margin:-1rem 0 1.5rem 0;}
 
-.setting-row {display:flex;align-items:center;min-height:74px;padding:1.5rem 0;box-sizing:border-box;overflow:hidden;border-bottom:$border100;font-size:1.25rem;cursor:pointer;position:relative;}
+.setting-row {display:flex;align-items:center;min-height:74px;padding:1.5rem 0;box-sizing:border-box;overflow:hidden;border-bottom:$border100;font-size:$subhead;cursor:pointer;position:relative;}
 .setting-row:nth-of-type(1) {border-top:$border100;}
 .setting-row-label {width:12rem;font-size:1rem;}
 .setting-row-value {color:$gray800;}

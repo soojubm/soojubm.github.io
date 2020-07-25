@@ -9,7 +9,7 @@
 .profile-user {float:left;width:320px;box-sizing:border-box;position:relative;z-index:1;}
 .profile-user-avatar {@include box-large;float:right;background:url('/public/images/soo.png') no-repeat center center;background-size:contain;transition:all 0.4s ease;}
 .profile-user-avatar:hover {box-shadow:$shadow450;}
-.profile-user-name {font-size:$subhead;}
+.profile-user-name {font-size:$subhead;;}
 .profile-user-id {display:block;color:$gray400;}
 .profile-user-career {display:block;margin:.5rem 0 0;color:$gray400;}
 .profile-user-description {max-height:4.8em;margin:1.5rem 0;white-space:normal;overflow:hidden;text-overflow:ellipsis;word-wrap:break-word;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;line-height:1.6;position:relative;}
@@ -40,10 +40,10 @@
 .profile-display-button i {font-size:20px;vertical-align:middle;}
 .profile-display-button img {width:1rem;}
 .profile-socials {margin:2rem 0 2rem 0;}
-.profile-socials-title {margin:0.5rem 0;font-size:$subhead;}
+.profile-socials-title {margin:0.5rem 0;font-size:$subhead;;}
 .profile-socials-link {display:block;color:$gray400;}
 .profile-boards {margin:2rem 0 2rem 0;}
-.profile-boards-title {margin:0.5rem 0;font-size:$subhead;}
+.profile-boards-title {margin:0.5rem 0;font-size:$subhead;;}
 .profile-boards-link {display:block;color:$gray400;}
 
 

@@ -19,11 +19,11 @@
 
 
 .help-category {max-width:$width-medium;margin:4rem auto;padding:0 2rem;position:relative;}
-.help-category-title {margin:0 0 1rem 0;font-size:$subhead;}
+.help-category-title {margin:0 0 1rem 0;font-size:$subhead;;}
 .help-category-link {display:flex;margin:0 .5rem 0 0;padding:.5rem 2rem;border:$border100;background:$gray100;color:$gray800;}
 
 .help-board {max-width:$width-medium;margin:2rem auto;padding:0 5%;position:relative;}
-.help-board-title {margin:0 0 1rem 1.5rem;font-size:$subhead;}
+.help-board-title {margin:0 0 1rem 1.5rem;font-size:$subhead;;}
 .help-board-item {display:block;padding:1rem 1.5rem;border:$border100;background:$gray100;position:relative;transition:all .4s;}
 .help-board-item + .help-board-item {margin-top:-1px;}
 .help-board-item:hover {background:$gray0;}

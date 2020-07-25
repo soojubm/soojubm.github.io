@@ -23,7 +23,7 @@
 .design-body {width:50%;max-width:36rem;margin-left:50%;padding:6rem;}
 
 .design-article {margin:0 0 6rem 0;position:relative;}
-.design-article-title {margin:0 0 1rem 0;font-size:$subhead;}
+.design-article-title {margin:0 0 1rem 0;font-size:$subhead;;}
 .design-article-description {margin:0 0 1.5rem 0;}
 .design-article-more {font-size:12px;color:$gray800;text-decoration:underline;position:absolute;right:0;top:0;}
 
@@ -58,19 +58,6 @@
 .pagenav-link:hover {text-decoration:underline;}
 .pagenav-link:last-child {margin:.5rem 0 0 0;}
 .pagenav-link i {display:flex;align-items:center;justify-content:center;margin-right:1rem;background:$gray100;}
-
-
-.user {max-width:320px;padding:2rem 0 0;border-radius:$radius400;box-shadow:$shadow400;text-align:center;}
-.user-avatar {@include box-large;margin:0 auto .75rem;position:relative;}
-.user-avatar-change {width:32px;height:32px;border-radius:$radius400;position:absolute;right:-8px;bottom:-8px;}
-.user-name {font-size:$subhead;color:$gray800;}
-.user-email {display:block;margin:-.25rem 0 0 0;}
-.user-action {display:block;width:100%;margin:1rem 0 0 0;padding:1rem 0;border-top:1px solid $gray100;border-bottom:1px solid $gray100;}
-.user-logout {padding:1rem 0;border-bottom:1px solid $gray100;}
-.user-myinfo {text-decoration:underline;}
-.user footer {padding:1rem 0;font-size:12px;}
-.user footer a {color:$gray400;}
-
 
 
 @keyframes spinAround{

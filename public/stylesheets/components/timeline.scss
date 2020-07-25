@@ -9,7 +9,7 @@
 .timeline-item-head-note {font-size:24px;color:#409eff;position:absolute;right:0px;top:50%;transform:translateY(-43%);}
 .timeline-item-body {padding:0 0 0 64px;}
 .timeline-item-body-panel {overflow:hidden;background:#f8fafb;border:$border100;margin:.5rem 0;padding:0 24px;box-sizing:border-box;line-height:46px;position:relative;}
-.timeline-item-body-panel i {font-size:1.25rem;position:absolute;right:20px;top:16px;}
+.timeline-item-body-panel i {font-size:$subhead;position:absolute;right:20px;top:16px;}
 .timeline-item-body-panel.is-expanded {height:auto;overflow:auto;}
 .timeline-item-body-cancel {margin:8px 0 0 0;color:$gray400;}
 .timeline-item-body-cancel button {margin:0 8px;padding:4px 0;}

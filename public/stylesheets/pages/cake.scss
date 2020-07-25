@@ -24,7 +24,7 @@
 
 .cake-info {width:1080px;margin:0 auto;padding:2rem 0 2.25rem;border-top:1px solid $gray200;border-bottom:1px solid $gray200;position:relative;}
 .cake-info + .cake-info {border-top:none;}
-.cake-info h2 {padding:2rem 0;font-size:$subhead;position:absolute;left:0;top:0;}
+.cake-info h2 {padding:2rem 0;font-size:$subhead;;position:absolute;left:0;top:0;}
 .cake-info p {padding-left:320px;}
 
 @media (--viewport-medium) {
