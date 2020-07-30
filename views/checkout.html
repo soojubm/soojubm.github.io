@@ -2,23 +2,21 @@
 
 <main class="checkout">
 	<header class="checkout-head">
-		<div class="checkout-head-eyebrow">주문확인</div>
+		<!-- <div class="checkout-head-eyebrow">주문확인</div> -->
 		<h1 class="checkout-head-title">안녕, 콩 😎<br />주문정보를 확인해주세요<i style="font-style:italic;">!</i></h1>
-		<aside class="checkout-alert">
-			<p>
-				<span>🐣</span>
-				<strong>경제IOI 시즌 2는 오늘 마감이에요<i style="font-style:italic;">!</i></strong> 
-			</p>
-		</aside>
 	</header>
 
-
-
 	<section class="checkout-product">
+		<aside class="checkout-alert" style="text-align:center;position:absolute;bottom:-3rem;left:0;right:0;">
+			<p>
+				<i>🦔고슴이: &nbsp;</i>
+				<strong>경제IOI 시즌 2는 <b style="font-weight:bold">오늘 마감</b>이에요<i style="font-style:italic;">!</i></strong> 
+			</p>
+		</aside>
 		<h2 class="checkout-product-title">주문상품</h2>
 		<div class="checkout-product-item">
 			<div class="checkout-product-item-media"></div>
-			<div class="checkout-product-item-name">뉴닉이 풀어 쓴 경제상식사전</div>
+			<h3 class="checkout-product-item-name">뉴닉이 풀어 쓴 경제상식사전</h3>
 			<div class="checkout-product-item-text">Order Type: license for 1-3 Users</div>
 			<div class="checkout-product-item-price">₩44,612</div>
 		</div>
@@ -28,7 +26,7 @@
 			<div class="checkout-product-item-text">Order Type: license for 1-3 Users</div>
 			<div class="checkout-product-item-price">$24.00</div>
 		</div> -->
-		<br />
+		<hr style="margin:2rem -2.5rem 1.5rem;" />
 		<div class="checkout-product-price1">
 			<div class="checkout-product-price1-label">서비스 수수료</div>
 			<div class="checkout-product-price1-value">₩44,612</div>
@@ -48,7 +46,7 @@
 		<div class="checkout-date-value">2020/05/20<div>
 	</section> -->
 	<section class="checkout-shipping">
-		<h2 class="checkout-shipping-title">주문정보</h2>
+		<h2 class="checkout-shipping-title">주문자 정보</h2>
 		<div class="checkout-shipping-name">
 			<div class="checkout-shipping-name-emoji">🙍</div>
 			<div class="checkout-shipping-name-label">받는 분 이름</div>
@@ -70,14 +68,18 @@
 		<h2 class="checkout-payment-title">결제수단</h2>
 		<p class="checkout-payment-description">현재 신용카드 결제만 가능합니다.</p>
 		<br />
-		<div class="checkbox">
-			<input class="checkbox-input" type="checkbox" id="card" />
-			<label class="checkbox-label" for="card">신용카드</label>
-		</div>
-		<div class="checkbox">
-			<input class="checkbox-input" type="checkbox" />
-			<label class="checkbox-label">무통장입금</label>
-		</div>
+		<button style="display:flex;align-items:center;width:100%;max-width:480px;padding:0 2rem .3rem;border:1px solid #ebebeb;border-radius:4px;text-align:left;position:relative">
+			<span style="margin-right:1rem;font-size:2rem;">💳</span> 신용카드
+			<i class="icon-check" style="position:absolute;right:16px;top:50%;margin-top:-2px;border-color:#000;"></i>
+		</button>
+		<br />
+		<br />
+		<h4 style="margin-bottom:1rem;"><em>환불 정책</em></h4>
+		<ul>
+			<li>주문취소는 불가능합니다.</li>
+			<li>주문취소는 사실 가능합니다.</li>
+		</ul>
+
 	</section>
 
 	<!-- <section class="checkout-discount">

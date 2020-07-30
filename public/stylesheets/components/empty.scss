@@ -1,5 +1,5 @@
 .empty {padding:4rem 0;box-sizing:border-box;}
 .empty-icon {@include box-large;margin:0 0 2rem;background:$color-negative;color:$gray0;font-size:40px;}
-.empty-title {font-size:1.5rem;}
+.empty-title {font-size:$subhead;}
 .empty-description {margin:1rem 0 3rem;}
 .empty-action {@include button-secondary;}

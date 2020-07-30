@@ -1,4 +1,4 @@
-.topbar {display:flex;align-items:center;width:80%;padding:1rem 10%;border-radius:$radius400;position:absolute;z-index:3;}
+.topbar {display:flex;align-items:center;width:80%;padding:1rem 5%;border-radius:$radius400;position:absolute;z-index:3;}
 .topbar-back {display:flex;align-items:center;}
 .topbar-back-icon {@include box-light;margin:0 1rem 0 0;}
 .topbar-back-icon {transform:rotate(180deg);}
@@ -13,7 +13,7 @@
 .is-sticky-topbar .is-white .topbar-back {color:$gray800;}
 
 @media (--viewport-small) {
-  .topbar {width:auto;padding:1rem;left:0;right:0;}
+  .topbar {width:auto;left:0;right:0;}
   .is-sticky-topbar .topbar {height:32px;}
 }
 

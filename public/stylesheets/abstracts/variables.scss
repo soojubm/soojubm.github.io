@@ -1,7 +1,8 @@
 // mediaquery, desktop first
 
 $container800: 1440px;
-$container500: 800px;
+$container600: 1280px;
+$container400: 800px;
 $container200: 480px;
 
 $avatar100: 16px;
@@ -10,9 +11,17 @@ $avatar400: 48px;
 $avatar600: 80px;
 
 @mixin container {
-  background-color:$gray0;
+  margin: 0 auto;
+  padding: 0 5%;
+  background-color: $gray0;
   border-radius: $radius400;
-  box-shadow: $shadow100;
+  position: relative;
+}
+
+@mixin outer {
+  background-color: $gray0;
+  border-radius: $radius400;
+  box-shadow: $shadow400;
   position: relative;
 }
 
