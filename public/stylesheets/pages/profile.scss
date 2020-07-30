@@ -63,7 +63,7 @@
 
 .card {display:block;width:297px;margin:0 0 1.5rem;position:relative;transition:all .4s;}
 .card-byline {display:flex;margin:.75rem 0 1rem 0;position:relative;}
-.card-byline-avatar {@include box-small;display:block;margin-right:.5rem;border:$border100;position:relative;}
+.card-byline-avatar {@include box-small;display:block;margin-right:.5rem;position:relative;}
 .card-byline-avatar img {@include image-centered;}
 .card-byline-name {line-height:16px;color:$gray400;}
 .card-more {@include box-light;display:none;position:absolute;right:.5rem;top:.5rem;}
@@ -92,6 +92,7 @@
 .card:hover {transform:translateY(-.25rem);}
 .card:hover .card-more {display:block;}
 
+.card-cta {@include button-primary;width:100%;margin:2rem 0;}
 
 
 .works {margin:0 -1%}
