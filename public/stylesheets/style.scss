@@ -9,7 +9,7 @@
 @import 'base/form';
 
 @import 'layout/navbar';
-@import 'layout/header'; // page-title || navigation bar titles
+@import 'layout/header';
 @import 'layout/footer';
 
 @import 'themes/darkmode';
@@ -35,7 +35,6 @@
 
 @import 'pages/design';
 @import 'pages/about';
-// @import 'pages/home';
 @import 'pages/post';
 @import 'pages/cake';
 @import 'pages/profile';

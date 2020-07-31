@@ -11,25 +11,9 @@ const CompressionPlugin = require('compression-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const postcssCustomProperties = require('postcss-custom-properties');
 
 const StylelintPlugin = require('stylelint-webpack-plugin');
-
-// TODO
-// rules: [
-// 	{
-// 		test: /\.css$/,
-// 		use: [
-// 			'style-loader',
-// 			{ loader: 'css-loader', options: { importLoaders: 1 } },
-// 			{ loader: 'postcss-loader', options: {
-// 				ident: 'postcss',
-// 				plugins: () => [
-// 					postcssPresetEnv(/* pluginOptions */)
-// 				]
-// 			} }
-// 		]
-// 	}
-// ]
 const postcssPresetEnv = require('postcss-preset-env');
 
 const path = require('path');
@@ -46,7 +30,17 @@ module.exports = smp.wrap({
 	watch: true,
 	module: {
 		rules: [
-			{ test: /\.(sa|sc|c)ss$/, use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'] },
+			// { test: /\.(sa|sc|c)ss$/, use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'] },
+      {
+        test: /\.(sa|sc|c)ss$/,
+        use: [MiniCssExtractPlugin.loader,
+          { loader: 'css-loader', options: { importLoaders: 1 } },
+          { loader: 'postcss-loader', options: {
+            ident: 'postcss', plugins: () => [postcssCustomProperties(/* pluginOptions */)]
+					} },
+					'sass-loader'
+        ]
+      },
 			{ test: /\.png$/, use: ['file-loader'] },
 			{ test: /\.ts$/, use: 'ts-loader' },
 			{ test: /\.m?js$/, exclude: /node_modules/, use: ['babel-loader', 'eslint-loader']}

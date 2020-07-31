@@ -70,7 +70,7 @@ $container500: 960px;
 @media (--viewport-small) {
   .checkout-head {padding-bottom:6rem;}
   .checkout-product {
-    width:90%;margin:-2rem auto 0;position:static;right:auto;top:auto;
+    width:90%;margin:-2rem auto 0;padding:1.5rem 2rem;position:static;right:auto;top:auto;
   }
   .checkout-foot button {
     width: 100%;
