@@ -8,9 +8,9 @@ button > * {pointer-events:none;}
 button.is-small {width:auto !important;min-width:72px !important;padding: $padding100!important;
   height: $cell-light;font-size:12px !important;}
 button.is-addable {min-width:auto !important;height:$cell-light;padding-right:40px !important;text-align:left;}
-button.is-addable.is-added {background:$color-primary;border-color:$color-primary;color:$gray0;}
-button.is-addable .icon-plus {display:inline-block;background:$gray100;padding:12px;border-radius:$radius400;position:absolute;right:3px;top:3px;}
-button.is-addable .icon-close {display:inline-block;background:$gray100;padding:12px;border-radius:$radius400;position:absolute;right:3px;top:3px;}
+button.is-addable.is-added {background:$color-primary;border-color:$color-primary;color:var(--gray0);}
+button.is-addable .icon-plus {display:inline-block;background:var(--gray100);padding:12px;border-radius:$radius400;position:absolute;right:3px;top:3px;}
+button.is-addable .icon-close {display:inline-block;background:var(--gray100);padding:12px;border-radius:$radius400;position:absolute;right:3px;top:3px;}
 
 @mixin button {
   display: inline-block;
@@ -19,11 +19,11 @@ button.is-addable .icon-close {display:inline-block;background:$gray100;padding:
 }
 @mixin button-primary {
   @include button;
-  background:$color-primary;border:1px solid $color-primary;color:$gray0;
+  background:$color-primary;border:1px solid $color-primary;color:var(--gray0);
   &:hover,
   &:focus {border-color:darken($color-primary, 2%);background:darken($color-primary, 2%);}
   &:active {}
-  &:disabled {background:$gray600;border-color:$gray600;color:$gray200;}
+  &:disabled {background:var(--gray600);border-color:var(--gray600);color:var(--gray200);}
 }
 @mixin button-secondary {
   @include button;
@@ -31,28 +31,28 @@ button.is-addable .icon-close {display:inline-block;background:$gray100;padding:
   &:hover, 
   &:focus {border-color:darken($color-primary, 5%);color:darken($color-primary, 5%);}
   &:active {}
-  &:disabled {background:transparent;border-color:$gray200;color:$gray200;}
+  &:disabled {background:transparent;border-color:var(--gray200);color:var(--gray200);}
 }
 @mixin button-tertiary {
   @include button;
-  border:1px solid $gray100;background:$gray100;color:$gray600;
+  border:1px solid var(--gray100);background:var(--gray100);color:var(--gray600);
   &:hover,
-  &:focus {border-color:darken($gray100, 2%);background:darken($gray100, 2%);}
+  // &:focus {border-color:darken(var(--gray100), 2%);background:darken(var(--gray100), 2%);}
   &:active {}
-  &:disabled {color:$gray400;}
+  &:disabled {color:var(--gray400);}
 }
 @mixin button-text {
   @include button;
 }
 
-.danger-button {@include button;background:$color-negative;border:1px solid $color-negative;color:$gray0;}
-.success-button {@include button;background:$color-positive;border:1px solid $color-positive;color:$gray0;}
+.danger-button {@include button;background:$color-negative;border:1px solid $color-negative;color:var(--gray0);}
+.success-button {@include button;background:$color-positive;border:1px solid $color-positive;color:var(--gray0);}
 
 .text-button {@include button;background:none;border:1px solid transparent;color:$color-primary;}
-.text-button:hover {border-color:$gray100;background:$gray100;}
-.text-button:focus {background:$gray100;}
+.text-button:hover {border-color:var(--gray100);background:var(--gray100);}
+.text-button:focus {background:var(--gray100);}
 .text-button:active {}
-.text-button:disabled {color:$gray200;cursor:not-allowed;}
+.text-button:disabled {color:var(--gray200);cursor:not-allowed;}
 
 .button-group {display:flex;width:100%;overflow:hidden;}// justify-content:space-between;}
 .button-group.is-left {padding:.5rem 0;}
@@ -62,6 +62,6 @@ button.is-addable .icon-close {display:inline-block;background:$gray100;padding:
 .button-group.is-right {justify-content:flex-end;padding:.5rem 0;}
 .button-group.is-right button {margin:0 1rem;}
 .button-group button {margin:0 !important;border-radius:0;}// flex:1 1 auto;}
-.button-group button.is-active {background-color:$color-primary;color:$gray0;}
+.button-group button.is-active {background-color:$color-primary;color:var(--gray0);}
 .button-group button:first-child {border-top-left-radius:$radius400;border-bottom-left-radius:$radius400;}
 .button-group button:last-child {border-top-right-radius:$radius400;border-bottom-right-radius:$radius400;}

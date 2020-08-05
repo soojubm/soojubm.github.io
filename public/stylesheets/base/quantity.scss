@@ -1,7 +1,7 @@
 
 // qty
 .quantity {max-width:10rem;height:$cell-light;text-align:center;position:relative;}
-.quantity-input {width:calc(100% - 64px);height:100%;background:$gray100;border:$border100;box-sizing:border-box;font-family:inherit;font-size:1rem;text-align:center;}
+.quantity-input {width:calc(100% - 64px);height:100%;background:var(--gray100);border:$border100;box-sizing:border-box;font-family:inherit;font-size:1rem;text-align:center;}
 .quantity-decrement {width:$cell-light;height:$cell-light;border:$border100;border-radius:$radius400 0 0 $radius400;position:absolute;left:1px;top:0px;}
 .quantity-increment {width:$cell-light;height:$cell-light;border:$border100;border-radius:0 $radius400 $radius400 0;position:absolute;right:1px;top:0px;}
 .quantity-decrement.is-disabled {opacity:.5;cursor:not-allowed;}

@@ -10,9 +10,9 @@
 .faq-contact-description {width: 50%;margin: 1rem auto;font-size: 1.25rem;}
 .faq-contact-form {width:50%;margin:4rem 0 8rem;}
 
-.faq-reaction {margin:8rem 0;border-top:1px solid $gray100;border-bottom:1px solid $gray100;text-align:center;padding:3rem 5% 4rem;}
-.faq-reaction-title {margin:0 0 1rem 0;font-size:$subhead;color:$gray800;}
-.faq-reaction-button {margin:0 2rem;color:$gray400;}
+.faq-reaction {margin:8rem 0;border-top:1px solid var(--gray100);border-bottom:1px solid var(--gray100);text-align:center;padding:3rem 5% 4rem;}
+.faq-reaction-title {margin:0 0 1rem 0;font-size:$subhead;color:var(--gray800);}
+.faq-reaction-button {margin:0 2rem;color:var(--gray400);}
 .faq-reaction-button span {display:block;font-size:2rem;}
 
 // .marquee {

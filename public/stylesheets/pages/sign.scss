@@ -9,13 +9,13 @@ $container-auth: 400px;
 .login-remember {margin:1rem 0;}
 .login-divider {margin:12px auto;text-align:center;position:relative;z-index:1;} // separator
 .login-divider:before {content:'';display:block;width:100%;height:1px;background:#e9e9e9;position:absolute;top:50%;transform:translateY(-1px);}
-.login-divider:after {content:'또는';width:4rem;line-height:24px;background:$gray0;font-size:12px;color:$gray400;position:absolute;left:50%;top:0;transform:translateX(-50%);}
+.login-divider:after {content:'또는';width:4rem;line-height:24px;background:var(--gray0);font-size:12px;color:var(--gray400);position:absolute;left:50%;top:0;transform:translateX(-50%);}
 .login-foot-submit {@include button-primary;width:100%;}
 .login-social {}
 .login-social-facebook {@include button-primary;width:100%;background-color:$color-facebook;}
 .login-social-twitter {background:#4ab3f4;}
 .login-social-naver {margin-bottom:8px;background:#3bcc15;}
-.login-social-kakao {float:left;width:49%;color:$gray0;margin-right:2%;background:#f9df34;}
+.login-social-kakao {float:left;width:49%;color:var(--gray0);margin-right:2%;background:#f9df34;}
 .login-option {margin:2rem 0;text-align:center;}
 .login-option-link {margin:0 1rem;}
 .login-fail {display:block;margin:2rem 0 1rem;color:$color-negative;}
@@ -23,17 +23,17 @@ $container-auth: 400px;
 .signup {max-width:$container-auth;margin:0 auto;padding:5rem 5% 10rem;}
 .signup-head {}
 .signup-head-title {margin:0 0 1rem 0;font-size:1.5rem;}
-.signup-head-description {color:$gray800;}
+.signup-head-description {color:var(--gray800);}
 .signup-foot {margin:3rem 0;}
 .signup-foot-submit {@include button-primary;width:100%;}
 .signup .textfield {margin:2rem 0;}
 .signup-terms {}
-.signup-terms-content {height:120px;margin:8px 0 24px;padding:8px 16px;border:$border100;box-sizing:border-box;font-size:12px;color:$gray400;overflow-y:scroll;}
+.signup-terms-content {height:120px;margin:8px 0 24px;padding:8px 16px;border:$border100;box-sizing:border-box;font-size:12px;color:var(--gray400);overflow-y:scroll;}
 
 .password {max-width:560px;margin:0 auto;padding:5rem 5% 20rem;position:relative;}
-.password-head {margin-bottom:3rem;}
+.password-head {margin-bottom:3rem;position:relative;}
 .password-title {margin:0 0 .5rem 0;font-size:14px;}
-.password-description {font-size:1.5rem;line-height:1.4;color:$gray800;}
+.password-description {font-size:1.5rem;line-height:1.4;color:var(--gray800);}
 .password-submit {float:left;width:200px;max-width:50%;}
 .password-link {float:right;margin-top:16px;}
 .password-foot {margin:1rem 0 0;}

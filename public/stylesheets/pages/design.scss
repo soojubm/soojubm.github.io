@@ -1,10 +1,10 @@
 .color {overflow:hidden;}
 .color-item {position:relative;}
-.color-item.is-gray100 div {background:$gray100;}
-.color-item.is-gray200 div {background:$gray200;}
-.color-item.is-gray400 div {background:$gray400;}
-.color-item.is-gray600 div {background:$gray600;}
-.color-item.is-gray800 div {background:$gray800;}
+.color-item.is-gray100 div {background:var(--gray100);}
+.color-item.is-gray200 div {background:var(--gray200);}
+.color-item.is-gray400 div {background:var(--gray400);}
+.color-item.is-gray600 div {background:var(--gray600);}
+.color-item.is-gray800 div {background:var(--gray800);}
 .color-item.is-positive div {background:$color-positive;}
 .color-item.is-red100 div {background:$red100;}
 .color-item.is-red800 div {background:$red800;}
@@ -12,7 +12,7 @@
 .color-item.is-primary200 div {background:$color-primary;}
 .color-item.is-gradient div {background-image:linear-gradient(106deg,#ff3a4e,#7e4cff);}
 .color-item div {width:48px;height:48px;border-radius:$radius400;background:$color-primary;position:relative;}
-.color-item figcaption {display:none;background:$gray0;border-radius:$radius400;letter-spacing:1px;overflow:hidden;padding:0 .5rem;font-size:10px;position:absolute;left:.5rem;bottom:.5rem;}
+.color-item figcaption {display:none;background:var(--gray0);border-radius:$radius400;letter-spacing:1px;overflow:hidden;padding:0 .5rem;font-size:10px;position:absolute;left:.5rem;bottom:.5rem;}
 .color-item figcaption span {display:block;transition:all .4s;}
 .color-item figcaption b {}
 
@@ -25,7 +25,7 @@
 .design-article {margin:0 0 6rem 0;position:relative;}
 .design-article-title {margin:0 0 1rem 0;font-size:$subhead;;}
 .design-article-description {margin:0 0 1.5rem 0;}
-.design-article-more {font-size:12px;color:$gray800;text-decoration:underline;position:absolute;right:0;top:0;}
+.design-article-more {font-size:12px;color:var(--gray800);text-decoration:underline;position:absolute;right:0;top:0;}
 
 .design-article.is-scrolled {animation:fadeup .8s;}
 
@@ -57,7 +57,7 @@
 .pagenav-link {display:flex;align-items:center;margin:0 0 .5rem 0;}
 .pagenav-link:hover {text-decoration:underline;}
 .pagenav-link:last-child {margin:.5rem 0 0 0;}
-.pagenav-link i {display:flex;align-items:center;justify-content:center;margin-right:1rem;background:$gray100;}
+.pagenav-link i {display:flex;align-items:center;justify-content:center;margin-right:1rem;background:var(--gray100);}
 
 
 @keyframes spinAround{

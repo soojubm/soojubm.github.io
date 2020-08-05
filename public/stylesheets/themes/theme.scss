@@ -1,53 +1,46 @@
 
 .darkmode * {
-  // $gray100: #333;
-  // $gray800: #f1f3f4;
+  // var(--gray100): #333;
+  // var(--gray800): #f1f3f4;
   .profile-user-name, .card-title {
-    color: $gray0;
+    color: var(--gray0);
   }
   .hero-background {
-    background:$gray800;
+    background:var(--gray800);
   }
 }
-
-// $gray0: $gray0; // white for dark theme
-// $gray100: #f1f3f4; // bg
-// $gray200: #dadce0; // divider border
-// $gray400: #999; // caption
-// $gray600: #666; // body
-// $gray800: #333; // bg || heading
 
 
 .darkmode {
 
   background: rgba(0,0,0,9);
-  color: $gray400;
+  color: var(--gray400);
 
   h1, h2, h3, h4, h5, h6 {
-    color: $gray0;
+    color: var(--gray0);
   }
   .navbar {background:#000;}
   .navbar-menu-item,
-  .navbar-menu-item a {color:$gray0;}
+  .navbar-menu-item a {color:var(--gray0);}
 
   .header.is-fixed {background:#000;}
-  .is-white.is-fixed .header-title {color:$gray0;}
+  .is-white.is-fixed .header-title {color:var(--gray0);}
 
-  .toast {background: $gray800;}
+  .toast {background: var(--gray800);}
 
   .design-body-title,
   .darkmode h1 {
-    color: $gray0;
+    color: var(--gray0);
   }
 
 
   .statistic-value {
-    color:$gray0
+    color:var(--gray0)
   }
   // userCard
   .user-name,
   .user-email + button {
-    color:$gray0;
+    color:var(--gray0);
   }
 }
 
@@ -68,6 +61,6 @@
 // @media (prefers-color-scheme: light) {
 //   .themed {
 //     background: white;
-//     color: $gray800;
+//     color: var(--gray800);
 //   }
 // }

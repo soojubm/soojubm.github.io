@@ -1,11 +1,11 @@
 .step {display:flex;justify-content:center;}
 .step-item {width:4rem;margin:0 1rem;text-align:center;}
-.step-item-icon {@include box-light;margin:0 auto;color:$gray800;}
+.step-item-icon {@include box-light;margin:0 auto;color:var(--gray800);}
 .step-item-title {margin-top:.5rem;}
 .step-space {margin:-.5rem 0 0 0;}
-.step-space-dot {float:left;display:block;width:3px;height:3px;margin:21px 2px;border-radius:50%;background:$gray400;}
+.step-space-dot {float:left;display:block;width:3px;height:3px;margin:21px 2px;border-radius:50%;background:var(--gray400);}
 
-.is-active .step-item-icon {/*width:40px;height:40px;margin-top:-4px;*/background:$color-primary;color:$gray100;}
+.is-active .step-item-icon {/*width:40px;height:40px;margin-top:-4px;*/background:$color-primary;color:var(--gray100);}
 .is-active .step-item-title {/*margin-top:3px;*/color:$color-primary;}
 .is-active .step-space-dot {background:$color-primary;}
 

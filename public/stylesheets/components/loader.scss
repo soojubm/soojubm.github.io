@@ -1,5 +1,5 @@
-.loader {position:fixed;left:0;right:0;top:0;bottom:0;background:$gray100;z-index:10;transition:all .4s;}
+.loader {position:fixed;left:0;right:0;top:0;bottom:0;background:var(--gray100);z-index:10;transition:all .4s;}
 .loader.is-hidden {opacity:0;visibility:hidden;z-index:-1;}
 .loader-object {width:2rem;height:2rem;border-radius:50%;position:fixed;left:50%;top:50%;z-index:10;/*margin:-40px 0 0 -40px;*/background:$color-primary;animation:scaleout .8s infinite ease;}
-.loader-object.is-default {background:$gray100;}
+.loader-object.is-default {background:var(--gray100);}
 .loader-object.is-clickable {background:crimson;}

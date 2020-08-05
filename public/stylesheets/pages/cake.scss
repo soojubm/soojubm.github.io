@@ -4,25 +4,25 @@
 .cake-background {height:400px;background:url('/public/images/newman.jpg') no-repeat 0 0 fixed;position:absolute;left:-100%;right:-100%;top:0;z-index:-1;animation: fadeup 0.6s cubic-bezier(0.455, 0.03, 0.515, 0.955) forwards;}
 .cake-head-title {font-size:1.75rem;}
 .cake-head-description {color:rgba(255,255,255,.4);}
-.cake ul {height:184px;margin:0rem -3rem 0;padding:2rem 3rem 0;background:$gray0;position:relative;}
+.cake ul {height:184px;margin:0rem -3rem 0;padding:2rem 3rem 0;background:var(--gray0);position:relative;}
 .cake ul li {margin:0 0 .25rem 0;padding:0;}
 .cake ul li::before {display:none;}
 .cake ul li b {float:left;width:72px;margin:0 1rem 0 0;}
 .cake ul li code {margin:0 0 0 .25rem;}
-.cake-summary {height:256px;background:$gray0;padding:0 50% 2rem 3rem;position: absolute;left: -3rem;  right: -3rem;}
+.cake-summary {height:256px;background:var(--gray0);padding:0 50% 2rem 3rem;position: absolute;left: -3rem;  right: -3rem;}
 .cake-summary b {}
 .cake-score {text-align:center;position:absolute;right:420px;top:56px;}
 .cake-score-label {display:block;margin:.25rem 0 0 0;}
-.cake-score-value {display:inline-block;width:48px;height:48px;background:$gray0;line-height:48px;border-radius:$radius400;font-size:1.5rem;}
+.cake-score-value {display:inline-block;width:48px;height:48px;background:var(--gray0);line-height:48px;border-radius:$radius400;font-size:1.5rem;}
 .cake-poster2 {width:400px;height:600px;overflow:hidden;box-shadow:$shadow400;position: absolute;right:0;top:4rem;z-index:1;}
 .cake-poster2 img {animation: fadeup 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955) forwards .2s;}
 
-// .cake-poster {height:240px;margin:2rem -3rem 0;background:$gray0;position:absolute;left:0;right:0;}
+// .cake-poster {height:240px;margin:2rem -3rem 0;background:var(--gray0);position:absolute;left:0;right:0;}
 // .is-scrolled.cake-background {height:320px;}
 // .is-scrolled.cake-poster {height:200px;}
 // img.is-scrolled {height:600px;}
 
-.cake-info {width:1080px;margin:0 auto;padding:2rem 0 2.25rem;border-top:1px solid $gray200;border-bottom:1px solid $gray200;position:relative;}
+.cake-info {width:1080px;margin:0 auto;padding:2rem 0 2.25rem;border-top:1px solid var(--gray200);border-bottom:1px solid var(--gray200);position:relative;}
 .cake-info + .cake-info {border-top:none;}
 .cake-info h2 {padding:2rem 0;font-size:$subhead;;position:absolute;left:0;top:0;}
 .cake-info p {padding-left:320px;}
@@ -41,7 +41,7 @@
   .cake-summary b {}
   .cake-score {text-align:center;position:absolute;right:420px;top:56px;}
   .cake-score-label {display:block;margin:.25rem 0 0 0;}
-  .cake-score-value {display:inline-block;width:48px;height:48px;background:$gray0;line-height:48px;border-radius:$radius400;font-size:1.5rem;}
+  .cake-score-value {display:inline-block;width:48px;height:48px;background:var(--gray0);line-height:48px;border-radius:$radius400;font-size:1.5rem;}
   .cake-poster2 {width:60%;height:auto;margin:0 0 0 5%;position: static;right:auto;top:auto;}
   .cake-poster2 img {animation: fadeup 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955) forwards .2s;}
 

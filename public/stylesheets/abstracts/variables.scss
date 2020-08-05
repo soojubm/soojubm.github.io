@@ -5,25 +5,15 @@ $container600: 1280px;
 $container400: 800px;
 $container200: 480px;
 
+
+$width-medium: 800px;
+$width-large: 1080px;
+$width-huge: 1440px;
+
 $avatar100: 16px;
 $avatar200: 32px;
 $avatar400: 48px;
 $avatar600: 80px;
-
-@mixin container {
-  margin: 0 auto;
-  padding: 0 5%;
-  background-color: $gray0;
-  border-radius: $radius400;
-  position: relative;
-}
-
-@mixin outer {
-  background-color: $gray0;
-  border-radius: $radius400;
-  box-shadow: $shadow400;
-  position: relative;
-}
 
 
 $cell-large: 80px;
@@ -31,47 +21,23 @@ $cell-medium: 48px;
 $cell-light: 32px;
 $cell-small:16px;
 
-@mixin box {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color:$gray100;
-  overflow:hidden;
-  border-radius:$radius400;
-  position:relative;
-  // &:hover {
-  //   background:darken($gray100, 5%)
-  // }
-}
-@mixin box-large {
-  @include box;
-  width: $cell-large;
-  height: $cell-large;
-}
-@mixin box-light {
-  @include box;
-  width: $cell-light;
-  height: $cell-light;
-}
-@mixin box-medium {
-  @include box;
-  width: $cell-medium;
-  height: $cell-medium;
-}
-
-@mixin box-small {
-  @include box;
-  width: $cell-small;
-  height: $cell-small;
-}
-
-@mixin subhead {
-  margin: 0 0 1rem 0;
-  font-size: 1.25rem;
-}
 
 
-$fontstack: ('Helvetica', sans-serif);
+:root {
+  --fontstack: 'Asap', 'AritaDotum', 'Apple SD Gothic Neo', sans-serif;
+
+  // ! fontSize
+
+  // ! colours
+  --gray0: #fff; // white for dark theme
+  --gray100: #f1f5f6; // bg
+  --gray200: #dadce0; // divider border
+  --gray400: #999; // caption
+  --gray600: #454545; // body
+  --gray800: #161616; // bg || heading
+  
+}
+
 $headline: 3rem;
 $title: 2rem;
 $subhead: 1.25rem;
@@ -79,12 +45,6 @@ $body: 1rem;
 $caption: 0.75rem;
 
 
-$gray0: #fff; // white for dark theme
-$gray100: #f1f5f6; // bg
-$gray200: #dadce0; // divider border
-$gray400: #999; // caption
-$gray600: #454545; // body
-$gray800: #161616; // bg || heading
 
 $red100: #fff0f5;
 $red800: #da1e28;
@@ -115,16 +75,13 @@ $shadow100: 0px 1px 1px rgba(136, 26, 26, 0.075); // unused
 $shadow400: 1px 1px 4px rgba(0, 0, 0, 0.2);
 $shadow450: 2px 4px 8px rgba(0, 0, 0, 0.2); // hover
 
-$border100: 1px solid $gray200;
+$border100: 1px solid var(--gray200);
 
 $radius400: 4px;
 
 $quote: 0;
 $placeholder: 0;
 
-$width-medium: 800px;
-$width-large: 1080px;
-$width-huge: 1440px;
 
 $bezier-base: cubic-bezier(0.455, 0.03, 0.515, 0.955);
 $transition-base: all 0.4s $bezier-base;
@@ -152,11 +109,6 @@ $height-header: 64px;
   .linebreak {display:inline;}
 }
 
-@media (--viewport-small) {
-  $gray0: #333;
-  $gray800: #f1f5f6;
-}
-
 .row {
   display: flex;
   align-items: center;
@@ -167,7 +119,7 @@ $height-header: 64px;
   margin: 2rem auto;
   padding: 0 2rem;
   box-sizing: border-box;
-  border: 1px solid $gray100;
+  border: 1px solid var(--gray100);
   // margin-right: -200px;
   // --spacer: 0 1.5rem;
 }
@@ -198,7 +150,7 @@ $height-header: 64px;
 .row.is-head {
   border-top: none;
   font-size: 12px;
-  color: $gray400;
+  color: var(--gray400);
 }
 
 .col {
@@ -209,7 +161,6 @@ $height-header: 64px;
 
 
 .is-facebook {color:$color-facebook !important;}
-.is-twitter {color:$color-twitter !important;}
 
 .is-fullwidth {display:block;width:100%;}
 .is-disabled {cursor:not-allowed;}
@@ -249,4 +200,63 @@ $height-header: 64px;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical; 
+}
+
+
+
+
+
+@mixin box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color:var(--gray100);
+  overflow:hidden;
+  border-radius:$radius400;
+  position:relative;
+  // &:hover {
+  //   background:darken(var(--gray100), 5%)
+  // }
+}
+@mixin box-large {
+  @include box;
+  width: $cell-large;
+  height: $cell-large;
+}
+@mixin box-light {
+  @include box;
+  width: $cell-light;
+  height: $cell-light;
+}
+@mixin box-medium {
+  @include box;
+  width: $cell-medium;
+  height: $cell-medium;
+}
+
+@mixin box-small {
+  @include box;
+  width: $cell-small;
+  height: $cell-small;
+}
+
+@mixin subhead {
+  margin: 0 0 1rem 0;
+  font-size: 1.25rem;
+}
+
+
+@mixin container {
+  margin: 0 auto;
+  padding: 0 5%;
+  background-color: var(--gray0);
+  border-radius: $radius400;
+  position: relative;
+}
+
+@mixin outer {
+  background-color: var(--gray0);
+  border-radius: $radius400;
+  box-shadow: $shadow400;
+  position: relative;
 }

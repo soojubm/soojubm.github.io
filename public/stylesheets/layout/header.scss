@@ -6,17 +6,15 @@
 .topbar-backdrop {height:32px;padding:1rem 0;}
 .topbar-cta {@include button-tertiary;min-width:auto;margin-left:auto;padding:$padding100;font-size:12px;}
 
-
-.is-sticky-topbar .topbar {background:$gray0;border-radius:0;position:fixed;top:0;left:0;right:0;z-index:5;}
+.is-sticky-topbar .topbar {background:var(--gray0);border-radius:0;position:fixed;top:0;left:0;right:0;z-index:5;}
 .is-sticky-topbar .topbar-title {display:flex;align-items:center;}
-.is-white .topbar-back {color:$gray0;}
-.is-sticky-topbar .is-white .topbar-back {color:$gray800;}
+.is-white .topbar-back {color:var(--gray0);}
+.is-sticky-topbar .is-white .topbar-back {color:var(--gray800);}
 
 @media (--viewport-small) {
-  .topbar {width:auto;padding:0 5%;}
+  .topbar {width:auto;padding:1rem 5%;}
   .is-sticky-topbar .topbar {height:32px;}
 }
-
 
 .dropdown {
   margin:1rem 0;
@@ -29,7 +27,7 @@
   width:auto;
   height:0;
   padding:8px 0;
-  background:$gray0;
+  background:var(--gray0);
   position:absolute;
   z-index:5;
   box-shadow:$shadow400;
@@ -49,7 +47,7 @@
   display:block;
   padding:0.25rem 1rem;
   font-size:12px;
-  color:$gray600;
+  color:var(--gray600);
   position:relative;
   z-index:1;
 }

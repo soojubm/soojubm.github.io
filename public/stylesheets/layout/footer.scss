@@ -1,4 +1,4 @@
-.subscribe {background:$gray200;padding:4rem 10% 6rem;text-align:center;position:relative;z-index:1;}
+.subscribe {background:var(--gray200);padding:4rem 10% 6rem;text-align:center;position:relative;z-index:1;}
 .subscribe-title {font-size:1.5rem;}
 .subscribe-description {margin:1rem 0 3rem 0;}
 .subscribe-field {width:50%;max-width:400px;margin:2rem auto .5rem;}
@@ -6,19 +6,19 @@
 .subscribe-helper {display:block;margin:.5rem 0 0 0;font-size:.8rem;}
 
 
-.footer {background:$gray0;overflow:hidden;margin:0 auto;padding:4rem 10% 8rem;box-sizing:border-box;position:relative;z-index:4;}
+.footer {background:var(--gray0);overflow:hidden;margin:0 auto;padding:4rem 10% 8rem;box-sizing:border-box;position:relative;z-index:4;}
 .footer-background {position:absolute;left:-50%;right:-50%;top:0;bottom:0;z-index:-1;}
 .footer-sitemap {float:left;width:50%;position:relative;}
 .footer-sitemap:after {content:'';display:block;clear:both;}
 .footer-sitemap-title {margin:0 0 1rem 0;font-size:$subhead;}
 .footer-sitemap-item {float:left;width:25%;}
-.footer-sitemap-item-title {display:inline-block;margin:0 0 .75rem 0;font-size:14px;color:$gray400;}
-.footer-sitemap-item-link {display:block;color:$gray600;}
+.footer-sitemap-item-title {display:inline-block;margin:0 0 .75rem 0;font-size:14px;color:var(--gray400);}
+.footer-sitemap-item-link {display:block;color:var(--gray600);}
 .footer-sitemap-item-link:hover {color:$color-primary;}
 .footer-terms {margin:0 0 1rem 0;}
 .footer-terms-link {margin:0 1rem 0 0;}
 .footer-address {float:right;width:50%;}
-.footer-address:before {content:' ';display:block;height:inherit;/*border-top:1px solid $gray200;*/position:absolute;left:-50%;right:-50%;top:0;bottom:0;z-index:-1;}
+.footer-address:before {content:' ';display:block;height:inherit;/*border-top:1px solid var(--gray200);*/position:absolute;left:-50%;right:-50%;top:0;bottom:0;z-index:-1;}
 .footer-address-logo {display:block;margin:1rem 0;filter:grayscale(100%);opacity:.5;}
 .footer-address-info {}
 .footer-copyright {display:block;margin:2rem 0 0 0;}

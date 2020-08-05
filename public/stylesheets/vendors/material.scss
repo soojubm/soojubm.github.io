@@ -36,7 +36,7 @@
 	font-feature-settings: 'liga';
 	
 		// 재선언
-		color:$gray0;
+		color:var(--gray0);
 		font-size:18px;
 }
 
