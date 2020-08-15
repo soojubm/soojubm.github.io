@@ -1,7 +1,7 @@
 
 
 
-.setting {margin:2rem 10% 8rem;}
+.setting {max-width:800px;margin:2rem auto 8rem;padding:0 5%;}
 .setting-head {margin:0 0 2rem;}
 .setting-head-title {font-size:2rem;}
 .setting-head-description {margin:1rem 0 0 0;}
@@ -10,9 +10,9 @@
 .setting-body-heading {margin:0 0 1.5rem 0;font-size:$subhead;}
 .setting-body-description {margin:-1rem 0 1.5rem 0;}
 
-.setting-row {display:flex;align-items:center;min-height:74px;padding:1.5rem 0;box-sizing:border-box;overflow:hidden;border-bottom:$border100;font-size:$subhead;cursor:pointer;position:relative;}
+.setting-row {display:flex;align-items:center;min-height:74px;padding:1.5rem 0;box-sizing:border-box;overflow:hidden;border-bottom:$border100;cursor:pointer;position:relative;}
 .setting-row:nth-of-type(1) {border-top:$border100;}
-.setting-row-label {width:12rem;font-size:1rem;}
+.setting-row-label {width:12rem;font-size:1rem;color:var(--gray400);}
 .setting-row-value {color:var(--gray800);}
 .setting-row-change {float:right;font-size:1rem;position:absolute;right:1rem;top:50%;transform:translateY(-50%);}
 .setting-row-change b {display:inline-block;background:var(--gray0);transform:translateX(200px);transition:all .5s;position:relative;z-index:1;}

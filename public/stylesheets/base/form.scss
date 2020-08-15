@@ -83,7 +83,7 @@ input[type=checkbox]:checked + label + input {display:block;margin:0.75rem 0 1.5
 
 
 .switch {display:block;position:relative;}
-input[type=checkbox][role=switch] + label {display:block;height:20px;padding-left:64px;line-height:20px;cursor:pointer;}
+input[type=checkbox][role=switch] + label {display:block;height:20px;padding-left:64px;cursor:pointer;}
 input[type=checkbox][role=switch] + label:before {content:'';display:block;width:48px;height:20px;border:none;border-radius:$radius400;box-sizing:border-box;background:var(--gray200);position:absolute;left:0;top:0;transition:background .2s;}
 input[type=checkbox][role=switch] + label:after {content:'';display:block;/*18px*/width:16px;height:16px;border:none;border-radius:$radius400;background:var(--gray0);box-shadow:$shadow400;position:absolute;left:2px;top:2px;transition:left .2s;transform:rotate(0deg);}
 input[type=checkbox][role=switch]:checked + label {color:$color-primary;}

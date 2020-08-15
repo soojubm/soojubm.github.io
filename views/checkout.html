@@ -3,6 +3,7 @@
 <main class="checkout">
   <header class="checkout-head">
     <!-- <div class="checkout-head-eyebrow">주문확인</div> -->
+    <div class="checkout-head-background"></div>
     <h1 class="checkout-head-title">안녕, 콩 😎<br />주문정보를 확인해주세요<i style="font-style:italic;">!</i></h1>
   </header>
 
@@ -14,23 +15,26 @@
     </aside>
     <h2 class="checkout-product-title">주문상품</h2>
     <div class="checkout-product-item">
-      <div class="checkout-product-item-media"></div>
+      <div class="checkout-product-item-media">
+        <span class="checkout-product-item-media-badge">2</span>
+      </div>
       <h3 class="checkout-product-item-name">뉴닉이 풀어 쓴 경제상식사전</h3>
       <div class="checkout-product-item-text">Order Type: license for 1-3 Users</div>
       <div class="checkout-product-item-price">₩44,612</div>
     </div>
     <hr style="margin:2rem -2.5rem 1.5rem;" />
-    <div class="checkout-product-price1">
-      <div class="checkout-product-price1-label">서비스 수수료</div>
-      <div class="checkout-product-price1-value">₩44,612</div>
+    <div class="checkout-product-subtotal">
+      <div class="checkout-product-subtotal-label">서비스 수수료</div>
+      <div class="checkout-product-subtotal-value">₩44,612</div>
     </div>
-    <div class="checkout-product-price1">
-      <div class="checkout-product-price1-label">배송료</div>
-      <div class="checkout-product-price1-value">₩44,612</div>
+    <div class="checkout-product-shipping">
+      <div class="checkout-product-shipping-label">배송료</div>
+      <div class="checkout-product-shipping-value">₩44,612</div>
     </div>
-    <footer class="checkout-product-price2">
-      <div class="checkout-product-price2-label">결제예정 금액</div>
-      <div class="checkout-product-price2-value">₩44,612</div>
+    <hr style="margin:1.5rem -2.5rem 1rem;" />
+    <footer class="checkout-product-total">
+      <div class="checkout-product-total-label">결제예정 금액</div>
+      <div class="checkout-product-total-value">₩44,612</div>
     </footer>
   </section>
 
@@ -40,20 +44,28 @@
 	</section> -->
   <section class="checkout-shipping">
     <h2 class="checkout-shipping-title">주문자 정보</h2>
-    <div class="checkout-shipping-name">
-      <div class="checkout-shipping-name-emoji">🙍</div>
-      <div class="checkout-shipping-name-label">받는 분 이름</div>
-      <div class="checkout-shipping-name-value">수줍이</div>
+    <div class="checkout-shipping-name textfield">
+      <!-- <div class="checkout-shipping-name-emoji">🙍</div> -->
+      <label class="checkout-shipping-name-label textfield-label">받는 분 이름</label>
+      <input class="checkout-shipping-address-value textfield-input" type="text" name="email" id="login-email" placeholder="soojubm@gmail.com" />
     </div>
-    <div class="checkout-shipping-phone">
-      <div class="checkout-shipping-phone-emoji">☎️</div>
-      <div class="checkout-shipping-phone-label">받는 분 연락처</div>
-      <div class="checkout-shipping-phone-value">010-3121-7045</div>
+    <div class="checkout-shipping-phone textfield">
+      <label class="checkout-shipping-phone-label textfield-label">받는 분 연락처</label>
+      <input class="checkout-shipping-address-value textfield-input" type="text" name="email" id="login-email" placeholder="soojubm@gmail.com" />
     </div>
-    <div class="checkout-shipping-address">
-      <div class="checkout-shipping-address-emoji">📍</div>
-      <div class="checkout-shipping-address-label">배송 주소</div>
-      <div class="checkout-shipping-address-value">서울시 강서구 화곡로 344</div>
+    <div class="checkout-shipping-address textfield">
+      <label class="checkout-shipping-address-label textfield-label">배송 주소</label>
+      <input class="checkout-shipping-address-value textfield-input" type="text" name="email" id="login-email" placeholder="soojubm@gmail.com" />
+    </div>
+            <!-- <label class="textfield-label" for="login-email">주소</label> -->
+          <!-- <div class="order-address-address2 textfield">
+            <label class="textfield-label" for="login-email">상세주소</label>
+            <input class="textfield-input" type="text" name="email" id="login-email" placeholder="soojubm@gmail.com" autofocus />
+          </div>
+          <div class="order-address-zipcode textfield">
+            <label class="textfield-label" for="login-email">우편번호</label>
+            <input class="textfield-input" type="text" name="email" id="login-email" placeholder="soojubm@gmail.com" autofocus />
+          </div> -->
     </div>
   </section>
 
@@ -75,20 +87,33 @@
   </section>
 
   <footer class="checkout-foot">
-    <button>결제하기</button>
+    <button class="checkout-foot-pay">결제하기</button>
+    <button class="checkout-foot-cart">장바구니 보기</button>
   </footer>
 </main>
 
 <main class="order">
   <div class="order-item">
-		<time class="order-item-date">2020-04-20</time>
-		<h3 class="order-item-name">Basic 월 정기 결제</h3>
-		<div class="order-item-price">45,000원 / 2개</div>
-		<hr style="margin:1rem" />
-		<!-- <div class="order-item-status">결제완료</div> -->
-		<div class="order-item-id">주문 번호: BGW2eA-McDEh</div>
-    <dl>
-      <!-- <dt>구독 상품</dt>
+    <header class="order-item-head">
+      <span class="order-item-head-status">결제완료</span>
+      <h2 class="order-item-name">
+        Basic 월 정기 결제
+      </h2>
+      <time class="order-item-date">2020/04/20</time>
+      <!-- <div class="order-item-id">주문 번호: BGW2eA-McDEh</div> -->
+    </header>
+    <div class="order-item-body">
+      <figure class="order-item-thumbnail"></figure>
+    </div>
+
+
+
+    <!-- <div class="order-item-product">
+      <h3 class="order-item-product--name">Basic 월 정기 결제</h3>
+      <div class="order-item-product--price">45,000원 / 2개</div>
+    </div> -->
+    <!-- <dl>
+      <dt>구독 상품</dt>
 			<dd></dd>
       <dt>주문 일시</dt>
 			<dd>2020-04-20 09:35:48</dd>
@@ -102,7 +127,8 @@
       <dt>주문 상태</dt>
       <dd>결제 완료</dd>
       <dt>결제 수단</dt>
-      <dd>월 정기 결제</dd> -->
-    </dl>
+      <dd>월 정기 결제</dd>
+    </dl> -->
   </div>
+  
 </main>
