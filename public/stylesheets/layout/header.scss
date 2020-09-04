@@ -1,5 +1,5 @@
 .topbar {display:flex;align-items:center;padding:1rem 10%;border-radius:$radius400;position:absolute;left:0;right:0;z-index:3;}
-.topbar-back {display:flex;align-items:center;}
+.topbar-back {}
 .topbar-back-icon {@include box-light;margin:0 1rem 0 0;}
 .topbar-back-icon {transform:rotate(180deg);}
 .topbar-title {font-size:$subhead;;position:absolute;left:50%;transform:translateX(-50%);z-index:5;}

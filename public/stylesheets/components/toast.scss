@@ -4,6 +4,8 @@
 .dialog-description {margin:.5rem 0 1.5rem;}
 .dialog-footer {display:flex;justify-content:space-around;margin:2rem -2rem 0;padding:.25rem;border-top:1px solid var(--gray100)}
 .dialog-footer button {width:100%;}
+.dialog-footer-close {@include button-text;color:var(--gray400);}
+.dialog-footer-confirm {@include button-text;color:$color-primary;}
 .dialog-close {@include box-light;position:absolute;right:.5rem;top:.5rem;}
 
 .toast {max-width:400px;position:fixed;left:1rem;bottom:1rem;z-index:8;}

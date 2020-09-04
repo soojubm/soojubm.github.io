@@ -51,4 +51,6 @@ $container-auth: 400px;
 .delete-why {padding:0 0%;}
 .delete-why-title {font-size:$subhead;}
 .delete-why-description {margin:1rem 0;}
-.delete-why-action {padding:4rem 0;}
+.delete-action {padding:4rem 0;}
+.delete-action-confirm {@include button-primary;border-color:$color-negative;background:$color-negative;}
+.delete-action-back {@include button-text;}

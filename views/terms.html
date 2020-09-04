@@ -1,11 +1,11 @@
 <main class="terms">
-<script>
-const sum = (...rest) => {
-	return rest.reduce((acc, cur) => acc + cur, 0);
-} 
-log(sum(1,2,3,4,5));
-// 15
-/*
+  <script>
+    const sum = (...rest) => {
+      return rest.reduce((acc, cur) => acc + cur, 0)
+    }
+    log(sum(1, 2, 3, 4, 5))
+    // 15
+    /*
 // array obj filtering
 const user = [
   { id: 1, content: '다현', checked: false },
@@ -33,7 +33,7 @@ var circle = {
 };
 circle.area
 */
-		/* scrollTop offsetTop
+    /* scrollTop offsetTop
 		const wizards = ['Hermione', 'Neville', 'Gandalf', 'Radagast'];
 		/*
 		let html = '';
@@ -42,7 +42,7 @@ circle.area
 		});
 		html = `<ul>${html}</ul>`;
 		*/
-/*
+    /*
 		// Create an unordered list
 		var list = document.createElement('ul');
 		var fragment = document.createDocumentFragment();
@@ -63,12 +63,12 @@ circle.area
 			location.replace('http://example.com/#' + initialPage);
 		}
 		*/
-		</script>
+  </script>
 
-		<script>
-		var fNumber = 10123.322;
-		var sNumber = parseFloat(fNumber.toFixed(2)).toLocaleString();
-			/*
+  <script>
+    var fNumber = 10123.322
+    var sNumber = parseFloat(fNumber.toFixed(2)).toLocaleString()
+    /*
 			const keyID = event.keyCode;
 			if( ( keyID >=48 && keyID <= 57 ) || ( keyID >=96 && keyID <= 105 ) ) {
 				console.log('숫자키');
@@ -77,34 +77,34 @@ circle.area
 			}
 			event.target.value.replace(/[^0-9]/g,'');
 			*/
-/*
+    /*
 
 			*/
-			// 재사용하려면 body 태그에 스티키 클래스를 따로 추가..
-			// 그러면 자바스크립트 훅 클래스 js에 클래ㅡ를 추가할 필요도 없음.
-			// <body class="js-sticky-porfile-head js-sticky-header">
-			// .js-sticky-profile-user .profile-user {}
-		</script>
+    // 재사용하려면 body 태그에 스티키 클래스를 따로 추가..
+    // 그러면 자바스크립트 훅 클래스 js에 클래ㅡ를 추가할 필요도 없음.
+    // <body class="js-sticky-porfile-head js-sticky-header">
+    // .js-sticky-profile-user .profile-user {}
+  </script>
 
-<script>
-		// function showNode (oNode) {
-		// 	var nLeft = 0, nTop = 0;
-		// 	for (var oItNode = oNode; oItNode; nLeft += oItNode.offsetLeft, nTop += oItNode.offsetTop, oItNode = oItNode.offsetParent);
-		// 	document.documentElement.scrollTop = nTop;
-		// 	document.documentElement.scrollLeft = nLeft;
-		// }
-		
-		// function showBookmark (sBookmark, bUseHash) {
-		// 	if (arguments.length === 1 || bUseHash) { location.hash = sBookmark; return; }
-		// 	var oBookmark = document.querySelector(sBookmark);
-		// 	if (oBookmark) { showNode(oBookmark); }
-		// }
+  <script>
+    // function showNode (oNode) {
+    // 	var nLeft = 0, nTop = 0;
+    // 	for (var oItNode = oNode; oItNode; nLeft += oItNode.offsetLeft, nTop += oItNode.offsetTop, oItNode = oItNode.offsetParent);
+    // 	document.documentElement.scrollTop = nTop;
+    // 	document.documentElement.scrollLeft = nLeft;
+    // }
 
-       /*
-       * nDuration: the duration in milliseconds of each frame
-       * nFrames: number of frames for each scroll
-       */
-/*
+    // function showBookmark (sBookmark, bUseHash) {
+    // 	if (arguments.length === 1 || bUseHash) { location.hash = sBookmark; return; }
+    // 	var oBookmark = document.querySelector(sBookmark);
+    // 	if (oBookmark) { showNode(oBookmark); }
+    // }
+
+    /*
+     * nDuration: the duration in milliseconds of each frame
+     * nFrames: number of frames for each scroll
+     */
+    /*
 		var showBookmark = (function () {
   var  _useHash, _scrollX, _pageYOffset, _nodeX, _nodeY, _itFrame, _scrollId = -1, _bookMark,
        nDuration = 200, nFrames = 10;
@@ -141,40 +141,121 @@ circle.area
   };
 })();
 */
-		// <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ultrices dolor ac dolor imperdiet ullamcorper. Suspendisse quam libero, luctus auctor mollis sed, malesuada condimentum magna. Quisque in ante tellus, in placerat est. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec a mi magna, quis mattis dolor. Etiam sit amet ligula quis urna auctor imperdiet nec faucibus ante. Mauris vel consectetur dolor. Nunc eget elit eget velit pulvinar fringilla consectetur aliquam purus. Curabitur convallis, justo posuere porta egestas, velit erat ornare tortor, non viverra justo diam eget arcu. Phasellus adipiscing fermentum nibh ac commodo. Nam turpis nunc, suscipit a hendrerit vitae, volutpat non ipsum.</p>
-		// <p>Duis lobortis sapien quis nisl luctus porttitor. In tempor semper libero, eu tincidunt dolor eleifend sit amet. Ut nec velit in dolor tincidunt rhoncus non non diam. Morbi auctor ornare orci, non euismod felis gravida nec. Curabitur elementum nisi a eros rutrum nec blandit diam placerat. Aenean tincidunt risus ut nisi consectetur cursus. Ut vitae quam elit. Donec dignissim est in quam tempor consequat. Aliquam aliquam diam non felis convallis suscipit. Nulla facilisi. Donec lacus risus, dignissim et fringilla et, egestas vel eros. Duis malesuada accumsan dui, at fringilla mauris bibendum quis. Cras adipiscing ultricies fermentum. Praesent bibendum condimentum feugiat.</p>
-		// <p id="myBookmark1">[&nbsp;<span class="intLink" onclick="showBookmark('#myBookmark2');">Go to bookmark #2</span>&nbsp;]</p>
-		// <p>Vivamus blandit massa ut metus mattis in fringilla lectus imperdiet. Proin ac ante a felis ornare vehicula. Fusce pellentesque lacus vitae eros convallis ut mollis magna pellentesque. Pellentesque placerat enim at lacus ultricies vitae facilisis nisi fringilla. In tincidunt tincidunt tincidunt. Nulla vitae tempor nisl. Etiam congue, elit vitae egestas mollis, ipsum nisi malesuada turpis, a volutpat arcu arcu id risus.</p>
-		// <p>Nam faucibus, ligula eu fringilla pulvinar, lectus tellus iaculis nunc, vitae scelerisque metus leo non metus. Proin mattis lobortis lobortis. Quisque accumsan faucibus erat, vel varius tortor ultricies ac. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec libero nunc. Nullam tortor nunc, elementum a consectetur et, ultrices eu orci. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque a nisl eu sem vehicula egestas.</p>
-		// <p>Aenean viverra varius mauris, sed elementum lacus interdum non. Phasellus sit amet lectus vitae eros egestas pellentesque fermentum eget magna. Quisque mauris nisl, gravida vitae placerat et, condimentum id metus. Nulla eu est dictum dolor pulvinar volutpat. Pellentesque vitae sollicitudin nunc. Donec neque magna, lobortis id egestas nec, sodales quis lectus. Fusce cursus sollicitudin porta. Suspendisse ut tortor in mauris tincidunt rhoncus. Maecenas tincidunt fermentum facilisis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-		// <p>Suspendisse turpis nisl, consectetur in lacinia ut, ornare vel mi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin non lectus eu turpis vulputate cursus. Mauris interdum tincidunt erat id pharetra. Nullam in libero elit, sed consequat lectus. Morbi odio nisi, porta vitae molestie ut, gravida ut nunc. Ut non est dui, id ullamcorper orci. Praesent vel elementum felis. Maecenas ornare, dui quis auctor hendrerit, turpis sem ullamcorper odio, in auctor magna metus quis leo. Morbi at odio ante.</p>
-		// <p>Curabitur est ipsum, porta ac viverra faucibus, eleifend sed eros. In sit amet vehicula tortor. Vestibulum viverra pellentesque erat a elementum. Integer commodo ultricies lorem, eget tincidunt risus viverra et. In enim turpis, porttitor ac ornare et, suscipit sit amet nisl. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque vel ultrices nibh. Sed commodo aliquam aliquam. Nulla euismod, odio ut eleifend mollis, nisi dui gravida nibh, vitae laoreet turpis purus id ipsum. Donec convallis, velit non scelerisque bibendum, diam nulla auctor nunc, vel dictum risus ipsum sit amet est. Praesent ut nibh sit amet nibh congue pulvinar. Suspendisse dictum porttitor tempor.</p>
-		// <p>Vestibulum dignissim erat vitae lectus auctor ac bibendum eros semper. Integer aliquet, leo non ornare faucibus, risus arcu tristique dolor, a aliquet massa mauris quis arcu. In porttitor, lectus ac semper egestas, ligula magna laoreet libero, eu commodo mauris odio id ante. In hac habitasse platea dictumst. In pretium erat diam, nec consequat eros. Praesent augue mi, consequat sed porttitor at, volutpat vitae eros. Sed pretium pharetra dapibus. Donec auctor interdum erat, lacinia molestie nibh commodo ut. Maecenas vestibulum vulputate felis, ut ullamcorper arcu faucibus in. Curabitur id arcu est. In semper mollis lorem at pellentesque. Sed lectus nisl, vestibulum id scelerisque eu, feugiat et tortor. Pellentesque porttitor facilisis ultricies.</p>
-		// <p id="myBookmark2">[&nbsp;<span class="intLink" onclick="showBookmark('#myBookmark1');">Go to bookmark #1</span> | <span class="intLink" onclick="showBookmark('#myBookmark1', false);">Go to bookmark #1 without using location.hash</span> | <span class="intLink" onclick="showBookmark('#myBookmark3');">Go to bookmark #3</span>&nbsp;]</p>
-		// <p>Phasellus tempus fringilla nunc, eget sagittis orci molestie vel. Nulla sollicitudin diam non quam iaculis ac porta justo venenatis. Quisque tellus urna, molestie vitae egestas sit amet, suscipit sed sem. Quisque nec lorem eu velit faucibus tristique ut ut dolor. Cras eu tortor ut libero placerat venenatis ut ut massa. Sed quis libero augue, et consequat libero. Morbi rutrum augue sed turpis elementum sed luctus nisl molestie. Aenean vitae purus risus, a semper nisl. Pellentesque malesuada, est id sagittis consequat, libero mauris tincidunt tellus, eu sagittis arcu purus rutrum eros. Quisque eget eleifend mi. Duis pharetra mi ac eros mattis lacinia rutrum ipsum varius.</p>
-		// <p>Fusce cursus pulvinar aliquam. Duis justo enim, ornare vitae elementum sed, porta a quam. Aliquam eu enim eu libero mollis tempus. Morbi ornare aliquam posuere. Proin faucibus luctus libero, sed ultrices lorem sagittis et. Vestibulum malesuada, ante nec molestie vehicula, quam diam mollis ipsum, rhoncus posuere mauris lectus in eros. Nullam feugiat ultrices augue, ac sodales sem mollis in.</p>
-		// <p id="myBookmark3"><em>Here is the bookmark #3</em></p>
-		// <p>Proin vitae sem non lorem pellentesque molestie. Nam tempus massa et turpis placerat sit amet sollicitudin orci sodales. Pellentesque enim enim, sagittis a lobortis ut, tempus sed arcu. Aliquam augue turpis, varius vel bibendum ut, aliquam at diam. Nam lobortis, dui eu hendrerit pellentesque, sem neque porttitor erat, non dapibus velit lectus in metus. Vestibulum sit amet felis enim. In quis est vitae nunc malesuada consequat nec nec sapien. Suspendisse aliquam massa placerat dui lacinia luctus sed vitae risus. Fusce tempus, neque id ultrices volutpat, mi urna auctor arcu, viverra semper libero sem vel enim. Mauris dictum, elit non placerat malesuada, libero elit euismod nibh, nec posuere massa arcu eu risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer urna velit, dapibus eget varius feugiat, pellentesque sit amet ligula. Maecenas nulla nisl, facilisis eu egestas scelerisque, mollis eget metus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi sed congue mi.</p>
-		// <p>Fusce metus velit, pharetra at vestibulum nec, facilisis porttitor mi. Curabitur ligula sapien, fermentum vel porttitor id, rutrum sit amet magna. Sed sit amet sollicitudin turpis. Aenean luctus rhoncus dolor, et pulvinar ante egestas et. Donec ac massa orci, quis dapibus augue. Vivamus consectetur auctor pellentesque. Praesent vestibulum tincidunt ante sed consectetur. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce purus metus, imperdiet vitae iaculis convallis, bibendum vitae turpis.</p>
-		// <p>Fusce aliquet molestie dolor, in ornare dui sodales nec. In molestie sollicitudin felis a porta. Mauris nec orci sit amet orci blandit tristique congue nec nunc. Praesent et tellus sollicitudin mauris accumsan fringilla. Morbi sodales, justo eu sollicitudin lacinia, lectus sapien ullamcorper eros, quis molestie urna elit bibendum risus. Proin eget tincidunt quam. Nam luctus commodo mauris, eu posuere nunc luctus non. Nulla facilisi. Vivamus eget leo rhoncus quam accumsan fringilla. Aliquam sit amet lorem est. Nullam vel tellus nibh, id imperdiet orci. Integer egestas leo eu turpis blandit scelerisque.</p>
-		// <p>Etiam in blandit tellus. Integer sed varius quam. Vestibulum dapibus mi gravida arcu viverra blandit. Praesent tristique augue id sem adipiscing pellentesque. Sed sollicitudin, leo sed interdum elementum, nisi ante condimentum leo, eget ornare libero diam semper quam. Vivamus augue urna, porta eget ultrices et, dapibus ut ligula. Ut laoreet consequat faucibus. Praesent at lectus ut lectus malesuada mollis. Nam interdum adipiscing eros, nec sodales mi porta nec. Proin et quam vitae sem interdum aliquet. Proin vel odio at lacus vehicula aliquet.</p>
-		// <p>Etiam placerat dui ut sem ornare vel vestibulum augue mattis. Sed semper malesuada mi, eu bibendum lacus lobortis nec. Etiam fringilla elementum risus, eget consequat urna laoreet nec. Etiam mollis quam non sem convallis vel consectetur lectus ullamcorper. Aenean mattis lacus quis ligula mattis eget vestibulum diam hendrerit. In non placerat mauris. Praesent faucibus nunc quis eros sagittis viverra. In hac habitasse platea dictumst. Suspendisse eget nisl erat, ac molestie massa. Praesent mollis vestibulum tincidunt. Fusce suscipit laoreet malesuada. Aliquam erat volutpat. Aliquam dictum elementum rhoncus. Praesent in est massa, pulvinar sodales nunc. Pellentesque gravida euismod mi ac convallis.</p>
-		// <p>Mauris vel odio vel nulla facilisis lacinia. Aliquam ultrices est at leo blandit tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse porttitor adipiscing facilisis. Duis cursus quam iaculis augue interdum porttitor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis vulputate magna ac metus pretium condimentum. In tempus, est eget vestibulum blandit, velit massa dignissim nisl, ut scelerisque lorem neque vel velit. Maecenas fermentum commodo viverra. Curabitur a nibh non velit aliquam cursus. Integer semper condimentum tortor a pellentesque. Pellentesque semper, nisl id porttitor vehicula, sem dui feugiat lacus, vitae consequat augue urna vel odio.</p>
-		// <p>Vestibulum id neque nec turpis iaculis pulvinar et a massa. Vestibulum sed nibh vitae arcu eleifend egestas. Mauris fermentum ultrices blandit. Suspendisse vitae lorem libero. Aenean et pellentesque tellus. Morbi quis neque orci, eu dignissim dui. Fusce sollicitudin mauris ac arcu vestibulum imperdiet. Proin ultricies nisl sit amet enim imperdiet eu ornare dui tempus. Maecenas lobortis nisi a tortor vestibulum vel eleifend tellus vestibulum. Donec metus sapien, hendrerit a fermentum id, dictum quis libero.</p>
-		// <p>Pellentesque a lorem nulla, in tempor justo. Duis odio nisl, dignissim sed consequat sit amet, hendrerit ac neque. Nunc ac augue nec massa tempor rhoncus. Nam feugiat, tellus a varius euismod, justo nisl faucibus velit, ut vulputate justo massa eu nibh. Sed bibendum urna quis magna facilisis in accumsan dolor malesuada. Morbi sit amet nunc risus, in faucibus sem. Nullam sollicitudin magna sed sem mollis id commodo libero condimentum. Duis eu massa et lacus semper molestie ut adipiscing sem.</p>
-		// <p>Sed id nulla mi, eget suscipit eros. Aliquam tempus molestie rutrum. In quis varius elit. Nullam dignissim neque nec velit vulputate porttitor. Mauris ac ligula sit amet elit fermentum rhoncus. In tellus urna, pulvinar quis condimentum ut, porta nec justo. In hac habitasse platea dictumst. Proin volutpat elit id quam molestie ac commodo lacus sagittis. Quisque placerat, augue tempor placerat pulvinar, nisi nisi venenatis urna, eget convallis eros velit quis magna. Suspendisse volutpat iaculis quam, ut tristique lacus luctus quis.</p>
-		// <p>Nullam commodo suscipit lacus non aliquet. Phasellus ac nisl lorem, sed facilisis ligula. Nam cursus lobortis placerat. Sed dui nisi, elementum eu sodales ac, placerat sit amet mauris. Pellentesque dapibus tellus ut ipsum aliquam eu auctor dui vehicula. Quisque ultrices laoreet erat, at ultrices tortor sodales non. Sed venenatis luctus magna, ultricies ultricies nunc fringilla eget. Praesent scelerisque urna vitae nibh tristique varius consequat neque luctus. Integer ornare, erat a porta tempus, velit justo fermentum elit, a fermentum metus nisi eu ipsum. Vivamus eget augue vel dui viverra adipiscing congue ut massa. Praesent vitae eros erat, pulvinar laoreet magna. Maecenas vestibulum mollis nunc in posuere. Pellentesque sit amet metus a turpis lobortis tempor eu vel tortor. Cras sodales eleifend interdum.</p> -->
-</script>
-		<!-- <aside class="terms-sidebar">
+    // <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ultrices dolor ac dolor imperdiet ullamcorper. Suspendisse quam libero, luctus auctor mollis sed, malesuada condimentum magna. Quisque in ante tellus, in placerat est. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec a mi magna, quis mattis dolor. Etiam sit amet ligula quis urna auctor imperdiet nec faucibus ante. Mauris vel consectetur dolor. Nunc eget elit eget velit pulvinar fringilla consectetur aliquam purus. Curabitur convallis, justo posuere porta egestas, velit erat ornare tortor, non viverra justo diam eget arcu. Phasellus adipiscing fermentum nibh ac commodo. Nam turpis nunc, suscipit a hendrerit vitae, volutpat non ipsum.</p>
+    // <p>Duis lobortis sapien quis nisl luctus porttitor. In tempor semper libero, eu tincidunt dolor eleifend sit amet. Ut nec velit in dolor tincidunt rhoncus non non diam. Morbi auctor ornare orci, non euismod felis gravida nec. Curabitur elementum nisi a eros rutrum nec blandit diam placerat. Aenean tincidunt risus ut nisi consectetur cursus. Ut vitae quam elit. Donec dignissim est in quam tempor consequat. Aliquam aliquam diam non felis convallis suscipit. Nulla facilisi. Donec lacus risus, dignissim et fringilla et, egestas vel eros. Duis malesuada accumsan dui, at fringilla mauris bibendum quis. Cras adipiscing ultricies fermentum. Praesent bibendum condimentum feugiat.</p>
+    // <p id="myBookmark1">[&nbsp;<span class="intLink" onclick="showBookmark('#myBookmark2');">Go to bookmark #2</span>&nbsp;]</p>
+    // <p>Vivamus blandit massa ut metus mattis in fringilla lectus imperdiet. Proin ac ante a felis ornare vehicula. Fusce pellentesque lacus vitae eros convallis ut mollis magna pellentesque. Pellentesque placerat enim at lacus ultricies vitae facilisis nisi fringilla. In tincidunt tincidunt tincidunt. Nulla vitae tempor nisl. Etiam congue, elit vitae egestas mollis, ipsum nisi malesuada turpis, a volutpat arcu arcu id risus.</p>
+    // <p>Nam faucibus, ligula eu fringilla pulvinar, lectus tellus iaculis nunc, vitae scelerisque metus leo non metus. Proin mattis lobortis lobortis. Quisque accumsan faucibus erat, vel varius tortor ultricies ac. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec libero nunc. Nullam tortor nunc, elementum a consectetur et, ultrices eu orci. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque a nisl eu sem vehicula egestas.</p>
+    // <p>Aenean viverra varius mauris, sed elementum lacus interdum non. Phasellus sit amet lectus vitae eros egestas pellentesque fermentum eget magna. Quisque mauris nisl, gravida vitae placerat et, condimentum id metus. Nulla eu est dictum dolor pulvinar volutpat. Pellentesque vitae sollicitudin nunc. Donec neque magna, lobortis id egestas nec, sodales quis lectus. Fusce cursus sollicitudin porta. Suspendisse ut tortor in mauris tincidunt rhoncus. Maecenas tincidunt fermentum facilisis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+    // <p>Suspendisse turpis nisl, consectetur in lacinia ut, ornare vel mi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin non lectus eu turpis vulputate cursus. Mauris interdum tincidunt erat id pharetra. Nullam in libero elit, sed consequat lectus. Morbi odio nisi, porta vitae molestie ut, gravida ut nunc. Ut non est dui, id ullamcorper orci. Praesent vel elementum felis. Maecenas ornare, dui quis auctor hendrerit, turpis sem ullamcorper odio, in auctor magna metus quis leo. Morbi at odio ante.</p>
+    // <p>Curabitur est ipsum, porta ac viverra faucibus, eleifend sed eros. In sit amet vehicula tortor. Vestibulum viverra pellentesque erat a elementum. Integer commodo ultricies lorem, eget tincidunt risus viverra et. In enim turpis, porttitor ac ornare et, suscipit sit amet nisl. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque vel ultrices nibh. Sed commodo aliquam aliquam. Nulla euismod, odio ut eleifend mollis, nisi dui gravida nibh, vitae laoreet turpis purus id ipsum. Donec convallis, velit non scelerisque bibendum, diam nulla auctor nunc, vel dictum risus ipsum sit amet est. Praesent ut nibh sit amet nibh congue pulvinar. Suspendisse dictum porttitor tempor.</p>
+    // <p>Vestibulum dignissim erat vitae lectus auctor ac bibendum eros semper. Integer aliquet, leo non ornare faucibus, risus arcu tristique dolor, a aliquet massa mauris quis arcu. In porttitor, lectus ac semper egestas, ligula magna laoreet libero, eu commodo mauris odio id ante. In hac habitasse platea dictumst. In pretium erat diam, nec consequat eros. Praesent augue mi, consequat sed porttitor at, volutpat vitae eros. Sed pretium pharetra dapibus. Donec auctor interdum erat, lacinia molestie nibh commodo ut. Maecenas vestibulum vulputate felis, ut ullamcorper arcu faucibus in. Curabitur id arcu est. In semper mollis lorem at pellentesque. Sed lectus nisl, vestibulum id scelerisque eu, feugiat et tortor. Pellentesque porttitor facilisis ultricies.</p>
+    // <p id="myBookmark2">[&nbsp;<span class="intLink" onclick="showBookmark('#myBookmark1');">Go to bookmark #1</span> | <span class="intLink" onclick="showBookmark('#myBookmark1', false);">Go to bookmark #1 without using location.hash</span> | <span class="intLink" onclick="showBookmark('#myBookmark3');">Go to bookmark #3</span>&nbsp;]</p>
+    // <p>Phasellus tempus fringilla nunc, eget sagittis orci molestie vel. Nulla sollicitudin diam non quam iaculis ac porta justo venenatis. Quisque tellus urna, molestie vitae egestas sit amet, suscipit sed sem. Quisque nec lorem eu velit faucibus tristique ut ut dolor. Cras eu tortor ut libero placerat venenatis ut ut massa. Sed quis libero augue, et consequat libero. Morbi rutrum augue sed turpis elementum sed luctus nisl molestie. Aenean vitae purus risus, a semper nisl. Pellentesque malesuada, est id sagittis consequat, libero mauris tincidunt tellus, eu sagittis arcu purus rutrum eros. Quisque eget eleifend mi. Duis pharetra mi ac eros mattis lacinia rutrum ipsum varius.</p>
+    // <p>Fusce cursus pulvinar aliquam. Duis justo enim, ornare vitae elementum sed, porta a quam. Aliquam eu enim eu libero mollis tempus. Morbi ornare aliquam posuere. Proin faucibus luctus libero, sed ultrices lorem sagittis et. Vestibulum malesuada, ante nec molestie vehicula, quam diam mollis ipsum, rhoncus posuere mauris lectus in eros. Nullam feugiat ultrices augue, ac sodales sem mollis in.</p>
+    // <p id="myBookmark3"><em>Here is the bookmark #3</em></p>
+    // <p>Proin vitae sem non lorem pellentesque molestie. Nam tempus massa et turpis placerat sit amet sollicitudin orci sodales. Pellentesque enim enim, sagittis a lobortis ut, tempus sed arcu. Aliquam augue turpis, varius vel bibendum ut, aliquam at diam. Nam lobortis, dui eu hendrerit pellentesque, sem neque porttitor erat, non dapibus velit lectus in metus. Vestibulum sit amet felis enim. In quis est vitae nunc malesuada consequat nec nec sapien. Suspendisse aliquam massa placerat dui lacinia luctus sed vitae risus. Fusce tempus, neque id ultrices volutpat, mi urna auctor arcu, viverra semper libero sem vel enim. Mauris dictum, elit non placerat malesuada, libero elit euismod nibh, nec posuere massa arcu eu risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer urna velit, dapibus eget varius feugiat, pellentesque sit amet ligula. Maecenas nulla nisl, facilisis eu egestas scelerisque, mollis eget metus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi sed congue mi.</p>
+    // <p>Fusce metus velit, pharetra at vestibulum nec, facilisis porttitor mi. Curabitur ligula sapien, fermentum vel porttitor id, rutrum sit amet magna. Sed sit amet sollicitudin turpis. Aenean luctus rhoncus dolor, et pulvinar ante egestas et. Donec ac massa orci, quis dapibus augue. Vivamus consectetur auctor pellentesque. Praesent vestibulum tincidunt ante sed consectetur. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce purus metus, imperdiet vitae iaculis convallis, bibendum vitae turpis.</p>
+    // <p>Fusce aliquet molestie dolor, in ornare dui sodales nec. In molestie sollicitudin felis a porta. Mauris nec orci sit amet orci blandit tristique congue nec nunc. Praesent et tellus sollicitudin mauris accumsan fringilla. Morbi sodales, justo eu sollicitudin lacinia, lectus sapien ullamcorper eros, quis molestie urna elit bibendum risus. Proin eget tincidunt quam. Nam luctus commodo mauris, eu posuere nunc luctus non. Nulla facilisi. Vivamus eget leo rhoncus quam accumsan fringilla. Aliquam sit amet lorem est. Nullam vel tellus nibh, id imperdiet orci. Integer egestas leo eu turpis blandit scelerisque.</p>
+    // <p>Etiam in blandit tellus. Integer sed varius quam. Vestibulum dapibus mi gravida arcu viverra blandit. Praesent tristique augue id sem adipiscing pellentesque. Sed sollicitudin, leo sed interdum elementum, nisi ante condimentum leo, eget ornare libero diam semper quam. Vivamus augue urna, porta eget ultrices et, dapibus ut ligula. Ut laoreet consequat faucibus. Praesent at lectus ut lectus malesuada mollis. Nam interdum adipiscing eros, nec sodales mi porta nec. Proin et quam vitae sem interdum aliquet. Proin vel odio at lacus vehicula aliquet.</p>
+    // <p>Etiam placerat dui ut sem ornare vel vestibulum augue mattis. Sed semper malesuada mi, eu bibendum lacus lobortis nec. Etiam fringilla elementum risus, eget consequat urna laoreet nec. Etiam mollis quam non sem convallis vel consectetur lectus ullamcorper. Aenean mattis lacus quis ligula mattis eget vestibulum diam hendrerit. In non placerat mauris. Praesent faucibus nunc quis eros sagittis viverra. In hac habitasse platea dictumst. Suspendisse eget nisl erat, ac molestie massa. Praesent mollis vestibulum tincidunt. Fusce suscipit laoreet malesuada. Aliquam erat volutpat. Aliquam dictum elementum rhoncus. Praesent in est massa, pulvinar sodales nunc. Pellentesque gravida euismod mi ac convallis.</p>
+    // <p>Mauris vel odio vel nulla facilisis lacinia. Aliquam ultrices est at leo blandit tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse porttitor adipiscing facilisis. Duis cursus quam iaculis augue interdum porttitor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis vulputate magna ac metus pretium condimentum. In tempus, est eget vestibulum blandit, velit massa dignissim nisl, ut scelerisque lorem neque vel velit. Maecenas fermentum commodo viverra. Curabitur a nibh non velit aliquam cursus. Integer semper condimentum tortor a pellentesque. Pellentesque semper, nisl id porttitor vehicula, sem dui feugiat lacus, vitae consequat augue urna vel odio.</p>
+    // <p>Vestibulum id neque nec turpis iaculis pulvinar et a massa. Vestibulum sed nibh vitae arcu eleifend egestas. Mauris fermentum ultrices blandit. Suspendisse vitae lorem libero. Aenean et pellentesque tellus. Morbi quis neque orci, eu dignissim dui. Fusce sollicitudin mauris ac arcu vestibulum imperdiet. Proin ultricies nisl sit amet enim imperdiet eu ornare dui tempus. Maecenas lobortis nisi a tortor vestibulum vel eleifend tellus vestibulum. Donec metus sapien, hendrerit a fermentum id, dictum quis libero.</p>
+    // <p>Pellentesque a lorem nulla, in tempor justo. Duis odio nisl, dignissim sed consequat sit amet, hendrerit ac neque. Nunc ac augue nec massa tempor rhoncus. Nam feugiat, tellus a varius euismod, justo nisl faucibus velit, ut vulputate justo massa eu nibh. Sed bibendum urna quis magna facilisis in accumsan dolor malesuada. Morbi sit amet nunc risus, in faucibus sem. Nullam sollicitudin magna sed sem mollis id commodo libero condimentum. Duis eu massa et lacus semper molestie ut adipiscing sem.</p>
+    // <p>Sed id nulla mi, eget suscipit eros. Aliquam tempus molestie rutrum. In quis varius elit. Nullam dignissim neque nec velit vulputate porttitor. Mauris ac ligula sit amet elit fermentum rhoncus. In tellus urna, pulvinar quis condimentum ut, porta nec justo. In hac habitasse platea dictumst. Proin volutpat elit id quam molestie ac commodo lacus sagittis. Quisque placerat, augue tempor placerat pulvinar, nisi nisi venenatis urna, eget convallis eros velit quis magna. Suspendisse volutpat iaculis quam, ut tristique lacus luctus quis.</p>
+    // <p>Nullam commodo suscipit lacus non aliquet. Phasellus ac nisl lorem, sed facilisis ligula. Nam cursus lobortis placerat. Sed dui nisi, elementum eu sodales ac, placerat sit amet mauris. Pellentesque dapibus tellus ut ipsum aliquam eu auctor dui vehicula. Quisque ultrices laoreet erat, at ultrices tortor sodales non. Sed venenatis luctus magna, ultricies ultricies nunc fringilla eget. Praesent scelerisque urna vitae nibh tristique varius consequat neque luctus. Integer ornare, erat a porta tempus, velit justo fermentum elit, a fermentum metus nisi eu ipsum. Vivamus eget augue vel dui viverra adipiscing congue ut massa. Praesent vitae eros erat, pulvinar laoreet magna. Maecenas vestibulum mollis nunc in posuere. Pellentesque sit amet metus a turpis lobortis tempor eu vel tortor. Cras sodales eleifend interdum.</p> -->
+  </script>
+  <!-- <aside class="terms-sidebar">
 			<a href="">구글 서비스 이용</a>
 			<a href="">귀하의 Google 계정</a>
 			<a href="">개인정보 보호 및 저작권 보호</a>
 			<a href="">본 약관에 대하여</a>
-		</aside> -->
-		<header class="terms-head">
-			<h1>개인정보 처리방침</h1>
-			<p style="margin-top:.5rem;">Last Updated <time>16, August, 2019</time></p>
-			<!-- <figure class="full-width-image" style="height:160px;overflow:hidden;"><img src="/public/images/caleb-woods-182648-unsplash.jpg" alt="" /></figure>
+    </aside> -->
+
+  <section class="terms1">
+    <header>
+      <h1>개인정보 제 3자 제공 동의</h1>
+      <!-- <h2>2020 TOSS 포트폴리오 없는 디자이너 채용</h2> -->
+      <time class="date">2020. 8. 25</time>
+    </header>
+
+    <p>주식회사 뭐뭐뭐는 회원님의 개인정보를 개인정보 처리방침에서 고지한 제3자 제공 범위 내에서 제공하며, 정보주체의 사전 동의 없이 동 범위를 초과하여 제3자에게 제공하지 않습니다.</p>
+    <br />
+    <table>
+      <thead>
+        <tr>
+          <th>제공받는 자</th>
+          <th>제공 목적</th>
+          <th>제공 항목</th>
+          <th>보유 기간</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>고슴도슴 멤버스</td>
+          <td>통합 멤버십 포인트 적립</td>
+          <td>아이디</td>
+          <td>2020년 01월 8일까지</td>
+        </tr>
+        <tr>
+          <td>고슴도슴 멤버스</td>
+          <td>통합 멤버십 포인트 적립</td>
+          <td>아이디</td>
+          <td>2020년 01월 8일까지</td>
+        </tr>
+      </tbody>
+    </table>
+    <footer>
+      <h2 style="margin-bottom:1rem"><strong>동의를 거부하는 경우에 대한 안내</strong></h2>
+      <p>개인정보 제공에 대한 동의를 거부할 권리가 있으며, 동의를 거부할 경우 멤버십 포인트 적립을 받을 수 없고 상담에 제한을 받습니다.</p>
+      <p>개인정보 제공에 대한 동의를 거부할 권리가 있으며, 동의를 거부할 경우 해당 정보 관련 서비스스 또는 상품 안내가 제한됩니다.</p>
+    </footer>
+  </section>
+
+  <section class="terms1">
+    <header>
+      <h1>개인정보 수집·이용 동의</h1>
+      <h2>2020 TOSS 포트폴리오 없는 디자이너 채용</h2>
+      <time class="date">2020. 8. 25</time>
+    </header>
+
+    <p>토스, 토스 증권, 토스 인슈어런스, 토스 페이먼츠, 토스 뱅크에서는 "2020 TOSS 포트폴리오 없는 디자이너 채용"의 채용 프로세스 진행을 위해 다음과 같이 입사지원자의 개인정보를 수집 및 이용합니다.</p>
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align: center">&nbsp;</th>
+          <th>&nbsp;</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>처리 목적</td>
+          <td>“2020 TOSS 포트폴리오 없는 디자이너 채용”을 위한 채용 프로세스 진행</td>
+        </tr>
+        <tr>
+          <td>처리 항목</td>
+          <td>이름, 휴대전화번호, 이메일주소</td>
+        </tr>
+        <tr>
+          <td>보유 기간</td>
+          <td>목적 달성 후, 파기 또는 관련 법령에 따라 보존 후 파기</td>
+        </tr>
+        <tr>
+          <td>수집 근거</td>
+          <td>개인정보 보호법 제15조 1항</td>
+        </tr>
+      </tbody>
+    </table>
+    <footer>
+      <h2 style="margin-bottom:1rem"><strong>동의를 거부하는 경우에 대한 안내</strong></h2>
+      <p>이 동의는 “2020 TOSS 포트폴리오 없는 디자이너 채용” 지원을 위한 필수적인 동의이므로, 동의를 하지 않으면 해당 채용 모집에 지원하실 수 없습니다.</p>
+    </footer>
+  </section>
+
+  <header class="terms-head">
+    <h1>개인정보 처리방침</h1>
+    <p style="margin-top:.5rem;">Last Updated <time>16, August, 2019</time></p>
+    <!-- <figure class="full-width-image" style="height:160px;overflow:hidden;"><img src="/public/images/caleb-woods-182648-unsplash.jpg" alt="" /></figure>
 			<style>
 			.full-width-image {	
 					width: 100vw;
@@ -185,49 +266,41 @@ circle.area
 					right: 50%;
 				}
 			</style> -->
-		</header>
-		<section class="terms-archive">
-			<h2 class="terms-archive-title">개정 전 약관 아카이브</h2>
-			<a class="terms-archive-link" href="">2019년 6월 14일 업데이트 약관</a>
-			<a class="terms-archive-link" href="">2019년 2월 13일 업데이트 약관</a>
-			<a class="terms-archive-link" href="">2017년 12월 28일 업데이트 약관</a>
-		</section>
-		<section class="terms-body">
-			<h2>제 0조 (목적)</h2>
-			<p>이 약관은 주식회사 dddddd(이하 "당사"이라 합니다)이 운영하는 웹사이트(https://www.myrealtrip.com/) 및 어플리케이션(Application, 이하 웹사이트와 어플리케이션을 통칭하여 "dddddd 플랫폼")에서 제공하는 서비스(이하 "서비스"라 합니다)를 이용함에 있어 "당사"와 이용자의 권리 및 의무 및 책임사항을 규정함을 목적으로 합니다.</p>
-			<h2>제 1조. 용어의 정의</h2>
-			<p>용어의 정의는 이렇게 하고 있습니다.</p>
-			<ul class="list-sample">
-				<li>이 약관에서 사용하는 용어의 정의는 다음과 같습니다.</li>
-				<li>본 약관에 대해서는 본 조에서 정한 용어가 우선적으로 적용되며, 본 조에서 정의되지 않은 약관 상의 용어는 관련 법령 및 관습에 따릅니다.
-					<ul>
-						<li>"회사"라 함은 dddddd 주식회사를 지칭하며 사이트 내에서 창조적인 분야를 총 망라하는 온라인 크라우드 펀딩 플랫폼 서비스를 제공하는 주체를 의미합니다.</li>
-						<li>"회원"이라 함은 사이트에 접속하여 본 약관에 동의함으로써 회사에 회원등록을 하고 회사가 제공하는 서비스를 지속해서 이용할 수 있는 이용자를 의미합니다.</li>
-						<li>"창작자"라 함은 사이트에서 프로젝트를 게시하고 운영하여 다수로부터 후원을 받는 회원을 의미합니다.</li>
-					</ul>
-				</li>
-			</ul>
-			<h2>1. 개인정보의 수집 및 이용목적</h2>
-			<p>당사는 수집한 개인정보를 다음의 목적을 위해 활용합니다.</p>
-			<ol class="list-sample">
-				<li>여행 상품 판매 및 중개 서비스의 이행과 서비스 제공에 따른 요금정산 - 여행상품 예약, 컨텐츠 제공, 구매 및 요금 결제, 물품배송 또는 청구지 등 발송, 금융거래 본인 인증 및 금융서비스, 요금추심 등</li>
-				<li>고객관리 - 고객관리 및 이용에 따른 본인확인, 개인식별, 불량회원의 부정 이용 방지와 비인가, 사용 방지, 가입/탈퇴 의사 확인, 연령확인, 만 14세 미만 아동 개인정보 수집 시 법정 대리인 동의여부 확인, 불만처리 및 민원처리, 고지사항 전달 등</li>
-				<li>파트너의 신원파악 - 파트너 본인확인, 개인식별, 불량 또는 부적법한 파트너에 대한 중개 서비스 제공 방지와 사용 방지 등</li>
-				<li>기타 - 본인 의사 확인 등 원활한 의사소통 경로의 확보, 새로운 서비스/신상품이나 이벤트 정보 안내</li>
-			</ol>
-		</section>
-		<footer class="terms-foot">
-		</footer>
+  </header>
+  <section class="terms-archive">
+    <h2 class="terms-archive-title">개정 전 약관 아카이브</h2>
+    <a class="terms-archive-link" href="">2019년 6월 14일 업데이트 약관</a>
+    <a class="terms-archive-link" href="">2019년 2월 13일 업데이트 약관</a>
+    <a class="terms-archive-link" href="">2017년 12월 28일 업데이트 약관</a>
+  </section>
+  <section class="terms-body">
+    <h2>제 0조 (목적)</h2>
+    <p>이 약관은 주식회사 dddddd(이하 "당사"이라 합니다)이 운영하는 웹사이트(https://www.myrealtrip.com/) 및 어플리케이션(Application, 이하 웹사이트와 어플리케이션을 통칭하여 "dddddd 플랫폼")에서 제공하는 서비스(이하 "서비스"라 합니다)를 이용함에 있어 "당사"와 이용자의 권리 및 의무 및 책임사항을 규정함을 목적으로 합니다.</p>
+    <h2>제 1조. 용어의 정의</h2>
+    <p>용어의 정의는 이렇게 하고 있습니다.</p>
+    <ul class="list-sample">
+      <li>이 약관에서 사용하는 용어의 정의는 다음과 같습니다.</li>
+      <li>
+        본 약관에 대해서는 본 조에서 정한 용어가 우선적으로 적용되며, 본 조에서 정의되지 않은 약관 상의 용어는 관련 법령 및 관습에 따릅니다.
+        <ul>
+          <li>"회사"라 함은 dddddd 주식회사를 지칭하며 사이트 내에서 창조적인 분야를 총 망라하는 온라인 크라우드 펀딩 플랫폼 서비스를 제공하는 주체를 의미합니다.</li>
+          <li>"회원"이라 함은 사이트에 접속하여 본 약관에 동의함으로써 회사에 회원등록을 하고 회사가 제공하는 서비스를 지속해서 이용할 수 있는 이용자를 의미합니다.</li>
+          <li>"창작자"라 함은 사이트에서 프로젝트를 게시하고 운영하여 다수로부터 후원을 받는 회원을 의미합니다.</li>
+        </ul>
+      </li>
+    </ul>
+    <h2>1. 개인정보의 수집 및 이용목적</h2>
+    <p>당사는 수집한 개인정보를 다음의 목적을 위해 활용합니다.</p>
+    <ol class="list-sample">
+      <li>여행 상품 판매 및 중개 서비스의 이행과 서비스 제공에 따른 요금정산 - 여행상품 예약, 컨텐츠 제공, 구매 및 요금 결제, 물품배송 또는 청구지 등 발송, 금융거래 본인 인증 및 금융서비스, 요금추심 등</li>
+      <li>고객관리 - 고객관리 및 이용에 따른 본인확인, 개인식별, 불량회원의 부정 이용 방지와 비인가, 사용 방지, 가입/탈퇴 의사 확인, 연령확인, 만 14세 미만 아동 개인정보 수집 시 법정 대리인 동의여부 확인, 불만처리 및 민원처리, 고지사항 전달 등</li>
+      <li>파트너의 신원파악 - 파트너 본인확인, 개인식별, 불량 또는 부적법한 파트너에 대한 중개 서비스 제공 방지와 사용 방지 등</li>
+      <li>기타 - 본인 의사 확인 등 원활한 의사소통 경로의 확보, 새로운 서비스/신상품이나 이벤트 정보 안내</li>
+    </ol>
+  </section>
+  <footer class="terms-foot"></footer>
 
-
-
-
-
-
-
-
-
-		<!-- **제1조(목적)**
+  <!-- **제1조(목적)**
 
 		이 약관은 회원(이 약관에 동의한 자를 말합니다 이하 "회원"이라고 합니다.)이 뉴닉(이하 “회사”이라 한다)이 운영하는 사이트 NEWNEEK에서 제공하는 모든 서비스(이하 “서비스”라 한다)를 이용함에 있어 회사와 회원의 권리.의무 및 책임사항을 규정함을 목적으로합니다.
 		
@@ -411,66 +484,61 @@ circle.area
 		
 		이 약관은 2019년 8월 12일부터 적용됩니다. -->
 
+  <div class="wrapper">
+    <div class="lazy-background one"></div>
+    <div class="lazy-background two"></div>
+    <div class="lazy-background three"></div>
+  </div>
+  <style>
+    .wrapper {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .lazy-background {
+      margin: 240px auto;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+    .one {
+      padding-top: 28.0519480519%;
+      background-image: url('https://res.cloudinary.com/drp9iwjqz/image/upload/e_blur:2000,f_auto,q_auto/v1508291830/jeremywagner.me/using-webp-images/tacos-1x.jpg');
+    }
+    .one.visible {
+      background-image: url('https://res.cloudinary.com/drp9iwjqz/image/upload/f_auto,q_auto/v1508210556/jeremywagner.me/using-webp-images/tacos-2x.jpg');
+    }
+    .two {
+      padding-top: 55%;
+      background-image: url('https://res.cloudinary.com/drp9iwjqz/image/upload/e_blur:2000,f_auto,q_auto/v1508210556/jeremywagner.me/using-webp-images/modem-2x.png');
+    }
+    .two.visible {
+      background-image: url('https://res.cloudinary.com/drp9iwjqz/image/upload/f_auto,q_auto/v1508210556/jeremywagner.me/using-webp-images/modem-2x.png');
+    }
+    .three {
+      padding-top: 66.625%;
+      background-image: url('https://res.cloudinary.com/drp9iwjqz/image/upload/e_blur:2000,f_auto,q_auto/v1509298941/jeremywagner.me/about/st-paul-1x.jpg');
+    }
+    .three.visible {
+      background-image: url('https://res.cloudinary.com/drp9iwjqz/image/upload/f_auto,q_auto/v1509298941/jeremywagner.me/about/st-paul-2x.jpg');
+    }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const lazyBackgrounds = [].slice.call(document.querySelectorAll('.lazy-background'))
 
+      if ('IntersectionObserver' in window && 'IntersectionObserverEntry' in window && 'intersectionRatio' in window.IntersectionObserverEntry.prototype) {
+        let lazyBackgroundObserver = new IntersectionObserver(function(entries, observer) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible')
+              lazyBackgroundObserver.unobserve(entry.target)
+            }
+          })
+        })
 
-
-
-
-<div class="wrapper">
-	<div class="lazy-background one"></div>
-	<div class="lazy-background two"></div>
-	<div class="lazy-background three"></div>
-</div>
-<style>
-	.wrapper{
-		max-width: 600px;
-		margin: 0 auto;
-	}
-	.lazy-background{
-		margin: 240px auto;
-		background-repeat: no-repeat;
-		background-size: contain;
-	}
-	.one{
-		padding-top: 28.0519480519%;
-		background-image: url("https://res.cloudinary.com/drp9iwjqz/image/upload/e_blur:2000,f_auto,q_auto/v1508291830/jeremywagner.me/using-webp-images/tacos-1x.jpg");
-	}
-	.one.visible{
-		background-image: url("https://res.cloudinary.com/drp9iwjqz/image/upload/f_auto,q_auto/v1508210556/jeremywagner.me/using-webp-images/tacos-2x.jpg");
-	}
-	.two{
-		padding-top: 55%;
-		background-image: url("https://res.cloudinary.com/drp9iwjqz/image/upload/e_blur:2000,f_auto,q_auto/v1508210556/jeremywagner.me/using-webp-images/modem-2x.png");
-	}
-	.two.visible{
-		background-image: url("https://res.cloudinary.com/drp9iwjqz/image/upload/f_auto,q_auto/v1508210556/jeremywagner.me/using-webp-images/modem-2x.png");
-	}
-	.three{
-		padding-top: 66.625%;
-		background-image: url("https://res.cloudinary.com/drp9iwjqz/image/upload/e_blur:2000,f_auto,q_auto/v1509298941/jeremywagner.me/about/st-paul-1x.jpg");
-	}
-	.three.visible{
-		background-image: url("https://res.cloudinary.com/drp9iwjqz/image/upload/f_auto,q_auto/v1509298941/jeremywagner.me/about/st-paul-2x.jpg");
-	}
-</style>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-	const lazyBackgrounds = [].slice.call(document.querySelectorAll(".lazy-background"));
-
-	if("IntersectionObserver" in window && "IntersectionObserverEntry" in window && "intersectionRatio" in window.IntersectionObserverEntry.prototype) {
-		let lazyBackgroundObserver = new IntersectionObserver(function(entries, observer) {
-			entries.forEach(function(entry) {
-				if(entry.isIntersecting) {
-					entry.target.classList.add("visible");
-					lazyBackgroundObserver.unobserve(entry.target);
-				}
-			});
-		});
-
-		lazyBackgrounds.forEach(function(lazyBackground) {
-			lazyBackgroundObserver.observe(lazyBackground);
-		});
-	}
-});
-</script>
+        lazyBackgrounds.forEach(function(lazyBackground) {
+          lazyBackgroundObserver.observe(lazyBackground)
+        })
+      }
+    })
+  </script>
 </main>

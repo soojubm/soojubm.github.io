@@ -12,14 +12,30 @@ button.is-addable.is-added {background:$color-primary;border-color:$color-primar
 button.is-addable .icon-plus {display:inline-block;background:var(--gray100);padding:12px;border-radius:$radius400;position:absolute;right:3px;top:3px;}
 button.is-addable .icon-close {display:inline-block;background:var(--gray100);padding:12px;border-radius:$radius400;position:absolute;right:3px;top:3px;}
 
+// btn.setAttribute('aria-pressed', false);
+button.is-submitting {opacity: .75;}
+button[aria-pressed=true] {}
+button[aria-current] {}
+button[aria-current=page] {}
+
 @mixin button {
   display: inline-block;
-  min-width:104px;padding:$padding200;box-sizing:border-box;border-radius:$radius400;text-align:center;cursor:pointer;position:relative;
+  min-width:104px;
+  padding:$padding200;
+  box-sizing:border-box;
+  border-radius:$radius400;
+  text-align:center;
+  cursor:pointer;
+  position:relative;
+  @content;
   &:disabled {cursor:not-allowed;}
 }
 @mixin button-primary {
-  @include button;
-  background:$color-primary;border:1px solid $color-primary;color:var(--gray0);
+  @include button {
+    background:$color-primary;
+    border:1px solid $color-primary;
+    color:var(--gray0);
+  }
   &:hover,
   &:focus {border-color:darken($color-primary, 2%);background:darken($color-primary, 2%);}
   &:active {}
@@ -37,22 +53,24 @@ button.is-addable .icon-close {display:inline-block;background:var(--gray100);pa
   @include button;
   border:1px solid var(--gray100);background:var(--gray100);color:var(--gray600);
   &:hover,
-  // &:focus {border-color:darken(var(--gray100), 2%);background:darken(var(--gray100), 2%);}
+  &:focus {}
   &:active {}
   &:disabled {color:var(--gray400);}
 }
 @mixin button-text {
-  @include button;
+  @include button {
+    background:none;border:1px solid transparent;color:$color-primary;
+  }
+  &:hover,
+  &:focus {border-color:var(--gray100);background:var(--gray100);}
+  &:active {}
+  &:disabled {color:var(--gray200);cursor:not-allowed;}
 }
+
+// backButton closeButton
 
 .danger-button {@include button;background:$color-negative;border:1px solid $color-negative;color:var(--gray0);}
 .success-button {@include button;background:$color-positive;border:1px solid $color-positive;color:var(--gray0);}
-
-.text-button {@include button;background:none;border:1px solid transparent;color:$color-primary;}
-.text-button:hover {border-color:var(--gray100);background:var(--gray100);}
-.text-button:focus {background:var(--gray100);}
-.text-button:active {}
-.text-button:disabled {color:var(--gray200);cursor:not-allowed;}
 
 .button-group {display:flex;width:100%;overflow:hidden;}// justify-content:space-between;}
 .button-group.is-left {padding:.5rem 0;}

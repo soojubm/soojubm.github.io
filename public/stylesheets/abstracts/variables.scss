@@ -5,23 +5,14 @@ $container600: 1280px;
 $container400: 800px;
 $container200: 480px;
 
-
 $width-medium: 800px;
 $width-large: 1080px;
 $width-huge: 1440px;
 
-$avatar100: 16px;
-$avatar200: 32px;
-$avatar400: 48px;
-$avatar600: 80px;
-
-
 $cell-large: 80px;
 $cell-medium: 48px;
 $cell-light: 32px;
-$cell-small:16px;
-
-
+$cell-small: 16px;
 
 :root {
   --fontstack: 'Asap', 'AritaDotum', 'Apple SD Gothic Neo', sans-serif;
@@ -35,7 +26,6 @@ $cell-small:16px;
   --gray400: #999; // caption
   --gray600: #454545; // body
   --gray800: #161616; // bg || heading
-  
 }
 
 $headline: 3rem;
@@ -43,8 +33,6 @@ $title: 2rem;
 $subhead: 1.25rem;
 $body: 1rem;
 $caption: 0.75rem;
-
-
 
 $red100: #fff0f5;
 $red800: #da1e28;
@@ -82,7 +70,6 @@ $radius400: 4px;
 $quote: 0;
 $placeholder: 0;
 
-
 $bezier-base: cubic-bezier(0.455, 0.03, 0.515, 0.955);
 $transition-base: all 0.4s $bezier-base;
 $transition-fade: opacity 0.15s linear;
@@ -104,9 +91,13 @@ $height-header: 64px;
   $height-header: 56px;
 }
 
-.linebreak {display:block;}
+.linebreak {
+  display: block;
+}
 @media (--viewport-small) {
-  .linebreak {display:inline;}
+  .linebreak {
+    display: inline;
+  }
 }
 
 .row {
@@ -158,39 +149,59 @@ $height-header: 64px;
   flex-grow: 1;
 }
 
+.is-facebook {
+  color: $color-facebook !important;
+}
 
-
-.is-facebook {color:$color-facebook !important;}
-
-.is-fullwidth {display:block;width:100%;}
-.is-disabled {cursor:not-allowed;}
-.is-multiline {flex-wrap:wrap;}
+.is-fullwidth {
+  display: block;
+  width: 100%;
+}
+.is-disabled {
+  cursor: not-allowed;
+}
+.is-multiline {
+  flex-wrap: wrap;
+}
 
 // text
-.is-bold {font-weight:bold;}
-.is-italic {font-style:italic;}
-.is-colored {}
+.is-bold {
+  font-weight: bold;
+}
+.is-italic {
+  font-style: italic;
+}
+.is-colored {
+}
 
-.is-nowrap {}
-.is-truncate {}
+.is-nowrap {
+}
+.is-truncate {
+}
 
-.is-fetching {}
-.is-loading {}
-.is-actived {}
-.is-succesed {}
-.is-expanded {}
-.is-valid {}
-.is-invalid {}
-.is-inverted {}
-
-
-
-
+.is-fetching {
+}
+.is-loading {
+}
+.is-actived {
+}
+.is-succesed {
+}
+.is-expanded {
+}
+.is-valid {
+}
+.is-invalid {
+}
+.is-inverted {
+}
 
 // mixin
 
 @mixin truncate {
-  white-space:nowrap;overflow:hidden;text-overflow:llipsis; 
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: llipsis;
 }
 @mixin truncate-multi {
   @include truncate;
@@ -199,21 +210,17 @@ $height-header: 64px;
   word-wrap: break-word;
   display: -webkit-box;
   -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical; 
+  -webkit-box-orient: vertical;
 }
-
-
-
-
 
 @mixin box {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color:var(--gray100);
-  overflow:hidden;
-  border-radius:$radius400;
-  position:relative;
+  background-color: var(--gray100);
+  overflow: hidden;
+  border-radius: $radius400;
+  position: relative;
   // &:hover {
   //   background:darken(var(--gray100), 5%)
   // }
@@ -244,7 +251,6 @@ $height-header: 64px;
   margin: 0 0 1rem 0;
   font-size: 1.25rem;
 }
-
 
 @mixin container {
   margin: 0 auto;

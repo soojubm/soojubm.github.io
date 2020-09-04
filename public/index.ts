@@ -366,6 +366,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // document.addEventListener('blur', event => {}, true); // blur is not bubble
 document.addEventListener('submit', event => event.preventDefault())
+// event.target.reset();
+// var form = username.form;
+// var elements = form.elements;
 
 // const errorHelper = () => {
 // };
@@ -513,3 +516,45 @@ function smoothScroll(target, duration) {
 // section1?.addEventListener('click', function() {
 //   smoothScroll('.footer', 1000)
 // })
+
+
+
+
+
+
+// var elem = document.querySelector('#item-3');
+// // Step 1
+// var parent = elem.parentNode;
+// // Step 2
+// var parentNodes = parent.children;
+// // Step 3
+// var parentNodesArray = Array.from(parent.children);
+// // Step 4
+// var siblings = parentNodesArray.filter(function (sibling) {
+// 	return sibling !== elem;
+// });
+
+
+// var counter = document.querySelector('#counter');
+// var number = 0;
+
+// var countUp = function () {
+// 	// Increase number by 1
+// 	number++;
+// 	// Update the UI
+// 	counter.textContent = number;
+// 	// if the number is less than 500, run it again
+// 	if (number < 500) {
+// 		window.requestAnimationFrame(countUp);
+// 	}
+// };
+// // Start the animation
+// window.requestAnimationFrame(countUp);
+
+// // Setup the animation
+// var animation = window.requestAnimationFrame(function () {
+// 	console.log('ran!');
+// });
+
+// // Cancel it
+// window.cancelAnimationFrame(animation);

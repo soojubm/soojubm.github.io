@@ -147,10 +147,10 @@
 	.product {padding:0 10%}
 	.product:before {display:none;}
 	.product-image {margin-left:0;left:0;}
-	.product-info {left:55%;}
+	.product-info {width:40%;position:relative;left:55%;}
 	.product-info ol {display:none;}
 	.product-info b {display:none;}
-	.product-order {width:40%;margin:10rem 0 0 55%;padding-top:140px;}
+	.product-order {width:40%;margin:0 0 0 55%;}
 
 	.product-detail {margin-left:0;margin-right:0;}
 	.product-detail-headline {width:100%;}

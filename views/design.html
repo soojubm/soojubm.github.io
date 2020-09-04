@@ -28,6 +28,11 @@
 
   <section class="design-body">
 
+
+
+
+
+    <div contenteditable id="editor"></div>
     <!-- <div class="stamp">
       <div class="circle">
         <p id="circle-content">
@@ -321,7 +326,7 @@
           <button class="design-article-primary primary-button">프라이머리</button>
           <button class="design-article-secondary secondary-button">세컨더리</button>
           <button class="design-article-tertiary tertiary-button">터시어리</button>
-          <button class="design-article-text text-button">텍스트</button>
+          <button class="design-article-text">텍스트</button>
           <!-- <button class="danger-button" aria-label="danger">Danger</button>
           <button class="success-button" aria-label="success">Success</button> -->
         </div>
@@ -343,7 +348,7 @@
           <button class="success-button is-small" aria-label="danger">Success</button> -->
           <button class="design-article-secondary-small secondary-button is-small">세컨더리</button>
           <button class="design-article-tertiary-small tertiary-button is-small">터시어리</button>
-          <button class="text-button is-small">텍스트</button>
+          <button class="design-article-tertiary-small is-small">텍스트</button>
         </div>
       </div>
       <div style="margin:2rem 0 0 0">
@@ -356,8 +361,9 @@
       <h1 class="design-article-title">Checkboxes</h1>
       <p class="design-article-description">checkbox, checkall, intermediate</p>
       <fieldset>
+        <!-- <legend>Choose ingredients</legend> -->
         <div class="checkbox">
-          <input class="js-checkall" type="checkbox" id="line00" value="" />
+          <input class="js-checkall" type="checkbox" id="line00" value="" aira-checked="mixed" aria-controls="1 2" />
           <label for="line00" title="Check All">전체 선택</label>
         </div>
         <hr />
@@ -440,6 +446,8 @@
       
       <div class="quantity js-quantity">
         <input class="quantity-input js-quantity-input js-number-input" name="quantity1" type="number" value="0" min="5" max="20" >
+        <!-- <input type="text" inputmode="numeric" pattern="[0-9]*"> -->
+
         <button class="quantity-decrement js-quantity-decrement"><i class="icon-minus"></i></button>
         <button class="quantity-increment js-quantity-increment"><i class="icon-plus"></i></button>
       </div>
@@ -449,21 +457,21 @@
         <input class="textfield-input" type="text" placeholder="soojubm" readonly></input>
       </div> -->
       <div class="textfield is-invalid" style="margin:2rem 0;">
-        <label class="textfield-label" for="">레이블</label>
-        <input class="textfield-input js-input-test" type="text" placeholder="Textarea Placeholder..." value=""></input>
+        <label class="textfield-label" for="abc123">레이블 <abbr aria-label="optional">(선택입력)</abbr></label>
+        <input class="textfield-input js-input-test" type="text" id="abc123" placeholder="Textarea Placeholder..." value="" aria-describedby="error" aria-invalid="true" />
         <!-- <button class="textfield-button primary-button">ddd</button> -->
-        <small class="textfield-helper">You can @mention other users and organizations to link to them.</small>
+        <small class="textfield-helper --is-error">You can @mention other users and organizations to link to them.</small>
       </div>
       <div role="group">
         <div class="textfield" style="flex-grow: 1;">
           <label class="textfield-label" for="date-start"><i class="">체크인</i></label>
           <!-- <label class="textfield-icon is-left is-right" for="date-start"><i class="material-icons">today</i></label> -->
-          <input class="textfield-input" type="date" id="date-start" placeholder="날짜를 설정해주세요.">
+          <input class="textfield-input" type="date" id="date-start" placeholder="날짜를 설정해주세요." />
         </div>
         <div class="textfield" style="flex-grow: 1;">
           <label class="textfield-label" for="date-start"><i class="">체크아웃</i></label>
           <!-- <label class="textfield-icon is-left is-right" for="date-start"><i class="material-icons">today</i></label> -->
-          <input class="textfield-input" type="date" id="date-start" placeholder="날짜를 설정해주세요.">
+          <input class="textfield-input" type="date" id="date-start" placeholder="날짜를 설정해주세요." />
         </div>
       </div>
       <div class="textfield" style="margin:2rem 0;">
@@ -498,7 +506,7 @@
 
       <div class="textfield is-small is-inline">
         <label class="textfield-label" for="">회사</label>
-        <input class="textfield-input" type="text" placeholder="인풋 인라인스타일 스몰사이즈">
+        <input class="textfield-input" type="text" placeholder="인풋 인라인스타일 스몰사이즈" readonly>
       </div>
     </article>
 
@@ -771,11 +779,11 @@
           <button class="slider-viewer-slide" style="background:blue;">고2</button>
           <button class="slider-viewer-slide" style="background:blue;">고3</button>
         </div>
-        <nav class="slider-dots">
+        <!-- <nav class="slider-dots">
           <button class="slider-dots-dot">1</button>
           <button class="slider-dots-dot">1</button>
           <button class="slider-dots-dot">1</button>
-        </nav>
+        </nav> -->
         <nav class="slider-arrows">
           <button class="slider-arrows-prev"><i class="icon-chevron is-left"></i></button>
           <button class="slider-arrows-next"><i class="icon-chevron"></i></button>
@@ -953,8 +961,8 @@
       </fieldset>
 
       <footer class="filter-foot">
-        <button class="primary-button">필터링하기</button>
-        <button class="text-button">clear filters</button>
+        <button class="filter-foot-confirm">필터링하기</button>
+        <button class="filter-foot-reset">clear filters</button>
       </footer>
     </form> -->
 
@@ -971,7 +979,7 @@
       </fieldset>
       <footer class="todo-control">
         <button class="todo-control-add primary-button js-todo-submit" type="submit">Add to todoList</button>
-        <button class="todo-control-remove text-button js-todo-clear">remove all items</button>
+        <button class="todo-control-remove js-todo-clear">remove all items</button>
       </footer>
     </form> -->
 
@@ -990,7 +998,7 @@
               결제가 완료되었습니다.
             </div>
             <div class="timeline-item-body-cancel">
-              <p>집행 중 취소 시 수수료가 발생합니다. <button class="text-button">주문취소</button></p>
+              <p>집행 중 취소 시 수수료가 발생합니다. <button class="">주문취소</button></p>
             </div>
           </div>
         </div>

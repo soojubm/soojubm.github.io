@@ -1,6 +1,6 @@
 <!-- // invoice랑 구분 -->
 
-<main class="checkout">
+<form class="checkout">
   <header class="checkout-head">
     <!-- <div class="checkout-head-eyebrow">주문확인</div> -->
     <div class="checkout-head-background"></div>
@@ -8,11 +8,6 @@
   </header>
 
   <section class="checkout-product">
-    <aside class="checkout-alert">
-      <p>
-        <strong>경제IOI 시즌 2는 <b>오늘 마감</b>이에요<i style="font-style:italic;">!</i></strong>
-      </p>
-    </aside>
     <h2 class="checkout-product-title">주문상품</h2>
     <div class="checkout-product-item">
       <div class="checkout-product-item-media">
@@ -29,21 +24,27 @@
     </div>
     <div class="checkout-product-shipping">
       <div class="checkout-product-shipping-label">배송료</div>
-      <div class="checkout-product-shipping-value">₩44,612</div>
+      <div class="checkout-product-shipping-value">₩3,000</div>
     </div>
     <hr style="margin:1.5rem -2.5rem 1rem;" />
     <footer class="checkout-product-total">
       <div class="checkout-product-total-label">결제예정 금액</div>
       <div class="checkout-product-total-value">₩44,612</div>
     </footer>
+    <!-- <hr style="margin:1.5rem -2.5rem 1rem;" />
+    <p class="checkout-alert">경제IOI 시즌 2는 <b>오늘 마감</b>이에요<i style="font-style:italic;">!</i></p> -->
   </section>
 
+  <!-- <div class="checkout-head-byline">
+    <h2>콩</h2>
+    <figure></figure>
+  </div> -->
   <!-- <section class="checkout-date">
 		<div class="checkout-date-label">주문일자</div>
 		<div class="checkout-date-value">2020/05/20<div>
 	</section> -->
-  <section class="checkout-shipping">
-    <h2 class="checkout-shipping-title">주문자 정보</h2>
+  <fieldset class="checkout-shipping">
+    <h2 class="checkout-shipping-title">배송지 정보</h2>
     <div class="checkout-shipping-name textfield">
       <!-- <div class="checkout-shipping-name-emoji">🙍</div> -->
       <label class="checkout-shipping-name-label textfield-label">받는 분 이름</label>
@@ -67,7 +68,7 @@
             <input class="textfield-input" type="text" name="email" id="login-email" placeholder="soojubm@gmail.com" autofocus />
           </div> -->
     </div>
-  </section>
+  </fieldset>
 
   <section class="checkout-payment">
     <h2 class="checkout-payment-title">결제수단</h2>
@@ -77,20 +78,12 @@
       <span class="checkout-payment-button-emoji" role="img">💳</span> 신용카드
       <i class="checkout-payment-button-check icon-check"></i>
     </button>
-    <br />
-    <br />
-    <!-- <h4 style="margin-bottom:1rem;"><em>환불 정책</em></h4>
-    <ul>
-      <li>주문취소는 불가능합니다.</li>
-      <li>주문취소는 사실 가능합니다.</li>
-    </ul> -->
   </section>
-
   <footer class="checkout-foot">
     <button class="checkout-foot-pay">결제하기</button>
-    <button class="checkout-foot-cart">장바구니 보기</button>
+    <!-- <button class="checkout-foot-cart">쇼핑 계속하기</button> -->
   </footer>
-</main>
+</form>
 
 <main class="order">
   <div class="order-item">
