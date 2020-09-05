@@ -78,10 +78,14 @@ $container500: 960px;
 
 
 @media (--viewport-small) {
+  .checkout {
+    padding: 0 5%;
+  }
   .checkout-head {padding-bottom:6rem;}
   .checkout-product {
-    width:90%;margin:-2rem auto 0;padding:1.5rem 2rem;position:relative;right:auto;top:auto;
+    width:100%;margin:-2rem auto 4rem;padding:1.5rem 2rem;position:relative;right:auto;top:auto;
   }
+  .checkout-shipping {padding-right: 0;}
   .checkout-foot button {
     width: 100%;
     padding: 1rem;
