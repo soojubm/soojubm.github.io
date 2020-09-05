@@ -1,4 +1,5 @@
 .color {overflow:hidden;}
+.color-group {@include group;}
 .color-item {position:relative;}
 .color-item.is-gray100 div {background:var(--gray100);}
 .color-item.is-gray200 div {background:var(--gray200);}
@@ -212,11 +213,12 @@
 .design-article-primary {@include button-primary;}
 .design-article-secondary {@include button-secondary;}
 .design-article-tertiary {@include button-tertiary;}
-.design-article-primary-small {@include box-light;@include button-primary;}
-.design-article-secondary-small {@include box-light;@include button-secondary;}
-.design-article-tertiary-small {@include box-light;@include button-tertiary;}
 .design-article-text {@include button-text;}
 
+.design-article-primary-small {@include box-light;@include button-primary;padding:$padding100;font-size:12px;}
+.design-article-secondary-small {@include box-light;@include button-secondary;padding:$padding100;font-size:12px;}
+.design-article-tertiary-small {@include box-light;@include button-tertiary;padding:$padding100;font-size:12px;}
+.design-article-text-small {@include button-text;padding:$padding100;font-size:12px;}
 .copyurl {
   @include box-light;
 }

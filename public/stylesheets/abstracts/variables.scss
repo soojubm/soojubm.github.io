@@ -54,7 +54,7 @@ $color-kakao: #ffdf00;
 @custom-media --viewport-small (max-width: 1080px);
 @custom-media --viewport-tiny (max-width: 720px);
 
-$padding100: 4px 1rem 5px; // is-small 32
+$padding100: 4px 1rem 5px; // 32
 $padding200: 9px 1.5rem 12px; // 버튼, 텍스트인풋 48
 $padding400: 1.5rem 2rem;
 
@@ -217,6 +217,8 @@ $height-header: 64px;
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 1px solid var(--gray100);
+  box-sizing: border-box;
   background-color: var(--gray100);
   overflow: hidden;
   border-radius: $radius400;

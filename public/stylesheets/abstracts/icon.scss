@@ -14,7 +14,7 @@
 .icon-plus:after {content:'';display:inline-block;width:2px;height:10px;background:var(--gray800);position:absolute;left:50%;top:50%;transform:translate(-50%, -50%);}
 .is-active .icon-plus {transform:rotate(135deg);}
 
-.icon-close {display:block;padding:16px;position:relative;transition:all .5s ease;}
+.icon-close {display:block;position:relative;transition:all .5s ease;}
 .icon-close:before {content:'';width:10px;height:2px;background-color:var(--gray800);position:absolute;left:50%;top:50%;transform: translate(-50%, -50%) rotate(45deg);}
 .icon-close:after {content:'';width:2px;height:10px;background:var(--gray800);position:absolute;left:50%;top:50%;transform:translate(-50%, -50%) rotate(45deg);}
 

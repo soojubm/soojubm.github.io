@@ -106,7 +106,7 @@
       <h1 class="design-article-title">Color Palette</h1>
       <p class="design-article-description">그레이스케일은 순서대로 백그라운드(surface) / 디바이더, disabled state / 캡션 / 바디텍스트 / 헤딩에 사용하세요.
       <h2 style="margin:0 0 .5rem;"><small>Gray Colors</small></h2>
-      <div role="group">
+      <div class="color-group" role="group">
         <figure class="color-item is-gray100">
           <div></div>
           <figcaption>
@@ -132,7 +132,7 @@
       </div>
       <br />
       <h2 style="margin:0 0 .5rem;"><small>Main Colors</small></h2>
-      <div role="group">
+      <div class="color-group" role="group">
         <figure class="color-item is-primary100">
           <div></div>
           <figcaption>blue40</figcaption>
@@ -175,7 +175,7 @@
         </a>
         <a href="" class="design-article-avatar-medium">
           <img src="/public/images/caleb-woods-182648-unsplash.jpg" alt="" />
-          <!-- <span class="avatar-badge"></span> -->
+          <span class="avatar-badge"></span>
         </a>
         <a href="" class="design-article-avatar">
           <img src="/public/images/caleb-woods-182648-unsplash.jpg" alt="" />
@@ -203,7 +203,7 @@
 
     <article class="design-article">
       <h1 class="design-article-title">Text Links</h1>
-      <p class="design-article-description">문단 <span style="color:#00783e">내부 링크</span>와 문단 <span style="text-decoration:underline;color:#333;">외부 링크</span>를 구분합니다.</p>
+      <p class="design-article-description">문단 <span style="color:#00783e">내부 링크</span>와 문단 <span style="text-decoration:underline;color:#333;">외부 링크</span>를 구분합니다. 왜 구분하지? 내부 링크가 눈에 안 띄어요.</p>
       <p>형무소 안에서는 소장의 말이 곧 법이었으며 죄수들의 잘못과 실수는 결코 용납되지 않는다. 어머니의 사망 소식을 듣고 인해 2번이나 탈옥을 시도했다가 체포된 <a href="">루크</a>의 발에 쇠통이 채워지며 루크는…<a class="more" href="#" style="margin-left:.25rem;color:#000;text-decoration:underline;">자세히 알아보기</a></p>
     </article>
 
@@ -226,10 +226,15 @@
         <span class="tag tags-item" role="listitem">해시태그</span>
         <span class="tag tags-item" style="padding:0 .5rem;border-radius:4px;background:#eee;" role="listitem">해시태그</span>
       </div>
-      <!-- <div role="group" style="margin-top:.5rem;">
-        <button class="secondary-button is-small is-addable">Typhography <i class="icon-plus"></i></button>
-        <button class="secondary-button is-small is-addable is-added">Cinema <i class="icon-close"></i></button>
-      </div> -->
+    </article>
+
+    <article class="design-article">
+      <h1 class="design-article-title">Chips</h1>
+      <p class="design-article-description">피시 앤 칩스</p>
+      <div role="group">
+        <button class="chip">Typhography <i class="icon-plus"></i></button>
+        <button class="chip is-added">Cinema <i class="icon-close"></i></button>
+      </div>
     </article>
 
     <article class="design-article" style="padding-bottom:80px;">
@@ -296,7 +301,7 @@
 
     <article class="design-article">
       <h1 class="design-article-title">CSS Icons</h1>
-      <p class="design-article-description">제곧내.</p>
+      <p class="design-article-description">버튼에 포함하여 컴포넌트화 하기.</p>
       <div class="dd" role="group">
         <button class="design-article-icon"><i class="icon-person"></i></button>
         <button class="design-article-icon"><i class="icon-search"></i></button>
@@ -322,39 +327,28 @@
       <p class="design-article-description">제곧내.</p>
       <div>
         <h6>Default Sizes</h6>
-        <div role="group" style="margin:0 0 2rem 0;">
+        <div class="button-group" role="group">
           <button class="design-article-primary primary-button">프라이머리</button>
           <button class="design-article-secondary secondary-button">세컨더리</button>
           <button class="design-article-tertiary tertiary-button">터시어리</button>
           <button class="design-article-text">텍스트</button>
-          <!-- <button class="danger-button" aria-label="danger">Danger</button>
-          <button class="success-button" aria-label="success">Success</button> -->
+          <!-- <button class="danger-button" aria-label="danger">Danger</button> -->
+          <!-- <button class="success-button" aria-label="success">Success</button> -->
         </div>
-      </div>
-      <!-- <div>
-        <h2>Disabled States</h2>
-        <div role="group">
-          <button class="primary-button" disabled>Primary</button>
-          <button class="secondary-button" disabled>Secondary</button>
-          <button class="tertiary-button" disabled>Tertiary</button>
-          <button class="text-button" disabled>Text</button>
-        </div>
-      </div> -->
-      <div>
+        <br />
         <h6>Small Buttons</h6>
         <div role="group">
-          <button class="design-article-primary-small primary-button is-small">프라이머리</button>
+          <button class="design-article-primary-small">프라이머리</button>
           <!-- <button class="danger-button is-small" aria-label="danger">Danger</button>
           <button class="success-button is-small" aria-label="danger">Success</button> -->
-          <button class="design-article-secondary-small secondary-button is-small">세컨더리</button>
-          <button class="design-article-tertiary-small tertiary-button is-small">터시어리</button>
-          <button class="design-article-tertiary-small is-small">텍스트</button>
+          <button class="design-article-secondary-small">세컨더리</button>
+          <button class="design-article-tertiary-small">터시어리</button>
+          <button class="design-article-text-small">텍스트</button>
         </div>
-      </div>
-      <div style="margin:2rem 0 0 0">
+        <br />
         <h6>상세페이지에서 사용하는 CTA (크기는 이 정도. 색은 임시로)</h6>
         <button class="design-article-primary" style="min-width:320px;border:transparent;font-size:1.25rem;background-image:linear-gradient(106deg,#ff3a4e,#7e4cff);">구매 하러가기</button>
-      </div>
+    </div>
     </article>
 
     <article class="design-article">
@@ -385,8 +379,9 @@
 
     <article class="design-article">
       <h1 class="design-article-title">Radio</h1>
-      <p class="design-article-description">내용이 없습니다.</p>
+      <p class="design-article-description">리액트에서 id 관련 이슈가 있어서 레이블 안에 인풋을 포함하는 구조는 어떨까?</p>
       <fieldset role="radiogroup">
+        <!-- <legend>Choose ingredients</legend> -->
         <div class="radio">
           <input type="radio" id="gender-man" name="gender" value="" checked>
           <label for="gender-man" title="Video Killed the Radio Button">비디오는 라디오 버튼을 죽여요</label>
@@ -462,13 +457,13 @@
         <!-- <button class="textfield-button primary-button">ddd</button> -->
         <small class="textfield-helper --is-error">You can @mention other users and organizations to link to them.</small>
       </div>
-      <div role="group">
-        <div class="textfield" style="flex-grow: 1;">
+      <div class="textfield-group" role="group">
+        <div class="textfield">
           <label class="textfield-label" for="date-start"><i class="">체크인</i></label>
           <!-- <label class="textfield-icon is-left is-right" for="date-start"><i class="material-icons">today</i></label> -->
           <input class="textfield-input" type="date" id="date-start" placeholder="날짜를 설정해주세요." />
         </div>
-        <div class="textfield" style="flex-grow: 1;">
+        <div class="textfield">
           <label class="textfield-label" for="date-start"><i class="">체크아웃</i></label>
           <!-- <label class="textfield-icon is-left is-right" for="date-start"><i class="material-icons">today</i></label> -->
           <input class="textfield-input" type="date" id="date-start" placeholder="날짜를 설정해주세요." />
@@ -793,7 +788,7 @@
 
     <article class="design-article">
       <h1 class="design-article-title">Accordions</h1>
-      <p class="design-article-description">질의응답에 주로 사용해요. 공지사항 정도의 간단한 게시글에서도 사용할 수 있으나 그 이상의 경우에는 다른 유아이를 고민하세요.</p>
+      <p class="design-article-description">질의응답에 주로 사용해요. 공지사항 정도의 간단한 게시글에서도 사용할 수 있으나 그 이상의 경우에는 다른 유아이를 고민하세요. 버튼 태그를 헤딩으로 바꿔로 role= 속성을 주자. 캐럿은 버튼으로?</p>
       <button class="accordion-trigger js-toggle" aria-expanded="false">
         <i class=""></i>
         회원탈퇴는 어떻게 할 수 있나요?
@@ -959,7 +954,6 @@
           <input class="textfield-input" type="date" id="date-end" placeholder="날짜를 설정해주세요." style="border-left:none;" />
         </div>
       </fieldset>
-
       <footer class="filter-foot">
         <button class="filter-foot-confirm">필터링하기</button>
         <button class="filter-foot-reset">clear filters</button>
@@ -1035,7 +1029,6 @@
         <button type="submit">제출</button>
       </form>
       <!-- <span class="letter-piece"><i>스</i></span> -->
-
       <!-- <i class="icon-check1"></i> -->
       <style>
       .icon-check1 {display:block;width:40px;height:40px;border-radius:50%;border:2px solid #000;position:relative;}
