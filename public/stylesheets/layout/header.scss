@@ -21,6 +21,7 @@
   position:relative;
 }
 .dropdown-trigger {
+  @include box-light;
 }
 .dropdown-menu {
   min-width:200px;

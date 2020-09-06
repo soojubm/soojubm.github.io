@@ -1,5 +1,4 @@
 <main>
-  // 버튼 태그로 바꾸기
   <section class="setting">
     <header class="setting-head">
       <h1 class="setting-head-title">설정</h1>
@@ -7,11 +6,10 @@
     </header>
     <div class="setting-body">
       <h2 class="setting-body-heading">프로필</h2>
-      <div class="setting-row">
+      <div class="setting-row is-opened" role="button">
         <h2 class="setting-row-label">닉네임</h2>
         <div class="setting-row-value">
-          <!-- 수줍이 -->
-          <section class="password-body" style="font-size:14px;">
+          <section class="password-body">
             <div class="textfield">
               <!-- <label class="textfield-label" for="find-email" title="Email Address">이메일</label> -->
               <input class="textfield-input" type="text" id="find-email" class="required" placeholder="soojubm@gmail.com" autofocus />
@@ -38,7 +36,7 @@
       </div>
       <div class="setting-row">
         <h2 class="setting-row-label">비밀번호</h2>
-        <div class="setting-row-value">••••••••</div>
+        <div class="setting-row-value" style="letter-spacing:.25rem;">••••••••</div>
         <span class="setting-row-change"><b>변경하기</b> <i class="icon-arrow"></i></span>
       </div>
     </div>
@@ -48,7 +46,7 @@
       <p class="setting-body-description">뉴니커 정보를 입력하고 뽐내보세요.</p>
       <div class="setting-row">
         <h2 class="setting-row-label">이모지</h2>
-        <div class="setting-row-value">🐻</div>
+        <div class="setting-row-value" style="font-size:2rem;">🐻</div>
         <span class="setting-row-change"><b>변경하기</b> <i class="icon-arrow"></i></span>
       </div>
       <div class="setting-row">
@@ -76,7 +74,7 @@
     </div>
 
     <footer class="setting-foot">
-      <p class="setting-foot-delete">계정 삭제하기</p>
+      <a class="setting-foot-delete" href="">계정 삭제하기</a>
     </footer>
   </section>
 </main>
