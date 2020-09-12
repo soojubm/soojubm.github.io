@@ -8,12 +8,9 @@ export const loader = () => {
     body.classList.add('body-lock')
   })
   window.addEventListener('load', () => {
-    setTimeout(() => {
-      loaderElement.classList.add('is-hidden')
-      body.classList.remove('body-lock')
-    }, 0)
+    body.classList.remove('body-lock')
+    loaderElement.classList.add('is-hidden')
   })
-
 }
 
 export const detectBrowser = () => {

@@ -143,3 +143,47 @@ const randomNumber = function(min, max) {
 function isEmpty(obj) {
   return Object.keys(obj).length === 0
 }
+
+
+
+
+
+const url = new URL();
+// Get the value for the the "query" parameter
+// returns "fetch"
+url.searchParams.get('query');
+
+// Gets all matching values, if there's more than one
+// returns ["fetch"]
+url.searchParams.getAll('query');
+
+// Checks if a value exists in the search params (boolean)
+// returns true
+url.searchParams.has('query');
+
+// Gets an Iterator of keys
+// Iterators can be looped through with a for...of
+url.searchParams.keys();
+
+// Gets an iterator of values
+url.searchParams.values();
+
+// Appends a new search parameter entry
+// This adds an *additional* entry if the key already exists
+url.searchParams.append('query', 'chicken');
+
+// Sets a search parameter entry
+// If the value already exists, it will replace it
+// If there are more than one, all others are deleted
+url.searchParams.set('query', 'chicken');
+
+// Deletes all instances of a search parameter
+url.searchParams.delete('query');
+
+// Provides an iterator method for looping through search parameter values
+url.searchParams.forEach(function (value, key) {
+	console.log(key, value);
+});
+
+// Sorts search parameters alphabetically by key
+url.searchParams.sort();

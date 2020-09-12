@@ -6,6 +6,31 @@ type Parameter = {
   selector: string
 }
 
+const getOptions = function(data) {
+	return {
+		method: 'POST',
+		body: JSON.stringify(data || {}),
+		headers: {
+			'Content-type': 'application/json; charset=UTF-8'
+		}
+	}
+}
+
+const getData = function(url, data) {
+	return fetch(url, {
+		method: 'POST',
+		body: JSON.stringify(data),
+		headers: {
+			'Content-type': 'application/json; charset=UTF-8'
+		}
+	}).then(function (response) {
+		if (response.ok) {
+			return response.json();
+		}
+		return Promise.reject(response);
+	});
+};
+
 const modal = ({ selector: trigger }: Parameter) => ({
   initialize() {},
   modals: document.querySelectorAll<HTMLElement>(trigger),
@@ -20,52 +45,43 @@ const modal = ({ selector: trigger }: Parameter) => ({
       
       const id = modal.dataset.modal
       const uri = `/views/${id}.html`
-      fetch(uri)
-        .then(response => {
-          if (response.ok) return response.text()
-          else return Promise.reject(response)
-        })
-        .then(html => {
-          if(!this.modalContainer) return
+      fetch(uri).then(response => {
+        if (response.ok) return response.text()
+        else return Promise.reject(response)
+      }).then(html => {
+        if(!this.modalContainer) return
+        this.modalContainer.innerHTML = html
+        document.body.classList.remove('is-modal-visible')
 
-          const { pageYOffset } = window
+        const { pageYOffset } = window
+        this.showModal(pageYOffset)
+        this.setHistory(id)
 
-          document.body.classList.remove('is-modal-visible')
-
-          this.modalContainer.innerHTML = html
-          this.setModal(pageYOffset)
-          this.setHistory(id)
-
-          const isOpened = document.body.classList.contains('is-modal-visible')
-          if(isOpened) {
-            document.querySelector('.js-modal-close')?.addEventListener('click', event => event.stopPropagation())
-            document.querySelector('.js-modal-close')?.addEventListener('click', this.backHistory)
-            document.querySelector('.modal-dim')?.addEventListener('click', this.backHistory)
-            // document.addEventListener('click', this.backHistory)
-          }
-          // 이벤트 remove해줘야함
-          // document.addEventListener('keydown', event => {
-          //   const isKeyEsc = event.keyCode === 27
-          //   if(!isKeyEsc) return
-          //   this.backHistory()
-          // })
-
+        const isShown = document.body.classList.contains('is-modal-visible')
+        if(isShown) {
+          document.querySelector('.js-modal-close')?.addEventListener('click', event => event.stopPropagation())
+          document.querySelector('.js-modal-close')?.addEventListener('click', this.backHistory)
+          document.querySelector('.modal-dim')?.addEventListener('click', this.backHistory)
           // document.addEventListener('click', this.backHistory)
+        } else {
 
-          window.addEventListener('popstate', () => {
-            if(!isOpened) return
-            this.clearModal(this.modalContainer, pageYOffset)
-          })
+        }
+        document.addEventListener('keydown', event => {
+          const isKeyEsc = event.keyCode === 27
+          if(!isKeyEsc) return
+          
+          this.backHistory()
+        }, true)
 
-          const modalDialog = modal.querySelector<HTMLElement>('.modal-dialog')
-          modalDialog?.addEventListener('click', event => event.stopPropagation())
-          modalDialog?.addEventListener('click', event => event.stopPropagation())
-        })
-        .catch(error => console.warn('modal Error'))
+
+        // document.addEventListener('click', this.backHistory)
+
+        window.addEventListener('popstate', () => this.clearModal(this.modalContainer, pageYOffset))
+      }).catch(error => console.warn('modal Error'))
       }),
     )
   },
-  setModal(pageYOffset) {
+  showModal(pageYOffset) {
     document.body.classList.add('is-modal-visible')
     document.body.classList.add('body-lock')
     document.body.style.top = `-${pageYOffset}px`

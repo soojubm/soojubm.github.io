@@ -48,13 +48,16 @@
 
 
 .accordion {position:relative;}
-// border-top:1px solid var(--gray100);border-bottom:1px solid var(--gray100);
-.accordion-trigger {display:flex;align-items:center;width:100%;margin:0 0 0 0;padding:$padding200;padding-left:0;padding-right:0;cursor:pointer;text-align:left;position:relative;transition:all .4s;}
-// .accordion-trigger:before {content:'';display:block;width:8px;height:8px;border-radius:$radius400;background:#999;margin-right:1rem;}
-.accordion-trigger:not(:nth-of-type(1)) {border-top:none;}
-.accordion-trigger .icon-caret {margin-left:auto;transition:all .2s}
+
+
+.accordion-item {position:relative;}
+.accordion-item-trigger {}
+.accordion-item-panel {}
+
+.accordion-trigger {display:flex;align-items:center;justify-content:space-between;padding:$padding200;padding-left:0;padding-right:0;cursor:pointer;position:relative;transition:all .4s;}
 .accordion-trigger:hover {color:var(--gray800);}
-.accordion-trigger.is-active {border-bottom:none;color:$color-primary;}
+.accordion-trigger .icon-caret {transition:all .2s}
+.accordion-trigger.is-active {color:$color-primary;}
 .accordion-trigger.is-active .icon-caret {transform:rotate(180deg)}
 .accordion-panel {height:0;opacity:0;transition:all .25s;}
 .accordion-panel.is-visible {height:auto;opacity:1;padding:1rem 0 3rem;box-sizing:border-box;/*animation:fadeup 0.4s $bezier-base forwards;*/}

@@ -123,3 +123,23 @@
   </div>
   
 </main>
+
+
+<script>
+
+var form = document.getElementById('subscription-form');
+​
+form.addEventListener('submit', function (ev) {
+  ev.preventDefault();
+​
+  // If a previous payment was attempted, get the latest invoice
+  const latestInvoicePaymentIntentStatus = localStorage.getItem(
+    'latestInvoicePaymentIntentStatus'
+  );
+​
+  if (latestInvoicePaymentIntentStatus === 'requires_payment_method') {
+    const invoiceId = localStorage.getItem('latestInvoiceId');
+    const isPaymentRetry = true;
+  }
+});
+</script>

@@ -67,10 +67,11 @@ window.addEventListener('offline', () => {
   offlineElement!.style.display = 'block'
 })
 
-const domEvents = () => {
-  routePage().then(() => {
-    const test = validity.isEmail('faf')
-    console.log('isNumber', test)
+const domEvents = async () => {
+    await routePage()
+    // const test = validity.isEmail('faf')
+    // console.log('isNumber', test)
+
     event.modal({ selector: '.js-modal' }).setEvent()
 
     input.checkbox({ checkAllSelector: '.js-checkall', checkSelector: '.js-check' }).setEvent()
@@ -154,8 +155,7 @@ const domEvents = () => {
       })
     }
 
-    focusComment()
-  })
+  focusComment()
 }
 
 window.addEventListener('hashchange', domEvents)
@@ -207,41 +207,19 @@ function notifyThisPage() {
   body.classList.add(className)
 }
 
-function calculateReadTime() {
-  const readTimeElement = document.querySelector<HTMLElement>('.post-head')
-  const postContent = document.querySelector<HTMLElement>('.post-body-paragraph')
-  if (!postContent || !readTimeElement) return
-  const text = postContent?.textContent || postContent?.innerText
-  let textLength = text.split(' ').length || 1
-  const wordsPerMinute = 200
-  let value = Math.ceil(textLength / wordsPerMinute)
-  const result = `${value} min read`
-  console.log(result)
+loader()
+const view = document.querySelector('#view')
+console.log('outside', view)
+window.addEventListener('load', () => {
+  console.log('load', view)
+})
 
-  readTimeElement.innerText = result
-}
-
-// function bustCache() {
-//   const linkElements = document.querySelectorAll('link')
-//   linkElements.forEach(element => {
-//     const isStylesheet = element.getAttribute('rel') === 'stylesheet'
-//     if (!isStylesheet) return
-
-//     const href = element.getAttribute('href')
-//     const timestamp = new Date().getTime()
-//     const cacheBuster = `${href}?cacheBuster=${timestamp}`
-//     element.setAttribute('href', cacheBuster)
-//   })
-// }
 
 document.addEventListener('DOMContentLoaded', () => {
-  // bustCache()
   initailizePage()
-
-  loader()
+  console.log('domcontentLoaded',view)
   detectBrowser()
   setDarkmode()
-  // adjustTopPadding()
 
   // hashchange 될 때마다 이벤트 만들어짐;
   event.toggleClass({ selector: '.js-navbar-toggle' }).setEvent()
@@ -250,24 +228,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('scroll', () => {
     const isScrollEnd = window.innerHeight + window.pageYOffset >= document.body.offsetHeight
-    if (isScrollEnd) {
-      console.log('detect bottom')
-    }
+    if(isScrollEnd) console.log('detect bottom')
+
+
     // event.stickyElement({ targetElement: '.js-navbar', addClass: 'is-sticky-navbar' }
     event.stickyElement({ targetElement: '.js-topbar', addClass: 'is-sticky-topbar' })
     event.stickyElement({ targetElement: '.js-post-head', addClass: 'is-sticky-post-head' })
   })
-  const scrollProgress = () => {
-    const post = document.querySelector<HTMLElement>('.post')
-    const progressBar = document.querySelector<HTMLElement>('.post-head-progress')
-    if (!post || !progressBar) return
 
-    const scrollPercent = `${(window.pageYOffset / (post.scrollHeight - window.innerHeight)) * 100}%`
-    // const scrollPercent = `${(window.pageYOffset / (document.body.scrollHeight - window.innerHeight)) * 100}%`
-    progressBar.style.width = scrollPercent
-  }
   window.addEventListener('scroll', scrollProgress, true)
 })
+
+function scrollProgress() {
+  const post = document.querySelector<HTMLElement>('.post')
+  const progressBar = document.querySelector<HTMLElement>('.post-head-progress')
+  if (!post || !progressBar) return
+
+  const scrollPercent = `${(window.pageYOffset / (post.scrollHeight - window.innerHeight)) * 100}%`
+  progressBar.style.width = scrollPercent
+}
 
 // ! click 이벤트 외부에 넣으니까 파폭에서만 오류. event undefined
 // TODO: 도큐먼트가 아니라 event.target.parent 가 아닌 것을 클릭했을 때 다당야 하나
@@ -558,3 +537,33 @@ function smoothScroll(target, duration) {
 
 // // Cancel it
 // window.cancelAnimationFrame(animation);
+
+
+
+
+function calculateReadTime() {
+  const readTimeElement = document.querySelector<HTMLElement>('.post-head')
+  const postContent = document.querySelector<HTMLElement>('.post-body-paragraph')
+  if (!postContent || !readTimeElement) return
+  const text = postContent?.textContent || postContent?.innerText
+  let textLength = text.split(' ').length || 1
+  const wordsPerMinute = 200
+  let value = Math.ceil(textLength / wordsPerMinute)
+  const result = `${value} min read`
+  console.log(result)
+
+  readTimeElement.innerText = result
+}
+
+// function bustCache() {
+//   const linkElements = document.querySelectorAll('link')
+//   linkElements.forEach(element => {
+//     const isStylesheet = element.getAttribute('rel') === 'stylesheet'
+//     if (!isStylesheet) return
+
+//     const href = element.getAttribute('href')
+//     const timestamp = new Date().getTime()
+//     const cacheBuster = `${href}?cacheBuster=${timestamp}`
+//     element.setAttribute('href', cacheBuster)
+//   })
+// }

@@ -1,4 +1,4 @@
 
-.chip {@include box-light;justify-content:left;min-width:10rem;border-color:$color-primary;background:var(--gray0);padding:0 1rem;font-size:12px;line-height:1vh;}
+.chip {@include box-light;justify-content:left;width:auto;border-color:$color-primary;background:var(--gray0);padding:0 4rem 0 1rem;font-size:12px;line-height:1vh;}
 .chip.is-added {background:$color-primary;border-color:$color-primary;color:var(--gray0);}
 .chip i {@include box-light;border-color:$color-primary;border-top-left-radius:0;border-bottom-left-radius:0;position:absolute;right:-1px;top:-1px;}
