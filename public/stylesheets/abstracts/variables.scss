@@ -18,14 +18,19 @@ $cell-small: 16px;
   --fontstack: 'Asap', 'AritaDotum', 'Apple SD Gothic Neo', sans-serif;
 
   // ! fontSize
+  --weight800: 3rem;
+  --weight600: 2rem;
+  --weight400: 1.25rem;
+  --weight200: 1rem;
+  --weight100: .75rem;
 
   // ! colours
   --gray0: #fff; // white for dark theme
   --gray100: #f1f5f6; // bg
   --gray200: #dadce0; // divider border
-  --gray400: #999; // caption
-  --gray600: #454545; // body
-  --gray800: #161616; // bg || heading
+  --gray400: #979d9a; // caption
+  --gray600: #4e5351; // body
+  --gray800: #131514; // bg || heading
 }
 
 $headline: 3rem;

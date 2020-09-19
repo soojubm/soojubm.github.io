@@ -205,7 +205,7 @@
 .quote-action {@include button-primary;width:50%;margin:2rem 0 0 0;}
 
 
-.offline {display:none;max-width:320px;margin:0 auto;padding:.5rem 1rem;border-radius:$radius400;background:$color-negative;text-align:center;position:fixed;left:10%;right:10%;top:45%;z-index:8;}
+.offline {max-width:320px;margin:0 auto;padding:.5rem 1rem;border-radius:$radius400;background:$color-negative;text-align:center;position:fixed;left:10%;right:10%;top:45%;z-index:8;}
 .offline p {color:var(--gray0);}
 
 .skeleton-screen:empty{

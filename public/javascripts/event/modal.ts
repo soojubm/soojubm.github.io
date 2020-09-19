@@ -24,9 +24,7 @@ const getData = function(url, data) {
 			'Content-type': 'application/json; charset=UTF-8'
 		}
 	}).then(function (response) {
-		if (response.ok) {
-			return response.json();
-		}
+		if (response.ok) return response.json();
 		return Promise.reject(response);
 	});
 };

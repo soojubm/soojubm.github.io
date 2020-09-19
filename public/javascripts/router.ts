@@ -3,13 +3,12 @@ const routePage = async () => {
   if (!view) return
 
   const routes = [
-    { name: 'home' , path: '/home' },
+    { name: 'home', path: '/home' },
     { name: 'design', path: '/design' },
     { name: 'profile', path: '/profile' },
     { name: 'blog', path: '/blog' },
   ]
   const currentPath = window.location.pathname
-
 
   // todo 유틸
   function setHistory(uri) {
@@ -26,20 +25,18 @@ const routePage = async () => {
   //     view && view.innerHTML = html
   //   }
   // }
-        
+
   let hash = window.location.hash.substring(1)
   const uri = hash ? `/views/${hash}.html` : '/views/design.html'
   const response = await fetch(uri)
     .then(response => response.text())
-    .then(html => view.innerHTML = html)
+    .then(html => (view.innerHTML = html))
     .catch(error => console.warn('router: ', error))
 
   // setHistory(hash)
   window.scrollTo(0, 0)
-  
 
   return response
-
 }
 
 export default routePage
@@ -55,28 +52,15 @@ export default routePage
 // 	if(!routeInfo) {
 // 		//window.history.pushState({}, '', 'error');
 // 		view.innerHTML = 'No route exists with this path';
-// 	} else {
-// 		window.history.pushState({ name: 'tester' }, '', routeInfo.path);
-// 		fetch(`/views/${routeInfo.name}.html`)
-// 			.then(res => res.text())
-// 			.then(html => view.innerHTML = html)
-// 			.catch(error => console.log('Failed to fetch page: ', error));
-// 	}
 // };
 
-// {
-// 	method: 'POST',
 // 	body: 'title=' + encodeURIComponent('My awesome new article') + '&body=' + encodeURIComponent('This is the text of my article'),
-// 	header: {
-// 		'Content-Type': 'application/json'
-// 	},
 // 	referrer: 'no-referrer'
-// }
+
 // const parser = new DOMParser();
 // const doc = parser.parseFromString(html, 'text/html');
 // view.innerHTML = new XMLSerializer().serializeToString(doc);
-// toLowerCase() 해주기
 
-// window.addEventListener('popstate', function (event) {
+// window.addEventListener('popstate', function(event) {
 // 	if (history.state && history.state.id === 'homepage') {}
 // }, false);

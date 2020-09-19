@@ -1,5 +1,5 @@
 <main>
-  <form class="signup" action="" method="">
+  <form class="signup" name="signup-foot-submit" action="" method="">
     <header class="signup-head">
       <h3 class="signup-head-title">웹사이트 회원가입</h3>
       <p class="signup-head-description">이름, 사진과 같이 Google 서비스에서 사용하는 기본 정보</p>
@@ -8,14 +8,14 @@
       <legend hidden>필수입력</legend>
       <div class="textfield">
         <label class="textfield-label">이메일</label>
-        <input class="textfield-input" type="text" placeholder="soojubm@gmail.com" />
+        <input class="textfield-input" type="text" name="email" placeholder="soojubm@gmail.com" />
         <small class="textfield-helper" role="alert">이메일을 입력하시와아요.</small>
         <span class="check-text -o" style="position: absolute;right:.5rem;bottom:40px;"><i class="icon-check" style="border-color:#3fbb65;"></i></span>
         <!-- <span class="check-text -x"><i class="icon-close"></i></span> -->
       </div>
       <div class="textfield">
         <label class="textfield-label" for="signup-password">비밀번호<abbr title="required" aria-hidden="true">*</abbr></label>
-        <input class="textfield-input" type="password" id="signup-password" placeholder="비밀번호" />
+        <input class="textfield-input" type="password" name="password" id="signup-password"  placeholder="비밀번호" />
         <button class="view-password js-view-password">비밀번호 보기</button>
         <!-- <input
           class="textfield-input"
@@ -93,7 +93,7 @@
     </footer>
   </form>
 </main>
-<script>
+<script defer>
   function onChangePhoneNumberFormat(num) {
     let update = ''
     for (var i = 0; i < num.length; i++) {
@@ -103,12 +103,9 @@
     return update
   }
   // TODO other input
-  document.addEventListener('DOMContentLoaded', () => {})
-  const signUpForm = document.querySelector('.signup')
-  const userId = document.querySelector('.js-email')
-  const userPassword = document.querySelector('.js-password')
-  const checkItemsRequired = document.querySelectorAll('.js-required')
 
+  document.addEventListener('DOMContentLoaded', () => {
+  
   document.addEventListener(
     'blur',
     event => {
@@ -131,17 +128,8 @@
     true,
   )
 
-  // 회원가입 버튼을 눌렀을 때 유효성을 체크한다.
-  signUpForm.addEventListener('submit', function(event) {
-    event.preventDefault()
-    if (checkItemsRequired.length === checkedItemsRequired.length) alert('ok')
-    alert(checkItemsRequired.length)
-
-    if (userId.value.length < 5) {
-      //	userId.nextSibling.nextSibling.innerHTML = '5~20자의 영문 소문자와 숫자, 특수기호(_),(-)만 사용 가능합니다.';
-    }
-    // 8~16자 영문 대 소문자, 숫자, 특수문자를 사용하세요.
   })
+  
 </script>
 
 

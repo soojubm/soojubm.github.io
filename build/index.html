@@ -70,17 +70,15 @@
     <script src="./public/javascripts/polyfill.js"></script>
     <script src="./build/bundle.js" defer></script>
 
-
-
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-83531239-1"></script>
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-83531239-1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
       gtag('config', 'UA-83531239-1');
-    </script>
+    </script> -->
 
     <script>
       document.addEventListener('DOMContentLoaded' , () => {
@@ -150,7 +148,7 @@
       <p>이 사이트는 크롬 브라우저에 최적화되어 있습니다.</p>
       <a href="https://www.google.co.kr/chrome/index.html" class="button">크롬 브라우저 다운로드</a>
     </aside>
-    <aside class="offline js-offline">
+    <aside class="offline js-offline" hidden>
       <p>인터넷에 연결되어 있지 않습니다.</p>
     </aside>
 
@@ -163,7 +161,7 @@
     <aside class="dialog toast" role="dialog">
       <!-- <img class="dialog-object" src="/public/images/soo.png" alt=""> -->
       <h1 class="dialog-title">부끄러우니까 보지마요!</h1>
-      <p class="dialog-description">페이지 로딩 시 쿠키 사용 승인 요청에 사용할 수 있습니다. 스낵바처럼 가벼운 노티에도 사용할 수 있습니다.</p>
+      <p class="dialog-description">부끄러우니까 보지마요! 부끄러우니까 보지마요! 부끄러우니까 보지마요! 부끄러우니까 보지마요!</p>
       <footer class="dialog-footer">
         <button class="dialog-footer-close">안 볼래요</button>
         <button class="dialog-footer-confirm toast-check">알겠어요</button>
@@ -290,7 +288,7 @@
     </nav>
 
     <header class="topbar">
-      <h1 class="topbar-title">디자인시스템</h1>
+      <h1 class="topbar-title">페이지타이틀</h1>
       <button class="topbar-back" onclick="javascript:alert('이전페이지로~');">
         <span class="topbar-back-icon"><i class="icon-arrow"></i></span>
       </button>

@@ -6,6 +6,7 @@
     <div class="hero-obj2"></div>
     <div class="hero-obj3"></div>
     <div class="hero-background"></div>
+    <small class="hero-eyebrow">페이지 타이틀</small>
     <h1 class="hero-title">부끄러우니까 보지마요 <span role="img" aria-label="bomb">🗯</span></h1>
     <p class="hero-description">이 사이트는 연습장이니 의미를 찾지 마셔요.<br />바닐라 자바스크립트로 만들었어요.</p>
     <a class="hero-cta">공사중입니다</a>
@@ -82,12 +83,32 @@
     <article class="design-article typography">
       <h1 class="design-article-title">Typhography</h1>
       <!-- <button class="design-article-more">View All</button> -->
-      <p class="design-article-description">하나의 무게Weight를 사용합니다.</p>
+      <p class="design-article-description">1rem 단위는 14px입니다. 모바일에서의 1rem은 12px입니다. 소숫점 픽셀이 많이 나와서 애매하다. 하나의 무게Weight를 사용합니다.</p>
       <!-- <p>200 light / 400 normal / 700 bold</p> -->
+
+      <hr />
+      <dl style="display:flex;justify-content:space-between;">
+        <dt style="color:var(--gray400)">headline</dt>
+        <dd>2rem</dd>
+      </dl>
+      <dl style="display:flex;justify-content:space-between;">
+        <dt style="color:var(--gray400)">heading</dt>
+        <dd>1.5rem</dd>
+      </dl>
       <dl style="display:flex;justify-content:space-between;">
         <dt style="color:var(--gray400)">subhead</dt>
         <dd>1.25rem</dd>
       </dl>
+      <dl style="display:flex;justify-content:space-between;">
+        <dt style="color:var(--gray400)">body</dt>
+        <dd>1rem</dd>
+      </dl>
+      <dl style="display:flex;justify-content:space-between;">
+        <dt style="color:var(--gray400)">caption</dt>
+        <dd>12px</dd>
+      </dl>
+      <hr />
+      <br />
       <div style="display:flex;">
         <div style="width:50%">
           <i style="display:block;margin-bottom:.5rem;width:16px;height:16px;border-radius:4px;background:cadetblue"></i>
@@ -201,7 +222,7 @@
         <i class="breadcrumb-divider">/</i>
         <a class="breadcrumb-item " href="#">페이지 이름</a>
         <i class="breadcrumb-divider">/</i>
-        <a class="breadcrumb-item breadcrumb-last" href="#">페이지 이름</a>
+        <span class="breadcrumb-item breadcrumb-last" href="#">페이지 이름</span>
       </nav>
     </article>
 
@@ -505,9 +526,10 @@
         <textarea class="textfield-input" rows="3" placeholder="Textarea Placeholder..."></textarea>
       </div>
 
+      <!-- // readonly -->
       <div class="textfield is-small is-inline">
         <label class="textfield-label" for="">회사</label>
-        <input class="textfield-input" type="text" placeholder="인풋 인라인스타일 스몰사이즈" readonly>
+        <input class="textfield-input" type="text" placeholder="인풋 인라인스타일 스몰사이즈">
       </div>
     </article>
 
@@ -564,10 +586,10 @@
     <article class="design-article">
       <h1 class="design-article-title">Dropdown</h1>
       <p class="design-article-description">오른쪽 정렬되었을 때 상태가 필요합니다. 드롭업 상태가 필요할까요?</p>
-      <div class="header-user-account dropdown">
-        <button class="dropdown-trigger js-toggle" aria-haspopup="menu" aria-expanded="false" style="width:auto;padding:0 1rem;">
-          드롭다운
-          <i class="icon-caret" style="margin-left:.5rem;"></i>
+      <div class="dropdown">
+        <button class="dropdown-trigger js-toggle" aria-haspopup="menu" aria-expanded="false">
+          <span class="dropdown-trigger-text">드롭다운</span>
+          <i class="dropdown-trigger-caret icon-caret"></i>
         </button>
         <menu class="dropdown-menu" role="menu">
           <h6 class="dropdown-menu-title">Dropdown header</h6>
@@ -577,7 +599,7 @@
           <a class="dropdown-menu-link" href="">수줍이에서 로그아웃</a>
         </menu>
       </div>
-      <div class="header-user-account dropdown">
+      <div class="dropdown">
         <button class="dropdown-trigger js-toggle" aria-haspopup="menu" aria-expanded="false">
           <i class="icon-more"></i>
         </button>
@@ -610,7 +632,7 @@
     <article class="design-article grayscale">
       <h1 class="design-article-title">Cards</h1>
       <p class="design-article-description">하나의 마크업으로 가로형 세로형이 가능하도록...</p>
-      <div class="quote" style="margin:2rem 0;">
+      <div class="quote">
         <div class="quote-avatar avatar">
           <i class="icon-person"></i>
         </div>
@@ -622,11 +644,11 @@
         </div>
         <button class="quote-action">자세히보기</button>
       </div>
-
+      <br />
       <div class="pricing-item">
         <span class="tag" style="position:absolute;right:.5rem;top:.5rem;">most popular</span>
-        <!-- <i style="margin-top:-.5rem;font-size:40px;">🧞‍</i> -->
-        <h1 class="pricing-item-title">Standard</h1>
+        <i style="margin-top:-.5rem;font-size:40px;">🧞‍</i>
+        <h1 class="pricing-item-title">스탠다드</h1>
         <p class="pricing-item-description">부끄러우니까 구매하지마요.</p>
         <span class="pricing-item-price">
           <span class="pricing-item-price-unit">₩ </span>
@@ -641,7 +663,6 @@
         <button class="pricing-item-upgrade">업그레이드</button>
         <button class="pricing-item-more">And More...</button>
       </div>
-
     </article>
 
     <article class="design-article">
@@ -713,7 +734,7 @@
             <td>む</td>
             <td>め</td>
             <td>も</td>
-            <td class="right"><span class="tag">12,000</span></td>
+            <td class="right">hello</td>
           </tr>
           <tr>
             <td><input type="checkbox"><label for=""></label></td>
@@ -903,7 +924,7 @@
     </article>
 
     <article class="design-article">
-      <h1 class="design-article-title">Steps</h1>
+      <h1 class="design-article-title">Stepper</h1>
       <p class="design-article-description">단계다단계</p>
       <div class="step">
         <div class="step-item is-active">
@@ -911,7 +932,8 @@
             1
             <!-- <i class="icon-check" style="border-color:#3fbb65;"></i> -->
           </span>
-          <p class="step-item-title">정보입력</p>
+          <h3 class="step-item-title">정보입력</h3>
+          <!-- <p>Your garden's success depends on its location, so choose a spot that has healthy soil, gets good light, and is easily watered.</p> -->
         </div>
         <div class="step-space is-active">
           <span class="step-space-dot"></span>
@@ -922,7 +944,7 @@
           <span class="step-item-icon">
             2
           </span>
-          <p class="step-item-title">결제완료</p>
+          <h3 class="step-item-title">결제완료</h3>
         </div>
         <div class="step-space is-active">
           <span class="step-space-dot"></span>
@@ -933,7 +955,7 @@
           <span class="step-item-icon">
             3
           </span>
-          <p class="step-item-title">배달</p>
+          <h3 class="step-item-title">배달</h3>
         </div>
       </div>
     </article>

@@ -16,13 +16,9 @@
   .is-sticky-topbar .topbar {height:32px;}
 }
 
-.dropdown {
-  margin:1rem 0;
-  position:relative;
-}
-.dropdown-trigger {
-  @include box-light;
-}
+.dropdown {position:relative;}
+.dropdown-trigger {}
+.dropdown-trigger-caret {margin-left:.5rem;}
 .dropdown-menu {
   min-width:200px;
   width:auto;
@@ -52,8 +48,5 @@
   position:relative;
   z-index:1;
 }
-.dropdown-menu-link:hover {
-  background:rgba(0, 0, 0, 0.05);
-}
-.dropdown-menu-divider {
-}
+.dropdown-menu-link:hover {background:rgba(0, 0, 0, 0.05);}
+.dropdown-menu-divider {}

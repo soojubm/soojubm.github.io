@@ -1,6 +1,6 @@
 .hero {width:auto;margin: 0 10%;padding: 3rem 4rem 4rem;box-sizing:border-box;position: relative;z-index: 1;}
 .hero-background {max-width: 100%;margin: 0 auto;background:var(--gray100);border-radius:$radius400;position: absolute;left: -50%;right: -50%;top: 0;bottom: 0;z-index: -1;}
-.hero-eyebrow {display:block;font-size:1.5rem;}
+.hero-eyebrow {display:block;margin:0 0 .5rem 0;font-size:12px;}
 .hero-title {font-size:1.5rem;text-indent:-2px;}
 .hero-description {width:50%;margin:1rem 0 3rem 0;/*color:rgba(255,255,255,.8);*/}
 .hero-cta {@include button-primary;}
@@ -9,7 +9,6 @@
 .hero-obj2 {position:absolute;right:480px;bottom:-8px;width:80px;height:80px;background:gold;border-radius:50%;}
 .hero-obj3 {position:absolute;right:420px;top:24px;width:16px;height:16px;background:#0057ff;border-radius:50%;}
 .hero-obj4 {position:absolute;right:4rem;top:-6rem;width:25rem;}
-
 .hero-head {}
 .hero-body {}
 .hero-foot {}

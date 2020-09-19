@@ -1,4 +1,4 @@
-export const setGraph = () => {
+export const createGraph = () => {
   const graphItems = document.querySelectorAll('.js-graph .graph-item')
   if (!graphItems) return
 

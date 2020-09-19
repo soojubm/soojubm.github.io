@@ -27,8 +27,6 @@ const stickyElement = ({ targetElement, addClass }) => {
   // })
 
   window.addEventListener('scroll', hasScrolled)
-
-
 }
 
 // var isScrolling;

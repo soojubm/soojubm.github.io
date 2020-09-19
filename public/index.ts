@@ -2,8 +2,8 @@
 
 import './stylesheets/style.scss'
 import routePage from './javascripts/router'
-import { loader, detectBrowser, adjustTopPadding } from './javascripts/load'
-import { setGraph } from './javascripts/ui'
+import { loader, detectBrowser } from './javascripts/load'
+import { createGraph } from './javascripts/ui'
 import { setDarkmode, carousel } from './javascripts/setDarkMode'
 import { countDownClock } from './javascripts/countdown'
 import event from './javascripts/event/index'
@@ -11,34 +11,30 @@ import input from './javascripts/input/index'
 
 import { validity } from './javascripts/utils/validations'
 
-// var evens = _.remove(array, function(n) {
-//   return n % 2 == 0;
-// });
+const intersectionObserver = new IntersectionObserver((entries) => {
+  if (entries[0].intersectionRatio <= 0) return;
 
-// function removeItem(items, removable) {
-//   const index = items.indexOf(removable);
-//   return [...items.slice(0, index), ...items.slice(index+1)];
-// }
+  console.log('Loaded new items');
+})
+// // start observing
+const tempp = document.querySelector('.footer')
+tempp && intersectionObserver.observe(tempp);
 
-// throw new Error
 
-// If you do not return anything, a function will return undefined, which validates as falsey.
 
-//document.documentElement.className += ' supports-date';
+document.addEventListener('readystatechange', (event: any)  => {
+  // event.target === document ? true
+  if(event.target.readyState === 'loading') console.log('loading...')
+  else if (event.target.readyState === 'interactive') console.log('initLoader')
+  else if (event.target.readyState === 'complete') console.log('initApp')
+})
+
+
+// document.documentElement.className += ' supports-date';
 // div.classList.replace("foo", "bar");
 
 // if(window.matchMedia('(min-width:800px)').matches) {}
 
-// let formChanged = false;
-// myForm.addEventListener('change', () => formChanged = true);
-// window.addEventListener('beforeunload', (event) => {
-//   if (formChanged) {
-//     event.returnValue = 'You have unfinished changes!';
-//   }
-// });
-
-window.addEventListener('beforeunload', () => {})
-window.addEventListener('unload', () => console.log('unload EVENT'))
 // function addToPendingWork(promise) {
 //   busyspinner.hidden = false
 //   pendingOps.add(promise)
@@ -50,61 +46,91 @@ window.addEventListener('unload', () => console.log('unload EVENT'))
 //   promise.then(cleanup).catch(cleanup)
 // }
 
-function focusComment() {
-  const commentWrite = document.querySelector('.js-comment-write')
-  const commentTextField = document.querySelectorAll('.js-comment-textfield')
-  // if (!commentWrite || !commentTextField) return
-
-  commentTextField!.forEach(element =>
-    element.addEventListener('focus', () => {
-      commentWrite!.classList.add('is-focused')
-    }),
-  )
-}
-
+window.addEventListener('unload', () => console.log('unload EVENT'))
 window.addEventListener('offline', () => {
   const offlineElement = document.querySelector<HTMLElement>('.js-offline')
-  offlineElement!.style.display = 'block'
+  offlineElement!.hidden = true
 })
 
 const domEvents = async () => {
-    await routePage()
-    // const test = validity.isEmail('faf')
-    // console.log('isNumber', test)
 
-    event.modal({ selector: '.js-modal' }).setEvent()
+
+
+    await routePage()
+
+
+
+
+    const lazyBackgrounds = [].slice.call(document.querySelectorAll('.lazy-background'))
+    console.log(lazyBackgrounds)
+    if ('IntersectionObserver' in window && 'IntersectionObserverEntry' in window && 'intersectionRatio' in window.IntersectionObserverEntry.prototype) {
+      let lazyBackgroundObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return
+
+          entry.target.classList.add('visible')
+          lazyBackgroundObserver.unobserve(entry.target)
+
+          // if (entry.intersectionRatio > 0) entry.target.classList.add('tada')
+          // else entry.target.classList.remove('tada')
+        })
+      })
+
+      lazyBackgrounds.forEach(element => lazyBackgroundObserver.observe(element))
+    }
+
+    // 회원가입 버튼을 눌렀을 때 유효성을 체크한다.
+    // const { signup } = document
+    // const { email, password } = signup
+    // signup.addEventListener('submit', event => {
+    //   event.preventDefault()
+    //   alert()
+    //   // console.log(email, password)
+    //   //	userId.nextSibling.nextSibling.innerHTML = '5~20자의 영문 소문자와 숫자, 특수기호(_),(-)만 사용 가능합니다.';
+    //   // 8~16자 영문 대 소문자, 숫자, 특수문자를 사용하세요.
+    // })
+
+    let formChanged = false;
+    const signupForm = document.querySelector('.js-input-email')
+    signupForm?.addEventListener('change', () => {
+      formChanged = true
+    })
+    window.addEventListener('beforeunload', event => {
+      if (!formChanged) return
+      event.preventDefault() // 모든 브라우저에서 지원하는 것은 아님.
+      event.returnValue = ''
+    })
 
     input.checkbox({ checkAllSelector: '.js-checkall', checkSelector: '.js-check' }).setEvent()
+    input.file()
+    input.textarea()
+    input.number()
+    
+    event.modal({ selector: '.js-modal' }).setEvent()
     event.toggleClass({ selector: '.js-toggle' }).setEvent()
-
     event.enterTarget({ selector: '.js-hover-trigger' })
     event.tabMenu()
     event.close({ selector: '.js-close' })
     event.toTop({ selector: '.js-to-top' })
 
     event.scrollAnimation()
-    event.scrollspy({ menusSelector: '.js-section', sectionsSelector: '.newneek-navbar-menu-item' })
+    // event.scrollspy({ menusSelector: '.js-section', sectionsSelector: '.newneek-navbar-menu-item' })
 
-    input.file()
-    input.textarea()
-    input.number()
-
-    setGraph()
+    createGraph()
     countDownClock(20, 'days')
     carousel()
-
     revealPassword()
+    focusComment()
 
-    const copy = document.querySelector('.js-copy')
-    copy?.addEventListener('click', () => copyToClipboard('fafaf'))
+    document.querySelector('.js-copy')?.addEventListener('click', () => copyToClipboard('fafaf'))
 
     const inputTest = document.querySelector<HTMLInputElement>('.js-input-test')
     if (inputTest) {
       inputTest.addEventListener('keypress', function(e) {
         const key = e.which || e.keyCode
-        // 0, 1, ..., 9 have key code of 48, 49, ..., 57, respectively
-        // Space has key code of 32
-        if (key != 32 && (key < 48 || key > 57)) {
+        const isNumberKey = key < 48 || key > 57 // todo ! isNumberKey 이다 지금음0 to 9
+        const isSpaceKey = key === 32
+        if (!isSpaceKey && isNumberKey) {
           e.preventDefault()
         }
       })
@@ -138,88 +164,95 @@ const domEvents = async () => {
 
     // event.customCursor()
 
-    // 임시
-    const list = document.querySelector('.js-display-list')
-    const grid = document.querySelector('.js-display-grid')
-    const works = document.querySelector('.profile-body')
-    if (list && grid && works) {
-      list.addEventListener('click', () => {
-        list.classList.add('is-selected')
-        grid.classList.remove('is-selected')
-        works.classList.add('list')
-      })
-      grid.addEventListener('click', () => {
-        list.classList.remove('is-selected')
-        grid.classList.add('is-selected')
-        works.classList.remove('list')
-      })
-    }
+  // 임시
+  const list = document.querySelector('.js-display-list')
+  const grid = document.querySelector('.js-display-grid')
+  const works = document.querySelector('.profile-body')
 
-  focusComment()
+  const buttons = document.querySelector('.js-display-list')
+  buttons?.addEventListener('click', (event: any) => {
+    console.log(event.target.parentNode, event.target.name)
+    event.target.parentNode.classList.add('is-temp')
+    
+  })
+  list?.addEventListener('click', () => {
+    list?.classList.add('is-selected')
+    grid?.classList.remove('is-selected')
+    works?.classList.add('list')
+  })
+  grid?.addEventListener('click', () => {
+    list?.classList.remove('is-selected')
+    grid?.classList.add('is-selected')
+    works?.classList.remove('list')
+  })
 }
 
 window.addEventListener('hashchange', domEvents)
 window.addEventListener('hashchange', initailizePage)
-window.addEventListener('hashchange', detectHeaderTheme)
 
-function detectHeaderTheme() {
-  const pageHeadElement = document.querySelector('.js-header')
-  const pages = ['#design', '']
-  const isWhite = pages.includes(window.location.hash)
 
-  if (isWhite) {
-    pageHeadElement?.classList.add('is-white')
-  } else {
-    pageHeadElement?.classList.remove('is-white')
-  }
-}
 
 function revealPassword() {
   const toggleElement = document.querySelectorAll<HTMLElement>('.js-view-password')
+  if(toggleElement.length === 0) return
 
-  toggleElement?.forEach(element =>
+  toggleElement.forEach(element =>
     element.addEventListener('click', () => {
       const passwordElement = element.parentNode?.querySelector<HTMLElement>('input')
       const isPasswordType = passwordElement?.getAttribute('type') === 'password'
       const type = isPasswordType ? 'text' : 'password'
 
       passwordElement?.setAttribute('type', type)
-    }),
+    })
   )
 }
 
 function initailizePage() {
-  const navigationTrigger = document.querySelector<HTMLElement>('.navbar-burger')
+  (function initializeMenu() {
+    const navigationTrigger = document.querySelector<HTMLElement>('.js-navbar-toggle')
 
-  navigationTrigger?.classList.remove('is-active')
-  navigationTrigger?.nextElementSibling?.classList.remove('is-visible')
+    navigationTrigger?.classList.remove('is-active')
+    navigationTrigger?.nextElementSibling?.classList.remove('is-visible')
+  })
+
+  function notifyThisPage() {
+    let { hash } = window.location
+    const className = `page-${hash === '' ? 'design' : hash.substring(1)}`
+  
+    document.body.className = ''
+    document.body.classList.add(className)
+  }
+
+  function detectHeaderTheme() {
+    const pageHeadElement = document.querySelector<HTMLElement>('.js-header')
+    const pages = ['#design', '']
+    const isWhite = pages.includes(window.location.hash)
+    const ACTIVE_CLASS = 'is-white'
+
+    if (isWhite) {
+      pageHeadElement?.classList.add(ACTIVE_CLASS)
+    } else {
+      pageHeadElement?.classList.remove(ACTIVE_CLASS)
+    }
+  }
 
   notifyThisPage()
   detectHeaderTheme()
 }
 
-function notifyThisPage() {
-  let { hash } = window.location
-  const { body } = document
-  const className = `page-${hash === '' ? 'design' : hash.substring(1)}`
 
-  body.className = ''
-  body.classList.add(className)
-}
 
 loader()
-const view = document.querySelector('#view')
-console.log('outside', view)
-window.addEventListener('load', () => {
-  console.log('load', view)
-})
 
 
 document.addEventListener('DOMContentLoaded', () => {
   initailizePage()
-  console.log('domcontentLoaded',view)
   detectBrowser()
   setDarkmode()
+
+  // event.stickyElement({ targetElement: '.js-navbar', addClass: 'is-sticky-navbar' }
+  event.stickyElement({ targetElement: '.js-topbar', addClass: 'is-sticky-topbar' })
+  event.stickyElement({ targetElement: '.js-post-head', addClass: 'is-sticky-post-head' })
 
   // hashchange 될 때마다 이벤트 만들어짐;
   event.toggleClass({ selector: '.js-navbar-toggle' }).setEvent()
@@ -229,11 +262,6 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', () => {
     const isScrollEnd = window.innerHeight + window.pageYOffset >= document.body.offsetHeight
     if(isScrollEnd) console.log('detect bottom')
-
-
-    // event.stickyElement({ targetElement: '.js-navbar', addClass: 'is-sticky-navbar' }
-    event.stickyElement({ targetElement: '.js-topbar', addClass: 'is-sticky-topbar' })
-    event.stickyElement({ targetElement: '.js-post-head', addClass: 'is-sticky-post-head' })
   })
 
   window.addEventListener('scroll', scrollProgress, true)
@@ -242,10 +270,10 @@ document.addEventListener('DOMContentLoaded', () => {
 function scrollProgress() {
   const post = document.querySelector<HTMLElement>('.post')
   const progressBar = document.querySelector<HTMLElement>('.post-head-progress')
-  if (!post || !progressBar) return
+  if(!post || !progressBar) return
 
-  const scrollPercent = `${(window.pageYOffset / (post.scrollHeight - window.innerHeight)) * 100}%`
-  progressBar.style.width = scrollPercent
+  const scrollPercent = `${(window.pageYOffset / (post!.scrollHeight - window.innerHeight)) * 100}%`
+  progressBar!.style.width = scrollPercent
 }
 
 // ! click 이벤트 외부에 넣으니까 파폭에서만 오류. event undefined
@@ -311,10 +339,6 @@ function scrollProgress() {
 // 	// helpers.forEach(helper => helper.style.display = 'none');
 // 	// let loginData = {email: '', password: ''};
 
-// 	const { email, password } = document.login;
-// 	console.log(email);
-// 	if(!document) return;
-
 // 	// const isEmail = event.target === email;
 // 	const isPassword = event.target === password;
 
@@ -344,8 +368,9 @@ function scrollProgress() {
 // });
 
 // document.addEventListener('blur', event => {}, true); // blur is not bubble
-document.addEventListener('submit', event => event.preventDefault())
+
 // event.target.reset();
+
 // var form = username.form;
 // var elements = form.elements;
 
@@ -427,25 +452,6 @@ function copyToClipboard(text) {
   // }
 }
 
-// var createArticle = function (article) {
-// 	fetch('https://jsonplaceholder.typicode.com/posts', {
-// 		method: 'POST',
-// 		body: JSON.stringify(article),
-// 		headers: {
-// 			'Content-type': 'application/json; charset=UTF-8'
-// 		}
-// 	}).then(function (response) {
-// 		if (response.ok) {
-// 			return response.json();
-// 		}
-// 		return Promise.reject(response);
-// 	}).then(function (data) {
-// 		console.log(data);
-// 	}).catch(function (error) {
-// 		console.warn(error);
-// 	});
-// };
-
 // let company = {
 //   name: 'Github',
 //   revenue: 2000,
@@ -464,40 +470,11 @@ function copyToClipboard(text) {
 // // Function call
 // company.getUserNames?.()
 
-function smoothScroll(target, duration) {
-  var target = document.querySelector(target)
-  var targetPosition = target.getBoundingClientRect().top
-  var startPosition = window.pageYOffset
-  var distance = targetPosition - startPosition
-  var startTime = null || 0
-
-  function animation(currentTime) {
-    if (!startTime) startTime = currentTime
-
-    var timeElapsed = currentTime - startTime
-    var run = easeInOutQuad(timeElapsed, startPosition, distance, duration)
-
-    window.scrollTo(0, run)
-
-    if (timeElapsed < duration) requestAnimationFrame(animation)
-  }
-  function easeInOutQuad(t, b, c, d) {
-    t /= d / 2
-    if (t < 1) return (c / 2) * t * t + b
-    t--
-    return (-c / 2) * (t * (t - 2) - 1) + b
-  }
-
-  requestAnimationFrame(animation)
-}
 
 // var section1 = document.querySelector('.design-article')
 // section1?.addEventListener('click', function() {
 //   smoothScroll('.footer', 1000)
 // })
-
-
-
 
 
 
@@ -516,7 +493,6 @@ function smoothScroll(target, duration) {
 
 // var counter = document.querySelector('#counter');
 // var number = 0;
-
 // var countUp = function () {
 // 	// Increase number by 1
 // 	number++;
@@ -539,12 +515,11 @@ function smoothScroll(target, duration) {
 // window.cancelAnimationFrame(animation);
 
 
-
-
 function calculateReadTime() {
   const readTimeElement = document.querySelector<HTMLElement>('.post-head')
   const postContent = document.querySelector<HTMLElement>('.post-body-paragraph')
   if (!postContent || !readTimeElement) return
+
   const text = postContent?.textContent || postContent?.innerText
   let textLength = text.split(' ').length || 1
   const wordsPerMinute = 200
@@ -567,3 +542,16 @@ function calculateReadTime() {
 //     element.setAttribute('href', cacheBuster)
 //   })
 // }
+
+function focusComment() {
+  const commentWrite = document.querySelector('.js-comment-write')
+  const commentTextField = document.querySelectorAll('.js-comment-textfield')
+
+  commentTextField!.forEach(element =>
+    element.addEventListener('focus', () => {
+      commentWrite!.classList.add('is-focused')
+    })
+  )
+}
+
+

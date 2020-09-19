@@ -74,8 +74,8 @@
 .product-features-head h1 {margin:0 0 2rem 0;font-size: 1.75rem;line-height: 1.6;word-break:keep-all;}
 .product-features-head p {}
 .product-features-item {width:30%;max-width:320px;}
-.product-features-item-avatar {margin:0 0 2rem 0;padding:2rem 0;font-size:3rem;position:relative;}
-.product-features-item-avatar:before {content:'';display:block;@include box-medium;background:$blue100;position:absolute;right:-1.5rem;z-index:-1;}
+.product-features-item-avatar {display:block;font-size:3rem;position:relative;}
+.product-features-item-avatar:before {content:'';display:block;@include box-medium;background:$blue100;position:absolute;left:1.5rem;z-index:-1;}
 .product-features-item-title {font-size:$subhead;;}
 .product-features-item-description {margin-top:1rem;}
 .product-features-item-link {display:block;margin-top:2rem;}
