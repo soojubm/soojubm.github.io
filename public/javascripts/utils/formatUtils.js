@@ -181,16 +181,36 @@ url.searchParams.set('query', 'chicken');
 url.searchParams.delete('query');
 
 // Provides an iterator method for looping through search parameter values
-url.searchParams.forEach(function (value, key) {
-	console.log(key, value);
-});
+// url.searchParams.forEach(function (value, key) {
+// 	console.log(key, value);
+// });
 
 // Sorts search parameters alphabetically by key
 url.searchParams.sort();
 
 
 
-function removeItem(items, removable) {
+export function removeItem(items, removable) {
   const index = items.indexOf(removable);
   return [...items.slice(0, index), ...items.slice(index + 1)];
+}
+
+
+
+export function copyToClipboard(text) {
+  const textareaElement = document.createElement('textarea')
+  document.body.appendChild(textareaElement)
+
+  textareaElement.value = text
+  textareaElement.select() // focus?도 해야함?
+  document.execCommand('copy')
+  document.body.removeChild(textareaElement)
+
+  alert('복사 완료! 이제 "붙여넣기" 해주세요.😉')
+  // try {
+  //   document.execCommand('copy');
+  // } catch (error) {
+  // } finally {
+  //   document.body.removeChild(textareaElement);
+  // }
 }

@@ -11,16 +11,8 @@ import input from './javascripts/input/index'
 
 import { validity } from './javascripts/utils/validations'
 
-const intersectionObserver = new IntersectionObserver((entries) => {
-  if (entries[0].intersectionRatio <= 0) return;
 
-  console.log('Loaded new items');
-})
-// // start observing
-const tempp = document.querySelector('.footer')
-tempp && intersectionObserver.observe(tempp);
-
-
+// import { copyToClipboard } from './javascripts/utils/formatUtils.js'
 
 document.addEventListener('readystatechange', (event: any)  => {
   // event.target === document ? true
@@ -28,7 +20,6 @@ document.addEventListener('readystatechange', (event: any)  => {
   else if (event.target.readyState === 'interactive') console.log('initLoader')
   else if (event.target.readyState === 'complete') console.log('initApp')
 })
-
 
 // document.documentElement.className += ' supports-date';
 // div.classList.replace("foo", "bar");
@@ -53,30 +44,83 @@ window.addEventListener('offline', () => {
 })
 
 const domEvents = async () => {
-
-
-
     await routePage()
 
+    lazyLoading()
 
+    function lazyLoading() {
+      const URL =
+        "https://gist.githubusercontent.com/prof3ssorSt3v3/1944e7ba7ffb62fe771c51764f7977a4/raw/c58a342ab149fbbb9bb19c94e278d64702833270/infinite.json";
+      const lazyBackgrounds = [].slice.call(document.querySelectorAll('.subscribe'))
+      const options = {
+        root: null,
+        rootMargin: '0px 0px 0px 0px',
+        threshold: 0.1
+      }
 
+      if ('IntersectionObserver' in window && 'IntersectionObserverEntry' in window && 'intersectionRatio' in window.IntersectionObserverEntry.prototype) {
+        let observer = new IntersectionObserver(callback, options)
+        lazyBackgrounds.forEach(element => observer.observe(element))
+      }
 
-    const lazyBackgrounds = [].slice.call(document.querySelectorAll('.lazy-background'))
-    console.log(lazyBackgrounds)
-    if ('IntersectionObserver' in window && 'IntersectionObserverEntry' in window && 'intersectionRatio' in window.IntersectionObserverEntry.prototype) {
-      let lazyBackgroundObserver = new IntersectionObserver((entries, observer) => {
+      function fetchData() {
+        fetch(URL)
+          .then(response => response.json())
+          .then(data => {
+            data.items.forEach(item => {
+              const view = document.querySelector('main')
+              console.log(item)
+
+              view && view.insertAdjacentHTML('beforeend', `<div style="height:200px;background:crimson;color:#fff;text-align:center;">무한스크룔</div>`);
+            });
+          });
+      }
+
+    //   let currentPage = 1
+    //   const DATA_PER_PAGE = 10
+    //   const lastPage = 10
+
+    //   function fetchData(currentPage) {
+    //       const list = document.querySelector(".footer")
+    //       if(!list) return
+
+    //       for(let i = (currentPage - 1) * DATA_PER_PAGE + 1; i <= currentPage * DATA_PER_PAGE; i++) {
+    //         const li = document.createElement("li")
+    //         li.textContent = `${currentPage}페이지 : ${i}번째 데이터`
+    //         list.appendChild(li)
+    //       }
+    //   }
+
+    //   function observeLastChild(intersectionObserver) {
+    //     const listItems = document.querySelectorAll(".footer li")
+    //     listItems.forEach(element => {
+    //       const isLast = currentPage >= lastPage
+    //       if (isLast) {
+    //         intersectionObserver.disconnect()
+    //         return
+    //       }
+    //       if(element.nextSibling) return
+
+    //       intersectionObserver.observe(element) // el에 대하여 관측 시작
+    //     })
+    // }
+
+      function callback(entries, observer) {
         entries.forEach(entry => {
-          if (!entry.isIntersecting) return
+          if(!entry.isIntersecting) return
+          fetchData()
+          // setTimeout(() => {
+          //   fetchData(++currentPage)
+          //   observer.unobserve(entry.target)
+          //   observeLastChild(observer)
+          //   // msgLoading.classList.remove("fade-in")
+          // }, 500)
 
-          entry.target.classList.add('visible')
-          lazyBackgroundObserver.unobserve(entry.target)
-
-          // if (entry.intersectionRatio > 0) entry.target.classList.add('tada')
-          // else entry.target.classList.remove('tada')
+          // entry.target.classList.add('visible')
+          // entry.target.src = entry.target.dataset.src;
+          // lazyBackgroundObserver.unobserve(entry.target)
         })
-      })
-
-      lazyBackgrounds.forEach(element => lazyBackgroundObserver.observe(element))
+      }
     }
 
     // 회원가입 버튼을 눌렀을 때 유효성을 체크한다.
@@ -122,7 +166,7 @@ const domEvents = async () => {
     revealPassword()
     focusComment()
 
-    document.querySelector('.js-copy')?.addEventListener('click', () => copyToClipboard('fafaf'))
+    // document.querySelector('.js-copy')?.addEventListener('click', () => copyToClipboard('fafaf'))
 
     const inputTest = document.querySelector<HTMLInputElement>('.js-input-test')
     if (inputTest) {
@@ -434,23 +478,6 @@ function scrollProgress() {
 // 	if(i === images.length) i = 0;
 // }, 5000);
 
-function copyToClipboard(text) {
-  const textareaElement = document.createElement('textarea')
-  document.body.appendChild(textareaElement)
-
-  textareaElement.value = text
-  textareaElement.select() // focus?도 해야함?
-  document.execCommand('copy')
-  document.body.removeChild(textareaElement)
-
-  alert('복사 완료! 이제 "붙여넣기" 해주세요.😉')
-  // try {
-  //   document.execCommand('copy');
-  // } catch (error) {
-  // } finally {
-  //   document.body.removeChild(textareaElement);
-  // }
-}
 
 // let company = {
 //   name: 'Github',
