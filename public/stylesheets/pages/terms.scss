@@ -14,7 +14,7 @@
 .terms-sidebar {width:100%;max-width:320px;background:var(--gray0);padding:8rem 1.5rem;border-right:1px solid var(--gray100);box-sizing:border-box;overflow-y:auto;position:fixed;top:0;bottom:0;z-index:1;}
 .terms-sidebar a {display:block;line-height:40px;}
 
-@media (--viewport-medium) {
+@media (--viewport-large) {
   .terms-sidebar {max-width:280px;}
   .terms-head {max-width:640px;margin:0;margin-left:320px;}
   .terms-body {max-width:640px;margin:0;margin-left:320px;}

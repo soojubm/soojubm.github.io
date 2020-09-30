@@ -2,7 +2,7 @@
 .topbar-back {}
 .topbar-back-icon {@include box-light;margin:0 1rem 0 0;}
 .topbar-back-icon {transform:rotate(180deg);}
-.topbar-title {font-size:$subhead;;position:absolute;left:50%;transform:translateX(-50%);z-index:5;}
+.topbar-title {padding:0 10%;font-size:1rem;position:absolute;left:4rem;bottom:50%;transform:translateY(50%);z-index:5;}
 .topbar-backdrop {height:32px;padding:1rem 0;}
 .topbar-cta {@include button-tertiary;min-width:auto;margin-left:auto;padding:$padding100;font-size:12px;}
 

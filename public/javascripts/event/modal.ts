@@ -48,6 +48,7 @@ const modal = ({ selector: trigger }: Parameter) => ({
         else return Promise.reject(response)
       }).then(html => {
         if(!this.modalContainer) return
+        
         this.modalContainer.innerHTML = html
         document.body.classList.remove('is-modal-visible')
 

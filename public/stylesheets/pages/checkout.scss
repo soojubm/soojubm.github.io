@@ -3,18 +3,17 @@
 @mixin item-label {width:120px;margin-left:0;color:var(--gray400);font-size:1rem;}
 @mixin item-value {}
 
-$container500: 960px;
-@mixin container {max-width:$container500;margin:0 auto;}
+@mixin container {max-width:$container600;margin:0 auto;}
 
 @mixin bleeding {position:absolute;left:-200%;right:-200%;top:0;bottom:0;z-index:-1;}
 
-.checkout {@include container;padding-bottom:8rem;position:relative;}
+.checkout {@include container;padding:0 5% 8rem;position:relative;}
 .checkout-head {padding:4rem 0 4.5rem;position:relative;}
 .checkout-head-background {display:none;background:var(--gray100);position:absolute;left:-200%;right:-200%;top:0;bottom:0;z-index:-1;}
 .checkout-head-eyebrow {margin-bottom:.5rem;font-size:1rem;color:var(--gray400);}
 .checkout-head-title {font-size:2rem;}
 
-.checkout-head-byline {display:flex;display:none;align-items:center;justify-content:space-between;margin:4rem 0;padding:1rem 0;padding-right: 480px;}
+.checkout-head-byline {display:flex;display:none;align-items:center;justify-content:space-between;margin:4rem 0;padding:1rem 0;padding-right:560px;}
 .checkout-head-byline h2 {font-size:1rem;}
 .checkout-head-byline figure {@include box-light;display:flex;}
 
@@ -30,7 +29,7 @@ $container500: 960px;
 .checkout-date {padding:4rem 0;}
 .checkout-date-title {font-size:1.25rem;}
 
-.checkout-shipping {margin-top:0;padding-right:480px;}
+.checkout-shipping {margin-top:0;padding-right:560px;}
 .checkout-shipping-title {margin:1rem 0;font-size:$subhead;}
 .checkout-shipping-name {}
 // .checkout-shipping-name-emoji {@include item-emoji;}
@@ -78,12 +77,8 @@ $container500: 960px;
 
 
 @media (--viewport-small) {
-  .checkout {
-    padding: 0 5%;
-  }
   .checkout-head {padding-bottom:6rem;}
-  .checkout-product {
-    width:100%;margin:-2rem auto 4rem;padding:1.5rem 2rem;position:relative;right:auto;top:auto;
+  .checkout-product {width:100%;margin:-2rem auto 4rem;padding:1.5rem 2rem;position:relative;right:auto;top:auto;
   }
   .checkout-shipping {padding-right: 0;}
   .checkout-foot button {
@@ -98,39 +93,3 @@ $container500: 960px;
     z-index: 8;
   }
 }
-
-
-
-
-.order {margin:0 5% 10rem;}
-.order-head {margin:8rem 0 4rem;position:relative;}
-.order-head-title {margin:1rem 0;}
-.order-head-description {}
-
-
-
-.order-item {margin:2rem 0;border:$border100;border-radius:$radius400;position:relative;}
-.order-item-head {padding:1rem 2rem;border-bottom:$border100;box-sizing:border-box;position:relative;}
-.order-item-head-date {display:block;width:100%;}
-.order-item-head-date-label {display:block;font-size:12px;}
-.order-item-head-date-value {}
-.order-item-head-status {margin-right:.5rem;}
-.order-item-head-status-label {display:block;font-size:12px;}
-.order-item-head-status-value {}
-.order-item-head-method {}
-.order-item-head-method-label {display:block;font-size:12px;}
-.order-item-head-method-value {}
-
-.order-item-head-method {margin-right:1rem;}
-
-
-.order-item-body {margin:1rem 0;padding:0 2rem;overflow:hidden;position:relative;}
-.order-item-product {margin: 1rem 0;}
-.order-item-product-thumbnail {float:left;@include box-large;margin-right:1.5rem;}
-.order-item-product-name {}
-.order-item-product-price {}
-
-
-.order-item-foot {margin:2rem 0 0;padding:.25rem;border-top:$border100;position:relative;}
-.order-item-foot-button {@include button-text;width:100%;}
-.order-item-foot-helper {margin: .5rem 0 0;}

@@ -134,7 +134,7 @@
 .product-policy ul li {}
 
 
-@media (--viewport-medium) {
+@media (--viewport-large) {
 	.product {padding:0 10%}
 	.product:before {display:none;}
 	.product-image {margin-left:0;left:0;}
@@ -166,9 +166,7 @@
 	.product-order {width:100%;max-width:560px;margin:-9rem auto 0;padding-top:0;}
 	.product-order-size {overflow:auto;white-space:nowrap;}
 	.product-order-color {overflow:auto;white-space:nowrap;}
-
-	.product-quick {display:none;}
-
+  
 	.product-detail {@include container;margin:10rem auto;}
 
 	.product-features {}

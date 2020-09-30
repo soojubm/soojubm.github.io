@@ -1,3 +1,9 @@
-.tags {@include group;}
+.tags {display:flex;flex-wrap:wrap;}
 .tag {display:flex;margin:0 .5rem 0;font-size:12px;color:var(--gray400);}
 .tag:before {content:'#'}
+
+.badge {
+  display:inline-flex;font-size:12px;color:var(--gray400);
+  padding: 0 .5rem;
+  border-radius: $radius400;
+  background: var(--gray100);}

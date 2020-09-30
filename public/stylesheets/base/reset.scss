@@ -23,8 +23,7 @@ cite,i,address,em,dfn {font-style:normal;} em {color:$color-primary;}
 small {font-size:12px;} time {} del {color:var(--gray400);} abbr {text-decoration:none;}
 a {text-decoration:none;text-decoration-skip-ink:auto;color:$color-primary;} a:link,a:visited {} a:hover,a:focus {} a:active {}
 mark {padding:0 2px 2px;border-radius:$radius400;background:var(--gray800);color:var(--gray0);}
-hr {height:1px;overflow:visible;position:relative;}
-hr:after {content:'';display:block;width:100%;height:1px;background:var(--gray100);}
+hr {height:1px;background:var(--gray100);overflow:visible;position:relative;}
 u {text-decoration:none;position:relative;}
 u:after {content:'';height:.6em;border-radius:$radius400;background:$blue100;position:absolute;left:-.25rem;right:-.25rem;bottom:-.25rem;z-index:-1;}
 code {padding:1rem 1.5rem;background:var(--gray100);border-radius:$radius400;}

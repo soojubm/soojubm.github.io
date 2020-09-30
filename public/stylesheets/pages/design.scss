@@ -1,5 +1,5 @@
 .color {overflow:hidden;}
-.color-group {@include group;}
+.color-group {display:flex;flex-wrap:wrap;}
 .color-item {position:relative;}
 .color-item.is-gray100 div {background:var(--gray100);}
 .color-item.is-gray200 div {background:var(--gray200);}
@@ -38,7 +38,7 @@
 .design-button-subhead {font-size:$body;text-decoration:underline;}
 
 
-@media (--viewport-medium) {
+@media (--viewport-large) {
   .design {padding:0;}
   .design-head {height:50vh;position:relative;left:0;right:0;top:0;bottom:50%;}
   .design-body {width:100%;margin:4rem 10%;padding:0;}

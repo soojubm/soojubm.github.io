@@ -1,36 +1,45 @@
-@mixin size($width, $height: $width) {
-  width: $width;
-  height: $height;
+@mixin size($width, $height: $width) {width: $width;height: $height;}
+
+@mixin fixed-bottom {}
+
+@mixin image-centered {width:auto;height:auto;max-width:150%;max-height:150%;margin:auto;position:absolute;left:0;right:0;top:0;bottom:0;}
+
+@mixin truncate {white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+@mixin truncate-multi {
+  @include truncate;
+  height: 2.7em;
+  white-space: normal;
+  word-wrap: break-word;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
+
+
+// layout 유동성을 위해 centered mixin은 layout의 유동성을 해친다.
+@mixin box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--gray100);
+  box-sizing: border-box;
+  background-color: var(--gray100);
+  overflow: hidden;
+  border-radius: $radius400;
+  position: relative;
+  // &:hover {
+  //   background:darken(var(--gray100), 5%)
+  // }
+}
+@mixin box-large {@include box;width:$cell-large;height:$cell-large;}
+@mixin box-light {@include box;width: $cell-light;height: $cell-light;}
+@mixin box-medium {@include box;width: $cell-medium;height: $cell-medium;}
+@mixin box-small {@include box;width: $cell-small;height: $cell-small;}
 
 @mixin clearfix {
-  &::after {
+  &:after {
     content: '';
-    display: table;
+    display: block;
     clear: both;
   }
-}
-
-
-@mixin fixed-bottom {
-  position: fixed;
-  left: 0;
-  right: 0;
-  z-index: 6;
-}
-
-@mixin ellipsis {overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
-@mixin title_style($size, $color) {overflow:hidden;white-space:nowrap;text-overflow:ellipsis;font-size:$size;color:$color;}
-
-@mixin container {
-  margin: $margin400;
-  padding: $padding400;
-  border: none;
-  box-shadow: $shadow400;
-}
-
-
-
-@mixin image-centered {
-  width:auto;height:auto;max-width:150%;max-height:150%;margin:auto;position:absolute;left:0;right:0;top:0;bottom:0;
 }

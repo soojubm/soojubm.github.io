@@ -12,16 +12,12 @@
   // button:active {outline:0;animation:ripple2 0.2s linear forwards;}
 }
 
-// todo : iconButton
-
-button {
-  @include reset-button;
-}
-
-// btn.setAttribute('aria-pressed', false);
+button {@include reset-button;}
 button[aria-pressed=true] {}
 button[aria-current] {}
 button[aria-current=page] {}
+// btn.setAttribute('aria-pressed', false);
+
 
 @mixin button {
   display: inline-block;
@@ -66,31 +62,22 @@ button[aria-current=page] {}
   &:disabled {color:var(--gray400);}
 }
 @mixin button-text {
-  @include button {
-    background:none;border:1px solid transparent;color:$color-primary;
-  }
+  @include button;
+  background:none;border:1px solid transparent;color:$color-primary;
   &:hover,
   &:focus {border-color:var(--gray100);background:var(--gray100);}
   &:active {}
   &:disabled {color:var(--gray200);cursor:not-allowed;}
 }
 
-// backButton closeButton
+// backButton closeButton :: back close 아이콘은 어차피 단독으로 쓰이지 않는다!
 
 .danger-button {@include button;background:$color-negative;border:1px solid $color-negative;color:var(--gray0);}
 .success-button {@include button;background:$color-positive;border:1px solid $color-positive;color:var(--gray0);}
 
 
-@mixin group {
-  display:flex;flex-wrap:wrap;
-}
-@mixin group-item {
-  display:flex;flex-wrap:wrap;
-}
-
 [role=group] {display:flex;margin:-.25rem;}
 [role=group] > * {margin:.25rem;}
-
 [role=group] input[type=radio] + label {margin:0 16px 0 0;color:var(--gray400);padding-left:0;}
 [role=group] input[type=radio] + label:before {content:'';display:inline-block;width:2px;height:2px;background:var(--gray400);margin:0 10px 0 0;vertical-align:3px;position:static;left:auto;top:auto;}
 [role=group] input[type=radio] + label:after {display:none;}
@@ -98,9 +85,6 @@ button[aria-current=page] {}
 [role=group] input[type=radio]:checked + label:before {border-color:var(--gray800);width:10px;height:4px;border-left: 2px solid #f3f2f1;border-bottom: 2px solid #f3f2f1;background:none;margin:0 8px 0 0;border-color:var(--gray400);vertical-align:3px;transform:rotate(-45deg);border-radius:0;border-right:0;border-top:0;position:static;left:auto;top:auto;}
 
 // .button-group {display:flex;justify-content:space-between;width:100%;padding:.5rem 0;border-radius:4px;overflow:hidden;}
-// .button-group.is-left {}
-// .button-group.is-center {justify-content:center;}
-// .button-group.is-right {justify-content:flex-end;}
 // .button-group button {margin:0 !important;border-radius:0;}// flex:1 1 auto;}
 // .button-group button.is-active {background-color:$color-primary;color:var(--gray0);}
 // .button-group button:first-child {border-top-left-radius:$radius400;border-bottom-left-radius:$radius400;}
