@@ -10,6 +10,9 @@
 //   -webkit-appearance:none;-moz-appearance:none;appearance:none;
 //   font:inherit;color:inherit;
 // }
+
+
+
 input, select, textarea {
   // border-radius:0px;
   // -webkit-border-radius:0;
@@ -118,7 +121,7 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 .textfield-prefix {display:inline-block;display:none;width:100px;}
 .textfield-prefix + .textfield-input {display:inline-block;padding-right:100px;}
 .textfield-suffix {display:inline-block;padding:0 1.5rem;line-height:46px;cursor:default;color:var(--gray400);position:absolute;right:0;top:28px;}
-.textfield-reset {display:none;}
+.textfield-reset {}
 .selectbox-indicator {position:absolute;right:16px;bottom:22px;}
 
 .textfield.is-small {padding:0 !important;font-size:12px !important;}

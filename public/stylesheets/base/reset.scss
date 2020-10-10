@@ -3,8 +3,8 @@
 @font-face {font-family: 'Asap';src: url(/public/webfonts/Asap-Regular.otf); }
 // @font-face {font-family: 'Asap';font-weight:bold;src: url(/public/webfonts/Asap-Bold.otf); }
 // @font-face {font-family: 'DunkelSans';src: url(/public/webfonts/Dunkelsansv0.5-Heavy.woff2); }
-// @font-face {font-family: 'Arvana';font-weight:400;src: url(/public/webfonts/Arvanav0.3-Regular.woff2); }
-// @font-face {font-family: 'Arvana';font-weight:800;src: url(/public/webfonts/Arvanav0.3-Black.woff2); }
+@font-face {font-family: 'Arvana';font-weight:400;src: url(/public/webfonts/Arvanav0.3-Regular.woff2); }
+@font-face {font-family: 'Arvana';font-weight:800;src: url(/public/webfonts/Arvanav0.3-Black.woff2); }
 // @import url('https://fonts.googleapis.com/css?family=Gothic+A1:300,400,700,900&display=swap&subset=korean');
 // @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&display=swap');
 // @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap');
@@ -25,7 +25,7 @@ a {text-decoration:none;text-decoration-skip-ink:auto;color:$color-primary;} a:l
 mark {padding:0 2px 2px;border-radius:$radius400;background:var(--gray800);color:var(--gray0);}
 hr {height:1px;background:var(--gray100);overflow:visible;position:relative;}
 u {text-decoration:none;position:relative;}
-u:after {content:'';height:.6em;border-radius:$radius400;background:$blue100;position:absolute;left:-.25rem;right:-.25rem;bottom:-.25rem;z-index:-1;}
+u:after {content:'';height:.6em;border-radius:$radius400;background:antiquewhite;position:absolute;left:-.25rem;right:-.25rem;bottom:-.25rem;z-index:-1;}
 code {padding:1rem 1.5rem;background:var(--gray100);border-radius:$radius400;}
 
 html {min-width:320px;height:100%;font:14px/1.8 var(--fontstack);color:var(--gray600);-webkit-text-size-adjust:100%;/*-webkit-font-smoothing:antialiased;*/text-rendering:optimizeLegibility;}
@@ -66,7 +66,7 @@ ol li ol li:before {content: counter(sub-list-item,lower-alpha) '.';}
   .tag {font-size:10px;}
 }
 
-.browser {display:none;text-align:center;padding:2rem;background:var(--gray0);box-shadow:2px -2px 16px -4px rgba(0,0,0,.5);position:fixed;left:0;right:0;bottom:0;z-index:7;}
+.browser {text-align:center;padding:2rem;background:var(--gray0);box-shadow:2px -2px 16px -4px rgba(0,0,0,.5);position:fixed;left:0;right:0;bottom:0;z-index:7;}
 
 //backface-visibility:hidden
 // writing-mode: horizontal-tb / vertical-rl / vertical-lr;

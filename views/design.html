@@ -174,10 +174,6 @@
           <div></div>
           <figcaption>red800</figcaption>
         </figure>
-        <!-- <figure class="color-item is-positive">
-          <div></div>
-          <figcaption>green80</figcaption>
-        </figure> -->
         <figure class="color-item is-gradient">
           <div></div>
           <figcaption>gradient</figcaption>
@@ -229,7 +225,7 @@
     <article class="design-article">
       <h1 class="design-article-title">Text Links</h1>
       <p class="design-article-description">문단 <span style="color:#00783e">내부 링크</span>와 문단 <span style="text-decoration:underline;color:#333;">외부 링크</span>를 구분합니다. 왜 구분하지? 내부 링크가 눈에 안 띄어요.</p>
-      <p>형무소 안에서는 소장의 말이 곧 법이었으며 죄수들의 잘못과 실수는 결코 용납되지 않는다. 어머니의 사망 소식을 듣고 인해 2번이나 탈옥을 시도했다가 체포된 <a href="">루크</a>의 발에 쇠통이 채워지며 루크는…<a class="more" href="#" style="margin-left:.25rem;color:#000;text-decoration:underline;">자세히 알아보기</a></p>
+      <p>형무소 안에서는 소장의 말이 곧 법이었으며 죄수들의 잘못과 실수는 결코 용납되지 않는다. 어머니의 사망 소식을 듣고 인해 2번이나 탈옥을 시도했다가 체포된 <a href="">루크</a>의 발에 쇠통이 채워지며 루크는…<a class="more" href="#" style="margin-left:.25rem;color:#00783e;">자세히 알아보기</a></p>
     </article>
 
     <!-- <article class="design-article">
@@ -250,6 +246,8 @@
       <div class="tags" role="group">
         <span class="tag tags-item" role="listitem">해시태그</span>
         <span class="tag tags-item" style="padding:0 .5rem;border-radius:4px;background:#eee;" role="listitem">해시태그</span>
+        <span class="tag yes-tag" style="padding:0 .5rem;border-radius:4px;background:skyblue;color:#fff;" role="listitem">Do</span>
+        <span class="tag no-tag" style="padding:0 .5rem;border-radius:4px;background:crimson;color:#fff;" role="listitem">Don't</span>
       </div>
     </article>
 
@@ -375,6 +373,14 @@
         <br />
         <h6>상세페이지에서 사용하는 CTA (크기는 이 정도. 색은 임시로)</h6>
         <button class="design-article-primary" style="min-width:320px;border:transparent;padding:12px 0 15px;font-size:1.25rem;background-image:linear-gradient(106deg,#ff3a4e,#7e4cff);">구매 하러가기</button>
+
+        <br />
+        <br />
+        <h6>상세페이지에서 사용하는 CTA (크기는 이 정도. 색은 임시로)</h6>
+        <button class="loadmore is-fetching">
+          불러오는 중
+          <div class="spinner"></div>
+        </button>
     </div>
     </article>
 
@@ -633,7 +639,7 @@
       <h1 class="design-article-title">Cards</h1>
       <p class="design-article-description">하나의 마크업으로 가로형 세로형이 가능하도록...</p>
       <div class="quote">
-        <div class="quote-avatar avatar">
+        <div class="quote-avatar">
           <i class="icon-person"></i>
         </div>
         <h3 class="quote-title">테스트 텍스트</h3>
@@ -647,7 +653,7 @@
       <br />
       <div class="pricing-item">
         <span class="tag" style="position:absolute;right:.5rem;top:.5rem;">most popular</span>
-        <i style="margin-top:-.5rem;font-size:40px;">🧞‍</i>
+        <!-- <i style="margin-top:-.5rem;font-size:40px;">🧞‍</i> -->
         <h1 class="pricing-item-title">스탠다드</h1>
         <p class="pricing-item-description">부끄러우니까 구매하지마요.</p>
         <span class="pricing-item-price">
@@ -851,26 +857,26 @@
     <article class="design-article">
       <h1 class="design-article-title">Rating</h1>
       <p class="design-article-description">테스트.</p>
-      <!-- <div class="rating">
+      <div class="rating">
         <h1 class="rating-title" aria-hidden="true">별점</h1>
         <span class="rating-score">.3</span>
         <div class="rating-star">
-            <i class="material-icons">star</i>
-            <i class="material-icons">star</i>
-            <i class="material-icons">star</i>
-            <i class="material-icons">star</i>
-            <i class="material-icons">star</i>
-          <span class="rating-star-front">별별별별별</span>
-          <span class="rating-star-back">별별별별별</span>
+            <i class="">★</i>
+            <i class="">★</i>
+            <i class="">★</i>
+            <i class="">★</i>
+            <i class="">★</i>
+          <span class="rating-star-front">☆☆☆☆☆</span>
+          <span class="rating-star-back">★★★★★</span>
         </div>
         <small class="rating-count">총 24개의 평가</small>
-      </div> -->
+      </div>
       <div class="rating2 is-large">
-        <i class="rating2-star material-icons">star</i>
+        <i class="rating2-star">★</i>
         <span class="rating2-score">4.71점(평가 277개)</span>
       </div>
       <div class="rating2">
-        <i class="rating2-star material-icons">star</i>
+        <i class="rating2-star">★</i>
         <span class="rating2-score">4.3</span>
       </div>
       <hr style="margin:2rem 0;" />

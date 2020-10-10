@@ -26,11 +26,14 @@ $cell-small: 16px;
 
   // ! colours
   --gray0: #fff; // white for dark theme
+  --gray50: rgba(0, 0, 0, .01);
   --gray100: #f1f5f6; // bg
   --gray200: #dadce0; // divider border
   --gray400: #979d9a; // caption
   --gray600: #4e5351; // body
   --gray800: #131514; // bg || heading
+
+  --blue100: honeydew;
 }
 
 $headline: 3rem;
@@ -67,7 +70,6 @@ $padding400: 1.5rem 2rem;
 $shadow100: 0px 1px 1px rgba(136, 26, 26, 0.075); // unused
 $shadow400: 1px 1px 4px rgba(0, 0, 0, 0.2);
 $shadow450: 2px 4px 8px rgba(0, 0, 0, 0.2); // hover
-
 $border100: 1px solid var(--gray200);
 $border150: 1px solid var(--gray200);
 

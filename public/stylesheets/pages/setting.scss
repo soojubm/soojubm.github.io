@@ -11,7 +11,7 @@
 .setting-body-description {margin:-1rem 0 1.5rem 0;}
 
 .setting-row {display:flex;align-items:center;min-height:5rem;box-sizing:border-box;overflow:hidden;border-bottom:$border100;cursor:pointer;position:relative;}
-.setting-row.is-opened {height:auto;padding:1.5rem 0;}
+.setting-row.is-opened {align-items:baseline;height:auto;padding:1.5rem 0;}
 .setting-row:nth-of-type(1) {border-top:$border100;}
 .setting-row-label {width:12rem;font-size:1rem;color:var(--gray400);}
 .setting-row-value {color:var(--gray800);}
@@ -25,7 +25,6 @@
 
 @media (--viewport-small) {
   .setting {margin-left:1rem;margin-right:1rem;}
-  .setting-row {}
   .setting-row-label {width:8rem;}
   .setting-row-change {display:none;}
 }

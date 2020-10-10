@@ -1,14 +1,50 @@
+// @ts-nocheck
+
+
+const routes = [
+  { name: 'root', path: '/' },
+  { name: 'home', path: '/home' },
+  { name: 'design', path: '/design' },
+  { name: 'profile', path: '/profile' },
+  { name: 'blog', path: '/blog' },
+]
+const currentPath = window.location.pathname
+
 const routePage = async () => {
   const view = document.getElementById('view')
   if (!view) return
 
-  const routes = [
-    { name: 'home', path: '/home' },
-    { name: 'design', path: '/design' },
-    { name: 'profile', path: '/profile' },
-    { name: 'blog', path: '/blog' },
-  ]
-  const currentPath = window.location.pathname
+  type routeType = {
+    name: string,
+    path: string
+  }
+
+  const activeRoutes = Array.from(document.querySelectorAll('[route]'))
+  function navigate(event) {
+    const route = event.target.attributes[0].value
+    const routeInfo = routes.filter(item => item.path === route)[0]
+    if(!routeInfo) {
+      window.history.pushState({} , '', 'error')
+      view.innerHTML = 'no route exists'
+    }
+    else {
+      window.history.pushState({name: 'tester'}, 'name', routeInfo.path)
+      view.innerHTML = `${routeInfo.name}`
+    }
+  }
+
+  activeRoutes.forEach((route) => {
+    route.addEventListener('click', navigate, flase)
+  })
+
+  if(currentPath === '/') {
+    console.log('root page')
+  } else {
+    const route = routes.filter(item => item.path === currentPath)
+    if(!route) view.innerHTML = '404'
+
+    view.innerHTML = `${route.name}`
+  }
 
   // todo 유틸
   function setHistory(uri) {
@@ -17,14 +53,6 @@ const routePage = async () => {
     const url = uri
     history.pushState(state, title, uri)
   }
-
-  // function createPage(html) {
-  //   if(currentPath === '/') {
-  //     view && view.innerHTML = 'root page'
-  //   } else {
-  //     view && view.innerHTML = html
-  //   }
-  // }
 
   let hash = window.location.hash.substring(1)
   const uri = hash ? `/views/${hash}.html` : '/views/design.html'

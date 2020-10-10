@@ -1,6 +1,6 @@
 .banner {width:80%;margin:0 auto;padding:2rem 0;border-radius:$radius400;background:var(--gray100);text-align:center;position:relative;z-index:4;}
 .banner-image {margin:0 1rem 0 -4rem;}
-.banner-text {display:inline-block;margin:0 2rem 0 0;font-size:$subhead;;}
+.banner-text {display:inline-block;margin:0 1rem 0 0;font-size:$subhead;}
 .banner-button {@include button-secondary;}
 
 @media (--viewport-small) {

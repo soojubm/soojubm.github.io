@@ -18,15 +18,15 @@
 .navbar-user-search a i {vertical-align:middle;color:var(--gray800);}
 
 // todo close icon rotate
-.search-form {display:none;background:var(--gray0);box-shadow:$shadow400;padding:.5rem 10%;box-sizing:border-box;position:fixed;left:0;right:0;top:0;bottom:calc(100vh - 64px);z-index:6;}
-.search-form-close {@include box-light;position:absolute;left:50%;top:14px;z-index:8;margin-left:-390px;transform: rotate(180deg);}
+.search-form {background:var(--gray0);box-shadow:$shadow400;padding:.5rem 5%;box-sizing:border-box;position:fixed;left:0;right:0;top:0;bottom:0;z-index:8;}
+.search-form-close {@include box-light;position:absolute;left:50%;top:14px;z-index:8;margin-left:-390px;transform:rotate(180deg);}
 .search-form-title {max-width:800px;margin:0 auto 1rem;font-size:1.5rem;}
 .search-form-field input {padding-left:56px;}
 .search-form .textfield {max-width:800px;margin:0 auto;}
 .search-form .textfield {max-width:800px;margin:0 auto;}
-.search-recommend {background:var(--gray0);position:fixed;left:0;right:0;top:$height-header;bottom:0;}
-.search-recommend-title {max-width:800px;margin:4rem auto .5rem;font-size:$subhead;;}
-.search-recommend-item {max-width:800px;margin:0 1rem;}
+.search-recommend {max-width:800px;margin:0 auto;background:var(--gray0);}
+.search-recommend-title {margin:4rem auto .5rem;font-size:$subhead;}
+.search-recommend-item {margin:0 1rem;}
 .is-active + .search-form {display:block;}
 
 
@@ -95,8 +95,8 @@
 	.navbar-menu-item menu {padding:0;position:static;left:auto;right:auto;top:auto;transition:none;}
 	.navbar-menu-item menu a {display:block;height:48px;padding:0 1rem;color:var(--gray800);line-height:32px;opacity:1;}
 	
-	.search-form {bottom:calc(100% - 56px);}
-	.search-form-close {left:1rem;top:1rem;}
+	.search-form {}
+	.search-form-close {margin-left:0;left:calc(5% + 1rem);top:11px;}
 	
 	.navbar-menu.is-visible {opacity:1;transform:translateX(0);}
 	.navbar-menu.is-visible .navbar-menu-item {animation:fadeup .4s cubic-bezier(.455, .03, .515, .955) forwards;opacity:0;}

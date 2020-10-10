@@ -140,16 +140,17 @@
   <body>
     <noscript>This website requires JavaScript.</noscript>
 
-    <aside class="loader js-loader">
-      <div class="loader-object"></div>
-    </aside>
-
-    <aside class="browser js-browser" role="complementary">
+    <aside class="browser js-browser" role="complementary" hidden>
       <p>이 사이트는 크롬 브라우저에 최적화되어 있습니다.</p>
       <a href="https://www.google.co.kr/chrome/index.html" class="button">크롬 브라우저 다운로드</a>
     </aside>
+
     <aside class="offline js-offline" hidden>
       <p>인터넷에 연결되어 있지 않습니다.</p>
+    </aside>
+
+    <aside class="loader js-loader">
+      <div class="loader-spinner js-loader-spinner"></div>
     </aside>
 
     <nav class="skip">
@@ -174,14 +175,11 @@
       <button class="navbar-burger js-navbar-toggle" aria-expanded="false">
         <i class="icon-hamberger"></i>
       </button>
-      <!-- <a href="https://newneek.co/" class="navbar-cta primary-button">cta</a> -->
       <div class="navbar-menu" role="navigation">
         <a class="navbar-menu-item" href="#profile">작업</a>
-        <!-- <a class="navbar-menu-item" href="#about">역사</a> -->
         <a class="navbar-menu-item" href="#post">블로그</a>
-        <!-- <a class="navbar-menu-item" href="#contact">오시는 길</a> -->
         <div class="navbar-menu-item has-submenu js-hover-trigger">
-          <a href="#"> 페이지<i class="icon-caret"></i></a>
+          <a href="#">페이지<i class="icon-caret"></i></a>
           <menu>
             <a href="#login">로그인</a>
             <a href="#signup">회원가입</a>
@@ -209,14 +207,14 @@
             <!-- <i class="icon-search"></i> -->
             <img src="/public/icons/search.svg" alt="" />
           </a>
-          <form class="search-form">
+          <form class="search-form" hidden>
             <button class="search-form-close js-close" aria-label="delete"><i class="icon-arrow"></i></button>
             <!-- <p role="status">수줍이와(과) 일치하는 검색결과가 없습니다.</p> -->
             <fieldset class="search-form-field textfield">
               <legend class="filter-fieldset-legend" hidden aria-hidden="true">검색하기</legend>
               <label class="textfiled-label" for="help-search" hidden aria-hidden="true">검색하기</label>
               <input class="textfield-input" type="search" id="help-search" placeholder="검색어를 입력해 주세요." />
-              <button class="textfield-reset" type="reset" title="clear search input">
+              <button class="textfield-reset" type="reset" hidden title="clear search input">
                 <i class="icon-close"></i>
               </button>
             </fieldset>
@@ -251,14 +249,14 @@
           </menu>
         </div>
         <div class="navbar-user-account">
-          <a class="navbar-user-account-trigger js-navbar-toggle" href="#" aria-haspopup="menu" aria-expanded="false">
+          <button class="navbar-user-account-trigger js-navbar-toggle" aria-haspopup="menu" aria-expanded="false">
             <span><img src="/public/images/soo.png" alt=""/></span>
-          </a>
+          </button>
           <div class="navbar-user-account-menu user">
-            <div class="user-avatar">
+            <figure class="user-avatar">
               <img src="/public/images/soo.png" alt="" />
               <!-- <div class="user-avatar-change"></div> -->
-            </div>
+            </figure>
             <h2 class="user-name">soojubm</h2>
             <div class="user-email">soojubm@gamil.com</div>
             <button class="user-myinfo">내 정보</small>
@@ -297,12 +295,12 @@
     </header>
     <header class="topbar-backdrop js-topbar"></header>
 
-    <div id="view"></div>
-
-    <!-- <section class="banner">
+    <section class="banner" style="margin:0 auto 2rem;">
       <h2 class="banner-text">수줍이에는 처음 방문이신가요?</h2>
       <button class="banner-button">이용방법을 알아보세요!</button>
-    </section> -->
+    </section>
+
+    <div id="view"></div>
 
     <form class="subscribe">
       <h2 class="subscribe-title">수줍이 뉴스레터를 정기구독하세요.</h2>
@@ -315,18 +313,17 @@
     </form>
 
     <footer class="footer" role="contentinfo">
-      <div class="footer-background"></div>
-
       <!-- <div class="skeleton-screen"></div> -->
-      <aside class="scroll">
-        <p class="scroll-indicator hidden" hidden aria-hidden="true">스크롤하세요</p>
-        <button class="scroll-bottom js-to-bottom">아래로</button>
-        <button class="scroll-top js-to-top" name="top">
-          <i class="icon-arrow"></i> <b class="hidden" aria-hidden="true">맨위로</b>
+      <div class="footer-background"></div>
+      <aside class="footer-scroll">
+        <p class="footer-scroll-indicator" hidden aria-hidden="true">스크롤하세요</p>
+        <button class="footer-scroll-bottom js-to-bottom">아래로</button>
+        <button class="footer-scroll-top js-to-top" name="top">
+          <i class="icon-arrow"></i> <b hidden aria-hidden="true">맨위로</b>
         </button>
       </aside>
       <nav class="footer-sitemap">
-        <h1 class="footer-sitemap-title" aria-hidden="true" hidden>하단 사이트맵 <small hidden aria-hidden="true">More Articles by themes</small></h1>
+        <h1 class="footer-sitemap-title" hidden aria-hidden="true">하단 사이트맵 <small hidden aria-hidden="true">More Articles by themes</small></h1>
         <div class="footer-sitemap-item">
           <h2 class="footer-sitemap-item-title">포트폴리오</h2>
           <a class="footer-sitemap-item-link" href="#">교통버스</a>
