@@ -2,7 +2,6 @@
 .help-navigation {display:flex;justify-content:center;padding:.5rem 2rem;overflow:auto;white-space:nowrap;}
 .help-navigation-link {display:block;padding:1rem 1rem;color:var(--gray400);}
 .help-navigation-link.is-active {border-bottom:2px solid crimson;color:crimson;}
-
 .help-head {padding:4rem 0 6rem;text-align:center;position:relative;}
 .help-head-title {font-size:14px;color:var(--gray400);}
 .help-head-headline {margin:0 0 .25rem 0;font-size:2rem;color:var(--gray800);}
@@ -17,12 +16,11 @@
 .search-result-item p {color:var(--gray400);line-height:1.6;}
 .search-result-item:hover {background:#f9f9f6;}
 
-
-.help-category {max-width:$width-medium;margin:4rem auto;padding:0 2rem;position:relative;}
+.help-category {max-width:$container400;margin:4rem auto;padding:0 2rem;position:relative;}
 .help-category-title {margin:0 0 1rem 0;font-size:$subhead;;}
 .help-category-link {display:flex;margin:0 .5rem 0 0;padding:.5rem 2rem;border:$border100;background:var(--gray100);color:var(--gray800);}
 
-.help-board {max-width:$width-medium;margin:2rem auto;padding:0 5%;position:relative;}
+.help-board {max-width:$container400;margin:2rem auto;padding:0 5%;position:relative;}
 .help-board-title {margin:0 0 1rem 1.5rem;font-size:$subhead;;}
 .help-board-item {display:block;padding:1rem 1.5rem;border:$border100;background:var(--gray100);position:relative;transition:all .4s;}
 .help-board-item + .help-board-item {margin-top:-1px;}
@@ -44,7 +42,7 @@
 .help-feedback-body {margin:0 1rem 0 0;}
 .help-feedback-button {margin:0 .25rem;padding-top:.25rem;padding-bottom:.25rem;}
 
-.help-foot {display:flex;max-width:$width-medium;margin:0 auto;padding:1rem 2rem;box-sizing:border-box;background:var(--gray100);box-shadow:$shadow400;position:relative;}
+.help-foot {display:flex;max-width:$container400;margin:0 auto;padding:1rem 2rem;box-sizing:border-box;background:var(--gray100);box-shadow:$shadow400;position:relative;}
 .help-foot-body {}
 .help-foot-body em {color:var(--gray800);text-decoration:underline;}
 .help-foot-link {margin-left:auto;}

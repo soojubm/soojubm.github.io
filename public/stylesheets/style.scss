@@ -101,7 +101,7 @@
 .rating2-score {font-size:$body;letter-spacing:1px;}
 
 .rating2.is-large {display:flex;align-items:center;}
-.rating2.is-large .rating2-star {margin:0 .5rem 0 0;font-size:1.5rem;color:crimson;}
+.rating2.is-large .rating2-star {margin:0 .5rem 0 0;font-size:1.25rem;color:crimson;}
 .rating2.is-large .rating2-score {font-size:1.25em;}
 
 .scroll {position:fixed;bottom:1rem;right:1rem;z-index:8;}
@@ -132,18 +132,7 @@
 }
 
 
-.avatar {@include box;width:32px;height:32px;}
 .avatar-badge {display:none;width:16px;height:16px;border-radius:50%;border:4px solid var(--gray0);box-sizing:border-box;position:absolute;right:0;bottom:0;}
-
-.tablist {position:relative;overflow:auto;white-space:nowrap;position:relative;}
-.tablist-active {width:80px;height:2px;background:$color-primary;position:absolute;left:0;bottom:0;}
-.tablist-tab {padding:.5rem 1rem;text-align:center;}
-.tablist-tab-badge {font-size:10px;color:$color-primary;}
-.is-vertical.tablist {width:240px;}
-.is-vertical .tablist-tab {display:block;width:100%;padding:.5rem 1rem;text-align:left;}
-.is-vertical .tablist-tab.is-active {background:$color-primary;color:var(--gray0);}
-.is-vertical .tablist-tab.is-active .tablist-tab-badge {color:var(--gray0);}
-.is-vertical .tablist-tab-badge {float:right;font-size:14px;}
 
 .todo {}
 .todo legend {margin:24px 0 4px 0;color:var(--gray400);}
@@ -161,9 +150,6 @@
 .statistic-label {display:block;color:var(--gray400);}
 .statistic-value {font-size:2rem;line-height:1.4;color:var(--gray800);}
 
-
-
-
 .full-width {
 	left: 50%;
 	margin-left: -50vw;
@@ -175,17 +161,14 @@
 }
 
 
-.slider {max-width:800px;position:relative;}
+.slider {position:relative;}
 .slider-viewer {overflow:auto;white-space:nowrap;position:relative;transition:all .4s ease;}
 .slider-viewer::-webkit-scrollbar {display: none;}
 /* .slider-viewer .inbox {width:1500px;position:absolute;} */
 .slider-viewer-slide {width:48px;height:48px;margin:0 .25rem;border-radius:$radius400;background:gold;color:var(--gray0);}
-
 .slider-dots {width:100px;height:10px;margin-left:-36px;text-align:center;position:absolute;left:50%;bottom:-25px;z-index:5;}
 .slider-dots-dot {float:left;width:10px;height:10px;margin:0px 4px;border-radius:50%;background:rgba(0,0,0,1);cursor:pointer;}
 .slider-dots-dot:hover {width:30px;border-radius:5px;opacity:.5;}
-.slider-dots-dot.is-active {}
-
 .slider-arrows {}
 .slider-arrows-prev {@include box-light;box-shadow:$shadow400;position:absolute;left:-16px;top:50%;transform:translateY(-50%);}
 .slider-arrows-prev:hover {background:var(--gray100);}

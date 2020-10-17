@@ -13,7 +13,7 @@
 .cake-summary b {}
 .cake-score {text-align:center;position:absolute;right:420px;top:56px;}
 .cake-score-label {display:block;margin:.25rem 0 0 0;}
-.cake-score-value {display:inline-block;width:48px;height:48px;background:var(--gray0);line-height:48px;border-radius:$radius400;font-size:1.5rem;}
+.cake-score-value {display:inline-block;width:48px;height:48px;background:var(--gray0);line-height:48px;border-radius:$radius400;font-size:1.25rem;}
 .cake-poster2 {width:400px;height:600px;overflow:hidden;box-shadow:$shadow400;position: absolute;right:0;top:4rem;z-index:1;}
 .cake-poster2 img {animation: fadeup 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955) forwards .2s;}
 
@@ -31,7 +31,7 @@
   .cake-head {width:100%;height:auto;padding:2rem 5%;box-sizing:border-box;}
 
   .cake-background {height:400px;background:url('/public/images/newman.jpg') no-repeat 0 0 fixed;position:absolute;left:-100%;right:-100%;top:0;z-index:-1;}
-  .cake-head-title {font-size:1.5rem;}
+  .cake-head-title {}
   .cake-head-description {}
   .cake ul {height:184px;}
   .cake ul li {margin:0 0 .25rem 0}
@@ -41,7 +41,7 @@
   .cake-summary b {}
   .cake-score {text-align:center;position:absolute;right:420px;top:56px;}
   .cake-score-label {display:block;margin:.25rem 0 0 0;}
-  .cake-score-value {display:inline-block;width:48px;height:48px;background:var(--gray0);line-height:48px;border-radius:$radius400;font-size:1.5rem;}
+  .cake-score-value {display:inline-block;width:48px;height:48px;background:var(--gray0);line-height:48px;border-radius:$radius400;font-size:1.25rem;}
   .cake-poster2 {width:60%;height:auto;margin:0 0 0 5%;position: static;right:auto;top:auto;}
   .cake-poster2 img {animation: fadeup 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955) forwards .2s;}
 

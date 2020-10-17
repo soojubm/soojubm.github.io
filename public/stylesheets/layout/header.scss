@@ -13,6 +13,7 @@
 
 @media (--viewport-small) {
   .topbar {width:auto;padding:1rem 5%;}
+  .topbar-title {padding:0 5%;}
   .is-sticky-topbar .topbar {height:32px;}
 }
 

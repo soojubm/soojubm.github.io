@@ -1,13 +1,19 @@
-// mediaquery, desktop first
+// ! viewport : desktop first
+@custom-media --viewport-large (max-width: 1440px);
+@custom-media --viewport-medium (max-width: 1280px);
+@custom-media --viewport-small (max-width: 1080px);
 
+// ! container 
 $container800: 1440px;
 $container600: 1140px;
-$container400: 800px;
-$container200: 480px;
+$container400: 640px; 
+$container100: 400px; // dialog & form
+@media (--viewport-large) {
 
-$width-medium: 800px;
-$width-large: 1080px;
-$width-huge: 1440px;
+}
+@media (--viewport-medium) {
+
+}
 
 $cell-large: 80px;
 $cell-medium: 48px;
@@ -56,11 +62,6 @@ $color-facebook: hsl(214, 89%, 52%);
 $color-twitter: rgb(29, 161, 242);
 $color-naver: #03cf5d;
 $color-kakao: #ffdf00;
-
-@custom-media --viewport-large (max-width: 1440px);
-@custom-media --viewport-medium (max-width: 1280px);
-@custom-media --viewport-small (max-width: 1080px);
-@custom-media --viewport-tiny (max-width: 720px);
 
 $padding100: 4px 1rem 5px; // 32
 $padding200: 9px 1.5rem 12px; // 버튼, 텍스트인풋 48
@@ -184,5 +185,3 @@ $height-header: 64px;
 }
 .is-inverted {
 }
-
-// mixin

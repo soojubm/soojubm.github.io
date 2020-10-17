@@ -1,4 +1,4 @@
-.cart {max-width:1080px;margin:0rem auto;padding:4rem 5% 10rem;}
+.cart {max-width:$container600;margin:0rem auto;padding:4rem 5% 10rem;}
 .cart-head {}
 .cart-title {margin:.5rem 0 0 0;font-size:2rem;line-height:1.2;position:relative;}
 .cart-description {}
@@ -31,7 +31,7 @@
 .cart-summary-shipping {margin:.5rem 0;}
 .cart-summary-total {margin:1rem 0;padding:.75rem 0;border-top:1px solid var(--gray100);}
 .cart-summary-total .cart-summary-label {font-size:$subhead;;color:var(--gray800);}
-.cart-summary-total .cart-summary-value {font-size:1.5rem;color:var(--gray800);}
+.cart-summary-total .cart-summary-value {font-size:1.25rem;color:var(--gray800);}
   .cart-summary-label {}
   .cart-summary-value {float:right;font-size:$subhead;}
 .cart-summary-controls {padding:1rem 0;}

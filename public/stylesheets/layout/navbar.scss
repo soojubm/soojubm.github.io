@@ -1,5 +1,5 @@
 .navbar {display:flex;align-items:center;height:$height-header;padding:0 2rem;position:relative;left:0;right:0;top:0;z-index:8;}
-.navbar-logo {@include box-light;min-width:32px;font-size:1.5rem;}
+.navbar-logo {@include box-light;min-width:32px;font-size:1.25rem;}
 .navbar-burger {@include box-light;display:none;margin:0 .5rem;z-index:8;}
 .navbar-menu {display:flex;align-items:center;width:100%;height:100%;margin-left:2.5rem;position:relative;}
 .navbar-menu-item {padding:$padding200;padding-left:1rem;padding-right:1rem;font-size:$subhead;;color:var(--gray800);position:relative;z-index:1;transition:all .4s;} // m p reset
@@ -20,11 +20,11 @@
 // todo close icon rotate
 .search-form {background:var(--gray0);box-shadow:$shadow400;padding:.5rem 5%;box-sizing:border-box;position:fixed;left:0;right:0;top:0;bottom:0;z-index:8;}
 .search-form-close {@include box-light;position:absolute;left:50%;top:14px;z-index:8;margin-left:-390px;transform:rotate(180deg);}
-.search-form-title {max-width:800px;margin:0 auto 1rem;font-size:1.5rem;}
+.search-form-title {max-width:$container400;margin:0 auto 1rem;font-size:1.25rem;}
 .search-form-field input {padding-left:56px;}
-.search-form .textfield {max-width:800px;margin:0 auto;}
-.search-form .textfield {max-width:800px;margin:0 auto;}
-.search-recommend {max-width:800px;margin:0 auto;background:var(--gray0);}
+.search-form .textfield {max-width:$container400;margin:0 auto;}
+.search-form .textfield {max-width:$container400;margin:0 auto;}
+.search-recommend {max-width:$container400;margin:0 auto;background:var(--gray0);}
 .search-recommend-title {margin:4rem auto .5rem;font-size:$subhead;}
 .search-recommend-item {margin:0 1rem;}
 .is-active + .search-form {display:block;}

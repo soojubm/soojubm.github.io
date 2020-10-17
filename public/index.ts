@@ -11,12 +11,11 @@ import input from './javascripts/input/index'
 
 import { validity } from './javascripts/utils/validations'
 
-
 // import { copyToClipboard } from './javascripts/utils/formatUtils.js'
 
-document.addEventListener('readystatechange', (event: any)  => {
+document.addEventListener('readystatechange', (event: any) => {
   // event.target === document ? true
-  if(event.target.readyState === 'loading') console.log('loading...')
+  if (event.target.readyState === 'loading') console.log('loading...')
   else if (event.target.readyState === 'interactive') console.log('initLoader')
   else if (event.target.readyState === 'complete') console.log('initApp')
 })
@@ -24,7 +23,7 @@ document.addEventListener('readystatechange', (event: any)  => {
 // document.documentElement.className += ' supports-date';
 // div.classList.replace("foo", "bar");
 
-// if(window.matchMedia('(min-width:800px)').matches) {}
+// if(window.matchMedia('(min-width:888px)').matches) {}
 
 // function addToPendingWork(promise) {
 //   busyspinner.hidden = false
@@ -44,37 +43,36 @@ window.addEventListener('offline', () => {
 })
 
 const domEvents = async () => {
-    await routePage()
+  await routePage()
 
-    lazyLoading()
+  lazyLoading()
 
-    function lazyLoading() {
-      const URL =
-        "https://gist.githubusercontent.com/prof3ssorSt3v3/1944e7ba7ffb62fe771c51764f7977a4/raw/c58a342ab149fbbb9bb19c94e278d64702833270/infinite.json";
-      const lazyBackgrounds = [].slice.call(document.querySelectorAll('.subscribe'))
-      const options = {
-        root: null,
-        rootMargin: '0px 0px 0px 0px',
-        threshold: 0.1
-      }
+  function lazyLoading() {
+    const URL = 'https://gist.githubusercontent.com/prof3ssorSt3v3/1944e7ba7ffb62fe771c51764f7977a4/raw/c58a342ab149fbbb9bb19c94e278d64702833270/infinite.json'
+    const lazyBackgrounds = [].slice.call(document.querySelectorAll('.subscribe'))
+    const options = {
+      root: null,
+      rootMargin: '0px 0px 0px 0px',
+      threshold: 0.1,
+    }
 
-      if ('IntersectionObserver' in window && 'IntersectionObserverEntry' in window && 'intersectionRatio' in window.IntersectionObserverEntry.prototype) {
-        let observer = new IntersectionObserver(callback, options)
-        lazyBackgrounds.forEach(element => observer.observe(element))
-      }
+    if ('IntersectionObserver' in window && 'IntersectionObserverEntry' in window && 'intersectionRatio' in window.IntersectionObserverEntry.prototype) {
+      let observer = new IntersectionObserver(callback, options)
+      lazyBackgrounds.forEach(element => observer.observe(element))
+    }
 
-      function fetchData() {
-        fetch(URL)
-          .then(response => response.json())
-          .then(data => {
-            data.items.forEach(item => {
-              const view = document.querySelector('main')
-              console.log(item)
+    function fetchData() {
+      fetch(URL)
+        .then(response => response.json())
+        .then(data => {
+          data.items.forEach(item => {
+            const view = document.querySelector('main')
+            console.log(item)
 
-              view && view.insertAdjacentHTML('beforeend', `<div style="height:200px;background:crimson;color:#fff;text-align:center;">무한스크룔</div>`);
-            });
-          });
-      }
+            view && view.insertAdjacentHTML('beforeend', `<div style="height:200px;background:crimson;color:#fff;text-align:center;">무한스크룔</div>`)
+          })
+        })
+    }
 
     //   let currentPage = 1
     //   const DATA_PER_PAGE = 10
@@ -105,108 +103,108 @@ const domEvents = async () => {
     //     })
     // }
 
-      function callback(entries, observer) {
-        entries.forEach(entry => {
-          if(!entry.isIntersecting) return
-          fetchData()
-          // setTimeout(() => {
-          //   fetchData(++currentPage)
-          //   observer.unobserve(entry.target)
-          //   observeLastChild(observer)
-          //   // msgLoading.classList.remove("fade-in")
-          // }, 500)
+    function callback(entries, observer) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return
+        fetchData()
+        // setTimeout(() => {
+        //   fetchData(++currentPage)
+        //   observer.unobserve(entry.target)
+        //   observeLastChild(observer)
+        //   // msgLoading.classList.remove("fade-in")
+        // }, 500)
 
-          // entry.target.classList.add('visible')
-          // entry.target.src = entry.target.dataset.src;
-          // lazyBackgroundObserver.unobserve(entry.target)
-        })
+        // entry.target.classList.add('visible')
+        // entry.target.src = entry.target.dataset.src;
+        // lazyBackgroundObserver.unobserve(entry.target)
+      })
+    }
+  }
+
+  // 회원가입 버튼을 눌렀을 때 유효성을 체크한다.
+  // const { signup } = document
+  // const { email, password } = signup
+  // signup.addEventListener('submit', event => {
+  //   event.preventDefault()
+  //   alert()
+  //   // console.log(email, password)
+  //   //	userId.nextSibling.nextSibling.innerHTML = '5~20자의 영문 소문자와 숫자, 특수기호(_),(-)만 사용 가능합니다.';
+  //   // 8~16자 영문 대 소문자, 숫자, 특수문자를 사용하세요.
+  // })
+
+  let formChanged = false
+  const signupForm = document.querySelector('.js-input-email')
+  signupForm?.addEventListener('change', () => {
+    formChanged = true
+  })
+  window.addEventListener('beforeunload', event => {
+    if (!formChanged) return
+    event.preventDefault() // 모든 브라우저에서 지원하는 것은 아님.
+    event.returnValue = ''
+  })
+
+  input.checkbox({ checkAllSelector: '.js-checkall', checkSelector: '.js-check' }).setEvent()
+  input.file()
+  input.textarea()
+  input.number()
+
+  event.modal({ selector: '.js-modal' }).setEvent()
+  event.toggleClass({ selector: '.js-toggle' }).setEvent()
+  event.enterTarget({ selector: '.js-hover-trigger' })
+  event.tabMenu()
+  event.close({ selector: '.js-close' })
+  event.toTop({ selector: '.js-to-top' })
+
+  event.scrollAnimation()
+  // event.scrollspy({ menusSelector: '.js-section', sectionsSelector: '.newneek-navbar-menu-item' })
+
+  createGraph()
+  countDownClock(20, 'days')
+  carousel()
+  revealPassword()
+  focusComment()
+
+  // document.querySelector('.js-copy')?.addEventListener('click', () => copyToClipboard('fafaf'))
+
+  const inputTest = document.querySelector<HTMLInputElement>('.js-input-test')
+  if (inputTest) {
+    inputTest.addEventListener('keypress', function(e) {
+      const key = e.which || e.keyCode
+      const isNumberKey = key < 48 || key > 57 // todo ! isNumberKey 이다 지금음0 to 9
+      const isSpaceKey = key === 32
+      if (!isSpaceKey && isNumberKey) {
+        e.preventDefault()
       }
-    }
-
-    // 회원가입 버튼을 눌렀을 때 유효성을 체크한다.
-    // const { signup } = document
-    // const { email, password } = signup
-    // signup.addEventListener('submit', event => {
-    //   event.preventDefault()
-    //   alert()
-    //   // console.log(email, password)
-    //   //	userId.nextSibling.nextSibling.innerHTML = '5~20자의 영문 소문자와 숫자, 특수기호(_),(-)만 사용 가능합니다.';
-    //   // 8~16자 영문 대 소문자, 숫자, 특수문자를 사용하세요.
-    // })
-
-    let formChanged = false;
-    const signupForm = document.querySelector('.js-input-email')
-    signupForm?.addEventListener('change', () => {
-      formChanged = true
-    })
-    window.addEventListener('beforeunload', event => {
-      if (!formChanged) return
-      event.preventDefault() // 모든 브라우저에서 지원하는 것은 아님.
-      event.returnValue = ''
     })
 
-    input.checkbox({ checkAllSelector: '.js-checkall', checkSelector: '.js-check' }).setEvent()
-    input.file()
-    input.textarea()
-    input.number()
-    
-    event.modal({ selector: '.js-modal' }).setEvent()
-    event.toggleClass({ selector: '.js-toggle' }).setEvent()
-    event.enterTarget({ selector: '.js-hover-trigger' })
-    event.tabMenu()
-    event.close({ selector: '.js-close' })
-    event.toTop({ selector: '.js-to-top' })
+    // let selection = {};
+    // inputTest.addEventListener('keydown', function(e) {
+    //   const target = e.target as HTMLInputElement;
+    //   selection = {
+    //     start: target.selectionStart,
+    //     end: target.selectionEnd,
+    //   };
+    // });
 
-    event.scrollAnimation()
-    // event.scrollspy({ menusSelector: '.js-section', sectionsSelector: '.newneek-navbar-menu-item' })
+    // Track the current value
+    let currentValue = inputTest.value || ''
+    inputTest.addEventListener('input', function(e) {
+      const target = e.target as HTMLInputElement
+      if (/^[0-9\s]*$/.test(target.value)) currentValue = target.value
+      else target.value = currentValue
+      // Note that in this case, `e.preventDefault()` doesn't help
 
-    createGraph()
-    countDownClock(20, 'days')
-    carousel()
-    revealPassword()
-    focusComment()
+      // 한글 입력했을 때 커서가 맨 뒤로 감.
+      // if (/^[0-9s]*$/.test(target.value)) {
+      //   currentValue = target.value
+      // } else {
+      //   target.value = currentValue
+      //   target.setSelectionRange(selection.start, selection.end)
+      // }
+    })
+  }
 
-    // document.querySelector('.js-copy')?.addEventListener('click', () => copyToClipboard('fafaf'))
-
-    const inputTest = document.querySelector<HTMLInputElement>('.js-input-test')
-    if (inputTest) {
-      inputTest.addEventListener('keypress', function(e) {
-        const key = e.which || e.keyCode
-        const isNumberKey = key < 48 || key > 57 // todo ! isNumberKey 이다 지금음0 to 9
-        const isSpaceKey = key === 32
-        if (!isSpaceKey && isNumberKey) {
-          e.preventDefault()
-        }
-      })
-
-      // let selection = {};
-      // inputTest.addEventListener('keydown', function(e) {
-      //   const target = e.target as HTMLInputElement;
-      //   selection = {
-      //     start: target.selectionStart,
-      //     end: target.selectionEnd,
-      //   };
-      // });
-
-      // Track the current value
-      let currentValue = inputTest.value || ''
-      inputTest.addEventListener('input', function(e) {
-        const target = e.target as HTMLInputElement
-        if (/^[0-9\s]*$/.test(target.value)) currentValue = target.value
-        else target.value = currentValue
-        // Note that in this case, `e.preventDefault()` doesn't help
-
-        // 한글 입력했을 때 커서가 맨 뒤로 감.
-        // if (/^[0-9s]*$/.test(target.value)) {
-        //   currentValue = target.value
-        // } else {
-        //   target.value = currentValue
-        //   target.setSelectionRange(selection.start, selection.end)
-        // }
-      })
-    }
-
-    // event.customCursor()
+  // event.customCursor()
 
   // 임시
   const list = document.querySelector('.js-display-list')
@@ -217,7 +215,6 @@ const domEvents = async () => {
   buttons?.addEventListener('click', (event: any) => {
     console.log(event.target.parentNode, event.target.name)
     event.target.parentNode.classList.add('is-temp')
-    
   })
   list?.addEventListener('click', () => {
     list?.classList.add('is-selected')
@@ -234,11 +231,9 @@ const domEvents = async () => {
 window.addEventListener('hashchange', domEvents)
 window.addEventListener('hashchange', initailizePage)
 
-
-
 function revealPassword() {
   const toggleElement = document.querySelectorAll<HTMLElement>('.js-view-password')
-  if(toggleElement.length === 0) return
+  if (toggleElement.length === 0) return
 
   toggleElement.forEach(element =>
     element.addEventListener('click', () => {
@@ -247,12 +242,12 @@ function revealPassword() {
       const type = isPasswordType ? 'text' : 'password'
 
       passwordElement?.setAttribute('type', type)
-    })
+    }),
   )
 }
 
 function initailizePage() {
-  (function initializeMenu() {
+  ;(function initializeMenu() {
     const navigationTrigger = document.querySelector<HTMLElement>('.js-navbar-toggle')
 
     navigationTrigger?.classList.remove('is-active')
@@ -262,7 +257,7 @@ function initailizePage() {
   function notifyThisPage() {
     let { hash } = window.location
     const className = `page-${hash === '' ? 'design' : hash.substring(1)}`
-  
+
     document.body.className = ''
     document.body.classList.add(className)
   }
@@ -284,10 +279,7 @@ function initailizePage() {
   detectHeaderTheme()
 }
 
-
-
 loader()
-
 
 document.addEventListener('DOMContentLoaded', () => {
   initailizePage()
@@ -305,7 +297,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('scroll', () => {
     const isScrollEnd = window.innerHeight + window.pageYOffset >= document.body.offsetHeight
-    if(isScrollEnd) console.log('detect bottom')
+    if (isScrollEnd) console.log('detect bottom')
   })
 
   window.addEventListener('scroll', scrollProgress, true)
@@ -314,7 +306,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function scrollProgress() {
   const post = document.querySelector<HTMLElement>('.post')
   const progressBar = document.querySelector<HTMLElement>('.post-head-progress')
-  if(!post || !progressBar) return
+  if (!post || !progressBar) return
 
   const scrollPercent = `${(window.pageYOffset / (post!.scrollHeight - window.innerHeight)) * 100}%`
   progressBar!.style.width = scrollPercent
@@ -478,7 +470,6 @@ function scrollProgress() {
 // 	if(i === images.length) i = 0;
 // }, 5000);
 
-
 // let company = {
 //   name: 'Github',
 //   revenue: 2000,
@@ -497,13 +488,10 @@ function scrollProgress() {
 // // Function call
 // company.getUserNames?.()
 
-
 // var section1 = document.querySelector('.design-article')
 // section1?.addEventListener('click', function() {
 //   smoothScroll('.footer', 1000)
 // })
-
-
 
 // var elem = document.querySelector('#item-3');
 // // Step 1
@@ -516,7 +504,6 @@ function scrollProgress() {
 // var siblings = parentNodesArray.filter(function (sibling) {
 // 	return sibling !== elem;
 // });
-
 
 // var counter = document.querySelector('#counter');
 // var number = 0;
@@ -540,7 +527,6 @@ function scrollProgress() {
 
 // // Cancel it
 // window.cancelAnimationFrame(animation);
-
 
 function calculateReadTime() {
   const readTimeElement = document.querySelector<HTMLElement>('.post-head')
@@ -577,8 +563,6 @@ function focusComment() {
   commentTextField!.forEach(element =>
     element.addEventListener('focus', () => {
       commentWrite!.classList.add('is-focused')
-    })
+    }),
   )
 }
-
-

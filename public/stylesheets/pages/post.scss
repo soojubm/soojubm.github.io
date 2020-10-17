@@ -1,4 +1,4 @@
-.post {max-width:640px;margin:0 auto;padding:4rem 5% 40px;}
+.post {max-width:$container400;margin:0 auto;padding:4rem 5% 40px;}
 .post-head {margin:0 0 3rem 0;position:relative;}
 .post-head-runninghead {color:var(--gray800);text-decoration:underline;}
 .post-head-headline {padding:.5rem 0 2rem 0;font-size:2rem;color:var(--gray800);text-indent:-1px;} /* 상하단 패딩 똑같이해야 스키티때 */
@@ -102,7 +102,7 @@
 .is-focused .comment-write-name {display:block;}
 .is-focused .comment-write-password {display:block;}
 
-.post-feedback {display:flex;max-width:$width-medium;margin:2rem auto;padding:1rem 2rem;box-sizing:border-box;background:var(--gray100);box-shadow:$shadow400;position:relative;}
+.post-feedback {display:flex;max-width:$container400;margin:2rem auto;padding:1rem 2rem;box-sizing:border-box;background:var(--gray100);box-shadow:$shadow400;position:relative;}
 .post-feedback-body {}
 .post-feedback-body em {color:var(--gray800);text-decoration:underline;}
 .post-feedback-link {margin-left:auto;}
@@ -113,7 +113,7 @@
 .post-item-thumbnail img {opacity:.75;transition:all .4s .1s;}
 .post-item-category {display:block;color:coral;position:absolute;left:2rem;top:8rem;transition:all .4s .2s;}
 .post-item-date {display:block;color:var(--gray0);position:absolute;right:2rem;top:8rem;transition:all .4s .2s;}
-.post-item-title {margin:0 0 3rem 0;padding:8rem 0 0;font-size:1.5rem;color:var(--gray0);transition:all .4s;}
+.post-item-title {margin:0 0 3rem 0;padding:8rem 0 0;font-size:1.25rem;color:var(--gray0);transition:all .4s;}
 .post-item-summary {margin:0 0 .5rem 0;transition:all .4s .2s;}
 .post-item-tag {color:var(--gray400);text-decoration:underline;}
 
@@ -147,4 +147,28 @@
 	.post {padding:40px 5%;}
 
 	.post-body-img {float:none;margin-left:-8%;margin-right:-8%;}
+}
+
+
+
+
+.post-attract {
+  text-align: center;
+  // background: linear-gradient(to bottom, $gray100, rgba(235, 235, 235, 0.96) 50%, $gray100) !important;
+}
+.post-attract-blur {
+	height: 12rem;
+	margin-top: -12rem;
+	background: linear-gradient(rgb(255, 255, 255), rgba(255, 255, 255, 0.5), rgb(255, 255, 255));
+	position: relative;
+}
+.post-attract-title {
+	margin:0 0 1rem 0;
+	font-size: 1.25rem;
+}
+.post-attract-description {
+}
+.post-attract-signup {
+	@include button-secondary;
+	margin: 2rem 0;
 }
