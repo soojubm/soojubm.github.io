@@ -38,13 +38,13 @@
 @media (--viewport-large) {
   .design {padding:0;}
   .design-head {height:50vh;position:relative;left:0;right:0;top:0;bottom:50%;}
-  .design-body {width:100%;margin:4rem 10%;padding:0;}
+  .design-body {margin:4rem 10%;padding:0;}
 }
 
 
 @media (--viewport-small) {
   .design-head {}
-  .design-body {margin-left:5%;}
+  .design-body {width:90%;margin-left:5%;margin-right:5%;}
 }
 
 
