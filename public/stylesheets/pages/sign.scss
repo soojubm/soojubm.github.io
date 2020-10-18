@@ -2,8 +2,8 @@ $container-auth: 400px;
 
 
 .login {max-width:$container-auth;margin:0 auto;padding:4rem 5% 20rem;position:relative;}
-.login-title {font-size:2rem;text-indent:-2px;}
-.login-description {margin:.25rem 0;font-size:$body;}
+.login-title {@include title;}
+.login-description {margin:1rem 0;font-size:$body;}
 .login-email {margin:2rem 0;}
 .login-password {}
 .login-remember {margin:.5rem 0;}
@@ -22,8 +22,8 @@ $container-auth: 400px;
 
 .signup {max-width:$container-auth;margin:0 auto;padding:5rem 5% 10rem;}
 .signup-head {}
-.signup-head-title {margin:0 0 1rem 0;font-size:2rem;}
-.signup-head-description {color:var(--gray800);}
+.signup-head-title {@include title;}
+.signup-head-description {margin:1rem 0 0 0;color:var(--gray800);}
 .signup-foot {margin:3rem 0;}
 .signup-foot-submit {@include button-primary;width:100%;}
 .signup .textfield {margin:2rem 0;}
@@ -33,7 +33,7 @@ $container-auth: 400px;
 .password {max-width:$container400;margin:0 auto;padding:5rem 5% 20rem;position:relative;}
 .password-head {margin-bottom:3rem;position:relative;}
 .password-title {margin:0 0 .5rem 0;font-size:14px;}
-.password-description {font-size:2rem;line-height:1.4;color:var(--gray800);}
+.password-description {@include title;line-height:1.5;}
 .password-submit {float:left;width:200px;max-width:50%;}
 .password-link {float:right;margin-top:16px;}
 .password-foot {margin:1rem 0 0;}

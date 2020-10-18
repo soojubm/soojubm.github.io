@@ -1,10 +1,29 @@
 <main class="faq">
   <header class="faq-head">
-    <h1>자주묻는질문</h1>
+    <h1 class="faq-head-title">도움말센터</h1>
+    <!-- <p class="faq-head-description">놀랍게도 아직은 무료! 누구에게나 열려 있으니 어서 오세요! 기다리고 있을게요.</p> -->
+    <button class="faq-head-ask">문의하기</button>
   </header>
   <div class="faq-item">
-    <h2 class="faq-item-question"><i>✔</i>뉴닉, 뉴스레터 보려면 돈 내야 해요?</h2>
+    <h2 class="faq-item-question js-toggle"><i>✔</i>뉴닉, 뉴스레터 보려면 돈 내야 해요?</h2>
+    <!-- <i class="icon-arrow"></i> -->
     <p class="faq-item-answer">놀랍게도 아직은 무료! 누구에게나 열려 있으니 어서 오세요! 기다리고 있을게요. 😉</p>
+
+    <footer class="faq-reaction">
+      <div class="faq-reaction-title intercom-reaction-prompt">이 답변이 도움이 되었나요?</div>
+      <button class="faq-reaction-button" data-reaction-text="disappointed" aria-label="Disappointed Reaction">
+        <span data-emoji="disappointed" title="Disappointed">😃</span>
+        옹옹 <b class="faq-reaction-button-count">2</b>
+      </button>
+      <button class="faq-reaction-button" data-reaction-text="neutral_face" aria-label="Neutral face Reaction">
+        <span data-emoji="neutral_face" title="Neutral face">😞</span>
+        앙앙. <b class="faq-reaction-button-count">2</b>
+      </button>
+      <!-- <button class="faq-reaction-button" data-reaction-text="smiley" tabindex="0" aria-label="Smiley Reaction">
+        <span data-emoji="smiley" title="Smiley">😐</span>
+        별로에요 <b class="faq-reaction-button-count">2</b>
+      </button> -->
+    </footer>
   </div>
   <div class="faq-item">
     <h2 class="faq-item-question"><i>✔</i>신청했는데 뉴스레터가 안 와요.</h2>
@@ -20,7 +39,6 @@
       </ol>
 
       <br />
-      <br />
       <p>너무 호다닥 지나가는 영상이니, 한 번 더 설명해 드릴게요.</p>
       <ol>
         <li>검색창 오른쪽의 검은 화살표(▼)를 클릭합니다.</li>
@@ -29,7 +47,6 @@
         <li>마지막으로 '필터 만들기' 누르면 끝!</li>
       </ol>
 
-      <br />
       <br />
       <p style="font-weight:bold">네이버메일로 신청하셨다고요?</p>
       <ol>
@@ -38,7 +55,6 @@
       </ol>
 
       <br />
-      <br />
       <p>너무 호다닥 지나가는 영상이니, 한 번 더 설명해 드릴게요.</p>
       <ol>
         <li>검색창 오른쪽의 검은 화살표(▼)를 클릭합니다.</li>
@@ -47,7 +63,6 @@
         <li>마지막으로 '필터 만들기' 누르면 끝!</li>
       </ol>
 
-      <br />
       <br />
       <p style="font-weight:bold">+ 회사 메일로 신청하셨다고요?</p>
       <ol>
@@ -75,24 +90,58 @@
   </div>
 
   <section class="faq-contact">
+    <span style="display:block;margin:0 0 1rem 0;font-size:4rem;">✋</span>
     <h2 class="faq-contact-title">해결이 안 된 문제가 있나요?</h2>
-    <p class="faq-contact-description">whatsup+faq@newneek.co로 메일 보내주시면 최대한 빠르게 답변 드릴게요!</p>
-    <form class="faq-contact-form" action=""></form>
+    <p class="faq-contact-description">요기에요 요기! 배달의민족~!</p>
+    <form class="faq-contact-form" action="">
+      <div class="textfield" style="width:50%">
+        <label class="textfield-label" for="search1">Sort by</label>
+        <select class="textfield-input" name="" id="">
+          <option class="select-option" value="" disabled selected hidden>Choose an option</option>
+          <option class="select-option" value="solong">My Morning Jackt</option>
+        </select>
+        <i class="selectbox-indicator icon-caret"></i>
+      </div>
+      <p>Have you tried our Help Center yet? It has tons of info about the site, and answers to most questions about using Dribbble. You should check it out!</p>
+      <!-- <p style="margin:1.5rem 0 .5rem 0;"><a>구독 해지하고 싶어요!</a></p>
+      <p style="margin:.5rem 0;"><a>닉네임 변경하고 싶어요!</a></p>
+      <p style="margin:.5rem 0;"><a>구독 해지하고 싶어요!</a></p>
+      <p style="margin:.5rem 0;"><a>구독 해지하고 싶어요!</a></p> -->
+      <br />
+      <!-- <form class="faq-contact-form boxed-form" action=""> -->
+      <!-- <p style="margin:0 0 1rem 0;">부끄러우니까 보지마요. 부끄러우니까 보지마요. 부끄러우니까 보지마요</p> -->
+      <div class="textfield">
+        <label class="textfield-label" for="">이메일</label>
+        <input class="textfield-input" type="text" placeholder="whatsup@newneek.co" />
+        <!-- <button class="textfield-button text-button">수정</button> -->
+        <!-- <p class="textfield-helper">이름이 이상합니다. 너무 이상해요. 개 이상해요.</p> -->
+      </div>
+      <div class="textfield">
+        <label class="textfield-label" for="">문의내용</label>
+        <textarea class="textfield-input" type="text" value="659"></textarea>
+        <!-- <button class="textfield-button text-button">수정</button> -->
+        <!-- <p class="textfield-helper">이름이 이상합니다. 너무 이상해요. 개 이상해요.</p> -->
+      </div>
+      <footer class="faq-contact-privacy">
+        <h3 class="faq-contact-privacy-title">개인정보 수집·이용에 대한 안내</h3>
+        <p class="faq-contact-privacy-description">문의를 접수하고 회신하기 위해 최소한의 개인정보(이메일과 문의내용)를 수집하며 후속조치를 위해 1년간 보관합니다. 더 자세한 내용에 대해서는 개인정보처리방침을 참고하시기 바랍니다.</p>
+        <!-- <div class="checkbox">
+          <input class="" type="checkbox" id="line00" value="" aira-checked="mixed" aria-controls="1 2" />
+          <label for="line00" title="Check All">동의합니다.</label>
+        </div> -->
+        <!-- <ul>
+          <li>목적 : 고객문의 및 상담요청에 대한 회신</li>
+        </ul> -->
+        <!--상담을 위한 서비스 이용기록 조회-->
+      </footer>
+      <footer class="faq-contact-form-foot">
+        <button class="faq-contact-form-foot-ask">물어보기</button>
+      </footer>
+    </form>
   </section>
 
-  <footer class="faq-reaction">
-    <div class="faq-reaction-title intercom-reaction-prompt">이번 콘텐츠 어떠셨나요?</div>
-    <button class="faq-reaction-button" data-reaction-text="disappointed" aria-label="Disappointed Reaction">
-      <span data-emoji="disappointed" title="Disappointed">😃</span>
-      좋아요 <b class="faq-reaction-button-count">2</b>
-    </button>
-    <button class="faq-reaction-button" data-reaction-text="neutral_face" aria-label="Neutral face Reaction">
-      <span data-emoji="neutral_face" title="Neutral face">😞</span>
-      어려워요 <b class="faq-reaction-button-count">2</b>
-    </button>
-    <button class="faq-reaction-button" data-reaction-text="smiley" tabindex="0" aria-label="Smiley Reaction">
-      <span data-emoji="smiley" title="Smiley">😐</span>
-      별로에요 <b class="faq-reaction-button-count">2</b>
-    </button>
-  </footer>
+  <section class="faq-partnership">
+    <h3 class="faq-partnership">파트너십 문의</h3>
+    <p>파트너십 문의는 whatsup@newneek.co로 보내주세요!</p>
+  </section>
 </main>

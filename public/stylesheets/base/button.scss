@@ -55,7 +55,7 @@ button[aria-current=page] {}
 }
 @mixin button-tertiary {
   @include button;
-  border:1px solid var(--gray100);background:var(--gray100);color:var(--gray600);
+  border:1px solid var(--gray100);background:var(--gray100);color:var(--gray800);
   &:hover,
   &:focus {}
   &:active {}

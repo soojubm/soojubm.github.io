@@ -154,11 +154,12 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 
 .boxed-form {}
 .boxed-form h4 {margin:2rem 0 0.75rem 0;}
-.boxed-form div {background:var(--gray0);padding:$padding400;border:$border100;}
+.boxed-form div {background:var(--gray0);padding:1rem 2rem 1.25rem;border:$border100;}
 .boxed-form div:nth-of-type(1) {border-radius:$radius400;border-bottom-left-radius:0;border-bottom-right-radius:0;}
 .boxed-form div:nth-last-of-type(1) {border-radius:$radius400;border-top-left-radius:0;border-top-right-radius:0;}
 .boxed-form div label {margin:0;color:var(--gray400);}
 .boxed-form div input {margin-top:-2px;padding:0;background:inherit;border:none;}
+.boxed-form div + div {margin-top:-1px;}
 
 .filter {width:320px;background:var(--gray0);overflow-y:scroll;margin:0 auto;padding:2rem 3rem;position:fixed;right:0;top:0;bottom:0;z-index:1;}
 .filter-title {font-size:1.25rem;}

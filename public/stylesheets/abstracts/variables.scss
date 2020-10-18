@@ -23,6 +23,8 @@ $cell-small: 16px;
 :root {
   --fontstack: 'Asap', 'AritaDotum', 'Apple SD Gothic Neo', sans-serif;
 
+  --space: 1rem;
+
   // ! fontSize
   --weight800: 3rem;
   --weight600: 2rem;
@@ -41,6 +43,9 @@ $cell-small: 16px;
 
   --blue100: honeydew;
 }
+
+
+@mixin title {font-size:2rem;font-weight:bold;letter-spacing:-.025rem;text-indent:-1px;}
 
 $headline: 3rem;
 $title: 2rem;
