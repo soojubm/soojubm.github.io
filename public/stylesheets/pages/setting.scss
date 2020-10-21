@@ -3,7 +3,7 @@
 
 .setting {max-width:$container600;margin:2rem auto 8rem;padding:0 5%;}
 .setting-head {margin:0 0 2rem;}
-.setting-head-title {font-size:2rem;}
+.setting-head-title {@include title;}
 .setting-head-description {margin:1rem 0 0 0;}
 
 .setting-body {margin:4rem 0 0;}

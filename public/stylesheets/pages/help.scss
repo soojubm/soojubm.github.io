@@ -1,24 +1,13 @@
 .help {padding:0 0 10rem 0;}
-.help-navigation {display:flex;justify-content:center;padding:.5rem 2rem;overflow:auto;white-space:nowrap;}
-.help-navigation-link {display:block;padding:1rem 1rem;color:var(--gray400);}
-.help-navigation-link.is-active {border-bottom:2px solid crimson;color:crimson;}
 .help-head {padding:4rem 0 6rem;text-align:center;position:relative;}
-.help-head-title {font-size:14px;color:var(--gray400);}
-.help-head-headline {margin:0 0 .25rem 0;font-size:2rem;color:var(--gray800);}
-.help-head-description {}
-.help-head-search {padding:3rem 0 0;position:relative;}
-.help-head-search .textfield {width:100%;max-width:560px;margin:0 auto;}
-.help-head-search input {}
+.help-head-title {@include title;}
+.help-head-description {margin:1rem 0;}
 .search-result {max-width:560px;height:auto;margin:0 auto;padding:.5rem 0;border:$border100;box-sizing:border-box;background:var(--gray0);text-align:left;position:absolute;left:0;right:0;top:89px;z-index:1;}
 .search-result-title {margin:0 0 0 0;padding:.75rem 1.5rem;font-size:$body;text-decoration:underline;}
 .search-result-item {display:block;padding:.75rem 1.5rem;line-height:32px;}
 .search-result-item h3 {font-size:$body;}
 .search-result-item p {color:var(--gray400);line-height:1.6;}
 .search-result-item:hover {background:#f9f9f6;}
-
-.help-category {max-width:$container400;margin:4rem auto;padding:0 2rem;position:relative;}
-.help-category-title {margin:0 0 1rem 0;font-size:$subhead;;}
-.help-category-link {display:flex;margin:0 .5rem 0 0;padding:.5rem 2rem;border:$border100;background:var(--gray100);color:var(--gray800);}
 
 .help-board {max-width:$container400;margin:2rem auto;padding:0 5%;position:relative;}
 .help-board-title {margin:0 0 1rem 1.5rem;font-size:$subhead;;}
@@ -38,6 +27,7 @@
 .is-active.help-board-item {background:var(--gray0);}
 .is-active .help-board-item-content {display:block;}
 .is-active .help-feedback {display:flex;}
+
 .help-feedback {display:none;align-items:center;margin:2rem auto 0;padding:1.5rem 0;border-top:1px solid var(--gray100);position:relative;animation:fadeup .4s ease;}
 .help-feedback-body {margin:0 1rem 0 0;}
 .help-feedback-button {margin:0 .25rem;padding-top:.25rem;padding-bottom:.25rem;}
@@ -49,9 +39,64 @@
 .help-foot-link i {display:inline-block;}
 
 
+.faq {padding:0 10%;}
+.faq-head {display:flex;align-items:center;justify-content:space-between;padding:2rem 0;position:relative;}
+.faq-head-title {@include title;}
+.faq-head-ask {@include button-tertiary;}
+.faq-item {margin:0 auto;padding:3rem 0 3.5rem;border:$border100;box-sizing:border-box;background:#fff;position:relative;}
+.faq-item + .faq-item {margin-top:-1px;}
+.faq-item-question {padding:0 5%;font-size:$subhead;font-weight:bold;cursor:pointer;}
+.faq-item-question i {margin: 0 1rem 0 0;}
+.faq-item-answer {max-width:60%;margin:1rem 0 0;padding:0 5%;}
+.faq-item-answer.is-visible {display:block;}
+// [role=button] {cursor:pointer;}
 
-.faq-article {}
-.faq-article-title {position:relative;}
-.faq-article-title-icon {}
-.faq-article-body {}
-.faq-article-body p {}
+.faq-contact {margin-top:-1px;padding:3rem 5% 4rem;border:$border100;}
+.faq-contact-emoji {display:block;margin:0 0 1rem 0;font-size:3.5rem;}
+.faq-contact-title {font-size: 2rem;font-weight:bold;}
+.faq-contact-description {margin:1rem auto 2rem;}
+.faq-contact-form {width:50%;margin:4rem 0;}
+.faq-contact-form-foot {}
+.faq-contact-form-foot-ask {@include button-primary;padding-left:4rem;padding-right:4rem;}
+.faq-contact-privacy {padding:2rem 0;}
+.faq-contact-privacy-title {font-size:1rem;font-weight:bold;}
+.faq-contact-privacy-description {margin:1rem 0;}
+
+.faq-contact .textfield {margin: 1rem 0;}
+
+.faq-reaction {margin:4rem 0 0;padding:2.5rem 5% 3.5rem;background:var(--gray100);border-radius:$radius400;text-align:center;}
+.faq-reaction-title {margin:0 0 1rem 0;font-size:1rem;font-weight:bold;}
+.faq-reaction-button {margin:0 2rem;color:var(--gray400);}
+.faq-reaction-button-emoji {display:block;font-size:1.75rem;}
+
+.faq-partnership {padding:4rem 0;}
+.faq-partnership-title {font-size:1rem;font-weight:bold;}
+.faq-partnership-description {margin:1rem 0 0;}
+
+// ! todo container variables = fullwidth
+@media (--viewport-small) {
+.faq {padding:0 5%;}
+.faq-contact-form {width:100%;}
+}
+
+// .marquee {
+//   display: flex;
+//   align-items: center;
+//   overflow: hidden;
+
+// }
+// .marquee p {
+//   animation: marquee 4s linear infinite;
+//   white-space: nowrap;
+//   // will-change: auto;
+// }
+// .marquee p:after {
+//   content: '';
+//   white-space: nowrap;
+//   padding-right: 50px;
+// }
+
+
+
+
+

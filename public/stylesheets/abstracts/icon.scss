@@ -14,6 +14,9 @@
 .icon-plus:after {content:'';display:inline-block;width:2px;height:10px;background:var(--gray800);position:absolute;left:50%;top:50%;transform:translate(-50%, -50%);}
 .is-active .icon-plus {transform:rotate(135deg);}
 
+
+.icon-o {display:block;width:6px;height:6px;border:2px solid #000;border-radius:50%;position:relative;transition:all .5s ease;}
+
 .icon-close {display:block;position:relative;transition:all .5s ease;}
 .icon-close:before {content:'';width:10px;height:2px;background-color:var(--gray800);position:absolute;left:50%;top:50%;transform:translate(-50%, -50%) rotate(45deg);}
 .icon-close:after {content:'';width:2px;height:10px;background-color:var(--gray800);position:absolute;left:50%;top:50%;transform:translate(-50%, -50%) rotate(45deg);}
@@ -48,6 +51,7 @@
 .icon-arrow-right {padding:16px;position:relative;}
 .icon-arrow-right:before {content:'';display:block;width:16px;height:1px;background:var(--gray800);position:absolute;left:16px;top:24px;transition:all .4s ease;}
 .icon-arrow-right:after {content:'';display:block;width:5px;height:1px;background:var(--gray800);position:absolute;left:27px;top:22px;transform:rotate(45deg);transition:all .4s ease;}
+
 
 .icon-circled-arrow {display:inline-block;margin:0 0 0 6px;padding:8px;border:1px solid $color-primary;border-radius:50%;vertical-align:middle;position:relative;}
 .icon-circled-arrow:before {content:'';display:block;width:8px;height:1px;background:$color-primary;position:absolute;left:4px;top:8px;transition:all .4s ease;}

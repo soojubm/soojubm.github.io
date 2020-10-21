@@ -29,7 +29,7 @@
 
 .terms1 {max-width:640px;margin:0 auto;padding:4rem 0;}
 .terms1 header {padding:2rem 0;}
-.terms1 h1 {font-size:2rem;}
+.terms1 h1 {@include title;}
 .terms1 h2 {margin:1rem 0 2rem 0;font-size:1.25rem;}
 .terms1 time {color:var(--gray400);}
 .terms1 table {margin:0 0 4rem 0;}

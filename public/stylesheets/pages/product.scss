@@ -11,11 +11,11 @@
 .product-image-navigation button {width:8px;height:8px;margin:0 .25rem;border:$border100;background:var(--gray100);}
 .product-image-navigation button.is-current {background:var(--gray800);}
 .product-info {width:25%;position:absolute;left:5%;top:0;}
-.product-info-name {font-size:2rem;width:28px;line-height:1.2;text-align:center;word-break:normal;position:absolute;left:-64px;top:0px;}
+.product-info-name {width:28px;line-height:1.2;text-align:center;word-break:normal;@include title;position:absolute;left:-64px;top:0px;}
 .product-info-price {display:flex;align-items:center;font-size:$subhead;}
 .product-info-price del {color:var(--gray400);}
-.product-info-price .per {margin:0 .5rem 0 0;}
-.product-info-price span {color:var(--gray800);}
+.product-info-price b {color:var(--gray800);}
+.product-info-price em {margin:0 .5rem 0 0;}
 .product-info-description {margin:.5rem 0 1.25rem 0;padding-bottom:1.5rem;border-bottom:1px solid var(--gray100);line-height:1.6;}
 .product-order {width:25%;margin:0 0 0 75%;}
 .product-order-info {margin:0rem 0 1rem 0;padding:1rem 0;border-top:1px solid var(--gray100);border-bottom:1px solid var(--gray100);border-radius:$radius400;}

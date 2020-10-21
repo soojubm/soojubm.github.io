@@ -42,7 +42,7 @@ button[aria-current=page] {}
   &:hover,
   &:focus {border-color:darken($color-primary, 2%);background:darken($color-primary, 2%);}
   &:active {}
-  &:disabled {background:var(--gray600);border-color:var(--gray600);color:var(--gray200);}
+  &:disabled {background:rgba(0, 120, 62, .4);border-color:transparent;}
 }
 @mixin button-secondary {
   @include button;

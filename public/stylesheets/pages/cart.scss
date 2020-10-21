@@ -1,6 +1,6 @@
 .cart {max-width:$container600;margin:0rem auto;padding:4rem 5% 10rem;}
 .cart-head {}
-.cart-title {margin:.5rem 0 0 0;font-size:2rem;line-height:1.2;position:relative;}
+.cart-title {margin:.5rem 0 0 0;@include title;position:relative;}
 .cart-description {}
 .cart-head time {display:block;margin:3rem 0 0;padding:.5rem 0;border-bottom:2px solid var(--gray800);text-align:right;color:var(--gray800);}
 

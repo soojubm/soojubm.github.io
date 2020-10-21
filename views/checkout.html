@@ -15,21 +15,21 @@
       </div>
       <h3 class="checkout-product-item-name">뉴닉이 풀어 쓴 경제상식사전</h3>
       <div class="checkout-product-item-text">Order Type: license for 1-3 Users</div>
-      <div class="checkout-product-item-price">₩44,612</div>
+      <div class="checkout-product-item-price">₩ 44,612</div>
     </div>
     <hr style="margin:2rem -2.5rem 1.5rem;" />
     <div class="checkout-product-subtotal">
       <div class="checkout-product-subtotal-label">서비스 수수료</div>
-      <div class="checkout-product-subtotal-value">₩44,612</div>
+      <div class="checkout-product-subtotal-value">₩ 44,612</div>
     </div>
     <div class="checkout-product-shipping">
       <div class="checkout-product-shipping-label">배송료</div>
-      <div class="checkout-product-shipping-value">₩3,000</div>
+      <div class="checkout-product-shipping-value">₩ 3,000</div>
     </div>
     <hr style="margin:1.5rem -2.5rem 1rem;" />
     <footer class="checkout-product-total">
       <div class="checkout-product-total-label">결제예정 금액</div>
-      <div class="checkout-product-total-value">₩44,612</div>
+      <div class="checkout-product-total-value">₩ 44,612</div>
     </footer>
     <!-- <hr style="margin:1.5rem -2.5rem 1rem;" />
     <p class="checkout-alert">경제IOI 시즌 2는 <b>오늘 마감</b>이에요<i style="font-style:italic;">!</i></p> -->
@@ -88,19 +88,19 @@
 
 <script>
 
-var form = document.getElementById('subscription-form');
-​
-form.addEventListener('submit', function (ev) {
-  ev.preventDefault();
-​
-  // If a previous payment was attempted, get the latest invoice
-  const latestInvoicePaymentIntentStatus = localStorage.getItem(
-    'latestInvoicePaymentIntentStatus'
-  );
-​
-  if (latestInvoicePaymentIntentStatus === 'requires_payment_method') {
-    const invoiceId = localStorage.getItem('latestInvoiceId');
-    const isPaymentRetry = true;
-  }
-});
+  var form = document.getElementById('subscription-form');
+  ​
+  form.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+  ​
+    // If a previous payment was attempted, get the latest invoice
+    const latestInvoicePaymentIntentStatus = localStorage.getItem(
+      'latestInvoicePaymentIntentStatus'
+    );
+  ​
+    if (latestInvoicePaymentIntentStatus === 'requires_payment_method') {
+      const invoiceId = localStorage.getItem('latestInvoiceId');
+      const isPaymentRetry = true;
+    }
+  });
 </script>
