@@ -1,30 +1,38 @@
 
 
 
-.setting {max-width:$container600;margin:2rem auto 8rem;padding:0 5%;}
+.setting {margin:2rem auto 8rem;padding:0 10%;}
 .setting-head {margin:0 0 2rem;}
 .setting-head-title {@include title;}
 .setting-head-description {margin:1rem 0 0 0;}
 
 .setting-body {margin:4rem 0 0;}
-.setting-body-heading {margin:0 0 1.5rem 0;font-size:$subhead;}
+.setting-body-heading {margin:0 0 1.5rem 0;font-size:$subhead;font-weight:bold;}
 .setting-body-description {margin:-1rem 0 1.5rem 0;}
 
-.setting-row {display:flex;align-items:center;min-height:5rem;box-sizing:border-box;overflow:hidden;border-bottom:$border100;cursor:pointer;position:relative;}
-.setting-row.is-opened {align-items:baseline;height:auto;padding:1.5rem 0;}
+.setting-row {display:flex;overflow:hidden;padding:1rem 0 1.1rem;border-bottom:$border100;box-sizing:border-box;cursor:pointer;position:relative;}
+.setting-row:hover {}
+.setting-row.is-opened {}
 .setting-row:nth-of-type(1) {border-top:$border100;}
-.setting-row-label {width:12rem;font-size:1rem;color:var(--gray400);}
-.setting-row-value {color:var(--gray800);}
-.setting-row-change {float:right;font-size:1rem;position:absolute;right:1rem;top:50%;transform:translateY(-50%);}
+.setting-row-label {width:12rem;font-size:1rem;line-height:32px;color:var(--gray400);}
+.setting-row-value {display:flex;flex-wrap:wrap;align-items:center;color:var(--gray800);line-height:32px;}
+.setting-row-value > * {line-height:1.8;}
+.setting-row-change {@include box-light;font-size:1rem;position:absolute;right:0;}
 .setting-row-change b {display:none;background:var(--gray0);transform:translateX(200px);transition:all .5s;position:relative;z-index:1;}
-.setting-row-change i {margin-left:1.5rem;transform:translateX(-1rem);transition:all .4s;}
+.setting-row-change i {}
 .setting-row:hover .setting-row-change b {transform:translateX(0);}
+.setting-row-foot-confirm {}
+.setting-row-foot-cancel {margin-left:.5rem;}
+// line-height:24px; 이거 모듈화~!
+.setting-row .textfield {
+  margin: 0 0 1rem 0;
+}
 
 .setting-foot {margin:2rem 0;}
 .setting-foot-delete {text-decoration:underline;color:#000;}
 
 @media (--viewport-small) {
-  .setting {margin-left:1rem;margin-right:1rem;}
+  .setting {margin-left:1rem;margin-right:1rem;padding:0 5%;}
   .setting-row-label {width:8rem;}
   .setting-row-change {display:none;}
 }

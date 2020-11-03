@@ -1,4 +1,4 @@
-.message {padding:$padding400;box-sizing:border-box;border-radius:$radius400;background-color:seashell;position:relative;}
+.message {padding:1.25rem 2rem 1.4rem;border-radius:$radius400;background-color:snow;position:relative;}
 .message-close {@include box-light;position:absolute;right:.5rem;top:.5rem;}
 .message-body {margin:.5rem 0 .25rem;}
 // .message:before {content:'';width:9px;height:9px;border:1px solid red;border-left:none;border-bottom:none;background:var(--gray0);position:absolute;left:20px;bottom:-6px;transform:rotate(135deg);}

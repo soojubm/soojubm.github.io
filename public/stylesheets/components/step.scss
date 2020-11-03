@@ -1,6 +1,6 @@
-.step {display:flex;justify-content:center;}
+.step {display:flex;justify-content:center;padding:2.5rem 2rem 2rem;background:var(--gray100);border-radius:$radius400;}
 .step-item {width:4rem;margin:0 1rem;text-align:center;}
-.step-item-icon {@include box-light;margin:0 auto;color:var(--gray800);}
+.step-item-icon {@include box-light;margin:0 auto;background:var(--gray0);color:var(--gray800);}
 .step-item-title {margin-top:.5rem;font-size:1rem;}
 .step-space {margin:-.5rem 0 0 0;}
 .step-space-dot {float:left;display:block;width:3px;height:3px;margin:21px 2px;border-radius:50%;background:var(--gray400);}

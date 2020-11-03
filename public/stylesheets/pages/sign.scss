@@ -37,7 +37,7 @@ $container-auth: 400px;
 .password-submit {float:left;width:200px;max-width:50%;}
 .password-link {float:right;margin-top:16px;}
 .password-foot {margin:1rem 0 0;}
-.password-foot-submit {@include button-tertiary;}
+.password-foot-submit {@include button-primary;}
 .password-result {margin:4rem 5%;text-align:center;}
 .password-result-title {margin:0 0 2rem 0;line-height:1.8;}
 .password-result-login {@include button-tertiary;}

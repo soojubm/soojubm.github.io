@@ -7,8 +7,11 @@
 
 @mixin bleeding {position:absolute;left:-200%;right:-200%;top:0;bottom:0;z-index:-1;}
 
-.checkout {@include container;padding:0 5% 8rem;position:relative;}
-.checkout-head {padding:4rem 0 4.5rem;position:relative;}
+.checkout {padding:0 10% 8rem;position:relative;}
+
+.checkout-step {}
+
+.checkout-head {padding:4rem 0;position:relative;}
 .checkout-head-background {display:none;background:var(--gray100);position:absolute;left:-200%;right:-200%;top:0;bottom:0;z-index:-1;}
 .checkout-head-eyebrow {margin-bottom:.5rem;font-size:1rem;color:var(--gray400);}
 .checkout-head-title {@include title;}
@@ -17,54 +20,55 @@
 .checkout-head-byline h2 {font-size:1rem;}
 .checkout-head-byline figure {@include box-light;display:flex;}
 
-.checkout-product {width:400px;padding:2rem 2.5rem;box-sizing:border-box;border:$border100;border-radius:$radius400;position:absolute;right:5%;top:4rem;z-index:1;}
+.checkout-product {width:480px;padding:2rem 2.5rem;box-sizing:border-box;border:$border100;border-radius:$radius400;position:absolute;right:10%;top:12.5rem;z-index:1;}
 .checkout-product-title {display:none;margin:0 0 1.5rem 0;font-size:$subhead;}
 .checkout-product-item {height:$cell-large;margin:0 0 1rem 0;position:relative;}
 .checkout-product-item-media {@include box-large;background:crimson;float:left;overflow:visible;margin-right:1.5rem;position:relative;}
-.checkout-product-item-media-badge {@include box-light;display:flex;border:$border100;position:absolute;right:-.5rem;top:-.5rem;}
 .checkout-product-item-name {font-size:1rem;color:var(--gray800);}
 .checkout-product-item-text {color:var(--gray400);}
 .checkout-product-item-price {font-size:$subhead;}
-
-.checkout-date {padding:4rem 0;}
-.checkout-date-title {font-size:1.25rem;}
-
-.checkout-shipping {margin-top:0;padding-right:560px;}
-.checkout-shipping-title {margin:1rem 0;font-size:$subhead;}
-.checkout-shipping-name {}
-// .checkout-shipping-name-emoji {@include item-emoji;}
-// .checkout-shipping-name-label {@include item-label;}
-// .checkout-shipping-name-value {@include item-value;}
-.checkout-shipping-phone {}
-// .checkout-shipping-phone-emoji {@include item-emoji;}
-// .checkout-shipping-phone-label {@include item-label;}
-// .checkout-shipping-phone-value {@include item-value;}
-.checkout-shipping-address {}
-// .checkout-shipping-address-emoji {@include item-emoji;}
-// .checkout-shipping-address-label {@include item-label;}
-// .checkout-shipping-address-value {@include item-value;}
 .checkout-product-subtotal {display:flex;justify-content:space-between;margin:.5rem 0;}
 .checkout-product-subtotal-label {}
 .checkout-product-subtotal-value {}
 .checkout-product-shipping {display:flex;justify-content:space-between;}
 .checkout-product-shipping-label {}
 .checkout-product-shipping-value {}
-.checkout-product-total {display:flex;justify-content:space-between;margin-bottom:-.5rem;font-size:$subhead;color:var(--gray800);}
+.checkout-product-total {display:flex;justify-content:space-between;margin-top:1rem;font-size:$subhead;color:var(--gray800);}
 .checkout-product-total-label {}
 .checkout-product-total-value {}
 
+.checkout-date {padding:4rem 0;}
+.checkout-date-title {font-size:1.25rem;}
+
+.checkout-shipping {display:flex;flex-wrap:wrap;max-width:640px;margin-top:0;}
+.checkout-shipping-title {width:100%;margin:1rem 0;font-size:$subhead;font-weight:bold;}
+.checkout-shipping-name {width:48%;margin-right:4%;}
+// .checkout-shipping-name-emoji {@include item-emoji;}
+// .checkout-shipping-name-label {@include item-label;}
+// .checkout-shipping-name-value {@include item-value;}
+.checkout-shipping-phone {width:48%;}
+// .checkout-shipping-phone-emoji {@include item-emoji;}
+// .checkout-shipping-phone-label {@include item-label;}
+// .checkout-shipping-phone-value {@include item-value;}
+.checkout-shipping-address {width:100%;margin:1rem 0 0 0;}
+// .checkout-shipping-address-emoji {@include item-emoji;}
+// .checkout-shipping-address-label {@include item-label;}
+// .checkout-shipping-address-value {@include item-value;}
+
+
+
 .checkout-payment {margin-top:4rem;}
-.checkout-payment-title {font-size:$subhead;}
-.checkout-payment-description {margin:1rem 0 0 0;}
-.checkout-payment-button {display:flex;align-items:center;width:100%;max-width:480px;height:48px;padding:0 2rem 3px;border:$border100;border-radius:4px;text-align:left;position:relative}
-.checkout-payment-button-emoji {margin-right:1rem;font-size:1.75rem;}
-.checkout-payment-button-check {position:absolute;right:16px;top:50%;margin-top:-2px;border-color:#000;}
+.checkout-payment-title {font-size:$subhead;font-weight:bold;}
+.checkout-payment-description {margin:1rem 0 2rem 0;}
+.checkout-payment-button {max-width:8rem;margin:0 1rem 0 0;padding:.25rem 2rem 1rem;border:$border100;border-radius:4px;text-align:center;position:relative}
+.checkout-payment-button-emoji {display:block;margin-bottom:-.5rem;font-size:2rem;}
+.checkout-payment-button-check {display:none;position:absolute;right:16px;top:50%;border-color:#000;}
 
 .checkout-alert {display:flex;align-items:center;}
 .checkout-alert span {margin-right:.5rem;font-size:$subhead;}
 
-.checkout-foot {margin:4rem 0;}
-.checkout-foot-pay {@include button-primary;width:240px;}
+.checkout-foot {margin:2rem 0 0 0;}
+.checkout-foot-pay {@include button-primary;width:50%;max-width:20rem;margin:4rem 0;}
 .checkout-foot-cart {@include button-text;margin:0 0 0 2rem;}
 // .checkout-shipping-phone {margin:.5rem 0;padding:1rem 2rem 1.5rem;border-radius:$radius400;background:var(--gray100);position:relative;}
 // .checkout-shipping-phone-emoji {font-size:1.75rem;position:absolute;top:50%;transform:translate(0, -50%);}
@@ -77,12 +81,14 @@
 
 
 @media (--viewport-small) {
+  .checkout {padding:0 5%;}
   .checkout-head {padding-bottom:6rem;}
-  .checkout-product {width:100%;margin:-2rem auto 4rem;padding:1.5rem 2rem;position:relative;right:auto;top:auto;
-  }
+  .checkout-product {width:100%;margin:-2rem auto 4rem;padding:1.5rem 2rem;position:relative;right:auto;top:auto;}
   .checkout-shipping {padding-right: 0;}
-  .checkout-foot button {
+  .checkout-foot-pay {
+    max-width: 100%;
     width: 100%;
+    margin: 0;
     padding: 1rem;
     font-size: 1.25rem;
     border-radius: 0;

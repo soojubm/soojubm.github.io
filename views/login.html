@@ -1,38 +1,41 @@
+<main>
+  <form class="login" name="login" action="" method="" novalidat="true">
+    <header class="login-head">
+      <h3 class="login-title">Hello<i style="font-style:italic;">!</i></h3>
+      <p class="login-description">부끄러우니까 로그인 하지 마요.</p>
+    </header>
+    <fieldset></fieldset>
+    <div class="login-email textfield">
+      <label class="textfield-label" for="login-email">이메일</label>
+      <input class="textfield-input js-input-email" type="text" name="email" id="login-email" placeholder="soojubm@gmail.com" autofocus aria-describedby="name-hint" />
+      <small class="textfield-helper" id="name-hint" role="alert">이메일을 입력하세요. <span hidden>Enter an email address.</span></small>
+    </div>
+    <div class="login-password textfield">
+      <label class="textfield-label" for="loginin-password">비밀번호</label>
+      <input class="textfield-input js-input-password" type="password" title="비밀번호" name="password" id="loginin-password" placeholder="8자 이상" />
+      <small class="textfield-helper" role="alert">비밀번호를 입력하세요.<span hidden>Enter a password.</span></small>
+      <a class="textfield-link" href="forgot.html">비밀번호를 잊으셨나요? <small hidden>Forgot your password?</small></a>
+    </div>
+    <div class="login-remember">
+      <input type="checkbox" id="remember-id" />
+      <label for="remember-id">로그인 상태 유지<small hidden>Remember my email address</small></label>
+    </div>
+    <p class="login-fail" role="alert" aria-live="assertive">가입하지 않은 아이디이거나, 잘못된 비밀번호입니다.</p>
+    <footer class="login-foot">
+      <button class="login-foot-submit" type="submit">로그인</button>
+      <div class="login-divider" role="separator">또는</div>
+      <div class="login-social" role="group">
+        <button class="login-social-facebook">페이스북으로 시작하기 <small hidden>Sing in with Facebook</small></button>
+      </div>
+      <p class="login-option">
+        여기에 처음이신가요?<small hidden>Need an account?</small> <a class="login-option-link" href="signup.html">가입하기<small hidden>Join Soojubm for free</small></a>
+      </p>
+    </footer>
+  </form>
+</main>
 
-	<main>
-		<form class="login" name="login" action="" method="" novalidat="true">
-			<header class="login-head">
-				<h3 class="login-title">Hello<i style="font-style:italic;">!</i></h3>
-				<p class="login-description">부끄러우니까 로그인 하지 마요.</p>
-			</header>
-			<fieldset></fieldset>
-			<div class="login-email textfield">
-				<label class="textfield-label" for="login-email">이메일</label>
-				<input class="textfield-input js-input-email" type="text" name="email" id="login-email" placeholder="soojubm@gmail.com" autofocus />
-				<small class="textfield-helper" role="alert">이메일을 입력하세요. <span hidden>Enter an email address.</span></small>
-			</div>
-			<div class="login-password textfield">
-				<label class="textfield-label" for="loginin-password">비밀번호</label>
-				<input class="textfield-input js-input-password" type="password" title="비밀번호" name="password" id="loginin-password" placeholder="8자 이상" />
-				<small class="textfield-helper" role="alert">비밀번호를 입력하세요.<span hidden>Enter a password.</span></small>
-				<a class="textfield-link" href="forgot.html">비밀번호를 잊으셨나요? <small hidden>Forgot your password?</small></a>
-			</div>
-			<div class="login-remember">
-				<input type="checkbox" id="remember-id" />
-				<label for="remember-id">로그인 상태 유지<small hidden>Remember my email address</small></label>
-			</div>
-			<p class="login-fail" role="alert" aria-live="assertive">가입하지 않은 아이디이거나, 잘못된 비밀번호입니다.</p>
-			<footer class="login-foot">
-				<button class="login-foot-submit" type="submit">로그인</button>
-				<div class="login-divider" role="separator">또는</div>
-				<div class="login-social" role="group">
-					<button class="login-social-facebook">페이스북으로 시작하기 <small hidden>Sing in with Facebook</small></button>
-				</div>
-				<p class="login-option">여기에 처음이신가요?<small hidden>Need an account?</small> <a class="login-option-link" href="signup.html">가입하기<small hidden>Join Soojubm for free</small></a></p>
-			</footer>
-		</form>
-	</main>
-
-	<style>
-	.textfield-helper {display:none;}
-	</style>
+<style>
+  .textfield-helper {
+    display: none;
+  }
+</style>

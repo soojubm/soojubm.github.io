@@ -8,4 +8,4 @@
 .empty-list-item b {color:var(--gray400);}
 .empty-list-item span {}
 
-.empty-action {@include button-secondary;}
+.empty-action {@include button-secondary;width:50%;max-width:20rem;}

@@ -7,7 +7,7 @@
     <div class="hero-obj3"></div>
     <div class="hero-background"></div>
     <!-- <span class="hero-eyebrow">페이지 타이틀</span> -->
-    <h1 class="hero-title">부끄러우니까<br />보지마요<i style="font-style:italic;">!</i> <span role="img" aria-label="broken" style="display:inline-block;font-size:1.75rem;transform:rotate(20deg);margin-left:.25rem;">💔</span></h1>
+    <h1 class="hero-title">부끄러우니까<br />보지마요<i style="font-style:italic;">!</i></h1>
     <p class="hero-description">이 사이트는 연습장이니 의미를 찾지 마셔요. 최소한의 가이드로 만들어보고 있어요.<br />바닐라 자바스크립트로 만들었어요. 바닐라 자바스크립트로 만들었어요.</p>
     <a class="hero-cta" style="padding-left:2.5rem;padding-right:2.5rem;">공사중입니다</a>
     <a class="hero-detail">자세히보기</a>
@@ -309,7 +309,7 @@
       <div class="statistic"><i class="statistic-label">팔로워</i><span class="statistic-value">21,682</span></div>
     </article>
 
-    <!-- <article class="design-article">
+    <article class="design-article">
       <h1 class="design-article-title">Temp</h1>
       <p class="design-article-description">긍정 상황에 사용합니다. 몇 개 추가</p>
       <aside class="message">
@@ -323,11 +323,12 @@
       </aside>
       <br />
       <aside class="message">
+        <!-- <i class="icon-check"></i> -->
         <div class="message-head">
-          가입하지 않은 아이디이거나, 잘못된 비밀번호입니다.
+          가입하지 않은 아이디이거나, 잘못된 비밀번호입니다. 아이콘이 없어서 그런가 어색
         </div>
       </aside>
-    </article> -->
+    </article>
 
     <article class="design-article">
       <h1 class="design-article-title">CSS Icons</h1>
@@ -344,7 +345,7 @@
         <button class="design-article-icon"><i class="icon-caret"></i></button>
         <button class="design-article-icon"><i class="icon-hamberger"></i></button>
         <button class="design-article-icon"><i class="icon-bullet"></i></button>
-        <button class="design-article-icon"><i class="icon-check"></i></button>
+        <button class="design-article-icon"><div style="display:flex;align-items:center;background:crimson"><i class="icon-check"></i></div></button>
         <button class="design-article-icon"><i class="icon-ribbon"></i></button>
 
         <button class="copyurl js-copy" data-copy-btn class="bx--copy-btn" type="button" tabindex="0">
@@ -413,7 +414,7 @@
         <div class="checkbox textfiled">
           <input class="js-check" type="checkbox" id="other" name="interest" value="other">
           <label for="other">기타</label>
-          <input type="text" name="other" class="textfield-input" placeholder="다른 거 뭔지 입력해주세요.">
+          <input type="text" name="other" class="textfield-input" placeholder="다른 거 뭔지 입력해주세요." hidden>
         </div>
       </fieldset>
     </article>
@@ -664,17 +665,31 @@
       </div>
     </article>
 
+    <!-- <script>
+    var pagItems = document.querySelectorAll('.pagination__item');
+
+    for (var i = 0; i < pagItems.length; i++) {
+      var counter = i + 1;
+      var string = "Page " + counter;
+
+      if (pagItems[i].getAttribute('aria-current')) {
+        string = "Page " + counter + ", Current Page";
+      }
+
+      pagItems[i].setAttribute('aria-label', string);
+    }
+    </script> -->
     <article class="design-article">
       <h1 class="design-article-title">Paginations</h1>
       <p class="design-article-description">페이지네이션의 첫 페이지와 마지막 페이지는 더블 화살표 아이콘보다 총 페이지 수를 노출한다.</p>
-      <nav class="pagination" aria-label="pagination">
-        <a class="pagination-previous" href="#" title="앞 페이지로 이동">Previous</a>
+      <nav class="pagination" role="navigation" aria-label="pagination">
+        <a class="pagination-previous" href="#" title="앞 페이지로 이동" aria-label="">Previous</a>
         <a class="pagination-next" href="#" title="뒷 페이지로 이동">Next</a>
         <a class="pagination-link" href="#" title="맨 앞 페이지로 이동">1</a>
         <i class="pagination-ellipsis" title="맨 앞 페이지로 이동">...</i>
         <a class="pagination-link" href="#" title="1 페이지로 이동">5</a>
         <a class="pagination-link" href="#" title="1 페이지로 이동">6</a>
-        <a class="pagination-link is-current" href="#" title="1 페이지로 이동">7</a>
+        <a class="pagination-link is-current" href="#" title="1 페이지로 이동" aria-current="true">7</a>
         <a class="pagination-link" href="#" title="1 페이지로 이동">8</a>
         <a class="pagination-link" href="#" title="1 페이지로 이동">9</a>
         <i class="pagination-ellipsis" title="맨 앞 페이지로 이동">...</i>
@@ -927,11 +942,8 @@
       <p class="design-article-description">단계다단계</p>
       <div class="step">
         <div class="step-item is-active">
-          <span class="step-item-icon">
-            1
-            <!-- <i class="icon-check" style="border-color:#3fbb65;"></i> -->
-          </span>
-          <h3 class="step-item-title">정보입력</h3>
+          <span class="step-item-icon">1</span>
+          <h3 class="step-item-title">장바구니</h3>
           <!-- <p>Your garden's success depends on its location, so choose a spot that has healthy soil, gets good light, and is easily watered.</p> -->
         </div>
         <div class="step-space is-active">
@@ -940,10 +952,8 @@
           <span class="step-space-dot"></span>
         </div>
         <div class="step-item is-active">
-          <span class="step-item-icon">
-            2
-          </span>
-          <h3 class="step-item-title">결제완료</h3>
+          <span class="step-item-icon">2</span>
+          <h3 class="step-item-title">결제</h3>
         </div>
         <div class="step-space is-active">
           <span class="step-space-dot"></span>
@@ -951,10 +961,8 @@
           <span class="step-space-dot"></span>
         </div>
         <div class="step-item">
-          <span class="step-item-icon">
-            3
-          </span>
-          <h3 class="step-item-title">배달</h3>
+          <span class="step-item-icon">3</span>
+          <h3 class="step-item-title">주문완료</h3>
         </div>
       </div>
     </article>

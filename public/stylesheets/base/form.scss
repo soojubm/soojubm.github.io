@@ -72,8 +72,9 @@ input[type=radio]:disabled + label:before {background:var(--gray200);border-colo
 input[type=radio]:disabled + label:after {background:var(--gray0);}
 
 // .checkbox-helper,.radio-helper {padding:0.5rem 0 1.5rem 28px;}
-input[type=radio] + label + *,
-input[type=checkbox] + label + * {display:none;}
+// hidden attribute
+// input[type=radio] + label + *,
+// input[type=checkbox] + label + * {display:none;}
 input[type=radio]:checked + label + *,
 input[type=checkbox]:checked + label + * {display:block;margin:.5rem 0 1rem 0px;}
 input[type=radio]:checked + label + input,
@@ -104,7 +105,7 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 .textfield-icon {display:flex;align-items:center;justify-content:center;width:48px;height:100%;position:absolute;left:0;}
 .textfield-icon i {display:inline-block;font-size:19px;vertical-align:middle;opacity:0.4;}
 .textfield-icon + .textfield-input {padding-left:48px;}
-.textfield-input {display:block;width:100%;padding:$padding200;padding-right:40px;background:var(--gray100);border:1px solid var(--gray100);border-radius:$radius400;box-sizing:border-box;font:inherit;color:var(--gray800);/*-appearance:none;*/transition:all 0.2s;}
+.textfield-input {width:100%;padding:$padding200;padding-right:40px;background:var(--gray100);border:1px solid var(--gray100);border-radius:$radius400;box-sizing:border-box;font:inherit;color:var(--gray800);/*-appearance:none;*/transition:all 0.2s;}
 .textfield-input:disabled {border-color:var(--gray200);background:var(--gray200);color:var(--gray100);cursor:not-allowed;}
 .textfield-input:not(select):read-only {background:none;padding-left:0;padding-right:0;border:none;outline:none;}
 .textfield-input:not(select):read-only::placeholder {color:var(--gray800);}
@@ -114,7 +115,7 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 .textfield-input.-inline {display:inline;width:80px;padding:2px 12px;}
 .view-password {position:absolute;right:1rem;bottom:1rem;z-index:2;font-size:12px;color:var(--gray400);}
 .textfield-unit {width:40px;height:46px;padding:0 16px;line-height:50px;text-align:right;color:rgba(0, 0, 0, 0.4);position:absolute;right:0;bottom:0;}
-.textfield-helper {display:block;margin-top:.25rem;color:$color-negative;}
+.textfield-helper {margin-top:.25rem;color:$color-negative;}
 .textfield-button {border-top-left-radius:0;border-bottom-left-radius:0;position:absolute;right:0;top:0;}
 .textfield-label ~ .textfield-button {top:28px;}
 .textfield-link {font-size:12px;position:absolute;right:0;top:0;}
