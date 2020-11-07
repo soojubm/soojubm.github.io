@@ -107,8 +107,8 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 .textfield-icon + .textfield-input {padding-left:48px;}
 .textfield-input {width:100%;padding:$padding200;padding-right:40px;background:var(--gray100);border:1px solid var(--gray100);border-radius:$radius400;box-sizing:border-box;font:inherit;color:var(--gray800);/*-appearance:none;*/transition:all 0.2s;}
 .textfield-input:disabled {border-color:var(--gray200);background:var(--gray200);color:var(--gray100);cursor:not-allowed;}
-.textfield-input:not(select):read-only {background:none;padding-left:0;padding-right:0;border:none;outline:none;}
-.textfield-input:not(select):read-only::placeholder {color:var(--gray800);}
+// .textfield-input:not(select):readonly {background:none;padding-left:0;padding-right:0;border:none;outline:none;}
+// .textfield-input:not(select):readonly::placeholder {color:var(--gray800);}
 .textfield-input:focus {background:var(--gray0);border-color:var(--gray200);box-shadow:$shadow100;outline:0;}
 .textfield-input.-textarea {height:auto;}
 .textfield-input.-selectbox {height:auto;}

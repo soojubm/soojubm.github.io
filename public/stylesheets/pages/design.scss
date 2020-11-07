@@ -199,6 +199,15 @@
 .design-article-secondary-small {@include box-light;@include button-secondary;padding:$padding100;font-size:12px;}
 .design-article-tertiary-small {@include box-light;@include button-tertiary;padding:$padding100;font-size:12px;}
 .design-article-text-small {@include button-text;padding:$padding100;font-size:12px;}
-.copyurl {
-  @include box-light;
-}
+
+.share-trigger {@include box-light;margin:0 0 1rem 0;}
+.share-trigger svg {width:1rem;}
+.share {display:flex;flex-wrap:wrap;justify-content:center;padding:2rem 3rem;border:$border100;border-radius:$radius400;box-sizing:border-box;}
+.share-title {width:100%;margin:1rem 0;font-size:$subhead;font-weight:bold;text-align:center;}
+.share-facebook {@include box-medium;margin:.5rem;background:$color-facebook;color:#fff;font-size:10px;}
+.share-twitter {@include box-medium;margin:.5rem;background:$color-twitter;color:#fff;font-size:10px;}
+.share-kakao {@include box-medium;margin:.5rem;}
+.share-copy {display:flex;flex-wrap:wrap;width:100%;margin:2rem 0;}
+.share-copy-label {}
+.share-copy-url {}
+.share-copy-button {@include box-light;width:100%;margin:.5rem 0;background:transparent;border:1px solid $color-primary;color:$color-primary;}

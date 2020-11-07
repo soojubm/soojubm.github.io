@@ -178,7 +178,7 @@
 
 .quote {max-width:320px;padding:2rem;border-radius:$radius400;box-sizing:border-box;box-shadow:$shadow400;background:var(--gray0);}
 .quote-avatar {@include box-light;}
-.quote-title {margin:1rem 0;font-size:$subhead;;color:var(--gray800);}
+.quote-title {margin:1rem 0;font-size:$subhead;font-weight:bold;color:var(--gray800);}
 .quote-body {}
 .quote-byline {margin:1rem 0 0 0;}
 .quote-byline div {color:var(--gray800);}

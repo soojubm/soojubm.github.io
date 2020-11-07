@@ -46,6 +46,7 @@ $cell-small: 16px;
 
 
 @mixin title {font-size:2rem;font-weight:bold;letter-spacing:-.025rem;text-indent:-1px;}
+@mixin subhead {font-size:1.25rem;font-weight:bold;letter-spacing:-.025rem;}
 
 $headline: 3rem;
 $title: 2rem;
@@ -74,8 +75,11 @@ $padding400: 1.5rem 2rem;
 
 //box-shadow: inset 0 2px 4px 0 hsla(0, 0%, 0%, 0.08);
 $shadow100: 0px 1px 1px rgba(136, 26, 26, 0.075); // unused
-$shadow400: 1px 1px 4px rgba(0, 0, 0, 0.2);
+$shadow400: 0px 0px 2rem rgba(0, 0, 0, 0.125);
 $shadow450: 2px 4px 8px rgba(0, 0, 0, 0.2); // hover
+
+$shadow800: 0px 0px 2rem rgba(0, 0, 0, 0.125); // unused
+
 $border100: 1px solid var(--gray200);
 $border150: 1px solid var(--gray200);
 
