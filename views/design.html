@@ -130,6 +130,9 @@
       <div style="margin:3rem 0 0 0;">
         <h4 class="typography-subhead" style="margin:0 0 1rem;font-size: 1.25rem;"><small style="display:block;margin:0 0 .5rem 0;font-size:1rem;">선약이 있어서 ✋</small>자아실현은 못할 것 같아요.</h4>
         <p class="typography-paragraph" style="margin: 0 0 1.5rem">서브헤드와 디스크립션 혹은 패러그라프는 이렇게 사용하세요. 서브헤드와 디스크립션 혹은 패러그라프는 이렇게 사용하세요. 서브헤드와 디스크립션 혹은 패러그라프는 이렇게 사용하세요. 서브헤드와 디스크립션 혹은 패러그라프는 이렇게 사용하세요.</p>
+        <!-- <blockquote>
+          인용문이에요. 동대문이에요.
+        </blockquote> -->
         <time class="typography-caption">10 January, 2020</time>
       </div>
     </article>
@@ -190,13 +193,13 @@
 
     <article class="design-article">
       <h1 class="design-article-title">Divider or Seperator</h1>
-      <p class="design-article-description">html 문서에서 구분이 필요할 때 border 스타일을 사용하지 마세요. hr 태그로 마크업하세요. 중량감에 따라 마진을 달리 주기</p>
+      <p class="design-article-description">섹션 간 border 스타일로 구획하는 것보다 hr 태그로 마크업하는 방식을 고려 중입니다.</p>
       <hr />
     </article>
 
     <article class="design-article">
       <h1 class="design-article-title">Avatars & Cells</h1>
-      <p class="design-article-description">사진이 들어간 아바타를 사용할 때와 아이콘을 사용할 때 지정된 4가지의 사이즈만 사용하세요.</p>
+      <p class="design-article-description">아바타와 아이콘 버튼에서는 지정된 4가지의 사이즈만 사용하세요.</p>
       <div role="group">
         <a href="" class="design-article-avatar-large">
           <img src="/public/images/caleb-woods-182648-unsplash.jpg" alt="" />
@@ -219,7 +222,7 @@
 
     <article class="design-article">
       <h1 class="design-article-title">breadcrumb</h1>
-      <p class="design-article-description">페이지 레벨이 3단계 이상일 때 사용해요. 홈 아이콘 대신 텍스트를 사용하니 깔끔해보인다. 모바일에서 사용하지 마세요.</p>
+      <p class="design-article-description">페이지 레벨이 3단계 이상일 때 사용하세요. 모바일 환경에서 사용하지 마세요. 홈 아이콘 대신 텍스트를 사용하니 깔끔해보인다. </p>
       <nav class="breadcrumb" aria-label="breadcrumb">
         <a class="breadcrumb-item breadcrumb-home" href="/">Home</a>
         <i class="breadcrumb-divider">/</i>
@@ -281,7 +284,7 @@
 
     <article class="design-article">
       <h1 class="design-article-title">Lists</h1>
-      <p class="design-article-description">군집을 이루는 엘리먼트라면 모두 리스트로 취급될 수 있으니 주의하요. 리스트업된 텍스트 노드만 리스트 태그로 마크업.</p>
+      <p class="design-article-description">군집을 이루는 엘리먼트라면 모두 리스트로 취급될 수 있으니 주의하세요. 리스트업된 텍스트 노드만 리스트 태그로 마크업하세요.</p>
       <ul class="list-sample">
         <li title="unordered list, level 1">순서가 없는 리스트, 1레벨
           <ul>
@@ -310,8 +313,25 @@
     </article>
 
     <article class="design-article">
+      <h1 class="design-article-title">Summary</h1>
+      <p class="design-article-description">레이블과 밸류로 이루어진 유아이들을...</p>
+      <dl style="display:flex;justify-content:space-between;padding:.25rem 0;">
+        <dt style="color:#999;">서비스 수수료</dt>
+        <dd>₩ 44,612</dd>
+      </dl>
+      <dl style="display:flex;justify-content:space-between;padding:.25rem 0;">
+        <dt style="color:#999;">서비스 수수료</dt>
+        <dd>₩ 44,612</dd>
+      </dl>
+      <dl style="display:flex;justify-content:space-between;padding:.5rem 0 2rem;font-size:1.25rem;">
+        <dt style="color:#999;">총 합계 (KRW)</dt>
+        <dd>₩ 365,073</dd>
+      </dl>
+    </article>
+
+    <article class="design-article">
       <h1 class="design-article-title">Notifications</h1>
-      <p class="design-article-description">본문 사이에서 강조하여 알라기 위해 사용할 수 있고, 토스트 알림도 사용합니다. 인풋 필드와 구분하기 위해 왼쪽에 색때를 넣어 보았다.</p>
+      <p class="design-article-description">본문의 문단 사이에서 강조하기 위해 사용합니다. 인풋 필드와 구분하기 위해 왼쪽에 색띠를 넣어 보았다.</p>
       <aside class="message">
         <button class="message-close" aria-label="close"><i class="icon-close"></i></button>
         <p class="message-head">
@@ -356,7 +376,7 @@
 
     <article class="design-article">
       <h1 class="design-article-title">Buttons</h1>
-      <p class="design-article-description">제곧내.</p>
+      <p class="design-article-description">버튼은 두 가지와 텍스트 버튼 하나, 총 세 가지면 충분하다는 생각.</p>
       <div>
         <h6>Default Sizes</h6>
         <div class="button-group" role="group">
@@ -703,7 +723,7 @@
     </script> -->
     <article class="design-article">
       <h1 class="design-article-title">Paginations</h1>
-      <p class="design-article-description">페이지네이션의 첫 페이지와 마지막 페이지는 더블 화살표 아이콘보다 총 페이지 수를 노출한다.</p>
+      <p class="design-article-description">페이지네이션의 첫 페이지와 마지막 페이지에 더블 화살표 아이콘 대신 최초와 최종 페이지를 노출하세요.</p>
       <nav class="pagination" role="navigation" aria-label="pagination">
         <a class="pagination-previous" href="#" title="앞 페이지로 이동" aria-label="">Previous</a>
         <a class="pagination-next" href="#" title="뒷 페이지로 이동">Next</a>

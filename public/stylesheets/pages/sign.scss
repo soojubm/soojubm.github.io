@@ -33,7 +33,7 @@ $container-auth: 400px;
 .password {max-width:$container400;margin:0 auto;padding:5rem 5% 20rem;position:relative;}
 .password-head {margin-bottom:3rem;position:relative;}
 .password-title {margin:0 0 .5rem 0;font-size:14px;}
-.password-description {@include title;line-height:1.5;}
+.password-description {@include title;line-height:1.6;}
 .password-submit {float:left;width:200px;max-width:50%;}
 .password-link {float:right;margin-top:16px;}
 .password-foot {margin:1rem 0 0;}

@@ -14,7 +14,7 @@
 .setting-row:hover {}
 .setting-row.is-opened {}
 .setting-row:nth-of-type(1) {border-top:$border100;}
-.setting-row-label {width:12rem;font-size:1rem;line-height:32px;color:var(--gray400);}
+.setting-row-label {width:10rem;font-size:1rem;line-height:32px;color:var(--gray400);}
 .setting-row-value {display:flex;flex-wrap:wrap;align-items:center;color:var(--gray800);line-height:32px;}
 .setting-row-value > * {line-height:1.8;}
 .setting-row-change {@include box-light;font-size:1rem;position:absolute;right:0;}
@@ -32,7 +32,7 @@
 .setting-foot-delete {text-decoration:underline;color:#000;}
 
 @media (--viewport-small) {
-  .setting {margin-left:1rem;margin-right:1rem;padding:0 5%;}
+  .setting {padding:0 5%;}
   .setting-row-label {width:8rem;}
   .setting-row-change {display:none;}
 }

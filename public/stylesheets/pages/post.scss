@@ -27,14 +27,14 @@
 .post-byline-description {margin:-.25rem 0 0 0;}
 .post-byline-follow {margin:1rem 0 0 0;}
 
-.post-body {margin:0 0 8rem 0;position:relative;}
+.post-body {position:relative;} /* graident 때문에 아래요소에서 마진값주기 */
 .post-body-title {display:block;margin:0 0 24px 0px;}
-.post-body-title i {display:inline-block;width:40px;height:40px;line-height:40px;margin-right:12px;border-radius:$radius400;background:#f3f3f3;text-align:center;color:var(--gray800);font-size:$subhead;;vertical-align:middle;}
-.post-body-kicker {margin:3rem 0 3.5rem 0;font-size:$subhead;;color:var(--gray800);position:relative;}
+.post-body-title i {display:inline-block;width:40px;height:40px;line-height:40px;margin-right:12px;border-radius:$radius400;background:#f3f3f3;text-align:center;color:var(--gray800);font-size:$subhead;vertical-align:middle;}
+.post-body-kicker {margin:3rem 0 3.5rem 0;font-size:$subhead;color:var(--gray800);position:relative;}
 // .post-body-kicker:before {content:'';display:block;width:16px;height:16px;margin:0 0 1rem 0;background:lightskyblue;border-radius:$radius400;}
 // .post-body-img {float:left;width:400px;height:600px;overflow:hidden;margin:0 0 0 -240px;background:var(--gray800);}
 .post-body-img {height:240px;overflow:hidden;margin:4rem -10rem;background:var(--gray800);border-radius:$radius400;}
-.post-body-subhead {margin:4rem 0 1.5rem 0px;font-size:$subhead;;}
+.post-body-subhead {margin:4rem 0 1.5rem 0px;@include subhead;}
 .post-body-paragraph {margin:0rem 0 1rem 0px;line-height:2;}
 .post-body-paragraph:first-line {}
 .post-body-paragraph:not(:nth-of-type(1))::first-letter {padding-left:0;}
@@ -134,11 +134,16 @@
 }
 .post-pagination-previous {padding:var(--padding);box-sizing:border-box;text-align:left;}
 .post-pagination-previous-label {margin:0 0 .25rem 0;font-size:var(--label-font-size);color:var(--gray400);}
-.post-pagination-previous-link {font-size:$subhead;;color:var(--gray800);}
+.post-pagination-previous-link {font-size:$subhead;color:var(--gray800);}
 .post-pagination-next {padding:var(--padding);box-sizing:border-box;text-align:right;}
 .post-pagination-next-label {margin:0 0 .25rem 0;font-size:var(--label-font-size);color:var(--gray400);}
-.post-pagination-next-link {font-size:$subhead;;color:var(--gray800);}
+.post-pagination-next-link {font-size:$subhead;color:var(--gray800);}
+@media (--viewport-small) {
+	.post-pagination {flex-wrap:wrap;flex-direction:column-reverse;}
+	.post-pagination-previous {width:100%;margin:-2rem 0 0 0;padding:2rem 0;}
+	.post-pagination-next {width:100%;padding:2rem 0;}
 
+}
 
 .post-relation {width:0 10%;margin:4rem 10% 8rem;}
 .post-relation-title {margin:2rem 0;text-align:center;}
@@ -153,14 +158,17 @@
 
 
 .post-attract {
+  // margin: 4rem 0;
   text-align: center;
-  // background: linear-gradient(to bottom, $gray100, rgba(235, 235, 235, 0.96) 50%, $gray100) !important;
+  position: relative;
 }
 .post-attract-blur {
-	height: 12rem;
-	margin-top: -12rem;
-	background: linear-gradient(rgb(255, 255, 255), rgba(255, 255, 255, 0.5), rgb(255, 255, 255));
-	position: relative;
+	height: 20rem;
+	background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,.75), rgba(255,255,255,1));
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: -20rem;
 }
 .post-attract-title {
 	margin:0 0 1rem 0;

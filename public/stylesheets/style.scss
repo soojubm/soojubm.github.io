@@ -89,7 +89,7 @@
 
 .rating {text-align:center;position:relative;}
 .rating-title {}
-.rating-score {display:block;font-size:1.75rem;color:var(--gray800);}
+.rating-score {display:block;font-size:2rem;color:var(--gray800);}
 .rating-star {display:flex;justify-content:center;height:32px;position:relative;}
 .rating-star i {color:var(--gray200);}
 .rating-star-front {position:absolute;left:0;top:0;z-index:1;}
@@ -245,7 +245,7 @@
 .notification-list {padding:1rem 2rem;}
 .notification-item {margin:1rem 0;padding-left:calc(48px + 1rem);position:relative;}
 .notification-item-avatar {@include box-medium;position:absolute;left:0;top:.25rem;}
-.notification-item-title {font-size:1rem;line-height:1.5;}
+.notification-item-title {font-size:1rem;line-height:1.6;}
 .notification-item-date {font-size:12px;color:var(--gray400)}
 
 .loadmore {

@@ -144,58 +144,20 @@ function isEmpty(obj) {
   return Object.keys(obj).length === 0
 }
 
-const url = new URL()
-// Get the value for the the "query" parameter
-// returns "fetch"
-url.searchParams.get('query')
-
-// Gets all matching values, if there's more than one
-// returns ["fetch"]
-url.searchParams.getAll('query')
-
-// Checks if a value exists in the search params (boolean)
-// returns true
-url.searchParams.has('query')
-
-// Gets an Iterator of keys
-// Iterators can be looped through with a for...of
-url.searchParams.keys()
-
-// Gets an iterator of values
-url.searchParams.values()
-
-// Appends a new search parameter entry
-// This adds an *additional* entry if the key already exists
-url.searchParams.append('query', 'chicken')
-
-// Sets a search parameter entry
-// If the value already exists, it will replace it
-// If there are more than one, all others are deleted
-url.searchParams.set('query', 'chicken')
-
-// Deletes all instances of a search parameter
-url.searchParams.delete('query')
-
-// Provides an iterator method for looping through search parameter values
-// url.searchParams.forEach(function (value, key) {
-// 	console.log(key, value);
-// });
-
-// Sorts search parameters alphabetically by key
-url.searchParams.sort()
-
 export function removeItem(items, removable) {
   const index = items.indexOf(removable)
   return [...items.slice(0, index), ...items.slice(index + 1)]
 }
 
-export function copyToClipboard(text) {
+export function copyClipboard(text) {
+  // create Element
   const textareaElement = document.createElement('textarea')
   document.body.appendChild(textareaElement)
 
   textareaElement.value = text
   textareaElement.select() // focus?도 해야함?
   document.execCommand('copy')
+
   document.body.removeChild(textareaElement)
 
   alert('복사 완료! 이제 "붙여넣기" 해주세요.😉')
@@ -213,4 +175,42 @@ function randomString(length = 10, allowed = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefgh
     result += allowed.charAt(Math.floor(Math.random() * allowed.length))
   }
   return result
+}
+
+function serializeSearch(search) {
+  // const { search } = window.location
+  const result = search
+    .substring(1)
+    .split('&')
+    .map(p => p.split('='))
+  const result2 = result.reduce((obj, [key, value]) => ({ ...obj, [key]: value }), {})
+  return result2
+}
+
+var serializeSearchTEMP = function(form) {
+  var arr = []
+
+  // Loop through each field in the form
+  Array.prototype.slice.call(form.elements).forEach(function(field) {
+    // Skip some fields we don't need
+    if (!field.name || field.disabled || ['file', 'reset', 'submit', 'button'].indexOf(field.type) > -1) return
+
+    // Handle multi-select fields
+    if (field.type === 'select-multiple') {
+      // Loop through the options and add selected ones
+      Array.prototype.slice.call(field.options).forEach(function(option) {
+        if (!option.selected) return
+        options.push(encodeURIComponent(field.name) + '=' + encodeURIComponent(option.value))
+      })
+    }
+
+    // If it's a checkbox or radio button and it's not checked, skip it
+    if (['checkbox', 'radio'].indexOf(field.type) > -1 && !field.checked) return
+
+    // Add the field name and value to the array
+    arr.push(encodeURIComponent(field.name) + '=' + encodeURIComponent(field.value))
+  })
+
+  // Return the array items as a string
+  return arr.join('&')
 }

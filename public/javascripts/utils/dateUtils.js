@@ -79,3 +79,28 @@ var timeFromNow = function(time) {
     tfn.time = Math.floor(difference)
   }
 }
+
+// ! nextDay
+var nextDay = new Date(todayTimestamp + 1000 * 60 * 60 * 24 * 2)
+
+export var getNextDay = function(dayName) {
+  // The current day
+  var date = new Date()
+  var now = date.getDay()
+
+  // Days of the week
+  var days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday']
+
+  // The index for the day you want
+  var day = days.indexOf(dayName.toLowerCase())
+
+  // Find the difference between the current day and the one you want
+  var diff = day - now
+  diff = diff < 1 ? 7 + diff : diff
+
+  // Get the timestamp for the desired day
+  var nextDayTimestamp = date.getTime() + 1000 * 60 * 60 * 24 * diff
+
+  // Get the next day
+  return new Date(nextDayTimestamp)
+}

@@ -1,4 +1,5 @@
 export const createGraph = () => {
+  // todo 지금은 바가 100px 이라서 1:1로 대입
   const graphItems = document.querySelectorAll('.js-graph .graph-item')
   if (!graphItems) return
 

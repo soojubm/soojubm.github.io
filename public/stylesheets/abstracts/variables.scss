@@ -8,6 +8,8 @@ $container800: 1440px;
 $container600: 1140px;
 $container400: 640px; 
 $container100: 400px; // dialog & form
+
+
 @media (--viewport-large) {
 
 }
@@ -45,7 +47,7 @@ $cell-small: 16px;
 }
 
 
-@mixin title {font-size:2rem;font-weight:bold;letter-spacing:-.025rem;text-indent:-1px;}
+@mixin title {color:var(--gray800);font-size:2rem;line-height:1.6;font-weight:bold;letter-spacing:-.025rem;text-indent:-1px;}
 @mixin subhead {font-size:1.25rem;font-weight:bold;letter-spacing:-.025rem;}
 
 $headline: 3rem;
@@ -100,9 +102,12 @@ $zindex-popover: 6;
 $zindex-tooltip: 8;
 
 $height-header: 64px;
+$height-bottomsheet: 1rem; // ? fixed CTA = bottom navigation
+
 @media (--viewport-small) {
   $height-header: 56px;
 }
+
 
 .linebreak-desktop {
   display:block;
@@ -166,9 +171,7 @@ $height-header: 64px;
   display: block;
   width: 100%;
 }
-.is-disabled {
-  cursor: not-allowed;
-}
+.is-disabled {cursor: not-allowed;}
 .is-multiline {flex-wrap: wrap;}
 
 // text
@@ -177,14 +180,7 @@ $height-header: 64px;
 }
 .is-truncate {
 }
-
 .is-fetching {
-}
-.is-loading {
-}
-.is-actived {
-}
-.is-succesed {
 }
 .is-expanded {
 }

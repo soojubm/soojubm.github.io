@@ -11,7 +11,7 @@ import input from './javascripts/input/index'
 
 import { validity } from './javascripts/utils/validations'
 
-// import { copyToClipboard } from './javascripts/utils/formatUtils.js'
+// import { copyClipboard } from './javascripts/utils/formatUtils.js'
 
 document.addEventListener('readystatechange', (event: any) => {
   // event.target === document ? true
@@ -164,7 +164,7 @@ const domEvents = async () => {
   revealPassword()
   focusComment()
 
-  // document.querySelector('.js-copy')?.addEventListener('click', () => copyToClipboard('fafaf'))
+  // document.querySelector('.js-copy')?.addEventListener('click', () => copyClipboard('fafaf'))
 
   const inputTest = document.querySelector<HTMLInputElement>('.js-input-test')
   if (inputTest) {
@@ -287,7 +287,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setDarkmode()
 
   // event.stickyElement({ targetElement: '.js-navbar', addClass: 'is-sticky-navbar' }
-  event.stickyElement({ targetElement: '.js-topbar', addClass: 'is-sticky-topbar' })
+  event.stickyElement({ targetElement: '.js-topsheet', addClass: 'is-sticky-topsheet' })
   event.stickyElement({ targetElement: '.js-post-head', addClass: 'is-sticky-post-head' })
 
   // hashchange 될 때마다 이벤트 만들어짐;
