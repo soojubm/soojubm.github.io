@@ -73,10 +73,6 @@ input[type=radio]:disabled + label:after {background:var(--gray0);}
 
 // .checkbox-helper,.radio-helper {padding:0.5rem 0 1.5rem 28px;}
 // hidden attribute
-// input[type=radio] + label + *,
-// input[type=checkbox] + label + * {display:none;}
-input[type=radio]:checked + label + *,
-input[type=checkbox]:checked + label + * {display:block;margin:.5rem 0 1rem 0px;}
 input[type=radio]:checked + label + input,
 input[type=checkbox]:checked + label + input {display:block;margin:0.75rem 0 1.5rem 0px;}
 

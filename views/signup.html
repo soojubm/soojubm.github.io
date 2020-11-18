@@ -2,7 +2,7 @@
   <form class="signup" name="signup-foot-submit" action="" method="">
     <header class="signup-head">
       <h3 class="signup-head-title">웹사이트 회원가입</h3>
-      <p class="signup-head-description">이름, 사진과 같이 Google 서비스에서 사용하는 기본 정보</p>
+      <!-- <p class="signup-head-description">이름, 사진과 같이 Google 서비스에서 사용하는 기본 정보</p> -->
     </header>
     <fieldset class="signup-required">
       <legend hidden>필수입력</legend>
@@ -15,7 +15,7 @@
       </div>
       <div class="textfield">
         <label class="textfield-label" for="signup-password">비밀번호<abbr title="required" aria-hidden="true">*</abbr></label>
-        <input class="textfield-input" type="password" name="password" id="signup-password"  placeholder="비밀번호" />
+        <input class="textfield-input" type="password" name="password" id="signup-password" placeholder="비밀번호" />
         <button class="view-password js-view-password">비밀번호 보기</button>
         <!-- <input
           class="textfield-input"
@@ -30,7 +30,7 @@
         <button class="view-password js-view-password">비밀번호 보기</button>
       </div>
     </fieldset>
-    <fieldset class="signup-optional optional">
+    <fieldset class="signup-optional" style="margin-top:-2rem;">
       <legend hidden>선택입력</legend>
       <div class="textfield">
         <label class="textfield-label">직업 <small>선택입력</small></label>
@@ -57,7 +57,7 @@
       <!-- <strong>회원가입 시 <a href="#">이용약관</a>과 <a href="#">개인정보처리방침</a>에 동의하는 것으로 간주합니다.</strong> -->
       <div class="checkbox">
         <input type="checkbox" class="js-checkall" id="check-all" />
-        <label for="check-all"><em>아래 약관에 모두 동의합니다.</em></label>
+        <label for="check-all"><em>모두 동의합니다.</em></label>
       </div>
       <div class="checkbox">
         <input type="checkbox" class="js-check js-required" id="agree-terms" />
@@ -74,10 +74,6 @@
       <div class="checkbox">
         <input type="checkbox" class="js-check js-required" id="agree-policy" />
         <label for="agree-policy">개인정보 수집/이용 동의</label>
-      </div>
-      <div class="checkbox">
-        <input type="checkbox" class="js-check js-required" id="agree-terms" />
-        <label for="agree-terms">만 14세 이상입니다.</label>
       </div>
       <div class="checkbox">
         <input type="checkbox" class="js-check" id="check-three" />
@@ -105,71 +101,67 @@
   // TODO other input
 
   document.addEventListener('DOMContentLoaded', () => {
-  
-  document.addEventListener(
-    'blur',
-    event => {
-      if (event.target.matches('.email-input')) {
-        if (event.target.value == '') {
+    document.addEventListener(
+      'blur',
+      event => {
+        if (event.target.matches('.email-input')) {
+          if (event.target.value == '') {
+          }
         }
-      }
-    },
-    true,
-  )
-  document.addEventListener(
-    'keyup',
-    event => {
-      if (event.target.matches('.email-input')) {
-        if (event.target.value.length < 6) {
-          alert('너무 짧아요')
+      },
+      true,
+    )
+    document.addEventListener(
+      'keyup',
+      event => {
+        if (event.target.matches('.email-input')) {
+          if (event.target.value.length < 6) {
+            alert('너무 짧아요')
+          }
         }
-      }
-    },
-    true,
-  )
-
+      },
+      true,
+    )
   })
-  
 </script>
 
-
 <script>
-  function createCustomer() {
-    let billingEmail = document.querySelector('#email').value;
-    return fetch('/create-customer', {
-      method: 'post',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        email: billingEmail,
-      }),
-    }).then((response) => {
-        return response.json()
-    }).then((result) => {
-      // result.customer.id is used to map back to the customer object
-      // result.setupIntent.client_secret is used to create the payment method
-      return result
-    });
-  }
-​
-  let signupForm = document.getElementById('signup-form');
-​
-  signupForm.addEventListener('submit', function (evt) {
-    evt.preventDefault();
-    // Create Stripe customer
-    createCustomer().then((result) => {
-      customer = result.customer;
-    });
-  });
-
-
-  function showCardError(event) {
-    let displayError = document.getElementById('card-errors');
-    if (event.error) {
-      displayError.textContent = event.error.message;
-    } else {
-      displayError.textContent = '';
+    function createCustomer() {
+      let billingEmail = document.querySelector('#email').value;
+      return fetch('/create-customer', {
+        method: 'post',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: billingEmail,
+        }),
+      }).then((response) => {
+          return response.json()
+      }).then((result) => {
+        // result.customer.id is used to map back to the customer object
+        // result.setupIntent.client_secret is used to create the payment method
+        return result
+      });
     }
-  }
+  ​
+    let signupForm = document.getElementById('signup-form');
+  ​
+    signupForm.addEventListener('submit', function (evt) {
+      evt.preventDefault();
+      // Create Stripe customer
+      createCustomer().then((result) => {
+        customer = result.customer;
+      });
+    });
+
+
+    function showCardError(event) {
+      let displayError = document.getElementById('card-errors');
+      if (event.error) {
+        displayError.textContent = event.error.message;
+      } else {
+        displayError.textContent = '';
+      }
+    }
 </script>

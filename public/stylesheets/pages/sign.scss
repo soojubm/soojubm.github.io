@@ -7,12 +7,12 @@ $container-auth: 400px;
 .login-email {margin:2rem 0;}
 .login-password {}
 .login-remember {margin:.5rem 0;}
-.login-divider {margin:12px auto;text-align:center;position:relative;z-index:1;} // separator
+.login-divider {margin:12px auto;text-align:center;position:relative;z-index:1;}
 .login-divider:before {content:'';display:block;width:100%;height:1px;background:#e9e9e9;position:absolute;top:50%;transform:translateY(-1px);}
 .login-divider:after {content:'또는';width:4rem;line-height:24px;background:var(--gray0);font-size:12px;color:var(--gray400);position:absolute;left:50%;top:0;transform:translateX(-50%);}
 .login-foot-submit {@include button-primary;width:100%;}
 .login-social {}
-.login-social-facebook {@include button-primary;width:100%;background-color:$color-facebook;}
+.login-social-facebook {@include button-primary;width:100%;border-color:$color-facebook;background-color:$color-facebook;}
 .login-social-twitter {background:#4ab3f4;}
 .login-social-naver {margin-bottom:8px;background:#3bcc15;}
 .login-social-kakao {float:left;width:49%;color:var(--gray0);margin-right:2%;background:#f9df34;}

@@ -7,7 +7,7 @@
 // .profile-head-temp {position:absolute;left:65%;top:3.25rem;}
 // .profile-head h5 {margin:0 0 1rem 0;color:var(--gray0);}
 .profile-user {float:left;width:320px;box-sizing:border-box;position:relative;z-index:1;}
-.profile-user-avatar {@include box-large;float:right;background:url('/public/images/soo.png') no-repeat center center;background-size:contain;transition:all 0.4s ease;}
+.profile-user-avatar {float:right;@include box-large;background-image:url('/public/images/soo.png');background-size:contain;transition:all 0.4s ease;}
 .profile-user-avatar:hover {box-shadow:$shadow450;}
 .profile-user-name {font-size:$subhead;}
 .profile-user-id {display:block;color:var(--gray400);}

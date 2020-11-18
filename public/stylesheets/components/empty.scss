@@ -1,9 +1,9 @@
 // ? 부모에 flex-wrap이 있으면 자식에게 width: 100%을 주어야?
 .empty {width:100%;padding:4rem 0;box-sizing:border-box;}
 .empty-icon {@include box-large;margin:0 0 2rem;background:$color-negative;color:var(--gray0);font-size:40px;}
-.empty-title {font-size:$subhead;}
+.empty-title {@include subhead;}
 .empty-description {margin:1rem 0 2rem;}
-.empty-list {margin:2rem 0 4rem;padding:1rem 2rem;border-radius:$radius400;box-sizing:border-box;background:var(--gray100);}
+.empty-list {margin:2rem 0 4rem;}
 .empty-list-item {display:flex;justify-content:space-between;margin:.25rem 0;}
 .empty-list-item b {color:var(--gray400);}
 .empty-list-item span {}

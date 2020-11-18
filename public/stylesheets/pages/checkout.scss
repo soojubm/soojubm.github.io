@@ -20,7 +20,7 @@
 .checkout-head-byline h2 {font-size:1rem;}
 .checkout-head-byline figure {@include box-light;display:flex;}
 
-.checkout-product {width:480px;padding:2rem 2.5rem;box-sizing:border-box;border:$border100;border-radius:$radius400;position:absolute;right:10%;top:12.5rem;z-index:1;}
+.checkout-product {width:480px;padding:2rem 2.5rem;box-sizing:border-box;border:$border100;border-radius:$radius400;box-shadow:$shadow400;position:absolute;right:10%;top:12.5rem;z-index:1;}
 .checkout-product-title {display:none;margin:0 0 1.5rem 0;font-size:$subhead;}
 .checkout-product-item {height:$cell-large;margin:0 0 1rem 0;position:relative;}
 .checkout-product-item-media {@include box-large;background:crimson;float:left;overflow:visible;margin-right:1.5rem;position:relative;}

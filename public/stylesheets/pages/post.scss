@@ -4,10 +4,6 @@
 .post-head-headline {padding:.5rem 0 2rem 0;@include title;} /* 상하단 패딩 똑같이해야 스키티때 */
 .post-head-date {color:var(--gray400);}
 .post-head-progress {display:none;height:3px;background:rgb(200,0,0);position:absolute;bottom:-3px;}
-.post-head-icons {/*position:fixed;left:50%;top:100px;margin-left:480px;*/}
-.post-head-icon {}
-.post-head-icon i {display:inline-block;width:32px;height:32px;border-radius:$radius400;line-height:32px;font-size:$subhead;color:var(--gray400);vertical-align:middle;}
-.post-head-icon span {display:inline-block;}
 
 .is-sticky-post-head.page-post {padding-top:200px;}
 .is-sticky-post-head .post-head {background:var(--gray0);box-shadow:$shadow400;text-align:left;position:fixed;left:0;right:0;top:0;z-index:7}
@@ -17,7 +13,6 @@
 .is-sticky-post-head .post-head-readingtime {display:none;}
 .is-sticky-post-head .post-head-date + .icon-bullet {display:none;}
 .is-sticky-post-head .post-head-progress {display:block;}
-// .is-sticky .post-head-icons {max-width:1000px;margin:0 auto;position:fixed;left:0;right:0;top:80px;}
 // .is-sticky .post-byline {max-width:1000px;margin:0 auto;position:fixed;left:0;right:0;top:160px;}
 
 .post-byline {margin:2rem 0 3rem;position:relative;}
@@ -34,7 +29,7 @@
 // .post-body-kicker:before {content:'';display:block;width:16px;height:16px;margin:0 0 1rem 0;background:lightskyblue;border-radius:$radius400;}
 // .post-body-img {float:left;width:400px;height:600px;overflow:hidden;margin:0 0 0 -240px;background:var(--gray800);}
 .post-body-img {height:240px;overflow:hidden;margin:4rem -10rem;background:var(--gray800);border-radius:$radius400;}
-.post-body-subhead {margin:4rem 0 1.5rem 0px;@include subhead;}
+.post-body-subhead {margin:4rem 0 1rem 0px;@include subhead;}
 .post-body-paragraph {margin:0rem 0 1rem 0px;line-height:2;}
 .post-body-paragraph:first-line {}
 .post-body-paragraph:not(:nth-of-type(1))::first-letter {padding-left:0;}
