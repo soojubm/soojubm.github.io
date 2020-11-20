@@ -73,12 +73,14 @@ input[type=radio]:disabled + label:after {background:var(--gray0);}
 
 // .checkbox-helper,.radio-helper {padding:0.5rem 0 1.5rem 28px;}
 // hidden attribute
-input[type=radio]:checked + label + input,
-input[type=checkbox]:checked + label + input {display:block;margin:0.75rem 0 1.5rem 0px;}
+input[type=radio] + label + *,
+input[type=checkbox] + label + * {display:none;}
+input[type=radio]:checked + label + *,
+input[type=checkbox]:checked + label + * {display:block;margin:0.25rem 0 1.5rem 0px;}
 
 .range {}
 .range input[type=range] {width:100%;height:8px;background:var(--gray100);appearance:none;-webkit-appearance:none;}
-.range input[type=range]::-webkit-slider-thumb {appearance:none;width:16px;height:16px;padding:4px;background:$color-positive;border-radius:$radius400;cursor:pointer;appearance:none;-webkit-appearance:none;}
+.range input[type=range]::-webkit-slider-thumb {appearance:none;width:16px;height:16px;padding:4px;background:$red800;border-radius:$radius400;cursor:pointer;appearance:none;-webkit-appearance:none;}
 .range input[type=range]:focus::-webkit-slider-thumb {transform:scale(1.25);box-shadow:0 0 0 0.25rem rgba(0,153,255,0.3), 0 0.125rem 0.5rem rgba(0,0,0,0.1);}
 
 
@@ -109,19 +111,19 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 .textfield-input.-textarea {height:auto;}
 .textfield-input.-selectbox {height:auto;}
 .textfield-input.-inline {display:inline;width:80px;padding:2px 12px;}
-.view-password {position:absolute;right:1rem;bottom:1rem;z-index:2;font-size:12px;color:var(--gray400);}
+.view-password {position:absolute;right:1rem;bottom:1rem;z-index:2;font-size:$caption;color:var(--gray400);}
 .textfield-unit {width:40px;height:46px;padding:0 16px;line-height:50px;text-align:right;color:rgba(0, 0, 0, 0.4);position:absolute;right:0;bottom:0;}
 .textfield-helper {margin-top:.25rem;color:$color-negative;}
 .textfield-button {border-top-left-radius:0;border-bottom-left-radius:0;position:absolute;right:0;top:0;}
 .textfield-label ~ .textfield-button {top:28px;}
-.textfield-link {font-size:12px;position:absolute;right:0;top:0;}
+.textfield-link {font-size:$caption;position:absolute;right:0;top:0;}
 .textfield-prefix {display:inline-block;display:none;width:100px;}
 .textfield-prefix + .textfield-input {display:inline-block;padding-right:100px;}
 .textfield-suffix {display:inline-block;padding:0 1.5rem;line-height:46px;cursor:default;color:var(--gray400);position:absolute;right:0;top:28px;}
 .textfield-reset {}
 .selectbox-indicator {position:absolute;right:16px;bottom:22px;}
 
-.textfield.is-small {padding:0 !important;font-size:12px !important;}
+.textfield.is-small {padding:0 !important;font-size:$caption !important;}
 .textfield.is-small .textfield-label {margin-bottom:0;}
 .textfield.is-small .textfield-input {height:$cell-light;padding:6px 1.25rem;}
 .textfield.is-inline.textfield {padding-left:5rem !important;}
@@ -201,14 +203,14 @@ input[type=file] + label:after {display:none;}
   font-size: 1rem;
   line-height: $cell-light;
 }
-.calendar-navigation {display:flex;position:absolute;right:0;top:0;font-size:12px}
+.calendar-navigation {display:flex;position:absolute;right:0;top:0;font-size:$caption}
 .calendar-navigation-prev {width:var(--date-width);height:var(--date-width);margin-right:4px;background:var(--date-background);border-radius:$radius400;}
 .calendar-navigation-next {width:var(--date-width);height:var(--date-width);background:var(--date-background);border-radius:$radius400;}
 .calendar-head {margin-top: .5rem !important;
   display: grid !important;
   grid-template-columns: repeat(7, 1fr) !important;
   gap: 4px !important;
-  font-size:12px;
+  font-size:$caption;
 }
 .calendar-head div {
   display: flex;
@@ -225,7 +227,7 @@ input[type=file] + label:after {display:none;}
   display: flex;
   justify-content: center;
   align-items: center;
-  width:var(--date-width);height:var(--date-width);border-radius:$radius400;background:#eee;font-size:12px;
+  width:var(--date-width);height:var(--date-width);border-radius:$radius400;background:#eee;font-size:$caption;
   cursor: pointer;
   &:hover {
     background: $color-primary;

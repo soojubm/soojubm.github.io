@@ -4,7 +4,7 @@
 .appbar-back-icon {transform:rotate(180deg);}
 .appbar-title {padding:0 10%;font-size:1rem;position:absolute;left:4rem;bottom:50%;transform:translateY(50%);z-index:5;}
 .appbar-backdrop {height:32px;padding:1rem 0;}
-.appbar-cta {@include button-tertiary;min-width:auto;margin-left:auto;padding:$padding100;font-size:12px;}
+.appbar-cta {@include button-tertiary;min-width:auto;margin-left:auto;padding:$padding100;font-size:$caption;}
 
 .is-sticky-appbar .appbar {background:var(--gray0);box-shadow:$shadow400;position:fixed;top:0;left:0;right:0;z-index:5;}
 .is-sticky-appbar .appbar-title {display:flex;align-items:center;}
@@ -26,9 +26,10 @@
   height:0;
   padding:8px 0;
   background:var(--gray0);
+  border-radius: $radius400;
+  box-shadow:$shadow400;
   position:absolute;
   z-index:5;
-  box-shadow:$shadow400;
   transition:all 0.2s ease;
   transform:scale(0);
   transform-origin:left top;
@@ -39,12 +40,12 @@
 }
 .dropdown-menu-title {
   padding:0.5rem 1rem;
-  font-size:12px;
+  font-size:$caption;
 }
 .dropdown-menu-link {
   display:block;
   padding:0.25rem 1rem;
-  font-size:12px;
+  font-size:$caption;
   color:var(--gray600);
   position:relative;
   z-index:1;

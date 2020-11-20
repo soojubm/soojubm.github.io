@@ -21,7 +21,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  // border: 1px solid var(--gray50);
   box-sizing: border-box;
   background-color: var(--gray100);
   overflow: hidden;
@@ -30,6 +29,15 @@
   // &:hover {
   //   background:darken(var(--gray100), 5%)
   // }
+  &:after {
+    content: '';
+    position:absolute;
+    left: 4px;
+    right: 4px;
+    top: 4px;
+    bottom:4px;
+    border-radius: 4px;
+  }
 }
 @mixin box-large {@include box;width:$cell-large;height:$cell-large;}
 @mixin box-light {@include box;width: $cell-light;height: $cell-light;}

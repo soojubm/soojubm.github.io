@@ -79,9 +79,8 @@
 
 @media (--viewport-small) {
   .checkout {padding:0 5%;}
-  .checkout-head {padding-bottom:6rem;}
   .checkout-product {width:100%;margin:-2rem auto 4rem;padding:1.5rem 2rem;position:relative;right:auto;top:auto;}
-  .checkout-shipping {padding-right: 0;}
+  .checkout-shipping {max-width:100%;padding-right:0;}
   .checkout-foot-pay {
     max-width: 100%;
     width: 100%;

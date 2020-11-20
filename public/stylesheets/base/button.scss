@@ -71,11 +71,11 @@ button[aria-current=page] {}
 }
 
 // ! backButton closeButton :: back close 아이콘은 어차피 단독으로 쓰이지 않는다!
-.danger-button {@include button;background:$color-negative;border:1px solid $color-negative;color:var(--gray0);}
-.success-button {@include button;background:$color-positive;border:1px solid $color-positive;color:var(--gray0);}
+.danger-button {@include button;background:$red800;border:1px solid $red800;color:var(--gray0);}
+.success-button {@include button;background:$blue800;border:1px solid $blue800;color:var(--gray0);}
 
-[role=group] {display:flex;flex-wrap:wrap;margin:-.25rem;}
-[role=group] > * {margin:.25rem;}
+[role=group] {display:flex;flex-wrap:wrap;}
+[role=group] > * {margin:0 .5rem .25rem 0;}
 [role=group] input[type=radio] + label {margin:0 16px 0 0;color:var(--gray400);padding-left:0;}
 [role=group] input[type=radio] + label:before {content:'';display:inline-block;width:2px;height:2px;background:var(--gray400);margin:0 10px 0 0;vertical-align:3px;position:static;left:auto;top:auto;}
 [role=group] input[type=radio] + label:after {display:none;}

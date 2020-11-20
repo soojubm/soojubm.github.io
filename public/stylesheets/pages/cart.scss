@@ -25,15 +25,15 @@
 .cart-item-price-label {display:block;color:var(--gray400);letter-spacing:.25px;}
 .cart-item-price-value {font-size:$subhead;line-height:1;}
 
-.cart-summary {margin:1rem 0;padding:1rem 0 0 50%;border-top:1px solid rgba(0,0,0,.1);box-sizing:border-box;position:relative;}
+.cart-summary {padding:1rem 0 0 50%;border-top:1px solid rgba(0,0,0,.1);box-sizing:border-box;position:relative;}
 .cart-summary-subtotal {margin:.5rem 0;}
 .cart-summary-discount {margin:.5rem 0;}
 .cart-summary-shipping {margin:.5rem 0;}
 .cart-summary-total {margin:1rem 0;padding:.75rem 0;border-top:1px solid var(--gray100);}
 .cart-summary-total .cart-summary-label {font-size:$subhead;color:var(--gray800);}
 .cart-summary-total .cart-summary-value {font-size:1.25rem;color:var(--gray800);}
-  .cart-summary-label {}
-  .cart-summary-value {float:right;font-size:$subhead;}
+.cart-summary-label {}
+.cart-summary-value {float:right;font-size:$subhead;}
 .cart-summary-controls {padding:1rem 0;}
 .cart-summary-checkout {@include button-primary;width:100%;}
 
@@ -43,14 +43,14 @@
 .cart-item-more i {margin:0 0 0 .5rem;}
 .cart-item-remove {float:right;margin:.75rem 0 .5rem;color:$color-primary;}
 .cart-item-addition {width:calc(100% - 20% - 2rem);margin:0 0 0 calc(20% + 2rem);padding:.5rem 0 .75rem;border-top:1px solid var(--gray100);box-sizing:border-box;position:relative;}
-.cart-item-addition-description {font-size:12px;line-height:1.4;color:var(--gray400);}
+.cart-item-addition-description {font-size:$caption;line-height:1.4;color:var(--gray400);}
 .cart-item-addition p {width:80%;}
 .cart-item-addition p + p {margin:.125rem 0 .25rem;}
 .cart-item-addition-price {float:right;color:var(--gray800);position:absolute;right:0;top:.5rem;}
 .cart-item-ship {width:calc(100% - 20% - 2rem);margin:0 0 0 calc(20% + 2rem);padding:.5rem 0 .75rem;border-top:1px solid var(--gray100);position:relative;}
 .cart-item-ship p {}
 // .cart-item-ship p + p {margin:.125rem 0 .25rem;}
-.cart-item-ship-description {font-size:12px;line-height:1.4;color:var(--gray400);}
+.cart-item-ship-description {font-size:$caption;line-height:1.4;color:var(--gray400);}
 .cart-item-ship span {float:right;color:var(--gray800);position:absolute;right:0;top:.5rem;}
 .cart-item-coupon {margin-left:calc(20% + 2rem);padding:.5rem 1rem;border:$border100;box-sizing:border-box;color:var(--gray400);}
 

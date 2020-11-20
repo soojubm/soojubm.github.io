@@ -1,6 +1,8 @@
 
 .darkmode * {
-  // var(--gray100): #333;
+  :root {
+  --gray0: #333;
+}
   // var(--gray800): #f1f3f4;
   .profile-user-name, .card-title {
     color: var(--gray0);

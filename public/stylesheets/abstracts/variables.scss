@@ -9,12 +9,9 @@ $container600: 1140px;
 $container400: 640px; 
 $container100: 400px; // dialog & form
 
-
 @media (--viewport-large) {
-
 }
 @media (--viewport-medium) {
-
 }
 
 $cell-large: 80px;
@@ -22,17 +19,20 @@ $cell-medium: 48px;
 $cell-light: 32px;
 $cell-small: 16px;
 
+@mixin container {
+  border: $border100;
+  border-radius: $radius400;
+  box-shadow: $shadow400;
+}
+
 :root {
   --fontstack: 'Asap', 'AritaDotum', 'Apple SD Gothic Neo', sans-serif;
-
   --space: 1rem;
 
   // ! fontSize
-  --weight800: 3rem;
-  --weight600: 2rem;
-  --weight400: 1.25rem;
-  --weight200: 1rem;
-  --weight100: .75rem;
+  --weight700: bold;
+  --weight400: normal;
+  --weight200: light;
 
   // ! colours
   --gray0: #fff; // white for dark theme
@@ -41,20 +41,21 @@ $cell-small: 16px;
   --gray200: #dadce0; // divider border
   --gray400: #979d9a; // caption
   --gray600: #4e5351; // body
-  --gray800: #131514; // bg || heading
-
+  --gray800: #1c1d1d; // heading
   --blue100: honeydew;
+  --red100: #fff0f5;
+  --color-primary:#00783e;
 }
 
-
-@mixin title {color:var(--gray800);font-size:2rem;line-height:1.5;font-weight:bold;letter-spacing:-.025rem;text-indent:-1px;}
-@mixin subhead {font-size:1.25rem;font-weight:bold;letter-spacing:-.025rem;}
-
+// ! typhography
 $headline: 3rem;
 $title: 2rem;
 $subhead: 1.25rem;
 $body: 1rem;
-$caption: 0.75rem;
+$caption: 0.875rem;
+@mixin title {color:var(--gray800);font-size:2rem;line-height:1.5;font-weight:bold;letter-spacing:-.025rem;text-indent:-1px;}
+@mixin subhead {font-size:1.25rem;font-weight:bold;letter-spacing:-.025rem;}
+
 
 $red100: #fff0f5;
 $red800: #da1e28;
@@ -63,7 +64,7 @@ $blue100: honeydew;
 $blue800: blue;
 
 $color-primary: #00783e;
-$color-positive: #00783e; // sucess
+$color-positive: #00783e; // todo sucess 
 $color-negative: #da1e28; // danger, warning
 $color-google: #fff;
 $color-facebook: hsl(214, 89%, 52%);
@@ -79,11 +80,9 @@ $padding400: 1.5rem 2rem;
 $shadow100: 0px 1px 1px rgba(136, 26, 26, 0.075); // unused
 $shadow400: 0px 0px 2rem rgba(0, 0, 0, 0.125);
 $shadow450: 2px 4px 8px rgba(0, 0, 0, 0.2); // hover
-
 $shadow800: 0px 0px 2rem rgba(0, 0, 0, 0.125); // unused
 
 $border100: 1px solid var(--gray200);
-$border150: 1px solid var(--gray200);
 
 $radius400: 4px;
 

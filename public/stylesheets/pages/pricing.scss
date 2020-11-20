@@ -1,5 +1,5 @@
 
-.pricing-item {width:320px;background:var(--gray100);padding:2rem;box-sizing:border-box;border-radius:$radius400;position:relative;}
+.pricing-item {width:320px;padding:2rem;border:$border100;box-shadow:$shadow400;box-sizing:border-box;border-radius:$radius400;position:relative;}
 .pricing-item-title {font-size:$subhead;font-weight:bold;}
 .pricing-item-price {display:block;color:var(--gray800);font-size:2rem;}
 .pricing-item-price-unit {}
