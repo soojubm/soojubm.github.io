@@ -12,7 +12,7 @@
 .is-white .appbar-back {color:var(--gray0);}
 .is-sticky-appbar .is-white .appbar-back {color:var(--gray800);}
 
-@media (--viewport-small) {
+@media (--viewport-large) {
   .appbar {width:auto;padding:1rem 5%;}
   .appbar-title {padding:0 5%;}
   .is-sticky-appbar .appbar {height:32px;}

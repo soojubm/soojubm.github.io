@@ -14,14 +14,14 @@
 .color-item div {@include box-medium;position:relative;}
 .color-item figcaption {margin:.25rem 0 0 0;font-size:10px;color:var(--gray400)}
 
-.surface-item div {@include box-medium;box-shadow:$shadow400;}
+.surface-item div {@include box-medium;background:#fff;box-shadow:$shadow400;}
 
 .design {}
 .design-head {overflow:hidden;background:url('/public/images/caleb-woods-182648-unsplash.jpg') no-repeat center center;background-size:cover;position:fixed;left:0;right:50%;top:0;bottom:0;z-index:1;}
 .design-body {width:50%;max-width:36rem;margin-left:50%;padding:6rem;}
 
 .design-article {margin:0 0 6rem 0;position:relative;}
-.design-article-title {margin:0 0 1rem 0;font-size:$subhead;font-weight:bold;}
+.design-article-title {margin:0 0 1rem 0;@include subhead;}
 .design-article-description {margin:0 0 1.5rem 0;}
 .design-article-more {display:flex;align-items:center;font-size:$caption;position:absolute;right:0;top:0;}
 .design-article-more i {margin-left:1.5rem;}
@@ -187,3 +187,17 @@
 .design-article-secondary-small {@include box-light;@include button-secondary;padding:$padding100;font-size:$caption;}
 .design-article-tertiary-small {@include box-light;@include button-tertiary;padding:$padding100;font-size:$caption;}
 .design-article-text-small {@include button-text;padding:$padding100;font-size:$caption;}
+
+
+
+
+
+
+
+
+.number {display:flex;}
+.number-card {display:flex;justify-content:center;align-items:center;width:48px;height:64px;background:var(--gray100);border-radius:4px;font-size:2rem;font-weight:bold;margin:0 .25rem;}
+.minicard {width:$cell-large;padding:1.5rem 0;text-align:center;}
+.minicard-emoji {@include box-large;font-size:3rem;}
+.minicard-value {margin:1rem 0 0;font-size:1rem;line-height:1;}
+.minicard-label {font-size:$caption;color:var(--gray400);}

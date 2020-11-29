@@ -45,7 +45,8 @@
 .profile-tablist-tab {margin:0 1rem 0 0;padding:1rem 0;color:var(--gray400);}
 .profile-tablist-tab[aria-selected=true] {color:var(--gray800);}
 
-.profile-tabpanel {display:flex;flex-wrap:wrap;margin:0 -.5rem;}
+.profile-tabpanel {display:flex;flex-wrap:wrap;}
+
 
 .tablist {position:relative;overflow:auto;white-space:nowrap;position:relative;}
 // .tablist-active {width:80px;height:2px;background:$color-primary;position:absolute;left:0;bottom:0;}
@@ -66,10 +67,10 @@
 .accordion-panel {height:0;opacity:0;transition:all .25s;}
 .accordion-panel.is-visible {height:auto;opacity:1;padding:1rem 0 3rem;box-sizing:border-box;/*animation:fadeup 0.4s $bezier-base forwards;*/}
 
-.card {display:block;width:301px;margin:0 .5rem 2rem;position:relative;transition:all .4s;}
+.card {display:block;width:33.3333%;margin:0 0 2rem;position:relative;}
 .card-more {@include box-light;display:none;position:absolute;right:.5rem;top:.5rem;}
 .card-thumbnail {padding-top:50%;overflow:hidden;background:var(--gray800);border-radius:$radius400;border:$border100;border-color:var(--gray0);box-sizing:border-box;position:relative;}
-.card-thumbnail img {display:block;width:auto;height:auto;max-width:100%;max-height:130%;margin:auto;background:var(--gray800);position:absolute;left:-1px;right:-1px;top:-1px;bottom:-1px;}
+.card-thumbnail img {display:block;width:auto;height:auto;max-width:100%;max-height:130%;margin:auto;background:var(--gray800);box-shadow:$shadow400;position:absolute;left:-1px;right:-1px;top:-1px;bottom:-1px;transition:all .4s;}
 .card-byline {display:flex;margin:.75rem 0 1rem 0;position:relative;}
 .card-byline-avatar {@include box-small;margin-right:.5rem;}
 .card-byline-name {line-height:16px;color:var(--gray400);}
@@ -84,7 +85,7 @@
 .card-item-price {position:relative;}
 .card-note {border:$border100;border-radius:$radius400;text-align:center;font-size:$caption;}
 .card-cta {@include button-primary;width:100%;margin:2rem 0;}
-.card:hover {transform:translateY(-.25rem);}
+.card:hover .card-thumbnail img {transform:translateY(-.25rem);}
 .card:hover .card-more {display:block;}
 
 .list .card {float:none;width:100%;}
@@ -93,7 +94,7 @@
 .list .card-title {padding-top:0;}
 
 @media (--viewport-large) {
-  .profile {max-width:932px;}
+  .profile {padding:2rem 5%;}
   .profile-user {float:none;width:100%;margin:0px auto 0;box-sizing:border-box;}
   .profile-body {margin:0 auto;padding-left:0;}
   .profile-user-toggle {display:block;}
@@ -102,11 +103,10 @@
 }
 
 @media (--viewport-small) {
-  .profile {padding:2rem 5%;}
   .profile-user-career {margin-top:3px}
   .profile-user-avatar {width:64px;height:64px;}
   .profile-user-description {margin:1rem 0 2rem;}
   .profile-user-id {margin-top:-2px;}
-  .profile-tabpanel .card {width:100% !important;margin-left:0 !important;margin-right:0;}
+  .profile-tabpanel .card {width:50% !important;margin-left:0 !important;margin-right:0;}
   // .profile-head {height:auto;margin-left:5%;margin-right:5%;padding:2rem 5% 3rem;border-radius:0;}
 }

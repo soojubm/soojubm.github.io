@@ -36,12 +36,12 @@ $cell-small: 16px;
 
   // ! colours
   --gray0: #fff; // white for dark theme
-  --gray50: rgba(0, 0, 0, .01);
   --gray100: #f1f5f6; // bg
   --gray200: #dadce0; // divider border
   --gray400: #979d9a; // caption
   --gray600: #4e5351; // body
   --gray800: #1c1d1d; // heading
+  --gray999: #000;
   --blue100: honeydew;
   --red100: #fff0f5;
   --color-primary:#00783e;
@@ -184,3 +184,17 @@ $height-bottomsheet: 1rem; // ? fixed CTA = bottom navigation
 }
 .is-inverted {
 }
+
+
+
+
+$z-indexes: (
+  modal : 9000,
+  overlay : 8000,
+  dropdown : 7000,
+  header : 6000,
+  footer : 5000,
+  hidden : - 1,
+  overflowHidden: - 1,
+  floating: 10000
+);

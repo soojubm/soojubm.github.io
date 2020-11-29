@@ -247,12 +247,13 @@ function revealPassword() {
 }
 
 function initailizePage() {
-  ;(function initializeMenu() {
+  initializeMenu()
+  function initializeMenu() {
     const navigationTrigger = document.querySelector<HTMLElement>('.js-navbar-toggle')
-
+    console.log(navigationTrigger)
     navigationTrigger?.classList.remove('is-active')
     navigationTrigger?.nextElementSibling?.classList.remove('is-visible')
-  })
+  }
 
   function notifyThisPage() {
     let { hash } = window.location
@@ -290,7 +291,7 @@ document.addEventListener('DOMContentLoaded', () => {
   event.stickyElement({ targetElement: '.js-topsheet', addClass: 'is-sticky-appbar' })
   event.stickyElement({ targetElement: '.js-post-head', addClass: 'is-sticky-post-head' })
 
-  // hashchange 될 때마다 이벤트 만들어짐;
+  // ! hashchange 될 때마다 이벤트 만들어짐;
   event.toggleClass({ selector: '.js-navbar-toggle' }).setEvent()
 
   domEvents()
