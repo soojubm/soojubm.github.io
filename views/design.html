@@ -97,9 +97,17 @@
     </article>
 
     <article class="design-article grayscale">
-      <h1 class="design-article-title">Color Palette</h1>
+      <h1 class="design-article-title">Palettes</h1>
       <p class="design-article-description">그레이스케일은 순서대로 백그라운드(surface) / 디바이더, disabled state / 캡션 / 바디텍스트 / 헤딩에 사용하세요.
-      <h2 style="margin:0 0 .5rem;"><small>Grayscale</small></h2>
+
+
+      <h2 style="margin:0 0 .5rem;"><small>Surface</small></h2>
+      <figure class="surface-item">
+        <div></div>
+        <figcaption></figcaption>
+      </figure>
+      <br />
+      <h2 style="margin:0 0 .5rem;"><small>Grayscales</small></h2>
       <div class="color-group" role="group">
         <figure class="color-item is-gray100">
           <div></div>
@@ -176,7 +184,9 @@
         <a href="" class="design-article-avatar-small">
           <img src="/public/images/caleb-woods-182648-unsplash.jpg" alt="" />
         </a>
-      </div>
+      </div>     
+       
+      <br />
 
       <div class="ttt">
 				<span class="ttt-avatar">🦁</span>
@@ -189,13 +199,24 @@
 				<span class="minicard-emoji">🦀</span>
 				<p class="minicard-value">12개</p>
 				<small class="minicard-label">chapters</small>
-			</div>
+      </div>
+      
+      <br />
+
+      <div class="number">
+        <div class="number-card">8</div>
+        <div class="number-card">8</div>
+        <div class="number-card">3</div>
+        <div class="number-card">-</div>
+      </div>
 
 			<style scoped>
-				.minicard {width:100px;margin-right:2rem;padding:2rem 0;border-radius:4px;background-color:lightgoldenrodyellow;text-align:center;}
-				.minicard-emoji {font-size:2.5rem;line-height:1;}
-				.minicard-value {margin:.5rem 0 0;font-size:1.25rem;line-height:1;}
-				.minicard-label {color:#999;}
+        .number {display:flex;}
+        .number-card {display:flex;justify-content:center;align-items:center;width:48px;height:64px;background:var(--gray100);border-radius:4px;font-size:2rem;font-weight:bold;margin:0 .25rem;}
+				.minicard {width:80px;padding:1.5rem 0;border-radius:4px;background-color:var(--gray100);text-align:center;}
+				.minicard-emoji {font-size:2rem;line-height:1;}
+				.minicard-value {margin:.5rem 0 0;font-size:1rem;line-height:1;}
+				.minicard-label {color:#999;font-size:.875rem;}
 			</style>
     </article>
 
@@ -217,9 +238,10 @@
       <p>형무소 안에서는 소장의 말이 곧 법이었으며 죄수들의 잘못과 실수는 결코 용납되지 않는다. 어머니의 사망 소식을 듣고 인해 2번이나 탈옥을 시도했다가 체포된 <a href="">루크</a>의 발에 쇠통이 채워지며 루크는…<a class="more" href="#" style="margin-left:.25rem;color:#00783e;">자세히 알아보기</a></p>
     </article>
 
-    <!-- <article class="design-article">
-      <h1 class="design-article-title">Side Navigation</h1>
-      <p class="design-article-description">탭리스트와 동일하게 마크업하세요. 스크롤스파이 개발하기.</p>
+    <article class="design-article">
+      <h1 class="design-article-title">Tabs</h1>
+      <p class="design-article-description">탭 or 스크롤스파이</p>
+     
       <nav class="tablist is-vertical" style="margin-top:1rem" role="tablist">
         <div class="tablist-active"></div>
         <button class="tablist-tab is-active" role="tab" aria-selected="true" data-index="1">웹사이트 <i class="tablist-tab-badge">4</i></button>
@@ -227,7 +249,7 @@
         <button class="tablist-tab" role="tab" aria-selected="false" data-index="3">컴포넌트 <i class="tablist-tab-badge">18</i></button>
         <button class="tablist-tab" role="tab" aria-selected="false" data-index="4">빈 상태 <i class="tablist-tab-badge">18</i></button>
       </nav>
-    </article> -->
+    </article>
 
     <article class="design-article">
       <h1 class="design-article-title">Tags</h1>
@@ -355,7 +377,7 @@
 
     <article class="design-article">
       <h1 class="design-article-title">Buttons</h1>
-      <p class="design-article-description">버튼을 만들어 볼까요?</p>
+      <p class="design-article-description">버튼을 만들어 볼까요? solid / outline / plain</p>
       <div>
         <h6>Default Sizes - 간단한 서비스라면 메인 버튼 2가지와 텍스트 버튼 1가지로 충분하다.</h6>
         <div class="button-group" role="group">

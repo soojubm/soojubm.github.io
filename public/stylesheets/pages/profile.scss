@@ -32,23 +32,26 @@
 .profile-controls-follow {@include button-primary;width:68%;}
 .profile-controls-message {@include button-tertiary;min-width:auto;width:30%;margin-left:auto;}
 .profile-body {padding:0 0 64px 398px;box-sizing:border-box;position:relative;}
+
 .profile-display {display:flex;margin:0 0 1.5rem 0;padding:0 0 1rem 0px;border-bottom:$border100;}
 .profile-display-title {margin:0 0 0.25rem 0;font-size:$caption;}
 .profile-display-button {@include box-light;margin:0 .5rem 0 0;border:$border100;background:none;color:var(--gray800);}
 .profile-display-button.is-selected {background:var(--gray100);}
 .profile-display-button i {font-size:20px;vertical-align:middle;}
 .profile-display-button img {width:1rem;}
-.profile-tablist {margin:0 0 0.5rem 0;position:relative;}
-.profile-tablist:before {display:none;content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:#e9e9e6;}
+
+.profile-tablist {display:flex;margin:1rem 0;position:relative;}
 .profile-tablist-active {width:6px;height:6px;margin:0 auto;border-radius:50%;transition:all 0.4s ease;background:$color-primary;position:absolute;top:.25rem;left:0;}
-.profile-tablist-tab {margin:0 1rem 0 0;padding:1rem 0;border-radius:$radius400;color:var(--gray400);}
+.profile-tablist-tab {margin:0 1rem 0 0;padding:1rem 0;color:var(--gray400);}
 .profile-tablist-tab[aria-selected=true] {color:var(--gray800);}
+
 .profile-tabpanel {display:flex;flex-wrap:wrap;margin:0 -.5rem;}
 
 .tablist {position:relative;overflow:auto;white-space:nowrap;position:relative;}
-.tablist-active {width:80px;height:2px;background:$color-primary;position:absolute;left:0;bottom:0;}
-.tablist-tab {padding:.5rem 1rem;text-align:center;}
-.tablist-tab-badge {font-size:10px;color:$color-primary;}
+// .tablist-active {width:80px;height:2px;background:$color-primary;position:absolute;left:0;bottom:0;}
+.tablist-tab {margin:0 1rem 0 0;color:var(--gray400);}
+.tablist-tab.is-active {color:var(--gray800);}
+.tablist-tab-badge {font-size:$caption;color:$color-primary;}
 
 
 .accordion {position:relative;}
@@ -99,7 +102,7 @@
 }
 
 @media (--viewport-small) {
-  .profile {max-width:572px;padding:2rem 5%;}
+  .profile {padding:2rem 5%;}
   .profile-user-career {margin-top:3px}
   .profile-user-avatar {width:64px;height:64px;}
   .profile-user-description {margin:1rem 0 2rem;}

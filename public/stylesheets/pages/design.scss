@@ -12,9 +12,9 @@
 .color-item.is-primary200 div {background:$color-primary;}
 .color-item.is-gradient div {background-image:linear-gradient(106deg,#ff3a4e,#7e4cff);}
 .color-item div {@include box-medium;position:relative;}
-.color-item figcaption {display:none;background:var(--gray0);border-radius:$radius400;letter-spacing:1px;overflow:hidden;padding:0 .5rem;font-size:10px;position:absolute;left:.5rem;bottom:.5rem;}
+.color-item figcaption {margin:.25rem 0 0 0;font-size:10px;color:var(--gray400)}
 
-.color-item:hover figcaption span {margin-top:-24px;}
+.surface-item div {@include box-medium;box-shadow:$shadow400;}
 
 .design {}
 .design-head {overflow:hidden;background:url('/public/images/caleb-woods-182648-unsplash.jpg') no-repeat center center;background-size:cover;position:fixed;left:0;right:50%;top:0;bottom:0;z-index:1;}

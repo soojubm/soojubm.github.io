@@ -100,12 +100,8 @@ $zindex-modal-backdrop: 7;
 $zindex-popover: 6;
 $zindex-tooltip: 8;
 
-$height-header: 64px;
+$height-header: 56px;
 $height-bottomsheet: 1rem; // ? fixed CTA = bottom navigation
-
-@media (--viewport-small) {
-  $height-header: 56px;
-}
 
 
 .linebreak-desktop {
@@ -114,7 +110,6 @@ $height-bottomsheet: 1rem; // ? fixed CTA = bottom navigation
     display:inline;
   }
 }
-
 
 .row {
   display: flex;

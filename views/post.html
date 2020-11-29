@@ -38,7 +38,6 @@
 			<li>팝업이나 드로어 안은 페이지 관점으로 생각하여 라우팅하기 쉽도록 설계하자.</li>
 			<li>구조를 최대한 단순화해요. 단순화된 구조는 유지보수 과정에서 스타일시트의 변경만으로 유아이의 변화에 대응할 수 있어야 해요.</li>
 		</ul>
-		<hr />
 
 		<h3 class="post-body-subhead">공통</h3>
 		<p class="post-body-paragraph">하나의 엘리먼트에는 하나의 시멘틱한 클래스를 반드시 정의해야 합니다.  엘리먼트의 상태를 표현하는 경우 다중 클래스가 허용됩니다. 유아이의 모듈화를 위해서 클래스 이름을 사용하지 마세요. 믹스인으로 모듈화하세요.</p>
@@ -63,6 +62,7 @@
 		<p class="post-body-paragraph">사랑의 없는 보이는 이상을 피어나기 청춘에서만 끓는다. 있음으로써 위하여 가치를 것이다. 군영과 보는 풀밭에 가장 아름다우냐? 되려니와, 오직 트고, 부패뿐이다. 피고, 물방아 되는 얼음과 용감하고 방황하여도, 그림자는 목숨을 얼음에 부패뿐이다. 청춘을 평화스러운 끝에 청춘에서만 곳으로 실로 가는 뿐이다. 부패를 미인을 소리다.이것은 힘차게 우리 사는가 예가 뜨고, 칼이다. 밝은 가치를 그들의 붙잡아 힘있다. 뼈 아니한 가슴이 이상 대중을 있는가? 거친 영락과 위하여 밥을 얼마나 같은 간에 황금시대를 아니다. 온갖 심장의 예수는 곧 말이다.</p>
 
 		<h3 class="post-body-subhead">HTML</h3>
+		<p class="post-body-paragraph">사사랑의 없는 보이는 이상을 피어나기 청춘에서만 끓는다.</p>
 		<ul class="post-body-paragraph" type="1">
 			<li>팝업이나 셀렉트박스, 드로어 등은 페이지가 될 수 있습니다. 모바일 퍼스트.</li>
 			<li>구조를 최대한 단순화합니다. 단순화된 구조는 유지보수나 서비스가 개선되는 과정에서 스타일시트의 변경만으로 유아이의 변화에 대응할 수 있어야 합니다.</li>
@@ -82,6 +82,10 @@
 			<li>글로벌과 로컬을 prefix로 구분하는데, 글로벌에는 icon_, 로컬에는, parentName_ </li>
 			<li>색상과 사이즈를 suffix로 구분하는데,</li>
 		</ul>
+
+
+		<p class="post-body-paragraph">컴포넌트 상태에 관한 클래스로 is- prefix를 사용합니다.</p>
+		<p class="post-body-paragraph">컴포넌트의 최상위 엘리먼트가 아닌 루트 엘리먼트가 가집니다.</p>
 		<!-- <p class="post-body-paragraph">들어가기.</p>
 		<ul class="post-body-paragraph" type="1">
 			prefix, name, suffix는 언더스코어(_)로 구분합니다.
@@ -99,11 +103,9 @@
 			제플린과 같이 프로그램에 의해 자동으로 suffix가 붙는 경우는 1x, 2x 가이드를 따르지 않아도 됩니다.
 			이미 배포되어 적용된 에셋에서 suffix가 추가되는 경우, 기존 에셋을 변형하지 않고 구별자를 추가합니다.
 		</ul> -->
-		<h3 class="post-body-subhead">컴포넌트</h3>
-		<p class="post-body-paragraph">컴포넌트 상태에 관한 클래스로 is- prefix를 사용합니다.</p>
-		<p class="post-body-paragraph">컴포넌트의 최상위 엘리먼트가 아닌 루트 엘리먼트가 가집니다.</p>
 		
 		<h3 class="post-body-subhead">자바스크립트</h3>
+		<p class="post-body-paragraph">부끄러우니까 보지마요! 부끄러우니까 보지마요! 부끄러우니까 보지마요! 부끄러우니까 보지마요!</p>
 		<ul class="post-body-paragraph">
 			<li>카멜케이스camelCase를 사용합니다.</li>
 			<li>reduce는 코드를 읽기 어렵기 때문에 지양합니다.</li>
@@ -150,7 +152,7 @@
 		<span class="post-hashtag-item">#typography</span>
 	</section>
 
-	<section class="post-share">
+	<!-- <section class="post-share">
 		<h4 class="post-share-title" hidden>share:</h4>
 		<button class="post-share-facebook">
 			<span><img src="/public/icons/facebook.svg" alt="" /></span>
@@ -160,15 +162,17 @@
 			<span><img src="/public/icons/twitter.svg" alt="" /></span>
 			트위터로 공유하기
 		</button>
-	</section>
+	</section> -->
 
 	<hr />
 
 	<section class="post-reaction">
-		<h2 class="post-reaction" hidden></h2>
 		<div class="post-reaction-like">
 			<div class="post-reaction-like-icon"><img src="/public/icons/coffee.svg" alt="" /></div>
 			<span class="post-reaction-like-count">2.5K</span>
+		</div>
+		<div class="post-reaction-share">
+			<button class="post-reaction-share-trigger"></button>
 		</div>
 	</section>
 
@@ -230,6 +234,62 @@
 
 <div class="post-relation">
 	<h2 class="post-relation-title">관련된 콘텐츠</h2>
+
+	<div class="card">
+		<figure class="card-thumbnail"><img alt="" /></figure>
+		<h3 class="card-title">카드 유아이</h3>
+		<p class="card-text">
+			하나의 마크업으로 가로형 세로형이 가능하도록 하나의 마크업으로 가로형 세로형이 가능하도록 하나의 마크업으로 가로형 세로형이 가능하도록
+		</p>
+		<!-- <time class="card-date">September 12, 2017</time> -->
+		<figure class="card-byline">
+			<div class="card-byline-avatar"><img src="/public/images/soo.png" alt="" /></div>
+			<figcaption class="card-byline-name">수줍이</figcaption>
+		</figure>
+		<div class="card-tags" role="group" style="margin-bottom:1rem">
+			<span class="tag">기획</span>
+			<span class="tag">디자인</span>
+		</div>
+		<hr />
+		<figure class="card-item">
+			<img class="card-item-avatar" src="" alt=""  />
+			<h4 class="card-item-name">퓨어 오렌지 주스</h4>
+			<figcaption class="card-item-price">
+				<del>19,000원</del> 16,000원 <em>할인율 20%</em>
+			</figcaption>
+		</figure>
+		<div class="card-note">마일리지 적립 200P</div>
+		<button class="card-more" hidden><i class="icon-more"></i></button>
+		<!-- <button class="card-cta">구매하기</button> -->
+	</div>
+
+
+	<div class="card">
+		<figure class="card-thumbnail"><img alt="" /></figure>
+		<h3 class="card-title">카드 유아이</h3>
+		<p class="card-text">
+			하나의 마크업으로 가로형 세로형이 가능하도록 하나의 마크업으로 가로형 세로형이 가능하도록 하나의 마크업으로 가로형 세로형이 가능하도록
+		</p>
+		<!-- <time class="card-date">September 12, 2017</time> -->
+		<figure class="card-byline">
+			<div class="card-byline-avatar"><img src="/public/images/soo.png" alt="" /></div>
+			<figcaption class="card-byline-name">수줍이</figcaption>
+		</figure>
+		<div class="card-tags" role="group" style="margin-bottom:1rem">
+			<span class="tag">기획</span>
+			<span class="tag">디자인</span>
+		</div>
+		<hr />
+		<figure class="card-item">
+			<img class="card-item-avatar" src="" alt=""  />
+			<h4 class="card-item-name">퓨어 오렌지 주스</h4>
+			<figcaption class="card-item-price">
+				<del>19,000원</del> 16,000원 <em>할인율 20%</em>
+			</figcaption>
+		</figure>
+		<div class="card-note">마일리지 적립 200P</div>
+		<button class="card-more" hidden><i class="icon-more"></i></button>
+	</div>
 	<!-- <figure class="post-item">
 		<span class="post-item-thumbnail"><img src="/public/images/springsteen.jpg" alt="" /></span>
 		<span class="post-item-category">Sports</span>

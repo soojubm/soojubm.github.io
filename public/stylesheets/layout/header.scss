@@ -4,7 +4,8 @@
 .appbar-back-icon {transform:rotate(180deg);}
 .appbar-title {padding:0 10%;font-size:1rem;position:absolute;left:4rem;bottom:50%;transform:translateY(50%);z-index:5;}
 .appbar-backdrop {height:32px;padding:1rem 0;}
-.appbar-cta {@include button-tertiary;min-width:auto;margin-left:auto;padding:$padding100;font-size:$caption;}
+.appbar-cta {@include box-light;margin-left:auto;}
+.appbar-cta svg {width:1rem;}
 
 .is-sticky-appbar .appbar {background:var(--gray0);box-shadow:$shadow400;position:fixed;top:0;left:0;right:0;z-index:5;}
 .is-sticky-appbar .appbar-title {display:flex;align-items:center;}
@@ -18,7 +19,7 @@
 }
 
 .dropdown {position:relative;}
-.dropdown-trigger {@include box-light;}
+.dropdown-trigger {padding:4px 1rem 5px;border:$border100;border-radius:$radius400;}
 .dropdown-trigger-caret {margin-left:.5rem;}
 .dropdown-menu {
   min-width:200px;

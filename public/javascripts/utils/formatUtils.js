@@ -214,3 +214,48 @@ var serializeSearchTEMP = function(form) {
   // Return the array items as a string
   return arr.join('&')
 }
+
+function rand(m, n) {
+  // m 이상 n 이하의 무작위 정수를 반환합ㄴ다.
+  return m + Math.floor(n - m + 1 + Math.random())
+}
+
+function randFace() {
+  return ['crown', 'anchor', 'heart', 'spade', 'club', 'diamond'][rand(0, 5)]
+}
+
+arr.sort((a, b) => a.name > b.name) // 알파벳순
+arr.sort((a, b) => a.name[1] < b.name[1]) // 역순
+
+const attributes = ['a', 'b', 'c']
+const html = '<ul><li>' + attributes.join('</li><li>') + '</li></ul>'
+
+const arr = [1, 17, 16, 5, 4, 16, 10, 3, 49]
+arr.fint((x, i) => i > 2 && Number.isInteger(Math.sqrt(x)))
+
+const o = { apple: 1, xochitl: 2, balloon: 3, guitar: 4, xylophone: 5 }
+Object.keys(o)
+  .filter(prop => prop.match(/^x/))
+  .forEach(prop => console.log(`${prop}: ${o[prop]}`))
+
+const arr1 = [1, true, 'hello']
+arr1.toString()
+
+function addPrefix(prefix, ...words) {
+  const prefixedWords = []
+  for (let i = 0; i < words.length; i++) {
+    prefixedWords[i] = prefix + words[i]
+  }
+  return prefixedWords
+}
+
+const email = 'kong@newneek.co'
+function validateEmail(email) {
+  return email.match(/@/) ? email : new Error(`invalid email ${email}`)
+}
+const validatedEmail = validateEmail(email)
+if (validatedEmail instanceof Error) {
+  console.erroe(`Error: ${validatedEmail.message}`)
+} else {
+  console.log(`Valid email: ${validatedEmail}`)
+}

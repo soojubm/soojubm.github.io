@@ -132,26 +132,21 @@
 	.post-pagination {flex-wrap:wrap;flex-direction:column-reverse;}
 	.post-pagination-previous {width:100%;margin:-2rem 0 0 0;padding:2rem 0;}
 	.post-pagination-next {width:100%;padding:2rem 0;}
-
 }
 
-.post-relation {width:0 10%;margin:4rem 10% 8rem;}
-.post-relation-title {margin:2rem 0;text-align:center;}
+.post-relation {display:flex;flex-wrap:wrap;justify-content:space-between;max-width:800px;margin:4rem auto 8rem;}
+.post-relation-title {width:100%;margin:2rem 0;text-align:center;@include subhead;}
+.post-relation .card {width:47.5%;}
 
 @media (--viewport-small) {
 	.post {padding:40px 5%;}
-
 	.post-body-image {float:none;margin-left:-8%;margin-right:-8%;}
 }
 
 
 
 
-.post-attract {
-  // margin: 4rem 0;
-  text-align: center;
-  position: relative;
-}
+.post-attract {position:relative;}
 .post-attract-blur {
 	height: 20rem;
 	background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,.75), rgba(255,255,255,1));

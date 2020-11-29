@@ -29,16 +29,17 @@
   // &:hover {
   //   background:darken(var(--gray100), 5%)
   // }
-  &:after {
-    content: '';
-    position:absolute;
-    left: 4px;
-    right: 4px;
-    top: 4px;
-    bottom:4px;
-    border-radius: 4px;
-  }
+  // &:after {
+  //   content: '';
+  //   position:absolute;
+  //   left: 4px;
+  //   right: 4px;
+  //   top: 4px;
+  //   bottom:4px;
+  //   border-radius: 4px;
+  // }
 }
+// @mixin box($cell) {width:$cell;height:$cell;}
 @mixin box-large {@include box;width:$cell-large;height:$cell-large;}
 @mixin box-light {@include box;width: $cell-light;height: $cell-light;}
 @mixin box-medium {@include box;width: $cell-medium;height: $cell-medium;}
@@ -54,3 +55,15 @@
 
 
 // ! box-light의 display:flex가 hidden 속성과 충돌
+
+
+
+@mixin grid-container {
+  width: 100%;
+  padding-right: padding(mobile);
+  padding-left: padding(mobile);
+  @include breakpoint(bp--xs--major) {
+    padding-right: padding(xs);
+    padding-left: padding(xs);
+  }
+}

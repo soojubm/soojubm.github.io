@@ -21,8 +21,10 @@ input, select, textarea {
 }
 
 input::-ms-clear {display:none;}
-select {appearance:none;-webkit-appearance:none;}
-
+select {appearance:none;-webkit-appearance:none;-moz-appearance:none;}
+select::-ms-expand {
+  display: none;
+}
 input[type=text] {}
 input[type=password] {}
 input[type=password]:nth-of-type(2) {margin-top:.25rem;}

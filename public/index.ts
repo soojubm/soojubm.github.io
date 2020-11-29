@@ -312,6 +312,21 @@ function scrollProgress() {
   progressBar!.style.width = scrollPercent
 }
 
+// let company = {
+//   name: 'Github',
+//   revenue: 2000,
+//   users: [
+//     { name: 'John', handle: '@john' },
+//     { name: 'doe', handle: '@doe' },
+//   ],
+//   getUserNames() {
+//     return users.map(user => user.name)
+//   },
+// }
+// const value = company?.name ?? 'default name'
+// const companyName = company?.['name'] ?? 'default value'
+// company.getUserNames?.()
+
 // ! click 이벤트 외부에 넣으니까 파폭에서만 오류. event undefined
 // TODO: 도큐먼트가 아니라 event.target.parent 가 아닌 것을 클릭했을 때 다당야 하나
 // const findClassRecursive = (element, className, depth) => {
@@ -470,37 +485,10 @@ function scrollProgress() {
 // 	if(i === images.length) i = 0;
 // }, 5000);
 
-// let company = {
-//   name: 'Github',
-//   revenue: 2000,
-//   users: [
-//     { name: 'John', handle: '@john' },
-//     { name: 'doe', handle: '@doe' },
-//   ],
-//   getUserNames() {
-//     return users.map(user => user.name)
-//   },
-// }
-// // Static access with default value
-// const value = company?.name ?? 'default name'
-// // Dynamic access with default value
-// const companyName = company?.['name'] ?? 'default value'
-// // Function call
-// company.getUserNames?.()
-
-// var section1 = document.querySelector('.design-article')
-// section1?.addEventListener('click', function() {
-//   smoothScroll('.footer', 1000)
-// })
-
 // var elem = document.querySelector('#item-3');
-// // Step 1
 // var parent = elem.parentNode;
-// // Step 2
 // var parentNodes = parent.children;
-// // Step 3
 // var parentNodesArray = Array.from(parent.children);
-// // Step 4
 // var siblings = parentNodesArray.filter(function (sibling) {
 // 	return sibling !== elem;
 // });
@@ -525,7 +513,6 @@ function scrollProgress() {
 // 	console.log('ran!');
 // });
 
-// // Cancel it
 // window.cancelAnimationFrame(animation);
 
 function calculateReadTime() {

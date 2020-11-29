@@ -104,3 +104,8 @@ export var getNextDay = function(dayName) {
   // Get the next day
   return new Date(nextDayTimestamp)
 }
+
+const now = new Date() // Sat Nov 28 2020 16:26:43 GMT+0900 (대한민국 표준시)
+const halloweenParty = new Date(2016, 9, 31, 19, 0) // Mon Oct 31 2016 19:00:00 GMT+0900 (대한민국 표준시)
+
+new Date().valueOf() // UTC 1970년 1월 1ㅣㄹ 자정으로부터 몇 밀리초가 지났는지 나타내는 숫자
