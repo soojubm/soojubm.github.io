@@ -1,0 +1,8 @@
+
+/* main visual */
+.main-visual { margin-top:-174px;height:930px;}
+.main-visual > div { height:100vh;background:#000;cursor:pointer; }
+.main-visual .slick-dots { position:absolute; left:50%; bottom:110px; width:100%; transform:translateX(-50%); font-size:0; text-align:center; }
+.main-visual .slick-dots li { display:inline-block; padding:0px 5px; }
+.main-visual .slick-dots li button { width:10px; height:10px; font-size:0; border:2px solid #FFF; background:none; -webkit-border-radius:50%; -moz-border-radius:50%; border-radius:50%; outline:0px; }
+.main-visual .slick-dots li.slick-active button { background-color:#FFF; border:0px; transition:0.2s; }

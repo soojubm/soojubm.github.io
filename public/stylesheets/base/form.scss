@@ -12,7 +12,9 @@
 // }
 
 
-
+input {
+  -webkit-appearance: none; // iOS inner shadow
+}
 input, select, textarea {
   // border-radius:0px;
   // -webkit-border-radius:0;

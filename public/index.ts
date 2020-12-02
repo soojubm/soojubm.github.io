@@ -28,7 +28,6 @@ document.addEventListener('readystatechange', (event: any) => {
 // function addToPendingWork(promise) {
 //   busyspinner.hidden = false
 //   pendingOps.add(promise)
-
 //   const cleanup = () => {
 //     pendingOps.delete(promise)
 //     busyspinner.hidden = pendingOps.size === 0
@@ -36,7 +35,7 @@ document.addEventListener('readystatechange', (event: any) => {
 //   promise.then(cleanup).catch(cleanup)
 // }
 
-window.addEventListener('unload', () => console.log('unload EVENT'))
+window.addEventListener('unload', () => console.log('unload event'))
 window.addEventListener('offline', () => {
   const offlineElement = document.querySelector<HTMLElement>('.js-offline')
   offlineElement!.hidden = true
@@ -122,9 +121,8 @@ const domEvents = async () => {
   }
 
   // 회원가입 버튼을 눌렀을 때 유효성을 체크한다.
-  // const { signup } = document
-  // const { email, password } = signup
-  // signup.addEventListener('submit', event => {
+  // const { email, password } = document.signup
+  // document.signup.addEventListener('submit', event => {
   //   event.preventDefault()
   //   alert()
   //   // console.log(email, password)
@@ -206,7 +204,7 @@ const domEvents = async () => {
 
   // event.customCursor()
 
-  // 임시
+  // todo
   const list = document.querySelector('.js-display-list')
   const grid = document.querySelector('.js-display-grid')
   const works = document.querySelector('.profile-body')
