@@ -171,7 +171,7 @@
 
     <nav class="navbar js-navbar" role="navigation">
       <a class="navbar-logo" href="/">🐤</a>
-      <button class="navbar-burger js-navbar-toggle" aria-expanded="false">
+      <button class="navbar-burger js-navbar-toggle" hidden aria-expanded="false">
         <i class="icon-hamberger"></i>
       </button>
       <div class="navbar-menu" role="navigation">
@@ -192,12 +192,12 @@
           </menu>
         </div>
         <a class="navbar-menu-item" href="#design"><em>디자인시스템</em></a>
-        <div class="switch-wrap">
-          <span class="switch js-darkmode">
-            <span class="day">🌑</span>
-            <span class="night">🌙</span>
-          </span>
-        </div>
+      </div>
+      <div class="switch-wrap">
+        <span class="switch js-darkmode">
+          <span class="day">🌑</span>
+          <span class="night">🌙</span>
+        </span>
       </div>
       <div class="navbar-user">
         <div class="navbar-user-search" role="search" aria-label="site">
@@ -272,17 +272,16 @@
       </div>
     </nav>
 
-    <header class="appbar" role="navigation">
-      <h1 class="appbar-title">페이지타이틀</h1>
-      <button class="appbar-back" onclick="javascript:alert('이전페이지로~');">
-        <span class="appbar-back-icon"><i class="icon-arrow"></i></span>
+    <header class="header" role="navigation">
+      <h1 class="header-title">페이지타이틀</h1>
+      <button class="header-back" onclick="javascript:alert('이전페이지로~');">
+        <span class="header-back-icon"><i class="icon-arrow"></i></span>
       </button>
-      <button class="appbar-cta">
+      <button class="header-cta">
         <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" svg-inline="" role="presentation" focusable="false" tabindex="-1" class="icon-16"><path d="M0 12.782c0 .85.1 1.65.3 2.45.1.45.35.45.5 0 1.05-2.65 2.75-5.15 5.55-5.65H8v2.2c0 1 .6 1.3 1.3.7l6.4-5.5c.35-.3.35-.8 0-1.15L9.3.332c-.7-.65-1.3-.3-1.3.65v2.35c-4.8.8-8 4.7-8 9.45z" fill="currentColor"></path></svg>
       </button>
-      
     </header>
-    <header class="appbar-backdrop js-appbar"></header>
+    <header class="header-backdrop js-header"></header>
 
     <div id="view"></div>
 

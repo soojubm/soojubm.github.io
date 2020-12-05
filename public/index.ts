@@ -297,7 +297,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setDarkmode()
 
   // event.stickyElement({ targetElement: '.js-navbar', addClass: 'is-sticky-navbar' }
-  event.stickyElement({ targetElement: '.js-topsheet', addClass: 'is-sticky-appbar' })
+  event.stickyElement({ targetElement: '.js-header', addClass: 'is-sticky-header' })
   event.stickyElement({ targetElement: '.js-post-head', addClass: 'is-sticky-post-head' })
 
   // ! hashchange 될 때마다 이벤트 만들어짐;
