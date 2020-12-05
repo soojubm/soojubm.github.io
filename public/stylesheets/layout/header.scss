@@ -2,7 +2,7 @@
 .appbar-back {}
 .appbar-back-icon {@include box-light;margin:0 1rem 0 0;}
 .appbar-back-icon {transform:rotate(180deg);}
-.appbar-title {padding:0 10%;font-size:1rem;position:absolute;left:4rem;bottom:50%;transform:translateY(50%);z-index:5;}
+.appbar-title {font-size:1rem;font-weight:bold;position:absolute;left:50%;top:50%;transform:translate(-50%, -50%);z-index:5;/*left:4rem;padding:0 10%;*/}
 .appbar-backdrop {height:32px;padding:1rem 0;}
 .appbar-cta {@include box-light;margin-left:auto;}
 .appbar-cta svg {width:1rem;}
