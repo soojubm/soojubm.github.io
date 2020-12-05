@@ -96,6 +96,7 @@
 @media (--viewport-large) {
   .profile {padding:2rem 5%;}
   .profile-user {float:none;width:100%;margin:0px auto 0;box-sizing:border-box;}
+  .profile-user-backdrop {display:block;}
   .profile-body {margin:0 auto;padding-left:0;}
   .profile-user-toggle {display:block;}
   .profile-user-info {display:none;}

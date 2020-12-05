@@ -1,10 +1,10 @@
 $(document).ready(function(){
 	// main visual
-	$('.main-visual').slick({
+	$('.main-visual-inbox').slick({
 		slidesToShow: 1,
 		slidesToScroll: 1,
 		autoplay: true,
-		autoplaySpeed: 5000,
+		autoplaySpeed: 1000000,
 		arrows: false,
 		dots: true
 	});
@@ -26,5 +26,15 @@ $(document).ready(function(){
 		)
 	});
 
+	var tab = $(".home-review-tablist a");
+	var tabPanel = $(".home-review-tabpanel");
 
+	tab.click(function(){ 
+		var index = $(tab).index(this);
+		$('.home-review-tablist a').removeClass('on');
+		$(this).addClass('on');
+
+		tabPanel.removeClass('on')
+		tabPanel.eq(index).addClass('on')
+	});
 });

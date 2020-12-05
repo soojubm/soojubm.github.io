@@ -34,37 +34,37 @@
     <link rel="apple-touch-icon" href="" />
     <link rel="stylesheet" href="./build/main.css" />
 
-<!-- Start Single Page Apps for GitHub Pages -->
-<script type="text/javascript">
-  // Single Page Apps for GitHub Pages
-  // https://github.com/rafgraph/spa-github-pages
-  // Copyright (c) 2016 Rafael Pedicini, licensed under the MIT License
-  // ----------------------------------------------------------------------
-  // This script checks to see if a redirect is present in the query string
-  // and converts it back into the correct url and adds it to the
-  // browser's history using window.history.replaceState(...),
-  // which won't cause the browser to attempt to load the new url.
-  // When the single page app is loaded further down in this file,
-  // the correct url will be waiting in the browser's history for
-  // the single page app to route accordingly.
-  (function(l) {
-    if (l.search) {
-      var q = {};
-      l.search.slice(1).split('&').forEach(function(v) {
-        var a = v.split('=');
-        q[a[0]] = a.slice(1).join('=').replace(/~and~/g, '&');
-      });
-      if (q.p !== undefined) {
-        window.history.replaceState(null, null,
-          l.pathname.slice(0, -1) + (q.p || '') +
-          (q.q ? ('?' + q.q) : '') +
-          l.hash
-        );
-      }
-    }
-  }(window.location))
-</script>
-<!-- End Single Page Apps for GitHub Pages -->
+    <!-- Start Single Page Apps for GitHub Pages -->
+    <script type="text/javascript">
+      // Single Page Apps for GitHub Pages
+      // https://github.com/rafgraph/spa-github-pages
+      // Copyright (c) 2016 Rafael Pedicini, licensed under the MIT License
+      // ----------------------------------------------------------------------
+      // This script checks to see if a redirect is present in the query string
+      // and converts it back into the correct url and adds it to the
+      // browser's history using window.history.replaceState(...),
+      // which won't cause the browser to attempt to load the new url.
+      // When the single page app is loaded further down in this file,
+      // the correct url will be waiting in the browser's history for
+      // the single page app to route accordingly.
+      (function(l) {
+        if (l.search) {
+          var q = {};
+          l.search.slice(1).split('&').forEach(function(v) {
+            var a = v.split('=');
+            q[a[0]] = a.slice(1).join('=').replace(/~and~/g, '&');
+          });
+          if (q.p !== undefined) {
+            window.history.replaceState(null, null,
+              l.pathname.slice(0, -1) + (q.p || '') +
+              (q.q ? ('?' + q.q) : '') +
+              l.hash
+            );
+          }
+        }
+      }(window.location))
+    </script>
+    <!-- End Single Page Apps for GitHub Pages -->
 
     <script src="./public/javascripts/polyfill.js"></script>
     <script src="./build/bundle.js" defer></script>
@@ -112,23 +112,23 @@
       //   }
       // }
 
-      // function notify_analytics(l) {
+      // function notifyAnalytics(l) {
       //   let newPage = l.pathname + l.hash
-      //   // replace XXXXX into your id
       //   gtag('config', 'UA-83531239-1', { 'page_path': newPage }); 
       // }
 
       // insertCallback(window.history, "pushState", notify_analytics, location)
       // insertCallback(window.history, "replaceState", notify_analytics, location)
 
-      // var trackOutboundLink = function(url) {
+      // function trackOutboundLink(url) {
       //   gtag('event', 'click', {
       //     'event_category': 'outbound',
       //     'event_label': url,
       //     'transport_type': 'beacon',
-      //     'event_callback': function(){document.location = url;}
+      //     'event_callback': function() { document.location = url; }
       //   });
       // }
+
       // Create new link element
       // const link = document.createElement('link');
       // link.setAttribute('rel', 'stylesheet');

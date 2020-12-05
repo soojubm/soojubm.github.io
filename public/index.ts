@@ -224,8 +224,19 @@ const domEvents = async () => {
     grid?.classList.add('is-selected')
     works?.classList.remove('list')
   })
-}
 
+  // const profileUser = document.querySelector('.profile-user')
+  // const profileUserBackdrop = document.querySelector<HTMLElement>('.profile-user-backdrop')
+  // if (profileUser && profileUserBackdrop) {
+  //   const headhieght = getComputedStyle(profileUser).height
+  //   console.log(getComputedStyle(profileUserBackdrop), headhieght)
+  //   profileUserBackdrop.style.height = `${headhieght}px`
+
+  //   document.addEventListener('resize', () => {
+  //     profileUserBackdrop.style.height = `${headhieght}px`
+  //   })
+  // }
+}
 window.addEventListener('hashchange', domEvents)
 window.addEventListener('hashchange', initailizePage)
 
