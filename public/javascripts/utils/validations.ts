@@ -11,7 +11,7 @@
 
 export const validity = {
   isRequired(value) {
-  	return value === '' || value === null || value === undefined || ( value !== null && typeof value === 'object' && !Object.keys(value).length);
+    return value === '' || value === null || value === undefined || (value !== null && typeof value === 'object' && !Object.keys(value).length)
   },
   isNumeric(value) {
     return /[0-9]/g.test(value)
@@ -21,10 +21,6 @@ export const validity = {
   },
   isEmail(value) {
     return /^[가-힣a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[가-힣A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value.toLowerCase())
-  },
-  // add min & max
-  isLength(value, length) {
-    return value.length < length
   },
   // isBtyeLength(value, length) {
   // },
@@ -36,6 +32,8 @@ export const validity = {
   },
   // isUrl(value) {
   // }
+  isTooLong() {},
+  isTooShort() {},
 }
 
 // export const inputHelper = {

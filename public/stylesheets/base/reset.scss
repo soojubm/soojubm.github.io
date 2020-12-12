@@ -128,3 +128,36 @@ ol li ol li:before {content: counter(sub-list-item,lower-alpha) '.';}
   text-align: center;
   padding: 20px;
 }
+
+
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  // speak: never;
+}
+
+button.visually-hidden:focus,
+input[type="submit"].visually-hidden:focus {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  clip: unset;
+  width: unset;
+  height: unset;
+  border: 3px solid;
+  padding: 5px;
+  background: #fff;
+}
+
+.focus-outline {
+  outline-width: 1px;
+  outline-style: auto;
+  outline-color: Highlight;
+  outline-color: -webkit-focus-ring-color;
+}

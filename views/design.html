@@ -251,6 +251,9 @@
         <span class="tag tags-item" style="padding:0 .5rem;border-radius:4px;background:#eee;" role="listitem">해시태그</span>
         <span class="tag yes-tag" style="padding:0 .5rem;border-radius:4px;background:skyblue;color:#fff;" role="listitem">Do</span>
         <span class="tag no-tag" style="padding:0 .5rem;border-radius:4px;background:crimson;color:#fff;" role="listitem">Don't</span>
+        <span class="tag new-tag" style="padding:0 .5rem;border-radius:4px;background:var(--color-primary);color:#fff;" role="listitem">NEW</span>
+        <span class="tag new-tag" style="padding:0 .5rem;border-radius:4px;background:var(--color-primary);color:#fff;" role="listitem">기본배송지</span>
+        <span class="tag new-tag" style="padding:0 .5rem;border-radius:4px;background:var(--color-primary);color:#fff;" role="listitem">최근배송지</span>
       </div>
     </article>
 
@@ -309,6 +312,10 @@
       <h1 class="design-article-title">Summary</h1>
       <p class="design-article-description">레이블과 밸류로 이루어진 유아이들을...</p>
       <dl style="display:flex;justify-content:space-between;padding:.25rem 0;">
+        <dt style="color:#999;">이용기간</dt>
+        <dd>20.12.02. ~ 21.01.01.</dd>
+      </dl>
+      <dl style="display:flex;justify-content:space-between;padding:.25rem 0;">
         <dt style="color:#999;">서비스 수수료</dt>
         <dd>₩ 44,612</dd>
       </dl>
@@ -316,9 +323,10 @@
         <dt style="color:#999;">배송료</dt>
         <dd>₩ 44,612</dd>
       </dl>
+      <hr />
       <dl style="display:flex;justify-content:space-between;padding:.5rem 0 2rem;font-size:1.25rem;">
-        <dt style="color:#999;">총 합계 (KRW)</dt>
-        <dd>₩ 365,073</dd>
+        <dt style="color:#999;font-weight:bold;">총 합계 (KRW)</dt>
+        <dd style="font-weight:bold;">₩ 365,073</dd>
       </dl>
     </article>
 
@@ -400,6 +408,10 @@
         <button class="loadmore is-fetching">
           불러오는 중
           <!-- <div class="spinner"></div> -->
+        </button>
+        <h6>isFetching - 스피너를 넣어준다.</h6>
+        <button class="design-article-text" style="display:block;background:var(--gray100);">
+          불러오는 중 >
         </button>
     </div>
     </article>
@@ -969,6 +981,10 @@
           <div class="graph-item-bar"></div>
           <span class="graph-item-label">40대</span>
         </div>
+      </div>
+      <div style="background:var(--gray100);">
+        최근 3개월간 네이버플러스 멤버십으로<br />
+<em>15,799원 추가 적립 혜택</em>이 생겼어요!이모지
       </div>
     </article>
 
