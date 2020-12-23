@@ -15,8 +15,11 @@
 .setting-row.is-opened {}
 .setting-row:nth-of-type(1) {border-top:$border100;}
 .setting-row-label {width:10rem;font-size:1rem;line-height:32px;color:var(--gray400);}
-.setting-row-value {display:flex;flex-wrap:wrap;align-items:center;color:var(--gray800);line-height:32px;}
-.setting-row-value > * {line-height:1.8;}
+.setting-row-value {display:flex;flex-wrap:wrap;align-items:center;width:calc(100% - 10rem);color:var(--gray800);line-height:32px;}
+.setting-row-value-username {width:100%;}
+.setting-row-value-address {width:100%;margin:-.25rem 0;line-height:1.5;}
+.setting-row-value-phone {width:100%;}
+
 .setting-row-change {@include box-light;font-size:1rem;position:absolute;right:0;}
 .setting-row-change b {display:none;background:var(--gray0);transform:translateX(200px);transition:all .5s;position:relative;z-index:1;}
 .setting-row-change i {}
@@ -34,5 +37,6 @@
 @media (--viewport-small) {
   .setting {padding:0 5%;}
   .setting-row-label {width:6rem;}
+  .setting-row-value {width:calc(100% - 6rem);}
   .setting-row-change {display:none;}
 }

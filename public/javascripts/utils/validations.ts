@@ -9,7 +9,11 @@
 // const phone2 =  /^01([0|1|6|7|8|9]?)-?([0-9]{3,4})-?([0-9]{4})$/; // 010-0000-0000
 // const url = /^(file|gopher|news|nntp|telnet|https?|ftps?|sftp):\/\/([a-z0-9-]+\.)+[a-z0-9]{2,4}.*$/;
 
-export const validity = {
+function validate(inputValue) {}
+
+const validityMessage = null
+
+export const validityState = {
   isRequired(value) {
     return value === '' || value === null || value === undefined || (value !== null && typeof value === 'object' && !Object.keys(value).length)
   },
@@ -30,8 +34,7 @@ export const validity = {
   isNull(value) {
     return value === null || value.length === 0
   },
-  // isUrl(value) {
-  // }
+  // isUrl(value) {}
   isTooLong() {},
   isTooShort() {},
 }
