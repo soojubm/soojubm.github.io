@@ -2,9 +2,14 @@
 @import 'checkbox';
 @import 'quantity';
 
+input, optgroup, select, textarea { -webkit-appearance: none; }
+
 @mixin reset-textinput {
   -webkit-appearance:none;-moz-appearance:none;appearance:none;
 }
+
+
+
 
 input, textarea {
   // iOS inner shadow
