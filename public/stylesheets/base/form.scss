@@ -2,7 +2,7 @@
 @import 'checkbox';
 @import 'quantity';
 
-input, optgroup, select, textarea { -webkit-appearance: none; }
+input[type=text], optgroup, select, textarea { -webkit-appearance: none; }
 
 @mixin reset-textinput {
   -webkit-appearance:none;-moz-appearance:none;appearance:none;
@@ -11,10 +11,10 @@ input, optgroup, select, textarea { -webkit-appearance: none; }
 
 
 
-input, textarea {
-  // iOS inner shadow
-  -webkit-appearance:none;-moz-appearance:none;appearance:none;
-}
+// input, textarea {
+//   // iOS inner shadow
+//   -webkit-appearance:none;-moz-appearance:none;appearance:none;
+// }
 input, select, textarea {
   // border-radius:0px;
   // -webkit-border-radius:0;
