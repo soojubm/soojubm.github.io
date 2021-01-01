@@ -2,7 +2,7 @@
 .navbar-logo {@include box-light;min-width:32px;font-size:1.25rem;}
 .navbar-burger {@include box-light;display:none;margin:0 .5rem 0 0;z-index:8;}
 .navbar-menu {display:flex;align-items:center;margin-left:2rem;position:relative;}
-.navbar-menu-item {padding:0 1rem;font-size:$subhead;color:var(--gray800);position:relative;z-index:1;transition:all .4s;} // m p reset
+.navbar-menu-item {padding:0 1rem;font-size:16px;color:var(--gray800);position:relative;z-index:1;transition:all .4s;} // m p reset
 .navbar-menu-item.has-submenu {z-index:0;}
 .navbar-menu-item a {color:inherit;}
 .navbar-menu-item:before {display:none;}

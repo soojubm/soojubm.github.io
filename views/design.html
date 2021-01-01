@@ -91,7 +91,7 @@
         </div>
       </div>
       <div style="margin:1rem 0 0 0;padding:2rem;background:var(--gray100);border-radius:4px;">
-        <h4 class="typography-subhead" style="margin:0 0 1rem;font-size:1.25rem;font-weight:bold;"><small style="display:block;margin:0 0 .5rem 0;font-size:1rem;">선약이 있어서 ✋</small>자아실현은 못할 것 같아요.</h4>
+        <h4 class="typography-subhead" style="margin:0 0 1rem;font-size:1.25rem;line-height:1;font-weight:bold;"><small style="display:block;margin:0 0 .5rem 0;font-size:1rem;">선약이 있어서 ✋</small>자아실현은 못할 것 같아요.</h4>
         <p class="typography-paragraph" style="margin: 0 0 1.5rem">서브헤드와 디스크립션 혹은 패러그라프는 이렇게 사용하세요. 서브헤드와 디스크립션 혹은 패러그라프는 이렇게 사용하세요. 서브헤드와 디스크립션 혹은 패러그라프는 이렇게 사용하세요. 서브헤드와 디스크립션 혹은 패러그라프는 이렇게 사용하세요.</p>
         <time class="typography-caption">10 January, 2020</time>
       </div>
@@ -99,7 +99,7 @@
 
     <article class="design-article grayscale">
       <h1 class="design-article-title">Palettes</h1>
-      <p class="design-article-description">그레이스케일은 순서대로 백그라운드(surface) / 디바이더, disabled state / 캡션 / 바디텍스트 / 헤딩에 사용하세요.
+      <p class="design-article-description">그레이스케일 한 벌로 다크 테마에 대응할 수 있도록 만들기</p>
 
 
       <h2 style="margin:0 0 .5rem;"><small>Surface</small></h2>
@@ -160,12 +160,6 @@
     </article>
 
     <article class="design-article">
-      <h1 class="design-article-title">Divider or Seperator</h1>
-      <p class="design-article-description">섹션 간 border 스타일로 구획하는 것보다 hr 태그로 마크업하는 방식을 고려 중입니다.</p>
-      <hr />
-    </article>
-
-    <article class="design-article">
       <h1 class="design-article-title">Avatars & Cells</h1>
       <p class="design-article-description">아바타와 아이콘 버튼에서는 지정된 4가지의 사이즈만 사용하세요.</p>
       <div role="group">
@@ -187,9 +181,7 @@
         </a>
       </div>     
        
-      <br />
-
-      <div class="ttt">
+      <!-- <div class="ttt">
 				<span class="ttt-avatar">🦁</span>
 				<span>Run for 1h 03 minutes.</span>
       </div>
@@ -209,12 +201,18 @@
         <div class="number-card">8</div>
         <div class="number-card">3</div>
         <div class="number-card">-</div>
-      </div>
+      </div> -->
+    </article>
+
+    <article class="design-article">
+      <h1 class="design-article-title">Seperator</h1>
+      <p class="design-article-description">섹션 간 border 스타일로 구획하는 것보다 hr 태그로 마크업하는 방식을 고려 중입니다.</p>
+      <hr role="separator" />
     </article>
 
     <article class="design-article">
       <h1 class="design-article-title">breadcrumb</h1>
-      <p class="design-article-description">페이지 레벨이 3단계 이상일 때 사용하세요. 모바일 환경에서 사용하지 마세요. 홈 아이콘 대신 텍스트를 사용하니 깔끔해보인다. </p>
+      <p class="design-article-description">페이지 레벨이 3단계 이상일 때 사용하세요. 모바일 환경에서 사용하지 마세요.</p>
       <nav class="breadcrumb" aria-label="breadcrumb">
         <a class="breadcrumb-item breadcrumb-home" href="/">Home</a>
         <i class="breadcrumb-divider">/</i>
@@ -255,15 +253,6 @@
       </div>
     </article>
 
-    <article class="design-article">
-      <h1 class="design-article-title">Chips</h1>
-      <p class="design-article-description">피시 앤 칩스</p>
-      <div role="group">
-        <button class="chip">Typhography <i class="icon-plus"></i></button>
-        <button class="chip is-added">Cinema <i class="icon-close"></i></button>
-      </div>
-    </article>
-
     <article class="design-article" style="padding-bottom:80px;">
       <h1 class="design-article-title">Tooltip</h1>
       <p class="design-article-description">툴팁의 위치.</p>
@@ -278,7 +267,7 @@
 
     <article class="design-article">
       <h1 class="design-article-title">Lists</h1>
-      <p class="design-article-description">군집을 이루는 엘리먼트라면 모두 리스트로 취급될 수 있으니 주의하세요. 리스트업된 텍스트 노드만 리스트 태그로 마크업하세요.</p>
+      <p class="design-article-description">리스트업된 텍스트 노드만 리스트 태그로 마크업하세요. 군집을 이루는 엘리먼트라면 모두 리스트로 취급될 수 있으니 주의하세요. </p>
       <ul class="list-sample">
         <li title="unordered list, level 1">순서가 없는 리스트, 1레벨
           <ul>
@@ -374,9 +363,9 @@
 
     <article class="design-article">
       <h1 class="design-article-title">Buttons</h1>
-      <p class="design-article-description">버튼을 만들어 볼까요? solid / outline / plain</p>
+      <p class="design-article-description">버튼을 만들어 볼까요? solid / outline / plain.  - 간단한 서비스라면 메인 버튼 2가지와 텍스트 버튼 1가지로 충분하다.</p>
       <div>
-        <h6>Default Sizes - 간단한 서비스라면 메인 버튼 2가지와 텍스트 버튼 1가지로 충분하다.</h6>
+        <h6>Default Sizes</h6>
         <div class="button-group" role="group">
           <button class="design-article-primary primary-button">프라이머리</button>
           <button class="design-article-secondary secondary-button">세컨더리</button>
@@ -386,7 +375,7 @@
           <!-- <button class="success-button" aria-label="success">Success</button> -->
         </div>
         <br />
-        <h6>Small Buttons - 생각보다 쓸 일이 없다. 화면이 복잡한 서비스에서 활용도가 높아 보인다.</h6>
+        <h6>Small Buttons</h6>
         <div role="group">
           <button class="design-article-primary-small">프라이머리</button>
           <!-- <button class="danger-button is-small" aria-label="danger">Danger</button>
@@ -398,7 +387,7 @@
         <br />
         <h6>huge 사이즈의 버튼이 하나는 필요해보인다. 크기는 이 정도. 색은 임시로</h6>
         <div role="group">
-          <button class="design-article-primary" style="min-width:320px;border:transparent;padding:12px 0 15px;font-size:1.25rem;background-image:linear-gradient(106deg,#ff3a4e,#7e4cff);">구매 하러가기</button>
+          <button class="design-article-primary" style="min-width:320px;border:transparent;padding:12px 0 15px;font-size:1.25rem;background-image:linear-gradient(106deg,#da1e28,#00783e);">구매 하러가기</button>
         </div>
         <br />
         <h6>isFetching - 스피너를 넣어준다.</h6>
@@ -407,6 +396,15 @@
           <div class="spinner"></div>
         </button> -->
     </div>
+    </article>
+
+    <article class="design-article">
+      <h1 class="design-article-title">Chips</h1>
+      <p class="design-article-description">피시 앤 칩스</p>
+      <div role="group">
+        <button class="chip">Typhography <i class="icon-plus"></i></button>
+        <button class="chip is-added">Cinema <i class="icon-close"></i></button>
+      </div>
     </article>
 
     <article class="design-article">
@@ -443,7 +441,7 @@
         <div class="radio">
           <input type="radio" id="gender-man" name="gender" value="" checked>
           <label for="gender-man" title="Video Killed the Radio Button">비디오는 라디오 버튼을 죽여요</label>
-          <p class="radio-helper">선택한 버튼에 대한 보조 텍스트를 제공합니다. 들여쓰ㄱ 하고 싶은데 모바일에서 영역이 줄어들어 안 합니다.</p>
+          <p class="radio-helper">선택한 버튼의 보조 텍스트 영역입니다. 모바일에서 공간을 충분히 확보하기 위해 들여쓰기는 하지 않습니다.</p>
         </div>
         <div class="radio">
           <input type="radio" id="gender-women" name="gender" value="">
@@ -458,7 +456,7 @@
 
     <article class="design-article">
       <h1 class="design-article-title">Switch</h1>
-      <p class="design-article-description">on/off 설정 등에 사용합니다.</p>
+      <p class="design-article-description">on/off 개념이 적용 가능한 설정 등에서 사용합니다.</p>
       <span class="switch" style="margin: 0 0 .75rem 0;">
         <input type="checkbox" id="switch1" name="" role="switch" value="on" checked />
         <label for="switch1" title="Receive weekly newsletter">주간 뉴스레터 받아보기</label>
@@ -543,7 +541,8 @@
         </div>
       </div>
       <!-- // readonly -->
-      <div class="textfield is-small is-inline">
+      <br />
+      <div class="textfield is-small">
         <label class="textfield-label" for="">회사</label>
         <input class="textfield-input" type="text" placeholder="인풋 인라인스타일 스몰사이즈">
       </div>

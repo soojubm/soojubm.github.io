@@ -10,7 +10,7 @@
 .color-item.is-red800 div {background:$red800;}
 .color-item.is-primary100 div {background:$blue100;}
 .color-item.is-primary200 div {background:$color-primary;}
-.color-item.is-gradient div {background-image:linear-gradient(106deg,#ff3a4e,#7e4cff);}
+.color-item.is-gradient div {background-image:linear-gradient(106deg,$red800,$color-primary);}
 .color-item div {@include box-medium;position:relative;}
 .color-item figcaption {margin:.25rem 0 0 0;font-size:10px;color:var(--gray400)}
 
@@ -18,7 +18,7 @@
 
 .design {}
 .design-head {overflow:hidden;background:url('/public/images/caleb-woods-182648-unsplash.jpg') no-repeat center center;background-size:cover;position:fixed;left:0;right:50%;top:0;bottom:0;z-index:1;}
-.design-body {width:50%;max-width:36rem;margin-left:50%;padding:6rem;}
+.design-body {width:50%;max-width:40rem;margin-left:50%;padding:6rem;}
 
 .design-article {margin:0 0 6rem 0;position:relative;}
 .design-article-title {margin:0 0 1rem 0;@include subhead;}

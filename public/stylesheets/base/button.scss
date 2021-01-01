@@ -25,7 +25,7 @@ button[aria-current=page] {}
 
 @mixin button {
   display: inline-block;
-  min-width:104px;
+  min-width: 8rem;
   padding:$padding200;
   box-sizing:border-box;
   border-radius:$radius400;
