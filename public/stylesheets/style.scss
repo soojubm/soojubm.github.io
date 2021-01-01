@@ -64,7 +64,7 @@
 .bottomsheet-link {}
 .bottombar {display:flex;justify-content:space-around;width:100%;background:var(--gray0);box-shadow:0px 1px 1px rgba(0,0,0,.2);}
 .bottombar-item {display:block;width:100%;padding:.25rem 0;box-sizing:border-box;text-align:center;text-decoration:none;color:var(--gray600);position:relative;}
-.bottombar-item i {@include box-light;margin:.5rem;font-size:18px;transition:all .2s ease;}
+.bottombar-item i {margin:.5rem;font-size:18px;transition:all .2s ease;}
 .bottombar-item span {display:block;margin-top:-.25rem;font-size:11px;transition:all .4s ease;}
 .bottombar-item:hover i {color:rgba(0,0,0,1);margin-top:-1px;}
 .bottombar-item:hover span {font-size:11px;color:rgba(0,0,0,1);}
