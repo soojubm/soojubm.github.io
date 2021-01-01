@@ -47,7 +47,7 @@ table .right {text-align:right;}
 
 ul {}
 ul li {margin:.25rem 0;padding: 0 0 0 1.25rem;position:relative;}
-ul li:before {content:'\25AA';position:absolute;left:0;}
+ul li:before {content:'\25AA';font-size:1rem;position:absolute;left:0;}
 ul li ul {margin:0 0 .5rem 0;}
 ul li ul li {}
 ul li ul li:before {content:'\2013';}
