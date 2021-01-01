@@ -2,6 +2,7 @@
 @import 'checkbox';
 @import 'quantity';
 
+select,
 textarea,
 input:matches(
   [type=email],
@@ -10,7 +11,9 @@ input:matches(
   [type=search],
   [type=tel],
   [type=text],
-  [type=url]
+  [type=url],
+  [type=date],
+  [type=time]
 ) {
   -webkit-appearance: none;
 }
