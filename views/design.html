@@ -362,6 +362,13 @@
     </article>
 
     <article class="design-article">
+      <h1 class="design-article-title">Spinner or Loader</h1>
+      <p class="design-article-description">샘플</p>
+      <div class="loader-spinner" style="position:static;"></div>
+      <!-- <div class="spinner"></div> -->
+    </article>
+
+    <article class="design-article">
       <h1 class="design-article-title">Buttons</h1>
       <p class="design-article-description">버튼을 만들어 볼까요? solid / outline / plain.  - 간단한 서비스라면 메인 버튼 2가지와 텍스트 버튼 1가지로 충분하다.</p>
       <div>
@@ -375,7 +382,7 @@
           <!-- <button class="success-button" aria-label="success">Success</button> -->
         </div>
         <br />
-        <h6>Small Buttons</h6>
+        <h6>Small Sizes</h6>
         <div role="group">
           <button class="design-article-primary-small">프라이머리</button>
           <!-- <button class="danger-button is-small" aria-label="danger">Danger</button>
@@ -498,20 +505,15 @@
       <div class="quantity js-quantity">
         <input class="quantity-input js-quantity-input js-number-input" name="quantity1" type="number" value="0" min="5" max="20" >
         <!-- <input type="text" inputmode="numeric" pattern="[0-9]*"> -->
-
         <button class="quantity-decrement js-quantity-decrement"><i class="icon-minus"></i></button>
         <button class="quantity-increment js-quantity-increment"><i class="icon-plus"></i></button>
       </div>
-      <!-- addons === 검색 버튼 포함 가능 -->
-      <!-- <div class="textfield" style="margin:2rem 0;">
-        <label class="textfield-label" for="">아이디<abbr title="This field is mandatory" aria-label="required"></abbr></label>
-        <input class="textfield-input" type="text" placeholder="soojubm" readonly></input>
-      </div> -->
+
       <div class="textfield is-invalid" style="margin:2rem 0;">
-        <label class="textfield-label" for="abc123">레이블 <abbr aria-label="optional">(선택입력)</abbr></label>
-        <input class="textfield-input js-input-test" type="text" id="abc123" placeholder="Textarea Placeholder..." value="" aria-describedby="error" aria-invalid="true" />
-        <!-- <button class="textfield-button primary-button">ddd</button> -->
-        <small class="textfield-helper --is-error">You can @mention other users and organizations to link to them.</small>
+        <label class="textfield-label" for="abc123">레이블 <abbr aria-label="optional" style="font-size:.875rem;">선택입력</abbr></label>
+        <input class="textfield-input js-input-test" type="text" id="abc123" placeholder="Textarea Placeholder..." value="soojubm@gmail.com" aria-describedby="error" aria-invalid="true" />
+        <!-- <button class="textfield-button"><i class="icon-close"></i></button> -->
+        <small class="textfield-helper --is-error">이미 사용 중인 이메일입니다.</small>
       </div>
 
       <div class="textfield" style="margin:2rem 0;">
@@ -520,6 +522,19 @@
         <textarea class="textfield-input" rows="3" placeholder="Textarea Placeholder..."></textarea>
       </div>
 
+      <div class="textfield-group" role="group" style="justify-content:space-between;">
+        <div class="textfield" style="width:calc(50% - 0.5rem)">
+          <label class="textfield-label" for="date-start"><i class="">체크인</i></label>
+          <!-- <label class="textfield-icon is-left is-right" for="date-start"><i class="material-icons">today</i></label> -->
+          <input class="textfield-input" type="date" id="date-start" placeholder="날짜를 설정해주세요." />
+        </div>
+        <div class="textfield" style="width:calc(50% - 0.5rem)">
+          <label class="textfield-label" for="date-start"><i class="">체크아웃</i></label>
+          <!-- <label class="textfield-icon is-left is-right" for="date-start"><i class="material-icons">today</i></label> -->
+          <input class="textfield-input" type="date" id="date-start" placeholder="날짜를 설정해주세요." />
+        </div>
+      </div>
+      <br />
       <div class="textfield is-text" style="margin:2rem 0;">
         <label class="textfield-label" for="search1">Sort by</label>
         <select class="textfield-input" name="" id="">
@@ -527,31 +542,11 @@
         </select>
         <i class="selectbox-indicator icon-caret"></i>
       </div>
-
-      <div class="textfield-group" role="group">
-        <div class="textfield">
-          <label class="textfield-label" for="date-start"><i class="">체크인</i></label>
-          <!-- <label class="textfield-icon is-left is-right" for="date-start"><i class="material-icons">today</i></label> -->
-          <input class="textfield-input" type="date" id="date-start" placeholder="날짜를 설정해주세요." />
-        </div>
-        <div class="textfield">
-          <label class="textfield-label" for="date-start"><i class="">체크아웃</i></label>
-          <!-- <label class="textfield-icon is-left is-right" for="date-start"><i class="material-icons">today</i></label> -->
-          <input class="textfield-input" type="date" id="date-start" placeholder="날짜를 설정해주세요." />
-        </div>
-      </div>
-      <!-- // readonly -->
       <br />
       <div class="textfield is-small">
         <label class="textfield-label" for="">회사</label>
         <input class="textfield-input" type="text" placeholder="인풋 인라인스타일 스몰사이즈">
       </div>
-    </article>
-
-    <article class="design-article">
-      <h1 class="design-article-title">Spinner</h1>
-      <p class="design-article-description">샘플</p>
-      <div class="spinner"></div>
     </article>
 
     <!-- <article class="design-article">
@@ -751,12 +746,12 @@
         <caption>히라가나 오십음도</caption>
         <thead role="rowgroup">
           <tr role="row">
-            <th role="columnheader" aria-sort="none" class="table-checkbox">
+            <!-- <th role="columnheader" aria-sort="none" class="table-checkbox">
               <div>
                 <input type="checkbox" id="temp1">
                 <label for="temp1"></label>
               </div>
-            </th>
+            </th> -->
             <th>あ단</th>
             <th>い단</th>
             <th>う단</th>
@@ -767,12 +762,6 @@
         </thead>
         <tbody role="rowgroup">
           <tr role="row" aria-rowindex="11">
-            <td role="cell">
-              <div>
-                <input type="checkbox">
-                <label for=""></label>
-              </div>
-            </td>
             <td>な</td>
             <td>に</td>
             <td>ぬ</td>
@@ -781,7 +770,6 @@
             <td class="right">9,600</td>
           </tr>
           <tr>
-            <td><input type="checkbox"><label for=""></label></td>
             <td>ま</td>
             <td>み</td>
             <td>む</td>
@@ -790,7 +778,6 @@
             <td class="right">hello</td>
           </tr>
           <tr>
-            <td><input type="checkbox"><label for=""></label></td>
             <td>や</td>
             <td>-</td>
             <td>ゆ</td>
@@ -799,7 +786,6 @@
             <td class="right"></td>
           </tr>
           <tr>
-            <td><input type="checkbox"><label for=""></label></td>
             <td>ら</td>
             <td>り</td>
             <td>る</td>
@@ -808,7 +794,7 @@
             <td class="right">12,000</td>
           </tr>
           <tr>
-            <td><input type="checkbox"><label for=""></label></td>
+            <!-- <td><input type="checkbox"><label for=""></label></td> -->
             <td>わ</td>
             <td>ゐ wi</td>
             <td>-</td>
