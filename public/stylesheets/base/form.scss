@@ -274,3 +274,26 @@ progress[value]::-moz-progress-bar {
 progress:not([value]) {
   /* indeterminate styles */
 }
+
+
+
+.checkbox,
+.radio {
+  &.theme-button {
+    border-radius: 0;
+    & + .radio.theme-button {
+      border-top: 0;
+    }    
+    label {
+      display: flex;
+      justify-content: space-between;
+      padding: .75rem 2rem .75rem 3.5rem;
+      border: $border100;
+      background: var(--gray100);
+      &:before {background:var(--gray0);left:1.5rem;}
+      &:after {left:calc(1.5rem + 5px)}
+    }
+    input:checked + label {      background: var(--gray0);}
+
+  }
+}
