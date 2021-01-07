@@ -1,4 +1,4 @@
-.post {max-width:$container400;margin:0 auto;padding:2rem 5% 4rem;}
+.post {max-width:$container400;margin:0 auto;padding:2rem 5% 4rem;overflow:hidden;} // img - margin
 .post-head {margin:0 0 3rem 0;position:relative;}
 .post-head-category {color:var(--gray800);text-decoration:underline;}
 .post-head-headline {padding:.5rem 0 2rem 0;@include title;} /* 상하단 패딩 똑같이해야 스키티때 */
