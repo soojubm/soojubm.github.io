@@ -12,7 +12,7 @@
 @media (--viewport-small) {
   .step {flex-direction:column;}
   .step-item {display:flex;width:auto;margin:0;}
-  .step-item-title {margin-top:4px;}
+  .step-item-title {margin-top:0;line-height:$cell-light;}
   .step-item-icon {margin:0 1.25rem 0 0;}
   .step-space {width:32px;margin:1rem 0 1rem 14px;}
   .step-space-dot {float:none;margin:.25rem 0;}

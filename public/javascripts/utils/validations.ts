@@ -9,9 +9,13 @@
 // const phone2 =  /^01([0|1|6|7|8|9]?)-?([0-9]{3,4})-?([0-9]{4})$/; // 010-0000-0000
 // const url = /^(file|gopher|news|nntp|telnet|https?|ftps?|sftp):\/\/([a-z0-9-]+\.)+[a-z0-9]{2,4}.*$/;
 
-function validate(inputValue) {}
+function checkValidity() {
+  validityState.isRequired(values.email)
+}
 
-const validityMessage = null
+const validationMessage = {
+  email: '이메일 형식이 아닙니다.',
+}
 
 export const validityState = {
   isRequired(value) {
@@ -26,8 +30,6 @@ export const validityState = {
   isEmail(value) {
     return /^[가-힣a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[가-힣A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value.toLowerCase())
   },
-  // isBtyeLength(value, length) {
-  // },
   isLowerCase(value) {
     return value === value.toLowerCase()
   },
@@ -35,10 +37,18 @@ export const validityState = {
     return value === null || value.length === 0
   },
   // isUrl(value) {}
+  // isBtyeLength(value, length) {},
   isTooLong() {},
   isTooShort() {},
 }
 
-// export const inputHelper = {
-// 	isShort: '',
-// };
+// Function receives an input with its properties
+function validateForm(inputProps) {
+  const inputName = inputProps.name
+  const verifyInputName = {
+    username: validationRules().username,
+    password: validationRules().password,
+  }
+
+  return verifyInputName[inputName](inputProps)
+}

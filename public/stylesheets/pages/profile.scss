@@ -1,4 +1,4 @@
-.profile {max-width:1330px;margin:0 auto;padding:2rem 0;box-sizing:border-box;position:relative;}
+.profile {max-width:1330px;margin:0 auto;position:relative;}
 // .profile-head {@extend .hero;margin:0 0 3rem 0 !important;}
 // .profile-head-background {@extend .hero-background;background:url('/public/images/caleb-woods-182648-unsplash.jpg') no-repeat center center;background-size:cover;}
 // .profile-head-headline {@extend .hero-title;position:relative;}
@@ -13,7 +13,7 @@
 .profile-user-id {display:block;color:var(--gray400);}
 .profile-user-career {display:block;margin:.5rem 0 0;color:var(--gray400);}
 .profile-user-description {max-height:4.8em;margin:1.5rem 0;white-space:normal;overflow:hidden;text-overflow:ellipsis;word-wrap:break-word;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;line-height:1.6;position:relative;}
-.profile-user-description-more {margin:0 .5rem;color:#000;text-decoration:underline;}
+.profile-user-description-more {margin:0 .5rem;color:var(--gray800);font-weight:bold;}
 .profile-user-toggle {display:none;width:100%;margin:1rem 0;text-align:center;}
 .profile-user-toggle i {display:inline-block;vertical-align:middle;margin-left:.5rem;}
 .profile-user-category {padding:4px 16px;background:coral;font-size:$caption;color:var(--gray0);border-radius:50px;}
@@ -22,7 +22,7 @@
 .profile-user-address i {margin:0 8px 0 0;font-size:14px;color:var(--gray400);vertical-align:middle;}
 .profile-user-hashtags {display:flex;flex-wrap:wrap;}
 .profile-user-statistic {display:flex;width:auto;}
-.profile-user-statistic .statistic {display:flex;width:auto;margin-right:1rem;}
+.profile-user-statistic .statistic {display:flex;margin-right:1rem;}
 .profile-user-statistic .statistic .statistic-value {margin-left:.5rem;font-size:1rem;line-height:1.8;}
 .profile-user-socials {margin:1rem 0;}
 .profile-user-socials-title {margin:0.5rem 0;font-size:1rem;color:var(--gray400);}
@@ -42,8 +42,9 @@
 
 .profile-tablist {display:flex;margin:1rem 0;position:relative;}
 .profile-tablist-active {width:6px;height:6px;margin:0 auto;border-radius:50%;transition:all 0.4s ease;background:$color-primary;position:absolute;top:.25rem;left:0;}
-.profile-tablist-tab {margin:0 1rem 0 0;padding:1rem 0;color:var(--gray400);}
+.profile-tablist-tab {margin:0 1.5rem 0 0;padding:1rem 0;color:var(--gray400);font-weight:bold;}
 .profile-tablist-tab[aria-selected=true] {color:var(--gray800);}
+.profile-tablist-tab-badge {margin:0 0 0 .25rem;font-size:$caption;}
 
 .profile-tabpanel {display:flex;flex-wrap:wrap;}
 
