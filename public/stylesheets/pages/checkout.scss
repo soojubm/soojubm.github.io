@@ -85,8 +85,8 @@
     max-width: 100%;
     width: 100%;
     margin: 0;
-    // padding: 1rem 0 calc(constant(safe-area-inset-bottom) + 1rem);
-    // padding: 1rem 0 calc(env(safe-area-inset-bottom) + 1rem);
+    padding: 1rem 0 calc(constant(safe-area-inset-bottom) + 1rem);
+    padding: 1rem 0 calc(env(safe-area-inset-bottom) + 1rem);
     font-size: 1.25rem;
     border-radius: 0;
     position: fixed;
