@@ -1,6 +1,6 @@
 .navbar {display:flex;align-items:center;height:$height-header;padding:0 2rem;position:relative;left:0;right:0;top:0;z-index:8;}
-.navbar-logo {@include box-light;min-width:32px;font-size:1.25rem;}
-.navbar-burger {@include box-light;display:none;margin:0 .5rem 0 0;z-index:8;}
+.navbar-logo {@include box-small;min-width:32px;font-size:1.25rem;}
+.navbar-burger {@include box-small;display:none;margin:0 .5rem 0 0;z-index:8;}
 .navbar-menu {display:flex;align-items:center;margin-left:2rem;position:relative;}
 .navbar-menu-item {padding:0 1rem;font-size:16px;color:var(--gray800);position:relative;z-index:1;transition:all .4s;} // m p reset
 .navbar-menu-item.has-submenu {z-index:0;}
@@ -12,14 +12,14 @@
 
 .navbar-user {display:flex;margin-left:auto;position:relative;}
 .navbar-user-search {position:relative;}
-.navbar-user-search-trigger {@include box-light;}
+.navbar-user-search-trigger {@include box-small;}
 .navbar-user-search-trigger img {width:20px;pointer-events:none;}
 .navbar-user-search-trigger:after {content:'';display:block;position:absolute;left:-.5rem;right:-.5rem;top:-.5rem;bottom:-.5rem;}
 .navbar-user-search a i {vertical-align:middle;color:var(--gray800);}
 
 // todo close icon rotate
 .search-form {background:var(--gray0);box-shadow:$shadow400;padding:.5rem 5%;box-sizing:border-box;position:fixed;left:0;right:0;top:0;bottom:0;z-index:8;}
-.search-form-close {@include box-light;position:absolute;left:50%;top:14px;z-index:8;margin-left:-390px;transform:rotate(180deg);}
+.search-form-close {@include box-small;position:absolute;left:50%;top:14px;z-index:8;margin-left:-390px;transform:rotate(180deg);}
 .search-form-title {max-width:$container400;margin:0 auto 1rem;font-size:1.25rem;}
 .search-form-field input {padding-left:56px;}
 .search-form .textfield {max-width:$container400;margin:0 auto;}
@@ -31,7 +31,7 @@
 
 
 .navbar-user-notification {margin:0 .5rem;position:relative;}
-.navbar-user-notification-trigger {@include box-light;}
+.navbar-user-notification-trigger {@include box-small;}
 .navbar-user-notification-trigger i {vertical-align:middle;color:var(--gray800);}
 .navbar-user-notification-trigger img {width:20px;pointer-events:none;}
 .navbar-user-notification-trigger em {display:block;width:.5rem;height:.5rem;border-radius:50%;border:$border100;box-sizing:border-box;background:$color-negative;text-indent:-9999px;position:absolute;right:.5rem;top:.5rem;}
@@ -47,7 +47,7 @@
 
 .navbar-user-account {position:relative;}
 .navbar-user-account-trigger {display:flex;justify-content:center;align-items:center;height:32px;}
-.navbar-user-account-trigger span {@include box-light;float:left;background:var(--gray0);border:$border100;pointer-events:none;}
+.navbar-user-account-trigger span {@include box-small;float:left;background:var(--gray0);border:$border100;pointer-events:none;}
 .navbar-user-account-menu {width:320px;height:0;padding:.5rem 0;box-sizing:border-box;border-radius:$radius400;background:var(--gray0);box-shadow:$shadow400;position:absolute;top:40px;right:0;z-index:4;transform:scale(0);transform-origin:right top;}
 .navbar-user-account-menu.is-visible {height:auto;transform:scale(1);}
 

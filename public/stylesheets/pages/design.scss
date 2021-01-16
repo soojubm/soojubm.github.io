@@ -168,24 +168,24 @@
 
 
 .design-article-icon {
-  @include box-light;
+  @include box-small;
 }
-.design-article-avatar {@include box-light;margin-right:.5rem;}
+.design-article-avatar {@include box-small;margin-right:.5rem;}
 .design-article-avatar img {width:auto;height:80px;}
 .design-article-avatar-large {@include box-large;margin-right:.5rem;}
 .design-article-avatar-large img {width:auto;height:80px;}
 .design-article-avatar-medium {@include box-medium;margin-right:.5rem;}
 .design-article-avatar-medium img {width:auto;height:80px;}
-.design-article-avatar-small {@include box-small;margin-right:.5rem;}
+.design-article-avatar-small {@include box-tiny;margin-right:.5rem;}
 .design-article-avatar-small img {width:auto;height:80px;}
 .design-article-primary {@include button-primary;}
 .design-article-secondary {@include button-secondary;}
 .design-article-tertiary {@include button-tertiary;}
 .design-article-text {@include button-text;}
 
-.design-article-primary-small {@include box-light;@include button-primary;padding:$padding100;font-size:$caption;}
-.design-article-secondary-small {@include box-light;@include button-secondary;padding:$padding100;font-size:$caption;}
-.design-article-tertiary-small {@include box-light;@include button-tertiary;padding:$padding100;font-size:$caption;}
+.design-article-primary-small {@include box-small;@include button-primary;padding:$padding100;font-size:$caption;}
+.design-article-secondary-small {@include box-small;@include button-secondary;padding:$padding100;font-size:$caption;}
+.design-article-tertiary-small {@include box-small;@include button-tertiary;padding:$padding100;font-size:$caption;}
 .design-article-text-small {@include button-text;padding:$padding100;font-size:$caption;}
 
 

@@ -89,3 +89,47 @@ const posts = await getPosts()
     }))
   )
   .get(e => e.showAlert())
+
+
+
+
+  function attachKeyUpEvent() {
+    loginForm.addEventListener('keyup', function(event) {
+        const nodeName = event.target.nodeName;
+        const inputProps = event.target;
+
+        if(nodeName === 'INPUT') {
+            validateForm(inputProps);
+        }
+    });
+}
+
+
+// Function receives an input with its properties
+function validateForm(inputProps) {
+  const inputName = inputProps.name;
+  const verifyInputName = {
+      'username': validationRules().username,
+      'password': validationRules().password
+  };
+
+  return verifyInputName[inputName](inputProps)
+}
+
+
+
+
+
+function manipulateValidationMsg(validationData) {
+  const { inputProps, action } = validationData;
+  const elementValidationMsg = inputProps.nextElementSibling;
+  const validationMsgClasses = elementValidationMsg.classList;
+  const removeClass = () => 
+      validationMsgClasses.remove('hide')
+  
+
+  const addClass = () => 
+      validationMsgClasses.add('hide')
+  
+
+  return action === 'hide' ? addClass() : removeClass();

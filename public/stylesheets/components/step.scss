@@ -1,6 +1,6 @@
 .step {display:flex;justify-content:center;padding:2.5rem 2rem 2rem;background:var(--gray100);border-radius:$radius400;}
 .step-item {width:4rem;margin:0 1rem;text-align:center;}
-.step-item-icon {@include box-light;margin:0 auto;background:var(--gray0);color:var(--gray800);}
+.step-item-icon {@include box-small;margin:0 auto;background:var(--gray0);color:var(--gray800);}
 .step-item-title {margin-top:.5rem;font-size:1rem;}
 .step-space {margin:-.5rem 0 0 0;}
 .step-space-dot {float:left;display:block;width:3px;height:3px;margin:21px 2px;border-radius:50%;background:var(--gray400);}
@@ -12,7 +12,7 @@
 @media (--viewport-small) {
   .step {flex-direction:column;}
   .step-item {display:flex;width:auto;margin:0;}
-  .step-item-title {margin-top:0;line-height:$cell-light;}
+  .step-item-title {margin-top:0;line-height:$cell-small;}
   .step-item-icon {margin:0 1.25rem 0 0;}
   .step-space {width:32px;margin:1rem 0 1rem 14px;}
   .step-space-dot {float:none;margin:.25rem 0;}

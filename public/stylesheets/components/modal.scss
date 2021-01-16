@@ -5,7 +5,7 @@
 
 // todo dialog container
 .modal {overflow:auto;position:fixed;left:0;top:0;right:0;bottom:0;z-index:8;} /* pointer-events:none */
-.modal-close {@include box-light;background:var(--gray100);border-radius:$radius400;}
+.modal-close {@include box-small;background:var(--gray100);border-radius:$radius400;}
 .modal-dim {background:rgba(0,0,0,.6);position:fixed;left:0;right:0;top:0;bottom:0;z-index:-1;cursor:zoom-out;}
 .modal-dialog {max-width:1080px;margin:5% auto;padding:2rem 2.5rem;box-sizing:border-box;background:var(--gray0);border-radius:$radius400;box-shadow:$shadow400;animation:modal .2s forwards;position:relative;z-index:2;}
 .modal-head {}

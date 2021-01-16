@@ -110,10 +110,10 @@ input[type=checkbox][role=switch]:disabled + label {cursor:not-allowed;}
 input[type=checkbox][role=switch]:disabled:checked + label {color:$color-primary;}
 input[type=checkbox][role=switch]:disabled:checked + label:before {background:$color-primary;}
 input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
-.switch-wrap {display:inline-block;width:$cell-light;height:$cell-light;overflow:hidden;margin-top:7px;margin-left:1rem;cursor:pointer;}
-.day {display:block;width:$cell-light;transition:all .4s ease;position:absolute;top:0;transition:all .4s ease .3s;}
-.night {display:block;width:$cell-light;position:absolute;top:32px;transition:all .4s ease 0s;}
-.darkmode .day {top:$cell-light;transition:all .4s ease 0s;}
+.switch-wrap {display:inline-block;width:$cell-small;height:$cell-small;overflow:hidden;margin-top:7px;margin-left:1rem;cursor:pointer;}
+.day {display:block;width:$cell-small;transition:all .4s ease;position:absolute;top:0;transition:all .4s ease .3s;}
+.night {display:block;width:$cell-small;position:absolute;top:32px;transition:all .4s ease 0s;}
+.darkmode .day {top:$cell-small;transition:all .4s ease 0s;}
 .darkmode .night {top:0;transition:all .4s ease .3s;}
 
 
@@ -145,9 +145,9 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 
 .textfield.is-small {padding:0 !important;font-size:$caption !important;}
 .textfield.is-small .textfield-label {margin-bottom:0;}
-.textfield.is-small .textfield-input {height:$cell-light;padding:6px 1.25rem;}
+.textfield.is-small .textfield-input {height:$cell-small;padding:6px 1.25rem;}
 .textfield.is-inline.textfield {padding-left:5rem !important;}
-.textfield.is-inline .textfield-label {line-height:$cell-light;position:absolute;left:0;top:0;}
+.textfield.is-inline .textfield-label {line-height:$cell-small;position:absolute;left:0;top:0;}
 .textfield.is-inline .textfield-input {}
 .textfield.is-floating {}
 .textfield.is-floating input {padding:0.75rem 0rem;border-top:none;border-left:none;border-right:none;}
@@ -209,14 +209,14 @@ input[type=file] + label:after {display:none;}
 // date
 .calendar {
   width: 250px;
-  --date-width: $cell-light;
-  --date-height: $cell-light;
+  --date-width: $cell-small;
+  --date-height: $cell-small;
   --date-background: #eee;
   position: relative;
 }
 .calendar h3 {
   font-size: 1rem;
-  line-height: $cell-light;
+  line-height: $cell-small;
 }
 .calendar-navigation {display:flex;position:absolute;right:0;top:0;font-size:$caption}
 .calendar-navigation-prev {width:var(--date-width);height:var(--date-width);margin-right:4px;background:var(--date-background);border-radius:$radius400;}

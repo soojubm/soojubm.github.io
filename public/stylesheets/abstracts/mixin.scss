@@ -41,9 +41,10 @@
 }
 // @mixin box($cell) {width:$cell;height:$cell;}
 @mixin box-large {@include box;width:$cell-large;height:$cell-large;}
-@mixin box-light {@include box;width: $cell-light;height: $cell-light;}
 @mixin box-medium {@include box;width: $cell-medium;height: $cell-medium;}
+
 @mixin box-small {@include box;width: $cell-small;height: $cell-small;}
+@mixin box-tiny {@include box;width: $cell-tiny;height: $cell-tiny;}
 
 @mixin clearfix {
   &:after {
@@ -54,7 +55,7 @@
 }
 
 
-// ! box-light의 display:flex가 hidden 속성과 충돌
+// ! box-small의 display:flex가 hidden 속성과 충돌
 
 
 

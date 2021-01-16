@@ -16,8 +16,8 @@ $container100: 400px; // dialog & form
 
 $cell-large: 80px;
 $cell-medium: 48px;
-$cell-light: 32px;
-$cell-small: 16px;
+$cell-small: 32px;
+$cell-tiny: 16px;
 
 @mixin container {
   border: $border100;

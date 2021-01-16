@@ -18,7 +18,7 @@
 
 .checkout-head-byline {display:flex;display:none;align-items:center;justify-content:space-between;margin:4rem 0;padding:1rem 0;padding-right:560px;}
 .checkout-head-byline h2 {font-size:1rem;}
-.checkout-head-byline figure {@include box-light;display:flex;}
+.checkout-head-byline figure {@include box-small;display:flex;}
 
 .checkout-product {width:480px;padding:2rem 2.5rem;box-sizing:border-box;border:$border100;border-radius:$radius400;box-shadow:$shadow400;position:absolute;right:10%;top:12.5rem;z-index:1;}
 .checkout-product-title {display:none;margin:0 0 1.5rem 0;font-size:$subhead;}
@@ -83,8 +83,8 @@
   .checkout-shipping {max-width:100%;padding-right:0;}
   .checkout-foot {
     margin: 0;
-    padding: 1rem 5% calc(constant(safe-area-inset-bottom) + 1rem);
-    padding: 1rem 5% calc(env(safe-area-inset-bottom) + 1rem);
+    padding: 1rem 1rem calc(constant(safe-area-inset-bottom) + 1rem);
+    padding: 1rem 1rem calc(env(safe-area-inset-bottom) + 1rem);
     background: var(--gray0);
     position: fixed;
     left: 0;
