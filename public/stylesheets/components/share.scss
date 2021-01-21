@@ -1,7 +1,7 @@
 
 .share-trigger {@include box-small;margin:0 0 1rem 0;}
 .share-trigger svg {width:1rem;}
-.share {display:flex;flex-wrap:wrap;justify-content:center;max-width:320px;padding:2rem 3rem;background:var(--gray0);border:$border100;border-radius:$radius400;box-shadow:$shadow400;box-sizing:border-box;position:relative;}
+.share {display:flex;flex-wrap:wrap;justify-content:center;max-width:400px;padding:2rem 3rem;background:var(--gray0);border:$border100;border-radius:$radius400;box-shadow:$shadow400;box-sizing:border-box;position:relative;}
 .share-back {@include box-small;position:absolute;right:.5rem;top:.5rem;}
 .share-title {width:100%;margin:1rem 0 1.5rem;font-size:$subhead;font-weight:bold;text-align:center;}
 .share-facebook {@include box-medium;margin:.5rem;background:$color-facebook;color:#fff;font-size:$caption;}

@@ -279,3 +279,30 @@ function getMobileOperatingSystem() {
 
   return 'unknown'
 }
+
+const monthCompare = (a, b) => {
+  const months = {
+    January: 0,
+    February: 1,
+    March: 2,
+    April: 3,
+    May: 4,
+    June: 5,
+    July: 6,
+    August: 7,
+    September: 8,
+    October: 9,
+    November: 10,
+    December: 11,
+  }
+
+  return months[a] - months[b]
+}
+;['November', 'January', 'August'].sort(monthCompare)
+//["January", "August", "November"]
+
+var sanitizeHTML = function(str) {
+  return str.replace(/[^\w. ]/gi, function(c) {
+    return '&#' + c.charCodeAt(0) + ';'
+  })
+}

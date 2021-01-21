@@ -33,6 +33,7 @@
 @import 'components/share';
 
 @import 'components/skip';
+@import 'components/skeleton';
 
 
 @import 'pages/design';
@@ -54,6 +55,7 @@
 
 @import 'pages/order';
 
+
 .letter-piece {float:left;display:block;width:48px;height:64px;line-height:64px;box-shadow:1px 1px 0px rgba(0,0,0,.1);font-size:32px;text-align:center;position:relative;}
 .letter-piece i {position:relative;z-index:2;}
 .letter-piece ~ .letter-piece {margin-left:2px;}
@@ -68,7 +70,7 @@
 .bottombar-item span {display:block;margin-top:-.25rem;font-size:11px;transition:all .4s ease;}
 .bottombar-item:hover i {color:rgba(0,0,0,1);margin-top:-1px;}
 .bottombar-item:hover span {font-size:11px;color:rgba(0,0,0,1);}
-.bottombar-item em {display:flex;width:4px;height:4px;background:$color-negative;border-radius:$radius400;position:absolute;left:50%;top:50%;transform:translate(1rem, -1.5rem)}
+.bottombar-item em {display:flex;width:4px;height:4px;background:$red800;border-radius:$radius400;position:absolute;left:50%;top:50%;transform:translate(1rem, -1.5rem)}
 
 .qna {padding:16px 0;border-bottom:1px solid var(--gray200);}
 .question-item {position:relative;}
@@ -187,7 +189,7 @@
 .quote-action {@include button-primary;width:50%;margin:2rem 0 0 0;}
 
 
-.offline {max-width:320px;margin:0 auto;padding:.5rem 1rem;border-radius:$radius400;background:$color-negative;text-align:center;position:fixed;left:10%;right:10%;top:45%;z-index:8;}
+.offline {max-width:320px;margin:0 auto;padding:.5rem 1rem;border-radius:$radius400;background:$red800;text-align:center;position:fixed;left:10%;right:10%;top:45%;z-index:8;}
 .offline p {color:var(--gray0);}
 
 .skeleton-screen:empty{

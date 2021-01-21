@@ -242,7 +242,7 @@
             <p>최근 알림 메세지가 없습니다.</p>
           </menu> -->
           <menu class="navbar-user-notification-menu">
-            <h6 class="navbar-user-notification-menu-title">알림</h6>
+            <h6 class="navbar-user-notification-menu-title" hidden>알림</h6>
             <div class="notification-item">
               <div class="notification-item-avatar"></div>
               <p class="notification-item-title"><b>John Cassavetes - The Godfather of...</b>에 <b>Kevin Malin</b>님이 올린 새로운 게시물이 있습니다.</p>
@@ -292,14 +292,17 @@
     </header>
     <header class="header-backdrop js-header"></header>
 
-    <div id="view"></div>
+    <div id="view">
+      <div class="home"></div>
 
-    <section class="banner" style="margin:0 auto 2rem;">
+    </div>
+
+    <section class="banner">
       <h2 class="banner-text">수줍이에는 처음 방문이신가요?</h2>
       <button class="banner-button">이용방법을 알아보세요!</button>
     </section>
 
-    <form class="subscribe">
+    <!-- <form class="subscribe">
       <h2 class="subscribe-title">수줍이 뉴스레터를 정기구독하세요.</h2>
       <p class="subscribe-description">사실 그런 건 없고 유아이 콤포넌트 입니다. <br />텍스트를 한 줄 더 만들기 위해서 아무말이나 해봅니다.</p>
       <div class="subscribe-field textfield">
@@ -307,7 +310,7 @@
       </div>
       <button class="subscribe-submit" type="submit">신청하기</button>
       <p class="subscribe-helper">Read more about how we collect and use your data in our <a href="">Privacy Policy page.</a></p>
-    </form>
+    </form> -->
 
     <footer class="footer" role="contentinfo">
       <!-- <div class="skeleton-screen"></div> -->
@@ -322,19 +325,17 @@
       <nav class="footer-sitemap">
         <h1 class="footer-sitemap-title" hidden aria-hidden="true">하단 사이트맵 <small hidden aria-hidden="true">More Articles by themes</small></h1>
         <div class="footer-sitemap-item">
-          <h2 class="footer-sitemap-item-title">포트폴리오</h2>
+          <h2 class="footer-sitemap-item-title" hidden>포트폴리오</h2>
           <a class="footer-sitemap-item-link" href="#">교통버스</a>
           <a class="footer-sitemap-item-link" href="#">택시</a>
           <a class="footer-sitemap-item-link" href="#">지하철차량</a>
         </div>
         <div class="footer-sitemap-item">
-          <h2 class="footer-sitemap-item-title">포트폴리오</h2>
           <a class="footer-sitemap-item-link" href="#">교통버스</a>
           <a class="footer-sitemap-item-link" href="#">택시</a>
           <a class="footer-sitemap-item-link" href="#">지하철차량</a>
         </div>
         <div class="footer-sitemap-item">
-          <h2 class="footer-sitemap-item-title">포트폴리오</h2>
           <a class="footer-sitemap-item-link" href="#">교통버스</a>
           <a class="footer-sitemap-item-link" href="#">택시</a>
           <a class="footer-sitemap-item-link" href="#">지하철차량</a>
@@ -343,9 +344,9 @@
           <h2 class="footer-sitemap-item-title">-</h2>
         </div>
       </nav>
-      <p class="footer-slogan">부끄러우니까 보지마요.</p>
       <address class="footer-address">
         <span class="footer-address-logo"><img src="" alt="수줍음" /></span>
+        <p class="footer-address-slogan">부끄러우니까 보지마요.</p>
         <div class="footer-terms">
           <h5 class="footer-terms-title" aria-hidden="false" hidden>약관 등등</h5>
           <a class="footer-terms-link" href="#">이용약관</a>

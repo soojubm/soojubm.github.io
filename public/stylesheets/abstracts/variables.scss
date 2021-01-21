@@ -1,30 +1,3 @@
-// ! viewport : desktop first
-@custom-media --viewport-large (max-width: 1440px);
-@custom-media --viewport-medium (max-width: 1280px);
-@custom-media --viewport-small (max-width: 1080px);
-
-// ! container 
-$container800: 1440px;
-$container600: 1140px;
-$container400: 640px; 
-$container100: 400px; // dialog & form
-
-@media (--viewport-large) {
-}
-@media (--viewport-medium) {
-}
-
-$cell-large: 80px;
-$cell-medium: 48px;
-$cell-small: 32px;
-$cell-tiny: 16px;
-
-@mixin container {
-  border: $border100;
-  border-radius: $radius400;
-  box-shadow: $shadow400;
-}
-
 :root {
   --fontstack: 'Asap', 'AritaDotum', 'Apple SD Gothic Neo', sans-serif;
   --space: 1rem;
@@ -47,7 +20,22 @@ $cell-tiny: 16px;
   --color-primary:#00783e;
 }
 
-$gray100: #dadce0;
+// ! viewport : desktop first
+@custom-media --viewport-large (max-width: 1440px);
+@custom-media --viewport-medium (max-width: 1280px);
+@custom-media --viewport-small (max-width: 1080px);
+
+// ! container 
+$container800: 1440px;
+$container600: 1140px;
+$container400: 640px; 
+$container100: 400px; // dialog & form
+
+$cell-large: 80px;
+$cell-medium: 48px;
+$cell-small: 32px;
+$cell-tiny: 16px;
+
 
 // ! typhography
 $headline: 3rem;
@@ -58,16 +46,13 @@ $caption: 0.875rem;
 @mixin title {color:var(--gray800);font-size:2rem;line-height:1.5;font-weight:bold;letter-spacing:-.025rem;text-indent:-1px;}
 @mixin subhead {font-size:1.25rem;font-weight:bold;letter-spacing:-.025rem;}
 
-
+$color-primary: #00783e;
+$gray100: #dadce0;
 $red100: #fff0f5;
 $red800: #da1e28;
-
 $blue100: honeydew;
 $blue800: blue;
 
-$color-primary: #00783e;
-$color-positive: #00783e; // todo sucess 
-$color-negative: #da1e28; // danger, warning
 $color-google: #fff;
 $color-facebook: hsl(214, 89%, 52%);
 $color-twitter: rgb(29, 161, 242);
@@ -78,18 +63,12 @@ $padding100: 4px 1rem 5px; // 32
 $padding200: 9px 1.5rem 11px; // 버튼, 텍스트인풋 48
 $padding400: 1.5rem 2rem;
 
-//box-shadow: inset 0 2px 4px 0 hsla(0, 0%, 0%, 0.08);
-$shadow100: 0px 1px 1px rgba(136, 26, 26, 0.075); // unused
-$shadow400: 0px 0px 2rem rgba(0, 0, 0, 0.125);
-$shadow450: 2px 4px 8px rgba(0, 0, 0, 0.2); // hover
-$shadow800: 0px 0px 2rem rgba(0, 0, 0, 0.125); // unused
-
-$border100: 1px solid var(--gray200);
-
 $radius400: 4px;
 
-$quote: 0;
-$placeholder: 0;
+$shadow400: 0px 0px 2rem rgba(0, 0, 0, 0.125);
+$shadow450: 2px 4px 8px rgba(0, 0, 0, 0.2); // hover
+
+$border100: 1px solid var(--gray200);
 
 $bezier-base: cubic-bezier(0.455, 0.03, 0.515, 0.955);
 $transition-base: all 0.4s $bezier-base;
@@ -98,105 +77,26 @@ $transition-fade: opacity 0.15s linear;
 $zindex-dropdown: 1;
 $zindex-sticky: 4;
 $zindex-modal: 8;
-$zindex-modal-backdrop: 7;
+$zindex-modal-dim: 7;
 $zindex-popover: 6;
 $zindex-tooltip: 8;
 
 $height-header: 56px;
-$height-bottomsheet: 1rem; // ? fixed CTA = bottom navigation
 
 
-.linebreak-desktop {
+@mixin container {
+  border: $border100;
+  border-radius: $radius400;
+  box-shadow: $shadow400;
+}
+
+
+
+.linebreaker-desktop {
   display:block;
-  @media (--viewport-small) {
-    display:inline;
-  }
+  @media (--viewport-small) {display:inline;}
 }
-
-.row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  max-width: 800px;
-  height: 56px;
-  margin: 2rem auto;
-  padding: 0 2rem;
-  box-sizing: border-box;
-  border: 1px solid var(--gray100);
-  // margin-right: -200px;
-  // --spacer: 0 1.5rem;
+.linebreaker-mobile {
+  display:inline;
+  @media (--viewport-small) {display:block;}
 }
-.row-checkbox {
-  width: 4rem;
-  height: 16px;
-}
-.row-avatar {
-  width: 4rem;
-}
-.row-id {
-  width: 6rem;
-  padding: var(--spacer);
-}
-.row-phone {
-  width: 10rem;
-  padding: var(--spacer);
-}
-.row-address {
-  width: 10rem;
-  padding: var(--spacer);
-}
-.row-delete {
-  width: 6rem;
-  padding: var(--spacer);
-}
-
-.row.is-head {
-  border-top: none;
-  font-size: 12px;
-  color: var(--gray400);
-}
-
-.col {
-  flex-basis: 0;
-  flex-grow: 1;
-}
-
-
-.is-fullwidth {
-  display: block;
-  width: 100%;
-}
-.is-disabled {cursor: not-allowed;}
-.is-multiline {flex-wrap: wrap;}
-
-// text
-
-.is-nowrap {
-}
-.is-truncate {
-}
-.is-fetching {
-}
-.is-expanded {
-}
-.is-valid {
-}
-.is-invalid {
-}
-.is-inverted {
-}
-
-
-
-
-$z-indexes: (
-  modal : 9000,
-  overlay : 8000,
-  dropdown : 7000,
-  header : 6000,
-  footer : 5000,
-  hidden : - 1,
-  overflowHidden: - 1,
-  floating: 10000
-);

@@ -1,8 +1,8 @@
 .hero {width:auto;margin: 0 10%;padding:3.5rem 5rem 4.5rem;box-sizing:border-box;position: relative;z-index: 1;}
-.hero-background {max-width: 100%;margin: 0 auto;background:var(--gray0);border-radius:$radius400;box-shadow:$shadow400;position: absolute;left: -50%;right: -50%;top: 0;bottom: 0;z-index: -1;}
+.hero-background {max-width:100%;margin: 0 auto;background:var(--gray0);border-radius:$radius400;box-shadow:$shadow400;position: absolute;left: -50%;right: -50%;top: 0;bottom:100%;z-index: -1;}
 .hero-eyebrow {display:block;margin:0 0 .5rem 0;}
 .hero-title {@include title;}
-.hero-description {margin:1rem 0 3rem 0;/*color:rgba(255,255,255,.8);*/}
+.hero-description {margin:1rem 0 3rem 0;}
 .hero-cta {@include button-primary;}
 .hero-detail {@include button-tertiary;margin-left:.5rem;}
 .hero-obj1 {position:absolute;right:-1rem;top:1rem;width:40px;height:40px;background:gold;border-radius:50%;}
@@ -15,11 +15,12 @@
 .hero-body {}
 .hero-foot {}
 
+.is-scrolled .hero-background {bottom: 0;transition: all .6s $bezier-base .6s;}
+
 @media (--viewport-large) {
   .hero {margin:-4rem 10% 0;}
 }
 
 @media (--viewport-small) {
   .hero {margin:-4rem 5% 0;}
-  // .hero {padding:2rem 3rem 3rem;}
 }

@@ -1,255 +1,144 @@
-<div class="starfield">
-	<span></span>
-	<span></span>
-	<span></span>
-	<span></span>
-</div>
-<style>
-.starfield {
-	user-select: none;
-	display: none;
-	width: 100%;
-	height: 100%;
-	overflow: hidden;
-	animation: fadein 15s;
-}
-
-.starfield > * {
-	background-size: 200px 200px;
-	background-image: radial-gradient(
-			2px 2px at 40px 60px,
-			#ccc,
-			rgba(0, 0, 0, 0)
-		),
-		radial-gradient(2px 2px at 20px 50px, var(--white), rgba(0, 0, 0, 0)),
-		radial-gradient(2px 2px at 30px 100px, var(--white), rgba(0, 0, 0, 0)),
-		radial-gradient(2px 2px at 40px 60px, var(--white), rgba(0, 0, 0, 0)),
-		radial-gradient(2px 2px at 110px 90px, var(--white), rgba(0, 0, 0, 0)),
-		radial-gradient(2px 2px at 190px 150px, var(--white), rgba(0, 0, 0, 0));
-	background-repeat: repeat;
-	position: absolute;
-	top: -450%;
-	left: 0;
-	height: 1000%;
-	width: 100%;
-	z-index: 10;
-}
-
-.starfield > * {
-	transform-origin: 50% 50%;
-	animation-name: rotation;
-	animation-iteration-count: infinite;
-	animation-timing-function: linear;
-}
-
-.starfield > *:nth-child(1) {
-	animation-duration: 16s;
-}
-.starfield > *:nth-child(2) {
-	animation-duration: 20s;
-}
-.starfield > *:nth-child(3) {
-	animation-duration: 35s;
-}
-.starfield > *:nth-child(4) {
-	animation-duration: 55s;
-}
-.starfield > *:nth-child(5) {
-	animation-duration: 120s;
-}
-header {padding:1rem 2rem;}
-header h1 {padding:1rem;background:#fff;font-size:4rem;}
-header h1 + h1 {margin-top:-1rem;position:realtive;z-index:1;}
-</style>
-
 <main class="about">
-	<header>
-		<h1>부끄러우니까 보지마요.</h1>
-		<h1>부끄러우니까 보지마요.</h1>
-		<h1>부끄러우니까 보지마요.</h1>
-		<h1>부끄러우니까 보지마요.</h1>
-		<h1>부끄러우니까 보지마요.</h1>
-	</header>
+  <section class="about-era1" style="max-width:880px;margin:0 10%;padding:4rem 0;word-break:keep-all">
+    <div class="about-era1-background js-scroll-animation"></div>
+    <p class="about-era1-title js-scroll-animation">자기소개</p>
+    <p style="width:80%;margin-top:4rem;line-height:2;">
+      UI를 그립니다. 웹에이전시에서 경력을 시작했고 작은 스타트업들을 거쳐 프리랜서로 근무하다 다시 스타트업에서 프로덕트를 만들고 있습니다. 스타트업의 근무환경이나 태도에 관심이 많습니다만 여전히 스물의 목적잃은 표본인 양 갈피를 못 잡은 채 프리랜서로 혼자서 일하다보니 부쩍, 동료들과 함께 시너지를 발휘하여 문제를 해결하고 싶다는 데, 우리의 프로덕트를 함께 만들어 가고 싶다는 데 마음이 동했습니다. <br /><br />
+      나이 서른이 되어도 세상을, 자신을 잘 모르겠지만 재미있는 일을 하고 싶다는 마음만은 알 것도 같습니다. 디자인을 전공하지 않은 사람으로서 유아이디자인과 유아이개발을 겸하고 있으며 바닐라 자바스크립트만으로 유아이를 개발할 수 있습니다. 현재(2020년 2월) 리액트 기반의 프론트앤드개발자로 근무하고 있으며, 타입스크립트와 스토리북을 공부하고 있습니다. 재사용가능하고 효율적인 디자인과 코드를 찾기 위해 고군분투하고 있습니다. 오래된 영화와 소설을 좋아하고 타이포그래피에 관심이 많습니다.
+    </p>
+    <div class="about-era1-description js-scroll-animation"></div>
+    <br />
+    <ul>
+      <li>공간체 바람체 옵티크체 둥켈산스 아르바나</li>
+    </ul>
+    <figure style="padding:4rem 0;">
+      <div style="display: inline-block;width:320px;height:400px;margin-right:1rem;border-radius:4px;background:crimson;"><img src="https://source.unsplash.com/random" alt="" /></div>
+      <div style="display: inline-block;width:320px;height:400px;border-radius:4px;background:crimson;"><img src="https://source.unsplash.com/random" alt="" /></div>
+      <figcaption style="margin:2rem 0">
+        <p>Left James</p>
+        <p>Right Staley</p>
+        <p>Above Arianna, Christian and Dan</p>
+      </figcaption>
+    </figure>
+  </section>
 
-	<section class="about-era1" style="max-width:880px;margin:0 10%;padding:4rem 0;word-break:keep-all">
-		<!-- <div class="about-era1-background js-scroll-animation"></div> -->
-		<!-- <p class="about-era1-title js-scroll-animation">자기소개</p> -->
-		<p style="font-size:1.5rem;line-height:2;">UI를 그립니다. 웹에이전시에서 경력을 시작했고 작은 스타트업들을 거쳐 프리랜서로 근무하다 다시 스타트업에서 프로덕트를 만들고 있습니다. 스타트업의 근무환경이나 태도에 관심이 많습니다만 여전히 스물의 목적잃은 표본인 양 갈피를 못 잡은 채 프리랜서로 혼자서 일하다보니 부쩍, 동료들과 함께 시너지를 발휘하여 문제를 해결하고 싶다는 데, 우리의 프로덕트를 함께 만들어 가고 싶다는 데 마음이 동했습니다. 나이 서른이 되어도 세상을, 자신을 잘 모르겠지만 재미있는 일을 하고 싶다는 마음만은 알 것도 같습니다. 디자인을 전공하지 않은 사람으로서 유아이디자인과 유아이개발을 겸하고 있으며 바닐라 자바스크립트만으로 유아이를 개발할 수 있습니다. 현재(2020년 2월) 리액트 기반의 프론트앤드개발자로 근무하고 있으며, 타입스크립트와 스토리북을 공부하고 있습니다. 재사용가능하고 효율적인 디자인과 코드를 찾기 위해 고군분투하고 있습니다. 오래된 영화와 소설을 좋아하고 타이포그래피에 관심이 많습니다.</p>
-		<p style="width:80%;margin-top:4rem;line-height:2;">UI를 그립니다. 웹에이전시에서 경력을 시작했고 작은 스타트업들을 거쳐 프리랜서로 근무하다 다시 스타트업에서 프로덕트를 만들고 있습니다. 스타트업의 근무환경이나 태도에 관심이 많습니다만 여전히 스물의 목적잃은 표본인 양 갈피를 못 잡은 채 프리랜서로 혼자서 일하다보니 부쩍, 동료들과 함께 시너지를 발휘하여 문제를 해결하고 싶다는 데, 우리의 프로덕트를 함께 만들어 가고 싶다는 데 마음이 동했습니다.
-			<br /><br />
-			나이 서른이 되어도 세상을, 자신을 잘 모르겠지만 재미있는 일을 하고 싶다는 마음만은 알 것도 같습니다. 디자인을 전공하지 않은 사람으로서 유아이디자인과 유아이개발을 겸하고 있으며 바닐라 자바스크립트만으로 유아이를 개발할 수 있습니다. 현재(2020년 2월) 리액트 기반의 프론트앤드개발자로 근무하고 있으며, 타입스크립트와 스토리북을 공부하고 있습니다. 재사용가능하고 효율적인 디자인과 코드를 찾기 위해 고군분투하고 있습니다. 오래된 영화와 소설을 좋아하고 타이포그래피에 관심이 많습니다.</p>
-		<!-- <div class="about-era1-description js-scroll-animation"></div> -->
-		<br>
-		<ul>
-			<li>공간체 바람체 옵티크체 둥켈산스 아르바나</li>
-		</ul>
-		<figure style="padding:4rem 0;">
-			<div style="display: inline-block;width:320px;height:400px;margin-right:1rem;border-radius:4px;background:crimson;"><img src="https://source.unsplash.com/random" alt="" /></div>
-			<div style="display: inline-block;width:320px;height:400px;border-radius:4px;background:crimson;"><img src="https://source.unsplash.com/random" alt="" /></div>
-			<figcaption style="margin:2rem 0">
-				<p>Left James</p>
-				<p>Right Staley</p>
-				<p>Above Arianna, Christian and Dan</p>
-			</figcaption>
-		</figure>
-	</section>
+  <div class="links">
+    <h3>기업 문화</h3>
+    <a href="https://now.rememberapp.co.kr/2020/08/30/9832/">전례 없는 위기가 오더라도 이겨내는 법</a>
+    <a href="https://now.rememberapp.co.kr/2020/10/11/10319/">모두를 만족시키는 의사결정의 비밀</a>
+    <a href="https://www.notion.so/ZET-dbb9b6c1cb5d4c2da039a85b6b1dab20">ZET팀의 프런트엔드 개발자 성장 레벨</a>
+    <a href="https://brunch.co.kr/@shaun/85">UX에는 돈이 들어간다</a>
+    <a href="https://congruentagile.com/2013/02/27/spotify/">스포티파이의 조직문화</a>
 
-	<section class="about-brief">
-		<h2>뭐라고 해야할까하는 것</h2>
-		<ul class="post-body-paragraph">
-			<li>React</li>
-			<li>Typescript</li>
-			<li>Data Driven Design</li>
-			<li>Pure Javascript and DOM API. 제이쿼리 의존도 0.</li>
-		</ul>
-	
-		<h2>공부하고 있는 것</h2>
-		<ul class="post-body-paragraph">
-			<li>타입스크립트를 통한 타입 체크</li>
-			<li>스토리북을 활용한 디자인 시스템 정의</li>
-		</ul>
-	</section>
-	<br />
-	<br />
-	<br />
-	<br />
-	<br />
-<!-- 
-	<section id="about">
-		<h2>어바웃</h2>
-		<div class="box">
-			<div class="box-left">
-				<h3>soojubm</h3>
-			</div>
-			<div class="box-right">
-				<h2 class="post-body-subhead" style="margin-top:0;">교육</h2>
-				<ul class="post-body-paragraph">
-					<li><time>2014.01 ~ 2014.06</time><cite>크로스브라우징 디지털 퍼블리싱 4기</cite><span>경원직업전문학교</span></li>
-					<li><time>2016.03 ~ 2016.03</time><cite>GUI 디자인</cite><span>SK 상생협력센터 T아카데미</span></li>
-					<li><time>2017.07 ~ 2017.09</time><cite>글자, 그리고 표현</cite><span>한글타이포그래피학교</span> 현승ㅈ[</li>
-					<li><time>2018.07 ~ 2018.09</time><cite>자바스크립트 기본 (토요일, 5주), 김영보</cite><span>양재동코드랩, 서울창업허브 세미나실 3</span></li>
-					<li>
-						<time>2020</time> 그로스해킹 - 데이터와 실험을 통해 성장하는 서비스를 만드는 방법(인프런 양승화)
-					</li>
-				</ul>
+    <h3>보류</h3>
+    <a href="https://rinae.dev/posts/ui-as-an-afterthought-kr">유아이는 좀 이따 생각해봅시다</a>
 
-				<h2 class="post-body-subhead">경력</h2>
-				<ul class="post-body-paragraph">
-					<li><time>2014.01 ~ 2014.06</time><cite>크로스브라우징 디지털 퍼블리싱 4기</cite><span>경원직업전문학교</span></li>
-					<li><time>2016.03 ~ 2016.03</time><cite>GUI 디자인</cite><span>SK 상생협력센터 T아카데미</span></li>
-					<li><time>2017.07 ~ 2017.09</time><cite>글자, 그리고 표현</cite><span>한글타이포그래피학교</span> 현승ㅈ[</li>
-					<li><time>2018.07 ~ 2018.09</time><cite>자바스크립트 기본 (토요일, 5주), 김영보</cite><span>양재동코드랩, 서울창업허브 세미나실 3</span></li>
-					<li>
-						<time>2020</time> 그로스해킹 - 데이터와 실험을 통해 성장하는 서비스를 만드는 방법(인프런 양승화)
-					</li>
-				</ul>
+    <h3>유아이</h3>
+    <a href="https://www.designsystems.com/iconography-guide/">아이코노그라피 가이드</a>
 
-				<h2 class="post-body-subhead">교육</h2>
-				<ul class="post-body-paragraph">
-					<li><time>2014.01 ~ 2014.06</time><cite>크로스브라우징 디지털 퍼블리싱 4기</cite><span>경원직업전문학교</span></li>
-					<li><time>2016.03 ~ 2016.03</time><cite>GUI 디자인</cite><span>SK 상생협력센터 T아카데미</span></li>
-					<li><time>2017.07 ~ 2017.09</time><cite>글자, 그리고 표현</cite><span>한글타이포그래피학교</span> 현승ㅈ[</li>
-					<li><time>2018.07 ~ 2018.09</time><cite>자바스크립트 기본 (토요일, 5주), 김영보</cite><span>양재동코드랩, 서울창업허브 세미나실 3</span></li>
-					<li>
-						<time>2020</time> 그로스해킹 - 데이터와 실험을 통해 성장하는 서비스를 만드는 방법(인프런 양승화)
-					</li>
-				</ul>
-			</div>
-		</div>
-		</section>
-		<style>
-			#about {padding: 104px 10% 40px;border-bottom: solid 1px #111111;}
-		#about > h2 {
-			border-bottom: 1px solid #111111;
-    font-size: 4rem;
-    padding-bottom: 4rem;
-    width: 100%;
-		}
-		#about .box {    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-		padding: 4rem 0;}
-		#about .box-left {width: 48.1%;}
-		#about .box-right {width: 48.1%;}
-		#about h3 {}
-    line-height: 1.8;
-    letter-spacing: 0.05rem;
-    margin-bottom: 32px;
-		margin-top: -8px;}
-		#about h4 {
-			font-size: 2.0rem;
-    line-height: 1.8;
-    font-weight: 400;
-    margin: 4px 0 24px;
-}
-		</style> -->
-<!-- 
-	<section class="about-era2">
-		<div class="about-era2-background"></div>
-		<p class="about-era2-title js-scroll-animation">어린시절 최정호</p>
-		<div class="about-era2-description js-scroll-animation">
-			<p>최정호는 어려서부터 공부보다는 글씨 쓰기에 더 뛰어난 재능을 보였다. 은행원이었던 그의 아버지는 매일 아침 출근길에 일곱 개의 글자를 써서 건네주고는 퇴근한 뒤 검사를 했다. 어린 최정호는 처음에는 마지못해 붓을 들었지만, 어느 날부터 재미가 붙어 스스로더 많은 숙제를 청하게 되었다. 교동공립보통학교를 다니던 때에는 이런 일도 있었다. 여름 방학이 끝나 학교에 간 날, 글씨 쓰기 숙제를 검사하던 담임선생이 다짜고짜 최정호의 따귀를 때렸다. 숙제를 부모가 대신 써주었으리라 착각한 것이다. 결국 최정호는 담임선생과 반 친구들이 보는 앞에서 직접 글씨를 써 보여 오해를 풀어야 했다.</p>
-		</div>
-		<ul>
-			<li>
-				<time>1916</time> 황해도 해주에서 태어남
-			</li>
-			<li>
-				<time>1919</time> 3·1운동이 일어남
-			</li>
-			<li>
-				<time>1923</time> 서울교동공립보통학교 졸업
-			</li>
-			<li>
-				<time>1929</time> 경성제일고등보통학교 졸업
-			</li>
-		</ul>
-	</section>
+    <h3>데이터</h3>
+    <a href="https://brunch.co.kr/@entrench/108">GA 설치 후 우선적으로 점검해야 하는 다섯 가지</a>
+    <a href="https://brunch.co.kr/@coupangdesign/53">유엑스 리서치 +++ 제목다시</a>
 
-	<section class="row">
-		<div class="col">
-			<h2>3개의 칼럼으로 몇 가지를 만들어 본다. 두 줄로 나오게 한다.</h2>
-		</div>
-		<div class="col">
-			<p>Ein Beispiel hierfür ist diese Figur eines Mannes, der mit seiner Flinte gerade Jagd auf Vögel macht.</p>
-			<p>Bei gutem Licht und entsprechendem Sehvermögen können aufmerksame MuseumsbesucherInnen sogar das Feuer erkennen, das aus seiner Flinte schießt.</p>
-		</div>
-		<div class="col">
-			<p>Ein Beispiel hierfür ist diese Figur eines Mannes, der mit seiner Flinte gerade Jagd auf Vögel macht.</p>
-			<p>Bei gutem Licht und entsprechendem Sehvermögen können aufmerksame MuseumsbesucherInnen sogar das Feuer erkennen, das aus seiner Flinte schießt.</p>
-		</div>
-	</section>
-	<section class="row2">
-		<div class="col">
-			<h2>3개의 칼럼으로 몇 가지를 만들어 본다. 두 줄로 나오게 한다.</h2>
-		</div>
-		<div class="col">
-			<p>Ein Beispiel hierfür ist diese Figur eines Mannes, der mit seiner Flinte gerade Jagd auf Vögel macht.</p>
-			<p>Bei gutem Licht und entsprechendem Sehvermögen können aufmerksame MuseumsbesucherInnen sogar das Feuer erkennen, das aus seiner Flinte schießt.</p>
-		</div>
-		<div class="col2">
-			<p>Ein Beispiel hierfür ist diese Figur eines Mannes, der mit seiner Flinte gerade Jagd auf Vögel macht.</p>
-			<p>Bei gutem Licht und entsprechendem Sehvermögen können aufmerksame MuseumsbesucherInnen sogar das Feuer erkennen, das aus seiner Flinte schießt.</p>
-		</div>
-		<div class="col2">
-			<p>Ein Beispiel hierfür ist diese Figur eines Mannes, der mit seiner Flinte gerade Jagd auf Vögel macht.</p>
-			<p>Bei gutem Licht und entsprechendem Sehvermögen können aufmerksame MuseumsbesucherInnen sogar das Feuer erkennen, das aus seiner Flinte schießt.</p>
-		</div>
-		<div class="col3">
-			<h2>3개의 칼럼으로 몇 가지를 만들어 본다. 두 줄로 나오게 한다.</h2>
-		</div>
-		<div class="col2">
-			<p>Ein Beispiel hierfür ist diese Figur eines Mannes, der mit seiner Flinte gerade Jagd auf Vögel macht.</p>
-			<p>Bei gutem Licht und entsprechendem Sehvermögen können aufmerksame MuseumsbesucherInnen sogar das Feuer erkennen, das aus seiner Flinte schießt.</p>
-		</div>
-		<div class="col2">
-			<p>Ein Beispiel hierfür ist diese Figur eines Mannes, der mit seiner Flinte gerade Jagd auf Vögel macht.</p>
-			<p>Bei gutem Licht und entsprechendem Sehvermögen können aufmerksame MuseumsbesucherInnen sogar das Feuer erkennen, das aus seiner Flinte schießt.</p>
-		</div>
-	</section>
+    <h3>앱</h3>
+    <a href="https://www.clien.net/service/board/lecture/10398588">앱 개발 가이드</a>
+  </div>
+  <section class="about-brief">
+    <h2>뭐라고 해야할까하는 것</h2>
+    <ul class="post-body-paragraph">
+      <li>React</li>
+      <li>Typescript</li>
+      <li>Data Driven Design</li>
+      <li>Pure Javascript and DOM API. 제이쿼리 의존도 0.</li>
+    </ul>
 
-	<section class="about-top"> -->
-				<!-- <article class="projects">
+    <h2>공부하고 있는 것</h2>
+    <ul class="post-body-paragraph">
+      <li>타입스크립트를 통한 타입 체크</li>
+      <li>스토리북을 활용한 디자인 시스템 정의</li>
+    </ul>
+  </section>
+  <br />
+  <br />
+  <br />
+
+  <section id="about">
+    <h2>어바웃</h2>
+    <div class="box">
+      <div class="box-left">
+        <h3>soojubm</h3>
+      </div>
+      <div class="box-right">
+        <h2 class="post-body-subhead" style="margin-top:0;">교육</h2>
+        <ul class="post-body-paragraph">
+          <li><time>2014.01 ~ 2014.06</time><cite>크로스브라우징 디지털 퍼블리싱 4기</cite><span>경원직업전문학교</span></li>
+          <li><time>2016.03 ~ 2016.03</time><cite>GUI 디자인</cite><span>SK 상생협력센터 T아카데미</span></li>
+          <li><time>2017.07 ~ 2017.09</time><cite>글자, 그리고 표현</cite><span>한글타이포그래피학교</span> 현승ㅈ[</li>
+          <li><time>2018.07 ~ 2018.09</time><cite>자바스크립트 기본 (토요일, 5주), 김영보</cite><span>양재동코드랩, 서울창업허브 세미나실 3</span></li>
+          <li><time>2020</time> 그로스해킹 - 데이터와 실험을 통해 성장하는 서비스를 만드는 방법(인프런 양승화)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-era2">
+    <div class="about-era2-background"></div>
+    <p class="about-era2-title js-scroll-animation">어린시절 최정호</p>
+    <div class="about-era2-description js-scroll-animation">
+      <p>최정호는 어려서부터 공부보다는 글씨 쓰기에 더 뛰어난 재능을 보였다. 은행원이었던 그의 아버지는 매일 아침 출근길에 일곱 개의 글자를 써서 건네주고는 퇴근한 뒤 검사를 했다. 어린 최정호는 처음에는 마지못해 붓을 들었지만, 어느 날부터 재미가 붙어 스스로더 많은 숙제를 청하게 되었다. 교동공립보통학교를 다니던 때에는 이런 일도 있었다. 여름 방학이 끝나 학교에 간 날, 글씨 쓰기 숙제를 검사하던 담임선생이 다짜고짜 최정호의 따귀를 때렸다. 숙제를 부모가 대신 써주었으리라 착각한 것이다. 결국 최정호는 담임선생과 반 친구들이 보는 앞에서 직접 글씨를 써 보여 오해를 풀어야 했다.</p>
+    </div>
+    <ul>
+      <li><time>1916</time> 황해도 해주에서 태어남</li>
+      <li><time>1919</time> 3·1운동이 일어남</li>
+      <li><time>1923</time> 서울교동공립보통학교 졸업</li>
+      <li><time>1929</time> 경성제일고등보통학교 졸업</li>
+    </ul>
+  </section>
+
+  <section class="row">
+    <div class="col">
+      <h2>3개의 칼럼으로 몇 가지를 만들어 본다. 두 줄로 나오게 한다.</h2>
+    </div>
+    <div class="col">
+      <p>Ein Beispiel hierfür ist diese Figur eines Mannes, der mit seiner Flinte gerade Jagd auf Vögel macht.</p>
+      <p>Bei gutem Licht und entsprechendem Sehvermögen können aufmerksame MuseumsbesucherInnen sogar das Feuer erkennen, das aus seiner Flinte schießt.</p>
+    </div>
+    <div class="col">
+      <p>Ein Beispiel hierfür ist diese Figur eines Mannes, der mit seiner Flinte gerade Jagd auf Vögel macht.</p>
+      <p>Bei gutem Licht und entsprechendem Sehvermögen können aufmerksame MuseumsbesucherInnen sogar das Feuer erkennen, das aus seiner Flinte schießt.</p>
+    </div>
+  </section>
+  <section class="row2">
+    <div class="col">
+      <h2>3개의 칼럼으로 몇 가지를 만들어 본다. 두 줄로 나오게 한다.</h2>
+    </div>
+    <div class="col">
+      <p>Ein Beispiel hierfür ist diese Figur eines Mannes, der mit seiner Flinte gerade Jagd auf Vögel macht.</p>
+      <p>Bei gutem Licht und entsprechendem Sehvermögen können aufmerksame MuseumsbesucherInnen sogar das Feuer erkennen, das aus seiner Flinte schießt.</p>
+    </div>
+    <div class="col2">
+      <p>Ein Beispiel hierfür ist diese Figur eines Mannes, der mit seiner Flinte gerade Jagd auf Vögel macht.</p>
+      <p>Bei gutem Licht und entsprechendem Sehvermögen können aufmerksame MuseumsbesucherInnen sogar das Feuer erkennen, das aus seiner Flinte schießt.</p>
+    </div>
+    <div class="col2">
+      <p>Ein Beispiel hierfür ist diese Figur eines Mannes, der mit seiner Flinte gerade Jagd auf Vögel macht.</p>
+      <p>Bei gutem Licht und entsprechendem Sehvermögen können aufmerksame MuseumsbesucherInnen sogar das Feuer erkennen, das aus seiner Flinte schießt.</p>
+    </div>
+    <div class="col3">
+      <h2>3개의 칼럼으로 몇 가지를 만들어 본다. 두 줄로 나오게 한다.</h2>
+    </div>
+    <div class="col2">
+      <p>Ein Beispiel hierfür ist diese Figur eines Mannes, der mit seiner Flinte gerade Jagd auf Vögel macht.</p>
+      <p>Bei gutem Licht und entsprechendem Sehvermögen können aufmerksame MuseumsbesucherInnen sogar das Feuer erkennen, das aus seiner Flinte schießt.</p>
+    </div>
+    <div class="col2">
+      <p>Ein Beispiel hierfür ist diese Figur eines Mannes, der mit seiner Flinte gerade Jagd auf Vögel macht.</p>
+      <p>Bei gutem Licht und entsprechendem Sehvermögen können aufmerksame MuseumsbesucherInnen sogar das Feuer erkennen, das aus seiner Flinte schießt.</p>
+    </div>
+  </section>
+
+  <section class="about-top">
+    <!-- <article class="projects">
 				<h3 style="margin:16px;">코딩 알바</h3>
 				<ul>
 				 <li><time>2016 12</time> <cite>한국브랜드만족지수1위</cite> <span>웹사이트 퍼블리싱 100%</span></li>
@@ -272,7 +161,7 @@ header h1 + h1 {margin-top:-1rem;position:realtive;z-index:1;}
 			<li><time>2017 10 ~ 2017 11</time> <cite>문화예술위원회 창작산실 - 올해의신작 반응형 웹(워드프레스)</cite> 기획50% 디자인100% 코딩100%</li>
 			<li><time>2016.12 ~ 2017.06</time> <cite>재능 포트폴리오 플랫폼 `페이머스`</cite> 프로덕트 디자인 프론트앤드개발</li>
 			 -->
-			<!--
+    <!--
 			2016.03 ~ 2016.05 위올커뮤니케이션 / 2016.06 ~ 2016.09 (주)퍼니프렌즈
 			2014년 7월 ~ 2015년 8월
 			
@@ -291,7 +180,7 @@ header h1 + h1 {margin-top:-1rem;position:realtive;z-index:1;}
 			
 			2016.11 이지스테이 반응형 웹사이트 리뉴얼 코딩
 			-->
-			<!-- <li><time>2014 08</time><cite>메가젠 R2임플란트</cite><span>반응형웹 컨텐츠 작업</span></li>
+    <!-- <li><time>2014 08</time><cite>메가젠 R2임플란트</cite><span>반응형웹 컨텐츠 작업</span></li>
 			<li><time>2014 08</time><cite>제스아일랜드</cite><span>코딩 100%</span></li>
 			<li><time>2014 08</time><cite>디비미디어</cite><span>코딩100%</span></li>
 			<li><time>2014 08</time><cite>닥터뉴욕치과 모바일웹</cite><span>디자인100% 코딩100%</span></li>
@@ -321,7 +210,7 @@ header h1 + h1 {margin-top:-1rem;position:realtive;z-index:1;}
 			<li><time>2015 07</time><cite>하라체어 리뉴얼</cite><span>디자인100%</span></li>
 			<hr> -->
 
-			<!-- <h3 style="margin-bottom:16px;">전시 (as a visitor)</h3>
+    <!-- <h3 style="margin-bottom:16px;">전시 (as a visitor)</h3>
 			언리미티드에디션
 
 			
@@ -356,5 +245,5 @@ header h1 + h1 {margin-top:-1rem;position:realtive;z-index:1;}
 			<li><time>2012.5.24 ~ 7.5</time><cite>한일 우키요에전 - 우키요에로 보는 한일 풍경 / 우타가와 히로시게, 카츠시카 호쿠사이, 가와세 하스이</cite><span>경북대학교</span></li>
 			<li><time>2012.07.16</time><cite>사진미학의 거장, 앙리 카르티에-브레송전</cite><span>세종문화회관 미술관 본관 1실</span></li>
 			<li><time>2011.04.29</time><cite>장자크 상페 특별전 대구 순회전</cite><span>대구문화예술회관</span></li> -->
-			</section>
-		</main>
+  </section>
+</main>

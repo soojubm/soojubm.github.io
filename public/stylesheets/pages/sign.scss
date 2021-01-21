@@ -18,7 +18,7 @@ $container-auth: 400px;
 .login-social-kakao {float:left;width:49%;color:var(--gray0);margin-right:2%;background:#f9df34;}
 .login-option {margin:2rem 0;text-align:center;}
 .login-option-link {margin:0 1rem;}
-.login-fail {display:block;margin:1rem 0;color:$color-negative;}
+.login-fail {display:block;margin:1rem 0;color:$red800;}
 
 .signup {max-width:$container-auth;margin:0 auto;padding:2rem 5% 10rem;}
 .signup-head {}
@@ -52,5 +52,5 @@ $container-auth: 400px;
 .delete-why-title {font-size:$subhead;}
 .delete-why-description {margin:1rem 0;}
 .delete-action {padding:4rem 0;}
-.delete-action-confirm {@include button-primary;border-color:$color-negative;background:$color-negative;}
+.delete-action-confirm {@include button-primary;border-color:$red800;background:$red800;}
 .delete-action-back {@include button-text;}

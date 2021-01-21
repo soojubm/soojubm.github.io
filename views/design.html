@@ -1,6 +1,6 @@
 <main class="design">
-  <header class="design-head"></header>
-  <section class="hero">
+  <header class="design-head js-scroll-animation"></header>
+  <section class="hero js-scroll-animation">
     <div class="hero-obj1"></div>
     <div class="hero-obj2"></div>
     <div class="hero-obj3"></div>
@@ -87,7 +87,7 @@
         <span>View All</span>
         <i class="icon-arrow"></i>
       </button> -->
-      <p class="design-article-description">1rem 단위는 14px입니다. 모바일에서의 1rem은 12px입니다. 브라우저 기본값 16px을 1rem 단위로 바꾸는 게 좋을까? 소숫점 픽셀이 발생. title-2rem/subhead-1.25rem/body-1rem/caption-.875rem/숫자에1.75rem케이스있음. Asap와 무게가 살짝 다르고, 마이너스 기호가 어색하다.</p>
+      <p class="design-article-description">1rem을 14px로 조정했습니다. 1rem은 12px입니다. 기본값인 16px로 사용하되 기본 폰트 사이즈를 사용해야 하는 경우 .875rem를 적용하는 방법을 고민하고 있습니다. 소숫점 픽셀이 발생하고 16px 그리드를 적극적으로 사용하기 위해서입니다. title-2rem/subhead-1.25rem/body-1rem/caption-.875rem/숫자에1.75rem케이스있음. Asap와 무게가 살짝 다르고, 마이너스 기호가 어색하다.</p>
       <div style="display:flex;justify-content:space-between;">
         <div style="width:calc(50% - 0.5rem);padding:2rem;box-sizing:border-box;background:var(--gray100);border-radius:4px;">
           <i style="display:block;margin-bottom:.5rem;width:16px;height:16px;border-radius:4px;background:cadetblue"></i>
@@ -109,14 +109,17 @@
       <h1 class="design-article-title">Palettes</h1>
       <p class="design-article-description">그레이스케일 한 벌로 다크 테마에 대응할 수 있도록 만들기</p>
 
-
       <h2 style="margin:0 0 .5rem;"><small>Surface</small></h2>
       <figure class="surface-item">
         <div></div>
         <figcaption></figcaption>
       </figure>
       <br />
-      <h2 style="margin:0 0 .5rem;"><small>Grayscales</small></h2>
+      <h2 style="margin:0 0 .5rem;"><small>Skeleton</small></h2>
+      <div class="skeleton"></div>
+      <br />
+      <br />
+      <h2 style="margin:0 0 .5rem;"><small>Grayscale</small></h2>
       <div class="color-group" role="group">
         <figure class="color-item is-gray100">
           <div></div>
@@ -574,12 +577,17 @@
       </div>
       <br />
       <div class="textfield is-text" style="margin:2rem 0;">
-        <label class="textfield-label" for="search1">Sort by</label>
-        <select class="textfield-input" name="" id="">
-          <option class="select-option" value="">Choose an option</option>
+        <label class="textfield-label" for="select-label">Sort by</label>
+        <select class="textfield-input" name="select-select" id="select-select">
+          <option class="select-option" value="select-option1">Choose an option</option>
         </select>
         <i class="selectbox-indicator icon-caret"></i>
       </div>
+      <!-- var selected = Array.from(dnd.options).filter(function (option) {
+        return option.selected;
+      }).map(function (option) {
+        return option.value;
+      }); -->
       <br />
       <div class="textfield is-small">
         <label class="textfield-label" for="">회사</label>
@@ -693,9 +701,9 @@
         <button class="quote-action">자세히보기</button>
       </div>
       <br />
-      <div class="pricing-item">
-        <!-- <small class=""title="MOST POPULAR">인기 요금제</small> -->
-        <!-- <i style="margin-top:-.5rem;font-size:40px;">🧞‍</i> -->
+      <!-- <div class="pricing-item">
+        <small class=""title="MOST POPULAR">인기 요금제</small>
+        <i style="margin-top:-.5rem;font-size:40px;">🧞‍</i>
         <h1 class="pricing-item-title">개인용</h1>
         <p class="pricing-item-description">부끄러우니까 구매하지마요.</p>
         <span class="pricing-item-price">
@@ -710,7 +718,7 @@
         </ul>
         <button class="pricing-item-upgrade">업그레이드</button>
         <button class="pricing-item-more">And More...</button>
-      </div>
+      </div> -->
     </article>
 
     <article class="design-article grayscale">

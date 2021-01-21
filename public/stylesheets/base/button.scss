@@ -81,7 +81,7 @@ button[aria-current=page] {}
 
 // ! backButton closeButton :: back close 아이콘은 어차피 단독으로 쓰이지 않는다!
 .danger-button {@include button;background:$red800;border:1px solid $red800;color:var(--gray0);}
-.success-button {@include button;background:$blue800;border:1px solid $blue800;color:var(--gray0);}
+.success-button {@include button;background:$red800;border:1px solid $red800;color:var(--gray0);}
 
 [role=group] {display:flex;flex-wrap:wrap;}
 [role=group] > * {margin:0 .5rem .25rem 0;}

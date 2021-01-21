@@ -17,7 +17,8 @@
 .surface-item div {@include box-medium;background:#fff;box-shadow:$shadow400;}
 
 .design {}
-.design-head {overflow:hidden;background:url('/public/images/caleb-woods-182648-unsplash.jpg') no-repeat center center;background-size:cover;position:fixed;left:0;right:50%;top:0;bottom:0;z-index:1;}
+.design-head {overflow:hidden;background:url('/public/images/caleb-woods-182648-unsplash.jpg') no-repeat center center;background-size:cover;position:fixed;left:0;right:60%;top:0;bottom:0;z-index:1;}
+.design-head.is-scrolled {right:50%;transition: all 1s $bezier-base .2s;}
 .design-body {width:50%;max-width:40rem;margin-left:50%;padding:6rem;}
 
 .design-article {margin:0 0 6rem 0;position:relative;}
