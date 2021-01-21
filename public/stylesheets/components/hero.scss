@@ -9,18 +9,14 @@
 .hero-obj2 {position:absolute;right:480px;bottom:-8px;width:80px;height:80px;background:gold;border-radius:50%;}
 .hero-obj3 {position:absolute;right:420px;top:24px;width:16px;height:16px;background:#0057ff;border-radius:50%;}
 .hero-obj4 {position:absolute;right:0;top:-8rem;width:35rem;}
-.hero-obj5 {@include box-medium;font-size:1.75rem;position:absolute;right:0;bottom:0;}
-.hero-obj6 {@include box-medium;font-size:1.75rem;position:absolute;right:0;top:0;}
-.hero-head {}
-.hero-body {}
-.hero-foot {}
+
 
 .is-scrolled .hero-background {bottom: 0;transition: all .6s $bezier-base .6s;}
 
 @media (--viewport-large) {
-  .hero {margin:-4rem 10% 0;}
+  .hero {margin-top:-4rem;}
 }
 
 @media (--viewport-small) {
-  .hero {margin:-4rem 5% 0;}
+  .hero {margin-left:5%;margin-right:5%;}
 }
