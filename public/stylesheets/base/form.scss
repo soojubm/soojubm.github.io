@@ -55,6 +55,7 @@ input[type=number]::-webkit-outer-spin-button {-webkit-appearance:none;}
 input[type=date] {display:block;max-height:48px;}  // 패딩으로 설정한 세로값 크롬에서(only?) 다른 텍스트 필드와 달라짐. iOS displayblock
 input[type=date]::-webkit-calendar-picker-indicator {width:100%;opacity:0;position:absolute;left:0;bottom:0;}
 input[type=date]::-webkit-inner-spin-button {display:none;}
+// input[type=email]:valid {border-color:crimson;}
 input[type=email]:invalid {border-color:crimson;}
 
 // rem 으로 모듈화하기 어렵다. ex 1.5rem => top:0.125rem

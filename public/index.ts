@@ -65,8 +65,8 @@ const domEvents = async () => {
         .then(response => response.json())
         .then(data => {
           data.items.forEach(item => {
-            const view = document.querySelector('main')
-            console.log(item)
+            const view = document.querySelector('.design-body')
+            if (!view) return
 
             view && view.insertAdjacentHTML('beforeend', `<div style="height:200px;background:crimson;color:#fff;text-align:center;">무한스크룔</div>`)
           })

@@ -54,3 +54,77 @@ function validateForm(inputProps) {
 
   return verifyInputName[inputName](inputProps)
 }
+
+document.querySelectorAll('input').forEach(input => {
+  input.addEventListener('invalid', () => {
+    document.forms[0].classList.add('was-validated')
+  })
+  // form.was-validated input:invalid {
+  //   border-color: red;
+  // }
+})
+
+// input.addEventListener("invalid", () => {
+//   /**
+//    * ValidityState {
+//    *   badInput: false,  // 잘못된 입력
+//    *   customError: false, // 커스텀 오류
+//    *   patternMismatch: false, // 패턴 오류
+//    *   rangeOverflow: false, // 범위 초과 오류
+//    *   rangeUnderflow: false, // 범위 미달 오류
+//    *   stepMismatch: false, // 간격 오류
+//    *   tooLong: false, // 길이 오류
+//    *   tooShort: false, // 길이 오류
+//    *   typeMismatch: false, // 타입 오류
+//    *   valid: false, // 검증 결과
+//    *   valueMissing: true // 필수값 오류
+//    * }
+//    */
+//   console.log(input.validity)
+// })
+
+// 오류 메세지 사전을 만든다
+// const validityMessage = {
+//   badInput: "[커스텀 메세지] 잘못된 입력입니다.",
+//   patternMismatch: "[커스텀 메세지] 패턴에 맞게 입력하세요",
+//   rangeOverflow: "[커스텀 메세지] 범위를 초과하였습니다",
+//   rangeUnderflow: "[커스텀 메세지] 범위에 미달하였습니다",
+//   stepMismatch: "[커스텀 메세지] 간격에 맞게 입력하세요",
+//   tooLong: "[커스텀 메세지] 최대 글자 미만으로 입력하세요",
+//   tooShort: "[커스텀 메세지] 최소 글자 미만으로 입력하세요",
+//   typeMismatch: "[커스텀 메세지] 형식에 맞게 입력하세요",
+//   valueMissing: "[커스텀 메세지] 이 필드를 반드시 입력하세요",
+// }
+
+// // validity 객체를 받아 메세지 맵에서 오류 메세지를 찾는다
+// function getMessage(validity) {
+//   for (const key in validityMessage) {
+//     if (validity[key]) {
+//       return validityMessage[key]
+//     }
+//   }
+// }
+
+// function showError(input) {
+//   /**
+//    * 커스텀 메세지: setCustomValidity()
+//    * https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/setCustomValidity
+//    * - 오류가 있으면 문자열 전달
+//    * - 오류가 없으면 빈 문자열 전달
+//    */
+//   input.setCustomValidity(getMessage(input.validity) || '')
+// }
+
+// input.addEventListener('invalid', () => {
+//   // 커스텀 에러메세지 설정
+//   showError(input)
+// })
+
+// function showError(input) {
+//   // 커스텀 오류 메시지 UI
+//   document.querySelector("#error").textContent = getMessage(input.validity)
+// }
+// input.addEventListener('invalid', e => {
+//   // 브라우져 툴팁 숨김
+//   e.preventDefault()
+// })
