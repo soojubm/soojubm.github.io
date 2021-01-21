@@ -1,7 +1,7 @@
 .dialog {max-width:320px;padding:1.75rem 2rem 0;border-radius:$radius400;box-sizing:border-box;background-color:var(--gray0);box-shadow:$shadow400;position:relative;}
 .dialog-object {position:absolute;left:50%;top:0;z-index:-1;width:100px;transform:translate(-50%, -50%);}
 .dialog-title {font-size:$subhead;font-weight:bold;}
-.dialog-description {margin:1rem 0 1.5rem;}
+.dialog-description {margin:.5rem 0 1.5rem;}
 .dialog-footer {display:flex;justify-content:space-around;margin:2rem -2rem 0;padding:.25rem;border-top:1px solid var(--gray100)}
 .dialog-footer button {width:100%;}
 .dialog-footer-close {@include button-text;color:var(--gray400);}
