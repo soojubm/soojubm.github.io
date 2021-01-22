@@ -60,7 +60,7 @@
 .accordion-item {position:relative;}
 .accordion-item-trigger {}
 .accordion-item-panel {}
-.accordion-trigger {display:flex;align-items:center;justify-content:space-between;padding:$padding200;padding-left:0;padding-right:0;cursor:pointer;position:relative;transition:all .4s;}
+.accordion-trigger {display:flex;align-items:center;justify-content:space-between;padding:$padding200;padding-left:0;padding-right:0;font-size:1rem;font-weight:bold;cursor:pointer;position:relative;transition:all .4s;}
 .accordion-trigger:hover {color:var(--gray800);}
 .accordion-trigger .icon-caret {transition:all .2s}
 .accordion-trigger.is-active {color:$color-primary;}

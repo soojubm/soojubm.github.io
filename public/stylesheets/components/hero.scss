@@ -5,18 +5,17 @@
 .hero-description {margin:1rem 0 3rem 0;}
 .hero-cta {@include button-primary;}
 .hero-detail {@include button-tertiary;margin-left:.5rem;}
-.hero-obj1 {position:absolute;right:-1rem;top:1rem;width:40px;height:40px;background:gold;border-radius:50%;}
-.hero-obj2 {position:absolute;right:480px;bottom:-8px;width:80px;height:80px;background:gold;border-radius:50%;}
-.hero-obj3 {position:absolute;right:420px;top:24px;width:16px;height:16px;background:#0057ff;border-radius:50%;}
-.hero-obj4 {position:absolute;right:0;top:-8rem;width:35rem;}
-
+.hero-obj1 {position:absolute;right:-1rem;top:1rem;width:40px;height:40px;background:gold;border-radius:50%;transform:scale(0);transition:all .4s ease .8s;}
+.hero-obj2 {position:absolute;right:480px;bottom:-8px;width:80px;height:80px;background:gold;border-radius:50%;transform:scale(0);transition:all .4s ease 1.0s;}
+.hero-obj3 {position:absolute;right:420px;top:24px;width:16px;height:16px;background:#0057ff;border-radius:50%;transform:scale(0);transition:all .4s ease 1.4s;}
+.hero-obj4 {position:absolute;right:0;top:-8rem;width:35rem;transform:scale(0);transition:all .4s ease 1.2s;}
 
 .is-scrolled .hero-background {bottom: 0;transition: all .6s $bezier-base .6s;}
+.is-scrolled .hero-obj1 {transform:scale(1);}
+.is-scrolled .hero-obj2 {transform:scale(1);}
+.is-scrolled .hero-obj3 {transform:scale(1);}
+.is-scrolled .hero-obj4 {transform:scale(1);}
 
 @media (--viewport-large) {
-  .hero {margin-top:-4rem;}
-}
-
-@media (--viewport-small) {
-  .hero {margin-left:5%;margin-right:5%;}
+  .hero {margin:-4rem 5% 0;}
 }

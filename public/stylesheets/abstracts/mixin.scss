@@ -1,19 +1,10 @@
 @mixin size($width, $height: $width) {width: $width;height: $height;}
 
 @mixin fixed-bottom {}
-
 @mixin image-centered {width:auto;height:auto;max-width:150%;max-height:150%;margin:auto;position:absolute;left:0;right:0;top:0;bottom:0;}
 
 @mixin truncate {white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-@mixin truncate-multi {
-  @include truncate;
-  height: 2.7em;
-  white-space: normal;
-  word-wrap: break-word;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-}
+@mixin truncate-multi {@include truncate;height: 2.7em;white-space: normal;word-wrap: break-word;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;}
 
 
 // layout 유동성을 위해 centered mixin은 layout의 유동성을 해친다.
@@ -42,22 +33,15 @@
 // @mixin box($cell) {width:$cell;height:$cell;}
 @mixin box-large {@include box;width:$cell-large;height:$cell-large;}
 @mixin box-medium {@include box;width: $cell-medium;height: $cell-medium;}
-
 @mixin box-small {@include box;width: $cell-small;height: $cell-small;}
 @mixin box-tiny {@include box;width: $cell-tiny;height: $cell-tiny;}
 
 @mixin clearfix {
-  &:after {
-    content: '';
-    display: block;
-    clear: both;
-  }
+  &:after {content: '';display:block;clear:both;}
 }
 
 
 // ! box-small의 display:flex가 hidden 속성과 충돌
-
-
 
 @mixin grid-container {
   width: 100%;
