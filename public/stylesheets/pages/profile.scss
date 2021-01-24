@@ -44,7 +44,7 @@
 .profile-tablist-active {width:6px;height:6px;margin:0 auto;border-radius:50%;transition:all 0.4s ease;background:$color-primary;position:absolute;top:.25rem;left:0;}
 .profile-tablist-tab {margin:0 1.5rem 0 0;padding:1rem 0;color:var(--gray400);font-weight:bold;}
 .profile-tablist-tab[aria-selected=true] {color:var(--gray800);}
-.profile-tablist-tab-badge {margin:0 0 0 .25rem;font-size:$caption;}
+.profile-tablist-tab-badge {font-size:$caption;}
 
 .profile-tabpanel {display:flex;flex-wrap:wrap;}
 

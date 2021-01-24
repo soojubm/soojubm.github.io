@@ -13,24 +13,8 @@
     <img class="hero-obj4" src="/public/images/blob-shape.svg" alt="" />
   </section>
 
-  <!-- <div class="row">
-    <div class="row-checkbox">
-      <div>
-        <input type="checkbox" id="temp1">
-        <label for="temp1"></label>
-      </div>
-    </div>
-    <div class="row-avatar"><div class="avatar is-large"><img src="/public/images/caleb-woods-182648-unsplash.jpg" alt="" /></div></div>
-    <div class="row-id">soojubm</div>
-    <div class="row-phone">010.3121.7045</div>
-    <div class="row-address">서울시 강서구 까치산로</div>
-    <div class="row-progress"><button class="primary-button is-small">출제하기</button></div>
-  </div> -->
-
   <section class="design-body">
-    <div contenteditable id="editor"></div>
-    <!-- <div role="textbox" contenteditable="true" aria-placeholder="5-digit zipcode" aria-labelledby="txtboxLabel">contentEditable</div>  -->
-
+    <div role="textbox" contenteditable aria-placeholder="5-digit zipcode" aria-labelledby="txtboxLabel"></div>
     <!-- <div class="stamp">
       <div class="circle">
         <p id="circle-content">
@@ -55,10 +39,6 @@
           <span class="char19">지</span>
           <span class="char20">마</span>
           <span class="char21">요</span>
-          <span class="char22">요</span>
-          <span class="char23">요</span>
-          <span class="char24">요</span>
-          <span class="char25">요</span>
         </p>
       </div>
       <p>수줍이</p>
@@ -68,25 +48,19 @@
       <h1 class="design-article-title">Writings</h1>
       <ul>
         <li><b>금액</b> KRW 기호를 사용하고 한 칸 띄어 씁니다. ₩ 44,612 formatPrice()</li>
-        <li><b>날짜</b> 2020/02/30 YYYY/MM/DD foramtDate()</li>
-        <li>20200109 배민에서 작년이라도 되어 잇는 리뷰들이 상단에 뜨는데 최근 주문/리뷰가 없다 오해 생기겟다. 열흘 전인데 작년인 것도 이상하다 </li>
+        <li><b>날짜</b> YYYY/MM/DD formatDate()</li>
         <li>위치(왼쪽/오른쪽/위/아래)를 설명하지 않습니다.</li>
         <li><b>슬래시(/)</b> 띄어쓰기가 필요하다면 전달하기 복잡한 정보입니다. 다른 유아이를 고민하세요.</li>
         <li><b>콜론(:)</b> </li>
-        <li><b>콘텐츠</b> </li>
         <li>콜론 슬래시 괄호 등을 남용하지 마세요. 디자인 하지 않은 것입니다(오바).</li>
-        <li>검색 결과 2개 vs ~</li>
-        <li>총결제금액 vs 결제예정금액</li>
+        <li>검색 결과 2개 vs ~ / 총결제금액 vs 결제예정금액</li>
         <!-- <li>뉴닉에서 //// 헤딩(유저가 취해야 할 행동을 직관적으로 가이딩) + 디스크립션(고슴이: 유저의 고민을 덜어줄 수 있는 감초 역할 + 가능하다면 약간의 위트. 특별히 고민이 필요 없는 화면에서는 위트만 뿜뿜해도 됨. 두 줄까지는 허용할 수 있지만 그 이상은 슴체가 읽기 어려움.)</li> -->
       </ul>
     </article>
 
     <article class="design-article typography">
       <h1 class="design-article-title">Typhography</h1>
-      <!-- <button class="design-article-more">
-        <span>View All</span>
-        <i class="icon-arrow"></i>
-      </button> -->
+      <!-- <button class="design-article-more">View All</button> -->
       <p class="design-article-description">1rem을 14px로 조정했습니다. 1rem은 12px입니다. 기본값인 16px로 사용하되 기본 폰트 사이즈를 사용해야 하는 경우 .875rem를 적용하는 방법을 고민하고 있습니다. 소숫점 픽셀이 발생하고 16px 그리드를 적극적으로 사용하기 위해서입니다. title-2rem/subhead-1.25rem/body-1rem/caption-.875rem/숫자에1.75rem케이스있음. Asap와 무게가 살짝 다르고, 마이너스 기호가 어색하다.</p>
       <div style="display:flex;justify-content:space-between;">
         <div style="width:calc(50% - 0.5rem);padding:2rem;box-sizing:border-box;background:var(--gray100);border-radius:4px;">
@@ -99,26 +73,49 @@
         </div>
       </div>
       <div style="margin:1rem 0 0 0;padding:2rem;background:var(--gray100);border-radius:4px;">
+        <h1 style="margin-bottom:1rem;font-size:2rem;font-weight:bold;">헤드라인</h1>
         <h4 class="typography-subhead" style="margin:0 0 1rem;font-size:1.25rem;line-height:1.2;font-weight:bold;"><small style="display:block;margin:0 0 .5rem 0;font-size:1rem;">선약이 있어서 ✋</small>자아실현은 못할 것 같아요.</h4>
         <p class="typography-paragraph" style="margin: 0 0 1.5rem">서브헤드와 디스크립션 혹은 패러그라프는 이렇게 사용하세요. 서브헤드와 디스크립션 혹은 패러그라프는 이렇게 사용하세요. 서브헤드와 디스크립션 혹은 패러그라프는 이렇게 사용하세요. 서브헤드와 디스크립션 혹은 패러그라프는 이렇게 사용하세요.</p>
         <time class="typography-caption">10 January, 2020</time>
       </div>
     </article>
 
+
+    <article class="design-article">
+      <h1 class="design-article-title">Avatars & Cells</h1>
+      <p class="design-article-description">아바타와 아이콘 버튼에서는 지정된 4가지의 사이즈만 사용하세요.</p>
+      <div role="group">
+        <a href="" class="design-article-avatar-large"></a>
+        <a href="" class="design-article-avatar-medium"><span class="avatar-badge"></span></a>
+        <a href="" class="design-article-avatar-small"></a>
+        <a href="" class="design-article-avatar-tiny"></a>
+      </div>     
+       
+      <!-- <div class="ttt">
+				<span class="ttt-avatar">🦁</span>
+				<span>Run for 1h 03 minutes.</span>
+      </div>
+      
+      
+			<div class="minicard">
+				<span class="minicard-emoji">🦀</span>
+				<p class="minicard-value">12개</p>
+				<small class="minicard-label">chapters</small>
+      </div>
+      
+      <br />
+
+      <div class="number">
+        <div class="number-card">8</div>
+        <div class="number-card">8</div>
+        <div class="number-card">3</div>
+        <div class="number-card">-</div>
+      </div> -->
+    </article>
+
     <article class="design-article grayscale">
       <h1 class="design-article-title">Palettes</h1>
       <p class="design-article-description">그레이스케일 한 벌로 다크 테마에 대응할 수 있도록 만들기</p>
-
-      <h2 style="margin:0 0 .5rem;"><small>Surface</small></h2>
-      <figure class="surface-item">
-        <div></div>
-        <figcaption></figcaption>
-      </figure>
-      <br />
-      <h2 style="margin:0 0 .5rem;"><small>Skeleton</small></h2>
-      <div class="skeleton"></div>
-      <br />
-      <br />
       <h2 style="margin:0 0 .5rem;"><small>Grayscale</small></h2>
       <div class="color-group" role="group">
         <figure class="color-item is-gray100">
@@ -163,63 +160,27 @@
           <div></div>
           <figcaption>red800</figcaption>
         </figure>
-        <figure class="color-item is-gradient">
+        <!-- <figure class="color-item is-gradient">
           <div></div>
           <figcaption>gradient</figcaption>
-        </figure>
+        </figure> -->
       </div>
+      <br />
+      <h2 style="margin:0 0 .5rem;"><small>Surface</small></h2>
+      <figure class="surface-item">
+        <div></div>
+        <figcaption></figcaption>
+      </figure>
+      <br />
+      <h2 style="margin:0 0 .5rem;"><small>Skeleton</small></h2>
+      <div class="skeleton"></div>
     </article>
 
     <article class="design-article">
-      <h1 class="design-article-title">Avatars & Cells</h1>
-      <p class="design-article-description">아바타와 아이콘 버튼에서는 지정된 4가지의 사이즈만 사용하세요.</p>
-      <div role="group">
-        <a href="" class="design-article-avatar-large">
-          <img src="/public/images/caleb-woods-182648-unsplash.jpg" alt="" />
-        </a>
-        <a href="" class="design-article-avatar-medium">
-          <img src="/public/images/caleb-woods-182648-unsplash.jpg" alt="" />
-          <span class="avatar-badge"></span>
-        </a>
-        <a href="" class="design-article-avatar">
-          <img src="/public/images/caleb-woods-182648-unsplash.jpg" alt="" />
-        </a>
-        <!-- <a href="" class="design-article-avatar is-small" style="width:22px;height:22px;">
-          <img src="/public/images/caleb-woods-182648-unsplash.jpg" alt="" />
-        </a> -->
-        <a href="" class="design-article-avatar-small">
-          <img src="/public/images/caleb-woods-182648-unsplash.jpg" alt="" />
-        </a>
-      </div>     
-       
-      <!-- <div class="ttt">
-				<span class="ttt-avatar">🦁</span>
-				<span>Run for 1h 03 minutes.</span>
-      </div>
-      
-      <br />
-      
-			<div class="minicard">
-				<span class="minicard-emoji">🦀</span>
-				<p class="minicard-value">12개</p>
-				<small class="minicard-label">chapters</small>
-      </div>
-      
-      <br />
-
-      <div class="number">
-        <div class="number-card">8</div>
-        <div class="number-card">8</div>
-        <div class="number-card">3</div>
-        <div class="number-card">-</div>
-      </div> -->
-    </article>
-
-    <!-- <article class="design-article">
       <h1 class="design-article-title">Seperator</h1>
       <p class="design-article-description">섹션 간 border 스타일로 구획하는 것보다 hr br 태그로 마크업하는 것은 어떨까?</p>
       <hr role="separator" />
-    </article> -->
+    </article>
 
     <article class="design-article">
       <h1 class="design-article-title">breadcrumb</h1>
@@ -372,7 +333,7 @@
     </article>
 
     <article class="design-article">
-      <h1 class="design-article-title">Spinner or Loader</h1>
+      <h1 class="design-article-title">Spinner</h1>
       <p class="design-article-description">샘플</p>
       <div class="loader-spinner" style="position:static;"></div>
       <!-- <div class="spinner"></div> -->
@@ -385,18 +346,22 @@
         <li>아웃라인 버튼(고스트 버튼)을 트랜디하지 않아서(2021년) 제거하였는데, 회색 배경에서 사용하기 힘들고 세컨더리 버튼으로는 어포던스가 떨어지는 것이 고민이다.</li>
         <li>시멘틱한 네이밍(solid / outline / plain / text)은 위와 같은 스타일의 수정이 일어날 때에 대응해야 하는 코드가 많아진다.</li>
         <li>아이콘 버튼</li>
-        <li>appearance = link / subtle / primary / subtle-link / warning /danger / disabled / selected / loading</li>
-        <li>status</li>
+        <li>appearance = link / subtle / primary / subtle-link / warning /danger / </li>
+        <li>status disabled / selected / loading</li>
         <li>icon before / after</li>
         <li>size</li>
         <li>space = compact / fullwidth</li>
       </ul>
+      <!-- <a class="button" href="#">Anchor button</a>
+      <button>Button element</button>
+      <input type="submit" value="submit input">
+      <input type="button" value="button input"> -->
       <div>
         <h6>Default Sizes</h6>
         <div class="button-group" role="group">
-          <button class="design-article-primary primary-button">프라이머리</button>
-          <button class="design-article-secondary secondary-button">세컨더리</button>
-          <button class="design-article-tertiary tertiary-button">터시어리</button>
+          <button class="design-article-primary">프라이머리</button>
+          <button class="design-article-secondary">세컨더리</button>
+          <button class="design-article-tertiary">터시어리</button>
           <button class="design-article-text">텍스트</button>
           <!-- <button class="danger-button" aria-label="danger">Danger</button> -->
           <!-- <button class="success-button" aria-label="success">Success</button> -->
@@ -421,7 +386,6 @@
           </button>
         </div>
         <br />
-        <h6>isFetching - 스피너를 넣어준다.</h6>
         <!-- <button class="loadmore is-fetching">
           불러오는 중
           <div class="spinner"></div>
@@ -491,16 +455,6 @@
             test
           </div>
         </div>
-        <div class="radio theme-button">
-          <input type="radio" id="raidio6" name="gender" value="">
-          <label for="raidio6" title="">
-            상품 옵션
-            <b>₩ 20,000</b>
-          </label>
-          <div>
-            test
-          </div>
-        </div>
       </fieldset>
     </article>
 
@@ -542,7 +496,6 @@
     <article class="design-article">
       <h1 class="design-article-title">Textfield</h1>
       <p class="design-article-description">Input text, Textarea, Select, with Icon, with Unit, with Button</p>
-      
       <div class="quantity js-quantity">
         <input class="quantity-input js-quantity-input js-number-input" name="quantity1" type="number" value="0" min="5" max="20" >
         <!-- <input type="text" inputmode="numeric" pattern="[0-9]*"> -->
@@ -723,12 +676,10 @@
 
     <article class="design-article grayscale">
       <h1 class="design-article-title">Share Card</h1>
-      <p class="design-article-description">모바일에 최적화하여 하나의 유아리를 사용한다.</p>
+      <p class="design-article-description">제곧내</p>
       <button class="share-trigger">
         <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" svg-inline="" role="presentation" focusable="false" tabindex="-1" class="icon-16"><path d="M0 12.782c0 .85.1 1.65.3 2.45.1.45.35.45.5 0 1.05-2.65 2.75-5.15 5.55-5.65H8v2.2c0 1 .6 1.3 1.3.7l6.4-5.5c.35-.3.35-.8 0-1.15L9.3.332c-.7-.65-1.3-.3-1.3.65v2.35c-4.8.8-8 4.7-8 9.45z" fill="currentColor"></path></svg>
-        <span class="accessibility-text" hidden>
-          Share actions
-        </span>
+        <span class="accessibility-text" hidden>Share actions</span>
       </button>
       <article class="share">
         <h2 class="share-title">친구에게<br />이 콘텐츠를 공유해보세요!</h2>
@@ -851,17 +802,9 @@
         </tbody>
       </table>
 
-      <!-- //  style="overflow:auto;"  -->
-      <div role="rowgroup">
-        <!-- <div class="row is-head" role="row">
-          <div class="row-checkbox">Check</div>
-          <div class="row-avatar">Avatar</div>
-          <div class="row-id">Id</div>
-          <div class="row-phone">Phone</div>
-          <div class="row-address">Address</div>
-          <div class="row-delete">Delete</div>
-        </div> -->
-      </div>
+      <!-- <div role="rowgroup">
+        <div class="row is-head" role="row"></div>
+      </div> -->
     </article>
 
     <article class="design-article">
@@ -883,8 +826,6 @@
           <button class="slider-viewer-slide" style="background:blue;">고3</button>
         </div>
         <!-- <nav class="slider-dots">
-          <button class="slider-dots-dot">1</button>
-          <button class="slider-dots-dot">1</button>
           <button class="slider-dots-dot">1</button>
         </nav> -->
         <nav class="slider-arrows">

@@ -9,7 +9,7 @@ import { countDownClock } from './javascripts/countdown'
 import event from './javascripts/event/index'
 import input from './javascripts/input/index'
 
-import { validity } from './javascripts/utils/validations'
+// import { validity } from './javascripts/utils/validations'
 
 // import { copyClipboard } from './javascripts/utils/formatUtils.js'
 
@@ -152,6 +152,8 @@ const domEvents = async () => {
   event.tabMenu()
   event.close({ selector: '.js-close' })
   event.toTop({ selector: '.js-to-top' })
+
+  event.stickyElement({ targetElement: '.js-post-head', addClass: 'is-sticky-post-head' })
 
   event.scrollAnimation()
   // event.scrollspy({ menusSelector: '.js-section', sectionsSelector: '.newneek-navbar-menu-item' })
@@ -297,8 +299,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setDarkmode()
 
   // event.stickyElement({ targetElement: '.js-navbar', addClass: 'is-sticky-navbar' }
-  event.stickyElement({ targetElement: '.js-header', addClass: 'is-sticky-header' })
-  event.stickyElement({ targetElement: '.js-post-head', addClass: 'is-sticky-post-head' })
+  // event.stickyElement({ targetElement: '.js-header', addClass: 'is-sticky-header' })
 
   // ! hashchange 될 때마다 이벤트 만들어짐;
   event.toggleClass({ selector: '.js-navbar-toggle' }).setEvent()

@@ -1,4 +1,6 @@
 // 스티키전의옵셋기억해주기
+// passed와 바로. header / post-head
+// 언제 cancel
 
 const stickyElement = ({ targetElement, addClass }) => {
   const stickyElement = document.querySelector(targetElement)
@@ -7,13 +9,15 @@ const stickyElement = ({ targetElement, addClass }) => {
   let elementHeight = stickyElement.offsetHeight
   let isScrolling
 
+  console.log('kgkg', targetElement, elementHeight)
+
   function hasScrolled() {
     isScrolling && window.cancelAnimationFrame(isScrolling)
     isScrolling = window.requestAnimationFrame(() => {
-      // if (window.pageYOffset > stickyElement.offsetTop + elementHeight) {
-      if (window.pageYOffset > stickyElement.offsetTop) {
+      const elementOffsetBottom = stickyElement.offsetTop + elementHeight
+      const isStuck = window.pageYOffset > stickyElement.offsetTop
+      if (isStuck) {
         document.body.classList.add(addClass)
-        // body.style.paddingTop = `${elementHeight}px`
       } else {
         document.body.classList.remove(addClass)
       }
@@ -28,6 +32,8 @@ const stickyElement = ({ targetElement, addClass }) => {
 
   window.addEventListener('scroll', hasScrolled)
 }
+
+// body.style.paddingTop = `${elementHeight}px`
 
 // var isScrolling;
 // window.addEventListener('scroll', (event) => {

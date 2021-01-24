@@ -140,7 +140,6 @@ document.addEventListener('click', event => {
     if (targetInput.value >= MAX_VALUE) {
       target.classList.add('is-disabled')
       target.removeAttribute('disabled')
-
       // target.parentNode.querySelector('.js-quantity-decrement').classList.remove('is-disabled')
       // target.parentNode.querySelector('.js-quantity-decrement').removeAttribute('disabled')
       return

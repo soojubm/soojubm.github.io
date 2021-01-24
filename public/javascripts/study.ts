@@ -1,50 +1,42 @@
+// @ts-nocheck
 // mobile/postsView.js
 
 const postsView = {
-  init (el) {
+  init(el) {
     if (!el) throw Error('el')
     this.el = el
     this.data = []
     return this
   },
-  setData (data) {
+  setData(data) {
     this.data = data
     return this
   },
-  render () {
+  render() {
     this.el.innerHTML = this.html()
   },
-  html () {
-    return this.data.reduce((html, post) => {
-      html += `
+  html() {
+    return (
+      this.data.reduce((html, post) => {
+        html += `
         <h2>${post.title}</h2>
         <article>${this.text(post.text)}</article>
        `
-      return html
-    }, '<div>') + '</div>'
+        return html
+      }, '<div>') + '</div>'
+    )
   },
-  text (post) {
+  text(post) {
     return post.substring(0, 100) + '...'
-  }
+  },
 }
 
 export default postsView
-
-// mobile/index.html
-import postView from './postView.js
 
 postsView.init(document.querySelector('#app'))
 api.fetch().then(data => {
   postView.setData(data).render()
 })
-
-
-
-
-
-
-
-
 
 class HTTPError extends Error {
   constructor(statusCode: number, message?: string) {
@@ -73,8 +65,6 @@ const renderPosts = async () => {
   }
 }
 
-
-
 // 포스트를 가져온 다음
 // 만들어진 순서 역순으로 정리를 하고
 // `타이틀 - 작가명` 으로 `title` 필드를 수정해준 다음
@@ -86,50 +76,40 @@ const posts = await getPosts()
     posts.map(post => ({
       ...post,
       title: `${post.title} - ${post.author}`,
-    }))
+    })),
   )
   .get(e => e.showAlert())
 
+function attachKeyUpEvent() {
+  loginForm.addEventListener('keyup', function(event) {
+    const nodeName = event.target.nodeName
+    const inputProps = event.target
 
-
-
-  function attachKeyUpEvent() {
-    loginForm.addEventListener('keyup', function(event) {
-        const nodeName = event.target.nodeName;
-        const inputProps = event.target;
-
-        if(nodeName === 'INPUT') {
-            validateForm(inputProps);
-        }
-    });
+    if (nodeName === 'INPUT') {
+      validateForm(inputProps)
+    }
+  })
 }
-
 
 // Function receives an input with its properties
 function validateForm(inputProps) {
-  const inputName = inputProps.name;
+  const inputName = inputProps.name
   const verifyInputName = {
-      'username': validationRules().username,
-      'password': validationRules().password
-  };
+    username: validationRules().username,
+    password: validationRules().password,
+  }
 
   return verifyInputName[inputName](inputProps)
 }
 
+// function manipulateValidationMsg(validationData) {
+//   const { inputProps, action } = validationData;
+//   const elementValidationMsg = inputProps.nextElementSibling;
+//   const validationMsgClasses = elementValidationMsg.classList;
+//   const removeClass = () =>
+//       validationMsgClasses.remove('hide')
 
+//   const addClass = () =>
+//       validationMsgClasses.add('hide')
 
-
-
-function manipulateValidationMsg(validationData) {
-  const { inputProps, action } = validationData;
-  const elementValidationMsg = inputProps.nextElementSibling;
-  const validationMsgClasses = elementValidationMsg.classList;
-  const removeClass = () => 
-      validationMsgClasses.remove('hide')
-  
-
-  const addClass = () => 
-      validationMsgClasses.add('hide')
-  
-
-  return action === 'hide' ? addClass() : removeClass();
+//   return action === 'hide' ? addClass() : removeClass();

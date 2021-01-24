@@ -17,7 +17,7 @@
 .surface-item div {@include box-medium;background:#fff;box-shadow:$shadow400;}
 
 .design {}
-.design-head {overflow:hidden;background:url('/public/images/caleb-woods-182648-unsplash.jpg') no-repeat center center;background-size:cover;position:fixed;left:0;right:60%;top:0;bottom:0;z-index:1;}
+.design-head {overflow:hidden;background:url('/public/images/teemu-paananen-OOE4xAnBhKo-unsplash.jpg') no-repeat center center;background-size:cover;position:fixed;left:0;right:60%;top:0;bottom:0;z-index:1;}
 .design-head.is-scrolled {right:50%;transition: all 1s $bezier-base .2s;}
 .design-body {width:50%;max-width:40rem;margin-left:50%;padding:6rem;}
 
@@ -53,10 +53,10 @@
   position: absolute;
   right: 6vmax;
   top: 6vmax;
-  z-index: 10;
+  z-index: 2;
 }
 .stamp p {
-  font-size: 2.5rem;
+  font-size: $subhead;
   color: $color-primary;
   margin: 0;
 }
@@ -68,7 +68,7 @@
   left: 50%;
   top: 50%;
   background-color: transparent;
-          animation: rotation 9.5s linear infinite;
+  animation: rotation 9.5s linear infinite;
 }
 .stamp .circle span {
   font-size: 1rem;
@@ -171,14 +171,10 @@
 .design-article-icon {
   @include box-small;
 }
-.design-article-avatar {@include box-small;margin-right:.5rem;}
-.design-article-avatar img {width:auto;height:80px;}
-.design-article-avatar-large {@include box-large;margin-right:.5rem;}
-.design-article-avatar-large img {width:auto;height:80px;}
-.design-article-avatar-medium {@include box-medium;margin-right:.5rem;}
-.design-article-avatar-medium img {width:auto;height:80px;}
-.design-article-avatar-small {@include box-tiny;margin-right:.5rem;}
-.design-article-avatar-small img {width:auto;height:80px;}
+.design-article-avatar-large {@include box-large;background:url(/public/images/caleb-woods-182648-unsplash.jpg) no-repeat center center;background-size:auto 100%;}
+.design-article-avatar-medium {@include box-medium;background:url(/public/images/caleb-woods-182648-unsplash.jpg) no-repeat center center;background-size:auto 100%;}
+.design-article-avatar-small {@include box-small;background:url(/public/images/caleb-woods-182648-unsplash.jpg) no-repeat center center;background-size:auto 100%;}
+.design-article-avatar-tiny {@include box-tiny;background:url(/public/images/caleb-woods-182648-unsplash.jpg) no-repeat center center;background-size:auto 100%;}
 .design-article-primary {@include button-primary;}
 .design-article-secondary {@include button-secondary;}
 .design-article-tertiary {@include button-tertiary;}
