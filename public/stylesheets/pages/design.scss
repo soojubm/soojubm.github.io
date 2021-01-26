@@ -168,9 +168,7 @@
 }
 
 
-.design-article-icon {
-  @include box-small;
-}
+.design-article-icon {@include box-small;}
 .design-article-avatar-large {@include box-large;background:url(/public/images/caleb-woods-182648-unsplash.jpg) no-repeat center center;background-size:auto 100%;}
 .design-article-avatar-medium {@include box-medium;background:url(/public/images/caleb-woods-182648-unsplash.jpg) no-repeat center center;background-size:auto 100%;}
 .design-article-avatar-small {@include box-small;background:url(/public/images/caleb-woods-182648-unsplash.jpg) no-repeat center center;background-size:auto 100%;}
@@ -179,10 +177,9 @@
 .design-article-secondary {@include button-secondary;}
 .design-article-tertiary {@include button-tertiary;}
 .design-article-text {@include button-text;}
-
-.design-article-primary-small {@include box-small;@include button-primary;padding:$padding100;font-size:$caption;}
-.design-article-secondary-small {@include box-small;@include button-secondary;padding:$padding100;font-size:$caption;}
-.design-article-tertiary-small {@include box-small;@include button-tertiary;padding:$padding100;font-size:$caption;}
+.design-article-primary-small {@include button-primary;padding:$padding100;font-size:$caption;}
+.design-article-secondary-small {@include button-secondary;padding:$padding100;font-size:$caption;}
+.design-article-tertiary-small {@include button-tertiary;padding:$padding100;font-size:$caption;}
 .design-article-text-small {@include button-text;padding:$padding100;font-size:$caption;}
 
 

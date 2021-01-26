@@ -29,7 +29,7 @@
 
 .icon-ribbon {}
 .icon-ribbon:before {content: '';display: block;width:8px;height:12px;background:var(--gray800);margin:6px auto 0;}
-.icon-ribbon:after {content: '';display: block;width:8px;height:8px;background:var(--gray0);margin:-2px auto 0;transform: rotate(45deg);}
+.icon-ribbon:after {content: '';display: block;width:8px;height:8px;background:var(--gray100);margin:-2px auto 0;transform: rotate(45deg);}
 
 .icon-search {}
 .icon-search:before {content: '';display: block;width:10px;height:10px;border-radius:50%;margin:0px auto 0;border:2px solid var(--gray800);transform:translateX(-1px)}
@@ -61,7 +61,6 @@
 .icon-chevron.is-left {margin:0 0 0 3px;transform:rotate(135deg);}
 .icon-chevron.is-up {margin-top:4px;transform:rotate(-135deg);}
 .icon-chevron.is-down {margin-top:-2px;transform:rotate(45deg);}
-.icon-arrow0 {display:inline-block;padding:3px;border:solid var(--gray800);border-width:0 2px 2px 0;transform:rotate(-45deg);}
 
 .icon-bullet {
   display: inline-block;
@@ -104,7 +103,6 @@
 .icon-more {display:block;width:3px;height:3px;margin:4px auto;background:var(--gray800);border-radius:50%;position:relative;}
 .icon-more::before {content:'';display:block;width:3px;height:3px;background:inherit;border-radius:50%;position: absolute;top:-5px;left:50%;margin-left:-1.5px;}
 .icon-more::after {content:'';display:block;width:3px;height:3px;background:inherit;border-radius:50%;position: absolute;top:5px;left:50%;margin-left:-1.5px;}
-
 
 // .icon-home {display:inline-block;position:relative;}
 // .icon-home span:nth-of-type(1):before {content:'';display:block;width:10px;height:10px;background:var(--gray600);transform:rotate(45deg);position:absolute;left:2px;top:-9px;}

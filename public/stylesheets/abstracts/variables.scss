@@ -1,12 +1,8 @@
 :root {
   --fontstack: 'Asap', 'AritaDotum', 'Apple SD Gothic Neo', sans-serif;
-  --space: 1rem;
-
   // ! fontSize
   --weight700: bold;
   --weight400: normal;
-  --weight200: light;
-
   // ! colours
   --gray0: #fff; // white for dark theme
   --gray100: #f1f5f6; // bg
@@ -36,7 +32,6 @@ $cell-medium: 48px;
 $cell-small: 32px;
 $cell-tiny: 16px;
 
-
 // ! typhography
 $headline: 3rem;
 $title: 2rem;
@@ -61,7 +56,6 @@ $color-kakao: #ffdf00;
 
 $padding100: 4px 1rem 5px; // 32
 $padding200: 9px 1.5rem 11px; // 버튼, 텍스트인풋 48
-$padding400: 1.5rem 2rem;
 
 $radius400: 4px;
 
@@ -84,71 +78,42 @@ $zindex-tooltip: 8;
 $height-header: 56px;
 
 
+
+@mixin truncate {white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+@mixin truncate-multi {@include truncate;height:2.7em;white-space:normal;word-wrap:break-word;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;}
+
 @mixin container {
   border: $border100;
   border-radius: $radius400;
   box-shadow: $shadow400;
 }
 
-
-
-.linebreaker-desktop {
-  display:block;
-  @media (--viewport-small) {display:inline;}
-}
-.linebreaker-mobile {
-  display:inline;
-  @media (--viewport-small) {display:block;}
-}
-
-
-
-
-
-@mixin size($width, $height: $width) {width: $width;height: $height;}
-
-@mixin fixed-bottom {}
 @mixin image-centered {width:auto;height:auto;max-width:150%;max-height:150%;margin:auto;position:absolute;left:0;right:0;top:0;bottom:0;}
 
-@mixin truncate {white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-@mixin truncate-multi {@include truncate;height: 2.7em;white-space: normal;word-wrap: break-word;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;}
-
-
-// layout 유동성을 위해 centered mixin은 layout의 유동성을 해친다.
-@mixin box {
+// layout 유동성을 위해. centered mixin은 layou의 유동성을 해친다.
+// ! box-small의 display:flex가 hidden 속성과 충돌
+@mixin box($cell) {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-sizing: border-box;
-  background-color: var(--gray100);
+  width:$cell;
+  height:$cell;
   overflow: hidden;
+  background-color: var(--gray100);
   border-radius: $radius400;
+  box-sizing: border-box;
   position: relative;
-  // &:hover {
-  //   background:darken(var(--gray100), 5%)
-  // }
-  // &:after {
-  //   content: '';
-  //   position:absolute;
-  //   left: 4px;
-  //   right: 4px;
-  //   top: 4px;
-  //   bottom:4px;
-  //   border-radius: 4px;
-  // }
 }
-// @mixin box($cell) {width:$cell;height:$cell;}
-@mixin box-large {@include box;width:$cell-large;height:$cell-large;}
-@mixin box-medium {@include box;width: $cell-medium;height: $cell-medium;}
-@mixin box-small {@include box;width: $cell-small;height: $cell-small;}
-@mixin box-tiny {@include box;width: $cell-tiny;height: $cell-tiny;}
+@mixin box-large {@include box($cell-large);}
+@mixin box-medium {@include box($cell-medium);}
+@mixin box-small {@include box($cell-small);}
+@mixin box-tiny {@include box($cell-tiny);}
 
 @mixin clearfix {
   &:after {content: '';display:block;clear:both;}
 }
 
 
-// ! box-small의 display:flex가 hidden 속성과 충돌
 
 @mixin grid-container {
   width: 100%;
@@ -158,4 +123,14 @@ $height-header: 56px;
     padding-right: padding(xs);
     padding-left: padding(xs);
   }
+}
+
+
+.linebreaker-desktop {
+  display:block;
+  @media (--viewport-small) {display:inline;}
+}
+.linebreaker-mobile {
+  display:inline;
+  @media (--viewport-small) {display:block;}
 }
