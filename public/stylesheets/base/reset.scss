@@ -64,9 +64,9 @@ ol li ol li:before {content: counter(sub-list-item,lower-alpha) '.';}
 
 .off-screen {display:none;width:0;height:0;overflow:hidden;opacity:0;visibility:hidden;}
 
-@media (--viewport-small) {
-  html {font-size:12px;}
-}
+// @media (--viewport-small) {
+//   html {font-size:12px;}
+// }
 
 .browser {text-align:center;padding:2rem;background:var(--gray0);box-shadow:2px -2px 16px -4px rgba(0,0,0,.5);position:fixed;left:0;right:0;bottom:0;z-index:7;}
 

@@ -2,7 +2,7 @@
 .step-item {margin:1rem 0;padding-left:3.5rem;position:relative;}
 .step-item-icon {@include box-small;position:absolute;left:0;}
 .step-item-title {font-size:1rem;line-height:$cell-small;}
-.step-item-description {margin:.25rem 0 0 0;font-size:$caption;line-height:1.5;}
+.step-item-description {font-size:$caption;line-height:1.5;}
 .step-space {display:none;margin:-.5rem 0 0 0;}
 .step-space-dot {float:left;display:block;width:3px;height:3px;margin:21px 2px;border-radius:50%;background:var(--gray400);}
 
