@@ -11,7 +11,7 @@
 .terms-body h2 {margin:4rem 0 1rem 0;@include subhead;}
 .terms-body p {}
 
-.terms-sidebar {width:100%;max-width:320px;background:var(--gray0);padding:8rem 1.5rem;border-right:1px solid var(--gray100);box-sizing:border-box;overflow-y:auto;position:fixed;top:0;bottom:0;z-index:1;}
+.terms-sidebar {width:100%;max-width:320px;background:var(--gray0);padding:8rem 1.5rem;border-right:$border100;box-sizing:border-box;overflow-y:auto;position:fixed;top:0;bottom:0;z-index:1;}
 .terms-sidebar a {display:block;line-height:40px;}
 
 @media (--viewport-large) {

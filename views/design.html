@@ -61,7 +61,8 @@
     <article class="design-article typography">
       <h1 class="design-article-title">Typhography</h1>
       <!-- <button class="design-article-more">View All</button> -->
-      <p class="design-article-description">1rem을 14px로 조정했습니다. 1rem은 12px입니다. 기본값인 16px로 사용하되 기본 폰트 사이즈를 사용해야 하는 경우 .875rem를 적용하는 방법을 고민하고 있습니다. 소숫점 픽셀이 발생하고 16px 그리드를 적극적으로 사용하기 위해서입니다. title-2rem/subhead-1.25rem/body-1rem/caption-.875rem/숫자에1.75rem케이스있음. Asap와 무게가 살짝 다르고, 마이너스 기호가 어색하다.</p>
+      <p class="design-article-description">1rem을 14px로 정의했습니다. title-2rem/subhead-1.25rem/body-1rem/caption-.875rem/숫자에1.75rem케이스있음. Asap와 무게가 살짝 다르고, 마이너스 기호가 어색하다.</p>
+      <!-- <p> 기본값인 16px로 사용하되 기본 폰트 사이즈를 사용해야 하는 경우 .875rem를 적용하는 방법을 고민하고 있습니다. 소숫점 픽셀이 발생하고 16px 그리드를 적극적으로 사용하기 위해서입니다. </p> -->
       <div style="display:flex;justify-content:space-between;">
         <div style="width:calc(50% - 0.5rem);padding:2rem;box-sizing:border-box;background:var(--gray100);border-radius:4px;">
           <i style="display:block;margin-bottom:.5rem;width:16px;height:16px;border-radius:4px;background:cadetblue"></i>
@@ -76,6 +77,7 @@
         <h1 style="font-size:2rem;font-weight:bold;">헤드라인</h1>
       </div>
       <div style="margin:1rem 0 0 0;padding:2rem;background:var(--gray100);border-radius:4px;">
+        <span>안녕</span>
         <h4 class="typography-subhead" style="margin:0 0 1rem;font-size:1.25rem;line-height:1.2;font-weight:bold;"><small style="display:block;margin:0 0 .5rem 0;font-size:1rem;">선약이 있어서 ✋</small>자아실현은 못할 것 같아요.</h4>
         <p class="typography-paragraph" style="margin: 0 0 1.5rem">서브헤드와 디스크립션 혹은 패러그라프는 이렇게 사용하세요. 서브헤드와 디스크립션 혹은 패러그라프는 이렇게 사용하세요. 서브헤드와 디스크립션 혹은 패러그라프는 이렇게 사용하세요. 서브헤드와 디스크립션 혹은 패러그라프는 이렇게 사용하세요.</p>
         <time class="typography-caption">10 January, 2020</time>
@@ -152,7 +154,7 @@
         </figure>
         <figure class="color-item is-primary200">
           <div></div>
-          <figcaption>green800 (primary)</figcaption>
+          <figcaption>green800</figcaption>
         </figure>
         <!-- <figure class="color-item is-red100">
           <div></div>
@@ -160,7 +162,7 @@
         </figure> -->
         <figure class="color-item is-red800">
           <div></div>
-          <figcaption>red800 (danger)</figcaption>
+          <figcaption>red800</figcaption>
         </figure>
         <!-- <figure class="color-item is-gradient">
           <div></div>
@@ -323,7 +325,7 @@
         <button class="design-article-icon"><i class="icon-o"></i></button>
         <button class="design-article-icon"><i class="icon-caret"></i></button>
         <button class="design-article-icon"><i class="icon-hamberger"></i></button>
-        <button class="design-article-icon"><div style="display:flex;align-items:center;background:crimson"><i class="icon-check"></i></div></button>
+        <button class="design-article-icon"><i class="icon-check"></i></button>
         <button class="design-article-icon"><i class="icon-ribbon"></i></button>
         <button class="textfield-button copyurl js-copy" type="button" tabindex="0">
           <span hidden class="bx--assistive-text bx--copy-btn__feedback">Copied!</span>
@@ -344,13 +346,12 @@
       <h1 class="design-article-title">Buttons</h1>
       <ul class="design-article-description">
         <li>간단한 서비스라면 메인 버튼 2가지와 텍스트 버튼 1가지로 충분하다.</li>
-        <li>아웃라인 버튼(고스트 버튼)을 트랜디하지 않아서(2021년) 제거하였는데, 회색 배경에서 사용하기 힘들고 세컨더리 버튼으로는 어포던스가 떨어지는 것이 고민이다.</li>
-        <li>시멘틱한 네이밍(solid / outline / plain / text)은 위와 같은 스타일의 수정이 일어날 때에 대응해야 하는 코드가 많아진다.</li>
+        <li>아웃라인 스타일을 트랜디하지 않아서(2021년) 제거하였는데, 회색 배경에서 사용하기 힘들고 세컨더리 버튼으로는 어포던스가 떨어지는 것이 고민이다.</li>
+        <li>시멘틱한 네이밍(solid / outline / plain / text)은 스타일의 수정이 일어날 때에 대응해야 하는 코드가 많아진다.</li>
         <li>아이콘 버튼</li>
         <li>appearance = link / subtle / primary / subtle-link / warning /danger / </li>
-        <li>status disabled / selected / loading</li>
-        <li>icon before / after</li>
-        <li>size</li>
+        <li>status = disabled / selected / loading</li>
+        <li>icon = before / after</li>
         <li>space = compact / fullwidth</li>
       </ul>
       <!-- <a class="button" href="#">Anchor button</a>
@@ -380,10 +381,11 @@
         <br />
         <h6>huge 사이즈의 버튼이 하나는 필요해보인다. 크기는 이 정도. 색은 임시로</h6>
         <div role="group">
-          <button class="design-article-primary" style="min-width:320px;border:transparent;padding:12px 0 15px;font-size:1.25rem;">구매 하러가기
-            <div class="cta-arrow">
+          <button class="design-article-primary" style="min-width:320px;border:transparent;padding:12px 0 15px;font-size:1.25rem;">
+            알림 신청하기
+            <!-- <div class="cta-arrow">
               <div class="line"></div>
-            </div>
+            </div> -->
           </button>
         </div>
         <br />
@@ -496,27 +498,27 @@
 
     <article class="design-article">
       <h1 class="design-article-title">Textfield</h1>
-      <p class="design-article-description">Input text, Textarea, Select, with Icon, with Unit, with Button</p>
+      <p class="design-article-description">Input text, Textarea, Selectbox, with Icon, with Unit, with Button</p>
       <div class="quantity js-quantity">
         <input class="quantity-input js-quantity-input js-number-input" name="quantity1" type="number" value="0" min="5" max="20" >
         <!-- <input type="text" inputmode="numeric" pattern="[0-9]*"> -->
         <button class="quantity-decrement js-quantity-decrement"><i class="icon-minus"></i></button>
         <button class="quantity-increment js-quantity-increment"><i class="icon-plus"></i></button>
       </div>
-
-      <div class="textfield is-invalid" style="margin:2rem 0;">
+      <br />
+      <div class="textfield is-invalid">
         <label class="textfield-label" for="abc123">레이블 <abbr aria-label="optional" style="font-size:.875rem;">선택입력</abbr></label>
         <input class="textfield-input js-input-test" type="text" id="abc123" placeholder="Textarea Placeholder..." value="soojubm@gmail.com" aria-describedby="error" aria-invalid="true" />
         <!-- <button class="textfield-button"><i class="icon-close"></i></button> -->
         <small class="textfield-helper --is-error">이미 사용 중인 이메일입니다.</small>
       </div>
-
-      <div class="textfield" style="margin:2rem 0;">
-        <label class="textfield-label" for="search1">텍스트에어리어 레이블</label>
+      <br />
+      <div class="textfield">
+        <label class="textfield-label" for="search1">텍스트에어리어</label>
         <small class="textfield-byte"><b>0 KB</b> / 100 KB</small>
         <textarea class="textfield-input" rows="3" placeholder="Textarea Placeholder..."></textarea>
       </div>
-
+      <br />
       <div class="textfield-group" role="group" style="justify-content:space-between;">
         <div class="textfield" style="width:calc(50% - 0.5rem)">
           <label class="textfield-label" for="date-start"><i class="">체크인</i></label>
@@ -530,7 +532,15 @@
         </div>
       </div>
       <br />
-      <div class="textfield is-text" style="margin:2rem 0;">
+      <div class="textfield">
+        <label class="textfield-label" for="select-label">셀렉트박스</label>
+        <select class="textfield-input" name="select-select" id="select-select">
+          <option class="select-option" value="select-option1">Choose an option</option>
+        </select>
+        <i class="selectbox-indicator icon-caret"></i>
+      </div>
+      <br />
+      <div class="textfield is-text">
         <label class="textfield-label" for="select-label">Sort by</label>
         <select class="textfield-input" name="select-select" id="select-select">
           <option class="select-option" value="select-option1">Choose an option</option>
@@ -593,9 +603,9 @@
       </div>
     </article> -->
 
-    <!-- <article class="design-article">
+    <article class="design-article">
       <h1 class="design-article-title">Dropdown</h1>
-      <p class="design-article-description">오른쪽 정렬되었을 때 상태가 필요합니다. 드롭업 상태가 필요할까요?</p>
+      <p class="design-article-description">오른쪽 정렬과 드롭업에 관한 것이 필요할까? 우선은 필요없다. min-width로 cell을 사용하면 셀 내부 텍스트가 늘어나도 대응할 있다.</p>
       <div class="dropdown">
         <button class="dropdown-trigger js-toggle" aria-haspopup="menu" aria-expanded="false">
           <span class="dropdown-trigger-text">드롭다운</span>
@@ -606,7 +616,7 @@
           <a class="dropdown-menu-link" href="" disabled>프로필 관리</a>
           <a class="dropdown-menu-link" href="">고객센터</a>
           <hr class="dropdown-menu-divider" />
-          <a class="dropdown-menu-link" href="">수줍이에서 로그아웃</a>
+          <a class="dropdown-menu-link" href="">로그아웃</a>
         </menu>
       </div>
       <div class="dropdown">
@@ -618,7 +628,7 @@
           <a class="dropdown-menu-link" href="">삭제</a>
         </menu>
       </div>
-    </article> -->
+    </article>
 
     <article class="design-article">
       <h1 class="design-article-title">File Uploader</h1>
@@ -690,7 +700,7 @@
         <button class="share-kakao">kakao</button>
         <div class="share-copy textfield is-small">
           <input class="share-copy-url textfield-input" type="text" value="https://newneek.co/post/jadebabo" readonly />
-          <button class="share-copy-button copyurl js-copy" type="button" tabindex="0">
+          <button class="share-copy-button copyurl js-copy" type="button" tabindex="0" style="border-color:var(--color-primary);background:#fff;">
             주소 복사하기
           </button>
         </div>
@@ -900,8 +910,8 @@
         <i class="rating2-star">★</i>
         <span class="rating2-score">4.3</span>
       </div>
-      <hr style="margin:2rem 0;" />
-      <dl class="row1 is-pull" style="display: flex;justify-content: space-between;">
+      <hr style="margin:1rem 0;" />
+      <!-- <dl class="row1 is-pull" style="display: flex;justify-content: space-between;">
         <dt>의사소통</dt>
         <dd style="display: flex;align-items: center;">
           <div class="graph-item is-horizontal">
@@ -909,7 +919,7 @@
             <div class="graph-item-bar"></div>
           </div>
         </dd>
-      </dl>
+      </dl> -->
       <dl style="display:block;margin:1rem 0;">
         <dt>클라우드 스토리지</dt>
         <dd style="display:block;align-items: center;margin-top:-.5rem;">

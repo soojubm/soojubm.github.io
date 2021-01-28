@@ -27,7 +27,7 @@
 .footer-terms {margin:2rem 0 1rem 0;}
 .footer-terms-link {margin:0 1rem 0 0;}
 .footer-address {float:left;width:50%;}
-.footer-address:before {content:' ';display:block;height:inherit;/*border-top:1px solid var(--gray200);*/position:absolute;left:-50%;right:-50%;top:0;bottom:0;z-index:-1;}
+.footer-address:before {content:' ';display:block;height:inherit;/*border-top:$border150;*/position:absolute;left:-50%;right:-50%;top:0;bottom:0;z-index:-1;}
 .footer-address-logo {display:block;margin:1rem 0;filter:grayscale(100%);opacity:.5;}
 .footer-address-info {}
 .footer-address-slogan {font-size:$subhead;}

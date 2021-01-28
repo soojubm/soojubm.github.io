@@ -33,8 +33,6 @@ code {padding:1rem 1.5rem;background:var(--gray100);border-radius:$radius400;}
 html {min-width:320px;height:100%;font:14px/1.8 var(--fontstack);color:var(--gray800);-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overscroll-behavior:contain;}
 body {overflow-x:hidden;}
 
-h6 {margin:0 0 .5rem 0;font-size:$caption;}
-
 blockquote {margin:2rem 0;padding-left:2rem;color:var(--gray400)}
 
 table {width:100%;border-collapse:collapse;border-spacing:0;border-left-style:hidden;border-right-style:hidden;}
@@ -47,10 +45,10 @@ table .right {text-align:right;}
 
 ul {}
 ul li {margin:.25rem 0;padding: 0 0 0 1rem;position:relative;}
-ul li:before {content:'';display:block;width:4px;height:4px;border-radius:$radius400;background:var(--gray600);position:absolute;left:0;top:.875rem;}
+ul li:before {content:'';display:block;width:4px;height:4px;background:var(--gray600);position:absolute;left:0;top:.875rem;}
 ul li ul {margin:0 0 .5rem 0;}
 ul li ul li {}
-ul li ul li:before {content:'';}
+ul li ul li:before {content:'';border-radius:$radius400;}
 
 ol {}
 ol li {margin:.25rem 0;padding: 0 0 0 1.25rem;position:relative;counter-increment:listitem;}

@@ -17,7 +17,7 @@
 .profile-user-toggle {display:none;width:100%;margin:1rem 0;text-align:center;}
 .profile-user-toggle i {display:inline-block;vertical-align:middle;margin-left:.5rem;}
 .profile-user-category {padding:4px 16px;background:coral;font-size:$caption;color:var(--gray0);border-radius:50px;}
-.profile-user-address {margin:1rem 0 1.25rem 0;padding:1rem 0 1rem 0;border-top:1px solid #e9e9e6;border-bottom:1px solid #e9e9e6;}
+.profile-user-address {margin:1rem 0 1.25rem 0;padding:1rem 0 1rem 0;border-top:$border100;border-bottom:$border100;}
 .profile-user-address div img {width:1rem;margin-right:.5rem;opacity:.4;}
 .profile-user-address i {margin:0 8px 0 0;font-size:14px;color:var(--gray400);vertical-align:middle;}
 .profile-user-hashtags {display:flex;flex-wrap:wrap;}

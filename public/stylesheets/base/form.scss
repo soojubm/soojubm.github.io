@@ -64,7 +64,7 @@ input[type=email]:invalid {border-color:crimson;}
 .checkbox,.radio {display:block;position:relative;}
 input[type=checkbox] {width:0;height:0;opacity:0;position:absolute;outline:auto;}
 input[type=checkbox] + label {display:flex;align-items:center;height:2.25rem;line-height:16px;padding-left:2rem;position:relative;}
-input[type=checkbox] + label:before {content:'';display:block;width:16px;height:16px;border-radius:$radius400;border:$border100;box-sizing:border-box;position:absolute;left:0;}
+input[type=checkbox] + label:before {content:'';display:block;width:16px;height:16px;border-radius:$radius400;border:$border150;box-sizing:border-box;position:absolute;left:0;}
 input[type=checkbox] + label:after {content:'';display:none;width:8px;height:2px;border-left:2px solid;border-bottom:2px solid;border-color:var(--gray200);position:absolute;left:3px;top:40%;transform:rotate(-45deg);}
 input[type=checkbox]:checked + label:before {border-color:$color-primary;animation:ripple2 0.2s linear forwards;}
 input[type=checkbox]:checked + label:after {display:block;border-color:$color-primary;}
@@ -78,7 +78,7 @@ input[type=checkbox][data-indeterminate=true] + label:after {display:block;backg
 
 input[type=radio] {width:0;height:0;opacity:0;position:absolute;outline:auto;}
 input[type=radio] + label {display:flex;align-items:center;height:2.25rem;line-height:16px;padding-left:2rem;position:relative;}
-input[type=radio] + label:before {content:'';display:block;width:16px;height:16px;border-radius:50%;border:$border100;box-sizing:border-box;position:absolute;left:0;}
+input[type=radio] + label:before {content:'';display:block;width:16px;height:16px;border-radius:50%;border:$border150;box-sizing:border-box;position:absolute;left:0;}
 input[type=radio] + label:after {content:'';display:none;width:6px;height:6px;border-radius:50%;background:var(--gray200);position:absolute;left:5px;transition:all 0.2s;}
 input[type=radio]:checked + label:before {border-color:$color-primary;animation:ripple2 0.2s linear forwards;}
 input[type=radio]:checked + label:after {display:block;background:$color-primary;}
@@ -100,7 +100,7 @@ input[type=checkbox]:checked + label + * {display:block;margin:0.25rem 0 1.5rem 
 
 
 .switch {display:block;position:relative;}
-input[type=checkbox][role=switch] + label {display:block;height:20px;line-height:20px;padding-left:64px;cursor:pointer;}
+input[type=checkbox][role=switch] + label {display:block;height:20px;line-height:18px;padding-left:64px;font-weight:bold;cursor:pointer;}
 input[type=checkbox][role=switch] + label:before {content:'';display:block;width:48px;height:20px;border:none;border-radius:$radius400;box-sizing:border-box;background:var(--gray200);position:absolute;left:0;top:0;transition:background .2s;}
 input[type=checkbox][role=switch] + label:after {content:'';display:block;/*18px*/width:16px;height:16px;border:none;border-radius:$radius400;background:var(--gray0);box-shadow:$shadow400;position:absolute;left:2px;top:2px;transition:left .2s;transform:rotate(0deg);}
 input[type=checkbox][role=switch]:checked + label {color:$color-primary;}
@@ -158,10 +158,10 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 
 .textfield.is-text {display:flex;align-items:center;}
 .textfield.is-text .textfield-input {width:auto;margin-left:1rem;margin-top:-.25rem;padding:0;background:none;border:none;box-shadow:none;color:$color-primary;}
-.textfield.is-text .selectbox-indicator {margin-bottom:5px;margin-left:.5rem;position:static;right:auto;bottom:auto;}
+.textfield.is-text .selectbox-indicator {margin-left:.5rem;position:static;right:auto;bottom:auto;}
 
 .is-invalid .textfield-label {color:$red800;}
-.is-invalid .textfield-input {border-color:$red800;}
+.is-invalid .textfield-input {border-color:$red800;color:$red800;}
 .is-invalid .textfield-byte {color:$red800;}
 .is-invalid .textfield-byte b {color:$red800;}
 
@@ -176,7 +176,7 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 
 .filter {width:320px;background:var(--gray0);overflow-y:scroll;margin:0 auto;padding:2rem 3rem;position:fixed;right:0;top:0;bottom:0;z-index:1;}
 .filter-title {font-size:1.25rem;}
-.filter-fieldset {margin:1.5rem 0;padding:1.75rem 0 2rem 0;border-bottom:1px solid #e9e9e6;position:relative;}
+.filter-fieldset {margin:1.5rem 0;padding:1.75rem 0 2rem 0;border-bottom:$border100;position:relative;}
 .filter-fieldset-legend {width:100%;line-height:1;position:absolute;top:0;}
 .filter-fieldset-description {margin:0 0 8px 0;}
 .filter-foot {}
@@ -202,7 +202,7 @@ input[type=file] + label:after {display:none;}
 .file-attachment-item-image img {width:auto;height:auto;max-width:auto;min-height:80px;margin:auto;position:absolute;left:0;right:0;top:0;bottom:0;}
 .file-attachment-item-name {display:block;margin:.75rem 0 -.25rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 .file-attachment-item-size {color:var(--gray400);}
-.file-attachment-item-delete {position:absolute;right:0;top:0;}
+.file-attachment-item-delete {@include box-small;position:absolute;right:0;top:0;}
 .file-attachment-item-delete:hover {background:#f9f9f6;}
 
 
@@ -290,7 +290,7 @@ progress:not([value]) {
       display: flex;
       justify-content: space-between;
       padding: .75rem 2rem .75rem 3.5rem;
-      border: $border100;
+      border: $border150;
       background: var(--gray100);
       cursor: pointer;
       &:before {background:var(--gray0);left:1.5rem;}
@@ -299,11 +299,12 @@ progress:not([value]) {
     input:checked + label {
       background: var(--gray0);
       border-bottom: 0;
+      border-radius: 0;
     }
     input:checked + label + div {
       margin: 0;
       padding: 0 2rem 2rem;
-      border: $border100;
+      border: $border150;
       border-top: 0;
     }
   }

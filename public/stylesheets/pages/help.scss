@@ -28,7 +28,7 @@
 .is-active .help-board-item-content {display:block;}
 .is-active .help-feedback {display:flex;}
 
-.help-feedback {display:none;align-items:center;margin:2rem auto 0;padding:1.5rem 0;border-top:1px solid var(--gray100);position:relative;animation:fadeup .4s ease;}
+.help-feedback {display:none;align-items:center;margin:2rem auto 0;padding:1.5rem 0;border-top:$border100;position:relative;animation:fadeup .4s ease;}
 .help-feedback-body {margin:0 1rem 0 0;}
 .help-feedback-button {margin:0 .25rem;padding-top:.25rem;padding-bottom:.25rem;}
 

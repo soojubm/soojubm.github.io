@@ -77,8 +77,6 @@ button[aria-current=page] {}
   &:disabled {color:var(--gray200);cursor:not-allowed;}
 }
 
-
-
 // ! backButton closeButton :: back close 아이콘은 어차피 단독으로 쓰이지 않는다!
 .danger-button {@include button;background:$red800;border:1px solid $red800;color:var(--gray0);}
 .success-button {@include button;background:$red800;border:1px solid $red800;color:var(--gray0);}
