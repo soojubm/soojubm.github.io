@@ -31,7 +31,7 @@ u:after {content:'';height:.6em;border-radius:$radius400;background:antiquewhite
 code {padding:1rem 1.5rem;background:var(--gray100);border-radius:$radius400;}
 
 html {min-width:320px;height:100%;font:14px/1.8 var(--fontstack);color:var(--gray800);-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overscroll-behavior:contain;}
-body {overflow-x:hidden;}
+body {overflow-x:hidden;letter-spacing:-.025rem;}
 
 blockquote {margin:2rem 0;padding-left:2rem;color:var(--gray400)}
 
