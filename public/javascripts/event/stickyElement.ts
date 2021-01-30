@@ -9,8 +9,6 @@ const stickyElement = ({ targetElement, addClass }) => {
   let elementHeight = stickyElement.offsetHeight
   let isScrolling
 
-  console.log('kgkg', targetElement, elementHeight)
-
   function hasScrolled() {
     isScrolling && window.cancelAnimationFrame(isScrolling)
     isScrolling = window.requestAnimationFrame(() => {
@@ -18,6 +16,7 @@ const stickyElement = ({ targetElement, addClass }) => {
       const isStuck = window.pageYOffset > stickyElement.offsetTop
       if (isStuck) {
         document.body.classList.add(addClass)
+        // document.body.style.paddingTop = `${elementHeight}px`
       } else {
         document.body.classList.remove(addClass)
       }
@@ -32,8 +31,6 @@ const stickyElement = ({ targetElement, addClass }) => {
 
   window.addEventListener('scroll', hasScrolled)
 }
-
-// body.style.paddingTop = `${elementHeight}px`
 
 // var isScrolling;
 // window.addEventListener('scroll', (event) => {

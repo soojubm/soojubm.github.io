@@ -2,6 +2,7 @@
 @font-face {font-family: 'AritaDotum';src:url(/public/webfonts/Arita-dotum-SemiBold_OTF.woff);font-weight:bold;}
 @font-face {font-family: 'Asap';src: url(/public/webfonts/Asap-Regular.otf); }
 @font-face {font-family: 'Asap';font-weight:bold;src:url(/public/webfonts/Asap-Medium.otf); }
+// @font-face {font-family: 'MaruBuri';font-weight:bold;src:url(/public/webfonts/MaruBuri-Regular.ttf); }
 // @font-face {font-family: 'DunkelSans';src: url(/public/webfonts/Dunkelsansv0.5-Heavy.woff2); }
 @font-face {font-family: 'Arvana';font-weight:400;src: url(/public/webfonts/Arvanav0.3-Regular.woff2); }
 @font-face {font-family: 'Arvana';font-weight:800;src: url(/public/webfonts/Arvanav0.3-Black.woff2); }
@@ -31,7 +32,7 @@ u:after {content:'';height:.6em;border-radius:$radius400;background:antiquewhite
 code {padding:1rem 1.5rem;background:var(--gray100);border-radius:$radius400;}
 
 html {min-width:320px;height:100%;font:14px/1.8 var(--fontstack);color:var(--gray800);-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overscroll-behavior:contain;}
-body {overflow-x:hidden;letter-spacing:-.025rem;}
+body {overflow-x:hidden;letter-spacing:-.0125rem;}
 
 blockquote {margin:2rem 0;padding-left:2rem;color:var(--gray400)}
 

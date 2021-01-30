@@ -6,7 +6,7 @@
 .post-head-progress {display:none;height:3px;background:rgb(200,0,0);position:absolute;bottom:-3px;}
 
 .is-sticky-post-head.page-post {padding-top:200px;}
-.is-sticky-post-head .post-head {background:var(--gray0);box-shadow:$shadow400;text-align:left;position:fixed;left:0;right:0;top:0;z-index:7}
+.is-sticky-post-head .post-head {background:var(--gray0);box-shadow:$shadow400;text-align:left;position:fixed;left:0;right:0;top:0;z-index:8;}
 .is-sticky-post-head .post-head-category {display:none;}
 .is-sticky-post-head .post-head-headline {padding:1rem 5%;box-sizing:border-box;font-size:$subhead;text-align:center;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;}
 .is-sticky-post-head .post-head-date {display:none;}

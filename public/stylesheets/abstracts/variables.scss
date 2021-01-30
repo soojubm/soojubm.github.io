@@ -1,5 +1,5 @@
 :root {
-  --fontstack: 'Asap', 'AritaDotum', 'Apple SD Gothic Neo', sans-serif;
+  --fontstack: 'Arvana', 'AritaDotum', 'Apple SD Gothic Neo', sans-serif;
   // ! fontSize
   --weight700: bold;
   --weight400: normal;
@@ -62,7 +62,7 @@ $radius400: 4px;
 $shadow400: 0px 0px 2rem rgba(0, 0, 0, 0.125);
 $shadow450: 2px 4px 8px rgba(0, 0, 0, 0.2); // hover
 
-$border100: 1px solid var(--gray200); // button 빼고는 다 150인듯.. 그러면 
+$border100: 1px solid var(--gray100); // button 빼고는 다 150인듯.. 그러면 
 $border150: 1px solid var(--gray200);
 
 $bezier-base: cubic-bezier(0.455, 0.03, 0.515, 0.955);
