@@ -6,24 +6,23 @@ const tabMenu = () => {
       const { target }: any = event
       const tabs = target.parentNode.querySelectorAll('[role=tab]')
       const tabIndex = target.getAttribute('data-index')
-      const tabActiceBar = document.querySelector<HTMLElement>('.profile-tablist-active')
-
-      if (!tabs || !tabActiceBar) return
+      const tabIndicator = document.querySelector<HTMLElement>('.profile-tablist-indicator')
+      if (!tabs || !tabIndicator) return
 
       if (target.closest('[role=tab]')) {
-        // const targetWidth = target.getStyqq
+        tabIndicator.style.left = `${target.offsetLeft}px`
+        tabIndicator.style.width = getComputedStyle(target).width
 
-        tabActiceBar.style.left = `${target.offsetLeft}px`
         tabs.forEach(tab => tab.setAttribute('aria-selected', 'false'))
         target.setAttribute('aria-selected', 'true')
 
         target.parentNode.parentNode.querySelectorAll('[role=tabpanel]').forEach(element => {
-          element.setAttribute('aria-hidden', 'true')
           element.classList.add('hidden')
           element.setAttribute('aria-hidden', 'true')
+
           if (tabIndex === element.getAttribute('data-index')) {
-            element.setAttribute('aria-hidden', 'hidden')
             element.classList.remove('hidden')
+            element.setAttribute('aria-hidden', 'hidden')
           }
         })
       }

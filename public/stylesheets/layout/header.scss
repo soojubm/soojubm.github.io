@@ -18,13 +18,13 @@
 }
 
 .dropdown {position:relative;}
-.dropdown-trigger {@include box-small;}
+.dropdown-trigger {@include box-small;cursor:pointer;}
 .dropdown-trigger-caret {margin-left:.5rem;}
 .dropdown-menu {
   min-width:200px;
   width:auto;
   height:0;
-  padding:8px 0;
+  padding:.5rem 0;
   background:var(--gray0);
   border-radius: $radius400;
   box-shadow:$shadow400;
@@ -36,6 +36,7 @@
 }
 .dropdown-menu.is-visible {
   height:auto;
+  margin:.5rem 0 0 0;
   transform:scale(1);
 }
 .dropdown-menu-title {

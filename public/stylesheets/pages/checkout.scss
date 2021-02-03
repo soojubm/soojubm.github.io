@@ -57,9 +57,9 @@
 .checkout-payment {margin-top:4rem;}
 .checkout-payment-title {font-size:$subhead;font-weight:bold;}
 .checkout-payment-description {margin:1rem 0 2rem 0;}
-.checkout-payment-button {max-width:8rem;margin:0 1rem 0 0;padding:.25rem 2rem 1rem;border:$border100;border-radius:4px;text-align:center;position:relative}
+.checkout-payment-button {display:flex;margin:0 1rem 0 0;padding:.25rem 2rem 1rem;border:$border100;border-radius:4px;text-align:center;position:relative}
 .checkout-payment-button-emoji {display:block;margin-bottom:-.5rem;font-size:2rem;}
-.checkout-payment-button-check {display:none;position:absolute;right:16px;top:50%;border-color:#000;}
+.checkout-payment-button-check {position:absolute;right:16px;top:50%;border-color:#000;}
 
 .checkout-alert {display:flex;align-items:center;}
 .checkout-alert span {margin-right:.5rem;font-size:$subhead;}
@@ -77,7 +77,7 @@
 // .checkout-shipping-address-value {margin-left:3.5rem;font-size:$subhead;}
 
 
-@media (--viewport-small) {
+@media (--viewport-large) {
   .checkout {padding:0 5%;}
   .checkout-product {width:100%;margin:-2rem auto 4rem;padding:1.5rem 2rem;position:relative;right:auto;top:auto;}
   .checkout-shipping {max-width:100%;padding-right:0;}

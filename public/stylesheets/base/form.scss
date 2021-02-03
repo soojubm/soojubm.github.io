@@ -22,6 +22,10 @@ input:matches(
   -webkit-appearance:none;-moz-appearance:none;appearance:none;
 }
 
+textarea:focus, input:focus, button:focus {
+  outline: none;
+}
+
 
 
 

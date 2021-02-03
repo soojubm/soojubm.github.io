@@ -2,16 +2,10 @@
 	document.addEventListener('DOMContentLoaded', function(){
 		const target = document.querySelector('.horizental-text h1');
 		window.addEventListener('scroll', () => {
-			console.log('aaa');
 			let aaa = window.pageYOffset * 1 - 800;
-			console.log(window.pageYOffset, target.offsetTop, target.scrollHeight);
 			if(window.pageYOffset > target.offsetTop - target.clientHeight) {
 			}
 			target.style.right = aaa + 'px';
-			//console.log(window.pageYOffset, element.offsetTop);
-			//let aaa = (window.pageYOffset - element.offsetTop) * -1.5;
-			//let bbb = aaa > 0 ? -aaa : aaa;
-			//element.style.backgroundPosition = 'center ' + aaa + 'px'; 
 		});	
 	})
 </script>
@@ -80,15 +74,13 @@
 			</section>
 		</header>
 
-		<div class="profile-user-backdrop" hidden></div>
-		
 		<section class="profile-body">
 			<nav class="profile-tablist" role="tablist">
 				<button class="profile-tablist-tab" role="tab" aria-selected="true" data-index="1">웹사이트 <i class="profile-tablist-tab-badge">5</i></button>
 				<button class="profile-tablist-tab" role="tab" aria-selected="false" data-index="2">웹페이지 <i class="profile-tablist-tab-badge">5</i></button>
 				<button class="profile-tablist-tab" role="tab" aria-selected="false" data-index="4">케이스스터디 <i class="profile-tablist-tab-badge">1</i></button>
 				<button class="profile-tablist-tab" role="tab" aria-selected="false" data-index="3">빈 상태 <i class="profile-tablist-tab-badge">0</i></button>
-				<i class="profile-tablist-active"></i>
+				<i class="profile-tablist-indicator"></i>
 			</nav>
 			<div class="profile-display">
 				<p class="profile-display-status" role="status" hidden>Viewing 1,000 Projects</p>
