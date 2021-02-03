@@ -183,14 +183,10 @@
 .design-article-text-small {@include button-text;padding:$padding100;font-size:$caption;}
 
 
-
-
-
-
-
-
-.number {display:flex;}
+.number {display:flex;justify-content:center;}
 .number-card {display:flex;justify-content:center;align-items:center;width:48px;height:64px;background:var(--gray100);border-radius:4px;font-size:2rem;font-weight:bold;margin:0 .25rem;}
+
+
 .minicard {width:$cell-large;padding:1.5rem 0;text-align:center;}
 .minicard-emoji {@include box-large;font-size:3rem;}
 .minicard-value {margin:1rem 0 0;font-size:1rem;line-height:1;}

@@ -12,7 +12,8 @@
 .footer-scroll {position:fixed;bottom:1rem;right:1rem;z-index:8;}
 .footer-scroll-indicator {}
 .footer-scroll-indicator i {width:2px;height:8px;background:var(--gray800);margin:8px auto 0;animation:bounce 0.5s infinite alternate;transform:rotate(90deg);}
-.footer-scroll-top {@include box-small;box-shadow:$shadow400;}
+.footer-scroll-top {@include box-small;padding: 1rem 1rem calc(constant(safe-area-inset-bottom) + 1rem);
+	padding: 1rem 1rem calc(env(safe-area-inset-bottom) + 1rem);box-shadow:$shadow400;}
 .footer-scroll-top i {transform:rotate(-90deg);}
 .footer-scroll-bottom {display:none;}
 .footer-scroll-top .is-visible {right:50px;}
@@ -44,7 +45,7 @@
 	.subscribe {padding-left:5%;padding-right:5%;}
 	.subscribe-field {width:100%;}
 	.footer-sitemap {float:none;width:100%;position:relative;}
-	.footer-sitemap-item {float:left;width:25%;}
+	.footer-sitemap-item {float:left;width:100%;margin:1rem 0;}
 	.footer-terms {margin:2rem 0 1rem;}
 	.footer-address {float:none;width:100%;}
 }
