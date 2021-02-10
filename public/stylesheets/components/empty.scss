@@ -1,6 +1,6 @@
 // ? 부모에 flex-wrap이 있으면 자식에게 width: 100%을 주어야?
 .empty {width:100%;padding:4rem 0;box-sizing:border-box;}
-.empty-icon {@include box-large;margin:0 0 2rem;background:$red800;color:var(--gray0);font-size:40px;}
+.empty-icon {@include box-large;margin:0 0 2rem;background:var(--gray100);color:var(--gray0);font-size:40px;}
 .empty-title {@include subhead;}
 .empty-description {margin:1rem 0 2rem;}
 .empty-list {margin:2rem 0 4rem;}
@@ -9,3 +9,32 @@
 .empty-list-item span {}
 
 .empty-action {@include button-secondary;width:50%;max-width:20rem;}
+
+
+
+
+.error {
+  padding: 8rem 5%;
+  position: relative;
+}
+.error-title {
+  @include title;
+}
+.error-name {
+  font: 300px/1 'Courier New';
+  color: rgba(0, 0, 0, 0.05);
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translate(0, -20%);
+}
+.error-description {
+  margin: 1rem 0 4rem 0;
+}
+.error-control {
+}
+.error-control-back {
+}
+.error-control-home {
+  @include button-secondary;
+}

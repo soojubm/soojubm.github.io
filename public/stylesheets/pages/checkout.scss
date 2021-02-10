@@ -26,7 +26,7 @@
 .checkout-product-item-media {@include box-large;background:crimson;float:left;overflow:visible;margin-right:1.5rem;position:relative;}
 .checkout-product-item-name {font-size:1rem;color:var(--gray800);}
 .checkout-product-item-text {color:var(--gray400);}
-.checkout-product-item-price {font-size:$subhead;}
+.checkout-product-item-price {@include subhead;}
 .checkout-product-subtotal {display:flex;justify-content:space-between;margin:.5rem 0;}
 .checkout-product-subtotal-label {}
 .checkout-product-subtotal-value {}
@@ -37,13 +37,13 @@
 .checkout-product-total-label {}
 .checkout-product-total-value {}
 
-.checkout-shipping {display:flex;flex-wrap:wrap;max-width:640px;margin-top:0;}
+.checkout-shipping {display:flex;flex-wrap:wrap;justify-content:space-between;max-width:640px;margin-top:0;}
 .checkout-shipping-title {width:100%;margin:1rem 0;font-size:$subhead;font-weight:bold;}
-.checkout-shipping-name {width:48%;margin-right:4%;}
+.checkout-shipping-name {width:calc(50% - .5rem);}
 // .checkout-shipping-name-emoji {@include item-emoji;}
 // .checkout-shipping-name-label {@include item-label;}
 // .checkout-shipping-name-value {@include item-value;}
-.checkout-shipping-phone {width:48%;}
+.checkout-shipping-phone {width:calc(50% - .5rem);}
 // .checkout-shipping-phone-emoji {@include item-emoji;}
 // .checkout-shipping-phone-label {@include item-label;}
 // .checkout-shipping-phone-value {@include item-value;}
@@ -57,9 +57,9 @@
 .checkout-payment {margin-top:4rem;}
 .checkout-payment-title {font-size:$subhead;font-weight:bold;}
 .checkout-payment-description {margin:1rem 0 2rem 0;}
-.checkout-payment-button {display:flex;margin:0 1rem 0 0;padding:.25rem 2rem 1rem;border:$border100;border-radius:4px;text-align:center;position:relative}
+.checkout-payment-button {width:100%;margin:.25rem 0;padding:$padding200;border:$border100;border-radius:4px;text-align:left;position:relative}
 .checkout-payment-button-emoji {display:block;margin-bottom:-.5rem;font-size:2rem;}
-.checkout-payment-button-check {position:absolute;right:16px;top:50%;border-color:#000;}
+.checkout-payment-button-check {position:absolute;right:16px;top:42%;}
 
 .checkout-alert {display:flex;align-items:center;}
 .checkout-alert span {margin-right:.5rem;font-size:$subhead;}

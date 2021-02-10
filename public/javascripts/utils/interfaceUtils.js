@@ -24,3 +24,10 @@ function smoothScroll(target, duration) {
 
   requestAnimationFrame(animation)
 }
+
+function loadScript(src) {
+  let script = document.querySelector('script')
+  script.src = src
+  script.async = false
+  document.body.append(script)
+}

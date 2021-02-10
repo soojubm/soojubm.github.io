@@ -1,4 +1,4 @@
-.hero {width:auto;margin: 0 10%;padding:3.5rem 5rem 4.5rem;box-sizing:border-box;position: relative;z-index: 1;}
+.hero {width:auto;margin: 0 10%;padding:3.5rem 5rem 4.5rem;box-sizing:border-box;position:relative;z-index:1;}
 .hero-background {max-width:100%;margin: 0 auto;background:var(--gray0);border-radius:$radius400;box-shadow:$shadow400;position: absolute;left: -50%;right: -50%;top: 0;bottom:100%;z-index: -1;}
 .hero-eyebrow {display:block;margin:0 0 .5rem 0;}
 .hero-title {@include title;}
@@ -6,17 +6,17 @@
 .hero-cta {@include button-primary;}
 .hero-detail {@include button-tertiary;margin-left:.5rem;}
 .hero-obj1 {position:absolute;right:-1rem;top:1rem;width:40px;height:40px;background:gold;border-radius:50%;transform:scale(0);transition:all .4s ease .8s;}
-.hero-obj2 {position:absolute;right:480px;bottom:-8px;z-index:-1;width:80px;height:80px;background:gold;border-radius:50%;transform:scale(0);transition:all .4s ease 1.0s;}
-.hero-obj3 {position:absolute;right:420px;top:24px;z-index:-1;width:16px;height:16px;background:#0057ff;border-radius:50%;transform:scale(0);transition:all .4s ease 1.4s;}
-.hero-obj4 {position:absolute;right:0;top:-8rem;z-index:-1;width:35rem;transform:scale(0);transition:all .4s ease 1.2s;}
+.hero-obj2 {position:absolute;right:480px;bottom:-8px;width:80px;height:80px;background:gold;border-radius:50%;transform:scale(0);transition:all .4s ease 1.0s;}
+.hero-obj3 {position:absolute;right:420px;top:24px;width:16px;height:16px;background:#0057ff;border-radius:50%;transform:scale(0);transition:all .4s ease 1.4s;}
+.hero-obj4 {position:absolute;right:0;top:-8rem;width:35rem;transform:scale(0);transition:all .4s ease 1.2s;}
 
-.is-scrolled .hero-background {bottom: 0;transition: all .6s $bezier-base .6s;}
+.is-scrolled .hero-background {bottom: 0;transition: all .2s $bezier-base .6s;}
 .is-scrolled .hero-obj1 {transform:scale(1);}
 .is-scrolled .hero-obj2 {transform:scale(1);}
 .is-scrolled .hero-obj3 {transform:scale(1);}
 .is-scrolled .hero-obj4 {transform:scale(1);}
 
 @media (--viewport-large) {
-  .hero {margin:-4rem 5% 0;padding:3rem 4rem;}
+  .hero {margin:-4rem 5% 0;padding:3rem 4rem 4rem;}
   .hero-obj4 {width:28rem;}
 }

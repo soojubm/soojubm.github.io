@@ -43,6 +43,7 @@
 .profile-tablist {display:flex;margin:0 0 1rem 0;position:relative;}
 .profile-tablist-tab {padding:$padding100;color:var(--gray400);font-weight:bold;cursor:pointer;}
 .profile-tablist-tab[aria-selected=true] {color:var(--gray800);}
+.profile-tablist-tab-badge {font-size:$caption;}
 .profile-tablist-indicator {display:block;height:100%;border-radius:$radius400;background:var(--gray100);position:absolute;top:0;left:0;z-index:-1;transition:all 0.4s ease;}
 .profile-tabpanel {display:flex;flex-wrap:wrap;min-height:40rem;}
 
@@ -83,6 +84,7 @@
 .list .card-thumbnail {float:left;width:80px;height:80px;margin-right:1.5rem;padding-top:0;}
 .list .card-thumbnail img {max-width:150%;}
 .list .card-title {padding-top:0;}
+.list .card-more {right:0;top:0;}
 
 @media (--viewport-large) {
   .profile {padding:2rem 5%;}
@@ -98,6 +100,6 @@
   .profile-user-avatar {width:64px;height:64px;}
   .profile-user-description {margin:1rem 0 2rem;}
   .profile-user-id {margin-top:-2px;}
-  .profile-tabpanel .card {width:50% !important;margin-left:0 !important;margin-right:0;}
+  .profile-tabpanel .card {width:100%;margin-left:0;margin-right:0;}
   // .profile-head {height:auto;margin-left:5%;margin-right:5%;padding:2rem 5% 3rem;border-radius:0;}
 }
