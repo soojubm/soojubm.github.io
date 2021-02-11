@@ -258,12 +258,20 @@
         <br />
         <h6 style="margin:0 0 .5rem;font-size:.875rem;">Small Sizes</h6>
         <div role="group">
-          <button class="design-article-primary-small">프라이머리</button>
+          <button class="design-article-primary-small">👉 프라이머리</button>
           <!-- <button class="danger-button is-small" aria-label="danger">Danger</button>
           <button class="success-button is-small" aria-label="danger">Success</button> -->
-          <button class="design-article-secondary-small">세컨더리</button>
+          <button class="design-article-secondary-small">세컨더리 👉</button>
           <button class="design-article-tertiary-small">터시어리</button>
           <button class="design-article-text-small">텍스트</button>
+        </div>
+        <br />
+        <h6 style="margin:0 0 .5rem;font-size:.875rem;">Disabled States</h6>
+        <div role="group">
+          <button class="design-article-primary-small" disabled>프라이머리</button>
+          <button class="design-article-secondary-small" disabled>세컨더리</button>
+          <button class="design-article-tertiary-small" disabled>터시어리</button>
+          <button class="design-article-text-small" disabled>텍스트</button>
         </div>
         <br />
         <h6 style="margin:0 0 .5rem;font-size:.875rem;">huge 사이즈의 버튼이 하나는 필요해보인다. 크기는 이 정도. 색은 임시로</h6>
@@ -546,7 +554,7 @@
         <select class="textfield-input" name="select-select" id="select-select">
           <option class="select-option" value="select-option1">Choose an option</option>
         </select>
-        <i class="selectbox-indicator icon-caret"></i>
+        <span class="selectbox-indicator"><i class="icon-caret"></i></span>
       </div>
       <!-- var selected = Array.from(dnd.options).filter(function (option) {
         return option.selected;
@@ -842,18 +850,14 @@
       <p class="design-article-description">만드는 중.</p>
       <section class="slider">
         <div class="slider-viewer">
-          <button class="slider-viewer-slide">초1</button>
-          <button class="slider-viewer-slide">초2</button>
-          <button class="slider-viewer-slide">초3</button>
-          <button class="slider-viewer-slide">초4</button>
-          <button class="slider-viewer-slide">초5</button>
-          <button class="slider-viewer-slide">초6</button>
-          <button class="slider-viewer-slide" style="background:green;">중1</button>
-          <button class="slider-viewer-slide" style="background:green;">중2</button>
-          <button class="slider-viewer-slide" style="background:green;">중3</button>
-          <button class="slider-viewer-slide" style="background:blue;">고1</button>
-          <button class="slider-viewer-slide" style="background:blue;">고2</button>
-          <button class="slider-viewer-slide" style="background:blue;">고3</button>
+          <button class="slider-viewer-slide" style="background:var(--color-primary);">중1</button>
+          <button class="slider-viewer-slide" style="background:var(--color-primary);">중2</button>
+          <button class="slider-viewer-slide" style="background:var(--color-primary);">중3</button>
+          <button class="slider-viewer-slide" style="background:var(--color-primary);">중4</button>
+          <button class="slider-viewer-slide" style="background:crimson;">고1</button>
+          <button class="slider-viewer-slide" style="background:crimson;">고2</button>
+          <button class="slider-viewer-slide" style="background:crimson;">고3</button>
+          <button class="slider-viewer-slide" style="background:crimson;">고4</button>
         </div>
         <!-- <nav class="slider-dots">
           <button class="slider-dots-dot">1</button>
@@ -929,7 +933,7 @@
       <div class="rating2 is-large">
         <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 12px; width: 12px; fill: crimson;"><path d="M15.094 1.579l-4.124 8.885-9.86 1.27a1 1 0 0 0-.542 1.736l7.293 6.565-1.965 9.852a1 1 0 0 0 1.483 1.061L16 25.951l8.625 4.997a1 1 0 0 0 1.482-1.06l-1.965-9.853 7.293-6.565a1 1 0 0 0-.541-1.735l-9.86-1.271-4.127-8.885a1 1 0 0 0-1.814 0z" fill-rule="evenodd"></path></svg>
         <b class="rating2-score">4.71점</b>
-        <span> (277개)</span>
+        <small style="margin-left:.25rem;"> 277개</small>
       </div>
       <div class="rating2">
         <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 12px; width: 12px; fill: crimson;"><path d="M15.094 1.579l-4.124 8.885-9.86 1.27a1 1 0 0 0-.542 1.736l7.293 6.565-1.965 9.852a1 1 0 0 0 1.483 1.061L16 25.951l8.625 4.997a1 1 0 0 0 1.482-1.06l-1.965-9.853 7.293-6.565a1 1 0 0 0-.541-1.735l-9.86-1.271-4.127-8.885a1 1 0 0 0-1.814 0z" fill-rule="evenodd"></path></svg>

@@ -67,7 +67,7 @@ input[type=email]:invalid {border-color:crimson;}
 // height 테이블 내에서 세로 정렬에 필요
 .checkbox,.radio {display:block;position:relative;}
 input[type=checkbox] {width:0;height:0;opacity:0;position:absolute;outline:auto;}
-input[type=checkbox] + label {display:flex;align-items:center;height:2.25rem;line-height:16px;padding-left:2rem;position:relative;}
+input[type=checkbox] + label {display:flex;align-items:center;height:2.25rem;padding-left:2rem;position:relative;}
 input[type=checkbox] + label:before {content:'';display:block;width:16px;height:16px;border-radius:$radius400;border:$border150;box-sizing:border-box;position:absolute;left:0;}
 input[type=checkbox] + label:after {content:'';display:none;width:8px;height:2px;border-left:2px solid;border-bottom:2px solid;border-color:var(--gray200);position:absolute;left:3px;top:40%;transform:rotate(-45deg);}
 input[type=checkbox]:checked + label:before {border-color:$color-primary;animation:ripple2 0.2s linear forwards;}
@@ -81,7 +81,7 @@ input[type=checkbox][data-indeterminate=true] + label:before {}
 input[type=checkbox][data-indeterminate=true] + label:after {display:block;background:$color-primary;border:none;left:4px;top:12px;transform:rotate(0deg);}
 
 input[type=radio] {width:0;height:0;opacity:0;position:absolute;outline:auto;}
-input[type=radio] + label {display:flex;align-items:center;height:2.25rem;line-height:16px;padding-left:2rem;position:relative;}
+input[type=radio] + label {display:flex;align-items:center;height:2.25rem;padding-left:2rem;position:relative;}
 input[type=radio] + label:before {content:'';display:block;width:16px;height:16px;border-radius:50%;border:$border150;box-sizing:border-box;position:absolute;left:0;}
 input[type=radio] + label:after {content:'';display:none;width:6px;height:6px;border-radius:50%;background:var(--gray200);position:absolute;left:5px;transition:all 0.2s;}
 input[type=radio]:checked + label:before {border-color:$color-primary;animation:ripple2 0.2s linear forwards;}
@@ -124,7 +124,7 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 
 .textfield {margin:0px 0;position:relative;}
 .textfield-label {display:block;margin:0 0 0.25rem 0;}
-.textfield-label small {margin:0 0 0 .5rem;color:var(--gray400);}
+.textfield-label small {color:var(--gray400);}
 .textfield-icon {display:flex;align-items:center;justify-content:center;width:48px;height:100%;position:absolute;left:0;}
 .textfield-icon i {display:inline-block;font-size:19px;vertical-align:middle;opacity:0.4;}
 .textfield-icon + .textfield-input {padding-left:48px;}
@@ -136,7 +136,7 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 .textfield-input.-textarea {height:auto;}
 .textfield-input.-selectbox {height:auto;}
 .textfield-input.-inline {display:inline;width:80px;padding:2px 12px;}
-.view-password {position:absolute;right:1rem;bottom:1rem;z-index:2;font-size:$caption;color:var(--gray400);}
+.textfield-reveal {position:absolute;right:1rem;bottom:1rem;z-index:2;font-size:$caption;color:var(--gray400);}
 .textfield-unit {width:40px;height:46px;padding:0 1rem;line-height:50px;text-align:right;color:rgba(0, 0, 0, 0.4);position:absolute;right:0;bottom:0;}
 .textfield-helper {margin-top:.25rem;color:$red800;}
 .textfield-button {border-top-left-radius:0;border-bottom-left-radius:0;position:absolute;right:0;top:0;}
@@ -146,7 +146,7 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 .textfield-prefix + .textfield-input {display:inline-block;padding-right:100px;}
 .textfield-suffix {display:inline-block;padding:0 1.5rem;line-height:46px;cursor:default;color:var(--gray400);position:absolute;right:0;top:28px;}
 .textfield-reset {}
-.selectbox-indicator {@include box-small;background:var(--gray0);position:absolute;right:1rem;bottom:8px;}
+.selectbox-indicator {@include box-small;width:2rem;height:2rem;background:var(--gray0);position:absolute;right:1rem;bottom:calc(.5rem + 3px);}
 
 .textfield.is-small {padding:0 !important;font-size:$caption !important;}
 .textfield.is-small .textfield-label {margin-bottom:0;}
@@ -162,7 +162,7 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 
 .textfield.is-text {display:flex;align-items:center;}
 .textfield.is-text .textfield-input {width:auto;margin-left:1rem;margin-top:-.25rem;padding:0;background:none;border:none;box-shadow:none;color:$color-primary;}
-.textfield.is-text .selectbox-indicator {margin-left:.5rem;position:static;right:auto;bottom:auto;}
+.textfield.is-text .selectbox-indicator {position:static;right:auto;bottom:auto;}
 
 .is-invalid .textfield-label {color:$red800;}
 .is-invalid .textfield-input {border-color:$red800;color:$red800;}

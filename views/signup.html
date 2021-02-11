@@ -9,39 +9,34 @@
       <div class="textfield">
         <label class="textfield-label">이메일</label>
         <input class="textfield-input" type="text" name="email" placeholder="soojubm@gmail.com" />
-        <small class="textfield-helper" role="alert">이메일을 입력하시와아요.</small>
+        <!-- <small class="textfield-helper" role="alert">이메일을 입력하시와아요.</small> -->
         <span class="check-text -o" style="position: absolute;right:.5rem;bottom:40px;"><i class="icon-check" style="border-color:#3fbb65;"></i></span>
         <!-- <span class="check-text -x"><i class="icon-close"></i></span> -->
       </div>
       <div class="textfield">
-        <label class="textfield-label" for="signup-password">비밀번호<abbr title="required" aria-hidden="true">*</abbr></label>
-        <input class="textfield-input" type="password" name="password" id="signup-password" placeholder="비밀번호" />
-        <button class="view-password js-view-password">비밀번호 보기</button>
-        <!-- <input
-          class="textfield-input"
-          type="password"
-          id="signup-password-confirm"
-          placeholder="비밀번호 확인"
-        /> -->
+        <label class="textfield-label" for="signup-password">비밀번호<abbr title="required" aria-hidden="true" hidden>*</abbr></label>
+        <input class="textfield-input" type="password" name="password" id="signup-password" placeholder="비밀번호 (6자리 이상)" autocomplete="new-password" />
+        <button class="textfield-reveal js-view-password">비밀번호 보기</button>
+        <!-- <input class="textfield-input" type="password" id="signup-password-confirm" placeholder="비밀번호 확인 (6자리 이상)" /> -->
       </div>
       <div class="textfield">
-        <label class="textfield-label" for="signup-password">비밀번호 확인<abbr title="required" aria-hidden="true">*</abbr></label>
-        <input class="textfield-input" type="password" id="signup-password-confirm" placeholder="비밀번호 확인" />
-        <button class="view-password js-view-password">비밀번호 보기</button>
+        <label class="textfield-label" for="signup-password" hidden>비밀번호 확인</label>
+        <input class="textfield-input" type="password" id="signup-password-confirm" placeholder="비밀번호 확인 (6자리 이상)" />
+        <button class="textfield-reveal js-view-password">비밀번호 보기</button>
       </div>
     </fieldset>
     <fieldset class="signup-optional" style="margin-top:-2rem;">
       <legend hidden>선택입력</legend>
       <div class="textfield">
-        <label class="textfield-label">직업 <small>선택입력</small></label>
-        <input class="textfield-input" type="text" placeholder="유엑스 엔지니어" />
+        <label class="textfield-label">닉네임 <small>선택입력</small></label>
+        <input class="textfield-input" type="text" placeholder="수줍이" />
       </div>
       <div style="display:flex;justify-content:space-between;margin-top:-2rem;">
-        <div class="textfield" style="width:48%;">
+        <div class="textfield" style="width:calc(50% - .5rem);">
           <label class="textfield-label" for="signup-password">출생년도 <small>선택입력</small></label>
           <input class="textfield-input" type="password" id="signup-password-confirm" placeholder="출생년도" />
         </div>
-        <div class="textfield" style="width:48%;">
+        <div class="textfield" style="width:calc(50% - .5rem);">
           <label class="textfield-label" for="signup-password">성별 <small>선택입력</small></label>
           <select class="textfield-input" id="signup-password">
             <option value="women">여성</option>
@@ -85,7 +80,7 @@
       <label for="user-agree"><strong>웹사이트 <a href="#">이용약관</a>과 <a href="#">개인정보처리방침</a>에 동의합니다.</strong></label>
     </div> -->
     <footer class="signup-foot">
-      <button type="submit" class="signup-foot-submit">회원가입하기</button>
+      <button type="submit" class="signup-foot-submit">가입하기</button>
     </footer>
   </form>
 </main>

@@ -84,9 +84,9 @@
 // .post-comment-list-item-menu.is-visible button {display:block;width:100%;padding:8px 16px;font-size:$caption;text-align:left;}
 // .post-comment-list-item-menu.is-visible button:hover {background:#f7f7f5;}
 .commnet-write {margin:4rem 0;}
-.comment-write-text {margin:.5rem 0;}
-.comment-write-name {display:none;float:left;width:calc(50% - 4px);margin:0 0 8px 0;}
-.comment-write-password {display:none;float:right;width:calc(50% - 4px);margin:0 0 8px 0;}
+.comment-write-text {}
+.comment-write-name {display:none;float:left;width:calc(50% - 4px);margin:.5rem 0;}
+.comment-write-password {display:none;float:right;width:calc(50% - 4px);margin:.5rem 0;}
 .comment-write-submit {float:right;@include button-primary;}
 .comment-write-cancel {float:right;@include button-text;margin-right:.5rem;}
 .is-focused .comment-write-name {display:block;}

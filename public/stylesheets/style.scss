@@ -164,7 +164,7 @@
 .slider-viewer {overflow:auto;white-space:nowrap;position:relative;transition:all .4s ease;}
 .slider-viewer::-webkit-scrollbar {display: none;}
 /* .slider-viewer .inbox {width:1500px;position:absolute;} */
-.slider-viewer-slide {width:48px;height:48px;margin:0 .25rem;border-radius:$radius400;background:gold;color:var(--gray0);}
+.slider-viewer-slide {width:$cell-large;height:$cell-large;margin:0 .25rem;border-radius:$radius400;background:gold;color:var(--gray0);}
 .slider-dots {width:100px;height:10px;margin-left:-36px;text-align:center;position:absolute;left:50%;bottom:-25px;z-index:5;}
 .slider-dots-dot {float:left;width:10px;height:10px;margin:0px 4px;border-radius:50%;background:rgba(0,0,0,1);cursor:pointer;}
 .slider-dots-dot:hover {width:30px;border-radius:5px;opacity:.5;}

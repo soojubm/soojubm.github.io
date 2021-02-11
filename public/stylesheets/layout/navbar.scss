@@ -47,7 +47,7 @@
 .navbar-user-account {position:relative;}
 .navbar-user-account-trigger {display:flex;justify-content:center;align-items:center;height:32px;}
 .navbar-user-account-trigger span {@include box-small;float:left;background:var(--gray0);border:$border100;pointer-events:none;}
-.navbar-user-account-menu {width:320px;height:0;padding:.5rem 0;box-sizing:border-box;border-radius:$radius400;background:var(--gray0);box-shadow:$shadow400;position:absolute;top:40px;right:0;z-index:4;transform:scale(0);transform-origin:right top;}
+.navbar-user-account-menu {width:320px;height:0;padding:.5rem 0;border:$border150;box-sizing:border-box;border-radius:$radius400;background:var(--gray0);box-shadow:$shadow400;position:absolute;top:40px;right:0;z-index:4;transform:scale(0);transform-origin:right top;}
 .navbar-user-account-menu.is-visible {height:auto;transform:scale(1);}
 
 .user {max-width:320px;padding:2rem 0 0;text-align:center;}
@@ -55,8 +55,8 @@
 .user-avatar-change {width:32px;height:32px;border-radius:$radius400;position:absolute;right:-8px;bottom:-8px;}
 .user-name {@include subhead;}
 .user-email {display:block;}
-.user-action {display:block;width:100%;margin:1rem 0 0 0;padding:1rem 0;border-top:$border100;border-bottom:$border100;}
-.user-logout {padding:1rem 0;border-bottom:$border100;}
+.user-action {display:block;width:100%;margin:1rem 0 0 0;padding:1rem 0;border-top:1px solid var(--gray100);border-bottom:1px solid var(--gray100);}
+.user-logout {padding:1rem 0;border-bottom:1px solid var(--gray100);}
 .user-myinfo {padding:.5rem 0;font-size:1rem;text-decoration:underline;}
 .user-footer {padding:1rem 0;font-size:$caption;}
 .user-footer a {color:var(--gray400);}
