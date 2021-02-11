@@ -14,6 +14,8 @@
   --blue100: honeydew;
   --red100: #fff0f5;
   --color-primary:#00783e;
+  
+  --border100: $border100;
 }
 
 // ! viewport : desktop first
@@ -77,6 +79,8 @@ $zindex-popover: 6;
 $zindex-tooltip: 8;
 
 $height-header: 56px;
+
+$descriptionMargin: 1rem 0 1.5rem 0;
 
 
 

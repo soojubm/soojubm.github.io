@@ -137,7 +137,7 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 .textfield-input.-selectbox {height:auto;}
 .textfield-input.-inline {display:inline;width:80px;padding:2px 12px;}
 .view-password {position:absolute;right:1rem;bottom:1rem;z-index:2;font-size:$caption;color:var(--gray400);}
-.textfield-unit {width:40px;height:46px;padding:0 16px;line-height:50px;text-align:right;color:rgba(0, 0, 0, 0.4);position:absolute;right:0;bottom:0;}
+.textfield-unit {width:40px;height:46px;padding:0 1rem;line-height:50px;text-align:right;color:rgba(0, 0, 0, 0.4);position:absolute;right:0;bottom:0;}
 .textfield-helper {margin-top:.25rem;color:$red800;}
 .textfield-button {border-top-left-radius:0;border-bottom-left-radius:0;position:absolute;right:0;top:0;}
 .textfield-label ~ .textfield-button {top:28px;}
@@ -146,7 +146,7 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 .textfield-prefix + .textfield-input {display:inline-block;padding-right:100px;}
 .textfield-suffix {display:inline-block;padding:0 1.5rem;line-height:46px;cursor:default;color:var(--gray400);position:absolute;right:0;top:28px;}
 .textfield-reset {}
-.selectbox-indicator {position:absolute;right:16px;bottom:22px;}
+.selectbox-indicator {@include box-small;background:var(--gray0);position:absolute;right:1rem;bottom:8px;}
 
 .textfield.is-small {padding:0 !important;font-size:$caption !important;}
 .textfield.is-small .textfield-label {margin-bottom:0;}

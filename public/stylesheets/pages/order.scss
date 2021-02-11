@@ -19,7 +19,7 @@
 .order-item-product {margin:.5rem 0;@include clearfix;}
 .order-item-product-thumbnail {float:left;@include box-large;margin-right:1.5rem;}
 .order-item-product-name {font-size:1rem;}
-.order-item-product-price {font-size:1.25rem;}
+.order-item-product-price {@include subhead;}
 .order-item-foot {margin:1rem 0 0;padding:.25rem;border-top:$border100;position:relative;}
 .order-item-foot-button {@include button-text;width:100%;}
 .order-item-foot-helper {margin: .5rem 0 0;}

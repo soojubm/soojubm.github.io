@@ -10,7 +10,7 @@
 .profile-user-avatar {float:right;@include box-large;background-image:url('/public/images/soo.png');background-size:contain;transition:all 0.4s ease;}
 .profile-user-avatar:hover {box-shadow:$shadow450;}
 .profile-user-name {@include subhead;}
-.profile-user-id {display:block;color:var(--gray400);}
+.profile-user-id {display:block;}
 .profile-user-career {display:block;margin:.5rem 0 0;color:var(--gray400);}
 .profile-user-description {max-height:4.8em;margin:1.5rem 0;white-space:normal;overflow:hidden;text-overflow:ellipsis;word-wrap:break-word;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;line-height:1.6;position:relative;}
 .profile-user-description-more {margin:0 .5rem;color:var(--gray800);font-weight:bold;}
@@ -31,11 +31,13 @@
 .profile-controls {display:flex;margin:2rem 0 1rem;}
 .profile-controls-follow {@include button-primary;width:68%;}
 .profile-controls-message {@include button-tertiary;min-width:auto;width:30%;margin-left:auto;}
+
+.profile-foot-follow {@include button-tertiary;width:100%;color:var(--color-primary);}
 .profile-body {padding:0 0 64px 398px;box-sizing:border-box;position:relative;}
 
 .profile-display {display:flex;margin:0 0 1.5rem 0;padding:0 0 1rem 0px;border-bottom:$border150;}
 .profile-display-title {margin:0 0 0.25rem 0;font-size:$caption;}
-.profile-display-button {@include box-small;margin:0 .5rem 0 0;border:$border150;background:none;color:var(--gray800);outline:none;}
+.profile-display-button {@include box-small;background:none;color:var(--gray800);outline:none;}
 .profile-display-button.is-selected {background:var(--gray100);}
 .profile-display-button i {font-size:20px;vertical-align:middle;}
 .profile-display-button img {width:1rem;}
@@ -58,7 +60,7 @@
 .accordion-trigger.is-active {color:$color-primary;}
 .accordion-trigger.is-active .icon-caret {transform:rotate(180deg)}
 .accordion-panel {height:0;opacity:0;transition:all .25s;}
-.accordion-panel.is-visible {height:auto;opacity:1;padding:1rem 0 3rem;box-sizing:border-box;/*animation:fadeup 0.4s $bezier-base forwards;*/}
+.accordion-panel.is-visible {height:auto;opacity:1;padding:0 0 2rem;box-sizing:border-box;/*animation:fadeup 0.4s $bezier-base forwards;*/}
 
 .card {display:block;width:33.3333%;margin:0 0 2rem;position:relative;}
 .card-more {@include box-small;display:none;position:absolute;right:.5rem;top:.5rem;}
@@ -99,7 +101,6 @@
   .profile-user-career {margin-top:3px}
   .profile-user-avatar {width:64px;height:64px;}
   .profile-user-description {margin:1rem 0 2rem;}
-  .profile-user-id {margin-top:-2px;}
   .profile-tabpanel .card {width:100%;margin-left:0;margin-right:0;}
   // .profile-head {height:auto;margin-left:5%;margin-right:5%;padding:2rem 5% 3rem;border-radius:0;}
 }
