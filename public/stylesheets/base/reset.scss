@@ -29,7 +29,7 @@ mark {padding:0 2px 2px;border-radius:$radius400;background:var(--gray800);color
 hr {height:1px;background:var(--gray100);overflow:visible;position:relative;}
 u {text-decoration:none;position:relative;}
 u:after {content:'';height:.6em;border-radius:$radius400;background:antiquewhite;position:absolute;left:-.25rem;right:-.25rem;bottom:-.25rem;z-index:-1;}
-code {padding:1rem 1.5rem;background:var(--gray100);border-radius:$radius400;}
+code {padding:1rem 1.5rem;background:var(--gray100);border-radius:$radius400;font-size:$caption;}
 
 html {min-width:320px;height:100%;font:14px/1.8 var(--fontstack);color:var(--gray800);-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overscroll-behavior:contain;}
 body {overflow-x:hidden;letter-spacing:-.0125rem;}
