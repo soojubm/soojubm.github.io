@@ -3,7 +3,7 @@
 .graph-item {display:inline-block;width:48px;height:100px;margin:0 .5rem;border-radius:$radius400;background:var(--gray100);position:relative;}
 .graph-item-bar {height:30px;border-radius:0 0 $radius400 $radius400;background:$red800;position:absolute;left:0;right:0;bottom:0;}
 .graph-item-value {font-size:$caption;text-align:center;color:var(--gray800);position:absolute;left:0;right:0;bottom:32px;}
-.graph-item-label {display:block;font-size:$caption;text-align:center;position:absolute;left:0;right:0;bottom:-32px;}
+.graph-item-label {display:block;font-size:$caption;text-align:center;position:absolute;left:0;right:0;bottom:-2rem;}
 
 
 
