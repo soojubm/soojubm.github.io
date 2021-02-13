@@ -247,7 +247,7 @@
 .notification-item-date {font-size:$caption;color:var(--gray400)}
 
 .loadmore {
-  @include button-secondary;
+  @include button-tertiary;
   display: flex;
   align-items: center;
   .spinner {

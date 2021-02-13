@@ -20,7 +20,7 @@ ul,ol,menu,fieldset,legend {margin:0;padding:0;}
 fieldset,iframe,img,hr {border:0 none} dl,ol,ul,menu {list-style:none}
 main {display:block;}
 iframe,img,video {width:100%;} /*img {vertical-align:middle;}*/
-h1,h2,h3,h4,h5,h6 {line-height:1.4;font-weight:normal;color:var(--gray800);word-break:keep-all;}
+h1,h2,h3,h4,h5,h6 {line-height:1.4;font-weight:bold;color:var(--gray800);word-break:keep-all;}
 strong,b,th,legend {font-weight:bold;color:var(--gray800);}
 cite,i,address,em,dfn {font-style:normal;} em {color:$color-primary;}
 small {font-size:$caption;} time {} del {color:var(--gray400);} abbr {text-decoration:none;}

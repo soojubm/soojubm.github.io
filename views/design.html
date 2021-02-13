@@ -14,7 +14,8 @@
   </section>
 
   <section class="design-body">
-    <div role="textbox" contenteditable aria-placeholder="5-digit zipcode" aria-labelledby="txtboxLabel"></div>
+    <!-- <div role="textbox" contenteditable aria-placeholder="5-digit zipcode" aria-labelledby="txtboxLabel"></div> -->
+
     <!-- <div class="stamp">
       <div class="circle">
         <p id="circle-content">
@@ -50,9 +51,7 @@
         <li><b>금액</b> KRW 기호를 사용하고 한 칸 띄어 씁니다. ₩ 44,612 formatPrice()</li>
         <li><b>날짜</b> YYYY/MM/DD formatDate()</li>
         <!-- <li>위치(왼쪽/오른쪽/위/아래)를 설명하지 않습니다.</li> -->
-        <li><b>슬래시(/)</b> 띄어쓰기가 필요하다면 전달하기 복잡한 정보입니다. 다른 유아이를 고민하세요.</li>
-        <li><b>콜론(:)</b> </li>
-        <li>콜론 슬래시 괄호 등을 남용하지 마세요. 디자인 하지 않은 것입니다(오바).</li>
+        <li>콜론 슬래시 괄호 등을 남용하지 마세요. 디자인 하지 않은 것입니다(오바). 특히나 띄어쓰기가 필요하다면 전달하기 복잡한 정보입니다.<li>
         <li>검색 결과 2개 vs ~ / 총결제금액 vs 결제예정금액</li>
         <!-- <li>뉴닉에서 //// 헤딩(유저가 취해야 할 행동을 직관적으로 가이딩) + 디스크립션(고슴이: 유저의 고민을 덜어줄 수 있는 감초 역할 + 가능하다면 약간의 위트. 특별히 고민이 필요 없는 화면에서는 위트만 뿜뿜해도 됨. 두 줄까지는 허용할 수 있지만 그 이상은 슴체가 읽기 어려움.)</li> -->
       </ul>
@@ -61,28 +60,31 @@
     <article class="design-article typography">
       <h1 class="design-article-title">Typhography</h1>
       <!-- <button class="design-article-more">View All</button> -->
-      <p class="design-article-description">1rem을 14px로 정의했습니다. title-2rem/subhead-1.25rem/body-1rem/caption-.875rem/숫자에1.75rem케이스있음. Asap와 무게가 살짝 다르고, 마이너스 기호가 어색하다.</p>
+      <p class="design-article-description">1rem을 14px로 정의했습니다. 숫자에1.75rem케이스있음. Asap와 무게가 살짝 다르고, 마이너스 기호가 어색하다.</p>
       <!-- <p> 기본값인 16px로 사용하되 기본 폰트 사이즈를 사용해야 하는 경우 .875rem를 적용하는 방법을 고민하고 있습니다. 소숫점 픽셀이 발생하고 16px 그리드를 적극적으로 사용하기 위해서입니다. </p> -->
       <div style="display:flex;justify-content:space-between;">
-        <div style="width:calc(50% - 0.5rem);padding:2rem;border:1px solid var(--gray200);box-sizing:border-box;border-radius:4px;">
+        <div style="width:calc(50% - 0.5rem);padding:2rem 1.5rem;border:1px solid var(--gray200);box-sizing:border-box;border-radius:4px;">
           <i style="display:block;margin-bottom:.5rem;width:16px;height:16px;border-radius:4px;background:cadetblue"></i>
           한글 <b style="display:block;font-size:1.25rem;font-weight:bold;">아리타 산스</b>
         </div>
-        <div style="width:calc(50% - 0.5rem);padding:2rem;border:1px solid var(--gray200);box-sizing:border-box;border-radius:4px;">
+        <div style="width:calc(50% - 0.5rem);padding:2rem 1.5rem;border:1px solid var(--gray200);box-sizing:border-box;border-radius:4px;">
           <i style="display:block;margin-bottom:.5rem;width:16px;height:16px;border-radius:4px;background:cadetblue"></i>
           영문 <b style="display:block;font-size:1.25rem;font-weight:bold;">Asap</b style="display:block;font-size:1.25rem;margin-top:.5rem;">
         </div>
       </div>
-      <div style="margin:1rem 0 0 0;padding:1rem 2rem;border:1px solid var(--gray200);border-radius:4px;">
-        <h1 style="font-size:2rem;font-weight:bold;">헤드라인</h1>
+      <div style="margin:1rem 0 0 0;padding:1rem 1.5rem;border:1px solid var(--gray200);border-radius:4px;">
+        <h1 style="font-size:2rem;">헤드라인headline <span style="float:right;">2rem</span></h1>
       </div>
-      <div style="margin:1rem 0 0 0;padding:1rem 2rem;border:1px solid var(--gray200);border-radius:4px;">
-        <h1 style="font-size:1.25rem;font-weight:bold;">서브헤드</h1>
+      <div style="margin:1rem 0 0 0;padding:1rem 1.5rem;border:1px solid var(--gray200);border-radius:4px;">
+        <h1 style="font-size:1.25rem;">서브헤드subhead <span style="float:right;">1.25rem</span></h1>
       </div>
-      <div style="margin:1rem 0 0 0;padding:1rem 2rem;border:1px solid var(--gray200);border-radius:4px;">
-        <h1 style="font-size:.875rem;font-weight:bold;">캡션</h1>
+      <div style="margin:1rem 0 0 0;padding:1rem 1.5rem;border:1px solid var(--gray200);border-radius:4px;">
+        <h1 style="font-size:1rem;">바디body <span style="float:right;">1rem</span></h1>
       </div>
-      <div style="margin:1rem 0 0 0;padding:2rem;border:1px solid var(--gray200);border-radius:4px;">
+      <div style="margin:1rem 0 0 0;padding:1rem 1.5rem;border:1px solid var(--gray200);border-radius:4px;">
+        <h1 style="font-size:.875rem;">캡션caption <span style="float:right;">.875rem</span></h1>
+      </div>
+      <div style="margin:1rem 0 0 0;padding:2rem 1.5rem;border:1px solid var(--gray200);border-radius:4px;">
         <h4 class="typography-subhead" style="margin:0 0 1rem;font-size:1.25rem;line-height:1.2;font-weight:bold;"><small style="display:block;margin:0 0 .5rem 0;font-size:1rem;">선약이 있어서 ✋</small>자아실현은 못할 것 같아요.</h4>
         <p class="typography-paragraph" style="margin: 0 0 1.5rem">서브헤드와 디스크립션 혹은 패러그라프는 이렇게 사용하세요. 서브헤드와 디스크립션 혹은 패러그라프는 이렇게 사용하세요. 서브헤드와 디스크립션 혹은 패러그라프는 이렇게 사용하세요. 서브헤드와 디스크립션 혹은 패러그라프는 이렇게 사용하세요.</p>
         <time class="typography-caption">10 January, 2020</time>
@@ -109,13 +111,12 @@
 				<p class="minicard-value">12개</p>
 				<small class="minicard-label">chapters</small>
       </div> -->
-      <br />      
-      <div class="number">
+      <!-- <div class="number">
         <div class="number-card">8</div>
         <div class="number-card">8</div>
         <div class="number-card">3</div>
         <div class="number-card">-</div>
-      </div>
+      </div> -->
     </article>
 
     <article class="design-article grayscale">
@@ -234,11 +235,10 @@
     <article class="design-article">
       <h1 class="design-article-title">Buttons</h1>
       <ul class="design-article-description">
-        <li>시멘틱한 네이밍(solid / outline / plain / text)은 스타일의 수정이 일어날 때에 대응해야 하는 코드가 많아진다.</li>
+        <li>시멘틱한 네이밍(solid / outline / plain / text)은 스타일의 수정이 일어날 때에 대응하기 쉽지 않다.</li>
         <li>아이콘 버튼</li>
-        <li>appearance = link / subtle / primary / subtle-link / warning /danger / </li>
-        <li>status = disabled / selected / loading</li>
-        <li>icon = before / after</li>
+        <li>appearance = link / subtle / primary / danger </li>
+        <li>icon = before / after (리액트에서)</li>
         <li>space = compact / fullwidth</li>
       </ul>
       <!-- <a class="button" href="#">Anchor button</a>
@@ -283,10 +283,11 @@
             </div> -->
           </button>
         </div>
-        <!-- <button class="loadmore is-fetching">
-          불러오는 중
-          <div class="spinner"></div>
-        </button> -->
+        <br />
+        <button class="loadmore is-fetching">
+          <div class="spinner" style="margin-left:0;margin-right:1rem;"></div>
+          Loading
+        </button>
     </div>
     </article>
 
@@ -519,7 +520,7 @@
         <label class="textfield-label" for="abc123">레이블 <abbr aria-label="optional" style="font-size:.875rem;">선택입력</abbr></label>
         <input class="textfield-input js-input-test" type="text" id="abc123" placeholder="Textarea Placeholder..." value="soojubm@gmail.com" aria-describedby="error" aria-invalid="true" />
         <!-- <button class="textfield-button"><i class="icon-close"></i></button> -->
-        <small class="textfield-helper --is-error">이미 사용 중인 이메일입니다.</small>
+        <small class="textfield-helper is-error">이미 사용 중인 이메일입니다.</small>
       </div>
       <br />
       <div class="textfield">

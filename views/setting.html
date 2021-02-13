@@ -3,14 +3,27 @@
     <header class="setting-head">
       <h1 class="setting-head-title" hidden>설정</h1>
       <p class="setting-head-title">프로필을 완성하여<br />맞춤형 서비스를 받아보세요!</p>
-      <!-- <p class="setting-head-description">이름, 사진과 같이 서비스에서 사용하는 기본 정보</p> -->
+      <p class="setting-head-description">이름, 사진과 같이 서비스에서 사용하는 기본 정보</p>
     </header>
     <div class="setting-body">
-      <h2 class="setting-body-heading">기본정보</h2>
-      <div class="setting-row is-opened" role="button">
+      <h2 class="setting-body-heading">기본 프로필</h2>
+      <div class="setting-row is-opened" role="button" style="flex-wrap:wrap;">
         <h2 class="setting-row-label">닉네임</h2>
         <div class="setting-row-value">수줍이</div>
         <span class="setting-row-change"><b>변경하기</b> <i class="icon-arrow"></i></span>
+        <form class="setting-row-form" style="width:100%;">
+          <!-- <h1>어떻게 불러드릴까요?</h1> -->
+          <div class="textfield">
+            <label class="textfield-label" for="username">닉네임</label>
+            <small class="textfield-byte"><b>0</b> / 20</small>
+            <input class="textfield-input js-input-test" type="text" id="username" placeholder="예) 수줍이" aria-describedby="error" aria-invalid="true" />
+            <small class="textfield-helper is-error" role="alert"></small>
+          </div>
+          <footer class="setting-row-foot">
+            <button class="setting-row-foot-confirm">변경하기</button>
+            <button class="setting-row-foot-cancel" type="button">취소</button>
+          </footer>
+        </form>
       </div>
 
       <div class="setting-row">

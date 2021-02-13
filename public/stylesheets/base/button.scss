@@ -58,7 +58,7 @@ button[aria-current=page] {}
   &:hover, 
   &:focus {border-color:darken($blue100, 2.5%);background:darken($blue100, 2.5%);color:darken($color-primary, 5%);}
   &:active {}
-  &:disabled {background:transparent;border-color:var(--gray200);color:var(--gray200);}
+  &:disabled {background:transparent;color:var(--gray200);}
 }
 @mixin button-tertiary {
   @include button;
@@ -82,7 +82,7 @@ button[aria-current=page] {}
 .success-button {@include button;background:$red800;border:1px solid $red800;color:var(--gray0);}
 
 [role=group] {display:flex;flex-wrap:wrap;}
-[role=group] > * {margin:0 .5rem .25rem 0;}
+[role=group] > * {margin:0 .5rem .5rem 0;}
 [role=group] input[type=radio] + label {margin:0 16px 0 0;color:var(--gray400);padding-left:0;}
 [role=group] input[type=radio] + label:before {content:'';display:inline-block;width:2px;height:2px;background:var(--gray400);margin:0 10px 0 0;vertical-align:3px;position:static;left:auto;top:auto;}
 [role=group] input[type=radio] + label:after {display:none;}

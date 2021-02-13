@@ -21,7 +21,7 @@
 .design-head.is-scrolled {right:50%;transition: all 1s $bezier-base .2s;}
 .design-body {width:50%;max-width:40rem;margin-left:50%;padding:6rem;}
 
-.design-article {margin:0 0 6rem 0;position:relative;}
+.design-article {margin:6rem 0;position:relative;}
 .design-article-title {margin:0 0 1rem 0;@include subhead;}
 .design-article-description {margin:0 0 1.5rem 0;}
 .design-article-more {display:flex;align-items:center;font-size:$caption;position:absolute;right:0;top:0;}
@@ -39,7 +39,7 @@
 @media (--viewport-large) {
   .design {padding:0;}
   .design-head {height:20rem;position:relative;left:0;right:0;top:0;bottom:0;}
-  .design-body {margin:4rem 10%;padding:0;}
+  .design-body {margin:0 10%;padding:0;}
 }
 
 
