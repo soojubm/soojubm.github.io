@@ -16,7 +16,24 @@
   --color-primary:#00783e;
   
   --border100: $border100;
+
+  #view {background:var(--gray0);}
+
+  .darkmode {
+    --gray0: #000;
+    --gray100: #1c1d1d; // bg
+    --gray200: #4e5351; // divider border
+    --gray400: #979d9a; // caption
+    --gray600: #4e5351; // body
+    --gray800: #f1f5f6; // heading
+    color: var(--gray400);
+    .hero-background, .dialog {
+      background: var(--gray100);
+    }
 }
+}
+
+
 
 // ! viewport : desktop first
 @custom-media --viewport-large (max-width: 1440px);

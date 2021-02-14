@@ -43,7 +43,7 @@
 .faq-head {padding:2rem 0;position:relative;}
 .faq-head-title {margin:0 0 1rem 0;@include subhead;}
 .faq-head-ask {@include button-tertiary;}
-.faq-item {margin:0 auto;padding:3rem 0 3.5rem;border-top:$border100;box-sizing:border-box;background:#fff;position:relative;}
+.faq-item {margin:0 auto;padding:3rem 0 3.5rem;border-top:$border100;box-sizing:border-box;background:var(--gray0);position:relative;}
 .faq-item-question {font-size:$subhead;font-weight:bold;cursor:pointer;}
 .faq-item-question i {margin: 0 1rem 0 0;}
 .faq-item-answer {max-width:60%;margin:1rem 0 0;}

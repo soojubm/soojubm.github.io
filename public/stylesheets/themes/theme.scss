@@ -1,49 +1,46 @@
+// .darkmode * {
+//   :root {
+//   --gray0: #333;
+// }
+//   // var(--gray800): #f1f3f4;
+//   .profile-user-name, .card-title {
+//     color: var(--gray0);
+//   }
+//   .hero-background {
+//     background:var(--gray800);
+//   }
+// }
 
-.darkmode * {
-  :root {
-  --gray0: #333;
-}
-  // var(--gray800): #f1f3f4;
-  .profile-user-name, .card-title {
-    color: var(--gray0);
-  }
-  .hero-background {
-    background:var(--gray800);
-  }
-}
+// .darkmode {
+//   background: rgba(0,0,0,9);
+//   color: var(--gray400);
 
+//   h1, h2, h3, h4, h5, h6 {
+//     color: var(--gray0);
+//   }
+//   .navbar {background:var(--gray800);}
+//   .navbar-menu-item,
+//   .navbar-menu-item a {color:var(--gray0);}
 
-.darkmode {
+//   .header.is-fixed {background:var(--gray800);}
+//   .is-white.is-fixed .header-title {color:var(--gray0);}
 
-  background: rgba(0,0,0,9);
-  color: var(--gray400);
+//   .toast {background: var(--gray800);}
 
-  h1, h2, h3, h4, h5, h6 {
-    color: var(--gray0);
-  }
-  .navbar {background:#000;}
-  .navbar-menu-item,
-  .navbar-menu-item a {color:var(--gray0);}
+//   .design-body-title,
+//   .darkmode h1 {
+//     color: var(--gray0);
+//   }
 
-  .header.is-fixed {background:#000;}
-  .is-white.is-fixed .header-title {color:var(--gray0);}
-
-  .toast {background: var(--gray800);}
-
-  .design-body-title,
-  .darkmode h1 {
-    color: var(--gray0);
-  }
-
-  .statistic-value {
-    color:var(--gray0)
-  }
-  // userCard
-  .user-name,
-  .user-email + button {
-    color:var(--gray0);
-  }
-}
+//   .statistic-value {
+//     color:var(--gray0)
+//   }
+//   // userCard
+//   .user-name,
+//   .user-email + button {
+//     color:var(--gray0);
+//   }
+// }
 
 // .darkmode header,
 // .darkmode aside,
