@@ -1,5 +1,7 @@
 <main class="design">
-  <header class="design-head js-scroll-animation"></header>
+  <header class="design-head js-scroll-animation">
+    <h1 style="position:fixed;left:1rem;bottom:1rem;color:var(--gray0);font-size:.875rem;">soojubm</h1>
+  </header>
   <section class="hero js-scroll-animation">
     <div class="hero-inner" style="overflow:hidden;">
       <div class="hero-background"></div>
@@ -301,11 +303,9 @@
     <article class="design-article">
       <h1 class="design-article-title">Buttons</h1>
       <ul class="design-article-description">
-        <li>시멘틱한 네이밍(solid / outline / plain / text)은 스타일의 수정이 일어날 때에 대응하기 쉽지 않다.</li>
-        <li>아이콘 버튼</li>
+        <li>시멘틱한 네이밍(solid / outline / plain / text)은 스타일의 수정이 일어날 때에 대응하기 쉽지 않다. 아이콘 버튼.</li>
         <li>appearance = link / subtle / primary / danger </li>
-        <li>icon = before / after (리액트에서)</li>
-        <li>space = compact / fullwidth</li>
+        <li>space = compact / fullwidth, beforeIcon / afterIcon</li>
       </ul>
       <!-- <a class="button" href="#">Anchor button</a>
       <button>Button element</button>
@@ -340,7 +340,7 @@
           <button class="design-article-text-small" disabled>텍스트</button>
         </div>
         <br />
-        <h6 style="margin:0 0 .5rem;font-size:.875rem;">huge 사이즈의 버튼이 하나는 필요해보인다. 크기는 이 정도. 색은 임시로</h6>
+        <h6 style="margin:0 0 .5rem;font-size:.875rem;">huge - 이벤트 페이지에서 사용하세요.</h6>
         <div role="group">
           <button class="design-article-primary" style="min-width:320px;border:transparent;padding:12px 0 15px;font-size:1.25rem;">
             알림 신청하기
@@ -412,7 +412,7 @@
         <div class="radio theme-button">
           <input type="radio" id="raidio5" name="gender" value="">
           <label for="raidio5" title="">
-            상품 옵션
+            상품 옵션 - 다크테마에서 검정색 조정하기
             <b>₩ 2,000</b>
           </label>
           <div>
@@ -682,7 +682,7 @@
       <h1 class="design-article-title">Dropdown</h1>
       <p class="design-article-description">오른쪽 정렬과 드롭업에 관한 것이 필요할까? 우선은 필요없다. min-width로 cell을 사용하면 셀 내부 텍스트가 늘어나도 대응할 있다.</p>
       <div style="display:flex;">
-        <div class="dropdown" style="margin-right:1rem;">
+        <div class="dropdown" style="margin-right:.5rem;">
           <button class="dropdown-trigger js-toggle" aria-haspopup="menu" aria-expanded="false" style="width:auto;padding:0 1rem;">
             <span class="dropdown-trigger-text">드롭다운</span>
             <i class="dropdown-trigger-caret icon-caret"></i>

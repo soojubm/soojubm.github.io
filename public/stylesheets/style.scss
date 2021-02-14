@@ -159,7 +159,7 @@
 
 
 .slider {position:relative;}
-.slider-viewer {overflow:auto;white-space:nowrap;font-size:0;position:relative;transition:all .4s ease;}
+.slider-viewer {overflow:auto;white-space:nowrap;font-size:0;position:relative;z-index:1;transition:all .4s ease;}
 .slider-viewer::-webkit-scrollbar {display: none;}
 /* .slider-viewer .inbox {width:1500px;position:absolute;} */
 .slider-viewer-slide {width:$cell-large;width:10rem;height:$cell-large;padding:1rem;border:$border100;border-radius:$radius400;background:var(--gray100);text-align:left;font-size:1rem;}

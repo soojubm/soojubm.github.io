@@ -18,7 +18,7 @@
 }
 
 .dropdown {position:relative;}
-.dropdown-trigger {@include box-small;cursor:pointer;}
+.dropdown-trigger {@include box-small;color:var(--gray800);cursor:pointer;}
 .dropdown-trigger-caret {margin-left:.5rem;}
 .dropdown-menu {
   min-width:200px;

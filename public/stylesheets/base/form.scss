@@ -76,7 +76,7 @@ input[type=checkbox]:disabled + label {color:var(--gray200);cursor:not-allowed;}
 input[type=checkbox]:disabled + label:before {background:var(--gray200);border-color:var(--gray200);}
 input[type=checkbox]:disabled + label:after {border-color:var(--gray0);}
 input[type=checkbox][indeterminate=true] + label:before {background:var(--blue100);}
-input[type=checkbox][indeterminate=true] + label:after {display:block;background:$color-primary;border:none;left:4px;top:11px;transform:rotate(0deg);}
+input[type=checkbox][indeterminate=true] + label:after {display:block;background:$color-primary;border:none;left:4px;top:15px;transform:rotate(0deg);}
 input[type=checkbox][data-indeterminate=true] + label:before {background:var(--blue100);}
 input[type=checkbox][data-indeterminate=true] + label:after {display:block;background:$color-primary;border:none;left:4px;top:12px;transform:rotate(0deg);}
 

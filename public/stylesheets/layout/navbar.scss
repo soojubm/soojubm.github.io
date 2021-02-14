@@ -1,7 +1,7 @@
 .navbar {display:flex;align-items:center;height:$height-header;padding:0 2rem;background:var(--gray0);position:relative;left:0;right:0;top:0;z-index:8;}
 .navbar-logo {@include box-small;background:none;font-size:1.5rem;}
 .navbar-burger {@include box-small;display:none;margin:0 .5rem 0 0;z-index:8;}
-.navbar-menu {display:flex;align-items:center;margin-left:2rem;position:relative;}
+.navbar-menu {display:flex;align-items:center;margin-left:1rem;margin-top:-2px;position:relative;}
 .navbar-menu-item {padding:0 1rem;color:var(--gray800);font-weight:bold;position:relative;z-index:1;transition:all .4s;} // m p reset
 .navbar-menu-item.has-submenu {z-index:0;}
 .navbar-menu-item a {color:inherit;}
