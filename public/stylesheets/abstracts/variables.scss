@@ -80,9 +80,7 @@ $descriptionMargin: 1rem 0 1.5rem 0;
   --color-primary:#00783e;
   
   --border100: $border100;
-  --shadow400: $shadow400;
-
-  #view {background:var(--gray0);}
+  --shadow400: 0px 0px 2rem rgba(0, 0, 0, 0.125);
 
   .theme-dark {
     --gray0: #1c1d1d;
