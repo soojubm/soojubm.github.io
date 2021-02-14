@@ -14,7 +14,7 @@
 .color-item div {@include box-medium;position:relative;}
 .color-item figcaption {margin:.25rem 0 0 0;font-size:10px;color:var(--gray400)}
 
-.surface-item div {@include box-medium;background:var(--gray0);box-shadow:$shadow400;}
+.surface-item div {@include box-medium;box-shadow:$shadow400;}
 
 .design {}
 .design-head {overflow:hidden;background:var(--color-primary);position:fixed;left:0;right:60%;top:0;bottom:0;z-index:1;}

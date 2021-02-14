@@ -8,7 +8,7 @@
 // .profile-head h5 {margin:0 0 1rem 0;color:var(--gray0);}
 .profile-user {float:left;width:320px;box-sizing:border-box;position:relative;z-index:1;}
 .profile-user-avatar {float:right;@include box-large;background-image:url('/public/images/soo.png');background-size:contain;transition:all 0.4s ease;}
-.profile-user-avatar:hover {box-shadow:$shadow450;}
+.profile-user-avatar:hover {box-shadow:$shadow400;}
 .profile-user-name {@include subhead;}
 .profile-user-id {display:block;}
 .profile-user-career {display:block;margin:.5rem 0 0;color:var(--gray400);}

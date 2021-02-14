@@ -1,40 +1,3 @@
-:root {
-  --fontstack: 'Asap', 'AritaDotum', 'Apple SD Gothic Neo', sans-serif;
-  // ! fontSize
-  --weight700: bold;
-  --weight400: normal;
-  // ! colours
-  --gray0: #fff; // white for dark theme
-  --gray100: #f1f5f6; // bg
-  --gray200: #dadce0; // divider border
-  --gray400: #979d9a; // caption
-  --gray600: #4e5351; // body
-  --gray800: #1c1d1d; // heading
-  --gray999: #000;
-  --blue100: honeydew;
-  --red100: #fff0f5;
-  --color-primary:#00783e;
-  
-  --border100: $border100;
-
-  #view {background:var(--gray0);}
-
-  .darkmode {
-    --gray0: #000;
-    --gray100: #1c1d1d; // bg
-    --gray200: #4e5351; // divider border
-    --gray400: #979d9a; // caption
-    --gray600: #4e5351; // body
-    --gray800: #f1f5f6; // heading
-    color: var(--gray400);
-    .hero-background, .dialog {
-      background: var(--gray100);
-    }
-}
-}
-
-
-
 // ! viewport : desktop first
 @custom-media --viewport-large (max-width: 1440px);
 @custom-media --viewport-medium (max-width: 1280px);
@@ -79,7 +42,6 @@ $padding200: 9px 1.5rem 11px; // 버튼, 텍스트인풋 48
 $radius400: 4px;
 
 $shadow400: 0px 0px 2rem rgba(0, 0, 0, 0.125);
-$shadow450: 2px 4px 8px rgba(0, 0, 0, 0.2); // hover
 
 $border100: 1px solid var(--gray200); // button 빼고는 다 150인듯.. 그러면 
 $border150: 1px solid var(--gray200);
@@ -98,6 +60,43 @@ $zindex-tooltip: 8;
 $height-header: 56px;
 
 $descriptionMargin: 1rem 0 1.5rem 0;
+
+:root {
+  color-scheme: light dark;
+  --fontstack: 'Asap', 'AritaDotum', 'Apple SD Gothic Neo', sans-serif;
+  // ! fontSize
+  --weight700: bold;
+  --weight400: normal;
+  // ! colours
+  --gray0: #fff; // white for dark theme
+  --gray100: #f1f5f6; // bg
+  --gray200: #dadce0; // divider border
+  --gray400: #979d9a; // caption
+  --gray800: #1c1d1d; // heading
+  // --gray600: #4e5351; // body
+  // --gray999: #000;
+  --blue100: honeydew;
+  --red100: #fff0f5;
+  --color-primary:#00783e;
+  
+  --border100: $border100;
+  --shadow400: $shadow400;
+
+  #view {background:var(--gray0);}
+
+  .theme-dark {
+    --gray0: #1c1d1d;
+    --gray100: #4e5351; // bg
+    --gray200: #4e5351; // divider border
+    --gray400: #979d9a; // caption
+    --gray800: #f1f5f6; // heading
+
+    --shadow400: 0px 0px 2rem rgba(0, 0, 0, 0.5);
+
+    color: var(--gray400);
+    input[type=checkbox][role=switch] + label::after {background:#fff;}
+  }
+}
 
 
 
@@ -156,3 +155,23 @@ $descriptionMargin: 1rem 0 1.5rem 0;
   display:inline;
   @media (--viewport-small) {display:block;}
 }
+
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    // --title-color: #EFEFEF;
+    // --desc-color: peachpuff;
+  }
+
+  img {
+    filter: brightness(.8) contrast(1.2);
+  }
+}
+
+// <picture>
+//   <!-- Use this image if the user's OS setting is light or unset -->
+//   <source srcset="photo-light.png" media="(prefers-color-scheme: light) or (prefers-color-scheme: no-preference)">
+//   <!-- Use this image if the user's OS setting is dark -->
+//   <source srcset="photo-dark.png" media="(prefers-color-scheme: dark)">
+// </picture>
