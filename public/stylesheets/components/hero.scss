@@ -1,6 +1,6 @@
 .hero {width:auto;margin: 0 10%;padding:3.5rem 5rem 4.5rem;box-sizing:border-box;position:relative;z-index:1;}
 .hero-background {max-width:100%;margin: 0 auto;background:var(--gray0);border-radius:$radius400;box-shadow:$shadow400;position: absolute;left: -50%;right: -50%;top: 0;bottom:100%;z-index: -1;}
-.hero-eyebrow {display:block;margin:0 0 .5rem 0;}
+.hero-eyebrow {display:block;margin:0 0 .25rem 0;font-size:$caption;font-weight:bold;}
 .hero-title {@include title;}
 .hero-description {margin:1rem 0 3rem 0;}
 .hero-cta {@include button-primary;}

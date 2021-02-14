@@ -41,7 +41,8 @@ table caption {padding:.5rem 0;font-size:$caption;text-align:left;}
 table thead tr {}
 table thead tr th {padding:.5rem 0;line-height:1.4;color:var(--gray400);text-align:left;}
 table tbody tr th {padding:.5rem 0;line-height:1.4;vertical-align:top;text-align:left;}
-table tbody tr td {padding:.5rem 0;border-top:$border100;border-bottom:$border100;box-sizing:border-box;line-height:1.4;}
+table tbody tr td {padding:1rem 0;border-top:1px solid var(--gray100);border-bottom:1px solid var(--gray100);box-sizing:border-box;line-height:1.4;}
+table tbody tr:hover {background:var(--gray100);}
 table .right {text-align:right;}
 
 ul {}
