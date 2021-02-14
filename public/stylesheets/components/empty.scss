@@ -3,7 +3,7 @@
 .empty-icon {@include box-large;margin:0 auto 2rem;font-size:40px;}
 .empty-title {@include subhead;}
 .empty-description {margin:1rem 0 2rem;}
-.empty-list {margin:2rem 0 4rem;}
+.empty-list {margin:2rem 0;}
 .empty-list-item {display:flex;justify-content:space-between;margin:.25rem 0;}
 .empty-list-item b {color:var(--gray400);}
 .empty-list-item span {}

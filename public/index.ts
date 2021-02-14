@@ -299,7 +299,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setDarkmode()
 
   // event.stickyElement({ targetElement: '.js-navbar', addClass: 'is-sticky-navbar' }
-  // event.stickyElement({ targetElement: '.js-header', addClass: 'is-sticky-header' })
+  event.stickyElement({ targetElement: '.js-header', addClass: 'is-sticky-header' })
 
   // ! hashchange 될 때마다 이벤트 만들어짐;
   event.toggleClass({ selector: '.js-navbar-toggle' }).setEvent()

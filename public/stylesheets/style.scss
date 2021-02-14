@@ -11,8 +11,6 @@
 @import 'layout/header';
 @import 'layout/footer';
 
-@import 'themes/theme';
-
 @import 'components/breadcrumb';
 @import 'components/graph';
 @import 'components/modal';
@@ -161,17 +159,21 @@
 
 
 .slider {position:relative;}
-.slider-viewer {overflow:auto;white-space:nowrap;position:relative;transition:all .4s ease;}
+.slider-viewer {overflow:auto;white-space:nowrap;font-size:0;position:relative;transition:all .4s ease;}
 .slider-viewer::-webkit-scrollbar {display: none;}
 /* .slider-viewer .inbox {width:1500px;position:absolute;} */
-.slider-viewer-slide {width:$cell-large;height:$cell-large;margin:0 .25rem;border:$border100;border-radius:$radius400;}
+.slider-viewer-slide {width:$cell-large;width:10rem;height:$cell-large;padding:1rem;border:$border100;border-radius:$radius400;background:var(--gray100);text-align:left;font-size:1rem;}
+.slider-viewer-slide + .slider-viewer-slide {margin-left:.5rem;}
+.slider-viewer-slide:hover {border-color:var(--color-primary);}
+.slider-viewer-slide-media {}
+.slider-viewer-slide-name {margin:.25rem 0 0 0;}
 .slider-dots {width:100px;height:10px;margin-left:-36px;text-align:center;position:absolute;left:50%;bottom:-25px;z-index:5;}
 .slider-dots-dot {float:left;width:10px;height:10px;margin:0px 4px;border-radius:50%;background:rgba(0,0,0,1);cursor:pointer;}
 .slider-dots-dot:hover {width:30px;border-radius:5px;opacity:.5;}
 .slider-arrows {}
-.slider-arrows-prev {@include box-small;box-shadow:$shadow400;position:absolute;left:-16px;top:50%;transform:translateY(-50%);}
+.slider-arrows-prev {@include box-small;box-shadow:$shadow400;position:absolute;left:-16px;top:50%;z-index:1;transform:translateY(-50%);}
 .slider-arrows-prev:hover {background:var(--gray100);}
-.slider-arrows-next {@include box-small;box-shadow:$shadow400;position:absolute;right:-16px;top:50%;transform:translateY(-50%);}
+.slider-arrows-next {@include box-small;box-shadow:$shadow400;position:absolute;right:-16px;top:50%;z-index:1;transform:translateY(-50%);}
 .slider-arrows-next:hover {background:var(--gray100);}
 .slider-arrows button.is-disabled {opacity:.2;}
 
