@@ -20,3 +20,8 @@
   .hero {margin:-4rem 5% 0;padding:3rem 4rem 4rem;}
   .hero-obj4 {width:28rem;}
 }
+
+@media (--viewport-small) {
+  .hero {padding:3rem 5% 4rem;text-align:center;}
+  .hero-obj4 {top:-19rem;right:-2rem;}
+}
