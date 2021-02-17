@@ -44,7 +44,8 @@ button[aria-current=page] {}
   @include button {
     background:$color-primary;
     border:1px solid $color-primary;
-    color:var(--gray0);
+    color: #fff;
+    // color:var(--gray0);
   }
   &:hover,
   &:focus {border-color:darken($color-primary, 2.5%);background:darken($color-primary, 2.5%);}

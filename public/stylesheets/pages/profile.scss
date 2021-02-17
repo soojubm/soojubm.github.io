@@ -42,7 +42,7 @@
 .profile-display-button i {font-size:20px;vertical-align:middle;}
 .profile-display-button img {width:1rem;}
 
-.profile-tablist {display:flex;margin:0 0 1rem 0;position:relative;}
+.profile-tablist {display:flex;margin:0 0 1rem 0;background:var(--gray100);position:relative;}
 .profile-tablist-tab {padding:$padding100;color:var(--gray400);font-weight:bold;cursor:pointer;}
 .profile-tablist-tab[aria-selected=true] {color:var(--gray800);}
 .profile-tablist-tab-badge {font-size:$caption;}

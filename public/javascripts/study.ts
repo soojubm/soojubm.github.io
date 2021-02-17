@@ -113,3 +113,12 @@ function validateForm(inputProps) {
 //       validationMsgClasses.add('hide')
 
 //   return action === 'hide' ? addClass() : removeClass();
+
+function fastGoodbye() {
+  const container = document.querySelector('')
+  while (container?.firstChild) {
+    container.removeChild(container.firstChild)
+  }
+
+  container?.innerHTML = 'this is slow~~'
+}
