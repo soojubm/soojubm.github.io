@@ -18,8 +18,8 @@
 .navbar-user-search a i {vertical-align:middle;color:var(--gray800);}
 
 // todo close icon rotate
-.search-form {background:var(--gray0);box-shadow:$shadow400;padding:.5rem 5%;box-sizing:border-box;position:fixed;left:0;right:0;top:0;bottom:0;z-index:8;}
-.search-form-close {@include box-small;position:absolute;left:50%;top:14px;z-index:8;margin-left:-390px;transform:rotate(180deg);}
+.search-form {background:var(--gray0);padding:.5rem 5%;box-sizing:border-box;position:fixed;left:0;right:0;top:0;bottom:0;z-index:8;}
+.search-form-close {@include box-small;position:absolute;left:1rem;top:14px;z-index:8;transform:rotate(180deg);}
 .search-form-title {margin:0 auto 1rem;font-size:1.25rem;}
 .search-form-field input {padding-left:56px;}
 .search-form .textfield {}

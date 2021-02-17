@@ -42,11 +42,11 @@
 .profile-display-button i {font-size:20px;vertical-align:middle;}
 .profile-display-button img {width:1rem;}
 
-.profile-tablist {display:flex;margin:0 0 1rem 0;background:var(--gray100);position:relative;}
-.profile-tablist-tab {padding:$padding100;color:var(--gray400);font-weight:bold;cursor:pointer;}
-.profile-tablist-tab[aria-selected=true] {color:var(--gray800);}
+.profile-tablist {display:flex;margin:0 0 1rem 0;padding:.25rem;border-radius:$radius400;background:var(--gray100);position:relative;}
+.profile-tablist-tab {padding:$padding100;color:var(--gray800);font-weight:bold;cursor:pointer;position:relative;z-index:1;}
+.profile-tablist-tab[aria-selected=true] {}
 .profile-tablist-tab-badge {font-size:$caption;}
-.profile-tablist-indicator {display:block;height:100%;border-radius:$radius400;background:var(--gray100);position:absolute;top:0;left:0;z-index:-1;transition:all 0.4s ease;}
+.profile-tablist-indicator {display:block;height:calc(100% - .5rem);border-radius:$radius400;background:#fff;position:absolute;top:.25rem;left:0;transition:all 0.4s ease;}
 .profile-tabpanel {display:flex;flex-wrap:wrap;min-height:40rem;}
 
 
@@ -69,7 +69,7 @@
 .card-byline {display:flex;margin:.75rem 0 1rem 0;position:relative;}
 .card-byline-avatar {@include box-tiny;margin-right:.5rem;}
 .card-byline-name {line-height:16px;color:var(--gray400);}
-.card-title {padding:1rem 0 0;font-size:$body;}
+.card-title {padding:1rem 0 0;font-size:$body;font-weight:normal;}
 .card-text {margin:0 0 1rem 0;padding:.5rem 0 1rem;@include truncate-multi;}
 .card-date {display:block;padding:0 0;color:var(--gray400);}
 .card-tags {display:flex;flex-wrap:wrap;}

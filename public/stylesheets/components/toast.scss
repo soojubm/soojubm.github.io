@@ -1,4 +1,4 @@
-.dialog {max-width:320px;padding:1.75rem 2rem 0;border-radius:$radius400;box-sizing:border-box;background-color:var(--gray0);box-shadow:var(--shadow400);position:relative;}
+.dialog {max-width:400px;padding:1.75rem 2rem 0;border-radius:$radius400;box-sizing:border-box;background-color:var(--gray0);box-shadow:var(--shadow400);position:relative;}
 .dialog-object {position:absolute;left:50%;top:0;z-index:-1;width:100px;transform:translate(-50%, -50%);}
 .dialog-title {font-size:$subhead;font-weight:bold;}
 .dialog-description {margin:.5rem 0 1.5rem;}
@@ -8,7 +8,7 @@
 .dialog-footer-confirm {@include button-text;color:$color-primary;}
 .dialog-close {@include box-small;position:absolute;right:.5rem;top:.5rem;}
 
-.toast {max-width:400px;position:fixed;left:1rem;bottom:1rem;z-index:8;}
+.toast {position:fixed;left:1rem;bottom:1rem;z-index:8;}
 @media (--viewport-small) {
   .toast {width:auto;max-width:100%;left:1rem;right:1rem;bottom:calc(constant(safe-area-inset-bottom) + 1rem);bottom:calc(env(safe-area-inset-bottom) + 1rem);}
 }

@@ -59,6 +59,8 @@ ol li ol {margin:0 0 .5rem 0;}
 ol li ol li {counter-increment:sub-list-item;}
 ol li ol li:before {content: counter(sub-list-item,lower-alpha) '.';}
 
+svg {color:var(--gray800);}
+
 ::selection {background:var(--gray800);color:var(--gray0);}
 ::placeholder {color:var(--gray400);}
 
