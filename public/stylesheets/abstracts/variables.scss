@@ -40,6 +40,7 @@ $padding100: 4px 1rem 5px; // 32
 $padding200: 9px 1.5rem 11px; // 버튼, 텍스트인풋 48
 
 $radius400: 4px;
+$radius800: 50%;
 
 $shadow400: 0px 0px 2rem rgba(0, 0, 0, 0.125);
 
@@ -58,8 +59,6 @@ $zindex-popover: 6;
 $zindex-tooltip: 8;
 
 $height-header: 56px;
-
-$descriptionMargin: 1rem 0 1.5rem 0;
 
 :root {
   color-scheme: light dark;
@@ -80,6 +79,12 @@ $descriptionMargin: 1rem 0 1.5rem 0;
   --color-primary:#00783e;
   
   --border100: $border100;
+
+  --radius400: 4px;
+  --radius800: 50%;
+  --radius-default: var(--radius400);
+  --radius-avatar: var(--radius400);
+
   --shadow400: 0px 0px 2rem rgba(0, 0, 0, 0.125);
 
   .theme-dark {

@@ -12,7 +12,7 @@
 .hero-obj3 {position:absolute;right:420px;top:24px;width:16px;height:16px;background:#0057ff;border-radius:50%;transform:scale(0);transition:all .4s ease 1.4s;}
 .hero-obj4 {position:absolute;right:0;top:-9rem;width:35rem;transform:scale(0);transition:all .4s ease 1.2s;}
 
-.is-scrolled .hero-background {bottom: 0;transition: all .2s $bezier-base .6s;}
+.is-scrolled .hero-background {bottom: 0;transition: bottom .2s $bezier-base .6s;}
 .is-scrolled .hero-obj1 {transform:scale(1);}
 .is-scrolled .hero-obj2 {transform:scale(1);}
 .is-scrolled .hero-obj3 {transform:scale(1);}

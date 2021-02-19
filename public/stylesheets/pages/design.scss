@@ -170,10 +170,11 @@
 
 
 .design-article-icon {@include box-small;}
-.design-article-avatar-large {@include box-large;background:url(/public/images/caleb-woods-182648-unsplash.jpg) no-repeat center center;background-size:auto 100%;}
-.design-article-avatar-medium {@include box-medium;background:url(/public/images/caleb-woods-182648-unsplash.jpg) no-repeat center center;background-size:auto 100%;}
-.design-article-avatar-small {@include box-small;background:url(/public/images/caleb-woods-182648-unsplash.jpg) no-repeat center center;background-size:auto 100%;}
-.design-article-avatar-tiny {@include box-tiny;background:url(/public/images/caleb-woods-182648-unsplash.jpg) no-repeat center center;background-size:auto 100%;}
+.design-article-avatar-large {@include box-large;background:url(/public/images/soo.png) no-repeat center center var(--gray800);background-size:auto 100%;}
+.design-article-avatar-medium {@include box-medium;background:url(/public/images/soo.png) no-repeat center center var(--gray800);background-size:auto 100%;}
+.design-article-avatar-small {@include box-small;background:url(/public/images/soo.png) no-repeat center center var(--gray800);background-size:auto 100%;}
+.design-article-avatar-small:after {content:'';display:block;background:var(--gray0);position:absolute;left:-2px;right:-2px;top:-2px;bottom:-2px;z-index:0;}
+.design-article-avatar-tiny {@include box-tiny;background:url(/public/images/soo.png) no-repeat center center var(--gray800);background-size:auto 100%;}
 .design-article-primary {@include button-primary;}
 .design-article-secondary {@include button-secondary;}
 .design-article-tertiary {@include button-tertiary;}
