@@ -64,7 +64,7 @@
 .post-comment-list-item-text {margin:.5rem 0 0;}
 .post-comment-list-item-morevert {@include box-small;display:none;position:absolute;right:0;top:0 ;}
 .post-comment-list-item-menu {display:none;width:80px;background:var(--gray0);box-shadow:$shadow400;padding:8px 0;border:$border100;border-raidus:$radius400;position:absolute;right:40px;top:0;z-index:1;}
-.post-comment-list-item-reply {margin:.5rem 0 0 0;text-decoration:underline;}
+.post-comment-list-item-reply {margin:.5rem 0 0 0;}
 
 .post-comment-list-item:hover .post-comment-list-item-morevert {display:block;}
 .post-comment-list-item-menu.is-visible {display:block;}

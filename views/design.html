@@ -110,11 +110,9 @@
       <p>수줍이</p>
     </div> -->
 
-
-
-    
     <article class="design-article typography">
       <h1 class="design-article-title">Writings</h1>
+      <button class="design-article-more">더 보러가기</button>
       <ul>
         <li><b>금액</b> KRW 기호를 사용하고 한 칸 띄어 씁니다. ₩ 44,612 formatPrice()</li>
         <li><b>날짜</b> YYYY/MM/DD formatDate()</li>
@@ -127,7 +125,6 @@
 
     <article class="design-article typography">
       <h1 class="design-article-title">Typhography</h1>
-      <!-- <button class="design-article-more">View All</button> -->
       <p class="design-article-description">1rem을 14px로 정의했습니다. 숫자에1.75rem케이스있음. Asap와 무게가 살짝 다르고, 마이너스 기호가 어색하다.</p>
       <!-- <p> 기본값인 16px로 사용하되 기본 폰트 사이즈를 사용해야 하는 경우 .875rem를 적용하는 방법을 고민하고 있습니다. 소숫점 픽셀이 발생하고 16px 그리드를 적극적으로 사용하기 위해서입니다. </p> -->
       <div style="display:flex;justify-content:space-between;">
@@ -191,9 +188,9 @@
       <h1 class="design-article-title">Avatar Stack</h1>
       <p class="design-article-description">내용없음.</p>
       <div role="group">
-        <a href="" class="design-article-avatar-small" style="border:2px solid #fff;box-sizing:border-box;"></a>
-        <a href="" class="design-article-avatar-small" style="margin-left:-12px;border:2px solid #fff;box-sizing:border-box;"></a>
-        <a href="" class="design-article-avatar-small" style="margin-left:-12px;border:2px solid #fff;box-sizing:border-box;"></a>
+        <a href="" class="design-article-avatar-small" style="box-shadow: rgb(255 255 255) 0px 0px 0px 2px;"></a>
+        <a href="" class="design-article-avatar-small" style="margin-left:-10px;box-shadow: rgb(255 255 255) 0px 0px 0px 2px;"></a>
+        <a href="" class="design-article-avatar-small" style="margin-left:-10px;box-shadow: rgb(255 255 255) 0px 0px 0px 2px;"></a>
       </div>   
 
       <!-- <div class="ttt">
@@ -300,21 +297,27 @@
       <p>형무소 안에서는 소장의 말이 곧 법이었으며 죄수들의 잘못과 실수는 결코 용납되지 않는다. 어머니의 사망 소식을 듣고 인해 2번이나 탈옥을 시도했다가 체포된 <a href="">루크</a>의 발에 쇠통이 채워지며 루크는…<a class="more" href="#" style="margin-left:.25rem;color:var(--gray800);font-weight:bold;">더 보기</a></p>
     </article>
 
-    <!-- <article class="design-article">
+    <article class="design-article">
       <h1 class="design-article-title">Tabs</h1>
-      <p class="design-article-description">탭 or 스크롤스파이</p>
-      <nav class="tablist is-vertical" style="margin-top:1rem" role="tablist">
+      <p class="design-article-description">스크롤스파이 적용해두기. HDI의 segmented control 느낌이라 고민.</p>
+      <!-- <nav class="tablist is-vertical" style="margin-top:1rem" role="tablist">
         <div class="tablist-active"></div>
         <button class="tablist-tab is-active" role="tab" aria-selected="true" data-index="1">웹사이트 <i class="tablist-tab-badge">4</i></button>
         <button class="tablist-tab" role="tab" aria-selected="false" data-index="2">페이지 <i class="tablist-tab-badge">6</i></button>
         <button class="tablist-tab" role="tab" aria-selected="false" data-index="3">컴포넌트 <i class="tablist-tab-badge">18</i></button>
         <button class="tablist-tab" role="tab" aria-selected="false" data-index="4">빈 상태 <i class="tablist-tab-badge">18</i></button>
-      </nav>
-    </article> -->
+      </nav> -->
+      <nav class="profile-tablist" role="tablist">
+				<button class="profile-tablist-tab" role="tab" aria-selected="true" data-index="1">🐗 프로젝트 <i class="profile-tablist-tab-badge">5</i></button>
+				<button class="profile-tablist-tab" role="tab" aria-selected="false" data-index="2">🕸️ 웹페이지 <i class="profile-tablist-tab-badge">5</i></button>
+				<button class="profile-tablist-tab" role="tab" aria-selected="false" data-index="3">🚧 빈 상태 <i class="profile-tablist-tab-badge">0</i></button>
+				<i class="profile-tablist-indicator" style="width: 90px;"></i>
+			</nav>
+    </article>
 
     <article class="design-article">
       <h1 class="design-article-title">Tags</h1>
-      <p class="design-article-description">임시로 code태그로 마크업해서 사용 중이에요. 닫기 아이콘 연하게.</p>
+      <p class="design-article-description">임시로 code태그로 마크업해서 사용 중인데 바꿔줘야 함.</p>
       <div class="tags" role="group">
         <span class="tag tags-item" role="listitem">해시태그</span>
         <span class="tag tags-item" style="padding:0 .5rem;border-radius:4px;background:#eee;" role="listitem">해시태그</span>
@@ -507,15 +510,15 @@
       <h1 class="design-article-title">Summary</h1>
       <p class="design-article-description">레이블과 밸류로 이루어진 유아이들을...</p>
       <dl style="display:flex;justify-content:space-between;padding:.25rem 0;">
-        <dt style="color:#999;">이용기간</dt>
+        <dt>이용기간</dt>
         <dd>20.12.02. ~ 21.01.01.</dd>
       </dl>
       <dl style="display:flex;justify-content:space-between;padding:.25rem 0;">
-        <dt style="color:#999;">서비스 수수료</dt>
+        <dt>서비스 수수료</dt>
         <dd>₩ 44,612</dd>
       </dl>
       <dl style="display:flex;justify-content:space-between;padding:.25rem 0;">
-        <dt style="color:#999;">배송료</dt>
+        <dt>배송료</dt>
         <dd>₩ 44,612</dd>
       </dl>
       <dl style="display:flex;justify-content:space-between;padding:.5rem 0 2rem;font-size:1.25rem;">
@@ -798,6 +801,27 @@
         <footer class="profile-foot" style="display:flex;justify-content:space-between;margin:1rem 0 0 0;">
           <button class="profile-foot-follow">팔로우</button>
         </footer>
+      </div>
+    </article>
+
+
+    <article class="design-article grayscale">
+      <h1 class="design-article-title">Comment</h1>
+      <p class="design-article-description">코멘트 유아이 샘플. 대댓글이 중요.</p>
+      <div class="post-comment-list">
+        <div class="post-comment-list-item">
+          <a class="post-comment-list-item-avatar" href="#"><img src="/public/images/soo.png"></a>
+          <a class="post-comment-list-item-author" href="#">soojubm</a>
+          <time class="post-comment-list-item-date" datetime="2016">1 day ago</time>
+          <p class="post-comment-list-item-text">우와 처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요. 우와 처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요.</p>
+          <button class="post-comment-list-item-reply">답글 <small>7</small></button>
+          <button class="post-comment-list-item-morevert js-toggle"><i class="icon-more"></i></button>
+          <menu class="post-comment-list-item-menu">
+            <button class="">수정</button>
+            <button class="">삭제</button>
+            <button class="">신고</button>
+          </menu>
+        </div>
       </div>
     </article>
 

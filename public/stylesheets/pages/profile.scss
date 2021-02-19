@@ -46,7 +46,7 @@
 .profile-tablist-tab {padding:$padding100;color:var(--gray800);font-weight:bold;cursor:pointer;position:relative;z-index:1;}
 .profile-tablist-tab[aria-selected=true] {}
 .profile-tablist-tab-badge {font-size:$caption;}
-.profile-tablist-indicator {display:block;height:calc(100% - .5rem);border-radius:$radius400;background:#fff;position:absolute;top:.25rem;left:0;transition:all 0.4s ease;}
+.profile-tablist-indicator {display:block;height:calc(100% - .5rem);border-radius:$radius400;background:#fff;position:absolute;top:.25rem;left:.25rem;transition:all 0.4s ease;}
 .profile-tabpanel {display:flex;flex-wrap:wrap;min-height:40rem;}
 
 

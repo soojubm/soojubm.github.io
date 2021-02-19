@@ -25,7 +25,7 @@
 .design-article {margin:6rem 0;position:relative;}
 .design-article-title {margin:0 0 1rem 0;@include subhead;}
 .design-article-description {margin:0 0 1.5rem 0;}
-.design-article-more {display:flex;align-items:center;font-size:$caption;position:absolute;right:0;top:0;}
+.design-article-more {display:flex;align-items:center;font-size:$caption;color:var(--color-primary);font-weight:bold;position:absolute;right:0;top:0;}
 .design-article-more i {margin-left:1.5rem;}
 .design-article.is-scrolled {animation:fadeup .8s;}
 
@@ -173,7 +173,6 @@
 .design-article-avatar-large {@include box-large;background:url(/public/images/soo.png) no-repeat center center var(--gray800);background-size:auto 100%;}
 .design-article-avatar-medium {@include box-medium;background:url(/public/images/soo.png) no-repeat center center var(--gray800);background-size:auto 100%;}
 .design-article-avatar-small {@include box-small;background:url(/public/images/soo.png) no-repeat center center var(--gray800);background-size:auto 100%;}
-.design-article-avatar-small:after {content:'';display:block;background:var(--gray0);position:absolute;left:-2px;right:-2px;top:-2px;bottom:-2px;z-index:0;}
 .design-article-avatar-tiny {@include box-tiny;background:url(/public/images/soo.png) no-repeat center center var(--gray800);background-size:auto 100%;}
 .design-article-primary {@include button-primary;}
 .design-article-secondary {@include button-secondary;}
