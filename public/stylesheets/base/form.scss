@@ -140,17 +140,20 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 .textfield-unit {width:40px;height:46px;padding:0 1rem;line-height:50px;text-align:right;color:rgba(0, 0, 0, 0.4);position:absolute;right:0;bottom:0;}
 .textfield-helper {margin-top:.25rem;color:$red800;}
 .textfield-button {border-top-left-radius:0;border-bottom-left-radius:0;position:absolute;right:0;top:0;}
-.textfield-label ~ .textfield-button {top:28px;}
 .textfield-link {font-size:$caption;position:absolute;right:0;top:0;}
+// .textfield-reset {}
 .textfield-prefix {display:inline-block;width:100px;}
-.textfield-prefix + .textfield-input {display:inline-block;padding-right:100px;}
-.textfield-suffix {display:inline-block;padding:0 1.5rem;line-height:46px;cursor:default;color:var(--gray400);position:absolute;right:0;top:28px;}
-.textfield-reset {}
-.selectbox-indicator {@include box-small;width:2rem;height:2rem;background:var(--gray0);position:absolute;right:1rem;bottom:calc(.5rem + 3px);pointer-events:none;}
+// .textfield-prefix + .textfield-input {display:inline-block;padding-right:100px;}
+
+@mixin textfield-surfix {
+  @include box-small;width:2rem;height:2rem;background:var(--gray0);position:absolute;right:1rem;top:37px;pointer-events:none;
+}
+.textfield-surfix {@include textfield-surfix;}
+.selectbox-indicator {@include textfield-surfix;}
 
 .textfield.is-small {padding:0 !important;font-size:$caption !important;}
 .textfield.is-small .textfield-label {margin-bottom:0;}
-.textfield.is-small .textfield-input {height:$cell-small;padding:6px 1.25rem;}
+.textfield.is-small .textfield-input {height:$cell-small;padding:6px 1rem;}
 .textfield.is-inline.textfield {padding-left:5rem !important;}
 .textfield.is-inline .textfield-label {line-height:$cell-small;position:absolute;left:0;top:0;}
 .textfield.is-inline .textfield-input {}

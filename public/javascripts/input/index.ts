@@ -9,3 +9,7 @@ export default {
   file,
   number,
 }
+
+function clearTextfield() {
+  // event.target.siblings.input.value = ''
+}

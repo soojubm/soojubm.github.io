@@ -177,7 +177,7 @@
 .slider-arrows-next:hover {background:var(--gray100);}
 .slider-arrows button.is-disabled {opacity:.2;}
 
-.quote {max-width:320px;padding:2rem;border-radius:$radius400;box-sizing:border-box;border:$border100;box-shadow:$shadow400;background:var(--gray0);}
+.quote {max-width:400px;padding:2rem;border-radius:$radius400;box-sizing:border-box;border:$border100;box-shadow:$shadow400;background:var(--gray0);}
 .quote-avatar {@include box-small;}
 .quote-title {margin:1rem 0 .5rem;@include subhead;}
 .quote-body {}
@@ -187,7 +187,7 @@
 .quote-action {@include button-primary;width:50%;margin:2rem 0 0 0;}
 
 
-.offline {max-width:320px;margin:0 auto;padding:.5rem 1rem;border-radius:$radius400;background:$red800;text-align:center;position:fixed;left:10%;right:10%;top:45%;z-index:8;}
+.offline {max-width:400px;margin:0 auto;padding:.5rem 1rem;border-radius:$radius400;background:$red800;text-align:center;position:fixed;left:10%;right:10%;top:45%;z-index:8;}
 .offline p {color:var(--gray0);}
 
 .skeleton-screen:empty{

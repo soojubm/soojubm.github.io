@@ -276,7 +276,7 @@
 
     <article class="design-article">
       <h1 class="design-article-title">Seperator</h1>
-      <p class="design-article-description">섹션 간 border 스타일로 구획하는 것보다 hr br 태그로 마크업하는 것은 어떨까?</p>
+      <p class="design-article-description">섹션 간 border 스타일로 구획하는 것보다 hr br 태그로 마크업하면 컴포넌트 고유성(?)을 유지하기 쉽다.</p>
       <hr role="separator" />
     </article>
 
@@ -354,10 +354,10 @@
         <br />
         <h6 style="margin:0 0 .5rem;font-size:.875rem;">Small Sizes</h6>
         <div role="group">
-          <button class="design-article-primary-small">👉 프라이머리</button>
+          <button class="design-article-primary-small">프라이머리</button>
           <!-- <button class="danger-button is-small" aria-label="danger">Danger</button>
           <button class="success-button is-small" aria-label="danger">Success</button> -->
-          <button class="design-article-secondary-small">세컨더리 👉</button>
+          <button class="design-article-secondary-small">세컨더리</button>
           <button class="design-article-tertiary-small">터시어리</button>
           <button class="design-article-text-small">텍스트</button>
         </div>
@@ -615,7 +615,7 @@
       <div class="textfield is-invalid">
         <label class="textfield-label" for="abc123">레이블 <abbr aria-label="optional" style="font-size:.875rem;">선택입력</abbr></label>
         <input class="textfield-input js-input-test" type="text" id="abc123" placeholder="Textarea Placeholder..." value="soojubm@gmail.com" aria-describedby="error" aria-invalid="true" />
-        <!-- <button class="textfield-button"><i class="icon-close"></i></button> -->
+        <button class="textfield-surfix"><i class="icon-close"></i></button>
         <small class="textfield-helper is-error">이미 사용 중인 이메일입니다.</small>
       </div>
       <br />
@@ -639,7 +639,7 @@
       </div>
       <br />
       <div class="textfield">
-        <label class="textfield-label" for="select-label">셀렉트박스</label>
+        <label class="textfield-label" for="select-label">셀렉트박스 with surfix icon</label>
         <select class="textfield-input" name="select-select" id="select-select">
           <option class="select-option" value="select-option1">Choose an option</option>
         </select>
@@ -786,19 +786,20 @@
           <div class="quote-byline-job">Art Director</div>
         </div>
         <button class="quote-action">자세히보기</button>
+        <!-- <button class="quote-later">나중에보기</button> -->
       </div>
       <br />
-      <div class="profile-user" style="float:none;width:auto;border:1px solid var(--gray200);padding:1.5rem 2rem;border-radius:4px;    border: 1px solid var(--gray200);
+      <div class="profile-user" style="float:none;max-width:400px;border:1px solid var(--gray200);padding:1.5rem 2rem;border-radius:4px;    border: 1px solid var(--gray200);
       box-shadow: 0 0 2rem rgb(0 0 0 / 13%);
       background: var(--gray0);">
         <figure class="profile-user-avatar"></figure>
-        <h2 class="profile-user-name">수줍이</h2>
+        <h2 class="profile-user-name">Gyeongsoo I</h2>
         <span class="profile-user-id">@soojubm</span>
-        <span class="profile-user-career">UI 디자인 / Frontend 개발</span>
-        <footer class="profile-foot" style="display:flex;justify-content:space-between;margin:1rem 0;">
+        <span class="profile-user-career">UI Designer / Frontend Engineer</span>
+        <!-- <footer class="profile-foot" style="display:flex;justify-content:space-between;margin:1rem 0;">
           <code style="background:var(--gray100);padding-top:0;padding-bottom:0;">🇰🇷 South Korea</code>
           <code style="background:var(--blue100);padding-top:0;padding-bottom:0;">🚴‍♂️ Bike</code>
-        </footer>
+        </footer> -->
         <footer class="profile-foot" style="display:flex;justify-content:space-between;margin:1rem 0 0 0;">
           <button class="profile-foot-follow">팔로우</button>
         </footer>
@@ -1233,4 +1234,8 @@
       </style>
     </section>
   </section>
+
+  <script>
+
+  </script>
 </main>

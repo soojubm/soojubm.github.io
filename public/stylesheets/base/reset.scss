@@ -2,17 +2,14 @@
 @font-face {font-family: 'AritaDotum';src:url(/public/webfonts/Arita-dotum-SemiBold_OTF.woff);font-weight:bold;}
 @font-face {font-family: 'Asap';src: url(/public/webfonts/Asap-Regular.otf); }
 @font-face {font-family: 'Asap';font-weight:bold;src:url(/public/webfonts/Asap-Medium.otf); }
-// @font-face {font-family: 'MaruBuri';font-weight:bold;src:url(/public/webfonts/MaruBuri-Regular.ttf); }
 // @font-face {font-family: 'DunkelSans';src: url(/public/webfonts/Dunkelsansv0.5-Heavy.woff2); }
 // @font-face {font-family: 'Arvana';font-weight:400;src: url(/public/webfonts/Arvanav0.3-Regular.woff2); }
 // @font-face {font-family: 'Arvana';font-weight:800;src: url(/public/webfonts/Arvanav0.3-Black.woff2); }
-// @import url('https://fonts.googleapis.com/css?family=Gothic+A1:300,400,700,900&display=swap&subset=korean');
 // @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&display=swap');
 // @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap');
 // @import url('https://fonts.googleapis.com/css2?family=Lora:ital@1&display=swap');
 
 // 16px 14px : .875rem / 18px : 1.125rem
-
 // Fira Sans 350 있으면..
 
 body,dl,dd,figure,blockquote,h1,h2,h3,h4,h5,h6,p,input[type=radio] {margin:0;}
@@ -64,7 +61,6 @@ svg {color:var(--gray800);}
 ::selection {background:var(--gray800);color:var(--gray0);}
 ::placeholder {color:var(--gray400);}
 
-.off-screen {display:none;width:0;height:0;overflow:hidden;opacity:0;visibility:hidden;}
 
 @media (--viewport-small) {
   html {font-size:12px;}
@@ -92,57 +88,8 @@ svg {color:var(--gray800);}
 [aria-label=close] {}
 [role=listitem] {}
 
-.hidden {width:1px;height:1px;clip:rect(1px 1px 1px 1px);overflow:hidden;position:absolute;user-select:none;} // if(true) 리더기가 무시.
+.visually-hidden {width:1px;height:1px;clip:rect(1px 1px 1px 1px);overflow:hidden;position:absolute;user-select:none;} // if(true) 리더기가 무시. // speak: never;
 // [aria-hidden=false] {width:1px;height:1px;clip:rect(1px 1px 1px 1px);overflow:hidden;position:absolute;user-select:none;}
-
-
-.tt {
-  height: 100px;
-  overflow: hidden;
-  img {
-    height:100px;
-  }
-}
-
-
-#box {
-  background-color: rgba(40, 40, 190, 255);
-  border: 4px solid rgb(20, 20, 120);
-  transition: background-color 1s, border 1s;
-  width: 350px;
-  height: 350px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-}
-
-.vertical {
-  color: white;
-  font: 32px "Arial";
-}
-
-.extra {
-  width: 350px;
-  height: 350px;
-  margin-top: 10px;
-  border: 4px solid rgb(20, 20, 120);
-  text-align: center;
-  padding: 20px;
-}
-
-
-.visually-hidden {
-  position: absolute;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  // speak: never;
-}
 
 button.visually-hidden:focus,
 input[type=submit].visually-hidden:focus {
@@ -163,12 +110,6 @@ input[type=submit].visually-hidden:focus {
   outline-color: Highlight;
   outline-color: -webkit-focus-ring-color;
 }
-
-
-
-
-
-
 
 .cta-arrow {
   max-width: 67px;

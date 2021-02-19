@@ -1,6 +1,5 @@
 // @ts-nocheck
 
-
 const routes = [
   { name: 'root', path: '/' },
   { name: 'home', path: '/home' },
@@ -15,7 +14,7 @@ const routePage = async () => {
   if (!view) return
 
   type routeType = {
-    name: string,
+    name: string
     path: string
   }
 
@@ -23,25 +22,24 @@ const routePage = async () => {
   function navigate(event) {
     const route = event.target.attributes[0].value
     const routeInfo = routes.filter(item => item.path === route)[0]
-    if(!routeInfo) {
-      window.history.pushState({} , '', 'error')
+    if (!routeInfo) {
+      window.history.pushState({}, '', 'error')
       view.innerHTML = 'no route exists'
-    }
-    else {
-      window.history.pushState({name: 'tester'}, 'name', routeInfo.path)
+    } else {
+      window.history.pushState({ name: 'tester' }, 'name', routeInfo.path)
       view.innerHTML = `${routeInfo.name}`
     }
   }
 
-  activeRoutes.forEach((route) => {
+  activeRoutes.forEach(route => {
     route.addEventListener('click', navigate, flase)
   })
 
-  if(currentPath === '/') {
-    console.log('root page')
+  if (currentPath === '/') {
+    // root page
   } else {
     const route = routes.filter(item => item.path === currentPath)
-    if(!route) view.innerHTML = '404'
+    if (!route) view.innerHTML = '404'
 
     view.innerHTML = `${route.name}`
   }

@@ -1,7 +1,7 @@
 .header {display:flex;align-items:center;padding:1rem 10%;border-radius:$radius400;position:absolute;left:0;right:0;z-index:3;}
-.header-back {}
-.header-back-icon {@include box-small;margin:0 1rem 0 0;transform:rotate(180deg);}
-.header-title {font-size:1rem;font-weight:bold;position:absolute;left:50%;top:50%;transform:translate(0, -50%);z-index:5;left:4rem;padding:0 10%;}
+.header-back {position:relative;z-index:1;}
+.header-back-icon {@include box-small;transform:rotate(180deg);}
+.header-title {font-size:1rem;font-weight:bold;position:absolute;left:4rem;padding:0 10%;}
 .header-backdrop {height:32px;padding:1rem 0;}
 .header-cta {@include box-small;margin-left:auto;color:var(--gray800);}
 .header-cta svg {width:1rem;}

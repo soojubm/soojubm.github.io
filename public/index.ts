@@ -564,3 +564,9 @@ function focusComment() {
     }),
   )
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  const elements = document.querySelectorAll('.design-article-title')
+  if (!elements) return
+  elements.forEach(element => console.log(element.innerHTML))
+})
