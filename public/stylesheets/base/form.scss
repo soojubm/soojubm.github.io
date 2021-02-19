@@ -142,7 +142,7 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 .textfield-button {border-top-left-radius:0;border-bottom-left-radius:0;position:absolute;right:0;top:0;}
 .textfield-label ~ .textfield-button {top:28px;}
 .textfield-link {font-size:$caption;position:absolute;right:0;top:0;}
-.textfield-prefix {display:inline-block;display:none;width:100px;}
+.textfield-prefix {display:inline-block;width:100px;}
 .textfield-prefix + .textfield-input {display:inline-block;padding-right:100px;}
 .textfield-suffix {display:inline-block;padding:0 1.5rem;line-height:46px;cursor:default;color:var(--gray400);position:absolute;right:0;top:28px;}
 .textfield-reset {}

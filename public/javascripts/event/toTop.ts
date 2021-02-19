@@ -10,7 +10,7 @@ const toTop = ({ selector: target }: Parameter) => {
     event.preventDefault()
     window.scrollTo(0, 0)
 
-    window.location.hash = toTopElement.name || toTopElement.href
+    // window.location.hash = toTopElement.name || toTopElement.href
   })
 }
 

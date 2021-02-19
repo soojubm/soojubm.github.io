@@ -157,16 +157,13 @@ $height-header: 56px;
   @media (--viewport-small) {display:block;}
 }
 
-
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    // --title-color: #EFEFEF;
-    // --desc-color: peachpuff;
-  }
-
-  // img {filter: brightness(.8) contrast(1.2);}
-}
+// @media (prefers-color-scheme: dark) {
+//   :root {
+//     // --title-color: #EFEFEF;
+//     // --desc-color: peachpuff;
+//   }
+//   // img {filter: brightness(.8) contrast(1.2);}
+// }
 
 // <picture>
 //   <!-- Use this image if the user's OS setting is light or unset -->
