@@ -5,7 +5,7 @@
 .order-head-description {}
 
 .order-item {margin:2rem 0;border:$border100;border-radius:$radius400;position:relative;}
-.order-item-head {padding:1rem 2rem 1.5rem;border-bottom:$border100;box-sizing:border-box;position:relative;}
+.order-item-head {padding:1rem 1.5rem 1.5rem;border-bottom:$border100;box-sizing:border-box;position:relative;}
 .order-item-head-date {display:block;width:100%;}
 .order-item-head-date-label {display:block;font-size:$caption;}
 .order-item-head-date-value {}
@@ -15,7 +15,7 @@
 .order-item-head-method {}
 .order-item-head-method-label {display:block;font-size:$caption;}
 .order-item-head-method-value {}
-.order-item-body {margin:1rem 0;padding:0 2rem;overflow:hidden;position:relative;}
+.order-item-body {margin:1rem 0;padding:0 1.5rem;overflow:hidden;position:relative;}
 .order-item-product {margin:.5rem 0;@include clearfix;}
 .order-item-product-thumbnail {float:left;@include box-large;margin-right:1.5rem;}
 .order-item-product-name {font-size:1rem;}
