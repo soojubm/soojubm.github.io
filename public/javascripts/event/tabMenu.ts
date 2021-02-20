@@ -37,3 +37,19 @@ const tabMenu = () => {
 }
 
 export default tabMenu
+
+// const tabs2 = document.querySelectorAll<HTMLElement>('[role=tab]')
+// if (!tab2) return
+
+// tabs2.forEach(tab => {
+//   tab.addEventListener('click', event => {
+//     const tabIndex = tab.getAttribute('data-index')
+//     const tabIndicator = tab?.parentNode?.querySelector<HTMLElement>('.profile-tablist-indicator')
+//     if (tabIndicator) {
+//       tabIndicator.style.left = `${tab.offsetLeft}px`
+//       tabIndicator.style.width = getComputedStyle(tab).width
+//     }
+
+//     tab.setAttribute('aria-selected', 'true')
+//   })
+// })

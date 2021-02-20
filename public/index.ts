@@ -1,16 +1,15 @@
 'use strict'
 
 import './stylesheets/style.scss'
+
 import routePage from './javascripts/router'
 import { loader, detectBrowser } from './javascripts/load'
-import { createGraph } from './javascripts/ui'
 import { setDarkmode, carousel } from './javascripts/setDarkMode'
 import { countDownClock } from './javascripts/countdown'
 import event from './javascripts/event/index'
 import input from './javascripts/input/index'
 
 // import { validity } from './javascripts/utils/validations'
-
 // import { copyClipboard } from './javascripts/utils/formatUtils.js'
 
 document.addEventListener('readystatechange', (event: any) => {
@@ -20,28 +19,16 @@ document.addEventListener('readystatechange', (event: any) => {
   else if (event.target.readyState === 'complete') console.log('initApp')
 })
 
-// document.documentElement.className += ' supports-date';
-// div.classList.replace("foo", "bar");
-
-// if(window.matchMedia('(min-width:888px)').matches) {}
-
-// function addToPendingWork(promise) {
-//   busyspinner.hidden = false
-//   pendingOps.add(promise)
-//   const cleanup = () => {
-//     pendingOps.delete(promise)
-//     busyspinner.hidden = pendingOps.size === 0
-//   }
-//   promise.then(cleanup).catch(cleanup)
-// }
-
-window.addEventListener('unload', () => console.log('unload event'))
 window.addEventListener('offline', () => {
   const offlineElement = document.querySelector<HTMLElement>('.js-offline')
   offlineElement!.hidden = true
 })
+window.addEventListener('unload', () => console.log('unload event'))
 
-const domEvents = async () => {
+window.addEventListener('hashchange', domEvents)
+window.addEventListener('hashchange', initailizePage)
+
+async function domEvents() {
   await routePage()
 
   lazyLoading()
@@ -120,27 +107,6 @@ const domEvents = async () => {
     }
   }
 
-  // 회원가입 버튼을 눌렀을 때 유효성을 체크한다.
-  // const { email, password } = document.signup
-  // document.signup.addEventListener('submit', event => {
-  //   event.preventDefault()
-  //   alert()
-  //   // console.log(email, password)
-  //   //	userId.nextSibling.nextSibling.innerHTML = '5~20자의 영문 소문자와 숫자, 특수기호(_),(-)만 사용 가능합니다.';
-  //   // 8~16자 영문 대 소문자, 숫자, 특수문자를 사용하세요.
-  // })
-
-  let formChanged = false
-  const signupForm = document.querySelector('.js-input-email')
-  signupForm?.addEventListener('change', () => {
-    formChanged = true
-  })
-  window.addEventListener('beforeunload', event => {
-    if (!formChanged) return
-    event.preventDefault() // 모든 브라우저에서 지원하는 것은 아님.
-    event.returnValue = ''
-  })
-
   input.checkbox({ checkAllSelector: '.js-checkall', checkSelector: '.js-check' }).setEvent()
   input.file()
   input.textarea()
@@ -159,6 +125,22 @@ const domEvents = async () => {
   // event.scrollspy({ menusSelector: '.js-section', sectionsSelector: '.newneek-navbar-menu-item' })
 
   createGraph()
+  function createGraph() {
+    // todo 지금은 바가 100px 이라서 1:1로 대입
+    const graphItems = document.querySelectorAll('.js-graph .graph-item')
+    if (!graphItems) return
+
+    graphItems.forEach(element => {
+      const graphItemBar = element.querySelector<HTMLElement>('.graph-item-bar')
+      const graphItemValue = element.querySelector<HTMLElement>('.graph-item-value')
+      if (!graphItemBar || !graphItemValue) return
+
+      const graphValue = parseInt(graphItemValue.innerText)
+
+      graphItemBar.style.height = `${graphValue}px`
+      graphItemValue.style.bottom = `${graphValue}px`
+    })
+  }
   countDownClock(20, 'days')
   carousel()
   revealPassword()
@@ -204,18 +186,11 @@ const domEvents = async () => {
     })
   }
 
-  // event.customCursor()
-
   // todo
   const list = document.querySelector('.js-display-list')
   const grid = document.querySelector('.js-display-grid')
   const works = document.querySelector('.profile-body')
 
-  const buttons = document.querySelector('.js-display-list')
-  buttons?.addEventListener('click', (event: any) => {
-    console.log(event.target.parentNode, event.target.name)
-    event.target.parentNode.classList.add('is-temp')
-  })
   list?.addEventListener('click', () => {
     list?.classList.add('is-selected')
     grid?.classList.remove('is-selected')
@@ -226,27 +201,13 @@ const domEvents = async () => {
     grid?.classList.add('is-selected')
     works?.classList.remove('list')
   })
-
-  // const profileUser = document.querySelector('.profile-user')
-  // const profileUserBackdrop = document.querySelector<HTMLElement>('.profile-user-backdrop')
-  // if (profileUser && profileUserBackdrop) {
-  //   const headhieght = getComputedStyle(profileUser).height
-  //   console.log(getComputedStyle(profileUserBackdrop), headhieght)
-  //   profileUserBackdrop.style.height = `${headhieght}px`
-
-  //   document.addEventListener('resize', () => {
-  //     profileUserBackdrop.style.height = `${headhieght}px`
-  //   })
-  // }
 }
-window.addEventListener('hashchange', domEvents)
-window.addEventListener('hashchange', initailizePage)
 
 function revealPassword() {
-  const toggleElement = document.querySelectorAll<HTMLElement>('.js-view-password')
-  if (toggleElement.length === 0) return
+  const elements = document.querySelectorAll<HTMLElement>('.js-view-password')
+  if (elements.length === 0) return
 
-  toggleElement.forEach(element =>
+  elements.forEach(element =>
     element.addEventListener('click', () => {
       const passwordElement = element.parentNode?.querySelector<HTMLElement>('input')
       const isPasswordType = passwordElement?.getAttribute('type') === 'password'
@@ -259,46 +220,29 @@ function revealPassword() {
 
 function initailizePage() {
   initializeMenu()
+  detectPage()
+
   function initializeMenu() {
     const navigationTrigger = document.querySelector<HTMLElement>('.js-navbar-toggle')
-    console.log(navigationTrigger)
     navigationTrigger?.classList.remove('is-active')
     navigationTrigger?.nextElementSibling?.classList.remove('is-visible')
   }
 
-  function notifyThisPage() {
+  function detectPage() {
     let { hash } = window.location
     const className = `page-${hash === '' ? 'design' : hash.substring(1)}`
 
     document.body.className = ''
     document.body.classList.add(className)
   }
-
-  function detectHeaderTheme() {
-    const pageHeadElement = document.querySelector<HTMLElement>('.js-header')
-    const pages = ['#design', '']
-    const isWhite = pages.includes(window.location.hash)
-    const ACTIVE_CLASS = 'is-white'
-
-    if (isWhite) {
-      pageHeadElement?.classList.add(ACTIVE_CLASS)
-    } else {
-      pageHeadElement?.classList.remove(ACTIVE_CLASS)
-    }
-  }
-
-  notifyThisPage()
-  detectHeaderTheme()
 }
 
-loader()
-
 document.addEventListener('DOMContentLoaded', () => {
+  loader()
   initailizePage()
   detectBrowser()
   setDarkmode()
 
-  // event.stickyElement({ targetElement: '.js-navbar', addClass: 'is-sticky-navbar' }
   event.stickyElement({ targetElement: '.js-header', addClass: 'is-sticky-header' })
 
   // ! hashchange 될 때마다 이벤트 만들어짐;
@@ -310,18 +254,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const isScrollEnd = window.innerHeight + window.pageYOffset >= document.body.offsetHeight
     if (isScrollEnd) console.log('detect bottom')
   })
-
   window.addEventListener('scroll', scrollProgress, true)
+
+  function scrollProgress() {
+    const post = document.querySelector<HTMLElement>('.post')
+    const progressBar = document.querySelector<HTMLElement>('.post-head-progress')
+    if (!post || !progressBar) return
+
+    const scrollPercent = `${(window.pageYOffset / (post!.scrollHeight - window.innerHeight)) * 100}%`
+    progressBar!.style.width = scrollPercent
+  }
 })
-
-function scrollProgress() {
-  const post = document.querySelector<HTMLElement>('.post')
-  const progressBar = document.querySelector<HTMLElement>('.post-head-progress')
-  if (!post || !progressBar) return
-
-  const scrollPercent = `${(window.pageYOffset / (post!.scrollHeight - window.innerHeight)) * 100}%`
-  progressBar!.style.width = scrollPercent
-}
 
 // let company = {
 //   name: 'Github',
@@ -435,9 +378,6 @@ function scrollProgress() {
 
 // var form = username.form;
 // var elements = form.elements;
-
-// const errorHelper = () => {
-// };
 
 // var hasError = function(field) {
 // 	if (field.disabled || field.type === 'file' || field.type === 'reset' || field.type === 'submit' || field.type === 'button') return;
@@ -555,8 +495,8 @@ function calculateReadTime() {
 // }
 
 function focusComment() {
-  const commentWrite = document.querySelector('.js-comment-write')
-  const commentTextField = document.querySelectorAll('.js-comment-textfield')
+  const commentWrite = document.querySelector<HTMLElement>('.js-comment-write')
+  const commentTextField = document.querySelectorAll<HTMLElement>('.js-comment-textfield')
 
   commentTextField!.forEach(element =>
     element.addEventListener('focus', () => {
@@ -565,8 +505,28 @@ function focusComment() {
   )
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  const elements = document.querySelectorAll('.design-article-title')
-  if (!elements) return
-  elements.forEach(element => console.log(element.innerHTML))
-})
+// document.documentElement.className += ' supports-date';
+// div.classList.replace("foo", "bar");
+// if(window.matchMedia('(min-width:888px)').matches) {}
+
+// function addToPendingWork(promise) {
+//   busyspinner.hidden = false
+//   pendingOps.add(promise)
+//   const cleanup = () => {
+//     pendingOps.delete(promise)
+//     busyspinner.hidden = pendingOps.size === 0
+//   }
+//   promise.then(cleanup).catch(cleanup)
+// }
+
+// ! refresh 입력 중일 떄
+// let formChanged = false
+// const signupForm = document.querySelector('.js-input-email')
+// signupForm?.addEventListener('change', () => {
+//   formChanged = true
+// })
+// window.addEventListener('beforeunload', event => {
+//   if (!formChanged) return
+//   event.preventDefault() // 모든 브라우저에서 지원하는 것은 아님.
+//   event.returnValue = '테스트'
+// })
