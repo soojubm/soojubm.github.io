@@ -192,3 +192,10 @@
 .minicard-emoji {@include box-large;font-size:3rem;}
 .minicard-value {margin:1rem 0 0;font-size:1rem;line-height:1;}
 .minicard-label {font-size:$caption;color:var(--gray400);}
+
+.userlist:after {
+  content:'';display:block;clear:both;
+}
+.userlist .profile-user:hover:after {
+  content:'';display:block;box-shadow:$shadow400;border-radius:$radius400;position:absolute;left:-.5rem;right:-.5rem;top:-.5rem;bottom:-.5rem;z-index:-1;
+}

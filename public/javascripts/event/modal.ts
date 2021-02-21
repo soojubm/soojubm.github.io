@@ -7,27 +7,27 @@ type Parameter = {
 }
 
 const getOptions = function(data) {
-	return {
-		method: 'POST',
-		body: JSON.stringify(data || {}),
-		headers: {
-			'Content-type': 'application/json; charset=UTF-8'
-		}
-	}
+  return {
+    method: 'POST',
+    body: JSON.stringify(data || {}),
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+  }
 }
 
 const getData = function(url, data) {
-	return fetch(url, {
-		method: 'POST',
-		body: JSON.stringify(data),
-		headers: {
-			'Content-type': 'application/json; charset=UTF-8'
-		}
-	}).then(function (response) {
-		if (response.ok) return response.json();
-		return Promise.reject(response);
-	});
-};
+  return fetch(url, {
+    method: 'POST',
+    body: JSON.stringify(data),
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+  }).then(function(response) {
+    if (response.ok) return response.json()
+    return Promise.reject(response)
+  })
+}
 
 const modal = ({ selector: trigger }: Parameter) => ({
   initialize() {},
@@ -37,46 +37,51 @@ const modal = ({ selector: trigger }: Parameter) => ({
     document.removeEventListener('click', this.backHistory)
     if (!this.modals) return
 
-    this.modals.forEach(modal => modal.addEventListener('click', event => {
-      event.stopPropagation()
-      event.preventDefault()
-      
-      const id = modal.dataset.modal
-      const uri = `/views/${id}.html`
-      fetch(uri).then(response => {
-        if (response.ok) return response.text()
-        else return Promise.reject(response)
-      }).then(html => {
-        if(!this.modalContainer) return
-        
-        this.modalContainer.innerHTML = html
-        document.body.classList.remove('is-modal-visible')
+    this.modals.forEach(modal =>
+      modal.addEventListener('click', event => {
+        event.stopPropagation()
+        event.preventDefault()
 
-        const { pageYOffset } = window
-        this.showModal(pageYOffset)
-        this.setHistory(id)
+        const id = modal.dataset.modal
+        const uri = `/views/${id}.html`
+        fetch(uri)
+          .then(response => {
+            if (response.ok) return response.text()
+            else return Promise.reject(response)
+          })
+          .then(html => {
+            if (!this.modalContainer) return
 
-        const isShown = document.body.classList.contains('is-modal-visible')
-        if(isShown) {
-          document.querySelector('.js-modal-close')?.addEventListener('click', event => event.stopPropagation())
-          document.querySelector('.js-modal-close')?.addEventListener('click', this.backHistory)
-          document.querySelector('.modal-dim')?.addEventListener('click', this.backHistory)
-          // document.addEventListener('click', this.backHistory)
-        } else {
+            this.modalContainer.innerHTML = html
+            document.body.classList.remove('is-modal-visible')
 
-        }
-        document.addEventListener('keydown', event => {
-          const isKeyEsc = event.keyCode === 27
-          if(!isKeyEsc) return
-          
-          this.backHistory()
-        }, true)
+            const { pageYOffset } = window
+            this.showModal(pageYOffset)
+            this.setHistory(id)
 
+            const isShown = document.body.classList.contains('is-modal-visible')
+            if (isShown) {
+              document.querySelector('.js-modal-close')?.addEventListener('click', event => event.stopPropagation())
+              document.querySelector('.js-modal-close')?.addEventListener('click', this.backHistory)
+              document.querySelector('.modal-dim')?.addEventListener('click', this.backHistory)
+              // document.addEventListener('click', this.backHistory)
+            }
+            document.addEventListener(
+              'keydown',
+              event => {
+                const isKeyEsc = event.keyCode === 27
+                if (!isKeyEsc) return
 
-        // document.addEventListener('click', this.backHistory)
+                this.backHistory()
+              },
+              true,
+            )
 
-        window.addEventListener('popstate', () => this.clearModal(this.modalContainer, pageYOffset))
-      }).catch(error => console.warn('modal Error'))
+            // document.addEventListener('click', this.backHistory)
+
+            window.addEventListener('popstate', () => this.clearModal(this.modalContainer, pageYOffset))
+          })
+          .catch(error => console.warn('modal Error'))
       }),
     )
   },
@@ -100,7 +105,7 @@ const modal = ({ selector: trigger }: Parameter) => ({
   },
   backHistory() {
     history.back()
-  }
+  },
 })
 
 export default modal

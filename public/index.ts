@@ -34,7 +34,6 @@ async function domEvents() {
   lazyLoading()
 
   function lazyLoading() {
-    const URL = 'https://gist.githubusercontent.com/prof3ssorSt3v3/1944e7ba7ffb62fe771c51764f7977a4/raw/c58a342ab149fbbb9bb19c94e278d64702833270/infinite.json'
     const lazyBackgrounds = [].slice.call(document.querySelectorAll('.subscribe'))
     const options = {
       root: null,
@@ -47,17 +46,18 @@ async function domEvents() {
       lazyBackgrounds.forEach(element => observer.observe(element))
     }
 
-    function fetchData() {
-      fetch(URL)
-        .then(response => response.json())
-        .then(data => {
-          data.items.forEach(item => {
-            const view = document.querySelector('.design-body')
-            if (!view) return
+    async function fetchData() {
+      const URL = 'https://gist.githubusercontent.com/prof3ssorSt3v3/1944e7ba7ffb62fe771c51764f7977a4/raw/c58a342ab149fbbb9bb19c94e278d64702833270/infinite.json'
+      const response = await fetch(URL)
+      if (!response.ok) throw 'Something went wrong.'
 
-            view && view.insertAdjacentHTML('beforeend', `<div style="height:200px;background:crimson;color:#fff;text-align:center;">무한스크룔</div>`)
-          })
-        })
+      let data = await response.json()
+      data.items.forEach(item => {
+        const view = document.querySelector('.design-body')
+        if (!view) return
+
+        view && view.insertAdjacentHTML('beforeend', `<div style="height:200px;background:crimson;color:#fff;text-align:center;">무한스크룔</div>`)
+      })
     }
 
     //   let currentPage = 1
