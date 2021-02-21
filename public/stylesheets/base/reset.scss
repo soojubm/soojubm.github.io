@@ -22,7 +22,7 @@ strong,b,th,legend {font-weight:bold;color:var(--gray800);}
 cite,i,address,em,dfn {font-style:normal;} em {color:$color-primary;}
 small {font-size:$caption;} time {} del {color:var(--gray400);} abbr {text-decoration:none;}
 a {text-decoration:none;text-decoration-skip-ink:auto;color:$color-primary;} a:link,a:visited {} a:hover,a:focus {} a:active {}
-mark {padding:0 2px 2px;border-radius:$radius400;background:var(--gray200);color:var(--gray0);}
+mark {padding:0 2px 2px;border-radius:$radius400;background:var(--gray200);}
 hr {height:1px;background:var(--gray100);overflow:visible;position:relative;}
 u {text-decoration:none;position:relative;}
 u:after {content:'';height:.6em;border-radius:$radius400;background:antiquewhite;position:absolute;left:-.25rem;right:-.25rem;bottom:-.25rem;z-index:-1;}

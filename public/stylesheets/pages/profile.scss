@@ -48,6 +48,7 @@
 .profile-tablist-tab-badge {font-size:$caption;}
 .profile-tablist-indicator {display:block;height:calc(100% - .5rem);border-radius:$radius400;background:#fff;position:absolute;top:.25rem;left:4px;transition:all 0.4s ease;}
 .profile-tabpanel {display:flex;flex-wrap:wrap;min-height:40rem;}
+.profile-tabpanel.hidden {display:none;}
 
 
 .accordion {position:relative;}

@@ -120,7 +120,9 @@
         <li>콜론 슬래시 괄호 등을 남용하지 마세요. 디자인 하지 않은 것입니다(오바). 특히나 띄어쓰기가 필요하다면 전달하기 복잡한 정보입니다.<li>
         <li>검색 결과 2개 vs ~ / 총결제금액 vs 결제예정금액</li>
         <li>Bullet은 컴포넌트로 Component</li>
-        <li>카드 안에서 좌우 여백이 1.5rem 적당하다. 2rem인 경우 모바일에서 넓어 보인다.</li>
+        <li>카드 안에서 좌우 여백: 데스크탑 2rem / 모바일 1.5rem 변수만들기.</li>
+        <li>결제 완료 => 상품 결제, 그르면 결제완료, 결제대기 등은 어떠헥 구분?</li>
+        <li>-하기 / 취소 / 다음에</li>
         <!-- <li>뉴닉에서 //// 헤딩(유저가 취해야 할 행동을 직관적으로 가이딩) + 디스크립션(고슴이: 유저의 고민을 덜어줄 수 있는 감초 역할 + 가능하다면 약간의 위트. 특별히 고민이 필요 없는 화면에서는 위트만 뿜뿜해도 됨. 두 줄까지는 허용할 수 있지만 그 이상은 슴체가 읽기 어려움.)</li> -->
       </ul>
     </article>
@@ -132,11 +134,11 @@
       <div style="display:flex;justify-content:space-between;">
         <div style="width:calc(50% - 0.5rem);padding:1.5rem;border:1px solid var(--gray200);box-sizing:border-box;border-radius:4px;">
           <i style="display:block;margin-bottom:.5rem;width:16px;height:16px;border-radius:4px;background:cadetblue"></i>
-          한글 <b style="display:block;font-size:1.25rem;font-weight:bold;">아리타 산스</b>
+          한글 <b style="display:block;font-size:1.25rem;line-height:1.5;font-weight:bold;">아리타 산스</b>
         </div>
         <div style="width:calc(50% - 0.5rem);padding:1.5rem;border:1px solid var(--gray200);box-sizing:border-box;border-radius:4px;">
           <i style="display:block;margin-bottom:.5rem;width:16px;height:16px;border-radius:4px;background:cadetblue"></i>
-          영문 <b style="display:block;font-size:1.25rem;font-weight:bold;">Asap</b style="display:block;font-size:1.25rem;margin-top:.5rem;">
+          영문 <b style="display:block;font-size:1.25rem;line-height:1.5;font-weight:bold;">Asap</b style="display:block;font-size:1.25rem;margin-top:.5rem;">
         </div>
       </div>
       <div style="margin:1rem 0 0 0;padding:1rem 1.5rem;border:1px solid var(--gray200);border-radius:4px;">
@@ -193,7 +195,22 @@
         <a href="" class="design-article-avatar-small" style="box-shadow: rgb(255 255 255) 0px 0px 0px 2px;"></a>
         <a href="" class="design-article-avatar-small" style="margin-left:-10px;box-shadow: rgb(255 255 255) 0px 0px 0px 2px;"></a>
         <a href="" class="design-article-avatar-small" style="margin-left:-10px;box-shadow: rgb(255 255 255) 0px 0px 0px 2px;"></a>
-      </div>   
+      </div>
+      <hr />
+      <div class="userlist" style="overflow:hidden;margin-top:1rem;">
+        <div class="profile-user" style="width:100%;height:48px;margin-bottom:1rem;">
+          <figure class="profile-user-avatar" style="float:left;width:48px;height:48px;margin-right:1rem;"></figure>
+          <h2 class="profile-user-name" style="font-size:1rem;">Gyeongsoo I</h2>
+          <span class="profile-user-id" style="font-size:.875rem;color:var(--gray400);">인라인 스타일로 대충.</span>
+          <button class="design-article-tertiary-small" style="position:absolute;right:0;top:0;">팔로우</button>
+        </div>
+        <div class="profile-user" style="width:100%;height:48px;margin-bottom:1rem;">
+          <figure class="profile-user-avatar" style="float:left;width:48px;height:48px;margin-right:1rem;"></figure>
+          <h2 class="profile-user-name" style="font-size:1rem;">Gyeongsoo I</h2>
+          <span class="profile-user-id" style="font-size:.875rem;color:var(--gray400);">@soojubm</span>
+          <button class="design-article-tertiary-small" style="position:absolute;right:0;top:0;">팔로우</button>
+        </div>
+      </div>
 
       <!-- <div class="ttt">
 				<span class="ttt-avatar">🦁</span>
@@ -616,7 +633,7 @@
       <div class="textfield is-invalid">
         <label class="textfield-label" for="abc123">레이블 <abbr aria-label="optional" style="font-size:.875rem;">선택입력</abbr></label>
         <input class="textfield-input js-input-test" type="text" id="abc123" placeholder="Textarea Placeholder..." value="soojubm@gmail.com" aria-describedby="error" aria-invalid="true" />
-        <button class="textfield-surfix"><i class="icon-close"></i></button>
+        <!-- <button class="textfield-surfix"><i class="icon-close"></i></button> -->
         <small class="textfield-helper is-error">이미 사용 중인 이메일입니다.</small>
       </div>
       <br />
@@ -1188,7 +1205,7 @@
           </header>
           <div class="timeline-item-body">
             <div class="timeline-item-body-panel --success">
-              결제가 완료되었습니다.
+              상품이 결제되었습니다.
             </div>
             <div class="timeline-item-body-cancel">
               <p>집행 중 취소 시 수수료가 발생합니다. <button class="">주문취소</button></p>

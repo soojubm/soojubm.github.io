@@ -160,7 +160,7 @@ export function copyClipboard(text) {
 
   document.body.removeChild(textareaElement)
 
-  alert('복사 완료! 이제 "붙여넣기" 해주세요.😉')
+  alert('주소를 복사했어요! 이제 "붙여넣기" 해주세요.😉')
   // try {
   //   document.execCommand('copy');
   // } catch (error) {
