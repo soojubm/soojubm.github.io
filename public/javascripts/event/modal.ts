@@ -6,7 +6,7 @@ type Parameter = {
   selector: string
 }
 
-const getOptions = function(data) {
+const getOptions = data => {
   return {
     method: 'POST',
     body: JSON.stringify(data || {}),
@@ -16,14 +16,14 @@ const getOptions = function(data) {
   }
 }
 
-const getData = function(url, data) {
+const getData = (url, data) => {
   return fetch(url, {
     method: 'POST',
     body: JSON.stringify(data),
     headers: {
       'Content-type': 'application/json; charset=UTF-8',
     },
-  }).then(function(response) {
+  }).then(response => {
     if (response.ok) return response.json()
     return Promise.reject(response)
   })
@@ -42,8 +42,8 @@ const modal = ({ selector: trigger }: Parameter) => ({
         event.stopPropagation()
         event.preventDefault()
 
-        const id = modal.dataset.modal
-        const uri = `/views/${id}.html`
+        const modalId = modal.dataset.modal
+        const uri = `/views/${modalId}.html`
         fetch(uri)
           .then(response => {
             if (response.ok) return response.text()
@@ -57,7 +57,7 @@ const modal = ({ selector: trigger }: Parameter) => ({
 
             const { pageYOffset } = window
             this.showModal(pageYOffset)
-            this.setHistory(id)
+            this.setHistory(modalId)
 
             const isShown = document.body.classList.contains('is-modal-visible')
             if (isShown) {

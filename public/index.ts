@@ -12,6 +12,8 @@ import input from './javascripts/input/index'
 // import { validity } from './javascripts/utils/validations'
 // import { copyClipboard } from './javascripts/utils/formatUtils.js'
 
+const isScrollEnd = window.innerHeight + window.pageYOffset >= document.body.offsetHeight
+
 document.addEventListener('readystatechange', (event: any) => {
   // event.target === document ? true
   if (event.target.readyState === 'loading') console.log('loading...')
@@ -31,79 +33,49 @@ window.addEventListener('hashchange', initailizePage)
 async function domEvents() {
   await routePage()
 
-  lazyLoading()
+  // lazyLoading()
 
   function lazyLoading() {
-    const lazyBackgrounds = [].slice.call(document.querySelectorAll('.subscribe'))
-    const options = {
-      root: null,
-      rootMargin: '0px 0px 0px 0px',
-      threshold: 0.1,
-    }
-
     if ('IntersectionObserver' in window && 'IntersectionObserverEntry' in window && 'intersectionRatio' in window.IntersectionObserverEntry.prototype) {
+      const lazyBackgrounds = [].slice.call(document.querySelectorAll('.subscribe'))
+      const options = {
+        root: null,
+        rootMargin: '0px 0px 0px 0px',
+        threshold: 0.1,
+      }
       let observer = new IntersectionObserver(callback, options)
+
       lazyBackgrounds.forEach(element => observer.observe(element))
     }
 
-    async function fetchData() {
-      const URL = 'https://gist.githubusercontent.com/prof3ssorSt3v3/1944e7ba7ffb62fe771c51764f7977a4/raw/c58a342ab149fbbb9bb19c94e278d64702833270/infinite.json'
-      const response = await fetch(URL)
-      if (!response.ok) throw 'Something went wrong.'
-
-      let data = await response.json()
-      data.items.forEach(item => {
-        const view = document.querySelector('.design-body')
-        if (!view) return
-
-        view && view.insertAdjacentHTML('beforeend', `<div style="height:200px;background:crimson;color:#fff;text-align:center;">무한스크룔</div>`)
-      })
-    }
-
-    //   let currentPage = 1
-    //   const DATA_PER_PAGE = 10
-    //   const lastPage = 10
-
-    //   function fetchData(currentPage) {
-    //       const list = document.querySelector(".footer")
-    //       if(!list) return
-
-    //       for(let i = (currentPage - 1) * DATA_PER_PAGE + 1; i <= currentPage * DATA_PER_PAGE; i++) {
-    //         const li = document.createElement("li")
-    //         li.textContent = `${currentPage}페이지 : ${i}번째 데이터`
-    //         list.appendChild(li)
-    //       }
-    //   }
-
-    //   function observeLastChild(intersectionObserver) {
-    //     const listItems = document.querySelectorAll(".footer li")
-    //     listItems.forEach(element => {
-    //       const isLast = currentPage >= lastPage
-    //       if (isLast) {
-    //         intersectionObserver.disconnect()
-    //         return
-    //       }
-    //       if(element.nextSibling) return
-
-    //       intersectionObserver.observe(element) // el에 대하여 관측 시작
-    //     })
-    // }
-
     function callback(entries, observer) {
       entries.forEach(entry => {
+        // If the entry is not in the viewport, do nothing
         if (!entry.isIntersecting) return
+        // Stop observing
+        // observer.unobserve(entry.target);
         fetchData()
-        // setTimeout(() => {
-        //   fetchData(++currentPage)
-        //   observer.unobserve(entry.target)
-        //   observeLastChild(observer)
-        //   // msgLoading.classList.remove("fade-in")
-        // }, 500)
 
         // entry.target.classList.add('visible')
         // entry.target.src = entry.target.dataset.src;
         // lazyBackgroundObserver.unobserve(entry.target)
       })
+    }
+
+    async function fetchData() {
+      try {
+        const URL = 'https://gist.githubusercontent.com/prof3ssorSt3v3/1944e7ba7ffb62fe771c51764f7977a4/raw/c58a342ab149fbbb9bb19c94e278d64702833270/infinite.json'
+        const response = await fetch(URL)
+        if (!response.ok) throw 'Something went wrong.'
+
+        let data = await response.json()
+        data.items.forEach(item => {
+          const view = document.querySelector('.design-body')
+          if (!view) return
+
+          view.insertAdjacentHTML('beforeend', `<div style="height:200px;background:crimson;color:#fff;text-align:center;">무한스크룔</div>`)
+        })
+      } catch (error) {}
     }
   }
 
@@ -150,12 +122,12 @@ async function domEvents() {
 
   const inputTest = document.querySelector<HTMLInputElement>('.js-input-test')
   if (inputTest) {
-    inputTest.addEventListener('keypress', function(e) {
-      const key = e.which || e.keyCode
+    inputTest.addEventListener('keypress', function(event) {
+      const key = event.which || event.keyCode
       const isNumberKey = key < 48 || key > 57 // todo ! isNumberKey 이다 지금음0 to 9
       const isSpaceKey = key === 32
       if (!isSpaceKey && isNumberKey) {
-        e.preventDefault()
+        event.preventDefault()
       }
     })
 
@@ -250,18 +222,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   domEvents()
 
-  window.addEventListener('scroll', () => {
-    const isScrollEnd = window.innerHeight + window.pageYOffset >= document.body.offsetHeight
-    if (isScrollEnd) console.log('detect bottom')
-  })
   window.addEventListener('scroll', scrollProgress, true)
-
   function scrollProgress() {
-    const post = document.querySelector<HTMLElement>('.post')
+    const containerElement = document.querySelector<HTMLElement>('.post')
     const progressBar = document.querySelector<HTMLElement>('.post-head-progress')
-    if (!post || !progressBar) return
+    if (!containerElement || !progressBar) return
 
-    const scrollPercent = `${(window.pageYOffset / (post!.scrollHeight - window.innerHeight)) * 100}%`
+    const scrollPercent = `${(window.pageYOffset / (containerElement!.scrollHeight - window.innerHeight)) * 100}%`
     progressBar!.style.width = scrollPercent
   }
 })
@@ -530,3 +497,32 @@ function focusComment() {
 //   event.preventDefault() // 모든 브라우저에서 지원하는 것은 아님.
 //   event.returnValue = '테스트'
 // })
+
+//   let currentPage = 1
+//   const DATA_PER_PAGE = 10
+//   const lastPage = 10
+
+//   function fetchData(currentPage) {
+//       const list = document.querySelector(".footer")
+//       if(!list) return
+
+//       for(let i = (currentPage - 1) * DATA_PER_PAGE + 1; i <= currentPage * DATA_PER_PAGE; i++) {
+//         const li = document.createElement("li")
+//         li.textContent = `${currentPage}페이지 : ${i}번째 데이터`
+//         list.appendChild(li)
+//       }
+//   }
+
+//   function observeLastChild(intersectionObserver) {
+//     const listItems = document.querySelectorAll(".footer li")
+//     listItems.forEach(element => {
+//       const isLast = currentPage >= lastPage
+//       if (isLast) {
+//         intersectionObserver.disconnect()
+//         return
+//       }
+//       if(element.nextSibling) return
+
+//       intersectionObserver.observe(element) // el에 대하여 관측 시작
+//     })
+// }

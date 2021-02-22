@@ -122,3 +122,41 @@ function fastGoodbye() {
 
   container?.innerHTML = 'this is slow~~'
 }
+
+/**
+ * Create an intersection observer
+ * @param  {Node}     elem     The element to observe
+ * @param  {Function} callback The callback function to run
+ * @param  {Object}   options  The options, if any
+ */
+function createIntersectionObserver(elem, callback, options) {
+  let observer = new IntersectionObserver(callback, options || {})
+  observer.observe(elem)
+  return observer
+}
+
+/**
+ * Log the entry and if it's in the viewport
+ * @param  {Array} entries The intersecting elements
+ */
+function log(entries) {
+  let [entry] = entries
+  console.log(entries)
+  console.log(entry.target)
+  console.log(entry.isIntersecting)
+}
+
+// Setup our observer options
+let options = {
+  rootMargin: '150px',
+}
+
+// The elements to observe
+let div1 = document.querySelector('#div-1')
+let div2 = document.querySelector('#div-2')
+
+// Create an observer for each one
+createIntersectionObserver(div1, log, options)
+
+// This uses the same callback, but no options
+createIntersectionObserver(div2, log)
