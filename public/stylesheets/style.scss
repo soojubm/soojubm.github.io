@@ -174,9 +174,9 @@
 .slider-dots-dot:hover {width:30px;border-radius:5px;opacity:.5;}
 .slider-arrows {}
 .slider-arrows-prev {@include box-small;box-shadow:$shadow400;position:absolute;left:calc(5rem -16px);top:50%;z-index:1;transform:translateY(-50%);}
-.slider-arrows-prev:hover {background:var(--gray100);}
+.slider-arrows-prev:hover {@include hover-tertiary;}
 .slider-arrows-next {@include box-small;box-shadow:$shadow400;position:absolute;right:-16px;top:50%;z-index:1;transform:translateY(-50%);}
-.slider-arrows-next:hover {background:var(--gray100);}
+.slider-arrows-next:hover {@include hover-tertiary;}
 .slider-arrows button.is-disabled {opacity:.2;}
 
 .quote {max-width:400px;padding:2rem;border-radius:$radius400;box-sizing:border-box;border:$border100;box-shadow:$shadow400;background:var(--gray0);}

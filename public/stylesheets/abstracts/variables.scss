@@ -112,6 +112,11 @@ $height-header: 56px;
 
 @mixin image-centered {width:auto;height:auto;max-width:150%;max-height:150%;margin:auto;position:absolute;left:0;right:0;top:0;bottom:0;}
 
+
+@mixin hover-tertiary {
+  border-color: var(--color-primary);
+}
+
 // layout 유동성을 위해. centered mixin은 layou의 유동성을 해친다.
 // ! box-small의 display:flex가 hidden 속성과 충돌
 @mixin box($cell) {
@@ -120,6 +125,7 @@ $height-header: 56px;
   justify-content: center;
   width:$cell;
   height:$cell;
+  border: 1px solid transparent;
   overflow: hidden;
   background-color: var(--gray100);
   border-radius: $radius400;
