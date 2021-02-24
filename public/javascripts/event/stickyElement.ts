@@ -2,7 +2,7 @@
 // passed와 바로. header / post-head
 // 언제 cancel
 
-const stickyElement = ({ targetElement, addClass }) => {
+const stickyElement = ({ targetElement, addClass, position }) => {
   const stickyElement = document.querySelector(targetElement)
   if (!stickyElement) return
 
@@ -12,8 +12,9 @@ const stickyElement = ({ targetElement, addClass }) => {
   function hasScrolled() {
     isScrolling && window.cancelAnimationFrame(isScrolling)
     isScrolling = window.requestAnimationFrame(() => {
+      const elementOffsetTop = stickyElement.offsetTop
       const elementOffsetBottom = stickyElement.offsetTop + elementHeight
-      const isStuck = window.pageYOffset > stickyElement.offsetTop
+      const isStuck = window.pageYOffset > (position === 'top' ? elementOffsetTop : elementOffsetBottom)
       if (isStuck) {
         document.body.classList.add(addClass)
         // document.body.style.paddingTop = `${elementHeight}px`

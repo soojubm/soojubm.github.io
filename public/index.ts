@@ -91,7 +91,8 @@ async function domEvents() {
   event.close({ selector: '.js-close' })
   event.toTop({ selector: '.js-to-top' })
 
-  event.stickyElement({ targetElement: '.js-post-head', addClass: 'is-sticky-post-head' })
+  event.stickyElement({ targetElement: '.js-header', addClass: 'is-sticky-header', position: 'top' })
+  event.stickyElement({ targetElement: '.js-post-head', addClass: 'is-sticky-post-head', position: 'bottom' })
 
   event.scrollAnimation()
   // event.scrollspy({ menusSelector: '.js-section', sectionsSelector: '.newneek-navbar-menu-item' })
@@ -215,7 +216,6 @@ document.addEventListener('DOMContentLoaded', () => {
   detectBrowser()
   setDarkmode()
 
-  event.stickyElement({ targetElement: '.js-header', addClass: 'is-sticky-header' })
 
   // ! hashchange 될 때마다 이벤트 만들어짐;
   event.toggleClass({ selector: '.js-navbar-toggle' }).setEvent()

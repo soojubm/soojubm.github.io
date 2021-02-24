@@ -71,7 +71,7 @@ $height-header: 56px;
   --gray100: #f1f5f6; // bg
   --gray200: #dadce0; // divider border
   --gray400: #979d9a; // caption
-  --gray800: #1c1d1d; // heading
+  --gray800: #343c38; // heading
   // --gray600: #4e5351; // body
   // --gray999: #000;
   --blue100: honeydew;
@@ -88,7 +88,7 @@ $height-header: 56px;
   --shadow400: 0px 0px 2rem rgba(0, 0, 0, 0.125);
 
   .theme-dark {
-    --gray0: #1c1d1d;
+    --gray0: #343c38;
     --gray100: #4e5351; // bg
     --gray200: #4e5351; // divider border
     --gray400: #979d9a; // caption
@@ -141,6 +141,9 @@ $height-header: 56px;
   &:after {content: '';display:block;clear:both;}
 }
 
+
+// item in card component
+@mixin hover-item {content:'';display:block;background:var(--gray200);border-radius:$radius400;position:absolute;left:-.5rem;right:-.5rem;top:-.5rem;bottom:-.5rem;z-index:-1;}
 
 
 @mixin grid-container {

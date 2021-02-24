@@ -2,16 +2,16 @@
 .post-head {margin:0 0 3rem 0;position:relative;}
 .post-head-category {color:var(--gray800);text-decoration:underline;}
 .post-head-headline {padding:.5rem 0 2rem 0;@include title;} /* 상하단 패딩 똑같이해야 스키티때 */
-.post-head-date {color:var(--gray400);}
+.post-head-dateline {color:var(--gray400);}
 .post-head-progress {display:none;height:3px;background:rgb(200,0,0);position:absolute;bottom:-3px;}
 
 .is-sticky-post-head.page-post {padding-top:200px;}
 .is-sticky-post-head .post-head {background:var(--gray0);box-shadow:$shadow400;text-align:left;position:fixed;left:0;right:0;top:0;z-index:8;}
 .is-sticky-post-head .post-head-category {display:none;}
 .is-sticky-post-head .post-head-headline {padding:1rem 5%;box-sizing:border-box;font-size:$subhead;text-align:center;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;}
-.is-sticky-post-head .post-head-date {display:none;}
+.is-sticky-post-head .post-head-dateline {display:none;}
 .is-sticky-post-head .post-head-readingtime {display:none;}
-.is-sticky-post-head .post-head-date + .icon-bullet {display:none;}
+.is-sticky-post-head .post-head-dateline + .icon-bullet {display:none;}
 .is-sticky-post-head .post-head-progress {display:block;}
 
 .post-byline {display:flex;align-items:center;margin:2rem 0;position:relative;}
@@ -121,12 +121,14 @@
 .post-pagination {display:flex;justify-content:space-between;padding:0 5%;
 	--padding:4rem 0;
 	--label-font-size: 1rem;
-	background:var(--gray100);
+	// background:var(--gray100);
 }
 .post-pagination-previous {padding:var(--padding);box-sizing:border-box;text-align:left;}
+.post-pagination-previous-media {@include box-small;margin-bottom:1rem;}
 .post-pagination-previous-label {margin:0 0 .25rem 0;font-size:var(--label-font-size);color:var(--gray400);}
 .post-pagination-previous-link {font-size:$subhead;color:var(--gray800);}
 .post-pagination-next {padding:var(--padding);box-sizing:border-box;text-align:right;}
+.post-pagination-next-media {@include box-small;margin-bottom:1rem;margin-left:auto;}
 .post-pagination-next-label {margin:0 0 .25rem 0;font-size:var(--label-font-size);color:var(--gray400);}
 .post-pagination-next-link {font-size:$subhead;color:var(--gray800);}
 @media (--viewport-small) {

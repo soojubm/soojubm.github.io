@@ -275,7 +275,7 @@
 
     <header class="header" role="navigation">
       <h1 class="header-title">페이지타이틀</h1>
-      <button class="header-back" onclick="javascript:alert('이전페이지로~');">
+      <button class="header-back" onclick="javascript:window.location.href='/';">
         <span class="header-back-icon"><i class="icon-arrow"></i></span>
       </button>
       <button class="header-cta">
@@ -288,12 +288,7 @@
       <div class="home"></div>
     </div>
 
-    <section class="banner">
-      <h2 class="banner-text">수줍이에는 처음 방문이신가요?</h2>
-      <button class="banner-button">이용방법을 알아보세요!</button>
-    </section>
-
-    <form class="subscribe">
+    <form class="subscribe" hidden>
       <h2 class="subscribe-title">수줍이 뉴스레터를 정기구독하세요.</h2>
       <p class="subscribe-description">사실 그런 건 없고 유아이 콤포넌트 입니다. <br />텍스트를 한 줄 더 만들기 위해서 아무말이나 해봅니다.</p>
       <div class="subscribe-field textfield">

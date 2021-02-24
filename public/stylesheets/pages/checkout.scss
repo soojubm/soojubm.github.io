@@ -78,7 +78,7 @@
 // .checkout-shipping-address-value {margin-left:3.5rem;font-size:$subhead;}
 
 
-@media (--viewport-large) {
+@media (--viewport-small) {
   .checkout {padding:0 5%;}
   .checkout-product {width:100%;margin:-2rem auto 4rem;padding:1.5rem 2rem;position:relative;right:auto;top:auto;}
   .checkout-shipping {max-width:100%;padding-right:0;}

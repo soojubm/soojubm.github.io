@@ -1,18 +1,19 @@
 $container-auth: 400px;
 
 
-.login {max-width:$container-auth;margin:0 auto;padding:2rem 5% 20rem;position:relative;}
+.login {max-width:$container-auth;margin:0 auto;padding:4rem 5%;position:relative;}
 .login-title {@include title;}
 .login-description {margin:1rem 0;font-size:$body;}
 .login-email {margin:2rem 0;}
 .login-password {}
 .login-remember {margin:.5rem 0;}
 .login-divider {margin:12px auto;text-align:center;position:relative;z-index:1;}
-.login-divider:before {content:'';display:block;width:100%;height:1px;background:#e9e9e9;position:absolute;top:50%;transform:translateY(-1px);}
+.login-divider:before {content:'';display:block;width:100%;height:1px;background:var(--gray100);position:absolute;top:50%;transform:translateY(-1px);}
 .login-divider:after {content:'또는';width:4rem;line-height:24px;background:var(--gray0);font-size:$caption;color:var(--gray400);position:absolute;left:50%;top:0;transform:translateX(-50%);}
 .login-foot-submit {@include button-primary;width:100%;}
 .login-social {}
 .login-social-facebook {@include button-primary;width:100%;border-color:$color-facebook;background-color:$color-facebook;}
+.login-social-facebook:hover {background:var(--color-facebook);border-color:var(--color-facebook);}
 .login-social-twitter {background:#4ab3f4;}
 .login-social-naver {margin-bottom:8px;background:#3bcc15;}
 .login-social-kakao {float:left;width:49%;color:var(--gray0);margin-right:2%;background:#f9df34;}
@@ -32,8 +33,8 @@ $container-auth: 400px;
 
 .password {max-width:$container400;margin:0 auto;padding:5rem 5% 20rem;position:relative;}
 .password-head {margin-bottom:3rem;position:relative;}
-.password-title {margin:0 0 .5rem 0;font-size:14px;}
-.password-description {@include title;}
+.password-title {@include title;}
+.password-description {margin:1rem 0 0 0;}
 .password-submit {float:left;width:200px;max-width:50%;}
 .password-link {float:right;margin-top:16px;}
 .password-foot {margin:1rem 0 0;}
