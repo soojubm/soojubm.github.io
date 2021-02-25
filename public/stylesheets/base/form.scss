@@ -213,6 +213,11 @@ input[type=file] + label:after {display:none;}
 .file-attachment-item-delete:hover {background:#f9f9f6;}
 
 
+@media (--viewport-small) {
+  .textfield-surfix,
+  .selectbox-indicator {top:33px}
+}
+
 
 // date
 .calendar {

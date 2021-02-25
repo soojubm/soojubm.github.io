@@ -7,7 +7,7 @@
       <div class="hero-background"></div>
       <small class="hero-eyebrow">수줍이 디자인시스템</small>
       <h1 class="hero-title">부끄러우니까<br />보지마요<i style="font-style:italic;">!</i></h1>
-      <p class="hero-description">이 사이트는 연습장이니 의미를 찾지 마셔요. 유아이의 재사용성 만큼이나 유동성을 중요하게 생각합니다. <span class="linebreaker-desktop">바닐라 자바스크립트로 만들었어요. 바닐라 자바스크립트로 만들었어요 🤔.</span></p>
+      <p class="hero-description">유아이를 코드로 가볍게 스케치합니다. <span class="linebreaker-desktop">바닐라 자바스크립트로 만들었고 깔끔한 코드는 못 됩니다.</span></p>
 
 
       <article class="design-article" style="margin:0;">
@@ -130,8 +130,7 @@
 
     <article class="design-article typography">
       <h1 class="design-article-title">Typhography</h1>
-      <p class="design-article-description">1rem을 14px로 정의했습니다. 숫자에1.75rem케이스있음. Asap와 무게가 살짝 다르고, 마이너스 기호가 어색하다.</p>
-      <!-- <p> 기본값인 16px로 사용하되 기본 폰트 사이즈를 사용해야 하는 경우 .875rem를 적용하는 방법을 고민하고 있습니다. 소숫점 픽셀이 발생하고 16px 그리드를 적극적으로 사용하기 위해서입니다. </p> -->
+      <p class="design-article-description">1rem을 14px로 정의합니다. 일부 숫자에 1.75rem 사용하는 케이스가 있습니다. Asap와 무게가 살짝 다름. asap의 dash를 마이너스로 쓰면 어색.</p>
       <div style="display:flex;justify-content:space-between;">
         <div style="width:calc(50% - 0.5rem);padding:1.5rem;border:1px solid var(--gray200);box-sizing:border-box;border-radius:4px;">
           <i style="display:block;margin-bottom:.5rem;width:16px;height:16px;border-radius:4px;background:cadetblue"></i>
@@ -164,7 +163,7 @@
 
     <article class="design-article">
       <h1 class="design-article-title">Avatars & Cells</h1>
-      <p class="design-article-description">아바타와 아이콘 버튼에서는 지정된 4가지의 사이즈만 사용하세요.</p>
+      <p class="design-article-description">아바타 및 아이콘 버튼에서 지정된 4가지 사이즈만 사용하세요.</p>
       <div role="group">
         <a href="" class="design-article-avatar-large"></a>
         <a href="" class="design-article-avatar-medium"><span class="avatar-badge"></span></a>
@@ -191,14 +190,14 @@
 
     <article class="design-article">
       <h1 class="design-article-title">Avatar Stack</h1>
-      <p class="design-article-description">샘플은 tiny 사이즈로 적용.</p>
+      <p class="design-article-description">tiny 사이즈 샘플.</p>
       <div role="group">
         <a href="" class="design-article-avatar-tiny" style="box-shadow: rgb(255 255 255) 0px 0px 0px 2px;"></a>
         <a href="" class="design-article-avatar-tiny" style="margin-left:-10px;box-shadow: rgb(255 255 255) 0px 0px 0px 2px;"></a>
         <a href="" class="design-article-avatar-tiny" style="margin-left:-10px;box-shadow: rgb(255 255 255) 0px 0px 0px 2px;"></a>
       </div>
       <hr />
-      <div class="userlist" style="margin-top:1rem;">
+      <div class="userlist" style="margin-top:1rem;overflow:hidden;">
         <div class="profile-user" style="width:100%;height:48px;margin-bottom:1rem;">
           <figure class="profile-user-avatar" style="float:left;width:48px;height:48px;margin-right:1rem;"></figure>
           <h2 class="profile-user-name" style="font-size:1rem;">Gyeongsoo I</h2>
@@ -213,7 +212,7 @@
           </figcaption>
         </figure>
         <div class="profile-user" style="width:100%;height:48px;margin-bottom:1rem;margin-top:1rem;">
-          <figure class="profile-user-avatar" style="float:left;width:48px;height:48px;margin-right:1rem;background:none;background-color:var(--gray100);"><i class="icon-plus" style="transform:scale(1.25);"></i></figure>
+          <figure class="profile-user-avatar" style="float:left;width:48px;height:48px;margin-right:1rem;background:none;border:1px solid var(--gray200);"><i class="icon-plus" style="transform:scale(1.25);"></i></figure>
           <h2 class="profile-user-name" style="font-size:1rem;line-height:48px;">추가하기</h2>
         </div>
       </div>
@@ -237,7 +236,7 @@
 
     <article class="design-article grayscale">
       <h1 class="design-article-title">Palettes</h1>
-      <p class="design-article-description">그레이스케일 한 벌로 다크 테마와 페어링됩니다. gray600 삭제.</p>
+      <p class="design-article-description">그레이스케일 한 벌로 다크 테마와 페어링합니다. gray600 제거.</p>
       <h2 style="margin:0 0 .5rem;"><small>Grayscales</small></h2>
       <div class="color-group" role="group">
         <figure class="color-item is-gray100">
@@ -300,7 +299,7 @@
 
     <article class="design-article">
       <h1 class="design-article-title">Seperator</h1>
-      <p class="design-article-description">섹션 간 border 스타일로 구획하는 것보다 hr br 태그로 마크업하면 컴포넌트 고유성(?)을 유지하기 쉽다.</p>
+      <p class="design-article-description">섹션을 구획할 때 border 스타일링보다 hr / br 태그로 마크업하면 컴포넌트 고유성(?)을 유지하기 쉽습니다.</p>
       <hr role="separator" />
     </article>
 
@@ -356,7 +355,7 @@
 
     <article class="design-article">
       <h1 class="design-article-title">Buttons</h1>
-      <p>프라이머리primary 스타일은 한 페이지에 하나만 사용합니다. 시멘틱한 네이밍(solid / outline / plain / text)은 스타일의 수정이 필요할 때 싱크가 안 맞는다. 시멘틱한 네이밍은 디자인 시스템보다는 유아이 라이브러리에 어울린다. 아이콘 버튼.</p>
+      <p>프라이머리primary 스타일은 한 페이지에 하나로 제한합니다. 시멘틱한 네이밍(solid / outline / plain / text)은 스타일의 수정이 필요할 때 싱크가 안 맞는다. 시멘틱한 네이밍은 디자인 시스템보다는 유아이 라이브러리에 어울린다. 아이콘 버튼.</p>
       <ul class="design-article-description">
         <li>appearance = link / subtle / primary, space = compact / fullwidth, </li>
       </ul>
@@ -422,7 +421,7 @@
 
     <article class="design-article">
       <h1 class="design-article-title">Checkboxes</h1>
-      <p class="design-article-description">인라인 정렬로 사용하지 않습니다. / checkbox, checkall, intermediate</p>
+      <p class="design-article-description">인라인 정렬하지 않습니다. / checkbox, checkall, intermediate</p>
       <fieldset>
         <!-- <legend>Choose ingredients</legend> -->
         <div class="checkbox">
@@ -526,13 +525,13 @@
 
     <article class="design-article">
       <h1 class="design-article-title">Statistic</h1>
-      <p class="design-article-description">레이블과 밸류로 이루어진 유아이들을...</p>
+      <p class="design-article-description">내용없음</p>
       <div class="statistic"><i class="statistic-label">팔로워</i><span class="statistic-value">21,682</span></div>
     </article>
 
     <article class="design-article">
       <h1 class="design-article-title">Summary</h1>
-      <p class="design-article-description">레이블과 밸류로 이루어진 유아이들을...</p>
+      <p class="design-article-description">내용없음</p>
       <dl style="display:flex;justify-content:space-between;padding:.25rem 0;">
         <dt>이용기간</dt>
         <dd>20.12.02. ~ 21.01.01.</dd>
@@ -553,7 +552,7 @@
 
     <article class="design-article">
       <h1 class="design-article-title">Notifications</h1>
-      <p class="design-article-description">본문의 문단 사이에서 강조하기 위해 사용합니다.</p>
+      <p class="design-article-description">샘플.</p>
       <aside class="message">
         <button class="message-close" aria-label="close"><i class="icon-close"></i></button>
         <p class="message-head">
@@ -783,7 +782,7 @@
 
     <article class="design-article grayscale">
       <h1 class="design-article-title">Dialog</h1>
-      <p class="design-article-description">모달로 감쌀 수도 있고 토스트로 감쌀 수도 있어야 한다.</p>
+      <p class="design-article-description">모달이 될 수도 토스트가 될 수도 있다.</p>
       <aside class="dialog" role="dialog">
         <!-- <img class="dialog-object" src="/public/images/soo.png" alt=""> -->
         <h1 class="dialog-title">부끄러우니까 보지마요!</h1>
@@ -833,7 +832,7 @@
 
     <article class="design-article grayscale">
       <h1 class="design-article-title">Comment</h1>
-      <p class="design-article-description">코멘트 유아이 샘플. 대댓글이 중요.</p>
+      <p class="design-article-description">코멘트 유아이 샘플. 대댓글이 중요하다.</p>
       <div class="post-comment-list">
         <div class="post-comment-list-item">
           <a class="post-comment-list-item-avatar" href="#"><img src="/public/images/soo.png"></a>
@@ -1005,7 +1004,7 @@
 
     <article class="design-article">
       <h1 class="design-article-title">Accordions</h1>
-      <p class="design-article-description">디테일 풀어줄 때 사용. 공지사항 정도의 간단한 게시글에서도 사용할 수 있으나 그 이상의 경우에는 다른 유아이를 고민하세요. 버튼 태그를 헤딩으로 바꿔로 role= 속성을 주자. 캐럿은 버튼으로?</p>
+      <p class="design-article-description">디테일 풀어줄 때 사용. 공지사항 정도의 간단한 게시글에서도 사용할 수 있으나 그 이상의 경우에는 다른 유아이. 버튼 태그를 헤딩으로 바꾸고 role=button 속성. 캐럿은 버튼으로?</p>
       <!-- <details class="details">
         <summary class="details-summary">써머리</summary>
         <p>안녕</p>
@@ -1052,7 +1051,7 @@
       <p class="design-article-description">테스트.</p>
       <section class="banner">
         <h2 class="banner-text">수줍이에는 처음 방문이신가요?</h2>
-        <button class="banner-button">이용방법을 알아보세요!</button>
+        <button class="banner-button">이용방법 알아보기</button>
       </section>
     </article>
 
@@ -1138,7 +1137,7 @@
 
     <article class="design-article">
       <h1 class="design-article-title">Stepper</h1>
-      <p class="design-article-description">순차적인 네비게이션</p>
+      <p class="design-article-description">내용없음. 모바일 퍼스트.</p>
       <div class="step">
         <div class="step-item is-active">
           <span class="step-item-icon">1</span>
