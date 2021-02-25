@@ -11,7 +11,7 @@
 .is-white .header-back {color:var(--gray0);}
 .is-sticky-header .is-white .header-back {color:var(--gray800);}
 
-@media (--viewport-large) {
+@media (--viewport-small) {
   .header {width:auto;padding:1rem 5%;}
   .header-title {padding:0 5%;}
   .is-sticky-header .header {height:32px;}

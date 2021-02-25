@@ -10,7 +10,7 @@
 .product-image-navigation {width:inherit;text-align:center;position:fixed;left:10%;top:520px;}
 .product-image-navigation button {width:8px;height:8px;margin:0 .25rem;border:$border100;background:var(--gray100);}
 .product-image-navigation button.is-current {background:var(--gray800);}
-.product-info {width:25%;position:absolute;left:5%;top:0;}
+.product-info {width:25%;position:absolute;left:5%;}
 .product-info-name {width:28px;text-align:center;word-break:normal;@include title;line-height:1.25;position:absolute;left:-64px;top:0px;}
 .product-info-price {display:flex;align-items:center;font-size:$subhead;}
 .product-info-price del {color:var(--gray400);}
