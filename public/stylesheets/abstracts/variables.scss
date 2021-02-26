@@ -9,7 +9,7 @@ $container600: 1140px;
 $container400: 640px; 
 $container100: 400px; // dialog & form
 
-$cell-large: 80px;
+$cell-large: 80px; // => 64px;
 $cell-medium: 48px;
 $cell-small: 32px;
 $cell-tiny: 16px;
@@ -87,6 +87,12 @@ $height-header: 56px;
 
   --shadow400: 0px 0px 2rem rgba(0, 0, 0, 0.125);
 
+  --padding-card: 2rem;
+
+  @media (--viewport-small) {
+    --padding-card: 2rem 1.5rem;
+  }
+
   .theme-dark {
     --gray0: #343c38;
     --gray100: #4e5351; // bg
@@ -113,9 +119,7 @@ $height-header: 56px;
 @mixin image-centered {width:auto;height:auto;max-width:150%;max-height:150%;margin:auto;position:absolute;left:0;right:0;top:0;bottom:0;}
 
 
-@mixin hover-tertiary {
-  border-color: var(--color-primary);
-}
+
 
 // layout 유동성을 위해. centered mixin은 layou의 유동성을 해친다.
 // ! box-small의 display:flex가 hidden 속성과 충돌
@@ -144,7 +148,7 @@ $height-header: 56px;
 
 // item in card component
 @mixin hover-item {content:'';display:block;background:var(--gray200);border-radius:$radius400;position:absolute;left:-.5rem;right:-.5rem;top:-.5rem;bottom:-.5rem;z-index:-1;}
-
+@mixin hover-tertiary {border-color: var(--color-primary);}
 
 @mixin grid-container {
   width: 100%;
