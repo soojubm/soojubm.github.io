@@ -1,3 +1,8 @@
+// todo 항상 실행시킬 필요가 없다.
+
+
+
+
 /* eslint-disable */
 // const polyfill = () => {
 // 	if (!Element.prototype.matches) {
@@ -79,3 +84,23 @@ if (!Array.prototype.includes) {
     }
   });
 }
+
+
+
+
+// custom event
+// ie === 11
+(function () {
+  if ( typeof window.CustomEvent === "function" ) return false;
+
+  function CustomEvent ( event, params ) {
+    params = params || { bubbles: false, cancelable: false, detail: undefined };
+    var evt = document.createEvent( 'CustomEvent' );
+    evt.initCustomEvent( event, params.bubbles, params.cancelable, params.detail );
+    return evt;
+   }
+
+  CustomEvent.prototype = window.Event.prototype;
+
+  window.CustomEvent = CustomEvent;
+})();

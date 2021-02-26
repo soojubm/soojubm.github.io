@@ -27,5 +27,6 @@
 @media (--viewport-small) {
   .hero {margin:-4rem 5% 0;}
   .hero-inner {padding:3rem 3rem 4rem;}
+  .hero-obj1, .hero-obj2, .hero-obj3, .hero-obj4 {display:none;}
   .hero-obj4 {top:-18rem;right:-2rem;}
 }

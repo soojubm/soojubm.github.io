@@ -18,8 +18,9 @@
 .profile-user-toggle i {display:inline-block;vertical-align:middle;margin-left:.5rem;}
 .profile-user-category {padding:4px 16px;background:coral;font-size:$caption;color:var(--gray0);border-radius:50px;}
 .profile-user-address {margin:1rem 0 1.25rem 0;padding:1rem 0 1rem 0;border-top:$border150;border-bottom:$border150;}
+.profile-user-address div {display:flex;align-items:center;}
 .profile-user-address div img {width:1rem;margin-right:.5rem;opacity:.4;}
-.profile-user-address i {margin:0 8px 0 0;font-size:14px;color:var(--gray400);vertical-align:middle;}
+.profile-user-address i {margin:0 .5rem 0 0;font-size:14px;color:var(--gray400);vertical-align:middle;}
 .profile-user-hashtags {display:flex;flex-wrap:wrap;}
 .profile-user-statistic {display:flex;width:auto;}
 .profile-user-statistic .statistic {display:flex;margin-right:1rem;}
@@ -43,10 +44,10 @@
 .profile-display-button img {width:1rem;}
 
 .profile-tablist {display:flex;margin:0 0 1rem 0;padding:.25rem;border-radius:$radius400;background:var(--gray100);position:relative;}
-.profile-tablist-tab {padding:$padding100;color:var(--gray800);font-weight:bold;cursor:pointer;position:relative;z-index:1;}
-.profile-tablist-tab[aria-selected=true] {}
+.profile-tablist-tab {padding:$padding100;color:var(--gray400);font-weight:bold;cursor:pointer;position:relative;z-index:1;}
+.profile-tablist-tab[aria-selected=true] {color:var(--gray800);}
 .profile-tablist-tab-badge {font-size:$caption;}
-.profile-tablist-indicator {display:block;height:calc(100% - .5rem);border-radius:$radius400;box-shadow:1px 1px 2px rgba(0,0,0,.1);background:#fff;position:absolute;top:.25rem;left:4px;transition:all 0.4s ease;}
+.profile-tablist-indicator {display:block;height:calc(100% - .5rem);border-radius:$radius400;background:var(--gray0);position:absolute;top:.25rem;left:4px;transition:all 0.4s ease;}
 .profile-tabpanel {display:flex;flex-wrap:wrap;min-height:40rem;margin:0 -1rem;}
 .profile-tabpanel.hidden {display:none;}
 .profile-tabpanel .card {width:calc(33.3333% - 2rem);margin-left:1rem;margin-right:1rem;}

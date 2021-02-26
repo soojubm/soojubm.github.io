@@ -1,9 +1,16 @@
 const tabMenu = () => {
+  // todo resize throttle
   const tabIndicator = document.querySelector<HTMLElement>('.profile-tablist-indicator')
-  if (!tabIndicator) return
+  const firstTab = tabIndicator?.parentNode?.querySelector<HTMLElement>('[role=tab]')
+  
+  if (!tabIndicator || !firstTab) return
+  
+  const firstTabWidth = getComputedStyle(firstTab).width
+  tabIndicator.style.width = firstTabWidth
 
-  tabIndicator.style.width = '90px' // todo
 
+  // window.addEventListener('load', () => initializeIndicator(tabIndicator, firstTabWidth))
+  document.addEventListener('resize',() => initializeIndicator(tabIndicator, firstTabWidth))
   document.addEventListener(
     'click',
     event => {
@@ -34,6 +41,12 @@ const tabMenu = () => {
     },
     true,
   )
+
+  function initializeIndicator(tabIndicator, firstTabWidth) {
+    setTimeout(() => {
+      tabIndicator.style.width = firstTabWidth
+    }, 100)
+  }
 }
 
 export default tabMenu
