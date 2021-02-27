@@ -146,7 +146,7 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 // .textfield-prefix + .textfield-input {display:inline-block;padding-right:100px;}
 
 @mixin textfield-surfix {
-  @include box-small;width:2rem;height:2rem;background:var(--gray0);position:absolute;right:1rem;top:37px;pointer-events:none;
+  @include box-small;width:2rem;height:2rem;background:var(--gray0);position:absolute;right:1rem;top:38px;pointer-events:none;
 }
 .textfield-surfix {@include textfield-surfix;}
 .selectbox-indicator {@include textfield-surfix;}

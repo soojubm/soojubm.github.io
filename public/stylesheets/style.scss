@@ -248,7 +248,7 @@
 .notification {}
 .notification-list {padding:1rem 2rem;}
 .notification-item {margin:1rem 0;padding-left:calc(48px + 1rem);position:relative;}
-.notification-item:hover:after {@include hover-item;}
+.notification-item:hover {@include hover-item;}
 .notification-item-avatar {@include box-medium;position:absolute;left:0;top:.25rem;}
 .notification-item-title {font-size:1rem;line-height:1.4;}
 .notification-item-date {font-size:$caption;color:var(--gray400)}

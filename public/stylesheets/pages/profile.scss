@@ -1,4 +1,4 @@
-.profile {max-width:$container800;margin:2rem 10%;position:relative;}
+.profile {max-width:$container800;margin:2rem auto;padding:0 5%;position:relative;}
 // .profile-head {margin:0 0 3rem 0 !important;}
 // .profile-head-background {background:url('/public/images/caleb-woods-182648-unsplash.jpg') no-repeat center center;background-size:cover;}
 // .profile-head-headline {position:relative;}
@@ -51,7 +51,6 @@
 .profile-tabpanel {display:flex;flex-wrap:wrap;margin:0 -1rem;}
 .profile-tabpanel.hidden {display:none;}
 .profile-tabpanel .card {width:calc(33.3333% - 2rem);margin:0 1rem 2rem;}
-// .profile-tabpanel .card:hover:after {@include hover-item;}
 
 
 .accordion {position:relative;}
@@ -86,14 +85,13 @@
 .card:hover .card-thumbnail img {transform:translateY(-.25rem);}
 .card:hover .card-more {display:block;}
 
-.list .card {float:none;width:100%;}
+.list .card {float:none;width:100%;margin-bottom:1rem;}
 .list .card-thumbnail {float:left;width:80px;height:80px;margin-right:1.5rem;padding-top:0;}
 .list .card-thumbnail img {max-width:150%;}
 .list .card-title {padding-top:0;}
 .list .card-more {right:0;top:0;}
 
 @media (--viewport-small) {
-  .profile {margin-left:5%;margin-right:5%;}
   .profile-user {float:none;width:100%;box-sizing:border-box;}
   .profile-body {margin:0 auto;padding-left:0;}
   .profile-user-toggle {display:block;}
