@@ -1,5 +1,5 @@
 
-.pricing-item {width:320px;padding:2rem;border:$border100;box-shadow:$shadow400;box-sizing:border-box;border-radius:$radius400;position:relative;}
+.pricing-item {width:320px;padding:2rem;border:var(--border100);box-shadow:var(--shadow400);box-sizing:border-box;border-radius:var(--radius400);position:relative;}
 .pricing-item-title {font-size:$subhead;font-weight:bold;}
 .pricing-item-price {display:block;color:var(--gray800);font-size:2rem;}
 .pricing-item-price-unit {}
@@ -13,4 +13,4 @@
 .pricing-item ul {margin:1rem 0 3rem 0;}
 .pricing-item ul li {padding:.125rem 0;}
 .pricing-item ul li:before {content:'';}
-.pricing-item .icon-check {margin:0 .5rem 0 0;border-color:$color-primary;}
+.pricing-item .icon-check {margin:0 .5rem 0 0;border-color:var(--color-primary);}

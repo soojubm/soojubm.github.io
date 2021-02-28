@@ -19,14 +19,14 @@ main {display:block;}
 iframe,img,video {width:100%;} /*img {vertical-align:middle;}*/
 h1,h2,h3,h4,h5,h6 {line-height:1.4;font-weight:bold;color:var(--gray800);word-break:keep-all;}
 strong,b,th,legend {font-weight:bold;color:var(--gray800);}
-cite,i,address,em,dfn {font-style:normal;} em {color:$color-primary;}
+cite,i,address,em,dfn {font-style:normal;} em {color:var(--color-primary);}
 small {font-size:$caption;} time {} del {color:var(--gray400);} abbr {text-decoration:none;}
-a {text-decoration:none;text-decoration-skip-ink:auto;color:$color-primary;} a:link,a:visited {} a:hover,a:focus {} a:active {}
-mark {padding:0 2px 2px;border-radius:$radius400;background:var(--gray200);}
+a {text-decoration:none;text-decoration-skip-ink:auto;color:var(--color-primary);} a:link,a:visited {} a:hover,a:focus {} a:active {}
+mark {padding:0 2px 2px;border-radius:var(--radius400);background:var(--gray200);}
 hr {height:1px;margin:1rem 0;background:var(--gray100);overflow:visible;position:relative;}
 u {text-decoration:none;position:relative;}
-u:after {content:'';height:.6em;border-radius:$radius400;background:antiquewhite;position:absolute;left:-.25rem;right:-.25rem;bottom:-.25rem;z-index:-1;}
-code {padding:1rem 1.5rem;background:var(--gray100);border-radius:$radius400;font-size:$caption;}
+u:after {content:'';height:.6em;border-radius:var(--radius400);background:antiquewhite;position:absolute;left:-.25rem;right:-.25rem;bottom:-.25rem;z-index:-1;}
+code {padding:1rem 1.5rem;background:var(--gray100);border-radius:var(--radius400);font-size:$caption;}
 
 html {min-width:320px;height:100%;font:14px/1.8 var(--fontstack);color:var(--gray800);-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overscroll-behavior:contain;}
 body {background:var(--gray0);overflow-x:hidden;letter-spacing:-.0125rem;}
@@ -47,7 +47,7 @@ ul li {margin:.25rem 0;padding: 0 0 0 1rem;position:relative;}
 ul li:before {content:'';display:block;width:4px;height:4px;background:var(--gray800);position:absolute;left:0;top:.875rem;}
 ul li ul {margin:0 0 .5rem 0;}
 ul li ul li {}
-ul li ul li:before {content:'';border-radius:$radius400;}
+ul li ul li:before {content:'';border-radius:var(--radius400);}
 
 ol {}
 ol li {margin:.25rem 0;padding: 0 0 0 1.25rem;position:relative;counter-increment:listitem;}

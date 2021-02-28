@@ -6,9 +6,9 @@
 .step-space {display:none;margin:-.5rem 0 0 0;}
 .step-space-dot {float:left;display:block;width:3px;height:3px;margin:21px 2px;border-radius:50%;background:var(--gray400);}
 
-.is-active .step-item-icon {/*width:40px;height:40px;margin-top:-4px;*/background:$color-primary;color:var(--gray100);}
-.is-active .step-item-title {/*margin-top:3px;*/color:$color-primary;}
-.is-active .step-space-dot {background:$color-primary;}
+.is-active .step-item-icon {/*width:40px;height:40px;margin-top:-4px;*/background:var(--color-primary);color:var(--gray100);}
+.is-active .step-item-title {/*margin-top:3px;*/color:var(--color-primary);}
+.is-active .step-space-dot {background:var(--color-primary);}
 
 // @media (--viewport-small) {
 //   .step-item {display:flex;width:auto;margin:0;}

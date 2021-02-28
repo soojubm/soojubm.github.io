@@ -33,13 +33,13 @@
 
 .icon-search {}
 .icon-search:before {content: '';display: block;width:10px;height:10px;border-radius:50%;margin:0 auto;border:2px solid var(--gray800);transform:translateX(-1px)}
-.icon-search:after {content: '';display: block;width:6px;height:2px;background: var(--gray800);margin:0 auto;border-radius:$radius400;transform: rotate(45deg) translate(3px,-5px);}
+.icon-search:after {content: '';display: block;width:6px;height:2px;background: var(--gray800);margin:0 auto;border-radius:var(--radius400);transform: rotate(45deg) translate(3px,-5px);}
 .is-active .icon-search:before {content:'';width:10px;height:2px;background-color:var(--gray800);position:absolute;left:50%;top:50%;transform: translate(-50%, -50%) rotate(45deg);border:none;border-radius:0;}
 .is-active .icon-search:after {content:'';width:2px;height:10px;background:var(--gray800);position:absolute;left:50%;top:50%;transform:translate(-50%, -50%) rotate(45deg);}
 
 
 // sort
-.icon-caret {display:inline-block;vertical-align:middle;width:0;height:0;border-top:4px solid var(--gray800);border-left:4px solid transparent;border-right:4px solid transparent;border-radius:$radius400;}
+.icon-caret {display:inline-block;vertical-align:middle;width:0;height:0;border-top:4px solid var(--gray800);border-left:4px solid transparent;border-right:4px solid transparent;border-radius:var(--radius400);}
 .icon-caret.is-left {transform:rotate(90deg);}
 .icon-caret.is-right {transform:rotate(-90deg);}
 
@@ -53,9 +53,9 @@
 .icon-arrow-right:after {content:'';display:block;width:5px;height:1px;background:var(--gray800);position:absolute;left:27px;top:22px;transform:rotate(45deg);transition:all .4s ease;}
 
 
-.icon-circled-arrow {display:inline-block;margin:0 0 0 6px;padding:8px;border:1px solid $color-primary;border-radius:50%;vertical-align:middle;position:relative;}
-.icon-circled-arrow:before {content:'';display:block;width:8px;height:1px;background:$color-primary;position:absolute;left:4px;top:8px;transition:all .4s ease;}
-.icon-circled-arrow:after {content:'';display:block;width:3px;height:1px;background:$color-primary;position:absolute;left:8px;top:6px;transform:rotate(45deg);transition:all .4s ease;}
+.icon-circled-arrow {display:inline-block;margin:0 0 0 6px;padding:8px;border:1px solid var(--color-primary);border-radius:50%;vertical-align:middle;position:relative;}
+.icon-circled-arrow:before {content:'';display:block;width:8px;height:1px;background:var(--color-primary);position:absolute;left:4px;top:8px;transition:all .4s ease;}
+.icon-circled-arrow:after {content:'';display:block;width:3px;height:1px;background:var(--color-primary);position:absolute;left:8px;top:6px;transform:rotate(45deg);transition:all .4s ease;}
 
 .icon-chevron {display:block;margin:0 3px 0 0;padding:3px;border:solid var(--gray800);border-width:0 2px 2px 0;transform:rotate(-45deg);}
 .icon-chevron.is-left {margin:0 0 0 3px;transform:rotate(135deg);}
@@ -111,9 +111,9 @@
 // .icon-home span:nth-of-type(2):after {content:'';display:block;width:4px;height:4px;background:var(--gray0);position:absolute;left:5px;top:-1px;}
 
 .icon-home {display:inline-block;position:relative;}
-.icon-home span:nth-of-type(1):before {content:'';display:block;width:10px;height:10px;border:2px solid $color-primary;box-sizing:border-box;transform:rotate(45deg);position:absolute;left:2px;top:-9px;}
+.icon-home span:nth-of-type(1):before {content:'';display:block;width:10px;height:10px;border:2px solid var(--color-primary);box-sizing:border-box;transform:rotate(45deg);position:absolute;left:2px;top:-9px;}
 .icon-home span:nth-of-type(1):after {content:'';display:block;width:16px;height:8px;background:var(--gray0);position:absolute;left:-2px;top:-3px;}
-.icon-home span:nth-of-type(2):before {content:'';display:block;width:10px;height:6px;border:2px solid $color-primary;border-top:none;box-sizing:border-box;position:absolute;left:2px;top:-4px;}
+.icon-home span:nth-of-type(2):before {content:'';display:block;width:10px;height:6px;border:2px solid var(--color-primary);border-top:none;box-sizing:border-box;position:absolute;left:2px;top:-4px;}
 
 /*
 .icon-star {position: relative;display: inline-block;width:0;height:0;margin-bottom: 1.2em;border-right: .3em solid transparent;border-bottom: .7em  solid var(--gray400);border-left:.3em solid transparent;font-size:$caption;}

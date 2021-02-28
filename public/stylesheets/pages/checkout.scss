@@ -1,4 +1,4 @@
-@mixin item {display:flex;align-items:center;padding:0 0 .75rem;border-radius:$radius400;position:relative;}
+@mixin item {display:flex;align-items:center;padding:0 0 .75rem;border-radius:var(--radius400);position:relative;}
 @mixin item-emoji {display:none;margin-top:-.25rem;position:absolute;left:0;top:50%;transform:translate(0, -50%);}
 @mixin item-label {width:120px;margin-left:0;color:var(--gray400);font-size:1rem;}
 @mixin item-value {}
@@ -20,7 +20,7 @@
 .checkout-head-byline h2 {font-size:1rem;}
 .checkout-head-byline figure {@include box-small;display:flex;}
 
-.checkout-product {width:480px;padding:1.5rem;border:$border100;border-radius:$radius400;box-sizing:border-box;box-shadow:$shadow400;position:absolute;right:10%;top:12.5rem;z-index:1;}
+.checkout-product {width:480px;padding:1.5rem;border:var(--border100);border-radius:var(--radius400);box-sizing:border-box;box-shadow:var(--shadow400);position:absolute;right:10%;top:12.5rem;z-index:1;}
 .checkout-product-title {display:none;margin:0 0 1.5rem 0;font-size:$subhead;}
 .checkout-product-item {height:$cell-large;margin:0 0 1rem 0;position:relative;}
 .checkout-product-item-media {@include box-large;background:crimson;float:left;overflow:visible;margin-right:1.5rem;position:relative;}
@@ -57,7 +57,7 @@
 .checkout-payment {max-width:640px;margin-top:4rem;}
 .checkout-payment-title {font-size:$subhead;font-weight:bold;}
 .checkout-payment-description {margin:1rem 0 1.5rem 0;}
-.checkout-payment-button {width:100%;margin:.25rem 0;padding:$padding200;border:$border100;border-radius:4px;text-align:left;position:relative}
+.checkout-payment-button {width:100%;margin:.25rem 0;padding:$padding200;border:var(--border100);border-radius:4px;text-align:left;position:relative}
 .checkout-payment-button-emoji {display:block;margin-bottom:-.5rem;font-size:2rem;}
 .checkout-payment-button-check {position:absolute;right:16px;top:42%;}
 
@@ -68,11 +68,11 @@
 .checkout-foot-helper {margin:0 0 1rem 0;}
 .checkout-foot-pay {@include button-primary;width:50%;max-width:20rem;}
 .checkout-foot-cart {@include button-text;margin:0 0 0 2rem;}
-// .checkout-shipping-phone {margin:.5rem 0;padding:1rem 2rem 1.5rem;border-radius:$radius400;background:var(--gray100);position:relative;}
+// .checkout-shipping-phone {margin:.5rem 0;padding:1rem 2rem 1.5rem;border-radius:var(--radius400);background:var(--gray100);position:relative;}
 // .checkout-shipping-phone-emoji {font-size:2rem;position:absolute;top:50%;transform:translate(0, -50%);}
 // .checkout-shipping-phone-label {margin-left:3.5rem;color:var(--gray400);}
 // .checkout-shipping-phone-value {margin-left:3.5rem;font-size:$subhead;}
-// .checkout-shipping-address {padding:1rem 2rem 1.5rem;border-radius:$radius400;background:var(--gray100);position:relative;}
+// .checkout-shipping-address {padding:1rem 2rem 1.5rem;border-radius:var(--radius400);background:var(--gray100);position:relative;}
 // .checkout-shipping-address-emoji {font-size:2rem;position:absolute;top:50%;transform:translate(0, -50%);}
 // .checkout-shipping-address-label {margin-left:3.5rem;color:var(--gray400);}
 // .checkout-shipping-address-value {margin-left:3.5rem;font-size:$subhead;}

@@ -3,7 +3,7 @@
 .pagination-next {line-height:$cell-small;position:absolute;right:0;}
 .pagination-link {@include box-small;border:none;background-color:var(--gray0);color:var(--gray400);}
 .pagination-link:hover {background-color:var(--gray100);}
-.pagination-link.is-current {background-color:$color-primary;color:var(--gray0);}
+.pagination-link.is-current {background-color:var(--color-primary);color:var(--gray0);}
 .pagination-ellipsis {@include box-small;border:none;background-color:var(--gray0);color:var(--gray400);letter-spacing:1px;}
 // .pagination-last:before {content:'...';display:block;width:32px;height:32px;cursor:default;}
 

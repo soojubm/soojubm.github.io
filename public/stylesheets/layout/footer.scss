@@ -13,7 +13,7 @@
 .footer-scroll-indicator {}
 .footer-scroll-indicator i {width:2px;height:8px;background:var(--gray800);margin:8px auto 0;animation:bounce 0.5s infinite alternate;transform:rotate(90deg);}
 .footer-scroll-top {@include box-small;padding: 1rem 1rem calc(constant(safe-area-inset-bottom) + 1rem);
-	padding: 1rem 1rem calc(env(safe-area-inset-bottom) + 1rem);box-shadow:$shadow400;}
+	padding: 1rem 1rem calc(env(safe-area-inset-bottom) + 1rem);box-shadow:var(--shadow400);}
 .footer-scroll-top i {transform:rotate(-90deg);}
 .footer-scroll-bottom {display:none;}
 .footer-scroll-top .is-visible {right:50px;}

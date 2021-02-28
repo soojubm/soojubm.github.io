@@ -33,6 +33,20 @@ window.addEventListener('hashchange', initailizePage)
 async function domEvents() {
   await routePage()
 
+  const themeTest = document.querySelectorAll('.js-system-theme button')
+  if(themeTest) {
+    themeTest.forEach((button, index) => {
+      button.addEventListener('click', event => {
+        if(index === 1) document.body.classList.add('design-system-newneek')
+        else if (index === 2)  document.body.classList.add('design-system-danngn')
+        else {
+          document.body.classList.remove('design-system-newneek')
+          document.body.classList.remove('design-system-danngn')
+        }
+      })
+    })
+  }
+
   // lazyLoading()
 
   function lazyLoading() {

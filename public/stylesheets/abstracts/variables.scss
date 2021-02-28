@@ -85,7 +85,7 @@ $height-header: 56px;
   --radius-default: var(--radius400);
   --radius-avatar: var(--radius400);
 
-  --shadow400: 0px 0px 2rem rgba(0, 0, 0, 0.125);
+  --shadow400: $shadow400;
 
   --padding-card: 2rem;
 
@@ -104,6 +104,20 @@ $height-header: 56px;
 
     color: var(--gray400);
     input[type=checkbox][role=switch] + label::after {background:#fff;}
+  }
+
+
+  .design-system-newneek {
+    // ! colours
+    --gray0: #ebebeb; // white for dark theme
+    --gray100: #fff; // bg
+    --gray200: #000; // divider border
+    --gray400: #000; // caption
+    --gray800: #000; // heading
+    --color-primary:#fb7800;
+    --border100: 1px solid #000;
+    --radius400: 0px;
+    --shadow400: none;
   }
 }
 
@@ -132,7 +146,7 @@ $height-header: 56px;
   border: 1px solid transparent;
   overflow: hidden;
   background-color: var(--gray100);
-  border-radius: $radius400;
+  border-radius: var(--radius400);
   box-sizing: border-box;
   position: relative;
 }

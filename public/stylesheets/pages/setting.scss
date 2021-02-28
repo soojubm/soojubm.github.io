@@ -10,10 +10,10 @@
 .setting-body-heading {margin:0 0 1.5rem 0;font-size:$subhead;font-weight:bold;}
 .setting-body-description {margin:-1rem 0 1.5rem 0;}
 
-.setting-row {display:flex;overflow:hidden;padding:1rem 0 1.1rem;border-bottom:$border100;box-sizing:border-box;cursor:pointer;position:relative;}
+.setting-row {display:flex;overflow:hidden;padding:1rem 0 1.1rem;border-bottom:var(--border100);box-sizing:border-box;cursor:pointer;position:relative;}
 .setting-row:hover {}
 .setting-row.is-opened {}
-.setting-row:nth-of-type(1) {border-top:$border100;}
+.setting-row:nth-of-type(1) {border-top:var(--border100);}
 .setting-row-label {width:10rem;font-size:1rem;line-height:32px;color:var(--gray400);}
 .setting-row-value {display:flex;flex-wrap:wrap;align-items:center;width:calc(100% - 10rem);color:var(--gray800);line-height:32px;}
 .setting-row-value-username {width:100%;}

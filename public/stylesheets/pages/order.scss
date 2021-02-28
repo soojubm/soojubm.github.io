@@ -4,8 +4,8 @@
 .order-head-title {margin:1rem 0;@include title;}
 .order-head-description {}
 
-.order-item {margin:2rem 0;border:$border100;border-radius:$radius400;position:relative;}
-.order-item-head {padding:1rem 1.5rem 1.5rem;border-bottom:$border100;box-sizing:border-box;position:relative;}
+.order-item {margin:2rem 0;border:var(--border100);border-radius:var(--radius400);position:relative;}
+.order-item-head {padding:1rem 1.5rem 1.5rem;border-bottom:var(--border100);box-sizing:border-box;position:relative;}
 .order-item-head-date {display:block;width:100%;}
 .order-item-head-date-label {display:block;font-size:$caption;}
 .order-item-head-date-value {}
@@ -20,6 +20,6 @@
 .order-item-product-thumbnail {float:left;@include box-large;margin-right:1.5rem;}
 .order-item-product-name {font-size:1rem;}
 .order-item-product-price {@include subhead;}
-.order-item-foot {margin:1rem 0 0;padding:.25rem;border-top:$border100;position:relative;}
+.order-item-foot {margin:1rem 0 0;padding:.25rem;border-top:var(--border100);position:relative;}
 .order-item-foot-button {@include button-text;width:100%;}
 .order-item-foot-helper {margin: .5rem 0 0;}
