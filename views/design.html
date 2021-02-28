@@ -1,14 +1,26 @@
 <main class="design">
   <header class="design-head js-scroll-animation">
     <h1 style="position:fixed;left:1rem;bottom:1rem;color:var(--gray0);font-size:.875rem;">soojubm</h1>
+    <nav>
+      <a href="">테스트1</a>
+      <a href="">테스트1</a>
+      <a href="">테스트1</a>
+      <a href="">테스트1</a>
+      <a href="">테스트1</a>
+      <a href="">테스트1</a>
+      <a href="">테스트1</a>
+      <a href="">테스트1</a>
+      <a href="">테스트1</a>
+      <a href="">테스트1</a>
+      <a href="">테스트1</a>
+    </nav>
   </header>
   <section class="hero js-scroll-animation">
     <div class="hero-inner" style="overflow:hidden;">
       <div class="hero-background"></div>
-      <small class="hero-eyebrow">디자인시스템 연습장</small>
+      <!-- <small class="hero-eyebrow">디자인시스템 연습장</small> -->
       <h1 class="hero-title">부끄러우니까<br />보지마요<i style="font-style:italic;">!</i></h1>
-      <p class="hero-description">유아이를 코드로 가볍게 스케치하는 연습장입니다. <span class="linebreaker-desktop">바닐라 자바스크립트로 만들었고 깔끔한 코드는 못 됩니다.</span></p>
-
+      <p class="hero-description">디자인 시스템을 스케치하는 연습장입니다. <span class="linebreaker-desktop">바닐라 자바스크립트로 만들었고 깔끔한 코드는 못 됩니다.</span></p>
 
       <article class="design-article" style="margin:0;">
         <h1 class="design-article-title" hidden>디자인 시스템을 적용한 페이지를<br />간단한 캐러셀 코드로...</h1>
@@ -234,23 +246,33 @@
       <h1 class="design-article-title">Avatars & Cells</h1>
       <p class="design-article-description">아바타 및 아이콘 버튼에서 지정된 4가지 사이즈만 사용하세요. memo :: box-sizing vs calc(100% - borderWidth x 2)</p>
 
-      <div role="group">
+      <div role="group" style="margin-bottom:-.5rem;">
         <a href="" class="design-article-avatar-large"></a>
         <a href="" class="design-article-avatar-medium"><span class="avatar-badge"></span></a>
         <a href="" class="design-article-avatar-small"></a>
         <a href="" class="design-article-avatar-tiny"></a>
       </div>
-      <hr role="separator" style="margin:2rem 0;" />
+      <hr role="separator" />
       <div style="display:flex;margin-bottom:1rem;">
         <a href="" class="design-article-avatar-large"></a>
-        <div style="display:block;width:1.5rem;height:80px;background:var(--blue100);border:1px solid var(--color-primary);border-radius:4px;box-sizing:border-box;"></div>
-        <div style="display:block;width:100%;height:80px;background:var(--gray100);border-radius:4px;">Text Area</div>
+        <div style="display:block;width:1.5rem;height:inherit;background:var(--blue100);"></div>
+        <div style="display:block;width:calc(100% - 80px - 1.5rem);height:inherit;background:var(--gray100);border-radius:4px;">Text Area</div>
+      </div>
+      <div style="display:flex;margin-bottom:1rem;">
+        <a href="" class="design-article-avatar-medium"></a>
+        <div style="display:block;width:1rem;height:inherit;background:var(--blue100);box-sizing:border-box;"></div>
+        <div style="display:block;width:calc(100% - 48px - 1rem);height:inherit;background:var(--gray100);border-radius:4px;">Text Area</div>
+      </div>
+      <div style="display:flex;margin-bottom:1rem;">
+        <a href="" class="design-article-avatar-small"></a>
+        <div style="display:block;width:1rem;height:inherit;background:var(--blue100);box-sizing:border-box;"></div>
+        <div style="display:block;width:calc(100% - 32px - 1rem);height:inherit;background:var(--gray100);border-radius:4px;">Text Area</div>
       </div>
       <div style="display:flex;">
-        <a href="" class="design-article-avatar-medium"></a>
-        <div style="display:block;width:1rem;height:48px;border:1px solid var(--color-primary);background:var(--blue100);border-radius:4px;box-sizing:border-box;"></div>
+        <a href="" class="design-article-avatar-tiny"></a>
+        <div style="display:block;width:.5rem;height:inherit;background:var(--blue100);box-sizing:border-box;"></div>
+        <div style="display:block;width:calc(100% - 16px - .5rem);height:inherit;background:var(--gray100);border-radius:4px;line-height:16px;">Text Area</div>
       </div>
-
       <!-- <div class="ttt">
 				<span class="ttt-avatar">🦁</span>
 				<span>Run for 1h 03 minutes.</span>
@@ -463,7 +485,12 @@
         <div class="checkbox textfiled">
           <input class="js-check" type="checkbox" id="other" name="interest" value="other">
           <label for="other">기타</label>
-          <input type="text" name="other" class="textfield-input" placeholder="다른 거 뭔지 입력해주세요." hidden>
+          <input type="text" name="other-more" class="textfield-input" placeholder="다른 거 뭔지 입력해주세요." hidden>
+        </div>
+        <hr />
+        <div class="checkbox theme-right">
+          <input class="js-check" type="checkbox" id="sheet" name="sheet" value="sheet">
+          <label for="sheet">우측 체크박스 (모바일, 시트에서)</label>
         </div>
       </fieldset>
     </article>
@@ -660,8 +687,14 @@
       <div class="textfield is-invalid">
         <label class="textfield-label" for="abc123">레이블 <abbr aria-label="optional" style="font-size:.875rem;">선택입력</abbr></label>
         <input class="textfield-input js-input-test" type="text" id="abc123" placeholder="Textarea Placeholder..." value="soojubm@gmail.com" aria-describedby="error" aria-invalid="true" />
-        <!-- <button class="textfield-surfix"><i class="icon-close"></i></button> -->
         <small class="textfield-helper is-error">이미 사용 중인 이메일입니다.</small>
+      </div>
+      <br />
+      <div class="textfield">
+        <!-- <button class="textfield-prefix"><i class="icon-search"></i></button> -->
+        <label class="textfield-label" for="search">검색</label>
+        <input class="textfield-input js-input-test" type="search" id="search" placeholder="궁금했던 인물이나 사건을 검색해보세요" />
+        <button class="textfield-surfix"><i class="icon-close"></i></button>
       </div>
       <br />
       <div class="textfield">
@@ -759,9 +792,9 @@
       <p class="design-article-description">오른쪽 정렬과 드롭업에 관한 것이 필요할까? 우선은 필요없다. min-width로 cell을 사용하면 셀 내부 텍스트가 늘어나도 대응할 있다.</p>
       <div style="display:flex;">
         <div class="dropdown" style="margin-right:.5rem;">
-          <button class="dropdown-trigger js-toggle" aria-haspopup="menu" aria-expanded="false" style="width:auto;padding:0 1rem;">
+          <button class="dropdown-trigger js-toggle" aria-haspopup="menu" aria-expanded="false" style="margin-right:1rem;">
+            <span class="dropdown-trigger-icon"><i class="icon-caret"></i></span>
             <span class="dropdown-trigger-text">드롭다운</span>
-            <i class="dropdown-trigger-caret icon-caret"></i>
           </button>
           <menu class="dropdown-menu" role="menu">
             <h6 class="dropdown-menu-title" hidden>Dropdown header</h6>
@@ -773,7 +806,7 @@
         </div>
         <div class="dropdown">
           <button class="dropdown-trigger js-toggle" aria-haspopup="menu" aria-expanded="false">
-            <i class="icon-more"></i>
+            <span class="dropdown-trigger-icon"><i class="icon-more"></i></span>
           </button>
           <menu class="dropdown-menu">
             <a class="dropdown-menu-link" href="">수정</a>
@@ -1129,7 +1162,7 @@
     <article class="design-article">
       <h1 class="design-article-title">Graph</h1>
       <p class="design-article-description">수치만큼 자바스크립트로 그래프를 채워줍니다.</p>
-      <div class="graph js-graph">
+      <div class="graph js-graph" style="border:1px solid var(--gray200);border-radius:4px;">
         <div class="graph-title">1월 26일 <em>컴퓨터통신 분야</em>에서는<br><em>7백명의 지식iN</em>들이 답변하셨습니다.</div>
         <div class="graph-item">
           <span class="graph-item-value">40%</span>

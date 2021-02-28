@@ -35,13 +35,14 @@ $container-auth: 400px;
 .password-head {margin-bottom:3rem;position:relative;}
 .password-title {@include title;}
 .password-description {margin:1rem 0 0 0;}
-.password-submit {float:left;width:200px;max-width:50%;}
-.password-link {float:right;margin-top:16px;}
-.password-foot {margin:1rem 0 0;}
+.password-foot {display:flex;align-items:center;justify-content:space-between;margin:1rem 0;}
 .password-foot-submit {@include button-primary;width:50%;}
 .password-result {margin:4rem 5%;text-align:center;}
 .password-result-title {margin:0 0 2rem 0;}
 .password-result-login {@include button-tertiary;}
+
+// .password-submit {float:left;width:200px;max-width:50%;}
+// .password-link {float:right;margin-top:16px;}
 
 .delete {max-width:$container-auth;margin: 0 auto;padding: 5rem 5% 20rem;position:relative;}
 .delete-head {padding:2rem 0% 4rem;}

@@ -17,9 +17,8 @@
 .surface-item div {@include box-medium;box-shadow:$shadow400;}
 
 .design {}
-.design-head {overflow:hidden;background:var(--color-primary);position:fixed;left:0;right:60%;top:0;bottom:0;z-index:1;}
-// .design-head {overflow:hidden;background:url('/public/images/teemu-paananen-OOE4xAnBhKo-unsplash.jpg') no-repeat center center;background-size:cover;position:fixed;left:0;right:60%;top:0;bottom:0;z-index:1;}
-.design-head.is-scrolled {right:50%;transition: all 1s $bezier-base .2s;}
+.design-head {overflow:hidden;background:var(--color-primary);position:fixed;left:0;right:0;top:0;bottom:0;z-index:1;}
+.design-head.is-scrolled {transform:translateX(-50%);transition:transform .8s $bezier-base .4s;}
 .design-body {width:50%;max-width:40rem;margin-left:50%;padding:0 6rem;}
 
 .design-article {margin:6rem 0;position:relative;}

@@ -22,9 +22,9 @@
 .footer-sitemap:after {content:'';display:block;clear:both;}
 .footer-sitemap-title {margin:0 0 1rem 0;font-size:$subhead;}
 .footer-sitemap-item {margin:0 0 2rem 0;}
-.footer-sitemap-item-title {margin:0 0 .75rem 0;font-size:14px;color:var(--gray400);}
-.footer-sitemap-item-link {display:block;}
-.footer-sitemap-item-link:hover {color:$color-primary;}
+.footer-sitemap-item-title {margin:0 0 1rem 0;@include subhead;}
+.footer-sitemap-item-link {display:block;color:var(--gray800);line-height:2.4;}
+.footer-sitemap-item-link:hover {@include hover-text;}
 .footer-terms {margin:2rem 0 1rem 0;}
 .footer-terms-link {margin:0 1rem 0 0;}
 .footer-address {float:left;width:50%;}
