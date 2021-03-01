@@ -163,7 +163,7 @@
 .slider-viewer {overflow:auto;white-space:nowrap;font-size:0;position:relative;z-index:1;transition:all .4s ease;}
 .slider-viewer::-webkit-scrollbar {display: none;}
 /* .slider-viewer .inbox {width:1500px;position:absolute;} */
-.slider-viewer-slide {width:10rem;height:64px;padding:0 1rem;border:1px solid var(--gray100);border-radius:var(--radius400);background:var(--gray100);text-align:left;font-size:1rem;}
+.slider-viewer-slide {width:10rem;height:64px;padding:0 1rem;border:1px solid var(--color-box-border);border-radius:var(--radius400);background:var(--gray100);text-align:left;font-size:1rem;}
 .slider-viewer-slide:nth-of-type(1) {margin-left:5rem;}
 .slider-viewer-slide + .slider-viewer-slide {margin-left:.5rem;}
 .slider-viewer-slide:hover {border-color:var(--color-primary);}

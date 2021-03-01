@@ -120,3 +120,10 @@
 .icon-star:before {content: '';display: block;width: 0;height: 0;position: absolute;top: .6em;left: -1em;border-right:  1em solid transparent;border-bottom: .7em  solid var(--gray400);border-left:   1em solid transparent;transform: rotate(-35deg);}
 .icon-star:after {content: '';display: block;width: 0;height: 0;position: absolute;top: .6em;left: -1em;border-right:  1em solid transparent;border-bottom: .7em  solid var(--gray400);border-left:   1em solid transparent;transform: rotate(35deg);}
 */
+
+
+
+
+.icon-file {position:relative;transform:translate(2px, 2px);}
+.icon-file::before {content:'';display:block;padding:3px;border:2px solid var(--gray800);position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);}
+.icon-file::after {content:'';display:block;padding:3px;border:2px solid var(--gray800);border-right:0;border-bottom:0;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);margin:-5px}

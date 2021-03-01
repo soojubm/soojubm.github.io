@@ -48,7 +48,7 @@
 
 .navbar-user-account {position:relative;}
 .navbar-user-account-trigger {display:flex;justify-content:center;align-items:center;height:32px;}
-.navbar-user-account-trigger span {@include box-small;float:left;background:var(--gray0);border:var(--border100);pointer-events:none;}
+.navbar-user-account-trigger-media {@include box-small;background:var(--gray0);border:var(--border100);pointer-events:none;}
 .navbar-user-account-menu {width:320px;height:0;padding:2rem;border:$border150;box-sizing:border-box;border-radius:var(--radius400);background:var(--gray0);box-shadow:var(--shadow400);position:absolute;top:40px;right:0;z-index:4;transform:scale(0);transform-origin:right top;}
 .navbar-user-account-menu.is-visible {height:auto;transform:scale(1);}
 

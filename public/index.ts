@@ -37,8 +37,14 @@ async function domEvents() {
   if(themeTest) {
     themeTest.forEach((button, index) => {
       button.addEventListener('click', event => {
-        if(index === 1) document.body.classList.add('design-system-newneek')
-        else if (index === 2)  document.body.classList.add('design-system-danngn')
+        if(index === 1) {
+          document.body.classList.remove('design-system-danngn')
+          document.body.classList.add('design-system-newneek')
+        }
+        else if (index === 2) {
+          document.body.classList.remove('design-system-newneek')
+          document.body.classList.add('design-system-danngn')
+        }
         else {
           document.body.classList.remove('design-system-newneek')
           document.body.classList.remove('design-system-danngn')

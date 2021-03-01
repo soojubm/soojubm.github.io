@@ -200,5 +200,7 @@
 
 
 .test {
+  display: flex;
+  flex-direction: column;
   button {display:block;margin:0 0 .5rem 0;@include button-tertiary;}
 }

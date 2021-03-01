@@ -20,12 +20,13 @@
 .is-scrolled .hero-obj4 {transform:scale(1);}
 
 @media (--viewport-large) {
-  .hero {margin-top:-4rem;}
-  .hero-inner {padding:3rem 5% 4rem;}
+  .hero {margin-top:-8rem;}
+  .hero-inner {padding:3rem 4rem 4rem;}
   .hero-obj4 {width:20rem;}
 }
 
 @media (--viewport-small) {
+  .hero {width:100%;}
   .hero-obj1, .hero-obj2, .hero-obj3, .hero-obj4 {display:none;}
   .hero-obj4 {top:-18rem;right:-2rem;}
 }
