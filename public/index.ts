@@ -5,7 +5,7 @@ import './stylesheets/style.scss'
 import routePage from './javascripts/router'
 import { initializeLoader, detectBrowser } from './javascripts/load'
 import { setDarkmode, carousel } from './javascripts/setDarkMode'
-import { countDownClock } from './javascripts/countdown'
+// import { countDownClock } from './javascripts/countdown'
 import event from './javascripts/event/index'
 import input from './javascripts/input/index'
 

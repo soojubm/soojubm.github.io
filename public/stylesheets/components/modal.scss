@@ -12,13 +12,13 @@
 .modal-head-title {margin:2rem 0;@include title;}
 .modal-body {margin:2rem 0;}
 .modal-body-description {max-width:560px;margin:2rem 0;}
-.modal-body-image {margin:0 -2.5rem;}
+.modal-body-image {margin:4rem -2.5rem;}
 .modal-foot {padding:16px 0;text-align:right;}
 
 @media (--viewport-small) {
   .modal-dialog {margin:0 auto;padding-left:5%;padding-right:5%;}
   .modal-head-title {font-size:$subhead;}
-  .modal-body-image {margin:0 -1.5rem;}
+  .modal-body-image {margin-left:-1.5rem;margin-right:-1.5rem;}
 }
 
 @keyframes modal {

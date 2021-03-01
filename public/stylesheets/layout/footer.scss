@@ -5,7 +5,7 @@
 .subscribe-submit {@include button-primary;width:100%;max-width:400px;}
 .subscribe-helper {display:block;margin:.5rem 0 0 0;font-size:$caption;}
 
-.footer {background:var(--gray0);overflow:hidden;margin:0 auto;padding:4rem 10% 8rem;box-sizing:border-box;position:relative;z-index:4;}
+.footer {max-width:1440px;margin:0 auto;padding:4rem 5% 8rem;background:var(--gray0);overflow:hidden;position:relative;z-index:4;}
 
 .footer-background {position:absolute;left:-50%;right:-50%;top:0;bottom:0;z-index:-1;}
 
@@ -41,7 +41,6 @@
 .is-short .footer-address-info {display:none;}
 
 @media (--viewport-small) {
-	.subscribe {padding-left:5%;padding-right:5%;}
 	.subscribe-field {width:100%;}
 	.footer-sitemap {float:none;width:100%;position:relative;}
 	.footer-sitemap-item {float:left;width:100%;margin:1rem 0;}
