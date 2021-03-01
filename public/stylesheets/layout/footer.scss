@@ -1,4 +1,4 @@
-.subscribe {padding:4rem 10% 6rem;position:relative;z-index:1;}
+.subscribe {max-width:1440px;margin:0 auto;padding:4rem 5% 6rem;position:relative;z-index:1;}
 .subscribe-title {@include subhead;}
 .subscribe-description {margin:1rem 0 3rem 0;}
 .subscribe-field {width:50%;max-width:400px;margin:2rem 0 .5rem;}
@@ -41,7 +41,6 @@
 .is-short .footer-address-info {display:none;}
 
 @media (--viewport-small) {
-	.footer {padding:3rem 5% 6rem;}
 	.subscribe {padding-left:5%;padding-right:5%;}
 	.subscribe-field {width:100%;}
 	.footer-sitemap {float:none;width:100%;position:relative;}

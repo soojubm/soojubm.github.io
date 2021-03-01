@@ -7,7 +7,7 @@
 
 @mixin bleeding {position:absolute;left:-200%;right:-200%;top:0;bottom:0;z-index:-1;}
 
-.checkout {padding:0 10% 8rem;position:relative;}
+.checkout {max-width:1440px;margin:0 auto;padding:0 5% 8rem;position:relative;}
 
 .checkout-step {}
 
@@ -20,7 +20,7 @@
 .checkout-head-byline h2 {font-size:1rem;}
 .checkout-head-byline figure {@include box-small;display:flex;}
 
-.checkout-product {width:480px;padding:1.5rem;border:var(--border100);border-radius:var(--radius400);box-sizing:border-box;box-shadow:var(--shadow400);position:absolute;right:10%;top:12.5rem;z-index:1;}
+.checkout-product {float:right;width:480px;padding:1.5rem;border:var(--border100);border-radius:var(--radius400);box-sizing:border-box;box-shadow:var(--shadow400);}
 .checkout-product-title {display:none;margin:0 0 1.5rem 0;font-size:$subhead;}
 .checkout-product-item {height:$cell-large;margin:0 0 1rem 0;position:relative;}
 .checkout-product-item-media {@include box-large;background:crimson;float:left;overflow:visible;margin-right:1.5rem;position:relative;}
@@ -79,8 +79,7 @@
 
 
 @media (--viewport-small) {
-  .checkout {padding:0 5%;}
-  .checkout-product {width:100%;margin:-2rem auto 4rem;padding:1.5rem 2rem;position:relative;right:auto;top:auto;}
+  .checkout-product {float:none;width:100%;margin:-2rem auto 4rem;padding:1.5rem 2rem;}
   .checkout-shipping {max-width:100%;padding-right:0;}
   // .checkout-foot {
   //   margin: 0;

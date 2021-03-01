@@ -2,5 +2,5 @@
 .quantity-input {width:calc(100% - 64px);height:100%;padding-bottom:2px;background:var(--gray100);border:$border150;box-sizing:border-box;font-family:inherit;font-size:1rem;color:var(--gray800);text-align:center;border-radius:0;} // br = iOS
 .quantity-decrement {width:$cell-small;height:$cell-small;border:$border150;border-radius:var(--radius400) 0 0 var(--radius400);cursor:pointer;position:absolute;left:1px;top:0px;}
 .quantity-increment {width:$cell-small;height:$cell-small;border:$border150;border-radius:0 var(--radius400) var(--radius400) 0;cursor:pointer;position:absolute;right:1px;top:0px;}
-.quantity-decrement.is-disabled {opacity:.5;cursor:not-allowed;}
-.quantity-increment.is-disabled {opacity:.5;cursor:not-allowed;}
+.quantity-decrement:disabled {opacity:.5;cursor:not-allowed;}
+.quantity-increment:disabled {opacity:.5;cursor:not-allowed;}

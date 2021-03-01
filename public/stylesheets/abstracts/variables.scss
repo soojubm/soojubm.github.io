@@ -166,6 +166,9 @@ $height-header: 56px;
   border-radius: var(--radius400);
   box-sizing: border-box;
   position: relative;
+  // &:hover {
+  //   @include hover-tertiary;
+  // }
 }
 @mixin box-large {@include box($cell-large);}
 @mixin box-medium {@include box($cell-medium);}

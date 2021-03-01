@@ -117,34 +117,29 @@ export default inputNumber
 // value < 1 ? value = 1 : '';
 // value--;
 
-// parseInt vs Number
+// parseInt vs Number => 숫자로 시작하면 숫자를 저장 아니면 NaN
 document.addEventListener('click', event => {
   const { target }: any = event
+  const inputElement = target.parentNode.querySelector('.js-quantity-input')
+  const decrementElement = target.parentNode.querySelector('.js-quantity-decrement')
+  const incrementElement = target.parentNode.querySelector('.js-quantity-increment')
   const MIN_VALUE = 0
   const MAX_VALUE = 10
-  let targetInput
+  const DISABLED_CLASS = 'is-disabled'
 
   if (target.closest('.js-quantity-decrement')) {
-    targetInput = target.parentNode.querySelector('.js-quantity-input')
-    if (targetInput.value <= MIN_VALUE) {
-      target.classList.add('is-disabled')
-      target.setAttribute('disabled', 'true')
-      // target.parentNode.querySelector('.js-quantity-increment').classList.remove('is-disabled')
-      // target.parentNode.querySelector('.js-quantity-increment').removeAttribute('disabled')
-      return
-    }
-    --targetInput.value
+    --inputElement.value
+
+    if (inputElement.value <= MIN_VALUE) target.setAttribute('disabled', 'true')
+    if (inputElement.value < MAX_VALUE) incrementElement.removeAttribute('disabled')
   }
   if (target.closest('.js-quantity-increment')) {
-    targetInput = target.parentNode.querySelector('.js-quantity-input')
-    if (targetInput.value >= MAX_VALUE) {
-      target.classList.add('is-disabled')
-      target.removeAttribute('disabled')
-      // target.parentNode.querySelector('.js-quantity-decrement').classList.remove('is-disabled')
-      // target.parentNode.querySelector('.js-quantity-decrement').removeAttribute('disabled')
-      return
-    }
-    ++targetInput.value
+    if (inputElement.value === MAX_VALUE) return
+
+    ++inputElement.value
+    
+    if (inputElement.value >= MAX_VALUE) target.setAttribute('disabled', 'true')
+    if (inputElement.value > MIN_VALUE) decrementElement.removeAttribute('disabled')
   }
 })
 

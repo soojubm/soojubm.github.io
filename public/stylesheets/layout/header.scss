@@ -1,4 +1,4 @@
-.header {display:flex;align-items:center;max-width:$container800;margin:0 auto;padding:1rem 5%;border-radius:var(--radius400);}
+.header {display:flex;align-items:center;max-width:$container800;margin:0 auto;padding:1rem 5%;border-radius:var(--radius400);position:relative;z-index:5;}
 .header-back {position:relative;z-index:1;}
 .header-back-icon {@include box-small;transform:rotate(180deg);}
 .header-title {padding:0 4rem;font-size:1rem;font-weight:bold;position:absolute;}
@@ -6,51 +6,9 @@
 .header-cta {@include box-small;margin-left:auto;color:var(--gray800);}
 .header-cta svg {width:1rem;}
 
-.is-sticky-header .header {max-width:100%;background:var(--gray0);box-shadow:var(--shadow400);position:fixed;top:0;left:0;right:0;z-index:5;}
-.is-sticky-header .header-title {display:flex;align-items:center;}
-.is-white .header-back {color:var(--gray0);}
-.is-sticky-header .is-white .header-back {color:var(--gray800);}
+.is-sticky-header .header {background:var(--gray0);box-shadow:var(--shadow400);position:fixed;top:0;left:0;right:0;}
+.is-sticky-header .header-backdrop {display:block;}
 
 @media (--viewport-small) {
   .header-title {padding:auto;}
-  .is-sticky-header .header {height:32px;}
 }
-
-.dropdown {position:relative;}
-.dropdown-trigger {display:flex;align-items:center;color:var(--gray800);cursor:pointer;}
-.dropdown-trigger.is-active .dropdown-trigger-icon {transform:rotate(180deg);} // is-active .droptown
-.dropdown-trigger-icon {@include box-small;margin-right:1rem;}
-
-.dropdown-menu {
-  min-width:200px;
-  width:auto;
-  height:0;
-  padding:.5rem 0;
-  background:var(--gray0);
-  border-radius: var(--radius400);
-  border: var(--border100);
-  box-shadow:var(--shadow400);
-  position:absolute;
-  z-index:5;
-  transition:all 0.2s ease;
-  transform:scale(0);
-  transform-origin:left top;
-}
-.dropdown-menu.is-visible {
-  height:auto;
-  margin:.5rem 0 0 0;
-  transform:scale(1);
-}
-.dropdown-menu-title {
-  padding:0.5rem 1rem;
-  font-size:$caption;
-}
-.dropdown-menu-link {
-  display:block;
-  padding:0.25rem 1rem;
-  font-size:$caption;
-  color:var(--gray800);
-  position:relative;
-  z-index:1;
-}
-.dropdown-menu-link:hover {background:rgba(0, 0, 0, .05);}
