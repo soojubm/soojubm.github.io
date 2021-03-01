@@ -1,9 +1,9 @@
 export const parallax = targetElement => {
-  const target = document.querySelectorAll(targetElement)
-  if (!target) return
+  const targetElements = document.querySelectorAll(targetElement)
+  if (!targetElements) return
 
   window.addEventListener('scroll', () => {
-    target.forEach(element => {
+    targetElements.forEach(element => {
       let rate = window.pageYOffset * -0.2 - 600
       let aaa = (window.pageYOffset - element.offsetTop) * -1.5 // scrolled = window.pageYOffset
       //let bbb = aaa > 0 ? -aaa : aaa;

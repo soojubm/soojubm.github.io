@@ -3,7 +3,7 @@
 import './stylesheets/style.scss'
 
 import routePage from './javascripts/router'
-import { loader, detectBrowser } from './javascripts/load'
+import { initializeLoader, detectBrowser } from './javascripts/load'
 import { setDarkmode, carousel } from './javascripts/setDarkMode'
 import { countDownClock } from './javascripts/countdown'
 import event from './javascripts/event/index'
@@ -21,37 +21,75 @@ document.addEventListener('readystatechange', (event: any) => {
   else if (event.target.readyState === 'complete') console.log('initApp')
 })
 
-window.addEventListener('offline', () => {
+document.addEventListener('offline', () => {
   const offlineElement = document.querySelector<HTMLElement>('.js-offline')
-  offlineElement!.hidden = true
+  offlineElement!.hidden = false
 })
+document.addEventListener('online', () => {}, false)
 window.addEventListener('unload', () => console.log('unload event'))
 
 window.addEventListener('hashchange', domEvents)
-window.addEventListener('hashchange', initailizePage)
+window.addEventListener('hashchange', initializePage)
+
+document.addEventListener('DOMContentLoaded', () => {
+  detectBrowser()
+
+  initializeLoader()
+  initializePage()
+  setDarkmode()
+
+  domEvents()
+
+  window.addEventListener('scroll', scrollProgress, true)
+  function scrollProgress() {
+    const containerElement = document.querySelector<HTMLElement>('.post')
+    const progressBar = document.querySelector<HTMLElement>('.post-head-progress')
+    if (!containerElement || !progressBar) return
+
+    const scrollPercent = `${(window.pageYOffset / (containerElement!.scrollHeight - window.innerHeight)) * 100}%`
+    progressBar!.style.width = scrollPercent
+  }
+   
+})
+
+
 
 async function domEvents() {
   await routePage()
 
-  const themeTest = document.querySelectorAll('.js-system-theme button')
-  if(themeTest) {
-    themeTest.forEach((button, index) => {
-      button.addEventListener('click', event => {
-        if(index === 1) {
-          document.body.classList.remove('design-system-danngn')
-          document.body.classList.add('design-system-newneek')
+  const themeButtonElements = document.querySelectorAll('.js-system-theme button')
+  const ACTIVE_CLASS = 'is-active'
+  let classes = []
+
+  themeButtonElements?.forEach((button, index) => {
+    // classes.push(button.getAttribute('name'))
+    // console.log(classes)
+    button.addEventListener('click', event => {
+      // if(index === 1) {
+      //   document.body.classList.remove('design-system-danngn')
+      //   document.body.classList.add('design-system-newneek')
+      // }
+      // else if (index === 2) {
+      //   document.body.classList.remove('design-system-newneek')
+      //   document.body.classList.add('design-system-danngn')
+      // }
+      // else {
+      //   document.body.classList.remove('design-system-newneek')
+      //   document.body.classList.remove('design-system-danngn')
+      // }
+
+      themeButtonElements?.forEach(button2 => {
+
+        const isTarget = event.target === button2
+
+        if(isTarget) {
+          button2.classList.add(ACTIVE_CLASS)
+          // document.body.classList.add(name)
         }
-        else if (index === 2) {
-          document.body.classList.remove('design-system-newneek')
-          document.body.classList.add('design-system-danngn')
-        }
-        else {
-          document.body.classList.remove('design-system-newneek')
-          document.body.classList.remove('design-system-danngn')
-        }
+        else button2.classList.remove(ACTIVE_CLASS)
       })
     })
-  }
+  })
 
   // lazyLoading()
 
@@ -99,16 +137,18 @@ async function domEvents() {
     }
   }
 
+
   input.checkbox({ checkAllSelector: '.js-checkall', checkSelector: '.js-check' }).setEvent()
   input.file()
   input.textarea()
   input.number()
 
+  event.toggleClass({ selector: '.js-navbar-toggle' }).setEvent()
   event.modal({ selector: '.js-modal' }).setEvent()
   event.toggleClass({ selector: '.js-toggle' }).setEvent()
   event.enterTarget({ selector: '.js-hover-trigger' })
   event.tabMenu()
-  event.close({ selector: '.js-close' })
+  event.closeParentElement({ selector: '.js-close' })
   event.toTop({ selector: '.js-to-top' })
 
   event.stickyElement({ targetElement: '.js-header', addClass: 'is-sticky-header', position: 'top' })
@@ -118,6 +158,11 @@ async function domEvents() {
   // event.scrollspy({ menusSelector: '.js-section', sectionsSelector: '.newneek-navbar-menu-item' })
 
   createGraph()
+  // countDownClock(20, 'days')
+  carousel()
+  revealPassword()
+  focusComment()
+
   function createGraph() {
     // todo 지금은 바가 100px 이라서 1:1로 대입
     const graphItems = document.querySelectorAll('.js-graph .graph-item')
@@ -134,36 +179,22 @@ async function domEvents() {
       graphItemValue.style.bottom = `${graphValue}px`
     })
   }
-  countDownClock(20, 'days')
-  carousel()
-  revealPassword()
-  focusComment()
 
   // document.querySelector('.js-copy')?.addEventListener('click', () => copyClipboard('fafaf'))
 
   const inputTest = document.querySelector<HTMLInputElement>('.js-input-test')
   if (inputTest) {
-    inputTest.addEventListener('keypress', function(event) {
+    inputTest.addEventListener('keypress', event => {
       const key = event.which || event.keyCode
       const isNumberKey = key < 48 || key > 57 // todo ! isNumberKey 이다 지금음0 to 9
       const isSpaceKey = key === 32
-      if (!isSpaceKey && isNumberKey) {
-        event.preventDefault()
-      }
-    })
 
-    // let selection = {};
-    // inputTest.addEventListener('keydown', function(e) {
-    //   const target = e.target as HTMLInputElement;
-    //   selection = {
-    //     start: target.selectionStart,
-    //     end: target.selectionEnd,
-    //   };
-    // });
+      if (!isSpaceKey && isNumberKey) event.preventDefault()
+    })
 
     // Track the current value
     let currentValue = inputTest.value || ''
-    inputTest.addEventListener('input', function(e) {
+    inputTest.addEventListener('input', e => {
       const target = e.target as HTMLInputElement
       if (/^[0-9\s]*$/.test(target.value)) currentValue = target.value
       else target.value = currentValue
@@ -177,6 +208,12 @@ async function domEvents() {
       //   target.setSelectionRange(selection.start, selection.end)
       // }
     })
+
+    // let selection = {};
+    // inputTest.addEventListener('keydown', function(e) {
+    //   const target = e.target as HTMLInputElement;
+    //   selection = { start: target.selectionStart, end: target.selectionEnd };
+    // });
   }
 
   // todo
@@ -196,31 +233,39 @@ async function domEvents() {
   })
 }
 
+
+
 function revealPassword() {
-  const elements = document.querySelectorAll<HTMLElement>('.js-view-password')
+  const ELEMENT_CLASSNAME = '.js-view-password'
+  const elements = document.querySelectorAll<HTMLElement>(ELEMENT_CLASSNAME)
   if (elements.length === 0) return
 
   elements.forEach(element =>
-    element.addEventListener('click', () => {
-      const passwordElement = element.parentNode?.querySelector<HTMLElement>('input')
-      const isPasswordType = passwordElement?.getAttribute('type') === 'password'
-      const type = isPasswordType ? 'text' : 'password'
-
-      passwordElement?.setAttribute('type', type)
-    }),
+    element.addEventListener('click', () =>
+      togglePassword(element?.parentNode?.querySelector<HTMLElement>('input'))
+    )
   )
-}
 
-function initailizePage() {
-  initializeMenu()
-  detectPage()
+  function togglePassword(inputElement) {
+    const isPasswordType = inputElement?.getAttribute('type') === 'password'
+    let inputType = isPasswordType ? 'text' : 'password'
 
-  function initializeMenu() {
-    const navigationTrigger = document.querySelector<HTMLElement>('.js-navbar-toggle')
-    navigationTrigger?.classList.remove('is-active')
-    navigationTrigger?.nextElementSibling?.classList.remove('is-visible')
+    inputElement?.setAttribute('type', inputType)
   }
+}
+ 
+function initializePage() {
+  initializeNavbar()
 
+  function initializeNavbar() {
+    const navigationTrigger = document.querySelector<HTMLElement>('.js-navbar-toggle')
+    if(!navigationTrigger) return
+
+    if(navigationTrigger.classList.contains('is-active')) {
+      navigationTrigger.classList.remove('is-active')
+      navigationTrigger.nextElementSibling?.classList.remove('is-visible')
+    }
+  }
   function detectPage() {
     let { hash } = window.location
     const className = `page-${hash === '' ? 'design' : hash.substring(1)}`
@@ -229,29 +274,6 @@ function initailizePage() {
     document.body.classList.add(className)
   }
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-  loader()
-  initailizePage()
-  detectBrowser()
-  setDarkmode()
-
-
-  // ! hashchange 될 때마다 이벤트 만들어짐;
-  event.toggleClass({ selector: '.js-navbar-toggle' }).setEvent()
-
-  domEvents()
-
-  window.addEventListener('scroll', scrollProgress, true)
-  function scrollProgress() {
-    const containerElement = document.querySelector<HTMLElement>('.post')
-    const progressBar = document.querySelector<HTMLElement>('.post-head-progress')
-    if (!containerElement || !progressBar) return
-
-    const scrollPercent = `${(window.pageYOffset / (containerElement!.scrollHeight - window.innerHeight)) * 100}%`
-    progressBar!.style.width = scrollPercent
-  }
-})
 
 // let company = {
 //   name: 'Github',
@@ -493,7 +515,7 @@ function focusComment() {
 }
 
 // document.documentElement.className += ' supports-date';
-// div.classList.replace("foo", "bar");
+
 // if(window.matchMedia('(min-width:888px)').matches) {}
 
 // function addToPendingWork(promise) {

@@ -5,7 +5,7 @@ import modal from './modal'
 import toTop from './toTop'
 import stickyElement from './stickyElement'
 import scrollAnimation from './scrollAnimation'
-import close from './close'
+import closeParentElement from './closeParentElement'
 import customCursor from './customCursor'
 import scrollspy from './scrollspy'
 
@@ -18,6 +18,6 @@ export default {
   stickyElement,
   scrollAnimation,
   scrollspy,
-  close,
+  closeParentElement,
   customCursor
 }

@@ -66,16 +66,12 @@ const modal = ({ selector: trigger }: Parameter) => ({
               document.querySelector('.modal-dim')?.addEventListener('click', this.backHistory)
               // document.addEventListener('click', this.backHistory)
             }
-            document.addEventListener(
-              'keydown',
-              event => {
-                const isKeyEsc = event.keyCode === 27
-                if (!isKeyEsc) return
+            document.addEventListener('keydown', event => {
+              const isKeyEsc = event.keyCode === 27
+              if (!isKeyEsc) return
 
-                this.backHistory()
-              },
-              true,
-            )
+              this.backHistory()
+            }, true)
 
             // document.addEventListener('click', this.backHistory)
 
@@ -87,12 +83,12 @@ const modal = ({ selector: trigger }: Parameter) => ({
   },
   showModal(pageYOffset) {
     document.body.classList.add('is-modal-visible')
-    document.body.classList.add('body-lock')
+    document.body.classList.add('body-lock') // todo import 
     document.body.style.top = `-${pageYOffset}px`
   },
   clearModal(container, pageYOffset) {
     document.body.classList.remove('is-modal-visible')
-    document.body.classList.remove('body-lock')
+    document.body.classList.remove('body-lock')  // todo import 
 
     container.innerHTML = ''
     window.scrollTo(0, pageYOffset)

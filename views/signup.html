@@ -16,13 +16,13 @@
       <div class="textfield">
         <label class="textfield-label" for="signup-password">비밀번호<abbr title="required" aria-hidden="true" hidden>*</abbr></label>
         <input class="textfield-input" type="password" name="password" id="signup-password" placeholder="6자리 이상" autocomplete="new-password" />
-        <button class="textfield-reveal js-view-password">비밀번호 보기</button>
+        <button class="textfield-reveal js-view-password" type="button">비밀번호 보기</button>
         <!-- <input class="textfield-input" type="password" id="signup-password-confirm" placeholder="비밀번호 확인 (6자리 이상)" /> -->
       </div>
       <div class="textfield">
         <label class="textfield-label" for="signup-password" hidden>비밀번호 확인</label>
         <input class="textfield-input" type="password" id="signup-password-confirm" placeholder="6자리 이상 한 번 더!" />
-        <button class="textfield-reveal js-view-password">비밀번호 보기</button>
+        <button class="textfield-reveal js-view-password" type="button">비밀번호 보기</button>
       </div>
     </fieldset>
     <fieldset class="signup-optional" style="margin-top:-2rem;">
@@ -39,8 +39,8 @@
         <div class="textfield" style="width:calc(50% - .5rem);">
           <label class="textfield-label" for="signup-password">성별 <small>선택입력</small></label>
           <select class="textfield-input" id="signup-password">
-            <option value="women">여성</option>
             <option value="other">기타</option>
+            <option value="women">여성</option>
             <option value="man">남성</option>
           </select>
           <span class="selectbox-indicator"><i class="icon-caret"></i></span>

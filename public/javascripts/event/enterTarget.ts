@@ -2,31 +2,26 @@ type Parameter = {
   selector: string
 }
 
-const enterTarget = ({ selector: target }: Parameter) => {
-  const { body } = document
-  const hoverElements = document.querySelectorAll(target)
-  if (!hoverElements) return
+const enterTarget = ({ selector: targetElement }: Parameter) => {
+  const hoverElements = document.querySelectorAll<HTMLElement>(targetElement)
 
-  hoverElements.forEach(element => {
-    // todo
-    const isNavigation = element === document.querySelector('.js-navbar .navbar-menu-item.js-hover-trigger')
-
-    element.addEventListener('mouseenter', () => {
-      enterEvent()
-      element.addEventListener('mouseleave', () => leaveEvent())
-    })
-
-    function enterEvent() {
-      element.setAttribute('aria-expanded', 'true')
-      element.classList.add('is-expanded')
-      isNavigation && body.classList.add('is-shown')
-    }
-    function leaveEvent() {
-      element.setAttribute('aria-expanded', 'false')
-      element.classList.remove('is-expanded')
-      isNavigation && body.classList.remove('is-shown')
-    }
+  hoverElements?.forEach(element => {
+    element.addEventListener('mouseenter', () => enterEvent(element))
+    element.addEventListener('mouseleave', () => leaveEvent(element))
   })
+
+  function enterEvent(element) {
+    const isNavigation = element.classList.contains('navbar-menu-item')
+
+    element.setAttribute('aria-expanded', 'true')
+    isNavigation && document.body.classList.add('is-shown')
+  }
+  function leaveEvent(element) {
+    const isNavigation = element.classList.contains('navbar-menu-item')
+
+    element.setAttribute('aria-expanded', 'false')
+    isNavigation && document.body.classList.remove('is-shown')
+  }
 }
 
 export default enterTarget
