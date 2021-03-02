@@ -142,12 +142,13 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 .textfield-button {border-top-left-radius:0;border-bottom-left-radius:0;position:absolute;right:0;top:0;}
 .textfield-link {font-size:$caption;position:absolute;right:0;top:0;}
 // .textfield-reset {}
-.textfield-prefix {display:inline-block;width:100px;}
 // .textfield-prefix + .textfield-input {display:inline-block;padding-right:100px;}
 
-@mixin textfield-surfix {
-  @include box-small;width:2rem;height:2rem;background:var(--gray0);position:absolute;right:1rem;top:38px;pointer-events:none;
-}
+@mixin textfield-prefix {@include box-small;width:2rem;height:2rem;background:var(--gray0);position:absolute;left:1rem;top:38px;pointer-events:none;}
+@mixin textfield-surfix {@include box-small;width:2rem;height:2rem;background:var(--gray0);position:absolute;right:1rem;top:38px;pointer-events:none;}
+
+.textfield-prefix {@include textfield-prefix;background:var(--gray100);}
+.textfield-prefix ~ .textfield-input {padding-left:calc(1rem + 2rem + .5rem);}
 .textfield-surfix {@include textfield-surfix;}
 .selectbox-indicator {@include textfield-surfix;}
 
