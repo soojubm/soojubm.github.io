@@ -52,7 +52,7 @@
 .navbar-user-account-menu {width:320px;height:0;padding:2rem;border:$border150;box-sizing:border-box;border-radius:var(--radius400);background:var(--gray0);box-shadow:var(--shadow400);position:absolute;top:40px;right:0;z-index:4;transform:scale(0);transform-origin:right top;}
 .navbar-user-account-menu.is-visible {height:auto;transform:scale(1);}
 
-.user-avatar {@include box-large;position:relative;}
+.user-avatar {float:right;@include box-large;position:relative;}
 .user-avatar-change {width:32px;height:32px;border-radius:var(--radius400);position:absolute;right:-8px;bottom:-8px;}
 .user-name {@include subhead;}
 .user-email {}

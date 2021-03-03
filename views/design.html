@@ -303,10 +303,12 @@
     <article class="design-article">
       <h1 class="design-article-title">Avatar Stack</h1>
       <p class="design-article-description">tiny 사이즈 샘플.</p>
-      <div role="group">
+      <div role="group" style="align-items:center;">
         <a href="" class="design-article-avatar-tiny" style="box-shadow: rgb(255 255 255) 0px 0px 0px 2px;"></a>
         <a href="" class="design-article-avatar-tiny" style="margin-left:-10px;box-shadow: rgb(255 255 255) 0px 0px 0px 2px;"></a>
         <a href="" class="design-article-avatar-tiny" style="margin-left:-10px;box-shadow: rgb(255 255 255) 0px 0px 0px 2px;"></a>
+        <span style="font-size:.875rem;">포함 총 4명</span>
+        <!-- <a href="" class="design-article-avatar-tiny" style="margin-left:-10px;box-shadow: rgb(255 255 255) 0px 0px 0px 2px;font-size:.875rem;background:none;">1</a> -->
       </div>
       <hr />
       <div class="userlist" style="margin-top:1rem;overflow:hidden;">
@@ -548,6 +550,75 @@
       </span>
     </article>
 
+    <article class="design-article">
+      <h1 class="design-article-title">Textfield</h1>
+      <p class="design-article-description">Input text, Textarea, Selectbox, with Icon, with Unit, with Button</p>
+      <div class="quantity js-quantity">
+        <input class="quantity-input js-quantity-input js-number-input" name="quantity1" type="number" value="0" min="5" max="20" >
+        <!-- <input type="text" inputmode="numeric" pattern="[0-9]*"> -->
+        <button class="quantity-decrement js-quantity-decrement"><i class="icon-minus"></i></button>
+        <button class="quantity-increment js-quantity-increment"><i class="icon-plus"></i></button>
+      </div>
+      <br />
+      <div class="textfield is-invalid">
+        <label class="textfield-label" for="abc123">레이블 <abbr aria-label="optional" style="font-size:.875rem;">선택입력</abbr></label>
+        <input class="textfield-input js-input-test" type="text" id="abc123" placeholder="Textarea Placeholder..." value="soojubm@gmail.com" aria-describedby="error" aria-invalid="true" />
+        <small class="textfield-helper is-error">이미 사용 중인 이메일입니다.</small>
+      </div>
+      <br />
+      <div class="textfield">
+        <button class="textfield-prefix"><i class="icon-search"></i></button>
+        <label class="textfield-label" for="search">검색</label>
+        <input class="textfield-input js-input-test" type="search" id="search" placeholder="궁금했던 인물이나 사건을 검색해보세요" />
+        <button class="textfield-surfix"><i class="icon-close"></i></button>
+      </div>
+      <br />
+      <div class="textfield">
+        <label class="textfield-label" for="search1">텍스트에어리어</label>
+        <small class="textfield-byte"><b>0 KB</b> / 100 KB</small>
+        <textarea class="textfield-input" rows="3" placeholder="Textarea Placeholder..."></textarea>
+      </div>
+      <br />
+      <div class="textfield-group" style="display:flex;">
+        <!-- role group -->
+        <div class="textfield" style="width:calc(50% - 0.5rem);margin-right:1rem;">
+          <label class="textfield-label" for="date-start"><i class="">체크인</i></label>
+          <!-- <label class="textfield-icon is-left is-right" for="date-start"><i class="material-icons">today</i></label> -->
+          <input class="textfield-input" type="date" id="date-start" placeholder="날짜를 설정해주세요." />
+        </div>
+        <div class="textfield" style="width:calc(50% - 0.5rem)">
+          <label class="textfield-label" for="date-start"><i class="">체크아웃</i></label>
+          <!-- <label class="textfield-icon is-left is-right" for="date-start"><i class="material-icons">today</i></label> -->
+          <input class="textfield-input" type="date" id="date-start" placeholder="날짜를 설정해주세요." />
+        </div>
+      </div>
+      <br />
+      <div class="textfield">
+        <label class="textfield-label" for="select-label">셀렉트박스 with surfix icon</label>
+        <select class="textfield-input" name="select-select" id="select-select">
+          <option class="select-option" value="select-option1">Choose an option</option>
+        </select>
+        <span class="selectbox-indicator"><i class="icon-caret"></i></span>
+      </div>
+      <br />
+      <div class="textfield is-text">
+        <label class="textfield-label" for="select-label">Sort by</label>
+        <select class="textfield-input" name="select-select" id="select-select">
+          <option class="select-option" value="select-option1">Choose an option</option>
+        </select>
+        <span class="selectbox-indicator"><i class="icon-caret"></i></span>
+      </div>
+      <!-- var selected = Array.from(dnd.options).filter(function (option) {
+        return option.selected;
+      }).map(function (option) {
+        return option.value;
+      }); -->
+      <!-- <div class="textfield is-small">
+        <label class="textfield-label" for="">회사</label>
+        <input class="textfield-input" type="text" placeholder="인풋 인라인스타일 스몰사이즈">
+      </div> -->
+    </article>
+
     <article class="design-article" style="padding-bottom:80px;">
       <h1 class="design-article-title">Tooltip</h1>
       <p class="design-article-description">툴팁의 위치가 필요할까? 요즘 툴팁 잘 쓰지도 않아서 일단 없어도 좋겠다.</p>
@@ -684,74 +755,6 @@
     </script>
     </article> -->
 
-    <article class="design-article">
-      <h1 class="design-article-title">Textfield</h1>
-      <p class="design-article-description">Input text, Textarea, Selectbox, with Icon, with Unit, with Button</p>
-      <div class="quantity js-quantity">
-        <input class="quantity-input js-quantity-input js-number-input" name="quantity1" type="number" value="0" min="5" max="20" >
-        <!-- <input type="text" inputmode="numeric" pattern="[0-9]*"> -->
-        <button class="quantity-decrement js-quantity-decrement"><i class="icon-minus"></i></button>
-        <button class="quantity-increment js-quantity-increment"><i class="icon-plus"></i></button>
-      </div>
-      <br />
-      <div class="textfield is-invalid">
-        <label class="textfield-label" for="abc123">레이블 <abbr aria-label="optional" style="font-size:.875rem;">선택입력</abbr></label>
-        <input class="textfield-input js-input-test" type="text" id="abc123" placeholder="Textarea Placeholder..." value="soojubm@gmail.com" aria-describedby="error" aria-invalid="true" />
-        <small class="textfield-helper is-error">이미 사용 중인 이메일입니다.</small>
-      </div>
-      <br />
-      <div class="textfield">
-        <button class="textfield-prefix"><i class="icon-search"></i></button>
-        <label class="textfield-label" for="search">검색</label>
-        <input class="textfield-input js-input-test" type="search" id="search" placeholder="궁금했던 인물이나 사건을 검색해보세요" />
-        <button class="textfield-surfix"><i class="icon-close"></i></button>
-      </div>
-      <br />
-      <div class="textfield">
-        <label class="textfield-label" for="search1">텍스트에어리어</label>
-        <small class="textfield-byte"><b>0 KB</b> / 100 KB</small>
-        <textarea class="textfield-input" rows="3" placeholder="Textarea Placeholder..."></textarea>
-      </div>
-      <br />
-      <div class="textfield-group" style="display:flex;">
-        <!-- role group -->
-        <div class="textfield" style="width:calc(50% - 0.5rem);margin-right:1rem;">
-          <label class="textfield-label" for="date-start"><i class="">체크인</i></label>
-          <!-- <label class="textfield-icon is-left is-right" for="date-start"><i class="material-icons">today</i></label> -->
-          <input class="textfield-input" type="date" id="date-start" placeholder="날짜를 설정해주세요." />
-        </div>
-        <div class="textfield" style="width:calc(50% - 0.5rem)">
-          <label class="textfield-label" for="date-start"><i class="">체크아웃</i></label>
-          <!-- <label class="textfield-icon is-left is-right" for="date-start"><i class="material-icons">today</i></label> -->
-          <input class="textfield-input" type="date" id="date-start" placeholder="날짜를 설정해주세요." />
-        </div>
-      </div>
-      <br />
-      <div class="textfield">
-        <label class="textfield-label" for="select-label">셀렉트박스 with surfix icon</label>
-        <select class="textfield-input" name="select-select" id="select-select">
-          <option class="select-option" value="select-option1">Choose an option</option>
-        </select>
-        <span class="selectbox-indicator"><i class="icon-caret"></i></span>
-      </div>
-      <br />
-      <div class="textfield is-text">
-        <label class="textfield-label" for="select-label">Sort by</label>
-        <select class="textfield-input" name="select-select" id="select-select">
-          <option class="select-option" value="select-option1">Choose an option</option>
-        </select>
-        <span class="selectbox-indicator"><i class="icon-caret"></i></span>
-      </div>
-      <!-- var selected = Array.from(dnd.options).filter(function (option) {
-        return option.selected;
-      }).map(function (option) {
-        return option.value;
-      }); -->
-      <!-- <div class="textfield is-small">
-        <label class="textfield-label" for="">회사</label>
-        <input class="textfield-input" type="text" placeholder="인풋 인라인스타일 스몰사이즈">
-      </div> -->
-    </article>
 
     <!-- <article class="design-article">
       <h1 class="design-article-title">Calendar</h1>

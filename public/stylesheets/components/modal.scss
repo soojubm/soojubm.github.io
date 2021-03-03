@@ -1,5 +1,9 @@
-.body-lock {width:100%;position:fixed;overflow-y:scroll;overflow:hidden;margin-right:17px;}
-
+// .body-lock {width:100%;position:fixed;overflow-y:scroll;overflow:hidden;margin-right:17px;}
+.body-lock {
+  height: 100vh;
+  overflow-y: hidden;
+  padding-right: 15px;
+}
 
 @mixin dialog {}
 
