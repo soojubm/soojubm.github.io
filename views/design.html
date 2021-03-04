@@ -307,7 +307,7 @@
         <a href="" class="design-article-avatar-tiny" style="box-shadow: rgb(255 255 255) 0px 0px 0px 2px;"></a>
         <a href="" class="design-article-avatar-tiny" style="margin-left:-10px;box-shadow: rgb(255 255 255) 0px 0px 0px 2px;"></a>
         <a href="" class="design-article-avatar-tiny" style="margin-left:-10px;box-shadow: rgb(255 255 255) 0px 0px 0px 2px;"></a>
-        <span style="font-size:.875rem;">포함 총 4명</span>
+        <!-- <span style="font-size:.875rem;">포함 총 4명</span> -->
         <!-- <a href="" class="design-article-avatar-tiny" style="margin-left:-10px;box-shadow: rgb(255 255 255) 0px 0px 0px 2px;font-size:.875rem;background:none;">1</a> -->
       </div>
       <hr />
@@ -350,7 +350,7 @@
 
     <article class="design-article">
       <h1 class="design-article-title">Seperator</h1>
-      <p class="design-article-description">섹션을 구획할 때 border 스타일링보다 hr / br 태그로 마크업하면 컴포넌트 고유성(?)을 유지하기 쉽습니다.</p>
+      <p class="design-article-description">섹션을 구획할 때 border 스타일링보다 hr / br 태그로 마크업하면 컴포넌트 고유성(?)을 유지하기 쉽습니다. 그렇게 하려면 hr / br 태그에 대한 가이드가 필요하겠죠?</p>
       <hr role="separator" />
 
       <!-- <code>
@@ -379,7 +379,7 @@
     </article>
 
     <article class="design-article">
-      <h1 class="design-article-title">Tabs</h1>
+      <h1 class="design-article-title">Tab</h1>
       <p class="design-article-description">스크롤스파이 적용해두기. 너무 segmented controls 스타일인데?<p>
       <!-- <nav class="tablist is-vertical" style="margin-top:1rem" role="tablist">
         <div class="tablist-active"></div>
@@ -398,7 +398,7 @@
 
     <article class="design-article">
       <h1 class="design-article-title">Tags</h1>
-      <p class="design-article-description">임시로 code태그로 마크업해서 사용 중인데 바꿔줘야 함.</p>
+      <p class="design-article-description">임시로 code태그로 마크업해서 사용 중인데 바꿔줘야 함. 가이드에 없는 세로값.</p>
       <div class="tags" role="group">
         <span class="tag tags-item" role="listitem">해시태그</span>
         <span class="tag tags-item" style="padding:0 .5rem;border-radius:var(--radius400);background:var(--blue100);color:var(--color-primary);" role="listitem">해시태그</span>
@@ -412,9 +412,12 @@
 
     <article class="design-article">
       <h1 class="design-article-title">Buttons</h1>
-      <p>프라이머리primary 스타일은 한 페이지에 하나로 제한합니다. 시멘틱한 네이밍(solid / outline / plain / text)은 스타일의 수정이 필요할 때 싱크가 안 맞는다. 시멘틱한 네이밍은 디자인 시스템보다는 유아이 라이브러리에 어울린다. 아이콘 버튼.</p>
+      <p>프라이머리primary 스타일은 한 페이지에 하나로 제한합니다. 시멘틱한 네이밍(solid / outline / plain / text)은 스타일의 수정이 필요할 때 싱크가 안 맞는다. 시멘틱한 네이밍은 디자인 시스템보다는 유아이 라이브러리에 어울린다. 아이콘 버튼. 아이콘이 포함된 버튼은 추가적인 시각보정이 필요할 수도 있다. 아이콘에 대한 가이드가 먼저 필요하다. 가이드가 있더라도 시각보정은 필요할 듯.</p>
       <ul class="design-article-description">
         <li>appearance = link / subtle / primary, space = compact / fullwidth, </li>
+        <li>ButtonGroup 컴포넌트.</li>
+        <li>여담이지만 버튼 2가지 스타일로도 충분하다.</li>
+        <li>role="img" aria-label="plus icon". react? lint?에서 emoji role="img" 속성 이슈.</li>
       </ul>
       <!-- <a class="button" href="#">Anchor button</a>
       <button>Button element</button>
@@ -469,16 +472,17 @@
 
     <article class="design-article">
       <h1 class="design-article-title">Chips</h1>
-      <p class="design-article-description">피시 앤 칩스</p>
+      <p class="design-article-description">피시 앤 칩스. chip / pill</p>
       <div role="group">
+        <button class="chip">기본값</button>
         <button class="chip">Typhography <i class="icon-plus"></i></button>
-        <button class="chip is-added">Cinema <i class="icon-close"></i></button>
+        <button class="chip is-added">Cinema <i class="icon-minus"></i></button>
       </div>
     </article>
 
     <article class="design-article">
       <h1 class="design-article-title">Checkboxes</h1>
-      <p class="design-article-description">인라인 정렬하지 않습니다. / checkbox, checkall, intermediate</p>
+      <p class="design-article-description">절대로 인라인 정렬하지 않습니다. 만약 인라인 정렬이 필요하다면, button이나 chip을 사용하세요. / checkbox, checkall, intermediate</p>
       <fieldset>
         <!-- <legend>Choose ingredients</legend> -->
         <div class="checkbox">
@@ -552,7 +556,7 @@
 
     <article class="design-article">
       <h1 class="design-article-title">Textfield</h1>
-      <p class="design-article-description">Input text, Textarea, Selectbox, with Icon, with Unit, with Button</p>
+      <p class="design-article-description">Input text, Textarea, Selectbox, with Icon, with Unit, with Button. button과 unit, icon 등은 prefix/surfix로 정리할 수 있습니다.</p>
       <div class="quantity js-quantity">
         <input class="quantity-input js-quantity-input js-number-input" name="quantity1" type="number" value="0" min="5" max="20" >
         <!-- <input type="text" inputmode="numeric" pattern="[0-9]*"> -->
@@ -570,7 +574,7 @@
         <button class="textfield-prefix"><i class="icon-search"></i></button>
         <label class="textfield-label" for="search">검색</label>
         <input class="textfield-input js-input-test" type="search" id="search" placeholder="궁금했던 인물이나 사건을 검색해보세요" />
-        <button class="textfield-surfix"><i class="icon-close"></i></button>
+        <button class="textfield-surfix textfield-clear" hidden><i class="icon-close"></i></button>
       </div>
       <br />
       <div class="textfield">
@@ -632,7 +636,7 @@
 
     <article class="design-article">
       <h1 class="design-article-title">Lists</h1>
-      <p class="design-article-description">리스트업된 텍스트 노드만 리스트 태그로 마크업하세요. 군집을 이루는 엘리먼트라면 모두 리스트로 취급될 수 있으니 주의하세요. </p>
+      <p class="design-article-description">리스트업된 텍스트 노드만 리스트 태그로 마크업하세요. 군집을 이루는 엘리먼트라면 모두 리스트로 취급할 수 있으니 주의하세요.</p>
       <ul class="list-sample">
         <li title="unordered list, level 1">순서가 없는 리스트
           <ul>
@@ -683,7 +687,7 @@
 
     <article class="design-article">
       <h1 class="design-article-title">Notifications</h1>
-      <p class="design-article-description">샘플.</p>
+      <p class="design-article-description">샘플. notification은 푸시 알람과 혼동될 수 있기 때문에 다른 네이밍이 필요합니다. feedback / note / notice / memo / toast=>snackbar(withAction)</p>
       <aside class="message">
         <button class="message-close" aria-label="close"><i class="icon-close"></i></button>
         <p class="message-head">
@@ -1073,7 +1077,7 @@
 
     <article class="design-article">
       <h1 class="design-article-title">Accordions</h1>
-      <p class="design-article-description">디테일 풀어줄 때 사용. 공지사항 정도의 간단한 게시글에서도 사용할 수 있으나 그 이상의 경우에는 다른 유아이. 버튼 태그를 헤딩으로 바꾸고 role=button 속성. 캐럿은 버튼으로?</p>
+      <p class="design-article-description">디테일 풀어줄 때 사용. 공지사항 정도의 간단한 게시글에서도 사용할 수 있으나 그 이상의 경우에는 다른 유아이.</p>
       <!-- <details class="details">
         <summary class="details-summary">써머리</summary>
         <p>안녕</p>
@@ -1081,14 +1085,14 @@
 
       <h3 class="accordion-trigger js-toggle" role="button" aria-expanded="false">
         회원탈퇴는 어떻게 할 수 있나요?
-        <i class="icon-plus"></i>
+        <span class="accordion-trigger-icon"><i class="icon-plus"></i></span>
       </h3>
       <article class="accordion-panel">
         안녕
       </article>
       <h3 class="accordion-trigger js-toggle" role="button" aria-expanded="false">
         주문을 취소하고 싶어요.
-        <i class="icon-plus"></i>
+        <span class="accordion-trigger-icon"><i class="icon-plus"></i></span>
       </h3>
       <article class="accordion-panel">
         안녕
@@ -1116,7 +1120,7 @@
     </article>
 
     <article class="design-article">
-      <h1 class="design-article-title">Rating</h1>
+      <h1 class="design-article-title">배너</h1>
       <p class="design-article-description">테스트.</p>
       <section class="banner">
         <h2 class="banner-text">수줍이에는 처음 방문이신가요?</h2>

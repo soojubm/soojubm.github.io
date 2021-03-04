@@ -59,10 +59,8 @@
 .accordion-item-trigger {}
 .accordion-item-panel {}
 .accordion-trigger {display:flex;align-items:center;justify-content:space-between;padding:$padding200;padding-left:0;padding-right:0;font-size:1rem;font-weight:bold;cursor:pointer;position:relative;transition:all .4s;}
-.accordion-trigger:hover {color:var(--gray800);}
-.accordion-trigger .icon-caret {transition:all .2s}
+.accordion-trigger-icon {@include box-small;}
 .accordion-trigger.is-active {color:var(--color-primary);}
-.accordion-trigger.is-active .icon-caret {transform:rotate(180deg)}
 .accordion-panel {height:0;opacity:0;transition:all .25s;}
 .accordion-panel.is-visible {height:auto;opacity:1;padding:0 0 2rem;box-sizing:border-box;/*animation:fadeup 0.4s $bezier-base forwards;*/}
 
