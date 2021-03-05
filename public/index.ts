@@ -40,6 +40,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   domEvents()
 
+  event.toggleClass({ selector: '.js-navbar-toggle' }).setEvent()
+
   window.addEventListener('scroll', scrollProgress, true)
   function scrollProgress() {
     const containerElement = document.querySelector<HTMLElement>('.post')
@@ -143,7 +145,7 @@ async function domEvents() {
   input.textarea()
   input.number()
 
-  event.toggleClass({ selector: '.js-navbar-toggle' }).setEvent()
+
   event.modal({ selector: '.js-modal' }).setEvent()
   event.toggleClass({ selector: '.js-toggle' }).setEvent()
   event.enterTarget({ selector: '.js-hover-trigger' })
