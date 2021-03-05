@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
   detectBrowser()
 
   initializeLoader()
-  initializePage()
+  // initializePage()
   setDarkmode()
 
   domEvents()
