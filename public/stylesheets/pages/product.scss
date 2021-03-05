@@ -2,7 +2,7 @@
 	max-width: 1080px;
 }
 
-.product {max-width:1440px;margin:2rem auto 10rem;position:relative;}
+.product {max-width:1440px;margin:2rem auto 10rem;padding:0 5%;position:relative;}
 // .product:before {content:'';display:block;height:800px;background:var(--gray100);position:absolute;left:10%;right:-50%;top:-5rem;z-index:-1;}
 .product-image {width:480px;height:480px;margin:0 auto;background:var(--gray100);border-radius:var(--radius400);position:relative;}
 .product-iamge-list {position:absolute;}
@@ -151,26 +151,23 @@
 
 
 @media (--viewport-large) {
-	.product {padding:0 5%}
 	.product:before {display:none;}
-	.product-image {margin:0;}
-	.product-info {width:40%;left:55%;}
-	.product-order {width:40%;left:55%;top:240px;}
+	.product-image {margin:0;position:absolute;top:0;}
+	.product-info {width:auto;margin-left:60%;position:relative;left:auto;right:auto;top:auto;bottom:auto;}
+	.product-order {width:auto;margin-left:60%;position:relative;left:auto;right:auto;top:auto;bottom:auto;}
 
 	.product-detail {margin-left:0;margin-right:0;}
 	.product-detail dl {width:100%;}
 }
 
 
-
 @media (--viewport-small) {
-	.product {max-width:100%;}
 	.product-image:before {content:'';display:block;background:var(--gray100);position:absolute;top:-320px;left:-240px;bottom:240px;z-index:-1;}
-	.product-info {width:100%;text-align:center;position:static;left:auto;top:auto;}
-	.product-info-name {width:100%;position:static;left:auto;top:auto;}
-	.product-info-byline {margin-top:.25rem;}
-	.product-info-price {justify-content:center;margin:.25rem 0 0 0;}
-	.product-image {width:100%;height:400px;position:relative;left:auto;}
+	.product-info {width:100%;margin-left:0;}
+	.product-info-name {width:100%;text-align:left;position:initial;}
+	.product-info-byline {margin:.25rem 0 0 0;}
+	.product-info-price {margin:.5rem 0 0 0;}
+	.product-image {width:100%;height:400px;position:relative;top:auto;}
 	.product-order {width:100%;margin:0;padding:2rem 5% calc(constant(safe-area-inset-bottom) + 1rem);padding:2rem 5% calc(env(safe-area-inset-bottom) + 1rem);box-sizing:border-box;background:var(--gray0);position:fixed;left:0;right:0;top:auto;bottom:0;z-index:6;}
 	.product-order-size {overflow:auto;white-space:nowrap;}
 	.product-order-color {overflow:auto;white-space:nowrap;}
