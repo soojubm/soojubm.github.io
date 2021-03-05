@@ -30,7 +30,7 @@
           <a class="hero-cta">공사중입니다</a>
           <a class="hero-detail">자세히보기</a>
         </footer> -->
-        <small>디자인 시스템이 적용된 샘플 페이지</small>
+        <small style="display:block;margin-bottom:.5rem;">디자인 시스템이 적용된 샘플 페이지</small>
         <section class="slider">
           <div class="slider-viewer" style="margin-right:-200px;padding-right:200px;">
             <a class="slider-viewer-slide" href="#profile">
@@ -128,11 +128,8 @@
       <h1 class="design-article-title">Writings & Rules</h1>
       <button class="design-article-more">더 보러가기</button>
       <ul>
-        <li>그리드 시스템을 사용하지 않는 이유.</li>
-        <li><b>금액</b> KRW 기호를 사용하고 한 칸 띄어 씁니다. ₩ 44,612 formatPrice()</li>
-        <li><b>날짜</b> YYYY/MM/DD formatDate()</li>
-        <li>위치(왼쪽/오른쪽/위/아래)를 설명하지 않습니다.</li>
-        <li>콜론 슬래시 괄호 등을 남용하지 마세요. 디자인 하지 않은 것입니다(오바). 특히나 띄어쓰기가 필요하다면 전달하기 복잡한 정보입니다.<li>
+        <li>위치를 설명하지 않습니다.</li>
+        
         <li>검색 결과 2개 vs ~ / 총결제금액 vs 결제예정금액</li>
         <li>Bullet은 컴포넌트로 Component</li>
         <li>카드 안에서 좌우 여백: 데스크탑 2rem / 모바일 1.5rem 변수만들기.</li>
@@ -142,11 +139,15 @@
     </article> -->
 
     <article class="design-article typography">
-      <h1 class="design-article-title">Todos</h1>
+      <h1 class="design-article-title">Writings & Rules 🔥</h1>
       <p class="design-article-description"></p>
       <ul>
-        <li>memo: 미디어쿼리에서 position 속성을 재할당할 때 static을 사요하지 말고 relative를 사용.</li>
-        <li>첫 할당에서는 margin: 0 0 0 0 재할당 시 margin-left:</li>
+        <li>모양(네모, 동그란 등), 방향(왼쪽/오른쪽/위/아래), 색상 등을 가이드 텍스트에 포함하지 마세요. (장애인 접근성)</li>
+        <li><b>금액</b> KRW 기호를 사용하고 한 칸 띄어 씁니다. ₩ 1,000. formatPrice() 함수로 모듈화하세요.</li>
+        <li><b>날짜</b> YYYY/MM/DD. formatDate() 함수로 모듈화하세요.</li>
+        <li>콤마, 콜론, 슬래시, 괄호, 불릿을 남용하지 마세요. 충분히 복잡한 정보라고 볼 수 있기 때문에 위계를 설정하고 시각화해주세요.<li>
+        <li>말줄임표를 사용하지 마세요. 아이콘 등 다른...</li>
+        <li>그리드 시스템을 사용하지 않습니다.</li>
       </ul>
       <!-- <footer class="test js-system-theme">
         <button name="design-system-default">기본 값으로 보기</button>
@@ -154,6 +155,15 @@
         <button name="design-system-daangn">당근 곁들인</button>
       </footer> -->
     </article>
+
+    <!-- <article class="design-article typography">
+      <h1 class="design-article-title">Cording Conventions 🔥</h1>
+      <p class="design-article-description"></p>
+      <ul>
+        <li>memo: 미디어쿼리에서 position 속성을 재할당할 때 static을 사요하지 말고 relative를 사용.</li>
+        <li>첫 할당에서는 margin: 0 0 0 0 재할당 시 margin-left:</li>
+      </ul>
+    </article> -->
 
     <article class="design-article typography">
       <h1 class="design-article-title">Typhography</h1>
@@ -476,7 +486,7 @@
 
     <article class="design-article">
       <h1 class="design-article-title">Chips</h1>
-      <p class="design-article-description">피시 앤 칩스. chip / pill</p>
+      <p class="design-article-description">피시 앤 칩스. chip? pill? 아이콘 없이 소팅이나 필터링에서 사용할 수 있습니다. todo 상태 추가해주기. 추가 제거 아이콘을 포함하여 멀티 셀렉션에서 사용하세요.</p>
       <div role="group">
         <button class="chip">기본값</button>
         <button class="chip">Typhography <i class="icon-plus"></i></button>
