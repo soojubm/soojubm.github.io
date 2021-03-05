@@ -1,7 +1,7 @@
 .hero {width:90%;max-width:$container800;margin:0 auto;position:relative;z-index:1;}
 .hero-inner {padding:3rem 5rem 4.5rem;box-sizing:border-box;}
 .hero-background {max-width:100%;margin: 0 auto;background:var(--gray0);border-radius:var(--radius400);box-shadow:var(--shadow400);position: absolute;left: -50%;right: -50%;top: 0;bottom:100%;z-index: -1;}
-.hero-eyebrow {display:block;margin:0 0 .25rem 0;font-size:$caption;font-weight:bold;color:var(--gray400);animation:fadeup .2s cubic-bezier(.455, .03, .515, .955) forwards .4s;opacity:0;}
+.hero-eyebrow {display:block;margin:0 0 .25rem 0;font-size:$caption;color:var(--gray400);animation:fadeup .2s cubic-bezier(.455, .03, .515, .955) forwards .4s;opacity:0;}
 .hero-title {@include title;animation:fadeup .2s cubic-bezier(.455, .03, .515, .955) forwards .6s;opacity:0;}
 .hero-description {margin:1rem 0 3rem 0;animation:fadeup .2s cubic-bezier(.455, .03, .515, .955) forwards .8s;opacity:0;}
 .hero .slider {animation:fadeup .2s cubic-bezier(.455, .03, .515, .955) forwards 1s;opacity:0;position:relative;z-index:1;}
@@ -21,7 +21,7 @@
 
 @media (--viewport-large) {
   .hero {margin-top:-12rem;}
-  .hero-inner {padding:3rem 3rem 4rem;}
+  .hero-inner {padding:3rem 5% 4rem;}
   .hero-obj4 {width:20rem;}
 }
 
