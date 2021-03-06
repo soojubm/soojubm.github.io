@@ -28,9 +28,10 @@
 .is-active .help-board-item-content {display:block;}
 .is-active .help-feedback {display:flex;}
 
-.help-feedback {display:none;align-items:center;margin:2rem auto 0;padding:1.5rem 0;border-top:var(--border100);position:relative;animation:fadeup .4s ease;}
-.help-feedback-body {margin:0 1rem 0 0;}
-.help-feedback-button {margin:0 .25rem;padding-top:.25rem;padding-bottom:.25rem;}
+.help-feedback {position:relative;}
+.help-feedback-title {margin:0 0 1rem 0;}
+.help-feedback-button {@include button-tertiary;margin:0 .25rem 0 0;padding-top:.25rem;padding-bottom:.25rem;}
+.help-feedback-status {display:block;margin:.5rem 0 0;}
 
 .help-foot {display:flex;max-width:$container400;margin:0 auto;padding:1rem 2rem;box-sizing:border-box;background:var(--gray100);box-shadow:var(--shadow400);position:relative;}
 .help-foot-body {}

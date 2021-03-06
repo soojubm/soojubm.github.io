@@ -44,40 +44,34 @@ const modal = ({ selector: trigger }: Parameter) => ({
 
         const modalId = modal.dataset.modal
         const uri = `/views/${modalId}.html`
-        fetch(uri)
-          .then(response => {
-            if (response.ok) return response.text()
-            else return Promise.reject(response)
-          })
-          .then(html => {
-            if (!this.modalContainer) return
+        fetch(uri).then(response => {
+          if (response.ok) return response.text()
+          else return Promise.reject(response)
+        }).then(html => {
+          if (!this.modalContainer) return
 
-            this.modalContainer.innerHTML = html
-            document.body.classList.remove('is-modal-visible')
+          this.modalContainer.innerHTML = html
+          document.body.classList.remove('is-modal-visible')
 
-            const { pageYOffset } = window
-            this.showModal(pageYOffset)
-            this.setHistory(modalId)
+          const { pageYOffset } = window
+          this.showModal(pageYOffset)
+          this.setHistory(modalId)
 
-            const isShown = document.body.classList.contains('is-modal-visible')
-            if (isShown) {
-              document.querySelector('.js-modal-close')?.addEventListener('click', event => event.stopPropagation())
-              document.querySelector('.js-modal-close')?.addEventListener('click', this.backHistory)
-              document.querySelector('.modal-dim')?.addEventListener('click', this.backHistory)
-              // document.addEventListener('click', this.backHistory)
-            }
-            document.addEventListener('keydown', event => {
-              const isKeyEsc = event.keyCode === 27
-              if (!isKeyEsc) return
-
-              this.backHistory()
-            }, true)
-
+          const isShown = document.body.classList.contains('is-modal-visible')
+          if (isShown) {
+            document.querySelector('.js-modal-close')?.addEventListener('click', event => event.stopPropagation())
+            document.querySelector('.js-modal-close')?.addEventListener('click', this.backHistory)
+            document.querySelector('.modal-dim')?.addEventListener('click', this.backHistory)
             // document.addEventListener('click', this.backHistory)
+          }
+          document.addEventListener('keydown', event => {
+            const isKeyEsc = event.keyCode === 27
+            if (isKeyEsc) this.backHistory()
+          }, true)
+          // document.addEventListener('click', this.backHistory)
 
-            window.addEventListener('popstate', () => this.clearModal(this.modalContainer, pageYOffset))
-          })
-          .catch(error => console.warn('modal Error'))
+          window.addEventListener('popstate', () => this.clearModal(this.modalContainer, pageYOffset))
+        }).catch(error => console.warn('modal Error'))
       }),
     )
   },

@@ -1,5 +1,5 @@
 // ? 부모에 flex-wrap이 있으면 자식에게 width: 100%을 주어야?
-.empty {width:100%;padding:4rem 0;text-align:center;}
+.empty {width:100%;padding:4rem 5%;text-align:center;}
 .empty-icon {@include box-large;margin:0 auto 2rem;font-size:40px;}
 .empty-title {@include subhead;}
 .empty-description {margin:1rem 0 2rem;}
