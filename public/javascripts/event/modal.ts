@@ -2,6 +2,8 @@
 //var abc = window.innerWidth - document.body.clientWidth;
 // require('./modal.scss');
 
+import { pushBrowserHistory } from '../utils/browserUtils'
+
 type Parameter = {
   selector: string
 }
@@ -31,13 +33,13 @@ const getData = (url, data) => {
 
 const modal = ({ selector: trigger }: Parameter) => ({
   initialize() {},
-  modals: document.querySelectorAll<HTMLElement>(trigger),
+  modalElements: document.querySelectorAll<HTMLElement>(trigger),
   modalContainer: document.querySelector<HTMLElement>('#modal'),
   setEvent() {
     document.removeEventListener('click', this.backHistory)
-    if (!this.modals) return
+    if (!this.modalElements) return
 
-    this.modals.forEach(modal =>
+    this.modalElements.forEach(modal =>
       modal.addEventListener('click', event => {
         event.stopPropagation()
         event.preventDefault()
@@ -53,9 +55,8 @@ const modal = ({ selector: trigger }: Parameter) => ({
           this.modalContainer.innerHTML = html
           document.body.classList.remove('is-modal-visible')
 
-          const { pageYOffset } = window
-          this.showModal(pageYOffset)
-          this.setHistory(modalId)
+          this.showModal(window.pageYOffset)
+          pushBrowserHistory({}, '', modalId)
 
           const isShown = document.body.classList.contains('is-modal-visible')
           if (isShown) {
@@ -86,12 +87,6 @@ const modal = ({ selector: trigger }: Parameter) => ({
 
     container.innerHTML = ''
     window.scrollTo(0, pageYOffset)
-  },
-  setHistory(modalUrl) {
-    const state = { name: 'tester' }
-    const title = 'dd'
-    const url = modalUrl
-    history.pushState(state, title, url)
   },
   backHistory() {
     history.back()

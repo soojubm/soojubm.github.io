@@ -59,39 +59,39 @@ document.addEventListener('DOMContentLoaded', () => {
 async function domEvents() {
   await routePage()
 
-  const themeButtonElements = document.querySelectorAll('.js-system-theme button')
-  const ACTIVE_CLASS = 'is-active'
-  let classes = []
+  // const themeButtonElements = document.querySelectorAll('.js-system-theme button')
+  // const ACTIVE_CLASS = 'is-active'
+  // let classes = []
 
-  themeButtonElements?.forEach((button, index) => {
-    // classes.push(button.getAttribute('name'))
-    // console.log(classes)
-    button.addEventListener('click', event => {
-      // if(index === 1) {
-      //   document.body.classList.remove('design-system-danngn')
-      //   document.body.classList.add('design-system-newneek')
-      // }
-      // else if (index === 2) {
-      //   document.body.classList.remove('design-system-newneek')
-      //   document.body.classList.add('design-system-danngn')
-      // }
-      // else {
-      //   document.body.classList.remove('design-system-newneek')
-      //   document.body.classList.remove('design-system-danngn')
-      // }
+  // themeButtonElements?.forEach((button, index) => {
+  //   // classes.push(button.getAttribute('name'))
+  //   // console.log(classes)
+  //   button.addEventListener('click', event => {
+  //     // if(index === 1) {
+  //     //   document.body.classList.remove('design-system-danngn')
+  //     //   document.body.classList.add('design-system-newneek')
+  //     // }
+  //     // else if (index === 2) {
+  //     //   document.body.classList.remove('design-system-newneek')
+  //     //   document.body.classList.add('design-system-danngn')
+  //     // }
+  //     // else {
+  //     //   document.body.classList.remove('design-system-newneek')
+  //     //   document.body.classList.remove('design-system-danngn')
+  //     // }
 
-      themeButtonElements?.forEach(button2 => {
+  //     themeButtonElements?.forEach(button2 => {
 
-        const isTarget = event.target === button2
+  //       const isTarget = event.target === button2
 
-        if(isTarget) {
-          button2.classList.add(ACTIVE_CLASS)
-          // document.body.classList.add(name)
-        }
-        else button2.classList.remove(ACTIVE_CLASS)
-      })
-    })
-  })
+  //       if(isTarget) {
+  //         button2.classList.add(ACTIVE_CLASS)
+  //         // document.body.classList.add(name)
+  //       }
+  //       else button2.classList.remove(ACTIVE_CLASS)
+  //     })
+  //   })
+  // })
 
   // lazyLoading()
 
@@ -152,7 +152,6 @@ async function domEvents() {
   event.tabMenu()
   event.closeParentElement({ selector: '.js-close' })
   event.toTop({ selector: '.js-to-top' })
-
   event.stickyElement({ targetElement: '.js-header', addClass: 'is-sticky-header', position: 'top' })
   event.stickyElement({ targetElement: '.js-post-head', addClass: 'is-sticky-post-head', position: 'bottom' })
 

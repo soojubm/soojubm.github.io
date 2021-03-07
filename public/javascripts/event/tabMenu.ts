@@ -24,6 +24,9 @@ const tabMenu = () => {
       tabs.forEach(tab => tab.setAttribute('aria-selected', 'false'))
       target.setAttribute('aria-selected', 'true')
 
+      // const { pathname, hash } = window.location
+      // history.pushState({ tabname: 'tester' }, 'name', `${target.name}`)
+
       tabPanels.forEach(element => {
         element.classList.add('hidden')
         element.setAttribute('aria-hidden', 'true')

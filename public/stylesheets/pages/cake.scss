@@ -1,7 +1,7 @@
 .cake {}
 
 .cake-head {max-width:1440px;margin:0 auto;padding:4rem 0;position:relative;}
-.cake-background {height:400px;background:url('/public/images/newman.jpg') no-repeat 0 -200px fixed;position:absolute;left:-100%;right:-100%;top:0;z-index:-1;animation: fadeup 0.6s cubic-bezier(0.455, 0.03, 0.515, 0.955) forwards;}
+.cake-background {height:400px;background:url('/public/images/newman.jpg') no-repeat 0 -200px fixed;position:absolute;left:-100%;right:-100%;top:0;z-index:-1;}
 .cake-head-title {@include title;}
 .cake-head-engtitle {@include subhead;}
 .cake-head-description {margin:1rem 0 0 0;}

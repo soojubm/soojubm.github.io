@@ -10,12 +10,12 @@ const modal = ({ selector: trigger }: Parameter) => ({
   // init(element) {
   //   if(!element) throw Error('element')
   // },
-  modals: document.querySelectorAll(trigger),
+  modalElements: document.querySelectorAll(trigger),
 
   setEvent() {
-    if (!this.modals) return
+    if (!this.modalElements) return
 
-    this.modals.forEach(modal =>
+    this.modalElements.forEach(modal =>
       modal.addEventListener('click', event => {
         event.stopPropagation()
         event.preventDefault()
@@ -29,10 +29,7 @@ const modal = ({ selector: trigger }: Parameter) => ({
         this.showModal(nextElementSibling, pageYOffset)
         closeTrigger.addEventListener('click', this.backHistory)
 
-        const state = { name: 'tester' }
-        const title = 'dd'
-        const url = 'modal'
-        history.pushState(state, title, url)
+
 
         window.addEventListener('popstate', () => {
           this.closeModal(nextElementSibling, pageYOffset)

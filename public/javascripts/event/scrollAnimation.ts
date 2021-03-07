@@ -1,8 +1,8 @@
-const eventScrollAnimation = () => {
-  const SCROLLED_CLASS = 'is-scrolled'
+const scrollAnimation = () => {
   const scrollElements = document.querySelectorAll('.js-scroll-animation')
   if (!scrollElements) return
 
+  const SCROLLED_CLASS = 'is-scrolled'
   let temp
 
   scrollElements.forEach(element => {
@@ -29,7 +29,7 @@ const eventScrollAnimation = () => {
   })
 }
 
-export default eventScrollAnimation
+export default scrollAnimation
 
 // window.addEventListener('scroll', (event) => {
 // 	var timer;
