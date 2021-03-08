@@ -1,3 +1,5 @@
+import { throttle } from '../utils/interfaceUtils'
+
 const tabMenu = () => {
   // todo resize throttle
   const tabIndicator = document.querySelector<HTMLElement>('.profile-tablist-indicator')
@@ -8,7 +10,7 @@ const tabMenu = () => {
   tabIndicator.style.width = firstTabWidth
 
   // window.addEventListener('load', () => initializeIndicator(tabIndicator, firstTabWidth))
-  document.addEventListener('resize', () => initializeIndicator(tabIndicator, firstTabWidth))
+  document.addEventListener('resize', () => throttle(initializeIndicator(tabIndicator, firstTabWidth)))
   document.addEventListener('click', event => {
     const { target }: any = event
     const tabs = target.parentNode.querySelectorAll('[role=tab]')

@@ -1,3 +1,5 @@
+import { throttle } from '../utils/interfaceUtils'
+
 type Parameter = {
   menusSelector: string,
   sectionsSelector: string
@@ -17,14 +19,16 @@ const scrollspy = ({ menusSelector: menusClass, sectionsSelector: sectionsClass 
       window.scrollTo(0, targetOffsetY)
     })
   })
-  window.addEventListener('scroll', () => {
+  window.addEventListener('scroll', throttle(temp), false)
+
+  function temp() {
     sections.forEach((section, index) => {
       if(section.offsetTop <= window.pageYOffset + 200) {
         menus.forEach(menu => menu.classList.remove('is-active'))
         menus[index].classList.add('is-active')
       }
     })
-  })
+  }
 }
 
 export default scrollspy

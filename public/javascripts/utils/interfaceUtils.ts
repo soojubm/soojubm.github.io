@@ -27,6 +27,8 @@ function smoothScroll(target, duration) {
 
 function loadScript(src) {
   let script = document.querySelector('script')
+  if(!script) return
+  
   script.src = src
   script.async = false
   document.body.append(script)
@@ -34,3 +36,13 @@ function loadScript(src) {
 
 
 
+
+
+export function throttle(callback) {
+  let timer: number | undefined
+
+  return function() {
+    if(timer) window.cancelAnimationFrame(timer)
+    timer = window.requestAnimationFrame(() => callback())
+  }
+}

@@ -26,13 +26,6 @@ const routePage = async () => {
 
   window.scrollTo(0, 0)
 
-  if(currentPath === '/test') {
-    const response = await fetch('/views/profile.html')
-    .then(response => response.text())
-    .then(html => view.innerHTML = html)
-    .catch(error => console.warn('router: ', error))
-  }
-
   // const activeRoutes = document.querySelectorAll('[route]')
   // activeRoutes.forEach(route => route.addEventListener('click', navigate, false))
   function navigate(event) {

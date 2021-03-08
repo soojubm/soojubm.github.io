@@ -9,6 +9,8 @@ import { setDarkmode, carousel } from './javascripts/setDarkMode'
 import event from './javascripts/event/index'
 import input from './javascripts/input/index'
 
+import { throttle } from './javascripts/utils/interfaceUtils'
+
 // import { validity } from './javascripts/utils/validations'
 // import { copyClipboard } from './javascripts/utils/formatUtils.js'
 
@@ -42,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   event.toggleClass({ selector: '.js-navbar-toggle' }).setEvent()
 
-  window.addEventListener('scroll', scrollProgress, true)
+  window.addEventListener('scroll', throttle(scrollProgress), true)
   function scrollProgress() {
     const containerElement = document.querySelector<HTMLElement>('.post')
     const progressBar = document.querySelector<HTMLElement>('.post-head-progress')

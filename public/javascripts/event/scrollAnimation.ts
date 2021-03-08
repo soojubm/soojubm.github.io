@@ -1,9 +1,10 @@
+import { throttle } from '../utils/interfaceUtils'
+
 const scrollAnimation = () => {
   const scrollElements = document.querySelectorAll('.js-scroll-animation')
   if (!scrollElements) return
 
   const SCROLLED_CLASS = 'is-scrolled'
-  let temp
 
   scrollElements.forEach(element => {
     const isScrolled = element.getBoundingClientRect().top <= window.innerHeight
@@ -12,21 +13,19 @@ const scrollAnimation = () => {
     element.classList.add(SCROLLED_CLASS)
   })
 
-  window.addEventListener('scroll', () => {
+  window.addEventListener('scroll', throttle(scrollAni), false)
+
+
+  function scrollAni() {
     scrollElements.forEach(element => {
       const isScrolled = element.getBoundingClientRect().top + element.clientHeight * 0.5 <= window.innerHeight
       // const isScrolled = window.pageYOffset > window.pageYOffset + element.getBoundingClientRect().top - window.innerHeight + 50
       if (!isScrolled) return
 
       element.classList.add(SCROLLED_CLASS)
-      temp && window.cancelAnimationFrame(temp)
-      temp = window.requestAnimationFrame(() => {
-        // element.addEventListener('animationend', () => {
-        //   element.classList.remove(SCROLLED_CLASS);
-        // })
-      })
     })
-  })
+  }
+
 }
 
 export default scrollAnimation
