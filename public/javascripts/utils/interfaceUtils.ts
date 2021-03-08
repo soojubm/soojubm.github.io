@@ -1,11 +1,11 @@
-function smoothScroll(target, duration) {
+function smoothScroll(target: any, duration: any) {
   var target = document.querySelector(target)
   var targetPosition = target.getBoundingClientRect().top
   var startPosition = window.pageYOffset
   var distance = targetPosition - startPosition
   var startTime = null || 0
 
-  function animation(currentTime) {
+  function animation(currentTime: any) {
     if (!startTime) startTime = currentTime
 
     var timeElapsed = currentTime - startTime
@@ -28,21 +28,10 @@ function smoothScroll(target, duration) {
 function loadScript(src) {
   let script = document.querySelector('script')
   if(!script) return
-  
+
   script.src = src
   script.async = false
   document.body.append(script)
 }
 
 
-
-
-
-export function throttle(callback) {
-  let timer: number | undefined
-
-  return function() {
-    if(timer) window.cancelAnimationFrame(timer)
-    timer = window.requestAnimationFrame(() => callback())
-  }
-}

@@ -2,7 +2,7 @@
 // passed와 바로. header / post-head
 // 언제 cancel
 
-import { throttle } from '../utils/interfaceUtils' 
+import { throttle } from '../utils/optimizationUtils' 
 
 const stickyElement = ({ targetElement, addClass, position }) => {
   const stickyElement = document.querySelector(targetElement)

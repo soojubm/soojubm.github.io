@@ -3,5 +3,4 @@ export function pushBrowserHistory(state = {}, title = '', url = '') {
 }
 
 export function backHistory() {
-  
 }

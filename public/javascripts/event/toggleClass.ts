@@ -21,13 +21,12 @@ const toggleClass = ({ selector: trigger }: Parameter) => ({
         this.toggleClassTarget(triggerNextElement)
   
         this.triggers.forEach(element => {
-          if (event.target === element) return
-          this.removeAllClass(element)
+          const isSelf = event.target === element
+          if (!isSelf) this.remove(element)
         })
       }),
     )
-    document.body.addEventListener('click', () => this.triggers.forEach(trigger => this.removeAllClass(trigger)))
-
+    document.body.addEventListener('click', () => this.triggers.forEach(trigger => this.remove(trigger)))
   },
   toggleClassTrigger(element) {
     element.classList.toggle(this.ACTIVE_CLASS)
@@ -37,7 +36,7 @@ const toggleClass = ({ selector: trigger }: Parameter) => ({
     element.classList.toggle(this.ACTIVE_CLASS2)
     element.addEventListener('click', event => event.stopPropagation())
   },
-  removeAllClass(element) {
+  remove(element) {
     element.classList.remove(this.ACTIVE_CLASS)
     element.setAttribute('aria-expanded', 'true')
     element.nextElementSibling.classList.remove(this.ACTIVE_CLASS2)

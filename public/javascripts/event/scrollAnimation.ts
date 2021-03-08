@@ -1,4 +1,4 @@
-import { throttle } from '../utils/interfaceUtils'
+import { throttle } from '../utils/optimizationUtils'
 
 const scrollAnimation = () => {
   const scrollElements = document.querySelectorAll('.js-scroll-animation')

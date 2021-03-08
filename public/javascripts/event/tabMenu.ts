@@ -1,4 +1,4 @@
-import { throttle } from '../utils/interfaceUtils'
+import { throttle } from '../utils/optimizationUtils'
 
 const tabMenu = () => {
   // todo resize throttle

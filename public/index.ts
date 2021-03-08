@@ -9,7 +9,7 @@ import { setDarkmode, carousel } from './javascripts/setDarkMode'
 import event from './javascripts/event/index'
 import input from './javascripts/input/index'
 
-import { throttle } from './javascripts/utils/interfaceUtils'
+import { throttle } from './javascripts/utils/optimizationUtils'
 
 // import { validity } from './javascripts/utils/validations'
 // import { copyClipboard } from './javascripts/utils/formatUtils.js'

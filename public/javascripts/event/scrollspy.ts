@@ -1,4 +1,4 @@
-import { throttle } from '../utils/interfaceUtils'
+import { throttle } from '../utils/optimizationUtils'
 
 type Parameter = {
   menusSelector: string,
