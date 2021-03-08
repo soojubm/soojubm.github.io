@@ -134,13 +134,13 @@
     <article class="design-article typography">
       <h1 class="design-article-title">Writings & Rules 🔥</h1>
       <p class="design-article-description"></p>
-      <h3 class="accordion-trigger js-toggle" role="button" aria-expanded="false">
+      <!-- <h3 class="accordion-trigger js-toggle" role="button" aria-expanded="false">
         회원탈퇴는 어떻게 할 수 있나요?
         <span class="accordion-trigger-icon"><i class="icon-plus"></i></span>
       </h3>
       <article class="accordion-panel">
         안녕
-      </article>
+      </article> -->
       <ol>
         <li>모양(네모, 동그란 등), 방향(왼쪽/오른쪽/위/아래), 색상 등을 가이드 텍스트에 포함하지 마세요. (장애인 접근성)</li>
         <li><b>금액</b> KRW 기호를 사용하고 한 칸 띄어 씁니다. ₩ 1,000. formatPrice() 함수로 모듈화하세요.</li>
@@ -428,7 +428,6 @@
       <ul class="design-article-description">
         <li>appearance = link / subtle / primary, space = compact / fullwidth, </li>
         <li>ButtonGroup 컴포넌트.</li>
-        <li>여담이지만 버튼 2가지 스타일로도 충분하다.</li>
         <li>role="img" aria-label="plus icon". react? lint?에서 emoji role="img" 속성 이슈.</li>
       </ul>
       <!-- <a class="button" href="#">Anchor button</a>
@@ -464,7 +463,7 @@
           <button class="design-article-text-small" disabled>텍스트</button>
         </div>
         <br />
-        <h6 style="margin:0 0 .5rem;font-size:.875rem;">huge - 이벤트 페이지에서 사용하세요.</h6>
+        <h6 style="margin:0 0 .5rem;font-size:.875rem;">huge - 이벤트 페이지 등에서 사용하세요. primary only.</h6>
         <div role="group">
           <button class="design-article-primary" style="min-width:320px;;padding:12px 0 15px;font-size:1.25rem;">
             알림 신청하기
@@ -698,7 +697,7 @@
     </article>
 
     <article class="design-article">
-      <h1 class="design-article-title">Notifications</h1>
+      <h1 class="design-article-title">Message</h1>
       <p class="design-article-description">샘플.  toast=>snackbar(withAction)</p>
       <aside class="message">
         <button class="message-close" aria-label="close"><i class="icon-close"></i></button>
@@ -853,7 +852,7 @@
         <h3 class="file-title" hidden>프로필 사진</h3>
         <div class="file-upload">
           <input class="file-input js-file-input" type="file" id="file2" multiple accept=".jpg,.png" capture="camera" />
-          <label class="file-label" for="file2">파일을 추가하세요. 여기로 드래그 하셔도 되어요.</label>
+          <label class="file-label" for="file2">(업로드아이콘) 파일을 추가하세요. 여기로 드래그 하셔도 되어요.</label>
           <p class="file-helper"><small>Only .jpg and .png files. 500kb max file size.</small></p>
         </div>
         <div class="file-attachment">
@@ -912,6 +911,25 @@
           <button class="profile-foot-follow">팔로우</button>
         </footer>
       </div>
+      <br />
+      <!-- <div class="pricing-item">
+        <small class="" title="MOST POPULAR">인기 요금제</small>
+        <i style="margin-top:-.5rem;font-size:40px;">🧞‍</i>
+        <h1 class="pricing-item-title">개인용</h1>
+        <p class="pricing-item-description">부끄러우니까 구매하지마요.</p>
+        <span class="pricing-item-price">
+          <span class="pricing-item-price-unit">₩ </span>
+          <span>6,800</span>
+          <span class="pricing-item-price-" style="font-size:1rem">(1인/월)</span>
+        </span>
+        <ul>
+          <li><i class="icon-check"></i>아무거나 하나 써 봅니다.</li>
+          <li><i class="icon-check"></i>아무거나 하나 써 봅니다.</li>
+          <li><i class="icon-check"></i>아무거나 하나 써 봅니다.</li>
+        </ul>
+        <button class="pricing-item-upgrade">업그레이드</button>
+        <button class="pricing-item-more">And More...</button>
+      </div> -->
     </article>
 
     <!-- <article class="design-article grayscale">
@@ -950,25 +968,6 @@
         </div>
       </div>
     </article>
-
-      <!-- <div class="pricing-item">
-        <small class=""title="MOST POPULAR">인기 요금제</small>
-        <i style="margin-top:-.5rem;font-size:40px;">🧞‍</i>
-        <h1 class="pricing-item-title">개인용</h1>
-        <p class="pricing-item-description">부끄러우니까 구매하지마요.</p>
-        <span class="pricing-item-price">
-          <span class="pricing-item-price-unit">₩ </span>
-          <span>6,800</span>
-          <span class="pricing-item-price-" style="font-size:1rem">(1인/월)</span>
-        </span>
-        <ul>
-          <li><i class="icon-check"></i>아무거나 하나 써 봅니다.</li>
-          <li><i class="icon-check"></i>아무거나 하나 써 봅니다.</li>
-          <li><i class="icon-check"></i>아무거나 하나 써 봅니다.</li>
-        </ul>
-        <button class="pricing-item-upgrade">업그레이드</button>
-        <button class="pricing-item-more">And More...</button>
-      </div> -->
 
     <article class="design-article grayscale">
       <h1 class="design-article-title">Share Card</h1>

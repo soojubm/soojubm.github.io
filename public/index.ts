@@ -13,21 +13,16 @@ import { throttle } from './javascripts/utils/optimizationUtils'
 
 // import { validity } from './javascripts/utils/validations'
 // import { copyClipboard } from './javascripts/utils/formatUtils.js'
-
-const isScrollEnd = window.innerHeight + window.pageYOffset >= document.body.offsetHeight
+// const isScrollEnd = window.innerHeight + window.pageYOffset >= document.body.offsetHeight
 
 document.addEventListener('readystatechange', (event: any) => {
+  const { readyState } = event.target
   // event.target === document ? true
-  if (event.target.readyState === 'loading') console.log('loading...')
-  else if (event.target.readyState === 'interactive') console.log('initLoader')
-  else if (event.target.readyState === 'complete') console.log('initApp')
+  if (readyState === 'loading') console.log('loading...')
+  else if (readyState === 'interactive') console.log('initLoader')
+  else if (readyState === 'complete') console.log('initApp')
 })
 
-document.addEventListener('offline', () => {
-  const offlineElement = document.querySelector<HTMLElement>('.js-offline')
-  offlineElement!.hidden = false
-})
-document.addEventListener('online', () => {}, false)
 window.addEventListener('unload', () => console.log('unload event'))
 
 window.addEventListener('hashchange', domEvents)
@@ -37,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
   detectBrowser()
 
   initializeLoader()
+
   // initializePage()
   setDarkmode()
 

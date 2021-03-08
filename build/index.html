@@ -93,7 +93,7 @@
       <a href="https://www.google.co.kr/chrome/index.html" class="button">크롬 브라우저 다운로드</a>
     </aside>
 
-    <aside class="offline js-offline" hidden>
+    <aside class="offline js-offline">
       <p>인터넷에 연결되어 있지 않습니다.</p>
     </aside>
 
@@ -321,6 +321,21 @@
       renderTime()
       setInterval(renderTime, 1000);
     </script> -->
+
+    <script>
+      window.addEventListener('online',  detectOnline)
+      window.addEventListener('offline',  detectOnline)
+      window.addEventListener('DOMContentLoaded',  detectOnline)
+      
+      function detectOnline() {
+        const isOnline = navigator.onLine
+        if(!isOnline) {
+          const offlineElement = document.querySelector('.js-offline')
+          offlineElement.style.display = 'block'
+        }
+        // window.alert(isOnline ? 'online' : 'offline')
+      }
+    </script>
   <script type="text/javascript" src="/bundle.js"></script></body>
 </html>
 

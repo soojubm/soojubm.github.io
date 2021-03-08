@@ -188,7 +188,7 @@
 .quote-action {@include button-primary;width:50%;margin:2rem 0 0 0;}
 
 
-.offline {max-width:400px;margin:0 auto;padding:.5rem 1rem;border-radius:var(--radius400);background:$red800;text-align:center;position:fixed;left:10%;right:10%;top:45%;z-index:8;}
+.offline {display:none;max-width:400px;margin:0 auto;padding:.5rem 1rem;border-radius:var(--radius400);background:$red800;text-align:center;position:fixed;left:10%;right:10%;top:45%;z-index:8;}
 .offline p {color:var(--gray0);}
 
 .skeleton-screen:empty{
@@ -260,3 +260,25 @@
     margin: 0 0 0 0.5rem;
   }
 }
+
+
+
+
+
+
+
+.pricing-item {max-width:400px;padding:2rem;border:$border100;box-shadow:$shadow400;box-sizing:border-box;border-radius:$radius400;position:relative;}
+.pricing-item-title {@include subhead;}
+.pricing-item-price {display:block;color:var(--gray800);font-size:2rem;}
+.pricing-item-price-unit {}
+.pricing-item-price- {color:var(--gray400);}
+.pricing-item-period {display:inline-block;color:var(--gray800);}
+.pricing-item-period:before {content:' / ';margin:0 .5rem;color:var(--gray400);}
+.pricing-item-description {margin:1rem 0;}
+// .pricing-item-description:before {content:'';display:block;width:40px;height:1px;background:var(--gray800);margin:1.25rem 0 1.75rem;}
+.pricing-item-upgrade {@include button-primary;width:100%;margin:0 0 1rem 0;}
+.pricing-item-more {width:100%;text-decoration:underline;}
+.pricing-item ul {margin:1rem 0 3rem 0;}
+.pricing-item ul li {padding:.125rem 0;}
+.pricing-item ul li:before {content:'';}
+.pricing-item .icon-check {margin:0 .5rem 0 0;border-color:$color-primary;}

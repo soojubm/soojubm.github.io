@@ -1,11 +1,11 @@
-function smoothScroll(target: any, duration: any) {
+function smoothScroll(target, duration) {
   var target = document.querySelector(target)
   var targetPosition = target.getBoundingClientRect().top
   var startPosition = window.pageYOffset
   var distance = targetPosition - startPosition
   var startTime = null || 0
 
-  function animation(currentTime: any) {
+  function animation(currentTime) {
     if (!startTime) startTime = currentTime
 
     var timeElapsed = currentTime - startTime

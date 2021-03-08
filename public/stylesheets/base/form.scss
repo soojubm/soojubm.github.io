@@ -219,6 +219,7 @@ input[type=file] + label:after {display:none;}
 @media (--viewport-small) {
   .textfield-surfix,
   .selectbox-indicator {top:33px}
+  .textfield-prefix {top:33px;}
 }
 
 
