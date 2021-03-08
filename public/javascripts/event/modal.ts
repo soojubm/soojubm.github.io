@@ -54,7 +54,7 @@ const modal = ({ selector: trigger }: Parameter) => ({
           if (!this.modalContainer) return
 
           this.modalContainer.innerHTML = html
-          this.openModal(window.pageYOffset)
+          this.showModal(window.pageYOffset)
           pushBrowserHistory({}, '', modalId)
 
           const isShown = document.body.classList.contains('is-modal-visible')
@@ -76,7 +76,7 @@ const modal = ({ selector: trigger }: Parameter) => ({
       }),
     )
   },
-  openModal(pageYOffset) {
+  showModal(pageYOffset) {
     document.body.classList.add('is-modal-visible')
     document.body.classList.add('body-lock') // todo import 
     document.body.style.top = `-${pageYOffset}px`
