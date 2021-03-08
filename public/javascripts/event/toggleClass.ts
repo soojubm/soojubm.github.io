@@ -3,11 +3,10 @@ type Parameter = {
 }
 
 const toggleClass = ({ selector: trigger }: Parameter) => ({
-  init: function() {},
   triggers: document.querySelectorAll(trigger),
   ACTIVE_CLASS: 'is-active',
   ACTIVE_CLASS2: 'is-visible',
-  setEvent: function() {
+  initialize() {
     if (!this.triggers) return
 
     this.triggers.forEach(element =>
@@ -30,17 +29,17 @@ const toggleClass = ({ selector: trigger }: Parameter) => ({
     document.body.addEventListener('click', () => this.triggers.forEach(trigger => this.removeAllClass(trigger)))
 
   },
-  toggleClassTrigger: function(element) {
+  toggleClassTrigger(element) {
     element.classList.toggle(this.ACTIVE_CLASS)
     element.setAttribute('aria-expanded', `${element.classList.contains(this.ACTIVE_CLASS)}`)
   },
-  toggleClassTarget: function(element) {
+  toggleClassTarget(element) {
     element.classList.toggle(this.ACTIVE_CLASS2)
     element.addEventListener('click', event => event.stopPropagation())
   },
-  removeAllClass: function(element) {
-    element.setAttribute('aria-expanded', 'true')
+  removeAllClass(element) {
     element.classList.remove(this.ACTIVE_CLASS)
+    element.setAttribute('aria-expanded', 'true')
     element.nextElementSibling.classList.remove(this.ACTIVE_CLASS2)
   }
 })

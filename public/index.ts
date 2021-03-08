@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   domEvents()
 
-  event.toggleClass({ selector: '.js-navbar-toggle' }).setEvent()
+  event.toggleClass({ selector: '.js-navbar-toggle' }).initialize()
 
   window.addEventListener('scroll', throttle(scrollProgress), true)
   function scrollProgress() {
@@ -142,14 +142,14 @@ async function domEvents() {
   }
 
 
-  input.checkbox({ checkAllSelector: '.js-checkall', checkSelector: '.js-check' }).setEvent()
+  input.checkbox({ checkAllSelector: '.js-checkall', checkSelector: '.js-check' }).initialize()
   input.file()
   input.textarea()
   input.number()
 
-
-  event.modal({ selector: '.js-modal' }).setEvent()
-  event.toggleClass({ selector: '.js-toggle' }).setEvent()
+  // todo : 클래스만 쓰면 되도록 되어 있는데 각각에 이벤트를 설정해주는 방향?으로
+  event.modal({ selector: '.js-modal' }).initialize()
+  event.toggleClass({ selector: '.js-toggle' }).initialize()
   event.enterTarget({ selector: '.js-hover-trigger' })
   event.tabMenu()
   event.closeParentElement({ selector: '.js-close' })

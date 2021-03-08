@@ -32,12 +32,12 @@ const getData = (url, data) => {
 }
 
 const modal = ({ selector: trigger }: Parameter) => ({
-  initialize() {},
   modalElements: document.querySelectorAll<HTMLElement>(trigger),
   modalContainer: document.querySelector<HTMLElement>('#modal'),
-  setEvent() {
-    document.removeEventListener('click', this.backHistory)
+  initialize() {
     if (!this.modalElements) return
+
+    document.removeEventListener('click', this.backHistory)
 
     this.modalElements.forEach(modal =>
       modal.addEventListener('click', event => {

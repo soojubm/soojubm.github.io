@@ -4,26 +4,28 @@ type Parameter = {
 }
 
 const checkbox = ({ checkAllSelector, checkSelector }: Parameter) => ({
-  checkAll: document.querySelector(checkAllSelector),
-  checkItems: document.querySelectorAll(checkSelector),
-  setEvent() {
+  checkAll: document.querySelector<HTMLInputElement>(checkAllSelector),
+  checkItems: document.querySelectorAll<HTMLInputElement>(checkSelector),
+  initialize() {
     if (!this.checkAll || !this.checkItems) return
 
-    this.checkAll.addEventListener('change', () => this.setCheckAll(this.checkItems, this.checkAll))
+    this.checkAll.addEventListener('change', () => this.setCheckedAll(this.checkItems, this.checkAll))
     this.checkItems.forEach(checkItem => {
-      checkItem.addEventListener('change', () => this.setCheckEach(this.checkItems, this.checkAll))
+      checkItem.addEventListener('change', () => this.setCheckedEach(this.checkItems, this.checkAll))
     })
   },
-  setCheckEach(checkItems, checkAll) {
-    const checks: HTMLInputElement[] = Array.from(checkItems)
-    const isCheckedEvery = checks.every(checkItem => checkItem.checked)
-    const isCheckedSome = checks.some(checkItem => checkItem.checked)
+  setCheckedEach(checkItems, checkAll) {
+    const checkboxElements: HTMLInputElement[] = Array.from(checkItems)
+
+    let isCheckedEvery = checkboxElements.every(checkItem => checkItem.checked)
+    let isCheckedSome = checkboxElements.some(checkItem => checkItem.checked)
+    let isIndeterminate = isCheckedSome && !isCheckedEvery
 
     checkAll.checked = isCheckedEvery
-    checkAll.indeterminate = isCheckedSome && !isCheckedEvery
-    checkAll.dataset.indeterminate = isCheckedSome && !isCheckedEvery
+    checkAll.indeterminate = isIndeterminate
+    checkAll.dataset.indeterminate = isIndeterminate
   },
-  setCheckAll(checkItems, checkAll) {
+  setCheckedAll(checkItems, checkAll) {
     checkItems.forEach(checkItem => {
       checkItem.checked = checkAll.checked
       checkAll.indeterminate = false
