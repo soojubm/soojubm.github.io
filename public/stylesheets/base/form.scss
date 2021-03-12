@@ -115,6 +115,7 @@ input[type=checkbox][role=switch]:disabled + label {cursor:not-allowed;}
 input[type=checkbox][role=switch]:disabled:checked + label {color:var(--color-primary);}
 input[type=checkbox][role=switch]:disabled:checked + label:before {background:var(--color-primary);}
 input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
+
 .switch-wrap {display:inline-block;width:$cell-small;height:$cell-small;overflow:hidden;cursor:pointer;}
 .day {display:block;width:$cell-small;transition:all .4s ease;position:absolute;top:0;transition:all .4s ease .3s;}
 .night {display:block;width:$cell-small;position:absolute;top:32px;transition:all .4s ease 0s;}
@@ -124,7 +125,7 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 
 .textfield {margin:0px 0;position:relative;}
 .textfield-label {display:block;margin:0 0 0.25rem 0;}
-.textfield-label small {color:var(--gray400);}
+.textfield-label small {margin:0 0 0 .25rem;color:var(--gray400);}
 .textfield-icon {display:flex;align-items:center;justify-content:center;width:48px;height:100%;position:absolute;left:0;}
 .textfield-icon i {display:inline-block;font-size:19px;vertical-align:middle;opacity:0.4;}
 .textfield-icon + .textfield-input {padding-left:48px;}
@@ -136,7 +137,7 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 .textfield-input.-textarea {height:auto;}
 .textfield-input.-selectbox {height:auto;}
 .textfield-input.-inline {display:inline;width:80px;padding:2px 12px;}
-.textfield-reveal {position:absolute;right:1rem;bottom:1rem;z-index:2;font-size:$caption;color:var(--gray400);}
+.textfield-reveal {position:absolute;right:1rem;bottom:calc(1rem - 1px);z-index:2;font-size:$caption;color:var(--gray400);}
 .textfield-unit {width:40px;height:46px;padding:0 1rem;line-height:50px;text-align:right;color:rgba(0, 0, 0, 0.4);position:absolute;right:0;bottom:0;}
 .textfield-helper {margin-top:.25rem;color:$red800;}
 .textfield-button {border-top-left-radius:0;border-bottom-left-radius:0;position:absolute;right:0;top:0;}
@@ -147,6 +148,8 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 @mixin textfield-prefix {@include box-small;width:2rem;height:2rem;background:var(--gray0);position:absolute;left:1rem;top:38px;pointer-events:none;}
 @mixin textfield-surfix {@include box-small;width:2rem;height:2rem;background:var(--gray0);position:absolute;right:1rem;top:38px;pointer-events:none;}
 
+
+.textfield-check {@include textfield-surfix;}
 .textfield-prefix {@include textfield-prefix;background:var(--gray100);}
 .textfield-prefix ~ .textfield-input {padding-left:calc(1rem + 2rem + .5rem);}
 .textfield-surfix {@include textfield-surfix;}
@@ -170,7 +173,9 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 .textfield.is-text .textfield-input {width:auto;margin-left:1rem;margin-top:-.25rem;padding:0;background:none;border:none;box-shadow:none;color:var(--color-primary);}
 .textfield.is-text .selectbox-indicator {position:static;right:auto;bottom:auto;}
 
-.is-invalid .textfield-label {color:$red800;}
+// .is-invalid .textfield-label {color:$red800;}
+// .is-valid .textfield-input {border-color:var(--blue100);background:var(--blue100);}
+
 .is-invalid .textfield-input {border-color:$red800;color:$red800;}
 .is-invalid .textfield-byte {color:$red800;}
 .is-invalid .textfield-byte b {color:$red800;}
@@ -226,14 +231,14 @@ input[type=file] + label:after {display:none;}
 // date
 .calendar {
   width: 250px;
-  --date-width: $cell-small;
-  --date-height: $cell-small;
+  --date-width: 32px;
+  --date-height: 32px;
   --date-background: #eee;
   position: relative;
 }
 .calendar h3 {
   font-size: 1rem;
-  line-height: $cell-small;
+  line-height: 32px;
 }
 .calendar-navigation {display:flex;position:absolute;right:0;top:0;font-size:$caption}
 .calendar-navigation-prev {width:var(--date-width);height:var(--date-width);margin-right:4px;background:var(--date-background);border-radius:var(--radius400);}

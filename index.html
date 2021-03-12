@@ -113,6 +113,7 @@
         <i class="icon-hamberger"></i>
       </button>
       <div class="navbar-menu" role="navigation">
+        <a route="/profile" class="navbar-menu-item" href="#about">소개</a>
         <a route="/profile" class="navbar-menu-item" href="#profile">작업</a>
         <a route="/post" class="navbar-menu-item" href="#post">블로그</a>
         <div class="navbar-menu-item has-submenu js-hover-trigger">
@@ -197,6 +198,13 @@
             <div class="user-email">soojubm@gamil.com</div>
             <button class="user-myinfo">내 정보</button>
             <hr role="separator" />
+              <div class="switch-wrap">
+                <span class="switch js-darkmode">
+                  <span class="day">🌑</span>
+                  <span class="night">🌙</span>
+                </span>
+              </div>
+              어둡게 보기
             <button class="user-logout">
               <i class="user-logout-icon icon-close"></i>
               서비스에 기여하세요!
@@ -206,12 +214,6 @@
               로그아웃
             </button>
             <hr role="separator" />
-            <div class="switch-wrap" style="position:absolute;right:.5rem;top:.5rem;">
-              <span class="switch js-darkmode">
-                <span class="day">🌑</span>
-                <span class="night">🌙</span>
-              </span>
-            </div>
             <footer class="user-footer">
               <a href="#">Privacy Policy</a>
               <i class="icon-bullet"></i>

@@ -2,15 +2,15 @@
   <form class="signup" name="signup-foot-submit" action="" method="">
     <header class="signup-head">
       <h3 class="signup-head-title">Welcome<i style="font-style:italic;">!</i></h3>
-      <!-- <p class="signup-head-description">이름, 사진과 같이 Google 서비스에서 사용하는 기본 정보</p> -->
+      <p class="signup-head-description">Find your people. Engage your customers. Build your brand. Do it all with Mailchimp’s Marketing Platform. Already have an account? <a href="">Log in</a></p>
     </header>
     <fieldset class="signup-required">
       <legend hidden>필수입력</legend>
-      <div class="textfield">
+      <div class="textfield is-valid">
         <label class="textfield-label">이메일</label>
-        <input class="textfield-input" type="text" name="email" placeholder="soojubm@gmail.com" />
+        <input class="textfield-input" type="text" name="email" placeholder="soojubm@gmail.com" value="soojubm@gmail.com" />
         <!-- <small class="textfield-helper" role="alert">이메일을 입력하시와아요.</small> -->
-        <span class="check-text -o" style="position: absolute;right:.5rem;top:0;"><i class="icon-check" style="border-color:var(--color-primary);"></i></span>
+        <span class="textfield-check"><i class="icon-check" style="border-color:var(--color-primary);"></i></span>
         <!-- <span class="check-text -x"><i class="icon-close"></i></span> -->
       </div>
       <div class="textfield">
@@ -23,6 +23,14 @@
         <label class="textfield-label" for="signup-password" hidden>비밀번호 확인</label>
         <input class="textfield-input" type="password" id="signup-password-confirm" placeholder="6자리 이상 한 번 더!" />
         <button class="textfield-reveal js-view-password" type="button">비밀번호 보기</button>
+      </div>
+      <div style="margin:-1rem 0 2rem;font-size:.875rem;">
+        <p>비밀번호 확인 필드가 없는 경우에 써보기.</p>
+        <p>One lowercase character</p>
+        <p>One special character</p>
+        <p>One number</p>
+        <p>One special character</p>
+        <p>8 characters minimum</p>
       </div>
     </fieldset>
     <fieldset class="signup-optional" style="margin-top:-2rem;">
@@ -80,9 +88,12 @@
       <label for="user-agree"><strong>웹사이트 <a href="#">이용약관</a>과 <a href="#">개인정보처리방침</a>에 동의합니다.</strong></label>
     </div> -->
     <footer class="signup-foot">
-      <button type="submit" class="signup-foot-submit">가입하기</button>
+      <button type="submit" class="signup-foot-submit" disabled>가입하기</button>
     </footer>
   </form>
+  <footer>
+    <p>©2001–2021 All Rights Reserved. Mailchimp® is a registered trademark of The Rocket Science Group. Cookie Preferences, Privacy, and Terms.</p>
+  </footer>
 </main>
 <script defer>
   function onChangePhoneNumberFormat(num) {

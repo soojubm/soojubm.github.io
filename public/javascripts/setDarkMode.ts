@@ -25,12 +25,10 @@ export const carousel = () => {
   })
 
   function toPrev() {
-    if (!categoryList) return
-    categoryList.scrollLeft -= 100
+    categoryList!.scrollLeft -= 100
   }
   function toNext() {
-    if (!categoryList) return
-    categoryList.scrollLeft += 100
+    categoryList!.scrollLeft += 100
     // if(sum > categoryContainerWidth) {}
     // const ttt = 100 + 'px';
     // document.querySelector('.slider-viewer').style.transform += 'translateX('+ttt+')';

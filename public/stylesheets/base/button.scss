@@ -96,3 +96,9 @@ button[aria-current=page] {}
 [role=group] input[type=radio] + label:after {display:none;}
 [role=group] input[type=radio]:checked + label {color:var(--gray800)}
 [role=group] input[type=radio]:checked + label:before {border-color:var(--gray800);width:10px;height:4px;border-left: 2px solid #f3f2f1;border-bottom: 2px solid #f3f2f1;background:none;margin:0 8px 0 0;border-color:var(--gray400);vertical-align:3px;transform:rotate(-45deg);border-radius:0;border-right:0;border-top:0;position:static;left:auto;top:auto;}
+
+
+.group-sample {display:flex;justify-content:space-between;}
+.group-sample-prev {@include button-tertiary;}
+.group-sample-next {@include button-primary;}
+.group-sample-next i {margin-left:1.5rem;background:var(--gray0);}

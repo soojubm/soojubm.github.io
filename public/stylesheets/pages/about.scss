@@ -1,64 +1,92 @@
-
-			.about-era1 {margin:4rem auto;padding:0 10%;box-sizing:border-box;position:relative;}
-			.about-era1-background {width:0;height:640px;background:gainsboro;position:absolute;right:0;top:-2.5rem;z-index:-1;transition:all .6s cubic-bezier(.455, .03, .515, .955) .2s;}
-			.about-era1-title {padding:0 65% 0 0;margin:0 auto 1rem;@include title;}
-			.about-era1-description {margin:0 auto;font-size:15ox;padding:0 65% 0 0}
-			.about-era1 ul {margin:2.5rem 0 0 0;}
-			.about-era1 ul li {}
-
-			/* animation */
-			.about-era1-background.is-scrolled {width:70%;}
-			.about-era1-title.is-scrolled {animation:fadeup .6s cubic-bezier(.455, .03, .515, .955) forwards;}
-			.about-era1-description.is-scrolled {animation:fadeup .6s cubic-bezier(.455, .03, .515, .955) forwards;}
-
-			.about-era2 {width:1080px;margin:20rem auto;padding:0 5%;box-sizing:border-box;position:relative;}
-			.about-era2-background {height:400px;background:gold;position:absolute;left:-5rem;right:-5rem;bottom:-6rem;z-index:-1;}
-			.about-era2-title {padding:0 65% 0 0;margin:0 auto 1rem;@include title;}
-			.about-era2-description {margin:0 auto;padding:0 65% 0 0}
-			.about-era2 ul {margin:2.5rem 0 0 0;}
-			.about-era2 ul li {}
-
-			.about-era2-title.is-scrolled {animation:fadeup .6s cubic-bezier(.455, .03, .515, .955) forwards;}
-			.about-era2-description.is-scrolled {animation:fadeup .8s cubic-bezier(.455, .03, .515, .955) forwards;}
-
-				.licensed-fonts {width:1080px;margin:4rem auto;}
-				.licensed-fonts h3 {@include title;}
-				.licensed-fonts ul {width:100%;overflow:hidden;}
-				.licensed-fonts ul li {float:left;width:25%;padding:1rem 2rem;box-sizing:border-box;}
-				.font-name {color:var(--gray800);}
-				.font-maker {}
-				.font-famliy {}
-        .font-preview {}
-        
-
-				// .row {width:720px;margin:0 auto;position:relative;}
-				// .row:after {content:'';display:block;clear:both;}
-				// .row .col {float:left;width:400px;padding:32px;box-sizing:border-box;}
-				// .row .col p {margin-bottom:16px;}
-	
-				// .row2 {width:1200px;margin:0 auto;position:relative;}
-				// .row2:after {content:'';display:block;clear:both;}
-				// .row2 .col {float:left;width:400px;padding:32px;box-sizing:border-box;}
-				// .row2 .col p {margin-bottom:16px;}
-				// .row2 .col + .col {width:800px;}
-				// .row2 .col2 {float:left;width:400px;margin-left:400px;padding:32px;box-sizing:border-box;}
-				// .row2 .col2 + .col2 {margin-left:0;}
-				// .row2 .col3 {width:800px;margin:240px 0 0;padding:32px;box-sizing:border-box;}
-
-						.projects {margin-left:16px;}
-						.projects time {margin-right:16px;}
-						.projects cite {margin-right:16px;}
-						.projects span {font-size:$caption;color:var(--gray400);}
+.about-era1 {max-width:1440px;margin:2rem auto;padding:0 5%;position:relative;}
+.about-era1-title {padding:0 65% 0 0;margin:0 auto 1rem;@include title;}
+.about-era1-description {margin:0 auto;font-size:15ox;padding:0 65% 0 0}
 
 
+.font-name {color:var(--gray800);}
+.font-maker {}
+.font-famliy {}
+.font-preview {}
 
-						.about-brief {margin:0 10%;}
-						.about-brief h2 {margin:3rem 0 1rem 0px;font-size:$subhead;}
-						.about-brief p {margin:0rem 0 1rem 0px;}
+.about-brief {}
+.about-brief h2 {margin:0rem 0 1rem 0px;font-size:$subhead;}
+.about-brief p {margin:0rem 0 1rem 0px;}
+
+.links {max-width:640px;margin:12rem auto;position:relative;}
+.links h3 {display:none;margin:2rem 0 1rem 0;@include subhead;}
+.links a {display:block;margin:2rem 0;position:relative;}
+.links a:hover {@include hover-item;}
+.links a:hover div {}
+.links a span {display:block;}
+.links a div {}
+// .links a {display:block;width:400px;height:240px;margin:1rem;padding:2rem;box-sizing:border-box;background:var(--gray0);box-shadow:var(--shadow400);}
 
 
+.about-abbility {display:flex;padding:0 10%;position:relative;}
+.about-abbility > div {width:50%;padding:4rem;border-radius:var(--radius400);background:var(--gray100);position: relative;}
+.about-abbility > div + div {position:absolute;left:calc(50% - 2rem);bottom:4rem;}
+
+.about-abbility .cta-arrow {}
+
+.about-abbility span {@include box-large;font-size:2rem;}
+.about-abbility h2 {width:100%;@include subhead;}
+.about-abbility p {}
 
 
-						.links {}
-						.links h3 {margin:2rem 0 1rem 0;@include subhead;}
-						.links a {display:block;}
+.about-fonts {
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 50%;
+  margin:16rem auto;
+  position: relative;
+  h1 {width:100%;margin:1rem 0;text-align:center;}
+  a {margin:0 1rem;
+    font-size:2rem;text-decoration:underline;
+  }
+}
+
+.about-banner {padding:4rem 5%;background:var(--color-primary);}
+.about-banner button {@include button-tertiary;}
+
+.about-banner4 {
+  padding: 12rem 20%;
+  padding-left: 50%;
+  position:relative;
+  h1 {@include title;}
+  p {margin:2rem 0;@include subhead;font-weight:normal;}
+  a {display:block;@include subhead;}
+  button {@include button-secondary;margin:4rem 0 0 0;}
+}
+
+
+.marquee {
+  position: relative;
+  overflow: hidden;
+  --offset: 30vw;
+  --move-initial: calc(-25% + var(--offset));
+  --move-final: calc(-50% + var(--offset));
+}
+
+.marquee__inner {
+  width: fit-content;
+  display: flex;
+  position: relative;
+  transform: translate3d(var(--move-initial), 0, 0);
+  animation: marquee 5s linear infinite;
+  animation-play-state: paused;
+}
+
+.marquee span {
+  font-size: 10vw;
+  padding: 0 2vw;
+}
+
+.marquee:hover .marquee__inner {
+  animation-play-state: running;
+}
+
+@keyframes marquee {
+  0% {transform: translate3d(var(--move-initial), 0, 0);}
+  100% {transform: translate3d(var(--move-final), 0, 0);}
+}

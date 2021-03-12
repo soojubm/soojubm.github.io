@@ -160,3 +160,75 @@ createIntersectionObserver(div1, log, options)
 
 // This uses the same callback, but no options
 createIntersectionObserver(div2, log)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Create an immutable copy
+let evenMoreSandwiches = Array.from(sandwiches);
+
+// Add a few sandwiches
+sandwiches.push('italian', 'blt');
+
+// logs ["turkey", "ham", "pb&j", "italian", "blt"]
+console.log(sandwiches);
+
+// logs ["turkey", "ham", "pb&j"]
+console.log(evenMoreSandwiches);
+
+
+
+
+
+
+
+
+// Create an immutable copy
+let evenMoreLunch = Object.assign({}, lunch);
+
+// Add a snack
+lunch.snack = 'cookies';
+
+// Logs {sandwich: 'turkey', drink: soda, snack: 'cookies'}
+console.log(lunch);
+
+// Logs {sandwich: 'turkey', drink: soda}
+console.log(evenMoreLunch);
+
+
+
+
+
+
+
+var counter = document.querySelector('#counter');
+var number = 0;
+
+var countUp = function () {
+
+	// Increase number by 1
+	number++;
+
+	// Update the UI
+	counter.textContent = number;
+
+	// if the number is less than 500, run it again
+	if (number < 500) {
+		window.requestAnimationFrame(countUp);
+	}
+
+};
+
+// Start the animation
+window.requestAnimationFrame(countUp);

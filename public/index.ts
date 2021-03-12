@@ -34,7 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initializeLoader()
 
   // initializePage()
-  setDarkmode()
 
   domEvents()
 
@@ -56,6 +55,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 async function domEvents() {
   await routePage()
+
+  setDarkmode()
 
   // const themeButtonElements = document.querySelectorAll('.js-system-theme button')
   // const ACTIVE_CLASS = 'is-active'
@@ -145,7 +146,9 @@ async function domEvents() {
 
   // todo : 클래스만 쓰면 되도록 되어 있는데 각각에 이벤트를 설정해주는 방향?으로
   event.modal({ selector: '.js-modal' }).initialize()
+
   event.toggleClass({ selector: '.js-toggle' }).initialize()
+  
   event.enterTarget({ selector: '.js-hover-trigger' })
   event.tabMenu()
   event.closeParentElement({ selector: '.js-close' })

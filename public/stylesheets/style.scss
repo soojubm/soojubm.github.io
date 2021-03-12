@@ -269,7 +269,7 @@
 
 .pricing-item {max-width:400px;padding:2rem;border:$border100;box-shadow:$shadow400;box-sizing:border-box;border-radius:$radius400;position:relative;}
 .pricing-item-title {@include subhead;}
-.pricing-item-price {display:block;color:var(--gray800);font-size:2rem;}
+.pricing-item-price {display:block;@include title;}
 .pricing-item-price-unit {}
 .pricing-item-price- {color:var(--gray400);}
 .pricing-item-period {display:inline-block;color:var(--gray800);}
@@ -280,5 +280,5 @@
 .pricing-item-more {width:100%;text-decoration:underline;}
 .pricing-item ul {margin:1rem 0 3rem 0;}
 .pricing-item ul li {padding:.125rem 0;}
-.pricing-item ul li:before {content:'';}
+.pricing-item ul li:before {content:'';display:none;}
 .pricing-item .icon-check {margin:0 .5rem 0 0;border-color:$color-primary;}

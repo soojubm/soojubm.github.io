@@ -3,8 +3,8 @@
     <div class="cake-background js-scroll-animation"></div>
     <h1 class="cake-head-title">쿨 핸드 루크 (1967)</h1>
     <span class="cake-head-engtitle">Cool Hand Luke</span><br />
-    <time class="cake-head-engtitle" hidden>1967</time>
     <p class="cake-head-description">Directed by 스튜어트 로젠버그</p>
+    <time class="cake-head-time">Made at 1967</time>
     <div style="display:flex;margin:2rem 0 0 0;">
       <button class="cake-head-button">예매하기</button>
       <button class="cake-head-review">
@@ -22,8 +22,9 @@
     <ul>
       <!-- <li><b>감독</b> 스튜어트 로젠버그</li> -->
       <li><b>개봉일</b> 2019/08/07</li>
-      <li><b>러닝타임</b> 103분</li>
-      <li><b>언어</b> 미국</li>
+      <li title="runtime"><b>러닝타임</b> 103분</li>
+      <li><b>국가</b> 미국</li>
+      <li><b>언어</b> 영어</li>
       <li><b>장르</b> 드라마</li>
       <li><b>수상</b> 아카데미 남우조연상</li>
     </ul>
@@ -37,70 +38,99 @@
       <a href="">더보기</a>
     </div>
   </header>
-  <section class="cake-info">
+  <section class="cake-info cake-crew">
     <h2>출연진</h2>
-    <p class="person-list">
-      <style>
-        .person-list {
-          display: flex;
-        }
-        .person {
-          display: block;
-          width: 80px;
-          margin: 0 1rem 0 0;
-          text-align: center;
-        }
-        .person img {
-          display: block;
-          height: 80px;
-          border-radius: 8px;
-          background: var(--gray800);
-        }
-        .person span {
-          display: block;
-          margin-top: 8px;
-        }
-      </style>
+    
+    <style>
+      .person-list {
+        display: flex;
+      }
+      .person {
+        display: block;
+        margin: 0 1rem 0 0;
+        text-align: center;
+        position: relative;
+      }
+      .person figure {
+        width: 80px;
+        height: 80px;
+        overflow: hidden;
+        border-radius: 8px;
+      }
+      .person figure img {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+      }
+      .person span {
+        display: block;
+        margin-top: 8px;
+      }
+      .person-test {
+        display: inline-block;
+        margin-top: 0 !important;
+        border-radius: var(--radius400);
+        font-size: .85rem;
+        color: var(--gray800);
+      }
+    </style>
+    <div class="person-list">
       <a class="person" href="">
-        <img src="" alt="" />
+        <figure>
+          <img src="https://source.unsplash.com/random" alt="" />
+        </figure>
+        <span>스튜어트 로젠버그 (이름이 긴 경우 대응하기 힘든 유아이)</span>
+        <span class="person-test">Director</span>
+      </a>
+      <a class="person" href="">
+        <!-- <span class="person-test">Cast</span> -->
+        <figure>
+          <img src="https://source.unsplash.com/random" alt="" />
+        </figure>
         <span>폴 뉴먼</span>
       </a>
       <a class="person" href="">
-        <img src="" alt="" />
+        <figure>
+          <img src="https://source.unsplash.com/random" alt="" />
+        </figure>
         <span>폴 뉴먼</span>
       </a>
       <a class="person" href="">
-        <img src="" alt="" />
+        <figure>
+          <img src="https://source.unsplash.com/random" alt="" />
+        </figure>
         <span>폴 뉴먼</span>
       </a>
       <a class="person" href="">
-        <img src="" alt="" />
+        <figure>
+          <img src="https://source.unsplash.com/random" alt="" />
+        </figure>
         <span>폴 뉴먼</span>
       </a>
-      <a class="person" href="">
-        <img src="" alt="" />
-        <span>폴 뉴먼</span>
-      </a>
-    </p>
+    </div>
   </section>
-  <section class="cake-info">
+  <section class="cake-info cake-prize">
     <h2>수상내역</h2>
-    <p>
+    <div>
+      <b>Academy Awards</b><br />
+      <div>Best Actor</div>
+      <div>Best Supporting Actor</div>
+      <div>Best Screenplay – Based on Material from Another Medium</div>
+      <div>Best Original Music Score</div>
+      <br />
       <b>포켓 와이파이</b><br />
       데이터 요금 폭탄 걱정없이 전세계 어디서나 와이파이를 이용하세요.<br />
       일반 문의 09:00-22:00<br />
       실시간 항공권 문의 09:00-18:00<br />
       연중무휴 / 점심 12:00-13:00<br /><br />
-      <b>포켓 와이파이</b><br />
-      데이터 요금 폭탄 걱정없이 전세계 어디서나 와이파이를 이용하세요.<br />
-      일반 문의 09:00-22:00<br />
-    </p>
+    </div>
   </section>
-  <section class="cake-info">
-    <h2>체크인/체크아웃</h2>
+  <section class="cake-info cake-review">
+    <h2>리뷰</h2>
     <p>
       이 호텔에는 레스토랑, 사우나, 셀프 주차(요금 별도) 등이 마련되어 있습니다. 공용 장소에서의 WiFi의 경우 무료입니다. 이 밖에 24시간 운영 프런트 데스크 및 프런트 데스크의 귀중품 보관함도 시설 내에 마련되어 있습니다.
     </p>
+    <a href="">Read More Reviews</a>
   </section>
   <br /><br /><br /><br /><br />
   <!-- <footer style="max-width:1080px;margin:4rem auto 8rem;">

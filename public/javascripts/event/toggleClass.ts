@@ -9,38 +9,36 @@ const toggleClass = ({ selector: trigger }: Parameter) => ({
   initialize() {
     if (!this.triggers) return
 
-    this.triggers.forEach(element =>
-      element.addEventListener('click', event => {
-        event.preventDefault()
-        event.stopPropagation()
+    this.triggers.forEach(element => element.addEventListener('click', event => {
+      event.preventDefault()
+      event.stopPropagation()
 
-        const triggerNextElement = element?.nextElementSibling as HTMLElement
-        if (!triggerNextElement) return
-
-        this.toggleClassTrigger(element)
-        this.toggleClassTarget(triggerNextElement)
-  
-        this.triggers.forEach(element => {
-          const isSelf = event.target === element
-          if (!isSelf) this.remove(element)
-        })
-      }),
-    )
+      this.toggle(element)
+      // refector: for 5번 도는..
+      // clickEventTarget이 아닌 
+      this.triggers.forEach(element => {
+        const isSelf = event.target === element
+        if(!isSelf) this.remove(element)
+      })
+    }), false)
     document.body.addEventListener('click', () => this.triggers.forEach(trigger => this.remove(trigger)))
   },
-  toggleClassTrigger(element) {
+  toggle(element) {
+    const triggerNextElement = element?.nextElementSibling as HTMLElement
+    if (!triggerNextElement) return
+
     element.classList.toggle(this.ACTIVE_CLASS)
     element.setAttribute('aria-expanded', `${element.classList.contains(this.ACTIVE_CLASS)}`)
-  },
-  toggleClassTarget(element) {
-    element.classList.toggle(this.ACTIVE_CLASS2)
-    element.addEventListener('click', event => event.stopPropagation())
+
+    triggerNextElement.classList.toggle(this.ACTIVE_CLASS2)
+    triggerNextElement.addEventListener('click', event => event.stopPropagation())
   },
   remove(element) {
     element.classList.remove(this.ACTIVE_CLASS)
     element.setAttribute('aria-expanded', 'true')
     element.nextElementSibling.classList.remove(this.ACTIVE_CLASS2)
-  }
+  },
+  clickOutbound() {}
 })
 
 export default toggleClass

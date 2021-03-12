@@ -1,16 +1,15 @@
 import { throttle } from '../utils/optimizationUtils'
 
 const tabMenu = () => {
-  // todo resize throttle
-  const tabIndicator = document.querySelector<HTMLElement>('.profile-tablist-indicator')
-  const firstTab = tabIndicator?.parentNode?.querySelector<HTMLElement>('[role=tab]')
-  if (!tabIndicator || !firstTab) return
+  const indicatorElement = document.querySelector<HTMLElement>('.profile-tablist-indicator')
+  const firstTab = indicatorElement?.parentNode?.querySelector<HTMLElement>('[role=tab]')
+  if (!indicatorElement || !firstTab) return
   
-  const firstTabWidth = getComputedStyle(firstTab).width
-  tabIndicator.style.width = firstTabWidth
+  let firstTabWidth = getComputedStyle(firstTab).width
+  indicatorElement.style.width = firstTabWidth
 
   // window.addEventListener('load', () => initializeIndicator(tabIndicator, firstTabWidth))
-  document.addEventListener('resize', () => throttle(initializeIndicator(tabIndicator, firstTabWidth)))
+  document.addEventListener('resize', () => throttle(initializeIndicator(indicatorElement, firstTabWidth)))
   document.addEventListener('click', event => {
     const { target }: any = event
     const tabs = target.parentNode.querySelectorAll('[role=tab]')
@@ -20,14 +19,12 @@ const tabMenu = () => {
     if (!tabs) return
 
     if (target.closest('[role=tab]')) {
-      tabIndicator.style.left = `${target.offsetLeft}px`
-      tabIndicator.style.width = getComputedStyle(target).width
+      indicatorElement.style.left = `${target.offsetLeft}px`
+      indicatorElement.style.width = getComputedStyle(target).width
 
       tabs.forEach(tab => tab.setAttribute('aria-selected', 'false'))
       target.setAttribute('aria-selected', 'true')
 
-      // const { pathname, hash } = window.location
-      // history.pushState({ tabname: 'tester' }, 'name', `${target.name}`)
 
       tabPanels.forEach(element => {
         element.classList.add('hidden')
@@ -49,6 +46,11 @@ const tabMenu = () => {
 }
 
 export default tabMenu
+
+
+
+// const { pathname, hash } = window.location
+// history.pushState({ tabname: 'tester' }, 'name', `${target.name}`)
 
 // const tabs2 = document.querySelectorAll<HTMLElement>('[role=tab]')
 // if (!tab2) return

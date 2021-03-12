@@ -93,6 +93,8 @@ $height-header: 56px;
   --color-button-border: #000;
   --color-button-body: #000;
 
+  --gutter: 0;
+
   @media (--viewport-small) {
     --padding-card: 2rem 1.5rem;
   }
@@ -103,6 +105,9 @@ $height-header: 56px;
     --gray200: #4e5351; // divider border
     --gray400: #979d9a; // caption
     --gray800: #f1f5f6; // heading
+
+
+    --color-box-border: var(--gray100);
 
     --shadow400: 0px 0px 2rem rgba(0, 0, 0, 0.5);
 

@@ -1,19 +1,6 @@
 <main class="design">
   <header class="design-head js-scroll-animation">
     <h1 style="position:fixed;left:1rem;bottom:1rem;color:var(--gray0);font-size:.875rem;">soojubm</h1>
-    <nav>
-      <a href="">테스트1</a>
-      <a href="">테스트1</a>
-      <a href="">테스트1</a>
-      <a href="">테스트1</a>
-      <a href="">테스트1</a>
-      <a href="">테스트1</a>
-      <a href="">테스트1</a>
-      <a href="">테스트1</a>
-      <a href="">테스트1</a>
-      <a href="">테스트1</a>
-      <a href="">테스트1</a>
-    </nav>
   </header>
   <section class="hero js-scroll-animation">
     <div class="hero-inner" style="overflow:hidden;">
@@ -22,7 +9,6 @@
       <h1 class="hero-title">부끄러우니까<br />보지마요<i style="font-style:italic;">!</i></h1>
       <p class="hero-description">디자인 시스템을 스케치하는 연습장입니다. <span class="linebreaker-desktop">바닐라 자바스크립트로 만들었고 깔끔한 코드는 못 됩니다.</span></p>
 
-      <small class="hero-description" style="display:block;margin-bottom:.25rem;">디자인 시스템이 적용된 샘플 페이지</small>
       <section class="slider">
         <div class="slider-viewer" style="margin-right:-200px;padding-right:200px;">
           <a class="slider-viewer-slide" href="#profile">
@@ -145,10 +131,12 @@
         <li>모양(네모, 동그란 등), 방향(왼쪽/오른쪽/위/아래), 색상 등을 가이드 텍스트에 포함하지 마세요. (장애인 접근성)</li>
         <li><b>금액</b> KRW 기호를 사용하고 한 칸 띄어 씁니다. ₩ 1,000. formatPrice() 함수로 모듈화하세요.</li>
         <li><b>날짜</b> YYYY/MM/DD. formatDate() 함수로 모듈화하세요.</li>
-        <li>콤마, 콜론, 슬래시, 괄호, 불릿을 남용하지 마세요. <li>
+        <li>콤마, 콜론, 슬래시, 괄호, 불릿을 남용하지 마세요.<li>
         <!-- <p>충분히 복잡한 정보라고 볼 수 있기 때문에 위계를 설정하고 시각화해주세요.</p> -->
         <li>말줄임표를 사용하지 마세요. 아이콘 등 다른...</li>
-        <li>그리드 시스템을 사용하지 않습니다.</li>
+        <li>그리드 시스템을 사용하지 않습니다. 모바일 퍼스트로 사고하면.. / 4px gradient</li>
+        <li>color / cell는 mixin, spacing는 rem, gutter / padding</li>
+      
       </ol>
       <!-- <footer class="test js-system-theme">
         <button name="design-system-default">기본 값으로 보기</button>
@@ -207,6 +195,7 @@
     <article class="design-article grayscale">
       <h1 class="design-article-title">Palettes</h1>
       <p class="design-article-description">그레이스케일 한 벌로 다크 테마와 페어링합니다. gray600 제거.</p>
+  
       <h2 style="margin:0 0 .5rem;"><small>Grayscales</small></h2>
       <div class="color-group" role="group">
         <figure class="color-item is-gray100">
@@ -257,7 +246,7 @@
         </figure> -->
       </div>
       <br />
-      <h2 style="margin:0 0 .5rem;"><small>Surface</small></h2>
+      <h2 style="margin:0 0 .5rem;"><small>Surface or Elevation</small></h2>
       <figure class="surface-item">
         <div style="background:var(--gray0);"></div>
         <figcaption></figcaption>
@@ -319,8 +308,13 @@
         <a href="" class="design-article-avatar-tiny" style="box-shadow: rgb(255 255 255) 0px 0px 0px 2px;"></a>
         <a href="" class="design-article-avatar-tiny" style="margin-left:-10px;box-shadow: rgb(255 255 255) 0px 0px 0px 2px;"></a>
         <a href="" class="design-article-avatar-tiny" style="margin-left:-10px;box-shadow: rgb(255 255 255) 0px 0px 0px 2px;"></a>
-        <!-- <span style="font-size:.875rem;">포함 총 4명</span> -->
-        <!-- <a href="" class="design-article-avatar-tiny" style="margin-left:-10px;box-shadow: rgb(255 255 255) 0px 0px 0px 2px;font-size:.875rem;background:none;">1</a> -->
+        <span style="font-size:.875rem;">4명</span>
+      </div>
+      <div role="group" style="align-items:center;margin-top:1rem;margin-bottom:-.5rem;">
+        <a href="" class="design-article-avatar-small" style="box-shadow: rgb(255 255 255) 0px 0px 0px 4px;"></a>
+        <a href="" class="design-article-avatar-small" style="margin-left:-10px;box-shadow: rgb(255 255 255) 0px 0px 0px 4px;"></a>
+        <a href="" class="design-article-avatar-small" style="margin-left:-10px;box-shadow: rgb(255 255 255) 0px 0px 0px 4px;"></a>
+        <span>4명</span>
       </div>
       <hr />
       <div class="userlist" style="margin-top:1rem;overflow:hidden;">
@@ -339,7 +333,7 @@
         </figure>
         <div class="profile-user" style="width:100%;height:48px;margin-bottom:1rem;margin-top:1rem;">
           <figure class="profile-user-avatar" style="float:left;width:48px;height:48px;margin-right:1rem;background:none;border:1px solid var(--gray200);"><i class="icon-plus" style="transform:scale(1.25);"></i></figure>
-          <h2 class="profile-user-name" style="font-size:1rem;line-height:48px;">추가하기</h2>
+          <h2 class="profile-user-name" style="font-size:1rem;line-height:48px;">추가하기 (보다 긴 텍스트로 상세하게 작성하세요)</h2>
         </div>
       </div>
 
@@ -427,7 +421,6 @@
       <p>프라이머리primary 스타일은 한 페이지에 하나로 제한합니다. 시멘틱한 네이밍(solid / outline / plain / text)은 스타일의 수정이 필요할 때 싱크가 안 맞는다. 시멘틱한 네이밍은 디자인 시스템보다는 유아이 라이브러리에 어울린다. 아이콘 버튼. 아이콘이 포함된 버튼은 추가적인 시각보정이 필요할 수도 있다. 아이콘에 대한 가이드가 먼저 필요하다. 가이드가 있더라도 시각보정은 필요할 듯.</p>
       <ul class="design-article-description">
         <li>appearance = link / subtle / primary, space = compact / fullwidth, </li>
-        <li>ButtonGroup 컴포넌트.</li>
         <li>role="img" aria-label="plus icon". react? lint?에서 emoji role="img" 속성 이슈.</li>
       </ul>
       <!-- <a class="button" href="#">Anchor button</a>
@@ -482,8 +475,18 @@
     </article>
 
     <article class="design-article">
+      <h1 class="design-article-title">Button Group</h1>
+      <p class="design-article-description">샘플.</p>
+      <div class="group-sample" role="group">
+        <button class="group-sample-prev">이전</button>
+        <button class="group-sample-next">다음 <i class="icon-arrow"></i></button>
+      </div>
+    </article>
+
+
+    <article class="design-article">
       <h1 class="design-article-title">Chips</h1>
-      <p class="design-article-description">피시 앤 칩스. chip? pill? 아이콘 없이 소팅이나 필터링에서 사용할 수 있습니다. todo 상태 추가해주기. 추가 제거 아이콘을 포함하여 멀티 셀렉션에서 사용하세요.</p>
+      <p class="design-article-description">피시 앤 칩스. chip? pill? 아이콘 없이 소팅이나 필터링에서 사용할 수 있습니다. todo 상태 추가해주기. 추가 제거 아이콘을 포함하여 멀티 셀렉션에서 사용하세요. 드롭다운도 같은 디자인으로 할 수 있겠다. + numeric input</p>
       <div role="group">
         <button class="chip">기본값</button>
         <button class="chip">Typhography <span class="chip-icon"><i class="icon-plus"></i></span></button>
@@ -498,7 +501,7 @@
         <!-- <legend>Choose ingredients</legend> -->
         <div class="checkbox">
           <input class="js-checkall" type="checkbox" id="line00" value="" aira-checked="mixed" aria-controls="1 2" />
-          <label for="line00" title="Check All" style="font-weight:bold;color:var(--gray800);">모두 동의합니다</label>
+          <label for="line00" title="Check All">모두 동의합니다 (더 강조된 형태 필요)</label>
         </div>
         <hr style="margin:.5rem 0;" />
         <div class="checkbox">
@@ -517,13 +520,13 @@
         <hr />
         <div class="checkbox theme-right">
           <input class="js-check" type="checkbox" id="sheet" name="sheet" value="sheet">
-          <label for="sheet">우측 체크박스 (모바일, 시트에서)</label>
+          <label for="sheet">우측에 체크박스 있는 형태(모바일, 시트에서만 크기 조정하여 사용하세요)</label>
         </div>
       </fieldset>
     </article>
 
     <article class="design-article">
-      <h1 class="design-article-title">Radio</h1>
+      <h1 class="design-article-title">Radioes</h1>
       <p class="design-article-description">리액트에서 id 관련 이슈</p>
       <fieldset role="radiogroup">
         <!-- <legend>Choose ingredients</legend> -->
@@ -542,7 +545,7 @@
         <div class="radio theme-button">
           <input type="radio" id="raidio5" name="gender" value="">
           <label for="raidio5" title="">
-            상품 옵션 - 다크테마에서 검정색 조정하기
+            상품 옵션 (버튼 appearance)
             <b>₩ 2,000</b>
           </label>
           <div>
@@ -673,6 +676,8 @@
       <h1 class="design-article-title">Statistic</h1>
       <p class="design-article-description">내용없음</p>
       <div class="statistic"><i class="statistic-label">팔로워</i><span class="statistic-value">21,682</span></div>
+      <!-- <div class="statistic"><i class="statistic-label">Repository</i><span class="statistic-value">100만 이상</span></div> -->
+
     </article>
 
     <article class="design-article">
@@ -817,30 +822,45 @@
 
     <article class="design-article">
       <h1 class="design-article-title">Dropdown</h1>
-      <p class="design-article-description">오른쪽 정렬과 드롭업에 관한 것이 필요할까? 우선은 필요없다. min-width로 cell을 사용하면 셀 내부 텍스트가 늘어나도 대응할 있다.</p>
-      <div style="display:flex;">
-        <div class="dropdown" style="margin-right:.5rem;">
-          <button class="dropdown-trigger js-toggle" aria-haspopup="menu" aria-expanded="false" style="margin-right:1rem;">
-            <span class="dropdown-trigger-icon"><i class="icon-caret"></i></span>
-            <span class="dropdown-trigger-text">드롭다운</span>
-          </button>
-          <menu class="dropdown-menu" role="menu">
-            <h6 class="dropdown-menu-title" hidden>Dropdown header</h6>
-            <a class="dropdown-menu-link" href="" disabled>프로필 관리</a>
-            <a class="dropdown-menu-link" href="">고객센터</a>
-            <hr class="dropdown-menu-divider" />
-            <a class="dropdown-menu-link" href="">로그아웃</a>
-          </menu>
-        </div>
-        <div class="dropdown">
-          <button class="dropdown-trigger js-toggle" aria-haspopup="menu" aria-expanded="false">
-            <span class="dropdown-trigger-icon"><i class="icon-more"></i></span>
-          </button>
-          <menu class="dropdown-menu">
-            <a class="dropdown-menu-link" href="">수정</a>
-            <a class="dropdown-menu-link" href="">삭제</a>
-          </menu>
-        </div>
+      <p class="design-article-description">준비중.</p>
+      <!-- <p class="design-article-description">오른쪽 정렬과 드롭업에 관한 것이 필요할까? 우선은 필요없다. min-width로 cell을 사용하면 셀 내부 텍스트가 늘어나도 대응할 있다.</p> -->
+      <div class="dropdown" style="margin-right:.5rem;">
+        <button class="dropdown-trigger js-toggle" aria-haspopup="menu" aria-expanded="false" style="margin-right:1rem;">
+          <span class="dropdown-trigger-icon"><i class="icon-caret"></i></span>
+          <span class="dropdown-trigger-text">드롭다운</span>
+        </button>
+        <menu class="dropdown-menu" role="menu">
+          <h6 class="dropdown-menu-title" hidden>Dropdown header</h6>
+          <a class="dropdown-menu-link" href="" disabled>프로필 관리</a>
+          <a class="dropdown-menu-link" href="">고객센터</a>
+          <hr class="dropdown-menu-divider" />
+          <a class="dropdown-menu-link" href="">로그아웃</a>
+        </menu>
+      </div>
+      <div class="dropdown">
+        <button class="dropdown-trigger js-toggle" aria-haspopup="menu" aria-expanded="false">
+          <span class="dropdown-trigger-icon"><i class="icon-more"></i></span>
+        </button>
+        <menu class="dropdown-menu">
+          <a class="dropdown-menu-link" href="">수정</a>
+          <a class="dropdown-menu-link" href="">삭제</a>
+        </menu>
+      </div>
+      <div class="dropdown">
+        <button class="chip">드롭다운 칩 스타일 <span class="chip-icon"><i class="icon-more"></i></span></button>
+        </button>
+        <menu class="dropdown-menu">
+          <a class="dropdown-menu-link" href="">수정</a>
+          <a class="dropdown-menu-link" href="">삭제</a>
+        </menu>
+      </div>
+      <div class="dropdown">
+        <button class="chip">드롭다운 칩 스타일 <span class="chip-icon"><i class="icon-caret"></i></span></button>
+        </button>
+        <menu class="dropdown-menu">
+          <a class="dropdown-menu-link" href="">수정</a>
+          <a class="dropdown-menu-link" href="">삭제</a>
+        </menu>
       </div>
     </article>
 
@@ -879,6 +899,11 @@
       </aside>
     </article>
 
+    <!-- <article class="design-article grayscale">
+      <h1 class="design-article-title">Modal</h1>
+      <p class="design-article-description">데스크탑 환경에서는 닫기 버튼을 제공하지 않습니다.</p>
+    </article> -->
+
     <article class="design-article grayscale">
       <h1 class="design-article-title">Cards</h1>
       <p class="design-article-description">내용없음.</p>
@@ -912,15 +937,16 @@
         </footer>
       </div>
       <br />
-      <!-- <div class="pricing-item">
-        <small class="" title="MOST POPULAR">인기 요금제</small>
-        <i style="margin-top:-.5rem;font-size:40px;">🧞‍</i>
-        <h1 class="pricing-item-title">개인용</h1>
-        <p class="pricing-item-description">부끄러우니까 구매하지마요.</p>
+      <div class="pricing-item">
+        <!-- <small class="" title="MOST POPULAR">인기 요금제</small> -->
+        <!-- <i style="margin-top:-.5rem;font-size:40px;">🧞‍</i> -->
+        <h1 class="pricing-item-title">Standard</h1>
+        <p class="pricing-item-description">
+          Great for email-only senders who want around-the-clock support.</p>
         <span class="pricing-item-price">
           <span class="pricing-item-price-unit">₩ </span>
           <span>6,800</span>
-          <span class="pricing-item-price-" style="font-size:1rem">(1인/월)</span>
+          <p class="pricing-item-price-" style="font-size:1rem">1인/월</p>
         </span>
         <ul>
           <li><i class="icon-check"></i>아무거나 하나 써 봅니다.</li>
@@ -929,7 +955,7 @@
         </ul>
         <button class="pricing-item-upgrade">업그레이드</button>
         <button class="pricing-item-more">And More...</button>
-      </div> -->
+      </div>
     </article>
 
     <!-- <article class="design-article grayscale">
@@ -951,7 +977,7 @@
 
     <article class="design-article grayscale">
       <h1 class="design-article-title">Comment</h1>
-      <p class="design-article-description">코멘트 유아이 샘플. 대댓글 중요.</p>
+      <p class="design-article-description">샘플.</p>
       <div class="post-comment-list">
         <div class="post-comment-list-item">
           <a class="post-comment-list-item-avatar" href="#"><img src="/public/images/soo.png"></a>
@@ -982,8 +1008,8 @@
         <button class="share-facebook">facebook</button>
         <button class="share-twitter">twitter</button>
         <button class="share-kakao">kakao</button>
-        <div class="share-copy textfield is-small">
-          <input class="share-copy-url textfield-input" type="text" value="https://newneek.co/post/jadebabo" readonly />
+        <div class="share-copy textfield">
+          <input class="share-copy-url textfield-input" type="text" value="https://newneek.co/post/jadebabo (todo: truncate 필요할 지?)" readonly />
           <button class="share-copy-button copyurl js-copy" type="button" tabindex="0" style="border-color:var(--color-primary);background:var(--gray0);">
             주소 복사하기
           </button>
@@ -1157,7 +1183,7 @@
 
     <article class="design-article">
       <h1 class="design-article-title">Feedback</h1>
-      <p class="design-article-description">테스트.</p>
+      <p class="design-article-description">샘플. 선택 후 추가 정보를 받는 경우도 있음.</p>
       <aside class="help-feedback">
         <p class="help-feedback-title">이 문서가 도움이 되었나요?</p>
         <button class="help-feedback-button">도움이 됐어요</button>
@@ -1290,29 +1316,29 @@
     </article>
   </section>
 
-    <!-- <form class="filter">
-      <header class="filter-head">
-        <h1 class="filter-title">Filters</h1>
-      </header>
-      <fieldset class="filter-fieldset">
-        <legend class="filter-fieldset-legend">예약하기</legend>
-        <div class="textfield" style="float:left;width:50%;">
-          <label class="textfield-label" for="date-start"><i class="">시작일</i></label>
-          <label class="textfield-icon" for="date-start"><i class="material-icons">today</i></label>
-          <input class="textfield-input" type="date" id="date-start" placeholder="날짜를 설정해주세요." />
-          <span class="textfield-unit">cm</span>
-        </div>
-        <div class="textfield" style="float:left;width:50%;">
-          <label class="textfield-label" for="date-end">종료일</label>
-          <label class="textfield-icon " for="date-start"><i class="material-icons">today</i></label>
-          <input class="textfield-input" type="date" id="date-end" placeholder="날짜를 설정해주세요." style="border-left:none;" />
-        </div>
-      </fieldset>
-      <footer class="filter-foot">
-        <button class="filter-foot-confirm">필터링하기</button>
-        <button class="filter-foot-reset">clear filters</button>
-      </footer>
-    </form> -->
+  <!-- <form class="filter">
+    <header class="filter-head">
+      <h1 class="filter-title">Filters</h1>
+    </header>
+    <fieldset class="filter-fieldset">
+      <legend class="filter-fieldset-legend">예약하기</legend>
+      <div class="textfield" style="float:left;width:50%;">
+        <label class="textfield-label" for="date-start"><i class="">시작일</i></label>
+        <label class="textfield-icon" for="date-start"><i class="material-icons">today</i></label>
+        <input class="textfield-input" type="date" id="date-start" placeholder="날짜를 설정해주세요." />
+        <span class="textfield-unit">cm</span>
+      </div>
+      <div class="textfield" style="float:left;width:50%;">
+        <label class="textfield-label" for="date-end">종료일</label>
+        <label class="textfield-icon " for="date-start"><i class="material-icons">today</i></label>
+        <input class="textfield-input" type="date" id="date-end" placeholder="날짜를 설정해주세요." style="border-left:none;" />
+      </div>
+    </fieldset>
+    <footer class="filter-foot">
+      <button class="filter-foot-confirm">필터링하기</button>
+      <button class="filter-foot-reset">clear filters</button>
+    </footer>
+  </form> -->
 
 
     <!-- <form class="todo js-todo" style="max-width:560px;margin:0 auto;">
