@@ -96,6 +96,31 @@
 .icon-arrow.is-left {transform:rotate(180deg);}
 
 
+.icon-out {position:relative;}
+.icon-out-door {display:block;width:8px;height:12px;margin-left:-2px;border:2px solid var(--gray800);border-right:0;}
+.icon-out:before {
+  content: '';
+  position: absolute;
+  border-top: 2px solid var(--gray800);
+  border-left: 2px solid var(--gray800);
+  top: 50%;
+  width: 4px;
+  height: 4px;
+  right: -1px;
+  transform: translate(50%, -50%) rotate(135deg);}
+.icon-out:after {
+  content: '';
+  position: absolute;
+  background-color: var(--gray800);
+  top: 50%;
+  right: -3px;
+  width: 8px;
+  height: 2px;
+  transform: translate(0, -50%);
+}
+
+
+
 .icon-person {position:relative;}
 .icon-person:before {content:'';display:block;width:6px;height:6px;border-radius:50%;margin:0 auto 1px;border:2px solid var(--gray800);}
 .icon-person:after {content:'';display:block;width:14px;height:4px;margin:0 auto;border-top-left-radius:4px;border-top-right-radius:4px;border:2px solid var(--gray800);}

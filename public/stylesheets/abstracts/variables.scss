@@ -156,6 +156,11 @@ $height-header: 56px;
 
 
 
+@mixin safe-area {
+  padding:1rem 5% calc(constant(safe-area-inset-bottom) + 1rem);
+  padding:1rem 5% calc(env(safe-area-inset-bottom) + 1rem);
+}
+
 
 // layout 유동성을 위해. centered mixin은 layou의 유동성을 해친다.
 // ! box-small의 display:flex가 hidden 속성과 충돌

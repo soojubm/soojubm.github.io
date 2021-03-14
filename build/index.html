@@ -94,7 +94,7 @@
     </aside>
 
     <aside class="offline js-offline">
-      <p>인터넷에 연결되어 있지 않습니다.</p>
+      <p>희희 인터넷에 연결되어 있지 않습니다!</p>
     </aside>
 
     <aside class="loader js-loader">
@@ -172,17 +172,17 @@
             <p>최근 알림 메세지가 없습니다.</p>
           </menu> -->
           <menu class="navbar-user-notification-menu">
-            <h6 class="navbar-user-notification-menu-title" hidden>알림</h6>
+            <h6 class="navbar-user-notification-menu-title">알림</h6>
             <div class="notification-item">
+              <em class="notification-unread"></em>
               <div class="notification-item-avatar"></div>
-              <p class="notification-item-title"><b>John Cassavetes - The Godfather of...</b>에 <b>Kevin Malin</b>님이 올린 새로운 게시물이 있습니다.</p>
-              <time class="notification-item-date">5일 전</time>
+              <h2 class="notification-item-title">John Cassavetes</h2>
+              <time class="notification-item-date" style="position:absolute;right:0;top:0;">5일 전</time>
+              <span class="notification-item-title" style="color:var(--gray400);">comment on <em>John Cassavetes</em></span>
             </div>
-            <div class="notification-item">
-              <div class="notification-item-avatar"></div>
-              <p class="notification-item-title"><b>John Cassavetes - The Godfather of...</b>에 <b>Kevin Malin</b>님이 올린 새로운 게시물이 있습니다.</p>
-              <time class="notification-item-date">5일 전</time>
-            </div>
+            <footer>
+              <button>View More Notifications</button>
+            </footer>
           </menu>
         </div>
         <div class="navbar-user-account">
@@ -196,21 +196,24 @@
             </figure>
             <h2 class="user-name">soojubm</h2>
             <div class="user-email">soojubm@gamil.com</div>
-            <button class="user-myinfo">내 정보</button>
+            <button class="user-myinfo">내 프로필 관리</button>
             <hr role="separator" />
-              <div class="switch-wrap">
-                <span class="switch js-darkmode">
-                  <span class="day">🌑</span>
-                  <span class="night">🌙</span>
-                </span>
-              </div>
+            <div class="switch-wrap" style="position:absolute;right:0;top:0;">
+              <span class="switch js-darkmode">
+                <span class="day">🌑</span>
+                <span class="night">🌙</span>
+              </span>
+            </div>
+            <button class="user-logout" title="sign out">
+              <span class="user-logout-icon">
+                <i class="icon-out"><span class="icon-out-door"></span></i>
+              </span>
               어둡게 보기
-            <button class="user-logout">
-              <i class="user-logout-icon icon-close"></i>
-              서비스에 기여하세요!
             </button>
             <button class="user-logout" title="sign out">
-              <i class="user-logout-icon icon-close"></i>
+              <span class="user-logout-icon">
+                <i class="icon-out"><span class="icon-out-door"></span></i>
+              </span>
               로그아웃
             </button>
             <hr role="separator" />

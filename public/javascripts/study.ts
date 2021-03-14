@@ -232,3 +232,15 @@ var countUp = function () {
 
 // Start the animation
 window.requestAnimationFrame(countUp);
+
+
+
+
+
+
+ReactGA.initialize(process.env.REACT_APP_TRACKING_ID, { debug: true });
+  const history = createBrowserHistory();
+  history.listen((location: any) => {
+    ReactGA.set({ page: location.pathname }); // Update the user's current page
+    ReactGA.pageview(location.pathname); // Record a pageview for the given page
+  });

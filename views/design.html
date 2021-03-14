@@ -127,14 +127,20 @@
       <article class="accordion-panel">
         안녕
       </article> -->
+      <div style="margin:0 0 1rem 0;padding:1.5rem;border:1px solid var(--gray200);box-sizing:border-box;border-radius:var(--radius400);">
+        <i style="display:block;width:16px;height:16px;margin-right:1rem;border-radius:var(--radius400);background:cadetblue">💰</i>
+        <span style="line-height:16px;">금액</span>
+        <p style="display:block;line-height:1.5;">KRW 기호를 사용하고 한 칸 띄어 씁니다. ₩ 1,000. formatPrice() 함수로 모듈화하세요.</p>
+      </div>
+      <div style="width:calc(50% - 0.5rem);padding:1.5rem;border:1px solid var(--gray200);box-sizing:border-box;border-radius:var(--radius400);">
+        <i style="display:block;margin-bottom:.5rem;width:16px;height:16px;border-radius:var(--radius400);background:cadetblue"></i>
+        날짜 <b style="display:block;line-height:1.5;font-weight:bold;">YYYY/MM/DD. formatDate() 함수로 모듈화하세요.</b style="display:block;font-size:1.25rem;margin-top:.5rem;">
+      </div>
       <ol>
         <li>모양(네모, 동그란 등), 방향(왼쪽/오른쪽/위/아래), 색상 등을 가이드 텍스트에 포함하지 마세요. (장애인 접근성)</li>
-        <li><b>금액</b> KRW 기호를 사용하고 한 칸 띄어 씁니다. ₩ 1,000. formatPrice() 함수로 모듈화하세요.</li>
-        <li><b>날짜</b> YYYY/MM/DD. formatDate() 함수로 모듈화하세요.</li>
-        <li>콤마, 콜론, 슬래시, 괄호, 불릿을 남용하지 마세요.<li>
+        <li>콤마, 콜론, 슬래시, 괄호, 불릿을 남용하지 마세요.</li>
         <!-- <p>충분히 복잡한 정보라고 볼 수 있기 때문에 위계를 설정하고 시각화해주세요.</p> -->
-        <li>말줄임표를 사용하지 마세요. 아이콘 등 다른...</li>
-        <li>그리드 시스템을 사용하지 않습니다. 모바일 퍼스트로 사고하면.. / 4px gradient</li>
+        <li>말줄임표</li>
         <li>color / cell는 mixin, spacing는 rem, gutter / padding</li>
       
       </ol>
@@ -156,6 +162,15 @@
     </article> -->
 
     <article class="design-article typography">
+      <h1 class="design-article-title">Grid 🔥</h1>
+      <p class="design-article-description">그리드 시스템을 사용하지 않습니다. 모바일 퍼스트로 사고하면.. / 4px </p>
+      <div>imac ~ macbook 13' : 1440px</div>
+      <div>macbook 13' ~ tablet : 1200px</div>
+      <div>mobile : 1080px</div>
+
+    </article>
+
+    <article class="design-article typography">
       <h1 class="design-article-title">Typhography</h1>
       <p class="design-article-description">1rem을 14px로 정의합니다.</p>
       <!-- <ul class="design-article-description">
@@ -172,22 +187,27 @@
           영문 <b style="display:block;font-size:1.25rem;line-height:1.5;font-weight:bold;">Asap</b style="display:block;font-size:1.25rem;margin-top:.5rem;">
         </div>
       </div>
-      <div style="margin:1rem 0 0 0;padding:1rem 1.5rem;border:1px solid var(--gray200);border-radius:var(--radius400);">
-        <h1 style="font-size:2rem;">헤드라인headline <span style="float:right;">2rem</span></h1>
-      </div>
-      <div style="margin:1rem 0 0 0;padding:1rem 1.5rem;border:1px solid var(--gray200);border-radius:var(--radius400);">
-        <h1 style="font-size:1.25rem;">서브헤드subhead <span style="float:right;">1.25rem</span></h1>
-      </div>
-      <div style="margin:1rem 0 0 0;padding:1rem 1.5rem;border:1px solid var(--gray200);border-radius:var(--radius400);">
-        <h1 style="font-size:1rem;">바디body <span style="float:right;">1rem</span></h1>
-      </div>
-      <div style="margin:1rem 0 0 0;padding:1rem 1.5rem;border:1px solid var(--gray200);border-radius:var(--radius400);">
-        <h1 style="font-size:.875rem;">캡션caption <span style="float:right;">.875rem</span></h1>
+      <div style="margin:1rem 0 0 0;padding:1.5rem;border:1px solid var(--gray200);border-radius:var(--radius400);">
+        <h1 style="font-size:2rem;">헤드라인headline <span style="float:right;">2rem / bold</span></h1>
       </div>
       <div style="margin:1rem 0 0 0;padding:1.5rem;border:1px solid var(--gray200);border-radius:var(--radius400);">
-        <h4 class="typography-subhead" style="margin:0 0 1rem;font-size:1.25rem;line-height:1.2;font-weight:bold;"><small style="display:block;margin:0 0 .5rem 0;font-size:1rem;">선약이 있어서 ✋</small>자아실현은 못할 것 같아요.</h4>
-        <p class="typography-paragraph" style="margin: 0 0 1.5rem">서브헤드와 디스크립션 혹은 패러그라프는 이렇게 사용하세요. 서브헤드와 디스크립션 혹은 패러그라프는 이렇게 사용하세요. 서브헤드와 디스크립션 혹은 패러그라프는 이렇게 사용하세요. 서브헤드와 디스크립션 혹은 패러그라프는 이렇게 사용하세요.</p>
+        <h1 style="font-size:1.25rem;">서브헤드subhead <span style="float:right;">1.25rem / bold</span></h1>
+      </div>
+      <div style="margin:1rem 0 0 0;padding:1.5rem;border:1px solid var(--gray200);border-radius:var(--radius400);">
+        <h1 style="font-size:1rem;">바디body <span style="float:right;">1rem / normal</span></h1>
+      </div>
+      <div style="margin:1rem 0 0 0;padding:1.5rem;border:1px solid var(--gray200);border-radius:var(--radius400);">
+        <h1 style="font-size:.875rem;">캡션caption <span style="float:right;">.875rem / bold</span></h1>
+      </div>
+      <div style="margin:1rem 0 0 0;padding:1.5rem;border:1px solid var(--gray200);border-radius:var(--radius400);">
+        <h4 class="typography-subhead" style="font-size:1.25rem;line-height:1.2;font-weight:bold;"><small style="display:block;margin:0 0 .5rem 0;">선약이 있어서 ✋</small>자아실현은 못할 것 같아요.</h4>
+        <p class="typography-paragraph" style="margin: 1rem 0 1.5rem">서브헤드와 디스크립션 혹은 패러그라프는 이렇게 사용하세요. 서브헤드와 디스크립션 혹은 패러그라프는 이렇게 사용하세요. 서브헤드와 디스크립션 혹은 패러그라프는 이렇게 사용하세요. 서브헤드와 디스크립션 혹은 패러그라프는 이렇게 사용하세요.</p>
         <time class="typography-caption">10 January, 2020</time>
+        <!-- <hr />
+        <footer style="display:flex;justify-content:space-between;">
+          <a href="">Read More <i class="icon-arrow" style="margin-left:1.5rem;"></i></a>
+          <span class="tag">Category</span>
+        </footer> -->
       </div>
     </article>
 
@@ -195,14 +215,11 @@
     <article class="design-article grayscale">
       <h1 class="design-article-title">Palettes</h1>
       <p class="design-article-description">그레이스케일 한 벌로 다크 테마와 페어링합니다. gray600 제거.</p>
-  
       <h2 style="margin:0 0 .5rem;"><small>Grayscales</small></h2>
       <div class="color-group" role="group">
         <figure class="color-item is-gray100">
           <div></div>
-          <figcaption>
-            gray100
-          </figcaption>
+          <figcaption>gray100</figcaption>
         </figure>
         <figure class="color-item is-gray200">
           <div></div>
@@ -256,11 +273,9 @@
       <div class="skeleton"></div>
     </article>
 
-
     <article class="design-article">
       <h1 class="design-article-title">Avatars & Cells</h1>
-      <p class="design-article-description">아바타 및 아이콘 버튼에서 지정된 4가지 사이즈만 사용하세요. memo :: box-sizing vs calc(100% - borderWidth x 2)</p>
-
+      <p class="design-article-description">아바타에서 4가지 사이즈만 사용하세요. 아이콘 버튼에서는 small 사이즈만 사용하세요. memo :: box-sizing vs calc(100% - borderWidth x 2)</p>
       <div role="group" style="margin-bottom:-.5rem;">
         <a href="" class="design-article-avatar-large"></a>
         <a href="" class="design-article-avatar-medium"><span class="avatar-badge"></span></a>
@@ -314,26 +329,19 @@
         <a href="" class="design-article-avatar-small" style="box-shadow: rgb(255 255 255) 0px 0px 0px 4px;"></a>
         <a href="" class="design-article-avatar-small" style="margin-left:-10px;box-shadow: rgb(255 255 255) 0px 0px 0px 4px;"></a>
         <a href="" class="design-article-avatar-small" style="margin-left:-10px;box-shadow: rgb(255 255 255) 0px 0px 0px 4px;"></a>
-        <span>4명</span>
+        <span style="margin-left:.5rem;">4명??</span>
       </div>
       <hr />
       <div class="userlist" style="margin-top:1rem;overflow:hidden;">
-        <div class="profile-user" style="width:100%;height:48px;margin-bottom:1rem;">
+        <div class="profile-user" style="width:100%;height:48px;">
           <figure class="profile-user-avatar" style="float:left;width:48px;height:48px;margin-right:1rem;"></figure>
           <h2 class="profile-user-name" style="font-size:1rem;">Gyeongsoo I</h2>
           <span class="profile-user-id" style="font-size:.875rem;color:var(--gray400);">인라인 스타일로 대충.</span>
           <button class="design-article-tertiary-small" style="position:absolute;right:0;top:0;">팔로우</button>
         </div>
-        <figure class="card-item">
-          <div class="card-item-media"><img src="" alt=""></div>
-          <h4 class="card-item-name">퓨어 오렌지 주스</h4>
-          <figcaption class="card-item-price">
-            <del>19,000원</del> 16,000원 <em>할인율 20%</em>
-          </figcaption>
-        </figure>
         <div class="profile-user" style="width:100%;height:48px;margin-bottom:1rem;margin-top:1rem;">
           <figure class="profile-user-avatar" style="float:left;width:48px;height:48px;margin-right:1rem;background:none;border:1px solid var(--gray200);"><i class="icon-plus" style="transform:scale(1.25);"></i></figure>
-          <h2 class="profile-user-name" style="font-size:1rem;line-height:48px;">추가하기 (보다 긴 텍스트로 상세하게 작성하세요)</h2>
+          <h2 class="profile-user-name" style="font-size:1rem;line-height:48px;">추가하기 (보다 긴 텍스트로 상세하게 작성하세요. 아이콘 바꾸기.)</h2>
         </div>
       </div>
 
@@ -474,15 +482,14 @@
     </div>
     </article>
 
-    <article class="design-article">
+    <!-- <article class="design-article">
       <h1 class="design-article-title">Button Group</h1>
       <p class="design-article-description">샘플.</p>
       <div class="group-sample" role="group">
         <button class="group-sample-prev">이전</button>
         <button class="group-sample-next">다음 <i class="icon-arrow"></i></button>
       </div>
-    </article>
-
+    </article> -->
 
     <article class="design-article">
       <h1 class="design-article-title">Chips</h1>
@@ -612,7 +619,7 @@
       </div>
       <br />
       <div class="textfield">
-        <label class="textfield-label" for="select-label">셀렉트박스 with surfix icon</label>
+        <label class="textfield-label" for="select-label">셀렉트박스</label>
         <select class="textfield-input" name="select-select" id="select-select">
           <option class="select-option" value="select-option1">Choose an option</option>
         </select>
@@ -741,6 +748,7 @@
           <span hidden class="bx--assistive-text bx--copy-btn__feedback">Copied!</span>
           <i class="icon-file"></i>
         </button>
+        <button class="design-article-icon"><i class="icon-out"><span class="icon-out-door"></span></i></button>
         <!-- <button class="icon-button"><i class="icon-home"><span></span><span></span></i></button> -->
       </div>
     </article>
@@ -824,19 +832,10 @@
       <h1 class="design-article-title">Dropdown</h1>
       <p class="design-article-description">준비중.</p>
       <!-- <p class="design-article-description">오른쪽 정렬과 드롭업에 관한 것이 필요할까? 우선은 필요없다. min-width로 cell을 사용하면 셀 내부 텍스트가 늘어나도 대응할 있다.</p> -->
-      <div class="dropdown" style="margin-right:.5rem;">
-        <button class="dropdown-trigger js-toggle" aria-haspopup="menu" aria-expanded="false" style="margin-right:1rem;">
-          <span class="dropdown-trigger-icon"><i class="icon-caret"></i></span>
-          <span class="dropdown-trigger-text">드롭다운</span>
-        </button>
-        <menu class="dropdown-menu" role="menu">
-          <h6 class="dropdown-menu-title" hidden>Dropdown header</h6>
-          <a class="dropdown-menu-link" href="" disabled>프로필 관리</a>
-          <a class="dropdown-menu-link" href="">고객센터</a>
-          <hr class="dropdown-menu-divider" />
-          <a class="dropdown-menu-link" href="">로그아웃</a>
-        </menu>
-      </div>
+      <!-- <button class="dropdown-trigger js-toggle" aria-haspopup="menu" aria-expanded="false" style="margin-right:1rem;">
+        <span class="dropdown-trigger-icon"><i class="icon-caret"></i></span>
+        <span class="dropdown-trigger-text">드롭다운</span>
+      </button> -->
       <div class="dropdown">
         <button class="dropdown-trigger js-toggle" aria-haspopup="menu" aria-expanded="false">
           <span class="dropdown-trigger-icon"><i class="icon-more"></i></span>
@@ -847,19 +846,14 @@
         </menu>
       </div>
       <div class="dropdown">
-        <button class="chip">드롭다운 칩 스타일 <span class="chip-icon"><i class="icon-more"></i></span></button>
+        <button class="chip js-toggle">드롭다운 <span class="chip-icon"><i class="icon-caret"></i></span></button>
         </button>
-        <menu class="dropdown-menu">
-          <a class="dropdown-menu-link" href="">수정</a>
-          <a class="dropdown-menu-link" href="">삭제</a>
-        </menu>
-      </div>
-      <div class="dropdown">
-        <button class="chip">드롭다운 칩 스타일 <span class="chip-icon"><i class="icon-caret"></i></span></button>
-        </button>
-        <menu class="dropdown-menu">
-          <a class="dropdown-menu-link" href="">수정</a>
-          <a class="dropdown-menu-link" href="">삭제</a>
+        <menu class="dropdown-menu" role="menu">
+          <h6 class="dropdown-menu-title" hidden>Dropdown header</h6>
+          <a class="dropdown-menu-link" href="" disabled>프로필 관리</a>
+          <a class="dropdown-menu-link" href="">고객센터</a>
+          <hr class="dropdown-menu-divider" />
+          <a class="dropdown-menu-link" href="">로그아웃</a>
         </menu>
       </div>
     </article>
@@ -1005,10 +999,20 @@
       <article class="share">
         <h2 class="share-title">친구에게<br />이 콘텐츠를 공유해보세요!</h2>
         <button class="share-back"><i class="icon-close"></i></button>
-        <button class="share-facebook">facebook</button>
-        <button class="share-twitter">twitter</button>
-        <button class="share-kakao">kakao</button>
-        <div class="share-copy textfield">
+        <button class="share-facebook">
+          <span class="share-facebook-icon"></span>
+          facebook
+        </button>
+        <button class="share-twitter">
+          <span class="share-twitter-icon"></span>
+          twitter
+        </button>
+        <button class="share-kakao">
+          <span class="share-kakao-icon"></span>
+          kakao
+        </button>
+        <hr />
+        <div class="share-copy textfield is-small">
           <input class="share-copy-url textfield-input" type="text" value="https://newneek.co/post/jadebabo (todo: truncate 필요할 지?)" readonly />
           <button class="share-copy-button copyurl js-copy" type="button" tabindex="0" style="border-color:var(--color-primary);background:var(--gray0);">
             주소 복사하기
