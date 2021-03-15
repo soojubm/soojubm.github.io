@@ -146,10 +146,14 @@ $height-header: 56px;
 @mixin truncate {white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 @mixin truncate-multi {@include truncate;height:2.7em;white-space:normal;word-wrap:break-word;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;}
 
-@mixin container {
+
+@mixin container-card {
+  padding: 1.5rem;
+  background: var(--gray0);
   border: $border100;
   border-radius: $radius400;
   box-shadow: $shadow400;
+  position: relative;
 }
 
 @mixin image-centered {width:auto;height:auto;max-width:150%;max-height:150%;margin:auto;position:absolute;left:0;right:0;top:0;bottom:0;}
