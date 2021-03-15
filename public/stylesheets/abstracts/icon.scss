@@ -22,8 +22,8 @@
 .icon-close:after {content:'';width:2px;height:10px;background-color:var(--gray800);position:absolute;left:50%;top:50%;transform:translate(-50%, -50%) rotate(45deg);}
 
 .icon-heart {position:relative;}
-.icon-heart:before {content:'';background:var(--gray800);width:10px;height:17px;border-radius:50px 50px 0 0;transform: rotate(-45deg);position:absolute;left:-4px;top:0;}
-.icon-heart:after {content:'';background:var(--gray800);width:10px;height:17px;border-radius: 50px 50px 0 0;	transform: rotate(45deg);position:absolute;left:0;top:0;}
+.icon-heart:before {content:'';background:var(--gray800);width:7px;height:12px;border-radius:50px 50px 0 0;transform: rotate(-45deg);position:absolute;left:-5px;top:-6px;}
+.icon-heart:after {content:'';background:var(--gray800);width:7px;height:12px;border-radius: 50px 50px 0 0;	transform: rotate(45deg);position:absolute;left:-1px;top:-6px;}
 
 .icon-check {display:inline-block;width:10px;height:3px;border-left:2px solid;border-bottom:2px solid;border-color:var(--gray800);transform:translateY(-2px) rotate(-45deg);}
 
@@ -152,3 +152,62 @@
 .icon-file {position:relative;transform:translate(2px, 2px);}
 .icon-file::before {content:'';display:block;padding:3px;border:2px solid var(--gray800);position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);}
 .icon-file::after {content:'';display:block;padding:3px;border:2px solid var(--gray800);border-right:0;border-bottom:0;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);margin:-5px}
+
+
+
+
+.icon-moon {
+  height: 15px;
+  width: 15px;
+  margin-top: -9px;
+  margin-left: -9px;
+  border-radius: 50%;
+  box-shadow: 4px 4px 0 0 var(--gray800);
+}
+
+
+
+
+.icon-bell,
+.icon-bell::before {
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px
+}
+.icon-bell {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    transform: scale(var(--ggs,1));
+    border: 2px solid;
+    border-bottom: 0;
+    width: 14px;
+    height: 14px
+}
+.icon-bell::after,
+.icon-bell::before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute
+}
+.icon-bell::before {
+    background: currentColor;
+    width: 4px;
+    height: 4px;
+    top: -4px;
+    left: 3px
+}
+.icon-bell::after {
+    border-radius: 3px;
+    width: 16px;
+    height: 10px;
+    border: 6px solid transparent;
+    border-top: 1px solid transparent;
+    box-shadow:
+        inset 0 0 0 4px,
+        0 -2px 0 0;
+    top: 14px;
+    left: -3px;
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px
+}

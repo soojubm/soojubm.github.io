@@ -36,13 +36,13 @@
 .navbar-user-notification-trigger i {vertical-align:middle;color:var(--gray800);}
 .navbar-user-notification-trigger img {width:20px;pointer-events:none;}
 .navbar-user-notification-trigger em {display:block;width:.5rem;height:.5rem;border-radius:50%;border:var(--border100);box-sizing:border-box;background:$red800;text-indent:-9999px;position:absolute;right:.5rem;top:.5rem;}
-.navbar-user-notification-menu {width:400px;height:0;padding:1.5rem;border:var(--border100);box-sizing:border-box;border-radius:var(--radius400);background:var(--gray0);box-shadow:var(--shadow400);position:absolute;top:40px;right:-38px;z-index:4;transform:scale(0);transform-origin:right top}
+.navbar-user-notification-menu {width:400px;height:0;@include container-card;position:absolute;top:40px;right:-39px;z-index:4;transform:scale(0);transform-origin:right top}
 .navbar-user-notification-menu.is-visible {height:auto;transform:scale(1);}
 .navbar-user-notification-menu:before {content:'';display:block;position:absolute;left:50%;right:0;top:-8px;bottom:0;}
 .navbar-user-notification-menu-title {font-size:1.25rem;}
 .navbar-user-notification-menu-item {padding:.5rem 1rem;cursor:pointer;position:relative;}
 .navbar-user-notification-menu-item:hover {background:var(--gray100);}
-.navbar-user-notification-menu footer {margin:2rem 0 0 0;}
+.navbar-user-notification-menu footer {margin:1rem 0 0 0;}
 .navbar-user-notification-menu footer button {@include button-tertiary;width:100%;}
 
 .navbar-user-notification-empty {width:320px;height:0;padding:2rem 0;box-sizing:border-box;background:var(--gray0);box-shadow:var(--shadow400);position:absolute;top:36px;right:0;z-index:4;transform:scale(0);text-align:center;font-size:$caption;color:var(--gray400);transform-origin:right top}
@@ -53,7 +53,7 @@
 
 .notification {}
 .notification-list {padding:1rem 2rem;}
-.notification-item {margin:1rem 0;padding-left:calc(48px + 1rem);position:relative;}
+.notification-item {min-height:$cell-medium;margin:1rem 0;padding-left:calc(48px + 1rem);position:relative;}
 .notification-item:hover {@include hover-item;}
 .notification-item-avatar {@include box-medium;position:absolute;left:0;top:0;}
 .notification-item-title {font-size:1rem;}
@@ -64,7 +64,7 @@
 .navbar-user-account {position:relative;}
 .navbar-user-account-trigger {display:flex;justify-content:center;align-items:center;height:32px;}
 .navbar-user-account-trigger-media {@include box-small;background:var(--gray0);border:var(--border100);pointer-events:none;}
-.navbar-user-account-menu {width:400px;height:0;padding:1.5rem;overflow:hidden;border:$border150;box-sizing:border-box;border-radius:var(--radius400);background:var(--gray0);box-shadow:var(--shadow400);position:absolute;top:40px;right:0;z-index:4;transform:scale(0);transform-origin:right top;}
+.navbar-user-account-menu {width:400px;height:0;@include container-card;position:absolute;top:40px;right:0;z-index:4;transform:scale(0);transform-origin:right top;}
 .navbar-user-account-menu.is-visible {height:auto;transform:scale(1);}
 
 .user-avatar {float:right;@include box-large;position:relative;}

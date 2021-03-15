@@ -192,8 +192,10 @@
 .minicard-label {font-size:$caption;color:var(--gray400);}
 
 
-.userlist {padding:1.5rem;box-sizing:border-box;box-shadow:var(--shadow400);border:var(--border400);}
-.userlist h1 {@include subhead;margin:0 0 1rem 0;}
+.userlist {@include container-card;}
+.userlist header {display:flex;align-items:center;justify-content:space-between;margin:0 0 1rem 0;}
+.userlist header h1 {@include subhead;}
+.userlist header a {font-weight:bold;}
 .userlist .profile-user:hover {@include hover-item;}
 // .userlist:after {
 //   content:'';display:block;clear:both;

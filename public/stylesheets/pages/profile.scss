@@ -58,7 +58,7 @@
 .accordion-item {position:relative;}
 .accordion-item-trigger {}
 .accordion-item-panel {}
-.accordion-trigger {display:flex;align-items:center;justify-content:space-between;padding:$padding200;padding-left:0;padding-right:0;font-size:1rem;font-weight:bold;cursor:pointer;position:relative;transition:all .4s;}
+.accordion-trigger {display:flex;align-items:center;justify-content:space-between;margin:.5rem;font-size:1rem;font-weight:bold;cursor:pointer;position:relative;transition:all .4s;}
 .accordion-trigger-icon {@include box-small;}
 .accordion-trigger.is-active {color:var(--color-primary);}
 .accordion-panel {height:0;opacity:0;transition:all .25s;}

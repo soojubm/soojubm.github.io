@@ -127,12 +127,12 @@
       <article class="accordion-panel">
         안녕
       </article> -->
-      <div style="margin:0 0 1rem 0;padding:1.5rem;border:1px solid var(--gray200);box-sizing:border-box;border-radius:var(--radius400);text-align:center;">
+      <div style="margin:0 0 1rem 0;padding:1.5rem;border:1px solid var(--gray200);box-sizing:border-box;border-radius:var(--radius400);">
         <i style="display:block;margin:-3rem 0 0rem;font-size:2rem;">💰</i>
         <span>금액</span>
         <p style="display:block;line-height:1.5;">KRW 기호를 사용하고 한 칸 띄어 씁니다. ₩ 1,000. formatPrice() 함수로 모듈화하세요.</p>
       </div>
-      <div style="margin:0 0 1rem 0;padding:1.5rem;border:1px solid var(--gray200);box-sizing:border-box;border-radius:var(--radius400);text-align:center;">
+      <div style="margin:0 0 1rem 0;padding:1.5rem;border:1px solid var(--gray200);box-sizing:border-box;border-radius:var(--radius400);">
         <i style="display:block;margin:-3rem 0 0rem;font-size:2rem;">💰</i>
         <span>날짜</span>
         <p style="display:block;line-height:1.5;">YYYY/MM/DD. formatDate() 함수로 모듈화하세요.</p>
@@ -143,7 +143,9 @@
         <!-- <p>충분히 복잡한 정보라고 볼 수 있기 때문에 위계를 설정하고 시각화해주세요.</p> -->
         <li>말줄임표</li>
         <li>color / cell는 mixin, spacing는 rem, gutter / padding</li>
-      
+        <li>이모지와 아이콘은 클릭 어포던스를 강화하기 위해서만 사용하세요.</li>
+        <li>라인 아이콘/솔리드 아이콘 하나로 통일하기.</li>
+        <li>모두 / 전체 구분하기</li>
       </ol>
       <!-- <footer class="test js-system-theme">
         <button name="design-system-default">기본 값으로 보기</button>
@@ -164,16 +166,23 @@
 
     <article class="design-article typography">
       <h1 class="design-article-title">Grid 🔥</h1>
-      <p class="design-article-description">그리드 시스템을 사용하지 않습니다. 모바일 퍼스트로 사고하면.. / 4px </p>
-      <div>imac ~ macbook 13' : 1440px</div>
+      <p class="design-article-description">모바일 퍼스트로 사고하고 최소한의 그리드 시스템을 사용합니다. 컨테이너 크기를 정의하는 것이 중요. 8px grid 보다  %와 rem 사용. 그리드 시스템은 모바일에서 2개의 칼럼을 사용할 때만 지킨다. 그 외에는 가로 스크롤 트랜드에 맞춰서 컴포넌트를 유연하게 사용하는 것이 좋다.</p>
+      <div>imac ~ macbook 13' : 1440px (1680 x 1050)</div>
       <div>macbook 13' ~ tablet : 1200px</div>
       <div>mobile : 1080px</div>
-
+      <hr />
+      <div style="display:flex;max-width:375px;height:20rem;line-height:20rem;text-align:center;font-size:.875rem;border:var(--border100);">
+        <div style="width:5%;background:var(--blue100);">5%</div>
+        <div style="width:calc(50% - 5% - .5rem);background:var(--gray100);">column</div>
+        <div style="width:1rem;"></div>
+        <div style="width:calc(50% - 5% - .5rem);background:var(--gray100);">column</div>
+        <div style="width:5%;background:var(--blue100);">5%</div>
+      </div>
     </article>
 
     <article class="design-article typography">
       <h1 class="design-article-title">Typhography</h1>
-      <p class="design-article-description">1rem을 14px로 정의합니다.</p>
+      <p class="design-article-description">섞어짜기 연습. 1rem을 14px로 정의합니다. 노토 산스가 브라우저에서 랜더링될 때 보여지는 4가지 경우에 대한 글 써보기.</p>
       <!-- <ul class="design-article-description">
         <li>asap의 dash를 마이너스로 쓰면 어색.</li>
         <li>무게가 살짝 다름.</li>
@@ -264,7 +273,7 @@
         </figure> -->
       </div>
       <br />
-      <h2 style="margin:0 0 .5rem;"><small>Surface or Elevation</small></h2>
+      <h2 style="margin:0 0 .5rem;" title="Surface or Elevation"><small>Elevation</small></h2>
       <figure class="surface-item">
         <div style="background:var(--gray0);"></div>
         <figcaption></figcaption>
@@ -319,7 +328,7 @@
 
     <article class="design-article">
       <h1 class="design-article-title">Avatar Stack</h1>
-      <p class="design-article-description">tiny 사이즈 샘플.</p>
+      <p class="design-article-description">tiny 사이즈 샘플. 임시로 여기에 메모. 모두 보기 버튼이 필요한 경우 하단에 보더를 같이 사용해주세요.</p>
       <div role="group" style="align-items:center;margin-bottom:-.5rem;">
         <a href="" class="design-article-avatar-tiny" style="box-shadow: rgb(255 255 255) 0px 0px 0px 2px;"></a>
         <a href="" class="design-article-avatar-tiny" style="margin-left:-10px;box-shadow: rgb(255 255 255) 0px 0px 0px 2px;"></a>
@@ -335,16 +344,17 @@
       <hr />
       <div class="userlist" style="margin-top:1rem;overflow:hidden;">
         <header>
-          <i style="display:block;margin-bottom:.5rem;width:16px;height:16px;border-radius:var(--radius400);background:cadetblue"></i>
-          <h1>팔로워 목록</h1>
+          <h1>Followers</h1>
+          <a href="#">모두 보기</a>
         </header>
+        <hr />
         <div class="profile-user" style="width:100%;height:48px;">
           <figure class="profile-user-avatar" style="float:left;width:48px;height:48px;margin-right:1rem;"></figure>
           <h2 class="profile-user-name" style="font-size:1rem;">Gyeongsoo I</h2>
           <span class="profile-user-id" style="font-size:.875rem;color:var(--gray400);">인라인 스타일로 대충.</span>
           <button class="design-article-tertiary-small" style="position:absolute;right:0;top:0;">팔로우</button>
         </div>
-        <div class="profile-user" style="width:100%;height:48px;margin-bottom:1rem;margin-top:1rem;">
+        <div class="profile-user" style="width:100%;height:48px;margin-top:1rem;">
           <figure class="profile-user-avatar" style="float:left;width:48px;height:48px;margin-right:1rem;background:none;border:1px solid var(--gray200);"><i class="icon-plus" style="transform:scale(1.25);"></i></figure>
           <h2 class="profile-user-name" style="font-size:1rem;line-height:48px;">추가하기 (보다 긴 텍스트로 상세하게 작성하세요. 아이콘 바꾸기.)</h2>
         </div>
@@ -552,7 +562,7 @@
           <label for="gender-etc" title="Video Killed the Radio Button">Video Killed the Radio Button</label>
         </div>
       </fieldset>
-      <br />
+      <hr style="margin-top:.5rem;" />
       <fieldset>
         <div class="radio theme-button">
           <input type="radio" id="raidio5" name="gender" value="">
@@ -686,9 +696,10 @@
 
     <article class="design-article">
       <h1 class="design-article-title">Statistic</h1>
-      <p class="design-article-description">내용없음</p>
+      <p class="design-article-description">내용없음. 라틴 소문자일 때 숫자나 한글, 대문자보다 속공간이 발생.</p>
       <div class="statistic"><i class="statistic-label">팔로워</i><span class="statistic-value">21,682</span></div>
       <!-- <div class="statistic"><i class="statistic-label">Repository</i><span class="statistic-value">100만 이상</span></div> -->
+      <div class="statistic" style="margin-left:4rem;"><i class="statistic-label">Size</i><span class="statistic-value">Small</span></div>
 
     </article>
 
@@ -714,6 +725,13 @@
     </article>
 
     <article class="design-article">
+      <h1 class="design-article-title">Suggestion</h1>
+      <p class="design-article-description">role=[suggestion / deletion / insertion]</p>
+      <p class="product-info-price" role="suggestion"><del role="deletion">₩ 30,000</del> <b role="insertion">₩ 20,000</b> <em>(30%)</em></p>
+    </article>
+
+
+    <article class="design-article">
       <h1 class="design-article-title">Message</h1>
       <p class="design-article-description">샘플.  toast=>snackbar(withAction)</p>
       <aside class="message">
@@ -735,7 +753,7 @@
 
     <article class="design-article">
       <h1 class="design-article-title">CSS Icons</h1>
-      <p class="design-article-description">버튼에 포함하여 컴포넌트화 하기.</p>
+      <p class="design-article-description">대부분 시스템 아이콘. 버튼에 포함하여 컴포넌트화 하기.</p>
       <div class="dd" role="group">
         <button class="design-article-icon"><i class="icon-person"></i></button>
         <button class="design-article-icon"><i class="icon-search"></i></button>
@@ -749,7 +767,9 @@
         <button class="design-article-icon"><i class="icon-hamberger"></i></button>
         <button class="design-article-icon"><i class="icon-check"></i></button>
         <button class="design-article-icon"><i class="icon-ribbon"></i></button>
-        <button class="design-article-icon copyurl js-copy">
+        <button class="design-article-icon"><i class="icon-heart"></i></button>
+        <button class="design-article-icon"><i class="icon-moon"></i></button>
+        <button class="design-article-icon js-copy">
           <span hidden class="bx--assistive-text bx--copy-btn__feedback">Copied!</span>
           <i class="icon-file"></i>
         </button>
@@ -920,7 +940,7 @@
         <!-- <button class="quote-later">나중에보기</button> -->
       </div>
       <br />
-      <div class="profile-user" style="float:none;width:auto;max-width:400px;border:1px solid var(--gray200);padding:1.5rem 2rem;border-radius:var(--radius400);    border: 1px solid var(--gray200);
+      <div class="profile-user" style="float:none;width:auto;max-width:400px;border:1px solid var(--gray200);padding:1.5rem;border-radius:var(--radius400);    border: 1px solid var(--gray200);
       box-shadow: 0 0 2rem rgb(0 0 0 / 13%);
       background: var(--gray0);">
         <figure class="profile-user-avatar"></figure>
@@ -937,16 +957,19 @@
       </div>
       <br />
       <div class="pricing-item">
-        <!-- <small class="" title="MOST POPULAR">인기 요금제</small> -->
-        <!-- <i style="margin-top:-.5rem;font-size:40px;">🧞‍</i> -->
-        <h1 class="pricing-item-title">Standard</h1>
-        <p class="pricing-item-description">
-          Great for email-only senders who want around-the-clock support.</p>
+        <div style="display:flex;align-items:center;">
+          <div class="quote-avatar" style="margin-right:1rem;" role="img">
+            🔥
+          </div>
+          <small>Most Popular</small>
+        </div>
+        <h1 class="pricing-item-title" style="margin:1rem 0 .5rem;">Standard</h1>
         <span class="pricing-item-price">
           <span class="pricing-item-price-unit">₩ </span>
           <span>6,800</span>
-          <p class="pricing-item-price-" style="font-size:1rem">1인/월</p>
+          <span class="pricing-item-price-" style="font-size:1rem;font-weight:normal;">1인 / 월</span>
         </span>
+        <p class="pricing-item-description">전직대통령의 신분과 예우에 관하여는 법률로 정한다. 대법원장은 국회의 동의를 얻어 대통령이 임명한다.</p>
         <ul>
           <li><i class="icon-check"></i>아무거나 하나 써 봅니다.</li>
           <li><i class="icon-check"></i>아무거나 하나 써 봅니다.</li>
@@ -973,12 +996,12 @@
       </section>
     </article> -->
 
-
+    <!-- // Chris said Marcus replied -->
     <article class="design-article grayscale">
       <h1 class="design-article-title">Comment</h1>
       <p class="design-article-description">샘플.</p>
       <div class="post-comment-list">
-        <div class="post-comment-list-item">
+        <div class="post-comment-list-item" role="comment">
           <a class="post-comment-list-item-avatar" href="#"><img src="/public/images/soo.png"></a>
           <a class="post-comment-list-item-author" href="#">soojubm</a>
           <time class="post-comment-list-item-date" datetime="2016">1 day ago</time>
@@ -1019,7 +1042,7 @@
         <hr />
         <div class="share-copy textfield is-small">
           <input class="share-copy-url textfield-input" type="text" value="https://newneek.co/post/jadebabo (todo: truncate 필요할 지?)" readonly />
-          <button class="share-copy-button copyurl js-copy" type="button" tabindex="0" style="border-color:var(--color-primary);background:var(--gray0);">
+          <button class="share-copy-button js-copy" type="button" tabindex="0" style="border-color:var(--color-primary);background:var(--gray0);">
             주소 복사하기
           </button>
         </div>
@@ -1163,7 +1186,7 @@
 
     <article class="design-article">
       <h1 class="design-article-title">Bottom Navigation</h1>
-      <p class="design-article-description">제곧내.</p>
+      <p class="design-article-description">햄버거 메뉴를 사용할 때, 커머스 서비스이거나 카테고리 용도이면 왼쪽에, 전체 메뉴일 때는 오른쪽에 배치.</p>
       <nav class="bottombar">
         <a href="" class="bottombar-item is-active">
           <span class="bottombar-item-media"><i class="icon-person"></i></span>

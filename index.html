@@ -173,15 +173,24 @@
           </menu> -->
           <menu class="navbar-user-notification-menu">
             <h6 class="navbar-user-notification-menu-title">알림</h6>
+            <hr />
             <div class="notification-item">
               <em class="notification-unread"></em>
-              <div class="notification-item-avatar"></div>
+              <figure class="notification-item-avatar"></figure>
               <h2 class="notification-item-title">John Cassavetes</h2>
               <time class="notification-item-date" style="position:absolute;right:0;top:0;">5일 전</time>
               <span class="notification-item-title" style="color:var(--gray400);">comment on <em>John Cassavetes</em></span>
             </div>
+            <div class="notification-item">
+              <em class="notification-unread"></em>
+              <figure class="notification-item-avatar"></figure>
+              <h2 class="notification-item-title">John Cassavetes</h2>
+              <time class="notification-item-date" style="position:absolute;right:0;top:0;">5일 전</time>
+              <span class="notification-item-title" style="color:var(--gray400);">like on <em>John Cassavetes</em></span>
+            </div>
+            <hr />
             <footer>
-              <button>View More Notifications</button>
+              <button>알림 모두 보기</button>
             </footer>
           </menu>
         </div>
@@ -198,18 +207,30 @@
             <div class="user-email">soojubm@gamil.com</div>
             <button class="user-myinfo">내 프로필 관리</button>
             <hr role="separator" />
-            <div class="switch-wrap" style="position:absolute;right:0;top:0;">
+            <!-- <div class="switch-wrap" style="position:absolute;right:0;top:0;">
               <span class="switch js-darkmode">
                 <span class="day">🌑</span>
                 <span class="night">🌙</span>
               </span>
-            </div>
+            </div> -->
+            <button class="user-logout js-darkmode" title="change theme">
+              <span class="user-logout-icon">
+                <i class="icon-moon"></i>
+              </span>
+              어둡게 보기
+              <span class="switch" style="margin-left:auto;">
+                <span class="switch " style="margin-left:auto;">
+                <input type="checkbox" id="temp55" name="" role="switch" value="on" checked />
+                <label for="temp55" style="padding-left:48px;"></label>
+              </span>
+            </button>
             <button class="user-logout" title="sign out">
               <span class="user-logout-icon">
                 <i class="icon-out"><span class="icon-out-door"></span></i>
               </span>
-              어둡게 보기
+              고객센터 및 도움말
             </button>
+            <hr />
             <button class="user-logout" title="sign out">
               <span class="user-logout-icon">
                 <i class="icon-out"><span class="icon-out-door"></span></i>

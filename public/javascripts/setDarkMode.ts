@@ -35,31 +35,47 @@ export const carousel = () => {
   }
 }
 
+
+// todo
 export const setDarkmode = () => {
   const darkmodeButton = document.querySelector('.js-darkmode')
-  if (!darkmodeButton) return
+  console.log(darkmodeButton)
+  if(!darkmodeButton) return
+
+  darkmodeButton.addEventListener('click', tt)
 
   loadTheme()
-  darkmodeButton.addEventListener('click', tt)
-}
+  
 
-function tt() {
-  const DARK_CLASS = 'theme-dark'
-  document.body.classList.toggle(DARK_CLASS)
 
-  const isDarkmode = document.body.classList.contains(DARK_CLASS)
-  if (isDarkmode) {
-    localStorage.setItem('theme', DARK_CLASS)
-  } else {
-    localStorage.removeItem('theme')
+  function tt() {
+    const DARK_CLASS = 'theme-dark'
+    
+    document.body.classList.toggle(DARK_CLASS)
+    
+    const isDarkmode = document.body.classList.contains(DARK_CLASS)
+
+    darkmodeButton!.querySelector('input')!.checked = isDarkmode
+    // console.log(darkmodeButton!.parentNode!.querySelector('input')!.checked)
+    if (isDarkmode) {
+      localStorage.setItem('theme', DARK_CLASS)
+    } else {
+      localStorage.removeItem('theme')
+    }
+
   }
-}
 
-function loadTheme() {
-  const lastTheme = localStorage.getItem('theme')
-  if (!lastTheme) return
+  function loadTheme() {
+    const lastTheme = localStorage.getItem('theme')
+    if (!lastTheme) return
 
-  document.body.classList.add(lastTheme)
+    document.body.classList.add(lastTheme)
+
+    const DARK_CLASS = 'theme-dark'
+    const isDarkmode = document.body.classList.contains(DARK_CLASS)
+    darkmodeButton!.querySelector('input')!.checked = isDarkmode
+    // console.log(darkmodeButton!.parentNode!.querySelector('input')!.checked)
+  }
 }
 
 // function toggleTheme() {

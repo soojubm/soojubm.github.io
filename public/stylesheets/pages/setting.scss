@@ -4,7 +4,7 @@
 .setting-head-description {margin:1rem 0 0 0;}
 
 .setting-body {margin:4rem 0 0;}
-.setting-body-heading {margin:0 0 1.5rem 0;font-size:$subhead;font-weight:bold;}
+.setting-body-heading {margin:0 0 1rem 0;@include subhead;}
 .setting-body-description {margin:-1rem 0 1.5rem 0;}
 
 .setting-row {display:flex;overflow:hidden;padding:1rem 0 1.1rem;border-bottom:var(--border100);box-sizing:border-box;cursor:pointer;position:relative;}
@@ -30,6 +30,8 @@
 
 .setting-foot {margin:2rem 0;}
 .setting-foot-delete {text-decoration:underline;color:var(--gray800);}
+
+.setting-row-form {width:100%;max-width:400px;padding:1rem 0;}
 
 @media (--viewport-small) {
   .setting-row-label {width:6rem;}

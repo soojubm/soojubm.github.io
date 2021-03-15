@@ -1,7 +1,7 @@
 
 .share-trigger {@include box-small;margin:0 0 1rem 0;}
 .share-trigger svg {width:1rem;}
-.share {max-width:400px;padding:2rem;background:var(--gray0);border:var(--border100);border-radius:var(--radius400);box-shadow:var(--shadow400);box-sizing:border-box;position:relative;}
+.share {max-width:400px;@include container-card;}
 .share-back {@include box-small;position:absolute;right:.5rem;top:.5rem;}
 .share-title {width:100%;margin:0 0 2rem;font-size:$subhead;font-weight:bold;}
 .share-facebook {display:flex;align-items:center;margin:1rem 0;}
@@ -14,4 +14,4 @@
 .share-copy {display:flex;flex-wrap:wrap;width:100%;}
 .share-copy-label {}
 .share-copy-url {}
-.share-copy-button {@include box-small;width:100%;margin:.5rem 0;background:transparent;border:1px solid $blue100;background:$blue100;color:var(--color-primary);font-weight:bold;}
+.share-copy-button {@include box-small;width:100%;margin:.5rem 0 0;background:transparent;border:1px solid $blue100;background:$blue100;color:var(--color-primary);font-weight:bold;}

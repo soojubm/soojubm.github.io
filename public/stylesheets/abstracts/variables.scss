@@ -146,24 +146,7 @@ $height-header: 56px;
 @mixin truncate {white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 @mixin truncate-multi {@include truncate;height:2.7em;white-space:normal;word-wrap:break-word;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;}
 
-
-@mixin container-card {
-  padding: 1.5rem;
-  background: var(--gray0);
-  border: $border100;
-  border-radius: $radius400;
-  box-shadow: $shadow400;
-  position: relative;
-}
-
 @mixin image-centered {width:auto;height:auto;max-width:150%;max-height:150%;margin:auto;position:absolute;left:0;right:0;top:0;bottom:0;}
-
-
-
-@mixin safe-area {
-  padding:1rem 5% calc(constant(safe-area-inset-bottom) + 1rem);
-  padding:1rem 5% calc(env(safe-area-inset-bottom) + 1rem);
-}
 
 
 // layout 유동성을 위해. centered mixin은 layou의 유동성을 해친다.
@@ -198,19 +181,31 @@ $height-header: 56px;
 // item in card component
 @mixin hover-item {
   &:before {
-    content:'';display:block;background:var(--gray100);border-radius:$radius400;position:absolute;left:-.5rem;right:-.5rem;top:-.5rem;bottom:-.5rem;z-index:-1;
+    content:'';display:block;background:var(--gray100);border-radius:var(--radius400);position:absolute;left:-.5rem;right:-.5rem;top:-.5rem;bottom:-.5rem;z-index:-1;
   }
+  figure {box-shadow:var(--shadow400);}
 }
 @mixin hover-tertiary {border-color: var(--color-primary);}
 @mixin hover-text {color:var(--color-primary);}
 
-@mixin container-page {}
-@mixin container-card {}
-@mixin grid-container {
-  width: 100%;
-  padding: 2rem;
+@mixin container-page {
+  max-width: 100px; // todo
+  margin: 0 auto;
+  padding: 0 5%; // mobile padding
+  position: relative;
+}
+@mixin container-page-head {}
+
+@mixin container-card {
+  padding: 1.5rem;
+  background: var(--gray0);
+  border: $border100;
+  border-radius: $radius400;
+  box-sizing: border-box;
+  box-shadow: $shadow400;
+  position: relative;
   @media (--viewport-small) {
-    padding: 1.5rem;
+    // padding: 1.5rem;
   }
 }
 
@@ -225,6 +220,12 @@ $height-header: 56px;
 .linebreaker-mobile {
   display:inline;
   @media (--viewport-small) {display:block;}
+}
+
+
+@mixin safe-area {
+  padding:1rem 5% calc(constant(safe-area-inset-bottom) + 1rem);
+  padding:1rem 5% calc(env(safe-area-inset-bottom) + 1rem);
 }
 
 // @media (prefers-color-scheme: dark) {
