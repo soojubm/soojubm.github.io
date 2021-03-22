@@ -58,6 +58,11 @@ async function domEvents() {
 
   setDarkmode()
 
+  document.querySelector('.textbox-toolbar-bold')?.addEventListener('click', () => format('italic', null))
+  function format(command, value) {
+    alert()
+    document.execCommand(command, false, value);
+  }
   // const themeButtonElements = document.querySelectorAll('.js-system-theme button')
   // const ACTIVE_CLASS = 'is-active'
   // let classes = []

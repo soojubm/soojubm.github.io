@@ -64,6 +64,8 @@ $height-header: 56px;
   color-scheme: light dark;
   --fontstack: 'Asap', 'AritaDotum', 'Apple SD Gothic Neo', sans-serif;
   // ! fontSize
+  --caption: .875rem;
+  // ! fontWeight
   --weight700: bold;
   --weight400: normal;
   // ! colours
@@ -76,6 +78,21 @@ $height-header: 56px;
   --blue100: honeydew;
   --red100: #fff0f5;
   --color-primary:#00783e;
+
+
+
+  --text-color: var(--gray800);
+  --text-color-light: var(--gray800);
+  --text-color-highlight: var(--gray800);
+
+  --link-color: #fff;
+  --accent-color: #fff;
+  --error-color: #fff;
+
+  --button-background: #fff;
+  --button-text-color: #fff;
+
+
   
   --border100: 1px solid var(--gray200);
 
@@ -99,13 +116,22 @@ $height-header: 56px;
     --padding-card: 2rem 1.5rem;
   }
 
+  html[date-theme=dark] {}
   .theme-dark {
+    // img {
+    //   mix-blend-mode: multiply;
+    // }
+    // img {
+    //   filter: invert(100%) hue-rotate(180deg);
+    //   mix-blend-mode: screen;
+    // }
     --gray0: #343c38;
     --gray100: #4e5351; // bg
     --gray200: #4e5351; // divider border
     --gray400: #979d9a; // caption
     --gray800: #f1f5f6; // heading
 
+    --blue100: rgba(0, 107, 55, .1);
 
     --color-box-border: var(--gray100);
 
@@ -114,34 +140,17 @@ $height-header: 56px;
     color: var(--gray400);
     input[type=checkbox][role=switch] + label::after {background:#fff;}
   }
-
-
-  .design-system-newneek {
-    // ! colours
-    --gray0: #ebebeb; // white for dark theme
-    --gray100: #fff; // bg
-    --gray200: #000; // divider border
-    --gray400: #000; // caption
-    --gray800: #000; // heading
-    --color-primary:#fb7800;
-    --border100: 1px solid #000;
-    --radius400: 0px;
-    --shadow400: none;
-
-    --color-box-border: var(--gray800);
-  }
-
-  .design-system-danngn {
-    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
-    font-family: 'Noto Sans KR';
-    font-size: 16px;
-
-    --gray100: #f1f3f5;
-    --gray200: #e9ecef;
-    --color-button-borde: #e9ecef;
-    --color-primary: #ff8a3d;
-  }
 }
+
+
+// html.color-theme-in-transition,
+// html.color-theme-in-transition *,
+// html.color-theme-in-transition *:before,
+// html.color-theme-in-transition *:after {
+//   transition: all 750ms !important;
+//   transition-delay: 0 !important;
+// }
+
 
 @mixin truncate {white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 @mixin truncate-multi {@include truncate;height:2.7em;white-space:normal;word-wrap:break-word;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;}
@@ -179,6 +188,7 @@ $height-header: 56px;
 
 
 // item in card component
+// active
 @mixin hover-item {
   &:before {
     content:'';display:block;background:var(--gray100);border-radius:var(--radius400);position:absolute;left:-.5rem;right:-.5rem;top:-.5rem;bottom:-.5rem;z-index:-1;

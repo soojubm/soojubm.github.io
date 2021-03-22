@@ -74,6 +74,7 @@ export const setDarkmode = () => {
     const DARK_CLASS = 'theme-dark'
     const isDarkmode = document.body.classList.contains(DARK_CLASS)
     darkmodeButton!.querySelector('input')!.checked = isDarkmode
+
     // console.log(darkmodeButton!.parentNode!.querySelector('input')!.checked)
   }
 }
@@ -87,3 +88,14 @@ export const setDarkmode = () => {
 //   document.documentElement.setAttribute('data-theme', newTheme)
 //   localStorage.setItem('theme', newTheme)
 // }
+
+
+
+
+
+
+// document.documentElement.classList.add('color-theme-in-transition')
+// document.documentElement.setAttribute('data-theme', theme)
+// window.setTimeout(function() {
+//   document.documentElement.classList.remove('color-theme-in-transition')
+// }, 1000)

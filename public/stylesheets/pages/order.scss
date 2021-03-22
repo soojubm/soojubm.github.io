@@ -1,8 +1,8 @@
 
 .order {max-width:800px;margin:0 auto 10rem;padding:0 5%;}
 .order-head {margin:4rem 0;position:relative;}
-.order-head-title {margin:1rem 0;@include title;}
-.order-head-description {}
+.order-head-title {@include title;}
+.order-head-description {margin:1rem 0 0;}
 
 .order-item {margin:2rem 0;border:var(--border100);border-radius:var(--radius400);position:relative;}
 .order-item-head {padding:1rem 1.5rem 1.5rem;border-bottom:var(--border100);box-sizing:border-box;position:relative;}

@@ -1,4 +1,4 @@
-.banner {display:flex;justify-content:center;align-items:center;padding:2rem 0;border-radius:var(--radius400);background:var(--gray0);border:var(--border100);text-align:center;position:relative;z-index:4;}
+.banner {display:flex;justify-content:center;align-items:center;padding:2rem 0;border-radius:var(--radius400);background:var(--gray0);border:1px solid var(--color-box-border);text-align:center;position:relative;z-index:4;}
 .banner-image {margin:0 1rem 0 -4rem;}
 .banner-text {margin:0 2rem 0 0;@include subhead;}
 .banner-button {@include button-secondary;}

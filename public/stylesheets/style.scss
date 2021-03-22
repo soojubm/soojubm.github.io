@@ -274,3 +274,19 @@
 .pricing-item ul li {padding:.125rem 0;}
 .pricing-item ul li:before {content:'';display:none;}
 .pricing-item .icon-check {margin:0 .5rem 0 0;border-color:$color-primary;}
+
+
+.sheet-toggle {width:6rem;height:.5rem;border-radius:var(--radius400);background:var(--gray100);position:absolute;left:50%;top:.5rem;transform:translateX(-50%);}
+
+
+
+
+
+
+
+// mask-size: contain;
+// mask-repeat: no-repeat;
+// mask-position: center;
+// mask-size: 1rem;
+// mask-image: url(./icon-back.svg);
+// background-color: var(--link-color);

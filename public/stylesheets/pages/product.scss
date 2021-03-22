@@ -31,8 +31,8 @@
 .product-order-color-item.is-crimson {background:var(--color-primary);border:1px solid var(--color-primary)}
 .product-order-color-item.is-salmon {background:salmon;border:1px solid salmon}
 .product-order-count {margin:1rem 0;padding:1rem 0 1.25rem;border-top:var(--border100);border-bottom:var(--border100);position:relative;}
-.product-order-count-title {margin:0 0 1rem 0;font-weight:400;}
-.product-order-count-title .aaa {display:inline-block;width:8px;height:8px;margin:0 .5rem 0 0;border-radius:var(--radius400);background:salmon;vertical-align:1px}
+.product-order-count-title {display:flex;align-items:center;margin:0 0 1rem 0;line-height:$cell-tiny;font-weight:normal;}
+.product-order-count-title .aaa {@include box-tiny;margin:0 .5rem 0 0;background:salmon;}
 .product-order-count-close {@include box-small;background:none;border:none;position:absolute;right:-10px;top:10px;}
 .product-order-count-quantity {width:50%;margin:0 0;}
 .product-order-count-price {position:absolute;right:0;bottom:18px;}
@@ -120,7 +120,7 @@
 
 
 @media (--viewport-large) {
-	.product {padding:0 5%;}
+	.product {margin-top:0;padding:0 5%;}
 	.product:before {display:none;}
 	.product-image {margin:0;position:absolute;top:0;}
 	.product-info {width:auto;margin-left:60%;position:relative;left:auto;right:auto;top:auto;bottom:auto;}

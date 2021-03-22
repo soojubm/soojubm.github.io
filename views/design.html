@@ -1,7 +1,9 @@
 <main class="design">
   <header class="design-head js-scroll-animation">
-    <h1 style="position:fixed;left:1rem;bottom:1rem;color:var(--gray0);font-size:.875rem;">soojubm</h1>
+    <h1 style="position:fixed;left:1rem;bottom:1rem;color:var(--gray0);font-size:var(--caption);">soojubm</h1>
   </header>
+  <h2 style="transform:rotate(-15deg);font-size:8rem;color:var(--gray0);position:fixed;left:2rem;bottom:4rem;z-index:2;">Title</h2>
+
   <section class="hero js-scroll-animation">
     <div class="hero-inner" style="overflow:hidden;">
       <div class="hero-background"></div>
@@ -72,8 +74,15 @@
   </section>
 
   <section class="design-body">
-    <!-- <div role="textbox" contenteditable aria-placeholder="5-digit zipcode" aria-labelledby="txtboxLabel"></div> -->
+    <section class="textbox">
 
+      <div class="textbox-toolbar">
+        <button class="textbox-toolbar-bold">B</button>
+        <button class="textbox-toolbar-italic">I</button>
+      </div>
+      <div class="textfield-input" role="textbox" contenteditable="true" aria-placeholder="5-digit zipcode" aria-labelledby="txtboxLabel"></div>
+  
+    </section>
     <!-- <div class="stamp">
       <div class="circle">
         <p id="circle-content">
@@ -165,13 +174,16 @@
     </article> -->
 
     <article class="design-article typography">
-      <h1 class="design-article-title">Grid 🔥</h1>
+      <h1 class="design-article-title">Grid System 🔥</h1>
       <p class="design-article-description">모바일 퍼스트로 사고하고 최소한의 그리드 시스템을 사용합니다. 컨테이너 크기를 정의하는 것이 중요. 8px grid 보다  %와 rem 사용. 그리드 시스템은 모바일에서 2개의 칼럼을 사용할 때만 지킨다. 그 외에는 가로 스크롤 트랜드에 맞춰서 컴포넌트를 유연하게 사용하는 것이 좋다.</p>
-      <div>imac ~ macbook 13' : 1440px (1680 x 1050)</div>
-      <div>macbook 13' ~ tablet : 1200px</div>
-      <div>mobile : 1080px</div>
+      <div class="message">
+        <p class="message-head"><b>Breakpoints</b></p>
+        <p class="message-body">imac ~ macbook 13' : 1440px (1680 x 1050)</p>
+        <p class="message-body">macbook 13' ~ tablet : 1200px</p>
+        <p class="message-body">mobile : 1080px</p>
+      </div>
       <hr />
-      <div style="display:flex;max-width:375px;height:20rem;line-height:20rem;text-align:center;font-size:.875rem;border:var(--border100);">
+      <div style="display:flex;height:20rem;line-height:20rem;border-radius:var(--radius400);overflow:hidden;text-align:center;font-size:var(--caption);border:1px solid var(--color-box-border);">
         <div style="width:5%;background:var(--blue100);">5%</div>
         <div style="width:calc(50% - 5% - .5rem);background:var(--gray100);">column</div>
         <div style="width:1rem;"></div>
@@ -181,8 +193,40 @@
     </article>
 
     <article class="design-article typography">
+      <h1 class="design-article-title">Spacing System 🔥</h1>
+      <p class="design-article-description">모바일 퍼스트로 사고하고 최소한의 그리드 시스템을 사용합니다. 컨테이너 크기를 정의하는 것이 중요. 8px grid 보다  %와 rem 사용. 그리드 시스템은 모바일에서 2개의 칼럼을 사용할 때만 지킨다. 그 외에는 가로 스크롤 트랜드에 맞춰서 컴포넌트를 유연하게 사용하는 것이 좋다.</p>
+      <hr />
+      <div class="spacing-item">
+        <figure class="spacing-item-media" style="width:.5rem;"></figure>
+        <div class="spacing-item-label">.5rem</div>
+      </div>
+      <div class="spacing-item">
+        <figure class="spacing-item-media"></figure>
+        <div class="spacing-item-label">1rem</div>
+      </div>
+      <style>
+        .spacing-item {display:flex;align-items:center;margin:0 0 1rem 0;font-size:var(--caption);}
+        .spacing-item-media {width:1rem;height:1rem;margin:0 1rem 0 0;background:var(--blue100);}
+      </style>
+      <hr />
+      <div class="userlist" style="overflow:hidden;">
+        <div style="background:var(--blue100);position:absolute;left:0;right:0;top:0;bottom:calc(100% - 1.5rem);"></div>
+        <div style="background:var(--blue100);position:absolute;left:0;right:0;top:calc(100% - 1.5rem);bottom:0;z-index:0;"></div>
+        <div style="background:var(--blue100);position:absolute;left:0;right:calc(100% - 1.5rem);top:0;bottom:0;z-index:0;"></div>
+        <div style="background:var(--blue100);position:absolute;left:calc(100% - 1.5rem);right:0;top:0;bottom:0;z-index:0;"></div>
+        <button class="sheet-toggle"></button>
+        <h1>Card Spacing <small style="margin:0 0 0 1rem;color:var(--gray400);">상하좌우 각 1.5rem 1.5rem 1.5rem 1.5rem</small></h1>
+        <div style="height:1rem;background:var(--blue100);"></div>
+        <p>최상단이 텍스트인 경우 시각보정이 필요합니다. line-height. 텍스트로 끝날 때 하단 간격을 상단보다 더 주어야?</p>
+        <footer style="margin:1rem -1.5rem -1.5rem;padding:1rem 1.5rem 1.5rem;border-top:var(--border100);">
+          <button>This is a Button</button>
+        </footer>
+      </div>
+    </article>
+
+    <article class="design-article typography">
       <h1 class="design-article-title">Typhography</h1>
-      <p class="design-article-description">섞어짜기 연습. 1rem을 14px로 정의합니다. 노토 산스가 브라우저에서 랜더링될 때 보여지는 4가지 경우에 대한 글 써보기.</p>
+      <p class="design-article-description">섞어짜기 연습. 1rem을 14px로 정의합니다. 모바일에서 1rem은 12px입니다. 노토 산스가 브라우저에서 랜더링될 때 보여지는 4가지 경우에 대한 글 써보기.</p>
       <!-- <ul class="design-article-description">
         <li>asap의 dash를 마이너스로 쓰면 어색.</li>
         <li>무게가 살짝 다름.</li>
@@ -207,7 +251,7 @@
         <h1 style="font-size:1rem;">바디body <span style="float:right;">1rem</span></h1>
       </div>
       <div style="margin:1rem 0 0 0;padding:1.5rem;border:1px solid var(--gray200);border-radius:var(--radius400);">
-        <h1 style="font-size:.875rem;">캡션caption <span style="float:right;">.875rem</span></h1>
+        <h1 style="font-size:var(--caption);">캡션caption <span style="float:right;">.875rem</span></h1>
       </div>
       <div style="margin:1rem 0 0 0;padding:1.5rem;border:1px solid var(--gray200);border-radius:var(--radius400);">
         <h4 class="typography-subhead" style="font-size:1.25rem;line-height:1.2;font-weight:bold;"><small style="display:block;margin:0 0 .5rem 0;">선약이 있어서 ✋</small>자아실현은 못할 것 같아요.</h4>
@@ -224,7 +268,7 @@
     
     <article class="design-article grayscale">
       <h1 class="design-article-title">Palettes</h1>
-      <p class="design-article-description">그레이스케일 한 벌로 다크 테마와 페어링합니다. gray600 제거.</p>
+      <p class="design-article-description">그레이스케일 한 벌로 다크 테마와 페어링합니다. 다크 테마를 위해서 같은 색상이라도 여러 개의 변수가 필요할 수 있습니다. #666(레거시) base로 본문 색상을 사용하지 마세요.</p>
       <h2 style="margin:0 0 .5rem;"><small>Grayscales</small></h2>
       <div class="color-group" role="group">
         <figure class="color-item is-gray100">
@@ -313,6 +357,7 @@
         <div style="display:block;width:.5rem;height:inherit;background:var(--blue100);box-sizing:border-box;"></div>
         <div style="display:block;width:calc(100% - 16px - .5rem);height:inherit;background:var(--gray100);border-radius:var(--radius400);line-height:16px;">Text Area</div>
       </div>
+      <hr />
       <!-- <div class="minicard">
 				<span class="minicard-emoji">🦀</span>
 				<p class="minicard-value">12개</p>
@@ -328,21 +373,25 @@
 
     <article class="design-article">
       <h1 class="design-article-title">Avatar Stack</h1>
-      <p class="design-article-description">tiny 사이즈 샘플. 임시로 여기에 메모. 모두 보기 버튼이 필요한 경우 하단에 보더를 같이 사용해주세요.</p>
+      <p class="design-article-description">내가 팔로우한 유저 > 팔로우 수가 많은 유저 > 최근 유저 / 모두 보기 버튼이 필요한 경우 하단에 보더를 같이 사용해주세요.</p>
       <div role="group" style="align-items:center;margin-bottom:-.5rem;">
-        <a href="" class="design-article-avatar-tiny" style="box-shadow: rgb(255 255 255) 0px 0px 0px 2px;"></a>
-        <a href="" class="design-article-avatar-tiny" style="margin-left:-10px;box-shadow: rgb(255 255 255) 0px 0px 0px 2px;"></a>
-        <a href="" class="design-article-avatar-tiny" style="margin-left:-10px;box-shadow: rgb(255 255 255) 0px 0px 0px 2px;"></a>
-        <span style="font-size:.875rem;">4명</span>
+        <a href="" class="design-article-avatar-tiny" style="box-shadow: var(--gray0) 0px 0px 0px 2px;"></a>
+        <a href="" class="design-article-avatar-tiny" style="margin-left:-10px;box-shadow: var(--gray0) 0px 0px 0px 2px;"></a>
+        <a href="" class="design-article-avatar-tiny" style="margin-left:-10px;box-shadow: var(--gray0) 0px 0px 0px 2px;"></a>
+        <a href="" class="design-article-avatar-tiny" style="margin-left:-10px;box-shadow: var(--gray0) 0px 0px 0px 2px;"></a>
+        <small>외 8명</small>
       </div>
       <div role="group" style="align-items:center;margin-top:1rem;margin-bottom:-.5rem;">
-        <a href="" class="design-article-avatar-small" style="box-shadow: rgb(255 255 255) 0px 0px 0px 4px;"></a>
-        <a href="" class="design-article-avatar-small" style="margin-left:-10px;box-shadow: rgb(255 255 255) 0px 0px 0px 4px;"></a>
-        <a href="" class="design-article-avatar-small" style="margin-left:-10px;box-shadow: rgb(255 255 255) 0px 0px 0px 4px;"></a>
-        <span style="margin-left:.5rem;">4명??</span>
+        <a href="" class="design-article-avatar-small" style="box-shadow: var(--gray0) 0px 0px 0px 4px;"></a>
+        <a href="" class="design-article-avatar-small" style="margin-left:-1rem;box-shadow: var(--gray0) 0px 0px 0px 4px;"></a>
+        <a href="" class="design-article-avatar-small" style="margin-left:-1rem;box-shadow: var(--gray0) 0px 0px 0px 4px;"></a>
+        <a href="" class="design-article-avatar-small" style="margin-left:-1rem;box-shadow: var(--gray0) 0px 0px 0px 4px;"></a>
+        <!-- <a href="" class="design-article-avatar-small" style="margin-left:-10px;box-shadow: rgb(255 255 255) 0px 0px 0px 4px;background:var(--gray100);color:var(--gray800);">+4</a> -->
+        <span>외 18명</span>
       </div>
       <hr />
       <div class="userlist" style="margin-top:1rem;overflow:hidden;">
+        <button class="sheet-toggle"></button>
         <header>
           <h1>Followers</h1>
           <a href="#">모두 보기</a>
@@ -351,7 +400,7 @@
         <div class="profile-user" style="width:100%;height:48px;">
           <figure class="profile-user-avatar" style="float:left;width:48px;height:48px;margin-right:1rem;"></figure>
           <h2 class="profile-user-name" style="font-size:1rem;">Gyeongsoo I</h2>
-          <span class="profile-user-id" style="font-size:.875rem;color:var(--gray400);">인라인 스타일로 대충.</span>
+          <span class="profile-user-id" style="font-size:var(--caption);color:var(--gray400);">인라인 스타일로 대충.</span>
           <button class="design-article-tertiary-small" style="position:absolute;right:0;top:0;">팔로우</button>
         </div>
         <div class="profile-user" style="width:100%;height:48px;margin-top:1rem;">
@@ -403,20 +452,13 @@
 
     <article class="design-article">
       <h1 class="design-article-title">Text Links</h1>
-      <p class="design-article-description">문단 <span style="color:#00783e">내부 링크</span>와 문단 <span style="color:var(--gray800);font-weight:bold;">외부 링크</span>를 구분합니다.</p>
-      <p>형무소 안에서는 소장의 말이 곧 법이었으며 죄수들의 잘못과 실수는 결코 용납되지 않는다. 어머니의 사망 소식을 듣고 인해 2번이나 탈옥을 시도했다가 체포된 <a href="">루크</a>의 발에 쇠통이 채워지며 루크는…<a class="more" href="#" style="margin-left:.25rem;color:var(--gray800);font-weight:bold;">더 보기</a></p>
+      <p class="design-article-description">문단 <span style="color:#00783e">내부 링크</span>와 문단 <span style="color:var(--gray800);font-weight:bold;text-decoration:underline;">외부 링크</span>를 구분합니다.</p>
+      <p>형무소 안에서는 소장의 말이 곧 법이었으며 죄수들의 잘못과 실수는 결코 용납되지 않는다. 어머니의 사망 소식을 듣고 인해 2번이나 탈옥을 시도했다가 체포된 <a href="">루크</a>의 발에 쇠통이 채워지며 루크는…<a class="more" href="#" style="margin-left:.25rem;color:var(--gray800);font-weight:bold;text-decoration:underline;">더 보기</a></p>
     </article>
 
     <article class="design-article">
       <h1 class="design-article-title">Tab</h1>
-      <p class="design-article-description">스크롤스파이 적용해두기. 너무 segmented controls 스타일인데?<p>
-      <!-- <nav class="tablist is-vertical" style="margin-top:1rem" role="tablist">
-        <div class="tablist-active"></div>
-        <button class="tablist-tab is-active" role="tab" aria-selected="true" data-index="1">웹사이트 <i class="tablist-tab-badge">4</i></button>
-        <button class="tablist-tab" role="tab" aria-selected="false" data-index="2">페이지 <i class="tablist-tab-badge">6</i></button>
-        <button class="tablist-tab" role="tab" aria-selected="false" data-index="3">컴포넌트 <i class="tablist-tab-badge">18</i></button>
-        <button class="tablist-tab" role="tab" aria-selected="false" data-index="4">빈 상태 <i class="tablist-tab-badge">18</i></button>
-      </nav> -->
+      <p class="design-article-description">스크롤스파이 적용해두기. 너무 segmented controls 스타일이긴 한데 2, 3개 탭을 충첩해야 할 때 개선하기.<p>
       <nav class="profile-tablist" role="tablist">
 				<button class="profile-tablist-tab" role="tab" aria-selected="true" data-index="1">🐗 프로젝트 <i class="profile-tablist-tab-badge">5</i></button>
 				<button class="profile-tablist-tab" role="tab" aria-selected="false" data-index="2">🕸️ 웹페이지 <i class="profile-tablist-tab-badge">5</i></button>
@@ -427,7 +469,7 @@
 
     <article class="design-article">
       <h1 class="design-article-title">Tags</h1>
-      <p class="design-article-description">임시로 code태그로 마크업해서 사용 중인데 바꿔줘야 함. 가이드에 없는 세로값.</p>
+      <p class="design-article-description">가이드에 없는 세로값 사용 중.</p>
       <div class="tags" role="group">
         <span class="tag tags-item" role="listitem">해시태그</span>
         <span class="tag tags-item" style="padding:0 .5rem;border-radius:var(--radius400);background:var(--blue100);color:var(--color-primary);" role="listitem">해시태그</span>
@@ -441,9 +483,9 @@
 
     <article class="design-article">
       <h1 class="design-article-title">Buttons</h1>
-      <p>프라이머리primary 스타일은 한 페이지에 하나로 제한합니다. 시멘틱한 네이밍(solid / outline / plain / text)은 스타일의 수정이 필요할 때 싱크가 안 맞는다. 시멘틱한 네이밍은 디자인 시스템보다는 유아이 라이브러리에 어울린다. 아이콘 버튼. 아이콘이 포함된 버튼은 추가적인 시각보정이 필요할 수도 있다. 아이콘에 대한 가이드가 먼저 필요하다. 가이드가 있더라도 시각보정은 필요할 듯.</p>
+      <p>프라이머리primary 스타일은 한 페이지에 하나로 제한합니다. 시멘틱 네이밍(solid/outline/plain/text 등)은 디자인 시스템보다는 유아이 라이브러리에 어울리기 때문에 (primary/secondary/ 뭐라고 하지?)를 사용하세요. 아이콘 버튼. 아이코노그라피나 시각보정</p>
       <ul class="design-article-description">
-        <li>appearance = link / subtle / primary, space = compact / fullwidth, </li>
+        <li>appearance = link / subtle / primary, space = compact / fullwidth</li>
         <li>role="img" aria-label="plus icon". react? lint?에서 emoji role="img" 속성 이슈.</li>
       </ul>
       <!-- <a class="button" href="#">Anchor button</a>
@@ -451,7 +493,7 @@
       <input type="submit" value="submit input">
       <input type="button" value="button input"> -->
       <div>
-        <h6 style="margin:0 0 .5rem;font-size:.875rem;">Default Sizes</h6>
+        <h6 style="margin:0 0 .5rem;font-size:var(--caption);">Default Sizes</h6>
         <div class="button-group" role="group">
           <button class="design-article-primary">프라이머리</button>
           <button class="design-article-secondary">세컨더리</button>
@@ -461,7 +503,7 @@
           <!-- <button class="success-button" aria-label="success">Success</button> -->
         </div>
         <br />
-        <h6 style="margin:0 0 .5rem;font-size:.875rem;">Small Sizes</h6>
+        <h6 style="margin:0 0 .5rem;font-size:var(--caption);">Small Sizes</h6>
         <div role="group">
           <button class="design-article-primary-small">프라이머리</button>
           <!-- <button class="danger-button is-small" aria-label="danger">Danger</button>
@@ -471,7 +513,7 @@
           <button class="design-article-text-small">텍스트</button>
         </div>
         <br />
-        <h6 style="margin:0 0 .5rem;font-size:.875rem;">Disabled States</h6>
+        <h6 style="margin:0 0 .5rem;font-size:var(--caption);">Disabled States</h6>
         <div role="group">
           <button class="design-article-primary-small" disabled>프라이머리</button>
           <!-- <button class="design-article-secondary-small" disabled>세컨더리</button> -->
@@ -479,7 +521,7 @@
           <button class="design-article-text-small" disabled>텍스트</button>
         </div>
         <br />
-        <h6 style="margin:0 0 .5rem;font-size:.875rem;">huge - 이벤트 페이지 등에서 사용하세요. primary only.</h6>
+        <h6 style="margin:0 0 .5rem;font-size:var(--caption);">huge - 이벤트 페이지 등에서 사용하세요. primary only.</h6>
         <div role="group">
           <button class="design-article-primary" style="min-width:320px;;padding:12px 0 15px;font-size:1.25rem;">
             알림 신청하기
@@ -489,7 +531,7 @@
           </button>
         </div>
         <br />
-        <h6 style="margin:0 0 .5rem;font-size:.875rem;">isFetching 샘플</h6>
+        <h6 style="margin:0 0 .5rem;font-size:var(--caption);">isFetching 샘플</h6>
         <button class="loadmore is-fetching">
           <!-- <div class="spinner" style="margin-left:0;margin-right:1rem;"></div> -->
           Loading More...
@@ -518,7 +560,7 @@
 
     <article class="design-article">
       <h1 class="design-article-title">Checkboxes</h1>
-      <p class="design-article-description">인라인 정렬하지 않습니다. 공간의 제약으로 인라인 정렬이 필요하다면, chip을 사용하세요. / checkall, intermediate</p>
+      <p class="design-article-description">인라인 정렬하지 않습니다. 공간의 제약으로 인라인 정렬이 필요하다면, chip 스타일을 사용하세요. checkall, intermediate</p>
       <fieldset>
         <!-- <legend>Choose ingredients</legend> -->
         <div class="checkbox">
@@ -592,7 +634,7 @@
 
     <article class="design-article">
       <h1 class="design-article-title">Textfield</h1>
-      <p class="design-article-description">Input text, Textarea, Selectbox, with Icon, with Unit, with Button. button과 unit, icon 등은 prefix(leading)/surfix(tailing)</p>
+      <p class="design-article-description">button과 unit, icon 등은 prefix(leading)/surfix(tailing)</p>
       <div class="quantity js-quantity">
         <input class="quantity-input js-quantity-input js-number-input" name="quantity1" type="number" value="0" min="5" max="20" >
         <!-- <input type="text" inputmode="numeric" pattern="[0-9]*"> -->
@@ -601,7 +643,7 @@
       </div>
       <br />
       <div class="textfield is-invalid">
-        <label class="textfield-label" for="abc123">레이블 <abbr aria-label="optional" style="font-size:.875rem;">선택입력</abbr></label>
+        <label class="textfield-label" for="abc123">레이블 <abbr aria-label="optional" style="font-size:var(--caption);">선택입력</abbr></label>
         <input class="textfield-input js-input-test" type="text" id="abc123" placeholder="Textarea Placeholder..." value="soojubm@gmail.com" aria-describedby="error" aria-invalid="true" />
         <small class="textfield-helper is-error">이미 사용 중인 이메일입니다.</small>
       </div>
@@ -855,7 +897,7 @@
 
     <article class="design-article">
       <h1 class="design-article-title">Dropdown</h1>
-      <p class="design-article-description">준비중.</p>
+      <p class="design-article-description">Chip과 같은 스타일로 사용해보기.</p>
       <!-- <p class="design-article-description">오른쪽 정렬과 드롭업에 관한 것이 필요할까? 우선은 필요없다. min-width로 cell을 사용하면 셀 내부 텍스트가 늘어나도 대응할 있다.</p> -->
       <!-- <button class="dropdown-trigger js-toggle" aria-haspopup="menu" aria-expanded="false" style="margin-right:1rem;">
         <span class="dropdown-trigger-icon"><i class="icon-caret"></i></span>
@@ -1065,7 +1107,7 @@
     </script> -->
     <article class="design-article">
       <h1 class="design-article-title">Paginations</h1>
-      <p class="design-article-description">페이지네이션의 첫 페이지와 마지막 페이지에 더블 화살표 아이콘 대신 최초와 최종 페이지를 노출하세요.</p>
+      <p class="design-article-description">첫 페이지와 마지막 페이지에 더블 화살표 아이콘 대신 최초와 최종 페이지를 노출하세요.</p>
       <nav class="pagination" role="navigation" aria-label="pagination">
         <a class="pagination-previous" href="#" title="앞 페이지로 이동" aria-label="">Previous</a>
         <a class="pagination-next" href="#" title="뒷 페이지로 이동">Next</a>
@@ -1162,7 +1204,7 @@
 
     <article class="design-article">
       <h1 class="design-article-title">Accordions</h1>
-      <p class="design-article-description">디테일 풀어줄 때 사용. 공지사항 정도의 간단한 게시글에서도 사용할 수 있으나 그 이상의 경우에는 다른 유아이.</p>
+      <p class="design-article-description">질의응답 등 필요한 정보를 제목만 보고 찾아야 하는 경우에만 사용하세요. 공지사항 정도의 간단한 게시글에서도 사용할 수 있으나 그 이상의 경우에는 다른 유아이.</p>
       <!-- <details class="details">
         <summary class="details-summary">써머리</summary>
         <p>안녕</p>
@@ -1257,7 +1299,7 @@
       <div class="rating2 is-large">
         <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 12px; width: 12px; fill: crimson;"><path d="M15.094 1.579l-4.124 8.885-9.86 1.27a1 1 0 0 0-.542 1.736l7.293 6.565-1.965 9.852a1 1 0 0 0 1.483 1.061L16 25.951l8.625 4.997a1 1 0 0 0 1.482-1.06l-1.965-9.853 7.293-6.565a1 1 0 0 0-.541-1.735l-9.86-1.271-4.127-8.885a1 1 0 0 0-1.814 0z" fill-rule="evenodd"></path></svg>
         <b class="rating2-score">4.71점</b>
-        <small style="margin-left:.25rem;"> 277개</small>
+        <small style="margin-left:.5rem;color:var(--gray400);font-weight:normal;"> 192개</small>
       </div>
       <div class="rating2">
         <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 12px; width: 12px; fill: crimson;"><path d="M15.094 1.579l-4.124 8.885-9.86 1.27a1 1 0 0 0-.542 1.736l7.293 6.565-1.965 9.852a1 1 0 0 0 1.483 1.061L16 25.951l8.625 4.997a1 1 0 0 0 1.482-1.06l-1.965-9.853 7.293-6.565a1 1 0 0 0-.541-1.735l-9.86-1.271-4.127-8.885a1 1 0 0 0-1.814 0z" fill-rule="evenodd"></path></svg>

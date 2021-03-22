@@ -1,8 +1,8 @@
-.cart {max-width:$container600;margin:0rem auto;padding:4rem 5% 10rem;}
+.cart {max-width:$container600;margin:0rem auto;padding:2rem 5% 10rem;}
 .cart-head {}
 .cart-title {margin:.5rem 0 0 0;@include title;position:relative;}
 .cart-description {}
-.cart-head time {display:block;margin:3rem 0 0;}
+.cart-head time {display:block;margin:2rem 0 0;}
 
 .cart-item {padding:2rem 0;background:var(--gray0);position:relative;}
 .cart-item + .cart-item {border-top:var(--border100);}
