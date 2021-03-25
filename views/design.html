@@ -2,7 +2,7 @@
   <header class="design-head js-scroll-animation">
     <h1 style="position:fixed;left:1rem;bottom:1rem;color:var(--gray0);font-size:var(--caption);">soojubm</h1>
   </header>
-  <h2 style="transform:rotate(-15deg);font-size:8rem;color:var(--gray0);position:fixed;left:2rem;bottom:4rem;z-index:2;">Title</h2>
+  <!-- <h2 style="transform:rotate(-15deg);font-size:8rem;color:var(--gray0);position:fixed;left:2rem;bottom:4rem;z-index:2;">Title</h2> -->
 
   <section class="hero js-scroll-animation">
     <div class="hero-inner" style="overflow:hidden;">
@@ -137,17 +137,15 @@
         안녕
       </article> -->
       <div style="margin:0 0 1rem 0;padding:1.5rem;border:1px solid var(--gray200);box-sizing:border-box;border-radius:var(--radius400);">
-        <i style="display:block;margin:-3rem 0 0rem;font-size:2rem;">💰</i>
         <span>금액</span>
-        <p style="display:block;line-height:1.5;">KRW 기호를 사용하고 한 칸 띄어 씁니다. ₩ 1,000. formatPrice() 함수로 모듈화하세요.</p>
+        <p>KRW 기호를 사용하고 한 칸 띄어 씁니다. ₩ 1,000. formatPrice() 함수로 모듈화하세요.</p>
       </div>
       <div style="margin:0 0 1rem 0;padding:1.5rem;border:1px solid var(--gray200);box-sizing:border-box;border-radius:var(--radius400);">
-        <i style="display:block;margin:-3rem 0 0rem;font-size:2rem;">💰</i>
         <span>날짜</span>
-        <p style="display:block;line-height:1.5;">YYYY/MM/DD. formatDate() 함수로 모듈화하세요.</p>
+        <p>YYYY/MM/DD. formatDate() 함수로 모듈화하세요.</p>
       </div>
       <ol>
-        <li>모양(네모, 동그란 등), 방향(왼쪽/오른쪽/위/아래), 색상 등을 가이드 텍스트에 포함하지 마세요. (장애인 접근성)</li>
+        <li>모양(네모, 동그란 등), 방향(왼쪽/오른쪽/위/아래), 위치(여기/이곳), 색상 등을 가이드 텍스트에 포함하지 마세요. (장애인 접근성)</li>
         <li>콤마, 콜론, 슬래시, 괄호, 불릿을 남용하지 마세요.</li>
         <!-- <p>충분히 복잡한 정보라고 볼 수 있기 때문에 위계를 설정하고 시각화해주세요.</p> -->
         <li>말줄임표</li>
@@ -176,12 +174,11 @@
     <article class="design-article typography">
       <h1 class="design-article-title">Grid System 🔥</h1>
       <p class="design-article-description">모바일 퍼스트로 사고하고 최소한의 그리드 시스템을 사용합니다. 컨테이너 크기를 정의하는 것이 중요. 8px grid 보다  %와 rem 사용. 그리드 시스템은 모바일에서 2개의 칼럼을 사용할 때만 지킨다. 그 외에는 가로 스크롤 트랜드에 맞춰서 컴포넌트를 유연하게 사용하는 것이 좋다.</p>
-      <div class="message">
-        <p class="message-head"><b>Breakpoints</b></p>
-        <p class="message-body">imac ~ macbook 13' : 1440px (1680 x 1050)</p>
-        <p class="message-body">macbook 13' ~ tablet : 1200px</p>
-        <p class="message-body">mobile : 1080px</p>
-      </div>
+      <hr />
+      <p><b>Breakpoints</b></p>
+      <p>imac ~ macbook 13' : 1440px (1680 x 1050)</p>
+      <p>macbook 13' ~ tablet : 1080px</p>
+      <p>mobile : 100%</p>
       <hr />
       <div style="display:flex;height:20rem;line-height:20rem;border-radius:var(--radius400);overflow:hidden;text-align:center;font-size:var(--caption);border:1px solid var(--color-box-border);">
         <div style="width:5%;background:var(--blue100);">5%</div>
@@ -225,6 +222,19 @@
     </article>
 
     <article class="design-article typography">
+      <h1 class="design-article-title">Positioning System 🔥</h1>
+      <p class="design-article-description">마크업 구조를 단순하게 유지하기 위하여 position 속성을 적극적으로 활용하세요.</p>
+      <div>
+        bottom fix in window / iphone safe area 고려
+      </div>
+      <div>
+        right top in card / 주로 닫기 버튼에 사용한다. .25rem
+        left top에서 사용하고 sticky.
+      </div>
+      
+    </article>
+
+    <article class="design-article typography">
       <h1 class="design-article-title">Typhography</h1>
       <p class="design-article-description">섞어짜기 연습. 1rem을 14px로 정의합니다. 모바일에서 1rem은 12px입니다. 노토 산스가 브라우저에서 랜더링될 때 보여지는 4가지 경우에 대한 글 써보기.</p>
       <!-- <ul class="design-article-description">
@@ -254,7 +264,7 @@
         <h1 style="font-size:var(--caption);">캡션caption <span style="float:right;">.875rem</span></h1>
       </div>
       <div style="margin:1rem 0 0 0;padding:1.5rem;border:1px solid var(--gray200);border-radius:var(--radius400);">
-        <h4 class="typography-subhead" style="font-size:1.25rem;line-height:1.2;font-weight:bold;"><small style="display:block;margin:0 0 .5rem 0;">선약이 있어서 ✋</small>자아실현은 못할 것 같아요.</h4>
+        <h4 class="typography-subhead" style="font-size:1.25rem;">선약이 있어서 ✋<br />자아실현은 못할 것 같아요.</h4>
         <p class="typography-paragraph" style="margin: 1rem 0 1.5rem">서브헤드와 디스크립션 혹은 패러그라프는 이렇게 사용하세요. 서브헤드와 디스크립션 혹은 패러그라프는 이렇게 사용하세요. 서브헤드와 디스크립션 혹은 패러그라프는 이렇게 사용하세요. 서브헤드와 디스크립션 혹은 패러그라프는 이렇게 사용하세요.</p>
         <time class="typography-caption">10 January, 2020</time>
         <!-- <hr />
@@ -330,34 +340,26 @@
     <article class="design-article">
       <h1 class="design-article-title">Avatars & Cells</h1>
       <p class="design-article-description">아바타에서 4가지 사이즈만 사용하세요. 아이콘 버튼에서는 small 사이즈만 사용하세요. memo :: box-sizing vs calc(100% - borderWidth x 2)</p>
-      <div role="group" style="margin-bottom:-.5rem;">
-        <a href="" class="design-article-avatar-large"></a>
-        <a href="" class="design-article-avatar-medium"><span class="avatar-badge"></span></a>
-        <a href="" class="design-article-avatar-small"></a>
-        <a href="" class="design-article-avatar-tiny"></a>
-      </div>
-      <hr role="separator" />
-      <div style="display:flex;margin-bottom:1rem;">
-        <a href="" class="design-article-avatar-large"></a>
+      <div style="display:flex;margin-bottom:1rem;border-radius:var(--radius400);">
+        <a href="" class="design-article-avatar-large"><span class="avatar-badge"></span></a>
         <div style="display:block;width:1.5rem;height:inherit;background:var(--blue100);"></div>
-        <div style="display:block;width:calc(100% - 80px - 1.5rem);height:inherit;background:var(--gray100);border-radius:var(--radius400);">Text Area</div>
+        <div style="display:block;width:calc(100% - 80px - 1.5rem);height:inherit;background:var(--gray100);">Large Size</div>
       </div>
-      <div style="display:flex;margin-bottom:1rem;">
+      <div style="display:flex;margin-bottom:1rem;border-radius:var(--radius400);">
         <a href="" class="design-article-avatar-medium"></a>
         <div style="display:block;width:1rem;height:inherit;background:var(--blue100);box-sizing:border-box;"></div>
-        <div style="display:block;width:calc(100% - 48px - 1rem);height:inherit;background:var(--gray100);border-radius:var(--radius400);">Text Area</div>
+        <div style="display:block;width:calc(100% - 48px - 1rem);height:inherit;background:var(--gray100);">Medium Size</div>
       </div>
-      <div style="display:flex;align-items:center;margin-bottom:1rem;">
+      <div style="display:flex;align-items:center;margin-bottom:1rem;border-radius:var(--radius400);">
         <a href="" class="design-article-avatar-small"></a>
         <div style="display:block;width:1rem;height:32px;background:var(--blue100);box-sizing:border-box;"></div>
-        <div style="display:block;width:calc(100% - 32px - 1rem);height:32px;background:var(--gray100);border-radius:var(--radius400);">Text Area</div>
+        <div style="display:block;width:calc(100% - 32px - 1rem);height:32px;background:var(--gray100);">Small Size</div>
       </div>
-      <div style="display:flex;">
+      <div style="display:flex;border-radius:var(--radius400);">
         <a href="" class="design-article-avatar-tiny"></a>
         <div style="display:block;width:.5rem;height:inherit;background:var(--blue100);box-sizing:border-box;"></div>
-        <div style="display:block;width:calc(100% - 16px - .5rem);height:inherit;background:var(--gray100);border-radius:var(--radius400);line-height:16px;">Text Area</div>
+        <div style="display:block;width:calc(100% - 16px - .5rem);height:inherit;background:var(--gray100);line-height:16px;">Tiny Size</div>
       </div>
-      <hr />
       <!-- <div class="minicard">
 				<span class="minicard-emoji">🦀</span>
 				<p class="minicard-value">12개</p>
@@ -400,12 +402,12 @@
         <div class="profile-user" style="width:100%;height:48px;">
           <figure class="profile-user-avatar" style="float:left;width:48px;height:48px;margin-right:1rem;"></figure>
           <h2 class="profile-user-name" style="font-size:1rem;">Gyeongsoo I</h2>
-          <span class="profile-user-id" style="font-size:var(--caption);color:var(--gray400);">인라인 스타일로 대충.</span>
+          <span class="profile-user-id" style="color:var(--gray400);">인라인 스타일로 대충</span>
           <button class="design-article-tertiary-small" style="position:absolute;right:0;top:0;">팔로우</button>
         </div>
         <div class="profile-user" style="width:100%;height:48px;margin-top:1rem;">
           <figure class="profile-user-avatar" style="float:left;width:48px;height:48px;margin-right:1rem;background:none;border:1px solid var(--gray200);"><i class="icon-plus" style="transform:scale(1.25);"></i></figure>
-          <h2 class="profile-user-name" style="font-size:1rem;line-height:48px;">추가하기 (보다 긴 텍스트로 상세하게 작성하세요. 아이콘 바꾸기.)</h2>
+          <h2 class="profile-user-name" style="font-size:1rem;line-height:48px;">추가하기 (보다 긴 텍스트로 상세하게 작성하세요.)</h2>
         </div>
       </div>
 
@@ -429,20 +431,17 @@
     <article class="design-article">
       <h1 class="design-article-title">Seperator</h1>
       <p class="design-article-description">섹션을 구획할 때 border 스타일링보다 hr / br 태그로 마크업하면 컴포넌트 고유성(?)을 유지하기 쉽습니다. 그렇게 하려면 hr / br 태그에 대한 가이드가 필요하겠죠?</p>
+      <pre>
+        <hr role="separator" />
+      </pre>
       <hr role="separator" />
-
-      <!-- <code>
-        <pre>
-          <hr role="separator" />
-        </pre>
-      </code> -->
     </article>
 
     <article class="design-article">
       <h1 class="design-article-title">breadcrumb</h1>
-      <p class="design-article-description">페이지 레벨이 3단계 이상일 때 사용하세요. 모바일 환경에서 사용하지 마세요.</p>
+      <p class="design-article-description">페이지 레벨이 3단계 이상이며 캠페인 등에서 랜딩될 수 있는 페이지(상세페이지 등)에서 사용하세요. 모바일 환경에서 사용하지 마세요.</p>
       <nav class="breadcrumb" aria-label="breadcrumb">
-        <a class="breadcrumb-item breadcrumb-home" href="/">Home</a>
+        <a class="breadcrumb-item breadcrumb-home" href="/">홈</a>
         <i class="breadcrumb-divider">/</i>
         <a class="breadcrumb-item " href="#">페이지 이름</a>
         <i class="breadcrumb-divider">/</i>
@@ -452,13 +451,13 @@
 
     <article class="design-article">
       <h1 class="design-article-title">Text Links</h1>
-      <p class="design-article-description">문단 <span style="color:#00783e">내부 링크</span>와 문단 <span style="color:var(--gray800);font-weight:bold;text-decoration:underline;">외부 링크</span>를 구분합니다.</p>
-      <p>형무소 안에서는 소장의 말이 곧 법이었으며 죄수들의 잘못과 실수는 결코 용납되지 않는다. 어머니의 사망 소식을 듣고 인해 2번이나 탈옥을 시도했다가 체포된 <a href="">루크</a>의 발에 쇠통이 채워지며 루크는…<a class="more" href="#" style="margin-left:.25rem;color:var(--gray800);font-weight:bold;text-decoration:underline;">더 보기</a></p>
+      <p class="design-article-description">문단 <span style="color:#00783e">내부 링크</span>와 문단 <span style="color:var(--gray800);text-decoration:underline;">외부 링크</span>를 구분합니다.</p>
+      <p>형무소 안에서는 소장의 말이 곧 법이었으며 죄수들의 잘못과 실수는 결코 용납되지 않는다. 어머니의 사망 소식을 듣고 인해 2번이나 탈옥을 시도했다가 체포된 <a href="">루크</a>의 발에 쇠통이 채워지며 루크는…<a class="more" href="#" style="margin-left:.25rem;color:var(--gray800);text-decoration:underline;">더 보기</a></p>
     </article>
 
     <article class="design-article">
       <h1 class="design-article-title">Tab</h1>
-      <p class="design-article-description">스크롤스파이 적용해두기. 너무 segmented controls 스타일이긴 한데 2, 3개 탭을 충첩해야 할 때 개선하기.<p>
+      <p class="design-article-description">페이지 레벨의 네비게이션. pushState로 history 저장.스크롤스파이 적용해두기. 너무 segmented controls 스타일이긴 한데 2, 3개 탭을 충첩해야 할 때 개선하기.<p>
       <nav class="profile-tablist" role="tablist">
 				<button class="profile-tablist-tab" role="tab" aria-selected="true" data-index="1">🐗 프로젝트 <i class="profile-tablist-tab-badge">5</i></button>
 				<button class="profile-tablist-tab" role="tab" aria-selected="false" data-index="2">🕸️ 웹페이지 <i class="profile-tablist-tab-badge">5</i></button>
@@ -472,10 +471,9 @@
       <p class="design-article-description">가이드에 없는 세로값 사용 중.</p>
       <div class="tags" role="group">
         <span class="tag tags-item" role="listitem">해시태그</span>
-        <span class="tag tags-item" style="padding:0 .5rem;border-radius:var(--radius400);background:var(--blue100);color:var(--color-primary);" role="listitem">해시태그</span>
+        <!-- <span class="tag tags-item" style="padding:0 .5rem;border-radius:var(--radius400);background:var(--blue100);color:var(--color-primary);" role="listitem">해시태그</span>
         <span class="tag yes-tag" style="padding:0 .5rem;border-radius:var(--radius400);background:skyblue;color:var(--gray0);" role="listitem">Do</span>
-        <span class="tag no-tag" style="padding:0 .5rem;border-radius:var(--radius400);background:crimson;color:var(--gray0);" role="listitem">Don't</span>
-        <!-- <span class="tag new-tag" style="padding:0 .5rem;border-radius:var(--radius400);background:var(--color-primary);color:var(--gray0);" role="listitem">기본/최근배송지</span> -->
+        <span class="tag no-tag" style="padding:0 .5rem;border-radius:var(--radius400);background:crimson;color:var(--gray0);" role="listitem">Don't</span> -->
       </div>
     </article>
 
@@ -555,6 +553,30 @@
         <button class="chip">기본값</button>
         <button class="chip">Typhography <span class="chip-icon"><i class="icon-plus"></i></span></button>
         <button class="chip is-added">Cinema <span class="chip-icon"><i class="icon-minus"></i></span></button>
+        <!-- <button class="dropdown-trigger js-toggle" aria-haspopup="menu" aria-expanded="false" style="margin-right:1rem;">
+          <span class="dropdown-trigger-icon"><i class="icon-caret"></i></span>
+          <span class="dropdown-trigger-text">드롭다운</span>
+        </button> -->
+        <div class="dropdown">
+          <button class="dropdown-trigger js-toggle" aria-haspopup="menu" aria-expanded="false">
+            <span class="dropdown-trigger-icon"><i class="icon-more"></i></span>
+          </button>
+          <menu class="dropdown-menu">
+            <a class="dropdown-menu-link" href="">수정</a>
+            <a class="dropdown-menu-link" href="">삭제</a>
+          </menu>
+        </div>
+        <div class="dropdown">
+          <button class="chip js-toggle">드롭다운 <span class="chip-icon"><i class="icon-caret"></i></span></button>
+          </button>
+          <menu class="dropdown-menu" role="menu">
+            <h6 class="dropdown-menu-title" hidden>Dropdown header</h6>
+            <a class="dropdown-menu-link" href="" disabled>프로필 관리</a>
+            <a class="dropdown-menu-link" href="">고객센터</a>
+            <hr class="dropdown-menu-divider" />
+            <a class="dropdown-menu-link" href="">로그아웃</a>
+          </menu>
+        </div>
       </div>
     </article>
 
@@ -633,8 +655,8 @@
     </article>
 
     <article class="design-article">
-      <h1 class="design-article-title">Textfield</h1>
-      <p class="design-article-description">button과 unit, icon 등은 prefix(leading)/surfix(tailing)</p>
+      <h1 class="design-article-title">Textfields</h1>
+      <p class="design-article-description">날짜 등 맥락 상 칼럼을 나누는 것이 좋은 경우이거나 선택 입력 필드인 경우 2개이ㅡ 칼럼으로 나눌 수 있습니다. 나누세요?. button과 unit, icon 등은 prefix(leading)/surfix(tailing)</p>
       <div class="quantity js-quantity">
         <input class="quantity-input js-quantity-input js-number-input" name="quantity1" type="number" value="0" min="5" max="20" >
         <!-- <input type="text" inputmode="numeric" pattern="[0-9]*"> -->
@@ -661,16 +683,14 @@
         <textarea class="textfield-input" rows="3" placeholder="Textarea Placeholder..."></textarea>
       </div>
       <br />
-      <div class="textfield-group" style="display:flex;">
-        <!-- role group -->
-        <div class="textfield" style="width:calc(50% - 0.5rem);margin-right:1rem;">
+      <div class="textfield-group" style="display:flex;justify-content:space-between;">
+        <div class="textfield" style="width:calc(50% - .5rem);">
           <label class="textfield-label" for="date-start"><i class="">체크인</i></label>
-          <!-- <label class="textfield-icon is-left is-right" for="date-start"><i class="material-icons">today</i></label> -->
+          <label class="textfield-icon is-left is-right" for="date-start"></label>
           <input class="textfield-input" type="date" id="date-start" placeholder="날짜를 설정해주세요." />
         </div>
-        <div class="textfield" style="width:calc(50% - 0.5rem)">
+        <div class="textfield" style="width:calc(50% - .5rem)">
           <label class="textfield-label" for="date-start"><i class="">체크아웃</i></label>
-          <!-- <label class="textfield-icon is-left is-right" for="date-start"><i class="material-icons">today</i></label> -->
           <input class="textfield-input" type="date" id="date-start" placeholder="날짜를 설정해주세요." />
         </div>
       </div>
@@ -680,7 +700,7 @@
         <select class="textfield-input" name="select-select" id="select-select">
           <option class="select-option" value="select-option1">Choose an option</option>
         </select>
-        <span class="selectbox-indicator"><i class="icon-caret"></i></span>
+        <span class="selectbox-indicator" role="img"><i class="icon-caret"></i></span>
       </div>
       <br />
       <div class="textfield is-text">
@@ -688,7 +708,7 @@
         <select class="textfield-input" name="select-select" id="select-select">
           <option class="select-option" value="select-option1">Choose an option</option>
         </select>
-        <span class="selectbox-indicator"><i class="icon-caret"></i></span>
+        <span class="selectbox-indicator" role="img"><i class="icon-caret"></i></span>
       </div>
       <!-- var selected = Array.from(dnd.options).filter(function (option) {
         return option.selected;
@@ -701,12 +721,12 @@
       </div> -->
     </article>
 
-    <article class="design-article" style="padding-bottom:80px;">
+    <article class="design-article">
       <h1 class="design-article-title">Tooltip</h1>
-      <p class="design-article-description">툴팁의 위치가 필요할까? 요즘 툴팁 잘 쓰지도 않아서 일단 없어도 좋겠다.</p>
+      <p class="design-article-description">툴팁은 항상 트리거의 하단에 노출합니다. 마우스의 위치로 트리거의 방향을 알 수 있기 때문에 방향을 나타내는 삼각형을 사용하지 않습니다.</p>
       <aside class="tooltip" role="tooltip">
-        <span class="tooltip-target"><b>요기</b></span>
-        <div class="tooltip-content">
+        <span class="tooltip-target">마우스를 올려보세요.</span>
+        <div class="tooltip-content" hidden>
           <p>제1항의 해임건의는 국회재적의원 3분의 1 이상의 발의에 의하여 국회재적의원 과반수의 찬성이 있어야 한다.</p>
         </div>
       </4aside>
@@ -724,7 +744,7 @@
         </li>
         <li>순서가 없는 리스트</li>
       </ul>
-      <hr style="margin: 1rem 0;" />
+      <hr role="separator" />
       <ol class="list-sample">
         <li>순서가 있는 리스트
           <ol>
@@ -738,9 +758,9 @@
 
     <article class="design-article">
       <h1 class="design-article-title">Statistic</h1>
-      <p class="design-article-description">내용없음. 라틴 소문자일 때 숫자나 한글, 대문자보다 속공간이 발생.</p>
+      <p class="design-article-description">내용없음. 라틴 소문자일 때 숫자나 한글, 대문자보다 속공간이 발생할 수 있음.</p>
       <div class="statistic"><i class="statistic-label">팔로워</i><span class="statistic-value">21,682</span></div>
-      <!-- <div class="statistic"><i class="statistic-label">Repository</i><span class="statistic-value">100만 이상</span></div> -->
+      <div class="statistic" style="margin-left:4rem;"><i class="statistic-label">Repository</i><span class="statistic-value">100만 이상</span></div>
       <div class="statistic" style="margin-left:4rem;"><i class="statistic-label">Size</i><span class="statistic-value">Small</span></div>
 
     </article>
@@ -896,39 +916,8 @@
     </article> -->
 
     <article class="design-article">
-      <h1 class="design-article-title">Dropdown</h1>
-      <p class="design-article-description">Chip과 같은 스타일로 사용해보기.</p>
-      <!-- <p class="design-article-description">오른쪽 정렬과 드롭업에 관한 것이 필요할까? 우선은 필요없다. min-width로 cell을 사용하면 셀 내부 텍스트가 늘어나도 대응할 있다.</p> -->
-      <!-- <button class="dropdown-trigger js-toggle" aria-haspopup="menu" aria-expanded="false" style="margin-right:1rem;">
-        <span class="dropdown-trigger-icon"><i class="icon-caret"></i></span>
-        <span class="dropdown-trigger-text">드롭다운</span>
-      </button> -->
-      <div class="dropdown">
-        <button class="dropdown-trigger js-toggle" aria-haspopup="menu" aria-expanded="false">
-          <span class="dropdown-trigger-icon"><i class="icon-more"></i></span>
-        </button>
-        <menu class="dropdown-menu">
-          <a class="dropdown-menu-link" href="">수정</a>
-          <a class="dropdown-menu-link" href="">삭제</a>
-        </menu>
-      </div>
-      <div class="dropdown">
-        <button class="chip js-toggle">드롭다운 <span class="chip-icon"><i class="icon-caret"></i></span></button>
-        </button>
-        <menu class="dropdown-menu" role="menu">
-          <h6 class="dropdown-menu-title" hidden>Dropdown header</h6>
-          <a class="dropdown-menu-link" href="" disabled>프로필 관리</a>
-          <a class="dropdown-menu-link" href="">고객센터</a>
-          <hr class="dropdown-menu-divider" />
-          <a class="dropdown-menu-link" href="">로그아웃</a>
-        </menu>
-      </div>
-    </article>
-
-    <article class="design-article">
       <h1 class="design-article-title">File Uploader</h1>
-      <p class="design-article-description">파일 업로드</p>
-      <!-- 파일 콘텐츠는 url 매개변수로 보낼 수 없다. 여러 조각-->
+      <p class="design-article-description">파일 업로드 샘플. 파일 콘텐츠는 url 매개변수로 보낼 수 없다. 여러 조각</p>
       <form class="file" method="" enctype="multipart/form-data">
         <h3 class="file-title" hidden>프로필 사진</h3>
         <div class="file-upload">
@@ -989,23 +978,22 @@
         <h2 class="profile-user-name">Gyeongsoo I</h2>
         <span class="profile-user-id">@soojubm</span>
         <span class="profile-user-career">UI Designer / Frontend Engineer</span>
-        <!-- <footer class="profile-foot" style="display:flex;justify-content:space-between;margin:1rem 0;">
-          <code style="background:var(--gray100);padding-top:0;padding-bottom:0;">🇰🇷 South Korea</code>
-          <code style="background:var(--blue100);padding-top:0;padding-bottom:0;">🚴‍♂️ Bike</code>
-        </footer> -->
-        <footer class="profile-foot" style="display:flex;justify-content:space-between;margin:1rem 0 0 0;">
+        <footer class="profile-foot" style="display:flex;justify-content:space-between;margin:1rem 0;">
+          <span style="background:var(--gray100);padding-top:0;padding:0 1rem;font-size:.875rem;">🇰🇷 대한민국</span>
+          <span style="background:var(--blue100);padding-top:0;padding:0 1rem;font-size:.875rem;">🚴‍♂️ 자전거</span>
+        </footer>
+        <hr />
+        <footer class="profile-foot" style="display:flex;justify-content:space-between;">
           <button class="profile-foot-follow">팔로우</button>
         </footer>
       </div>
       <br />
       <div class="pricing-item">
         <div style="display:flex;align-items:center;">
-          <div class="quote-avatar" style="margin-right:1rem;" role="img">
-            🔥
-          </div>
+          <div class="quote-avatar" style="margin-right:.5rem;width:16px;height:16px;" role="img">🔥</div>
           <small>Most Popular</small>
         </div>
-        <h1 class="pricing-item-title" style="margin:1rem 0 .5rem;">Standard</h1>
+        <h1 class="pricing-item-title" style="margin:1rem 0 .25rem;">Standard</h1>
         <span class="pricing-item-price">
           <span class="pricing-item-price-unit">₩ </span>
           <span>6,800</span>
@@ -1055,6 +1043,21 @@
             <button class="">삭제</button>
             <button class="">신고</button>
           </menu>
+
+          <div class="post-comment-list">
+            <div class="post-comment-list-item" role="comment">
+              <a class="post-comment-list-item-avatar" href="#"><img src="/public/images/soo.png"></a>
+              <a class="post-comment-list-item-author" href="#">soojubm</a>
+              <time class="post-comment-list-item-date" datetime="2016">1 day ago</time>
+              <p class="post-comment-list-item-text">우와 처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요. 우와 처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요.</p>
+              <button class="post-comment-list-item-morevert js-toggle"><i class="icon-more"></i></button>
+              <menu class="post-comment-list-item-menu">
+                <button class="">수정</button>
+                <button class="">삭제</button>
+                <button class="">신고</button>
+              </menu>
+            </div>
+          </div>
         </div>
       </div>
     </article>
@@ -1269,7 +1272,7 @@
     <article class="design-article">
       <h1 class="design-article-title">Result</h1>
       <p class="design-article-description">다른 디자인 시스템에서 blankslate, empty 등 네이밍됨. 더 고민해보기. error, empty, complete 등 왼쪽 정렬되는 콘텐츠 리스트와 구별되는 모듈로 가운데 정렬하여 대비를 주세요.</p>
-      <section class="empty" style="border:var(--border100);border-radius:var(--radius400);">
+      <section class="empty" style="border:1px solid var(--color-box-border);border-radius:var(--radius400);">
         <i class="empty-icon">🧟</i>
         <h1 class="empty-title">상품이 결제되었습니다.</h1>
         <p class="empty-description">헌법재판소 재판관의 임기는 6년으로 하며, 법률이 정하는 바에 의하여 연임할 수 있다. 대통령은 법률안의 일부에 대하여 또는 법률안을 수정하여 재의를 요구할 수 없다.</p>
@@ -1366,18 +1369,18 @@
         <div class="step-item is-active">
           <span class="step-item-icon">1</span>
           <h3 class="step-item-title">장바구니</h3>
-          <p class="step-item-description">Your garden's success depends on its location, so choose a spot that has healthy soil, gets good light, and is easily watered.</p>
+          <p class="step-item-description">대통령은 국가의 원수이며, 외국에 대하여 국가를 대표한다. 국가원로자문회의의 조직·직무범위 기타 필요한 사항은 법률로 정한다. 국가는 대외무역을 육성하며, 이를 규제·조정할 수 있다.</p>
         </div>
         <div class="step-space is-active">
           <span class="step-space-dot"></span>
           <span class="step-space-dot"></span>
           <span class="step-space-dot"></span>
         </div>
-        <div class="step-item is-active">
+        <div class="step-item">
           <span class="step-item-icon">2</span>
           <h3 class="step-item-title">결제</h3>
         </div>
-        <div class="step-space is-active">
+        <div class="step-space">
           <span class="step-space-dot"></span>
           <span class="step-space-dot"></span>
           <span class="step-space-dot"></span>

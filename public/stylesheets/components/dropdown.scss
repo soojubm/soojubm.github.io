@@ -1,7 +1,7 @@
 .dropdown {position:relative;}
 .dropdown-trigger {display:flex;align-items:center;color:var(--gray800);cursor:pointer;}
 .dropdown-trigger.is-active .dropdown-trigger-icon {transform:rotate(180deg);} // is-active .droptown
-.dropdown-trigger-icon {@include box-small;margin-right:1rem;}
+.dropdown-trigger-icon {@include box-small;}
 
 .dropdown-menu {
   min-width:200px;
@@ -10,7 +10,7 @@
   padding:.5rem 0;
   background:var(--gray0);
   border-radius: var(--radius400);
-  border: var(--border100);
+  border: 1px solid var(--color-box-border);
   box-shadow:var(--shadow400);
   position:absolute;
   z-index:5;

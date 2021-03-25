@@ -23,9 +23,14 @@
 .profile-user-address div img {width:1rem;margin-right:.5rem;opacity:.4;}
 .profile-user-address i {margin:0 .5rem 0 0;font-size:14px;color:var(--gray400);vertical-align:middle;}
 .profile-user-hashtags {display:flex;flex-wrap:wrap;}
-.profile-user-statistic {display:flex;width:auto;}
-.profile-user-statistic .statistic {display:flex;margin-right:1rem;}
-.profile-user-statistic .statistic .statistic-value {margin-left:.5rem;font-size:1rem;line-height:1.8;}
+.profile-user-statistic {display:flex;justify-content:space-between;}
+.profile-user-statistic .statistic {border: var(--border100);
+  padding: .25rem 1.5rem .5rem;
+  border-radius: 4px;
+  width: calc(50% - .5rem);
+  box-sizing: border-box;
+position: relative;}
+.profile-user-statistic .statistic:hover {@include hover-item;}
 .profile-user-socials {}
 .profile-user-socials-title {margin:0.5rem 0;font-size:1rem;color:var(--gray400);}
 .profile-user-socials-link {display:block;color:var(--gray800);text-decoration:underline;}
@@ -34,7 +39,7 @@
 .profile-controls-follow {@include button-primary;width:68%;}
 .profile-controls-message {@include button-tertiary;min-width:auto;width:30%;margin-left:auto;}
 
-.profile-foot-follow {@include button-tertiary;width:100%;color:var(--color-primary);}
+.profile-foot-follow {@include button-tertiary;width:100%;}
 .profile-body {padding:0 0 64px 398px;box-sizing:border-box;position:relative;}
 
 .profile-display {display:flex;margin:0 0 1.5rem 0;padding:0 0 1rem 0px;border-bottom:$border150;}
@@ -99,8 +104,6 @@
 }
 
 @media (--viewport-small) {
-  .profile-user-career {margin-top:3px}
-  .profile-user-avatar {width:64px;height:64px;}
   .profile-user-description {margin:1rem 0 2rem;}
   .profile-tabpanel {margin-left:0;margin-right:0;}
   .profile-tabpanel .card {width:100%;margin-left:0;margin-right:0;}

@@ -4,9 +4,9 @@
 .banner-button {@include button-secondary;}
 
 @media (--viewport-small) {
-  .banner {flex-wrap:wrap;width:90%;}
+  .banner {flex-wrap:wrap;}
   .banner-text {width:100%;margin:0 0 1rem 0;}
-
 }
+
 .is-closed-topbanner .header {background:var(--gray0);margin-top:-225px;transition:margin .2s, background-color .4s;}
 .is-closed-topbanner .topbanner {z-index:-1;}

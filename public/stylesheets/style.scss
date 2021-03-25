@@ -144,7 +144,7 @@
 
 .statistic {display:inline-block;}
 .statistic-label {display:block;color:var(--gray400);}
-.statistic-value {font-size:2rem;line-height:1.4;color:var(--gray800);font-weight:bold;}
+.statistic-value {@include title;}
 
 .full-width {
 	left: 50%;
@@ -167,7 +167,7 @@
 .slider-viewer-slide + .slider-viewer-slide {margin-left:.5rem;}
 .slider-viewer-slide:hover {border-color:var(--color-primary);}
 .slider-viewer-slide-media {display:block;}
-.slider-viewer-slide-name {font-size:$caption;font-weight:bold;color:var(--gray800);}
+.slider-viewer-slide-name {color:var(--gray800);}
 .slider-dots {width:100px;height:10px;margin-left:-36px;text-align:center;position:absolute;left:50%;bottom:-25px;z-index:5;}
 .slider-dots-dot {float:left;width:10px;height:10px;margin:0px 4px;border-radius:50%;background:rgba(0,0,0,1);cursor:pointer;}
 .slider-dots-dot:hover {width:30px;border-radius:5px;opacity:.5;}
@@ -266,15 +266,13 @@
 .pricing-item-price- {color:var(--gray400);}
 .pricing-item-period {display:inline-block;color:var(--gray800);}
 .pricing-item-period:before {content:' / ';margin:0 .5rem;color:var(--gray400);}
-.pricing-item-description {margin:1rem 0;}
-// .pricing-item-description:before {content:'';display:block;width:40px;height:1px;background:var(--gray800);margin:1.25rem 0 1.75rem;}
+.pricing-item-description {margin:1rem 0 2rem;}
+.pricing-item ul {margin:1rem 0 2rem 0;}
+.pricing-item ul li {display:flex;align-items:center;padding:0;}
+.pricing-item ul li:before {content:'';display:none;}
+.pricing-item ul li .icon-check {margin:0 .75rem 0 0;border-color:$color-primary;}
 .pricing-item-upgrade {@include button-primary;width:100%;margin:0 0 1rem 0;}
 .pricing-item-more {width:100%;text-decoration:underline;}
-.pricing-item ul {margin:1rem 0 2rem 0;}
-.pricing-item ul li {padding:.125rem 0;}
-.pricing-item ul li:before {content:'';display:none;}
-.pricing-item .icon-check {margin:0 .5rem 0 0;border-color:$color-primary;}
-
 
 .sheet-toggle {width:6rem;height:.5rem;border-radius:var(--radius400);background:var(--gray100);position:absolute;left:50%;top:.5rem;transform:translateX(-50%);}
 

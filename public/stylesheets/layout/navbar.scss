@@ -26,7 +26,7 @@
 .search-form-field input {padding-left:56px;}
 .search-form .textfield {}
 .search-recommend {background:var(--gray0);}
-.search-recommend-title {margin:4rem auto .5rem;font-size:$subhead;}
+.search-recommend-title {margin:4rem auto .5rem;@include subhead;}
 .search-recommend-item {}
 .is-active + .search-form {display:block;}
 

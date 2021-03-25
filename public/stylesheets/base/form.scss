@@ -28,17 +28,25 @@ textarea:focus, input:focus, button:focus {
 
 
 
-
 // input, textarea {
 //   // iOS inner shadow
 //   -webkit-appearance:none;-moz-appearance:none;appearance:none;
 // }
 input, select, textarea {
+  // width: 100%;
+  // max-width: 100%;
   // border-radius:0px;
   // -webkit-border-radius:0;
   // color:inherit;
   // font:inherit;
 }
+
+// input[type="checkbox"],
+// input[type="radio"],
+// input[type="submit"],
+// input[type="button"] {
+//   width: auto;
+// }
 
 select {-webkit-appearance:none;-moz-appearance:none;appearance:none;padding-right:1.5rem;}
 select::-ms-expand {display: none;}
@@ -129,7 +137,7 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 .textfield-icon {display:flex;align-items:center;justify-content:center;width:48px;height:100%;position:absolute;left:0;}
 .textfield-icon i {display:inline-block;font-size:19px;vertical-align:middle;opacity:0.4;}
 .textfield-icon + .textfield-input {padding-left:48px;}
-.textfield-input {width:100%;padding:$padding200;padding-right:40px;background:var(--gray100);border:1px solid var(--gray100);border-radius:var(--radius400);box-sizing:border-box;font:inherit;color:var(--gray800);/*-appearance:none;*/transition:all 0.2s;}
+.textfield-input {display:block;width:100%;padding:$padding200;padding-right:40px;background:var(--gray100);border:1px solid var(--gray100);border-radius:var(--radius400);box-sizing:border-box;font:inherit;color:var(--gray800);/*-appearance:none;*/transition:all 0.2s;} // textarea 하단 간격
 .textfield-input:disabled {border-color:var(--gray200);background:var(--gray200);color:var(--gray100);cursor:not-allowed;}
 // .textfield-input:not(select):readonly {background:none;padding-left:0;padding-right:0;border:none;outline:none;}
 // .textfield-input:not(select):readonly::placeholder {color:var(--gray800);}
@@ -145,8 +153,18 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 // .textfield-reset {}
 // .textfield-prefix + .textfield-input {display:inline-block;padding-right:100px;}
 
-@mixin textfield-prefix {@include box-small;width:2rem;height:2rem;background:var(--gray0);position:absolute;left:1rem;top:38px;pointer-events:none;}
-@mixin textfield-surfix {@include box-small;width:2rem;height:2rem;background:var(--gray0);position:absolute;right:1rem;top:38px;pointer-events:none;}
+@mixin textfield-prefix {
+  @include box-small;width:2rem;height:2rem;background:var(--gray0);position:absolute;left:1rem;top:38px;pointer-events:none;
+  @media (--viewport-small) {
+    top: 33px;
+  }
+}
+@mixin textfield-surfix {
+  @include box-small;width:2rem;height:2rem;background:var(--gray0);position:absolute;right:1rem;top:38px;pointer-events:none;
+  @media (--viewport-small) {
+    top: 33px;
+  }
+}
 
 
 .textfield-check {@include textfield-surfix;}
@@ -219,13 +237,6 @@ input[type=file] + label:after {display:none;}
 .file-attachment-item-size {color:var(--gray400);}
 .file-attachment-item-delete {@include box-small;position:absolute;right:0;top:0;}
 .file-attachment-item-delete:hover {background:#f9f9f6;}
-
-
-@media (--viewport-small) {
-  .textfield-surfix,
-  .selectbox-indicator {top:33px}
-  .textfield-prefix {top:33px;}
-}
 
 
 // date

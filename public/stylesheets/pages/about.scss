@@ -3,6 +3,11 @@
 .about-era1-description {margin:0 auto;font-size:15ox;padding:0 65% 0 0}
 
 
+.about-image {width:40%;height:50rem;background:crimson;position:absolute;}
+.about-head {max-width:calc(1440px - 50%);margin:0 auto;padding:4rem 0;position:relative;}
+.about-head-slogan {margin:2rem 0;font-size:4rem;}
+.about-intro {max-width:1440px;margin:0 auto;padding:0 0 0 720px;box-sizing:border-box;font-size:$subhead;}
+
 .font-name {color:var(--gray800);}
 .font-maker {}
 .font-famliy {}

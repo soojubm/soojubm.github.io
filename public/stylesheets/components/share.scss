@@ -3,14 +3,13 @@
 .share-trigger svg {width:1rem;}
 .share {max-width:400px;@include container-card;}
 .share-back {@include box-small;position:absolute;right:.5rem;top:.5rem;}
-.share-title {width:100%;margin:0 0 2rem;font-size:$subhead;font-weight:bold;}
+.share-title {margin:0 0 2rem;@include subhead;}
 .share-facebook {display:flex;align-items:center;margin:1rem 0;}
 .share-twitter {display:flex;align-items:center;margin:1rem 0;}
 .share-kakao {display:flex;align-items:center;margin:1rem 0;}
 .share-facebook-icon {@include box-small;margin-right:1rem;background:$color-facebook;}
 .share-twitter-icon {@include box-small;margin-right:1rem;background:$color-twitter;}
 .share-kakao-icon {@include box-small;margin-right:1rem;background:$color-kakao;}
-
 .share-copy {display:flex;flex-wrap:wrap;width:100%;}
 .share-copy-label {}
 .share-copy-url {}

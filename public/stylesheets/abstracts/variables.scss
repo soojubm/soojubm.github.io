@@ -61,8 +61,9 @@ $zindex-tooltip: 8;
 $height-header: 56px;
 
 :root {
-  color-scheme: light dark;
+  color-scheme: light  dark;
   --fontstack: 'Asap', 'AritaDotum', 'Apple SD Gothic Neo', sans-serif;
+  // --fontstack: sans-serif;
   // ! fontSize
   --caption: .875rem;
   // ! fontWeight
@@ -92,8 +93,10 @@ $height-header: 56px;
   --button-background: #fff;
   --button-text-color: #fff;
 
+  --card-background: #fff;
+  --card-border: 1px solid #fff;
+  --card-padding: 1.5rem;
 
-  
   --border100: 1px solid var(--gray200);
 
   --radius400: 4px;
@@ -103,8 +106,6 @@ $height-header: 56px;
 
   --shadow400: 0px 0px 2rem rgba(0, 0, 0, 0.125);
 
-  --padding-card: 2rem;
-
   --color-container-border: #000;
   --color-box-border: var(--gray100);
   --color-button-border: #000;
@@ -113,7 +114,6 @@ $height-header: 56px;
   --gutter: 0;
 
   @media (--viewport-small) {
-    --padding-card: 2rem 1.5rem;
   }
 
   html[date-theme=dark] {}
@@ -190,6 +190,7 @@ $height-header: 56px;
 // item in card component
 // active
 @mixin hover-item {
+  cursor: pointer;
   &:before {
     content:'';display:block;background:var(--gray100);border-radius:var(--radius400);position:absolute;left:-.5rem;right:-.5rem;top:-.5rem;bottom:-.5rem;z-index:-1;
   }

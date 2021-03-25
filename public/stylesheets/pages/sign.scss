@@ -48,9 +48,9 @@ $container-auth: 400px;
 .delete-head-title {}
 .delete-head-description {margin:1rem 0;}
 .delete-suggest {padding:4rem 0%;}
-.delete-suggest-subhead {margin:1rem 0;font-size:$subhead;}
+.delete-suggest-subhead {margin:1rem 0;@include subhead;}
 .delete-why {padding:0 0%;}
-.delete-why-title {font-size:$subhead;}
+.delete-why-title {@include subhead;}
 .delete-why-description {margin:1rem 0;}
 .delete-action {padding:4rem 0;}
 .delete-action-confirm {@include button-primary;border-color:$red800;background:$red800;}
