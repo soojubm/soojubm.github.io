@@ -1,8 +1,4 @@
-@mixin container {
-	max-width: 1080px;
-}
-
-.product {max-width:1440px;margin:2rem auto 10rem;position:relative;}
+.product {@include container-large;box-sizing:border-box;}
 // .product:before {content:'';display:block;height:800px;background:var(--gray100);position:absolute;left:10%;right:-50%;top:-5rem;z-index:-1;}
 .product-image {width:480px;height:480px;margin:0 auto;background:var(--gray100);border-radius:var(--radius400);position:relative;}
 .product-iamge-list {position:absolute;}
@@ -120,7 +116,7 @@
 
 
 @media (--viewport-large) {
-	.product {margin-top:0;padding:0 5%;}
+	.product {margin-top:0;}
 	.product:before {display:none;}
 	.product-image {margin:0;position:absolute;top:0;}
 	.product-info {width:auto;margin-left:60%;position:relative;left:auto;right:auto;top:auto;bottom:auto;}

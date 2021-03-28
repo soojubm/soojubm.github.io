@@ -220,3 +220,11 @@
 .textbox-toolbar {display:flex;position:relative;margin:1rem 0;}
 .textbox-toolbar-bold {@include box-small;margin:0 .5rem 0 0;}
 .textbox-toolbar-italic {@include box-small;}
+
+.media {width:400px;overflow:hidden;border-radius:var(--radius400);position:relative;}
+.media:after {
+  content: "";
+  display: block;
+  padding-bottom: 50%;
+}
+.media img {@include image-centered;}

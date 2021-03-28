@@ -9,7 +9,7 @@
 .search-result-item p {color:var(--gray400);line-height:1.6;}
 .search-result-item:hover {background:#f9f9f6;}
 
-.help-board {max-width:$container400;margin:2rem auto;padding:0 5%;position:relative;}
+.help-board {max-width:var(--container-medium);margin:2rem auto;padding:0 5%;position:relative;}
 .help-board-title {margin:0 0 1rem 1.5rem;font-size:$subhead;}
 .help-board-item {display:block;padding:1rem 1.5rem;border:var(--border100);background:var(--gray100);position:relative;transition:all .4s;}
 .help-board-item + .help-board-item {margin-top:-1px;}
@@ -33,7 +33,7 @@
 .help-feedback-button {@include button-tertiary;margin:0 .25rem 0 0;padding-top:.25rem;padding-bottom:.25rem;}
 .help-feedback-status {display:block;margin:.5rem 0 0;}
 
-.help-foot {display:flex;max-width:$container400;margin:0 auto;padding:1rem 2rem;box-sizing:border-box;background:var(--gray100);box-shadow:var(--shadow400);position:relative;}
+.help-foot {display:flex;max-width:var(--container-medium);margin:0 auto;padding:1rem 2rem;box-sizing:border-box;background:var(--gray100);box-shadow:var(--shadow400);position:relative;}
 .help-foot-body {}
 .help-foot-body em {color:var(--gray800);text-decoration:underline;}
 .help-foot-link {margin-left:auto;}

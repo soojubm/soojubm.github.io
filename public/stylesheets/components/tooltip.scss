@@ -1,5 +1,5 @@
 .tooltip {position:relative;}
-.tooltip-target {display:block;}
+.tooltip-target {}
 .tooltip-target i {font-size:1.25rem;vertical-align:middle;}
 .tooltip-content {max-width:280px;padding:1rem 1.5rem;border:1px solid var(--color-box-border);border-radius:var(--radius400);background:var(--gray0);box-shadow:var(--shadow400);position:absolute;left:0;top:2rem;z-index:6;}
 // .tooltip-content:before {content:'';display:block;
@@ -12,4 +12,4 @@
 //   box-shadow: 0 0 0 rgba(0,0,0,.25rem);
 //   position:absolute;left:.5rem;top:-.5rem;z-index:1;}
 // .tooltip-content:after {content:'';display:block;width:2rem;height:1.25rem;background:inherit;position:absolute;left:2px;top:0px;z-index:1;}
-.tooltip:hover .tooltip-content {display:block;}
+.tooltip-target:hover + .tooltip-content {display:block;}

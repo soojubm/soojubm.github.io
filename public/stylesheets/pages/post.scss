@@ -1,4 +1,4 @@
-.post {max-width:$container400;margin:0 auto;padding:2rem 5% 4rem;overflow:hidden;} // img - margin
+.post {@include container-medium;} // img - margin
 .post-head {margin:0 0 3rem 0;position:relative;}
 .post-head-category {color:var(--gray800);text-decoration:underline;}
 .post-head-headline {padding:.5rem 0 2rem 0;@include title;} /* 상하단 패딩 똑같이해야 스키티때 */
@@ -16,6 +16,7 @@
 .post-byline {display:flex;align-items:center;margin:2rem 0;position:relative;}
 .post-byline-avatar {@include box-small;margin:0 1rem 0 0;}
 .post-byline-name {margin:0 0 .25rem 0;}
+.post-byline:hover {@include hover-item;}
 
 .post-body {position:relative;} /* graident 때문에 아래요소에서 마진값주기 */
 .post-body-title {display:block;margin:0 0 24px 0px;}
@@ -122,7 +123,7 @@
 	.post-pagination-next {width:100%;padding:2rem 0;}
 }
 
-.post-relation {display:flex;flex-wrap:wrap;justify-content:space-between;max-width:800px;margin:4rem auto 8rem;}
+.post-relation {display:flex;flex-wrap:wrap;justify-content:space-between;max-width:var(--container-medium);margin:4rem auto 8rem;}
 .post-relation-title {width:100%;margin:2rem 0;text-align:center;@include subhead;}
 .post-relation .card {width:47.5%;}
 

@@ -3,11 +3,9 @@
 @mixin item-label {width:120px;margin-left:0;color:var(--gray400);font-size:1rem;}
 @mixin item-value {}
 
-@mixin container {max-width:$container600;margin:0 auto;}
-
 @mixin bleeding {position:absolute;left:-200%;right:-200%;top:0;bottom:0;z-index:-1;}
 
-.checkout {max-width:1440px;margin:0 auto;padding:0 5% 8rem;position:relative;}
+.checkout {@include container-large;}
 
 .checkout-step {}
 

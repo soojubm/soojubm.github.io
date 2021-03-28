@@ -27,7 +27,8 @@ mark {padding:0 2px 2px;border-radius:var(--radius400);background:var(--gray200)
 hr {height:1px;margin:1rem 0;background:var(--gray100);overflow:visible;position:relative;}
 u {text-decoration:none;position:relative;}
 u:after {content:'';height:.6em;border-radius:var(--radius400);background:antiquewhite;position:absolute;left:-.25rem;right:-.25rem;bottom:-.25rem;z-index:-1;}
-code {padding:1rem 1.5rem;background:var(--gray100);border-radius:var(--radius400);font-size:$caption;}
+code {padding:1rem 1.5rem;background:var(--gray100);border-radius:var(--radius400);font-family:'consolas'}
+pre {padding:1rem;background:var(--gray100);font-family:'consolas';white-space:normal;}
 
 html {min-width:320px;height:100%;font:14px/1.8 var(--fontstack);color:var(--gray800);-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overscroll-behavior:contain;}
 body {background:var(--gray0);overflow-x:hidden;letter-spacing:-.0125rem;}

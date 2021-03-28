@@ -1,6 +1,6 @@
-.cart {max-width:$container600;margin:0rem auto;padding:2rem 5% 10rem;}
+.cart {@include container-large;}
 .cart-head {}
-.cart-title {margin:.5rem 0 0 0;@include title;position:relative;}
+.cart-title {@include title;position:relative;}
 .cart-description {}
 .cart-head time {display:block;margin:2rem 0 0;}
 

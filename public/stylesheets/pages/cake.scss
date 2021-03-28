@@ -1,6 +1,6 @@
 .cake {}
 
-.cake-head {max-width:1440px;margin:0 auto;padding:3rem 0;position:relative;}
+.cake-head {max-width:var(--container-large);margin:0 auto;padding:3rem 0;position:relative;}
 .cake-background {height:400px;background:url('/public/images/newman.jpg') no-repeat 0 -200px fixed;position:absolute;left:-100%;right:-100%;top:0;z-index:-1;}
 .cake-head-title {@include title;}
 .cake-head-engtitle {@include subhead;}
@@ -15,7 +15,7 @@
 .cake-head-button {@include button-primary;min-width:11rem;margin-right:1rem;}
 .cake-head-review {@include button-text;min-width:11rem;}
 
-.cake-info {display:flex;max-width:1440px;margin:0 auto;padding:2rem 0 2.25rem;border-top:$border150;border-bottom:$border150;position:relative;}
+.cake-info {display:flex;max-width:var(--container-large);margin:0 auto;padding:2rem 0 2.25rem;border-top:$border150;border-bottom:$border150;position:relative;}
 .cake-info + .cake-info {border-top:none;}
 .cake-info button {@include button-tertiary;position:absolute;left:0;top:4rem;}
 .cake-info h2 {width:400px;flex-shrink:0;@include subhead;}

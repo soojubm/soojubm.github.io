@@ -266,7 +266,7 @@
 .pricing-item-price- {color:var(--gray400);}
 .pricing-item-period {display:inline-block;color:var(--gray800);}
 .pricing-item-period:before {content:' / ';margin:0 .5rem;color:var(--gray400);}
-.pricing-item-description {margin:1rem 0 2rem;}
+.pricing-item-description {margin:1rem 0;}
 .pricing-item ul {margin:1rem 0 2rem 0;}
 .pricing-item ul li {display:flex;align-items:center;padding:0;}
 .pricing-item ul li:before {content:'';display:none;}

@@ -270,3 +270,15 @@ if (typeof DOMTokenList !== "function") (function(window){
     };
 })(window.DOMTokenList.prototype, window.document.createElement("div").classList);
 })(window);
+
+
+
+
+
+
+// if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) {
+//     document.write(
+//       '<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>' +
+//       '<script src="https://cdn.jsdelivr.net/gh/nuxodin/ie11CustomProperties@4.1.0/ie11CustomProperties.min.js"></script>'
+//     );
+//   }

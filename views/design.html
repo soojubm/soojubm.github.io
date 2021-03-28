@@ -180,7 +180,7 @@
       <p>macbook 13' ~ tablet : 1080px</p>
       <p>mobile : 100%</p>
       <hr />
-      <div style="display:flex;height:20rem;line-height:20rem;border-radius:var(--radius400);overflow:hidden;text-align:center;font-size:var(--caption);border:1px solid var(--color-box-border);">
+      <div style="display:flex;height:20rem;line-height:20rem;text-align:center;font-size:var(--caption);">
         <div style="width:5%;background:var(--blue100);">5%</div>
         <div style="width:calc(50% - 5% - .5rem);background:var(--gray100);">column</div>
         <div style="width:1rem;"></div>
@@ -215,10 +215,29 @@
         <h1>Card Spacing <small style="margin:0 0 0 1rem;color:var(--gray400);">상하좌우 각 1.5rem 1.5rem 1.5rem 1.5rem</small></h1>
         <div style="height:1rem;background:var(--blue100);"></div>
         <p>최상단이 텍스트인 경우 시각보정이 필요합니다. line-height. 텍스트로 끝날 때 하단 간격을 상단보다 더 주어야?</p>
-        <footer style="margin:1rem -1.5rem -1.5rem;padding:1rem 1.5rem 1.5rem;border-top:var(--border100);">
+        <div style="height:2rem;background:var(--blue100);"></div>
+        <div>1988. 01. 11</div>
+        <!-- <footer style="margin:1rem -1.5rem -1.5rem;padding:1rem 1.5rem 1.5rem;border-top:var(--border100);">
           <button>This is a Button</button>
-        </footer>
+        </footer> -->
       </div>
+    </article>
+
+    <article class="design-article typography">
+      <h1 class="design-article-title">Container System 🔥</h1>
+      <p class="design-article-description">다르게 모듈? 예시) 비밀번호 찾기와 회원탈퇴는 로그인과 회원가입과 다른 컨테이너를 사용하여 시각적으로 분리해주세요.</p>
+      <dl>
+        <dt>container-large</dt>
+        <dd>1440px</dd>
+      </dl>
+      <dl>
+        <dt>container-medium</dt>
+        <dd>640px</dd>
+      </dl>
+      <dl>
+        <dt>container-large</dt>
+        <dd>480px</dd>
+      </dl>
     </article>
 
     <article class="design-article typography">
@@ -228,15 +247,19 @@
         bottom fix in window / iphone safe area 고려
       </div>
       <div>
-        right top in card / 주로 닫기 버튼에 사용한다. .25rem
+
         left top에서 사용하고 sticky.
+      </div>
+      <h5>right top in card / 주로 닫기 버튼에 사용한다. .25rem</h5>
+      <div style="padding:1.5rem;border:var(--border100);box-shadow:var(--shadow400);position:relative;">
+        <div style="position:absolute;right:.25rem;top:.25rem;width:32px;height:32px;background:#eee;">1</div>
       </div>
       
     </article>
 
     <article class="design-article typography">
       <h1 class="design-article-title">Typhography</h1>
-      <p class="design-article-description">섞어짜기 연습. 1rem을 14px로 정의합니다. 모바일에서 1rem은 12px입니다. 노토 산스가 브라우저에서 랜더링될 때 보여지는 4가지 경우에 대한 글 써보기.</p>
+      <p class="design-article-description">섞어짜기 연습. 1rem을 14px로 정의합니다. 모바일에서 1rem은 12px입니다..</p>
       <!-- <ul class="design-article-description">
         <li>asap의 dash를 마이너스로 쓰면 어색.</li>
         <li>무게가 살짝 다름.</li>
@@ -393,7 +416,6 @@
       </div>
       <hr />
       <div class="userlist" style="margin-top:1rem;overflow:hidden;">
-        <button class="sheet-toggle"></button>
         <header>
           <h1>Followers</h1>
           <a href="#">모두 보기</a>
@@ -405,10 +427,7 @@
           <span class="profile-user-id" style="color:var(--gray400);">인라인 스타일로 대충</span>
           <button class="design-article-tertiary-small" style="position:absolute;right:0;top:0;">팔로우</button>
         </div>
-        <div class="profile-user" style="width:100%;height:48px;margin-top:1rem;">
-          <figure class="profile-user-avatar" style="float:left;width:48px;height:48px;margin-right:1rem;background:none;border:1px solid var(--gray200);"><i class="icon-plus" style="transform:scale(1.25);"></i></figure>
-          <h2 class="profile-user-name" style="font-size:1rem;line-height:48px;">추가하기 (보다 긴 텍스트로 상세하게 작성하세요.)</h2>
-        </div>
+        <button>Show More</button>
       </div>
 
       <!-- <div class="ttt">
@@ -429,10 +448,41 @@
     </article>
 
     <article class="design-article">
+      <h1 class="design-article-title">Sheet</h1>
+      <p class="design-article-description">Sheets are side surfaces that allow users to view information or complete sub-tasks in a workflow while keeping the context of the current page.</p>
+      <div class="userlist" style="margin-top:1rem;overflow:hidden;">
+        <button class="sheet-toggle"></button>
+        <header>
+          <h1>Followers</h1>
+        </header>
+        <hr />
+        <div class="profile-user" style="width:100%;height:48px;">
+          <figure class="profile-user-avatar" style="float:left;width:48px;height:48px;margin-right:1rem;"></figure>
+          <h2 class="profile-user-name" style="font-size:1rem;">Gyeongsoo I</h2>
+          <span class="profile-user-id" style="color:var(--gray400);">인라인 스타일로 대충</span>
+          <button class="design-article-tertiary-small" style="position:absolute;right:0;top:0;">팔로우</button>
+        </div>
+        <div class="profile-user" style="width:100%;height:48px;margin-top:1rem;">
+          <figure class="profile-user-avatar" style="float:left;width:48px;height:48px;margin-right:1rem;background:none;border:1px solid var(--gray200);"><i class="icon-plus" style="transform:scale(1.25);"></i></figure>
+          <h2 class="profile-user-name" style="font-size:1rem;line-height:48px;">추가하기 (보다 긴 텍스트로 상세하게 작성하세요.)</h2>
+        </div>
+      </div>
+    </article>
+
+    <article class="design-article">
+      <h1 class="design-article-title">Image</h1>
+      <p class="design-article-description">Sheets are side surfaces that allow users to view information or complete sub-tasks in a workflow while keeping the context of the current page.</p>
+      <figure class="media">
+        <img src="/public/images/springsteen.jpg" alt="">
+        <figcaption></figcaption>
+      </figure>
+    </article>
+
+    <article class="design-article">
       <h1 class="design-article-title">Seperator</h1>
       <p class="design-article-description">섹션을 구획할 때 border 스타일링보다 hr / br 태그로 마크업하면 컴포넌트 고유성(?)을 유지하기 쉽습니다. 그렇게 하려면 hr / br 태그에 대한 가이드가 필요하겠죠?</p>
       <pre>
-        <hr role="separator" />
+        &lt;hr role="separator" /&gt;
       </pre>
       <hr role="separator" />
     </article>
@@ -468,7 +518,7 @@
 
     <article class="design-article">
       <h1 class="design-article-title">Tags</h1>
-      <p class="design-article-description">가이드에 없는 세로값 사용 중.</p>
+      <p class="design-article-description">내용없음.</p>
       <div class="tags" role="group">
         <span class="tag tags-item" role="listitem">해시태그</span>
         <!-- <span class="tag tags-item" style="padding:0 .5rem;border-radius:var(--radius400);background:var(--blue100);color:var(--color-primary);" role="listitem">해시태그</span>
@@ -789,7 +839,11 @@
     <article class="design-article">
       <h1 class="design-article-title">Suggestion</h1>
       <p class="design-article-description">role=[suggestion / deletion / insertion]</p>
-      <p class="product-info-price" role="suggestion"><del role="deletion">₩ 30,000</del> <b role="insertion">₩ 20,000</b> <em>(30%)</em></p>
+      <div class="product-info-price" role="suggestion">
+        <del class="product-info-price-deletion" role="deletion">₩ 30,000</del>
+        <b class="product-info-price-insertion" role="insertion">₩ 20,000</b>
+        <em class="product-info-price-percentage">(30%)</em>
+      </div>
     </article>
 
 
@@ -978,11 +1032,11 @@
         <h2 class="profile-user-name">Gyeongsoo I</h2>
         <span class="profile-user-id">@soojubm</span>
         <span class="profile-user-career">UI Designer / Frontend Engineer</span>
-        <footer class="profile-foot" style="display:flex;justify-content:space-between;margin:1rem 0;">
+        <!-- <footer class="profile-foot" style="display:flex;justify-content:space-between;margin:1rem 0;">
           <span style="background:var(--gray100);padding-top:0;padding:0 1rem;font-size:.875rem;">🇰🇷 대한민국</span>
           <span style="background:var(--blue100);padding-top:0;padding:0 1rem;font-size:.875rem;">🚴‍♂️ 자전거</span>
-        </footer>
-        <hr />
+        </footer> -->
+        <!-- <hr /> -->
         <footer class="profile-foot" style="display:flex;justify-content:space-between;">
           <button class="profile-foot-follow">팔로우</button>
         </footer>
@@ -1001,9 +1055,9 @@
         </span>
         <p class="pricing-item-description">전직대통령의 신분과 예우에 관하여는 법률로 정한다. 대법원장은 국회의 동의를 얻어 대통령이 임명한다.</p>
         <ul>
-          <li><i class="icon-check"></i>아무거나 하나 써 봅니다.</li>
-          <li><i class="icon-check"></i>아무거나 하나 써 봅니다.</li>
-          <li><i class="icon-check"></i>아무거나 하나 써 봅니다.</li>
+          <li><i class="icon-check"></i>스토리지: 2 TB</li>
+          <li><i class="icon-check"></i>Google 전문가와의 상담</li>
+          <li><i class="icon-check"></i>회원을 위한 추가 혜택</li>
         </ul>
         <button class="pricing-item-upgrade">업그레이드</button>
         <button class="pricing-item-more">And More...</button>
@@ -1074,15 +1128,15 @@
         <button class="share-back"><i class="icon-close"></i></button>
         <button class="share-facebook">
           <span class="share-facebook-icon"></span>
-          facebook
+          facebook으로 공유하기
         </button>
         <button class="share-twitter">
           <span class="share-twitter-icon"></span>
-          twitter
+          twitter로 공유하기
         </button>
         <button class="share-kakao">
           <span class="share-kakao-icon"></span>
-          kakao
+          kakao로 공유하기
         </button>
         <hr />
         <div class="share-copy textfield is-small">
@@ -1276,6 +1330,10 @@
         <i class="empty-icon">🧟</i>
         <h1 class="empty-title">상품이 결제되었습니다.</h1>
         <p class="empty-description">헌법재판소 재판관의 임기는 6년으로 하며, 법률이 정하는 바에 의하여 연임할 수 있다. 대통령은 법률안의 일부에 대하여 또는 법률안을 수정하여 재의를 요구할 수 없다.</p>
+        <div class="empty-list">
+          <div class="empty-list-item"><b>주문시간</b><span>SC제일은행</span></div>
+          <div class="empty-list-item"><b>입금금액</b><span>54,000</span></div>
+        </div>
         <a class="empty-action" href="#">주문내역 보러가기</a>
       </section>
     </article>

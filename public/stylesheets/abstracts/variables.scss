@@ -3,12 +3,6 @@
 @custom-media --viewport-medium (max-width: 1280px);
 @custom-media --viewport-small (max-width: 1080px);
 
-// ! container 
-$container800: 1440px;
-$container600: 1140px;
-$container400: 640px; 
-$container100: 400px; // dialog & form
-
 $cell-large: 80px; // => 64px;
 $cell-medium: 48px;
 $cell-small: 32px;
@@ -80,7 +74,9 @@ $height-header: 56px;
   --red100: #fff0f5;
   --color-primary:#00783e;
 
-
+  --container-small: 480px;
+  --container-medium: 640px;
+  --container-large: 1440px;
 
   --text-color: var(--gray800);
   --text-color-light: var(--gray800);
@@ -194,20 +190,14 @@ $height-header: 56px;
   &:before {
     content:'';display:block;background:var(--gray100);border-radius:var(--radius400);position:absolute;left:-.5rem;right:-.5rem;top:-.5rem;bottom:-.5rem;z-index:-1;
   }
-  figure {box-shadow:var(--shadow400);}
+  // figure {box-shadow:var(--shadow400);}
 }
 @mixin hover-tertiary {border-color: var(--color-primary);}
 @mixin hover-text {color:var(--color-primary);}
 
-@mixin container-page {
-  max-width: 100px; // todo
-  margin: 0 auto;
-  padding: 0 5%; // mobile padding
-  position: relative;
-}
-@mixin container-page-head {}
 
 @mixin container-card {
+  // max-width: 
   padding: 1.5rem;
   background: var(--gray0);
   border: $border100;
@@ -218,6 +208,25 @@ $height-header: 56px;
   @media (--viewport-small) {
     // padding: 1.5rem;
   }
+}
+
+@mixin container-page {
+  margin: 0 auto;
+  padding: 2rem 5% 8rem; // mobile padding
+  position: relative;
+}
+@mixin container-page-head {}
+@mixin container-large {
+  max-width: var(--container-large);
+  @include container-page;
+}
+@mixin container-medium {
+  max-width: var(--container-medium);
+  @include container-page;
+}
+@mixin container-small {
+  max-width: var(--container-small);
+  @include container-page;
 }
 
 

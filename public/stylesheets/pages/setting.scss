@@ -1,4 +1,4 @@
-.setting {max-width:800px;margin:4rem auto 8rem;padding:0 5%;}
+.setting {@include container-medium;}
 .setting-head {margin:0 0 2rem;}
 .setting-head-title {@include title;}
 .setting-head-description {margin:1rem 0 0 0;}
