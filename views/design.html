@@ -4,12 +4,21 @@
   </header>
   <!-- <h2 style="transform:rotate(-15deg);font-size:8rem;color:var(--gray0);position:fixed;left:2rem;bottom:4rem;z-index:2;">Title</h2> -->
 
+  <!-- <blockquote></blockquote>
+  <cite>- Ernest</cite>
+  <article>
+    <p>디즈니 만화영화 <em>인어 공주</em>는 1989년 처음 개봉했습니다.</p>
+    <aside>인어 공주는 첫 개봉 당시 8700만불의 흥행을 기록했습니다.</aside>
+    <p>영화에 대한 정보...</p>
+  </article> -->
+
+
   <section class="hero js-scroll-animation">
     <div class="hero-inner" style="overflow:hidden;">
       <div class="hero-background"></div>
       <!-- <small class="hero-eyebrow">디자인시스템 연습장</small> -->
       <h1 class="hero-title">부끄러우니까<br />보지마요<i style="font-style:italic;">!</i></h1>
-      <p class="hero-description">디자인 시스템을 스케치하는 연습장입니다. <span class="linebreaker-desktop">바닐라 자바스크립트로 만들었고 깔끔한 코드는 못 됩니다.</span></p>
+      <p class="hero-description">디자인 시스템도 최소한의 가이드로 린하게 만들어야 한다고 믿습니다. <span class="linebreaker-desktop">가상의 디자인시스템을 활용한 페이지를 볼 수 있습니다.</span></p>
 
       <section class="slider">
         <div class="slider-viewer" style="margin-right:-200px;padding-right:200px;">
@@ -74,16 +83,14 @@
   </section>
 
   <section class="design-body">
-    <section class="textbox">
-
+    <article class="textbox">
       <div class="textbox-toolbar">
         <button class="textbox-toolbar-bold">B</button>
         <button class="textbox-toolbar-italic">I</button>
       </div>
       <div class="textfield-input" role="textbox" contenteditable="true" aria-placeholder="5-digit zipcode" aria-labelledby="txtboxLabel"></div>
-  
-    </section>
-    <!-- <div class="stamp">
+    </article>
+    <div class="stamp" hidden>
       <div class="circle">
         <p id="circle-content">
           <span class="char1">부</span>
@@ -110,38 +117,25 @@
         </p>
       </div>
       <p>수줍이</p>
-    </div> -->
+    </div>
 
-    <!-- <article class="design-article typography">
-      <h1 class="design-article-title">Writings & Rules</h1>
-      <button class="design-article-more">더 보러가기</button>
-      <ul>
-        <li>위치를 설명하지 않습니다.</li>
-        
-        <li>검색 결과 2개 vs ~ / 총결제금액 vs 결제예정금액</li>
-        <li>Bullet은 컴포넌트로 Component</li>
-        <li>카드 안에서 좌우 여백: 데스크탑 2rem / 모바일 1.5rem 변수만들기.</li>
-        <li>결제 완료 => 상품 결제, 그르면 결제완료, 결제대기 등은 어떠헥 구분?</li>
-        <li>-하기 / 취소 / 다음에</li>
-      </ul>
-    </article> -->
+    
+    <article class="design-article typography">
+      <h1 class="design-article-title">지침 🔥</h1>
+      <p class="design-article-description">제품을 구성하는 디자인 시스템은 유아이 라이브러리가 아닙니다. 가능한 최소한의 유아이 가이드.</p>
+      <p>네이밍이 중요합니다. 명확한 이름을 붙여서 실제 제품 개발 전 컴케 비용을 줄이세요.</p>
+    </article>
 
     <article class="design-article typography">
       <h1 class="design-article-title">Writings & Rules 🔥</h1>
       <p class="design-article-description"></p>
-      <!-- <h3 class="accordion-trigger js-toggle" role="button" aria-expanded="false">
-        회원탈퇴는 어떻게 할 수 있나요?
-        <span class="accordion-trigger-icon"><i class="icon-plus"></i></span>
-      </h3>
-      <article class="accordion-panel">
-        안녕
-      </article> -->
-      <div style="margin:0 0 1rem 0;padding:1.5rem;border:1px solid var(--gray200);box-sizing:border-box;border-radius:var(--radius400);">
-        <span>금액</span>
+ 
+      <div style="margin:0 0 1rem 0;">
+        <span>💰금액</span>
         <p>KRW 기호를 사용하고 한 칸 띄어 씁니다. ₩ 1,000. formatPrice() 함수로 모듈화하세요.</p>
       </div>
-      <div style="margin:0 0 1rem 0;padding:1.5rem;border:1px solid var(--gray200);box-sizing:border-box;border-radius:var(--radius400);">
-        <span>날짜</span>
+      <div style="margin:0 0 1rem 0;">
+        <span>📅날짜</span>
         <p>YYYY/MM/DD. formatDate() 함수로 모듈화하세요.</p>
       </div>
       <ol>
@@ -153,6 +147,18 @@
         <li>이모지와 아이콘은 클릭 어포던스를 강화하기 위해서만 사용하세요.</li>
         <li>라인 아이콘/솔리드 아이콘 하나로 통일하기.</li>
         <li>모두 / 전체 구분하기</li>
+        
+        <!-- <li>memo: 미디어쿼리에서 position 속성을 재할당할 때 static을 사요하지 말고 relative를 사용.</li>
+        <li>첫 할당에서는 margin: 0 0 0 0 재할당 시 margin-left:</li>
+        <li>container padding 5% 일 때 내부 요소 positionin</li> -->
+        
+        <!-- <li>위치를 설명하지 않습니다.</li>
+        
+        <li>검색 결과 2개 vs ~ / 총결제금액 vs 결제예정금액</li>
+        <li>Bullet은 컴포넌트로 Component</li>
+        <li>카드 안에서 좌우 여백: 데스크탑 2rem / 모바일 1.5rem 변수만들기.</li>
+        <li>결제 완료 => 상품 결제, 그르면 결제완료, 결제대기 등은 어떠헥 구분?</li>
+        <li>-하기 / 취소 / 다음에</li> -->
       </ol>
       <!-- <footer class="test js-system-theme">
         <button name="design-system-default">기본 값으로 보기</button>
@@ -160,16 +166,6 @@
         <button name="design-system-daangn">당근 곁들인</button>
       </footer> -->
     </article>
-
-    <!-- <article class="design-article typography">
-      <h1 class="design-article-title">Cording Conventions 🔥</h1>
-      <p class="design-article-description"></p>
-      <ul>
-        <li>memo: 미디어쿼리에서 position 속성을 재할당할 때 static을 사요하지 말고 relative를 사용.</li>
-        <li>첫 할당에서는 margin: 0 0 0 0 재할당 시 margin-left:</li>
-        <li>container padding 5% 일 때 내부 요소 positionin</li>
-      </ul>
-    </article> -->
 
     <article class="design-article typography">
       <h1 class="design-article-title">Grid System 🔥</h1>
@@ -179,6 +175,30 @@
       <p>imac ~ macbook 13' : 1440px (1680 x 1050)</p>
       <p>macbook 13' ~ tablet : 1080px</p>
       <p>mobile : 100%</p>
+      <hr />
+      
+      <p class="design-article-description">다르게 모듈? 예시) 비밀번호 찾기와 회원탈퇴는 로그인과 회원가입과 다른 컨테이너를 사용하여 시각적으로 분리해주세요.</p>
+      <p class="design-article-description">자식 엘리먼트가 가운데 정렬될 경우 large 컨테이너를 사용하세요.</p>
+      <dl style="display:flex;justify-content:space-between;">
+        <dt>page / container-large</dt>
+        <dd>1440px</dd>
+      </dl>
+      <dl style="display:flex;justify-content:space-between;">
+        <dt>page / container-medium</dt>
+        <dd>640px</dd>
+      </dl>
+      <dl style="display:flex;justify-content:space-between;">
+        <dt>page / container-large</dt>
+        <dd>480px</dd>
+      </dl>
+      <dl style="display:flex;justify-content:space-between;">
+        <dt>card / container-card</dt>
+        <dd>400px</dd>
+      </dl>
+      <p>마크업 구조를 단순하게 유지하기 위하여 position 속성을 적극적으로 활용하세요.</p>
+      <p>right top in card / 주로 닫기 버튼에 사용한다. .25rem // left top에서 사용하고 sticky.</p>
+      <p>bottom fix in window / iphone safe area 고려</p>
+
       <hr />
       <div style="display:flex;height:20rem;line-height:20rem;text-align:center;font-size:var(--caption);">
         <div style="width:5%;background:var(--blue100);">5%</div>
@@ -192,11 +212,7 @@
     <article class="design-article typography">
       <h1 class="design-article-title">Spacing System 🔥</h1>
       <p class="design-article-description">모바일 퍼스트로 사고하고 최소한의 그리드 시스템을 사용합니다. 컨테이너 크기를 정의하는 것이 중요. 8px grid 보다  %와 rem 사용. 그리드 시스템은 모바일에서 2개의 칼럼을 사용할 때만 지킨다. 그 외에는 가로 스크롤 트랜드에 맞춰서 컴포넌트를 유연하게 사용하는 것이 좋다.</p>
-      <hr />
-      <div class="spacing-item">
-        <figure class="spacing-item-media" style="width:.5rem;"></figure>
-        <div class="spacing-item-label">.5rem</div>
-      </div>
+      <!-- <hr />
       <div class="spacing-item">
         <figure class="spacing-item-media"></figure>
         <div class="spacing-item-label">1rem</div>
@@ -204,7 +220,7 @@
       <style>
         .spacing-item {display:flex;align-items:center;margin:0 0 1rem 0;font-size:var(--caption);}
         .spacing-item-media {width:1rem;height:1rem;margin:0 1rem 0 0;background:var(--blue100);}
-      </style>
+      </style> -->
       <hr />
       <div class="userlist" style="overflow:hidden;">
         <div style="background:var(--blue100);position:absolute;left:0;right:0;top:0;bottom:calc(100% - 1.5rem);"></div>
@@ -224,46 +240,9 @@
     </article>
 
     <article class="design-article typography">
-      <h1 class="design-article-title">Container System 🔥</h1>
-      <p class="design-article-description">다르게 모듈? 예시) 비밀번호 찾기와 회원탈퇴는 로그인과 회원가입과 다른 컨테이너를 사용하여 시각적으로 분리해주세요.</p>
-      <dl>
-        <dt>container-large</dt>
-        <dd>1440px</dd>
-      </dl>
-      <dl>
-        <dt>container-medium</dt>
-        <dd>640px</dd>
-      </dl>
-      <dl>
-        <dt>container-large</dt>
-        <dd>480px</dd>
-      </dl>
-    </article>
-
-    <article class="design-article typography">
-      <h1 class="design-article-title">Positioning System 🔥</h1>
-      <p class="design-article-description">마크업 구조를 단순하게 유지하기 위하여 position 속성을 적극적으로 활용하세요.</p>
-      <div>
-        bottom fix in window / iphone safe area 고려
-      </div>
-      <div>
-
-        left top에서 사용하고 sticky.
-      </div>
-      <h5>right top in card / 주로 닫기 버튼에 사용한다. .25rem</h5>
-      <div style="padding:1.5rem;border:var(--border100);box-shadow:var(--shadow400);position:relative;">
-        <div style="position:absolute;right:.25rem;top:.25rem;width:32px;height:32px;background:#eee;">1</div>
-      </div>
-      
-    </article>
-
-    <article class="design-article typography">
       <h1 class="design-article-title">Typhography</h1>
       <p class="design-article-description">섞어짜기 연습. 1rem을 14px로 정의합니다. 모바일에서 1rem은 12px입니다..</p>
-      <!-- <ul class="design-article-description">
-        <li>asap의 dash를 마이너스로 쓰면 어색.</li>
-        <li>무게가 살짝 다름.</li>
-      </ul> -->
+      <!-- <li>asap의 dash를 마이너스로 쓰면 어색. 무게가 살짝 다름.</li> -->
       <div style="display:flex;justify-content:space-between;">
         <div style="width:calc(50% - 0.5rem);padding:1.5rem;border:1px solid var(--gray200);box-sizing:border-box;border-radius:var(--radius400);">
           <i style="display:block;margin-bottom:.5rem;width:16px;height:16px;border-radius:var(--radius400);background:cadetblue"></i>
@@ -290,20 +269,18 @@
         <h4 class="typography-subhead" style="font-size:1.25rem;">선약이 있어서 ✋<br />자아실현은 못할 것 같아요.</h4>
         <p class="typography-paragraph" style="margin: 1rem 0 1.5rem">서브헤드와 디스크립션 혹은 패러그라프는 이렇게 사용하세요. 서브헤드와 디스크립션 혹은 패러그라프는 이렇게 사용하세요. 서브헤드와 디스크립션 혹은 패러그라프는 이렇게 사용하세요. 서브헤드와 디스크립션 혹은 패러그라프는 이렇게 사용하세요.</p>
         <time class="typography-caption">10 January, 2020</time>
-        <!-- <hr />
-        <footer style="display:flex;justify-content:space-between;">
-          <a href="">Read More <i class="icon-arrow" style="margin-left:1.5rem;"></i></a>
+        <footer class="card-foot">
+          <a href="">Read More</a>
           <span class="tag">Category</span>
-        </footer> -->
+        </footer>
       </div>
     </article>
 
-    
     <article class="design-article grayscale">
       <h1 class="design-article-title">Palettes</h1>
-      <p class="design-article-description">그레이스케일 한 벌로 다크 테마와 페어링합니다. 다크 테마를 위해서 같은 색상이라도 여러 개의 변수가 필요할 수 있습니다. #666(레거시) base로 본문 색상을 사용하지 마세요.</p>
+      <p class="design-article-description">그레이스케일 한 벌로 다크 테마와 페어링합니다. 다크 테마를 위해서 같은 색상이라도 여러 개의 변수가 필요할 수 있습니다.</p>
       <h2 style="margin:0 0 .5rem;"><small>Grayscales</small></h2>
-      <div class="color-group" role="group">
+      <div class="color-group">
         <figure class="color-item is-gray100">
           <div></div>
           <figcaption>gray100</figcaption>
@@ -327,7 +304,7 @@
       </div>
       <br />
       <h2 style="margin:0 0 .5rem;"><small>Colors</small></h2>
-      <div class="color-group" role="group">
+      <div class="color-group">
         <figure class="color-item is-primary100">
           <div></div>
           <figcaption>green100</figcaption>
@@ -336,10 +313,6 @@
           <div></div>
           <figcaption>green800</figcaption>
         </figure>
-        <!-- <figure class="color-item is-red100">
-          <div></div>
-          <figcaption>red100</figcaption>
-        </figure> -->
         <figure class="color-item is-red800">
           <div></div>
           <figcaption>red800</figcaption>
@@ -366,34 +339,36 @@
       <div style="display:flex;margin-bottom:1rem;border-radius:var(--radius400);">
         <a href="" class="design-article-avatar-large"><span class="avatar-badge"></span></a>
         <div style="display:block;width:1.5rem;height:inherit;background:var(--blue100);"></div>
-        <div style="display:block;width:calc(100% - 80px - 1.5rem);height:inherit;background:var(--gray100);">Large Size</div>
+        <div style="display:block;width:calc(100% - 80px - 1.5rem);height:inherit;background:var(--gray100);">
+          <h3 style="font-size:1.25rem;font-weight:bold;">Large Size</h3>
+          <p>Multiple Item in Card</p>
+        </div>
       </div>
       <div style="display:flex;margin-bottom:1rem;border-radius:var(--radius400);">
         <a href="" class="design-article-avatar-medium"></a>
         <div style="display:block;width:1rem;height:inherit;background:var(--blue100);box-sizing:border-box;"></div>
-        <div style="display:block;width:calc(100% - 48px - 1rem);height:inherit;background:var(--gray100);">Medium Size</div>
+        <div style="display:block;width:calc(100% - 48px - 1rem);height:inherit;background:var(--gray100);">
+          <h3 style="font-weight:bold;font-size:1rem;">Medium Size</h3>
+          <p style="color:var(--gray400);">Multiple Item in Card</p>
+        </div>
       </div>
       <div style="display:flex;align-items:center;margin-bottom:1rem;border-radius:var(--radius400);">
         <a href="" class="design-article-avatar-small"></a>
         <div style="display:block;width:1rem;height:32px;background:var(--blue100);box-sizing:border-box;"></div>
-        <div style="display:block;width:calc(100% - 32px - 1rem);height:32px;background:var(--gray100);">Small Size</div>
+        <div style="display:block;width:calc(100% - 32px - 1rem);height:32px;line-height:32px;background:var(--gray100);">Small Size</div>
       </div>
       <div style="display:flex;border-radius:var(--radius400);">
         <a href="" class="design-article-avatar-tiny"></a>
         <div style="display:block;width:.5rem;height:inherit;background:var(--blue100);box-sizing:border-box;"></div>
         <div style="display:block;width:calc(100% - 16px - .5rem);height:inherit;background:var(--gray100);line-height:16px;">Tiny Size</div>
       </div>
-      <!-- <div class="minicard">
-				<span class="minicard-emoji">🦀</span>
-				<p class="minicard-value">12개</p>
-				<small class="minicard-label">chapters</small>
-      </div> -->
-      <!-- <div class="number">
+      <hr />
+      <div class="number">
         <div class="number-card">8</div>
         <div class="number-card">8</div>
         <div class="number-card">3</div>
         <div class="number-card">-</div>
-      </div> -->
+      </div>
     </article>
 
     <article class="design-article">
@@ -429,22 +404,6 @@
         </div>
         <button>Show More</button>
       </div>
-
-      <!-- <div class="ttt">
-				<span class="ttt-avatar">🦁</span>
-				<span>Run for 1h 03 minutes.</span>
-      </div> -->
-      <!-- <div class="minicard">
-				<span class="minicard-emoji">🦀</span>
-				<p class="minicard-value">12개</p>
-				<small class="minicard-label">chapters</small>
-      </div> -->
-      <!-- <div class="number">
-        <div class="number-card">8</div>
-        <div class="number-card">8</div>
-        <div class="number-card">3</div>
-        <div class="number-card">-</div>
-      </div> -->
     </article>
 
     <article class="design-article">
@@ -481,9 +440,6 @@
     <article class="design-article">
       <h1 class="design-article-title">Seperator</h1>
       <p class="design-article-description">섹션을 구획할 때 border 스타일링보다 hr / br 태그로 마크업하면 컴포넌트 고유성(?)을 유지하기 쉽습니다. 그렇게 하려면 hr / br 태그에 대한 가이드가 필요하겠죠?</p>
-      <pre>
-        &lt;hr role="separator" /&gt;
-      </pre>
       <hr role="separator" />
     </article>
 
@@ -507,7 +463,7 @@
 
     <article class="design-article">
       <h1 class="design-article-title">Tab</h1>
-      <p class="design-article-description">페이지 레벨의 네비게이션. pushState로 history 저장.스크롤스파이 적용해두기. 너무 segmented controls 스타일이긴 한데 2, 3개 탭을 충첩해야 할 때 개선하기.<p>
+      <p class="design-article-description">페이지 레벨의 네비게이션. 브라우저 히스토리. 스크롤스파이 적용해두기. 너무 segmented controls 스타일이긴 한데 2, 3개 탭을 충첩해야 할 때 개선하기.<p>
       <nav class="profile-tablist" role="tablist">
 				<button class="profile-tablist-tab" role="tab" aria-selected="true" data-index="1">🐗 프로젝트 <i class="profile-tablist-tab-badge">5</i></button>
 				<button class="profile-tablist-tab" role="tab" aria-selected="false" data-index="2">🕸️ 웹페이지 <i class="profile-tablist-tab-badge">5</i></button>
@@ -587,14 +543,14 @@
     </div>
     </article>
 
-    <!-- <article class="design-article">
+    <article class="design-article">
       <h1 class="design-article-title">Button Group</h1>
       <p class="design-article-description">샘플.</p>
       <div class="group-sample" role="group">
         <button class="group-sample-prev">이전</button>
-        <button class="group-sample-next">다음 <i class="icon-arrow"></i></button>
+        <button class="group-sample-next">다음</button>
       </div>
-    </article> -->
+    </article>
 
     <article class="design-article">
       <h1 class="design-article-title">Chips</h1>
@@ -633,8 +589,8 @@
     <article class="design-article">
       <h1 class="design-article-title">Checkboxes</h1>
       <p class="design-article-description">인라인 정렬하지 않습니다. 공간의 제약으로 인라인 정렬이 필요하다면, chip 스타일을 사용하세요. checkall, intermediate</p>
-      <fieldset>
-        <!-- <legend>Choose ingredients</legend> -->
+      <fieldset role="checkgroup">
+        <legend>checkgroup legend</legend>
         <div class="checkbox">
           <input class="js-checkall" type="checkbox" id="line00" value="" aira-checked="mixed" aria-controls="1 2" />
           <label for="line00" title="Check All">모두 동의합니다 (더 강조된 형태 필요)</label>
@@ -665,7 +621,7 @@
       <h1 class="design-article-title">Radioes</h1>
       <p class="design-article-description">리액트에서 id 관련 이슈</p>
       <fieldset role="radiogroup">
-        <!-- <legend>Choose ingredients</legend> -->
+        <legend>radiogroup legend</legend>
         <div class="radio">
           <input type="radio" id="gender-man" name="gender" value="">
           <label for="gender-man" title="Video Killed the Radio Button">Video Killed the Radio Button</label>
@@ -812,7 +768,6 @@
       <div class="statistic"><i class="statistic-label">팔로워</i><span class="statistic-value">21,682</span></div>
       <div class="statistic" style="margin-left:4rem;"><i class="statistic-label">Repository</i><span class="statistic-value">100만 이상</span></div>
       <div class="statistic" style="margin-left:4rem;"><i class="statistic-label">Size</i><span class="statistic-value">Small</span></div>
-
     </article>
 
     <article class="design-article">
@@ -860,11 +815,11 @@
         </p>
       </aside>
       <br />
-      <!-- <aside class="message">
+      <aside class="message">
         <span class="message-icon">🧡</span>
         <p class="message-head">마이페이지 좋아한 콘텐츠에 저장되었습니다.</p>
         <button class="message-close" aria-label="close"><i class="icon-close"></i></button>
-      </aside> -->
+      </aside>
     </article>
 
     <article class="design-article">
@@ -894,12 +849,12 @@
       </div>
     </article>
 
-    <!-- <article class="design-article">
+    <article class="design-article">
       <h1 class="design-article-title">Spinner</h1>
       <p class="design-article-description">샘플</p>
       <div class="loader-spinner" style="position:static;"></div>
       <div class="spinner"></div>
-    </article> -->
+    </article>
 
     <!-- <article class="design-article">
       <h1 class="design-article-title">Range</h1>
@@ -1003,19 +958,43 @@
       </aside>
     </article>
 
-    <!-- <article class="design-article grayscale">
+    <article class="design-article grayscale">
       <h1 class="design-article-title">Modal</h1>
       <p class="design-article-description">데스크탑 환경에서는 닫기 버튼을 제공하지 않습니다.</p>
-    </article> -->
+    </article>
 
     <article class="design-article grayscale">
       <h1 class="design-article-title">Cards</h1>
-      <p class="design-article-description">내용없음.</p>
+      <p class="design-article-description">borderless type.</p>
+      <div class="card" role="listitem">
+        <figure class="card-thumbnail"><img src="/public/images/springsteen.jpg" alt="" /></figure>
+        <h3 class="card-title">카드 유아이</h3>
+        <p class="card-text">따봉은 상세페이지에서 제공하세요. 북마크는 밖에 두어도 좋은가? 상세페이지에서 제공하는 것이 좋음.</p>
+        <time class="card-date">2017. 12. 21.</time>
+        <span class="card-category">카테고리</span>
+        <div class="card-tags" role="group">
+          <span class="tag">기획</span>
+          <span class="tag">UI</span>
+          <span class="tag">React</span>
+        </div>
+        <hr />
+        <figure class="card-item">
+          <div class="card-item-media"><img src="" alt="" /></div>
+          <h4 class="card-item-name">퓨어 오렌지 주스</h4>
+          <figcaption class="card-item-price">
+            <del>19,000원</del> 16,000원 <em>할인율 20%</em>
+          </figcaption>
+        </figure>
+        <div class="card-note">마일리지 적립 200P</div>
+        <button class="card-more" hidden><i class="icon-more"></i></button>
+      </div>
+      <br />
+
       <div class="quote">
         <div class="quote-avatar">
           <i class="icon-person"></i>
         </div>
-        <h3 class="quote-title">테스트 텍스트</h3>
+        <h3 class="quote-title">Quote</h3>
         <p class="quote-body">Amazing experience I love it a lot. Thanks to the team dreams come true, great! I really.</p>
         <div class="quote-byline">
           <div class="quote-byline-name">Lassy Chester</div>
@@ -1032,11 +1011,10 @@
         <h2 class="profile-user-name">Gyeongsoo I</h2>
         <span class="profile-user-id">@soojubm</span>
         <span class="profile-user-career">UI Designer / Frontend Engineer</span>
-        <!-- <footer class="profile-foot" style="display:flex;justify-content:space-between;margin:1rem 0;">
-          <span style="background:var(--gray100);padding-top:0;padding:0 1rem;font-size:.875rem;">🇰🇷 대한민국</span>
-          <span style="background:var(--blue100);padding-top:0;padding:0 1rem;font-size:.875rem;">🚴‍♂️ 자전거</span>
-        </footer> -->
-        <!-- <hr /> -->
+        <footer class="profile-foot" style="display:flex;;margin:1rem 0;">
+          <span class="tag">대한민국</span>
+          <span class="tag">자전거</span>
+        </footer>
         <footer class="profile-foot" style="display:flex;justify-content:space-between;">
           <button class="profile-foot-follow">팔로우</button>
         </footer>
@@ -1063,22 +1041,6 @@
         <button class="pricing-item-more">And More...</button>
       </div>
     </article>
-
-    <!-- <article class="design-article grayscale">
-      <h1 class="design-article-title">Hero</h1>
-      <p class="design-article-description">샘플.</p>
-      <section class="hero" style="width:100%;max-width:1440px;">
-        <div class="hero-inner" style="overflow:hidden;border:var(--border100);border-radius:var(--radius400);">
-          <div class="hero-background"></div>
-          <small class="hero-eyebrow">eyebrow line</small>
-          <h1 class="hero-title">제목<br />두줄<i style="font-style:italic;">!</i></h1>
-          <p class="hero-description">디스크립션. <span class="linebreaker-desktop">디스크립션.</span></p>
-          <footer class="hero-foot">
-            <a class="hero-cta">CTA 버튼</a>
-            <a class="hero-detail">Sub 버튼</a>
-          </footer>
-      </section>
-    </article> -->
 
     <!-- // Chris said Marcus replied -->
     <article class="design-article grayscale">
@@ -1140,8 +1102,8 @@
         </button>
         <hr />
         <div class="share-copy textfield is-small">
-          <input class="share-copy-url textfield-input" type="text" value="https://newneek.co/post/jadebabo (todo: truncate 필요할 지?)" readonly />
-          <button class="share-copy-button js-copy" type="button" tabindex="0" style="border-color:var(--color-primary);background:var(--gray0);">
+          <input class="share-copy-url textfield-input" type="text" value="https://newneek.co/post/jadebabo" readonly />
+          <button class="share-copy-button js-copy" type="button" tabindex="0" style="border:none;background:var(--gray0);">
             주소 복사하기
           </button>
         </div>
@@ -1219,28 +1181,12 @@
             <td class="right">9,600</td>
           </tr>
           <tr>
-            <td>ま</td>
-            <td>み</td>
-            <td>む</td>
-            <td>め</td>
-            <td>も</td>
-            <td class="right">hello</td>
-          </tr>
-          <tr>
             <td>や</td>
             <td>-</td>
             <td>ゆ</td>
             <td>-</td>
             <td>よ</td>
             <td class="right"></td>
-          </tr>
-          <tr>
-            <td>ら</td>
-            <td>り</td>
-            <td>る</td>
-            <td>れ</td>
-            <td>ろ</td>
-            <td class="right">12,000</td>
           </tr>
           <tr>
             <!-- <td><input type="checkbox"><label for=""></label></td> -->
@@ -1306,10 +1252,10 @@
     <article class="design-article">
       <h1 class="design-article-title">배너</h1>
       <p class="design-article-description">테스트.</p>
-      <section class="banner">
+      <aside class="banner">
         <h2 class="banner-text">수줍이에는 처음 방문이신가요?</h2>
         <button class="banner-button">이용방법 알아보기</button>
-      </section>
+      </aside>
     </article>
 
     <article class="design-article">
@@ -1366,16 +1312,16 @@
         <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 12px; width: 12px; fill: crimson;"><path d="M15.094 1.579l-4.124 8.885-9.86 1.27a1 1 0 0 0-.542 1.736l7.293 6.565-1.965 9.852a1 1 0 0 0 1.483 1.061L16 25.951l8.625 4.997a1 1 0 0 0 1.482-1.06l-1.965-9.853 7.293-6.565a1 1 0 0 0-.541-1.735l-9.86-1.271-4.127-8.885a1 1 0 0 0-1.814 0z" fill-rule="evenodd"></path></svg>
         <b class="rating2-score">4.32</b>
       </div>
-      <hr style="margin:1rem 0;" />
-      <!-- <dl class="row1 is-pull" style="display: flex;justify-content: space-between;">
-        <dt>의사소통</dt>
+      <hr />
+      <dl class="row1 is-pull" style="display: flex;justify-content: space-between;">
+        <dt>신선도</dt>
         <dd style="display: flex;align-items: center;">
           <div class="graph-item is-horizontal">
             <span class="graph-item-value">4.8</span>
             <div class="graph-item-bar"></div>
           </div>
         </dd>
-      </dl> -->
+      </dl>
       <dl style="display:block;margin:1rem 0;">
         <dt>클라우드 스토리지</dt>
         <dd style="display:block;align-items: center;margin-top:-.5rem;">
@@ -1414,16 +1360,12 @@
           <span class="graph-item-label">40대</span>
         </div>
       </div>
-      <!-- <div style="background:var(--gray100);">
-        최근 3개월간 네이버플러스 멤버십으로<br />
-<em>15,799원 추가 적립 혜택</em>이 생겼어요!이모지
-      </div> -->
     </article>
 
     <article class="design-article">
       <h1 class="design-article-title">Stepper</h1>
       <p class="design-article-description">내용없음. 모바일 퍼스트.</p>
-      <div class="step">
+      <section class="step">
         <div class="step-item is-active">
           <span class="step-item-icon">1</span>
           <h3 class="step-item-title">장바구니</h3>
@@ -1447,33 +1389,65 @@
           <span class="step-item-icon">3</span>
           <h3 class="step-item-title">주문완료</h3>
         </div>
-      </div>
+      </section>
     </article>
-  </section>
 
-  <!-- <form class="filter">
-    <header class="filter-head">
-      <h1 class="filter-title">Filters</h1>
-    </header>
-    <fieldset class="filter-fieldset">
-      <legend class="filter-fieldset-legend">예약하기</legend>
-      <div class="textfield" style="float:left;width:50%;">
-        <label class="textfield-label" for="date-start"><i class="">시작일</i></label>
-        <label class="textfield-icon" for="date-start"><i class="material-icons">today</i></label>
-        <input class="textfield-input" type="date" id="date-start" placeholder="날짜를 설정해주세요." />
-        <span class="textfield-unit">cm</span>
-      </div>
-      <div class="textfield" style="float:left;width:50%;">
-        <label class="textfield-label" for="date-end">종료일</label>
-        <label class="textfield-icon " for="date-start"><i class="material-icons">today</i></label>
-        <input class="textfield-input" type="date" id="date-end" placeholder="날짜를 설정해주세요." style="border-left:none;" />
-      </div>
-    </fieldset>
-    <footer class="filter-foot">
-      <button class="filter-foot-confirm">필터링하기</button>
-      <button class="filter-foot-reset">clear filters</button>
-    </footer>
-  </form> -->
+    <!-- <article class="design-article">
+      <h1 class="design-article-title">Filter</h1>
+      <p class="design-article-description">샘플</p>
+      <form class="filter">
+        <header class="filter-head">
+          <h1 class="filter-title">Filters</h1>
+        </header>
+        <fieldset class="filter-fieldset">
+          <legend class="filter-fieldset-legend">예약하기</legend>
+        </fieldset>
+        <footer class="filter-foot">
+          <button class="filter-foot-confirm">필터링하기</button>
+          <button class="filter-foot-reset">clear filters</button>
+        </footer>
+      </form>
+    </article> -->
+
+    <article class="design-article">
+      <h1 class="design-article-title">Timeline</h1>
+      <p class="design-article-description">샘플</p>
+      <section class="timeline">
+        <h1 class="timeline-title">1회차 주문 현황</h1>
+        <div class="timeline-item">
+          <header class="timeline-item-head">
+            <span class="timeline-item-head-icon"><i class="icon-person"></i></span>
+            <h1 class="timeline-item-head-title">결제</h1>
+          </header>
+          <div class="timeline-item-body">
+            <div class="timeline-item-body-panel">
+              상품이 결제되었습니다.
+            </div>
+            <aside class="timeline-item-body-cancel">
+              <p>집행 중 취소 시 수수료가 발생합니다. <button class="">주문취소</button></p>
+            </aside>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <header class="timeline-item-head">
+            <span class="timeline-item-head-icon"><i class="icon-person"></i></span>
+            <h1 class="timeline-item-head-title">소재등록</h1>
+          </header>
+          <div class="timeline-item-body">
+            <div class="timeline-item-body-panel">
+              <span>3개의 매체에 대한 소재등록이 필요합니다.</span>
+            </div>
+            <div class="timeline-item-body-panel">
+              <span>[확정] 등록한 소재가 확정되었습니다.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </article>
+
+  </section>
+</main>
+
 
 
     <!-- <form class="todo js-todo" style="max-width:560px;margin:0 auto;">
@@ -1491,45 +1465,6 @@
         <button class="todo-control-remove js-todo-clear">remove all items</button>
       </footer>
     </form> -->
-
-    <!-- <article class="design-article">
-      <h1 class="design-article-title">Timeline or Feed</h1>
-      <p class="design-article-description">왼쪽에 아바타가 있는 경우 항상 사용할 수 있게 만들기.</p>
-      <section class="timeline">
-        <h1 class="timeline-title">1회차 주문 현황 (임시 텍스트)</h1>
-        <div class="timeline-item payment --complete">
-          <header class="timeline-item-head">
-            <span class="timeline-item-head-icon --complete"><i class="far fa-credit-card"></i></span>
-            <h1 class="timeline-item-head-title">결제</h1>
-          </header>
-          <div class="timeline-item-body">
-            <div class="timeline-item-body-panel --success">
-              상품이 결제되었습니다.
-            </div>
-            <div class="timeline-item-body-cancel">
-              <p>집행 중 취소 시 수수료가 발생합니다. <button class="">주문취소</button></p>
-            </div>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <header class="timeline-item-head">
-            <span class="timeline-item-head-icon"><i class="fas fa-file-upload"></i></span>
-            <h1 class="timeline-item-head-title">소재등록</h1>
-            <div class="timeline-item-head-note"><i class="far fa-question-circle"></i></div>
-          </header>
-          <div class="timeline-item-body">
-            <div class="timeline-item-body-panel --required">
-              <span>3개의 매체에 대한 소재등록이 필요합니다.</span>
-              <i class="fas fa-angle-down"></i>
-            </div>
-            <div class="timeline-item-body-panel --success">
-              <span>[확정] 등록한 소재가 확정되었습니다.</span>
-              <i class="fas fa-angle-down"></i>
-            </div>
-          </div>
-        </div>
-      </section>
-    </article> -->
 
       <!-- <form action="">
         <input type="checkbox">
@@ -1550,4 +1485,3 @@
       .icon-check1:before {content:'';display:inline-block;width:28px;height:9px;border-left:2px solid;border-bottom:2px solid;border-color:var(--gray800);transform:rotate(-45deg);position:absolute;right:-2px;top:4px;z-index:2;}
       .icon-check1:after {content:'';display:block;width:16px;height:18px;background:var(--gray0);position:absolute;right:-6px;top:0px;z-index:1;}
       </style> -->
-</main>

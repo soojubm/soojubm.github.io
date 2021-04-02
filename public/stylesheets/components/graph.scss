@@ -6,7 +6,6 @@
 .graph-item-label {display:block;font-size:$caption;text-align:center;position:absolute;left:0;right:0;bottom:-2rem;}
 
 
-
 .graph-item.is-horizontal {width:120px;height:4px;margin-right:2rem;border-radius:var(--radius400);}
 .graph-item.is-horizontal .graph-item-bar {width:90%;height:4px;border-radius:var(--radius400);}
 .graph-item.is-horizontal .graph-item-value {text-align:right;bottom:-8px;right:-2rem;}

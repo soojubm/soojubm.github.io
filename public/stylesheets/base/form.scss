@@ -207,8 +207,8 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 .boxed-form div input {margin-top:-2px;padding:0;background:inherit;border:none;}
 .boxed-form div + div {margin-top:-1px;}
 
-.filter {width:320px;background:var(--gray0);overflow-y:scroll;margin:0 auto;padding:2rem 3rem;position:fixed;right:0;top:0;bottom:0;z-index:1;}
-.filter-title {font-size:1.25rem;}
+.filter {}
+.filter-title {@include subhead;}
 .filter-fieldset {margin:1.5rem 0;padding:1.75rem 0 2rem 0;border-bottom:var(--border100);position:relative;}
 .filter-fieldset-legend {width:100%;line-height:1;position:absolute;top:0;}
 .filter-fieldset-description {margin:0 0 8px 0;}

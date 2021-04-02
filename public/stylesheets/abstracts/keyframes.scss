@@ -23,10 +23,6 @@ $md-radio-ripple-size: .25rem;
 	from {transform: rotate(0deg);}
 	to {transform: rotate(360deg);}
 }
-@keyframes spin {
-	0% {transform:rotate(0deg);}
-	100% {transform:rotate(360deg);}
-}
 
 @keyframes swing {
 	from {transform: translateY(0px);}

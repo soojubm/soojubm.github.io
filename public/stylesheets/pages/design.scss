@@ -185,13 +185,6 @@
 .number {display:flex;justify-content:center;}
 .number-card {display:flex;justify-content:center;align-items:center;width:48px;height:64px;background:var(--gray100);border-radius:var(--shadow400);font-size:2rem;font-weight:bold;margin:0 .25rem;}
 
-
-.minicard {width:$cell-large;padding:1.5rem 0;text-align:center;}
-.minicard-emoji {@include box-large;font-size:3rem;}
-.minicard-value {margin:1rem 0 0;font-size:1rem;line-height:1;}
-.minicard-label {font-size:$caption;color:var(--gray400);}
-
-
 .userlist {@include container-card;}
 .userlist header {display:flex;align-items:center;justify-content:space-between;margin:0 0 1rem 0;}
 .userlist header h1 {@include subhead;}

@@ -41,11 +41,11 @@
 // .password-submit {float:left;width:200px;max-width:50%;}
 // .password-link {float:right;margin-top:16px;}
 
-.delete {@include container-small;}
-.delete-head {padding:2rem 0% 4rem;}
+.delete {@include container-medium;}
+.delete-head {}
 .delete-head-title {}
 .delete-head-description {margin:1rem 0;}
-.delete-suggest {padding:4rem 0%;}
+.delete-suggest {}
 .delete-suggest-subhead {margin:1rem 0;@include subhead;}
 .delete-why {padding:0 0%;}
 .delete-why-title {@include subhead;}
