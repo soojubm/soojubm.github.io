@@ -25,7 +25,7 @@
 .icon-heart:before {content:'';background:var(--gray800);width:7px;height:12px;border-radius:50px 50px 0 0;transform: rotate(-45deg);position:absolute;left:-5px;top:-6px;}
 .icon-heart:after {content:'';background:var(--gray800);width:7px;height:12px;border-radius: 50px 50px 0 0;	transform: rotate(45deg);position:absolute;left:-1px;top:-6px;}
 
-.icon-check {display:inline-block;width:10px;height:3px;border-left:2px solid;border-bottom:2px solid;border-color:var(--gray800);transform:translateY(-2px) rotate(-45deg);}
+.icon-check {display:inline-block;width:10px;height:3px;border-left:2px solid;border-bottom:2px solid;border-color:var(--gray800);vertical-align:middle;transform:translateY(-2px) rotate(-45deg);}
 
 .icon-ribbon {}
 .icon-ribbon:before {content: '';display: block;width:8px;height:12px;background:var(--gray800);margin:6px auto 0;}

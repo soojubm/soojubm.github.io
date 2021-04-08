@@ -39,14 +39,14 @@ export const carousel = () => {
 // todo
 export const setDarkmode = () => {
   const darkmodeButton = document.querySelector('.js-darkmode')
-  console.log(darkmodeButton)
   if(!darkmodeButton) return
 
   darkmodeButton.addEventListener('click', tt)
+  // setTimeout(() => {
+  //   darkmodeButton.removeEventListener('click', tt)
+  // }, 1000)
 
   loadTheme()
-  
-
 
   function tt() {
     const DARK_CLASS = 'theme-dark'

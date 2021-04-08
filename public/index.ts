@@ -11,6 +11,8 @@ import input from './javascripts/input/index'
 
 import { throttle } from './javascripts/utils/optimizationUtils'
 
+import books from '../views/books'
+
 // import { validity } from './javascripts/utils/validations'
 // import { copyClipboard } from './javascripts/utils/formatUtils.js'
 // const isScrollEnd = window.innerHeight + window.pageYOffset >= document.body.offsetHeight
@@ -56,7 +58,27 @@ document.addEventListener('DOMContentLoaded', () => {
 async function domEvents() {
   await routePage()
 
-  setDarkmode()
+
+  const boardElement = document.querySelector('.about-book-inner');
+  if(boardElement) {
+    setTimeout(() => {
+      books.map(item => {
+        boardElement.innerHTML += `
+          <article class="bookitem">
+          <figure class="bookitem-cover">
+            <img src=${item.imgSrc} alt=${item.title}>
+          </figure>
+          <h3 class="bookitem-name">
+            <span role="img" aria-label="">📙</span> ${item.title}
+            <small class="bookitem-description">구글 최고의 혁신 전문가가 찾아낸 비즈니스 설계와 검증의 방법론</small>
+          </h3>
+          <hr />
+          <p class="bookitem-byline">${item.author || '정보가 없습니다'}</p>
+          <time class="bookitem-publishedyear">${item.publishedDate || '정보가 없습니다'}</time>
+        </article>`;
+      });
+    }, 200);
+  }
 
   document.querySelector('.textbox-toolbar-bold')?.addEventListener('click', () => format('italic', null))
   function format(command, value) {
@@ -142,6 +164,10 @@ async function domEvents() {
       } catch (error) {}
     }
   }
+
+
+  // removeEventListener
+  setDarkmode()
 
 
   input.checkbox({ checkAllSelector: '.js-checkall', checkSelector: '.js-check' }).initialize()
@@ -322,9 +348,7 @@ function initializePage() {
 // 		return response.json();
 // 	});
 
-// 연도별 감독별 나라별
-// const boardElement = document.querySelector('.board');
-// if(!boardElement) return null;
+
 // document.addEventListener('click', event => {
 // 	const filteredCountry = films.filter(item => item.country === '미국');
 // 	console.log(filteredCountry);
@@ -342,18 +366,6 @@ function initializePage() {
 // 		});
 // 	}
 // });
-// setTimeout(() => {
-// 	films.map(item => {
-// 		boardElement.innerHTML += `
-// 		<div class="board-body">
-// 			<div class="board-head-title">${item.id}</div>
-// 			<div class="board-head-title">${item.releaseDate}</div>
-// 			<div class="board-head-title">${item.titleKorean}<div>${item.titleEnglish}</div></div>
-// 			<div class="board-head-title">${item.director}</div>
-// 			<div class="board-head-title">${item.country}</div>
-// 		</div>`;
-// 	});
-// }, 200);
 
 // document.addEventListener('input', event => {
 // 	// const helpers = document.querySelectorAll('.textfield-helper');

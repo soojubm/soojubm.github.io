@@ -39,12 +39,12 @@
 @media (--viewport-large) {
   .design {padding:0;}
   .design-head {height:20rem;position:relative;left:0;right:0;top:0;bottom:0;}
-  .design-body {margin:0 10%;padding:0;}
+  .design-body {margin:0 5%;padding:0;}
 }
 
 
 @media (--viewport-small) {
-  .design-body {width:90%;margin:0 5%;}
+  .design-body {width:90%;}
 }
 
 
@@ -190,6 +190,7 @@
 .userlist header h1 {@include subhead;}
 .userlist header a {font-weight:bold;}
 .userlist .profile-user:hover {@include hover-item;}
+.userlist-cta {width:100%;margin:1rem 0 0 0;@include button-secondary;}
 // .userlist:after {
 //   content:'';display:block;clear:both;
 // }
@@ -221,3 +222,30 @@
   padding-bottom: 50%;
 }
 .media img {@include image-centered;}
+
+
+
+.hover-sample {@include box-large;}
+.hover-sample:hover {@include hover-item;}
+
+
+.guide {
+  @include container-card;
+  // todo icon do dont로 구분하기
+  .guide-do {
+    display: flex;
+    align-items: center;
+    line-height: 16px;
+    span {background-color:var(--blue100);}
+  }
+  .guide-donot {
+    display: flex;
+    align-items: center;
+    line-height: 16px;
+    span {background-color:var(--red100);}
+  }
+  span {
+    @include box-tiny;
+    margin: 0 .5rem 0 0;
+  }
+}

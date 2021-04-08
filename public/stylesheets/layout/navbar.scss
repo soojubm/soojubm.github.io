@@ -59,7 +59,7 @@
 .notification-item-title {font-size:1rem;}
 .notification-item-date {font-size:$caption;color:var(--gray400)}
 
-.notification-unread {display:block;@include box-tiny;font-size:$caption;position:absolute;left:-.25rem;top:-.25rem;z-index:1;}
+.notification-unread {display:block;@include box-tiny;font-size:$caption;position:absolute;left:-.125rem;top:-.125rem;z-index:1;}
 
 .navbar-user-account {position:relative;}
 .navbar-user-account-trigger {display:flex;justify-content:center;align-items:center;height:32px;}

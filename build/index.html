@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" dir="ltr">
   <head>
     <title>수줍이</title>
     <meta charset="utf-8" />
@@ -8,9 +8,14 @@
     <meta name="format-detection" content="telephone=no, email=no, address=no" />
     <meta name="robots" content="noindex" />
     <meta name="theme-color" content="rgba(255,255,255,.8)" />
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-stylnpe" content="black-translucent" />
     <meta name="mobile-web-app-capable" content="yes" />
+
+    <meta name="msapplication-config" content="browserconfig.xml" />
     <meta name="msapplication-square310x310logo" content="/icon_largetile.png" />
+
     <meta name="author" content="soojubm" />
     <meta name="subject" content="수줍이의 포트폴리오" />
     <meta name="description" content="부끄러우니까 보지마요." />
@@ -22,16 +27,23 @@
     <meta property="og:url" content="https://soojubm.github.io" />
     <meta property="og:title" content="수줍이의 포트폴리오" />
     <meta property="og:image" content="/images/open-graph.png" />
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:description" content="부끄러우니까 보지마요." />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@" />
+    <meta name="twitter:creator" content="soojubm" />
     <meta name="twitter:url" content="https://soojubm.github.io" />
     <meta name="twitter:title" content="수줍이의 포트폴리오" />
     <meta name="twitter:description" content="부끄러우니까 보지마요." />
-    <meta name="twitter:creator" content="soojubm" />
+    <meta name="twitter:image" content="https://example.com/image.jpg">
+
     <link rel="canonical" href="https://soojubm.github.io/" />
-    <link rel="icon" sizes="192x192" href="" />
-    <link rel="apple-touch-icon" href="" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="" /> <!-- 200x200 -->
+
+
     <link rel="stylesheet" href="./build/main.css" />
 
     <meta name="format-detection" content="telephone=no" />
@@ -115,7 +127,6 @@
       <div class="navbar-menu" role="navigation">
         <a route="/profile" class="navbar-menu-item" href="#about">소개</a>
         <a route="/profile" class="navbar-menu-item" href="#profile">작업</a>
-        <a route="/post" class="navbar-menu-item" href="#post">블로그</a>
         <div class="navbar-menu-item has-submenu js-hover-trigger">
           <a href="#">샘플페이지<i class="icon-caret"></i></a>
           <menu>
@@ -123,6 +134,7 @@
             <a route="/design" href="#signup">회원가입</a>
             <a route="/design" href="#forgot">비밀번호찾기</a>
             <a route="/design" href="#setting">설정</a>
+            <a route="/design" href="#post">포스트</a>
             <a route="/design" href="#product">상품</a>
             <a route="/design" href="#cart">카트</a>
             <a route="/design" href="#checkout">주문서</a>
@@ -175,7 +187,7 @@
             <h6 class="navbar-user-notification-menu-title">알림</h6>
             <hr />
             <div class="notification-item">
-              <em class="notification-unread">🌱</em>
+              <em class="notification-unread"></em>
               <figure class="notification-item-avatar"></figure>
               <h2 class="notification-item-title">John Cassavetes</h2>
               <time class="notification-item-date" style="position:absolute;right:0;top:0;">5일 전</time>
@@ -314,8 +326,10 @@
           통신판매업 2018-서울강서구-1234
           <abbr title="phone"></abbr>
         </div>
-        <small class="footer-copyright" role="copyright">© 2019 soojubm. ALL RIGHTS RESERVED.</small>
+        <small class="footer-copyright" role="copyright">© 2019 soojubm. All rights Reserved.
         <p>이 제작물은 아모레퍼시픽의 아리따글꼴을 사용하여 디자인 되었습니다.</p>
+
+        </small>
         <!-- <div class="countdown">
           <div class="days">
             <div class="days-value js-days"></div>

@@ -50,9 +50,9 @@
 				<span class="tag">GoogleOptimize</span>
 				<span class="tag">Figma</span>
 			</div>
-			<div class="profile-controls">
-				<button class="profile-controls-follow">팔로우</button>
-				<button class="profile-controls-message">메세지</button>
+			<div class="profile-user-controls">
+				<button class="profile-user-controls-follow">팔로우</button>
+				<button class="profile-user-controls-message">메세지</button>
 			</div>
 			<button class="profile-user-toggle js-toggle" hidden>
 				수줍이님이 더 궁금하신가요?
@@ -61,8 +61,8 @@
 			<section class="profile-user-info">
 				<hr role="separator" />
 				<div class="profile-user-statistic">
-					<div class="statistic"><i class="statistic-label" onclick="javascript:alert('샘플 유아이에요!')">팔로워</i><span class="statistic-value">24</span></div>
-					<div class="statistic"><i class="statistic-label" onclick="javascript:alert('샘플 유아이에요!')">팔로잉</i><span class="statistic-value">24</span></div>
+					<div class="statistic"><i class="statistic-label" onclick="javascript:alert('샘플 유아이에요!')">팔로워</i><span class="statistic-value">62</span></div>
+					<div class="statistic"><i class="statistic-label" onclick="javascript:alert('샘플 유아이에요!')">팔로잉</i><span class="statistic-value">8</span></div>
 				</div>
 				<hr role="separator" />
 				<div class="profile-user-address">
@@ -73,10 +73,10 @@
 				<hr role="separator" />
 				<div class="profile-user-socials" style="margin-top:1rem;">
 					<h2 class="profile-user-socials-title">소셜 미디어</h2>
-					<a class="profile-user-socials-link" href="https://www.facebook.com/soojubm/" target="_blank" rel="noopener" onclick="trackOutboundLink('https://www.facebook.com/soojubm/'); return false;">페이스북</a>
-					<a class="profile-user-socials-link" href="https://www.pinterest.co.kr/soojubm/" target="_blank" rel="noopener" onclick="trackOutboundLink('https://www.pinterest.co.kr/soojubm/'); return false;">핀터레스트</a>
-					<a class="profile-user-socials-link" href="https://github.com/soojubm" target="_blank" rel="noopener" onclick="trackOutboundLink('https://github.com/soojubm'); return false;">깃허브</a>
-					<a class="profile-user-socials-link" href="https://www.instagram.com/soojubm/" target="_blank" rel="noopener" onclick="trackOutboundLink('https://www.instagram.com/soojubm/'); return false;">인스타그램</a>
+					<a class="profile-user-socials-link" href="https://www.facebook.com/soojubm/" target="_blank" rel="noopener noreferrer" onclick="trackOutboundLink('https://www.facebook.com/soojubm/'); return false;">페이스북</a>
+					<a class="profile-user-socials-link" href="https://www.pinterest.co.kr/soojubm/" target="_blank" rel="noopener noreferrer" onclick="trackOutboundLink('https://www.pinterest.co.kr/soojubm/'); return false;">핀터레스트</a>
+					<a class="profile-user-socials-link" href="https://github.com/soojubm" target="_blank" rel="noopener noreferrer" onclick="trackOutboundLink('https://github.com/soojubm'); return false;">깃허브</a>
+					<a class="profile-user-socials-link" href="https://www.instagram.com/soojubm/" target="_blank" rel="noopener noreferrer" onclick="trackOutboundLink('https://www.instagram.com/soojubm/'); return false;">인스타그램</a>
 				</div>
 			</section>
 		</section>
@@ -96,40 +96,9 @@
 			</div>
 
 			<section class="profile-tabpanel" role="tabpanel" aria-hidden="" data-index="1">
-				<a class="card js-modal" href="#" data-modal="newneek-app">
-					<figure class="card-thumbnail" style="background:#fb7800;border-color:#fb7800;"><img src="" alt="" /></figure>
-					<h3 class="card-title">뉴닉 앱</h3>
-					<figure class="card-byline">
-						<div class="card-byline-avatar"><img src="/public/images/soo.png" alt="" /></div>
-						<figcaption class="card-byline-name">수줍이</figcaption>
-					</figure>
-					<div class="card-tags" role="group">
-						<span class="tag">기획</span>
-						<span class="tag">UI</span>
-						<span class="tag">React</span>
-					</div>
-					<button class="card-more" hidden><i class="icon-more"></i></button>
-				</a>
-
-
-				<a class="card js-modal" href="#" data-modal="newneek-book">
-					<figure class="card-thumbnail" style="background:#fb7800;border-color:#fb7800;"><img style="max-height:80%;box-shadow:none;"src="https://newneek.co/static/media/gosumbook-logo.8d73e3f9.png" alt="" /></figure>
-					<h3 class="card-title">뉴닉 고슴책</h3>
-					<figure class="card-byline">
-						<div class="card-byline-avatar"><img src="/public/images/soo.png" alt="" /></div>
-						<figcaption class="card-byline-name">수줍이</figcaption>
-					</figure>
-					<div class="card-tags" role="group">
-						<span class="tag">기획</span>
-						<span class="tag">UI</span>
-						<span class="tag">React</span>
-					</div>
-					<button class="card-more" hidden><i class="icon-more"></i></button>
-				</a>
-
+				
 				<a class="card js-modal" href="#" data-modal="newneek">
-					<figure class="card-thumbnail" style="background:#fb7800;border-color:#fb7800;"><img style="margin:1rem auto 0;box-shadow:none;" src="https://newneek.co/static/media/gosum-home.7b7f5b6b.png" alt="" /></figure>
-					<figure style="width:32px;height:32px;border:4px solid #fff;background:crimson;border-radius:var(--radius400);position:absolute;right:1rem;top:55%;"></figure>
+					<figure class="card-thumbnail"><img style="margin:1rem auto 0;box-shadow:none;" src="https://newneek.co/static/media/gosum-home.7b7f5b6b.png" alt="" /></figure>
 					<h3 class="card-title">뉴닉 웹사이트 리뉴얼</h3>
 					<!-- <span class="card-new">신규</span> -->
 					<!-- <time class="card-date">2017-12-18</time> -->
@@ -145,8 +114,39 @@
 					<button class="card-more" hidden><i class="icon-more"></i></button>
 				</a>
 				
+				<a class="card js-modal" href="#" data-modal="newneek-app">
+					<figure class="card-thumbnail"><img src="" alt="" /></figure>
+					<h3 class="card-title">뉴닉 앱</h3>
+					<figure class="card-byline">
+						<div class="card-byline-avatar"><img src="/public/images/soo.png" alt="" /></div>
+						<figcaption class="card-byline-name">수줍이</figcaption>
+					</figure>
+					<div class="card-tags" role="group">
+						<span class="tag">기획</span>
+						<span class="tag">UI</span>
+						<span class="tag">React</span>
+					</div>
+					<button class="card-more" hidden><i class="icon-more"></i></button>
+				</a>
+
+
+				<a class="card js-modal" href="#" data-modal="newneek-book">
+					<figure class="card-thumbnail"><img style="max-height:80%;box-shadow:none;"src="https://newneek.co/static/media/gosumbook-logo.8d73e3f9.png" alt="" /></figure>
+					<h3 class="card-title">뉴닉 고슴책</h3>
+					<figure class="card-byline">
+						<div class="card-byline-avatar"><img src="/public/images/soo.png" alt="" /></div>
+						<figcaption class="card-byline-name">수줍이</figcaption>
+					</figure>
+					<div class="card-tags" role="group">
+						<span class="tag">기획</span>
+						<span class="tag">UI</span>
+						<span class="tag">React</span>
+					</div>
+					<button class="card-more" hidden><i class="icon-more"></i></button>
+				</a>
+				
 				<a class="card js-modal" href="#" data-modal="newneek-election">
-					<figure class="card-thumbnail" style="background:#fb7800;border-color:#fb7800;"><img style="margin-top:2rem;box-shadow:none;" src="" alt="" /></figure>
+					<figure class="card-thumbnail"><img style="margin-top:2rem;box-shadow:none;" src="" alt="" /></figure>
 					<h3 class="card-title">뉴닉 총선 프로젝트</h3>
 					<figure class="card-byline">
 						<div class="card-byline-avatar"><img src="/public/images/soo.png" alt="" /></div>
