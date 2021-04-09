@@ -8,28 +8,6 @@ type Parameter = {
   selector: string
 }
 
-const getOptions = data => {
-  return {
-    method: 'POST',
-    body: JSON.stringify(data || {}),
-    headers: {
-      'Content-type': 'application/json; charset=UTF-8',
-    },
-  }
-}
-
-const getData = (url, data) => {
-  return fetch(url, {
-    method: 'POST',
-    body: JSON.stringify(data),
-    headers: {
-      'Content-type': 'application/json; charset=UTF-8',
-    },
-  }).then(response => {
-    if (response.ok) return response.json()
-    return Promise.reject(response)
-  })
-}
 
 const modal = ({ selector: trigger }: Parameter) => ({
   modalTriggers: document.querySelectorAll<HTMLElement>(trigger),
@@ -94,3 +72,31 @@ const modal = ({ selector: trigger }: Parameter) => ({
 })
 
 export default modal
+
+
+
+
+
+
+const getOptions = data => {
+  return {
+    method: 'POST',
+    body: JSON.stringify(data || {}),
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+  }
+}
+
+const getData = (url, data) => {
+  return fetch(url, {
+    method: 'POST',
+    body: JSON.stringify(data),
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+  }).then(response => {
+    if (response.ok) return response.json()
+    return Promise.reject(response)
+  })
+}
