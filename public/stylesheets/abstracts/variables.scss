@@ -1,6 +1,6 @@
 // ! viewport : desktop first
-@custom-media --viewport-large (max-width: 1440px);
-@custom-media --viewport-medium (max-width: 1280px);
+@custom-media --viewport-large (max-width: 1441px);
+// @custom-media --viewport-medium (max-width: 1280px);
 @custom-media --viewport-small (max-width: 1080px);
 
 $cell-large: 80px; // => 64px;
@@ -8,7 +8,7 @@ $cell-medium: 48px;
 $cell-small: 32px;
 $cell-tiny: 16px;
 
-// ! typhography
+// ! typography
 $headline: 3rem;
 $title: 2rem;
 $subhead: 1.25rem;
@@ -240,8 +240,8 @@ $height-header: 56px;
 }
 
 
-@mixin link-inner {color:var(--color-primary);}
-@mixin link-outer {font-weight:bold;text-decoration:underline;}
+@mixin link-inner {display:inline-block;color:var(--color-primary);}
+@mixin link-outer {display:inline-block;color:var(--gray800);text-decoration:underline;}
 
 .linebreaker-desktop {
   display:block;
@@ -272,3 +272,4 @@ $height-header: 56px;
 //   <!-- Use this image if the user's OS setting is dark -->
 //   <source srcset="photo-dark.png" media="(prefers-color-scheme: dark)">
 // </picture>
+

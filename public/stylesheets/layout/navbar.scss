@@ -76,9 +76,9 @@
 .user-logout:hover {@include hover-item;}
 .user-logout:hover .user-logout-icon {background:var(--gray0);}
 
-.user-myinfo {margin:.5rem 0 0;text-decoration:underline;}
+.user-myinfo {@include link-outer;margin:.5rem 0 0;}
 .user-footer {font-size:$caption;}
-.user-footer a {color:var(--gray400);}
+.user-footer a {margin:0 1rem 0 0;color:var(--gray400);}
 
 
 .is-shown .navbar-logo {color:var(--gray0);z-index:8;}

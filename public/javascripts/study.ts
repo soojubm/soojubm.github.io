@@ -210,37 +210,66 @@ console.log(evenMoreLunch);
 
 
 
-
-
-var counter = document.querySelector('#counter');
-var number = 0;
-
-var countUp = function () {
-
-	// Increase number by 1
-	number++;
-
-	// Update the UI
-	counter.textContent = number;
-
-	// if the number is less than 500, run it again
-	if (number < 500) {
-		window.requestAnimationFrame(countUp);
-	}
-
-};
-
-// Start the animation
-window.requestAnimationFrame(countUp);
-
-
-
-
-
-
 ReactGA.initialize(process.env.REACT_APP_TRACKING_ID, { debug: true });
   const history = createBrowserHistory();
   history.listen((location: any) => {
     ReactGA.set({ page: location.pathname }); // Update the user's current page
     ReactGA.pageview(location.pathname); // Record a pageview for the given page
   });
+
+
+
+
+  
+  var pagItems = document.querySelectorAll('.pagination__item');
+
+  for (var i = 0; i < pagItems.length; i++) {
+    var counter = i + 1;
+    var string = "Page " + counter;
+
+    if (pagItems[i].getAttribute('aria-current')) {
+      string = "Page " + counter + ", Current Page";
+    }
+
+    pagItems[i].setAttribute('aria-label', string);
+  }
+
+
+
+
+
+
+  class scrollbox {
+    constructor() {
+      this.scrollBarWidth = 0;
+      this.measureScrollbarWidth()
+    }
+  
+    measureScrollbarWidth() {
+      let scrollbox = document.createElement('div')
+      scrollbox.style.overflow = 'scroll'
+  
+      document.body.appendChild(scrollbox)
+  
+      this.scrollBarWidth = scrollbox.offsetWidth - scrollbox.clientWidth
+  
+      document.body.removeChild(scrollbox)
+    }
+  
+    get width() {
+      return this.scrollBarWidth
+    }
+  }
+
+  let scrollbox = new TempScrollBox();
+  console.log(scrollbox.width) //-> 17 (Windows, Chrome)
+
+
+// var scrollDiv = document.createElement("div");
+// scrollDiv.className = "scrollbar-measure";
+// document.body.appendChild(scrollDiv);
+
+// var scrollbarWidth = scrollDiv.offsetWidth - scrollDiv.clientWidth;
+// console.warn(scrollbarWidth); // Mac:  15
+
+// document.body.removeChild(scrollDiv);

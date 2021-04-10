@@ -5,6 +5,7 @@
 .hero-title {@include title;animation:fadeup .2s cubic-bezier(.455, .03, .515, .955) forwards .6s;opacity:0;}
 .hero-description {margin:1rem 0 3rem 0;animation:fadeup .2s cubic-bezier(.455, .03, .515, .955) forwards .8s;opacity:0;}
 .hero .slider {animation:fadeup .2s cubic-bezier(.455, .03, .515, .955) forwards 1s;opacity:0;position:relative;z-index:1;}
+.hero-foot {animation:fadeup .2s cubic-bezier(.455, .03, .515, .955) forwards 1s;opacity:0;}
 .hero-cta {@include button-primary;}
 .hero-detail {@include button-tertiary;margin-left:.5rem;}
 .hero-obj1 {position:absolute;right:-1rem;top:1rem;width:40px;height:40px;background:gold;border-radius:50%;transform:scale(0);transition:all .4s ease .8s;}
@@ -21,7 +22,7 @@
 
 @media (--viewport-large) {
   .hero {margin:-12rem 5% 0;}
-  .hero-inner {padding:3rem 5% 4rem;}
+  .hero-inner {padding-left:5%;padding-right:5%;}
 }
 
 @media (--viewport-small) {

@@ -8,6 +8,7 @@
   > * {
     pointer-events:none;
   }
+  // ! role=button => spacebar X
   // img {
   //   display: inline-block;
   //   vertical-align: middle;
@@ -16,23 +17,21 @@
   // button:not(:active),
   // button:not(:focus) {outline:0;}
   // button:active {outline:0;animation:ripple2 0.2s linear forwards;}
+
+  // button:before {content:'';display:block;width:8px;height:8px;background:rgba(0,0,0,.2);position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);opacity:0;}
+  // button:active:before {width:100%;height:100%;animation:ripple .6s;}
 }
 
 
 
-// button:before {content:'';display:block;width:8px;height:8px;background:rgba(0,0,0,.2);position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);opacity:0;}
-// button:active:before {width:100%;height:100%;animation:ripple .6s;}
-
-
 button {@include reset-button;}
-button[aria-pressed=true] {}
-button[aria-current] {}
-button[aria-current=page] {}
+
 // btn.setAttribute('aria-pressed', false);
 
 @mixin button {
   display: inline-block;
   min-width: 8rem;
+  height: 48px;
   padding:$padding200;
   box-sizing:border-box;
   border-radius:var(--radius400);
@@ -41,10 +40,22 @@ button[aria-current=page] {}
   cursor:pointer;
   position:relative;
   @content;
-  &:disabled {cursor:not-allowed;}
-  &.is-submitting {
-    opacity: .75;
+  
+  &:hover {}
+  &:focus, &.is-focus {
+    outline:0;
+    box-shadow:0 0 0 2px var(--gray800);
+    // box-shadow: 0 0 0 1px #0a84ff inset, 0 0 0 1px #0a84ff, 0 0 0 4px rgba(10, 132, 255, 0.3)
   }
+  &:active {}
+  &:visited {}
+  &:disabled {opacity:.5;cursor:not-allowed;}
+
+  &[aria-pressed=true] {}
+  &[aria-pressed=false] {}
+  &[aria-current] {}
+  &[aria-current=page] {}
+  // &.is-submitting {opacity: .75;}
 }
 
 @mixin button-primary {
@@ -54,35 +65,35 @@ button[aria-current=page] {}
     color: #fff;
     // color:var(--gray0);
   }
-  &:hover,
-  &:focus {border-color:darken($color-primary, 2.5%);background:darken($color-primary, 2.5%);}
+  &:hover:not(:disabled), &.is-hover:not(:disabled) {border-color:darken($color-primary, 2.5%);background:darken($color-primary, 2.5%);}
+  &:focus {}
   &:active {}
-  &:disabled {background:rgba(0, 120, 62, .4);border-color:transparent;}
+  &:disabled {}
 }
 @mixin button-secondary {
   @include button;
   // border:1px solid $color-primary;background:transparent;color:$color-primary;
   border:none;background:var(--blue100);color:var(--color-primary);
-  &:hover:not(:disabled), 
-  &:focus:not(:disabled) {border-color:darken($blue100, 2.5%);background:darken($blue100, 2.5%);color:darken($color-primary, 5%);}
+  &:hover:not(:disabled), &.is-hover:not(:disabled) {border-color:darken($blue100, 2.5%);background:darken($blue100, 2.5%);color:darken($color-primary, 5%);}
+  &:focus:not(:disabled) {}
   &:active {}
-  &:disabled {background:darken($blue100, 2.5%);color:lighten($color-primary, 10%);}
+  &:disabled {}
 }
 @mixin button-tertiary {
   @include button;
   border:1px solid var(--color-box-border);background:var(--gray100);color:var(--gray800);
-  &:hover:not(:disabled),
-  &:focus:not(:disabled) {border-color:darken($gray100, 1%);background:darken($gray100, 1%);}
+  &:hover:not(:disabled), &.is-hover:not(:disabled) {border-color:darken($gray100, 1%);background:darken($gray100, 1%);}
+  &:focus:not(:disabled) 
   &:active {}
-  &:disabled {color:var(--gray400);}
+  &:disabled {}
 }
 @mixin button-text {
   @include button;
   background:none;border:1px solid transparent;color:var(--color-primary);
-  &:hover:not(:disabled),
-  &:focus:not(:disabled) {border-color:var(--gray100);background:var(--gray100);}
+  &:hover:not(:disabled), &.is-hover:not(:disabled) {border-color:var(--gray100);background:var(--gray100);}
+  &:focus:not(:disabled) {}
   &:active {}
-  &:disabled {color:var(--gray200);cursor:not-allowed;}
+  &:disabled {}
 }
 
 // ! backButton closeButton :: back close 아이콘은 어차피 단독으로 쓰이지 않는다!
@@ -101,4 +112,5 @@ button[aria-current=page] {}
 .group-sample {display:flex;justify-content:space-between;}
 .group-sample-prev {@include button-tertiary;}
 .group-sample-next {@include button-primary;}
+.group-sample-cancel {@include button-text;}
 .group-sample-next i {margin-left:1.5rem;background:var(--gray0);}

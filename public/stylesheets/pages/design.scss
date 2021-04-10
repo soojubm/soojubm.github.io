@@ -230,22 +230,34 @@
 
 
 .guide {
-  @include container-card;
+  // @include container-card;
   // todo icon do dont로 구분하기
   .guide-do {
     display: flex;
     align-items: center;
     line-height: 16px;
-    span {background-color:var(--blue100);}
+    span {
+      i {border-color:var(--color-primary);}
+    }
   }
   .guide-donot {
     display: flex;
     align-items: center;
     line-height: 16px;
-    span {background-color:var(--red100);}
+    span {
+      i:before, i:after {background-color:crimson;}
+    }
   }
   span {
     @include box-tiny;
     margin: 0 .5rem 0 0;
   }
 }
+
+
+
+.summary {
+  
+}
+.summary-item {display:flex;justify-content:space-between;padding:.25rem 0;}
+.summary-total {display:flex;justify-content:space-between;padding:.5rem 0 0;font-size:1.25rem;}

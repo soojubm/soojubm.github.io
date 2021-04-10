@@ -39,11 +39,14 @@ const modal = ({ selector: trigger }: Parameter) => ({
           if(!isShown) return
 
           const closeElement = this.modalContainer.querySelector('.js-modal-close')
-          const dimElement = this.modalContainer.querySelector('.modal-dim')
+          // const dimElement = this.modalContainer.querySelector('.modal-dim')
 
           closeElement?.addEventListener('click', event => event.stopPropagation())
+          this.modalContainer?.querySelector('.modal-dialog')?.addEventListener('click', event => event.stopPropagation())
           closeElement?.addEventListener('click', this.backHistory)
-          dimElement?.addEventListener('click', this.backHistory)
+          this.modalContainer.addEventListener('click', this.backHistory)
+          // dimElement?.addEventListener('click', this.backHistory)
+
           window.addEventListener('popstate', () => this.clearModal(this.modalContainer, pageYOffset))
           document.addEventListener('keydown', event => {
             const isKeyEsc = event.keyCode === 27

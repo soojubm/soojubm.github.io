@@ -32,14 +32,15 @@ window.addEventListener('hashchange', initializePage)
 
 document.addEventListener('DOMContentLoaded', () => {
   detectBrowser()
-
   initializeLoader()
 
-  // initializePage()
-
   domEvents()
+  setDarkmode()
 
   event.toggleClass({ selector: '.js-navbar-toggle' }).initialize()
+  
+  event.toTop({ selector: '.js-to-top' })
+  event.stickyElement({ targetElement: '.js-header', addClass: 'is-sticky-header', position: 'top' })
 
   window.addEventListener('scroll', throttle(scrollProgress), true)
   function scrollProgress() {
@@ -57,6 +58,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 async function domEvents() {
   await routePage()
+
+  // var counter = document.querySelector('#counter');
+  // if(counter) {
+  //   var number = 0;
+
+  //   var countUp = function () {
+  //     number++;
+  //     counter!.textContent = String(number);
+  
+  //     // if the number is less than 500, run it again
+  //     if (number < 500) {
+  //       window.requestAnimationFrame(countUp);
+  //     }
+  //   };
+  //   // Start the animation
+  //   window.requestAnimationFrame(countUp);
+  // }
 
 
   const boardElement = document.querySelector('.about-book-inner');
@@ -80,11 +98,10 @@ async function domEvents() {
     }, 200);
   }
 
-  document.querySelector('.textbox-toolbar-bold')?.addEventListener('click', () => format('italic', null))
-  function format(command, value) {
-    alert()
-    document.execCommand(command, false, value);
-  }
+  // document.querySelector('.textbox-toolbar-bold')?.addEventListener('click', () => format('italic', null))
+  // function format(command, value) {
+  //   document.execCommand(command, false, value);
+  // }
   // const themeButtonElements = document.querySelectorAll('.js-system-theme button')
   // const ACTIVE_CLASS = 'is-active'
   // let classes = []
@@ -167,8 +184,6 @@ async function domEvents() {
 
 
   // removeEventListener
-  setDarkmode()
-
 
   input.checkbox({ checkAllSelector: '.js-checkall', checkSelector: '.js-check' }).initialize()
   input.file()
@@ -183,8 +198,6 @@ async function domEvents() {
   event.enterTarget({ selector: '.js-hover-trigger' })
   event.tabMenu()
   event.closeParentElement({ selector: '.js-close' })
-  event.toTop({ selector: '.js-to-top' })
-  event.stickyElement({ targetElement: '.js-header', addClass: 'is-sticky-header', position: 'top' })
   event.stickyElement({ targetElement: '.js-post-head', addClass: 'is-sticky-post-head', position: 'bottom' })
 
   event.scrollAnimation()
@@ -255,6 +268,7 @@ async function domEvents() {
   const works = document.querySelector('.profile-body')
 
   list?.addEventListener('click', () => {
+    alert()
     list?.classList.add('is-selected')
     grid?.classList.remove('is-selected')
     works?.classList.add('list')

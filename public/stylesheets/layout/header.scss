@@ -2,7 +2,7 @@
 .header-back {position:relative;z-index:1;}
 .header-back-icon {@include box-small;transform:rotate(180deg);}
 .header-title {margin:-1px 0 0;padding:0 5rem;font-size:1rem;position:absolute;}
-.header-backdrop {height:32px;padding:1rem 0;}
+.header-backdrop {height:32px;padding:1rem 0;background:var(--gray0);}
 .header-cta {@include box-small;margin-left:auto;color:var(--gray800);}
 .header-cta svg {width:1rem;}
 
