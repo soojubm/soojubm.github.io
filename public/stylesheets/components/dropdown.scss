@@ -1,6 +1,6 @@
 .dropdown {position:relative;}
 .dropdown-trigger {display:flex;align-items:center;color:var(--gray800);cursor:pointer;}
-.dropdown-trigger.is-active .dropdown-trigger-icon {transform:rotate(180deg);} // is-active .droptown
+.is-active .icon-caret {transform:rotate(180deg);}
 .dropdown-trigger-icon {@include box-small;}
 
 .dropdown-menu {

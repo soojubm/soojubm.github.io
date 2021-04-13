@@ -120,17 +120,18 @@
     
     <article class="design-article typography">
       <!-- <div id="counter"></div> -->
-      <h1 class="design-article-title">Rules <small>🔥 draft</small></h1>
+      <h1 class="design-article-title">Rules <small>🔥</small></h1>
+      <p class="design-article-description">디자인시스템에도 완성은 존재하지 않습니다. 린하게..</p>
       <ul class="design-article-description">
-        <!-- <li>UI는 특정 플랫폼 혹은 도메인에 종속되지 않는 보편타당해야 합니다.</li> -->
-        <!-- <li> 시스템은 유아이 라이브러리가 아닙니다. 개발 구현 난이도를 고려해야 하고 가능한 최소한의 가이드를 유지하세요.</li> -->
-        <li>모바일 퍼스트. 그리드 시스템이 실제로 효율적인가?</li>
-        <p>마크업 구조를 단순하게 유지하기 위해 position 속성을 적극적으로 활용하세요.</p>
+        <li>UI는 특정 서비스에 종속되지 않는 보편타당해야 합니다.</li>
+        <li> 시스템은 유아이 라이브러리가 아닙니다. 개발 구현 난이도를 고려해야 하고 가능한 최소한의 가이드를 유지하세요.</li>
+        <!-- <li>모바일 퍼스트. 그리드 시스템이 실제로 효율적인가?</li>
+        <p>마크업 구조를 단순하게 유지하기 위해 position 속성을 적극적으로 활용하세요.</p> -->
       </ul>
       <dl>
         <dt>금액</dt><dd>formatPrice() KRW / ₩ 1,000</dd>
         <dt>날짜</dt><dd>formatDate() YYYY/MM/DD</dd>
-        <dt>아이콘/이모지</dt><dd>클릭 어포던스를 강화하기 위해서만 사용하세요. 지금 남용하는 중.</dd>
+        <dt>아이콘과이모지</dt><dd>클릭 어포던스를 강화하기 위해서만 사용하세요. 지금 이모지 남용하는 중.</dd>
         <dt>말줄임표</dt><dd>-</dd>
         <dt>수량</dt>
         <dd class="guide" style="display:flex;">
@@ -141,7 +142,7 @@
             <span><i class="icon-close"></i></span> 2개
           </div>
         </dd>
-        <dt>콤마, 콜론, 슬래시, 괄호, 불릿</dt><dd>정보가 복잡도가 증가하기 때문에 최소화하세요. 위계를 설정하고 시각화를 고민하세요.</dd>
+        <dt>불릿</dt><dd>슬래시로 사용. 정보가 복잡도가 증가하기 때문에 최소화하세요. 위계를 설정하고 시각화를 고민하세요. 콤마, 콜론, 슬래시, 괄호, 유저의 행동과 관련된 유아이에서는 사용하지 마시라.</dd>
         <dt>접근성</dt><dd>모양(네모, 동그란 등), 방향(왼쪽/오른쪽/위/아래), 위치(여기/이곳), 색상 등을 가이드 텍스트에 포함하지 마세요. </dd>
       </dl>
       <ol>
@@ -269,20 +270,23 @@
 
     <article class="design-article grayscale">
       <h1 class="design-article-title">Palettes</h1>
-      <p class="design-article-description">그레이스케일 한 벌로 다크 테마와 페어링합니다. 다크 테마를 위한 별도의 컬러셋을 정의하지 마십시오. 하나의 색상을 용도 별로 분리하여 다크 테마에 대응할 수 있도록 합니다.</p>
+      <p class="design-article-description">그레이스케일 한 벌로 다크 테마와 페어링합니다. 다크 테마를 위한 별도의 컬러셋을 정의하지 마십시오. memo: 다크 테마를 위해 동일 색상이라도 용도별로 변수화할 필요가 있다.</p>
       <h2 style="margin:0 0 .5rem;"><small>Grayscales</small></h2>
       <div class="color-group">
         <figure class="color-item is-gray100">
           <div></div>
-          <figcaption>gray100</figcaption>
+          <h3>gray100</h3>
+          <span>bg / border</span>
         </figure>
         <figure class="color-item is-gray200">
           <div></div>
-          <figcaption>gray200</figcaption>
+          <h3>gray200</h3>
+          <span>border</span>
         </figure>
         <figure class="color-item is-gray400">
           <div></div>
-          <figcaption>gray400</figcaption>
+          <h3>gray400</h3>
+          <span>text / disabled state</span>
         </figure>
         <!-- <figure class="color-item is-gray600">
           <div></div>
@@ -290,23 +294,24 @@
         </figure> -->
         <figure class="color-item is-gray800">
           <div></div>
-          <figcaption>gray800</figcaption>
+          <h3>gray800</h3>
+          <span>bg / text</span>
         </figure>
       </div>
       <br />
-      <h2 style="margin:0 0 .5rem;"><small>Collors</small></h2>
+      <h2 style="margin:0 0 .5rem;font-size:var(--caption);">Colors</h2>
       <div class="color-group">
         <figure class="color-item is-primary100">
           <div></div>
-          <figcaption>green100</figcaption>
+          <h3>green100</h3>
         </figure>
         <figure class="color-item is-primary200">
           <div></div>
-          <figcaption>green800</figcaption>
+          <h3>green800</h3>
         </figure>
         <figure class="color-item is-red800">
           <div></div>
-          <figcaption>red800</figcaption>
+          <h3>red800</h3>
         </figure>
         <!-- <figure class="color-item is-gradient">
           <div></div>
@@ -315,35 +320,39 @@
       </div>
       <br />
       <h2 style="margin:0 0 .5rem;" title="Surface or Elevation"><small>Elevation</small></h2>
-      <figure class="surface-item">
-        <div style="background:var(--gray0);"></div>
-        <figcaption></figcaption>
-      </figure>
+      <div class="color-group">
+        <figure class="color-item surface-item">
+          <div style="background:var(--gray0);"></div>
+          <h3>elevation400</h3>
+        </figure>
+      </div>
       <br />
       <h2 style="margin:0 0 .5rem;"><small>Skeleton</small></h2>
-      <div class="skeleton"></div>
+      <div class="color-group">
+        <div class="skeleton"></div>
+      </div>
     </article>
 
     <article class="design-article">
       <h1 class="design-article-title">Avatars & Cells</h1>
       <p class="design-article-description">아바타에서 4가지 사이즈만 사용하세요. 아이콘 버튼에서는 small 사이즈만 사용하세요. memo :: box-sizing vs calc(100% - borderWidth x 2)</p>
-      <div style="display:flex;margin-bottom:1rem;border-radius:var(--radius400);">
+      <div style="display:flex;margin-bottom:1rem;">
         <a href="" class="design-article-avatar-large"><span class="avatar-badge"></span></a>
         <div style="display:block;width:1.5rem;height:inherit;background:var(--blue100);"></div>
         <div style="display:block;width:calc(100% - 80px - 1.5rem);height:inherit;">
           <h3 style="font-size:1.25rem;font-weight:bold;">Large / 80px / 1.5rem</h3>
-          <p style="color:var(--gray400);">디스크립션을 가질 수 있는 사이즈</p>
+          <p style="color:var(--gray400);">Large는 디스크립션을 가질 수 있어요 / Single User</p>
         </div>
       </div>
-      <div style="display:flex;margin-bottom:1rem;border-radius:var(--radius400);">
+      <div style="display:flex;margin-bottom:1rem;">
         <a href="" class="design-article-avatar-medium"></a>
         <div style="display:block;width:1rem;height:inherit;background:var(--blue100);box-sizing:border-box;"></div>
         <div style="display:block;width:calc(100% - 48px - 1rem);height:inherit;">
           <h3 style="font-weight:bold;font-size:1rem;">Medium / 48px / 1rem</h3>
-          <p style="color:var(--gray400);">디스크립션을 가질 수 있는 사이즈</p>
+          <p style="color:var(--gray400);">Medium은 디스크립션을 가질 수 있어요 / Multiple Users</p>
         </div>
       </div>
-      <div style="display:flex;align-items:center;margin-bottom:1rem;border-radius:var(--radius400);">
+      <div style="display:flex;align-items:center;margin-bottom:1rem;">
         <a href="" class="design-article-avatar-small"></a>
         <div style="display:block;width:1rem;height:32px;background:var(--blue100);box-sizing:border-box;"></div>
         <div style="display:block;width:calc(100% - 32px - 1rem);height:32px;line-height:32px;">Small / 32px / 1rem</div>
@@ -363,7 +372,7 @@
 
     <article class="design-article">
       <h1 class="design-article-title">Avatar Stack</h1>
-      <p class="design-article-description">내가 팔로우한 유저 > 팔로우 수가 많은 유저 > 최근 유저 / 모두 보기 버튼이 필요한 경우 하단에 보더를 같이 사용해주세요.</p>
+      <p class="design-article-description">왼쪽 배치 우선순위(팔로우한 유저 > 팔로우 수가 많은 유저 > 최근 유저) 모두 보기 버튼이 필요한 경우 하단에 보더를 같이 사용해주세요.</p>
       <!-- <div class="" role="group" style="align-items:center;margin-bottom:-.5rem;">
         <a href="" class="design-article-avatar-tiny" style="box-shadow: var(--gray0) 0px 0px 0px 2px;z-index:0;"></a>
         <a href="" class="design-article-avatar-tiny" style="margin-left:-10px;box-shadow: var(--gray0) 0px 0px 0px 2px;z-index:-1;"></a>
@@ -395,8 +404,8 @@
           <button class="design-article-tertiary-small" style="position:absolute;right:0;top:0;">팔로우</button>
         </div>
         <div class="profile-user" style="width:100%;height:48px;margin-top:1rem;">
-          <figure class="profile-user-avatar" style="float:left;width:48px;height:48px;margin-right:1rem;background-image:none;border:1px solid var(--gray200);"><i class="icon-plus" style="transform:scale(1.25);"></i></figure>
-          <h2 class="profile-user-name" style="font-size:1rem;line-height:48px;">추가하기 (보다 상세하게 작성하세요.)</h2>
+          <figure class="profile-user-avatar" style="float:left;width:48px;height:48px;margin-right:1rem;background-image:none;"><i class="icon-plus" style="transform:scale(1.25);"></i></figure>
+          <h2 class="profile-user-name" style="font-size:1rem;line-height:48px;">추가하기 (보다 상세하게 작성하여 유저가 얻을 수 있을 것을 설명해주세요.)</h2>
         </div>
         <!-- <button class="userlist-cta">모두 보기</button> -->
       </div>
@@ -422,8 +431,8 @@
     </article>
 
     <article class="design-article">
-      <h1 class="design-article-title">breadcrumb</h1>
-      <p class="design-article-description">페이지 레벨이 3단계 이상이며 캠페인 등에서 랜딩될 수 있는 페이지(상세페이지 등)에서 사용하세요. 모바일 환경에서 사용하지 마세요.</p>
+      <h1 class="design-article-title">Breadcrumb</h1>
+      <p class="design-article-description">페이지 레벨이 3단계 이상이거나 캠페인 등에서 랜딩될 수 있는 페이지(상세페이지 등)에서 사용을 고려하세요.</p>
       <nav class="breadcrumb" aria-label="breadcrumb">
         <a class="breadcrumb-item breadcrumb-home" href="/">홈</a>
         <i class="breadcrumb-divider">/</i>
@@ -431,17 +440,24 @@
         <i class="breadcrumb-divider">/</i>
         <span class="breadcrumb-item breadcrumb-last" href="#">페이지 이름</span>
       </nav>
+      <!-- <hr />
+      <nav class="breadcrumb" aria-label="breadcrumb">
+        <a class="breadcrumb-item breadcrumb-home" href="/">Accessory <small style="color:var(--gray400);">173</small></a>
+        <i class="breadcrumb-divider">/</i>
+        <a class="breadcrumb-item breadcrumb-last" href="#">Socks <small style="color:var(--gray400);">52</small></a>
+      </nav> -->
     </article>
 
     <article class="design-article">
       <h1 class="design-article-title">Text Links</h1>
-      <p class="design-article-description">문단 <span style="color:#00783e">내부 링크</span>와 문단 <span style="color:var(--gray800);text-decoration:underline;">외부 링크</span>를 구분합니다. internal / external, More(확장) / Learn More(링크)</p>
+      <p class="design-article-description">문단 <span style="color:#00783e">내부 링크</span>와 문단 <span style="color:var(--gray800);text-decoration:underline;">외부 링크</span>를 구분합니다.</p>
+      <p>internal / external(+아이콘?), More(확장) / Learn More(링크)</p>
       <p>형무소 안에서는 소장의 말이 곧 법이었으며 죄수들의 잘못과 실수는 결코 용납되지 않는다. 어머니의 사망 소식을 듣고 인해 2번이나 탈옥을 시도했다가 체포된 <a href="">루크</a>의 발에 쇠통이 채워지며 루크는…<a class="more" href="#" style="margin-left:.25rem;color:var(--gray800);text-decoration:underline;">더 보기</a></p>
     </article>
 
     <article class="design-article">
       <h1 class="design-article-title">Tab</h1>
-      <p class="design-article-description">페이지 레벨의 네비게이션. 브라우저 히스토리. <p>
+      <p class="design-article-description">페이지 레벨의 네비게이션. 탭 클릭할 때 브라우저 히스토리에 추가하는 것이 좋을까?<p>
       <aside class="message">
         <span class="message-icon">🔨</span>
         <p class="message-head">스크롤스파이 기능. 2개 이상의 탭이 중첩되는 경우 가이드.</p>
@@ -463,14 +479,15 @@
         <span class="tag tags-item" role="listitem">해시태그</span>
         <!-- <span class="tag tags-item" style="padding:0 .5rem;border-radius:var(--radius400);background:var(--blue100);color:var(--color-primary);" role="listitem">해시태그</span>
         <span class="tag yes-tag" style="padding:0 .5rem;border-radius:var(--radius400);background:skyblue;color:var(--gray0);" role="listitem">Do</span>
-        <span class="tag no-tag" style="padding:0 .5rem;border-radius:var(--radius400);background:crimson;color:var(--gray0);" role="listitem">Don't</span> -->
+        <span class="tag no-tag" style="padding:0 .5rem;border-radius:var(--radius400);background:var(--red800);color:var(--gray0);" role="listitem">Don't</span> -->
       </div>
     </article>
 
     <article class="design-article">
       <h1 class="design-article-title">Buttons</h1>
       <ul class="design-article-description">
-        <li>프라이머리primary 스타일은 한 페이지에 하나로 제한합니다. 시멘틱 네이밍(solid/outline/plain/text 등)은 디자인 시스템보다는 유아이 라이브러리에 어울리기 때문에 (primary/secondary/ 뭐라고 하지?)를 사용하세요. 아이콘 버튼. 아이코노그라피나 시각보정</li>
+        <li>프라이머리primary 스타일은 한 페이지에 하나로 제한합니다.</li>
+        <!-- 시멘틱 네이밍(solid/outline/plain/text 등)은 디자인 시스템보다는 유아이 라이브러리에 어울리기 때문에 (primary/secondary/ 뭐라고 하지?)를 사용하세요. 아이콘 버튼. 아이코노그라피나 시각보정 -->
         <li>appearance = link / subtle / primary, space = compact / fullwidth</li>
         <li>role="img" aria-label="plus icon"</li>
         <li>바이너리에서 프라이머리와 세컨더리를 함께 사용하지 않습니다.</li>
@@ -535,13 +552,13 @@
         <br />
         <h6 style="margin:0 0 .5rem;font-size:var(--caption);">isFetching 샘플</h6>
         <button class="loadmore is-fetching">
-          <div class="spinner" style="margin-left:0;margin-right:1rem;"></div>
-          Loading More...
+          <!-- <div class="loader-spinner" style="margin-left:0;margin-right:1rem;"></div> -->
+          Loading...
         </button>
     </div>
     </article>
 
-    <article class="design-article">
+    <!-- <article class="design-article">
       <h1 class="design-article-title">Button Group</h1>
       <p class="design-article-description">샘플.</p>
       <div class="group-sample" role="group">
@@ -553,13 +570,15 @@
         <button class="group-sample-cancel" style="width:calc(50% - .5rem);margin-left:auto;">취소</button>
         <button class="group-sample-next" style="width:calc(50% - .5rem)">작성</button>
       </div>
-    </article>
+    </article> -->
 
     <article class="design-article">
       <h1 class="design-article-title">Chips</h1>
-      <p class="design-article-description">피시 앤 칩스. chip? pill? 아이콘 없이 소팅이나 필터링에서 사용할 수 있습니다. todo 상태 추가해주기. 추가 제거 아이콘을 포함하여 멀티 셀렉션에서 사용하세요. 드롭다운도 같은 디자인으로 할 수 있겠다. + numeric input</p>
+      <p class="design-article-description">MDS에서 chip으로 명명하지만 pill로 명명하는 시스템도 있다. input (with remove icon) / choice / action / filter. + numeric input</p>
       <div role="group">
-        <button class="chip">기본값</button>
+        <button class="chip">전체</button>
+        <button class="chip is-active">주문완료 <small class="chip-count">52</small></button>
+        <button class="chip">주문취소 <small class="chip-count">52</small></button>
 
         <div class="dropdown">
           <button class="chip js-toggle">드롭다운 <span class="chip-icon"><i class="icon-caret"></i></span></button>
@@ -587,11 +606,17 @@
           </menu>
         </div>
       </div>
+
       <hr style="margin-top:.5rem;" />
+
       <div role="group">
-        <button class="chip">Typography <span class="chip-icon"><i class="icon-plus"></i></span></button>
-        <button class="chip is-added">Cinema <span class="chip-icon"><i class="icon-minus"></i></span></button>
+        <button class="chip">Typography</button>
+        <button class="chip is-active"><span class="chip-icon"><i class="icon-check" style="border-color: var(--color-primary);"></i></span> Cinema</button>
+        <button class="chip is-active"><span class="chip-icon"><i class="icon-check" style="border-color: var(--color-primary);"></i></span> Novel</button>
       </div>
+
+      <hr style="margin-top:.5rem;" />
+
     </article>
 
     <article class="design-article">
@@ -782,22 +807,22 @@
       <h1 class="design-article-title">Summary</h1>
       <p class="design-article-description">내용없음</p>
       <section class="summary">
-        <dl class="summary-item">
-          <dt>이용기간</dt>
-          <dd>20.12.02. ~ 21.01.01.</dd>
-        </dl>
-        <dl class="summary-item">
-          <dt>서비스 수수료</dt>
-          <dd>₩ 44,612</dd>
-        </dl>
-        <dl class="summary-item">
-          <dt>배송료</dt>
-          <dd>₩ 44,612</dd>
-        </dl>
-        <dl class="summary-total">
-          <dt style="font-weight:bold;">총 합계 (KRW)</dt>
-          <dd style="font-weight:bold;">₩ 365,073</dd>
-        </dl>
+        <div class="summary-item">
+          <div>이용기간</div>
+          <div>20.12.02. ~ 21.01.01.</div>
+        </div>
+        <div class="summary-item">
+          <div>서비스 수수료</div>
+          <div>₩ 44,612</div>
+        </div>
+        <div class="summary-item">
+          <div>배송료</div>
+          <div>₩ 44,612</div>
+        </div>
+        <div class="summary-total">
+          <div>총 합계 (KRW)</div>
+          <div>₩ 365,073</div>
+        </div>
       </section>
     </article>
 
@@ -862,7 +887,6 @@
       <h1 class="design-article-title">Spinner</h1>
       <p class="design-article-description">샘플</p>
       <div class="loader-spinner" style="position:static;"></div>
-      <div class="spinner"></div>
     </article>
 
     <!-- <article class="design-article">
@@ -973,21 +997,21 @@
         <figure class="card-thumbnail"><img src="/public/images/springsteen.jpg" alt="" /></figure>
         <h3 class="card-title">카드 유아이</h3>
         <p class="card-text">따봉은 상세페이지에서 제공하세요. 북마크는 밖에 두어도 좋은가? 상세페이지에서 제공하는 것이 좋음.</p>
-        <time class="card-date">2017. 12. 21.</time>
-        <span class="card-category">카테고리</span>
         <div class="card-tags" role="group">
           <span class="tag">기획</span>
           <span class="tag">UI</span>
           <span class="tag">React</span>
         </div>
+        <span class="card-category">카테고리</span>
+        <time class="card-date" style="float:right;">2017. 12. 21.</time>
         <hr />
-        <figure class="card-item">
-          <div class="card-item-media"><img src="" alt="" /></div>
+        <div class="card-item">
+          <figure class="card-item-media"><img src="" alt="" /></figure>
           <h4 class="card-item-name">퓨어 오렌지 주스</h4>
-          <figcaption class="card-item-price">
+          <div class="card-item-price">
             <del>19,000원</del> 16,000원 <em>할인율 20%</em>
-          </figcaption>
-        </figure>
+          </div>
+        </div>
         <div class="card-note">마일리지 적립 200P</div>
         <button class="card-more" hidden><i class="icon-more"></i></button>
       </div>
@@ -995,9 +1019,7 @@
       <br />
 
       <div class="quote">
-        <div class="quote-avatar">
-          <i class="icon-person"></i>
-        </div>
+        <div class="quote-avatar">🥫</div>
         <h3 class="quote-title">Quote</h3>
         <p class="quote-body">Amazing experience I love it a lot. Thanks to the team dreams come true, great! I really.</p>
         <div class="quote-byline">
@@ -1008,24 +1030,24 @@
         <!-- <button class="quote-later">지금은 괜찮아요</button> -->
       </div>
       <br />
-      <div class="profile-user" style="float:none;width:auto;max-width:400px;border:1px solid var(--gray200);padding:1.5rem;border-radius:var(--radius400);    border: 1px solid var(--gray200);
+      <div class="user" style="max-width:400px;padding:1.5rem;border-radius:var(--radius400);    border: 1px solid var(--gray200);box-sizing:border-box;
       box-shadow: 0 0 2rem rgb(0 0 0 / 13%);
       background: var(--gray0);">
-        <figure class="profile-user-avatar"></figure>
-        <h2 class="profile-user-name">Gyeongsoo I</h2>
-        <span class="profile-user-id">@soojubm</span>
-        <span class="profile-user-career">UI Designer / Frontend Engineer</span>
-        <footer class="profile-foot" style="display:flex;;margin:1rem 0;">
+        <figure class="user-avatar"><img src="/public/images/soo.png" alt=""></figure>
+        <h2 class="user-name">Gyeongsoo I</h2>
+        <div class="user-id">@soojubm</div>
+        <div class="user-career" style="margin:.5rem 0 0 0;">UI Designer / Frontend Engineer</div>
+        <footer class="user-foot" style="display:flex;;margin:1rem 0;">
           <span class="tag">대한민국</span>
           <span class="tag">자전거</span>
         </footer>
-        <footer class="profile-foot" style="display:flex;justify-content:space-between;">
+        <footer class="user-foot" style="display:flex;justify-content:space-between;">
           <button class="profile-foot-follow">팔로우</button>
         </footer>
       </div>
       <br />
       <div class="pricing-item">
-        <div style="display:flex;align-items:center;">
+        <div style="display:flex;align-items:center;line-height:16px;">
           <div class="quote-avatar" style="margin-right:.5rem;width:16px;height:16px;" role="img">🔥</div>
           <small>Most Popular</small>
         </div>
@@ -1033,7 +1055,7 @@
         <span class="pricing-item-price">
           <span class="pricing-item-price-unit">₩ </span>
           <span>6,800</span>
-          <span class="pricing-item-price-" style="font-size:1rem;font-weight:normal;">1인 / 월</span>
+          <span class="pricing-item-price-per" style="font-size:1rem;font-weight:normal;"> / 월</span>
         </span>
         <p class="pricing-item-description">전직대통령의 신분과 예우에 관하여는 법률로 정한다. 대법원장은 국회의 동의를 얻어 대통령이 임명한다.</p>
         <ul>
@@ -1084,21 +1106,6 @@
             <button class="">삭제</button>
             <button class="">신고</button>
           </menu>
-
-          <div class="post-comment-list">
-            <div class="post-comment-list-item" role="comment">
-              <a class="post-comment-list-item-avatar" href="#"><img src="/public/images/soo.png"></a>
-              <a class="post-comment-list-item-author" href="#">soojubm</a>
-              <time class="post-comment-list-item-date" datetime="2016">1 day ago</time>
-              <p class="post-comment-list-item-text">우와 처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요. 우와 처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요.</p>
-              <button class="post-comment-list-item-morevert js-toggle"><i class="icon-more"></i></button>
-              <menu class="post-comment-list-item-menu">
-                <button class="">수정</button>
-                <button class="">삭제</button>
-                <button class="">신고</button>
-              </menu>
-            </div>
-          </div>
         </div>
       </div>
     </article>
@@ -1273,7 +1280,7 @@
     
     <article class="design-article">
       <h1 class="design-article-title">Result</h1>
-      <p class="design-article-description">다른 디자인 시스템에서 blankslate, empty 등 네이밍됨. 더 고민해보기. error, empty, complete 등 왼쪽 정렬되는 콘텐츠 리스트와 구별되는 모듈로 가운데 정렬하여 대비를 주세요.</p>
+      <p class="design-article-description">일부 디자인 시스템에서 blankslate, empty state 등으로 네이밍하는 컴포넌트. empty 뿐 아니라 error complete 등 다양한 states에서 활용할 수 있기 때문에 result로 네이밍. 왼쪽 정렬되는 일반적인 콘텐츠 모듈과 구분하기 위해서 가운데 정렬로 대비.</p>
       <section class="empty" style="border:1px solid var(--color-box-border);border-radius:var(--radius400);">
         <i class="empty-icon">🧟</i>
         <h1 class="empty-title">상품이 결제되었습니다.</h1>
@@ -1304,12 +1311,12 @@
         <small class="rating-count">총 24개의 평가</small>
       </div> -->
       <div class="rating2 is-large">
-        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 12px; width: 12px; fill: crimson;"><path d="M15.094 1.579l-4.124 8.885-9.86 1.27a1 1 0 0 0-.542 1.736l7.293 6.565-1.965 9.852a1 1 0 0 0 1.483 1.061L16 25.951l8.625 4.997a1 1 0 0 0 1.482-1.06l-1.965-9.853 7.293-6.565a1 1 0 0 0-.541-1.735l-9.86-1.271-4.127-8.885a1 1 0 0 0-1.814 0z" fill-rule="evenodd"></path></svg>
+        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 12px; width: 12px; fill: var(--red800);"><path d="M15.094 1.579l-4.124 8.885-9.86 1.27a1 1 0 0 0-.542 1.736l7.293 6.565-1.965 9.852a1 1 0 0 0 1.483 1.061L16 25.951l8.625 4.997a1 1 0 0 0 1.482-1.06l-1.965-9.853 7.293-6.565a1 1 0 0 0-.541-1.735l-9.86-1.271-4.127-8.885a1 1 0 0 0-1.814 0z" fill-rule="evenodd"></path></svg>
         <b class="rating2-score">4.71점</b>
         <small style="margin-left:.5rem;color:var(--gray400);font-weight:normal;"> 192개</small>
       </div>
       <div class="rating2">
-        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 12px; width: 12px; fill: crimson;"><path d="M15.094 1.579l-4.124 8.885-9.86 1.27a1 1 0 0 0-.542 1.736l7.293 6.565-1.965 9.852a1 1 0 0 0 1.483 1.061L16 25.951l8.625 4.997a1 1 0 0 0 1.482-1.06l-1.965-9.853 7.293-6.565a1 1 0 0 0-.541-1.735l-9.86-1.271-4.127-8.885a1 1 0 0 0-1.814 0z" fill-rule="evenodd"></path></svg>
+        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 12px; width: 12px; fill: var(--red800);"><path d="M15.094 1.579l-4.124 8.885-9.86 1.27a1 1 0 0 0-.542 1.736l7.293 6.565-1.965 9.852a1 1 0 0 0 1.483 1.061L16 25.951l8.625 4.997a1 1 0 0 0 1.482-1.06l-1.965-9.853 7.293-6.565a1 1 0 0 0-.541-1.735l-9.86-1.271-4.127-8.885a1 1 0 0 0-1.814 0z" fill-rule="evenodd"></path></svg>
         <b class="rating2-score">4.32</b>
       </div>
       <hr />

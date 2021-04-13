@@ -1,5 +1,5 @@
-.tags {display:flex;flex-wrap:wrap;}
-.tag {display:flex;margin:0 .5rem 0 0;color:var(--gray400);}
+.tags {display:flex;flex-wrap:wrap;margin:0 0 -.5rem 0;}
+.tag {display:flex;margin:0 .5rem .25rem 0;color:var(--gray400);}
 .tag:before {content:'#'}
 .badge {
   display:inline-flex;font-size:$caption;color:var(--gray400);

@@ -3,6 +3,7 @@
 // @custom-media --viewport-medium (max-width: 1280px);
 @custom-media --viewport-small (max-width: 1080px);
 
+
 $cell-large: 80px; // => 64px;
 $cell-medium: 48px;
 $cell-small: 32px;
@@ -14,14 +15,15 @@ $title: 2rem;
 $subhead: 1.25rem;
 $body: 1rem;
 $caption: 0.875rem;
+
 @mixin title {font-size:$title;line-height:1.4;font-weight:bold;letter-spacing:-.025rem;text-indent:-1px;color:var(--gray800);}
 @mixin subhead {font-size:1.25rem;font-weight:bold;letter-spacing:-.025rem;}
 
 $color-primary: #00783e;
 $gray100: #dadce0;
 $red100: #fff0f5;
-$red800: #da1e28;
-$blue100: honeydew;
+$red800: #f02849;
+$blue100: #ddf5e9; // honeydew
 $blue800: blue;
 
 $color-google: #fff;
@@ -75,9 +77,11 @@ $height-header: 56px;
   --gray400: #979d9a; // caption
   --gray800: #343c38; // heading
   // --gray600: #4e5351; // body
-  --blue100: honeydew;
+  --blue100: #ddf5e9;
+  --green800: #1b995c;
   --red100: #fff0f5;
-  --color-primary:#00783e;
+  --red800: #f02849;
+  --color-primary:#1b995c;
   --color-newneek: #fb7800;
 
   --container-small: 480px;
@@ -114,6 +118,11 @@ $height-header: 56px;
   --color-button-body: #000;
 
   --gutter: 0;
+
+  @media (--viewport-large) {
+    --container-large: 1120px;
+  }
+  
 
   @media (--viewport-small) {
   }
@@ -195,6 +204,7 @@ $height-header: 56px;
 // item in card component
 // active
 @mixin hover-item {
+  background: var(--gray100);
   cursor: pointer;
   &:before {
     content:'';display:block;background:var(--gray100);border-radius:var(--radius400);position:absolute;left:-.5rem;right:-.5rem;top:-.5rem;bottom:-.5rem;z-index:-1;

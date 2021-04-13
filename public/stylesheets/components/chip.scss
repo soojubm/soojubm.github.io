@@ -1,3 +1,7 @@
-.chip {display:flex;align-items:center;justify-content:space-between;height:$cell-small;background:var(--gray100);padding:0 1rem;border:1px solid var(--color-box-border);border-radius:var(--radius400);color:var(--gray800);position:relative;}
-.chip-icon {@include box-small;background:var(--gray0);margin:0 calc(-1rem - 1px) 0 1.5rem;border-color:var(--gray200);border-top-left-radius:0;border-bottom-left-radius:0;z-index:1;}
-.chip.is-added {background:var(--blue100);color:var(--color-primary);}
+.chip {display:flex;align-items:center;justify-content:space-between;height:$cell-small;background:var(--gray100);padding:0 1rem;border-radius:var(--radius400);color:var(--gray800);position:relative;}
+.chip-count {margin:0 0 0 .25rem;}
+.chip-icon {}
+.chip-icon .icon-caret {margin:0 0 0 .5rem;}
+.chip-icon .icon-check {margin:0 .5rem 0 0;}
+.chip.is-active {border-color:var(--color-primary);background:var(--blue100);color:var(--color-primary);}
+.chip.is-active .chip-icon {border-color:var(--color-primary);background:var(--blue100);}

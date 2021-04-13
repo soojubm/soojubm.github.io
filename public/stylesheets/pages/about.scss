@@ -1,13 +1,13 @@
 .about {}
 
 
-.about-image {width:50%;height:40rem;background:crimson;position:absolute;right:0;top:0;}
+.about-image {width:50%;height:40rem;background:var(--red800);position:absolute;right:0;top:0;}
 
 
 .about-subhead-icon {display:block;margin:0 0 1rem 0;}
 
 .about-intro {@include container-large;font-size:$subhead;}
-.about-intro-slogan {margin:4rem 0;font-size:var(--headline);font-family:'DunkelSans';}
+.about-intro-slogan {margin:2rem 0;font-size:var(--headline);font-family:'DunkelSans';}
 .about-intro-icons {display:block;margin:2rem 0;font-size:var(--headline);transition:all 12s $bezier-base;transform:translateX(100%);}
 .about-intro-icons i {display:inline-block;animation: rotation 1s linear infinite;animation-iteration-count:8;}
 .about-intro-icons i:nth-of-type(2) {animation-duration:1.4s;}
@@ -27,32 +27,31 @@
 .about-skill-title {@include title;}
 // .about-skill.is-scrolled {transform:scale(1);}
 
-.about-carrer {display:flex;@include container-large;padding-top:6rem;
-  border-radius: var(--radius400);}
-.about-carrer-title {width:50%;margin:0 0 2rem 0;@include title;}
-.about-carrer .timeline {width:50%;}
-.about-carrer-portfolio {@include button-secondary;width:100%;}
-// .about-carrer.is-scrolled {transform:scale(1);}
-// .about-carrer.is-scrolled .timeline-item:nth-of-type(1) {animation:fadeup .4s ease;}
-// .about-carrer.is-scrolled .timeline-item:nth-of-type(2) {animation:fadeup .4s ease;}
-// .about-carrer.is-scrolled .timeline-item:nth-of-type(3) {animation:fadeup .4s ease;}
+.about-career {display:flex;@include container-large;max-width:1080px;padding-top:6rem;}
+.about-career-head {width:50%;}
+.about-career-title {margin:0 0 2rem 0;@include title;}
+.about-career .timeline {width:50%;}
+.about-career-portfolio {@include button-secondary;width:100%;}
+// .about-career.is-scrolled {transform:scale(1);}
+// .about-career.is-scrolled .timeline-item:nth-of-type(1) {animation:fadeup .4s ease;}
+// .about-career.is-scrolled .timeline-item:nth-of-type(2) {animation:fadeup .4s ease;}
+// .about-career.is-scrolled .timeline-item:nth-of-type(3) {animation:fadeup .4s ease;}
 
 .about-education {@include container-medium;padding-top:6rem;}
 
-.about-abbility {@include container-large;padding-top:6rem;background:var(--color-primary);border-radius:var(--radius400);color:var(--gray0);}
+.about-abbility {@include container-large;padding-bottom:3rem;background:var(--blue100);border-radius:var(--radius400);}
 .about-abbility div {margin:0 0 1rem 0;}
 .about-abbility div i {margin-top:-4px;border-color:var(--gray0);transform:scale(1.125) rotate(-45deg);}
 .about-abbility div span {margin:0 0 0 .5rem;font-weight:bold;}
 .about-abbility div p {margin:.5rem 0 0;}
 
-.about-subscribe {@include container-large;padding-top:6rem;text-align:center;font-size:1.25rem;background:var(--gray100);}
+.about-subscribe {@include container-large;padding-top:6rem;border-radius:var(--radius400);text-align:center;font-size:1.25rem;background:var(--gray100);}
 .about-subscribe-title {@include title;}
 
 .about-book {padding:6rem 0 8%;}
 .about-book-title {margin:0 0 2rem 0;padding:0 5%;@include title;}
 .about-book-inner {
   padding: 0 5%;
-  overflow: auto;
   white-space: nowrap;
   font-size: 0;}
 
@@ -117,13 +116,12 @@
   display:flex;
   flex-wrap: wrap;
   justify-content: center;
+  @include container-medium;
   margin:16rem auto;
   position: relative;
-  a {margin:0 1rem;
-    font-size:2rem;text-decoration:underline;
-  }
+  p {width:100%;@include subhead;font-weight:400;}
 }
-.about-fonts-title {@include title;}
+.about-fonts-title {width:100%;margin:0 0 2rem 0;@include title;}
 
 .about-banner {padding:4rem 5%;background:var(--color-primary);}
 .about-banner button {@include button-tertiary;}

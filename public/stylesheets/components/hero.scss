@@ -7,7 +7,7 @@
 .hero .slider {animation:fadeup .2s cubic-bezier(.455, .03, .515, .955) forwards 1s;opacity:0;position:relative;z-index:1;}
 .hero-foot {animation:fadeup .2s cubic-bezier(.455, .03, .515, .955) forwards 1s;opacity:0;}
 .hero-cta {@include button-primary;}
-.hero-detail {@include button-tertiary;margin-left:.5rem;}
+.hero-detail {@include button-text;margin-left:.5rem;}
 .hero-obj1 {position:absolute;right:-1rem;top:1rem;width:40px;height:40px;background:gold;border-radius:50%;transform:scale(0);transition:all .4s ease .8s;}
 .hero-obj2 {position:absolute;right:480px;bottom:-2rem;width:80px;height:80px;background:gold;border-radius:50%;transform:scale(0);transition:all .4s ease 1.0s;}
 .hero-obj3 {position:absolute;right:420px;top:24px;width:16px;height:16px;background:#0057ff;border-radius:50%;transform:scale(0);transition:all .4s ease 1.4s;}
@@ -21,12 +21,13 @@
 .is-scrolled .hero-obj4 {transform:scale(1);}
 
 @media (--viewport-large) {
-  .hero {margin:-12rem 5% 0;}
+  .hero {width:90%;margin-top:-12rem;}
   .hero-inner {padding-left:5%;padding-right:5%;}
 }
 
 @media (--viewport-small) {
-  .hero {width:100%;}
+  .hero {}
+  .hero-inner {padding-top:2.5rem;padding-left:2.5rem;padding-right:2.5rem;padding-bottom:3rem;}
   .hero-obj1, .hero-obj2, .hero-obj3, .hero-obj4 {display:none;}
   .hero-obj4 {top:-18rem;right:-2rem;}
 }

@@ -84,7 +84,9 @@ async function domEvents() {
         boardElement.innerHTML += `
           <article class="bookitem">
           <figure class="bookitem-cover">
+            <--
             <img src=${item.imgSrc} alt=${item.title}>
+            -->
           </figure>
           <h3 class="bookitem-name">
             <span role="img" aria-label="">📙</span> ${item.title}
@@ -268,7 +270,6 @@ async function domEvents() {
   const works = document.querySelector('.profile-body')
 
   list?.addEventListener('click', () => {
-    alert()
     list?.classList.add('is-selected')
     grid?.classList.remove('is-selected')
     works?.classList.add('list')

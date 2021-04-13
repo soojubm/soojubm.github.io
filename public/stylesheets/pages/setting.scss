@@ -11,7 +11,7 @@
 .setting-row:hover {}
 .setting-row.is-opened {}
 .setting-row:nth-of-type(1) {border-top:var(--border100);}
-.setting-row-label {width:10rem;font-size:1rem;line-height:32px;color:var(--gray400);}
+.setting-row-label {width:10rem;font-size:1rem;line-height:32px;font-weight:400;color:var(--gray400);}
 .setting-row-value {display:flex;flex-wrap:wrap;align-items:center;width:calc(100% - 10rem);color:var(--gray800);line-height:32px;}
 .setting-row-value-username {width:100%;}
 .setting-row-value-address {width:100%;margin:-.25rem 0;line-height:1.5;}
