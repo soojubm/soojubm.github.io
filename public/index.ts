@@ -6,54 +6,47 @@ import routePage from './javascripts/router'
 import { initializeLoader, detectBrowser } from './javascripts/load'
 import darkTheme from './javascripts/local/darkTheme'
 import carousel from './javascripts/event/carousel'
-// import { countDownClock } from './javascripts/countdown'
 import event from './javascripts/event/index'
 import input from './javascripts/input/index'
 
 import { throttle } from './javascripts/utils/optimizationUtils'
 
-import books from '../views/books'
+// import books from '../views/books'
 
 // import { validity } from './javascripts/utils/validations'
 // import { copyClipboard } from './javascripts/utils/formatUtils.js'
-// const isScrollEnd = window.innerHeight + window.pageYOffset >= document.body.offsetHeight
-
-document.addEventListener('readystatechange', (event: any) => {
-  const { readyState } = event.target
-  // event.target === document ? true
-  if (readyState === 'loading') console.log('loading...')
-  else if (readyState === 'interactive') console.log('initLoader')
-  else if (readyState === 'complete') console.log('initApp')
-})
-
-window.addEventListener('unload', () => console.log('unload event'))
+// import { countDownClock } from './javascripts/countdown'
 
 window.addEventListener('hashchange', domEvents)
-window.addEventListener('hashchange', initializePage)
+window.addEventListener('hashchange', initializeNavbar)
+
+document.addEventListener('DOMContentLoaded', darkTheme)
+document.addEventListener('DOMContentLoaded', detectBrowser)
+document.addEventListener('DOMContentLoaded', initializeLoader)
+document.addEventListener('DOMContentLoaded', domEvents)
 
 document.addEventListener('DOMContentLoaded', () => {
-  detectBrowser()
-  initializeLoader()
-
-  domEvents()
-  darkTheme()
-
   event.toggleClass({ selector: '.js-navbar-toggle' }).initialize()
   
   event.toTop({ selector: '.js-to-top' })
   event.stickyElement({ targetElement: '.js-header', addClass: 'is-sticky-header', position: 'top' })
-
-  window.addEventListener('scroll', throttle(scrollProgress), true)
-  function scrollProgress() {
-    const containerElement = document.querySelector<HTMLElement>('.post')
-    const progressBar = document.querySelector<HTMLElement>('.post-head-progress')
-    if (!containerElement || !progressBar) return
-
-    const scrollPercent = `${(window.pageYOffset / (containerElement!.scrollHeight - window.innerHeight)) * 100}%`
-    progressBar!.style.width = scrollPercent
-  }
-   
 })
+
+window.addEventListener('scroll', throttle(scrollProgress), true)
+function scrollProgress() {
+  const containerElement = document.querySelector<HTMLElement>('.post')
+  const progressBar = document.querySelector<HTMLElement>('.post-head-progress')
+  if (!containerElement || !progressBar) return
+
+  const scrollPercent = `${(window.pageYOffset / (containerElement.scrollHeight - window.innerHeight)) * 100}%`
+  progressBar.style.width = scrollPercent
+}
+
+window.addEventListener('load', () => console.log('loaded!'))
+
+window.addEventListener('beforeunload', () => "저장되지 않은 변경사항이 있습니다. 정말 페이지를 떠나실 건 가요?")
+window.addEventListener('unload', () => console.log('unload event'))
+document.addEventListener('readystatechange', () => console.log(document.readyState));
 
 
 
@@ -77,28 +70,28 @@ async function domEvents() {
   //   window.requestAnimationFrame(countUp);
   // }
 
-  const boardElement = document.querySelector('.about-book-inner');
-  if(boardElement) {
-    setTimeout(() => {
-      books.map(item => {
-        boardElement.innerHTML += `
-          <article class="bookitem">
-          <figure class="bookitem-cover">
-            <--
-            <img src=${item.imgSrc} alt=${item.title}>
-            -->
-          </figure>
-          <h3 class="bookitem-name">
-            <span role="img" aria-label="">📙</span> ${item.title}
-            <small class="bookitem-description">구글 최고의 혁신 전문가가 찾아낸 비즈니스 설계와 검증의 방법론</small>
-          </h3>
-          <hr />
-          <p class="bookitem-byline">${item.author || '정보가 없습니다'}</p>
-          <time class="bookitem-publishedyear">${item.publishedDate || '정보가 없습니다'}</time>
-        </article>`;
-      });
-    }, 200);
-  }
+  // const boardElement = document.querySelector('.about-book-inner');
+  // if(boardElement) {
+  //   setTimeout(() => {
+  //     books.map(item => {
+  //       boardElement.innerHTML += `
+  //         <article class="bookitem">
+  //         <figure class="bookitem-cover">
+  //           <--
+  //           <img src=${item.imgSrc} alt=${item.title}>
+  //           -->
+  //         </figure>
+  //         <h3 class="bookitem-name">
+  //           <span role="img" aria-label="">📙</span> ${item.title}
+  //           <small class="bookitem-description">구글 최고의 혁신 전문가가 찾아낸 비즈니스 설계와 검증의 방법론</small>
+  //         </h3>
+  //         <hr />
+  //         <p class="bookitem-byline">${item.author || '정보가 없습니다'}</p>
+  //         <time class="bookitem-publishedyear">${item.publishedDate || '정보가 없습니다'}</time>
+  //       </article>`;
+  //     });
+  //   }, 200);
+  // }
 
   // document.querySelector('.textbox-toolbar-bold')?.addEventListener('click', () => format('italic', null))
   // function format(command, value) {
@@ -211,22 +204,7 @@ async function domEvents() {
   revealPassword()
   focusComment()
 
-  function createGraph() {
-    // todo 지금은 바가 100px 이라서 1:1로 대입
-    const graphItems = document.querySelectorAll('.js-graph .graph-item')
-    if (!graphItems) return
 
-    graphItems.forEach(element => {
-      const graphItemBar = element.querySelector<HTMLElement>('.graph-item-bar')
-      const graphItemValue = element.querySelector<HTMLElement>('.graph-item-value')
-      if (!graphItemBar || !graphItemValue) return
-
-      const graphValue = parseInt(graphItemValue.innerText)
-
-      graphItemBar.style.height = `${graphValue}px`
-      graphItemValue.style.bottom = `${graphValue}px`
-    })
-  }
 
   // document.querySelector('.js-copy')?.addEventListener('click', () => copyClipboard('fafaf'))
 
@@ -246,8 +224,6 @@ async function domEvents() {
     works?.classList.remove('list')
   })
 }
-  
-
 
   // intersectionObserver
   // if ('IntersectionObserver' in window && 'IntersectionObserverEntry' in window && 'intersectionRatio' in window.IntersectionObserverEntry.prototype) {
@@ -351,8 +327,6 @@ async function domEvents() {
   // }), false)
   // })
 
-
-
 function revealPassword() {
   const ELEMENT_CLASSNAME = '.js-view-password'
   const elements = document.querySelectorAll<HTMLElement>(ELEMENT_CLASSNAME)
@@ -372,25 +346,58 @@ function revealPassword() {
   }
 }
  
-function initializePage() {
-  initializeNavbar()
+function initializeNavbar() {
+  const navigationTrigger = document.querySelector<HTMLElement>('.js-navbar-toggle')
+  if(!navigationTrigger) return
+  if(!navigationTrigger.classList.contains('is-active')) return
 
-  function initializeNavbar() {
-    const navigationTrigger = document.querySelector<HTMLElement>('.js-navbar-toggle')
-    if(!navigationTrigger) return
+  navigationTrigger.classList.remove('is-active')
+  navigationTrigger.nextElementSibling?.classList.remove('is-visible')
+}
 
-    if(navigationTrigger.classList.contains('is-active')) {
-      navigationTrigger.classList.remove('is-active')
-      navigationTrigger.nextElementSibling?.classList.remove('is-visible')
-    }
-  }
-  function detectPage() {
-    let { hash } = window.location
-    const className = `page-${hash === '' ? 'design' : hash.substring(1)}`
 
-    document.body.className = ''
-    document.body.classList.add(className)
-  }
+function createGraph() {
+  // todo 지금은 바가 100px 이라서 1:1로 대입
+  const graphItems = document.querySelectorAll('.js-graph .graph-item')
+  if (!graphItems) return
+
+  graphItems.forEach(element => {
+    const graphItemBar = element.querySelector<HTMLElement>('.graph-item-bar')
+    const graphItemValue = element.querySelector<HTMLElement>('.graph-item-value')
+    if (!graphItemBar || !graphItemValue) return
+
+    const graphValue = parseInt(graphItemValue.innerText)
+
+    graphItemBar.style.height = `${graphValue}px`
+    graphItemValue.style.bottom = `${graphValue}px`
+  })
+}
+
+
+function calculateReadTime() {
+  const readTimeElement = document.querySelector<HTMLElement>('.post-head')
+  const postContent = document.querySelector<HTMLElement>('.post-body-paragraph')
+  if (!postContent || !readTimeElement) return
+
+  const text = postContent?.textContent || postContent?.innerText
+  let textLength = text.split(' ').length || 1
+  const wordsPerMinute = 200
+  let value = Math.ceil(textLength / wordsPerMinute)
+  const result = `${value} min read`
+  console.log(result)
+
+  readTimeElement.innerText = result
+}
+
+function focusComment() {
+  const commentWrite = document.querySelector<HTMLElement>('.js-comment-write')
+  const commentTextField = document.querySelectorAll<HTMLElement>('.js-comment-textfield')
+
+  commentTextField!.forEach(element =>
+    element.addEventListener('focus', () => {
+      commentWrite!.classList.add('is-focused')
+    })
+  )
 }
 
 // let company = {
@@ -579,20 +586,6 @@ function initializePage() {
 
 // window.cancelAnimationFrame(animation);
 
-function calculateReadTime() {
-  const readTimeElement = document.querySelector<HTMLElement>('.post-head')
-  const postContent = document.querySelector<HTMLElement>('.post-body-paragraph')
-  if (!postContent || !readTimeElement) return
-
-  const text = postContent?.textContent || postContent?.innerText
-  let textLength = text.split(' ').length || 1
-  const wordsPerMinute = 200
-  let value = Math.ceil(textLength / wordsPerMinute)
-  const result = `${value} min read`
-  console.log(result)
-
-  readTimeElement.innerText = result
-}
 
 // function bustCache() {
 //   const linkElements = document.querySelectorAll('link')
@@ -607,16 +600,7 @@ function calculateReadTime() {
 //   })
 // }
 
-function focusComment() {
-  const commentWrite = document.querySelector<HTMLElement>('.js-comment-write')
-  const commentTextField = document.querySelectorAll<HTMLElement>('.js-comment-textfield')
 
-  commentTextField!.forEach(element =>
-    element.addEventListener('focus', () => {
-      commentWrite!.classList.add('is-focused')
-    }),
-  )
-}
 
 // document.documentElement.className += ' supports-date';
 

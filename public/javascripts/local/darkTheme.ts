@@ -1,5 +1,5 @@
-const DARK_THEME_CLASS = 'theme-dark'
-const LIGHT_THEME_CLASS = 'theme-light'
+export const DARK_THEME_CLASS = 'theme-dark'
+export const LIGHT_THEME_CLASS = 'theme-light'
 
 function darkTheme() {
   const darkThemeTrigger = document.querySelector('.js-darkmode')

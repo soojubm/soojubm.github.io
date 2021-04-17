@@ -8,23 +8,49 @@ const routes = [
   { name: 'profile', path: '/profile' },
   { name: 'post', path: '/post' },
 ]
+
 const currentPath = window.location.pathname
-// type routeType = {
-//   name: string
-//   path: string
-// }
+
 const routePage = async () => {
   const view = document.getElementById('view')
   if (!view) return
 
-  let hash = window.location.hash.substring(1)
+  let hash = window.location.hash.substring(1) // fast than .replace('#', '') 
   const uri = hash ? `/views/${hash}.html` : '/views/design.html'
-  const response = await fetch(uri)
-    .then(response => response.text())
-    .then(html => view.innerHTML = html)
-    .catch(error => console.warn('router: ', error))
 
-  window.scrollTo(0, 0)
+  try {
+    const response = await fetch(uri)
+    const responsedDOM = await response.text()
+
+    // view.insertAdjacentHTML('afterbegin', responsedDOM);
+    view.innerHTML = responsedDOM
+
+    window.scrollTo(0, 0)
+  } catch(error) {
+    console.warn('router: ', error)
+  }
+}
+
+export default routePage
+
+// type routeType = {
+//   name: string
+//   path: string
+// }
+
+
+// const navigate = (event) => {
+// 	const route = findCurrentTarget.attributes[0].value;
+// 	const routeInfo = myFirstRouter.routes.find(r => r.path === route);
+// 	if(!routeInfo) {
+// 		view.innerHTML = 'No route exists with this path';
+// };
+
+// window.addEventListener('popstate', function(event) {
+// 	if (history.state && history.state.id === 'homepage') {}
+// }, false);
+
+
 
   // const activeRoutes = document.querySelectorAll('[route]')
   // activeRoutes.forEach(route => route.addEventListener('click', navigate, false))
@@ -38,6 +64,8 @@ const routePage = async () => {
     // }
      // const isRootPage = currentPath === '/'
     pushBrowserHistory({}, '', routeInfo.path)
+  }
+
 
     // if (isRootPage) {
     // } else {
@@ -53,22 +81,5 @@ const routePage = async () => {
     // const response = fetch(uri)
     //   .then(response => response.text())
     //   .then(html => view.innerHTML = html)
-  }
-}
-
-export default routePage
-
-// const navigate = (event) => {
-// 	const route = findCurrentTarget.attributes[0].value;
-// 	const routeInfo = myFirstRouter.routes.find(r => r.path === route);
-// 	if(!routeInfo) {
-// 		view.innerHTML = 'No route exists with this path';
-// };
-
-// window.addEventListener('popstate', function(event) {
-// 	if (history.state && history.state.id === 'homepage') {}
-// }, false);
-
-
 
 
