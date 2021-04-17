@@ -2,13 +2,10 @@
 @mixin item-emoji {display:none;margin-top:-.25rem;position:absolute;left:0;top:50%;transform:translate(0, -50%);}
 @mixin item-label {width:120px;margin-left:0;color:var(--gray400);font-size:1rem;}
 @mixin item-value {}
-
 @mixin bleeding {position:absolute;left:-200%;right:-200%;top:0;bottom:0;z-index:-1;}
 
 .checkout {@include container-large;}
-
 .checkout-step {}
-
 .checkout-head {padding:2rem 0 4rem;position:relative;}
 .checkout-head-background {display:none;background:var(--gray100);position:absolute;left:-200%;right:-200%;top:0;bottom:0;z-index:-1;}
 .checkout-head-eyebrow {margin-bottom:.5rem;font-size:1rem;color:var(--gray400);}

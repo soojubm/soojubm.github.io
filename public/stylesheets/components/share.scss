@@ -3,8 +3,9 @@
 .share-trigger svg {width:1rem;}
 .share {max-width:400px;@include container-card;}
 .share-back {@include box-small;position:absolute;right:.5rem;top:.5rem;}
-.share-title {margin:0 0 2rem;@include subhead;}
+.share-title {@include subhead;}
 .share-facebook {display:flex;align-items:center;margin:1rem 0;}
+.share-facebook:hover {@include hover-item;}
 .share-twitter {display:flex;align-items:center;margin:1rem 0;}
 .share-kakao {display:flex;align-items:center;margin:1rem 0;}
 .share-facebook-icon {@include box-small;margin-right:1rem;background:$color-facebook;}

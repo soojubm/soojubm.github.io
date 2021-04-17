@@ -67,7 +67,8 @@
 .navbar-user-account-menu {width:400px;height:0;@include container-card;position:absolute;top:40px;right:0;z-index:4;transform:scale(0);transform-origin:right top;}
 .navbar-user-account-menu.is-visible {height:auto;transform:scale(1);}
 
-.user-avatar {float:right;@include box-large;position:relative;}
+.user {height:$cell-large;position:relative;}
+.user-avatar {float:right;@include box-large;}
 .user-avatar-change {width:32px;height:32px;border-radius:var(--radius400);position:absolute;right:-8px;bottom:-8px;}
 .user-name {@include subhead;}
 .user-email {}
@@ -75,10 +76,9 @@
 .user-logout-icon {@include box-small;margin:0 1rem 0 0;}
 .user-logout:hover {@include hover-item;}
 .user-logout:hover .user-logout-icon {background:var(--gray0);}
-
 .user-myinfo {@include link-outer;margin:.5rem 0 0;}
-.user-footer {font-size:$caption;}
-.user-footer a {margin:0 1rem 0 0;color:var(--gray400);}
+.user-footer {}
+.user-footer a {font-size:$caption;color:var(--gray400);}
 
 
 .is-shown .navbar-logo {color:var(--gray0);z-index:8;}

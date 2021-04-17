@@ -200,7 +200,6 @@
               <time class="notification-item-date" style="position:absolute;right:0;top:0;">5일 전</time>
               <span class="notification-item-title" style="color:var(--gray400);">like on <em>John Cassavetes</em></span>
             </div>
-            <hr />
             <footer>
               <button>알림 모두 보기</button>
             </footer>
@@ -210,14 +209,16 @@
           <button class="navbar-user-account-trigger js-navbar-toggle" aria-haspopup="menu" aria-expanded="false">
             <span class="navbar-user-account-trigger-media"><img src="/public/images/soo.png" alt=""/></span>
           </button>
-          <div class="navbar-user-account-menu user">
-            <figure class="user-avatar">
-              <img src="/public/images/soo.png" alt="" />
-              <!-- <div class="user-avatar-change"></div> -->
-            </figure>
-            <h2 class="user-name">soojubm</h2>
-            <div class="user-email">soojubm@gamil.com</div>
-            <a class="user-myinfo" href="#settings">내 프로필 관리</a>
+          <div class="navbar-user-account-menu">
+            <article class="user">
+              <figure class="user-avatar">
+                <img src="/public/images/soo.png" alt="" />
+                <div class="user-avatar-change"></div>
+              </figure>
+              <h2 class="user-name">soojubm</h2>
+              <div class="user-email">soojubm@gamil.com</div>
+              <a class="user-myinfo" href="#settings">내 프로필 관리</a>
+            </article>
             <hr role="separator" />
             <!-- <div class="switch-wrap" style="position:absolute;right:0;top:0;">
               <span class="switch js-darkmode">
@@ -253,7 +254,7 @@
             <hr role="separator" />
             <footer class="user-footer">
               <a href="#">Privacy Policy</a>
-              <!-- <i class="icon-bullet"></i> -->
+              <i class="icon-bullet"></i>
               <a href="#">Terms of Service</a>
             </footer>
           </div>

@@ -230,40 +230,6 @@ async function domEvents() {
 
   // document.querySelector('.js-copy')?.addEventListener('click', () => copyClipboard('fafaf'))
 
-  const inputTest = document.querySelector<HTMLInputElement>('.js-input-test')
-  if (inputTest) {
-    inputTest.addEventListener('keypress', event => {
-      const key = event.which || event.keyCode
-      const isNumberKey = key < 48 || key > 57 // todo ! isNumberKey 이다 지금음0 to 9
-      const isSpaceKey = key === 32
-
-      if (!isSpaceKey && isNumberKey) event.preventDefault()
-    })
-
-    // Track the current value
-    let currentValue = inputTest.value || ''
-    inputTest.addEventListener('input', e => {
-      const target = e.target as HTMLInputElement
-      if (/^[0-9\s]*$/.test(target.value)) currentValue = target.value
-      else target.value = currentValue
-      // Note that in this case, `e.preventDefault()` doesn't help
-
-      // 한글 입력했을 때 커서가 맨 뒤로 감.
-      // if (/^[0-9s]*$/.test(target.value)) {
-      //   currentValue = target.value
-      // } else {
-      //   target.value = currentValue
-      //   target.setSelectionRange(selection.start, selection.end)
-      // }
-    })
-
-    // let selection = {};
-    // inputTest.addEventListener('keydown', function(e) {
-    //   const target = e.target as HTMLInputElement;
-    //   selection = { start: target.selectionStart, end: target.selectionEnd };
-    // });
-  }
-
   // todo
   const list = document.querySelector('.js-display-list')
   const grid = document.querySelector('.js-display-grid')
@@ -280,6 +246,112 @@ async function domEvents() {
     works?.classList.remove('list')
   })
 }
+  
+
+
+  // intersectionObserver
+  // if ('IntersectionObserver' in window && 'IntersectionObserverEntry' in window && 'intersectionRatio' in window.IntersectionObserverEntry.prototype) {
+  //   const lazyBackgrounds = [].slice.call(document.querySelectorAll('.js-parallax-test'))
+  //   const options = {
+  //     root: null,
+  //     rootMargin: '0px 0px 0px 0px',
+  //     threshold: 0.1,
+  //   }
+  //   let observer = new IntersectionObserver(callback, options)
+
+  //   lazyBackgrounds.forEach(element => observer.observe(element))
+  // }
+
+  // function callback(entries, observer) {
+  //   entries.forEach(entry => {
+      
+  //     if (!entry.isIntersecting) return
+
+  //     if(entry.intersectionRatio > 0) {
+  //       entry.target.style.animation = `fadeup 1s fowards ease-out`
+  //       entry.target.classList.remove('is-bbb')
+  //       entry.target.classList.add('is-aaa')
+
+  //       // entry.target.style.opacity = String((rate2 / 100).toFixed(1))
+  //     } else {
+  //       entry.target.style.animation = 'none'
+  //       entry.target.classList.remove('is-aaa')
+  //       entry.target.classList.add('is-bbb')
+  //     }
+  //   })
+  }
+
+
+  // const targetElements = document.querySelectorAll<HTMLElement>('.js-parallax-test')
+  // const tt = document.querySelector<HTMLElement>('.js-parallax-parent')
+  // // initialize
+  // targetElements.forEach(element => {
+  //   element.style.opacity = `0`
+  // })
+
+
+  // if(tt) {
+  //   window.addEventListener('scroll', throttle(() => {
+  //     let rate2 = Math.abs(window.pageYOffset) * 0.1
+  //     let offsetBottom = tt.offsetTop + tt.offsetHeight
+  //     let isScrolled = window.pageYOffset > offsetBottom / 1.5
+  //     if(isScrolled) {
+  //       console.log(String((rate2 / 100).toFixed(1)))
+  //       tt.style.opacity = String((-rate2 / 100).toFixed(1))
+  //     } else {
+  //       tt.style.opacity = String((rate2 / 100).toFixed(1))
+  //     }
+  //   }))
+  // }
+
+  // targetElements.forEach((element, index) => {
+
+  //   window.addEventListener('scroll', throttle(() => {
+
+  //     let offsetBottom = element.offsetTop + element.offsetHeight
+  //     let isScrolled = window.pageYOffset > offsetBottom
+  //     let rate2 = Math.abs(window.pageYOffset) * 0.1
+  //     // let rate2 = Math.abs(window.pageYOffset + element.offsetTop) * 0.1
+
+  //     let isTemp = Number(window.getComputedStyle(element).getPropertyValue('opacity')) >= 1
+  //     let isTemp2 = Number(window.getComputedStyle(element).getPropertyValue('opacity')) < 0
+
+  //     console.log(isTemp2, window.getComputedStyle(element).getPropertyValue('opacity'))
+
+  //     const abc = () => {
+  //       let opacity1 = String((rate2 / 100).toFixed(1))
+  //       let opacity2 = String((-rate2 / 100).toFixed(1))
+  //       if(isScrolled) {
+  //         if(isTemp) return false
+  //         return opacity1
+  //       } else {
+  //         if(isTemp2) return false
+  //         return opacity2
+  //       }
+  //     }
+  //     const ccc = () => {
+  //       let opacity1 = `translateY(-${rate2 * 2}px)`
+  //       let opacity2 = `translateY(${rate2 * 2}px)`
+  //       if(isScrolled) {
+  //         if(window.pageYOffset > 600) return false
+  //         return opacity1
+
+  //       } else {
+  //         return opacity2
+  //       }
+  //     }
+
+  //     // 괴ㅗㅇ장히 실행이 여러번되느넫?
+  //     // console.log(window.getComputedStyle(element).getPropertyValue('transform'))
+  //     element.style.opacity = String(abc())
+  //     element.style.transform = String(ccc())
+
+  //     // if(targetElements.length === index + 1) {}
+
+  //     // const temp = document.querySelector<HTMLElement>('.js-parallax-parent')
+  //     // temp!.style.opacity = String(Math.abs(window.pageYOffset + element.offsetTop) * 0.00125)
+  // }), false)
+  // })
 
 
 

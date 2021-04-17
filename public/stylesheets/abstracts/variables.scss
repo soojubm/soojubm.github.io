@@ -73,7 +73,7 @@ $height-header: 56px;
   // ! colours
   --gray0: #fff; // white for dark theme
   --gray100: #f1f5f6; // bg
-  --gray200: #dadce0; // divider border
+  --gray200: #dadce0; // divider border F8F7F5
   --gray400: #979d9a; // caption
   --gray800: #343c38; // heading
   // --gray600: #4e5351; // body
@@ -215,15 +215,26 @@ $height-header: 56px;
 @mixin hover-tertiary {border-color: var(--color-primary);}
 @mixin hover-text {color:var(--color-primary);}
 
+@mixin container-item {
+  // non-clickable
+  padding: .5rem;
+  border: var(--border100);
+  border-radius: var(--radius400);
+  box-sizing: border-box;
+  position: relative;
+}
 
+@mixin container-dropdown {
+  width:10rem;padding:.5rem 0;background:var(--gray0);box-shadow:var(--shadow400);border:var(--border100);border-radius:var(--radius400);
+}
 @mixin container-card {
   // max-width: 
   padding: 1.5rem;
   background: var(--gray0);
-  border: $border100;
-  border-radius: $radius400;
+  border: var(--border100);
+  border-radius: var(--radius400);
   box-sizing: border-box;
-  box-shadow: $shadow400;
+  box-shadow: var(--shadow400);
   position: relative;
   @media (--viewport-small) {
     // padding: 1.5rem;
@@ -248,7 +259,6 @@ $height-header: 56px;
   max-width: var(--container-small);
   @include container-page;
 }
-
 
 @mixin link-inner {display:inline-block;color:var(--color-primary);}
 @mixin link-outer {display:inline-block;color:var(--gray800);text-decoration:underline;}

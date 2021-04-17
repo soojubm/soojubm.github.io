@@ -4,14 +4,8 @@
 .dropdown-trigger-icon {@include box-small;}
 
 .dropdown-menu {
-  min-width:200px;
-  width:auto;
+  @include container-dropdown;
   height:0;
-  padding:.5rem 0;
-  background:var(--gray0);
-  border-radius: var(--radius400);
-  border: 1px solid var(--color-box-border);
-  box-shadow:var(--shadow400);
   position:absolute;
   z-index:5;
   transition:all 0.2s ease;

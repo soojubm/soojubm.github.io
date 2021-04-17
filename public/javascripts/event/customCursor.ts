@@ -1,6 +1,6 @@
 const customCursor = () => {
-  const cursor = document.querySelector<HTMLElement>('.js-loader-spinner');
-  if(!cursor) return;
+	const cursor = document.querySelector<HTMLElement>('.js-loader-spinner');
+	if(!cursor) return;
   
 	const hoverElement = document.querySelectorAll<HTMLElement>('button, a');
 	if(!hoverElement) return;

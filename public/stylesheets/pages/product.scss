@@ -37,7 +37,7 @@
 .product-order-total-value {@include title;text-align:right;}
 .product-order-control {display:flex;justify-content:space-between;position:relative;}
 .product-order-control-cart {@include button-tertiary;min-width:auto;width:15%;}
-.product-order-control-purchase {@include button-primary;width:calc(85% - .5rem);}
+.product-order-control-purchase {@include button-primary;width:calc(85% - 1rem);}
 
 .product-navigation {display:flex;justify-content:center;margin:4rem 0;}
 .product-navigation a {margin:0 1rem;}

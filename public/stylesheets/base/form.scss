@@ -76,21 +76,21 @@ input[type=email]:invalid {border-color:var(--red800);}
 .checkbox,.radio {display:block;position:relative;}
 input[type=checkbox] {width:0;height:0;opacity:0;position:absolute;outline:auto;}
 input[type=checkbox] + label {display:flex;align-items:center;height:2.25rem;padding-left:2rem;position:relative;}
-input[type=checkbox] + label:before {content:'';display:block;width:16px;height:16px;border-radius:var(--radius400);border:$border150;box-sizing:border-box;position:absolute;left:0;}
-input[type=checkbox] + label:after {content:'';display:none;width:8px;height:2px;border-left:2px solid;border-bottom:2px solid;border-color:var(--gray200);position:absolute;left:3px;top:13px;transform:rotate(-45deg);}
+input[type=checkbox] + label:before {content:'';display:block;width:$cell-tiny;height:$cell-tiny;border-radius:var(--radius400);border:$border150;box-sizing:border-box;position:absolute;left:0;}
+input[type=checkbox] + label:after {content:'';display:none;width:8px;height:2px;border-left:2px solid;border-bottom:2px solid;border-color:var(--gray200);position:absolute;left:3px;top:11px;transform:rotate(-45deg);}
 input[type=checkbox]:checked + label:before {border-color:var(--color-primary);animation:ripple2 0.2s linear forwards;}
 input[type=checkbox]:checked + label:after {display:block;border-color:var(--color-primary);}
 input[type=checkbox]:disabled + label {color:var(--gray200);cursor:not-allowed;}
 input[type=checkbox]:disabled + label:before {background:var(--gray200);border-color:var(--gray200);}
 input[type=checkbox]:disabled + label:after {border-color:var(--gray0);}
-input[type=checkbox][indeterminate=true] + label:before {background:var(--blue100);}
-input[type=checkbox][indeterminate=true] + label:after {display:block;background:var(--color-primary);border:none;left:4px;top:14px;transform:rotate(0deg);}
+input[type=checkbox][indeterminate=true] + label:before,
 input[type=checkbox][data-indeterminate=true] + label:before {background:var(--blue100);}
-input[type=checkbox][data-indeterminate=true] + label:after {display:block;background:var(--color-primary);border:none;left:4px;top:14px;transform:rotate(0deg);}
+input[type=checkbox][indeterminate=true] + label:after,
+input[type=checkbox][data-indeterminate=true] + label:after {display:block;background:var(--color-primary);border:none;left:4px;top:12px;transform:rotate(0deg);}
 
 input[type=radio] {width:0;height:0;opacity:0;position:absolute;outline:auto;}
 input[type=radio] + label {display:flex;align-items:center;height:2.25rem;padding-left:2rem;position:relative;}
-input[type=radio] + label:before {content:'';display:block;width:16px;height:16px;border-radius:50%;border:$border150;box-sizing:border-box;position:absolute;left:0;}
+input[type=radio] + label:before {content:'';display:block;width:$cell-tiny;height:$cell-tiny;border-radius:50%;border:$border150;box-sizing:border-box;position:absolute;left:0;}
 input[type=radio] + label:after {content:'';width:6px;height:6px;border-radius:50%;background:var(--gray200);position:absolute;left:5px;transition:all 0.2s;transform:scale(0);}
 input[type=radio]:checked + label:before {border-color:var(--color-primary);animation:ripple2 0.2s linear forwards;}
 input[type=radio]:checked + label:after {display:block;background:var(--color-primary);transform:scale(1);}
@@ -131,7 +131,7 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 .theme-dark .night {top:0;transition:all .4s ease .3s;}
 
 
-.textfield {margin:0px 0;position:relative;}
+.textfield {position:relative;}
 .textfield-label {display:block;margin:0 0 0.25rem 0;}
 .textfield-label small {margin:0 0 0 .25rem;color:var(--gray400);}
 .textfield-icon {display:flex;align-items:center;justify-content:center;width:48px;height:100%;position:absolute;left:0;}
@@ -142,9 +142,6 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 // .textfield-input:not(select):readonly {background:none;padding-left:0;padding-right:0;border:none;outline:none;}
 // .textfield-input:not(select):readonly::placeholder {color:var(--gray800);}
 .textfield-input:focus {background:var(--gray0);border-color:var(--gray200);outline:0;}
-.textfield-input.-textarea {height:auto;}
-.textfield-input.-selectbox {height:auto;}
-.textfield-input.-inline {display:inline;width:80px;padding:2px 12px;}
 .textfield-reveal {position:absolute;right:1rem;bottom:calc(1rem - 1px);z-index:2;font-size:$caption;color:var(--gray400);}
 .textfield-unit {width:40px;height:46px;padding:0 1rem;line-height:50px;text-align:right;color:rgba(0, 0, 0, 0.4);position:absolute;right:0;bottom:0;}
 .textfield-helper {margin-top:.25rem;color:$red800;}
@@ -162,7 +159,7 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 @mixin textfield-surfix {
   @include box-small;width:2rem;height:2rem;background:var(--gray0);position:absolute;right:1rem;top:37px;pointer-events:none;
   @media (--viewport-small) {
-    top: 33px;
+    top: 31px;
   }
 }
 
