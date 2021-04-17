@@ -4,7 +4,8 @@ import './stylesheets/style.scss'
 
 import routePage from './javascripts/router'
 import { initializeLoader, detectBrowser } from './javascripts/load'
-import { setDarkmode, carousel } from './javascripts/setDarkMode'
+import darkTheme from './javascripts/local/darkTheme'
+import carousel from './javascripts/event/carousel'
 // import { countDownClock } from './javascripts/countdown'
 import event from './javascripts/event/index'
 import input from './javascripts/input/index'
@@ -35,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initializeLoader()
 
   domEvents()
-  setDarkmode()
+  darkTheme()
 
   event.toggleClass({ selector: '.js-navbar-toggle' }).initialize()
   
@@ -75,7 +76,6 @@ async function domEvents() {
   //   // Start the animation
   //   window.requestAnimationFrame(countUp);
   // }
-
 
   const boardElement = document.querySelector('.about-book-inner');
   if(boardElement) {
@@ -279,8 +279,6 @@ async function domEvents() {
   //       entry.target.classList.add('is-bbb')
   //     }
   //   })
-  }
-
 
   // const targetElements = document.querySelectorAll<HTMLElement>('.js-parallax-test')
   // const tt = document.querySelector<HTMLElement>('.js-parallax-parent')
