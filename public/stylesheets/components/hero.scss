@@ -3,9 +3,9 @@
 .hero-background {max-width:100%;margin: 0 auto;background:var(--gray0);border-radius:var(--radius400);box-shadow:var(--shadow400);position: absolute;left: -50%;right: -50%;top: 0;bottom:100%;z-index: -1;}
 .hero-eyebrow {display:block;margin:0 0 .25rem 0;font-size:$caption;color:var(--gray400);animation:fadeup .2s cubic-bezier(.455, .03, .515, .955) forwards .4s;opacity:0;}
 .hero-title {@include title;animation:fadeup .2s cubic-bezier(.455, .03, .515, .955) forwards .6s;opacity:0;}
-.hero-description {margin:1rem 0 3rem 0;animation:fadeup .2s cubic-bezier(.455, .03, .515, .955) forwards .8s;opacity:0;}
+.hero-description {width:50%;margin:1rem 0 3rem 0;animation:fadeup .2s cubic-bezier(.455, .03, .515, .955) forwards .8s;opacity:0;}
 .hero .slider {animation:fadeup .2s cubic-bezier(.455, .03, .515, .955) forwards 1s;opacity:0;position:relative;z-index:1;}
-.hero-foot {animation:fadeup .2s cubic-bezier(.455, .03, .515, .955) forwards 1s;opacity:0;}
+.hero-foot {display:flex;animation:fadeup .2s cubic-bezier(.455, .03, .515, .955) forwards 1s;opacity:0;}
 .hero-cta {@include button-primary;}
 .hero-detail {@include button-text;margin-left:.5rem;}
 .hero-obj1 {position:absolute;right:-1rem;top:1rem;width:40px;height:40px;background:gold;border-radius:50%;transform:scale(0);transition:all .4s ease .8s;}
@@ -27,7 +27,8 @@
 
 @media (--viewport-small) {
   .hero {}
-  .hero-inner {padding-top:2.5rem;padding-left:2.5rem;padding-right:2.5rem;padding-bottom:3rem;}
+  .hero-description {width:100%;}
+  .hero-inner {padding-top:2.5rem;padding-left:2.5rem;padding-right:2.5rem;padding-bottom:3.5rem;}
   .hero-obj1, .hero-obj2, .hero-obj3, .hero-obj4 {display:none;}
   .hero-obj4 {top:-18rem;right:-2rem;}
 }

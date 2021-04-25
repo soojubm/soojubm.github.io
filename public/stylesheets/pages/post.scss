@@ -76,12 +76,12 @@
 .post-comment-list-item .post-comment-list-item:before {content:'';display:block;width:2px;height:100%;background-color:var(--gray100);position:absolute;left:0;top:0;}
 
 
-.commnet-write {margin:4rem 0;}
-.comment-write-text {margin:0 0 .5rem 0;}
-.comment-write-name {display:none;float:left;width:calc(50% - 4px);margin:.5rem 0;}
-.comment-write-password {display:none;float:right;width:calc(50% - 4px);margin:.5rem 0;}
+.commnet-write {margin:4rem 0;overflow:hidden;}
+.comment-write-text {margin:0 0 1rem 0;}
+.comment-write-name {display:none;float:left;width:calc(50% - .5rem);margin:.5rem 0 1rem 0;}
+.comment-write-password {display:none;float:right;width:calc(50% - 4px);margin:.5rem 0 1rem 0;}
 .comment-write-submit {float:right;@include button-primary;}
-.comment-write-cancel {float:right;@include button-text;margin-right:.5rem;}
+.comment-write-cancel {float:right;@include button-text;margin-right:1rem;}
 .is-focused .comment-write-name {display:block;}
 .is-focused .comment-write-password {display:block;}
 

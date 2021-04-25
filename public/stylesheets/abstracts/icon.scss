@@ -43,6 +43,11 @@
 .icon-caret.is-left {transform:rotate(90deg);}
 .icon-caret.is-right {transform:rotate(-90deg);}
 
+// 지워도 됨
+// .icon-exclamation {display:inline-block;vertical-align:middle;width:16px;height:16px;border:1px solid;border-radius:50%;position:relative;}
+// .icon-exclamation:before {content:'';display:block;width:2px;height:7px;margin:2px auto 1.5px;background:var(--gray800);}
+// .icon-exclamation:after {content:'';display:block;width:2px;height:2px;margin:0 auto;background:var(--gray800);}
+
 
 // >
 // display:block;width:6px;height:6px;border-left:2px solid var(--gray800);border-top:2px solid var(--gray800);transform:rotate(-135deg);position:absolute;right:16px;bottom:22px;
@@ -60,7 +65,7 @@
 .icon-chevron {display:block;margin:0 3px 0 0;padding:3px;border:solid var(--gray800);border-width:0 2px 2px 0;transform:rotate(-45deg);}
 .icon-chevron.is-left {margin:0 0 0 3px;transform:rotate(135deg);}
 .icon-chevron.is-up {margin-top:4px;transform:rotate(-135deg);}
-.icon-chevron.is-down {margin-top:-2px;transform:rotate(45deg);}
+.icon-chevron.is-down {margin:0 0 2px 0;transform:rotate(45deg);}
 
 .icon-bullet {
   display: inline-block;

@@ -155,11 +155,14 @@
 	right: 50%;
 }
 
+@mixin container-overflow {
+  overflow:auto;white-space:nowrap;font-size:0;
+  &::-webkit-scrollbar {display:none;}
+}
 
 // todo slider -5rem;
 .slider {position:relative;}
-.slider-viewer {overflow:auto;white-space:nowrap;font-size:0;position:relative;z-index:1;transition:all .4s ease;}
-.slider-viewer::-webkit-scrollbar {display: none;}
+.slider-viewer {@include container-overflow;}
 /* .slider-viewer .inbox {width:1500px;position:absolute;} */
 .slider-viewer-slide {display:inline-block;width:10rem;padding:1rem;border:1px solid var(--color-box-border);border-radius:var(--radius400);background:var(--gray100);text-align:left;font-size:1rem;}
 .slider-viewer-slide:nth-of-type(1) {}
@@ -293,22 +296,74 @@
 
 
 // newneek
+.newneek {}
+.newneek .modal-dialog {font-size:var(--subhead);}
 .newneek-orange {}
-.newneek-asis {margin:-2px 0 0 0;padding:1.5rem;border:2px solid #000;}
-.newneek-asis-title {@include subhead;}
+.newneek-asis {padding:1rem 1rem;border:1px solid #000;border-top:0;}
+.newneek-asis-title {margin:0 0 .5rem 0;@include subhead;text-transform:uppercase;}
 .newneek-asis-item {}
-.newneek-tobe {margin:-2px 0 0 0;padding:1.5rem;border:2px solid #000;}
-.newneek-tobe-title {@include subhead;}
+.newneek-tobe {padding:1rem 1rem;border:1px solid #000;border-top:0;}
+.newneek-tobe-title {margin:0 0 .5rem 0;@include subhead;text-transform:uppercase;}
 .newneek-tobe-item {}
 
 .newneek .is-temp .timeline-item-head-icon {background:var(--color-newneek);color:#000;}
 
-.newneek-keyword {margin:1rem 0;}
-.newneek-keyword small {display:block;}
+.newneek .timeline-item-panel-title {margin-bottom:1rem;}
 
 .newneek .timeline {display:block;max-width:var(--container-medium);margin:4rem auto;}
 .newneek .timeline-item-head-title {}
-.newneek .timeline-item-panel {padding:1rem 2rem;background:var(--gray100);}
+.newneek .timeline-item-panel {padding:1rem 2rem;border:none;}
+
+
+.newneek-section2 {background:#ebebeb;text-align:center;}
+.editor-says {padding:.5rem 1rem;border:1px solid #000;font-family:'DunkelSans';}
+.gosum-says {padding:.5rem 1rem;border:1px solid #000;border-top:0;}
+.newneek-section2 figure {max-width:600px;margin:0 auto;}
+.newneek-section2 footer {padding:1rem 1rem;border:1px solid #000;border-top:0;border-bottom:0;}
+.newneek-keyword-wrap {display:flex;flex-wrap:wrap;justify-content:space-evenly;padding:2rem 0 3rem;border:1px solid #000;border-top:0;}
+.newneek-keyword {width:calc(40% - 1rem);padding:1rem;background:#ebebeb;font-size:1rem;}
+.newneek-keyword b {}
+.newneek-keyword small {display:block;}
+.newneek-keyword i {display:block;font-size:2rem;}
+.newneek .numbering {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  font-size: 1rem;
+  margin: auto auto 1rem;
+  border-radius: 50%;
+  font-size: 12px;
+  background: #000;
+  color: #fff;
+  display: none;
+}
+
+
+
+.newneek-section1 {display:flex;flex-wrap:wrap;justify-content:space-between;margin:4rem 0 0;padding:12rem 7.5%;background:#fb7800;color:#000;position:relative;}
+.newneek-section1 figure {position:absolute;left:50%;top:0;transform:translate(-50%, -50%);}
+.newneek-section1 figure img {display:block;width:12rem;}
+.newneek-section1 footer {width:100%;margin:4rem 0 0 0;}
+.bubble {max-width:calc(50% - 2rem);}
+.bubble-user {padding:.5rem 1.5rem;border:2px solid #000;background:#000;font-size:1rem;color:#fff;font-weight:bold;}
+.bubble-text {padding:1.5rem 1.5rem 2rem;border:1px solid #000;background:#ebebeb;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 .subscribe-gosum {    position: absolute;
@@ -353,6 +408,12 @@
 
 
 
+.newneek .charaters {}
+.newneek .charaters figure {width:400px;margin:1rem 0;padding:1.5rem;border:1px solid #000;}
+.newneek .charaters figure i {}
+.newneek .charaters figure b {font-size:var(--body);}
+.newneek .charaters figure p {font-size:var(--body);}
+
 
 
 
@@ -364,7 +425,7 @@
   justify-content: center;
   flex-direction: column;
   padding: 2rem 0;
-  margin: 10rem 0;
+  margin: 140px 0 0;
   border-top: 2px solid #000;
   background: $color-newneek;
   position: relative;
@@ -382,6 +443,9 @@
     position: absolute;
     bottom: -2rem;
     transition: all 0.4s ease 0.05s;
+  }
+  .home-mangrove-object {
+    margin-right: 2rem;
   }
   .mangrove-foot {
     display: flex;

@@ -17,11 +17,21 @@ const modal = ({ selector: trigger }: Parameter) => ({
 
     document.removeEventListener('click', this.backHistory)
 
+    this.modalTriggers.forEach(modalElement => 
+      modalElement.querySelector('.card-more')?.addEventListener('click', event => {
+        event.stopPropagation()
+        event.preventDefault()
+      })
+    )
+
     this.modalTriggers.forEach(modalElement =>
       modalElement.addEventListener('click', event => {
         event.stopPropagation()
         event.preventDefault()
 
+
+        // event target
+        console.log('ttt', event.target, modalElement)
         const modalId = modalElement.dataset.modal
         const uri = `/views/${modalId}.html`
         // const response = await fetch(uri)

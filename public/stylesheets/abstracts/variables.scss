@@ -72,11 +72,12 @@ $height-header: 56px;
   --weight400: normal;
   // ! colours
   --gray0: #fff; // white for dark theme
-  --gray100: #f1f5f6; // bg
+  --gray100: #f1f4f1; // bg 156
   --gray200: #dadce0; // divider border F8F7F5
   --gray400: #979d9a; // caption
   --gray800: #343c38; // heading
   // --gray600: #4e5351; // body
+  --blue100: #ddf5e9; 
   --blue100: #ddf5e9;
   --green800: #1b995c;
   --red100: #fff0f5;
@@ -209,7 +210,8 @@ $height-header: 56px;
   &:before {
     content:'';display:block;background:var(--gray100);border-radius:var(--radius400);position:absolute;left:-.5rem;right:-.5rem;top:-.5rem;bottom:-.5rem;z-index:-1;
   }
-  button {color:var(--color-primary);}
+  button {border-color:var(--gray0);background:var(--gray0);color:var(--color-primary);}
+  button:hover {border-color:transparent;}
   figure {background-color:var(--gray0);}
 }
 @mixin hover-tertiary {border-color: var(--color-primary);}

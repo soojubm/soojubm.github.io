@@ -2,7 +2,7 @@
 
 import './stylesheets/style.scss'
 
-import routePage from './javascripts/router'
+import routePage, { routes}  from './javascripts/router'
 import { initializeLoader, detectBrowser } from './javascripts/load'
 import darkTheme from './javascripts/local/darkTheme'
 import carousel from './javascripts/event/carousel'
@@ -52,6 +52,21 @@ document.addEventListener('readystatechange', () => console.log(document.readySt
 
 async function domEvents() {
   await routePage()
+
+  const hash = window.location.hash.substring(1)
+  const page = routes.find(route => route.path.substring(1) === hash)
+  const pageTitleElement = document.querySelector('.js-page-title')
+
+  if(pageTitleElement) {
+    pageTitleElement.textContent = page?.name || '페이지타이틀'
+  }
+
+  // // ! 디자인시스템에 추가한 거 임시
+  // darkTheme()
+
+  document.querySelector('.js-default-font')?.addEventListener('click', () => {
+    document.body.classList.toggle('font-default')
+  })
 
   // var counter = document.querySelector('#counter');
   // if(counter) {

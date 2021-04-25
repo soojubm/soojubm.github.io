@@ -106,7 +106,7 @@
     </aside>
 
     <aside class="offline js-offline">
-      <p>희희 인터넷에 연결되어 있지 않습니다!</p>
+      <p>인터넷 연결을 다시 확인해주세요.</p>
     </aside>
 
     <aside class="loader js-loader">
@@ -201,7 +201,7 @@
               <span class="notification-item-title" style="color:var(--gray400);">like on <em>John Cassavetes</em></span>
             </div>
             <footer>
-              <button>알림 모두 보기</button>
+              <button>알림 전체 보기</button>
             </footer>
           </menu>
         </div>
@@ -227,14 +227,16 @@
               </span>
             </div> -->
             <button class="user-logout js-darkmode" title="change theme">
-              <span class="user-logout-icon">
-                <i class="icon-moon"></i>
-              </span>
+              <span class="user-logout-icon"><i class="icon-moon"></i></span>
               어둡게 보기
               <span class="switch" style="margin-left:auto;">
-                <input type="checkbox" id="temp55" name="" role="switch" value="on" />
+                <input type="checkbox" id="temp55" name="" role="switch" />
                 <label for="temp55" style="padding-left:48px;"></label>
               </span>
+            </button>
+            <button class="user-logout js-default-font" title="change theme">
+              <span class="user-logout-icon"><i class="icon-moon"></i></span>
+              시스템 폰트로 보기
             </button>
             <button class="user-logout" title="sign out">
               <span class="user-logout-icon">
@@ -262,7 +264,7 @@
     </nav>
 
     <header class="header" role="navigation">
-      <h1 class="header-title">페이지타이틀</h1>
+      <h1 class="header-title js-page-title">페이지타이틀</h1>
       <button class="header-back" onclick="javascript:window.location.href='/';">
         <span class="header-back-icon"><i class="icon-arrow"></i></span>
       </button>
@@ -318,7 +320,7 @@
           <a class="footer-terms-link" href="#"><strong style="color:var(--color-primary);">개인정보취급방침</strong></a>
         </div>
         <div class="footer-address-info">
-          스튜디오 수줍음(주)<br />
+          수줍이<br />
           서울시 강서구 화곡로 1818, 3층
           <i class="icon-bullet"></i>
           대표 수줍이 000-00-0000<br />

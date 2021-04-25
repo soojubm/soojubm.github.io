@@ -1,12 +1,21 @@
 // @ts-nocheck
 import { pushBrowserHistory } from './utils/browserUtils'
 
-const routes = [
-  { name: 'root', path: '/' },
-  { name: 'home', path: '/home' },
-  { name: 'design', path: '/design' },
-  { name: 'profile', path: '/profile' },
-  { name: 'post', path: '/post' },
+export const routes = [
+  { name: '디자인시스템', path: '/' },
+  { name: '홈', path: '/home' },
+  { name: '디자인시스템', path: '/design' },
+  
+  { name: '유저프로필', path: '/profile' },
+  { name: '포스트', path: '/post' },
+  { name: '영화', path: '/cake' },
+  { name: '상품상세', path: '/product' },
+  { name: '주문서', path: '/checkout' },
+
+  { name: '로그인', path: '/login' },
+  { name: '회원가입', path: '/signup' },
+  { name: '비밀번호찾기', path: '/forgot' },
+  { name: '설정', path: '/setting' },
 ]
 
 const currentPath = window.location.pathname
