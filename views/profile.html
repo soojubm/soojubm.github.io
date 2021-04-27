@@ -93,30 +93,49 @@
 			</nav>
 			<div class="profile-display">
 				<p class="profile-display-status" role="status" hidden>Viewing 1,000 Projects</p>
-				<button class="profile-display-button js-display-grid js-display-button is-selected" name="grid"><img src="/public/icons/grid.svg" alt="grid" /> <b aria-hidden="true" hidden>Grid</b></button>
-				<button class="profile-display-button js-display-list js-display-button" name="list"><img src="/public/icons/list.svg" alt="list" /> <b aria-hidden="true" hidden>List</b></button>
+				<button class="profile-display-button js-display-grid js-display-button is-selected" name="grid">
+					<i class="icon-grid">
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+					</i>
+					<b aria-hidden="true" hidden>Grid</b>
+				</button>
+				<button class="profile-display-button js-display-list js-display-button" name="list">
+					<i class="icon-list">
+						<span></span>
+						<span></span>
+						<span></span>
+					</i>
+					<b aria-hidden="true" hidden>List</b
+				></button>
 			</div>
+
 			<hr role="separator" style="margin-bottom:1.5rem;background-color:var(--gray200);" />
-			<section class="profile-tabpanel" role="tabpanel" aria-hidden="" data-index="1">
+
+			<section class="profile-tabpanel" role="tabpanel" aria-hidden="false" data-index="1">
 				<a class="card js-modal" href="#" data-modal="newneek">
 					<figure class="card-thumbnail"><img style="margin:1rem auto 0;box-shadow:none;" src="https://newneek.co/static/media/gosum-home.7b7f5b6b.png" alt="" /></figure>
 					<h3 class="card-title">뉴닉 웹사이트 리뉴얼</h3>
 					<!-- <span class="card-new">신규</span> -->
 					<!-- <time class="card-date">2017-12-18</time> -->
+					<div class="card-category">카테고리</div>
 					<div class="card-byline">
 						<figure class="card-byline-avatar"><img src="/public/images/soo.png" alt="" /></figure>
 						<span class="card-byline-name">수줍이</span>
 					</div>
 					<div class="card-tags" role="group">
-						<span class="tag">태그1</span>
-						<span class="tag">태그1</span>
-						<span class="tag">태그1</span>
+						<span class="tag">일정산정/스펙정의</span>
+						<span class="tag">디자인</span>
+						<span class="tag">프론트엔드개발</span>
 					</div>
 					<button class="card-more" hidden><i class="icon-more"></i></button>
 				</a>
 
 				<a class="card js-modal" href="#" data-modal="newneek-book">
 					<figure class="card-thumbnail"><img style="max-height:80%;box-shadow:none;"src="https://newneek.co/static/media/gosumbook-logo.8d73e3f9.png" alt="" /></figure>
+					<div class="card-category">카테고리</div>
 					<h3 class="card-title">뉴닉 고슴책</h3>
 					<div class="card-byline">
 						<figure class="card-byline-avatar"><img src="/public/images/soo.png" alt="" /></figure>
@@ -132,6 +151,7 @@
 				
 				<a class="card js-modal" href="#" data-modal="newneek-election">
 					<figure class="card-thumbnail"><img style="margin-top:1rem;box-shadow:none;" src="https://napp.newneek.co/gosumdang.png" alt="" /></figure>
+					<div class="card-category">카테고리</div>
 					<h3 class="card-title">뉴닉 총선 프로젝트</h3>
 					<div class="card-byline">
 						<figure class="card-byline-avatar"><img src="/public/images/soo.png" alt="" /></figure>
@@ -145,7 +165,7 @@
 					<button class="card-more" hidden><i class="icon-more"></i></button>
 				</a>
 				
-				<a class="card js-modal" href="#" data-modal="newneek-app">
+				<!-- <a class="card js-modal" href="#" data-modal="newneek-app">
 					<figure class="card-thumbnail"><img src="" alt="" /></figure>
 					<h3 class="card-title">뉴닉 앱</h3>
 					<div class="card-byline">
@@ -158,10 +178,11 @@
 						<span class="tag">태그1</span>
 					</div>
 					<button class="card-more" hidden><i class="icon-more"></i></button>
-				</a>
+				</a> -->
 
 				<a class="card js-modal" href="#" data-modal="etc-works">
 					<figure class="card-thumbnail"><img src="/public/images/work-studium.jpg" alt="" /></figure>
+					<div class="card-category">카테고리</div>
 					<h3 class="card-title">Selected Works</h3>
 					<!-- <time class="card-date">September 12, 2017</time> -->
 					<button class="card-more" hidden><i class="icon-more"></i></button>
@@ -191,6 +212,7 @@
 
 				<a class="card js-modal" href="#" data-modal="lettering">
 					<figure class="card-thumbnail"><img src="/public/images/budha.png" alt="" /></figure>
+					<div class="card-category">취미</div>
 					<h3 class="card-title">레터링</h3>
 					<!-- <time class="card-date">-</time> -->
 					<button class="card-more" hidden><i class="icon-more"></i></button>
@@ -204,7 +226,7 @@
 				</a>
 			</section>
 
-			<section class="profile-tabpanel hidden" role="tabpanel" aria-hidden="false" data-index="2">
+			<section class="profile-tabpanel" hidden role="tabpanel" aria-hidden="true" data-index="2">
 				<a class="card" href="#product">
 					<figure class="card-thumbnail"></figure>
 					<h3 class="card-title">상품 상세페이지</h3>
@@ -248,7 +270,7 @@
 				</a>
 			</section>
 
-			<section class="profile-tabpanel hidden" role="tabpanel" aria-hidden="false" data-index="3">
+			<section class="profile-tabpanel" hidden role="tabpanel" aria-hidden="true" data-index="3">
 				<!-- <div class="message" style="width:100%;">실제 유저로서 어떤 부분들이 문제인가?</div> -->
 				<a class="card js-modal" href="#" data-modal="noonnu">
 					<figure class="card-thumbnail"></figure>
@@ -273,7 +295,7 @@
 				</a>
 			</section>
 
-			<section class="profile-tabpanel hidden" role="tabpanel" aria-hidden="false" data-index="4">
+			<section class="profile-tabpanel" hidden role="tabpanel" aria-hidden="true" data-index="4">
 				<section class="empty">
 					<i class="empty-icon">🧟</i>
 					<h1 class="empty-title">아직 새 글이 없어요.</h1>

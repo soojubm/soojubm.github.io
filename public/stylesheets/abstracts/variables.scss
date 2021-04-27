@@ -18,12 +18,15 @@ $caption: 0.875rem;
 
 @mixin title {font-size:$title;line-height:1.4;font-weight:bold;letter-spacing:-.025rem;text-indent:-1px;color:var(--gray800);}
 @mixin subhead {font-size:1.25rem;font-weight:bold;letter-spacing:-.025rem;}
+@mixin subheading1 {font-size:1.25rem;font-weight:bold;letter-spacing:-.025rem;}
+@mixin subheading2 {font-size:var(--body);font-weight:normal;color:var(--gray800);}
+@mixin subheading3 {font-size:var(--body);font-weight:normal;color:var(--gray400);}
 
 $color-primary: #00783e;
 $gray100: #dadce0;
 $red100: #fff0f5;
 $red800: #f02849;
-$blue100: #ddf5e9; // honeydew
+$green100: #ddf5e9; // honeydew
 $blue800: blue;
 
 $color-google: #fff;
@@ -73,12 +76,12 @@ $height-header: 56px;
   // ! colours
   --gray0: #fff; // white for dark theme
   --gray100: #f1f4f1; // bg 156
-  --gray200: #dadce0; // divider border F8F7F5
+  --gray200: #e0e2e1; // divider border F8F7F5
   --gray400: #979d9a; // caption
   --gray800: #343c38; // heading
   // --gray600: #4e5351; // body
-  --blue100: #ddf5e9; 
-  --blue100: #ddf5e9;
+  --green100: #ddf5e9; 
+  --green100: #ddf5e9;
   --green800: #1b995c;
   --red100: #fff0f5;
   --red800: #f02849;
@@ -137,22 +140,22 @@ $height-header: 56px;
     //   filter: invert(100%) hue-rotate(180deg);
     //   mix-blend-mode: screen;
     // }
-    --gray0: #343c38;
-    --gray100: #4e5351; // bg
+    
+    --gray0: #252d29;
+    --gray100: #343c38; // bg
     --gray200: #4e5351; // divider border
     --gray400: #979d9a; // caption
-    --gray800: #f1f5f6; // heading
+    --gray800: #f1f4f1; // heading
 
-    --blue100: rgba(0, 107, 55, .1);
-
+    --green100: rgba(0, 107, 55, .1);
 
     --border100: 1px solid var(--gray100);
 
     --color-box-border: var(--gray100);
 
-    --shadow400: 0px 0px 2rem rgba(0, 0, 0, 0.5);
+    --shadow400: 0px 0px 2rem rgba(0, 0, 0, 0.25);
 
-    color: var(--gray400);
+    color: var(--gray800);
     input[type=checkbox][role=switch] + label::after {background:#fff;}
   }
 }
@@ -173,6 +176,17 @@ $height-header: 56px;
 @mixin image-centered {width:auto;height:auto;max-width:150%;max-height:150%;margin:auto;position:absolute;left:0;right:0;top:0;bottom:0;}
 
 
+@mixin tag {
+  display: inline-block;
+  height: 32px;
+  padding: 0 1rem;
+  // border: var(--border100);
+  border-radius: var(--radius400);
+  background: var(--gray0);
+  color: var(--gray800);
+  line-height: 31px;
+}
+
 // layout 유동성을 위해. centered mixin은 layou의 유동성을 해친다.
 // ! box-small의 display:flex가 hidden 속성과 충돌
 @mixin box($cell) {
@@ -183,7 +197,7 @@ $height-header: 56px;
   height:$cell;
   // border: 1px solid var(--color-box-border);
   border: 1px solid transparent;
-  overflow: hidden;
+  // overflow: hidden; // hover
   background-color: var(--gray100);
   border-radius: var(--radius400);
   box-sizing: border-box;
@@ -205,13 +219,13 @@ $height-header: 56px;
 // item in card component
 // active
 @mixin hover-item {
-  background: var(--gray100);
+  // background: var(--gray100);
   cursor: pointer;
   &:before {
     content:'';display:block;background:var(--gray100);border-radius:var(--radius400);position:absolute;left:-.5rem;right:-.5rem;top:-.5rem;bottom:-.5rem;z-index:-1;
   }
-  button {border-color:var(--gray0);background:var(--gray0);color:var(--color-primary);}
-  button:hover {border-color:transparent;}
+  // button {border:var(--border100);background:var(--gray100);color:var(--color-primary);}
+  // button:hover {border-color:transparent;}
   figure {background-color:var(--gray0);}
 }
 @mixin hover-tertiary {border-color: var(--color-primary);}
@@ -263,7 +277,10 @@ $height-header: 56px;
 }
 
 @mixin link-inner {display:inline-block;color:var(--color-primary);}
-@mixin link-outer {display:inline-block;color:var(--gray800);text-decoration:underline;}
+@mixin link-outer {
+  // display:inline-block;
+  color:var(--gray800);text-decoration:underline;
+}
 
 .linebreaker-desktop {
   display:block;

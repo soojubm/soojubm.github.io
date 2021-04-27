@@ -1,8 +1,8 @@
 export const DARK_THEME_CLASS = 'theme-dark'
 export const LIGHT_THEME_CLASS = 'theme-light'
 
-function darkTheme() {
-  const darkThemeTrigger = document.querySelector('.js-darkmode')
+function darkTheme(classname) {
+  const darkThemeTrigger = document.querySelector(classname)
   const darkThemeSwitch = darkThemeTrigger?.querySelector('input')
   if(!darkThemeTrigger || !darkThemeSwitch ) return
 

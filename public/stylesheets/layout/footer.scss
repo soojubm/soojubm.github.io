@@ -22,8 +22,8 @@
 .footer-sitemap:after {content:'';display:block;clear:both;}
 .footer-sitemap-title {margin:0 0 1rem 0;@include subhead;}
 .footer-sitemap-item {margin:0 0 2rem 0;}
-.footer-sitemap-item-title {margin:0 0 1rem 0;font-size:var(--body);font-weight:bold;}
-.footer-sitemap-item-link {display:block;margin:0 0 .5rem 0;color:var(--gray800);}
+.footer-sitemap-item-title {margin:0 0 1rem 0;font-size:var(--body);font-weight:normal;color:var(--gray400);}
+.footer-sitemap-item-link {display:block;@include link-outer;}
 .footer-sitemap-item-link:hover {@include hover-text;}
 .footer-terms {margin:2rem 0 1rem 0;}
 .footer-terms-link {margin:0 1rem 0 0;}

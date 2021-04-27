@@ -3,5 +3,5 @@
 .chip-icon {}
 .chip-icon .icon-caret {margin:0 0 0 .25rem;}
 .chip-icon .icon-check {margin:0 .25rem 0 0;margin-top:-3px;}
-.chip.is-active {border-color:var(--color-primary);background:var(--blue100);color:var(--color-primary);}
-.chip.is-active .chip-icon {border-color:var(--color-primary);background:var(--blue100);}
+.chip.is-active {border-color:var(--color-primary);background:var(--green100);color:var(--color-primary);}
+.chip.is-active .chip-icon {border-color:var(--color-primary);}

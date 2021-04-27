@@ -21,8 +21,9 @@
 .setting-row-change b {display:none;background:var(--gray0);transform:translateX(200px);transition:all .5s;position:relative;z-index:1;}
 .setting-row-change i {}
 .setting-row:hover .setting-row-change b {transform:translateX(0);}
+.setting-row-foot {display:flex;}
 .setting-row-foot-confirm {@include button-primary;}
-.setting-row-foot-cancel {@include button-text;margin-left:.25rem;}
+.setting-row-foot-cancel {@include button-text;margin:0 0 0 1rem;}
 // line-height:24px; 이거 모듈화~!
 .setting-row .textfield {
   margin: 0 0 1rem 0;

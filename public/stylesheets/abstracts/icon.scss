@@ -67,6 +67,13 @@
 .icon-chevron.is-up {margin-top:4px;transform:rotate(-135deg);}
 .icon-chevron.is-down {margin:0 0 2px 0;transform:rotate(45deg);}
 
+.icon-grid {padding:7px;position:relative;}
+.icon-grid span {float:left;display:block;margin:1px;padding:1px;border:2px solid var(--gray800);}
+
+.icon-list {padding:4px;position:relative;}
+.icon-list span {display:block;width:12px;height:2px;margin:2px 0 2px 4px;background-color:var(--gray800);position:relative;}
+.icon-list span:before {content:'';width:2px;height:2px;background-color:inherit;position:absolute;left:-4px;}
+
 .icon-bullet {
   display: inline-block;
   vertical-align: middle;

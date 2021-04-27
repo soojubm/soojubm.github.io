@@ -27,11 +27,11 @@ const tabMenu = () => {
 
 
       tabPanels.forEach(element => {
-        element.classList.add('hidden')
+        element.hidden = true
         element.setAttribute('aria-hidden', 'true')
 
         if (tabIndex === element.getAttribute('data-index')) {
-          element.classList.remove('hidden')
+          element.hidden = false
           element.setAttribute('aria-hidden', 'hidden')
         }
       })

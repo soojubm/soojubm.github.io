@@ -20,7 +20,7 @@ import { throttle } from './javascripts/utils/optimizationUtils'
 window.addEventListener('hashchange', domEvents)
 window.addEventListener('hashchange', initializeNavbar)
 
-document.addEventListener('DOMContentLoaded', darkTheme)
+document.addEventListener('DOMContentLoaded', () => darkTheme('.js-darkmode'))
 document.addEventListener('DOMContentLoaded', detectBrowser)
 document.addEventListener('DOMContentLoaded', initializeLoader)
 document.addEventListener('DOMContentLoaded', domEvents)
@@ -62,7 +62,7 @@ async function domEvents() {
   }
 
   // // ! 디자인시스템에 추가한 거 임시
-  // darkTheme()
+  darkTheme('.js-darkmode1')
 
   document.querySelector('.js-default-font')?.addEventListener('click', () => {
     document.body.classList.toggle('font-default')

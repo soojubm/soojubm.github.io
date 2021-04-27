@@ -2,7 +2,7 @@
 .dialog-object {position:absolute;left:50%;top:0;z-index:-1;width:100px;transform:translate(-50%, -50%);}
 .dialog-title {font-size:$subhead;font-weight:bold;}
 .dialog-description {margin:.5rem 0 1.5rem;}
-// .dialog-footer {display:flex;justify-content:space-around;margin:2rem -1.5rem -1.5rem;padding:.25rem;border-top:1px solid var(--gray100);}
+// .dialog-footer {display:flex;justify-content:space-around;margin:2rem -1.5rem -1.5rem;padding:.25rem;border-top:var(--border100);}
 // .dialog-footer button {width:100%;}
 // .dialog-footer-close {@include button-text;color:var(--gray400);}
 // .dialog-footer-confirm {@include button-text;color:var(--color-primary);}

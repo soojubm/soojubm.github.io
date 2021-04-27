@@ -68,7 +68,9 @@ module.exports = smp.wrap({
 				canPrint: true
 			})
 		],
-		splitChunks: {},
+		// splitChunks: {
+		// 	chunks: 'all',
+		// },
 		concatenateModules: true,
 	},
 	devServer: {
