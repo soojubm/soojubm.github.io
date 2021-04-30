@@ -3,7 +3,7 @@
 .subscribe-description {margin:1rem 0 3rem 0;}
 .subscribe-field {width:50%;max-width:400px;margin:2rem 0 .5rem;}
 .subscribe-submit {@include button-primary;width:100%;max-width:400px;}
-.subscribe-helper {display:block;margin:.5rem 0 0 0;font-size:var(--caption);;}
+.subscribe-helper {display:block;margin:.5rem 0 0 0;font-size:var(--caption);}
 
 .footer {max-width:var(--container-large);margin:0 auto;padding:4rem 5% 8rem;background:var(--gray0);position:relative;z-index:4;}
 .footer::after {content:'';display:block;clear:both;}

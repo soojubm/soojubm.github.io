@@ -5,13 +5,12 @@ const scrollAnimation = () => {
   const ANIMATED_CLASSNAME = 'is-scrolled'
 
   animateOnLoad()
-  // window.addEventListener('scroll', throttle(animateOnScroll), false)
   animateOnScroll()
 
   function animateOnLoad() {
     scrollElements.forEach(element => {
-      const isScrolled = element.getBoundingClientRect().top - window.innerHeight <= 0 
-      if (!isScrolled) return
+      const isObserved = element.getBoundingClientRect().top - window.innerHeight <= 0 
+      if (!isObserved) return
   
       element.classList.add(ANIMATED_CLASSNAME)
     })
@@ -36,9 +35,12 @@ const scrollAnimation = () => {
           if(entry.classList.contains('is-scrolled')) return
           entry.classList.toggle(ANIMATED_CLASSNAME)
         }
+
+        observer.unobserve(entry.target);
       })
     }
 
+    // window.addEventListener('scroll', throttle(animateOnScroll), false)
     // scrollElements.forEach(element => {
     //   const isScrolled = element.getBoundingClientRect().top + element.clientHeight * 0.5 - window.innerHeight <= 0
     //   element.classList.toggle(ANIMATED_CLASSNAME, isScrolled)

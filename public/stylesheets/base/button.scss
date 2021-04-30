@@ -17,31 +17,24 @@
   // button:not(:active),
   // button:not(:focus) {outline:0;}
   // button:active {outline:0;animation:ripple2 0.2s linear forwards;}
-
   // button:before {content:'';display:block;width:8px;height:8px;background:rgba(0,0,0,.2);position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);opacity:0;}
   // button:active:before {width:100%;height:100%;animation:ripple .6s;}
 }
 
-
-
 button {@include reset-button;}
-
-// btn.setAttribute('aria-pressed', false);
 
 @mixin button {
   display: inline-block;
   min-width: 8rem;
-  // height: 48px;
   padding:$padding200;
   box-sizing:border-box;
   border-radius:var(--radius400);
-  font-weight: bold;
   text-align:center;
+  font-weight: bold;
   cursor:pointer;
   position:relative;
   @content;
   
-  &:hover {}
   &:focus, &.is-focus {
     outline:0;
     box-shadow:0 0 0 2px var(--gray800);
@@ -62,10 +55,12 @@ button {@include reset-button;}
   @include button {
     background: var(--color-primary);
     border:1px solid var(--color-primary);
-    color: #fff;
-    // color:var(--gray0);
+    color: #fff; // 다크테마와 동일한 스타일
   }
-  &:hover:not(:disabled), &.is-hover:not(:disabled) {border-color:darken(var(--subhead), 2.5%);background:darken(var(--subhead), 2.5%);}
+  &:hover:not(:disabled), &.is-hover:not(:disabled) {
+    box-shadow: inset 0 0 2px rgba(27, 153, 92, 0.8);
+    // border-color:darken($green800, 2.5%);background:darken($green800, 2.5%);
+  }
   &:focus {}
   &:active {}
   &:disabled {}
@@ -73,8 +68,11 @@ button {@include reset-button;}
 @mixin button-secondary {
   @include button;
   // border:1px solid var(--subhead);background:transparent;color:var(--subhead);
-  border:none;background:var(--green100);color:var(--color-primary);
-  &:hover:not(:disabled), &.is-hover:not(:disabled) {border-color:darken($green100, 2%);background:darken($green100, 2%);color:darken(var(--subhead), 5%);}
+  background:var(--green100);color:var(--color-primary);
+  &:hover:not(:disabled), &.is-hover:not(:disabled) {
+    box-shadow: inset 0 0 2px rgba(27, 153, 92, 0.8);
+    // border-color:darken($green100, 2%);background:darken($green100, 2%);color:darken($green800, 5%);
+  }
   &:focus:not(:disabled) {}
   &:active {}
   &:disabled {}
@@ -82,15 +80,21 @@ button {@include reset-button;}
 @mixin button-tertiary {
   @include button;
   border:1px solid var(--color-box-border);background:var(--gray100);color:var(--gray800);
-  &:hover:not(:disabled), &.is-hover:not(:disabled) {border-color:var(--gray200);background:var(--gray200);}
+  &:hover:not(:disabled), &.is-hover:not(:disabled) {
+    box-shadow: inset 0 0 2px rgba(27, 153, 92, 0.8);
+    // border-color:var(--gray200);background:var(--gray200);
+  }
   &:focus:not(:disabled) 
   &:active {}
   &:disabled {}
 }
 @mixin button-text {
   @include button;
-  background:none;border:1px solid transparent;color:var(--color-primary);
-  &:hover:not(:disabled), &.is-hover:not(:disabled) {border-color:var(--gray100);background:var(--gray100);}
+  border:1px solid transparent;color:var(--color-primary);
+  &:hover:not(:disabled), &.is-hover:not(:disabled) {
+    box-shadow: inset 0 0 2px rgba(27, 153, 92, 0.8);
+    // border-color:var(--gray100);background:var(--gray100);
+  }
   &:focus:not(:disabled) {}
   &:active {}
   &:disabled {}
@@ -98,7 +102,6 @@ button {@include reset-button;}
 
 // ! backButton closeButton :: back close 아이콘은 어차피 단독으로 쓰이지 않는다!
 .danger-button {@include button;background:var(--red800);border:1px solid var(--red800);color:var(--gray0);}
-.success-button {@include button;background:var(--red800);border:1px solid var(--red800);color:var(--gray0);}
 
 [role=group] {display:flex;flex-wrap:wrap;}
 [role=group] > * {margin:0 .5rem .5rem 0;}

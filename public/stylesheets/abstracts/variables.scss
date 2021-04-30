@@ -24,6 +24,10 @@ $bezier-base: cubic-bezier(0.455, 0.03, 0.515, 0.955);
 $transition-base: all 0.4s $bezier-base;
 $transition-fade: opacity 0.15s linear;
 
+// for darken
+$green100: #ddf5e9; 
+$green800: #1b995c; 
+
 :root {
   color-scheme: light dark;
   --fontstack: 'Asap', 'AritaDotum', 'Apple SD Gothic Neo', sans-serif;
@@ -45,7 +49,6 @@ $transition-fade: opacity 0.15s linear;
   --gray800: #343c38; // heading
   // --gray600: #4e5351; // body
   --green100: #ddf5e9; 
-  --green100: #ddf5e9;
   --green800: #1b995c;
   --red100: #fff0f5;
   --red800: #f02849;
@@ -130,6 +133,7 @@ $transition-fade: opacity 0.15s linear;
     --green100: rgba(0, 107, 55, .1);
 
     --border100: 1px solid var(--gray100);
+    --border150: 1px solid var(--gray100); // 150 케이스 있음.
 
     --color-box-border: var(--gray100);
 

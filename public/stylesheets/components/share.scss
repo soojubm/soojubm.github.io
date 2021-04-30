@@ -1,13 +1,17 @@
 
 .share-trigger {@include box-small;margin:0 0 1rem 0;}
 .share-trigger svg {width:1rem;}
-.share {max-width:400px;@include container-card;}
+.share {
+    max-width:400px;@include container-card;
+}
 .share-back {@include box-small;position:absolute;right:.5rem;top:.5rem;}
 .share-title {@include subhead;}
-.share-facebook {display:flex;align-items:center;margin:1rem 0;}
+.share-facebook {display:flex;align-items:center;width:100%;margin:1rem 0;position:relative;z-index:1;}
 .share-facebook:hover {@include hover-item;}
-.share-twitter {display:flex;align-items:center;margin:1rem 0;}
-.share-kakao {display:flex;align-items:center;margin:1rem 0;}
+.share-twitter {display:flex;align-items:center;width:100%;margin:1rem 0;position:relative;z-index:1;}
+.share-twitter:hover {@include hover-item;}
+.share-kakao {display:flex;align-items:center;width:100%;margin:1rem 0;position:relative;z-index:1;}
+.share-kakao:hover {@include hover-item;}
 .share-facebook-icon {@include box-small;margin-right:1rem;background:var(--color-facebook);}
 .share-twitter-icon {@include box-small;margin-right:1rem;background:var(--color-twitter);}
 .share-kakao-icon {@include box-small;margin-right:1rem;background:var(--color-kakao);}

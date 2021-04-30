@@ -1,9 +1,9 @@
 import toggleClass from './toggleClass'
 import enterTarget from './enterTarget'
-import tabMenu from './tabMenu'
+import tab from './tab'
 import modal from './modal'
 import toTop from './toTop'
-import stickyElement from './stickyElement'
+import positionSticky from './positionSticky'
 import scrollAnimation from './scrollAnimation'
 import closeParentElement from './closeParentElement'
 import customCursor from './customCursor'
@@ -13,9 +13,9 @@ export default {
   toggleClass,
   enterTarget,
   modal,
-  tabMenu,
+  tab,
   toTop,
-  stickyElement,
+  positionSticky,
   scrollAnimation,
   scrollspy,
   closeParentElement,

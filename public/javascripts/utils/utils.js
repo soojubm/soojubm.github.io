@@ -31,21 +31,3 @@ const download = () => {
 	// // Free the URL created above
 	// window.URL.revokeObjectURL(url);
   }
-  
-  export const adjustTopPadding = () => {
-	const headerElement = document.querySelector<HTMLElement>('.js-navbar')
-	if (!headerElement) return
-  
-	const fn = () => setBodyMarginTop(headerElement)
-	setBodyMarginTop(headerElement)
-	window.addEventListener('scroll', () => requestAnimationFrame(fn))
-	window.addEventListener('resize', () => requestAnimationFrame(fn))
-  
-	function setBodyMarginTop(headerElement) {
-	  const { body } = document
-	  const isFixedHeader = getComputedStyle(headerElement).position === 'fixed'
-  
-	  body.style.marginTop = isFixedHeader ? `${headerElement.clientHeight}px` : 0
-	}
-  }
-  

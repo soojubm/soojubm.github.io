@@ -22,11 +22,12 @@ const inputTextarea = () => {
       target.parentNode.classList.remove('is-invalid')
     }
 
-    autoExpand(target)
+    // autoExpand(target)
   })
 }
 
 const autoExpand = field => {
+  // doesnt work
   field.style.height = 'inherit'
 
   const computed = window.getComputedStyle(field)

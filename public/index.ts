@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
   event.toggleClass({ selector: '.js-navbar-toggle' }).initialize()
   
   event.toTop({ selector: '.js-to-top' })
-  event.stickyElement({ targetElement: '.js-header', addClass: 'is-sticky-header', position: 'top' })
+  event.positionSticky({ selector: '.js-header', addClass: 'is-sticky-header', isPassed: false })
 })
 
 window.addEventListener('scroll', throttle(scrollProgress), true)
@@ -48,6 +48,7 @@ window.addEventListener('beforeunload', () => "저장되지 않은 변경사항�
 window.addEventListener('unload', () => console.log('unload event'))
 document.addEventListener('readystatechange', () => console.log(document.readyState));
 
+// btn.setAttribute('aria-pressed', false);
 
 
 async function domEvents() {
@@ -166,7 +167,7 @@ async function domEvents() {
         // If the entry is not in the viewport, do nothing
         if (!entry.isIntersecting) return
         // Stop observing
-        // observer.unobserve(entry.target);
+        observer.unobserve(entry.target);
         fetchData()
 
         // entry.target.classList.add('visible')
@@ -206,9 +207,9 @@ async function domEvents() {
   event.toggleClass({ selector: '.js-toggle' }).initialize()
   
   event.enterTarget({ selector: '.js-hover-trigger' })
-  event.tabMenu()
+  event.tab()
   event.closeParentElement({ selector: '.js-close' })
-  event.stickyElement({ targetElement: '.js-post-head', addClass: 'is-sticky-post-head', position: 'bottom' })
+  event.positionSticky({ selector: '.js-post-head', addClass: 'is-sticky-post-head', isPassed: true })
 
   event.scrollAnimation()
   // event.scrollspy({ menusSelector: '.js-section', sectionsSelector: '.newneek-navbar-menu-item' })
