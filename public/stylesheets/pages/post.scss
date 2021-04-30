@@ -7,7 +7,7 @@
 
 .is-sticky-post-head .post-head {background:var(--gray0);box-shadow:var(--shadow400);text-align:left;position:fixed;left:0;right:0;top:0;z-index:8;}
 .is-sticky-post-head .post-head-category {display:none;}
-.is-sticky-post-head .post-head-headline {padding:1rem 5%;box-sizing:border-box;font-size:$subhead;line-height:32px;text-align:center;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;}
+.is-sticky-post-head .post-head-headline {padding:1rem 5%;box-sizing:border-box;font-size:var(--subhead);line-height:32px;text-align:center;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;}
 .is-sticky-post-head .post-head-dateline {display:none;}
 .is-sticky-post-head .post-head-readingtime {display:none;}
 .is-sticky-post-head .post-head-dateline + .icon-bullet {display:none;}
@@ -20,8 +20,8 @@
 
 .post-body {position:relative;} /* graident 때문에 아래요소에서 마진값주기 */
 .post-body-title {display:block;margin:0 0 24px 0px;}
-.post-body-title i {display:inline-block;width:40px;height:40px;line-height:40px;margin-right:12px;border-radius:var(--radius400);background:#f3f3f3;text-align:center;color:var(--gray800);font-size:$subhead;vertical-align:middle;}
-.post-body-kicker {margin:2rem 0 2.5rem 0;font-size:$subhead;color:var(--gray800);position:relative;}
+.post-body-title i {display:inline-block;width:40px;height:40px;line-height:40px;margin-right:12px;border-radius:var(--radius400);background:#f3f3f3;text-align:center;color:var(--gray800);font-size:var(--subhead);vertical-align:middle;}
+.post-body-kicker {margin:2rem 0 2.5rem 0;font-size:var(--subhead);color:var(--gray800);position:relative;}
 // .post-body-image {float:left;width:400px;height:600px;overflow:hidden;margin:0 0 0 -240px;background:var(--gray800);}
 .post-body-image {height:240px;overflow:hidden;margin:4rem -10rem;background:var(--gray800);border-radius:var(--radius400);}
 .post-body-subhead {margin:4rem 0 1rem 0px;@include subhead;}
@@ -46,7 +46,7 @@
 .post-reaction-like {display:flex;align-items:center;cursor:pointer;}
 .post-reaction-like-icon {@include box-medium;background:none;border:var(--border100);}
 .post-reaction-like-icon img {display:flex;width:24px;margin-top:1px;margin-left:2px;}
-.post-reaction-like-count {margin-left:1.5rem;font-size:$subhead;}
+.post-reaction-like-count {margin-left:1.5rem;font-size:var(--subhead);}
 .is-reacted {}
 .is-reacted .post-reaction-like-count {color:var(--red800);}
 

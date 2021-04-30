@@ -1,6 +1,6 @@
 /* @todo icon > i font-size:inherit; */
 .timeline {position:relative;}
-.timeline-title {font-size:$body;padding:1rem 0;}
+.timeline-title {font-size:var(--body);padding:1rem 0;}
 .timeline-item {position:relative;}
 .timeline-item + .timeline-item {padding:2rem 0 0 0;}
 .timeline-item:before {content:'';display:block;position:absolute;left:15px;top:0;bottom:0;width:1px;background:var(--gray200);}

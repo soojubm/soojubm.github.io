@@ -77,7 +77,7 @@ input[type=email]:invalid {border-color:var(--red800);}
 .checkbox,.radio {display:block;position:relative;}
 input[type=checkbox] {width:0;height:0;opacity:0;position:absolute;outline:auto;}
 input[type=checkbox] + label {display:flex;align-items:center;height:2.25rem;padding-left:2rem;position:relative;}
-input[type=checkbox] + label:before {content:'';display:block;width:$cell-tiny;height:$cell-tiny;border-radius:var(--radius400);border:$border150;box-sizing:border-box;position:absolute;left:0;}
+input[type=checkbox] + label:before {content:'';display:block;width:$cell-tiny;height:$cell-tiny;border-radius:var(--radius400);border:var(--border150);box-sizing:border-box;position:absolute;left:0;}
 input[type=checkbox] + label:after {content:'';display:none;width:8px;height:2px;border-left:2px solid;border-bottom:2px solid;border-color:var(--gray200);position:absolute;left:3px;top:40%;transform:rotate(-45deg);}
 input[type=checkbox]:checked + label:before {border-color:var(--color-primary);animation:ripple2 0.2s linear forwards;}
 input[type=checkbox]:checked + label:after {display:block;border-color:var(--color-primary);}
@@ -91,7 +91,7 @@ input[type=checkbox][data-indeterminate=true] + label:after {display:block;backg
 
 input[type=radio] {width:0;height:0;opacity:0;position:absolute;outline:auto;}
 input[type=radio] + label {display:flex;align-items:center;height:2.25rem;padding-left:2rem;position:relative;}
-input[type=radio] + label:before {content:'';display:block;width:$cell-tiny;height:$cell-tiny;border-radius:50%;border:$border150;box-sizing:border-box;position:absolute;left:0;}
+input[type=radio] + label:before {content:'';display:block;width:$cell-tiny;height:$cell-tiny;border-radius:50%;border:var(--border150);box-sizing:border-box;position:absolute;left:0;}
 input[type=radio] + label:after {content:'';width:6px;height:6px;border-radius:50%;background:var(--gray200);position:absolute;left:5px;transition:all 0.2s;transform:scale(0);}
 input[type=radio]:checked + label:before {border-color:var(--color-primary);animation:ripple2 0.2s linear forwards;}
 input[type=radio]:checked + label:after {display:block;background:var(--color-primary);transform:scale(1);}
@@ -108,7 +108,7 @@ input[type=checkbox]:checked + label + * {display:block;margin:0.25rem 0 1.5rem 
 
 .range {}
 .range input[type=range] {width:100%;height:4px;background:var(--gray100);appearance:none;-webkit-appearance:none;}
-.range input[type=range]::-webkit-slider-thumb {appearance:none;width:16px;height:16px;padding:4px;background:$red800;border-radius:var(--radius400);cursor:pointer;appearance:none;-webkit-appearance:none;}
+.range input[type=range]::-webkit-slider-thumb {appearance:none;width:16px;height:16px;padding:4px;background:var(--red800);border-radius:var(--radius400);cursor:pointer;appearance:none;-webkit-appearance:none;}
 .range input[type=range]:focus::-webkit-slider-thumb {transform:scale(1.25);box-shadow:0 0 0 0.25rem rgba(0,153,255,0.3), 0 0.125rem 0.5rem rgba(0,0,0,0.1);}
 
 
@@ -145,7 +145,7 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 .textfield-input:focus {background:var(--gray0);border-color:var(--gray200);outline:0;}
 .textfield-reveal {position:absolute;right:1rem;bottom:calc(1rem - 1px);z-index:2;font-size:var(--caption);;color:var(--gray400);}
 .textfield-unit {width:40px;height:46px;padding:0 1rem;line-height:50px;text-align:right;color:rgba(0, 0, 0, 0.4);position:absolute;right:0;bottom:0;}
-.textfield-helper {margin-top:.25rem;color:$red800;}
+.textfield-helper {margin-top:.25rem;color:var(--red800);}
 .textfield-button {border-top-left-radius:0;border-bottom-left-radius:0;position:absolute;right:0;top:0;}
 .textfield-link {font-size:var(--caption);;position:absolute;right:0;top:0;}
 // .textfield-reset {}
@@ -188,12 +188,12 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 .textfield.is-text .textfield-input {width:auto;margin-left:1rem;padding:0;background:none;border:none;box-shadow:none;color:var(--color-primary);}
 .textfield.is-text .selectbox-indicator {margin-top:2px;margin-left:1rem;background:var(--gray100);position:static;right:auto;bottom:auto;}
 
-// .is-invalid .textfield-label {color:$red800;}
+// .is-invalid .textfield-label {color:var(--red800);}
 // .is-valid .textfield-input {border-color:var(--green100);background:var(--green100);}
 
-.is-invalid .textfield-input {border-color:$red800;color:$red800;}
-.is-invalid .textfield-byte {color:$red800;}
-.is-invalid .textfield-byte b {color:$red800;}
+.is-invalid .textfield-input {border-color:var(--red800);color:var(--red800);}
+.is-invalid .textfield-byte {color:var(--red800);}
+.is-invalid .textfield-byte b {color:var(--red800);}
 
 .boxed-form {}
 .boxed-form h4 {margin:2rem 0 0.75rem 0;}
@@ -223,7 +223,7 @@ input[type=file] + label:after {display:none;}
 .file-input {opacity:0;}
 .file-label {@include button-secondary;cursor:pointer;}
 .file-attachment {margin:2rem 0 0;}
-.file-attachment-title {margin:.5rem 0;font-size:$body;font-weight:400;color:var(--gray400);}
+.file-attachment-title {margin:.5rem 0;font-size:var(--body);font-weight:400;color:var(--gray400);}
 .file-attachment-helper {}
 .file-attachment-list:after {content:'';display:block;clear:both;}
 .file-attachment-item {display:block;width:100%;background:var(--gray100);border-radius:var(--radius400);overflow:hidden;position:relative;}
@@ -315,7 +315,7 @@ progress:not([value]) {
       justify-content: space-between;
       height: auto;
       padding: 9px 2rem 11px 3.5rem;
-      border: $border150;
+      border: var(--border150);
       background: var(--gray100);
       cursor: pointer;
       &:before {background:var(--gray0);left:1.5rem;}
@@ -328,7 +328,7 @@ progress:not([value]) {
     input:checked + label + div {
       margin: 0;
       padding: 0 2rem 2rem;
-      border: $border150;
+      border: var(--border150);
       border-top: 0;
     }
     &:first-child {

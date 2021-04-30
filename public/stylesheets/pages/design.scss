@@ -9,11 +9,11 @@
 .color-item.is-gray400 div {background:var(--gray400);}
 .color-item.is-gray600 div {background:var(--gray600);}
 .color-item.is-gray800 div {background:var(--gray800);}
-.color-item.is-red100 div {background:$red100;}
-.color-item.is-red800 div {background:$red800;}
+.color-item.is-red100 div {background:var(--red100);}
+.color-item.is-red800 div {background:var(--red800);}
 .color-item.is-primary100 div {background:var(--green100);}
 .color-item.is-primary200 div {background:var(--color-primary);}
-.color-item.is-gradient div {background-image:linear-gradient(106deg,$red800,var(--color-primary));}
+.color-item.is-gradient div {background-image:linear-gradient(106deg,var(--red800),var(--color-primary));}
 .color-item div {float:left;@include box-medium;margin:0 1rem 0 0;}
 .color-item h3 {font-size:var(--body);text-transform:capitalize;}
 .color-item span {color:var(--gray400);}
@@ -37,7 +37,7 @@
 .design-button h2 {margin:4rem 0 0.5rem 0;position:relative;}
 .design-button p {margin:0 0 1.25rem 0;}
 .design-button div {position:relative;}
-.design-button-subhead {font-size:$body;text-decoration:underline;}
+.design-button-subhead {font-size:var(--body);text-decoration:underline;}
 
 
 .spacing-card {@include container-card;}
@@ -70,7 +70,7 @@
   z-index: 2;
 }
 .stamp p {
-  font-size: $subhead;
+  font-size: var(--subhead);
   color: var(--color-primary);
   margin: 0;
 }

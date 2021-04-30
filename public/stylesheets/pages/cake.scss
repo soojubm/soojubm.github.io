@@ -15,7 +15,7 @@
 .cake-head-button {@include button-primary;min-width:11rem;margin-right:1rem;}
 .cake-head-review {@include button-text;min-width:11rem;}
 
-.cake-info {display:flex;max-width:var(--container-large);margin:0 auto;padding:2rem 0 2.25rem;border-top:$border150;border-bottom:$border150;position:relative;}
+.cake-info {display:flex;max-width:var(--container-large);margin:0 auto;padding:2rem 0 2.25rem;border-top:var(--border150);border-bottom:var(--border150);position:relative;}
 .cake-info + .cake-info {border-top:none;}
 .cake-info button {@include button-tertiary;position:absolute;left:0;top:4rem;}
 .cake-info h2 {width:400px;flex-shrink:0;@include subhead;}

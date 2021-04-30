@@ -99,7 +99,7 @@
 
 // .about-head {max-width:calc(var(--container-large) - 50%);margin:0 auto;padding:4rem 0;position:relative;}
 // .about-head-slogan {margin:2rem 0;font-size:4rem;}
-// .about-intro {max-width:var(--container-large);margin:0 auto;padding:0 0 0 720px;box-sizing:border-box;font-size:$subhead;}
+// .about-intro {max-width:var(--container-large);margin:0 auto;padding:0 0 0 720px;box-sizing:border-box;font-size:var(--subhead);}
 
 .font-name {color:var(--gray800);}
 .font-maker {}
@@ -107,7 +107,7 @@
 .font-preview {}
 
 .about-brief {}
-.about-brief h2 {margin:0rem 0 1rem 0px;font-size:$subhead;}
+.about-brief h2 {margin:0rem 0 1rem 0px;font-size:var(--subhead);}
 .about-brief p {margin:0rem 0 1rem 0px;}
 
 

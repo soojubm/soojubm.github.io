@@ -1,7 +1,7 @@
 .login {max-width:var(--container-small);margin:0 auto;padding:4rem 5%;position:relative;}
 .login-head-logo {@include box-small;margin:0 0 1rem 0;}
 .login-title {@include title;}
-.login-description {margin:1rem 0;font-size:$body;}
+.login-description {margin:1rem 0;font-size:var(--body);}
 .login-email {margin:2rem 0;}
 .login-password {}
 .login-remember {margin:.5rem 0;}
@@ -10,14 +10,14 @@
 .login-separator:after {content:'또는';width:4rem;line-height:24px;background:var(--gray0);font-size:var(--caption);color:var(--gray400);position:absolute;left:50%;top:0;transform:translateX(-50%);}
 .login-foot-submit {@include button-primary;width:100%;}
 .login-social {}
-.login-social-facebook {@include button-primary;width:100%;border-color:$color-facebook;background-color:$color-facebook;}
-.login-social-facebook:hover {background:darken($color-facebook, 2.5%);border-color:darken($color-facebook, 2.5%);}
+.login-social-facebook {@include button-primary;width:100%;border-color:var(--color-facebook);background-color:var(--color-facebook);}
+.login-social-facebook:hover {background:darken(var(--color-facebook), 2.5%);border-color:darken(var(--color-facebook), 2.5%);}
 .login-social-twitter {background:#4ab3f4;}
 .login-social-naver {margin-bottom:8px;background:#3bcc15;}
 .login-social-kakao {float:left;width:49%;color:var(--gray0);margin-right:2%;background:#f9df34;}
 .login-option {margin:2rem 0;text-align:center;}
 .login-option-link {margin:0 .25rem;font-weight:bold;}
-.login-fail {display:block;margin:1rem 0;color:$red800;}
+.login-fail {display:block;margin:1rem 0;color:var(--red800);}
 
 .signup {@include container-small;}
 .signup-head {}
@@ -52,5 +52,5 @@
 .delete-why-title {@include subhead;}
 .delete-why-description {margin:1rem 0;}
 .delete-action {padding:4rem 0;}
-.delete-action-confirm {@include button-primary;border-color:$red800;background:$red800;}
+.delete-action-confirm {@include button-primary;border-color:var(--red800);background:var(--red800);}
 .delete-action-back {@include button-text;}
