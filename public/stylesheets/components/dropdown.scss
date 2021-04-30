@@ -19,7 +19,7 @@
 }
 .dropdown-menu-title {
   padding:0.5rem 1rem;
-  font-size:$caption;
+  font-size:var(--caption);;
 }
 .dropdown-menu-link {
   display:block;

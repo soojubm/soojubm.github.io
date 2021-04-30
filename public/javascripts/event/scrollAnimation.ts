@@ -2,30 +2,48 @@ import { throttle } from '../utils/optimizationUtils'
 
 const scrollAnimation = () => {
   const scrollElements = document.querySelectorAll('.js-scroll-animation')
-  if (!scrollElements) return
+  const ANIMATED_CLASSNAME = 'is-scrolled'
 
-  const SCROLLED_CLASS = 'is-scrolled'
+  animateOnLoad()
+  // window.addEventListener('scroll', throttle(animateOnScroll), false)
+  animateOnScroll()
 
-  scrollElements.forEach(element => {
-    const isScrolled = element.getBoundingClientRect().top <= window.innerHeight
-    if (!isScrolled) return
-
-    element.classList.add(SCROLLED_CLASS)
-  })
-
-  window.addEventListener('scroll', throttle(scrollAni), false)
-
-
-  function scrollAni() {
+  function animateOnLoad() {
     scrollElements.forEach(element => {
-      const isScrolled = element.getBoundingClientRect().top + element.clientHeight * 0.5 <= window.innerHeight
-      // const isScrolled = window.pageYOffset > window.pageYOffset + element.getBoundingClientRect().top - window.innerHeight + 50
+      const isScrolled = element.getBoundingClientRect().top - window.innerHeight <= 0 
       if (!isScrolled) return
-
-      element.classList.add(SCROLLED_CLASS)
+  
+      element.classList.add(ANIMATED_CLASSNAME)
     })
   }
 
+  function animateOnScroll() {
+    const elements = [].slice.call(document.querySelectorAll('.js-scroll-animation'))
+    const options = {
+      root: null,
+      rootMargin: '0px 0px 0px 0px',
+      threshold: 1, // [0, 1], [0, 0.5]
+    }
+    let observer = new IntersectionObserver(callback, options)
+    elements.forEach(element => observer.observe(element))
+    
+    function callback(entries, observer) {
+      entries.forEach(entry => {
+        console.log(entry)
+        if (!entry.isIntersecting) return
+
+        if(entry.intersectionRatio > 0) {
+          if(entry.classList.contains('is-scrolled')) return
+          entry.classList.toggle(ANIMATED_CLASSNAME)
+        }
+      })
+    }
+
+    // scrollElements.forEach(element => {
+    //   const isScrolled = element.getBoundingClientRect().top + element.clientHeight * 0.5 - window.innerHeight <= 0
+    //   element.classList.toggle(ANIMATED_CLASSNAME, isScrolled)
+    // })
+  }
 }
 
 export default scrollAnimation

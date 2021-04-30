@@ -18,7 +18,7 @@
 .profile-user-toggle {width:100%;margin:1rem 0;text-align:center;color:var(--gray800);}
 .profile-user-toggle.is-active .profile-user-toggle-icon {transform:rotate(180deg);}
 .profile-user-toggle-icon {@include box-small;}
-.profile-user-category {padding:4px 16px;background:coral;font-size:$caption;color:var(--gray0);border-radius:50px;}
+.profile-user-category {padding:4px 16px;background:coral;font-size:var(--caption);color:var(--gray0);border-radius:50px;}
 .profile-user-address {}
 .profile-user-address div {}
 .profile-user-address div b {margin:0 .5rem 0 0;font-weight:normal;color:var(--gray400);}
@@ -40,7 +40,7 @@
 .profile-body {padding:0 0 64px 398px;box-sizing:border-box;position:relative;}
 
 .profile-display {display:flex;}
-.profile-display-title {margin:0 0 0.25rem 0;font-size:$caption;}
+.profile-display-title {margin:0 0 0.25rem 0;font-size:var(--caption);}
 .profile-display-button {@include box-small;background:none;color:var(--gray800);outline:none;}
 // .profile-display-button:hover {@include hover-item;}
 .profile-display-button.is-selected {background:var(--gray100);}
@@ -49,7 +49,7 @@
 .profile-tablist {display:flex;margin:0 0 1rem 0;padding:.25rem;border-radius:var(--radius400);background:var(--gray100);position:relative;}
 .profile-tablist-tab {padding:$padding100;color:var(--gray400);font-weight:bold;cursor:pointer;position:relative;z-index:1;}
 .profile-tablist-tab[aria-selected=true] {color:var(--gray800);}
-.profile-tablist-tab-badge {font-size:$caption;}
+.profile-tablist-tab-badge {font-size:var(--caption);}
 .profile-tablist-indicator {display:block;height:calc(100% - .5rem);border-radius:var(--radius400);background:var(--gray0);position:absolute;top:.25rem;left:4px;transition:all 0.4s ease;}
 .profile-tabpanel {display:flex;flex-wrap:wrap;margin:0 -.5rem;}
 .profile-tabpanel[aria-hidden=true] {display:none;}
@@ -83,7 +83,7 @@
 .card-item-media {float:left;display:block;margin-right:1rem;@include box-medium;}
 .card-item-name {display:block;color:var(--gray800);}
 .card-item-price {position:relative;}
-.card-note {border:$border150;border-radius:var(--radius400);text-align:center;font-size:$caption;}
+.card-note {border:$border150;border-radius:var(--radius400);text-align:center;font-size:var(--caption);}
 .card-cta {@include button-primary;width:100%;margin:2rem 0;}
 .card-foot {display:flex;justify-content:space-between;margin:2rem 0 0;}
 .card:hover {@include hover-item;}

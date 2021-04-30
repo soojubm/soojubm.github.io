@@ -2,26 +2,39 @@
 // passed와 바로. header / post-head
 // 언제 cancel
 
-import { throttle } from '../utils/optimizationUtils' 
+import { throttle } from '../utils/optimizationUtils'
+
+type Props = {
+  targetElement: string
+  addClass: string
+  position: string
+}
 
 const stickyElement = ({ targetElement, addClass, position }) => {
   const stickyElement = document.querySelector(targetElement)
   if (!stickyElement) return
 
-  let elementHeight = stickyElement.offsetHeight
+  let previousScrollTop = 0;
 
-  window.addEventListener('scroll', throttle(hasScrolled), false)
+  window.addEventListener('scroll', throttle(handleElementScroll), false)
 
-  function hasScrolled() {
-    const elementOffsetTop = stickyElement.offsetTop
-    const elementOffsetBottom = stickyElement.offsetTop + elementHeight
-    const isStuck = window.pageYOffset > (position === 'top' ? elementOffsetTop : elementOffsetBottom)
-    if (isStuck) {
-      document.body.classList.add(addClass)
-      // document.body.style.paddingTop = `${elementHeight}px`
-    } else {
-      document.body.classList.remove(addClass)
-    }
+  // todo 회준
+  // todo resize
+  // window.addEventListener('resize', throttle())
+
+  // function getResizedSizes() {
+  //   return 
+  // }
+  function handleElementScroll() {
+    const { offsetTop, offsetHeight } = stickyElement
+    const offsetBottom = offsetTop + offsetHeight
+
+    previousScrollTop = position === 'top' ? offsetTop : offsetBottom
+    let currentScrollPostion = window.scrollY || window.pageYOffset
+    const isStuck = currentScrollPostion > previousScrollTop
+    
+    document.body.classList.toggle(addClass, isStuck)
+    // document.body.style.paddingTop = `${elementHeight}px`
     // lastScrollTop = window.pageYOffset;
   }
 }

@@ -28,7 +28,7 @@
 .design-article {margin:8rem 0;position:relative;}
 .design-article-title {margin:0 0 1rem 0;@include subhead;}
 .design-article-description {margin:0 0 1.5rem 0;}
-.design-article-more {display:flex;align-items:center;font-size:$caption;color:var(--color-primary);font-weight:bold;position:absolute;right:0;top:0;}
+.design-article-more {display:flex;align-items:center;font-size:var(--caption);color:var(--color-primary);font-weight:bold;position:absolute;right:0;top:0;}
 .design-article-more i {margin-left:1.5rem;}
 .design-article.is-scrolled {animation:fadeup .8s;}
 
@@ -41,13 +41,13 @@
 
 
 .spacing-card {@include container-card;}
-.spacing-card .space {height:1rem;background:var(--green100);text-align:center;position:relative;}
-.spacing-card .space .tag {display:inline-block;margin:0;padding:0 .25rem;border-radius:var(--radius400);background:var(--color-primary);font-size:var(--caption);color:var(--gray0);position: absolute;
+.space {height:1rem;background:var(--green100);text-align:center;position:relative;}
+.space .tag {display:inline-block;margin:0;padding:0 .25rem;border-radius:var(--radius400);background:var(--color-primary);font-size:var(--caption);color:var(--gray0);position: absolute;
   left: 50%;
   /* z-index: 5151515; */
   top: 50%;
   transform: translate(-50%, -50%);}
-.spacing-card .space .tag:before {content:'';}
+.space .tag:before {content:'';}
 
 @media (--viewport-large) {
   .design {padding:0;}
@@ -191,10 +191,10 @@
 .design-article-secondary {@include button-secondary;}
 .design-article-tertiary {@include button-tertiary;}
 .design-article-text {@include button-text;}
-.design-article-primary-small {@include button-primary;padding:$padding100;font-size:$caption;}
-.design-article-secondary-small {@include button-secondary;padding:$padding100;font-size:$caption;}
-.design-article-tertiary-small {@include button-tertiary;padding:$padding100;font-size:$caption;}
-.design-article-text-small {@include button-text;padding:$padding100;font-size:$caption;}
+.design-article-primary-small {@include button-primary;padding:$padding100;font-size:var(--caption);}
+.design-article-secondary-small {@include button-secondary;padding:$padding100;font-size:var(--caption);}
+.design-article-tertiary-small {@include button-tertiary;padding:$padding100;font-size:var(--caption);}
+.design-article-text-small {@include button-text;padding:$padding100;font-size:var(--caption);}
 
 
 .number {display:flex;justify-content:center;}
@@ -295,3 +295,106 @@
 
 .sheet {@include container-card;}
 .sheet-title {@include subhead;}
+
+
+
+
+
+.svg-item {
+  width: 100%;
+  font-size: 16px;
+  margin: 0 auto;
+  animation: donutfade 1s;
+}
+
+@keyframes donutfade {
+/* this applies to the whole svg item wrapper */
+  0% {
+      opacity: .2;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+@media (min-width:992px) {
+  .svg-item {
+      width: 80%;
+  }
+}
+
+.donut-ring {
+  stroke: #EBEBEB;
+}
+
+.donut-segment {
+  transform-origin: center;
+  stroke: #FF6200;
+}
+
+.segment-1{fill:#ccc;}
+.segment-2{fill:aqua;}
+.segment-3{fill:#d9e021;}
+.segment-4{fill:#ed1e79;}
+
+.donut-percent {
+  animation: donutfadelong 1s;
+}
+
+@keyframes donutfadelong {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes donut1 {
+  0% {
+    stroke-dasharray: 0, 100;
+  }
+  100% {
+    stroke-dasharray: 69, 31;
+  }
+}
+
+
+.donut-text {
+  font-family: Arial, Helvetica, sans-serif;
+  fill: #FF6200;
+}
+.donut-label {
+  font-size: 0.28em;
+  font-weight: 700;
+  line-height: 1;
+  fill: #000;
+  transform: translateY(0.25em);
+}
+
+.donut-percent {
+  font-size: 0.5em;
+  line-height: 1;
+  transform: translateY(0.5em);
+  font-weight: bold;
+}
+
+.donut-data {
+  font-size: 0.12em;
+  line-height: 1;
+  transform: translateY(0.5em);
+  text-align: center;
+  text-anchor: middle;
+  color:#666;
+  fill: #666;
+  animation: donutfadelong 1s;
+}
+
+
+
+
+/* ---------- */
+.svg-item {
+max-width:30%;
+display:inline-block;
+}

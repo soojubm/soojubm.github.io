@@ -135,6 +135,20 @@ function createIntersectionObserver(elem, callback, options) {
   return observer
 }
 
+function createIntersectionObserver2(selectors, callback, options) {
+  if ('IntersectionObserver' in window && 'IntersectionObserverEntry' in window && 'intersectionRatio' in window.IntersectionObserverEntry.prototype) {
+    const elements = [].slice.call(document.querySelectorAll(selectors))
+    const options = {
+      root: null,
+      rootMargin: '0px 0px 0px 0px',
+      threshold: 0.1,
+    }
+    let observer = new IntersectionObserver(callback, options)
+
+    elements.forEach(element => observer.observe(element))
+  }
+}
+
 /**
  * Log the entry and if it's in the viewport
  * @param  {Array} entries The intersecting elements

@@ -1,16 +1,16 @@
 <script>
-	document.addEventListener('DOMContentLoaded', function(){
+	document.addEventListener('DOMContentLoaded', function () {
 		const target = document.querySelector('.horizental-text h1');
 		window.addEventListener('scroll', () => {
 			let aaa = window.pageYOffset * 1 - 800;
-			if(window.pageYOffset > target.offsetTop - target.clientHeight) {
+			if (window.pageYOffset > target.offsetTop - target.clientHeight) {
 			}
 			target.style.right = aaa + 'px';
-		});	
+		});
 	})
 </script>
-	<main class="profile">
-		<!-- <figure class="profile-head">
+<main class="profile">
+	<!-- <figure class="profile-head">
 			<div class="profile-head-background js-parallax"></div>
 			<h1 class="profile-head-headline">부끄러우니까 보지마요.</h1>
 			<p class="profile-head-description">순수자바스크립트로 작성한 정적페이지입니다. 가상의 디자인시스템을 구축하고 지속적으로 발전시키며 웹앱을 구성하는 컴포넌트와 페이지 유아이를 반응형으로 러프하게 그려봅니다.</p>
@@ -25,147 +25,164 @@
 				<p style="margin-top:0.5rem;color:var(--gray0);">화니 외 5명</p>
 			</div>
 		</figure> -->
-		<!-- <aside class="banner" style="margin:-1rem 0 2rem 0;">
+	<!-- <aside class="banner" style="margin:-1rem 0 2rem 0;">
 			<h2 class="banner-text">더 궁금하신가요?</h2>
 			<button class="banner-button">자기소개서 보러가기</button>
 		</aside> -->
-		<section class="profile-user">
-			<article class="user">
-				<figure class="profile-user-avatar"></figure>
-				<h2 class="profile-user-name">수줍이</h2>
-				<span class="profile-user-id">soojubm@gmail.com</span>
-				<span class="profile-user-career">UI Designer / Frontend Engineer</span>
-			</article>
-			<p class="profile-user-description">
-				유저 프로필 페이지 유아이를 그려보다 임시 포트폴리오로 사용합니다.
-				<a class="profile-user-description-more" href="javascript:alert('준비중');">자세히보기</a>
-			</p>
-			<div class="profile-user-hashtags">
-				<span class="tag">HTML5</span>
-				<span class="tag">SASS</span>
-				<span class="tag">VanillaJS</span>
-				<span class="tag">ReactJS</span>
-				<span class="tag">Mobx</span>
-				<span class="tag">Typescript</span>
-				<span class="tag">Storybook</span>
-				<span class="tag">GoogleAnalytics</span>
-				<span class="tag">GoogleOptimize</span>
-				<span class="tag">Figma</span>
+	<section class="profile-user">
+		<article class="user">
+			<figure class="profile-user-avatar"></figure>
+			<h2 class="profile-user-name">수줍이</h2>
+			<span class="profile-user-id">soojubm@gmail.com</span>
+			<span class="profile-user-career">UI Designer / Frontend Engineer</span>
+		</article>
+		<p class="profile-user-description">
+			유저 프로필 페이지 유아이를 포트폴리오 리스트로 사용합니다.
+			<a class="profile-user-description-more" href="javascript:alert('준비중');">자세히보기</a>
+		</p>
+		<div class="profile-user-hashtags">
+			<span class="tag">HTML5</span>
+			<span class="tag">SASS</span>
+			<span class="tag">VanillaJS</span>
+			<span class="tag">ReactJS</span>
+			<span class="tag">Mobx</span>
+			<span class="tag">Typescript</span>
+			<span class="tag">Storybook</span>
+			<span class="tag">GoogleAnalytics</span>
+			<span class="tag">GoogleOptimize</span>
+			<span class="tag">Figma</span>
+		</div>
+		<div class="profile-user-controls">
+			<button class="profile-user-controls-follow">팔로우</button>
+			<button class="profile-user-controls-message">메세지</button>
+		</div>
+		<button class="profile-user-toggle js-toggle" hidden>
+			수줍이님이 더 궁금하신가요?
+			<span class="profile-user-toggle-icon"><i class="icon-caret"></i></span>
+		</button>
+		<section class="profile-user-info">
+			<hr role="separator" />
+			<div class="profile-user-statistic">
+				<div class="statistic"><i class="statistic-label" onclick="javascript:alert('샘플 유아이에요!')">팔로워</i><span
+						class="statistic-value">62</span></div>
+				<div class="statistic"><i class="statistic-label" onclick="javascript:alert('샘플 유아이에요!')">팔로잉</i><span
+						class="statistic-value">8</span></div>
 			</div>
-			<div class="profile-user-controls">
-				<button class="profile-user-controls-follow">팔로우</button>
-				<button class="profile-user-controls-message">메세지</button>
+			<hr role="separator" />
+			<div class="profile-user-address">
+				<div><b>Tel</b> <span>+82 10 3121 7045</span></div>
+				<div><b>Email</b> <span>soojubm@gmail.com</span></div>
+				<div><img hidden aria-hidden="false" src="/public/icons/map-pin.svg" alt="map" /><b>Location</b>
+					<span>서울시 강서구 화곡동</span></div>
 			</div>
-			<button class="profile-user-toggle js-toggle" hidden>
-				수줍이님이 더 궁금하신가요?
-				<span class="profile-user-toggle-icon"><i class="icon-caret"></i></span>
-			</button>
-			<section class="profile-user-info">
-				<hr role="separator" />
-				<div class="profile-user-statistic">
-					<div class="statistic"><i class="statistic-label" onclick="javascript:alert('샘플 유아이에요!')">팔로워</i><span class="statistic-value">62</span></div>
-					<div class="statistic"><i class="statistic-label" onclick="javascript:alert('샘플 유아이에요!')">팔로잉</i><span class="statistic-value">8</span></div>
-				</div>
-				<hr role="separator" />
-				<div class="profile-user-address">
-					<div><b>Tel</b> <span>+82 10 3121 7045</span></div>
-					<div><b>Email</b> <span>soojubm@gmail.com</span></div>
-					<div><img  hidden aria-hidden="false" src="/public/icons/map-pin.svg" alt="map" /><b>Location</b> <span>서울시 강서구 화곡동</span></div>
-				</div>
-				<hr role="separator" />
-				<div class="profile-user-socials">
-					<h2 class="profile-user-socials-title">소셜 미디어</h2>
-					<a class="profile-user-socials-link" href="https://www.facebook.com/soojubm/" target="_blank" rel="noopener noreferrer" onclick="trackOutboundLink('https://www.facebook.com/soojubm/'); return false;">페이스북</a>
-					<a class="profile-user-socials-link" href="https://www.pinterest.co.kr/soojubm/" target="_blank" rel="noopener noreferrer" onclick="trackOutboundLink('https://www.pinterest.co.kr/soojubm/'); return false;">핀터레스트</a>
-					<a class="profile-user-socials-link" href="https://github.com/soojubm" target="_blank" rel="noopener noreferrer" onclick="trackOutboundLink('https://github.com/soojubm'); return false;">깃허브</a>
-					<a class="profile-user-socials-link" href="https://www.instagram.com/soojubm/" target="_blank" rel="noopener noreferrer" onclick="trackOutboundLink('https://www.instagram.com/soojubm/'); return false;">인스타그램</a>
-				</div>
-			</section>
+			<hr role="separator" />
+			<div class="profile-user-socials">
+				<h2 class="profile-user-socials-title">소셜 미디어</h2>
+				<a class="profile-user-socials-link" href="https://www.facebook.com/soojubm/" target="_blank"
+					rel="noopener noreferrer"
+					onclick="trackOutboundLink('https://www.facebook.com/soojubm/'); return false;">페이스북</a>
+				<a class="profile-user-socials-link" href="https://www.pinterest.co.kr/soojubm/" target="_blank"
+					rel="noopener noreferrer"
+					onclick="trackOutboundLink('https://www.pinterest.co.kr/soojubm/'); return false;">핀터레스트</a>
+				<a class="profile-user-socials-link" href="https://github.com/soojubm" target="_blank"
+					rel="noopener noreferrer"
+					onclick="trackOutboundLink('https://github.com/soojubm'); return false;">깃허브</a>
+				<a class="profile-user-socials-link" href="https://www.instagram.com/soojubm/" target="_blank"
+					rel="noopener noreferrer"
+					onclick="trackOutboundLink('https://www.instagram.com/soojubm/'); return false;">인스타그램</a>
+			</div>
 		</section>
+	</section>
 
-		<section class="profile-body">
-			<nav class="profile-tablist" role="tablist">
-				<button class="profile-tablist-tab" role="tab" name="project" aria-selected="true" data-index="1">프로젝트 <i class="profile-tablist-tab-badge">5</i></button>
-				<button class="profile-tablist-tab" role="tab" name="webpage" aria-selected="false" data-index="2">웹페이지 <i class="profile-tablist-tab-badge">5</i></button>
-				<button class="profile-tablist-tab" role="tab" name="case-study" aria-selected="false" data-index="3">케이스스터디 <i class="profile-tablist-tab-badge">5</i></button>
-				<button class="profile-tablist-tab" role="tab" name="blank" aria-selected="false" data-index="4">빈 상태 <i class="profile-tablist-tab-badge">0</i></button>
-				<i class="profile-tablist-indicator"></i>
-			</nav>
-			<div class="profile-display">
-				<p class="profile-display-status" role="status" hidden>Viewing 1,000 Projects</p>
-				<button class="profile-display-button js-display-grid js-display-button is-selected" name="grid">
-					<i class="icon-grid">
-						<span></span>
-						<span></span>
-						<span></span>
-						<span></span>
-					</i>
-					<b aria-hidden="true" hidden>Grid</b>
-				</button>
-				<button class="profile-display-button js-display-list js-display-button" name="list">
-					<i class="icon-list">
-						<span></span>
-						<span></span>
-						<span></span>
-					</i>
-					<b aria-hidden="true" hidden>List</b
-				></button>
-			</div>
+	<section class="profile-body">
+		<nav class="profile-tablist" role="tablist">
+			<button class="profile-tablist-tab" role="tab" name="project" aria-selected="true" data-index="1">프로젝트 <i
+					class="profile-tablist-tab-badge">5</i></button>
+			<button class="profile-tablist-tab" role="tab" name="webpage" aria-selected="false" data-index="2">웹페이지 <i
+					class="profile-tablist-tab-badge">5</i></button>
+			<button class="profile-tablist-tab" role="tab" name="case-study" aria-selected="false" data-index="3">케이스스터디
+				<i class="profile-tablist-tab-badge">5</i></button>
+			<button class="profile-tablist-tab" role="tab" name="blank" aria-selected="false" data-index="4">빈 상태 <i
+					class="profile-tablist-tab-badge">0</i></button>
+			<i class="profile-tablist-indicator"></i>
+		</nav>
+		<div class="profile-display">
+			<p class="profile-display-status" role="status" hidden>Viewing 1,000 Projects</p>
+			<button class="profile-display-button js-display-grid js-display-button is-selected" name="grid">
+				<i class="icon-grid">
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+				</i>
+				<b aria-hidden="true" hidden>Grid</b>
+			</button>
+			<button class="profile-display-button js-display-list js-display-button" name="list">
+				<i class="icon-list">
+					<span></span>
+					<span></span>
+					<span></span>
+				</i>
+				<b aria-hidden="true" hidden>List</b></button>
+		</div>
 
-			<hr role="separator" style="margin-bottom:1.5rem;background-color:var(--gray200);" />
+		<hr role="separator" style="margin-bottom:1.5rem;background-color:var(--gray200);" />
 
-			<section class="profile-tabpanel" role="tabpanel" aria-hidden="false" data-index="1">
-				<a class="card js-modal" href="#" data-modal="newneek">
-					<figure class="card-thumbnail"><img style="margin:1rem auto 0;box-shadow:none;" src="https://newneek.co/static/media/gosum-home.7b7f5b6b.png" alt="" /></figure>
-					<h3 class="card-title">뉴닉 웹사이트 리뉴얼</h3>
-					<!-- <span class="card-new">신규</span> -->
-					<!-- <time class="card-date">2017-12-18</time> -->
-					<div class="card-category">카테고리</div>
-					<div class="card-byline">
-						<figure class="card-byline-avatar"><img src="/public/images/soo.png" alt="" /></figure>
-						<span class="card-byline-name">수줍이</span>
-					</div>
-					<div class="card-tags" role="group">
-						<span class="tag">일정산정/스펙정의</span>
-						<span class="tag">디자인</span>
-						<span class="tag">프론트엔드개발</span>
-					</div>
-					<button class="card-more" hidden><i class="icon-more"></i></button>
-				</a>
+		<section class="profile-tabpanel" role="tabpanel" aria-hidden="false" data-index="1">
+			<a class="card js-modal" href="#" data-modal="newneek">
+				<figure class="card-thumbnail"><img style="margin:1rem auto 0;box-shadow:none;"
+						src="https://newneek.co/static/media/gosum-home.7b7f5b6b.png" alt="" /></figure>
+				<h3 class="card-title">뉴닉 웹사이트 리뉴얼</h3>
+				<!-- <span class="card-new">신규</span> -->
+				<!-- <time class="card-date">2017-12-18</time> -->
+				<div class="card-category">카테고리</div>
+				<div class="card-byline">
+					<figure class="card-byline-avatar"><img src="/public/images/soo.png" alt="" /></figure>
+					<span class="card-byline-name">수줍이</span>
+				</div>
+				<div class="card-tags" role="group">
+					<span class="tag">일정산정/스펙정의</span>
+					<span class="tag">디자인</span>
+					<span class="tag">프론트엔드개발</span>
+				</div>
+				<button class="card-more" hidden><i class="icon-more"></i></button>
+			</a>
 
-				<a class="card js-modal" href="#" data-modal="newneek-book">
-					<figure class="card-thumbnail"><img style="max-height:80%;box-shadow:none;"src="https://newneek.co/static/media/gosumbook-logo.8d73e3f9.png" alt="" /></figure>
-					<div class="card-category">카테고리</div>
-					<h3 class="card-title">뉴닉 고슴책</h3>
-					<div class="card-byline">
-						<figure class="card-byline-avatar"><img src="/public/images/soo.png" alt="" /></figure>
-						<span class="card-byline-name">수줍이</span>
-					</div>
-					<div class="card-tags" role="group">
-						<span class="tag">태그1</span>
-						<span class="tag">태그1</span>
-						<span class="tag">태그1</span>
-					</div>
-					<button class="card-more" hidden><i class="icon-more"></i></button>
-				</a>
-				
-				<a class="card js-modal" href="#" data-modal="newneek-election">
-					<figure class="card-thumbnail"><img style="margin-top:1rem;box-shadow:none;" src="https://napp.newneek.co/gosumdang.png" alt="" /></figure>
-					<div class="card-category">카테고리</div>
-					<h3 class="card-title">뉴닉 총선 프로젝트</h3>
-					<div class="card-byline">
-						<figure class="card-byline-avatar"><img src="/public/images/soo.png" alt="" /></figure>
-						<span class="card-byline-name">수줍이</span>
-					</div>
-					<div class="card-tags" role="group">
-						<span class="tag">태그1</span>
-						<span class="tag">태그1</span>
-						<span class="tag">태그1</span>
-					</div>
-					<button class="card-more" hidden><i class="icon-more"></i></button>
-				</a>
-				
-				<!-- <a class="card js-modal" href="#" data-modal="newneek-app">
+			<a class="card js-modal" href="#" data-modal="newneek-book">
+				<figure class="card-thumbnail"><img style="max-height:80%;box-shadow:none;"
+						src="https://newneek.co/static/media/gosumbook-logo.8d73e3f9.png" alt="" /></figure>
+				<div class="card-category">카테고리</div>
+				<h3 class="card-title">뉴닉 고슴책</h3>
+				<div class="card-byline">
+					<figure class="card-byline-avatar"><img src="/public/images/soo.png" alt="" /></figure>
+					<span class="card-byline-name">수줍이</span>
+				</div>
+				<div class="card-tags" role="group">
+					<span class="tag">태그1</span>
+					<span class="tag">태그1</span>
+					<span class="tag">태그1</span>
+				</div>
+				<button class="card-more" hidden><i class="icon-more"></i></button>
+			</a>
+
+			<a class="card js-modal" href="#" data-modal="newneek-election">
+				<figure class="card-thumbnail"><img style="margin-top:1rem;box-shadow:none;"
+						src="https://napp.newneek.co/gosumdang.png" alt="" /></figure>
+				<div class="card-category">카테고리</div>
+				<h3 class="card-title">뉴닉 총선 프로젝트</h3>
+				<div class="card-byline">
+					<figure class="card-byline-avatar"><img src="/public/images/soo.png" alt="" /></figure>
+					<span class="card-byline-name">수줍이</span>
+				</div>
+				<div class="card-tags" role="group">
+					<span class="tag">태그1</span>
+					<span class="tag">태그1</span>
+					<span class="tag">태그1</span>
+				</div>
+				<button class="card-more" hidden><i class="icon-more"></i></button>
+			</a>
+
+			<!-- <a class="card js-modal" href="#" data-modal="newneek-app">
 					<figure class="card-thumbnail"><img src="" alt="" /></figure>
 					<h3 class="card-title">뉴닉 앱</h3>
 					<div class="card-byline">
@@ -180,23 +197,23 @@
 					<button class="card-more" hidden><i class="icon-more"></i></button>
 				</a> -->
 
-				<a class="card js-modal" href="#" data-modal="etc-works">
-					<figure class="card-thumbnail"><img src="/public/images/work-studium.jpg" alt="" /></figure>
-					<div class="card-category">카테고리</div>
-					<h3 class="card-title">Selected Works</h3>
-					<!-- <time class="card-date">September 12, 2017</time> -->
-					<button class="card-more" hidden><i class="icon-more"></i></button>
-					<div class="card-byline">
-						<figure class="card-byline-avatar"><img src="/public/images/soo.png" alt="" /></figure>
-						<span class="card-byline-name">수줍이</span>
-					</div>
-					<div class="card-tags" role="group">
-						<span class="tag">프리랜서</span>
-						<span class="tag">구축</span>
-					</div>
-				</a>
+			<a class="card js-modal" href="#" data-modal="etc-works">
+				<figure class="card-thumbnail"><img src="/public/images/work-studium.jpg" alt="" /></figure>
+				<div class="card-category">카테고리</div>
+				<h3 class="card-title">Selected Works</h3>
+				<!-- <time class="card-date">September 12, 2017</time> -->
+				<button class="card-more" hidden><i class="icon-more"></i></button>
+				<div class="card-byline">
+					<figure class="card-byline-avatar"><img src="/public/images/soo.png" alt="" /></figure>
+					<span class="card-byline-name">수줍이</span>
+				</div>
+				<div class="card-tags" role="group">
+					<span class="tag">프리랜서</span>
+					<span class="tag">구축</span>
+				</div>
+			</a>
 
-				<!-- <a class="card js-modal" href="#" data-modal="etc">
+			<!-- <a class="card js-modal" href="#" data-modal="etc">
 					<figure class="card-thumbnail"><img src="/public/images/work-etc.jpg" alt="" /></figure>
 					<h3 class="card-title">기타 모음</h3>
 					<button class="card-more" hidden><i class="icon-more"></i></button>
@@ -210,98 +227,98 @@
 					</div>
 				</a> -->
 
-				<a class="card js-modal" href="#" data-modal="lettering">
-					<figure class="card-thumbnail"><img src="/public/images/budha.png" alt="" /></figure>
-					<div class="card-category">취미</div>
-					<h3 class="card-title">레터링</h3>
-					<!-- <time class="card-date">-</time> -->
-					<button class="card-more" hidden><i class="icon-more"></i></button>
-					<div class="card-byline">
-						<figure class="card-byline-avatar"><img src="/public/images/soo.png" alt="" /></figure>
-						<span class="card-byline-name">수줍이</span>
-					</div>
-					<div class="card-tags" role="group">
-						<span class="tag">레터링</span>
-					</div>
-				</a>
-			</section>
+			<a class="card js-modal" href="#" data-modal="lettering">
+				<figure class="card-thumbnail"><img src="/public/images/budha.png" alt="" /></figure>
+				<div class="card-category">취미</div>
+				<h3 class="card-title">레터링</h3>
+				<!-- <time class="card-date">-</time> -->
+				<button class="card-more" hidden><i class="icon-more"></i></button>
+				<div class="card-byline">
+					<figure class="card-byline-avatar"><img src="/public/images/soo.png" alt="" /></figure>
+					<span class="card-byline-name">수줍이</span>
+				</div>
+				<div class="card-tags" role="group">
+					<span class="tag">레터링</span>
+				</div>
+			</a>
+		</section>
 
-			<section class="profile-tabpanel" hidden role="tabpanel" aria-hidden="true" data-index="2">
-				<a class="card" href="#product">
-					<figure class="card-thumbnail"></figure>
-					<h3 class="card-title">상품 상세페이지</h3>
-					<time class="card-date">-<time>
-					<div class="card-tags" role="group">
-						<!-- <span class="tag">${i}</span> -->
-					</div>
-					<button class="card-more" hidden><i class="icon-more"></i></button>
-				</a>
-				<a class="card" href="#cart">
-					<figure class="card-thumbnail"></figure>
-					<h3 class="card-title">카트</h3>
-					<time class="card-date">-<time>
-					<div class="card-tags" role="group">
-					</div>
-					<button class="card-more" hidden><i class="icon-more"></i></button>
-				</a>
-				<a class="card" href="#login">
-					<figure class="card-thumbnail"></figure>
-					<h3 class="card-title">로그인</h3>
-					<time class="card-date">-<time>
-					<div class="card-tags" role="group">
-					</div>
-					<button class="card-more" hidden><i class="icon-more"></i></button>
-				</a>
-				<a class="card" href="#forgot">
-					<figure class="card-thumbnail"></figure>
-					<h3 class="card-title">비밀번호찾기</h3>
-					<time class="card-date">-<time>
-					<div class="card-tags" role="group">
-					</div>
-					<button class="card-more" hidden><i class="icon-more"></i></button>
-				</a>
-				<a class="card" href="#post">
-					<figure class="card-thumbnail"></figure>
-					<h3 class="card-title">포스트</h3>
-					<time class="card-date">-<time>
-					<div class="card-tags" role="group">
-					</div>
-					<button class="card-more" hidden><i class="icon-more"></i></button>
-				</a>
-			</section>
+		<section class="profile-tabpanel" hidden role="tabpanel" aria-hidden="true" data-index="2">
+			<a class="card" href="#product">
+				<figure class="card-thumbnail"></figure>
+				<h3 class="card-title">상품 상세페이지</h3>
+				<time class="card-date">-<time>
+						<div class="card-tags" role="group">
+							<!-- <span class="tag">${i}</span> -->
+						</div>
+						<button class="card-more" hidden><i class="icon-more"></i></button>
+			</a>
+			<a class="card" href="#cart">
+				<figure class="card-thumbnail"></figure>
+				<h3 class="card-title">카트</h3>
+				<time class="card-date">-<time>
+						<div class="card-tags" role="group">
+						</div>
+						<button class="card-more" hidden><i class="icon-more"></i></button>
+			</a>
+			<a class="card" href="#login">
+				<figure class="card-thumbnail"></figure>
+				<h3 class="card-title">로그인</h3>
+				<time class="card-date">-<time>
+						<div class="card-tags" role="group">
+						</div>
+						<button class="card-more" hidden><i class="icon-more"></i></button>
+			</a>
+			<a class="card" href="#forgot">
+				<figure class="card-thumbnail"></figure>
+				<h3 class="card-title">비밀번호찾기</h3>
+				<time class="card-date">-<time>
+						<div class="card-tags" role="group">
+						</div>
+						<button class="card-more" hidden><i class="icon-more"></i></button>
+			</a>
+			<a class="card" href="#post">
+				<figure class="card-thumbnail"></figure>
+				<h3 class="card-title">포스트</h3>
+				<time class="card-date">-<time>
+						<div class="card-tags" role="group">
+						</div>
+						<button class="card-more" hidden><i class="icon-more"></i></button>
+			</a>
+		</section>
 
-			<section class="profile-tabpanel" hidden role="tabpanel" aria-hidden="true" data-index="3">
-				<!-- <div class="message" style="width:100%;">실제 유저로서 어떤 부분들이 문제인가?</div> -->
-				<a class="card js-modal" href="#" data-modal="noonnu">
-					<figure class="card-thumbnail"></figure>
-					<h3 class="card-title">눈누</h3>
-					<!-- <time class="card-date">-<time> -->
-					<button class="card-more" hidden><i class="icon-more"></i></button>
-				</a>
-				<a class="card js-modal" href="#" data-modal="podbbang">
-					<figure class="card-thumbnail"></figure>
-					<h3 class="card-title">팟빵</h3>
-					<time class="card-date">-<time>
-					<button class="card-more" hidden><i class="icon-more"></i></button>
-				</a>
-				<a class="card" href="#profile" onclick="javascript:alert('준비중')">
-					<figure class="card-thumbnail"></figure>
-					<h3 class="card-title">왓챠 피디아</h3>
-					<time class="card-date">-<time>
-					<div class="card-tags" role="group">
-						<!-- <span class="tag">${i}</span> -->
-					</div>
-					<button class="card-more" hidden><i class="icon-more"></i></button>
-				</a>
-			</section>
+		<section class="profile-tabpanel" hidden role="tabpanel" aria-hidden="true" data-index="3">
+			<!-- <div class="message" style="width:100%;">실제 유저로서 어떤 부분들이 문제인가?</div> -->
+			<a class="card js-modal" href="#" data-modal="noonnu">
+				<figure class="card-thumbnail"></figure>
+				<h3 class="card-title">눈누</h3>
+				<!-- <time class="card-date">-<time> -->
+				<button class="card-more" hidden><i class="icon-more"></i></button>
+			</a>
+			<a class="card js-modal" href="#" data-modal="podbbang">
+				<figure class="card-thumbnail"></figure>
+				<h3 class="card-title">팟빵</h3>
+				<time class="card-date">-<time>
+						<button class="card-more" hidden><i class="icon-more"></i></button>
+			</a>
+			<a class="card" href="#profile" onclick="javascript:alert('준비중')">
+				<figure class="card-thumbnail"></figure>
+				<h3 class="card-title">왓챠 피디아</h3>
+				<time class="card-date">-<time>
+						<div class="card-tags" role="group">
+							<!-- <span class="tag">${i}</span> -->
+						</div>
+						<button class="card-more" hidden><i class="icon-more"></i></button>
+			</a>
+		</section>
 
-			<section class="profile-tabpanel" hidden role="tabpanel" aria-hidden="true" data-index="4">
-				<section class="empty">
-					<i class="empty-icon">🧟</i>
-					<h1 class="empty-title">아직 새 글이 없어요.</h1>
-					<p class="empty-description">포트폴리오를 업로드하여 동료들에게 알리세요.<br />저거 색이랑 휴지통 아이콘 바꿔라.</p>
-					<a class="empty-action" href="#">업로드하기</a>
-				</section>
+		<section class="profile-tabpanel" hidden role="tabpanel" aria-hidden="true" data-index="4">
+			<section class="empty">
+				<i class="empty-icon">🧟</i>
+				<h1 class="empty-title">아직 새 글이 없어요.</h1>
+				<p class="empty-description">포트폴리오를 업로드하여 동료들에게 알리세요.<br />저거 색이랑 휴지통 아이콘 바꿔라.</p>
+				<a class="empty-action" href="#">업로드하기</a>
 			</section>
 		</section>
-	</main>
+	</section>
+</main>

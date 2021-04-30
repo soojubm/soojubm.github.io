@@ -21,7 +21,7 @@ iframe,img,video {width:100%;} /*img {vertical-align:middle;}*/
 h1,h2,h3,h4,h5,h6 {line-height:1.4;font-weight:bold;color:var(--gray800);word-break:keep-all;}
 strong,b,th,legend {font-weight:bold;color:var(--gray800);} legend {margin:0 0 .5rem 0;}
 cite,i,address,em,dfn {font-style:normal;} em {color:var(--color-primary);}
-small {font-size:$caption;} abbr {text-decoration:none;}
+small {font-size:var(--caption);} abbr {text-decoration:none;}
 a {text-decoration:none;text-decoration-skip-ink:auto;color:var(--color-primary);} a:link,a:visited {} a:hover,a:focus {} a:active {}
 mark {padding:0 2px 2px;border-radius:var(--radius400);background:var(--gray200);}
 // br {content:'';display:block;height:1rem;}
@@ -39,7 +39,7 @@ body {background:var(--gray0);overflow-x:hidden;letter-spacing:-.0125rem;}
 blockquote {margin:1rem 0 2rem;padding:0 1rem;border-left:4px solid var(--gray200);border-radius:var(--radius400);color:var(--gray400)}
 
 table {width:100%;border-collapse:collapse;border-spacing:0;border-left-style:hidden;border-right-style:hidden;}
-table caption {padding:.5rem 0;font-size:$caption;text-align:left;}
+table caption {padding:.5rem 0;font-size:var(--caption);text-align:left;}
 table thead tr {}
 table thead tr th {padding:.5rem 0;line-height:1.4;color:var(--gray400);text-align:left;}
 table tbody tr th {padding:.5rem 0;line-height:1.4;vertical-align:top;text-align:left;}

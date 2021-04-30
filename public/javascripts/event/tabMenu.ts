@@ -22,17 +22,23 @@ const tabMenu = () => {
       indicatorElement.style.left = `${target.offsetLeft}px`
       indicatorElement.style.width = getComputedStyle(target).width
 
-      tabs.forEach(tab => tab.setAttribute('aria-selected', 'false'))
-      target.setAttribute('aria-selected', 'true')
+      tabs.forEach(tab => {
+        tab.setAttribute('aria-selected', tabIndex === tab.getAttribute('data-index'))
+        // if (tabIndex === tab.getAttribute('data-index')) {
+        //   tab.setAttribute('aria-selected', 'false')
+        // } else {
+        //   tab.setAttribute('aria-selected', 'true')
+        // }
+      })
 
 
       tabPanels.forEach(element => {
-        element.hidden = true
-        element.setAttribute('aria-hidden', 'true')
-
         if (tabIndex === element.getAttribute('data-index')) {
           element.hidden = false
-          element.setAttribute('aria-hidden', 'hidden')
+          element.setAttribute('aria-hidden', 'fales')
+        } else {
+          element.hidden = true
+          element.setAttribute('aria-hidden', 'true')
         }
       })
     }

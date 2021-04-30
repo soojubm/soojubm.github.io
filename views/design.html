@@ -76,6 +76,7 @@
       <h1 class="design-article-title">Rules <small>🔥</small></h1>
       <p class="design-article-description">디자인시스템에도 완성은 존재하지 않습니다. 린하게..</p>
       <ul class="design-article-description">
+        <li>더보기와 모두보기를 구분해서 사용.</li>
         <li>UI는 특정 서비스에 종속되지 않는 보편타당해야 합니다.</li>
         <li> 시스템은 유아이 라이브러리가 아닙니다. 개발 구현 난이도를 고려해야 하고 가능한 최소한의 가이드를 유지하세요.</li>
         <li>모바일 퍼스트. 그리드 시스템이 실제로 효율적인가?</li>
@@ -155,17 +156,36 @@
       <p>bottom fix in window</p>
       <p>iphone safe area 고려</p>
       <hr />
-      <div style="display:flex;align-items:center;height:10rem;line-height:10rem;text-align:center;font-size:var(--caption);">
-        <div style="width:5%;background:var(--green100);">5%</div>
-        <div style="width:calc(100% - 10%);background:var(--gray100);">contents</div>
-        <div style="width:calc(50% - 5% - .5rem);background:var(--gray100);">column</div>
-        <div style="width:1rem;"></div>
-        <div style="width:calc(50% - 5% - .5rem);background:var(--gray100);">column</div>
-        <div style="width:5%;background:var(--green100);">5%</div>
-      </div>
+      
     </article> -->
 
-    <article class="design-article">
+    <figure>
+    <video autoplay loop muted poster="/public/images/springsteen.jpg" preload="bbb" width="">
+      <source src="xxx" type="video/mp4">
+      zzz
+    </video>
+
+
+  </figure>
+
+
+  <div class="svg-item">
+    <svg width="100%" height="100%" viewBox="0 0 40 40" class="donut">
+      <circle class="donut-hole" cx="20" cy="20" r="15.91549430918954" fill="#fff"></circle>
+      <circle class="donut-ring" cx="20" cy="20" r="15.91549430918954" fill="transparent" stroke-width="3.5"></circle>
+      <circle class="donut-segment" cx="20" cy="20" r="15.91549430918954" fill="transparent" stroke-width="3.5" stroke-dasharray="69 31" stroke-dashoffset="25"></circle>
+      <g class="donut-text">
+        <text y="50%" transform="translate(0, 2)">
+          <tspan x="50%" text-anchor="middle" class="donut-percent">69%</tspan>   
+        </text>
+        <text y="60%" transform="translate(0, 2)">
+          <tspan x="50%" text-anchor="middle" class="donut-data">3450 widgets</tspan>   
+        </text>
+      </g>
+    </svg>
+  </div>
+
+    <article class="design-article js-scroll-animation">
       <h1 class="design-article-title">Sizes & Avatars</h1>
       <p class="design-article-description">4가지 크기를 사용합니다. 버튼그룹과 인풋그룹 내부에서도 지정된 간격을 따릅니다.</p>
       <blockquote>
@@ -210,18 +230,18 @@
         <a href="" class="design-article-avatar-small" style="margin-left:-.75rem;box-shadow: var(--gray0) 0px 0px 0px 2px;z-index:-2;"></a>
         <a href="" class="design-article-avatar-small" style="margin-left:-.75rem;box-shadow: var(--gray0) 0px 0px 0px 2px;z-index:-3;"></a>
         <!-- <a href="" class="design-article-avatar-small" style="margin-left:-10px;box-shadow: rgb(255 255 255) 0px 0px 0px 4px;background:var(--gray100);color:var(--gray800);">+4</a> -->
-        <span style="margin:0 0 0 1rem;">외 18명</span>
+        <span style="margin:0 0 0 1rem;">수줍이 외 18명</span>
       </div>
       <div class="" role="group" style="align-items:center;margin-bottom:-.5rem;">
         <a href="" class="design-article-avatar-tiny" style="box-shadow: var(--gray0) 0px 0px 0px 2px;z-index:0;"></a>
         <a href="" class="design-article-avatar-tiny" style="margin-left:-10px;box-shadow: var(--gray0) 0px 0px 0px 2px;z-index:-1;"></a>
         <a href="" class="design-article-avatar-tiny" style="margin-left:-10px;box-shadow: var(--gray0) 0px 0px 0px 2px;z-index:-2;"></a>
         <a href="" class="design-article-avatar-tiny" style="margin-left:-10px;box-shadow: var(--gray0) 0px 0px 0px 2px;z-index:-3;"></a>
-        <small>외 8명</small>
+        <small>수줍이 외 8명</small>
       </div>
     </article>
 
-    <article class="design-article typography">
+    <article class="design-article typography js-scroll-animation">
       <h1 class="design-article-title">Typography</h1>
       <p class="design-article-description">1rem을 데스크탑 크기에서 14px, 모바일에서 12px로 적용합니다.</p>
       <!-- <li>asap의 dash를 마이너스로 쓰면 어색. 무게가 살짝 다름.</li> -->
@@ -262,9 +282,21 @@
       </div>
     </article>
 
-    <article class="design-article">
-      <h1 class="design-article-title">Spacing System 🔥</h1>
-      <p class="design-article-description">그리드 시스템을 정의하지 마세요. 모바일 퍼스트로 사고하고 가로 스크롤 트랜드에는 불필요하기 때문에 Spacing 시스템이..</p>
+    <article class="design-article js-scroll-animation">
+      <h1 class="design-article-title">Grid System & Spacing System 🔥</h1>
+      <p class="design-article-description">데스크탑 환경에서 그리드 시스템을 정의하지 않습니다. </p>
+      <blockquote>
+        <p></p>
+      </blockquote>
+      <div style="max-width:375px;display:flex;align-items:center;height:10rem;line-height:10rem;text-align:center;font-size:var(--caption);position:relative;">
+        <span class="tag" style="position:absolute;left:50%;top:1rem;">max-width: 375px</span>
+        <div class="space" style="width:5%;background:var(--green100);"><span class="">5%</span></div>
+        <div style="width:calc(50% - 5% - .5rem);background:var(--gray100);">column</div>
+        <div class="space" style="width:1rem;"><span class="">1rem</span></div>
+        <div style="width:calc(50% - 5% - .5rem);background:var(--gray100);">column</div>
+        <div class="space" style="width:5%;background:var(--green100);"><span class="">5%</span></div>
+      </div>
+      <br />
       <div class="spacing-card">
         <div class="space" style="height:1.5rem;position:absolute;left:0;right:0;top:0;bottom:calc(100% - 1.5rem);"><span class="tag">1.5rem</span></div>
         <div class="space" style="height:1.5rem;position:absolute;left:0;right:0;top:calc(100% - 1.5rem);bottom:0;z-index:0;"><span class="tag">1.5rem</span></div>

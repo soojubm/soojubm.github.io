@@ -53,7 +53,7 @@ module.exports = smp.wrap({
 		new CopyPlugin([ { from: 'public', to: 'public' } ]),
 		new BundleAnalyzerPlugin(),
 		new FriendlyErrorsWebpackPlugin(),
-		new MiniCssExtractPlugin({ filename: '[name].css' }),
+		new MiniCssExtractPlugin({ filename: 'style.css' }), // [name].css
 		new StylelintPlugin(),
 	],
 	optimization: {
@@ -61,6 +61,7 @@ module.exports = smp.wrap({
 		minimizer: [
 			new TerserPlugin(),
 			new OptimizeCssAssetsPlugin({
+				// assetNameRegExp: /\.optimize\.css$/g,
 				cssProcessor: require('cssnano'),
 				cssProcessorPluginOptions: {
 					preset: ['default', { discardComments: { removeAll: true } }],
