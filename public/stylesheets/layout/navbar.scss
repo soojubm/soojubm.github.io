@@ -20,7 +20,7 @@
 .navbar-user-search a i {vertical-align:middle;color:var(--gray800);}
 
 // todo close icon rotate
-.search-form {background:var(--gray0);padding:.5rem 5%;box-sizing:border-box;position:fixed;left:0;right:0;top:0;bottom:0;z-index:8;}
+.search-form {background:var(--gray0);padding:.5rem var(--grid-margin);box-sizing:border-box;position:fixed;left:0;right:0;top:0;bottom:0;z-index:8;}
 .search-form-close {@include box-small;position:absolute;left:1rem;top:14px;z-index:8;transform:rotate(180deg);}
 .search-form-title {margin:0 auto 1rem;font-size:1.25rem;}
 .search-form-field input {padding-left:56px;}
@@ -100,12 +100,12 @@
 .is-sticky-navbar .navbar {box-sizing:border-box;background:var(--gray0);position:fixed;top:0;left:0;right:0;}
 
 @media (--viewport-small) {
-	.navbar {height:48px;padding:0 5%;background:var(--gray0);}
+	.navbar {height:48px;padding:0 var(--grid-margin);background:var(--gray0);}
 	.navbar-logo {position:absolute;left:50%;transform:translateX(-50%);}
 	.navbar-burger {display:block;}
 
 	.navbar-menu {display:block;margin-left:0;padding:6rem 0;box-sizing:border-box;background:rgba(255,255,255,1);box-shadow:var(--shadow400);opacity:0;position:fixed;left:0px;right:0;top:0px;bottom:0px;z-index:5;transition:all .8s cubic-bezier(.165,.84,.44,1);transform:translateX(-100%);}
-	.navbar-menu-item {display:block;padding:.5rem 5%;font-size:var(--subhead);}
+	.navbar-menu-item {display:block;padding:.5rem var(--grid-margin);font-size:var(--subhead);}
 	.navbar-menu-item menu {flex-wrap:wrap;padding:1rem 0;background:var(--gray0);position:static;left:auto;right:auto;top:auto;transition:none;}
 	.navbar-menu-item menu a {display:block;width:100%;margin-left:0;padding:.5rem 0 .5rem 1.5rem;border-left:var(--border100);font-size:inherit;line-height:24px;color:var(--gray800);opacity:1;}
 	

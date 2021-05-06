@@ -1,4 +1,4 @@
-.product {@include container-large;box-sizing:border-box;}
+.product {@include container-large;}
 // .product:before {content:'';display:block;height:800px;background:var(--gray100);position:absolute;left:10%;right:-50%;top:-5rem;z-index:-1;}
 .product-image {width:480px;height:480px;margin:0 auto;background:var(--gray100);border-radius:var(--radius400);position:relative;}
 .product-iamge-list {position:absolute;}
@@ -6,22 +6,22 @@
 .product-image-navigation {width:inherit;text-align:center;position:fixed;left:10%;top:520px;}
 .product-image-navigation button {width:8px;height:8px;margin:0 .25rem;border:var(--border100);background:var(--gray100);}
 .product-image-navigation button.is-current {background:var(--gray800);}
-.product-info {width:25%;position:absolute;left:0;top:2rem;}
+.product-info {width:25%;position:absolute;left:5%;top:2rem;}
 .product-info-name {width:28px;text-align:center;word-break:normal;@include title;line-height:1.25;position:absolute;left:-64px;top:0px;}
 .product-info-price {display:flex;align-items:center;font-size:var(--subhead);}
 .product-info-price del {}
 .product-info-price b {margin:0 .5rem;}
 .product-info-price em {}
 .product-info-description {margin:.5rem 0 1.25rem 0;}
-.product-order {width:25%;position:absolute;right:0;top:2rem;}
+.product-order {width:25%;position:absolute;right:5%;top:2rem;}
 .product-order-info {}
 .product-order-discount {margin:1rem 0 1rem 0;background:#f9f9f6;border:var(--border100);text-align:center;padding:8px 0;}
 .product-order-size {display:flex;flex-wrap:wrap;margin:1rem 0;}
-.product-order-size-title {width:100%;margin:0 0 .25rem 0;font-size:var(--caption);}
+.product-order-size-title {width:100%;margin:0 0 .25rem 0;font-weight:400;font-size:var(--caption);}
 .product-order-size-item {@include box-small;margin:0 .5rem 0 0;font-size:var(--caption);}
 .product-order-size-item.is-selected {border-color:var(--color-primary);color:var(--color-primary);}
 .product-order-color {display:flex;flex-wrap:wrap;margin:1rem 0 1.5rem;}
-.product-order-color-title {width:100%;margin:0 0 .25rem 0;font-size:var(--caption);}
+.product-order-color-title {width:100%;margin:0 0 .25rem 0;font-weight:400;font-size:var(--caption);}
 .product-order-color-item {@include box-small;margin:0 .5rem 0 0;}
 .product-order-color-item.is-selected:before {content:'';display:block;border:1px solid var(--gray0);border-radius:var(--radius400);position:absolute;left:2px;right:2px;top:2px;bottom:2px;}
 .product-order-color-item.is-crimson {background:var(--color-primary);border:1px solid var(--color-primary)}

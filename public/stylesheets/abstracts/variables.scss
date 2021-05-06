@@ -1,6 +1,5 @@
 // ! viewport : desktop first
 @custom-media --viewport-large (max-width: 1441px);
-// @custom-media --viewport-medium (max-width: 1280px);
 @custom-media --viewport-small (max-width: 1080px);
 
 $cell-large: 80px; // => 64px;
@@ -14,9 +13,6 @@ $cell-tiny: 16px;
 @mixin subheading2 {font-size:var(--body);font-weight:normal;color:var(--gray800);}
 @mixin subheading3 {font-size:var(--body);font-weight:normal;color:var(--gray400);}
 
-$gray100: #dadce0;
-$green100: #ddf5e9; // honeydew
-
 $padding100: 4px 1rem 5px; // 32
 $padding200: 9px 1.5rem 11px; // 버튼, 텍스트인풋 48
 
@@ -24,20 +20,17 @@ $bezier-base: cubic-bezier(0.455, 0.03, 0.515, 0.955);
 $transition-base: all 0.4s $bezier-base;
 $transition-fade: opacity 0.15s linear;
 
-// for darken
-$green100: #ddf5e9; 
-$green800: #1b995c; 
-
 :root {
   color-scheme: light dark;
   --fontstack: 'Asap', 'AritaDotum', 'Apple SD Gothic Neo', sans-serif;
-  // --fontstack: sans-serif;
   // ! fontSize
   --headline: 3rem;
   --title: 2rem;
   --subhead: 1.25rem;
   --body: 1rem;
   --caption: .875rem;
+  // --paragraph: 1rem;
+  // --paragraph-large: 1.25rem;
   // ! fontWeight
   --weight700: bold;
   --weight400: normal;
@@ -48,7 +41,7 @@ $green800: #1b995c;
   --gray400: #979d9a; // caption
   --gray800: #343c38; // heading
   // --gray600: #4e5351; // body
-  --green100: #ddf5e9; 
+  --green100: rgba(10, 160, 80, 0.1); // previous #ddf5e9;
   --green800: #1b995c;
   --red100: #fff0f5;
   --red800: #f02849;
@@ -62,9 +55,16 @@ $green800: #1b995c;
   --color-kakao: #ffdf00;
   --color-newneek: #fb7800;
 
-  --container-small: 480px;
-  --container-medium: 640px;
-  --container-large: 1440px;
+  // container width
+  --width-tiny: 320px;
+  --width-small: 480px;
+  --width-medium: 640px;
+  --width-large: 1440px;
+
+  --cell-large: 80px;
+  --cell-medium: 48px;
+  --cell-small: 32px;
+  --cell-tiny: 16px;
 
   --text-color: var(--gray800);
   --text-color-light: var(--gray800);
@@ -76,6 +76,8 @@ $green800: #1b995c;
 
   --button-background: #fff;
   --button-text-color: #fff;
+
+  --gradient: linear-gradient(to bottom, var(--gray0), rgba(255,255,255,.75), var(--gray800));
 
   --card-background: #fff;
   --card-border: 1px solid #fff;
@@ -107,8 +109,12 @@ $green800: #1b995c;
   --zindex-popover: 6;
   --zindex-tooltip: 8;
 
+  --grid-column: calc(50% - .5rem);
+  --grid-gutter: 1rem;
+  --grid-margin: 5%;
+
   @media (--viewport-large) {
-    --container-large: 1120px;
+    --width-large: 1120px;
   }
   
   @media (--viewport-small) {
@@ -117,11 +123,9 @@ $green800: #1b995c;
   html[date-theme=dark] {}
   .theme-dark {
     // img {
-    //   mix-blend-mode: multiply;
-    // }
-    // img {
     //   filter: invert(100%) hue-rotate(180deg);
     //   mix-blend-mode: screen;
+    //   mix-blend-mode: multiply;
     // }
     
     --gray0: #252d29;
@@ -129,8 +133,6 @@ $green800: #1b995c;
     --gray200: #4e5351; // divider border
     --gray400: #979d9a; // caption
     --gray800: #f1f4f1; // heading
-
-    --green100: rgba(0, 107, 55, .1);
 
     --border100: 1px solid var(--gray100);
     --border150: 1px solid var(--gray100); // 150 케이스 있음.
@@ -144,55 +146,11 @@ $green800: #1b995c;
   }
 }
 
-
-// html.color-theme-in-transition,
-// html.color-theme-in-transition *,
-// html.color-theme-in-transition *:before,
-// html.color-theme-in-transition *:after {
-//   transition: all 750ms !important;
-//   transition-delay: 0 !important;
-// }
-
-
 @mixin truncate {white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 @mixin truncate-multi {@include truncate;height:3.6em;white-space:normal;word-wrap:break-word;display: -webkit-box;-webkit-line-clamp:2;-webkit-box-orient: vertical;}
 
 @mixin image-centered {width:auto;height:auto;max-width:150%;max-height:150%;margin:auto;position:absolute;left:0;right:0;top:0;bottom:0;}
 
-@mixin tag {
-  display: inline-block;
-  height: 32px;
-  padding: 0 1rem;
-  // border: var(--border100);
-  border-radius: var(--radius400);
-  background: var(--gray0);
-  color: var(--gray800);
-  line-height: 31px;
-}
-
-// layout 유동성을 위해. centered mixin은 layou의 유동성을 해친다.
-// ! box-small의 display:flex가 hidden 속성과 충돌
-@mixin box($cell) {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width:$cell;
-  height:$cell;
-  // border: 1px solid var(--color-box-border);
-  border: 1px solid transparent;
-  // overflow: hidden; // hover
-  background-color: var(--gray100);
-  border-radius: var(--radius400);
-  box-sizing: border-box;
-  position: relative;
-  // &:hover {
-  //   @include hover-tertiary;
-  // }
-}
-@mixin box-large {@include box($cell-large);}
-@mixin box-medium {@include box($cell-medium);}
-@mixin box-small {@include box($cell-small);}
-@mixin box-tiny {@include box($cell-tiny);}
 
 @mixin clearfix {
   &:after {content: '';display:block;clear:both;}
@@ -205,27 +163,22 @@ $green800: #1b995c;
   &:before {
     content:'';display:block;background:var(--gray100);border-radius:var(--radius400);position:absolute;left:-.5rem;right:-.5rem;top:-.5rem;bottom:-.5rem;z-index:-1;
   }
-  // button {border:var(--border100);background:var(--gray100);color:var(--color-primary);}
-  // button:hover {border-color:transparent;}
+  button {}
+  button:hover {box-shadow:none;}
   figure {background-color:var(--gray0);}
 }
 @mixin hover-tertiary {border-color: var(--color-primary);}
 @mixin hover-text {color:var(--color-primary);}
 
-@mixin container-item {
-  // non-clickable
-  padding: .5rem;
-  border: var(--border100);
-  border-radius: var(--radius400);
-  box-sizing: border-box;
-  position: relative;
+@mixin container-overflow {
+  overflow:auto;white-space:nowrap;
+  font-size:0;
+  &::-webkit-scrollbar {display:none;}
+  > * {margin:0 .5rem 0 0;font-size:1rem;}
 }
 
-@mixin container-dropdown {
-  width:10rem;padding:.5rem 0;background:var(--gray0);box-shadow:var(--shadow400);border:var(--border100);border-radius:var(--radius400);
-}
+
 @mixin container-card {
-  // max-width: 
   padding: 1.5rem;
   background: var(--gray0);
   border: var(--border100);
@@ -233,9 +186,7 @@ $green800: #1b995c;
   box-sizing: border-box;
   box-shadow: var(--shadow400);
   position: relative;
-  @media (--viewport-small) {
-    // padding: 1.5rem;
-  }
+  @media (--viewport-small) {}
 }
 
 @mixin container-page {
@@ -243,31 +194,59 @@ $green800: #1b995c;
   padding: 2rem 5% 8rem; // mobile padding
   position: relative;
 }
-@mixin container-page-head {}
 @mixin container-large {
-  max-width: var(--container-large);
+  max-width: var(--width-large);
   @include container-page;
 }
 @mixin container-medium {
-  max-width: var(--container-medium);
+  max-width: var(--width-medium);
   @include container-page;
 }
 @mixin container-small {
-  max-width: var(--container-small);
+  max-width: var(--width-small);
   @include container-page;
 }
 
-@mixin link-inner {display:inline-block;color:var(--color-primary);}
-@mixin link-outer {
-  // display:inline-block;
-  color:var(--gray800);text-decoration:underline;
-}
 
-.linebreaker-desktop {
+// padding .5rem / 1.5rem
+@mixin outer-flat {
+  padding: 1.5rem;
+  border: var(--border100);
+  border-radius: var(--radius400);
+  box-sizing: border-box;
+  background: var(--gray0);
+  position: relative;
+}
+@mixin outer-elevated {@include outer-flat;box-shadow:var(--shadow400);}
+
+
+// layout 유동성을 위해. centered mixin은 layou의 유동성을 해친다.
+// ! box-small의 display:flex가 hidden 속성과 충돌
+@mixin outer-avatar($cell) {
+  display: flex;align-items: center;justify-content: center;
+  width: $cell;height: $cell;
+  @include outer-flat;
+  padding: 0; // redefined
+  border-color: transparent;
+  background-color: var(--gray100); // redefined
+}
+@mixin box-large {@include outer-avatar($cell-large);}
+@mixin box-medium {@include outer-avatar($cell-medium);}
+@mixin box-small {@include outer-avatar($cell-small);}
+@mixin box-tiny {@include outer-avatar($cell-tiny);}
+
+
+
+
+@mixin link-inner {display:inline-block;color:var(--color-primary);}
+@mixin link-outer {color:var(--gray800);text-decoration:underline;}
+
+.linebreak-always {}
+.linebreak-desktop {
   display:block;
   @media (--viewport-small) {display:inline;}
 }
-.linebreaker-mobile {
+.linebreak-mobile {
   display:inline;
   @media (--viewport-small) {display:block;}
 }
@@ -285,11 +264,4 @@ $green800: #1b995c;
 //   }
 //   // img {filter: brightness(.8) contrast(1.2);}
 // }
-
-// <picture>
-//   <!-- Use this image if the user's OS setting is light or unset -->
-//   <source srcset="photo-light.png" media="(prefers-color-scheme: light) or (prefers-color-scheme: no-preference)">
-//   <!-- Use this image if the user's OS setting is dark -->
-//   <source srcset="photo-dark.png" media="(prefers-color-scheme: dark)">
-// </picture>
 

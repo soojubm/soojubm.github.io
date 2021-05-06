@@ -1,12 +1,6 @@
 .profile {@include container-large;}
 .profile::after {content:'';display:block;clear:both;}
-// .profile-head {margin:0 0 3rem 0 !important;}
-// .profile-head-background {background:url('/public/images/caleb-woods-182648-unsplash.jpg') no-repeat center center;background-size:cover;}
-// .profile-head-headline {position:relative;}
-// .profile-head-description {position:relative;}
-// .profile-head-share {}
-// .profile-head-temp {position:absolute;left:65%;top:3.25rem;}
-// .profile-head h5 {margin:0 0 1rem 0;color:var(--gray0);}
+
 .profile-user {float:left;width:320px;position:relative;z-index:1;}
 .profile-user-avatar {float:right;@include box-large;background-image:url('/public/images/soo.png');background-size:contain;transition:all 0.4s ease;}
 .profile-user-avatar:hover {box-shadow:var(--shadow400);}
@@ -26,7 +20,7 @@
 .profile-user-address i {margin:0 .5rem 0 0;font-size:14px;color:var(--gray400);vertical-align:middle;}
 .profile-user-hashtags {display:flex;flex-wrap:wrap;}
 .profile-user-statistic {display:flex;justify-content:space-between;}
-.profile-user-statistic .statistic {width: calc(50% - .5rem);position: relative;}
+.profile-user-statistic .statistic {width: var(--grid-column);position: relative;}
 .profile-user-statistic .statistic:hover {@include hover-item;}
 .profile-user-socials {}
 .profile-user-socials-title {margin:0.5rem 0;font-size:1rem;font-weight:normal;color:var(--gray400);}
@@ -76,9 +70,10 @@
 .card-byline-name {line-height:16px;color:var(--gray400);}
 .card-title {padding:1rem 0 0;font-size:var(--body);}
 .card-text {padding:.5rem 0 1rem;@include truncate-multi;}
-.card-category {@include tag;position:absolute;left:.5rem;top:.5rem;}
+.card-category {@include tag-secondary;position:absolute;left:1rem;top:1rem;}
 .card-date {color:var(--gray400);}
-.card-tags {display:flex;flex-wrap:wrap;margin:0 0 -.25rem 0;font-size:var(--caption);}
+.card-tags {display:flex;flex-wrap:wrap;font-size:var(--caption);}
+.card-tags-item {@include hashtag;}
 .card-item {height:48px;margin:1rem 0;position:relative;}
 .card-item-media {float:left;display:block;margin-right:1rem;@include box-medium;}
 .card-item-name {display:block;color:var(--gray800);}
@@ -110,5 +105,4 @@
   .profile-user-info {display:none;}
   .profile-user-info.is-visible {display:block;margin-bottom:4rem;}
 
-  // .profile-head {height:auto;margin-left:5%;margin-right:5%;padding:2rem 5% 3rem;border-radius:0;}
 }

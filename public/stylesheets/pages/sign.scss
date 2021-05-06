@@ -1,4 +1,4 @@
-.login {max-width:var(--container-small);margin:0 auto;padding:4rem 5%;position:relative;}
+.login {max-width:var(--width-small);margin:0 auto;padding:4rem 5%;position:relative;}
 .login-head-logo {@include box-small;margin:0 0 1rem 0;}
 .login-title {@include title;}
 .login-description {margin:1rem 0;font-size:var(--body);}
@@ -35,7 +35,7 @@
 .password-description {margin:1rem 0 0 0;}
 .password-foot {display:flex;align-items:center;justify-content:space-between;margin:1rem 0;}
 .password-foot-submit {@include button-primary;width:50%;}
-.password-result {margin:4rem 5%;text-align:center;}
+.password-result {margin:4rem var(--grid-margin);text-align:center;}
 .password-result-title {margin:0 0 2rem 0;}
 .password-result-login {@include button-tertiary;}
 

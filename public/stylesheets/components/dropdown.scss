@@ -4,8 +4,9 @@
 .dropdown-trigger-icon {@include box-small;}
 
 .dropdown-menu {
-  @include container-dropdown;
+  @include outer-elevated;
   height:0;
+  padding: 0; // override;
   position:absolute;
   z-index:5;
   transition:all 0.2s ease;
@@ -23,9 +24,9 @@
 }
 .dropdown-menu-link {
   display:block;
-  padding:0.25rem 1rem;
+  margin: 1rem;
   color:var(--gray800);
   position:relative;
   z-index:1;
 }
-.dropdown-menu-link:hover {background:rgba(0, 0, 0, .05);}
+.dropdown-menu-link:hover {@include hover-item;}

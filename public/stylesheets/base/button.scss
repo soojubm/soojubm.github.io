@@ -26,15 +26,18 @@ button {@include reset-button;}
 @mixin button {
   display: inline-block;
   min-width: 8rem;
-  padding:$padding200;
+  padding: $padding200;
   box-sizing:border-box;
-  border-radius:var(--radius400);
-  text-align:center;
+  border-radius: var(--radius400);
+  text-align: center;
   font-weight: bold;
-  cursor:pointer;
-  position:relative;
+  cursor: pointer;
+  position: relative;
   @content;
-  
+  &:hover:not(:disabled), &.is-hover:not(:disabled) {
+    // box-shadow: inset 0px 0px 2px rgba(0,0,0,.4);
+    box-shadow: 0 0 2px var(--gray400);
+  }
   &:focus, &.is-focus {
     outline:0;
     box-shadow:0 0 0 2px var(--gray800);
@@ -58,7 +61,8 @@ button {@include reset-button;}
     color: #fff; // 다크테마와 동일한 스타일
   }
   &:hover:not(:disabled), &.is-hover:not(:disabled) {
-    box-shadow: inset 0 0 2px rgba(27, 153, 92, 0.8);
+    // box-shadow: inset 0 0 2px rgba(27, 153, 92, 0.8);
+    box-shadow: inset 0px 0px 2px rgba(0,0,0,.4);
     // border-color:darken($green800, 2.5%);background:darken($green800, 2.5%);
   }
   &:focus {}
@@ -70,7 +74,6 @@ button {@include reset-button;}
   // border:1px solid var(--subhead);background:transparent;color:var(--subhead);
   background:var(--green100);color:var(--color-primary);
   &:hover:not(:disabled), &.is-hover:not(:disabled) {
-    box-shadow: inset 0 0 2px rgba(27, 153, 92, 0.8);
     // border-color:darken($green100, 2%);background:darken($green100, 2%);color:darken($green800, 5%);
   }
   &:focus:not(:disabled) {}
@@ -81,7 +84,6 @@ button {@include reset-button;}
   @include button;
   border:1px solid var(--color-box-border);background:var(--gray100);color:var(--gray800);
   &:hover:not(:disabled), &.is-hover:not(:disabled) {
-    box-shadow: inset 0 0 2px rgba(27, 153, 92, 0.8);
     // border-color:var(--gray200);background:var(--gray200);
   }
   &:focus:not(:disabled) 
@@ -92,7 +94,6 @@ button {@include reset-button;}
   @include button;
   border:1px solid transparent;color:var(--color-primary);
   &:hover:not(:disabled), &.is-hover:not(:disabled) {
-    box-shadow: inset 0 0 2px rgba(27, 153, 92, 0.8);
     // border-color:var(--gray100);background:var(--gray100);
   }
   &:focus:not(:disabled) {}
@@ -103,7 +104,7 @@ button {@include reset-button;}
 // ! backButton closeButton :: back close 아이콘은 어차피 단독으로 쓰이지 않는다!
 .danger-button {@include button;background:var(--red800);border:1px solid var(--red800);color:var(--gray0);}
 
-[role=group] {display:flex;flex-wrap:wrap;}
+[role=group] {display:flex;flex-wrap:wrap;margin:0 0 -.5rem 0;}
 [role=group] > * {margin:0 .5rem .5rem 0;}
 [role=group] input[type=radio] + label {margin:0 16px 0 0;color:var(--gray400);padding-left:0;}
 [role=group] input[type=radio] + label:before {content:'';display:inline-block;width:2px;height:2px;background:var(--gray400);margin:0 10px 0 0;vertical-align:3px;position:static;left:auto;top:auto;}

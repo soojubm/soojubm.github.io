@@ -142,7 +142,8 @@
 .todo-control-remove {}
 .completed {text-decoration: line-through;}
 
-.statistic {display:inline-block;text-align:center;}
+.statistic {display:flex;justify-content:space-evenly;@include outer-flat;}
+.statistic-item {text-align:center;}
 .statistic-label {display:block;color:var(--gray400);}
 .statistic-value {display:block;margin:-.25rem 0 0 0;@include subhead;color:var(--gray800);}
 
@@ -155,15 +156,10 @@
 	right: 50%;
 }
 
-@mixin container-overflow {
-  overflow:auto;white-space:nowrap;font-size:0;
-  &::-webkit-scrollbar {display:none;}
-}
-
 .slider {position:relative;}
 .slider-viewer {@include container-overflow;}
 /* .slider-viewer .inbox {width:1500px;position:absolute;} */
-.slider-viewer-slide {display:inline-block;width:10rem;padding:1rem;border:1px solid var(--color-box-border);border-radius:var(--radius400);background:var(--gray100);text-align:left;font-size:1rem;}
+.slider-viewer-slide {display:inline-block;width:10rem;padding:1rem;border:1px solid var(--color-box-border);border-radius:var(--radius400);background:var(--gray100);text-align:left;font-size:1rem;@include container-card;}
 .slider-viewer-slide:nth-of-type(1) {}
 .slider-viewer-slide + .slider-viewer-slide {margin-left:.5rem;}
 .slider-viewer-slide:hover {}
@@ -272,8 +268,8 @@
 .pricing-item ul li {display:flex;align-items:center;padding:0;}
 .pricing-item ul li:before {content:'';display:none;}
 .pricing-item ul li .icon-check {margin:0 .75rem 0 0;border-color:var(--subhead);}
-.pricing-item-upgrade {@include button-primary;width:100%;margin:0 0 1rem 0;}
-.pricing-item-more {width:100%;text-decoration:underline;}
+.pricing-item-upgrade {@include button-primary;width:100%;margin:0 0 .5rem 0;}
+.pricing-item-more {width:100%;@include button-text;}
 
 .sheet-toggle {width:6rem;height:.5rem;border-radius:var(--radius400);background:var(--gray100);position:absolute;left:50%;top:.5rem;transform:translateX(-50%);}
 
@@ -298,16 +294,31 @@
 .newneek {}
 .newneek .modal-dialog {font-size:var(--subhead);}
 .newneek-orange {}
-.newneek-asis {padding:1rem 1rem;border:1px solid #000;border-top:0;}
-.newneek-asis-title {margin:0 0 .5rem 0;@include subhead;text-transform:uppercase;}
+.newneek-asis {}
+.newneek-asis-title {margin:0 0 .5rem 0;@include subhead;text-transform:uppercase;
+  width: 10rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: black;
+  border-radius: 50%;
+  color: #fff !important;}
 .newneek-asis-item {}
-.newneek-tobe {padding:1rem 1rem;border:1px solid #000;border-top:0;}
-.newneek-tobe-title {margin:0 0 .5rem 0;@include subhead;text-transform:uppercase;}
+.newneek-tobe {}
+.newneek-tobe-title {margin:0 0 .5rem 0;@include subhead;text-transform:uppercase;width: 10rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: black;
+  border-radius: 50%;
+  color: #fff !important;}
 .newneek-tobe-item {}
 
 
-.editor-says {padding:.5rem 1rem;border:1px solid #000;font-family:'DunkelSans';color:#000;}
-.gosum-says {padding:.5rem 1rem;border:1px solid #000;border-top:0;color:#000;}
+.editor-says {padding:.5rem 1rem;border:1px solid #000;text-align:center;font-family:'DunkelSans';color:#000;}
+.gosum-says {padding:.5rem 1rem;border:1px solid #000;border-top:0;color:#000;text-align:center;}
 
 .newneek-section2 {background:#ebebeb;text-align:center;color:#000;}
 .newneek-section2 figure {max-width:600px;margin:0 auto;}
@@ -490,3 +501,15 @@
 
 
 .menulist {@include container-card;}
+
+.class-head-thumbnail {width:50%;margin-left:-5%;overflow:hidden;border-radius:4px;}
+
+.class {max-width:var(--width-large);margin:0 auto;position:relative;}
+.class-head {padding:0 0 0;}
+.class-head-eyebrow {@include tag-secondary;display:inline-block;padding:0 .5rem;}
+.class-head-title {@include title;margin:1rem 0 0 0;}
+.class-head-description {margin:1rem 0 0 0;}
+.class-order {@include container-card;width:100%;max-width:60%;padding:3rem;position:absolute;right:0;top:4rem;}
+.class-order-price {font-size:1.25rem;}
+.class-order-action-purchase {@include button-primary;width:100%;}
+.class-order-action-share {}

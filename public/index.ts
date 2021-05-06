@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', initializeLoader)
 document.addEventListener('DOMContentLoaded', domEvents)
 
 document.addEventListener('DOMContentLoaded', () => {
+
   event.toggleClass({ selector: '.js-navbar-toggle' }).initialize()
   
   event.toTop({ selector: '.js-to-top' })
@@ -62,29 +63,25 @@ async function domEvents() {
     pageTitleElement.textContent = page?.name || '페이지타이틀'
   }
 
+  const chip = document.querySelector('.js-chip')
+  const chipElements = chip?.querySelectorAll('button')
+  // todo selector 
+  if(chip && chipElements) {
+    chipElements.forEach(element => {
+      element.addEventListener('click', event => {
+        chipElements.forEach(element => element.classList.remove('is-active'))
+        element.classList.add('is-active')
+      })
+    })
+  }
+
+
   // // ! 디자인시스템에 추가한 거 임시
   darkTheme('.js-darkmode1')
 
   document.querySelector('.js-default-font')?.addEventListener('click', () => {
     document.body.classList.toggle('font-default')
   })
-
-  // var counter = document.querySelector('#counter');
-  // if(counter) {
-  //   var number = 0;
-
-  //   var countUp = function () {
-  //     number++;
-  //     counter!.textContent = String(number);
-  
-  //     // if the number is less than 500, run it again
-  //     if (number < 500) {
-  //       window.requestAnimationFrame(countUp);
-  //     }
-  //   };
-  //   // Start the animation
-  //   window.requestAnimationFrame(countUp);
-  // }
 
   // const boardElement = document.querySelector('.about-book-inner');
   // if(boardElement) {
@@ -211,7 +208,7 @@ async function domEvents() {
   event.closeParentElement({ selector: '.js-close' })
   event.positionSticky({ selector: '.js-post-head', addClass: 'is-sticky-post-head', isPassed: true })
 
-  event.scrollAnimation()
+  event.scrollAnimation({ selector: '.js-observer'})
   // event.scrollspy({ menusSelector: '.js-section', sectionsSelector: '.newneek-navbar-menu-item' })
 
   createGraph()
@@ -581,19 +578,21 @@ function focusComment() {
 // });
 
 // var counter = document.querySelector('#counter');
-// var number = 0;
-// var countUp = function () {
-// 	// Increase number by 1
-// 	number++;
-// 	// Update the UI
-// 	counter.textContent = number;
-// 	// if the number is less than 500, run it again
-// 	if (number < 500) {
-// 		window.requestAnimationFrame(countUp);
-// 	}
-// };
-// // Start the animation
-// window.requestAnimationFrame(countUp);
+// if(counter) {
+//   var number = 0;
+
+//   var countUp = function () {
+//     number++;
+//     counter!.textContent = String(number);
+
+//     // if the number is less than 500, run it again
+//     if (number < 500) {
+//       window.requestAnimationFrame(countUp);
+//     }
+//   };
+//   // Start the animation
+//   window.requestAnimationFrame(countUp);
+// }
 
 // // Setup the animation
 // var animation = window.requestAnimationFrame(function () {

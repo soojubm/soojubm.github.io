@@ -1,7 +1,14 @@
-.chip {height:$cell-small;border:var(--border100);padding:0 1rem 1px;border-radius:var(--radius400);color:var(--gray800);position:relative;}
+.chip {height:$cell-small;border:var(--border100);padding:0 1rem 2px;border-radius:var(--radius400);color:var(--gray800);position:relative;}
+.chip:hover {@include hover-item;}
 .chip-count {}
 .chip-icon {}
 .chip-icon .icon-caret {margin:0 0 0 .25rem;}
-.chip-icon .icon-check {margin:0 .25rem 0 0;margin-top:-3px;}
+.chip-icon .icon-check {margin:0 .25rem 0 0;margin-top:-1px;}
 .chip.is-active {border-color:var(--color-primary);background:var(--green100);color:var(--color-primary);}
 .chip.is-active .chip-icon {border-color:var(--color-primary);}
+
+
+
+.chips {
+    @include container-overflow;
+}

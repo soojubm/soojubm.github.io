@@ -125,11 +125,11 @@ input[type=checkbox][role=switch]:disabled:checked + label {color:var(--color-pr
 input[type=checkbox][role=switch]:disabled:checked + label:before {background:var(--color-primary);}
 input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 
-.switch-wrap {display:inline-block;width:$cell-small;height:$cell-small;overflow:hidden;cursor:pointer;}
-.day {display:block;width:$cell-small;transition:all .4s ease;position:absolute;top:0;transition:all .4s ease .3s;}
-.night {display:block;width:$cell-small;position:absolute;top:32px;transition:all .4s ease 0s;}
-.theme-dark .day {top:$cell-small;transition:all .4s ease 0s;}
-.theme-dark .night {top:0;transition:all .4s ease .3s;}
+// .switch-wrap {display:inline-block;width:$cell-small;height:$cell-small;overflow:hidden;cursor:pointer;}
+// .day {display:block;width:$cell-small;transition:all .4s ease;position:absolute;top:0;transition:all .4s ease .3s;}
+// .night {display:block;width:$cell-small;position:absolute;top:32px;transition:all .4s ease 0s;}
+// .theme-dark .day {top:$cell-small;transition:all .4s ease 0s;}
+// .theme-dark .night {top:0;transition:all .4s ease .3s;}
 
 
 .textfield {position:relative;}
@@ -138,7 +138,7 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 .textfield-icon {display:flex;align-items:center;justify-content:center;width:48px;height:100%;position:absolute;left:0;}
 .textfield-icon i {display:inline-block;font-size:19px;vertical-align:middle;opacity:0.4;}
 .textfield-icon + .textfield-input {padding-left:48px;}
-.textfield-input {display:block;width:100%;padding:$padding200;padding-right:40px;background:var(--gray100);border:var(--border100);border-radius:var(--radius400);box-sizing:border-box;font:inherit;color:var(--gray800);/*-appearance:none;*/transition:all 0.2s;} // textarea 하단 간격
+.textfield-input {display:block;width:100%;padding:$padding200;padding-right:40px;background:var(--gray100);border:1px solid transparent;border-radius:var(--radius400);box-sizing:border-box;font:inherit;color:var(--gray800);/*-appearance:none;*/transition:all 0.2s;} // textarea 하단 간격
 .textfield-input:disabled {border-color:var(--gray200);background:var(--gray200);color:var(--gray100);cursor:not-allowed;}
 // .textfield-input:not(select):readonly {background:none;padding-left:0;padding-right:0;border:none;outline:none;}
 // .textfield-input:not(select):readonly::placeholder {color:var(--gray800);}
@@ -316,7 +316,7 @@ progress:not([value]) {
       height: auto;
       padding: 9px 2rem 11px 3.5rem;
       border: var(--border150);
-      background: var(--gray100);
+      // background: var(--gray100);
       cursor: pointer;
       &:before {background:var(--gray0);left:1.5rem;}
       &:after {left:calc(1.5rem + 5px)}
@@ -327,7 +327,7 @@ progress:not([value]) {
     }
     input:checked + label + div {
       margin: 0;
-      padding: 0 2rem 2rem;
+      padding: 0 1.5rem 2rem;
       border: var(--border150);
       border-top: 0;
     }
@@ -343,7 +343,9 @@ progress:not([value]) {
   }
   
   &.theme-button + .theme-button {
-    margin-top: -1px;
+    label {
+      border-top: 0;
+    }
   }
 
   &.theme-right {

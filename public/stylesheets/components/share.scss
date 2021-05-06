@@ -18,4 +18,4 @@
 .share-copy {display:flex;flex-wrap:wrap;width:100%;}
 .share-copy-label {}
 .share-copy-url {}
-.share-copy-button {@include box-small;width:100%;margin:.5rem 0 0;background:transparent;border:1px solid $green100;background:$green100;color:var(--color-primary);font-weight:bold;}
+.share-copy-button {@include box-small;width:100%;margin:.5rem 0 0;background:transparent;border:1px solid var(--green100);background:var(--green100);color:var(--color-primary);font-weight:bold;}
