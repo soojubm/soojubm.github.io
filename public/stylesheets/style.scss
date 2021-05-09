@@ -94,7 +94,7 @@
 
 .rating2 {display:flex;align-items:center;}
 .rating2-star {margin:0 .25rem 0 0;font-size:var(--body);color:var(--red800);}
-.rating2-score {margin:0 0 0 .5rem;font-size:var(--body);letter-spacing:1px;}
+.rating2-score {margin:0 0 0 .5rem;font-size:var(--body);}
 
 .rating2.is-large {display:flex;align-items:center;}
 .rating2.is-large .rating2-star {margin:0 .5rem 0 0;font-size:1.25rem;color:var(--red800);}

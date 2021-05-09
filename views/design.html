@@ -16,7 +16,7 @@
       <!-- <small class="hero-eyebrow">디자인시스템</small> -->
       <!-- <h1 class="hero-title">더 나은 시스템을<br />연구합니다<i style="font-style:italic;">.</i></h1> -->
       <!-- <h1 class="hero-title">부끄러우니까<br />보지마요<i style="font-style:italic;">!</i></h1> -->
-      <h1 class="hero-title"><span style="display:block;">타이틀</네무> 영역<i style="font-style:italic;">!</i></h1>
+      <h1 class="hero-title"><span style="display:block;">타이틀</span> 영역<i style="font-style:italic;">!</i></h1>
       <!-- <p class="hero-description">최소한의 가이드로 컴포넌트와 페이지를 만들어 라이브되는 서비스(뉴닉)에 활용했습니다.<span class="linebreak-desktop">특정 플랫폼에 종속되지 않는 시스템을 구축하여 확장하고 개선하는 프로젝트입니다.</span></p> -->
       <p class="hero-description">이 헌법중 공무원의 임기 또는 중임제한에 관한 규정은 이 헌법에 의하여 그 공무원이 최초로 선출 또는 임명된 때로부터 적용한다. 국회의원은 국회에서 직무상 행한 발언과 표결에 관하여 국회외에서 책임을 지지 아니한다.</p>
       <!-- <small>최소한의 가이드라하면 폰트 무게, 텍스트 색상, </small> -->
@@ -167,7 +167,6 @@
   <figure>
     <video autoplay loop muted poster="/public/images/springsteen.jpg" preload="bbb" width="">
       <source src="xxx" type="video/mp4">
-      zzz
     </video>
   </figure>
 
@@ -204,25 +203,10 @@
      src="elva-fairy-800w.jpg"
      alt="요정 옷을 입은 엘바">
 
-  <div class="svg-item">
-    <svg width="100%" height="100%" viewBox="0 0 40 40" class="donut">
-      <circle class="donut-hole" cx="20" cy="20" r="15.91549430918954" fill="#fff"></circle>
-      <circle class="donut-ring" cx="20" cy="20" r="15.91549430918954" fill="transparent" stroke-width="3.5"></circle>
-      <circle class="donut-segment" cx="20" cy="20" r="15.91549430918954" fill="transparent" stroke-width="3.5" stroke-dasharray="69 31" stroke-dashoffset="25"></circle>
-      <g class="donut-text">
-        <text y="50%" transform="translate(0, 2)">
-          <tspan x="50%" text-anchor="middle" class="donut-percent">69%</tspan>   
-        </text>
-        <text y="60%" transform="translate(0, 2)">
-          <tspan x="50%" text-anchor="middle" class="donut-data">3450 widgets</tspan>   
-        </text>
-      </g>
-    </svg>
-  </div>
 
     <article class="design-article js-observer">
-      <h1 class="design-article-title">Sizes & Avatars & Avartar Stack</h1>
-      <p class="design-article-description">4가지 크기를 사용합니다. 버튼그룹과 인풋그룹 내부에서도 지정된 간격을 따릅니다.</p>
+      <h1 class="design-article-title">Sizes & Avatars</h1>
+      <p class="design-article-description">페이지 혹은 컴포넌트의 위계와 정보의 복잡도를 고려하세요. 버튼그룹과 인풋그룹 내부에서도 지정된 간격을 따릅니다.</p>
       <div style="display:flex;margin-bottom:1rem;">
         <a href="" class="design-article-avatar-large"><span class="avatar-badge"></span></a>
         <div style="display:block;width:1.5rem;height:inherit;border-radius:var(--radius400);background:var(--green100);"></div>
@@ -279,11 +263,11 @@
       <!-- <li>asap의 dash를 마이너스로 쓰면 어색. 무게가 살짝 다름.</li> -->
       <div class="design-typograph-group">
         <div class="design-typograph-item">
-          <i style="display:block;margin-bottom:.5rem;width:16px;height:16px;border-radius:var(--radius400);background:var(--color-primary);"></i>
+          <i style="display:block;margin-bottom:.5rem;width:16px;height:16px;border-radius:var(--radius400);background:var(--color-primary);color:var(--gray400);"></i>
           한글 <b style="display:block;font-size:1.25rem;line-height:1.5;font-weight:bold;">아리타 산스</b>
         </div>
         <div class="design-typograph-item">
-          <i style="display:block;margin-bottom:.5rem;width:16px;height:16px;border-radius:var(--radius400);background:var(--color-primary);"></i>
+          <i style="display:block;margin-bottom:.5rem;width:16px;height:16px;border-radius:var(--radius400);background:var(--color-primary);color:var(--gray400);"></i>
           영문 <b style="display:block;font-size:1.25rem;line-height:1.5;font-weight:bold;">Asap</b style="display:block;font-size:1.25rem;margin-top:.5rem;">
         </div>
       </div>
@@ -293,39 +277,34 @@
       <div style="margin:1rem 0 0 0;padding:1.5rem;border:1px solid var(--gray200);border-radius:var(--radius400);">
         <h1 style="font-size:var(--caption);">캡션caption <span style="float:right;">.875rem</span></h1>
       </div> -->
-      <br />
       <div class="design-typograph-item">
-        <h1 style="font-size:var(--title);font-weight:bold;">heading1 - title / 2rem / bold</h1>
-        <p style="margin:1rem 0 0 0;">디스크립션</p>
+        <h1 style="font-size:var(--title);font-weight:bold;">Large, 2rem</h1>
+        <p style="margin:1rem 0 0 0;">heading - bold</p>
       </div>
-      <br />
       <div class="design-typograph-item">
-        <h2 style="font-size:var(--subhead);font-weight:bold;">heading2 - subheading1 / 1.25rem / bold</h2>
-        <p style="margin:1rem 0 0 0;">디스크립션</p>
+        <h2 style="font-size:var(--subhead);font-weight:bold;">Medium, 1.25rem</h2>
+        <p style="margin:.5rem 0 0 0;">heading - bold</p>
+        <p>body - normal (long contents, post)</p>
       </div>
-      <br />
       <div class="design-typograph-item">
-        <h3 style="font-size:var(--body);">heading3 - subheading2 / 1rem / bold</h3>
-        <p style="margin:.5rem 0 0 0;">디스크립션</p>
+        <h3 style="font-size:var(--body);">Small, 1rem</h3>
+        <p style="margin:.5rem 0 0 0;">heading - bold</p>
+        <p>heading - gray400 (label)</p>
+        <p>body - normal</p>
       </div>
-      <br />
       <div class="design-typograph-item">
-        <h4 style="font-weight:normal;color:var(--gray400);">heading4 - label / .875rem / normal</h4>
-        <p style="margin:0 0 0 0;">디스크립션</p>
+        <h4 style="font-weight:normal;color:var(--gray400);">Tiny, 0.875rem</h4>
+        <p style="margin:0 0 0 0;">caption</p>
       </div>
     </article>
 
     <article class="design-article js-observer">
       <h1 class="design-article-title">Outers</h1>
-      <p class="design-article-description">아이템을 감싸는. 용도에 맞게 사용.</p>
-      <blockquote>
-        <p>avatar는 아우터로 정의하지 않음.</p>
-      </blockquote>
+      <p class="design-article-description">제목, 디스크립션 이외의\ 콘텐츠를 강조할 때 사용합니다.</p>
       <div class="design-outer-flat">
         <b>flat</b> is non clickable. no one.
       </div>
-      <br />
-      <div class="design-outer-elevated">
+      <div class="design-outer-elevated" style="margin-top:1rem;">
         <b>elevated</b> is clickable. target or children. 
       </div>
     </article>
@@ -347,7 +326,7 @@
 
     <article class="design-article js-observer">
       <h1 class="design-article-title">Spacing System 🔥</h1>
-      <p class="design-article-description"></p>
+      <p class="design-article-description">fafaf</p>
       <br />
       <div class="spacing-card">
         <div class="space" style="height:1.5rem;position:absolute;left:0;right:0;top:0;bottom:calc(100% - 1.5rem);"><span class="tag">1.5rem</span></div>
@@ -471,13 +450,15 @@
 
     <article class="design-article">
       <h1 class="design-article-title">Chips ☀️</h1>
-      <p class="design-article-description">항상 action이 발생. 앞에 체크 아이콘, 뒤에 닫기 아이콘이 올 수 있음. 수량 표기. 주로 필터, 키워드(태그와 구분하여 사용).</p>
+      <p class="design-article-description">항상 action이 발생합니다.단일 선택, 다중 선택, 삭제 여부 등 용도가 다양하기 때문에 적절한 힌트를 제공하세요.</p>
       <blockquote>
         MDS Chip vs Pill
-        input (with remove icon) / + numeric input</blockquote>
+        input (with remove icon) / + numeric input
+        <p>앞에 체크 아이콘, 뒤에 닫기 아이콘이 올 수 있음. 수량 표기. 주로 필터, 키워드(태그와 구분하여 사용).</p>
+      </blockquote>
       <h6>필터filter</h6>
       <div class="js-chip" role="group">
-        <button class="chip is-active">전체주문</button>
+        <button class="chip is-active">전체</button>
         <button class="chip">결제완료 <small class="chip-count">5</small></button>
         <button class="chip">주문취소 <small class="chip-count">2</small></button>
       </div>
@@ -951,8 +932,8 @@
           <div>₩ 44,612</div>
         </div> -->
         <div class="summary-total">
-          <div class="summary-item-label">총 합계 (KRW)</div>
-          <div class="summary-item-value">₩ 163,000</div>
+          <div class="summary-total-label">총 합계 (KRW)</div>
+          <div class="summary-total-value">₩ 163,000</div>
         </div>
       </section>
     </article>
@@ -973,9 +954,9 @@
 
     <article class="design-article">
       <h1 class="design-article-title">Message (Note? Alert?)</h1>
-      <p class="design-article-description">작성 중.</p>
+      <p class="design-article-description">유저 액션에 피드백, 콘텐츠 부가 설명</p>
       <blockquote>
-        toast=>snackbar(withAction). 유저와 커뮤니케이션(액션에 대한 피드백)하는 경우, 콘텐츠 부가 설명하는 경우의 유아이를 분리하기. single line / multiple lines
+        toast=>snackbar(withAction). single line / multiple lines / with heading icon
       </blockquote>
       <aside class="message">
         <button class="message-close" aria-label="close"><i class="icon-close"></i></button>
@@ -1176,7 +1157,20 @@
 
       <br />
 
-      <div class="userlist" style="margin-top:1rem;overflow:hidden;">
+      <article class="keywords">
+        <h3 class="keywords-title">실시간 이슈 키워드</h3>
+        <div class="keywords-group" role="group">
+          <a class="keywords-group-keyword" href="">코에이 테크모 게임즈</a>
+          <a class="keywords-group-keyword" href="">시뮬레이션</a>
+          <a class="keywords-group-keyword" href="">삼국지14</a>
+          <a class="keywords-group-keyword" href="">PC</a>
+          <a class="keywords-group-keyword" href="">PS4</a>
+        </div>
+      </article>
+
+      <br />
+
+      <div class="userlist" style="overflow:hidden;">
         <button class="sheet-toggle"></button>
         <header>
           <h1>Followers</h1>
@@ -1496,7 +1490,7 @@
       <h1 class="design-article-title">Accordions</h1>
       <p class="design-article-description">질의응답 등 정보를 요약하여 목록화하는 경우(?)에만 사용하세요. 공지사항 정도의 간단한 게시글에서도 사용할 수 있으나 그 이상의 경우에는 다른 유아이를 고민하세요.</p>
       <blockquote>
-        plus 아이콘을 더 엄격하게 정의하기. 추가하는 액션에만?
+        plus 아이콘을 엄격하게. caret으로 변경?
       </blockquote>
       <!-- <details class="details">
         <summary class="details-summary">써머리</summary>
@@ -1543,7 +1537,8 @@
       <h1 class="design-article-title">배너</h1>
       <p class="design-article-description">작성 중.</p>
       <aside class="banner">
-        <h2 class="banner-text">수줍이에는 처음 방문이신가요?</h2>
+        <h2 class="banner-title">수줍이에는 처음 방문이신가요?</h2>
+        <p class="banner-description">수줍이에는 처음 방문이신가요?</p>
         <button class="banner-button">이용방법 알아보기</button>
       </aside>
     </article>

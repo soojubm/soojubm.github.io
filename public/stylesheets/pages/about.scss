@@ -6,8 +6,8 @@
 
 .about-subhead-icon {display:block;margin:0 0 1rem 0;}
 
-.about-intro {@include container-medium;}
-.about-intro-slogan {margin:2rem 0;font-size:var(--title);}
+.about-intro {@include container-large;}
+.about-intro-slogan {margin:0 0 1rem 0;@include title;}
 .about-intro-icons {display:block;margin:2rem 0;font-size:var(--headline);transition:all 12s $bezier-base;transform:translateX(100%);}
 .about-intro-icons i {display:inline-block;animation: rotation 1s linear infinite;animation-iteration-count:8;}
 .about-intro-icons i:nth-of-type(2) {animation-duration:1.4s;}
@@ -17,17 +17,14 @@
 .about-intro-icons i:nth-of-type(6) {animation-duration:3.0s;}
 .about-intro-icons i:nth-of-type(7) {animation-duration:3.0s;}
 .about-intro-icons i:nth-of-type(8) {animation-duration:3.0s;}
-.about-intro-address {margin:2rem 0 0 0;}
-
-.is-scrolled .about-intro-icons {transform:translateX(0);}
-.is-scrolled .about-intro-icons i {}
+.about-intro-address {@include outer-elevated;}
 
 
-.about-skill {@include container-medium;padding-top:6rem;box-sizing:border-box;background:var(--gray100);border-radius:var(--radius400);}
+.about-skill {@include container-large;padding-top:6rem;box-sizing:border-box;background:var(--gray100);border-radius:var(--radius400);}
 .about-skill-title {@include title;}
 // .about-skill.is-scrolled {transform:scale(1);}
 
-.about-career {@include container-medium;}
+.about-career {@include container-large;}
 .about-career-head {}
 .about-career-title {margin:0 0 2rem 0;@include subhead;}
 .about-career .timeline {}
@@ -37,23 +34,20 @@
 // .about-career.is-scrolled .timeline-item:nth-of-type(2) {animation:fadeup .4s ease;}
 // .about-career.is-scrolled .timeline-item:nth-of-type(3) {animation:fadeup .4s ease;}
 
-.about-education {@include container-medium;}
+.about-education {@include container-large;}
 
-.about-abbility {@include container-medium;padding:0 var(--grid-margin);background:var(--green100);border-radius:var(--radius400);}
+.about-abbility {@include container-large;padding:0 var(--grid-margin);background:var(--green100);border-radius:var(--radius400);}
 .about-abbility div {margin:0 0 1rem 0;}
 .about-abbility div i {margin-top:-4px;border-color:var(--gray0);transform:scale(1.125) rotate(-45deg);}
 .about-abbility div span {margin:0 0 0 .5rem;font-weight:bold;}
 .about-abbility div p {margin:.5rem 0 0;}
 
-.about-subscribe {@include container-medium;padding:0 var(--grid-margin);}
+.about-subscribe {@include container-large;padding:0 var(--grid-margin);}
 .about-subscribe-title {margin:0 0 1rem 0;@include subhead;}
 
 .about-book {padding:6rem 0 8%;}
 .about-book-title {margin:0 0 2rem 0;padding:0 var(--grid-margin);@include title;}
-.about-book-inner {
-  padding: 0 5%;
-  white-space: nowrap;
-  font-size: 0;}
+.about-book-inner {padding: 0 5%;white-space: nowrap;font-size: 0;}
 
   .bookitem {display:inline-block;width:280px;margin:0 2rem 0 0;padding:1.5rem;background:var(--gray0);border:var(--border100);border-radius:var(--radius400);position: relative;}
   .bookitem-cover {height:14rem;margin:-1.5rem -1.5rem 1.5rem;background: var(--gray100);border-radius: var(--radius400);position:relative;}
@@ -113,7 +107,7 @@
 
 
 .about-fonts {
-  @include container-medium;
+  @include container-large;
 }
 .about-fonts-title {margin:0 0 1rem 0;@include subhead;}
 
@@ -134,7 +128,11 @@
 
 
 
-
+.about-email {display:flex;align-items:center;position:relative;z-index:1;}
+.about-email:hover {@include hover-item;}
+.about-email i {@include box-small;margin:0 1rem 0 0;font-size:var(--subhead);}
+.about-phone {display:flex;align-items:center;}
+.about-phone i {@include box-small;margin:0 1rem 0 0;font-size:var(--subhead);}
 
 
 

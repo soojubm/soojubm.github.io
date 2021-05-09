@@ -31,7 +31,10 @@ $transition-fade: opacity 0.15s linear;
   --caption: .875rem;
   // --paragraph: 1rem;
   // --paragraph-large: 1.25rem;
-  // ! fontWeight
+
+  // --font-size-
+  --font-weight-normal: normal;
+  --font-weight-bold: bold;
   --weight700: bold;
   --weight400: normal;
   // ! colours
@@ -98,7 +101,7 @@ $transition-fade: opacity 0.15s linear;
   --color-button-border: #000;
   --color-button-body: #000;
 
-  --header-height: 56px;
+  --navbar-height: 56px;
 
   --gutter: 0;
 

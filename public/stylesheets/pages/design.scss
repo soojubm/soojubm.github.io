@@ -32,8 +32,8 @@
 .design-article-more i {margin-left:1.5rem;}
 .design-article.is-scrolled {animation:fadeup .8s;}
 
-.design-typograph-group {display:flex;justify-content:space-between}
-.design-typograph-item {@include outer-flat;}
+.design-typograph-group {display:flex;justify-content:space-between;margin:0 0 -1rem 0;}
+.design-typograph-item {@include outer-flat;margin:1rem 0;}
 .design-typograph-group .design-typograph-item {width:var(--grid-column);}
 
 .design-outer-flat {@include outer-flat;}
@@ -307,104 +307,7 @@
 .sheet-title {@include subhead;}
 
 
-
-
-
-.svg-item {
-  width: 100%;
-  font-size: 16px;
-  margin: 0 auto;
-  animation: donutfade 1s;
-}
-
-@keyframes donutfade {
-/* this applies to the whole svg item wrapper */
-  0% {
-      opacity: .2;
-  }
-  100% {
-      opacity: 1;
-  }
-}
-
-@media (min-width:992px) {
-  .svg-item {
-      width: 80%;
-  }
-}
-
-.donut-ring {
-  stroke: #EBEBEB;
-}
-
-.donut-segment {
-  transform-origin: center;
-  stroke: #FF6200;
-}
-
-.segment-1{fill:#ccc;}
-.segment-2{fill:aqua;}
-.segment-3{fill:#d9e021;}
-.segment-4{fill:#ed1e79;}
-
-.donut-percent {
-  animation: donutfadelong 1s;
-}
-
-@keyframes donutfadelong {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes donut1 {
-  0% {
-    stroke-dasharray: 0, 100;
-  }
-  100% {
-    stroke-dasharray: 69, 31;
-  }
-}
-
-
-.donut-text {
-  font-family: Arial, Helvetica, sans-serif;
-  fill: #FF6200;
-}
-.donut-label {
-  font-size: 0.28em;
-  font-weight: 700;
-  line-height: 1;
-  fill: #000;
-  transform: translateY(0.25em);
-}
-
-.donut-percent {
-  font-size: 0.5em;
-  line-height: 1;
-  transform: translateY(0.5em);
-  font-weight: bold;
-}
-
-.donut-data {
-  font-size: 0.12em;
-  line-height: 1;
-  transform: translateY(0.5em);
-  text-align: center;
-  text-anchor: middle;
-  fill: #666;
-  animation: donutfadelong 1s;
-}
-
-
-
-
-/* ---------- */
-.svg-item {
-max-width:30%;
-display:inline-block;
-}
-
+.keywords {@include outer-elevated;}
+.keywords-title {@include subhead;margin:0 0 1rem 0;}
+.keywords-group {}
+.keywords-group-keyword {@include chip;line-height:31px;}

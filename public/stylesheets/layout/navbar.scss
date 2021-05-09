@@ -1,4 +1,4 @@
-.navbar {display:flex;align-items:center;height:var(--header-height);padding:0 2rem;background:var(--gray0);position:relative;left:0;right:0;top:0;z-index:8;}
+.navbar {display:flex;align-items:center;height:var(--navbar-height);padding:0 2rem;background:var(--gray0);position:relative;left:0;right:0;top:0;z-index:8;}
 .navbar-logo {@include box-small;background:none;font-size:1.5rem;}
 .navbar-burger {@include box-small;display:none;margin:0 .5rem 0 0;z-index:8;}
 .navbar-menu {display:flex;align-items:center;margin-left:1rem;margin-top:-4px;position:relative;}

@@ -1,3 +1,8 @@
+@mixin chip {
+    display:inline-block;
+    height:$cell-small;border:var(--border100);padding:0 1rem 2px;border-radius:var(--radius400);color:var(--gray800);position:relative;
+}
+
 .chip {height:$cell-small;border:var(--border100);padding:0 1rem 2px;border-radius:var(--radius400);color:var(--gray800);position:relative;}
 .chip:hover {@include hover-item;}
 .chip-count {}
