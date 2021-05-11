@@ -8,6 +8,7 @@ import scrollAnimation from './scrollAnimation'
 import closeParentElement from './closeParentElement'
 import customCursor from './customCursor'
 import scrollspy from './scrollspy'
+import parallax from './parallax'
 
 export default {
   toggleClass,
@@ -19,5 +20,6 @@ export default {
   scrollAnimation,
   scrollspy,
   closeParentElement,
-  customCursor
+  customCursor,
+  parallax
 }

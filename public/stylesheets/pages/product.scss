@@ -63,13 +63,15 @@
 .product-detail-summary {}
 .product-detail-summary-title {margin:4rem 0 1rem 0;@include subhead;}
 
+.product-detail-brand {}
+
 .product-features {display:flex;justify-content:space-evenly;flex-wrap:wrap;margin:8rem 0;}
-.product-features-head {width:100%;margin:0 auto 4rem;text-align:center;}
+.product-features-head {width:100%;margin:0 auto 6rem;text-align:center;}
 .product-features-head h1 {margin:0 0 2rem 0;@include title;word-break:keep-all;}
 .product-features-head p {}
 .product-features-item {max-width:320px;}
-.product-features-item-avatar {display:block;font-size:3rem;position:relative;}
-.product-features-item-avatar:before {content:'';display:block;@include box-medium;background:var(--gray100);position:absolute;left:1.5rem;z-index:-1;}
+.product-features-item-avatar {display:block;font-size:var(--title);position:relative;}
+.product-features-item-avatar:before {content:'';display:block;@include box-medium;background:var(--gray100);position:absolute;left:1rem;top:-1rem;z-index:-1;}
 .product-features-item-title {margin:1rem 0 0 0;@include subhead;}
 .product-features-item-description {margin-top:1rem;}
 .product-features-item-link {display:block;margin:1rem 0 0;}
@@ -97,8 +99,8 @@
 .product-detail-headline {@include title;}
 
 .product-detail-intro {display:flex;justify-content:center;width:100%;margin:0 0 12rem;padding:0 10%;box-sizing:border-box;}
-.product-detail-intro figure {width:50%;margin:4rem 2.5% -4rem;padding-top:60%;box-sizing:border-box;background:url('https://source.unsplash.com/random') no-repeat center center;background-size:cover;border-radius:var(--radius400);}
-.product-detail-intro figure + figure {margin-top:0;margin-bottom:0;}
+.product-detail-intro-image {width:50%;margin:4rem 2.5% -4rem;padding-top:60%;box-sizing:border-box;background:url('https://source.unsplash.com/random') no-repeat center center;background-size:cover;border-radius:var(--radius400);}
+.product-detail-intro-image + figure {margin-top:0;margin-bottom:0;}
 
 .product-detail-summary dl {width:66.6666%;overflow:hidden;box-sizing:border-box;}
 .product-detail-summary dt {float:left;width:8rem;margin:.25rem 0;color:var(--gray400);}

@@ -30,7 +30,7 @@
 .design-article-description {margin:0 0 1.5rem 0;}
 .design-article-more {display:flex;align-items:center;font-size:var(--caption);color:var(--color-primary);font-weight:bold;position:absolute;right:0;top:0;}
 .design-article-more i {margin-left:1.5rem;}
-.design-article.is-scrolled {animation:fadeup .8s;}
+.design-article.is-scrolled {animation:fadeup .8s both;}
 
 .design-typograph-group {display:flex;justify-content:space-between;margin:0 0 -1rem 0;}
 .design-typograph-item {@include outer-flat;margin:1rem 0;}

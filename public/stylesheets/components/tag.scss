@@ -1,9 +1,13 @@
 @mixin tag {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+  
   // height: var(--cell-small);
+
+  display: inline-block;
   height: 24px;
+  line-height: 23px;
   font-size: var(--caption);
   &.is-disabled {
     background-color: var(--gray200);

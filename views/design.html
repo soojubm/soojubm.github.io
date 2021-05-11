@@ -32,7 +32,7 @@
     <img class="hero-obj4" src="/public/images/blob-shape.svg" alt="" />
   </section>
 
-  <section class="design-body">
+  <article class="design-body">
     <article class="textbox" hidden>
       <div class="textbox-toolbar">
         <button class="textbox-toolbar-bold">B</button>
@@ -73,37 +73,51 @@
     <article class="design-article">
       <div id="counter"></div>
       <h1 class="design-article-title">Principles <small>🔥</small></h1>
-      <p class="design-article-description">디자인시스템에도 완성은 존재하지 않습니다. 린하게..</p>
+      <p class="design-article-description">디자인시스템도 제품과 마찬가지로 완성은 존재하지 않습니다요...</p>
 
-      <small class="tag">단순성</small>
-      <p>모바일 퍼스트. 그리드 시스템이 실제로 효율적인가?</p>
-      <p>가능한 모든 경우의 수를 나열하는 것이 아니고 줄일 수 있으면 무조건 줄여야 한다.</p>
-      <p>시스템은 유아이 라이브러리가 아닙니다. 개발 구현 난이도를 고려해야 하고 가능한 최소한의 가이드를 유지하세요.</p>
+      <div class="tag" style="margin:0 0 .5rem 0;">단순성</div>
+      <p>모바일 퍼스트. 그리드 시스템(12 columns grid / 8pt grid)이 실제로 효율적인가?</p>
+      <p>시스템은 유아이 라이브러리가 아닙니다. 가능한 모든 경우의 수를 나열해서는 안 된다. 개발 구현 난이도를 고려해야 하고 가능한 최소한의 가이드를 유지하세요.</p>
       <br />
-      <small class="tag">유동성</small>
+      <div class="tag" style="margin:0 0 .5rem 0;">유동성</div>
       <p>마크업 구조를 단순하게 유지하기 위해 position 속성을 적극적으로 활용하세요.</p>
       <br />
-      <small class="tag">명료성</small>
+      <div class="tag" style="margin:0 0 .5rem 0;">명료성</div>
       <p>UI는 특정 서비스에 종속되지 않는 보편타당해야 합니다.</p>
+    </article>
 
-      <!-- <dl>
-        <dt>금액</dt><dd>formatPrice() KRW / ₩ 1,000</dd>
-        <dt>날짜</dt><dd>formatDate() YYYY/MM/DD</dd>
-        <dt>아이콘과이모지</dt><dd>클릭 어포던스를 강화하기 위해서만 사용하세요. 지금 이모지 남용하는 중.</dd>
-        <dt>말줄임표</dt><dd>-</dd>
-        <dt>수량</dt>
-        <dd class="guide" style="display:flex;">
-          <div class="guide-do">
-            <span><i class="icon-o"></i></span> 두개
-          </div>
-          <div class="guide-donot">
-            <span><i class="icon-close"></i></span> 2개
-          </div>
-        </dd>
-        <dt>불릿</dt><dd>슬래시로 사용. 정보가 복잡도가 증가하기 때문에 최소화하세요. 위계를 설정하고 시각화를 고민하세요. 콤마, 콜론, 슬래시, 괄호, 유저의 행동과 관련된 유아이에서는 사용하지 마시라.</dd>
+    <article class="design-article">
+      <h1 class="design-article-title">Rules 🔥</h1>
+      <p class="design-article-description">디자인시스템도 제품과 마찬가지로 완성은 존재하지 않습니다요...</p>
+      <div class="tag" style="margin:0 0 .5rem 0;">금액</div>
+      <p>formatPrice(KRW) ₩ 1,000</p>
+      <br />
+      <div class="tag" style="margin:0 0 .5rem 0;">날짜</div>
+      <p>formatDate() YYYY/MM/DD</p>
+      <br />
+      <div class="tag" style="margin:0 0 .5rem 0;">불릿</div>
+      <p>슬래시로 사용. 정보가 복잡도가 증가하기 때문에 최소화하세요. 위계를 설정하고 시각화를 고민하세요. 콤마, 콜론, 슬래시, 괄호, 유저의 행동과 관련된 유아이에서는 사용하지 마시라.</p>
+      <br />
+      <div class="tag" style="margin:0 0 .5rem 0;">아이콘 / 이모지</div>
+      <p>클릭 어포던스를 강화하기 위해서만 사용하세요. 지금 이모지 남용하는 중.</p>
+      <br />
+      <div class="tag" style="margin:0 0 .5rem 0;">수량</div>
+      <p class="guide">
+        <div class="guide-do">
+          <span><i class="icon-o"></i></span> 두개
+        </div>
+        <div class="guide-donot">
+          <span><i class="icon-close"></i></span> 2개
+        </div>
+      </p>
+      <br />
+      <div class="tag" style="margin:0 0 .5rem 0;">말줄임표</div>
+      <p></p>
+
+      <dl>
         <dt>접근성</dt><dd>모양(네모, 동그란 등), 방향(왼쪽/오른쪽/위/아래), 위치(여기/이곳), 색상 등을 가이드 텍스트에 포함하지 마세요. </dd>
-      </dl> -->
-      <div hidden>
+      </dl>
+      <div>
         <h3 class="accordion-trigger js-toggle" role="button" aria-expanded="false">
           Role Attributes
           <span class="accordion-trigger-icon"><i class="icon-plus"></i></span>
@@ -113,7 +127,7 @@
           tablist / tab / <br />
         </article>
       </div>
-      <ol hidden>
+      <ol>
         <li>더보기와 모두보기를 구분해서 사용.</li>
         <li>자주 틀리는 writing 모두 / 전체, 총결제금액 vs 결제예정금액 / 검색 결과 2개?</li>
         <li>결제가 완료되었습니다 => 상품이 결제되었습니다 ? 주문 목록에서 태깅할 때 결제완료, 결제대기가 익숙함.</li>
@@ -125,7 +139,6 @@
         <li>-하기 / 취소 / 다음에</li>
       </ol>
     </article>
-
     <!-- <article class="design-article">
       <h1 class="design-article-title">Grid System or Container Rules 🔥</h1>
       <ul class="design-article-description">
@@ -170,14 +183,12 @@
     </video>
   </figure>
 
-  
   <picture>
     <!-- Use this image if the user's OS setting is light or unset -->
     <source srcset="photo-light.png" media="(prefers-color-scheme: light) or (prefers-color-scheme: no-preference)">
     <!-- Use this image if the user's OS setting is dark -->
     <source srcset="photo-dark.png" media="(prefers-color-scheme: dark)">
   </picture>
-
   <picture>
     <source type="image/svg+xml" srcset="pyramid.svg">
     <source type="image/webp" srcset="pyramid.webp">
@@ -279,7 +290,7 @@
       </div> -->
       <div class="design-typograph-item">
         <h1 style="font-size:var(--title);font-weight:bold;">Large, 2rem</h1>
-        <p style="margin:1rem 0 0 0;">heading - bold</p>
+        <p style="margin:.5rem 0 0 0;">heading - bold</p>
       </div>
       <div class="design-typograph-item">
         <h2 style="font-size:var(--subhead);font-weight:bold;">Medium, 1.25rem</h2>
@@ -334,7 +345,7 @@
         <div class="space" style="height:100%;position:absolute;left:0;right:calc(100% - 1.5rem);top:0;bottom:0;z-index:0;"><span class="tag">1.5rem</span></div>
         <div class="space" style="height:100%;position:absolute;left:calc(100% - 1.5rem);right:0;top:0;bottom:0;z-index:0;"><span class="tag">1.5rem</span></div>
         <h4 class="typography-subhead" style="font-size:1.25rem;">선약이 있어서 ✋ <span style="display:block;">자아실현은 못할 것 같아요.</네무></h4>
-        <div class="space"><span class="tag">1rem</span></div>
+        <div class="space" style="height:1rem;"><span class="tag">1rem</span></div>
         <p class="typography-paragraph">서브헤드와 디스크립션 혹은 패러그라프는 이렇게 사용하세요. 타이틀의 line-height가 조정되었기 때문에 시각보정이 필요할 수도 있어요. 최상단에 텍스트일 때 시각보정이 필요할 수 있어요. 최하단이 텍스트일 때 하단 간격을 상단보다 더 주어야?</p>
         <div class="space" style="height:2rem;"><span class="tag">2rem</span></div>
         <time class="typography-caption">10 January, 2020</time>
@@ -527,7 +538,7 @@
 
     <article class="design-article">
       <h1 class="design-article-title">Radioes</h1>
-      <p class="design-article-description">하나의 기본 선택을 제공하고 5개 이하의 옵션에서 사용하세요. 체크박스와 마찬가지로 세로 정렬만 사용하세요.</p>
+      <p class="design-article-description">선택된 기본 옵션이 필요합니다. 5개 이하의 옵션에서 사용하세요.</p>
       <!-- (리액트에서 id 관련 이슈 input in label.) -->
       <fieldset role="radiogroup">
         <legend>radiogroup legend</legend>
@@ -691,11 +702,10 @@
 
     <article class="design-article js-tab">
       <h1 class="design-article-title">Tab</h1>
-      <p class="design-article-description">여러 개의 탭이 중첩되지 않도록 플로우를 설계하는 것이 중요합니다. 필터와 혼동하지 마세요.<p>
+      <p class="design-article-description">여러 개의 탭이 중첩되지 않도록 플로우를 설계하는 것이 중요합니다. 전체 콘텐츠가 변경되는 경우 사용합니다. 필터링에 사용할 수 없습니다.<p>
       <blockquote>
         <i>🔨</i> 탭을 클릭할 때 브라우저 히스토리에 추가하는 것이 사용자 경험에 좋을까?<br />TODO 탭의 중첩되는 경우 / 스크롤스파이 / 가로 스크롤 / Segmented Control처럼 생겼는데 HIG에서 탭과의 차이를 어떻게 정의하는지?
       </blockquote>
-      <hr />
       <nav class="profile-tablist" role="tablist">
 				<button class="profile-tablist-tab" role="tab" aria-selected="true">🐗 프로젝트 <i class="profile-tablist-tab-badge">5</i></button>
 				<button class="profile-tablist-tab" role="tab" aria-selected="false">🕸️ 웹페이지 <i class="profile-tablist-tab-badge">5</i></button>
@@ -853,7 +863,7 @@
       <h1 class="design-article-title">Tooltip</h1>
       <p class="design-article-description">툴팁은 항상 트리거의 아래에 열립니다.</p>
       <blockquote>
-        페이지를 불러왔을 때 툴팁이 열려 있는 경우에는 doorhanger가 필요하다.
+        페이지 로딩과 동시에 툴팁이 열려 있는 경우에는 doorhanger가 필요하다.
       </blockquote>
       <aside class="tooltip" role="tooltip">
         <span class="tooltip-target">툴팁 <i>?</i></span>
@@ -918,6 +928,9 @@
     <article class="design-article">
       <h1 class="design-article-title">Summary</h1>
       <p class="design-article-description">작성 중.</p>
+      <blockquote>
+        <p>label을 위한 회색 서브헤딩 스타일이 필요할까?</p>
+      </blockquote>
       <section class="summary">
         <div class="summary-item">
           <div class="summary-item-label">상품 금액</div>
@@ -1174,7 +1187,8 @@
         <button class="sheet-toggle"></button>
         <header>
           <h1>Followers</h1>
-          <a href="#">모든 팔로워 보기</a>
+          <a href="#" style="color: var(--gray800);
+          text-decoration: underline;">모든 팔로워 보기</a>
         </header>
         <hr />
         <div class="profile-user" style="width:100%;height:48px;" role="listitem">

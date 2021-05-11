@@ -209,6 +209,10 @@ async function domEvents() {
   event.positionSticky({ selector: '.js-post-head', addClass: 'is-sticky-post-head', isPassed: true })
 
   event.scrollAnimation({ selector: '.js-observer'})
+
+  event.parallax('.js-parallax')
+
+
   // event.scrollspy({ menusSelector: '.js-section', sectionsSelector: '.newneek-navbar-menu-item' })
 
   createGraph()
