@@ -55,6 +55,39 @@ document.addEventListener('readystatechange', () => console.log(document.readySt
 async function domEvents() {
   await routePage()
 
+  
+var counter = document.querySelector('#counter');
+if(counter) {
+  
+  // var number = 0;
+  // const text = counter!.textContent || ''
+  // let temp = number >= parseInt(text)
+
+  // const interval = setInterval(() => {
+  // console.log(temp, number, parseInt(text))
+    
+  //   number++;
+  //   counter!.textContent = String(number);
+  //   if(temp)  {
+  //     clearInterval(interval)
+  //     return 
+  //   }
+  // }, 30)
+
+  
+  // Start the animation
+  // window.requestAnimationFrame(countUp);
+  // setInterval(countUp, 30)
+}
+
+
+// // Setup the animation
+// var animation = window.requestAnimationFrame(function () {
+// 	console.log('ran!');
+// });
+
+// window.cancelAnimationFrame(animation);
+
   const hash = window.location.hash.substring(1)
   const page = routes.find(route => route.path.substring(1) === hash)
   const pageTitleElement = document.querySelector('.js-page-title')
@@ -581,29 +614,7 @@ function focusComment() {
 // 	return sibling !== elem;
 // });
 
-// var counter = document.querySelector('#counter');
-// if(counter) {
-//   var number = 0;
 
-//   var countUp = function () {
-//     number++;
-//     counter!.textContent = String(number);
-
-//     // if the number is less than 500, run it again
-//     if (number < 500) {
-//       window.requestAnimationFrame(countUp);
-//     }
-//   };
-//   // Start the animation
-//   window.requestAnimationFrame(countUp);
-// }
-
-// // Setup the animation
-// var animation = window.requestAnimationFrame(function () {
-// 	console.log('ran!');
-// });
-
-// window.cancelAnimationFrame(animation);
 
 
 // function bustCache() {
