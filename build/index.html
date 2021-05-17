@@ -7,14 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=1.0, viewport-fit=cover" />
     <meta name="format-detection" content="telephone=no, email=no, address=no" />
     <meta name="robots" content="noindex" />
-    <meta name="theme-color" content="rgba(255,255,255,.8)" />
 
-    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="rgba(255,255,255,.8)" />
+    <meta name="color-scheme" content="light dark" />
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-stylnpe" content="black-translucent" />
     <meta name="mobile-web-app-capable" content="yes" />
-
-    <meta name="msapplication-config" content="browserconfig.xml" />
-    <meta name="msapplication-square310x310logo" content="/icon_largetile.png" />
 
     <meta name="author" content="soojubm" />
     <meta name="subject" content="수줍이의 포트폴리오" />
@@ -26,9 +25,9 @@
     <meta property="og:site_name" content="soojubm" />
     <meta property="og:url" content="https://soojubm.github.io" />
     <meta property="og:title" content="수줍이의 포트폴리오" />
-    <meta property="og:image" content="/images/open-graph.png" />
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
+    <meta property="og:image" content="/public/images/open-graph.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:description" content="부끄러우니까 보지마요." />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@" />
@@ -36,12 +35,28 @@
     <meta name="twitter:url" content="https://soojubm.github.io" />
     <meta name="twitter:title" content="수줍이의 포트폴리오" />
     <meta name="twitter:description" content="부끄러우니까 보지마요." />
-    <meta name="twitter:image" content="https://example.com/image.jpg">
+    <meta name="twitter:image" content="https://example.com/image.jpg" />
 
     <link rel="canonical" href="https://soojubm.github.io/" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png" />
-    <link rel="apple-touch-icon" href="" /> <!-- 200x200 -->
+
+    <link rel="shortcut icon" href="/favicon/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon/favicon-48x48.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon/favicon-64x64.png" />
+    <link rel="icon" type="image/png" sizes="196x196" href="/favicon/favicon-196x196.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-touch-icon-152x152.png" />
+    <meta name="msapplication-TileImage" content="/favicon/mstile-144x144.png" />
+    <meta name="msapplication-config" content="browserconfig.xml" />
+    <meta name="msapplication-square310x310logo" content="/icon_largetile.png" />
 
     <link rel="stylesheet" href="./build/style.css" />
 
@@ -89,17 +104,16 @@
       //   });
       // }
 
-      // Create new link element
       // const link = document.createElement('link');
       // link.setAttribute('rel', 'stylesheet');
       // link.setAttribute('href', '');
       // document.head.appendChild(link);
     </script>
-  <script defer src="/bundle.js"></script><link href="/style.css" rel="stylesheet"></head>
+  <script defer src="bundle.js"></script><link href="style.css" rel="stylesheet"></head>
   <body>
     <noscript>This website requires JavaScript.</noscript>
 
-    <aside class="browser js-browser" role="complementary" hidden>
+    <aside class="browser js-browser" role="complementary">
       <p>이 사이트는 크롬 브라우저에 최적화되어 있습니다.</p>
       <a href="https://www.google.co.kr/chrome/index.html" class="button">크롬 브라우저 다운로드</a>
     </aside>
@@ -112,7 +126,7 @@
       <div class="loader-spinner js-loader-spinner"></div>
     </aside>
 
-    <nav class="skip">
+    <nav class="skip" role="navigation">
       <a class="skip-link" href="#header">본문 바로가기</a>
       <a class="skip-link" href="#navigation">대메뉴 바로가기</a>
       <a class="skip-link" href="#footer">하단정보 바로가기</a>
@@ -144,122 +158,128 @@
         </div>
         <a route="/design" class="navbar-menu-item" href="#design">디자인시스템</a>
       </div>
-      <div class="navbar-user">
-        <div class="navbar-user-search" role="search" aria-label="site" hidden>
-          <a class="navbar-user-search-trigger js-navbar-toggle" href="#">
-            <i class="icon-search"></i>
-            <!-- <img src="/public/icons/search.svg" alt="" /> -->
-          </a>
-          <form class="search-form" hidden>
-            <button class="search-form-close js-close" aria-label="delete"><i class="icon-arrow"></i></button>
-            <!-- <p role="status">수줍이와(과) 일치하는 검색결과가 없습니다.</p> -->
-            <fieldset class="search-form-field textfield">
-              <legend class="filter-fieldset-legend" hidden aria-hidden="true">검색하기</legend>
-              <label class="textfiled-label" for="help-search" hidden aria-hidden="true">검색하기</label>
-              <input class="textfield-input" type="search" id="help-search" placeholder="검색어를 입력해 주세요." />
-              <button class="textfield-reset" type="reset" hidden title="clear search input">
-                <i class="icon-close"></i>
-              </button>
-            </fieldset>
 
-            <!-- <button type="submit">
-              <span class="visually-hidden">Submit</span>
-              <svg role="img"></svg>
-            </button> -->
-            <section class="search-recommend">
-              <h2 class="search-recommend-title">당신을 위한 추천</h2>
-              <a class="search-recommend-item" href="#">개구리</a>
-              <a class="search-recommend-item" href="#">달팽이</a>
-              <a class="search-recommend-item" href="#">매미</a>
-            </section>
-          </form>
-        </div>
-        <div class="navbar-user-notification">
-          <a class="navbar-user-notification-trigger js-navbar-toggle" href="#" aria-haspopup="true" aria-expanded="false">
-            <img src="/public/icons/bell.svg" />
-            <em>new</em>
-          </a>
-          <!-- <menu class="navbar-user-notification-empty">
-            <p>최근 알림 메세지가 없습니다.</p>
-          </menu> -->
-          <menu class="navbar-user-notification-menu">
-            <h6 class="navbar-user-notification-menu-title">알림</h6>
-            <hr />
-            <div class="notification-item">
-              <em class="notification-unread"></em>
-              <figure class="notification-item-avatar"></figure>
-              <h2 class="notification-item-title">John Cassavetes</h2>
-              <time class="notification-item-date" style="position:absolute;right:0;top:0;">5일 전</time>
-              <span class="notification-item-title" style="color:var(--gray400);">comment on <em>John Cassavetes</em></span>
-            </div>
-            <div class="notification-item">
-              <em class="notification-unread">🌱</em>
-              <figure class="notification-item-avatar"></figure>
-              <h2 class="notification-item-title">John Cassavetes</h2>
-              <time class="notification-item-date" style="position:absolute;right:0;top:0;">5일 전</time>
-              <span class="notification-item-title" style="color:var(--gray400);">like on <em>John Cassavetes</em></span>
-            </div>
-            <footer>
-              <button>알림 전체 보기</button>
-            </footer>
-          </menu>
-        </div>
-        <div class="navbar-user-account">
-          <button class="navbar-user-account-trigger js-navbar-toggle" aria-haspopup="menu" aria-expanded="false">
-            <span class="navbar-user-account-trigger-media"><img src="/public/images/soo.png" alt=""/></span>
+      <div class="navbar-search" role="search" aria-label="site" hidden>
+        <a class="navbar-search-trigger js-navbar-toggle" href="#">
+          <i class="icon-search"></i>
+          <!-- <img src="/public/icons/search.svg" alt="" /> -->
+        </a>
+        <form class="search-form" hidden>
+          <button class="search-form-close js-close" aria-label="delete">
+            <i class="icon-arrow"></i>
           </button>
-          <div class="navbar-user-account-menu">
-            <article class="user">
-              <figure class="user-avatar">
-                <img src="/public/images/soo.png" alt="" />
-                <div class="user-avatar-change"></div>
-              </figure>
-              <h2 class="user-name">soojubm</h2>
-              <div class="user-email">soojubm@gamil.com</div>
-              <a class="user-myinfo" href="#settings">내 프로필 관리</a>
-            </article>
-            <hr role="separator" />
-            <!-- <div class="switch-wrap" style="position:absolute;right:0;top:0;">
-              <span class="switch js-darkmode">
-                <span class="day">🌑</span>
-                <span class="night">🌙</span>
-              </span>
-            </div> -->
-            <button class="user-logout js-darkmode" title="change theme">
-              <span class="user-logout-icon"><i class="icon-moon"></i></span>
-              어둡게 보기
-              <span class="switch" style="margin-left:auto;">
-                <input type="checkbox" id="temp55" name="" role="switch" />
-                <label for="temp55" style="padding-left:48px;"></label>
-              </span>
+          <!-- <p role="status">수줍이와(과) 일치하는 검색결과가 없습니다.</p> -->
+          <fieldset class="search-form-field textfield">
+            <legend class="filter-fieldset-legend" hidden aria-hidden="true">
+              검색하기
+            </legend>
+            <label class="textfiled-label" for="help-search" hidden aria-hidden="true">검색하기</label>
+            <input class="textfield-input" type="search" id="help-search" placeholder="검색어를 입력해 주세요." />
+            <button class="textfield-reset" type="reset" hidden title="clear search input">
+              <i class="icon-close"></i>
             </button>
-            <button class="user-logout js-default-font" title="change theme">
-              <span class="user-logout-icon"><i class="icon-moon"></i></span>
-              시스템 폰트로 보기
-            </button>
-            <button class="user-logout" title="sign out">
-              <span class="user-logout-icon">
-                <i class="icon-out"><span class="icon-out-door"></span></i>
-              </span>
-              고객센터 및 도움말
-              <!-- <span style="display:flex;align-items:center;justify-content:center;background:var(--gray100);width:32px;height:32px;border-radius:var(--radius400);margin-left:auto;"><i class="icon-arrow"></i></span> -->
-            </button>
-            <hr />
-            <button class="user-logout" title="sign out">
-              <span class="user-logout-icon">
-                <i class="icon-out"><span class="icon-out-door"></span></i>
-              </span>
-              로그아웃
-            </button>
-            <hr role="separator" />
-            <footer class="user-footer">
-              <a href="#">Privacy Policy</a>
-              <i class="icon-bullet"></i>
-              <a href="#">Terms of Service</a>
-            </footer>
+          </fieldset>
+          <!-- <button type="submit">
+            <span class="visually-hidden">Submit</span>
+            <svg role="img"></svg>
+          </button> -->
+          <section class="search-recommend">
+            <h2 class="search-recommend-title">당신을 위한 추천</h2>
+            <a class="search-recommend-item" href="#">개구리</a>
+            <a class="search-recommend-item" href="#">달팽이</a>
+            <a class="search-recommend-item" href="#">매미</a>
+          </section>
+        </form>
+      </div>
+
+      <div class="navbar-notification" style="margin-left:auto;">
+        <a class="navbar-notification-trigger js-navbar-toggle" href="#" aria-haspopup="true" aria-expanded="false">
+          <img src="/public/icons/bell.svg" />
+          <em>new</em>
+        </a>
+        <!-- <menu class="navbar-notification-empty">
+          <p>최근 알림 메세지가 없습니다.</p>
+        </menu> -->
+        <menu class="navbar-notification-menu">
+          <h6 class="navbar-notification-menu-title">알림</h6>
+          <hr />
+          <div class="notification-item">
+            <em class="notification-unread"></em>
+            <figure class="notification-item-avatar"></figure>
+            <h2 class="notification-item-user">John Cassavetes</h2>
+            <time class="notification-item-date" style="position:absolute;right:0;top:0;">5일 전</time>
+            <span class="notification-item-content" style="color:var(--gray400);">comment on <em>John Cassavetes</em></span>
           </div>
+          <div class="notification-item">
+            <em class="notification-unread">🌱</em>
+            <figure class="notification-item-avatar"></figure>
+            <h2 class="notification-item-user">John Cassavetes</h2>
+            <time class="notification-item-date" style="position:absolute;right:0;top:0;">5일 전</time>
+            <span class="notification-item-content" style="color:var(--gray400);">like on <em>John Cassavetes</em></span>
+          </div>
+          <footer>
+            <button>알림 전체 보기</button>
+          </footer>
+        </menu>
+      </div>
+
+      <div class="navbar-user">
+        <button class="navbar-user-trigger js-navbar-toggle" aria-haspopup="menu" aria-expanded="false">
+          <span class="navbar-user-trigger-media"><img src="/public/images/soo.png" alt=""/></span>
+        </button>
+        <div class="navbar-user-menu">
+          <a class="user" href="#settings">
+            <figure class="user-avatar">
+              <img src="/public/images/soo.png" alt="" />
+              <div class="user-avatar-change"></div>
+            </figure>
+            <h2 class="user-name">soojubm</h2>
+            <div class="user-email">soojubm@gamil.com</div>
+            <div class="user-myinfo">내 프로필 관리</div>
+          </a>
+          <hr role="separator" />
+          <!-- <div class="switch-wrap" style="position:absolute;right:0;top:0;">
+            <span class="switch js-darkmode">
+              <span class="day">🌑</span>
+              <span class="night">🌙</span>
+            </span>
+          </div> -->
+          <button class="user-logout js-darkmode" title="change theme">
+            <span class="user-logout-icon"><i class="icon-moon"></i></span>
+            어둡게 보기
+            <span class="switch" style="margin-left:auto;">
+              <input type="checkbox" id="temp55" name="" role="switch" />
+              <label for="temp55" style="padding-left:48px;"></label>
+            </span>
+          </button>
+          <button class="user-logout js-default-font" title="change theme">
+            <span class="user-logout-icon"><i class="icon-moon"></i></span>
+            시스템 폰트로 보기
+          </button>
+          <button class="user-logout" title="sign out">
+            <span class="user-logout-icon">
+              <i class="icon-out"><span class="icon-out-door"></span></i>
+            </span>
+            고객센터 및 도움말
+            <!-- <span style="display:flex;align-items:center;justify-content:center;background:var(--gray100);width:32px;height:32px;border-radius:var(--radius400);margin-left:auto;"><i class="icon-arrow"></i></span> -->
+          </button>
+          <hr />
+          <button class="user-logout" title="sign out">
+            <span class="user-logout-icon">
+              <i class="icon-out"><span class="icon-out-door"></span></i>
+            </span>
+            로그아웃
+          </button>
+          <hr role="separator" />
+          <footer class="user-footer">
+            <a href="#">Privacy Policy</a>
+            <i class="icon-bullet"></i>
+            <a href="#">Terms of Service</a>
+          </footer>
         </div>
       </div>
+
+      <!-- <div class="navbar-user"></div> -->
     </nav>
 
     <header class="header js-header" role="navigation">
@@ -268,7 +288,12 @@
         <span class="header-back-icon"><i class="icon-arrow"></i></span>
       </button>
       <button class="header-cta">
-        <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" svg-inline="" role="presentation" focusable="false" tabindex="-1" class="icon-16"><path d="M0 12.782c0 .85.1 1.65.3 2.45.1.45.35.45.5 0 1.05-2.65 2.75-5.15 5.55-5.65H8v2.2c0 1 .6 1.3 1.3.7l6.4-5.5c.35-.3.35-.8 0-1.15L9.3.332c-.7-.65-1.3-.3-1.3.65v2.35c-4.8.8-8 4.7-8 9.45z" fill="currentColor"></path></svg>
+        <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" svg-inline="" role="presentation" focusable="false" tabindex="-1" class="icon-16">
+          <path
+            d="M0 12.782c0 .85.1 1.65.3 2.45.1.45.35.45.5 0 1.05-2.65 2.75-5.15 5.55-5.65H8v2.2c0 1 .6 1.3 1.3.7l6.4-5.5c.35-.3.35-.8 0-1.15L9.3.332c-.7-.65-1.3-.3-1.3.65v2.35c-4.8.8-8 4.7-8 9.45z"
+            fill="currentColor"
+          ></path>
+        </svg>
       </button>
     </header>
     <!-- <header class="header-backdrop js-header"></header> -->
@@ -277,26 +302,20 @@
       <div class="home"></div>
     </div>
 
-    <form class="subscribe" hidden>
-      <h2 class="subscribe-title">수줍이 뉴스레터를 정기구독하세요.</h2>
-      <p class="subscribe-description">사실 그런 건 없고 유아이 콤포넌트 입니다. <br />텍스트를 한 줄 더 만들기 위해서 아무말이나 해봅니다.</p>
-      <div class="subscribe-field textfield">
-        <input class="textfield-input" placeholder="Enter Your Email.." />
-      </div>
-      <button class="subscribe-submit" type="submit">신청하기</button>
-      <p class="subscribe-helper" style="max-width:400px;">By submitting this newsletter request, I consent to Anchor sending me communication via email. I may opt out at any time. View Anchor’s <a href="">Privacy Policy</a>.</p>
-    </form>
-
     <footer class="footer" role="contentinfo">
       <!-- <div class="skeleton-screen"></div> -->
       <div class="footer-background"></div>
       <aside class="footer-scroll" hidden>
-        <p class="footer-scroll-indicator" hidden aria-hidden="true">스크롤하세요</p>
+        <p class="footer-scroll-indicator" hidden aria-hidden="true">
+          스크롤하세요
+        </p>
         <button class="footer-scroll-bottom js-to-bottom">아래로</button>
         <button class="footer-scroll-top js-to-top"><i class="icon-arrow"></i> <b hidden aria-hidden="true">맨위로</b></button>
       </aside>
       <nav class="footer-sitemap">
-        <h1 class="footer-sitemap-title" hidden aria-hidden="true">하단 사이트맵 <small hidden aria-hidden="true">More Articles by themes</small></h1>
+        <h1 class="footer-sitemap-title" hidden aria-hidden="true">
+          하단 사이트맵
+        </h1>
         <div class="footer-sitemap-item">
           <h2 class="footer-sitemap-item-title">About</h2>
           <a class="footer-sitemap-item-link" href="#">교통버스</a>
@@ -318,7 +337,9 @@
       <br />
       <address class="footer-address">
         <span class="footer-address-logo" style="font-size:2rem;">🐤</span>
-        <p class="footer-address-slogan" style="margin:1rem 0 0 0;">부끄러우니까 보지마요.</p>
+        <p class="footer-address-slogan" style="margin:1rem 0 0 0;">
+          부끄러우니까 보지마요.
+        </p>
         <br />
         <div class="footer-address-info">
           주식회사 수줍이 / 서울시 강서구 화곡로 1818, 3층<br />
@@ -330,33 +351,16 @@
           <abbr title="phone"></abbr>
         </div>
         <br />
-        <small class="footer-copyright" role="copyright">© 2019 soojubm. All rights Reserved.
-        <p>이 제작물은 아모레퍼시픽의 아리따글꼴을 사용하여 디자인 되었습니다.</p>
-
+        <small class="footer-copyright" role="copyright"
+          >© 2019 soojubm. All rights Reserved.
+          <p>
+            이 제작물은 아모레퍼시픽의 아리따글꼴을 사용하여 디자인 되었습니다.
+          </p>
         </small>
-        <!-- <div class="countdown">
-          <div class="days">
-            <div class="days-value js-days"></div>
-            <div class="days-label">days</div>
-          </div>
-          <div class="hours">
-            <div class="hours-value js-hours"></div>
-            <div class="hours-label">hours</div>
-          </div>
-          <div class="minutes">
-            <div class="minutes-value js-minutes"></div>
-            <div class="minutes-label">minutes</div>
-          </div>
-          <div class="seconds">
-            <div class="seconds-value js-seconds"></div>
-            <div class="seconds-label">seconds</div>
-          </div>
-        </div> -->
       </address>
     </footer>
     <aside id="modal"></aside>
-    <!-- <div class="clock"></div>
-    <script>
+    <!-- <script>
       var renderTime = function () {
         var time = new Date();
         document.querySelector('.clock').textContent = time.toLocaleString(navigator.language || 'en-US', {year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true});
@@ -366,21 +370,112 @@
       setInterval(renderTime, 1000);
     </script> -->
 
+    <!-- <div>
+      <div class="js-counter1" data-number="54">54%</div>
+      <div class="js-counter2" data-number="80">80%</div>
+    </div> -->
+
     <script>
-      window.addEventListener('online',  detectOnline)
-      window.addEventListener('offline',  detectOnline)
-      window.addEventListener('DOMContentLoaded',  detectOnline)
-      
+      function countUp({ selector: selector }) {
+        if (!selector) return
+
+        let number = 0
+        let element = document.querySelector(selector)
+        let elementValue = element.getAttribute('data-number')
+
+        if (!elementValue) return
+
+        let interval = setInterval(() => {
+          renderNumber()
+
+          if (number >= elementValue) clearInterval(interval)
+        }, 10)
+
+        function renderNumber() {
+          ++number
+          element.innerHTML = `${number}%`
+        }
+      }
+
+      setTimeout(() => {
+        countUp({ selector: '.js-counter' })
+        countUp({ selector: '.js-counter2' })
+      }, 2000)
+    </script>
+
+    <!-- <script>
+      let start = null
+      const element = document.querySelector('.js-navbar')
+
+      function step(timestamp) {
+        if (!start) start = timestamp
+        const progress = timestamp - start
+        element.style.marginLeft = Math.min(progress / 10, 200) + 'px'
+
+        if (progress >= 5000) return
+        window.requestAnimationFrame(step)
+      }
+
+      window.requestAnimationFrame(step)
+    </script> -->
+
+    <script>
+      window.addEventListener('online', detectOnline)
+      window.addEventListener('offline', detectOnline)
+      window.addEventListener('DOMContentLoaded', detectOnline)
+      window.addEventListener('DOMContentLoaded', detectBrowser)
+
+      function detectBrowser() {
+        const BrowserElement = document.querySelector('.js-browser')
+        if (!BrowserElement) return
+
+        const userAgent = navigator.userAgent.toLowerCase()
+        const isIEBrowser = userAgent.includes('msie') || userAgent.includes('trident')
+        // const isChromeBrowser = userAgent.indexOf('chrome') !== -1
+        // const isMacBrowser = /Mac|iPod|iPhone|iPad/.test(navigator.platform);
+
+        BrowserElement.hidden = !isIEBrowser
+        // todo return browser
+      }
+
       function detectOnline() {
         const isOnline = navigator.onLine
-        if(!isOnline) {
+        if (!isOnline) {
           const offlineElement = document.querySelector('.js-offline')
           offlineElement.style.display = 'block'
         }
         // window.alert(isOnline ? 'online' : 'offline')
       }
+
+      // let resizeTimer
+      // window.addEventListener('resize', () => {
+      //   document.body.classList.add('resize-animation-stopper')
+      //   clearTimeout(resizeTimer)
+      //   resizeTimer = setTimeout(() => {
+      //     document.body.classList.remove('resize-animation-stopper')
+      //   }, 400)
+      // })
     </script>
   </body>
 </html>
 
 <!-- <i class="cursor"></i> -->
+
+<!-- <div class="countdown">
+  <div class="days">
+    <div class="days-value js-days"></div>
+    <div class="days-label">days</div>
+  </div>
+  <div class="hours">
+    <div class="hours-value js-hours"></div>
+    <div class="hours-label">hours</div>
+  </div>
+  <div class="minutes">
+    <div class="minutes-value js-minutes"></div>
+    <div class="minutes-label">minutes</div>
+  </div>
+  <div class="seconds">
+    <div class="seconds-value js-seconds"></div>
+    <div class="seconds-label">seconds</div>
+  </div>
+</div> -->

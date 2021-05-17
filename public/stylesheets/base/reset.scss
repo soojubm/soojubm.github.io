@@ -74,6 +74,8 @@ svg {color:var(--gray800);}
 
 // [hidden] {display:none !important;}
 
+// p {word-break:keep-all;}
+
 @media (--viewport-small) {
   html {font-size:12px;}
 }
@@ -170,4 +172,10 @@ input[type=submit].visually-hidden:focus {
 
 .font-default {
   font-family: san-serif;
+}
+
+
+.resize-animation-stopper * {
+  animation: none !important;
+  transition: none !important;
 }

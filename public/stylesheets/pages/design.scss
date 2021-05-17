@@ -305,9 +305,15 @@
 
 .sheet {@include container-card;}
 .sheet-title {@include subhead;}
+.sheet button {position:relative;z-index:1;}
+.sheet button:hover {@include hover-item;}
 
 
 .keywords {@include outer-elevated;}
 .keywords-title {@include subhead;margin:0 0 1rem 0;}
 .keywords-group {}
 .keywords-group-keyword {@include chip;line-height:31px;}
+
+
+.outer-flat {@include outer-flat}
+.outer-elevated {@include outer-elevated}

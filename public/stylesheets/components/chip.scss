@@ -4,7 +4,7 @@
 }
 
 .chip {height:$cell-small;border:var(--border100);padding:0 1rem 2px;border-radius:var(--radius400);color:var(--gray800);position:relative;}
-.chip:hover {@include hover-item;}
+.chip:hover {}
 .chip-count {}
 .chip-icon {}
 .chip-icon .icon-caret {margin:0 0 0 .25rem;}

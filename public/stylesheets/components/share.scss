@@ -12,9 +12,9 @@
 .share-twitter:hover {@include hover-item;}
 .share-kakao {display:flex;align-items:center;width:100%;margin:1rem 0;position:relative;z-index:1;}
 .share-kakao:hover {@include hover-item;}
-.share-facebook-icon {@include box-small;margin-right:1rem;background:var(--color-facebook);}
-.share-twitter-icon {@include box-small;margin-right:1rem;background:var(--color-twitter);}
-.share-kakao-icon {@include box-small;margin-right:1rem;background:var(--color-kakao);}
+.share-facebook-icon {@include box-small;margin-right:1rem;background-color:var(--color-facebook) !important;}
+.share-twitter-icon {@include box-small;margin-right:1rem;background-color:var(--color-twitter);}
+.share-kakao-icon {@include box-small;margin-right:1rem;background-color:var(--color-kakao);}
 .share-copy {display:flex;flex-wrap:wrap;width:100%;}
 .share-copy-label {}
 .share-copy-url {}

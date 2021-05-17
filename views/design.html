@@ -73,7 +73,6 @@
     <article class="design-article">
       <h1 class="design-article-title">Principles <small>🔥</small></h1>
       <p class="design-article-description">디자인시스템도 제품과 마찬가지로 완성은 존재하지 않습니다요...</p>
-      <div id="counter">78%</div>
 
       <div class="tag" style="margin:0 0 .5rem 0;">단순성</div>
       <p>모바일 퍼스트. 그리드 시스템(12 columns grid / 8pt grid)이 실제로 효율적인가?</p>
@@ -86,7 +85,7 @@
       <p>UI는 특정 서비스에 종속되지 않는 보편타당해야 합니다.</p>
     </article>
 
-    <article class="design-article">
+    <!-- <article class="design-article">
       <h1 class="design-article-title">Rules 🔥</h1>
       <p class="design-article-description">디자인시스템도 제품과 마찬가지로 완성은 존재하지 않습니다요...</p>
       <div class="tag" style="margin:0 0 .5rem 0;">금액</div>
@@ -138,7 +137,7 @@
         <li>카드 안에서 좌우 여백: 데스크탑 2rem / 모바일 1.5rem 변수만들기.</li>
         <li>-하기 / 취소 / 다음에</li>
       </ol>
-    </article>
+    </article> -->
     <!-- <article class="design-article">
       <h1 class="design-article-title">Grid System or Container Rules 🔥</h1>
       <ul class="design-article-description">
@@ -190,7 +189,7 @@
   </picture>
   <picture>
     <source media="(max-width: 799px)" srcset="elva-480w-close-portrait.jpg">
-    <source media="(min-width: 800px)" srcset="elva-800w.jpg">
+    <!-- <source media="(min-width: 800px)" srcset="elva-800w.jpg"> -->
     <img src="elva-800w.jpg" alt="딸 엘바를 안고 서 있는 크리스">
   </picture>
   
@@ -320,18 +319,18 @@
       <blockquote>
         <p>실제로 제품 개발에 크게 도움이 되지 않음. 8pt 그리드도 마찬가지. rem 단위를 이해하기.</p>
       </blockquote>
-      <div style="max-width:375px;display:flex;align-items:center;height:10rem;line-height:10rem;text-align:center;font-size:var(--caption);position:relative;">
+      <div style="max-width:375px;display:flex;align-items:center;height:10rem;text-align:center;font-size:var(--caption);position:relative;">
         <div class="space" style="width:5%;background:var(--green100);"><span class="tag">5%</span></div>
-        <div style="width:calc(50% - 5% - .5rem);background:var(--gray100);">column, 50% - 0.5rem</div>
+        <div style="display:flex;align-items:center;justify-content:center;width:calc(50% - 5% - .5rem);height:100%;background:var(--gray100);">column<br />50% - 0.5rem</div>
         <div class="space" style="width:1rem;"><span class="tag">1rem</span></div>
-        <div style="width:calc(50% - 5% - .5rem);background:var(--gray100);">column, 50% - 0.5rem</div>
+        <div style="display:flex;align-items:center;justify-content:center;width:calc(50% - 5% - .5rem);height:100%;background:var(--gray100);">colum<br />50% - 0.5rem</div>
         <div class="space" style="width:5%;background:var(--green100);"><span class="tag">5%</span></div>
       </div>
     </article>
 
     <article class="design-article js-observer">
       <h1 class="design-article-title">Spacing System 🔥</h1>
-      <p class="design-article-description">fafaf</p>
+      <p class="design-article-description">작성 중.</p>
       <br />
       <div class="spacing-card">
         <div class="space" style="height:1.5rem;position:absolute;left:0;right:0;top:0;bottom:calc(100% - 1.5rem);"><span class="tag">1.5rem</span></div>
@@ -461,14 +460,14 @@
         input (with remove icon) / + numeric input
         <p>앞에 체크 아이콘, 뒤에 닫기 아이콘이 올 수 있음. 수량 표기. 주로 필터, 키워드(태그와 구분하여 사용).</p>
       </blockquote>
-      <h6>필터filter</h6>
+      <!-- <h6>필터filter</h6> -->
       <div class="js-chip" role="group">
         <button class="chip is-active">전체</button>
         <button class="chip">결제완료 <small class="chip-count">5</small></button>
         <button class="chip">주문취소 <small class="chip-count">2</small></button>
       </div>
       <hr role="separator" />
-      <h6>선택choice</h6>
+      <!-- <h6>선택choice</h6> -->
       <div role="group">
         <button class="chip">타이포그래피</button>
         <button class="chip is-active"><span class="chip-icon"><i class="icon-check" style="border-color: var(--color-primary);"></i></span> 영화</button>
@@ -735,7 +734,7 @@
         </div>
         <div class="sidebar-item" role="listitem">
           <h2 style="margin-right:1rem;font-size:1.25rem"><figure style="margin:0 1rem 0 0;">🏹</figure>양궁</h2>
-          <a class="sidebar-item-tag tag" href="#">새소식</a>
+          <a class="sidebar-item-tag tag" data-appearance="accent" href="#">새소식</a>
         </div>
         <hr />
         <h4 class="sidebar-heading">대분류</h4>
@@ -1150,16 +1149,18 @@
       <br />
       
       <article class="sheet">
-        <h3 class="sheet-title">정렬하기</h3>
-        <hr />
-        <div class="checkbox theme-right">
+        <!-- <h3 class="sheet-title">정렬하기</h3> -->
+        <!-- <hr /> -->
+        <button style="width:100%;display:flex;margin:0 0 .5rem 0;justify-content:space-between;font-size:1.25rem;">마음에 들어요 (시트에서) <i class="icon-heart"></i></button>
+        <button style="width:100%;display:flex;justify-content:space-between;font-size:1.25rem;">관심 없어요 <i class="icon-heart"></i></button>
+        <!-- <div class="checkbox theme-right">
           <input class="js-check" type="checkbox" id="sheet" name="sheet" value="sheet">
           <label for="sheet">인기순. 우측에 체크박스 있는 형태(모바일의 시트에서. 어포던스 키워야 함.)</label>
         </div>
         <div class="checkbox theme-right">
           <input class="js-check" type="checkbox" id="sheet" name="sheet" value="sheet">
           <label for="sheet">최신순</label>
-        </div>
+        </div> -->
       </article>
 
       <br />
@@ -1272,6 +1273,56 @@
           <b class="day-value">26</b>
         </div>
       </div>
+    </article>
+
+    <article class="design-article">
+      <h1 class="design-article-title">Subscribe</h1>
+      <p class="design-article-description">작성 중.</p>
+      
+      <form class="subscribe">
+        <h2 class="subscribe-title">수줍이 뉴스레터를 정기구독하세요.</h2>
+        <p class="subscribe-description">사실 그런 건 없고 유아이 콤포넌트 입니다. <br />텍스트를 한 줄 더 만들기 위해서 아무말이나 해봅니다.</p>
+        <div class="subscribe-field textfield">
+          <input class="textfield-input" placeholder="Enter Your Email.." />
+        </div>
+        <button class="subscribe-submit" type="submit">구독하기</button>
+        <p class="subscribe-helper" style="max-width:400px;">
+          By submitting this newsletter request, I consent to Anchor sending me communication via email. I may opt out at any time. View Anchor’s
+          <a href="#">Privacy Policy</a>.
+        </p>
+      </form>
+
+    </article>
+
+    <article class="design-article">
+      <h1 class="design-article-title">Feature</h1>
+      <p class="design-article-description">작성 중.</p>
+      
+      <div class="product-features-item design-outer-flat" style="max-width:100%;margin:2rem 0 0;margin-right:2rem;">
+        <span class="product-features-item-avatar" role="img">💃</span>
+        <h3 class="product-features-item-title">타이포그래피</h3>
+        <p class="product-features-item-description">남는 방 하나부터 별장까지, 다양한 형태의 공간을 무료로 등록하고 공유하세요. 남는 방 하나부터 별장까지, 다양한 형태의 공간을 무료로 등록하고 공유하세요.</p>
+        <a class="product-features-item-link" href="">자세히 보기</a>
+      </div>
+
+    </article>
+
+
+    <article class="design-article">
+      <h1 class="design-article-title">Index</h1>
+      <p class="design-article-description">작성 중.</p>
+      
+      <nav class="index">
+        <h2 class="index-title">Table of contents.</h2>
+        <ol>
+          <li><a href="">Xero</a></li>
+          <li><a href="">Xero</a></li>
+          <li><a href="">Xero</a></li>
+          <li><a href="">Xero</a></li>
+          <li><a href="">Xero</a></li>
+        </ol>
+      </nav>
+
     </article>
 
     <article class="design-article">

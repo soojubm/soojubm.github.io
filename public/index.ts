@@ -2,8 +2,8 @@
 
 import './stylesheets/style.scss'
 
-import routePage, { routes}  from './javascripts/router'
-import { initializeLoader, detectBrowser } from './javascripts/load'
+import routePage, { routes } from './javascripts/router'
+import { initializeLoader } from './javascripts/load'
 import darkTheme from './javascripts/local/darkTheme'
 import carousel from './javascripts/event/carousel'
 import event from './javascripts/event/index'
@@ -15,20 +15,18 @@ import { throttle } from './javascripts/utils/optimizationUtils'
 
 // import { validity } from './javascripts/utils/validations'
 // import { copyClipboard } from './javascripts/utils/formatUtils.js'
-// import { countDownClock } from './javascripts/countdown'
 
 window.addEventListener('hashchange', domEvents)
 window.addEventListener('hashchange', initializeNavbar)
 
 document.addEventListener('DOMContentLoaded', () => darkTheme('.js-darkmode'))
-document.addEventListener('DOMContentLoaded', detectBrowser)
+
 document.addEventListener('DOMContentLoaded', initializeLoader)
 document.addEventListener('DOMContentLoaded', domEvents)
 
 document.addEventListener('DOMContentLoaded', () => {
-
   event.toggleClass({ selector: '.js-navbar-toggle' }).initialize()
-  
+
   event.toTop({ selector: '.js-to-top' })
   event.positionSticky({ selector: '.js-header', addClass: 'is-sticky-header', isPassed: false })
 })
@@ -45,61 +43,27 @@ function scrollProgress() {
 
 window.addEventListener('load', () => console.log('loaded!'))
 
-window.addEventListener('beforeunload', () => "저장되지 않은 변경사항이 있습니다. 정말 페이지를 떠나실 건 가요?")
+window.addEventListener('beforeunload', () => '저장되지 않은 변경사항이 있습니다. 정말 페이지를 떠나실 건 가요?')
 window.addEventListener('unload', () => console.log('unload event'))
-document.addEventListener('readystatechange', () => console.log(document.readyState));
+document.addEventListener('readystatechange', () => console.log(document.readyState))
 
 // btn.setAttribute('aria-pressed', false);
 
-
 async function domEvents() {
   await routePage()
-
-  
-var counter = document.querySelector('#counter');
-if(counter) {
-  
-  // var number = 0;
-  // const text = counter!.textContent || ''
-  // let temp = number >= parseInt(text)
-
-  // const interval = setInterval(() => {
-  // console.log(temp, number, parseInt(text))
-    
-  //   number++;
-  //   counter!.textContent = String(number);
-  //   if(temp)  {
-  //     clearInterval(interval)
-  //     return 
-  //   }
-  // }, 30)
-
-  
-  // Start the animation
-  // window.requestAnimationFrame(countUp);
-  // setInterval(countUp, 30)
-}
-
-
-// // Setup the animation
-// var animation = window.requestAnimationFrame(function () {
-// 	console.log('ran!');
-// });
-
-// window.cancelAnimationFrame(animation);
 
   const hash = window.location.hash.substring(1)
   const page = routes.find(route => route.path.substring(1) === hash)
   const pageTitleElement = document.querySelector('.js-page-title')
 
-  if(pageTitleElement) {
+  if (pageTitleElement) {
     pageTitleElement.textContent = page?.name || '페이지타이틀'
   }
 
   const chip = document.querySelector('.js-chip')
   const chipElements = chip?.querySelectorAll('button')
-  // todo selector 
-  if(chip && chipElements) {
+  // todo selector
+  if (chip && chipElements) {
     chipElements.forEach(element => {
       element.addEventListener('click', event => {
         chipElements.forEach(element => element.classList.remove('is-active'))
@@ -107,7 +71,6 @@ if(counter) {
       })
     })
   }
-
 
   // // ! 디자인시스템에 추가한 거 임시
   darkTheme('.js-darkmode1')
@@ -197,7 +160,7 @@ if(counter) {
         // If the entry is not in the viewport, do nothing
         if (!entry.isIntersecting) return
         // Stop observing
-        observer.unobserve(entry.target);
+        observer.unobserve(entry.target)
         fetchData()
 
         // entry.target.classList.add('visible')
@@ -223,7 +186,6 @@ if(counter) {
     }
   }
 
-
   // removeEventListener
 
   input.checkbox({ checkAllSelector: '.js-checkall', checkSelector: '.js-check' }).initialize()
@@ -235,16 +197,15 @@ if(counter) {
   event.modal({ selector: '.js-modal' }).initialize()
 
   event.toggleClass({ selector: '.js-toggle' }).initialize()
-  
+
   event.enterTarget({ selector: '.js-hover-trigger' })
   event.tab()
   event.closeParentElement({ selector: '.js-close' })
   event.positionSticky({ selector: '.js-post-head', addClass: 'is-sticky-post-head', isPassed: true })
 
-  event.scrollAnimation({ selector: '.js-observer'})
+  event.scrollAnimation({ selector: '.js-observer' })
 
   event.parallax('.js-parallax')
-
 
   // event.scrollspy({ menusSelector: '.js-section', sectionsSelector: '.newneek-navbar-menu-item' })
 
@@ -253,8 +214,6 @@ if(counter) {
   carousel()
   revealPassword()
   focusComment()
-
-
 
   // document.querySelector('.js-copy')?.addEventListener('click', () => copyClipboard('fafaf'))
 
@@ -275,118 +234,113 @@ if(counter) {
   })
 }
 
-  // intersectionObserver
-  // if ('IntersectionObserver' in window && 'IntersectionObserverEntry' in window && 'intersectionRatio' in window.IntersectionObserverEntry.prototype) {
-  //   const lazyBackgrounds = [].slice.call(document.querySelectorAll('.js-parallax-test'))
-  //   const options = {
-  //     root: null,
-  //     rootMargin: '0px 0px 0px 0px',
-  //     threshold: 0.1,
-  //   }
-  //   let observer = new IntersectionObserver(callback, options)
+// intersectionObserver
+// if ('IntersectionObserver' in window && 'IntersectionObserverEntry' in window && 'intersectionRatio' in window.IntersectionObserverEntry.prototype) {
+//   const lazyBackgrounds = [].slice.call(document.querySelectorAll('.js-parallax-test'))
+//   const options = {
+//     root: null,
+//     rootMargin: '0px 0px 0px 0px',
+//     threshold: 0.1,
+//   }
+//   let observer = new IntersectionObserver(callback, options)
 
-  //   lazyBackgrounds.forEach(element => observer.observe(element))
-  // }
+//   lazyBackgrounds.forEach(element => observer.observe(element))
+// }
 
-  // function callback(entries, observer) {
-  //   entries.forEach(entry => {
-      
-  //     if (!entry.isIntersecting) return
+// function callback(entries, observer) {
+//   entries.forEach(entry => {
 
-  //     if(entry.intersectionRatio > 0) {
-  //       entry.target.style.animation = `fadeup 1s fowards ease-out`
-  //       entry.target.classList.remove('is-bbb')
-  //       entry.target.classList.add('is-aaa')
+//     if (!entry.isIntersecting) return
 
-  //       // entry.target.style.opacity = String((rate2 / 100).toFixed(1))
-  //     } else {
-  //       entry.target.style.animation = 'none'
-  //       entry.target.classList.remove('is-aaa')
-  //       entry.target.classList.add('is-bbb')
-  //     }
-  //   })
+//     if(entry.intersectionRatio > 0) {
+//       entry.target.style.animation = `fadeup 1s fowards ease-out`
+//       entry.target.classList.remove('is-bbb')
+//       entry.target.classList.add('is-aaa')
 
-  // const targetElements = document.querySelectorAll<HTMLElement>('.js-parallax-test')
-  // const tt = document.querySelector<HTMLElement>('.js-parallax-parent')
-  // // initialize
-  // targetElements.forEach(element => {
-  //   element.style.opacity = `0`
-  // })
+//       // entry.target.style.opacity = String((rate2 / 100).toFixed(1))
+//     } else {
+//       entry.target.style.animation = 'none'
+//       entry.target.classList.remove('is-aaa')
+//       entry.target.classList.add('is-bbb')
+//     }
+//   })
 
+// const targetElements = document.querySelectorAll<HTMLElement>('.js-parallax-test')
+// const tt = document.querySelector<HTMLElement>('.js-parallax-parent')
+// // initialize
+// targetElements.forEach(element => {
+//   element.style.opacity = `0`
+// })
 
-  // if(tt) {
-  //   window.addEventListener('scroll', throttle(() => {
-  //     let rate2 = Math.abs(window.pageYOffset) * 0.1
-  //     let offsetBottom = tt.offsetTop + tt.offsetHeight
-  //     let isScrolled = window.pageYOffset > offsetBottom / 1.5
-  //     if(isScrolled) {
-  //       console.log(String((rate2 / 100).toFixed(1)))
-  //       tt.style.opacity = String((-rate2 / 100).toFixed(1))
-  //     } else {
-  //       tt.style.opacity = String((rate2 / 100).toFixed(1))
-  //     }
-  //   }))
-  // }
+// if(tt) {
+//   window.addEventListener('scroll', throttle(() => {
+//     let rate2 = Math.abs(window.pageYOffset) * 0.1
+//     let offsetBottom = tt.offsetTop + tt.offsetHeight
+//     let isScrolled = window.pageYOffset > offsetBottom / 1.5
+//     if(isScrolled) {
+//       console.log(String((rate2 / 100).toFixed(1)))
+//       tt.style.opacity = String((-rate2 / 100).toFixed(1))
+//     } else {
+//       tt.style.opacity = String((rate2 / 100).toFixed(1))
+//     }
+//   }))
+// }
 
-  // targetElements.forEach((element, index) => {
+// targetElements.forEach((element, index) => {
 
-  //   window.addEventListener('scroll', throttle(() => {
+//   window.addEventListener('scroll', throttle(() => {
 
-  //     let offsetBottom = element.offsetTop + element.offsetHeight
-  //     let isScrolled = window.pageYOffset > offsetBottom
-  //     let rate2 = Math.abs(window.pageYOffset) * 0.1
-  //     // let rate2 = Math.abs(window.pageYOffset + element.offsetTop) * 0.1
+//     let offsetBottom = element.offsetTop + element.offsetHeight
+//     let isScrolled = window.pageYOffset > offsetBottom
+//     let rate2 = Math.abs(window.pageYOffset) * 0.1
+//     // let rate2 = Math.abs(window.pageYOffset + element.offsetTop) * 0.1
 
-  //     let isTemp = Number(window.getComputedStyle(element).getPropertyValue('opacity')) >= 1
-  //     let isTemp2 = Number(window.getComputedStyle(element).getPropertyValue('opacity')) < 0
+//     let isTemp = Number(window.getComputedStyle(element).getPropertyValue('opacity')) >= 1
+//     let isTemp2 = Number(window.getComputedStyle(element).getPropertyValue('opacity')) < 0
 
-  //     console.log(isTemp2, window.getComputedStyle(element).getPropertyValue('opacity'))
+//     console.log(isTemp2, window.getComputedStyle(element).getPropertyValue('opacity'))
 
-  //     const abc = () => {
-  //       let opacity1 = String((rate2 / 100).toFixed(1))
-  //       let opacity2 = String((-rate2 / 100).toFixed(1))
-  //       if(isScrolled) {
-  //         if(isTemp) return false
-  //         return opacity1
-  //       } else {
-  //         if(isTemp2) return false
-  //         return opacity2
-  //       }
-  //     }
-  //     const ccc = () => {
-  //       let opacity1 = `translateY(-${rate2 * 2}px)`
-  //       let opacity2 = `translateY(${rate2 * 2}px)`
-  //       if(isScrolled) {
-  //         if(window.pageYOffset > 600) return false
-  //         return opacity1
+//     const abc = () => {
+//       let opacity1 = String((rate2 / 100).toFixed(1))
+//       let opacity2 = String((-rate2 / 100).toFixed(1))
+//       if(isScrolled) {
+//         if(isTemp) return false
+//         return opacity1
+//       } else {
+//         if(isTemp2) return false
+//         return opacity2
+//       }
+//     }
+//     const ccc = () => {
+//       let opacity1 = `translateY(-${rate2 * 2}px)`
+//       let opacity2 = `translateY(${rate2 * 2}px)`
+//       if(isScrolled) {
+//         if(window.pageYOffset > 600) return false
+//         return opacity1
 
-  //       } else {
-  //         return opacity2
-  //       }
-  //     }
+//       } else {
+//         return opacity2
+//       }
+//     }
 
-  //     // 괴ㅗㅇ장히 실행이 여러번되느넫?
-  //     // console.log(window.getComputedStyle(element).getPropertyValue('transform'))
-  //     element.style.opacity = String(abc())
-  //     element.style.transform = String(ccc())
+//     // 괴ㅗㅇ장히 실행이 여러번되느넫?
+//     // console.log(window.getComputedStyle(element).getPropertyValue('transform'))
+//     element.style.opacity = String(abc())
+//     element.style.transform = String(ccc())
 
-  //     // if(targetElements.length === index + 1) {}
+//     // if(targetElements.length === index + 1) {}
 
-  //     // const temp = document.querySelector<HTMLElement>('.js-parallax-parent')
-  //     // temp!.style.opacity = String(Math.abs(window.pageYOffset + element.offsetTop) * 0.00125)
-  // }), false)
-  // })
+//     // const temp = document.querySelector<HTMLElement>('.js-parallax-parent')
+//     // temp!.style.opacity = String(Math.abs(window.pageYOffset + element.offsetTop) * 0.00125)
+// }), false)
+// })
 
 function revealPassword() {
   const ELEMENT_CLASSNAME = '.js-view-password'
   const elements = document.querySelectorAll<HTMLElement>(ELEMENT_CLASSNAME)
   if (elements.length === 0) return
 
-  elements.forEach(element =>
-    element.addEventListener('click', () =>
-      togglePassword(element?.parentNode?.querySelector<HTMLElement>('input'))
-    )
-  )
+  elements.forEach(element => element.addEventListener('click', () => togglePassword(element?.parentNode?.querySelector<HTMLElement>('input'))))
 
   function togglePassword(inputElement) {
     const isPasswordType = inputElement?.getAttribute('type') === 'password'
@@ -395,16 +349,15 @@ function revealPassword() {
     inputElement?.setAttribute('type', inputType)
   }
 }
- 
+
 function initializeNavbar() {
   const navigationTrigger = document.querySelector<HTMLElement>('.js-navbar-toggle')
-  if(!navigationTrigger) return
-  if(!navigationTrigger.classList.contains('is-active')) return
+  if (!navigationTrigger) return
+  if (!navigationTrigger.classList.contains('is-active')) return
 
   navigationTrigger.classList.remove('is-active')
   navigationTrigger.nextElementSibling?.classList.remove('is-visible')
 }
-
 
 function createGraph() {
   // todo 지금은 바가 100px 이라서 1:1로 대입
@@ -422,7 +375,6 @@ function createGraph() {
     graphItemValue.style.bottom = `${graphValue}px`
   })
 }
-
 
 function calculateReadTime() {
   const readTimeElement = document.querySelector<HTMLElement>('.post-head')
@@ -446,7 +398,7 @@ function focusComment() {
   commentTextField!.forEach(element =>
     element.addEventListener('focus', () => {
       commentWrite!.classList.add('is-focused')
-    })
+    }),
   )
 }
 
@@ -489,7 +441,6 @@ function focusComment() {
 // 	return responses.map(response => {
 // 		return response.json();
 // 	});
-
 
 // document.addEventListener('click', event => {
 // 	const filteredCountry = films.filter(item => item.country === '미국');
@@ -614,9 +565,6 @@ function focusComment() {
 // 	return sibling !== elem;
 // });
 
-
-
-
 // function bustCache() {
 //   const linkElements = document.querySelectorAll('link')
 //   linkElements.forEach(element => {
@@ -629,8 +577,6 @@ function focusComment() {
 //     element.setAttribute('href', cacheBuster)
 //   })
 // }
-
-
 
 // document.documentElement.className += ' supports-date';
 

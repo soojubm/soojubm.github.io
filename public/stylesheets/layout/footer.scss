@@ -1,13 +1,29 @@
-.subscribe {max-width:var(--width-large);margin:0 auto;padding:4rem var(--grid-margin) 6rem;position:relative;z-index:1;}
+// .subscribe {max-width:var(--width-large);margin:0 auto;padding:4rem var(--grid-margin) 6rem;position:relative;z-index:1;}
+.subscribe {}
 .subscribe-title {@include subhead;}
 .subscribe-description {margin:1rem 0 3rem 0;}
-.subscribe-field {width:50%;max-width:400px;margin:2rem 0 .5rem;}
+.subscribe-field {max-width:400px;margin:2rem 0 1rem;}
 .subscribe-submit {@include button-primary;width:100%;max-width:400px;}
 .subscribe-helper {display:block;margin:.5rem 0 0 0;font-size:var(--caption);}
 
 .footer {max-width:var(--width-large);margin:0 auto;padding:4rem var(--grid-margin) 8rem;background:var(--gray0);position:relative;z-index:4;}
-.footer::after {content:'';display:block;clear:both;}
-.footer-background {max-width:100%;background:var(--gray0);position:absolute;left:-100%;right:-100%;top:0;bottom:0;z-index:-1;}
+.footer-background {@include bleeding;background:var(--gray0);}
+
+.footer-sitemap {display:flex;position:relative;}
+.footer-sitemap-title {margin:0 0 1rem 0;@include subhead;}
+.footer-sitemap-item {width:25%;margin:0 0 2rem 0;}
+.footer-sitemap-item-title {margin:0 0 1rem 0;font-size:var(--body);font-weight:normal;color:var(--gray400);}
+.footer-sitemap-item-link {display:block;@include link-outer;}
+.footer-sitemap-item-link:hover {@include hover-text;}
+
+.footer-address {}
+.footer-address-logo {display:block;filter:grayscale(100%);opacity:.5;}
+.footer-address-info {}
+.footer-address-slogan {@include subhead;}
+.footer-copyright {display:block;}
+
+.footer-terms {}
+.footer-terms-link {margin:0 1rem 0 0;}
 
 .footer-scroll {position:fixed;bottom:1rem;right:1rem;z-index:8;}
 .footer-scroll-indicator {}
@@ -18,21 +34,6 @@
 .footer-scroll-bottom {display:none;}
 .footer-scroll-top .is-visible {right:50px;}
 
-.footer-sitemap {float:right;display:flex;justify-content:space-between;width:50%;position:relative;}
-.footer-sitemap:after {content:'';display:block;clear:both;}
-.footer-sitemap-title {margin:0 0 1rem 0;@include subhead;}
-.footer-sitemap-item {margin:0 0 2rem 0;}
-.footer-sitemap-item-title {margin:0 0 1rem 0;font-size:var(--body);font-weight:normal;color:var(--gray400);}
-.footer-sitemap-item-link {display:block;@include link-outer;}
-.footer-sitemap-item-link:hover {@include hover-text;}
-.footer-terms {}
-.footer-terms-link {margin:0 1rem 0 0;}
-.footer-address {float:left;width:50%;}
-.footer-address-logo {display:block;filter:grayscale(100%);opacity:.5;}
-.footer-address-info {}
-.footer-address-slogan {@include subhead;}
-.footer-copyright {display:block;}
-
 // 간단한 푸터 :: 정책, 로그인 등
 .is-short {padding-bottom:6rem;}
 .is-short .footer-sitemap {display:none;}
@@ -41,7 +42,5 @@
 
 @media (--viewport-small) {
 	.subscribe-field {width:100%;}
-	.footer-sitemap {float:none;width:100%;margin:0 0 2rem 0;position:relative;}
-	.footer-sitemap-item {float:left;width:100%;margin:1rem 0;}
-	.footer-address {float:none;width:100%;}
+
 }

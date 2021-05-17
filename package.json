@@ -7,7 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server --open",
     "build": "webpack --config webpack.config.js",
-    "ts": ""
+    "ts": "",
+    "remove": "rm -r node_modules",
+    "webhint": "hint -- http://localhost:8080"
   },
   "repository": {
     "type": "git",
@@ -38,6 +40,7 @@
     "eslint-loader": "^3.0.0",
     "file-loader": "^4.2.0",
     "friendly-errors-webpack-plugin": "^1.7.0",
+    "hint": "^6.1.3",
     "html-webpack-plugin": "^5.3.1",
     "htmllint": "^0.8.0",
     "lint-staged": "^9.5.0",

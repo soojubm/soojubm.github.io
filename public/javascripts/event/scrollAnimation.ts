@@ -1,4 +1,4 @@
-const scrollAnimation = ({selector: selector}) => {
+const scrollAnimation = ({ selector: selector }) => {
   const ANIMATED_CLASSNAME = 'is-scrolled'
   animateOnScroll()
 
@@ -26,7 +26,6 @@ const scrollAnimation = ({selector: selector}) => {
         // if(entry.intersectionRatio > 0) {}
       })
     }
-
   }
 }
 
@@ -35,7 +34,7 @@ export default scrollAnimation
 // function animateOnLoad() {
 //   const scrollElements = document.querySelectorAll('.js-load-animation')
 //   scrollElements.forEach(element => {
-//     const isObserved = element.getBoundingClientRect().top - window.innerHeight <= 0 
+//     const isObserved = element.getBoundingClientRect().top - window.innerHeight <= 0
 //     if (!isObserved) return
 
 //     element.classList.add(ANIMATED_CLASSNAME)
@@ -67,8 +66,6 @@ export default scrollAnimation
 // });
 
 // const absoluteTop = window.pageYOffset + element.getBoundingClientRect().top;
-
-
 
 // function initIndicator() {
 //   const indicator = document.createElement('aside');
