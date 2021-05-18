@@ -317,3 +317,7 @@
 
 .outer-flat {@include outer-flat}
 .outer-elevated {@include outer-elevated}
+
+
+.avatarlist {@include outer-elevated;padding:.5rem;color:var(--gray800);}
+.avatarlist:hover {@include hover-item;}
