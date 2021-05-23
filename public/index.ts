@@ -65,7 +65,7 @@ async function domEvents() {
   // todo selector
   if (chip && chipElements) {
     chipElements.forEach(element => {
-      element.addEventListener('click', event => {
+      element.addEventListener('click', () => {
         chipElements.forEach(element => element.classList.remove('is-active'))
         element.classList.add('is-active')
       })
@@ -106,72 +106,40 @@ async function domEvents() {
   // function format(command, value) {
   //   document.execCommand(command, false, value);
   // }
-  // const themeButtonElements = document.querySelectorAll('.js-system-theme button')
-  // const ACTIVE_CLASS = 'is-active'
-  // let classes = []
-
-  // themeButtonElements?.forEach((button, index) => {
-  //   // classes.push(button.getAttribute('name'))
-  //   // console.log(classes)
-  //   button.addEventListener('click', event => {
-  //     // if(index === 1) {
-  //     //   document.body.classList.remove('design-system-danngn')
-  //     //   document.body.classList.add('design-system-newneek')
-  //     // }
-  //     // else if (index === 2) {
-  //     //   document.body.classList.remove('design-system-newneek')
-  //     //   document.body.classList.add('design-system-danngn')
-  //     // }
-  //     // else {
-  //     //   document.body.classList.remove('design-system-newneek')
-  //     //   document.body.classList.remove('design-system-danngn')
-  //     // }
-
-  //     themeButtonElements?.forEach(button2 => {
-
-  //       const isTarget = event.target === button2
-
-  //       if(isTarget) {
-  //         button2.classList.add(ACTIVE_CLASS)
-  //         // document.body.classList.add(name)
-  //       }
-  //       else button2.classList.remove(ACTIVE_CLASS)
-  //     })
-  //   })
-  // })
 
   // lazyLoading()
 
   function lazyLoading() {
-    if ('IntersectionObserver' in window && 'IntersectionObserverEntry' in window && 'intersectionRatio' in window.IntersectionObserverEntry.prototype) {
-      const lazyBackgrounds = [].slice.call(document.querySelectorAll('.subscribe'))
-      const options = {
-        root: null,
-        rootMargin: '0px 0px 0px 0px',
-        threshold: 0.1,
-      }
-      let observer = new IntersectionObserver(callback, options)
-
-      lazyBackgrounds.forEach(element => observer.observe(element))
+    if (
+      !('IntersectionObserver' in window) ||
+      !('IntersectionObserverEntry' in window) ||
+      !('intersectionRatio' in window.IntersectionObserverEntry.prototype)
+    ) {
+      // load polyfill now
     }
+    const lazyBackgrounds = [].slice.call(document.querySelectorAll('.subscribe'))
+    const options = {
+      root: null,
+      rootMargin: '0px 0px 0px 0px',
+      threshold: 0.25,
+    }
+    let observer = new IntersectionObserver(callback, options)
+
+    lazyBackgrounds.forEach(element => observer.observe(element))
 
     function callback(entries, observer) {
       entries.forEach(entry => {
-        // If the entry is not in the viewport, do nothing
         if (!entry.isIntersecting) return
-        // Stop observing
         observer.unobserve(entry.target)
         fetchData()
-
-        // entry.target.classList.add('visible')
         // entry.target.src = entry.target.dataset.src;
-        // lazyBackgroundObserver.unobserve(entry.target)
       })
     }
 
     async function fetchData() {
       try {
-        const URL = 'https://gist.githubusercontent.com/prof3ssorSt3v3/1944e7ba7ffb62fe771c51764f7977a4/raw/c58a342ab149fbbb9bb19c94e278d64702833270/infinite.json'
+        const URL =
+          'https://gist.githubusercontent.com/prof3ssorSt3v3/1944e7ba7ffb62fe771c51764f7977a4/raw/c58a342ab149fbbb9bb19c94e278d64702833270/infinite.json'
         const response = await fetch(URL)
         if (!response.ok) throw 'Something went wrong.'
 
@@ -249,7 +217,6 @@ async function domEvents() {
 
 // function callback(entries, observer) {
 //   entries.forEach(entry => {
-
 //     if (!entry.isIntersecting) return
 
 //     if(entry.intersectionRatio > 0) {
@@ -287,7 +254,6 @@ async function domEvents() {
 // }
 
 // targetElements.forEach((element, index) => {
-
 //   window.addEventListener('scroll', throttle(() => {
 
 //     let offsetBottom = element.offsetTop + element.offsetHeight
@@ -352,8 +318,7 @@ function revealPassword() {
 
 function initializeNavbar() {
   const navigationTrigger = document.querySelector<HTMLElement>('.js-navbar-toggle')
-  if (!navigationTrigger) return
-  if (!navigationTrigger.classList.contains('is-active')) return
+  if (!navigationTrigger || !navigationTrigger.classList.contains('is-active')) return
 
   navigationTrigger.classList.remove('is-active')
   navigationTrigger.nextElementSibling?.classList.remove('is-visible')
@@ -426,7 +391,7 @@ function focusComment() {
 // 	else return findClassRecursive(element.parentNode, className, depth + 1);
 // };
 
-// var getClosest = function(elem, selector) {
+// var getClosest = (elem, selector) => {
 // 	for (; elem && elem !== document; elem = elem.parentNode) {
 // 		if (elem.matches(selector)) return elem;
 // 	}
@@ -519,51 +484,19 @@ function focusComment() {
 // 	return 'The value you entered for this field is invalid.';
 // };
 
-// const uiData = [
-//   { label: '상품 상세페이지', description :'', date :'2020.01-01', href: '#product', tags: ['기획', '디자인'] },
-//   { label: '상품 카트', description :'', date :'2020-01-01', href: '#cart', tags: ['기획', '디자인'] },
-//   { label: '로그인', description :'', date :'2020-01-01', href: '#login', tags: ['기획', '디자인'] },
-//   { label: '비밀번호 찾기', description :'', date :'2020-01-01', href: '#forgot', tags: ['기획', '디자인'] }
-// ]
-// const ccc: any = document.querySelector<HTMLElement>('.js-ui');
-// if(ccc) {
-//   const temp = uiData.map(item => {
-//     console.log(item);
-//     const ttt = item.tags.map(i => `<span class="tag">${i}</span>`).join('')
-//     const uiTemplate = `<a class="card" href="${item.href}">
-//         <figure class="card-thumbnail" style="font-family:'DunkelSans';display:flex;align-items:center;justify-content:center;">${item.label}</figure>
-//         <h3 class="card-title">${item.label}</h3>
-//         <time class="card-date">${item.date}<time>
-//         <div class="card-tags" role="group">
-//           ${ttt}
-//         </div>
-//         <button class="card-more icon-button"><i class="icon-more"></i></button>
-//       </a>`
-//     return uiTemplate;
-//   }).join('')
-//   console.log(temp);
-//   ccc.innerHTML = temp;
-// }
+// const ttt = item.tags.map(i => `<span class="tag">${i}</span>`).join('')
 
 // var i = 0;
 // var images = ['cover1.jpg','cover2.jpg'];
 // var imageElement = document.querySelector('.cover_image');
 // // image.css('background-image', 'url(/img/cover1.jpg)');
-// setInterval(function(){
+// setInterval(() => {
 // 	imageElement.fadeOut(1000, () => {
 // 		imageElement.css('background-image', `url(${images[i++]})`);
 // 		imageElement.fadeIn(1000);
 // 	});
 // 	if(i === images.length) i = 0;
 // }, 5000);
-
-// var elem = document.querySelector('#item-3');
-// var parent = elem.parentNode;
-// var parentNodes = parent.children;
-// var parentNodesArray = Array.from(parent.children);
-// var siblings = parentNodesArray.filter(function (sibling) {
-// 	return sibling !== elem;
-// });
 
 // function bustCache() {
 //   const linkElements = document.querySelectorAll('link')
@@ -578,10 +511,6 @@ function focusComment() {
 //   })
 // }
 
-// document.documentElement.className += ' supports-date';
-
-// if(window.matchMedia('(min-width:888px)').matches) {}
-
 // function addToPendingWork(promise) {
 //   busyspinner.hidden = false
 //   pendingOps.add(promise)
@@ -594,7 +523,6 @@ function focusComment() {
 
 // ! refresh 입력 중일 떄
 // let formChanged = false
-// const signupForm = document.querySelector('.js-input-email')
 // signupForm?.addEventListener('change', () => {
 //   formChanged = true
 // })
@@ -622,8 +550,7 @@ function focusComment() {
 //   function observeLastChild(intersectionObserver) {
 //     const listItems = document.querySelectorAll(".footer li")
 //     listItems.forEach(element => {
-//       const isLast = currentPage >= lastPage
-//       if (isLast) {
+//       if (currentPage >= lastPage) {
 //         intersectionObserver.disconnect()
 //         return
 //       }

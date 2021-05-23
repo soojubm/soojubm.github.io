@@ -1,6 +1,7 @@
 @charset 'utf-8';
 
 @import 'abstracts/variables';
+@import 'abstracts/mixins';
 @import 'abstracts/icon';
 @import 'abstracts/keyframes';
 
@@ -11,8 +12,8 @@
 @import 'layout/header';
 @import 'layout/footer';
 
-@import 'components/breadcrumb';
-@import 'components/graph';
+@import 'components/breadcrumb.css';
+@import 'components/graph.css';
 @import 'components/modal';
 @import 'components/snackbar';
 @import 'components/step';
@@ -513,3 +514,7 @@
 .class-order-price {font-size:1.25rem;}
 .class-order-action-purchase {@include button-primary;width:100%;}
 .class-order-action-share {}
+
+
+
+.container-overflow {@include container-overflow;}

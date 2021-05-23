@@ -8,7 +8,6 @@ type Parameter = {
   selector: string
 }
 
-
 const modal = ({ selector: trigger }: Parameter) => ({
   modalTriggers: document.querySelectorAll<HTMLElement>(trigger),
   modalContainer: document.querySelector<HTMLElement>('#modal'),
@@ -17,11 +16,11 @@ const modal = ({ selector: trigger }: Parameter) => ({
 
     document.removeEventListener('click', this.backHistory)
 
-    this.modalTriggers.forEach(modalElement => 
+    this.modalTriggers.forEach(modalElement =>
       modalElement.querySelector('.card-more')?.addEventListener('click', event => {
         event.stopPropagation()
         event.preventDefault()
-      })
+      }),
     )
 
     this.modalTriggers.forEach(modalElement =>
@@ -29,52 +28,57 @@ const modal = ({ selector: trigger }: Parameter) => ({
         event.stopPropagation()
         event.preventDefault()
 
-
         // event target
         console.log('ttt', event.target, modalElement)
         const modalId = modalElement.dataset.modal
         const uri = `/views/${modalId}.html`
-        // const response = await fetch(uri)
-        fetch(uri).then(response => {
-          if (response.ok) return response.text()
-          else return Promise.reject(response)
-        }).then(html => {
-          if (!this.modalContainer) return
 
-          this.modalContainer.innerHTML = html
-          this.showModal(window.pageYOffset)
-          pushBrowserHistory({}, '', modalId)
+        fetch(uri)
+          .then(response => {
+            if (response.ok) return response.text()
+            else return Promise.reject(response)
+          })
+          .then(html => {
+            if (!this.modalContainer) return
 
-          const isShown = document.body.classList.contains('is-modal-visible')
-          if(!isShown) return
+            this.modalContainer.innerHTML = html
+            this.showModal(window.pageYOffset)
+            pushBrowserHistory({}, '', modalId)
 
-          const closeElement = this.modalContainer.querySelector('.js-modal-close')
-          // const dimElement = this.modalContainer.querySelector('.modal-dim')
+            const isShown = document.body.classList.contains('is-modal-visible')
+            if (!isShown) return
 
-          closeElement?.addEventListener('click', event => event.stopPropagation())
-          this.modalContainer?.querySelector('.modal-dialog')?.addEventListener('click', event => event.stopPropagation())
-          closeElement?.addEventListener('click', this.backHistory)
-          this.modalContainer.addEventListener('click', this.backHistory)
-          // dimElement?.addEventListener('click', this.backHistory)
+            const closeElement = this.modalContainer.querySelector('.js-modal-close')
+            // const dimElement = this.modalContainer.querySelector('.modal-dim')
 
-          window.addEventListener('popstate', () => this.clearModal(this.modalContainer, pageYOffset))
-          document.addEventListener('keydown', event => {
-            const isKeyEsc = event.keyCode === 27
-            if (isKeyEsc) this.backHistory()
-          }, true)
-          
-        }).catch(error => console.warn('modal Error'))
+            closeElement?.addEventListener('click', event => event.stopPropagation())
+            this.modalContainer?.querySelector('.modal-dialog')?.addEventListener('click', event => event.stopPropagation())
+            closeElement?.addEventListener('click', this.backHistory)
+            this.modalContainer.addEventListener('click', this.backHistory)
+            // dimElement?.addEventListener('click', this.backHistory)
+
+            window.addEventListener('popstate', () => this.clearModal(this.modalContainer, pageYOffset))
+            document.addEventListener(
+              'keydown',
+              event => {
+                const isKeyEsc = event.keyCode === 27
+                if (isKeyEsc) this.backHistory()
+              },
+              true,
+            )
+          })
+          .catch(error => console.warn('modal Error'))
       }),
     )
   },
   showModal(pageYOffset) {
     document.body.classList.add('is-modal-visible')
-    document.body.classList.add('body-lock') // todo import 
+    document.body.classList.add('body-lock') // todo import
     document.body.style.top = `-${pageYOffset}px`
   },
   clearModal(container, pageYOffset) {
     document.body.classList.remove('is-modal-visible')
-    document.body.classList.remove('body-lock')  // todo import 
+    document.body.classList.remove('body-lock') // todo import
 
     container.innerHTML = ''
     window.scrollTo(0, pageYOffset)
@@ -85,11 +89,6 @@ const modal = ({ selector: trigger }: Parameter) => ({
 })
 
 export default modal
-
-
-
-
-
 
 const getOptions = data => {
   return {

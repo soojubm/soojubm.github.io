@@ -1,9 +1,5 @@
 .about {}
 
-
-.about-image {width:50%;height:40rem;background:var(--red800);position:absolute;right:0;top:0;}
-
-
 .about-subhead-icon {display:block;margin:0 0 1rem 0;}
 
 .about-intro {@include container-large;}
@@ -130,9 +126,9 @@
 
 .about-email {display:flex;align-items:center;position:relative;z-index:1;}
 .about-email:hover {@include hover-item;}
-.about-email i {@include box-small;margin:0 1rem 0 0;font-size:var(--subhead);}
+.about-email figure {@include box-small;margin:0 1rem 0 0;font-size:var(--subhead);}
 .about-phone {display:flex;align-items:center;}
-.about-phone i {@include box-small;margin:0 1rem 0 0;font-size:var(--subhead);}
+.about-phone figure {@include box-small;margin:0 1rem 0 0;font-size:var(--subhead);}
 
 
 .ticker-headline {

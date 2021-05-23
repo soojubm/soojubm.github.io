@@ -1,3 +1,6 @@
+export const removeClassname = (element, classname) => element.classList.remove(classname)
+export const addClassname = (element, classname) => element.classList.add(classname)
+
 export function getElementOffsetTop(element) {
   let offsetTop = element.offsetTop
   const hasParentElement = element.offsetParent

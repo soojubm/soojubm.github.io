@@ -154,12 +154,13 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 @mixin textfield-prefix {
   @include box-small;width:2rem;height:2rem;background:var(--gray0);position:absolute;left:1rem;top:38px;pointer-events:none;
   @media (--viewport-small) {
-    top: 33px;
+    top: 35px;
   }
 }
 @mixin textfield-surfix {
-  @include box-small;width:2rem;height:2rem;background:var(--gray0);position:absolute;right:1rem;top:38px;pointer-events:none;
-  @media (--viewport-small) {top:33px;}
+  @include box-small;width:2rem;height:2rem;background:var(--gray0);position:absolute;right:1rem;top:38px;
+  pointer-events:none;
+  @media (--viewport-small) {top:35px;}
 }
 
 
@@ -169,7 +170,7 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 .textfield-surfix {@include textfield-surfix;}
 .selectbox-indicator {@include textfield-surfix;}
 .textfield-clear {display:none !important;}
-.textfield-input:focus ~ .textfield-clear {display:block !important;}
+.textfield-input:focus ~ .textfield-clear {display:flex !important; pointer-events:all;}
 
 .textfield.is-small {padding:0 !important;font-size:var(--caption) !important;}
 .textfield.is-small .textfield-label {margin-bottom:0;}

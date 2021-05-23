@@ -40,13 +40,22 @@ body {background:var(--gray0);overflow-x:hidden;letter-spacing:-.0125rem;}
 
 blockquote {margin:1rem 0 2rem;padding:0 1rem;border-left:4px solid var(--gray200);border-radius:var(--radius400);color:var(--gray400)}
 
-table {width:100%;border-collapse:collapse;border-spacing:0;border-left-style:hidden;border-right-style:hidden;}
+
+
+table {
+  width:100%;border-collapse:collapse;border-spacing:0;border-left-style:hidden;border-right-style:hidden;
+  --table-padding: 5px 0;
+  --table-lineheight: 1.6;
+}
 table caption {padding:.5rem 0;font-size:var(--caption);text-align:left;}
+table thead {}
 table thead tr {}
-table thead tr th {padding:.5rem 0;line-height:1.4;color:var(--gray400);text-align:left;}
-table tbody tr th {padding:.5rem 0;line-height:1.4;vertical-align:top;text-align:left;}
-table tbody tr td {padding:1rem 0;border-top:var(--border100);border-bottom:var(--border100);box-sizing:border-box;line-height:1.4;}
-table tbody tr:hover {background:var(--gray100);}
+table thead tr th {padding:var(--table-padding);font-weight:normal;line-height:var(--table-lineheight);color:var(--gray400);text-align:left;}
+table tbody {}
+table tbody tr {line-height:var(--table-lineheight);position:relative;}
+table tbody tr th {width:8rem;padding:var(--table-padding);border-top:var(--border100);border-bottom:var(--border100);font-weight:normal;text-align:left;color:var(--gray400);vertical-align:baseline;}
+table tbody tr td {padding:var(--table-padding);border-top:var(--border100);border-bottom:var(--border100);}
+table tbody tr:hover {}
 table .right {text-align:right;}
 
 ul {}

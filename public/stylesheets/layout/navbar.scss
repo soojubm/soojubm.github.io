@@ -66,7 +66,7 @@
 .navbar-user-menu {width:400px;height:0;@include container-card;position:absolute;top:40px;right:0;z-index:4;transform:scale(0);transform-origin:right top;}
 .navbar-user-menu.is-visible {height:auto;transform:scale(1);}
 
-.user {height:$cell-large;color:var(--gray800);position:relative;}
+.user {display:block;height:$cell-large;color:var(--gray800);position:relative;}
 .user-avatar {float:right;@include box-large;}
 .user-avatar-change {width:32px;height:32px;border-radius:var(--radius400);position:absolute;right:-8px;bottom:-8px;}
 .user-name {@include subhead;}
@@ -110,12 +110,12 @@
 	
 	.navbar-menu.is-visible {opacity:1;transform:translateX(0);}
 	.navbar-menu.is-visible .navbar-menu-item {animation:fadeup .4s cubic-bezier(.455, .03, .515, .955) forwards;opacity:0;}
-	.navbar-menu.is-visible .navbar-menu-item:nth-child(1) {animation-delay:.4s;}
-	.navbar-menu.is-visible .navbar-menu-item:nth-child(2) {animation-delay:.5s;}
-	.navbar-menu.is-visible .navbar-menu-item:nth-child(3) {animation-delay:.6s;}
-	.navbar-menu.is-visible .navbar-menu-item:nth-child(4) {animation-delay:.7s;}
-	.navbar-menu.is-visible .navbar-menu-item:nth-child(5) {animation-delay:.8s;}
-	.navbar-menu.is-visible .navbar-menu-item:nth-child(6) {animation-delay:.9s;}
+	.navbar-menu.is-visible .navbar-menu-item:nth-child(1) {animation-delay:.3s;}
+	.navbar-menu.is-visible .navbar-menu-item:nth-child(2) {animation-delay:.4s;}
+	.navbar-menu.is-visible .navbar-menu-item:nth-child(3) {animation-delay:.5s;}
+	.navbar-menu.is-visible .navbar-menu-item:nth-child(4) {animation-delay:.6s;}
+	.navbar-menu.is-visible .navbar-menu-item:nth-child(5) {animation-delay:.7s;}
+	.navbar-menu.is-visible .navbar-menu-item:nth-child(6) {animation-delay:.8s;}
 	
 	.is-shown .navbar-menu-item {color:var(--gray800);}
 }

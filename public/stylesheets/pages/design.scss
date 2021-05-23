@@ -61,7 +61,7 @@
   .design {padding:0;}
   .design-head {height:20rem;position:relative;left:0;right:0;top:-8rem;bottom:0;}
   .design-head.is-scrolled {transform:translateX(0)}
-  .design-body {width:auto;max-width:var(--width-large);margin-left:auto;margin-right:auto;padding-left:5%;padding-right:5%;}
+  .design-body {width:auto;max-width:var(--width-large);margin-left:auto;margin-right:auto;padding-left:var(--grid-margin);padding-right:var(--grid-margin);}
   .design-article {width:50%;}
 }
 
@@ -312,7 +312,7 @@
 .keywords {@include outer-elevated;}
 .keywords-title {@include subhead;margin:0 0 1rem 0;}
 .keywords-group {}
-.keywords-group-keyword {@include chip;line-height:31px;}
+.keywords-group-keyword {@include chip;}
 
 
 .outer-flat {@include outer-flat}

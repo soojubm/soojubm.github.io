@@ -74,15 +74,19 @@
       <h1 class="design-article-title">Principles <small>🔥</small></h1>
       <p class="design-article-description">디자인시스템도 제품과 마찬가지로 완성은 존재하지 않습니다요...</p>
 
-      <div class="tag" style="margin:0 0 .5rem 0;">단순성</div>
-      <p>모바일 퍼스트. 그리드 시스템(12 columns grid / 8pt grid)이 실제로 효율적인가?</p>
-      <p>시스템은 유아이 라이브러리가 아닙니다. 가능한 모든 경우의 수를 나열해서는 안 된다. 개발 구현 난이도를 고려해야 하고 가능한 최소한의 가이드를 유지하세요.</p>
-      <br />
-      <div class="tag" style="margin:0 0 .5rem 0;">유동성</div>
-      <p>마크업 구조를 단순하게 유지하기 위해 position 속성을 적극적으로 활용하세요.</p>
-      <br />
-      <div class="tag" style="margin:0 0 .5rem 0;">명료성</div>
-      <p>UI는 특정 서비스에 종속되지 않는 보편타당해야 합니다.</p>
+      <div class="outer-flat">
+        <h3 style="font-size:var(--subhead);font-weight:bold;margin:0 0 .5rem 0;">단순성</h3>
+        <p>모바일 퍼스트. 그리드 시스템(12 columns grid / 8pt grid)이 실제로 효율적인가?</p>
+        <p>시스템은 유아이 라이브러리가 아닙니다. 가능한 모든 경우의 수를 나열해서는 안 된다. 개발 구현 난이도를 고려해야 하고 가능한 최소한의 가이드를 유지하세요.</p>
+      </div>
+      <div class="outer-flat" style="margin:1rem 0;">
+        <h3 style="margin:0 0 .5rem 0;font-size:var(--subhead);font-weight:bold;">유동성</h3>
+        <p>마크업 구조를 단순하게 유지하기 위해 position 속성을 적극적으로 활용하세요.</p>
+      </div>
+      <div class="outer-flat">
+        <h3 style="font-size:var(--subhead);font-weight:bold;margin:0 0 .5rem 0;">명료성</h3>
+        <p>UI는 특정 서비스에 종속되지 않는 보편타당해야 합니다.</p>
+      </div>
     </article>
 
     <!-- <article class="design-article js-observer">
@@ -246,19 +250,47 @@
       <hr />
       <div class="avatarlist" style="display:flex;align-items:center;margin-bottom:1rem;">
         <!-- todo z-index를 위해 반대로 정렬 -->
-        <span class="design-article-avatar-small" style="box-shadow: var(--gray0) 0px 0px 0px 2px;z-index:4;"></span>
-        <span class="design-article-avatar-small" style="margin-left:-.75rem;box-shadow: var(--gray0) 0px 0px 0px 2px;z-index:3;"></span>
-        <span class="design-article-avatar-small" style="margin-left:-.75rem;box-shadow: var(--gray0) 0px 0px 0px 2px;z-index:2;"></span>
-        <span class="design-article-avatar-small" style="margin-left:-.75rem;box-shadow: var(--gray0) 0px 0px 0px 2px;z-index:1;"></span>
+        <span class="design-article-avatar-small" style="box-shadow: var(--gray0) 0px 0px 0px 2px;"></span>
+        <span class="design-article-avatar-small" style="margin-left:-.75rem;box-shadow: var(--gray0) 0px 0px 0px 2px;"></span>
+        <span class="design-article-avatar-small" style="margin-left:-.75rem;box-shadow: var(--gray0) 0px 0px 0px 2px;"></span>
+        <span class="design-article-avatar-small" style="margin-left:-.75rem;box-shadow: var(--gray0) 0px 0px 0px 2px;"></span>
         <!-- <a href="" class="design-article-avatar-small" style="margin-left:-10px;box-shadow: rgb(255 255 255) 0px 0px 0px 4px;background:var(--gray100);color:var(--gray800);">+4</a> -->
         <span style="margin:0 0 0 1rem;">수줍이 외 18명</span>
       </div>
       <div class="avatarlist" style="display:flex;align-items:center;">
-        <span class="design-article-avatar-tiny" style="box-shadow: var(--gray0) 0px 0px 0px 2px;z-index:4;"></span>
-        <span class="design-article-avatar-tiny" style="margin-left:-.25rem;box-shadow: var(--gray0) 0px 0px 0px 2px;z-index:3;"></span>
-        <span class="design-article-avatar-tiny" style="margin-left:-.25rem;box-shadow: var(--gray0) 0px 0px 0px 2px;z-index:2;"></span>
-        <span class="design-article-avatar-tiny" style="margin-left:-.25rem;box-shadow: var(--gray0) 0px 0px 0px 2px;z-index:1;"></span>
+        <span class="design-article-avatar-tiny" style="box-shadow: var(--gray0) 0px 0px 0px 2px;"></span>
+        <span class="design-article-avatar-tiny" style="margin-left:-.25rem;box-shadow: var(--gray0) 0px 0px 0px 2px;"></span>
+        <span class="design-article-avatar-tiny" style="margin-left:-.25rem;box-shadow: var(--gray0) 0px 0px 0px 2px;"></span>
+        <span class="design-article-avatar-tiny" style="margin-left:-.25rem;box-shadow: var(--gray0) 0px 0px 0px 2px;"></span>
         <small style="margin:0 0 0 .5rem;">수줍이 외 8명</small>
+      </div>
+
+      <hr />
+
+      <div class="userlist" style="overflow:hidden;">
+        <button class="sheet-toggle"></button>
+        <header>
+          <h1>팔로워</h1>
+          <a class="link-outer" href="#">모두 보기</a>
+        </header>
+        <hr />
+        <div class="profile-user" style="width:100%;height:48px;" role="listitem">
+          <figure class="profile-user-avatar" style="float:left;width:48px;height:48px;margin-right:1rem;"></figure>
+          <h2 class="profile-user-name" style="font-size:1rem;">Gyeongsoo I</h2>
+          <span class="profile-user-id" style="color:var(--gray400);">유아이 디자이너</span>
+          <button class="design-article-tertiary-small" style="position:absolute;right:0;top:0;">팔로잉</button>
+        </div>
+        <div class="profile-user" style="width:100%;height:48px;margin-top:1rem;" role="listitem">
+          <figure class="profile-user-avatar" style="float:left;width:48px;height:48px;margin-right:1rem;"></figure>
+          <h2 class="profile-user-name" style="font-size:1rem;">Gyeongsoo I</h2>
+          <span class="profile-user-id" style="color:var(--gray400);">유아이 디자이너</span>
+          <button class="design-article-secondary-small" style="position:absolute;right:0;top:0;">팔로우</button>
+        </div>
+        <div class="profile-user" style="width:100%;height:48px;margin-top:1rem;">
+          <figure class="profile-user-avatar" style="float:left;width:48px;height:48px;margin-right:1rem;background-image:none;"><i class="icon-plus" style="transform:scale(1.25);"></i></figure>
+          <h2 class="profile-user-name" style="font-size:1rem;line-height:48px;">더 많은 친구를 찾아보세요!</h2>
+        </div>
+        <!-- <button class="userlist-cta">모두 보기</button> -->
       </div>
     </article>
 
@@ -284,28 +316,28 @@
       </div> -->
       <div class="design-typograph-item">
         <h1 style="font-size:var(--title);font-weight:bold;">Large, 2rem</h1>
-        <p style="margin:.5rem 0 0 0;">heading - bold</p>
+        <p style="margin:.5rem 0 0 0;font-weight:bold;">heading - bold</p>
       </div>
       <div class="design-typograph-item">
         <h2 style="font-size:var(--subhead);font-weight:bold;">Medium, 1.25rem</h2>
-        <p style="margin:.5rem 0 0 0;">heading - bold</p>
-        <p>body - normal (long contents, post)</p>
+        <p style="margin:.5rem 0 0 0;font-weight:bold;font-size:var(--subhead);">heading - bold</p>
+        <p style="font-size:var(--subhead);">body - normal (long contents, post)</p>
       </div>
       <div class="design-typograph-item">
         <h3 style="font-size:var(--body);">Small, 1rem</h3>
-        <p style="margin:.5rem 0 0 0;">heading - bold</p>
-        <p>heading - gray400 (label)</p>
+        <p style="margin:.5rem 0 0 0;font-weight:bold;">heading - bold</p>
+        <p style="color:var(--gray400)">heading - gray400 (label)</p>
         <p>body - normal</p>
       </div>
       <div class="design-typograph-item">
         <h4 style="font-weight:normal;color:var(--gray400);">Tiny, 0.875rem</h4>
-        <p style="margin:0 0 0 0;">caption</p>
+        <p style="margin:.5rem 0 0 0;">caption</p>
       </div>
     </article>
 
     <article class="design-article js-observer">
       <h1 class="design-article-title">Outers</h1>
-      <p class="design-article-description">제목, 디스크립션 이외의\ 콘텐츠를 강조할 때 사용합니다.</p>
+      <p class="design-article-description">콘텐츠를 강조할 때 사용합니다.</p>
       <div class="design-outer-flat">
         <b>flat</b> is non clickable. no one.
       </div>
@@ -326,6 +358,56 @@
         <div class="space" style="width:1rem;"><span class="tag">1rem</span></div>
         <div style="display:flex;align-items:center;justify-content:center;width:calc(50% - 5% - .5rem);height:100%;">colum<br />50% - 0.5rem</div>
         <div class="space" style="width:5%;background:var(--green100);"><span class="tag">5%</span></div>
+      </div>
+      <hr />
+      <div class="container-overflow" style="display:flex;max-width:375px;">
+        <div style="width:80px;margin-right:1rem;text-align:center;    background: var(--gray0);
+        border: var(--border100);
+        border-radius: var(--radius400);
+        padding: 1rem;">
+          <figure style="display:flex;align-items:center;justify-content:center;
+          width:80px;height:80px;margin:0 0 .5rem 0;border-radius:var(--radius400);background:indianred;font-size:2rem;">🦁</figure>
+          <span>수줍이</span>
+        </div>
+        <div style="width:80px;margin-right:1rem;text-align:center;    background: var(--gray0);
+        border: var(--border100);
+        border-radius: var(--radius400);
+        padding: 1rem;">
+          <figure style="display:flex;align-items:center;justify-content:center;
+          width:80px;height:80px;margin:0 0 .5rem 0;border-radius:var(--radius400);background:indianred;font-size:2rem;">🦁</figure>
+          <span>수줍이</span>
+        </div>
+        <div style="width:80px;margin-right:1rem;text-align:center;    background: var(--gray0);
+        border: var(--border100);
+        border-radius: var(--radius400);
+        padding: 1rem;">
+          <figure style="display:flex;align-items:center;justify-content:center;
+          width:80px;height:80px;margin:0 0 .5rem 0;border-radius:var(--radius400);background:indianred;font-size:2rem;">🦁</figure>
+          <span>수줍이</span>
+        </div>
+        <div style="width:80px;margin-right:1rem;text-align:center;    background: var(--gray0);
+        border: var(--border100);
+        border-radius: var(--radius400);
+        padding: 1rem;">
+          <figure style="display:flex;align-items:center;justify-content:center;
+          width:80px;height:80px;margin:0 0 .5rem 0;border-radius:var(--radius400);background:indianred;font-size:2rem;">🦁</figure>
+          <span>수줍이</span>
+        </div>
+      </div>
+      <hr />
+      <div class="daylist">
+        <div class="day" role="listitem">
+          <span class="day-label">mon</span>
+          <b class="day-value">24</b>
+        </div>
+        <div class="day" role="listitem">
+          <span class="day-label">tue</span>
+          <b class="day-value">25</b>
+        </div>
+        <div class="day" role="listitem">
+          <span class="day-label">wed</span>
+          <b class="day-value">26</b>
+        </div>
       </div>
     </article>
 
@@ -354,7 +436,7 @@
       <h1 class="design-article-title">Palettes</h1>
       <p class="design-article-description">다크테마를 위한 컬러셋을 별도로 정의하지 않습니다.</p>
       <blockquote style="margin:2rem 0;">
-        예를 들어, gray100 변수를 사용할 때 container-border-color와 같은 시멘틱한 네이밍으로 한 번 더 추상화 하세요.
+        gray100 변수를 사용할 때 container-border-color와 같은 시멘틱한 네이밍으로 한 번 더 추상화 하세요.
       </blockquote>
       <button class="user-logout js-darkmode1" title="change theme" style="border-radius:var(--radius400);box-shadow:var(--shadow400);padding:1rem;border:var(--border100);">
         <span class="user-logout-icon"><i class="icon-moon"></i></span>
@@ -453,7 +535,7 @@
 
     <article class="design-article js-observer">
       <h1 class="design-article-title">Chips ☀️</h1>
-      <p class="design-article-description">항상 action이 발생합니다.단일 선택, 다중 선택, 삭제 여부 등 용도가 다양하기 때문에 적절한 힌트를 제공하세요.</p>
+      <p class="design-article-description">필터링된 콘텐츠의 지표로 사용합니다. 항상 action이 발생하고 반영됩니다. 용도가 다양하기 때문에 단일 선택, 다중 선택, 삭제 여부에 따라 적절한 힌트를 제공하세요.</p>
       <blockquote>
         MDS Chip vs Pill
         input (with remove icon) / + numeric input
@@ -470,33 +552,92 @@
       <div role="group">
         <button class="chip">타이포그래피</button>
         <button class="chip is-active"><span class="chip-icon"><i class="icon-check" style="border-color: var(--color-primary);"></i></span> 영화</button>
-        <button class="chip is-active"><span class="chip-icon"><i class="icon-check" style="border-color: var(--color-primary);"></i></span> 소설</button>
+        <button class="chip is-active">소설<span class="chip-icon"><i class="icon-close"></i></span></button>
       </div>
       <hr role="separator" />
-      <div class="dropdown">
-        <button class="chip js-toggle">드롭다운 <span class="chip-icon"><i class="icon-caret"></i></span></button>
-        </button>
-        <menu class="dropdown-menu" role="menu">
-          <h6 class="dropdown-menu-title" hidden>Dropdown header</h6>
-          <a class="dropdown-menu-link" href="" disabled>프로필 관리 <i class="icon-check"></i></a>
-          <a class="dropdown-menu-link" href="">고객센터</a>
-          <hr class="dropdown-menu-divider" />
-          <a class="dropdown-menu-link" href="">로그아웃</a>
-        </menu>
+      <div role="group">
+        <div class="dropdown">
+          <button class="chip js-toggle">드롭다운 <span class="chip-icon"><i class="icon-caret"></i></span></button>
+          </button>
+          <menu class="dropdown-menu" role="menu">
+            <h6 class="dropdown-menu-title" hidden>Dropdown header</h6>
+            <a class="dropdown-menu-link" href="" disabled>
+              프로필 관리
+              <!-- <i class="icon-check"></i> -->
+            </a>
+            <a class="dropdown-menu-link" href="">고객센터</a>
+            <hr class="dropdown-menu-divider" />
+            <a class="dropdown-menu-link" href="">로그아웃</a>
+          </menu>
+        </div>
+        <div class="dropdown">
+          <button class="dropdown-trigger js-toggle" aria-haspopup="menu" aria-expanded="false">
+            <span class="dropdown-trigger-icon"><i class="icon-more"></i></span>
+          </button>
+          <menu class="dropdown-menu">
+            <a class="dropdown-menu-link" href="">수정</a>
+            <a class="dropdown-menu-link" href="">삭제</a>
+          </menu>
+        </div>
       </div>
       <!-- <button class="dropdown-trigger js-toggle" aria-haspopup="menu" aria-expanded="false" style="margin-right:1rem;">
         <span class="dropdown-trigger-icon"><i class="icon-caret"></i></span>
         <span class="dropdown-trigger-text">드롭다운</span>
       </button> -->
-      <div class="dropdown">
-        <button class="dropdown-trigger js-toggle" aria-haspopup="menu" aria-expanded="false">
-          <span class="dropdown-trigger-icon"><i class="icon-more"></i></span>
-        </button>
-        <menu class="dropdown-menu">
-          <a class="dropdown-menu-link" href="">수정</a>
-          <a class="dropdown-menu-link" href="">삭제</a>
-        </menu>
+      <hr />
+      <article class="keywords">
+        <h3 class="keywords-title">실시간 이슈 키워드</h3>
+        <div class="keywords-group" role="group">
+          <a class="keywords-group-keyword" href="">코에이테크모게임즈</a>
+          <a class="keywords-group-keyword" href="">시뮬레이션</a>
+          <a class="keywords-group-keyword" href="">코에이테크모게임즈</a>
+          <a class="keywords-group-keyword" href="">삼국지14</a>
+          <a class="keywords-group-keyword" href="">PC</a>
+          <a class="keywords-group-keyword" href="">PS4</a>
+        </div>
+      </article>
+    </article>
+
+    
+    <article class="design-article js-observer">
+      <h1 class="design-article-title">Tags</h1>
+      <p class="design-article-description">필요한 경우 액션이 발생할 수 있습니다.</p>
+      <blockquote>
+        <p>tag와 hashtag를 구분 vs 적당히 톤다운된 하나의 tag 스타일</p>
+      </blockquote>
+      <div class="" role="group">
+        <span class="tag tags-item" data-appearance="accent">Tag (non clickable)</span>
+        <a class="tag topic-item" href="#" role="listitem">주도하는역할</a>
+        <!-- <a class="tag topic-item" href="#" role="listitem">뱃지 <i class="icon-close"></i></a> -->
+        <a class="tag topic-item is-disabled" href="#" role="listitem">뱃지is-disaled</a>
+        <a class="hashtag hashtags-item" href="#" role="listitem">해시태그</a>
       </div>
+      <!-- <div class="topic">
+        <h3 class="topic-title">최고 인기 토픽</h3>
+        <div class="tags" role="group">
+          <a class="tags-item tag" href="#" role="listitem">업데이트</a>
+          <a class="tags-item tag" href="#" role="listitem">업데이트</a>
+        </div>
+      </div> -->
+      <nav class="sidebar" style="margin-top:1rem;padding-bottom:.5rem">
+        <h4 class="sidebar-heading">대분류</h4>
+        <div class="sidebar-item" role="listitem">
+          <h2 style="margin-right:.5rem;font-size:1.25rem"><figure style="margin:0 1rem 0 0;">⚽</figure>축구</h2>
+        </div>
+        <div class="sidebar-item" role="listitem">
+          <h2 style="margin-right:1rem;font-size:1.25rem"><figure style="margin:0 1rem 0 0;">🏹</figure>양궁</h2>
+          <a class="sidebar-item-tag tag" data-appearance="accent" href="#">새소식</a>
+        </div>
+        <hr />
+        <h4 class="sidebar-heading">대분류</h4>
+        <div class="sidebar-item" role="listitem">
+          <h2 style="margin-right:.5rem;font-size:1.25rem"><figure style="margin:0 1rem 0 0;">⚽</figure>축구</h2>
+        </div>
+        <div class="sidebar-item" role="listitem">
+          <h2 style="margin-right:.5rem;font-size:1.25rem"><figure style="margin:0 1rem 0 0;">🏹</figure>양궁</h2>
+        </div>
+      </nav>
+      <!-- <span style="padding:.5rem 1rem;border-radius:var(--radius400);background:var(--gray800);color:var(--gray0);">강조 태그</span> -->
     </article>
 
     <article class="design-article js-observer">
@@ -631,7 +772,20 @@
         </select>
         <span class="selectbox-indicator" role="img"><i class="icon-caret"></i></span>
       </div>
-      <br />
+      <!-- var selected = Array.from(dnd.options).filter(function (option) {
+        return option.selected;
+      }).map(function (option) {
+        return option.value;
+      }); -->
+      <!-- <div class="textfield is-small">
+        <label class="textfield-label" for="">회사</label>
+        <input class="textfield-input" type="text" placeholder="인풋 인라인스타일 스몰사이즈">
+      </div> -->
+    </article>
+
+    <article>
+      <h1 class="design-article-title">Select</h1>
+      <p class="design-article-description">네이티브와 커스텀.</p>
       <div class="textfield is-text">
         <label class="textfield-label" for="select2">Sort by</label>
         <select class="textfield-input"id="select2">
@@ -642,21 +796,29 @@
       <hr />
       <div class="textfield is-text">
         <figure style="width:var(--cell-medium);height:var(--cell-medium);background:var(--gray100);border-radius:var(--radius400);margin-right:1rem;"></figure>
-        <select class="textfield-input" id="select3" style="margin-left:0;color:var(--gray800);">
-          <option class="select-option" value="select-option1">현대카드 The Green</option>
-        </select>
+        <span>현대카드 The Green</span>
         <span class="selectbox-indicator" role="img"><i class="icon-caret"></i></span>
-        <p>select로는 안 된다.</p>
       </div>
-      <!-- var selected = Array.from(dnd.options).filter(function (option) {
-        return option.selected;
-      }).map(function (option) {
-        return option.value;
-      }); -->
-      <!-- <div class="textfield is-small">
-        <label class="textfield-label" for="">회사</label>
-        <input class="textfield-input" type="text" placeholder="인풋 인라인스타일 스몰사이즈">
-      </div> -->
+      <hr />
+      <article class="sheet">
+        <!-- <h3 class="sheet-title">정렬하기</h3> -->
+        <!-- <hr /> -->
+        <button style="width:100%;display:flex;align-items:center;margin:0 0 .5rem 0;justify-content:space-between;font-size:1.25rem;">
+          바텀 시트 선택 1
+        </button>
+        <button style="width:100%;display:flex;align-items:center;justify-content:space-between;font-size:1.25rem;">
+          바텀 시트 선택 2 <i class="icon-check"></i>
+        </button>
+        <!-- <div class="checkbox theme-right">
+          <input class="js-check" type="checkbox" id="sheet" name="sheet" value="sheet">
+          <label for="sheet">인기순. 우측에 체크박스 있는 형태(모바일의 시트에서. 어포던스 키워야 함.)</label>
+        </div>
+        <div class="checkbox theme-right">
+          <input class="js-check" type="checkbox" id="sheet" name="sheet" value="sheet">
+          <label for="sheet">최신순</label>
+        </div> -->
+      </article>
+
     </article>
 
 
@@ -696,14 +858,17 @@
 
     <article class="design-article js-observer">
       <h1 class="design-article-title">Text Links</h1>
-      <p class="design-article-description">문단 <a href="#" style="color:var(--color-primary);">내부 링크</a>와 문단 <a href="#" style="color:var(--gray800);text-decoration:underline;">외부 링크</a>를 구분합니다.</p>
+      <p class="design-article-description">문단 <a href="#" class="link-inner">내부 링크</a>와 문단 <a href="#" class="link-outer">외부 링크</a>를 구분합니다.</p>
+      <blockquote>
+        <p>요약한 텍스트를 펼쳐보기 위한 더보기 버튼은 중요도가 낮기 때문에 톤 다운된 검정색이 많이 사용됨. 외부 링크와 텍스트 버튼 구분.</p>
+      </blockquote>
       <!-- <p>internal / external(+아이콘?), More(확장) / Learn More(링크)</p> -->
-      <p>형무소 안에서는 소장의 말이 곧 법이었으며 죄수들의 잘못과 실수는 결코 용납되지 않는다. 어머니의 사망 소식을 듣고 인해 2번이나 탈옥을 시도했다가 체포된 <a href="">루크</a>의 발에 쇠통이 채워지며 루크는…<a class="more" href="#" style="margin-left:.25rem;color:var(--gray800);text-decoration:underline;">더 보기</a></p>
+      <p>형무소 안에서는 소장의 말이 곧 법이었으며 죄수들의 잘못과 실수는 결코 용납되지 않는다. 어머니의 사망 소식을 듣고 인해 2번이나 탈옥을 시도했다가 체포된 <a class="link-inner" href="#">루크</a>의 발에 쇠통이 채워지며 루크는…<a class="more link-outer" href="#" style="margin-left:.25rem;">더 보기</a></p>
     </article>
 
     <article class="design-article js-observer js-tab">
       <h1 class="design-article-title">Tab</h1>
-      <p class="design-article-description">여러 개의 탭이 중첩되지 않도록 플로우를 설계하는 것이 중요합니다. 전체 콘텐츠가 변경되는 경우 사용합니다. 필터링에 사용할 수 없습니다.<p>
+      <p class="design-article-description">여러 개의 탭이 중첩되지 않도록 플로우를 설계하세요. 전체 콘텐츠가 변경되는 경우 사용하여 필터링에는 chip을 사용합니다.<p>
       <blockquote>
         <i>🔨</i> 탭을 클릭할 때 브라우저 히스토리에 추가하는 것이 사용자 경험에 좋을까?<br />TODO 탭의 중첩되는 경우 / 스크롤스파이 / 가로 스크롤 / Segmented Control처럼 생겼는데 HIG에서 탭과의 차이를 어떻게 정의하는지?
       </blockquote>
@@ -715,45 +880,32 @@
 			</nav>
     </article>
 
+    
     <article class="design-article js-observer">
-      <h1 class="design-article-title">Tags</h1>
+      <h1 class="design-article-title">Text Lists</h1>
       <p class="design-article-description">작성 중.</p>
-      <div class="" role="group">
-        <a class="tag tags-item" href="#" data-appearance="accent">Tag</a>
-        <a class="tag topic-item" href="#" role="listitem">주도하는역할</a>
-        <a class="tag topic-item" href="#" role="listitem">뱃지</a>
-        <!-- <a class="tag topic-item" href="#" role="listitem">뱃지 <i class="icon-close"></i></a> -->
-        <a class="tag topic-item is-disabled" href="#" role="listitem">뱃지is-disaled</a>
-        <a class="hashtag hashtags-item" href="#" role="listitem">해시태그</a>
-      </div>
-      <hr />
-      <div class="topic">
-        <h3 class="topic-title">최고 인기 토픽</h3>
-        <div class="tags" role="group">
-          <a class="tags-item tag" href="#" role="listitem">업데이트</a>
-          <a class="tags-item tag" href="#" role="listitem">업데이트</a>
-        </div>
-      </div>
-      <br />
-      <nav class="sidebar" style="padding-bottom:.5rem">
-        <h4 class="sidebar-heading">대분류</h4>
-        <div class="sidebar-item" role="listitem">
-          <h2 style="margin-right:.5rem;font-size:1.25rem"><figure style="margin:0 1rem 0 0;">⚽</figure>축구</h2>
-        </div>
-        <div class="sidebar-item" role="listitem">
-          <h2 style="margin-right:1rem;font-size:1.25rem"><figure style="margin:0 1rem 0 0;">🏹</figure>양궁</h2>
-          <a class="sidebar-item-tag tag" data-appearance="accent" href="#">새소식</a>
-        </div>
-        <hr />
-        <h4 class="sidebar-heading">대분류</h4>
-        <div class="sidebar-item" role="listitem">
-          <h2 style="margin-right:.5rem;font-size:1.25rem"><figure style="margin:0 1rem 0 0;">⚽</figure>축구</h2>
-        </div>
-        <div class="sidebar-item" role="listitem">
-          <h2 style="margin-right:.5rem;font-size:1.25rem"><figure style="margin:0 1rem 0 0;">🏹</figure>양궁</h2>
-        </div>
-      </nav>
-      <!-- <span style="padding:.5rem 1rem;border-radius:var(--radius400);background:var(--gray800);color:var(--gray0);">강조 태그</span> -->
+      <blockquote>
+        텍스트 노드로 리스트업하는 경우에만 리스트 태그(li)로 마크업하세요. (role=listitem)
+      </blockquote>
+      <ul class="list-sample">
+        <li title="unordered list, level 1">순서가 없는 리스트
+          <ul>
+            <li title="unordered list, level 2">순서가 없는 리스트</li>
+            <li>순서가 없는 리스트</li>
+          </ul>
+        </li>
+        <li>순서가 없는 리스트</li>
+      </ul>
+      <hr role="separator" />
+      <ol class="list-sample">
+        <li>순서가 있는 리스트
+          <ol>
+            <li>순서가 있는 리스트</li>
+            <li>순서가 있는 리스트</li>
+          </ol>
+        </li>
+        <li>순서가 있는 리스트</li>
+      </ol>
     </article>
 
     <article class="design-article js-observer">
@@ -823,13 +975,13 @@
         <h6 style="margin:0 0 .5rem;font-size:var(--caption);">Large - 프로모션 페이지 등에서 사용합니다. primary only.</h6>
         <div role="group">
           <button class="design-article-primary" style="min-width:320px;padding:12px 0 15px;font-size:1.25rem;">
-            알림 신청하기
+            Large
           </button>
         </div>
         <br />
         <h6 style="margin:0 0 .5rem;font-size:var(--caption);">Small - 카드 내부의 리스트아이템에서 사용하세요.</h6>
         <div role="group">
-          <button class="design-article-tertiary-small">팔로우</button>
+          <button class="design-article-tertiary-small">Small</button>
         </div>
         <br />
         <h6 style="margin:0 0 .5rem;font-size:var(--caption);">isFetching 샘플</h6>
@@ -858,13 +1010,11 @@
       </div>
     </article> -->
 
-
-
     <article class="design-article js-observer">
       <h1 class="design-article-title">Tooltip</h1>
       <p class="design-article-description">툴팁은 항상 트리거의 아래에 열립니다.</p>
       <blockquote>
-        페이지 로딩과 동시에 툴팁이 열려 있는 경우에 대비 doorhanger를 만들어야 한다.
+        페이지 로딩과 동시에 툴팁이 열려 있는 경우에 대비 doorhanger가 필요하다.
       </blockquote>
       <aside class="tooltip" role="tooltip">
         <span class="tooltip-target">툴팁 <i>?</i></span>
@@ -872,33 +1022,6 @@
           <p>제1항의 해임건의는 국회재적의원 3분의 1 이상의 발의에 의하여 국회재적의원 과반수의 찬성이 있어야 한다.</p>
         </div>
       </4aside>
-    </article>
-
-    <article class="design-article js-observer">
-      <h1 class="design-article-title">Lists</h1>
-      <p class="design-article-description">작성 중.</p>
-      <blockquote>
-        텍스트 노드로 리스트업하는 경우에만 리스트 태그(li)로 마크업하세요. (role=listitem)
-      </blockquote>
-      <ul class="list-sample">
-        <li title="unordered list, level 1">순서가 없는 리스트
-          <ul>
-            <li title="unordered list, level 2">순서가 없는 리스트</li>
-            <li>순서가 없는 리스트</li>
-          </ul>
-        </li>
-        <li>순서가 없는 리스트</li>
-      </ul>
-      <hr role="separator" />
-      <ol class="list-sample">
-        <li>순서가 있는 리스트
-          <ol>
-            <li>순서가 있는 리스트</li>
-            <li>순서가 있는 리스트</li>
-          </ol>
-        </li>
-        <li>순서가 있는 리스트</li>
-      </ol>
     </article>
 
     <article class="design-article js-observer">
@@ -981,11 +1104,13 @@
           <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus.
         </p>
       </aside>
-      <br />
-      <aside class="message">
+      <aside class="message" style="margin:1rem 0;">
         <span class="message-icon">🧡</span>
         <p class="message-head">좋아한 콘텐츠에 저장했어요.</p>
         <button class="message-close" aria-label="close"><i class="icon-close"></i></button>
+      </aside>
+      <aside class="message" style="background:var(--red800);border:none;">
+        <p class="message-head" style="color:var(--gray0);">인터넷 연결이</p>
       </aside>
     </article>
 
@@ -1017,7 +1142,7 @@
 
     <article class="design-article js-observer">
       <h1 class="design-article-title">Bullet</h1>
-      <p class="design-article-description">지양. 정돈되지 않는 느낌. 슬래시를 불릿으로 사용한다면,</p>
+      <p class="design-article-description">작성 중. 기본적으로는 지양. 디자인되지 않았다는 인상. 불릿/슬래시 중 하나만 사용.</p>
 
     </article>
 
@@ -1130,7 +1255,7 @@
 
     <article class="design-article js-observer">
       <h1 class="design-article-title">Cards</h1>
-      <p class="design-article-description">카드 내부에서 제목으로 heading3과 heading4를 사용합니다. history:: remove borderless type.</p>
+      <p class="design-article-description">작성 중. history:: remove borderless type.</p>
       <div class="card" role="listitem" style="max-width:400px;">
         <figure class="card-thumbnail"><img src="/public/images/springsteen.jpg" alt="" /></figure>
         <h3 class="card-title">카드 유아이</h3>
@@ -1152,59 +1277,6 @@
         </div>
         <div class="card-note">마일리지 적립 200P</div>
         <button class="card-more" hidden><i class="icon-more"></i></button>
-      </div>
-
-      <br />
-      
-      <article class="sheet">
-        <!-- <h3 class="sheet-title">정렬하기</h3> -->
-        <!-- <hr /> -->
-        <button style="width:100%;display:flex;margin:0 0 .5rem 0;justify-content:space-between;font-size:1.25rem;">마음에 들어요 (시트에서) <i class="icon-heart"></i></button>
-        <button style="width:100%;display:flex;justify-content:space-between;font-size:1.25rem;">관심 없어요 <i class="icon-heart"></i></button>
-        <!-- <div class="checkbox theme-right">
-          <input class="js-check" type="checkbox" id="sheet" name="sheet" value="sheet">
-          <label for="sheet">인기순. 우측에 체크박스 있는 형태(모바일의 시트에서. 어포던스 키워야 함.)</label>
-        </div>
-        <div class="checkbox theme-right">
-          <input class="js-check" type="checkbox" id="sheet" name="sheet" value="sheet">
-          <label for="sheet">최신순</label>
-        </div> -->
-      </article>
-
-      <br />
-
-      <article class="keywords">
-        <h3 class="keywords-title">실시간 이슈 키워드</h3>
-        <div class="keywords-group" role="group">
-          <a class="keywords-group-keyword" href="">코에이 테크모 게임즈</a>
-          <a class="keywords-group-keyword" href="">시뮬레이션</a>
-          <a class="keywords-group-keyword" href="">삼국지14</a>
-          <a class="keywords-group-keyword" href="">PC</a>
-          <a class="keywords-group-keyword" href="">PS4</a>
-        </div>
-      </article>
-
-      <br />
-
-      <div class="userlist" style="overflow:hidden;">
-        <button class="sheet-toggle"></button>
-        <header>
-          <h1>Followers</h1>
-          <a href="#" style="color: var(--gray800);
-          text-decoration: underline;">모두 보기</a>
-        </header>
-        <hr />
-        <div class="profile-user" style="width:100%;height:48px;" role="listitem">
-          <figure class="profile-user-avatar" style="float:left;width:48px;height:48px;margin-right:1rem;"></figure>
-          <h2 class="profile-user-name" style="font-size:1rem;">Gyeongsoo I</h2>
-          <span class="profile-user-id" style="color:var(--gray400);">유아이 디자이너</span>
-          <button class="design-article-tertiary-small" style="position:absolute;right:0;top:0;">팔로우</button>
-        </div>
-        <div class="profile-user" style="width:100%;height:48px;margin-top:1rem;">
-          <figure class="profile-user-avatar" style="float:left;width:48px;height:48px;margin-right:1rem;background-image:none;"><i class="icon-plus" style="transform:scale(1.25);"></i></figure>
-          <h2 class="profile-user-name" style="font-size:1rem;line-height:48px;">더 많은 친구를 찾아보세요!</h2>
-        </div>
-        <!-- <button class="userlist-cta">모두 보기</button> -->
       </div>
 
       <br />
@@ -1263,23 +1335,6 @@
         </ul>
         <button class="pricing-item-upgrade">업그레이드</button>
         <button class="pricing-item-more">And More...</button>
-      </div>
-
-      <br />
-      
-      <div class="daylist">
-        <div class="day" role="listitem">
-          <span class="day-label">mon</span>
-          <b class="day-value">24</b>
-        </div>
-        <div class="day" role="listitem">
-          <span class="day-label">tue</span>
-          <b class="day-value">25</b>
-        </div>
-        <div class="day" role="listitem">
-          <span class="day-label">wed</span>
-          <b class="day-value">26</b>
-        </div>
       </div>
     </article>
 
@@ -1509,6 +1564,11 @@
       <p class="design-article-description">작성 중.</p>
       <table>
         <caption>히라가나 오십음도</caption>
+        <!-- <colgroup>
+          <col>
+          <col span="2" class="batman">
+          <col span="2" class="flash">
+        </colgroup> -->
         <thead role="rowgroup">
           <tr role="row">
             <!-- <th role="columnheader" aria-sort="none" class="table-checkbox">
@@ -1517,12 +1577,12 @@
                 <label for="temp1"></label>
               </div>
             </th> -->
-            <th>あ단</th>
-            <th>い단</th>
-            <th>う단</th>
-            <th>え단</th>
-            <th>お단</th>
-            <th class="right">숫자</th>
+            <th scope="col">あ단</th>
+            <th scope="col">い단</th>
+            <th scope="col">う단</th>
+            <th scope="col">え단</th>
+            <th scope="col">お단</th>
+            <th scope="col" class="right">숫자</th>
           </tr>
         </thead>
         <tbody role="rowgroup">
@@ -1542,6 +1602,24 @@
             <td>ゑ we</td>
             <td>を wo(o)</td>
             <td class="right"> ん n/nn</td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+      <table>
+        <caption>히라가나 오십음도</caption>
+        <tbody role="rowgroup">
+          <tr role="row" aria-rowindex="11">
+            <th scope="row">제목</th>
+            <td>に</td>
+          </tr>
+          <tr role="row" aria-rowindex="11">
+            <th scope="row">제목</th>
+            <td>に</td>
+          </tr>
+          <tr role="row" aria-rowindex="11">
+            <th scope="row">제목</th>
+            <td>に</td>
           </tr>
         </tbody>
       </table>
