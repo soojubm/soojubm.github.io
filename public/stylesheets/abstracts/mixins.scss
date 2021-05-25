@@ -1,9 +1,26 @@
 
+
+@mixin title {font-size:var(--title);line-height:1.4;font-weight:bold;letter-spacing:-.025rem;text-indent:-1px;color:var(--gray800);}
+@mixin subhead {font-size:1.25rem;font-weight:bold;letter-spacing:-.025rem;}
+
+@mixin text-title {font-size:var(--title);line-height:1.4;font-weight:bold;letter-spacing:-.025rem;text-indent:-1px;}
+@mixin text-subheading {font-size:1.25rem;font-weight:bold;letter-spacing:-.025rem;}
+@mixin text-caption {font-size:var(--caption);font-weight:bold;}
+@mixin text-label {font-size:var(--body);font-weight:normal;color:var(--gray400);}
+@mixin text-body-large {font-size:1.25rem;}
+
 @mixin truncate {white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 @mixin truncate-multi {@include truncate;height:3.6em;white-space:normal;word-wrap:break-word;display: -webkit-box;-webkit-line-clamp:2;-webkit-box-orient: vertical;}
 
-@mixin image-centered {width:auto;height:auto;max-width:150%;max-height:150%;margin:auto;position:absolute;left:0;right:0;top:0;bottom:0;}
 
+@mixin link-inner {display:inline-block;color:var(--color-primary);}
+@mixin link-outer {color:var(--gray800);text-decoration:underline;}
+
+@mixin hover-tertiary {border-color: var(--color-primary);}
+@mixin hover-text {color:var(--color-primary);}
+
+
+@mixin image-centered {width:auto;height:auto;max-width:150%;max-height:150%;margin:auto;position:absolute;left:0;right:0;top:0;bottom:0;}
 @mixin bleeding {
 	margin: 0 -50vw;
 	position: absolute;
@@ -30,8 +47,6 @@
   }
   figure {background-color:var(--gray0);}
 }
-@mixin hover-tertiary {border-color: var(--color-primary);}
-@mixin hover-text {color:var(--color-primary);}
 
 @mixin container-overflow {
   overflow:auto;white-space:nowrap;
@@ -82,6 +97,8 @@
 }
 @mixin outer-elevated {@include outer-flat;box-shadow:var(--shadow400);}
 
+@mixin outer-elevated-dropdown {}
+
 
 // layout 유동성을 위해. centered mixin은 layou의 유동성을 해친다.
 // ! box-small의 display:flex가 hidden 속성과 충돌
@@ -95,15 +112,11 @@
   background: var(--gray100);
   position: relative;
 }
-@mixin box-large {@include outer-avatar($cell-large);}
-@mixin box-medium {@include outer-avatar($cell-medium);}
-@mixin box-small {@include outer-avatar($cell-small);}
-@mixin box-tiny {@include outer-avatar($cell-tiny);}
+@mixin box-large {@include outer-avatar(var(--cell-large));}
+@mixin box-medium {@include outer-avatar(var(--cell-medium));}
+@mixin box-small {@include outer-avatar(var(--cell-small));}
+@mixin box-tiny {@include outer-avatar(var(--cell-tiny));}
 
-
-
-@mixin link-inner {display:inline-block;color:var(--color-primary);}
-@mixin link-outer {color:var(--gray800);text-decoration:underline;}
 .link-inner {@include link-inner;}
 .link-outer {@include link-outer;}
 

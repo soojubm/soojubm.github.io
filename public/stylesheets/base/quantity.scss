@@ -1,6 +1,6 @@
-.quantity {max-width:10rem;height:$cell-small;text-align:center;position:relative;}
+.quantity {max-width:10rem;height:var(--cell-small);text-align:center;position:relative;}
 .quantity-input {width:calc(100% - 64px);height:100%;padding-bottom:2px;background:var(--gray100);border:var(--border150);box-sizing:border-box;font-family:inherit;font-size:1rem;color:var(--gray800);text-align:center;border-radius:0;} // br = iOS
-.quantity-decrement {width:$cell-small;height:$cell-small;border:var(--border150);border-radius:var(--radius400) 0 0 var(--radius400);cursor:pointer;position:absolute;left:1px;top:0px;}
-.quantity-increment {width:$cell-small;height:$cell-small;border:var(--border150);border-radius:0 var(--radius400) var(--radius400) 0;cursor:pointer;position:absolute;right:1px;top:0px;}
+.quantity-decrement {width:var(--cell-small);height:var(--cell-small);border:var(--border150);border-radius:var(--radius400) 0 0 var(--radius400);cursor:pointer;position:absolute;left:1px;top:0px;}
+.quantity-increment {width:var(--cell-small);height:var(--cell-small);border:var(--border150);border-radius:0 var(--radius400) var(--radius400) 0;cursor:pointer;position:absolute;right:1px;top:0px;}
 .quantity-decrement:disabled {opacity:.5;cursor:not-allowed;}
 .quantity-increment:disabled {opacity:.5;cursor:not-allowed;}

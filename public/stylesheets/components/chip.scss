@@ -2,16 +2,16 @@
     // display:inline-block;
     display: inline-flex;
     align-items: center; 
-    height:var(--cell-small);padding:0 1rem;border:1px solid transparent;border-radius:var(--radius400);box-sizing:border-box;background:var(--gray100);color:var(--gray800);position:relative;
+    height:var(--cell-small);padding:4px 1rem 5px;border:1px solid transparent;border-radius:var(--radius400);box-sizing:border-box;background:var(--gray100);color:var(--gray800);position:relative;
 }
-
+@mixin chip-heading {width:24px;height:24px;position:absolute;left:3px;top:3px;}
+@mixin chip-tailing {width:24px;height:24px;position:absolute;right:3px;top:3px;}
+// .chips {@include outer-flat;}
 .chip {@include chip}
 .chip:hover {}
 .chip-count {margin:0 0 0 .25rem;color:var(--gray400);}
-.chip-icon {}
+.chip-icon {@include box-tiny;}
 .chip-icon .icon-caret {margin:0 0 0 .25rem;}
-.chip-icon .icon-check {margin:0 .5rem 0 0;}
-.chip-icon .icon-close {margin:0 0 0 .5rem;}
 .chip-icon .icon-close::before {background:var(--color-primary);}
 .chip-icon .icon-close::after {background:var(--color-primary);}
 .chip.is-active {border-color:var(--color-primary);background:var(--green100);color:var(--color-primary);}

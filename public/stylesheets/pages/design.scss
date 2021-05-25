@@ -25,16 +25,19 @@
 .design-head.is-scrolled {transform:translateX(-50%);transition:transform .8s $bezier-base .4s;}
 .design-body {width:50%;max-width:40rem;margin-left:50%;padding:0 6rem 8rem;}
 
-.design-article {margin:8rem 0;position:relative;}
+.design-article {margin:8rem 0;position:relative;opacity:0;}
 .design-article-title {margin:0 0 1rem 0;@include subhead;}
 .design-article-description {margin:0 0 1.5rem 0;}
 .design-article-more {display:flex;align-items:center;font-size:var(--caption);color:var(--color-primary);font-weight:bold;position:absolute;right:0;top:0;}
 .design-article-more i {margin-left:1.5rem;}
-.design-article.is-scrolled {animation:fadeup .8s both;}
+.design-article.is-scrolled {animation:fadeup .8s forwards;}
 
 .design-typograph-group {display:flex;justify-content:space-between;margin:0 0 -1rem 0;}
 .design-typograph-item {@include outer-flat;margin:1rem 0;}
 .design-typograph-group .design-typograph-item {width:var(--grid-column);}
+
+.design-typograph-size {@include outer-flat;margin:1rem 0;}
+.design-typograph-size span {float:right;}
 
 .design-outer-flat {@include outer-flat;}
 .design-outer-elevated {@include outer-elevated;}
@@ -199,10 +202,10 @@
 .design-article-secondary {@include button-secondary;}
 .design-article-tertiary {@include button-tertiary;}
 .design-article-text {@include button-text;}
-.design-article-primary-small {@include button-primary;padding:$padding100;font-size:var(--caption);}
-.design-article-secondary-small {@include button-secondary;padding:$padding100;font-size:var(--caption);}
-.design-article-tertiary-small {@include button-tertiary;padding:$padding100;font-size:var(--caption);}
-.design-article-text-small {@include button-text;padding:$padding100;font-size:var(--caption);}
+.design-article-primary-small {@include button-primary;height:var(--cell-small);padding:$padding100;font-size:var(--caption);}
+.design-article-secondary-small {@include button-secondary;height:var(--cell-small);padding:$padding100;font-size:var(--caption);}
+.design-article-tertiary-small {@include button-tertiary;height:var(--cell-small);padding:$padding100;font-size:var(--caption);}
+.design-article-text-small {@include button-text;height:var(--cell-small);padding:$padding100;font-size:var(--caption);}
 
 
 .number {display:flex;justify-content:center;}
@@ -295,7 +298,7 @@
 
 
 .sidebar {@include container-card;}
-.sidebar-heading {margin:0 0 .5rem 0;@include subheading3;}
+.sidebar-heading {margin:0 0 .5rem 0;@include text-label;}
 .sidebar-item {display:flex;align-items:center;margin:1rem 0;line-height:31px;position:relative;z-index:1;}
 .sidebar-item:hover {@include hover-item;}
 .sidebar-item h2 {display:flex;align-items:center;}
@@ -321,3 +324,11 @@
 
 .avatarlist {@include outer-elevated;padding:.5rem;color:var(--gray800);}
 .avatarlist:hover {@include hover-item;}
+
+
+.temp8 {}
+.temp8 div {width:80px;margin-right:1rem;text-align:center;    background: var(--gray0);
+  border: var(--border100);
+  border-radius: var(--radius400);
+  padding: 1rem;position:relative;}
+.temp8 div:hover{@include hover-item;}

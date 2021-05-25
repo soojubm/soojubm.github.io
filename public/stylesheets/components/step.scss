@@ -1,7 +1,7 @@
 .step {}
 .step-item {margin:1rem 0;position:relative;}
 .step-item-icon {@include box-small;position:absolute;left:0;}
-.step-item-title {margin-left:calc(32px + 1rem);font-size:1rem;font-weight:bold;line-height:$cell-small;vertical-align:1px;}
+.step-item-title {margin-left:calc(32px + 1rem);font-size:1rem;font-weight:bold;line-height:var(--cell-small);vertical-align:1px;}
 .step-item-description {margin:1rem 0 2rem;}
 .step-space {display:none;margin:-.5rem 0 0 0;}
 .step-space-dot {float:left;display:block;width:3px;height:3px;margin:21px 2px;border-radius:50%;background:var(--gray400);}
@@ -12,7 +12,7 @@
 
 // @media (--viewport-small) {
 //   .step-item {display:flex;width:auto;margin:0;}
-//   .step-item-title {margin-top:0;line-height:$cell-small;}
+//   .step-item-title {margin-top:0;line-height:var(--cell-small);}
 //   .step-item-icon {margin:0 1.25rem 0 0;}
 //   .step-space {width:32px;margin:1rem 0 1rem 14px;}
 //   .step-space-dot {float:none;margin:.25rem 0;}

@@ -19,7 +19,7 @@
 
 @mixin tag-primary {
   @include tag;
-  padding: 0 .5rem 1px;
+  padding: 0 .5rem;
   box-sizing: border-box;
   border-radius: var(--radius400);
   background-color: var(--gray100);
@@ -28,7 +28,7 @@
 
 @mixin tag-secondary {
   @include tag;
-  padding: 0 .5rem 1px;
+  padding: 0 .5rem;
   box-sizing: border-box;
   border-radius: var(--radius400);
   background-color: gold;

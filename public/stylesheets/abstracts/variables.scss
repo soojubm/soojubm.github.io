@@ -2,17 +2,6 @@
 @custom-media --viewport-large (max-width: 1441px);
 @custom-media --viewport-small (max-width: 1080px);
 
-$cell-large: 80px; // => 64px;
-$cell-medium: 48px;
-$cell-small: 32px;
-$cell-tiny: 16px;
-
-@mixin title {font-size:var(--title);line-height:1.4;font-weight:bold;letter-spacing:-.025rem;text-indent:-1px;color:var(--gray800);}
-@mixin subhead {font-size:1.25rem;font-weight:bold;letter-spacing:-.025rem;}
-@mixin subheading1 {font-size:1.25rem;font-weight:bold;letter-spacing:-.025rem;}
-@mixin subheading2 {font-size:var(--body);font-weight:normal;color:var(--gray800);}
-@mixin subheading3 {font-size:var(--body);font-weight:normal;color:var(--gray400);}
-
 $padding100: 4px 1rem 5px; // 32
 $padding200: 9px 1.5rem 11px; // 버튼, 텍스트인풋 48
 
@@ -22,7 +11,7 @@ $transition-fade: opacity 0.15s linear;
 
 :root {
   color-scheme: light dark;
-  --fontstack: 'Asap', 'AritaDotum', 'Apple SD Gothic Neo', sans-serif;
+  --fontstack: 'Apple SD Gothic Neo', sans-serif;
 
   --navbar-height: 56px;
 
@@ -34,19 +23,11 @@ $transition-fade: opacity 0.15s linear;
   --caption: .875rem;
 
   // --font-size-
-  --font-size-large: var(--headline);
+  --font-size-huge: var(--headline);
+  --font-size-large: var(--title);
   --font-size-regular: var(--subhead);
   --font-size-medium: var(--body);
   --font-size-small: var(--caption); // tiny
-
-  --font-size-caption: .875rem;
-  --font-size-paragraph: 1rem;
-  --font-size-paragraph-large: 1.25rem;
-  --font-size-subheading: 1.25rem;
-  --font-size-subheading-small: 1rem;
-  --font-size-subheading-large: none;
-  --font-size-heading: 2rem;
-  --font-size-heading-larger: 3rem;
 
   --font-weight-normal: normal;
   --font-weight-bold: bold;
@@ -100,6 +81,8 @@ $transition-fade: opacity 0.15s linear;
   --radius800: 50%;
   --radius-default: var(--radius400);
   --radius-avatar: var(--radius400);
+  --radius-card: var(--radius400);
+  --radius-container: var(--radius400);
 
   --shadow400: 0px 0px 2rem rgba(0, 0, 0, 0.125);
 
@@ -119,12 +102,13 @@ $transition-fade: opacity 0.15s linear;
   --button-text-color: #fff;
 
 
-  --zindex-dropdown: 2;
   --zindex-sticky: 4;
-  --zindex-modal: 8;
-  --zindex-modal-dim: 7;
+  --zindex-tooltip: 5;
   --zindex-popover: 6;
-  --zindex-tooltip: 8;
+  --zindex-dropdown: 6;
+  --zindex-modal-dim: 7;
+  --zindex-modal: 8;
+
 
   --grid-column: calc(50% - .5rem);
   --grid-gutter: 1rem;
@@ -132,6 +116,7 @@ $transition-fade: opacity 0.15s linear;
 
   --safearea-inset-bottom1: constant(safe-area-inset-bottom);
   --safearea-inset-bottom2: env(safe-area-inset-bottom);
+
   @media (--viewport-large) {
     --width-large: 1120px;
   }

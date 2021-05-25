@@ -26,6 +26,7 @@ button {@include reset-button;}
 @mixin button {
   display: inline-block;
   min-width: 8rem;
+  // height: var(--cell-medium);
   padding: $padding200;
   box-sizing:border-box;
   border-radius: var(--radius400);

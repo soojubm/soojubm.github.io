@@ -51,7 +51,7 @@
 
 .notification {}
 .notification-list {padding:1rem 2rem;}
-.notification-item {min-height:$cell-medium;margin:1rem 0;padding-left:calc(48px + 1rem);position:relative;}
+.notification-item {min-height:var(--cell-medium);margin:1rem 0;padding-left:calc(48px + 1rem);position:relative;}
 .notification-item:hover {@include hover-item;}
 .notification-item-avatar {@include box-medium;position:absolute;left:0;top:0;}
 .notification-item-user {font-size:1rem;}
@@ -66,7 +66,7 @@
 .navbar-user-menu {width:400px;height:0;@include container-card;position:absolute;top:40px;right:0;z-index:4;transform:scale(0);transform-origin:right top;}
 .navbar-user-menu.is-visible {height:auto;transform:scale(1);}
 
-.user {display:block;height:$cell-large;color:var(--gray800);position:relative;}
+.user {display:block;height:var(--cell-large);color:var(--gray800);position:relative;}
 .user-avatar {float:right;@include box-large;}
 .user-avatar-change {width:32px;height:32px;border-radius:var(--radius400);position:absolute;right:-8px;bottom:-8px;}
 .user-name {@include subhead;}

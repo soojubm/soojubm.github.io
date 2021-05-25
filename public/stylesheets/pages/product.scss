@@ -27,7 +27,7 @@
 .product-order-color-item.is-crimson {background:var(--color-primary);border:1px solid var(--color-primary)}
 .product-order-color-item.is-salmon {background:salmon;border:1px solid salmon}
 .product-order-count {margin:1rem 0;padding:1rem 0 1.25rem;border-top:var(--border100);border-bottom:var(--border100);position:relative;}
-.product-order-count-title {display:flex;align-items:center;margin:0 0 1rem 0;line-height:$cell-tiny;font-weight:normal;}
+.product-order-count-title {display:flex;align-items:center;margin:0 0 1rem 0;line-height:var(--cell-tiny);font-weight:normal;}
 .product-order-count-title .aaa {@include box-tiny;width:12px;height:12px;margin:0 .5rem 0 0;background:salmon;}
 .product-order-count-close {@include box-small;background:none;border:none;position:absolute;right:-10px;top:10px;}
 .product-order-count-quantity {width:50%;margin:0 0;}

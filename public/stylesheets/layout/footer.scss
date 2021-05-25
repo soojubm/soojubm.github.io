@@ -13,7 +13,7 @@
 .footer-sitemap-title {margin:0 0 1rem 0;@include subhead;}
 .footer-sitemap-item {width:25%;margin:0 0 2rem 0;}
 .footer-sitemap-item-title {margin:0 0 1rem 0;font-size:var(--body);font-weight:normal;color:var(--gray400);}
-.footer-sitemap-item-link {display:block;@include link-outer;}
+.footer-sitemap-item-link {display:block;margin:.5rem 0;color:var(--gray800);}
 .footer-sitemap-item-link:hover {@include hover-text;}
 
 .footer-address {}

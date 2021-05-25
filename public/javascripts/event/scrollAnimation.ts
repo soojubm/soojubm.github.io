@@ -5,12 +5,12 @@ const scrollAnimation = ({ selector: selector }) => {
   function animateOnScroll() {
     const elements = Array.from(document.querySelectorAll(selector))
     // console.log([].slice.call(document.querySelectorAll('.js-scroll-animation')), Array.from(document.querySelectorAll('.js-scroll-animation')),  document.querySelectorAll('.js-scroll-animation'))
-    // const options = {
-    //   root: null,
-    //   rootMargin: '0px 0px 0px 0px',
-    //   threshold: 0.1, // [0, 1], [0, 0.5]
-    // }
-    let observer = new IntersectionObserver(callback)
+    const options = {
+      root: null,
+      rootMargin: '0px 0px 0px 0px',
+      threshold: 0.2, // [0, 1], [0, 0.5]
+    }
+    let observer = new IntersectionObserver(callback, options)
 
     elements.forEach(element => observer.observe(element))
 

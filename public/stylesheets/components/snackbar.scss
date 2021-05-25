@@ -1,5 +1,5 @@
-.message {display:flex;flex-wrap:wrap;padding:0 .25rem;border:var(--border150);border-left:4px solid var(--color-primary);border-radius:var(--radius400);color:var(--gray800);position:relative;}
-.message-icon {@include box-medium;background:none;margin-right:-1.5rem;font-size:var(--subhead);}
+.message {@include outer-flat;border-left:4px solid var(--color-primary);color:var(--gray800);position:relative;}
+.message-icon {@include box-medium;background:none;font-size:var(--subhead);}
 .message-close {@include box-small;position:absolute;right:.5rem;top:.5rem;}
-.message-head {padding:11px 1.5rem 12px;position:relative;}
-.message-body {margin:-.5rem 1.5rem 12px;}
+.message-head {position:relative;}
+.message-body {}
