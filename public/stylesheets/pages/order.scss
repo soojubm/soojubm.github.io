@@ -18,7 +18,7 @@
 .order-item-body {margin:1rem 0;padding:0 1.5rem;overflow:hidden;position:relative;}
 .order-item-product {margin:.5rem 0;@include clearfix;}
 .order-item-product-thumbnail {float:left;@include box-large;margin-right:1.5rem;}
-.order-item-product-name {font-size:1rem;}
+.order-item-product-name {font-size:var(--body);}
 .order-item-product-price {@include subhead;}
 .order-item-foot {margin:1rem 0 0;padding:.25rem;border-top:var(--border100);position:relative;}
 .order-item-foot-button {@include button-text;width:100%;}

@@ -22,7 +22,10 @@
 
 <main class="post">
 	<header class="post-head js-post-head">
-		<a class="post-head-category" href="#post">Murmur</a>
+		<a class="post-head-category" href="#post">
+			<figure>🎃</figure>
+			Murmur
+		</a>
 		<h2 class="post-head-headline">포스트 페이지 샘플 본문 텍스트는 최소 16px</h2>
 		<time class="post-head-dateline">2018. 06. 29. 작성</time>
 		<div class="post-head-readingtime">약 40초 소요</div>
@@ -152,23 +155,24 @@
 		</button>
 	</section> -->
 
-	<hr />
+	<hr style="margin:2rem 0;" />
 
 	<section class="post-reaction">
 		<div class="post-reaction-like">
-			<div class="post-reaction-like-icon"><img src="/public/icons/coffee.svg" alt="" /></div>
-			<span class="post-reaction-like-count">2.5K</span>
+			<figure class="post-reaction-like-icon"><i class="icon-heart"></i></figure>
+			<span class="post-reaction-like-count"> 좋아요 2.5K</span>
 		</div>
-		<div class="post-reaction-share">
+		<div class="post-reaction-share" hidden>
 			<button class="post-reaction-share-trigger"></button>
 		</div>
 	</section>
 
 	<section class="post-comment">
-		<h4 class="post-comment-title js-open-comment" roloe="button">
-			<i class="">chat</i>댓글 <small>172</small>
-		</h4>
-		<button style="position:absolute;right:0;top:0;">필터 위치</button>
+		<header class="post-comment-title js-open-comment" roloe="button">
+			<figure class="">chat</figure>
+			댓글 <small>172</small>
+			<button class="post-comment-title-icon" style="position:absolute;right:0;top:0;"><i class="icon-chevron is-down"></i></button>
+		</header>
 		<div class="post-comment-list">
 			<div class="post-comment-list-item">
 				<a class="post-comment-list-item-avatar" href="#"><img src="/public/images/soo.png"></a>

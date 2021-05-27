@@ -23,7 +23,7 @@
 .profile-user-statistic .statistic {width: var(--grid-column);position: relative;}
 .profile-user-statistic .statistic:hover {@include hover-item;}
 .profile-user-socials {}
-.profile-user-socials-title {margin:0.5rem 0;font-size:1rem;font-weight:normal;color:var(--gray400);}
+.profile-user-socials-title {margin:0.5rem 0;font-size:var(--body);font-weight:normal;color:var(--gray400);}
 .profile-user-socials-link {display:block;color:var(--gray800);text-decoration:underline;}
 .profile-user-socials-link:hover {color:var(--color-primary);}
 .profile-user-controls {display:flex;margin:2rem 0 1rem;}
@@ -55,7 +55,7 @@
 .accordion-item-trigger {}
 .accordion-item-panel {}
 
-.accordion-trigger {display:flex;align-items:center;justify-content:space-between;margin:.5rem 0;font-size:1rem;font-weight:bold;cursor:pointer;position:relative;transition:all .4s;}
+.accordion-trigger {display:flex;align-items:center;justify-content:space-between;margin:.5rem 0;font-size:var(--body);font-weight:bold;cursor:pointer;position:relative;transition:all .4s;}
 // .accordion-trigger:hover {@include hover-item;}
 .accordion-trigger-icon {@include box-small;}
 .accordion-trigger.is-active {color:var(--color-primary);}

@@ -44,7 +44,7 @@
 .design-outer-elevated:hover {@include hover-item;}
 
 .design-button {position:relative;}
-.design-button h1 {margin:0 0 0rem 0;font-size:1.25rem;}
+.design-button h1 {margin:0 0 0rem 0;font-size:var(--subhead);}
 .design-button h2 {margin:4rem 0 0.5rem 0;position:relative;}
 .design-button p {margin:0 0 1.25rem 0;}
 .design-button div {position:relative;}
@@ -209,7 +209,7 @@
 
 
 .number {display:flex;justify-content:center;}
-.number-card {display:flex;justify-content:center;align-items:center;width:48px;height:64px;background:var(--gray100);border-radius:var(--shadow400);font-size:2rem;font-weight:bold;margin:0 .25rem;}
+.number-card {display:flex;justify-content:center;align-items:center;width:48px;height:64px;background:var(--gray100);border-radius:var(--shadow400);font-size:var(--title);font-weight:bold;margin:0 .25rem;}
 
 .userlist {@include container-card;}
 .userlist header {display:flex;align-items:center;justify-content:space-between;margin:0 0 1rem 0;}
@@ -286,7 +286,7 @@
   
 }
 .summary-item {display:flex;justify-content:space-between;padding:.25rem 0;}
-.summary-item-label {color:var(--gray400);}
+.summary-item-label {}
 .summary-item-value {}
 .summary-total {display:flex;justify-content:space-between;padding:.5rem 0 0;@include subhead;}
 

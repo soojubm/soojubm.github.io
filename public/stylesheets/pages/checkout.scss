@@ -1,25 +1,25 @@
 @mixin item {display:flex;align-items:center;padding:0 0 .75rem;border-radius:var(--radius400);position:relative;}
 @mixin item-emoji {display:none;margin-top:-.25rem;position:absolute;left:0;top:50%;transform:translate(0, -50%);}
-@mixin item-label {width:120px;margin-left:0;color:var(--gray400);font-size:1rem;}
+@mixin item-label {width:120px;margin-left:0;color:var(--gray400);font-size:var(--body);}
 @mixin item-value {}
 
 .checkout {@include container-large;}
 .checkout-step {}
 .checkout-head {padding:2rem 0 4rem;position:relative;}
 .checkout-head-background {display:none;background:var(--gray100);position:absolute;left:-200%;right:-200%;top:0;bottom:0;z-index:-1;}
-.checkout-head-eyebrow {margin-bottom:.5rem;font-size:1rem;color:var(--gray400);}
+.checkout-head-eyebrow {margin-bottom:.5rem;font-size:var(--body);color:var(--gray400);}
 .checkout-head-title {@include title;}
 .checkout-head-description {margin:2rem 0 0 0;}
 
 .checkout-head-byline {display:flex;display:none;align-items:center;justify-content:space-between;margin:4rem 0;padding:1rem 0;padding-right:560px;}
-.checkout-head-byline h2 {font-size:1rem;}
+.checkout-head-byline h2 {font-size:var(--body);}
 .checkout-head-byline figure {@include box-small;display:flex;}
 
 .checkout-product {float:right;width:var(--width-small);@include container-card;}
 .checkout-product-title {margin:0 0 1rem 0;@include subhead;}
 .checkout-product-item {height:var(--cell-large);margin:0 0 1rem 0;position:relative;}
 .checkout-product-item-media {float:left;@include box-large;margin:0 1.5rem 0 0;}
-.checkout-product-item-name {font-size:1rem;}
+.checkout-product-item-name {font-size:var(--body);}
 .checkout-product-item-text {color:var(--gray400);}
 .checkout-product-item-price {@include subhead;}
 .checkout-product-subtotal {display:flex;justify-content:space-between;margin:.5rem 0;}
@@ -51,7 +51,7 @@
 .checkout-payment-title {margin:0 0 1rem 0;@include subhead;}
 .checkout-payment-description {}
 .checkout-payment-button {width:100%;margin:.25rem 0;padding:$padding200;border:var(--border100);border-radius:4px;text-align:left;position:relative}
-.checkout-payment-button-emoji {display:block;margin-bottom:-.5rem;font-size:2rem;}
+.checkout-payment-button-emoji {display:block;margin-bottom:-.5rem;font-size:var(--title);}
 .checkout-payment-button-check {position:absolute;right:16px;top:42%;}
 
 .checkout-foot {}

@@ -219,7 +219,7 @@
         <a href="" class="design-article-avatar-large"><span class="avatar-badge"></span></a>
         <div style="display:block;width:1.5rem;height:inherit;border-radius:var(--radius400);background:var(--green100);"></div>
         <div style="display:block;width:calc(100% - 80px - 1.5rem);height:inherit;">
-          <h3 style="font-size:1.25rem;font-weight:bold;">Large / 80px / left 1.5rem</h3>
+          <h3 style="font-size:var(--subhead);font-weight:bold;">Large / 80px / left 1.5rem</h3>
           <p style="color:var(--gray400);">디스크립션을 가질 수 있어요</p>
         </div>
       </div>
@@ -227,7 +227,7 @@
         <a href="" class="design-article-avatar-medium"></a>
         <div style="display:block;width:1rem;height:48px;border-radius:var(--radius400);background:var(--green100);box-sizing:border-box;"></div>
         <div style="display:block;width:calc(100% - 48px - 1rem);height:inherit;">
-          <h3 style="font-weight:bold;font-size:1rem;">Medium / 48px / left 1rem</h3>
+          <h3 style="font-weight:bold;font-size:var(--body);">Medium / 48px / left 1rem</h3>
           <p style="color:var(--gray400);">디스크립션을 가질 수 있어요</p>
         </div>
       </div>
@@ -276,19 +276,19 @@
         <hr />
         <div class="profile-user" style="width:100%;height:48px;" role="listitem">
           <figure class="profile-user-avatar" style="float:left;width:48px;height:48px;margin-right:1rem;"></figure>
-          <h2 class="profile-user-name" style="font-size:1rem;">Gyeongsoo I</h2>
+          <h2 class="profile-user-name" style="font-size:var(--body);">Gyeongsoo I</h2>
           <span class="profile-user-id" style="color:var(--gray400);">유아이 디자이너</span>
           <button class="design-article-tertiary-small" style="position:absolute;right:0;top:0;">팔로잉</button>
         </div>
         <div class="profile-user" style="width:100%;height:48px;margin-top:1rem;" role="listitem">
           <figure class="profile-user-avatar" style="float:left;width:48px;height:48px;margin-right:1rem;"></figure>
-          <h2 class="profile-user-name" style="font-size:1rem;">Gyeongsoo I</h2>
+          <h2 class="profile-user-name" style="font-size:var(--body);">Gyeongsoo I</h2>
           <span class="profile-user-id" style="color:var(--gray400);">유아이 디자이너</span>
           <button class="design-article-secondary-small" style="position:absolute;right:0;top:0;">팔로우</button>
         </div>
         <div class="profile-user" style="width:100%;height:48px;margin-top:1rem;">
           <figure class="profile-user-avatar" style="float:left;width:48px;height:48px;margin-right:1rem;background-image:none;"><i class="icon-plus" style="transform:scale(1.25);"></i></figure>
-          <h2 class="profile-user-name" style="font-size:1rem;line-height:48px;">더 많은 친구를 찾아보세요!</h2>
+          <h2 class="profile-user-name" style="font-size:var(--body);line-height:48px;">더 많은 친구를 찾아보세요!</h2>
         </div>
         <!-- <button class="userlist-cta">모두 보기</button> -->
       </div>
@@ -296,82 +296,97 @@
 
     <article class="design-article typography js-observer">
       <h1 class="design-article-title">Typography</h1>
-      <p class="design-article-description">1rem은 14px로 정의합니다. 4가지 사이즈를 기반으로 제목용, 본문용을 구분합니다. 현재 모바일 사이즈의 브라우저에서 rem 단위 테스트를 위해 12px이 적용되어 있습니다.</p>
+      <p class="design-article-description">4가지 사이즈를 기반으로 제목용, 본문용을 구분합니다. 현재 모바일 사이즈의 브라우저에서 rem 단위 테스트를 위해 12px이 적용되어 있습니다.</p>
       <!-- <li>asap의 dash를 마이너스로 쓰면 어색. 무게가 살짝 다름.</li> -->
 
 
       <div class="design-typograph-group">
         <div class="design-typograph-item">
           <i style="display:block;margin-bottom:.5rem;width:16px;height:16px;border-radius:var(--radius400);background:var(--color-primary);color:var(--gray400);"></i>
-          한글 <b style="display:block;font-size:1.25rem;line-height:1.5;font-weight:bold;">아리타 산스</b>
+          한글 <b style="display:block;font-size:var(--subhead);line-height:1.5;font-weight:bold;">아리타 산스</b>
+          <div role="group" style="margin-top:1rem;">
+            <span class="tag">normal</span>
+            <span class="tag">bold</span>
+          </div>
         </div>
         <div class="design-typograph-item">
           <i style="display:block;margin-bottom:.5rem;width:16px;height:16px;border-radius:var(--radius400);background:var(--color-primary);color:var(--gray400);"></i>
-          영문 <b style="display:block;font-size:1.25rem;line-height:1.5;font-weight:bold;">Asap</b style="display:block;font-size:1.25rem;margin-top:.5rem;">
+          영문 <b style="display:block;font-size:var(--subhead);line-height:1.5;font-weight:bold;">Asap</b style="display:block;font-size:var(--subhead);margin-top:.5rem;">
+          <div role="group" style="margin-top:1rem;">
+            <span class="tag">normal</span>
+            <span class="tag">bold</span>
+          </div>
         </div>
       </div>
 
       <div style="margin:1rem 0;">
-        <h1 class="design-typograph-size" style="font-size:3rem;">Huge <span>3rem</span></h1>
-        <h1 class="design-typograph-size" style="font-size:2rem;">Large <span>2rem</span></h1>
-        <h1 class="design-typograph-size" style="font-size:1.25rem;">Medium <span>1.25rem</span></h1>
-        <h1 class="design-typograph-size" style="font-size:1rem;">Small <span>1rem</span></h1>
-        <h1 class="design-typograph-size" style="font-size:.875rem;">Tiny <span>.875rem</span></h1>
-      </div>
-
-      <!-- <div style="margin:1rem 0 0 0;padding:1.5rem;border:1px solid var(--gray200);border-radius:var(--radius400);">
-        <h1 style="font-size:1rem;">바디body <span style="float:right;">1rem</span></h1>
-      </div>
-      <div style="margin:1rem 0 0 0;padding:1.5rem;border:1px solid var(--gray200);border-radius:var(--radius400);">
-        <h1 style="font-size:var(--caption);">캡션caption <span style="float:right;">.875rem</span></h1>
-      </div> -->
-      <p style="margin-bottom:-.5rem;font-weight:bold;font-size:var(--caption);">제목Headings</p>
-
-      <div class="design-typograph-item">
-        <!-- <h1 style="font-size:var(--title);font-weight:bold;">라지Large, 2rem</h1> -->
-        <h1 style="font-size:var(--title);font-weight:bold;">페이지 레벨의 제목으로 사용합니다.</h1>
-        <div role="group" style="margin:.5rem 0 0 0;">
-          <span class="hashtag"><del>Normal</del></span>
-          <span class="hashtag">Bold</span>
-          <span class="hashtag">Huge</span>
-          <span class="hashtag">Large</span>
-          <span class="hashtag">Medium</span>
-          <span class="hashtag"><del>Small</del></span>
-          <span class="hashtag">Tiny</span>
+        <div class="design-typograph-size">
+          <h3>Huge <span>3rem / 48px</span></h3>
+          <p style="margin:1rem 0 0;">프로모션 등 특수한 목적의 페이지에서 사용합니다.</p>
+          <b style="position:absolute;left:1rem;top:1rem;font-size:3rem;color:var(--gray100);z-index:0;">헤드라인</b>
+          <div role="group" style="margin-top:2rem;">
+            <span class="tag" data-appearance="accent">제목heading</span>
+            <span class="tag">헤드라인Headline</span>
+          </div>
         </div>
-        <!-- <span class="tag">타이틀title</span> -->
-      </div>
-      <p style="margin-bottom:-.5rem;font-weight:bold;font-size:var(--caption);">본문Body Texts</p>
-      <div class="design-typograph-item">
-        <!-- <h1 style="margin:0 0 2rem 0;font-size:var(--title);font-weight:bold;">페이지 레벨의 제목</h1>
-        <h1 style="margin:0 0 1rem 0;font-size:var(--subhead);font-weight:bold;">섹션 레벨의 제목</h1> -->
-        <p style="font-size:1.25rem;">포스트, 약관 등 텍스트 중심의 콘텐츠 페이지에서 본문으로 사용할 수 있습니다.</p>
-        <br />
-        <p>일반적으로 사용하는 본문입니다. 문장 안에서 <b>강조</b>할 수 있습니다.</p>
-        <br />
-        <p style="font-size:var(--caption);">주요 콘텐츠는 아니지만 도움말 맥락에서 사용합니다.</p>
-        <div role="group" style="margin:2rem 0 0 0;">
-          <span class="tag">Normal</span>
-          <span class="tag">gray400</span>
-          <span class="tag">1.25rem</span>
+        <div class="design-typograph-size">
+          <h3>Large <span>2rem / 32px</span></h3>
+          <p style="margin:1rem 0 0;">페이지 레벨의 제목에 사용합니다.</p>
+          <div role="group" style="margin-top:2rem;">
+            <span class="tag" data-appearance="accent">제목heading</span>
+            <span class="tag">타이틀Title</span>
+          </div>
+        </div>
+        <div class="design-typograph-size">
+          <h3>Medium <span>1.125rem / 18px</span></h3>
+          <p style="margin:1rem 0 0;">포스트, 약관 등 텍스트 중심의 콘텐츠 페이지에서 본문으로 사용할 수 있습니다.</p>
+          <p>카드 및 하나의 아이템에 대한 소제목에 사용합니다.</p>
+          <div role="group" style="margin-top:2rem;">
+            <span class="tag" data-appearance="accent">제목heading</span>
+            <span class="tag">소제목subheading</span>
+          </div>
+          <div role="group" style="margin-top:.5rem;">
+            <span class="tag" data-appearance="accent">본문body</span>
+          </div>
+        </div>
+        <div class="design-typograph-size">
+          <h3>Small <small class="tag" style="margin-left:.5rem;font-weight:normal;">기본</small> <span>.875rem / 14px</span></h3>
+          <p style="margin:1rem 0 0 0;">일반적으로 사용하는 본문입니다. 대부분의 텍스트는 small 사이즈를 사용합니다.</p>
+          <div role="group" style="margin-top:2rem;;">
+            <span class="tag">본문body</span>
+          </div>
+        </div>
+        <div class="design-typograph-size">
+          <h3>Tiny <span>.75rem / 12px</span></h3>
+          <p style="margin:1rem 0 0 0;">주요 콘텐츠는 아니지만 도움말 맥락에서 사용합니다.</p>
+          <div role="group" style="margin-top:2rem;">
+            <span class="tag" data-appearance="accent">제목heading</span>
+            <span class="tag">캡션caption</span>
+          </div>
+          <div role="group" style="margin-top:.5rem;">
+            <span class="tag" data-appearance="accent">본문body</span>
+            <span class="tag">도움말helper text</span>
+          </div>
         </div>
       </div>
     </article>
 
     <article class="design-article js-observer">
       <h1 class="design-article-title">Outers</h1>
-      <p class="design-article-description">콘텐츠를 강조할 때 사용합니다.</p>
+      <p class="design-article-description">제목, 디스크립션 구성의 콘텐츠 다음에 오는 콘텐츠 강조를 이ㅜ해 사용합닏.</p>
       <div class="design-outer-flat">
+        @outer-flat. 클릭이 필요 없는 콘텐츠를 그루핑합니다.
         <b>flat</b> is non clickable. no one.
       </div>
       <div class="design-outer-elevated" style="margin-top:1rem;">
+        @outer-elevated. 그룹 전체를 클릭할 수도, 그룹 내부에 클릭할 수 있는 아이템이 존재할 수도 있습니다.
         <b>elevated</b> is clickable. target or children. 
       </div>
     </article>
 
     <article class="design-article js-observer">
       <h1 class="design-article-title">Grid System</h1>
-      <p class="design-article-description">12 column grid 등 엄격한 그리드 시스템을 사용하지 않습니다. 가로 스크롤 트랜드. 모바일 트랜드에서 부적절. 언제나 모바일 퍼스트. 2개 칼럼. feature에서 3개 까지 사용할 수 있음. 가능하면 1개 칼럼 사용. 컨테이너 크기를 적절하게 정의하는 것이 더 중요.</p>
+      <p class="design-article-description">12 column grid 등 엄격한 그리드 시스템을 사용하지 않습니다. 모바일 퍼스트로 사고하고 가로 스크롤로 설계. 일반적인 그리드 시스템을 대신하여 컨테이너 크기와 클릭할 수 있는 하나의 콘텐츠 크기를 정의하는 것이 좋습니다. 가능하면 하나의 칼럼을 유지하고 4개 이상의 칼럼을 나누지 않습니다.</p>
       <div style="max-width:375px;display:flex;align-items:center;height:10rem;border:var(--border100);border-radius:var(--radius400);text-align:center;font-size:var(--caption);position:relative;">
         <div class="space" style="width:5%;background:var(--green100);"><span class="tag">5%</span></div>
         <div style="display:flex;align-items:center;justify-content:center;width:calc(50% - 5% - .5rem);height:100%;">column<br />50% - 0.5rem</div>
@@ -383,7 +398,7 @@
       <div class="container-overflow temp8" style="display:flex;max-width:375px;">
         <div>
           <figure style="display:flex;align-items:center;justify-content:center;
-          width:80px;height:80px;margin:0 0 .5rem 0;border-radius:var(--radius400);background:indianred;font-size:2rem;">🦁</figure>
+          width:80px;height:80px;margin:0 0 .5rem 0;border-radius:var(--radius400);background:indianred;font-size:var(--title);">🦁</figure>
           <span>수줍이</span>
         </div>
         <div style="width:80px;margin-right:1rem;text-align:center;    background: var(--gray0);
@@ -391,7 +406,7 @@
         border-radius: var(--radius400);
         padding: 1rem;">
           <figure style="display:flex;align-items:center;justify-content:center;
-          width:80px;height:80px;margin:0 0 .5rem 0;border-radius:var(--radius400);background:indianred;font-size:2rem;">🦁</figure>
+          width:80px;height:80px;margin:0 0 .5rem 0;border-radius:var(--radius400);background:indianred;font-size:var(--title);">🦁</figure>
           <span>수줍이</span>
         </div>
         <div style="width:80px;margin-right:1rem;text-align:center;    background: var(--gray0);
@@ -399,7 +414,7 @@
         border-radius: var(--radius400);
         padding: 1rem;">
           <figure style="display:flex;align-items:center;justify-content:center;
-          width:80px;height:80px;margin:0 0 .5rem 0;border-radius:var(--radius400);background:indianred;font-size:2rem;">🦁</figure>
+          width:80px;height:80px;margin:0 0 .5rem 0;border-radius:var(--radius400);background:indianred;font-size:var(--title);">🦁</figure>
           <span>수줍이</span>
         </div>
         <div style="width:80px;margin-right:1rem;text-align:center;    background: var(--gray0);
@@ -407,7 +422,7 @@
         border-radius: var(--radius400);
         padding: 1rem;">
           <figure style="display:flex;align-items:center;justify-content:center;
-          width:80px;height:80px;margin:0 0 .5rem 0;border-radius:var(--radius400);background:indianred;font-size:2rem;">🦁</figure>
+          width:80px;height:80px;margin:0 0 .5rem 0;border-radius:var(--radius400);background:indianred;font-size:var(--title);">🦁</figure>
           <span>수줍이</span>
         </div>
       </div>
@@ -436,7 +451,7 @@
         <div class="space" style="height:1.5rem;position:absolute;left:0;right:0;top:calc(100% - 1.5rem);bottom:0;z-index:0;"><span class="tag">1.5rem</span></div>
         <div class="space" style="height:100%;position:absolute;left:0;right:calc(100% - 1.5rem);top:0;bottom:0;z-index:0;"><span class="tag">1.5rem</span></div>
         <div class="space" style="height:100%;position:absolute;left:calc(100% - 1.5rem);right:0;top:0;bottom:0;z-index:0;"><span class="tag">1.5rem</span></div>
-        <h4 class="typography-subhead" style="font-size:1.25rem;">선약이 있어서 ✋ <span style="display:block;">자아실현은 못할 것 같아요.</네무></h4>
+        <h4 class="typography-subhead" style="font-size:var(--subhead);">선약이 있어서 ✋ <span style="display:block;">자아실현은 못할 것 같아요.</네무></h4>
         <div class="space" style="height:1rem;"><span class="tag">1rem</span></div>
         <p class="typography-paragraph">서브헤드와 디스크립션 혹은 패러그라프는 이렇게 사용하세요. 타이틀의 line-height가 조정되었기 때문에 시각보정이 필요할 수도 있어요. 최상단에 텍스트일 때 시각보정이 필요할 수 있어요. 최하단이 텍스트일 때 하단 간격을 상단보다 더 주어야?</p>
         <div class="space" style="height:2rem;"><span class="tag">2rem</span></div>
@@ -637,10 +652,10 @@
       <nav class="sidebar" style="margin-top:1rem;padding-bottom:.5rem">
         <h4 class="sidebar-heading">대분류</h4>
         <div class="sidebar-item" role="listitem">
-          <h2 style="margin-right:.5rem;font-size:1.25rem"><figure style="margin:0 1rem 0 0;">⚽</figure>축구</h2>
+          <h2 style="margin-right:.5rem;font-size:var(--subhead)"><figure style="margin:0 1rem 0 0;">⚽</figure>축구</h2>
         </div>
         <div class="sidebar-item" role="listitem">
-          <h2 style="margin-right:1rem;font-size:1.25rem"><figure style="margin:0 1rem 0 0;">🏹</figure>양궁</h2>
+          <h2 style="margin-right:1rem;font-size:var(--subhead)"><figure style="margin:0 1rem 0 0;">🏹</figure>양궁</h2>
           <a class="sidebar-item-tag tag" data-appearance="accent" href="#">새소식</a>
         </div>
       </nav>
@@ -810,10 +825,10 @@
       <article class="sheet">
         <!-- <h3 class="sheet-title">정렬하기</h3> -->
         <!-- <hr /> -->
-        <button style="width:100%;display:flex;align-items:center;margin:0 0 1rem 0;justify-content:space-between;font-size:1.25rem;">
+        <button style="width:100%;display:flex;align-items:center;margin:0 0 1rem 0;justify-content:space-between;font-size:var(--subhead);">
           바텀 시트 선택 1
         </button>
-        <button style="width:100%;display:flex;align-items:center;justify-content:space-between;font-size:1.25rem;">
+        <button style="width:100%;display:flex;align-items:center;justify-content:space-between;font-size:var(--subhead);">
           바텀 시트 선택 2 <i class="icon-check"></i>
         </button>
         <!-- <div class="checkbox theme-right">
@@ -878,7 +893,7 @@
       <blockquote>
         텍스트 노드로 리스트업하는 경우에만 리스트 태그(li)로 마크업하세요. (role=listitem)
       </blockquote>
-      <ul class="list-sample">
+      <ul class="list-sample" style="margin:1rem 0;border:var(--border100);border-radius:var(--radius400);padding:1.5rem;">
         <li title="unordered list, level 1">순서가 없는 리스트
           <ul>
             <li title="unordered list, level 2">순서가 없는 리스트</li>
@@ -887,8 +902,7 @@
         </li>
         <li>순서가 없는 리스트</li>
       </ul>
-      <hr role="separator" />
-      <ol class="list-sample">
+      <ol class="list-sample" style="margin:1rem 0;border:var(--border100);border-radius:var(--radius400);padding:1.5rem;">
         <li>순서가 있는 리스트
           <ol>
             <li>순서가 있는 리스트</li>
@@ -897,6 +911,83 @@
         </li>
         <li>순서가 있는 리스트</li>
       </ol>
+    </article>
+
+    
+
+    <article class="design-article js-observer">
+      <h1 class="design-article-title">Statistic & Summary & Other</h1>
+      <p class="design-article-description">텍스트 문단과 대비를 위해 가운데 정렬합니다.</p>
+      <blockquote>
+        <ul>
+          <li>라틴 소문자일 때 숫자나 한글, 대문자보다 속공간 발생.</li>
+          <li>기본적으로 레이블은 gray400을 사용합니다. 입력필드와 써머리에서는 gray800을 사용할 수 있습니다. 대비, 위치로 위계가 충분히 확보되기 때문에.</li>
+        </ul>
+      </blockquote>
+      <div class="statistic">
+        <div class="statistic-item">
+          <i class="statistic-label">팔로워</i>
+          <span class="statistic-value">21,682</span>
+        </div>
+        <div class="statistic-item">
+          <i class="statistic-label">Repository</i>
+          <span class="statistic-value">100만 이상</span>
+        </div>
+        <div class="statistic-item">
+          <i class="statistic-label">Size</i>
+          <span class="statistic-value">Small</span>
+        </div>
+      </div>
+
+      <section class="summary" style="margin:1rem 0;border:var(--border100);border-radius:var(--radius400);padding:1.5rem;">
+        <div class="summary-item">
+          <div class="summary-item-label">상품 금액</div>
+          <div class="summary-item-value">₩ 160,000</div>
+        </div>
+        <div class="summary-item">
+          <div class="summary-item-label">서비스 수수료</div>
+          <div class="summary-item-value">₩ 3,000</div>
+        </div>
+        <div class="summary-total">
+          <div class="summary-total-label">총 합계 (KRW)</div>
+          <div class="summary-total-value">₩ 163,000</div>
+        </div>
+      </section>
+
+      <section class="kb" style="margin:1rem 0;border:var(--border100);border-radius:var(--radius400);padding:1.5rem;">
+        <table>
+          <tbody>
+            <tr>
+              <th>레이블</th>
+              <td>값</td>
+            </tr>
+            <tr>
+              <th>레이블</th>
+              <td>값</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="kb" style="border:var(--border100);border-radius:var(--radius400);padding:1.5rem;">
+        <p style="color:var(--gray400);">레이블</p>
+        <p>값</p>
+        <p style="margin:1rem 0 0 0;color:var(--gray400);">레이블</p>
+        <p>값</p>
+      </section>
+    </article>
+
+    <article class="design-article js-observer">
+      <h1 class="design-article-title">Suggestion</h1>
+      <p class="design-article-description">작성 중.</p>
+      <blockquote>
+        role=[suggestion / deletion / insertion]
+      </blockquote>
+      <div class="product-info-price" role="suggestion">
+        <del class="product-info-price-deletion" role="deletion">₩ 30,000</del>
+        <b class="product-info-price-insertion" role="insertion">₩ 20,000</b>
+        <em class="product-info-price-percentage">(30%)</em>
+      </div>
     </article>
 
     <article class="design-article js-observer js-tab">
@@ -979,7 +1070,7 @@
           <br />
           <button class="design-article-tertiary" style="margin-bottom:.5rem">Medium</button>
           <br />
-          <button class="design-article-primary" style="padding:12px 0 15px;font-size:1.25rem;">
+          <button class="design-article-primary" style="padding:12px 0 15px;font-size:var(--subhead);">
             Large
           </button>
         </div>
@@ -1022,68 +1113,6 @@
         </div>
       </4aside>
     </article>
-
-    <article class="design-article js-observer">
-      <h1 class="design-article-title">Statistic</h1>
-      <p class="design-article-description">텍스트 문단과 대비를 위해 가운데 정렬합니다.</p>
-      <blockquote>
-        <ul>
-          <li>라틴 소문자일 때 숫자나 한글, 대문자보다 속공간 발생.</li>
-          <li>large 사이즈</li>
-        </ul>
-      </blockquote>
-      <div class="statistic">
-        <div class="statistic-item">
-          <i class="statistic-label">팔로워</i>
-          <span class="statistic-value">21,682</span>
-        </div>
-        <div class="statistic-item">
-          <i class="statistic-label">Repository</i>
-          <span class="statistic-value">100만 이상</span>
-        </div>
-        <div class="statistic-item">
-          <i class="statistic-label">Size</i>
-          <span class="statistic-value">Small</span>
-        </div>
-      </div>
-    </article>
-
-    <article class="design-article js-observer">
-      <h1 class="design-article-title">Summary</h1>
-      <p class="design-article-description">작성 중.</p>
-      <section class="summary">
-        <div class="summary-item">
-          <div class="summary-item-label">상품 금액</div>
-          <div class="summary-item-value">₩ 160,000</div>
-        </div>
-        <div class="summary-item">
-          <div class="summary-item-label">서비스 수수료</div>
-          <div class="summary-item-value">₩ 3,000</div>
-        </div>
-        <!-- <div class="summary-item">
-          <div>배송료</div>
-          <div>₩ 44,612</div>
-        </div> -->
-        <div class="summary-total">
-          <div class="summary-total-label">총 합계 (KRW)</div>
-          <div class="summary-total-value">₩ 163,000</div>
-        </div>
-      </section>
-    </article>
-
-    <article class="design-article js-observer">
-      <h1 class="design-article-title">Suggestion</h1>
-      <p class="design-article-description">작성 중.</p>
-      <blockquote>
-        role=[suggestion / deletion / insertion]
-      </blockquote>
-      <div class="product-info-price" role="suggestion">
-        <del class="product-info-price-deletion" role="deletion">₩ 30,000</del>
-        <b class="product-info-price-insertion" role="insertion">₩ 20,000</b>
-        <em class="product-info-price-percentage">(30%)</em>
-      </div>
-    </article>
-
 
     <article class="design-article js-observer">
       <h1 class="design-article-title">Notification (Alert?)</h1>
@@ -1322,7 +1351,7 @@
         <span class="pricing-item-price">
           <span class="pricing-item-price-unit">₩ </span>
           <span>6,800</span>
-          <span class="pricing-item-price-per" style="font-size:1rem;font-weight:normal;">/ 월</span>
+          <span class="pricing-item-price-per" style="font-size:var(--body);font-weight:normal;">/ 월</span>
         </span>
         <p class="pricing-item-description">전직대통령의 신분과 예우에 관하여는 법률로 정한다. 대법원장은 국회의 동의를 얻어 대통령이 임명한다.</p>
         <ul>
@@ -1382,7 +1411,7 @@
       <div class="userlist">
         <div class="profile-user" style="float:none;width:100%;height:48px;box-sizing:border-box;">
           <figure class="profile-user-avatar" style="float:left;width:48px;height:48px;margin-right:1rem;"></figure>
-          <h2 class="profile-user-name" style="font-size:1rem;">Gyeongsoo I</h2>
+          <h2 class="profile-user-name" style="font-size:var(--body);">Gyeongsoo I</h2>
           <span class="profile-user-id" style="color:var(--gray400);">유아이 디자이너</span>
           <button class="design-article-tertiary-small" style="position:absolute;right:0;top:0;">팔로우</button>
         </div>
@@ -1734,7 +1763,7 @@
         <span>클라우드 스토리지</span>
         <span style="display:block;align-items: center;margin-top:-.5rem;">
           <div class="graph-item is-horizontal" style="margin:0;width:100%;">
-            <span class="graph-item-value" style="font-size:1rem;right:0;bottom:12px;">92%</span>
+            <span class="graph-item-value" style="font-size:var(--body);right:0;bottom:12px;">92%</span>
             <div class="graph-item-bar"></div>
           </div>
           <small>2GB 중 5,218KB 사용됨</small>

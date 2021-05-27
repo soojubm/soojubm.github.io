@@ -3,7 +3,7 @@
 @custom-media --viewport-small (max-width: 1080px);
 
 $padding100: 4px 1rem 5px; // 32
-$padding200: 9px 1.5rem 11px; // 버튼, 텍스트인풋 48
+$padding200: 9px 1rem 11px; // 버튼, 텍스트인풋 48
 
 $bezier-base: cubic-bezier(0.455, 0.03, 0.515, 0.955);
 $transition-base: all 0.4s $bezier-base;
@@ -11,16 +11,17 @@ $transition-fade: opacity 0.15s linear;
 
 :root {
   color-scheme: light dark;
-  --fontstack: 'Apple SD Gothic Neo', sans-serif;
+  // --fontstack: 'Asap', 'Apple SD Gothic Neo', sans-serif;
+  --fontstack: 'Asap', 'AritaDotum', 'Apple SD Gothic Neo', sans-serif;
 
   --navbar-height: 56px;
 
   // ! fontSize
   --headline: 3rem;
   --title: 2rem;
-  --subhead: 1.25rem;
-  --body: 1rem;
-  --caption: .875rem;
+  --subhead: 1.125rem;
+  --body: .875rem;
+  --caption: .75rem;
 
   // --font-size-
   --font-size-huge: var(--headline);

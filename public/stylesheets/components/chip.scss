@@ -12,6 +12,7 @@
 .chip-count {margin:0 0 0 .25rem;color:var(--gray400);}
 .chip-icon {@include box-tiny;}
 .chip-icon .icon-caret {margin:0 0 0 .25rem;}
+.chip-icon .icon-check {margin:1px 0 0 0;}
 .chip-icon .icon-close::before {background:var(--color-primary);}
 .chip-icon .icon-close::after {background:var(--color-primary);}
 .chip.is-active {border-color:var(--color-primary);background:var(--green100);color:var(--color-primary);}
