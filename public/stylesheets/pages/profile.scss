@@ -71,10 +71,10 @@
 .card-byline-name {line-height:16px;color:var(--gray400);}
 .card-title {padding:1rem 0 0;font-size:var(--body);}
 .card-text {padding:.5rem 0 1rem;@include truncate-multi;}
-.card-category {@include tag-secondary;position:absolute;left:1rem;top:1rem;}
+.card-category {@include tag-eyebrow;position:absolute;left:1rem;top:1rem;}
 .card-date {color:var(--gray400);}
 .card-tags {display:flex;flex-wrap:wrap;margin-top:.5rem;}
-.card-tags-item {@include hashtag;}
+.card-tags-item {@include tag-keyword;}
 .card-item {height:48px;margin:1rem 0;position:relative;}
 .card-item-media {float:left;display:block;margin-right:1rem;@include box-medium;}
 .card-item-name {display:block;color:var(--gray800);}

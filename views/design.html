@@ -323,7 +323,6 @@
         <div class="design-typograph-size">
           <h3>Huge <span>3rem / 48px</span></h3>
           <p style="margin:1rem 0 0;">프로모션 등 특수한 목적의 페이지에서 사용합니다.</p>
-          <b style="position:absolute;left:1rem;top:1rem;font-size:3rem;color:var(--gray100);z-index:0;">헤드라인</b>
           <div role="group" style="margin-top:2rem;">
             <span class="tag" data-appearance="accent">제목heading</span>
             <span class="tag">헤드라인Headline</span>
@@ -566,15 +565,13 @@
 
     <article class="design-article js-observer">
       <h1 class="design-article-title">Chips ☀️</h1>
-      <p class="design-article-description">필터링된 콘텐츠의 지표로 사용합니다. 항상 action이 발생하고 반영됩니다. 용도가 다양하기 때문에 단일 선택, 다중 선택, 삭제 여부에 따라 적절한 힌트를 제공하세요. 맥락이 다른 chip을 나열할 수 있습니다. leading 아이콘으로 적절하게 설명하세요.?</p>
-      <!-- <h6>필터filter</h6> -->
+      <p class="design-article-description">필터링된 콘텐츠의 지표로 사용합니다. 항상 action이 발생하고 반영됩니다. 용도가 다양하기 때문에 단일 선택, 다중 선택, 삭제 여부에 따라 적절한 힌트를 제공하세요. 맥락이 다른 chip을 나열할 수 있습니다. leading 아이콘으로 적절하게 설명하세요.? role="listbox" aria-orientation="horizontal"</p>
       <div class="chips js-chip" role="group">
         <button class="chip is-active">전체</button>
         <button class="chip">결제완료 <small class="chip-count">5</small></button>
         <button class="chip">주문취소 <small class="chip-count">2</small></button>
       </div>
       <hr role="separator" />
-      <!-- <h6>선택choice</h6> -->
       <div role="group">
         <button class="chip">타이포그래피</button>
         <button class="chip is-active"><span class="chip-icon"><i class="icon-check" style="border-color: var(--color-primary);"></i></span> 영화</button>
@@ -606,11 +603,7 @@
           </menu>
         </div>
       </div>
-      <!-- <button class="dropdown-trigger js-toggle" aria-haspopup="menu" aria-expanded="false" style="margin-right:1rem;">
-        <span class="dropdown-trigger-icon"><i class="icon-caret"></i></span>
-        <span class="dropdown-trigger-text">드롭다운</span>
-      </button> -->
-      <!-- <article class="keywords">
+      <article class="keywords">
         <h3 class="keywords-title">실시간 이슈 키워드</h3>
         <div class="keywords-group" role="group">
           <a class="keywords-group-keyword" href="">코에이테크모게임즈</a>
@@ -620,21 +613,18 @@
           <a class="keywords-group-keyword" href="">PC</a>
           <a class="keywords-group-keyword" href="">PS4</a>
         </div>
-      </article> -->
+      </article>
     </article>
 
     
     <article class="design-article js-observer">
       <h1 class="design-article-title">Tags</h1>
-      <p class="design-article-description">Badge와 Hashtag(as Keyword) 두 종류로 나뉩니다.</p>
+      <p class="design-article-description">하나 이상의 태그를 사용하여 콘텐츠를 분류할 수 있습니다. 뱃지와 키워드. Badge와 Hashtag(as Keyword) 두 종류로 나뉩니다. 뱃지. 태그 그룹. 칩(버튼스몰사이즈), 태그라지사이즈. 태그는 닫기 없음. 키워드 추가 정보를 탐색.</p>
       <div class="" role="group">
         <span class="tag tags-item" data-appearance="accent">Tag (eyebrow / non clickable)</span>
-        <span class="tag tags-item" data-appearance="accent" style="color:#fff;">Tag (eyebrow / non clickable)</span>
+        <span class="tag topic-item" href="#" role="listitem" style="background:var(--green100);color:var(--green800);">Badge</span>
         <a class="tag topic-item" href="#" role="listitem">Badge</a>
-        <a class="tag topic-item" href="#" role="listitem" style="color:var(--gray800);">Badge</a>
-        <a class="tag topic-item" href="#" role="listitem" style="background:var(--green100);color:var(--green800);">Badge</a>
         <a class="tag topic-item" href="#" role="listitem" style="border:var(--border100);background:none;">Badge</a>
-        <!-- <a class="tag topic-item" href="#" role="listitem">뱃지 <i class="icon-close"></i></a> -->
         <a class="tag topic-item is-disabled" href="#" role="listitem">is-disaled</a>
       </div>
       <hr />
@@ -642,13 +632,6 @@
       <a class="hashtag hashtags-item" href="#" role="listitem" style="font-size:var(--body);color:var(--color-primary);">해시태그</a>
       <a class="hashtag hashtags-item" href="#" role="listitem">해시태그스몰</a>
 
-      <!-- <div class="topic">
-        <h3 class="topic-title">최고 인기 토픽</h3>
-        <div class="tags" role="group">
-          <a class="tags-item tag" href="#" role="listitem">업데이트</a>
-          <a class="tags-item tag" href="#" role="listitem">업데이트</a>
-        </div>
-      </div> -->
       <nav class="sidebar" style="margin-top:1rem;padding-bottom:.5rem">
         <h4 class="sidebar-heading">대분류</h4>
         <div class="sidebar-item" role="listitem">
@@ -656,7 +639,7 @@
         </div>
         <div class="sidebar-item" role="listitem">
           <h2 style="margin-right:1rem;font-size:var(--subhead)"><figure style="margin:0 1rem 0 0;">🏹</figure>양궁</h2>
-          <a class="sidebar-item-tag tag" data-appearance="accent" href="#">새소식</a>
+          <span class="sidebar-item-tag tag" data-appearance="accent">새소식</span>
         </div>
       </nav>
       <!-- <span style="padding:.5rem 1rem;border-radius:var(--radius400);background:var(--gray800);color:var(--gray0);">강조 태그</span> -->
@@ -967,13 +950,6 @@
             </tr>
           </tbody>
         </table>
-      </section>
-
-      <section class="kb" style="border:var(--border100);border-radius:var(--radius400);padding:1.5rem;">
-        <p style="color:var(--gray400);">레이블</p>
-        <p>값</p>
-        <p style="margin:1rem 0 0 0;color:var(--gray400);">레이블</p>
-        <p>값</p>
       </section>
     </article>
 

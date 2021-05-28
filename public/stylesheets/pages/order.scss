@@ -9,12 +9,12 @@
 .order-item-head-date {display:block;width:100%;}
 .order-item-head-date-label {display:block;font-size:var(--caption);}
 .order-item-head-date-value {}
-.order-item-head-status {margin-right:.5rem;}
-.order-item-head-status-label {display:block;font-size:var(--caption);}
-.order-item-head-status-value {}
-.order-item-head-method {}
-.order-item-head-method-label {display:block;font-size:var(--caption);}
-.order-item-head-method-value {}
+.order-item-head-status {@include tag;}
+// .order-item-head-status-label {display:block;font-size:var(--caption);}
+// .order-item-head-status-value {}
+.order-item-head-method {@include tag;margin-right:.5rem;}
+// .order-item-head-method-label {display:block;font-size:var(--caption);}
+// .order-item-head-method-value {}
 .order-item-body {margin:1rem 0;padding:0 1.5rem;overflow:hidden;position:relative;}
 .order-item-product {margin:.5rem 0;@include clearfix;}
 .order-item-product-thumbnail {float:left;@include box-large;margin-right:1.5rem;}

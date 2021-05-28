@@ -1,14 +1,13 @@
 @mixin tag {
-  // display: flex;
-  // align-items: center;
-  // justify-content: center;
-  
-  // height: var(--cell-small);
-
   display: inline-block;
   height: 24px;
   line-height: 23px;
+  padding: 0 .5rem;
+  border-radius: var(--radius400);
+  box-sizing: border-box;
+  background-color: var(--gray100);
   font-size: var(--caption);
+  color: var(--gray400);
   &.is-disabled {
     background-color: var(--gray200);
     color: var(--gray800);
@@ -17,24 +16,10 @@
   }
 }
 
-@mixin tag-primary {
-  @include tag;
-  padding: 0 .5rem;
-  box-sizing: border-box;
-  border-radius: var(--radius400);
-  background-color: var(--gray100);
-  color: var(--gray400);
-}
 
-@mixin tag-secondary {
-  @include tag;
-  padding: 0 .5rem;
-  box-sizing: border-box;
-  border-radius: var(--radius400);
-  background-color: gold;
-  color: #000;
-}
-
+@mixin tag-eyebrow {@include tag; background-color:gold;color:var(--gray800);}
+@mixin tag-keyword {@include tag;}
+@mixin tag-badge {}
 
 @mixin hashtag {
   @include tag;
@@ -42,13 +27,11 @@
   &:before {content:'#';}
 }
 
-.tags {display:flex;flex-wrap:wrap;margin:0 0 -.5rem 0;}
-.hashtag {@include hashtag;}
+.hashtag {color:var(--gray400);}
+.tag {@include tag-keyword;}
+.tag[data-appearance=accent] {@include tag-eyebrow;}
 
-.tag {@include tag-primary;}
-.tag[data-appearance=accent] {@include tag-secondary;}
-
-
+a.tag:hover {color:var(--color-primary);}
 .badge {
   display:inline-flex;font-size:var(--caption);color:var(--gray400);
   padding: 0 .5rem;

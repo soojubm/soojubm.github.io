@@ -27,7 +27,7 @@
 
 .design-article {margin:8rem 0;position:relative;opacity:0;}
 .design-article-title {margin:0 0 1rem 0;@include subhead;}
-.design-article-description {margin:0 0 1.5rem 0;}
+.design-article-description {margin:0 0 2rem 0;}
 .design-article-more {display:flex;align-items:center;font-size:var(--caption);color:var(--color-primary);font-weight:bold;position:absolute;right:0;top:0;}
 .design-article-more i {margin-left:1.5rem;}
 .design-article.is-scrolled {animation:fadeup .8s forwards;}
@@ -37,7 +37,9 @@
 .design-typograph-group .design-typograph-item {width:var(--grid-column);}
 
 .design-typograph-size {@include outer-flat;margin:1rem 0;}
-.design-typograph-size span {float:right;}
+// .design-typograph-size h3 {position:absolute;transition:all .2s;}
+// .design-typograph-size:hover h3 {font-size:var(--headline);transition-duration:.4s}
+.design-typograph-size h3 span {float:right;}
 
 .design-outer-flat {@include outer-flat;}
 .design-outer-elevated {@include outer-elevated;}
@@ -306,7 +308,7 @@
 .sidebar-item-tag {margin-top:2px;}
 
 
-.sheet {@include container-card;}
+.sheet {@include outer-elevated;padding-top:1.5rem;}
 .sheet-title {@include subhead;}
 .sheet button {position:relative;z-index:1;}
 .sheet button:hover {@include hover-item;}
