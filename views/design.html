@@ -324,7 +324,7 @@
           <h3>Huge <span>3rem / 48px</span></h3>
           <p style="margin:1rem 0 0;">프로모션 등 특수한 목적의 페이지에서 사용합니다.</p>
           <div role="group" style="margin-top:2rem;">
-            <span class="tag" data-appearance="accent">제목heading</span>
+            <span class="tag" data-appearance="secondary">제목heading</span>
             <span class="tag">헤드라인Headline</span>
           </div>
         </div>
@@ -332,7 +332,7 @@
           <h3>Large <span>2rem / 32px</span></h3>
           <p style="margin:1rem 0 0;">페이지 레벨의 제목에 사용합니다.</p>
           <div role="group" style="margin-top:2rem;">
-            <span class="tag" data-appearance="accent">제목heading</span>
+            <span class="tag" data-appearance="secondary">제목heading</span>
             <span class="tag">타이틀Title</span>
           </div>
         </div>
@@ -341,29 +341,29 @@
           <p style="margin:1rem 0 0;">포스트, 약관 등 텍스트 중심의 콘텐츠 페이지에서 본문으로 사용할 수 있습니다.</p>
           <p>카드 및 하나의 아이템에 대한 소제목에 사용합니다.</p>
           <div role="group" style="margin-top:2rem;">
-            <span class="tag" data-appearance="accent">제목heading</span>
+            <span class="tag" data-appearance="secondary">제목heading</span>
             <span class="tag">소제목subheading</span>
           </div>
           <div role="group" style="margin-top:.5rem;">
-            <span class="tag" data-appearance="accent">본문body</span>
+            <span class="tag" data-appearance="secondary">본문body</span>
           </div>
         </div>
         <div class="design-typograph-size">
           <h3>Small <small class="tag" style="margin-left:.5rem;font-weight:normal;">기본</small> <span>.875rem / 14px</span></h3>
           <p style="margin:1rem 0 0 0;">일반적으로 사용하는 본문입니다. 대부분의 텍스트는 small 사이즈를 사용합니다.</p>
           <div role="group" style="margin-top:2rem;;">
-            <span class="tag">본문body</span>
+            <span class="tag" data-appearance="secondary">본문body</span>
           </div>
         </div>
         <div class="design-typograph-size">
           <h3>Tiny <span>.75rem / 12px</span></h3>
           <p style="margin:1rem 0 0 0;">주요 콘텐츠는 아니지만 도움말 맥락에서 사용합니다.</p>
           <div role="group" style="margin-top:2rem;">
-            <span class="tag" data-appearance="accent">제목heading</span>
+            <span class="tag" data-appearance="secondary">제목heading</span>
             <span class="tag">캡션caption</span>
           </div>
           <div role="group" style="margin-top:.5rem;">
-            <span class="tag" data-appearance="accent">본문body</span>
+            <span class="tag" data-appearance="secondary">본문body</span>
             <span class="tag">도움말helper text</span>
           </div>
         </div>
@@ -565,22 +565,26 @@
 
     <article class="design-article js-observer">
       <h1 class="design-article-title">Chips ☀️</h1>
-      <p class="design-article-description">필터링된 콘텐츠의 지표로 사용합니다. 항상 action이 발생하고 반영됩니다. 용도가 다양하기 때문에 단일 선택, 다중 선택, 삭제 여부에 따라 적절한 힌트를 제공하세요. 맥락이 다른 chip을 나열할 수 있습니다. leading 아이콘으로 적절하게 설명하세요.? role="listbox" aria-orientation="horizontal"</p>
+      <p class="design-article-description">필터링된 콘텐츠의 지표로 사용합니다. 항상 action이 발생하고 반영됩니다. 용도가 다양하기 때문에 단일 선택, 다중 선택, 삭제 여부에 따라 적절한 힌트를 제공하세요. 맥락이 다른 chip을 나열할 수 있습니다. leading 아이콘으로 적절하게 설명하세요.? 스몰 사이즈는 텍스트 온리. role="listbox" aria-orientation="horizontal"</p>
       <div class="chips js-chip" role="group">
         <button class="chip is-active">전체</button>
         <button class="chip">결제완료 <small class="chip-count">5</small></button>
         <button class="chip">주문취소 <small class="chip-count">2</small></button>
       </div>
-      <hr role="separator" />
-      <div role="group">
-        <button class="chip">타이포그래피</button>
-        <button class="chip is-active"><span class="chip-icon"><i class="icon-check" style="border-color: var(--color-primary);"></i></span> 영화</button>
+      <!-- <hr role="separator" /> -->
+      <div role="group" style="margin:1rem 0 0 0;">
+        <button class="chip">
+          <figure>🦔</figure>
+          타이포그래피
+        </button>
+        <button class="chip is-active">
+          영화<span class="chip-icon"><i class="icon-check" style="border-color: var(--color-primary);"></i></span></button>
         <button class="chip is-active">소설<span class="chip-icon"><i class="icon-close"></i></span></button>
       </div>
       <hr role="separator" />
       <div role="group">
         <div class="dropdown">
-          <button class="chip js-toggle">드롭다운 <span class="chip-icon"><i class="icon-caret"></i></span></button>
+          <button class="dropdown-trigger js-toggle">드롭다운 <span class="chip-icon"><i class="icon-caret"></i></span></button>
           </button>
           <menu class="dropdown-menu" role="menu">
             <h6 class="dropdown-menu-title" hidden>Dropdown header</h6>
@@ -603,6 +607,18 @@
           </menu>
         </div>
       </div>
+
+      <hr />
+
+      <div class="" role="group">
+        <span class="tag tags-item" data-appearance="accent">Tag (eyebrow / non clickable)</span>
+        <span class="tag topic-item" href="#" role="listitem" style="background:var(--green100);color:var(--green800);">Badge</span>
+        <a class="tag topic-item" href="#" role="listitem">Badge</a>
+        <a class="tag topic-item is-disabled" href="#" role="listitem">is-disaled</a>
+      </div>
+      
+      <hr />
+
       <article class="keywords">
         <h3 class="keywords-title">실시간 이슈 키워드</h3>
         <div class="keywords-group" role="group">
@@ -614,24 +630,6 @@
           <a class="keywords-group-keyword" href="">PS4</a>
         </div>
       </article>
-    </article>
-
-    
-    <article class="design-article js-observer">
-      <h1 class="design-article-title">Tags</h1>
-      <p class="design-article-description">하나 이상의 태그를 사용하여 콘텐츠를 분류할 수 있습니다. 뱃지와 키워드. Badge와 Hashtag(as Keyword) 두 종류로 나뉩니다. 뱃지. 태그 그룹. 칩(버튼스몰사이즈), 태그라지사이즈. 태그는 닫기 없음. 키워드 추가 정보를 탐색.</p>
-      <div class="" role="group">
-        <span class="tag tags-item" data-appearance="accent">Tag (eyebrow / non clickable)</span>
-        <span class="tag topic-item" href="#" role="listitem" style="background:var(--green100);color:var(--green800);">Badge</span>
-        <a class="tag topic-item" href="#" role="listitem">Badge</a>
-        <a class="tag topic-item" href="#" role="listitem" style="border:var(--border100);background:none;">Badge</a>
-        <a class="tag topic-item is-disabled" href="#" role="listitem">is-disaled</a>
-      </div>
-      <hr />
-      <a class="hashtag hashtags-item" href="#" role="listitem" style="font-size:var(--body);">해시태그</a>
-      <a class="hashtag hashtags-item" href="#" role="listitem" style="font-size:var(--body);color:var(--color-primary);">해시태그</a>
-      <a class="hashtag hashtags-item" href="#" role="listitem">해시태그스몰</a>
-
       <nav class="sidebar" style="margin-top:1rem;padding-bottom:.5rem">
         <h4 class="sidebar-heading">대분류</h4>
         <div class="sidebar-item" role="listitem">
@@ -642,7 +640,6 @@
           <span class="sidebar-item-tag tag" data-appearance="accent">새소식</span>
         </div>
       </nav>
-      <!-- <span style="padding:.5rem 1rem;border-radius:var(--radius400);background:var(--gray800);color:var(--gray0);">강조 태그</span> -->
     </article>
 
     <article class="design-article js-observer">
@@ -950,6 +947,7 @@
             </tr>
           </tbody>
         </table>
+        <p>레이블이 아이콘인 경우 box에 넣을 것인지. 고정 가로 값이 없음.</p>
       </section>
     </article>
 

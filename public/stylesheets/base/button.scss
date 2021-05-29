@@ -37,7 +37,8 @@ button {@include reset-button;}
   @content;
   &:hover:not(:disabled), &.is-hover:not(:disabled) {
     // box-shadow: inset 0px 0px 2px rgba(0,0,0,.4);
-    box-shadow: 0 0 2px var(--gray400);
+    // box-shadow: 0 0 2px var(--gray400);
+    border: 1px solid var(--gray800);
   }
   &:focus, &.is-focus {
     outline:0;

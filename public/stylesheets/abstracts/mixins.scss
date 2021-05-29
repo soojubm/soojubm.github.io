@@ -53,7 +53,7 @@
   overflow:auto;white-space:nowrap;
   font-size:0;
   &::-webkit-scrollbar {display:none;}
-  > * {margin:0 .5rem 0 0;font-size:var(--body);}
+  > * {font-size:var(--body);}
 }
 
 
@@ -106,7 +106,7 @@
 @mixin outer-avatar($cell) {
   display: flex;align-items: center;justify-content: center;
   width: $cell;height: $cell;
-  border: 1px solid var(--gray100); // 여기서
+  border: var(--border100); // 여기서
   border-color: transparent;
   border-radius: var(--radius400);
   box-sizing: border-box;

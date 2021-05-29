@@ -19,7 +19,7 @@
 
 @mixin tag-eyebrow {@include tag; background-color:gold;color:var(--gray800);}
 @mixin tag-keyword {@include tag;}
-@mixin tag-badge {}
+@mixin tag-badge {@include tag;background-color:var(--green100);color:var(--green800);}
 
 @mixin hashtag {
   @include tag;
@@ -30,6 +30,7 @@
 .hashtag {color:var(--gray400);}
 .tag {@include tag-keyword;}
 .tag[data-appearance=accent] {@include tag-eyebrow;}
+.tag[data-appearance=secondary] {@include tag-badge;}
 
 a.tag:hover {color:var(--color-primary);}
 .badge {

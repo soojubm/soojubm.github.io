@@ -1,7 +1,8 @@
 .dropdown {position:relative;}
-.dropdown-trigger {display:flex;align-items:center;color:var(--gray800);cursor:pointer;}
+.dropdown-trigger {@include chip;}
 .is-active .icon-caret {transform:rotate(180deg);}
-.dropdown-trigger-icon {@include box-small;}
+.dropdown-trigger-icon {@include box-small;margin:0 -1rem;}
+// margin, chip-padding;
 
 .dropdown-menu {
   @include outer-elevated;
