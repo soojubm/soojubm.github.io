@@ -70,7 +70,7 @@
       <p>수줍이</p>
     </div> -->
     
-    <!-- <article class="design-article js-observer">
+    <article class="design-article js-observer">
       <h1 class="design-article-title">Principles <small>🔥</small></h1>
       <p class="design-article-description">디자인시스템도 제품과 마찬가지로 완성은 존재하지 않습니다요...</p>
 
@@ -87,7 +87,7 @@
         <h3 style="font-size:var(--subhead);font-weight:bold;margin:0 0 .5rem 0;">명료성</h3>
         <p>UI는 특정 서비스에 종속되지 않는 보편타당해야 합니다.</p>
       </div>
-    </article> -->
+    </article>
 
     <!-- <article class="design-article js-observer">
       <h1 class="design-article-title">Rules 🔥</h1>
@@ -177,13 +177,10 @@
       <p>bottom fix in window</p>
       <p>iphone safe area 고려</p>
       <hr />
-      
     </article> -->
 
-  <picture>
-    <!-- Use this image if the user's OS setting is light or unset -->
+  <!-- <picture>
     <source srcset="photo-light.png" media="(prefers-color-scheme: light) or (prefers-color-scheme: no-preference)">
-    <!-- Use this image if the user's OS setting is dark -->
     <source srcset="photo-dark.png" media="(prefers-color-scheme: dark)">
   </picture>
   <picture>
@@ -193,7 +190,7 @@
   </picture>
   <picture>
     <source media="(max-width: 799px)" srcset="elva-480w-close-portrait.jpg">
-    <!-- <source media="(min-width: 800px)" srcset="elva-800w.jpg"> -->
+    <source media="(min-width: 800px)" srcset="elva-800w.jpg">
     <img src="elva-800w.jpg" alt="딸 엘바를 안고 서 있는 크리스">
   </picture>
   
@@ -209,17 +206,20 @@
             (max-width: 480px) 440px,
             800px"
      src="elva-fairy-800w.jpg"
-     alt="요정 옷을 입은 엘바">
+     alt="요정 옷을 입은 엘바" /> -->
 
 
     <article class="design-article js-observer">
       <h1 class="design-article-title">Sizes & Avatars</h1>
-      <p class="design-article-description">페이지 혹은 컴포넌트의 위계와 정보의 복잡도를 고려하세요. 버튼그룹과 인풋그룹 내부에서도 지정된 간격을 따릅니다.</p>
-      <div style="display:flex;margin-bottom:1rem;">
+      <p class="design-article-description">작성 중.</p>
+      <blockquote>
+        cell -> size, 2021-05 xsmall 사이즈 추가, large, medium, small, xsmall, xxsmall
+      </blockquote>
+      <div class="avatar-large" style="display:flex;margin-bottom:1rem;">
         <a href="" class="design-article-avatar-large"><span class="avatar-badge"></span></a>
         <div style="display:block;width:1.5rem;height:inherit;border-radius:var(--radius400);background:var(--green100);"></div>
         <div style="display:block;width:calc(100% - 80px - 1.5rem);height:inherit;">
-          <h3 style="font-size:var(--subhead);font-weight:bold;">Large / 80px / left 1.5rem</h3>
+          <h3 style="font-size:var(--subhead);font-weight:bold;">Large / 80px / left 1.5rem / font-size large</h3>
           <p style="color:var(--gray400);">디스크립션을 가질 수 있어요</p>
         </div>
       </div>
@@ -227,19 +227,24 @@
         <a href="" class="design-article-avatar-medium"></a>
         <div style="display:block;width:1rem;height:48px;border-radius:var(--radius400);background:var(--green100);box-sizing:border-box;"></div>
         <div style="display:block;width:calc(100% - 48px - 1rem);height:inherit;">
-          <h3 style="font-weight:bold;font-size:var(--body);">Medium / 48px / left 1rem</h3>
+          <h3 style="font-weight:bold;font-size:var(--body);">Medium / 48px / left 1rem / font-size medium</h3>
           <p style="color:var(--gray400);">디스크립션을 가질 수 있어요</p>
         </div>
       </div>
       <div style="display:flex;align-items:center;margin-bottom:1rem;">
         <a href="" class="design-article-avatar-small"></a>
         <div style="display:block;width:1rem;height:32px;border-radius:var(--radius400);background:var(--green100);box-sizing:border-box;"></div>
-        <div style="display:block;width:calc(100% - 32px - 1rem);height:32px;line-height:32px;">Small / 32px / left 1rem / Icon button</div>
+        <div style="display:block;width:calc(100% - 32px - 1rem);height:32px;line-height:32px;">Small / 32px / left 1rem / font-size medium</div>
       </div>
-      <div style="display:flex;margin-bottom:1rem;border-radius:var(--radius400);">
+      <div style="display:flex;align-items:center;margin-bottom:1rem;">
+        <a href="" class="design-article-avatar-xsmall"></a>
+        <div style="display:block;width:.5rem;height:24px;border-radius:var(--radius400);background:var(--green100);box-sizing:border-box;"></div>
+        <div style="display:block;width:calc(100% - 24px - .5rem);height:24px;line-height:24px;">xSmall / 24px / left .5rem / font-size medium</div>
+      </div>
+      <div style="display:flex;">
         <a href="" class="design-article-avatar-tiny"></a>
         <div style="display:block;width:.5rem;height:inherit;border-radius:var(--radius400);background:var(--green100);box-sizing:border-box;"></div>
-        <div style="display:block;width:calc(100% - 16px - .5rem);height:inherit;font-size:var(--caption);line-height:16px;">Tiny / 16px / left .5rem</div>
+        <div style="display:block;width:calc(100% - 16px - .5rem);height:inherit;font-size:var(--caption);line-height:16px;">Tiny / 16px / left .5rem / font-size tiny</div>
       </div>
       <!-- <div class="number">
         <div class="number-card">8</div>
@@ -255,15 +260,15 @@
         <span class="design-article-avatar-small" style="margin-left:-.75rem;box-shadow: var(--gray0) 0px 0px 0px 2px;"></span>
         <span class="design-article-avatar-small" style="margin-left:-.75rem;box-shadow: var(--gray0) 0px 0px 0px 2px;"></span>
         <!-- <a href="" class="design-article-avatar-small" style="margin-left:-10px;box-shadow: rgb(255 255 255) 0px 0px 0px 4px;background:var(--gray100);color:var(--gray800);">+4</a> -->
-        <span style="margin:0 0 0 1rem;">수줍이 외 18명</span>
+        <span style="margin:0 0 0 1rem;">수줍이 외 4명</span>
       </div>
-      <div class="avatarlist" style="display:flex;align-items:center;">
+      <!-- <div class="avatarlist" style="display:flex;align-items:center;">
         <span class="design-article-avatar-tiny" style="box-shadow: var(--gray0) 0px 0px 0px 2px;"></span>
         <span class="design-article-avatar-tiny" style="margin-left:-.25rem;box-shadow: var(--gray0) 0px 0px 0px 2px;"></span>
         <span class="design-article-avatar-tiny" style="margin-left:-.25rem;box-shadow: var(--gray0) 0px 0px 0px 2px;"></span>
         <span class="design-article-avatar-tiny" style="margin-left:-.25rem;box-shadow: var(--gray0) 0px 0px 0px 2px;"></span>
         <small style="margin:0 0 0 .5rem;">수줍이 외 8명</small>
-      </div>
+      </div> -->
 
       <hr />
 
@@ -296,7 +301,7 @@
 
     <article class="design-article typography js-observer">
       <h1 class="design-article-title">Typography</h1>
-      <p class="design-article-description">4가지 사이즈를 기반으로 제목용, 본문용을 구분합니다. 현재 모바일 사이즈의 브라우저에서 rem 단위 테스트를 위해 12px이 적용되어 있습니다.</p>
+      <p class="design-article-description">4가지 사이즈를 기반으로 제목용, 본문용을 구분합니다.</p>
       <!-- <li>asap의 dash를 마이너스로 쓰면 어색. 무게가 살짝 다름.</li> -->
 
 
@@ -350,7 +355,7 @@
         </div>
         <div class="design-typograph-size">
           <h3>Small <small class="tag" style="margin-left:.5rem;font-weight:normal;">기본</small> <span>.875rem / 14px</span></h3>
-          <p style="margin:1rem 0 0 0;">일반적으로 사용하는 본문입니다. 대부분의 텍스트는 small 사이즈를 사용합니다.</p>
+          <p style="margin:1rem 0 0 0;">기본 텍스트.</p>
           <div role="group" style="margin-top:2rem;;">
             <span class="tag" data-appearance="secondary">본문body</span>
           </div>
@@ -371,29 +376,58 @@
     </article>
 
     <article class="design-article js-observer">
-      <h1 class="design-article-title">Outers</h1>
-      <p class="design-article-description">제목, 디스크립션 구성의 콘텐츠 다음에 오는 콘텐츠 강조를 이ㅜ해 사용합닏.</p>
+      <h1 class="design-article-title">Tiles</h1>
+      <p class="design-article-description">클릭할 수 있는 타일과 클릭할 수 없는 타일을 구분합니다. 클릭할 수 있는 타일은 타일 전체가 클릭 영역일 수도 있고 타일 내부에 클릭할 수 있는 요소가 있을 수도 있습니다.</p>
       <div class="design-outer-flat">
-        @outer-flat. 클릭이 필요 없는 콘텐츠를 그루핑합니다.
         <b>flat</b> is non clickable. no one.
       </div>
       <div class="design-outer-elevated" style="margin-top:1rem;">
-        @outer-elevated. 그룹 전체를 클릭할 수도, 그룹 내부에 클릭할 수 있는 아이템이 존재할 수도 있습니다.
         <b>elevated</b> is clickable. target or children. 
       </div>
+      <!-- <div class="design-outer-flat-small">
+        <b>flat</b> is non clickable. no one.
+      </div>
+      <div class="design-outer-elevated-small" style="margin-top:1rem;">
+        <b>elevated</b> is clickable. target or children. 
+      </div> -->
     </article>
 
     <article class="design-article js-observer">
-      <h1 class="design-article-title">Grid System</h1>
+      <h1 class="design-article-title">Grid System ? Spacing System 🔥</h1>
       <p class="design-article-description">12 column grid 등 엄격한 그리드 시스템을 사용하지 않습니다. 모바일 퍼스트로 사고하고 가로 스크롤로 설계. 일반적인 그리드 시스템을 대신하여 컨테이너 크기와 클릭할 수 있는 하나의 콘텐츠 크기를 정의하는 것이 좋습니다. 가능하면 하나의 칼럼을 유지하고 4개 이상의 칼럼을 나누지 않습니다.</p>
-      <div style="max-width:375px;display:flex;align-items:center;height:10rem;border:var(--border100);border-radius:var(--radius400);text-align:center;font-size:var(--caption);position:relative;">
-        <div class="space" style="width:5%;background:var(--green100);"><span class="tag">5%</span></div>
+      <blockquote>
+        [role=group] ex) button group
+        <br />
+        [role=listbox] ex) tag listbox
+      </blockquote>
+      <div style="display:flex;align-items:center;height:10rem;border:var(--border100);border-radius:var(--radius400);text-align:center;font-size:var(--caption);position:relative;">
+        <div class="space" style="width:5%;"><span class="tag">5%</span></div>
         <div style="display:flex;align-items:center;justify-content:center;width:calc(50% - 5% - .5rem);height:100%;">column<br />50% - 0.5rem</div>
         <div class="space" style="width:1rem;"><span class="tag">1rem</span></div>
         <div style="display:flex;align-items:center;justify-content:center;width:calc(50% - 5% - .5rem);height:100%;">colum<br />50% - 0.5rem</div>
-        <div class="space" style="width:5%;background:var(--green100);"><span class="tag">5%</span></div>
+        <div class="space" style="width:5%;"><span class="tag">5%</span></div>
       </div>
+
       <hr />
+      
+      <div class="spacing-card">
+        <div class="space" style="height:1.5rem;position:absolute;left:0;right:0;top:0;bottom:calc(100% - 1.5rem);"><span class="tag">1.5rem</span></div>
+        <div class="space" style="height:1.5rem;position:absolute;left:0;right:0;top:calc(100% - 1.5rem);bottom:0;z-index:0;"><span class="tag">1.5rem</span></div>
+        <div class="space" style="height:100%;position:absolute;left:0;right:calc(100% - 1.5rem);top:0;bottom:0;z-index:0;"><span class="tag">1.5rem</span></div>
+        <div class="space" style="height:100%;position:absolute;left:calc(100% - 1.5rem);right:0;top:0;bottom:0;z-index:0;"><span class="tag">1.5rem</span></div>
+        <h4 class="typography-subhead" style="font-size:var(--subhead);">선약이 있어서 ✋ <span style="display:block;">자아실현은 못할 것 같아요.</네무></h4>
+        <div class="space" style="height:1rem;"><span class="tag">1rem</span></div>
+        <p class="typography-paragraph">서브헤드와 디스크립션 혹은 패러그라프는 이렇게 사용하세요. 타이틀의 line-height가 조정되었기 때문에 시각보정이 필요할 수도 있어요. 최상단에 텍스트일 때 시각보정이 필요할 수 있어요. 최하단이 텍스트일 때 하단 간격을 상단보다 더 주어야?</p>
+        <div class="space" style="height:2rem;"><span class="tag">2rem</span></div>
+        <time class="typography-caption">10 January, 2020</time>
+        <!-- <footer class="card-foot">
+          <a href="">Read More</a>
+          <span class="tag">Category</span>
+        </footer> -->
+      </div>
+
+      <hr />
+
       <div class="container-overflow temp8" style="display:flex;max-width:375px;">
         <div>
           <figure style="display:flex;align-items:center;justify-content:center;
@@ -443,31 +477,11 @@
     </article>
 
     <article class="design-article js-observer">
-      <h1 class="design-article-title">Spacing System 🔥</h1>
-      <p class="design-article-description">작성 중.</p>
-      <div class="spacing-card">
-        <div class="space" style="height:1.5rem;position:absolute;left:0;right:0;top:0;bottom:calc(100% - 1.5rem);"><span class="tag">1.5rem</span></div>
-        <div class="space" style="height:1.5rem;position:absolute;left:0;right:0;top:calc(100% - 1.5rem);bottom:0;z-index:0;"><span class="tag">1.5rem</span></div>
-        <div class="space" style="height:100%;position:absolute;left:0;right:calc(100% - 1.5rem);top:0;bottom:0;z-index:0;"><span class="tag">1.5rem</span></div>
-        <div class="space" style="height:100%;position:absolute;left:calc(100% - 1.5rem);right:0;top:0;bottom:0;z-index:0;"><span class="tag">1.5rem</span></div>
-        <h4 class="typography-subhead" style="font-size:var(--subhead);">선약이 있어서 ✋ <span style="display:block;">자아실현은 못할 것 같아요.</네무></h4>
-        <div class="space" style="height:1rem;"><span class="tag">1rem</span></div>
-        <p class="typography-paragraph">서브헤드와 디스크립션 혹은 패러그라프는 이렇게 사용하세요. 타이틀의 line-height가 조정되었기 때문에 시각보정이 필요할 수도 있어요. 최상단에 텍스트일 때 시각보정이 필요할 수 있어요. 최하단이 텍스트일 때 하단 간격을 상단보다 더 주어야?</p>
-        <div class="space" style="height:2rem;"><span class="tag">2rem</span></div>
-        <time class="typography-caption">10 January, 2020</time>
-        <!-- <footer class="card-foot">
-          <a href="">Read More</a>
-          <span class="tag">Category</span>
-        </footer> -->
-      </div>
-    </article>
-
-    <article class="design-article js-observer">
       <h1 class="design-article-title">Palettes</h1>
       <p class="design-article-description">다크테마를 위한 컬러셋을 별도로 정의하지 않습니다.</p>
-      <blockquote style="margin:2rem 0;">
+      <!-- <blockquote style="margin:2rem 0;">
         gray100 변수를 사용할 때 container-border-color와 같은 시멘틱한 네이밍으로 한 번 더 추상화 하세요.
-      </blockquote>
+      </blockquote> -->
       <button class="user-logout js-darkmode1" title="change theme" style="border-radius:var(--radius400);box-shadow:var(--shadow400);padding:1rem;border:var(--border100);">
         <span class="user-logout-icon"><i class="icon-moon"></i></span>
         어둡게 보기
@@ -566,6 +580,12 @@
     <article class="design-article js-observer">
       <h1 class="design-article-title">Chips ☀️</h1>
       <p class="design-article-description">필터링된 콘텐츠의 지표로 사용합니다. 항상 action이 발생하고 반영됩니다. 용도가 다양하기 때문에 단일 선택, 다중 선택, 삭제 여부에 따라 적절한 힌트를 제공하세요. 맥락이 다른 chip을 나열할 수 있습니다. leading 아이콘으로 적절하게 설명하세요.? 스몰 사이즈는 텍스트 온리. role="listbox" aria-orientation="horizontal"</p>
+      <div class="design-article-chip" role="group">
+        <!-- <span class="design-article-chip-tiny">12</span> -->
+        <button class="design-article-chip-small">Small</button>
+        <button class="design-article-chip-medium">Medium</button>
+      </div>
+      <hr />
       <div class="chips js-chip" role="group">
         <button class="chip is-active">전체</button>
         <button class="chip">결제완료 <small class="chip-count">5</small></button>
@@ -611,27 +631,29 @@
       <hr />
 
       <div class="" role="group">
-        <span class="tag tags-item" data-appearance="accent">Tag (eyebrow / non clickable)</span>
+        <span class="tag tags-item" data-appearance="accent">Eyebrow</span>
         <span class="tag topic-item" href="#" role="listitem" style="background:var(--green100);color:var(--green800);">Badge</span>
-        <a class="tag topic-item" href="#" role="listitem">Badge</a>
-        <a class="tag topic-item is-disabled" href="#" role="listitem">is-disaled</a>
+        <a class="tag topic-item" href="#" role="listitem">Badge & Keyword</a>
+        <a class="tag topic-item is-disabled" href="#" role="listitem">Disabled
+          
+        </a>
       </div>
       
       <hr />
 
       <article class="keywords">
-        <h3 class="keywords-title">실시간 이슈 키워드</h3>
+        <h3 class="keywords-title" style="margin-top:-.5rem;">실시간 이슈 키워드</h3>
         <div class="keywords-group" role="group">
-          <a class="keywords-group-keyword" href="">코에이테크모게임즈</a>
-          <a class="keywords-group-keyword" href="">시뮬레이션</a>
-          <a class="keywords-group-keyword" href="">코에이테크모게임즈</a>
-          <a class="keywords-group-keyword" href="">삼국지14</a>
-          <a class="keywords-group-keyword" href="">PC</a>
-          <a class="keywords-group-keyword" href="">PS4</a>
+          <a class="keywords-group-keyword" href="">국정감사</a>
+          <a class="keywords-group-keyword" href="">윤석열검찰총장</a>
+          <a class="keywords-group-keyword" href="">조국</a>
+          <a class="keywords-group-keyword" href="">뉴닉</a>
+          <a class="keywords-group-keyword" href="">차별금지법</a>
+          <a class="keywords-group-keyword" href="">추미매법무부장관</a>
         </div>
       </article>
       <nav class="sidebar" style="margin-top:1rem;padding-bottom:.5rem">
-        <h4 class="sidebar-heading">대분류</h4>
+        <h4 class="sidebar-heading" style="margin-top:-.25rem;">대분류</h4>
         <div class="sidebar-item" role="listitem">
           <h2 style="margin-right:.5rem;font-size:var(--subhead)"><figure style="margin:0 1rem 0 0;">⚽</figure>축구</h2>
         </div>
@@ -797,7 +819,7 @@
       </div>
       <hr />
       <div class="textfield is-text">
-        <figure style="width:var(--cell-medium);height:var(--cell-medium);background:var(--gray100);border-radius:var(--radius400);margin-right:1rem;"></figure>
+        <figure style="width:var(--size-medium);height:var(--size-medium);background:var(--gray100);border-radius:var(--radius400);margin-right:1rem;"></figure>
         <span>현대카드 The Green</span>
         <span class="selectbox-indicator" role="img"><i class="icon-caret"></i></span>
       </div>
@@ -806,10 +828,10 @@
         <!-- <h3 class="sheet-title">정렬하기</h3> -->
         <!-- <hr /> -->
         <button style="width:100%;display:flex;align-items:center;margin:0 0 1rem 0;justify-content:space-between;font-size:var(--subhead);">
-          바텀 시트 선택 1
+          바텀 시트 옵션
         </button>
         <button style="width:100%;display:flex;align-items:center;justify-content:space-between;font-size:var(--subhead);">
-          바텀 시트 선택 2 <i class="icon-check"></i>
+          바텀 시트 옵션 <i class="icon-check"></i>
         </button>
         <!-- <div class="checkbox theme-right">
           <input class="js-check" type="checkbox" id="sheet" name="sheet" value="sheet">
@@ -862,6 +884,7 @@
       <p class="design-article-description">문단 <a href="#" class="link-inner">내부 링크</a>와 문단 <a href="#" class="link-outer">외부 링크</a>를 구분합니다.</p>
       <blockquote>
         <p>요약한 텍스트를 펼쳐보기 위한 더보기 버튼은 중요도가 낮기 때문에 톤 다운된 검정색이 많이 사용됨. 외부 링크와 텍스트 버튼 구분.</p>
+        <p>target="_blank" and rel="noopener noreferrer"</p>
       </blockquote>
       <!-- <p>internal / external(+아이콘?), More(확장) / Learn More(링크)</p> -->
       <p>형무소 안에서는 소장의 말이 곧 법이었으며 죄수들의 잘못과 실수는 결코 용납되지 않는다. 어머니의 사망 소식을 듣고 인해 2번이나 탈옥을 시도했다가 체포된 <a class="link-inner" href="#">루크</a>의 발에 쇠통이 채워지며 루크는…<a class="more link-outer" href="#" style="margin-left:.25rem;">더 보기</a></p>
@@ -962,11 +985,17 @@
         <b class="product-info-price-insertion" role="insertion">₩ 20,000</b>
         <em class="product-info-price-percentage">(30%)</em>
       </div>
+      <!-- <hr />
+      <div class="product-info-price" role="suggestion" style="font-size:1rem;">
+        <b class="product-info-price-insertion" role="insertion" style="display:block;margin-left:0;">₩ 20,000</b>
+        <del class="product-info-price-deletion" role="deletion" style="margin-right:.5rem;">₩ 30,000</del>
+        <em class="product-info-price-percentage">(30%)</em>
+      </div> -->
     </article>
 
     <article class="design-article js-observer js-tab">
       <h1 class="design-article-title">Tab</h1>
-      <p class="design-article-description">여러 개의 탭이 중첩되지 않도록 플로우를 설계하세요. 전체 콘텐츠가 변경되는 경우 사용하여 필터링에는 chip을 사용합니다.<p>
+      <p class="design-article-description">탭이 중첩되지 않도록 플로우를 설계하세요. 패널의 콘텐츠가 변경되는 경우에 사용합니다. 필터링에는 chip을 사용하세요.<p>
       <blockquote>
         <i>🔨</i> 탭을 클릭할 때 브라우저 히스토리에 추가하는 것이 사용자 경험에 좋을까?<br />TODO 탭의 중첩되는 경우 / 스크롤스파이 / 4~5개 제한? 가로 스크롤?
       </blockquote>
@@ -1089,12 +1118,12 @@
     </article>
 
     <article class="design-article js-observer">
-      <h1 class="design-article-title">Notification (Alert?)</h1>
-      <p class="design-article-description">유저 액션에 피드백, 콘텐츠 부가 설명</p>
+      <h1 class="design-article-title">Notifications</h1>
+      <p class="design-article-description">유저 액션에 피드백, 콘텐츠 부가 설명.</p>
       <blockquote>
-        toast=>snackbar(withAction). single line / multiple lines / with heading icon
-        <br />
-        size medium으로 세로값을 적용할까?
+        toast=>snackbar(withAction).<br />
+        single line / multiple lines / with heading icon<br />
+        Push Notification과 구분.
       </blockquote>
       <aside class="message">
         <button class="message-close" aria-label="close"><i class="icon-close"></i></button>
@@ -1110,7 +1139,7 @@
         <p class="message-head">좋아한 콘텐츠에 저장했어요.</p>
         <button class="message-close" aria-label="close"><i class="icon-close"></i></button>
       </aside>
-      <aside class="message" style="background:var(--red800);border:none;">
+      <aside class="message" style="background:var(--red800);border-color:transparent;">
         <p class="message-head" style="color:var(--gray0);">인터넷 연결이</p>
       </aside>
     </article>
@@ -1254,7 +1283,7 @@
     </article>
 
     <article class="design-article js-observer">
-      <h1 class="design-article-title">Cards</h1>
+      <h1 class="design-article-title">Sample Cases</h1>
       <p class="design-article-description">작성 중.</p>
       <div class="card" role="listitem" style="max-width:400px;">
         <figure class="card-thumbnail"><img src="/public/images/springsteen.jpg" alt="" /></figure>
@@ -1336,25 +1365,23 @@
         <button class="pricing-item-upgrade">업그레이드</button>
         <button class="pricing-item-more">And More...</button>
       </div>
-    </article>
 
-    <article class="design-article js-observer">
-      <h1 class="design-article-title">Subscribe</h1>
-      <p class="design-article-description">작성 중.</p>
+      <br />
       
       <form class="subscribe">
         <h2 class="subscribe-title">수줍이 뉴스레터를 정기구독하세요.</h2>
         <p class="subscribe-description">사실 그런 건 없고 유아이 콤포넌트 입니다. <br />텍스트를 한 줄 더 만들기 위해서 아무말이나 해봅니다.</p>
         <div class="subscribe-field textfield">
+          <label for="" class="textfield-label">이메일 주소</label>
           <input class="textfield-input" placeholder="Enter Your Email.." />
         </div>
         <button class="subscribe-submit" type="submit">구독하기</button>
         <p class="subscribe-helper" style="max-width:400px;">
-          By submitting this newsletter request, I consent to Anchor sending me communication via email. I may opt out at any time. View Anchor’s
-          <a href="#">Privacy Policy</a>.
+          뉴스레터 수신을 위한 <a href="#">개인정보 수집 및 이용</a>에 동의합니다. .
         </p>
       </form>
     </article>
+
 
     <!-- <article class="design-article js-observer">
       <h1 class="design-article-title">Index</h1>
@@ -1371,10 +1398,9 @@
       </nav>
     </article> -->
 
-    <article class="design-article js-observer">
+    <!-- <article class="design-article js-observer">
       <h1 class="design-article-title">Hover System</h1>
       <p class="design-article-description">카드 혹은 아이템의 hover state로 여러 개의 코드 또는 스타일이 필요하지 않습니다. 하나의 mixin을 정의하여 사용하세요.</p>
-
       <button class="user-logout" title="sign out">
         <span class="user-logout-icon">
           <i class="icon-out"><span class="icon-out-door"></span></i>
@@ -1390,7 +1416,7 @@
           <button class="design-article-tertiary-small" style="position:absolute;right:0;top:0;">팔로우</button>
         </div>
       </div>
-    </article>
+    </article> -->
 
     <!-- // Chris said Marcus replied -->
     <article class="design-article js-observer">
@@ -1464,7 +1490,7 @@
 
     <article class="design-article js-observer">
       <h1 class="design-article-title">Slider</h1>
-      <p class="design-article-description">서드파티 라이브러리 없이 가로 스크롤을 활용합니다. 터치 슬라이드 제스쳐를 지원하지 않는 환경(데스크탑 등)을 위해 arrow 버튼을 제공하세요. 모바일 환경에서는 제공하지 않습니다.</p>
+      <p class="design-article-description">서드파티 라이브러리 없이 가로 스크롤을 활용합니다. 터치 슬라이드 제스쳐를 지원하지 않는 환경(데스크탑 등)을 위해 arrow 버튼을 제공하세요. 모바일 환경에서는 arrow 버튼을 제공하지 않습니다.</p>
       <section class="slider">
         <div class="slider-viewer" style="margin-right:-50%;padding-right:200px;">
           <a class="slider-viewer-slide" href="#profile">
@@ -1617,9 +1643,9 @@
     <article class="design-article js-observer">
       <h1 class="design-article-title">Accordions</h1>
       <p class="design-article-description">질의응답 등 정보를 요약하여 목록화하는 경우(?)에만 사용하세요. 공지사항 정도의 간단한 게시글에서도 사용할 수 있으나 그 이상의 경우에는 다른 유아이를 고민하세요.</p>
-      <blockquote>
+      <!-- <blockquote>
         plus 아이콘을 엄격하게. caret으로 변경?
-      </blockquote>
+      </blockquote> -->
       <!-- <details class="details">
         <summary class="details-summary">써머리</summary>
         <p>안녕</p>

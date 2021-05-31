@@ -17,7 +17,7 @@
 
 .checkout-product {float:right;width:var(--width-small);@include container-card;}
 .checkout-product-title {margin:0 0 1rem 0;@include subhead;}
-.checkout-product-item {height:var(--cell-large);margin:0 0 1rem 0;position:relative;}
+.checkout-product-item {height:var(--size-large);margin:0 0 1rem 0;position:relative;}
 .checkout-product-item-media {float:left;@include box-large;margin:0 1.5rem 0 0;}
 .checkout-product-item-name {font-size:var(--body);}
 .checkout-product-item-text {color:var(--gray400);}

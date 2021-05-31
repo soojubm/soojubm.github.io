@@ -13,7 +13,7 @@
 .about-intro-icons i:nth-of-type(6) {animation-duration:3.0s;}
 .about-intro-icons i:nth-of-type(7) {animation-duration:3.0s;}
 .about-intro-icons i:nth-of-type(8) {animation-duration:3.0s;}
-.about-intro-address {@include outer-elevated;}
+.about-intro-address {@include tile-elevated;}
 
 
 .about-skill {@include container-large;padding-top:6rem;box-sizing:border-box;background:var(--gray100);border-radius:var(--radius400);}

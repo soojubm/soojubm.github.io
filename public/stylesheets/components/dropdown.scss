@@ -5,7 +5,7 @@
 // margin, chip-padding;
 
 .dropdown-menu {
-  @include outer-elevated;
+  @include tile-elevated;
   width: 100%;
   min-width: var(--width-tiny);
   height:0;

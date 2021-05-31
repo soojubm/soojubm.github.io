@@ -20,7 +20,7 @@
 .cake-meta ul li b {float:left;width:72px;margin:0 1rem 0 0;font-weight:normal;color:var(--gray400);}
 .cake-summary {margin:0 -3rem;padding:1rem 50% 2rem 3rem;}
 
-.cake-info {display:flex;flex-wrap:wrap;max-width:var(--width-large);margin:0 auto;padding:2rem 0 2.25rem;border-top:var(--border150);border-bottom:var(--border150);position:relative;}
+.cake-info {display:flex;flex-wrap:wrap;max-width:var(--width-large);margin:0 auto;padding:2rem 0 2.25rem;border-top:var(--border100);border-bottom:var(--border100);position:relative;}
 .cake-info + .cake-info {border-top:none;}
 .cake-info button {@include button-tertiary;position:absolute;left:0;top:4rem;}
 .cake-info h2 {width:400px;flex-shrink:0;@include subhead;}

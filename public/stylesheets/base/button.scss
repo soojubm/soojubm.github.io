@@ -26,7 +26,7 @@ button {@include reset-button;}
 @mixin button {
   display: inline-block;
   min-width: 8rem;
-  // height: var(--cell-medium);
+  // height: var(--size-medium);
   padding: $padding200;
   box-sizing:border-box;
   border-radius: var(--radius400);
@@ -73,7 +73,7 @@ button {@include reset-button;}
 }
 @mixin button-secondary {
   @include button;
-  // border:1px solid var(--subhead);background:transparent;color:var(--subhead);
+  border:1px solid transparent;
   background:var(--green100);color:var(--color-primary);
   &:hover:not(:disabled), &.is-hover:not(:disabled) {
     // border-color:darken($green100, 2%);background:darken($green100, 2%);color:darken($green800, 5%);

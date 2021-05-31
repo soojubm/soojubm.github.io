@@ -69,14 +69,19 @@ $transition-fade: opacity 0.15s linear;
   --width-small: 480px;
   --width-medium: 640px;
   --width-large: 1440px;
-  // avatar width
-  --cell-large: 80px;
-  --cell-medium: 48px;
-  --cell-small: 32px;
-  --cell-tiny: 16px;
+
+  --size-large: 80px;
+  --size-medium: 48px;
+  --size-small: 32px;
+  --size-xsmall: 24px;
+  --size-tiny: 16px;
+
+  --space-after-description: 2rem;
+  --space-after-subhead: 1rem;
+  --space-between-item: 1rem;
+  --space-between-section: 8rem;
 
   --border100: 1px solid var(--gray200);
-  --border150: 1px solid var(--gray200); // 150 케이스 있음.
 
   --radius400: 4px;
   --radius800: 50%;
@@ -140,7 +145,6 @@ $transition-fade: opacity 0.15s linear;
     --gray800: #f1f4f1; // heading
 
     --border100: 1px solid var(--gray100);
-    --border150: 1px solid var(--gray100); // 150 케이스 있음.
 
     --color-box-border: var(--gray100);
 

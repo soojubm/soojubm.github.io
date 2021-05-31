@@ -7,7 +7,7 @@
   box-sizing: border-box;
   background-color: var(--gray100);
   font-size: var(--caption);
-  color: var(--gray400);
+  color: var(--gray800);
   &.is-disabled {
     background-color: var(--gray200);
     color: var(--gray800);
@@ -17,7 +17,7 @@
 }
 
 
-@mixin tag-eyebrow {@include tag; background-color:gold;color:var(--gray800);}
+@mixin tag-eyebrow {@include tag; background-color:gold;color:#333;}
 @mixin tag-keyword {@include tag;}
 @mixin tag-badge {@include tag;background-color:var(--green100);color:var(--green800);}
 
@@ -32,7 +32,6 @@
 .tag[data-appearance=accent] {@include tag-eyebrow;}
 .tag[data-appearance=secondary] {@include tag-badge;}
 
-a.tag:hover {color:var(--color-primary);}
 .badge {
   display:inline-flex;font-size:var(--caption);color:var(--gray400);
   padding: 0 .5rem;
