@@ -16,19 +16,18 @@ import { throttle } from './javascripts/utils/optimizationUtils'
 // import { validity } from './javascripts/utils/validations'
 // import { copyClipboard } from './javascripts/utils/formatUtils.js'
 
-window.addEventListener('hashchange', domEvents)
 window.addEventListener('hashchange', initializeNavbar)
 
-document.addEventListener('DOMContentLoaded', () => darkTheme('.js-darkmode'))
+window.addEventListener('hashchange', domEvents)
 
 document.addEventListener('DOMContentLoaded', initializeLoader)
 document.addEventListener('DOMContentLoaded', domEvents)
 
 document.addEventListener('DOMContentLoaded', () => {
   event.toggleClass({ selector: '.js-navbar-toggle' }).initialize()
-
   event.toTop({ selector: '.js-to-top' })
   event.positionSticky({ selector: '.js-header', addClass: 'is-sticky-header', isPassed: false })
+  darkTheme('.js-darkmode')
 })
 
 window.addEventListener('scroll', throttle(scrollProgress), true)
@@ -158,11 +157,10 @@ async function domEvents() {
 
   input.checkbox({ checkAllSelector: '.js-checkall', checkSelector: '.js-check' }).initialize()
   input.file()
-  input.textarea()
+  // input.textarea()
   input.number()
 
-  // todo : 클래스만 쓰면 되도록 되어 있는데 각각에 이벤트를 설정해주는 방향?으로
-  event.modal({ selector: '.js-modal' }).initialize()
+  event.modal({ selector: '.js-modal' })
 
   event.toggleClass({ selector: '.js-toggle' }).initialize()
 

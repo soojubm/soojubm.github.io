@@ -138,7 +138,7 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 .textfield-icon {display:flex;align-items:center;justify-content:center;width:48px;height:100%;position:absolute;left:0;}
 .textfield-icon i {display:inline-block;font-size:19px;vertical-align:middle;opacity:0.4;}
 .textfield-icon + .textfield-input {padding-left:48px;}
-.textfield-input {display:block;width:100%;padding:$padding200;padding-right:40px;background:var(--gray100);border:1px solid transparent;border-radius:var(--radius400);box-sizing:border-box;font:inherit;color:var(--gray800);/*-appearance:none;*/transition:all 0.2s;} // textarea 하단 간격
+.textfield-input {display:block;width:100%;min-height:var(--size-medium);padding:$padding200;padding-right:40px;background:var(--gray100);border:1px solid transparent;border-radius:var(--radius400);box-sizing:border-box;font:inherit;color:var(--gray800);/*-appearance:none;*/transition:all 0.2s;} // textarea 하단 간격
 .textfield-input:disabled {border-color:var(--gray200);background:var(--gray200);color:var(--gray100);cursor:not-allowed;}
 // .textfield-input:not(select):readonly {background:none;padding-left:0;padding-right:0;border:none;outline:none;}
 // .textfield-input:not(select):readonly::placeholder {color:var(--gray800);}
@@ -152,21 +152,18 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 // .textfield-prefix + .textfield-input {display:inline-block;padding-right:100px;}
 
 @mixin textfield-prefix {
-  @include box-small;width:var(--size-xsmall);height:var(--size-xsmall);background:var(--gray0);position:absolute;left:1rem;top:38px;pointer-events:none;
-  @media (--viewport-small) {
-    top: 35px;
-  }
+  @include box-small;width:var(--size-xsmall);height:var(--size-xsmall);background:var(--gray0);position:absolute;left:1rem;top:40px;pointer-events:none;
+  @media (--viewport-small) {top: 40px;}
 }
 @mixin textfield-surfix {
-  @include box-small;width:var(--size-xsmall);height:var(--size-xsmall);background:var(--gray0);position:absolute;right:1rem;top:38px;
-  pointer-events:none;
-  @media (--viewport-small) {top:35px;}
+  @include box-small;width:var(--size-xsmall);height:var(--size-xsmall);background:var(--gray0);position:absolute;right:1rem;top:40px;pointer-events:none;
+  // @media (--viewport-small) {top:35px;}
 }
 
 
 .textfield-check {@include textfield-surfix;}
 .textfield-prefix {@include textfield-prefix;background:var(--gray100);}
-.textfield-prefix ~ .textfield-input {padding-left:calc(1rem + 2rem + 1rem);}
+.textfield-prefix ~ .textfield-input {padding-left:calc(1rem + 2rem + .5rem);}
 .textfield-surfix {@include textfield-surfix;}
 .selectbox-indicator {@include textfield-surfix;}
 .textfield-clear {display:none !important;}
@@ -186,7 +183,7 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 
 .textfield.is-text {display:flex;align-items:center;}
 .textfield.is-text .textfield-label {margin-bottom:0;}
-.textfield.is-text .textfield-input {width:auto;margin-left:1rem;padding:0;background:none;border:none;box-shadow:none;color:var(--color-primary);}
+.textfield.is-text .textfield-input {width:auto;margin-left:.5rem;padding:0;background:none;border:none;box-shadow:none;color:var(--color-primary);}
 .textfield.is-text .selectbox-indicator {margin-top:2px;margin-left:1rem;background:var(--gray100);position:static;right:auto;bottom:auto;}
 
 // .is-invalid .textfield-label {color:var(--red800);}

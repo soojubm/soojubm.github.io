@@ -15,7 +15,7 @@
 .checkout-head-byline h2 {font-size:var(--body);}
 .checkout-head-byline figure {@include box-small;display:flex;}
 
-.checkout-product {float:right;width:var(--width-small);@include container-card;}
+.checkout-product {float:right;width:var(--width-small);@include container-card;margin-top:-14rem;}
 .checkout-product-title {margin:0 0 1rem 0;@include subhead;}
 .checkout-product-item {height:var(--size-large);margin:0 0 1rem 0;position:relative;}
 .checkout-product-item-media {float:left;@include box-large;margin:0 1.5rem 0 0;}
@@ -50,7 +50,7 @@
 .checkout-payment {max-width:var(--width-medium);margin:4rem 0 0;}
 .checkout-payment-title {margin:0 0 1rem 0;@include subhead;}
 .checkout-payment-description {}
-.checkout-payment-button {width:100%;margin:.25rem 0;padding:$padding200;border:var(--border100);border-radius:4px;text-align:left;position:relative}
+.checkout-payment-button {width:100%;@include button-primary;}
 .checkout-payment-button-emoji {display:block;margin-bottom:-.5rem;font-size:var(--title);}
 .checkout-payment-button-check {position:absolute;right:16px;top:42%;}
 

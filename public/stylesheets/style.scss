@@ -326,7 +326,7 @@
 .newneek-section2 footer {padding:1rem 1rem;border:1px solid #000;border-top:0;border-bottom:0;}
 .newneek-keyword-wrap {display:flex;flex-wrap:wrap;justify-content:space-evenly;padding:2rem 0 3rem;border:1px solid #000;border-top:0;}
 .newneek-keyword {width:calc(40% - 1rem);padding:1rem;background:#ebebeb;font-size:var(--body);}
-.newneek-keyword b {}
+.newneek-keyword b {@include subhead;}
 .newneek-keyword small {display:block;}
 .newneek-keyword i {display:block;font-size:var(--title);}
 .newneek .numbering {

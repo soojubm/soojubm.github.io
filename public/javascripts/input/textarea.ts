@@ -16,11 +16,7 @@ const inputTextarea = () => {
     byteElement.innerText = stringByteLength
 
     const isMaximum = stringByteLength > BYTE_MAXIMUM
-    if (isMaximum) {
-      target.parentNode.classList.add('is-invalid')
-    } else {
-      target.parentNode.classList.remove('is-invalid')
-    }
+    target.parentNode.classList.toggle('is-invalid', isMaximum)
 
     // autoExpand(target)
   })

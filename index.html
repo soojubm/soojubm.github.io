@@ -148,14 +148,15 @@
             <a route="/design" href="#cart">카트</a>
             <a route="/design" href="#checkout">주문서</a>
             <a route="/design" href="#orders">주문</a>
-            <a route="/design" href="#cake">영화</a>
+            <a route="/design" href="#event">프로모션(draft)</a>
+            <!-- <a route="/design" href="#cake">영화</a> -->
             <!-- <a href="#terms">약관</a> -->
           </menu>
         </div>
         <a route="/design" class="navbar-menu-item" href="#design">디자인시스템</a>
       </div>
 
-      <div class="navbar-search" role="search" aria-label="site">
+      <div class="navbar-search" role="search" aria-label="site" hidden>
         <a class="navbar-search-trigger js-navbar-toggle" href="#">
           <i class="icon-search"></i>
           <!-- <img src="/public/icons/search.svg" alt="" /> -->
@@ -198,6 +199,13 @@
         </menu> -->
         <menu class="navbar-notification-menu">
           <h6 class="navbar-notification-menu-title">알림</h6>
+          <a
+            href="#"
+            style="position: absolute;
+          right: 1.5rem;
+          top: 1.25rem;"
+            >알림 모두 보기</a
+          >
           <hr />
           <div class="notification-item">
             <em class="notification-unread"></em>
@@ -213,9 +221,9 @@
             <time class="notification-item-date" style="position:absolute;right:0;top:0;">5일 전</time>
             <span class="notification-item-content" style="color:var(--gray400);">like on <em>John Cassavetes</em></span>
           </div>
-          <footer>
+          <!-- <footer>
             <button>알림 전체 보기</button>
-          </footer>
+          </footer> -->
         </menu>
       </div>
 

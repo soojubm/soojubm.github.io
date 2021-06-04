@@ -56,6 +56,8 @@ table tbody tr td {padding:var(--table-padding);}
 table tbody tr:hover {}
 table .right {text-align:right;}
 
+table.is-borderless tbody tr {border:0;}
+
 ul {}
 ul li {margin:.25rem 0;padding:0 0 0  1.25rem;position:relative;}
 ul li:before {content:'\2022';position:absolute;left:0;}

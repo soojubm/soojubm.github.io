@@ -84,12 +84,12 @@
 }
 // .icon-bullet:before {content:'\25AA';color:rgba(84,94,111,.2);}
 
-.icon-arrow {position: relative;}
+.icon-arrow {background-color:var(--gray800);border-color:var(--gray800);position: relative;}
 .icon-arrow:before {
   content: '';
   position: absolute;
-  border-top: 2px solid var(--gray800);
-  border-left: 2px solid var(--gray800);
+  border-top: 2px solid inherit;
+  border-left: 2px solid inherit;
   top: 50%;
   width: 6px;
   height: 6px;
@@ -98,7 +98,7 @@
 .icon-arrow:after {
   content: '';
   position: absolute;
-  background-color: var(--gray800);
+  background-color: inherit;
   top: 50%;
   right: -5px;
   width: 12px;

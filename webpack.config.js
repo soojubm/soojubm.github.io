@@ -71,7 +71,7 @@ module.exports = new SpeedMeasurePlugin().wrap({
     minimizer: [
       new TerserPlugin({
         terserOptions: {
-          compress: { drop_console: true },
+          compress: { drop_console: false },
         },
       }),
       new CssMinimizerPlugin(),

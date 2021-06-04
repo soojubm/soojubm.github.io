@@ -26,8 +26,8 @@ button {@include reset-button;}
 @mixin button {
   display: inline-block;
   min-width: 8rem;
-  // height: var(--size-medium);
-  padding: $padding200;
+  height: var(--size-medium);
+  padding: 9px 1rem; // btn pad
   box-sizing:border-box;
   border-radius: var(--radius400);
   text-align: center;
@@ -101,6 +101,10 @@ button {@include reset-button;}
   &:focus:not(:disabled) {}
   &:active {}
   &:disabled {}
+}
+
+@mixin button-small {
+  height:var(--size-small);padding:3px 1rem;font-size:var(--caption);
 }
 
 // ! backButton closeButton :: back close 아이콘은 어차피 단독으로 쓰이지 않는다!

@@ -41,7 +41,8 @@
 .profile-display-button i {vertical-align:middle;}
 
 .profile-tablist {display:flex;margin:0 0 1rem 0;padding:.25rem;border-radius:var(--radius400);background:var(--gray100);position:relative;}
-.profile-tablist-tab {padding:$padding100;color:var(--gray400);font-weight:bold;cursor:pointer;position:relative;z-index:1;}
+.profile-tablist-tab {height:var(--size-small);padding:0 1rem;color:var(--gray400);font-weight:bold;cursor:pointer;position:relative;z-index:1;}
+// .profile-tablist-tab:hover {box-shadow:var(--shadow400);}
 .profile-tablist-tab[aria-selected=true] {color:var(--gray800);}
 .profile-tablist-tab-badge {font-size:var(--caption);}
 .profile-tablist-indicator {display:block;height:calc(100% - .5rem);border-radius:var(--radius400);background:var(--gray0);position:absolute;top:.25rem;left:4px;transition:all 0.4s ease;}
@@ -87,7 +88,7 @@
 // .card:hover .card-thumbnail img {transform:translateY(-.25rem);}
 .card:hover .card-more {display:block;}
 
-.list .card {float:none;width:100%;margin-bottom:1rem;padding:1rem;}
+.list .card {float:none;width:100% !important;margin-bottom:1rem;padding:1rem;}
 .list .card-thumbnail {float:left;width:80px;height:80px;margin-right:1.5rem;padding-top:0;}
 .list .card-thumbnail img {max-width:150%;}
 .list .card-title {padding-top:0;}

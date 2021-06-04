@@ -36,10 +36,20 @@
 .design-typograph-item {@include tile-flat;margin:1rem 0;}
 .design-typograph-group .design-typograph-item {width:var(--grid-column);}
 
-.design-typograph-size {@include tile-flat;margin:1rem 0;}
-// .design-typograph-size h3 {position:absolute;transition:all .2s;}
-// .design-typograph-size:hover h3 {font-size:var(--headline);transition-duration:.4s}
-.design-typograph-size h3 span {float:right;}
+
+.design-buttongroup {}
+
+.design-typograph-size {@include tile-flat;height:calc(var(--size-small) + 2rem + 2px);margin:1rem 0;overflow:hidden;}
+.design-typograph-size p {margin-top:1.5rem;}
+.design-typograph-size-title {margin-top:var(--space-leading-title);line-height:var(--size-small);}
+.design-typograph-size-title span {margin:0 0 0 .5rem;font-weight:normal;font-size:var(--body);color:var(--gray400);}
+.design-typograph-size-toggle {@include box-small;position:absolute;right:1.5rem;top:1rem;
+  // top: 50%;
+  // transform: translateY(-50%);
+}
+.design-typograph-size.is-active {height:auto;transition:all .4s;}
+.design-typograph-size.is-active .design-typograph-size-title {transition:all .4s;}
+.design-typograph-size.is-active p {margin-top:.5rem;transition:all .4s;}
 
 .design-outer-flat {@include tile-flat;}
 .design-outer-flat-small {@include tile-flat-small;}
@@ -209,17 +219,17 @@
 .design-article-secondary {@include button-secondary;}
 .design-article-tertiary {@include button-tertiary;}
 .design-article-text {@include button-text;}
-.design-article-primary-small {@include button-primary;height:var(--size-small);padding:$padding100;font-size:var(--caption);}
-.design-article-secondary-small {@include button-secondary;height:var(--size-small);padding:$padding100;font-size:var(--caption);}
-.design-article-tertiary-small {@include button-tertiary;height:var(--size-small);padding:$padding100;font-size:var(--caption);}
-.design-article-text-small {@include button-text;height:var(--size-small);padding:$padding100;font-size:var(--caption);}
+.design-article-primary-small {@include button-primary;@include button-small;}
+.design-article-secondary-small {@include button-secondary;@include button-small;}
+.design-article-tertiary-small {@include button-tertiary;@include button-small;}
+.design-article-text-small {@include button-text;@include button-small;}
 
 
 .number {display:flex;justify-content:center;}
 .number-card {display:flex;justify-content:center;align-items:center;width:48px;height:64px;background:var(--gray100);border-radius:var(--shadow400);font-size:var(--title);font-weight:bold;margin:0 .25rem;}
 
 .userlist {@include container-card;}
-.userlist header {display:flex;align-items:center;justify-content:space-between;margin:0 0 1rem 0;}
+.userlist header {display:flex;align-items:center;justify-content:space-between;margin:-.5rem 0 1rem 0;}
 .userlist header h1 {@include subhead;}
 .userlist header a {font-weight:bold;}
 .userlist .profile-user:hover {@include hover-item;}

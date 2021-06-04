@@ -1,8 +1,8 @@
 <main class="event">
   <header class="event-header">
-    <span class="event-header-eyebrow">카카오뱅크 mini 오픈 이벤트</span>
-    <h1 class="event-header-title">10대부터,<br />카카오뱅크<br />mini</h1>
-    <p class="event-header-description">돈을 받고 보내고, 실시간으로 잔액 확인<br />내 카드로 결제하고 티머니까지</p>
+    <span class="event-header-eyebrow">프로모션 제목</span>
+    <h1 class="event-header-title">프로모션,<br />태그라인은 쪼개서<br />3줄 정도.</h1>
+    <p class="event-header-description">이벤트를 두 줄로 요약하여,<br />사용자가 얻을 수 있는 것을 알려 주세요.</p>
     <figure>
       <img src="" alt="" />
     </figure>
@@ -16,6 +16,31 @@
     <span class="event-header-objects-item"></span>
     <span class="event-header-objects-item"></span>
   </header>
+
+  <section class="event-intro">
+    <span>이벤트 하나</span>
+    <h2>mini를 만들고 아래 버튼을 눌러 이모티콘을 받으세요</h2>
+    <p>
+      mini 만들면 니니즈 신상 이모티콘 100%
+      <br />
+      ~ 11월 30일까지
+    </p>
+    <a href=""></a>
+  </section>
+
+  <section></section>
+
+  <section class="event-faq"></section>
+
+  <aside class="event-note">
+    <h2 class="event-note-title">반드시 확인해주세요!</h2>
+    <ul>
+      <li>본 이벤트는 당사 사정에 따라 사전 예고 없이 내용 변경 및 조기 종료될 수 있습니다.</li>
+      <li>본 이벤트는 당사 사정에 따라 사전 예고 없이 내용 변경 및 조기 종료될 수 있습니다.</li>
+      <li>본 이벤트는 당사 사정에 따라 사전 예고 없이 내용 변경 및 조기 종료될 수 있습니다.</li>
+      <li>본 이벤트는 당사 사정에 따라 사전 예고 없이 내용 변경 및 조기 종료될 수 있습니다.</li>
+    </ul>
+  </aside>
 
   <footer class="event-footer">
     <button class="event-footer-cta">카카오뱅크 mini 만들기</button>
@@ -35,7 +60,7 @@
     margin: 0 0 1rem 0;
     padding: 0.5rem 1rem;
     border-radius: 50px;
-    background: green;
+    background: var(--green800);
     line-height: 35px;
     color: #fff;
   }
@@ -98,6 +123,26 @@
     animation-delay: 0.8s;
   }
 
+  .event-intro a {
+    @include button-primary;
+  }
+
+  .event-note {
+    width: var(--width-medium);
+    margin: 0 auto;
+    padding: 4rem var(--grid-margin);
+    /* background: var(--gray100); */
+  }
+  .event-note {
+  }
+  .event-note-title {
+    margin: 0 0 var(--space-after-subhead) 0;
+  }
+  .event-note-title ul {
+  }
+  .event-note-title ul li {
+  }
+
   .event-footer {
     padding: 1rem;
     position: fixed;
@@ -115,7 +160,7 @@
     box-shadow: var(--shadow400);
     background: var(--color-primary);
     font-size: var(--subhead);
-    color: var(--gray800);
+    color: #fff;
   }
 
   @keyframes falling {

@@ -8,85 +8,92 @@ type Parameter = {
   selector: string
 }
 
-const modal = ({ selector: trigger }: Parameter) => ({
-  modalTriggers: document.querySelectorAll<HTMLElement>(trigger),
-  modalContainer: document.querySelector<HTMLElement>('#modal'),
-  initialize() {
-    if (!this.modalTriggers) return
+// 각각에 이벤트를 건다면, forEach로 걸기?
+// modalClose가 여러개.
+// 어떤 버튼을 클릭해도 닫아야 함.
+// 페이지 / 다이얼로그
 
-    document.removeEventListener('click', this.backHistory)
+// 라우팅 될 때 마다 실행이 되니까.
 
-    this.modalTriggers.forEach(modalElement =>
-      modalElement.querySelector('.card-more')?.addEventListener('click', event => {
-        event.stopPropagation()
-        event.preventDefault()
-      }),
-    )
+// toggleClass 어떤 이벤트인지 개발자 도구로 알 수 가 없네
 
-    this.modalTriggers.forEach(modalElement =>
-      modalElement.addEventListener('click', event => {
-        event.stopPropagation()
-        event.preventDefault()
+function modal({ selector: trigger }: Parameter) {
+  const modalTriggers = document.querySelectorAll<HTMLElement>(trigger)
+  const modalContainer = document.querySelector<HTMLElement>('#modal')
+  // const modalDialog = modalContainer.querySelector('.modal-dialog')
+  // const closeElement = modalContainer.querySelector('.js-modal-close')
+  let previousActiveElement
+  let previousPageYOffset
 
-        // event target
-        console.log('ttt', event.target, modalElement)
-        const modalId = modalElement.dataset.modal
-        const uri = `/views/${modalId}.html`
+  modalTriggers.forEach(modalTrigger =>
+    modalTrigger.addEventListener('click', event => {
+      event.preventDefault()
 
-        fetch(uri)
-          .then(response => {
-            if (response.ok) return response.text()
-            else return Promise.reject(response)
-          })
-          .then(html => {
-            if (!this.modalContainer) return
+      if (!modalContainer) return
 
-            this.modalContainer.innerHTML = html
-            this.showModal(window.pageYOffset)
-            pushBrowserHistory({}, '', modalId)
+      async function fetchData() {
+        try {
+          const modalId = modalTrigger.dataset.modal
+          const uri = `/views/${modalId}.html`
+          const response = await fetch(uri)
+          if (!response.ok) throw 'Something went wrong.'
+          const html = await response.text()
+          modalContainer!.innerHTML = html
+          previousActiveElement = document.activeElement
+          pushBrowserHistory({}, '', modalId)
 
-            const isShown = document.body.classList.contains('is-modal-visible')
-            if (!isShown) return
+          // modalContainer?.querySelector('button').focus()
+        } catch (error) {}
+      }
 
-            const closeElement = this.modalContainer.querySelector('.js-modal-close')
-            // const dimElement = this.modalContainer.querySelector('.modal-dim')
+      fetchData()
 
-            closeElement?.addEventListener('click', event => event.stopPropagation())
-            this.modalContainer?.querySelector('.modal-dialog')?.addEventListener('click', event => event.stopPropagation())
-            closeElement?.addEventListener('click', this.backHistory)
-            this.modalContainer.addEventListener('click', this.backHistory)
-            // dimElement?.addEventListener('click', this.backHistory)
+      openModal(window.pageYOffset)
 
-            window.addEventListener('popstate', () => this.clearModal(this.modalContainer, pageYOffset))
-            document.addEventListener(
-              'keydown',
-              event => {
-                const isKeyEsc = event.keyCode === 27
-                if (isKeyEsc) this.backHistory()
-              },
-              true,
-            )
-          })
-          .catch(error => console.warn('modal Error'))
-      }),
-    )
-  },
-  showModal(pageYOffset) {
-    document.body.classList.add('is-modal-visible')
-    document.body.classList.add('body-lock') // todo import
+      document.addEventListener('keydown', checkCloseDialog)
+      window.addEventListener('popstate', closeModal)
+      modalContainer?.addEventListener('click', temp)
+    }),
+  )
+
+  function temp(event) {
+    const target = event.target as HTMLElement
+    if (target.classList.contains('modal')) backHistory()
+    if (target.classList.contains('js-modal-close')) backHistory()
+  }
+
+  function openModal(pageYOffset) {
+    document.body.classList.add('is-modal-visible', 'body-lock')
     document.body.style.top = `-${pageYOffset}px`
-  },
-  clearModal(container, pageYOffset) {
-    document.body.classList.remove('is-modal-visible')
-    document.body.classList.remove('body-lock') // todo import
+  }
+  function closeModal() {
+    // cleanup Events
+    document.removeEventListener('keydown', checkCloseDialog)
+    modalContainer?.removeEventListener('click', temp)
+    window.removeEventListener('popstate', closeModal)
 
-    container.innerHTML = ''
-    window.scrollTo(0, pageYOffset)
-  },
-  backHistory() {
+    document.body.classList.remove('is-modal-visible', 'body-lock')
+
+    modalContainer!.innerHTML = ''
+    window.scrollTo(0, window.pageYOffset)
+
+    // previousActiveElement.focus()
+  }
+  function checkCloseDialog(event) {
+    const isKeyEsc = event.keyCode === 27
+    if (isKeyEsc) backHistory()
+  }
+  function backHistory() {
     history.back()
-  },
-})
+  }
+}
+
+// modalTriggers.forEach(modalElement =>
+//   modalElement.querySelector('.card-more')?.addEventListener('click', event => {
+//     event.stopPropagation()
+//     event.preventDefault()
+//   }),
+// )
 
 export default modal
 
