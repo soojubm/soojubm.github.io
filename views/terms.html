@@ -1,0 +1,550 @@
+<main class="terms">
+  <script>
+    const sum = (...rest) => {
+      return rest.reduce((acc, cur) => acc + cur, 0)
+    }
+    log(sum(1, 2, 3, 4, 5))
+    // 15
+    /*
+// array obj filtering
+const user = [
+  { id: 1, content: '다현', checked: false },
+  { id: 2, content: '나연', checked: false },
+  { id: 3, content: '소희', checked: true }
+];
+const checkedUser = user.filter(({checked}) => checked);
+log(...checkedUser); // { id: 3, content: '소희', checked: true }
+
+function setBallProperties(x, y, vx, vy, radius) {}
+var parameters = {
+  x: 0,
+  y: 0,
+  va: 10,
+  vy: 15,
+  radius: 5
+};
+setBallProperties(parmeters);
+var circle = {
+  center: {x: 10, y: 10},
+  radius: 2.5,
+  area: function() {
+    return Math.PI * this.radius * this.radius;
+  }
+};
+circle.area
+*/
+    /* scrollTop offsetTop
+		const wizards = ['Hermione', 'Neville', 'Gandalf', 'Radagast'];
+		/*
+		let html = '';
+		wizards.forEach((wizard) => {
+			html += `<li>${wizard}</li>`;
+		});
+		html = `<ul>${html}</ul>`;
+		*/
+    /*
+		// Create an unordered list
+		var list = document.createElement('ul');
+		var fragment = document.createDocumentFragment();
+
+		// Create a list item for each wizard
+		// and append it to the fragment
+		wizards.forEach(function (wizard) {
+			var li = document.createElement('li');
+			li.textContent = wizard;
+			fragment.appendChild(li);
+		});
+		list.appendChild(fragment);
+
+		console.log(html);
+
+		function reloadPageWithHash() {
+			var initialPage = location.pathname;
+			location.replace('http://example.com/#' + initialPage);
+		}
+		*/
+  </script>
+
+  <script>
+    var fNumber = 10123.322
+    var sNumber = parseFloat(fNumber.toFixed(2)).toLocaleString()
+    /*
+			const keyID = event.keyCode;
+			if( ( keyID >=48 && keyID <= 57 ) || ( keyID >=96 && keyID <= 105 ) ) {
+				console.log('숫자키');
+			} else {
+				console.log('숫자키아님');
+			}
+			event.target.value.replace(/[^0-9]/g,'');
+			*/
+    /*
+
+			*/
+    // 재사용하려면 body 태그에 스티키 클래스를 따로 추가..
+    // 그러면 자바스크립트 훅 클래스 js에 클래ㅡ를 추가할 필요도 없음.
+    // <body class="js-sticky-porfile-head js-sticky-header">
+    // .js-sticky-profile-user .profile-user {}
+  </script>
+
+  <script>
+    // function showNode (oNode) {
+    // 	var nLeft = 0, nTop = 0;
+    // 	for (var oItNode = oNode; oItNode; nLeft += oItNode.offsetLeft, nTop += oItNode.offsetTop, oItNode = oItNode.offsetParent);
+    // 	document.documentElement.scrollTop = nTop;
+    // 	document.documentElement.scrollLeft = nLeft;
+    // }
+
+    // function showBookmark (sBookmark, bUseHash) {
+    // 	if (arguments.length === 1 || bUseHash) { location.hash = sBookmark; return; }
+    // 	var oBookmark = document.querySelector(sBookmark);
+    // 	if (oBookmark) { showNode(oBookmark); }
+    // }
+
+    /*
+     * nDuration: the duration in milliseconds of each frame
+     * nFrames: number of frames for each scroll
+     */
+    /*
+		var showBookmark = (function () {
+  var  _useHash, _scrollX, _pageYOffset, _nodeX, _nodeY, _itFrame, _scrollId = -1, _bookMark,
+       nDuration = 200, nFrames = 10;
+
+  function _next () {
+    if (_itFrame > nFrames) { clearInterval(_scrollId); _scrollId = -1; return; }
+    _isBot = true;
+    document.documentElement.scrollTop = Math.round(_pageYOffset + (_nodeY - _pageYOffset) * _itFrame / nFrames);
+    document.documentElement.scrollLeft = Math.round(_scrollX + (_nodeX - _scrollX) * _itFrame / nFrames);
+    if (_useHash && _itFrame === nFrames) { location.hash = _bookMark; }
+    _itFrame++;
+  }
+
+  function _chkOwner () {
+    if (_isBot) { _isBot = false; return; }
+    if (_scrollId > -1) { clearInterval(_scrollId); _scrollId = -1; }
+  }
+
+  if (window.addEventListener) { window.addEventListener("scroll", _chkOwner, false); }
+  else if (window.attachEvent) { window.attachEvent("onscroll", _chkOwner); }
+
+  return function (sBookmark, bUseHash) {
+    _pageYOffset = document.documentElement.scrollTop;
+    _scrollX = document.documentElement.scrollLeft;
+    _bookMark = sBookmark;
+    _useHash = arguments.length === 1 || bUseHash;
+    for (
+      var nLeft = 0, nTop = 0, oNode = document.querySelector(sBookmark);
+      oNode;
+      nLeft += oNode.offsetLeft, nTop += oNode.offsetTop, oNode = oNode.offsetParent
+    );
+    _nodeX = nLeft, _nodeY = nTop, _itFrame = 1;
+    if (_scrollId === -1) { _scrollId = setInterval(_next, Math.round(nDuration / nFrames)); }
+  };
+})();
+*/
+    // <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ultrices dolor ac dolor imperdiet ullamcorper. Suspendisse quam libero, luctus auctor mollis sed, malesuada condimentum magna. Quisque in ante tellus, in placerat est. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec a mi magna, quis mattis dolor. Etiam sit amet ligula quis urna auctor imperdiet nec faucibus ante. Mauris vel consectetur dolor. Nunc eget elit eget velit pulvinar fringilla consectetur aliquam purus. Curabitur convallis, justo posuere porta egestas, velit erat ornare tortor, non viverra justo diam eget arcu. Phasellus adipiscing fermentum nibh ac commodo. Nam turpis nunc, suscipit a hendrerit vitae, volutpat non ipsum.</p>
+    // <p>Duis lobortis sapien quis nisl luctus porttitor. In tempor semper libero, eu tincidunt dolor eleifend sit amet. Ut nec velit in dolor tincidunt rhoncus non non diam. Morbi auctor ornare orci, non euismod felis gravida nec. Curabitur elementum nisi a eros rutrum nec blandit diam placerat. Aenean tincidunt risus ut nisi consectetur cursus. Ut vitae quam elit. Donec dignissim est in quam tempor consequat. Aliquam aliquam diam non felis convallis suscipit. Nulla facilisi. Donec lacus risus, dignissim et fringilla et, egestas vel eros. Duis malesuada accumsan dui, at fringilla mauris bibendum quis. Cras adipiscing ultricies fermentum. Praesent bibendum condimentum feugiat.</p>
+    // <p id="myBookmark1">[&nbsp;<span class="intLink" onclick="showBookmark('#myBookmark2');">Go to bookmark #2</span>&nbsp;]</p>
+    // <p>Vivamus blandit massa ut metus mattis in fringilla lectus imperdiet. Proin ac ante a felis ornare vehicula. Fusce pellentesque lacus vitae eros convallis ut mollis magna pellentesque. Pellentesque placerat enim at lacus ultricies vitae facilisis nisi fringilla. In tincidunt tincidunt tincidunt. Nulla vitae tempor nisl. Etiam congue, elit vitae egestas mollis, ipsum nisi malesuada turpis, a volutpat arcu arcu id risus.</p>
+    // <p>Nam faucibus, ligula eu fringilla pulvinar, lectus tellus iaculis nunc, vitae scelerisque metus leo non metus. Proin mattis lobortis lobortis. Quisque accumsan faucibus erat, vel varius tortor ultricies ac. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec libero nunc. Nullam tortor nunc, elementum a consectetur et, ultrices eu orci. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque a nisl eu sem vehicula egestas.</p>
+    // <p>Aenean viverra varius mauris, sed elementum lacus interdum non. Phasellus sit amet lectus vitae eros egestas pellentesque fermentum eget magna. Quisque mauris nisl, gravida vitae placerat et, condimentum id metus. Nulla eu est dictum dolor pulvinar volutpat. Pellentesque vitae sollicitudin nunc. Donec neque magna, lobortis id egestas nec, sodales quis lectus. Fusce cursus sollicitudin porta. Suspendisse ut tortor in mauris tincidunt rhoncus. Maecenas tincidunt fermentum facilisis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+    // <p>Suspendisse turpis nisl, consectetur in lacinia ut, ornare vel mi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin non lectus eu turpis vulputate cursus. Mauris interdum tincidunt erat id pharetra. Nullam in libero elit, sed consequat lectus. Morbi odio nisi, porta vitae molestie ut, gravida ut nunc. Ut non est dui, id ullamcorper orci. Praesent vel elementum felis. Maecenas ornare, dui quis auctor hendrerit, turpis sem ullamcorper odio, in auctor magna metus quis leo. Morbi at odio ante.</p>
+    // <p>Curabitur est ipsum, porta ac viverra faucibus, eleifend sed eros. In sit amet vehicula tortor. Vestibulum viverra pellentesque erat a elementum. Integer commodo ultricies lorem, eget tincidunt risus viverra et. In enim turpis, porttitor ac ornare et, suscipit sit amet nisl. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque vel ultrices nibh. Sed commodo aliquam aliquam. Nulla euismod, odio ut eleifend mollis, nisi dui gravida nibh, vitae laoreet turpis purus id ipsum. Donec convallis, velit non scelerisque bibendum, diam nulla auctor nunc, vel dictum risus ipsum sit amet est. Praesent ut nibh sit amet nibh congue pulvinar. Suspendisse dictum porttitor tempor.</p>
+    // <p>Vestibulum dignissim erat vitae lectus auctor ac bibendum eros semper. Integer aliquet, leo non ornare faucibus, risus arcu tristique dolor, a aliquet massa mauris quis arcu. In porttitor, lectus ac semper egestas, ligula magna laoreet libero, eu commodo mauris odio id ante. In hac habitasse platea dictumst. In pretium erat diam, nec consequat eros. Praesent augue mi, consequat sed porttitor at, volutpat vitae eros. Sed pretium pharetra dapibus. Donec auctor interdum erat, lacinia molestie nibh commodo ut. Maecenas vestibulum vulputate felis, ut ullamcorper arcu faucibus in. Curabitur id arcu est. In semper mollis lorem at pellentesque. Sed lectus nisl, vestibulum id scelerisque eu, feugiat et tortor. Pellentesque porttitor facilisis ultricies.</p>
+    // <p id="myBookmark2">[&nbsp;<span class="intLink" onclick="showBookmark('#myBookmark1');">Go to bookmark #1</span> | <span class="intLink" onclick="showBookmark('#myBookmark1', false);">Go to bookmark #1 without using location.hash</span> | <span class="intLink" onclick="showBookmark('#myBookmark3');">Go to bookmark #3</span>&nbsp;]</p>
+    // <p>Phasellus tempus fringilla nunc, eget sagittis orci molestie vel. Nulla sollicitudin diam non quam iaculis ac porta justo venenatis. Quisque tellus urna, molestie vitae egestas sit amet, suscipit sed sem. Quisque nec lorem eu velit faucibus tristique ut ut dolor. Cras eu tortor ut libero placerat venenatis ut ut massa. Sed quis libero augue, et consequat libero. Morbi rutrum augue sed turpis elementum sed luctus nisl molestie. Aenean vitae purus risus, a semper nisl. Pellentesque malesuada, est id sagittis consequat, libero mauris tincidunt tellus, eu sagittis arcu purus rutrum eros. Quisque eget eleifend mi. Duis pharetra mi ac eros mattis lacinia rutrum ipsum varius.</p>
+    // <p>Fusce cursus pulvinar aliquam. Duis justo enim, ornare vitae elementum sed, porta a quam. Aliquam eu enim eu libero mollis tempus. Morbi ornare aliquam posuere. Proin faucibus luctus libero, sed ultrices lorem sagittis et. Vestibulum malesuada, ante nec molestie vehicula, quam diam mollis ipsum, rhoncus posuere mauris lectus in eros. Nullam feugiat ultrices augue, ac sodales sem mollis in.</p>
+    // <p id="myBookmark3"><em>Here is the bookmark #3</em></p>
+    // <p>Proin vitae sem non lorem pellentesque molestie. Nam tempus massa et turpis placerat sit amet sollicitudin orci sodales. Pellentesque enim enim, sagittis a lobortis ut, tempus sed arcu. Aliquam augue turpis, varius vel bibendum ut, aliquam at diam. Nam lobortis, dui eu hendrerit pellentesque, sem neque porttitor erat, non dapibus velit lectus in metus. Vestibulum sit amet felis enim. In quis est vitae nunc malesuada consequat nec nec sapien. Suspendisse aliquam massa placerat dui lacinia luctus sed vitae risus. Fusce tempus, neque id ultrices volutpat, mi urna auctor arcu, viverra semper libero sem vel enim. Mauris dictum, elit non placerat malesuada, libero elit euismod nibh, nec posuere massa arcu eu risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer urna velit, dapibus eget varius feugiat, pellentesque sit amet ligula. Maecenas nulla nisl, facilisis eu egestas scelerisque, mollis eget metus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi sed congue mi.</p>
+    // <p>Fusce metus velit, pharetra at vestibulum nec, facilisis porttitor mi. Curabitur ligula sapien, fermentum vel porttitor id, rutrum sit amet magna. Sed sit amet sollicitudin turpis. Aenean luctus rhoncus dolor, et pulvinar ante egestas et. Donec ac massa orci, quis dapibus augue. Vivamus consectetur auctor pellentesque. Praesent vestibulum tincidunt ante sed consectetur. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce purus metus, imperdiet vitae iaculis convallis, bibendum vitae turpis.</p>
+    // <p>Fusce aliquet molestie dolor, in ornare dui sodales nec. In molestie sollicitudin felis a porta. Mauris nec orci sit amet orci blandit tristique congue nec nunc. Praesent et tellus sollicitudin mauris accumsan fringilla. Morbi sodales, justo eu sollicitudin lacinia, lectus sapien ullamcorper eros, quis molestie urna elit bibendum risus. Proin eget tincidunt quam. Nam luctus commodo mauris, eu posuere nunc luctus non. Nulla facilisi. Vivamus eget leo rhoncus quam accumsan fringilla. Aliquam sit amet lorem est. Nullam vel tellus nibh, id imperdiet orci. Integer egestas leo eu turpis blandit scelerisque.</p>
+    // <p>Etiam in blandit tellus. Integer sed varius quam. Vestibulum dapibus mi gravida arcu viverra blandit. Praesent tristique augue id sem adipiscing pellentesque. Sed sollicitudin, leo sed interdum elementum, nisi ante condimentum leo, eget ornare libero diam semper quam. Vivamus augue urna, porta eget ultrices et, dapibus ut ligula. Ut laoreet consequat faucibus. Praesent at lectus ut lectus malesuada mollis. Nam interdum adipiscing eros, nec sodales mi porta nec. Proin et quam vitae sem interdum aliquet. Proin vel odio at lacus vehicula aliquet.</p>
+    // <p>Etiam placerat dui ut sem ornare vel vestibulum augue mattis. Sed semper malesuada mi, eu bibendum lacus lobortis nec. Etiam fringilla elementum risus, eget consequat urna laoreet nec. Etiam mollis quam non sem convallis vel consectetur lectus ullamcorper. Aenean mattis lacus quis ligula mattis eget vestibulum diam hendrerit. In non placerat mauris. Praesent faucibus nunc quis eros sagittis viverra. In hac habitasse platea dictumst. Suspendisse eget nisl erat, ac molestie massa. Praesent mollis vestibulum tincidunt. Fusce suscipit laoreet malesuada. Aliquam erat volutpat. Aliquam dictum elementum rhoncus. Praesent in est massa, pulvinar sodales nunc. Pellentesque gravida euismod mi ac convallis.</p>
+    // <p>Mauris vel odio vel nulla facilisis lacinia. Aliquam ultrices est at leo blandit tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse porttitor adipiscing facilisis. Duis cursus quam iaculis augue interdum porttitor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis vulputate magna ac metus pretium condimentum. In tempus, est eget vestibulum blandit, velit massa dignissim nisl, ut scelerisque lorem neque vel velit. Maecenas fermentum commodo viverra. Curabitur a nibh non velit aliquam cursus. Integer semper condimentum tortor a pellentesque. Pellentesque semper, nisl id porttitor vehicula, sem dui feugiat lacus, vitae consequat augue urna vel odio.</p>
+    // <p>Vestibulum id neque nec turpis iaculis pulvinar et a massa. Vestibulum sed nibh vitae arcu eleifend egestas. Mauris fermentum ultrices blandit. Suspendisse vitae lorem libero. Aenean et pellentesque tellus. Morbi quis neque orci, eu dignissim dui. Fusce sollicitudin mauris ac arcu vestibulum imperdiet. Proin ultricies nisl sit amet enim imperdiet eu ornare dui tempus. Maecenas lobortis nisi a tortor vestibulum vel eleifend tellus vestibulum. Donec metus sapien, hendrerit a fermentum id, dictum quis libero.</p>
+    // <p>Pellentesque a lorem nulla, in tempor justo. Duis odio nisl, dignissim sed consequat sit amet, hendrerit ac neque. Nunc ac augue nec massa tempor rhoncus. Nam feugiat, tellus a varius euismod, justo nisl faucibus velit, ut vulputate justo massa eu nibh. Sed bibendum urna quis magna facilisis in accumsan dolor malesuada. Morbi sit amet nunc risus, in faucibus sem. Nullam sollicitudin magna sed sem mollis id commodo libero condimentum. Duis eu massa et lacus semper molestie ut adipiscing sem.</p>
+    // <p>Sed id nulla mi, eget suscipit eros. Aliquam tempus molestie rutrum. In quis varius elit. Nullam dignissim neque nec velit vulputate porttitor. Mauris ac ligula sit amet elit fermentum rhoncus. In tellus urna, pulvinar quis condimentum ut, porta nec justo. In hac habitasse platea dictumst. Proin volutpat elit id quam molestie ac commodo lacus sagittis. Quisque placerat, augue tempor placerat pulvinar, nisi nisi venenatis urna, eget convallis eros velit quis magna. Suspendisse volutpat iaculis quam, ut tristique lacus luctus quis.</p>
+    // <p>Nullam commodo suscipit lacus non aliquet. Phasellus ac nisl lorem, sed facilisis ligula. Nam cursus lobortis placerat. Sed dui nisi, elementum eu sodales ac, placerat sit amet mauris. Pellentesque dapibus tellus ut ipsum aliquam eu auctor dui vehicula. Quisque ultrices laoreet erat, at ultrices tortor sodales non. Sed venenatis luctus magna, ultricies ultricies nunc fringilla eget. Praesent scelerisque urna vitae nibh tristique varius consequat neque luctus. Integer ornare, erat a porta tempus, velit justo fermentum elit, a fermentum metus nisi eu ipsum. Vivamus eget augue vel dui viverra adipiscing congue ut massa. Praesent vitae eros erat, pulvinar laoreet magna. Maecenas vestibulum mollis nunc in posuere. Pellentesque sit amet metus a turpis lobortis tempor eu vel tortor. Cras sodales eleifend interdum.</p> -->
+  </script>
+  <!-- <aside class="terms-sidebar">
+			<a href="">구글 서비스 이용</a>
+			<a href="">귀하의 Google 계정</a>
+			<a href="">개인정보 보호 및 저작권 보호</a>
+			<a href="">본 약관에 대하여</a>
+    </aside> -->
+
+  <!-- 1. 개인정보를 제공받는 자
+    2. 개인정보를 제공받는 자의 개인정보 이용 목적
+    3. 제공하는 개인정보 항목
+    4. 개인정보를 제공받는 자의 개인정보 보유 및 이용기간
+    5. 동의를 거부할 권리가 있다는 사실 및 동의 거부에 따른 불이익이
+    있는 경우에는 그 불이익의 내용 -->
+  <section class="terms1">
+    <p>https://www.gne.go.kr/upload_data/board_data/notice010/155109365870942.pdf</p>
+    <header>
+      <h1>개인정보 제 3자 제공 동의</h1>
+      <!-- <h2>2020 TOSS 포트폴리오 없는 디자이너 채용</h2> -->
+      <time class="date">2020. 8. 25</time>
+    </header>
+
+    <p>주식회사 뭐뭐뭐는 회원님의 개인정보를 개인정보 처리방침에서 고지한 제3자 제공 범위 내에서 제공하며, 정보주체의 사전 동의 없이 동 범위를 초과하여 제3자에게 제공하지 않습니다.</p>
+    <br />
+    <table>
+      <thead>
+        <tr>
+          <th>제공받는 자</th>
+          <th>제공 목적</th>
+          <th>제공 항목</th>
+          <th>보유 기간</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>고슴도슴 멤버스</td>
+          <td>통합 멤버십 포인트 적립</td>
+          <td>아이디</td>
+          <td>2020년 01월 8일까지</td>
+        </tr>
+        <tr>
+          <td>고슴도슴 멤버스</td>
+          <td>통합 멤버십 포인트 적립</td>
+          <td>아이디</td>
+          <td>2020년 01월 8일까지</td>
+        </tr>
+      </tbody>
+    </table>
+    <footer>
+      <h2 style="margin-bottom:1rem"><strong>동의를 거부하는 경우에 대한 안내</strong></h2>
+      <p>개인정보 제공에 대한 동의를 거부할 권리가 있으며, 동의를 거부할 경우 멤버십 포인트 적립을 받을 수 없고 상담에 제한을 받습니다.</p>
+      <p>개인정보 제공에 대한 동의를 거부할 권리가 있으며, 동의를 거부할 경우 해당 정보 관련 서비스스 또는 상품 안내가 제한됩니다.</p>
+    </footer>
+  </section>
+
+  <section class="personal">
+    <h1 class="personal-title">개인정보 수집·이용 동의</h1>
+    <p class="personal-description">뉴닉은 뉴스레터 발송을 위해 최소한의 개인정보를 수집하고 이용합니다.</p>
+    <table style="margin:2rem 0;">
+      <tbody>
+        <tr>
+          <th>수집·이용 목적</th>
+          <th>수집·이용 항목</th>
+          <th>보유·이용 기간</th>
+        </tr>
+        <tr>
+          <td>뉴닉 뉴스레터 발송</td>
+          <td>이메일주소</td>
+          <td>서비스 종료 시 또는 뉴스레터 구독 해지 시 즉시 파기</td>
+          <!-- <td>목적 달성 후, 파기 또는 관련 법령에 따라 보존 후 파기</td> -->
+        </tr>
+      </tbody>
+    </table>
+    <!-- <tr>
+          <td>수집 근거</td>
+          <td>개인정보 보호법 제15조 1항</td>
+        </tr> -->
+    <footer>
+      <strong>동의를 거부하는 경우에 대한 안내</strong>
+      <p>동의하지 않을 경우 개인정보 수집·이용 동의를 거부할 권리가 있습니다. 거부할 경우 뉴스레터 구독 서비스를 이용할 수 없습니다.</p>
+
+      <br />
+      <br />
+      <br />
+
+      <h2 class="personal-title">개인정보 처리 위탁·수탁 <small hidden>개인정보 보호법 제26조 제1항</small></h2>
+      <p class="personal-description">회사는 서비스 제공 및 향상을 위해서 아래와 같이 개인정보를 위탁하고 있으며, 관계 법령에 따라 위탁 계약 시 개인정보가 안전하게 관리될 수 있도록 필요한 사항을 규정하고 있습니다.</p>
+      <table style="margin:2rem 0;">
+        <tbody>
+          <tr>
+            <th>수탁업체</th>
+            <th>수탁업무 내용</th>
+            <th>개인정보의 보유 및 이용기간</th>
+          </tr>
+          <tr>
+            <td>스티비</td>
+            <td>뉴스레터 또는 광고가 포함된 뉴스레터 발송, 서비스 이용 통계 및 분석</td>
+            <td>구독해지 시 또는 위탁계약 종료 시</td>
+          </tr>
+          <tr>
+            <td>AWS</td>
+            <td>개인정보가 저장된 국내 클라우드 서버 운영 및 관리</td>
+            <td>구독해지 시 또는 위탁계약 종료 시</td>
+          </tr>
+        </tbody>
+      </table>
+    </footer>
+  </section>
+
+  <header class="terms-head">
+    <h1>개인정보 처리방침</h1>
+    <p style="margin-top:.5rem;">Last Updated <time>16, August, 2019</time></p>
+    <!-- <figure class="full-width-image" style="height:160px;overflow:hidden;"><img src="/public/images/caleb-woods-182648-unsplash.jpg" alt="" /></figure>
+			<style>
+			.full-width-image {	
+					width: 100vw;
+					max-width: 100vw;
+					margin: 2.5rem -50vw;
+					position: relative;
+					left: 50%;
+					right: 50%;
+				}
+			</style> -->
+  </header>
+  <section class="terms-archive">
+    <h2 class="terms-archive-title">개정 전 약관 아카이브</h2>
+    <a class="terms-archive-link" href="">2019년 6월 14일 업데이트 약관</a>
+    <a class="terms-archive-link" href="">2019년 2월 13일 업데이트 약관</a>
+    <a class="terms-archive-link" href="">2017년 12월 28일 업데이트 약관</a>
+  </section>
+  <section class="terms-body">
+    <h2>제 0조 (목적)</h2>
+    <p>이 약관은 주식회사 dddddd(이하 "당사"이라 합니다)이 운영하는 웹사이트(https://www.test.com/) 및 어플리케이션(Application, 이하 웹사이트와 어플리케이션을 통칭하여 "dddddd 플랫폼")에서 제공하는 서비스(이하 "서비스"라 합니다)를 이용함에 있어 "당사"와 이용자의 권리 및 의무 및 책임사항을 규정함을 목적으로 합니다.</p>
+    <h2>제 1조. 용어의 정의</h2>
+    <p>용어의 정의는 이렇게 하고 있습니다.</p>
+    <ul class="list-sample">
+      <li>이 약관에서 사용하는 용어의 정의는 다음과 같습니다.</li>
+      <li>
+        본 약관에 대해서는 본 조에서 정한 용어가 우선적으로 적용되며, 본 조에서 정의되지 않은 약관 상의 용어는 관련 법령 및 관습에 따릅니다.
+        <ul>
+          <li>"회사"라 함은 dddddd 주식회사를 지칭하며 사이트 내에서 창조적인 분야를 총 망라하는 온라인 크라우드 펀딩 플랫폼 서비스를 제공하는 주체를 의미합니다.</li>
+          <li>"회원"이라 함은 사이트에 접속하여 본 약관에 동의함으로써 회사에 회원등록을 하고 회사가 제공하는 서비스를 지속해서 이용할 수 있는 이용자를 의미합니다.</li>
+          <li>"창작자"라 함은 사이트에서 프로젝트를 게시하고 운영하여 다수로부터 후원을 받는 회원을 의미합니다.</li>
+        </ul>
+      </li>
+    </ul>
+    <h2>1. 개인정보의 수집 및 이용목적</h2>
+    <p>당사는 수집한 개인정보를 다음의 목적을 위해 활용합니다.</p>
+    <ol class="list-sample">
+      <li>여행 상품 판매 및 중개 서비스의 이행과 서비스 제공에 따른 요금정산 - 여행상품 예약, 컨텐츠 제공, 구매 및 요금 결제, 물품배송 또는 청구지 등 발송, 금융거래 본인 인증 및 금융서비스, 요금추심 등</li>
+      <li>고객관리 - 고객관리 및 이용에 따른 본인확인, 개인식별, 불량회원의 부정 이용 방지와 비인가, 사용 방지, 가입/탈퇴 의사 확인, 연령확인, 만 14세 미만 아동 개인정보 수집 시 법정 대리인 동의여부 확인, 불만처리 및 민원처리, 고지사항 전달 등</li>
+      <li>파트너의 신원파악 - 파트너 본인확인, 개인식별, 불량 또는 부적법한 파트너에 대한 중개 서비스 제공 방지와 사용 방지 등</li>
+      <li>기타 - 본인 의사 확인 등 원활한 의사소통 경로의 확보, 새로운 서비스/신상품이나 이벤트 정보 안내</li>
+    </ol>
+  </section>
+  <footer class="terms-foot"></footer>
+
+  <!-- **제1조(목적)**
+
+		이 약관은 회원(이 약관에 동의한 자를 말합니다 이하 "회원"이라고 합니다.)이 뉴닉(이하 “회사”이라 한다)이 운영하는 사이트 NEWNEEK에서 제공하는 모든 서비스(이하 “서비스”라 한다)를 이용함에 있어 회사와 회원의 권리.의무 및 책임사항을 규정함을 목적으로합니다.
+		
+		**제2조(용어의 정의)**
+		
+		1 “회원”이란 회사에 접속하여 이 약관에 따라 회사가 제공하는 서비스를 받는 이용자를 말합니다.
+		
+		2 “서비스"란 회원이 이용할 수 있는 회사 및 회사 관련 제반 서비스를 의미합니다.
+		
+		**제3조 (약관 등의 명시와 설명 및 개정)**
+		
+		1. 회사는 이 약관의 내용과 상호 및 대표자 성명, 영업소 소재지 주소(소비자의 불만을 처리할 수 있는 곳의 주소를 포함), 전화번호, 전자우편주소, 사업자등록번호, 개인정보관리책임자 등을 회원이 쉽게 알 수 있도록 서비스의 페이지에 게시합니다. 다만, 약관의 내용은 회원이 연결화면을 통하여 볼 수 있도록 할 수 있습니다.
+		
+		2. 회사는 콘텐츠산업 진흥법, 정보통신망 이용촉진 및 정보보호 등에 관한 법률, 약관의 규제에 관한 법률, 소비자기본법 등 관련 법령을 위배하지 않는 범위에서 이 약관을 개정할 수 있습니다.
+		
+		3. 회사가 약관을 개정할 경우에는 적용일자 및 개정사유를 명시하여 현행약관과 함께 서비스의 초기화면에 그 적용일자 7일 이전부터 적용일자 전일까지 공지합니다. 다만, 회원에게 불리하게 약관내용을 변경하는 경우에는 최소한 30일 이상의 사전 유예기간을 두고 공지합니다. 이 경우 회사는 개정 전 내용과 개정 후 내용을 명확하게 비교하여 회원가 알기 쉽도록 표시합니다.
+		
+		4. 회사가 약관을 개정할 경우에는 그 개정약관은 그 적용일자 이후에 체결되는 계약에만 적용되고 그 이전에 이미 체결된 계약에 대해서는 개정 전의 약관조항이 그대로 적용됩니다. 다만 이미 계약을 체결한 회원이 개정약관 조항의 적용을 받기를 원하는 뜻을 제3항에 의한 개정약관의 공지기간 내에 회사에 송신하여 회사의 동의를 받은 경우에는 개정약관 조항이 적용됩니다.
+		
+		5. 이 약관에서 정하지 아니한 사항과 이 약관의 해석에 관하여는 소비자보호에 관한 법률, 약관의 규제 등에 관한 법률, 공정거래위원회가 정하는 전자상거래 등에서의 소비자 보호지침 및 관계법령 또는 상관례에 따릅니다.
+		
+		**제3조(서비스의 제공 및 변경)**
+		
+		1. 회사는 회원에게 아래와 같은 서비스를 제공합니다.
+		
+		- 뉴닉 서비스
+		
+		- 기타 회사가 추가 개발하거나 다른 회사와의 제휴계약 등을 통해 회원에게 제공하는 일체의 서비스
+		
+		2. 회사의 서비스는 연중무휴, 1일 24시간 제공함을 원칙으로 합니다
+		
+		3. 회사는 회원과 별도로 서면 계약을 체결하여 회사 서비스 및 제반 서비스의 브랜드 특성을 이용할 수 있는 명시적인 권리를 부여하지 아니하는 한, 회원에게 회사 또는 서비스의 상호, 상표, 서비스표, 로고, 도메인 네임 및 기타 식별력 있는 브랜드 특성을 이용할 수 있는 권리를 부여하지 않습니다.
+		
+		4. 회사가 제공하는 서비스의 형태와 기능, 디자인 등 필요한 경우 수시로 변경되거나, 중단될 수 있습니다. 회사는 이 경우 개별적인 변경에 대해서 회원에게 사전 통지하지 않습니다. 다만, 회원에게 불리한 것으로 판단되는 경우 전자우편으로 통하여 이를 공지합니다.
+		
+		**제4조(서비스의 중단)**
+		
+		1 회사는 컴퓨터 등 정보통신설비의 보수점검.교체 및 고장, 통신의 두절 등의 사유가 발생한 경우에는 서비스의 제공을 일시적으로 중단할 수 있습니다.
+		
+		2 회사는 제1항의 사유로 서비스의 제공이 일시적으로 중단됨으로 인하여 회원 또는 제3자가 입은 손해에 대하여 배상합니다. 단, 회사가 고의 또는 과실이 없음을 입증하는 경우에는 그러하지 아니합니다.
+		
+		3 사업종목의 전환, 사업의 포기, 업체 간의 통합 등의 이유로 서비스를 제공할 수 없게 되는 경우에는 회사는 제8조에 정한 방법으로 회원에게 통지하고 당초 회사에서 제시한 조건에 따라 소비자에게 보상합니다. 다만, 회사가 보상기준 등을 고지하지 아니한 경우에는 회원들의 마일리지 또는 적립금 등을 회사에서 통용되는 통화가치에 상응하는 현물 또는 현금으로 회원에게 지급합니다.
+		
+		**제5조(회원가입)**
+		
+		1. 회원은 회사가 정한 가입 양식에 따라 회원정보를 기입한 후 이 약관에 동의한다는 의사표시를 함으로서 회원가입을 신청합니다.
+		
+		2. 회사는 제1항과 같이 회원으로 가입할 것을 신청한 회원 중 다음 각 호에 해당하지 않는 한 회원으로 등록합니다.
+		
+		- 가입신청자가 이 약관 제7조제3항에 의하여 이전에 회원자격을 상실한 적이 있는 경우, 다만 제7조제3항에 의한 회원 자격 상실 후 3년이 경과한 자로서 회사의 회원재가입 승낙을 얻은 경우에는 예외로 한다.
+		- 등록 내용에 허위, 기재누락, 오기가 있는 경우
+		- 기타 회원으로 등록하는 것이 회사의 기술상 현저히 지장이 있다고 판단되는 경우
+		
+		3. 회원가입계약의 성립 시기는 회사의 승낙이 회원에게 도달한 시점으로 합니다.
+		
+		4. 회원은 회원가입시등록한 사항에 변경이 있는 경우, 상당한 기간 이내에 회사에 대하여 회원정보 수정 등의 방법으로 그 변경사항을 알려야 합니다.
+		
+		**제6조(회원 탈퇴 및 자격 상실 등)**
+		
+		1. 회원은 회사에 언제든지 탈퇴를 요청할 수 있으며 회사는 즉시 회원탈퇴를 처리합니다.
+		
+		2. 회사는 회원이 다음 각 호의 사유에 해당하는 경우, 회원자격을 제한 및 정지시킬 수 있습니다.
+		
+		- 가입 신청 시에 허위 내용을 등록한 경우
+		- 회사을 이용하여 구입한 재화 등의 대금, 기타 회사가용에 관련하여 회원이 부담하는 채무를 기일에 지급하지 않는 경우
+		- 다른 사람의 회사 이용을 방해하거나 그 정보를 도용하는 등 전자상거래 질서를 위협하는 경우
+		- 회사을 이용하여 법령 또는 이 약관이 금지하거나 공서양속에 반하는 행위를 하는 경우
+		
+		3. 회사가 회원 자격을 제한.정지 시킨 후, 동일한 행위가 2회 이상 반복되거나 30일 이내에 그 사유가 시정되지 아니하는 경우 회사는 회원자격을 상실시킬 수 있습니다.
+		
+		4. 회사가 회원자격을 상실시키는 경우에는 회원등록을 말소합니다. 이 경우 회원에게 이를 통지하고, 회원등록 말소 전에 최소한 30일 이상의 기간을 정하여 소명할 기회를 부여합니다.
+		
+		**제7조(회원에 대한 통지)**
+		
+		1. 회사가 회원에 대한 통지를 하는 경우, 회원이 회사과 미리 약정하여 지정한 전자우편 주소로 할 수 있습니다.
+		
+		2. 회사는 서비스 운영을 위해 회원정보를 활용하여 영리목적의 광고성 전자우편을 전송할 수 있습니다. 회원이 이를 원하지 않는 경우에는 언제든지 서비스 홈페이지 또는 서비스 내부 설정페이지 등을 통하여 수신거부를 할 수 있습니다.
+		
+		3. 회사는 불특정다수 회원에 대한 통지의 경우 1주일이상 회사 게시판에 게시함으로서 개별 통지에 갈음할 수 있습니다. 다만, 회원 본인의 거래와 관련하여 중대한 영향을 미치는 사항에 대하여는 개별통지를 합니다.
+		
+		4. 회사는 다음 각호에 해당하는 경우 회원의 동의여부와 상관없이 전자우편으로 발송할 수 있습니다.
+		
+		- 이용 신청에서 입력한 전자우편 주소의 소유를 확인하기 위해서 인증메일을 발송하는 경우
+		- 기타 서비스를 제공함에 있어 회원이 반드시 알아야 하는 중대한 정보라고 회사가 판단하는 경우(회원 가입 및 탈퇴 안내 등)
+		
+		**제 8조 서비스 이용의 기술적 요구사항**
+		
+		회사는 서비스를 공급하면서 아래의 <서비스 이용 필수 사양>이 충족되어야 정상적인 서비스 이용이 가능하며, 회원이 아래의 필수 사양을 충족하지 못하여 서비스 이용이 제한되더라도 회원은 이를 이유로 회사에 이의를 제기할 수 없습니다.
+		
+		<서비스 이용 필수 사양>
+		
+		1. 컴퓨터(PC) - 운영체제(OS) : Windows , OSX , Linux 등 웹브라우저 이용이 가능한 OS - 웹브라우저 : Internet Explorer 10.0이상, Chrome , Safari , Firefox 웹 브라우저
+		
+		2. 모바일 단말기 (Smart Phone, 태블렛 PC) - 지원단말기 : 안드로이드, 아이폰 (iOS 10이상), 아이패드, 갤럭시탭 ~~- 지원 어플리케이션 : OOO (구글플레이, 앱스토어에서 검색하여 설치)~~
+		
+		**제9조(개인정보보호)**
+		
+		1 회사는 회원의 개인정보 수집시 서비스제공을 위하여 필요한 범위에서 최소한의 개인정보를 수집합니다.
+		
+		~~2 회사는 회원가입시 구매계약이행에 필요한 정보를 미리 수집하지 않습니다. 다만, 관련 법령상 의무이행을 위하여 구매계약 이전에 본인확인이 필요한 경우로서 최소한의 특정 개인정보를 수집하는 경우에는 그러하지 아니합니다.~~
+		
+		3 회사는 회원의 개인정보를 수집·이용하는 때에는 당해 회원에게 그 목적을 고지하고 동의를 받습니다.
+		
+		4 회사는 수집된 개인정보를 목적 외의 용도로 이용할 수 없으며, 새로운 이용목적이 발생한 경우 또는 제3자에게 제공하는 경우에는 이용·제공단계에서 당해 회원에게 그 목적을 고지하고 동의를 받습니다. 다만, 관련 법령에 달리 정함이 있는 경우에는 예외로 합니다.
+		
+		5 회사가 제2항에 의해 회원의 동의를 받아야 하는 경우에는 개인정보관리 책임자의 신원(소속, 성명 및 전화번호, 기타 연락처), 정보의 수집목적 및 이용목적, 제3자에 대한 정보제공 관련사항(제공받은자, 제공목적 및 제공할 정보의 내용) 등 「정보통신망 이용촉진 및 정보보호 등에 관한 법률」 제22조제2항이 규정한 사항을 미리 명시하거나 고지해야 하며 회원은 언제든지 이 동의를 철회할 수 있습니다.
+		
+		6 회원은 언제든지 회사가 가지고 있는 자신의 개인정보에 대해 열람 및 오류정정을 요구할 수 있으며 회사는 이에 대해 지체 없이 필요한 조치를 취할 의무를 집니다. 회원이 오류의 정정을 요구한 경우에는 회사는 그 오류를 정정할 때 까지 당해 개인정보를 이용하지 않습니다.
+		
+		7 회사는 개인정보보호를 위하여 회원의 개인정보를 취급하는 자를 최소한으로 제한하여야 하며 신용카드, 은행계좌 등 을 포함한 회원의 개인정보의 분실, 도난, 유출, 동의 없는 제3자 제공, 변조 등으로 인한 회원의 손해에 대하여 모든 책임을 집니다.
+		
+		8 회사 또는 그로부터 개인정보를 제공받은 제3자는 개인정보의 수집목적 또는 제공받은 목적을 달성한 때에는 당해 개인정보를 지체 없이 파기합니다.
+		
+		**9 회사는 개인정보의 수집·이용·제공에 관한 동의 란을 미리 선택한 것으로 설정해두지 않습니다. 또한 개인정보의 수집· 이용·제공에 관한 회원의 동의거절시 제한되는 서비스를 구체적으로 명시하고, 필수수집항목이 아닌 개인정보의 수집·이용·제공에 관한 회원의 동의 거절을 이유로 회원가입 등 서비스 제공을 제한하거나 거절하지 않습니다.**
+		
+		**제10조(회사의 의무)**
+		
+		1. 회사는 법령과 이 약관이 금지하거나 공서양속에 반하는 행위를 하지 않으며 이 약관이 정하는 바에 따라 지속적이고, 안정적으로 재화.용역을 제공하는데 최선을 다하여야 합니다.
+		
+		2. 회사는 회원이 안전하게 인터넷 서비스를 이용할 수 있도록 회원의 개인정보(신용정보 포함)보호를 위한 보안 시스템을 갖추어야 합니다.
+		
+		3. 회사는 상품이나 용역에 대하여 「표시.광고의 공정화에 관한 법률」 제3조 소정의 부당한 표시.광고행위를 함으로써 회원이 손해를 입은 때에는 이를 배상할 책임을 집니다.
+		
+		4. 회사는 회원가 원하지 않는 영리목적의 광고성 전자우편을 발송하지 않습니다.
+		
+		**제11조(회원의 ID 및 비밀번호에 대한 의무)**
+		
+		1 회원은 아이디와 비빌번호에 관해서 관리책임이 있습니다
+		
+		2 회원은 자신의 ID 및 비밀번호를 제3자에게 이용하게 해서는 안됩니다.
+		
+		3 회원이 자신의 ID 및 비밀번호를 도난당하거나 제3자가 사용하고 있음을 인지한 경우에는 바로 회사에 통보하고 회사의 안내가 있는 경우에는 그에 따라야 합니다.
+		
+		4. 회사는 회원이 아이디 및 비밀번호를 소홀히 관리하여 발생하는 서비스 이용상의 손해 또는 회사의 고의 또는 중대한 과실이 없는 제3자의 부정이용 등으로 인한 손해에 대해 책임을 지지 않습니다.
+		
+		**제12조(회원의 의무)**
+		
+		**회원은 다음 행위를 하여서는 안 됩니다.**
+		
+		1. 신청 또는 변경시 허위 내용의 등록
+		
+		2. 타인의 정보 도용
+		
+		3. 회사에 게시된 정보의 변경
+		
+		4. 회사가 정한 정보 이외의 정보(컴퓨터 프로그램 등) 등의 송신 또는 게시
+		
+		5. 회사 기타 제3자의 저작권 등 지적재산권에 대한 침해
+		
+		6. 회사 기타 제3자의 명예를 손상시키거나 업무를 방해하는 행위
+		
+		7. 외설 또는 폭력적인 메시지, 화상, 음성, 기타 공서양속에 반하는 정보를 몰에 공개 또는 게시하는 행위
+		
+		보완 하기 +++ 회사의 재산권, 영업권 또는 비즈니스 모델을 침해
+		
+		**제13조(연결회사과 피연결회사 간의 관계)**
+		
+		1 상위 회사과 하위 회사의 하이퍼링크(예: 하이퍼링크의 대상에는 문자, 그림 및 동화상 등이 포함됨)방식 등으로 연결된 경우, 전자를 연결 회사(웹 사이트)이라고 하고 후자를 피연결 회사(웹사이트)이라고 합니다.
+		
+		2 연결회사는 피연결회사가 독자적으로 제공하는 재화 등에 의하여 회원과 행하는 거래에 대해서 보증 책임을 지지 않는다는 뜻을 연결회사의 초기화면 또는 연결되는 시점의 팝업화면으로 명시한 경우에는 그 거래에 대한 보증 책임을 지지 않습니다.
+		
+		**제14조(저작권의 귀속 및 이용제한)**
+		
+		1 회사가 작성한 저작물에 대한 저작권 기타 지적재산권은 회사에 귀속합니다.
+		
+		2 회원은 서비스를 이용함으로써 얻은 정보 중 회사에게 지적재산권이 귀속된 정보를 회사의 사전 승낙 없이 복제, 송신, 출판, 배포, 방송 기타 방법에 의하여 영리목적으로 이용하거나 제3자에게 이용하게 하여서는 안됩니다.
+		
+		3 회사는 약정에 따라 회원에게 귀속된 저작권을 사용하는 경우 당해 회원에게 통보하여야 합니다.
+		
+		**제15조 약관의 해석**
+		
+		이 약관에 명시되지 않은 사항에 대해서는 회사와 회원 간 합의하여 결정하고, 합의가 되지 않는 경우 관련 법령 또는 상관례에 따릅니다.
+		
+		**제16조(재판권 및 준거법)**
+		
+		1 회사과 회원 간에 발생한 전자상거래 분쟁에 관한 소송은 제소 당시의 회원의 주소에 의하고, 주소가 없는 경우에는 거소를 관할하는 지방법원의 전속관할로 합니다. 다만, 제소 당시 회원의 주소 또는 거소가 분명하지 않거나 외국 거주자의 경우에는 민사소송법상의 관할법원에 제기합니다.
+		
+		2 회사과 회원 간에 제기된 전자상거래 소송에는 한국법을 적용합니다.
+		
+		**부칙**
+		
+		이 약관은 2019년 8월 12일부터 적용됩니다. -->
+
+  <div class="wrapper">
+    <div class="lazy-background one"></div>
+    <div class="lazy-background two"></div>
+    <div class="lazy-background three"></div>
+  </div>
+  <style>
+    .wrapper {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .lazy-background {
+      margin: 240px auto;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+    .one {
+      padding-top: 28.0519480519%;
+      background-image: url('https://res.cloudinary.com/drp9iwjqz/image/upload/e_blur:2000,f_auto,q_auto/v1508291830/jeremywagner.me/using-webp-images/tacos-1x.jpg');
+    }
+    .one.visible {
+      background-image: url('https://res.cloudinary.com/drp9iwjqz/image/upload/f_auto,q_auto/v1508210556/jeremywagner.me/using-webp-images/tacos-2x.jpg');
+    }
+    .two {
+      padding-top: 55%;
+      background-image: url('https://res.cloudinary.com/drp9iwjqz/image/upload/e_blur:2000,f_auto,q_auto/v1508210556/jeremywagner.me/using-webp-images/modem-2x.png');
+    }
+    .two.visible {
+      background-image: url('https://res.cloudinary.com/drp9iwjqz/image/upload/f_auto,q_auto/v1508210556/jeremywagner.me/using-webp-images/modem-2x.png');
+    }
+    .three {
+      padding-top: 66.625%;
+      background-image: url('https://res.cloudinary.com/drp9iwjqz/image/upload/e_blur:2000,f_auto,q_auto/v1509298941/jeremywagner.me/about/st-paul-1x.jpg');
+    }
+    .three.visible {
+      background-image: url('https://res.cloudinary.com/drp9iwjqz/image/upload/f_auto,q_auto/v1509298941/jeremywagner.me/about/st-paul-2x.jpg');
+    }
+  </style>
+</main>
+
+
+
+
+<!-- <p>개인정보처리방침은 이용자의 개인정보에 대한 권리보장을 위하여 다양한 목적으로 수집한 개인정보를 어떻게 이용하고 보호할 것인지 규정한 문서이므로 내용이 길고 많습니다. 이는 이용자가 동의내용을 명확하게 파악하기에 어렵게 만들기 때문에 동의 시 알아야 하는 사항을 제대로 알리지 않고 개인정보를 수집하게 됩니다. 이 경우 최대 3천만 원 이하의 과태료를 부과받을 수 있습니다. 일부 국가는 개인정보처리방침에 동의하는 것으로 간주하는 방식이 위법이 아니지만, 국내는 이용자가 개인정보 수집목적을 명확하게 인지하고 동의할 수 있도록 해야 하므로 개인정보처리방침에 동의받아 개인정보를 수집하면 안 됩니다.</p> -->

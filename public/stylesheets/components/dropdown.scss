@@ -1,0 +1,37 @@
+.dropdown {position:relative;}
+.dropdown-trigger {@include chip;}
+.is-active .icon-caret {transform:rotate(180deg);}
+.dropdown-trigger-icon {@include box-small;margin:0 -1rem;}
+// margin, chip-padding;
+
+.dropdown-menu {
+  @include tile-elevated;
+  width: 100%;
+  min-width: var(--width-tiny);
+  height:0;
+  padding: 0; // override;
+  position:absolute;
+  z-index:5;
+  transition:all 0.2s ease;
+  transform:scale(0);
+  transform-origin:left top;
+}
+
+
+.dropdown-menu-title {
+  padding:0.5rem 1rem;
+  font-size:var(--caption);
+}
+.dropdown-menu-link {
+  display:block;
+  margin: 1rem;
+  color:var(--gray800);
+  position:relative;
+  z-index:1;
+}
+.dropdown-menu-link:hover {@include hover-item;}
+.is-active .dropdown-menu {
+  height:auto;
+  margin:.5rem 0 0 0;
+  transform:scale(1);
+}

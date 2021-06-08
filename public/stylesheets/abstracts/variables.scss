@@ -1,0 +1,169 @@
+// ! viewport : desktop first
+@custom-media --viewport-large (max-width: 1441px);
+@custom-media --viewport-small (max-width: 1080px);
+
+$padding100: 4px 1rem 5px; // 32
+$padding200: 9px 1rem 11px; // 버튼, 텍스트인풋 48
+
+$bezier-base: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+$transition-base: all 0.4s $bezier-base;
+$transition-fade: opacity 0.15s linear;
+
+:root {
+  color-scheme: light dark;
+  // --fontstack: 'Asap', 'Apple SD Gothic Neo', sans-serif;
+  --fontstack: 'Asap', 'AritaDotum', 'Apple SD Gothic Neo', sans-serif;
+
+  --navbar-height: 56px;
+
+  // ! fontSize
+  --headline: 3rem;
+  --title: 2rem;
+  --subhead: 1.125rem;
+  --body: .875rem;
+  --caption: .75rem;
+
+  // --font-size-
+  --font-size-huge: var(--headline);
+  --font-size-large: var(--title);
+  --font-size-regular: var(--subhead);
+  --font-size-medium: var(--body);
+  --font-size-small: var(--caption); // tiny
+
+  --font-weight-normal: normal;
+  --font-weight-bold: bold;
+  --font-weight-extrabold: none; // 
+
+  --font-color: var(--gray800);
+  --text-color-light: var(--gray400);
+  --text-color-dark: none;
+  --text-color-highlight: var(--gray800);
+
+  // ! colours
+  --gray0: #fff; // white for dark theme
+  --gray100: #f1f4f1; // bg 156
+  --gray200: #e0e2e1; // divider border F8F7F5
+  --gray400: #979d9a; // caption
+  // --gray600: #4e5351; // body
+  --gray800: #343c38; // heading
+  --gray999: #343c38; // 테마와 무관하게 항상 가장 진한 회색
+  --green100: rgba(10, 160, 80, 0.1); // previous #ddf5e9;
+  --green800: #1b995c;
+  --red100: #fff0f5;
+  --red800: #f02849;
+
+  --color-google: #fff;
+  --color-facebook: hsl(214, 89%, 52%);
+  --color-twitter: rgb(29, 161, 242);
+  --color-naver: #03cf5d;
+  --color-kakao: #ffdf00;
+  --color-newneek: #fb7800;
+  
+  --color-primary: var(--green800);
+  --color-secondary: gold;
+
+  // dark / light / gray?
+  --gradient: linear-gradient(to bottom, var(--gray0), rgba(255,255,255,.75), var(--gray800));
+
+  // container width
+  --width-tiny: 320px;
+  --width-small: 480px;
+  --width-medium: 640px;
+  --width-large: 1440px;
+
+  --width-dropdown: var(--width-tiny);
+  --width-popover: 0;
+  --width-dialog: 0;
+
+  --size-large: 80px;
+  --size-medium: 48px;
+  --size-small: 32px;
+  --size-xsmall: 24px;
+  --size-tiny: 16px;
+
+  // todo
+  --space-leading-title: -.5rem;
+  --space-leading-subhead: -.25rem;
+
+  --space-after-subhead: 1rem;
+  --space-after-description: 2rem; // 2rem 0 0 0
+  --space-after-button: .75rem;
+  --space-following-button: .75rem;
+
+  --space-between-item: 1rem;
+  --space-between-section: 8rem;
+  --space-between-section-large: 12rem;
+
+  --border100: 1px solid var(--gray200);
+
+  --radius400: 4px;
+  --radius800: 50%;
+  --radius-default: var(--radius400);
+  --radius-avatar: var(--radius400);
+  --radius-card: var(--radius400);
+  --radius-container: var(--radius400);
+
+  --shadow400: 0px 0px 2rem rgba(0, 0, 0, 0.125);
+
+  --card-background: #fff;
+  --card-border: 1px solid #fff;
+  --card-padding: 1.5rem;
+
+  --color-container-border: #000;
+  --color-box-border: var(--gray100);
+  --color-button-border: #000;
+  --color-button-body: #000;
+  --link-color: #fff;
+  --accent-color: #fff;
+  --error-color: #fff;
+
+  --button-background: #fff;
+  --button-text-color: #fff;
+
+
+  --zindex-sticky: 4;
+  --zindex-tooltip: 5;
+  --zindex-popover: 6;
+  --zindex-dropdown: 6;
+  --zindex-modal-dim: 7;
+  --zindex-modal: 8;
+
+
+  --grid-column: calc(50% - .5rem);
+  --grid-gutter: 1rem;
+  --grid-margin: 5%;
+
+  --safearea-inset-bottom1: constant(safe-area-inset-bottom);
+  --safearea-inset-bottom2: env(safe-area-inset-bottom);
+
+  @media (--viewport-large) {
+    --width-large: 1120px;
+  }
+  
+  @media (--viewport-small) {
+  }
+
+  html[date-theme=dark] {}
+  .theme-dark {
+    // img {
+    //   filter: invert(100%) hue-rotate(180deg);
+    //   mix-blend-mode: screen;
+    //   mix-blend-mode: multiply;
+    // }
+    
+    --gray0: #252d29;
+    --gray100: #343c38; // bg
+    --gray200: #4e5351; // divider border
+    --gray400: #979d9a; // caption
+    --gray800: #f1f4f1; // heading
+
+    --border100: 1px solid var(--gray100);
+
+    --color-box-border: var(--gray100);
+
+    --shadow400: 0px 0px 2rem rgba(0, 0, 0, 0.25);
+
+    color: var(--gray800);
+    input[type=checkbox][role=switch] + label::after {background:#fff;}
+  }
+}

@@ -1,0 +1,36 @@
+.cake {padding:0 var(--grid-margin);}
+
+.cake-head {max-width:var(--width-large);margin:0 auto;padding:3rem 0;position:relative;}
+.cake-background {height:400px;
+  // background:url('/public/images/newman.jpg') no-repeat 0 -200px fixed;
+  background-color:var(--gray100);@include bleeding;}
+.cake-head-title {@include title;}
+.cake-head-engtitle {@include subhead;}
+.cake-head-description {margin:1rem 0 0 0;}
+
+.cake-poster {width:400px;height:600px;overflow:hidden;border-radius:var(--radius400);box-shadow:var(--shadow400);position: absolute;right:0;top:4rem;z-index:1;}
+.cake-poster img {animation: fadeup 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955) forwards .2s;}
+.cake-head-button {@include button-primary;min-width:11rem;margin-right:1rem;}
+.cake-head-review {@include button-text;min-width:11rem;}
+
+.cake-meta {max-width:var(--width-large);margin:0 auto;}
+.cake-meta ul {margin:0rem -3rem 0;padding:2rem 3rem 1rem;border-radius:var(--radius400);background:var(--gray0);position:relative;}
+.cake-meta ul li {margin:0 0 .25rem 0;padding:0;}
+.cake-meta ul li::before {display:none;}
+.cake-meta ul li b {float:left;width:72px;margin:0 1rem 0 0;font-weight:normal;color:var(--gray400);}
+.cake-summary {margin:0 -3rem;padding:1rem 50% 2rem 3rem;}
+
+.cake-info {display:flex;flex-wrap:wrap;max-width:var(--width-large);margin:0 auto;padding:2rem 0 2.25rem;border-top:var(--border100);border-bottom:var(--border100);position:relative;}
+.cake-info + .cake-info {border-top:none;}
+.cake-info button {@include button-tertiary;position:absolute;left:0;top:4rem;}
+.cake-info h2 {width:400px;flex-shrink:0;@include subhead;}
+.cake-info p {width:calc(100% - 400px);}
+
+@media (--viewport-large) {
+  .cake-poster {width:60%;max-width:var(--width-small);height:auto;margin:0 0 2rem 0;@include reset-position;}
+  .cake-summary {margin-left:0;margin-right:0;padding-left:0;padding-right:0;}
+  .cake-info {flex-wrap:wrap;}
+  .cake-info h2 {width:100%;margin:0 0 1rem 0;}
+
+  .person-list {margin-top:.5rem !important;}
+}

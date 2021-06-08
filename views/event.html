@@ -1,0 +1,214 @@
+<main class="event">
+  <header class="event-header">
+    <span class="event-header-eyebrow">프로모션 제목</span>
+    <h1 class="event-header-title">프로모션,<br />태그라인은 쪼개서<br />3줄 정도.</h1>
+    <p class="event-header-description">이벤트를 두 줄로 요약하여,<br />사용자가 얻을 수 있는 것을 알려 주세요.</p>
+    <figure>
+      <img src="" alt="" />
+    </figure>
+
+    <span class="event-header-objects-item"></span>
+    <span class="event-header-objects-item"></span>
+    <span class="event-header-objects-item"></span>
+    <span class="event-header-objects-item"></span>
+    <span class="event-header-objects-item"></span>
+    <span class="event-header-objects-item"></span>
+    <span class="event-header-objects-item"></span>
+    <span class="event-header-objects-item"></span>
+  </header>
+
+  <section class="event-intro">
+    <span>이벤트 하나</span>
+    <h2>mini를 만들고 아래 버튼을 눌러 이모티콘을 받으세요</h2>
+    <p>
+      mini 만들면 니니즈 신상 이모티콘 100%
+      <br />
+      ~ 11월 30일까지
+    </p>
+    <a href=""></a>
+  </section>
+
+  <section></section>
+
+  <section class="event-faq"></section>
+
+  <aside class="event-note">
+    <h2 class="event-note-title">반드시 확인해주세요!</h2>
+    <ul>
+      <li>본 이벤트는 당사 사정에 따라 사전 예고 없이 내용 변경 및 조기 종료될 수 있습니다.</li>
+      <li>본 이벤트는 당사 사정에 따라 사전 예고 없이 내용 변경 및 조기 종료될 수 있습니다.</li>
+      <li>본 이벤트는 당사 사정에 따라 사전 예고 없이 내용 변경 및 조기 종료될 수 있습니다.</li>
+      <li>본 이벤트는 당사 사정에 따라 사전 예고 없이 내용 변경 및 조기 종료될 수 있습니다.</li>
+    </ul>
+  </aside>
+
+  <footer class="event-footer">
+    <button class="event-footer-cta">카카오뱅크 mini 만들기</button>
+  </footer>
+</main>
+
+<style>
+  .event-header {
+    padding: 8rem 5% 10rem;
+    overflow: hidden;
+    background: gold;
+    text-align: center;
+    position: relative;
+  }
+  .event-header-eyebrow {
+    height: 36px;
+    margin: 0 0 1rem 0;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    background: var(--green800);
+    line-height: 35px;
+    color: #fff;
+  }
+  .event-header-title {
+    margin: 1rem 0 2rem;
+    font-size: 3rem;
+    color: #000;
+  }
+  .event-header-description {
+    font-size: var(--subhead);
+    color: #000;
+  }
+  .event-header-objects {
+  }
+  .event-header-objects-item {
+    display: block;
+    width: var(--size-tiny);
+    height: var(--size-tiny);
+    background: red;
+    border-radius: 50%;
+    animation: falling 5s linear infinite;
+    position: absolute;
+    top: -2rem;
+  }
+  .event-header-objects-item:nth-of-type(1) {
+    left: 10%;
+    animation-delay: 0.4s;
+  }
+  .event-header-objects-item:nth-of-type(2) {
+    left: 20%;
+    animation-delay: 1.2s;
+    animation-duration: 6s;
+  }
+  .event-header-objects-item:nth-of-type(3) {
+    left: 30%;
+    animation-delay: 0.8s;
+  }
+  .event-header-objects-item:nth-of-type(4) {
+    left: 40%;
+    animation-delay: 1.6s;
+  }
+  .event-header-objects-item:nth-of-type(5) {
+    right: 10%;
+    animation: falling2 5s linear infinite;
+    animation-delay: 1.6s;
+  }
+  .event-header-objects-item:nth-of-type(6) {
+    right: 20%;
+    animation: falling2 5s linear infinite;
+    animation-delay: 1.2s;
+  }
+  .event-header-objects-item:nth-of-type(7) {
+    right: 30%;
+    animation: falling2 5s linear infinite;
+    animation-delay: 0.4s;
+  }
+  .event-header-objects-item:nth-of-type(8) {
+    right: 40%;
+    animation: falling2 5s linear infinite;
+    animation-delay: 0.8s;
+  }
+
+  .event-intro a {
+    @include button-primary;
+  }
+
+  .event-note {
+    width: var(--width-medium);
+    margin: 0 auto;
+    padding: 4rem var(--grid-margin);
+    /* background: var(--gray100); */
+  }
+  .event-note {
+  }
+  .event-note-title {
+    margin: 0 0 var(--space-after-subhead) 0;
+  }
+  .event-note-title ul {
+  }
+  .event-note-title ul li {
+  }
+
+  .event-footer {
+    padding: 1rem;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 8;
+  }
+  .event-footer-cta {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 1rem;
+    border-radius: var(--radius400);
+    box-shadow: var(--shadow400);
+    background: var(--color-primary);
+    font-size: var(--subhead);
+    color: #fff;
+  }
+
+  @keyframes falling {
+    0% {
+      transform: translate(0, 0);
+    }
+    25% {
+      transform: translate(20px, 15vh);
+    }
+    50% {
+      transform: translate(-10px, 30vh);
+    }
+    75% {
+      transform: translate(20px, 45vh);
+    }
+    100% {
+      transform: translate(0, 60vh);
+    }
+
+    /* 0% {
+        -webkit-transform:
+            translate3d(300,0,0)
+            rotate(0deg);
+    }
+    
+    100% {
+        -webkit-transform:
+            translate3d(-350px,700px,0)
+            rotate(90deg);
+        opacity: 0;
+    } */
+  }
+
+  @keyframes falling2 {
+    0% {
+      transform: translate(0, 0);
+    }
+    25% {
+      transform: translate(-20px, 15vh);
+    }
+    50% {
+      transform: translate(10px, 30vh);
+    }
+    75% {
+      transform: translate(-20px, 45vh);
+    }
+    100% {
+      transform: translate(0, 60vh);
+    }
+  }
+</style>

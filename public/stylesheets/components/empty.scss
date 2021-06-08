@@ -1,0 +1,36 @@
+.empty {width:100%;max-width:var(--width-small);padding:4rem 5%;box-sizing:border-box;text-align:center;}
+.empty-icon {@include box-large;margin:0 auto 2rem;font-size:40px;}
+.empty-title {@include subhead;}
+.empty-description {margin:1rem 0 2rem;}
+.empty-list {max-width:50%;margin:2rem auto;}
+.empty-list-item {display:flex;justify-content:space-between;margin:.25rem 0;}
+.empty-list-item b {color:var(--gray400);font-weight:normal;}
+.empty-list-item span {}
+.empty-action {@include button-secondary;width:50%;max-width:20rem;}
+
+
+.error {
+  padding: 8rem 5%;
+  position: relative;
+}
+.error-title {
+  @include title;
+}
+.error-name {
+  font: 300px/1 'Courier New';
+  color: rgba(0, 0, 0, 0.05);
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translate(0, -20%);
+}
+.error-description {
+  margin: 1rem 0 4rem 0;
+}
+.error-control {
+}
+.error-control-back {
+}
+.error-control-home {
+  @include button-secondary;
+}

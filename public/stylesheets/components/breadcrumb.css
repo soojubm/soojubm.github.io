@@ -1,0 +1,9 @@
+.breadcrumb {display:flex;align-items:center;width:100%;overflow:hidden;}
+.breadcrumb-divider {margin:0 1rem;color:var(--gray400);}
+.breadcrumb-item {position:relative;}
+.breadcrumb-last {}
+.breadcrumb-last:after {display:none;}
+
+/* // .breadcrumbs-item:after {content:'/';margin:0 .75rem;color:var(--gray200);}
+// .breadcrumbs-item:after {content:'';display:inline-block;width:6px;height:6px;margin:0 12px 0 16px;border:var(--border100);border-left:none;border-bottom:none;box-sizing:border-box;transform:rotate(45deg);vertical-align:middle;}
+// .breadcrumbs-home:after {margin-left:26px;} */

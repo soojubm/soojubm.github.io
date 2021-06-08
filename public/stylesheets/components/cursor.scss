@@ -1,0 +1,28 @@
+.cursor {
+  display: block;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.1);
+  position: absolute;
+  z-index: 100;
+  animation: cursor 0.4s infinite alternate;
+}
+.cursor:after {
+  content: '';
+  width: 16px;
+  height: 16px;
+  border: 8px solid gray;
+  border-radius: 50%;
+  opacity: 0.5;
+  position: absolute;
+  animation: cursor 0.4s infinite alternate;
+}
+@keyframes cursor {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0.8);
+  }
+}

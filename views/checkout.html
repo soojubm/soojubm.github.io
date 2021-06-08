@@ -1,0 +1,128 @@
+<!-- // invoice랑 구분 -->
+
+<form class="checkout">
+  <div class="checkout-step"></div>
+  <header class="checkout-head">
+    <!-- <div class="checkout-head-eyebrow">주문확인</div> -->
+    <div class="checkout-head-background"></div>
+    <h1 class="checkout-head-title">안녕, 콩 😎<br />주문정보를 확인해주세요<i style="font-style:italic;">!</i></h1>
+    <p class="checkout-head-description">
+      주문/결제 기능에 필요한 체크아웃 페이지입니다.<br />주문정보와 결제수단을 확인/입력을 위한 최소한의 기능을 담아 뉴닉에서 사용했습니다.
+    </p>
+  </header>
+
+  <section class="checkout-product">
+    <!-- <h2 class="checkout-product-title">주문상품</h2> -->
+    <div class="checkout-product-item">
+      <div class="checkout-product-item-media"></div>
+      <h3 class="checkout-product-item-name">뉴닉이 풀어 쓴 경제상식사전</h3>
+      <div class="checkout-product-item-text">Order Type: license for 1-3 Users</div>
+      <div class="checkout-product-item-price">₩ 44,612</div>
+    </div>
+    <hr />
+    <div class="checkout-product-subtotal">
+      <div class="checkout-product-subtotal-label">총 상품금액</div>
+      <div class="checkout-product-subtotal-value">₩ 44,612</div>
+    </div>
+    <div class="checkout-product-shipping">
+      <div class="checkout-product-shipping-label">배송료</div>
+      <div class="checkout-product-shipping-value">₩ 3,000</div>
+    </div>
+    <!-- <hr /> -->
+    <footer class="checkout-product-total">
+      <div class="checkout-product-total-label">최종 결제 금액</div>
+      <div class="checkout-product-total-value">₩ 47,612</div>
+    </footer>
+  </section>
+
+  <fieldset class="checkout-shipping">
+    <h2 class="checkout-shipping-title">배송정보</h2>
+    <div class="setting-row" style="width:100%;margin:0 0 2rem 0;">
+      <h2 class="setting-row-label">배송지</h2>
+      <div class="setting-row-value">
+        <p class="setting-row-value-username">이경수</p>
+        <p class="setting-row-value-address" title="address-level / address-line">[07655] 서울특별시 강서구 까치산로 182 1202호</p>
+        <p class="setting-row-value-phone">010-3121-7045</p>
+      </div>
+      <span class="setting-row-change"><b>저장하기</b> <i class="icon-arrow"></i></span>
+    </div>
+    <div class="checkout-shipping-name textfield">
+      <label class="checkout-shipping-name-label textfield-label">받는 사람</label>
+      <input class="checkout-shipping-name-value textfield-input" type="text" name="email" id="login-email" placeholder="수줍이" />
+    </div>
+    <br />
+    <div class="checkout-shipping-phone textfield">
+      <label class="checkout-shipping-phone-label textfield-label">연락처</label>
+      <input class="checkout-shipping-phone-value textfield-input" type="text" name="email" id="login-email" placeholder="01012345678" />
+    </div>
+    <br />
+    <div class="checkout-shipping-address textfield">
+      <label class="checkout-shipping-address-label textfield-label" for="address">주소</label>
+      <input class="checkout-shipping-address-value textfield-input" type="text" name="email" id="address" placeholder="클릭하여 우편번호 찾기" />
+    </div>
+    <p>- 주소가 저장되어 있으면 이화면. 누르면 수정화면-주소 저장되어 있지 않으면 수정화면.</p>
+    <!-- <div class="order-address-address2 textfield">
+      <label class="textfield-label" for="login-email">상세주소</label>
+      <input class="textfield-input" type="text" name="email" id="login-email" placeholder="" />
+    </div> -->
+    <!-- <div class="order-address-zipcode textfield">
+      <label class="textfield-label" for="login-email">우편번호</label>
+      <input class="textfield-input" type="text" name="email" id="login-email" placeholder="soojubm@gmail.com" autofocus />
+    </div> -->
+    <!-- <div class="checkbox">
+      <input class="js-checkall" type="checkbox" id="line00" value="" aira-checked="mixed" aria-controls="1 2" />
+      <label for="line00" title="Check All">기본 배송지로 등록</label>
+    </div> -->
+  </fieldset>
+
+  <section class="checkout-payment">
+    <h2 class="checkout-payment-title">결제수단</h2>
+    <!-- <p class="checkout-payment-description">현재 신용카드 결제만 가능합니다.</p> -->
+    <fieldset>
+      <div class="radio theme-button">
+        <input type="radio" id="raidio5" name="gender" value="" checked />
+        <label for="raidio5" title="">신용/체크카드</label>
+      </div>
+      <div class="radio theme-button">
+        <input type="radio" id="raidio5" name="gender" value="" disabled />
+        <label for="raidio5" title=""
+          >무통장입금 <small style="color:var(--gray800);">COMING SOON<i style="font-style:italic">!</i></small></label
+        >
+      </div>
+    </fieldset>
+    <!-- <button class="checkout-payment-button">신용/체크카드</button> -->
+    <!-- <button class="checkout-payment-button">네이버페이<i class="checkout-payment-button-check icon-check"></i></button> -->
+    <footer style="margin:2rem 0;">
+      <b>결제 안내</b>
+      <p>신용카드 결제만 가능합니다.</p>
+      <p>해외에서 발행된 카드는 이용할 수 없습니다.</p>
+      <br />
+      <b>주문취소 및 환불 안내</b>
+      <p>주문 취소 및 환불은 <a href="">고객센터</a>에서로 문의해 주세요.</p>
+    </footer>
+  </section>
+
+  <footer class="checkout-foot">
+    <!-- <p class="checkout-foot-helper">샘플) 아래 버튼을 선택하면 게스트 권리 포기서, 환불 정책 및 게스트 환불 정책에 동의하는 것입니다.</p> -->
+    <button class="checkout-foot-pay">결제하기</button>
+  </footer>
+</form>
+
+<script>
+
+  var form = document.getElementById('subscription-form');
+  ​
+  form.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+  ​
+    // If a previous payment was attempted, get the latest invoice
+    const latestInvoicePaymentIntentStatus = localStorage.getItem(
+      'latestInvoicePaymentIntentStatus'
+    );
+  ​
+    if (latestInvoicePaymentIntentStatus === 'requires_payment_method') {
+      const invoiceId = localStorage.getItem('latestInvoiceId');
+      const isPaymentRetry = true;
+    }
+  });
+</script>

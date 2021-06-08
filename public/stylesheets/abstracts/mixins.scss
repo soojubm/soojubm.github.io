@@ -1,0 +1,154 @@
+
+
+@mixin title {font-size:var(--title);line-height:1.4;font-weight:bold;letter-spacing:-.025rem;text-indent:-1px;color:var(--gray800);}
+@mixin subhead {font-size:var(--subhead);font-weight:bold;letter-spacing:-.025rem;}
+
+@mixin text-headlilne {text-indent:-3px;}
+@mixin text-title {font-size:var(--title);line-height:1.4;font-weight:bold;letter-spacing:-.025rem;text-indent:-1px;}
+@mixin text-subheading {font-size:var(--subhead);font-weight:bold;letter-spacing:-.025rem;}
+@mixin text-caption {font-size:var(--caption);font-weight:bold;}
+@mixin text-label {font-size:var(--body);font-weight:normal;color:var(--gray400);}
+@mixin text-body-large {font-size:var(--subhead);}
+
+@mixin truncate {white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+@mixin truncate-multi {@include truncate;height:3.6em;white-space:normal;word-wrap:break-word;display: -webkit-box;-webkit-line-clamp:2;-webkit-box-orient: vertical;}
+
+
+@mixin link-inner {display:inline-block;color:var(--color-primary);text-decoration:underline;}
+@mixin link-outer {color:var(--color-primary);}
+
+@mixin hover-tertiary {border-color: var(--color-primary);}
+@mixin hover-text {
+  // color:var(--color-primary);
+  text-decoration:underline;}
+
+
+@mixin image-centered {width:auto;height:auto;max-width:150%;max-height:150%;margin:auto;position:absolute;left:0;right:0;top:0;bottom:0;}
+@mixin bleeding {
+	margin: 0 -50vw;
+	position: absolute;
+	left: 50%;
+	right: 50%;
+	top: 0;
+	bottom: 0;
+	z-index: -1;
+}
+
+
+
+@mixin clearfix {
+  &:after {content: '';display:block;clear:both;}
+}
+
+// item in card component // active
+@mixin hover-item {
+  // 부모태그에 position: relative;
+  // background: var(--gray100);
+  cursor: pointer;
+  &:before {
+    content:'';display:block;background:var(--gray100);border-radius:var(--radius400);position:absolute;left:-.5rem;right:-.5rem;top:-.5rem;bottom:-.5rem;z-index:-1;
+  }
+  figure {background-color:var(--gray0);}
+}
+
+@mixin container-overflow {
+  overflow:auto;white-space:nowrap;
+  font-size:0;
+  &::-webkit-scrollbar {display:none;}
+  > * {font-size:var(--body);}
+}
+
+
+@mixin container-card {
+  padding: 1.5rem;
+  background: var(--gray0);
+  border: var(--border100);
+  border-radius: var(--radius400);
+  box-sizing: border-box;
+  box-shadow: var(--shadow400);
+  position: relative;
+  @media (--viewport-small) {}
+}
+
+@mixin container-page {
+  margin: 0 auto;
+  padding: 2rem 5% 8rem; // mobile padding
+  position: relative;
+}
+@mixin container-large {
+  max-width: var(--width-large);
+  @include container-page;
+}
+@mixin container-medium {
+  max-width: var(--width-medium);
+  @include container-page;
+}
+@mixin container-small {
+  max-width: var(--width-small);
+  @include container-page;
+}
+
+
+// padding .5rem / 1.5rem
+// tile
+@mixin tile-flat {
+  padding: 1.5rem 1.5rem 1.5rem; // 텍스트가 올 때 시각보정. 아이콘이 오면 아이콘에서 margin-top:.5rem?
+  border: var(--border100);
+  border-radius: var(--radius400);
+  box-sizing: border-box;
+  background: var(--gray0);
+  position: relative;
+}
+@mixin tile-elevated {@include tile-flat;box-shadow:var(--shadow400);}
+@mixin tile-flat-small {@include tile-flat;padding:.5rem;}
+@mixin tile-elevated-small {@include tile-flat;padding:.5rem;box-shadow:var(--shadow400);}
+
+// layout 유동성을 위해. centered mixin은 layou의 유동성을 해친다.
+// ! box-small의 display:flex가 hidden 속성과 충돌
+@mixin tile-avatar($cell) {
+  display: flex;align-items: center;justify-content: center;
+  width: $cell;height: $cell;
+  border: var(--border100); // 여기서
+  border-color: transparent;
+  border-radius: var(--radius400);
+  box-sizing: border-box;
+  background: var(--gray100);
+  position: relative;
+}
+@mixin box-large {@include tile-avatar(var(--size-large));}
+@mixin box-medium {@include tile-avatar(var(--size-medium));}
+@mixin box-small {@include tile-avatar(var(--size-small));}
+@mixin box-xsmall {@include tile-avatar(var(--size-xsmall));}
+@mixin box-tiny {@include tile-avatar(var(--size-tiny));}
+
+.link-inner {@include link-inner;}
+.link-outer {@include link-outer;}
+
+
+.linebreak-always {}
+.linebreak-desktop {
+  display:block;
+  @media (--viewport-small) {display:inline;}
+}
+.linebreak-mobile {
+  display:inline;
+  @media (--viewport-small) {display:block;}
+}
+
+// @media (prefers-color-scheme: dark) {
+//   :root {
+//     // --title-color: #EFEFEF;
+//     // --desc-color: peachpuff;
+//   }
+//   // img {filter: brightness(.8) contrast(1.2);}
+// }
+
+
+@mixin position-right-top {position:absolute;right:.5rem;top:.5rem;}
+@mixin reset-position {
+  position: relative;
+  left: auto;
+  right: auto;
+  top: auto;
+  bottom: auto;
+}

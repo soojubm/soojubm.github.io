@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <title>수줍이</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=1.0, viewport-fit=cover"
+    />
+    <meta name="format-detection" content="telephone=no, email=no, address=no" />
+    <meta name="robots" content="noindex" />
+
+    <meta name="theme-color" content="rgba(255,255,255,.8)" />
+    <meta name="color-scheme" content="light dark" />
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="mobile-web-app-capable" content="yes" />
+
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="date=no" />
+    <meta name="format-detection" content="address=no" />
+    <meta name="format-detection" content="email=no" />
+
+    <meta name="author" content="soojubm" />
+    <meta name="subject" content="수줍이의 포트폴리오" />
+    <meta name="description" content="부끄러우니까 보지마요." />
+    <meta name="keywords" content="" />
+    <meta name="copyright" content="soojubm" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:site_name" content="soojubm" />
+    <meta property="og:url" content="https://soojubm.github.io" />
+    <meta property="og:title" content="수줍이의 포트폴리오" />
+    <meta property="og:image" content="/public/images/open-graph.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="부끄러우니까 보지마요." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@soojubm" />
+    <meta name="twitter:creator" content="soojubm" />
+    <meta name="twitter:url" content="https://soojubm.github.io" />
+    <meta name="twitter:title" content="수줍이의 포트폴리오" />
+    <meta name="twitter:description" content="부끄러우니까 보지마요." />
+    <meta name="twitter:image" content="https://example.com/image.jpg" />
+
+    <link rel="canonical" href="https://soojubm.github.io/" />
+
+    <!-- icon in the highest resolution we need it for 48px -->
+    <link rel="icon" sizes="192x192" href="icon.png" />
+
+    <!-- reuse same icon for Safari -->
+    <link rel="apple-touch-icon" href="ios-icon.png" />
+
+    <!-- multiple icons for IE -->
+    <meta name="msapplication-square310x310logo" content="icon_largetile.png" />
+
+    <link rel="apple-touch-icon" href="touch-icon-iphone.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="touch-icon-ipad.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="touch-icon-iphone-retina.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="touch-icon-ipad-retina.png" />
+
+    <meta name="msapplication-square70x70logo" content="icon_smalltile.png" />
+    <meta name="msapplication-square150x150logo" content="icon_mediumtile.png" />
+    <meta name="msapplication-wide310x150logo" content="icon_widetile.png" />
+
+    <!-- 기본적으로 Safari는 로딩시간에 빈 화면을 보여주고 여러 페이지 로딩 후에는 앱의 이전 상태 스크린샷을 보여줍니다. rel=apple-touch-startup-image를 가진 link 태그를 추가하여 명시적인 시작 이미지를 보여주도록 Safari에게 전해 이를 막을 수 있습니다. 예: -->
+    <link rel="apple-touch-startup-image" href="icon.png" />
+    <!-- <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"> -->
+
+    <link rel="icon" sizes="32x32" href="/favicon/favicon-32.png" />
+    <link rel="apple-touch-icon-precomposed" href="/favicon/favicon-180.png" />
+    <link rel="shortcut icon" sizes="196x196" href="/favicon/favicon-196.png" />
+
+    <link rel="apple-touch-icon" href="/images/touchicon-180.png" />
+
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="/path/to/favicon-144.png" />
+    <!-- <meta name="application-name" content="Name" />
+    <meta name="msapplication-tooltip" content="Tooltip" />
+    <meta name="msapplication-config" content="/path/to/ieconfig.xml" /> -->
+
+    <link rel="stylesheet" href="./build/style.css" />
+
+    <script src="./public/javascripts/polyfill.js"></script>
+    <script src="./build/bundle.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-83531239-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-83531239-1');
+    </script> -->
+
+    <script>
+      // function insertCallback(parent, funcname, callback, ...args) {
+      //   let oldFunc = parent[funcname] ? parent[funcname] : function() { }
+      //   parent[funcname] = function () {
+      //       oldFunc.apply(this, arguments)
+      //       return callback(...args)
+      //   }
+      // }
+
+      // function notifyAnalytics(l) {
+      //   let newPage = l.pathname + l.hash
+      //   gtag('config', 'UA-83531239-1', { 'page_path': newPage });
+      // }
+
+      // insertCallback(window.history, "pushState", notify_analytics, location)
+      // insertCallback(window.history, "replaceState", notify_analytics, location)
+
+      // function trackOutboundLink(url) {
+      //   gtag('event', 'click', {
+      //     'event_category': 'outbound',
+      //     'event_label': url,
+      //     'transport_type': 'beacon',
+      //     'event_callback': function() { document.location = url; }
+      //   });
+      // }
+
+      // const link = document.createElement('link');
+      // link.setAttribute('rel', 'stylesheet');
+      // link.setAttribute('href', '');
+      // document.head.appendChild(link);
+    </script>
+  <script defer src="bundle.js"></script><link href="style.css" rel="stylesheet"></head>
+  <body>
+    <noscript>This website requires JavaScript.</noscript>
+
+    <aside class="browser js-browser" role="complementary">
+      <p>이 사이트는 크롬 브라우저에 최적화되어 있습니다.</p>
+      <a href="https://www.google.co.kr/chrome/index.html" class="button">크롬 브라우저 다운로드</a>
+    </aside>
+
+    <aside class="offline js-offline">
+      <p>인터넷 연결을 다시 확인해주세요.</p>
+    </aside>
+
+    <aside class="loader js-loader">
+      <div class="loader-spinner js-loader-spinner"></div>
+    </aside>
+
+    <nav class="skip" role="navigation">
+      <a class="skip-link" href="#header">본문 바로가기</a>
+      <a class="skip-link" href="#navigation">대메뉴 바로가기</a>
+      <a class="skip-link" href="#footer">하단정보 바로가기</a>
+    </nav>
+
+    <nav class="navbar js-navbar" role="navigation">
+      <a class="navbar-logo" href="/">🐤</a>
+      <button class="navbar-burger js-navbar-toggle" hidden aria-expanded="false">
+        <i class="icon-hamberger"></i>
+      </button>
+      <div class="navbar-menu" role="navigation">
+        <a route="/profile" class="navbar-menu-item" href="#about">소개</a>
+        <a route="/profile" class="navbar-menu-item" href="#profile">작업</a>
+        <div class="navbar-menu-item has-submenu js-hover-trigger">
+          <a href="#">샘플페이지<i class="icon-caret"></i></a>
+          <menu>
+            <a route="/design" href="#login">로그인</a>
+            <a route="/design" href="#signup">회원가입</a>
+            <a route="/design" href="#forgot">비밀번호찾기</a>
+            <a route="/design" href="#setting">설정</a>
+            <a route="/design" href="#post">포스트</a>
+            <a route="/design" href="#product">상품</a>
+            <a route="/design" href="#cart">카트</a>
+            <a route="/design" href="#checkout">주문서</a>
+            <!-- <a route="/design" href="#orders">주문</a> -->
+            <a route="/design" href="#event">프로모션(draft)</a>
+            <!-- <a route="/design" href="#cake">영화</a> -->
+            <!-- <a href="#terms">약관</a> -->
+          </menu>
+        </div>
+        <a route="/design" class="navbar-menu-item" href="#design">디자인시스템</a>
+      </div>
+
+      <div class="navbar-search" role="search" aria-label="site" hidden>
+        <a class="navbar-search-trigger js-navbar-toggle" href="#">
+          <i class="icon-search"></i>
+          <!-- <img src="/public/icons/search.svg" alt="" /> -->
+        </a>
+        <form class="search-form" hidden>
+          <button class="search-form-close js-close" aria-label="delete">
+            <i class="icon-arrow"></i>
+          </button>
+          <!-- <p role="status">수줍이와(과) 일치하는 검색결과가 없습니다.</p> -->
+          <fieldset class="search-form-field textfield">
+            <legend class="filter-fieldset-legend" hidden aria-hidden="true">
+              검색하기
+            </legend>
+            <label class="textfiled-label" for="help-search" hidden aria-hidden="true">검색하기</label>
+            <input class="textfield-input" type="search" id="help-search" placeholder="검색어를 입력해 주세요." />
+            <button class="textfield-reset" type="reset" hidden title="clear search input">
+              <i class="icon-close"></i>
+            </button>
+          </fieldset>
+          <!-- <button type="submit">
+            <span class="visually-hidden">Submit</span>
+            <svg role="img"></svg>
+          </button> -->
+          <section class="search-recommend">
+            <h2 class="search-recommend-title">당신을 위한 추천</h2>
+            <a class="search-recommend-item" href="#">개구리</a>
+            <a class="search-recommend-item" href="#">달팽이</a>
+            <a class="search-recommend-item" href="#">매미</a>
+          </section>
+        </form>
+      </div>
+
+      <div class="navbar-notification" style="margin-left:auto;">
+        <a class="navbar-notification-trigger js-navbar-toggle" href="#" aria-haspopup="true" aria-expanded="false">
+          <img src="/public/icons/bell.svg" />
+          <em>new</em>
+        </a>
+        <!-- <menu class="navbar-notification-empty">
+          <p>최근 알림 메세지가 없습니다.</p>
+        </menu> -->
+        <menu class="navbar-notification-menu">
+          <h6 class="navbar-notification-menu-title">알림</h6>
+          <a
+            href="#"
+            style="position: absolute;
+          right: 1.5rem;
+          top: 1.25rem;"
+            >알림 모두 보기</a
+          >
+          <hr />
+          <div class="notification-item">
+            <em class="notification-unread"></em>
+            <figure class="notification-item-avatar"></figure>
+            <b class="notification-item-user">John Cassavetes</b>
+            <time class="notification-item-date" style="position:absolute;right:0;top:0;">5일 전</time>
+            <span class="notification-item-content" style="color:var(--gray400);">comment on <em>John Cassavetes</em></span>
+          </div>
+          <div class="notification-item">
+            <em class="notification-unread">🌱</em>
+            <figure class="notification-item-avatar"></figure>
+            <b class="notification-item-user">John Cassavetes</b>
+            <time class="notification-item-date" style="position:absolute;right:0;top:0;">5일 전</time>
+            <span class="notification-item-content" style="color:var(--gray400);">like on <em>John Cassavetes</em></span>
+          </div>
+          <!-- <footer>
+            <button>알림 전체 보기</button>
+          </footer> -->
+        </menu>
+      </div>
+
+      <div class="navbar-user">
+        <button class="navbar-user-trigger js-navbar-toggle" aria-haspopup="menu" aria-expanded="false">
+          <span class="navbar-user-trigger-media"><img src="/public/images/soo.png" alt=""/></span>
+        </button>
+        <div class="navbar-user-menu">
+          <a class="user" href="#settings">
+            <figure class="user-avatar">
+              <img src="/public/images/soo.png" alt="" />
+              <div class="user-avatar-change"></div>
+            </figure>
+            <h2 class="user-name">soojubm</h2>
+            <div class="user-email">soojubm@gamil.com</div>
+            <div class="user-myinfo">내 프로필 관리</div>
+          </a>
+          <hr role="separator" />
+          <!-- <div class="switch-wrap" style="position:absolute;right:0;top:0;">
+            <span class="switch js-darkmode">
+              <span class="day">🌑</span>
+              <span class="night">🌙</span>
+            </span>
+          </div> -->
+          <button class="user-logout js-darkmode" title="change theme">
+            <span class="user-logout-icon"><i class="icon-moon"></i></span>
+            어둡게 보기
+            <span class="switch" style="margin-left:auto;">
+              <input type="checkbox" id="temp55" name="" role="switch" />
+              <label for="temp55" style="padding-left:48px;"></label>
+            </span>
+          </button>
+          <button class="user-logout js-default-font" title="change theme">
+            <span class="user-logout-icon"><i class="icon-moon"></i></span>
+            시스템 폰트로 보기
+          </button>
+          <button class="user-logout" title="sign out">
+            <span class="user-logout-icon">
+              <i class="icon-out"><span class="icon-out-door"></span></i>
+            </span>
+            고객센터 및 도움말
+            <!-- <span style="display:flex;align-items:center;justify-content:center;background:var(--gray100);width:32px;height:32px;border-radius:var(--radius400);margin-left:auto;"><i class="icon-arrow"></i></span> -->
+          </button>
+          <hr />
+          <button class="user-logout" title="sign out">
+            <span class="user-logout-icon">
+              <i class="icon-out"><span class="icon-out-door"></span></i>
+            </span>
+            로그아웃
+          </button>
+          <hr role="separator" />
+          <footer class="user-footer">
+            <a href="#">Privacy Policy</a>
+            <i class="icon-bullet"></i>
+            <a href="#">Terms of Service</a>
+          </footer>
+        </div>
+      </div>
+
+      <!-- <div class="navbar-user"></div> -->
+    </nav>
+
+    <header class="header js-header" role="navigation">
+      <h1 class="header-title js-page-title">페이지타이틀</h1>
+      <button class="header-back" onclick="javascript:window.location.href='/';">
+        <span class="header-back-icon"><i class="icon-arrow"></i></span>
+      </button>
+      <button class="header-cta">
+        <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" svg-inline="" role="presentation" focusable="false" tabindex="-1" class="icon-16">
+          <path
+            d="M0 12.782c0 .85.1 1.65.3 2.45.1.45.35.45.5 0 1.05-2.65 2.75-5.15 5.55-5.65H8v2.2c0 1 .6 1.3 1.3.7l6.4-5.5c.35-.3.35-.8 0-1.15L9.3.332c-.7-.65-1.3-.3-1.3.65v2.35c-4.8.8-8 4.7-8 9.45z"
+            fill="currentColor"
+          ></path>
+        </svg>
+      </button>
+    </header>
+    <!-- <header class="header-backdrop js-header"></header> -->
+
+    <div id="view">
+      <div class="home"></div>
+    </div>
+
+    <footer class="footer" role="contentinfo">
+      <!-- <div class="skeleton-screen"></div> -->
+      <div class="footer-background"></div>
+      <aside class="footer-scroll" hidden>
+        <p class="footer-scroll-indicator" hidden aria-hidden="true">
+          스크롤하세요
+        </p>
+        <button class="footer-scroll-bottom js-to-bottom">아래로</button>
+        <button class="footer-scroll-top js-to-top"><i class="icon-arrow"></i> <b hidden aria-hidden="true">맨위로</b></button>
+      </aside>
+      <nav class="footer-sitemap">
+        <h1 class="footer-sitemap-title" hidden aria-hidden="true">
+          하단 사이트맵
+        </h1>
+        <div class="footer-sitemap-item">
+          <h2 class="footer-sitemap-item-title">About</h2>
+          <a class="footer-sitemap-item-link" href="#">교통버스</a>
+          <a class="footer-sitemap-item-link" href="#">택시</a>
+          <a class="footer-sitemap-item-link" href="#">지하철차량</a>
+        </div>
+        <div class="footer-sitemap-item">
+          <h2 class="footer-sitemap-item-title">Contact</h2>
+          <a class="footer-sitemap-item-link" href="#">교통버스</a>
+          <a class="footer-sitemap-item-link" href="#">택시</a>
+          <a class="footer-sitemap-item-link" href="#">지하철차량</a>
+        </div>
+        <div class="footer-sitemap-item">
+          <h2 class="footer-sitemap-item-title" title="or Regal">Terms</h2>
+          <a class="footer-sitemap-item-link" href="#">서비스이용약관</a>
+          <a class="footer-sitemap-item-link" href="#"><strong>개인정보취급방침</strong></a>
+        </div>
+      </nav>
+      <br />
+      <address class="footer-address">
+        <span class="footer-address-logo" style="font-size:var(--title);">🐤</span>
+        <p class="footer-address-slogan" style="margin:1rem 0 0 0;">
+          부끄러우니까 보지마요.
+        </p>
+        <br />
+        <div class="footer-address-info">
+          주식회사 수줍이 / 서울시 강서구 화곡로 1818, 3층<br />
+          <!-- <i class="icon-bullet"></i> -->
+          대표전화 02-1234-5678 / soojubm@gmail.com<br />
+          <!-- <i class="icon-bullet"></i> -->
+          사업자등록번호 888-88-88888 / 대표 수줍이<br />
+          통신판매업신고 2018-서울강서구-1234<br />
+          <abbr title="phone"></abbr>
+        </div>
+        <br />
+        <small class="footer-copyright" role="copyright"
+          >© 2019 soojubm. All rights Reserved.
+          <p>
+            이 제작물은 아모레퍼시픽의 아리따글꼴을 사용하여 디자인 되었습니다.
+          </p>
+        </small>
+      </address>
+    </footer>
+    <aside id="modal"></aside>
+    <!-- <script>
+      var renderTime = function () {
+        var time = new Date();
+        document.querySelector('.clock').textContent = time.toLocaleString(navigator.language || 'en-US', {year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true});
+        // time.toLocaleString(navigator.language || 'en-US', {year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true});
+      };
+      renderTime()
+      setInterval(renderTime, 1000);
+    </script> -->
+
+    <!-- <div>
+      <div class="js-counter1" data-number="54">54%</div>
+      <div class="js-counter2" data-number="80">80%</div>
+    </div> -->
+
+    <script>
+      function countUp({ selector: selector }) {
+        if (!selector) return
+
+        let number = 0
+        let element = document.querySelector(selector)
+        let elementValue = element.getAttribute('data-number')
+
+        if (!elementValue) return
+
+        let interval = setInterval(() => {
+          renderNumber()
+
+          if (number >= elementValue) clearInterval(interval)
+        }, 10)
+
+        function renderNumber() {
+          ++number
+          element.innerHTML = `${number}%`
+        }
+      }
+
+      setTimeout(() => {
+        countUp({ selector: '.js-counter' })
+        countUp({ selector: '.js-counter2' })
+      }, 2000)
+    </script>
+
+    <!-- <script>
+      let start = null
+      const element = document.querySelector('.js-navbar')
+
+      function step(timestamp) {
+        if (!start) start = timestamp
+        const progress = timestamp - start
+        element.style.marginLeft = Math.min(progress / 10, 200) + 'px'
+
+        if (progress >= 5000) return
+        window.requestAnimationFrame(step)
+      }
+
+      window.requestAnimationFrame(step)
+    </script> -->
+
+    <script>
+      window.addEventListener('online', detectOnline)
+      window.addEventListener('offline', detectOnline)
+      window.addEventListener('DOMContentLoaded', detectOnline)
+      window.addEventListener('DOMContentLoaded', detectBrowser)
+
+      function detectBrowser() {
+        const BrowserElement = document.querySelector('.js-browser')
+        if (!BrowserElement) return
+
+        const userAgent = navigator.userAgent.toLowerCase()
+        const isIEBrowser = userAgent.includes('msie') || userAgent.includes('trident')
+        // const isChromeBrowser = userAgent.indexOf('chrome') !== -1
+        // const isMacBrowser = /Mac|iPod|iPhone|iPad/.test(navigator.platform);
+
+        BrowserElement.hidden = !isIEBrowser
+        // todo return browser
+      }
+
+      function detectOnline() {
+        const isOnline = navigator.onLine
+        if (!isOnline) {
+          const offlineElement = document.querySelector('.js-offline')
+          offlineElement.style.display = 'block'
+        }
+        // window.alert(isOnline ? 'online' : 'offline')
+      }
+
+      // let resizeTimer
+      // window.addEventListener('resize', () => {
+      //   document.body.classList.add('resize-animation-stopper')
+      //   clearTimeout(resizeTimer)
+      //   resizeTimer = setTimeout(() => {
+      //     document.body.classList.remove('resize-animation-stopper')
+      //   }, 400)
+      // })
+    </script>
+  </body>
+</html>
+
+<!-- <i class="cursor"></i> -->
+
+<!-- <div class="countdown">
+  <div class="days">
+    <div class="days-value js-days"></div>
+    <div class="days-label">days</div>
+  </div>
+  <div class="hours">
+    <div class="hours-value js-hours"></div>
+    <div class="hours-label">hours</div>
+  </div>
+  <div class="minutes">
+    <div class="minutes-value js-minutes"></div>
+    <div class="minutes-label">minutes</div>
+  </div>
+  <div class="seconds">
+    <div class="seconds-value js-seconds"></div>
+    <div class="seconds-label">seconds</div>
+  </div>
+</div> -->

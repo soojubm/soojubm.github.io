@@ -1,0 +1,40 @@
+.setting {@include container-medium;}
+.setting-head {margin:0 0 2rem;}
+.setting-head-title {@include title;}
+.setting-head-description {margin:1rem 0 0 0;}
+
+.setting-body {margin:4rem 0 0;}
+.setting-body-heading {margin:0 0 1rem 0;@include subhead;}
+.setting-body-description {margin:-1rem 0 1.5rem 0;}
+
+.setting-row {display:flex;overflow:hidden;padding:1rem 0 1.1rem;border-bottom:var(--border100);box-sizing:border-box;cursor:pointer;position:relative;}
+.setting-row:hover {}
+.setting-row.is-opened {}
+.setting-row:nth-of-type(1) {border-top:var(--border100);}
+.setting-row-label {width:10rem;font-size:var(--body);line-height:32px;font-weight:400;color:var(--gray400);}
+.setting-row-value {display:flex;flex-wrap:wrap;align-items:center;width:calc(100% - 10rem);color:var(--gray800);line-height:32px;}
+.setting-row-value-username {width:100%;}
+.setting-row-value-address {width:100%;margin:-.25rem 0;line-height:1.5;}
+.setting-row-value-phone {width:100%;}
+
+.setting-row-change {@include box-small;font-size:var(--body);position:absolute;right:0;}
+.setting-row-change b {display:none;background:var(--gray0);transform:translateX(200px);transition:all .5s;position:relative;z-index:1;}
+.setting-row-change i {}
+.setting-row:hover .setting-row-change b {transform:translateX(0);}
+.setting-row-foot {display:flex;}
+.setting-row-foot-confirm {@include button-primary;}
+.setting-row-foot-cancel {@include button-text;margin:0 0 0 1rem;}
+// line-height:24px; 이거 모듈화~!
+.setting-row .textfield {
+  margin: 0 0 1rem 0;
+}
+
+.setting-foot {margin:2rem 0;}
+.setting-foot-delete {text-decoration:underline;color:var(--gray800);}
+
+.setting-row-form {padding:1rem 0;cursor:default;}
+
+@media (--viewport-small) {
+  .setting-row-label {width:6rem;}
+  .setting-row-value {width:calc(100% - 6rem);}
+}

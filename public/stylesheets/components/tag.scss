@@ -1,0 +1,40 @@
+@mixin tag {
+  display: inline-block;
+  height: 24px;
+  line-height: 23px;
+  padding: 0 .5rem;
+  border-radius: var(--radius400);
+  box-sizing: border-box;
+  background-color: var(--gray100);
+  font-size: var(--caption);
+  color: var(--gray800);
+  &.is-disabled {
+    background-color: var(--gray200);
+    color: var(--gray800);
+    opacity: .4;
+    cursor: not-allowed;
+  }
+}
+
+
+@mixin tag-eyebrow {@include tag; background-color:gold;color:#333;}
+@mixin tag-keyword {@include tag;}
+@mixin tag-badge {@include tag;background-color:var(--green100);color:var(--green800);}
+
+@mixin hashtag {
+  @include tag;
+  color: var(--gray400);
+  &:before {content:'#';}
+}
+
+.hashtag {color:var(--gray400);}
+.tag {@include tag-keyword;}
+.tag[data-appearance=accent] {@include tag-eyebrow;}
+.tag[data-appearance=secondary] {@include tag-badge;}
+
+.badge {
+  display:inline-flex;font-size:var(--caption);color:var(--gray400);
+  padding: 0 .5rem;
+  border-radius: var(--radius400);
+  background: var(--gray100);
+}

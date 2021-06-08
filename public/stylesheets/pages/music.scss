@@ -1,0 +1,27 @@
+.album {max-width:1080px;margin:10rem auto 16rem;padding-left:30%;box-sizing:border-box;position:relative;}
+.album-background {background:url('/public/images/springsteen.jpg') no-repeat center center;background-size:cover;position:fixed;left:10%;right:10%;top:0%;bottom:20%;z-index:-1;}
+
+.album-list {max-width:50%;position:absolute;left:0;top:0;z-index:4;}
+.album-list-date {color:var(--gray0);}
+.album-list-title {margin:0 0 .5rem 0;font-size:32px;line-height:1.2;color:var(--gray0);}
+.album-list-artist {color:var(--gray0);}
+.album-list-cover {width:400px;height:400px;margin:2rem auto 1.5rem;border-radius:var(--radius400);}
+
+.album-track {padding:9rem 0 0 0;color:var(--gray0);}
+.album-track-title {margin:0 0 .5rem 0;font-size:var(--subhead);color:inherit;}
+.album-track-label {display:flex;}
+.album-track-label-item {padding:.5rem 0;color:rgba(255,255,255,.4);}
+.album-track-label-item:nth-of-type(1) {width:10%;}
+.album-track-label-item:nth-of-type(2) {width:75%;}
+.album-track-label-item:nth-of-type(3) {width:15%;text-align:right;}
+.album-track-list {display:flex;}
+.album-track-list-item {padding:.5rem 0;}
+.album-track-list-item:nth-of-type(1) {width:10%;}
+.album-track-list-item:nth-of-type(2) {width:75%;}
+.album-track-list-item:nth-of-type(3) {width:15%;text-align:right;}
+
+.album-others {max-width:1080px;margin:30rem auto;}
+.album-others-title {margin:0 0 1rem 0;font-size:var(--subhead);}
+.album-others-album {width:160px;margin-right:.5rem;}
+.album-others-title {margin:1rem 0 0 0;font-size:var(--body);}
+.album-others-artist {font-size:var(--caption);}

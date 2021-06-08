@@ -1,0 +1,82 @@
+.help {padding:0 0 10rem 0;}
+.help-head {padding:4rem 0 6rem;text-align:center;position:relative;}
+.help-head-title {@include title;}
+.help-head-description {margin:1rem 0;}
+.search-result {max-width:560px;height:auto;margin:0 auto;padding:.5rem 0;border:var(--border100);box-sizing:border-box;background:var(--gray0);text-align:left;position:absolute;left:0;right:0;top:89px;z-index:1;}
+.search-result-title {margin:0 0 0 0;padding:.75rem 1.5rem;font-size:var(--body);text-decoration:underline;}
+.search-result-item {display:block;padding:.75rem 1.5rem;line-height:32px;}
+.search-result-item h3 {font-size:var(--body);}
+.search-result-item p {color:var(--gray400);line-height:1.6;}
+.search-result-item:hover {background:#f9f9f6;}
+
+.help-board {max-width:var(--width-medium);margin:2rem auto;padding:0 var(--grid-margin);position:relative;}
+.help-board-title {margin:0 0 1rem 1.5rem;font-size:var(--subhead);}
+.help-board-item {display:block;padding:1rem 1.5rem;border:var(--border100);background:var(--gray100);position:relative;transition:all .4s;}
+.help-board-item + .help-board-item {margin-top:-1px;}
+.help-board-item:hover {background:var(--gray0);}
+.help-board-item-tag {margin:0 0 0 .5rem;padding:.25rem .75rem;border-radius:var(--radius400);background:var(--gray800);vertical-align:middle;color:var(--gray0);font-size:11px;cursor:default;}
+.help-board-item-category {margin:0 .5rem 0 0;text-decoration:underline;}
+.help-board-item-title {}
+.help-board-item-file {display:block;max-width:120px;margin:.25rem 0 0 0;background:var(--gray0);border-radius:var(--radius400);padding:.25rem 1rem;border:var(--border100);text-align:center;font-size:var(--caption);}
+.help-board-item-link {position:absolute;left:0;right:0;top:0;bottom:0;}
+.help-board-item-meta {position: absolute;right: 1.5rem;top:13px}
+.help-board-item-meta-label {font-size:var(--caption);color:var(--gray400);}
+.help-board-item-meta-value {font-size:var(--caption);color:var(--gray800);}
+.help-board-item-meta-divider {margin:0 8px;color:var(--gray200);}
+.help-board-item-content {display:none;margin:1rem 0 0 0;color:var(--gray800);animation:fadeup .4s ease;}
+.is-active.help-board-item {background:var(--gray0);}
+.is-active .help-board-item-content {display:block;}
+.is-active .help-feedback {display:flex;}
+
+.help-feedback {position:relative;}
+.help-feedback-title {margin:0 0 1rem 0;}
+.help-feedback-button {@include button-tertiary;margin:0 .25rem 0 0;padding-top:.25rem;padding-bottom:.25rem;}
+.help-feedback-status {display:block;margin:.5rem 0 0;}
+
+.help-foot {display:flex;max-width:var(--width-medium);margin:0 auto;padding:1rem 2rem;box-sizing:border-box;background:var(--gray100);box-shadow:var(--shadow400);position:relative;}
+.help-foot-body {}
+.help-foot-body em {color:var(--gray800);text-decoration:underline;}
+.help-foot-link {margin-left:auto;}
+.help-foot-link i {display:inline-block;}
+
+
+.faq {padding:0 10%;}
+.faq-head {padding:2rem 0;position:relative;}
+.faq-head-title {margin:0 0 1rem 0;@include subhead;}
+.faq-head-ask {@include button-tertiary;}
+.faq-item {margin:0 auto;padding:3rem 0 3.5rem;border-top:var(--border100);box-sizing:border-box;background:var(--gray0);position:relative;}
+.faq-item-question {font-size:var(--subhead);font-weight:bold;cursor:pointer;}
+.faq-item-question i {margin: 0 1rem 0 0;}
+.faq-item-answer {max-width:60%;margin:1rem 0 0;}
+// [role=button] {cursor:pointer;}
+
+.faq-contact {padding:3rem 0 4rem;}
+.faq-contact-emoji {display:block;margin:0 0 1rem 0;font-size:3rem;}
+.faq-contact-title {font-size:var(--title);font-weight:bold;}
+.faq-contact-description {margin:1rem auto 2rem;}
+.faq-contact-form {margin:4rem 0;}
+.faq-contact-form-foot {}
+.faq-contact-form-foot-ask {@include button-primary;padding-left:4rem;padding-right:4rem;}
+.faq-contact-privacy {padding:2rem 0;}
+.faq-contact-privacy-title {font-size:var(--body);font-weight:bold;}
+.faq-contact-privacy-description {margin:1rem 0;}
+
+.faq-contact .textfield {margin: 1rem 0;}
+
+.faq-reaction {margin:4rem 0 0;padding:2.5rem 5% 3.5rem;}
+.faq-reaction-title {margin:0 0 1rem 0;font-size:var(--body);font-weight:bold;}
+.faq-reaction-button {margin:0 2rem;color:var(--gray400);}
+.faq-reaction-button-emoji {display:block;font-size:var(--title);}
+
+.faq-partnership {padding:4rem 0;}
+.faq-partnership-title {font-size:var(--body);font-weight:bold;}
+.faq-partnership-description {margin:1rem 0 0;}
+
+// ! todo container variables = fullwidth
+@media (--viewport-small) {
+  .faq {padding:0 var(--grid-margin);}
+}
+
+
+
+
