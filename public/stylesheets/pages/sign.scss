@@ -1,11 +1,11 @@
-.login {max-width:var(--width-small);margin:0 auto;padding:4rem 5%;position:relative;}
+.login {max-width:var(--width-small);margin:0 auto;padding:2rem 5%;position:relative;}
 .login-head-logo {@include box-small;margin:0 0 1rem 0;}
 .login-title {@include title;}
 .login-description {margin:1rem 0;font-size:var(--body);}
 .login-email {margin:2rem 0;}
 .login-password {}
 .login-remember {margin:.5rem 0;}
-.login-separator {margin:1rem auto;text-align:center;position:relative;z-index:1;}
+.login-separator {margin:.5rem auto;text-align:center;position:relative;z-index:1;}
 .login-separator:before {content:'';display:block;width:100%;height:1px;background:var(--gray100);position:absolute;top:50%;transform:translateY(-1px);}
 .login-separator:after {content:'또는';width:4rem;line-height:24px;background:var(--gray0);font-size:var(--caption);color:var(--gray400);position:absolute;left:50%;top:0;transform:translateX(-50%);}
 .login-foot-submit {@include button-primary;width:100%;}

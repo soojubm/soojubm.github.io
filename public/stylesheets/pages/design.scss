@@ -39,17 +39,19 @@
 
 .design-buttongroup {}
 
-.design-typograph-size {@include tile-flat;height:calc(var(--size-small) + 2rem + 2px);margin:1rem 0;overflow:hidden;}
-.design-typograph-size p {margin-top:1.5rem;}
-.design-typograph-size-title {margin-top:var(--space-leading-title);line-height:var(--size-small);}
-.design-typograph-size-title span {margin:0 0 0 .5rem;font-weight:normal;font-size:var(--body);color:var(--gray400);}
-.design-typograph-size-toggle {@include box-small;position:absolute;right:1.5rem;top:1rem;
-  // top: 50%;
-  // transform: translateY(-50%);
+.design-typograph-size {@include tile-flat;margin:1rem 0;overflow:hidden;}
+.design-typograph-size-title {line-height:var(--size-small);}
+.design-typograph-size-title span {
+  float:right;
+  // margin:0 0 0 .5rem;font-weight:normal;font-size:var(--body);color:var(--gray400);
 }
-.design-typograph-size.is-active {height:auto;transition:all .4s;}
-.design-typograph-size.is-active .design-typograph-size-title {transition:all .4s;}
-.design-typograph-size.is-active p {margin-top:.5rem;transition:all .4s;}
+.design-typograph-size-toggle {display:none;@include link-outer;}
+.design-typograph-size p {display:none;margin-top:1rem;}
+.design-typograph-size div {display:none;}
+
+// .design-typograph-size.is-active {height:auto;}
+// .design-typograph-size.is-active p {display:block;}
+// .design-typograph-size.is-active div {display:block;}
 
 .design-outer-flat {@include tile-flat;}
 .design-outer-flat-small {@include tile-flat-small;}
@@ -314,7 +316,7 @@
 .topic-item {}
 
 
-.sidebar {@include container-card;}
+.sidebar {}
 .sidebar-heading {margin:0 0 .5rem 0;@include text-label;}
 .sidebar-item {display:flex;align-items:center;margin:1rem 0;line-height:31px;position:relative;z-index:1;}
 .sidebar-item:hover {@include hover-item;}
@@ -347,8 +349,13 @@
 .temp8 div {width:80px;margin-right:1rem;text-align:center;    background: var(--gray0);
   border: var(--border100);
   border-radius: var(--radius400);
-  padding: 1rem;position:relative;}
+  padding: .5rem;position:relative;}
 .temp8 div:hover{@include hover-item;}
+.temp8 div figure {
+  display:flex;align-items:center;justify-content:center;
+          width:80px;height:80px;margin:0 0 .5rem 0;border-radius:var(--radius400);background:indianred;font-size:var(--title);
+}
+
 
 
 
@@ -358,15 +365,19 @@
 .design-article-chip-small {@include tag;}
 .design-article-chip-medium {@include chip}
 
-.buttongroup {display:flex;flex-direction:row-reverse;}
-.buttongroup-primary {@include button-primary;flex-grow:2;}
-.buttongroup-secondary {@include button-secondary;flex-grow:2;}
 
-.buttongroup.is-vertical {flex-direction:column;}
 
 @mixin group {display:flex;}
 @mixin group-vertical {@include group;flex-direction:column;}
-@mixin group-horizental {@include group;justify-content:space-between;}
+@mixin group-horizental {@include group;flex-direction:row-reverse;}
+
+.buttongroup {@include group-horizental;}
+.buttongroup-primary {@include button-primary;flex-grow:2;}
+.buttongroup-secondary {@include button-tertiary;flex-grow:2;margin-right:var(--space-after-button);}
+
+.buttongroup.is-vertical {@include group-vertical;}
+.is-vertical .buttongroup-secondary {margin-top:var(--space-after-button);}
+
 
 @mixin listbox {
   display: flex;

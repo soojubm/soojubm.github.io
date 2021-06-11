@@ -2,7 +2,7 @@
 
 type Parameter = {
   selector: string
-  // activeClassname: string
+  activeClassname: string
 }
 
 // 결국에는 부모, 혹은 도큐먼트에만 클래스 토글하는 것이 좋다.
@@ -19,10 +19,12 @@ type Parameter = {
 
 // 다른 클래스를 닫게 하려면 하나로 써야..
 
-function toggleClass({ selector: trigger }: Parameter) {
+function toggleClass({ selector: trigger, activeClassname: activeClassname }: Parameter) {
   const triggers = document.querySelectorAll(trigger)
-  const ACTIVE_CLASS = 'is-active'
-  // const ACTIVE_CLASS = activeClassname
+  // const ACTIVE_CLASS = 'is-active'
+  const ACTIVE_CLASS = activeClassname
+
+  let isHamburgerClicked
 
   if (!triggers) return
 
@@ -31,15 +33,18 @@ function toggleClass({ selector: trigger }: Parameter) {
       event.preventDefault()
       event.stopPropagation()
 
-      toggle(element)
       // refector: for 5번 도는..
       // clickEventTarget이 아닌
+      toggle(element)
+
       triggers.forEach(trigger => {
         const isSelf = event.target === element
+        console.log(isSelf)
         if (isSelf) return
 
         removeElementClassname(element)
       })
+      // reset()
     }),
   )
 
@@ -52,16 +57,13 @@ function toggleClass({ selector: trigger }: Parameter) {
   function toggle(element) {
     element.setAttribute('aria-expanded', `${element.classList.contains(ACTIVE_CLASS)}`)
     element.classList.toggle(ACTIVE_CLASS)
-    // element.parentNode.classList.toggle(ACTIVE_CLASS)
+    element.parentNode.classList.toggle(ACTIVE_CLASS)
 
     const triggerNextElement = element?.nextElementSibling as HTMLElement
-    triggerNextElement.classList.toggle(ACTIVE_CLASS)
     triggerNextElement.addEventListener('click', event => event.stopPropagation())
   }
   function removeElementClassname(element) {
-    const triggerNextElement = element?.nextElementSibling as HTMLElement
-    triggerNextElement.classList.remove(ACTIVE_CLASS)
-    // element.parentNode.classList.remove(ACTIVE_CLASS)
+    element.parentNode.classList.remove(ACTIVE_CLASS)
     element.setAttribute('aria-expanded', 'true')
   }
   // clickOutbound() {},

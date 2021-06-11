@@ -143,7 +143,7 @@
 .todo-control-remove {}
 .completed {text-decoration: line-through;}
 
-.statistic {display:flex;justify-content:space-evenly;@include tile-flat;}
+// .statistic {display:flex;justify-content:space-evenly;}
 .statistic-item {text-align:center;}
 .statistic-label {display:block;color:var(--gray400);}
 .statistic-value {display:block;margin:-.25rem 0 0 0;@include subhead;color:var(--gray800);}
@@ -270,7 +270,7 @@
 .pricing-item ul li:before {content:'';display:none;}
 .pricing-item ul li .icon-check {margin:0 .75rem 0 0;border-color:var(--subhead);}
 .pricing-item-upgrade {@include button-primary;width:100%;}
-.pricing-item-more {width:100%;@include button-text;margin:var(--space-following-button) 0 0 0;}
+.pricing-item-more {width:100%;@include button-text;margin:var(--space-after-button) 0 0 0;}
 
 .sheet-toggle {width:6rem;height:.5rem;border-radius:var(--radius400);background:var(--gray100);position:absolute;left:50%;top:.5rem;transform:translateX(-50%);}
 
@@ -295,8 +295,9 @@
 .newneek {}
 .newneek .modal-dialog {font-size:var(--subhead);}
 .newneek-orange {}
-.newneek-asis {}
-.newneek-asis-title {margin:0 0 .5rem 0;@include subhead;text-transform:uppercase;
+.newneek-asis-tobe {display:flex;border:1px solid #000;border-top:none;text-align:center;}
+.newneek-asis {width:50%;padding:2rem 5%;box-sizing:border-box;}
+.newneek-asis-title {margin:0 auto .5rem;@include subhead;
   width: 10rem;
   height: 5rem;
   display: flex;
@@ -306,8 +307,8 @@
   border-radius: 50%;
   color: #fff !important;}
 .newneek-asis-item {}
-.newneek-tobe {}
-.newneek-tobe-title {margin:0 0 .5rem 0;@include subhead;text-transform:uppercase;width: 10rem;
+.newneek-tobe {width:50%;padding:2rem 5%;box-sizing:border-box;}
+.newneek-tobe-title {margin:0 auto .5rem;@include subhead;width: 10rem;
   height: 5rem;
   display: flex;
   align-items: center;
@@ -353,13 +354,13 @@
 
 
 
-.newneek-section1 {display:flex;flex-wrap:wrap;justify-content:space-between;margin:4rem 0 0;padding:12rem 7.5%;background:#fb7800;color:#000;position:relative;}
-.newneek-section1 figure {position:absolute;left:50%;top:0;transform:translate(-50%, -50%);}
-.newneek-section1 figure img {display:block;width:12rem;}
+.newneek-section1 {display:flex;flex-wrap:wrap;justify-content:space-between;margin:4rem 0 0;padding:8rem 7.5%;background:#fb7800;color:#000;position:relative;}
 .newneek-section1 footer {width:100%;margin:4rem 0 0 0;}
 .bubble {max-width:calc(50% - 2rem);}
 .bubble-user {padding:.5rem 1.5rem;border:2px solid #000;background:#000;font-size:var(--body);color:#fff;font-weight:bold;}
 .bubble-text {padding:1.5rem 1.5rem 2rem;border:1px solid #000;background:#ebebeb;}
+
+
 
 
 
@@ -432,11 +433,8 @@
 
 .home-mangrove {
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
-  padding: 2rem 0;
-  margin: 140px 0 0;
+  align-items: center;
   border-top: 2px solid #000;
   background: var(--color-newneek);
   position: relative;
@@ -452,7 +450,7 @@
     max-width: 270px;
     margin-left: 4rem;
     position: absolute;
-    bottom: -2rem;
+    bottom: 2rem;
     transition: all 0.4s ease 0.05s;
   }
   .home-mangrove-object {
@@ -461,15 +459,13 @@
   .mangrove-foot {
     display: flex;
     justify-content: center;
-    align-items: center;
+    width: 100%;
     padding: 1rem 0;
     border-top: 1px solid #000;
     border-bottom: 2px solid #000;
     background: #fff;
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -63px;
+    position: relative;
+    z-index: 1;
     span {
       font-size:var(--subhead);
       color: #000;
@@ -518,3 +514,26 @@
 
 
 .container-overflow {@include container-overflow;}
+
+
+
+
+:root {
+  --zigzag-size: 1rem;
+}
+.zigzag {background:var(--color-newneek);position:relative;}
+.zigzag:before {
+  content: "";
+  width: 100%;
+  height: var(--zigzag-size);
+  position: absolute;
+  left: 0;
+  top: calc(var(--zigzag-size) * -1);
+  background-image:
+    linear-gradient(-45deg, transparent var(--zigzag-size), var(--color-newneek) 0),
+    linear-gradient(45deg, transparent var(--zigzag-size), var(--color-newneek) 0);
+  background-size: var(--zigzag-size) var(--zigzag-size);
+  background-repeat: repeat-x;
+  background-position: -3px 0;
+  transform: rotateX(180deg);
+}

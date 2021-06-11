@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', initializeLoader)
 document.addEventListener('DOMContentLoaded', domEvents)
 
 document.addEventListener('DOMContentLoaded', () => {
+  // event.toggleClass({ selector: '.js-navbar-toggle', activeClassname: 'is-navbar-active' })
   event.toggleClass({ selector: '.js-navbar-toggle' })
   event.toTop({ selector: '.js-to-top' })
   event.positionSticky({ selector: '.js-header', addClass: 'is-sticky-header', isPassed: false })

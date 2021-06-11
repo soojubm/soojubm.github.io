@@ -16,7 +16,7 @@
       <!-- <small class="hero-eyebrow">디자인시스템</small> -->
       <!-- <h1 class="hero-title">더 나은 시스템을<br />연구합니다<i style="font-style:italic;">.</i></h1> -->
       <!-- <h1 class="hero-title">부끄러우니까<br />보지마요<i style="font-style:italic;">!</i></h1> -->
-      <h1 class="hero-title"><span style="display:block;">두 줄의 제목을</span>사용합니다<i style="font-style:italic;">!</i></h1>
+      <h1 class="hero-title"><span style="display:block;">Hero</span>Component<i style="font-style:italic;">!</i></h1>
       <!-- <p class="hero-description">최소한의 가이드로 컴포넌트와 페이지를 만들어 라이브되는 서비스(뉴닉)에 활용했습니다.<span class="linebreak-desktop">특정 플랫폼에 종속되지 않는 시스템을 구축하여 확장하고 개선하는 프로젝트입니다.</span></p> -->
       <p class="hero-description">이 페이지는 특정 도메인이나 서비스에 한정되지 않는 보편적인 디자인 시스템을 만들어 페이지 단위로 확장하여 사용해보는 프로젝트입니다. 현재 계속해서 수정 및 개선 중이라 용법에 대한 가이드 텍스트 등 완결되지 못 한 부분이 많습니다.</p>
       <!-- <small>최소한의 가이드라하면 폰트 무게, 텍스트 색상, </small> -->
@@ -32,30 +32,6 @@
     <img class="hero-obj4" src="/public/images/blob-shape.svg" alt="" />
   </section>
 
-
-  <section class="zigzag">
-    <style>
-      :root {
-        --zigzag-size: 6px;
-      }
-      .zigzag {height:100px;margin:4rem 0;background:var(--color-newneek);position:relative;}
-      .zigzag:before {
-        content: "";
-        width: 100%;
-        height: var(--zigzag-size);
-        position: absolute;
-        left: 0;
-        top: calc(var(--zigzag-size) * -1);
-        background-image:
-          linear-gradient(-45deg, transparent var(--zigzag-size), var(--color-newneek) 0),
-          linear-gradient(45deg, transparent var(--zigzag-size), var(--color-newneek) 0);
-        background-size: var(--zigzag-size) var(--zigzag-size);
-        background-repeat: repeat-x;
-        background-position: -3px 0;
-        transform: rotateX(180deg);
-      }
-    </style>
-  </section>
 
   <article class="design-body">
     <article class="textbox" hidden>
@@ -233,18 +209,37 @@
      src="elva-fairy-800w.jpg"
      alt="요정 옷을 입은 엘바" /> -->
 
+     <nav>
+       <div role="group">
+        <a class="chip is-active" href="" role="link">홈</a>
+        <a class="chip" href="">사이즈</a>
+        <a class="chip" href="">타이포그래피</a>
+        <a class="chip" href="">버튼</a>
+        <a class="chip" href="">칩</a>
+        <a class="chip" href="">텍스트 필드</a>
+      </div>
+     </nav>
+
 
     <article class="design-article js-observer">
       <h1 class="design-article-title">Sizes & Avatars</h1>
-      <p class="design-article-description">작성 중. 아바타는 텍스트, 아이콘, 이미지로 표현할 수 있습니다.</p>
+      <p class="design-article-description">5가지 사이즈를 사용합니다. 아바타는 텍스트, 아이콘, 이미지를 포함할 수 있습니다.</p>
       <blockquote>
-        cell -> size, 2021-05 xsmall 사이즈 추가, 2021-06 사용빈도 ㅏㄱ장 높은 친구르 medium으로 변경
+        2021-05 xsmall 사이즈 추가, todo: tiny를 xxsmall로 변경하고 기본값으로 medium을 사용.
       </blockquote>
+      <div role="group">
+        <a href="" class="design-article-avatar-large"><span class="avatar-badge"></span></a>
+        <a href="" class="design-article-avatar-medium"><span class="avatar-badge"></span></a>
+        <a href="" class="design-article-avatar-small"><span class="avatar-badge"></span></a>
+        <a href="" class="design-article-avatar-xsmall"><span class="avatar-badge"></span></a>
+        <a href="" class="design-article-avatar-tiny"><span class="avatar-badge"></span></a>
+      </div>
+      <hr />
       <div class="avatar-large" style="display:flex;margin-bottom:1rem;">
         <a href="" class="design-article-avatar-large"><span class="avatar-badge"></span></a>
         <div style="display:block;width:1.5rem;height:inherit;border-radius:var(--radius400);background:var(--green100);"></div>
         <div style="display:block;width:calc(100% - 80px - 1.5rem);height:inherit;">
-          <h3 style="font-size:var(--subhead);font-weight:bold;">Large 80px / left 1.5rem / font-size large</h3>
+          <h3 style="font-size:var(--subhead);font-weight:bold;">Large 80px / space 1.5rem / font-size large</h3>
           <p style="color:var(--gray400);">디스크립션을 가질 수 있어요</p>
         </div>
       </div>
@@ -252,24 +247,24 @@
         <a href="" class="design-article-avatar-medium"></a>
         <div style="display:block;width:1rem;height:48px;border-radius:var(--radius400);background:var(--green100);box-sizing:border-box;"></div>
         <div style="display:block;width:calc(100% - 48px - 1rem);height:inherit;">
-          <h3 style="font-weight:bold;font-size:var(--body);">Medium 48px / left 1rem / font-size medium</h3>
+          <h3 style="font-weight:bold;font-size:var(--body);">Medium 48px / space 1rem / font-size medium</h3>
           <p style="color:var(--gray400);">디스크립션을 가질 수 있어요</p>
         </div>
       </div>
       <div style="display:flex;align-items:center;margin-bottom:1rem;">
         <a href="" class="design-article-avatar-small"></a>
         <div style="display:block;width:1rem;height:32px;border-radius:var(--radius400);background:var(--green100);box-sizing:border-box;"></div>
-        <div style="display:block;width:calc(100% - 32px - 1rem);height:32px;line-height:32px;">Small 32px / left 1rem / font-size medium</div>
+        <div style="display:block;width:calc(100% - 32px - 1rem);height:32px;line-height:32px;">Small 32px / space 1rem / font-size medium</div>
       </div>
       <div style="display:flex;align-items:center;margin-bottom:1rem;">
         <a href="" class="design-article-avatar-xsmall"></a>
         <div style="display:block;width:.5rem;height:24px;border-radius:var(--radius400);background:var(--green100);box-sizing:border-box;"></div>
-        <div style="display:block;width:calc(100% - 24px - .5rem);height:24px;line-height:24px;">xSmall 24px / left .5rem / font-size medium / Tags</div>
+        <div style="display:block;width:calc(100% - 24px - .5rem);height:24px;line-height:24px;">xSmall 24px / space .5rem / font-size medium / Tags</div>
       </div>
       <div style="display:flex;">
         <a href="" class="design-article-avatar-tiny"></a>
         <div style="display:block;width:.5rem;height:inherit;border-radius:var(--radius400);background:var(--green100);box-sizing:border-box;"></div>
-        <div style="display:block;width:calc(100% - 16px - .5rem);height:inherit;font-size:var(--caption);line-height:16px;">Tiny 16px / left .5rem / font-size tiny / tags, toggle</div>
+        <div style="display:block;width:calc(100% - 16px - .5rem);height:inherit;font-size:var(--caption);line-height:16px;">Tiny 16px / space .5rem / font-size tiny / tags, toggle</div>
       </div>
       <!-- <div class="number">
         <div class="number-card">8</div>
@@ -329,6 +324,10 @@
       <p class="design-article-description">작성 중.</p>
       <!-- <li>asap의 dash를 마이너스로 쓰면 어색. 무게가 살짝 다름.</li> -->
 
+      <button class="user-logout js-default-font" title="change theme">
+        <span class="user-logout-icon"><i class="icon-moon"></i></span>
+        시스템 폰트로 보기
+      </button>
 
       <div class="design-typograph-group">
         <div class="design-typograph-item">
@@ -357,17 +356,20 @@
         </div>
       </div> -->
       <article class="design-typograph-size">
-        <h3 class="design-typograph-size-title" style="margin-top:-.75rem;font-size:var(--title);">xLarge <span>2rem / 32px</span></h3>
-        <button class="design-typograph-size-toggle js-toggle"><i class="icon-caret"></i></button>
+        <h3 class="design-typograph-size-title" style="font-size:var(--title);">XLarge <span>2rem / 32px</span></h3>
+        <h3 class="design-typograph-size-title" style="margin:.75rem 0;font-size:var(--subhead);">Large <span>1.125rem / 18px</span></h3>
+        <h3 class="design-typograph-size-title" style="margin:.5rem 0;font-size:var(--body);">Medium <i class="tag" style="margin-left:.5rem;">기본크기</i> <span>.875rem / 14px</span></h3>
+        <h3 class="design-typograph-size-title" style="font-size:var(--caption);">Small <span>.75rem / 12px</span></h3>
+        <button class="design-typograph-size-toggle js-toggle">열기</button>
         <p>페이지 레벨의 제목에 사용합니다.</p>
         <div role="group" style="margin-top:2rem;">
           <span class="tag" data-appearance="secondary">제목heading</span>
           <span class="tag">타이틀Title</span>
         </div>
       </article>
-      <article class="design-typograph-size">
+      <!-- <article class="design-typograph-size">
         <h3 class="design-typograph-size-title" style="font-size:var(--subhead);">Large <span>1.125rem / 18px</span></h3>
-        <button class="design-typograph-size-toggle js-toggle"><i class="icon-caret"></i></button>
+        <button class="design-typograph-size-toggle js-toggle">열기</button>
         <p>카드, 아티클 등 소제목에 사용합니다.</p>
         <p>포스트, 약관 등 텍스트 중심의 콘텐츠 페이지에서는 본문으로 사용할 수 있습니다.</p>
         <div role="group" style="margin-top:2rem;">
@@ -379,8 +381,8 @@
         </div>
       </article>
       <article class="design-typograph-size">
-        <h3 class="design-typograph-size-title">Medium <span>.875rem / 14px</span></h3>
-        <button class="design-typograph-size-toggle js-toggle"><i class="icon-caret"></i></button>
+        <h3 class="design-typograph-size-title" style="font-size:var(--body);">Medium <i class="tag" style="margin-left:.5rem;">기본크기</i> <span>.875rem / 14px</span></h3>
+        <button class="design-typograph-size-toggle js-toggle">열기</button>
         <p>기본 텍스트.</p>
         <div role="group" style="margin-top:2rem;;">
           <span class="tag" data-appearance="secondary">본문body</span>
@@ -388,7 +390,7 @@
       </article>
       <article class="design-typograph-size">
         <h3 class="design-typograph-size-title" style="font-size:var(--caption);">Small <span>.75rem / 12px</span></h3>
-        <button class="design-typograph-size-toggle js-toggle"><i class="icon-caret"></i></button>
+        <button class="design-typograph-size-toggle js-toggle">열기</button>
         <p>벨리데이션 피드백 등 도움말 맥락에서 사용합니다.</p>
         <div role="group" style="margin-top:2rem;">
           <span class="tag" data-appearance="secondary">제목heading</span>
@@ -398,12 +400,12 @@
           <span class="tag" data-appearance="secondary">본문body</span>
           <span class="tag">도움말helper text</span>
         </div>
-      </article>
+      </article> -->
     </article>
 
     <article class="design-article js-observer">
       <h1 class="design-article-title">Tiles</h1>
-      <p class="design-article-description">주로 제목과 디스크립션 다음의 콘텐츠의 어포던스를 높이기 위해 사용합니다. 클릭할 수 있는 타일과 클릭할 수 없는 타일은 시각적으로 구분합니다. 클릭할 수 있는 타일은 타일 전체가 클릭 영역일 수도 있고 타일 내부에 클릭할 수 있는 요소가 있을 수도 있습니다.</p>
+      <p class="design-article-description">제목, 디스크립션 이외의 콘텐츠를 강조할 때 사용합니다. 클릭할 수 있는 타일과 클릭할 수 없는 타일을 시각적으로 구분합니다. 클릭할 수 있는 타일이란 타일 내부에 클릭할 수 있는 요소가 존재하는 경우를 포함합니다.</p>
       <div class="design-outer-flat">
         <b>flat</b> is non clickable. no one.
       </div>
@@ -419,12 +421,10 @@
     </article>
 
     <article class="design-article js-observer">
-      <h1 class="design-article-title">Grid System ? Spacing System 🔥</h1>
-      <p class="design-article-description">12 column grid 등 엄격한 그리드 시스템을 사용하지 않습니다. 모바일 퍼스트로 사고하고 가로 스크롤로 설계. 일반적인 그리드 시스템을 대신하여 컨테이너 크기와 클릭할 수 있는 하나의 콘텐츠 크기를 정의하는 것이 좋습니다. 가능하면 하나의 칼럼을 유지하고 4개 이상의 칼럼을 나누지 않습니다.</p>
+      <h1 class="design-article-title">Grid System 🔥</h1>
+      <p class="design-article-description">12 column grid 등 엄격한 그리드 시스템을 사용하지 않습니다. 최대 3~4개 칼럼을 사용하고 이때 사용하는 칼럼의 크기를 정의합니다. 모바일 퍼스트. 리스트는 언제나 가로 정렬(가로 스크롤)될 가능성이 있습니다.</p>
       <blockquote>
-        [role=group] ex) button group
-        <br />
-        [role=listbox] ex) tag listbox
+        [role=group] vs [role=listbox] ex) button group, tag listbox
       </blockquote>
       <div style="display:flex;align-items:center;height:10rem;border:var(--border100);border-radius:var(--radius400);text-align:center;font-size:var(--caption);position:relative;">
         <div class="space" style="width:5%;"><span class="tag">5%</span></div>
@@ -434,16 +434,6 @@
         <div class="space" style="width:5%;"><span class="tag">5%</span></div>
       </div>
 
-      <!-- <p>버튼 그룹은 vertical과 horizental. horizental에서도 primary를 먼저 마크업해야 합니다.</p>
-      <footer class="buttongroup" role="group">
-        <button class="buttongroup-primary">프라이머리</button>
-        <button class="buttongroup-secondary">세컨더리</button>
-      </footer>
-      <hr />
-      <footer class="buttongroup is-vertical" role="group">
-        <button class="buttongroup-primary">프라이머리</button>
-        <button class="buttongroup-secondary">세컨더리</button>
-      </footer> -->
       <hr />
       
       <div class="spacing-card">
@@ -453,7 +443,7 @@
         <div class="space" style="height:100%;position:absolute;left:calc(100% - 1.5rem);right:0;top:0;bottom:0;z-index:0;"><span class="tag">1.5rem</span></div>
         <h4 class="typography-subhead" style="font-size:var(--subhead);">선약이 있어서 ✋ <span style="display:block;">자아실현은 못할 것 같아요.</네무></h4>
         <div class="space" style="height:1rem;"><span class="tag">1rem</span></div>
-        <p class="typography-paragraph">서브헤드와 디스크립션 혹은 패러그라프는 이렇게 사용하세요. 타이틀의 행간이 조정되었기 때문에 시각보정이 필요할 수도 있어요. leading과 tailing이 텍스트인 경우.</p>
+        <p class="typography-paragraph">서브헤드와 디스크립션 혹은 패러그라프는 이렇게 사용하세요. 타이틀의 행간이 조정되었기 때문에 시각보정이 필요할 수도 있어요.</p>
         <div class="space" style="height:2rem;"><span class="tag">2rem</span></div>
         <time class="typography-caption">10 January, 2020</time>
         <!-- <footer class="card-foot">
@@ -462,36 +452,34 @@
         </footer> -->
       </div>
 
+      <!-- <hr />
+      <footer class="buttongroup">
+        <button class="buttongroup-primary">프라이머리</button>
+        <button class="buttongroup-secondary">세컨더리</button>
+      </footer>
+      <hr />
+      <footer class="buttongroup is-vertical">
+        <button class="buttongroup-primary">프라이머리</button>
+        <button class="buttongroup-secondary">세컨더리</button>
+      </footer> -->
+
+            <!-- <p>버튼 그룹은 vertical과 horizental. horizental에서도 primary를 먼저 마크업해야 합니다.</p>
+
+      <hr /> -->
+
       <hr />
 
-      <div class="container-overflow temp8" style="display:flex;max-width:375px;">
+      <div class="temp8" style="display:flex;max-width:375px;">
         <div>
-          <figure style="display:flex;align-items:center;justify-content:center;
-          width:80px;height:80px;margin:0 0 .5rem 0;border-radius:var(--radius400);background:indianred;font-size:var(--title);">🦁</figure>
+          <figure>🦁</figure>
           <span>수줍이</span>
         </div>
-        <div style="width:80px;margin-right:1rem;text-align:center;    background: var(--gray0);
-        border: var(--border100);
-        border-radius: var(--radius400);
-        padding: 1rem;">
-          <figure style="display:flex;align-items:center;justify-content:center;
-          width:80px;height:80px;margin:0 0 .5rem 0;border-radius:var(--radius400);background:indianred;font-size:var(--title);">🦁</figure>
+        <div>
+          <figure>🦁</figure>
           <span>수줍이</span>
         </div>
-        <div style="width:80px;margin-right:1rem;text-align:center;    background: var(--gray0);
-        border: var(--border100);
-        border-radius: var(--radius400);
-        padding: 1rem;">
-          <figure style="display:flex;align-items:center;justify-content:center;
-          width:80px;height:80px;margin:0 0 .5rem 0;border-radius:var(--radius400);background:indianred;font-size:var(--title);">🦁</figure>
-          <span>수줍이</span>
-        </div>
-        <div style="width:80px;margin-right:1rem;text-align:center;    background: var(--gray0);
-        border: var(--border100);
-        border-radius: var(--radius400);
-        padding: 1rem;">
-          <figure style="display:flex;align-items:center;justify-content:center;
-          width:80px;height:80px;margin:0 0 .5rem 0;border-radius:var(--radius400);background:indianred;font-size:var(--title);">🦁</figure>
+        <div>
+          <figure>🦁</figure>
           <span>수줍이</span>
         </div>
       </div>
@@ -514,7 +502,7 @@
 
     <article class="design-article js-observer">
       <h1 class="design-article-title">Palettes</h1>
-      <p class="design-article-description">다크테마를 위한 컬러셋을 별도로 정의하지 않습니다.</p>
+      <p class="design-article-description">다크테마를 위한 컬러셋, 인버트 스타일을 별도로 정의하지 않습니다.</p>
       <!-- <blockquote style="margin:2rem 0;">
         gray100 변수를 사용할 때 container-border-color와 같은 시멘틱한 네이밍으로 한 번 더 추상화 하세요.
       </blockquote> -->
@@ -564,12 +552,12 @@
         <figure class="color-item is-primary100">
           <div></div>
           <h3>green100</h3>
-          <span>bg / </span>
+          <span>bg</span>
         </figure>
         <figure class="color-item is-primary200">
           <div></div>
           <h3>green800</h3>
-          <span>CTA</span>
+          <span>accent / text</span>
         </figure>
         <figure class="color-item is-red800">
           <div></div>
@@ -579,7 +567,7 @@
         <figure class="color-item">
           <div style="background:gold"></div>
           <h3>gold</h3>
-          <span>accent / sample</span>
+          <span>accent</span>
         </figure>
         <!-- <figure class="color-item is-gradient">
           <div></div>
@@ -615,7 +603,10 @@
 
     <article class="design-article js-observer">
       <h1 class="design-article-title">Chips ☀️</h1>
-      <p class="design-article-description">항상 action이 발생하고 반영됩니다. content swicher, selection 용도가 다양하기 때문에 단일 선택, 다중 선택, 삭제 여부에 따라 적절한 힌트를 제공하세요. 맥락이 다른 chip을 나열할 수도 있습니다. 스몰 사이즈는 Tags. 텍스트 온리. 카테고리 혹은 키워드 리스트에서 사용. role="listbox" aria-orientation="horizontal"</p>
+      <p class="design-article-description">단일 선택 / 다중 선택, 삭제 여부에 따라 적절한 힌트를 제공하세요. 맥락이 다른 chip을 나열할 수도 있습니다. 스몰 사이즈(Tags)는 키워드 리스트, 뱃지로 사용할 수 있으며 아이콘을 포함할 수 없습니다. role="listbox" aria-orientation="horizontal"</p>
+      <blockquote>
+        todo: 버튼 스몰, 칩 라지, 칩 스몰 구분해야 함.
+      </blockquote>
       <div class="design-article-chip" role="group">
         <!-- <span class="design-article-chip-tiny">12</span> -->
         <button class="design-article-chip-small">Small</button>
@@ -709,7 +700,7 @@
 
     <article class="design-article js-observer">
       <h1 class="design-article-title">Checkboxes</h1>
-      <p class="design-article-description">세로 정렬로만 사용하세요. 가로 정렬이 필요한 경우, chip 스타일을 사용합니다.</p>
+      <p class="design-article-description">다중선택. 세로 정렬로만 사용하세요. 가로 정렬이 필요한 경우, 5개 이상의 옵션이 존재하는 경우우에는 chip 스타일을 사용하세요.</p>
       <blockquote>
         ✨ 더 강조되는 형태의 전체 선택 체크박스
       </blockquote>
@@ -738,7 +729,7 @@
 
     <article class="design-article js-observer">
       <h1 class="design-article-title">Radioes</h1>
-      <p class="design-article-description">선택된 기본 옵션이 필요합니다. 5개 이하의 옵션에서 사용하세요.</p>
+      <p class="design-article-description">단일선택. 하나의 옵션을 필수로 선택해야 하기 때문에 기본 선택 옵션이 필요합니다. 세로 정렬로만 사용하세요. 가로 정렬이 필요한 경우, 5개 이상의 옵션이 존재하는 경우우에는 chip 스타일을 사용하세요.</p>
       <!-- (리액트에서 id 관련 이슈 input in label.) -->
       <fieldset role="radiogroup">
         <legend>radiogroup legend</legend>
@@ -852,7 +843,7 @@
 
     <article class="design-article js-observer">
       <h1 class="design-article-title">Select</h1>
-      <p class="design-article-description">네이티브와 커스텀.</p>
+      <p class="design-article-description">콘텐츠를 소팅할 때 사용합니다. textfield 스타일과 구분.</p>
       <div class="textfield is-text">
         <label class="textfield-label" for="select2">Sort by</label>
         <select class="textfield-input"id="select2">
@@ -866,8 +857,7 @@
         <span>현대카드 The Green</span>
         <span class="selectbox-indicator" role="img"><i class="icon-caret"></i></span>
       </div>
-      <hr />
-      <article class="sheet">
+      <article class="sheet" style="margin-top:1rem;">
         <!-- <h3 class="sheet-title">정렬하기</h3> -->
         <!-- <hr /> -->
         <button style="width:100%;display:flex;align-items:center;margin:0 0 1rem 0;justify-content:space-between;font-size:var(--subhead);">
@@ -892,7 +882,7 @@
 
     <article class="design-article js-observer">
       <h1 class="design-article-title">Seperator</h1>
-      <p class="design-article-description">섹션을 구획할 때 컴포넌트에 border 스타일링하는 대신 hr 태그를 사용하면 의미론적으로 주제를 분리할 수 있고 컴포넌트의 고유성을 유지할 수 있습니다.</p>
+      <p class="design-article-description">컴포넌트의 border 스타일링으로 섹션을 구획하지 마세요. hr 태그를 사용하면 의미론적으로 주제를 분리할 수 있고 컴포넌트의 고유성을 유지할 수 있습니다.</p>
       <blockquote>
         role=separator
       </blockquote>
@@ -905,7 +895,7 @@
 
     <article class="design-article js-observer">
       <h1 class="design-article-title">Breadcrumb</h1>
-      <p class="design-article-description">페이지 레벨이 3단계 이상일 때 사용합니다. 캠페인을 위한 랜딩 페이지에서도 사용할 수 있습니다.</p>
+      <p class="design-article-description">페이지 레벨이 3단계 이상일 때 사용합니다. 공유, 캠페인 등을 통한 접근이 많은 페이지에서도 사용을 고려할 수 있습니다.</p>
       <!-- <p>(법적으로 혹은 PG사에서 체크할 때 상품 리스트 페이지에서 이슈가 있었음)</p> -->
       <nav class="breadcrumb" aria-label="breadcrumb">
         <a class="breadcrumb-item breadcrumb-home" href="/">홈</a>
@@ -938,9 +928,9 @@
       <h1 class="design-article-title">Text Lists</h1>
       <p class="design-article-description">작성 중.</p>
       <blockquote>
-        텍스트 노드로 리스트업하는 경우에만 리스트 태그(li)로 마크업하세요. (role=listitem)
+        텍스트로 리스트업하는 경우에만 리스트 태그(li)로 마크업. (role=listitem)
       </blockquote>
-      <ul class="list-sample" style="margin:1rem 0;border:var(--border100);border-radius:var(--radius400);padding:1.5rem;">
+      <ul class="list-sample" style="margin:1rem 0;border:var(--border100);border-radius:var(--radius400);padding:1rem 1.5rem;">
         <li title="unordered list, level 1">순서가 없는 리스트
           <ul>
             <li title="unordered list, level 2">순서가 없는 리스트</li>
@@ -949,7 +939,7 @@
         </li>
         <li>순서가 없는 리스트</li>
       </ul>
-      <ol class="list-sample" style="margin:1rem 0;border:var(--border100);border-radius:var(--radius400);padding:1.5rem;">
+      <ol class="list-sample" style="margin:1rem 0;border:var(--border100);border-radius:var(--radius400);padding:1rem 1.5rem;">
         <li>순서가 있는 리스트
           <ol>
             <li>순서가 있는 리스트</li>
@@ -967,11 +957,11 @@
       <p class="design-article-description">작성 중.</p>
       <blockquote>
         <ul>
-          <li>라틴 소문자일 때 숫자나 한글, 대문자보다 속공간 발생.</li>
+          <li>라틴 소문자일 때 숫자나 한글, 대문자보다 속공간 큼.</li>
           <li>기본적으로 레이블은 gray400을 사용합니다. 입력필드와 써머리에서는 gray800을 사용할 수 있습니다. 대비, 위치로 위계가 충분히 확보되기 때문에.</li>
         </ul>
       </blockquote>
-      <div class="statistic">
+      <div class="statistic" style="display:flex;justify-content:space-evenly;padding:1.5rem;border:var(--border100);border-radius:var(--radius400);">
         <div class="statistic-item">
           <i class="statistic-label">팔로워</i>
           <span class="statistic-value">21,682</span>
@@ -1039,7 +1029,7 @@
 
     <article class="design-article js-observer js-tab">
       <h1 class="design-article-title">Tab</h1>
-      <p class="design-article-description">맥락이 같은 콘텐츠를 선택에 따라 하나의 뷰에 표현할 때 사용합니다. 탭이 중첩되지 않도록 플로우를 설계하는 것이 중요합니다. 콘텐츠 필터링을 위해서는 chip 스타일을 사용합니다.<p>
+      <p class="design-article-description">같은 맥락의 콘텐츠를 선택에 따라 하나의 뷰에 표현할 때 사용합니다. 탭이 중첩되지 않도록 플로우를 설계하는 것이 중요합니다. 콘텐츠 필터링을 위해서는 chip 스타일을 사용합니다.<p>
       <blockquote>
         <i>🔨</i> 브라우저 히스토리 / 스크롤스파이 / 4~5개 제한? 가로 스크롤?
       </blockquote>
@@ -1059,7 +1049,7 @@
       <ul class="design-article-description">
         <li>hover와 focus 상태에 개별적인 스타일링 안 할 수 있는 방법은?</li>
         <li>프라이머리primary 스타일은 한 페이지에 한 개.</li>
-        <li>binary selection(?choice)에서 프라이머리는 세컨더리와 함께 사용하지 마세요.</li>
+        <li>binary selection(?choice)에서 프라이머리와 세컨더리를 함께 사용할 수 없습니다.</li>
         <li>네이밍: style = solid/outline/plain/text (유아이 라이브러리에 어울림) appearance = link / subtle / primary, space = compact/fullwidth</li>
         <li>aria-expanded / role="img" aria-label="plus icon" / aria-pressed={activated ? "true" : "false"}</li>
         <li>
@@ -1147,21 +1137,21 @@
 
     <article class="design-article js-observer">
       <h1 class="design-article-title">Tooltip</h1>
-      <p class="design-article-description">툴팁은 항상 트리거의 아래에 열립니다.</p>
+      <p class="design-article-description">플로우나 기능에 대한 설명으로 사용할 수 없습니다. </p>
       <blockquote>
         페이지 로딩과 동시에 툴팁이 열려 있는 경우 doorhanger가 필요하다.
       </blockquote>
       <aside class="tooltip" role="tooltip">
-        <span class="tooltip-target">툴팁 <i>?</i></span>
-        <div class="tooltip-content" hidden>
-          <p>제1항의 해임건의는 국회재적의원 3분의 1 이상의 발의에 의하여 국회재적의원 과반수의 찬성이 있어야 한다.</p>
+        <span class="tooltip-target" aria-describedby="">툴팁 <i>?</i></span>
+        <div class="tooltip-content" id="" hidden>
+          <p>여기에 role=tooltip. 제1항의 해임건의는 국회재적의원 3분의 1 이상의 발의에 의하여 국회재적의원 과반수의 찬성이 있어야 한다.</p>
         </div>
       </4aside>
     </article>
 
     <article class="design-article js-observer">
       <h1 class="design-article-title">Notifications</h1>
-      <p class="design-article-description">유저의 액션에 대한 피드백, 시스템/브라우저의 상태에 대한 피드백을 주목도를 높여서 제공합니다.</p>
+      <p class="design-article-description">유저의 액션에 대한 피드백, 시스템/브라우저의 상태에 대한 피드백은 주목도를 높여서 제공합니다.</p>
       <blockquote>
         toast=>snackbar(withAction).<br />
         single line / multiple lines(head,body 텍스트 나눌 필요 없을 듯)<br />
@@ -1533,7 +1523,7 @@
 
     <article class="design-article js-observer">
       <h1 class="design-article-title">Slider</h1>
-      <p class="design-article-description">서드파티 라이브러리 없이 가로 스크롤을 활용합니다. 터치 슬라이드 제스쳐를 지원하지 않는 환경(데스크탑 등)을 위해 arrow 버튼을 제공하세요. 모바일 환경에서는 arrow 버튼을 제공하지 않습니다.</p>
+      <p class="design-article-description">서드파티 라이브러리 없이 가로 스크롤을 활용합니다. 터치 제스쳐를 지원하지 않는 환경(데스크탑 등)에서 arrow 버튼을 제공하세요. 모바일 환경에서는 arrow 버튼을 제공하지 않습니다.</p>
       <section class="slider">
         <div class="slider-viewer" style="margin-right:-50%;padding-right:200px;">
           <a class="slider-viewer-slide" href="#profile">
@@ -1852,7 +1842,7 @@
 
     <article class="design-article js-observer">
       <h1 class="design-article-title">Stepper</h1>
-      <p class="design-article-description">모바일 퍼스트. 아코디언(optional), 버튼(optional), 가로레이아웃.</p>
+      <p class="design-article-description">모바일 퍼스트(가로레이아웃 후순위). 아코디언(optional), 버튼(optional), 타임라인 / 히스토리와 비슷한 맥락</p>
       <section class="step">
         <div class="step-item is-active">
           <span class="step-item-icon">1</span>

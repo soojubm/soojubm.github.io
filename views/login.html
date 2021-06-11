@@ -8,12 +8,27 @@
     <fieldset></fieldset>
     <div class="login-email textfield">
       <label class="textfield-label" for="login-email">이메일</label>
-      <input class="textfield-input js-input-email" type="text" name="email" id="login-email" placeholder="soojubm@gmail.com" autofocus aria-describedby="name-hint" />
+      <input
+        class="textfield-input js-input-email"
+        type="text"
+        name="email"
+        id="login-email"
+        placeholder="soojubm@gmail.com"
+        autofocus
+        aria-describedby="name-hint"
+      />
       <small class="textfield-helper" id="name-hint" role="alert">이메일을 입력하세요. <span hidden>Enter an email address.</span></small>
     </div>
     <div class="login-password textfield">
       <label class="textfield-label" for="loginin-password">비밀번호</label>
-      <input class="textfield-input js-input-password" type="password" title="비밀번호" name="password" id="loginin-password" placeholder="8자 이상" />
+      <input
+        class="textfield-input js-input-password"
+        type="password"
+        title="비밀번호"
+        name="password"
+        id="loginin-password"
+        placeholder="8자 이상"
+      />
       <small class="textfield-helper" role="alert">비밀번호를 입력하세요.<span hidden>Enter a password.</span></small>
       <a class="textfield-link" href="forgot.html">비밀번호를 잊으셨나요? <small hidden>Forgot your password?</small></a>
     </div>
@@ -29,14 +44,18 @@
         <button class="login-social-facebook">페이스북으로 시작하기 <small hidden>Sing in with Facebook</small></button>
       </div>
       <p class="login-option">
-        계정이 없으신가요?<small hidden>Need an account?</small> <a class="login-option-link" href="signup.html">지금 가입하기<small hidden>Join Soojubm for free</small></a>
+        아직 계정이 없으신가요?<small hidden>Need an account?</small>
+        <a class="login-option-link" href="signup.html">지금 가입하기<small hidden>Join Soojubm for free</small></a>
       </p>
     </footer>
   </form>
 </main>
 
 <style>
-  .navbar, .footer {display:none;}
+  .navbar,
+  .footer {
+    display: none;
+  }
   .textfield-helper {
     display: none;
   }

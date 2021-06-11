@@ -5,7 +5,7 @@
 
 .checkout {@include container-large;}
 .checkout-step {}
-.checkout-head {padding:2rem 0 4rem;position:relative;}
+.checkout-head {padding:0 0 4rem;position:relative;}
 .checkout-head-background {display:none;background:var(--gray100);position:absolute;left:-200%;right:-200%;top:0;bottom:0;z-index:-1;}
 .checkout-head-eyebrow {margin-bottom:.5rem;font-size:var(--body);color:var(--gray400);}
 .checkout-head-title {@include title;}
@@ -58,7 +58,8 @@
 .checkout-foot-helper {margin:0 0 1rem 0;}
 .checkout-foot-pay {@include button-primary;width:50%;max-width:20rem;}
 
-@media (--viewport-small) {
+@media (--viewport-large) {
+  .checkout {max-width:var(--width-medium);}
   .checkout-product {float:none;width:100%;margin:-2rem auto 2rem;padding:1.5rem 2rem;}
   .checkout-shipping {max-width:100%;padding-right:0;}
   // .checkout-foot {

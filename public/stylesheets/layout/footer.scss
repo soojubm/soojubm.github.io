@@ -3,11 +3,11 @@
 .subscribe-title {@include subhead;}
 .subscribe-description {margin:1rem 0 2rem 0;}
 .subscribe-field {margin:2rem 0 0;}
-.subscribe-submit {@include button-primary;width:50%;margin-top:var(--space-following-button);}
+.subscribe-submit {@include button-primary;width:50%;margin-top:var(--space-after-button);}
 .subscribe-helper {display:block;margin:.5rem 0 0 0;font-size:var(--caption);}
 
 .footer {max-width:var(--width-large);margin:0 auto;padding:4rem var(--grid-margin) 8rem;background:var(--gray0);position:relative;z-index:4;}
-.footer-background {@include bleeding;background:var(--gray0);}
+.footer-background {@include bleeding;background:var(--gray100);}
 
 .footer-sitemap {display:flex;position:relative;}
 .footer-sitemap-title {margin:0 0 1rem 0;@include subhead;}
