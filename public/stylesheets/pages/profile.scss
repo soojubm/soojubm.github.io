@@ -60,8 +60,8 @@
 // .accordion-trigger:hover {@include hover-item;}
 .accordion-trigger-icon {@include box-small;}
 .accordion-panel {height:0;overflow:hidden;transition:all .25s;}
-.is-active .accordion-trigger {color:var(--color-primary);}
-.is-active .accordion-panel {height:auto;padding:0 0 2rem;}
+.accordion-trigger.is-active  {color:var(--color-primary);}
+.is-active + .accordion-panel {height:auto;padding:0 0 2rem;}
 
 .card {display:block;background:var(--gray0);position:relative;@include container-card;}
 .card-more {@include box-small;display:none;position:absolute;right:.5rem;top:.5rem;}
@@ -107,6 +107,6 @@
   .profile-user-toggle {display:flex;align-items:center;justify-content:space-between;}
   .profile-user-info {display:none;}
 
-  .is-active .profile-user-toggle-icon {transform:rotate(180deg);}
-  .is-active .profile-user-info {display:block;margin-bottom:4rem;}
+  .is-active  + .profile-user-toggle-icon {transform:rotate(180deg);}
+  .is-active  + .profile-user-info {display:block;margin-bottom:4rem;}
 }

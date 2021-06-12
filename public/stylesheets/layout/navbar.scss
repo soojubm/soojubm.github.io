@@ -28,20 +28,20 @@
 .search-recommend-item {}
 .is-active + .search-form {display:block;}
 
-
+// todo dropdown width mixin
 .navbar-notification {margin:0 .5rem;position:relative;}
 .navbar-notification-trigger {@include box-small;}
 .navbar-notification-trigger i {vertical-align:middle;color:var(--gray800);}
 .navbar-notification-trigger img {width:20px;pointer-events:none;}
 .navbar-notification-trigger em {display:block;width:.5rem;height:.5rem;border-radius:50%;border:var(--border100);box-sizing:border-box;background:var(--red800);text-indent:-9999px;position:absolute;right:.5rem;top:.5rem;}
-.navbar-notification-menu {width:400px;height:0;@include container-card;position:absolute;top:40px;right:-39px;z-index:4;transform:scale(0);transform-origin:right top}
+.navbar-notification-menu {width:100%;max-width:400px;height:0;@include container-card;position:absolute;top:40px;right:-39px;z-index:4;transform:scale(0);transform-origin:right top}
 .navbar-notification-menu:before {content:'';display:block;position:absolute;left:50%;right:0;top:-8px;bottom:0;}
 .navbar-notification-menu-title {margin:var(--space-leading-subhead) 0 0 0;font-size:var(--subhead);}
 .navbar-notification-menu-item {padding:.5rem 1rem;cursor:pointer;position:relative;}
 .navbar-notification-menu-item:hover {background:var(--gray100);}
 .navbar-notification-menu footer {border-top:var(--border100);margin:1rem -1.5rem -1.5rem;}
 .navbar-notification-menu footer button {@include button-tertiary;width:100%;background:none;}
-.navbar-notification-empty {width:400px;height:0;padding:2rem 0;box-sizing:border-box;background:var(--gray0);box-shadow:var(--shadow400);position:absolute;top:36px;right:0;z-index:4;transform:scale(0);text-align:center;font-size:var(--caption);color:var(--gray400);transform-origin:right top}
+.navbar-notification-empty {width:100%;max-width:400px;height:0;padding:2rem 0;box-sizing:border-box;background:var(--gray0);box-shadow:var(--shadow400);position:absolute;top:36px;right:0;z-index:4;transform:scale(0);text-align:center;font-size:var(--caption);color:var(--gray400);transform-origin:right top}
 .navbar-notification-empty:before {content:'';display:block;position:absolute;left:50%;right:0;top:-8px;bottom:0;}
 // todo menu, empty 통일
 .is-active + .navbar-notification-menu,
@@ -63,7 +63,7 @@
 .navbar-user {position:relative;}
 .navbar-user-trigger {display:flex;justify-content:center;align-items:center;height:32px;}
 .navbar-user-trigger-media {@include box-small;background:var(--gray0);border:var(--border100);pointer-events:none;}
-.navbar-user-menu {width:400px;height:0;@include container-card;position:absolute;top:40px;right:0;z-index:4;transform:scale(0);transform-origin:right top;}
+.navbar-user-menu {width:100%;max-width:400px;height:0;@include container-card;position:absolute;top:40px;right:0;z-index:4;transform:scale(0);transform-origin:right top;}
 .is-active + .navbar-user-menu {height:auto;transform:scale(1);}
 
 .user {display:block;height:var(--size-large);color:var(--gray800);position:relative;z-index:1;}

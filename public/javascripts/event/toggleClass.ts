@@ -31,15 +31,29 @@ function toggleClass({ selector: trigger }: Parameter) {
       event.preventDefault()
       event.stopPropagation()
 
+      const target = event.target as HTMLElement
+
+      if (target.classList.contains('is-active')) {
+      }
+
+      triggers.forEach(trigger => {
+        if (target === trigger) return
+        removeElementClassname(trigger)
+      })
+
       toggle(element)
+
       // refector: for 5번 도는..
       // clickEventTarget이 아닌
-      triggers.forEach(trigger => {
-        const isSelf = event.target === element
-        if (isSelf) return
+      // triggers.forEach(trigger => {
+      //   const isSelf = event.target === trigger
 
-        removeElementClassname(element)
-      })
+      //   console.log(event.target)
+
+      //   if (isSelf) return
+
+      //   removeElementClassname(trigger)
+      // })
     }),
   )
 
@@ -59,6 +73,8 @@ function toggleClass({ selector: trigger }: Parameter) {
     triggerNextElement.addEventListener('click', event => event.stopPropagation())
   }
   function removeElementClassname(element) {
+    element.classList.remove(ACTIVE_CLASS)
+
     const triggerNextElement = element?.nextElementSibling as HTMLElement
     triggerNextElement.classList.remove(ACTIVE_CLASS)
     // element.parentNode.classList.remove(ACTIVE_CLASS)
