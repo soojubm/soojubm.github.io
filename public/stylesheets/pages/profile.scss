@@ -26,7 +26,7 @@
 .profile-user-socials-link {display:block;color:var(--gray800);text-decoration:underline;}
 .profile-user-socials-link:hover {color:var(--color-primary);}
 .profile-user-controls {display:flex;margin:2rem 0 1rem;}
-.profile-user-controls-follow {@include button-primary;width:calc(70% - 1rem);}
+.profile-user-controls-follow {@include button-primary;width:calc(70% - var(--space-after-button));}
 .profile-user-controls-message {@include button-tertiary;min-width:auto;width:30%;margin-left:auto;}
 
 

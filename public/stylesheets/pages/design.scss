@@ -14,7 +14,7 @@
 .color-item.is-primary100 div {background:var(--green100);}
 .color-item.is-primary200 div {background:var(--color-primary);}
 .color-item.is-gradient div {background-image:linear-gradient(106deg,var(--red800),var(--color-primary));}
-.color-item div {float:left;@include box-medium;margin:0 1rem 0 0;}
+.color-item div {float:left;@include box-medium;margin:0 .75rem 0 0;}
 .color-item h3 {font-size:var(--body);text-transform:capitalize;}
 .color-item span {color:var(--gray400);}
 
