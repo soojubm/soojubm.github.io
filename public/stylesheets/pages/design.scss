@@ -236,7 +236,7 @@
 .number-card {display:flex;justify-content:center;align-items:center;width:48px;height:64px;background:var(--gray100);border-radius:var(--shadow400);font-size:var(--title);font-weight:bold;margin:0 .25rem;}
 
 .userlist {@include container-card;}
-.userlist header {display:flex;align-items:center;justify-content:space-between;margin:-.5rem 0 1rem 0;}
+.userlist header {display:flex;align-items:center;justify-content:space-between;margin:var(--space-leading-subhead) 0 1rem 0;}
 .userlist header h1 {@include subhead;}
 .userlist header a {font-weight:bold;}
 .userlist .profile-user:hover {@include hover-item;}

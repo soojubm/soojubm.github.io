@@ -70,7 +70,7 @@
 .card-byline {display:flex;margin:.75rem 0 1rem 0;position:relative;}
 .card-byline-avatar {@include box-tiny;margin-right:.5rem;}
 .card-byline-name {line-height:16px;color:var(--gray400);}
-.card-title {padding:1rem 0 0;font-size:var(--body);}
+.card-title {padding:.75rem 0 0;font-size:var(--body);}
 .card-text {padding:.5rem 0 1rem;@include truncate-multi;}
 .card-category {@include tag-eyebrow;position:absolute;left:1rem;top:1rem;}
 .card-date {color:var(--gray400);}
