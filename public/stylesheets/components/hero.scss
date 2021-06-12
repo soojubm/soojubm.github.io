@@ -22,7 +22,7 @@
 .is-scrolled .hero-obj4 {animation:scaleout .4s ease 1s both;}
 
 @media (--viewport-large) {
-  .hero {width:90%;margin-top:-12rem;margin-left:var(--grid-margin);margin-right:var(--grid-margin);}
+  .hero {margin-top:-12rem;margin-left:var(--grid-margin);margin-right:var(--grid-margin);}
   .hero-inner {padding-left:5%;padding-right:5%;}
 }
 

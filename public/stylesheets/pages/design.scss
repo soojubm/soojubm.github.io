@@ -302,7 +302,6 @@
 
 
 .summary {
-  
 }
 .summary-item {display:flex;justify-content:space-between;padding:.25rem 0;}
 .summary-item-label {}
@@ -325,21 +324,18 @@
 .sidebar-item-tag {margin-top:2px;}
 
 
-.sheet {@include tile-elevated;padding-top:1.5rem;}
+.sheet {@include tile-elevated;}
 .sheet-title {@include subhead;}
 .sheet button {position:relative;z-index:1;}
 .sheet button:hover {@include hover-item;}
-
 
 .keywords {@include tile-elevated;}
 .keywords-title {@include subhead;margin:0 0 1rem 0;}
 .keywords-group {}
 .keywords-group-keyword {@include chip;}
 
-
 .outer-flat {@include tile-flat}
 .outer-elevated {@include tile-elevated}
-
 
 .avatarlist {@include tile-elevated;padding:.5rem;color:var(--gray800);}
 .avatarlist:hover {@include hover-item;}

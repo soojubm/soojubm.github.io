@@ -228,7 +228,7 @@
         <a href="" class="design-article-avatar-xsmall"><span class="avatar-badge"></span></a>
         <a href="" class="design-article-avatar-tiny"><span class="avatar-badge"></span></a>
       </div>
-      <hr />
+      <!-- <hr />
       <div class="avatar-large" style="display:flex;margin-bottom:1rem;">
         <a href="" class="design-article-avatar-large"><span class="avatar-badge"></span></a>
         <div style="display:block;width:1.5rem;height:inherit;border-radius:var(--radius400);background:var(--green100);"></div>
@@ -259,7 +259,7 @@
         <a href="" class="design-article-avatar-tiny"></a>
         <div style="display:block;width:.5rem;height:inherit;border-radius:var(--radius400);background:var(--green100);box-sizing:border-box;"></div>
         <div style="display:block;width:calc(100% - 16px - .5rem);height:inherit;font-size:var(--caption);line-height:16px;">Tiny 16px / space .5rem / font-size tiny / tags, toggle</div>
-      </div>
+      </div> -->
       <!-- <div class="number">
         <div class="number-card">8</div>
         <div class="number-card">8</div>
@@ -1043,6 +1043,7 @@
       <ul class="design-article-description">
         <li>hover와 focus 상태에 개별적인 스타일링 안 할 수 있는 방법은?</li>
         <li>프라이머리primary 스타일은 한 페이지에 한 개.</li>
+        <li>유저의 여정에 필요한 기능 등</li>
         <li>binary selection(?choice)에서 프라이머리와 세컨더리를 함께 사용할 수 없습니다.</li>
         <li>네이밍: style = solid/outline/plain/text (유아이 라이브러리에 어울림) appearance = link / subtle / primary, space = compact/fullwidth</li>
         <li>aria-expanded / role="img" aria-label="plus icon" / aria-pressed={activated ? "true" : "false"}</li>
@@ -1094,12 +1095,12 @@
         </div>
         <br />
         <h6 style="margin:0 0 .5rem;font-size:var(--caption);">Sizes</h6>
-        <div>
-          <button class="design-article-tertiary-small" style="margin-bottom:.5rem">Small</button>
+        <div role="group">
+          <button class="design-article-tertiary-small">Small</button>
           <br />
-          <button class="design-article-tertiary" style="margin-bottom:.5rem">Medium</button>
+          <button class="design-article-tertiary">Medium</button>
           <br />
-          <button class="design-article-primary" style="padding:12px 0 15px;font-size:var(--subhead);">
+          <button class="design-article-primary" style="height:auto;padding:12px 0 15px;font-size:var(--subhead);">
             Large
           </button>
         </div>
@@ -1332,6 +1333,41 @@
         </div>
         <div class="card-note">마일리지 적립 200P</div>
         <button class="card-more" hidden><i class="icon-more"></i></button>
+      </div>
+
+      <br />
+
+      
+      <div class="navbar-notification" style="margin-left:auto;">
+        <a class="navbar-notification-trigger js-navbar-toggle" href="#" aria-haspopup="true" aria-expanded="false">
+          <img src="/public/icons/bell.svg" />
+          <em>new</em>
+        </a>
+        <!-- <menu class="navbar-notification-empty">
+          <p>최근 알림 메세지가 없습니다.</p>
+        </menu> -->
+        <menu class="navbar-notification-menu">
+          <h6 class="navbar-notification-menu-title">알림</h6>
+          <a class="navbar-notification-menu-all" href="#">알림 모두 보기</a>
+          <hr />
+          <div class="notification-item">
+            <em class="notification-unread"></em>
+            <figure class="notification-item-avatar"></figure>
+            <b class="notification-item-user">John Cassavetes</b>
+            <time class="notification-item-date" style="position:absolute;right:0;top:0;">5일 전</time>
+            <span class="notification-item-content" style="color:var(--gray400);">comment on <em>John Cassavetes</em></span>
+          </div>
+          <div class="notification-item">
+            <em class="notification-unread">🌱</em>
+            <figure class="notification-item-avatar"></figure>
+            <b class="notification-item-user">John Cassavetes</b>
+            <time class="notification-item-date" style="position:absolute;right:0;top:0;">5일 전</time>
+            <span class="notification-item-content" style="color:var(--gray400);">like on <em>John Cassavetes</em></span>
+          </div>
+          <!-- <footer>
+            <button>알림 전체 보기</button>
+          </footer> -->
+        </menu>
       </div>
 
       <br />

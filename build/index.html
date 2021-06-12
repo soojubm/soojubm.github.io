@@ -211,44 +211,6 @@
         </form>
       </div>
 
-      <div class="navbar-notification" style="margin-left:auto;">
-        <a class="navbar-notification-trigger js-navbar-toggle" href="#" aria-haspopup="true" aria-expanded="false">
-          <img src="/public/icons/bell.svg" />
-          <em>new</em>
-        </a>
-        <!-- <menu class="navbar-notification-empty">
-          <p>최근 알림 메세지가 없습니다.</p>
-        </menu> -->
-        <menu class="navbar-notification-menu">
-          <h6 class="navbar-notification-menu-title">알림</h6>
-          <a
-            href="#"
-            style="position: absolute;
-          right: 1.5rem;
-          top: 1.25rem;"
-            >알림 모두 보기</a
-          >
-          <hr />
-          <div class="notification-item">
-            <em class="notification-unread"></em>
-            <figure class="notification-item-avatar"></figure>
-            <b class="notification-item-user">John Cassavetes</b>
-            <time class="notification-item-date" style="position:absolute;right:0;top:0;">5일 전</time>
-            <span class="notification-item-content" style="color:var(--gray400);">comment on <em>John Cassavetes</em></span>
-          </div>
-          <div class="notification-item">
-            <em class="notification-unread">🌱</em>
-            <figure class="notification-item-avatar"></figure>
-            <b class="notification-item-user">John Cassavetes</b>
-            <time class="notification-item-date" style="position:absolute;right:0;top:0;">5일 전</time>
-            <span class="notification-item-content" style="color:var(--gray400);">like on <em>John Cassavetes</em></span>
-          </div>
-          <!-- <footer>
-            <button>알림 전체 보기</button>
-          </footer> -->
-        </menu>
-      </div>
-
       <div class="navbar-user">
         <button class="navbar-user-trigger js-navbar-toggle" aria-haspopup="menu" aria-expanded="false">
           <span class="navbar-user-trigger-media"><img src="/public/images/soo.png" alt=""/></span>
@@ -334,11 +296,11 @@
         fetchComponent('footer')
       })
 
-      async function fetchData(componentName) {
+      async function fetchComponent(componentName) {
         const selector = `#${componentName}`
         const endpoint = `${componentName}.html`
         const parentElement = document.querySelector(selector)
-        console.log()
+        console.log(componentName, selector, endpoint)
 
         try {
           const response = await fetch(endpoint)
@@ -374,11 +336,10 @@
       }
 
       function detectOnline() {
+        const offlineElement = document.querySelector('.js-offline')
+
         const isOnline = navigator.onLine
-        if (!isOnline) {
-          const offlineElement = document.querySelector('.js-offline')
-          offlineElement.style.display = 'block'
-        }
+        offlineElement.hidden = !isOnline
       }
     </script>
   </body>

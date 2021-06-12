@@ -95,7 +95,7 @@
 // padding .5rem / 1.5rem
 // tile
 @mixin tile-flat {
-  padding: 1.5rem 1.5rem 1.5rem; // 텍스트가 올 때 시각보정. 아이콘이 오면 아이콘에서 margin-top:.5rem?
+  padding: 1.25rem; // 텍스트가 올 때 시각보정. 아이콘이 오면 아이콘에서 margin-top:.5rem?
   border: var(--border100);
   border-radius: var(--radius400);
   box-sizing: border-box;
