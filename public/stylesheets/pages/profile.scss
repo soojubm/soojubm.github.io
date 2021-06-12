@@ -110,3 +110,7 @@
   .is-active  + .profile-user-toggle-icon {transform:rotate(180deg);}
   .is-active  + .profile-user-info {display:block;margin-bottom:4rem;}
 }
+
+@media (max-width:720px) {
+  .profile-tabpanel .card {width: 100%;}
+}
