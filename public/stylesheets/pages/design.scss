@@ -1,6 +1,6 @@
 .color {overflow:hidden;}
 .color-group {display:flex;flex-wrap:wrap;justify-content:space-between;}
-.color-item {width:var(--grid-column);@include tile-flat;margin:1rem 0 0;padding:.5rem;}
+.color-item {width:var(--grid-column);@include tile-flat;margin:.5rem 0 0;padding:.5rem;}
 .color-item:nth-of-type(1) {margin-top:0;}
 .color-item:nth-of-type(2) {margin-top:0;}
 .color-item.is-gray000 div {border:var(--border100);background:var(--gray0);}
@@ -20,7 +20,7 @@
 
 @media (--viewport-small) {
   .color-group {display:block;}
-  .color-item {width:100%;}
+  .color-item {width:100%;overflow:hidden;}
 }
 
 .surface-item div {@include box-medium;box-shadow:var(--shadow400);}
