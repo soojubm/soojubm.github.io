@@ -324,122 +324,34 @@
       <div class="home"></div>
     </div>
 
-    <footer class="footer" role="contentinfo">
-      <!-- <div class="skeleton-screen"></div> -->
-      <div class="footer-background"></div>
-      <aside class="footer-scroll" hidden>
-        <p class="footer-scroll-indicator" hidden aria-hidden="true">
-          스크롤하세요
-        </p>
-        <button class="footer-scroll-bottom js-to-bottom">아래로</button>
-        <button class="footer-scroll-top js-to-top"><i class="icon-arrow"></i> <b hidden aria-hidden="true">맨위로</b></button>
-      </aside>
-      <nav class="footer-sitemap">
-        <h1 class="footer-sitemap-title" hidden aria-hidden="true">
-          하단 사이트맵
-        </h1>
-        <div class="footer-sitemap-item">
-          <h2 class="footer-sitemap-item-title">About</h2>
-          <a class="footer-sitemap-item-link" href="#">교통버스</a>
-          <a class="footer-sitemap-item-link" href="#">택시</a>
-          <a class="footer-sitemap-item-link" href="#">지하철차량</a>
-        </div>
-        <div class="footer-sitemap-item">
-          <h2 class="footer-sitemap-item-title">Contact</h2>
-          <a class="footer-sitemap-item-link" href="#">교통버스</a>
-          <a class="footer-sitemap-item-link" href="#">택시</a>
-          <a class="footer-sitemap-item-link" href="#">지하철차량</a>
-        </div>
-        <div class="footer-sitemap-item">
-          <h2 class="footer-sitemap-item-title" title="or Regal">Terms</h2>
-          <a class="footer-sitemap-item-link" href="#">서비스이용약관</a>
-          <a class="footer-sitemap-item-link" href="#"><strong>개인정보취급방침</strong></a>
-        </div>
-      </nav>
-      <br />
-      <address class="footer-address">
-        <span class="footer-address-logo" style="font-size:var(--title);">🐤</span>
-        <p class="footer-address-slogan" style="margin:1rem 0 0 0;">
-          부끄러우니까 보지마요.
-        </p>
-        <br />
-        <div class="footer-address-info">
-          주식회사 수줍이 / 서울시 강서구 화곡로 1818, 3층<br />
-          <!-- <i class="icon-bullet"></i> -->
-          대표전화 02-1234-5678 / soojubm@gmail.com<br />
-          <!-- <i class="icon-bullet"></i> -->
-          사업자등록번호 888-88-88888 / 대표 수줍이<br />
-          통신판매업신고 2018-서울강서구-1234<br />
-          <abbr title="phone"></abbr>
-        </div>
-        <br />
-        <small class="footer-copyright" role="copyright"
-          >© 2019 soojubm. All rights Reserved.
-          <p>
-            이 제작물은 아모레퍼시픽의 아리따글꼴을 사용하여 디자인 되었습니다.
-          </p>
-        </small>
-      </address>
-    </footer>
+    <div id="sitemap"></div>
+    <div id="footer"></div>
     <aside id="modal"></aside>
-    <!-- <script>
-      var renderTime = function () {
-        var time = new Date();
-        document.querySelector('.clock').textContent = time.toLocaleString(navigator.language || 'en-US', {year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true});
-        // time.toLocaleString(navigator.language || 'en-US', {year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true});
-      };
-      renderTime()
-      setInterval(renderTime, 1000);
-    </script> -->
-
-    <!-- <div>
-      <div class="js-counter1" data-number="54">54%</div>
-      <div class="js-counter2" data-number="80">80%</div>
-    </div> -->
 
     <script>
-      function countUp({ selector: selector }) {
-        if (!selector) return
+      document.addEventListener('DOMContentLoaded', () => {
+        fetchComponent('sitemap')
+        fetchComponent('footer')
+      })
 
-        let number = 0
-        let element = document.querySelector(selector)
-        let elementValue = element.getAttribute('data-number')
+      async function fetchData(componentName) {
+        const selector = `#${componentName}`
+        const endpoint = `${componentName}.html`
+        const parentElement = document.querySelector(selector)
+        console.log()
 
-        if (!elementValue) return
+        try {
+          const response = await fetch(endpoint)
+          if (!response.ok) throw 'Something went wrong.'
 
-        let interval = setInterval(() => {
-          renderNumber()
+          const responseText = await response.text()
 
-          if (number >= elementValue) clearInterval(interval)
-        }, 10)
-
-        function renderNumber() {
-          ++number
-          element.innerHTML = `${number}%`
+          parentElement.innerHTML = responseText
+        } catch (error) {
+          console.log(error)
         }
       }
-
-      setTimeout(() => {
-        countUp({ selector: '.js-counter' })
-        countUp({ selector: '.js-counter2' })
-      }, 2000)
     </script>
-
-    <!-- <script>
-      let start = null
-      const element = document.querySelector('.js-navbar')
-
-      function step(timestamp) {
-        if (!start) start = timestamp
-        const progress = timestamp - start
-        element.style.marginLeft = Math.min(progress / 10, 200) + 'px'
-
-        if (progress >= 5000) return
-        window.requestAnimationFrame(step)
-      }
-
-      window.requestAnimationFrame(step)
-    </script> -->
 
     <script>
       window.addEventListener('online', detectOnline)
@@ -447,9 +359,10 @@
       window.addEventListener('DOMContentLoaded', detectOnline)
       window.addEventListener('DOMContentLoaded', detectBrowser)
 
+      // todo isOnline isEBBrowser 등 모두 유틸성으로 빠지고,
+
       function detectBrowser() {
         const BrowserElement = document.querySelector('.js-browser')
-        if (!BrowserElement) return
 
         const userAgent = navigator.userAgent.toLowerCase()
         const isIEBrowser = userAgent.includes('msie') || userAgent.includes('trident')
@@ -466,23 +379,55 @@
           const offlineElement = document.querySelector('.js-offline')
           offlineElement.style.display = 'block'
         }
-        // window.alert(isOnline ? 'online' : 'offline')
       }
-
-      // let resizeTimer
-      // window.addEventListener('resize', () => {
-      //   document.body.classList.add('resize-animation-stopper')
-      //   clearTimeout(resizeTimer)
-      //   resizeTimer = setTimeout(() => {
-      //     document.body.classList.remove('resize-animation-stopper')
-      //   }, 400)
-      // })
     </script>
   </body>
 </html>
 
-<!-- <i class="cursor"></i> -->
+<!-- <script>
+      var renderTime = function () {
+        var time = new Date();
+        document.querySelector('.clock').textContent = time.toLocaleString(navigator.language || 'en-US', {year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true});
+        // time.toLocaleString(navigator.language || 'en-US', {year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true});
+      };
+      renderTime()
+      setInterval(renderTime, 1000);
+    </script> -->
 
+<!-- <div>
+      <div class="js-counter1" data-number="54">54%</div>
+      <div class="js-counter2" data-number="80">80%</div>
+    </div> -->
+
+<!-- <script>
+  setTimeout(() => {
+    countUp({ selector: '.js-counter' })
+    countUp({ selector: '.js-counter2' })
+  }, 2000)
+
+  function countUp({ selector: selector }) {
+    let element = document.querySelector(selector)
+    if (!element) return
+
+    let number = 0
+    let elementValue = element.dataset.number || element.getAttribute('data-number')
+
+    // if (!element || !elementValue) return
+
+    let interval = setInterval(() => {
+      renderNumber()
+
+      if (number >= elementValue) clearInterval(interval)
+    }, 10)
+
+    function renderNumber() {
+      ++number
+      element.innerHTML = `${number}%`
+    }
+  }
+</script> -->
+
+<!-- <i class="cursor"></i> -->
 <!-- <div class="countdown">
   <div class="days">
     <div class="days-value js-days"></div>

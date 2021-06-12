@@ -6,25 +6,23 @@
 .subscribe-submit {@include button-primary;width:50%;margin-top:var(--space-after-button);}
 .subscribe-helper {display:block;margin:.5rem 0 0 0;font-size:var(--caption);}
 
-.footer {max-width:var(--width-large);margin:0 auto;padding:4rem var(--grid-margin) 8rem;background:var(--gray0);position:relative;z-index:4;}
+.sitemap {display:flex;max-width:var(--width-large);margin:0 auto;padding:4rem var(--grid-margin);position:relative;}
+.sitemap-background {@include bleeding;background:var(--gray100);}
+.sitemap-title {margin:0 0 1rem 0;@include subhead;}
+.sitemap-item {width:25%;}
+.sitemap-item-title {margin:0 0 1rem 0;font-size:var(--body);font-weight:normal;color:var(--gray400);}
+.sitemap-item-link {display:block;margin:.5rem 0;color:var(--gray800);}
+.sitemap-item-link:hover {@include hover-text;}
+
+.footer {max-width:var(--width-large);margin:0 auto;padding:0 var(--grid-margin) 6rem;position:relative;z-index:4;}
 .footer-background {@include bleeding;background:var(--gray100);}
-
-.footer-sitemap {display:flex;position:relative;}
-.footer-sitemap-title {margin:0 0 1rem 0;@include subhead;}
-.footer-sitemap-item {width:25%;margin:0 0 2rem 0;}
-.footer-sitemap-item-title {margin:0 0 1rem 0;font-size:var(--body);font-weight:normal;color:var(--gray400);}
-.footer-sitemap-item-link {display:block;margin:.5rem 0;color:var(--gray800);}
-.footer-sitemap-item-link:hover {@include hover-text;}
-
 .footer-address {}
 .footer-address-logo {display:block;filter:grayscale(100%);opacity:.5;}
-.footer-address-info {}
-.footer-address-slogan {@include subhead;}
+.footer-address-slogan {@include subhead;margin:1rem 0 0 0;}
+.footer-address-info {margin:1rem 0;}
 .footer-copyright {display:block;}
-
 .footer-terms {}
 .footer-terms-link {margin:0 1rem 0 0;}
-
 .footer-scroll {position:fixed;bottom:1rem;right:1rem;z-index:8;}
 .footer-scroll-indicator {}
 .footer-scroll-indicator i {width:2px;height:8px;background:var(--gray800);margin:8px auto 0;animation:bounce 0.5s infinite alternate;transform:rotate(90deg);}
@@ -35,15 +33,16 @@
 .footer-scroll-top .is-visible {right:50px;}
 
 // 간단한 푸터 :: 정책, 로그인 등
+
 .is-short {padding-bottom:6rem;}
-.is-short .footer-sitemap {display:none;}
 .is-short .footer-address {float:none;width:100%;text-align:center;}
 .is-short .footer-address-info {display:none;}
 
 @media (--viewport-small) {
 	.subscribe-field {width:100%;}
 
-	.footer-sitemap {flex-direction: column;}
-	.footer-sitemap-item {width:100%;}
+	.sitemap {flex-direction: column;}
+	.sitemap-item {width:100%;margin:0 0 2rem 0;}
+	.sitemap-item:nth-last-child(1) {margin-bottom:0;}
 
 }
