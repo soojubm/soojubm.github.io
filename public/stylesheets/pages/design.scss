@@ -18,6 +18,11 @@
 .color-item h3 {font-size:var(--body);text-transform:capitalize;}
 .color-item span {color:var(--gray400);}
 
+@media (--viewport-small) {
+  .color-group {display:block;}
+  .color-item {width:100%;}
+}
+
 .surface-item div {@include box-medium;box-shadow:var(--shadow400);}
 
 .design {}
