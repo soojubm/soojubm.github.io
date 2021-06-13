@@ -178,7 +178,7 @@
         <a route="/design" class="navbar-menu-item" href="#design">디자인시스템</a>
       </div>
 
-      <div class="navbar-search" role="search" aria-label="site" hidden>
+      <div class="navbar-search" role="search" aria-label="site">
         <a class="navbar-search-trigger js-navbar-toggle" href="#">
           <i class="icon-search"></i>
           <!-- <img src="/public/icons/search.svg" alt="" /> -->
@@ -204,9 +204,11 @@
           </button> -->
           <section class="search-recommend">
             <h2 class="search-recommend-title">당신을 위한 추천</h2>
-            <a class="search-recommend-item" href="#">개구리</a>
-            <a class="search-recommend-item" href="#">달팽이</a>
-            <a class="search-recommend-item" href="#">매미</a>
+            <div role="group">
+              <a class="search-recommend-item" href="#">개구리</a>
+              <a class="search-recommend-item" href="#">달팽이</a>
+              <a class="search-recommend-item" href="#">매미</a>
+            </div>
           </section>
         </form>
       </div>

@@ -1,15 +1,4 @@
-@mixin chip {
-    display: flex;align-items: center;
-    // flex, inline-flex인 경우 a, button 차이 발생..
-    // 다음에 hr 태그가 오면 그룹 내부 간격이 안맞음
-    height:var(--size-small);padding:0 1rem;border:1px solid transparent;border-radius:var(--radius400);box-sizing:border-box;
-    background:var(--gray100);
-    line-height:30px;color:var(--gray800);position:relative;
-}
-@mixin chip-heading {float:left;margin:0 1rem 0 -17px;border-top-right-radius:0;border-bottom-right-radius:0;}
-@mixin chip-tailing {float:right;margin:0 -17px 0 1rem;border-top-left-radius:0;border-bottom-left-radius:0;}
 
-@mixin badge {@include box-tiny;}
 
 .chip {@include chip}
 .chip:hover {}
