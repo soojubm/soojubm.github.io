@@ -9,7 +9,7 @@
 .checkout-head-background {display:none;background:var(--gray100);position:absolute;left:-200%;right:-200%;top:0;bottom:0;z-index:-1;}
 .checkout-head-eyebrow {margin-bottom:.5rem;font-size:var(--body);color:var(--gray400);}
 .checkout-head-title {@include title;}
-.checkout-head-description {margin:2rem 0 0 0;}
+.checkout-head-description {margin:var(--space-after-title) 0 0 0;}
 
 .checkout-head-byline {display:flex;display:none;align-items:center;justify-content:space-between;margin:4rem 0;padding:1rem 0;padding-right:560px;}
 .checkout-head-byline h2 {font-size:var(--body);}

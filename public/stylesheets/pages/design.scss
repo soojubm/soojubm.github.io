@@ -37,14 +37,14 @@
 .design-article-more i {margin-left:1.5rem;}
 .design-article.is-scrolled {animation:fadeup .8s forwards;}
 
-.design-typograph-group {display:flex;justify-content:space-between;margin:0 0 -1rem 0;}
-.design-typograph-item {@include tile-flat;margin:1rem 0;}
+.design-typograph-group {display:flex;justify-content:space-between;}
+.design-typograph-item {}
 .design-typograph-group .design-typograph-item {width:var(--grid-column);}
 
 
 .design-buttongroup {}
 
-.design-typograph-size {@include tile-flat;margin:1rem 0;overflow:hidden;}
+.design-typograph-size {margin:1rem 0;overflow:hidden;}
 .design-typograph-size-title {line-height:var(--size-small);}
 .design-typograph-size-title span {
   float:right;
@@ -335,7 +335,7 @@
 .sheet button:hover {@include hover-item;}
 
 .keywords {@include tile-elevated;}
-.keywords-title {@include subhead;margin:0 0 1rem 0;}
+.keywords-title {@include subhead;margin:var(--space-leading-subhead) 0 .75rem 0;}
 .keywords-group {}
 .keywords-group-keyword {@include chip;}
 

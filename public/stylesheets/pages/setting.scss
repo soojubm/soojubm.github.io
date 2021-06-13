@@ -1,7 +1,7 @@
 .setting {@include container-medium;}
 .setting-head {margin:0 0 2rem;}
 .setting-head-title {@include title;}
-.setting-head-description {margin:1rem 0 0 0;}
+.setting-head-description {margin:var(--space-after-title) 0 0 0;}
 
 .setting-body {margin:4rem 0 0;}
 .setting-body-heading {margin:0 0 1rem 0;@include subhead;}
