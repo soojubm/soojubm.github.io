@@ -9,7 +9,7 @@
 .dialog-footer {display:flex;justify-content:space-between;margin:2rem 0 0;}
 .dialog-footer-close {@include button-tertiary;width:var(--grid-column)}
 .dialog-footer-confirm {@include button-primary;width:var(--grid-column)}
-.dialog-close {@include box-small;position:absolute;right:.5rem;top:.5rem;}
+.dialog-close {@include box-small;@include position-right-top;}
 
 .toast {position:fixed;left:1rem;bottom:1rem;z-index:8;}
 @media (--viewport-small) {

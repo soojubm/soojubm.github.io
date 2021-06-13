@@ -21,18 +21,18 @@
         <a class="hero-detail">자세히 알아보기</a>
       </footer> -->
 
-      <div role="group">
-        <div>
-          <h3>유연성</h3>
-          <p>하하하하하하하</p>
+      <div >
+        <div class="">
+          <h3 style="font-size:var(--subhead);font-weight:bold;margin:0 0 .5rem 0;">단순성</h3>
+          <p>시스템은 유아이 라이브러리가 아닙니다. 가능한 모든 경우의 수를 나열하지 마세요. 개발 구현 난이도를 고려해야 하고 가능한 최소한의 가이드를 유지하세요. 모바일 퍼스트.</p>
         </div>
-        <div>
-          <h3>유연성</h3>
-          <p>하하하하하하하</p>
+        <div class="" style="margin:1rem 0;">
+          <h3 style="margin:0 0 .5rem 0;font-size:var(--subhead);font-weight:bold;">유동성</h3>
+          <p>UI는 특정 서비스에 종속되지 않는 보편타당해야 합니다.</p>
         </div>
-        <div>
-          <h3>유연성</h3>
-          <p>하하하하하하하</p>
+        <div class="">
+          <h3 style="font-size:var(--subhead);font-weight:bold;margin:0 0 .5rem 0;">명료성</h3>
+          <p>UI는 특정 서비스에 종속되지 않는 보편타당해야 합니다.</p>
         </div>
       </div>
     </div>
@@ -51,7 +51,7 @@
       <div class="textfield-input" role="textbox" contenteditable="true" aria-placeholder="5-digit zipcode" aria-labelledby="txtboxLabel"></div>
     </article>
 
-    <!-- <div class="stamp" hidden>
+    <div class="stamp" hidden>
       <div class="circle">
         <p id="circle-content">
           <span class="char1">부</span>
@@ -78,30 +78,10 @@
         </p>
       </div>
       <p>수줍이</p>
-    </div> -->
-    
-    <!-- <article class="design-article js-observer">
-      <h1 class="design-article-title">Principles <small>🔥</small></h1>
-      <p class="design-article-description">디자인시스템도 제품과 마찬가지로 완성은 존재하지 않습니다요...</p>
+    </div>
 
-      <div class="outer-flat">
-        <h3 style="font-size:var(--subhead);font-weight:bold;margin:0 0 .5rem 0;">단순성</h3>
-        <p>모바일 퍼스트. 그리드 시스템(12 columns grid / 8pt grid)이 실제로 효율적인가?</p>
-        <p>시스템은 유아이 라이브러리가 아닙니다. 가능한 모든 경우의 수를 나열해서는 안 된다. 개발 구현 난이도를 고려해야 하고 가능한 최소한의 가이드를 유지하세요.</p>
-      </div>
-      <div class="outer-flat" style="margin:1rem 0;">
-        <h3 style="margin:0 0 .5rem 0;font-size:var(--subhead);font-weight:bold;">유동성</h3>
-        <p>마크업 구조를 단순하게 유지하기 위해 position 속성을 적극적으로 활용하세요.</p>
-      </div>
-      <div class="outer-flat">
-        <h3 style="font-size:var(--subhead);font-weight:bold;margin:0 0 .5rem 0;">명료성</h3>
-        <p>UI는 특정 서비스에 종속되지 않는 보편타당해야 합니다.</p>
-      </div>
-    </article> -->
 
     <!-- <article class="design-article js-observer">
-      <h1 class="design-article-title">Rules 🔥</h1>
-      <p class="design-article-description">디자인시스템도 제품과 마찬가지로 완성은 존재하지 않습니다요...</p>
       <div class="tag" style="margin:0 0 .5rem 0;">금액</div>
       <p>formatPrice(KRW) ₩ 1,000</p>
       <br />
@@ -141,14 +121,12 @@
         </article>
       </div>
       <ol>
-        <li>더보기와 모두보기를 구분해서 사용.</li>
-        <li>자주 틀리는 writing 모두 / 전체, 총결제금액 vs 결제예정금액 / 검색 결과 2개?</li>
+        <li>자주 틀리는 writing 모두 / 전체, 더보기와 모두보기 / 총결제금액 vs 결제예정금액 / 검색 결과 2개?</li>
         <li>결제가 완료되었습니다 => 상품이 결제되었습니다 ? 주문 목록에서 f깅할 때 결제완료, 결제대기가 익숙함.</li>
         <li>memo: 미디어쿼리에서 position 속성을 재할당할 때 static을 사요하지 말고 relative를 사용.</li>
         <li>첫 할당에서는 margin: 0 0 0 0 재할당 시 margin-left:</li>
-        <li>container padding 5% 일 때 내부 요소 positionin</li>
         <li>Bullet은 컴포넌트로 Component</li>
-        <li>카드 안에서 좌우 여백: 데스크탑 2rem / 모바일 1.5rem 변수만들기.</li>
+        <li>타일의 패딩을 모바일과 데스크탑 동일하게 가려면.</li>
         <li>-하기 / 취소 / 다음에</li>
       </ol>
     </article> -->
@@ -157,36 +135,15 @@
       <ul class="design-article-description">
         <li>특수한 폼인 비밀번호찾기와 회원탈퇴의 컨테이너는 로그인과 회원가입의 컨테이너보다 크게 사용. 모바일에서는 해당되지 않기 때문에 불필요한 가이드일 수도.</li>
         <li>자식 엘리먼트가 가운데 정렬 될 경우 large 컨테이너를 사용하세요.</li>
-        <li>페이지용 컨테이너와 컴포넌트용 컨테이너를 구분하세요.</li>
       </ul>
       <div class="message">
         맥북 13인치 1680x1050 / x1나노 2160x1350
         <p>디스플레이 해상도와 별도로 텍스트 크기를 설정할 수 있어서.. 추세(?). 1440은 애매한 브레이크포인트</p>
       </div>
-      <hr />
       <p><b>Breakpoints</b> 1440px / 1080px /  100% - 5% - 5%</p>
-      <hr />
-      <dl style="display:flex;justify-content:space-between;">
-        <dt>page / container-large</dt>
-        <dd>1440px</dd>
-      </dl>
-      <dl style="display:flex;justify-content:space-between;">
-        <dt>page / container-medium</dt>
-        <dd>640px</dd>
-      </dl>
-      <dl style="display:flex;justify-content:space-between;">
-        <dt>page / container-large</dt>
-        <dd>480px</dd>
-      </dl>
-      <dl style="display:flex;justify-content:space-between;">
-        <dt>card / container-card</dt>
-        <dd>400px</dd>
-      </dl>
 
-      <p>right top in card / 주로 닫기 버튼에 사용한다. .25rem // left top에서 사용하고 sticky.</p>
       <p>bottom fix in window</p>
       <p>iphone safe area 고려</p>
-      <hr />
     </article> -->
 
   <!-- <picture>
@@ -228,7 +185,6 @@
         <a class="chip" href="">텍스트 필드</a>
       </div>
      </nav>
-
 
     <article class="design-article js-observer">
       <h1 class="design-article-title">Sizes & Avatars</h1>
@@ -1028,7 +984,7 @@
 
     <article class="design-article js-observer js-tab">
       <h1 class="design-article-title">Tab</h1>
-      <p class="design-article-description">같은 맥락의 콘텐츠를 선택에 따라 하나의 뷰에 표현할 때 사용합니다. 탭이 중첩되지 않도록 플로우를 설계하는 것이 중요합니다. 콘텐츠 필터링을 위해서는 chip 스타일을 사용합니다.<p>
+      <p class="design-article-description">탭이 중첩되지 않도록 플로우를 설계하는 것이 중요합니다. 콘텐츠 필터링에는 chip 스타일을 사용합니다.<p>
       <blockquote>
         <i>🔨</i> 브라우저 히스토리 / 스크롤스파이 / 4~5개 제한? 가로 스크롤?
       </blockquote>
@@ -1411,12 +1367,11 @@
           <div class="user-id">@soojubm</div>
           <div class="user-career" style="margin:.5rem 0 0 0;">UI Designer / Frontend Engineer</div>
         </article>
-        <br />
         <!-- <footer class="user-foot" style="display:flex;margin:1rem 0;">
           <span class="tag">대한민국</span>
           <span class="tag">자전거</span>
         </footer> -->
-        <footer class="user-foot" style="display:flex;justify-content:space-between;">
+        <footer class="user-foot" style="display:flex;justify-content:space-between;margin:1rem 0 0 0;">
           <button class="profile-foot-follow">팔로우</button>
         </footer>
       </article>

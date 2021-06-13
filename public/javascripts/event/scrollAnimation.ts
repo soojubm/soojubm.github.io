@@ -16,7 +16,7 @@ const scrollAnimation = ({ selector: selector }) => {
 
     function callback(entries, observer) {
       entries.forEach(entry => {
-        console.log(entry.target, entry.isIntersecting)
+        // console.log(entry.target, entry.isIntersecting)
         if (!entry.isIntersecting) return
         entry.target.classList.toggle(ANIMATED_CLASSNAME, entry.isIntersecting)
 

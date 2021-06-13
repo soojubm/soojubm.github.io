@@ -100,9 +100,9 @@
 
 
 .stamp {
-  position: absolute;
-  right: 6vmax;
-  top: 6vmax;
+  // position: absolute;
+  // right: 6vmax;
+  // top: 6vmax;
   z-index: 2;
 }
 .stamp p {
@@ -251,16 +251,6 @@
 // }
 
 
-.test {
-  display: flex;
-  flex-direction: column;
-  button {display:block;margin:0 0 .5rem 0;@include button-tertiary;}
-}
-
-
-
-
-
 
 .textbox {}
 .textbox-toolbar {display:flex;position:relative;margin:1rem 0;}
@@ -336,7 +326,7 @@
 .sheet button {position:relative;z-index:1;}
 .sheet button:hover {@include hover-item;}
 
-.keywords {@include tile-elevated;}
+.keywords {@include tile-elevated;max-width:400px;}
 .keywords-title {@include subhead;margin:var(--space-leading-subhead) 0 .75rem 0;}
 .keywords-group {}
 .keywords-group-keyword {@include chip;}
