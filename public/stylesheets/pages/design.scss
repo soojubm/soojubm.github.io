@@ -14,7 +14,7 @@
 .color-item.is-primary100 div {background:var(--green100);}
 .color-item.is-primary200 div {background:var(--color-primary);}
 .color-item.is-gradient div {background-image:linear-gradient(106deg,var(--red800),var(--color-primary));}
-.color-item div {float:left;@include box-medium;margin:0 .75rem 0 0;}
+.color-item div {float:left;@include box-medium;margin:0 var(--space-after-medium) 0 0;}
 .color-item h3 {font-size:var(--body);text-transform:capitalize;}
 .color-item span {color:var(--gray400);}
 
@@ -28,7 +28,7 @@
 .design {}
 .design-head {overflow:hidden;background:var(--color-primary);position:fixed;left:0;right:0;top:0;bottom:0;z-index:1;}
 .design-head.is-scrolled {transform:translateX(-50%);transition:transform .8s $bezier-base .4s;}
-.design-body {width:50%;max-width:40rem;margin-left:50%;padding:0 6rem 8rem;}
+.design-body {width:50%;max-width:36rem;margin-left:50%;padding:0 6rem 8rem;}
 
 .design-article {margin:8rem 0;position:relative;opacity:0;}
 .design-article-title {margin:0 0 1rem 0;@include subhead;}
@@ -48,7 +48,9 @@
 .design-typograph-size-title {line-height:var(--size-small);}
 .design-typograph-size-title span {
   float:right;
-  // margin:0 0 0 .5rem;font-weight:normal;font-size:var(--body);color:var(--gray400);
+  font-size:var(--body);
+  // color:var(--gray400);
+  // margin:0 0 0 .5rem;font-weight:normal;
 }
 .design-typograph-size-toggle {display:none;@include link-outer;}
 .design-typograph-size p {display:none;margin-top:1rem;}

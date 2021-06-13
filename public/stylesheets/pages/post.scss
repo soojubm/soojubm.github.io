@@ -73,7 +73,7 @@
 .post-comment-list-item-menu button:hover {@include hover-item;}
 .post-comment-list-item-reply {margin:1rem 0 0 0;@include link-outer;}
 
-.is-active .post-comment-list-item-menu {display:block;}
+.is-active + .post-comment-list-item-menu {display:block;}
 
 
 // .post-comment-list-item:hover {@include hover-item;}
