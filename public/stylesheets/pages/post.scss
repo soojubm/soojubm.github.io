@@ -116,31 +116,27 @@
 }
 .post-pagination-previous {width:var(--grid-column);margin:2rem 0;text-align:left;position:relative;}
 .post-pagination-previous:hover {@include hover-item;}
-.post-pagination-previous-media {@include box-small;margin-bottom:2rem;}
+.post-pagination-previous-media {@include box-small;margin-bottom:1rem;}
 .post-pagination-previous-label {margin:0 0 .25rem 0;font-size:var(--body);font-weight:normal;color:var(--gray400);}
 .post-pagination-previous-link {@include subhead;color:var(--gray800);}
 .post-pagination-next {width:var(--grid-column);margin:2rem 0;text-align:right;position:relative;}
 .post-pagination-next:hover {@include hover-item;}
-.post-pagination-next-media {@include box-small;margin-bottom:2rem;margin-left:auto;}
+.post-pagination-next-media {@include box-small;margin-bottom:1rem;margin-left:auto;}
 .post-pagination-next-label {margin:0 0 .25rem 0;font-size:var(--body);font-weight:normal;color:var(--gray400);}
 .post-pagination-next-link {@include subhead;color:var(--gray800);}
+
 @media (--viewport-small) {
+	.post {padding:40px 5%;}
+	.post-body-image {float:none;margin-left:-8%;margin-right:-8%;}
+
 	.post-pagination {flex-wrap:wrap;flex-direction:column-reverse;}
-	.post-pagination-previous {width:100%;}
+	.post-pagination-previous {width:100%;margin-top: 0;}
 	.post-pagination-next {width:100%;}
 }
 
 .post-relation {display:flex;flex-wrap:wrap;justify-content:space-between;max-width:var(--width-medium);margin:4rem auto 8rem;}
 .post-relation-title {width:100%;margin:2rem 0;text-align:center;@include subhead;}
 .post-relation .card {width:47.5%;}
-
-@media (--viewport-small) {
-	.post {padding:40px 5%;}
-	.post-body-image {float:none;margin-left:-8%;margin-right:-8%;}
-}
-
-
-
 
 .post-attract {text-align:center;position:relative;}
 .post-attract-blur {
@@ -151,14 +147,6 @@
 	right: 0;
 	top: -20rem;
 }
-.post-attract-title {
-	margin:0 0 1rem 0;
-	@include subhead;
-}
-.post-attract-description {
-}
-.post-attract-signup {
-	@include button-primary;
-	width: 50%;
-	margin: 2rem 0;
-}
+.post-attract-title {margin:0 0 1rem 0;@include subhead;}
+.post-attract-description {}
+.post-attract-signup {@include button-primary;width: 50%;margin: 2rem 0;}

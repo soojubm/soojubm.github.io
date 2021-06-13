@@ -323,6 +323,7 @@ function initializeNavbar() {
 
   // todo
   // navigationTrigger.parentNode.classList.remove('is-active')
+  navigationTrigger.classList.remove('is-active')
 }
 
 function createGraph() {
