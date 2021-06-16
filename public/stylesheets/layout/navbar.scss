@@ -11,7 +11,7 @@
 .navbar-menu-item menu a {margin:0 1rem;font-size:var(--body);line-height:60px;color:var(--gray0);opacity:0;transition:all .4s ease .4s;}
 .navbar-menu-item:hover {@include hover-text;}
 
-.navbar-search {position:relative;}
+.navbar-search {margin:0 0 0 auto;position:relative;}
 .navbar-search-trigger {@include box-small;}
 .navbar-search-trigger img {width:20px;pointer-events:none;}
 .navbar-search-trigger:after {content:'';display:block;position:absolute;left:-.5rem;right:-.5rem;top:-.5rem;bottom:-.5rem;}
@@ -65,7 +65,7 @@ top: 1.25rem;}
 
 .notification-unread {display:block;@include box-tiny;font-size:var(--caption);position:absolute;left:-.125rem;top:-.125rem;z-index:1;}
 
-.navbar-user {margin:0 0 0 auto;position:relative;}
+.navbar-user {margin:0 0 0 .5rem;position:relative;}
 .navbar-user-trigger {display:flex;justify-content:center;align-items:center;height:32px;}
 .navbar-user-trigger-media {@include box-small;background:var(--gray0);border:var(--border100);pointer-events:none;}
 .navbar-user-menu {width:var(--width-tiny);height:0;@include container-card;position:absolute;top:40px;right:0;z-index:4;transform:scale(0);}

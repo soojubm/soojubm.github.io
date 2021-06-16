@@ -84,7 +84,6 @@ $transition-fade: opacity 0.15s linear;
   // todo
   --space-leading-title: -.25rem;
   --space-leading-subhead: -.125rem;
-
   
   --space-after-small: .5rem;
   --space-after-medium: .75rem;
@@ -99,6 +98,9 @@ $transition-fade: opacity 0.15s linear;
   --space-between-item: 1rem;
   --space-between-section: 8rem;
   --space-between-section-large: 12rem;
+
+  --space-group: .25rem;
+  
 
   --border100: 1px solid var(--gray200);
 
@@ -168,12 +170,12 @@ $transition-fade: opacity 0.15s linear;
     --gray800: #f1f4f1; // heading
 
     --border100: 1px solid var(--gray100);
-
     --color-box-border: var(--gray100);
 
     --shadow400: 0px 0px 2rem rgba(0, 0, 0, 0.25);
 
     color: var(--gray800);
+
     input[type=checkbox][role=switch] + label::after {background:#fff;}
   }
 }
