@@ -51,18 +51,6 @@
 .profile-tabpanel .card {width:calc(33.3333% - 1rem);margin:0 .5rem 1rem;}
 
 
-.accordion-item {position:relative;}
-.accordion-item-trigger {}
-.accordion-item-panel {}
-
-.accordion {position:relative;}
-.accordion-trigger {display:flex;align-items:center;justify-content:space-between;margin:.5rem 0;font-size:var(--body);font-weight:bold;cursor:pointer;position:relative;transition:all .4s;}
-// .accordion-trigger:hover {@include hover-item;}
-.accordion-trigger-icon {@include box-small;}
-.accordion-panel {height:0;overflow:hidden;transition:all .25s;}
-.accordion-trigger.is-active  {color:var(--color-primary);}
-.is-active + .accordion-panel {height:auto;padding:0 0 2rem;}
-
 .card {display:block;background:var(--gray0);position:relative;@include container-card;}
 .card-more {@include box-small;display:none;position:absolute;right:.5rem;top:.5rem;}
 .card-thumbnail {padding-top:50%;overflow:hidden;background:var(--gray100);border-radius:var(--radius400);border:var(--border100);box-sizing:border-box;position:relative;}

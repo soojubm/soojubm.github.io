@@ -69,6 +69,7 @@ $transition-fade: opacity 0.15s linear;
   --width-tiny: 320px;
   --width-small: 480px;
   --width-medium: 640px;
+  --width-medium2: 1024px;
   --width-large: 1440px;
 
   --width-dropdown: var(--width-tiny);
@@ -95,7 +96,7 @@ $transition-fade: opacity 0.15s linear;
   --space-after-button: .75rem;
   --space-after-button: .75rem;
 
-  --space-between-item: 1rem;
+  --space-between-item: .75rem;
   --space-between-section: 8rem;
   --space-between-section-large: 12rem;
 

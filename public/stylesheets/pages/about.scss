@@ -8,6 +8,12 @@
 .about-intro-description {margin:0 0 2rem 0;padding-left:45%;font-size:var(--subhead);}
 .about-intro-address {@include tile-elevated;}
 
+.about-contact {padding:4rem var(--grid-margin);background:var(--gray100);position:relative;}
+.about-contact-meida {}
+.about-contact-title {@include subhead;margin:0 0 var(--space-after-title) 0;}
+
+.about-feature {max-width:var(--width-medium2);margin:0 auto;}
+
 .about-career {@include container-large;}
 .about-career-head {}
 .about-career-title {margin:0 0 2rem 0;@include subhead;}

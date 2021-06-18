@@ -1,6 +1,6 @@
 .color {overflow:hidden;}
 .color-group {display:flex;flex-wrap:wrap;justify-content:space-between;}
-.color-item {width:var(--grid-column-small);@include tile-flat;margin:.25rem;padding:.5rem;}
+.color-item {width:var(--grid-column-small);@include tile-flat;margin:.5rem;padding:.5rem;}
 .color-item.is-gray000 div {border:var(--border100);background:var(--gray0);}
 .color-item.is-gray100 div {background:var(--gray100);}
 .color-item.is-gray200 div {background:var(--gray200);}
@@ -35,14 +35,14 @@
 .design-article-more i {margin-left:1.5rem;}
 .design-article.is-scrolled {animation:fadeup .8s forwards;}
 
-.design-typograph-group {display:flex;justify-content:space-between;}
+.design-typograph-group {display:flex;justify-content:space-between;@include tile-flat;}
 .design-typograph-item {}
 .design-typograph-group .design-typograph-item {width:var(--grid-column);}
 
 
 .design-buttongroup {}
 
-.design-typograph-size {margin:1rem 0;overflow:hidden;}
+.design-typograph-size {@include tile-flat;margin:1rem 0;overflow:hidden;}
 .design-typograph-size-title {line-height:var(--size-small);}
 .design-typograph-size-title span {
   float:right;
@@ -365,3 +365,18 @@
 @mixin listbox {
   display: flex;
 }
+
+
+
+
+
+
+.accordion {@include tile-elevated;padding:1.5rem;position:relative;}
+.accordion:hover {@include hover-item;}
+.accordion + .accordion {margin:.75rem 0 0 0;cursor:pointer;}
+.accordion-title {display:flex;align-items:center;justify-content:space-between;@include subhead;}
+.accordion-title-icon {@include box-small;display:none;}
+.accordion-panel {display:none;}
+.accordion-panel p {margin:1rem 0;}
+.is-active + .accordion-panel {display:block;}
+// [aria-expanded=true] + .accordion-panel {}

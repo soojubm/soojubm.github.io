@@ -1,7 +1,5 @@
 <main class="design">
-  <header class="design-head js-observer">
-    <!-- <h1 style="position:fixed;left:1rem;bottom:1rem;color:var(--gray0);font-size:var(--caption);">soojubm</h1> -->
-  </header>
+  <header class="design-head js-observer" hidden></header>
   <!-- <blockquote></blockquote>
   <cite>- Ernest</cite>
   <article>
@@ -47,7 +45,7 @@
     <img class="hero-obj4" src="/public/images/blob-shape.svg" alt="" />
   </section>
 
-  <nav class="js-sticky" style="border-radius:var(--radius400);padding:1rem;background:var(--gray0);display:flex;justify-content:center;max-width:var(--width-large);margin:1rem auto;box-sizing:border-box;box-shadow:var(--shadow400);position:relative;z-index:1;">
+  <nav class="js-sticky" style="border-radius:var(--radius400);padding:1rem;background:var(--gray0);display:flex;justify-content:center;max-width:var(--width-large);margin:1rem 5%;box-sizing:border-box;box-shadow:var(--shadow400);position:relative;z-index:1;">
     <div role="group">
       <a class="chip is-active" href="" role="link">홈</a>
       <a class="chip" href="">사이즈</a>
@@ -270,7 +268,6 @@
         <span class="user-logout-icon">icon</span>
         시스템 폰트로 보기
       </button>
-      <hr />
       <div class="design-typograph-group">
         <div class="design-typograph-item">
           한글 <b style="display:block;font-size:var(--subhead);line-height:1.5;font-weight:bold;">아리타 산스</b>
@@ -288,7 +285,6 @@
           </div>
         </div>
       </div>
-      <hr />
       <!-- <div class="design-typograph-size">
         <h3 class="design-typograph-size-title">Huge <span>3rem / 48px</span></h3>
         <p style="margin:.5rem 0 0;">프로모션 등 특수한 목적의 페이지의 헤드라인에 사용합니다.</p>
@@ -297,7 +293,7 @@
           <span class="tag">헤드라인Headline</span>
         </div>
       </div> -->
-      <article class="design-typograph-size" style="margin-top:1.5rem;">
+      <article class="design-typograph-size">
         <h3 class="design-typograph-size-title" style="font-size:var(--title);">XLarge <span>2rem / 32px</span></h3>
         <h3 class="design-typograph-size-title" style="margin:.5rem 0 .5rem;font-size:var(--subhead);">Large <span>1.125rem / 18px</span></h3>
         <h3 class="design-typograph-size-title" style="margin:.5rem 0 .25rem;font-size:var(--body);">Medium <i class="tag" style="margin-left:.5rem;font-weight:400;">기본크기</i> <span>.875rem / 14px</span></h3>
@@ -1687,24 +1683,27 @@
         <p>안녕</p>
       </details> -->
 
-      <div>
-        <h3 class="accordion-trigger js-toggle" role="button" aria-expanded="false">
+      <h2 style="margin:2rem 0;text-align:center;">Questions?</h2>
+      <article class="accordion">
+        <h3 class="accordion-title js-toggle" role="button" aria-expanded="false">
           회원탈퇴는 어떻게 할 수 있나요?
-          <span class="accordion-trigger-icon"><i class="icon-plus"></i></span>
+          <span class="accordion-title-icon"><i class="icon-plus"></i></span>
         </h3>
-        <article class="accordion-panel">
-          안녕
-        </article>
-      </div>
-      <div>
-        <h3 class="accordion-trigger js-toggle" role="button" aria-expanded="false">
+        <div class="accordion-panel">
+          <p>모든 국민은 건강하고 쾌적한 환경에서 생활할 권리를 가지며, 국가와 국민은 환경보전을 위하여 노력하여야 한다. 대통령은 내우·외환·천재·지변 또는 중대한 재정·경제상의 위기에 있어서 국가의 안전보장 또는 공공의 안녕질서를 유지하기 위하여 긴급한 조치가 필요하고 국회의 집회를 기다릴 여유가 없을 때에 한하여 최소한으로 필요한 재정·경제상의 처분을 하거나 이에 관하여 법률의 효력을 가지는 명령을 발할 수 있다.</p>
+          <p>제1항의 지시를 받은 당해 행정기관은 이에 응하여야 한다. 국회의원은 법률이 정하는 직을 겸할 수 없다. 대통령의 임기연장 또는 중임변경을 위한 헌법개정은 그 헌법개정 제안 당시의 대통령에 대하여는 효력이 없다.</p>
+        </div>
+      </article>
+      <article class="accordion">
+        <h3 class="accordion-title js-toggle" role="button" aria-expanded="false">
           주문을 취소하고 싶어요.
-          <span class="accordion-trigger-icon"><i class="icon-plus"></i></span>
+          <span class="accordion-title-icon"><i class="icon-plus"></i></span>
         </h3>
-        <article class="accordion-panel">
-          안녕
-        </article>
-      </div>
+        <div class="accordion-panel">
+          <p>모든 국민은 건강하고 쾌적한 환경에서 생활할 권리를 가지며, 국가와 국민은 환경보전을 위하여 노력하여야 한다. 대통령은 내우·외환·천재·지변 또는 중대한 재정·경제상의 위기에 있어서 국가의 안전보장 또는 공공의 안녕질서를 유지하기 위하여 긴급한 조치가 필요하고 국회의 집회를 기다릴 여유가 없을 때에 한하여 최소한으로 필요한 재정·경제상의 처분을 하거나 이에 관하여 법률의 효력을 가지는 명령을 발할 수 있다.</p>
+          <p>제1항의 지시를 받은 당해 행정기관은 이에 응하여야 한다. 국회의원은 법률이 정하는 직을 겸할 수 없다. 대통령의 임기연장 또는 중임변경을 위한 헌법개정은 그 헌법개정 제안 당시의 대통령에 대하여는 효력이 없다.</p>
+        </div>
+      </article>
     </article>
 
     <article class="design-article js-observer">
