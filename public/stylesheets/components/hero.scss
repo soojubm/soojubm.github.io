@@ -1,6 +1,5 @@
-.hero {margin:0 var(--grid-margin);position:relative;z-index:1;}
-.hero-inner {max-width:var(--width-large);margin:0 auto;padding:3rem 5rem 4.5rem;box-shadow:var(--shadow400);box-sizing:border-box;position:relative;}
-.hero-background {max-width:100%;margin: 0 auto;background:var(--gray0);border-radius:var(--radius400);box-shadow:var(--shadow400);position: absolute;left: -50%;right: -50%;top: 0;bottom:100%;z-index: -1;}
+.hero {max-width:var(--width-large);margin:2rem auto;padding:0 var(--grid-margin);position:relative;z-index:1;}
+.hero-background {display:none;max-width:100%;margin: 0 auto;background:var(--gray0);border-radius:var(--radius400);box-shadow:var(--shadow400);position: absolute;left: -50%;right: -50%;top: 0;bottom:100%;z-index: -1;}
 .hero-eyebrow {display:block;margin:0 0 .25rem 0;font-size:var(--caption);color:var(--gray400);animation:fadeup .2s cubic-bezier(.455, .03, .515, .955) forwards .4s;opacity:0;}
 .hero-title {@include title;}
 .hero-description {width:50%;margin:var(--space-after-title) 0 3rem 0;font-size:var(--subhead);}
@@ -23,15 +22,8 @@
 .is-scrolled .hero-obj3 {animation:scaleout .4s ease 1.2s both;}
 .is-scrolled .hero-obj4 {animation:scaleout .4s ease 1s both;}
 
-@media (--viewport-large) {
-  // .hero {margin-top:-12rem;}
-  .hero-inner {padding-left:5%;padding-right:5%;}
-}
-
 @media (--viewport-small) {
-  .hero {}
   .hero-description {width:100%;}
-  .hero-inner {padding-top:2.5rem;padding-left:2.5rem;padding-right:2.5rem;padding-bottom:3.5rem;}
   .hero-obj1, .hero-obj2, .hero-obj3, .hero-obj4 {display:none;}
   .hero-obj4 {top:-18rem;right:-2rem;}
 }
