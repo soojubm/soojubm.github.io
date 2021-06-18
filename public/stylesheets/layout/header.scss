@@ -6,4 +6,4 @@
 .header-cta {@include box-small;margin-left:auto;}
 .header-cta svg {width:1rem;}
 
-.is-sticky-header .header {max-width:100%;background:var(--gray0);box-shadow:var(--shadow400);position:fixed;top:0;}
+.is-sticky-header .header {background:var(--gray0);border-radius:var(--radius400);box-shadow:var(--shadow400);position:fixed;top:.5rem;}

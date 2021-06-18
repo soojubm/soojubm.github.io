@@ -61,8 +61,8 @@
 
 .product-detail-brand {}
 
-.product-features {display:flex;flex-wrap:wrap;justify-content:space-evenly;margin:8rem 0;}
-.product-features-head {width:100%;margin:0 auto 4rem;text-align:center;}
+.product-features {display:flex;flex-wrap:wrap;justify-content:space-between;margin:8rem 0;}
+.product-features-head {width:100%;margin:0 auto 4rem;}
 .product-features-head h1 {@include title;word-break:keep-all;}
 .product-features-head p {}
 .product-features-item {max-width:320px;position:relative;}
@@ -92,7 +92,7 @@
 .product-quick-controls-purchase {@include button-primary;width:100%;}
 
 
-.product-detail-headline {@include title;}
+.product-detail-headline {@include title;text-align:center;}
 
 .product-detail-intro {display:flex;justify-content:center;width:100%;margin:0 0 12rem;padding:0 10%;box-sizing:border-box;}
 .product-detail-intro-image {width:50%;margin:4rem 2.5% -4rem;padding-top:60%;box-sizing:border-box;background:url('https://source.unsplash.com/random') no-repeat center center;background-size:cover;border-radius:var(--radius400);}

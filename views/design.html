@@ -1,35 +1,23 @@
 <main class="design">
-  <header class="design-head js-observer" hidden></header>
-  <!-- <blockquote></blockquote>
-  <cite>- Ernest</cite>
-  <article>
-    <p>디즈니 만화영화 <em>인어 공주</em>는 1989년 처음 개봉했습니다.</p>
-    <aside>인어 공주는 첫 개봉 당시 8700만불의 흥행을 기록했습니다.</aside>
-    <p>영화에 대한 정보...</p>
-  </article> -->
-
+  <header class="design-head js-observer"></header>
   <section class="hero js-observer">
-    <div class="hero-inner"></div>
     <div class="hero-background"></div>
-    <h1 class="hero-title"><span style="display:block;">Design System</span>Principle<i style="font-style:italic;" hidden>!</i></h1>
+    <h1 class="hero-title"><span style="display:block;">Design System</span>Components<i style="font-style:italic;" hidden>!</i></h1>
     <p class="hero-description">유저 인터페이스를 구성하는 패턴을 개발 코드 기반으로 정의하고 개선해나갑니다. 도메인(또는 서비스) 의존성을 최소화하여 ... (너무 개발자 용어 무엇?) </p>
-    
     <!-- <footer class="hero-foot">
       <a class="hero-cta">공사중입니다</a>
       <a class="hero-detail">자세히 알아보기</a>
     </footer> -->
-
-    <div class="hero-features js-scroll-animation">
+    <div class="hero-features js-scroll-animation" style="display:none">
       <div class="">
         <h3 style="font-size:var(--subhead);font-weight:bold;margin:0 0 .5rem 0;">단순성</h3>
         <p>디자인 시스템은 유아이 라이브러리가 아닙니다. 가능한 모든 경우의 수를 나열하지 마세요. 모바일 퍼스트(혹은 모바일 온리)로 시작하여, 서비스의 규묘와 리소스에 맞춰서 시스템을 확장하세요.</p>
       </div>
       <div class="">
         <h3 style="margin:0 0 .5rem 0;font-size:var(--subhead);font-weight:bold;">유연성 (지속 가능성)</h3>
-        <p>작성 중.</p>
+        <p>UI는 사용자의 추가적인 학습을 최소화할 정도로 보편타당해야 합니다.</p>
         <div>
           <span class="tag">REM</span>
-          <span class="tag"></span>
         </div>
       </div>
       <div class="">
@@ -43,21 +31,19 @@
     <img class="hero-obj4" src="/public/images/blob-shape.svg" alt="" /> -->
   </section>
 
-  <article class="design-body">
-    <header class="design-body-head" style="margin-top:8rem;">
-      <h2>컴포넌트</h2>
-    </header>
-    <nav class="js-sticky" style="display:flex;justify-content:center;max-width:var(--width-large);margin:1rem 5%;">
-      <div role="group">
-        <a class="chip is-active" href="" role="link">홈</a>
-        <a class="chip" href="">사이즈</a>
-        <a class="chip" href="">타이포그래피</a>
-        <a class="chip" href="">버튼</a>
-        <a class="chip" href="">칩</a>
-        <a class="chip" href="">텍스트 필드</a>
-      </div>
-    </nav>
+  <nav class="design-navigation" style="margin:1rem auto;max-width:var(--width-large);padding:0 var(--grid-margin);position: relative;z-index:1 ;position:sticky;top:72px">
+    <div role="group">
+      <!-- <a class="chip is-active" href="" role="link">홈</a> -->
+      <a class="chip" href="">사이즈</a>
+      <a class="chip" href="">타이포그래피</a>
+      <a class="chip" href="">버튼</a>
+      <a class="chip" href="">칩</a>
+      <a class="chip" href="">텍스트 필드</a>
+    </div>
+  </nav>
 
+
+  <article class="design-body">
     <article class="textbox" hidden>
       <div class="textbox-toolbar">
         <button class="textbox-toolbar-bold">B</button>
