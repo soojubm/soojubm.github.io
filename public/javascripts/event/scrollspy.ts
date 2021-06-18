@@ -34,14 +34,14 @@ const scrollspy = ({ menusSelector: menusClass, sectionsSelector: sectionsClass 
         menus[index].classList.add('is-active')
 
         activeOffsetLeft = menus[index].offsetLeft
-
-        // buttonContainer.scrollLeft = activeOffsetLeft
-        buttonContainer.scroll({
-          left: activeOffsetLeft,
-          top: 0,
-          behavior: 'smooth'
-      })
       }
+    })
+
+    // buttonContainer.scrollLeft = activeOffsetLeft
+    buttonContainer.scroll({
+      left: activeOffsetLeft,
+      top: 0,
+      behavior: 'smooth',
     })
   }
 }
