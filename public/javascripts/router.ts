@@ -7,7 +7,7 @@ import { pushBrowserHistory } from './utils/browserUtils'
 export const routes = [
   { name: '디자인시스템', path: '/' },
   { name: '홈', path: '/home' },
-  { name: '어바웃', path: '/about' },
+  { name: '소개', path: '/about' },
   { name: '디자인시스템', path: '/design' },
 
   { name: '유저프로필', path: '/profile' },

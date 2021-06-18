@@ -55,10 +55,11 @@
 }
 
 @mixin container-overflow {
+  display: block;
   overflow:auto;white-space:nowrap;
   font-size:0;
   &::-webkit-scrollbar {display:none;}
-  > * {font-size:var(--body);}
+  > * {display:inline-block;font-size:var(--body);}
 }
 
 
@@ -75,7 +76,7 @@
 
 @mixin container-page {
   margin: 0 auto;
-  padding: 0 5% 8rem; // mobile padding
+  padding: 2rem 5% 8rem; // mobile padding
   position: relative;
 }
 @mixin container-large {

@@ -5,7 +5,7 @@
 .post-head-category figure {@include box-tiny;margin:0 .5rem 0 0;font-size:10px;}
 .post-head-headline {padding:.5rem 0 2rem 0;@include title;} /* 상하단 패딩 똑같이해야 스키티때 */
 .post-head-dateline {color:var(--gray400);}
-.post-head-progress {display:none;height:4px;background:gold;position:absolute;bottom:-4px;}
+.post-head-progress {display:none;height:4px;background:var(--color-primary);position:absolute;bottom:0;}
 
 // .is-sticky-post-head .post {padding-top:110px;}
 .is-sticky-post-head .post-head {background:var(--gray0);box-shadow:var(--shadow400);text-align:left;position:fixed;left:0;right:0;top:0;z-index:8;}

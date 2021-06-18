@@ -6,8 +6,8 @@ type Parameter = {
 }
 
 const scrollspy = ({ menusSelector: menusClass, sectionsSelector: sectionsClass }: Parameter) => {
-  const sections = document.querySelectorAll<HTMLFormElement>(menusClass)
-  const menus = document.querySelectorAll<HTMLFormElement>(sectionsClass)
+  const sections = document.querySelectorAll<HTMLFormElement>(sectionsClass)
+  const menus = document.querySelectorAll<HTMLFormElement>(menusClass)
   if(!sections || !menus) return
 
   menus.forEach((element, index) => {

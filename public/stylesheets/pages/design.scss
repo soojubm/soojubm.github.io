@@ -26,6 +26,11 @@
 .design {}
 .design-head {overflow:hidden;background:var(--color-primary);position:fixed;left:0;right:0;top:0;bottom:0;z-index:1;}
 .design-head.is-scrolled {transform:translateX(-50%);transition:transform .8s $bezier-base .4s;}
+
+.design-navigation {}
+.design-navigation div {@include container-overflow;}
+// todo container-bleed
+
 .design-body {width:50%;max-width:36rem;margin-left:50%;padding:0 6rem 8rem;}
 
 .design-article {margin:8rem 0;position:relative;opacity:0;}
