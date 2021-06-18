@@ -28,8 +28,6 @@ const carousel = () => {
     const { scrollLeft } = categoryList
     console.log('scroll-left', scrollLeft, 'offset-width', categoryContainerWidth)
 
-    console.log(scrollLeft === 0)
-
     const isFirst = scrollLeft === 0
     if(isFirst) {
       categoryNavigationPrev.style.display = 'none'

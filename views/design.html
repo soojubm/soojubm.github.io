@@ -31,24 +31,24 @@
     <img class="hero-obj4" src="/public/images/blob-shape.svg" alt="" /> -->
   </section>
 
-  <nav class="design-navigation" style="margin:1rem auto;max-width:var(--width-large);padding:0 var(--grid-margin);position: relative;z-index:1 ;position:sticky;    top: 56px;
-  padding: 1rem;
+  <nav class="design-navigation" style="margin:1rem auto;max-width:100%;padding:.75rem var(--grid-margin);position: relative;z-index:6 ;position:sticky;    top:0;
   background: #fff;">
-    <div role="group">
+    <div role="group" style="margin-right:calc(var(--grid-margin) * -1);">
       <!-- <a class="chip is-active" href="" role="link">홈</a> -->
-      <a class="chip" href="#">사이즈</a>
-      <a class="chip" href="#">타이포그래피</a>
-      <a class="chip" href="#">버튼</a>
-      <a class="chip" href="">칩</a>
-      <a class="chip" href="">텍스트필드</a>
-      <a class="chip" href="">텍스트필드</a>
-      <a class="chip" href="">텍스트필드</a>
-      <a class="chip" href="">텍스트필드</a>
-      <a class="chip" href="">텍스트필드</a>
-      <a class="chip" href="">텍스트필드</a>
-      <a class="chip" href="">텍스트필드</a>
-      <a class="chip" href="">텍스트필드</a>
-      <a class="chip" href="">텍스트필드</a>
+      <a class="chip js-scrollspy-trigger" href="#">사이즈</a>
+      <a class="chip js-scrollspy-trigger" href="#">타이포그래피</a>
+      <a class="chip js-scrollspy-trigger" href="#">팔레트</a>
+      <a class="chip js-scrollspy-trigger" href="">타일</a>
+      <a class="chip js-scrollspy-trigger" href="">칩</a>
+      <a class="chip js-scrollspy-trigger" href="">뱃지</a>
+      <a class="chip js-scrollspy-trigger" href="">체크박스</a>
+      <a class="chip js-scrollspy-trigger" href="">라디오버튼</a>
+      <a class="chip js-scrollspy-trigger" href="">스위치</a>
+      <a class="chip js-scrollspy-trigger" href="">텍스트필드</a>
+      <a class="chip js-scrollspy-trigger" href="">텍스트필드</a>
+      <a class="chip js-scrollspy-trigger" href="">텍스트필드</a>
+      <a class="chip js-scrollspy-trigger" href="">텍스트필드</a>
+      <a class="chip js-scrollspy-trigger" href="">텍스트필드</a>
     </div>
   </nav>
 
@@ -186,7 +186,7 @@
      src="elva-fairy-800w.jpg"
      alt="요정 옷을 입은 엘바" /> -->
 
-    <article class="design-article js-observer">
+    <article class="design-article js-observer js-scrollspy-section">
       <h1 class="design-article-title">Sizes & Avatars</h1>
       <p class="design-article-description">5가지 사이즈를 사용합니다. 아바타는 텍스트, 아이콘, 이미지를 포함할 수 있습니다.</p>
       <blockquote>
@@ -256,7 +256,7 @@
       </div> -->
     </article>
 
-    <article class="design-article typography js-observer">
+    <article class="design-article typography js-observer js-scrollspy-section">
       <h1 class="design-article-title">Typography</h1>
       <p class="design-article-description">작성 중.</p>
       <!-- <li>asap의 dash를 마이너스로 쓰면 어색. 무게가 살짝 다름.</li> -->
@@ -336,23 +336,6 @@
           <span class="tag">도움말helper text</span>
         </div>
       </article> -->
-    </article>
-
-    <article class="design-article js-observer">
-      <h1 class="design-article-title">Tiles</h1>
-      <p class="design-article-description">제목, 디스크립션 이외의 콘텐츠를 강조할 때 사용합니다. 클릭할 수 있는 타일과 클릭할 수 없는 타일을 시각적으로 구분합니다. 클릭할 수 있는 타일이란 타일 내부에 클릭할 수 있는 요소가 존재하는 경우를 포함합니다.</p>
-      <div class="design-outer-flat" style="line-height:1.4;">
-        <b>flat</b> is non clickable. no one.
-      </div>
-      <div class="design-outer-elevated" style="margin-top:1rem;line-height:1.4;">
-        <b>elevated</b> is clickable. target or children. 
-      </div>
-      <!-- <div class="design-outer-flat-small">
-        <b>flat</b> is non clickable. no one.
-      </div>
-      <div class="design-outer-elevated-small" style="margin-top:1rem;">
-        <b>elevated</b> is clickable. target or children. 
-      </div> -->
     </article>
 
     <article class="design-article js-observer" hidden>
@@ -435,7 +418,7 @@
       </div>
     </article>
 
-    <article class="design-article js-observer">
+    <article class="design-article js-observer js-scrollspy-section">
       <h1 class="design-article-title">Palettes</h1>
       <p class="design-article-description">다크테마를 위한 컬러셋, 인버트 스타일을 별도로 정의하지 않습니다.</p>
       <!-- <blockquote style="margin:2rem 0;">
@@ -527,6 +510,25 @@
       </div>
     </article>
 
+    
+
+    <article class="design-article js-observer js-scrollspy-section">
+      <h1 class="design-article-title">Tiles</h1>
+      <p class="design-article-description">제목, 디스크립션 이외의 콘텐츠를 강조할 때 사용합니다. 클릭할 수 있는 타일과 클릭할 수 없는 타일을 시각적으로 구분합니다. 클릭할 수 있는 타일이란 타일 내부에 클릭할 수 있는 요소가 존재하는 경우를 포함합니다.</p>
+      <div class="design-outer-flat" style="line-height:1.4;">
+        <b>flat</b> is non clickable. no one.
+      </div>
+      <div class="design-outer-elevated" style="margin-top:1rem;line-height:1.4;">
+        <b>elevated</b> is clickable. target or children. 
+      </div>
+      <!-- <div class="design-outer-flat-small">
+        <b>flat</b> is non clickable. no one.
+      </div>
+      <div class="design-outer-elevated-small" style="margin-top:1rem;">
+        <b>elevated</b> is clickable. target or children. 
+      </div> -->
+    </article>
+
     <!-- <article class="design-article js-observer">
       <h1 class="design-article-title">Media</h1>
       <p class="design-article-description">카드 썸네일 비율은 2:1</p>
@@ -536,7 +538,7 @@
       </figure>
     </article> -->
 
-    <article class="design-article js-observer">
+    <article class="design-article js-observer js-scrollspy-section">
       <h1 class="design-article-title">Chips ☀️</h1>
       <p class="design-article-description">단일 선택 / 다중 선택, 삭제 여부에 따라 적절한 힌트를 제공하세요. 맥락이 다른 chip을 나열할 수도 있습니다. 스몰 사이즈(Tags)는 키워드 리스트, 뱃지로 사용할 수 있으며 아이콘을 포함할 수 없습니다. role="listbox" aria-orientation="horizontal"</p>
       <blockquote>
@@ -594,7 +596,7 @@
       </div>
     </article>
 
-    <article class="design-article js-observer">
+    <article class="design-article js-observer js-scrollspy-section">
       <h1 class="design-article-title">Badge</h1>
       <p class="design-article-description"></p>
       <blockquote>
@@ -620,7 +622,7 @@
       </nav>
     </article>
 
-    <article class="design-article js-observer">
+    <article class="design-article js-observer js-scrollspy-section">
       <h1 class="design-article-title">Checkboxes</h1>
       <p class="design-article-description">다중선택. 세로 정렬로만 사용하세요. 가로 정렬이 필요한 경우, 5개 이상의 옵션이 존재하는 경우우에는 chip 스타일을 사용하세요.</p>
       <blockquote>
@@ -649,7 +651,7 @@
       </fieldset>
     </article>
 
-    <article class="design-article js-observer">
+    <article class="design-article js-observer js-scrollspy-section">
       <h1 class="design-article-title">Radioes</h1>
       <p class="design-article-description">단일선택. 하나의 옵션을 필수로 선택해야 하기 때문에 기본 선택 옵션이 필요합니다. 세로 정렬로만 사용하세요. 가로 정렬이 필요한 경우, 5개 이상의 옵션이 존재하는 경우우에는 chip 스타일을 사용하세요.</p>
       <!-- (리액트에서 id 관련 이슈 input in label.) -->
@@ -690,7 +692,7 @@
       </fieldset>
     </article>
 
-    <article class="design-article js-observer">
+    <article class="design-article js-observer js-scrollspy-section">
       <h1 class="design-article-title">Switch</h1>
       <p class="design-article-description">작성 중.</p>
       <span class="switch" style="margin: 0 0 .75rem 0;">
@@ -703,7 +705,7 @@
       </span>
     </article>
 
-    <article class="design-article js-observer">
+    <article class="design-article js-observer js-scrollspy-section">
       <h1 class="design-article-title">Textfields</h1>
       <p class="design-article-description">button과 unit, icon 등은 prefix(leading)/surfix(tailing), choose/enter,</p>
       <div class="quantity js-quantity">
@@ -781,7 +783,6 @@
       </div>
       <article class="sheet" style="margin-top:1rem;">
         <!-- <h3 class="sheet-title">정렬하기</h3> -->
-        <!-- <hr /> -->
         <button style="width:100%;display:flex;align-items:center;margin:0 0 1rem 0;justify-content:space-between;font-size:var(--subhead);">
           바텀 시트 옵션
         </button>
@@ -791,10 +792,6 @@
         <!-- <div class="checkbox theme-right">
           <input class="js-check" type="checkbox" id="sheet" name="sheet" value="sheet">
           <label for="sheet">인기순. 우측에 체크박스 있는 형태(모바일의 시트에서. 어포던스 키워야 함.)</label>
-        </div>
-        <div class="checkbox theme-right">
-          <input class="js-check" type="checkbox" id="sheet" name="sheet" value="sheet">
-          <label for="sheet">최신순</label>
         </div> -->
       </article>
 
@@ -971,7 +968,7 @@
       <ul class="design-article-description">
         <li>hover와 focus 상태에 개별적인 스타일링 안 할 수 있는 방법은?</li>
         <li>프라이머리primary 스타일은 한 페이지에 한 개.</li>
-        <li>유저의 여정에 필요한 기능 등</li>
+        <li>서비스 여정에 필요한 기능에 세컨더리 버튼을 사용하세요.</li>
         <li>binary selection(?choice)에서 프라이머리와 세컨더리를 함께 사용할 수 없습니다.</li>
         <li>네이밍: style = solid/outline/plain/text (유아이 라이브러리에 어울림) appearance = link / subtle / primary, space = compact/fullwidth</li>
         <li>aria-expanded / role="img" aria-label="plus icon" / aria-pressed={activated ? "true" : "false"}</li>
@@ -1203,7 +1200,7 @@
       </div>
     </article> -->
 
-    <article class="design-article js-observer">
+    <article class="design-article js-observer" hidden>
       <h1 class="design-article-title">File Uploader</h1>
       <p class="design-article-description">작성 중.</p>
       <form class="file" method="" enctype="multipart/form-data">
@@ -1238,7 +1235,7 @@
     </article>
 
     <article class="design-article js-observer">
-      <h1 class="design-article-title">Sample Cases</h1>
+      <h1 class="design-article-title">Dummies</h1>
       <p class="design-article-description">작성 중.</p>
       <div class="card" role="listitem" style="max-width:400px;">
         <figure class="card-thumbnail"><img src="/public/images/springsteen.jpg" alt="" /></figure>
@@ -1759,7 +1756,7 @@
       </section>
     </article>
 
-    <article class="design-article js-observer">
+    <article class="design-article js-observer" hidden>
       <h1 class="design-article-title">Rating</h1>
       <p class="design-article-description">작성 중.</p>
       <!-- <div class="rating">
@@ -1807,7 +1804,7 @@
       </div>
     </article>
 
-    <article class="design-article js-observer">
+    <article class="design-article js-observer" hidden>
       <h1 class="design-article-title">Graph</h1>
       <p class="design-article-description">작성 중.</p>
       <div class="graph js-graph" style="border:1px solid var(--gray200);border-radius:var(--radius400);">

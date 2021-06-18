@@ -176,7 +176,7 @@ async function domEvents() {
 
   event.parallax('.js-parallax')
 
-  event.scrollspy({ menusSelector: '.design-navigation div a', sectionsSelector: '.design-article' })
+  event.scrollspy({ menusSelector: '.js-scrollspy-trigger', sectionsSelector: '.js-scrollspy-section' })
 
   createGraph()
   // countDownClock(20, 'days')
