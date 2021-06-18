@@ -1,11 +1,11 @@
 .hero {margin:0 var(--grid-margin);position:relative;z-index:1;}
-.hero-inner {max-width:var(--width-large);margin:0 auto;padding:3rem 5rem 4.5rem;box-sizing:border-box;position:relative;}
+.hero-inner {max-width:var(--width-large);margin:0 auto;padding:3rem 5rem 4.5rem;box-shadow:var(--shadow400);box-sizing:border-box;position:relative;}
 .hero-background {max-width:100%;margin: 0 auto;background:var(--gray0);border-radius:var(--radius400);box-shadow:var(--shadow400);position: absolute;left: -50%;right: -50%;top: 0;bottom:100%;z-index: -1;}
 .hero-eyebrow {display:block;margin:0 0 .25rem 0;font-size:var(--caption);color:var(--gray400);animation:fadeup .2s cubic-bezier(.455, .03, .515, .955) forwards .4s;opacity:0;}
 .hero-title {@include title;}
-.hero-description {width:50%;margin:var(--space-after-title) 0 3rem 0;}
-.hero-features {animation: fadeup .2s cubic-bezier(.455, .03, .515, .955) both 1s;}
-
+.hero-description {width:50%;margin:var(--space-after-title) 0 3rem 0;font-size:var(--subhead);}
+.hero-features {display:flex;justify-content:space-between;margin:4rem 0 0 0;animation: fadeup .2s cubic-bezier(.455, .03, .515, .955) both 1s;}
+.hero-features > div {width:30%;}
 .hero .slider {animation:fadeup .2s cubic-bezier(.455, .03, .515, .955) forwards 1s;opacity:0;position:relative;z-index:1;}
 .hero-foot {display:flex;animation:fadeup .2s cubic-bezier(.455, .03, .515, .955) forwards 1s;opacity:0;}
 .hero-cta {@include button-primary;}

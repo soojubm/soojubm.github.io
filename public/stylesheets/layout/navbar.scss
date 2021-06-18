@@ -37,12 +37,12 @@
 .navbar-notification-trigger i {vertical-align:middle;color:var(--gray800);}
 .navbar-notification-trigger img {width:20px;pointer-events:none;}
 .navbar-notification-trigger em {display:block;width:.5rem;height:.5rem;border-radius:50%;border:var(--border100);box-sizing:border-box;background:var(--red800);text-indent:-9999px;position:absolute;right:.5rem;top:.5rem;}
-.navbar-notification-menu {width:var(--width-tiny);height:0;@include container-card;position:absolute;top:40px;right:-39px;z-index:4;transform:scale(0);}
+.navbar-notification-menu {width:400px;@include container-card;}
 .navbar-notification-menu:before {content:'';display:block;position:absolute;left:50%;right:0;top:-8px;bottom:0;}
 .navbar-notification-menu-title {margin:var(--space-leading-subhead) 0 0 0;font-size:var(--subhead);}
 .navbar-notification-menu-all {position: absolute;
 right: 1.5rem;
-top: 1.25rem;}
+top: 1rem;}
 .navbar-notification-menu-item {padding:.5rem 1rem;cursor:pointer;position:relative;}
 .navbar-notification-menu-item:hover {background:var(--gray100);}
 .navbar-notification-menu footer {border-top:var(--border100);margin:1rem -1.5rem -1.5rem;}

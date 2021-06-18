@@ -1,6 +1,6 @@
 .color {overflow:hidden;}
 .color-group {display:flex;flex-wrap:wrap;justify-content:space-between;}
-.color-item {width:var(--grid-column);@include tile-flat;margin:.25rem;padding:.5rem;}
+.color-item {width:var(--grid-column-small);@include tile-flat;margin:.25rem;padding:.5rem;}
 .color-item.is-gray000 div {border:var(--border100);background:var(--gray0);}
 .color-item.is-gray100 div {background:var(--gray100);}
 .color-item.is-gray200 div {background:var(--gray200);}
@@ -347,14 +347,6 @@
           width:80px;height:80px;margin:0 0 .5rem 0;border-radius:var(--radius400);background:indianred;font-size:var(--title);
 }
 
-
-
-
-
-.design-article-chip {}
-.design-article-chip-tiny {@include badge;}
-.design-article-chip-small {@include tag;}
-.design-article-chip-medium {@include chip}
 
 
 

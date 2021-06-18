@@ -75,7 +75,7 @@
 
 @mixin container-page {
   margin: 0 auto;
-  padding: 2rem 5% 8rem; // mobile padding
+  padding: 0 5% 8rem; // mobile padding
   position: relative;
 }
 @mixin container-large {

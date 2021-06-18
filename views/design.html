@@ -13,8 +13,8 @@
   <section class="hero js-observer">
     <div class="hero-inner" style="overflow:hidden;">
       <div class="hero-background"></div>
-      <h1 class="hero-title"><span style="display:block;">Design System</span>Principle<i style="font-style:italic;">!</i></h1>
-      <p class="hero-description">이 페이지는 특정 도메인이나 서비스에 한정되지 않는 보편적인 디자인 시스템을 만들어 페이지 단위로 확장하여 사용해보는 프로젝트입니다. 현재 계속해서 수정 및 개선 중이라 용법에 대한 가이드 텍스트 등 완결되지 못 한 부분이 많습니다.</p>
+      <h1 class="hero-title"><span style="display:block;">Design System</span>Principle<i style="font-style:italic;" hidden>!</i></h1>
+      <p class="hero-description">유저 인터페이스를 구성하는 패턴을 개발 코드 기반으로 정의하고 개선해나갑니다. 도메인(또는 서비스) 의존성을 최소화하여 ... (너무 개발자 용어 무엇?) </p>
       
       <!-- <footer class="hero-foot">
         <a class="hero-cta">공사중입니다</a>
@@ -24,29 +24,39 @@
       <div class="hero-features js-scroll-animation">
         <div class="">
           <h3 style="font-size:var(--subhead);font-weight:bold;margin:0 0 .5rem 0;">단순성</h3>
-          <p>디자인 시스템은 유아이 라이브러리가 아닙니다. 가능한 모든 경우의 수를 나열하지 마세요. 개발 구현 난이도를 고려해야 하고 가능한 최소한의 가이드를 유지하세요. 모바일 퍼스트.</p>
+          <p>디자인 시스템은 유아이 라이브러리가 아닙니다. 가능한 모든 경우의 수를 나열하지 마세요. 모바일 퍼스트(혹은 모바일 온리)로 시작하여, 서비스의 규묘와 리소스에 맞춰서 시스템을 확장하세요.</p>
         </div>
-        <div class="" style="margin:1rem 0;">
-          <h3 style="margin:0 0 .5rem 0;font-size:var(--subhead);font-weight:bold;">유동성 (지속 가능성)</h3>
-          <p>제품을 지속적으로 개선하기 위해서는 패턴을 유아이나 상황 별로 분리하는 것이 좋을 수 있습니다. trade off</p>
+        <div class="">
+          <h3 style="margin:0 0 .5rem 0;font-size:var(--subhead);font-weight:bold;">유연성 (지속 가능성)</h3>
+          <p>작성 중.</p>
           <div>
             <span class="tag">REM</span>
             <span class="tag"></span>
           </div>
         </div>
         <div class="">
-          <h3 style="font-size:var(--subhead);font-weight:bold;margin:0 0 .5rem 0;">명료성</h3>
-          <p>UI는 특정 서비스에 종속되지 않는 보편타당해야 합니다.</p>
+          <h3 style="font-size:var(--subhead);font-weight:bold;margin:0 0 .5rem 0;">명료성 (보편성?)</h3>
+          <p>UI는 사용자의 추가적인 학습을 최소화할 정도로 보편타당해야 합니다.</p>
         </div>
       </div>
-
-      <!-- 일관성・지속 가능성・확장성 -->
+      <br />
     </div>
     <div class="hero-obj1"></div>
     <div class="hero-obj2"></div>
     <div class="hero-obj3"></div>
     <img class="hero-obj4" src="/public/images/blob-shape.svg" alt="" />
   </section>
+
+  <nav class="js-sticky" style="border-radius:var(--radius400);padding:1rem;background:var(--gray0);display:flex;justify-content:center;max-width:var(--width-large);margin:1rem auto;box-sizing:border-box;box-shadow:var(--shadow400);position:relative;z-index:1;">
+    <div role="group">
+      <a class="chip is-active" href="" role="link">홈</a>
+      <a class="chip" href="">사이즈</a>
+      <a class="chip" href="">타이포그래피</a>
+      <a class="chip" href="">버튼</a>
+      <a class="chip" href="">칩</a>
+      <a class="chip" href="">텍스트 필드</a>
+    </div>
+  </nav>
 
   <article class="design-body">
     <article class="textbox" hidden>
@@ -181,17 +191,6 @@
      src="elva-fairy-800w.jpg"
      alt="요정 옷을 입은 엘바" /> -->
 
-     <nav>
-       <div role="group">
-        <a class="chip is-active" href="" role="link">홈</a>
-        <a class="chip" href="">사이즈</a>
-        <a class="chip" href="">타이포그래피</a>
-        <a class="chip" href="">버튼</a>
-        <a class="chip" href="">칩</a>
-        <a class="chip" href="">텍스트 필드</a>
-      </div>
-     </nav>
-
     <article class="design-article js-observer">
       <h1 class="design-article-title">Sizes & Avatars</h1>
       <p class="design-article-description">5가지 사이즈를 사용합니다. 아바타는 텍스트, 아이콘, 이미지를 포함할 수 있습니다.</p>
@@ -260,34 +259,6 @@
         <span class="design-article-avatar-tiny" style="margin-left:-.25rem;box-shadow: var(--gray0) 0px 0px 0px 2px;"></span>
         <small style="margin:0 0 0 .5rem;">수줍이 외 8명</small>
       </div> -->
-
-      <hr />
-
-      <div class="userlist" style="overflow:hidden;">
-        <button class="sheet-toggle"></button>
-        <header>
-          <h1>팔로워</h1>
-          <a class="link-outer" href="#">모두 보기</a>
-        </header>
-        <hr />
-        <div class="profile-user" style="width:100%;height:48px;" role="listitem">
-          <figure class="profile-user-avatar" style="float:left;width:48px;height:48px;margin-right:var(--space-after-medium);"></figure>
-          <h2 class="profile-user-name" style="font-size:var(--body);">Gyeongsoo I</h2>
-          <span class="profile-user-id" style="color:var(--gray400);">유아이 디자이너</span>
-          <button class="design-article-tertiary-small" style="position:absolute;right:0;top:0;">팔로잉</button>
-        </div>
-        <div class="profile-user" style="width:100%;height:48px;margin-top:1rem;" role="listitem">
-          <figure class="profile-user-avatar" style="float:left;width:48px;height:48px;margin-right:var(--space-after-medium);"></figure>
-          <h2 class="profile-user-name" style="font-size:var(--body);">Gyeongsoo I</h2>
-          <span class="profile-user-id" style="color:var(--gray400);">유아이 디자이너</span>
-          <button class="design-article-secondary-small" style="position:absolute;right:0;top:0;">팔로우</button>
-        </div>
-        <div class="profile-user" style="width:100%;height:48px;margin-top:1rem;">
-          <figure class="profile-user-avatar" style="float:left;width:48px;height:48px;margin-right:var(--space-after-medium);background-image:none;"><i class="icon-plus" style="transform:scale(1.25);"></i></figure>
-          <h2 class="profile-user-name" style="font-size:var(--body);line-height:48px;">더 많은 친구를 찾아보세요!</h2>
-        </div>
-        <!-- <button class="userlist-cta">모두 보기</button> -->
-      </div>
     </article>
 
     <article class="design-article typography js-observer">
@@ -295,8 +266,8 @@
       <p class="design-article-description">작성 중.</p>
       <!-- <li>asap의 dash를 마이너스로 쓰면 어색. 무게가 살짝 다름.</li> -->
 
-      <button class="user-logout js-default-font" title="change theme">
-        <span class="user-logout-icon"><i class="icon-moon"></i></span>
+      <button class="user-logout tile-elevated js-default-font" style="padding:.5rem;padding-left:1rem;" title="change theme">
+        <span class="user-logout-icon">icon</span>
         시스템 폰트로 보기
       </button>
       <hr />
@@ -393,7 +364,7 @@
 
     <article class="design-article js-observer">
       <h1 class="design-article-title">Grid System 🔥</h1>
-      <p class="design-article-description">12 column grid 등 엄격한 그리드 시스템을 사용하지 않습니다. 최대 3~4개 칼럼을 사용하고 이때 사용하는 칼럼의 크기를 정의합니다. 모바일 퍼스트. 리스트는 언제나 가로 정렬(가로 스크롤)될 가능성이 있습니다.</p>
+      <p class="design-article-description">12 column grid 등 엄격한 그리드 시스템을 사용하지 않습니다. 최대 3~4개 칼럼을 사용하고 이때 사용하는 칼럼의 크기를 정의합니다. 모바일 퍼스트. 리스트는 언제나 가로 정렬(가로 스크롤)될 수 있습니다.</p>
       <blockquote>
         [role=group] vs [role=listbox] ex) button group, tag listbox
       </blockquote>
@@ -486,7 +457,7 @@
         </span>
       </button>
       <h2 style="margin:0 0 .5rem;"><small>Grayscales</small></h2>
-      <div class="color-group">
+      <div class="color-group" role="group">
         <figure class="color-item is-gray000">
           <div></div>
           <h3>gray000</h3>
@@ -519,7 +490,7 @@
       </div>
       <br />
       <h2 style="margin:0 0 .5rem;font-size:var(--caption);">Colors</h2>
-      <div class="color-group">
+      <div class="color-group" role="group">
         <figure class="color-item is-primary100">
           <div></div>
           <h3>green100</h3>
@@ -547,7 +518,7 @@
       </div>
       <br />
       <h2 style="margin:0 0 .5rem;" title="Surface or Elevation"><small>Elevation</small></h2>
-      <div class="color-group">
+      <div class="color-group" role="group">
         <figure class="color-item surface-item">
           <div style="background:var(--gray0);"></div>
           <h3>elevation400</h3>
@@ -576,13 +547,9 @@
       <h1 class="design-article-title">Chips ☀️</h1>
       <p class="design-article-description">단일 선택 / 다중 선택, 삭제 여부에 따라 적절한 힌트를 제공하세요. 맥락이 다른 chip을 나열할 수도 있습니다. 스몰 사이즈(Tags)는 키워드 리스트, 뱃지로 사용할 수 있으며 아이콘을 포함할 수 없습니다. role="listbox" aria-orientation="horizontal"</p>
       <blockquote>
+        고민: 드롭다운, 필터링을 위한 버튼 그룹, 아이콘 버튼을 하나의 칩 스타일로 묶은 상태. 이들 각각을 시각적으로 구분해야 하는 경우에 문제가 생길 수 있음. 용도별로 분리하여 가이드를 만드는 것이 좋을까
         todo: 버튼 스몰, 칩 라지, 칩 스몰 구분해야 함.
       </blockquote>
-      <div class="design-article-chip" role="group">
-        <!-- <span class="design-article-chip-tiny">12</span> -->
-        <button class="design-article-chip-small">Small</button>
-        <button class="design-article-chip-medium">Medium</button>
-      </div>
       <hr />
       <div class="chips js-chip" role="group">
         <button class="chip is-active">전체</button>
@@ -632,20 +599,22 @@
           </menu>
         </div>
       </div>
+    </article>
 
-      <hr />
-
+    <article class="design-article js-observer">
+      <h1 class="design-article-title">Badge</h1>
+      <p class="design-article-description"></p>
+      <blockquote>
+        히스토리: chip-small 사이즈에서 떨어져 나옴.
+        이유: 뱃지는 클릭할 수 없는 요소이기 때문에 시각적으로 칩 스타일과 완전히 분리해 봄. 유아이 컴포넌트가 용도가 아닌 스타일로 구분되어 있다면 가이드를 작성하기도 힘들고 커뮤니케이션도 어려워진다는 판단. 같은 이유에서 해시태그.
+      </blockquote>
       <div class="" role="group">
         <span class="tag tags-item" data-appearance="accent">Eyebrow</span>
         <span class="tag topic-item" href="#" role="listitem" style="background:var(--green100);color:var(--green800);">Badge</span>
         <a class="tag topic-item" href="#" role="listitem">Badge & Keyword</a>
-        <a class="tag topic-item is-disabled" href="#" role="listitem">Disabled
-          
-        </a>
+        <!-- <a class="tag topic-item is-disabled" href="#" role="listitem">Disabled</a> -->
       </div>
-      
       <hr />
-
       <nav class="sidebar" style="margin-top:1rem;padding-bottom:.5rem">
         <h4 class="sidebar-heading" style="margin-top:-.25rem;">대분류</h4>
         <div class="sidebar-item" role="listitem">
@@ -662,7 +631,7 @@
       <h1 class="design-article-title">Checkboxes</h1>
       <p class="design-article-description">다중선택. 세로 정렬로만 사용하세요. 가로 정렬이 필요한 경우, 5개 이상의 옵션이 존재하는 경우우에는 chip 스타일을 사용하세요.</p>
       <blockquote>
-        ✨ 더 강조되는 형태의 전체 선택 체크박스
+        ✨ 더 강조되는 형태의 전체 선택 체크박스. 특히 모바일에서 필요하다.
       </blockquote>
       <fieldset role="checkgroup">
         <legend>checkgroup legend</legend>
@@ -919,7 +888,6 @@
       <blockquote>
         <ul>
           <li>라틴 소문자일 때 숫자나 한글, 대문자보다 속공간 큼.</li>
-          <li>기본적으로 레이블은 gray400을 사용합니다. 입력필드와 써머리에서는 gray800을 사용할 수 있습니다. 대비, 위치로 위계가 충분히 확보되기 때문에.</li>
         </ul>
       </blockquote>
       <div class="statistic outer-flat" style="display:flex;justify-content:space-evenly;">
@@ -1319,10 +1287,10 @@
       <br />
       
       <div class="navbar-notification" style="margin-left:auto;">
-        <a class="navbar-notification-trigger js-navbar-toggle" href="#" aria-haspopup="true" aria-expanded="false">
+        <!-- <a class="navbar-notification-trigger js-navbar-toggle" href="#" aria-haspopup="true" aria-expanded="false">
           <img src="/public/icons/bell.svg" />
           <em>new</em>
-        </a>
+        </a> -->
         <!-- <menu class="navbar-notification-empty">
           <p>최근 알림 메세지가 없습니다.</p>
         </menu> -->
@@ -1380,6 +1348,35 @@
         <footer class="user-foot" style="display:flex;justify-content:space-between;margin:1rem 0 0 0;">
           <button class="profile-foot-follow">팔로우</button>
         </footer>
+      </article>
+
+      <br />
+
+      
+      <article class="userlist" style="overflow:hidden;">
+        <button class="sheet-toggle"></button>
+        <header>
+          <h1>팔로워</h1>
+          <a class="link-outer" href="#">모두 보기</a>
+        </header>
+        <hr />
+        <div class="profile-user" style="width:100%;height:48px;" role="listitem">
+          <figure class="profile-user-avatar" style="float:left;width:48px;height:48px;margin-right:var(--space-after-medium);"></figure>
+          <h2 class="profile-user-name" style="font-size:var(--body);">Gyeongsoo I</h2>
+          <span class="profile-user-id" style="color:var(--gray400);">유아이 디자이너</span>
+          <button class="design-article-tertiary-small" style="position:absolute;right:0;top:0;">팔로잉</button>
+        </div>
+        <div class="profile-user" style="width:100%;height:48px;margin-top:1rem;" role="listitem">
+          <figure class="profile-user-avatar" style="float:left;width:48px;height:48px;margin-right:var(--space-after-medium);"></figure>
+          <h2 class="profile-user-name" style="font-size:var(--body);">Gyeongsoo I</h2>
+          <span class="profile-user-id" style="color:var(--gray400);">유아이 디자이너</span>
+          <button class="design-article-secondary-small" style="position:absolute;right:0;top:0;">팔로우</button>
+        </div>
+        <div class="profile-user" style="width:100%;height:48px;margin-top:1rem;">
+          <figure class="profile-user-avatar" style="float:left;width:48px;height:48px;margin-right:var(--space-after-medium);background-image:none;"><i class="icon-plus" style="transform:scale(1.25);"></i></figure>
+          <h2 class="profile-user-name" style="font-size:var(--body);line-height:48px;">더 많은 친구를 찾아보세요!</h2>
+        </div>
+        <!-- <button class="userlist-cta">모두 보기</button> -->
       </article>
 
       <br />
