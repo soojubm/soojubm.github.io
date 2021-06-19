@@ -6,18 +6,21 @@ type Parameter = {
 }
 
 const scrollspy = ({ menusSelector: menusClass, sectionsSelector: sectionsClass }: Parameter) => {
-  const sections = document.querySelectorAll<HTMLElement>(sectionsClass)
-  const menus = document.querySelectorAll<HTMLElement>(menusClass)
-  const buttonContainer = menus[0].parentNode as any
+  const sections = document.querySelectorAll(sectionsClass) as NodeListOf<HTMLElement>
+  const menus = document.querySelectorAll(menusClass) as NodeListOf<HTMLElement>
 
   if (!sections || !menus) return
+
+  console.log(menus[0].parentNode?.childNodes, menus)
+
+  const buttonContainer = menus[0].parentNode as HTMLElement
 
   menus.forEach((element, index) => {
     element.addEventListener('click', event => {
       event.preventDefault()
       // const href = element.getAttribute('href')
       // const targetOffsetY = document.querySelector(href).getBoundingClientRect().top
-      const targetOffsetY = sections[index].offsetTop
+      const targetOffsetY = sections[index].offsetTop - 100
       window.scrollTo(0, targetOffsetY)
     })
   })
@@ -31,7 +34,7 @@ const scrollspy = ({ menusSelector: menusClass, sectionsSelector: sectionsClass 
         menus.forEach(menu => menu.classList.remove('is-active'))
         menus[index].classList.add('is-active')
 
-        activeOffsetLeft = menus[index].offsetLeft + menus[index].clientWidth
+        activeOffsetLeft = menus[index].offsetLeft + menus[index].clientWidth / 2
       }
     })
     // buttonContainer.scrollLeft = activeOffsetLeft

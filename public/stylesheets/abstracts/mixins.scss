@@ -14,7 +14,9 @@
 @mixin truncate-multi {@include truncate;height:3.6em;white-space:normal;word-wrap:break-word;display: -webkit-box;-webkit-line-clamp:2;-webkit-box-orient: vertical;}
 
 
-@mixin link-inner {display:inline-block;color:var(--color-primary);text-decoration:underline;}
+@mixin link-inner {
+  display:inline-block;color:var(--color-primary);text-decoration:underline;
+}
 @mixin link-outer {
   color:var(--color-primary);
   &:hover {text-decoration:underline;}

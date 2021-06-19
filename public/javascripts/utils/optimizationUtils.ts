@@ -7,16 +7,19 @@ export function throttle(callback) {
   }
 }
 
-export function temp() {
+export function stopAnimation() {
   let resizeTimer
-  window.addEventListener('resize', () => {
-    document.body.classList.add('resize-animation-stopper')
-    clearTimeout(resizeTimer)
+  window.addEventListener(
+    'resize',
+    throttle(() => {
+      document.body.classList.add('resize-animation-stopper')
+      clearTimeout(resizeTimer)
 
-    resizeTimer = setTimeout(() => {
-      document.body.classList.remove('resize-animation-stopper')
-    }, 400)
-  })
+      resizeTimer = setTimeout(() => {
+        document.body.classList.remove('resize-animation-stopper')
+      }, 400)
+    }),
+  )
 }
 
 // let start = null

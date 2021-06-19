@@ -108,6 +108,9 @@ button {@include reset-button;}
 }
 
 // ! backButton closeButton :: back close 아이콘은 어차피 단독으로 쓰이지 않는다!
+
+// ! 모바일에서 100%로 되는 컴포넌트가 있고 아닌 컴포넌트가 있다.
+// ! 그러니까 listitem / group 차이로 봐야하나
 .danger-button {@include button;background:var(--red800);border:1px solid var(--red800);color:var(--gray0);}
 
 [role=group] {display:flex;flex-wrap:wrap;margin:-.25rem;}

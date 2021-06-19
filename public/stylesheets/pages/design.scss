@@ -27,12 +27,12 @@
 .design-head {overflow:hidden;background:var(--color-primary);position:fixed;left:0;right:0;top:0;bottom:0;z-index:1;}
 .design-head.is-scrolled {transform:translateX(-50%);transition:transform .8s $bezier-base .4s;}
 
-.design-navigation {}
-.design-navigation-background {}
+.design-navigation {max-width:var(--width-large);}
+.design-navigation-background {@include bleeding;background:var(--gray0);}
 .design-navigation-scroll {@include container-overflow;position:relative;}
 // todo container-bleed
 
-.design-body {width:50%;max-width:36rem;margin-left:50%;padding:0 6rem 8rem;}
+.design-body {width:50%;overflow-x:hidden;max-width:36rem;margin:0 0 0 50%;padding:0 6rem 8rem;}
 
 .design-article {margin:8rem 0;position:relative;opacity:0;}
 .design-article-title {margin:0 0 1rem 0;@include subhead;}
@@ -241,7 +241,7 @@
 .number {display:flex;justify-content:center;}
 .number-card {display:flex;justify-content:center;align-items:center;width:48px;height:64px;background:var(--gray100);border-radius:var(--shadow400);font-size:var(--title);font-weight:bold;margin:0 .25rem;}
 
-.userlist {@include container-card;}
+.userlist {@include container-card;max-width:400px;}
 .userlist header {display:flex;align-items:center;justify-content:space-between;margin:var(--space-leading-subhead) 0 1rem 0;}
 .userlist header h1 {@include subhead;}
 .userlist header a {font-weight:bold;}

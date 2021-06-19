@@ -1,6 +1,7 @@
 // ! viewport : desktop first
 @custom-media --viewport-large (max-width: 1441px);
 @custom-media --viewport-small (max-width: 1080px);
+@custom-media --viewport-tiny (max-width: 760px);
 
 $padding100: 4px 1rem 5px; // 32
 $padding200: 9px 1rem 11px; // 버튼, 텍스트인풋 48
@@ -58,7 +59,6 @@ $transition-fade: opacity 0.15s linear;
   --color-naver: #03cf5d;
   --color-kakao: #ffdf00;
   --color-newneek: #fb7800;
-  
   --color-primary: var(--green800);
   --color-secondary: gold;
 
@@ -148,6 +148,9 @@ $transition-fade: opacity 0.15s linear;
   --grid-column: calc(50% - .375rem);
   --grid-gutter: 1rem;
   --grid-margin: 5%;
+  @media (--viewport-tiny) {
+    // --grid-margin: 1rem;
+  }
 
   --grid-column-small: calc(50% - .125rem);
 
@@ -158,8 +161,6 @@ $transition-fade: opacity 0.15s linear;
     --width-large: 1120px;
   }
   
-  @media (--viewport-small) {
-  }
 
   html[date-theme=dark] {}
   .theme-dark {

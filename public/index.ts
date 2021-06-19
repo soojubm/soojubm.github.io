@@ -9,7 +9,7 @@ import carousel from './javascripts/event/carousel'
 import event from './javascripts/event/index'
 import input from './javascripts/input/index'
 
-import { throttle } from './javascripts/utils/optimizationUtils'
+import { stopAnimation, throttle } from './javascripts/utils/optimizationUtils'
 
 // import books from '../views/books'
 
@@ -24,6 +24,8 @@ document.addEventListener('DOMContentLoaded', initializeLoader)
 document.addEventListener('DOMContentLoaded', domEvents)
 
 document.addEventListener('DOMContentLoaded', () => {
+  stopAnimation()
+
   // event.toggleClass({ selector: '.js-navbar-toggle', activeClassname: 'is-navbar-active' })
   event.toggleClass({ selector: '.js-navbar-toggle' })
   event.toTop({ selector: '.js-to-top' })
@@ -176,8 +178,6 @@ async function domEvents() {
 
   event.parallax('.js-parallax')
 
-  event.scrollspy({ menusSelector: '.js-scrollspy-trigger', sectionsSelector: '.js-scrollspy-section' })
-
   createGraph()
   // countDownClock(20, 'days')
   carousel()
@@ -197,10 +197,13 @@ async function domEvents() {
     works?.classList.add('list')
   })
   grid?.addEventListener('click', () => {
+    alert()
     list?.classList.remove('is-selected')
     grid?.classList.add('is-selected')
     works?.classList.remove('list')
   })
+
+  event.scrollspy({ menusSelector: '.js-scrollspy-trigger', sectionsSelector: '.js-scrollspy-section' })
 }
 
 // intersectionObserver

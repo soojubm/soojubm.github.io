@@ -1,6 +1,6 @@
 <main class="design">
-  <!-- <header class="design-head js-observer"></header> -->
-  <section class="hero js-observer">
+  <!-- <header class="design-head js-observer js-scrollspy-section"></header> -->
+  <section class="hero">
     <div class="hero-background"></div>
     <h1 class="hero-title"><span style="display:block;">Design System</span>Components<i style="font-style:italic;" hidden>!</i></h1>
     <p class="hero-description">유저 인터페이스를 구성하는 패턴을 개발 코드 기반으로 정의하고 개선해나갑니다. 도메인(또는 서비스) 의존성을 최소화하여 ... (너무 개발자 용어 무엇?) </p>
@@ -31,25 +31,32 @@
     <img class="hero-obj4" src="/public/images/blob-shape.svg" alt="" /> -->
   </section>
 
-  <nav class="design-navigation" style="    max-width: var(--width-large);margin:1rem auto;padding:.75rem var(--grid-margin);position: relative;z-index:6 ;position:sticky;top:42px;
+  <nav class="design-navigation" style="margin:0 auto;padding:.25rem var(--grid-margin);position: relative;z-index:6 ;position:sticky;top:48px;
   background: #fff;">
     <div class="design-navigation-background"></div>
-    <div class="design-navigatoin-scroll" role="group" style="margin:0 calc(var(--grid-margin) * -1);padding:0 calc(5% - .25rem);">
+    <div class="design-navigation-scroll" role="group" style="margin:0 calc(var(--grid-margin) * -1);padding:0 calc(5% - .25rem);">
       <!-- <a class="chip is-active" href="" role="link">홈</a> -->
-      <a class="chip js-scrollspy-trigger" href="#">사이즈</a>
-      <a class="chip js-scrollspy-trigger" href="#">타이포그래피</a>
-      <a class="chip js-scrollspy-trigger" href="#">팔레트</a>
-      <a class="chip js-scrollspy-trigger" href="">타일</a>
-      <a class="chip js-scrollspy-trigger" href="">칩</a>
-      <a class="chip js-scrollspy-trigger" href="">뱃지</a>
-      <a class="chip js-scrollspy-trigger" href="">체크박스</a>
-      <a class="chip js-scrollspy-trigger" href="">라디오버튼</a>
-      <a class="chip js-scrollspy-trigger" href="">스위치</a>
-      <a class="chip js-scrollspy-trigger" href="">텍스트필드</a>
-      <a class="chip js-scrollspy-trigger" href="">텍스트필드</a>
-      <a class="chip js-scrollspy-trigger" href="">텍스트필드</a>
-      <a class="chip js-scrollspy-trigger" href="">텍스트필드</a>
-      <a class="chip js-scrollspy-trigger" href="">텍스트필드</a>
+      <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">사이즈</a>
+      <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">타이포그래피</a>
+      <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">팔레트</a>
+      <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">타일</a>
+      <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">칩</a>
+      <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">뱃지</a>
+      <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">체크박스</a>
+      <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">라디오버튼</a>
+      <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">스위치</a>
+      <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">Select</a>
+      <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">Textfields</a>
+      <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">Seperator</a>
+      <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">Breadcrumb</a>
+      <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">Text Links</a>
+      <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">Text Lists</a>
+      <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">Texts</a>
+      <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">Suggestion</a>
+      <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">Tab</a>
+      <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">Button</a>
+      <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">Tooltip</a>
+      <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">Notifications</a>
     </div>
   </nav>
 
@@ -93,7 +100,7 @@
     </div>
 
 
-    <!-- <article class="design-article js-observer">
+    <!-- <article class="design-article js-observer js-scrollspy-section">
       <div class="tag" style="margin:0 0 .5rem 0;">금액</div>
       <p>formatPrice(KRW) ₩ 1,000</p>
       <br />
@@ -142,7 +149,7 @@
         <li>-하기 / 취소 / 다음에</li>
       </ol>
     </article> -->
-    <!-- <article class="design-article js-observer">
+    <!-- <article class="design-article js-observer js-scrollspy-section">
       <h1 class="design-article-title">Grid System or Container Rules 🔥</h1>
       <ul class="design-article-description">
         <li>특수한 폼인 비밀번호찾기와 회원탈퇴의 컨테이너는 로그인과 회원가입의 컨테이너보다 크게 사용. 모바일에서는 해당되지 않기 때문에 불필요한 가이드일 수도.</li>
@@ -530,7 +537,7 @@
       </div> -->
     </article>
 
-    <!-- <article class="design-article js-observer">
+    <!-- <article class="design-article js-observer js-scrollspy-section">
       <h1 class="design-article-title">Media</h1>
       <p class="design-article-description">카드 썸네일 비율은 2:1</p>
       <figure class="media">
@@ -766,7 +773,7 @@
       </div> -->
     </article>
 
-    <article class="design-article js-observer">
+    <article class="design-article js-observer js-scrollspy-section">
       <h1 class="design-article-title">Select</h1>
       <p class="design-article-description">콘텐츠를 소팅할 때 사용합니다. textfield 스타일과 구분.</p>
       <div class="textfield is-text">
@@ -800,7 +807,7 @@
 
 
 
-    <article class="design-article js-observer">
+    <article class="design-article js-observer js-scrollspy-section">
       <h1 class="design-article-title">Seperator</h1>
       <p class="design-article-description">컴포넌트의 border 스타일링으로 섹션을 구획하지 마세요. hr 태그를 사용하면 의미론적으로 주제를 분리할 수 있고 컴포넌트의 고유성을 유지할 수 있습니다.</p>
       <blockquote>
@@ -813,7 +820,7 @@
       <hr role="separator" />
     </article>
 
-    <article class="design-article js-observer">
+    <article class="design-article js-observer js-scrollspy-section">
       <h1 class="design-article-title">Breadcrumb</h1>
       <p class="design-article-description">페이지 레벨이 3단계 이상일 때 사용합니다. 공유, 캠페인 등을 통한 접근이 많은 페이지에서도 사용을 고려할 수 있습니다.</p>
       <!-- <p>(법적으로 혹은 PG사에서 체크할 때 상품 리스트 페이지에서 이슈가 있었음)</p> -->
@@ -832,7 +839,7 @@
       </nav> -->
     </article>
 
-    <article class="design-article js-observer">
+    <article class="design-article js-observer js-scrollspy-section">
       <h1 class="design-article-title">Text Links</h1>
       <p class="design-article-description">문단 <a href="#" class="link-inner">내부 링크</a>와 문단 <a href="#" class="link-outer">외부 링크</a>를 구분합니다.</p>
       <blockquote>
@@ -844,7 +851,7 @@
       <p>형무소 안에서는 소장의 말이 곧 법이었으며 죄수들의 잘못과 실수는 결코 용납되지 않는다. 어머니의 사망 소식을 듣고 인해 2번이나 탈옥을 시도했다가 체포된 <a class="link-inner" href="#">루크</a>의 발에 쇠통이 채워지며 루크는…<a class="more link-outer" href="#" style="margin-left:.25rem;">더 보기</a></p>
     </article>
 
-    <article class="design-article js-observer">
+    <article class="design-article js-observer js-scrollspy-section">
       <h1 class="design-article-title">Text Lists</h1>
       <p class="design-article-description">작성 중.</p>
       <blockquote>
@@ -873,7 +880,7 @@
 
     
 
-    <article class="design-article js-observer">
+    <article class="design-article js-observer js-scrollspy-section">
       <h1 class="design-article-title">Statistic & Summary & Metadata</h1>
       <p class="design-article-description">작성 중.</p>
       <blockquote>
@@ -928,7 +935,7 @@
       </section>
     </article>
 
-    <article class="design-article js-observer">
+    <article class="design-article js-observer js-scrollspy-section">
       <h1 class="design-article-title">Suggestion</h1>
       <p class="design-article-description">작성 중.</p>
       <blockquote>
@@ -964,7 +971,7 @@
     
 
 
-    <article class="design-article js-observer">
+    <article class="design-article js-observer js-scrollspy-section">
       <h1 class="design-article-title">Buttons</h1>
       <ul class="design-article-description">
         <li>hover와 focus 상태에 개별적인 스타일링 안 할 수 있는 방법은?</li>
@@ -974,9 +981,9 @@
         <li>네이밍: style = solid/outline/plain/text (유아이 라이브러리에 어울림) appearance = link / subtle / primary, space = compact/fullwidth</li>
         <li>aria-expanded / role="img" aria-label="plus icon" / aria-pressed={activated ? "true" : "false"}</li>
         <li>
-          아이콘 버튼은 레이블 없이 아이콘만으로 버튼을 인지할 수 있는 경우, 공간 제약이 있어 레이블을 표시할 수 없는 경우 사용합니다.
+          아이콘 버튼은 공간 제약이 있어 레이블을 생략할 필요가 있을 때 사용합니다. 이 때 아이콘은 보편적인 메타포...
         </li>
-        <li>Large 사이즈는 프로모션 페이지에서 사용합니다. primary only.</li>
+        <li>Large 사이즈는 primary 스타일만 가지며 프로모션 페이지에서 사용합니다.</li>
       </ul>
       <!--
         <a class="button" href="#">Anchor button</a>
@@ -1042,7 +1049,7 @@
     </div>
     </article>
 
-    <!-- <article class="design-article js-observer">
+    <!-- <article class="design-article js-observer js-scrollspy-section">
       <h1 class="design-article-title">Button Group</h1>
       <p class="design-article-description">작성 중.</p>
       <div class="group-sample" role="group">
@@ -1056,7 +1063,7 @@
       </div>
     </article> -->
 
-    <article class="design-article js-observer">
+    <article class="design-article js-observer js-scrollspy-section">
       <h1 class="design-article-title">Tooltip</h1>
       <p class="design-article-description">플로우나 기능에 대한 설명으로 사용할 수 없습니다. </p>
       <blockquote>
@@ -1070,7 +1077,7 @@
       </4aside>
     </article>
 
-    <article class="design-article js-observer">
+    <article class="design-article js-observer js-scrollspy-section">
       <h1 class="design-article-title">Notifications</h1>
       <p class="design-article-description">유저의 액션에 대한 피드백, 시스템/브라우저의 상태에 대한 피드백은 주목도를 높여서 제공합니다.</p>
       <blockquote>
@@ -1096,7 +1103,7 @@
       </aside>
     </article>
 
-    <article class="design-article js-observer">
+    <article class="design-article js-observer js-scrollspy-section">
       <h1 class="design-article-title">CSS Icons</h1>
       <p class="design-article-description">시스템 아이콘. 스타일 통일(라인/채움) 필요.</p>
       <div class="dd" role="group">
@@ -1122,18 +1129,18 @@
       </div>
     </article>
 
-    <!-- <article class="design-article js-observer">
+    <!-- <article class="design-article js-observer js-scrollspy-section">
       <h1 class="design-article-title">Bullet</h1>
       <p class="design-article-description">작성 중. 기본적으로는 지양. 디자인되지 않았다는 인상. 불릿/슬래시 중 하나만 사용.</p>
     </article> -->
 
-    <!-- <article class="design-article js-observer">
+    <!-- <article class="design-article js-observer js-scrollspy-section">
       <h1 class="design-article-title">Spinner</h1>
       <p class="design-article-description">작성 중.</p>
       <div class="loader-spinner" style="position:static;"></div>
     </article> -->
 
-    <!-- <article class="design-article js-observer">
+    <!-- <article class="design-article js-observer js-scrollspy-section">
       <h1 class="design-article-title">Range</h1>
       <p class="design-article-description">샘플. 라이브러리를 사용을 권장합니다.</p>
       <div class="range">
@@ -1157,7 +1164,7 @@
     </article> -->
 
 
-    <!-- <article class="design-article js-observer">
+    <!-- <article class="design-article js-observer js-scrollspy-section">
       <h1 class="design-article-title">Calendar</h1>
       <p class="design-article-description">미완성</p>
       <div class="calendar">
@@ -1220,7 +1227,7 @@
     </article>
 
 
-    <article class="design-article js-observer">
+    <article class="design-article js-observer js-scrollspy-section">
       <h1 class="design-article-title">Dialog</h1>
       <p class="design-article-description">모달과 토스트로 활용할 수 있습니다.</p>
       <button class="js-modal">모달 열기</button>
@@ -1235,7 +1242,7 @@
       </aside>
     </article>
 
-    <article class="design-article js-observer">
+    <article class="design-article js-observer js-scrollspy-section">
       <h1 class="design-article-title">Dummies</h1>
       <p class="design-article-description">작성 중.</p>
       <div class="card" role="listitem" style="max-width:400px;">
@@ -1437,7 +1444,7 @@
     </article>
 
 
-    <!-- <article class="design-article js-observer">
+    <!-- <article class="design-article js-observer js-scrollspy-section">
       <h1 class="design-article-title">Index</h1>
       <p class="design-article-description">작성 중.</p>
       <nav class="index">
@@ -1452,7 +1459,7 @@
       </nav>
     </article> -->
 
-    <!-- <article class="design-article js-observer">
+    <!-- <article class="design-article js-observer js-scrollspy-section">
       <h1 class="design-article-title">Hover System</h1>
       <p class="design-article-description">카드 혹은 아이템의 hover state로 여러 개의 코드 또는 스타일이 필요하지 않습니다. 하나의 mixin을 정의하여 사용하세요.</p>
       <button class="user-logout" title="sign out">
@@ -1473,7 +1480,7 @@
     </article> -->
 
     <!-- // Chris said Marcus replied -->
-    <article class="design-article js-observer">
+    <article class="design-article js-observer js-scrollspy-section">
       <h1 class="design-article-title">Comment</h1>
       <p class="design-article-description">작성 중.</p>
       <div class="post-comment-list">
@@ -1507,7 +1514,7 @@
       </div>
     </article>
 
-    <!-- <article class="design-article js-observer">
+    <!-- <article class="design-article js-observer js-scrollspy-section">
       <h1 class="design-article-title">Share Card</h1>
       <p class="design-article-description">작성 중.</p>
       <button class="share-trigger">
@@ -1515,7 +1522,7 @@
       </button>
     </article> -->
 
-    <article class="design-article js-observer">
+    <article class="design-article js-observer js-scrollspy-section">
       <h1 class="design-article-title">Slider</h1>
       <p class="design-article-description">서드파티 라이브러리 없이 가로 스크롤을 활용합니다. 터치 제스쳐를 지원하지 않는 환경(데스크탑 등)에서 arrow 버튼을 제공하세요. 모바일 환경에서는 arrow 버튼을 제공하지 않습니다.</p>
       <section class="slider">
@@ -1572,7 +1579,7 @@
     </article>
     
 
-    <article class="design-article js-observer">
+    <article class="design-article js-observer js-scrollspy-section">
       <h1 class="design-article-title">Paginations</h1>
       <p class="design-article-description">첫 페이지와 마지막 페이지에 더블 화살표 아이콘 대신 최초 페이지와 최종 페이지를 사용하세요.</p>
       <nav class="pagination" role="navigation" aria-label="pagination">
@@ -1598,7 +1605,7 @@
       </nav>
     </article>
 
-    <article class="design-article js-observer">
+    <article class="design-article js-observer js-scrollspy-section">
       <h1 class="design-article-title">Table</h1>
       <p class="design-article-description">작성 중.</p>
       <table>
@@ -1667,7 +1674,7 @@
       </div> -->
     </article>
 
-    <article class="design-article js-observer">
+    <article class="design-article js-observer js-scrollspy-section">
       <h1 class="design-article-title">Accordions</h1>
       <p class="design-article-description">질의응답 등 정보를 요약하여 목록화하는 경우(?)에만 사용하세요. 공지사항 정도의 간단한 게시글에서도 사용할 수 있으나 그 이상의 경우에는 다른 유아이를 고민하세요.</p>
       <!-- <blockquote>
@@ -1701,7 +1708,7 @@
       </article>
     </article>
 
-    <article class="design-article js-observer">
+    <article class="design-article js-observer js-scrollspy-section">
       <h1 class="design-article-title">Bottom Navigation</h1>
       <p class="design-article-description">햄버거 메뉴를 사용할 때, 이커머스 도매인의 카테고리 용도이면 왼쪽, 글로벌 네비게이션일 때 오른쪽.</p>
       <nav class="bottombar">
@@ -1721,7 +1728,7 @@
       </nav>
     </article>
 
-    <!-- <article class="design-article js-observer">
+    <!-- <article class="design-article js-observer js-scrollspy-section">
       <h1 class="design-article-title">배너</h1>
       <p class="design-article-description">작성 중.</p>
       <aside class="banner">
@@ -1731,7 +1738,7 @@
       </aside>
     </article> -->
 
-    <!-- <article class="design-article js-observer">
+    <!-- <article class="design-article js-observer js-scrollspy-section">
       <h1 class="design-article-title">Feedback</h1>
       <p class="design-article-description">샘플. 선택 후 추가 정보를 받는 경우도 있음.</p>
       <aside class="help-feedback">
@@ -1742,7 +1749,7 @@
       </aside>
     </article> -->
     
-    <article class="design-article js-observer">
+    <article class="design-article js-observer js-scrollspy-section">
       <h1 class="design-article-title">Result</h1>
       <p class="design-article-description">일부 디자인 시스템에서 blankslate, empty state 등으로 네이밍. empty 뿐 아니라 error, complete 등 다양한 states에서 활용할 수 있기 때문에 result로 네이밍. 왼쪽 정렬되는 일반적인 콘텐츠 모듈과 구분하여 가운데 정렬로 대비.</p>
       <section class="empty" style="border:1px solid var(--color-box-border);border-radius:var(--radius400);">
@@ -1837,7 +1844,7 @@
       </div> -->
     </article>
 
-    <article class="design-article js-observer">
+    <article class="design-article js-observer js-scrollspy-section">
       <h1 class="design-article-title">Stepper</h1>
       <p class="design-article-description">모바일 퍼스트(가로레이아웃 후순위). 아코디언(optional), 버튼(optional), 타임라인 / 히스토리와 비슷한 맥락</p>
       <section class="step">
@@ -1867,7 +1874,7 @@
       </section>
     </article>
     
-    <!-- <article class="design-article js-observer">
+    <!-- <article class="design-article js-observer js-scrollspy-section">
       <h1 class="design-article-title">Filter</h1>
       <p class="design-article-description">샘플</p>
       <form class="filter">
@@ -1884,7 +1891,7 @@
       </form>
     </article> -->
 
-    <!-- <article class="design-article js-observer">
+    <!-- <article class="design-article js-observer js-scrollspy-section">
       <h1 class="design-article-title">Timeline</h1>
       <p class="design-article-description">샘플. 보통은 최신이 위로 오는 구조.</p>
       <section class="timeline">
