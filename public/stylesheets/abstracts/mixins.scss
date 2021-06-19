@@ -153,6 +153,7 @@
 @mixin position-left-top {position:absolute;left:.5rem;top:.5rem;}
 @mixin position-right-top {position:absolute;right:.5rem;top:.5rem;}
 @mixin position-center-center {position:absolute;left:50%;top:50%;transform:translate(-50%, -50%)}
+@mixin position-bottom {position:fixed;left:0;right:0;bottom:0;z-index:4;}
 @mixin reset-position {
   position: relative;
   left: auto;
