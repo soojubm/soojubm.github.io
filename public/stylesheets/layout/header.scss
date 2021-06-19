@@ -1,9 +1,12 @@
 .header {display:flex;align-items:center;max-width:var(--width-large);margin:0 auto;padding:var(--space-between-item) 5%;position:relative;left:0;right:0;z-index:5;}
-.header-backdrop {height:32px;padding:var(--space-between-item) 0;background:var(--gray0);}
 .header-back {position:relative;z-index:1;}
 .header-back-icon {@include box-small;transform:rotate(180deg);}
 .header-title {margin:-1px 0 0;padding:0 3rem;font-size:var(--body);position:absolute;}
 .header-cta {@include box-small;margin-left:auto;}
 .header-cta svg {width:1rem;}
+.header-background {@include bleeding;background:var(--gray0);}
+.header-backdrop {height:32px;padding:var(--space-between-item) 0;background:var(--gray0);}
 
-.is-sticky-header .header {background:var(--gray0);border-radius:var(--radius400);box-shadow:var(--shadow400);position:fixed;top:0;}
+
+.is-sticky-header .header {position:fixed;top:0;}
+.is-sticky-header .header-background {border-radius:var(--radius400);box-shadow:var(--shadow400);}
