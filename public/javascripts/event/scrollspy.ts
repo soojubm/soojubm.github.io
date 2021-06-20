@@ -30,12 +30,15 @@ const scrollspy = ({ menusSelector: menusClass, sectionsSelector: sectionsClass 
     let activeOffsetLeft
 
     sections.forEach((section, index) => {
-      if (section.offsetTop <= window.pageYOffset + 200) {
-        menus.forEach(menu => menu.classList.remove('is-active'))
-        menus[index].classList.add('is-active')
+      const isObserved = section.offsetTop <= window.pageYOffset + 200
+      if (!isObserved) return
 
-        activeOffsetLeft = menus[index].offsetLeft + menus[index].clientWidth / 2
-      }
+      const menusTemp = menus[index] as any
+
+      menus.forEach(menu => menu.classList.remove('is-active'))
+      menusTemp.classList.add('is-active')
+
+      activeOffsetLeft = menusTemp.offsetLeft + menusTemp.clientWidth / 2
     })
     // buttonContainer.scrollLeft = activeOffsetLeft
 

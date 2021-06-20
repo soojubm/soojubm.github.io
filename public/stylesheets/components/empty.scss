@@ -2,11 +2,11 @@
 .empty-icon {@include box-large;margin:0 auto 2rem;font-size:40px;}
 .empty-title {@include subhead;}
 .empty-description {margin:1rem 0 2rem;}
-.empty-list {max-width:50%;margin:2rem auto;}
+.empty-list {margin:2rem auto;padding:1rem 0 0 0;border-top:var(--border100);}
 .empty-list-item {display:flex;justify-content:space-between;margin:.25rem 0;}
 .empty-list-item b {color:var(--gray400);font-weight:normal;}
 .empty-list-item span {}
-.empty-action {@include button-secondary;width:50%;max-width:20rem;}
+.empty-action {@include button-secondary;max-width:100%;}
 
 
 .error {
