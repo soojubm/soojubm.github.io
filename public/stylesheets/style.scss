@@ -2,6 +2,7 @@
 
 @import 'abstracts/variables';
 @import 'abstracts/mixins';
+@import 'abstracts/webfonts';
 @import 'abstracts/icon';
 @import 'abstracts/keyframes';
 
@@ -180,7 +181,7 @@
 .slider-arrows-next:hover {@include hover-tertiary;}
 .slider-arrows button.is-disabled {opacity:.2;}
 
-.quote {max-width:400px;@include container-card;}
+.quote {max-width:400px;@include tile-elevated;}
 .quote-avatar {@include box-small;}
 .quote-title {margin:1rem 0 .5rem;@include subhead;}
 .quote-body {}
@@ -261,7 +262,7 @@
 .font-default {font-family:sans-serif;}
 
 
-.pricing-item {max-width:400px;@include container-card;}
+.pricing-item {max-width:400px;@include tile-elevated;}
 .pricing-item-title {@include subhead;}
 .pricing-item-price {display:block;@include title;}
 .pricing-item-price-unit {}
@@ -361,7 +362,7 @@
 .newneek-section1 {display:flex;flex-wrap:wrap;justify-content:space-between;margin:4rem 0 0;padding:8rem 7.5%;background:#fb7800;color:#000;position:relative;}
 .newneek-section1 footer {width:100%;margin:4rem 0 0 0;}
 .bubble {max-width:calc(50% - 2rem);}
-.bubble-user {padding:.5rem 1.5rem;border:2px solid #000;background:#000;font-size:var(--body);color:#fff;font-weight:bold;}
+.bubble-user {padding:.5rem 1.5rem;border:2px solid #000;background:#000;font-size:var(--body);color:#fff;font-weight:var(--font-weight-bold);}
 .bubble-text {padding:1.5rem 1.5rem 2rem;border:1px solid #000;background:#ebebeb;}
 
 
@@ -495,13 +496,13 @@
 .portfolio-features-item-description {}
 
 .daylist {display:flex;}
-.day {@include box-large;@include container-card;flex-wrap:wrap;margin:0 1rem 0 0;padding:0;text-align:center;}
+.day {@include box-large;@include tile-elevated;flex-wrap:wrap;margin:0 1rem 0 0;padding:0;text-align:center;}
 .day:hover {@include hover-item;}
 .day-label {width:100%;font-size:var(--caption);color:var(--gray400);text-transform:uppercase;}
 .day-value {width:100%;margin:-2rem 0 0 0;@include subhead;}
 
 
-.menulist {@include container-card;}
+.menulist {@include tile-elevated;}
 
 .class-head-thumbnail {width:50%;margin-left:-5%;overflow:hidden;border-radius:4px;}
 
@@ -510,7 +511,7 @@
 .class-head-eyebrow {@include tag-eyebrow;display:inline-block;padding:0 .5rem;}
 .class-head-title {@include title;margin:1rem 0 0 0;}
 .class-head-description {margin:1rem 0 0 0;}
-.class-order {@include container-card;width:100%;max-width:60%;padding:3rem;position:absolute;right:0;top:4rem;}
+.class-order {@include tile-elevated;width:100%;max-width:60%;padding:3rem;position:absolute;right:0;top:4rem;}
 .class-order-price {font-size:var(--subhead);}
 .class-order-action-purchase {@include button-primary;width:100%;}
 .class-order-action-share {}

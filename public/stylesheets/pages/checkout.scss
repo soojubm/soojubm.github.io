@@ -15,7 +15,7 @@
 .checkout-head-byline h2 {font-size:var(--body);}
 .checkout-head-byline figure {@include box-small;display:flex;}
 
-.checkout-product {float:right;width:var(--width-small);@include container-card;margin-top:-14rem;}
+.checkout-product {float:right;width:var(--width-small);@include tile-elevated;margin-top:-14rem;}
 .checkout-product-title {margin:0 0 1rem 0;@include subhead;}
 .checkout-product-item {height:var(--size-large);margin:0 0 1rem 0;position:relative;}
 .checkout-product-item-media {float:left;@include box-large;margin:0 1.5rem 0 0;}

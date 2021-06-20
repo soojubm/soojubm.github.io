@@ -1,6 +1,6 @@
-.dialog {max-width:400px;@include container-card;}
+.dialog {max-width:400px;@include tile-elevated;}
 .dialog-object {position:absolute;left:50%;top:0;z-index:-1;width:100px;transform:translate(-50%, -50%);}
-.dialog-title {font-size:var(--subhead);font-weight:bold;}
+.dialog-title {font-size:var(--subhead);font-weight:var(--font-weight-bold);}
 .dialog-description {margin:.5rem 0 1.5rem;}
 // .dialog-footer {display:flex;justify-content:space-around;margin:2rem -1.5rem -1.5rem;padding:.25rem;border-top:var(--border100);}
 // .dialog-footer button {width:100%;}

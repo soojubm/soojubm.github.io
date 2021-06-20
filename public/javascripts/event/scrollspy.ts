@@ -35,6 +35,8 @@ const scrollspy = ({ menusSelector: menusClass, sectionsSelector: sectionsClass 
 
       const menusTemp = menus[index] as any
 
+      if(!menusTemp) return
+
       menus.forEach(menu => menu.classList.remove('is-active'))
       menusTemp.classList.add('is-active')
 

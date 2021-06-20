@@ -4,7 +4,7 @@
 .terms-head p time {}
 
 .terms-archive {max-width:var(--width-medium);margin:0 auto;padding:2rem 4%;box-sizing:border-box;}
-.terms-archive-title {margin:2rem 0 .75rem 0;font-size:var(--body);font-weight:bold;}
+.terms-archive-title {margin:2rem 0 .75rem 0;font-size:var(--body);font-weight:var(--font-weight-bold);}
 .terms-archive-link {display:block;margin:0 0 .25rem 0;}
 
 .terms-body {max-width:var(--width-medium);margin:2rem auto;padding:0 4%;box-sizing:border-box;}
@@ -31,7 +31,7 @@
 .personal-title {margin:0 0 1rem 0;@include subhead;}
 .personal-description {margin:0 0 2rem 0;}
 .personal dl {display:flex;padding:.25rem 0;}
-.personal dl dt {font-weight:bold;}
+.personal dl dt {font-weight:var(--font-weight-bold);}
 .personal dl dd {margin:0 0 0 1rem;}
 .personal footer {margin:1rem 0 0 0;}
 .personal footer strong {}

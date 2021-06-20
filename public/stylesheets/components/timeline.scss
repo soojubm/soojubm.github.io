@@ -13,7 +13,7 @@
 // .timeline-item-body {}
 .timeline-item-panel {margin:1rem 0 0 0;padding:1.5rem;border:var(--border100);border-radius:var(--radius400);background:var(--gray0);position:relative;}
 .timeline-item-panel.is-expanded {height:auto;overflow:auto;}
-.timeline-item-panel-title {margin:.5rem 0;font-size:var(--body);font-weight:bold;}
+.timeline-item-panel-title {margin:.5rem 0;font-size:var(--body);font-weight:var(--font-weight-bold);}
 .timeline-item-panel-description {margin:0 0 .75rem 0;}
 .timeline-item-panel-subhead {margin:0 0 .5rem 0;color:var(--gray400);font-size:var(--body);font-weight:400;}
 .timeline-item-note {margin:1rem 0 0 0;padding:0 1rem;border-left: 4px solid var(--color-primary);border-radius:var(--radius400);background:var(--green100);color:var(--color-primary);position:relative;}

@@ -64,7 +64,7 @@
 .post-comment-list-item {position:relative;}
 .post-comment-list-item-avatar {@include box-small;margin:0 0 .25rem;}
 .post-comment-list-item-avatar img {}
-.post-comment-list-item-author {font-weight:bold;color:var(--gray800);}
+.post-comment-list-item-author {font-weight:var(--font-weight-bold);color:var(--gray800);}
 .post-comment-list-item-date {display:block;margin-top:-.25rem;color:var(--gray400);font-size:var(--caption);}
 .post-comment-list-item-text {margin:.5rem 0 0;}
 .post-comment-list-item-morevert {@include box-small;position:absolute;right:0;top:0 ;}

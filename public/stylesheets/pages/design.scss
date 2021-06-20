@@ -1,6 +1,6 @@
 .color {overflow:hidden;}
 .color-group {display:flex;flex-wrap:wrap;justify-content:space-between;}
-.color-item {width:var(--grid-column-small);@include tile-flat;margin:.5rem;padding:.5rem;}
+.color-item {width:var(--grid-column-small);@include tile-flat-small;margin:.25rem;}
 .color-item.is-gray000 div {border:var(--border100);background:var(--gray0);}
 .color-item.is-gray100 div {background:var(--gray100);}
 .color-item.is-gray200 div {background:var(--gray200);}
@@ -22,6 +22,7 @@
 }
 
 .surface-item div {@include box-medium;box-shadow:var(--shadow400);}
+.surface-item-bold div {@include box-medium;box-shadow:var(--shadow800);}
 
 .design {}
 .design-head {overflow:hidden;background:var(--color-primary);position:fixed;left:0;right:0;top:0;bottom:0;z-index:1;}
@@ -37,7 +38,7 @@
 .design-article {margin:8rem 0;position:relative;opacity:0;}
 .design-article-title {margin:0 0 1rem 0;@include subhead;}
 .design-article-description {margin:0 0 2rem 0;}
-.design-article-more {display:flex;align-items:center;font-size:var(--caption);color:var(--color-primary);font-weight:bold;position:absolute;right:0;top:0;}
+.design-article-more {display:flex;align-items:center;font-size:var(--caption);color:var(--color-primary);font-weight:var(--font-weight-bold);position:absolute;right:0;top:0;}
 .design-article-more i {margin-left:1.5rem;}
 .design-article.is-scrolled {animation:fadeup .8s forwards;}
 
@@ -46,7 +47,7 @@
 .design-typograph-group .design-typograph-item {width:var(--grid-column);}
 
 
-.design-buttongroup {}
+.design-buttongroup {@include container-overflow;}
 
 .design-typograph-size {@include tile-flat;margin:1rem 0;overflow:hidden;}
 .design-typograph-size-title {line-height:var(--size-small);}
@@ -64,8 +65,8 @@
 // .design-typograph-size.is-active p {display:block;}
 // .design-typograph-size.is-active div {display:block;}
 
-.design-outer-flat {@include tile-flat;}
-.design-outer-flat-small {@include tile-flat-small;}
+.design-tile-flat {@include tile-flat;}
+.design-tile-flat-small {@include tile-flat-small;}
 .design-outer-elevated {@include tile-elevated;}
 .design-outer-elevated:hover {@include hover-item;}
 .design-outer-elevated-small {@include tile-elevated-small;}
@@ -80,7 +81,7 @@
 .design-button-subhead {font-size:var(--body);text-decoration:underline;}
 
 
-.spacing-card {@include container-card;}
+.spacing-card {@include tile-elevated;}
 .space {height:100%;background:var(--green100);text-align:center;position:relative;}
 .space .tag {margin:0;padding:0 .25rem;border-radius:var(--radius400);background:var(--color-primary);font-size:var(--caption);color:var(--gray0);position: absolute;
   left: 50%;
@@ -239,12 +240,12 @@
 
 
 .number {display:flex;justify-content:center;}
-.number-card {display:flex;justify-content:center;align-items:center;width:48px;height:64px;background:var(--gray100);border-radius:var(--shadow400);font-size:var(--title);font-weight:bold;margin:0 .25rem;}
+.number-card {display:flex;justify-content:center;align-items:center;width:48px;height:64px;background:var(--gray100);border-radius:var(--shadow400);font-size:var(--title);font-weight:var(--font-weight-bold);margin:0 .25rem;}
 
-.userlist {@include container-card;max-width:400px;}
+.userlist {@include tile-elevated;max-width:400px;}
 .userlist header {display:flex;align-items:center;justify-content:space-between;margin:var(--space-leading-subhead) 0 1rem 0;}
 .userlist header h1 {@include subhead;}
-.userlist header a {font-weight:bold;}
+.userlist header a {font-weight:var(--font-weight-bold);}
 .userlist .profile-user:hover {@include hover-item;}
 .userlist-cta {width:100%;margin:1rem 0 0 0;@include button-secondary;}
 // .userlist:after {
@@ -276,7 +277,7 @@
 
 
 .guide {
-  // @include container-card;
+  // @include tile-elevated;
   // todo icon do dont로 구분하기
   .guide-do {
     display: flex;
@@ -311,7 +312,7 @@
 
 
 
-.topic {@include container-card;padding:1.5rem 1.5rem 2rem;}
+.topic {@include tile-elevated;padding:1.5rem 1.5rem 2rem;}
 .topic-title {margin:0 0 1rem 0;}
 .topic-item {}
 
@@ -334,9 +335,6 @@
 .keywords-title {@include subhead;margin:var(--space-leading-subhead) 0 .75rem 0;}
 .keywords-group {}
 .keywords-group-keyword {@include chip;}
-
-.outer-flat {@include tile-flat}
-.outer-elevated {@include tile-elevated}
 
 .avatarlist {@include tile-elevated;padding:.5rem;color:var(--gray800);}
 .avatarlist:hover {@include hover-item;}
@@ -379,10 +377,30 @@
 
 .accordion {@include tile-elevated;padding:1.5rem;position:relative;}
 .accordion:hover {@include hover-item;}
-.accordion + .accordion {margin:.75rem 0 0 0;cursor:pointer;}
+.accordion + .accordion {margin:1rem 0 0 0;cursor:pointer;}
 .accordion-title {display:flex;align-items:center;justify-content:space-between;@include subhead;}
 .accordion-title-icon {@include box-small;display:none;}
 .accordion-panel {display:none;}
 .accordion-panel p {margin:1rem 0;}
 .is-active + .accordion-panel {display:block;}
 // [aria-expanded=true] + .accordion-panel {}
+
+
+
+
+.design-home {display:flex;flex-wrap:wrap;@include container-large;}
+.design-home header {width:100%;text-align:center;}
+.design-home header h1 {@include title;}
+.design-home header p {margin:var(--space-after-title) 0 0 0;font-size:var(--subhead);}
+.design-home nav {display:flex;justify-content:space-between;width:100%;margin:4rem 0;}
+.design-home nav a {display:flex;align-items:center;@include tile-elevated;width:30%;font-size:var(--subhead);font-weight:var(--font-weight-bold);}
+.design-home nav a[readonly] {opacity:.5;cursor:not-allowed;}
+.design-home nav a:hover:not([readonly]) {@include hover-item;}
+.design-home nav a span {@include box-small;margin-left:auto;margin-top:2px;}
+.design-home nav a div {margin:0 0 0 var(--space-before-badge);}
+
+@media (--viewport-small) {
+  .design-home nav {flex-direction:column;}
+  .design-home nav a {width:100%;}
+  .design-home nav a + a {margin-top:1rem;}
+}

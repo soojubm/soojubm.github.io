@@ -24,7 +24,8 @@ $transition-fade: opacity 0.15s linear;
   --body: .875rem;
   --caption: .75rem;
 
-  // --font-size-
+  // --font-size
+  // ! 안 외워짐. 용도별로 구분하는 것이 좋을 수도.
   --font-size-huge: var(--headline);
   --font-size-large: var(--title);
   --font-size-regular: var(--subhead);
@@ -95,6 +96,8 @@ $transition-fade: opacity 0.15s linear;
   --space-after-description: 2rem; // 2rem 0 0 0
   --space-after-button: .75rem;
   --space-after-button: .75rem;
+  
+  --space-before-badge: .5rem;
 
   --space-between-item: .75rem;
   --space-between-section: 8rem;
@@ -104,9 +107,10 @@ $transition-fade: opacity 0.15s linear;
   
 
   --border100: 1px solid var(--gray200);
+
   --border-active: 1px solid var(--color-primary);
-  --background-active:0;
-  --text-active: 0;
+  --background-active: var(--color-primary);
+  --text-active: var(--color-primary);
 
   --radius400: 4px;
   --radius800: 50%;
@@ -116,6 +120,7 @@ $transition-fade: opacity 0.15s linear;
   --radius-container: var(--radius400);
 
   --shadow400: 0px 0px 2rem rgba(0, 0, 0, 0.125);
+  --shadow800: 0px 0px 2rem rgba(0, 0, 0, 0.5);
 
   --card-background: #fff;
   --card-border: 1px solid #fff;
@@ -148,9 +153,7 @@ $transition-fade: opacity 0.15s linear;
   --grid-column: calc(50% - .375rem);
   --grid-gutter: 1rem;
   --grid-margin: 5%;
-  @media (--viewport-tiny) {
-    // --grid-margin: 1rem;
-  }
+  --grid-margin-minus: calc(var(--grid-margin) * -1);
 
   --grid-column-small: calc(50% - .125rem);
 
@@ -159,6 +162,11 @@ $transition-fade: opacity 0.15s linear;
 
   @media (--viewport-large) {
     --width-large: 1120px;
+  }
+
+  @media (--viewport-tiny) {
+    --grid-margin: 1rem;
+    --grid-margin-minus: calc(var(--grid-margin) * -1 - 4px);
   }
   
 

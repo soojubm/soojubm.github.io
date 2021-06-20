@@ -2,7 +2,7 @@
 .imgbox img {display:block;}
 
 .visual {width:100%;overflow:hidden;text-align:center;position:relative;}
-.visual h1 {width:100%;font-size:44px;font-weight:bold;color:#fff;position:absolute;left:50%;top:295px;z-index:2;transform:translate(-50%, 0);}
+.visual h1 {width:100%;font-size:44px;font-weight:var(--font-weight-bold);color:#fff;position:absolute;left:50%;top:295px;z-index:2;transform:translate(-50%, 0);}
 .visual span {width:100%;font-family:'Open Sans';font-size:14px;text-transform:uppercase;letter-spacing:9.4px;color:rgba(255,255,255,.7);position:absolute;left:50%;top:360px;z-index:2;transform:translate(-50%, 0);}
 
 .breadcrumb {width:1240px;height:70px;background:#c59b5c;margin:-35px auto 0;box-shadow:0 6px 18px rgba(0,0,0, .15);position:relative;z-index:3;}
