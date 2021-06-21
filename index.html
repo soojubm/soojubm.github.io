@@ -317,7 +317,7 @@
 
       async function fetchComponent(componentName) {
         const selector = `#${componentName}`
-        const endpoint = `${componentName}.html`
+        const endpoint = `/views/components/${componentName}.html`
         const parentElement = document.querySelector(selector)
         console.log(componentName, selector, endpoint)
 
@@ -340,7 +340,7 @@
       window.addEventListener('DOMContentLoaded', detectOnline)
       window.addEventListener('DOMContentLoaded', detectBrowser)
 
-      // todo isOnline isEBBrowser 등 모두 유틸성으로 빠지고,
+      // todo isOnline isEBBrowser 등 모두 유틸성,
 
       function detectBrowser() {
         const BrowserElement = document.querySelector('.js-browser')

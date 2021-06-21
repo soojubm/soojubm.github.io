@@ -397,7 +397,7 @@
 .design-home nav a[readonly] {opacity:.5;cursor:not-allowed;}
 .design-home nav a:hover:not([readonly]) {@include hover-item;}
 .design-home nav a span {@include box-small;margin-left:auto;margin-top:2px;}
-.design-home nav a div {margin:0 0 0 var(--space-before-badge);}
+.design-home nav a div {margin:2px 0 0 var(--space-before-badge);}
 
 @media (--viewport-small) {
   .design-home nav {flex-direction:column;}
