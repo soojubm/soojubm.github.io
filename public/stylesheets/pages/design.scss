@@ -25,19 +25,20 @@
 .surface-item-bold div {@include box-medium;box-shadow:var(--shadow800);}
 
 .design {}
-.design-head {overflow:hidden;background:var(--color-primary);position:fixed;left:0;right:0;top:0;bottom:0;z-index:1;transform:translateX(-50%);transition:transform .8s $bezier-base .4s;}
-.design-head.is-scrolled {transform:translateX(-50%);transition:transform .8s $bezier-base .4s;}
+.design-head {background:var(--gray100);border-radius:var(--radius400);position:fixed;left:5%;top:3.75rem;right:70%;bottom:3.75rem;}
+// .design-head {overflow:hidden;background:var(--color-primary);position:fixed;left:0;right:0;top:0;bottom:0;z-index:1;transform:translateX(-50%);transition:transform .8s $bezier-base .4s;}
+// .design-head.is-scrolled {transform:translateX(-50%);transition:transform .8s $bezier-base .4s;}
 
-.design-navigation {max-width:var(--width-large);margin:0 auto;padding:1rem var(--grid-margin);border-radius:var(--radius400);position:relative;z-index:6 ;position:sticky;top:0;
-  background: #fff;}
+.design-navigation {margin-left:30%;padding:1rem var(--grid-margin);border-radius:var(--radius400);position:relative;z-index:6 ;position:sticky;top:0;}
 .design-navigation-background {}
 .design-navigation-scroll {@include group-bleeding;position:relative;}
 // todo container-bleed
 
-.design-body {width:50%;overflow-x:hidden;max-width:36rem;margin:0 0 0 50%;padding:0 6rem 8rem;}
+.design-body {width:50%;overflow-x:hidden;margin:0 0 0 30%;padding:0 var(--grid-margin) 8rem;}
+// .design-body {width:50%;overflow-x:hidden;max-width:36rem;margin:0 0 0 50%;padding:0 6rem 8rem;}
 // .design-body {overflow-x:hidden;max-width:var(--width-medium);margin:0 auto;padding:0 var(--grid-margin) 8rem;}
 
-.design-article {margin:8rem 0;position:relative;}
+.design-article {margin:0 0 8rem 0;position:relative;}
 .design-article-title {margin:0 0 1rem 0;@include subhead;}
 .design-article-description {margin:0 0 2rem 0;}
 .design-article-more {display:flex;align-items:center;font-size:var(--caption);color:var(--color-primary);font-weight:var(--font-weight-bold);position:absolute;right:0;top:0;}
