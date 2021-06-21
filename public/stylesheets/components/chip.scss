@@ -17,6 +17,6 @@
 
 
 .chips {
-    @include container-overflow;
+    @include group-bleeding;
     // @include tile-flat;
 }

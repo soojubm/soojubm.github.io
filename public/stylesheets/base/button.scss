@@ -110,17 +110,8 @@ button {@include reset-button;}
 // ! backButton closeButton :: back close 아이콘은 어차피 단독으로 쓰이지 않는다!
 
 // ! 모바일에서 100%로 되는 컴포넌트가 있고 아닌 컴포넌트가 있다.
-// ! 그러니까 listitem / group 차이로 봐야하나
+
 .danger-button {@include button;background:var(--red800);border:1px solid var(--red800);color:var(--gray0);}
-
-[role=group] {display:flex;flex-wrap:wrap;margin:-.25rem;}
-[role=group] > * {margin:.25rem;}
-[role=group] input[type=radio] + label {margin:0 16px 0 0;color:var(--gray400);padding-left:0;}
-[role=group] input[type=radio] + label:before {content:'';display:inline-block;width:2px;height:2px;background:var(--gray400);margin:0 10px 0 0;vertical-align:3px;position:static;left:auto;top:auto;}
-[role=group] input[type=radio] + label:after {display:none;}
-[role=group] input[type=radio]:checked + label {color:var(--gray800)}
-[role=group] input[type=radio]:checked + label:before {border-color:var(--gray800);width:10px;height:4px;border-left: 2px solid #f3f2f1;border-bottom: 2px solid #f3f2f1;background:none;margin:0 8px 0 0;border-color:var(--gray400);vertical-align:3px;transform:rotate(-45deg);border-radius:0;border-right:0;border-top:0;position:static;left:auto;top:auto;}
-
 
 .group-sample {display:flex;justify-content:space-between;}
 .group-sample-prev {@include button-tertiary;}

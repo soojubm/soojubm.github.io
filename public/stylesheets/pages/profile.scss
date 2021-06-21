@@ -62,7 +62,7 @@
 .card-text {padding:.5rem 0 1rem;@include truncate-multi;}
 .card-category {@include tag-eyebrow;@include position-left-top;}
 .card-date {color:var(--gray400);}
-.card-tags {display:flex;flex-wrap:wrap;margin-top:.5rem;}
+.card-tags {margin-top:.5rem;}
 .card-tags-item {@include tag-keyword;}
 .card-item {height:48px;margin:1rem 0;position:relative;}
 .card-item:hover {@include hover-item;}
@@ -76,12 +76,13 @@
 // .card:hover .card-thumbnail img {transform:translateY(-.25rem);}
 .card:hover .card-more {display:block;}
 
-.list .card {float:none;width:100% !important;margin-bottom:1rem;padding:1rem;}
-.list .card-thumbnail {float:left;width:80px;height:80px;margin-right:var(--space-after-large);padding-top:0;}
+.list .card {float:none;width:100% !important;margin-bottom:1rem;padding:.5rem;}
+.list .card-thumbnail {float:left;width:80px;height:80px;margin-right:var(--space-after-large);margin-right:0;padding-top:0;}
 .list .card-thumbnail img {max-width:150%;}
 .list .card-title {padding-top:0;}
 .list .card-byline {margin-top:.5rem;margin-bottom:.5rem;}
 .list .card-more {right:0;top:0;}
+.list .card-category {left:.25rem;top:.25rem;}
 
 @media (--viewport-large) {
   .profile-tabpanel .card {width:calc(50% - 1rem);}

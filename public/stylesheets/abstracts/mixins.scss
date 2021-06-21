@@ -15,7 +15,10 @@
 
 
 @mixin link-inner {
-  display:inline-block;color:var(--color-primary);text-decoration:underline;
+  display:inline-block;
+  color:var(--color-primary);
+  // text-decoration:underline;
+  &:hover {text-decoration:underline;}
 }
 @mixin link-outer {
   color:var(--color-primary);
@@ -54,14 +57,6 @@
     content:'';display:block;background:var(--gray100);border-radius:var(--radius400);position:absolute;left:-.5rem;right:-.5rem;top:-.5rem;bottom:-.5rem;z-index:-1;
   }
   figure {background-color:var(--gray0);}
-}
-
-@mixin container-overflow {
-  display: block;
-  overflow:auto;white-space:nowrap;
-  font-size:0;
-  &::-webkit-scrollbar {display:none;}
-  > * {display:inline-block;font-size:var(--body);}
 }
 
 @mixin container-page {
@@ -115,6 +110,36 @@
   background: var(--gray100);
   position: relative;
 }
+
+
+// [role=group] input[type=radio] + label {margin:0 16px 0 0;color:var(--gray400);padding-left:0;}
+// [role=group] input[type=radio] + label:before {content:'';display:inline-block;width:2px;height:2px;background:var(--gray400);margin:0 10px 0 0;vertical-align:3px;position:static;left:auto;top:auto;}
+// [role=group] input[type=radio] + label:after {display:none;}
+// [role=group] input[type=radio]:checked + label {color:var(--gray800)}
+// [role=group] input[type=radio]:checked + label:before {border-color:var(--gray800);width:10px;height:4px;border-left: 2px solid #f3f2f1;border-bottom: 2px solid #f3f2f1;background:none;margin:0 8px 0 0;border-color:var(--gray400);vertical-align:3px;transform:rotate(-45deg);border-radius:0;border-right:0;border-top:0;position:static;left:auto;top:auto;}
+
+
+
+
+// ! group vs row vs rowgroup
+// 그냥나열되는경우(display:flex flex-wrap vs inline-block) 마진중첩서로 다르게 적용이 된다. / 
+// ? bleeding vs default = design navigation vs taglist
+@mixin group {
+  display:flex;flex-wrap:wrap;margin:var(--space-between-groupitem-minus);
+  > * {margin:var(--space-between-groupitem);}
+}
+@mixin group-pull {display:flex;justify-content:space-between;align-items:center;}
+@mixin group-wrap {display:flex;flex-wrap:wrap;}
+@mixin group-bleeding {
+  display:block;overflow:auto;white-space:nowrap;font-size:0;
+  > * {display:inline-block;margin:0 calc(var(--space-between-groupitem) * 2) 0 0;font-size:var(--body);}
+  &::-webkit-scrollbar {display:none;}
+}
+
+[role=group] {@include group;}
+
+
+
 @mixin box-large {@include tile-avatar(var(--size-large));}
 @mixin box-medium {@include tile-avatar(var(--size-medium));}
 @mixin box-small {@include tile-avatar(var(--size-small));}

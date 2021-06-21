@@ -1,5 +1,31 @@
 <main class="design">
-  <!-- <header class="design-head js-scrollspy-section"></header> -->
+
+  <style>
+    .navbar {display:none;}
+  </style>
+  
+  <header class="header js-header" role="navigation">
+    <div class="header-background"></div>
+    <h1 class="header-title js-page-title">페이지타이틀</h1>
+    <button class="header-back" onclick="javascript:window.location.href='/';">
+      <span class="header-back-icon"><i class="icon-arrow"></i></span>
+    </button>
+    <button class="header-cta">
+      <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" svg-inline="" role="presentation" focusable="false" tabindex="-1" class="icon-16">
+        <path
+          d="M0 12.782c0 .85.1 1.65.3 2.45.1.45.35.45.5 0 1.05-2.65 2.75-5.15 5.55-5.65H8v2.2c0 1 .6 1.3 1.3.7l6.4-5.5c.35-.3.35-.8 0-1.15L9.3.332c-.7-.65-1.3-.3-1.3.65v2.35c-4.8.8-8 4.7-8 9.45z"
+          fill="currentColor"
+        ></path>
+      </svg>
+    </button>
+  </header>
+  <!-- <header class="header-backdrop js-header"></header> -->
+
+  <header class="design-head"></header>
+
+
+
+
   <section class="hero">
     <div class="hero-background"></div>
     <h1 class="hero-title"><span style="display:none;">Design System</span>Components<i style="font-style:italic;" hidden>!</i></h1>
@@ -31,22 +57,22 @@
     <img class="hero-obj4" src="/public/images/blob-shape.svg" alt="" /> -->
   </section>
 
-  <nav class="design-navigation" style="margin:0 auto;padding:.5rem var(--grid-margin);position:relative;z-index:6 ;position:sticky;top:48px;
-  background: #fff;">
+  <nav class="design-navigation">
     <div class="design-navigation-background"></div>
     <div class="design-navigation-scroll" role="group" style="margin:0 var(--grid-margin-minus);padding:0 calc(5% - .25rem);">
       <!-- <a class="chip is-active" href="" role="link">홈</a> -->
-      <a class="chip is-active js-scrollspy-trigger" href="#" style="font-size:bold;">사이즈</a>
-      <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">타이포그래피</a>
-      <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">팔레트</a>
-      <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">타일</a>
-      <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">칩</a>
-      <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">뱃지</a>
-      <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">체크박스</a>
-      <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">라디오버튼</a>
-      <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">스위치</a>
-      <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">Select</a>
+      <a class="chip is-active js-scrollspy-trigger" href="#" style="font-size:bold;">Sizes</a>
+      <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">Typograph</a>
+      <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">Pallettes</a>
+      <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">Tiles</a>
+      <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">Chips</a>
+      <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">Badges</a>
+      <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">Buttons</a>
+      <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">Checkboxes</a>
+      <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">Radioes</a>
+      <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">Switch</a>
       <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">Textfields</a>
+      <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">Select</a>
       <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">Seperator</a>
       <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">Breadcrumb</a>
       <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">Text Links</a>
@@ -54,12 +80,10 @@
       <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">Texts</a>
       <!-- <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">Suggestion</a> -->
       <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">Tab</a>
-      <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">Buttons</a>
       <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">Tooltip</a>
       <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">Notifications</a>
     </div>
   </nav>
-
 
   <article class="design-body">
     <article class="textbox" hidden>
@@ -505,12 +529,12 @@
       <div class="color-group" role="group">
         <figure class="color-item surface-item">
           <div style="background:var(--gray0);"></div>
-          <h3>elevation400</h3>
+          <h3>elevation400 :  :: 다크테마에서 조금 더 눈에 띄는 친구가 필요. 400을 상대적으로 작게.</h3>
         </figure>
-        <figure class="color-item surface-item-bold">
+        <!-- <figure class="color-item surface-item-bold">
           <div style="background:var(--gray0);"></div>
-          <h3>elevation800 :: 다크테마에서 조금 더 눈에 띄는 친구가 필요. 400을 상대적으로 작게.</h3>
-        </figure>
+          <h3>elevation800</h3>
+        </figure> -->
       </div>
       <br />
       <h2 style="margin:0 0 .5rem;"><small>Skeleton</small></h2>
@@ -570,8 +594,8 @@
           +5
         </button>
       </div>
-      <!-- <hr role="separator" /> -->
-      <div role="group" style="margin:1rem 0 0 0;">
+      <hr role="separator" />
+      <div role="group">
         <button class="chip">
           <figure>🦔</figure>
           타이포그래피
@@ -610,28 +634,94 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Badge</h1>
-      <p class="design-article-description"></p>
+      <p class="design-article-description">작성 중.</p>
       <blockquote>
-        히스토리: chip-small 사이즈에서 떨어져 나옴.
-        이유: 뱃지는 클릭할 수 없는 요소이기 때문에 시각적으로 칩 스타일과 완전히 분리해 봄. 유아이 컴포넌트가 용도가 아닌 스타일로 구분되어 있다면 가이드를 작성하기도 힘들고 커뮤니케이션도 어려워진다는 판단. 같은 이유에서 해시태그.
+        히스토리: chip-small로 갔다가 사이즈에서 다시 분리. 클릭할 수 없는 요소. 용도가 아닌 스타일로 구분되어 있어서 가이드를 작성하기도 힘들고 커뮤니케이션도 어려워짐. 같은 이유에서 해시태그.
       </blockquote>
       <div class="" role="group">
         <span class="tag tags-item" data-appearance="accent">Eyebrow</span>
-        <span class="tag topic-item" href="#" role="listitem" style="background:var(--green100);color:var(--green800);">Badge</span>
-        <a class="tag topic-item" href="#" role="listitem">Badge & Keyword</a>
+        <span class="tag" href="#" role="listitem" style="background:var(--green100);color:var(--green800);">Badge</span>
+        <a class="tag" href="#" role="listitem">Badge & Keyword</a>
         <!-- <a class="tag topic-item is-disabled" href="#" role="listitem">Disabled</a> -->
       </div>
-      <hr />
-      <nav class="sidebar" style="margin-top:1rem;padding-bottom:.5rem">
-        <h4 class="sidebar-heading" style="margin-top:-.25rem;">대분류</h4>
-        <div class="sidebar-item" role="listitem">
-          <h2 style="margin-right:.5rem;font-size:var(--subhead)"><figure style="margin:0 1rem 0 0;">⚽</figure>축구</h2>
-        </div>
-        <div class="sidebar-item" role="listitem">
-          <h2 style="margin-right:1rem;font-size:var(--subhead)"><figure style="margin:0 1rem 0 0;">🏹</figure>양궁</h2>
-          <span class="sidebar-item-tag tag" data-appearance="accent">새소식</span>
-        </div>
-      </nav>
+    </article>
+    
+    <article class="design-article js-scrollspy-section">
+      <h1 class="design-article-title">Buttons</h1>
+      <ul class="design-article-description">
+        <li>hover, focus 개별적인 스타일링 안 했으면 좋겠다. disabled도 모두 통일하는 방법.</li>
+        <li>프라이머리primary: 한 페이지에 한 개. 세컨더리: 사용자 여정에 필요한 기능.</li>
+        <li>binary selection(?choice)에서 프라이머리와 세컨더리를 함께 사용할 수 없습니다.</li>
+        <li>네이밍: style = solid/outline/plain/text (유아이 라이브러리에 어울림) appearance = link / subtle / primary, space = compact/fullwidth</li>
+        <li>aria-expanded / role="img" aria-label="plus icon" / aria-pressed={activated ? "true" : "false"}</li>
+        <li>
+          아이콘 버튼은 공간 제약이 있어 레이블을 생략할 필요가 있을 때 사용합니다. 이 때 아이콘은 보편적인 메타포...
+        </li>
+      </ul>
+      <blockquote>
+        chip이 button-small.
+      </blockquote>
+      <!--
+        <a class="button" href="#">Anchor button</a>
+        <button>Button element</button>
+        <input type="submit" value="submit input">
+        <input type="button" value="button input">
+      -->
+      <h6 style="margin:0 0 .5rem;font-size:var(--caption);">Primary</h6>
+      <div class="design-buttongroup tile-flat-small">
+        <button class="design-article-primary" aria-pressed="false" aria-expanded="false">Default</button>
+        <button class="design-article-primary is-hover">Hover</button>
+        <button class="design-article-primary is-focus">Focus</button>
+        <!-- <button class="design-article-primary" style="display:block;margin:0 .5rem 0 0;">Active</button> -->
+        <button class="design-article-primary" disabled>Disabled</button>
+      </div>
+      <br />
+      <h6 style="margin:0 0 .5rem;font-size:var(--caption);">Secondary</h6>
+      <div class="design-buttongroup tile-flat-small">
+        <button class="design-article-secondary">Default</button>
+        <button class="design-article-secondary is-hover">Hover</button>
+        <button class="design-article-secondary is-focus">Focus</button>
+        <!-- <button class="design-article-secondary" style="display:block;margin:0 .5rem 0 0;">Active</button> -->
+        <button class="design-article-secondary" disabled>Disabled</button>
+      </div>
+      <br />
+      <h6 style="margin:0 0 .5rem;font-size:var(--caption);">Tertiary</h6>
+      <div class="design-buttongroup tile-flat-small">
+        <button class="design-article-tertiary">Default</button>
+        <button class="design-article-tertiary is-hover">Hover</button>
+        <button class="design-article-tertiary is-focus">Focus</button>
+        <!-- <button class="design-article-tertiary" style="display:block;margin:0 .5rem 0 0;">Active</button> -->
+        <button class="design-article-tertiary" disabled>Disabled</button>
+      </div>
+      <br />
+      <h6 style="margin:0 0 .5rem;font-size:var(--caption);">Sizes</h6>
+      <div class="design-buttongroup tile-flat-small">
+        <button class="design-article-tertiary-small">Small</button>
+        <button class="design-article-tertiary">Medium</button>
+        <button class="design-article-primary" style="height:auto;padding:12px 0 15px;font-size:var(--subhead);">
+          Large
+        </button>
+      </div>
+      <ul style="margin:.5rem 0 0;font-size:var(--caption);">
+        <li>Large 사이즈는 primary 스타일만 가지며 프로모션 페이지에서 사용합니다.</li>
+      </ul>
+
+      <h6 style="margin:0 0 .5rem;font-size:var(--caption);">Text (outdated)</h6>
+      <div class="design-buttongroup tile-flat-small">
+        <button class="design-article-text">Default</button>
+        <button class="design-article-text is-hover">Hover</button>
+        <button class="design-article-text is-focus">Focus</button>
+        <button class="design-article-text" disabled>Disabled</button>
+      </div>
+      <br />
+      <h6 style="margin:0 0 .5rem;font-size:var(--caption);">Status</h6>
+      <div class="design-buttongroup tile-flat-small">
+        <button class="loadmore is-fetching">
+          <!-- <div class="loader-spinner" style="margin-left:0;margin-right:1rem;"></div> -->
+          Loading...
+        </button>
+        <button class="danger-button is-small" aria-label="danger">Danger</button>
+      </div>
     </article>
 
     <article class="design-article js-scrollspy-section">
@@ -845,9 +935,10 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Text Links</h1>
-      <p class="design-article-description">문단 <a href="#" class="link-inner">내부 링크</a>와 문단 <a href="#" class="link-outer">외부 링크</a>를 구분합니다.</p>
+      <!-- <p class="design-article-description">문단 <a href="#" class="link-inner">내부 링크</a>와 문단 <a href="#" class="link-outer">외부 링크</a>를 구분합니다.</p> -->
+      <p class="design-article-description">작성 중.</p>
       <blockquote>
-        <p>요약한 텍스트를 펼쳐보기 위한 더보기 버튼은 중요도가 낮기 때문에 톤 다운된 검정색이 많이 사용됨. 외부 링크와 텍스트 버튼 구분.</p>
+        <p>요약한 텍스트를 펼쳐보기 위한 더보기 버튼은 중요도가 낮기 때문에 톤 다운된 검정도 많이 사용. 링크 vs 텍스트 버튼. history: 21.06 내부 외부 링크 구분하지 않음. 언더라인 있으니 hover state 표현하기 어려움. 하지만 컴포넌트는 여전히 따로 사용하는 것이 어떨까.</p>
         <p>external => target="_blank" rel="noopener noreferrer"</p>
         <p>hover state</p>
       </blockquote>
@@ -963,86 +1054,6 @@
 			</nav>
     </article>
 
-    
-
-
-    <article class="design-article js-scrollspy-section">
-      <h1 class="design-article-title">Buttons</h1>
-      <ul class="design-article-description">
-        <li>hover와 focus 상태에 개별적인 스타일링 안 할 수 있는 방법은?</li>
-        <li>프라이머리primary 스타일은 한 페이지에 한 개.</li>
-        <li>서비스 여정에 필요한 기능에 세컨더리 버튼을 사용하세요.</li>
-        <li>binary selection(?choice)에서 프라이머리와 세컨더리를 함께 사용할 수 없습니다.</li>
-        <li>네이밍: style = solid/outline/plain/text (유아이 라이브러리에 어울림) appearance = link / subtle / primary, space = compact/fullwidth</li>
-        <li>aria-expanded / role="img" aria-label="plus icon" / aria-pressed={activated ? "true" : "false"}</li>
-        <li>
-          아이콘 버튼은 공간 제약이 있어 레이블을 생략할 필요가 있을 때 사용합니다. 이 때 아이콘은 보편적인 메타포...
-        </li>
-        <li>Large 사이즈는 primary 스타일만 가지며 프로모션 페이지에서 사용합니다.</li>
-      </ul>
-      <!--
-        <a class="button" href="#">Anchor button</a>
-        <button>Button element</button>
-        <input type="submit" value="submit input">
-        <input type="button" value="button input">
-      -->
-      
-      <h6 style="margin:0 0 .5rem;font-size:var(--caption);">Sizes</h6>
-      <div class="tile-flat-small">
-        <button class="design-article-tertiary-small">Small</button>
-        <br />
-        <button class="design-article-tertiary">Medium</button>
-        <br />
-        <button class="design-article-primary" style="height:auto;padding:12px 0 15px;font-size:var(--subhead);">
-          Large
-        </button>
-      </div>
-      <br />
-      <h6 style="margin:0 0 .5rem;font-size:var(--caption);">Primary</h6>
-      <div class="design-buttongroup tile-flat-small">
-        <button class="design-article-primary" style="margin:0 .5rem 0 0;" aria-pressed="false" aria-expanded="false">Default</button>
-        <button class="design-article-primary is-hover" style="margin:0 .5rem 0 0;">Hover</button>
-        <button class="design-article-primary is-focus" style="margin:0 .5rem 0 0;">Focus</button>
-        <!-- <button class="design-article-primary" style="display:block;margin:0 .5rem 0 0;">Active</button> -->
-        <button class="design-article-primary" disabled>Disabled</button>
-      </div>
-      <br />
-      <h6 style="margin:0 0 .5rem;font-size:var(--caption);">Secondary</h6>
-      <div class="design-buttongroup tile-flat-small">
-        <button class="design-article-secondary" style="margin:0 .5rem 0 0;">Default</button>
-        <button class="design-article-secondary is-hover" style="margin:0 .5rem 0 0;">Hover</button>
-        <button class="design-article-secondary is-focus" style="margin:0 .5rem 0 0;">Focus</button>
-        <!-- <button class="design-article-secondary" style="display:block;margin:0 .5rem 0 0;">Active</button> -->
-        <button class="design-article-secondary" disabled>Disabled</button>
-      </div>
-      <br />
-      <h6 style="margin:0 0 .5rem;font-size:var(--caption);">Tertiary</h6>
-      <div class="design-buttongroup tile-flat-small">
-        <button class="design-article-tertiary" style="margin:0 .5rem 0 0;">Default</button>
-        <button class="design-article-tertiary is-hover" style="margin:0 .5rem 0 0;">Hover</button>
-        <button class="design-article-tertiary is-focus" style="margin:0 .5rem 0 0;">Focus</button>
-        <!-- <button class="design-article-tertiary" style="display:block;margin:0 .5rem 0 0;">Active</button> -->
-        <button class="design-article-tertiary" disabled>Disabled</button>
-      </div>
-      <br />
-      <h6 style="margin:0 0 .5rem;font-size:var(--caption);">Text (outdated)</h6>
-      <div class="design-buttongroup tile-flat-small">
-        <button class="design-article-text" style="margin:0 .5rem 0 0;">Default</button>
-        <button class="design-article-text is-hover" style="margin:0 .5rem 0 0;">Hover</button>
-        <button class="design-article-text is-focus" style="margin:0 .5rem 0 0;">Focus</button>
-        <button class="design-article-text" disabled>Disabled</button>
-      </div>
-      <br />
-      <h6 style="margin:0 0 .5rem;font-size:var(--caption);">Status</h6>
-      <div class="tile-flat-small">
-        <button class="loadmore is-fetching">
-          <!-- <div class="loader-spinner" style="margin-left:0;margin-right:1rem;"></div> -->
-          Loading...
-        </button>
-        <button class="danger-button is-small" aria-label="danger">Danger</button>
-      </div>
-    </article>
-
     <!-- <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Button Group</h1>
       <p class="design-article-description">작성 중.</p>
@@ -1087,10 +1098,10 @@
           <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus.
         </p>
       </aside>
-      <aside class="message" style="margin:1rem 0;background:gold;border:0;">
+      <aside class="message" style="margin:1rem 0;background:var(--gray800);border:0;">
         <span class="message-icon">🧡</span>
         <p class="message-head" style="color:var(--gray999);">좋아한 콘텐츠에 저장했어요.</p>
-        <button class="message-close" aria-label="close"><i class="icon-close"></i></button>
+        <!-- <button class="message-close" aria-label="close"><i class="icon-close"></i></button> -->
       </aside>
       <aside class="message" style="background:var(--red800);border-color:transparent;">
         <p class="message-head" style="color:var(--gray0);">인터넷 연결이</p>
@@ -1326,24 +1337,22 @@
 
       <br />
 
-      <article class="usercard outer-elevated" style="max-width:400px;">
-        <article class="user">
-          <figure class="user-avatar"><img src="/public/images/soo.png" alt=""></figure>
-          <h2 class="user-name">Gyeongsoo I</h2>
-          <div class="user-id">@soojubm</div>
-          <div class="user-career" style="margin:.5rem 0 0 0;">UI Designer / Frontend Engineer</div>
-        </article>
-        <!-- <footer class="user-foot" style="display:flex;margin:1rem 0;">
-          <span class="tag">대한민국</span>
-          <span class="tag">자전거</span>
-        </footer> -->
-        <footer class="user-foot" style="display:flex;justify-content:space-between;margin:1rem 0 0 0;">
-          <button class="profile-foot-follow">팔로우</button>
-        </footer>
+      <article class="user tile-elevated" style="max-width:400px;">
+        <figure class="user-avatar"><img src="/public/images/soo.png" alt=""></figure>
+        <h2 class="user-name">Gyeongsoo I</h2>
+        <div class="user-id">@soojubm</div>
+        <div class="user-career" style="margin:.5rem 0 0 0;">UI Designer / Frontend Engineer</div>
+
+      <!-- <footer class="user-foot" style="display:flex;margin:1rem 0;">
+        <span class="tag">대한민국</span>
+        <span class="tag">자전거</span>
+      </footer> -->
+      <footer class="user-foot" style="display:flex;justify-content:space-between;margin:1rem 0 0 0;">
+        <button class="profile-foot-follow">팔로우</button>
+      </footer>
       </article>
 
       <br />
-
       
       <article class="userlist" style="overflow:hidden;">
         <button class="sheet-toggle"></button>
@@ -1435,6 +1444,19 @@
           </button>
         </div>
       </article>
+
+      <br />
+
+      <nav class="sidebar">
+        <h4 class="sidebar-heading" style="margin-top:-.25rem;">대분류</h4>
+        <div class="sidebar-item" role="listitem">
+          <h2 style="margin-right:.5rem;font-size:var(--subhead)"><figure style="margin:0 1rem 0 0;">⚽</figure>축구</h2>
+        </div>
+        <div class="sidebar-item" role="listitem">
+          <h2 style="margin-right:1rem;font-size:var(--subhead)"><figure style="margin:0 1rem 0 0;">🏹</figure>양궁</h2>
+          <span class="sidebar-item-tag tag" data-appearance="accent">새소식</span>
+        </div>
+      </nav>
     </article>
 
 
@@ -1682,7 +1704,7 @@
       <h2 style="margin:2rem 0;text-align:center;">Questions?</h2>
       <article class="accordion">
         <h3 class="accordion-title js-toggle" role="button" aria-expanded="false">
-          회원탈퇴는 어떻게 할 수 있나요?
+          탈퇴하고 싶어요.
           <span class="accordion-title-icon"><i class="icon-plus"></i></span>
         </h3>
         <div class="accordion-panel">

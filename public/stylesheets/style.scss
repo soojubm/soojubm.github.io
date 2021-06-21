@@ -163,7 +163,7 @@
 }
 
 .slider {position:relative;}
-.slider-viewer {@include container-overflow;}
+.slider-viewer {@include group-bleeding;}
 /* .slider-viewer .inbox {width:1500px;position:absolute;} */
 .slider-viewer-slide {display:inline-block;width:10rem;padding:1rem;border:1px solid var(--color-box-border);border-radius:var(--radius400);background:var(--gray100);text-align:left;font-size:var(--body);}
 .slider-viewer-slide:nth-of-type(1) {}
@@ -518,7 +518,7 @@
 
 
 
-.container-overflow {@include container-overflow;}
+.group-bleeding {@include group-bleeding;}
 
 
 
