@@ -1,5 +1,5 @@
 // ! viewport : desktop first
-@custom-media --viewport-large (max-width: 1441px);
+@custom-media --viewport-large (max-width: 1380px);
 @custom-media --viewport-small (max-width: 1080px);
 @custom-media --viewport-tiny (max-width: 760px);
 
@@ -72,6 +72,7 @@ $transition-fade: opacity 0.15s linear;
   --width-medium: 640px;
   --width-medium2: 1024px;
   --width-large: 1440px;
+  --width-large: 1180px;
 
   --width-dropdown: var(--width-tiny);
   --width-popover: 0;
@@ -160,7 +161,7 @@ $transition-fade: opacity 0.15s linear;
   --safearea-inset-bottom2: env(safe-area-inset-bottom);
 
   @media (--viewport-large) {
-    --width-large: 1120px;
+    --width-large: 1020px;
   }
 
   @media (--viewport-tiny) {

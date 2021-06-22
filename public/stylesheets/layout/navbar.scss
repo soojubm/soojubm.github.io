@@ -9,9 +9,9 @@
 .navbar-menu-item i {margin-left:8px;}
 .navbar-menu-item menu {display:flex;padding:48px 5rem 0;background-color:var(--color-primary);position:fixed;left:0;right:0;top:-240px;z-index:5;transition:$transition-base;}
 .navbar-menu-item menu a {margin:0 1rem;font-size:var(--body);line-height:60px;color:var(--gray0);opacity:0;transition:all .4s ease .4s;}
-.navbar-menu-item:hover {@include hover-text;}
-.navbar-menu-item:hover menu a {text-decoration:none;}
-.navbar-menu-item menu a:hover {@include hover-text;}
+// .navbar-menu-item:hover {@include hover-text;}
+// .navbar-menu-item:hover menu a {text-decoration:none;}
+// .navbar-menu-item menu a:hover {@include hover-text;}
 
 .navbar-search {margin:0 0 0 auto;position:relative;}
 .navbar-search-trigger {@include box-small;}

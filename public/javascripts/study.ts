@@ -136,7 +136,11 @@ function createIntersectionObserver(elem, callback, options) {
 }
 
 function createIntersectionObserver2(selectors, callback, options) {
-  if ('IntersectionObserver' in window && 'IntersectionObserverEntry' in window && 'intersectionRatio' in window.IntersectionObserverEntry.prototype) {
+  if (
+    'IntersectionObserver' in window &&
+    'IntersectionObserverEntry' in window &&
+    'intersectionRatio' in window.IntersectionObserverEntry.prototype
+  ) {
     const elements = [].slice.call(document.querySelectorAll(selectors))
     const options = {
       root: null,
@@ -175,109 +179,74 @@ createIntersectionObserver(div1, log, options)
 // This uses the same callback, but no options
 createIntersectionObserver(div2, log)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Create an immutable copy
-let evenMoreSandwiches = Array.from(sandwiches);
+let evenMoreSandwiches = Array.from(sandwiches)
 
 // Add a few sandwiches
-sandwiches.push('italian', 'blt');
+sandwiches.push('italian', 'blt')
 
 // logs ["turkey", "ham", "pb&j", "italian", "blt"]
-console.log(sandwiches);
+console.log(sandwiches)
 
 // logs ["turkey", "ham", "pb&j"]
-console.log(evenMoreSandwiches);
-
-
-
-
-
-
-
+console.log(evenMoreSandwiches)
 
 // Create an immutable copy
-let evenMoreLunch = Object.assign({}, lunch);
+let evenMoreLunch = Object.assign({}, lunch)
 
 // Add a snack
-lunch.snack = 'cookies';
+lunch.snack = 'cookies'
 
 // Logs {sandwich: 'turkey', drink: soda, snack: 'cookies'}
-console.log(lunch);
+console.log(lunch)
 
 // Logs {sandwich: 'turkey', drink: soda}
-console.log(evenMoreLunch);
+console.log(evenMoreLunch)
 
+ReactGA.initialize(process.env.REACT_APP_TRACKING_ID, { debug: true })
+const history = createBrowserHistory()
+history.listen((location: any) => {
+  ReactGA.set({ page: location.pathname }) // Update the user's current page
+  ReactGA.pageview(location.pathname) // Record a pageview for the given page
+})
 
+var pagItems = document.querySelectorAll('.pagination__item')
 
+for (var i = 0; i < pagItems.length; i++) {
+  var counter = i + 1
+  var string = 'Page ' + counter
 
-
-ReactGA.initialize(process.env.REACT_APP_TRACKING_ID, { debug: true });
-  const history = createBrowserHistory();
-  history.listen((location: any) => {
-    ReactGA.set({ page: location.pathname }); // Update the user's current page
-    ReactGA.pageview(location.pathname); // Record a pageview for the given page
-  });
-
-
-
-
-  
-  var pagItems = document.querySelectorAll('.pagination__item');
-
-  for (var i = 0; i < pagItems.length; i++) {
-    var counter = i + 1;
-    var string = "Page " + counter;
-
-    if (pagItems[i].getAttribute('aria-current')) {
-      string = "Page " + counter + ", Current Page";
-    }
-
-    pagItems[i].setAttribute('aria-label', string);
+  if (pagItems[i].getAttribute('aria-current')) {
+    string = 'Page ' + counter + ', Current Page'
   }
 
+  pagItems[i].setAttribute('aria-label', string)
+}
 
-
-
-
-
-  class scrollbox {
-    constructor() {
-      this.scrollBarWidth = 0;
-      this.measureScrollbarWidth()
-    }
-  
-    measureScrollbarWidth() {
-      let scrollbox = document.createElement('div')
-      scrollbox.style.overflow = 'scroll'
-  
-      document.body.appendChild(scrollbox)
-  
-      this.scrollBarWidth = scrollbox.offsetWidth - scrollbox.clientWidth
-  
-      document.body.removeChild(scrollbox)
-    }
-  
-    get width() {
-      return this.scrollBarWidth
-    }
+class scrollbox {
+  constructor() {
+    this.scrollBarWidth = 0
+    this.measureScrollbarWidth()
   }
 
-  let scrollbox = new TempScrollBox();
-  console.log(scrollbox.width) //-> 17 (Windows, Chrome)
+  measureScrollbarWidth() {
+    let scrollbox = document.createElement('div')
+    scrollbox.style.overflow = 'scroll'
 
+    document.body.appendChild(scrollbox)
+
+    this.scrollBarWidth = scrollbox.offsetWidth - scrollbox.clientWidth
+
+    document.body.removeChild(scrollbox)
+  }
+
+  get width() {
+    return this.scrollBarWidth
+  }
+}
+
+let scrollbox = new TempScrollBox()
+console.log(scrollbox.width) //-> 17 (Windows, Chrome)
 
 // var scrollDiv = document.createElement("div");
 // scrollDiv.className = "scrollbar-measure";
@@ -287,3 +256,33 @@ ReactGA.initialize(process.env.REACT_APP_TRACKING_ID, { debug: true });
 // console.warn(scrollbarWidth); // Mac:  15
 
 // document.body.removeChild(scrollDiv);
+
+// function insertCallback(parent, funcname, callback, ...args) {
+//   let oldFunc = parent[funcname] ? parent[funcname] : function() { }
+//   parent[funcname] = function () {
+//       oldFunc.apply(this, arguments)
+//       return callback(...args)
+//   }
+// }
+
+// function notifyAnalytics(l) {
+//   let newPage = l.pathname + l.hash
+//   gtag('config', 'UA-83531239-1', { 'page_path': newPage });
+// }
+
+// insertCallback(window.history, "pushState", notify_analytics, location)
+// insertCallback(window.history, "replaceState", notify_analytics, location)
+
+// function trackOutboundLink(url) {
+//   gtag('event', 'click', {
+//     'event_category': 'outbound',
+//     'event_label': url,
+//     'transport_type': 'beacon',
+//     'event_callback': function() { document.location = url; }
+//   });
+// }
+
+// const link = document.createElement('link');
+// link.setAttribute('rel', 'stylesheet');
+// link.setAttribute('href', '');
+// document.head.appendChild(link);

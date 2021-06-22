@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko" dir="ltr">
   <head>
-    <title>수줍이</title>
+    <title>이경수</title>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta
@@ -24,7 +24,7 @@
     <meta name="format-detection" content="email=no" />
 
     <meta name="author" content="soojubm" />
-    <meta name="subject" content="수줍이의 포트폴리오" />
+    <meta name="subject" content="이경수" />
     <meta name="description" content="부끄러우니까 보지마요." />
     <meta name="keywords" content="" />
     <meta name="copyright" content="soojubm" />
@@ -32,7 +32,7 @@
     <meta property="og:locale" content="ko_KR" />
     <meta property="og:site_name" content="soojubm" />
     <meta property="og:url" content="https://soojubm.github.io" />
-    <meta property="og:title" content="수줍이의 포트폴리오" />
+    <meta property="og:title" content="이경수" />
     <meta property="og:image" content="/public/images/open-graph.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -41,7 +41,7 @@
     <meta name="twitter:site" content="@soojubm" />
     <meta name="twitter:creator" content="soojubm" />
     <meta name="twitter:url" content="https://soojubm.github.io" />
-    <meta name="twitter:title" content="수줍이의 포트폴리오" />
+    <meta name="twitter:title" content="이경수" />
     <meta name="twitter:description" content="부끄러우니까 보지마요." />
     <meta name="twitter:image" content="https://example.com/image.jpg" />
 
@@ -95,38 +95,6 @@
 
       gtag('config', 'UA-83531239-1');
     </script> -->
-
-    <script>
-      // function insertCallback(parent, funcname, callback, ...args) {
-      //   let oldFunc = parent[funcname] ? parent[funcname] : function() { }
-      //   parent[funcname] = function () {
-      //       oldFunc.apply(this, arguments)
-      //       return callback(...args)
-      //   }
-      // }
-
-      // function notifyAnalytics(l) {
-      //   let newPage = l.pathname + l.hash
-      //   gtag('config', 'UA-83531239-1', { 'page_path': newPage });
-      // }
-
-      // insertCallback(window.history, "pushState", notify_analytics, location)
-      // insertCallback(window.history, "replaceState", notify_analytics, location)
-
-      // function trackOutboundLink(url) {
-      //   gtag('event', 'click', {
-      //     'event_category': 'outbound',
-      //     'event_label': url,
-      //     'transport_type': 'beacon',
-      //     'event_callback': function() { document.location = url; }
-      //   });
-      // }
-
-      // const link = document.createElement('link');
-      // link.setAttribute('rel', 'stylesheet');
-      // link.setAttribute('href', '');
-      // document.head.appendChild(link);
-    </script>
   <script defer src="bundle.js"></script><link href="style.css" rel="stylesheet"></head>
   <body>
     <noscript>This website requires JavaScript.</noscript>
@@ -178,7 +146,7 @@
         </div>
       </div>
 
-      <div class="navbar-search" role="search" aria-label="site">
+      <div class="navbar-search" role="search" aria-label="site" hidden>
         <a class="navbar-search-trigger js-navbar-toggle" href="#">
           <i class="icon-search"></i>
           <!-- <img src="/public/icons/search.svg" alt="" /> -->
@@ -213,7 +181,7 @@
         </form>
       </div>
 
-      <div class="navbar-user">
+      <div class="navbar-user" style="margin-left:auto;">
         <button class="navbar-user-trigger js-navbar-toggle" aria-haspopup="menu" aria-expanded="false">
           <span class="navbar-user-trigger-media"><img src="/public/images/soo.png" alt=""/></span>
         </button>
@@ -257,10 +225,11 @@
             로그아웃
           </button>
           <hr role="separator" />
-          <footer class="user-footer">
-            <a href="#">Privacy Policy</a>
+          <footer class="user-footer" style="margin:-.5rem 0 0 0;">
+            <!-- <a href="#">Privacy Policy</a>
             <i class="icon-bullet"></i>
-            <a href="#">Terms of Service</a>
+            <a href="#">Terms of Service</a> -->
+            <small>샘플 유아이 컴포넌트입니다.</small>
           </footer>
         </div>
       </div>
@@ -272,7 +241,7 @@
       <div class="home"></div>
     </div>
 
-    <nav class="bottombar is-temp-real">
+    <!-- <nav class="bottombar is-temp-real">
       <a href="#about" class="bottombar-item is-active">
         <span class="bottombar-item-media"><i class="icon-person"></i></span>
         <span class="bottombar-item-label">소개</span>
@@ -286,17 +255,17 @@
         <span class="bottombar-item-media"><i class="icon-person"></i></span>
         <span class="bottombar-item-label">디자인시스템</span>
       </a>
-    </nav>
+    </nav> -->
 
     <div id="sitemap"></div>
     <div id="footer"></div>
     <aside id="modal"></aside>
 
     <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        fetchComponent('sitemap')
-        fetchComponent('footer')
-      })
+      // document.addEventListener('DOMContentLoaded', () => {
+      //   fetchComponent('sitemap')
+      //   fetchComponent('footer')
+      // })
 
       async function fetchComponent(componentName) {
         const selector = `#${componentName}`
@@ -347,22 +316,42 @@
   </body>
 </html>
 
-<!-- <script>
-      var renderTime = function () {
-        var time = new Date();
-        document.querySelector('.clock').textContent = time.toLocaleString(navigator.language || 'en-US', {year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true});
-        // time.toLocaleString(navigator.language || 'en-US', {year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true});
-      };
-      renderTime()
-      setInterval(renderTime, 1000);
-    </script> -->
+<!--
+<div>
+  <div class="js-counter1" data-number="54">54%</div>
+  <div class="js-counter2" data-number="80">80%</div>
+</div>
+-->
 
-<!-- <div>
-      <div class="js-counter1" data-number="54">54%</div>
-      <div class="js-counter2" data-number="80">80%</div>
-    </div> -->
+<!-- <i class="cursor"></i> -->
+<!-- <div class="countdown">
+  <div class="days">
+    <div class="days-value js-days"></div>
+    <div class="days-label">days</div>
+  </div>
+  <div class="hours">
+    <div class="hours-value js-hours"></div>
+    <div class="hours-label">hours</div>
+  </div>
+  <div class="minutes">
+    <div class="minutes-value js-minutes"></div>
+    <div class="minutes-label">minutes</div>
+  </div>
+  <div class="seconds">
+    <div class="seconds-value js-seconds"></div>
+    <div class="seconds-label">seconds</div>
+  </div>
+</div> -->
 
 <!-- <script>
+  var renderTime = function () {
+    var time = new Date();
+    document.querySelector('.clock').textContent = time.toLocaleString(navigator.language || 'en-US', {year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true});
+    // time.toLocaleString(navigator.language || 'en-US', {year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true});
+  };
+  renderTime()
+  setInterval(renderTime, 1000);
+
   setTimeout(() => {
     countUp({ selector: '.js-counter' })
     countUp({ selector: '.js-counter2' })
@@ -389,23 +378,3 @@
     }
   }
 </script> -->
-
-<!-- <i class="cursor"></i> -->
-<!-- <div class="countdown">
-  <div class="days">
-    <div class="days-value js-days"></div>
-    <div class="days-label">days</div>
-  </div>
-  <div class="hours">
-    <div class="hours-value js-hours"></div>
-    <div class="hours-label">hours</div>
-  </div>
-  <div class="minutes">
-    <div class="minutes-value js-minutes"></div>
-    <div class="minutes-label">minutes</div>
-  </div>
-  <div class="seconds">
-    <div class="seconds-value js-seconds"></div>
-    <div class="seconds-label">seconds</div>
-  </div>
-</div> -->

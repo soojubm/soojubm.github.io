@@ -2,10 +2,10 @@
 
 .about-subhead-icon {display:block;margin:0 0 1rem 0;}
 
-.about-intro {max-width:var(--width-large);overflow:hidden;margin:0 auto 6rem;padding:0 5%;position:relative;}
-.about-intro-image {float:right;max-width:400px;}
+.about-intro {max-width:var(--width-large);overflow:hidden;margin:2rem auto 6rem;padding:0 5%;position:relative;}
+.about-intro-image {float:right;max-width:320px;}
 .about-intro-image img {border-radius:var(--radius400);}
-.about-intro-description {width:50%;margin:2rem 0;font-size:var(--subhead);}
+.about-intro-description {width:50%;margin:0 0;font-size:var(--subhead);}
 .about-intro-address {@include tile-elevated;}
 
 .about-contact {max-width:var(--width-large);margin:0 auto;padding:4rem var(--grid-margin);background:var(--gray100);position:relative;}
@@ -16,7 +16,7 @@
 
 .about-career {@include container-large;}
 .about-career-head {}
-.about-career-title {margin:0 0 2rem 0;@include subhead;}
+.about-career-title {margin:0 0 2rem 0;@include title;}
 .about-career .timeline {}
 .about-career-portfolio {@include button-secondary;width:100%;}
 // .about-career.is-scrolled {transform:scale(1);}

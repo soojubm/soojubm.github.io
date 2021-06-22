@@ -22,7 +22,8 @@
 @mixin tag-badge {@include tag;background-color:var(--green100);color:var(--green800);}
 
 @mixin hashtag {
-  @include tag;
+  // @include tag;
+  margin: 0 .5rem 0 0;
   color: var(--gray400);
   &:before {content:'#';}
 }

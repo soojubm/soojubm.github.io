@@ -34,7 +34,7 @@
 .design-navigation-scroll {@include group-bleeding;position:relative;}
 // todo container-bleed
 
-.design-body {width:50%;overflow-x:hidden;margin:0 0 0 30%;padding:0 var(--grid-margin) 8rem;}
+.design-body {width:50%;max-width:var(--width-medium);margin:0 auto;overflow-x:hidden;padding:0 var(--grid-margin) 8rem;}
 // .design-body {width:50%;overflow-x:hidden;max-width:36rem;margin:0 0 0 50%;padding:0 6rem 8rem;}
 // .design-body {overflow-x:hidden;max-width:var(--width-medium);margin:0 auto;padding:0 var(--grid-margin) 8rem;}
 
@@ -380,7 +380,7 @@
 .design-home header {width:100%;text-align:center;}
 .design-home header h1 {@include title;}
 .design-home header p {margin:var(--space-after-title) 0 0 0;font-size:var(--subhead);}
-.design-home nav {display:flex;justify-content:space-between;width:100%;margin:4rem 0;}
+.design-home nav {display:flex;justify-content:space-evenly;width:100%;margin:4rem 0;}
 .design-home nav a {display:flex;align-items:center;@include tile-elevated;width:30%;font-size:var(--subhead);font-weight:var(--font-weight-bold);color:var(--gray800);}
 .design-home nav a[readonly] {opacity:.5;cursor:not-allowed;}
 .design-home nav a:hover:not([readonly]) {@include hover-item;}

@@ -21,19 +21,16 @@
   </header>
   <!-- <header class="header-backdrop js-header"></header> -->
 
-  <header class="design-head"></header>
+  <header class="design-head" hidden></header>
 
-
-
-
-  <section class="hero">
+  <section class="hero" hidden>
     <div class="hero-background"></div>
     <h1 class="hero-title"><span style="display:none;">Design System</span>Components<i style="font-style:italic;" hidden>!</i></h1>
     <p class="hero-description">유저 인터페이스를 구성하는 패턴을 개발 코드 기반으로 정의하고 개선해나갑니다. 도메인(또는 서비스) 의존성을 최소화하여 ... (너무 개발자 용어 무엇?) </p>
-    <!-- <footer class="hero-foot">
+    <footer class="hero-foot">
       <a class="hero-cta">공사중입니다</a>
       <a class="hero-detail">자세히 알아보기</a>
-    </footer> -->
+    </footer>
     <div class="hero-features" style="display:none">
       <div class="">
         <h3 style="font-size:var(--subhead);font-weight:var(--font-weight-bold);margin:0 0 .5rem 0;">단순성</h3>
@@ -57,10 +54,9 @@
     <img class="hero-obj4" src="/public/images/blob-shape.svg" alt="" /> -->
   </section>
 
-  <nav class="design-navigation">
+  <nav class="design-navigation" hidden>
     <div class="design-navigation-background"></div>
     <div class="design-navigation-scroll" role="group" style="margin:0 var(--grid-margin-minus);padding:0 calc(5% - .25rem);">
-      <!-- <a class="chip is-active" href="" role="link">홈</a> -->
       <a class="chip is-active js-scrollspy-trigger" href="#" style="font-size:bold;">Sizes</a>
       <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">Typograph</a>
       <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">Pallettes</a>
@@ -165,31 +161,8 @@
           tablist / tab / <br />
         </article>
       </div>
-      <ol>
-        <li>자주 틀리는 writing 모두 / 전체, 더보기와 모두보기 / 총결제금액 vs 결제예정금액 / 검색 결과 2개?</li>
-        <li>결제가 완료되었습니다 => 상품이 결제되었습니다 ? 주문 목록에서 f깅할 때 결제완료, 결제대기가 익숙함.</li>
-        <li>memo: 미디어쿼리에서 position 속성을 재할당할 때 static을 사요하지 말고 relative를 사용.</li>
-        <li>첫 할당에서는 margin: 0 0 0 0 재할당 시 margin-left:</li>
-        <li>Bullet은 컴포넌트로 Component</li>
-        <li>타일의 패딩을 모바일과 데스크탑 동일하게 가려면.</li>
-        <li>-하기 / 취소 / 다음에</li>
-      </ol>
     </article> -->
-    <!-- <article class="design-article js-scrollspy-section">
-      <h1 class="design-article-title">Grid System or Container Rules 🔥</h1>
-      <ul class="design-article-description">
-        <li>특수한 폼인 비밀번호찾기와 회원탈퇴의 컨테이너는 로그인과 회원가입의 컨테이너보다 크게 사용. 모바일에서는 해당되지 않기 때문에 불필요한 가이드일 수도.</li>
-        <li>자식 엘리먼트가 가운데 정렬 될 경우 large 컨테이너를 사용하세요.</li>
-      </ul>
-      <div class="message">
-        맥북 13인치 1680x1050 / x1나노 2160x1350
-        <p>디스플레이 해상도와 별도로 텍스트 크기를 설정할 수 있어서.. 추세(?). 1440은 애매한 브레이크포인트</p>
-      </div>
-      <p><b>Breakpoints</b> 1440px / 1080px /  100% - 5% - 5%</p>
-
-      <p>bottom fix in window</p>
-      <p>iphone safe area 고려</p>
-    </article> -->
+    
 
   <!-- <picture>
     <source srcset="photo-light.png" media="(prefers-color-scheme: light) or (prefers-color-scheme: no-preference)">
@@ -295,10 +268,10 @@
       <p class="design-article-description">작성 중.</p>
       <!-- <li>asap의 dash를 마이너스로 쓰면 어색. 무게가 살짝 다름.</li> -->
 
-      <button class="user-logout tile-elevated js-default-font" style="padding:.5rem;padding-left:1rem;" title="change theme">
+      <!-- <button class="user-logout tile-elevated js-default-font" style="padding:.5rem;padding-left:1rem;" title="change theme">
         <span class="user-logout-icon">icon</span>
         시스템 폰트로 보기
-      </button>
+      </button> -->
       <div class="design-typograph-group">
         <div class="design-typograph-item">
           한글 <b style="display:block;font-size:var(--subhead);line-height:1.5;font-weight:var(--font-weight-bold);">아리타 산스</b>
@@ -578,9 +551,9 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Chips ☀️</h1>
-      <p class="design-article-description">단일 선택 / 다중 선택, 삭제 여부에 따라 적절한 힌트를 제공하세요. 맥락이 다른 chip을 나열할 수도 있습니다. 스몰 사이즈(Tags)는 키워드 리스트, 뱃지로 사용할 수 있으며 아이콘을 포함할 수 없습니다. role="listbox" aria-orientation="horizontal"</p>
+      <p class="design-article-description">단일 선택 / 다중 선택, 삭제 여부에 따라 적절한 힌트를 제공합니다. 맥락이 다른 chip을 나열할 수도 있습니다. 스몰 사이즈(Tags)는 키워드 리스트, 뱃지로 사용할 수 있으며 아이콘을 포함할 수 없습니다. role="listbox" aria-orientation="horizontal"</p>
       <blockquote>
-        고민: 드롭다운, 필터링을 위한 버튼 그룹, 아이콘 버튼을 하나의 칩 스타일로 묶은 상태. 이들 각각을 시각적으로 구분해야 하는 경우에 문제가 생길 수 있음. 용도별로 분리하여 가이드를 만드는 것이 좋을까
+        memo: 드롭다운, 필터링을 위한 버튼 그룹, 아이콘 버튼을 하나의 칩 스타일로 묶은 상태. 이들 각각을 시각적으로 구분해야 하는 경우에 문제가 생길 수 있음. 용도별로 분리하여 가이드를 만드는 것이 좋을까
         todo: 버튼 스몰, 칩 라지, 칩 스몰 구분해야 함.
       </blockquote>
       <hr />
@@ -638,7 +611,7 @@
       <h1 class="design-article-title">Badge</h1>
       <p class="design-article-description">작성 중.</p>
       <blockquote>
-        히스토리: chip-small로 갔다가 사이즈에서 다시 분리. 클릭할 수 없는 요소. 용도가 아닌 스타일로 구분되어 있어서 가이드를 작성하기도 힘들고 커뮤니케이션도 어려워짐. 같은 이유에서 해시태그.
+        히스토리: chip-small로 갔다가 사이즈에서 다시 분리. 클릭할 수 없음. 용도가 아닌 스타일로 구분되어 있어서 가이드를 작성하기도 힘들고 커뮤니케이션도 어려워짐. 같은 이유에서 해시태그 컴포넌트를 추가하는 것이 좋을 듯.
       </blockquote>
       <div class="" role="group">
         <span class="tag tags-item" data-appearance="accent">Eyebrow</span>
@@ -707,7 +680,7 @@
       <ul style="margin:.5rem 0 0;font-size:var(--caption);">
         <li>Large 사이즈는 primary 스타일만 가지며 프로모션 페이지에서 사용합니다.</li>
       </ul>
-
+      <br />
       <h6 style="margin:0 0 .5rem;font-size:var(--caption);">Text (outdated)</h6>
       <div class="design-buttongroup tile-flat-small">
         <button class="design-article-text">Default</button>
@@ -716,14 +689,13 @@
         <button class="design-article-text" disabled>Disabled</button>
       </div>
       <br />
-      <h6 style="margin:0 0 .5rem;font-size:var(--caption);">Status</h6>
+      <!-- <h6 style="margin:0 0 .5rem;font-size:var(--caption);">Status</h6>
       <div class="design-buttongroup tile-flat-small">
         <button class="loadmore is-fetching">
-          <!-- <div class="loader-spinner" style="margin-left:0;margin-right:1rem;"></div> -->
           Loading...
         </button>
         <button class="danger-button is-small" aria-label="danger">Danger</button>
-      </div>
+      </div> -->
     </article>
 
     <article class="design-article js-scrollspy-section">
@@ -741,11 +713,11 @@
         <hr style="margin:.5rem 0;" />
         <div class="checkbox">
           <input class="js-check" type="checkbox" id="line01" value="" />
-          <label for="line01" title="Everyday is like sunday">매일매일이 일요일 같아</label>
+          <label for="line01" title="Everyday is like sunday">체크박스 1</label>
         </div>
         <div class="checkbox">
           <input class="js-check" type="checkbox" id="line03" value="" checked disabled />
-          <label for="line03" title="Everyday is like sunday">매일매일이 일요일 같아</label>
+          <label for="line03" title="Everyday is like sunday">체크박스 2</label>
         </div>
         <div class="checkbox textfiled">
           <input class="js-check" type="checkbox" id="other" name="interest" value="other">
@@ -858,6 +830,19 @@
         </select>
         <span class="selectbox-indicator" role="img"><i class="icon-caret"></i></span>
       </div>
+      <br />
+      <div class="textfield is-text">
+        <label class="textfield-label" for="select2">Sort by</label>
+        <select class="textfield-input"id="select2">
+          <option class="select-option" value="select-option1">최신순</option>
+        </select>
+        <span class="selectbox-indicator" role="img"><i class="icon-caret"></i></span>
+      </div>
+      <!-- <div class="textfield is-text">
+        <figure style="width:var(--size-medium);height:var(--size-medium);background:var(--gray100);border-radius:var(--radius400);margin-right:1rem;"></figure>
+        <span>현대카드 The Green</span>
+        <span class="selectbox-indicator" role="img"><i class="icon-caret"></i></span>
+      </div> -->
       <!-- var selected = Array.from(dnd.options).filter(function (option) {
         return option.selected;
       }).map(function (option) {
@@ -869,56 +854,18 @@
       </div> -->
     </article>
 
-    <article class="design-article js-scrollspy-section">
-      <h1 class="design-article-title">Select</h1>
-      <p class="design-article-description">콘텐츠를 소팅할 때 사용합니다. textfield 스타일과 구분.</p>
-      <div class="textfield is-text">
-        <label class="textfield-label" for="select2">Sort by</label>
-        <select class="textfield-input"id="select2">
-          <option class="select-option" value="select-option1">최신순</option>
-        </select>
-        <span class="selectbox-indicator" role="img"><i class="icon-caret"></i></span>
-      </div>
-      <hr />
-      <div class="textfield is-text">
-        <figure style="width:var(--size-medium);height:var(--size-medium);background:var(--gray100);border-radius:var(--radius400);margin-right:1rem;"></figure>
-        <span>현대카드 The Green</span>
-        <span class="selectbox-indicator" role="img"><i class="icon-caret"></i></span>
-      </div>
-      <article class="sheet" style="margin-top:1rem;">
-        <!-- <h3 class="sheet-title">정렬하기</h3> -->
-        <button style="width:100%;display:flex;align-items:center;margin:0 0 1rem 0;justify-content:space-between;font-size:var(--subhead);">
-          바텀 시트 옵션
-        </button>
-        <button style="width:100%;display:flex;align-items:center;justify-content:space-between;font-size:var(--subhead);">
-          바텀 시트 옵션 <i class="icon-check"></i>
-        </button>
-        <!-- <div class="checkbox theme-right">
-          <input class="js-check" type="checkbox" id="sheet" name="sheet" value="sheet">
-          <label for="sheet">인기순. 우측에 체크박스 있는 형태(모바일의 시트에서. 어포던스 키워야 함.)</label>
-        </div> -->
-      </article>
-
-    </article>
-
-
-
-    <article class="design-article js-scrollspy-section">
+    <!-- <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Seperator</h1>
       <p class="design-article-description">컴포넌트의 border 스타일링으로 섹션을 구획하지 마세요. hr 태그를 사용하면 의미론적으로 주제를 분리할 수 있고 컴포넌트의 고유성을 유지할 수 있습니다.</p>
       <blockquote>
         role=separator
       </blockquote>
-      <!-- <aside class="message">
-        <span class="message-icon">🔨</span>
-        <p class="message-head">hr 태그 가이드. / large - section / medium(default) - item</p>
-      </aside> -->
       <hr role="separator" />
-    </article>
+    </article> -->
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Breadcrumb</h1>
-      <p class="design-article-description">페이지 레벨이 3단계 이상일 때 사용합니다. 공유, 캠페인 등을 통한 접근이 많은 페이지에서도 사용을 고려할 수 있습니다.</p>
+      <p class="design-article-description">페이지 레벨이 3단계 이상일 때 사용합니다. 캠페인 등을 통한 접속이 많은 페이지에서도 사용할 수 있습니다.</p>
       <!-- <p>(법적으로 혹은 PG사에서 체크할 때 상품 리스트 페이지에서 이슈가 있었음)</p> -->
       <nav class="breadcrumb" aria-label="breadcrumb">
         <a class="breadcrumb-item breadcrumb-home" href="/">홈</a>
@@ -927,12 +874,6 @@
         <i class="breadcrumb-divider">/</i>
         <span class="breadcrumb-item breadcrumb-last" href="#">페이지 이름</span>
       </nav>
-      <!-- <hr />
-      <nav class="breadcrumb" aria-label="breadcrumb">
-        <a class="breadcrumb-item breadcrumb-home" href="/">Accessory <small style="color:var(--gray400);">173</small></a>
-        <i class="breadcrumb-divider">/</i>
-        <a class="breadcrumb-item breadcrumb-last" href="#">Socks <small style="color:var(--gray400);">52</small></a>
-      </nav> -->
     </article>
 
     <article class="design-article js-scrollspy-section">
@@ -1044,9 +985,9 @@
 
     <article class="design-article js-tab">
       <h1 class="design-article-title">Tab</h1>
-      <p class="design-article-description">탭이 중첩되지 않도록 플로우를 설계하는 것이 중요합니다. 콘텐츠 필터링에는 chip 스타일을 사용합니다. 탭은 스크롤스파이 기능을 추가할 수 없습니다.<p>
+      <p class="design-article-description">탭이 중첩되지 않도록 플로우를 설계하는 것이 중요합니다. 콘텐츠 필터링에는 chip 스타일을 사용합니다. 스크롤스파이 기능을 위해 탭을 사용할 수 없습니다.<p>
       <blockquote>
-        <i>🔨</i> 브라우저 히스토리 / 스크롤스파이 / 4~5개 제한? 가로 스크롤?
+        <i>🔨</i> 브라우저 히스토리 / 탭의 갯수 제한 4~5개 or 가로 스크롤
       </blockquote>
       <nav class="profile-tablist" role="tablist">
 				<button class="profile-tablist-tab" role="tab" aria-selected="true">🐗 프로젝트 <i class="profile-tablist-tab-badge">5</i></button>
@@ -1102,7 +1043,7 @@
       </aside>
       <aside class="message" style="margin:1rem 0;background:var(--gray800);border:0;">
         <span class="message-icon">🧡</span>
-        <p class="message-head" style="color:var(--gray999);">좋아한 콘텐츠에 저장했어요.</p>
+        <p class="message-head" style="color:var(--gray0);">좋아한 콘텐츠에 저장했어요.</p>
         <!-- <button class="message-close" aria-label="close"><i class="icon-close"></i></button> -->
       </aside>
       <aside class="message" style="background:var(--red800);border-color:transparent;">
@@ -1237,7 +1178,7 @@
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Dialog</h1>
       <p class="design-article-description">모달과 토스트로 활용할 수 있습니다.</p>
-      <button class="js-modal">모달 열기</button>
+      <!-- <button class="js-modal">모달 열기</button> -->
       <aside class="dialog" role="dialog" aria-labelledby="dialog-title" aria-describedby="dialog-description">
         <h1 class="dialog-title" id="dialog-title">부끄러우니까 보지마요!</h1>
         <p class="dialog-description" id="dialog-description">부끄러우니까 보지마요! 부끄러우니까 보지마요! 부끄러우니까 보지마요! 부끄러우니까 보지마요!</p>
@@ -1252,7 +1193,7 @@
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Dummies</h1>
       <p class="design-article-description">작성 중.</p>
-      <div class="card" role="listitem" style="max-width:400px;">
+      <div class="card has-item" role="listitem" style="max-width:400px;">
         <figure class="card-thumbnail"><img src="/public/images/springsteen.jpg" alt="" /></figure>
         <h3 class="card-title">카드 유아이</h3>
         <p class="card-text">따봉은 상세페이지에서 제공하세요. 북마크는 밖에 두어도 좋은가? 상세페이지에서 제공하는 것이 좋음.</p>
@@ -1339,19 +1280,18 @@
 
       <br />
 
-      <article class="user tile-elevated" style="max-width:400px;">
+      <article class="tile-elevated" style="max-width:400px;">
         <figure class="user-avatar"><img src="/public/images/soo.png" alt=""></figure>
         <h2 class="user-name">Gyeongsoo I</h2>
         <div class="user-id">@soojubm</div>
         <div class="user-career" style="margin:.5rem 0 0 0;">UI Designer / Frontend Engineer</div>
-
-      <!-- <footer class="user-foot" style="display:flex;margin:1rem 0;">
-        <span class="tag">대한민국</span>
-        <span class="tag">자전거</span>
-      </footer> -->
-      <footer class="user-foot" style="display:flex;justify-content:space-between;margin:1rem 0 0 0;">
-        <button class="profile-foot-follow">팔로우</button>
-      </footer>
+        <!-- <footer class="user-foot" style="display:flex;margin:1rem 0;">
+          <span class="tag">대한민국</span>
+          <span class="tag">자전거</span>
+        </footer> -->
+        <footer class="user-foot" style="display:flex;justify-content:space-between;margin:1rem 0 0 0;">
+          <button class="profile-foot-follow">팔로우</button>
+        </footer>
       </article>
 
       <br />
@@ -1445,6 +1385,18 @@
             주소 복사하기
           </button>
         </div>
+      </article>
+
+      <br />
+      
+      <article class="sheet" style="margin-top:1rem;">
+        <!-- <h3 class="sheet-title">정렬하기</h3> -->
+        <button style="width:100%;display:flex;align-items:center;margin:0 0 1rem 0;justify-content:space-between;font-size:var(--subhead);">
+          바텀 시트 옵션
+        </button>
+        <button style="width:100%;display:flex;align-items:center;justify-content:space-between;font-size:var(--subhead);">
+          바텀 시트 옵션 <i class="icon-check"></i>
+        </button>
       </article>
 
       <br />
