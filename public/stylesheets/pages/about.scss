@@ -3,7 +3,7 @@
 .about-subhead-icon {display:block;margin:0 0 1rem 0;}
 
 .about-intro {max-width:var(--width-large);overflow:hidden;margin:2rem auto 6rem;padding:0 5%;position:relative;}
-.about-intro-image {float:right;max-width:320px;}
+.about-intro-image {float:right;max-width:400px;}
 .about-intro-image img {border-radius:var(--radius400);}
 .about-intro-description {width:50%;margin:0 0;font-size:var(--subhead);}
 .about-intro-address {@include tile-elevated;}
@@ -144,7 +144,9 @@
 
 
 
-
+@media (--viewport-small) {
+  .about-intro-description {width:100%;}
+}
 
 
 

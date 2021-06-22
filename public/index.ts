@@ -203,7 +203,7 @@ async function domEvents() {
     works?.classList.remove('list')
   })
 
-  event.scrollspy({ menusSelector: '.js-scrollspy-trigger', sectionsSelector: '.js-scrollspy-section' })
+  // event.scrollspy({ menusSelector: '.js-scrollspy-trigger', sectionsSelector: '.js-scrollspy-section' })
 }
 
 // intersectionObserver

@@ -40,7 +40,7 @@ table thead tr {}
 table thead tr th {padding:var(--table-padding);font-weight:normal;line-height:var(--table-lineheight);color:var(--gray400);text-align:left;}
 table tbody {}
 table tbody tr {border:var(--border100);line-height:var(--table-lineheight);position:relative;}
-table tbody tr th {width:8rem;padding:var(--table-padding);font-weight:normal;text-align:left;color:var(--gray400);vertical-align:baseline;}
+table tbody tr th {width:6rem;padding:var(--table-padding);font-weight:normal;text-align:left;color:var(--gray400);vertical-align:baseline;}
 table tbody tr td {padding:var(--table-padding);}
 table tbody tr:hover {}
 table .right {text-align:right;}
