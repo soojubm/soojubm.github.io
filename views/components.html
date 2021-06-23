@@ -26,7 +26,7 @@
   <section class="hero" hidden>
     <div class="hero-background"></div>
     <h1 class="hero-title"><span style="display:none;">Design System</span>Components<i style="font-style:italic;" hidden>!</i></h1>
-    <p class="hero-description">유저 인터페이스를 구성하는 패턴을 개발 코드 기반으로 정의하고 개선해나갑니다. 도메인(또는 서비스) 의존성을 최소화하여 ... (너무 개발자 용어 무엇?) </p>
+    <p class="hero-description">사용자 인터페이스를 구성하는 패턴을 개발 코드 기반으로 정의하고 개선해나갑니다. 도메인(또는 서비스) 의존성을 최소화하여 ... (너무 개발자 용어 무엇?) </p>
     <footer class="hero-foot">
       <a class="hero-cta">공사중입니다</a>
       <a class="hero-detail">자세히 알아보기</a>
@@ -54,30 +54,30 @@
     <img class="hero-obj4" src="/public/images/blob-shape.svg" alt="" /> -->
   </section>
 
-  <nav class="design-navigation" hidden>
+  <nav class="design-navigation">
     <div class="design-navigation-background"></div>
     <div class="design-navigation-scroll" role="group" style="margin:0 var(--grid-margin-minus);padding:0 calc(5% - .25rem);">
-      <a class="chip is-active js-scrollspy-trigger" href="#" style="font-size:bold;">Sizes</a>
-      <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">Typograph</a>
-      <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">Pallettes</a>
-      <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">Tiles</a>
-      <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">Chips</a>
-      <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">Badges</a>
-      <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">Buttons</a>
-      <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">Checkboxes</a>
-      <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">Radioes</a>
-      <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">Switch</a>
-      <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">Textfields</a>
-      <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">Select</a>
-      <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">Seperator</a>
-      <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">Breadcrumb</a>
-      <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">Text Links</a>
-      <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">Text Lists</a>
-      <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">Texts</a>
-      <!-- <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">Suggestion</a> -->
-      <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">Tab</a>
-      <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">Tooltip</a>
-      <a class="chip js-scrollspy-trigger" href="#" style="font-size:bold;">Notifications</a>
+      <a class="chip is-active js-scrollspy-trigger" href="#">Sizes</a>
+      <a class="chip js-scrollspy-trigger" href="#">Typograph</a>
+      <a class="chip js-scrollspy-trigger" href="#">Pallettes</a>
+      <a class="chip js-scrollspy-trigger" href="#">Tiles</a>
+      <a class="chip js-scrollspy-trigger" href="#">Chips</a>
+      <a class="chip js-scrollspy-trigger" href="#">Badges</a>
+      <a class="chip js-scrollspy-trigger" href="#">Buttons</a>
+      <a class="chip js-scrollspy-trigger" href="#">Checkboxes</a>
+      <a class="chip js-scrollspy-trigger" href="#">Radioes</a>
+      <a class="chip js-scrollspy-trigger" href="#">Switch</a>
+      <a class="chip js-scrollspy-trigger" href="#">Textfields</a>
+      <a class="chip js-scrollspy-trigger" href="#">Select</a>
+      <a class="chip js-scrollspy-trigger" href="#">Seperator</a>
+      <a class="chip js-scrollspy-trigger" href="#">Breadcrumb</a>
+      <a class="chip js-scrollspy-trigger" href="#">Text Links</a>
+      <a class="chip js-scrollspy-trigger" href="#">Text Lists</a>
+      <a class="chip js-scrollspy-trigger" href="#">Texts</a>
+      <!-- <a class="chip js-scrollspy-trigger" href="#">Suggestion</a> -->
+      <a class="chip js-scrollspy-trigger" href="#">Tab</a>
+      <a class="chip js-scrollspy-trigger" href="#">Tooltip</a>
+      <a class="chip js-scrollspy-trigger" href="#">Alerts</a>
     </div>
   </nav>
 
@@ -192,6 +192,32 @@
             800px"
      src="elva-fairy-800w.jpg"
      alt="요정 옷을 입은 엘바" /> -->
+
+    <article style="margin-bottom:8rem;">
+      <h1 style="font-size:var(--subhead);margin:0 0 1rem 0;">todo list</h1>
+
+      <p>모두보기 / 전체보기 / 더보기 writing 정의하기 (자세히보기 / 더보기 / -보러가기)</p>
+      <p>총결제금액 / 결제예정금액</p>
+  
+      <p>Bullet을 컴포넌트로 만들어서 사용하기.</p>
+      <p>스타일을 처음 선언할 때 margin:0 0 0 0 풀어서 사용하고, 재선언할 때 margin-left로 재할당을 암시하고 오버라이딩 최소화하기.</p>
+      <p>position 속성을 제거할 때 static 대신 relative를 사용하기. z-index 값을 보전할 수 있기 때문.</li>
+      </p>
+      <p><strong>스타일과 롤을 분리하는 것이 좋겠다.</strong></p>
+
+
+      <p>가운데 정렬 될 경우 large 컨테이너를 사용하기.</p>
+  
+      <p>spacing system 정의하기.</p>
+      <p>iphone의 safe area 관련 코드 모듈화하기.</p>
+      <p>breakpoint 정의하기</p>
+      <p>맥북 13인치 1680x1050 / x1나노 2160x1350 / 1440은 애매한 브레이크포인트</p>
+      <p>z-index 유아이 별로 정의하기</p>
+
+      <p>컴포넌트별로 페이지 분리(우선순위 낮음)</p>
+
+      <code>code tag</code>
+    </article>
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Sizes & Avatars</h1>
@@ -615,8 +641,8 @@
       </blockquote>
       <div class="" role="group">
         <span class="tag tags-item" data-appearance="accent">Eyebrow</span>
-        <span class="tag" href="#" role="listitem" style="background:var(--green100);color:var(--green800);">Badge</span>
-        <a class="tag" href="#" role="listitem">Badge & Keyword</a>
+        <span class="tag" role="listitem" style="background:var(--green100);color:var(--green800);">Badge</span>
+        <span class="tag" role="listitem">Badge & Keyword</span>
         <!-- <a class="tag topic-item is-disabled" href="#" role="listitem">Disabled</a> -->
       </div>
     </article>
@@ -1013,7 +1039,7 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Tooltip</h1>
-      <p class="design-article-description">기능에 대한 설명으로 사용할 수 없습니다. 용어 혹은 근거.</p>
+      <p class="design-article-description">기능에한 설명으로 사용할 수 없습니다. 용어 혹은 근거.</p>
       <blockquote>
         페이지 로딩과 동시에 툴팁이 열려 있는 경우 doorhanger가 필요하다.
       </blockquote>
@@ -1026,28 +1052,28 @@
     </article>
 
     <article class="design-article js-scrollspy-section">
-      <h1 class="design-article-title">Notifications</h1>
-      <p class="design-article-description">유저의 액션에 대한 피드백, 시스템/브라우저의 상태에 대한 피드백은 주목도를 높여서 제공합니다.</p>
+      <h1 class="design-article-title">Alerts</h1>
+      <p class="design-article-description">시스템이나 브라우저의 상태, 사용자의의 행동에 피드백으로 사용합니다.</p>
       <blockquote>
         toast=>snackbar(withAction).<br />
-        single line / multiple lines(head,body 텍스트 나눌 필요 없을 듯)<br />
+        single line / multiple lines (head,body 텍스트)
       </blockquote>
-      <aside class="message">
-        <button class="message-close" aria-label="close"><i class="icon-close"></i></button>
-        <p class="message-head">
+      <aside class="alert">
+        <button class="alert-close" aria-label="close"><i class="icon-close"></i></button>
+        <p class="alert-head">
           This includes the <a href="">global HTML attributes</a>.
         </p>
-        <p class="message-body">
+        <p class="alert-body">
           <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus.
         </p>
       </aside>
-      <aside class="message" style="margin:1rem 0;background:var(--gray800);border:0;">
-        <span class="message-icon">🧡</span>
-        <p class="message-head" style="color:var(--gray0);">좋아한 콘텐츠에 저장했어요.</p>
-        <!-- <button class="message-close" aria-label="close"><i class="icon-close"></i></button> -->
+      <aside class="alert" style="margin:1rem 0;background:var(--gray800);border:0;">
+        <span class="alert-icon">🧡</span>
+        <p class="alert-head" style="color:var(--gray0);">좋아한 콘텐츠에 저장했어요.</p>
+        <!-- <button class="alert-close" aria-label="close"><i class="icon-close"></i></button> -->
       </aside>
-      <aside class="message" style="background:var(--red800);border-color:transparent;">
-        <p class="message-head" style="color:var(--gray0);">인터넷 연결이</p>
+      <aside class="alert" style="background:var(--red800);border-color:transparent;">
+        <p class="alert-head" style="color:var(--gray0);">인터넷 연결이</p>
       </aside>
     </article>
 
@@ -1499,7 +1525,7 @@
         <div class="slider-viewer" style="margin-right:-50%;padding-right:200px;">
           <a class="slider-viewer-slide" href="#profile">
             <span class="slider-viewer-slide-media">💕</span>
-            <p class="slider-viewer-slide-name">유저 프로필</p>
+            <p class="slider-viewer-slide-name">사용자 프로필</p>
           </a>
           <a class="slider-viewer-slide" href="#signup">
             <span class="slider-viewer-slide-media">🗂️</span>

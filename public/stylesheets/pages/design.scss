@@ -29,7 +29,7 @@
 // .design-head {overflow:hidden;background:var(--color-primary);position:fixed;left:0;right:0;top:0;bottom:0;z-index:1;transform:translateX(-50%);transition:transform .8s $bezier-base .4s;}
 // .design-head.is-scrolled {transform:translateX(-50%);transition:transform .8s $bezier-base .4s;}
 
-.design-navigation {margin-left:30%;padding:1rem var(--grid-margin);border-radius:var(--radius400);position:relative;z-index:6 ;position:sticky;top:0;}
+.design-navigation {padding:1rem var(--grid-margin);border-radius:var(--radius400);background:var(--gray0);position:relative;z-index:6 ;position:sticky;top:0;}
 .design-navigation-background {}
 .design-navigation-scroll {@include group-bleeding;position:relative;}
 // todo container-bleed

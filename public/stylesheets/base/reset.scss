@@ -19,7 +19,7 @@ hr {margin:1rem 0;border-top: thin solid var(--gray200);position:relative;}
 
 u {text-decoration:none;position:relative;}
 u:after {content:'';height:.6em;border-radius:var(--radius400);background:antiquewhite;position:absolute;left:-.25rem;right:-.25rem;bottom:-.25rem;z-index:-1;}
-code {padding:1rem 1.5rem;background:var(--gray100);border-radius:var(--radius400);font-family:'consolas'}
+code {background:var(--gray100);border-radius:var(--radius400);font-family:'consolas'}
 pre {padding:1rem;background:var(--gray100);font-family:'consolas';white-space:normal;}
 
 del {color:var(--gray400);} ins {text-decoration:none;}

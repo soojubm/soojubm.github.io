@@ -77,13 +77,13 @@
 // .card:hover .card-thumbnail img {transform:translateY(-.25rem);}
 .card:hover .card-more {display:block;}
 
-.list .card {float:none;width:100% !important;margin-bottom:1rem;padding:.5rem;}
-.list .card-thumbnail {float:left;width:80px;height:80px;margin-right:var(--space-after-large);margin-right:0;padding-top:0;}
+.list .card {float:none;width:100% !important;margin-bottom:1rem;}
+.list .card-thumbnail {float:left;width:80px;height:80px;margin-right:var(--space-after-large);padding-top:0;}
 .list .card-thumbnail img {max-width:150%;}
 .list .card-title {padding-top:0;}
 .list .card-byline {margin-top:.5rem;margin-bottom:.5rem;}
 .list .card-more {right:0;top:0;}
-.list .card-category {left:.25rem;top:.25rem;}
+.list .card-category {}
 
 @media (--viewport-large) {
   .profile-tabpanel .card {width:calc(50% - 1rem);}

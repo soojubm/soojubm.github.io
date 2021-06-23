@@ -10,7 +10,7 @@ export const routes = [
   { name: '소개', path: '/about' },
   { name: '디자인시스템', path: '/design' },
 
-  { name: '유저프로필', path: '/profile' },
+  { name: '사용자프로필', path: '/profile' },
   { name: '포스트', path: '/post' },
   { name: '영화', path: '/cake' },
   { name: '상품명', path: '/product' },

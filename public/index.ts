@@ -197,13 +197,12 @@ async function domEvents() {
     works?.classList.add('list')
   })
   grid?.addEventListener('click', () => {
-    alert()
     list?.classList.remove('is-selected')
     grid?.classList.add('is-selected')
     works?.classList.remove('list')
   })
 
-  // event.scrollspy({ menusSelector: '.js-scrollspy-trigger', sectionsSelector: '.js-scrollspy-section' })
+  event.scrollspy({ menusSelector: '.js-scrollspy-trigger', sectionsSelector: '.js-scrollspy-section' })
 }
 
 // intersectionObserver
