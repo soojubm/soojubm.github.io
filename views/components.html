@@ -202,6 +202,7 @@
         <p>모두보기 / 전체보기 / 더보기 writing 정의하기 (자세히보기 / 더보기 / -보러가기)</p>
         <p>총결제금액 / 결제예정금액</p>
         <p>개인적인 checklist: 유저->사용자, 혹은->또는, 및->과/와</p>
+        <p>-action vs -control</p>
     
         <p>Bullet을 컴포넌트로 만들어서 사용.</p>
         <p>스타일을 처음 선언할 때 margin:0 0 0 0 풀어서 사용하고, 재선언할 때 margin-left로 재할당을 암시하고 오버라이딩 최소화하기.</p>
@@ -309,7 +310,7 @@
 
     <article class="design-article typography js-scrollspy-section">
       <h1 class="design-article-title">Typography</h1>
-      <p class="design-article-description">작성 중. 사이즈는 외우기 어렵고 확장성이 떨어진다. role에 따라 구분하자. caption, helper 등 같은 값을 가지는 텍스트로 따로 모듈화하는 것이 좋겠다.</p>
+      <p class="design-article-description">작성 중. 사이즈는 외우기 어렵고 확장성이 떨어진다. role에 따라 구분하자. caption, helper 등 같은 값을 가지는 텍스트로 따로 모듈화하는 것이 좋겠다. letter-spacing은 크기마다 다르게 적용하시요</p>
       <!-- <li>asap의 dash를 마이너스로 쓰면 어색. 무게가 살짝 다름.</li> -->
 
       <!-- <button class="user-logout tile-elevated js-default-font" style="padding:.5rem;padding-left:1rem;" title="change theme">
@@ -346,6 +347,13 @@
           <span class="tag">헤드라인Headline</span>
         </div>
       </div> -->
+      <dl>
+        <dt>Headline</dt><dd>작성 중.</dd>
+        <dt>Subhead</dt><dd>작성 중.</dd>
+        <dt>Body</dt><dd>작성 중.</dd>
+        <dt>Caption</dt><dd>작성 중.</dd>
+      </dl>
+      <hr />
       <article class="design-typograph-size">
         <h3 class="design-typograph-size-title" style="font-size:var(--title);">XLarge <span>2rem / 32px</span></h3>
         <h3 class="design-typograph-size-title" style="margin:.5rem 0 .5rem;font-size:var(--subhead);">Large <span>1.125rem / 18px</span></h3>
@@ -553,7 +561,7 @@
       <div class="color-group" role="group">
         <figure class="color-item surface-item">
           <div style="background:var(--gray0);"></div>
-          <h3>elevation400 :  :: 다크테마에서 조금 더 눈에 띄는 친구가 필요. 400을 상대적으로 작게.</h3>
+          <h3>elevation400 :  :: 다크테마에서 조금 더 눈에 띄는 친구가 필요. 추가되면 400을 다운시켜야 함.</h3>
         </figure>
         <!-- <figure class="color-item surface-item-bold">
           <div style="background:var(--gray0);"></div>
@@ -577,7 +585,7 @@
       <p class="design-article-description">제목, 디스크립션 이외의 콘텐츠를 강조할 때 사용합니다. 클릭할 수 있는 타일과 클릭할 수 없는 타일을 시각적으로 구분합니다. 클릭할 수 있는 타일이란 타일 내부에 클릭할 수 있는 요소가 존재하는 경우를 포함합니다.</p>
       <blockquote>
         <h6>history</h6>
-        <p>padding 1.5rem 일 때 모바일에서 공간을 많이 차지해서 1rem으로 변경.</p>
+        <p>padding 1.5rem에서 1rem으로 변경. 1.5rem 사용 시 모바일에서 수정이 필요함. 수정하는 게 나을 지도.</p>
         <h6>todo</h6>
         <p>flat 스타일로 제목에 사용.</p>
       </blockquote>
@@ -663,7 +671,7 @@
 
       <br />
 
-      <h6 class="title-bordered">Selection - 마크업을 어떻게 하는 것이 좋을까. 버튼vs라디오/체크박스</h6>
+      <h6 class="title-bordered">Selection - Markup(button vs radio,checkbox)</h6>
       <div role="group">
         <button class="chip">
           <figure>🦔</figure>
@@ -1572,16 +1580,6 @@
     </article>
 
     <!-- <article class="design-article js-scrollspy-section">
-      <h1 class="design-article-title">배너</h1>
-      <p class="design-article-description">작성 중.</p>
-      <aside class="banner">
-        <h2 class="banner-title">수줍이에는 처음 방문이신가요?</h2>
-        <p class="banner-description">수줍이에는 처음 방문이신가요?</p>
-        <button class="banner-button">이용방법 알아보기</button>
-      </aside>
-    </article> -->
-
-    <!-- <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Feedback</h1>
       <p class="design-article-description">샘플. 선택 후 추가 정보를 받는 경우도 있음.</p>
       <aside class="help-feedback">
@@ -1963,6 +1961,16 @@
       </nav>
 
       <br />
+
+      <aside class="banner" role="banner">
+        <div class="banner-background"></div>
+        <h2 class="banner-title">Let's XD together.</h2>
+        <p class="banner-description"><span class="linebreak-desktop">Where teams create the world’s best experiences at scale,</span> powered by the leader in creative tools.</p>
+        <button class="banner-button">Adobe XD 시작</button>
+      </aside>
+
+      <br />
+
 
       <form class="filter" hidden>
         <header class="filter-head">

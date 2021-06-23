@@ -286,3 +286,39 @@ console.log(scrollbox.width) //-> 17 (Windows, Chrome)
 // link.setAttribute('rel', 'stylesheet');
 // link.setAttribute('href', '');
 // document.head.appendChild(link);
+
+// (function addPointerClasses() {
+//   var is_touch_event = false;
+
+//   function hasMouse() {
+//       if(is_touch_event === false) {
+//           document.documentElement.classList.add('mouse');
+//           document.body.removeEventListener('mousemove', hasMouse);
+//       }
+//   }
+
+//   document.body.addEventListener('mousemove', hasMouse);
+
+//   document.body.addEventListener('touchstart', function ()  {
+//       is_touch_event = true;
+//   });
+//   document.body.addEventListener('touchend', function ()  {
+//       is_touch_event = false;
+//   });
+//   document.body.addEventListener('click', function ()  {
+//       if(is_touch_event) is_touch_event = false;
+//   });
+
+//   function isTouchDevice() {
+//       try {
+//           document.createEvent('TouchEvent');
+//           return true;
+//       } catch (e) {
+//           return false;
+//       }
+//   }
+
+//   if(isTouchDevice()) {
+//       document.documentElement.classList.add('touch');
+//   }
+// })();
