@@ -193,32 +193,36 @@
      src="elva-fairy-800w.jpg"
      alt="요정 옷을 입은 엘바" /> -->
 
-    <article style="margin-bottom:8rem;">
-      <h1 style="font-size:var(--subhead);margin:0 0 1rem 0;">todo list</h1>
+    <article class="accordion" style="margin:1rem 0 4rem;">
+      <h3 class="accordion-title js-toggle" role="button" aria-expanded="false">
+        Todolist
+        <span class="accordion-title-icon"><i class="icon-plus"></i></span>
+      </h3>
+      <div class="accordion-panel">
+        <p>모두보기 / 전체보기 / 더보기 writing 정의하기 (자세히보기 / 더보기 / -보러가기)</p>
+        <p>총결제금액 / 결제예정금액</p>
+    
+        <p>Bullet을 컴포넌트로 만들어서 사용.</p>
+        <p>스타일을 처음 선언할 때 margin:0 0 0 0 풀어서 사용하고, 재선언할 때 margin-left로 재할당을 암시하고 오버라이딩 최소화하기.</p>
+        <p>position 속성을 제거할 때 static 대신 relative를 사용하기. z-index 값을 보전할 수 있기 때문.</li>
+        </p>
+        <p><strong>스타일(ex:bg/border, size)과 롤(sorting, text input)을 분리하는 것이 좋겠다.</strong></p>
 
-      <p>모두보기 / 전체보기 / 더보기 writing 정의하기 (자세히보기 / 더보기 / -보러가기)</p>
-      <p>총결제금액 / 결제예정금액</p>
-  
-      <p>Bullet을 컴포넌트로 만들어서 사용.</p>
-      <p>스타일을 처음 선언할 때 margin:0 0 0 0 풀어서 사용하고, 재선언할 때 margin-left로 재할당을 암시하고 오버라이딩 최소화하기.</p>
-      <p>position 속성을 제거할 때 static 대신 relative를 사용하기. z-index 값을 보전할 수 있기 때문.</li>
-      </p>
-      <p><strong>스타일과 롤을 분리하는 것이 좋겠다.</strong></p>
 
+        <p>가운데 정렬 될 경우 large 컨테이너를 사용.</p>
+    
+        <p>spacing system 정의.</p>
+        <p>iphone의 safe area 관련 코드 모듈화</p>
+        <p>breakpoint 정의하고</p>
+        <p>맥북 13인치 1680x1050 / x1나노 2160x1350 / 1440은 애매한 브레이크포인트</p>
+        <p>z-index 유아이 별로 정의</p>
 
-      <p>가운데 정렬 될 경우 large 컨테이너를 사용.</p>
-  
-      <p>spacing system 정의.</p>
-      <p>iphone의 safe area 관련 코드 모듈화</p>
-      <p>breakpoint 정의하고</p>
-      <p>맥북 13인치 1680x1050 / x1나노 2160x1350 / 1440은 애매한 브레이크포인트</p>
-      <p>z-index 유아이 별로 정의</p>
+        <p>컴포넌트별로 페이지 분리(우선순위 낮음)</p>
 
-      <p>컴포넌트별로 페이지 분리(우선순위 낮음)</p>
+        <p>버튼과 클릭할 수 없는 태그의 스타일을 시각적으로 구분</p>
 
-      <p>버튼과 클릭할 수 없는 태그의 스타일을 시각적으로 구분</p>
-
-      <code>code tag</code>
+        <code>code tag</code>
+      </div>
     </article>
 
     <article class="design-article js-scrollspy-section">
@@ -229,7 +233,7 @@
         <dt>Medium</dt><dd>button default, textfield, user avatar</dd>
         <dt>Small</dt><dd>button small, user avatar</dd>
         <dt>XSmall</dt><dd>tag, user avatar, button in textfield(indicator)</dd>
-        <dt>Tiny</dt><dd>radio, checkbox, switch, user avatar</dd>
+        <dt>XXSmall</dt><dd>radio, checkbox, switch, user avatar</dd>
       </dl>
       <hr />
       <!-- <blockquote>
@@ -669,7 +673,7 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Badge</h1>
-      <p class="design-article-description">작성 중.</p>
+      <p class="design-article-description">작성 중. 클릭할 수 없음.</p>
       <blockquote>
         히스토리: chip-small로 갔다가 사이즈에서 다시 분리. 클릭할 수 없음. 용도가 아닌 스타일로 구분되어 있어서 가이드를 작성하기도 힘들고 커뮤니케이션도 어려워짐. 같은 이유에서 해시태그 컴포넌트를 추가하는 것이 좋을 듯.
       </blockquote>
@@ -1429,7 +1433,7 @@
           <label for="" class="textfield-label">이메일 주소</label>
           <input class="textfield-input" placeholder="Enter Your Email.." />
         </div>
-        <button class="subscribe-submit" type="submit">구독하기</button>
+        <button class="subscribe-submit" type="submit">뉴스레터 구독</button>
         <p class="subscribe-helper" style="max-width:400px;">
           뉴스레터 수신을 위한 <a href="#">개인정보 수집 및 이용</a>에 동의합니다. .
         </p>
