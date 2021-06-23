@@ -204,6 +204,10 @@
 
 
 @mixin title-bordered {
+      height: 32px;
+      display: flex;
+      box-sizing: border-box;
+      align-items: center;
   margin:0 0 .5rem;padding:.5rem;border:var(--border100);border-radius:var(--radius400);font-size:var(--caption);
 }
 .title-bordered {@include title-bordered;}

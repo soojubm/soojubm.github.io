@@ -56,7 +56,7 @@
 
   <nav class="design-navigation">
     <div class="design-navigation-background"></div>
-    <div class="design-navigation-scroll" role="group" style="margin:0 var(--grid-margin-minus);padding:0 calc(5% - .25rem);">
+    <div class="design-navigation-scroll">
       <a class="chip is-active js-scrollspy-trigger" href="#">Sizes</a>
       <a class="chip js-scrollspy-trigger" href="#">Typograph</a>
       <a class="chip js-scrollspy-trigger" href="#">Pallettes</a>
@@ -1170,11 +1170,11 @@
         </datalist>
       </div>
       <script>
-      var slider = document.getElementById("myRange");
+      var carousel = document.getElementById("myRange");
       var output = document.getElementById("demo");
-      output.innerHTML = slider.value; // Display the default slider value
-      // Update the current slider value (each time you drag the slider handle)
-      slider.oninput = function() {
+      output.innerHTML = carousel.value; // Display the default carousel value
+      // Update the current carousel value (each time you drag the carousel handle)
+      carousel.oninput = function() {
         output.innerHTML = this.value;
       }
     </script>
@@ -1562,57 +1562,57 @@
     </article> -->
 
     <article class="design-article js-scrollspy-section">
-      <h1 class="design-article-title">Slider</h1>
+      <h1 class="design-article-title">carousel</h1>
       <p class="design-article-description">서드파티 라이브러리 없이 가로 스크롤을 활용합니다. 터치 제스쳐를 지원하지 않는 환경(데스크탑 등)에서 arrow 버튼을 제공하세요. 모바일 환경에서는 arrow 버튼을 제공하지 않습니다.</p>
-      <section class="slider">
-        <div class="slider-viewer" style="margin-right:-50%;padding-right:200px;">
-          <a class="slider-viewer-slide" href="#profile">
-            <span class="slider-viewer-slide-media">💕</span>
-            <p class="slider-viewer-slide-name">사용자 프로필</p>
+      <section class="carousel">
+        <div class="carousel-viewer" style="margin-right:-50%;padding-right:200px;">
+          <a class="carousel-viewer-slide" href="#profile">
+            <span class="carousel-viewer-slide-media">💕</span>
+            <p class="carousel-viewer-slide-name">사용자 프로필</p>
           </a>
-          <a class="slider-viewer-slide" href="#signup">
-            <span class="slider-viewer-slide-media">🗂️</span>
-            <p class="slider-viewer-slide-name">회원가입</p>
+          <a class="carousel-viewer-slide" href="#signup">
+            <span class="carousel-viewer-slide-media">🗂️</span>
+            <p class="carousel-viewer-slide-name">회원가입</p>
           </a>
-          <a class="slider-viewer-slide" href="#login">
-            <span class="slider-viewer-slide-media">🗂️</span>
-            <p class="slider-viewer-slide-name">로그인</p>
+          <a class="carousel-viewer-slide" href="#login">
+            <span class="carousel-viewer-slide-media">🗂️</span>
+            <p class="carousel-viewer-slide-name">로그인</p>
           </a>
-          <a class="slider-viewer-slide" href="#forgot">
-            <span class="slider-viewer-slide-media">🔑</span>
-            <p class="slider-viewer-slide-name">비밀번호 찾기</p>
+          <a class="carousel-viewer-slide" href="#forgot">
+            <span class="carousel-viewer-slide-media">🔑</span>
+            <p class="carousel-viewer-slide-name">비밀번호 찾기</p>
           </a>
-          <a class="slider-viewer-slide" href="#post">
-            <span class="slider-viewer-slide-media">✍️</span>
-            <p class="slider-viewer-slide-name">포스트</p>
+          <a class="carousel-viewer-slide" href="#post">
+            <span class="carousel-viewer-slide-media">✍️</span>
+            <p class="carousel-viewer-slide-name">포스트</p>
           </a>
-          <a class="slider-viewer-slide" href="#product">
-            <span class="slider-viewer-slide-media">🧴</span>
-            <p class="slider-viewer-slide-name">상품</p>
+          <a class="carousel-viewer-slide" href="#product">
+            <span class="carousel-viewer-slide-media">🧴</span>
+            <p class="carousel-viewer-slide-name">상품</p>
           </a>
-          <a class="slider-viewer-slide" href="#cart">
-            <span class="slider-viewer-slide-media">🛒</span>
-            <p class="slider-viewer-slide-name">카트</p>
+          <a class="carousel-viewer-slide" href="#cart">
+            <span class="carousel-viewer-slide-media">🛒</span>
+            <p class="carousel-viewer-slide-name">카트</p>
           </a>
-          <a class="slider-viewer-slide" href="#checkout">
-            <span class="slider-viewer-slide-media">💕</span>
-            <p class="slider-viewer-slide-name">체크아웃</p>
+          <a class="carousel-viewer-slide" href="#checkout">
+            <span class="carousel-viewer-slide-media">💕</span>
+            <p class="carousel-viewer-slide-name">체크아웃</p>
           </a>
-          <a class="slider-viewer-slide" href="#orders">
-            <span class="slider-viewer-slide-media">💕</span>
-            <p class="slider-viewer-slide-name">주문내역</p>
+          <a class="carousel-viewer-slide" href="#orders">
+            <span class="carousel-viewer-slide-media">💕</span>
+            <p class="carousel-viewer-slide-name">주문내역</p>
           </a>
-          <a class="slider-viewer-slide" href="#setting">
-            <span class="slider-viewer-slide-media">🔖</span>
-            <p class="slider-viewer-slide-name">설정</p>
+          <a class="carousel-viewer-slide" href="#setting">
+            <span class="carousel-viewer-slide-media">🔖</span>
+            <p class="carousel-viewer-slide-name">설정</p>
           </a>
         </div>
-        <!-- <nav class="slider-dots">
-          <button class="slider-dots-dot">1</button>
+        <!-- <nav class="carousel-dots">
+          <button class="carousel-dots-dot">1</button>
         </nav> -->
-        <nav class="slider-arrows">
-          <button class="slider-arrows-prev"><i class="icon-chevron is-left"></i></button>
-          <button class="slider-arrows-next"><i class="icon-chevron"></i></button>
+        <nav class="carousel-arrows">
+          <button class="carousel-arrows-prev"><i class="icon-chevron is-left"></i></button>
+          <button class="carousel-arrows-next"><i class="icon-chevron"></i></button>
         </nav>
       </section>
     </article>
@@ -1886,6 +1886,9 @@
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Stepper</h1>
       <p class="design-article-description">모바일 퍼스트(가로레이아웃 후순위). 아코디언(optional), 버튼(optional), 타임라인 / 히스토리와 비슷한 맥락</p>
+      <blockquote>
+        <p>stepper 네이밍은 input type="range" 에 사용하는 경우도 있음. 속성값으로 slider가 사용되기 때문에 구분하기 위해 carousel 네이밍.</p>
+      </blockquote>
       <section class="step">
         <div class="step-item is-active">
           <span class="step-item-icon">1</span>

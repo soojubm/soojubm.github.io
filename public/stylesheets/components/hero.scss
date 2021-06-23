@@ -6,7 +6,7 @@
 .hero-description {width:50%;margin:var(--space-after-title) 0 1rem 0;font-size:var(--subhead);}
 .hero-features {display:flex;justify-content:space-between;margin:4rem 0 0 0;animation: fadeup .2s cubic-bezier(.455, .03, .515, .955) both 1s;}
 .hero-features > div {width:30%;}
-.hero .slider {animation:fadeup .2s cubic-bezier(.455, .03, .515, .955) forwards 1s;opacity:0;position:relative;z-index:1;}
+.hero .carousel {animation:fadeup .2s cubic-bezier(.455, .03, .515, .955) forwards 1s;opacity:0;position:relative;z-index:1;}
 .hero-foot {display:flex;animation:fadeup .2s cubic-bezier(.455, .03, .515, .955) forwards 1s;opacity:0;}
 .hero-cta {@include button-primary;}
 .hero-detail {@include button-text;margin-left:1rem;}
