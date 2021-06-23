@@ -228,7 +228,7 @@
         <dt>Large</dt><dd>user avatar</dd>
         <dt>Medium</dt><dd>button default, textfield, user avatar</dd>
         <dt>Small</dt><dd>button small, user avatar</dd>
-        <dt>XSmall</dt><dd>tag, user avatar, button in textfield</dd>
+        <dt>XSmall</dt><dd>tag, user avatar, button in textfield(indicator)</dd>
         <dt>Tiny</dt><dd>radio, checkbox, switch, user avatar</dd>
       </dl>
       <hr />
@@ -685,8 +685,6 @@
       <h1 class="design-article-title">Buttons</h1>
       <ul class="design-article-description">
         <li>hover, focus 개별적인 스타일링 안 했으면 좋겠다. disabled도 모두 통일하는 방법.</li>
-        <li>프라이머리primary: 한 페이지에 한 개. 세컨더리: 사용자 여정에 필요한 기능.</li>
-        <li>binary selection(?choice)에서 프라이머리와 세컨더리를 함께 사용할 수 없습니다.</li>
         <li>네이밍: style = solid/outline/plain/text (유아이 라이브러리에 어울림) appearance = link / subtle / primary, space = compact/fullwidth</li>
         <li>aria-expanded / role="img" aria-label="plus icon" / aria-pressed={activated ? "true" : "false"}</li>
         <li>
@@ -696,6 +694,13 @@
       <blockquote>
         chip이 button-small.
       </blockquote>
+      <dl>
+        <dt>Primary</dt><dd>페이지에 가장 중요한 행동. 한 페이지에 한 개</dd>
+        <dt>Secondary</dt><dd>사용자 여정에 필요한 기능에서. binary selection(?choice)에서 프라이머리와 세컨더리를 함께 사용할 수 없습니다.</dd>
+        <dt>Tertiary</dt><dd>닫기, 취소, 아이콘 버튼</dd>
+        <dt>Text</dt><dd>text link와 구분. 사용 빈도 낮아서 고민 중.</dd>
+      </dl>
+      <hr />
       <!--
         <a class="button" href="#">Anchor button</a>
         <button>Button element</button>
@@ -729,6 +734,7 @@
         <button class="design-article-tertiary" disabled>Disabled</button>
       </div>
       <br />
+
       <h6 class="title-bordered">Sizes</h6>
       <div class="design-buttongroup tile-flat-small">
         <button class="design-article-tertiary-small">Small</button>

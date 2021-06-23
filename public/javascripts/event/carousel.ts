@@ -1,12 +1,12 @@
 const carousel = () => {
-  const category = document.querySelector<HTMLElement>('.slider')
+  const category = document.querySelector<HTMLElement>('.carousel')
   if (!category) return
 
-  const categoryList = category.querySelector<HTMLElement>('.slider-viewer')
-  const categoryListSlide = category.querySelectorAll<HTMLElement>('.slider-viewer > button')
-  const categoryNavigationPrev = category.querySelector<HTMLElement>('.slider-arrows-prev')
-  const categoryNavigationNext = category.querySelector<HTMLElement>('.slider-arrows-next')
-  const categoryDots = category.querySelectorAll<HTMLElement>('.slider-dots-dot')
+  const categoryList = category.querySelector<HTMLElement>('.carousel-viewer')
+  const categoryListSlide = category.querySelectorAll<HTMLElement>('.carousel-viewer > button')
+  const categoryNavigationPrev = category.querySelector<HTMLElement>('.carousel-arrows-prev')
+  const categoryNavigationNext = category.querySelector<HTMLElement>('.carousel-arrows-next')
+  const categoryDots = category.querySelectorAll<HTMLElement>('.carousel-dots-dot')
 
   if (!categoryList || !categoryListSlide || !categoryNavigationPrev || !categoryNavigationNext || !categoryDots) return
 
@@ -14,9 +14,9 @@ const carousel = () => {
   let sum = 0
 
   const isFirst = categoryList.scrollLeft === 0
-  if(isFirst) {
+  if (isFirst) {
     categoryNavigationPrev.style.display = 'none'
-  } 
+  }
 
   categoryListSlide.forEach(item => (sum += item.offsetWidth))
 
@@ -29,11 +29,11 @@ const carousel = () => {
     console.log('scroll-left', scrollLeft, 'offset-width', categoryContainerWidth)
 
     const isFirst = scrollLeft === 0
-    if(isFirst) {
+    if (isFirst) {
       categoryNavigationPrev.style.display = 'none'
     } else {
       categoryNavigationPrev.style.display = 'flex'
-    } 
+    }
     // categoryNavigationPrev.hidden = scrollLeft === 0
   })
 
@@ -44,9 +44,8 @@ const carousel = () => {
     categoryList!.scrollLeft += 100
     // if(sum > categoryContainerWidth) {}
     // const ttt = 100 + 'px';
-    // document.querySelector('.slider-viewer').style.transform += 'translateX('+ttt+')';
+    // document.querySelector('.carousel-viewer').style.transform += 'translateX('+ttt+')';
   }
 }
-
 
 export default carousel
