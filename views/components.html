@@ -199,32 +199,42 @@
       <p>모두보기 / 전체보기 / 더보기 writing 정의하기 (자세히보기 / 더보기 / -보러가기)</p>
       <p>총결제금액 / 결제예정금액</p>
   
-      <p>Bullet을 컴포넌트로 만들어서 사용하기.</p>
+      <p>Bullet을 컴포넌트로 만들어서 사용.</p>
       <p>스타일을 처음 선언할 때 margin:0 0 0 0 풀어서 사용하고, 재선언할 때 margin-left로 재할당을 암시하고 오버라이딩 최소화하기.</p>
       <p>position 속성을 제거할 때 static 대신 relative를 사용하기. z-index 값을 보전할 수 있기 때문.</li>
       </p>
       <p><strong>스타일과 롤을 분리하는 것이 좋겠다.</strong></p>
 
 
-      <p>가운데 정렬 될 경우 large 컨테이너를 사용하기.</p>
+      <p>가운데 정렬 될 경우 large 컨테이너를 사용.</p>
   
-      <p>spacing system 정의하기.</p>
-      <p>iphone의 safe area 관련 코드 모듈화하기.</p>
-      <p>breakpoint 정의하기</p>
+      <p>spacing system 정의.</p>
+      <p>iphone의 safe area 관련 코드 모듈화</p>
+      <p>breakpoint 정의하고</p>
       <p>맥북 13인치 1680x1050 / x1나노 2160x1350 / 1440은 애매한 브레이크포인트</p>
-      <p>z-index 유아이 별로 정의하기</p>
+      <p>z-index 유아이 별로 정의</p>
 
       <p>컴포넌트별로 페이지 분리(우선순위 낮음)</p>
+
+      <p>버튼과 클릭할 수 없는 태그의 스타일을 시각적으로 구분</p>
 
       <code>code tag</code>
     </article>
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Sizes & Avatars</h1>
-      <p class="design-article-description">5가지 사이즈를 사용합니다. 아바타는 텍스트, 아이콘, 이미지를 포함할 수 있습니다.</p>
-      <blockquote>
+      <p class="design-article-description">5가지 사이즈를 사용합니다. 아바타는 텍스트, 아이콘, 이미지를 포함할 수 있습니다. Large와 Medium은 디스크립션을 가질 수 있습니다.</p>
+      <dl>
+        <dt>Large</dt><dd>user avatar</dd>
+        <dt>Medium</dt><dd>button default, textfield, user avatar</dd>
+        <dt>Small</dt><dd>button small, user avatar</dd>
+        <dt>XSmall</dt><dd>tag, user avatar, button in textfield</dd>
+        <dt>Tiny</dt><dd>radio, checkbox, switch, user avatar</dd>
+      </dl>
+      <hr />
+      <!-- <blockquote>
         2021-05 xsmall 사이즈 추가, todo: tiny를 xxsmall로 변경하고 기본값으로 medium을 사용.
-      </blockquote>
+      </blockquote> -->
       <div role="group">
         <a href="" class="design-article-avatar-large"><span class="avatar-badge"></span></a>
         <a href="" class="design-article-avatar-medium"><span class="avatar-badge"></span></a>
@@ -278,7 +288,7 @@
         <span class="design-article-avatar-small" style="margin-left:-.75rem;box-shadow: var(--gray0) 0px 0px 0px 2px;"></span>
         <span class="design-article-avatar-small" style="margin-left:-.75rem;box-shadow: var(--gray0) 0px 0px 0px 2px;"></span>
         <!-- <a href="" class="design-article-avatar-small" style="margin-left:-10px;box-shadow: rgb(255 255 255) 0px 0px 0px 4px;background:var(--gray100);color:var(--gray800);">+4</a> -->
-        <span style="margin:0 0 0 1rem;">수줍이 외 4명</span>
+        <span style="margin:0 0 0 1rem;">수줍이 외 4명 (avatar stack component)</span>
       </div>
       <!-- <div class="avatarlist" style="display:flex;align-items:center;">
         <span class="design-article-avatar-tiny" style="box-shadow: var(--gray0) 0px 0px 0px 2px;"></span>
@@ -291,13 +301,14 @@
 
     <article class="design-article typography js-scrollspy-section">
       <h1 class="design-article-title">Typography</h1>
-      <p class="design-article-description">작성 중.</p>
+      <p class="design-article-description">작성 중. 사이즈는 외우기 어렵고 확장성이 떨어진다. role에 따라 구분하자. caption, helper 등 같은 값을 가지는 텍스트로 따로 모듈화하는 것이 좋겠다.</p>
       <!-- <li>asap의 dash를 마이너스로 쓰면 어색. 무게가 살짝 다름.</li> -->
 
       <!-- <button class="user-logout tile-elevated js-default-font" style="padding:.5rem;padding-left:1rem;" title="change theme">
         <span class="user-logout-icon">icon</span>
         시스템 폰트로 보기
       </button> -->
+      <h6 class="title-bordered">Font Family</h6>
       <div class="design-typograph-group">
         <div class="design-typograph-item">
           한글 <b style="display:block;font-size:var(--subhead);line-height:1.5;font-weight:var(--font-weight-bold);">아리타 산스</b>
@@ -315,6 +326,10 @@
           </div>
         </div>
       </div>
+
+      <br />
+
+      <h6 class="title-bordered">Font Size</h6>
       <!-- <div class="design-typograph-size">
         <h3 class="design-typograph-size-title">Huge <span>3rem / 48px</span></h3>
         <p style="margin:.5rem 0 0;">프로모션 등 특수한 목적의 페이지의 헤드라인에 사용합니다.</p>
@@ -465,7 +480,7 @@
           <label for="temp55" style="padding-left:48px;"></label>
         </span>
       </button>
-      <h2 style="margin:0 0 .5rem;"><small>Grayscales</small></h2>
+      <h2 class="title-bordered">Grayscales</h2>
       <div class="color-group" role="group">
         <figure class="color-item is-gray000">
           <div></div>
@@ -498,7 +513,7 @@
         </figure>
       </div>
       <br />
-      <h2 style="margin:0 0 .5rem;font-size:var(--caption);">Colors</h2>
+      <h2 class="title-bordered">Colors</h2>
       <div class="color-group" role="group">
         <figure class="color-item is-primary100">
           <div></div>
@@ -518,7 +533,7 @@
         <figure class="color-item">
           <div style="background:gold"></div>
           <h3>gold</h3>
-          <span>accent</span>
+          <span>accent / 임시</span>
         </figure>
         <!-- <figure class="color-item is-gradient">
           <div></div>
@@ -526,7 +541,7 @@
         </figure> -->
       </div>
       <br />
-      <h2 style="margin:0 0 .5rem;" title="Surface or Elevation"><small>Elevation</small></h2>
+      <h2 class="title-bordered" title="Surface or Elevation">Elevation</h2>
       <div class="color-group" role="group">
         <figure class="color-item surface-item">
           <div style="background:var(--gray0);"></div>
@@ -538,7 +553,7 @@
         </figure> -->
       </div>
       <br />
-      <h2 style="margin:0 0 .5rem;"><small>Skeleton</small></h2>
+      <h2 class="title-bordered">Skeleton</h2>
       <div class="color-group" role="group">
         <figure class="color-item">
           <div class="skeleton"></div>
@@ -552,6 +567,12 @@
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Tiles</h1>
       <p class="design-article-description">제목, 디스크립션 이외의 콘텐츠를 강조할 때 사용합니다. 클릭할 수 있는 타일과 클릭할 수 없는 타일을 시각적으로 구분합니다. 클릭할 수 있는 타일이란 타일 내부에 클릭할 수 있는 요소가 존재하는 경우를 포함합니다.</p>
+      <blockquote>
+        <h6>history</h6>
+        <p>padding 1.5rem 일 때 모바일에서 공간을 많이 차지해서 1rem으로 변경.</p>
+        <h6>todo</h6>
+        <p>flat 스타일로 제목에 사용.</p>
+      </blockquote>
       <div class="design-tile-flat" style="line-height:1.4;">
         <b>flat</b> is non clickable. no one.
       </div>
@@ -577,13 +598,14 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Chips ☀️</h1>
-      <p class="design-article-description">단일 선택 / 다중 선택, 삭제 여부에 따라 적절한 힌트를 제공합니다. 맥락이 다른 chip을 나열할 수도 있습니다. 스몰 사이즈(Tags)는 키워드 리스트, 뱃지로 사용할 수 있으며 아이콘을 포함할 수 없습니다. role="listbox" aria-orientation="horizontal"</p>
+      <p class="design-article-description">단일 선택 / 다중 선택, 삭제 여부에 따라 적절한 힌트를 제공합니다. 다른 맥락의 chip을 나열할 수도 있습니다. 스몰 사이즈(Tags)는 키워드 리스트, 뱃지로 사용할 수 있으며 아이콘을 포함할 수 없습니다. role="listbox" aria-orientation="horizontal"</p>
       <blockquote>
         memo: 드롭다운, 필터링을 위한 버튼 그룹, 아이콘 버튼을 하나의 칩 스타일로 묶은 상태. 이들 각각을 시각적으로 구분해야 하는 경우에 문제가 생길 수 있음. 용도별로 분리하여 가이드를 만드는 것이 좋을까
         todo: 버튼 스몰, 칩 라지, 칩 스몰 구분해야 함.
       </blockquote>
-      <hr />
-      <div class="chips js-chip" role="group">
+
+      <h6 class="title-bordered">Filter</h6>
+      <div class="chips js-chip">
         <button class="chip is-active">전체</button>
         <button class="chip">결제완료
           <!-- <small class="chip-count">5</small> -->
@@ -595,7 +617,45 @@
           +5
         </button>
       </div>
-      <hr role="separator" />
+
+      <br />
+
+      <h6 class="title-bordered">Dropdown</h6>
+      <div class="dropdown">
+        <button class="dropdown-trigger js-toggle">드롭다운 <span class="chip-icon"><i class="icon-caret"></i></span></button>
+        </button>
+        <menu class="dropdown-menu" role="menu">
+          <h6 class="dropdown-menu-title" hidden>Dropdown header</h6>
+          <a class="dropdown-menu-link" href="" disabled>
+            프로필 관리
+            <!-- <i class="icon-check"></i> -->
+          </a>
+          <a class="dropdown-menu-link" href="">고객센터</a>
+          <hr class="dropdown-menu-divider" />
+          <a class="dropdown-menu-link" href="">로그아웃</a>
+        </menu>
+      </div>
+
+      <br />
+
+      <h6 class="title-bordered">Keyword list</h6>
+
+      <br />
+
+      <h6 class="title-bordered">Morevert</h6>
+      <div class="dropdown">
+        <button class="dropdown-trigger js-toggle" aria-haspopup="menu" aria-expanded="false">
+          <span class="dropdown-trigger-icon"><i class="icon-more"></i></span>
+        </button>
+        <menu class="dropdown-menu">
+          <a class="dropdown-menu-link" href="">수정</a>
+          <a class="dropdown-menu-link" href="">삭제</a>
+        </menu>
+      </div>
+
+      <br />
+
+      <h6 class="title-bordered">Selection</h6>
       <div role="group">
         <button class="chip">
           <figure>🦔</figure>
@@ -604,32 +664,6 @@
         <button class="chip is-active">
           영화<span class="chip-icon"><i class="icon-check" style="border-color: var(--color-primary);"></i></span></button>
         <button class="chip is-active">소설<span class="chip-icon"><i class="icon-close"></i></span></button>
-      </div>
-      <hr role="separator" />
-      <div role="group">
-        <div class="dropdown">
-          <button class="dropdown-trigger js-toggle">드롭다운 <span class="chip-icon"><i class="icon-caret"></i></span></button>
-          </button>
-          <menu class="dropdown-menu" role="menu">
-            <h6 class="dropdown-menu-title" hidden>Dropdown header</h6>
-            <a class="dropdown-menu-link" href="" disabled>
-              프로필 관리
-              <!-- <i class="icon-check"></i> -->
-            </a>
-            <a class="dropdown-menu-link" href="">고객센터</a>
-            <hr class="dropdown-menu-divider" />
-            <a class="dropdown-menu-link" href="">로그아웃</a>
-          </menu>
-        </div>
-        <div class="dropdown">
-          <button class="dropdown-trigger js-toggle" aria-haspopup="menu" aria-expanded="false">
-            <span class="dropdown-trigger-icon"><i class="icon-more"></i></span>
-          </button>
-          <menu class="dropdown-menu">
-            <a class="dropdown-menu-link" href="">수정</a>
-            <a class="dropdown-menu-link" href="">삭제</a>
-          </menu>
-        </div>
       </div>
     </article>
 
@@ -668,7 +702,7 @@
         <input type="submit" value="submit input">
         <input type="button" value="button input">
       -->
-      <h6 style="margin:0 0 .5rem;font-size:var(--caption);">Primary</h6>
+      <h6 class="title-bordered">Primary</h6>
       <div class="design-buttongroup tile-flat-small">
         <button class="design-article-primary" aria-pressed="false" aria-expanded="false">Default</button>
         <button class="design-article-primary is-hover">Hover</button>
@@ -677,7 +711,7 @@
         <button class="design-article-primary" disabled>Disabled</button>
       </div>
       <br />
-      <h6 style="margin:0 0 .5rem;font-size:var(--caption);">Secondary</h6>
+      <h6 class="title-bordered">Secondary</h6>
       <div class="design-buttongroup tile-flat-small">
         <button class="design-article-secondary">Default</button>
         <button class="design-article-secondary is-hover">Hover</button>
@@ -686,7 +720,7 @@
         <button class="design-article-secondary" disabled>Disabled</button>
       </div>
       <br />
-      <h6 style="margin:0 0 .5rem;font-size:var(--caption);">Tertiary</h6>
+      <h6 class="title-bordered">Tertiary</h6>
       <div class="design-buttongroup tile-flat-small">
         <button class="design-article-tertiary">Default</button>
         <button class="design-article-tertiary is-hover">Hover</button>
@@ -695,7 +729,7 @@
         <button class="design-article-tertiary" disabled>Disabled</button>
       </div>
       <br />
-      <h6 style="margin:0 0 .5rem;font-size:var(--caption);">Sizes</h6>
+      <h6 class="title-bordered">Sizes</h6>
       <div class="design-buttongroup tile-flat-small">
         <button class="design-article-tertiary-small">Small</button>
         <button class="design-article-tertiary">Medium</button>
@@ -707,7 +741,7 @@
         <li>Large 사이즈는 primary 스타일만 가지며 프로모션 페이지에서 사용합니다.</li>
       </ul>
       <br />
-      <h6 style="margin:0 0 .5rem;font-size:var(--caption);">Text (outdated)</h6>
+      <h6 class="title-bordered">Text (outdated)</h6>
       <div class="design-buttongroup tile-flat-small">
         <button class="design-article-text">Default</button>
         <button class="design-article-text is-hover">Hover</button>
@@ -945,13 +979,14 @@
     
 
     <article class="design-article js-scrollspy-section">
-      <h1 class="design-article-title">Statistic & Summary & Metadata</h1>
+      <h1 class="design-article-title">Texts</h1>
       <p class="design-article-description">작성 중.</p>
       <blockquote>
         <ul>
           <li>라틴 소문자일 때 숫자나 한글, 대문자보다 속공간 큼.</li>
         </ul>
       </blockquote>
+      <h6 class="title-bordered">Statistic</h6>
       <div class="statistic tile-flat" style="display:flex;justify-content:space-evenly;">
         <div class="statistic-item">
           <i class="statistic-label">팔로워</i>
@@ -966,8 +1001,9 @@
           <span class="statistic-value">Small</span>
         </div>
       </div>
-
-      <section class="summary tile-flat" style="margin:1rem 0;">
+      <br />
+      <h6 class="title-bordered">Summary</h6>
+      <section class="summary tile-flat">
         <div class="summary-item">
           <div class="summary-item-label">상품 금액</div>
           <div class="summary-item-value">₩ 160,000</div>
@@ -982,7 +1018,10 @@
         </div>
       </section>
 
-      <section class="kb tile-flat" style="margin:1rem 0;">
+      <br />
+
+      <h6 class="title-bordered">Metadata</h6>
+      <section class="kb tile-flat">
         <table>
           <tbody>
             <tr style="border:0;">
@@ -995,18 +1034,22 @@
             </tr>
           </tbody>
         </table>
-        <p style="margin-top:1rem;">레이블이 아이콘인 경우 box에 넣을 것인지. 고정 가로 값이 없음.</p>
       </section>
+      <ul style="margin:var(--space-after-item);font-size:var(--caption);">
+        <li>레이블이 아이콘인 경우 box에 넣을 것인지. 고정 가로 값이 없음.</li>
+      </ul>
 
-      <h5>Suggestion</h5>
-      <blockquote>
-        role=[suggestion / deletion / insertion]
-      </blockquote>
+      <br />
+
+      <h6 class="title-bordered">Suggestion</h6>
       <div class="product-info-price tile-flat" role="suggestion">
         <del class="product-info-price-deletion" role="deletion">₩ 30,000</del>
         <b class="product-info-price-insertion" role="insertion">₩ 20,000</b>
         <em class="product-info-price-percentage">(30%)</em>
       </div>
+      <ul style="margin:var(--space-after-item);font-size:var(--caption);">
+        <li>role=[suggestion / deletion / insertion]</li>
+      </ul>
     </article>
 
     <article class="design-article js-tab">
