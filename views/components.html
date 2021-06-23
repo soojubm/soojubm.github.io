@@ -68,8 +68,8 @@
       <a class="chip js-scrollspy-trigger" href="#">Radioes</a>
       <a class="chip js-scrollspy-trigger" href="#">Switch</a>
       <a class="chip js-scrollspy-trigger" href="#">Textfields</a>
-      <a class="chip js-scrollspy-trigger" href="#">Select</a>
-      <a class="chip js-scrollspy-trigger" href="#">Seperator</a>
+      <!-- <a class="chip js-scrollspy-trigger" href="#">Select</a> -->
+      <!-- <a class="chip js-scrollspy-trigger" href="#">Seperator</a> -->
       <a class="chip js-scrollspy-trigger" href="#">Breadcrumb</a>
       <a class="chip js-scrollspy-trigger" href="#">Text Links</a>
       <a class="chip js-scrollspy-trigger" href="#">Text Lists</a>
@@ -193,7 +193,7 @@
      src="elva-fairy-800w.jpg"
      alt="요정 옷을 입은 엘바" /> -->
 
-    <article class="accordion" style="margin:1rem 0 4rem;">
+    <article class="accordion" style="margin:2rem 0 4rem;">
       <h3 class="accordion-title js-toggle" role="button" aria-expanded="false">
         Todolist
         <span class="accordion-title-icon"><i class="icon-plus"></i></span>
@@ -201,6 +201,7 @@
       <div class="accordion-panel">
         <p>모두보기 / 전체보기 / 더보기 writing 정의하기 (자세히보기 / 더보기 / -보러가기)</p>
         <p>총결제금액 / 결제예정금액</p>
+        <p>개인적으로 자주: 유저->사용자, 혹은->또는, </p>
     
         <p>Bullet을 컴포넌트로 만들어서 사용.</p>
         <p>스타일을 처음 선언할 때 margin:0 0 0 0 풀어서 사용하고, 재선언할 때 margin-left로 재할당을 암시하고 오버라이딩 최소화하기.</p>
@@ -218,9 +219,9 @@
         <p>z-index 유아이 별로 정의</p>
 
         <p>컴포넌트별로 페이지 분리(우선순위 낮음)</p>
+        <p>코딩 컨벤션 제작(우선순이ㅜ 낮음)</p>
 
         <p>버튼과 클릭할 수 없는 태그의 스타일을 시각적으로 구분</p>
-
         <code>code tag</code>
       </div>
     </article>
@@ -471,8 +472,8 @@
     </article>
 
     <article class="design-article js-scrollspy-section">
-      <h1 class="design-article-title">Palettes</h1>
-      <p class="design-article-description">다크테마를 위한 컬러셋, 인버트 스타일을 별도로 정의하지 않습니다.</p>
+      <h1 class="design-article-title">Palette</h1>
+      <p class="design-article-description">다크테마를 위한 컬러셋, 또는 인버트 스타일을 별도로 정의하지 않습니다.</p>
       <!-- <blockquote style="margin:2rem 0;">
         gray100 변수를 사용할 때 container-border-color와 같은 시멘틱한 네이밍으로 한 번 더 추상화 하세요.
       </blockquote> -->
@@ -646,7 +647,7 @@
 
       <br />
 
-      <h6 class="title-bordered">Morevert</h6>
+      <h6 class="title-bordered">Morevert(Overflow menu) - left/right</h6>
       <div class="dropdown">
         <button class="dropdown-trigger js-toggle" aria-haspopup="menu" aria-expanded="false">
           <span class="dropdown-trigger-icon"><i class="icon-more"></i></span>
@@ -854,6 +855,8 @@
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Textfields</h1>
       <p class="design-article-description">button과 unit, icon 등은 prefix(leading)/surfix(tailing), choose/enter,</p>
+
+      <h6 class="title-bordered">Number (quantity)</h6>
       <div class="quantity js-quantity">
         <input class="quantity-input js-quantity-input js-number-input" name="quantity1" type="number" value="0" min="5" max="20" >
         <!-- <input type="text" inputmode="numeric" pattern="[0-9]*"> -->
@@ -867,6 +870,8 @@
         <small class="textfield-helper is-error">이미 사용 중인 이메일입니다.</small>
       </div>
       <br />
+
+      <h6 class="title-bordered">Search</h6>
       <div class="textfield">
         <button class="textfield-prefix"><i class="icon-search"></i></button>
         <label class="textfield-label" for="search">검색</label>
@@ -893,6 +898,7 @@
         </div>
       </div>
       <br />
+      <h6 class="title-bordered">Selectbox</h6>
       <div class="textfield">
         <label class="textfield-label" for="select1">셀렉트박스</label>
         <select class="textfield-input" id="select1">
@@ -1106,7 +1112,7 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Alerts</h1>
-      <p class="design-article-description">시스템이나 브라우저의 상태, 사용자의의 행동에 피드백으로 사용합니다.</p>
+      <p class="design-article-description">시스템이나 브라우저의 상태, 사용자의 행동에 피드백으로 사용합니다.</p>
       <blockquote>
         toast=>snackbar(withAction).<br />
         single line / multiple lines (head,body 텍스트)
@@ -1267,6 +1273,466 @@
         </footer>
         <button class="dialog-close js-modal-close" aria-label="delete"><i class="icon-close"></i></button>
       </aside>
+    </article>
+
+    <!-- <article class="design-article js-scrollspy-section">
+      <h1 class="design-article-title">Index</h1>
+      <p class="design-article-description">작성 중.</p>
+      <nav class="index">
+        <h2 class="index-title">Table of contents.</h2>
+        <ol>
+          <li><a href="">Xero</a></li>
+          <li><a href="">Xero</a></li>
+          <li><a href="">Xero</a></li>
+          <li><a href="">Xero</a></li>
+          <li><a href="">Xero</a></li>
+        </ol>
+      </nav>
+    </article> -->
+
+    <!-- <article class="design-article js-scrollspy-section">
+      <h1 class="design-article-title">Hover System</h1>
+      <p class="design-article-description">카드 혹은 아이템의 hover state로 여러 개의 코드 또는 스타일이 필요하지 않습니다. 하나의 mixin을 정의하여 사용하세요.</p>
+      <button class="user-logout" title="sign out">
+        <span class="user-logout-icon">
+          <i class="icon-out"><span class="icon-out-door"></span></i>
+        </span>
+        로그아웃
+      </button>
+      <hr />
+      <div class="userlist">
+        <div class="profile-user" style="float:none;width:100%;height:48px;box-sizing:border-box;">
+          <figure class="profile-user-avatar" style="float:left;width:48px;height:48px;margin-right:1rem;"></figure>
+          <h2 class="profile-user-name" style="font-size:var(--body);">Gyeongsoo I</h2>
+          <span class="profile-user-id" style="color:var(--gray400);">유아이 디자이너</span>
+          <button class="design-article-tertiary-small" style="position:absolute;right:0;top:0;">팔로우</button>
+        </div>
+      </div>
+    </article> -->
+
+    <!-- // Chris said Marcus replied -->
+    <article class="design-article js-scrollspy-section">
+      <h1 class="design-article-title">Comment</h1>
+      <p class="design-article-description">작성 중. 결정해야 하는 것. 코멘트의 노출 순서와 정렬, 열었을 때 최초로 보여줄 갯수, 더보기 갯수. 답글  스타일 골뱅이 답글 vs 인덴테이션, 신고/수정/삭제/아바타 등 우선쉬위</p>
+      <div class="post-comment-list">
+        <article class="post-comment-list-item" role="comment">
+          <a class="post-comment-list-item-avatar" href="#"><img src="/public/images/soo.png"></a>
+          <a class="post-comment-list-item-author" href="#">soojubm</a>
+          <time class="post-comment-list-item-date" datetime="2016">1 day ago</time>
+          <p class="post-comment-list-item-text">우와 처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요. 우와 처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요.</p>
+          <button class="post-comment-list-item-reply">답글 <small>7</small></button>
+          <button class="post-comment-list-item-morevert js-toggle"><i class="icon-more"></i></button>
+          <menu class="post-comment-list-item-menu">
+            <button class="">수정</button>
+            <button class="">삭제</button>
+            <button class="">신고</button>
+          </menu>
+          
+          <!-- 대댓글 샘플 -->
+          <article class="post-comment-list-item" role="comment">
+            <a class="post-comment-list-item-avatar" href="#"><img src="/public/images/soo.png"></a>
+            <a class="post-comment-list-item-author" href="#">soojubm</a>
+            <time class="post-comment-list-item-date" datetime="2016">1 day ago</time>
+            <p class="post-comment-list-item-text">우와 처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요. 우와 처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요.</p>
+            <button class="post-comment-list-item-morevert js-toggle"><i class="icon-more"></i></button>
+            <menu class="post-comment-list-item-menu">
+              <button class="">수정</button>
+              <button class="">삭제</button>
+              <button class="">신고</button>
+            </menu>
+          </article>
+        </article>
+      </div>
+    </article>
+
+    <!-- <article class="design-article js-scrollspy-section">
+      <h1 class="design-article-title">Share Card</h1>
+      <p class="design-article-description">작성 중.</p>
+      <button class="share-trigger">
+        <span class="accessibility-text" hidden>Share actions</span>
+      </button>
+    </article> -->
+
+    <article class="design-article js-scrollspy-section">
+      <h1 class="design-article-title">carousel</h1>
+      <p class="design-article-description">서드파티 라이브러리 없이 가로 스크롤을 활용합니다. 터치 제스쳐를 지원하지 않는 환경(데스크탑 등)에서 arrow 버튼을 제공하세요. 모바일 환경에서는 arrow 버튼을 제공하지 않습니다.</p>
+      <section class="carousel">
+        <div class="carousel-viewer" style="margin-right:-50%;padding-right:200px;">
+          <a class="carousel-viewer-slide" href="#profile">
+            <span class="carousel-viewer-slide-media">💕</span>
+            <p class="carousel-viewer-slide-name">사용자 프로필</p>
+          </a>
+          <a class="carousel-viewer-slide" href="#signup">
+            <span class="carousel-viewer-slide-media">🗂️</span>
+            <p class="carousel-viewer-slide-name">회원가입</p>
+          </a>
+          <a class="carousel-viewer-slide" href="#login">
+            <span class="carousel-viewer-slide-media">🗂️</span>
+            <p class="carousel-viewer-slide-name">로그인</p>
+          </a>
+          <a class="carousel-viewer-slide" href="#forgot">
+            <span class="carousel-viewer-slide-media">🔑</span>
+            <p class="carousel-viewer-slide-name">비밀번호 찾기</p>
+          </a>
+          <a class="carousel-viewer-slide" href="#post">
+            <span class="carousel-viewer-slide-media">✍️</span>
+            <p class="carousel-viewer-slide-name">포스트</p>
+          </a>
+          <a class="carousel-viewer-slide" href="#product">
+            <span class="carousel-viewer-slide-media">🧴</span>
+            <p class="carousel-viewer-slide-name">상품</p>
+          </a>
+          <a class="carousel-viewer-slide" href="#cart">
+            <span class="carousel-viewer-slide-media">🛒</span>
+            <p class="carousel-viewer-slide-name">카트</p>
+          </a>
+          <a class="carousel-viewer-slide" href="#checkout">
+            <span class="carousel-viewer-slide-media">💕</span>
+            <p class="carousel-viewer-slide-name">체크아웃</p>
+          </a>
+          <a class="carousel-viewer-slide" href="#orders">
+            <span class="carousel-viewer-slide-media">💕</span>
+            <p class="carousel-viewer-slide-name">주문내역</p>
+          </a>
+          <a class="carousel-viewer-slide" href="#setting">
+            <span class="carousel-viewer-slide-media">🔖</span>
+            <p class="carousel-viewer-slide-name">설정</p>
+          </a>
+        </div>
+        <!-- <nav class="carousel-dots">
+          <button class="carousel-dots-dot">1</button>
+        </nav> -->
+        <nav class="carousel-arrows">
+          <button class="carousel-arrows-prev"><i class="icon-chevron is-left"></i></button>
+          <button class="carousel-arrows-next"><i class="icon-chevron"></i></button>
+        </nav>
+      </section>
+    </article>
+    
+
+    <article class="design-article js-scrollspy-section">
+      <h1 class="design-article-title">Paginations</h1>
+      <p class="design-article-description">첫 페이지와 마지막 페이지에 더블 화살표 아이콘을 사용하지 않습니다. 최초 페이지와 최종 페이지를 사용하세요.</p>
+
+      <h6 class="title-bordered">Type 1</h6>
+      <nav class="pagination" role="navigation" aria-label="pagination">
+        <a class="pagination-previous" href="#" title="앞 페이지로 이동" aria-label="">이전</a>
+        <a class="pagination-next" href="#" title="뒷 페이지로 이동">다음</a>
+        <a class="pagination-link" href="#" title="맨 앞 페이지로 이동">1</a>
+        <i class="pagination-ellipsis" title="맨 앞 페이지로 이동">...</i>
+        <a class="pagination-link" href="#" title="1 페이지로 이동">5</a>
+        <a class="pagination-link" href="#" title="1 페이지로 이동">6</a>
+        <a class="pagination-link is-current" href="#" title="1 페이지로 이동" aria-current="true">7</a>
+        <a class="pagination-link" href="#" title="1 페이지로 이동">8</a>
+        <a class="pagination-link" href="#" title="1 페이지로 이동">9</a>
+        <i class="pagination-ellipsis" title="맨 앞 페이지로 이동">...</i>
+        <a class="pagination-link" href="#" title="맨 뒤 페이지로 이동">50</a>
+      </nav>
+      <div><small role="" style="display:block;margin:1rem 0 0;text-align:center;">숙소 300개 이상 중 281 – 300</small>
+
+      <br />
+
+      <h6 class="title-bordered">Type 2</h6>
+      <nav class="pagination2">
+        <a href="#" class="pagination2-prev" title="앞 페이지로 이동">이전</a>
+        <span class="pagination2-current">1</span>
+        <span class="pagination2-divider"> / </span>
+        <span class="pagination2-all">44</span>
+        <!-- <span>page 2 of 22</span> -->
+        <a href="#" class="pagination2-next" title="뒷 페이지로 이동">다음</a>
+      </nav>
+    </article>
+
+    <article class="design-article js-scrollspy-section">
+      <h1 class="design-article-title">Table</h1>
+      <p class="design-article-description">작성 중.</p>
+      <table>
+        <caption>히라가나 오십음도</caption>
+        <!-- <colgroup>
+          <col>
+          <col span="2" class="batman">
+          <col span="2" class="flash">
+        </colgroup> -->
+        <thead role="rowgroup">
+          <tr role="row">
+            <!-- <th role="columnheader" aria-sort="none" class="table-checkbox">
+              <div>
+                <input type="checkbox" id="temp1">
+                <label for="temp1"></label>
+              </div>
+            </th> -->
+            <th scope="col">あ단</th>
+            <th scope="col">い단</th>
+            <th scope="col">う단</th>
+            <th scope="col">え단</th>
+            <th scope="col">お단</th>
+            <th scope="col" class="right">숫자</th>
+          </tr>
+        </thead>
+        <tbody role="rowgroup">
+          <tr role="row" aria-rowindex="11">
+            <td>な</td>
+            <td>に</td>
+            <td>ぬ</td>
+            <td>ね</td>
+            <td>の</td>
+            <td class="right">9,600</td>
+          </tr>
+          <tr>
+            <!-- <td><input type="checkbox"><label for=""></label></td> -->
+            <td>わ</td>
+            <td>ゐ wi</td>
+            <td>-</td>
+            <td>ゑ we</td>
+            <td>を wo(o)</td>
+            <td class="right"> ん n/nn</td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+      <table>
+        <caption>히라가나 오십음도</caption>
+        <tbody role="rowgroup">
+          <tr role="row" aria-rowindex="11">
+            <th scope="row">제목</th>
+            <td>に</td>
+          </tr>
+          <tr role="row" aria-rowindex="11">
+            <th scope="row">제목</th>
+            <td>に</td>
+          </tr>
+          <tr role="row" aria-rowindex="11">
+            <th scope="row">제목</th>
+            <td>に</td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- <div role="rowgroup">
+        <div class="row is-head" role="row"></div>
+      </div> -->
+    </article>
+
+    <article class="design-article js-scrollspy-section">
+      <h1 class="design-article-title">Accordions</h1>
+      <p class="design-article-description">질의응답 등 정보를 요약하여 목록화하는 경우(?)에만 사용하세요. 공지사항 정도의 간단한 게시글에서도 사용할 수 있으나 그 이상의 경우에는 다른 유아이를 고민하세요.</p>
+      <!-- <blockquote>
+        plus 아이콘을 엄격하게. caret으로 변경?
+      </blockquote> -->
+      <!-- <details class="details">
+        <summary class="details-summary">써머리</summary>
+        <p>안녕</p>
+      </details> -->
+
+      <h2 style="margin:2rem 0;text-align:center;">Questions?</h2>
+      <article class="accordion">
+        <h3 class="accordion-title js-toggle" role="button" aria-expanded="false">
+          탈퇴하고 싶어요.
+          <span class="accordion-title-icon"><i class="icon-plus"></i></span>
+        </h3>
+        <div class="accordion-panel">
+          <p>모든 국민은 건강하고 쾌적한 환경에서 생활할 권리를 가지며, 국가와 국민은 환경보전을 위하여 노력하여야 한다. 대통령은 내우·외환·천재·지변 또는 중대한 재정·경제상의 위기에 있어서 국가의 안전보장 또는 공공의 안녕질서를 유지하기 위하여 긴급한 조치가 필요하고 국회의 집회를 기다릴 여유가 없을 때에 한하여 최소한으로 필요한 재정·경제상의 처분을 하거나 이에 관하여 법률의 효력을 가지는 명령을 발할 수 있다.</p>
+          <p>제1항의 지시를 받은 당해 행정기관은 이에 응하여야 한다. 국회의원은 법률이 정하는 직을 겸할 수 없다. 대통령의 임기연장 또는 중임변경을 위한 헌법개정은 그 헌법개정 제안 당시의 대통령에 대하여는 효력이 없다.</p>
+        </div>
+      </article>
+      <article class="accordion">
+        <h3 class="accordion-title js-toggle" role="button" aria-expanded="false">
+          주문을 취소하고 싶어요.
+          <span class="accordion-title-icon"><i class="icon-plus"></i></span>
+        </h3>
+        <div class="accordion-panel">
+          <p>모든 국민은 건강하고 쾌적한 환경에서 생활할 권리를 가지며, 국가와 국민은 환경보전을 위하여 노력하여야 한다. 대통령은 내우·외환·천재·지변 또는 중대한 재정·경제상의 위기에 있어서 국가의 안전보장 또는 공공의 안녕질서를 유지하기 위하여 긴급한 조치가 필요하고 국회의 집회를 기다릴 여유가 없을 때에 한하여 최소한으로 필요한 재정·경제상의 처분을 하거나 이에 관하여 법률의 효력을 가지는 명령을 발할 수 있다.</p>
+          <p>제1항의 지시를 받은 당해 행정기관은 이에 응하여야 한다. 국회의원은 법률이 정하는 직을 겸할 수 없다. 대통령의 임기연장 또는 중임변경을 위한 헌법개정은 그 헌법개정 제안 당시의 대통령에 대하여는 효력이 없다.</p>
+        </div>
+      </article>
+    </article>
+
+    <article class="design-article js-scrollspy-section">
+      <h1 class="design-article-title">Bottom Navigation</h1>
+      <p class="design-article-description">햄버거 메뉴를 사용할 때, 이커머스 도매인의 카테고리 용도이면 왼쪽, 글로벌 네비게이션일 때 오른쪽.</p>
+      <nav class="bottombar">
+        <a href="" class="bottombar-item is-active">
+          <span class="bottombar-item-media"><i class="icon-person"></i></span>
+          <span class="bottombar-item-label">홈</span>
+          <em></em>
+        </a>
+        <a href="" class="bottombar-item">
+          <span class="bottombar-item-media"><i class="icon-hamberger"></i></span>
+          <span class="bottombar-item-label">카테고리</span>
+        </a>
+        <a href="" class="bottombar-item">
+          <span class="bottombar-item-media"><i class="icon-person"></i></span>
+          <span class="bottombar-item-label">설정</span>
+        </a>
+      </nav>
+    </article>
+
+    <!-- <article class="design-article js-scrollspy-section">
+      <h1 class="design-article-title">배너</h1>
+      <p class="design-article-description">작성 중.</p>
+      <aside class="banner">
+        <h2 class="banner-title">수줍이에는 처음 방문이신가요?</h2>
+        <p class="banner-description">수줍이에는 처음 방문이신가요?</p>
+        <button class="banner-button">이용방법 알아보기</button>
+      </aside>
+    </article> -->
+
+    <!-- <article class="design-article js-scrollspy-section">
+      <h1 class="design-article-title">Feedback</h1>
+      <p class="design-article-description">샘플. 선택 후 추가 정보를 받는 경우도 있음.</p>
+      <aside class="help-feedback">
+        <p class="help-feedback-title">이 문서가 도움이 되었나요?</p>
+        <button class="help-feedback-button">도움이 됐어요</button>
+        <button class="help-feedback-button">부족해요</button>
+        <small class="help-feedback-status">417 out of 439 found this helpful</small>
+      </aside>
+    </article> -->
+
+    <article class="design-article" hidden>
+      <h1 class="design-article-title">Rating</h1>
+      <p class="design-article-description">작성 중.</p>
+      <!-- <div class="rating">
+        <h1 class="rating-title" aria-hidden="true">별점</h1>
+        <span class="rating-score">.3</span>
+        <div class="rating-star">
+            <i class="">★</i>
+            <i class="">★</i>
+            <i class="">★</i>
+            <i class="">★</i>
+            <i class="">★</i>
+          <span class="rating-star-front">☆☆☆☆☆</span>
+          <span class="rating-star-back">★★★★★</span>
+        </div>
+        <small class="rating-count">총 24개의 평가</small>
+      </div> -->
+      <div class="rating2 is-large">
+        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 12px; width: 12px; fill: var(--red800);"><path d="M15.094 1.579l-4.124 8.885-9.86 1.27a1 1 0 0 0-.542 1.736l7.293 6.565-1.965 9.852a1 1 0 0 0 1.483 1.061L16 25.951l8.625 4.997a1 1 0 0 0 1.482-1.06l-1.965-9.853 7.293-6.565a1 1 0 0 0-.541-1.735l-9.86-1.271-4.127-8.885a1 1 0 0 0-1.814 0z" fill-rule="evenodd"></path></svg>
+        <b class="rating2-score">4.71</b>
+        <small style="margin-left:.5rem;color:var(--gray400);font-weight:normal;"> 192개</small>
+      </div>
+      <div class="rating2">
+        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 12px; width: 12px; fill: var(--red800);"><path d="M15.094 1.579l-4.124 8.885-9.86 1.27a1 1 0 0 0-.542 1.736l7.293 6.565-1.965 9.852a1 1 0 0 0 1.483 1.061L16 25.951l8.625 4.997a1 1 0 0 0 1.482-1.06l-1.965-9.853 7.293-6.565a1 1 0 0 0-.541-1.735l-9.86-1.271-4.127-8.885a1 1 0 0 0-1.814 0z" fill-rule="evenodd"></path></svg>
+        <b class="rating2-score">4.32</b>
+      </div>
+      <hr />
+      <!-- <dl class="row1 is-pull" style="display: flex;justify-content: space-between;">
+        <dt>신선도</dt>
+        <dd style="display: flex;align-items: center;">
+          <div class="graph-item is-horizontal">
+            <span class="graph-item-value">4.8</span>
+            <div class="graph-item-bar"></div>
+          </div>
+        </dd>
+      </dl> -->
+      <div>
+        <span>클라우드 스토리지</span>
+        <span style="display:block;align-items: center;margin-top:-.5rem;">
+          <div class="graph-item is-horizontal" style="margin:0;width:100%;">
+            <span class="graph-item-value" style="font-size:var(--body);right:0;bottom:12px;">92%</span>
+            <div class="graph-item-bar"></div>
+          </div>
+          <small>2GB 중 5,218KB 사용됨</small>
+        </span>
+      </div>
+    </article>
+
+    <article class="design-article" hidden>
+      <h1 class="design-article-title">Graph</h1>
+      <p class="design-article-description">작성 중.</p>
+      <div class="graph js-graph" style="border:1px solid var(--gray200);border-radius:var(--radius400);">
+        <div class="graph-title">1월 26일 <em>컴퓨터통신 분야</em>에서는<br><em>7백명의 지식iN</em>들이 답변하셨습니다.</div>
+        <div class="graph-item">
+          <span class="graph-item-value">40%</span>
+          <div class="graph-item-bar"></div>
+          <span class="graph-item-label">10대</span>
+        </div>
+        <div class="graph-item">
+          <span class="graph-item-value">30%</span>
+          <div class="graph-item-bar"></div>
+          <span class="graph-item-label">20대</span>
+        </div>
+        <div class="graph-item">
+          <span class="graph-item-value">20%</span>
+          <div class="graph-item-bar"></div>
+          <span class="graph-item-label">30대</span>
+        </div>
+        <div class="graph-item">
+          <span class="graph-item-value">10%</span>
+          <div class="graph-item-bar"></div>
+          <span class="graph-item-label">40대</span>
+        </div>
+      </div>
+      <!-- <div style="background:var(--gray100);">
+        최근 3개월간 네이버플러스 멤버십으로<br />
+        <em>15,799원 추가 적립 혜택</em>이 생겼어요!이모지
+      </div> -->
+    </article>
+
+    <article class="design-article js-scrollspy-section">
+      <h1 class="design-article-title">Step</h1>
+      <p class="design-article-description">모바일 퍼스트(가로레이아웃 후순위). 아코디언(optional), 버튼(optional), 타임라인 / 히스토리와 비슷한 맥락</p>
+      <blockquote>
+        <p>stepper 네이밍은 input type="range" 에 사용하는 경우도 있음. 속성값으로 slider가 사용되기 때문에 구분하기 위해 carousel 네이밍.</p>
+      </blockquote>
+
+      <h6 class="title-bordered">Vertical</h6>
+      <section class="step">
+        <div class="step-item is-active">
+          <span class="step-item-icon">1</span>
+          <h3 class="step-item-title">장바구니</h3>
+          <p class="step-item-description">대통령은 국가의 원수이며, 외국에 대하여 국가를 대표한다. 국가원로자문회의의 조직·직무범위 기타 필요한 사항은 법률로 정한다. 국가는 대외무역을 육성하며, 이를 규제·조정할 수 있다.</p>
+        </div>
+        <div class="step-space is-active">
+          <span class="step-space-dot"></span>
+          <span class="step-space-dot"></span>
+          <span class="step-space-dot"></span>
+        </div>
+        <div class="step-item">
+          <span class="step-item-icon">2</span>
+          <h3 class="step-item-title">결제</h3>
+        </div>
+        <div class="step-space">
+          <span class="step-space-dot"></span>
+          <span class="step-space-dot"></span>
+          <span class="step-space-dot"></span>
+        </div>
+        <div class="step-item">
+          <span class="step-item-icon">3</span>
+          <h3 class="step-item-title">주문완료</h3>
+        </div>
+      </section>
+
+      <br />
+
+      <h6 class="title-bordered">Horizental</h6>
+      <section class="step is-vertical">
+        <div class="step-item is-active">
+          <span class="step-item-icon">1</span>
+          <h3 class="step-item-title">장바구니</h3>
+        </div>
+        <div class="step-item">
+          <span class="step-item-icon">2</span>
+          <h3 class="step-item-title">결제</h3>
+        </div>
+        <div class="step-item">
+          <span class="step-item-icon">3</span>
+          <h3 class="step-item-title">주문완료</h3>
+        </div>
+      </section>
+    </article>
+    
+    <article class="design-article js-scrollspy-section">
+      <h1 class="design-article-title">Result</h1>
+      <p class="design-article-description">일부 디자인 시스템에서 blankslate, empty state 등으로 네이밍. empty 뿐 아니라 error, complete 등 다양한 states에서 활용할 수 있기 때문에 result로 네이밍. 왼쪽 정렬되는 일반적인 콘텐츠 모듈과 구분하여 가운데 정렬로 대비.</p>
+      <section class="empty" style="border:1px solid var(--color-box-border);border-radius:var(--radius400);">
+        <i class="empty-icon">🧟</i>
+        <h1 class="empty-title">상품이 결제되었습니다.</h1>
+        <p class="empty-description">헌법재판소 재판관의 임기는 6년으로 하며, 법률이 정하는 바에 의하여 연임할 수 있다. 대통령은 법률안의 일부에 대하여 또는 법률안을 수정하여 재의를 요구할 수 없다.</p>
+        <div class="empty-list">
+          <div class="empty-list-item"><b>주문시간</b><span>SC제일은행</span></div>
+          <div class="empty-list-item"><b>입금금액</b><span>₩ 54,000</span></div>
+        </div>
+        <a class="empty-action" href="#">주문내역 보기</a>
+      </section>
     </article>
 
     <article class="design-article js-scrollspy-section">
@@ -1490,458 +1956,34 @@
           <span class="sidebar-item-tag tag" data-appearance="accent">새소식</span>
         </div>
       </nav>
-    </article>
 
-
-    <!-- <article class="design-article js-scrollspy-section">
-      <h1 class="design-article-title">Index</h1>
-      <p class="design-article-description">작성 중.</p>
-      <nav class="index">
-        <h2 class="index-title">Table of contents.</h2>
-        <ol>
-          <li><a href="">Xero</a></li>
-          <li><a href="">Xero</a></li>
-          <li><a href="">Xero</a></li>
-          <li><a href="">Xero</a></li>
-          <li><a href="">Xero</a></li>
-        </ol>
-      </nav>
-    </article> -->
-
-    <!-- <article class="design-article js-scrollspy-section">
-      <h1 class="design-article-title">Hover System</h1>
-      <p class="design-article-description">카드 혹은 아이템의 hover state로 여러 개의 코드 또는 스타일이 필요하지 않습니다. 하나의 mixin을 정의하여 사용하세요.</p>
-      <button class="user-logout" title="sign out">
-        <span class="user-logout-icon">
-          <i class="icon-out"><span class="icon-out-door"></span></i>
-        </span>
-        로그아웃
-      </button>
-      <hr />
-      <div class="userlist">
-        <div class="profile-user" style="float:none;width:100%;height:48px;box-sizing:border-box;">
-          <figure class="profile-user-avatar" style="float:left;width:48px;height:48px;margin-right:1rem;"></figure>
-          <h2 class="profile-user-name" style="font-size:var(--body);">Gyeongsoo I</h2>
-          <span class="profile-user-id" style="color:var(--gray400);">유아이 디자이너</span>
-          <button class="design-article-tertiary-small" style="position:absolute;right:0;top:0;">팔로우</button>
-        </div>
-      </div>
-    </article> -->
-
-    <!-- // Chris said Marcus replied -->
-    <article class="design-article js-scrollspy-section">
-      <h1 class="design-article-title">Comment</h1>
-      <p class="design-article-description">작성 중.</p>
-      <div class="post-comment-list">
-        <article class="post-comment-list-item" role="comment">
-          <a class="post-comment-list-item-avatar" href="#"><img src="/public/images/soo.png"></a>
-          <a class="post-comment-list-item-author" href="#">soojubm</a>
-          <time class="post-comment-list-item-date" datetime="2016">1 day ago</time>
-          <p class="post-comment-list-item-text">우와 처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요. 우와 처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요.</p>
-          <button class="post-comment-list-item-reply">답글 <small>7</small></button>
-          <button class="post-comment-list-item-morevert js-toggle"><i class="icon-more"></i></button>
-          <menu class="post-comment-list-item-menu">
-            <button class="">수정</button>
-            <button class="">삭제</button>
-            <button class="">신고</button>
-          </menu>
-          
-          <!-- 대댓글 샘플 -->
-          <article class="post-comment-list-item" role="comment">
-            <a class="post-comment-list-item-avatar" href="#"><img src="/public/images/soo.png"></a>
-            <a class="post-comment-list-item-author" href="#">soojubm</a>
-            <time class="post-comment-list-item-date" datetime="2016">1 day ago</time>
-            <p class="post-comment-list-item-text">우와 처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요. 우와 처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요.</p>
-            <button class="post-comment-list-item-morevert js-toggle"><i class="icon-more"></i></button>
-            <menu class="post-comment-list-item-menu">
-              <button class="">수정</button>
-              <button class="">삭제</button>
-              <button class="">신고</button>
-            </menu>
-          </article>
-        </article>
-      </div>
-    </article>
-
-    <!-- <article class="design-article js-scrollspy-section">
-      <h1 class="design-article-title">Share Card</h1>
-      <p class="design-article-description">작성 중.</p>
-      <button class="share-trigger">
-        <span class="accessibility-text" hidden>Share actions</span>
-      </button>
-    </article> -->
-
-    <article class="design-article js-scrollspy-section">
-      <h1 class="design-article-title">carousel</h1>
-      <p class="design-article-description">서드파티 라이브러리 없이 가로 스크롤을 활용합니다. 터치 제스쳐를 지원하지 않는 환경(데스크탑 등)에서 arrow 버튼을 제공하세요. 모바일 환경에서는 arrow 버튼을 제공하지 않습니다.</p>
-      <section class="carousel">
-        <div class="carousel-viewer" style="margin-right:-50%;padding-right:200px;">
-          <a class="carousel-viewer-slide" href="#profile">
-            <span class="carousel-viewer-slide-media">💕</span>
-            <p class="carousel-viewer-slide-name">사용자 프로필</p>
-          </a>
-          <a class="carousel-viewer-slide" href="#signup">
-            <span class="carousel-viewer-slide-media">🗂️</span>
-            <p class="carousel-viewer-slide-name">회원가입</p>
-          </a>
-          <a class="carousel-viewer-slide" href="#login">
-            <span class="carousel-viewer-slide-media">🗂️</span>
-            <p class="carousel-viewer-slide-name">로그인</p>
-          </a>
-          <a class="carousel-viewer-slide" href="#forgot">
-            <span class="carousel-viewer-slide-media">🔑</span>
-            <p class="carousel-viewer-slide-name">비밀번호 찾기</p>
-          </a>
-          <a class="carousel-viewer-slide" href="#post">
-            <span class="carousel-viewer-slide-media">✍️</span>
-            <p class="carousel-viewer-slide-name">포스트</p>
-          </a>
-          <a class="carousel-viewer-slide" href="#product">
-            <span class="carousel-viewer-slide-media">🧴</span>
-            <p class="carousel-viewer-slide-name">상품</p>
-          </a>
-          <a class="carousel-viewer-slide" href="#cart">
-            <span class="carousel-viewer-slide-media">🛒</span>
-            <p class="carousel-viewer-slide-name">카트</p>
-          </a>
-          <a class="carousel-viewer-slide" href="#checkout">
-            <span class="carousel-viewer-slide-media">💕</span>
-            <p class="carousel-viewer-slide-name">체크아웃</p>
-          </a>
-          <a class="carousel-viewer-slide" href="#orders">
-            <span class="carousel-viewer-slide-media">💕</span>
-            <p class="carousel-viewer-slide-name">주문내역</p>
-          </a>
-          <a class="carousel-viewer-slide" href="#setting">
-            <span class="carousel-viewer-slide-media">🔖</span>
-            <p class="carousel-viewer-slide-name">설정</p>
-          </a>
-        </div>
-        <!-- <nav class="carousel-dots">
-          <button class="carousel-dots-dot">1</button>
-        </nav> -->
-        <nav class="carousel-arrows">
-          <button class="carousel-arrows-prev"><i class="icon-chevron is-left"></i></button>
-          <button class="carousel-arrows-next"><i class="icon-chevron"></i></button>
-        </nav>
-      </section>
-    </article>
-    
-
-    <article class="design-article js-scrollspy-section">
-      <h1 class="design-article-title">Paginations</h1>
-      <p class="design-article-description">첫 페이지와 마지막 페이지에 더블 화살표 아이콘 대신 최초 페이지와 최종 페이지를 사용하세요.</p>
-      <nav class="pagination" role="navigation" aria-label="pagination">
-        <a class="pagination-previous" href="#" title="앞 페이지로 이동" aria-label="">이전</a>
-        <a class="pagination-next" href="#" title="뒷 페이지로 이동">다음</a>
-        <a class="pagination-link" href="#" title="맨 앞 페이지로 이동">1</a>
-        <i class="pagination-ellipsis" title="맨 앞 페이지로 이동">...</i>
-        <a class="pagination-link" href="#" title="1 페이지로 이동">5</a>
-        <a class="pagination-link" href="#" title="1 페이지로 이동">6</a>
-        <a class="pagination-link is-current" href="#" title="1 페이지로 이동" aria-current="true">7</a>
-        <a class="pagination-link" href="#" title="1 페이지로 이동">8</a>
-        <a class="pagination-link" href="#" title="1 페이지로 이동">9</a>
-        <i class="pagination-ellipsis" title="맨 앞 페이지로 이동">...</i>
-        <a class="pagination-link" href="#" title="맨 뒤 페이지로 이동">50</a>
-      </nav>
-      <nav class="pagination2">
-        <a href="#" class="pagination2-prev" title="앞 페이지로 이동">이전</a>
-        <span class="pagination2-current">1</span>
-        <span class="pagination2-divider"> / </span>
-        <span class="pagination2-all">44</span>
-        <!-- <span>page 2 of 22</span> -->
-        <a href="#" class="pagination2-next" title="뒷 페이지로 이동">다음</a>
-      </nav>
-    </article>
-
-    <article class="design-article js-scrollspy-section">
-      <h1 class="design-article-title">Table</h1>
-      <p class="design-article-description">작성 중.</p>
-      <table>
-        <caption>히라가나 오십음도</caption>
-        <!-- <colgroup>
-          <col>
-          <col span="2" class="batman">
-          <col span="2" class="flash">
-        </colgroup> -->
-        <thead role="rowgroup">
-          <tr role="row">
-            <!-- <th role="columnheader" aria-sort="none" class="table-checkbox">
-              <div>
-                <input type="checkbox" id="temp1">
-                <label for="temp1"></label>
-              </div>
-            </th> -->
-            <th scope="col">あ단</th>
-            <th scope="col">い단</th>
-            <th scope="col">う단</th>
-            <th scope="col">え단</th>
-            <th scope="col">お단</th>
-            <th scope="col" class="right">숫자</th>
-          </tr>
-        </thead>
-        <tbody role="rowgroup">
-          <tr role="row" aria-rowindex="11">
-            <td>な</td>
-            <td>に</td>
-            <td>ぬ</td>
-            <td>ね</td>
-            <td>の</td>
-            <td class="right">9,600</td>
-          </tr>
-          <tr>
-            <!-- <td><input type="checkbox"><label for=""></label></td> -->
-            <td>わ</td>
-            <td>ゐ wi</td>
-            <td>-</td>
-            <td>ゑ we</td>
-            <td>を wo(o)</td>
-            <td class="right"> ん n/nn</td>
-          </tr>
-        </tbody>
-      </table>
       <br />
-      <table>
-        <caption>히라가나 오십음도</caption>
-        <tbody role="rowgroup">
-          <tr role="row" aria-rowindex="11">
-            <th scope="row">제목</th>
-            <td>に</td>
-          </tr>
-          <tr role="row" aria-rowindex="11">
-            <th scope="row">제목</th>
-            <td>に</td>
-          </tr>
-          <tr role="row" aria-rowindex="11">
-            <th scope="row">제목</th>
-            <td>に</td>
-          </tr>
-        </tbody>
-      </table>
-      <!-- <div role="rowgroup">
-        <div class="row is-head" role="row"></div>
-      </div> -->
-    </article>
 
-    <article class="design-article js-scrollspy-section">
-      <h1 class="design-article-title">Accordions</h1>
-      <p class="design-article-description">질의응답 등 정보를 요약하여 목록화하는 경우(?)에만 사용하세요. 공지사항 정도의 간단한 게시글에서도 사용할 수 있으나 그 이상의 경우에는 다른 유아이를 고민하세요.</p>
-      <!-- <blockquote>
-        plus 아이콘을 엄격하게. caret으로 변경?
-      </blockquote> -->
-      <!-- <details class="details">
-        <summary class="details-summary">써머리</summary>
-        <p>안녕</p>
-      </details> -->
-
-      <h2 style="margin:2rem 0;text-align:center;">Questions?</h2>
-      <article class="accordion">
-        <h3 class="accordion-title js-toggle" role="button" aria-expanded="false">
-          탈퇴하고 싶어요.
-          <span class="accordion-title-icon"><i class="icon-plus"></i></span>
-        </h3>
-        <div class="accordion-panel">
-          <p>모든 국민은 건강하고 쾌적한 환경에서 생활할 권리를 가지며, 국가와 국민은 환경보전을 위하여 노력하여야 한다. 대통령은 내우·외환·천재·지변 또는 중대한 재정·경제상의 위기에 있어서 국가의 안전보장 또는 공공의 안녕질서를 유지하기 위하여 긴급한 조치가 필요하고 국회의 집회를 기다릴 여유가 없을 때에 한하여 최소한으로 필요한 재정·경제상의 처분을 하거나 이에 관하여 법률의 효력을 가지는 명령을 발할 수 있다.</p>
-          <p>제1항의 지시를 받은 당해 행정기관은 이에 응하여야 한다. 국회의원은 법률이 정하는 직을 겸할 수 없다. 대통령의 임기연장 또는 중임변경을 위한 헌법개정은 그 헌법개정 제안 당시의 대통령에 대하여는 효력이 없다.</p>
-        </div>
-      </article>
-      <article class="accordion">
-        <h3 class="accordion-title js-toggle" role="button" aria-expanded="false">
-          주문을 취소하고 싶어요.
-          <span class="accordion-title-icon"><i class="icon-plus"></i></span>
-        </h3>
-        <div class="accordion-panel">
-          <p>모든 국민은 건강하고 쾌적한 환경에서 생활할 권리를 가지며, 국가와 국민은 환경보전을 위하여 노력하여야 한다. 대통령은 내우·외환·천재·지변 또는 중대한 재정·경제상의 위기에 있어서 국가의 안전보장 또는 공공의 안녕질서를 유지하기 위하여 긴급한 조치가 필요하고 국회의 집회를 기다릴 여유가 없을 때에 한하여 최소한으로 필요한 재정·경제상의 처분을 하거나 이에 관하여 법률의 효력을 가지는 명령을 발할 수 있다.</p>
-          <p>제1항의 지시를 받은 당해 행정기관은 이에 응하여야 한다. 국회의원은 법률이 정하는 직을 겸할 수 없다. 대통령의 임기연장 또는 중임변경을 위한 헌법개정은 그 헌법개정 제안 당시의 대통령에 대하여는 효력이 없다.</p>
-        </div>
-      </article>
-    </article>
-
-    <article class="design-article js-scrollspy-section">
-      <h1 class="design-article-title">Bottom Navigation</h1>
-      <p class="design-article-description">햄버거 메뉴를 사용할 때, 이커머스 도매인의 카테고리 용도이면 왼쪽, 글로벌 네비게이션일 때 오른쪽.</p>
-      <nav class="bottombar">
-        <a href="" class="bottombar-item is-active">
-          <span class="bottombar-item-media"><i class="icon-person"></i></span>
-          <span class="bottombar-item-label">홈</span>
-          <em></em>
-        </a>
-        <a href="" class="bottombar-item">
-          <span class="bottombar-item-media"><i class="icon-hamberger"></i></span>
-          <span class="bottombar-item-label">카테고리</span>
-        </a>
-        <a href="" class="bottombar-item">
-          <span class="bottombar-item-media"><i class="icon-person"></i></span>
-          <span class="bottombar-item-label">설정</span>
-        </a>
-      </nav>
-    </article>
-
-    <!-- <article class="design-article js-scrollspy-section">
-      <h1 class="design-article-title">배너</h1>
-      <p class="design-article-description">작성 중.</p>
-      <aside class="banner">
-        <h2 class="banner-title">수줍이에는 처음 방문이신가요?</h2>
-        <p class="banner-description">수줍이에는 처음 방문이신가요?</p>
-        <button class="banner-button">이용방법 알아보기</button>
-      </aside>
-    </article> -->
-
-    <!-- <article class="design-article js-scrollspy-section">
-      <h1 class="design-article-title">Feedback</h1>
-      <p class="design-article-description">샘플. 선택 후 추가 정보를 받는 경우도 있음.</p>
-      <aside class="help-feedback">
-        <p class="help-feedback-title">이 문서가 도움이 되었나요?</p>
-        <button class="help-feedback-button">도움이 됐어요</button>
-        <button class="help-feedback-button">부족해요</button>
-        <small class="help-feedback-status">417 out of 439 found this helpful</small>
-      </aside>
-    </article> -->
-    
-    <article class="design-article js-scrollspy-section">
-      <h1 class="design-article-title">Result</h1>
-      <p class="design-article-description">일부 디자인 시스템에서 blankslate, empty state 등으로 네이밍. empty 뿐 아니라 error, complete 등 다양한 states에서 활용할 수 있기 때문에 result로 네이밍. 왼쪽 정렬되는 일반적인 콘텐츠 모듈과 구분하여 가운데 정렬로 대비.</p>
-      <section class="empty" style="border:1px solid var(--color-box-border);border-radius:var(--radius400);">
-        <i class="empty-icon">🧟</i>
-        <h1 class="empty-title">상품이 결제되었습니다.</h1>
-        <p class="empty-description">헌법재판소 재판관의 임기는 6년으로 하며, 법률이 정하는 바에 의하여 연임할 수 있다. 대통령은 법률안의 일부에 대하여 또는 법률안을 수정하여 재의를 요구할 수 없다.</p>
-        <div class="empty-list">
-          <div class="empty-list-item"><b>주문시간</b><span>SC제일은행</span></div>
-          <div class="empty-list-item"><b>입금금액</b><span>₩ 54,000</span></div>
-        </div>
-        <a class="empty-action" href="#">주문내역 보기</a>
-      </section>
-    </article>
-
-    <article class="design-article" hidden>
-      <h1 class="design-article-title">Rating</h1>
-      <p class="design-article-description">작성 중.</p>
-      <!-- <div class="rating">
-        <h1 class="rating-title" aria-hidden="true">별점</h1>
-        <span class="rating-score">.3</span>
-        <div class="rating-star">
-            <i class="">★</i>
-            <i class="">★</i>
-            <i class="">★</i>
-            <i class="">★</i>
-            <i class="">★</i>
-          <span class="rating-star-front">☆☆☆☆☆</span>
-          <span class="rating-star-back">★★★★★</span>
-        </div>
-        <small class="rating-count">총 24개의 평가</small>
-      </div> -->
-      <div class="rating2 is-large">
-        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 12px; width: 12px; fill: var(--red800);"><path d="M15.094 1.579l-4.124 8.885-9.86 1.27a1 1 0 0 0-.542 1.736l7.293 6.565-1.965 9.852a1 1 0 0 0 1.483 1.061L16 25.951l8.625 4.997a1 1 0 0 0 1.482-1.06l-1.965-9.853 7.293-6.565a1 1 0 0 0-.541-1.735l-9.86-1.271-4.127-8.885a1 1 0 0 0-1.814 0z" fill-rule="evenodd"></path></svg>
-        <b class="rating2-score">4.71</b>
-        <small style="margin-left:.5rem;color:var(--gray400);font-weight:normal;"> 192개</small>
-      </div>
-      <div class="rating2">
-        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 12px; width: 12px; fill: var(--red800);"><path d="M15.094 1.579l-4.124 8.885-9.86 1.27a1 1 0 0 0-.542 1.736l7.293 6.565-1.965 9.852a1 1 0 0 0 1.483 1.061L16 25.951l8.625 4.997a1 1 0 0 0 1.482-1.06l-1.965-9.853 7.293-6.565a1 1 0 0 0-.541-1.735l-9.86-1.271-4.127-8.885a1 1 0 0 0-1.814 0z" fill-rule="evenodd"></path></svg>
-        <b class="rating2-score">4.32</b>
-      </div>
-      <hr />
-      <!-- <dl class="row1 is-pull" style="display: flex;justify-content: space-between;">
-        <dt>신선도</dt>
-        <dd style="display: flex;align-items: center;">
-          <div class="graph-item is-horizontal">
-            <span class="graph-item-value">4.8</span>
-            <div class="graph-item-bar"></div>
-          </div>
-        </dd>
-      </dl> -->
-      <div>
-        <span>클라우드 스토리지</span>
-        <span style="display:block;align-items: center;margin-top:-.5rem;">
-          <div class="graph-item is-horizontal" style="margin:0;width:100%;">
-            <span class="graph-item-value" style="font-size:var(--body);right:0;bottom:12px;">92%</span>
-            <div class="graph-item-bar"></div>
-          </div>
-          <small>2GB 중 5,218KB 사용됨</small>
-        </span>
-      </div>
-    </article>
-
-    <article class="design-article" hidden>
-      <h1 class="design-article-title">Graph</h1>
-      <p class="design-article-description">작성 중.</p>
-      <div class="graph js-graph" style="border:1px solid var(--gray200);border-radius:var(--radius400);">
-        <div class="graph-title">1월 26일 <em>컴퓨터통신 분야</em>에서는<br><em>7백명의 지식iN</em>들이 답변하셨습니다.</div>
-        <div class="graph-item">
-          <span class="graph-item-value">40%</span>
-          <div class="graph-item-bar"></div>
-          <span class="graph-item-label">10대</span>
-        </div>
-        <div class="graph-item">
-          <span class="graph-item-value">30%</span>
-          <div class="graph-item-bar"></div>
-          <span class="graph-item-label">20대</span>
-        </div>
-        <div class="graph-item">
-          <span class="graph-item-value">20%</span>
-          <div class="graph-item-bar"></div>
-          <span class="graph-item-label">30대</span>
-        </div>
-        <div class="graph-item">
-          <span class="graph-item-value">10%</span>
-          <div class="graph-item-bar"></div>
-          <span class="graph-item-label">40대</span>
-        </div>
-      </div>
-      <!-- <div style="background:var(--gray100);">
-        최근 3개월간 네이버플러스 멤버십으로<br />
-        <em>15,799원 추가 적립 혜택</em>이 생겼어요!이모지
-      </div> -->
-    </article>
-
-    <article class="design-article js-scrollspy-section">
-      <h1 class="design-article-title">Stepper</h1>
-      <p class="design-article-description">모바일 퍼스트(가로레이아웃 후순위). 아코디언(optional), 버튼(optional), 타임라인 / 히스토리와 비슷한 맥락</p>
-      <blockquote>
-        <p>stepper 네이밍은 input type="range" 에 사용하는 경우도 있음. 속성값으로 slider가 사용되기 때문에 구분하기 위해 carousel 네이밍.</p>
-      </blockquote>
-      <section class="step">
-        <div class="step-item is-active">
-          <span class="step-item-icon">1</span>
-          <h3 class="step-item-title">장바구니</h3>
-          <p class="step-item-description">대통령은 국가의 원수이며, 외국에 대하여 국가를 대표한다. 국가원로자문회의의 조직·직무범위 기타 필요한 사항은 법률로 정한다. 국가는 대외무역을 육성하며, 이를 규제·조정할 수 있다.</p>
-        </div>
-        <div class="step-space is-active">
-          <span class="step-space-dot"></span>
-          <span class="step-space-dot"></span>
-          <span class="step-space-dot"></span>
-        </div>
-        <div class="step-item">
-          <span class="step-item-icon">2</span>
-          <h3 class="step-item-title">결제</h3>
-        </div>
-        <div class="step-space">
-          <span class="step-space-dot"></span>
-          <span class="step-space-dot"></span>
-          <span class="step-space-dot"></span>
-        </div>
-        <div class="step-item">
-          <span class="step-item-icon">3</span>
-          <h3 class="step-item-title">주문완료</h3>
-        </div>
-      </section>
-    </article>
-    
-    <!-- <article class="design-article js-scrollspy-section">
-      <h1 class="design-article-title">Filter</h1>
-      <p class="design-article-description">샘플</p>
-      <form class="filter">
+      <form class="filter" hidden>
         <header class="filter-head">
-          <h1 class="filter-title">Filters</h1>
+          <h1 class="filter-title">필터</h1>
         </header>
         <fieldset class="filter-fieldset">
-          <legend class="filter-fieldset-legend">예약하기</legend>
+          <legend class="filter-fieldset-legend" hidden>예약하기</legend>
         </fieldset>
+        <hr />
         <footer class="filter-foot">
           <button class="filter-foot-confirm">필터링하기</button>
           <button class="filter-foot-reset">clear filters</button>
         </footer>
       </form>
-    </article> -->
+    </article>
+    
+
+    <span class="letter-piece"><i>소</i></span>
+
+
+    <!-- <i class="icon-check1"></i>
+    <style>
+    .icon-check1 {display:block;width:40px;height:40px;border-radius:50%;border:2px solid var(--gray800);position:relative;}
+    .icon-check1:before {content:'';display:inline-block;width:28px;height:9px;border-left:2px solid;border-bottom:2px solid;border-color:var(--gray800);transform:rotate(-45deg);position:absolute;right:-2px;top:4px;z-index:2;}
+    .icon-check1:after {content:'';display:block;width:16px;height:18px;background:var(--gray0);position:absolute;right:-6px;top:0px;z-index:1;}
+    </style> -->
 
     <!-- <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Timeline</h1>
@@ -2005,47 +2047,29 @@
       <textarea name="" id="" cols="30" rows="10"></textarea>
       <button type="submit">제출</button>
     </form> -->
-      <!-- <span class="letter-piece"><i>스</i></span> -->
-      <!-- <i class="icon-check1"></i> -->
-      <!-- <style>
-      .icon-check1 {display:block;width:40px;height:40px;border-radius:50%;border:2px solid var(--gray800);position:relative;}
-      .icon-check1:before {content:'';display:inline-block;width:28px;height:9px;border-left:2px solid;border-bottom:2px solid;border-color:var(--gray800);transform:rotate(-45deg);position:absolute;right:-2px;top:4px;z-index:2;}
-      .icon-check1:after {content:'';display:block;width:16px;height:18px;background:var(--gray0);position:absolute;right:-6px;top:0px;z-index:1;}
-      </style> -->
-
-
-
-
 
 <!-- 
-      <input type="text" aria-label="Tag" role="combobox" aria-expanded="true"
+  <input type="text" aria-label="Tag" role="combobox" aria-expanded="true" aria-autocomplete="list" aria-owns="owned_listbox" aria-activedescendant="selected_option">
+  <ul role="listbox" id="owned_listbox">
+    <li role="option">Zebra</li>
+    <li role="option" id="selected_option">Zoom</li>
+  </ul>
 
-      aria-autocomplete="list" aria-owns="owned_listbox" aria-activedescendant="selected_option"
-      >
-      <ul role="listbox" id="owned_listbox">
-      <li role="option">Zebra</li>
-      <li role="option" id="selected_option">Zoom</li>
-      </ul>
-
-
-
-
-      <input type="text" aria-activedescendant="cb1-opt6" aria-readonly="true"
-aria-owns="cb1-list" aria-autocomplete="list" role="combobox" id="cb1-edit">
-<ul aria-expanded="true" role="listbox" id="cb1-list">
-<li role="option" id="cb1-opt1">Alabama</li>
-<li role="option" id="cb1-opt2">Alaska</li>
-<li role="option" id="cb1-opt3">American Samoa</li>
-<li role="option" id="cb1-opt4">Arizona</li>
-<li role="option" id="cb1-opt5">Arkansas</li>
-<li role="option" id="cb1-opt6">California</li>
-<li role="option" id="cb1-opt7">Colorado</li>
-</ul>
+  <input type="text" aria-activedescendant="cb1-opt6" aria-readonly="true" aria-owns="cb1-list" aria-autocomplete="list" role="combobox" id="cb1-edit">
+  <ul aria-expanded="true" role="listbox" id="cb1-list">
+    <li role="option" id="cb1-opt1">Alabama</li>
+    <li role="option" id="cb1-opt2">Alaska</li>
+    <li role="option" id="cb1-opt3">American Samoa</li>
+    <li role="option" id="cb1-opt4">Arizona</li>
+    <li role="option" id="cb1-opt5">Arkansas</li>
+    <li role="option" id="cb1-opt6">California</li>
+    <li role="option" id="cb1-opt7">Colorado</li>
+  </ul>
  -->
 
 
-<!-- <p>아래 두 영역에서 텍스트를 선택해보세요.</p>
-
+<!--
+<p>아래 두 영역에서 텍스트를 선택해보세요.</p>
 <form>
   <textarea name="ta-example-one" id="ta-example-one" rows="7" cols="40">텍스트 영역 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt, lorem a porttitor molestie, odio nibh iaculis libero, et accumsan nunc orci eu dui.</textarea>
   <textarea name="ta-example-two" id="ta-example-two" rows="7" cols="40">텍스트 영역 2. Fusce ullamcorper, nisl ac porttitor adipiscing, urna orci egestas libero, ut accumsan orci lacus laoreet diam. Morbi sed euismod diam.</textarea>
@@ -2069,4 +2093,5 @@ function onMouseUp(e) {
 const textarea1 = document.getElementById('ta-example-one');
 const textarea2 = document.getElementById('ta-example-two');
 textarea1.addEventListener('mouseup', onMouseUp, false);
-textarea2.addEventListener('mouseup', onMouseUp, false); -->
+textarea2.addEventListener('mouseup', onMouseUp, false);
+-->

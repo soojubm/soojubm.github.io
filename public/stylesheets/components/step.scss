@@ -10,6 +10,12 @@
 .is-active .step-item-title {/*margin-top:3px;*/color:var(--color-primary);}
 .is-active .step-space-dot {background:var(--color-primary);}
 
+.is-vertical.step {display:flex;justify-content:space-between;}
+.is-vertical .step-item {width:32%;text-align:center;}
+.is-vertical .step-item:before {content:'';display:block;height:1px;background:var(--gray100);position:absolute;top:calc(var(--size-small) / 2);left:0;right:0;}
+.is-vertical .step-item-icon {margin:0 auto;@include reset-position;}
+.is-vertical .step-item-title {margin-left:0;margin-top:var(--space-after-small);}
+
 // @media (--viewport-small) {
 //   .step-item {display:flex;width:auto;margin:0;}
 //   .step-item-title {margin-top:0;line-height:var(--size-small);}
