@@ -11,7 +11,7 @@
 @mixin text-body-large {font-size:var(--subhead);}
 
 @mixin truncate {white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-@mixin truncate-multi {@include truncate;height:3.6em;white-space:normal;word-wrap:break-word;display: -webkit-box;-webkit-line-clamp:2;-webkit-box-orient: vertical;}
+@mixin truncate-multi {@include truncate;height:2.4em;white-space:normal;overflow:hidden;text-overflow:ellipsis;word-wrap:break-word;display: -webkit-box;-webkit-line-clamp:2;-webkit-box-orient: vertical;}
 
 
 @mixin link-inner {
