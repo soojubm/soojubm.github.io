@@ -80,7 +80,7 @@ top: 1rem;}
 .user-name {@include subhead;}
 .user-email {}
 .user-logout {display:flex;align-items:center;width:100%;margin:1rem 0;position:relative;}
-.user-logout-icon {@include box-small;margin:0 1rem 0 0;}
+.user-logout-icon {@include box-small;margin:0 var(--space-after-small) 0 0;}
 .user-logout:hover {@include hover-item;}
 .user-logout:hover .user-logout-icon {background:var(--gray0);}
 .user-myinfo {@include link-outer;margin:.5rem 0 0;}

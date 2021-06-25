@@ -1,7 +1,7 @@
 
 
 .chip {@include chip}
-.chip:hover {}
+.chip:hover {border-color:var(--gray800);}
 .chip-count {@include tag;}
 .chip-label {margin:0 1rem;}
 .chip figure {@include box-small;@include chip-heading;border:var(--border100);background:var(--gray0);}

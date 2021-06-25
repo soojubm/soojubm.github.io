@@ -4,7 +4,7 @@
     .navbar {display:none;}
   </style>
   
-  <header class="header js-header" role="navigation">
+  <header class="header js-header" role="navigation" style="position:sticky;top:0;">
     <div class="header-background"></div>
     <h1 class="header-title js-page-title">페이지타이틀</h1>
     <button class="header-back" onclick="javascript:window.location.href='/';">
@@ -58,9 +58,9 @@
     <h1>컴포넌트</h1>
   </header> -->
 
-  <nav class="design-navigation">
+  <nav class="design-navigation" style="top:var(--subheader-height);">
     <div class="design-navigation-background"></div>
-    <div class="design-navigation-scroll">
+    <div class="design-navigation-scroll" style="overflow:auto;">
       <a class="chip is-active js-scrollspy-trigger" href="#">Sizes</a>
       <a class="chip js-scrollspy-trigger" href="#">Typograph</a>
       <a class="chip js-scrollspy-trigger" href="#">Pallettes</a>
@@ -93,6 +93,13 @@
   </nav>
 
   <br />
+
+  <blockquote>
+    <p>당부의 말씀(?)</p>
+    <!-- <p>과거 아주 먼 과거 모니터가 표현할 수 있는 색상의 제한이란 것이 존재하던 적에 텍스트의 주로 #333을 제목으로 #666을 본문으로 #999을 secondary?로 사용했습니다.</p> -->
+    <p>위계hierachy를 설정하기 위해 세 가지 이상을 사용하지 마세요<i style="font-style:italic">!</i> 위계를 설정하는 방법에는 색상, 간격, 크기, 무게 등이 있습니다. 예를 들어 pull일 때</p>
+    
+  </blockquote>
 
   <article class="design-body">
     <article class="textbox" hidden>
@@ -749,7 +756,7 @@
         <input type="button" value="button input">
       -->
       <h6 class="title-bordered">Primary</h6>
-      <div class="design-buttongroup tile-flat-small">
+      <div class="design-buttongroup">
         <button class="design-article-primary" aria-pressed="false" aria-expanded="false">Default</button>
         <button class="design-article-primary is-hover">Hover</button>
         <button class="design-article-primary is-focus">Focus</button>
@@ -758,7 +765,7 @@
       </div>
       <br />
       <h6 class="title-bordered">Secondary</h6>
-      <div class="design-buttongroup tile-flat-small">
+      <div class="design-buttongroup">
         <button class="design-article-secondary">Default</button>
         <button class="design-article-secondary is-hover">Hover</button>
         <button class="design-article-secondary is-focus">Focus</button>
@@ -767,7 +774,7 @@
       </div>
       <br />
       <h6 class="title-bordered">Tertiary</h6>
-      <div class="design-buttongroup tile-flat-small">
+      <div class="design-buttongroup">
         <button class="design-article-tertiary">Default</button>
         <button class="design-article-tertiary is-hover">Hover</button>
         <button class="design-article-tertiary is-focus">Focus</button>
@@ -777,7 +784,7 @@
       <br />
 
       <h6 class="title-bordered">Sizes</h6>
-      <div class="design-buttongroup tile-flat-small">
+      <div class="design-buttongroup">
         <button class="design-article-tertiary-small">Small</button>
         <button class="design-article-tertiary" style="vertical-align:bottom;">Medium</button>
         <button class="design-article-primary" style="height:auto;padding:12px 0 15px;font-size:var(--subhead);vertical-align:bottom;">
@@ -787,7 +794,7 @@
       <p style="margin:.5rem 0 0;font-size:var(--caption);">Large 사이즈는 프로모션(캠페인) 페이지에서만 사용합니다.</p>
       <br />
       <h6 class="title-bordered">Text (outdated)</h6>
-      <div class="design-buttongroup tile-flat-small">
+      <div class="design-buttongroup">
         <button class="design-article-text">Default</button>
         <button class="design-article-text is-hover">Hover</button>
         <button class="design-article-text is-focus">Focus</button>
@@ -795,7 +802,7 @@
       </div>
       <br />
       <!-- <h6 style="margin:0 0 .5rem;font-size:var(--caption);">Status</h6>
-      <div class="design-buttongroup tile-flat-small">
+      <div class="design-buttongroup">
         <button class="loadmore is-fetching">
           Loading...
         </button>
@@ -805,17 +812,19 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Checkboxes</h1>
-      <p class="design-article-description">다중선택. 세로 정렬로만 사용하세요. 가로 정렬이 필요한 경우, 5개 이상의 옵션이 존재하는 경우우에는 chip 스타일을 사용하세요.</p>
-      <blockquote>
-        ✨ 더 강조되는 형태의 전체 선택 체크박스. 특히 모바일에서 필요하다.
-      </blockquote>
+      <p class="design-article-description">다중선택. 세로 정렬로만 사용하세요. 가로 정렬이 필요한 경우, 5개 이상의 옵션이 존재하는 경우우에는 chip 스타일을 사용하세요. todo  더 강조되는 형태의 체크박스가 모바일에서 필요</p>
+      <div role="group">
+        <div class="tag">다중선택</div>
+        <div class="tag">세로정렬</div>
+        <div class="tag">옵션5개이하</div>
+      </div>
+      <hr />
       <fieldset role="checkgroup">
         <legend>checkgroup legend</legend>
         <div class="checkbox">
           <input class="js-checkall" type="checkbox" id="line00" value="" aira-checked="mixed" aria-controls="1 2" data-indeterminate="true" indeterminate />
-          <label for="line00" title="Check All">모두 동의합니다</label>
+          <label for="line00" title="Check All"><em>모두 동의합니다</em></label>
         </div>
-        <hr style="margin:.5rem 0;" />
         <div class="checkbox">
           <input class="js-check" type="checkbox" id="line01" value="" />
           <label for="line01" title="Everyday is like sunday">체크박스 1</label>
@@ -889,7 +898,9 @@
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Textfields</h1>
       <p class="design-article-description">button과 unit, icon 등은 prefix(leading)/surfix(tailing), choose/enter,</p>
-
+      <blockquote>
+        검색은 레이블 삭제. 하지만 레이블이 없는 경우 아이콘 위치 다시 잡아야 함.
+      </blockquote>
       <h6 class="title-bordered">Number (quantity)</h6>
       <div class="quantity js-quantity">
         <input class="quantity-input js-quantity-input js-number-input" name="quantity1" type="number" value="0" min="5" max="20" >
@@ -898,27 +909,34 @@
         <button class="quantity-increment js-quantity-increment"><i class="icon-plus"></i></button>
       </div>
       <br />
+      <h6 class="title-bordered">States (valid / invalid)</h6>
       <div class="textfield is-invalid">
         <label class="textfield-label" for="abc123">레이블 <abbr aria-label="optional" style="font-size:var(--caption);">선택입력</abbr></label>
         <input class="textfield-input js-input-test" type="text" id="abc123" placeholder="Textarea Placeholder..." value="soojubm@gmail.com" aria-describedby="error" aria-invalid="true" />
         <small class="textfield-helper is-error">이미 사용 중인 이메일입니다.</small>
       </div>
+
       <br />
 
-      <h6 class="title-bordered">Search</h6>
+      <h6 class="title-bordered">Search - dont' have label</h6>
       <div class="textfield">
         <button class="textfield-prefix"><i class="icon-search"></i></button>
         <label class="textfield-label" for="search">검색</label>
         <input class="textfield-input js-input-test" type="search" id="search" placeholder="궁금한 인물이나 이슈가 있나요?" />
         <button class="textfield-surfix textfield-clear" hidden><i class="icon-close"></i></button>
       </div>
+
       <br />
+
+      <h6 class="title-bordered">Textarea</h6>
       <div class="textfield">
-        <label class="textfield-label" for="search1">텍스트에어리어</label>
+        <label class="textfield-label" for="search1">레이블</label>
         <small class="textfield-byte"><b>0 KB</b> / 100 KB</small>
         <textarea class="textfield-input" rows="3" placeholder="Textarea Placeholder..."></textarea>
       </div>
+
       <br />
+
       <div class="textfield-group" style="display:flex;justify-content:space-between;">
         <div class="textfield" style="width:var(--grid-column);">
           <label class="textfield-label" for="date-start"><i class="">체크인</i></label>
@@ -988,7 +1006,7 @@
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Text Links</h1>
       <!-- <p class="design-article-description">문단 <a href="#" class="link-inner">내부 링크</a>와 문단 <a href="#" class="link-outer">외부 링크</a>를 구분합니다.</p> -->
-      <p class="design-article-description">작성 중.</p>
+      <p class="design-article-description">작성 중.  post 페이지에서는 더 강조된 스타일이 필요할 수도.</p>
       <blockquote>
         <p>요약한 텍스트를 펼쳐보기 위한 더보기 버튼은 중요도가 낮기 때문에 톤 다운된 검정도 많이 사용. 링크 vs 텍스트 버튼. history: 21.06 내부 외부 링크 구분하지 않음. 언더라인 있으니 hover state 표현하기 어려움. 하지만 컴포넌트는 여전히 따로 사용하는 것이 어떨까.</p>
         <p>external => target="_blank" rel="noopener noreferrer"</p>
@@ -1760,7 +1778,7 @@
       <div class="card has-item" role="listitem" style="max-width:400px;">
         <figure class="card-thumbnail"><img src="/public/images/springsteen.jpg" alt="" /></figure>
         <h3 class="card-title">카드 유아이</h3>
-        <p class="card-text">따봉은 상세페이지에서 제공하세요. 북마크는 밖에 두어도 좋은가? 상세페이지에서 제공하는 것이 좋음.</p>
+        <p class="card-text">따봉은 상세페이지에서 제공하세요. 북마크는 밖에 두어도 좋은가? 상세페이지에서 제공하는 것이 좋음. 기능이 많아짐. 신선식품 장바구니는 밖에 인정. 보조 텍스트는 최대 두 줄이다.</p>
         <time class="card-date">2017. 12. 21.</time>
         <div class="card-tags" role="group">
           <span class="card-tags-item">기획</span>
@@ -1954,13 +1972,15 @@
       <br />
       
       <article class="sheet" style="margin-top:1rem;">
-        <!-- <h3 class="sheet-title">정렬하기</h3> -->
+        <h3 class="sheet-title" style="margin-bottom:.75rem;font-size:12px;color:var(--gray400);">정렬하기</h3>
         <button style="width:100%;display:flex;align-items:center;margin:0 0 1rem 0;justify-content:space-between;font-size:var(--subhead);">
           바텀 시트 옵션
         </button>
         <button style="width:100%;display:flex;align-items:center;justify-content:space-between;font-size:var(--subhead);">
           바텀 시트 옵션 <i class="icon-check"></i>
         </button>
+
+        <!-- <button class="button-tertiary">닫기</button> -->
       </article>
 
       <br />
@@ -1980,9 +2000,9 @@
 
       <aside class="banner" role="banner">
         <div class="banner-background"></div>
-        <h2 class="banner-title">Let's XD together.</h2>
+        <h2 class="banner-title">This is Banner Component.</h2>
         <p class="banner-description"><span class="linebreak-desktop">Where teams create the world’s best experiences at scale,</span> powered by the leader in creative tools.</p>
-        <button class="banner-button">Adobe XD 시작</button>
+        <button class="banner-button">This is Call to action</button>
       </aside>
 
       <br />

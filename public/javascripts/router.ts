@@ -9,6 +9,7 @@ export const routes = [
   { name: '홈', path: '/home' },
   { name: '소개', path: '/about' },
   { name: '디자인시스템', path: '/design' },
+  { name: '컴포넌트', path: '/components' },
 
   { name: '사용자프로필', path: '/profile' },
   { name: '포스트', path: '/post' },

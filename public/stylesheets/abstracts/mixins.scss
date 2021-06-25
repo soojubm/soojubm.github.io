@@ -25,10 +25,11 @@
   &:hover {text-decoration:underline;}
 }
 
-@mixin hover-tertiary {border-color: var(--color-primary);}
+@mixin hover-tertiary {border-color:var(--gray800);}
 @mixin hover-text {
   // color:var(--color-primary);
-  text-decoration:underline;}
+  text-decoration:underline;
+}
 
 
 @mixin image-centered {width:auto;height:auto;max-width:150%;max-height:150%;margin:auto;position:absolute;left:0;right:0;top:0;bottom:0;}
@@ -131,7 +132,8 @@
 @mixin group-pull {display:flex;justify-content:space-between;align-items:center;}
 @mixin group-wrap {display:flex;flex-wrap:wrap;}
 @mixin group-bleeding {
-  display:block;overflow:auto;white-space:nowrap;font-size:0;
+  display:block;white-space:nowrap;font-size:0;
+  // overflow:auto;
   > * {display:inline-block;margin:0 calc(var(--space-between-groupitem) * 2) 0 0;font-size:var(--body);}
   &::-webkit-scrollbar {display:none;}
 }
