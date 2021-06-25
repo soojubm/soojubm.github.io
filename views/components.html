@@ -54,6 +54,10 @@
     <img class="hero-obj4" src="/public/images/blob-shape.svg" alt="" /> -->
   </section>
 
+  <header style="width:var(--width-medium);margin:0 auto;">
+    <h1>컴포넌트</h1>
+  </header>
+
   <nav class="design-navigation">
     <div class="design-navigation-background"></div>
     <div class="design-navigation-scroll">
@@ -62,7 +66,7 @@
       <a class="chip js-scrollspy-trigger" href="#">Pallettes</a>
       <a class="chip js-scrollspy-trigger" href="#">Tiles</a>
       <a class="chip js-scrollspy-trigger" href="#">Chips</a>
-      <a class="chip js-scrollspy-trigger" href="#">Badges</a>
+      <a class="chip js-scrollspy-trigger" href="#">Tags</a>
       <a class="chip js-scrollspy-trigger" href="#">Buttons</a>
       <a class="chip js-scrollspy-trigger" href="#">Checkboxes</a>
       <a class="chip js-scrollspy-trigger" href="#">Radioes</a>
@@ -200,7 +204,15 @@
      src="elva-fairy-800w.jpg"
      alt="요정 옷을 입은 엘바" /> -->
 
-    <article class="accordion" style="margin:2rem 0 4rem;">
+    <!-- <h3>접근성 정리</h3>
+    <p>닫기 버튼에 aria-label을 제공하세요. aria-label="close alert"</p>
+    <p>도움말(helper text)이 있는 경우 aria-describedby=[id]</p>
+    <p>유효하지 않은 입력 필드에 aria-invalid="true"</p>
+    <p>enter key로 폼 제출</p> -->
+
+    <!-- <p>스크린 리더는 페이지의 모든 목록을 탐색 할 수 있으며 목록 항목에서 목록 내 목록 항목으로 이동할 수도 있습니다. 목록을 사용하여 화면 판독기가 항목 그룹 (예 : 사람 목록)을 쉽게 탐색 할 수 있도록합니다.</p> -->
+
+    <article class="accordion" style="margin:2rem 0 4rem;" hidden>
       <h3 class="accordion-title js-toggle" role="button" aria-expanded="false">
         Todolist
         <span class="accordion-title-icon"><i class="icon-plus"></i></span>
@@ -217,6 +229,8 @@
         </p>
         <p><strong>스타일(ex:bg/border, size)과 롤(sorting, text input)을 분리하는 것이 좋겠다.</strong></p>
 
+
+    <p>셀박vs체크박스/라디오 사용하는 기준. 선택 갯수를 정의.</p>
 
         <p>가운데 정렬 될 경우 large 컨테이너를 사용.</p>
 
@@ -691,15 +705,15 @@
     </article>
 
     <article class="design-article js-scrollspy-section">
-      <h1 class="design-article-title">Badge</h1>
+      <h1 class="design-article-title">Tags</h1>
       <p class="design-article-description">작성 중. 클릭할 수 없음.</p>
       <blockquote>
         히스토리: chip-small로 갔다가 사이즈에서 다시 분리. 클릭할 수 없음. 용도가 아닌 스타일로 구분되어 있어서 가이드를 작성하기도 힘들고 커뮤니케이션도 어려워짐. 같은 이유에서 해시태그 컴포넌트를 추가하는 것이 좋을 듯.
       </blockquote>
       <div class="" role="group">
-        <span class="tag tags-item" data-appearance="accent">Eyebrow</span>
+        <span class="tag tags-item" data-appearance="accent">Eyebrow & Badge</span>
         <span class="tag" role="listitem" style="background:var(--green100);color:var(--green800);">Badge</span>
-        <span class="tag" role="listitem">Badge & Keyword</span>
+        <span class="tag" role="listitem">Badge & Keyword & Hashtag</span>
         <span class="tag" role="listitem" style="background:var(--red100);border-color:var(--red100);color:var(--red800);">15</span>
         <span class="tag" role="listitem">new</span>
         <span class="tag" role="listitem" style="width:16px;height:16px;background:var(--red800); "></span>
@@ -1086,7 +1100,7 @@
 
     <article class="design-article js-tab">
       <h1 class="design-article-title">Tab</h1>
-      <p class="design-article-description">탭이 중첩되지 않도록 플로우를 설계하는 것이 중요합니다. 콘텐츠 필터링에는 chip 스타일을 사용합니다. 스크롤스파이 기능을 위해 탭을 사용할 수 없습니다.<p>
+      <p class="design-article-description">탭이 중첩되지 않도록 플로우를 설계하는 것이 중요합니다. 콘텐츠 필터링에는 chip 스타일을 사용합니다. 스크롤스파이 기능을 위해 탭을 사용할 수 없습니다. 기본 탐색 패턴으로 햄버거와 탭을 함께 사용하지 마시오. 유저/장바구니 등 보조 탐색 옵션<p>
       <blockquote>
         <i>🔨</i> 브라우저 히스토리 / 탭의 갯수 제한 4~5개 or 가로 스크롤, HIG의 segmented control과 tab 비교하여 설명.
       </blockquote>
@@ -1118,18 +1132,18 @@
       <blockquote>
         페이지 로딩과 동시에 툴팁이 열려 있는 경우 doorhanger가 필요하다.
       </blockquote>
-      <aside class="tooltip" role="tooltip">
-        <span class="tooltip-target" aria-describedby="">툴팁 <i>?</i></span>
-        <div class="tooltip-content" id="" hidden>
-          <p>여기에 role=tooltip. 제1항의 해임건의는 국회재적의원 3분의 1 이상의 발의에 의하여 국회재적의원 과반수의 찬성이 있어야 한다.</p>
-        </div>
-      </4aside>
+      <aside class="tooltip">
+        <span class="tooltip-trigger" aria-describedby="tooltip1">툴팁 <i>?</i></span>
+        <p class="tooltip-content" role="tooltip" id="tooltip1"  hidden>제1항의 해임건의는 국회재적의원 3분의 1 이상의 발의에 의하여 국회재적의원 과반수의 찬성이 있어야 한다.</p>
+      </aside>
     </article>
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Alerts</h1>
-      <p class="design-article-description">시스템이나 브라우저의 상태, 사용자의 행동에 피드백으로 사용합니다.</p>
+      <p class="design-article-description">시스템이나 브라우저의 상태, 사용자의 행동에 피드백으로 사용합니다. 경고가 사용자의 잘못이 아닌 경우 "오류" 대신 "시스템 오류"와 같은 용어를 사용하여 사용자가 잘못한 것처럼 느끼지 않도록. 한 문장으로 간단하게 사용하세요. 제목 불필요.</p>
+      
       <blockquote>
+        <p>브라우저가 role="alert"속성이 있는 요소를 발견 하면 즉시 사용자에게 경고 내용을 읽습니다.</p>
         toast=>snackbar(withAction).<br />
         single line / multiple lines (head,body 텍스트)
       </blockquote>
@@ -1145,7 +1159,7 @@
       <aside class="alert" style="margin:1rem 0;background:var(--gray800);border:0;">
         <span class="alert-icon">🧡</span>
         <p class="alert-head" style="color:var(--gray0);">좋아한 콘텐츠에 저장했어요.</p>
-        <!-- <button class="alert-close" aria-label="close"><i class="icon-close"></i></button> -->
+        <!-- <button class="alert-close" aria-label="close alert"><i class="icon-close"></i></button> -->
       </aside>
       <aside class="alert" style="background:var(--red800);border-color:transparent;">
         <p class="alert-head" style="color:var(--gray0);">인터넷 연결이</p>

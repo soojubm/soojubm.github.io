@@ -30,8 +30,8 @@
 // .design-head.is-scrolled {transform:translateX(-50%);transition:transform .8s $bezier-base .4s;}
 
 .design-navigation {max-width:var(--width-medium);margin:0 auto;padding:1rem var(--grid-margin);border-radius:var(--radius400);background:var(--gray0);position:relative;z-index:6 ;position:sticky;top:0;}
-.design-navigation-background {}
-.design-navigation-scroll {@include group-bleeding;position:relative;}
+.design-navigation-background {@include bleeding;}
+.design-navigation-scroll {@include group-bleeding;margin:0 var(--grid-margin-minus);padding:0 var(--grid-margin);position:relative;}
 // todo container-bleed
 
 .design-body {max-width:var(--width-medium);margin:0 auto;overflow-x:hidden;padding:0 var(--grid-margin) 8rem;}
