@@ -62,8 +62,8 @@ ol li ol li {counter-increment:sub-list-item;}
 ol li ol li:before {content: counter(sub-list-item,lower-alpha) '.';}
 
 dl {display:flex;flex-wrap:wrap;}
-dl dt {width:6rem;margin:.125rem 0;color:var(--gray400);}
-dl dd {width:calc(100% - 6rem);margin:.125rem 0;}
+dl dt {width:80px;margin:.125rem 0;color:var(--gray400);}
+dl dd {width:calc(100% - 80px);margin:.125rem 0;}
 
 svg {color:var(--gray800);}
 

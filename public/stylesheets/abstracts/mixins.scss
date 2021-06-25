@@ -133,7 +133,7 @@
 @mixin group-wrap {display:flex;flex-wrap:wrap;}
 @mixin group-bleeding {
   display:block;white-space:nowrap;font-size:0;
-  // overflow:auto;
+  overflow:auto;
   > * {display:inline-block;margin:0 calc(var(--space-between-groupitem) * 2) 0 0;font-size:var(--body);}
   &::-webkit-scrollbar {display:none;}
 }
