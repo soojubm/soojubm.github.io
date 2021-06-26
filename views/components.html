@@ -100,16 +100,12 @@
     <p>위계hierachy를 설정하기 위해 세 가지 이상을 중첩하지 마세요<i style="font-style:italic">!</i> 위계를 설정하는 방법에는 색상, 간격, 크기, 무게 등이 있습니다. 충분한 간격만으로 위계는 설정됨. 그럴 때는 텍트스의 색상이나 무게로 추가적인 위계를 줄 필요가 없다.</p>
   </blockquote> -->
 
-  <article style="width:var(--width-medium);margin:0 auto;">
+  <!-- <article style="width:var(--width-medium);margin:0 auto;">
     <h2>Component</h2>
     <p>보편성이라는 원칙을 인용해서 설명. 유아이는 롤이 정해져 있음. 롤에 스타일을 입히는 것을 컴포넌트로 수집이 디자인 시스템에서 정리하겠슴. atomic design pattern 단점.</p>
 
-    <!-- <div role="group">
-      <div class="tile-flat" style="width:100px;height:100px;border-radius:50%;background:var(--gray800);color:var(--gray0);display:flex;justify-content:center;align-items:center;">style</div>
-      <div class="tile-flat" style="width:100px;height:100px;border-radius:50%;background:var(--gray800);color:var(--gray0);display:flex;justify-content:center;align-items:center;">role</div>
-    </div> -->
     <p>예외 케이스: 논의 후 가이드대로 적용하는 것이 최선. 예외 케이스를 documentation 후 진행. 예외 케이스가 개발 비용이 적으면 ok</p>
-  </article>
+  </article> -->
 
   <article class="design-body">
     <article class="textbox" hidden>
@@ -239,6 +235,8 @@
         <p>총결제금액 / 결제예정금액</p>
         <p>개인적인 checklist: 유저->사용자, 혹은->또는, 및->과/와</p>
         <p>-action vs -control</p>
+
+        <p>이상 혹은 이하를 표기할 때 >, < 를 사용하지 마세요. 액션 인디케이터와 혼동이 될 수 있어서. 이상, 이하 한글로 명확하게 전달하ㄱ시오!</p>
     
         <p>Bullet을 컴포넌트로 만들어서 사용.</p>
         <p>스타일을 처음 선언할 때 margin:0 0 0 0 풀어서 사용하고, 재선언할 때 margin-left로 재할당을 암시하고 오버라이딩 최소화하기.</p>
@@ -267,6 +265,25 @@
         <code>code tag</code>
       </div>
     </article>
+
+
+    <article class="design-article js-scrollspy-section">
+      <h1 class="design-article-title">Breakpoints</h1>
+      <p class="design-article-description">pc, mobile device로 나누는 게 가장 효율적. 2개의 breakpoint에 퍼센티지 컨테이너를 가지는 tiny breakpoint.</p>
+      <blockquote>
+        <p>서비스의 형태? 웹온리 vs 웹+모바일앱 vs 웹+태블릿</p>
+      </blockquote>
+      <dl>
+        <dt>tiny</dt><dd>필수. 640 이하</dd>
+        <dt>small</dt><dd>필수. 1020 이하</dd>
+        <dt>medium</dt><dd>필수. 1240 이하</dd>
+        <dt>large</dt><dd>선택. > 1480 이상</dd>
+      </dl>
+    </article>
+
+
+
+
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Sizes & Avatars</h1>
@@ -2023,6 +2040,32 @@
       </nav>
 
       <br />
+
+      <article class="share">
+        <h2 class="share-title">제목</h2>
+        <!-- <p class="share-description" style="margin:.5rem 0 0 0;">chip 스타일의 필터링 버튼. 리스트의 버튼을 죽여야.</p> -->
+        <div role="group" style="margin-top:.5rem;">
+          <button class="chip is-active">필터 1</button>
+          <button class="chip">필터 2</button>
+          <button class="chip">필터 3</button>
+          <button class="chip">필터 4</button>
+        </div>
+
+        <div style="margin-top:1rem;" role="listbox">
+          <div class="profile-user" style="float:none;width:100%;height:48px;margin:1rem 0;" role="listitem">
+            <figure class="profile-user-avatar" style="float:left;width:48px;height:48px;margin-right:var(--space-after-medium);"></figure>
+            <h2 class="profile-user-name" style="font-size:var(--body);">Gyeongsoo I</h2>
+            <span class="profile-user-id" style="color:var(--gray400);">유아이 디자이너</span>
+            <button class="design-article-text-small" style="min-width:auto;color:var(--gray800);position:absolute;right:0;top:0;">팔로잉</button>
+          </div>
+          <div class="profile-user" style="float:none;width:100%;height:48px;margin:1rem 0;" role="listitem">
+            <figure class="profile-user-avatar" style="float:left;width:48px;height:48px;margin-right:var(--space-after-medium);"></figure>
+            <h2 class="profile-user-name" style="font-size:var(--body);">Gyeongsoo I</h2>
+            <span class="profile-user-id" style="color:var(--gray400);">유아이 디자이너</span>
+            <button class="design-article-text-small" style="min-width:auto;color:var(--gray800);position:absolute;right:0;top:0;">팔로잉</button>
+          </div>
+        </div>
+      </article>
 
       <aside class="banner" role="banner">
         <div class="banner-background"></div>

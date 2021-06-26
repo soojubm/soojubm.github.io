@@ -12,8 +12,8 @@ $transition-fade: opacity 0.15s linear;
 :root {
   color-scheme: light dark;
 
-  --viewport-mobile: 0;
-  --viewport-table: 0;
+  --viewport-phone: 0;
+  --viewport-tablet: 0;
   --viewport-laptop: 0;
   --viewport-desktop: 0;
   --viewport-tv: 0;
