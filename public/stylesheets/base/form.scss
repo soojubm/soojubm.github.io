@@ -29,7 +29,6 @@ textarea:focus, input:focus, button:focus {
 
 
 // input, textarea {
-//   // iOS inner shadow
 //   -webkit-appearance:none;-moz-appearance:none;appearance:none;
 // }
 input, select, textarea {
@@ -54,7 +53,7 @@ input::-ms-clear {display:none;}
 input[type=text] {}
 input[type=password] {letter-spacing:.5rem;}
 input[type=password]::placeholder {letter-spacing:0;}
-input[type=search] {-webkit-appearance:textfield;}
+input[type=search] {}
 input[type=search]::-webkit-search-cancel-button {display:none;}
 // input[type=search]::-webkit-search-decoration,
 // input[type=search]::-webkit-search-cancel-button,
@@ -113,7 +112,7 @@ input[type=checkbox]:checked + label + * {display:block;margin:0.25rem 0 1.5rem 
 
 
 .switch {display:block;position:relative;}
-input[type=checkbox][role=switch] + label {display:block;height:20px;line-height:18px;padding-left:calc(48px + 1rem);cursor:pointer;}
+input[type=checkbox][role=switch] + label {display:block;height:20px;line-height:18px;padding-left:calc(48px + .75rem);cursor:pointer;}
 input[type=checkbox][role=switch] + label:before {content:'';display:block;width:48px;height:20px;border:none;border-radius:var(--radius400);box-sizing:border-box;background:var(--gray200);position:absolute;left:0;top:0;transition:background .2s;}
 input[type=checkbox][role=switch] + label:after {content:'';display:block;/*18px*/width:16px;height:16px;border:none;border-radius:var(--radius400);background:var(--gray0);box-shadow:var(--shadow400);position:absolute;left:2px;top:2px;transition:left .2s;transform:rotate(0deg);}
 input[type=checkbox][role=switch]:checked + label {color:var(--color-primary);}

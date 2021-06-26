@@ -48,7 +48,8 @@
 .design-typograph-group .design-typograph-item {width:var(--grid-column);}
 
 
-.design-buttongroup {@include group-bleeding;}
+.design-buttongroup {@include group-bleeding;    padding: .5rem 0;
+  margin: -.5rem 0;}
 
 .design-typograph-size {margin:1rem 0;overflow:hidden;}
 .design-typograph-size-title {line-height:var(--size-small);}
