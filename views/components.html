@@ -94,21 +94,21 @@
 
   <br />
 
-  <blockquote>
+  <!-- <blockquote>
     <p>당부의 말씀(?)</p>
-    <!-- <p>과거 아주 먼 과거 모니터가 표현할 수 있는 색상의 제한이란 것이 존재하던 적에 텍스트의 주로 #333을 제목으로 #666을 본문으로 #999을 secondary?로 사용했습니다.</p> -->
+    <p>과거 아주 먼 과거 모니터가 표현할 수 있는 색상의 제한이란 것이 존재하던 적에 텍스트의 주로 #333을 제목으로 #666을 본문으로 #999을 secondary?로 사용했습니다.</p>
     <p>위계hierachy를 설정하기 위해 세 가지 이상을 중첩하지 마세요<i style="font-style:italic">!</i> 위계를 설정하는 방법에는 색상, 간격, 크기, 무게 등이 있습니다. 충분한 간격만으로 위계는 설정됨. 그럴 때는 텍트스의 색상이나 무게로 추가적인 위계를 줄 필요가 없다.</p>
-  </blockquote>
-
+  </blockquote> -->
 
   <article style="width:var(--width-medium);margin:0 auto;">
     <h2>Component</h2>
     <p>보편성이라는 원칙을 인용해서 설명. 유아이는 롤이 정해져 있음. 롤에 스타일을 입히는 것을 컴포넌트로 수집이 디자인 시스템에서 정리하겠슴. atomic design pattern 단점.</p>
 
-    <div role="group">
+    <!-- <div role="group">
       <div class="tile-flat" style="width:100px;height:100px;border-radius:50%;background:var(--gray800);color:var(--gray0);display:flex;justify-content:center;align-items:center;">style</div>
       <div class="tile-flat" style="width:100px;height:100px;border-radius:50%;background:var(--gray800);color:var(--gray0);display:flex;justify-content:center;align-items:center;">role</div>
-    </div>
+    </div> -->
+    <p>예외 케이스: 논의 후 가이드대로 적용하는 것이 최선. 예외 케이스를 documentation 후 진행. 예외 케이스가 개발 비용이 적으면 ok</p>
   </article>
 
   <article class="design-body">
@@ -273,8 +273,8 @@
       <p class="design-article-description">5가지 사이즈를 사용합니다. 아바타는 텍스트, 아이콘, 이미지를 포함할 수 있습니다. Large와 Medium은 디스크립션을 가질 수 있습니다.</p>
       <dl>
         <dt>Large</dt><dd>user avatar</dd>
-        <dt>Medium</dt><dd>button default, textfield, user avatar</dd>
-        <dt>Small</dt><dd>button small, user avatar</dd>
+        <dt>Medium</dt><dd>button, textfield, user avatar</dd>
+        <dt>Small</dt><dd>button small, chip, user avatar</dd>
         <dt>XSmall</dt><dd>tag, user avatar, button in textfield(indicator)</dd>
         <dt>XXSmall</dt><dd>radio, checkbox, switch, user avatar</dd>
       </dl>
@@ -522,7 +522,7 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Palette</h1>
-      <p class="design-article-description">다크테마를 위한 컬러셋, 또는 인버트 스타일을 별도로 정의하지 않습니다.</p>
+      <p class="design-article-description">다크테마를 위한 컬러셋, 또는 인버트 스타일을 추가로 정의하지 않습니다. 색상은 background, border, text 롤, hover, active, disabled 스타일</p>
       <!-- <blockquote style="margin:2rem 0;">
         gray100 변수를 사용할 때 container-border-color와 같은 시멘틱한 네이밍으로 한 번 더 추상화 하세요.
       </blockquote> -->
@@ -539,12 +539,12 @@
         <figure class="color-item is-gray000">
           <div></div>
           <h3>gray000</h3>
-          <span>bg</span>
+          <span>background</span>
         </figure>
         <figure class="color-item is-gray100">
           <div></div>
           <h3>gray100</h3>
-          <span>bg / border</span>
+          <span>background / border</span>
         </figure>
         <figure class="color-item is-gray200">
           <div></div>
@@ -563,7 +563,7 @@
         <figure class="color-item is-gray800">
           <div></div>
           <h3>gray800</h3>
-          <span>bg / text</span>
+          <span>background / text</span>
         </figure>
       </div>
       <br />
@@ -572,12 +572,12 @@
         <figure class="color-item is-primary100">
           <div></div>
           <h3>green100</h3>
-          <span>bg</span>
+          <span>background / active state</span>
         </figure>
         <figure class="color-item is-primary200">
           <div></div>
           <h3>green800</h3>
-          <span>accent / text</span>
+          <span>accent / active state / background / text</span>
         </figure>
         <figure class="color-item is-red800">
           <div></div>
@@ -1480,6 +1480,12 @@
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Paginations</h1>
       <p class="design-article-description">첫 페이지와 마지막 페이지에 더블 화살표 아이콘을 사용하지 않습니다. 최초 페이지와 최종 페이지를 사용하세요.</p>
+
+      <dl>
+        <dt>infinite scroll</dt><dd>작성 중.</dd>
+        <dt>more load</dt><dd>작성 중.</dd>
+        <dt>paging</dt><dd>작성 중.</dd>
+      </dl>
 
       <h6 class="title-bordered">Type 1</h6>
       <nav class="pagination" role="navigation" aria-label="pagination">

@@ -1,6 +1,6 @@
 .color {overflow:hidden;}
 .color-group {display:flex;justify-content:space-between;}
-.color-item {width:48.6%;@include tile-flat-small;}
+.color-item {width:100%;}
 .color-item.is-gray000 div {border:var(--border100);background:var(--gray0);}
 .color-item.is-gray100 div {background:var(--gray100);}
 .color-item.is-gray200 div {background:var(--gray200);}
@@ -17,8 +17,6 @@
 .color-item span {color:var(--gray400);}
 
 @media (--viewport-small) {
-  .color-group {}
-  .color-item {width:100%;}
 }
 
 .surface-item div {@include box-medium;box-shadow:var(--shadow400);}
@@ -29,8 +27,8 @@
 // .design-head {overflow:hidden;background:var(--color-primary);position:fixed;left:0;right:0;top:0;bottom:0;z-index:1;transform:translateX(-50%);transition:transform .8s $bezier-base .4s;}
 // .design-head.is-scrolled {transform:translateX(-50%);transition:transform .8s $bezier-base .4s;}
 
-.design-navigation {max-width:var(--width-medium);margin:0 auto;padding:.75rem var(--grid-margin);border-radius:var(--radius400);background:var(--gray0);position:relative;z-index:6 ;position:sticky;top:0;}
-.design-navigation-background {@include bleeding;box-shadow:var(--shadow400);}
+.design-navigation {padding:.75rem var(--grid-margin);background:var(--gray0);position:relative;z-index:6 ;position:sticky;top:0;}
+.design-navigation-background {@include bleeding;border-bottom:var(--border100);}
 .design-navigation-scroll {@include group-bleeding;margin:0 var(--grid-margin-minus);padding:0 var(--grid-margin);position:relative;}
 
 .design-body {max-width:var(--width-medium);margin:0 auto;overflow-x:hidden;padding:0 var(--grid-margin) 8rem;}
