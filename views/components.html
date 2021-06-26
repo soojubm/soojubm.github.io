@@ -97,13 +97,13 @@
   <blockquote>
     <p>당부의 말씀(?)</p>
     <!-- <p>과거 아주 먼 과거 모니터가 표현할 수 있는 색상의 제한이란 것이 존재하던 적에 텍스트의 주로 #333을 제목으로 #666을 본문으로 #999을 secondary?로 사용했습니다.</p> -->
-    <p>위계hierachy를 설정하기 위해 세 가지 이상을 사용하지 마세요<i style="font-style:italic">!</i> 위계를 설정하는 방법에는 색상, 간격, 크기, 무게 등이 있습니다. 예를 들어 pull일 때</p>
+    <p>위계hierachy를 설정하기 위해 세 가지 이상을 중첩하지 마세요<i style="font-style:italic">!</i> 위계를 설정하는 방법에는 색상, 간격, 크기, 무게 등이 있습니다. 충분한 간격만으로 위계는 설정됨. 그럴 때는 텍트스의 색상이나 무게로 추가적인 위계를 줄 필요가 없다.</p>
   </blockquote>
 
 
   <article style="width:var(--width-medium);margin:0 auto;">
     <h2>Component</h2>
-    <p>보편성이라는 원칙을 인용해서 설명. atomic design pattern 단점.</p>
+    <p>보편성이라는 원칙을 인용해서 설명. 유아이는 롤이 정해져 있음. 롤에 스타일을 입히는 것을 컴포넌트로 수집이 디자인 시스템에서 정리하겠슴. atomic design pattern 단점.</p>
 
     <div role="group">
       <div class="tile-flat" style="width:100px;height:100px;border-radius:50%;background:var(--gray800);color:var(--gray0);display:flex;justify-content:center;align-items:center;">style</div>
@@ -652,7 +652,7 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Chips ☀️</h1>
-      <p class="design-article-description">단일 선택 / 다중 선택, 삭제 여부에 따라 적절한 힌트를 제공합니다. 다른 맥락의 chip을 나열할 수도 있습니다. 스몰 사이즈(Tags)는 키워드 리스트, 뱃지로 사용할 수 있으며 아이콘을 포함할 수 없습니다. role="listbox" aria-orientation="horizontal"</p>
+      <p class="design-article-description">단일 선택 / 다중 선택, 삭제 여부에 따라 적절한 힌트를 제공합니다. 다른 맥락의 chip을 나열할 수도 있습니다. role="listbox" aria-orientation="horizontal"</p>
       <blockquote>
         memo: 드롭다운, 필터링을 위한 버튼 그룹, 아이콘 버튼을 하나의 칩 스타일로 묶은 상태. 이들을 시각적으로 구분해야 하는 상황이 생길 거라서 유연하게 하기.
         todo: 버튼 스몰, 칩 라지, 칩 스몰 구분해야 함.
@@ -723,7 +723,7 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Tags</h1>
-      <p class="design-article-description">작성 중. 클릭할 수 없음.</p>
+      <p class="design-article-description">작성 중. 클릭할 수 없음. 아이콘을  포함할 수 없습니다. 아이콘의 용도=click affordance. tag는 클릭할 수 없기 때문에 아이콘도 사용하지 않는다!</p>
       <blockquote>
         <h6>history</h6>
         chip-small에서 다시 분리. 용도가 아닌 스타일로 구분되어 한 번에 묶여 있어서 가이드가 복잡하기 때문. 지금도 role이 많음. hashtag / keyword
@@ -1026,6 +1026,12 @@
     </article>
 
     <article class="design-article js-scrollspy-section">
+      <h1 class="design-article-title">Text Emphasize</h1>
+      <p class="design-article-description">작성 중. bold weight나 underline으로 강조하지 않습니다. strong 태그는 의미론적으로 강조할 때만 사용하세요. mark, u, em, b, strong</p>
+      <p>문장 안에서 텍스트를 두 가지 방법으로 강조할 수 있습니다. <mark>이렇게</mark>와 <u>이렇게</u></p>
+    </article>
+
+    <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Text Lists</h1>
       <p class="design-article-description">작성 중.</p>
       <blockquote>
@@ -1166,13 +1172,18 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Alerts</h1>
-      <p class="design-article-description">시스템이나 브라우저의 상태, 사용자의 행동에 피드백으로 사용합니다. 경고가 사용자의 잘못이 아닌 경우 "오류" 대신 "시스템 오류"와 같은 용어를 사용하여 사용자가 잘못한 것처럼 느끼지 않도록. 한 문장으로 간단하게 사용하세요. 제목 불필요.</p>
+      <p class="design-article-description">시스템이나 브라우저의 상태, 사용자의 행동에 피드백으로 사용합니다. 경고가 사용자의 잘못이 아닌 경우 "오류" 대신 "시스템 오류"와 같은 용어를 사용하여 사용자가 잘못한 것처럼 느끼지 않도록. 한 문장으로 간단하게 사용하세요. 제목 불필요. 닫기 버튼도 불필요. 자동으로 닫히도록.</p>
       
       <blockquote>
         <p>브라우저가 role="alert"속성이 있는 요소를 발견 하면 즉시 사용자에게 경고 내용을 읽습니다.</p>
         toast=>snackbar(withAction).<br />
+        <p>토스트와 스낵바의 히스토리</p>
         single line / multiple lines (head,body 텍스트)
       </blockquote>
+
+      <dl>
+        <dt>duration</dt><dd>준비 중.</dd>
+      </dl>
       <aside class="alert">
         <button class="alert-close" aria-label="close"><i class="icon-close"></i></button>
         <p class="alert-head">
