@@ -104,6 +104,7 @@ button {@include reset-button;}
 }
 
 @mixin button-small {
+  min-width: auto;
   height:var(--size-small);padding:3px 1rem;font-size:var(--caption);
 }
 

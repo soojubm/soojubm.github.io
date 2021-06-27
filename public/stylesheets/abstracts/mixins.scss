@@ -206,8 +206,9 @@
 
 
 @mixin title-bordered {
-      height: 24px;
-      line-height: .8;
+      // height: 24px;
+      // line-height: .8;
+      height: 32px;
       display: flex;
       box-sizing: border-box;
       align-items: center;
