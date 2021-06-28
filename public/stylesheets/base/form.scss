@@ -159,7 +159,7 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 
 .textfield-check {@include textfield-surfix;}
 .textfield-prefix {@include textfield-prefix;background:var(--gray100);}
-.textfield-prefix ~ .textfield-input {padding-left:calc(1rem + 2rem + .5rem);}
+.textfield-prefix ~ .textfield-input {padding-left:calc(1rem + 2rem);}
 .textfield-input[type=search] ~ .textfield-prefix {top:1rem;}
 .textfield-surfix {@include textfield-surfix;}
 .selectbox-indicator {@include textfield-surfix;}

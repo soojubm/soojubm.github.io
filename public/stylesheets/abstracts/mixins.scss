@@ -51,13 +51,13 @@
 
 // item in card component // active
 @mixin hover-item {
-  // 부모태그에 position: relative;
+  // 부모태그에 position: relative;zindex:1;
   // background: var(--gray100);
   cursor: pointer;
   &:before {
     content:'';display:block;background:var(--gray100);border-radius:var(--radius400);position:absolute;left:-.5rem;right:-.5rem;top:-.5rem;bottom:-.5rem;z-index:-1;
   }
-  figure {background-color:var(--gray0);}
+  figure {background-color:var(--gray0);border:1px solid var(--gray200);box-sizing:border-box;}
 }
 
 @mixin container-page {
