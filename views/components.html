@@ -10,7 +10,7 @@
     <button class="titlebar-back" onclick="javascript:window.location.href='/';">
       <span class="titlebar-back-icon"><i class="icon-arrow"></i></span>
     </button>
-    <button class="titlebar-cta">
+    <button class="titlebar-cta" style="display:none;">
       공유하기
       <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" svg-inline="" role="presentation" focusable="false" tabindex="-1" class="icon-16">
         <path
@@ -55,10 +55,6 @@
     <img class="hero-obj4" src="/public/images/blob-shape.svg" alt="" /> -->
   </section>
 
-  <!-- <header style="width:var(--width-medium);margin:0 auto;">
-    <h1>컴포넌트</h1>
-  </header> -->
-
   <nav class="design-navigation" style="padding-top:0;top:var(--subheader-height);">
     <div class="design-navigation-background"></div>
     <div class="design-navigation-scroll" style="overflow:auto;">
@@ -102,7 +98,6 @@
   </blockquote> -->
 
   <!-- <article style="width:var(--width-medium);margin:0 auto;">
-    <h2>Component</h2>
     <p>보편성이라는 원칙을 인용해서 설명. 유아이는 롤이 정해져 있음. 롤에 스타일을 입히는 것을 컴포넌트로 수집이 디자인 시스템에서 정리하겠슴. atomic design pattern 단점.</p>
 
     <p>예외 케이스: 논의 후 가이드대로 적용하는 것이 최선. 예외 케이스를 documentation 후 진행. 예외 케이스가 개발 비용이 적으면 ok</p>
@@ -117,7 +112,7 @@
       <div class="textfield-input" role="textbox" contenteditable="true" aria-placeholder="5-digit zipcode" aria-labelledby="txtboxLabel"></div>
     </article>
 
-    <div class="stamp" hidden>
+    <div class="stamp">
       <div class="circle">
         <p id="circle-content">
           <span class="char1">부</span>
@@ -130,17 +125,6 @@
           <span class="char8">지</span>
           <span class="char9">마</span>
           <span class="char10">요</span>
-          <span class="char11"></span>
-          <span class="char12">부</span>
-          <span class="char13">끄</span>
-          <span class="char14">러</span>
-          <span class="char15">우</span>
-          <span class="char16">니</span>
-          <span class="char17">까 </span>
-          <span class="char18">보</span>
-          <span class="char19">지</span>
-          <span class="char20">마</span>
-          <span class="char21">요</span>
         </p>
       </div>
       <p>수줍이</p>
@@ -232,10 +216,9 @@
         <span class="accordion-title-icon"><i class="icon-plus"></i></span>
       </h3>
       <div class="accordion-panel">
-        <p>모두보기 / 전체보기 / 더보기 writing 정의하기 (자세히보기 / 더보기 / -보러가기)</p>
         <p>총결제금액 / 결제예정금액</p>
         <p>개인적인 checklist: 유저->사용자, 혹은->또는, 및->과/와</p>
-        <p>-action vs -control</p>
+        <p>-action(choice에서 안 어울림) vs -control</p>
 
         <p>이상 혹은 이하를 표기할 때 >, < 를 사용하지 마세요. 액션 인디케이터와 혼동이 될 수 있어서. 이상, 이하 한글로 명확하게 전달하ㄱ시오!</p>
     
@@ -268,7 +251,12 @@
     </article>
 
     <article class="design-article js-scrollspy-section">
-      <p class="design-article-description">타이틀 크기의 제목은 글자수에 제한을 두고 2~3줄 개행.</p>
+      <h1 class=design-article-title>Rules</h1>
+      <p class="design-article-description">타이틀 크기의 제목은 글자수에 제한을 두고 2~3줄 개행 맞춰서 작성하세요.</p>
+      <ul>
+        <li>모두보기(internal, arrow-right) / 전체보기 / 더보기vs더불러오기(more-load, arrow-down) / 자세히보기(external, arrow-right-top) writing 정의하기 (자세히보기 / 더보기 / -보러가기)</li>
+        <li>아이템이 3개 이하일 때 제목 우측에 모두보기 버튼을 위치할 수 있지만, 아이템이 4개 이상이라면 아이템의 아래에 모두보기 버튼이 위치.</li>
+      </ul>
 
     </article>
 
@@ -277,7 +265,7 @@
       <h1 class="design-article-title">Breakpoints</h1>
       <p class="design-article-description">pc, mobile device로 나누는 게 가장 효율적. 2개의 breakpoint에 퍼센티지 컨테이너를 가지는 tiny breakpoint.</p>
       <blockquote>
-        <p>서비스의 형태? 웹온리 vs 웹+모바일앱 vs 웹+태블릿</p>
+        <p>서비스가 출시 환경을 먼저 정의해야함. 웹온리 vs 웹+모바일앱 vs 웹+태블릿</p>
       </blockquote>
       <dl>
         <dt>tiny</dt><dd>필수. 640 이하</dd>
@@ -303,11 +291,11 @@
       <h1 class="design-article-title">Sizes & Avatars</h1>
       <p class="design-article-description">5가지 사이즈를 사용합니다. 아바타는 텍스트, 아이콘, 이미지를 포함할 수 있습니다. Large와 Medium은 디스크립션을 가질 수 있습니다.</p>
       <dl>
-        <dt>Large</dt><dd>user avatar</dd>
-        <dt>Medium</dt><dd>button, textfield, user avatar</dd>
-        <dt>Small</dt><dd>button small, chip, user avatar</dd>
-        <dt>XSmall</dt><dd>tag, user avatar, button in textfield(indicator)</dd>
-        <dt>XXSmall</dt><dd>radio, checkbox, switch, user avatar</dd>
+        <dt>Large</dt><dd>avatar</dd>
+        <dt>Medium</dt><dd>button, textfield, avatar</dd>
+        <dt>Small</dt><dd>button small, chip, avatar</dd>
+        <dt>XSmall</dt><dd>tag, avatar, button in textfield(indicator)</dd>
+        <dt>XXSmall</dt><dd>radio, checkbox, switch, avatar</dd>
       </dl>
       <hr />
       <!-- <blockquote>
@@ -417,58 +405,21 @@
         </div>
       </div> -->
       <dl>
-        <dt>Headline</dt><dd>작성 중.</dd>
-        <dt>Subhead</dt><dd>작성 중.</dd>
-        <dt>Body</dt><dd>작성 중.</dd>
-        <dt>Caption</dt><dd>작성 중.</dd>
+        <dt>Headline</dt><dd>2rem / 32px</dd>
+        <dt>Subhead</dt><dd>1.125rem / 18px</dd>
+        <dt>Body</dt><dd>.875rem / 14px <i class="tag" style="margin-left:.5rem;font-weight:400;">default</i></dd>
+        <dt>Caption</dt><dd>.75rem / 12px</dd>
       </dl>
-      <hr />
-      <article class="design-typograph-size">
+      <!-- <article class="design-typograph-size">
         <h3 class="design-typograph-size-title" style="font-size:var(--title);">XLarge <span>2rem / 32px</span></h3>
         <h3 class="design-typograph-size-title" style="margin:.5rem 0 .5rem;font-size:var(--subhead);">Large <span>1.125rem / 18px</span></h3>
         <h3 class="design-typograph-size-title" style="margin:.5rem 0 .25rem;font-size:var(--body);">Medium <i class="tag" style="margin-left:.5rem;font-weight:400;">기본크기</i> <span>.875rem / 14px</span></h3>
         <h3 class="design-typograph-size-title" style="font-size:var(--caption);">Small <span>.75rem / 12px</span></h3>
-        <button class="design-typograph-size-toggle js-toggle">열기</button>
-        <p>페이지 레벨의 제목에 사용합니다.</p>
-        <div role="group" style="margin-top:2rem;">
-          <span class="tag" data-appearance="secondary">제목heading</span>
-          <span class="tag">타이틀Title</span>
-        </div>
-      </article>
-      <!-- <article class="design-typograph-size">
-        <h3 class="design-typograph-size-title" style="font-size:var(--subhead);">Large <span>1.125rem / 18px</span></h3>
-        <button class="design-typograph-size-toggle js-toggle">열기</button>
-        <p>카드, 아티클 등 소제목에 사용합니다.</p>
-        <p>포스트, 약관 등 텍스트 중심의 콘텐츠 페이지에서는 본문으로 사용할 수 있습니다.</p>
-        <div role="group" style="margin-top:2rem;">
-          <span class="tag" data-appearance="secondary">제목heading</span>
-          <span class="tag">소제목subheading</span>
-        </div>
-        <div role="group" style="margin-top:.5rem;">
-          <span class="tag" data-appearance="secondary">본문body</span>
-        </div>
-      </article>
-      <article class="design-typograph-size">
-        <h3 class="design-typograph-size-title" style="font-size:var(--body);">Medium <i class="tag" style="margin-left:.5rem;">기본크기</i> <span>.875rem / 14px</span></h3>
-        <button class="design-typograph-size-toggle js-toggle">열기</button>
-        <p>기본 텍스트.</p>
-        <div role="group" style="margin-top:2rem;;">
-          <span class="tag" data-appearance="secondary">본문body</span>
-        </div>
-      </article>
-      <article class="design-typograph-size">
-        <h3 class="design-typograph-size-title" style="font-size:var(--caption);">Small <span>.75rem / 12px</span></h3>
-        <button class="design-typograph-size-toggle js-toggle">열기</button>
-        <p>벨리데이션 피드백 등 도움말 맥락에서 사용합니다.</p>
-        <div role="group" style="margin-top:2rem;">
-          <span class="tag" data-appearance="secondary">제목heading</span>
-          <span class="tag">캡션caption</span>
-        </div>
-        <div role="group" style="margin-top:.5rem;">
-          <span class="tag" data-appearance="secondary">본문body</span>
-          <span class="tag">도움말helper text</span>
-        </div>
       </article> -->
+      <!-- <p>페이지 레벨의 제목에 사용합니다.</p>
+      <p>카드, 아티클 등 소제목에 사용합니다.</p>
+      <p>포스트, 약관 등 텍스트 중심의 콘텐츠 페이지에서는 본문으로 사용할 수 있습니다.</p>
+      <p>벨리데이션 피드백 등 도움말 맥락에서 사용합니다.</p> -->
     </article>
 
     <article class="design-article" hidden>
@@ -513,42 +464,7 @@
         <button class="buttongroup-primary">프라이머리</button>
         <button class="buttongroup-secondary">세컨더리</button>
       </footer> -->
-
-            <!-- <p>버튼 그룹은 vertical과 horizental. horizental에서도 primary를 먼저 마크업해야 합니다.</p>
-
-      <hr /> -->
-
-      <hr />
-
-      <div class="temp8" style="display:flex;max-width:375px;">
-        <div>
-          <figure>🦁</figure>
-          <span>수줍이</span>
-        </div>
-        <div>
-          <figure>🦁</figure>
-          <span>수줍이</span>
-        </div>
-        <div>
-          <figure>🦁</figure>
-          <span>수줍이</span>
-        </div>
-      </div>
-      <hr />
-      <div class="daylist">
-        <div class="day" role="listitem">
-          <span class="day-label">mon</span>
-          <b class="day-value">24</b>
-        </div>
-        <div class="day" role="listitem">
-          <span class="day-label">tue</span>
-          <b class="day-value">25</b>
-        </div>
-        <div class="day" role="listitem">
-          <span class="day-label">wed</span>
-          <b class="day-value">26</b>
-        </div>
-      </div>
+      <!-- <p>버튼 그룹은 vertical과 horizental. horizental에서도 primary를 먼저 마크업해야 합니다.</p>-->
     </article>
 
     <article class="design-article js-scrollspy-section">
@@ -647,17 +563,18 @@
       </div>
     </article>
 
-    
-
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Tiles</h1>
       <p class="design-article-description">제목, 디스크립션 이외의 콘텐츠를 강조할 때 사용합니다. 클릭할 수 있는 타일과 클릭할 수 없는 타일을 시각적으로 명확하게 구분하여 어포던스를 높이고 행동을 유도합니다(항상 적용하기 어려움. 제거?). 클릭할 수 있는 타일이란 타일 내부에 클릭할 수 있는 요소가 존재하는 경우를 포함합니다.</p>
       <blockquote>
         <h6>history</h6>
-        <p>padding 1.5rem에서 1rem으로 변경. 1.5rem 사용 시 모바일에서 수정이 필요함. 수정하는 게 나을 지도.</p>
-        <h6>todo</h6>
-        <p>flat 스타일로 제목에 사용.</p>
+        <p>padding 1.5rem에서 1rem으로 변경. 1.5rem 사용 시 모바일에서 공간 많이 발생.</p>
       </blockquote>
+      <dl>
+        <dt>Medium</dt><dd>.75rem</dd>
+        <dt>Small</dt><dd>.5rem</dd>
+      </dl>
+      <hr />
       <div class="design-tile-flat" style="line-height:1.4;">
         <b>flat</b> is non clickable. no one.
       </div>
@@ -754,11 +671,18 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Tags</h1>
-      <p class="design-article-description">작성 중. 클릭할 수 없음. 아이콘을  포함할 수 없습니다. 아이콘의 용도=click affordance. tag는 클릭할 수 없기 때문에 아이콘도 사용하지 않는다!</p>
+      <p class="design-article-description">tag는 클릭할 수 없습니다. 아이콘을 포함할 수 없습니다. 아이콘의 용도=click affordance.</p>
       <blockquote>
         <h6>history</h6>
         chip-small에서 다시 분리. 용도가 아닌 스타일로 구분되어 한 번에 묶여 있어서 가이드가 복잡하기 때문. 지금도 role이 많음. hashtag / keyword
       </blockquote>
+
+      <dl>
+        <dt>Primary</dt><dd>Eyebrow, Badge</dd>
+        <dt>Secondary</dt><dd>Badge</dd>
+        <dt>Tertiray</dt><dd>Badge, Keyword, Hashtag</dd>
+      </dl>
+      <hr />
       <div class="" role="group">
         <span class="tag tags-item" data-appearance="accent">Eyebrow & Badge</span>
         <span class="tag" role="listitem" style="background:var(--green100);color:var(--green800);">Badge</span>
@@ -785,9 +709,9 @@
       </blockquote>
       <dl>
         <dt>Primary</dt><dd>페이지에서 가장 중요한 행동. 한 페이지에 한 개</dd>
-        <dt>Secondary</dt><dd>사용자 여정에 필요한 기능에서. binary selection(?choice)에서 프라이머리와 세컨더리를 함께 사용할 수 없습니다.</dd>
+        <dt>Secondary</dt><dd>서비스 이용에 필요한 기능에서. binary selection(?choice)에서 프라이머리와 세컨더리를 함께 사용할 수 없습니다.</dd>
         <dt>Tertiary</dt><dd>닫기, 취소, 아이콘 버튼</dd>
-        <dt>Text</dt><dd>text link와 구분. 사용 빈도 낮아서 고민 중.</dd>
+        <dt>Text</dt><dd>text link와 달리 버튼과 같은 padding을 가짐. 사용 빈도 낮아서 없애는 방도.</dd>
       </dl>
       <hr />
       <!--
@@ -823,7 +747,6 @@
         <button class="design-article-tertiary" disabled>Disabled</button>
       </div>
       <br />
-
       <h6 class="title-bordered">Sizes</h6>
       <div class="design-buttongroup">
         <button class="design-article-primary" style="height:auto;padding:12px 0 15px;font-size:var(--subhead);vertical-align:bottom;">
@@ -926,7 +849,7 @@
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Switch</h1>
       <p class="design-article-description">작성 중. role=switch</p>
-      <span class="switch" style="margin: 0 0 .75rem 0;">
+      <span class="switch" style="margin: 0 0 var(--space-after) 0;">
         <input type="checkbox" id="switch1" name="" role="switch" value="on" checked />
         <label for="switch1" title="Receive weekly newsletter">주간 뉴스레터 받아보기</label>
       </span>
@@ -939,9 +862,7 @@
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Textfields</h1>
       <p class="design-article-description">button과 unit, icon 등은 prefix(leading)/surfix(tailing), choose/enter,</p>
-      <blockquote>
-        검색은 레이블 삭제. 하지만 레이블이 없는 경우 아이콘 위치 다시 잡아야 함.
-      </blockquote>
+
       <h6 class="title-bordered">Number (quantity)</h6>
       <div class="quantity js-quantity">
         <input class="quantity-input js-quantity-input js-number-input" name="quantity1" type="number" value="0" min="5" max="20" >
@@ -959,10 +880,10 @@
 
       <br />
 
-      <h6 class="title-bordered">Search - dont' have label</h6>
+      <h6 class="title-bordered">Search (prefix에 뒤로가기 버튼이 포함되지 않는 형태로만 사용)</h6>
       <div class="textfield">
         <button class="textfield-prefix"><i class="icon-search"></i></button>
-        <label class="textfield-label" for="search">검색</label>
+        <!-- <label class="textfield-label" for="search">검색(시각적으로숨겨야함)</label> -->
         <input class="textfield-input js-input-test" type="search" id="search" placeholder="궁금한 인물이나 이슈가 있나요?" />
         <button class="textfield-surfix textfield-clear" hidden><i class="icon-close"></i></button>
       </div>
@@ -978,6 +899,8 @@
 
       <br />
 
+      
+      <h6 class="title-bordered">Input Date</h6>
       <div class="textfield-group" style="display:flex;justify-content:space-between;">
         <div class="textfield" style="width:var(--grid-column);">
           <label class="textfield-label" for="date-start"><i class="">체크인</i></label>
@@ -1033,7 +956,7 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Breadcrumb</h1>
-      <p class="design-article-description">페이지 레벨이 3단계 이상일 때 사용합니다. 캠페인 등을 통한 접속이 많은 페이지에서도 사용할 수 있습니다. todo 용도를 더 명확히 해야하고, pg 신청 시 이슈도 존재. 모바일에서도 탑바에 뒤로가기나 닫기 버튼으로 대체.</p>
+      <p class="design-article-description">페이지 레벨이 3단계 이상일 때 사용합니다. 캠페인 등을 통한 접속이 많은 페이지에서도 사용할 수 있습니다. todo 용도를 더 명확히 해야하고, pg 신청 시 이슈도 존재. 모바일에서도 탑바에 뒤로가기나 닫기 버튼으로 대체. 푸터(사이트맵위)에 배치하는 케이스도 있음. 딥 사이트맵에서 괜찮은 듯.</p>
       <!-- <p>(법적으로 혹은 PG사에서 체크할 때 상품 리스트 페이지에서 이슈가 있었음)</p> -->
       <nav class="breadcrumb" aria-label="breadcrumb">
         <a class="breadcrumb-item breadcrumb-home" href="/">홈</a>
@@ -1047,7 +970,7 @@
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Text Links</h1>
       <!-- <p class="design-article-description">문단 <a href="#" class="link-inner">내부 링크</a>와 문단 <a href="#" class="link-outer">외부 링크</a>를 구분합니다.</p> -->
-      <p class="design-article-description">작성 중.  post 페이지에서는 더 강조된 스타일이 필요할 수도.</p>
+      <p class="design-article-description">작성 중.</p>
       <blockquote>
         <p>요약한 텍스트를 펼쳐보기 위한 더보기 버튼은 중요도가 낮기 때문에 톤 다운된 검정도 많이 사용. 링크 vs 텍스트 버튼. history: 21.06 내부 외부 링크 구분하지 않음. 언더라인 있으니 hover state 표현하기 어려움. 하지만 컴포넌트는 여전히 따로 사용하는 것이 어떨까.</p>
         <p>external => target="_blank" rel="noopener noreferrer"</p>
@@ -1192,7 +1115,7 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Tooltip</h1>
-      <p class="design-article-description">기능에한 설명으로 사용할 수 없습니다. 용어 혹은 근거.</p>
+      <p class="design-article-description">작성 중. 용어 혹은 근거.</p>
       <blockquote>
         페이지 로딩과 동시에 툴팁이 열려 있는 경우 doorhanger가 필요하다.
       </blockquote>
@@ -1412,7 +1335,7 @@
     <!-- // Chris said Marcus replied -->
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Comment</h1>
-      <p class="design-article-description">작성 중. 결정해야 하는 것. 코멘트의 노출 순서와 정렬, 열었을 때 최초로 보여줄 갯수, 더보기 갯수. 답글  스타일 골뱅이 답글 vs 인덴테이션, 신고/수정/삭제/아바타 등 우선쉬위</p>
+      <p class="design-article-description">작성 중. 결정해야 하는 것. 코멘트의 노출 순서와 정렬, 열었을 때 최초로 보여줄 갯수, 더보기 갯수. 답글  스타일 골뱅이 답글 vs 인덴테이션, 신고/수정/삭제/아바타 등 우선쉬위, 리뷰컴포넌트는코멘트와완전히분리되어야함(포토리뷰만보기체크박스)</p>
       <div class="post-comment-list">
         <article class="post-comment-list-item" role="comment">
           <a class="post-comment-list-item-avatar" href="#"><img src="/public/images/soo.png"></a>
@@ -1550,7 +1473,7 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Table</h1>
-      <p class="design-article-description">작성 중.</p>
+      <p class="design-article-description">작성 중. horizental scrolling(optional)</p>
       <table>
         <caption>히라가나 오십음도</caption>
         <!-- <colgroup>
@@ -2081,6 +2004,37 @@
           </div>
         </div>
       </article>
+
+
+      <div class="temp8" style="display:flex;max-width:375px;">
+        <div>
+          <figure>🦁</figure>
+          <span>수줍이</span>
+        </div>
+        <div>
+          <figure>🦁</figure>
+          <span>수줍이</span>
+        </div>
+        <div>
+          <figure>🦁</figure>
+          <span>수줍이</span>
+        </div>
+      </div>
+      <hr />
+      <div class="daylist">
+        <div class="day" role="listitem">
+          <span class="day-label">mon</span>
+          <b class="day-value">24</b>
+        </div>
+        <div class="day" role="listitem">
+          <span class="day-label">tue</span>
+          <b class="day-value">25</b>
+        </div>
+        <div class="day" role="listitem">
+          <span class="day-label">wed</span>
+          <b class="day-value">26</b>
+        </div>
+      </div>
 
       <aside class="banner" role="banner">
         <div class="banner-background"></div>

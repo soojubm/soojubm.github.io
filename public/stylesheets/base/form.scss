@@ -134,9 +134,6 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 .textfield {position:relative;}
 .textfield-label {display:block;margin:0 0 0.25rem 0;}
 .textfield-label small {margin:0 0 0 .25rem;color:var(--gray400);}
-.textfield-icon {display:flex;align-items:center;justify-content:center;width:48px;height:100%;position:absolute;left:0;}
-.textfield-icon i {display:inline-block;font-size:19px;vertical-align:middle;opacity:0.4;}
-.textfield-icon + .textfield-input {padding-left:48px;}
 .textfield-input {display:block;width:100%;min-height:var(--size-medium);padding:$padding200;padding-right:40px;background:var(--gray100);border:1px solid transparent;border-radius:var(--radius400);box-sizing:border-box;font:inherit;color:var(--gray800);/*-appearance:none;*/transition:all 0.2s;} // textarea 하단 간격
 .textfield-input:disabled {border-color:var(--gray200);background:var(--gray200);color:var(--gray100);cursor:not-allowed;}
 // .textfield-input:not(select):readonly {background:none;padding-left:0;padding-right:0;border:none;outline:none;}
@@ -163,6 +160,7 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 .textfield-check {@include textfield-surfix;}
 .textfield-prefix {@include textfield-prefix;background:var(--gray100);}
 .textfield-prefix ~ .textfield-input {padding-left:calc(1rem + 2rem + .5rem);}
+.textfield-input[type=search] ~ .textfield-prefix {top:1rem;}
 .textfield-surfix {@include textfield-surfix;}
 .selectbox-indicator {@include textfield-surfix;}
 .textfield-clear {display:none !important;}

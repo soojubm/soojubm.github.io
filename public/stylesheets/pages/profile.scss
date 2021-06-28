@@ -64,11 +64,19 @@
 .card-date {color:var(--gray400);}
 .card-tags {margin:.5rem 0 0 0;}
 .card-tags-item {@include hashtag;font-size:var(--caption);}
-.card-item {height:48px;margin:1rem 0;position:relative;z-index:1;}
+
+// figure 왼쪽 vs 오른쪽 margin-right는 size에 따라 변함.
+// heading name / title, tiny font-sze 작음
+// description 수치(날짜/금액/수량) 이륾보다 더 강조될 수도 있음.
+// action ~2 follow 버튼 등. 우측에 정렬되어야 함.
+
+// => avatar medium, avatar large(우측정렬, 버튼 아래)
+.card-item {height:var(--size-Medium);margin:1rem 0;position:relative;z-index:1;}
+.card-item-media {float:left;display:block;margin-right:var(--space-after);@include box-medium;}
+.card-item-name {}
+.card-item-price {}
 .card-item:hover {@include hover-item;}
-.card-item-media {float:left;display:block;margin-right:1rem;@include box-medium;}
-.card-item-name {display:block;color:var(--gray800);}
-.card-item-price {position:relative;}
+
 .card-note {border:var(--border100);border-radius:var(--radius400);text-align:center;font-size:var(--caption);}
 .card-cta {@include button-primary;width:100%;margin:2rem 0;}
 .card-foot {display:flex;justify-content:space-between;margin:2rem 0 0;}
