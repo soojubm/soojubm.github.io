@@ -60,7 +60,7 @@
     <div class="design-navigation-scroll" style="overflow:auto;">
       <a class="chip is-active js-scrollspy-trigger" href="#">Sizes</a>
       <a class="chip js-scrollspy-trigger" href="#">Typograph</a>
-      <a class="chip js-scrollspy-trigger" href="#">Pallettes</a>
+      <a class="chip js-scrollspy-trigger" href="#">Pallette</a>
       <a class="chip js-scrollspy-trigger" href="#">Tiles</a>
       <a class="chip js-scrollspy-trigger" href="#">Chips</a>
       <a class="chip js-scrollspy-trigger" href="#">Tags</a>
@@ -219,8 +219,6 @@
         <p>총결제금액 / 결제예정금액</p>
         <p>개인적인 checklist: 유저->사용자, 혹은->또는, 및->과/와</p>
         <p>-action(choice에서 안 어울림) vs -control</p>
-
-        <p>이상 혹은 이하를 표기할 때 >, < 를 사용하지 마세요. 액션 인디케이터와 혼동이 될 수 있어서. 이상, 이하 한글로 명확하게 전달하ㄱ시오!</p>
     
         <p>Bullet을 컴포넌트로 만들어서 사용.</p>
         <p>스타일을 처음 선언할 때 margin:0 0 0 0 풀어서 사용하고, 재선언할 때 margin-left로 재할당을 암시하고 오버라이딩 최소화하기.</p>
@@ -231,7 +229,11 @@
 
     <p>셀박vs체크박스/라디오 사용하는 기준. 선택 갯수를 정의.</p>
 
-        <p>가운데 정렬 될 경우 large 컨테이너를 사용.</p>
+        <p>가운데 정렬에서 우 large 컨테이너를 사용.</p>
+
+        <p>경우vs때 -> 에서</p>
+
+        <p>반응형 이미지</p>
 
         <p>왜 rem 단위를 사용하는가 정리</p>
         <p>왜 엄격한 grid system을 사용하지 않는가 정리. 가로스크롤 트랜드 등</p>
@@ -254,8 +256,15 @@
       <h1 class=design-article-title>Rules</h1>
       <p class="design-article-description">타이틀 크기의 제목은 글자수에 제한을 두고 2~3줄 개행 맞춰서 작성하세요.</p>
       <ul>
-        <li>모두보기(internal, arrow-right) / 전체보기 / 더보기vs더불러오기(more-load, arrow-down) / 자세히보기(external, arrow-right-top) writing 정의하기 (자세히보기 / 더보기 / -보러가기)</li>
+        <li>모두보기see all(15)(internal, arrow-right) / 전체보기 / / 확장,더보기vs더불러오기(more, arrow-down) / 자세히보기,  learn more 등(external, arrow-right-top) writing 정의하기 (자세히보기 / 더보기 / -보러가기)</li>
         <li>아이템이 3개 이하일 때 제목 우측에 모두보기 버튼을 위치할 수 있지만, 아이템이 4개 이상이라면 아이템의 아래에 모두보기 버튼이 위치.</li>
+
+        <li>아이콘을 클릭 어포던스를 높이기 위해 사용합니다. 다시 말해 아이콘이 있으면 클릭할 수 있음을 의미합니다.</li>
+        <li>action indicator :이상 혹은 이하를 표기할 때 >, < 를 사용하지 않습니다. 액션 인디케이터와 혼동이 될 수 있어서. 이상, 이하 한글로 명확하게 전달하ㄱ시오!</li>
+
+        <li>naming convention: -s vs - list</li>
+
+        <li>writing: 복합명사는 붙여씁니다. 결제 완료 x /  결제완료</li>
       </ul>
 
     </article>
@@ -275,7 +284,7 @@
       </dl>
     </article>
 
-    <article class="design-article js-scrollspy-section">
+    <!-- <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Hover System</h1>
       <p class="design-article-description">준비 중. active, hover, clickable, border/background/elevated (앞에 두개는 flat)</p>
 
@@ -284,8 +293,7 @@
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Indicator System</h1>
       <p class="design-article-description">준비 중.</p>
-
-    </article>
+    </article> -->
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Sizes & Avatars</h1>
@@ -298,9 +306,7 @@
         <dt>XXSmall</dt><dd>radio, checkbox, switch, avatar</dd>
       </dl>
       <hr />
-      <!-- <blockquote>
-        2021-05 xsmall 사이즈 추가, todo: tiny를 xxsmall로 변경하고 기본값으로 medium을 사용.
-      </blockquote> -->
+      <!-- 2021-05 xsmall 사이즈 추가, todo: tiny를 xxsmall로 변경하고 기본값으로 medium을 사용. -->
       <div role="group">
         <a href="" class="design-article-avatar-large"><span class="avatar-badge"></span></a>
         <a href="" class="design-article-avatar-medium"><span class="avatar-badge"></span></a>
@@ -308,7 +314,7 @@
         <a href="" class="design-article-avatar-xsmall"><span class="avatar-badge"></span></a>
         <a href="" class="design-article-avatar-tiny"><span class="avatar-badge"></span></a>
       </div>
-      <!-- <hr />
+      <hr />
       <div class="avatar-large" style="display:flex;margin-bottom:1rem;">
         <a href="" class="design-article-avatar-large"><span class="avatar-badge"></span></a>
         <div style="display:block;width:1.5rem;height:inherit;border-radius:var(--radius400);background:var(--green100);"></div>
@@ -333,20 +339,16 @@
       <div style="display:flex;align-items:center;margin-bottom:1rem;">
         <a href="" class="design-article-avatar-xsmall"></a>
         <div style="display:block;width:.5rem;height:24px;border-radius:var(--radius400);background:var(--green100);box-sizing:border-box;"></div>
-        <div style="display:block;width:calc(100% - 24px - .5rem);height:24px;line-height:24px;">xSmall 24px / space .5rem / font-size medium / Tags</div>
+        <div style="display:block;width:calc(100% - 24px - .5rem);height:24px;line-height:24px;">xSmall 24px / space .5rem / font-size medium</div>
       </div>
       <div style="display:flex;">
         <a href="" class="design-article-avatar-tiny"></a>
         <div style="display:block;width:.5rem;height:inherit;border-radius:var(--radius400);background:var(--green100);box-sizing:border-box;"></div>
-        <div style="display:block;width:calc(100% - 16px - .5rem);height:inherit;font-size:var(--caption);line-height:16px;">Tiny 16px / space .5rem / font-size tiny / tags, toggle</div>
-      </div> -->
-      <!-- <div class="number">
-        <div class="number-card">8</div>
-        <div class="number-card">8</div>
-        <div class="number-card">3</div>
-        <div class="number-card">-</div>
-      </div> -->
+        <div style="display:block;width:calc(100% - 16px - .5rem);height:inherit;font-size:var(--caption);line-height:16px;">Tiny 16px / space .5rem / font-size tiny</div>
+      </div>
+
       <hr />
+      <h6 class="title-bordered">Avatar Stack</h6>
       <div class="avatarlist" style="display:flex;align-items:center;margin-bottom:1rem;">
         <!-- todo z-index를 위해 반대로 정렬 -->
         <span class="design-article-avatar-small" style="box-shadow: var(--gray0) 0px 0px 0px 2px;"></span>
@@ -354,7 +356,7 @@
         <span class="design-article-avatar-small" style="margin-left:-.75rem;box-shadow: var(--gray0) 0px 0px 0px 2px;"></span>
         <span class="design-article-avatar-small" style="margin-left:-.75rem;box-shadow: var(--gray0) 0px 0px 0px 2px;"></span>
         <!-- <a href="" class="design-article-avatar-small" style="margin-left:-10px;box-shadow: rgb(255 255 255) 0px 0px 0px 4px;background:var(--gray100);color:var(--gray800);">+4</a> -->
-        <span style="margin:0 0 0 1rem;">수줍이 외 4명 (avatar stack component)</span>
+        <span style="margin:0 0 0 1rem;">수줍이 외 4명</span>
       </div>
       <!-- <div class="avatarlist" style="display:flex;align-items:center;">
         <span class="design-article-avatar-tiny" style="box-shadow: var(--gray0) 0px 0px 0px 2px;"></span>
@@ -469,10 +471,17 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Palette</h1>
-      <p class="design-article-description">다크테마를 위한 컬러셋, 또는 인버트 스타일을 추가로 정의하지 않습니다. 색상은 background, border, text 롤, hover, active, disabled 스타일</p>
+      <p class="design-article-description">다크테마를 위한 컬러셋, 또는 인버트 스타일을 추가로 정의하지 않습니다.</p>
       <!-- <blockquote style="margin:2rem 0;">
         gray100 변수를 사용할 때 container-border-color와 같은 시멘틱한 네이밍으로 한 번 더 추상화 하세요.
       </blockquote> -->
+      <div role="group">
+        <span class="tag" data-appearance="accent">roles</span>
+        <span class="tag">background</span>
+        <span class="tag">border</span>
+        <span class="tag">text</span>
+        <span class="tag">states(hover/active/disabled)</span>
+      </div>
       <button class="user-logout js-darkmode1" title="change theme" style="border-radius:var(--radius400);box-shadow:var(--shadow400);padding:.5rem;border:var(--border100);">
         <span class="user-logout-icon"><i class="icon-moon"></i></span>
         어둡게 보기
@@ -565,7 +574,7 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Tiles</h1>
-      <p class="design-article-description">제목, 디스크립션 이외의 콘텐츠를 강조할 때 사용합니다. 클릭할 수 있는 타일과 클릭할 수 없는 타일을 시각적으로 명확하게 구분하여 어포던스를 높이고 행동을 유도합니다(항상 적용하기 어려움. 제거?). 클릭할 수 있는 타일이란 타일 내부에 클릭할 수 있는 요소가 존재하는 경우를 포함합니다.</p>
+      <p class="design-article-description">제목, 디스크립션 이외의 콘텐츠를 강조할 때 사용합니다. 클릭할 수 있는 타일과 클릭할 수 없는 타일을 시각적으로 명확하게 구분하여 어포던스를 높이고 행동을 유도합니다(항상 적용하기 어려움. 제거?). 클릭할 수 있는 타일이란 타일 내부에 클릭할 수 있는 컴포넌트를 포함할 수 있습니다???뭔말.</p>
       <blockquote>
         <h6>history</h6>
         <p>padding 1.5rem에서 1rem으로 변경. 1.5rem 사용 시 모바일에서 공간 많이 발생.</p>
@@ -602,10 +611,8 @@
       <h1 class="design-article-title">Chips ☀️</h1>
       <p class="design-article-description">단일 선택 / 다중 선택, 삭제 여부에 따라 적절한 힌트를 제공합니다. 다른 맥락의 chip을 나열할 수도 있습니다. role="listbox" aria-orientation="horizontal"</p>
       <blockquote>
-        memo: 드롭다운, 필터링을 위한 버튼 그룹, 아이콘 버튼을 하나의 칩 스타일로 묶은 상태. 이들을 시각적으로 구분해야 하는 상황이 생길 거라서 유연하게 하기.
-        todo: 버튼 스몰, 칩 라지, 칩 스몰 구분해야 함.
+        이들을 시각적으로 차별화해야 하는 상황이 있을 거라서 더 유연하게 하기.
       </blockquote>
-
       <h6 class="title-bordered">Filter</h6>
       <div class="chips js-chip">
         <button class="chip is-active">전체</button>
@@ -671,10 +678,10 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Tags</h1>
-      <p class="design-article-description">tag는 클릭할 수 없습니다. 아이콘을 포함할 수 없습니다. 아이콘의 용도=click affordance.</p>
+      <p class="design-article-description">작성 중. 클릭할 수 없습니다. 아이콘을 포함할 수 없습니다.</p>
       <blockquote>
         <h6>history</h6>
-        chip-small에서 다시 분리. 용도가 아닌 스타일로 구분되어 한 번에 묶여 있어서 가이드가 복잡하기 때문. 지금도 role이 많음. hashtag / keyword
+        chip-small에서 다시 분리. 롤이 아닌 스타일로 구분되어 가이드가 복잡하기 때문. 지금도 role이 많은데 따로 빼서 가이드하는 것. hashtag / keyword
       </blockquote>
 
       <dl>
@@ -684,13 +691,12 @@
       </dl>
       <hr />
       <div class="" role="group">
-        <span class="tag tags-item" data-appearance="accent">Eyebrow & Badge</span>
-        <span class="tag" role="listitem" style="background:var(--green100);color:var(--green800);">Badge</span>
-        <span class="tag" role="listitem">Badge & Keyword & Hashtag</span>
+        <span class="tag tags-item" data-appearance="accent">Primary</span>
+        <span class="tag" role="listitem" style="background:var(--green100);color:var(--green800);">Secondary</span>
+        <span class="tag" role="listitem">Tertiary</span>
         <span class="tag" role="listitem" style="background:var(--red100);border-color:var(--red100);color:var(--red800);">15</span>
         <span class="tag" role="listitem" style="width:16px;height:16px;background:var(--red800); "></span>
         <span class="tag" role="listitem" style="width:8px;height:8px;background:var(--red800);padding:0;"></span>
-        <!-- <a class="tag topic-item is-disabled" href="#" role="listitem">Disabled</a> -->
       </div>
     </article>
     
@@ -700,7 +706,7 @@
         <li>hover, focus 상태에 개별적인 스타일링을 하지 않는 방법으로 해보기. disabled도 모두 통일하는 방법.</li>
         <li>네이밍: style = solid/outline/plain/text (모든 스타일을 망라해야 하기 때문에 유아이 라이브러리에 어울리는 네이밍) appearance = link / subtle / primary, space = compact/fullwidth</li>
         <li>aria-expanded / role="img" aria-label="plus icon" / aria-pressed={activated ? "true" : "false"}</li>
-        <li>todo: 아이콘 버튼. 아이콘 버튼은 공간 제약이 있어 레이블을 생략할 필요가 있을 때 사용합니다. 이 때 아이콘은 보편적인 메타포...
+        <li>아이콘 버튼은 공간 제약이 있어 레이블을 생략할 필요가 있을 때 사용합니다. 이 때 아이콘은 보편적인 메타포...
         </li>
       </ul>
       <blockquote>
@@ -776,7 +782,7 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Checkboxes</h1>
-      <p class="design-article-description">다중선택. 세로 정렬로만 사용하세요. 가로 정렬이 필요한 경우, 5개 이상의 옵션이 존재하는 경우우에는 chip 스타일을 사용하세요. todo  더 강조되는 형태의 체크박스가 모바일에서 필요</p>
+      <p class="design-article-description">다중선택. 세로 정렬로만 사용하세요. 가로 정렬이 필요한 경우, 5개 이상의 옵션이 존재에서 우우에는 chip 스타일을 사용하세요. todo  더 강조되는 형태의 체크박스가 모바일에서 필요</p>
       <div role="group">
         <div class="tag">다중선택</div>
         <div class="tag">세로정렬</div>
@@ -807,7 +813,7 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Radioes</h1>
-      <p class="design-article-description">단일선택. 하나의 옵션을 필수로 선택해야 하기 때문에 기본 선택 옵션이 필요합니다. 세로 정렬로만 사용하세요. 가로 정렬이 필요한 경우, 5개 이상의 옵션이 존재하는 경우우에는 chip 스타일을 사용하세요.</p>
+      <p class="design-article-description">단일선택. 하나의 옵션을 필수로 선택해야 하기 때문에 기본 선택 옵션이 필요합니다. 세로 정렬로만 사용하세요. 가로 정렬, 5개 이상의 옵션에는 chip 스타일을 사용하세요.</p>
       <!-- (리액트에서 id 관련 이슈 input in label.) -->
       <fieldset role="radiogroup">
         <legend>radiogroup legend</legend>
@@ -956,8 +962,7 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Breadcrumb</h1>
-      <p class="design-article-description">페이지 레벨이 3단계 이상일 때 사용합니다. 캠페인 등을 통한 접속이 많은 페이지에서도 사용할 수 있습니다. todo 용도를 더 명확히 해야하고, pg 신청 시 이슈도 존재. 모바일에서도 탑바에 뒤로가기나 닫기 버튼으로 대체. 푸터(사이트맵위)에 배치하는 케이스도 있음. 딥 사이트맵에서 괜찮은 듯.</p>
-      <!-- <p>(법적으로 혹은 PG사에서 체크할 때 상품 리스트 페이지에서 이슈가 있었음)</p> -->
+      <p class="design-article-description">페이지 레벨이 3단계 이상일 때 사용합니다. 캠페인 등을 통한 유입이 많은 페이지에서도 사용할 수 있습니다. todo 용도를 더 명확히 해야하고, pg 신청 시 이슈도 존재. 모바일에서도 탑바에 뒤로가기나 닫기 버튼으로 대체. 푸터(사이트맵위)에 배치하는 케이스도 있음. 딥 사이트맵에서 괜찮은 듯.</p>
       <nav class="breadcrumb" aria-label="breadcrumb">
         <a class="breadcrumb-item breadcrumb-home" href="/">홈</a>
         <i class="breadcrumb-divider">/</i>
@@ -969,14 +974,10 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Text Links</h1>
-      <!-- <p class="design-article-description">문단 <a href="#" class="link-inner">내부 링크</a>와 문단 <a href="#" class="link-outer">외부 링크</a>를 구분합니다.</p> -->
-      <p class="design-article-description">작성 중.</p>
+      <p class="design-article-description">문단 <a href="#" class="link-inner">내부 링크</a>와 문단 <a href="#" class="link-outer">외부 링크</a>를 구분합니다.</p>
       <blockquote>
-        <p>요약한 텍스트를 펼쳐보기 위한 더보기 버튼은 중요도가 낮기 때문에 톤 다운된 검정도 많이 사용. 링크 vs 텍스트 버튼. history: 21.06 내부 외부 링크 구분하지 않음. 언더라인 있으니 hover state 표현하기 어려움. 하지만 컴포넌트는 여전히 따로 사용하는 것이 어떨까.</p>
-        <p>external => target="_blank" rel="noopener noreferrer"</p>
-        <p>hover state</p>
+        external link ? target="_blank" rel="noopener noreferrer"
       </blockquote>
-      <!-- <p>internal / external(+아이콘?), More(확장) / Learn More(링크)</p> -->
       <p>형무소 안에서는 소장의 말이 곧 법이었으며 죄수들의 잘못과 실수는 결코 용납되지 않는다. 어머니의 사망 소식을 듣고 인해 2번이나 탈옥을 시도했다가 체포된 <a class="link-inner" href="#">루크</a>의 발에 쇠통이 채워지며 루크는…<a class="more link-outer" href="#" style="margin-left:.25rem;">더 보기</a></p>
     </article>
 
@@ -990,7 +991,7 @@
       <h1 class="design-article-title">Text Lists</h1>
       <p class="design-article-description">작성 중.</p>
       <blockquote>
-        텍스트로 리스트업하는 경우에만 리스트 태그(li)로 마크업. (role=listitem)
+        리스트 태그(li)는 텍스트 리스트에서 마크업합니다. (role=listbox/listitem)
       </blockquote>
       <ul class="list-sample">
         <li title="unordered list, level 1">순서가 없는 리스트
@@ -1072,7 +1073,7 @@
           </tbody>
         </table>
       </section>
-      <p style="margin:var(--space-after-item);font-size:var(--caption);">레이블이 아이콘인 경우 box에 넣을 것인지. 고정 가로 값이 없음.</p>
+      <p style="margin:var(--space-after-item);font-size:var(--caption);">레이블에 아이콘을 단독으로 사용하지 않습니다.</p>
 
       <br />
 
@@ -1087,9 +1088,14 @@
 
     <article class="design-article js-tab">
       <h1 class="design-article-title">Tab</h1>
-      <p class="design-article-description">탭이 중첩되지 않도록 플로우를 설계하는 것이 중요합니다. 콘텐츠 필터링에는 chip 스타일을 사용합니다. 스크롤스파이 기능을 위해 탭을 사용할 수 없습니다. 기본 탐색 패턴으로 햄버거와 탭을 함께 사용하지 마시오. 유저/장바구니 등 보조 탐색 옵션<p>
+      <p class="design-article-description">2개 이상의 탭을 중첩하지 않는 플로우를 설계하세요. 1개의 탭 아래에 1개의 chip 스타일의 필터를 추가할 수 있습니다. 기본 탐색 패턴으로 햄버거와 탭을 함께 사용하지 마시오(이거는 바텀네비게이션의 탭바). 유저/장바구니 등 보조 탐색 옵션<p>
       <blockquote>
-        <i>🔨</i> 브라우저 히스토리 / 탭의 갯수 제한 4~5개 or 가로 스크롤, HIG의 segmented control과 tab 비교하여 설명.
+        <ul>
+          <li>스크롤스파이 기능을 위해 탭을 사용할 수 없습니다.</li>
+          <li>브라우저 히스토리</li>
+          <li>탭의 갯수 제한 4~5개 or 가로 스크롤</li>
+          <li>HIG의 segmented control과 tab은 무엇이 다른가?</li>
+        </ul>
       </blockquote>
       <nav class="profile-tablist" role="tablist">
 				<button class="profile-tablist-tab" role="tab" aria-selected="true">🐗 프로젝트 <i class="profile-tablist-tab-badge">5</i></button>
@@ -1117,7 +1123,10 @@
       <h1 class="design-article-title">Tooltip</h1>
       <p class="design-article-description">작성 중. 용어 혹은 근거.</p>
       <blockquote>
-        페이지 로딩과 동시에 툴팁이 열려 있는 경우 doorhanger가 필요하다.
+        <ul>
+          <li>페이지 로딩과 동시에 툴팁이 열려 있을 때 doorhanger가 필요하다.</li>
+          <li>새 창으로 링크할 수 없습니다.</li>
+        </ul>
       </blockquote>
       <aside class="tooltip">
         <span class="tooltip-trigger" aria-describedby="tooltip1">툴팁 <i>?</i></span>
@@ -1127,7 +1136,7 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Alerts</h1>
-      <p class="design-article-description">시스템이나 브라우저의 상태, 사용자의 행동에 피드백으로 사용합니다. 경고가 사용자의 잘못이 아닌 경우 "오류" 대신 "시스템 오류"와 같은 용어를 사용하여 사용자가 잘못한 것처럼 느끼지 않도록. 한 문장으로 간단하게 사용하세요. 제목 불필요. 닫기 버튼도 불필요. 자동으로 닫히도록.</p>
+      <p class="design-article-description">시스템이나 브라우저의 상태, 사용자의 행동에 피드백으로 사용합니다. 경고가 사용자에 귀책이 없을 때 "오류" 대신 "시스템 오류"와 같은 용어를 사용하여 사용자가 잘못한 것처럼 느끼지 않도록. 한 문장으로 간단하게 사용하세요. 제목 불필요. 닫기 버튼도 불필요. 자동으로 닫히도록.</p>
       
       <blockquote>
         <p>브라우저가 role="alert"속성이 있는 요소를 발견 하면 즉시 사용자에게 경고 내용을 읽습니다.</p>
@@ -1473,7 +1482,7 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Table</h1>
-      <p class="design-article-description">작성 중. horizental scrolling(optional)</p>
+      <p class="design-article-description">작성 중.</p>
       <table>
         <caption>히라가나 오십음도</caption>
         <!-- <colgroup>
@@ -1519,7 +1528,7 @@
       </table>
       <br />
       <table>
-        <caption>히라가나 오십음도</caption>
+        <caption>히라가나 오십음도 horizental scrolling(optional)</caption>
         <tbody role="rowgroup">
           <tr role="row" aria-rowindex="11">
             <th scope="row">제목</th>
@@ -1542,7 +1551,7 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Accordions</h1>
-      <p class="design-article-description">질의응답 등 정보를 요약하여 목록화하는 경우(?)에만 사용하세요. 공지사항 정도의 간단한 게시글에서도 사용할 수 있으나 그 이상의 경우에는 다른 유아이를 고민하세요.</p>
+      <p class="design-article-description">질의응답 등 정보를 요약하여 목록화할 때 사용합니다. 텍스트 위주의 공지사항 게시글에서 사용할 수 있으나 그 이상에는 다른 유아이를 고민하세요.</p>
       <!-- <blockquote>
         plus 아이콘을 엄격하게. caret으로 변경?
       </blockquote> -->
@@ -1689,7 +1698,7 @@
       <h1 class="design-article-title">Step</h1>
       <p class="design-article-description">모바일 퍼스트(가로레이아웃 후순위). 아코디언(optional), 버튼(optional), 타임라인 / 히스토리와 비슷한 맥락</p>
       <blockquote>
-        <p>stepper 네이밍은 input type="range" 에 사용하는 경우도 있음. 속성값으로 slider가 사용되기 때문에 구분하기 위해 carousel 네이밍.</p>
+        <p>stepper 네이밍은 input type="range" 있음. 속성값으로 slider가 사용되기 때문에 구분하기 위해 carousel 네이밍.</p>
       </blockquote>
 
       <h6 class="title-bordered">Vertical</h6>
@@ -1697,7 +1706,7 @@
         <div class="step-item is-active">
           <span class="step-item-icon">1</span>
           <h3 class="step-item-title">장바구니</h3>
-          <p class="step-item-description tile-elevated">대통령은 국가의 원수이며, 외국에 대하여 국가를 대표한다. 국가원로자문회의의 조직·직무범위 기타 필요한 사항은 법률로 정한다. 국가는 대외무역을 육성하며, 이를 규제·조정할 수 있다.</p>
+          <p class="step-item-description tile-flat">대통령은 국가의 원수이며, 외국에 대하여 국가를 대표한다. 국가원로자문회의의 조직·직무범위 기타 필요한 사항은 법률로 정한다. 국가는 대외무역을 육성하며, 이를 규제·조정할 수 있다.</p>
         </div>
         <div class="step-space is-active">
           <span class="step-space-dot"></span>
@@ -2005,22 +2014,32 @@
         </div>
       </article>
 
+      <br />
 
-      <div class="temp8" style="display:flex;max-width:375px;">
-        <div>
-          <figure>🦁</figure>
-          <span>수줍이</span>
+      <div class="tile-elevated" style="max-width:375px;">
+        <div class="profile-user" style="float:none;width:100%;height:48px;margin-bottom:1rem;" role="listitem">
+          <figure class="profile-user-avatar" style="float:left;width:48px;height:48px;margin-right:var(--space-after-medium);"></figure>
+          <h2 class="profile-user-name" style="font-size:var(--body);">Gyeongsoo I</h2>
+          <span class="profile-user-id" style="color:var(--gray400);">유아이 디자이너</span>
         </div>
-        <div>
-          <figure>🦁</figure>
-          <span>수줍이</span>
-        </div>
-        <div>
-          <figure>🦁</figure>
-          <span>수줍이</span>
+        <div class="temp8" style="display:flex;max-width:375px;">
+          <div>
+            <figure>🦁</figure>
+            <span>Typography</span>
+          </div>
+          <div>
+            <figure>🦁</figure>
+            <span>Design System</span>
+          </div>
+          <div>
+            <figure>🦁</figure>
+            <span>Startup</span>
+          </div>
         </div>
       </div>
-      <hr />
+
+      <br />
+      
       <div class="daylist">
         <div class="day" role="listitem">
           <span class="day-label">mon</span>
@@ -2036,6 +2055,8 @@
         </div>
       </div>
 
+      <br />
+
       <aside class="banner" role="banner">
         <div class="banner-background"></div>
         <h2 class="banner-title">This is Banner Component.</h2>
@@ -2045,6 +2066,14 @@
 
       <br />
 
+      <div class="number">
+        <div class="number-card">8</div>
+        <div class="number-card">8</div>
+        <div class="number-card">3</div>
+        <div class="number-card">-</div>
+      </div>
+
+      <br />
 
       <form class="filter" hidden>
         <header class="filter-head">
@@ -2060,10 +2089,6 @@
         </footer>
       </form>
     </article>
-    
-
-    <span class="letter-piece"><i>소</i></span>
-
 
     <!-- <i class="icon-check1"></i>
     <style>

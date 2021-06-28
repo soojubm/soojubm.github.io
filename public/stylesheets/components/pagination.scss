@@ -1,7 +1,10 @@
 .pagination {display:flex;justify-content:center;position:relative;}
-.pagination-previous {@include box-small;line-height:var(--size-small);position:absolute;left:0;}
-.pagination-next {@include box-small;line-height:var(--size-small);position:absolute;right:0;}
+.pagination-previous {@include box-small;background-color:var(--gray0);position:absolute;left:0;}
+.pagination-next {@include box-small;background-color:var(--gray0);position:absolute;right:0;}
 .pagination-link {@include box-small;border:none;background-color:var(--gray0);}
+
+.pagination-previous:hover,
+.pagination-next:hover,
 .pagination-link:hover {background-color:var(--gray100);}
 .pagination-link.is-current {background-color:var(--color-primary);color:var(--gray0);}
 .pagination-ellipsis {@include box-small;border:none;background-color:var(--gray0);color:var(--gray400);letter-spacing:1px;}

@@ -8,12 +8,12 @@
   background-color: var(--gray100);
   font-size: var(--caption);
   color: var(--gray800);
-  &.is-disabled {
-    background-color: var(--gray200);
-    color: var(--gray800);
-    opacity: .4;
-    cursor: not-allowed;
-  }
+  // &.is-disabled {
+  //   background-color: var(--gray200);
+  //   color: var(--gray800);
+  //   opacity: .4;
+  //   cursor: not-allowed;
+  // }
 }
 
 

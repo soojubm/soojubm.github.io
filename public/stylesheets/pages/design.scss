@@ -232,7 +232,7 @@
 
 
 .number {display:flex;justify-content:center;}
-.number-card {display:flex;justify-content:center;align-items:center;width:48px;height:64px;background:var(--gray100);border-radius:var(--shadow400);font-size:var(--title);font-weight:var(--font-weight-bold);margin:0 .25rem;}
+.number-card {display:flex;justify-content:center;align-items:center;width:48px;height:64px;background:var(--gray100);border-radius:var(--radius400);font-size:var(--title);font-weight:var(--font-weight-bold);margin:0 .25rem;}
 
 .userlist {@include tile-elevated;max-width:400px;}
 .userlist header {display:flex;align-items:center;justify-content:space-between;margin:var(--space-leading-subhead) 0 1rem 0;}
@@ -327,14 +327,18 @@
 
 
 .temp8 {}
-.temp8 div {width:80px;margin-right:1rem;text-align:center;    background: var(--gray0);
+.temp8 div {width:80px;margin-right:1rem;background: var(--gray0);
   border: var(--border100);
   border-radius: var(--radius400);
-  padding: .5rem;position:relative;}
+  padding: .5rem;
+  font-size:var(--caption);
+  position:relative;
+  z-index: 1;
+}
 .temp8 div:hover{@include hover-item;}
 .temp8 div figure {
   display:flex;align-items:center;justify-content:center;
-          width:80px;height:80px;margin:0 0 .25rem 0;border-radius:var(--radius400);background:indianred;font-size:var(--title);
+          width:80px;height:80px;border-radius:var(--radius400);background:indianred;font-size:var(--title);
 }
 
 
