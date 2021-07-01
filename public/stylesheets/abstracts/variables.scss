@@ -23,21 +23,21 @@ $transition-fade: opacity 0.15s linear;
 
 
   // --fontstack: sans-serif;
-  --fontstack: 'Asap', 'AritaDotum', 'Apple SD Gothic Neo', sans-serif;
+  --fontstack: 'Pretendard', 'Asap', 'AritaDotum', sans-serif;
 
   --navbar-height: 56px;
   --subheader-height: 56px;
 
   --font-size-huge: 3rem;
-  --font-size-large: 2rem;
-  --font-size-medium: 1.125rem;
-  --font-size-small: .875rem;
+  --font-size-huge: 2rem;
+  --font-size-large: 1.125rem;
+  --font-size-medium: .875rem;
   --font-size-tiny: .75rem;
 
   --font-size-display: var(--font-size-huge);
-  --font-size-title: var(--font-size-large);
-  --font-size-subhead: var(--font-size-medium);
-  --font-size-body: var(--font-size-small);
+  --font-size-title: var(--font-size-huge);
+  --font-size-subhead: var(--font-size-large);
+  --font-size-body: var(--font-size-medium);
   --font-size-helper: var(--font-size-tiny);
   --font-size-caption: var(--font-size-tiny);
 
@@ -89,15 +89,12 @@ $transition-fade: opacity 0.15s linear;
   --width-popover: 0;
   --width-dialog: 0;
 
-  --size-large: 80px;
-  --size-medium: 48px;
-  --size-small: 32px;
-  --size-xsmall: 24px;
+  --size-huge: 80px;
+  --size-large: 48px;
+  --size-medium: 32px;
+  --size-small: 24px;
   --size-tiny: 16px;
 
-
-
-  
   
   --space: .75rem;
   --space-small: .5rem;
@@ -115,8 +112,8 @@ $transition-fade: opacity 0.15s linear;
   --space-between-listitem: .75rem;
   --space-between-groupitem: .25rem;
   --space-between-groupitem-minus: calc(var(--space-between-groupitem) * -1);
-  --space-between-section: 8rem;
-  --space-between-section-large: 12rem;
+  --space-between-article: 8rem;
+  --space-between-section: 12rem;
 
 
 
@@ -151,7 +148,7 @@ $transition-fade: opacity 0.15s linear;
   --button-background: #fff;
   --button-text-color: #fff;
 
-
+  // ! z-index
   --zindex-default: 1;
 
   --zindex-popover: 2; // !
@@ -168,9 +165,7 @@ $transition-fade: opacity 0.15s linear;
   --zindex-toast: 9; // !
 
   --zindex-bottombar: 8;
-  
   --zindex-floating: null;
-
   --zindex-loader: 10;
 
 

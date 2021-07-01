@@ -1,13 +1,13 @@
 .pagination {display:flex;justify-content:center;position:relative;}
-.pagination-previous {@include box-small;background-color:var(--gray0);position:absolute;left:0;}
-.pagination-next {@include box-small;background-color:var(--gray0);position:absolute;right:0;}
-.pagination-link {@include box-small;border:none;background-color:var(--gray0);}
+.pagination-previous {@include avatar-medium;background-color:var(--gray0);position:absolute;left:0;}
+.pagination-next {@include avatar-medium;background-color:var(--gray0);position:absolute;right:0;}
+.pagination-link {@include avatar-medium;border:none;background-color:var(--gray0);}
 
 .pagination-previous:hover,
 .pagination-next:hover,
 .pagination-link:hover {background-color:var(--gray100);}
 .pagination-link.is-current {background-color:var(--color-primary);color:var(--gray0);}
-.pagination-ellipsis {@include box-small;border:none;background-color:var(--gray0);color:var(--gray400);letter-spacing:1px;}
+.pagination-ellipsis {@include avatar-medium;border:none;background-color:var(--gray0);color:var(--gray400);letter-spacing:1px;}
 // .pagination-last:before {content:'...';display:block;width:32px;height:32px;cursor:default;}
 
 .pagination2 {display:flex;justify-content:center;}

@@ -1,10 +1,10 @@
 
 
-@mixin title {font-size:var(--font-size-large);line-height:1.4;font-weight:var(--font-weight-bold);letter-spacing:-.025rem;text-indent:-1px;color:var(--gray800);}
+@mixin title {font-size:var(--font-size-huge);line-height:1.4;font-weight:var(--font-weight-bold);letter-spacing:-.025rem;text-indent:-1px;color:var(--gray800);}
 @mixin subhead {font-size:var(--font-size-subhead);font-weight:var(--font-weight-bold);letter-spacing:-.025rem;}
 
 @mixin text-headlilne {text-indent:-3px;}
-@mixin text-title {font-size:var(--font-size-large);line-height:1.4;font-weight:var(--font-weight-bold);letter-spacing:-.025rem;text-indent:-1px;}
+@mixin text-title {font-size:var(--font-size-huge);line-height:1.4;font-weight:var(--font-weight-bold);letter-spacing:-.025rem;text-indent:-1px;}
 @mixin text-subheading {font-size:var(--font-size-subhead);font-weight:var(--font-weight-bold);letter-spacing:-.025rem;}
 @mixin text-caption {font-size:var(--font-size-caption);font-weight:var(--font-weight-bold);}
 @mixin text-label {font-size:var(--font-size-body);font-weight:normal;color:var(--gray400);}
@@ -100,7 +100,7 @@
 @mixin tile-elevated-small {@include tile-flat;padding:.5rem;box-shadow:var(--shadow400);}
 
 // layout 유동성을 위해. centered mixin은 layou의 유동성을 해친다.
-// ! box-small의 display:flex가 hidden 속성과 충돌
+// ! avatar-medium의 display:flex가 hidden 속성과 충돌
 @mixin tile-avatar($cell) {
   display: flex;align-items: center;justify-content: center;
   width: $cell;height: $cell;
@@ -142,11 +142,11 @@
 
 
 
-@mixin box-large {@include tile-avatar(var(--size-large));}
-@mixin box-medium {@include tile-avatar(var(--size-medium));}
-@mixin box-small {@include tile-avatar(var(--size-small));}
-@mixin box-xsmall {@include tile-avatar(var(--size-xsmall));}
-@mixin box-tiny {@include tile-avatar(var(--size-tiny));}
+@mixin avatar-huge {@include tile-avatar(var(--size-huge));}
+@mixin avatar-large {@include tile-avatar(var(--size-large));}
+@mixin avatar-medium {@include tile-avatar(var(--size-medium));}
+@mixin avatar-small {@include tile-avatar(var(--size-small));}
+@mixin avatar-tiny {@include tile-avatar(var(--size-tiny));}
 
 .link-inner {@include link-inner;}
 .link-outer {@include link-outer;}
@@ -194,14 +194,14 @@
   display: flex;align-items: center;
   // flex, inline-flex인 경우 a, button 차이 발생..
   // 다음에 hr 태그가 오면 그룹 내부 간격이 안맞음
-  height:var(--size-small);padding:0 1rem;border:1px solid transparent;border-radius:var(--radius400);box-sizing:border-box;
+  height:var(--size-medium);padding:0 1rem;border:1px solid transparent;border-radius:var(--radius400);box-sizing:border-box;
   background:var(--gray100);
   line-height:30px;color:var(--gray800);position:relative;
 }
 @mixin chip-heading {float:left;margin:0 1rem 0 -17px;border-top-right-radius:0;border-bottom-right-radius:0;}
 @mixin chip-tailing {float:right;margin:0 -17px 0 1rem;border-top-left-radius:0;border-bottom-left-radius:0;}
 
-@mixin badge {@include box-tiny;}
+@mixin badge {@include avatar-tiny;}
 
 
 

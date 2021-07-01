@@ -5,8 +5,8 @@
 .timeline-item + .timeline-item {padding:2rem 0 0 0;}
 .timeline-item:before {content:'';display:block;position:absolute;left:15px;top:0;bottom:0;width:1px;background:var(--gray200);}
 .timeline-item-head {padding:0 0 0 3.5rem;position:relative;}
-.timeline-item-head-icon {@include box-small;position:absolute;left:0;top:0;}
-.timeline-item-head-title {font-size:var(--font-size-body);line-height:var(--size-small);}
+.timeline-item-head-icon {@include avatar-medium;position:absolute;left:0;top:0;}
+.timeline-item-head-title {font-size:var(--font-size-body);line-height:var(--size-medium);}
 .timeline-item-head-date {color:var(--gray400);}
 .timeline-item-head-description {margin:1rem 0 0 0;}
 .timeline-item-head-description a {color:var(--gray800);text-decoration:underline;}

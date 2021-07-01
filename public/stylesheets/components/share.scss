@@ -1,10 +1,10 @@
 
-.share-trigger {@include box-small;margin:0 0 1rem 0;}
+.share-trigger {@include avatar-medium;margin:0 0 1rem 0;}
 .share-trigger svg {width:1rem;}
 .share {
     max-width:400px;@include tile-elevated;
 }
-.share-back {@include box-small;position:absolute;right:.5rem;top:.5rem;}
+.share-back {@include avatar-medium;position:absolute;right:.5rem;top:.5rem;}
 .share-title {@include subhead;}
 .share-facebook {display:flex;align-items:center;width:100%;margin:1rem 0;position:relative;z-index:var(--zindex-default);}
 .share-facebook:hover {@include hover-item;}
@@ -12,9 +12,9 @@
 .share-twitter:hover {@include hover-item;}
 .share-kakao {display:flex;align-items:center;width:100%;margin:1rem 0;position:relative;z-index:var(--zindex-default);}
 .share-kakao:hover {@include hover-item;}
-.share-facebook-icon {@include box-small;margin-right:1rem;background-color:var(--color-facebook) !important;}
-.share-twitter-icon {@include box-small;margin-right:1rem;background-color:var(--color-twitter);}
-.share-kakao-icon {@include box-small;margin-right:1rem;background-color:var(--color-kakao);}
+.share-facebook-icon {@include avatar-medium;margin-right:1rem;background-color:var(--color-facebook) !important;}
+.share-twitter-icon {@include avatar-medium;margin-right:1rem;background-color:var(--color-twitter);}
+.share-kakao-icon {@include avatar-medium;margin-right:1rem;background-color:var(--color-kakao);}
 .share-copy {display:flex;flex-wrap:wrap;width:100%;}
 .share-copy-label {}
 .share-copy-url {}

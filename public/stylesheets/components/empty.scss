@@ -1,5 +1,5 @@
 .empty {width:100%;max-width:var(--width-small);margin:0 auto;padding:4rem 5%;box-sizing:border-box;text-align:center;}
-.empty-icon {@include box-large;margin:0 auto 2rem;font-size:40px;}
+.empty-icon {@include avatar-huge;margin:0 auto 2rem;font-size:40px;}
 .empty-title {@include subhead;}
 .empty-description {margin:1rem 0 2rem;}
 .empty-list {margin:2rem auto;padding:1rem 0 0 0;border-top:var(--border100);}

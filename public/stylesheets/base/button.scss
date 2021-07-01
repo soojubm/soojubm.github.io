@@ -26,7 +26,7 @@ button {@include reset-button;}
 @mixin button {
   display: inline-block;
   min-width: 6rem;
-  height: var(--size-medium);
+  height: var(--size-large);
   padding: 9px 1rem; // btn pad
   box-sizing:border-box;
   border-radius: var(--radius400);
@@ -105,7 +105,7 @@ button {@include reset-button;}
 
 @mixin button-small {
   min-width: auto;
-  height:var(--size-small);padding:3px 1rem;font-size:var(--font-size-caption);
+  height:var(--size-medium);padding:3px 1rem;font-size:var(--font-size-caption);
 }
 
 // ! backButton closeButton :: back close 아이콘은 어차피 단독으로 쓰이지 않는다!
@@ -122,4 +122,4 @@ button {@include reset-button;}
 
 
 .button-heading {}
-.button-tailing {@include box-xsmall;display:inline-flex;}
+.button-tailing {@include avatar-small;display:inline-flex;}

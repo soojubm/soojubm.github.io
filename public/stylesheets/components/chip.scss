@@ -4,8 +4,8 @@
 .chip:hover {border-color:var(--gray800);}
 .chip-count {@include tag;}
 .chip-label {margin:0 1rem;}
-.chip figure {@include box-small;@include chip-heading;border:var(--border100);background:var(--gray0);}
-.chip-icon {@include box-small;@include chip-tailing;border:var(--border100) !important;background:var(--gray0);}
+.chip figure {@include avatar-medium;@include chip-heading;border:var(--border100);background:var(--gray0);}
+.chip-icon {@include avatar-medium;@include chip-tailing;border:var(--border100) !important;background:var(--gray0);}
 .chip-icon .icon-caret {}
 .chip-icon .icon-check {}
 .chip-icon .icon-close {}

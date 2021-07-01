@@ -1,5 +1,5 @@
 .login {max-width:var(--width-small);margin:0 auto;padding:2rem 5%;position:relative;}
-.login-head-logo {@include box-small;margin:0 0 1rem 0;}
+.login-head-logo {@include avatar-medium;margin:0 0 1rem 0;}
 .login-title {@include title;}
 .login-description {margin:1rem 0;font-size:var(--font-size-body);}
 .login-email {margin:2rem 0;}
