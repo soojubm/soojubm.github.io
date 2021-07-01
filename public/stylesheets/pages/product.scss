@@ -90,7 +90,7 @@
 .product-detail-box div.rightbox h2 {@include subhead;margin:0 0 1rem 0;}
 .product-detail-box + .product-detail-box {margin-top:calc(-6rem - 2px);border-radius:0 0 var(--radius400) var(--radius400);}
 
-.product-quick {display:flex;align-items:center;max-width:var(--width-large);height:var(--size-large);margin:0 auto;background:var(--gray0);position:fixed;left:0;right:0;bottom:0;z-index:5;}
+.product-quick {display:flex;align-items:center;max-width:var(--width-large);height:var(--size-large);margin:0 auto;background:var(--gray0);position:fixed;left:0;right:0;bottom:0;z-index:var(--zindex-navigatoin);}
 .product-quick:before {content:'';display:block;height:var(--size-large);background:var(--gray0);border-top:var(--border100);position:fixed;left:0;right:0;bottom:0;}
 .product-quick-head {width:35%;position:relative;}
 .product-quick-head-image {float:left;@include box-medium;margin:0 1rem 0 0;}
@@ -121,7 +121,7 @@
 .product-recommend-title {text-align:center;}
 
 
-@media (--viewport-large) {
+@media (--breakpoint-large) {
 	.product {margin-top:0;box-sizing:content-box;}
 	.product:before {display:none;}
 	.product-image {@include reset-position;position:absolute;}
@@ -135,14 +135,14 @@
 }
 
 
-@media (--viewport-small) {
+@media (--breakpoint-small) {
 	.product {padding-top:0;}
 	.product-image:before {content:'';display:block;background:var(--gray100);position:absolute;top:-320px;left:-240px;bottom:240px;z-index:-1;}
 	.product-info {margin-right:0;padding-left:0;}
 	.product-info-byline {margin:.25rem 0 0 0;}
 	.product-info-price {margin:.5rem 0 0 0;}
 	.product-image {width:100%;height:400px;margin:0 0 1rem 0;position:relative;top:auto;}
-	.product-order {margin:0;padding:1rem 5% calc(constant(safe-area-inset-bottom) + 1rem);padding:1rem 5% calc(env(safe-area-inset-bottom) + 1rem);box-sizing:border-box;background:var(--gray0);box-shadow:var(--shadow400);position:fixed;left:0;right:0;top:auto;bottom:0;z-index:6;}
+	.product-order {margin:0;padding:1rem 5% calc(constant(safe-area-inset-bottom) + 1rem);padding:1rem 5% calc(env(safe-area-inset-bottom) + 1rem);box-sizing:border-box;background:var(--gray0);box-shadow:var(--shadow400);position:fixed;left:0;right:0;top:auto;bottom:0;z-index:var(--zindex-navigation);}
 	
 	.product-order hr,
 	.product-order-option,

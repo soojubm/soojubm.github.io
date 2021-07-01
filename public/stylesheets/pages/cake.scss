@@ -8,7 +8,7 @@
 .cake-head-engtitle {@include subhead;}
 .cake-head-description {margin:1rem 0 0 0;}
 
-.cake-poster {width:400px;height:600px;overflow:hidden;border-radius:var(--radius400);box-shadow:var(--shadow400);position: absolute;right:0;top:4rem;z-index:1;}
+.cake-poster {width:400px;height:600px;overflow:hidden;border-radius:var(--radius400);box-shadow:var(--shadow400);position: absolute;right:0;top:4rem;z-index:var(--zindex-default);}
 .cake-poster img {animation: fadeup 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955) forwards .2s;}
 .cake-head-button {@include button-primary;min-width:11rem;margin-right:1rem;}
 .cake-head-review {@include button-text;min-width:11rem;}
@@ -26,7 +26,7 @@
 .cake-info h2 {width:400px;flex-shrink:0;@include subhead;}
 .cake-info p {width:calc(100% - 400px);}
 
-@media (--viewport-large) {
+@media (--breakpoint-large) {
   .cake-poster {width:60%;max-width:var(--width-small);height:auto;margin:0 0 2rem 0;@include reset-position;}
   .cake-summary {margin-left:0;margin-right:0;padding-left:0;padding-right:0;}
   .cake-info {flex-wrap:wrap;}

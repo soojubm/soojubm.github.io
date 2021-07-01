@@ -18,7 +18,7 @@
 .setting-row-value-phone {width:100%;}
 
 .setting-row-change {@include box-small;font-size:var(--body);position:absolute;right:0;}
-.setting-row-change b {display:none;background:var(--gray0);transform:translateX(200px);transition:all .5s;position:relative;z-index:1;}
+.setting-row-change b {display:none;background:var(--gray0);transform:translateX(200px);transition:all .5s;position:relative;z-index:var(--zindex-default);}
 .setting-row-change i {}
 .setting-row:hover .setting-row-change b {transform:translateX(0);}
 .setting-row-foot {display:flex;}
@@ -34,7 +34,7 @@
 
 .setting-row-form {padding:1rem 0;cursor:default;}
 
-@media (--viewport-small) {
+@media (--breakpoint-small) {
   .setting-row-label {width:6rem;}
   .setting-row-value {width:calc(100% - 6rem);}
 }

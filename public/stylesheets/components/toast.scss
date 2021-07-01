@@ -11,7 +11,7 @@
 .dialog-footer-confirm {@include button-primary;width:var(--grid-column)}
 .dialog-close {@include box-small;@include position-right-top;}
 
-.toast {position:fixed;left:1rem;bottom:1rem;z-index:8;}
-@media (--viewport-small) {
+.toast {position:fixed;left:1rem;bottom:1rem;z-index:var(--zindex-toast);}
+@media (--breakpoint-small) {
   .toast {width:auto;max-width:100%;left:1rem;right:1rem;bottom:calc(constant(safe-area-inset-bottom) + 1rem);bottom:calc(env(safe-area-inset-bottom) + 1rem);}
 }

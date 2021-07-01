@@ -11,7 +11,7 @@
   height:0;
   padding: 0; // override;
   position:absolute;
-  z-index:5;
+  z-index:var(--zindex-popover);
   transition:all 0.2s ease;
   transform:scale(0);
   transform-origin:left top;
@@ -27,7 +27,7 @@
   margin: 1rem;
   color:var(--gray800);
   position:relative;
-  z-index:1;
+  z-index:var(--zindex-default);
 }
 .dropdown-menu-link:hover {@include hover-item;}
 .is-active + .dropdown-menu {

@@ -16,7 +16,7 @@
 .is-vertical .step-item-icon {margin:0 auto;@include reset-position;}
 .is-vertical .step-item-title {margin-left:0;margin-top:var(--space-after-small);}
 
-// @media (--viewport-small) {
+// @media (--breakpoint-small) {
 //   .step-item {display:flex;width:auto;margin:0;}
 //   .step-item-title {margin-top:0;line-height:var(--size-small);}
 //   .step-item-icon {margin:0 1.25rem 0 0;}

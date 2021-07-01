@@ -16,7 +16,7 @@
 .color-item h3 {font-size:var(--body);text-transform:capitalize;}
 .color-item span {color:var(--gray400);}
 
-@media (--viewport-small) {
+@media (--breakpoint-small) {
 }
 
 .surface-item div {@include box-medium;box-shadow:var(--shadow400);}
@@ -24,7 +24,7 @@
 
 .design {}
 .design-head {background:var(--gray100);border-radius:var(--radius400);position:fixed;left:5%;top:3.75rem;right:70%;bottom:3.75rem;}
-// .design-head {overflow:hidden;background:var(--color-primary);position:fixed;left:0;right:0;top:0;bottom:0;z-index:1;transform:translateX(-50%);transition:transform .8s $bezier-base .4s;}
+// .design-head {overflow:hidden;background:var(--color-primary);position:fixed;left:0;right:0;top:0;bottom:0;z-index:var(--zindex-default);transform:translateX(-50%);transition:transform .8s $bezier-base .4s;}
 // .design-head.is-scrolled {transform:translateX(-50%);transition:transform .8s $bezier-base .4s;}
 
 .design-navigation {padding:.75rem var(--grid-margin);background:var(--gray0);position:relative;z-index:6 ;position:sticky;top:0;}
@@ -82,7 +82,7 @@
   transform: translate(-50%, -50%);}
 .space .tag:before {content:'';}
 
-@media (--viewport-large) {
+@media (--breakpoint-large) {
   .design {padding:0;}
   .design-head {height:20rem;position:relative;left:0;right:0;top:-8rem;bottom:0;transform:translateX(0)}
   .design-head.is-scrolled {transform:translateX(0)}
@@ -91,7 +91,7 @@
 }
 
 
-@media (--viewport-small) {
+@media (--breakpoint-small) {
   // .design-article {width:100%;}
 }
 
@@ -305,7 +305,7 @@
 
 .sidebar {}
 .sidebar-heading {margin:0 0 .5rem 0;@include text-label;}
-.sidebar-item {display:flex;align-items:center;margin:1rem 0;line-height:31px;position:relative;z-index:1;}
+.sidebar-item {display:flex;align-items:center;margin:1rem 0;line-height:31px;position:relative;z-index:var(--zindex-default);}
 .sidebar-item:hover {@include hover-item;}
 .sidebar-item h2 {display:flex;align-items:center;}
 .sidebar-item h2 figure {@include box-small;font-size:var(--body);}
@@ -314,7 +314,7 @@
 
 .sheet {@include tile-elevated;}
 .sheet-title {@include subhead;}
-.sheet button {position:relative;z-index:1;}
+.sheet button {position:relative;z-index:var(--zindex-default);}
 .sheet button:hover {@include hover-item;}
 
 .keywords {@include tile-elevated;max-width:400px;}
@@ -389,7 +389,7 @@
 .design-home nav a span {@include box-small;margin-left:auto;margin-top:2px;}
 .design-home nav a div {margin:2px 0 0 var(--space-before-badge);}
 
-@media (--viewport-small) {
+@media (--breakpoint-small) {
   .design-home nav {flex-direction:column;}
   .design-home nav a {width:100%;}
   .design-home nav a + a {margin-top:1rem;}

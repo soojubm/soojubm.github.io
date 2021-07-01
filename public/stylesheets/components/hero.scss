@@ -1,4 +1,4 @@
-.hero {max-width:var(--width-large);margin:0 auto;padding:3rem var(--grid-margin);border-radius:4px;position:relative;z-index:1;}
+.hero {max-width:var(--width-large);margin:0 auto;padding:3rem var(--grid-margin);border-radius:4px;position:relative;z-index:var(--zindex-default);}
 .hero-background {display:none;@include bleeding;background:var(--gray0);}
 .hero-eyebrow {display:block;margin:0 0 .25rem 0;font-size:var(--caption);color:var(--gray400);animation:fadeup .2s cubic-bezier(.455, .03, .515, .955) forwards .4s;opacity:0;}
 .hero-title {@include title;}
@@ -6,7 +6,7 @@
 .hero-description {width:50%;margin:var(--space-after-title) 0 1rem 0;font-size:var(--subhead);}
 .hero-features {display:flex;justify-content:space-between;margin:4rem 0 0 0;animation: fadeup .2s cubic-bezier(.455, .03, .515, .955) both 1s;}
 .hero-features > div {width:30%;}
-.hero .carousel {animation:fadeup .2s cubic-bezier(.455, .03, .515, .955) forwards 1s;opacity:0;position:relative;z-index:1;}
+.hero .carousel {animation:fadeup .2s cubic-bezier(.455, .03, .515, .955) forwards 1s;opacity:0;position:relative;z-index:var(--zindex-default);}
 .hero-foot {display:flex;animation:fadeup .2s cubic-bezier(.455, .03, .515, .955) forwards 1s;opacity:0;}
 .hero-cta {@include button-primary;}
 .hero-detail {@include button-text;margin-left:1rem;}
@@ -25,7 +25,7 @@
 .is-scrolled .hero-obj3 {animation:scaleout .4s ease 1.2s both;}
 .is-scrolled .hero-obj4 {animation:scaleout .4s ease 1s both;}
 
-@media (--viewport-small) {
+@media (--breakpoint-small) {
   .hero-description {width:100%;}
   .hero-obj1, .hero-obj2, .hero-obj3, .hero-obj4 {display:none;}
   .hero-obj4 {top:-18rem;right:-2rem;}

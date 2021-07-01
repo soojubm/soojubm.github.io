@@ -1,4 +1,4 @@
-// .banner {display:flex;justify-content:center;align-items:center;padding:2rem 0;border-radius:var(--radius400);background:var(--gray0);border:1px solid var(--color-box-border);text-align:center;position:relative;z-index:4;}
+// .banner {display:flex;justify-content:center;align-items:center;padding:2rem 0;border-radius:var(--radius400);background:var(--gray0);border:1px solid var(--color-box-border);text-align:center;position:relative;}
 // .banner-image {margin:0 1rem 0 -4rem;}
 // .banner-title {margin:0 2rem 0 0;@include subhead;}
 // .banner-button {@include button-secondary;}
@@ -10,7 +10,7 @@
 .banner-description {margin:1rem 0;}
 .banner-button {@include button-text;}
 
-@media (--viewport-small) {
+@media (--breakpoint-small) {
   // .banner {flex-wrap:wrap;}
   // .banner-title {width:100%;margin:0 0 1rem 0;}
 }

@@ -139,7 +139,7 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 // .textfield-input:not(select):readonly {background:none;padding-left:0;padding-right:0;border:none;outline:none;}
 // .textfield-input:not(select):readonly::placeholder {color:var(--gray800);}
 .textfield-input:focus {background:var(--gray0);border-color:var(--gray200);outline:0;}
-.textfield-reveal {position:absolute;right:1rem;bottom:calc(1rem - 1px);z-index:2;font-size:var(--caption);color:var(--gray400);}
+.textfield-reveal {position:absolute;right:1rem;bottom:calc(1rem - 1px);z-index:var(--zindex-default);font-size:var(--caption);color:var(--gray400);}
 .textfield-unit {width:40px;height:46px;padding:0 1rem;line-height:50px;text-align:right;color:rgba(0, 0, 0, 0.4);position:absolute;right:0;bottom:0;}
 .textfield-helper {margin-top:.25rem;color:var(--red800);}
 .textfield-button {border-top-left-radius:0;border-bottom-left-radius:0;position:absolute;right:0;top:0;}
@@ -149,11 +149,11 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 
 @mixin textfield-prefix {
   @include box-small;width:var(--size-xsmall);height:var(--size-xsmall);background:var(--gray0);position:absolute;left:1rem;top:40px;pointer-events:none;
-  @media (--viewport-small) {top: 40px;}
+  @media (--breakpoint-small) {top: 40px;}
 }
 @mixin textfield-surfix {
   @include box-small;width:var(--size-xsmall);height:var(--size-xsmall);background:var(--gray0);position:absolute;right:1rem;top:40px;pointer-events:none;
-  // @media (--viewport-small) {top:35px;}
+  // @media (--breakpoint-small) {top:35px;}
 }
 
 

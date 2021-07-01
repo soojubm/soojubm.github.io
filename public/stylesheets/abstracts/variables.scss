@@ -1,6 +1,6 @@
-@custom-media --viewport-large (max-width: 1380px);
-@custom-media --viewport-small (max-width: 1080px);
-@custom-media --viewport-tiny (max-width: 760px);
+@custom-media --breakpoint-large (max-width: 1380px);
+@custom-media --breakpoint-small (max-width: 1080px);
+@custom-media --breakpoint-tiny (max-width: 760px);
 
 $padding100: 4px 1rem 5px; // 32
 $padding200: 9px 1rem 11px; // 버튼, 텍스트인풋 48
@@ -12,11 +12,11 @@ $transition-fade: opacity 0.15s linear;
 :root {
   color-scheme: light dark;
 
-  --viewport-phone: 0;
-  --viewport-tablet: 0;
-  --viewport-laptop: 0;
-  --viewport-desktop: 0;
-  --viewport-tv: 0;
+  --breakpoint-phone: 0;
+  --breakpoint-tablet: 0;
+  --breakpoint-laptop: 0;
+  --breakpoint-desktop: 0;
+  --breakpoint-tv: 0;
   // body에 width를 줘버리기, viewport vs breakpoint
 
   // ! viewport : desktop first
@@ -62,7 +62,9 @@ $transition-fade: opacity 0.15s linear;
   --gray999: #343c38; // 테마와 무관하게 항상 가장 진한 회색
   --green100: rgba(10, 160, 80, 0.1); // previous #ddf5e9;
   --green800: #1b995c;
-  --red100: #fff0f5;
+  // --red100: #fff0f5;
+  // --red100: rgba(243, 68, 97 / 6%);
+    --red100: rgba(243, 68, 97, .06);
   --red800: #f02849;
 
   --color-google: #fff;
@@ -151,15 +153,25 @@ $transition-fade: opacity 0.15s linear;
 
 
   --zindex-default: 1;
+
+  --zindex-popover: 2; // !
+  --zindex-tooltip: 2;
+  --zindex-menu: 2;
+  --zindex-dropdown: 2;
+
+  --zindex-navigation: 4; // !
   --zindex-sticky: 4;
   --zindex-fixed: 4;
-  --zindex-tooltip: 2;
-  --zindex-popover: 6;
-  --zindex-dropdown: 6;
-  --zindex-modal-dim: 7;
-  --zindex-modal: 8;
-  --zindex-menu: 6;
-  --zindex-toast: 9;
+
+  --zindex-modal-dim: 6; // !
+  --zindex-modal: 7; // !
+  --zindex-toast: 9; // !
+
+  --zindex-bottombar: 8;
+  
+  --zindex-floating: null;
+
+  --zindex-loader: 10;
 
 
   --grid-column: calc(50% - .375rem);
@@ -172,11 +184,11 @@ $transition-fade: opacity 0.15s linear;
   --safearea-inset-bottom1: constant(safe-area-inset-bottom);
   --safearea-inset-bottom2: env(safe-area-inset-bottom);
 
-  @media (--viewport-large) {
+  @media (--breakpoint-large) {
     --width-large: 1020px;
   }
 
-  @media (--viewport-tiny) {
+  @media (--breakpoint-tiny) {
     // --grid-margin: 1rem;
     // --grid-margin-minus: calc(var(--grid-margin) * -1 - 4px);
   }

@@ -2,7 +2,7 @@
 .help-head {padding:4rem 0 6rem;text-align:center;position:relative;}
 .help-head-title {@include title;}
 .help-head-description {margin:1rem 0;}
-.search-result {max-width:560px;height:auto;margin:0 auto;padding:.5rem 0;border:var(--border100);box-sizing:border-box;background:var(--gray0);text-align:left;position:absolute;left:0;right:0;top:89px;z-index:1;}
+.search-result {max-width:560px;height:auto;margin:0 auto;padding:.5rem 0;border:var(--border100);box-sizing:border-box;background:var(--gray0);text-align:left;position:absolute;left:0;right:0;top:89px;z-index:var(--zindex-default);}
 .search-result-title {margin:0 0 0 0;padding:.75rem 1.5rem;font-size:var(--body);text-decoration:underline;}
 .search-result-item {display:block;padding:.75rem 1.5rem;line-height:32px;}
 .search-result-item h3 {font-size:var(--body);}
@@ -73,7 +73,7 @@
 .faq-partnership-description {margin:1rem 0 0;}
 
 // ! todo container variables = fullwidth
-@media (--viewport-small) {
+@media (--breakpoint-small) {
   .faq {padding:0 var(--grid-margin);}
 }
 

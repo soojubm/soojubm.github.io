@@ -112,7 +112,7 @@
 
 
 
-.about-email {display:flex;align-items:center;position:relative;z-index:1;}
+.about-email {display:flex;align-items:center;position:relative;z-index:var(--zindex-default);}
 .about-email:hover {@include hover-item;}
 .about-email figure {@include box-small;margin:0 1rem 0 0;font-size:var(--subhead);}
 .about-phone {display:flex;align-items:center;}
@@ -144,7 +144,7 @@
 
 
 
-@media (--viewport-small) {
+@media (--breakpoint-small) {
   .about-intro-description {width:100%;}
 }
 

@@ -1,7 +1,7 @@
 .album {max-width:1080px;margin:10rem auto 16rem;padding-left:30%;box-sizing:border-box;position:relative;}
 .album-background {background:url('/public/images/springsteen.jpg') no-repeat center center;background-size:cover;position:fixed;left:10%;right:10%;top:0%;bottom:20%;z-index:-1;}
 
-.album-list {max-width:50%;position:absolute;left:0;top:0;z-index:4;}
+.album-list {max-width:50%;position:absolute;left:0;top:0;z-index:var(--zindex-default);}
 .album-list-date {color:var(--gray0);}
 .album-list-title {margin:0 0 .5rem 0;font-size:32px;line-height:1.2;color:var(--gray0);}
 .album-list-artist {color:var(--gray0);}

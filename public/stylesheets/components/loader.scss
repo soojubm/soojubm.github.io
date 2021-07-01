@@ -1,6 +1,6 @@
-.loader {position:fixed;left:0;right:0;top:0;bottom:0;background:var(--gray100);z-index:10;transition:all .4s;}
+.loader {position:fixed;left:0;right:0;top:0;bottom:0;background:var(--gray100);z-index:var(--zindex-loader);transition:all .4s;}
 .loader.is-hidden {opacity:0;visibility:hidden;z-index:-1;}
-.loader-spinner {width:2rem;height:2rem;background:var(--color-primary);border-radius:50%;position:fixed;left:50%;top:50%;z-index:10;transform:translate(-50%, -50%);animation:scaleout .8s infinite ease;}
+.loader-spinner {width:2rem;height:2rem;background:var(--color-primary);border-radius:50%;position:fixed;left:50%;top:50%;z-index:var(--zindex-loader);transform:translate(-50%, -50%);animation:scaleout .8s infinite ease;}
 
 
 

@@ -1,5 +1,5 @@
-.titlebar {display:flex;align-items:center;padding:var(--space-between-item) var(--grid-margin);position:relative;left:0;right:0;z-index:5;}
-.titlebar-back {position:relative;z-index:1;}
+.titlebar {display:flex;align-items:center;padding:var(--space-between-item) var(--grid-margin);position:relative;left:0;right:0;z-index:var(--zindex-navigation);}
+.titlebar-back {position:relative;z-index:var(--zindex-default);}
 .titlebar-back-icon {@include box-small;transform:rotate(180deg);}
 .titlebar-title {margin:-1px 0 0;padding:0 3rem;font-size:var(--body);position:absolute;}
 .titlebar-cta {margin-left:auto;}

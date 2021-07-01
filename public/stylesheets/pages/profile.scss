@@ -1,7 +1,7 @@
 .profile {@include container-large;}
 .profile::after {content:'';display:block;clear:both;}
 
-.profile-user {float:left;width:320px;position:relative;z-index:1;}
+.profile-user {float:left;width:320px;position:relative;z-index:var(--zindex-default);}
 .profile-user-avatar {float:right;@include box-large;background-image:url('/public/images/soo.png');background-size:contain;transition:all 0.4s ease;}
 .profile-user-avatar:hover {box-shadow:var(--shadow400);}
 .profile-user-name {@include subhead;}
@@ -41,7 +41,7 @@
 .profile-display-button i {vertical-align:middle;}
 
 .profile-tablist {display:flex;margin:0 0 1rem 0;padding:.25rem;border-radius:var(--radius400);background:var(--gray100);position:relative;}
-.profile-tablist-tab {height:var(--size-small);padding:0 1rem;color:var(--gray400);font-weight:var(--font-weight-bold);cursor:pointer;position:relative;z-index:1;}
+.profile-tablist-tab {height:var(--size-small);padding:0 1rem;color:var(--gray400);font-weight:var(--font-weight-bold);cursor:pointer;position:relative;z-index:var(--zindex-default);}
 // .profile-tablist-tab:hover {box-shadow:var(--shadow400);}
 .profile-tablist-tab[aria-selected=true] {color:var(--gray800);}
 .profile-tablist-tab-badge {font-size:var(--caption);}
@@ -71,7 +71,7 @@
 // action ~2 follow 버튼 등. 우측에 정렬되어야 함.
 
 // => avatar medium, avatar large(우측정렬, 버튼 아래)
-.card-item {height:var(--size-Medium);margin:1rem 0;position:relative;z-index:1;}
+.card-item {height:var(--size-Medium);margin:1rem 0;position:relative;z-index:var(--zindex-default);}
 .card-item-media {float:left;display:block;margin-right:var(--space-after);@include box-medium;}
 .card-item-name {}
 .card-item-price {}
@@ -93,11 +93,11 @@
 .list .card-more {right:.25rem;top:.25rem;}
 .list .card-category {}
 
-@media (--viewport-large) {
+@media (--breakpoint-large) {
   .profile-tabpanel .card {width:calc(50% - 1rem);}
 }
 
-@media (--viewport-small) {
+@media (--breakpoint-small) {
   .profile-user {float:none;width:100%;box-sizing:border-box;}
   .profile-user-description {margin:1rem 0 2rem;}
 

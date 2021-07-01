@@ -119,3 +119,7 @@ button {@include reset-button;}
 .group-sample-next {@include button-primary;}
 .group-sample-cancel {@include button-text;}
 .group-sample-next i {margin-left:1.5rem;background:var(--gray0);}
+
+
+.button-heading {}
+.button-tailing {@include box-xsmall;display:inline-flex;}

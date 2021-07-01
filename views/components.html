@@ -112,101 +112,78 @@
       <div class="textfield-input" role="textbox" contenteditable="true" aria-placeholder="5-digit zipcode" aria-labelledby="txtboxLabel"></div>
     </article>
 
-    <div class="stamp">
-      <div class="circle">
-        <p id="circle-content">
-          <span class="char1">부</span>
-          <span class="char2">끄</span>
-          <span class="char3">러</span>
-          <span class="char4">우</span>
-          <span class="char5">니</span>
-          <span class="char6">까 </span>
-          <span class="char7">보</span>
-          <span class="char8">지</span>
-          <span class="char9">마</span>
-          <span class="char10">요</span>
-        </p>
-      </div>
-      <p>수줍이</p>
-    </div>
+    <section style="margin:4rem 0;">
+      <article class="accordion">
+        <h3 class="accordion-title js-toggle" role="button" aria-expanded="false">
+          아이콘(이모지) 사용하기
+          <span class="accordion-title-icon"><i class="icon-plus"></i></span>
+        </h3>
+        <div class="accordion-panel">
+          <ul>
+            <li>클릭 어포던스를 강화하기 위해서만 사용하세요.</li>
+            <li>레이브링으로 단독 사용할 수 없습니다.</li>
+          </ul>
+          <br />
+          <h6>예외 케이스</h6>
+          <p>feature 컴포넌트</p>
+        </div>
+      </article>
+    </section>
 
-
-    <!-- <article class="design-article">
-      <div class="tag" style="margin:0 0 .5rem 0;">금액</div>
+    <article class="design-article">
+      <h6 class="title-bordered">Price</h6>
       <p>formatPrice(KRW) ₩ 1,000</p>
       <br />
-      <div class="tag" style="margin:0 0 .5rem 0;">날짜</div>
+      <h6 class="title-bordered">Date</h6>
       <p>formatDate() YYYY/MM/DD</p>
       <br />
+      <h6 class="title-bordered">Count</h6>
+      <p><del>두개</del> 2개</p>
+      <br />
       <div class="tag" style="margin:0 0 .5rem 0;">불릿</div>
-      <p>슬래시로 사용. 정보가 복잡도가 증가하기 때문에 최소화하세요. 위계를 설정하고 시각화를 고민하세요. 콤마, 콜론, 슬래시, 괄호, 유저의 행동과 관련된 유아이에서는 사용하지 마시라.</p>
-      <br />
-      <div class="tag" style="margin:0 0 .5rem 0;">아이콘 / 이모지</div>
-      <p>클릭 어포던스를 강화하기 위해서만 사용하세요. 지금 이모지 남용하는 중.</p>
-      <br />
-      <div class="tag" style="margin:0 0 .5rem 0;">수량</div>
-      <p class="guide">
-        <div class="guide-do">
-          <span><i class="icon-o"></i></span> 두개
-        </div>
-        <div class="guide-donot">
-          <span><i class="icon-close"></i></span> 2개
-        </div>
-      </p>
+      <p>슬래시로 사용. 정보가 복잡도가 증가하기 때문에 최소화하세요. 위계를 설정하고 시각화를 고민하세요. 콤마, 콜론, 슬래시, 괄호는 디자인 하지 않은 것.</p>
       <br />
       <div class="tag" style="margin:0 0 .5rem 0;">말줄임표</div>
-      <p></p>
-
       <dl>
         <dt>접근성</dt><dd>모양(네모, 동그란 등), 방향(왼쪽/오른쪽/위/아래), 위치(여기/이곳), 색상 등을 가이드 텍스트에 포함하지 마세요. </dd>
       </dl>
-      <div>
-        <h3 class="accordion-trigger js-toggle" role="button" aria-expanded="false">
-          Role Attributes
-          <span class="accordion-trigger-icon"><i class="icon-plus"></i></span>
-        </h3>
-        <article class="accordion-panel">
-          group / listitem / separator / button<br />
-          tablist / tab / <br />
-        </article>
-      </div>
-    </article> -->
+    </article>
     
-
-  <!-- <picture>
-    <source srcset="photo-light.png" media="(prefers-color-scheme: light) or (prefers-color-scheme: no-preference)">
-    <source srcset="photo-dark.png" media="(prefers-color-scheme: dark)">
-  </picture>
-  <picture>
-    <source type="image/svg+xml" srcset="pyramid.svg">
-    <source type="image/webp" srcset="pyramid.webp">
-    <img src="pyramid.png" alt="정삼각형 4개로 만든 일반적인 피라미드">
-  </picture>
-  <picture>
-    <source media="(max-width: 799px)" srcset="elva-480w-close-portrait.jpg">
-    <source media="(min-width: 800px)" srcset="elva-800w.jpg">
-    <img src="elva-800w.jpg" alt="딸 엘바를 안고 서 있는 크리스">
-  </picture>
+  <!--
+    <picture>
+      <source srcset="photo-light.png" media="(prefers-color-scheme: light) or (prefers-color-scheme: no-preference)">
+      <source srcset="photo-dark.png" media="(prefers-color-scheme: dark)">
+    </picture>
+    <picture>
+      <source type="image/svg+xml" srcset="pyramid.svg">
+      <source type="image/webp" srcset="pyramid.webp">
+      <img src="pyramid.png" alt="정삼각형 4개로 만든 일반적인 피라미드">
+    </picture>
+    <picture>
+      <source media="(max-width: 799px)" srcset="elva-480w-close-portrait.jpg">
+      <source media="(min-width: 800px)" srcset="elva-800w.jpg">
+      <img src="elva-800w.jpg" alt="딸 엘바를 안고 서 있는 크리스">
+    </picture>
   
-  <img srcset="elva-fairy-320w.jpg,
-    elva-fairy-480w.jpg 1.5x,
-    elva-fairy-640w.jpg 2x"
-  src="elva-fairy-640w.jpg" alt="요정 옷을 입은 엘바">
+    <img srcset="elva-fairy-320w.jpg,
+      elva-fairy-480w.jpg 1.5x,
+      elva-fairy-640w.jpg 2x"
+    src="elva-fairy-640w.jpg" alt="요정 옷을 입은 엘바">
 
-  <img srcset="elva-fairy-320w.jpg 320w,
-             elva-fairy-480w.jpg 480w,
-             elva-fairy-800w.jpg 800w"
-     sizes="(max-width: 320px) 280px,
-            (max-width: 480px) 440px,
-            800px"
-     src="elva-fairy-800w.jpg"
-     alt="요정 옷을 입은 엘바" /> -->
+    <img srcset="elva-fairy-320w.jpg 320w,
+              elva-fairy-480w.jpg 480w,
+              elva-fairy-800w.jpg 800w"
+      sizes="(max-width: 320px) 280px,
+              (max-width: 480px) 440px,
+              800px"
+      src="elva-fairy-800w.jpg"
+      alt="요정 옷을 입은 엘바" /> -->
 
-    <!-- <h3>접근성 정리</h3>
-    <p>닫기 버튼에 aria-label을 제공하세요. aria-label="close alert"</p>
-    <p>도움말(helper text)이 있는 경우 aria-describedby=[id]</p>
-    <p>유효하지 않은 입력 필드에 aria-invalid="true"</p>
-    <p>enter key로 폼 제출</p> -->
+      <!-- <h3>접근성 정리</h3>
+      <p>닫기 버튼에 aria-label을 제공하세요. aria-label="close alert"</p>
+      <p>도움말(helper text)이 있는 경우 aria-describedby=[id]</p>
+      <p>유효하지 않은 입력 필드에 aria-invalid="true"</p>
+      <p>enter key로 폼 제출</p> -->
 
     <!-- <p>스크린 리더는 페이지의 모든 목록을 탐색 할 수 있으며 목록 항목에서 목록 내 목록 항목으로 이동할 수도 있습니다. 목록을 사용하여 화면 판독기가 항목 그룹 (예 : 사람 목록)을 쉽게 탐색 할 수 있도록합니다.</p> -->
 
@@ -216,72 +193,122 @@
         <span class="accordion-title-icon"><i class="icon-plus"></i></span>
       </h3>
       <div class="accordion-panel">
-        <p>총결제금액 / 결제예정금액</p>
-        <p>개인적인 checklist: 유저->사용자, 혹은->또는, 및->과/와</p>
-        <p>-action(choice에서 안 어울림) vs -control</p>
+        <p>다크테마에서 red100 rgba로</p>
     
+        <p>컴포넌트 내에서 룰을 볼 수 있게</p>
+
+        <p>용어정의: 아이템.</p>
+
         <p>Bullet을 컴포넌트로 만들어서 사용.</p>
         <p>스타일을 처음 선언할 때 margin:0 0 0 0 풀어서 사용하고, 재선언할 때 margin-left로 재할당을 암시하고 오버라이딩 최소화하기.</p>
-        <p>position 속성을 제거할 때 static 대신 relative를 사용하기. z-index 값을 보전할 수 있기 때문.</li>
-        </p>
+
         <p><strong>스타일(ex:bg/border, size)과 롤(sorting, text input)을 분리하는 것이 좋겠다.</strong></p>
 
-
-    <p>셀박vs체크박스/라디오 사용하는 기준. 선택 갯수를 정의.</p>
-
-        <p>가운데 정렬에서 우 large 컨테이너를 사용.</p>
-
-        <p>경우vs때 -> 에서</p>
+        <p>셀박vs체크박스/라디오 사용하는 기준. 선택 갯수를 정의.</p>
 
         <p>반응형 이미지</p>
 
         <p>왜 rem 단위를 사용하는가 정리</p>
         <p>왜 엄격한 grid system을 사용하지 않는가 정리. 가로스크롤 트랜드 등</p>
     
-        <p>spacing system 정의.</p>
         <p>iphone의 safe area 관련 코드 모듈화</p>
-        <p>breakpoint 정의하고</p>
         <p>맥북 13인치 1680x1050 / x1나노 2160x1350 / 1440은 애매한 브레이크포인트</p>
-        <p>z-index 유아이 별로 정의</p>
 
         <p>컴포넌트별로 페이지 분리(우선순위 낮음)</p>
-        <p>코딩 컨벤션 제작(우선순이ㅜ 낮음)</p>
+        <p>코딩 컨벤션(우선순이ㅜ 낮음)</p>
 
         <p>버튼과 클릭할 수 없는 태그의 스타일을 시각적으로 구분</p>
+        
+        <li>writing: (자세히보기 / 더보기 / -보러가기)</li>
+        <li>writing: 복합명사는 붙여씁니다. 결제 완료 x /  결제완료</li>
+        <li>writing: d경우vs때 -> 에서</li>
+        <li>writing: 총결제금액 / 결제예정금액</li>
+        <li>writing: 개인적인 checklist: 유저->사용자, 혹은->또는, 및->과/와</li>
+
+        <p>coding: 속성을 제거할 때 static 대신 relative를 사용하기. z-index 값을 보전할 수 있기 때문.</li>
+        </p>
+        <p>coding: 가운데 정렬에서 우 large 컨테이너를 사용.</p>
+        <p>coding: -action(choice에서 안 어울림) vs -control</p>
+
+
         <code>code tag</code>
       </div>
     </article>
 
     <article class="design-article js-scrollspy-section">
-      <h1 class=design-article-title>Rules</h1>
-      <p class="design-article-description">타이틀 크기의 제목은 글자수에 제한을 두고 2~3줄 개행 맞춰서 작성하세요.</p>
+      <h1 class="design-article-title">Spacing</h1>
       <ul>
-        <li>모두보기see all(15)(internal, arrow-right) / 전체보기 / / 확장,더보기vs더불러오기(more, arrow-down) / 자세히보기,  learn more 등(external, arrow-right-top) writing 정의하기 (자세히보기 / 더보기 / -보러가기)</li>
+        <li>--space-between-item .75rem</li>
+        <li>--space-after-title 1rem</li>
+        <li>--space-after-description 2rem</li>
+        <li>--space-after-button 75em</li>
+      </dl>
+    </article>
+
+    <article class="design-article js-scrollspy-section">
+      <h1 class="design-article-title">z-index</h1>
+      <p class="design-article-description">비슷한 성격의 유아이를 묶는 방식 vs 각각</p>
+      <dl>
+        <dt>toast</dt><dd>9</dd>
+        <dt>modal</dt><dd>7</dd>
+        <dt>modal dim</dt><dd>6</dd>
+        <dt>navigation</dt><dd>5</dd>
+        <dt>popover</dt><dd>2</dd>
+      </dl>
+    </article>
+
+
+    <article class="design-article js-scrollspy-section">
+      <h1 class=design-article-title>Indicator</h1>
+      <p>사용자가 행동을 할 수 있다는 지표로 사용합니다.</p>
+
+      <h6 class="title-bordered">selection</h6>
+      <span></span>
+      <br />
+
+      <h6 class="title-bordered">click - tag 컴포넌트/화살표/아이콘 아이템 전체가 클릭 영역.</h6>
+      <br />
+
+      <h6 class="title-bordered">Link</h6>
+      <dl>
+        <dt>모두보기</dt><dd>see all(15)(internal, arrow-right)</dd>
+        <dt>더보기</dt><dd>확장,더보기vs더불러오기(more, arrow-down), 자세히보기, learn more 등(external, arrow-right-top)</dd>
+      </dl>
+    </article>
+
+    <article class="design-article js-scrollspy-section">
+      <h1 class=design-article-title>Rules</h1>
+      <p class="design-article-description"></p>
+      <ul>
+        <li>가이드의 가이드. 가짓수를 설명하지 않기.</li>
+
         <li>아이템이 3개 이하일 때 제목 우측에 모두보기 버튼을 위치할 수 있지만, 아이템이 4개 이상이라면 아이템의 아래에 모두보기 버튼이 위치.</li>
 
         <li>아이콘을 클릭 어포던스를 높이기 위해 사용합니다. 다시 말해 아이콘이 있으면 클릭할 수 있음을 의미합니다.</li>
         <li>action indicator :이상 혹은 이하를 표기할 때 >, < 를 사용하지 않습니다. 액션 인디케이터와 혼동이 될 수 있어서. 이상, 이하 한글로 명확하게 전달하ㄱ시오!</li>
 
-        <li>naming convention: -s vs - list</li>
+        <li>naming: -s vs - list</li>
 
-        <li>writing: 복합명사는 붙여씁니다. 결제 완료 x /  결제완료</li>
       </ul>
-
     </article>
 
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Breakpoints</h1>
-      <p class="design-article-description">pc, mobile device로 나누는 게 가장 효율적. 2개의 breakpoint에 퍼센티지 컨테이너를 가지는 tiny breakpoint.</p>
-      <blockquote>
-        <p>서비스가 출시 환경을 먼저 정의해야함. 웹온리 vs 웹+모바일앱 vs 웹+태블릿</p>
-      </blockquote>
+      <p class="design-article-description">최소 pc, mobile device 2개. 모든 페이지가 컨테이너 모듈을 같을 필요는 없습니다.</p>
+      <!-- <blockquote>
+        <p>서비스가 출시 환경이 웹온리(웹/태블릿+모바일) vs 웹+모바일앱(웹+태블릿/모바일)</p>
+      </blockquote> -->
       <dl>
-        <dt>tiny</dt><dd>필수. 640 이하</dd>
-        <dt>small</dt><dd>필수. 1020 이하</dd>
+        <dt>tiny</dt><dd>필수. 760 이하 / %퍼센티지</dd>
+        <dt>small</dt><dd>필수. 1020 이하 / %퍼센티지</dd>
         <dt>medium</dt><dd>필수. 1240 이하</dd>
         <dt>large</dt><dd>선택. > 1480 이상</dd>
       </dl>
+      <hr />
+      <pre><code>@custom-media --breakpoint-large (max-width: 1380px);
+@custom-media --breakpoint-small (max-width: 1080px);
+@custom-media --breakpoint-tiny (max-width: 760px);</code></pre>
     </article>
 
     <!-- <article class="design-article js-scrollspy-section">
@@ -297,7 +324,7 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Sizes & Avatars</h1>
-      <p class="design-article-description">5가지 사이즈를 사용합니다. 아바타는 텍스트, 아이콘, 이미지를 포함할 수 있습니다. Large와 Medium은 디스크립션을 가질 수 있습니다.</p>
+      <p class="design-article-description">아바타는 텍스트, 아이콘, 이미지를 포함할 수 있습니다. Large와 Medium은 디스크립션을 가질 수 있습니다.</p>
       <dl>
         <dt>Large</dt><dd>avatar</dd>
         <dt>Medium</dt><dd>button, textfield, avatar</dd>
@@ -314,38 +341,39 @@
         <a href="" class="design-article-avatar-xsmall"><span class="avatar-badge"></span></a>
         <a href="" class="design-article-avatar-tiny"><span class="avatar-badge"></span></a>
       </div>
-      <hr />
-      <div class="avatar-large" style="display:flex;margin-bottom:1rem;">
+
+      <!-- <hr /> -->
+      <!-- <div class="avatar-large" style="display:flex;margin-bottom:1rem;">
         <a href="" class="design-article-avatar-large"><span class="avatar-badge"></span></a>
-        <div style="display:block;width:1.5rem;height:inherit;border-radius:var(--radius400);background:var(--green100);"></div>
+        <div style="display:block;width:1rem;height:inherit;border-radius:var(--radius400);background:var(--green100);"></div>
         <div style="display:block;width:calc(100% - 80px - 1.5rem);height:inherit;">
-          <h3 style="font-size:var(--subhead);font-weight:var(--font-weight-bold);">Large 80px / space 1.5rem / font-size large</h3>
-          <p style="color:var(--gray400);">디스크립션을 가질 수 있어요</p>
+          <h3 style="font-size:var(--subhead);font-weight:var(--font-weight-bold);">Large 80px / space 1.5rem</h3>
+          <p style="color:var(--gray400);">디스크립션</p>
         </div>
       </div>
       <div style="display:flex;margin-bottom:1rem;">
         <a href="" class="design-article-avatar-medium"></a>
-        <div style="display:block;width:1rem;height:48px;border-radius:var(--radius400);background:var(--green100);box-sizing:border-box;"></div>
+        <div style="display:block;width:.75rem;height:48px;border-radius:var(--radius400);background:var(--green100);box-sizing:border-box;"></div>
         <div style="display:block;width:calc(100% - 48px - 1rem);height:inherit;">
-          <h3 style="font-weight:var(--font-weight-bold);font-size:var(--body);">Medium 48px / space 1rem / font-size medium</h3>
-          <p style="color:var(--gray400);">디스크립션을 가질 수 있어요</p>
+          <h3 style="font-weight:var(--font-weight-bold);font-size:var(--body);">Medium 48px / space 1rem</h3>
+          <p style="color:var(--gray400);">디스크립션</p>
         </div>
       </div>
       <div style="display:flex;align-items:center;margin-bottom:1rem;">
         <a href="" class="design-article-avatar-small"></a>
-        <div style="display:block;width:1rem;height:32px;border-radius:var(--radius400);background:var(--green100);box-sizing:border-box;"></div>
-        <div style="display:block;width:calc(100% - 32px - 1rem);height:32px;line-height:32px;">Small 32px / space 1rem / font-size medium</div>
+        <div style="display:block;width:.75rem;height:32px;border-radius:var(--radius400);background:var(--green100);box-sizing:border-box;"></div>
+        <div style="display:block;width:calc(100% - 32px - 1rem);height:32px;line-height:32px;">Small 32px</div>
       </div>
       <div style="display:flex;align-items:center;margin-bottom:1rem;">
         <a href="" class="design-article-avatar-xsmall"></a>
         <div style="display:block;width:.5rem;height:24px;border-radius:var(--radius400);background:var(--green100);box-sizing:border-box;"></div>
-        <div style="display:block;width:calc(100% - 24px - .5rem);height:24px;line-height:24px;">xSmall 24px / space .5rem / font-size medium</div>
+        <div style="display:block;width:calc(100% - 24px - .5rem);height:24px;line-height:24px;">xSmall 24px</div>
       </div>
       <div style="display:flex;">
         <a href="" class="design-article-avatar-tiny"></a>
         <div style="display:block;width:.5rem;height:inherit;border-radius:var(--radius400);background:var(--green100);box-sizing:border-box;"></div>
-        <div style="display:block;width:calc(100% - 16px - .5rem);height:inherit;font-size:var(--caption);line-height:16px;">Tiny 16px / space .5rem / font-size tiny</div>
-      </div>
+        <div style="display:block;width:calc(100% - 16px - .5rem);height:inherit;font-size:var(--caption);line-height:16px;">Tiny 16px</div>
+      </div> -->
 
       <hr />
       <h6 class="title-bordered">Avatar Stack</h6>
@@ -407,11 +435,12 @@
         </div>
       </div> -->
       <dl>
-        <dt>Headline</dt><dd>2rem / 32px</dd>
+        <dt>Headline</dt><dd>2rem / 32px / 글자수와 단어수. 2~3줄.</dd>
         <dt>Subhead</dt><dd>1.125rem / 18px</dd>
         <dt>Body</dt><dd>.875rem / 14px <i class="tag" style="margin-left:.5rem;font-weight:400;">default</i></dd>
         <dt>Caption</dt><dd>.75rem / 12px</dd>
       </dl>
+      <hr />
       <!-- <article class="design-typograph-size">
         <h3 class="design-typograph-size-title" style="font-size:var(--title);">XLarge <span>2rem / 32px</span></h3>
         <h3 class="design-typograph-size-title" style="margin:.5rem 0 .5rem;font-size:var(--subhead);">Large <span>1.125rem / 18px</span></h3>
@@ -580,7 +609,7 @@
         <p>padding 1.5rem에서 1rem으로 변경. 1.5rem 사용 시 모바일에서 공간 많이 발생.</p>
       </blockquote>
       <dl>
-        <dt>Medium</dt><dd>.75rem</dd>
+        <dt>Medium</dt><dd>1rem</dd>
         <dt>Small</dt><dd>.5rem</dd>
       </dl>
       <hr />
@@ -610,9 +639,6 @@
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Chips ☀️</h1>
       <p class="design-article-description">단일 선택 / 다중 선택, 삭제 여부에 따라 적절한 힌트를 제공합니다. 다른 맥락의 chip을 나열할 수도 있습니다. role="listbox" aria-orientation="horizontal"</p>
-      <blockquote>
-        이들을 시각적으로 차별화해야 하는 상황이 있을 거라서 더 유연하게 하기.
-      </blockquote>
       <h6 class="title-bordered">Filter</h6>
       <div class="chips js-chip">
         <button class="chip is-active">전체</button>
@@ -678,7 +704,7 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Tags</h1>
-      <p class="design-article-description">작성 중. 클릭할 수 없습니다. 아이콘을 포함할 수 없습니다.</p>
+      <p class="design-article-description">콘텐츠를 분류하는 레이블입니다. 클릭할 수 없습니다. 아이콘을 포함할 수 없습니다.</p>
       <blockquote>
         <h6>history</h6>
         chip-small에서 다시 분리. 롤이 아닌 스타일로 구분되어 가이드가 복잡하기 때문. 지금도 role이 많은데 따로 빼서 가이드하는 것. hashtag / keyword
@@ -717,7 +743,7 @@
         <dt>Primary</dt><dd>페이지에서 가장 중요한 행동. 한 페이지에 한 개</dd>
         <dt>Secondary</dt><dd>서비스 이용에 필요한 기능에서. binary selection(?choice)에서 프라이머리와 세컨더리를 함께 사용할 수 없습니다.</dd>
         <dt>Tertiary</dt><dd>닫기, 취소, 아이콘 버튼</dd>
-        <dt>Text</dt><dd>text link와 달리 버튼과 같은 padding을 가짐. 사용 빈도 낮아서 없애는 방도.</dd>
+        <dt>Text</dt><dd>text link와 달리 버튼과 같은 padding을 가짐. 사용 빈도 굉장히 낮음.</dd>
       </dl>
       <hr />
       <!--
@@ -761,7 +787,8 @@
         <button class="design-article-tertiary" style="vertical-align:bottom;">Medium</button>
         <button class="design-article-tertiary-small">Small</button>
       </div>
-      <p style="margin:.5rem 0 0;font-size:var(--caption);">Large 사이즈는 프로모션(캠페인) 페이지에서만 사용합니다.</p>
+      <p style="margin:.5rem 0 0;font-size:var(--caption);">Large 사이즈는 프로모션(캠페인) 페이지에서 사용합니다.</p>
+      <p style="margin:.5rem 0 0;font-size:var(--caption);">Small 사이즈는 아이템 컴포넌트에서 사용합니다.</p>
       <br />
       <h6 class="title-bordered">Text (outdated)</h6>
       <div class="design-buttongroup">
@@ -771,6 +798,12 @@
         <button class="design-article-text" disabled>Disabled</button>
       </div>
       <br />
+      <h6 class="title-bordered">Text (outdated)</h6>
+      <div class="design-buttongroup">
+        <button class="design-article-tertiary">더보기 <span class="button-tailing"><i class="icon-chevron is-down"></i></span></button>
+        <button class="design-article-tertiary">모두보기 <span class="button-tailing"><i class="icon-chevron"></i></span></button>
+        <button class="design-article-tertiary"><del>전체보기</del> <span class="button-tailing"><i class="icon-chevron"></i></span></button>
+      </div>
       <!-- <h6 style="margin:0 0 .5rem;font-size:var(--caption);">Status</h6>
       <div class="design-buttongroup">
         <button class="loadmore is-fetching">
@@ -867,7 +900,7 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Textfields</h1>
-      <p class="design-article-description">button과 unit, icon 등은 prefix(leading)/surfix(tailing), choose/enter,</p>
+      <p class="design-article-description">사용자가 값을 입력할 때 사용합니다. 스타일로 묶여 있으나, 입력/선택으로 역할로 분리? button과 unit, icon 등은 prefix(leading)/surfix(tailing), choose/enter,</p>
 
       <h6 class="title-bordered">Number (quantity)</h6>
       <div class="quantity js-quantity">
@@ -920,7 +953,7 @@
         </div>
       </div>
       <br />
-      <h6 class="title-bordered">Selectbox</h6>
+      <h6 class="title-bordered">Selectbox - 값을 입력, 선택으로 나눠서 선택에 checkbox, radio를 넣기?</h6>
       <div class="textfield">
         <label class="textfield-label" for="select1">셀렉트박스</label>
         <select class="textfield-input" id="select1">
@@ -962,7 +995,8 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Breadcrumb</h1>
-      <p class="design-article-description">페이지 레벨이 3단계 이상일 때 사용합니다. 캠페인 등을 통한 유입이 많은 페이지에서도 사용할 수 있습니다. todo 용도를 더 명확히 해야하고, pg 신청 시 이슈도 존재. 모바일에서도 탑바에 뒤로가기나 닫기 버튼으로 대체. 푸터(사이트맵위)에 배치하는 케이스도 있음. 딥 사이트맵에서 괜찮은 듯.</p>
+      <p class="design-article-description">페이지 레벨이 3단계 이상일 때 사용합니다. 캠페인 등을 통한 유입이 많은 페이지에서도 사용할 수 있습니다.</p>
+      <!-- <p> pg 신청 시 이슈. 모바일에서도 탑바에 뒤로가기나 닫기 버튼으로 대체. 푸터(사이트맵위)에 배치하는 케이스도 있음. 딥 사이트맵에서 괜찮은 듯. 용도를 더 명확하게</p> -->
       <nav class="breadcrumb" aria-label="breadcrumb">
         <a class="breadcrumb-item breadcrumb-home" href="/">홈</a>
         <i class="breadcrumb-divider">/</i>
@@ -1073,7 +1107,7 @@
           </tbody>
         </table>
       </section>
-      <p style="margin:var(--space-after-item);font-size:var(--caption);">레이블에 아이콘을 단독으로 사용하지 않습니다.</p>
+      <p style="margin:var(--space-after-item);font-size:var(--caption);">레이블에 아이콘을 단독으로 사용할 수 없습니다.</p>
 
       <br />
 
@@ -1551,7 +1585,8 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Accordions</h1>
-      <p class="design-article-description">질의응답 등 정보를 요약하여 목록화할 때 사용합니다. 텍스트 위주의 공지사항 게시글에서 사용할 수 있으나 그 이상에는 다른 유아이를 고민하세요.</p>
+      <p class="design-article-description">질의응답 등 정보를 요약하여 목록화할 때 사용합니다. 텍스트 위주의 공지사항 게시글에서 사용할 수 있으나 그 이상에는 다른 유아이를 고민하세요. 자주묻는질문Frequently
+        asked questions</p>
       <!-- <blockquote>
         plus 아이콘을 엄격하게. caret으로 변경?
       </blockquote> -->
@@ -1560,6 +1595,13 @@
         <p>안녕</p>
       </details> -->
 
+      <figure>
+        <q>I'm impressed by how GitHub Copilot seems to know exactly what I want to type next. GitHub Copilot is particularly helpful when working on React components, where it makes eerily accurate predictions. GitHub Copilot has become an indispensable part of my programmer toolbelt.</q>
+        <figcaption style="margin:.75rem 0 0 0;color:var(--gray400);">Bruce Springsteen</figcaption>
+      </figure>
+
+      <section class="faq" title="Frequently asked questions" hidden>FAQ</section>
+      <div class="textfield" hidden>selectbox</div>
       <h2 style="margin:2rem 0;text-align:center;">Questions?</h2>
       <article class="accordion">
         <h3 class="accordion-title js-toggle" role="button" aria-expanded="false">
@@ -1962,7 +2004,7 @@
       <br />
       
       <article class="sheet" style="margin-top:1rem;">
-        <h3 class="sheet-title" style="margin-bottom:.75rem;font-size:12px;color:var(--gray400);">정렬하기</h3>
+        <h3 class="sheet-title" style="margin-bottom:.75rem;font-size:12px;color:var(--gray400);">목록 정렬</h3>
         <button style="width:100%;display:flex;align-items:center;margin:0 0 1rem 0;justify-content:space-between;font-size:var(--subhead);">
           바텀 시트 옵션
         </button>
@@ -2017,7 +2059,7 @@
       <br />
 
       <div class="tile-elevated" style="max-width:375px;">
-        <div class="profile-user" style="float:none;width:100%;height:48px;margin-bottom:1rem;" role="listitem">
+        <div class="profile-user" style="float:none;width:100%;height:48px;margin-bottom:var(--space-item);" role="listitem">
           <figure class="profile-user-avatar" style="float:left;width:48px;height:48px;margin-right:var(--space-after-medium);"></figure>
           <h2 class="profile-user-name" style="font-size:var(--body);">Gyeongsoo I</h2>
           <span class="profile-user-id" style="color:var(--gray400);">유아이 디자이너</span>
@@ -2093,8 +2135,8 @@
     <!-- <i class="icon-check1"></i>
     <style>
     .icon-check1 {display:block;width:40px;height:40px;border-radius:50%;border:2px solid var(--gray800);position:relative;}
-    .icon-check1:before {content:'';display:inline-block;width:28px;height:9px;border-left:2px solid;border-bottom:2px solid;border-color:var(--gray800);transform:rotate(-45deg);position:absolute;right:-2px;top:4px;z-index:2;}
-    .icon-check1:after {content:'';display:block;width:16px;height:18px;background:var(--gray0);position:absolute;right:-6px;top:0px;z-index:1;}
+    .icon-check1:before {content:'';display:inline-block;width:28px;height:9px;border-left:2px solid;border-bottom:2px solid;border-color:var(--gray800);transform:rotate(-45deg);position:absolute;right:-2px;top:4px;z-index:var(--zindex-default);}
+    .icon-check1:after {content:'';display:block;width:16px;height:18px;background:var(--gray0);position:absolute;right:-6px;top:0px;z-index:var(--zindex-default);}
     </style> -->
 
     <!-- <article class="design-article">
@@ -2118,7 +2160,7 @@
             <h1 class="timeline-item-head-title">소재등록</h1>
           </header>
           <div class="timeline-item-panel">
-            <span>3개의 매체에 대한 소재등록이 필요합니다.</span>
+            <span>3개의 매체에 소재등록이 필요합니다.</span>
           </div>
           <div class="timeline-item-panel">
             <span>[확정] 등록한 소재가 확정되었습니다.</span>

@@ -58,7 +58,7 @@
 .checkout-foot-helper {margin:0 0 1rem 0;}
 .checkout-foot-pay {@include button-primary;width:50%;max-width:20rem;}
 
-@media (--viewport-large) {
+@media (--breakpoint-large) {
   .checkout {max-width:var(--width-medium);}
   .checkout-product {float:none;width:100%;margin:-2rem auto 2rem;}
   .checkout-shipping {max-width:100%;padding-right:0;}

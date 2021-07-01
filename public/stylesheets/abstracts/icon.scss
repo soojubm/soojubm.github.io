@@ -65,7 +65,7 @@
 .icon-chevron {display:block;margin:0 3px 0 0;padding:3px;border:solid var(--gray800);border-width:0 2px 2px 0;transform:rotate(-45deg);}
 .icon-chevron.is-left {margin:0 0 0 3px;transform:rotate(135deg);}
 .icon-chevron.is-up {margin-top:4px;transform:rotate(-135deg);}
-.icon-chevron.is-down {margin:0 0 2px 0;transform:rotate(45deg);}
+.icon-chevron.is-down {transform:rotate(45deg) translateY(-3px);}
 
 .icon-grid {padding:7px;position:relative;}
 .icon-grid span {float:left;display:block;margin:1px;padding:1px;border:2px solid var(--gray800);}

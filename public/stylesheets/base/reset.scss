@@ -20,7 +20,8 @@ hr {margin:1rem 0;border-top: thin solid var(--gray200);position:relative;}
 u {text-decoration:none;position:relative;}
 u:after {content:'';height:.4em;border-radius:2px;background:var(--green100);position:absolute;left:-.125rem;right:-.125rem;bottom:0;z-index:-1;}
 code {background:var(--gray100);border-radius:var(--radius400);font-family:'consolas'}
-pre {padding:1rem;background:var(--gray100);font-family:'consolas';font-size:var(--caption);white-space:normal;}
+pre {padding:1rem;background:var(--gray100);font-family:'consolas';font-size:var(--caption);}
+// white-space:normal;
 
 del {color:var(--gray400);} ins {text-decoration:none;}
 
@@ -74,11 +75,11 @@ svg {color:var(--gray800);}
 
 // p {word-break:keep-all;}
 
-// @media (--viewport-small) {
+// @media (--breakpoint-small) {
 //   html {font-size:12px;}
 // }
 
-.browser {text-align:center;padding:2rem;background:var(--red800);background:var(--gray0);position:fixed;left:0;right:0;bottom:0;z-index:7;}
+.browser {text-align:center;padding:2rem;background:var(--red800);background:var(--gray0);position:fixed;left:0;right:0;bottom:0;z-index:var(--zindex-modal);}
 
 //backface-visibility:hidden
 // writing-mode: horizontal-tb / vertical-rl / vertical-lr;
