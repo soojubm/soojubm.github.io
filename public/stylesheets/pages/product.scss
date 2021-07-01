@@ -19,7 +19,7 @@
 .product-image-navigation button.is-current {background:var(--gray800);}
 .product-info {width:25%;margin:0 auto 0 0;position:relative;}
 .product-info-name {width:28px;text-align:center;word-break:normal;@include title;line-height:1.25;position:absolute;left:-64px;top:0px;}
-.product-info-price {display:flex;align-items:center;font-size:var(--subhead);}
+.product-info-price {display:flex;align-items:center;font-size:var(--font-size-subhead);}
 .product-info-price del {}
 .product-info-price b {margin:0 .5rem;}
 .product-info-price em {}
@@ -28,11 +28,11 @@
 .product-order-info {}
 .product-order-discount {margin:1rem 0 1rem 0;background:#f9f9f6;border:var(--border100);text-align:center;padding:8px 0;}
 .product-order-size {display:flex;flex-wrap:wrap;margin:1rem 0;}
-.product-order-size-title {width:100%;margin:0 0 .25rem 0;font-weight:400;font-size:var(--caption);}
-.product-order-size-item {@include box-small;margin:0 .5rem 0 0;font-size:var(--caption);}
+.product-order-size-title {width:100%;margin:0 0 .25rem 0;font-weight:400;font-size:var(--font-size-caption);}
+.product-order-size-item {@include box-small;margin:0 .5rem 0 0;font-size:var(--font-size-caption);}
 .product-order-size-item.is-selected {border-color:var(--color-primary);color:var(--color-primary);}
 .product-order-color {display:flex;flex-wrap:wrap;margin:1rem 0 1.5rem;}
-.product-order-color-title {width:100%;margin:0 0 .25rem 0;font-weight:400;font-size:var(--caption);}
+.product-order-color-title {width:100%;margin:0 0 .25rem 0;font-weight:400;font-size:var(--font-size-caption);}
 .product-order-color-item {@include box-small;margin:0 .5rem 0 0;}
 .product-order-color-item.is-selected:before {content:'';display:block;border:1px solid var(--gray0);border-radius:var(--radius400);position:absolute;left:2px;right:2px;top:2px;bottom:2px;}
 .product-order-color-item.is-crimson {background:var(--color-primary);border:1px solid var(--color-primary)}
@@ -77,7 +77,7 @@
 .product-features-head h1 {@include title;word-break:keep-all;}
 .product-features-head p {}
 .product-features-item {max-width:320px;position:relative;}
-.product-features-item-avatar {display:block;font-size:var(--title);position:relative;}
+.product-features-item-avatar {display:block;font-size:var(--font-size-large);position:relative;}
 .product-features-item-avatar:before {content:'';display:block;@include box-small;background:var(--gray100);position:absolute;left:.5rem;top:0rem;z-index:-1;}
 .product-features-item-title {margin:1rem 0 0 0;@include subhead;}
 .product-features-item-description {margin-top:1rem;}
@@ -195,17 +195,17 @@
 
 .product-detail-point {display:flex;flex-wrap:wrap;justify-content:space-around;@include container-large;padding:0 25%;}
 .product-detail-point div {width:20%;margin:1rem;text-align:center;}
-.product-detail-point div figure {font-size:var(--title);}
-.product-detail-point div b {font-size:var(--subhead);}
+.product-detail-point div figure {font-size:var(--font-size-large);}
+.product-detail-point div b {font-size:var(--font-size-subhead);}
 
 
 .product-review {margin:4rem 0% 8rem;position:relative;}
 .product-review-eyebrow {}
-.product-review-title {font-size:var(--subhead);}
+.product-review-title {font-size:var(--font-size-subhead);}
 
 .product-review-list {}
 .product-review-list .inner {overflow:auto;white-space:nowrap;font-size:0;}
-.product-review-list .inner .quote {display:inline-block;width:320px;font-size:var(--body);}
+.product-review-list .inner .quote {display:inline-block;width:320px;font-size:var(--font-size-body);}
 .product-review-list .inner .quote-body {white-space:wrap;}
 
 .product-review-arrows {display:flex;position:absolute;right:0;top:0;}
@@ -214,8 +214,8 @@
 
 .review-item {width:320px;}
 .review-item-thumbnail {height:200px;margin:0 0 1rem 0;background:var(--gray800);}
-.review-item-title {margin:0 0 .5rem 0;font-size:var(--subhead);}
+.review-item-title {margin:0 0 .5rem 0;font-size:var(--font-size-subhead);}
 .review-item-comment {line-height:1.6;}
-.review-item-byline {font-size:var(--caption);}
+.review-item-byline {font-size:var(--font-size-caption);}
 .review-item-byline:after {content:'';display:inline-block;width:1px;height:7px;margin:0 6px 0 10px;vertical-align:middle;background:#ddd;}
-.review-item-time {font-size:var(--caption);}
+.review-item-time {font-size:var(--font-size-caption);}

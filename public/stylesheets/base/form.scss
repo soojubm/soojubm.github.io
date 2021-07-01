@@ -139,11 +139,11 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 // .textfield-input:not(select):readonly {background:none;padding-left:0;padding-right:0;border:none;outline:none;}
 // .textfield-input:not(select):readonly::placeholder {color:var(--gray800);}
 .textfield-input:focus {background:var(--gray0);border-color:var(--gray200);outline:0;}
-.textfield-reveal {position:absolute;right:1rem;bottom:calc(1rem - 1px);z-index:var(--zindex-default);font-size:var(--caption);color:var(--gray400);}
+.textfield-reveal {position:absolute;right:1rem;bottom:calc(1rem - 1px);z-index:var(--zindex-default);font-size:var(--font-size-caption);color:var(--gray400);}
 .textfield-unit {width:40px;height:46px;padding:0 1rem;line-height:50px;text-align:right;color:rgba(0, 0, 0, 0.4);position:absolute;right:0;bottom:0;}
 .textfield-helper {margin-top:.25rem;color:var(--red800);}
 .textfield-button {border-top-left-radius:0;border-bottom-left-radius:0;position:absolute;right:0;top:0;}
-.textfield-link {font-size:var(--caption);position:absolute;right:0;top:0;}
+.textfield-link {font-size:var(--font-size-caption);position:absolute;right:0;top:0;}
 // .textfield-reset {}
 // .textfield-prefix + .textfield-input {display:inline-block;padding-right:100px;}
 
@@ -166,7 +166,7 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 .textfield-clear {display:none !important;}
 .textfield-input:focus ~ .textfield-clear {display:flex !important; pointer-events:all;}
 
-.textfield.is-small {padding:0 !important;font-size:var(--caption) !important;}
+.textfield.is-small {padding:0 !important;font-size:var(--font-size-caption) !important;}
 .textfield.is-small .textfield-label {margin-bottom:0;}
 .textfield.is-small .textfield-input {height:var(--size-small);padding:6px 1rem;}
 .textfield.is-inline.textfield {padding-left:5rem !important;}
@@ -219,7 +219,7 @@ input[type=file] + label:after {display:none;}
 .file-input {opacity:0;}
 .file-label {@include button-secondary;cursor:pointer;}
 .file-attachment {margin:2rem 0 0;}
-.file-attachment-title {margin:.5rem 0;font-size:var(--body);font-weight:400;color:var(--gray400);}
+.file-attachment-title {margin:.5rem 0;font-size:var(--font-size-body);font-weight:400;color:var(--gray400);}
 .file-attachment-helper {}
 .file-attachment-list:after {content:'';display:block;clear:both;}
 .file-attachment-item {display:block;width:100%;background:var(--gray100);border-radius:var(--radius400);overflow:hidden;position:relative;}
@@ -244,14 +244,14 @@ input[type=file] + label:after {display:none;}
   font-size: 1rem;
   line-height: 32px;
 }
-.calendar-navigation {display:flex;position:absolute;right:0;top:0;font-size:var(--caption);}
+.calendar-navigation {display:flex;position:absolute;right:0;top:0;font-size:var(--font-size-caption);}
 .calendar-navigation-prev {width:var(--date-width);height:var(--date-width);margin-right:4px;background:var(--date-background);border-radius:var(--radius400);}
 .calendar-navigation-next {width:var(--date-width);height:var(--date-width);background:var(--date-background);border-radius:var(--radius400);}
 .calendar-head {margin-top: .5rem !important;
   display: grid !important;
   grid-template-columns: repeat(7, 1fr) !important;
   gap: 4px !important;
-  font-size:var(--caption);
+  font-size:var(--font-size-caption);
 }
 .calendar-head div {
   display: flex;
@@ -268,7 +268,7 @@ input[type=file] + label:after {display:none;}
   display: flex;
   justify-content: center;
   align-items: center;
-  width:var(--date-width);height:var(--date-width);border-radius:var(--radius400);background:#eee;font-size:var(--caption);
+  width:var(--date-width);height:var(--date-width);border-radius:var(--radius400);background:#eee;font-size:var(--font-size-caption);
   cursor: pointer;
   &:hover {
     background: var(--color-primary);

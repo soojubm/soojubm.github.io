@@ -11,7 +11,7 @@
 .profile-user-description-more {margin:0 .5rem;@include link-outer;}
 .profile-user-toggle {width:100%;margin:1rem 0;text-align:center;color:var(--gray800);}
 .profile-user-toggle-icon {@include box-small;}
-.profile-user-category {padding:4px 16px;background:coral;font-size:var(--caption);color:var(--gray0);border-radius:50px;}
+.profile-user-category {padding:4px 16px;background:coral;font-size:var(--font-size-caption);color:var(--gray0);border-radius:50px;}
 .profile-user-address {}
 .profile-user-address div {}
 .profile-user-address div b {margin:0 .5rem 0 0;font-weight:normal;color:var(--gray400);}
@@ -22,7 +22,7 @@
 .profile-user-statistic .statistic {width: var(--grid-column);position: relative;}
 .profile-user-statistic .statistic:hover {@include hover-item;}
 .profile-user-socials {}
-.profile-user-socials-title {margin:0.5rem 0;font-size:var(--body);font-weight:normal;color:var(--gray400);}
+.profile-user-socials-title {margin:0.5rem 0;font-size:var(--font-size-body);font-weight:normal;color:var(--gray400);}
 .profile-user-socials-link {display:block;color:var(--gray800);text-decoration:underline;}
 .profile-user-socials-link:hover {color:var(--color-primary);}
 .profile-user-controls {display:flex;margin:2rem 0 1rem;}
@@ -34,7 +34,7 @@
 .profile-body {padding:0 0 64px 398px;box-sizing:border-box;position:relative;}
 
 .profile-display {display:flex;}
-.profile-display-title {margin:0 0 0.25rem 0;font-size:var(--caption);}
+.profile-display-title {margin:0 0 0.25rem 0;font-size:var(--font-size-caption);}
 .profile-display-button {@include box-small;background:none;color:var(--gray800);outline:none;}
 // .profile-display-button:hover {@include hover-item;}
 .profile-display-button.is-selected {background:var(--gray100);}
@@ -44,7 +44,7 @@
 .profile-tablist-tab {height:var(--size-small);padding:0 1rem;color:var(--gray400);font-weight:var(--font-weight-bold);cursor:pointer;position:relative;z-index:var(--zindex-default);}
 // .profile-tablist-tab:hover {box-shadow:var(--shadow400);}
 .profile-tablist-tab[aria-selected=true] {color:var(--gray800);}
-.profile-tablist-tab-badge {font-size:var(--caption);}
+.profile-tablist-tab-badge {font-size:var(--font-size-caption);}
 .profile-tablist-indicator {display:block;height:calc(100% - .5rem);border-radius:var(--radius400);background:var(--gray0);position:absolute;top:.25rem;left:4px;transition:all 0.4s ease;}
 .profile-tabpanel {display:flex;flex-wrap:wrap;margin:0 -.5rem;}
 .profile-tabpanel[aria-hidden=true] {display:none;}
@@ -57,13 +57,13 @@
 .card-thumbnail img {display:block;width:auto;height:auto;max-width:100%;max-height:130%;margin:auto;box-shadow:var(--shadow400);position:absolute;left:-1px;right:-1px;top:-1px;bottom:-1px;}
 .card-byline {display:flex;margin:.75rem 0 1rem 0;position:relative;}
 .card-byline-avatar {@include box-tiny;margin-right:.5rem;}
-.card-byline-name {font-size:var(--caption);line-height:16px;color:var(--gray800);}
-.card-title {padding:.75rem 0 0;font-size:var(--body);}
+.card-byline-name {font-size:var(--font-size-caption);line-height:16px;color:var(--gray800);}
+.card-title {padding:.75rem 0 0;font-size:var(--font-size-body);}
 .card-text {margin:0 0 1rem 0;padding:.5rem 0 1rem;@include truncate-multi;}
 .card-category {@include tag-eyebrow;@include position-left-top;}
 .card-date {color:var(--gray400);}
 .card-tags {margin:.5rem 0 0 0;}
-.card-tags-item {@include hashtag;font-size:var(--caption);}
+.card-tags-item {@include hashtag;font-size:var(--font-size-caption);}
 
 // figure 왼쪽 vs 오른쪽 margin-right는 size에 따라 변함.
 // heading name / title, tiny font-sze 작음
@@ -71,13 +71,17 @@
 // action ~2 follow 버튼 등. 우측에 정렬되어야 함.
 
 // => avatar medium, avatar large(우측정렬, 버튼 아래)
+@mixin item-avatar {
+  float:left;margin-right:var(--space-after);
+  @include box-medium;
+}
 .card-item {height:var(--size-Medium);margin:1rem 0;position:relative;z-index:var(--zindex-default);}
-.card-item-media {float:left;display:block;margin-right:var(--space-after);@include box-medium;}
+.card-item-avatar {@include item-avatar;}
 .card-item-name {}
 .card-item-price {}
 .card-item:hover {@include hover-item;}
 
-.card-note {border:var(--border100);border-radius:var(--radius400);text-align:center;font-size:var(--caption);}
+.card-note {border:var(--border100);border-radius:var(--radius400);text-align:center;font-size:var(--font-size-caption);}
 .card-cta {@include button-primary;width:100%;margin:2rem 0;}
 .card-foot {display:flex;justify-content:space-between;margin:2rem 0 0;}
 
@@ -86,7 +90,7 @@
 .card:hover .card-more {display:block;}
 
 .list .card {float:none;width:100% !important;margin-bottom:1rem;}
-.list .card-thumbnail {float:left;width:80px;height:80px;margin-right:var(--space-after-large);padding-top:0;}
+.list .card-thumbnail {float:left;width:80px;height:80px;margin-right:var(--space-after);padding-top:0;}
 .list .card-thumbnail img {max-width:150%;}
 .list .card-title {padding-top:0;}
 .list .card-byline {margin-top:.5rem;margin-bottom:.5rem;}

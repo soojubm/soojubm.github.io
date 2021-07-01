@@ -28,20 +28,18 @@ $transition-fade: opacity 0.15s linear;
   --navbar-height: 56px;
   --subheader-height: 56px;
 
-  // ! fontSize
-  --headline: 3rem;
-  --title: 2rem;
-  --subhead: 1.125rem;
-  --body: .875rem;
-  --caption: .75rem;
+  --font-size-huge: 3rem;
+  --font-size-large: 2rem;
+  --font-size-medium: 1.125rem;
+  --font-size-small: .875rem;
+  --font-size-tiny: .75rem;
 
-  // --font-size
-  // ! 안 외워짐. 용도별로 구분하는 것이 좋을 수도.
-  --font-size-huge: var(--headline);
-  --font-size-large: var(--title);
-  --font-size-regular: var(--subhead);
-  --font-size-medium: var(--body);
-  --font-size-small: var(--caption); // tiny
+  --font-size-display: var(--font-size-huge);
+  --font-size-title: var(--font-size-large);
+  --font-size-subhead: var(--font-size-medium);
+  --font-size-body: var(--font-size-small);
+  --font-size-helper: var(--font-size-tiny);
+  --font-size-caption: var(--font-size-tiny);
 
   --font-weight-normal: normal;
   --font-weight-bold: bold;
@@ -97,28 +95,30 @@ $transition-fade: opacity 0.15s linear;
   --size-xsmall: 24px;
   --size-tiny: 16px;
 
-  // todo
+
+
+  
+  
+  --space: .75rem;
+  --space-small: .5rem;
+
   --space-leading-title: -.25rem;
   --space-leading-subhead: -.125rem;
-  
-  --space-after: .75rem;
-  --space-after-small: .5rem;
-  --space-after-medium: .75rem;
-  --space-after-large: .75rem;
 
   --space-after-title: 2rem;
   --space-after-subhead: 1rem;
-  --space-after-description: 2rem; // 2rem 0 0 0
-  --space-after-button: .75rem;
+  --space-after-description: 2rem;
   --space-after-button: .75rem;
   
   --space-before-badge: .75rem;
 
-  --space-between-item: .75rem;
+  --space-between-listitem: .75rem;
   --space-between-groupitem: .25rem;
   --space-between-groupitem-minus: calc(var(--space-between-groupitem) * -1);
   --space-between-section: 8rem;
   --space-between-section-large: 12rem;
+
+
 
   --border100: 1px solid var(--gray200);
 

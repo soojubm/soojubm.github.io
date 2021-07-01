@@ -1,11 +1,11 @@
-.titlebar {display:flex;align-items:center;padding:var(--space-between-item) var(--grid-margin);position:relative;left:0;right:0;z-index:var(--zindex-navigation);}
+.titlebar {display:flex;align-items:center;padding:var(--space-between-listitem) var(--grid-margin);position:relative;left:0;right:0;z-index:var(--zindex-navigation);}
 .titlebar-back {position:relative;z-index:var(--zindex-default);}
 .titlebar-back-icon {@include box-small;transform:rotate(180deg);}
-.titlebar-title {margin:-1px 0 0;padding:0 3rem;font-size:var(--body);position:absolute;}
+.titlebar-title {margin:-1px 0 0;padding:0 3rem;font-size:var(--font-size-body);position:absolute;}
 .titlebar-cta {margin-left:auto;}
 .titlebar-cta svg {width:1rem;}
 .titlebar-background {@include bleeding;background-color:var(--gray0);}
-.titlebar-backdrop {height:32px;padding:var(--space-between-item) 0;background:var(--gray0);}
+.titlebar-backdrop {height:32px;padding:var(--space-between-listitem) 0;background:var(--gray0);}
 
 .is-sticky-titlebar .titlebar {position:fixed;top:0;}
 .is-sticky-titlebar .titlebar-background {border-radius:var(--radius400);box-shadow:var(--shadow400);}

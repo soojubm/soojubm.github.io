@@ -34,18 +34,18 @@
     </footer>
     <div class="hero-features" style="display:none">
       <div class="">
-        <h3 style="font-size:var(--subhead);font-weight:var(--font-weight-bold);margin:0 0 .5rem 0;">단순성</h3>
+        <h3 style="font-size:var(--font-size-subhead);font-weight:var(--font-weight-bold);margin:0 0 .5rem 0;">단순성</h3>
         <p>디자인 시스템은 유아이 라이브러리가 아닙니다. 가능한 모든 경우의 수를 나열하지 마세요. 모바일 퍼스트(혹은 모바일 온리)로 시작하여, 서비스의 규묘와 리소스에 맞춰서 시스템을 확장하세요.</p>
       </div>
       <div class="">
-        <h3 style="margin:0 0 .5rem 0;font-size:var(--subhead);font-weight:var(--font-weight-bold);">유연성 (지속 가능성)</h3>
+        <h3 style="margin:0 0 .5rem 0;font-size:var(--font-size-subhead);font-weight:var(--font-weight-bold);">유연성 (지속 가능성)</h3>
         <p>UI는 사용자의 추가적인 학습을 최소화할 정도로 보편타당해야 합니다.</p>
         <div>
           <span class="tag">REM</span>
         </div>
       </div>
       <div class="">
-        <h3 style="font-size:var(--subhead);font-weight:var(--font-weight-bold);margin:0 0 .5rem 0;">명료성 (보편성?)</h3>
+        <h3 style="font-size:var(--font-size-subhead);font-weight:var(--font-weight-bold);margin:0 0 .5rem 0;">명료성 (보편성?)</h3>
         <p>UI는 사용자의 추가적인 학습을 최소화할 정도로 보편타당해야 합니다.</p>
       </div>
     </div>
@@ -237,12 +237,23 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Spacing</h1>
-      <ul>
-        <li>--space-between-item .75rem</li>
-        <li>--space-after-title 1rem</li>
-        <li>--space-after-description 2rem</li>
-        <li>--space-after-button 75em</li>
-      </dl>
+      <code style="padding:1rem;">
+        <p>--space-leading-title: -.25rem;</p>
+        <p>--space-leading-subhead: -.125rem;</p>
+        <hr />
+        <p>--space-between-listitem: .75rem</p>
+        <p>--space-between-groupitem: .25rem;</p>
+        <p>--space-between-groupitem-minus: calc(var(--space-between-groupitem) * -1);</p>
+        <p>--space-between-article: 6rem;</p>
+        <p>--space-between-section: 8rem;</p>
+        <hr />
+        <p>--space-before-badge: .75rem;</p>
+        <hr />
+        <p>--space-after-title: 2rem</p>
+        <p>--space-after-subhead: 1rem</p>
+        <p>--space-after-description: 2rem</p>
+        <p>--space-after-button: .75em</p>
+      </code>
     </article>
 
     <article class="design-article js-scrollspy-section">
@@ -295,18 +306,23 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Breakpoints</h1>
-      <p class="design-article-description">최소 pc, mobile device 2개. 모든 페이지가 컨테이너 모듈을 같을 필요는 없습니다.</p>
+      <p class="design-article-description">최소 pc, mobile device 2개. 모든 페이지가 컨테이너 모듈을 같을 필요는 없습니다. calc(width-large + alpha)로 정의하는 것이 좋을꽈</p>
       <!-- <blockquote>
         <p>서비스가 출시 환경이 웹온리(웹/태블릿+모바일) vs 웹+모바일앱(웹+태블릿/모바일)</p>
       </blockquote> -->
       <dl>
         <dt>tiny</dt><dd>필수. 760 이하 / %퍼센티지</dd>
-        <dt>small</dt><dd>필수. 1020 이하 / %퍼센티지</dd>
-        <dt>medium</dt><dd>필수. 1240 이하</dd>
-        <dt>large</dt><dd>선택. > 1480 이상</dd>
+        <dt>medium</dt><dd>필수. 1080px 이하</dd>
+        <dt>large</dt><dd>선택. > 1480 이하</dd>
+        <!-- <dt>huge</dt><dd></dd> -->
       </dl>
       <hr />
-      <pre><code>@custom-media --breakpoint-large (max-width: 1380px);
+      <pre><code>--width-container-tiny: 320px;
+--width-container-small: 480px;
+--width-container-medium: 640px;
+--width-container-medium2: 1024px;
+--width-container-large: 1180px;</code>
+<hr /><code>@custom-media --breakpoint-large (max-width: 1380px);
 @custom-media --breakpoint-small (max-width: 1080px);
 @custom-media --breakpoint-tiny (max-width: 760px);</code></pre>
     </article>
@@ -315,22 +331,17 @@
       <h1 class="design-article-title">Hover System</h1>
       <p class="design-article-description">준비 중. active, hover, clickable, border/background/elevated (앞에 두개는 flat)</p>
 
-    </article>
-
-    <article class="design-article js-scrollspy-section">
-      <h1 class="design-article-title">Indicator System</h1>
-      <p class="design-article-description">준비 중.</p>
-    </article> -->
+    </article>-->
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Sizes & Avatars</h1>
       <p class="design-article-description">아바타는 텍스트, 아이콘, 이미지를 포함할 수 있습니다. Large와 Medium은 디스크립션을 가질 수 있습니다.</p>
       <dl>
-        <dt>Large</dt><dd>avatar</dd>
-        <dt>Medium</dt><dd>button, textfield, avatar</dd>
-        <dt>Small</dt><dd>button small, chip, avatar</dd>
-        <dt>XSmall</dt><dd>tag, avatar, button in textfield(indicator)</dd>
-        <dt>XXSmall</dt><dd>radio, checkbox, switch, avatar</dd>
+        <dt>800</dt><dd>avatar</dd>
+        <dt>600</dt><dd>button, textfield, avatar</dd>
+        <dt>400</dt><dd>button small, chip, avatar</dd>
+        <dt>200</dt><dd>tag, avatar, button in textfield(indicator)</dd>
+        <dt>100</dt><dd>radio, checkbox, switch, avatar</dd>
       </dl>
       <hr />
       <!-- 2021-05 xsmall 사이즈 추가, todo: tiny를 xxsmall로 변경하고 기본값으로 medium을 사용. -->
@@ -347,7 +358,7 @@
         <a href="" class="design-article-avatar-large"><span class="avatar-badge"></span></a>
         <div style="display:block;width:1rem;height:inherit;border-radius:var(--radius400);background:var(--green100);"></div>
         <div style="display:block;width:calc(100% - 80px - 1.5rem);height:inherit;">
-          <h3 style="font-size:var(--subhead);font-weight:var(--font-weight-bold);">Large 80px / space 1.5rem</h3>
+          <h3 style="font-size:var(--font-size-subhead);font-weight:var(--font-weight-bold);">Large 80px / space 1.5rem</h3>
           <p style="color:var(--gray400);">디스크립션</p>
         </div>
       </div>
@@ -355,7 +366,7 @@
         <a href="" class="design-article-avatar-medium"></a>
         <div style="display:block;width:.75rem;height:48px;border-radius:var(--radius400);background:var(--green100);box-sizing:border-box;"></div>
         <div style="display:block;width:calc(100% - 48px - 1rem);height:inherit;">
-          <h3 style="font-weight:var(--font-weight-bold);font-size:var(--body);">Medium 48px / space 1rem</h3>
+          <h3 style="font-weight:var(--font-weight-bold);font-size:var(--font-size-body);">Medium 48px / space 1rem</h3>
           <p style="color:var(--gray400);">디스크립션</p>
         </div>
       </div>
@@ -372,7 +383,7 @@
       <div style="display:flex;">
         <a href="" class="design-article-avatar-tiny"></a>
         <div style="display:block;width:.5rem;height:inherit;border-radius:var(--radius400);background:var(--green100);box-sizing:border-box;"></div>
-        <div style="display:block;width:calc(100% - 16px - .5rem);height:inherit;font-size:var(--caption);line-height:16px;">Tiny 16px</div>
+        <div style="display:block;width:calc(100% - 16px - .5rem);height:inherit;font-size:var(--font-size-caption);line-height:16px;">Tiny 16px</div>
       </div> -->
 
       <hr />
@@ -407,7 +418,7 @@
       <h6 class="title-bordered">Font Family</h6>
       <div class="design-typograph-group">
         <div class="design-typograph-item">
-          한글 <b style="display:block;font-size:var(--subhead);line-height:1.5;font-weight:var(--font-weight-bold);">아리타 산스</b>
+          한글 <b style="display:block;font-size:var(--font-size-subhead);line-height:1.5;font-weight:var(--font-weight-bold);">아리타 산스</b>
           <div role="group" style="margin-top:1rem;">
             <span class="tag">normal</span>
             <span class="tag">bold</span>
@@ -415,7 +426,7 @@
         </div>
         <div class="design-typograph-item">
           <!-- <i style="display:block;margin-bottom:.5rem;width:16px;height:16px;border-radius:var(--radius400);background:var(--color-primary);color:var(--gray400);"></i> -->
-          영문 <b style="display:block;font-size:var(--subhead);line-height:1.5;font-weight:var(--font-weight-bold);">Asap</b style="display:block;font-size:var(--subhead);margin-top:.5rem;">
+          영문 <b style="display:block;font-size:var(--font-size-subhead);line-height:1.5;font-weight:var(--font-weight-bold);">Asap</b style="display:block;font-size:var(--font-size-subhead);margin-top:.5rem;">
           <div role="group" style="margin-top:1rem;">
             <span class="tag">normal</span>
             <span class="tag">bold</span>
@@ -435,17 +446,25 @@
         </div>
       </div> -->
       <dl>
-        <dt>Headline</dt><dd>2rem / 32px / 글자수와 단어수. 2~3줄.</dd>
-        <dt>Subhead</dt><dd>1.125rem / 18px</dd>
-        <dt>Body</dt><dd>.875rem / 14px <i class="tag" style="margin-left:.5rem;font-weight:400;">default</i></dd>
-        <dt>Caption</dt><dd>.75rem / 12px</dd>
+        <dt>title</dt><dd>2rem(32px) / 글자수와 단어수. 2~3줄.</dd>
+        <dt>subhead</dt><dd>1.125rem(18px)</dd>
+        <dt>body</dt><dd>.875rem(14px) <i class="tag" style="margin-left:.5rem;font-weight:400;">default</i></dd>
+        <dt>caption</dt><dd>.75rem(12px)</dd>
       </dl>
       <hr />
+      <pre><code>--width-container-tiny: 320px;
+--width-container-small: 480px;
+--width-container-medium: 640px;
+--width-container-medium2: 1024px;
+--width-container-large: 1180px;</code>
+<hr /><code>@custom-media --breakpoint-large (max-width: 1380px);
+@custom-media --breakpoint-small (max-width: 1080px);
+@custom-media --breakpoint-tiny (max-width: 760px);</code></pre>
       <!-- <article class="design-typograph-size">
-        <h3 class="design-typograph-size-title" style="font-size:var(--title);">XLarge <span>2rem / 32px</span></h3>
-        <h3 class="design-typograph-size-title" style="margin:.5rem 0 .5rem;font-size:var(--subhead);">Large <span>1.125rem / 18px</span></h3>
-        <h3 class="design-typograph-size-title" style="margin:.5rem 0 .25rem;font-size:var(--body);">Medium <i class="tag" style="margin-left:.5rem;font-weight:400;">기본크기</i> <span>.875rem / 14px</span></h3>
-        <h3 class="design-typograph-size-title" style="font-size:var(--caption);">Small <span>.75rem / 12px</span></h3>
+        <h3 class="design-typograph-size-title" style="font-size:var(--font-size-large);">XLarge <span>2rem / 32px</span></h3>
+        <h3 class="design-typograph-size-title" style="margin:.5rem 0 .5rem;font-size:var(--font-size-subhead);">Large <span>1.125rem / 18px</span></h3>
+        <h3 class="design-typograph-size-title" style="margin:.5rem 0 .25rem;font-size:var(--font-size-body);">Medium <i class="tag" style="margin-left:.5rem;font-weight:400;">기본크기</i> <span>.875rem / 14px</span></h3>
+        <h3 class="design-typograph-size-title" style="font-size:var(--font-size-caption);">Small <span>.75rem / 12px</span></h3>
       </article> -->
       <!-- <p>페이지 레벨의 제목에 사용합니다.</p>
       <p>카드, 아티클 등 소제목에 사용합니다.</p>
@@ -459,7 +478,7 @@
       <blockquote>
         [role=group] vs [role=listbox] ex) button group, tag listbox
       </blockquote>
-      <div style="display:flex;align-items:center;height:10rem;border:var(--border100);border-radius:var(--radius400);text-align:center;font-size:var(--caption);position:relative;">
+      <div style="display:flex;align-items:center;height:10rem;border:var(--border100);border-radius:var(--radius400);text-align:center;font-size:var(--font-size-caption);position:relative;">
         <div class="space" style="width:5%;"><span class="tag">5%</span></div>
         <div style="display:flex;align-items:center;justify-content:center;width:calc(50% - 5% - .5rem);height:100%;">column<br />50% - 0.5rem</div>
         <div class="space" style="width:1rem;"><span class="tag">1rem</span></div>
@@ -474,7 +493,7 @@
         <div class="space" style="height:1.5rem;position:absolute;left:0;right:0;top:calc(100% - 1.5rem);bottom:0;z-index:0;"><span class="tag">1.5rem</span></div>
         <div class="space" style="height:100%;position:absolute;left:0;right:calc(100% - 1.5rem);top:0;bottom:0;z-index:0;"><span class="tag">1.5rem</span></div>
         <div class="space" style="height:100%;position:absolute;left:calc(100% - 1.5rem);right:0;top:0;bottom:0;z-index:0;"><span class="tag">1.5rem</span></div>
-        <h4 class="typography-subhead" style="font-size:var(--subhead);">선약이 있어서 ✋ <span style="display:block;">자아실현은 못할 것 같아요.</네무></h4>
+        <h4 class="typography-subhead" style="font-size:var(--font-size-subhead);">선약이 있어서 ✋ <span style="display:block;">자아실현은 못할 것 같아요.</네무></h4>
         <div class="space" style="height:1rem;"><span class="tag">1rem</span></div>
         <p class="typography-paragraph">서브헤드와 디스크립션 혹은 패러그라프는 이렇게 사용하세요. 타이틀의 행간이 조정되었기 때문에 시각보정이 필요할 수도 있어요.</p>
         <div class="space" style="height:2rem;"><span class="tag">2rem</span></div>
@@ -781,14 +800,14 @@
       <br />
       <h6 class="title-bordered">Sizes</h6>
       <div class="design-buttongroup">
-        <button class="design-article-primary" style="height:auto;padding:12px 0 15px;font-size:var(--subhead);vertical-align:bottom;">
+        <button class="design-article-primary" style="height:auto;padding:12px 0 15px;font-size:var(--font-size-subhead);vertical-align:bottom;">
           Large
         </button>
         <button class="design-article-tertiary" style="vertical-align:bottom;">Medium</button>
         <button class="design-article-tertiary-small">Small</button>
       </div>
-      <p style="margin:.5rem 0 0;font-size:var(--caption);">Large 사이즈는 프로모션(캠페인) 페이지에서 사용합니다.</p>
-      <p style="margin:.5rem 0 0;font-size:var(--caption);">Small 사이즈는 아이템 컴포넌트에서 사용합니다.</p>
+      <p style="margin:.5rem 0 0;font-size:var(--font-size-caption);">Large 사이즈는 프로모션(캠페인) 페이지에서 사용합니다.</p>
+      <p style="font-size:var(--font-size-caption);">Small 사이즈는 아이템 컴포넌트에서 사용합니다.</p>
       <br />
       <h6 class="title-bordered">Text (outdated)</h6>
       <div class="design-buttongroup">
@@ -804,7 +823,7 @@
         <button class="design-article-tertiary">모두보기 <span class="button-tailing"><i class="icon-chevron"></i></span></button>
         <button class="design-article-tertiary"><del>전체보기</del> <span class="button-tailing"><i class="icon-chevron"></i></span></button>
       </div>
-      <!-- <h6 style="margin:0 0 .5rem;font-size:var(--caption);">Status</h6>
+      <!-- <h6 style="margin:0 0 .5rem;font-size:var(--font-size-caption);">Status</h6>
       <div class="design-buttongroup">
         <button class="loadmore is-fetching">
           Loading...
@@ -912,7 +931,7 @@
       <br />
       <h6 class="title-bordered">States (valid / invalid)</h6>
       <div class="textfield is-invalid">
-        <label class="textfield-label" for="abc123">레이블 <abbr aria-label="optional" style="font-size:var(--caption);">선택입력</abbr></label>
+        <label class="textfield-label" for="abc123">레이블 <abbr aria-label="optional" style="font-size:var(--font-size-caption);">선택입력</abbr></label>
         <input class="textfield-input js-input-test" type="text" id="abc123" placeholder="Textarea Placeholder..." value="soojubm@gmail.com" aria-describedby="error" aria-invalid="true" />
         <small class="textfield-helper is-error">이미 사용 중인 이메일입니다.</small>
       </div>
@@ -1107,7 +1126,7 @@
           </tbody>
         </table>
       </section>
-      <p style="margin:var(--space-after-item);font-size:var(--caption);">레이블에 아이콘을 단독으로 사용할 수 없습니다.</p>
+      <p style="margin:var(--space-after-item);font-size:var(--font-size-caption);">레이블에 아이콘을 단독으로 사용할 수 없습니다.</p>
 
       <br />
 
@@ -1117,7 +1136,7 @@
         <b class="product-info-price-insertion" role="insertion">₩ 20,000</b>
         <em class="product-info-price-percentage">(30%)</em>
       </div>
-      <p style="margin:var(--space-after-item);font-size:var(--caption);">role=[suggestion / deletion / insertion]</p>
+      <p style="margin:var(--space-after-item);font-size:var(--font-size-caption);">role=[suggestion / deletion / insertion]</p>
     </article>
 
     <article class="design-article js-tab">
@@ -1368,7 +1387,7 @@
       <div class="userlist">
         <div class="profile-user" style="float:none;width:100%;height:48px;box-sizing:border-box;">
           <figure class="profile-user-avatar" style="float:left;width:48px;height:48px;margin-right:1rem;"></figure>
-          <h2 class="profile-user-name" style="font-size:var(--body);">Gyeongsoo I</h2>
+          <h2 class="profile-user-name" style="font-size:var(--font-size-body);">Gyeongsoo I</h2>
           <span class="profile-user-id" style="color:var(--gray400);">유아이 디자이너</span>
           <button class="design-article-tertiary-small" style="position:absolute;right:0;top:0;">팔로우</button>
         </div>
@@ -1696,7 +1715,7 @@
         <span>클라우드 스토리지</span>
         <span style="display:block;align-items: center;margin-top:-.5rem;">
           <div class="graph-item is-horizontal" style="margin:0;width:100%;">
-            <span class="graph-item-value" style="font-size:var(--body);right:0;bottom:12px;">92%</span>
+            <span class="graph-item-value" style="font-size:var(--font-size-body);right:0;bottom:12px;">92%</span>
             <div class="graph-item-bar"></div>
           </div>
           <small>2GB 중 5,218KB 사용됨</small>
@@ -1820,7 +1839,7 @@
         <span class="card-category">카테고리</span>
         <hr />
         <div class="card-item">
-          <figure class="card-item-media">🍊</figure>
+          <figure class="card-item-avatar">🍊</figure>
           <h4 class="card-item-name">퓨어 오렌지 주스</h4>
           <div class="card-item-price">
             <del>₩ 19,000</del> ₩ 16,000 <em>할인율 20%</em>
@@ -1918,20 +1937,20 @@
         </header>
         <hr />
         <div class="profile-user" style="width:100%;height:48px;" role="listitem">
-          <figure class="profile-user-avatar" style="float:left;width:48px;height:48px;margin-right:var(--space-after-medium);"></figure>
-          <h2 class="profile-user-name" style="font-size:var(--body);">Gyeongsoo I</h2>
+          <figure class="profile-user-avatar" style="float:left;width:48px;height:48px;margin-right:var(--space-after);"></figure>
+          <h2 class="profile-user-name" style="font-size:var(--font-size-body);">Gyeongsoo I</h2>
           <span class="profile-user-id" style="color:var(--gray400);">유아이 디자이너</span>
           <button class="design-article-tertiary-small" style="position:absolute;right:0;top:0;">팔로잉</button>
         </div>
         <div class="profile-user" style="width:100%;height:48px;margin-top:1rem;" role="listitem">
-          <figure class="profile-user-avatar" style="float:left;width:48px;height:48px;margin-right:var(--space-after-medium);"></figure>
-          <h2 class="profile-user-name" style="font-size:var(--body);">Gyeongsoo I</h2>
+          <figure class="profile-user-avatar" style="float:left;width:48px;height:48px;margin-right:var(--space-after);"></figure>
+          <h2 class="profile-user-name" style="font-size:var(--font-size-body);">Gyeongsoo I</h2>
           <span class="profile-user-id" style="color:var(--gray400);">유아이 디자이너</span>
           <button class="design-article-secondary-small" style="position:absolute;right:0;top:0;">팔로우</button>
         </div>
         <div class="profile-user" style="width:100%;height:48px;margin-top:1rem;">
-          <figure class="profile-user-avatar" style="float:left;width:48px;height:48px;margin-right:var(--space-after-medium);background-image:none;"><i class="icon-plus" style="transform:scale(1.25);"></i></figure>
-          <h2 class="profile-user-name" style="font-size:var(--body);line-height:48px;">더 많은 친구를 찾아보세요!</h2>
+          <figure class="profile-user-avatar" style="float:left;width:48px;height:48px;margin-right:var(--space-after);background-image:none;"><i class="icon-plus" style="transform:scale(1.25);"></i></figure>
+          <h2 class="profile-user-name" style="font-size:var(--font-size-body);line-height:48px;">더 많은 친구를 찾아보세요!</h2>
         </div>
         <!-- <button class="userlist-cta">모두 보기</button> -->
       </article>
@@ -1947,7 +1966,7 @@
         <span class="pricing-item-price">
           <span class="pricing-item-price-unit">₩ </span>
           <span>6,800</span>
-          <span class="pricing-item-price-per" style="font-size:var(--body);font-weight:normal;">/ 월</span>
+          <span class="pricing-item-price-per" style="font-size:var(--font-size-body);font-weight:normal;">/ 월</span>
         </span>
         <p class="pricing-item-description">전직대통령의 신분과 예우에 관하여는 법률로 정한다. 대법원장은 국회의 동의를 얻어 대통령이 임명한다.</p>
         <ul>
@@ -2005,10 +2024,10 @@
       
       <article class="sheet" style="margin-top:1rem;">
         <h3 class="sheet-title" style="margin-bottom:.75rem;font-size:12px;color:var(--gray400);">목록 정렬</h3>
-        <button style="width:100%;display:flex;align-items:center;margin:0 0 1rem 0;justify-content:space-between;font-size:var(--subhead);">
+        <button style="width:100%;display:flex;align-items:center;margin:0 0 1rem 0;justify-content:space-between;font-size:var(--font-size-subhead);">
           바텀 시트 옵션
         </button>
-        <button style="width:100%;display:flex;align-items:center;justify-content:space-between;font-size:var(--subhead);">
+        <button style="width:100%;display:flex;align-items:center;justify-content:space-between;font-size:var(--font-size-subhead);">
           바텀 시트 옵션 <i class="icon-check"></i>
         </button>
 
@@ -2020,10 +2039,10 @@
       <nav class="sidebar">
         <h4 class="sidebar-heading" style="margin-top:-.25rem;">대분류</h4>
         <div class="sidebar-item" role="listitem">
-          <h2 style="margin-right:.5rem;font-size:var(--subhead)"><figure style="margin:0 1rem 0 0;">⚽</figure>축구</h2>
+          <h2 style="margin-right:.5rem;font-size:var(--font-size-subhead)"><figure style="margin:0 1rem 0 0;">⚽</figure>축구</h2>
         </div>
         <div class="sidebar-item" role="listitem">
-          <h2 style="margin-right:1rem;font-size:var(--subhead)"><figure style="margin:0 1rem 0 0;">🏹</figure>양궁</h2>
+          <h2 style="margin-right:1rem;font-size:var(--font-size-subhead)"><figure style="margin:0 1rem 0 0;">🏹</figure>양궁</h2>
           <span class="sidebar-item-tag tag" data-appearance="accent">새소식</span>
         </div>
       </nav>
@@ -2042,14 +2061,14 @@
 
         <div style="margin-top:1rem;" role="listbox">
           <div class="profile-user" style="float:none;width:100%;height:48px;margin:1rem 0;" role="listitem">
-            <figure class="profile-user-avatar" style="float:left;width:48px;height:48px;margin-right:var(--space-after-medium);"></figure>
-            <h2 class="profile-user-name" style="font-size:var(--body);">Gyeongsoo I</h2>
+            <figure class="profile-user-avatar" style="float:left;width:48px;height:48px;margin-right:var(--space-after);"></figure>
+            <h2 class="profile-user-name" style="font-size:var(--font-size-body);">Gyeongsoo I</h2>
             <span class="profile-user-id" style="color:var(--gray400);">유아이 디자이너</span>
             <button class="design-article-text-small" style="min-width:auto;color:var(--gray800);position:absolute;right:0;top:0;">팔로잉</button>
           </div>
           <div class="profile-user" style="float:none;width:100%;height:48px;margin:1rem 0;" role="listitem">
-            <figure class="profile-user-avatar" style="float:left;width:48px;height:48px;margin-right:var(--space-after-medium);"></figure>
-            <h2 class="profile-user-name" style="font-size:var(--body);">Gyeongsoo I</h2>
+            <figure class="profile-user-avatar" style="float:left;width:48px;height:48px;margin-right:var(--space-after);"></figure>
+            <h2 class="profile-user-name" style="font-size:var(--font-size-body);">Gyeongsoo I</h2>
             <span class="profile-user-id" style="color:var(--gray400);">유아이 디자이너</span>
             <button class="design-article-text-small" style="min-width:auto;color:var(--gray800);position:absolute;right:0;top:0;">팔로잉</button>
           </div>
@@ -2060,8 +2079,8 @@
 
       <div class="tile-elevated" style="max-width:375px;">
         <div class="profile-user" style="float:none;width:100%;height:48px;margin-bottom:var(--space-item);" role="listitem">
-          <figure class="profile-user-avatar" style="float:left;width:48px;height:48px;margin-right:var(--space-after-medium);"></figure>
-          <h2 class="profile-user-name" style="font-size:var(--body);">Gyeongsoo I</h2>
+          <figure class="profile-user-avatar" style="float:left;width:48px;height:48px;margin-right:var(--space-after);"></figure>
+          <h2 class="profile-user-name" style="font-size:var(--font-size-body);">Gyeongsoo I</h2>
           <span class="profile-user-id" style="color:var(--gray400);">유아이 디자이너</span>
         </div>
         <div class="temp8" style="display:flex;max-width:375px;">

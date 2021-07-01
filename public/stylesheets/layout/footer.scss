@@ -4,13 +4,13 @@
 .subscribe-description {margin:1rem 0 2rem 0;}
 .subscribe-field {margin:2rem 0 0;}
 .subscribe-submit {@include button-primary;width:50%;margin-top:var(--space-after-button);}
-.subscribe-helper {display:block;margin:.5rem 0 0 0;font-size:var(--caption);}
+.subscribe-helper {display:block;margin:.5rem 0 0 0;font-size:var(--font-size-caption);}
 
 .sitemap {display:flex;max-width:var(--width-large);margin:0 auto;padding:4rem var(--grid-margin);position:relative;z-index:var(--zindex-default);}
 .sitemap-background {@include bleeding;background:var(--gray100);}
 .sitemap-title {margin:0 0 1rem 0;@include subhead;}
 .sitemap-item {width:25%;}
-.sitemap-item-title {margin:0 0 1rem 0;font-size:var(--body);font-weight:normal;color:var(--gray400);}
+.sitemap-item-title {margin:0 0 1rem 0;font-size:var(--font-size-body);font-weight:normal;color:var(--gray400);}
 .sitemap-item-link {display:block;margin:.5rem 0;color:var(--gray800);}
 .sitemap-item-link:hover {@include hover-text;}
 
