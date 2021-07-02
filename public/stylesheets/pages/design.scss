@@ -391,8 +391,7 @@
 
 @media (--breakpoint-small) {
   .design-home nav {flex-direction:column;}
-  .design-home nav a {width:100%;}
-  .design-home nav a + a {margin-top:1rem;}
+  .design-home nav a {width:100%;margin:.5rem 0;}
 }
 
 
