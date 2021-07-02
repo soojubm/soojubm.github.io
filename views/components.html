@@ -1,5 +1,4 @@
 <main class="design">
-
   <style>
     .navbar {display:none;}
   </style>
@@ -278,19 +277,7 @@
       </code>
     </article>
 
-    <article class="design-article js-scrollspy-section">
-      <h1 class="design-article-title">z-index</h1>
-      <p class="design-article-description">비슷한 성격의 유아이를 묶는 방식 vs 각각</p>
-      <dl>
-        <dt>toast</dt><dd>9</dd>
-        <dt>modal</dt><dd>7</dd>
-        <dt>modal dim</dt><dd>6</dd>
-        <dt>navigation</dt><dd>5</dd>
-        <dt>popover</dt><dd>2</dd>
-      </dl>
-    </article>
-
-
+<!-- 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Indicator</h1>
       <p class="design-article-description">사용자가 행동을 할 수 있다는 지표로 사용합니다.</p>
@@ -307,7 +294,7 @@
         <dt>모두보기</dt><dd>see all(15)(internal, arrow-right)</dd>
         <dt>더보기</dt><dd>확장,더보기vs더불러오기(more, arrow-down), 자세히보기, learn more 등(external, arrow-right-top)</dd>
       </dl>
-    </article>
+    </article> -->
 
     <article class="design-article js-scrollspy-section">
       <h1 class=design-article-title>Rules</h1>
@@ -321,7 +308,6 @@
         <li>action indicator :이상 혹은 이하를 표기할 때 >, < 를 사용하지 않습니다. 액션 인디케이터와 혼동이 될 수 있어서. 이상, 이하 한글로 명확하게 전달하ㄱ시오!</li>
 
         <li>naming: -s vs - list</li>
-
       </ul>
     </article>
 
@@ -339,21 +325,18 @@
         <!-- <dt>huge</dt><dd></dd> -->
       </dl>
       <hr />
-      <pre><code>--width-container-tiny: 320px;
---width-container-small: 480px;
---width-container-medium: 640px;
---width-container-medium2: 1024px;
---width-container-large: 1180px;</code>
-<hr /><code>@custom-media --breakpoint-large (max-width: 1380px);
-@custom-media --breakpoint-small (max-width: 1080px);
-@custom-media --breakpoint-tiny (max-width: 760px);</code></pre>
+      <code style="padding:1rem;">
+        <p>--width-container-tiny: 320px;</p>
+        <p>--width-container-small: 480px;</p>
+        <p>--width-container-medium: 640px;</p>
+        <p>--width-container-medium2: 1024px;</p>
+        <p>--width-container-large: 1180px;</p>
+        <hr />
+        <p>@custom-media --breakpoint-large (max-width: 1380px);</p>
+        <p>@custom-media --breakpoint-small (max-width: 1080px);</p>
+        <p>@custom-media --breakpoint-tiny (max-width: 760px);</p>
+      </code>
     </article>
-
-    <!-- <article class="design-article js-scrollspy-section">
-      <h1 class="design-article-title">Hover System</h1>
-      <p class="design-article-description">준비 중. active, hover, clickable, border/background/elevated (앞에 두개는 flat)</p>
-
-    </article>-->
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Sizes & Avatars</h1>
@@ -468,30 +451,21 @@
         </div>
       </div> -->
       <dl>
-        <dt>title</dt><dd>2rem(32px) / 글자수와 단어수. 2~3줄.</dd>
+        <dt>title</dt><dd>2rem(32px) 페이지 레벨의 제목에 사용합니다. 글자수와 단어수. 2~3줄.</dd>
         <dt>subhead</dt><dd>1.125rem(18px)</dd>
         <dt>body</dt><dd>.875rem(14px) <i class="tag" style="margin-left:.5rem;font-weight:400;">default</i></dd>
-        <dt>caption</dt><dd>.75rem(12px)</dd>
+        <dt>caption</dt><dd>.75rem(12px) 벨리데이션 피드백 등 도움말 맥락에서 사용합니다.</dd>
       </dl>
-      <hr />
-      <pre><code>--width-container-tiny: 320px;
---width-container-small: 480px;
---width-container-medium: 640px;
---width-container-medium2: 1024px;
---width-container-large: 1180px;</code>
-<hr /><code>@custom-media --breakpoint-large (max-width: 1380px);
-@custom-media --breakpoint-small (max-width: 1080px);
-@custom-media --breakpoint-tiny (max-width: 760px);</code></pre>
       <!-- <article class="design-typograph-size">
         <h3 class="design-typograph-size-title" style="font-size:var(--font-size-huge);">XLarge <span>2rem / 32px</span></h3>
         <h3 class="design-typograph-size-title" style="margin:.5rem 0 .5rem;font-size:var(--font-size-subhead);">Large <span>1.125rem / 18px</span></h3>
         <h3 class="design-typograph-size-title" style="margin:.5rem 0 .25rem;font-size:var(--font-size-body);">Medium <i class="tag" style="margin-left:.5rem;font-weight:400;">기본크기</i> <span>.875rem / 14px</span></h3>
         <h3 class="design-typograph-size-title" style="font-size:var(--font-size-caption);">Small <span>.75rem / 12px</span></h3>
       </article> -->
-      <!-- <p>페이지 레벨의 제목에 사용합니다.</p>
+      <!--
       <p>카드, 아티클 등 소제목에 사용합니다.</p>
       <p>포스트, 약관 등 텍스트 중심의 콘텐츠 페이지에서는 본문으로 사용할 수 있습니다.</p>
-      <p>벨리데이션 피드백 등 도움말 맥락에서 사용합니다.</p> -->
+      -->
     </article>
 
     <article class="design-article" hidden>
@@ -525,18 +499,6 @@
           <span class="tag">Category</span>
         </footer> -->
       </div>
-
-      <!-- <hr />
-      <footer class="buttongroup">
-        <button class="buttongroup-primary">프라이머리</button>
-        <button class="buttongroup-secondary">세컨더리</button>
-      </footer>
-      <hr />
-      <footer class="buttongroup is-vertical">
-        <button class="buttongroup-primary">프라이머리</button>
-        <button class="buttongroup-secondary">세컨더리</button>
-      </footer> -->
-      <!-- <p>버튼 그룹은 vertical과 horizental. horizental에서도 primary를 먼저 마크업해야 합니다.</p>-->
     </article>
 
     <article class="design-article js-scrollspy-section">
@@ -1180,19 +1142,26 @@
 			</nav>
     </article>
 
-    <!-- <article class="design-article">
+    <article class="design-article">
       <h1 class="design-article-title">Button Group</h1>
       <p class="design-article-description">작성 중.</p>
       <div class="group-sample" role="group">
         <button class="group-sample-prev" style="width:var(--grid-column)">이전</button>
         <button class="group-sample-next" style="width:var(--grid-column)">다음</button>
       </div>
-      <hr style="margin-top:.5rem;" />
+      <hr />
       <div class="group-sample" role="group">
         <button class="group-sample-cancel" style="width:var(--grid-column);margin-left:auto;">취소</button>
         <button class="group-sample-next" style="width:var(--grid-column)">작성</button>
       </div>
-    </article> -->
+      <hr />
+      <footer class="buttongroup">
+        <button class="buttongroup-primary">프라이머리</button>
+        <button class="buttongroup-secondary">세컨더리</button>
+      </footer>
+      <hr />
+      <p>버튼 그룹은 vertical과 horizental. horizental에서도 primary를 먼저 마크업해야 합니다.</p>
+    </article>
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Tooltip</h1>
@@ -2211,24 +2180,6 @@
     </article> -->
   </section>
 </main>
-
-
-
-    <!-- <form class="todo js-todo" style="max-width:560px;margin:0 auto;">
-      <fieldset class="todo-body">
-        <legend>위시리스트</legend>
-        <div class="textfield">
-          <label class="todoList-label textfield-label">What do you want for your birthday?</label>
-          <input class="todoList-input textfield-input js-todo-input" type="text" placeholder="write a to do">
-        </div>
-        <ol class="todo-list js-todo-list">
-        </ol>
-      </fieldset>
-      <footer class="todo-control">
-        <button class="todo-control-add primary-button js-todo-submit" type="submit">Add to todoList</button>
-        <button class="todo-control-remove js-todo-clear">remove all items</button>
-      </footer>
-    </form> -->
 
     <!-- <form action="">
       <input type="checkbox">

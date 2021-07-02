@@ -352,10 +352,6 @@
 .buttongroup-primary {@include button-primary;flex-grow:2;}
 .buttongroup-secondary {@include button-tertiary;flex-grow:2;margin-right:var(--space-after-button);}
 
-.buttongroup.is-vertical {@include group-vertical;}
-.is-vertical .buttongroup-secondary {margin-top:var(--space-after-button);}
-
-
 @mixin listbox {
   display: flex;
 }
