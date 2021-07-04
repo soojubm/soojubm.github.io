@@ -46,8 +46,7 @@
 .design-typograph-group .design-typograph-item {width:var(--grid-column);}
 
 
-.design-buttongroup {@include group-bleeding;    padding: .5rem 0;
-  margin: -.5rem 0;}
+.design-buttongroup {@include group-bleeding;padding: .5rem 0;margin: -.5rem 0;}
 
 .design-typograph-size {margin:1rem 0;overflow:hidden;}
 .design-typograph-size-title {line-height:var(--size-medium);}
@@ -327,11 +326,9 @@
 
 
 .temp8 {}
-.temp8 div {width:80px;margin-right:1rem;background: var(--gray0);
-  border: var(--border100);
-  border-radius: var(--radius400);
-  padding: .5rem;
-  box-shadow: var(--shadow400);
+.temp8 div {margin-right:.5rem;
+
+  @include tile-flat-small;
   font-size:var(--font-size-caption);
   position:relative;
   z-index: 1;
@@ -348,10 +345,6 @@
 @mixin group {display:flex;}
 @mixin group-vertical {@include group;flex-direction:column;}
 @mixin group-horizental {@include group;flex-direction:row-reverse;}
-
-.buttongroup {@include group-horizental;}
-.buttongroup-primary {@include button-primary;flex-grow:2;}
-.buttongroup-secondary {@include button-tertiary;flex-grow:2;margin-right:var(--space-after-button);}
 
 @mixin listbox {
   display: flex;
