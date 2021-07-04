@@ -331,6 +331,7 @@
   border: var(--border100);
   border-radius: var(--radius400);
   padding: .5rem;
+  box-shadow: var(--shadow400);
   font-size:var(--font-size-caption);
   position:relative;
   z-index: 1;
@@ -398,3 +399,7 @@
 .uxsitemap .map-head {margin:1rem 0;}
 .uxsitemap .map-body {margin:1rem 1rem;}
 // .uxsitemap > section {width:8rem;height:8rem;margin:1rem 0;background:var(--green100);}
+
+
+
+.coding {max-width:var(--width-medium);margin:0 auto;}

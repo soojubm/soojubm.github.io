@@ -1,7 +1,139 @@
-<main class="rules">
+<main class="design rules">
   <h2>투두</h2>
 
+    <article class="accordion" style="margin:2rem 0 4rem;" hidden>
+      <h3 class="accordion-title js-toggle" role="button" aria-expanded="false">
+        Todolist
+        <span class="accordion-title-icon"><i class="icon-plus"></i></span>
+      </h3>
+      <div class="accordion-panel">
+        <p>다크테마에서 red100 rgba로</p>
+
+        소셜 컴포넌트를 재사용하려면. 범용성을 위해 디자인은 톤다운된 회색 배경. 아이콘은 회색 또는 브랜드 컬러.
+    
+        <p>컴포넌트 내에서 룰을 볼 수 있게</p>
+
+        <p>용어정의: 아이템.</p>
+
+        <p>스타일을 처음 선언할 때 margin:0 0 0 0 풀어서 사용하고, 재선언할 때 margin-left로 재할당을 암시하고 오버라이딩 최소화하기.</p>
+
+        <p><strong>스타일(ex:bg/border, size)과 롤(sorting, text input)을 분리하는 것이 좋겠다.</strong></p>
+
+        <p>셀박vs체크박스/라디오 사용하는 기준. 선택 갯수를 정의.</p>
+
+        <p>반응형 이미지</p>
+
+        <p>왜 rem 단위를 사용하는가 정리</p>
+        <p>왜 엄격한 grid system을 사용하지 않는가 정리. 가로스크롤 트랜드 등</p>
+    
+        <p>iphone의 safe area 관련 코드 모듈화</p>
+        <p>맥북 13인치 1680x1050 / x1나노 2160x1350 / 1440은 애매한 브레이크포인트</p>
+
+        <p>컴포넌트별로 페이지 분리(우선순위 낮음)</p>
+        <p>코딩 컨벤션(우선순이ㅜ 낮음)</p>
+
+        <p>버튼과 클릭할 수 없는 태그의 스타일을 시각적으로 구분</p>
+        
+        <li>writing: (자세히보기 / 더보기 / -보러가기)</li>
+        <li>writing: 복합명사는 붙여씁니다. 결제 완료 x /  결제완료</li>
+        <li>writing: d경우vs때 -> 에서</li>
+        <li>writing: 총결제금액 / 결제예정금액</li>
+        <li>writing: 개인적인 checklist: 유저->사용자, 혹은->또는, 및->과/와</li>
+
+        <p>coding: 속성을 제거할 때 static 대신 relative를 사용하기. z-index 값을 보전할 수 있기 때문.</li>
+        </p>
+        <p>coding: 가운데 정렬에서 우 large 컨테이너를 사용.</p>
+        <p>coding: -action(choice에서 안 어울림) vs -control</p>
+
+        <p>formatPrice(KRW) ₩ 1,000</p>
+      <p>formatDate() YYYY/MM/DD</p>
+      <p><del>두개</del> 2개</p>
+      <dt>접근성</dt><dd>모양(네모, 동그란 등), 방향(왼쪽/오른쪽/위/아래), 위치(여기/이곳), 색상 등을 가이드 텍스트에 포함하지 마세요.</dd>
+
+
+        <code>code tag</code>
+      </div>
+    </article>
+
+
+
+    <article class="design-article js-scrollspy-section">
+      <h1 class="design-article-title">Naming Conventions</h1>
+      <p class="design-article-description">lean하게 작성 중...</p>
+      <p>?? < component < page < site</p>
+      <hr />
+      <h6 class="title-bordered">Sizes</h6>
+      <div role="group">
+        <span class="tag">huge</span>
+        <span class="tag">large</span>
+        <span class="tag">medium</span>
+        <span class="tag">small</span>
+        <span class="tag">tiny</span>
+      </div>
+      <br />
+      <h6 class="title-bordered">Etc</h6>
+      <ul>
+        <li>모달, 토스트, 툴팁은 유아이 스타일보다는 기능에 가깝다. 다이얼로그 모달, 얼럿 토스트!</li>
+        <li>특정 스타일로 클래스 네이밍하지 마세요. 스타일(gui)는 언제나 변경될 수 있습니다.</li>
+        <li>naming: -s vs - list</li>
+      </ul>
+    </article>
+
+    <article class="design-article js-scrollspy-section">
+      <h1 class=design-article-title>Rules</h1>
+      <p class="design-article-description"></p>
+      <ul>
+        <li>가이드의 가이드. 디스크립션(용법: 언제 사용하는지.) + 체크리스트. 가짓수를 디스크립션 하지 않기. 리디처럼 '상황에 따라', '목적에 맞게' 등의 ㅇㄻㅇㄻ 사용하지 않고 용법을 명확히 한다. /// 하세요 vs 할 수 있습니다. /// 할 때 vs 경우에 둘다 별로임.</li>
+
+        영어나 어려운 문장 최소화. 가이드는 모든 사람이 읽을 수 있어야 한다. 
+        요소로(목적으로) 사용합니다.
+        어포던스 -> '클릭할 수 있음'
+        <li>아이템이 3개 이하일 때 제목 우측에 모두보기 버튼을 위치할 수 있지만, 아이템이 4개 이상이라면 아이템의 아래에 모두보기 버튼이 위치. 가로 스크롤인 경우 스크롤 최 우측.</li>
+
+        <li>action indicator :이상 혹은 이하를 표기할 때 >, < 를 사용하지 않습니다. 액션 인디케이터와 혼동이 될 수 있어서. 이상, 이하 한글로 명확하게 전달하ㄱ시오!</li>
+      </ul>
+    </article>
 </main>
+
+
+
+  <!--
+    <picture>
+      <source srcset="photo-light.png" media="(prefers-color-scheme: light) or (prefers-color-scheme: no-preference)">
+      <source srcset="photo-dark.png" media="(prefers-color-scheme: dark)">
+    </picture>
+    <picture>
+      <source type="image/svg+xml" srcset="pyramid.svg">
+      <source type="image/webp" srcset="pyramid.webp">
+      <img src="pyramid.png" alt="정삼각형 4개로 만든 일반적인 피라미드">
+    </picture>
+    <picture>
+      <source media="(max-width: 799px)" srcset="elva-480w-close-portrait.jpg">
+      <source media="(min-width: 800px)" srcset="elva-800w.jpg">
+      <img src="elva-800w.jpg" alt="딸 엘바를 안고 서 있는 크리스">
+    </picture>
+  
+    <img srcset="elva-fairy-320w.jpg,
+      elva-fairy-480w.jpg 1.5x,
+      elva-fairy-640w.jpg 2x"
+    src="elva-fairy-640w.jpg" alt="요정 옷을 입은 엘바">
+
+    <img srcset="elva-fairy-320w.jpg 320w,
+              elva-fairy-480w.jpg 480w,
+              elva-fairy-800w.jpg 800w"
+      sizes="(max-width: 320px) 280px,
+              (max-width: 480px) 440px,
+              800px"
+      src="elva-fairy-800w.jpg"
+      alt="요정 옷을 입은 엘바" /> -->
+
+      <!-- <h3>접근성 정리</h3>
+      <p>닫기 버튼에 aria-label을 제공하세요. aria-label="close alert"</p>
+      <p>도움말(helper text)이 있는 경우 aria-describedby=[id]</p>
+      <p>유효하지 않은 입력 필드에 aria-invalid="true"</p>
+      <p>enter key로 폼 제출</p> -->
+
+    <!-- <p>스크린 리더는 페이지의 모든 목록을 탐색 할 수 있으며 목록 항목에서 목록 내 목록 항목으로 이동할 수도 있습니다. 목록을 사용하여 화면 판독기가 항목 그룹 (예 : 사람 목록)을 쉽게 탐색 할 수 있도록합니다.</p> -->
 
 <!-- 결제가 완료되었습니다 => 상품이 결제되었습니다 ? 주문 목록에서 f깅할 때 결제완료, 결제대기가 익숙함.
 하기 / 취소 / 다음에 -->

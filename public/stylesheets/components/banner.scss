@@ -6,6 +6,7 @@
 .banner {padding:2rem var(--grid-margin);border-radius:var(--radius400);text-align:center;position:relative;}
 .banner-background {@include bleeding;}
 .banner-image {@include avatar-large;}
+.banner-eyebrow {}
 .banner-title {@include title;}
 .banner-description {margin:1rem 0;}
 .banner-button {@include button-text;}

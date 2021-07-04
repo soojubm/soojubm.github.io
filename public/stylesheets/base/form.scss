@@ -310,12 +310,12 @@ progress:not([value]) {
       display: flex;
       justify-content: space-between;
       height: auto;
-      padding: 9px 2rem 11px 3.5rem;
+      padding: 9px 1rem 11px 2.75rem;
       border: var(--border100);
       // background: var(--gray100);
       cursor: pointer;
-      &:before {background:var(--gray0);left:1.5rem;}
-      &:after {left:calc(1.5rem + 5px)}
+      &:before {background:var(--gray0);left:1rem;}
+      &:after {left:calc(1rem + 5px)}
     }
     input:checked + label {
       border-bottom: 0;
@@ -323,7 +323,7 @@ progress:not([value]) {
     }
     input:checked + label + div {
       margin: 0;
-      padding: 0 1.5rem 2rem;
+      padding: 0 1rem 2rem;
       border: var(--border100);
       border-top: 0;
     }
