@@ -34,6 +34,7 @@
       <hr />
       <button class="share-back"><i class="icon-close"></i></button>
       <button class="share-facebook">
+        <!-- todo 아이콘 레이블(옵셔널), 네이밍도 share-item socail-item -->
         <span class="share-facebook-icon"></span>
         facebook으로 공유하기
       </button>
@@ -75,10 +76,10 @@
       <div class="card-note">마일리지 적립 200P</div>
       <button class="card-more" hidden><i class="icon-more"></i></button>
     </div>
-    <div class="quote design-ticker-item">
+    <div class="quote design-ticker-item" style="max-width:400px;min-width:400px;">
       <div class="quote-avatar">🥫</div>
       <h3 class="quote-title">Quote</h3>
-      <p class="quote-body">Don't you know that God is Pooh bear? Don't you know that God is Pooh bear?</p>
+      <p class="quote-body" style="white-space:unset;">Don't you know that God is Pooh bear? Don't you know that God is Pooh bear?</p>
       <div class="quote-byline">
         <div class="quote-byline-name">Jack Kerouac</div>
         <div class="quote-byline-job">Poet / Novelist</div>
@@ -148,16 +149,17 @@
 
 
 <footer
-style="width: var(--width-medium);
-margin: 0 auto;"
+style="max-width: var(--width-large);
+margin: 0 auto;padding:0 5%;"
+
 >
 <div class="uxsitemap">
   <div>
     <h2 style="margin-bottom:1rem;">"Flat" Site Architecture</h2>
+    <hr />
     <p>필요 이상으로 복잡한 사이트를 디자인하지 못하도록 하는 목적.</p>
     <p>A Flat Architecture means that users (and search engine crawlers) can reach any page on your site in 4 clicks or less.</p>
   </div>
-  <br />
   <div role="group">
     <span class="tag">URL Structure</span>
     <span class="tag">Category Pages</span>

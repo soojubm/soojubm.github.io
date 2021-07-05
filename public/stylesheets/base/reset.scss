@@ -21,7 +21,7 @@ hr {margin:1rem 0;border-top: thin solid var(--gray200);position:relative;}
 
 u {text-decoration:none;position:relative;}
 u:after {content:'';height:.4em;border-radius:2px;background:var(--green100);position:absolute;left:-.125rem;right:-.125rem;bottom:0;z-index:-1;}
-code {display:block;background:var(--gray100);border-radius:var(--radius400);font-family:'consolas';font-size:var(--font-size-caption);}
+code {display:block;background:var(--gray100);border-radius:var(--radius400);font-family:'consolas', cursive;font-size:var(--font-size-caption);}
 pre {}
 
 del {color:var(--gray400);} ins {text-decoration:none;}
