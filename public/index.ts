@@ -563,3 +563,19 @@ function focusComment() {
 //       intersectionObserver.observe(element) // el에 대하여 관측 시작
 //     })
 // }
+
+document.addEventListener('click', toggle)
+
+function toggle(event) {
+  const targetElement = event.target
+  const { toggleid } = event.target.dataset
+  if (!toggleid) return
+
+  const ACTIVE_CLASS = 'is-active'
+
+  targetElement.setAttribute('aria-expanded', 'true')
+  targetElement.classList.toggle(ACTIVE_CLASS)
+
+  // const targetElement = document.querySelector(toggleid)
+  // targetElement.classList.toggle(ACTIVE_CLASS)
+}
