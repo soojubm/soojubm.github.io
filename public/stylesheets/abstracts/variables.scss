@@ -130,7 +130,8 @@ $transition-fade: opacity 0.15s linear;
   --radius-card: var(--radius400);
   --radius-container: var(--radius400);
 
-  --shadow400: 0px 0px 2rem rgba(0, 0, 0, 0.125);
+  // --shadow400: 0px 0px 2rem rgba(0, 0, 0, 0.125);
+  --shadow400: 0px 0px 1rem rgba(0, 0, 0, 0.125);
   --shadow800: 0px 0px 2rem rgba(0, 0, 0, 0.5);
 
   --card-background: #fff;

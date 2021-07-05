@@ -14,7 +14,7 @@
 .sitemap-item-link {display:block;margin:.5rem 0;color:var(--gray800);}
 .sitemap-item-link:hover {@include hover-text;}
 
-.footer {display:block;max-width:var(--width-large);margin:0 auto;padding:0 var(--grid-margin) 6rem;position:relative;z-index:var(--zindex-default);}
+.footer {display:block;max-width:var(--width-large);margin:0 auto;padding:0 var(--grid-margin) 6rem;overflow:hidden;position:relative;z-index:var(--zindex-default);}
 .footer-background {@include bleeding;background:var(--gray100);}
 .footer-address {}
 .footer-address-logo {display:block;filter:grayscale(100%);opacity:.5;}
