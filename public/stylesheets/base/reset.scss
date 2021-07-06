@@ -50,14 +50,14 @@ table .right {text-align:right;}
 table.is-borderless tbody tr {border:0;}
 
 ul {}
-ul li {margin:.25rem 0;padding:0 0 0  1.25rem;position:relative;}
+ul li {margin:.25rem 0;padding:0 0 0  1rem;position:relative;}
 ul li:before {content:'\2022';position:absolute;left:0;}
 ul li ul {margin:0 0 .5rem 0;}
 ul li ul li {}
 ul li ul li:before {content:'\25e6';border-radius:var(--radius400);}
 
 ol {}
-ol li {margin:.25rem 0;padding: 0 0 0 1.25rem;position:relative;counter-increment:listitem;}
+ol li {margin:.25rem 0;padding: 0 0 0 1rem;position:relative;counter-increment:listitem;}
 ol li:before {content: counter(listitem) '.';position:absolute;left:0;}
 ol li ol {margin:0 0 .5rem 0;}
 ol li ol li {counter-increment:sub-list-item;}

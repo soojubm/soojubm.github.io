@@ -312,7 +312,7 @@
 
 
 .sheet {@include tile-elevated;}
-.sheet-title {@include subhead;}
+.sheet-title {margin:0 0 var(--space);font-size:12px;color:var(--gray400);}
 .sheet button {position:relative;z-index:var(--zindex-default);}
 .sheet button:hover {@include hover-item;}
 
@@ -372,8 +372,8 @@
 .design-home header {width:100%;padding:2rem var(--grid-margin);background:var(--gray0);text-align:center;position: relative;z-index:var(--zindex-default);}
 .design-home header h1 {@include title;}
 .design-home header p {margin:var(--space-after-title) 0 0 0;font-size:var(--font-size-subhead);}
-.design-home nav {display:flex;flex-wrap:wrap;justify-content:center;@include container-large;padding:2rem var(--grid-margin) 8rem;background:var(--gray0);position:relative;z-index:var(--zindex-default);}
-.design-home nav a {display:flex;align-items:center;@include tile-elevated;width:30%;margin:.5rem;font-size:var(--font-size-subhead);font-weight:var(--font-weight-bold);color:var(--gray800);}
+.design-home nav {display:flex;flex-wrap:wrap;justify-content:center;width:100%;padding:2rem var(--grid-margin) 8rem;background:var(--gray0);position:relative;z-index:var(--zindex-default);}
+.design-home nav a {display:flex;align-items:center;@include tile-elevated;width:20%;margin:.5rem;font-size:var(--font-size-subhead);font-weight:var(--font-weight-bold);color:var(--gray800);}
 .design-home nav a[readonly] {opacity:.5;cursor:not-allowed;}
 .design-home nav a:hover:not([readonly]) {@include hover-item;}
 .design-home nav a span {@include avatar-medium;margin-left:auto;margin-top:2px;}
@@ -383,8 +383,6 @@
   .design-home nav {flex-direction:column;}
   .design-home nav a {width:100%;margin:.5rem 0;}
 }
-
-
 
 
 .uxsitemap {position:relative;}

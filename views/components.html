@@ -54,7 +54,7 @@
     <img class="hero-obj4" src="/public/images/blob-shape.svg" alt="" /> -->
   </section>
 
-  <header style="padding:2rem var(--grid-margin);margin:0 auto 1rem;">
+  <header style="padding:2rem var(--grid-margin);margin:0 auto;">
     <h1>Under<br />Construction</h1>
   </header>
   <nav class="design-navigation" style="padding-top:0;top:var(--subheader-height);">
@@ -115,6 +115,10 @@
       <hr />
       <div>말줄임표</div>
     </article> -->
+
+    <h1 style="text-transform:uppercase;">pallette</h1>
+    <p>size / typography / color / spacing</p>
+    <li>가이드의 가이드. 디스크립션(OO은 ~~~) + 체크리스트. 가짓수를 디스크립션 하지 않기. 다른 디자인 시스템에서 어떤 이름으로 사용하는지. similar. 리디처럼 '상황에 따라', '목적에 맞게' 등의 ㅇㄻㅇㄻ 사용하지 않고 용법을 명확히 한다. /// 하세요 vs 할 수 있습니다. /// 할 때 vs 경우에 둘다 별로임.</li>
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Spacing</h1>
@@ -182,7 +186,7 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Sizes & Avatars</h1>
-      <p class="design-article-description">아바타는 텍스트, 아이콘, 이미지를 포함할 수 있습니다. Large와 Medium은 디스크립션을 가질 수 있습니다.</p>
+      <p class="design-article-description">작성 중. 아바타는 텍스트, 아이콘, 이미지를 포함. Large와 Medium은 디스크립션을 가질 수 있습니다. Huge는 단독으로 사용합니다(리스트로 사용할 수 없음).</p>
       <dl>
         <dt>huge</dt><dd>avatar</dd>
         <dt>large</dt><dd>button, textfield, avatar</dd>
@@ -247,6 +251,9 @@
     <article class="design-article typography js-scrollspy-section">
       <h1 class="design-article-title">Typography</h1>
       <p class="design-article-description">작성 중.</p>
+      <!-- <ul class="design-article-description">
+        <li>본문에 볼드를 사ㅇ용하지 마세요.</li>
+      </ul> -->
       <!-- <li>asap의 dash를 마이너스로 쓰면 어색. 무게가 살짝 다름. role에 따라 구분하자. caption, helper 등 같은 값을 가지는 텍스트로 따로 모듈화하는 것이 좋겠다. letter-spacing은 크기마다 다르게 적용하시요</li> -->
       <button class="user-logout tile-elevated js-default-font" style="padding:.5rem;padding-left:1rem;" title="change theme">
         <span class="user-logout-icon">icon</span>
@@ -326,26 +333,26 @@
         <p class="typography-paragraph">서브헤드와 디스크립션 혹은 패러그라프는 이렇게 사용하세요. 타이틀의 행간이 조정되었기 때문에 시각보정이 필요할 수도 있어요.</p>
         <div class="space" style="height:2rem;"><span class="tag">2rem</span></div>
         <time class="typography-caption">10 January, 2020</time>
-        <!-- <footer class="card-foot">
+        <footer class="card-foot">
           <a href="">Read More</a>
           <span class="tag">Category</span>
-        </footer> -->
+        </footer>
       </div>
     </article>
 
     <article class="design-article js-scrollspy-section">
-      <h1 class="design-article-title">Palette</h1>
-      <p class="design-article-description">다크테마를 위한 컬러셋, 또는 인버트 스타일을 추가로 정의하지 않습니다.</p>
+      <h1 class="design-article-title">Color</h1>
+      <p class="design-article-description">다크테마를 위한 추가적인 컬러셋, 또는 인버트 스타일을 정의하지 않습니다.</p>
       <!-- <blockquote style="margin:2rem 0;">
         gray100 변수를 사용할 때 container-border-color와 같은 시멘틱한 네이밍으로 한 번 더 추상화 하세요.
       </blockquote> -->
-      <div role="group">
+      <!-- <div role="group">
         <span class="tag" data-appearance="accent">roles</span>
         <span class="tag">background</span>
         <span class="tag">border</span>
         <span class="tag">text</span>
         <span class="tag">states(hover/active/disabled)</span>
-      </div>
+      </div> -->
       <button class="user-logout js-darkmode1" title="change theme" style="border-radius:var(--radius400);box-shadow:var(--shadow400);padding:.5rem;border:var(--border100);">
         <span class="user-logout-icon"><i class="icon-moon"></i></span>
         어둡게 보기
@@ -415,6 +422,14 @@
         </figure> -->
       </div>
       <br />
+      <h2 class="title-bordered" title="Surface or Elevation">Gradient</h2>
+      <!-- <div class="color-group" role="group">
+        <figure class="color-item surface-item">
+          <div style="background:var(--gray0);"></div>
+          <h3>elevation400 :  :: 다크테마에서 조금 더 눈에 띄는 친구가 필요. 추가되면 400을 다운시켜야 함.</h3>
+        </figure>
+      </div> -->
+      <br />
       <h2 class="title-bordered" title="Surface or Elevation">Elevation</h2>
       <div class="color-group" role="group">
         <figure class="color-item surface-item">
@@ -436,16 +451,18 @@
       </div>
     </article>
 
+    <hr />
+
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Tiles</h1>
-      <p class="design-article-description">제목, 디스크립션 이외의 콘텐츠를 강조할 때 사용합니다. 클릭할 수 있는 타일과 클릭할 수 없는 타일을 시각적으로 명확하게 구분하여 어포던스를 높이고 행동을 유도합니다(항상 적용하기 어려움. 제거?). 클릭할 수 있는 타일이란 타일 내부에 클릭할 수 있는 컴포넌트를 포함할 수 있습니다???뭔말.</p>
+      <p class="design-article-description">타일은 연관된 정보를 묶음으로 제공합니다. 타일 내부에 사용자의 액션을 유도하는 경우에 elevated 스타일을 사용합니다.</p>
       <blockquote>
-        <h6>history</h6>
-        <p>padding 1.5rem에서 1rem으로 변경. 1.5rem 사용 시 모바일에서 공간 많이 발생.</p>
+        <p>history: padding 1.5rem에서 1rem으로 변경하고 두 가지 사이즈로 확장. 1.5rem 단일 사이즈로 사용 시 모바일에서 공간 낭비 발생.</p>
+        <p>todo: 포함할 수 있는 요소를 리스트업.</p>
       </blockquote>
       <dl>
-        <dt>Medium</dt><dd>1rem</dd>
-        <dt>Small</dt><dd>.5rem</dd>
+        <dt>Medium</dt><dd>padding 1rem</dd>
+        <dt>Small</dt><dd>padding .5rem</dd>
       </dl>
       <hr />
       <div class="design-tile-flat" style="line-height:1.4;">
@@ -473,7 +490,7 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Chips ☀️</h1>
-      <p class="design-article-description">단일 선택 / 다중 선택, 삭제 여부에 따라 힌트를 제공합니다. 다른 맥락의 chip을 나열할 수도 있습니다. role="listbox" aria-orientation="horizontal"</p>
+      <p class="design-article-description">칩은 작은 버튼 스타일로 다양한 액션에 사용합니다. 단일선택, 다중선택, 삭제여부 등의 힌트를 제공합니다. 다른 맥락의 chip을 나열할 수도 있습니다. role="listbox" aria-orientation="horizontal"</p>
       <h6 class="title-bordered">Filter</h6>
       <div class="chips js-chip">
         <button class="chip is-active">전체</button>
@@ -539,10 +556,9 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Tags</h1>
-      <p class="design-article-description">콘텐츠를 분류하는 레이블입니다. 클릭할 수 없습니다. 아이콘을 포함할 수 없습니다.</p>
+      <p class="design-article-description">작성 중. 클릭할수없음. 아이콘포함할수없음.</p>
       <blockquote>
-        <h6>history</h6>
-        chip-small에서 다시 분리. 롤이 아닌 스타일로 구분되어 가이드가 복잡하기 때문. 지금도 role이 많은데 따로 빼서 가이드하는 것.
+        history: chip-small에서 다시 분리. 롤이 아닌 스타일로 구분되어 가이드가 복잡. 롤로 나눠서 스타일이 변경되는 경우에 대비.
       </blockquote>
 
       <dl>
@@ -563,17 +579,17 @@
     
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Buttons</h1>
-      <ul class="design-article-description">
+      <p class="design-article-description">작성 중.</p>
+      <!-- <ul class="design-article-description">
         <li>hover, focus 상태에 개별적인 스타일링을 하지 않는 방법으로 해보기. disabled도 모두 통일하는 방법.</li>
         <li>네이밍: style = solid/outline/plain/text (모든 스타일을 망라해야 하기 때문에 유아이 라이브러리에 어울리는 네이밍) appearance = link / subtle / primary, space = compact/fullwidth</li>
         <li>aria-expanded / role="img" aria-label="plus icon" / aria-pressed={activated ? "true" : "false"}</li>
         <li>아이콘 버튼은 공간 제약이 있어 레이블을 생략할 필요가 있을 때 사용합니다. 이 때 아이콘은 보편적인 메타포...
         </li>
-      </ul>
-      <blockquote>
-        chip이 button-small.
-        min-width, padding-left, padding-right, validation style or function
-      </blockquote>
+      </ul> -->
+      <!-- <blockquote>
+        chip이 button-small. min-width, padding-left, padding-right, validation style or function
+      </blockquote> -->
       <dl>
         <dt>Primary</dt><dd>페이지에서 가장 중요한 행동. 한 페이지에 한 개</dd>
         <dt>Secondary</dt><dd>서비스 이용에 필요한 기능에서. binary selection(?choice)에서 프라이머리와 세컨더리를 함께 사용할 수 없습니다.</dd>
@@ -650,7 +666,7 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Checkboxes</h1>
-      <p class="design-article-description">사용자가 여러 개의 선택 옵션 중. 5개 이하의 선택옵션에서 세로 정렬로만 사용하세요.</p>
+      <p class="design-article-description">작성 중. 다중선택. 5개 이하의 선택옵션에서 사용. 세로 정렬.</p>
       <blockquote>
         5개 이상의 선택지에서는 chip 스타일을 사용합니다
       </blockquote>
@@ -683,7 +699,7 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Radioes</h1>
-      <p class="design-article-description">단일선택. 하나의 옵션을 필수로 선택해야 하기 때문에 기본 선택 옵션이 필요합니다. 세로 정렬로만 사용하세요. 가로 정렬, 5개 이상의 옵션에는 chip 스타일을 사용하세요.</p>
+      <p class="design-article-description">작성 중. 단일선택. 최소 1개 필수. 최초 1개 선택된 상태. 세로 정렬 5개 이상의 옵션에는 chip, selectbox를 사용.</p>
       <!-- (리액트에서 id 관련 이슈 input in label.) -->
       <fieldset role="radiogroup">
         <legend>radiogroup legend</legend>
@@ -724,7 +740,7 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Switch</h1>
-      <p class="design-article-description">작성 중. 체크박스로 대체할 수 있기 때문에 우선순위가 낮은 유아이. role=switch</p>
+      <p class="design-article-description">작성 중. role=switch</p>
       <span class="switch" style="margin: 0 0 var(--space) 0;">
         <input type="checkbox" id="switch1" name="" role="switch" value="on" checked />
         <label for="switch1" title="Receive weekly newsletter">주간 뉴스레터 받아보기</label>
@@ -775,7 +791,6 @@
 
       <br />
 
-      
       <h6 class="title-bordered">Input Date</h6>
       <div class="textfield-group" style="display:flex;justify-content:space-between;">
         <div class="textfield" style="width:var(--grid-column);">
@@ -832,8 +847,8 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Breadcrumb</h1>
-      <p class="design-article-description">페이지 레벨이 3단계 이상일 때 사용합니다. 캠페인 등을 통한 유입이 많은 페이지에서도 사용할 수 있습니다.</p>
-      <!-- <p> pg 신청 시 이슈. 모바일에서도 탑바에 뒤로가기나 닫기 버튼으로 대체. 푸터(사이트맵위)에 배치하는 케이스도 있음. 딥 사이트맵에서 괜찮은 듯. 용도를 더 명확하게</p> -->
+      <p class="design-article-description">작성 중. 3단계 이상의 페이지 레벨. 캠페인 등을 통한 유입이 많은 페이지에서 현재 위치를 설명할 때. 푸터에서 사이트맵과 함께 배치할 수도.</p>
+      <!-- <p> pg 신청 시 제품군 관련 이슈. 모바일에서도 탑바에 뒤로가기나 닫기 버튼으로 대체. 푸터(사이트맵위)에 배치하는 케이스도 있음. 딥 사이트맵에서 괜찮은 듯. 용도를 더 명확하게</p> -->
       <nav class="breadcrumb" aria-label="breadcrumb">
         <a class="breadcrumb-item breadcrumb-home" href="/">홈</a>
         <i class="breadcrumb-divider">/</i>
@@ -845,7 +860,7 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Text Links</h1>
-      <p class="design-article-description">문단 <a href="#" class="link-inner">내부 링크</a>와 문단 <a href="#" class="link-outer">외부 링크</a>를 구분합니다.</p>
+      <p class="design-article-description">텍스트 링크는 텍스트 형식과 함께 인라인으로 사용합니다. 문단 <a href="#" class="link-inner">내부 링크</a>와 문단 <a href="#" class="link-outer">외부 링크</a>를 구분합니다. memo: 사이트맵의 링크, 더보기/모두보기 링크는 추가로 정의하는 것이 좋음.</p>
       <blockquote>
         external link ? target="_blank" rel="noopener noreferrer"
       </blockquote>
@@ -860,9 +875,9 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Text Lists</h1>
-      <p class="design-article-description">작성 중. + checklist</p>
+      <p class="design-article-description">작성 중. todo: checklist(price card 등에서 사용) 정의.</p>
       <blockquote>
-        리스트 태그(li)는 텍스트 리스트에서 마크업합니다. (role=listbox/listitem)
+        대부분의 유아이는 리스트 형식으로 나열되기 때문에 텍스트 리스트에 한정하여 리스트 태그(ul, ol, dl)로 마크업합니다. (role=listbox/listitem)
       </blockquote>
       <ul class="list-sample">
         <li title="unordered list, level 1">순서가 없는 리스트
@@ -942,7 +957,7 @@
           </tbody>
         </table>
       </section>
-      <p style="margin:var(--space-after-item);font-size:var(--font-size-caption);">레이블에 아이콘을 단독으로 사용할 수 없습니다.</p>
+      <p style="margin:var(--space-after-item);font-size:var(--font-size-caption);">아이콘은 레이블의 역할로 단독으로 사용할 수 없습니다. todo 참고 링크(아이콘은 클릭할 수 있음을 나타내는 역할)</p>
 
       <br />
 
@@ -957,7 +972,7 @@
 
     <article class="design-article js-tab">
       <h1 class="design-article-title">Tab</h1>
-      <p class="design-article-description">맥락이 같은 콘텐츠를 .. 2개 이상의 탭을 중첩하지 않는 플로우를 설계하세요. 1개의 탭 아래에 1개의 chip 스타일의 필터를 추가할 수 있습니다. 기본 탐색 패턴으로 햄버거와 탭을 함께 사용하지 마시오(이거는 바텀네비게이션의 탭바). 유저/장바구니 등 보조 탐색 옵션<p>
+      <p class="design-article-description">맥락이 같은 콘텐츠. 2개 이상의 탭을 중첩하지 않도록 플로우 설계. 기본 탐색 패턴으로 햄버거와 탭을 함께 사용할 수 없습니다. (바텀네비게이션의 탭바). 유저/장바구니 등 보조 탐색 옵션<p>
       <blockquote>
         <ul>
           <li>스크롤스파이 기능을 위해 탭을 사용할 수 없습니다.</li>
@@ -976,7 +991,7 @@
 
     <article class="design-article">
       <h1 class="design-article-title">Button Group</h1>
-      <p class="design-article-description">작성 중.</p>
+      <p class="design-article-description">작성 중. todo: 그룹과 리스트박스의 역할 정의.</p>
       <div class="group-sample" role="group">
         <button class="group-sample-prev">이전</button>
         <button class="group-sample-next">다음</button>
@@ -997,7 +1012,7 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Tooltip</h1>
-      <p class="design-article-description">작성 중. 용어 혹은 근거.</p>
+      <p class="design-article-description">작성 중. 용어 혹은 근거. 사용자가 취해야 하는 행동 가이드를 위해 사용할 수 없음.</p>
       <blockquote>
         <ul>
           <li>페이지 로딩과 동시에 툴팁이 열려 있을 때 doorhanger가 필요하다.</li>
@@ -1012,7 +1027,7 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Alerts</h1>
-      <p class="design-article-description">시스템이나 브라우저의 상태, 사용자의 행동에 피드백으로 사용합니다. 경고가 사용자에 귀책이 없을 때 "오류" 대신 "시스템 오류"와 같은 용어를 사용하여 사용자가 잘못한 것처럼 느끼지 않도록. 한 문장으로 간단하게 사용하세요. 제목 불필요. 닫기 버튼도 불필요. 자동으로 닫히도록.</p>
+      <p class="design-article-description">얼럿은 시스템 또는 브라우저의 상태, 사용자의 행동에 피드백입니다. 경고가 사용자에 귀책이 없을 때 단순 "오류" 보다 "시스템 오류" 와 같은 용어를 사용하여 사용자가 잘못한 것처럼 느끼지 않도록. 한 문장으로. 제목 불필요. 닫기 버튼. 자동 닫히는 시간.</p>
       
       <blockquote>
         <p>브라우저가 role="alert"속성이 있는 요소를 발견 하면 즉시 사용자에게 경고 내용을 읽습니다.</p>
@@ -1201,21 +1216,12 @@
         </span>
         로그아웃
       </button>
-      <hr />
-      <div class="userlist">
-        <div class="profile-user" style="float:none;width:100%;height:48px;box-sizing:border-box;">
-          <figure class="profile-user-avatar" style="float:left;width:48px;height:48px;margin-right:1rem;"></figure>
-          <h2 class="profile-user-name" style="font-size:var(--font-size-body);">Gyeongsoo I</h2>
-          <span class="profile-user-id" style="color:var(--gray400);">유아이 디자이너</span>
-          <button class="design-article-tertiary-small" style="position:absolute;right:0;top:0;">팔로우</button>
-        </div>
-      </div>
     </article> -->
 
     <!-- // Chris said Marcus replied -->
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Comment</h1>
-      <p class="design-article-description">작성 중. 결정해야 하는 것. 코멘트의 노출 순서와 정렬, 열었을 때 최초로 보여줄 갯수, 더보기 갯수. 답글  스타일 골뱅이 답글 vs 인덴테이션, 신고/수정/삭제/아바타 등 우선쉬위, 리뷰컴포넌트는코멘트와완전히분리되어야함(포토리뷰만보기체크박스)</p>
+      <p class="design-article-description">작성 중. 결정해야 하는 것. 코멘트의 노출 순서와 정렬, 열었을 때 최초로 보여줄 갯수, 더보기 갯수. 답글  스타일 골뱅이 답글 vs 인덴테이션, 신고/수정/삭제/아바타 등 우선쉬위, 리뷰와코멘트는분리되어야함</p>
       <div class="post-comment-list">
         <article class="post-comment-list-item" role="comment">
           <a class="post-comment-list-item-avatar" href="#"><img src="/public/images/soo.png"></a>
@@ -1315,7 +1321,6 @@
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Paginations</h1>
       <p class="design-article-description">첫 페이지와 마지막 페이지에 더블 화살표 아이콘을 사용하지 않습니다. 최초 페이지와 최종 페이지를 사용하세요.</p>
-
       <dl>
         <dt>infinite scroll</dt><dd>작성 중.</dd>
         <dt>more load</dt><dd>작성 중.</dd>
@@ -1519,7 +1524,7 @@
         <b class="rating2-score">4.32</b>
       </div>
       <hr />
-      <!-- <dl class="row1 is-pull" style="display: flex;justify-content: space-between;">
+      <dl class="row1 is-pull" style="display: flex;justify-content: space-between;">
         <dt>신선도</dt>
         <dd style="display: flex;align-items: center;">
           <div class="graph-item is-horizontal">
@@ -1527,7 +1532,7 @@
             <div class="graph-item-bar"></div>
           </div>
         </dd>
-      </dl> -->
+      </dl>
       <div>
         <span>클라우드 스토리지</span>
         <span style="display:block;align-items: center;margin-top:-.5rem;">
@@ -1627,7 +1632,10 @@
     
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Result</h1>
-      <p class="design-article-description">일부 디자인 시스템에서 blankslate, empty state 등으로 네이밍. empty 뿐 아니라 error, complete 등 다양한 states에서 활용할 수 있기 때문에 result로 네이밍. 왼쪽 정렬되는 일반적인 콘텐츠 모듈과 구분하여 가운데 정렬로 대비.</p>
+      <p class="design-article-description">empty 뿐 아니라 error, complete 등 다양한 states에서 활용할 수 있기 때문에 result로 네이밍. 왼쪽 정렬되는 기본 콘텐츠 모듈과 구분하여 가운데 정렬로 대비를 줌.</p>
+      <blockquote>
+        blankslate, empty state
+      </blockquote>
       <section class="empty" style="border:1px solid var(--color-box-border);border-radius:var(--radius400);">
         <i class="empty-icon">🧟</i>
         <h1 class="empty-title">상품이 결제되었습니다.</h1>
@@ -1718,13 +1726,13 @@
       <br />
 
       <div class="quote">
-        <div class="quote-avatar">🥫</div>
+        <figure class="quote-avatar">🥫</figure>
         <h3 class="quote-title">Quote</h3>
         <p class="quote-body">Don't you know that God is Pooh bear? Don't you know that God is Pooh bear?</p>
-        <div class="quote-byline">
+        <cite class="quote-byline">
           <div class="quote-byline-name">Jack Kerouac</div>
           <div class="quote-byline-job">Poet / Novelist</div>
-        </div>
+        </cite>
         <button class="quote-action">자세히 알아보기</button>
         <!-- <button class="quote-later">지금은 괜찮아요</button> -->
       </div>
@@ -1754,21 +1762,27 @@
           <a class="link-outer" href="#">모두 보기</a>
         </header>
         <hr />
-        <div class="profile-user" style="width:100%;height:48px;" role="listitem">
-          <figure class="profile-user-avatar" style="float:left;width:48px;height:48px;margin-right:var(--space);"></figure>
-          <h2 class="profile-user-name" style="font-size:var(--font-size-body);">Gyeongsoo I</h2>
-          <span class="profile-user-id" style="color:var(--gray400);">유아이 디자이너</span>
-          <button class="design-article-tertiary-small" style="position:absolute;right:0;top:0;">팔로잉</button>
+        <div class="item" role="listitem">
+          <figure class="item-avatar"></figure>
+          <h2 class="item-name">Gyeongsoo I</h2>
+          <span class="item-description">유아이 디자이너</span>
+          <button class="item-action">팔로잉</button>
         </div>
-        <div class="profile-user" style="width:100%;height:48px;margin-top:1rem;" role="listitem">
-          <figure class="profile-user-avatar" style="float:left;width:48px;height:48px;margin-right:var(--space);"></figure>
-          <h2 class="profile-user-name" style="font-size:var(--font-size-body);">Gyeongsoo I</h2>
-          <span class="profile-user-id" style="color:var(--gray400);">유아이 디자이너</span>
-          <button class="design-article-secondary-small" style="position:absolute;right:0;top:0;">팔로우</button>
+        <div class="item" role="listitem">
+          <figure class="item-avatar"></figure>
+          <h2 class="item-name">Gyeongsoo I</h2>
+          <span class="item-description">유아이 디자이너</span>
+          <button class="item-action">팔로우</button>
         </div>
-        <div class="profile-user" style="width:100%;height:48px;margin-top:1rem;">
-          <figure class="profile-user-avatar" style="float:left;width:48px;height:48px;margin-right:var(--space);background-image:none;"><i class="icon-plus" style="transform:scale(1.25);"></i></figure>
-          <h2 class="profile-user-name" style="font-size:var(--font-size-body);line-height:48px;">더 많은 친구를 찾아보세요!</h2>
+        <div class="item" role="listitem">
+          <figure class="item-avatar"></figure>
+          <h2 class="item-name">Gyeongsoo I</h2>
+          <span class="item-description">유아이 디자이너</span>
+          <button class="item-action">팔로우</button>
+        </div>
+        <div class="item" role="listitem">
+          <figure class="item-avatar" style="background-image:none;"><i class="icon-plus" style="transform:scale(1.25);"></i></figure>
+          <h2 class="item-name" style="line-height:48px;">더 많은 친구를 찾아보세요!</h2>
         </div>
         <!-- <button class="userlist-cta">모두 보기</button> -->
       </article>
@@ -1832,7 +1846,7 @@
         <hr />
         <div class="share-copy textfield is-small">
           <input class="share-copy-url textfield-input" type="text" value="https://newneek.co/post/jadebabo" readonly />
-          <button class="share-copy-button js-copy" type="button" tabindex="0" style="border:none;background:var(--gray0);">
+          <button class="share-copy-button js-copy" type="button" tabindex="0">
             주소 복사하기
           </button>
         </div>
@@ -1840,8 +1854,8 @@
 
       <br />
       
-      <article class="sheet" style="max-width:400px;margin-top:1rem;">
-        <h3 class="sheet-title" style="margin-bottom:.75rem;font-size:12px;color:var(--gray400);">목록 정렬</h3>
+      <article class="sheet" style="max-width:400px;">
+        <h3 class="sheet-title">목록 정렬</h3>
         <button style="width:100%;display:flex;align-items:center;margin:0 0 1rem 0;justify-content:space-between;font-size:var(--font-size-subhead);">
           바텀 시트 옵션
         </button>
@@ -1878,17 +1892,17 @@
         </div>
 
         <div style="margin-top:1rem;" role="listbox">
-          <div class="profile-user" style="float:none;width:100%;height:48px;margin:1rem 0;" role="listitem">
-            <figure class="profile-user-avatar" style="float:left;width:48px;height:48px;margin-right:var(--space);"></figure>
-            <h2 class="profile-user-name" style="font-size:var(--font-size-body);">Gyeongsoo I</h2>
-            <span class="profile-user-id" style="color:var(--gray400);">유아이 디자이너</span>
-            <button class="design-article-text-small" style="min-width:auto;color:var(--gray800);position:absolute;right:0;top:0;">팔로잉</button>
+          <div class="item" role="listitem">
+            <figure class="item-avatar"></figure>
+            <h2 class="item-name">Gyeongsoo I</h2>
+            <span class="item-description">유아이 디자이너</span>
+            <button class="item-action">팔로잉</button>
           </div>
-          <div class="profile-user" style="float:none;width:100%;height:48px;margin:1rem 0;" role="listitem">
-            <figure class="profile-user-avatar" style="float:left;width:48px;height:48px;margin-right:var(--space);"></figure>
-            <h2 class="profile-user-name" style="font-size:var(--font-size-body);">Gyeongsoo I</h2>
-            <span class="profile-user-id" style="color:var(--gray400);">유아이 디자이너</span>
-            <button class="design-article-text-small" style="min-width:auto;color:var(--gray800);position:absolute;right:0;top:0;">팔로잉</button>
+          <div class="item" role="listitem">
+            <figure class="item-avatar"></figure>
+            <h2 class="item-name">Gyeongsoo I</h2>
+            <span class="item-description">유아이 디자이너</span>
+            <button class="item-action">팔로잉</button>
           </div>
         </div>
       </article>
@@ -1896,10 +1910,12 @@
       <br />
 
       <div class="tile-elevated" style="max-width:400px;">
-        <div class="profile-user" style="float:none;width:100%;height:48px;margin-bottom:var(--space-item);" role="listitem">
-          <figure class="profile-user-avatar" style="float:left;width:48px;height:48px;margin-right:var(--space);"></figure>
-          <h2 class="profile-user-name" style="font-size:var(--font-size-body);">Gyeongsoo I</h2>
-          <span class="profile-user-id" style="color:var(--gray400);">유아이 디자이너</span>
+        <div class="item" role="listitem">
+          <figure class="item-avatar"></figure>
+          <span class="item-description">관심사가 비슷한 유저</span>
+          <!-- <small style="display:block;color:var(--gray400);"></small> -->
+          <h2 class="item-name">Gyeongsoo I</h2>
+          <button class="item-action">팔로잉</button>
         </div>
         <div class="temp8" style="display:flex;margin-top:1rem;">
           <div>

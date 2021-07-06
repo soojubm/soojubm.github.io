@@ -207,12 +207,12 @@
 
 
 @mixin title-bordered {
-      // height: 24px;
-      // line-height: .8;
-      height: 32px;
-      display: flex;
-      box-sizing: border-box;
-      align-items: center;
-  margin:0 0 .5rem;padding:.5rem;border:var(--border100);border-radius:var(--radius400) var(--radius400) 0 0;font-size:var(--font-size-caption);
+  // height: 24px;
+  // line-height: .8;
+  height: 32px;
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  margin:0 0 .5rem;border-bottom:var(--border100);border-radius:var(--radius400) var(--radius400) 0 0;font-size:var(--font-size-caption);
 }
 .title-bordered {@include title-bordered;}
