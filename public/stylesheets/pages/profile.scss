@@ -35,13 +35,14 @@
 .profile-user-name {@include subhead;}
 .profile-user-id {display:block;}
 
-.item {width:100%;height:48px;margin-top:1rem;position:relative;@include clearfix;}
+.item {width:100%;height:48px;position:relative;z-index:1;@include clearfix;}
+.item + .item {margin:1rem 0 0 0;}
 .item-avatar {float:left;@include avatar-large;margin-right:var(--space);background-image:url('/public/images/soo.png');}
 .item-name {font-size:var(--font-size-body);}
 .item-description {color:var(--gray400);}
 .item-action {@include button-tertiary;@include button-small;@include position-right-top;right:0;}
 
-.item:hover {}
+.item:hover {@include hover-item;}
 
 
 

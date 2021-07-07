@@ -489,7 +489,7 @@
 .portfolio-features-item-description {}
 
 .daylist {display:flex;}
-.day {@include avatar-huge;@include tile-elevated;flex-wrap:wrap;margin:0 1rem 0 0;padding:0;text-align:center;}
+.day {@include tile-elevated;flex-wrap:wrap;margin:0 1rem 0 0;text-align:center;}
 .day:hover {@include hover-item;}
 .day-label {width:100%;font-size:var(--font-size-caption);color:var(--gray400);text-transform:uppercase;}
 .day-value {width:100%;margin:-2rem 0 0 0;@include subhead;}

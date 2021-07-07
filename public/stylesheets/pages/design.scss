@@ -37,6 +37,7 @@
 .design-article {margin:var(--space-between-article) 0;position:relative;}
 .design-article-title {margin:0 0 var(--space-after-subhead) 0;@include subhead;}
 .design-article-description {margin:0 0 2rem 0;}
+.design-article-description + .design-article-description {margin-top:-1rem;}
 .design-article-more {display:flex;align-items:center;font-size:var(--font-size-caption);color:var(--color-primary);font-weight:var(--font-weight-bold);position:absolute;right:0;top:0;}
 .design-article-more i {margin-left:1.5rem;}
 .design-article.is-scrolled {animation:fadeup .8s forwards;}
@@ -327,8 +328,7 @@
 
 .temp8 {}
 .temp8 div {margin-right:.5rem;
-
-  @include tile-flat-small;
+  @include tile-elevated-small;
   font-size:var(--font-size-caption);
   position:relative;
   z-index: 1;
@@ -373,7 +373,7 @@
 .design-home header h1 {@include title;}
 .design-home header p {margin:var(--space-after-title) 0 0 0;font-size:var(--font-size-subhead);}
 .design-home nav {display:flex;flex-wrap:wrap;justify-content:center;width:100%;padding:2rem var(--grid-margin) 8rem;background:var(--gray0);position:relative;z-index:var(--zindex-default);}
-.design-home nav a {display:flex;align-items:center;@include tile-elevated;width:20%;margin:.5rem;font-size:var(--font-size-subhead);font-weight:var(--font-weight-bold);color:var(--gray800);}
+.design-home nav a {display:flex;align-items:center;@include tile-elevated;width:100%;max-width:280px;margin:.5rem;font-size:var(--font-size-subhead);font-weight:var(--font-weight-bold);color:var(--gray800);}
 .design-home nav a[readonly] {opacity:.5;cursor:not-allowed;}
 .design-home nav a:hover:not([readonly]) {@include hover-item;}
 .design-home nav a span {@include avatar-medium;margin-left:auto;margin-top:2px;}
@@ -381,7 +381,7 @@
 
 @media (--breakpoint-small) {
   .design-home nav {flex-direction:column;}
-  .design-home nav a {width:100%;margin:.5rem 0;}
+  .design-home nav a {margin:.5rem 0;}
 }
 
 
@@ -412,7 +412,7 @@
 
 }
 .design-ticker-item {
-  animation: marquee 24s linear infinite;
+  animation: marquee 28s linear infinite;
 
   margin: 0 1.5rem;
   opacity: .5;
