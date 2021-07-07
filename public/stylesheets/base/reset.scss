@@ -17,7 +17,7 @@ a {text-decoration:none;text-decoration-skip-ink:auto;color:var(--color-primary)
 mark {padding:0 2px 2px;border-radius:var(--radius400);background:var(--gray200);}
 
 // br {content:'';display:block;height:1rem;}
-hr {margin:1rem 0;border-top: thin solid var(--gray200);position:relative;}
+hr {margin:var(--space) 0;border-top: thin solid var(--gray200);position:relative;}
 
 u {text-decoration:none;position:relative;}
 u:after {content:'';height:.4em;border-radius:2px;background:var(--green100);position:absolute;left:-.125rem;right:-.125rem;bottom:0;z-index:-1;}

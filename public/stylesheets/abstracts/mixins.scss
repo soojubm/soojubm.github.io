@@ -61,7 +61,7 @@
 }
 
 @mixin container-page {
-  width: 100%;
+  // width: 100%;
   margin: 0 auto;
   padding: 2rem var(--grid-margin) 8rem; // mobile padding
   position: relative;
