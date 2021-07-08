@@ -410,11 +410,9 @@
   position: relative;
   filter: grayscale(1);
 
-  animation: marquee 28s linear infinite;
-
 }
 .design-ticker-item {
-  // animation: marquee 28s linear infinite;
+  animation: marquee 28s linear infinite;
 
   margin: 0 1.5rem;
   opacity: .5;
