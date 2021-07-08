@@ -75,7 +75,7 @@ $transition-fade: opacity 0.15s linear;
   --color-secondary: gold;
 
   // dark / light / gray?
-  --gradient: linear-gradient(to bottom, var(--gray0), rgba(255,255,255,.75), var(--gray800));
+  --gradient: linear-gradient(to bottom, var(--gray1000), rgba(37,45,41,.75), var(--gray800));
 
   // container width
   --width-tiny: 320px;
@@ -103,7 +103,7 @@ $transition-fade: opacity 0.15s linear;
   --space-leading-subhead: -.25rem;
 
   --space-after-title: 1.5rem;
-  --space-after-subhead: .75rem;
+  --space-after-subhead: 1rem;
   --space-after-description: 1rem;
   --space-after-button: .75rem;
   
