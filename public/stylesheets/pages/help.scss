@@ -29,9 +29,9 @@
 .is-active .help-feedback {display:flex;}
 
 .help-feedback {position:relative;}
-.help-feedback-title {margin:0 0 1rem 0;}
-.help-feedback-button {@include button-tertiary;margin:0 .25rem 0 0;padding-top:.25rem;padding-bottom:.25rem;}
-.help-feedback-status {display:block;margin:.5rem 0 0;}
+.help-feedback-title {}
+.help-feedback-status {display:block;margin:0 0 var(--space) 0;}
+.help-feedback-button {@include button-tertiary;@include button-small;margin:0 .25rem 0 0;}
 
 .help-foot {display:flex;max-width:var(--width-medium);margin:0 auto;padding:1rem 2rem;box-sizing:border-box;background:var(--gray100);box-shadow:var(--shadow400);position:relative;}
 .help-foot-body {}
