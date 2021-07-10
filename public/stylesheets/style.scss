@@ -175,7 +175,7 @@
 
 .quote {max-width:400px;@include tile-elevated;}
 .quote-avatar {@include avatar-medium;}
-.quote-title {margin:1rem 0 .5rem;@include subhead;}
+.quote-title {margin:var(--space) 0 .5rem;@include subhead;}
 .quote-body {}
 .quote-byline {margin:1rem 0 0 0;}
 .quote-byline div {color:var(--gray800);}
@@ -261,8 +261,8 @@
 .pricing-item-price- {color:var(--gray400);}
 .pricing-item-period {display:inline-block;color:var(--gray800);}
 .pricing-item-period:before {content:' / ';margin:0 .5rem;color:var(--gray400);}
-.pricing-item-description {margin:1rem 0;}
-.pricing-item ul {margin:1rem 0 2rem 0;}
+.pricing-item-description {margin:var(--space) 0;}
+.pricing-item ul {margin:var(--space) 0 2rem 0;}
 .pricing-item ul li {display:flex;align-items:center;padding:0;}
 .pricing-item ul li:before {content:'';display:none;}
 .pricing-item ul li .icon-check {margin:0 .75rem 0 0;border-color:var(--font-size-subhead);}

@@ -213,6 +213,6 @@
   display: flex;
   box-sizing: border-box;
   align-items: center;
-  margin:0 0 .5rem;border-bottom:var(--border100);border-radius:var(--radius400) var(--radius400) 0 0;font-size:var(--font-size-caption);
+  font-size:var(--font-size-caption);
 }
 .title-bordered {@include title-bordered;}

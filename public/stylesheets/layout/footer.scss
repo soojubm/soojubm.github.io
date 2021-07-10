@@ -1,8 +1,8 @@
 // .subscribe {max-width:var(--width-large);margin:0 auto;padding:4rem var(--grid-margin) 6rem;position:relative;z-index:var(--zindex-default);}
 .subscribe {@include tile-elevated;max-width:400px;}
 .subscribe-title {@include subhead;}
-.subscribe-description {margin:1rem 0 2rem 0;}
-.subscribe-field {margin:2rem 0 0;}
+.subscribe-description {margin:var(--space-after-subhead) 0 var(--space-after-description) 0;}
+.subscribe-field {}
 .subscribe-submit {@include button-primary;width:50%;margin-top:var(--space-after-button);}
 .subscribe-helper {display:block;margin:.5rem 0 0 0;font-size:var(--font-size-caption);}
 
