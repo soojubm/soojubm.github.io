@@ -1,4 +1,3 @@
-
 // let todoItems =  [];
 
 function renderTodo(text) {
@@ -8,7 +7,7 @@ function renderTodo(text) {
   const todoDelete = document.createElement('button')
   // todoDelete.classList.add('text-button');
   todoDelete.setAttribute('type', 'button')
-  todoDelete.innerHTML = '<i class="icon-close" />'
+  todoDelete.innerHTML = '<i class="icon-x" />'
 
   const todoCheck = document.createElement('input')
   const todoCheckLabel = document.createElement('label')

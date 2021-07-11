@@ -3,6 +3,7 @@
     .navbar {display:none;}
   </style>
   
+  <!-- https://story.pxd.co.kr/1451 -->
   <header class="titlebar js-titlebar" role="navigation" style="position:sticky;top:0;">
     <div class="titlebar-background"></div>
     <h1 class="titlebar-title js-page-title">페이지타이틀</h1>
@@ -347,7 +348,7 @@
       <h1 class="design-article-title">Color</h1>
       <p class="design-article-description">작성 중. 서비스에서 색은 background/border/text/state 역할.</p>
       <ul class="design-article-description">
-        <li>다크테마를 위한 컬러셋이나 인버트 스타일을 추가로 정의하지 마세요.</li>
+        <li>다크테마를 위한 컬러셋 또는 인버트 스타일을 추가로 정의하지 마세요.</li>
         <li>todo: 다크테마를 위한 elevation800을 추가하고 400을 조정. 다크테마를 위한 gradient 정의하기.</li>
       </ul>
       <!-- <blockquote style="margin:2rem 0;">
@@ -454,14 +455,16 @@
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Tiles</h1>
       <p class="design-article-description">작성 중. 정보를 묶어 시각적으로 강조.</p>
-      <ul class="design-article-description">
-        <li>페이지 레벨의 타이틀, 디스크립션을 타일로 만들지 마세요.</li>
+
         <!-- <li>타일을 클릭할 수 있거나 타일 내부에 사용자가 액션할 수 있을 때(?) elevated 스타일을 사용하세요.</li> -->
         <!-- <li><span class="tag">내부 옵션을 리스트업.</span></li> -->
-        <li>
-          <p>history: padding 1.5rem에서 1rem으로 변경하고 두 가지 사이즈로 확장. 1.5rem 단일 사이즈로 사용 시 모바일에서 공간이 큼.</p>
-        </li>
-      </ul>
+
+      <div class="design-article-description">
+        <p class="checklist"><span class="checklist-icon"><i></i></span> 페이지 레벨의 타이틀, 디스크립션을 타일로 만들지 마세요.</p>
+        <p class="checklist"><span class="checklist-icon"><i></i></span> history: padding 1.5rem에서 1rem으로 변경하고 두 가지 사이즈로 확장. 1.5rem 단일 사이즈로 사용 시 모바일에서 공간이 큼.</p>
+        <br />
+        <p class="xlist"><i class="xlist-icon"></i> 페이지 레벨의 타이틀, 디스크립션을 타일로 만들지 마세요.</p>
+      </div>
       <dl class="design-article-description">
         <dt>Medium</dt><dd>padding 1rem</dd>
         <dt>Small</dt><dd>padding .5rem</dd>
@@ -548,7 +551,7 @@
         </button>
         <button class="chip is-active">
           영화<span class="chip-icon"><i class="icon-check" style="border-color: var(--color-primary);"></i></span></button>
-        <button class="chip is-active">소설<span class="chip-icon"><i class="icon-close"></i></span></button>
+        <button class="chip is-active">소설<span class="chip-icon"><i class="icon-x"></i></span></button>
       </div>
       
       <aside class="tile-flat-small" style="margin:var(--space) 0 0 0;font-size:var(--font-size-caption);">
@@ -678,6 +681,17 @@
     </article>
 
     <article class="design-article js-scrollspy-section">
+      <h1 class="design-article-title">Selection</h1>
+      <p class="design-article-description">작성 중.</p>
+
+      <h6 class="title-bordered">checkbox</h6>
+      <h6 class="title-bordered">radio</h6>
+      <h6 class="title-bordered">switch</h6>
+      <h6 class="title-bordered">selectbox</h6>
+
+    </article>
+
+    <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Checkboxes</h1>
       <p class="design-article-description">작성 중. 여러 개의 옵션 중 하나 이상을 선택.</p>
       <ul class="design-article-description">
@@ -796,7 +810,7 @@
         <button class="textfield-prefix"><i class="icon-search"></i></button>
         <!-- <label class="textfield-label" for="search">검색(시각적으로숨겨야함)</label> -->
         <input class="textfield-input js-input-test" type="search" id="search" placeholder="궁금한 인물이나 이슈가 있나요?" />
-        <button class="textfield-surfix textfield-clear" hidden><i class="icon-close"></i></button>
+        <button class="textfield-surfix textfield-clear" hidden><i class="icon-x"></i></button>
       </div>
 
       <br />
@@ -1065,7 +1079,7 @@
       </blockquote>
 
       <!-- <aside class="alert">
-        <button class="alert-close" aria-label="close"><i class="icon-close"></i></button>
+        <button class="alert-close" aria-label="close"><i class="icon-x"></i></button>
         <p class="alert-head">
           This includes the <a href="">global HTML attributes</a>.
         </p>
@@ -1076,7 +1090,7 @@
       <aside class="alert" style="margin:1rem 0;background:var(--gray800);border:0;">
         <span class="alert-icon">🧡</span>
         <p class="alert-head" style="color:var(--gray0);">좋아한 콘텐츠에 등록했어요.</p>
-        <!-- <button class="alert-close" aria-label="close alert"><i class="icon-close"></i></button> -->
+        <!-- <button class="alert-close" aria-label="close alert"><i class="icon-x"></i></button> -->
       </aside>
       <aside class="alert" style="background:var(--red800);border-color:transparent;">
         <p class="alert-head" style="color:var(--gray0);">인터넷 연결이</p>
@@ -1113,7 +1127,7 @@
           <button class="dialog-footer-close">볼래요</button>
           <button class="dialog-footer-confirm toast-check">안 볼래요</button>
         </footer>
-        <button class="dialog-close js-modal-close" aria-label="delete"><i class="icon-close"></i></button>
+        <button class="dialog-close js-modal-close" aria-label="delete"><i class="icon-x"></i></button>
       </aside>
     </article>
 
@@ -1743,7 +1757,7 @@
       <article class="share">
         <h2 class="share-title">가족이나 친구들과<br />함께 보세요!</h2>
         <hr />
-        <button class="share-back"><i class="icon-close"></i></button>
+        <button class="share-back"><i class="icon-x"></i></button>
         <button class="share-facebook">
           <span class="share-facebook-icon"></span>
           facebook으로 공유하기
@@ -2004,7 +2018,7 @@ textarea2.addEventListener('mouseup', onMouseUp, false);
         <button class="design-article-icon"><i class="icon-arrow"></i></button>
         <button class="design-article-icon"><i class="icon-more"></i></button>
         <button class="design-article-icon"><i class="icon-plus"></i></button>
-        <button class="design-article-icon"><i class="icon-close"></i></button>
+        <button class="design-article-icon"><i class="icon-x"></i></button>
         <button class="design-article-icon"><i class="icon-o"></i></button>
         <button class="design-article-icon"><i class="icon-caret"></i></button>
         <button class="design-article-icon"><i class="icon-hamberger"></i></button>

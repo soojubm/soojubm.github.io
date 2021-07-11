@@ -8,9 +8,9 @@
 .chip-icon {@include avatar-medium;@include chip-tailing;border:var(--border100) !important;background:var(--gray0);}
 .chip-icon .icon-caret {}
 .chip-icon .icon-check {}
-.chip-icon .icon-close {}
-.chip-icon .icon-close::before {background:var(--color-primary);}
-.chip-icon .icon-close::after {background:var(--color-primary);}
+.chip-icon .icon-x {}
+.chip-icon .icon-x::before {background:var(--color-primary);}
+.chip-icon .icon-x::after {background:var(--color-primary);}
 .chip.is-active {border-color:var(--color-primary);background:var(--green100);color:var(--color-primary);}
 .chip.is-active .chip-icon {border-color:var(--color-primary) !important;}
 
