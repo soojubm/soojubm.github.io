@@ -1,5 +1,5 @@
 .breadcrumb {display:flex;align-items:center;width:100%;overflow:hidden;}
-.breadcrumb-divider {margin:0 1rem;color:var(--gray400);}
+.breadcrumb-divider {margin:0 var(--space);color:var(--gray400);}
 .breadcrumb-item {position:relative;}
 .breadcrumb-last {}
 .breadcrumb-last:after {display:none;}

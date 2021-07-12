@@ -26,10 +26,11 @@
 .icon-x:before {content:'';width:10px;height:2px;background-color:var(--gray800);position:absolute;left:50%;top:50%;transform:translate(-50%, -50%) rotate(45deg);}
 .icon-x:after {content:'';width:2px;height:10px;background-color:var(--gray800);position:absolute;left:50%;top:50%;transform:translate(-50%, -50%) rotate(45deg);}
 
+// todo span 
 .checklist {    position: relative;margin-left:-3px;
   padding: 0px 0px 0px 25px;}
-.checklist-icon {display:inline-flex;align-items:center;justify-content:center;width:var(--size-tiny);height:var(--size-tiny);margin-right:.5rem;position:absolute;left:0;top:6px;}
-.checklist-icon i {display:inline-block;width:7px;height:3px;border-left:1px solid;border-bottom:1px solid;border-color:var(--gray800);vertical-align:middle;transform:translateY(-3px) rotate(-45deg);}
+.checklist span {display:inline-flex;align-items:center;justify-content:center;width:var(--size-tiny);height:var(--size-tiny);margin-right:.5rem;position:absolute;left:0;top:6px;}
+.checklist span i {display:inline-block;width:7px;height:3px;border-left:1px solid;border-bottom:1px solid;border-color:var(--gray800);vertical-align:middle;transform:translateY(-3px) rotate(-45deg);}
 
 .checklist + .checklist,
 .checklist + .xlist,
@@ -38,8 +39,8 @@
 .xlist {    position: relative;margin-left:-3px;
   padding: 0px 0px 0px 25px;}
 .xlist-icon {display:inline-block;vertical-align:middle;width:var(--size-tiny);height:var(--size-tiny);position:relative;margin-right:.5rem;position:absolute;left:0;top:5px;}
-.xlist-icon:before {content:'';width:10px;height:1px;background-color:var(--gray800);position:absolute;left:50%;top:50%;transform:translate(-50%, -50%) rotate(45deg);}
-.xlist-icon:after {content:'';width:1px;height:10px;background-color:var(--gray800);position:absolute;left:50%;top:50%;transform:translate(-50%, -50%) rotate(45deg);}
+.xlist-icon:before {content:'';width:10px;height:.5px;background-color:var(--gray800);position:absolute;left:50%;top:50%;transform:translate(-50%, -50%) rotate(45deg);}
+.xlist-icon:after {content:'';width:.5px;height:10px;background-color:var(--gray800);position:absolute;left:50%;top:50%;transform:translate(-50%, -50%) rotate(45deg);}
 
 .icon-check {display:inline-block;width:7px;height:2px;border-left:2px solid;border-bottom:2px solid;border-color:var(--gray800);vertical-align:middle;transform:translateY(-2px) rotate(-45deg);}
 
