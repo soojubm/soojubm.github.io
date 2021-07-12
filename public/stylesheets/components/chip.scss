@@ -1,7 +1,6 @@
 
 
 .chip {@include chip}
-.chip:hover {border-color:var(--gray800);}
 .chip-count {@include tag;}
 .chip-label {margin:0 1rem;}
 .chip figure {@include avatar-medium;@include chip-heading;border:var(--border100);background:var(--gray0);}
@@ -11,6 +10,10 @@
 .chip-icon .icon-x {}
 .chip-icon .icon-x::before {background:var(--color-primary);}
 .chip-icon .icon-x::after {background:var(--color-primary);}
+
+.chip:hover {border-color:var(--gray800);}
+.chip:hover figure {border-color:var(--gray800);border-right:var(--border100);}
+
 .chip.is-active {border-color:var(--color-primary);background:var(--green100);color:var(--color-primary);}
 .chip.is-active .chip-icon {border-color:var(--color-primary) !important;}
 

@@ -57,7 +57,8 @@
 
   <header style="padding:2rem var(--grid-margin);margin:0 auto;">
     <h1>Under<br />Construction</h1>
-    <p>
+    <p style="margin:var(--space) 0 0 0;">
+      appearance and role
       <!-- <h1>pallette</h1>
       <p>size / typography / color / spacing</p>
       <li>가이드의 가이드. 디스크립션(OO은 ~~~) + 체크리스트. 가짓수를 디스크립션 하지 않기. 다른 디자인 시스템에서 어떤 이름으로 사용하는지. similar. 리디처럼 '상황에 따라', '목적에 맞게' 등의 ㅇㄻㅇㄻ 사용하지 않고 용법을 명확히 한다. /// 하세요 vs 할 수 있습니다. /// 할 때 vs 경우에 둘다 별로임. 사용 빈도 낮은 케이스는 예외로 정의하고 공식적인 가이드화 하지 않기.</li>
@@ -76,10 +77,9 @@
       <a class="chip js-scrollspy-trigger" href="#">Chips</a>
       <a class="chip js-scrollspy-trigger" href="#">Tags</a>
       <a class="chip js-scrollspy-trigger" href="#">Buttons</a>
-      <a class="chip js-scrollspy-trigger" href="#">Checkboxes</a>
-      <a class="chip js-scrollspy-trigger" href="#">Radioes</a>
-      <a class="chip js-scrollspy-trigger" href="#">Switch</a>
+      <a class="chip js-scrollspy-trigger" href="#">Selection</a>
       <a class="chip js-scrollspy-trigger" href="#">Textfields</a>
+      <a class="chip js-scrollspy-trigger" href="#">Seporator</a>
       <a class="chip js-scrollspy-trigger" href="#">Breadcrumb</a>
       <a class="chip js-scrollspy-trigger" href="#">Text Links</a>
       <a class="chip js-scrollspy-trigger" href="#">Texts</a>
@@ -193,61 +193,64 @@
       <p class="design-article-description">작성 중. 텍스트, 아이콘, 이미지.</p>
       <ul class="design-article-description">
         <li>huge, medium은 디스크립션을 가질 수 있습니다.</li>
+        <li>card component, page 레벨에서 상대적으로 중요도가 낮은 경우 우측에 배치할 수 있습니다.</li>
         <!-- <li>텍스트 말 줄임표 조건 정의. 리스트업 조건 정의.</li> -->
         <li>todo: 같은 스타일. 현재 아이콘 버튼을 avatar로 mixin. 분리 및 추상화하기.</li>
       </ul>
-      <dl>
+      <dl class="design-article-description">
         <dt>huge</dt><dd>avatar</dd>
         <dt>large</dt><dd>button, textfield, avatar</dd>
         <dt>medium</dt><dd>button small, chip, avatar</dd>
         <dt>small</dt><dd>tag, avatar, button in textfield(indicator)</dd>
         <dt>tiny</dt><dd>radio, checkbox, switch, avatar</dd>
       </dl>
-      <hr />
       <!-- 2021-05 xsmall 사이즈 추가, todo: tiny를 xxsmall로 변경하고 기본값으로 medium을 사용. -->
-      <div role="group">
-        <a href="#" class="design-article-avatar-huge" title="huge avatar"><span class="avatar-badge"></span></a>
-        <a href="#" class="design-article-avatar-large" title="large avatar"><span class="avatar-badge"></span></a>
-        <a href="#" class="design-article-avatar-medium" title="medium avatar"><span class="avatar-badge"></span></a>
-        <a href="#" class="design-article-avatar-small" title="small avatar"><span class="avatar-badge"></span></a>
-        <a href="#" class="design-article-avatar-tiny" title="tiny avatar"><span class="avatar-badge"></span></a>
+
+      <div class="tile-flat">
+        <div role="group">
+          <a href="#" class="design-article-avatar-huge" title="huge avatar"><span class="avatar-badge"></span></a>
+          <a href="#" class="design-article-avatar-large" title="large avatar"><span class="avatar-badge"></span></a>
+          <a href="#" class="design-article-avatar-medium" title="medium avatar"><span class="avatar-badge"></span></a>
+          <a href="#" class="design-article-avatar-small" title="small avatar"><span class="avatar-badge"></span></a>
+          <a href="#" class="design-article-avatar-tiny" title="tiny avatar"><span class="avatar-badge"></span></a>
+        </div>
       </div>
 
-      <!-- <div class="avatar-large" style="display:flex;margin-bottom:1rem;">
-        <a href="" class="design-article-avatar-large"><span class="avatar-badge"></span></a>
+      <!-- <div class="avatar-large" style="display:flex;margin-bottom:var(--space);">
+        <a href="" class="design-article-avatar-huge"><span class="avatar-badge"></span></a>
         <div style="display:block;width:1rem;height:inherit;border-radius:var(--radius400);background:var(--green100);"></div>
         <div style="display:block;width:calc(100% - 80px - 1.5rem);height:inherit;">
-          <h3 style="font-size:var(--font-size-subhead);font-weight:var(--font-weight-bold);">Large 80px / space 1.5rem</h3>
+          <h3 style="font-size:var(--font-size-subhead);font-weight:var(--font-weight-bold);">huge 80px / space 1.5rem</h3>
           <p style="color:var(--gray400);">디스크립션</p>
         </div>
       </div>
-      <div style="display:flex;margin-bottom:1rem;">
-        <a href="" class="design-article-avatar-medium"></a>
+      <div style="display:flex;margin-bottom:var(--space);">
+        <a href="" class="design-article-avatar-large"></a>
         <div style="display:block;width:.75rem;height:48px;border-radius:var(--radius400);background:var(--green100);box-sizing:border-box;"></div>
         <div style="display:block;width:calc(100% - 48px - 1rem);height:inherit;">
-          <h3 style="font-weight:var(--font-weight-bold);font-size:var(--font-size-body);">Medium 48px / space 1rem</h3>
+          <h3 style="font-weight:var(--font-weight-bold);font-size:var(--font-size-body);">large 48px / space 1rem</h3>
           <p style="color:var(--gray400);">디스크립션</p>
         </div>
       </div>
-      <div style="display:flex;align-items:center;margin-bottom:1rem;">
+      <div style="display:flex;align-items:center;margin-bottom:var(--space);">
         <a href="" class="design-article-avatar-medium"></a>
         <div style="display:block;width:.75rem;height:32px;border-radius:var(--radius400);background:var(--green100);box-sizing:border-box;"></div>
-        <div style="display:block;width:calc(100% - 32px - 1rem);height:32px;line-height:32px;">Small 32px</div>
+        <div style="display:block;width:calc(100% - 32px - 1rem);height:32px;line-height:32px;">medium 32px</div>
       </div>
-      <div style="display:flex;align-items:center;margin-bottom:1rem;">
-        <a href="" class="design-article-avatar-xsmall"></a>
+      <div style="display:flex;align-items:center;margin-bottom:var(--space);">
+        <a href="" class="design-article-avatar-small"></a>
         <div style="display:block;width:.5rem;height:24px;border-radius:var(--radius400);background:var(--green100);box-sizing:border-box;"></div>
-        <div style="display:block;width:calc(100% - 24px - .5rem);height:24px;line-height:24px;">xSmall 24px</div>
+        <div style="display:block;width:calc(100% - 24px - .5rem);height:24px;line-height:24px;">small 24px</div>
       </div>
       <div style="display:flex;">
         <a href="" class="design-article-avatar-tiny"></a>
         <div style="display:block;width:.5rem;height:inherit;border-radius:var(--radius400);background:var(--green100);box-sizing:border-box;"></div>
-        <div style="display:block;width:calc(100% - 16px - .5rem);height:inherit;font-size:var(--font-size-caption);line-height:16px;">Tiny 16px</div>
+        <div style="display:block;width:calc(100% - 16px - .5rem);height:inherit;font-size:var(--font-size-caption);line-height:16px;">tiny 16px</div>
       </div> -->
 
-      <hr />
+      <br />
       <h6 class="title-bordered">Avatar Stack</h6>
-      <div class="avatarlist" style="display:flex;align-items:center;margin-bottom:1rem;">
+      <div class="avatarlist" style="display:flex;align-items:center;margin-bottom:var(--space);">
         <!-- todo z-index를 위해 반대로 정렬 -->
         <span class="design-article-avatar-small" style="box-shadow: var(--gray0) 0px 0px 0px 2px;"></span>
         <span class="design-article-avatar-small" style="margin-left:-.5rem;box-shadow: var(--gray0) 0px 0px 0px 2px;"></span>
@@ -269,10 +272,10 @@
       </ul>
       <p class="design-article-description"><span class="tag" data-appearance="secondary" style="margin:0 var(--space) 0 0;">예외</span>bottom navigation에서 레이블의 폰트 크기를 10px로 사용합니다.</p>
       <!-- <li>asap의 dash를 마이너스로 쓰면 어색. 무게가 살짝 다름. role에 따라 구분하자. caption, helper 등 같은 값을 가지는 텍스트로 따로 모듈화하는 것이 좋겠다. letter-spacing은 크기마다 다르게 적용하시요</li> -->
-      <!-- <button class="user-logout tile-elevated js-default-font" style="padding:.5rem;padding-left:1rem;" title="change theme">
+      <button class="user-logout tile-elevated js-default-font" style="padding:.5rem;padding-left:1rem;" title="change theme">
         <span class="user-logout-icon">icon</span>
         시스템 폰트로 보기
-      </button> -->
+      </button>
       <h6 class="title-bordered">Font Family</h6>
       <div class="design-typograph-group tile-flat">
         <div class="design-typograph-item">
@@ -455,26 +458,35 @@
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Tiles</h1>
       <p class="design-article-description">작성 중. 정보를 묶어 시각적으로 강조.</p>
+      
+      <!-- <div role="group">
+        <span class="tag">container</span>
+      </div> -->
 
         <!-- <li>타일을 클릭할 수 있거나 타일 내부에 사용자가 액션할 수 있을 때(?) elevated 스타일을 사용하세요.</li> -->
         <!-- <li><span class="tag">내부 옵션을 리스트업.</span></li> -->
 
       <div class="design-article-description">
-        <p class="checklist"><span class="checklist-icon"><i></i></span> 페이지 레벨의 타이틀, 디스크립션을 타일로 만들지 마세요.</p>
         <p class="checklist"><span class="checklist-icon"><i></i></span> history: padding 1.5rem에서 1rem으로 변경하고 두 가지 사이즈로 확장. 1.5rem 단일 사이즈로 사용 시 모바일에서 공간이 큼.</p>
-        <br />
         <p class="xlist"><i class="xlist-icon"></i> 페이지 레벨의 타이틀, 디스크립션을 타일로 만들지 마세요.</p>
       </div>
-      <dl class="design-article-description">
-        <dt>Medium</dt><dd>padding 1rem</dd>
-        <dt>Small</dt><dd>padding .5rem</dd>
-      </dl>
+
+      <hr />
+
+      <blockquote>
+        <dl class="design-article-description">
+          <dt>Medium</dt><dd>padding 1rem</dd>
+          <dt>Small</dt><dd>padding .5rem</dd>
+        </dl>
+      </blockquote>
+
       <div class="design-tile-flat" style="line-height:1.4;">
         <b>flat</b> is non clickable. no one.
       </div>
-      <div class="design-outer-elevated" style="margin-top:1rem;line-height:1.4;">
+      <div class="design-outer-elevated" style="margin-top:var(--space);line-height:1.4;">
         <b>elevated</b> is clickable. target or children. 
       </div>
+      
     </article>
 
     <!-- <article class="design-article">
@@ -489,22 +501,24 @@
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Chips ☀️</h1>
       <p class="design-article-description">작성 중. 작은 버튼.</p>
-      <ul class="design-article-description">
-        <li>단일선택, 다중선택, 삭제여부 등의 힌트를 제공하세요.</li>
-        <li>다른 맥락의 chip을 나열하는 것이 허용됩니다. 가령 필터 그룹에 드롭다운 포함할 수 있음. 아이콘으로 힌트.</li>
-      </ul>
+      <blockquote class="design-article-description">
+        <p class="checklist"><span class="checklist-icon"><i></i></span> 단일선택, 다중선택, 삭제여부에 따라 힌트를 제공하세요.</p>
+        <p class="xlist"><i class="xlist-icon"></i> 다른 맥락의 chip을 나열할 수 있습니다. 가령 필터 그룹에 드롭다운 포함할 수 있음. 아이콘으로 힌트</p>
+      </blockquote>
       <h6 class="title-bordered">Filter</h6>
-      <div class="chips js-chip" role="listbox" aria-orientation="horizontal">
-        <button class="chip is-active">전체</button>
-        <button class="chip">결제완료
-          <!-- <small class="chip-count">5</small> -->
-        </button>
-        <button class="chip">주문취소
-        </button>
-        <button class="chip">
-          +5
-        </button>
-      </div>
+<div class="tile-flat-small">
+        <div class="chips js-chip" role="listbox" aria-orientation="horizontal">
+          <button class="chip is-active">전체</button>
+          <button class="chip">결제완료
+            <!-- <small class="chip-count">5</small> -->
+          </button>
+          <button class="chip">주문취소
+          </button>
+          <button class="chip">
+            +5
+          </button>
+        </div>
+</div>
 
       <br />
 
@@ -564,7 +578,7 @@
       <p class="design-article-description">작성 중. 상태 레이블링.</p>
       
       <ul class="design-article-description">
-        <li>클릭할 수 없습니다.</li>
+        <li>버튼으로 사용하지 마세요. 클릭할 수 없음.</li>
         <li>아이콘을 포함할 수 없습니다. (아이콘 룰. 아이콘의 목적은 클릭 어포던스. 클릭할 수 없으니 아이콘 사용도 불가능한 맥락)</li>
         <li>history: chip-small에서 다시 분리. 롤이 아닌 스타일로 구분되어 가이드가 복잡. 롤로 나눠서 스타일이 변경되는 경우에 대비.</li>
       </ul>
@@ -683,21 +697,14 @@
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Selection</h1>
       <p class="design-article-description">작성 중.</p>
-
-      <h6 class="title-bordered">checkbox</h6>
-      <h6 class="title-bordered">radio</h6>
-      <h6 class="title-bordered">switch</h6>
-      <h6 class="title-bordered">selectbox</h6>
-
-    </article>
-
-    <article class="design-article js-scrollspy-section">
-      <h1 class="design-article-title">Checkboxes</h1>
-      <p class="design-article-description">작성 중. 여러 개의 옵션 중 하나 이상을 선택.</p>
-      <ul class="design-article-description">
+      <ul>
         <li>가로로 정렬하지 마세요.</li>
-        <li>옵션이 5개 이상일 때 chip을 사용하세요.</li>
+        <li>1개의 옵션을 선택된 상태로 제공하세요.</li>
+        <li>옵션이 6개 이상일 때는 chip이나 selectbox를 사용하세요.</li>
+        <li class="design-article-description">스위치는 checkbox의 조건을 따르며 기능이나 옵션을 켜고 끄는 뉘앙스에서 사용합니다.</li>
+        <!-- (리액트에서 id  이슈 input in label.) -->
       </ul>
+
       <fieldset role="checkgroup">
         <legend>checkgroup legend</legend>
         <div class="checkbox">
@@ -718,17 +725,9 @@
           <input type="text" name="other-more" class="textfield-input" placeholder="입력해주세요." hidden>
         </div>
       </fieldset>
-    </article>
 
-    <article class="design-article js-scrollspy-section">
-      <h1 class="design-article-title">Radioes</h1>
-      <p class="design-article-description">작성 중. 여러 개의 옵션 중 하나 선택.</p>
-      <ul class="design-article-description">
-        <li>1개의 옵션을 선택된 상태로 제공하세요.</li>
-        <li>세로로 정렬하지 마세요.</li>
-        <li>옵션이 6개 이상일 때는 chip이나 selectbox를 사용하세요.</li>
-      </ul>
-      <!-- (리액트에서 id 관련 이슈 input in label.) -->
+
+      <h6 class="title-bordered">radio</h6>
       <fieldset role="radiogroup">
         <legend>radiogroup legend</legend>
         <div class="radio">
@@ -741,7 +740,7 @@
           <label for="gender-etc" title="Video Killed the Radio Button">Video Killed the Radio Button</label>
         </div>
       </fieldset>
-      <hr />
+      
       <fieldset>
         <div class="radio theme-button">
           <input type="radio" id="raidio5" name="gender" value="">
@@ -764,11 +763,8 @@
           </div>
         </div>
       </fieldset>
-    </article>
 
-    <article class="design-article js-scrollspy-section">
-      <h1 class="design-article-title">Switch</h1>
-      <p class="design-article-description">기능이나 옵션을 켜고 끄는 뉘앙스에서 사용합니다.</p>
+      <h6 class="title-bordered">switch</h6>
       <span class="switch" style="margin: 0 0 var(--space) 0;">
         <input type="checkbox" id="switch1" name="" role="switch" value="on" checked />
         <label for="switch1" title="Receive weekly newsletter">주간 뉴스레터 받아보기</label>
@@ -777,6 +773,9 @@
         <input type="checkbox" id="switch2" name="" role="switch" value="off" disabled />
         <label for="switch2" title="Receive weekly newsletter">주간 뉴스레터 받아보기</label>
       </span>
+
+      <h6 class="title-bordered">selectbox</h6>
+
     </article>
 
     <article class="design-article js-scrollspy-section">
@@ -797,8 +796,8 @@
       </div>
       <br />
       <h6 class="title-bordered">States (valid / invalid)</h6>
-      <div class="textfield is-invalid">
-        <label class="textfield-label" for="abc123">레이블 <abbr aria-label="optional" style="font-size:var(--font-size-caption);">선택입력</abbr></label>
+      <div class="textfield is-invalid tile-flat">
+        <label class="textfield-label" for="abc123" style="margin-top:var(--space-leading-subhead);">레이블 <abbr aria-label="optional" style="font-size:var(--font-size-caption);">선택입력</abbr></label>
         <input class="textfield-input js-input-test" type="text" id="abc123" placeholder="Textarea Placeholder..." value="soojubm@gmail.com" aria-describedby="error" aria-invalid="true" />
         <small class="textfield-helper is-error">이미 사용 중인 이메일입니다.</small>
       </div>
@@ -928,25 +927,25 @@
         <li>작성 중. todo: checklist(price card 등에서 사용) 정의. 대부분의 유아이는 리스트 형식으로 나열되기 때문에 텍스트 리스트에 한정하여 리스트 태그(ul, ol, dl)로 마크업합니다. (role=listbox/listitem)</li>
       </ul>
       <h6 class="title-bordered">List</h6>
-      <ul class="list-sample">
-        <li title="unordered list, level 1">순서가 없는 리스트
-          <ul>
-            <li title="unordered list, level 2">순서가 없는 리스트</li>
-            <li>순서가 없는 리스트</li>
-          </ul>
-        </li>
-        <li>순서가 없는 리스트</li>
-      </ul>
-      <hr />
-      <ol class="list-sample">
-        <li>순서가 있는 리스트
-          <ol>
-            <li>순서가 있는 리스트</li>
-            <li>순서가 있는 리스트</li>
-          </ol>
-        </li>
-        <li>순서가 있는 리스트</li>
-      </ol>
+<div class="tile-flat">
+        <ul class="list-sample">
+          <li title="unordered list, level 1">순서가 없는 리스트
+            <ul>
+              <li title="unordered list, level 2">순서가 없는 리스트</li>
+            </ul>
+          </li>
+          <li>순서가 없는 리스트</li>
+        </ul>
+        <br />
+        <ol class="list-sample">
+          <li>순서가 있는 리스트
+            <ol>
+              <li>순서가 있는 리스트</li>
+            </ol>
+          </li>
+          <li>순서가 있는 리스트</li>
+        </ol>
+</div>
       <br />
       <h6 class="title-bordered">Statistic</h6>
       <div class="statistic tile-flat" style="display:flex;justify-content:space-evenly;">

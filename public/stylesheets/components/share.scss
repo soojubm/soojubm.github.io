@@ -6,11 +6,11 @@
 }
 .share-back {@include avatar-medium;position:absolute;right:.5rem;top:.5rem;}
 .share-title {margin:var(--space-leading-subhead) 0 0 0;@include subhead;}
-.share-facebook {display:flex;align-items:center;width:100%;margin:1rem 0;position:relative;z-index:var(--zindex-default);}
+.share-facebook {display:flex;align-items:center;width:100%;margin:var(--space) 0;position:relative;z-index:var(--zindex-default);}
 .share-facebook:hover {@include hover-item;}
-.share-twitter {display:flex;align-items:center;width:100%;margin:1rem 0;position:relative;z-index:var(--zindex-default);}
+.share-twitter {display:flex;align-items:center;width:100%;margin:var(--space) 0;position:relative;z-index:var(--zindex-default);}
 .share-twitter:hover {@include hover-item;}
-.share-kakao {display:flex;align-items:center;width:100%;margin:1rem 0;position:relative;z-index:var(--zindex-default);}
+.share-kakao {display:flex;align-items:center;width:100%;margin:var(--space) 0;position:relative;z-index:var(--zindex-default);}
 .share-kakao:hover {@include hover-item;}
 .share-facebook-icon {@include avatar-medium;margin-right:var(--space);background-color:var(--color-facebook) !important;}
 .share-twitter-icon {@include avatar-medium;margin-right:var(--space);background-color:var(--color-twitter);}

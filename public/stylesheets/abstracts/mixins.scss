@@ -199,8 +199,8 @@
   background:var(--gray100);
   line-height:30px;color:var(--gray800);position:relative;
 }
-@mixin chip-heading {float:left;margin:0 1rem 0 -17px;border-top-right-radius:0;border-bottom-right-radius:0;}
-@mixin chip-tailing {float:right;margin:0 -17px 0 1rem;border-top-left-radius:0;border-bottom-left-radius:0;}
+@mixin chip-heading {float:left;margin:0 var(--space) 0 -17px;border-top-right-radius:0;border-bottom-right-radius:0;}
+@mixin chip-tailing {float:right;margin:0 -17px 0 var(--space);border-top-left-radius:0;border-bottom-left-radius:0;}
 
 @mixin badge {@include avatar-tiny;}
 
