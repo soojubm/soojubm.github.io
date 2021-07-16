@@ -33,10 +33,10 @@
 .checkout-product-total-value {}
 
 .checkout-shipping {display:flex;flex-wrap:wrap;justify-content:space-between;max-width:var(--width-medium);}
-.checkout-shipping-title {width:100%;margin:1rem 0;@include subhead;}
+.checkout-shipping-title {width:100%;margin:var(--space) 0;@include subhead;}
 .checkout-shipping-name {width:var(--grid-column);}
 .checkout-shipping-phone {width:var(--grid-column);}
-.checkout-shipping-address {width:100%;margin:1rem 0 0 0;}
+.checkout-shipping-address {width:100%;margin:var(--space) 0 0 0;}
 // .checkout-shipping-name-emoji {@include item-emoji;}
 // .checkout-shipping-name-label {@include item-label;}
 // .checkout-shipping-name-value {@include item-value;}

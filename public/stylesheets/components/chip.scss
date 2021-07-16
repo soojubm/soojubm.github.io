@@ -11,13 +11,6 @@
 .chip-icon .icon-x::before {background:var(--color-primary);}
 .chip-icon .icon-x::after {background:var(--color-primary);}
 
-.chip:hover {border-color:var(--gray800);}
-.chip:hover figure {border-color:var(--gray800);border-right:var(--border100);}
-
-.chip.is-active {border-color:var(--color-primary);background:var(--green100);color:var(--color-primary);}
-.chip.is-active .chip-icon {border-color:var(--color-primary) !important;}
-
-
 
 .chips {
     @include group-bleeding;

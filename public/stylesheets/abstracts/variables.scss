@@ -2,8 +2,7 @@
 @custom-media --breakpoint-small (max-width: 1080px);
 @custom-media --breakpoint-tiny (max-width: 760px);
 
-$padding100: 4px 1rem 5px; // 32
-$padding200: 9px 1rem 11px; // 버튼, 텍스트인풋 48
+
 
 $bezier-base: cubic-bezier(0.455, 0.03, 0.515, 0.955);
 $transition-base: all 0.4s $bezier-base;
@@ -12,18 +11,23 @@ $transition-fade: opacity 0.15s linear;
 :root {
   color-scheme: light dark;
 
+  --padding-input: 9px 1rem 11px; // 버튼, 텍스트인풋 48
+  --padding-inupt-small: 4px 1rem 5px; // 32
+
   --breakpoint-phone: 0;
   --breakpoint-tablet: 0;
   --breakpoint-laptop: 0;
   --breakpoint-desktop: 0;
   --breakpoint-tv: 0;
-  // body에 width를 줘버리기, viewport vs breakpoint
+  // body에 width를 줘버리기,
 
   // ! viewport : desktop first
 
-
   // --fontstack: sans-serif;
-  --fontstack: 'Pretendard', 'Asap', 'AritaDotum', sans-serif;
+  --fontstack: 'Asap', 'AritaDotum', sans-serif;
+  --font-stack: 0;
+  --font-family: 0;
+  --font-family-heading: 0;
 
   --navbar-height: 56px;
   --subheader-height: 56px;
@@ -43,12 +47,19 @@ $transition-fade: opacity 0.15s linear;
 
   --font-weight-normal: normal;
   --font-weight-bold: bold;
-  --font-weight-extrabold: none; // 
+  --font-weight-extrabold: none;
 
   --font-color: var(--gray800);
-  --text-color-light: var(--gray400);
-  --text-color-dark: none;
-  --text-color-highlight: var(--gray800);
+  --font-color-light: var(--gray400);
+  --font-color-dark: none;
+  --font-color-highlight: var(--gray800);
+
+  --font-line-height-small: 1.8;
+  --font-line-height: 1.8;
+
+  --font-letter-spacing: 0;
+
+  --letter-spacing-heading: 0;
 
   // ! colours
   --gray0: #fff; // white for dark theme
@@ -62,7 +73,7 @@ $transition-fade: opacity 0.15s linear;
   --green800: #1b995c;
   // --red100: #fff0f5;
   // --red100: rgba(243, 68, 97 / 6%);
-    --red100: rgba(243, 68, 97, .06);
+  --red100: rgba(243, 68, 97, .06);
   --red800: #f02849;
 
   --color-google: #fff;
@@ -106,17 +117,21 @@ $transition-fade: opacity 0.15s linear;
   --space-after-subhead: 1rem;
   --space-after-description: 1rem;
   --space-after-button: .75rem;
+
+  --space-after-textfield: 1rem;
   
   --space-before-badge: .75rem;
 
   --space-between-listitem: .75rem;
   --space-between-groupitem: .25rem;
   --space-between-groupitem-minus: calc(var(--space-between-groupitem) * -1);
-  --space-between-article: 8rem;
+  --space-between-article: 10rem;
   --space-between-section: 12rem;
 
   --space-tile-padding: 1rem;
 
+
+  --space-inset-head: 2rem;
 
 
   --border100: 1px solid var(--gray200);
@@ -132,9 +147,19 @@ $transition-fade: opacity 0.15s linear;
   --radius-card: var(--radius400);
   --radius-container: var(--radius400);
 
-  // --shadow400: 0px 0px 2rem rgba(0, 0, 0, 0.125);
   --shadow400: 0px 0px 1rem rgba(0, 0, 0, 0.125);
   --shadow800: 0px 0px 2rem rgba(0, 0, 0, 0.5);
+
+  --shadow: 0;
+  --shadow-tooltip: 0;
+  --shadow-hover: 0;
+  --shadow-modal: 0;
+  --shadow-card: 0;
+
+  --size-layout-max-width: 0;
+
+  --transition-quickly: 0;
+  --transition-slowly: 0;
 
   --card-background: #fff;
   --card-border: 1px solid #fff;
@@ -181,6 +206,12 @@ $transition-fade: opacity 0.15s linear;
 
   --safearea-inset-bottom1: constant(safe-area-inset-bottom);
   --safearea-inset-bottom2: env(safe-area-inset-bottom);
+
+
+
+  --button-background: 0;
+  --button-border: 0;
+  
 
   @media (--breakpoint-large) {
     --width-large: 1020px;

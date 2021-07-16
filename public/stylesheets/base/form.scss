@@ -134,7 +134,7 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 .textfield {position:relative;}
 .textfield-label {display:block;margin:0 0 0.25rem 0;}
 .textfield-label small {margin:0 0 0 .25rem;color:var(--gray400);}
-.textfield-input {display:block;width:100%;min-height:var(--size-large);padding:$padding200;padding-right:40px;background:var(--gray100);border:1px solid transparent;border-radius:var(--radius400);box-sizing:border-box;font:inherit;color:var(--gray800);/*-appearance:none;*/transition:all 0.2s;} // textarea 하단 간격
+.textfield-input {display:block;width:100%;min-height:var(--size-large);padding:var(--padding-input);padding-right:40px;background:var(--gray100);border:1px solid transparent;border-radius:var(--radius400);box-sizing:border-box;font:inherit;color:var(--gray800);/*-appearance:none;*/transition:all 0.2s;} // textarea 하단 간격
 .textfield-input:disabled {border-color:var(--gray200);background:var(--gray200);color:var(--gray100);cursor:not-allowed;}
 // .textfield-input:not(select):readonly {background:none;padding-left:0;padding-right:0;border:none;outline:none;}
 // .textfield-input:not(select):readonly::placeholder {color:var(--gray800);}
@@ -312,7 +312,7 @@ progress:not([value]) {
       height: auto;
       padding: 9px 1rem 11px 2.75rem;
       border: var(--border100);
-      background: var(--gray100);
+      background: var(--gray0);
       cursor: pointer;
       &:before {background:var(--gray0);left:1rem;}
       &:after {left:calc(1rem + 5px)}
