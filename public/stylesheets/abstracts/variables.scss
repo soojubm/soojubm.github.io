@@ -123,6 +123,9 @@ $transition-fade: opacity 0.15s linear;
   --space-before-badge: .75rem;
 
   --space-between-listitem: .75rem;
+
+  --space-between-tag: .125rem;
+  --space-between-tag-minus: calc(var(--space-between-tag) * -1);
   --space-between-groupitem: .25rem;
   --space-between-groupitem-minus: calc(var(--space-between-groupitem) * -1);
   --space-between-article: 10rem;
