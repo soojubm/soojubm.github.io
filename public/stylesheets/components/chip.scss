@@ -1,4 +1,5 @@
-
+.chipgroup {@include group-bleeding;}
+// chips, role=group
 
 .chip {@include chip}
 .chip-count {@include tag;}
@@ -12,7 +13,9 @@
 .chip-icon .icon-x::after {background:var(--color-primary);}
 
 
-.chips {
-    @include group-bleeding;
-    // @include tile-flat;
-}
+
+
+
+
+.group-bleeding {@include group-bleeding;}
+

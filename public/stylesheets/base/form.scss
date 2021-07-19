@@ -147,12 +147,17 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 // .textfield-reset {}
 // .textfield-prefix + .textfield-input {display:inline-block;padding-right:100px;}
 
+// todo
+.searchfield {}
+.searchfield .textfield-prefix {top:11px !important;}
+.searchfield .textfield-surfix {top:11px !important;}
+
 @mixin textfield-prefix {
-  @include avatar-medium;width:var(--size-small);height:var(--size-small);background:var(--gray0);position:absolute;left:1rem;top:40px;pointer-events:none;
+  @include avatar-small;position:absolute;left:1rem;top:40px;pointer-events:none;
   @media (--breakpoint-small) {top: 40px;}
 }
 @mixin textfield-surfix {
-  @include avatar-medium;width:var(--size-small);height:var(--size-small);background:var(--gray0);position:absolute;right:1rem;top:40px;pointer-events:none;
+  @include avatar-small;position:absolute;right:1rem;top:40px;pointer-events:none;
   // @media (--breakpoint-small) {top:35px;}
 }
 
@@ -177,7 +182,6 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 .textfield.is-floating input {padding:0.75rem 0rem;border-top:none;border-left:none;border-right:none;}
 .textfield.is-floating label {height:20px;position:absolute;left:0;top:6px;transition:all 0.2s ease;cursor:text;}
 .textfield.is-floating input:focus + label {color:var(--gray400);font-size:11px;top:-12px;}
-
 .textfield.is-text {display:flex;align-items:center;}
 .textfield.is-text .textfield-label {display:none;margin:0 .5rem 0 0;}
 .textfield.is-text .textfield-input {width:auto;padding:0;background:none;border:none;box-shadow:none;}

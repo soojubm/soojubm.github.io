@@ -58,7 +58,7 @@ top: 14px;}
 
 .notification {}
 .notification-list {padding:1rem 2rem;}
-.notification-item {min-height:var(--size-large);margin:var(--space-between-listitem) 0;padding-left:calc(48px + 1rem);position:relative;z-index:var(--zindex-default);}
+.notification-item {min-height:var(--size-large);margin:var(--space-between-listitem) 0;padding-left:calc(48px + var(--space));position:relative;z-index:var(--zindex-default);}
 .notification-item:hover {@include hover-item;}
 .notification-item-avatar {@include avatar-large;position:absolute;left:0;top:0;}
 .notification-item-user {display:block;font-size:var(--font-size-body);line-height:1.4;}

@@ -1,5 +1,9 @@
 <main class="design-home">
-  <aside class="banner" style="width:100%;margin:0 auto;background:var(--green100);padding:1rem;font-size:var(--font-size-subhead);font-weight:bold;";>
+  <aside
+    class="banner"
+    style="width:100%;margin:0 auto;background:var(--green100);padding:1rem;font-size:var(--font-size-subhead);font-weight:bold;"
+    ;
+  >
     <p>연습장이에요.</p>
   </aside>
 
@@ -13,9 +17,9 @@
 
   <nav>
     <a href="#tokens" data-toggleId="tokens"
-    >Design Tokens
-    <span><i class="icon-arrow"></i></span>
-  </a>
+      >Design Tokens
+      <span><i class="icon-arrow"></i></span>
+    </a>
     <a href="#components" data-toggleId="components"
       >Components
       <div class="tag" data-appearance="secondary">Draft</div>
@@ -29,12 +33,11 @@
       >Voices & Tone (or Writings)
       <span><i class="icon-arrow"></i></span>
     </a>
-    <!-- <a href="#coding" data-toggleId="coding"
-    >Coding
-    <span><i class="icon-arrow"></i></span> -->
-  </a>
+    <a href="#" readonly data-toggleId="coding"
+      >Coding Conventions
+      <span><i class="icon-arrow"></i></span>
+    </a>
   </nav>
-  
 
   <section class="design-ticker">
     <article class="share design-ticker-item tile-elevated" style="max-width:400px;">
@@ -93,7 +96,10 @@
     <div class="card has-item design-ticker-item" role="listitem" style="max-width:400px;min-width:400px;">
       <figure class="card-thumbnail"><img src="/public/images/springsteen.jpg" alt="" /></figure>
       <h3 class="card-title">카드 유아이</h3>
-      <p class="card-text">따봉은 상세페이지에서 제공하세요. 북마크는 밖에 두어도 좋은가? 상세페이지에서 제공하는 것이 좋음. 기능이 많아짐. 신선식품 장바구니는 밖에 인정. 보조 텍스트는 최대 두 줄이다.</p>
+      <p class="card-text">
+        따봉은 상세페이지에서 제공하세요. 북마크는 밖에 두어도 좋은가? 상세페이지에서 제공하는 것이 좋음. 기능이 많아짐. 신선식품 장바구니는 밖에
+        인정. 보조 텍스트는 최대 두 줄이다.
+      </p>
       <time class="card-date">2017. 12. 21.</time>
       <div class="card-tags" role="group">
         <span class="card-tags-item">기획</span>
@@ -105,9 +111,7 @@
       <div class="card-item">
         <figure class="card-item-avatar">🍊</figure>
         <h4 class="card-item-name">퓨어 오렌지 주스</h4>
-        <div class="card-item-price">
-          <del>₩ 19,000</del> ₩ 16,000 <em>할인율 20%</em>
-        </div>
+        <div class="card-item-price"><del>₩ 19,000</del> ₩ 16,000 <em>할인율 20%</em></div>
       </div>
       <div class="card-note">마일리지 적립 200P</div>
       <button class="card-more" hidden><i class="icon-more"></i></button>
@@ -124,17 +128,20 @@
       <button class="quote-action">자세히 알아보기</button>
       <!-- <button class="quote-later">지금은 괜찮아요</button> -->
     </div>
-    <div class="navbar-user-menu is-active design-ticker-item" style="max-width:400px;min-width:400px;position:relative;left:auto;right:auto;top:auto;bottom:auto;z-index:0;height:auto;">
+    <div
+      class="navbar-user-menu is-active design-ticker-item"
+      style="max-width:400px;min-width:400px;position:relative;left:auto;right:auto;top:auto;bottom:auto;z-index:0;height:auto;"
+    >
       <a class="user" href="#settings">
         <figure class="user-avatar">
-          <img src="/public/images/soo.png" alt="">
+          <img src="/public/images/soo.png" alt="" />
           <div class="user-avatar-change"></div>
         </figure>
         <h2 class="user-name">soojubm</h2>
         <div class="user-email">soojubm@gamil.com</div>
         <div class="user-myinfo">내 프로필 관리</div>
       </a>
-      <hr role="separator">
+      <hr role="separator" />
       <!-- <div class="switch-wrap" style="position:absolute;right:0;top:0;">
         <span class="switch js-darkmode">
           <span class="day">🌑</span>
@@ -145,7 +152,7 @@
         <span class="user-logout-icon"><i class="icon-moon"></i></span>
         어둡게 보기
         <span class="switch" style="margin-left:auto;">
-          <input type="checkbox" id="temp55" name="" role="switch">
+          <input type="checkbox" id="temp55" name="" role="switch" />
           <label for="temp55" style="padding-left:48px;"></label>
         </span>
       </button>
@@ -156,14 +163,14 @@
         고객센터 및 도움말
         <!-- <span style="display:flex;align-items:center;justify-content:center;background:var(--gray100);width:32px;height:32px;border-radius:var(--radius400);margin-left:auto;"><i class="icon-arrow"></i></span> -->
       </button>
-      <hr>
+      <hr />
       <button class="user-logout" title="sign out">
         <span class="user-logout-icon">
           <i class="icon-out"><span class="icon-out-door"></span></i>
         </span>
         로그아웃
       </button>
-      <hr role="separator">
+      <hr role="separator" />
       <footer class="user-footer" style="margin:-.5rem 0 0 0;">
         <!-- <a href="#">Privacy Policy</a>
         <i class="icon-bullet"></i>
@@ -171,7 +178,6 @@
         <small>샘플 유아이 컴포넌트입니다.</small>
       </footer>
     </div>
-
 
     <article class="share design-ticker-item tile-elevated" style="max-width:400px;">
       <div class="item" role="listitem">
@@ -201,7 +207,6 @@
       </div>
     </article>
 
-
     <div class="share design-ticker-item" style="max-width:400px;min-width:400px;">
       <h2 class="share-title">가족이나 친구들과<br />함께 보세요!</h2>
       <hr />
@@ -230,7 +235,10 @@
     <div class="card has-item design-ticker-item" role="listitem" style="max-width:400px;min-width:400px;">
       <figure class="card-thumbnail"><img src="/public/images/springsteen.jpg" alt="" /></figure>
       <h3 class="card-title">카드 유아이</h3>
-      <p class="card-text">따봉은 상세페이지에서 제공하세요. 북마크는 밖에 두어도 좋은가? 상세페이지에서 제공하는 것이 좋음. 기능이 많아짐. 신선식품 장바구니는 밖에 인정. 보조 텍스트는 최대 두 줄이다.</p>
+      <p class="card-text">
+        따봉은 상세페이지에서 제공하세요. 북마크는 밖에 두어도 좋은가? 상세페이지에서 제공하는 것이 좋음. 기능이 많아짐. 신선식품 장바구니는 밖에
+        인정. 보조 텍스트는 최대 두 줄이다.
+      </p>
       <time class="card-date">2017. 12. 21.</time>
       <div class="card-tags" role="group">
         <span class="card-tags-item">기획</span>
@@ -242,9 +250,7 @@
       <div class="card-item">
         <figure class="card-item-avatar">🍊</figure>
         <h4 class="card-item-name">퓨어 오렌지 주스</h4>
-        <div class="card-item-price">
-          <del>₩ 19,000</del> ₩ 16,000 <em>할인율 20%</em>
-        </div>
+        <div class="card-item-price"><del>₩ 19,000</del> ₩ 16,000 <em>할인율 20%</em></div>
       </div>
       <div class="card-note">마일리지 적립 200P</div>
       <button class="card-more" hidden><i class="icon-more"></i></button>
@@ -260,17 +266,20 @@
       <button class="quote-action">자세히 알아보기</button>
       <!-- <button class="quote-later">지금은 괜찮아요</button> -->
     </div>
-    <div class="navbar-user-menu is-active design-ticker-item" style="max-width:400px;min-width:400px;position:relative;left:auto;right:auto;top:auto;bottom:auto;z-index:0;height:auto;">
+    <div
+      class="navbar-user-menu is-active design-ticker-item"
+      style="max-width:400px;min-width:400px;position:relative;left:auto;right:auto;top:auto;bottom:auto;z-index:0;height:auto;"
+    >
       <a class="user" href="#settings">
         <figure class="user-avatar">
-          <img src="/public/images/soo.png" alt="">
+          <img src="/public/images/soo.png" alt="" />
           <div class="user-avatar-change"></div>
         </figure>
         <h2 class="user-name">soojubm</h2>
         <div class="user-email">soojubm@gamil.com</div>
         <div class="user-myinfo">내 프로필 관리</div>
       </a>
-      <hr role="separator">
+      <hr role="separator" />
       <!-- <div class="switch-wrap" style="position:absolute;right:0;top:0;">
         <span class="switch js-darkmode">
           <span class="day">🌑</span>
@@ -281,7 +290,7 @@
         <span class="user-logout-icon"><i class="icon-moon"></i></span>
         어둡게 보기
         <span class="switch" style="margin-left:auto;">
-          <input type="checkbox" id="temp55" name="" role="switch">
+          <input type="checkbox" id="temp55" name="" role="switch" />
           <label for="temp55" style="padding-left:48px;"></label>
         </span>
       </button>
@@ -292,14 +301,14 @@
         고객센터 및 도움말
         <!-- <span style="display:flex;align-items:center;justify-content:center;background:var(--gray100);width:32px;height:32px;border-radius:var(--radius400);margin-left:auto;"><i class="icon-arrow"></i></span> -->
       </button>
-      <hr>
+      <hr />
       <button class="user-logout" title="sign out">
         <span class="user-logout-icon">
           <i class="icon-out"><span class="icon-out-door"></span></i>
         </span>
         로그아웃
       </button>
-      <hr role="separator">
+      <hr role="separator" />
       <footer class="user-footer" style="margin:-.5rem 0 0 0;">
         <!-- <a href="#">Privacy Policy</a>
         <i class="icon-bullet"></i>
@@ -309,9 +318,7 @@
     </div>
     <div class="design-ticker-overay"></div>
   </section>
-
 </main>
-
 
 <!-- <footer
 style="max-width: var(--width-large);

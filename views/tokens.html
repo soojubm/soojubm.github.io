@@ -47,7 +47,7 @@
             <span class="tag">textfield</span>
           </div>
         </div>
-        <article class="token-item">
+        <div class="token-item">
           <span class="size-medium"></span>
           <h3 class="token-item-name">medium size, 32px</h3>
           <div class="token-item-tags" role="group">
@@ -55,7 +55,7 @@
             <span class="tag">button</span>
             <span class="tag">chip</span>
           </div>
-        </article>
+        </div>
         <div class="token-item">
           <!-- <figure class="token-item-avatar"></figure> -->
           <span class="size-small"></span>
@@ -197,7 +197,7 @@
       </button>
 
       <!-- <h6 class="title-bordered">Font Family</h6> -->
-      <div class="design-typograph-group tile-flat">
+      <div class="design-typograph-group tile-flat" style="margin-bottom:var(--space);">
         <div class="design-typograph-item">
           한글 <b style="display:block;font-size:var(--font-size-subhead);line-height:1.5;font-weight:var(--font-weight-bold);">아리타 산스</b>
           <div role="group" style="margin-top:1rem;">
@@ -394,6 +394,22 @@
         <dt>모두보기</dt><dd>see all(15)(internal, arrow-right)</dd>
         <dt>더보기</dt><dd>확장,더보기vs더불러오기(more, arrow-down), 자세히보기, learn more 등(external, arrow-right-top)</dd>
       </dl> -->
+    </article>
+
+    <article class="design-article js-scrollspy-section">
+      <h1 class="design-article-title">Groups</h1>
+      <p class="design-article-description">작성 중.</p>
+      <p class="design-article-description">group vs row vs rowgroup</p>
+      <p class="design-article-description">role=group, role=menuitem, role=treeitem</p>
+      <code class="design-article-description" style="padding:1rem;">
+        <p>@mixin group-pull {}</p>
+        <!-- <p>&nbsp;&nbsp;</p> -->
+        <p>@mixin group-bleeding {}</p>
+        <hr />
+        <p>.menu-filter {</p>
+        <p>&nbsp;&nbsp;@include  group-bleeding;</p>
+        <p>}</p>
+      </code>
     </article>
 
     <article class="design-article js-scrollspy-section">

@@ -129,21 +129,26 @@
 // ? bleeding vs default = design navigation vs taglist
 @mixin group {
   display:flex;flex-wrap:wrap;margin:var(--space-between-groupitem-minus);
-  > * {margin:var(--space-between-groupitem);}
+  > * {
+    margin:var(--space-between-groupitem);
+  }
 }
 @mixin group-pull {display:flex;justify-content:space-between;align-items:center;}
 @mixin group-wrap {display:flex;flex-wrap:wrap;}
 @mixin group-bleeding {
-  display:block;white-space:nowrap;font-size:0;
-  overflow:auto;
+  // display:block;
+  white-space:nowrap;font-size:0;overflow:auto;
   // display:inline-flex; // ! todo
   > * {display:inline-block;margin:0 calc(var(--space-between-groupitem) * 2) 0 0;font-size:var(--font-size-body);}
   &::-webkit-scrollbar {display:none;}
 }
+@mixin chip-group {
+  @include group;
+}
 
-[role=group] {@include group;}
-
-
+.chip-group {@include chip-group;}
+.tag-group {@include chip-group;}
+.avatar-group {@include chip-group;}
 
 @mixin avatar-huge {@include tile-avatar(var(--size-huge));}
 @mixin avatar-large {@include tile-avatar(var(--size-large));}

@@ -3,7 +3,7 @@
 .hero-eyebrow {display:block;margin:0 0 .25rem 0;font-size:var(--font-size-caption);color:var(--gray400);animation:fadeup .2s cubic-bezier(.455, .03, .515, .955) forwards .4s;opacity:0;}
 .hero-title {@include title;}
 // 3rem 에서 1rem
-.hero-description {width:50%;margin:var(--space-after-title) 0 1rem 0;font-size:var(--font-size-subhead);}
+.hero-description {width:50%;margin:var(--space-after-title) 0 3rem 0;font-size:var(--font-size-subhead);}
 .hero-features {display:flex;justify-content:space-between;margin:4rem 0 0 0;animation: fadeup .2s cubic-bezier(.455, .03, .515, .955) both 1s;}
 .hero-features > div {width:30%;}
 .hero .carousel {animation:fadeup .2s cubic-bezier(.455, .03, .515, .955) forwards 1s;opacity:0;position:relative;z-index:var(--zindex-default);}
