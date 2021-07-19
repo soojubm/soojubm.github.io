@@ -1,15 +1,34 @@
 <main class="design">
   <section class="design-body">
 
-    <article class="design-article">
-      <h1 class="design-article-title">수치를 포함한 변수명을 사용하는 것이 좋을까? 최초의(?) 변수는 한 번 이상의 추상화가 필수적이고, 유지보수 과정에서도 일괄 수정하면 되는 부분.</h1>
-      <h1 class="design-article-title">현재 사용 중인 토큰만 정의하기. 토큰을 최소화하여 제품 개발 => 커뮤니케이션 및 개발 비용 절감.</h1>
-      <h1 class="design-article-title">프로모션을 위한 단발성 페이지에서는 엄격하게 지킬 필요가 없읍니다.</h1>
+    <div class="concept">
+      <div class="concept-tokens">tokens</div>
+      <div class="concept-styles">styles</div>
+      <div class="concept-roles">roles</div>
+    </div>
+
+    <h1 class="design-article-title">프로모션을 위한 단발성 페이지에서는 유연하게.</h1>
+
+    <article class="design-article js-scrollspy-section">
+      <h1 class="design-article-title">기표signifier</h1>
+      <p class="design-article-description">작성 중.</p>
+
+      <h6 class="title-bordered">selection</h6>
+      <h6 class="title-bordered">click - tag 컴포넌트/화살표/아이콘 아이템 전체가 클릭 영역</h6>
+      <h6 class="title-bordered">link - internal/external</h6>
+      <h6 class="title-bordered">expand - arrow-down/plus-icon</h6>
+      <h6 class="title-bordered">close - cursor(pinterest)/x-icon</h6>
+      <!-- <dl>
+        <dt>모두보기</dt><dd>see all(15)(internal, arrow-right)</dd>
+        <dt>더보기</dt><dd>확장,더보기vs더불러오기(more, arrow-down), 자세히보기, learn more 등(external, arrow-right-top)</dd>
+      </dl> -->
     </article>
+
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Sizes</h1>
-      <p class="design-article-description">사이즈 토큰은 엘리먼트의 가로, 세로 크기에 사용합니다. 주로 컴포넌트의 세로 크기 고정에 사용하며, 가로 크기는 퍼센티지로 비교적 유연하게 사용하세요. alert, accordion 등 컴포넌트에서 규칙을 깨는 것이 좋습니다.</p>
+      <p class="design-article-description">작성 중.</p>
+      <!-- <p class="design-article-description">가로 크기는 퍼센티지로 비교적 유연하게 사용합니다. alert, accordion 등 예외 케이스.</p> -->
 
       <code class="design-article-description" style="padding:1rem;">
         <p>--size-huge: 80px;</p>
@@ -232,7 +251,7 @@
         <div class="token-item">
           <h3 class="token-item-name" style="margin-top:0;">title</h3>
           <mark class="token-item-text" style="font-size:2rem;">립</mark>
-          <p class="token-item-description">3rem<i class="icon-bullet"></i>40px</p>
+          <p class="token-item-description">2rem<i class="icon-bullet"></i>40px</p>
           <p class="token-item-description">디스크립션.</p>
           <div class="token-item-tags" role="group">
             <span class="tag">avatar</span>
@@ -245,7 +264,7 @@
         <div class="token-item">
           <h3 class="token-item-name" style="margin-top:0;top:0;">subhead</h3>
           <mark class="token-item-text" style="font-size:var(--font-size-subhead);">니</mark>
-          <p class="token-item-description">3rem<i class="icon-bullet"></i>40px</p>
+          <p class="token-item-description">1.125rem<i class="icon-bullet"></i>40px</p>
           <p class="token-item-description">디스크립션.</p>
           <div class="token-item-tags" role="group">
             <span class="tag">avatar</span>
@@ -258,7 +277,7 @@
         <div class="token-item">
           <h3 class="token-item-name" style="margin-top:0;top:0;">body</h3>
           <mark class="token-item-text" style="font-size:var(--font-size-body);">까</mark>
-          <p class="token-item-description">3rem<i class="icon-bullet"></i>40px</p>
+          <p class="token-item-description">.875rem<i class="icon-bullet"></i>14px</p>
           <p class="token-item-description">디스크립션.</p>
           <div class="token-item-tags" role="group">
             <span class="tag">avatar</span>
@@ -272,7 +291,7 @@
           <!-- <figure class="token-item-avatar"></figure> -->
           <h3 class="token-item-name" style="margin-top:0;">caption</h3>
           <mark class="token-item-text" style="font-size:var(--font-size-caption);">아</mark>
-          <p class="token-item-description">3rem<i class="icon-bullet"></i>40px</p>
+          <p class="token-item-description">.75rem<i class="icon-bullet"></i>12px</p>
           <p class="token-item-description">디스크립션.</p>
           <div class="token-item-tags" role="group">
             <span class="tag">avatar</span>
@@ -323,10 +342,11 @@
       <p class="design-article-description">작성 중.</p>
       
       <div class="design-article-description">
-        <p class="xlist"><i></i> 페이지 레벨의 타이틀, 디스크립션을 타일로 만지 마세요.</p>
+        <p class="checklist"><span><i></i></span> '클릭할 수 있음'의 기표로 elevated 스타일을 사용합니다.  타일 전체가 하나의 클릭 가능한 영역일 수도, 타일 내부에 클릭 가능한 요소가 포함되어 있을 수도 있습니다.</p>
+        <p class="xlist"><i></i> 페이지 레벨의 타이틀, 디스크립션을 타일로 만들지 마세요.</p>
       </div>
 
-      <!-- <li>타일을 클릭할 수 있거나 타일 내부에 사용자가 액션할 수 있을 때(?) elevated 스타일을 사용하세요.</li> -->
+      <!-- <li></li> -->
       <!-- <li><span class="tag">내부 옵션을 리스트업.</span></li> -->
         <!-- <p class="checklist"><span><i></i></span> history: padding 1.5rem에서 1rem으로 변경하고 두 가지 사이즈로 확장. 1.5rem 단일 사이즈로 사용 시 모바일에서 공간이 큼.</p> -->
 
@@ -368,28 +388,12 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">States</h1>
-      <p class="design-article-description">작성 중. indicators와 유사성 조금 있음.</p>
+      <p class="design-article-description">작성 중.</p>
 
       <h6 class="title-bordered">hover / focus / active </h6>
       <h6 class="title-bordered">invalid / success</h6>
       <h6 class="title-bordered">warning / danger</h6>
-      <h6 class="title-bordered">loading / fetching</h6>
-      <!-- <dl>
-        <dt>모두보기</dt><dd>see all(15)(internal, arrow-right)</dd>
-        <dt>더보기</dt><dd>확장,더보기vs더불러오기(more, arrow-down), 자세히보기, learn more 등(external, arrow-right-top)</dd>
-      </dl> -->
-    </article>
-
-    <article class="design-article js-scrollspy-section">
-      <h1 class="design-article-title">Indicators</h1>
-      <p class="design-article-description">작성 중.</p>
-
-      <h6 class="title-bordered">selection</h6>
-      <h6 class="title-bordered">click - tag 컴포넌트/화살표/아이콘 아이템 전체가 클릭 영역.</h6>
-      <h6 class="title-bordered">link</h6>
-      <h6 class="title-bordered">expand</h6>
-      <h6 class="title-bordered">close</h6>
-
+      <!-- <h6 class="title-bordered">loading / fetching</h6> -->
       <!-- <dl>
         <dt>모두보기</dt><dd>see all(15)(internal, arrow-right)</dd>
         <dt>더보기</dt><dd>확장,더보기vs더불러오기(more, arrow-down), 자세히보기, learn more 등(external, arrow-right-top)</dd>

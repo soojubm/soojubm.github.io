@@ -84,39 +84,48 @@ async function domEvents() {
   const colorTokens = [
     {
       name: 'gray000',
+      description: '배경에 사용합니다. 다크테마에서 텍스트에 사용합니다.',
       usecase: ['background', 'text for dark theme'],
     },
     {
       name: 'gray100',
+      description: '클릭할 수 있는 기표로 사용합니다. 섹션을 구별지을 때 배경으로 사용합니다.',
       usecase: ['background', 'border'],
     },
     {
       name: 'gray200',
+      description: '라인에 사용합니다.',
       usecase: ['border', 'hover state'],
     },
     {
       name: 'gray400',
+      description: '상대적으로 중요도가 떨어지는 보조하는 개념의 텍스트에 사용합니다.',
       usecase: ['text', 'disabled state'],
     },
     {
       name: 'gray800',
-      description: '',
+      description:
+        '텍스트에 사용합니다. 섹션이나 토스트에 배경으로 사용하여 강조할 수 있습니다. (다크테마에서는 gray100이 역할. 따라서 변수명을 추상화하는 것이 명료할 수 있음)',
       usecase: ['background', 'text'],
     },
     {
       name: 'green100',
+      description: '배경에 사용합니다. 작은 컴포넌트에서 활성화active 상태를 표현합니다.',
       usecase: ['background', 'active state'],
     },
     {
       name: 'green800',
+      description: '사용자의 행동',
       usecase: ['background', 'text', 'active state', 'accent'],
     },
     {
       name: 'red800',
+      description: '삭제, 오류 등',
       usecase: ['danger', 'invalid state'],
     },
     {
       name: 'gold',
+      description: '메인 컬러 스킴과 대비되는 강조',
       usecase: ['accent', '임시'],
     },
     // {
@@ -137,14 +146,15 @@ async function domEvents() {
     colorTokens.forEach(token => {
       // const tags = token.usecase.map(case => <span class="tag">${case}</span>)
       // const tags = token.usecase.map((case: => <span class="tag">${case}</span>)
+
+      // <div class="token-item-tags" role="group">
+      // <span class="tag">${token.usecase}</span>
+      // </div>
       const item = `
         <article class="token-item">
           <span class="color-${token.name}"></span>
           <h3 class="token-item-name">${token.name}</h3>
           <p class="token-item-description">${token.description}</p>
-          <div class="token-item-tags" role="group">
-          <span class="tag">${token.usecase}</span>
-          </div>
         </article>
       `
       colorElement.insertAdjacentHTML('beforeend', item)

@@ -145,6 +145,9 @@
 @mixin chip-group {
   @include group;
 }
+@mixin tag-group {
+  @include group;
+}
 
 .chip-group {@include chip-group;}
 .tag-group {@include chip-group;}
