@@ -132,7 +132,7 @@
         </div>
       </div>
         <p class="checklist"><span><i></i></span> design tokens에서 정의한 5가지 사이즈를 사용합니다. (small or tiny 제거해도 될 것)</p>
-        <p class="checklist"><span><i></i></span> 텍스트, 아이콘, 이미지를 포함합니다. 사용자의 프로필 사진과 아이템(가칭)의 썸네일로 사용할 수 있습니다. (todo 아이콘 버튼)</p>
+        <p class="checklist"><span><i></i></span> 텍스트, 아이콘, 이미지를 포함할 수 있습니다. 사용자의 프로필 사진과 아이템(가칭)의 썸네일로 사용할 수 있습니다. (todo 아이콘 버튼)</p>
         <!-- <p class="checklist"><span><i></i></span> huge, medium은 디스크립션을 가질 수 있습니다.</p> -->
         <!-- <p class="checklist"><span><i></i></span> card component, page 레벨에서 상대적으로 중요도가 낮은 경우 오른쪽에 배치할 수 있습니다.</p> -->
 
@@ -140,6 +140,8 @@
         <!-- 2021-05 xsmall 사이즈 추가, todo: tiny를 xxsmall로 변경하고 기본값으로 medium을 사용. -->
         <!-- <p>todo 버튼도 마찬가지로 text 마크업하기</p> -->
       </div>
+
+      <br />
 
       <!-- <div class="avatar-large" style="display:flex;margin-bottom:var(--space);">
         <a href="" class="design-article-avatar-huge"><span class="avatar-badge"></span></a>
@@ -174,19 +176,12 @@
       </div> -->
 
       <!-- <h6 class="title-bordered">Avatar Stack => AvatarGroup으로 사용하기. 결국 단일 그룹에 대한 추상화는 필요가 없다..</h6> -->
-      <div class="tile-flat-small">
-        <div class="avatar-group" role="group">
-          <span class="design-article-avatar-medium" style="background-image:none;font-weight:var(--font-weight-bold);color:var(--gray800);">수</span>
-          <span class="design-article-avatar-medium" style="background-image:none;">🦧</span>
-          <span class="design-article-avatar-medium" style="background-image:url('/public/images/springsteen.jpg');border:none;"></span>
-        </div>
-      </div>
       <div class="tile-flat-small" style="margin:var(--space) 0;">
         <div class="avatar-group" role="group">
-          <a href="#" class="design-article-avatar-huge" title="huge avatar"><span class="avatar-badge"></span></a>
+          <a href="#" class="design-article-avatar-huge" title="huge avatar" style="background-image:url('/public/images/springsteen.jpg');border:none;"><span class="avatar-badge"></span></a>
           <a href="#" class="design-article-avatar-large" title="large avatar"><span class="avatar-badge"></span></a>
-          <a href="#" class="design-article-avatar-medium" title="medium avatar"><span class="avatar-badge"></span></a>
-          <a href="#" class="design-article-avatar-small" title="small avatar"><span class="avatar-badge"></span></a>
+          <a href="#" class="design-article-avatar-medium" style="background-image:none;font-weight:var(--font-weight-bold);color:var(--gray800);">수</a>
+          <a href="#" class="design-article-avatar-small" title="small avatar" style="background-image:none;"><i class="icon-x"></i></a>
           <a href="#" class="design-article-avatar-tiny" title="tiny avatar"><span class="avatar-badge"></span></a>
         </div>
       </div>
