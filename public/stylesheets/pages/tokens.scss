@@ -24,7 +24,7 @@
 .color {overflow:hidden;}
 .color-group {display:flex;flex-wrap:wrap;justify-content:space-between;}
 .color-item {@include tile-flat-small;width:100%;}
-.color-item + .color-item {margin:var(--space) 0 0 0;}
+.color-item + .color-item {margin:var(--space-small) 0 0 0;}
 .color-item.is-gray000 div {border:var(--border100);background:var(--gray0);}
 .color-item.is-gray100 div {background:var(--gray100);}
 .color-item.is-gray200 div {background:var(--gray200);}
