@@ -60,7 +60,6 @@
 .post-comment-title figure {@include box-small;margin-right:1rem;}
 .post-comment-title-icon {@include box-small;}
 .post-comment-list {}
-.post-comment-list.is-visible {height:auto;}
 .post-comment-list.is-active i {background:var(--gray400);}
 .post-comment-list-item {position:relative;}
 .post-comment-list-item-avatar {@include box-small;margin:0 0 .25rem;}
@@ -72,8 +71,10 @@
 .post-comment-list-item-menu {display:none;@include tile-elevated;width:var(--width-tiny);padding:0;position:absolute;right:40px;top:0;z-index:1;}
 .post-comment-list-item-menu button {display: block;width:calc(100% - 2rem);margin: 1rem;position: relative;z-index: 1;}
 .post-comment-list-item-menu button:hover {@include hover-item;}
-.post-comment-list-item-menu.is-visible {display:block;}
 .post-comment-list-item-reply {margin:1rem 0 0 0;@include link-outer;}
+
+.is-active .post-comment-list-item-menu {display:block;}
+
 
 // .post-comment-list-item:hover {@include hover-item;}
 // .post-comment-list-item:hover > .post-comment-list-item-morevert {display:block;}

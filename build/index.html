@@ -47,6 +47,28 @@
 
     <link rel="canonical" href="https://soojubm.github.io/" />
 
+    <!-- icon in the highest resolution we need it for 48px -->
+    <link rel="icon" sizes="192x192" href="icon.png" />
+
+    <!-- reuse same icon for Safari -->
+    <link rel="apple-touch-icon" href="ios-icon.png" />
+
+    <!-- multiple icons for IE -->
+    <meta name="msapplication-square310x310logo" content="icon_largetile.png" />
+
+    <link rel="apple-touch-icon" href="touch-icon-iphone.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="touch-icon-ipad.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="touch-icon-iphone-retina.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="touch-icon-ipad-retina.png" />
+
+    <meta name="msapplication-square70x70logo" content="icon_smalltile.png" />
+    <meta name="msapplication-square150x150logo" content="icon_mediumtile.png" />
+    <meta name="msapplication-wide310x150logo" content="icon_widetile.png" />
+
+    <!-- 기본적으로 Safari는 로딩시간에 빈 화면을 보여주고 여러 페이지 로딩 후에는 앱의 이전 상태 스크린샷을 보여줍니다. rel=apple-touch-startup-image를 가진 link 태그를 추가하여 명시적인 시작 이미지를 보여주도록 Safari에게 전해 이를 막을 수 있습니다. 예: -->
+    <link rel="apple-touch-startup-image" href="icon.png" />
+    <!-- <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"> -->
+
     <link rel="icon" sizes="32x32" href="/favicon/favicon-32.png" />
     <link rel="apple-touch-icon-precomposed" href="/favicon/favicon-180.png" />
     <link rel="shortcut icon" sizes="196x196" href="/favicon/favicon-196.png" />
@@ -147,7 +169,7 @@
             <a route="/design" href="#product">상품</a>
             <a route="/design" href="#cart">카트</a>
             <a route="/design" href="#checkout">주문서</a>
-            <a route="/design" href="#orders">주문</a>
+            <!-- <a route="/design" href="#orders">주문</a> -->
             <a route="/design" href="#event">프로모션(draft)</a>
             <!-- <a route="/design" href="#cake">영화</a> -->
             <!-- <a href="#terms">약관</a> -->

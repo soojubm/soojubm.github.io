@@ -269,8 +269,8 @@
 .pricing-item ul li {display:flex;align-items:center;padding:0;}
 .pricing-item ul li:before {content:'';display:none;}
 .pricing-item ul li .icon-check {margin:0 .75rem 0 0;border-color:var(--subhead);}
-.pricing-item-upgrade {@include button-primary;width:100%;margin:0 0 .5rem 0;}
-.pricing-item-more {width:100%;@include button-text;}
+.pricing-item-upgrade {@include button-primary;width:100%;}
+.pricing-item-more {width:100%;@include button-text;margin:var(--space-following-button) 0 0 0;}
 
 .sheet-toggle {width:6rem;height:.5rem;border-radius:var(--radius400);background:var(--gray100);position:absolute;left:50%;top:.5rem;transform:translateX(-50%);}
 

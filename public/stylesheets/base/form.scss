@@ -184,7 +184,7 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 .textfield.is-text {display:flex;align-items:center;}
 .textfield.is-text .textfield-label {margin-bottom:0;}
 .textfield.is-text .textfield-input {width:auto;margin-left:.5rem;padding:0;background:none;border:none;box-shadow:none;color:var(--color-primary);}
-.textfield.is-text .selectbox-indicator {margin-top:2px;margin-left:1rem;background:var(--gray100);position:static;right:auto;bottom:auto;}
+.textfield.is-text .selectbox-indicator {margin-top:3px;margin-left:1rem;background:var(--gray100);position:static;right:auto;bottom:auto;}
 
 // .is-invalid .textfield-label {color:var(--red800);}
 // .is-valid .textfield-input {border-color:var(--green100);background:var(--green100);}

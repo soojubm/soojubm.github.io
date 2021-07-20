@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', initializeLoader)
 document.addEventListener('DOMContentLoaded', domEvents)
 
 document.addEventListener('DOMContentLoaded', () => {
-  event.toggleClass({ selector: '.js-navbar-toggle' }).initialize()
+  event.toggleClass({ selector: '.js-navbar-toggle' })
   event.toTop({ selector: '.js-to-top' })
   event.positionSticky({ selector: '.js-header', addClass: 'is-sticky-header', isPassed: false })
   darkTheme('.js-darkmode')
@@ -162,7 +162,9 @@ async function domEvents() {
 
   event.modal({ selector: '.js-modal' })
 
-  event.toggleClass({ selector: '.js-toggle' }).initialize()
+  // event.toggleClass({ selector: '.js-accordion' })
+  event.toggleClass({ selector: '.js-toggle' })
+  // todo 아코디언
 
   event.enterTarget({ selector: '.js-hover-trigger' })
   event.tab()
@@ -318,8 +320,8 @@ function initializeNavbar() {
   const navigationTrigger = document.querySelector<HTMLElement>('.js-navbar-toggle')
   if (!navigationTrigger || !navigationTrigger.classList.contains('is-active')) return
 
-  navigationTrigger.classList.remove('is-active')
-  navigationTrigger.nextElementSibling?.classList.remove('is-visible')
+  // todo
+  // navigationTrigger.parentNode.classList.remove('is-active')
 }
 
 function createGraph() {

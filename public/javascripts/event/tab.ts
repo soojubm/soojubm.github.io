@@ -32,6 +32,7 @@ const tab = () => {
     })
   })
 
+  // todo 이벤트 제거 해야 함.
   window.addEventListener('resize', () => throttle(initializeIndicator(indicatorElement, selectedTab)), true)
 
   function initializeIndicator(element, selectedTab) {

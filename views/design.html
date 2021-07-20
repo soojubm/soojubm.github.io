@@ -32,6 +32,31 @@
     <img class="hero-obj4" src="/public/images/blob-shape.svg" alt="" />
   </section>
 
+
+  <section class="zigzag">
+    <style>
+      :root {
+        --zigzag-size: 6px;
+      }
+      .zigzag {height:100px;margin:4rem 0;background:var(--color-newneek);position:relative;}
+      .zigzag:before {
+        content: "";
+        width: 100%;
+        height: var(--zigzag-size);
+        position: absolute;
+        left: 0;
+        top: calc(var(--zigzag-size) * -1);
+        background-image:
+          linear-gradient(-45deg, transparent var(--zigzag-size), var(--color-newneek) 0),
+          linear-gradient(45deg, transparent var(--zigzag-size), var(--color-newneek) 0);
+        background-size: var(--zigzag-size) var(--zigzag-size);
+        background-repeat: repeat-x;
+        background-position: -3px 0;
+        transform: rotateX(180deg);
+      }
+    </style>
+  </section>
+
   <article class="design-body">
     <article class="textbox" hidden>
       <div class="textbox-toolbar">
@@ -409,6 +434,16 @@
         <div class="space" style="width:5%;"><span class="tag">5%</span></div>
       </div>
 
+      <!-- <p>버튼 그룹은 vertical과 horizental. horizental에서도 primary를 먼저 마크업해야 합니다.</p>
+      <footer class="buttongroup" role="group">
+        <button class="buttongroup-primary">프라이머리</button>
+        <button class="buttongroup-secondary">세컨더리</button>
+      </footer>
+      <hr />
+      <footer class="buttongroup is-vertical" role="group">
+        <button class="buttongroup-primary">프라이머리</button>
+        <button class="buttongroup-secondary">세컨더리</button>
+      </footer> -->
       <hr />
       
       <div class="spacing-card">
@@ -1066,12 +1101,11 @@
           <button class="design-article-tertiary" disabled>Disabled</button>
         </div>
         <br />
-        <h6 style="margin:0 0 .5rem;font-size:var(--caption);">Text</h6>
+        <h6 style="margin:0 0 .5rem;font-size:var(--caption);">Text (outdated)</h6>
         <div class="design-buttongroup">
           <button class="design-article-text" style="margin:0 .5rem 0 0;">Default</button>
           <button class="design-article-text is-hover" style="margin:0 .5rem 0 0;">Hover</button>
           <button class="design-article-text is-focus" style="margin:0 .5rem 0 0;">Focus</button>
-          <!-- <button class="design-article-text" style="display:block;margin:0 .5rem 0 0;">Active</button> -->
           <button class="design-article-text" disabled>Disabled</button>
         </div>
         <br />
@@ -1280,7 +1314,15 @@
       <h1 class="design-article-title">Dialog</h1>
       <p class="design-article-description">모달과 토스트로 활용할 수 있습니다.</p>
       <button class="js-modal">모달 열기</button>
-
+      <aside class="dialog" role="dialog" aria-labelledby="dialog-title" aria-describedby="dialog-description">
+        <h1 class="dialog-title" id="dialog-title">부끄러우니까 보지마요!</h1>
+        <p class="dialog-description" id="dialog-description">부끄러우니까 보지마요! 부끄러우니까 보지마요! 부끄러우니까 보지마요! 부끄러우니까 보지마요!</p>
+        <footer class="dialog-footer">
+          <button class="dialog-footer-close">볼래요</button>
+          <button class="dialog-footer-confirm toast-check">안 볼래요</button>
+        </footer>
+        <button class="dialog-close js-modal-close" aria-label="delete"><i class="icon-close"></i></button>
+      </aside>
     </article>
 
     <article class="design-article js-observer">
@@ -1299,7 +1341,7 @@
         <span class="card-category">카테고리</span>
         <hr />
         <div class="card-item">
-          <figure class="card-item-media"><img src="" alt="" /></figure>
+          <figure class="card-item-media">🍊</figure>
           <h4 class="card-item-name">퓨어 오렌지 주스</h4>
           <div class="card-item-price">
             <del>₩ 19,000</del> ₩ 16,000 <em>할인율 20%</em>
@@ -1371,7 +1413,7 @@
       
       <form class="subscribe">
         <h2 class="subscribe-title">수줍이 뉴스레터를<br />정기구독하세요.</h2>
-        <p class="subscribe-description">사실 그런 건 없고 유아이 콤포넌트 입니다. <br />텍스트를 한 줄 더 만들기 위해서 아무말이나 해봅니다.</p>
+        <p class="subscribe-description">섭스크라이브 유아이 콤포넌트 입니다. <br />텍스트를 한 줄 더 만들기 위해서 쓰는 글입니다.</p>
         <div class="subscribe-field textfield">
           <label for="" class="textfield-label">이메일 주소</label>
           <input class="textfield-input" placeholder="Enter Your Email.." />
@@ -1652,20 +1694,24 @@
         <p>안녕</p>
       </details> -->
 
-      <h3 class="accordion-trigger js-toggle" role="button" aria-expanded="false">
-        회원탈퇴는 어떻게 할 수 있나요?
-        <span class="accordion-trigger-icon"><i class="icon-plus"></i></span>
-      </h3>
-      <article class="accordion-panel">
-        안녕
-      </article>
-      <h3 class="accordion-trigger js-toggle" role="button" aria-expanded="false">
-        주문을 취소하고 싶어요.
-        <span class="accordion-trigger-icon"><i class="icon-plus"></i></span>
-      </h3>
-      <article class="accordion-panel">
-        안녕
-      </article>
+      <div>
+        <h3 class="accordion-trigger js-toggle" role="button" aria-expanded="false">
+          회원탈퇴는 어떻게 할 수 있나요?
+          <span class="accordion-trigger-icon"><i class="icon-plus"></i></span>
+        </h3>
+        <article class="accordion-panel">
+          안녕
+        </article>
+      </div>
+      <div>
+        <h3 class="accordion-trigger js-toggle" role="button" aria-expanded="false">
+          주문을 취소하고 싶어요.
+          <span class="accordion-trigger-icon"><i class="icon-plus"></i></span>
+        </h3>
+        <article class="accordion-panel">
+          안녕
+        </article>
+      </div>
     </article>
 
     <article class="design-article js-observer">
@@ -1921,14 +1967,60 @@
       .icon-check1:after {content:'';display:block;width:16px;height:18px;background:var(--gray0);position:absolute;right:-6px;top:0px;z-index:1;}
       </style> -->
 
-      <aside class="modal newneek" id="modal" role="dialog">
-        <artice class="dialog" role="dialog">
-          <h1 class="dialog-title">부끄러우니까 보지마요!</h1>
-          <p class="dialog-description">부끄러우니까 보지마요! 부끄러우니까 보지마요! 부끄러우니까 보지마요! 부끄러우니까 보지마요!</p>
-          <footer class="dialog-footer">
-            <button class="dialog-footer-close">볼래요</button>
-            <button class="dialog-footer-confirm toast-check">안 볼래요</button>
-          </footer>
-          <button class="dialog-close js-modal-close" aria-label="delete"><i class="icon-close"></i></button>
-        </artice>
-      </aside>
+
+
+
+
+<!-- 
+      <input type="text" aria-label="Tag" role="combobox" aria-expanded="true"
+
+      aria-autocomplete="list" aria-owns="owned_listbox" aria-activedescendant="selected_option"
+      >
+      <ul role="listbox" id="owned_listbox">
+      <li role="option">Zebra</li>
+      <li role="option" id="selected_option">Zoom</li>
+      </ul>
+
+
+
+
+      <input type="text" aria-activedescendant="cb1-opt6" aria-readonly="true"
+aria-owns="cb1-list" aria-autocomplete="list" role="combobox" id="cb1-edit">
+<ul aria-expanded="true" role="listbox" id="cb1-list">
+<li role="option" id="cb1-opt1">Alabama</li>
+<li role="option" id="cb1-opt2">Alaska</li>
+<li role="option" id="cb1-opt3">American Samoa</li>
+<li role="option" id="cb1-opt4">Arizona</li>
+<li role="option" id="cb1-opt5">Arkansas</li>
+<li role="option" id="cb1-opt6">California</li>
+<li role="option" id="cb1-opt7">Colorado</li>
+</ul>
+ -->
+
+
+<!-- <p>아래 두 영역에서 텍스트를 선택해보세요.</p>
+
+<form>
+  <textarea name="ta-example-one" id="ta-example-one" rows="7" cols="40">텍스트 영역 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt, lorem a porttitor molestie, odio nibh iaculis libero, et accumsan nunc orci eu dui.</textarea>
+  <textarea name="ta-example-two" id="ta-example-two" rows="7" cols="40">텍스트 영역 2. Fusce ullamcorper, nisl ac porttitor adipiscing, urna orci egestas libero, ut accumsan orci lacus laoreet diam. Morbi sed euismod diam.</textarea>
+</form>
+
+<p>활성화된 요소 ID: <b id="output-element"></b></p>
+<p>선택한 텍스트: <b id="output-text"></b></p>
+
+function onMouseUp(e) {
+  const activeTextarea = document.activeElement;
+  const selection = activeTextarea.value.substring(
+    activeTextarea.selectionStart, activeTextarea.selectionEnd
+  );
+
+  const outputElement = document.getElementById('output-element');
+  const outputText = document.getElementById('output-text');
+  outputElement.innerHTML = activeTextarea.id;
+  outputText.innerHTML = selection;
+}
+
+const textarea1 = document.getElementById('ta-example-one');
+const textarea2 = document.getElementById('ta-example-two');
+textarea1.addEventListener('mouseup', onMouseUp, false);
+textarea2.addEventListener('mouseup', onMouseUp, false); -->

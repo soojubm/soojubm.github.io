@@ -17,6 +17,12 @@ type Parameter = {
 
 // toggleClass 어떤 이벤트인지 개발자 도구로 알 수 가 없네
 
+// 확인버튼에 포커스, 혹은 입력필드에 포커스
+// 닫았을 때 이전 포커스
+// 다이얼로그 안에서만 탭이 돌아야
+// 마우스로 가능한 context menus는 키보드로도 되어야
+// 비모달 다이얼로그를 위해서 열려 있는 다이얼로그와 메인 페이지간에 포커스를 이동시킬 수 있는 전역 키보드 단축키가 필요하다는 점을 유의하십시오.
+
 function modal({ selector: trigger }: Parameter) {
   const modalTriggers = document.querySelectorAll<HTMLElement>(trigger)
   const modalContainer = document.querySelector<HTMLElement>('#modal')
@@ -119,3 +125,12 @@ const getData = (url, data) => {
     return Promise.reject(response)
   })
 }
+
+// <fieldset role="dialog" aria-labelledby="dialog1Title" aria-describedby="dialog1Desc">
+//   <legend>
+//     <span id="dialog1Title">Your personal details were successfully updated.</span>
+//     <span id="dialog1Desc">You can change your details at any time in the user account section.</span>
+//   </legend>
+
+//   <button>Close</button>
+// </fieldset>

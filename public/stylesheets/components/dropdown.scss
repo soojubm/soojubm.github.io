@@ -16,11 +16,8 @@
   transform:scale(0);
   transform-origin:left top;
 }
-.dropdown-menu.is-visible {
-  height:auto;
-  margin:.5rem 0 0 0;
-  transform:scale(1);
-}
+
+
 .dropdown-menu-title {
   padding:0.5rem 1rem;
   font-size:var(--caption);
@@ -33,3 +30,8 @@
   z-index:1;
 }
 .dropdown-menu-link:hover {@include hover-item;}
+.is-active .dropdown-menu {
+  height:auto;
+  margin:.5rem 0 0 0;
+  transform:scale(1);
+}
