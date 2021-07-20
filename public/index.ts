@@ -141,25 +141,22 @@ async function domEvents() {
       usecase: ['accent', '임시'],
     },
   ]
-  const colorElement = document.querySelector('.color-group')
-  if (colorElement) {
-    colorTokens.forEach(token => {
-      // const tags = token.usecase.map(case => <span class="tag">${case}</span>)
-      // const tags = token.usecase.map((case: => <span class="tag">${case}</span>)
-
-      // <div class="token-item-tags" role="group">
-      // <span class="tag">${token.usecase}</span>
-      // </div>
-      const item = `
-        <article class="token-item">
-          <span class="color-${token.name}"></span>
-          <h3 class="token-item-name">${token.name}</h3>
-          <p class="token-item-description">${token.description}</p>
-        </article>
-      `
-      colorElement.insertAdjacentHTML('beforeend', item)
-    })
-  }
+  // const colorElement = document.querySelector('.color-group')
+  // if (colorElement) {
+  //   colorTokens.forEach(token => {
+  //     const item = `
+  //       <article class="token-item">
+  //         <span class="color-${token.name}"></span>
+  //         <h3 class="token-item-name">${token.name}</h3>
+  //         <p class="token-item-description">${token.description}</p>
+  //         <div class="token-item-tags" role="group">
+  //         <span class="tag">${token.usecase}</span>
+  //         </div>
+  //       </article>
+  //     `
+  //     colorElement.insertAdjacentHTML('beforeend', item)
+  //   })
+  // }
 
   // const boardElement = document.querySelector('.about-book-inner');
   // if(boardElement) {
