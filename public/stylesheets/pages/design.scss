@@ -10,8 +10,14 @@
 
 .design-navigation {padding:.75rem var(--grid-margin);background:var(--gray0);position:relative;z-index:6 ;position:sticky;top:0;}
 .design-navigation-background {@include bleeding;border-bottom:var(--border100);}
-.design-navigation-scroll {@include group-bleeding;margin:0 var(--grid-margin-minus);padding:0 var(--grid-margin);position:relative;}
+.design-navigation-scroll {@include group-bleeding;margin:0 -10rem;padding:0 10rem;position:relative;}
 
+// todo
+@media (--breakpoint-small) {
+  .design-navigation-scroll {
+    margin:0 var(--grid-margin-minus);padding:0 var(--grid-margin);
+  }
+}
 .design-body {max-width:var(--width-medium);margin:0 auto;overflow-x:hidden;padding:0 var(--grid-margin) 8rem;}
 // .design-body {width:50%;overflow-x:hidden;max-width:36rem;margin:0 0 0 50%;padding:0 6rem 8rem;}
 

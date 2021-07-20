@@ -7,7 +7,7 @@
   <!-- 시스템 디자이너로서 제품을 소비할 때 디자이너와 개발자의 경험을 대규모로 최적화하는 것은 우리의 의무입니다. 시스템 자체. 스타일 프리미티브 구성이 우선순위가 지정되지 않으면 디자이너와 개발자 사이에 많은 마찰이 있을 뿐만 아니라 토큰 아키텍처를 통해 피할 수 있는 많은 스타일 불일치가 있을 것입니다. -->
   <!-- https://story.pxd.co.kr/1451 -->
 
-  <!-- <header class="titlebar js-titlebar" role="navigation" style="position:sticky;top:0;">
+  <header class="titlebar js-titlebar" role="navigation" style="position:sticky;top:0;">
     <div class="titlebar-background"></div>
     <h1 class="titlebar-title js-page-title">페이지타이틀</h1>
     <button class="titlebar-back" onclick="javascript:window.location.href='/';">
@@ -16,8 +16,8 @@
     <button class="titlebar-cta" style="display:none;">
       공유하기
     </button>
-  </header> -->
-  <!-- <header class="titlebar-backdrop js-header"></header> -->
+  </header>
+  <header class="titlebar-backdrop js-header"></header>
 
   <!-- <header class="design-head"></header>
   <section class="hero">
@@ -48,7 +48,7 @@
     <img class="hero-obj4" src="/public/images/blob-shape.svg" alt="" />
   </section> -->
 
-  <header style="padding:2rem var(--grid-margin);margin:0 auto;">
+  <header style="max-width:var(--width-large);margin:0 auto;padding:2rem var(--grid-margin);">
     <h1>Under<br />Construction</h1>
     <p style="margin:var(--space) 0 0 0;">
       appearance and role
@@ -61,9 +61,9 @@
     </p>
   </header>
 
-  <nav class="design-navigation" style="padding-top:0;top:var(--subheader-height);">
+  <nav class="design-navigation" style="max-width:var(--width-large);margin:0 auto;padding-top:0;top:var(--subheader-height);">
     <div class="design-navigation-background"></div>
-    <div class="design-navigation-scroll" style="overflow:auto;">
+    <div class="design-navigation-scroll">
       <a class="chip is-active js-scrollspy-trigger" href="#">Avatars</a>
       <a class="chip js-scrollspy-trigger" href="#">Chips</a>
       <a class="chip js-scrollspy-trigger" href="#">Tags</a>
@@ -192,7 +192,7 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Chips ☀️</h1>
-      <p class="design-article-description">작성 중. 최근 가장 핫한 유아이. 현재 스몰 버튼과 같은 스타일.</p>
+      <p class="design-article-description">작성 중. 현재 스몰 버튼과 같은 스타일.</p>
       <div class="design-article-description">
         <p class="checklist"><span><i></i></span> 다른 맥락의 chip을 나열할 수 있습니다. 단일선택, 다중선택, 삭제여부, 펼침메뉴 등의 기표를 아이콘으로 제공하세요.</p>
         <p class="xlist"><span><i></i></span> 콘텐츠 정렬sorting에 사용하지 마세요. 콘텐츠 정렬은 selectbox를 사용합니다.</p>
@@ -284,7 +284,7 @@
       <div class="design-article-description">
         <p class="checklist"><span><i></i></span> primary: eyebrow, badge / secondary: badge / tertiary: badge, keyword, hashtag</p>
         <p class="xlist"><i></i> 버튼으로 사용하지 마세요.</p>
-        <p class="xlist"><i></i> 아이콘을 포함할 수 없습니다. (이 디자인시스템은 아이콘을 클릭 기표로 사용한다는 대원칙에 근거하여 아이콘이 없다는 것은 클릭할 수 없다고 이해해도 무방?)</p>
+        <p class="xlist"><i></i> 아이콘을 포함할 수 없습니다. <span hidden>(이 디자인시스템은 아이콘을 클릭 기표로 사용한다는 대원칙에 근거하여 아이콘이 없다는 것은 클릭할 수 없다고 이해해도 무방?)</span></p>
       </div>
 
       <blockquote>
