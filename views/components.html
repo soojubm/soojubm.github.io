@@ -68,7 +68,7 @@
       <a class="chip js-scrollspy-trigger" href="#">Chips</a>
       <a class="chip js-scrollspy-trigger" href="#">Tags</a>
       <a class="chip js-scrollspy-trigger" href="#">Buttons</a>
-      <a class="chip js-scrollspy-trigger" href="#">Selection</a>
+      <a class="chip js-scrollspy-trigger" href="#">Selections</a>
       <a class="chip js-scrollspy-trigger" href="#">Textfields</a>
       <a class="chip js-scrollspy-trigger" href="#">Seporator</a>
       <a class="chip js-scrollspy-trigger" href="#">Breadcrumb</a>
@@ -77,7 +77,6 @@
       <a class="chip js-scrollspy-trigger" href="#">Tab</a>
       <a class="chip js-scrollspy-trigger" href="#">Tooltip</a>
       <a class="chip js-scrollspy-trigger" href="#">Alerts</a>
-      <a class="chip js-scrollspy-trigger" href="#">Comment</a>
       <a class="chip js-scrollspy-trigger" href="#">carousel</a>
       <a class="chip js-scrollspy-trigger" href="#">Pagination</a>
       <a class="chip js-scrollspy-trigger" href="#">Table</a>
@@ -90,13 +89,12 @@
   </nav>
 
   <article class="design-body">
-    <h2>모달, 토스트는 컴포넌트가 아님.</h2>
+    <!-- <h2>모달, 토스트는 컴포넌트가 아님.</h2>
     <h2>같은 스타일이더라도 역할에 따라 추상화.</h2>
     <h2>안드로이드와 iOS 코드 틈나면 찾아보기.</h2>
-    <p></p>
-    <p class="design-article-description">size/color/space/font/border/shadow/radius -> avatar/chip/tile/text?/textfield -> label/button/filter/selectbox/dropdown/text input/</p>
+    <p class="design-article-description">size/color/space/font/border/shadow/radius -> avatar/chip/tile/text?/textfield -> label/button/filter/selectbox/dropdown/text input/</p> -->
 
-    <article class="textbox" hidden>
+    <article class="textbox">
       <div class="textbox-toolbar">
         <button class="textbox-toolbar-bold">B</button>
         <button class="textbox-toolbar-italic">I</button>
@@ -123,14 +121,11 @@
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Avatars</h1>
       <p class="design-article-description">작성 중.</p>
-        <p class="checklist"><span><i></i></span> design tokens에서 정의한 5가지 사이즈를 사용합니다. (small or tiny 제거해도 될 것)</p>
-        <p class="checklist"><span><i></i></span> 텍스트, 아이콘, 이미지를 포함할 수 있습니다. 사용자의 프로필 사진과 아이템(가칭)의 썸네일로 사용할 수 있습니다. (todo 아이콘 버튼)</p>
-        <!-- <p class="checklist"><span><i></i></span> huge, medium은 디스크립션을 가질 수 있습니다.</p> -->
-        <!-- <p class="checklist"><span><i></i></span> card component, page 레벨에서 상대적으로 중요도가 낮은 경우 오른쪽에 배치할 수 있습니다.</p> -->
-
-        <!-- <li>텍스트 말 줄임표 조건 정의. 리스트업 조건 정의.</li> -->
-        <!-- 2021-05 xsmall 사이즈 추가, todo: tiny를 xxsmall로 변경하고 기본값으로 medium을 사용. -->
-        <!-- <p>todo 버튼도 마찬가지로 text 마크업하기</p> -->
+        <p class="checklist"><span><i></i></span> design tokens에서 정의한 5가지 사이즈 중 huge, large, medium, small 4가지를 사용합니다. byline 아바타는 small 사이즈를 사용합니다.</p>
+        <p class="checklist"><span><i></i></span> 이미지, 텍스트, 아이콘을 포함할 수 있습니다.</p>
+        <!-- <p class="checklist"><span><i></i></span> 아이템 컴포넌트: huge, medium은 디스크립션을 가질 수 있습니다.</p> -->
+        <!-- <p class="checklist"><span><i></i></span> 아이템 컴포넌트: card component, page 레벨에서 상대적으로 중요도가 낮은 경우 오른쪽에 배치할 수 있습니다.</p> -->
+        <!-- <p class="checklist"><span><i></i></span> 아이템 컴포넌트: 텍스트 말 줄임표 조건 정의. 리스트업 조건 정의.</li> -->
       </div>
 
       <br />
@@ -167,18 +162,16 @@
         <div style="display:block;width:calc(100% - 16px - .5rem);height:inherit;font-size:var(--font-size-caption);line-height:16px;">tiny 16px</div>
       </div> -->
 
-      <!-- <h6 class="title-bordered">Avatar Stack => AvatarGroup으로 사용하기. 결국 단일 그룹에 대한 추상화는 필요가 없다..</h6> -->
+      <!-- <h6 class="title-bordered">AvatarGroup</h6> -->
       <div class="tile-flat-small" style="margin:var(--space) 0;">
         <div class="avatar-group" role="group">
           <a href="#" class="design-article-avatar-huge" title="huge avatar" style="background-image:url('/public/images/springsteen.jpg');border:none;"><span class="avatar-badge"></span></a>
           <a href="#" class="design-article-avatar-large" title="large avatar"><span class="avatar-badge"></span></a>
           <a href="#" class="design-article-avatar-medium" style="background-image:none;font-weight:var(--font-weight-bold);color:var(--gray800);">수</a>
           <a href="#" class="design-article-avatar-small" title="small avatar" style="background-image:none;"><i class="icon-x"></i></a>
-          <a href="#" class="design-article-avatar-tiny" title="tiny avatar"><span class="avatar-badge"></span></a>
         </div>
       </div>
       <div class="avatarlist" style="display:flex;align-items:center;">
-        <!-- todo z-index를 위해 반대로 정렬 -->
         <span class="design-article-avatar-small" style="box-shadow: var(--gray0) 0px 0px 0px 2px;"></span>
         <span class="design-article-avatar-small" style="margin-left:-.5rem;box-shadow: var(--gray0) 0px 0px 0px 2px;"></span>
         <span class="design-article-avatar-small" style="margin-left:-.5rem;box-shadow: var(--gray0) 0px 0px 0px 2px;"></span>
@@ -199,15 +192,19 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Chips ☀️</h1>
-      <p class="design-article-description">작성 중. 현재 스몰 버튼과 같은 스타일. 조각 외형.</p>
+      <p class="design-article-description">작성 중. 최근 가장 핫한 유아이. 현재 스몰 버튼과 같은 스타일.</p>
       <div class="design-article-description">
-        <p class="checklist"><span><i></i></span> 단일선택, 다중선택, 삭제여부에 따라 힌트를 제공하세요.</p>
-        <p class="checklist"><span><i></i></span> 다른 맥락의 chip을 나열할 수 있습니다. chipGroup은 chip 형태의 다양한 컴포넌트를 포함할 수 있습니다.</p>
-        <p class="xlist"><span><i></i></span> 콘텐츠 정렬sorting에 사용하지 마세요. 정렬은 selectbox를 사용하세요.</p>
+        <p class="checklist"><span><i></i></span> 다른 맥락의 chip을 나열할 수 있습니다. 단일선택, 다중선택, 삭제여부, 펼침메뉴 등의 기표를 아이콘으로 제공하세요.</p>
+        <p class="xlist"><span><i></i></span> 콘텐츠 정렬sorting에 사용하지 마세요. 콘텐츠 정렬은 selectbox를 사용합니다.</p>
         <p class="checklist"><span><i></i></span> todo 안드로이드에서 chipGroup / HorizontalScrollView / singleLine</p>
       </div>
+
+      <blockquote>
+        <p>필터의 액티브 상태에 브랜드 컬러를 많이 안 쓰는 경향. 진한 회색으로 엑티브 상태를 표시. 콘텐츠 탐색과 약간의 액션을 유도해야 하는 페이지에서는 회색으로?</p>
+        <p>디자인시스템에서 tag, pill, chip 등으로 명명. pill은 알약 형태로 radius를 둥글게 적용했을 때 주로 사용.</p>
+      </blockquote>
       
-      <h6 class="title-bordered">Filter, 필터의 액티브 상태에 브랜드 컬러를 많이 안 쓰는 경향. 진한 회색.</h6>
+      <h6 class="title-bordered">Filter, </h6>
       <div class="chip-group js-chip" role="group" aria-orientation="horizontal">
         <button class="chip is-active">전체</button>
         <button class="chip">결제완료
@@ -237,7 +234,7 @@
 
       <br />
 
-      <h6 class="title-bordered">Keyword list (hashtag. 컴포넌트 추가)</h6>
+      <h6 class="title-bordered">Keyword Group (hashtag. 컴포넌트 추가)</h6>
       <div class="keywords-group" role="group">
         <a class="keywords-group-keyword" href="">국정감사</a>
         <a class="keywords-group-keyword" href="">윤석열검찰총장</a>
@@ -282,18 +279,20 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Tags</h1>
-      <p class="design-article-description">인접한 요소의 상태를 표시합니다. Badge or Label</p>
+      <p class="design-article-description">작성 중. 인접한 요소 혹은 컴포넌트의 상태를 표시합니다.</p>
 
       <div class="design-article-description">
-        <p class="checklist"><span><i></i></span> Primary: Eyebrow, Badge</p>
-        <p class="checklist"><span><i></i></span> Secondary: Badge</p>
-        <p class="checklist"><span><i></i></span> Tertiray: Badge, Keyword, Hashtag</p>
-        <p class="xlist"><i></i> 버튼으로 사용하지 마세요. (아이템 전체가 클릭가능한 영역일 때 click 기표로 사용할 수는 있을 듯)</p>
-        <p class="xlist"><i></i> 아이콘을 포함하지 마세요. (아이콘 룰. 아이콘의 목적은 클릭 어포던스. 클릭할 수 없음 = 아이콘 사용 불가 맥락)</p>
+        <p class="checklist"><span><i></i></span> primary: eyebrow, badge / secondary: badge / tertiary: badge, keyword, hashtag</p>
+        <p class="xlist"><i></i> 버튼으로 사용하지 마세요.</p>
+        <p class="xlist"><i></i> 아이콘을 포함할 수 없습니다. (이 디자인시스템은 아이콘을 클릭 기표로 사용한다는 대원칙에 근거하여 아이콘이 없다는 것은 클릭할 수 없다고 이해해도 무방?)</p>
       </div>
 
+      <blockquote>
+        <p>디자인시스템에서 badge, label 등으로 명명. label로 변경 고민 중. hashtag 컴포넌트는 따로 만들어주는 것이 좋음. 용법이 확연함.</p>
+      </blockquote>
+
       <div class="tag-group" role="group">
-        <span class="tag tags-item" data-appearance="accent">Primary</span>
+        <span class="tag" data-appearance="accent">Primary</span>
         <span class="tag" role="listitem" style="background:var(--green100);color:var(--green800);">Secondary</span>
         <span class="tag" role="listitem">Tertiary</span>
         <span class="tag" role="listitem" style="background:var(--red100);border-color:var(--red100);color:var(--red800);">15</span>
@@ -305,37 +304,35 @@
       <h1 class="design-article-title">Buttons</h1>
       <p class="design-article-description">작성 중. 사용자의 행동. 페이지 이동.</p>
       <div class="design-article-description">
-        <p class="checklist"><span><i></i></span> primary 버튼은 페이지에서 가장 중요한 액션에 사용하세요. call to action.</p>
-        <p class="checklist"><span><i></i></span> Secondary 서비스 이용에 필요한 행동. 페이지에서 여러 번 발생.</dd>
-        <p class="checklist"><span><i></i></span> Tertiary 닫기, 취소, 아이콘 버튼</dd>
-        <p class="checklist"><span><i></i></span> Text text link와 구별. 버튼과 같은 padding을 가짐. 사용 빈도 낮음.</dd>
         <p class="checklist"><span><i></i></span> 공간에 제약이 있을 때 레이블을 생략하여 아이콘만으로 버튼을 사용할 수 있습니다. 이 때 아이콘은 관습적인 메타포를 사용하세요.</p>
-        <p class="xlist"><span><i></i></span> 크기가 다른 버튼을 함께 사용하지 마세요. (버튼 그룹)</p>
-        <p class="xlist"><span><i></i></span> Large 사이즈는 프로모션(캠페인) 페이지에서 사용합니다.</p>
-        <p class="xlist"><span><i></i></span> Small 사이즈는 아이템(가칭)에서 사용합니다.</p>
-        <p class="xlist"><i></i> binary choice. 프라이머리 버튼과 세컨더리 버튼을 함께 사용하지 마세요.  (버튼 그룹). 중요도가 동일한 경우 tertiary를 사용.</p>
-        <p class="xlist"><i></i> Cta 버튼 아래 가이드 텍스트를 사용하지 마세요. cta버튼 아래는 주로 네거티브 액션을 위한 버튼이 위치합니다.</p>
+        <!-- <p class="xlist"><span><i></i></span> 크기가 다른 버튼을 함께 사용하지 마세요. (버튼 그룹)</p> -->
+        <p class="checklist"><span><i></i></span> large 버튼은 프로모션 페이지에서 사용합니다. small 버튼은 아이템(가칭)에서 사용합니다.</p>
+        <p class="xlist"><i></i> binary choice에서 primary 버튼과 secondary 버튼을 함께 사용하지 마세요.</p>
+        <p class="xlist"><i></i> 가이드 텍스트는 cta 아래에 두지 마세요. 일반적으로 네거티브 액션(?)을 위한 텍스트 형태의 버튼이 위치하는 영역입니다.</p>
       </div>
-      <!-- <ul class="design-article-description">
-        <li>hover, focus 상태에 개별적인 스타일링을 하지 않는 방법으로 해보기. disabled도 모두 통일하는 방법.</li>
-        <li>네이밍: style = solid/outline/plain/text (모든 스타일을 망라해야 하기 때문에 유아이 라이브러리에 어울리는 네이밍) appearance = link / subtle / primary, space = compact/fullwidth</li>
-        <li>aria-expanded / role="img" aria-label="plus icon" / aria-pressed={activated ? "true" : "false"}</li>
-        </li>
-      </ul> -->
-      <!-- <blockquote>
-        chip이 button-small. min-width, padding-left, padding-right, validation style or function
-      </blockquote> -->
-      <dl>
-
-      </dl>
-
+      <!-- <li>네이밍: style = solid/outline/plain/text (모든 스타일을 망라해야 하기 때문에 유아이 라이브러리에 어울리는 네이밍) appearance = link / subtle / primary, space = compact/fullwidth</li>
+      <li>aria-expanded / role="img" aria-label="plus icon" / aria-pressed={activated ? "true" : "false"}</li> -->
+      <blockquote>
+        <p>chip이 button-small. min-width, padding-left, padding-right, validation style or function</p>
+        <p>primary: call to action / secondary: action... / tertiary: 닫기, 취소, 아이콘버튼</p>
+        <p>hover, focus 상태에 개별적인 스타일링을 하지 않음. disabled?</p>
+        <p>fetching, more load, icon button 컴포넌트화.</p>
+      </blockquote>
       <br />
-      <!--
-        <a class="button" href="#">Anchor button</a>
-        <button>Button element</button>
-        <input type="submit" value="submit input">
-        <input type="button" value="button input">
-      -->
+    
+      <a class="button" href="#">Anchor button</a>
+      <button>Button element</button>
+      <input type="submit" value="submit input">
+      <input type="button" value="button input">
+      <h6 class="title-bordered">Sizes</h6>
+      <div class="design-buttongroup">
+        <button class="design-article-primary" style="height:auto;padding:12px 0 15px;font-size:var(--font-size-subhead);vertical-align:bottom;">
+          Large
+        </button>
+        <button class="design-article-tertiary" style="vertical-align:bottom;">Medium</button>
+        <button class="design-article-tertiary-small">Small</button>
+      </div>
+      <br />
       <h6 class="title-bordered">Primary</h6>
       <div class="design-buttongroup">
         <button class="design-article-primary" aria-pressed="false" aria-expanded="false">Default</button>
@@ -361,15 +358,6 @@
         <button class="design-article-tertiary is-focus">Focus</button>
         <!-- <button class="design-article-tertiary" style="display:block;margin:0 .5rem 0 0;">Active</button> -->
         <button class="design-article-tertiary" disabled>Disabled</button>
-      </div>
-      <br />
-      <h6 class="title-bordered">Sizes</h6>
-      <div class="design-buttongroup">
-        <button class="design-article-primary" style="height:auto;padding:12px 0 15px;font-size:var(--font-size-subhead);vertical-align:bottom;">
-          Large
-        </button>
-        <button class="design-article-tertiary" style="vertical-align:bottom;">Medium</button>
-        <button class="design-article-tertiary-small">Small</button>
       </div>
       <br />
       <h6 class="title-bordered">Text (outdated)</h6>
@@ -400,25 +388,22 @@
 
       <!-- (리액트에서 id  이슈 input in label.) -->
       <div class="design-article-description">
-        <p class="checklist"><span><i></i></span> switch는 기능이나 옵션을 켜고 끄는 뉘앙스에서 사용하세요. (on/off)</p>
+        <p class="checklist"><span><i></i></span> checkbox와 radio는 항상 세로 정렬하세요.</p>
+        <p class="checklist"><span><i></i></span> checkbox와 radio를 5개 이하 옵션에서 사용하세요. 6개 이상일 때 chip, selectbox 형태를 사용하세요.</p>
         <p class="checklist"><span><i></i></span> radio는 1개의 옵션을 선택된 상태로 제공하세요.</p>
-        <p class="xlist"><i></i> checkbox와 radio를 가로로 나열하지 마세요.</p>
-        <p class="xlist"><i></i> checkbox와 radio를 6개 이상의 옵션에서 사용하지 마세요. chip이나 selectbox를 사용하세요.</p>
+        <p class="checklist"><span><i></i></span> switch는 기능이나 옵션을 켜고 끄는 뉘앙스에서 사용하세요. (on/off)</p>
+        
       </div>
 
       <fieldset role="checkgroup">
-        <legend>checkgroup legend</legend>
+        <legend class="title-bordered" style="margin-bottom:0;">checkgroup legend</legend>
         <div class="checkbox">
           <input class="js-checkall" type="checkbox" id="line00" value="" aira-checked="mixed" aria-controls="1 2" data-indeterminate="true" indeterminate />
           <label for="line00" title="Check All"><em>모두 동의합니다</em></label>
         </div>
         <div class="checkbox">
-          <input class="js-check" type="checkbox" id="line01" value="" />
-          <label for="line01" title="Everyday is like sunday">체크박스 1</label>
-        </div>
-        <div class="checkbox">
           <input class="js-check" type="checkbox" id="line03" value="" checked disabled />
-          <label for="line03" title="Everyday is like sunday">체크박스 2</label>
+          <label for="line03" title="Everyday is like sunday">체크박스 1</label>
         </div>
         <div class="checkbox textfield">
           <input class="js-check" type="checkbox" id="other" name="interest" value="other">
@@ -430,7 +415,7 @@
       <br />
 
       <fieldset role="radiogroup">
-        <legend>radiogroup legend</legend>
+        <legend class="title-bordered" style="margin-bottom:0;">radiogroup legend</legend>
         <div class="radio">
           <input type="radio" id="gender-man" name="gender" value="">
           <label for="gender-man" title="Video Killed the Radio Button">Video Killed the Radio Button</label>
@@ -440,10 +425,8 @@
           <input type="radio" id="gender-etc" name="gender" value="" checked disabled>
           <label for="gender-etc" title="Video Killed the Radio Button">Video Killed the Radio Button</label>
         </div>
-      </fieldset>
-      
-      <fieldset>
-        <div class="radio theme-button">
+        
+        <div class="radio theme-button" style="margin:var(--space) 0 0 0;">
           <input type="radio" id="raidio5" name="gender" value="">
           <label for="raidio5" title="">
             버튼 appearance
@@ -575,8 +558,9 @@
       <h1 class="design-article-title">Seperator</h1>
       <p class="design-article-description">콘텐츠를 구획합니다.</p>
       <div class="design-article-description">
-        <p class="checklist"><span><i></i></span> border 속성으로 스타일링하지 마세요. hr 태그를 사용하면 의미론적으로 주제를 분리할 수 있고 컴포넌트의 고유성을 유지할 수 있습니다.(or css 인접 연산자)</p>
-        <p class="xlist"><i></i> 아티클 레벨, 섹션 레벨 등 상위 레벨의 콘텐츠를 구획할 때 사용하지 마세요. 타이틀 텍스트로 시작하는 대비와 충분히 확보된 공간이면 충분합니다. 아티클 레벨, 카드 레벨 내부의 구획 또는 맥락 전환 시 사용하세요. 하지만 패턴의 반복과 전환으로 요소의 구별이 가능하기 때문에 남용하지 않는 것이 좋습니다.</p>
+        <p class="checklist"><span><i></i></span> 아티클 레벨, 카드 레벨 내부의 구획 또는 맥락 전환 시 사용하세요. 하지만 패턴의 반복과 전환으로 요소의 구별이 가능하기 때문에 남용하지 않는 것이 좋습니다.</p>
+        <p class="xlist"><span><i></i></span> border 속성으로 스타일링하지 마세요. hr 태그를 사용하면 의미론적으로 주제를 분리할 수 있고 컴포넌트의 고유성을 유지할 수 있습니다.(or css 인접 연산자)</p>
+        <p class="xlist"><i></i> 아티클 레벨, 섹션 레벨 등 상위 레벨의 콘텐츠 구획에 사용하지 마세요. 타이틀 텍스트로 시작하는 대비와 충분히 확보된 공간이면 충분합니다.</p>
       </div>
       <hr role="separator" />
     </article>
@@ -585,7 +569,7 @@
       <h1 class="design-article-title">Breadcrumb</h1>
       <p class="design-article-description">사용자의 위치를 계층 구조로 보여줍니다.</p>
       <div class="design-article-description">
-        <p class="checklist"><span><i></i></span> 페이지 레벨이 3단계 이상일 때 사용하세요. (memo 대부분의 서비스에서 flat sitemap 사용하는  추세.)</p>
+        <p class="checklist"><span><i></i></span> 페이지 레벨이 3단계 이상일 때 사용하세요. (memo 대부분의 서비스가 flat sitemap. 예전만큼 자주 쓰진 않음. 주로 카테고리.)</p>
         <p class="checklist"><span><i></i></span> 프로모션을 위한 랜딩 페이지에서 사용자의 여정을 돕기 위해 사용할 수 있습니다.</p>
         <p class="checklist"><span><i></i></span> 푸터에서 사이트맵과 함께 사용할 수 있습니다.</p>
         <p class="xlist"><i></i> 모바일 환경에서 네비게이션 바와 함께 사용하지 마세요.</p>
@@ -605,13 +589,11 @@
       <p class="design-article-description">텍스트 단락에서 다른 페이지로 이동하거나 요약한 콘텐츠를 확장합니다.</p>
       <ul class="design-article-description">
         <!-- <p class="checklist"><span><i></i></span> 인라인으로 사용하세요.</p> -->
-        <p class="checklist"><span><i></i></span> 단락 내부에서 사용할 때와 단락 외부에서 사용할 때의 스타일을 구분합니다. 단락 내부에서는 일반 텍스트와 구별하기 위해 언더라인을 추가합니다.</p>
+        <p class="checklist"><span><i></i></span> 단락 내부와 단락 외부의 형태를 구분합니다. 단락 내부에서는 일반 텍스트와 구별을 위해 언더라인을 추가합니다.</p>
         <p class="checklist"><span><i></i></span> external link ? target="_blank" rel="noopener noreferrer"</p>
         <p class="checklist"><span><i></i></span> todo: 사이트맵의 링크, 더보기/모두보기 링크는 별도의 컴포넌트로 구성.</p>
       </ul>
-      <div class="tile-flat">
-        <p>형무소 안에서는 소장의 말이 곧 법이었으며 죄수들의 잘못과 실수는 결코 용납되지 않는다. 어머니의 사망 소식을 듣고 인해 2번이나 탈옥을 시도했다가 체포된 <a class="link-inner" href="#">루크</a>의 발에 쇠통이 채워지며 루크는…<a class="more link-outer" href="#" style="margin-left:.25rem;">더 보기</a></p>
-      </div>
+      <p>형무소 안에서는 소장의 말이 곧 법이었으며 죄수들의 잘못과 실수는 결코 용납되지 않는다. 어머니의 사망 소식을 듣고 인해 2번이나 탈옥을 시도했다가 체포된 <a class="link-inner" href="#">루크</a>의 발에 쇠통이 채워지며 루크는…<a class="more link-outer" href="#" style="margin-left:.25rem;">더 보기</a></p>
     </article>
 
     <!-- <article class="design-article js-scrollspy-section">
@@ -623,7 +605,7 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Texts</h1>
-      <p class="design-article-description">작성 중.</p>
+      <p class="design-article-description">작성 중. label과 value의 충분한 공간이 확보된다면 위계를 위해 형태 변형을 최소화.</p>
       <!-- <ul class="design-article-description">
         <li>작성 중. todo: checklist(price card 등에서 사용) 정의. 대부분의 유아이는 리스트 형식으로 나열되기 때문에 텍스트 리스트에 한정하여 리스트 태그(ul, ol, dl)로 마크업합니다. (role=listbox/listitem)</li>
       </ul> -->
@@ -725,17 +707,16 @@
 
     <article class="design-article js-tab">
       <h1 class="design-article-title">Tab</h1>
-      <p class="design-article-description">페이지의 이동 없이 섹션 레벨의 화면 전환으로 맥락이 같은 콘텐츠를 열람할 때 사용합니다.<p>
+      <p class="design-article-description">맥락이 같은 콘텐츠를 페이지의 이동 없이 화면을 전환합니다.<p>
       <ul class="design-article-description">
         <p class="checklist"><span><i></i></span>2개 이상의 탭을 중첩하지 않도록 플로우를 설계하세요.</p>
-        <p class="xlist"><span><i></i></span>글로벌 탐색 패턴으로 햄버거와 탭(바텀네비게이션, 탭바)을 함께 사용하지 마세요.</p>
-        <p class="xlist"><span><i></i></span>탭은 뷰를 전환하는 맥락이기 때문에 스크롤스파이 기능을 사용하지 마세요.</p>
-        <p class="xlist"><span><i></i></span>콘텐츠 리스트를 필터링하는 용도로 사용하지 마세요. chip을 사용하세요.</p>
-        <hr />
-        <p class="xlist"><span><i></i></span>todo 브라우저 히스토리 저장.</p>
-        <p class="xlist"><span><i></i></span>todo 탭의 갯수 제한 4~5개 또는 가로 스크롤.</p>
-        <p class="xlist"><span><i></i></span>todo HIG의 segmented control</p>
+        <p class="xlist"><span><i></i></span>화면을 전환할 때 사용하기 때문에 스크롤스파이 기능을 사용할 수 없습니다.</p>
+        <p class="xlist"><span><i></i></span>필터링으로 사용하지 마세요. chip을 사용하세요.</p>
+        <p class="xlist"><span><i></i></span>글로벌 탐색 패턴으로 햄버거 메뉴와 탭(바텀네비게이션, 탭바)을 함께 사용하지 마세요.</p>
       </ul>
+      <blockquote>
+        <p>브라우저 히스토리 저장. 탭의 갯수 제한 4~5개 또는 가로 스크롤. HIG의 segmented control</p>
+      </blockquote>
       <nav class="profile-tablist" role="tablist">
 				<button class="profile-tablist-tab" role="tab" aria-selected="true">프로젝트 <i class="profile-tablist-tab-badge">5</i></button>
 				<button class="profile-tablist-tab" role="tab" aria-selected="false">웹페이지 <i class="profile-tablist-tab-badge">5</i></button>
@@ -860,39 +841,6 @@
     </article> -->
 
     <!-- // Chris said Marcus replied -->
-    <article class="design-article js-scrollspy-section">
-      <h1 class="design-article-title">Comment</h1>
-      <p class="design-article-description">작성 중. 결정하기. 코멘트의 노출 순서와 정렬, 열었을 때 최초로 보여줄 갯수, 더보기 갯수. 답글  스타일 골뱅이 답글 vs 인덴테이션, 신고/수정/삭제/아바타 등 우선쉬위, 리뷰와코멘트는분리되어야함</p>
-      <div class="post-comment-list">
-        <article class="post-comment-list-item" role="comment">
-          <a class="post-comment-list-item-avatar" href="#"><img src="/public/images/soo.png"></a>
-          <a class="post-comment-list-item-author" href="#">soojubm</a>
-          <time class="post-comment-list-item-date" datetime="2016">1 day ago</time>
-          <p class="post-comment-list-item-text">우와 처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요. 우와 처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요.</p>
-          <button class="post-comment-list-item-reply">답글 <small>7</small></button>
-          <button class="post-comment-list-item-morevert js-toggle"><i class="icon-more"></i></button>
-          <menu class="post-comment-list-item-menu">
-            <button class="">수정</button>
-            <button class="">삭제</button>
-            <button class="">신고</button>
-          </menu>
-          
-          <!-- 대댓글 샘플 -->
-          <article class="post-comment-list-item" role="comment">
-            <a class="post-comment-list-item-avatar" href="#"><img src="/public/images/soo.png"></a>
-            <a class="post-comment-list-item-author" href="#">soojubm</a>
-            <time class="post-comment-list-item-date" datetime="2016">1 day ago</time>
-            <p class="post-comment-list-item-text">우와 처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요. 우와 처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요.</p>
-            <button class="post-comment-list-item-morevert js-toggle"><i class="icon-more"></i></button>
-            <menu class="post-comment-list-item-menu">
-              <button class="">수정</button>
-              <button class="">삭제</button>
-              <button class="">신고</button>
-            </menu>
-          </article>
-        </article>
-      </div>
-    </article>
 
     <!-- <article class="design-article">
       <h1 class="design-article-title">Share Card</h1>
@@ -962,11 +910,9 @@
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Paginations</h1>
       <p class="design-article-description">첫 페이지와 마지막 페이지에 더블 화살표 아이콘을 사용하지 않습니다. 최초 페이지와 최종 페이지를 사용하세요.</p>
-      <dl class="design-article-description">
-        <dt>infinite scroll</dt><dd>작성 중.</dd>
-        <dt>more load</dt><dd>작성 중.</dd>
-        <dt>paging</dt><dd>작성 중.</dd>
-      </dl>
+      <blockquote>
+        <p>infinite scroll, more load, paging</p>
+      </blockquote>
       <h6 class="title-bordered">Type 1</h6>
       <nav class="pagination" role="navigation" aria-label="pagination">
         <a class="pagination-previous" href="#" title="앞 페이지로 이동" aria-label="">이전</a>
@@ -1111,7 +1057,10 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Bottom Navigation</h1>
-      <p class="design-article-description">햄버거 메뉴를 사용할 때, 이커머스 도매인의 카테고리 용도이면 왼쪽, 글로벌 네비게이션일 때 오른쪽.</p>
+      <p class="design-article-description">작성 중.</p>
+      <blockquote>
+        <p>햄버거 메뉴를 사용할 때, 이커머스 도매인의 카테고리 용도이면 왼쪽, 글로벌 네비게이션일 때 오른쪽.</p>
+      </blockquote>
       <nav class="bottombar">
         <a href="" class="bottombar-item is-active">
           <span class="bottombar-item-media"><i class="icon-person"></i></span>
@@ -1211,9 +1160,9 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Step</h1>
-      <p class="design-article-description">모바일 퍼스트(가로레이아웃 후순위). 아코디언(optional), 버튼(optional), 타임라인 / 히스토리와 비슷한 맥락</p>
+      <p class="design-article-description">작성 중. 타임라인(역순)/히스토리 맥락. 확장(optional), 링크(optional), indentation</p>
       <blockquote>
-        <p>stepper 네이밍은 input type="range" 있음. 속성값으로 slider가 사용되기 때문에 구분하기 위해 carousel 네이밍.</p>
+        <p>네이밍은 input type="range" 형태를 stepper로 명명하는 경우가 있음. css속성으로 -webkit-appearance: slider-vertical; 사용되기 때문에 slider는 carousel로 명명.</p>
       </blockquote>
 
       <h6 class="title-bordered">Vertical</h6>
@@ -1259,10 +1208,10 @@
     
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Result</h1>
-      <p class="design-article-description">페이지나 컴포넌트의 상태, 사용자 행동의 결과를 알릴 때 사용합니다..</p>
-      <p class="checklist"><span><i></i></span> 가운데 정렬합니다. 왼쪽 정렬하는 기본적인 콘텐츠 모듈과 구분하여 뷰가 전환되었을 때 콘텐츠의 상태를 환기합니다.</p>
+      <p class="design-article-description">작성 중. 페이지나 컴포넌트의 상태, </p>
+      <p class="checklist"><span><i></i></span>왼쪽 정렬의 기본적인 콘텐츠 모듈과 구별하여 가운데 정렬합니다.</p>
       <blockquote>
-        다른 디자인 시스템에서 blankslate, empty state로 네이밍합니다. result로 네이밍하여 empty, error, complete 등에서 범용성을 확보합니다. 추후 추상화가 필요할 수도 있습니다.
+        <p>디자인시스템에서 blankslate, empty state로 명명됨. result로 네이밍하여 empty, error, complete 등에서 범용성을 확보. 분리하는 것이 좋을지도.</p>
       </blockquote>
       <section class="empty" style="border:1px solid var(--color-box-border);border-radius:var(--radius400);margin:0;">
         <i class="empty-icon">🧟</i>
@@ -1575,6 +1524,37 @@
           </div>
         </div>
       </article>
+
+      <br />
+
+      <section class="post-comment-list">
+        <article class="post-comment-list-item" role="comment">
+          <a class="post-comment-list-item-avatar" href="#"><img src="/public/images/soo.png"></a>
+          <a class="post-comment-list-item-author" href="#">soojubm</a>
+          <time class="post-comment-list-item-date" datetime="2016">1 day ago</time>
+          <p class="post-comment-list-item-text">코멘트는 노출 순서와 정렬 기능 여부 갯수, 답글 스타일, 최초 노출형태, 신고/수정/삭제/아바타는 우선순위를 낮게 설정하고, 리뷰와 코멘트는 비슷한 구조이지만 별도의 컴포넌트로 관리되어야 한다. 또 있을까?</p>
+          <button class="post-comment-list-item-reply">답글 <small>7</small></button>
+          <button class="post-comment-list-item-morevert js-toggle"><i class="icon-more"></i></button>
+          <menu class="post-comment-list-item-menu">
+            <button class="">수정</button>
+            <button class="">삭제</button>
+            <button class="">신고</button>
+          </menu>
+          <!-- 대댓글 샘플 -->
+          <article class="post-comment-list-item" role="comment">
+            <a class="post-comment-list-item-avatar" href="#"><img src="/public/images/soo.png"></a>
+            <a class="post-comment-list-item-author" href="#">soojubm</a>
+            <time class="post-comment-list-item-date" datetime="2016">1 day ago</time>
+            <p class="post-comment-list-item-text">우와 처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요. 우와 처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요.</p>
+            <button class="post-comment-list-item-morevert js-toggle"><i class="icon-more"></i></button>
+            <menu class="post-comment-list-item-menu">
+              <button class="">수정</button>
+              <button class="">삭제</button>
+              <button class="">신고</button>
+            </menu>
+          </article>
+        </article>
+      </section>
 
       <!-- <div class="daylist">
         <div class="day" role="listitem">

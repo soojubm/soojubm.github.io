@@ -122,11 +122,11 @@
 
 
 @media (--breakpoint-large) {
-	.product {margin-top:0;box-sizing:content-box;}
+	.product {max-width:920px;margin-top:0;box-sizing:content-box;}
 	.product:before {display:none;}
 	.product-image {@include reset-position;position:absolute;}
 	.product-info {width:100%;margin-right:0;padding-left:60%;}
-	.product-info-name {width:100%;text-align:left;position:initial;}
+	.product-info-name {width:100%;text-align:left;line-height:1.4;position:initial;}
 
 	.product-order {width:100%;padding-left:60%;}
 
