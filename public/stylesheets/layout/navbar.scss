@@ -92,9 +92,9 @@ top: 14px;}
 .is-shown .navbar-user {z-index:calc(var(--zindex-navigation) + 2);}
 .is-shown .navbar-user .navbar-user-trigger img {background:var(--gray0);}
 .is-shown .navbar-menu {}
-// .is-shown .navbar-menu-item {color:var(--gray0);}
+.is-shown .navbar-menu-item {color:var(--gray0);}
 .is-shown .navbar-menu-item > a {position:relative;z-index:calc(var(--zindex-navigation) + 2);}
-// .is-shown .navbar-menu-item i {border-top-color:var(--gray0);}
+.is-shown .navbar-menu-item i {border-top-color:var(--gray0);}
 .is-shown .navbar-menu-item menu {top:0;}
 .is-shown .navbar-menu-item menu a {opacity:1;}
 // .is-darktheme .navbar-menu-item {color:var(--gray0);}
