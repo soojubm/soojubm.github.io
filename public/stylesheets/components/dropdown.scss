@@ -7,7 +7,7 @@
 .dropdown-menu {
   @include tile-elevated;
   // width: 100%;
-  min-width: var(--width-tiny);
+  min-width: var(--width-dropdown);
   height:0;
   padding: 0; // override;
   position:absolute;

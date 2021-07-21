@@ -54,13 +54,13 @@ document.addEventListener('readystatechange', () => console.log(document.readySt
 async function domEvents() {
   await routePage()
 
-  const hash = window.location.hash.substring(1)
-  const page = routes.find(route => route.path.substring(1) === hash)
-  const pageTitleElement = document.querySelector('.js-page-title')
+  // const hash = window.location.hash.substring(1)
+  // const page = routes.find(route => route.path.substring(1) === hash)
+  // const pageTitleElement = document.querySelector('.js-page-title')
 
-  if (pageTitleElement) {
-    pageTitleElement.textContent = page?.name || '페이지타이틀'
-  }
+  // if (pageTitleElement) {
+  //   pageTitleElement.textContent = page?.name || '페이지타이틀'
+  // }
 
   const chip = document.querySelector('.js-chip')
   const chipElements = chip?.querySelectorAll('button')

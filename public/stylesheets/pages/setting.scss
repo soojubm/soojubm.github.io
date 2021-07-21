@@ -11,7 +11,7 @@
 .setting-row:hover {}
 .setting-row.is-opened {}
 .setting-row:nth-of-type(1) {border-top:var(--border100);}
-.setting-row-label {width:var(--size-large);font-size:var(--font-size-body);line-height:32px;font-weight:400;color:var(--gray400);}
+.setting-row-label {width:100px;font-size:var(--font-size-body);line-height:32px;font-weight:400;color:var(--gray400);}
 .setting-row-value {display:flex;flex-wrap:wrap;align-items:center;width:calc(100% - 10rem);color:var(--gray800);line-height:32px;}
 .setting-row-value-username {width:100%;}
 .setting-row-value-address {width:100%;margin:-.25rem 0;line-height:1.5;}
@@ -23,7 +23,7 @@
 .setting-row:hover .setting-row-change b {transform:translateX(0);}
 .setting-row-foot {display:flex;}
 .setting-row-foot-confirm {@include button-primary;}
-.setting-row-foot-cancel {@include button-text;margin:0 0 0 1rem;}
+.setting-row-foot-cancel {@include button-text;margin:0 0 0 var(--space-after-button);}
 // line-height:24px; 이거 모듈화~!
 .setting-row .textfield {
   margin: 0 0 1rem 0;

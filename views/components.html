@@ -9,7 +9,7 @@
 
   <header class="titlebar js-titlebar" role="navigation" style="position:sticky;top:0;">
     <div class="titlebar-background"></div>
-    <h1 class="titlebar-title js-page-title">페이지타이틀</h1>
+    <h1 class="titlebar-title js-page-title" title="page title"></h1>
     <button class="titlebar-back" onclick="javascript:window.location.href='/';">
       <span class="titlebar-back-icon"><i class="icon-arrow"></i></span>
     </button>
@@ -17,10 +17,10 @@
       공유하기
     </button>
   </header>
-  <header class="titlebar-backdrop js-header"></header>
+  <!-- <header class="titlebar-backdrop js-header"></header> -->
 
-  <!-- <header class="design-head"></header>
-  <section class="hero">
+  <!-- <header class="design-head"></header> -->
+  <!-- <section class="hero">
     <div class="hero-background"></div>
     <h1 class="hero-title"><span style="display:none;">Design System</span>Components<i style="font-style:italic;" hidden>!</i></h1>
     <p class="hero-description">사용자 인터페이스를 구성하는 패턴을 개발 코드 기반으로 정의하고 개선해나갑니다.</p>
@@ -28,40 +28,23 @@
       <a class="hero-cta">공사중입니다</a>
       <a class="hero-detail">자세히 알아보기</a>
     </footer>
-    <div class="hero-features">
-      <div class="">
-        <h3 style="font-size:var(--font-size-subhead);font-weight:var(--font-weight-bold);margin:0 0 .5rem 0;">단순성</h3>
-        <p>디자인 시스템은 유아이 라이브러리가 아닙니다. 가능한 모든 경우의 수를 나열하지 마세요. 모바일 퍼스트(혹은 모바일 온리)로 시작하여, 서비스의 규묘와 리소스에 맞춰서 시스템을 확장하세요.</p>
-      </div>
-      <div class="">
-        <h3 style="margin:0 0 .5rem 0;font-size:var(--font-size-subhead);font-weight:var(--font-weight-bold);">유연성 (지속 가능성)</h3>
-        <p></p>
-      </div>
-      <div class="">
-        <h3 style="font-size:var(--font-size-subhead);font-weight:var(--font-weight-bold);margin:0 0 .5rem 0;">명료성 (보편성?)</h3>
-        <p>UI는 사용자의 추가적인 학습을 최소화할 정도로 보편타당해야 합니다.</p>
-      </div>
-    </div>
     <div class="hero-obj1"></div>
     <div class="hero-obj2"></div>
     <div class="hero-obj3"></div>
     <img class="hero-obj4" src="/public/images/blob-shape.svg" alt="" />
   </section> -->
 
-  <header style="max-width:var(--width-large);margin:0 auto;padding:2rem var(--grid-margin);">
+  <header style="padding:2rem var(--navbar-padding) 3rem;">
     <h1>Under<br />Construction</h1>
     <p style="margin:var(--space) 0 0 0;">
-      appearance and role
-      <!-- <h1>pallette</h1>
-      <p>size / typography / color / spacing</p>
-      <li>가이드의 가이드. 디스크립션(OO은 ~~~) + 체크리스트. 가짓수를 디스크립션 하지 않기. 다른 디자인 시스템에서 어떤 이름으로 사용하는지. similar. 리디처럼 '상황에 따라', '목적에 맞게' 등의 ㅇㄻㅇㄻ 사용하지 않고 용법을 명확히 한다. /// 하세요 vs 할 수 있습니다. /// 할 때 vs 경우에 둘다 별로임. 사용 빈도 낮은 케이스는 예외로 정의하고 공식적인 가이드화 하지 않기.</li>
-      <p>저장 / 등록</p>
-      <p>타이포그래피와 텍스트(헤딩,페러그라ㅍ)등을 분리하기</p> -->
+      사용자 인터페이스를 구성하는 패턴을<br />정의하고 개선해나갑니다.
+      <!-- <li>디스크립션(OO은 ~~~) + 체크리스트. 가짓수를 디스크립션 하지 않기. 다른 디자인 시스템에서 어떤 이름으로 사용하는지. similar. 리디처럼 '상황에 따라', '목적에 맞게' 등의 ㅇㄻㅇㄻ 사용하지 않고 용법을 명확히 한다. /// 하세요 vs 할 수 있습니다. /// 할 때 vs 경우에 둘다 별로임. 사용 빈도 낮은 케이스는 예외로 정의하고 공식적인 가이드화 하지 않기.</li> -->
+      <!-- <p>타이포그래피와 텍스트(헤딩,페러그라ㅍ)등을 분리하기</p> -->
       <!-- <p>문제: 표준화되어 있는 롤의 유아이들이 같은 스타일로 묶여 있는 경우.</p> -->
     </p>
   </header>
 
-  <nav class="design-navigation" style="max-width:var(--width-large);margin:0 auto;padding-top:0;top:var(--subheader-height);">
+  <nav class="design-navigation" style="padding:0 var(--navbar-padding) 1rem;top:var(--subheader-height);">
     <div class="design-navigation-background"></div>
     <div class="design-navigation-scroll">
       <a class="chip is-active js-scrollspy-trigger" href="#">Avatars</a>
@@ -77,11 +60,11 @@
       <a class="chip js-scrollspy-trigger" href="#">Tab</a>
       <a class="chip js-scrollspy-trigger" href="#">Tooltip</a>
       <a class="chip js-scrollspy-trigger" href="#">Alerts</a>
-      <a class="chip js-scrollspy-trigger" href="#">carousel</a>
+      <a class="chip js-scrollspy-trigger" href="#">Carousel</a>
       <a class="chip js-scrollspy-trigger" href="#">Pagination</a>
       <a class="chip js-scrollspy-trigger" href="#">Table</a>
       <a class="chip js-scrollspy-trigger" href="#">Accordion</a>
-      <a class="chip js-scrollspy-trigger" href="#">Bottom Navigation - bar topbar bottomboar</a>
+      <a class="chip js-scrollspy-trigger" href="#">Bottom Navigation</a>
       <a class="chip js-scrollspy-trigger" href="#">Step</a>
       <a class="chip js-scrollspy-trigger" href="#">Result</a>
       <a class="chip js-scrollspy-trigger" href="#">Dummies</a>
@@ -94,13 +77,13 @@
     <h2>안드로이드와 iOS 코드 틈나면 찾아보기.</h2>
     <p class="design-article-description">size/color/space/font/border/shadow/radius -> avatar/chip/tile/text?/textfield -> label/button/filter/selectbox/dropdown/text input/</p> -->
 
-    <article class="textbox">
-      <div class="textbox-toolbar">
+    <!-- <article class="textbox">
+      <menu class="textbox-toolbar">
         <button class="textbox-toolbar-bold">B</button>
         <button class="textbox-toolbar-italic">I</button>
-      </div>
+      </menu>
       <div class="textfield-input" role="textbox" contenteditable="true" aria-placeholder="5-digit zipcode" aria-labelledby="txtboxLabel"></div>
-    </article>
+    </article> -->
 
     <!-- <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Bullet</h1>
@@ -121,15 +104,14 @@
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Avatars</h1>
       <p class="design-article-description">작성 중.</p>
-        <p class="checklist"><span><i></i></span> design tokens에서 정의한 5가지 사이즈 중 huge, large, medium, small 4가지를 사용합니다. byline 아바타는 small 사이즈를 사용합니다.</p>
+      <div>
+        <p class="checklist"><span><i></i></span> design tokens에서 정의한 5가지 사이즈 중 huge, large, medium, small 4가지를 사용합니다.</p>
         <p class="checklist"><span><i></i></span> 이미지, 텍스트, 아이콘을 포함할 수 있습니다.</p>
         <!-- <p class="checklist"><span><i></i></span> 아이템 컴포넌트: huge, medium은 디스크립션을 가질 수 있습니다.</p> -->
         <!-- <p class="checklist"><span><i></i></span> 아이템 컴포넌트: card component, page 레벨에서 상대적으로 중요도가 낮은 경우 오른쪽에 배치할 수 있습니다.</p> -->
         <!-- <p class="checklist"><span><i></i></span> 아이템 컴포넌트: 텍스트 말 줄임표 조건 정의. 리스트업 조건 정의.</li> -->
       </div>
-
       <br />
-
       <!-- <div class="avatar-large" style="display:flex;margin-bottom:var(--space);">
         <a href="" class="design-article-avatar-huge"><span class="avatar-badge"></span></a>
         <div style="display:block;width:1rem;height:inherit;border-radius:var(--radius400);background:var(--green100);"></div>
@@ -188,7 +170,7 @@
         <img src="/public/images/springsteen.jpg" alt="">
         <figcaption></figcaption>
       </figure>
-    </article> -->
+    -->
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Chips ☀️</h1>
@@ -196,15 +178,16 @@
       <div class="design-article-description">
         <p class="checklist"><span><i></i></span> 다른 맥락의 chip을 나열할 수 있습니다. 단일선택, 다중선택, 삭제여부, 펼침메뉴 등의 기표를 아이콘으로 제공하세요.</p>
         <p class="xlist"><span><i></i></span> 콘텐츠 정렬sorting에 사용하지 마세요. 콘텐츠 정렬은 selectbox를 사용합니다.</p>
-        <p class="checklist"><span><i></i></span> todo 안드로이드에서 chipGroup / HorizontalScrollView / singleLine</p>
+     
       </div>
 
       <blockquote>
-        <p>필터의 액티브 상태에 브랜드 컬러를 많이 안 쓰는 경향. 진한 회색으로 엑티브 상태를 표시. 콘텐츠 탐색과 약간의 액션을 유도해야 하는 페이지에서는 회색으로?</p>
+        <p>필터에서 액티브 상태에 브랜드 컬러를 많이 안 쓰는 경향. 진한 회색. 콘텐츠 탐색과 약간의 액션을 유도해야 하는 페이지에서는 회색으로?</p>
         <p>디자인시스템에서 tag, pill, chip 등으로 명명. pill은 알약 형태로 radius를 둥글게 적용했을 때 주로 사용.</p>
+        <p>todo 안드로이드 chipGroup, HorizontalScrollView, singleLine</p>
       </blockquote>
       
-      <h6 class="title-bordered">Filter, </h6>
+      <h6 class="title-bordered">Filter</h6>
       <div class="chip-group js-chip" role="group" aria-orientation="horizontal">
         <button class="chip is-active">전체</button>
         <button class="chip">결제완료
@@ -279,11 +262,11 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Tags</h1>
-      <p class="design-article-description">작성 중. 인접한 요소 혹은 컴포넌트의 상태를 표시합니다.</p>
+      <p class="design-article-description">작성 중. 인접한 요소 또는 컴포넌트의...</p>
 
       <div class="design-article-description">
         <p class="checklist"><span><i></i></span> primary: eyebrow, badge / secondary: badge / tertiary: badge, keyword, hashtag</p>
-        <p class="xlist"><i></i> 버튼으로 사용하지 마세요.</p>
+        <p class="xlist"><i></i> 버튼으로 사용할 수 없습니다.</p>
         <p class="xlist"><i></i> 아이콘을 포함할 수 없습니다. <span hidden>(이 디자인시스템은 아이콘을 클릭 기표로 사용한다는 대원칙에 근거하여 아이콘이 없다는 것은 클릭할 수 없다고 이해해도 무방?)</span></p>
       </div>
 
@@ -304,9 +287,9 @@
       <h1 class="design-article-title">Buttons</h1>
       <p class="design-article-description">작성 중. 사용자의 행동. 페이지 이동.</p>
       <div class="design-article-description">
-        <p class="checklist"><span><i></i></span> 공간에 제약이 있을 때 레이블을 생략하여 아이콘만으로 버튼을 사용할 수 있습니다. 이 때 아이콘은 관습적인 메타포를 사용하세요.</p>
         <!-- <p class="xlist"><span><i></i></span> 크기가 다른 버튼을 함께 사용하지 마세요. (버튼 그룹)</p> -->
         <p class="checklist"><span><i></i></span> large 버튼은 프로모션 페이지에서 사용합니다. small 버튼은 아이템(가칭)에서 사용합니다.</p>
+        <p class="checklist"><span><i></i></span> 아이콘 버튼을 사용할 때 아이콘은 관습적인 메타포를 사용하세요.</p>
         <p class="xlist"><i></i> binary choice에서 primary 버튼과 secondary 버튼을 함께 사용하지 마세요.</p>
         <p class="xlist"><i></i> 가이드 텍스트는 cta 아래에 두지 마세요. 일반적으로 네거티브 액션(?)을 위한 텍스트 형태의 버튼이 위치하는 영역입니다.</p>
       </div>
@@ -388,10 +371,10 @@
 
       <!-- (리액트에서 id  이슈 input in label.) -->
       <div class="design-article-description">
-        <p class="checklist"><span><i></i></span> checkbox와 radio는 항상 세로 정렬하세요.</p>
-        <p class="checklist"><span><i></i></span> checkbox와 radio를 5개 이하 옵션에서 사용하세요. 6개 이상일 때 chip, selectbox 형태를 사용하세요.</p>
+        <p class="checklist"><span><i></i></span> 항상 세로 정렬하세요.</p>
         <p class="checklist"><span><i></i></span> radio는 1개의 옵션을 선택된 상태로 제공하세요.</p>
         <p class="checklist"><span><i></i></span> switch는 기능이나 옵션을 켜고 끄는 뉘앙스에서 사용하세요. (on/off)</p>
+        <p class="checklist"><span><i></i></span> 옵션이 6개 이상일 때는 selectbox, 또는 chip 형태를 사용하세요.</p>
         
       </div>
 
@@ -554,7 +537,7 @@
       </div> -->
     </article>
 
-    <article class="design-article">
+    <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Seperator</h1>
       <p class="design-article-description">콘텐츠를 구획합니다.</p>
       <div class="design-article-description">
@@ -744,7 +727,7 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Tooltip</h1>
-      <p class="design-article-description">작성 중. 용어 혹은 근거.</p>
+      <p class="design-article-description">작성 중. 용어 또는 근거.</p>
       <div class="design-article-description">
         <p class="checklist"><span><i></i></span>사용자가 취해야 하는 행동 가이드를 위해 사용하지 마세요.</p>
         <p class="checklist"><span><i></i></span>툴팁 트리거(아이콘)를 도움말 등의 페이지 링크로 사용하지 마세요.</p>
@@ -831,7 +814,7 @@
 
     <!-- <article class="design-article">
       <h1 class="design-article-title">Hover System</h1>
-      <p class="design-article-description">카드 혹은 아이템의 hover state로 여러 개의 코드 또는 스타일이 필요하지 않습니다. 하나의 mixin을 정의하여 사용하세요.</p>
+      <p class="design-article-description">카드 또는 아이템의 hover state로 여러 개의 코드 또는 스타일이 필요하지 않습니다. 하나의 mixin을 정의하여 사용하세요.</p>
       <button class="user-logout" title="sign out">
         <span class="user-logout-icon">
           <i class="icon-out"><span class="icon-out-door"></span></i>
@@ -1388,7 +1371,7 @@
         <span class="pricing-item-price">
           <span class="pricing-item-price-unit">₩ </span>
           <span>6,800</span>
-          <span class="pricing-item-price-per" style="font-size:var(--font-size-body);font-weight:normal;">/ 월</span>
+          <span class="pricing-item-price-per" style="font-size:var(--font-size-body);font-weight:normal;">/ &nbsp;월</span>
         </span>
         <p class="pricing-item-description">전직대통령의 신분과 예우에 관하여는 법률로 정한다. 대법원장은 국회의 동의를 얻어 대통령이 임명한다.</p>
         <ul>
@@ -1461,10 +1444,10 @@
       <nav class="sidebar">
         <h4 class="sidebar-heading" style="margin-top:-.25rem;">대분류</h4>
         <div class="sidebar-item" role="listitem">
-          <h2 style="margin-right:.5rem;font-size:var(--font-size-subhead)"><figure style="margin:0 1rem 0 0;">⚽</figure>축구</h2>
+          <h2 style="margin-right:.5rem;font-size:var(--font-size-subhead)"><figure style="margin:0 var(--space) 0 0;">⚽</figure>축구</h2>
         </div>
         <div class="sidebar-item" role="listitem">
-          <h2 style="margin-right:1rem;font-size:var(--font-size-subhead)"><figure style="margin:0 1rem 0 0;">🏹</figure>양궁</h2>
+          <h2 style="margin-right:1rem;font-size:var(--font-size-subhead)"><figure style="margin:0 var(--space) 0 0;">🏹</figure>양궁</h2>
           <span class="sidebar-item-tag tag" data-appearance="accent">새소식</span>
         </div>
       </nav>
