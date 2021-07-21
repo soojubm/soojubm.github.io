@@ -130,6 +130,7 @@
 @mixin group {
   display:flex;flex-wrap:wrap;margin:var(--space-between-groupitem-minus);
   > * {
+    display: block;
     margin:var(--space-between-groupitem);
   }
 }
