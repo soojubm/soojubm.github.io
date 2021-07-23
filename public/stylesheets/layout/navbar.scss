@@ -70,7 +70,7 @@ top: 14px;}
 .navbar-user {margin:0 0 0 .5rem;position:relative;}
 .navbar-user-trigger {display:flex;justify-content:center;align-items:center;height:32px;}
 .navbar-user-trigger-media {@include avatar-medium;pointer-events:none;}
-.navbar-user-menu {width:var(--width-tiny);height:0;@include tile-elevated;position:absolute;top:40px;right:0;z-index:var(--zindex-navigation);transform:scale(0);}
+.navbar-user-menu {width:var(--width-tiny);height:0;@include tile-elevated;position:absolute;top:40px;right:0;z-index:var(--zindex-popover);transform:scale(0);}
 .is-active + .navbar-user-menu {height:auto;transform:scale(1);}
 
 .user {display:block;color:var(--gray800);position:relative;z-index:var(--zindex-default);@include clearfix;}

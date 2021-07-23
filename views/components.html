@@ -34,7 +34,7 @@
     <img class="hero-obj4" src="/public/images/blob-shape.svg" alt="" />
   </section> -->
 
-  <header style="padding:2rem var(--navbar-padding) 3rem;">
+  <header style="padding:2rem var(--navbar-padding) 3rem;background-color:var(--gray0);">
     <h1>Under<br />Construction</h1>
     <p style="margin:var(--space) 0 0 0;">
       사용자 인터페이스를 구성하는 패턴을<br />정의하고 개선해나갑니다.
@@ -44,7 +44,7 @@
     </p>
   </header>
 
-  <nav class="design-navigation" style="padding:0 var(--navbar-padding) 1rem;top:var(--subheader-height);">
+  <nav class="design-navigation" style="padding:0 var(--navbar-padding) 1rem;top:calc(var(--subheader-height) - 1px);">
     <div class="design-navigation-background"></div>
     <div class="design-navigation-scroll">
       <a class="chip is-active js-scrollspy-trigger" href="#">Avatars</a>
@@ -295,22 +295,23 @@
         <p class="checklist"><span><i></i></span> large 버튼은 프로모션 페이지에서 사용합니다. small 버튼은 아이템(가칭)에서 사용합니다.</p>
         <p class="checklist"><span><i></i></span> 아이콘 버튼을 사용할 때 아이콘은 관습적인 메타포를 사용하세요.</p>
         <p class="xlist"><i></i> binary choice에서 primary 버튼과 secondary 버튼을 함께 사용하지 마세요.</p>
-        <p class="xlist"><i></i> 가이드 텍스트는 cta 아래에 두지 마세요. 일반적으로 네거티브 액션(?)을 위한 텍스트 형태의 버튼이 위치하는 영역입니다.</p>
+        <p class="xlist"><i></i> 가이드 텍스트를 cta 아래에 두지 마세요. 일반적으로 네거티브 액션(?)을 위한 텍스트 형태의 버튼이 위치하는 영역입니다.</p>
       </div>
       <!-- <li>네이밍: style = solid/outline/plain/text (모든 스타일을 망라해야 하기 때문에 유아이 라이브러리에 어울리는 네이밍) appearance = link / subtle / primary, space = compact/fullwidth</li>
       <li>aria-expanded / role="img" aria-label="plus icon" / aria-pressed={activated ? "true" : "false"}</li> -->
       <blockquote>
-        <p>chip이 button-small. min-width, padding-left, padding-right, validation style or function</p>
+        <p>min-width, padding, validation style or function</p>
         <p>primary: call to action / secondary: action... / tertiary: 닫기, 취소, 아이콘버튼</p>
         <p>hover, focus 상태에 개별적인 스타일링을 하지 않음. disabled?</p>
         <p>fetching, more load, icon button 컴포넌트화.</p>
       </blockquote>
       <br />
     
-      <a class="button" href="#">Anchor button</a>
+      <!-- <a class="button" href="#">Anchor button</a>
       <button>Button element</button>
       <input type="submit" value="submit input">
-      <input type="button" value="button input">
+      <input type="button" value="button input"> -->
+
       <h6 class="title-bordered">Sizes</h6>
       <div class="design-buttongroup">
         <button class="design-article-primary" style="height:auto;padding:12px 0 15px;font-size:var(--font-size-subhead);vertical-align:bottom;">
@@ -378,7 +379,7 @@
         <p class="checklist"><span><i></i></span> 항상 세로 정렬하세요.</p>
         <p class="checklist"><span><i></i></span> radio는 1개의 옵션을 선택된 상태로 제공하세요.</p>
         <p class="checklist"><span><i></i></span> switch는 기능이나 옵션을 켜고 끄는 뉘앙스에서 사용하세요. (on/off)</p>
-        <p class="checklist"><span><i></i></span> 옵션이 6개 이상일 때는 selectbox, 또는 chip 형태를 사용하세요.</p>
+        <p class="checklist"><span><i></i></span> 옵션이 6개 이상일 때 selectbox, 또는 chip 형태를 사용하세요.</p>
         
       </div>
 
@@ -562,7 +563,7 @@
         <p class="xlist"><i></i> 모바일 환경에서 네비게이션 바와 함께 사용하지 마세요.</p>
       </div>
       <!-- <p> pg 신청 시 제품군 관련 이슈. 모바일에서도 탑바에 뒤로가기나 닫기 버튼으로 대체. 푸터(사이트맵위)에 배치하는 케이스도 있음. 딥 사이트맵에서 괜찮은 듯. 용도를 더 명확하게</p> -->
-      <nav class="breadcrumb tile-flat" aria-label="breadcrumb">
+      <nav class="breadcrumb" aria-label="breadcrumb">
         <a class="breadcrumb-item breadcrumb-home" href="/">홈</a>
         <i class="breadcrumb-divider">/</i>
         <a class="breadcrumb-item " href="#">페이지 이름</a>
@@ -666,7 +667,7 @@
           </tbody>
         </table>
       </section>
-      <p style="margin:var(--space-after-item);font-size:var(--font-size-caption);">아이콘은 레이블의 역할로 단독으로 사용할 수 없습니다. todo 참고 링크(아이콘은 클릭할 수 있음을 나타내는 역할)</p>
+      <p style="margin:var(--space-after-item);font-size:var(--font-size-caption);">아이콘을 레이블없이 단독으로 사용하지 마세요. todo 참고 링크(아이콘은 클릭할 수 있음을 나타내는 역할)</p>
       <section class="kb tile-flat">
         <table>
           <tbody>
@@ -733,9 +734,9 @@
       <h1 class="design-article-title">Tooltip</h1>
       <p class="design-article-description">작성 중. 용어 또는 근거.</p>
       <div class="design-article-description">
-        <p class="checklist"><span><i></i></span>사용자가 취해야 하는 행동 가이드를 위해 사용하지 마세요.</p>
-        <p class="checklist"><span><i></i></span>툴팁 트리거(아이콘)를 도움말 등의 페이지 링크로 사용하지 마세요.</p>
         <p class="checklist"><span><i></i></span>페이지를 불러 온 시점에서 열려 있는 경우 doorhanger가 필요.</p>
+        <p class="xlist"><span><i></i></span>사용자가 취해야 하는 행동 가이드를 위해 사용하지 마세요.</p>
+        <p class="xlist"><span><i></i></span>툴팁 트리거(아이콘)를 페이지 링크로 사용하지 마세요.</p>
       </div>
       </blockquote>
       <aside class="tooltip">
@@ -839,7 +840,12 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">carousel</h1>
-      <p class="design-article-description">서드파티 라이브러리 없이 가로 스크롤을 활용합니다. 터치 제스쳐를 지원하지 않는 환경(데스크탑 등)에서 arrow 버튼을 제공하세요. 모바일 환경에서는 arrow 버튼을 제공하지 않습니다.</p>
+      <p class="design-article-description">서드파티 라이브러리 없이 가로 스크롤을 활용합니다. </p>
+      <div class="design-article-description">
+        <p class="checklist"><span><i></i></span> 터치 제스쳐를 지원하지 않는 환경(데스크탑 등)에서 arrow 버튼을 제공하세요.</p>
+        <p class="checklist"><span><i></i></span> 모바일 환경에서는 arrow 버튼을 제공하지 않습니다.</p>
+      </div>
+      
       <section class="carousel">
         <div class="carousel-viewer" style="margin-right:-50%;padding-right:200px;">
           <a class="carousel-viewer-slide" href="#profile">
@@ -1257,12 +1263,12 @@
       <article class="keywords">
         <h3 class="keywords-title">실시간 이슈 키워드</h3>
         <div class="keywords-group" role="group">
-          <a class="keywords-group-keyword" href="">국정감사</a>
-          <a class="keywords-group-keyword" href="">윤석열검찰총장</a>
-          <a class="keywords-group-keyword" href="">조국</a>
-          <a class="keywords-group-keyword" href="">뉴닉</a>
-          <a class="keywords-group-keyword" href="">차별금지법</a>
-          <a class="keywords-group-keyword" href="">추미매법무부장관</a>
+          <a class="keywords-group-keyword" href="#">국정감사</a>
+          <a class="keywords-group-keyword" href="#">윤석열검찰총장</a>
+          <a class="keywords-group-keyword" href="#">조국</a>
+          <a class="keywords-group-keyword" href="#">뉴닉</a>
+          <a class="keywords-group-keyword" href="#">차별금지법</a>
+          <a class="keywords-group-keyword" href="#">추미매법무부장관</a>
         </div>
       </article>
 

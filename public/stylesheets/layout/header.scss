@@ -1,4 +1,5 @@
-.titlebar {display:flex;align-items:center;padding:var(--space-between-listitem) var(--navbar-padding);position:relative;left:0;right:0;z-index:var(--zindex-navigation);}
+.titlebar {display:flex;align-items:center;padding:var(--space-between-listitem) var(--navbar-padding);position:relative;left:0;right:0;z-index:3;}
+// todo 프로필 오버플로우 메뉴보다 낮아야함zindex가
 .titlebar-back {position:relative;z-index:var(--zindex-default);}
 .titlebar-back-icon {@include avatar-medium;transform:rotate(180deg);}
 .titlebar-title {margin:-1px 0 0;padding:0 3rem;font-size:var(--font-size-body);position:absolute;}
