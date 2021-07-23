@@ -328,7 +328,7 @@
 .accordion:hover {@include hover-item;}
 .accordion + .accordion {margin:1rem 0 0 0;cursor:pointer;}
 .accordion-title {display:flex;align-items:center;justify-content:space-between;@include subhead;}
-.accordion-title-icon {@include avatar-medium;display:none;}
+.accordion-title-icon {@include avatar-medium;}
 .accordion-panel {display:none;}
 .accordion-panel p {margin:1rem 0;}
 .is-active + .accordion-panel {display:block;}

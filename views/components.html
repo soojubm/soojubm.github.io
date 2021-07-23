@@ -72,8 +72,7 @@
   </nav>
 
   <article class="design-body">
-    <!-- <h2>모달, 토스트는 컴포넌트가 아님.</h2>
-    <h2>같은 스타일이더라도 역할에 따라 추상화.</h2>
+    <!-- <h2>같은 스타일이더라도 역할에 따라 추상화.</h2>
     <h2>안드로이드와 iOS 코드 틈나면 찾아보기.</h2>
     <p class="design-article-description">size/color/space/font/border/shadow/radius -> avatar/chip/tile/text?/textfield -> label/button/filter/selectbox/dropdown/text input/</p> -->
 
@@ -104,6 +103,9 @@
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Avatars</h1>
       <p class="design-article-description">작성 중.</p>
+      <blockquote>
+        <p>AvatarGroup, AvatarBadge, AvatarThumbnail, AvatarLabel</p>
+      </blockquote>
       <div>
         <p class="checklist"><span><i></i></span> design tokens에서 정의한 5가지 사이즈 중 huge, large, medium, small 4가지를 사용합니다.</p>
         <p class="checklist"><span><i></i></span> 이미지, 텍스트, 아이콘을 포함할 수 있습니다.</p>
@@ -178,10 +180,10 @@
       <div class="design-article-description">
         <p class="checklist"><span><i></i></span> 다른 맥락의 chip을 나열할 수 있습니다. 단일선택, 다중선택, 삭제여부, 펼침메뉴 등의 기표를 아이콘으로 제공하세요.</p>
         <p class="xlist"><span><i></i></span> 콘텐츠 정렬sorting에 사용하지 마세요. 콘텐츠 정렬은 selectbox를 사용합니다.</p>
-     
       </div>
 
       <blockquote>
+        <p>chipGroup, chipIcon(thumbnail, check, x, arrow) chipLabel</p>
         <p>필터에서 액티브 상태에 브랜드 컬러를 많이 안 쓰는 경향. 진한 회색. 콘텐츠 탐색과 약간의 액션을 유도해야 하는 페이지에서는 회색으로?</p>
         <p>디자인시스템에서 tag, pill, chip 등으로 명명. pill은 알약 형태로 radius를 둥글게 적용했을 때 주로 사용.</p>
         <p>todo 안드로이드 chipGroup, HorizontalScrollView, singleLine, action/entry/filter(check active)/choice</p>
@@ -266,7 +268,7 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Tags</h1>
-      <p class="design-article-description">작성 중. 인접한 요소 또는 컴포넌트의...</p>
+      <p class="design-article-description">작성 중. 인접한 컴포넌트나 상위 컴포넌트의 상태, 분류, 키워드...</p>
 
       <div class="design-article-description">
         <p class="checklist"><span><i></i></span> primary: eyebrow, badge / secondary: badge / tertiary: badge, keyword, hashtag</p>
@@ -275,7 +277,7 @@
       </div>
 
       <blockquote>
-        <p>디자인시스템에서 badge, label 등으로 명명. label로 변경 고민 중. hashtag 컴포넌트는 따로 만들어주는 것이 좋음. 용법이 확연함.</p>
+        <p>디자인시스템에서 badge, label 등으로 명명. hashtag 컴포넌트는 따로 만들어주는 것이 좋음. 용법이 확연함.</p>
       </blockquote>
 
       <div class="tag-group" role="group">
@@ -302,8 +304,8 @@
       <blockquote>
         <p>min-width, padding, validation style or function</p>
         <p>primary: call to action / secondary: action... / tertiary: 닫기, 취소, 아이콘버튼</p>
-        <p>hover, focus 상태에 개별적인 스타일링을 하지 않음. disabled?</p>
-        <p>fetching, more load, icon button 컴포넌트화.</p>
+        <p>hover, focus 상태에 개별적인 스타일링을 하지 않음. disabled 동일한 opacity.</p>
+        <p>fetching, more load, icon button 컴포넌트화. closeButton 단일 기능이기 때문에 따로.</p>
       </blockquote>
       <br />
     
@@ -376,7 +378,7 @@
 
       <!-- (리액트에서 id  이슈 input in label.) -->
       <div class="design-article-description">
-        <p class="checklist"><span><i></i></span> 항상 세로 정렬하세요.</p>
+        <p class="checklist"><span><i></i></span> checkbox와 radio는 항상 세로 정렬하세요.</p>
         <p class="checklist"><span><i></i></span> radio는 1개의 옵션을 선택된 상태로 제공하세요.</p>
         <p class="checklist"><span><i></i></span> switch는 기능이나 옵션을 켜고 끄는 뉘앙스에서 사용하세요. (on/off)</p>
         <p class="checklist"><span><i></i></span> 옵션이 6개 이상일 때 selectbox, 또는 chip 형태를 사용하세요.</p>
@@ -396,7 +398,7 @@
         <div class="checkbox textfield">
           <input class="js-check" type="checkbox" id="other" name="interest" value="other">
           <label for="other">기타</label>
-          <input type="text" name="other-more" class="textfield-input" placeholder="입력해주세요." hidden>
+          <input type="text" name="other-more" class="textfield-input" placeholder="기타로 오토바이를 타자." hidden>
         </div>
       </fieldset>
 
@@ -557,7 +559,7 @@
       <h1 class="design-article-title">Breadcrumb</h1>
       <p class="design-article-description">사용자의 위치를 계층 구조로 보여줍니다.</p>
       <div class="design-article-description">
-        <p class="checklist"><span><i></i></span> 페이지 레벨이 3단계 이상일 때 사용하세요. (memo 대부분의 서비스가 flat sitemap. 예전만큼 자주 쓰진 않음. 주로 카테고리.)</p>
+        <p class="checklist"><span><i></i></span> 페이지 레벨이 3단계 이상일 때 사용하세요. (memo flat sitemap 대세. 예전만큼 자주 쓰진 않음. 주로 카테고리, 도움말. pg 심사.)</p>
         <p class="checklist"><span><i></i></span> 프로모션을 위한 랜딩 페이지에서 사용자의 여정을 돕기 위해 사용할 수 있습니다.</p>
         <p class="checklist"><span><i></i></span> 푸터에서 사이트맵과 함께 사용할 수 있습니다.</p>
         <p class="xlist"><i></i> 모바일 환경에서 네비게이션 바와 함께 사용하지 마세요.</p>
@@ -872,17 +874,9 @@
             <span class="carousel-viewer-slide-media">🧴</span>
             <p class="carousel-viewer-slide-name">상품</p>
           </a>
-          <a class="carousel-viewer-slide" href="#cart">
-            <span class="carousel-viewer-slide-media">🛒</span>
-            <p class="carousel-viewer-slide-name">카트</p>
-          </a>
           <a class="carousel-viewer-slide" href="#checkout">
             <span class="carousel-viewer-slide-media">💕</span>
             <p class="carousel-viewer-slide-name">체크아웃</p>
-          </a>
-          <a class="carousel-viewer-slide" href="#orders">
-            <span class="carousel-viewer-slide-media">💕</span>
-            <p class="carousel-viewer-slide-name">주문내역</p>
           </a>
           <a class="carousel-viewer-slide" href="#setting">
             <span class="carousel-viewer-slide-media">🔖</span>
@@ -1007,13 +1001,13 @@
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Accordions</h1>
       <p class="design-article-description">아코디언은 질의응답 등 정보를 요약하여 목록화할 때 사용합니다. 자주묻는질문Frequently asked questions</p>
-      <ul class="design-article-description">
+      <blockquote>
+          <p>plus icon은 addable이지 expandable은 아님. 구별하기.</p>
+      </blockquote>
+      <div class="design-article-description">
         <li>복잡한 정보에서는 사용하지 마세요.</li>
-        <li>클릭 영역 정의. 본문, 외부 클릭 시.</li>
-      </ul>
-      <!-- <blockquote>
-        plus 아이콘을 엄격하게. caret으로 변경?
-      </blockquote> -->
+        <li>클릭 영역 정의. 본문, 외부를 클릭했을 때.</li>
+      </div>
       <!-- <details class="details">
         <summary class="details-summary">써머리</summary>
         <p>안녕</p>
@@ -1026,26 +1020,29 @@
         <h2 style="margin:0 0 1rem 0;font-size:var(--font-size-title);" title="FAQs">Questions?</h2>
         <p>궁금증을 해결하지 못하셨나요? <a href="">Get in touch with us.</a></p>
       </header> -->
-      <article class="accordion">
-        <h3 class="accordion-title js-toggle" role="button" aria-expanded="false">
-          탈퇴하고 싶어요.
-          <span class="accordion-title-icon"><i class="icon-plus"></i></span>
-        </h3>
-        <div class="accordion-panel">
-          <p>모든 국민은 건강하고 쾌적한 환경에서 생활할 권리를 가지며, 국가와 국민은 환경보전을 위하여 노력하여야 한다. 대통령은 내우·외환·천재·지변 또는 중대한 재정·경제상의 위기에 있어서 국가의 안전보장 또는 공공의 안녕질서를 유지하기 위하여 긴급한 조치가 필요하고 국회의 집회를 기다릴 여유가 없을 때에 한하여 최소한으로 필요한 재정·경제상의 처분을 하거나 이에 관하여 법률의 효력을 가지는 명령을 발할 수 있다.</p>
-          <p>제1항의 지시를 받은 당해 행정기관은 이에 응하여야 한다. 국회의원은 법률이 정하는 직을 겸할 수 없다. 대통령의 임기연장 또는 중임변경을 위한 헌법개정은 그 헌법개정 제안 당시의 대통령에 대하여는 효력이 없다.</p>
-        </div>
-      </article>
-      <article class="accordion">
-        <h3 class="accordion-title js-toggle" role="button" aria-expanded="false">
-          주문을 취소하고 싶어요.
-          <span class="accordion-title-icon"><i class="icon-plus"></i></span>
-        </h3>
-        <div class="accordion-panel">
-          <p>모든 국민은 건강하고 쾌적한 환경에서 생활할 권리를 가지며, 국가와 국민은 환경보전을 위하여 노력하여야 한다. 대통령은 내우·외환·천재·지변 또는 중대한 재정·경제상의 위기에 있어서 국가의 안전보장 또는 공공의 안녕질서를 유지하기 위하여 긴급한 조치가 필요하고 국회의 집회를 기다릴 여유가 없을 때에 한하여 최소한으로 필요한 재정·경제상의 처분을 하거나 이에 관하여 법률의 효력을 가지는 명령을 발할 수 있다.</p>
-          <p>제1항의 지시를 받은 당해 행정기관은 이에 응하여야 한다. 국회의원은 법률이 정하는 직을 겸할 수 없다. 대통령의 임기연장 또는 중임변경을 위한 헌법개정은 그 헌법개정 제안 당시의 대통령에 대하여는 효력이 없다.</p>
-        </div>
-      </article>
+      <section class="">
+        <article class="accordion">
+          <h3 class="accordion-title js-toggle" role="button" aria-expanded="false">
+            탈퇴하고 싶어요.
+            <span class="accordion-title-icon"><i class="icon-plus"></i></span>
+          </h3>
+          <div class="accordion-panel">
+            <p>모든 국민은 건강하고 쾌적한 환경에서 생활할 권리를 가지며, 국가와 국민은 환경보전을 위하여 노력하여야 한다. 대통령은 내우·외환·천재·지변 또는 중대한 재정·경제상의 위기에 있어서 국가의 안전보장 또는 공공의 안녕질서를 유지하기 위하여 긴급한 조치가 필요하고 국회의 집회를 기다릴 여유가 없을 때에 한하여 최소한으로 필요한 재정·경제상의 처분을 하거나 이에 관하여 법률의 효력을 가지는 명령을 발할 수 있다.</p>
+            <p>제1항의 지시를 받은 당해 행정기관은 이에 응하여야 한다. 국회의원은 법률이 정하는 직을 겸할 수 없다. 대통령의 임기연장 또는 중임변경을 위한 헌법개정은 그 헌법개정 제안 당시의 대통령에 대하여는 효력이 없다.</p>
+          </div>
+        </article>
+        <article class="accordion">
+          <h3 class="accordion-title js-toggle" role="button" aria-expanded="false">
+            주문을 취소하고 싶어요.
+            <span class="accordion-title-icon"><i class="icon-plus"></i></span>
+          </h3>
+          <div class="accordion-panel">
+            <p>모든 국민은 건강하고 쾌적한 환경에서 생활할 권리를 가지며, 국가와 국민은 환경보전을 위하여 노력하여야 한다. 대통령은 내우·외환·천재·지변 또는 중대한 재정·경제상의 위기에 있어서 국가의 안전보장 또는 공공의 안녕질서를 유지하기 위하여 긴급한 조치가 필요하고 국회의 집회를 기다릴 여유가 없을 때에 한하여 최소한으로 필요한 재정·경제상의 처분을 하거나 이에 관하여 법률의 효력을 가지는 명령을 발할 수 있다.</p>
+            <p>제1항의 지시를 받은 당해 행정기관은 이에 응하여야 한다. 국회의원은 법률이 정하는 직을 겸할 수 없다. 대통령의 임기연장 또는 중임변경을 위한 헌법개정은 그 헌법개정 제안 당시의 대통령에 대하여는 효력이 없다.</p>
+          </div>
+        </article>
+      </section>
+
     </article>
 
     <article class="design-article js-scrollspy-section">
