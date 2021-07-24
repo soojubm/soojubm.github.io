@@ -21,11 +21,11 @@
 
 .chip {@include chip}
 .chip-label {}
+.chip-thumbnail {@include avatar-medium;@include chip-heading;border:var(--border100) !important;background:var(--gray0);}
 .chip-icon {@include avatar-medium;@include chip-tailing;border:var(--border100) !important;background:var(--gray0);}
 .chip-icon .icon-caret {}
 .chip-icon .icon-check {}
 .chip-icon .icon-x {}
 .chip-icon .icon-x::before {background:var(--color-primary);}
 .chip-icon .icon-x::after {background:var(--color-primary);}
-.chip figure {@include avatar-medium;@include chip-heading;border:var(--border100);background:var(--gray0);}
 // .chip-count {}

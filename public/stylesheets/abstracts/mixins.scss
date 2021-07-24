@@ -25,11 +25,6 @@
   &:hover {text-decoration:underline;}
 }
 
-@mixin hover-tertiary {border-color:var(--gray800);}
-@mixin hover-text {
-  // color:var(--color-primary);
-  text-decoration:underline;
-}
 
 
 @mixin image-centered {width:auto;height:auto;max-width:150%;max-height:150%;margin:auto;position:absolute;left:0;right:0;top:0;bottom:0;}
@@ -44,11 +39,13 @@
 }
 
 
-
 @mixin clearfix {
   &:after {content:'';display:block;clear:both;}
 }
 
+
+@mixin hover-tertiary {border-color:var(--gray800);}
+@mixin hover-text {text-decoration:underline;}
 // item in card component // active
 @mixin hover-item {
   // 부모태그에 position: relative;zindex:1;
@@ -81,40 +78,6 @@
 }
 
 
-
-// padding .5rem / 1.5rem
-// 1.5 => 1 모바일에서도 동일하게 가기 위해. 아니면 모바일만 따로.
-@mixin tile-flat {
-  padding: 1rem; // 텍스트가 올 때 시각보정. 아이콘이 오면 아이콘에서 margin-top:.5rem?
-  border: var(--border100);
-  border-radius: var(--radius400);
-  box-sizing: border-box;
-  background: var(--gray0);
-  position: relative;
-  // @media (--breakpoint-tiny) {
-  //   margin:0 var(--grid-margin-minus);
-  //   padding: 1rem var(--grid-margin);
-  //   border-radius: 0;
-  // }
-}
-@mixin tile-elevated {@include tile-flat;box-shadow:var(--shadow400);}
-@mixin tile-flat-small {@include tile-flat;padding:.5rem;}
-@mixin tile-elevated-small {@include tile-flat;padding:.5rem;box-shadow:var(--shadow400);}
-
-// layout 유동성을 위해. centered mixin은 layou의 유동성을 해친다.
-// ! avatar-medium의 display:flex가 hidden 속성과 충돌
-@mixin tile-avatar($cell) {
-  display: flex;align-items: center;justify-content: center;
-  width: $cell;height: $cell;
-  border: var(--border100); // 여기서
-  border-color: transparent;
-  border-radius: var(--radius400);
-  box-sizing: border-box;
-  background: var(--gray100);
-  position: relative;
-}
-
-
 // [role=group] input[type=radio] + label {margin:0 16px 0 0;color:var(--gray400);padding-left:0;}
 // [role=group] input[type=radio] + label:before {content:'';display:inline-block;width:2px;height:2px;background:var(--gray400);margin:0 10px 0 0;vertical-align:3px;position:static;left:auto;top:auto;}
 // [role=group] input[type=radio] + label:after {display:none;}
@@ -122,18 +85,19 @@
 // [role=group] input[type=radio]:checked + label:before {border-color:var(--gray800);width:10px;height:4px;border-left: 2px solid #f3f2f1;border-bottom: 2px solid #f3f2f1;background:none;margin:0 8px 0 0;border-color:var(--gray400);vertical-align:3px;transform:rotate(-45deg);border-radius:0;border-right:0;border-top:0;position:static;left:auto;top:auto;}
 
 
-
-
 // ! group vs row vs rowgroup
 // 그냥나열되는경우(display:flex flex-wrap vs inline-block) 마진중첩서로 다르게 적용이 된다. / 
 // ? bleeding vs default = design navigation vs taglist
 @mixin group {
-  display:flex;flex-wrap:wrap;margin:var(--space-between-groupitem-minus);
+  display: flex;
+  flex-wrap: wrap;
+  margin: var(--space-between-groupitem-minus);
   > * {
     display: block;
     margin:var(--space-between-groupitem);
   }
 }
+// group-pull 등은 ㅔㄹ이아웃..
 @mixin group-pull {display:flex;justify-content:space-between;align-items:center;}
 @mixin group-wrap {display:flex;flex-wrap:wrap;}
 @mixin group-bleeding {
@@ -143,29 +107,14 @@
   > * {display:inline-block;margin:0 calc(var(--space-between-groupitem) * 2) 0 0;font-size:var(--font-size-body);}
   &::-webkit-scrollbar {display:none;}
 }
-@mixin chip-group {
-  @include group;
-}
-@mixin tag-group {
-  @include group;
-}
+@mixin chip-group {@include group;}
 
 .chip-group {@include chip-group;}
-.tag-group {@include chip-group;}
 .avatar-group {@include chip-group;}
 
-@mixin avatar-huge {@include tile-avatar(var(--size-huge));}
-@mixin avatar-large {@include tile-avatar(var(--size-large));}
-@mixin avatar-medium {@include tile-avatar(var(--size-medium));}
-@mixin avatar-small {@include tile-avatar(var(--size-small));}
-@mixin avatar-tiny {@include tile-avatar(var(--size-tiny));}
 
 .link-inner {@include link-inner;}
 .link-outer {@include link-outer;}
-.tile-flat {@include tile-flat;}
-.tile-flat-small {@include tile-flat-small;}
-.tile-elevated {@include tile-elevated;}
-.tile-elevated-small {@include tile-elevated-small;}
 
 
 .linebreak-always {}
@@ -200,9 +149,6 @@
   bottom: auto;
   transform: none;
 }
-
-@mixin badge {@include avatar-tiny;}
-
 
 
 @mixin title-bordered {

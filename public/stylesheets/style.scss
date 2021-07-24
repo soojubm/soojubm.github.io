@@ -2,6 +2,12 @@
 
 @import 'abstracts/variables';
 @import 'abstracts/mixins';
+
+// todo mixins
+@import 'abstracts/avatars';
+@import 'abstracts/tiles';
+
+
 @import 'abstracts/webfonts';
 @import 'abstracts/icon';
 @import 'abstracts/keyframes';
@@ -500,7 +506,7 @@
 
 .class {max-width:var(--width-large);margin:0 auto;position:relative;}
 .class-head {padding:0 0 0;}
-.class-head-eyebrow {@include tag-eyebrow;display:inline-block;padding:0 .5rem;}
+.class-head-eyebrow {@include tag-primary;display:inline-block;padding:0 .5rem;}
 .class-head-title {@include title;margin:1rem 0 0 0;}
 .class-head-description {margin:1rem 0 0 0;}
 .class-order {@include tile-elevated;width:100%;max-width:60%;padding:3rem;position:absolute;right:0;top:4rem;}

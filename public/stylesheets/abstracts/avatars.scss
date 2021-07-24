@@ -1,0 +1,18 @@
+// ! avatar-medium의 display:flex가 hidden 속성과 충돌
+@mixin avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: var(--border100);
+  border-color: transparent;
+  border-radius: var(--radius400);
+  box-sizing: border-box;
+  background: var(--gray100);
+  position: relative;
+}
+
+@mixin avatar-huge {@include avatar;width:var(--size-huge);height:var(--size-huge);}
+@mixin avatar-large {@include avatar;width:var(--size-large);height:var(--size-large);}
+@mixin avatar-medium {@include avatar;width:var(--size-medium);height:var(--size-medium);}
+@mixin avatar-small {@include avatar;width:var(--size-small);height:var(--size-small);}
+@mixin avatar-tiny {@include avatar;width:var(--size-tiny);height:var(--size-tiny);}

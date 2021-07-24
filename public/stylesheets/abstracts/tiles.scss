@@ -1,0 +1,18 @@
+@mixin tile-flat {
+  padding: 1rem; // 텍스트가 올 때 시각보정. 아이콘이 오면 아이콘에서 margin-top:.5rem?
+  border: var(--border100);
+  border-radius: var(--radius400);
+  box-sizing: border-box;
+  background: var(--gray0);
+  position: relative;
+  // @media (--breakpoint-tiny) {}
+}
+@mixin tile-elevated {@include tile-flat;box-shadow:var(--shadow400);}
+@mixin tile-flat-small {@include tile-flat;padding:.5rem;}
+@mixin tile-elevated-small {@include tile-flat;padding:.5rem;box-shadow:var(--shadow400);}
+
+
+.tile-flat {@include tile-flat;}
+.tile-flat-small {@include tile-flat-small;}
+.tile-elevated {@include tile-elevated;}
+.tile-elevated-small {@include tile-elevated-small;}

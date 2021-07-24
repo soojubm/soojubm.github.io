@@ -17,7 +17,8 @@
 .profile-user-address div b {margin:0 .5rem 0 0;font-weight:normal;color:var(--gray400);}
 // .profile-user-address div img {width:1rem;margin-right:.5rem;opacity:.4;}
 .profile-user-address i {margin:0 .5rem 0 0;font-size:14px;color:var(--gray400);vertical-align:middle;}
-.profile-user-hashtags {display:flex;flex-wrap:wrap;}
+.profile-user-hashtags {@include tag-group;}
+
 .profile-user-statistic {display:flex;justify-content:space-between;}
 .profile-user-statistic .statistic {width: var(--grid-column);position: relative;}
 .profile-user-statistic .statistic:hover {@include hover-item;}
@@ -76,7 +77,7 @@
 .card-byline-name {font-size:var(--font-size-caption);line-height:16px;color:var(--gray800);}
 .card-title {padding:.75rem 0 0;font-size:var(--font-size-body);}
 .card-text {margin:0 0 1rem 0;padding:.5rem 0 1rem;@include truncate-multi;}
-.card-category {@include tag-eyebrow;@include position-left-top;}
+.card-category {@include tag-primary;@include position-left-top;}
 .card-date {color:var(--gray400);}
 .card-tags {margin:.5rem 0 0 0;}
 .card-tags-item {@include hashtag;font-size:var(--font-size-caption);}
