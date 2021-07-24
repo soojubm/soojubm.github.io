@@ -9,10 +9,7 @@
 @import 'base/reset';
 @import 'base/form';
 
-@import 'layout/navbar';
-@import 'layout/header';
-@import 'layout/footer';
-
+@import 'components/chip';
 @import 'components/breadcrumb.css';
 @import 'components/graph.css';
 @import 'components/modal';
@@ -27,13 +24,15 @@
 @import 'components/hero';
 @import 'components/loader';
 @import 'components/tag';
-@import 'components/chip';
 @import 'components/share';
 @import 'components/dropdown';
 
 @import 'components/skip';
 @import 'components/skeleton';
 
+@import 'layout/navbar';
+@import 'layout/header';
+@import 'layout/footer';
 
 @import 'pages/design';
 @import 'pages/about';

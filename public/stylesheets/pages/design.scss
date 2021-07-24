@@ -4,7 +4,7 @@
 .surface-item-bold div {@include avatar-large;box-shadow:var(--shadow800);}
 
 .design {}
-.design-head {overflow:hidden;background:var(--color-primary);position:fixed;left:0;right:0;top:0;bottom:0;z-index:var(--zindex-default);transform:translateX(-50%);transition:transform .8s $bezier-base .4s;}
+.design-head {overflow:hidden;background:var(--color-primary);position:fixed;left:0;right:0;top:0;bottom:0;z-index:-1;transform:translateX(-50%);transition:transform .8s $bezier-base .4s;}
 .design-head.is-scrolled {transform:translateX(-50%);transition:transform .8s $bezier-base .4s;}
 
 .design-navigation {padding:.75rem var(--grid-margin);background:var(--gray0);position:relative;z-index:6 ;position:sticky;top:0;}

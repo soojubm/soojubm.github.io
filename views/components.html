@@ -1,5 +1,4 @@
 <main class="design">
-
   <!-- <p>유저는 대부분 디스크립션을 자세히 읽기를 원하지 않으므로, 필요한 내용을 빠르게 캐치할 수 있도록 간결하게 쓰는 게 좋다. 한 줄에 50자, 세 줄 이하로 쓸 것을 권장하고 있다. 텍스트를 간결하게 유지하고 전달할 내용을 스캐너블한 덩어리로 나누는 것은, 유저들이 그들의 이해도와 이 서비스를 활용하는 능력에 대해 신뢰를 갖게 만든다.</p>
   <p>유저가 중요한 액션을 수행했을 경우, 완료 메시지를 전달하기 위해 한 화면 전체를 사용하는 경우가 있다. 이때는 유저가 집중할 수 있는 정보가 하나뿐이어서 맥락이 복잡하지 않으므로, \"이미지가 담긴 포스팅이 완료되었습니다.\" 등의 문장형으로 길게 설명할 필요 없이, \"제출 완료!\"같은 단일 단어로 대체할 수 있다.</p>
   <p>알림은 언제나 유저에게 베네핏을 주거나, 긴급한 메시지이거나, 적어도 적절한 타이밍의 내용이어야 한다. UX 라이터는 다양한 종류의 알림이 어떻게 표시될 수 있는지를 고려해야 한다. 똑같은 텍스트가 각각의 컴포넌트에 쓰였을 때 어떤 맥락으로 유저에게 닿을 수 있는지를. </p>
@@ -20,29 +19,24 @@
   <!-- <header class="titlebar-backdrop js-header"></header> -->
 
   <!-- <header class="design-head"></header> -->
-  <!-- <section class="hero">
+
+  <section class="hero" role="banner">
     <div class="hero-background"></div>
-    <h1 class="hero-title"><span style="display:none;">Design System</span>Components<i style="font-style:italic;" hidden>!</i></h1>
-    <p class="hero-description">사용자 인터페이스를 구성하는 패턴을 개발 코드 기반으로 정의하고 개선해나갑니다.</p>
-    <footer class="hero-foot">
+    <h1 class="hero-title">Under<br />Construction<i style="font-style:italic;" hidden>!</i></h1>
+    <p class="hero-description">사용자 인터페이스를 구성하는 패턴을<br />정의하고 개선하고 있습니다.</p>
+    
+    <!-- <li>디스크립션(OO은 ~~~) + 체크리스트. 가짓수를 디스크립션 하지 않기. 다른 디자인 시스템에서 어떤 이름으로 사용하는지. similar. 리디처럼 '상황에 따라', '목적에 맞게' 등의 ㅇㄻㅇㄻ 사용하지 않고 용법을 명확히 한다. /// 하세요 vs 할 수 있습니다. /// 할 때 vs 경우에 둘다 별로임. 사용 빈도 낮은 케이스는 예외로 정의하고 공식적인 가이드화 하지 않기.</li> -->
+    <!-- <p>타이포그래피와 텍스트(헤딩,페러그라ㅍ)등을 분리하기</p> -->
+    <!-- <p>문제: 표준화되어 있는 롤의 유아이들이 같은 스타일로 묶여 있는 경우.</p> -->
+    <!-- <footer class="hero-foot">
       <a class="hero-cta">공사중입니다</a>
       <a class="hero-detail">자세히 알아보기</a>
-    </footer>
+    </footer> -->
     <div class="hero-obj1"></div>
     <div class="hero-obj2"></div>
     <div class="hero-obj3"></div>
     <img class="hero-obj4" src="/public/images/blob-shape.svg" alt="" />
-  </section> -->
-
-  <header style="padding:2rem var(--navbar-padding) 3rem;background-color:var(--gray0);">
-    <h1>Under<br />Construction</h1>
-    <p style="margin:var(--space) 0 0 0;">
-      사용자 인터페이스를 구성하는 패턴을<br />정의하고 개선해나갑니다.
-      <!-- <li>디스크립션(OO은 ~~~) + 체크리스트. 가짓수를 디스크립션 하지 않기. 다른 디자인 시스템에서 어떤 이름으로 사용하는지. similar. 리디처럼 '상황에 따라', '목적에 맞게' 등의 ㅇㄻㅇㄻ 사용하지 않고 용법을 명확히 한다. /// 하세요 vs 할 수 있습니다. /// 할 때 vs 경우에 둘다 별로임. 사용 빈도 낮은 케이스는 예외로 정의하고 공식적인 가이드화 하지 않기.</li> -->
-      <!-- <p>타이포그래피와 텍스트(헤딩,페러그라ㅍ)등을 분리하기</p> -->
-      <!-- <p>문제: 표준화되어 있는 롤의 유아이들이 같은 스타일로 묶여 있는 경우.</p> -->
-    </p>
-  </header>
+  </section>
 
   <nav class="design-navigation" style="padding:0 var(--navbar-padding) 1rem;top:calc(var(--subheader-height) - 1px);">
     <div class="design-navigation-background"></div>
@@ -185,13 +179,15 @@
       <blockquote>
         <p>chipGroup, chipIcon(thumbnail, check, x, arrow) chipLabel</p>
         <p>필터에서 액티브 상태에 브랜드 컬러를 많이 안 쓰는 경향. 진한 회색. 콘텐츠 탐색과 약간의 액션을 유도해야 하는 페이지에서는 회색으로?</p>
-        <p>디자인시스템에서 tag, pill, chip 등으로 명명. pill은 알약 형태로 radius를 둥글게 적용했을 때 주로 사용.</p>
+        <p>디자인시스템에서 tag, pill, chip 등으로 명명. pill은 알약 형태의 둥근 radius에서 명명.</p>
         <p>todo 안드로이드 chipGroup, HorizontalScrollView, singleLine, action/entry/filter(check active)/choice</p>
       </blockquote>
       
       <h6 class="title-bordered">Filter</h6>
       <div class="chip-group js-chip" role="group" aria-orientation="horizontal">
-        <button class="chip is-active">전체</button>
+        <button class="chip is-active">
+          <span class="chip-label">전체</span>
+        </button>
         <button class="chip">
           <span class="chip-text">결제완료</span>
           <!-- <span class="chip-thumbnail">결제완료</span>
@@ -295,7 +291,7 @@
       <div class="design-article-description">
         <!-- <p class="xlist"><span><i></i></span> 크기가 다른 버튼을 함께 사용하지 마세요. (버튼 그룹)</p> -->
         <p class="checklist"><span><i></i></span> large 버튼은 프로모션 페이지에서 사용합니다. small 버튼은 아이템(가칭)에서 사용합니다.</p>
-        <p class="checklist"><span><i></i></span> 아이콘 버튼을 사용할 때 아이콘은 관습적인 메타포를 사용하세요.</p>
+        <p class="checklist"><span><i></i></span> 아이콘 버튼을 사용할 때 아이콘은 관습적인 메타포를 사용하세요. accessibility-text(visually-hidden)</p>
         <p class="xlist"><i></i> binary choice에서 primary 버튼과 secondary 버튼을 함께 사용하지 마세요.</p>
         <p class="xlist"><i></i> 가이드 텍스트를 cta 아래에 두지 마세요. 일반적으로 네거티브 액션(?)을 위한 텍스트 형태의 버튼이 위치하는 영역입니다.</p>
       </div>
@@ -755,7 +751,7 @@
         <!-- <p class="checklist"><span><i></i></span> toast로 사용할 때 하나만 사용하세요.</p> -->
         <!-- <p class="checklist"><span><i></i></span> 모든 액션에 피드백할 필요 업음.</p> -->
         <p class="checklist"><span><i></i></span> 사용자의 귀책이 아닌 경우, "오류" 보다 "시스템 오류" 와 같은 용어를 사용하여 사용자가 잘못한 것처럼 느끼지 않도록 하세요.</p>
-        <p class="checklist"><i></i> 브라우저가 role="alert"속성이 있는 요소를 발견 하면 즉시 사용자에게 경고 내용을 읽습니다.</p>
+        <p class="checklist"><span><i></i></span> 브라우저가 role="alert"속성이 있는 요소를 발견 하면 즉시 사용자에게 경고 내용을 읽습니다.</p>
         <p class="xlist"><i></i> Don't show more than one at a time..</p>
         <!-- <p>toast=>snackbar(withAction) - 정리하기, single line / multiple lines (head,body 텍스트)</p> -->
       </div>
@@ -819,26 +815,7 @@
       </nav>
     </article> -->
 
-    <!-- <article class="design-article">
-      <h1 class="design-article-title">Hover System</h1>
-      <p class="design-article-description">카드 또는 아이템의 hover state로 여러 개의 코드 또는 스타일이 필요하지 않습니다. 하나의 mixin을 정의하여 사용하세요.</p>
-      <button class="user-logout" title="sign out">
-        <span class="user-logout-icon">
-          <i class="icon-out"><span class="icon-out-door"></span></i>
-        </span>
-        로그아웃
-      </button>
-    </article> -->
-
     <!-- // Chris said Marcus replied -->
-
-    <!-- <article class="design-article">
-      <h1 class="design-article-title">Share Card</h1>
-      <p class="design-article-description">작성 중.</p>
-      <button class="share-trigger">
-        <span class="accessibility-text" hidden>Share actions</span>
-      </button>
-    </article> -->
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">carousel</h1>
@@ -1005,8 +982,8 @@
           <p>plus icon은 addable이지 expandable은 아님. 구별하기.</p>
       </blockquote>
       <div class="design-article-description">
-        <li>복잡한 정보에서는 사용하지 마세요.</li>
-        <li>클릭 영역 정의. 본문, 외부를 클릭했을 때.</li>
+        <p class="checklist"><span><i></i></span>복잡한 정보에서는 사용하지 마세요.</p>
+        <p class="checklist"><span><i></i></span>클릭 영역 정의. 본문, 외부를 클릭했을 때.</p>
       </div>
       <!-- <details class="details">
         <summary class="details-summary">써머리</summary>

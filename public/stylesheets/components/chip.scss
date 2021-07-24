@@ -1,21 +1,31 @@
-.chipgroup {@include group-bleeding;}
 // chips, role=group
+// flex, inline-flex인 경우 a, button 차이 발생..
+// 다음에 hr 태그가 오면 그룹 내부 간격이 안맞음
+@mixin chip {
+  display: flex;align-items: center;
+  height:var(--size-medium);padding:0 1rem;border:1px solid transparent;border-radius:var(--radius400);box-sizing:border-box;
+  background:var(--gray100);
+  line-height:30px;color:var(--gray800);
+  position:relative;
+
+  &:hover {border-color:var(--gray800);}
+  &:hover figure {border-color:var(--gray800);border-right:var(--border100);}
+  &.is-active {border-color:var(--color-primary);background:var(--green100);color:var(--color-primary);}
+  &.is-active .chip-icon {border-color:var(--color-primary) !important;}
+}
+
+@mixin chip-heading {float:left;margin:0 var(--space) 0 -17px;border-top-right-radius:0;border-bottom-right-radius:0;}
+@mixin chip-tailing {float:right;margin:0 -17px 0 var(--space);border-top-left-radius:0;border-bottom-left-radius:0;}
+
+.chip-group {@include group-bleeding;}
 
 .chip {@include chip}
-.chip-count {@include tag;}
-.chip-label {margin:0 1rem;}
-.chip figure {@include avatar-medium;@include chip-heading;border:var(--border100);background:var(--gray0);}
+.chip-label {}
 .chip-icon {@include avatar-medium;@include chip-tailing;border:var(--border100) !important;background:var(--gray0);}
 .chip-icon .icon-caret {}
 .chip-icon .icon-check {}
 .chip-icon .icon-x {}
 .chip-icon .icon-x::before {background:var(--color-primary);}
 .chip-icon .icon-x::after {background:var(--color-primary);}
-
-
-
-
-
-
-.group-bleeding {@include group-bleeding;}
-
+.chip figure {@include avatar-medium;@include chip-heading;border:var(--border100);background:var(--gray0);}
+// .chip-count {}
