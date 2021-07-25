@@ -42,7 +42,8 @@
 .item-name {font-size:var(--font-size-body);}
 .item-description {color:var(--gray400);}
 .item-action {@include button-secondary;@include button-small;@include position-right-top;right:0;}
-
+.item-action.is-active {@include button-tertiary;@include button-small;@include position-right-top;right:0;}
+// todo active state
 .item:hover {@include hover-item;}
 
 

@@ -17,8 +17,6 @@
 @mixin chip-heading {float:left;margin:0 var(--space) 0 -17px;border-top-right-radius:0;border-bottom-right-radius:0;}
 @mixin chip-tailing {float:right;margin:0 -17px 0 var(--space);border-top-left-radius:0;border-bottom-left-radius:0;}
 
-.chip-group {@include group-bleeding;}
-
 .chip {@include chip}
 .chip-label {}
 .chip-thumbnail {@include avatar-medium;@include chip-heading;border:var(--border100) !important;background:var(--gray0);}
