@@ -20,8 +20,8 @@
 
 
 @mixin hashtag {
-  margin: 0 .5rem 0 0;
+
   color: var(--gray400);
   &:before {content:'#';}
 }
-.hashtag {color:var(--gray400);}
+.hashtag {@include hashtag;}

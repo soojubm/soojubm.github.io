@@ -13,11 +13,11 @@
       <h1 class="design-article-title">기표signifier</h1>
       <p class="design-article-description">작성 중.</p>
 
-      <h6 class="title-bordered">selection</h6>
+      <!-- <h6 class="title-bordered">selection</h6>
       <h6 class="title-bordered">click - tag 컴포넌트/화살표/아이콘 아이템 전체가 클릭 영역</h6>
       <h6 class="title-bordered">link - internal/external</h6>
       <h6 class="title-bordered">expand - arrow-down/plus-icon</h6>
-      <h6 class="title-bordered">close - cursor(pinterest)/x-icon</h6>
+      <h6 class="title-bordered">close - cursor(pinterest)/x-icon</h6> -->
       <!-- <dl>
         <dt>모두보기</dt><dd>see all(15)(internal, arrow-right)</dd>
         <dt>더보기</dt><dd>확장,더보기vs더불러오기(more, arrow-down), 자세히보기, learn more 등(external, arrow-right-top)</dd>
@@ -29,7 +29,6 @@
       <h1 class="design-article-title">Sizes</h1>
       <p class="design-article-description">작성 중.</p>
       <!-- <p class="design-article-description">가로 크기는 퍼센티지로 비교적 유연하게 사용합니다. alert, accordion 등 예외 케이스.</p> -->
-
       <code class="design-article-description" style="padding:1rem;">
         <p>--size-huge: 80px;</p>
         <p>--size-large: 48px;</p>
@@ -42,8 +41,10 @@
         <p>--size-chip-medium: var(--size-medium);</p>
         <p>--size-tag: var(--size-tiny);</p>
         <hr />
-        <p>.order-item-avatar {</p>
-        <p>&nbsp;&nbsp;@include avatar-huge;</p>
+        <p>.order-item-thumbnail {</p>
+        <p>&nbsp;&nbsp;@include avatar;</p>
+        <p>&nbsp;&nbsp;width: var(--size-large);</p>
+        <p>&nbsp;&nbsp;height: var(--size-large);</p>
         <p>}</p>
       </code>
 
@@ -54,25 +55,25 @@
           <span class="size-huge"></span>
           <h3 class="token-item-name">huge size, 80px</h3>
           <div class="token-item-tags tag-group" role="group">
-            <span class="tag">avatar</span>
+            <span class="token-item-tag">avatar</span>
           </div>
         </div>
         <div class="token-item">
           <span class="size-large"></span>
           <h3 class="token-item-name">large size, 48px</h3>
           <div class="token-item-tags tag-group" role="group">
-            <span class="tag">avatar</span>
-            <span class="tag">button</span>
-            <span class="tag">textfield</span>
+            <span class="token-item-tag">avatar</span>
+            <span class="token-item-tag">button</span>
+            <span class="token-item-tag">textfield</span>
           </div>
         </div>
         <div class="token-item">
           <span class="size-medium"></span>
           <h3 class="token-item-name">medium size, 32px</h3>
           <div class="token-item-tags tag-group" role="group">
-            <span class="tag">avatar</span>
-            <span class="tag">button</span>
-            <span class="tag">chip</span>
+            <span class="token-item-tag">avatar</span>
+            <span class="token-item-tag">button</span>
+            <span class="token-item-tag">chip</span>
           </div>
         </div>
         <div class="token-item">
@@ -80,9 +81,9 @@
           <span class="size-small"></span>
           <h3 class="token-item-name">small size, 24px</h3>
           <div class="token-item-tags tag-group" role="group">
-            <!-- <span class="tag">avatar</span> -->
-            <span class="tag">tag</span>
-            <span class="tag">button in textfield(indicator)</span>
+            <!-- <span class="token-item-tag">avatar</span> -->
+            <span class="token-item-tag">tag</span>
+            <span class="token-item-tag">button in textfield(indicator)</span>
           </div>
         </div>
         <div class="token-item">
@@ -90,10 +91,10 @@
           <span class="size-tiny"></span>
           <h3 class="token-item-name">tiny size, 16px</h3>
           <div class="token-item-tags tag-group" role="group">
-            <span class="tag">avatar</span>
-            <span class="tag">radio</span>
-            <span class="tag">checkbox</span>
-            <span class="tag">switch</span>
+            <span class="token-item-tag">avatar</span>
+            <span class="token-item-tag">radio</span>
+            <span class="token-item-tag">checkbox</span>
+            <span class="token-item-tag">switch</span>
           </div>
         </div>
       </div>
@@ -187,60 +188,84 @@
       <section class="color-group" role="listbox" style="display:block;">
         <h2 style="margin:0 0 .5rem;"><small>Grayscales</small></h2>
         <div class="color-group">
-          <figure class="color-item is-gray000">
-            <div></div>
-            <h3>gray000</h3>
-            <span>background / text(dark theme)</span>
-          </figure>
-          <figure class="color-item is-gray100">
-            <div></div>
-            <h3>gray100</h3>
-            <span>background / border</span>
-          </figure>
-          <figure class="color-item is-gray200">
-            <div></div>
-            <h3>gray200</h3>
-            <span>border / hover state</span>
-          </figure>
-          <figure class="color-item is-gray400">
-            <div></div>
-            <h3>gray400</h3>
-            <span>text / disabled state</span>
-          </figure>
-          <!-- <figure class="color-item is-gray600">
+          <article class="token-item is-gray000">
+            <figure class="size-large"></figure>
+            <h3 class="token-item-name">gray000</h3>
+            <div class="token-item-tags tag-group" role="group">
+              <span class="token-item-tag">background</span>
+              <span class="token-item-tag">text(dark theme)</span>
+            </div>
+          </article>
+          <article class="token-item is-gray100">
+            <figure class="size-large"></figure>
+            <h3 class="token-item-name">gray100</h3>
+            <div class="token-item-tags tag-group" role="group">
+              <span class="token-item-tag">background</span>
+              <span class="token-item-tag">border</span>
+            </div>
+          </article>
+          <article class="token-item is-gray200">
+            <figure class="size-large"></figure>
+            <h3 class="token-item-name">gray200</h3>
+            <div class="token-item-tags tag-group" role="group">
+              <span class="token-item-tag">border</span>
+              <span class="token-item-tag">hover state</span>
+            </div>
+          </article>
+          <article class="token-item is-gray400">
+            <figure class="size-large"></figure>
+            <h3 class="token-item-name">gray400</h3>
+            <div class="token-item-tags tag-group" role="group">
+              <span class="token-item-tag">text</span>
+              <span class="token-item-tag">disabled state</span>
+            </div>
+          </article>
+          <!-- <figure class="token-item is-gray600">
             <div></div>
             <figcaption>gray600</figcaption>
           </figure> -->
-          <figure class="color-item is-gray800">
-            <div></div>
-            <h3>gray800</h3>
-            <span>background / text</span>
-          </figure>
+          <article class="token-item is-gray800">
+            <figure class="size-large"></figure>
+            <h3 class="token-item-name">gray800</h3>
+            <div class="token-item-tags tag-group" role="group">
+              <span class="token-item-tag">background</span>
+              <span class="token-item-tag">text</span>
+            </div>
+          </article>
         </div>
         <br />
         <h2 style="margin:0 0 .5rem;font-size:var(--caption);">Colors</h2>
         <div class="color-group">
-          <figure class="color-item is-primary100">
-            <div></div>
-            <h3>green100</h3>
-            <span>background / active state</span>
+          <figure class="token-item is-primary100">
+            <figure class="size-large"></figure>
+            <h3 class="token-item-name">green100</h3>
+            <div class="token-item-tags tag-group" role="group">
+              <span class="token-item-tag">background</span>
+              <span class="token-item-tag">active state</span>
+            </div>
           </figure>
-          <figure class="color-item is-primary200">
-            <div></div>
-            <h3>green800</h3>
-            <span>background</span>
+          <figure class="token-item is-primary200">
+            <figure class="size-large"></figure>
+            <h3 class="token-item-name">green800</h3>
+            <div class="token-item-tags tag-group" role="group">
+              <span class="token-item-tag">background</span>
+            </div>
           </figure>
-          <figure class="color-item is-red800">
-            <div></div>
-            <h3>red800</h3>
-            <span>danger</span>
+          <figure class="token-item is-red800">
+            <figure class="size-large"></figure>
+            <h3 class="token-item-name">red800</h3>
+            <div class="token-item-tags tag-group" role="group">
+              <span class="token-item-tag">danger</span>
+            </div>
           </figure>
-          <figure class="color-item">
-            <div style="background:gold"></div>
-            <h3>gold</h3>
-            <span>accent / sample</span>
+          <figure class="toekn-item">
+            <figure class="size-large" style="background:gold"></figure>
+            <h3 class="token-item-name">gold</h3>
+            <div class="token-item-tags tag-group" role="group">
+              <span class="token-item-tag">accent(temp)</span>
+            </div>
           </figure>
-          <!-- <figure class="color-item is-gradient">
+          <!-- <figure class="token-item is-gradient">
             <div></div>
             <figcaption>gradient</figcaption>
           </figure> -->
@@ -248,7 +273,7 @@
         <br />
         <h2 style="margin:0 0 .5rem;" title="Surface or Elevation"><small>Elevation</small></h2>
         <div class="color-group">
-          <figure class="color-item surface-item">
+          <figure class="token-item surface-item">
             <div style="background:var(--gray0);"></div>
             <h3>elevation400</h3>
           </figure>
@@ -256,13 +281,13 @@
         <br />
         <h2 style="margin:0 0 .5rem;"><small>Skeleton</small></h2>
         <div class="color-group">
-          <figure class="color-item">
+          <figure class="token-item">
             <div class="skeleton"></div>
             <h3>Skeleton400</h3>
           </figure>
         </div>
       </section>
-      <!-- <figure class="color-item">
+      <!-- <figure class="token-item">
         <div class="skeleton"></div>
         <h3>Skeleton400</h3>
       </figure> -->
@@ -277,7 +302,7 @@
         <!-- <p class="checklist"><span><i></i></span> display 크기는 프로모션 페이지에서 제목으로만 사용하세요.</p>
         <p class="checklist"><span><i></i></span> subhead 크기는 카드, 아티클 레벨에서 소제목으로 사용하세요. 포스트, 약관 등 텍스트 중심의 페이지에서 본문으로 사용할 수 있습니다.</p>
         <p class="checklist"><span><i></i></span> caption 크기는 벨리데이션 피드백, 보조 텍스트 등 도움말 맥락에서 사용하세요.</p>
-        <p class="checklist"><span><i></i></span> <b class="tag" data-appearance="secondary" style="margin:0 0 0 var(--space);">예외</b> bottom navigation에서 레이블의 폰트 크기를 10px로 사용합니다. </p>
+        <p class="checklist"><span><i></i></span> <b class="token-item-tag" data-appearance="secondary" style="margin:0 0 0 var(--space);">예외</b> bottom navigation에서 레이블의 폰트 크기를 10px로 사용합니다. </p>
         <p class="checklist"><span><i></i></span> memo: 타이틀의 역할을 하는 텍스트는 단어 하나(타이틀)가 될 수도, 태그라인이 될 수도 있다. 태그라인일 경우 글자수와 단어수를 제한하고, 개행 조건도 정의하자. 작은 디바이스에서도 최대한 맞게.</p> -->
       </div>
       <!-- <li>asap의 dash를 마이너스로 쓰면 어색. 무게가 살짝 다름. role에 따라 구분하자. caption, helper 등 같은 값을 가지는 텍스트로 따로 모듈화하는 것이 좋겠다. letter-spacing은 크기마다 다르게 적용하시요</li> -->
@@ -291,16 +316,16 @@
         <div class="design-typograph-item">
           한글 <b style="display:block;font-size:var(--font-size-subhead);line-height:1.5;font-weight:var(--font-weight-bold);">아리타 산스</b>
           <div class="tag-group" role="group" style="margin-top:1rem;">
-            <span class="tag">normal</span>
-            <span class="tag">bold</span>
+            <span class="token-item-tag">normal</span>
+            <span class="token-item-tag">bold</span>
           </div>
         </div>
         <div class="design-typograph-item">
           <!-- <i style="display:block;margin-bottom:.5rem;width:16px;height:16px;border-radius:var(--radius400);background:var(--color-primary);color:var(--gray400);"></i> -->
           영문 <b style="display:block;font-size:var(--font-size-subhead);line-height:1.5;font-weight:var(--font-weight-bold);">Asap</b style="display:block;font-size:var(--font-size-subhead);margin-top:.5rem;">
           <div class="tag-group" role="group" style="margin-top:1rem;">
-            <span class="tag">normal</span>
-            <span class="tag">bold</span>
+            <span class="token-item-tag">normal</span>
+            <span class="token-item-tag">bold</span>
           </div>
         </div>
       </div>
@@ -312,10 +337,10 @@
           <p class="token-item-description">3rem<i class="icon-bullet"></i>40px</p>
           <!-- <p class="token-item-description">프로모션 페이지에서 제목으로 사용하세요.</p> -->
           <div class="token-item-tags tag-group" role="group">
-            <span class="tag">avatar</span>
-            <span class="tag">radio</span>
-            <span class="tag">checkbox</span>
-            <span class="tag">switch</span>
+            <span class="token-item-tag">avatar</span>
+            <span class="token-item-tag">radio</span>
+            <span class="token-item-tag">checkbox</span>
+            <span class="token-item-tag">switch</span>
           </div>
         </div>
   
@@ -325,10 +350,10 @@
           <p class="token-item-description">2rem<i class="icon-bullet"></i>40px</p>
           <!-- <p class="token-item-description">디스크립션.</p> -->
           <div class="token-item-tags tag-group" role="group">
-            <span class="tag">avatar</span>
-            <span class="tag">radio</span>
-            <span class="tag">checkbox</span>
-            <span class="tag">switch</span>
+            <span class="token-item-tag">avatar</span>
+            <span class="token-item-tag">radio</span>
+            <span class="token-item-tag">checkbox</span>
+            <span class="token-item-tag">switch</span>
           </div>
         </div>
 
@@ -338,10 +363,10 @@
           <p class="token-item-description">1.125rem<i class="icon-bullet"></i>40px</p>
           <!-- <p class="token-item-description">디스크립션.</p> -->
           <div class="token-item-tags tag-group" role="group">
-            <span class="tag">avatar</span>
-            <span class="tag">radio</span>
-            <span class="tag">checkbox</span>
-            <span class="tag">switch</span>
+            <span class="token-item-tag">avatar</span>
+            <span class="token-item-tag">radio</span>
+            <span class="token-item-tag">checkbox</span>
+            <span class="token-item-tag">switch</span>
           </div>
         </div>
 
@@ -351,10 +376,10 @@
           <p class="token-item-description">.875rem<i class="icon-bullet"></i>14px</p>
           <!-- <p class="token-item-description">디스크립션.</p> -->
           <div class="token-item-tags tag-group" role="group">
-            <span class="tag">avatar</span>
-            <span class="tag">radio</span>
-            <span class="tag">checkbox</span>
-            <span class="tag">switch</span>
+            <span class="token-item-tag">avatar</span>
+            <span class="token-item-tag">radio</span>
+            <span class="token-item-tag">checkbox</span>
+            <span class="token-item-tag">switch</span>
           </div>
         </div>
 
@@ -365,10 +390,10 @@
           <p class="token-item-description">.75rem<i class="icon-bullet"></i>12px</p>
           <!-- <p class="token-item-description">디스크립션.</p> -->
           <div class="token-item-tags tag-group" role="group">
-            <span class="tag">avatar</span>
-            <span class="tag">radio</span>
-            <span class="tag">checkbox</span>
-            <span class="tag">switch</span>
+            <span class="token-item-tag">avatar</span>
+            <span class="token-item-tag">radio</span>
+            <span class="token-item-tag">checkbox</span>
+            <span class="token-item-tag">switch</span>
           </div>
         </div>
       </div>
@@ -382,28 +407,28 @@
         [role=group] vs [role=listbox] ex) button group, tag listbox
       </blockquote>
       <div style="display:flex;align-items:center;height:10rem;border:var(--border100);border-radius:var(--radius400);text-align:center;font-size:var(--font-size-caption);position:relative;">
-        <div class="space" style="width:5%;"><span class="tag">5%</span></div>
+        <div class="space" style="width:5%;"><span class="token-item-tag">5%</span></div>
         <div style="display:flex;align-items:center;justify-content:center;width:calc(50% - 5% - .5rem);height:100%;">column<br />50% - 0.5rem</div>
-        <div class="space" style="width:1rem;"><span class="tag">1rem</span></div>
+        <div class="space" style="width:1rem;"><span class="token-item-tag">1rem</span></div>
         <div style="display:flex;align-items:center;justify-content:center;width:calc(50% - 5% - .5rem);height:100%;">colum<br />50% - 0.5rem</div>
-        <div class="space" style="width:5%;"><span class="tag">5%</span></div>
+        <div class="space" style="width:5%;"><span class="token-item-tag">5%</span></div>
       </div>
 
       <hr />
       
       <div class="spacing-card">
-        <div class="space" style="height:1.5rem;position:absolute;left:0;right:0;top:0;bottom:calc(100% - 1.5rem);"><span class="tag">1.5rem</span></div>
-        <div class="space" style="height:1.5rem;position:absolute;left:0;right:0;top:calc(100% - 1.5rem);bottom:0;z-index:0;"><span class="tag">1.5rem</span></div>
-        <div class="space" style="height:100%;position:absolute;left:0;right:calc(100% - 1.5rem);top:0;bottom:0;z-index:0;"><span class="tag">1.5rem</span></div>
-        <div class="space" style="height:100%;position:absolute;left:calc(100% - 1.5rem);right:0;top:0;bottom:0;z-index:0;"><span class="tag">1.5rem</span></div>
+        <div class="space" style="height:1.5rem;position:absolute;left:0;right:0;top:0;bottom:calc(100% - 1.5rem);"><span class="token-item-tag">1.5rem</span></div>
+        <div class="space" style="height:1.5rem;position:absolute;left:0;right:0;top:calc(100% - 1.5rem);bottom:0;z-index:0;"><span class="token-item-tag">1.5rem</span></div>
+        <div class="space" style="height:100%;position:absolute;left:0;right:calc(100% - 1.5rem);top:0;bottom:0;z-index:0;"><span class="token-item-tag">1.5rem</span></div>
+        <div class="space" style="height:100%;position:absolute;left:calc(100% - 1.5rem);right:0;top:0;bottom:0;z-index:0;"><span class="token-item-tag">1.5rem</span></div>
         <h4 class="typography-subhead" style="font-size:var(--font-size-subhead);">선약이 있어서 ✋ <span style="display:block;">자아실현은 못할 것 같아요.</네무></h4>
-        <div class="space" style="height:1rem;"><span class="tag">1rem</span></div>
+        <div class="space" style="height:1rem;"><span class="token-item-tag">1rem</span></div>
         <p class="typography-paragraph">서브헤드와 디스크립션 혹은 패러그라프는 이렇게 사용하세요. 타이틀의 행간이 조정되었기 때문에 시각보정이 필요할 수도 있어요.</p>
-        <div class="space" style="height:2rem;"><span class="tag">2rem</span></div>
+        <div class="space" style="height:2rem;"><span class="token-item-tag">2rem</span></div>
         <time class="typography-caption">10 January, 2020</time>
         <footer class="card-foot">
           <a href="">Read More</a>
-          <span class="tag">Category</span>
+          <span class="token-item-tag">Category</span>
         </footer>
       </div>
     </article>
@@ -418,7 +443,7 @@
       </div>
 
       <!-- <li></li> -->
-      <!-- <li><span class="tag">내부 옵션을 리스트업.</span></li> -->
+      <!-- <li><span class="token-item-tag">내부 옵션을 리스트업.</span></li> -->
         <!-- <p class="checklist"><span><i></i></span> history: padding 1.5rem에서 1rem으로 변경하고 두 가지 사이즈로 확장. 1.5rem 단일 사이즈로 사용 시 모바일에서 공간이 큼.</p> -->
 
       <blockquote>
@@ -485,11 +510,11 @@
       <!-- <p class="design-article-description">group vs row vs rowgroup</p> -->
       <p class="design-article-description">role=group, role=menuitem, role=treeitem</p>
       <code class="design-article-description" style="padding:1rem;">
-        <p>@mixin group-pull {}</p>
+        <p>@mixin group {}</p>
         <!-- <p>&nbsp;&nbsp;</p> -->
-        <p>@mixin group-bleeding {}</p>
+        <p>@mixin group-bleeding {@include group}</p>
         <hr />
-        <p>.filter-group {</p>
+        <p>.tag-group {</p>
         <p>&nbsp;&nbsp;@include  group-bleeding;</p>
         <p>}</p>
       </code>
