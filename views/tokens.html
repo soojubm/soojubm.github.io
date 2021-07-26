@@ -121,7 +121,7 @@
     <!-- <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Spacing</h1>
       <p class="design-article-description">작성 중.</p>
-      <code style="padding:1rem;">
+      <code>
         <p>--space-leading-title: -.25rem;</p>
         <p>--space-leading-subhead: -.125rem;</p>
         <hr />
@@ -152,7 +152,7 @@
         <dt>large</dt><dd>선택. > 1380 이하</dd>
       </dl>
       <hr />
-      <code style="padding:1rem;">
+      <code>
         <p>--width-container-tiny: 320px;</p>
         <p>--width-container-small: 480px;</p>
         <p>--width-container-medium: 640px;</p>
@@ -209,7 +209,7 @@
             <h3 class="token-item-name">gray200</h3>
             <div class="token-item-tags tag-group" role="group">
               <span class="token-item-tag">border</span>
-              <span class="token-item-tag">hover state</span>
+              <span class="token-item-tag">hoverState</span>
             </div>
           </article>
           <article class="token-item is-gray400">
@@ -236,35 +236,35 @@
         <br />
         <h2 style="margin:0 0 .5rem;font-size:var(--caption);">Colors</h2>
         <div class="color-group">
-          <figure class="token-item is-primary100">
+          <article class="token-item is-primary100">
             <figure class="size-large"></figure>
             <h3 class="token-item-name">green100</h3>
             <div class="token-item-tags tag-group" role="group">
               <span class="token-item-tag">background</span>
-              <span class="token-item-tag">active state</span>
+              <span class="token-item-tag">activeState</span>
             </div>
-          </figure>
-          <figure class="token-item is-primary200">
+          </article>
+          <article class="token-item is-primary200">
             <figure class="size-large"></figure>
             <h3 class="token-item-name">green800</h3>
             <div class="token-item-tags tag-group" role="group">
               <span class="token-item-tag">background</span>
             </div>
-          </figure>
-          <figure class="token-item is-red800">
+          </article>
+          <article class="token-item is-red800">
             <figure class="size-large"></figure>
             <h3 class="token-item-name">red800</h3>
             <div class="token-item-tags tag-group" role="group">
               <span class="token-item-tag">danger</span>
             </div>
-          </figure>
-          <figure class="toekn-item">
+          </article>
+          <article class="token-item">
             <figure class="size-large" style="background:gold"></figure>
             <h3 class="token-item-name">gold</h3>
             <div class="token-item-tags tag-group" role="group">
               <span class="token-item-tag">accent(temp)</span>
             </div>
-          </figure>
+          </article>
           <!-- <figure class="token-item is-gradient">
             <div></div>
             <figcaption>gradient</figcaption>
@@ -273,18 +273,18 @@
         <br />
         <h2 style="margin:0 0 .5rem;" title="Surface or Elevation"><small>Elevation</small></h2>
         <div class="color-group">
-          <figure class="token-item surface-item">
-            <div style="background:var(--gray0);"></div>
-            <h3>elevation400</h3>
-          </figure>
+          <article class="token-item is-elevation">
+            <figure class="size-large"></figure>
+            <h3 class="token-item-name">elevation400</h3>
+          </article>
         </div>
         <br />
         <h2 style="margin:0 0 .5rem;"><small>Skeleton</small></h2>
         <div class="color-group">
-          <figure class="token-item">
-            <div class="skeleton"></div>
-            <h3>Skeleton400</h3>
-          </figure>
+          <article class="token-item">
+            <figure class="size-large skeleton"></figure>
+            <h3 class="token-item-name">Skeleton400</h3>
+          </article>
         </div>
       </section>
       <!-- <figure class="token-item">
@@ -312,7 +312,7 @@
       </button>
 
       <!-- <h6 class="title-bordered">Font Family</h6> -->
-      <div class="design-typograph-group tile-flat" style="margin-bottom:var(--space);">
+      <div class="design-typograph-group tile-flat-small" style="margin-bottom:var(--space);">
         <div class="design-typograph-item">
           한글 <b style="display:block;font-size:var(--font-size-subhead);line-height:1.5;font-weight:var(--font-weight-bold);">아리타 산스</b>
           <div class="tag-group" role="group" style="margin-top:1rem;">
@@ -330,11 +330,11 @@
         </div>
       </div>
       <div class="tokens typography-group">
-        <div class="token-item" style="padding:1rem;">
+        <div class="token-item">
           <!-- <figure class="token-item-avatar"></figure> -->
           <h3 class="token-item-name" style="margin-top:var(--space-leading-subhead);margin-bottom:0;">huge</h3>
-          <mark class="token-item-text" style="font-size:3rem;"><span style="display:block;margin-top:-5px;">들</span></mark>
-          <p class="token-item-description">3rem<i class="icon-bullet"></i>40px</p>
+          <figure class="token-item-text" style="font-size:3rem;"><span style="display:block;margin-top:-5px;">들</span></figure>
+          <p class="token-item-description">3rem, 40px</p>
           <!-- <p class="token-item-description">프로모션 페이지에서 제목으로 사용하세요.</p> -->
           <div class="token-item-tags tag-group" role="group">
             <span class="token-item-tag">avatar</span>
@@ -344,10 +344,10 @@
           </div>
         </div>
   
-        <div class="token-item" style="padding:1rem;">
+        <div class="token-item">
           <h3 class="token-item-name" style="margin-top:var(--space-leading-subhead);margin-bottom:0;">large</h3>
           <mark class="token-item-text" style="font-size:2rem;">립</mark>
-          <p class="token-item-description">2rem<i class="icon-bullet"></i>40px</p>
+          <p class="token-item-description">2rem, 40px</p>
           <!-- <p class="token-item-description">디스크립션.</p> -->
           <div class="token-item-tags tag-group" role="group">
             <span class="token-item-tag">avatar</span>
@@ -357,10 +357,10 @@
           </div>
         </div>
 
-        <div class="token-item" style="padding:1rem;">
+        <div class="token-item">
           <h3 class="token-item-name" style="margin-top:var(--space-leading-subhead);top:0;margin-bottom:0;">medium</h3>
           <mark class="token-item-text" style="font-size:var(--font-size-subhead);">니</mark>
-          <p class="token-item-description">1.125rem<i class="icon-bullet"></i>40px</p>
+          <p class="token-item-description">1.125rem, 40px</p>
           <!-- <p class="token-item-description">디스크립션.</p> -->
           <div class="token-item-tags tag-group" role="group">
             <span class="token-item-tag">avatar</span>
@@ -370,10 +370,10 @@
           </div>
         </div>
 
-        <div class="token-item" style="padding:1rem;">
+        <div class="token-item">
           <h3 class="token-item-name" style="margin-top:var(--space-leading-subhead);top:0;margin-bottom:0;">small</h3>
           <mark class="token-item-text" style="font-size:var(--font-size-body);">까</mark>
-          <p class="token-item-description">.875rem<i class="icon-bullet"></i>14px</p>
+          <p class="token-item-description">.875rem, 14px</p>
           <!-- <p class="token-item-description">디스크립션.</p> -->
           <div class="token-item-tags tag-group" role="group">
             <span class="token-item-tag">avatar</span>
@@ -383,11 +383,11 @@
           </div>
         </div>
 
-        <div class="token-item" style="padding:1rem;">
+        <div class="token-item">
           <!-- <figure class="token-item-avatar"></figure> -->
           <h3 class="token-item-name" style="margin-top:var(--space-leading-subhead);margin-bottom:0;">tiny</h3>
           <mark class="token-item-text" style="font-size:var(--font-size-caption);">아</mark>
-          <p class="token-item-description">.75rem<i class="icon-bullet"></i>12px</p>
+          <p class="token-item-description">.75rem, 12px</p>
           <!-- <p class="token-item-description">디스크립션.</p> -->
           <div class="token-item-tags tag-group" role="group">
             <span class="token-item-tag">avatar</span>
@@ -509,7 +509,7 @@
       <p class="design-article-description">작성 중. container.</p>
       <!-- <p class="design-article-description">group vs row vs rowgroup</p> -->
       <p class="design-article-description">role=group, role=menuitem, role=treeitem</p>
-      <code class="design-article-description" style="padding:1rem;">
+      <code class="design-article-description">
         <p>@mixin group {}</p>
         <!-- <p>&nbsp;&nbsp;</p> -->
         <p>@mixin group-bleeding {@include group}</p>
