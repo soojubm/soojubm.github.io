@@ -154,11 +154,15 @@
 @mixin title-bordered {
   // height: 24px;
   // line-height: .8;
-  height: 32px;
   display: flex;
   box-sizing: border-box;
   align-items: center;
+  margin: 1rem 0 var(--space) 0;
+  padding: .5rem 0;
+  border-bottom: var(--border100);
   font-size:var(--font-size-caption);
+  color: var(--gray400);
+  font-weight: 400;
 }
 .title-bordered {@include title-bordered;}
 

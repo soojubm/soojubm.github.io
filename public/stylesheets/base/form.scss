@@ -157,7 +157,7 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
   @media (--breakpoint-small) {top: 40px;}
 }
 @mixin textfield-surfix {
-  @include avatar-small;position:absolute;right:1rem;top:40px;pointer-events:none;
+  @include avatar-small;background-color:var(--gray0);position:absolute;right:1rem;top:40px;pointer-events:none;
   // @media (--breakpoint-small) {top:35px;}
 }
 

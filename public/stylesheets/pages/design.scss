@@ -320,9 +320,9 @@
 
 
 
-.accordion {@include tile-elevated;padding:1.5rem;position:relative;}
+.accordion {@include tile-elevated;position:relative;}
 .accordion:hover {@include hover-item;}
-.accordion + .accordion {margin:1rem 0 0 0;cursor:pointer;}
+.accordion + .accordion {margin:var(--space) 0 0 0;cursor:pointer;}
 .accordion-title {display:flex;align-items:center;justify-content:space-between;@include subhead;}
 .accordion-title-icon {@include avatar-medium;}
 .accordion-panel {display:none;}
@@ -339,7 +339,7 @@
 .design-home header p {margin:var(--space-after-title) 0 0 0;font-size:var(--font-size-subhead);}
 .design-home nav {display:flex;flex-wrap:wrap;justify-content:center;width:100%;padding:0 var(--grid-margin) 4rem;background:var(--gray0);position:relative;z-index:var(--zindex-default);}
 .design-home nav a {display:flex;align-items:center;@include tile-elevated;width:25%;max-width:300px;margin:.5rem;font-size:var(--font-size-subhead);font-weight:var(--font-weight-bold);color:var(--gray800);}
-.design-home nav a[readonly] {opacity:.5;cursor:not-allowed;}
+.design-home nav a[readonly] {opacity:.5;cursor:not-allowed;box-shadow:none;}
 .design-home nav a:hover:not([readonly]) {@include hover-item;}
 .design-home nav a span {@include avatar-medium;margin-left:auto;margin-top:2px;}
 .design-home nav a div {margin:0 0 0 var(--space-before-badge);}

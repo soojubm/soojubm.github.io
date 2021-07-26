@@ -97,9 +97,10 @@
       <blockquote>
         <dl class="design-article-description">
           <dt>avatarGroup</dt><dd></dd>
-          <dt>avatarBadge</dt><dd></dd>
-          <dt>avatarThumbnail</dt><dd></dd>
-          <dt>avatarLabel</dt><dd></dd>
+          <dt>&nbsp;&nbsp;avatar</dt><dd></dd>
+          <dt>&nbsp;&nbsp;&nbsp;&nbsp;avatarThumbnail</dt><dd></dd>
+          <dt>&nbsp;&nbsp;&nbsp;&nbsp;avatarLabel</dt><dd>optional</dd>
+          <dt>&nbsp;&nbsp;&nbsp;&nbsp;avatarBadge</dt><dd>optional</dd>
         </dl>
       </blockquote>
       <div>
@@ -172,18 +173,40 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Chips ☀️</h1>
-      <p class="design-article-description">작성 중. 현재 스몰 버튼과 같은 스타일.</p>
+      <p class="design-article-description">작성 중.</p>
       <div class="design-article-description">
         <p class="checklist"><span><i></i></span> 다른 맥락의 chip을 나열할 수 있습니다. 단일선택, 다중선택, 삭제여부, 펼침메뉴 등의 기표를 아이콘으로 제공하세요.</p>
         <p class="xlist"><span><i></i></span> 콘텐츠 정렬sorting에 사용하지 마세요. 콘텐츠 정렬은 selectbox를 사용합니다.</p>
       </div>
 
       <blockquote>
-        <p>chipGroup, chipIcon(thumbnail, check, x, arrow) chipLabel</p>
+        <dl class="design-article-description">
+          <dt>chipGroup</dt><dd>horizentalScroll, aria-orientation="horizontal"</dd>
+          <dt>&nbsp;&nbsp;chip</dt><dd>default,active,disabled</dd>
+          <dt>&nbsp;&nbsp;&nbsp;&nbsp;chipIcon</dt><dd></dd>
+          <dt>&nbsp;&nbsp;&nbsp;&nbsp;chipLabel</dt><dd></dd>
+        </dl>
+      </blockquote>
+
+      <blockquote>
         <p>필터에서 액티브 상태에 브랜드 컬러를 많이 안 쓰는 경향. 진한 회색. 콘텐츠 탐색과 약간의 액션을 유도해야 하는 페이지에서는 회색으로?</p>
-        <p>디자인시스템에서 tag, pill, chip 등으로 명명. pill은 알약 형태의 둥근 radius에서 명명.</p>
+        <p>tag/pill/chip. pill은 둥근 radius 알약 모양.</p>
         <p>todo 안드로이드 chipGroup, HorizontalScrollView, singleLine, action/entry/filter(check active)/choice</p>
       </blockquote>
+
+      <div class="chip-group" role="group" aria-orientation="horizontal">
+        <button class="chip">
+          <span class="chip-label">default</span>
+        </button>
+        <button class="chip is-active">
+          <span class="chip-label">active</span>
+        </button>
+        <button class="chip" style="opacity:.5;cursor:not-allowed;">
+          <span class="chip-label">disabled</span>
+        </button>
+      </div>
+
+      <hr  role="separator" />
       
       <h6 class="title-bordered">Filter</h6>
       <div class="chip-group js-chip" role="group" aria-orientation="horizontal">
@@ -294,7 +317,7 @@
         <!-- <p class="xlist"><span><i></i></span> 크기가 다른 버튼을 함께 사용하지 마세요. (버튼 그룹)</p> -->
         <p class="checklist"><span><i></i></span> large 버튼은 프로모션 페이지에서 사용합니다. small 버튼은 아이템(가칭)에서 사용합니다.</p>
         <p class="checklist"><span><i></i></span> 아이콘 버튼을 사용할 때 아이콘은 관습적인 메타포를 사용하세요. accessibility-text(visually-hidden)</p>
-        <p class="checklist"><span><i></i></span> 모든 버튼의 상태에 스타일을 통일합니다. 모든 버튼의 disabled 같은 opacity.</p>
+        <p class="checklist"><span><i></i></span> 버튼의 상태에 따른 스타일은 버튼의 종류와 무관하게 하나의 스타일을 적용합니다.</p>
         <p class="xlist"><i></i> binary choice에서 primary 버튼과 secondary 버튼을 함께 사용하지 마세요.</p>
         <p class="xlist"><i></i> 가이드 텍스트를 cta 아래에 두지 마세요. 일반적으로 네거티브 액션(?)을 위한 텍스트 형태의 버튼이 위치하는 영역입니다.</p>
       </div>
@@ -620,28 +643,25 @@
         <li>작성 중. todo: checklist(price card 등에서 사용) 정의. 대부분의 유아이는 리스트 형식으로 나열되기 때문에 텍스트 리스트에 한정하여 리스트 태그(ul, ol, dl)로 마크업합니다. (role=listbox/listitem)</li>
       </ul> -->
       <h6 class="title-bordered">List</h6>
-<div class="tile-flat">
-        <ul class="list-sample">
-          <li title="unordered list, level 1">순서가 없는 리스트
-            <ul>
-              <li title="unordered list, level 2">순서가 없는 리스트</li>
-            </ul>
-          </li>
-          <li>순서가 없는 리스트</li>
-        </ul>
-        <hr role="seporator" />
-        <ol class="list-sample">
-          <li>순서가 있는 리스트
-            <ol>
-              <li>순서가 있는 리스트</li>
-            </ol>
-          </li>
-          <li>순서가 있는 리스트</li>
-        </ol>
-</div>
+      <ul class="list-sample">
+        <li title="unordered list, level 1">순서가 없는 리스트
+          <ul>
+            <li title="unordered list, level 2">순서가 없는 리스트</li>
+          </ul>
+        </li>
+        <li>순서가 없는 리스트</li>
+      </ul>
+      <ol class="list-sample" style="margin:var(--space) 0 0 0;">
+        <li>순서가 있는 리스트
+          <ol>
+            <li>순서가 있는 리스트</li>
+          </ol>
+        </li>
+        <li>순서가 있는 리스트</li>
+      </ol>
       <br />
       <h6 class="title-bordered">Statistic</h6>
-      <div class="statistic tile-flat" style="display:flex;justify-content:space-evenly;">
+      <div class="statistic" style="display:flex;justify-content:space-evenly;">
         <div class="statistic-item">
           <i class="statistic-label">팔로워</i>
           <span class="statistic-value">21,682</span>
@@ -657,7 +677,7 @@
       </div>
       <br />
       <h6 class="title-bordered">Summary</h6>
-      <section class="summary tile-flat">
+      <section class="summary">
         <div class="summary-item">
           <div class="summary-item-label">상품 금액</div>
           <div class="summary-item-value">₩ 160,000</div>
@@ -675,7 +695,7 @@
       <br />
 
       <h6 class="title-bordered">Metadata (description list)</h6>
-      <section class="kb tile-flat">
+      <section class="kb">
         <table>
           <tbody>
             <tr style="border:0;">
@@ -689,25 +709,12 @@
           </tbody>
         </table>
       </section>
-      <p style="margin:var(--space-after-item);font-size:var(--font-size-caption);">아이콘을 레이블없이 단독으로 사용하지 마세요. todo 참고 링크(아이콘은 클릭할 수 있음을 나타내는 역할)</p>
-      <section class="kb tile-flat">
-        <table>
-          <tbody>
-            <tr style="border:0;">
-              <th><span class="icon-person" style="display:block;opacity:.8;transform: scale(.8);"><i></i></span></th>
-              <td>수줍이</td>
-            </tr>
-            <tr style="border:0;">
-              <th>레이블</th>
-              <td>값</td>
-            </tr>
-          </tbody>
-        </table>   
-      </section>
+      <!-- <p style="margin:var(--space-after-item);font-size:var(--font-size-caption);">아이콘을 레이블없이 단독으로 사용하지 마세요. todo 참고 링크(아이콘은 클릭할 수 있음을 나타내는 역할)</p> -->
+
       <br />
 
       <h6 class="title-bordered">Suggestion</h6>
-      <div class="product-info-price tile-flat" role="suggestion" style="margin-top:0;">
+      <div class="product-info-price" role="suggestion" style="margin-top:0;">
         <del class="product-info-price-deletion" role="deletion">₩ 30,000</del>
         <b class="product-info-price-insertion" role="insertion">₩ 20,000</b>
         <em class="product-info-price-percentage">(30%)</em>
@@ -1000,14 +1007,16 @@
     </article>
 
     <article class="design-article js-scrollspy-section">
-      <h1 class="design-article-title">Accordions</h1>
-      <p class="design-article-description">아코디언은 질의응답 등 정보를 요약하여 목록화할 때 사용합니다. 자주묻는질문Frequently asked questions</p>
+      <h1 class="design-article-title">Accordion</h1>
+      <p class="design-article-description">요약된 정보 중 필요한 정보를 취사선택할 수 있습니다. 자주묻는질문Frequently asked questions에 사용하며 텍스트 위주의 간단한 공지글에도 사용할 수 있습니다.</p>
       <blockquote>
-          <p>plus icon은 addable이지 expandable은 아님. 구별하기.</p>
+          <p>plus icon은 addable이지 expandable이 아님. design token 기표로 정의하기.</p>
       </blockquote>
       <div class="design-article-description">
-        <p class="checklist"><span><i></i></span>복잡한 정보에서는 사용하지 마세요.</p>
+        <p class="checklist"><span><i></i></span>expandable/collapsible 기표를 제공하세요.</p>
+        <p class="checklist"><span><i></i></span>복잡한 정보나 사용자가 반드시 인지해야 하는 정보에서 사용하지 마세요.</p>
         <p class="checklist"><span><i></i></span>클릭 영역 정의. 본문, 외부를 클릭했을 때.</p>
+        <p class="checklist"><span><i></i></span>heading은 한 문장으로 간결하게 작성하세요.</p>
       </div>
       <!-- <details class="details">
         <summary class="details-summary">써머리</summary>
@@ -1491,7 +1500,7 @@
       <article class="tile-elevated" style="max-width:400px;">
         <div class="item" role="listitem">
           <figure class="item-avatar"></figure>
-          <span class="item-description">관심사가 비슷한 사용자</span>
+          <span class="item-description" style="display:block;margin-top:-.125rem;">관심사가 비슷한 사용자</span>
           <!-- <small style="display:block;color:var(--gray400);"></small> -->
           <h2 class="item-name">Gyeongsoo I</h2>
           <button class="item-action">팔로잉</button>

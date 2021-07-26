@@ -24,7 +24,7 @@
 .profile-user-statistic .statistic:hover {@include hover-item;}
 .profile-user-socials {}
 .profile-user-socials-title {margin:0.5rem 0;font-size:var(--font-size-body);font-weight:normal;color:var(--gray400);}
-.profile-user-socials-link {display:block;color:var(--gray800);text-decoration:underline;}
+.profile-user-socials-link {display:block;color:var(--gray800);}
 .profile-user-socials-link:hover {color:var(--color-primary);}
 .profile-user-controls {display:flex;margin:2rem 0 1rem;}
 .profile-user-controls-follow {@include button-primary;width:calc(70% - var(--space-after-button));}

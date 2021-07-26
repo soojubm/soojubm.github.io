@@ -13,6 +13,10 @@
       <h1 class="design-article-title">기표signifier</h1>
       <p class="design-article-description">작성 중.</p>
 
+      <div class="tile-flat-small">
+        <h3>disabled - opacity:.5;cursor:not-allowed; 그림자도 제거하는 것이 어떨꿰</h3>
+      </div>
+
       <!-- <h6 class="title-bordered">selection</h6>
       <h6 class="title-bordered">click - tag 컴포넌트/화살표/아이콘 아이템 전체가 클릭 영역</h6>
       <h6 class="title-bordered">link - internal/external</h6>
@@ -176,6 +180,22 @@
       <!-- <blockquote style="margin:2rem 0;">
         gray100 변수를 사용할 때 container-border-color와 같은 시멘틱한 네이밍으로 한 번 더 추상화 하세요.
       </blockquote> -->
+
+      <code class="design-article-description" style="padding:1rem;">
+        <p>--gray100: #ffffff;</p>
+        <p>--gray200: #ffffff;</p>
+        <p>--gray400: #ffffff;</p>
+        <p>--gray600: #ffffff; // outdated</p>
+        <p>--gray800: #ffffff;</p>
+        <hr />
+        <p>--button-background-color: var(--gray100);</p>
+        <p>--button-border-color: var(--gray100);</p>
+        <p>--button-background-active-color: var(--gray100);</p>
+        <p>--chip-background-color: var(--gray100);</p>
+        <p>--chip-border-color var(--gray100);</p>
+      </code>
+
+
       <button class="user-logout js-darkmode1" title="change theme" style="border-radius:var(--radius400);box-shadow:var(--shadow400);padding:.5rem;border:var(--border100);">
         <span class="user-logout-icon"><i class="icon-moon"></i></span>
         어둡게 보기
@@ -523,11 +543,11 @@
         <p>@mixin button-group {}</p>
         <!-- <p>&nbsp;&nbsp;</p> -->
         <hr />
-        <p>.post-tag-group {</p>
+        <p>.post-hashtag-group {</p>
         <p>&nbsp;&nbsp;@include group-bleeding;</p>
         <p>&nbsp;&nbsp;@include tag-group;</p>
         <p>}</p>
-        <p>.keyword-chip-group {</p>
+        <p>.keyword-group {</p>
         <p>&nbsp;&nbsp;@include  group-bleeding;</p>
         <p>&nbsp;&nbsp;@include  chip-group;</p>
         <p>}</p>
