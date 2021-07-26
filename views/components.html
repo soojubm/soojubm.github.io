@@ -294,16 +294,25 @@
         <!-- <p class="xlist"><span><i></i></span> 크기가 다른 버튼을 함께 사용하지 마세요. (버튼 그룹)</p> -->
         <p class="checklist"><span><i></i></span> large 버튼은 프로모션 페이지에서 사용합니다. small 버튼은 아이템(가칭)에서 사용합니다.</p>
         <p class="checklist"><span><i></i></span> 아이콘 버튼을 사용할 때 아이콘은 관습적인 메타포를 사용하세요. accessibility-text(visually-hidden)</p>
+        <p class="checklist"><span><i></i></span> 모든 버튼의 상태에 스타일을 통일합니다. 모든 버튼의 disabled 같은 opacity.</p>
         <p class="xlist"><i></i> binary choice에서 primary 버튼과 secondary 버튼을 함께 사용하지 마세요.</p>
         <p class="xlist"><i></i> 가이드 텍스트를 cta 아래에 두지 마세요. 일반적으로 네거티브 액션(?)을 위한 텍스트 형태의 버튼이 위치하는 영역입니다.</p>
       </div>
       <!-- <li>네이밍: style = solid/outline/plain/text (모든 스타일을 망라해야 하기 때문에 유아이 라이브러리에 어울리는 네이밍) appearance = link / subtle / primary, space = compact/fullwidth</li>
-      <li>aria-expanded / role="img" aria-label="plus icon" / aria-pressed={activated ? "true" : "false"}</li> -->
+      <li>aria-expanded / </li> -->
+      <!-- <p>primary: call to action / secondary: action... / tertiary: 닫기, 취소, 아이콘버튼</p> -->
+      <blockquote style="font-size:var(--font-size-tiny);">
+        <dl class="design-article-description">
+          <dt>buttonGroup</dt><dd></dd>
+          <dt>button</dt><dd>aria-pressed={isActivated ? "true" : "false"}</dd>
+          <dt>buttonLabel</dt><dd></dd>
+          <dt>buttonIcon</dt><dd>role="img" aria-label="plus icon" / </dd>
+        </dl>
+        <p>min-width, padding-left, padding-right</p>
+        <p>fetching, more load, icon button 컴포넌트화. + closeButton 단일 기능이기 때문에 iconButton에 포함하기보다 하나의 컴포넌트로 분리하여도 좋음.</p>
+      </blockquote>
+      
       <blockquote>
-        <p>min-width, padding, validation style or function</p>
-        <p>primary: call to action / secondary: action... / tertiary: 닫기, 취소, 아이콘버튼</p>
-        <p>hover, focus 상태에 개별적인 스타일링을 하지 않음. disabled 동일한 opacity.</p>
-        <p>fetching, more load, icon button 컴포넌트화. closeButton 단일 기능이기 때문에 따로.</p>
       </blockquote>
       <br />
     
@@ -457,12 +466,22 @@
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Textfields</h1>
       <p class="design-article-description">작성 중.</p>
-      <blockquote>
-        textfieldLeading, textfieldTailing, textfiledHelper, textfiledLabel, textfieldInput
-      </blockquote>
+      
       <div class="design-article-description">
         <p class="xlist"><span><i></i></span> 검색 필드를 네비게이션 바에 배치하지 마세요. <b hidden>(prefix에 뒤로가기 버튼이 포함되지 않는 형태로만 사용)</b></p>
       </div>
+
+      <blockquote style="font-size:var(--font-size-tiny);">
+        <p style="margin:0 0 var(--space) 0;color:var(--gray800);">anatomy</p>
+        <dl class="design-article-description">
+          <dt>textfield</dt><dd></dd>
+          <dt>textfieldInput</dt><dd></dd>
+          <dt>textfieldLabel</dt><dd></dd>
+          <dt>textfieldHelper</dt><dd>optional</dd>
+          <dt>textfieldIcon</dt><dd>optional</dd>
+          <dt>textfieldIndicator</dt><dd>optional</dd>
+        </dl>
+      </blockquote>
       <!-- <p>현재 chip과 같이 스타일로 묶여 있으나, 입력/선택으로 역할로 분리? unit, choose/enter</p> -->
       <h6 class="title-bordered">Number (quantity)</h6>
       <div class="quantity js-quantity">
@@ -596,7 +615,7 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Texts</h1>
-      <p class="design-article-description">작성 중. label과 value의 충분한 공간이 확보된다면 위계를 위해 형태 변형을 최소화.</p>
+      <p class="design-article-description">작성 중. label과 value의 충분한 공간이 확보된다면 위계를 위한 스타일 적용 최소화.</p>
       <!-- <ul class="design-article-description">
         <li>작성 중. todo: checklist(price card 등에서 사용) 정의. 대부분의 유아이는 리스트 형식으로 나열되기 때문에 텍스트 리스트에 한정하여 리스트 태그(ul, ol, dl)로 마크업합니다. (role=listbox/listitem)</li>
       </ul> -->

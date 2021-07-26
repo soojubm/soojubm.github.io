@@ -9,7 +9,7 @@
   font-size: var(--font-size-caption);
   color: var(--gray800);
 }
-@mixin tag-primary {@include tag;background-color:gold;color:var(--gray800);}
+@mixin tag-primary {@include tag;background-color:gold;color:#252d29;}
 
 @mixin tag-group {@include group;}
 .tag-group {@include tag-group;}

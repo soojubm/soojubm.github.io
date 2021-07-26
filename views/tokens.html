@@ -276,14 +276,20 @@
           <article class="token-item is-elevation">
             <figure class="size-large"></figure>
             <h3 class="token-item-name">elevation400</h3>
+            <div class="token-item-tags tag-group" role="group">
+              <span class="token-item-tag">clickalbe</span>
+            </div>
           </article>
         </div>
         <br />
         <h2 style="margin:0 0 .5rem;"><small>Skeleton</small></h2>
         <div class="color-group">
           <article class="token-item">
-            <figure class="size-large skeleton"></figure>
+            <figure class="size-large color-skeleton" style="background-color:none;"></figure>
             <h3 class="token-item-name">Skeleton400</h3>
+            <div class="token-item-tags tag-group" role="group">
+              <span class="token-item-tag">none</span>
+            </div>
           </article>
         </div>
       </section>
@@ -509,13 +515,21 @@
       <p class="design-article-description">작성 중. container.</p>
       <!-- <p class="design-article-description">group vs row vs rowgroup</p> -->
       <p class="design-article-description">role=group, role=menuitem, role=treeitem</p>
-      <code class="design-article-description">
+      <code class="design-article-description" style="padding:1rem;">
         <p>@mixin group {}</p>
+        <p>@mixin group-bleeding {@include group;}</p>
+        <p>@mixin tag-group {}</p>
+        <p>@mixin chip-group {}</p>
+        <p>@mixin button-group {}</p>
         <!-- <p>&nbsp;&nbsp;</p> -->
-        <p>@mixin group-bleeding {@include group}</p>
         <hr />
-        <p>.tag-group {</p>
+        <p>.post-tag-group {</p>
+        <p>&nbsp;&nbsp;@include group-bleeding;</p>
+        <p>&nbsp;&nbsp;@include tag-group;</p>
+        <p>}</p>
+        <p>.keyword-chip-group {</p>
         <p>&nbsp;&nbsp;@include  group-bleeding;</p>
+        <p>&nbsp;&nbsp;@include  chip-group;</p>
         <p>}</p>
       </code>
     </article>
