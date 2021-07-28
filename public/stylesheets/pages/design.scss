@@ -25,6 +25,10 @@
 .design-article.is-scrolled {animation:fadeup .8s forwards;}
 .design-article-helper {margin:var(--space-after-item);font-size:var(--font-size-caption);}
 
+.design-article dl {}
+.design-article dl dt {width:8rem;}
+.design-article dl dd {width:calc(100% - 10rem);}
+
 .design-typograph-group {display:flex;justify-content:space-between;}
 .design-typograph-group .design-typograph-item {width:var(--grid-column);}
 

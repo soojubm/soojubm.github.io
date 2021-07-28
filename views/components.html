@@ -95,12 +95,13 @@
       <h1 class="design-article-title">Avatars</h1>
       <p class="design-article-description">작성 중.</p>
       <blockquote>
+        <h6>anatomy</h6>
         <dl class="design-article-description">
-          <dt>avatarGroup</dt><dd></dd>
-          <dt>&nbsp;&nbsp;avatar</dt><dd></dd>
-          <dt>&nbsp;&nbsp;&nbsp;&nbsp;avatarThumbnail</dt><dd></dd>
-          <dt>&nbsp;&nbsp;&nbsp;&nbsp;avatarLabel</dt><dd>optional</dd>
-          <dt>&nbsp;&nbsp;&nbsp;&nbsp;avatarBadge</dt><dd>optional</dd>
+          <dt>avatar-group</dt><dd></dd>
+          <dt>avatar</dt><dd></dd>
+          <dt>avatar-thumbnail</dt><dd></dd>
+          <dt>avatar-label</dt><dd>optional</dd>
+          <dt>avatar-badge</dt><dd>optional</dd>
         </dl>
       </blockquote>
       <div>
@@ -181,10 +182,10 @@
 
       <blockquote>
         <dl class="design-article-description">
-          <dt>chipGroup</dt><dd>horizentalScroll, aria-orientation="horizontal"</dd>
-          <dt>&nbsp;&nbsp;chip</dt><dd>default,active,disabled</dd>
-          <dt>&nbsp;&nbsp;&nbsp;&nbsp;chipIcon</dt><dd></dd>
-          <dt>&nbsp;&nbsp;&nbsp;&nbsp;chipLabel</dt><dd></dd>
+          <dt>chip-group</dt><dd>horizentalScroll, aria-orientation="horizontal"</dd>
+          <dt>chip</dt><dd>default,active,disabled</dd>
+          <dt>chip-icon</dt><dd>heading/tailing</dd>
+          <dt>chip-label</dt><dd></dd>
         </dl>
       </blockquote>
 
@@ -246,7 +247,7 @@
 
       <br />
 
-      <h6 class="title-bordered">Keyword Group (hashtag. 컴포넌트 추가)</h6>
+      <h6 class="title-bordered">Keyword Group</h6>
       <div class="keywords-group" role="group">
         <a class="keywords-group-keyword" href=""><span class="chip-label">국정감사</span></a>
         <a class="keywords-group-keyword" href=""><span class="chip-label">윤석열검찰총장</span></a>
@@ -259,8 +260,6 @@
       <br />
 
       <h6 class="title-bordered">Morevert(Overflow menu) - left/right</h6>
-      <a href="https://material.io/components/menus" target="_blank">MD menu</a>
-      <a href="https://developer.apple.com/design/human-interface-guidelines/ios/controls/pull-down-menus/" target="_blank">HIG pull down menu</a>
       <div class="dropdown">
         <button class="dropdown-trigger js-toggle" aria-haspopup="menu" aria-expanded="false">
           <span class=""><i class="icon-more"></i></span>
@@ -289,6 +288,13 @@
           <figure class="chip-icon"><i class="icon-x"></i></figure>
         </button>
       </div>
+      <br />
+      <div class="tile-elevated-small">
+        <a href="https://material.io/components/menus" target="_blank">MD menu</a>
+      </div>
+      <div class="tile-elevated-small">
+        <a href="https://developer.apple.com/design/human-interface-guidelines/ios/controls/pull-down-menus/" target="_blank">HIG pull down menu</a>
+      </div> 
     </article>
 
     <article class="design-article js-scrollspy-section">
@@ -490,7 +496,7 @@
       <!-- todo textfield 제거 -->
       <div class="sorting" style="position:relative;display:flex;;">
         <!-- <label class="" for="select2">Sort by</label> -->
-        <select class="" id="select2" style="background:none;border:none;padding:0 var(--space) 0 0;">
+        <select class="" id="select2" style="background:none;border:none;padding:0 var(--space) 0 0;font:inherit;">
           <option class="select-option" value="select-option1">최신순</option>
         </select>
         <span class="selectbox-indicator" role="img" style="background:var(--gray100);position:relative;right:auto;top:auto;"><i class="icon-caret"></i></span>
