@@ -174,7 +174,7 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Chips ☀️</h1>
-      <p class="design-article-description">작성 중. 항상 액션이 발생. (style)</p>
+      <p class="design-article-description">작성 중. 항상 액션이 발생.</p>
       <div class="design-article-description">
         <p class="checklist"><span><i></i></span> 다른 맥락의 chip을 나열할 수 있습니다. 단일선택, 다중선택, 삭제여부, 펼침메뉴 등의 기표를 아이콘으로 제공하세요.</p>
         <p class="xlist"><span><i></i></span> 콘텐츠 정렬sorting에 사용하지 마세요. 콘텐츠 정렬은 selectbox를 사용합니다.</p>
@@ -318,6 +318,8 @@
         <span class="tag" role="listitem" style="background:var(--red100);border-color:var(--red100);color:var(--red800);">15</span>
         <span class="tag" role="listitem" style="width:4px;height:4px;background:var(--red800);padding:0;"></span>
       </div>
+      <hr />
+      <span class="hashtag">hashtag</span>
     </article>
     
     <article class="design-article js-scrollspy-section">
@@ -327,22 +329,23 @@
         <!-- <p class="xlist"><span><i></i></span> 크기가 다른 버튼을 함께 사용하지 마세요. (버튼 그룹)</p> -->
         <p class="checklist"><span><i></i></span> large 버튼은 프로모션 페이지에서 사용합니다. small 버튼은 아이템(가칭)에서 사용합니다.</p>
         <p class="checklist"><span><i></i></span> 아이콘 버튼의 아이콘은 관습적인 메타포를 사용하세요. accessibility-text(visually-hidden)</p>
-        <p class="checklist"><span><i></i></span> 모든 버튼은 상태 스타일이 동일합니다. (todo: 다시쓰기)</p>
+        <p class="checklist"><span><i></i></span> 모든 버튼은 상태에 따른 스타일을 동일하게 가집니다. (todo: 다시쓰기)</p>
         <p class="xlist"><i></i> binary choice에서 primary 버튼과 secondary 버튼을 함께 사용하지 마세요.</p>
         <p class="xlist"><i></i> 가이드 텍스트를 cta 아래에 두지 마세요. 일반적으로 네거티브 액션(?)을 위한 텍스트 형태의 버튼이 위치하는 영역입니다.</p>
       </div>
       <!-- <li>네이밍: style = solid/outline/plain/text (모든 스타일을 망라해야 하기 때문에 유아이 라이브러리에 어울리는 네이밍) appearance = link / subtle / primary, space = compact/fullwidth</li>
       <li>aria-expanded / </li> -->
       <!-- <p>primary: call to action / secondary: action... / tertiary: 닫기, 취소, 아이콘버튼</p> -->
-      <blockquote style="font-size:var(--font-size-tiny);">
-        <dl class="design-article-description">
+      <blockquote class="design-article-description" style="font-size:var(--font-size-tiny);">
+        <p style="margin:0 0 var(--space) 0;color:var(--gray800);">anatomy</p>
+        <dl>
           <dt>buttonGroup</dt><dd></dd>
           <dt>button</dt><dd>aria-pressed={isActivated ? "true" : "false"}</dd>
           <dt>buttonLabel</dt><dd></dd>
           <dt>buttonIcon</dt><dd>role="img" aria-label="plus icon" / </dd>
         </dl>
-        <p>min-width, padding-left, padding-right</p>
-        <p>fetching, more load, icon button 컴포넌트화. + closeButton 단일 기능이기 때문에 iconButton에 포함하기보다 하나의 컴포넌트로 분리하여도 좋음.</p>
+        <p style="margin:var(--space) 0 0 0;">min-width, padding-left, padding-right</p>
+        <p>closeButton 단일 기능이기 때문에 iconButton에 포함하기보다 하나의 컴포넌트로 분리하여도 좋음.</p>
       </blockquote>
       
       <blockquote>
@@ -396,6 +399,14 @@
         <button class="design-article-text is-hover">Hover</button>
         <button class="design-article-text is-focus">Focus</button>
         <button class="design-article-text" disabled>Disabled</button>
+      </div>
+      <br />
+      <h6 class="title-bordered">and so on</h6>
+      <div class="design-buttongroup">
+        <button class="design-article-text">loading...</button>
+        <button class="design-article-text">view all</button>
+        <button class="design-article-text">more load</button>
+        <button class="design-article-text">icon button (+ close)</button>
       </div>
       <!-- <h6 class="title-bordered">Text (outdated)</h6>
       <div class="design-buttongroup">

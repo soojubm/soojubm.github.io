@@ -15,22 +15,31 @@
   color:var(--gray800);
   position:relative;
 
-  &:hover:not(:disabled) {border-color:var(--gray800);}
-  &:hover:not(:disabled) figure {border-color:var(--gray800) !important;}
+  &:hover {border-color:var(--gray800);}
+  &:hover figure {border-top-color:var(--gray800) !important;border-bottom-color:var(--gray800) !important;background:none;}
+  &:disabled {border-color:transparent;}
+  &:disabled figure {}
+  
   &.is-active {border-color:var(--color-primary);background:var(--green100);color:var(--color-primary);}
-  &.is-active figure {border-color:var(--color-primary) !important;}
+  &.is-active figure {border-top-color:var(--color-primary) !important;border-bottom-color:var(--color-primary) !important;background:none;}
 }
 
-@mixin chip-heading {float:left;border:var(--border100) !important;border-left:0 !important;border-top-right-radius:0 !important;border-bottom-right-radius:0 !important;background:var(--gray0)}
-@mixin chip-tailing {float:right;border:var(--border100) !important;border-right:0 !important;border-top-left-radius:0 !important;border-bottom-left-radius:0 !important;background:var(--gray0);}
+@mixin chip-heading {float:left;border-left:0 !important;border-top-right-radius:0 !important;border-bottom-right-radius:0 !important;}
+@mixin chip-tailing {float:right;border-right:0 !important;border-top-left-radius:0 !important;border-bottom-left-radius:0 !important;}
+
+@mixin chip-icon {
+  @include avatar-medium;
+  @include chip-tailing;
+}
+
 
 .chip {@include chip}
 .chip-label {padding:0 var(--space-chip-inset);}
 .chip-thumbnail {@include avatar-medium;@include chip-heading;}
-.chip-icon {@include avatar-medium;@include chip-tailing;;}
+.chip-icon {@include chip-icon;}
 .chip-icon .icon-caret {}
 .chip-icon .icon-check {}
 .chip-icon .icon-x {}
-.chip-icon .icon-x::before {background:var(--color-primary);}
-.chip-icon .icon-x::after {background:var(--color-primary);}
+.is-active .chip-icon .icon-x::before {background:var(--color-primary);}
+.is-active .chip-icon .icon-x::after {background:var(--color-primary);}
 // .chip-count {}
