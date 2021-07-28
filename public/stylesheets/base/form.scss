@@ -182,10 +182,6 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 .textfield.is-floating input {padding:0.75rem 0rem;border-top:none;border-left:none;border-right:none;}
 .textfield.is-floating label {height:20px;position:absolute;left:0;top:6px;transition:all 0.2s ease;cursor:text;}
 .textfield.is-floating input:focus + label {color:var(--gray400);font-size:11px;top:-12px;}
-.textfield.is-text {display:flex;align-items:center;}
-.textfield.is-text .textfield-label {display:none;margin:0 .5rem 0 0;}
-.textfield.is-text .textfield-input {width:auto;padding:0;background:none;border:none;box-shadow:none;}
-.textfield.is-text .selectbox-indicator {margin-top:3px;margin-left:.75rem;background:var(--gray100);position:static;right:auto;bottom:auto;}
 
 // .is-invalid .textfield-label {color:var(--red800);}
 // .is-valid .textfield-input {border-color:var(--green100);background:var(--green100);}

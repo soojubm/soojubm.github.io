@@ -173,7 +173,7 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Chips ☀️</h1>
-      <p class="design-article-description">작성 중.</p>
+      <p class="design-article-description">작성 중. 항상 액션이 발생. (style)</p>
       <div class="design-article-description">
         <p class="checklist"><span><i></i></span> 다른 맥락의 chip을 나열할 수 있습니다. 단일선택, 다중선택, 삭제여부, 펼침메뉴 등의 기표를 아이콘으로 제공하세요.</p>
         <p class="xlist"><span><i></i></span> 콘텐츠 정렬sorting에 사용하지 마세요. 콘텐츠 정렬은 selectbox를 사용합니다.</p>
@@ -189,7 +189,7 @@
       </blockquote>
 
       <blockquote>
-        <p>필터에서 액티브 상태에 브랜드 컬러를 많이 안 쓰는 경향. 진한 회색. 콘텐츠 탐색과 약간의 액션을 유도해야 하는 페이지에서는 회색으로?</p>
+        <p>필터에서 액티브 상태에 브랜드 컬러를 많이 안 쓰는 경향. 진한 회색. 콘텐츠 탐색이 중요한페이지에서 회색?</p>
         <p>tag/pill/chip. pill은 둥근 radius 알약 모양.</p>
         <p>todo 안드로이드 chipGroup, HorizontalScrollView, singleLine, action/entry/filter(check active)/choice</p>
       </blockquote>
@@ -201,7 +201,7 @@
         <button class="chip is-active">
           <span class="chip-label">active</span>
         </button>
-        <button class="chip" style="opacity:.5;cursor:not-allowed;">
+        <button class="chip" style="opacity:.5;cursor:not-allowed;" disabled>
           <span class="chip-label">disabled</span>
         </button>
       </div>
@@ -228,7 +228,9 @@
 
       <h6 class="title-bordered">Dropdown</h6>
       <div class="dropdown">
-        <button class="dropdown-trigger js-toggle">드롭다운 <span class="chip-icon"><i class="icon-caret"></i></span></button>
+        <button class="dropdown-trigger js-toggle">
+          <span class="dropdown-trigger-label">드롭다운<<span>
+          <span class="dropdown-trigger-icon chip-icon"><i class="icon-caret"></i></span></button>
         </button>
         <menu class="dropdown-menu" role="menu">
           <h6 class="dropdown-menu-title" hidden>Dropdown header</h6>
@@ -257,6 +259,8 @@
       <br />
 
       <h6 class="title-bordered">Morevert(Overflow menu) - left/right</h6>
+      <a href="https://material.io/components/menus" target="_blank">MD menu</a>
+      <a href="https://developer.apple.com/design/human-interface-guidelines/ios/controls/pull-down-menus/" target="_blank">HIG pull down menu</a>
       <div class="dropdown">
         <button class="dropdown-trigger js-toggle" aria-haspopup="menu" aria-expanded="false">
           <span class="dropdown-trigger-icon"><i class="icon-more"></i></span>
@@ -312,12 +316,12 @@
     
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Buttons</h1>
-      <p class="design-article-description">작성 중. 사용자의 행동. 페이지 이동.</p>
+      <p class="design-article-description">작성 중. 사용자의 행동. 페이지 이동. todo: 상태별로 구루핑.</p>
       <div class="design-article-description">
         <!-- <p class="xlist"><span><i></i></span> 크기가 다른 버튼을 함께 사용하지 마세요. (버튼 그룹)</p> -->
         <p class="checklist"><span><i></i></span> large 버튼은 프로모션 페이지에서 사용합니다. small 버튼은 아이템(가칭)에서 사용합니다.</p>
-        <p class="checklist"><span><i></i></span> 아이콘 버튼을 사용할 때 아이콘은 관습적인 메타포를 사용하세요. accessibility-text(visually-hidden)</p>
-        <p class="checklist"><span><i></i></span> 버튼의 상태에 따른 스타일은 버튼의 종류와 무관하게 하나의 스타일을 적용합니다.</p>
+        <p class="checklist"><span><i></i></span> 아이콘 버튼의 아이콘은 관습적인 메타포를 사용하세요. accessibility-text(visually-hidden)</p>
+        <p class="checklist"><span><i></i></span> 모든 버튼은 상태 스타일이 동일합니다. (todo: 다시쓰기)</p>
         <p class="xlist"><i></i> binary choice에서 primary 버튼과 secondary 버튼을 함께 사용하지 마세요.</p>
         <p class="xlist"><i></i> 가이드 텍스트를 cta 아래에 두지 마세요. 일반적으로 네거티브 액션(?)을 위한 텍스트 형태의 버튼이 위치하는 영역입니다.</p>
       </div>
@@ -483,7 +487,14 @@
       <br />
 
       <h6 class="title-bordered">selectbox</h6>
-      <p>준비 중.</p>
+      <!-- todo textfield 제거 -->
+      <div class="sorting" style="position:relative;display:flex;;">
+        <!-- <label class="" for="select2">Sort by</label> -->
+        <select class="" id="select2" style="background:none;border:none;padding:0 var(--space) 0 0;">
+          <option class="select-option" value="select-option1">최신순</option>
+        </select>
+        <span class="selectbox-indicator" role="img" style="background:var(--gray100);position:relative;right:auto;top:auto;"><i class="icon-caret"></i></span>
+      </div>
     </article>
 
     <article class="design-article js-scrollspy-section">
@@ -565,13 +576,6 @@
         <span class="selectbox-indicator" role="img"><i class="icon-caret"></i></span>
       </div>
       <!-- <div class="textfield is-text">
-        <label class="textfield-label" for="select2">Sort by</label>
-        <select class="textfield-input"id="select2">
-          <option class="select-option" value="select-option1">최신순</option>
-        </select>
-        <span class="selectbox-indicator" role="img"><i class="icon-caret"></i></span>
-      </div> -->
-      <!-- <div class="textfield is-text">
         <figure style="width:var(--size-large);height:var(--size-large);background:var(--gray100);border-radius:var(--radius400);margin-right:1rem;"></figure>
         <span>현대카드 The Green</span>
         <span class="selectbox-indicator" role="img"><i class="icon-caret"></i></span>
@@ -591,8 +595,8 @@
       <h1 class="design-article-title">Seperator</h1>
       <p class="design-article-description">콘텐츠를 구획합니다.</p>
       <div class="design-article-description">
-        <p class="checklist"><span><i></i></span> 아티클 레벨, 카드 레벨 내부의 구획 또는 맥락 전환 시 사용하세요. 패턴의 반복과 전환으로 요소의 구별이 가능하기 때문에 남용하지 않는 것이 좋습니다.</p>
-        <p class="xlist"><span><i></i></span> border 속성으로 스타일링하지 마세요. hr 태그를 사용하면 의미론적으로 주제를 분리할 수 있고 컴포넌트의 고유성을 유지할 수 있습니다.(or css 인접 연산자)</p>
+        <p class="checklist"><span><i></i></span> 아티클 레벨과 카드 레벨에서 아이템 간 구획이나 맥락 전환에 사용하세요. 반복되는 패턴으로 요소 간 구별이 가능하기 때문에 남용하지 않는 것이 좋습니다.</p>
+        <p class="xlist"><span><i></i></span> border 속성으로 스타일링하지 마세요. hr 태그를 사용하면 의미론적으로 주제를 분리할 수 있고 컴포넌트의 고유성을 유지할 수 있습니다. -> 문제: 수정이 어렵다. (or css 인접 연산자)</p>
         <p class="xlist"><i></i> 아티클 레벨, 섹션 레벨 등 상위 레벨의 콘텐츠 구획에 사용하지 마세요. 타이틀 텍스트로 시작하는 대비와 충분히 확보된 공간이면 충분합니다.</p>
       </div>
       <hr role="separator" />
@@ -602,7 +606,7 @@
       <h1 class="design-article-title">Breadcrumb</h1>
       <p class="design-article-description">사용자의 위치를 계층 구조로 보여줍니다.</p>
       <div class="design-article-description">
-        <p class="checklist"><span><i></i></span> 페이지 레벨이 3단계 이상일 때 사용하세요. (memo flat sitemap 대세. 예전만큼 자주 쓰진 않음. 주로 카테고리, 도움말. pg 심사.)</p>
+        <p class="checklist"><span><i></i></span> 페이지 레벨이 3단계 이상일 때 사용하세요. (memo flat sitemap대세라 예전만큼 자주 쓰진 않음. 주로 카테고리, 도움말. pg 심사.)</p>
         <p class="checklist"><span><i></i></span> 프로모션을 위한 랜딩 페이지에서 사용자의 여정을 돕기 위해 사용할 수 있습니다.</p>
         <p class="checklist"><span><i></i></span> 푸터에서 사이트맵과 함께 사용할 수 있습니다.</p>
         <p class="xlist"><i></i> 모바일 환경에서 네비게이션 바와 함께 사용하지 마세요.</p>
@@ -619,7 +623,7 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Links (Anchor)</h1>
-      <p class="design-article-description">텍스트 단락에서 다른 페이지로 이동하거나 요약한 콘텐츠를 확장합니다.</p>
+      <p class="design-article-description">텍스트 단락에서 사용합니다. 다른 페이지로 이동할 수 있고 요약한 콘텐츠를 확장할 수 있습니다.</p>
       <ul class="design-article-description">
         <!-- <p class="checklist"><span><i></i></span> 인라인으로 사용하세요.</p> -->
         <p class="checklist"><span><i></i></span> 단락 내부와 단락 외부의 형태를 구분합니다. 단락 내부에서는 일반 텍스트와 구별을 위해 언더라인을 추가합니다.</p>
@@ -661,7 +665,7 @@
       </ol>
       <br />
       <h6 class="title-bordered">Statistic</h6>
-      <div class="statistic" style="display:flex;justify-content:space-evenly;">
+      <div class="statistic">
         <div class="statistic-item">
           <i class="statistic-label">팔로워</i>
           <span class="statistic-value">21,682</span>
@@ -724,7 +728,7 @@
 
     <article class="design-article js-tab">
       <h1 class="design-article-title">Tab</h1>
-      <p class="design-article-description">맥락이 같은 콘텐츠를 페이지의 이동 없이 화면을 전환합니다.<p>
+      <p class="design-article-description">페이지 내에서 같은 맥락의 콘텐츠를 전환합니다.<p>
       <ul class="design-article-description">
         <p class="checklist"><span><i></i></span>2개 이상의 탭을 중첩하지 않도록 플로우를 설계하세요.</p>
         <p class="xlist"><span><i></i></span>화면을 전환할 때 사용하기 때문에 스크롤스파이 기능을 사용할 수 없습니다.</p>
@@ -904,7 +908,10 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Paginations</h1>
-      <p class="design-article-description">첫 페이지와 마지막 페이지에 더블 화살표 아이콘을 사용하지 않습니다. 최초 페이지와 최종 페이지를 사용하세요.</p>
+      <p class="design-article-description">작성 중.</p>
+      <div>
+        <p class="checklist"><span><i></i></span>첫 페이지와 마지막 페이지에 더블 화살표 아이콘을 사용하지 않습니다. 최초 페이지와 최종 페이지를 사용하세요.</p>
+      </div>
       <blockquote>
         <p>infinite scroll, more load, paging</p>
       </blockquote>
@@ -1297,14 +1304,14 @@
             <em class="notification-unread"></em>
             <figure class="notification-item-avatar"></figure>
             <b class="notification-item-user">John Cassavetes</b>
-            <time class="notification-item-date" style="position:absolute;right:0;top:0;">5일 전</time>
+            <time class="notification-item-date">5일 전</time>
             <span class="notification-item-content" style="color:var(--gray400);">comment on <em>John Cassavetes</em></span>
           </div>
           <div class="notification-item">
             <em class="notification-unread">🌱</em>
             <figure class="notification-item-avatar"></figure>
             <b class="notification-item-user">John Cassavetes</b>
-            <time class="notification-item-date" style="position:absolute;right:0;top:0;">5일 전</time>
+            <time class="notification-item-date">5일 전</time>
             <span class="notification-item-content" style="color:var(--gray400);">like on <em>John Cassavetes</em></span>
           </div>
           <!-- <footer>
@@ -1351,7 +1358,7 @@
           <h1>팔로워</h1>
           <a class="link-outer" href="#">모두 보기</a>
         </header>
-        <hr />
+        <!-- <hr /> -->
         <div class="item" role="listitem">
           <figure class="item-avatar"></figure>
           <h2 class="item-name">Gyeongsoo I</h2>
@@ -1475,12 +1482,9 @@
         <h2 class="share-title">제목</h2>
         <!-- <p class="share-description" style="margin:.5rem 0 0 0;">chip 스타일의 필터링 버튼. 리스트의 버튼을 죽여야.</p> -->
         <div class="chip-group" role="group" style="margin-top:.5rem;">
-          <button class="chip is-active">필터 1</button>
-          <button class="chip">필터 2</button>
-          <button class="chip">필터 3</button>
-          <button class="chip">필터 4</button>
+          <button class="chip is-active" style="width:calc(50% - 1rem);text-align:center;">필터 옵션이 2개일 때</button>
+          <button class="chip" style="width:calc(50% - 1rem);text-align:center;">채워서 사용해보아요</button>
         </div>
-        <hr />
         <div style="margin-top:1rem;" role="listbox">
           <div class="item" role="listitem">
             <figure class="item-avatar"></figure>

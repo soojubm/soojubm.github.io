@@ -132,7 +132,13 @@
 }
 
 
-.avatar-badge {@include avatar-tiny;border:2px solid var(--gray0);background:gold;position:absolute;left:-.25rem;top:-.25rem;}
+.avatar-badge {
+  @include avatar-tiny;border:2px solid var(--gray0);background:gold;position:absolute;left:-.25rem;top:-.25rem;
+}
+// todo
+.notification-unread {
+  @include avatar-tiny;border:2px solid var(--gray0);background:gold;position:absolute;left:-.25rem;top:-.25rem;
+}
 
 .todo {}
 .todo legend {margin:24px 0 4px 0;color:var(--gray400);}
@@ -146,10 +152,10 @@
 .todo-control-remove {}
 .completed {text-decoration: line-through;}
 
-// .statistic {display:flex;justify-content:space-evenly;}
-.statistic-item {text-align:center;}
+.statistic {display:flex;justify-content:space-between;}
+.statistic-item {}
 .statistic-label {display:block;color:var(--gray400);}
-.statistic-value {display:block;margin:-.25rem 0 0 0;@include subhead;color:var(--gray800);}
+.statistic-value {display:block;margin:-.25rem 0 0 0;@include subhead;}
 
 .full-width {
 	width: 100vw;
@@ -183,7 +189,7 @@
 .quote-avatar {@include avatar-medium;}
 .quote-title {margin:var(--space) 0 .5rem;@include subhead;}
 .quote-body {}
-.quote-byline {margin:1rem 0 0 0;}
+.quote-byline {display:block;margin:1rem 0 0 0;}
 .quote-byline div {color:var(--gray800);}
 .quote-byline div + div {color:var(--gray400);}
 .quote-action {@include button-primary;width:50%;margin:2rem 0 0 0;}

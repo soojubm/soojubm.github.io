@@ -19,8 +19,8 @@
 .profile-user-address i {margin:0 .5rem 0 0;font-size:14px;color:var(--gray400);vertical-align:middle;}
 .profile-user-hashtags {@include tag-group;}
 
-.profile-user-statistic {display:flex;justify-content:space-between;}
-.profile-user-statistic .statistic {width: var(--grid-column);position: relative;}
+.profile-user-statistic {}
+.profile-user-statistic .statistic {position:relative;}
 .profile-user-statistic .statistic:hover {@include hover-item;}
 .profile-user-socials {}
 .profile-user-socials-title {margin:0.5rem 0;font-size:var(--font-size-body);font-weight:normal;color:var(--gray400);}

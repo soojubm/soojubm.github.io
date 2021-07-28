@@ -8,8 +8,9 @@
   line-height:30px;color:var(--gray800);
   position:relative;
 
-  &:hover {border-color:var(--gray800);}
-  &:hover figure {border-color:var(--gray800);border-right:var(--border100);}
+  // todo disabled
+  &:hover:not(:disabled) {border-color:var(--gray800);}
+  &:hover:not(:disabled) figure {border-color:var(--gray800);border-right:var(--border100);}
   &.is-active {border-color:var(--color-primary);background:var(--green100);color:var(--color-primary);}
   &.is-active .chip-icon {border-color:var(--color-primary) !important;}
 }

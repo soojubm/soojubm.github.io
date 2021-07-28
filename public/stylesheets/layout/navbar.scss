@@ -41,7 +41,7 @@
 .navbar-notification-trigger em {display:block;width:.5rem;height:.5rem;border-radius:50%;border:var(--border100);box-sizing:border-box;background:var(--red800);text-indent:-9999px;position:absolute;right:.5rem;top:.5rem;}
 .navbar-notification-menu {width:400px;@include tile-elevated;}
 .navbar-notification-menu:before {content:'';display:block;position:absolute;left:50%;right:0;top:-8px;bottom:0;}
-.navbar-notification-menu-title {margin:var(--space-leading-subhead) 0 0 0;font-size:var(--font-size-subhead);}
+.navbar-notification-menu-title {margin:var(--space-leading-subhead) 0 var(--space) 0;font-size:var(--font-size-subhead);}
 .navbar-notification-menu-all {position: absolute;
 right: var(--space-tile-padding);
 top: 14px;}
@@ -62,7 +62,7 @@ top: 14px;}
 .notification-item:hover {@include hover-item;}
 .notification-item-avatar {@include avatar-large;position:absolute;left:0;top:0;}
 .notification-item-user {display:block;font-size:var(--font-size-body);line-height:1.4;}
-.notification-item-date {font-size:var(--font-size-caption);color:var(--gray400)}
+.notification-item-date {font-size:var(--font-size-caption);color:var(--gray400);position:absolute;right:0;top:-2px;}
 .notification-item-content {}
 
 .notification-unread {display:block;@include avatar-tiny;font-size:var(--font-size-caption);position:absolute;left:-.125rem;top:-.125rem;z-index:var(--zindex-default);}
