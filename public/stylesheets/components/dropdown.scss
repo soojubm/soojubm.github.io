@@ -1,37 +1,15 @@
+// todo mixin menu title
+
 .dropdown {position:relative;}
 .dropdown-trigger {@include chip;}
+.dropdown-trigger-label {padding:var(--space-chip-inset);}
+.dropdown-trigger-icon {@include avatar-medium;@include chip-tailing;background:var(--gray0);}
+
 .is-active .icon-caret {transform:rotate(180deg);}
-.dropdown-trigger-icon {@include avatar-medium;margin:0 -1rem;}
-// margin, chip-padding;
 
-.dropdown-menu {
-  @include tile-elevated;
-  // width: 100%;
-  min-width: var(--width-dropdown);
-  height:0;
-  padding: 0; // override;
-  position:absolute;
-  z-index:var(--zindex-popover);
-  transition:all 0.2s ease;
-  transform:scale(0);
-  transform-origin:left top;
-}
+.dropdown-menu {@include tile-elevated-small;min-width:var(--width-dropdown);padding:0;position:absolute;z-index:var(--zindex-popover);height:0;transform:scale(0);transform-origin:left top;}
 
-
-.dropdown-menu-title {
-  padding:0.5rem 1rem;
-  font-size:var(--font-size-caption);
-}
-.dropdown-menu-link {
-  display:block;
-  margin: 1rem;
-  color:var(--gray800);
-  position:relative;
-  z-index:var(--zindex-default);
-}
+.dropdown-menu-title {}
+.dropdown-menu-link {display:block;margin:var(--space);color:var(--gray800);position:relative;z-index:var(--zindex-default);}
 .dropdown-menu-link:hover {@include hover-item;}
-.is-active + .dropdown-menu {
-  height:auto;
-  margin:.5rem 0 0 0;
-  transform:scale(1);
-}
+.is-active + .dropdown-menu {height:auto;transform:scale(1);}

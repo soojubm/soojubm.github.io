@@ -2,26 +2,32 @@
 // flex, inline-flex인 경우 a, button 차이 발생..
 // 다음에 hr 태그가 오면 그룹 내부 간격이 안맞음
 @mixin chip {
-  display: flex;align-items: center;
-  height:var(--size-medium);padding:0 1rem;border:1px solid transparent;border-radius:var(--radius400);box-sizing:border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width:var(--size-medium);
+  height:var(--size-medium);
+  border:1px solid transparent;
+  border-radius:var(--radius400);
+  box-sizing:border-box;
   background:var(--gray100);
-  line-height:30px;color:var(--gray800);
+  line-height:30px;
+  color:var(--gray800);
   position:relative;
 
-  // todo disabled
   &:hover:not(:disabled) {border-color:var(--gray800);}
-  &:hover:not(:disabled) figure {border-color:var(--gray800);border-right:var(--border100);}
+  &:hover:not(:disabled) figure {border-color:var(--gray800) !important;}
   &.is-active {border-color:var(--color-primary);background:var(--green100);color:var(--color-primary);}
-  &.is-active .chip-icon {border-color:var(--color-primary) !important;}
+  &.is-active figure {border-color:var(--color-primary) !important;}
 }
 
-@mixin chip-heading {float:left;margin:0 var(--space) 0 -17px;border-top-right-radius:0;border-bottom-right-radius:0;}
-@mixin chip-tailing {float:right;margin:0 -17px 0 var(--space);border-top-left-radius:0;border-bottom-left-radius:0;}
+@mixin chip-heading {float:left;border:var(--border100) !important;border-left:0 !important;border-top-right-radius:0 !important;border-bottom-right-radius:0 !important;background:var(--gray0)}
+@mixin chip-tailing {float:right;border:var(--border100) !important;border-right:0 !important;border-top-left-radius:0 !important;border-bottom-left-radius:0 !important;background:var(--gray0);}
 
 .chip {@include chip}
-.chip-label {}
-.chip-thumbnail {@include avatar-medium;@include chip-heading;border:var(--border100) !important;background:var(--gray0);}
-.chip-icon {@include avatar-medium;@include chip-tailing;border:var(--border100) !important;background:var(--gray0);}
+.chip-label {padding:0 var(--space-chip-inset);}
+.chip-thumbnail {@include avatar-medium;@include chip-heading;}
+.chip-icon {@include avatar-medium;@include chip-tailing;;}
 .chip-icon .icon-caret {}
 .chip-icon .icon-check {}
 .chip-icon .icon-x {}
