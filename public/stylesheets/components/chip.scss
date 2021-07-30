@@ -20,8 +20,15 @@
   &:disabled {border-color:transparent;}
   &:disabled figure {}
   
-  &.is-active {border-color:var(--color-primary);background:var(--green100);color:var(--color-primary);}
-  &.is-active figure {border-top-color:var(--color-primary) !important;border-bottom-color:var(--color-primary) !important;background:none;}
+  &.is-active {border-color:var(--color-primary);background:var(--green100);color:var(--color-primary);
+    // 임시로
+    background: var(--gray800);
+    border-color: var(--gray800);
+    color: var(--gray0);
+  }
+  &.is-active figure {
+    // border-top-color:var(--color-primary) !important;border-bottom-color:var(--color-primary) !important;
+    background:none;}
 }
 
 @mixin chip-heading {float:left;border-left:0 !important;border-top-right-radius:0 !important;border-bottom-right-radius:0 !important;}
@@ -38,8 +45,8 @@
 .chip-thumbnail {@include avatar-medium;@include chip-heading;}
 .chip-icon {@include chip-icon;}
 .chip-icon .icon-caret {}
-.chip-icon .icon-check {}
+.chip-icon .icon-check {border-color: var(--gray0);}
 .chip-icon .icon-x {}
-.is-active .chip-icon .icon-x::before {background:var(--color-primary);}
-.is-active .chip-icon .icon-x::after {background:var(--color-primary);}
+.is-active .chip-icon .icon-x::before {background:var(--gray0);}
+.is-active .chip-icon .icon-x::after {background:var(--gray0);}
 // .chip-count {}

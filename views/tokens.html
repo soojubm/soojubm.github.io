@@ -12,20 +12,53 @@
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">기표signifier</h1>
       <p class="design-article-description">작성 중.</p>
-
-      <div class="tile-flat-small">
-        <h3>disabled - opacity:.5;cursor:not-allowed; 그림자도 제거하는 것이 어떨꿰</h3>
+      <div class="design-article-description">
+        <p class="checklist"><span><i></i></span> 목록의 나머지를 더 보여줄 때는 [모두보기], 미리보기 형식의 텍스트를 더 보여줄 때는 [전체보기].</p>
+        <p class="xlist"><span><i></i></span> '확장할 수 있음'으로 plus icon을 사용하지 마세요. 아코디언 수정해야 함.</p>
       </div>
+
+      <h6 class="title-bordered">클릭Clickable</h6>
+      <span style="display:block;color:var(--color-primary);cursor:pointer;">브랜드 컬러로 된 텍스트는 대부분 클릭할 수 있다.</span>
+      <span style="display:block;margin:var(--space) 0;cursor:pointer;">❤️ 아이콘이나 이모지가 있으면 대부분 클릭할 수 있다.</span>
+      <span style="display:block;width:160px;height:80px;padding:var(--space-small);box-sizing:border-box;margin:var(--space) 0 1.5rem;background:var(--gray100);border-radius:var(--radius400);cursor:pointer;">연한 회색의 오브젝트는 대부분 클릭할 수 있다.</span>
+      <span class="tile-elevated-small" style="cursor:pointer;">그림자로 두른 오브젝트는 대부분 클릭할 수 있다. 또는 오브젝트 내부에 클릭할 수 있는 버튼이 존재한다.</span>
+
+      <br />
+      <br />
+
+
+      <h6 class="title-bordered">비활성Disabled or non-clickable</h6>
+      <div class="tile-elevated-small" style="opacity:.5;cursor:not-allowed;box-shadow:none;">
+        <p>투명도 0.5 / 커서 not-allowed / flat style (그림자 제거)</p>
+      </div>
+
+      <br />
+
+      <h6 class="title-bordered">외부 링크external link</h6>
+      <p>아이콘</p>
+
+      <br />
+
+      <h6 class="title-bordered">확장Expanable & Collapsible</h6>
+      <div><i class="icon-chevron" style="display:inline-block;transform:rotate(45deg);"></i></div>
+      <div><i class="icon-caret" style="display:inline-block;"></i></div>
+
+
+      <br />
+
+      <h6 class="title-bordered">모두보기view all</h6>
+      <div><i class="icon-chevron" style="display:inline-block;"></i></div>
+
+      <br />
+
+      <h6 class="title-bordered">닫기removable / memo: cursor(pinterest)</h6>
+      <div><i class="icon-x" style="display:inline-block;"></i></div>
 
       <!-- <h6 class="title-bordered">selection</h6>
       <h6 class="title-bordered">click - tag 컴포넌트/화살표/아이콘 아이템 전체가 클릭 영역</h6>
       <h6 class="title-bordered">link - internal/external</h6>
-      <h6 class="title-bordered">expand - arrow-down/plus-icon</h6>
-      <h6 class="title-bordered">close - cursor(pinterest)/x-icon</h6> -->
-      <!-- <dl>
-        <dt>모두보기</dt><dd>see all(15)(internal, arrow-right)</dd>
-        <dt>더보기</dt><dd>확장,더보기vs더불러오기(more, arrow-down), 자세히보기, learn more 등(external, arrow-right-top)</dd>
-      </dl> -->
+      <dt>모두보기</dt><dd>see all(15)(internal, arrow-right)</dd>
+      <dt>더보기</dt><dd>더보기vs더불러오기(more, arrow-down), 자세히보기, learn more 등(external, arrow-right-top)</dd> -->
     </article>
 
 
@@ -87,7 +120,7 @@
           <div class="token-item-tags tag-group" role="group">
             <!-- <span class="token-item-tag">avatar</span> -->
             <span class="token-item-tag">tag</span>
-            <span class="token-item-tag">button in textfield(indicator)</span>
+            <span class="token-item-tag">button or indicator in textfield</span>
           </div>
         </div>
         <div class="token-item">
@@ -363,10 +396,7 @@
           <p class="token-item-description">3rem, 40px</p>
           <!-- <p class="token-item-description">프로모션 페이지에서 제목으로 사용하세요.</p> -->
           <div class="token-item-tags tag-group" role="group">
-            <span class="token-item-tag">avatar</span>
-            <span class="token-item-tag">radio</span>
-            <span class="token-item-tag">checkbox</span>
-            <span class="token-item-tag">switch</span>
+            <span class="token-item-tag">heading-headline</span>
           </div>
         </div>
   
@@ -376,10 +406,8 @@
           <p class="token-item-description">2rem, 40px</p>
           <!-- <p class="token-item-description">디스크립션.</p> -->
           <div class="token-item-tags tag-group" role="group">
-            <span class="token-item-tag">avatar</span>
-            <span class="token-item-tag">radio</span>
-            <span class="token-item-tag">checkbox</span>
-            <span class="token-item-tag">switch</span>
+            <span class="token-item-tag">heading-pageTitle</span>
+            <span class="token-item-tag">heading-sectionTitle</span>
           </div>
         </div>
 
@@ -389,10 +417,8 @@
           <p class="token-item-description">1.125rem, 40px</p>
           <!-- <p class="token-item-description">디스크립션.</p> -->
           <div class="token-item-tags tag-group" role="group">
-            <span class="token-item-tag">avatar</span>
-            <span class="token-item-tag">radio</span>
-            <span class="token-item-tag">checkbox</span>
-            <span class="token-item-tag">switch</span>
+            <span class="token-item-tag">heading-subhead</span>
+            <span class="token-item-tag">body-postPage</span>
           </div>
         </div>
 
@@ -402,10 +428,8 @@
           <p class="token-item-description">.875rem, 14px</p>
           <!-- <p class="token-item-description">디스크립션.</p> -->
           <div class="token-item-tags tag-group" role="group">
-            <span class="token-item-tag">avatar</span>
-            <span class="token-item-tag">radio</span>
-            <span class="token-item-tag">checkbox</span>
-            <span class="token-item-tag">switch</span>
+            <span class="token-item-tag">heading-label</span>
+            <span class="token-item-tag">body-base</span>
           </div>
         </div>
 
@@ -416,10 +440,8 @@
           <p class="token-item-description">.75rem, 12px</p>
           <!-- <p class="token-item-description">디스크립션.</p> -->
           <div class="token-item-tags tag-group" role="group">
-            <span class="token-item-tag">avatar</span>
-            <span class="token-item-tag">radio</span>
-            <span class="token-item-tag">checkbox</span>
-            <span class="token-item-tag">switch</span>
+            <span class="token-item-tag">heading-caption</span>
+            <span class="token-item-tag">body-helper</span>
           </div>
         </div>
       </div>
@@ -513,6 +535,9 @@
       <p class="design-article-description">작성 중.</p>
 
       <p class="design-article-description">카드 또는 아이템의 hover state로 여러 개의 코드 또는 스타일이 필요하지 않습니다. 하나의 mixin을 정의하여 사용하세요.</p>
+      
+
+      <h6 class="title-bordered">hover</h6>
       <button class="user-logout" title="sign out">
         <span class="user-logout-icon">
           <i class="icon-out"><span class="icon-out-door"></span></i>
@@ -520,7 +545,6 @@
         로그아웃
       </button>
 
-      <h6 class="title-bordered">hover / focus / active </h6>
       <h6 class="title-bordered">invalid / success</h6>
       <h6 class="title-bordered">warning / danger</h6>
       <!-- <h6 class="title-bordered">loading / fetching</h6> -->
@@ -554,10 +578,10 @@
       </code>
     </article>
 
-    <!-- <article class="design-article js-scrollspy-section">
+    <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">z-index</h1>
       <p class="design-article-description">작성 중.</p>
-      <dl>
+      <!-- <dl>
         <dt>toast</dt>
         <dd>9</dd>
         <dt>modal</dt>
@@ -568,8 +592,8 @@
         <dd>5</dd>
         <dt>popover</dt>
         <dd>2</dd>
-      </dl>
-    </article> -->
+      </dl> -->
+    </article>
 
     <!-- <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Timing</h1>
