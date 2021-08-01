@@ -11,7 +11,7 @@
 .login-separator:after {content:'또는';width:4rem;line-height:24px;background:var(--gray0);font-size:var(--font-size-caption);color:var(--gray400);position:absolute;left:50%;top:0;transform:translateX(-50%);}
 .login-foot-submit {@include button-primary;width:100%;}
 .login-social {}
-.login-social-facebook {@include button-primary;width:100%;border-color:var(--color-facebook);background-color:var(--color-facebook);}
+.login-social-facebook {@include button-primary;width:100%;border-color:var(--color-facebook) !important;background-color:var(--color-facebook);}
 // .login-social-facebook:hover {background:darken(var(--color-facebook), 2.5%);border-color:darken(var(--color-facebook), 2.5%);}
 .login-social-twitter {background:#4ab3f4;}
 .login-social-naver {margin-bottom:8px;background:#3bcc15;}

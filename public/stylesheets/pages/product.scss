@@ -53,7 +53,7 @@
 .product-navigation {display:flex;justify-content:center;width:100%;margin:4rem 0;}
 .product-navigation a {margin:0 1rem;}
 
-.product-detail {}
+.product-detail {margin:var(--space-between-section) 0;}
 
 .product-detail-more {display:flex;flex-wrap:wrap;justify-content:center;width:100%;margin:4rem 0;overflow:hidden;position:relative;}
 .product-detail-more::before {content:'';display:block;height:1px;background:var(--gray200);position:absolute;left:-100%;right:-100%;top:16px;}
