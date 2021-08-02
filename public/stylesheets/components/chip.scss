@@ -16,15 +16,14 @@
   position:relative;
 
   &:hover {border-color:var(--gray800);}
-  &:hover figure {border-top-color:var(--gray800) !important;border-bottom-color:var(--gray800) !important;background:none;}
+  &:hover figure {border-top-color:inherit !important;border-bottom-color:inherit !important;background:none;}
   &:disabled {border-color:transparent;}
   &:disabled figure {}
   
   &.is-active {border-color:var(--color-primary);background:var(--green100);color:var(--color-primary);
-    // 임시로
-    background: var(--gray800);
-    border-color: var(--gray800);
-    color: var(--gray0);
+    // background: var(--gray800);
+    // border-color: var(--gray800);
+    // color: var(--gray0);
   }
   &.is-active figure {
     // border-top-color:var(--color-primary) !important;border-bottom-color:var(--color-primary) !important;
@@ -38,15 +37,18 @@
   @include avatar-medium;
   @include chip-tailing;
 }
-
+@mixin chip-label {
+  padding:0 var(--space-chip-inset);
+}
 
 .chip {@include chip}
-.chip-label {padding:0 var(--space-chip-inset);}
+.chip-label {@include chip-label;}
 .chip-thumbnail {@include avatar-medium;@include chip-heading;}
+
 .chip-icon {@include chip-icon;}
 .chip-icon .icon-caret {}
-.chip-icon .icon-check {border-color: var(--gray0);}
+.chip-icon .icon-check {border-color: var(--color-primary);}
 .chip-icon .icon-x {}
+
 .is-active .chip-icon .icon-x::before {background:var(--gray0);}
 .is-active .chip-icon .icon-x::after {background:var(--gray0);}
-// .chip-count {}

@@ -282,7 +282,8 @@
 
 
 .sheet {@include tile-elevated;}
-.sheet-title {margin:0 0 var(--space);font-size:12px;color:var(--gray400);}
+// todo title label
+.sheet-title {margin:0 0 var(--space);font-size:var(--font-size-body);font-weight:var(--font-weight-normal);color:var(--gray400);}
 .sheet button {position:relative;z-index:var(--zindex-default);}
 .sheet button:hover {@include hover-item;}
 
@@ -290,22 +291,24 @@
 .keywords-title {@include subhead;margin:var(--space-leading-subhead) 0 .75rem 0;}
 .keywords-group {@include chip-group;}
 .keywords-group-keyword {@include chip;}
+.keywords-group-keyword-label {@include chip-label;}
 
 .avatarlist {@include tile-elevated;padding:.5rem;color:var(--gray800);}
 .avatarlist:hover {@include hover-item;}
 
 
 .temp8 {}
-.temp8 div {margin-right:.5rem;
+.temp8 div {
   @include tile-elevated-small;
+  margin-right:var(--space-small);
   font-size:var(--font-size-caption);
   position:relative;
   z-index: 1;
 }
 .temp8 div:hover{@include hover-item;}
 .temp8 div figure {
-  display:flex;align-items:center;justify-content:center;
-          width:80px;height:80px;border-radius:var(--radius400);background:indianred;font-size:var(--font-size-huge);
+  @include avatar-huge;
+  background:indianred;font-size:var(--font-size-huge);
 }
 
 

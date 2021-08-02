@@ -91,6 +91,11 @@
       <div>말줄임표</div>
     </article> -->
 
+    <!-- <article class="design-article" style="display:flex;justify-content:space-between;margin:4rem -10%;">
+      <h1 class="design-article-title" style="width:25%;font-size:var(--font-size-title);">Jobs at<br />Dropbox</h1>
+      <p style="width:60%;font-size:var(--font-size-subhead);">Help us reimagine the way work works! We’re always looking for talented, passionate, open-minded people to join our team.</p>
+    </article> -->
+
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Avatars</h1>
       <p class="design-article-description">작성 중.</p>
@@ -177,7 +182,7 @@
       <p class="design-article-description">작성 중. 항상 액션이 발생.</p>
       <div class="design-article-description">
         <p class="checklist"><span><i></i></span> 맥락이 다른 chip을 나열할 수 있습니다. 단일선택, 다중선택, 삭제여부, 펼침메뉴 등의 기표를 아이콘으로 제공하세요.</p>
-        <p class="xlist"><span><i></i></span> 콘텐츠 정렬sorting에 사용하지 마세요. 콘텐츠 정렬은 selectbox를 사용합니다.</p>
+        <p class="xlist"><span><i></i></span> 콘텐츠 정렬sorting에 사용하지 마세요. selectbox를 사용하세요.</p>
       </div>
 
       <blockquote>
@@ -290,15 +295,15 @@
       </div>
       <br />
       <div class="tile-elevated-small">
-        <a href="https://material.io/components/menus" target="_blank">MD menu</a>
+        <a href="https://material.io/components/menus" target="_blank" style="display:block;">MD menu</a>
       </div>
       <div class="tile-elevated-small" style="margin:var(--space) 0 0 0;">
-        <a href="https://developer.apple.com/design/human-interface-guidelines/ios/controls/pull-down-menus/" target="_blank">HIG pull down menu</a>
+        <a href="https://developer.apple.com/design/human-interface-guidelines/ios/controls/pull-down-menus/" target="_blank" style="display:block;">HIG pull down menu</a>
       </div> 
     </article>
 
     <article class="design-article js-scrollspy-section">
-      <h1 class="design-article-title">Tags</h1>
+      <h1 class="design-article-title">Tags (or badge/label)</h1>
       <p class="design-article-description">작성 중. 인접한 컴포넌트나 상위 컴포넌트의 상태, 분류, 키워드...</p>
 
       <div class="design-article-description">
@@ -308,15 +313,12 @@
         <p class="xlist"><i></i> 아이콘을 포함할 수 없습니다. <span hidden>(이 디자인시스템은 아이콘을 클릭 기표로 사용한다는 대원칙에 근거하여 아이콘이 없다는 것은 클릭할 수 없다고 이해해도 무방?)</span></p>
       </div>
 
-      <blockquote>
-        <p>디자인시스템에서 badge, label 등으로 명명.</p>
-      </blockquote>
-
       <div class="tag-group" role="group">
         <span class="tag" data-appearance="primary">Primary</span>
         <span class="tag" role="listitem" style="background:var(--green100);color:var(--green800);">Secondary</span>
         <span class="tag" role="listitem">Tertiary</span>
         <span class="tag" role="listitem" style="background:var(--red100);border-color:var(--red100);color:var(--red800);">15</span>
+        <span class="tag" role="listitem" style="width:var(--size-tiny);height:var(--size-tiny);background:var(--red800);padding:0;"></span>
         <span class="tag" role="listitem" style="width:4px;height:4px;background:var(--red800);padding:0;"></span>
       </div>
       <hr />
@@ -409,7 +411,7 @@
         <button class="design-article-text">loading...</button>
         <button class="design-article-text">view all</button>
         <button class="design-article-text">more load</button>
-        <button class="design-article-text">icon button (+ close)</button>
+        <button class="design-article-tertiary-small"><i class="icon-x"></i></button>
       </div>
       <!-- <h6 class="title-bordered">Text (outdated)</h6>
       <div class="design-buttongroup">
@@ -1202,7 +1204,7 @@
       <h1 class="design-article-title">Step</h1>
       <p class="design-article-description">작성 중. 타임라인(역순)/히스토리 맥락. 확장(optional), 링크(optional), indentation</p>
       <blockquote>
-        <p>네이밍은 input type="range" 형태를 stepper로 명명하는 경우가 있음. css속성으로 -webkit-appearance: slider-vertical; 사용되기 때문에 slider는 carousel로 명명.</p>
+        <p>input type="range" 형태를 stepper로 명명하는 경우가 있음. css속성으로 -webkit-appearance: slider-vertical; 사용되기 때문에 slider는 carousel로 명명.</p>
       </blockquote>
 
       <h6 class="title-bordered">Vertical</h6>
@@ -1310,12 +1312,12 @@
       <article class="keywords">
         <h3 class="keywords-title">실시간 이슈 키워드</h3>
         <div class="keywords-group" role="group">
-          <a class="keywords-group-keyword" href="#">국정감사</a>
-          <a class="keywords-group-keyword" href="#">윤석열검찰총장</a>
-          <a class="keywords-group-keyword" href="#">조국</a>
-          <a class="keywords-group-keyword" href="#">뉴닉</a>
-          <a class="keywords-group-keyword" href="#">차별금지법</a>
-          <a class="keywords-group-keyword" href="#">추미매법무부장관</a>
+          <a class="keywords-group-keyword" href="#"><span class="keywords-group-keyword-label">국정감사</span></a>
+          <a class="keywords-group-keyword" href="#"><span class="keywords-group-keyword-label">윤석열검찰총장</span></a>
+          <a class="keywords-group-keyword" href="#"><span class="keywords-group-keyword-label">조국</span></a>
+          <a class="keywords-group-keyword" href="#"><span class="keywords-group-keyword-label">뉴닉</span></a>
+          <a class="keywords-group-keyword" href="#"><span class="keywords-group-keyword-label">차별금지법</span></a>
+          <a class="keywords-group-keyword" href="#"><span class="keywords-group-keyword-label">추미매법무부장관</span class="keywords-group-keyword-label"></a>
         </div>
       </article>
 
@@ -1331,7 +1333,7 @@
         </menu> -->
         <menu class="navbar-notification-menu">
           <h6 class="navbar-notification-menu-title">알림</h6>
-          <a class="navbar-notification-menu-all" href="#" style="font-weight:var(--font-weight-bold);">모두 보기</a>
+          <a class="navbar-notification-menu-all" href="#">모두 보기</a>
           <hr />
           <div class="notification-item">
             <em class="notification-unread"></em>
@@ -1515,8 +1517,8 @@
         <h2 class="share-title">제목</h2>
         <!-- <p class="share-description" style="margin:.5rem 0 0 0;">chip 스타일의 필터링 버튼. 리스트의 버튼을 죽여야.</p> -->
         <div class="chip-group" role="group" style="margin-top:.5rem;">
-          <button class="chip is-active" style="width:calc(50% - 1rem);text-align:center;">필터 옵션이 2개일 때</button>
-          <button class="chip" style="width:calc(50% - 1rem);text-align:center;">채워서 사용해보아요</button>
+          <button class="chip is-active" style="width:calc(50% - .5rem);text-align:center;">필터 옵션이 2개일 때</button>
+          <button class="chip" style="width:calc(50% - .5rem);text-align:center;">채워서 사용해보아요</button>
         </div>
         <div style="margin-top:1rem;" role="listbox">
           <div class="item" role="listitem">
