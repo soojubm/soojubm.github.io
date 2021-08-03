@@ -1,11 +1,9 @@
 .about {}
 
-.about-subhead-icon {display:block;margin:0 0 1rem 0;}
-
-.about-intro {max-width:var(--width-large);overflow:hidden;margin:2rem auto 6rem;padding:0 5%;position:relative;}
-.about-intro-image {float:right;max-width:400px;}
-.about-intro-image img {border-radius:var(--radius400);}
-.about-intro-description {width:50%;margin:0 0;font-size:var(--font-size-subhead);}
+.about-intro {display:flex;flex-direction:row-reverse;height:calc(100vh - var(--navbar-height));position:relative;}
+.about-intro-image {width:50%;overflow:hidden;position:relative;}
+.about-intro-image img {@include image-centered;}
+.about-intro-description {width:50%;padding:var(--grid-margin);box-sizing:border-box;background:var(--color-primary);font-size:var(--font-size-subhead);}
 .about-intro-address {@include tile-elevated;}
 
 .about-contact {max-width:var(--width-large);margin:0 auto;padding:4rem var(--grid-margin);background:var(--gray100);position:relative;}

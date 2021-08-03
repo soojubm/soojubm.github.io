@@ -266,10 +266,10 @@
     <script>
       document.addEventListener('DOMContentLoaded', () => {
         // fetchComponent('sitemap')
-        // fetchComponent('footer')
+        // renderComponent('footer')
       })
 
-      async function fetchComponent(componentName) {
+      async function renderComponent(componentName) {
         const selector = `#${componentName}`
         const endpoint = `/views/components/${componentName}.html`
         const parentElement = document.querySelector(selector)

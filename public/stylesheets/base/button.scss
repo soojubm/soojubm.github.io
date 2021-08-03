@@ -108,6 +108,10 @@ button {@include reset-button;}
   height:var(--size-medium);padding:3px 1rem;font-size:var(--font-size-caption);
 }
 
+@mixin button-close {
+  @include avatar-medium;
+}
+
 // ! backButton closeButton :: back close 아이콘은 어차피 단독으로 쓰이지 않는다!
 
 // ! 모바일에서 100%로 되는 컴포넌트가 있고 아닌 컴포넌트가 있다.

@@ -153,7 +153,8 @@
 .completed {text-decoration: line-through;}
 
 .statistic {display:flex;justify-content:space-between;}
-.statistic-item {}
+.statistic-item {position:relative;z-index:1;}
+.statistic-item:hover {@include hover-item;}
 .statistic-label {display:block;color:var(--gray400);}
 .statistic-value {display:block;margin:-.25rem 0 0 0;@include subhead;}
 

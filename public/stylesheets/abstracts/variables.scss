@@ -122,6 +122,11 @@ $transition-fade: opacity 0.15s linear;
 
   --space-after-textfield: 1rem;
   
+  --space-after-avatar-huge: 1rem;
+  --space-after-avatar-large: var(--space);
+  --space-after-avatar-medium: var(--space);
+  --space-after-avatar-small: var(--space-small);
+  
   --space-before-badge: .75rem;
 
   --space-between-listitem: .75rem;
@@ -132,6 +137,7 @@ $transition-fade: opacity 0.15s linear;
   --space-between-groupitem-minus: calc(var(--space-between-groupitem) * -1);
   --space-between-article: 10rem;
   --space-between-section: 12rem;
+
 
   // todo, position
   --space-tile-inset: 1rem;
