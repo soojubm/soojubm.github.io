@@ -74,11 +74,6 @@
 // >
 // display:block;width:6px;height:6px;border-left:2px solid var(--gray800);border-top:2px solid var(--gray800);transform:rotate(-135deg);position:absolute;right:16px;bottom:22px;
 
-// -> 스타일
-.icon-arrow-right {padding:16px;position:relative;}
-.icon-arrow-right:before {content:'';display:block;width:16px;height:1px;background:var(--gray800);position:absolute;left:16px;top:24px;transition:all .4s ease;}
-.icon-arrow-right:after {content:'';display:block;width:5px;height:1px;background:var(--gray800);position:absolute;left:27px;top:22px;transform:rotate(45deg);transition:all .4s ease;}
-
 
 .icon-circled-arrow {display:inline-block;margin:0 0 0 6px;padding:8px;border:1px solid var(--color-primary);border-radius:50%;vertical-align:middle;position:relative;}
 .icon-circled-arrow:before {content:'';display:block;width:8px;height:1px;background:var(--color-primary);position:absolute;left:4px;top:8px;transition:all .4s ease;}
@@ -107,28 +102,34 @@
 
 .icon-bullet:before {content:'\002F';margin:0 var(--space-small);color:var(--gray200);}
 
-.icon-arrow {background-color:var(--gray800);border-color:var(--gray800);position: relative;}
+.icon-arrow {
+  // 색사 정의하기.
+  @include avatar-medium;
+}
 .icon-arrow:before {
   content: '';
-  position: absolute;
-  border-top: 2px solid inherit;
-  border-left: 2px solid inherit;
-  top: 50%;
+  border-top: 2px solid var(--gray800);
+  border-left: 2px solid var(--gray800);
   width: 6px;
   height: 6px;
-  right: -2px;
-  transform: translate(50%, -50%) rotate(135deg);}
+  position: absolute;
+  left: calc(50% + 2px);
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(135deg);}
 .icon-arrow:after {
   content: '';
-  position: absolute;
-  background-color: inherit;
-  top: 50%;
-  right: -5px;
   width: 12px;
   height: 2px;
-  transform: translate(0, -50%);
+  background-color: var(--gray800);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 .icon-arrow.is-left {transform:rotate(180deg);}
+.icon-arrow-right {padding:16px;position:relative;}
+.icon-arrow-right:before {content:'';display:block;width:16px;height:1px;background:var(--gray800);position:absolute;left:16px;top:24px;transition:all .4s ease;}
+.icon-arrow-right:after {content:'';display:block;width:5px;height:1px;background:var(--gray800);position:absolute;left:27px;top:22px;transform:rotate(45deg);transition:all .4s ease;}
 
 
 .icon-out {position:relative;}
