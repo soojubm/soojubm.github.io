@@ -76,7 +76,7 @@
       <div class="textfield-input" role="textbox" contenteditable="true" aria-placeholder="5-digit zipcode" aria-labelledby="txtboxLabel"></div>
     </article> -->
 
-    <!-- <article class="design-article js-scrollspy-section">
+    <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Bullet</h1>
       <p class="design-article-description">불릿은 [좁은 화면]에서 텍스트를 분리??. 불릿, 콤마, 콜론, 슬래시, 따옴표, 괄호 등 지양. 정보가 복잡도가 증가하기 때문. 위계를 설정하고 시각화를 고민하세요. 슬래시가 대표적인 불릿의 역할이기 때문에 컴포넌트화하여 정해진 스타일을 사용. 디자인되지 않았다는 인상.</p>
       <blockquote>
@@ -85,11 +85,11 @@
         <p style="font-size:12px;"><span style="margin-right:.5rem;"><i class="icon-check"></i></span>불릿과 같은 용법인 슬래시(/)는 사용하지 않습니다. 정의된 스타일만을 불릿 용법으로 사용합니다.</p>
       </blockquote>
       <div>
-        <time>텍스트<i class="icon-bullet"></i>텍스트</time>
+        <span>텍스트</span>
+        <i class="icon-bullet"></i>
+        <span>텍스트</span>
       </div>
-      <hr />
-      <div>말줄임표</div>
-    </article> -->
+    </article>
 
     <!-- <article class="design-article" style="display:flex;justify-content:space-between;margin:4rem -10%;">
       <h1 class="design-article-title" style="width:25%;font-size:var(--font-size-title);">Jobs at<br />Dropbox</h1>
@@ -98,7 +98,7 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Avatars</h1>
-      <p class="design-article-description">작성 중.</p>
+      <p class="design-article-description">텍스트를 시각적으로 보조합니다. 썸네일 이미지, 유저 프로필, 아이콘 버튼에 사용합니다.</p>
       <blockquote>
         <!-- <h6>anatomy</h6> -->
         <dl class="design-article-description">
@@ -148,7 +148,7 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Chips ☀️</h1>
-      <p class="design-article-description">작성 중. 항상 액션이 발생.</p>
+      <p class="design-article-description">조각 형태로 액션을 실행합니다. 현재 작은 사이즈 버튼과 스타일이 동일합니다.</p>
       <div class="design-article-description">
         <p class="checklist"><span><i></i></span> 맥락이 다른 chip을 나열할 수 있습니다. 단일선택, 다중선택, 삭제여부, 펼침메뉴 등의 기표를 아이콘으로 제공하세요.</p>
         <p class="xlist"><span><i></i></span> 콘텐츠 정렬sorting에 사용하지 마세요. selectbox를 사용하세요.</p>
@@ -273,7 +273,7 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Tags (or badge/label)</h1>
-      <p class="design-article-description">작성 중. 인접한 컴포넌트나 상위 컴포넌트의 상태, 분류, 키워드...</p>
+      <p class="design-article-description">인접한 요소의 상태, 분류, 키워드를 제공합니다.</p>
 
       <div class="design-article-description">
         <p class="checklist"><span><i></i></span> primary: eyebrow, badge / secondary: badge / tertiary: badge, keyword, hashtag</p>
@@ -296,7 +296,7 @@
     
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Buttons</h1>
-      <p class="design-article-description">작성 중. 사용자의 행동. 페이지 이동. todo: 상태별로 구루핑.</p>
+      <p class="design-article-description">사용자의 행동을 유도합니다. 페이지 이동이나 액션에 사용합니다.</p>
       <div class="design-article-description">
         <!-- <p class="xlist"><span><i></i></span> 크기가 다른 버튼을 함께 사용하지 마세요. (버튼 그룹)</p> -->
         <p class="checklist"><span><i></i></span> 버튼의 상태를 나타내는 스타일은 모두 동일합니다.</p>
@@ -406,7 +406,7 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Selections</h1>
-      <p class="design-article-description">작성 중.</p>
+      <p class="design-article-description">하나 이상의 옵션을 선택합니다.</p>
 
       <!-- (리액트에서 id  이슈 input in label.) -->
       <div class="design-article-description">
@@ -497,7 +497,7 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Textfields</h1>
-      <p class="design-article-description">작성 중.</p>
+      <p class="design-article-description">사용자가 텍스트 정보를 입력합니다.</p>
       
       <div class="design-article-description">
         <p class="xlist"><span><i></i></span> 왼쪽 레이블을 사용하지 마세요. <b hidden>(prefix에 뒤로가기 버튼이 포함되지 않는 형태로만 사용)</b></p>
@@ -648,9 +648,9 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Texts</h1>
-      <p class="design-article-description">작성 중. label과 value 사시에 충분한 공간이 확보된다면 위계를 위한 스타일 적용 최소화할 수 있음.</p>
+      <p class="design-article-description">단순 텍스트 형태의 인터페이스를 모았습니다. 위계를 위한 스타일을 최소화하세요.</p>
       <!-- <ul class="design-article-description">
-        <li>작성 중. todo: checklist(price card 등에서 사용) 정의. 대부분의 유아이는 리스트 형식으로 나열되기 때문에 텍스트 리스트에 한정하여 리스트 태그(ul, ol, dl)로 마크업합니다. (role=listbox/listitem)</li>
+        <li>todo: checklist(price card 등에서 사용) 정의. 대부분의 유아이는 리스트 형식으로 나열되기 때문에 텍스트 리스트에 한정하여 리스트 태그(ul, ol, dl)로 마크업합니다. (role=listbox/listitem)</li>
       </ul> -->
       <h6 class="title-bordered">List</h6>
       <ul class="list-sample">
@@ -754,7 +754,7 @@
 <!-- 
     <article class="design-article">
       <h1 class="design-article-title">Button Group</h1>
-      <p class="design-article-description">작성 중. 그룹과 리스트박스의 역할 정의.</p>
+      <p class="design-article-description">그룹과 리스트박스의 역할 정의.</p>
       <ul class="design-article-description">
         <li>키보드 접근성을 위해 버튼 그룹에서 항상 primary를 먼저 마크업하세요.</li>
       </ul>
@@ -771,10 +771,10 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Tooltip</h1>
-      <p class="design-article-description">작성 중.</p>
+      <p class="design-article-description">생소한 용어나 집계된 수치의 근거 등에 사용하세요.</p>
       <div class="design-article-description">
-        <p class="checklist"><span><i></i></span>생소한 용어나 집계된 수치의 근거 등에 사용하세요. 필요하지 않도록 화면을 설계하는 것이 최선입니다.</p>
         <p class="checklist"><span><i></i></span>페이지를 불러 온 시점에 열어 두는 경우 대비 doorhanger 필요.</p>
+        <!-- <p class="xlist"><span사용자가><i></i></span사용자가 꼭 알아야 하는 부분 사용하지마요.</p> -->
         <p class="xlist"><span><i></i></span>사용자의 행동을 유도하는 가이드로 사용하지 마세요.</p>
         <p class="xlist"><span><i></i></span>페이지 링크로 사용하지 마세요. 항상 팝오버 형태를 따릅니다.</p>
       </div>
@@ -830,7 +830,7 @@
 
     <article class="design-article" hidden>
       <h1 class="design-article-title">File Uploader</h1>
-      <p class="design-article-description">작성 중.</p>
+      <p class="design-article-description"></p>
       <form class="file" method="" enctype="multipart/form-data">
         <h3 class="file-title" hidden>프로필 사진</h3>
         <div class="file-upload">
@@ -848,7 +848,7 @@
 
     <!-- <article class="design-article">
       <h1 class="design-article-title">Index</h1>
-      <p class="design-article-description">작성 중.</p>
+      <p class="design-article-description"></p>
       <nav class="index">
         <h2 class="index-title">Table of contents.</h2>
         <ol>
@@ -860,11 +860,10 @@
         </ol>
       </nav>
     </article> -->
-
     <!-- // Chris said Marcus replied -->
 
     <article class="design-article js-scrollspy-section">
-      <h1 class="design-article-title">carousel</h1>
+      <h1 class="design-article-title">Carousel</h1>
       <p class="design-article-description">서드파티 라이브러리 없이 가로 스크롤을 활용합니다. </p>
       <div class="design-article-description">
         <p class="checklist"><span><i></i></span> 터치 제스쳐를 지원하지 않는 환경(데스크탑 등)에서 arrow 버튼을 제공하세요.</p>
@@ -919,9 +918,9 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Paginations</h1>
-      <p class="design-article-description">작성 중.</p>
+      <p class="design-article-description">페이지네이션.</p>
       <div>
-        <p class="checklist"><span><i></i></span>첫 페이지와 마지막 페이지에 더블 화살표 아이콘을 사용하지 않습니다. 최초 페이지와 최종 페이지를 사용하세요.</p>
+        <p class="checklist"><span><i></i></span>첫 페이지와 마지막 페이지에 더블 화살표 아이콘을 사용하는 대신 최초와 최종 페이지 넘버를 사용합니다.</p>
       </div>
       <blockquote>
         <p>infinite scroll, more load, paging</p>
@@ -957,7 +956,10 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Table</h1>
-      <p class="design-article-description">작성 중.</p>
+      <p class="design-article-description">표.</p>
+      <div class="design-article-description">
+        <p>layout으로 사용하지 마세요.</p>
+      </div> 
       <table>
         <caption>히라가나 오십음도</caption>
         <!-- <colgroup>
@@ -1075,7 +1077,7 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Bottom Navigation</h1>
-      <p class="design-article-description">작성 중.</p>
+      <p class="design-article-description">바텀 네비게이션.</p>
       <blockquote>
         <p>햄버거 메뉴 이커머스 도매인의 카테고리 왼쪽, 글로벌 네비게이션 오른쪽.</p>
       </blockquote>
@@ -1098,7 +1100,7 @@
 
     <article class="design-article" hidden>
       <h1 class="design-article-title">Rating</h1>
-      <p class="design-article-description">작성 중.</p>
+      <p class="design-article-description">레이팅</p>
       <!-- <div class="rating">
         <h1 class="rating-title" aria-hidden="true">별점</h1>
         <span class="rating-score">.3</span>
@@ -1146,7 +1148,7 @@
 
     <article class="design-article" hidden>
       <h1 class="design-article-title">Graph</h1>
-      <p class="design-article-description">작성 중.</p>
+      <p class="design-article-description">그래프</p>
       <div class="graph js-graph" style="border:1px solid var(--gray200);border-radius:var(--radius400);">
         <div class="graph-title">1월 26일 <em>컴퓨터통신 분야</em>에서는<br><em>7백명의 지식iN</em>들이 답변하셨습니다.</div>
         <div class="graph-item">
@@ -1178,10 +1180,11 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Step</h1>
-      <p class="design-article-description">작성 중. 타임라인(역순)/히스토리 맥락. 확장(optional), 링크(optional), indentation</p>
-      <blockquote>
-        <p>input type="range" 형태를 stepper로 명명하는 경우가 있음. css속성으로 -webkit-appearance: slider-vertical; 사용되기 때문에 slider는 carousel로 명명.</p>
-      </blockquote>
+      <p class="design-article-description">워크플로우입니다.</p>
+      <!-- <p class="design-article-description">타임라인(역순)/히스토리 맥락. 확장(optional), 링크(optional), indentation</p> -->
+      <!-- <blockquote>
+        <p>css속성으로 -webkit-appearance: slider-vertical slider 속성 값을 사용하기 때문에 slider는 carousel로 명명. input type="range" 형태를 stepper로 명명하는 경우가 있음.</p>
+      </blockquote> -->
 
       <h6 class="title-bordered">Vertical</h6>
       <section class="step">
@@ -1226,7 +1229,7 @@
     
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Result</h1>
-      <p class="design-article-description">작성 중. 페이지나 컴포넌트의 상태, </p>
+      <p class="design-article-description">사용자의 실행 결과, 페이지나 섹션에 내용이 부족할 때 사용합니다.</p>
       <p class="checklist"><span><i></i></span>왼쪽 정렬의 기본적인 콘텐츠 모듈과 구별하여 가운데 정렬합니다.</p>
       <blockquote>
         <p>디자인시스템에서 blankslate, empty state로 명명됨. result로 네이밍하여 empty, error, complete 등에서 범용성을 확보. 분리하는 것이 좋을지도.</p>
@@ -1245,7 +1248,7 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Dummies</h1>
-      <p class="design-article-description">작성 중.</p>
+      <p class="design-article-description">유아이 샘플.</p>
 
       
       <aside class="dialog" role="dialog" aria-labelledby="dialog-title" aria-describedby="dialog-description">
@@ -1538,6 +1541,9 @@
             <span>Startup</span>
           </div>
         </div>
+        <div class="tile-elevated-small" style="margin:var(--space) 0;">
+          <i style="margin:0 var(--space-small) 0 0;">🦄</i> 샘플 유아이
+        </div>
       </article>
 
       <br />
@@ -1737,7 +1743,7 @@ textarea2.addEventListener('mouseup', onMouseUp, false);
 
     <!-- <article class="design-article">
       <h1 class="design-article-title">Spinner</h1>
-      <p class="design-article-description">작성 중.</p>
+      <p class="design-article-description">로딩 스피너</p>
       <div class="loader-spinner" style="position:static;"></div>
     </article> -->
 

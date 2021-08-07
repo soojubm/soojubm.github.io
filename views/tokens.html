@@ -14,9 +14,9 @@
       데스크탑과 모바일 플랫폼을 구분하지 않습니다.
     </p>
 
-    <article class="design-article js-scrollspy-section">
+    <article class="design-article js-scrollspy-section" hidden>
       <h1 class="design-article-title">기표signifier</h1>
-      <p class="design-article-description">작성 중.</p>
+      <p class="design-article-description"></p>
       <div class="design-article-description">
         <p class="checklist"><span><i></i></span> 목록의 나머지를 더 보여줄 때는 [모두보기], 미리보기 형식의 텍스트를 더 보여줄 때는 [전체보기].</p>
         <p class="xlist"><span><i></i></span> '확장할 수 있음'으로 plus icon을 사용하지 마세요. 아코디언 수정해야 함.</p>
@@ -69,8 +69,8 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Sizes</h1>
-      <p class="design-article-description">작성 중.</p>
-      <!-- <p class="design-article-description">가로 크기는 퍼센티지로 비교적 유연하게 사용합니다. alert, accordion 등 예외 케이스.</p> -->
+      <p class="design-article-description">요소의 가로 세로 크기를 정의합니다. 주로 세로 크기에 사용하되 alert, accodion 등의 컴포넌트는 크기를 정의하지 않는 것이 좋습니다. .</p>
+      <!-- <p class="design-article-description">alert, accordion 등 예외 케이스.</p> -->
       <code class="design-article-description" style="padding:1rem;">
         <p>--size-huge: 80px;</p>
         <p>--size-large: 48px;</p>
@@ -162,7 +162,7 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Spacing</h1>
-      <p class="design-article-description">작성 중. todo: 패턴으로 따로 정의할 필요가 있겠다.</p>
+      <p class="design-article-description">요소간 간격을 정의합니다. todo: 패턴으로 따로 정의할 필요가 있겠다.</p>
       <code style="padding:1rem;">
         <p>--space: .75rem;</p>
         <p>--space-small: .5rem;</p>
@@ -292,7 +292,7 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Palette</h1>
-      <p class="design-article-description">작성 중. background/border/text/state. todo: --button-background-color와 같은 변수는 불필요하고, 바로 mixin 하면 되겠다.</p>
+      <p class="design-article-description">background/border/text/state. todo: --button-background-color와 같은 변수는 불필요하고, 바로 mixin 하면 되겠다.</p>
       <div class="design-article-description">
         <!-- <p class="checklist"><span><i></i></span> 녹색, 빨간색 및 주황색은 양식 유효성 검사 및 메시징과 같은 특별한 경우에만 사용됩니다.</p> -->
         <!-- <p class="checklist"><span><i></i></span> todo: 다크테마를 위한 elevation800을 추가하고 400을 조정. 다크테마를 위한 gradient 정의하기.</p> -->
@@ -447,7 +447,7 @@
 
     <article class="design-article typography js-scrollspy-section">
       <h1 class="design-article-title">Typography</h1>
-      <p class="design-article-description">작성 중.</p>
+      <p class="design-article-description">텍스트 정보.</p>
       <div class="design-article-description">
         <p class="checklist"><span><i></i></span> bottom navigation의 label로 10px을 사용합니다.</p>
 
@@ -548,9 +548,10 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Tiles</h1>
-      <p class="design-article-description">작성 중. 아이콘/텍스트 leading에 맞춰 시각보정이 필요. line-height 때문. tile이 아니더라도 elevated 스타일이 적용되는 케이스 존재.</p>
+      <p class="design-article-description">관련된 콘텐츠를 시각적으로 몰아넣습니다.</p>
       
       <div class="design-article-description">
+        <!-- <p>아이콘/텍스트 leading에 맞춰 시각보정이 필요. line-height 때문. tile이 아니더라도 elevated 스타일이 적용되는 케이스 존재.</p> -->
         <p class="checklist"><span><i></i></span> '클릭할 수 있음'의 기표로 elevated 스타일을 사용합니다.  타일 전체가 하나의 클릭 가능한 영역일 수도, 타일 내부에 클릭 가능한 요소가 포함되어 있을 수도 있습니다.</p>
         <p class="xlist"><i></i> 페이지 레벨의 타이틀, 디스크립션을 타일로 만들지 마세요.</p>
       </div>
@@ -577,7 +578,7 @@
 
     <!-- <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Border Radius</h1>
-      <p class="design-article-description">요소에 모서리를 정의합니다. 작성 중. 오브젝트에 일관된 모서리를 사용하여,</p>
+      <p class="design-article-description">요소에 모서리를 정의합니다.  오브젝트에 일관된 모서리를 사용하여,</p>
       <div class="design-article-description">
         <p class="checklist"><span><i></i></span> 컨테이너의 크기에 따라 radius의 크기도 커지는 것이 밸런스에 맞으나 토큰을 최소화하는 것이 초기 스테이지에서 좋읍니다.</p>
         <p class="xlist"><span><i></i></span> 알약pill 스타일, 원형Circle 스타일 기본default(가칭) 스타일을 혼용하지 마세요.</p>
@@ -597,7 +598,7 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">States</h1>
-      <p class="design-article-description">작성 중. 카드 또는 아이템의 hover state로 여러 개의 코드 또는 스타일이 필요하지 않습니다. 하나의 mixin을 정의.</p>
+      <p class="design-article-description">카드 또는 아이템의 hover state로 여러 개의 코드 또는 스타일이 필요하지 않습니다. 하나의 mixin을 정의.</p>
 
       <h6 class="title-bordered">hover</h6>
       <button class="user-logout" title="sign out">
@@ -620,7 +621,7 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Groups</h1>
-      <p class="design-article-description">작성 중.</p>
+      <p class="design-article-description">그룹.</p>
       <!-- <p class="design-article-description">role=group/row/rowgroup, role=menuitem, role=treeitem</p> -->
       <code class="design-article-description" style="padding:1rem;">
         <p>@mixin group {}</p>
@@ -643,12 +644,12 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Containers & Media Queries</h1>
-      <p class="design-article-description">작성 중.</p>
+      <p class="design-article-description"></p>
     </article>
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">z-index</h1>
-      <p class="design-article-description">작성 중.</p>
+      <p class="design-article-description"></p>
       <!-- <dl>
         <dt>toast</dt>
         <dd>9</dd>
@@ -665,7 +666,7 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Timing</h1>
-      <p class="design-article-description">작성 중. 끝날 때 0초.</p>
+      <p class="design-article-description">닫는 액션은 0초.</p>
     </article>
   </section>
 </main>

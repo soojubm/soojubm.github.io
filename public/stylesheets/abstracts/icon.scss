@@ -96,15 +96,16 @@
 .icon-list span {display:block;width:12px;height:2px;margin:2px 0 2px 4px;background-color:var(--gray800);position:relative;}
 .icon-list span:before {content:'';width:2px;height:2px;background-color:inherit;position:absolute;left:-4px;}
 
-.icon-bullet {
-  display: inline-block;
-  vertical-align: middle;
-  width: 2px;
-  height: 2px;
-  background: var(--gray400);
-  box-sizing: border-box;margin:0 .5rem;
-}
-// .icon-bullet:before {content:'\25AA';color:rgba(84,94,111,.2);}
+// .icon-bullet {
+//   display: inline-block;
+//   vertical-align: middle;
+//   width: 2px;
+//   height: 2px;
+//   background: var(--gray400);
+//   box-sizing: border-box;margin:0 .5rem;
+// }
+
+.icon-bullet:before {content:'\002F';margin:0 var(--space-small);color:var(--gray200);}
 
 .icon-arrow {background-color:var(--gray800);border-color:var(--gray800);position: relative;}
 .icon-arrow:before {
