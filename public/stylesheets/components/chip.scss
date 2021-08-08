@@ -7,7 +7,7 @@
   justify-content: center;
   min-width:var(--size-medium);
   height:var(--size-medium);
-  border:1px solid transparent;
+  border:1px solid var(--gray100);
   border-radius:var(--radius400);
   box-sizing:border-box;
   background:var(--gray100);
@@ -27,7 +27,8 @@
   }
   &.is-active figure {
     // border-top-color:var(--color-primary) !important;border-bottom-color:var(--color-primary) !important;
-    background:none;}
+    background:none;
+  }
 }
 
 @mixin chip-heading {float:left;border-left:0 !important;border-top-right-radius:0 !important;border-bottom-right-radius:0 !important;}
