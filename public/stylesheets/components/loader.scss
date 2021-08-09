@@ -1,13 +1,14 @@
 .loader {position:fixed;left:0;right:0;top:0;bottom:0;background:var(--gray100);z-index:var(--zindex-loader);transition:all .4s;}
-.loader.is-hidden {opacity:0;visibility:hidden;z-index:-1;}
 .loader-spinner {width:2rem;height:2rem;background:var(--color-primary);border-radius:50%;position:fixed;left:50%;top:50%;z-index:var(--zindex-loader);transform:translate(-50%, -50%);animation:scaleout .8s infinite ease;}
 
+// todo hidden
 
+// .loader.is-hidden {opacity:0;visibility:hidden;z-index:-1;}
 
 
 @keyframes spinAround{
-  0%{-webkit-transform:rotate(0deg);transform:rotate(0deg)}
-  100%{-webkit-transform:rotate(359deg);transform:rotate(359deg)}
+  0% {transform:rotate(0deg)}
+  100% {transform:rotate(359deg)}
 }
 .spinner {
   content: "";

@@ -148,21 +148,12 @@
         <dt>tiny</dt><dd>radio, checkbox, switch, avatar</dd>
       </dl> -->
       <!-- 2021-05 xsmall 사이즈 추가, todo: tiny를 xxsmall로 변경하고 기본값으로 medium을 사용. -->
-
-      <!-- <div class="tile-flat-small">
-        <div role="group">
-          <span class="design-article-avatar-large" title="large avatar"></span>
-          <span class="design-article-avatar-medium" title="medium avatar"></span>
-          <span class="design-article-avatar-small" title="small avatar"></span>
-          <span class="design-article-avatar-tiny" title="tiny avatar"></span>
-        </div>
-      </div> -->
     </article>
 
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Spacing</h1>
-      <p class="design-article-description">요소간 간격을 정의합니다. todo: 패턴으로 따로 정의할 필요가 있겠다.</p>
+      <p class="design-article-description">요소간 간격을 정의합니다.</p>
       <code style="padding:1rem;">
         <p>--space: .75rem;</p>
         <p>--space-small: .5rem;</p>
@@ -190,38 +181,42 @@
       </code>
 
       <h6 class="title-bordered">space</h6>
-      <p>space, space small</p>
-
+      <div style="width:var(--space);height:var(--space);background:var(--color-primary);"></div>
+      <p>space .75rem</p>
+      <br />
+      <div style="width:var(--space-small);height:var(--space-small);background:var(--color-primary);"></div>
+      <p>space-small .5rem</p>
       <br />
 
       <h6 class="title-bordered">space, item</h6>
-
-      <div class="avatar-large" style="display:flex;margin-bottom:var(--space);">
-        <a href="" class="design-article-avatar-huge"><span class="avatar-badge"></span></a>
-        <div style="display:block;width:var(--space-after-avatar-huge);height:inherit;border-radius:var(--radius400);background:var(--green100);"></div>
-        <div style="display:block;width:calc(100% - 80px - 1.5rem);height:inherit;">
-          <h3 style="font-size:var(--font-size-subhead);font-weight:var(--font-weight-bold);">huge 80px / space 1rem</h3>
-          <p style="color:var(--gray400);">디스크립션</p>
-        </div>
-      </div>
-      <div style="display:flex;margin-bottom:var(--space);">
-        <a href="" class="design-article-avatar-large"></a>
-        <div style="display:block;width:var(--space-after-avatar-large);height:48px;border-radius:var(--radius400);background:var(--green100);box-sizing:border-box;"></div>
-        <div style="display:block;width:calc(100% - 48px - 1rem);height:inherit;">
-          <h3 style="font-weight:var(--font-weight-bold);font-size:var(--font-size-body);">large 48px / space 1rem</h3>
-          <p style="color:var(--gray400);">디스크립션</p>
-        </div>
-      </div>
-      <div style="display:flex;align-items:center;margin-bottom:var(--space);">
-        <a href="" class="design-article-avatar-medium"></a>
-        <div style="display:block;width:var(--space-after-avatar-medium);height:32px;border-radius:var(--radius400);background:var(--green100);box-sizing:border-box;"></div>
-        <div style="display:block;width:calc(100% - 32px - 1rem);height:32px;line-height:32px;">medium 32px</div>
-      </div>
-      <div style="display:flex;align-items:center;margin-bottom:var(--space);">
-        <a href="" class="design-article-avatar-small"></a>
-        <div style="display:block;width:var(--space-after-avatar-small);height:24px;border-radius:var(--radius400);background:var(--green100);box-sizing:border-box;"></div>
-        <div style="display:block;width:calc(100% - 24px - .5rem);height:24px;line-height:24px;">small 24px</div>
-      </div>
+      <!-- todo 전체가 클릭영역인 경우가 있고 버튼을 포함하는 경우가 있음. 위 2개만 버튼을 포함함.  -->
+      <artice class="item" data-size="huge">
+        <figure class="item-avatar">
+          <span class="avatar-badge"></span>
+        </figure>
+        <div style="width:var(--space-after-avatar-huge);height:inherit;border-radius:var(--radius400);background:var(--green100);position:absolute;left:var(--size-huge);left:-1rem;"></div>
+        <h3 style="font-size:var(--font-size-subhead);font-weight:var(--font-weight-bold);">huge 80px / space 1rem</h3>
+        <p style="color:var(--gray400);">디스크립션</p>
+      </artice>
+      <div class="space" style="height:var(--space);">space</div>
+      <artice class="item" data-size="large">
+        <figure class="item-avatar"></figure>
+        <div style="width:var(--space-after-avatar-large);height:48px;border-radius:var(--radius400);background:var(--green100);box-sizing:border-box;position:absolute;left:var(--size-large);left:var(--space-minus);"></div>
+        <h3 style="font-weight:var(--font-weight-bold);font-size:var(--font-size-body);">large 48px / space 1rem</h3>
+        <p style="color:var(--gray400);">디스크립션</p>
+      </artice>
+      <div class="space" style="height:var(--space);">space</div>
+      <artice class="item" data-size="medium">
+        <figure class="item-avatar"></figure>
+        <div style="width:var(--space-after-avatar-medium);height:32px;border-radius:var(--radius400);background:var(--green100);box-sizing:border-box;position:absolute;left:var(--size-medium);left:var(--space-minus);"></div>
+        <p style="display:block;width:calc(100% - 32px - 1rem);height:32px;line-height:32px;">medium 32px / space .5rem</p>
+      </artice>
+      <div class="space" style="height:var(--space);">space</div>
+      <artice class="item" data-size="small">
+        <figure class="item-avatar"></figure>
+        <div style="display:block;width:var(--space-after-avatar-small);height:24px;border-radius:var(--radius400);background:var(--green100);box-sizing:border-box;position:absolute;left:var(--size-small);left:var(--space-small-minus);"></div>
+        <p style="width:calc(100% - 24px - .5rem);height:24px;line-height:24px;">small 24px / space .5rem</p>
+      </artice>
       <!-- <div style="display:flex;">
         <a href="" class="design-article-avatar-tiny"></a>
         <div style="display:block;width:.5rem;height:inherit;border-radius:var(--radius400);background:var(--green100);box-sizing:border-box;"></div>
@@ -554,7 +549,7 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title" title="or Box">Tiles</h1>
-      <p class="design-article-description">관련된 콘텐츠를 시각적으로 몰아넣습니다.</p>
+      <p class="design-article-description">관련된 콘텐츠를 시각적으로 묶습니다?.</p>
       
       <div class="design-article-description">
         <!-- <p>아이콘/텍스트 leading에 맞춰 시각보정이 필요. line-height 때문. tile이 아니더라도 elevated 스타일이 적용되는 케이스 존재.</p> -->
@@ -608,10 +603,10 @@
 
       <h6 class="title-bordered">hover</h6>
       <button class="user-logout" title="sign out">
-        <span class="user-logout-icon">
+        <figure class="user-logout-icon">
           <i class="icon-out"><span class="icon-out-door"></span></i>
-        </span>
-        로그아웃
+        </figure>
+        <span class="user-logout-label">로그아웃</span>
       </button>
 
       <br />

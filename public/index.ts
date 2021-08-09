@@ -3,7 +3,7 @@
 import './stylesheets/style.scss'
 
 import routePage, { routes } from './javascripts/router'
-import { initializeLoader } from './javascripts/load'
+import { lockBodyElement, unlockBodyElement } from './javascripts/load'
 import darkTheme from './javascripts/local/darkTheme'
 import carousel from './javascripts/event/carousel'
 import event from './javascripts/event/index'
@@ -12,15 +12,17 @@ import input from './javascripts/input/index'
 import { stopAnimation, throttle } from './javascripts/utils/optimizationUtils'
 
 // import books from '../views/books'
-
 // import { validity } from './javascripts/utils/validations'
 // import { copyClipboard } from './javascripts/utils/formatUtils.js'
+
+// todo 네이밍을 다시하고 lockbody는 유틸성
+document.addEventListener('DOMContentLoaded', lockBodyElement)
+window.addEventListener('load', unlockBodyElement)
 
 window.addEventListener('hashchange', initializeNavbar)
 
 window.addEventListener('hashchange', domEvents)
 
-document.addEventListener('DOMContentLoaded', initializeLoader)
 document.addEventListener('DOMContentLoaded', domEvents)
 
 document.addEventListener('DOMContentLoaded', () => {

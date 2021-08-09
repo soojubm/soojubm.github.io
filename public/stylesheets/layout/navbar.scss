@@ -77,10 +77,15 @@
 .user-avatar-change {width:32px;height:32px;border-radius:var(--radius400);position:absolute;right:-8px;bottom:-8px;}
 .user-name {margin:var(--space-leading-subhead) 0 0 0;@include subhead;}
 .user-email {}
-.user-logout {display:flex;align-items:center;width:100%;margin:1rem 0;position:relative;}
-.user-logout-icon {@include avatar-medium;margin:0 var(--space-small) 0 0;}
+
+
+.user-logout {display:flex;align-items:center;width:100%;margin:var(--space) 0;position:relative;}
+.user-logout-icon {@include avatar-medium;}
+.user-logout-label {margin:0 0 0 var(--space-small);}
+
 .user-logout:hover {@include hover-item;}
 .user-logout:hover .user-logout-icon {background:var(--gray0);}
+
 .user-myinfo {@include link-outer;margin:.5rem 0 0;}
 .user-footer {}
 .user-footer a {font-size:var(--font-size-caption);color:var(--gray400);}

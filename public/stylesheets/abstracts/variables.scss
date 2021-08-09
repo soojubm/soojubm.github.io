@@ -110,6 +110,8 @@ $transition-fade: opacity 0.15s linear;
   
   --space: .75rem;
   --space-small: .5rem;
+  --space-minus: calc(var(--space) * -1);
+  --space-small-minus: calc(var(--space-small) * -1);
 
   --space-leading-title: -.25rem;
   --space-leading-subhead: -.25rem;
