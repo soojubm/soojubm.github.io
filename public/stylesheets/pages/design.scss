@@ -195,6 +195,10 @@
 .design-article-tertiary-small {@include button-tertiary;@include button-small;}
 .design-article-text-small {@include button-text;@include button-small;}
 
+.design-article-avatar-huge {@include avatar-huge;background-image:url('/public/images/soo.png');}
+.design-article-avatar-large {@include avatar-large;background-image:url('/public/images/soo.png');}
+.design-article-avatar-medium {@include avatar-medium;background-image:url('/public/images/soo.png');}
+.design-article-avatar-small {@include avatar-small;background-image:url('/public/images/soo.png');}
 
 .number {display:flex;justify-content:center;}
 .number-card {display:flex;justify-content:center;align-items:center;width:48px;height:64px;background:var(--gray100);border-radius:var(--radius400);font-size:var(--font-size-huge);font-weight:var(--font-weight-bold);margin:0 .25rem;}
@@ -219,13 +223,6 @@
 .textbox-toolbar-bold {@include avatar-medium;margin:0 .5rem 0 0;}
 .textbox-toolbar-italic {@include avatar-medium;}
 
-.media {width:400px;overflow:hidden;border-radius:var(--radius400);position:relative;}
-.media:after {
-  content: "";
-  display: block;
-  padding-bottom: 50%;
-}
-.media img {@include image-centered;}
 
 
 

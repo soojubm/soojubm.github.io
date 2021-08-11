@@ -46,12 +46,9 @@ function scrollProgress() {
 }
 
 window.addEventListener('load', () => console.log('loaded!'))
-
 window.addEventListener('beforeunload', () => '저장되지 않은 변경사항이 있습니다. 정말 페이지를 떠나실 건 가요?')
 window.addEventListener('unload', () => console.log('unload event'))
 document.addEventListener('readystatechange', () => console.log(document.readyState))
-
-// btn.setAttribute('aria-pressed', false);
 
 async function domEvents() {
   await routePage()
@@ -264,6 +261,43 @@ async function domEvents() {
   focusComment()
 
   // document.querySelector('.js-copy')?.addEventListener('click', () => copyClipboard('fafaf'))
+  const grandparent = document.querySelector('.grandparent')
+  const parent = document.querySelector('.parent')
+  const chlidren = document.querySelector('.children')
+
+  grandparent?.addEventListener(
+    'click',
+    event => {
+      console.log('1. GRANDPARENT')
+    },
+    false,
+  )
+  parent?.addEventListener(
+    'click',
+    event => {
+      console.log('2. PARENT')
+    },
+    false,
+  )
+  chlidren?.addEventListener(
+    'click',
+    event => {
+      console.log('3. CHILDRENT')
+    },
+    false,
+  )
+
+  document.addEventListener(
+    'click',
+    event => {
+      console.log('0. DOCUMENT')
+    },
+    { once: true },
+  )
+
+  setTimeout(() => {
+    // parent?.removeEventListener('click', printHi)
+  }, 2000)
 
   // todo
   const list = document.querySelector('.js-display-list')
@@ -402,8 +436,6 @@ function initializeNavbar() {
   const navigationTrigger = document.querySelector<HTMLElement>('.js-navbar-toggle')
   if (!navigationTrigger || !navigationTrigger.classList.contains('is-active')) return
 
-  // todo
-  // navigationTrigger.parentNode.classList.remove('is-active')
   navigationTrigger.classList.remove('is-active')
 }
 
@@ -442,10 +474,11 @@ function calculateReadTime() {
 function focusComment() {
   const commentWrite = document.querySelector<HTMLElement>('.js-comment-write')
   const commentTextField = document.querySelectorAll<HTMLElement>('.js-comment-textfield')
+  if (!commentWrite || !commentTextField) return
 
-  commentTextField!.forEach(element =>
+  commentTextField.forEach(element =>
     element.addEventListener('focus', () => {
-      commentWrite!.classList.add('is-focused')
+      commentWrite.classList.add('is-focused')
     }),
   )
 }

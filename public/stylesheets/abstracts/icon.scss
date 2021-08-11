@@ -26,6 +26,10 @@
 .icon-x:before {content:'';width:10px;height:2px;background-color:var(--gray800);position:absolute;left:50%;top:50%;transform:translate(-50%, -50%) rotate(45deg);}
 .icon-x:after {content:'';width:2px;height:10px;background-color:var(--gray800);position:absolute;left:50%;top:50%;transform:translate(-50%, -50%) rotate(45deg);}
 
+.icon-x.is-red {}
+.icon-x.is-red:before {background-color:var(--red800);}
+.icon-x.is-red:after {background-color:var(--red800);}
+
 // todo span 
 .checklist {    position: relative;margin-left:-3px;
   padding: 0px 0px 0px 25px;}

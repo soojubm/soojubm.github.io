@@ -42,7 +42,7 @@
 // 아이템의 크기에 따라 텍스트 갯수와 스타일이 달라짐.
 
 @mixin item {
-  @include clearfix;width:100%;height:48px;position:relative;z-index:1;
+  @include clearfix;width:100%;position:relative;z-index:1;
 }
 
 .item {@include item;}
@@ -55,13 +55,9 @@
 .item + .item {margin:var(--space) 0 0 0;}
 .item:hover {@include hover-item;}
 
-.item[data-size=huge] {height:var(--size-huge);}
 .item[data-size=huge] .item-avatar {width:var(--size-huge);height:var(--size-huge);margin-right:var(--space-after-avatar-huge);}
-.item[data-size=large] {height:var(--size-huge);}
 .item[data-size=large] .item-avatar {width:var(--size-large);height:var(--size-large);margin-right:var(--space-after-avatar-large);}
-.item[data-size=medium] {height:var(--size-medium);}
 .item[data-size=medium] .item-avatar {width:var(--size-medium);height:var(--size-medium);margin-right:var(--space-after-avatar-medium);}
-.item[data-size=small] {height:var(--size-small);}
 .item[data-size=small] .item-avatar {width:var(--size-small);height:var(--size-small);margin-right:var(--space-after-avatar-small);}
 
 

@@ -3,6 +3,7 @@ import { getElementWidth } from '../utils/elementUtils'
 
 const tab = () => {
   const tabElement = document.querySelector('.js-tab')
+  // const parents = Array.from(grandparent.children)
   if (!tabElement) return
 
   const tabs = tabElement.querySelectorAll('[role=tab]')

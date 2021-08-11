@@ -11,19 +11,20 @@ const scrollspy = ({ menusSelector: menusClass, sectionsSelector: sectionsClass 
 
   if (!sections || !menus) return
 
-  console.log(menus[0].parentNode?.childNodes, menus)
-
-  const buttonContainer = menus[0].parentNode as HTMLElement
+  const buttonContainer = menus[0].parentElement as HTMLElement
 
   menus.forEach((element, index) => {
     element.addEventListener('click', event => {
       event.preventDefault()
-      // const href = element.getAttribute('href')
-      // const targetOffsetY = document.querySelector(href).getBoundingClientRect().top
+      
       const targetOffsetY = sections[index].offsetTop - 100
       window.scrollTo(0, targetOffsetY)
+
+      // const targetOffsetY = document.querySelector(element.getAttribute('href')).getBoundingClientRect().top
+
     })
   })
+
   window.addEventListener('scroll', throttle(temp), false)
 
   function temp() {
@@ -42,9 +43,6 @@ const scrollspy = ({ menusSelector: menusClass, sectionsSelector: sectionsClass 
 
       activeOffsetLeft = menusTemp.offsetLeft + menusTemp.clientWidth / 2
     })
-    // buttonContainer.scrollLeft = activeOffsetLeft
-
-    console.log(activeOffsetLeft)
 
     const buttonContainerWidth = buttonContainer.offsetWidth
     // if(buttonContainer.scrollLeft < document.body.offsetWidth / 2) return
@@ -55,6 +53,8 @@ const scrollspy = ({ menusSelector: menusClass, sectionsSelector: sectionsClass 
     })
   }
 }
+
+// buttonContainer.scrollLeft = activeOffsetLeft
 
 export default scrollspy
 

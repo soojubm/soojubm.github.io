@@ -41,10 +41,10 @@
         </a>
       </div>
       <div class="header-user">
-        <a href="">로그인</a>
-        <a href="">회원가입</a>
-        <!-- <a href="">정보수정</a>
-        <a href="">로그아웃</a> -->
+        <a href="#">로그인</a>
+        <a href="#">회원가입</a>
+        <!-- <a href="#">정보수정</a>
+        <a href="#">로그아웃</a> -->
       </div>
     </div>
   </header>
@@ -236,7 +236,7 @@
         <h2>디지털 진단 시스템</h2>
         <p>3D 진단 장비를 통해 환자의 치조골 상태 등을<br />
           정밀하게 진단하여 오차 없는 정확한 치료가 가능합니다.</p>
-        <a href=""><span></span>VIEW MORE</a>
+        <a href="#"><span></span>VIEW MORE</a>
       </div>
       <div>
         <figure>
@@ -246,7 +246,7 @@
         <h2>디지털 임플란트 시스템</h2>
         <p>컴퓨터 가상 시뮬레이션을 통해 보다 빠르고<br />
           정확하게 임플란트를 식립할 수 있습니다.</p>
-        <a href=""><span></span>VIEW MORE</a>
+        <a href="#"><span></span>VIEW MORE</a>
       </div>
       <div>
         <figure>
@@ -256,7 +256,7 @@
         <h2>철저한 소독관리 시스템</h2>
         <p>컴퓨터 가상 시뮬레이션을 통해 보다 빠르고<br />
           정확하게 임플란트를 식립할 수 있습니다.</p>
-        <a href=""><span></span>VIEW MORE</a>
+        <a href="#"><span></span>VIEW MORE</a>
       </div>
     </div>
   </div>
@@ -330,7 +330,7 @@
         <h2>임플란트</h2>
         <p>숙련된 의료진의 빠르고 정확한 치료로<br />
           잃어버린 즐거움과 웃음을 드립니다</p>
-        <a href=""><span></span>VIEW MORE</a>
+        <a href="#"><span></span>VIEW MORE</a>
       </div>
       <div class="main-clinic-correction">
         <figure>
@@ -343,7 +343,7 @@
           교정 후에도 책임지고 진료하기 때문에<br />
           더욱 더 만족스러운 교정결과를<br />
           얻으실 수 있습니다</p>
-        <a href=""><span></span>VIEW MORE</a>
+        <a href="#"><span></span>VIEW MORE</a>
       </div>
     </div>
   </div>
@@ -467,8 +467,8 @@
   <div class="footer-inbox">
     <div class="footer-logo"><img src="images/common/footer-logo.png" alt="" /></div>
     <div class="footer-terms">
-      <a href="">개인정보취급방침</a>
-      <a href="">이용약관</a>
+      <a href="#">개인정보취급방침</a>
+      <a href="#">이용약관</a>
     </div>
     <div class="footer-address"><span class="item">상호 : 세상에서제일빛나는치과의원</span>        <span class="item">대표 : 조원호</span>        <span class="item">대표번호 : 043-000-0000</span>        사업자등록번호 : 000-00-00000
       <span class="block">주소 : 충청북도 진천군 덕산읍 두촌리 2588 새솔빌딩 4층</span>     
