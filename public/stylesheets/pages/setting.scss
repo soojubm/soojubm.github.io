@@ -7,7 +7,7 @@
 .setting-body-heading {margin:0 0 var(--space) 0;font-size:var(--font-size-body);}
 .setting-body-description {margin:-1rem 0 1.5rem 0;}
 
-.setting-row {display:flex;overflow:hidden;padding:1rem 0 1.1rem;border-bottom:var(--border100);box-sizing:border-box;cursor:pointer;position:relative;}
+.setting-row {display:flex;overflow:hidden;padding:var(--space) 0;border-bottom:var(--border100);box-sizing:border-box;cursor:pointer;position:relative;}
 .setting-row:hover {}
 .setting-row.is-opened {}
 .setting-row:nth-of-type(1) {border-top:var(--border100);}
@@ -29,7 +29,7 @@
   margin: 0 0 1rem 0;
 }
 
-.setting-foot {margin:2rem 0;}
+.setting-foot {margin:1rem 0;}
 .setting-foot-delete {text-decoration:underline;color:var(--gray800);}
 
 .setting-row-form {padding:1rem 0;cursor:default;}

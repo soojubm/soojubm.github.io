@@ -8,9 +8,8 @@ const tab = () => {
 
   const tabs = tabElement.querySelectorAll('[role=tab]')
   const tabPanels = tabElement.querySelectorAll('[role=tabpanel]')
-  const indicatorElement = tabElement.querySelector<HTMLElement>('.profile-tablist-indicator')
-  let selectedTab = tabElement.querySelector<HTMLElement>('[role=tab][aria-selected=true]')
-  let tablistOffset = 0
+  const indicatorElement = tabElement.querySelector('.profile-tablist-indicator')
+  let selectedTab = tabs[0]
 
   initializeIndicator(indicatorElement, selectedTab)
 

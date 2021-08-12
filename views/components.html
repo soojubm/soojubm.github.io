@@ -98,7 +98,7 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Avatars</h1>
-      <p class="design-article-description">단독으로 사용하거나 텍스트와 함께 사용하여 주목도를 높입니다. (현재의 정의는 일반적인 아바타를 넘어 동일한 형태를 포괄)</p>
+      <p class="design-article-description">단독으로 사용하거나 텍스트와 함께 사용하여 콘텐츠의 주목도를 높입니다. (현재의 정의는 일반적인 아바타를 넘어 동일한 형태를 포괄하는 개념에 가까움)</p>
       <blockquote>
         <!-- <h6>anatomy</h6> -->
         <dl class="design-article-description">
@@ -330,6 +330,7 @@
         <!-- <p class="checklist"><span><i></i></span> 역할이 명확한 모두보기, 불러오는중, 더보기 등의 버튼은 한 번 더 추상화합니다.</p> -->
         <p class="xlist"><i></i> binary choice에서 primary 버튼과 secondary 버튼을 함께 사용하지 마세요.</p>
         <p class="xlist"><i></i> 가이드 텍스트를 cta 아래에 두지 마세요. 일반적으로 네거티브 액션(?)의 텍스트 버튼이 위치하는 영역입니다.</p>
+        <p class="xlist"><i></i> more load 버튼은 full-width로 사용하지 마세요. 콘텐츠보다 작게 사용할 때 대비가 극대화도ㅣㅇㅓ ㄱㅏ시ㅅㅓㅇㅇㅣ 노ㅍㅇㅏ지ㅂ닏ㅏ.</p>
       </div>
       <!-- <li>네이밍: style = solid/outline/plain/text (모든 스타일을 망라해야 하기 때문에 유아이 라이브러리에 어울리는 네이밍) appearance = link / subtle / primary, space = compact/fullwidth</li> -->
       <blockquote class="design-article-description" style="font-size:var(--font-size-tiny);">
@@ -400,7 +401,7 @@
       </div>
       <br />
       
-      <h6 class="title-bordered">and so on</h6>
+      <!-- <h6 class="title-bordered">and so on</h6>
       <div class="design-buttongroup">
         <button class="design-article-tertiary">
           loading...
@@ -414,7 +415,8 @@
           <i class="icon-chevron" role="img" aria-label="plus icon"></i>
         </button>
         <button class="design-article-tertiary-small"><i class="icon-x"></i></button>
-      </div>
+      </div> -->
+
       <!-- <h6 class="title-bordered">Text (outdated)</h6>
       <div class="design-buttongroup">
         <button class="design-article-tertiary">더보기 <span class="button-tailing"><i class="icon-chevron is-down"></i></span></button>
@@ -570,7 +572,7 @@
       <p class="design-article-description">정보를 입력합니다.</p>
       
       <div class="design-article-description">
-        <p class="checklist"><span><i></i></span> 벨리데이션 실행 조건: <b>제출(구현이 쉬움)</b> / 키보드 쉬움 / 블러(구현이 복잡함. 흐름이 끊어짐)</b></p>
+        <!-- <p class="checklist"><span><i></i></span> 벨리데이션 실행 조건: <b>제출(구현이 쉬움)</b> / 키보드 쉬움 / 블러(구현이 복잡함. 흐름이 끊어짐)</b></p> -->
         <p class="xlist"><span><i></i></span> 레이블을 왼쪽에 배치하지 마세요. <b hidden>(prefix에 뒤로가기 버튼이 포함되지 않는 형태로만 사용)</b></p>
         <p class="xlist"><span><i></i></span> 검색 필드를 네비게이션 바에 배치하지 마세요. <b hidden>(prefix에 뒤로가기 버튼이 포함되지 않는 형태로만 사용)</b></p>
       </div>
@@ -720,9 +722,9 @@
       <p class="design-article-description">단순 텍스트 형태의 인터페이스를 모았습니다. 위계 설정을 위해 3가지 이상의 스타일을 적용하지 마세요.
         
       <!-- checklist(price card 등에서 사용) 정의. -->
-      <ul class="design-article-description">
+      <!-- <ul class="design-article-description">
         <p class="checklist"><span><i></i></span> 리스트 태그(ul, ol, dl) 마크업은 텍스트의 목록에 한정합니다. 대부분의 UI 구조가 목록화될 수 있기 때문입니다. role=listbox/listitem</p>
-      </ul>
+      </ul> -->
       <h6 class="title-bordered">List</h6>
       <ul class="list-sample">
         <li title="unordered list, level 1">순서가 없는 리스트
@@ -807,13 +809,22 @@
       <h1 class="design-article-title">Tab</h1>
       <p class="design-article-description">콘텐츠 영역을 같은 맥락의 다른 콘텐츠로 전환합니다.<p>
       <ul class="design-article-description">
-        <p class="checklist"><span><i></i></span>가능한 2개 이상의 탭을 중첩하지 않도록 플로우를 설계하세요.</p>
+        <p class="checklist"><span><i></i></span>탭을 2개 이상 중첩하지 않도록 플로우를 설계하세요.</p>
         <p class="xlist"><span><i></i></span>다른 페이지로 링크하거나 같은 페이지 내에서 스크롤스파이로 사용하지 마세요.</p>
         <p class="xlist"><span><i></i></span>콘텐츠 필터링에 사용하지 마세요. 필터링에는 chip을 사용합니다.</p>
         <p class="xlist"><span><i></i></span>글로벌 탐색 패턴으로 햄버거 메뉴와 탭(바텀네비게이션, 탭바)을 함께 사용하지 마세요.</p>
       </ul>
       <blockquote>
-        <p>브라우저 히스토리 저장. 탭의 갯수 제한 4~5개 또는 가로 스크롤. HIG의 segmented control</p>
+        <dl>
+          <dt>tab-list</dt><dd></dd>
+          <dt>tab-panel</dt><dd></dd>
+          <dt>tab-indicator</dt><dd>activebar</dd>
+          <dt>tab-badge</dt><dd>optional</dd>
+          <dt>tab-unread</dt><dd>optional, 미구현. badge가 하나 이상일 수 있다. quantity와 unread.</dd>
+          <dt>container-tab</dt>
+        </dl>
+        <hr />
+        <p>todo: 브라우저 히스토리 저장. 탭의 갯수 제한 4~5개 또는 가로 스크롤. HIG의 segmented control</p>
       </blockquote>
       <nav class="profile-tablist" role="tablist">
 				<button class="profile-tablist-tab" role="tab" aria-selected="true">프로젝트 <i class="profile-tablist-tab-badge">5</i></button>
@@ -822,7 +833,7 @@
 				<i class="profile-tablist-indicator"></i>
 			</nav>
     </article>
-<!-- 
+
     <article class="design-article">
       <h1 class="design-article-title">Button Group</h1>
       <p class="design-article-description">그룹과 리스트박스의 역할 정의.</p>
@@ -836,9 +847,9 @@
       <hr />
       <div class="group-sample" role="group" style="justify-content:left;">
         <button class="group-sample-next">작성</button>
-        <button class="group-sample-cancel">취소</button>
+        <button class="group-sample-cancel" style="margin:0 0 0 var(--space-after-button)">취소</button>
       </div>
-    </article> -->
+    </article>
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Tooltip</h1>
@@ -1300,10 +1311,10 @@
     
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Result</h1>
-      <p class="design-article-description">행동이나 과업의 실행 결과, 페이지 또는 섹션에서 콘텐츠가 부족할 때 사용합니다.</p>
+      <p class="design-article-description">실행 결과. 오류나 내용없음에 사용.</p>
       <p class="checklist"><span><i></i></span>기본적인 콘텐츠 모듈인 왼쪽 정렬과 구별되도록 가운데 정렬하여 대비를 줍니다.</p>
       <blockquote>
-        <p>디자인시스템에서 blankslate, empty state로 명명됨. result로 네이밍하여 empty, error, complete 등에서 범용성을 확보. 분리하는 것이 좋을지도.</p>
+        <p>디자인시스템에서 blankslate, empty state. result로 네이밍하여 empty, error, complete 등에서 범용성을 확보. 분리하는 것이 좋을지도.</p>
       </blockquote>
       <section class="empty" style="border:1px solid var(--color-box-border);border-radius:var(--radius400);margin:0;">
         <i class="empty-icon">🧟</i>
@@ -1344,6 +1355,10 @@
           <span class="card-tags-item">UI</span>
           <span class="card-tags-item">React</span>
         </div>
+        <div class="card-byline">
+					<figure class="card-byline-avatar"><img src="/public/images/soo.png" alt="" /></figure>
+					<span class="card-byline-name">수줍이</span>
+				</div>
         <span class="card-category">카테고리</span>
         <hr />
         <div class="card-item">

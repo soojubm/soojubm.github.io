@@ -18,8 +18,8 @@
 .is-sticky-post-head .post-head-progress {display:block;}
 
 .post-byline {display:flex;align-items:center;position:relative;}
-.post-byline-avatar {@include avatar-medium;margin:0 1rem 0 0;}
-.post-byline-name {margin:0 0 .25rem 0;}
+.post-byline-avatar {@include avatar-medium;margin:0 var(--space) 0 0;}
+.post-byline-name {}
 .post-byline:hover {@include hover-item;}
 
 .post-body {position:relative;} /* graident 때문에 아래요소에서 마진값주기 */

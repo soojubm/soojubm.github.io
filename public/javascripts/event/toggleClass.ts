@@ -8,7 +8,7 @@ type Parameter = {
 // 결국에는 부모, 혹은 도큐먼트에만 클래스 토글하는 것이 좋다.
 // 이벤트 위임 활용하자.
 
-// 모듈화가 심하면 디버깅이 어렵고 이벤트 제거가 어려우 ㄴ듯.
+//  심하면 디버깅이 어렵고 이벤트 제거가 어려우 ㄴ듯.
 
 // 1. 하나만 토글
 // 2. 형제들 토글 event.target.name , is(true) siblings.remove
@@ -21,10 +21,9 @@ type Parameter = {
 
 function toggleClass({ selector: trigger }: Parameter) {
   const triggers = document.querySelectorAll(trigger)
-  const ACTIVE_CLASS = 'is-active'
-  // const ACTIVE_CLASS = activeClassname
-
   if (!triggers) return
+
+  const ACTIVE_CLASS = 'is-active'
 
   triggers.forEach(element =>
     element.addEventListener('click', event => {
@@ -33,7 +32,7 @@ function toggleClass({ selector: trigger }: Parameter) {
 
       const target = event.target as HTMLElement
 
-      if (target.classList.contains('is-active')) {
+      if (target.classList.contains(ACTIVE_CLASS)) {
       }
 
       triggers.forEach(trigger => {
@@ -59,6 +58,18 @@ function toggleClass({ selector: trigger }: Parameter) {
 
   document.body.addEventListener('click', reset)
 
+  function toggleClassname(element) {
+    element.classList.toggle(ACTIVE_CLASS)
+
+    // if (event?.target.closest('.test')) {
+    //   event.target.classList.toggle(ACTIVE_CLASS)
+    // }
+
+    // const target = event.target
+    // const hasElementSibling = target.nodeName === target.nextElementSibling
+    // hasElementSibling && target.nextElementSibling.classList.remove(ACTIVE_CLASS)
+  }
+
   function reset() {
     triggers.forEach(trigger => removeElementClassname(trigger))
   }
@@ -70,6 +81,9 @@ function toggleClass({ selector: trigger }: Parameter) {
 
     const triggerNextElement = element?.nextElementSibling as HTMLElement
     triggerNextElement.classList.toggle(ACTIVE_CLASS)
+
+    console.log('@@@@', element.nodeName, element.nextElementSibling)
+
     triggerNextElement.addEventListener('click', event => event.stopPropagation())
   }
   function removeElementClassname(element) {

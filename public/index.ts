@@ -28,8 +28,10 @@ document.addEventListener('DOMContentLoaded', domEvents)
 document.addEventListener('DOMContentLoaded', () => {
   stopAnimation()
 
-  // event.toggleClass({ selector: '.js-navbar-toggle', activeClassname: 'is-navbar-active' })
-  event.toggleClass({ selector: '.js-navbar-toggle' })
+  event.toggleClass({
+    selector: '.js-navbar-toggle',
+    // activeClassname: 'is-navbar-active'
+  })
   event.toTop({ selector: '.js-to-top' })
   event.positionSticky({ selector: '.js-titlebar', addClass: 'is-sticky-titlebar', isPassed: false })
   darkTheme('.js-darkmode')
