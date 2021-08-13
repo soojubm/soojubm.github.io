@@ -327,7 +327,7 @@
 .accordion-title-icon {@include avatar-medium;}
 .accordion-panel {display:none;}
 .accordion-panel p {margin:1rem 0;}
-.is-active + .accordion-panel {display:block;}
+.is-active .accordion-panel {display:block;}
 // [aria-expanded=true] + .accordion-panel {}
 
 

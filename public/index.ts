@@ -52,6 +52,38 @@ window.addEventListener('beforeunload', () => '저장되지 않은 변경사항�
 window.addEventListener('unload', () => console.log('unload event'))
 document.addEventListener('readystatechange', () => console.log(document.readyState))
 
+function toggleAccordion({ element: element }) {
+  // 패널을 포함한 전체 영역을 토글할 수 있음. 따라서 accordion-item 전체를 toggle class만 해줏면 됨.
+  // 1. 클릭한 패널을 토글한다.
+  // 도큐먼트를 클릭하면 닫을 것인지.
+  // 다른 accordion-item을 클릭했을 때 닫을 것인지?
+
+  document.addEventListener(
+    'click',
+    (event: any) => {
+      const target = event.target as any
+
+      console.log('click')
+
+      // console.log(event.target, element, target.closest(element))
+
+      if (!target.closest(element)) return
+
+      toggleElement(target.closest(element))
+    },
+    true,
+  )
+
+  function toggleElement(targetElement: HTMLElement) {
+    let isExpanded = Boolean(targetElement.getAttribute('aria-expanded'))
+    console.log(isExpanded, typeof isExpanded)
+    targetElement.setAttribute('aria-expanded', String(!isExpanded))
+    targetElement.classList.toggle('is-active')
+  }
+}
+
+toggleAccordion({ element: '.js-accordion' })
+
 async function domEvents() {
   await routePage()
 
@@ -245,7 +277,6 @@ async function domEvents() {
 
   // event.toggleClass({ selector: '.js-accordion' })
   event.toggleClass({ selector: '.js-toggle' })
-  // todo 아코디언
 
   event.enterTarget({ selector: '.js-hover-trigger' })
   event.tab()

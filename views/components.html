@@ -160,7 +160,7 @@
       <p class="design-article-description">액션을 실행합니다.</p>
       <div class="design-article-description">
         <p class="checklist"><span><i></i></span> 맥락이 다른 chip을 나열할 수 있습니다. 단일선택, 다중선택, 삭제여부, 펼침메뉴 등의 기표를 아이콘으로 제공하세요.</p>
-        <p class="xlist"><span><i></i></span> 콘텐츠 정렬sorting에 사용하지 마세요. selectbox를 사용하세요.</p>
+        <p class="xlist"><span><i></i></span> 콘텐츠 정렬sorting에 chip으로 옵션을 나열하지 마세요. selectbox를 사용하세요.</p>
       </div>
 
       <blockquote>
@@ -329,6 +329,7 @@
         <p class="checklist"><span><i></i></span> 아이콘 버튼의 아이콘은 관습적인 메타포를 사용합니다. accessibility-text(visually-hidden)</p>
         <!-- <p class="checklist"><span><i></i></span> 역할이 명확한 모두보기, 불러오는중, 더보기 등의 버튼은 한 번 더 추상화합니다.</p> -->
         <p class="xlist"><i></i> binary choice에서 primary 버튼과 secondary 버튼을 함께 사용하지 마세요.</p>
+        <p class="xlist"><i></i> medium 버튼을 레이블 없이 아이콘 버튼으로 사용하지 마세요.</p>
         <p class="xlist"><i></i> 가이드 텍스트를 cta 아래에 두지 마세요. 일반적으로 네거티브 액션(?)의 텍스트 버튼이 위치하는 영역입니다.</p>
         <p class="xlist"><i></i> more load 버튼은 full-width로 사용하지 마세요. 콘텐츠보다 작게 사용할 때 대비가 극대화도ㅣㅇㅓ ㄱㅏ시ㅅㅓㅇㅇㅣ 노ㅍㅇㅏ지ㅂ닏ㅏ.</p>
       </div>
@@ -1109,7 +1110,7 @@
     </article>
 
     <article class="design-article js-scrollspy-section">
-      <h1 class="design-article-title">Accordion</h1>
+      <h1 class="design-article-title">Accordion (Details)</h1>
       <p class="design-article-description">요약된 목록에서 필요한 정보를 취사선택 합니다. 자주묻는질문Frequently asked questions에 사용하며 텍스트 위주의 간단한 공지글에도 사용할 수 있습니다.</p>
       <blockquote>
           <p>plus icon은 addable이지 expandable이 아님. design token 기표로 정의하기.</p>
@@ -1133,8 +1134,8 @@
         <p>궁금증을 해결하지 못하셨나요? <a href="#">Get in touch with us.</a></p>
       </header> -->
       <section class="">
-        <article class="accordion">
-          <h3 class="accordion-title js-toggle" role="button" aria-expanded="false">
+        <article class="accordion js-accordion" aria-expanded="false">
+          <h3 class="accordion-title" role="button">
             탈퇴하고 싶어요.
             <span class="accordion-title-icon"><i class="icon-chevron"></i></span>
           </h3>
@@ -1143,8 +1144,8 @@
             <p>제1항의 지시를 받은 당해 행정기관은 이에 응하여야 한다. 국회의원은 법률이 정하는 직을 겸할 수 없다. 대통령의 임기연장 또는 중임변경을 위한 헌법개정은 그 헌법개정 제안 당시의 대통령에 대하여는 효력이 없다.</p>
           </div>
         </article>
-        <article class="accordion">
-          <h3 class="accordion-title js-toggle" role="button" aria-expanded="false">
+        <article class="accordion js-accordion" aria-expanded="false">
+          <h3 class="accordion-title" role="button">
             주문을 취소하고 싶어요.
             <span class="accordion-title-icon"><i class="icon-plus"></i></span>
           </h3>
