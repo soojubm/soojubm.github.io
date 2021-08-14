@@ -1,17 +1,5 @@
-@mixin tag {
-  display: inline-block;
-  height: 24px;
-  line-height: 23px;
-  padding: 0 .5rem;
-  border-radius: var(--radius400);
-  box-sizing: border-box;
-  background-color: var(--gray100);
-  font-size: var(--font-size-caption);
-  color: var(--gray800);
-}
-@mixin tag-primary {@include tag;background-color:gold;color:#252d29;}
 
-@mixin tag-group {@include group;}
+
 .tag-group {@include tag-group;}
 
 .tag {@include tag;}
@@ -19,9 +7,4 @@
 .tag[data-appearance=secondary] {@include tag;background-color:var(--green100);color:var(--green800);}
 
 
-@mixin hashtag {
-
-  color: var(--gray400);
-  &:before {content:'#';}
-}
 .hashtag {@include hashtag;}
