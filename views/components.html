@@ -303,6 +303,7 @@
       <div class="design-article-description">
         <p class="checklist"><span><i></i></span> primary: eyebrow, badge / secondary: badge / tertiary: badge, keyword, hashtag</p>
         <p class="checklist"><span><i></i></span> hashtag 컴포넌트는 tag 컴포넌트와 구별합니다.</p>
+        <p class="checklist"><span><i></i></span> <em>hastag, keyword는 액션이 필요한 경우가 있음.</em></p>
         <p class="xlist"><i></i> 버튼으로 사용할 수 없습니다.</p>
         <p class="xlist"><i></i> 아이콘을 포함할 수 없습니다. <span hidden>(이 디자인시스템은 아이콘을 클릭 기표로 사용한다는 대원칙에 근거하여 아이콘이 없다는 것은 클릭할 수 없다고 이해해도 무방?)</span></p>
       </div>
@@ -324,14 +325,14 @@
       <p class="design-article-description">사용자의 행동을 유도합니다. 페이지 이동이나 액션에 사용합니다.</p>
       <div class="design-article-description">
         <!-- <p class="xlist"><span><i></i></span> 크기가 다른 버튼을 함께 사용하지 마세요. (버튼 그룹)</p> -->
-        <p class="checklist"><span><i></i></span> 모든 버튼은 상태 스타일이 동일합니다.</p>
+        <p class="checklist"><span><i></i></span> 버튼의 상태에 따른 스타일은 모두 동일하게 적용합니다.</p>
         <p class="checklist"><span><i></i></span> large 버튼은 프로모션 페이지에서 사용합니다. small 버튼은 아이템(가칭)에서 사용합니다.</p>
         <p class="checklist"><span><i></i></span> 아이콘 버튼의 아이콘은 관습적인 메타포를 사용합니다. accessibility-text(visually-hidden)</p>
         <!-- <p class="checklist"><span><i></i></span> 역할이 명확한 모두보기, 불러오는중, 더보기 등의 버튼은 한 번 더 추상화합니다.</p> -->
         <p class="xlist"><i></i> binary choice에서 primary 버튼과 secondary 버튼을 함께 사용하지 마세요.</p>
         <p class="xlist"><i></i> medium 버튼을 레이블 없이 아이콘 버튼으로 사용하지 마세요.</p>
-        <p class="xlist"><i></i> 가이드 텍스트를 cta 아래에 두지 마세요. 일반적으로 네거티브 액션(?)의 텍스트 버튼이 위치하는 영역입니다.</p>
-        <p class="xlist"><i></i> more load 버튼은 full-width로 사용하지 마세요. 콘텐츠보다 작게 사용할 때 대비가 극대화도ㅣㅇㅓ ㄱㅏ시ㅅㅓㅇㅇㅣ 노ㅍㅇㅏ지ㅂ닏ㅏ.</p>
+        <p class="xlist"><i></i> 가이드 텍스트를 cta 아래에 두지 마세요. 일반적으로 네거티브 액션(?)의 텍스트 버튼이 위치합니다.</p>
+        <p class="xlist"><i></i> more load 버튼은 full-width로 사용하지 마세요. 콘텐츠보다 작게 사용하여 대비를 주세요.</p>
       </div>
       <!-- <li>네이밍: style = solid/outline/plain/text (모든 스타일을 망라해야 하기 때문에 유아이 라이브러리에 어울리는 네이밍) appearance = link / subtle / primary, space = compact/fullwidth</li> -->
       <blockquote class="design-article-description" style="font-size:var(--font-size-tiny);">
@@ -345,11 +346,8 @@
           <hr />
         </dl>
         <p style="margin:var(--space) 0 0 0;">min-width, padding-left, padding-right</p>
-        <p>closeButton 단일 기능이기 때문에 iconButton에 포함하기보다 하나의 컴포넌트로 분리.</p>
       </blockquote>
       
-      <blockquote>
-      </blockquote>
       <br />
     
       <!-- <a class="button" href="#">Anchor button</a>
@@ -720,7 +718,7 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Texts</h1>
-      <p class="design-article-description">단순 텍스트 형태의 인터페이스를 모았습니다. 위계 설정을 위해 3가지 이상의 스타일을 적용하지 마세요.
+      <p class="design-article-description">텍스트 인터페이스를 모았습니다. 위계 설정을 위해 3가지 이상의 스타일을 적용하지 마세요.
         
       <!-- checklist(price card 등에서 사용) 정의. -->
       <!-- <ul class="design-article-description">
@@ -810,8 +808,9 @@
       <h1 class="design-article-title">Tab</h1>
       <p class="design-article-description">콘텐츠 영역을 같은 맥락의 다른 콘텐츠로 전환합니다.<p>
       <ul class="design-article-description">
-        <p class="checklist"><span><i></i></span>탭을 2개 이상 중첩하지 않도록 플로우를 설계하세요.</p>
-        <p class="xlist"><span><i></i></span>다른 페이지로 링크하거나 같은 페이지 내에서 스크롤스파이로 사용하지 마세요.</p>
+        <p class="checklist"><span><i></i></span>2개 이상의 탭이 중첩되지 않도록 플로우를 설계하세요.</p>
+        <p class="xlist"><span><i></i></span>페이지 링크로 사용하지 마세요.</p>
+        <p class="xlist"><span><i></i></span>스크롤스파이로 사용하지 마세요.</p>
         <p class="xlist"><span><i></i></span>콘텐츠 필터링에 사용하지 마세요. 필터링에는 chip을 사용합니다.</p>
         <p class="xlist"><span><i></i></span>글로벌 탐색 패턴으로 햄버거 메뉴와 탭(바텀네비게이션, 탭바)을 함께 사용하지 마세요.</p>
       </ul>
@@ -839,7 +838,7 @@
       <h1 class="design-article-title">Button Group</h1>
       <p class="design-article-description">그룹과 리스트박스의 역할 정의.</p>
       <ul class="design-article-description">
-        <li>키보드 접근성을 위해 버튼 그룹에서 항상 primary를 먼저 마크업하세요.</li>
+        <li>키보드 접근성을 위해 버튼 그룹에서 항상 primary 버튼을 먼저 마크업하세요.</li>
       </ul>
       <div class="group-sample" role="group">
         <button class="group-sample-prev">이전</button>
@@ -854,10 +853,8 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Tooltip</h1>
-      <p class="design-article-description">생소한 용어나 집계된 수치의 근거 등에 사용하세요.</p>
+      <p class="design-article-description">생소한 용어나 집계된 수치의 근거 등에 사용하세요. 페이지를 불러 온 시점에 열어 두는 경우 대비 doorhanger 필요.</p>
       <div class="design-article-description">
-        <p class="checklist"><span><i></i></span>페이지를 불러 온 시점에 열어 두는 경우 대비 doorhanger 필요.</p>
-        <!-- <p class="xlist"><span사용자가><i></i></span사용자가 꼭 알아야 하는 부분 사용하지마요.</p> -->
         <p class="xlist"><span><i></i></span>사용자의 행동을 유도하는 가이드로 사용하지 마세요.</p>
         <p class="xlist"><span><i></i></span>페이지 링크로 사용하지 마세요. 항상 팝오버 형태를 따릅니다.</p>
       </div>
@@ -870,7 +867,7 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Alerts (Flag)</h1>
-      <p class="design-article-description">시스템 또는 브라우저의 상태 이상, 사용자 행동의 결과를 피드백합니다.</p>
+      <p class="design-article-description">시스템 또는 브라우저의 상태 이상, 사용자 행동에 피드백합니다.</p>
       <div class="design-article-description">
         <p class="checklist"><span><i></i></span> 한 문장으로 간결하게 피드백하세요.</p>
         <!-- <p class="checklist"><span><i></i></span> toast로 사용할 때 하나만 사용하세요.</p> -->
