@@ -1,4 +1,18 @@
 <main class="cart">
+  <section class="step" style="margin:0 0 2rem 0;">
+    <div class="step-item is-active">
+      <span class="step-item-icon">1</span>
+      <h3 class="step-item-title">장바구니</h3>
+    </div>
+    <div class="step-item">
+      <span class="step-item-icon">2</span>
+      <h3 class="step-item-title">결제</h3>
+    </div>
+    <div class="step-item">
+      <span class="step-item-icon">3</span>
+      <h3 class="step-item-title">주문완료</h3>
+    </div>
+  </section>
   <header class="cart-head">
     <p class="cart-description">Free delivery and free returns.</p>
     <h1 class="cart-title">Here's what's in your bag.</h1>
@@ -12,7 +26,6 @@
 			</ul> -->
     <time>4 items in your cart</time>
   </header>
-  <hr />
   <figure class="cart-item">
     <button class="cart-item-delete"><i class="icon-x"></i></button>
     <!-- <button class="cart-item-checkout"><i class="icon-x"></i></button> -->
@@ -23,27 +36,18 @@
     </div>
     <div class="cart-item-color">
       <span class="cart-item-color-label">color</span>
-      <!-- <select name="" id="" class="cart-item-color-value">
-					<option value="">보라색</option>
-					<option value="">베이지색</option>
-				</select> -->
       <b class="cart-item-color-value">Brown</b>
     </div>
     <div class="cart-item-qty">
       <span class="cart-item-qty-label">qty</span>
-      <select name="" id="" class="cart-item-qty-value">
-        <option value="">3</option>
-        <option value="">4</option>
-      </select>
-      <!-- <i class="selectbox-indicator"></i> -->
-      <!-- <b class="cart-item-qty-value">3</b> -->
+      <b class="cart-item-qty-value">3</b>
     </div>
     <div class="cart-item-price">
       <span class="cart-item-price-label">price</span>
       <b class="cart-item-price-value">₩ 22,500</b>
     </div>
     <button class="cart-item-more">Show product details<i class="icon-caret"></i></button>
-    <button class="cart-item-remove">Remove Options</button>
+    <button class="cart-item-remove"><span hidden>Remove Options</span>수량/옵션 변경</button>
     <div class="cart-item-addition">
       <p class="cart-item-addition-title">AppleCare+ for Macbook/MacBook Air</p>
       <p class="cart-item-addition-description">Automatically registered width your Apple hardware.</p>
@@ -59,7 +63,6 @@
   <!-- <div class="cart-item-coupon">
 			할인쿠폰 적용하기
 		</div> -->
-  <hr />
   <footer class="cart-summary">
     <div class="cart-summary-subtotal">
       <span class="cart-summary-label">Subtotal</span>

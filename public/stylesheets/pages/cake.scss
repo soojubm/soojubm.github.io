@@ -6,7 +6,7 @@
 .cake-head-engtitle {@include subhead;}
 .cake-head-description {margin:1rem 0 0 0;}
 
-.cake-poster {width:320px;height:470px;@include tile-elevated-small;overflow:hidden;;position: absolute;right:0;z-index:var(--zindex-default);}
+.cake-poster {max-width:320px;height:470px;@include tile-elevated-small;overflow:hidden;;position: absolute;right:0;z-index:var(--zindex-default);}
 .cake-poster img {}
 .cake-head-button {@include button-primary;min-width:11rem;margin-right:1rem;}
 .cake-head-review {@include button-text;min-width:11rem;}
@@ -20,13 +20,14 @@
 
 .cake-info {display:flex;flex-wrap:wrap;max-width:var(--width-large);margin:0 auto;padding:2rem 0 2.25rem;border-top:var(--border100);border-bottom:var(--border100);position:relative;}
 .cake-info + .cake-info {border-top:none;}
-.cake-info button {@include button-tertiary;position:absolute;left:0;top:4rem;}
+// .cake-info button {@include button-tertiary;position:absolute;left:0;bottom:3rem;}
 .cake-info h2 {width:400px;flex-shrink:0;@include subhead;}
 .cake-info p {width:calc(100% - 400px);}
 
-@media (--breakpoint-large) {
-  .cake-poster {width:60%;max-width:var(--width-small);height:auto;margin:0 0 2rem 0;@include reset-position;}
-  .cake-summary {margin-left:0;margin-right:0;padding-left:0;padding-right:0;}
+@media (--breakpoint-small) {
+  .cake-poster {height:auto;margin:0 0 2rem 0;@include reset-position;}
+  .cake-meta {padding-left:0;padding-right:0;}
+  .cake-meta ul {margin-left:0;margin-right:0;padding-left:0;padding-right:0;}
   .cake-info {flex-wrap:wrap;}
   .cake-info h2 {width:100%;margin:0 0 1rem 0;}
 
@@ -58,6 +59,7 @@
   height: 100%;
   object-fit: cover;
 }
+.person-name {@include truncate-multi;}
 .person-test {
   @include tag;
   position: absolute;
@@ -65,3 +67,9 @@
   top: .25rem;
   z-index: 1;
 }
+
+
+
+.cake-short {display:flex;position:relative;}
+.cake-short figure:nth-of-type(1) {@include tile-flat-small;width:var(--grid-column);}
+.cake-short figure:nth-of-type(2) {@include tile-flat-small;width:var(--grid-column);}
