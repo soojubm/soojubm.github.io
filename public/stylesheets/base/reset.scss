@@ -27,7 +27,9 @@ pre {}
 del {color:var(--gray400);} ins {text-decoration:none;}
 
 html {min-width:320px;height:100%;font:16px/1.8 var(--fontstack);color:var(--gray800);-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overscroll-behavior:contain;}
-body {background:var(--gray0);overflow-x:hidden;font-size:.875rem;letter-spacing:-.0125rem;}
+body {background:var(--gray0);overflow-x:hidden;font-size:.875rem;}
+
+// letter-spacing:-.0125rem;
 
 blockquote {margin:2rem 0;padding:0 0 0 var(--space);border-left:4px solid var(--gray200);border-radius:4px 0 0 0;color:var(--gray400);}
 
@@ -52,6 +54,14 @@ table.is-borderless tbody tr {border:0;}
 ul {}
 ul li {margin:.25rem 0;padding:0 0 0  1rem;position:relative;}
 ul li:before {content:'\2022';position:absolute;left:0;}
+ul li:marker {
+  unicode-bidi: isolate;
+  font-variant-numeric: tabular-nums;
+  text-transform: none;
+  text-indent: 0px !important;
+  text-align: start !important;
+  text-align-last: start !important;
+}
 ul li ul {margin:0 0 .5rem 0;}
 ul li ul li {}
 ul li ul li:before {content:'\25e6';border-radius:var(--radius400);}

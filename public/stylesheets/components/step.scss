@@ -2,7 +2,7 @@
 .step-item {position:relative;}
 .step-item + .step-item {margin:1rem 0 0 0;}
 .step-item-icon {@include avatar-medium;position:absolute;left:0;}
-.step-item-title {margin-left:calc(32px + var(--space));font-size:var(--font-size-body);font-weight:var(--font-weight-bold);line-height:var(--size-medium);vertical-align:1px;}
+.step-item-title {margin-left:calc(32px + var(--space));font-size:var(--font-size-body);font-weight:var(--font-weight-normal);line-height:var(--size-medium);vertical-align:1px;}
 .step-item-description {margin:var(--space) 0;}
 // .step-space {display:none;margin:-.5rem 0 0 0;}
 // .step-space-dot {float:left;display:block;width:3px;height:3px;margin:21px 2px;border-radius:50%;background:var(--gray400);}

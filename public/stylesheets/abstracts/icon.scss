@@ -108,7 +108,7 @@
 
 .icon-arrow {
   // 색사 정의하기.
-  @include avatar-medium;
+  position: relative;
 }
 .icon-arrow:before {
   content: '';
@@ -135,6 +135,14 @@
 .icon-arrow-right:before {content:'';display:block;width:16px;height:1px;background:var(--gray800);position:absolute;left:16px;top:24px;transition:all .4s ease;}
 .icon-arrow-right:after {content:'';display:block;width:5px;height:1px;background:var(--gray800);position:absolute;left:27px;top:22px;transform:rotate(45deg);transition:all .4s ease;}
 
+.icon-arrow.is-primary {
+  &:before {border-color:var(--green800);}
+  &:after {background-color:var(--green800);}
+}
+
+.icon-arrow.is-external {display:inline-block;vertical-align:middle;transform:rotate(-45deg);}
+.icon-arrow.is-external:before {}
+.icon-arrow.is-external:after {}
 
 .icon-out {position:relative;}
 .icon-out-door {display:block;width:8px;height:12px;margin-left:-2px;border:2px solid var(--gray800);border-right:0;}

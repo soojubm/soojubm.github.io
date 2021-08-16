@@ -16,11 +16,15 @@
   position:relative;
 
   &:hover {border-color:var(--gray800);}
-  &:hover figure {border-top-color:inherit !important;border-bottom-color:inherit !important;background:none;}
+  &:hover figure {}
+  // &:hover figure {border-top-color:inherit !important;border-bottom-color:inherit !important;background:none;}
   &:disabled {border-color:transparent;}
   &:disabled figure {}
   
-  &.is-active {border-color:var(--color-primary);background:var(--green100);color:var(--color-primary);
+  &.is-active {
+    // medium
+    // border-color:var(--color-primary);background:var(--green100);color:var(--color-primary);
+    
     // background: var(--gray800);
     // border-color: var(--gray800);
     // color: var(--gray0);
@@ -31,11 +35,11 @@
   }
 }
 
-@mixin chip-heading {float:left;border-left:0 !important;border-top-right-radius:0 !important;border-bottom-right-radius:0 !important;}
-@mixin chip-tailing {float:right;border-right:0 !important;border-top-left-radius:0 !important;border-bottom-left-radius:0 !important;}
+@mixin chip-heading {float:left;margin:0 0 0 .25rem;background:var(--gray0);}
+@mixin chip-tailing {float:right;margin:0 .25rem 0 0;background:var(--gray0);}
 
 @mixin chip-icon {
-  @include avatar-medium;
+  @include avatar-small;
   @include chip-tailing;
 }
 @mixin chip-label {
@@ -44,7 +48,7 @@
 
 .chip {@include chip}
 .chip-label {@include chip-label;}
-.chip-thumbnail {@include avatar-medium;@include chip-heading;}
+.chip-thumbnail {@include avatar-small;@include chip-heading;}
 
 .chip-icon {@include chip-icon;}
 .chip-icon .icon-caret {}

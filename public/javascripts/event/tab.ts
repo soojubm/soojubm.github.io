@@ -9,7 +9,7 @@ const tab = () => {
   const tabs = tabElement.querySelectorAll('[role=tab]')
   const tabPanels = tabElement.querySelectorAll('[role=tabpanel]')
   const indicatorElement = tabElement.querySelector('.profile-tablist-indicator')
-  let selectedTab = tabs[0]
+  let selectedTab = tabs[0] as HTMLElement
 
   initializeIndicator(indicatorElement, selectedTab)
 

@@ -166,12 +166,16 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 
 .textfield-check {@include textfield-surfix;}
 .textfield-prefix {@include textfield-prefix;background:var(--gray100);}
-.textfield-prefix ~ .textfield-input {padding-left:calc(1rem + 2rem);}
+.textfield-prefix ~ .textfield-input {padding-left:calc(1rem + 2rem + .25rem);}
 .textfield-input[type=search] ~ .textfield-prefix {top:1rem;}
 .textfield-surfix {@include textfield-surfix;}
 .selectbox-indicator {@include textfield-surfix;}
 .textfield-clear {display:none !important;}
-.textfield-input:focus ~ .textfield-clear {display:flex !important; pointer-events:all;}
+.textfield-done {line-height:var(--size-large);visibility:hidden;position:absolute;right:0;top:0;}
+
+.textfield-input:focus {width:92%;}
+.textfield-input:focus ~ .textfield-done {visibility:visible;}
+.textfield-input:focus ~ .textfield-clear {display:flex !important; pointer-events:all;right:10%;}
 
 .textfield.is-small {padding:0 !important;font-size:var(--font-size-caption) !important;}
 .textfield.is-small .textfield-label {margin-bottom:0;}

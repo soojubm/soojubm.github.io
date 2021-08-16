@@ -76,7 +76,7 @@
 // .profile-tablist-tab:hover {box-shadow:var(--shadow400);}
 .profile-tablist-tab[aria-selected=true] {color:var(--gray800);}
 .profile-tablist-tab-badge {font-size:var(--font-size-caption);}
-.profile-tablist-indicator {display:block;height:calc(100% - .5rem);border-radius:var(--radius400);background:var(--gray0);box-shadow:var(--shadow400);position:absolute;top:.25rem;left:4px;transition:all 0.4s ease;}
+.profile-tablist-indicator {display:block;height:calc(100% - .5rem);border-radius:var(--radius400);background:var(--gray0);box-shadow:var(--shadow400);position:absolute;top:.25rem;transition:all .4s ease;}
 .profile-tabpanel {display:flex;flex-wrap:wrap;margin:0 -.5rem;}
 .profile-tabpanel[aria-hidden=true] {display:none;}
 .profile-tabpanel .card {width:calc(33.3333% - 1rem);margin:0 .5rem 1rem;}

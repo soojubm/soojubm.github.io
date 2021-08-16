@@ -15,4 +15,5 @@ export function getWindowScrollTop() {
 
 export function getElementWidth(element) {
   return getComputedStyle(element).width
+  // return element.offsetWidth
 }

@@ -3,7 +3,7 @@
 .dropdown {position:relative;}
 .dropdown-trigger {@include chip;}
 .dropdown-trigger-label {padding:var(--space-chip-inset);}
-.dropdown-trigger-icon {@include avatar-medium;@include chip-tailing;}
+.dropdown-trigger-icon {@include avatar-small;@include chip-tailing;}
 
 .is-active .icon-caret {transform:rotate(180deg);}
 .is-active .icon-morevert {background-color:var(--gray0);}

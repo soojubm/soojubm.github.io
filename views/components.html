@@ -1,4 +1,11 @@
 <main class="design">
+  <aside style="display:flex;margin:1rem 5%;padding:1rem;box-sizing:border-box;border-radius:var(--radius400);background:var(--green100);">
+    <p>한 줄 배너. 얼럿 컴포넌트. 텍스트를 조금 길게 써보겠읍니다. 안녕하세요. 안녕히 계세요?</p>
+    <a href="#" style="margin-left:var(--space);">링크</a>
+  </aside>
+  <!-- <article class="dayrow">
+    <time>7. 13 (월)</time>
+  </article> -->
   <!-- <p>유저는 대부분 디스크립션을 자세히 읽기를 원하지 않으므로, 필요한 내용을 빠르게 캐치할 수 있도록 간결하게 쓰는 게 좋다. 한 줄에 50자, 세 줄 이하로 쓸 것을 권장하고 있다. 텍스트를 간결하게 유지하고 전달할 내용을 스캐너블한 덩어리로 나누는 것은, 유저들이 그들의 이해도와 이 서비스를 활용하는 능력에 대해 신뢰를 갖게 만든다.</p>
   <p>유저가 중요한 액션을 수행했을 경우, 완료 메시지를 전달하기 위해 한 화면 전체를 사용하는 경우가 있다. 이때는 유저가 집중할 수 있는 정보가 하나뿐이어서 맥락이 복잡하지 않으므로, \"이미지가 담긴 포스팅이 완료되었습니다.\" 등의 문장형으로 길게 설명할 필요 없이, \"제출 완료!\"같은 단일 단어로 대체할 수 있다.</p>
   <p>알림은 언제나 유저에게 베네핏을 주거나, 긴급한 메시지이거나, 적어도 적절한 타이밍의 내용이어야 한다. UX 라이터는 다양한 종류의 알림이 어떻게 표시될 수 있는지를 고려해야 한다. 똑같은 텍스트가 각각의 컴포넌트에 쓰였을 때 어떤 맥락으로 유저에게 닿을 수 있는지를. </p>
@@ -598,6 +605,7 @@
         <!-- <label class="textfield-label" for="search">검색(시각적으로숨겨야함)</label> -->
         <input class="textfield-input js-input-test" type="search" id="search" placeholder="궁금한 인물이나 이슈가 있나요?" />
         <button class="textfield-surfix textfield-clear" hidden><i class="icon-x"></i></button>
+        <button class="textfield-done">검색</button>
       </div>
 
       <br />
@@ -714,17 +722,17 @@
       <h6 class="title-bordered">List</h6>
       <ul class="list-sample">
         <li title="unordered list, level 1">순서가 없는 리스트
-          <ul>
+          <!-- <ul>
             <li title="unordered list, level 2">순서가 없는 리스트</li>
-          </ul>
+          </ul> -->
         </li>
         <li>순서가 없는 리스트</li>
       </ul>
       <ol class="list-sample" style="margin:var(--space) 0 0 0;">
         <li>순서가 있는 리스트
-          <ol>
+          <!-- <ol>
             <li>순서가 있는 리스트</li>
-          </ol>
+          </ol> -->
         </li>
         <li>순서가 있는 리스트</li>
       </ol>
@@ -821,7 +829,7 @@
 			</nav>
     </article>
 
-    <article class="design-article">
+    <article class="design-article" hidden>
       <h1 class="design-article-title">Button Group</h1>
       <p class="design-article-description">그룹과 리스트박스의 역할 정의.</p>
       <ul class="design-article-description">
@@ -887,7 +895,7 @@
       <h6 class="title-bordered">Toast</h6>
       <aside class="alert" style="margin:0 0 var(--space) 0;background:var(--gray800);border:0;">
         <span class="alert-icon">🧡</span>
-        <p class="alert-head" style="color:var(--gray0);">이미 사용 중인 이메일입니다.</p>
+        <p class="alert-head" style="color:var(--gray0);">좋아요 표시한 동영상에 추가됨</p>
         <!-- <button class="alert-close" aria-label="close alert"><i class="icon-x"></i></button> -->
       </aside>
       <aside class="alert" style="background:var(--red800);border-color:transparent;">
@@ -1121,7 +1129,7 @@
         <article class="accordion js-accordion" aria-expanded="false">
           <h3 class="accordion-title" role="button">
             탈퇴하고 싶어요.
-            <span class="accordion-title-icon"><i class="icon-chevron"></i></span>
+            <span class="accordion-title-icon"><i class="icon-chevron is-down"></i></span>
           </h3>
           <div class="accordion-panel">
             <p>모든 국민은 건강하고 쾌적한 환경에서 생활할 권리를 가지며, 국가와 국민은 환경보전을 위하여 노력하여야 한다. 대통령은 내우·외환·천재·지변 또는 중대한 재정·경제상의 위기에 있어서 국가의 안전보장 또는 공공의 안녕질서를 유지하기 위하여 긴급한 조치가 필요하고 국회의 집회를 기다릴 여유가 없을 때에 한하여 최소한으로 필요한 재정·경제상의 처분을 하거나 이에 관하여 법률의 효력을 가지는 명령을 발할 수 있다.</p>
@@ -1258,7 +1266,7 @@
         <div class="step-item is-active">
           <span class="step-item-icon">1</span>
           <h3 class="step-item-title">장바구니</h3>
-          <p class="step-item-description tile-flat">대통령은 국가의 원수이며, 외국에 대하여 국가를 대표한다. 국가원로자문회의의 조직·직무범위 기타 필요한 사항은 법률로 정한다. 국가는 대외무역을 육성하며, 이를 규제·조정할 수 있다.</p>
+          <p class="step-item-description">대통령은 국가의 원수이며, 외국에 대하여 국가를 대표한다. 국가원로자문회의의 조직·직무범위 기타 필요한 사항은 법률로 정한다. 국가는 대외무역을 육성하며, 이를 규제·조정할 수 있다.</p>
         </div>
         <div class="step-item">
           <span class="step-item-icon">2</span>
@@ -1408,6 +1416,20 @@
       <br />
 
       <div class="quote">
+        <figure class="quote-avatar">🥫</figure>
+        <h3 class="quote-title">Quote</h3>
+        <p class="quote-body">Don't you know that God is Pooh bear? Don't you know that God is Pooh bear?</p>
+        <cite class="quote-byline">
+          <div class="quote-byline-name">Jack Kerouac</div>
+          <div class="quote-byline-job">Poet / Novelist</div>
+        </cite>
+        <button class="quote-action">자세히 알아보기</button>
+        <!-- <button class="quote-later">지금은 괜찮아요</button> -->
+      </div>
+
+      <br />
+
+      <div class="quote" style="background-image:url('../public/images/springsteen.jpg');background-size:cover;">
         <figure class="quote-avatar">🥫</figure>
         <h3 class="quote-title">Quote</h3>
         <p class="quote-body">Don't you know that God is Pooh bear? Don't you know that God is Pooh bear?</p>
