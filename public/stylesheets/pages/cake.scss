@@ -1,6 +1,6 @@
-.cake {padding:0 var(--grid-margin);}
+.cake {@include container-large;}
 
-.cake-head {max-width:var(--width-large);margin:0 auto;padding:3rem 0;position:relative;}
+.cake-head {position:relative;}
 .cake-background {@include bleeding;height:380px;background:url('/public/images/newman.jpg') no-repeat 0 -200px fixed;}
 .cake-head-title {@include title;}
 .cake-head-engtitle {@include subhead;}
@@ -11,8 +11,8 @@
 .cake-head-button {@include button-primary;min-width:11rem;margin-right:1rem;}
 .cake-head-review {@include button-text;min-width:11rem;}
 
-.cake-meta {max-width:var(--width-large);margin:0 auto;padding:1rem 2rem;border-radius:var(--radius400);background:var(--gray0);}
-.cake-meta ul {margin:0 -2rem 0;padding:0 2rem;position:relative;}
+.cake-meta {max-width:var(--width-large);margin:0 auto;padding:1rem 0;border-radius:var(--radius400);background:var(--gray0);}
+.cake-meta ul {position:relative;}
 .cake-meta ul li {margin:0 0 .25rem 0;padding:0;}
 .cake-meta ul li::before {display:none;}
 .cake-meta ul li b {float:left;width:72px;margin:0 1rem 0 0;font-weight:normal;color:var(--gray400);}
@@ -23,13 +23,17 @@
 // .cake-info button {@include button-tertiary;position:absolute;left:0;bottom:3rem;}
 .cake-info h2 {width:400px;flex-shrink:0;@include subhead;}
 .cake-info p {width:calc(100% - 400px);}
+.cake-info footer {margin-left: 400px;margin-top:1rem;}
 
 @media (--breakpoint-small) {
-  .cake-poster {height:auto;margin:0 0 2rem 0;@include reset-position;}
+  .cake-poster {height:auto;margin:0 0 var(--space) 0;@include reset-position;}
   .cake-meta {padding-left:0;padding-right:0;}
   .cake-meta ul {margin-left:0;margin-right:0;padding-left:0;padding-right:0;}
+  .cake-meta-summary {padding-right:0;}
   .cake-info {flex-wrap:wrap;}
   .cake-info h2 {width:100%;margin:0 0 1rem 0;}
+  .cake-info p {width:100%;}
+  .cake-info footer {margin-left:0;}
 
   .person-list {margin-top:.5rem !important;}
 }

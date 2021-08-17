@@ -44,7 +44,7 @@
 
 
 .spacing-card {@include tile-elevated;}
-.space {height:100%;background:var(--green100);text-align:center;font-size:var(--font-size-caption);color:var(--gray400);position:relative;}
+.space {display:flex;align-items:center;justify-content:center;height:100%;background:var(--green100);font-size:var(--font-size-caption);color:var(--gray400);position:relative;}
 .space .tag {margin:0;padding:0 .25rem;border-radius:var(--radius400);background:var(--color-primary);color:var(--gray0);position: absolute;
   left: 50%;
   /* z-index: 5151515; */

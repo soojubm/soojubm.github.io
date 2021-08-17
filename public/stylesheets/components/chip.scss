@@ -23,7 +23,7 @@
   
   &.is-active {
     // medium
-    // border-color:var(--color-primary);background:var(--green100);color:var(--color-primary);
+    border-color:var(--color-primary);background:var(--green100);color:var(--color-primary);
     
     // background: var(--gray800);
     // border-color: var(--gray800);
@@ -31,7 +31,6 @@
   }
   &.is-active figure {
     // border-top-color:var(--color-primary) !important;border-bottom-color:var(--color-primary) !important;
-    background:none;
   }
 }
 
