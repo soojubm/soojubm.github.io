@@ -105,7 +105,7 @@
           <dt>avatar-badge</dt><dd>optional - unread/new indicator</dd>
         </dl>
       </blockquote>
-      <div>
+      <div style="font-size:12px;">
         <p class="checklist"><span><i></i></span> design tokens에서 정의한 5가지 사이즈 중 huge, large, medium, small 4가지를 사용합니다.</p>
         <p class="checklist"><span><i></i></span> 썸네일 이미지, 유저 프로필, 아이콘 버튼에 사용합니다</p>
         <p class="checklist"><span><i></i></span> 이미지, 텍스트, 아이콘을 포함할 수 있습니다.</p>
@@ -940,7 +940,7 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Carousel</h1>
-      <p class="design-article-description">서드파티 라이브러리 없이 가로 스크롤을 활용합니다. </p>
+      <p class="design-article-description">서드파티 라이브러리를 사용하지 않고 가로 스크롤을 활용합니다. </p>
       <div class="design-article-description">
         <p class="checklist"><span><i></i></span> 터치 제스쳐를 지원하지 않는 환경(데스크탑 등)에서 arrow 버튼을 제공하세요.</p>
         <p class="checklist"><span><i></i></span> 모바일 환경에서는 arrow 버튼을 제공하지 않습니다.</p>
@@ -1154,9 +1154,9 @@
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Bottom Navigation</h1>
       <p class="design-article-description">바텀 네비게이션.</p>
-      <blockquote>
+      <!-- <blockquote>
         <p>햄버거 메뉴 이커머스 도매인의 카테고리 왼쪽, 글로벌 네비게이션 오른쪽.</p>
-      </blockquote>
+      </blockquote> -->
       <nav class="bottombar">
         <a href="#" class="bottombar-item is-active">
           <span class="bottombar-item-media"><i class="icon-person"></i></span>
@@ -1307,9 +1307,7 @@
       <h1 class="design-article-title">Result</h1>
       <p class="design-article-description">실행 결과. 오류나 내용없음에 사용.</p>
       <p class="checklist"><span><i></i></span>기본적인 콘텐츠 모듈인 왼쪽 정렬과 구별되도록 가운데 정렬하여 대비를 줍니다.</p>
-      <blockquote>
-        <p>디자인시스템에서 blankslate, empty state. result로 네이밍하여 empty, error, complete 등에서 범용성을 확보. 분리하는 것이 좋을지도.</p>
-      </blockquote>
+      <p class="checklist"><span><i></i></span>페이지나 섹션의 empty, error, complete 상황에서 사용합니다. (blankslate, empty state. result)</p>
       <section class="empty" style="border:1px solid var(--color-box-border);border-radius:var(--radius400);margin:0;">
         <i class="empty-icon">🧟</i>
         <h1 class="empty-title">상품이 결제되었습니다.</h1>
@@ -1576,10 +1574,12 @@
       <nav class="sidebar">
         <h4 class="sidebar-heading" style="margin-top:-.25rem;">대분류</h4>
         <div class="sidebar-item" role="listitem">
-          <h2 style="margin-right:.5rem;font-size:var(--font-size-subhead)"><figure style="margin:0 var(--space) 0 0;">⚽</figure>축구</h2>
+          <figure class="sidebar-item-icon">⚽</figure>
+          <span class="sidebar-item-label">축구</span>
         </div>
         <div class="sidebar-item" role="listitem">
-          <h2 style="margin-right:1rem;font-size:var(--font-size-subhead)"><figure style="margin:0 var(--space) 0 0;">🏹</figure>양궁</h2>
+          <figure class="sidebar-item-icon">🏹</figure>
+          <span class="sidebar-item-label">양궁</span>
           <span class="sidebar-item-tag tag" data-appearance="primary">새소식</span>
         </div>
       </nav>
