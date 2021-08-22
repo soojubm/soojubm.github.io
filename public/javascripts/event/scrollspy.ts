@@ -11,8 +11,6 @@ const scrollspy = ({ menusSelector: menusClass, sectionsSelector: sectionsClass 
 
   if (!sections || !menus) return
 
-  const buttonContainer = menus[0]?.parentElement as HTMLElement
-
   menus.forEach((element, index) => {
     element.addEventListener('click', event => {
       event.preventDefault()
@@ -41,10 +39,11 @@ const scrollspy = ({ menusSelector: menusClass, sectionsSelector: sectionsClass 
       activeOffsetLeft = targetMenu.offsetLeft + targetMenu.clientWidth / 2
     })
 
-    const buttonContainerWidth = buttonContainer.offsetWidth
+    const buttonContainer = menus[0]?.parentElement as HTMLElement
+    if (!buttonContainer) return
     // if(buttonContainer.scrollLeft < document.body.offsetWidth / 2) return
     buttonContainer.scroll({
-      left: activeOffsetLeft - buttonContainerWidth / 2,
+      left: activeOffsetLeft - buttonContainer.offsetWidth / 2,
       top: 0,
       behavior: 'smooth',
     })

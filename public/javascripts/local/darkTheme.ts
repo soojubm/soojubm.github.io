@@ -1,3 +1,6 @@
+const isDarkMode = window.matchMedia && 
+  window.matchMedia('(prefers-color-scheme: dark)').matches;
+
 export const DARK_THEME_CLASS = 'theme-dark'
 export const LIGHT_THEME_CLASS = 'theme-light'
 
@@ -59,6 +62,8 @@ export default darkTheme
 
 // function toggleTheme() {
 //   // 저장된 값이 없다면 시스템 설정을 기준으로 함
+
+
 //   const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
 //   const newTheme = currentTheme === 'dark' ? 'light' : 'dark'
 

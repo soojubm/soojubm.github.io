@@ -3,7 +3,7 @@
 import './stylesheets/style.scss'
 
 import routePage, { routes } from './javascripts/router'
-import { lockBodyElement, unlockBodyElement } from './javascripts/load'
+import { detectLoad, lockBodyElement } from './javascripts/load'
 import darkTheme from './javascripts/local/darkTheme'
 import carousel from './javascripts/event/carousel'
 import event from './javascripts/event/index'
@@ -17,7 +17,7 @@ import { stopAnimation, throttle } from './javascripts/utils/optimizationUtils'
 
 // todo 네이밍을 다시하고 lockbody는 유틸성
 document.addEventListener('DOMContentLoaded', lockBodyElement)
-window.addEventListener('load', unlockBodyElement)
+window.addEventListener('load', detectLoad)
 
 window.addEventListener('hashchange', initializeNavbar)
 

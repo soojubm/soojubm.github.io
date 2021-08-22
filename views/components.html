@@ -16,6 +16,18 @@
 
   <!-- <header class="design-head"></header> -->
 
+  <div class="aaa">
+    <button>new content menu</button>
+    <div>
+      test
+    </div>
+  </div>
+  <style>
+    .aaa {position:relative;}
+    .aaa button {}
+    .aaa div {position:absolute;}
+  </style>
+
   <section class="hero" role="banner">
     <div class="hero-background"></div>
     <h1 class="hero-title">Under<br />Construction<i style="font-style:italic;" hidden>!</i></h1>
@@ -840,7 +852,7 @@
           <dt>container-tab</dt>
         </dl>
         <hr />
-        <p>todo: 브라우저 히스토리 저장. 탭의 갯수 제한 4~5개 또는 가로 스크롤. HIG의 segmented control</p>
+        <p>todo: 브라우저 히스토리 저장(?tab=projects). 탭의 갯수 제한 4~5개 또는 가로 스크롤. HIG의 segmented control</p>
       </blockquote>
       <nav class="profile-tablist" role="tablist">
 				<button class="profile-tablist-tab" role="tab" aria-selected="true">프로젝트 <i class="profile-tablist-tab-badge">5</i></button>
@@ -1420,7 +1432,7 @@
             <span class="notification-item-content" style="color:var(--gray400);">comment on <em>John Cassavetes</em></span>
           </div>
           <div class="notification-item">
-            <em class="notification-unread">🌱</em>
+            <em class="notification-unread"></em>
             <figure class="notification-item-avatar"></figure>
             <b class="notification-item-user">John Cassavetes</b>
             <time class="notification-item-date">5일 전</time>
@@ -1521,7 +1533,8 @@
         <span class="pricing-item-price">
           <span class="pricing-item-price-unit">₩ </span>
           <span>6,800</span>
-          <span class="pricing-item-price-per" style="font-size:var(--font-size-body);font-weight:normal;">/ &nbsp;월</span>
+          <i class="icon-bullet" style="font-size:var(--font-size-body);font-weight:var(--font-weight-noraml);color:var(--gray800);margin:0 -.5rem;"></i>
+          <span class="pricing-item-price-per" style="font-size:var(--font-size-body);font-weight:normal;">월</span>
         </span>
         <p class="pricing-item-description">전직대통령의 신분과 예우에 관하여는 법률로 정한다. 대법원장은 국회의 동의를 얻어 대통령이 임명한다.</p>
         <ul>

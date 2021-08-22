@@ -322,3 +322,86 @@ console.log(scrollbox.width) //-> 17 (Windows, Chrome)
 //       document.documentElement.classList.add('touch');
 //   }
 // })();
+
+const spanElem = document.querySelector('span')
+
+//handles clicks and keydowns on the link
+function navigateLink(e) {
+  if (e.type === 'click' || e.key === 'Enter') {
+    let ref = e.target != null ? e.target : e.srcElement
+    if (ref) {
+      window.open(ref.getAttribute('data-href'), '_blank')
+    }
+  }
+}
+
+spanElem.addEventListener('click', navigateLink)
+spanElem.addEventListener('keydown', navigateLink)
+
+// const upload = function(fileEle, backendUrl) {
+//     return new Promise(function(resolve, reject) {
+//         // Get the list of selected files
+//         const files = fileEle.files;
+
+//         // Create a new FormData
+//         const formData = new FormData();
+
+//         // Loop over the files
+//         [].forEach.call(files, function(file) {
+//             formData.append(fileEle.name, file, file.name);
+//         });
+
+//         // Create new Ajax request
+//         const req = new XMLHttpRequest();
+//         req.open('POST', backendUrl, true);
+
+//         // Handle the events
+//         req.onload = function() {
+//             if (req.status >= 200 && req.status < 400) {
+//                 resolve(req.responseText);
+//             }
+//         };
+//         req.onerror = function() {
+//             reject();
+//         };
+
+//         // Send it
+//         req.send(formData);
+//     });
+// };
+// <input type="file" id="upload" multiple />
+// const fileEle = document.getElementById('upload');
+
+// upload(fileEle, '/path/to/back-end').then(function(response) {
+//     // `response` is what we got from the back-end
+//     // We can parse it if the server returns a JSON
+//     const data = JSON.parse(response);
+//     ...
+// });
+
+textboxEle.addEventListener('keydown', function(e) {
+  const capsLockOn = e.getModifierState('CapsLock')
+
+  // Update the content of message
+  messageEle.innerHTML = capsLockOn ? 'Caps lock is ON' : ''
+
+  // Show or hide the message based on the CapsLock state
+  messageEle.style.display = capsLockOn ? 'block' : 'none'
+})
+
+textboxEle.addEventListener('keypress', function(e) {
+  const isMac = /Mac/.test(navigator.platform)
+
+  const keyCode = e.keyCode || e.which
+
+  // Is the _Shift_ key pressed?
+  const shiftKey = e.shiftKey || keyCode === 16
+
+  // Get the pressed character
+  const s = String.fromCharCode(keyCode)
+  const capsLockOn =
+    (s.toUpperCase() === s && s.toLowerCase() !== s && !(shiftKey && isMac)) || (s.toUpperCase() !== s && s.toLowerCase() === s && shiftKey)
+
+  messageEle.innerHTML = capsLockOn ? 'Caps lock is ON' : ''
+  messageEle.style.display = capsLockOn ? 'block' : 'none'
+})

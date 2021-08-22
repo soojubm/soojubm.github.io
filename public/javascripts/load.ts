@@ -3,9 +3,13 @@ export function lockBodyElement() {
 }
 
 export function unlockBodyElement() {
+  document.body.classList.remove('body-lock')
+}
+
+export function detectLoad() {
   const loaderElement = document.querySelector<HTMLElement>('.js-loader')
   if (!loaderElement) return
 
-  document.body.classList.remove('body-lock')
   loaderElement.hidden = true
+  unlockBodyElement()
 }

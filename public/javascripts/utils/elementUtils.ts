@@ -17,3 +17,17 @@ export function getElementWidth(element) {
   return getComputedStyle(element).width
   // return element.offsetWidth
 }
+
+// Hide the menu when clicking outside of it
+// export const documentClickHandler = function(e) {
+//   const isClickedOutside = !menu.contains(e.target)
+//   if (isClickedOutside) {
+//     menu.classList.add('hidden')
+
+//     document.removeEventListener('click', documentClickHandler)
+//   }
+// }
+
+// const siblings = [].slice.call(parent.children).filter(function(child) {
+//   return child !== ele;
+// });

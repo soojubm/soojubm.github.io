@@ -1,3 +1,6 @@
+
+
+
 .profile {@include container-large;}
 .profile::after {content:'';display:block;clear:both;}
 
@@ -28,6 +31,16 @@
 .profile-user-controls-follow {@include button-primary;width:calc(70% - var(--space-after-button));}
 .profile-user-controls-message {@include button-tertiary;min-width:auto;width:30%;margin-left:auto;}
 
+// todo
+.social {}
+.social-link {@include item;margin-bottom:var(--space-small);}
+.social-link-icon {@include item-avatar-medium;}
+.social-link-label {}
+.social-link:hover {@include hover-item;}
+
+
+
+
 .profile-user {float:left;width:320px;position:relative;z-index:var(--zindex-default);}
 .profile-user-avatar {float:right;@include avatar-huge;background-image:url('/public/images/soo.png');background-size:contain;transition:all 0.4s ease;}
 .profile-user-avatar:hover {box-shadow:var(--shadow400);}
@@ -40,26 +53,6 @@
 // 여기서 변하는 값은 item height 뿐임.
 // avatar를 floating하면 아이콘 버튼으로 쓰기 어려운가? clearfix
 // 아이템의 크기에 따라 텍스트 갯수와 스타일이 달라짐.
-
-@mixin item {
-  @include clearfix;width:100%;position:relative;z-index:1;
-}
-
-.item {@include item;}
-.item-avatar {float:left;@include avatar-large;margin:0 var(--space) 0 0;}
-.item-name {font-size:var(--font-size-body);}
-.item-description {color:var(--gray400);}
-.item-action {@include button-secondary;@include button-small;@include position-right-top;right:0;}
-.item-action.is-active {@include button-tertiary;@include button-small;@include position-right-top;right:0;}
-
-.item + .item {margin:var(--space) 0 0 0;}
-.item:hover {@include hover-item;}
-
-.item[data-size=huge] .item-avatar {width:var(--size-huge);height:var(--size-huge);margin-right:var(--space-after-avatar-huge);}
-.item[data-size=large] .item-avatar {width:var(--size-large);height:var(--size-large);margin-right:var(--space-after-avatar-large);}
-.item[data-size=medium] .item-avatar {width:var(--size-medium);height:var(--size-medium);margin-right:var(--space-after-avatar-medium);}
-.item[data-size=small] .item-avatar {width:var(--size-small);height:var(--size-small);margin-right:var(--space-after-avatar-small);}
-
 
 .profile-foot-follow {@include button-tertiary;width:100%;}
 .profile-body {padding:0 0 64px 398px;box-sizing:border-box;position:relative;}
@@ -85,7 +78,7 @@
 .card {display:block;background:var(--gray0);position:relative;@include tile-elevated;}
 .card-more {@include avatar-medium;display:none;position:absolute;right:.25rem;top:.25rem;}
 .card-thumbnail {padding-top:50%;border:1px solid transparent;overflow:hidden;background:var(--gray100);border-radius:var(--radius400);position:relative;}
-.card-thumbnail img {display:block;width:auto;height:auto;max-width:100%;max-height:130%;margin:auto;box-shadow:var(--shadow400);position:absolute;left:-1px;right:-1px;top:-1px;bottom:-1px;}
+.card-thumbnail img {display:block;width:auto;height:auto;max-width:100%;max-height:130%;margin:auto;position:absolute;left:-1px;right:-1px;top:-1px;bottom:-1px;}
 .card-byline {display:flex;align-items:center;margin:var(--space) 0;position:relative;}
 .card-byline-avatar {@include avatar-medium;margin:0 var(--space) 0 0;}
 .card-byline-name {}
@@ -96,16 +89,6 @@
 .card-tags {margin:.5rem 0 0 0;}
 .card-tags-item {@include hashtag;margin:0 var(--space-small) 0 0;font-size:var(--font-size-caption);}
 
-// figure 왼쪽 vs 오른쪽 margin-right는 size에 따라 변함.
-// heading name / title, tiny font-sze 작음
-// description 수치(날짜/금액/수량) 이륾보다 더 강조될 수도 있음.
-// action ~2 follow 버튼 등. 우측에 정렬되어야 함.
-
-// => avatar medium, avatar large(우측정렬, 버튼 아래)
-@mixin item-avatar {
-  float:left;margin-right:var(--space);
-  @include avatar-large;
-}
 .card-item {height:var(--size-large);margin:1rem 0;position:relative;z-index:var(--zindex-default);}
 .card-item-avatar {@include item-avatar;}
 .card-item-name {}
