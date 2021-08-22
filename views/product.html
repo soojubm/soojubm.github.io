@@ -7,80 +7,83 @@
 </nav> -->
 
 <main class="product">
-	<section class="product-image" role="img" aria-labelledby="제품 이미지">
-		<img src="/public/images/product_sample.png" alt="제품 이미지" />
-	</section>
-	<section class="product-info">
-		<h1 class="product-info-name">センチメンタル通り</h1>
-		<p class="product-info-byline">Album by <a href="#">Hachimitsupai</a></p>
-		<p class="product-info-price" role="suggestion"><del role="deletion">₩ 30,000</del> <b role="insertion">₩ 20,000</b> <em>(30%)</em></p>
-		<!-- <p>뷰티포인트 460P 적립 / 찻잎 230P 적립</p> -->
-		<p class="product-info-description">정통 루ROUX 방식으로 만든 크림소스와 풍부한 새우맛이 어우러진 정통 베네치아식 파스타소스</p>
-		<!-- <p>2021.06 데스크탑 섹션을 3개로 나누는 경우. 아마존의 경우. 국내에는 yes24의 경우.
-			베네핏, 포인트, 배송 안내에 더하여
-			요즘 가장 핫한 커머스인 신선식품을 예로 들면 유통기한, 원산지, 포장(친환경) 등이 현명한(?) 소비자의 구매 결정에 영향을 주는 요인으로 작용하여 최상단으로 상품 정보들이 올라오는 경향이 있다.
-			그 동안 법적으로 강제되었으나 상세페이지 하단이나 중단에 있는 둥 마는 둥.
-		</p> -->
-		<ol>
-			<li>塀の上で</li>
-			<li>土手の向こうに</li>
-			<li>ぼくの倖せ</li>
-			<li>薬屋さん</li>
-			<li>釣り糸</li>
-			<li>ヒッチハイク</li>
-			<li>月夜のドライヴ</li>
-			<li>センチメンタル通り</li>
-			<li>夜は静か通り静か</li>
-			<li>君と旅行鞄(トランク)</li>
-			<li>酔いどれダンス・ミュージック</li>
-		</ol>
-	</section>
-	<form class="product-order">
-		<div class="product-order-info tile-flat">
-			<p style="margin:-.5rem 0;">
-				배송비 2,500원 / 30,000원 이상 무료배송<br />제주, 도서, 산간지역 추가 배송비 3,000원
-			</p>
-		</div>
-		<!-- <div class="product-order-benefit">
-			적립금 1,250p / 현대카드 122,500원 (2% 청구할인)
-		</div> -->
-		<!-- <div class="product-order-option textfield" style="margin-top:var(--space);">
-			<label class="textfield-label" for="">상품선택</label>
-			<select class="textfield-input" name="" id="">
-				<option value="">상품 옵션</option>
-			</select>
-			<span class="selectbox-indicator"><i class="icon-caret"></i></span>
-		</div> -->
-		<div class="product-order-size" style="margin-top:var(--space);">
-			<b class="product-order-size-title">사이즈</b>
-			<button class="product-order-size-item">S</button>
-			<button class="product-order-size-item is-selected">M</button>
-			<button class="product-order-size-item">L</button>
-		</div>
-		<div class="product-order-color" style="margin-top:var(--space);">
-			<b class="product-order-color-title">칼라</b>
-			<button class="product-order-color-item is-crimson"></button>
-			<button class="product-order-color-item is-salmon is-selected"></button>
-		</div>
-		<div class="product-order-item" style="margin-top:2rem;">
-			<h4 class="product-order-item-title"><span class="aaa"></span> 정통 베네치아식 파스타소스 / M</h4>
-			<button class="product-order-item-close"><i class="icon-x"></i></button>
-			<div class="product-order-item-quantity quantity js-quantity">
-				<input class="quantity-input js-quantity-input" type="number" value="1">
-				<button class="quantity-decrement js-quantity-decrement"><i class="icon-minus"></i></button>
-				<button class="quantity-increment js-quantity-increment"><i class="icon-plus"></i></button>
+	<!-- 헤드가 있어야 할 듯.. -->
+	<header class="product-head" style="display:flex;flex-wrap:wrap;position:relative;">
+		<section class="product-image" role="img" aria-labelledby="제품 이미지">
+			<img src="/public/images/product_sample.png" alt="제품 이미지" />
+		</section>
+		<section class="product-info">
+			<h1 class="product-info-name">センチメンタル通り</h1>
+			<p class="product-info-byline">Album by <a href="#">Hachimitsupai</a></p>
+			<p class="product-info-price" role="suggestion"><del role="deletion">₩ 30,000</del> <b role="insertion">₩ 20,000</b> <em>(30%)</em></p>
+			<!-- <p>뷰티포인트 460P 적립 / 찻잎 230P 적립</p> -->
+			<p class="product-info-description">정통 루ROUX 방식으로 만든 크림소스와 풍부한 새우맛이 어우러진 정통 베네치아식 파스타소스</p>
+			<!-- <p>2021.06 데스크탑 섹션을 3개로 나누는 경우. 아마존의 경우. 국내에는 yes24의 경우.
+				베네핏, 포인트, 배송 안내에 더하여
+				요즘 가장 핫한 커머스인 신선식품을 예로 들면 유통기한, 원산지, 포장(친환경) 등이 현명한(?) 소비자의 구매 결정에 영향을 주는 요인으로 작용하여 최상단으로 상품 정보들이 올라오는 경향이 있다.
+				그 동안 법적으로 강제되었으나 상세페이지 하단이나 중단에 있는 둥 마는 둥.
+			</p> -->
+			<ol>
+				<li>塀の上で</li>
+				<li>土手の向こうに</li>
+				<li>ぼくの倖せ</li>
+				<li>薬屋さん</li>
+				<li>釣り糸</li>
+				<li>ヒッチハイク</li>
+				<li>月夜のドライヴ</li>
+				<li>センチメンタル通り</li>
+				<li>夜は静か通り静か</li>
+				<li>君と旅行鞄(トランク)</li>
+				<li>酔いどれダンス・ミュージック</li>
+			</ol>
+		</section>
+		<form class="product-order">
+			<div class="product-order-info">
+				<p>
+					배송비 2,500원 / 30,000원 이상 무료배송<br />제주, 도서, 산간지역 추가 배송비 3,000원
+				</p>
 			</div>
-			<p class="product-order-item-price">₩ 58,000</p>
-		</div>
-		<div class="product-order-total">
-			<p class="product-order-total-label">총 상품 금액</p>
-			<div class="product-order-total-value">₩ 58,000</div>
-		</div>
-		<footer class="product-order-control">
-			<button class="product-order-control-purchase">장바구니 담기</button>
-			<button class="product-order-control-cart">찜</button>
-		</footer>
-	</form>
+			<hr />
+			<!-- <div class="product-order-benefit">적립금 1,250p / 현대카드 122,500원 (2% 청구할인)</div> -->
+			<!-- <div class="product-order-option textfield" style="margin-top:var(--space);">
+				<label class="textfield-label" for="">상품선택</label>
+				<select class="textfield-input" name="" id="">
+					<option value="">상품 옵션</option>
+				</select>
+				<span class="selectbox-indicator"><i class="icon-caret"></i></span>
+			</div> -->
+			<div class="product-order-size" style="margin-top:var(--space);">
+				<b class="product-order-size-title">사이즈</b>
+				<button class="product-order-size-item">S</button>
+				<button class="product-order-size-item is-selected">M</button>
+				<button class="product-order-size-item">L</button>
+			</div>
+			<div class="product-order-color" style="margin-top:var(--space);">
+				<b class="product-order-color-title">칼라</b>
+				<button class="product-order-color-item is-crimson"></button>
+				<button class="product-order-color-item is-salmon is-selected"></button>
+			</div>
+			<div class="product-order-item" style="margin-top:2rem;">
+				<h4 class="product-order-item-title"><span class="aaa"></span> 정통 베네치아식 파스타소스 / M</h4>
+				<button class="product-order-item-close"><i class="icon-x"></i></button>
+				<div class="product-order-item-quantity quantity js-quantity">
+					<input class="quantity-input js-quantity-input" type="number" value="1">
+					<button class="quantity-decrement js-quantity-decrement"><i class="icon-minus"></i></button>
+					<button class="quantity-increment js-quantity-increment"><i class="icon-plus"></i></button>
+				</div>
+				<p class="product-order-item-price">₩ 58,000</p>
+			</div>
+			<div class="product-order-total">
+				<p class="product-order-total-label">총 상품 금액</p>
+				<div class="product-order-total-value">₩ 58,000</div>
+			</div>
+			<footer class="product-order-control">
+				<button class="product-order-control-purchase">장바구니 담기</button>
+				<button class="product-order-control-cart">찜</button>
+			</footer>
+		</form>
+	</header>
+	
 
 	<!-- <aside class="product-quick">
 		<figure class="product-quick-head">

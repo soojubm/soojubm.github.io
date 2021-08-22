@@ -137,7 +137,7 @@
           <dt>avatar-badge</dt><dd>optional - unread/new indicator</dd>
         </dl>
       </blockquote>
-      <div style="font-size:12px;">
+      <div>
         <p class="checklist"><span><i></i></span> design tokens에서 정의한 5가지 사이즈 중 huge, large, medium, small 4가지를 사용합니다.</p>
         <p class="checklist"><span><i></i></span> 썸네일 이미지, 유저 프로필, 아이콘 버튼에 사용합니다</p>
         <p class="checklist"><span><i></i></span> 이미지, 텍스트, 아이콘을 포함할 수 있습니다.</p>
@@ -259,6 +259,18 @@
           <a class="dropdown-menu-link" href="#">로그아웃</a>
         </menu>
       </div>
+      <div class="dropdown">
+        <button class="dropdown-trigger js-toggle" aria-expanded="true">
+          <span class="dropdown-trigger-label">Sort by</span>
+          <figure class="dropdown-trigger-icon"><i class="icon-caret"></i></figure>
+        </button>
+        <menu class="dropdown-menu" role="menu">
+          <h6 class="dropdown-menu-title" hidden>Dropdown header</h6>
+          <a class="dropdown-menu-link" href="#">
+            프로필 관리
+          </a>
+        </menu>
+      </div>
 
       <br />
 
@@ -331,7 +343,7 @@
       <div class="design-article-description">
         <p class="checklist"><span><i></i></span> primary: eyebrow, badge / secondary: badge / tertiary: badge, keyword, hashtag</p>
         <p class="checklist"><span><i></i></span> hashtag 컴포넌트는 tag 컴포넌트와 구별합니다.</p>
-        <p class="xlist"><i></i> 버튼으로 사용할 수 없습니다. <em>문제: hastag, keyword는 액션이 필요한 경우가 있음.</em></p>
+        <p class="xlist"><i></i> 버튼으로 사용할 수 없습니다. <em>(hastag, keyword는 액션이 필요한 경우가 있음)</em></p>
         <p class="xlist"><i></i> 아이콘을 포함할 수 없습니다. <span hidden>(이 디자인시스템은 아이콘을 클릭 기표로 사용한다는 대원칙에 근거하여 아이콘이 없다는 것은 클릭할 수 없다고 이해해도 무방?)</span></p>
       </div>
 
@@ -352,13 +364,13 @@
       <p class="design-article-description">사용자의 행동을 유도합니다. 페이지 이동이나 액션에 사용합니다.</p>
       <div class="design-article-description">
         <!-- <p class="xlist"><span><i></i></span> 크기가 다른 버튼을 함께 사용하지 마세요. (버튼 그룹)</p> -->
-        <p class="checklist"><span><i></i></span> 버튼의 상태에 따른 스타일은 모두 동일하게 적용합니다.</p>
+        <p class="checklist"><span><i></i></span> 상태에 따른 스타일은 모두 동일합니다.</p>
         <p class="checklist"><span><i></i></span> large 버튼은 프로모션 페이지에서 사용합니다. small 버튼은 아이템(가칭)에서 사용합니다.</p>
         <p class="checklist"><span><i></i></span> 아이콘 버튼의 아이콘은 관습적인 메타포를 사용합니다. accessibility-text(visually-hidden)</p>
         <!-- <p class="checklist"><span><i></i></span> 역할이 명확한 모두보기, 불러오는중, 더보기 등의 버튼은 한 번 더 추상화합니다.</p> -->
         <p class="xlist"><i></i> binary choice에서 primary 버튼과 secondary 버튼을 함께 사용하지 마세요.</p>
-        <p class="xlist"><i></i> medium 버튼을 레이블 없이 아이콘 버튼으로 사용하지 마세요.</p>
-        <p class="xlist"><i></i> 가이드 텍스트를 cta 아래에 두지 마세요. 일반적으로 네거티브 액션(?)의 텍스트 버튼이 위치합니다.</p>
+        <p class="xlist"><i></i> medium 버튼은 레이블 없이 아이콘 버튼으로 사용하지 마세요.</p>
+        <p class="xlist"><i></i> cta 아래에 가이드 텍스트를 배치하지 마세요. 일반적으로 네거티브 액션(?)의 텍스트 버튼이 위치합니다.</p>
         <p class="xlist"><i></i> more load 버튼은 full-width로 사용하지 마세요. 콘텐츠보다 작게 사용하여 대비를 주세요.</p>
       </div>
       <!-- <li>네이밍: style = solid/outline/plain/text (모든 스타일을 망라해야 하기 때문에 유아이 라이브러리에 어울리는 네이밍) appearance = link / subtle / primary, space = compact/fullwidth</li> -->
@@ -391,12 +403,26 @@
         <button class="design-article-tertiary-small">Small</button>
       </div>
       <br />
-      <h6 class="title-bordered">Primary</h6>
+      <h6 class="title-bordered">Appearances</h6>
+      <div class="design-buttongroup">
+        <button class="design-article-primary">Primary</button>
+        <button class="design-article-secondary">Secondary</button>
+        <button class="design-article-tertiary">Tertiary</button>
+        <button class="design-article-text">Text</button>
+      </div>
+      <br />
+      <h6 class="title-bordered">States</h6>
+      <div class="design-buttongroup">
+        <button class="design-article-tertiary is-hover">Hover</button>
+        <button class="design-article-tertiary is-focus">Focus</button>
+        <button class="design-article-tertiary" disabled>Disabled</button>
+      </div>
+      <!-- <h6 class="title-bordered">Primary</h6>
       <div class="design-buttongroup">
         <button class="design-article-primary" aria-pressed="false" aria-expanded="false">Default</button>
         <button class="design-article-primary is-hover">Hover</button>
         <button class="design-article-primary is-focus">Focus</button>
-        <!-- <button class="design-article-primary" style="display:block;margin:0 .5rem 0 0;">Active</button> -->
+        <button class="design-article-primary" style="display:block;margin:0 .5rem 0 0;">Active</button>
         <button class="design-article-primary" disabled>Disabled</button>
       </div>
       <br />
@@ -405,7 +431,6 @@
         <button class="design-article-secondary">Default</button>
         <button class="design-article-secondary is-hover">Hover</button>
         <button class="design-article-secondary is-focus">Focus</button>
-        <!-- <button class="design-article-secondary" style="display:block;margin:0 .5rem 0 0;">Active</button> -->
         <button class="design-article-secondary" disabled>Disabled</button>
       </div>
       <br />
@@ -414,7 +439,6 @@
         <button class="design-article-tertiary">Default</button>
         <button class="design-article-tertiary is-hover">Hover</button>
         <button class="design-article-tertiary is-focus">Focus</button>
-        <!-- <button class="design-article-tertiary" style="display:block;margin:0 .5rem 0 0;">Active</button> -->
         <button class="design-article-tertiary" disabled>Disabled</button>
       </div>
       <br />
@@ -424,8 +448,7 @@
         <button class="design-article-text is-hover">Hover</button>
         <button class="design-article-text is-focus">Focus</button>
         <button class="design-article-text" disabled>Disabled</button>
-      </div>
-      <br />
+      </div> -->
       
       <!-- <h6 class="title-bordered">and so on</h6>
       <div class="design-buttongroup">
@@ -516,7 +539,7 @@
       </div>
 
       <fieldset role="checkgroup">
-        <legend class="title-bordered" style="margin-bottom:0;">checkgroup legend</legend>
+        <legend class="title-bordered" style="margin-bottom:0;">checkgroup</legend>
         <div class="checkbox">
           <input class="js-checkall" type="checkbox" id="line00" value="" aira-checked="mixed" aria-controls="1 2" data-indeterminate="true" indeterminate />
           <label for="line00" title="Check All"><em>모두 동의합니다</em></label>
@@ -535,7 +558,7 @@
       <br />
 
       <fieldset role="radiogroup">
-        <legend class="title-bordered" style="margin-bottom:0;">radiogroup legend</legend>
+        <legend class="title-bordered" style="margin-bottom:0;">radiogroup</legend>
         <div class="radio">
           <input type="radio" id="gender-man" name="gender" value="">
           <label for="gender-man" title="Video Killed the Radio Button">Video Killed the Radio Button</label>
@@ -580,17 +603,15 @@
         <label for="switch2" title="Receive weekly newsletter">주간 뉴스레터 받아보기</label>
       </span>
 
-      <br />
-
+      <!-- <br />
       <h6 class="title-bordered">selectbox</h6>
-      <!-- todo textfield 제거 -->
       <div class="sorting" style="position:relative;display:flex;;">
-        <!-- <label class="" for="select2">Sort by</label> -->
+        <label class="" for="select2">Sort by</label>
         <select class="" id="select2" style="background:none;border:none;padding:0 var(--space) 0 0;font:inherit;color:var(--gray800);">
           <option class="select-option" value="select-option1">최신순</option>
         </select>
         <span class="selectbox-indicator" role="img" style="background:var(--gray100);position:relative;right:auto;top:auto;"><i class="icon-caret"></i></span>
-      </div>
+      </div> -->
     </article>
 
     <article class="design-article js-scrollspy-section">
@@ -695,7 +716,8 @@
       <p class="design-article-description">콘텐츠를 구획하거나 맥락을 전환합니다. 패턴의 반복, 대비되는 컴포넌트만으로 구획되었다는 인상을 주기 때문에 남용하지 않는 것이 좋습니다.</p>
       <div class="design-article-description">
         <p class="checklist"><span><i></i></span> 아티클 레벨에서 사용하세요. </p>
-        <p class="xlist"><span><i></i></span> border 속성으로 스타일링하지 마세요. hr 태그를 사용하면 의미론적으로 주제를 분리할 수 있고 컴포넌트의 고유성을 유지할 수 있습니다. -> 문제: 수정이 어렵다. (or css 인접 연산자)</p>
+        <p class="xlist"><span><i></i></span> border 속성으로 스타일링하지 마세요. hr 태그를 사용하면 의미론적으로 주제를 분리할 수 있고 컴포넌트의 고유성을 유지할 수 있습니다.</p>
+        <!-- <p> -> 문제: 수정이 어렵다. (or css 인접 연산자)<</p> -->
         <p class="xlist"><i></i> 섹션 레벨 등 상위 레벨의 콘텐츠 구획에 사용하지 마세요.</p>
       </div>
       <hr role="separator" />
@@ -932,7 +954,7 @@
         <!-- <button class="alert-close" aria-label="close alert"><i class="icon-x"></i></button> -->
       </aside>
       <aside class="alert" style="background:var(--red800);border-color:transparent;">
-        <p class="alert-head" style="color:var(--gray0);">인터넷 연결이</p>
+        <p class="alert-head" style="color:var(--gray0);">인터넷에 연결되어 있지 않습니다.</p>
       </aside>
     </article>
 
@@ -1047,7 +1069,7 @@
         <i class="pagination-ellipsis" title="맨 앞 페이지로 이동">...</i>
         <a class="pagination-link" href="#" title="맨 뒤 페이지로 이동">50</a>
       </nav>
-      <div><small role="" style="display:block;margin:1rem 0 0;text-align:center;">숙소 300개 이상 중 281 – 300</small>
+      <div><small role="" style="display:block;margin:var(--space) 0 0;text-align:center;">숙소 300개 이상 중 281 – 300</small>
 
       <br />
 
@@ -1136,15 +1158,16 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Accordion (Details)</h1>
-      <p class="design-article-description">요약된 목록에서 필요한 정보를 취사선택 합니다. 자주묻는질문Frequently asked questions에 사용하며 텍스트 위주의 간단한 공지글에도 사용할 수 있습니다.</p>
+      <p class="design-article-description">요약된 목록에서 필요한 정보를 취사선택 합니다.</p>
+      <!-- <p>자주묻는질문Frequently asked questions에 사용하며 텍스트 위주의 간단한 공지글에도 사용할 수 있습니다.</p> -->
       <blockquote>
           <p>plus icon은 addable이지 expandable이 아님. design token 기표로 정의하기.</p>
       </blockquote>
       <div class="design-article-description">
         <p class="checklist"><span><i></i></span>expandable/collapsible 기표를 제공하세요.</p>
         <p class="checklist"><span><i></i></span>복잡한 정보나 사용자가 반드시 인지해야 하는 정보에서 사용하지 마세요.</p>
-        <p class="checklist"><span><i></i></span>클릭 영역 정의. 본문, 외부를 클릭했을 때.</p>
         <p class="checklist"><span><i></i></span>heading은 한 문장으로 간결하게 작성하세요.</p>
+        <p class="checklist"><span><i></i></span>클릭 영역 정의(본문, 외부를 클릭했을 때)</p>
       </div>
       <!-- <details class="details">
         <summary class="details-summary">써머리</summary>

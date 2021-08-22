@@ -1,4 +1,4 @@
-.product {@include container-large;max-width:1360px;display:flex;flex-wrap:wrap;}
+.product {@include container-large;max-width:1360px;}
 // .product:before {content:'';display:block;height:800px;background:var(--gray100);position:absolute;left:10%;right:-50%;top:-5rem;z-index:-1;}
 .product-image {width:480px;background:var(--gray100);border-radius:var(--radius400);@include position-center;}
 .product-image:after {content:'';display:block;padding-bottom:100%;}
@@ -73,8 +73,8 @@
 
 .product-detail-brand {}
 
-.product-features {display:flex;flex-wrap:wrap;justify-content:space-between;margin:8rem 0;}
-.product-features-head {width:100%;margin:0 auto 4rem;}
+.product-features {display:flex;flex-wrap:wrap;justify-content:space-evenly;margin:8rem 0;}
+.product-features-head {width:100%;margin:0 auto 4rem;text-align:center;}
 .product-features-head h1 {@include title;word-break:keep-all;}
 .product-features-head p {}
 .product-features-item {max-width:320px;position:relative;}
@@ -104,7 +104,7 @@
 .product-quick-controls-purchase {@include button-primary;width:100%;}
 
 
-.product-detail-headline {@include title;text-align:center;}
+.product-detail-headline {@include title;}
 
 .product-detail-intro {display:flex;justify-content:center;width:100%;margin:0 0 12rem;padding:0 10%;box-sizing:border-box;}
 .product-detail-intro-image {width:35%;margin:4rem 2.5% -4rem;padding-top:60%;box-sizing:border-box;background:url('https://source.unsplash.com/random') no-repeat center center;background-size:cover;border-radius:var(--radius400);}
@@ -123,11 +123,11 @@
 
 
 @media (--breakpoint-large) {
-	.product {max-width:100%;margin-top:0;box-sizing:content-box;}
+	.product {max-width:100%;}
 	.product:before {display:none;}
 	.product-image {@include reset-position;width:50%;position:absolute;}
 	.product-info {width:50%;margin-right:0;padding-left:50%;}
-	.product-info-name {width:50%;text-align:left;line-height:1.4;position:initial;}
+	.product-info-name {width:100%;text-align:left;line-height:1.4;position:initial;}
 
 	.product-order {width:50%;padding-left:50%;}
 
