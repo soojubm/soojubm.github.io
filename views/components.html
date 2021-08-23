@@ -274,6 +274,34 @@
 
       <br />
 
+      <h6 class="title-bordered">Filter</h6>
+      <div class="dropdown">
+        <button class="dropdown-trigger js-toggle" aria-expanded="true">
+          <span class="dropdown-trigger-label">일행 당 인원 수</span>
+          <figure class="dropdown-trigger-icon"><i class="icon-caret"></i></figure>
+        </button>
+        <menu class="dropdown-menu" role="menu" style="padding:.75rem;">
+          <fieldset role="radiogroup">
+            <!-- <legend class="title-bordered" style="margin-bottom:0;">radiogroup</legend> -->
+            <div class="radio">
+              <input type="radio" id="gender-man" name="gender" value="">
+              <label for="gender-man" title="Video Killed the Radio Button">1~3명</label>
+            </div>
+            <div class="radio">
+              <input type="radio" id="gender-etc" name="gender" value="" checked>
+              <label for="gender-etc" title="Video Killed the Radio Button">3명 이상</label>
+            </div>
+          </fieldset>
+          <hr />
+          <footer style="display:flex;justify-content:space-between;">
+            <button>지우기</button>
+            <button class="design-article-secondary-small">저장</button>
+          </footer>
+        </menu>
+      </div>
+
+      <br />
+
       <h6 class="title-bordered">Keyword Group</h6>
       <div class="keywords-group" role="group">
         <a class="keywords-group-keyword" href="#">
@@ -1378,6 +1406,19 @@
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Dummies</h1>
       <p class="design-article-description">유아이 샘플.</p>
+
+      <article class="bookitem">
+        <figure class="bookitem-cover">
+          <img src="${item.imgSrc}" alt="${item.title}">
+        </figure>
+        <h3 class="bookitem-name">
+          <span role="img" aria-label="">📙</span> ${item.title}
+          <small class="bookitem-description">구글 최고의 혁신 전문가가 찾아낸 비즈니스 설계와 검증의 방법론</small>
+        </h3>
+        <hr />
+        <p class="bookitem-byline">${item.author || '정보가 없습니다'}</p>
+        <time class="bookitem-publishedyear">${item.publishedDate || '정보가 없습니다'}</time>
+      </article>
 
       
       <aside class="dialog" role="dialog" aria-labelledby="dialog-title" aria-describedby="dialog-description">

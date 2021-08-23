@@ -24,6 +24,8 @@ window.addEventListener('hashchange', domEvents)
 
 document.addEventListener('DOMContentLoaded', domEvents)
 
+document.addEventListener('click', scrollToTop)
+
 document.addEventListener('DOMContentLoaded', () => {
   stopAnimation()
 
@@ -31,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     selector: '.js-navbar-toggle',
     // activeClassname: 'is-navbar-active'
   })
-  event.toTop({ selector: '.js-to-top' })
+  // event.toTop({ selector: '.js-to-top' })
   event.positionSticky({ selector: '.js-titlebar', addClass: 'is-sticky-titlebar', isPassed: false })
   darkTheme('.js-darkmode')
 })
@@ -51,35 +53,43 @@ window.addEventListener('beforeunload', () => '저장되지 않은 변경사항�
 window.addEventListener('unload', () => console.log('unload event'))
 document.addEventListener('readystatechange', () => console.log(document.readyState))
 
-function toggleAccordion({ element: element }) {
-  // 패널을 포함한 전체 영역을 토글할 수 있음. 따라서 accordion-item 전체를 toggle class만 해줏면 됨.
-  // 1. 클릭한 패널을 토글한다.
-  // 도큐먼트를 클릭하면 닫을 것인지.
-  // 다른 accordion-item을 클릭했을 때 닫을 것인지?
+document.addEventListener('click', toggleDetails)
+document.addEventListener('click', revealPassword)
 
-  document.addEventListener(
-    'click',
-    (event: any) => {
-      const target = event.target as any
+export const DARK_THEME_CLASS = 'theme-dark'
+export const LIGHT_THEME_CLASS = 'theme-light'
+const DARKTHEME_SELECTOR = '.js-darkmode1'
+const darkThemeTrigger = document.querySelector(DARKTHEME_SELECTOR)
+const darkThemeSwitch = darkThemeTrigger?.querySelector('input')
+document.addEventListener('DOMContentLoaded', detectTheme)
+document.addEventListener('click', toggleDarkTheme)
 
-      // console.log(event.target, element, target.closest(element))
+export function detectTheme() {
+  // todo 바로 swithc 셀렉터로
+  const savedTheme = localStorage.getItem('theme')
+  if (!savedTheme) return
 
-      if (!target.closest(element)) return
+  const isDarkmode = savedTheme === DARK_THEME_CLASS
 
-      toggleElement(target.closest(element))
-    },
-    true,
-  )
+  if (!darkThemeSwitch) return
 
-  function toggleElement(targetElement: HTMLElement) {
-    let isExpanded = Boolean(targetElement.getAttribute('aria-expanded'))
-    console.log(isExpanded, typeof isExpanded)
-    targetElement.setAttribute('aria-expanded', String(!isExpanded))
-    targetElement.classList.toggle('is-active')
-  }
+  darkThemeSwitch.checked = isDarkmode
+  document.body.classList.add(savedTheme)
 }
 
-toggleAccordion({ element: '.js-accordion' })
+export function toggleDarkTheme(event) {
+  if (!event.target.closest(DARKTHEME_SELECTOR)) return
+
+  const savedTheme = localStorage.getItem('theme')
+  const isDarkmode = savedTheme === DARK_THEME_CLASS
+
+  if (!darkThemeSwitch) return
+
+  darkThemeSwitch.checked = isDarkmode
+  document.body.classList.toggle(DARK_THEME_CLASS)
+
+  localStorage.setItem('theme', isDarkmode ? DARK_THEME_CLASS : LIGHT_THEME_CLASS)
+}
 
 async function domEvents() {
   await routePage()
@@ -105,111 +115,10 @@ async function domEvents() {
   }
 
   // // ! 디자인시스템에 추가한 거 임시
-  darkTheme('.js-darkmode1')
 
   document.querySelector('.js-default-font')?.addEventListener('click', () => {
     document.body.classList.toggle('font-default')
   })
-
-  const colorTokens = [
-    {
-      name: 'gray000',
-      description: '배경에 사용합니다. 다크테마에서 텍스트에 사용합니다.',
-      usecase: ['background', 'text for dark theme'],
-    },
-    {
-      name: 'gray100',
-      description: '클릭할 수 있는 기표로 사용합니다. 섹션을 구별지을 때 배경으로 사용합니다.',
-      usecase: ['background', 'border'],
-    },
-    {
-      name: 'gray200',
-      description: '라인에 사용합니다.',
-      usecase: ['border', 'hover state'],
-    },
-    {
-      name: 'gray400',
-      description: '상대적으로 중요도가 떨어지는 보조하는 개념의 텍스트에 사용합니다.',
-      usecase: ['text', 'disabled state'],
-    },
-    {
-      name: 'gray800',
-      description:
-        '텍스트에 사용합니다. 섹션이나 토스트에 배경으로 사용하여 강조할 수 있습니다. (다크테마에서는 gray100이 역할. 따라서 변수명을 추상화하는 것이 명료할 수 있음)',
-      usecase: ['background', 'text'],
-    },
-    {
-      name: 'green100',
-      description: '배경에 사용합니다. 작은 컴포넌트에서 활성화active 상태를 표현합니다.',
-      usecase: ['background', 'active state'],
-    },
-    {
-      name: 'green800',
-      description: '사용자의 행동',
-      usecase: ['background', 'text', 'active state', 'accent'],
-    },
-    {
-      name: 'red800',
-      description: '삭제, 오류 등',
-      usecase: ['danger', 'invalid state'],
-    },
-    {
-      name: 'gold',
-      description: '메인 컬러 스킴과 대비되는 강조',
-      usecase: ['accent', '임시'],
-    },
-    // {
-    //   name: 'gradient',
-    //   usecase: ['accent', '임시'],
-    // },
-    {
-      name: 'elevation',
-      usecase: ['accent', '임시'],
-    },
-    {
-      name: 'skeleton',
-      usecase: ['accent', '임시'],
-    },
-  ]
-  // const colorElement = document.querySelector('.color-group')
-  // if (colorElement) {
-  //   colorTokens.forEach(token => {
-  //     const item = `
-  //       <article class="token-item">
-  //         <span class="color-${token.name}"></span>
-  //         <h3 class="token-item-name">${token.name}</h3>
-  //         <p class="token-item-description">${token.description}</p>
-  //         <div class="token-item-tags" role="group">
-  //         <span class="tag">${token.usecase}</span>
-  //         </div>
-  //       </article>
-  //     `
-  //     colorElement.insertAdjacentHTML('beforeend', item)
-  //   })
-  // }
-
-  // const boardElement = document.querySelector('.about-book-inner');
-  // if(boardElement) {
-  //   setTimeout(() => {
-  //     books.map(item => {
-  //       boardElement.innerHTML += `
-  //         <article class="bookitem">
-  //         <figure class="bookitem-cover">
-  //           <--
-  //           <img src=${item.imgSrc} alt=${item.title}>
-  //           -->
-  //         </figure>
-  //         <h3 class="bookitem-name">
-  //           <span role="img" aria-label="">📙</span> ${item.title}
-  //           <small class="bookitem-description">구글 최고의 혁신 전문가가 찾아낸 비즈니스 설계와 검증의 방법론</small>
-  //         </h3>
-  //         <hr />
-  //         <p class="bookitem-byline">${item.author || '정보가 없습니다'}</p>
-  //         <time class="bookitem-publishedyear">${item.publishedDate || '정보가 없습니다'}</time>
-  //       </article>`;
-  //     });
-  //   }, 200);
-  // }
 
   // function format(command, value) {
   //   document.execCommand(command, false, value);
@@ -262,8 +171,6 @@ async function domEvents() {
     }
   }
 
-  // removeEventListener
-
   input.checkbox({ checkAllSelector: '.js-checkall', checkSelector: '.js-check' }).initialize()
   input.file()
   // input.textarea()
@@ -286,7 +193,6 @@ async function domEvents() {
   createGraph()
   // countDownClock(20, 'days')
   carousel()
-  revealPassword()
   focusComment()
 
   // document.querySelector('.js-copy')?.addEventListener('click', () => copyClipboard('fafaf'))
@@ -328,37 +234,23 @@ async function domEvents() {
     // parent?.removeEventListener('click', printHi)
   }, 2000)
 
-  // todo
   document.addEventListener('click', event => {
     const target = event.target as any
     if (!target) return
+    if (!target.closest('.js-test-toggle')) return
 
-    if (target.closest('.js-test-toggle')) {
-      const ttttt = document.querySelector('.js-test-toggle')
-      const works = document.querySelector('.profile-body')
+    const conatainerElement = target.closest('.profile-body')
 
-      const isList = target.name === 'list'
+    removeClassSiblings(target)
+    conatainerElement.classList.toggle('list', target.name === 'list')
+    target.classList.add('is-selected')
 
-      removeClassSiblings(ttttt)
-      works?.classList.toggle('list', isList)
-      target.classList.add('is-selected')
+    function removeClassSiblings(targetElement) {
+      const ACTIVE_CLASSNAME = null
+      const siblingElements = [...targetElement.parentElement.children]
+      siblingElements.forEach(siblingElement => siblingElement.classList.remove('is-selected'))
     }
   })
-
-  function removeClassSiblings(targetElement) {
-    const ACTIVE_CLASSNAME = null
-    const siblingElements = [...targetElement.parentElement.children]
-    siblingElements.forEach(siblingElement => siblingElement.classList.remove('is-selected'))
-  }
-
-  const handleClick = e => {
-    e.preventDefault()
-    const active = document.querySelector('.active')
-    if (!active) return
-
-    active.classList.remove('active')
-    e.currentTarget.classList.add('active')
-  }
 
   event.scrollspy({ menusSelector: '.js-scrollspy-trigger', sectionsSelector: '.js-scrollspy-section' })
 }
@@ -462,26 +354,10 @@ async function domEvents() {
 // }), false)
 // })
 
-function revealPassword() {
-  const ELEMENT_CLASSNAME = '.js-view-password'
-  const elements = document.querySelectorAll<HTMLElement>(ELEMENT_CLASSNAME)
-  if (elements.length === 0) return
-
-  elements.forEach(element => element.addEventListener('click', () => togglePassword(element?.parentNode?.querySelector<HTMLElement>('input'))))
-
-  function togglePassword(inputElement) {
-    const isPasswordType = inputElement?.getAttribute('type') === 'password'
-    let inputType = isPasswordType ? 'text' : 'password'
-
-    inputElement?.setAttribute('type', inputType)
-  }
-}
-
 function initializeNavbar() {
   const navigationTrigger = document.querySelector<HTMLElement>('.js-navbar-toggle')
-  if (!navigationTrigger || !navigationTrigger.classList.contains('is-active')) return
 
-  navigationTrigger.classList.remove('is-active')
+  navigationTrigger?.classList.remove('is-active')
 }
 
 function createGraph() {
@@ -518,10 +394,10 @@ function calculateReadTime() {
 
 function focusComment() {
   const commentWrite = document.querySelector<HTMLElement>('.js-comment-write')
-  const commentTextField = document.querySelectorAll<HTMLElement>('.js-comment-textfield')
-  if (!commentWrite || !commentTextField) return
+  const commentTextfield = document.querySelectorAll<HTMLElement>('.js-comment-textfield')
+  if (!commentWrite || !commentTextfield) return
 
-  commentTextField.forEach(element =>
+  commentTextfield.forEach(element =>
     element.addEventListener('focus', () => {
       commentWrite.classList.add('is-focused')
     }),
@@ -735,4 +611,39 @@ function toggle(event) {
 
   // const targetElement = document.querySelector(toggleid)
   // targetElement.classList.toggle(ACTIVE_CLASS)
+}
+
+function scrollToTop(event) {
+  if (event.target.closest('.js-to-top')) {
+    event.preventDefault()
+    window.scrollTo(0, 0)
+  }
+}
+
+function toggleDetails(event) {
+  if (!event.target.closest('.js-accordion')) return
+
+  const targetElement = event.target.closest('.js-accordion')
+
+  let isExpanded = Boolean(targetElement.getAttribute('aria-expanded'))
+  targetElement.setAttribute('aria-expanded', String(!isExpanded))
+  targetElement.classList.toggle('is-active')
+
+  // 패널을 포함한 전체 영역을 토글할 수 있음. 따라서 accordion-item 전체를 toggle class만 해줏면 됨.
+  // 1. 클릭한 패널을 토글한다.
+  // 도큐먼트를 클릭하면 닫을 것인지.
+  // 다른 accordion-item을 클릭했을 때 닫을 것인지?
+}
+
+function revealPassword(event) {
+  const SELECTOR = '.js-view-password'
+  if (!event.target.closest(SELECTOR)) return
+
+  const targetElement = event.target.closest(SELECTOR) as any
+  const inputElement = targetElement.parentNode.querySelector('input')
+
+  const isPasswordType = inputElement.getAttribute('type') === 'password'
+  const inputType = isPasswordType ? 'text' : 'password'
+
+  inputElement.setAttribute('type', inputType)
 }
