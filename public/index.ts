@@ -11,7 +11,6 @@ import input from './javascripts/input/index'
 
 import { stopAnimation, throttle } from './javascripts/utils/optimizationUtils'
 
-// import books from '../views/books'
 // import { validity } from './javascripts/utils/validations'
 // import { copyClipboard } from './javascripts/utils/formatUtils.js'
 
@@ -62,8 +61,6 @@ function toggleAccordion({ element: element }) {
     'click',
     (event: any) => {
       const target = event.target as any
-
-      console.log('click')
 
       // console.log(event.target, element, target.closest(element))
 
@@ -214,7 +211,6 @@ async function domEvents() {
   //   }, 200);
   // }
 
-  // document.querySelector('.textbox-toolbar-bold')?.addEventListener('click', () => format('italic', null))
   // function format(command, value) {
   //   document.execCommand(command, false, value);
   // }
@@ -333,20 +329,36 @@ async function domEvents() {
   }, 2000)
 
   // todo
-  const list = document.querySelector('.js-display-list')
-  const grid = document.querySelector('.js-display-grid')
-  const works = document.querySelector('.profile-body')
+  document.addEventListener('click', event => {
+    const target = event.target as any
+    if (!target) return
 
-  list?.addEventListener('click', () => {
-    list?.classList.add('is-selected')
-    grid?.classList.remove('is-selected')
-    works?.classList.add('list')
+    if (target.closest('.js-test-toggle')) {
+      const ttttt = document.querySelector('.js-test-toggle')
+      const works = document.querySelector('.profile-body')
+
+      const isList = target.name === 'list'
+
+      removeClassSiblings(ttttt)
+      works?.classList.toggle('list', isList)
+      target.classList.add('is-selected')
+    }
   })
-  grid?.addEventListener('click', () => {
-    list?.classList.remove('is-selected')
-    grid?.classList.add('is-selected')
-    works?.classList.remove('list')
-  })
+
+  function removeClassSiblings(targetElement) {
+    const ACTIVE_CLASSNAME = null
+    const siblingElements = [...targetElement.parentElement.children]
+    siblingElements.forEach(siblingElement => siblingElement.classList.remove('is-selected'))
+  }
+
+  const handleClick = e => {
+    e.preventDefault()
+    const active = document.querySelector('.active')
+    if (!active) return
+
+    active.classList.remove('active')
+    e.currentTarget.classList.add('active')
+  }
 
   event.scrollspy({ menusSelector: '.js-scrollspy-trigger', sectionsSelector: '.js-scrollspy-section' })
 }

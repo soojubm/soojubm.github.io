@@ -57,7 +57,8 @@
     --hover-outline: calc(var(--space) / 2 * -1);
     content:'';display:block;background:var(--gray100);border-radius:var(--radius400);position:absolute;left:var(--hover-outline);right:var(--hover-outline);top:var(--hover-outline);bottom:var(--hover-outline);z-index:-1;
   }
-  figure {background-color:var(--gray0);border:1px solid var(--gray200);box-sizing:border-box;}
+  // 기본적으로 transparent 보더가 필요.
+  figure {background-color:var(--gray0);border:1px solid var(--gray200);}
 }
 
 @mixin container-page {

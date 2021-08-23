@@ -1,5 +1,4 @@
 // @ts-nocheck
-// mobile/postsView.js
 
 const postsView = {
   init(el) {
@@ -114,15 +113,6 @@ function validateForm(inputProps) {
 
 //   return action === 'hide' ? addClass() : removeClass();
 
-function fastGoodbye() {
-  const container = document.querySelector('')
-  while (container?.firstChild) {
-    container.removeChild(container.firstChild)
-  }
-
-  container?.innerHTML = 'this is slow~~'
-}
-
 /**
  * Create an intersection observer
  * @param  {Node}     elem     The element to observe
@@ -151,17 +141,6 @@ function createIntersectionObserver2(selectors, callback, options) {
 
     elements.forEach(element => observer.observe(element))
   }
-}
-
-/**
- * Log the entry and if it's in the viewport
- * @param  {Array} entries The intersecting elements
- */
-function log(entries) {
-  let [entry] = entries
-  console.log(entries)
-  console.log(entry.target)
-  console.log(entry.isIntersecting)
 }
 
 // Setup our observer options
@@ -324,8 +303,6 @@ console.log(scrollbox.width) //-> 17 (Windows, Chrome)
 // })();
 
 const spanElem = document.querySelector('span')
-
-//handles clicks and keydowns on the link
 function navigateLink(e) {
   if (e.type === 'click' || e.key === 'Enter') {
     let ref = e.target != null ? e.target : e.srcElement
@@ -334,7 +311,6 @@ function navigateLink(e) {
     }
   }
 }
-
 spanElem.addEventListener('click', navigateLink)
 spanElem.addEventListener('keydown', navigateLink)
 
@@ -380,13 +356,10 @@ spanElem.addEventListener('keydown', navigateLink)
 // });
 
 textboxEle.addEventListener('keydown', function(e) {
-  const capsLockOn = e.getModifierState('CapsLock')
+  const isCapsLockOn = e.getModifierState('CapsLock')
 
-  // Update the content of message
-  messageEle.innerHTML = capsLockOn ? 'Caps lock is ON' : ''
-
-  // Show or hide the message based on the CapsLock state
-  messageEle.style.display = capsLockOn ? 'block' : 'none'
+  messageEle.innerHTML = isCapsLockOn ? 'Caps lock is ON' : ''
+  messageEle.style.display = isCapsLockOn ? 'block' : 'none'
 })
 
 textboxEle.addEventListener('keypress', function(e) {
@@ -399,9 +372,9 @@ textboxEle.addEventListener('keypress', function(e) {
 
   // Get the pressed character
   const s = String.fromCharCode(keyCode)
-  const capsLockOn =
+  const isCapsLockOn =
     (s.toUpperCase() === s && s.toLowerCase() !== s && !(shiftKey && isMac)) || (s.toUpperCase() !== s && s.toLowerCase() === s && shiftKey)
 
-  messageEle.innerHTML = capsLockOn ? 'Caps lock is ON' : ''
-  messageEle.style.display = capsLockOn ? 'block' : 'none'
+  messageEle.innerHTML = isCapsLockOn ? 'Caps lock is ON' : ''
+  messageEle.style.display = isCapsLockOn ? 'block' : 'none'
 })
