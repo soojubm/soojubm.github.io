@@ -378,3 +378,12 @@ textboxEle.addEventListener('keypress', function(e) {
   messageEle.innerHTML = isCapsLockOn ? 'Caps lock is ON' : ''
   messageEle.style.display = isCapsLockOn ? 'block' : 'none'
 })
+
+// Promise.all([
+// 	fetch('https://jsonplaceholder.typicode.com/posts'),
+// 	fetch('https://jsonplaceholder.typicode.com/users')
+// ])
+// .then(responses => {
+// 	return responses.map(response => {
+// 		return response.json();
+// 	});

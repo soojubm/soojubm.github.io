@@ -100,7 +100,7 @@
         </aside>
       </div>
       <footer class="textbox-footer">
-        <button class="textbox-footer-publish">게시</button>
+        <button class="textbox-footer-publish" style="width:50%;">게시</button>
       </footer>
     </section>
 
@@ -1413,8 +1413,8 @@
         </figure>
         <h3 class="bookitem-name">
           <span role="img" aria-label="">📙</span> ${item.title}
-          <small class="bookitem-description">구글 최고의 혁신 전문가가 찾아낸 비즈니스 설계와 검증의 방법론</small>
         </h3>
+        <span class="bookitem-description">구글 최고의 혁신 전문가가 찾아낸 비즈니스 설계와 검증의 방법론</span>
         <hr />
         <p class="bookitem-byline">${item.author || '정보가 없습니다'}</p>
         <time class="bookitem-publishedyear">${item.publishedDate || '정보가 없습니다'}</time>
@@ -1428,7 +1428,7 @@
           <button class="dialog-footer-close">볼래요</button>
           <button class="dialog-footer-confirm toast-check">안 볼래요</button>
         </footer>
-        <button class="dialog-close js-modal-close" aria-label="delete"><i class="icon-x"></i></button>
+        <button class="dialog-close js-close" aria-label="delete"><i class="icon-x"></i></button>
       </aside>
 
       <br />
@@ -1769,6 +1769,38 @@
           </article>
         </article>
       </section>
+
+      <!-- <section class="toss">
+        <header class="toss-head">
+          <div class="item" role="listitem">
+            <figure class="item-avatar"></figure>
+            <h2 class="item-name">이경수</h2>
+            <span class="item-description"><em>신용 점수 보기</em></span>
+            <button class="item-action is-active" style="background-color:var(--color-primary);color:var(--gr">무료 송금</button>
+          </div>
+        </header>
+        <aside class="banner">
+          이제부터 평생 송금 무료에요.
+        </aside>
+        <section>
+          <header>
+            <h2>계좌</h2>
+            <span>3,000,000원 ></span>
+          </header>
+          <div class="item" role="listitem" data-size="medium">
+            <figure class="item-avatar"></figure>
+            <h2 class="item-name">토스머니</h2>
+            <span class="item-description">0 원</span>
+            <button class="item-action is-active">송금</button>
+          </div>
+          <div class="item" role="listitem" data-size="medium">
+            <figure class="item-avatar"></figure>
+            <h2 class="item-name">토스머니</h2>
+            <span class="item-description">0 원</span>
+            <button class="item-action is-active">송금</button>
+          </div>
+        </section>
+      </section> -->
 
       <!-- <div class="daylist">
         <div class="day" role="listitem">

@@ -1,24 +1,25 @@
 import { throttle } from '../utils/optimizationUtils'
 import { getElementWidth } from '../utils/elementUtils'
 
-const tab = () => {
-  const tabElement = document.querySelector('.js-tab')
-  // const parents = Array.from(grandparent.children)
+// const parents = Array.from(grandparent.children)
+// 업데이트 노트
+// 탭에서만 사용하기 때문에 initializeTabIndicator 함수의 파라미터를 제거하고 이벤트 제거를 쉽게 만들었다.
+
+function tab() {
+  const tabElement = document.querySelector<HTMLElement>('.js-tab')
   if (!tabElement) return
 
   const tabs = tabElement.querySelectorAll('[role=tab]')
   const tabPanels = tabElement.querySelectorAll('[role=tabpanel]')
-  const indicatorElement = tabElement.querySelector('.profile-tablist-indicator')
   let selectedTab = tabs[0] as HTMLElement
 
-  initializeIndicator(indicatorElement, selectedTab)
+  initializeTabIndicator()
 
   tabs.forEach((tab, tabIndex) => {
     tab.addEventListener('click', () => {
       selectedTab = tab as HTMLElement
-      // selectedTab = tab.getAttribute('aria-selected') === true
 
-      initializeIndicator(indicatorElement, selectedTab)
+      initializeTabIndicator()
 
       // selectTab
       tabs.forEach(tab => tab.setAttribute('aria-selected', 'false'))
@@ -32,13 +33,23 @@ const tab = () => {
     })
   })
 
-  // todo 이벤트 제거 해야 함.
-  window.addEventListener('resize', () => throttle(initializeIndicator(indicatorElement, selectedTab)), true)
+  var tempEEE = throttle(initializeTabIndicator).bind(this)
+  window.addEventListener('resize', tempEEE, true)
+  window.removeEventListener('resize', tempEEE, true)
 
-  function initializeIndicator(element, selectedTab) {
-    element.style.left = `${selectedTab.offsetLeft}px`
-    element.style.width = getElementWidth(selectedTab)
+  function initializeTabIndicator() {
+    if (!tabElement) return
+
+    const indicatorElement = tabElement.querySelector<HTMLElement>('.profile-tablist-indicator')
+    if (!indicatorElement) return
+
+    indicatorElement.style.left = `${selectedTab.offsetLeft}px`
+    indicatorElement.style.width = getElementWidth(selectedTab)
   }
+  // function initializeTabIndicator(element, selectedTab) {
+  //   element.style.left = `${selectedTab.offsetLeft}px`
+  //   element.style.width = getElementWidth(selectedTab)
+  // }
 }
 
 export default tab

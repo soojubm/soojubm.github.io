@@ -4,7 +4,6 @@ import './stylesheets/style.scss'
 
 import routePage, { routes } from './javascripts/router'
 import { detectLoad, lockBodyElement } from './javascripts/load'
-import darkTheme from './javascripts/local/darkTheme'
 import carousel from './javascripts/event/carousel'
 import event from './javascripts/event/index'
 import input from './javascripts/input/index'
@@ -19,12 +18,9 @@ document.addEventListener('DOMContentLoaded', lockBodyElement)
 window.addEventListener('load', detectLoad)
 
 window.addEventListener('hashchange', initializeNavbar)
-
 window.addEventListener('hashchange', domEvents)
 
 document.addEventListener('DOMContentLoaded', domEvents)
-
-document.addEventListener('click', scrollToTop)
 
 document.addEventListener('DOMContentLoaded', () => {
   stopAnimation()
@@ -33,9 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     selector: '.js-navbar-toggle',
     // activeClassname: 'is-navbar-active'
   })
-  // event.toTop({ selector: '.js-to-top' })
   event.positionSticky({ selector: '.js-titlebar', addClass: 'is-sticky-titlebar', isPassed: false })
-  darkTheme('.js-darkmode')
 })
 
 window.addEventListener('scroll', throttle(scrollProgress), true)
@@ -53,43 +47,20 @@ window.addEventListener('beforeunload', () => '저장되지 않은 변경사항�
 window.addEventListener('unload', () => console.log('unload event'))
 document.addEventListener('readystatechange', () => console.log(document.readyState))
 
+document.addEventListener('click', scrollToTop)
 document.addEventListener('click', toggleDetails)
 document.addEventListener('click', revealPassword)
+document.addEventListener('click', closeParentElement)
+
+document.addEventListener('mouseover', mouseenterElement)
 
 export const DARK_THEME_CLASS = 'theme-dark'
 export const LIGHT_THEME_CLASS = 'theme-light'
-const DARKTHEME_SELECTOR = '.js-darkmode1'
+const DARKTHEME_SELECTOR = '.js-darkmode'
 const darkThemeTrigger = document.querySelector(DARKTHEME_SELECTOR)
-const darkThemeSwitch = darkThemeTrigger?.querySelector('input')
+
 document.addEventListener('DOMContentLoaded', detectTheme)
 document.addEventListener('click', toggleDarkTheme)
-
-export function detectTheme() {
-  // todo 바로 swithc 셀렉터로
-  const savedTheme = localStorage.getItem('theme')
-  if (!savedTheme) return
-
-  const isDarkmode = savedTheme === DARK_THEME_CLASS
-
-  if (!darkThemeSwitch) return
-
-  darkThemeSwitch.checked = isDarkmode
-  document.body.classList.add(savedTheme)
-}
-
-export function toggleDarkTheme(event) {
-  if (!event.target.closest(DARKTHEME_SELECTOR)) return
-
-  const savedTheme = localStorage.getItem('theme')
-  const isDarkmode = savedTheme === DARK_THEME_CLASS
-
-  if (!darkThemeSwitch) return
-
-  darkThemeSwitch.checked = isDarkmode
-  document.body.classList.toggle(DARK_THEME_CLASS)
-
-  localStorage.setItem('theme', isDarkmode ? DARK_THEME_CLASS : LIGHT_THEME_CLASS)
-}
 
 async function domEvents() {
   await routePage()
@@ -124,77 +95,28 @@ async function domEvents() {
   //   document.execCommand(command, false, value);
   // }
 
-  // lazyLoading()
-
-  function lazyLoading() {
-    if (
-      !('IntersectionObserver' in window) ||
-      !('IntersectionObserverEntry' in window) ||
-      !('intersectionRatio' in window.IntersectionObserverEntry.prototype)
-    ) {
-      // load polyfill now
-    }
-    const lazyBackgrounds = [].slice.call(document.querySelectorAll('.subscribe'))
-    const options = {
-      root: null,
-      rootMargin: '0px 0px 0px 0px',
-      threshold: 0.25,
-    }
-    let observer = new IntersectionObserver(callback, options)
-
-    lazyBackgrounds.forEach(element => observer.observe(element))
-
-    function callback(entries, observer) {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return
-        observer.unobserve(entry.target)
-        fetchData()
-        // entry.target.src = entry.target.dataset.src;
-      })
-    }
-
-    async function fetchData() {
-      try {
-        const URL =
-          'https://gist.githubusercontent.com/prof3ssorSt3v3/1944e7ba7ffb62fe771c51764f7977a4/raw/c58a342ab149fbbb9bb19c94e278d64702833270/infinite.json'
-        const response = await fetch(URL)
-        if (!response.ok) throw 'Something went wrong.'
-
-        let data = await response.json()
-        data.items.forEach(item => {
-          const view = document.querySelector('.design-body')
-          if (!view) return
-
-          view.insertAdjacentHTML('beforeend', `<div style="height:200px;background:crimson;color:#fff;text-align:center;">무한스크룔</div>`)
-        })
-      } catch (error) {}
-    }
-  }
-
   input.checkbox({ checkAllSelector: '.js-checkall', checkSelector: '.js-check' }).initialize()
   input.file()
   // input.textarea()
   input.number()
 
-  event.modal({ selector: '.js-modal' })
-
   // event.toggleClass({ selector: '.js-accordion' })
   event.toggleClass({ selector: '.js-toggle' })
 
-  event.enterTarget({ selector: '.js-hover-trigger' })
   event.tab()
-  event.closeParentElement({ selector: '.js-close' })
+  event.modal({ selector: '.js-modal' })
+
   event.positionSticky({ selector: '.js-post-head', addClass: 'is-sticky-post-head', isPassed: true })
 
   event.scrollAnimation({ selector: '.js-observer' })
+  event.scrollspy({ menusSelector: '.js-scrollspy-trigger', sectionsSelector: '.js-scrollspy-section' })
 
   event.parallax('.js-parallax')
 
   createGraph()
-  // countDownClock(20, 'days')
   carousel()
   focusComment()
-
+  // countDownClock(20, 'days')
   // document.querySelector('.js-copy')?.addEventListener('click', () => copyClipboard('fafaf'))
   const grandparent = document.querySelector('.grandparent')
   const parent = document.querySelector('.parent')
@@ -236,123 +158,17 @@ async function domEvents() {
 
   document.addEventListener('click', event => {
     const target = event.target as any
-    if (!target) return
     if (!target.closest('.js-test-toggle')) return
 
     const conatainerElement = target.closest('.profile-body')
+    const siblingElements = [...target.parentElement.children]
 
-    removeClassSiblings(target)
     conatainerElement.classList.toggle('list', target.name === 'list')
+
+    siblingElements.forEach(siblingElement => siblingElement.classList.remove('is-selected'))
     target.classList.add('is-selected')
-
-    function removeClassSiblings(targetElement) {
-      const ACTIVE_CLASSNAME = null
-      const siblingElements = [...targetElement.parentElement.children]
-      siblingElements.forEach(siblingElement => siblingElement.classList.remove('is-selected'))
-    }
   })
-
-  event.scrollspy({ menusSelector: '.js-scrollspy-trigger', sectionsSelector: '.js-scrollspy-section' })
 }
-
-// intersectionObserver
-// if ('IntersectionObserver' in window && 'IntersectionObserverEntry' in window && 'intersectionRatio' in window.IntersectionObserverEntry.prototype) {
-//   const lazyBackgrounds = [].slice.call(document.querySelectorAll('.js-parallax-test'))
-//   const options = {
-//     root: null,
-//     rootMargin: '0px 0px 0px 0px',
-//     threshold: 0.1,
-//   }
-//   let observer = new IntersectionObserver(callback, options)
-
-//   lazyBackgrounds.forEach(element => observer.observe(element))
-// }
-
-// function callback(entries, observer) {
-//   entries.forEach(entry => {
-//     if (!entry.isIntersecting) return
-
-//     if(entry.intersectionRatio > 0) {
-//       entry.target.style.animation = `fadeup 1s fowards ease-out`
-//       entry.target.classList.remove('is-bbb')
-//       entry.target.classList.add('is-aaa')
-
-//       // entry.target.style.opacity = String((rate2 / 100).toFixed(1))
-//     } else {
-//       entry.target.style.animation = 'none'
-//       entry.target.classList.remove('is-aaa')
-//       entry.target.classList.add('is-bbb')
-//     }
-//   })
-
-// const targetElements = document.querySelectorAll<HTMLElement>('.js-parallax-test')
-// const tt = document.querySelector<HTMLElement>('.js-parallax-parent')
-// // initialize
-// targetElements.forEach(element => {
-//   element.style.opacity = `0`
-// })
-
-// if(tt) {
-//   window.addEventListener('scroll', throttle(() => {
-//     let rate2 = Math.abs(window.pageYOffset) * 0.1
-//     let offsetBottom = tt.offsetTop + tt.offsetHeight
-//     let isScrolled = window.pageYOffset > offsetBottom / 1.5
-//     if(isScrolled) {
-//       console.log(String((rate2 / 100).toFixed(1)))
-//       tt.style.opacity = String((-rate2 / 100).toFixed(1))
-//     } else {
-//       tt.style.opacity = String((rate2 / 100).toFixed(1))
-//     }
-//   }))
-// }
-
-// targetElements.forEach((element, index) => {
-//   window.addEventListener('scroll', throttle(() => {
-
-//     let offsetBottom = element.offsetTop + element.offsetHeight
-//     let isScrolled = window.pageYOffset > offsetBottom
-//     let rate2 = Math.abs(window.pageYOffset) * 0.1
-//     // let rate2 = Math.abs(window.pageYOffset + element.offsetTop) * 0.1
-
-//     let isTemp = Number(window.getComputedStyle(element).getPropertyValue('opacity')) >= 1
-//     let isTemp2 = Number(window.getComputedStyle(element).getPropertyValue('opacity')) < 0
-
-//     console.log(isTemp2, window.getComputedStyle(element).getPropertyValue('opacity'))
-
-//     const abc = () => {
-//       let opacity1 = String((rate2 / 100).toFixed(1))
-//       let opacity2 = String((-rate2 / 100).toFixed(1))
-//       if(isScrolled) {
-//         if(isTemp) return false
-//         return opacity1
-//       } else {
-//         if(isTemp2) return false
-//         return opacity2
-//       }
-//     }
-//     const ccc = () => {
-//       let opacity1 = `translateY(-${rate2 * 2}px)`
-//       let opacity2 = `translateY(${rate2 * 2}px)`
-//       if(isScrolled) {
-//         if(window.pageYOffset > 600) return false
-//         return opacity1
-
-//       } else {
-//         return opacity2
-//       }
-//     }
-
-//     // 괴ㅗㅇ장히 실행이 여러번되느넫?
-//     // console.log(window.getComputedStyle(element).getPropertyValue('transform'))
-//     element.style.opacity = String(abc())
-//     element.style.transform = String(ccc())
-
-//     // if(targetElements.length === index + 1) {}
-
-//     // const temp = document.querySelector<HTMLElement>('.js-parallax-parent')
-//     // temp!.style.opacity = String(Math.abs(window.pageYOffset + element.offsetTop) * 0.00125)
-// }), false)
-// })
 
 function initializeNavbar() {
   const navigationTrigger = document.querySelector<HTMLElement>('.js-navbar-toggle')
@@ -434,15 +250,6 @@ function focusComment() {
 // 	}
 // 	return null;
 // };
-
-// Promise.all([
-// 	fetch('https://jsonplaceholder.typicode.com/posts'),
-// 	fetch('https://jsonplaceholder.typicode.com/users')
-// ])
-// .then(responses => {
-// 	return responses.map(response => {
-// 		return response.json();
-// 	});
 
 // document.addEventListener('click', event => {
 // 	const filteredCountry = films.filter(item => item.country === '미국');
@@ -646,4 +453,209 @@ function revealPassword(event) {
   const inputType = isPasswordType ? 'text' : 'password'
 
   inputElement.setAttribute('type', inputType)
+}
+
+// lazyLoading()
+
+function lazyLoading() {
+  if (
+    !('IntersectionObserver' in window) ||
+    !('IntersectionObserverEntry' in window) ||
+    !('intersectionRatio' in window.IntersectionObserverEntry.prototype)
+  ) {
+    // load polyfill now
+  }
+  const lazyBackgrounds = [].slice.call(document.querySelectorAll('.subscribe'))
+  const options = {
+    root: null,
+    rootMargin: '0px 0px 0px 0px',
+    threshold: 0.25,
+  }
+  let observer = new IntersectionObserver(callback, options)
+
+  lazyBackgrounds.forEach(element => observer.observe(element))
+
+  function callback(entries, observer) {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return
+      observer.unobserve(entry.target)
+      fetchData()
+      // entry.target.src = entry.target.dataset.src;
+    })
+  }
+
+  async function fetchData() {
+    try {
+      const URL =
+        'https://gist.githubusercontent.com/prof3ssorSt3v3/1944e7ba7ffb62fe771c51764f7977a4/raw/c58a342ab149fbbb9bb19c94e278d64702833270/infinite.json'
+      const response = await fetch(URL)
+      if (!response.ok) throw 'Something went wrong.'
+
+      let data = await response.json()
+      data.items.forEach(item => {
+        const view = document.querySelector('.design-body')
+        if (!view) return
+
+        view.insertAdjacentHTML('beforeend', `<div style="height:200px;background:crimson;color:#fff;text-align:center;">무한스크룔</div>`)
+      })
+    } catch (error) {}
+  }
+}
+
+function closeParentElement(event) {
+  const targetElement = event.target.closest('.js-close')
+  if (!targetElement) return
+
+  targetElement.parentNode.hidden = true
+}
+
+// intersectionObserver
+// if ('IntersectionObserver' in window && 'IntersectionObserverEntry' in window && 'intersectionRatio' in window.IntersectionObserverEntry.prototype) {
+//   const lazyBackgrounds = [].slice.call(document.querySelectorAll('.js-parallax-test'))
+//   const options = {
+//     root: null,
+//     rootMargin: '0px 0px 0px 0px',
+//     threshold: 0.1,
+//   }
+//   let observer = new IntersectionObserver(callback, options)
+
+//   lazyBackgrounds.forEach(element => observer.observe(element))
+// }
+
+// function callback(entries, observer) {
+//   entries.forEach(entry => {
+//     if (!entry.isIntersecting) return
+
+//     if(entry.intersectionRatio > 0) {
+//       entry.target.style.animation = `fadeup 1s fowards ease-out`
+//       entry.target.classList.remove('is-bbb')
+//       entry.target.classList.add('is-aaa')
+
+//       // entry.target.style.opacity = String((rate2 / 100).toFixed(1))
+//     } else {
+//       entry.target.style.animation = 'none'
+//       entry.target.classList.remove('is-aaa')
+//       entry.target.classList.add('is-bbb')
+//     }
+//   })
+
+// const targetElements = document.querySelectorAll<HTMLElement>('.js-parallax-test')
+// const tt = document.querySelector<HTMLElement>('.js-parallax-parent')
+// // initialize
+// targetElements.forEach(element => {
+//   element.style.opacity = `0`
+// })
+
+// if(tt) {
+//   window.addEventListener('scroll', throttle(() => {
+//     let rate2 = Math.abs(window.pageYOffset) * 0.1
+//     let offsetBottom = tt.offsetTop + tt.offsetHeight
+//     let isScrolled = window.pageYOffset > offsetBottom / 1.5
+//     if(isScrolled) {
+//       console.log(String((rate2 / 100).toFixed(1)))
+//       tt.style.opacity = String((-rate2 / 100).toFixed(1))
+//     } else {
+//       tt.style.opacity = String((rate2 / 100).toFixed(1))
+//     }
+//   }))
+// }
+
+// targetElements.forEach((element, index) => {
+//   window.addEventListener('scroll', throttle(() => {
+
+//     let offsetBottom = element.offsetTop + element.offsetHeight
+//     let isScrolled = window.pageYOffset > offsetBottom
+//     let rate2 = Math.abs(window.pageYOffset) * 0.1
+//     // let rate2 = Math.abs(window.pageYOffset + element.offsetTop) * 0.1
+
+//     let isTemp = Number(window.getComputedStyle(element).getPropertyValue('opacity')) >= 1
+//     let isTemp2 = Number(window.getComputedStyle(element).getPropertyValue('opacity')) < 0
+
+//     console.log(isTemp2, window.getComputedStyle(element).getPropertyValue('opacity'))
+
+//     const abc = () => {
+//       let opacity1 = String((rate2 / 100).toFixed(1))
+//       let opacity2 = String((-rate2 / 100).toFixed(1))
+//       if(isScrolled) {
+//         if(isTemp) return false
+//         return opacity1
+//       } else {
+//         if(isTemp2) return false
+//         return opacity2
+//       }
+//     }
+//     const ccc = () => {
+//       let opacity1 = `translateY(-${rate2 * 2}px)`
+//       let opacity2 = `translateY(${rate2 * 2}px)`
+//       if(isScrolled) {
+//         if(window.pageYOffset > 600) return false
+//         return opacity1
+
+//       } else {
+//         return opacity2
+//       }
+//     }
+
+//     // 괴ㅗㅇ장히 실행이 여러번되느넫?
+//     // console.log(window.getComputedStyle(element).getPropertyValue('transform'))
+//     element.style.opacity = String(abc())
+//     element.style.transform = String(ccc())
+
+//     // if(targetElements.length === index + 1) {}
+
+//     // const temp = document.querySelector<HTMLElement>('.js-parallax-parent')
+//     // temp!.style.opacity = String(Math.abs(window.pageYOffset + element.offsetTop) * 0.00125)
+// }), false)
+// })
+export function detectTheme() {
+  // todo 바로 swithc 셀렉터로
+  const savedTheme = localStorage.getItem('theme')
+  if (!savedTheme) return
+
+  const isDarkmode = savedTheme === DARK_THEME_CLASS
+
+  // if (!darkThemeSwitch) return
+
+  // darkThemeSwitch.checked = isDarkmode
+  document.body.classList.add(savedTheme)
+}
+
+export function toggleDarkTheme(event) {
+  console.log(event.target.closest(DARKTHEME_SELECTOR))
+
+  if (!event.target.closest(DARKTHEME_SELECTOR)) return
+
+  // const savedTheme = localStorage.getItem('theme')
+  // todo removeLocalStorage
+  const isDarkmode = document.body.classList.contains(DARK_THEME_CLASS)
+
+  const darkThemeSwitch = event.target.closest(DARKTHEME_SELECTOR).querySelector('input')
+  if (!darkThemeSwitch) return
+
+  darkThemeSwitch.checked = isDarkmode
+  document.body.classList.toggle(DARK_THEME_CLASS)
+
+  localStorage.setItem('theme', isDarkmode ? DARK_THEME_CLASS : LIGHT_THEME_CLASS)
+}
+
+function mouseenterElement(event) {
+  // mouseover 버블링.closest.여러번실행 / mouseenter 한번실행.closestdksehla
+
+  const ACTIVE_CLASSNAME = 'is-active'
+  const targetElement = event.target.closest('.js-hover-trigger')
+
+  // todo hoverelement
+  // todo mouseout vs else
+  let hoverElement
+  if (targetElement) {
+    hoverElement = targetElement
+
+    targetElement.setAttribute('aria-expanded', 'true')
+    document.body.classList.add(ACTIVE_CLASSNAME)
+  } else {
+    if (!document.body.classList.contains(ACTIVE_CLASSNAME)) return
+
+    // hoverElement?.setAttribute('aria-expanded', 'true')
+    document.body.classList.remove(ACTIVE_CLASSNAME)
+  }
 }

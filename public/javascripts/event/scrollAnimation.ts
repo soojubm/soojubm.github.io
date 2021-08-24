@@ -1,31 +1,27 @@
 const scrollAnimation = ({ selector: selector }) => {
   const ANIMATED_CLASSNAME = 'is-scrolled'
-  animateOnScroll()
+  const elements = Array.from(document.querySelectorAll(selector))
+  // console.log([].slice.call(document.querySelectorAll('.js-scroll-animation')), Array.from(document.querySelectorAll('.js-scroll-animation')),  document.querySelectorAll('.js-scroll-animation'))
+  const options = {
+    root: null,
+    rootMargin: '-100px 0px -100px 0px',
+    threshold: 0, // [0, 1], [0, 0.5]
+  }
+  let observer = new IntersectionObserver(callback, options)
 
-  function animateOnScroll() {
-    const elements = Array.from(document.querySelectorAll(selector))
-    // console.log([].slice.call(document.querySelectorAll('.js-scroll-animation')), Array.from(document.querySelectorAll('.js-scroll-animation')),  document.querySelectorAll('.js-scroll-animation'))
-    const options = {
-      root: null,
-      rootMargin: '-100px 0px -100px 0px',
-      threshold: 0, // [0, 1], [0, 0.5]
-    }
-    let observer = new IntersectionObserver(callback, options)
+  elements.forEach(element => observer.observe(element))
 
-    elements.forEach(element => observer.observe(element))
+  function callback(entries, observer) {
+    entries.forEach(entry => {
+      // console.log(entry.target, entry.isIntersecting)
+      if (!entry.isIntersecting) return
+      entry.target.classList.toggle(ANIMATED_CLASSNAME, entry.isIntersecting)
 
-    function callback(entries, observer) {
-      entries.forEach(entry => {
-        // console.log(entry.target, entry.isIntersecting)
-        if (!entry.isIntersecting) return
-        entry.target.classList.toggle(ANIMATED_CLASSNAME, entry.isIntersecting)
-
-        // entry.target.classList.add('pulse')
-        // entry.target.addEventListener('animationend', event => event.currentTarget.classList.remove(ANIMATED_CLASSNAME));
-        // observer.unobserve(entry.target) // once
-        // if(entry.intersectionRatio > 0) {}
-      })
-    }
+      // entry.target.classList.add('pulse')
+      // entry.target.addEventListener('animationend', event => event.currentTarget.classList.remove(ANIMATED_CLASSNAME));
+      // observer.unobserve(entry.target) // once
+      // if(entry.intersectionRatio > 0) {}
+    })
   }
 }
 
