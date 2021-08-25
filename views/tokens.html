@@ -6,42 +6,34 @@
       <span class="tokens-intro-image-salt">🧂</span>
       <span class="tokens-intro-image-egg">🥚</span>
       <span class="tokens-intro-image-milk">🥛</span>
-      <!-- <span class="tokens-intro-image-butter">🧈</span>
-      <span class="tokens-intro-image-salt">🧂</span>
-      <span class="tokens-intro-image-egg">🥚</span>
-      <span class="tokens-intro-image-milk">🥛</span> -->
       <img src="" alt="" />
     </figure>
     <div class="tokens-intro-head">
       <span style="display:block;margin:0 0 var(--space) 0;font-size:var(--font-size-title);">🥺</span>
-      <span style="font-size:var(--font-size-caption);color:var(--gray0);">
+      <span style="font-size:var(--font-size-body);color:var(--gray0);">
         Design Tokens
       </span>
       <h1 style="font-size:var(--font-size-title);margin-top:.5rem;color:var(--gray0);">Welcome,<br />This is sample text</h1>
+      <br />
+      <div class="about-intro-hashtags" role="group">
+        <a class="tag" href="#">Size</a>
+        <a class="tag" href="#">Spacing</a>
+        <a class="tag" href="#">Typography</a>
+        <a class="tag" href="#">Color</a>
+        <a class="tag" href="#">Container & Group</a>
+      </div>
+      <br />
     </div>
-    <!-- <div class="about-intro-hashtags" role="group">
-      <a class="tag" href="#">HTML5</a>
-      <a class="tag" href="#">SASS</a>
-      <a class="tag" href="#">VanillaJS</a>
-      <a class="tag" href="#">ReactJS</a>
-      <a class="tag" href="#">Mobx</a>
-      <a class="tag" href="#">Typescript</a>
-      <a class="tag" href="#">Storybook</a>
-      <a class="tag" href="#">GoogleAnalytics</a>
-      <a class="tag" href="#">GoogleOptimize</a>
-      <a class="tag" href="#">Figma</a>
-    </div> -->
+
   </div>
 
-  <!-- <section style="padding:0 5%;font-size:3rem;font-family:'DunkelSans'">
-    <p>
-      데스크탑과 모바일 플랫폼을 구분하지 않습니다.
-    </p>
-    <p>pattern으로 분류할 필요가 있는 것 tile, item</p>
-    <p>modal, toast는 유아이가 아니라 기능입니다.</p>
-  </section> -->
+  <section style="font-size:2rem;letter-spacing:-.025rem;">
+    <p style="padding:1rem 5%;border-bottom:1px solid var(--gray800);">memo. 디자인 토큰에서 데스크탑과 모바일을 구분하지 않습니다.</p>
+    <p style="padding:1rem 5%;border-bottom:1px solid var(--gray800);">pattern으로 정의할 필요가 있는 것. tile, item</p>
+    <p style="padding:1rem 5%;border-bottom:1px solid var(--gray800);">modal, toast 등는 UI가 아니라 기능(?).</p>
+  </section>
 
-  <nav class="sidebar">
+  <!-- <nav class="sidebar">
     <h4 class="sidebar-heading" style="margin-top:-.25rem;">대분류</h4>
     <div class="sidebar-item" role="listitem">
       <figure class="sidebar-item-icon">⚽</figure>
@@ -52,7 +44,7 @@
       <span class="sidebar-item-label">양궁</span>
       <span class="sidebar-item-tag tag" data-appearance="primary">새소식</span>
     </div>
-  </nav>
+  </nav> -->
 
   <section class="design-body">
     <!-- <div class="concept">
@@ -118,7 +110,7 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Sizes</h1>
-      <p class="design-article-description">가로 세로 크기를 정의합니다. 주로 세로 크기에 사용하며 alert, accodion 등의 컴포넌트는 유연하게 세로 크기를 사용하는 것이 좋습니다.</p>
+      <p class="design-article-description">주로 세로 크기에 사용하며 alert, accodion 등의 컴포넌트에서는 유연하게 사용하세요.</p>
       <!-- <p class="design-article-description">alert, accordion 등 예외 케이스.</p> -->
       <code class="design-article-description" style="padding:1rem;">
         <p>--size-huge: 80px;</p>
@@ -231,8 +223,8 @@
         <p>--space-before-badge: .75rem;</p>
         <hr />
         <!-- <p style="color:var(--red800);">// 모바일 기준의 하나의 레이아웃을 정의하고, 컨테이너 시스템을 사용합니다.</p> -->
-        <p>--space-grid-column: calc(50% - 2rem);</p>
-        <p>--space-grid-margin: 5%;</p>
+        <p>--grid-column: calc(50% - 2rem);</p>
+        <p>--grid-margin: 5%;</p>
       </code>
 
       <!-- <h6 class="title-bordered">space</h6>
@@ -244,6 +236,17 @@
         <div style="width:var(--space-small);height:var(--space-small);background:var(--color-primary);"></div>
         <p>space-small .5rem</p>
       </div> -->
+      <br />
+
+      <h6 class="title-bordered">space, inset</h6>
+      <div class="spacing-card">
+        <div class="space" style="height:var(--space-tile-inset);position:absolute;left:0;right:0;top:-1px;"><span class="">var(--space-tile-inset)</span></div>
+        <div class="space" style="height:var(--space-tile-inset);position:absolute;left:0;right:0;bottom:-1px;z-index:0;"><span class="">var(--space-tile-inset)</span></div>
+        <div class="space" style="width:var(--space-tile-inset);height:100%;writing-mode:vertical-lr;position:absolute;left:0;top:0;bottom:0;z-index:0;"><span class="">var(--space-tile-inset)</span></div>
+        <div class="space" style="width:var(--space-tile-inset);height:100%;writing-mode:vertical-lr;position:absolute;right:0;top:0;bottom:0;z-index:0;"><span class="">var(--space-tile-inset)</span></div>
+        <p class="typography-paragraph">서브헤드와 디스크립션 혹은 패러그라프는 이렇게 사용하세요. 타이틀의 행간이 조정되었기 때문에 시각보정이 필요할 수도 있어요.</p>
+      </div>
+
       <br />
 
       <h6 class="title-bordered">space, item</h6>
@@ -287,11 +290,11 @@
 
       <h6 class="title-bordered">space, grid</h6>
       <div style="display:flex;align-items:center;width:100%;height:10rem;border:var(--border100);border-radius:var(--radius400);text-align:center;font-size:var(--font-size-caption);position:relative;">
-        <div class="space" style="width:var(--space-grid-margin);writing-mode: vertical-rl"><span class="">var(--space-grid-margin)</span></div>
+        <div class="space" style="width:var(--grid-margin);writing-mode: vertical-rl"><span class="">var(--grid-margin)</span></div>
         <div style="display:flex;align-items:center;justify-content:center;width:calc(50% - 5% - .5rem);height:100%;">column<br />50% - 0.5rem</div>
         <div class="space" style="width:1rem;writing-mode: vertical-rl"><span class="">1rem</span></div>
         <div style="display:flex;align-items:center;justify-content:center;width:calc(50% - 5% - .5rem);height:100%;">colum<br />50% - 0.5rem</div>
-        <div class="space" style="width:var(--space-grid-margin);writing-mode: vertical-rl"><span class="">var(--space-grid-margin)</span></div>
+        <div class="space" style="width:var(--grid-margin);writing-mode: vertical-rl"><span class="">var(--grid-margin)</span></div>
       </div>
 
       <br />
@@ -310,16 +313,6 @@
           <a href="#">Read More</a>
           <span class="token-item-tag">Category</span>
         </footer> -->
-      </div>
-
-      <br />
-      <h6 class="title-bordered">space, inset</h6>
-      <div class="spacing-card">
-        <div class="space" style="height:var(--space-tile-inset);position:absolute;left:0;right:0;top:-1px;"><span class="">var(--space-tile-inset)</span></div>
-        <div class="space" style="height:var(--space-tile-inset);position:absolute;left:0;right:0;bottom:-1px;z-index:0;"><span class="">var(--space-tile-inset)</span></div>
-        <div class="space" style="width:var(--space-tile-inset);height:100%;writing-mode:vertical-lr;position:absolute;left:0;top:0;bottom:0;z-index:0;"><span class="">var(--space-tile-inset)</span></div>
-        <div class="space" style="width:var(--space-tile-inset);height:100%;writing-mode:vertical-lr;position:absolute;right:0;top:0;bottom:0;z-index:0;"><span class="">var(--space-tile-inset)</span></div>
-        <p class="typography-paragraph">서브헤드와 디스크립션 혹은 패러그라프는 이렇게 사용하세요. 타이틀의 행간이 조정되었기 때문에 시각보정이 필요할 수도 있어요.</p>
       </div>
     </article>
     
