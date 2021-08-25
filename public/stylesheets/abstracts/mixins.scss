@@ -65,7 +65,7 @@
   // width: 100%;
   margin: 0 auto;
   // padding-top 2rem;
-  padding: 0 var(--grid-margin) 8rem; // mobile padding
+  padding: 1rem var(--grid-margin) 8rem; // mobile padding
   position: relative;
 }
 @mixin container-large {

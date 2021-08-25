@@ -609,15 +609,18 @@ function closeParentElement(event) {
 // })
 export function detectTheme() {
   // todo 바로 swithc 셀렉터로
+  // todo 같은 기능의 버튼이 여러 군데에 있을 때.
   const savedTheme = localStorage.getItem('theme')
   if (!savedTheme) return
 
   const isDarkmode = savedTheme === DARK_THEME_CLASS
 
-  // if (!darkThemeSwitch) return
+  const darkThemeTrigger = document.querySelectorAll(DARKTHEME_SELECTOR)
+  darkThemeTrigger?.forEach((element: any) => {
+    element.querySelector('input').checked = isDarkmode
+  })
 
-  // darkThemeSwitch.checked = isDarkmode
-  document.body.classList.add(savedTheme)
+  document.body.classList.add(DARK_THEME_CLASS)
 }
 
 export function toggleDarkTheme(event) {

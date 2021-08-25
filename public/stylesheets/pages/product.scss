@@ -40,7 +40,7 @@
 .product-order-item {margin:var(--space) 0;@include tile-elevated;}
 .product-order-item-title {display:flex;align-items:center;margin:0 0 var(--space) 0;line-height:var(--size-tiny);font-weight:normal;}
 .product-order-item-title .aaa {@include avatar-tiny;width:12px;height:12px;margin:0 .5rem 0 0;background:salmon;}
-.product-order-item-close {@include avatar-medium;position:absolute;right:-.5rem;top:-.5rem;}
+.product-order-item-close {@include avatar-medium;position:absolute;right:-.25rem;top:-.25rem;}
 // todo inset
 .product-order-item-quantity {}
 .product-order-item-price {position:absolute;right:1rem;bottom:18px;}

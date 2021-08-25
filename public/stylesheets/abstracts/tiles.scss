@@ -5,7 +5,7 @@
   box-sizing: border-box;
   background: var(--gray0);
   position: relative;
-  // @media (--breakpoint-tiny) {}
+  // @media (--breakpoint-small) {}
 }
 @mixin tile-elevated {@include tile-flat;box-shadow:var(--shadow400);}
 @mixin tile-flat-small {@include tile-flat;padding:.5rem;}
