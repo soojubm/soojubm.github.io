@@ -33,9 +33,9 @@ function tab() {
     })
   })
 
-  var tempEEE = throttle(initializeTabIndicator).bind(this)
-  window.addEventListener('resize', tempEEE, true)
-  window.removeEventListener('resize', tempEEE, true)
+  // var tempEEE = throttle(initializeTabIndicator).bind(this)
+  window.addEventListener('resize', throttle(initializeTabIndicator), true)
+  // window.removeEventListener('resize', tempEEE, true)
 
   function initializeTabIndicator() {
     if (!tabElement) return

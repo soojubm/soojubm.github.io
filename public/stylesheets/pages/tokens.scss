@@ -4,6 +4,27 @@
 .concept .concept-styles {width:70%;height:14rem;border-radius:50%;background:red;left:1rem;top:50%;transform:translateY(-50%);z-index:2;}
 .concept .concept-roles {justify-content:flex-end;width:100%;height:20rem;padding:0 12.5% 0 0;box-sizing:border-box;border-radius:50%;background:yellow;}
 
+
+@keyframes emoji-temp {
+  0% {transform:translateY(0)}
+  100% {transform:translateY(200px)}
+}
+@mixin token-emoji {
+  font-size: 2.5rem;
+  margin: 1rem;
+  animation: fade-up 1s ease infinite alternate;
+}
+.tokens-intro {display:flex;flex-direction:row-reverse;height:50vh;position:relative;}
+.tokens-intro-image {display:flex;flex-wrap:nowrap;justify-content:center;align-items:center;width:50%;padding:0 0 1rem 0;background:var(--gray800);overflow:hidden;position:relative;}
+.tokens-intro-image img {@include image-centered;}
+.tokens-intro-image-butter {@include token-emoji;}
+.tokens-intro-image-salt {@include token-emoji;}
+.tokens-intro-image-egg {@include token-emoji;}
+.tokens-intro-image-milk {@include token-emoji;}
+.tokens-intro-head {width:50%;padding:var(--grid-margin);box-sizing:border-box;background:var(--color-primary);font-size:var(--font-size-subhead);}
+
+
+
 .tokens {}
 .token-item {@include tile-flat-small;width:calc(100% - 1rem);min-height:var(--size-huge);box-sizing:content-box;}
 // .token-item:nth-of-type(1) {border-top:var(--border100);}
