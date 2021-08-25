@@ -6,7 +6,7 @@
 .titlebar-cta {margin-left:auto;}
 .titlebar-cta svg {width:1rem;}
 .titlebar-background {@include bleeding;background-color:var(--gray0);}
-.titlebar-backdrop {height:32px;padding:var(--space-between-listitem) 0;background:var(--gray0);}
+.titlebar-backdrop {height:32px;padding:var(--space) 0;background:var(--gray0);}
 
 .is-sticky-titlebar .titlebar {position:fixed;top:0;}
 .is-sticky-titlebar .titlebar-background {border-radius:var(--radius400);box-shadow:var(--shadow400);}
