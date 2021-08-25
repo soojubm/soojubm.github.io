@@ -57,13 +57,14 @@ document.addEventListener('mouseover', mouseenterElement)
 export const DARK_THEME_CLASS = 'theme-dark'
 export const LIGHT_THEME_CLASS = 'theme-light'
 const DARKTHEME_SELECTOR = '.js-darkmode'
-const darkThemeTrigger = document.querySelector(DARKTHEME_SELECTOR)
 
-document.addEventListener('DOMContentLoaded', detectTheme)
+// tokens에 있는 버튼 때문에 domEvents로
+// document.addEventListener('DOMContentLoaded', detectTheme)
 document.addEventListener('click', toggleDarkTheme)
 
 async function domEvents() {
   await routePage()
+  detectTheme()
 
   // const hash = window.location.hash.substring(1)
   // const page = routes.find(route => route.path.substring(1) === hash)
@@ -616,6 +617,8 @@ export function detectTheme() {
   const isDarkmode = savedTheme === DARK_THEME_CLASS
 
   const darkThemeTrigger = document.querySelectorAll(DARKTHEME_SELECTOR)
+
+  console.log(darkThemeTrigger)
   darkThemeTrigger?.forEach((element: any) => {
     element.querySelector('input').checked = isDarkmode
   })

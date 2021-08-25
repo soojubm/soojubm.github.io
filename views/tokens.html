@@ -1,15 +1,15 @@
 <main class="design">
-  <div class="tokens-intro">
-    <figure class="tokens-intro-image">
-      <span class="tokens-intro-image-butter">🧈</span>
-      <span class="tokens-intro-image-salt">🧂</span>
-      <span class="tokens-intro-image-egg">🥚</span>
-      <span class="tokens-intro-image-milk">🥛</span>
+  <div class="tokens-hero">
+    <figure class="tokens-hero-image">
+      <span class="tokens-hero-image-butter">🧈</span>
+      <span class="tokens-hero-image-salt">🧂</span>
+      <span class="tokens-hero-image-egg">🥚</span>
+      <span class="tokens-hero-image-milk">🥛</span>
       <img src="" alt="" />
     </figure>
     <!-- <div style="width:100px;height:60px;border-radius:50%;border:2px solid var(--gray800);transform:rotate(15deg);display:flex;align-items:center;justify-content:center;position:absolute;left:50%;z-index:8;background:var(--gray0);margin-left:-100px;">작성 중</div> -->
-    <div class="tokens-intro-head">
-      <span style="display:block;margin:0 0 var(--space) 0;font-size:var(--font-size-title);">🥺 <span style="font-size:var(--font-size-caption);color:var(--gray0);">진행중이에요<i style="font-style:italic;">!</i></span></span>
+    <div class="tokens-hero-head">
+      <span style="display:flex;align-items:center;margin:0 0 var(--space) 0;font-size:var(--font-size-title);">🥺<span style="margin:0 0 0 var(--space-small);font-size:var(--font-size-caption);color:var(--gray0);" hidden>진행중이에요<i style="font-style:italic;">!</i></span></span>
       <span style="font-size:var(--font-size-body);color:var(--gray0);">
         Design Tokens
       </span>
@@ -27,7 +27,7 @@
 
   </div>
 
-  <section style="font-size:2rem;letter-spacing:-.025rem;">
+  <section style="font-size:1.5rem;letter-spacing:-.025rem;">
     <p style="padding:1rem 5%;border-bottom:1px solid var(--gray200);">principle. 토큰은 디바이스의 크기 등 접속 환경과는 무관하다.</p>
     <p style="padding:1rem 5%;border-bottom:1px solid var(--gray200);">principle. 최소한의 에셋을 유지한다. 예를 들면, 왜 gray600이 필요하지 않은가?</p>
     <p style="padding:1rem 5%;border-bottom:1px solid var(--gray200);">todo. pattern으로 정의할 필요가 있는 것. tile, item</p>
@@ -48,12 +48,7 @@
     </div>
   </nav> -->
 
-  <section class="design-body">
-    <!-- <div class="concept">
-      <div class="concept-tokens">tokens</div>
-      <div class="concept-styles">styles</div>
-      <div class="concept-roles">roles</div>
-    </div> -->
+  <section class="tokens-body">
 
     <!-- <h1 class="design-article-title">프로모션을 위한 단발성 페이지에서는 유연하게.</h1> -->
 
@@ -401,8 +396,11 @@
       <code class="design-article-description" style="padding:1rem;">
         <p>--fontstack: '', san-serif;</p>
         <hr />
-        <p>--font-size-huge: ;</p>
-        <p>--font-size-small: ;</p>
+        <p>// naming </p>
+        <p>--font-size-huge: 3rem;</p>
+        <p>--font-size-large: 2rem;</p>
+        <p>--font-size-small: .875rem;</p>
+        <p>--font-size-tiny: .75rem;</p>
         <hr />
         <p>--font-weight-normal: 400;</p>
         <p>--font-weight-bold: 800;</p>
@@ -438,7 +436,7 @@
         <div class="token-item">
           <!-- <figure class="token-item-avatar"></figure> -->
           <figure class="token-item-avatar" style="display:flex;align-items:center;justify-content:center;height:var(--size-huge);text-align:center;font-size:3rem;color:var(--gray400);"><span style="display:block;margin-top:-5px;">들립니까아</span></figure>
-          <h3 class="token-item-name">huge, 3rem, 40px</h3>
+          <h3 class="token-item-name">huge</h3>
           <!-- <p class="token-item-description">프로모션 페이지에서 제목으로 사용하세요.</p> -->
           <div class="token-item-tags tag-group" role="group">
             <span class="token-item-tag">heading</span>
@@ -465,7 +463,7 @@
 
         <div class="token-item">
           <figure class="token-item-avatar" style="display:flex;align-items:center;justify-content:center;height:var(--size-huge);text-align:center;font-size:var(--font-size-body);color:var(--gray400);">들립니까아</figure>
-          <h3 class="token-item-name">small, .875rem, 14px</h3>
+          <h3 class="token-item-name">small</h3>
           <div class="token-item-tags tag-group" role="group">
             <span class="token-item-tag">heading</span>
             <span class="token-item-tag">body</span>
@@ -474,7 +472,7 @@
 
         <div class="token-item">
           <figure class="token-item-avatar" style="display:flex;align-items:center;justify-content:center;height:var(--size-huge);text-align:center;font-size:var(--font-size-caption);color:var(--gray400);">들립니까아</figure>
-          <h3 class="token-item-name">tiny, .75rem, 12px</h3>
+          <h3 class="token-item-name">tiny</h3>
           <div class="token-item-tags tag-group" role="group">
             <span class="token-item-tag">caption</span>
           </div>
@@ -536,6 +534,21 @@
 
       <br />
 
+      <h6 class="title-bordered">space, article</h6>
+      <div class="">
+        <h4 class="typography-subhead" style="font-size:var(--font-size-subhead);">선약이 있어서 ✋ <span style="display:block;">자아실현은 못할 것 같아요.</span></h4>
+        <div class="space" style="height:var(--space-after-subhead);"><span class="">var(--space-after-subhead)</span></div>
+        <p class="typography-paragraph">서브헤드와 디스크립션 혹은 패러그라프는 이렇게 사용하세요. 타이틀의 행간이 조정되었기 때문에 시각보정이 필요할 수도 있어요. line-height를 조정해야 하는 경우를 정의해야 합니다.</p>
+        <div class="space" style="height:var(--space-after-description);"><span class="">var(--space-after-description)</span></div>
+        <time class="typography-caption">10 January, 2020 (버튼 그룹이 올 수 있음)</time>
+        <!-- <footer class="card-foot">
+          <a href="#">Read More</a>
+          <span class="token-item-tag">Category</span>
+        </footer> -->
+      </div>
+
+      <br />
+
       <h6 class="title-bordered">space, item</h6>
       <!-- todo 전체가 클릭영역인 경우가 있고 버튼을 포함하는 경우가 있음. 위 2개만 버튼을 포함함.  -->
       <article class="item tile-flat-small" data-size="huge">
@@ -582,20 +595,6 @@
         <div class="space" style="width:1rem;writing-mode: vertical-rl"><span class="">1rem</span></div>
         <div style="display:flex;align-items:center;justify-content:center;width:calc(50% - 5% - .5rem);height:100%;">colum<br />var(--grid-column)</div>
         <div class="space" style="width:var(--grid-margin);writing-mode: vertical-rl"><span class="">var(--grid-margin)</span></div>
-      </div>
-
-      <br />
-      <h6 class="title-bordered">space, article</h6>
-      <div class="">
-        <h4 class="typography-subhead" style="font-size:var(--font-size-subhead);">선약이 있어서 ✋ <span style="display:block;">자아실현은 못할 것 같아요.</span></h4>
-        <div class="space" style="height:var(--space-after-subhead);"><span class="">var(--space-after-subhead)</span></div>
-        <p class="typography-paragraph">서브헤드와 디스크립션 혹은 패러그라프는 이렇게 사용하세요. 타이틀의 행간이 조정되었기 때문에 시각보정이 필요할 수도 있어요. line-height를 조정해야 하는 경우를 정의해야 합니다.</p>
-        <div class="space" style="height:var(--space-after-description);"><span class="">var(--space-after-description)</span></div>
-        <time class="typography-caption">10 January, 2020 (버튼 그룹이 올 수 있음)</time>
-        <!-- <footer class="card-foot">
-          <a href="#">Read More</a>
-          <span class="token-item-tag">Category</span>
-        </footer> -->
       </div>
     </article>
 
