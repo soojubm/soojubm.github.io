@@ -5,7 +5,6 @@
       <span class="tokens-hero-image-salt">🧂</span>
       <span class="tokens-hero-image-egg">🥚</span>
       <span class="tokens-hero-image-milk">🥛</span>
-      <img src="" alt="" />
     </figure>
     <!-- <div style="width:100px;height:60px;border-radius:50%;border:2px solid var(--gray800);transform:rotate(15deg);display:flex;align-items:center;justify-content:center;position:absolute;left:50%;z-index:8;background:var(--gray0);margin-left:-100px;">작성 중</div> -->
     <div class="tokens-hero-head">
@@ -24,15 +23,16 @@
       </div>
       <br />
     </div>
-
   </div>
 
   <section style="font-size:1.5rem;letter-spacing:-.025rem;">
-    <p style="padding:1rem 5%;border-bottom:1px solid var(--gray200);">principle. 토큰은 디바이스의 크기 등 접속 환경과는 무관하다.</p>
-    <p style="padding:1rem 5%;border-bottom:1px solid var(--gray200);">principle. 최소한의 에셋을 유지한다. 예를 들면, 왜 gray600이 필요하지 않은가?</p>
+    <p style="padding:1rem 5%;border-bottom:1px solid var(--gray200);">principle 1. 토큰은 디바이스의 크기 등 접속 환경과는 무관하다.</p>
+    <p style="padding:1rem 5%;border-bottom:1px solid var(--gray200);">principle 2. 최소한의 에셋을 유지한다. 예를 들면, 왜 gray600이 필요하지 않은가?</p>
+    <p style="padding:1rem 5%;border-bottom:1px solid var(--gray200);">principle 2-1. 컴포넌트는 동일한 행동 기표를 갖는다.</p>
+    <p style="padding:1rem 5%;border-bottom:1px solid var(--gray200);">principle 2-2. 위계 설정을 위해 3가지 이상의 대비를 사용하지 않는다.</p>
+    <p style="padding:1rem 5%;border-bottom:1px solid var(--gray200);">memo. modal, toast, popover 등는 UI가 아니라 기능(?)에 가까움.</p>
     <p style="padding:1rem 5%;border-bottom:1px solid var(--gray200);">todo. pattern으로 정의할 필요가 있는 것. tile, item</p>
-    <p style="padding:1rem 5%;border-bottom:1px solid var(--gray200);">memo. modal, toast 등는 UI가 아니라 기능(?).</p>
-    <p style="padding:1rem 5%;border-bottom:1px solid var(--gray200);">todo. base 네이밍은 생략하는 것이 어떨까?</p>
+    <p style="padding:1rem 5%;border-bottom:1px solid var(--gray200);">todo. base 네이밍 생략?</p>
   </section>
 
   <!-- <nav class="sidebar">
@@ -130,6 +130,7 @@
 
 
       <div class="tokens">
+        <h6 class="title-bordered">Temp</h6>
         <div class="tokens-inner">
 
           <div class="token-item">
@@ -361,7 +362,7 @@
       <div class="">
         <article class="token-item">
           <figure class="size-large color-skeleton" style="background-color:none;height:var(--size-huge);"></figure>
-          <h3 class="token-item-name">Skeleton400</h3>
+          <h3 class="token-item-name">skeleton400</h3>
           <div class="token-item-tags tag-group" role="group">
             <span class="token-item-tag">none</span>
           </div>
@@ -435,7 +436,9 @@
       <div class="tokens typography-group">
         <div class="token-item">
           <!-- <figure class="token-item-avatar"></figure> -->
-          <figure class="token-item-avatar" style="display:flex;align-items:center;justify-content:center;height:var(--size-huge);text-align:center;font-size:3rem;color:var(--gray400);"><span style="display:block;margin-top:-5px;">들립니까아</span></figure>
+          <figure class="token-item-avatar" style="display:flex;align-items:center;height:var(--size-huge);text-align:center;font-size:3rem;">
+            <span style="margin:-5px var(--space) 0;">들립니까아</span>
+          </figure>
           <h3 class="token-item-name">huge</h3>
           <!-- <p class="token-item-description">프로모션 페이지에서 제목으로 사용하세요.</p> -->
           <div class="token-item-tags tag-group" role="group">
@@ -444,7 +447,9 @@
         </div>
   
         <div class="token-item">
-          <figure class="token-item-avatar" style="display:flex;align-items:center;justify-content:center;height:var(--size-huge);text-align:center;font-size:2rem;color:var(--gray400);">들립니까아</figure>
+          <figure class="token-item-avatar" style="display:flex;align-items:center;height:var(--size-huge);text-align:center;font-size:2rem;">
+            <span style="margin:0 var(--space);">들립니까아</span>
+          </figure>
           <h3 class="token-item-name">large, 2rem, 40px</h3>
           <!-- <p class="token-item-description">디스크립션.</p> -->
           <div class="token-item-tags tag-group" role="group">
@@ -453,7 +458,9 @@
         </div>
 
         <div class="token-item">
-          <figure class="token-item-avatar" style="display:flex;align-items:center;justify-content:center;height:var(--size-huge);text-align:center;font-size:var(--font-size-subhead);color:var(--gray400);">들립니까아</figure>
+          <figure class="token-item-avatar" style="display:flex;align-items:center;height:var(--size-huge);text-align:center;font-size:var(--font-size-subhead);">
+            <span style="margin:0 var(--space);">들립니까아</span>
+          </figure>
           <h3 class="token-item-name">medium, 1.125rem, 40px</h3>
           <div class="token-item-tags tag-group" role="group">
             <span class="token-item-tag">heading</span>
@@ -462,7 +469,9 @@
         </div>
 
         <div class="token-item">
-          <figure class="token-item-avatar" style="display:flex;align-items:center;justify-content:center;height:var(--size-huge);text-align:center;font-size:var(--font-size-body);color:var(--gray400);">들립니까아</figure>
+          <figure class="token-item-avatar" style="display:flex;align-items:center;height:var(--size-huge);text-align:center;font-size:var(--font-size-body);">
+            <span style="margin:0 var(--space);">들립니까아</span>
+          </figure>
           <h3 class="token-item-name">small</h3>
           <div class="token-item-tags tag-group" role="group">
             <span class="token-item-tag">heading</span>
@@ -471,7 +480,9 @@
         </div>
 
         <div class="token-item">
-          <figure class="token-item-avatar" style="display:flex;align-items:center;justify-content:center;height:var(--size-huge);text-align:center;font-size:var(--font-size-caption);color:var(--gray400);">들립니까아</figure>
+          <figure class="token-item-avatar" style="display:flex;align-items:center;height:var(--size-huge);text-align:center;font-size:var(--font-size-caption);">
+            <span style="margin:0 var(--space);">들립니까아</span>
+          </figure>
           <h3 class="token-item-name">tiny</h3>
           <div class="token-item-tags tag-group" role="group">
             <span class="token-item-tag">caption</span>
@@ -506,6 +517,9 @@
         <p>--space-after-avatar-small: var(--space-small);</p>
         <hr />
         <p>--space-before-badge: var(--space);</p>
+        <hr />
+        <p>--space-tile-inset: var(--space);</p>
+        <p>--space-tile-inset-small: var(--space-small);</p>
         <hr />
         <!-- <p style="color:var(--red800);">// 모바일 기준의 하나의 레이아웃을 정의하고, 컨테이너 시스템을 사용합니다.</p> -->
         <p>--grid-column: calc(50% - 2rem);</p>
@@ -685,7 +699,7 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Groups</h1>
-      <p class="design-article-description">그룹. 그룹, 리스트박스, 컨테이너의 차이.</p>
+      <p class="design-article-description">그룹. 그룹, 리스트박스, 컨테이너의 차이. 컨테이너: 페이지와 섹션 레벨의 레이아웃. 현대 유아이에서 컨테이너의 개념이 모호한 이유는 모바일에서는 섹션, 아티클, 심지어 하나의 컴포넌트가 페이지의 맥락이 되는 경우가 왕왕. / 리스트박스: 수량에 제한이 없는 일관된 컴포넌트의 집합 / 그룹: 2~3개의 일관된 또는 일관되지 않은 요소의 집합</p>
       <!-- <p class="design-article-description">role=group/row/rowgroup, role=menuitem, role=treeitem</p> -->
       <code class="design-article-description" style="padding:1rem;">
         <p>@mixin group {}</p>
@@ -714,9 +728,10 @@
       <code class="design-article-description" style="padding:1rem;">
         @custom-media --breakpoint-large (max-width: 1380px);
         <p>@custom-media --breakpoint-small (max-width: 1080px);</p>
-        @custom-media --breakpoint-tiny (max-width: 760px);
+        <del>@custom-media --breakpoint-tiny (max-width: 760px);</del>
         <hr />
-        @media (--breakpoint-small) {}
+        <p>@media (--breakpoint-large) {}</p>
+        <p>@media (--breakpoint-small) {}</p>
       </code>
 
 
