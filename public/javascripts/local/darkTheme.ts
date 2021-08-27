@@ -1,5 +1,5 @@
-const isDarkMode = window.matchMedia && 
-  window.matchMedia('(prefers-color-scheme: dark)').matches;
+// const isDarkMode = window.matchMedia &&
+//   window.matchMedia('(prefers-color-scheme: dark)').matches;
 
 export const DARK_THEME_CLASS = 'theme-dark'
 export const LIGHT_THEME_CLASS = 'theme-light'
@@ -7,7 +7,7 @@ export const LIGHT_THEME_CLASS = 'theme-light'
 function darkTheme(classname) {
   const darkThemeTrigger = document.querySelector(classname)
   const darkThemeSwitch = darkThemeTrigger?.querySelector('input')
-  if(!darkThemeTrigger || !darkThemeSwitch ) return
+  if (!darkThemeTrigger || !darkThemeSwitch) return
 
   loadTheme(darkThemeSwitch)
 
@@ -15,7 +15,7 @@ function darkTheme(classname) {
 
   function toggleDarkTheme(darkThemeSwitch) {
     document.body.classList.toggle(DARK_THEME_CLASS)
-    
+
     const isDarkmode = document.body.classList.contains(DARK_THEME_CLASS)
     darkThemeSwitch.checked = isDarkmode
 
@@ -30,8 +30,6 @@ function darkTheme(classname) {
     darkThemeSwitch.checked = savedTheme === DARK_THEME_CLASS
   }
 }
-
-
 
 // function darkTheme() {
 //   const darkmodeButton = document.querySelector('.js-darkmode')
@@ -63,7 +61,6 @@ export default darkTheme
 // function toggleTheme() {
 //   // 저장된 값이 없다면 시스템 설정을 기준으로 함
 
-
 //   const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
 //   const newTheme = currentTheme === 'dark' ? 'light' : 'dark'
 
@@ -72,15 +69,8 @@ export default darkTheme
 //   localStorage.setItem('theme', newTheme)
 // }
 
-
-
-
-
-
 // document.documentElement.classList.add('color-theme-in-transition')
 // document.documentElement.setAttribute('data-theme', theme)
 // window.setTimeout(function() {
 //   document.documentElement.classList.remove('color-theme-in-transition')
 // }, 1000)
-
-

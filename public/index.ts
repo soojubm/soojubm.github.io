@@ -7,6 +7,7 @@ import { detectLoad, lockBodyElement } from './javascripts/load'
 import carousel from './javascripts/event/carousel'
 import event from './javascripts/event/index'
 import input from './javascripts/input/index'
+import darkTheme from './javascripts/local/darkTheme'
 
 import { stopAnimation, throttle } from './javascripts/utils/optimizationUtils'
 
@@ -58,13 +59,16 @@ export const DARK_THEME_CLASS = 'theme-dark'
 export const LIGHT_THEME_CLASS = 'theme-light'
 const DARKTHEME_SELECTOR = '.js-darkmode'
 
+// todo darktheme 이벤트전파이슈
 // tokens에 있는 버튼 때문에 domEvents로
 // document.addEventListener('DOMContentLoaded', detectTheme)
-document.addEventListener('click', toggleDarkTheme)
+// document.addEventListener('click', toggleDarkTheme)
 
 async function domEvents() {
   await routePage()
-  detectTheme()
+  // detectTheme()
+  darkTheme('.js-darkmode')
+  darkTheme('.js-darkmode2')
 
   // const hash = window.location.hash.substring(1)
   // const page = routes.find(route => route.path.substring(1) === hash)
@@ -614,11 +618,9 @@ export function detectTheme() {
   const savedTheme = localStorage.getItem('theme')
   if (!savedTheme) return
 
+  const darkThemeTrigger = document.querySelectorAll(DARKTHEME_SELECTOR)
   const isDarkmode = savedTheme === DARK_THEME_CLASS
 
-  const darkThemeTrigger = document.querySelectorAll(DARKTHEME_SELECTOR)
-
-  console.log(darkThemeTrigger)
   darkThemeTrigger?.forEach((element: any) => {
     element.querySelector('input').checked = isDarkmode
   })

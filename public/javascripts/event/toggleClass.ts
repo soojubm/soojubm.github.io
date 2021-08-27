@@ -77,9 +77,7 @@ function toggleClass({ selector: trigger }: Parameter) {
     const triggerNextElement = element?.nextElementSibling as HTMLElement
     triggerNextElement.classList.toggle(ACTIVE_CLASS)
 
-    console.log('@@@@', element.nodeName, element.nextElementSibling)
-
-    // triggerNextElement.addEventListener('click', event => event.stopPropagation())
+    triggerNextElement.addEventListener('click', event => event.stopPropagation())
   }
 
   function removeElementClassname(element) {
