@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 window.addEventListener('scroll', throttle(scrollProgress), true)
-function scrollProgress() {
+function scrollProgress(): void {
   const containerElement = document.querySelector<HTMLElement>('.post')
   const progressBar = document.querySelector<HTMLElement>('.post-head-progress')
   if (!containerElement || !progressBar) return
@@ -666,4 +666,11 @@ function mouseenterElement(event) {
     // hoverElement?.setAttribute('aria-expanded', 'true')
     document.body.classList.remove(ACTIVE_CLASSNAME)
   }
+}
+
+interface IUser {
+  name: string
+  age: number
+  isAdult?: boolean
+  readonly test: string
 }

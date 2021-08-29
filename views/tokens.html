@@ -31,6 +31,7 @@
     <p style="padding:1rem 5%;border-bottom:1px solid var(--gray200);">principle 2. 최소한의 에셋을 유지한다. 예를 들면, 왜 gray600이 필요하지 않은가?</p>
     <p style="padding:1rem 5%;border-bottom:1px solid var(--gray200);">principle 2-1. 컴포넌트는 동일한 행동 기표를 갖는다.</p>
     <p style="padding:1rem 5%;border-bottom:1px solid var(--gray200);">principle 2-2. 위계 설정을 위해 3가지 이상의 대비를 사용하지 않는다.</p>
+    <p style="padding:1rem 5%;border-bottom:1px solid var(--gray200);">가이드가 없는 디자인이 틀린 것은 아니다.</p>
     <p style="padding:1rem 5%;border-bottom:1px solid var(--gray200);">modal, toast, popover 등는 UI가 아니라 기능(?)에 가까움.</p>
     <p style="padding:1rem 5%;border-bottom:1px solid var(--gray200);">todo. pattern으로 정의할 필요가 있는 것. tile, item</p>
     <p style="padding:1rem 5%;border-bottom:1px solid var(--gray200);">todo. base 네이밍 생략?</p>
@@ -228,11 +229,8 @@
       <div class="design-article-description">
         <!-- <p class="checklist"><span><i></i></span> 녹색, 빨간색 및 주황색은 양식 유효성 검사 및 메시징과 같은 특별한 경우에만 사용됩니다.</p> -->
         <!-- <p class="checklist"><span><i></i></span> todo: 다크테마를 위한 elevation800을 추가하고 400을 조정. 다크테마를 위한 gradient 정의하기.</p> -->
-        <!-- <p class="xlist"><i></i> 다크테마를 위한 인버트 컬러셋을 추가로 정의하지 마세요.</p> -->
+        <p class="xlist"><i></i> 다크테마를 위한 인버트 컬러셋을 추가로 정의하지 마세요.</p>
       </div>
-      <!-- <blockquote style="margin:2rem 0;">
-        gray100 변수를 사용할 때 container-border-color와 같은 시멘틱한 네이밍으로 한 번 더 추상화 하세요.
-      </blockquote> -->
 
       <button class="user-logout js-darkmode2" title="change theme" style="border-radius:var(--radius400);box-shadow:var(--shadow400);padding:.5rem;border:var(--border100);">
         <figure class="user-logout-icon"><i class="icon-moon"></i></figure>
@@ -379,9 +377,9 @@
       <h1 class="design-article-title">Typography</h1>
       <p class="design-article-description">텍스트 정보.</p>
       <div class="design-article-description">
-        <p class="checklist"><span><i></i></span> bottom navigation의 label로 10px을 사용합니다.</p>
-        <p class="xlist"><span><i></i></span> 단어나 구문을 underline과 bold로 강조하지 마세요.</p>
-        <p class="xlist"><span><i></i></span> 단락에서 primary 컬러로 단어를 강조하지 마세요. 링크로 오인될 수 있습니다.</p>
+        <p class="checklist"><span><i></i></span> bottom navigation의 label에는 10px을 사용합니다.</p>
+        <p class="xlist"><span><i></i></span> 단어나 구문을 underline, bold, primary color로 강조하지 마세요.</p>
+        <!-- <p>primary color = link</p> -->
 
         <!-- <p class="checklist"><span><i></i></span> display 크기는 프로모션 페이지에서 제목으로만 사용하세요.</p>
         <p class="checklist"><span><i></i></span> subhead 크기는 카드, 아티클 레벨에서 소제목으로 사용하세요. 포스트, 약관 등 텍스트 중심의 페이지에서 본문으로 사용할 수 있습니다.</p>
@@ -699,8 +697,22 @@
     </article>
 
     <article class="design-article js-scrollspy-section">
+      <h1 class="design-article-title">Containers</h1>
+      <p class="design-article-description">페이지, 섹션 레벨의 레이아웃. 현대 유아이에서 컨테이너의 개념이 모호한 이유는 모바일에서는 섹션, 아티클, 심지어 하나의 컴포넌트가 페이지의 맥락이 될 수 있어서.</p>
+      <div class="design-article-description">
+        <p class="checklist"><span><i></i></span> 그리드 시스템.</p>
+        <p class="checklist"><span><i></i></span> 비밀번호찾기는(어떤 맥락인지 설명 추가하기) 로그인/회원가입과 다른 컨테이너 모듈을 사용합니다.</p>
+      </div>
+      <code class="design-article-description" style="padding:1rem;">
+        <p>@mixin container-large {}</p>
+        <hr />
+        <p>@mixin container-page {}</p>
+      </code>
+    </article>
+
+    <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Groups</h1>
-      <p class="design-article-description">그룹. 그룹, 리스트박스, 컨테이너의 차이. 컨테이너: 페이지와 섹션 레벨의 레이아웃. 현대 유아이에서 컨테이너의 개념이 모호한 이유는 모바일에서는 섹션, 아티클, 심지어 하나의 컴포넌트가 페이지의 맥락이 되는 경우가 왕왕. / 리스트박스: 수량에 제한이 없는 일관된 컴포넌트의 집합 / 그룹: 2~3개의 일관된 또는 일관되지 않은 요소의 집합</p>
+      <p class="design-article-description">그룹. 그룹, 리스트박스, 컨테이너의 차이. 리스트박스: 수량에 제한이 없는 일관된 컴포넌트의 집합 / 그룹: 2~3개의 일관된 또는 일관되지 않은 요소의 집합</p>
       <!-- <p class="design-article-description">role=group/row/rowgroup, role=menuitem, role=treeitem</p> -->
       <code class="design-article-description" style="padding:1rem;">
         <p>@mixin group {}</p>
