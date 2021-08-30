@@ -1,5 +1,5 @@
 .navbar {display:flex;align-items:center;height:var(--navbar-height);padding:0 var(--navbar-padding);background:var(--gray0);position:relative;left:0;right:0;top:0;z-index:var(--zindex-navigation);}
-.navbar-logo {@include avatar-medium;background-color:var(--green100);border-radius:50%;font-size:var(--font-size-body);}
+.navbar-logo {@include avatar-medium;background-color:gold;border-radius:50%;font-size:var(--font-size-body);}
 .navbar-burger {@include avatar-medium;display:none;margin:0 .5rem 0 0;z-index:calc(var(--zindex-navigation) + 1);}
 .navbar-menu {display:flex;align-items:center;margin-left:auto;margin-top:-3px;position:relative;z-index:var(--zindex-navigation);}
 .navbar-menu-item {padding:0 1rem;color:var(--gray800);position:relative;z-index:var(--zindex-default);transition:all .4s;} // m p reset
