@@ -32,7 +32,7 @@
 .item-action.is-active {@include button-tertiary;@include button-small;@include position-right-top;right:0;}
 
 .item + .item {margin:var(--space) 0 0 0;}
-// .item:hover {@include hover-item;}
+.item:hover {@include hover-item;}
 
 .item[data-size=huge] .item-avatar {width:var(--size-huge);height:var(--size-huge);margin-right:var(--space-after-avatar-huge);}
 .item[data-size=large] .item-avatar {width:var(--size-large);height:var(--size-large);margin-right:var(--space-after-avatar-large);}

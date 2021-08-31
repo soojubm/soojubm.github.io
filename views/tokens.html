@@ -53,33 +53,36 @@
 
     <!-- <h1 class="design-article-title">프로모션을 위한 단발성 페이지에서는 유연하게.</h1> -->
 
-    <article class="design-article js-scrollspy-section" hidden>
+    <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">기표signifier</h1>
       <p class="design-article-description"></p>
       <div class="design-article-description">
         <p class="checklist"><span><i></i></span> 목록의 나머지를 더 보여줄 때는 [모두보기], 미리보기 형식의 텍스트를 더 보여줄 때는 [전체보기].</p>
-        <p class="xlist"><span><i></i></span> '확장할 수 있음'으로 plus icon을 사용하지 마세요. 아코디언 수정해야 함.</p>
+        <p class="xlist"><span><i></i></span> '확장할 수 있음'으로 plus icon을 사용하지 마세요.</p>
       </div>
 
       <h6 class="title-bordered">클릭Clickable</h6>
-      <span style="display:block;color:var(--color-primary);cursor:pointer;">브랜드 컬러로 된 텍스트는 대부분 클릭할 수 있다.</span>
+      <span style="display:block;color:var(--color-primary);cursor:pointer;">브랜드 컬러 텍스트는 대부분 클릭할 수 있다.</span>
       <span style="display:block;margin:var(--space) 0;cursor:pointer;">❤️ 아이콘이나 이모지가 있으면 대부분 클릭할 수 있다.</span>
-      <span style="display:block;width:160px;height:80px;padding:var(--space-small);box-sizing:border-box;margin:var(--space) 0 1.5rem;background:var(--gray100);border-radius:var(--radius400);cursor:pointer;">연한 회색의 오브젝트는 대부분 클릭할 수 있다.</span>
-      <div class="tile-elevated-small" style="cursor:pointer;">그림자로 두른 오브젝트는 대부분 클릭할 수 있다. 또는 오브젝트 내부에 클릭할 수 있는 버튼이 존재한다.</div>
+      <span style="display:block;padding:var(--space-small);box-sizing:border-box;margin:var(--space) 0;background:var(--gray100);border-radius:var(--radius400);cursor:pointer;">연한 회색의 오브젝트는 대부분 클릭할 수 있다.</span>
+      <div class="tile-elevated" style="cursor:pointer;">
+        <p style="margin-top:var(--space-leading-subhead);margin-bottom:var(--space);">elevated 오브젝트는 대부분 클릭할 수 있다. 또는 오브젝트 내부에 클릭할 수 있는 요소가 존재한다.</p>
+        <footer>
+          <button class="design-article-primary-small">알겠읍니다</button>
+        </footer>
+      </div>
 
       <br />
-      <br />
 
-
-      <h6 class="title-bordered">비활성Disabled or non-clickable</h6>
+      <h6 class="title-bordered">non-clickable 또는 비활성disabled, 읽기전용readonly</h6>
       <div class="tile-elevated-small" style="opacity:.5;cursor:not-allowed;box-shadow:none;">
-        <p>투명도 0.5 / 커서 not-allowed / flat style (그림자 제거)</p>
+        <p>샘플. 투명도 0.5 / 커서 not-allowed / flat style (그림자 제거)</p>
       </div>
 
       <br />
 
       <h6 class="title-bordered">외부 링크external link</h6>
-      <p>아이콘</p>
+      <i class="icon-arrow is-external"></i>
 
       <br />
 
@@ -90,7 +93,7 @@
 
       <br />
 
-      <h6 class="title-bordered">모두보기view all</h6>
+      <h6 class="title-bordered">모두보기view all -> 페이지 전환</h6>
       <div><i class="icon-chevron" style="display:inline-block;"></i></div>
 
       <br />
@@ -224,7 +227,7 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Palette</h1>
-      <p class="design-article-description">background/border/text/state. todo: --button-background-color와 같은 변수는 불필요하고, 바로 mixin 하면 되겠다.</p>
+      <p class="design-article-description">background/border/text/state. todo: --button-background-color와 같은 변수는 불필요하다. 왜냐하면 버튼의 각 스타일을 개별적으로 사용하는 경우는 없기 때문에 관리해야 하는 에셋만 많아진다. 바로 mixin 하면 되겠다.</p>
       <div class="design-article-description">
         <!-- <p class="checklist"><span><i></i></span> 녹색, 빨간색 및 주황색은 양식 유효성 검사 및 메시징과 같은 특별한 경우에만 사용됩니다.</p> -->
         <!-- <p class="checklist"><span><i></i></span> todo: 다크테마를 위한 elevation800을 추가하고 400을 조정. 다크테마를 위한 gradient 정의하기.</p> -->
@@ -264,7 +267,7 @@
           <h3 class="token-item-name">gray000</h3>
           <div class="token-item-tags tag-group" role="group">
             <span class="token-item-tag">background</span>
-            <span class="token-item-tag">text(dark theme)</span>
+            <span class="token-item-tag">text</span>
           </div>
         </article>
         <article class="token-item is-gray100">
@@ -288,7 +291,7 @@
           <h3 class="token-item-name">gray400</h3>
           <div class="token-item-tags tag-group" role="group">
             <span class="token-item-tag">text</span>
-            <span class="token-item-tag">disabled state</span>
+            <span class="token-item-tag">disabledState</span>
           </div>
         </article>
         <!-- <figure class="token-item is-gray600">
@@ -351,6 +354,7 @@
           <h3 class="token-item-name">elevation400</h3>
           <div class="token-item-tags tag-group" role="group">
             <span class="token-item-tag">clickalbe</span>
+            <span class="token-item-tag">and...</span>
           </div>
         </article>
       </div>
@@ -645,7 +649,7 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Containers</h1>
-      <p class="design-article-description">페이지, 섹션 레벨의 레이아웃. 현대 유아이에서 컨테이너의 개념이 모호한 이유는 모바일에서는 섹션, 아티클, 심지어 하나의 컴포넌트가 페이지의 맥락이 될 수 있어서.</p>
+      <p class="design-article-description">페이지, 섹션 레벨의 레이아웃. 현대 유아이에서 컨테이너의 개념이 모호한 이유는 모바일에서는 섹션, 아티클, 심지어 하나의 컴포넌트가 페이지의 맥락이 될 수 있읍니다.</p>
       <div class="design-article-description">
         <p class="checklist"><span><i></i></span> 그리드 시스템을 사용하지 않습니다. 그리드 시스템을 구현하는 것은 효율이 떨어지며 모바일 퍼스트, 가로 스크롤 트랜드와 부합하지 않습니다. 칼럼의 수를 제한하고, 컨테이너와 컨테이너 내부에서 사용하는 아이템의 크기와 간격을 정의하는 것이 도움이 됩니다.</p>
         <p class="checklist"><span><i></i></span> 행동 패턴에 따라 컨테이너 모듈의 대비를 주기. 예를 들어, 비밀번호찾기는(어떤 맥락인지 설명 추가하기) 로그인/회원가입과 조금 큰 컨테이너 모듈.</p>
@@ -682,9 +686,21 @@
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">States</h1>
       <!-- <p class="design-article-description">카드 또는 아이템의 hover state로 여러 개의 코드 또는 스타일이 필요하지 않습니다. 하나의 mixin을 정의.</p> -->
-      <p class="design-article-description">가능한 스타일을 통일하여 디자인/개발 비용을 줄이고 사용자가가 인지하기 쉽도록.</p>
+      <p class="design-article-description">가능한 스타일을 통일하여 디자인/개발 비용을 줄이고 사용자가가 인지하기 쉽도록. todo: pagination, slider 등에서 icon button의 hover 스타일을 통일하기.</p>
 
       <!-- https://material.io/design/interaction/states.html -->
+      <code class="design-article-description" style="padding:1rem;">
+        <p>@mixin hover-text {}</p>
+        <p>@mixin hover-item {}</p>
+        <hr />
+        <p>--active-text-color: null;</p>
+        <p>--active-border-color: null;</p>
+        <p>--active-background-color: null;</p>
+        <p>--disabled-opacity: .5;</p>
+        <p>--warning-text-color: null;
+        <p>--warning-background-color: null;
+        <p>--warning-border-color: null;
+      </code>
 
       <h6 class="title-bordered">hover - item & card</h6>
       <button class="user-logout" title="sign out">
@@ -725,12 +741,12 @@
         <p>@mixin button-group {}</p>
         <hr />
         <p>.post-hashtag-group {</p>
-        <p>&nbsp;&nbsp;@include group-bleeding;</p>
         <p>&nbsp;&nbsp;@include tag-group;</p>
+        <p>&nbsp;&nbsp;@include group-bleeding;</p>
         <p>}</p>
         <p>.keyword-group {</p>
-        <p>&nbsp;&nbsp;@include group-bleeding;</p>
         <p>&nbsp;&nbsp;@include chip-group;</p>
+        <p>&nbsp;&nbsp;@include group-bleeding;</p>
         <p>}</p>
       </code>
     </article>
