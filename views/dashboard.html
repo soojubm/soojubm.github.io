@@ -10,54 +10,80 @@
     .titlebar {
       display: none;
     }
+    .dashboard-title {
+      padding:1rem 1rem 1rem 8rem;
+    }
+
+    .dashboard-body {
+      max-width: 800px;
+      margin: 1rem auto;
+    }
   </style>
   <aside class="dashboard">
     <header class="dashboard-head tile-elevated" style="max-width:400px;position:fixed;left:var(--space);top:var(--space);bottom:var(--space);">
-      <a href="" style="display:block;margin-top:var(--space-leading-subhead);font-size:2rem;">🐤</a>
-
-      <form class="filter">
-        <header class="filter-head">
-          <!-- <h1 class="filter-title">필터</h1> -->
-        </header>
-        <fieldset class="filter-fieldset">
-          <legend class="filter-fieldset-legend">예약하기</legend>
-        </fieldset>
-        <hr />
-        <footer class="filter-foot">
-          <button class="filter-foot-confirm">적용</button>
-          <button class="filter-foot-reset">clear filters</button>
-        </footer>
-      </form>
+      <a href="" style="display:block;margin-top:var(--space-leading-subhead);font-size:1.25rem;">🐤</a>
     </header>
-  </aside>
 
-  <section class="textbox" style="margin:4rem 0;">
-    <p>contenteditable 연습</p>
-    <menu class="textbox-toolbar">
-      <div class="chip" style="margin:0 var(--space-small) 0 0;">
-        <select class="" id="select2" style="background:none;border:none;padding:0 var(--space) 0 0;font:inherit;color:var(--gray800);">
-          <option class="select-option" value="select-option1">나눔고딕</option>
-          <option class="select-option" value="select-option1">맑은고딕</option>
-        </select>
-        <span class="selectbox-indicator" role="img" style="background:var(--gray100);position:relative;right:auto;top:auto;"
-          ><i class="icon-caret"></i
-        ></span>
-      </div>
-      <button class="textbox-toolbar-bold" style="font-weight:var(--font-weight-bold);">B</button>
-      <button class="textbox-toolbar-italic" style="font-style:italic;">I</button>
+    <header class="dashboard-title">
+      <h1 class="dashboard-head-title">페이지 타이틀</h1>
+    </header>
+    <section class="dashboard-body">
+      <section class="textbox" style="margin:4rem 0;">
+        <p>contenteditable 연습</p>
+        <menu class="textbox-toolbar">
+          <div class="chip" style="margin:0 var(--space-small) 0 0;">
+            <select class="" id="select2" style="background:none;border:none;padding:0 var(--space) 0 0;font:inherit;color:var(--gray800);">
+              <option class="select-option" value="select-option1">나눔고딕</option>
+              <option class="select-option" value="select-option1">맑은고딕</option>
+            </select>
+            <span class="selectbox-indicator" role="img" style="background:var(--gray100);position:relative;right:auto;top:auto;"
+              ><i class="icon-caret"></i
+            ></span>
+          </div>
+          <button class="textbox-toolbar-bold" style="font-weight:var(--font-weight-bold);">B</button>
+          <button class="textbox-toolbar-italic" style="font-style:italic;">I</button>
+        </menu>
+        <div class="textbox-view" role="textbox" contenteditable="true" aria-placeholder="5-digit zipcode" aria-labelledby="txtboxLabel">
+          <h1 class="textbox-view-heading" style="margin:0 0 var(--space) 0;color:var(--gray400);">제목</h1>
+          <div class="textbox-view-bdoy" style="color:var(--gray400);">제목 / 내용 선택 영역에 is-selected</div>
+          <div class="textbox-view-bdoy" style="color:var(--gray400);">엔터했을 때</div>
+          <div class="textbox-view-bdoy" style="color:var(--gray400);">드래그</div>
+          <br />
+          <aside class="tile-elevated-small">
+            클릭할 수 있는 무엇
+          </aside>
+        </div>
+        <footer class="textbox-footer">
+          <button class="textbox-footer-publish" style="width:50%;">게시</button>
+        </footer>
+      </section>
+    </section>
+
+    <form class="filter tile-elevated" style="width:100%;max-width:320px;padding:1rem;background:var(--gray0);position:fixed;right:var(--space);top:var(--space);bottom:var(--space);">
+      <header class="filter-head">
+        <!-- <h1 class="filter-title">필터</h1> -->
+      </header>
+      <fieldset class="filter-fieldset">
+        <legend class="filter-fieldset-legend">예약하기</legend>
+      </fieldset>
+      <hr />
+      <fieldset class="filter-fieldset" role="radiogroup">
+        <legend class="filter-fieldset-legend" style="margin-bottom:0;">radiogroup</legend>
+        <div class="radio">
+          <input type="radio" id="gender-man" name="gender" value="" />
+          <label for="gender-man" title="Video Killed the Radio Button">1~3명</label>
+        </div>
+        <div class="radio">
+          <input type="radio" id="gender-etc" name="gender" value="" checked />
+          <label for="gender-etc" title="Video Killed the Radio Button">3명 이상</label>
+        </div>
+      </fieldset>
     </menu>
-    <div class="textbox-view" role="textbox" contenteditable="true" aria-placeholder="5-digit zipcode" aria-labelledby="txtboxLabel">
-      <h1 class="textbox-view-heading" style="margin:0 0 var(--space) 0;color:var(--gray400);">제목</h1>
-      <div class="textbox-view-bdoy" style="color:var(--gray400);">제목 / 내용 선택 영역에 is-selected</div>
-      <div class="textbox-view-bdoy" style="color:var(--gray400);">엔터했을 때</div>
-      <div class="textbox-view-bdoy" style="color:var(--gray400);">드래그</div>
-      <br />
-      <aside class="tile-elevated-small">
-        클릭할 수 있는 무엇
-      </aside>
-    </div>
-    <footer class="textbox-footer">
-      <button class="textbox-footer-publish" style="width:50%;">게시</button>
-    </footer>
-  </section>
+      <hr />
+      <footer class="filter-foot">
+        <button class="filter-foot-confirm">적용</button>
+        <button class="filter-foot-reset">clear filters</button>
+      </footer>
+    </form>
+  </aside>
 </main>

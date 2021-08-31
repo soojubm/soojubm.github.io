@@ -346,7 +346,7 @@
 .design-home nav a {display:flex;align-items:center;@include tile-elevated;width:25%;max-width:300px;margin:.5rem;font-size:var(--font-size-subhead);font-weight:var(--font-weight-bold);color:var(--gray800);}
 .design-home nav a[readonly] {opacity:.5;cursor:not-allowed;box-shadow:none;}
 .design-home nav a:hover:not([readonly]) {@include hover-item;}
-.design-home nav a span {@include avatar-medium;margin-left:auto;margin-top:2px;}
+.design-home nav a span {@include avatar-medium;margin-left:auto;}
 .design-home nav a div {margin:0 0 0 var(--space-before-badge);}
 
 @media (--breakpoint-small) {

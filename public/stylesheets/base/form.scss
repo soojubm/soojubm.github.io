@@ -205,14 +205,14 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 .boxed-form div input {margin-top:-2px;padding:0;background:inherit;border:none;}
 .boxed-form div + div {margin-top:-1px;}
 
-.filter {}
+.filter {display:flex;flex-direction:column;}
 .filter-title {@include subhead;}
 .filter-fieldset {margin:1.5rem 0;padding:1.75rem 0 2rem 0;position:relative;}
-.filter-fieldset-legend {width:100%;line-height:1;@include text-label;position:absolute;top:0;}
+.filter-fieldset-legend {width:100%;line-height:1;font-weight:var(--font-weight-bold);position:absolute;top:0;}
 .filter-fieldset-description {margin:0 0 8px 0;}
-.filter-foot {display:flex;}
-.filter-foot-confirm {@include button-primary;}
-.filter-foot-reset {@include button-text;margin:0 0 0 var(--space-after-button);}
+.filter-foot {display:flex;justify-content:space-between;}
+.filter-foot-confirm {@include button-primary;width:var(--grid-column);}
+.filter-foot-reset {@include button-text;width:var(--grid-column);}
 
 // file
 input[type=file] {width:0;height:0;opacity:0;position:absolute;}

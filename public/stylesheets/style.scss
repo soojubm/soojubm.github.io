@@ -368,7 +368,7 @@
 
 .newneek-section1 {display:flex;flex-wrap:wrap;justify-content:space-between;margin:4rem 0 0;padding:8rem 7.5%;background:#fb7800;color:#000;position:relative;}
 .newneek-section1 footer {width:100%;margin:4rem 0 0 0;}
-.bubble {max-width:calc(50% - 2rem);}
+.bubble {max-width:calc(var(--grid-column) - 1rem);}
 .bubble-user {padding:.5rem 1.5rem;border:2px solid #000;background:#000;font-size:var(--font-size-body);color:#fff;font-weight:var(--font-weight-bold);}
 .bubble-text {padding:1.5rem 1.5rem 2rem;border:1px solid #000;background:#ebebeb;}
 

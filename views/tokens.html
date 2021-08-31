@@ -27,11 +27,10 @@
 
   <section style="font-size:1.5rem;letter-spacing:-.025rem;">
     <p style="padding:1rem 5%;border-bottom:1px solid var(--gray200);"><b>메모</b></p>
-    <p style="padding:1rem 5%;border-bottom:1px solid var(--gray200);">principle 1. 토큰은 디바이스의 크기 등 접속 환경과는 무관하다.</p>
-    <p style="padding:1rem 5%;border-bottom:1px solid var(--gray200);">principle 2. 최소한의 에셋을 유지한다. 예를 들면, 왜 gray600이 필요하지 않은가?</p>
-    <p style="padding:1rem 5%;border-bottom:1px solid var(--gray200);">principle 2-1. 컴포넌트는 동일한 행동 기표를 갖는다.</p>
-    <p style="padding:1rem 5%;border-bottom:1px solid var(--gray200);">principle 2-2. 위계 설정을 위해 3가지 이상의 대비를 사용하지 않는다.</p>
-    <p style="padding:1rem 5%;border-bottom:1px solid var(--gray200);">가이드가 없는 디자인이 틀린 것은 아니다.</p>
+    <p style="padding:1rem 5%;border-bottom:1px solid var(--gray200);">디바이스의 또는 접속 환경에 따라 구별하지 않습니다.</p>
+    <p style="padding:1rem 5%;border-bottom:1px solid var(--gray200);">최소한의 에셋으로. 예를 들면, 왜 gray600이 필요하지 않은가? + 위계 설정에 대비를 2개 이상 적용하지 않는다.</p>
+    <p style="padding:1rem 5%;border-bottom:1px solid var(--gray200);">행동 기표를 동일하게.</p>
+    <!-- <p style="padding:1rem 5%;border-bottom:1px solid var(--gray200);">가이드가 없는 디자인이 틀린 것은 아니다.</p> -->
     <p style="padding:1rem 5%;border-bottom:1px solid var(--gray200);">modal, toast, popover 등는 UI가 아니라 기능(?)에 가까움.</p>
     <p style="padding:1rem 5%;border-bottom:1px solid var(--gray200);">todo. pattern으로 정의할 필요가 있는 것. tile, item</p>
     <p style="padding:1rem 5%;border-bottom:1px solid var(--gray200);">todo. base 네이밍 생략?</p>
@@ -109,7 +108,7 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Sizes</h1>
-      <p class="design-article-description">주로 세로 크기에 사용하며 alert, accodion 등의 컴포넌트에서는 유연하게 사용하세요.</p>
+      <p class="design-article-description">주로 세로 크기에 사용하며, alert, accodion 등의 컴포넌트에서는 유연하게 사용하세요.</p>
       <!-- <p class="design-article-description">alert, accordion 등 예외 케이스.</p> -->
       <code class="design-article-description" style="padding:1rem;">
         <p>--size-huge: 80px;</p>
@@ -225,10 +224,11 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Palette</h1>
-      <p class="design-article-description">background/border/text/state. todo: --button-background-color와 같은 변수는 불필요하고, 바로 mixin 하면 되겠다. 다크테마에서도 gray0, gray800으로 보여야 하는 케이스들이 있음.</p>
+      <p class="design-article-description">background/border/text/state. todo: --button-background-color와 같은 변수는 불필요하고, 바로 mixin 하면 되겠다.</p>
       <div class="design-article-description">
         <!-- <p class="checklist"><span><i></i></span> 녹색, 빨간색 및 주황색은 양식 유효성 검사 및 메시징과 같은 특별한 경우에만 사용됩니다.</p> -->
         <!-- <p class="checklist"><span><i></i></span> todo: 다크테마를 위한 elevation800을 추가하고 400을 조정. 다크테마를 위한 gradient 정의하기.</p> -->
+        <p class="checklist"><span><i></i></span> todo 두 테마에서 모두 동일한 색으로으로 보여야 하는 케이스를 정의.</p>
         <p class="xlist"><i></i> 다크테마를 위한 인버트 컬러셋을 추가로 정의하지 마세요.</p>
       </div>
 
@@ -378,6 +378,7 @@
       <p class="design-article-description">텍스트 정보.</p>
       <div class="design-article-description">
         <p class="checklist"><span><i></i></span> bottom navigation의 label에는 10px을 사용합니다.</p>
+        <p class="checklist"><span><i></i></span> 태그라인 등을 작은 화면에서 추가적인 개행이 필요하지 않도록 짧고 임팩트있는 문장을 사용하세요. 미리 끊어서 디자인하기. 하지만 이것은 상대적으로 깨기 쉬운 법칙.</p>
         <p class="xlist"><span><i></i></span> 단어나 구문을 underline, bold, primary color로 강조하지 마세요.</p>
         <!-- <p>primary color = link</p> -->
 
@@ -497,10 +498,11 @@
         <p>--space: .75rem;</p>
         <p>--space-small: .5rem;</p>
         <hr />
-        <p>--space-after-title: 2rem</p>
-        <p>--space-after-subhead: 1rem</p>
-        <p>--space-after-description: 2rem</p>
+        <p>--space-after-title: 2rem;</p>
+        <p>--space-after-subhead: 1rem;</p>
+        <p>--space-after-description: 2rem;</p>
         <p>--space-after-button: var(--space) // 버튼 그룹에서 사용.</p>
+        <p>--space-after-atricle: 8rem;
         <hr />
         <p><small>// item 내부에서 시각보정을 위해 사용</small></p>
         <p>--space-leading-title: -.25rem;</p>
@@ -508,7 +510,6 @@
         <hr />
         <p>--space-between-groupitem: .25rem;</p>
         <p>--space-between-groupitem-minus: calc(var(--space-between-groupitem) * -1);</p>
-        <p>--space-between-article: 8rem;</p>
         <hr />
         <p>--space-after-avatar-huge: 1rem;</p>
         <p>--space-after-avatar-large: var(--space);</p>
@@ -540,9 +541,9 @@
       <div class="spacing-card">
         <div class="space" style="height:var(--space-tile-inset);position:absolute;left:0;right:0;top:-1px;"><span class="">var(--space-tile-inset)</span></div>
         <div class="space" style="height:var(--space-tile-inset);position:absolute;left:0;right:0;bottom:-1px;z-index:0;"><span class="">var(--space-tile-inset)</span></div>
-        <div class="space" style="width:var(--space-tile-inset);height:100%;writing-mode:vertical-lr;position:absolute;left:0;top:0;bottom:0;z-index:0;"><span class="">var(--space-tile-inset)</span></div>
-        <div class="space" style="width:var(--space-tile-inset);height:100%;writing-mode:vertical-lr;position:absolute;right:0;top:0;bottom:0;z-index:0;"><span class="">var(--space-tile-inset)</span></div>
-        <p class="typography-paragraph">서브헤드와 디스크립션 혹은 패러그라프는 이렇게 사용하세요. 타이틀의 행간이 조정되었기 때문에 시각보정이 필요할 수도 있어요.</p>
+        <div class="space" style="width:var(--space-tile-inset);height:100%;writing-mode:vertical-lr;position:absolute;left:0;top:0;bottom:0;z-index:0;"><span class="">same</span></div>
+        <div class="space" style="width:var(--space-tile-inset);height:100%;writing-mode:vertical-lr;position:absolute;right:0;top:0;bottom:0;z-index:0;"><span class="">same</span></div>
+        <p class="typography-paragraph">타일 내부의 간격을 정의합니다. 모든 환경에서 동일한 간격을 적용하고 있기 때문에 데스크탑에서 다소 답답해보이기도 합니다.</p>
       </div>
 
       <br />
@@ -551,7 +552,7 @@
       <div class="">
         <h4 class="typography-subhead" style="font-size:var(--font-size-subhead);">선약이 있어서 ✋ <span style="display:block;">자아실현은 못할 것 같아요.</span></h4>
         <div class="space" style="height:var(--space-after-subhead);"><span class="">var(--space-after-subhead)</span></div>
-        <p class="typography-paragraph">서브헤드와 디스크립션 혹은 패러그라프는 이렇게 사용하세요. 타이틀의 행간이 조정되었기 때문에 시각보정이 필요할 수도 있어요. line-height를 조정해야 하는 경우를 정의해야 합니다.</p>
+        <p class="typography-paragraph">서브헤드와 디스크립션 혹은 패러그라프는 이렇게 사용하세요. 타이틀의 행간이 조정되었기 때문에 시각보정이 필요할 수도 있어요. line-height 조절이 필요할 수도 있습니다.</p>
         <div class="space" style="height:var(--space-after-description);"><span class="">var(--space-after-description)</span></div>
         <time class="typography-caption">10 January, 2020 (버튼 그룹이 올 수 있음)</time>
         <!-- <footer class="card-foot">
@@ -618,7 +619,7 @@
       
       <div class="design-article-description">
         <!-- <p>아이콘/텍스트 leading에 맞춰 시각보정이 필요. line-height 때문. tile이 아니더라도 elevated 스타일이 적용되는 케이스 존재.</p> -->
-        <p class="checklist"><span><i></i></span> '클릭할 수 있음'의 기표로 elevated 스타일을 사용합니다.  타일 전체가 하나의 클릭 가능한 영역일 수도, 타일 내부에 클릭 가능한 요소가 포함되어 있을 수도 있습니다.</p>
+        <p class="checklist"><span><i></i></span> '클릭할 수 있음'의 기표로 elevated 스타일을 사용합니다.  타일 전체를 클릭할 수도 있고, 타일 내부에 클릭 가능한 요소를 포함할 수도 있습니다.</p>
         <p class="xlist"><i></i> 페이지 레벨의 타이틀, 디스크립션을 타일로 만들지 마세요.</p>
       </div>
 
@@ -640,6 +641,22 @@
         <b>elevated</b> is clickable. target or children. 
       </div>
       
+    </article>
+
+    <article class="design-article js-scrollspy-section">
+      <h1 class="design-article-title">Containers</h1>
+      <p class="design-article-description">페이지, 섹션 레벨의 레이아웃. 현대 유아이에서 컨테이너의 개념이 모호한 이유는 모바일에서는 섹션, 아티클, 심지어 하나의 컴포넌트가 페이지의 맥락이 될 수 있어서.</p>
+      <div class="design-article-description">
+        <p class="checklist"><span><i></i></span> 그리드 시스템을 사용하지 않습니다. 그리드 시스템을 구현하는 것은 효율이 떨어지며 모바일 퍼스트, 가로 스크롤 트랜드와 부합하지 않습니다. 칼럼의 수를 제한하고, 컨테이너와 컨테이너 내부에서 사용하는 아이템의 크기와 간격을 정의하는 것이 도움이 됩니다.</p>
+        <p class="checklist"><span><i></i></span> 행동 패턴에 따라 컨테이너 모듈의 대비를 주기. 예를 들어, 비밀번호찾기는(어떤 맥락인지 설명 추가하기) 로그인/회원가입과 조금 큰 컨테이너 모듈.</p>
+        <p class="checklist"><span><i></i></span> 약간 다른 맥락이지만 설정, 글쓰기 등의 페이지에서는 배경색으로 일반적인 페이지와 대비를 주기.</p>
+        
+      </div>
+      <code class="design-article-description" style="padding:1rem;">
+        <p>@mixin container-large {}</p>
+        <hr />
+        <p>@mixin container-page {}</p>
+      </code>
     </article>
 
     <!-- <article class="design-article js-scrollspy-section">
@@ -665,7 +682,7 @@
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">States</h1>
       <!-- <p class="design-article-description">카드 또는 아이템의 hover state로 여러 개의 코드 또는 스타일이 필요하지 않습니다. 하나의 mixin을 정의.</p> -->
-      <p class="design-article-description">...</p>
+      <p class="design-article-description">가능한 스타일을 통일하여 디자인/개발 비용을 줄이고 사용자가가 인지하기 쉽도록.</p>
 
       <!-- https://material.io/design/interaction/states.html -->
 
@@ -694,20 +711,6 @@
         <span class="textfield-check" style="position:relative;right:auto;top:auto;background:var(--gray100);"><i class="icon-check" style="border-color:var(--color-primary);"></i></span>
         <span class="textfield-check" style="position:relative;right:auto;top:auto;background:var(--gray100);"><i class="icon-x is-red"></i></span>
       </div>
-    </article>
-
-    <article class="design-article js-scrollspy-section">
-      <h1 class="design-article-title">Containers</h1>
-      <p class="design-article-description">페이지, 섹션 레벨의 레이아웃. 현대 유아이에서 컨테이너의 개념이 모호한 이유는 모바일에서는 섹션, 아티클, 심지어 하나의 컴포넌트가 페이지의 맥락이 될 수 있어서.</p>
-      <div class="design-article-description">
-        <p class="checklist"><span><i></i></span> 그리드 시스템.</p>
-        <p class="checklist"><span><i></i></span> 비밀번호찾기는(어떤 맥락인지 설명 추가하기) 로그인/회원가입과 다른 컨테이너 모듈을 사용합니다.</p>
-      </div>
-      <code class="design-article-description" style="padding:1rem;">
-        <p>@mixin container-large {}</p>
-        <hr />
-        <p>@mixin container-page {}</p>
-      </code>
     </article>
 
     <article class="design-article js-scrollspy-section">
@@ -753,7 +756,7 @@
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">z-index</h1>
       <p class="design-article-description"></p>
-      <!-- <dl>
+      <dl>
         <dt>toast</dt>
         <dd>9</dd>
         <dt>modal</dt>
@@ -762,9 +765,15 @@
         <dd>6</dd>
         <dt>navigation</dt>
         <dd>5</dd>
+        <dt>fixed...</dt>
+        <dd>?</dd>
         <dt>popover</dt>
         <dd>2</dd>
-      </dl> -->
+        <dt>default</dt>
+        <dd>1</dd>
+        <dt>temp</dt>
+        <dd>-1</dd>
+      </dl>
     </article>
 
     <article class="design-article js-scrollspy-section">
