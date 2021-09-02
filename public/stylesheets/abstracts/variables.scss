@@ -57,7 +57,6 @@ $transition-fade: opacity 0.15s linear;
   --font-line-height: 1.8;
 
   --font-letter-spacing: 0;
-
   --letter-spacing-heading: 0;
 
   // ! colours
@@ -173,8 +172,8 @@ $transition-fade: opacity 0.15s linear;
 
   --size-layout-max-width: 0;
 
-  --transition-quickly: 0;
-  --transition-slowly: 0;
+  --duration-quickly: 0;
+  --duration-slowly: 0;
 
   --card-background: #fff;
   --card-border: 1px solid #fff;
@@ -221,8 +220,6 @@ $transition-fade: opacity 0.15s linear;
 
   --safearea-inset-bottom1: constant(safe-area-inset-bottom);
   --safearea-inset-bottom2: env(safe-area-inset-bottom);
-
-
 
   --button-background: 0;
   --button-border: 0;

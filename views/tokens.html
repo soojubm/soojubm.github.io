@@ -114,6 +114,10 @@
       <p class="design-article-description">주로 세로 크기에 사용하며, alert, accodion 등의 컴포넌트에서는 유연하게 사용하세요.</p>
       <!-- <p class="design-article-description">alert, accordion 등 예외 케이스.</p> -->
       <code class="design-article-description" style="padding:1rem;">
+        <p>--navbar-height: 80px;</p>
+        <p>--navbar-padding: 2rem;</p>
+        <p>--subheader-height: 2rem; // or titlebar</p>
+        <hr />
         <p>--size-huge: 80px;</p>
         <p>--size-large: 48px;</p>
         <p>--size-medium: 32px;</p>
@@ -250,6 +254,10 @@
         <p>--gray400: #ffffff;</p>
         <p>--gray600: #ffffff; // outdated</p>
         <p>--gray800: #ffffff;</p>
+        <p>--shadow400: null; // 한 가지로 시작.</p>
+        <p>--shadow-tooltip: null;</p>
+        <p>--shadow-card: 0;</p>
+        <p>--radius400: 4px; // 한 가지로 시작.</p>
         <hr />
         <p>--color-background: var(--gray100);</p>
         <hr />
@@ -410,8 +418,15 @@
         <p>--font-weight-normal: 400;</p>
         <p>--font-weight-bold: 800;</p>
         <hr />
+        <p>// line-height-heading 따위로 나누지 않는 이유.</p>
         <p>--font-line-height: 1.8;</p>
         <p>--font-line-height-small: 1.4;</p>
+        <hr />
+        <p>@mixin text-title {}</p>
+        <p>@mixin text-subhead {}</p>
+        <p>@mixin text-body {}</p>
+        <p>@mixin text-lable {}</p>
+        <p>@mixin text-caption {}</p>
         <hr />
         <p>@mixin truncate {}</p>
       </code>
@@ -525,6 +540,7 @@
         <p>--space-tile-inset: var(--space);</p>
         <p>--space-tile-inset-small: var(--space-small);</p>
         <hr />
+        <p>--safearea-inset-bottom: null; // inprogress</p>
         <!-- <p style="color:var(--red800);">// 모바일 기준의 하나의 레이아웃을 정의하고, 컨테이너 시스템을 사용합니다.</p> -->
         <p>--grid-column: calc(50% - 2rem);</p>
         <p>--grid-margin: 5%;</p>
@@ -793,8 +809,17 @@
     </article>
 
     <article class="design-article js-scrollspy-section">
-      <h1 class="design-article-title">Timing</h1>
-      <p class="design-article-description">닫는 액션은 0초.</p>
+      <h1 class="design-article-title">Timing (or Animation)</h1>
+      <p class="design-article-description">열린 컴포넌트를 닫을 때는 항상 instantly.</p>
+      <code class="design-article-description" style="padding:1rem;">
+        <p>--bazier-base: cubic-bezier(0.455, 0.03, 0.515, 0.955);</p>
+        <p>--transition-fade: null;</p>
+        <hr />
+        <p>--duration: .4s</p>
+        <p>--duration-instantly: 0s;</p>
+        <p>--duration-slowly: null;</p>
+        <p>--duration-quickly: null;</p>
+      </code>
     </article>
   </section>
 </main>
