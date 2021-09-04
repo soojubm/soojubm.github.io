@@ -17,11 +17,11 @@ const checkbox = ({ checkAllSelector, checkSelector }: Parameter) => ({
   setCheckedEach(checkItems, checkAll) {
     const checkboxElements: HTMLInputElement[] = Array.from(checkItems)
 
-    let isCheckedEvery = checkboxElements.every(checkItem => checkItem.checked)
+    let isCheckedAll = checkboxElements.every(checkItem => checkItem.checked)
     let isCheckedSome = checkboxElements.some(checkItem => checkItem.checked)
-    let isIndeterminate = isCheckedSome && !isCheckedEvery
+    let isIndeterminate = isCheckedSome && !isCheckedAll
 
-    checkAll.checked = isCheckedEvery
+    checkAll.checked = isCheckedAll
     checkAll.indeterminate = isIndeterminate
     checkAll.dataset.indeterminate = isIndeterminate
   },

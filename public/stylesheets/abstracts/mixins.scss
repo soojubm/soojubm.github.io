@@ -48,6 +48,9 @@
 
 @mixin hover-tertiary {border-color:var(--gray800);}
 @mixin hover-text {text-decoration:underline;}
+
+
+@mixin hover-button {border:1px solid var(--gray800);}
 // item in card component // active
 @mixin hover-item {
   // 부모태그에 position: relative;zindex:1;

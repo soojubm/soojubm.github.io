@@ -65,6 +65,8 @@ const DARKTHEME_SELECTOR = '.js-darkmode'
 // document.addEventListener('click', toggleDarkTheme)
 
 async function domEvents() {
+  lazyLoading()
+
   await routePage()
   // detectTheme()
   darkTheme('.js-darkmode')
@@ -437,6 +439,8 @@ function toggleDetails(event) {
 
   const targetElement = event.target.closest('.js-accordion')
 
+  console.log('contains', event.target.contains(targetElement))
+
   let isExpanded = Boolean(targetElement.getAttribute('aria-expanded'))
   targetElement.setAttribute('aria-expanded', String(!isExpanded))
   targetElement.classList.toggle('is-active')
@@ -460,8 +464,6 @@ function revealPassword(event) {
   inputElement.setAttribute('type', inputType)
 }
 
-// lazyLoading()
-
 function lazyLoading() {
   if (
     !('IntersectionObserver' in window) ||
@@ -470,7 +472,8 @@ function lazyLoading() {
   ) {
     // load polyfill now
   }
-  const lazyBackgrounds = [].slice.call(document.querySelectorAll('.subscribe'))
+  const lazyBackgrounds = [].slice.call(document.querySelectorAll('.footer'))
+  console.log('lllzay', lazyBackgrounds)
   const options = {
     root: null,
     rootMargin: '0px 0px 0px 0px',
@@ -485,7 +488,6 @@ function lazyLoading() {
       if (!entry.isIntersecting) return
       observer.unobserve(entry.target)
       fetchData()
-      // entry.target.src = entry.target.dataset.src;
     })
   }
 
@@ -494,14 +496,19 @@ function lazyLoading() {
       const URL =
         'https://gist.githubusercontent.com/prof3ssorSt3v3/1944e7ba7ffb62fe771c51764f7977a4/raw/c58a342ab149fbbb9bb19c94e278d64702833270/infinite.json'
       const response = await fetch(URL)
+
       if (!response.ok) throw 'Something went wrong.'
 
       let data = await response.json()
+
       data.items.forEach(item => {
-        const view = document.querySelector('.design-body')
+        const view = document.querySelector('body')
         if (!view) return
 
-        view.insertAdjacentHTML('beforeend', `<div style="height:200px;background:crimson;color:#fff;text-align:center;">무한스크룔</div>`)
+        view.insertAdjacentHTML(
+          'beforeend',
+          `<div style="height:120px;line-height:120px;background:gold;text-align:center;">무한스크롤 ${item.name}</div>`,
+        )
       })
     } catch (error) {}
   }
@@ -612,6 +619,7 @@ function closeParentElement(event) {
 //     // temp!.style.opacity = String(Math.abs(window.pageYOffset + element.offsetTop) * 0.00125)
 // }), false)
 // })
+
 export function detectTheme() {
   // todo 바로 swithc 셀렉터로
   // todo 같은 기능의 버튼이 여러 군데에 있을 때.

@@ -5,7 +5,7 @@
 
 .pagination-previous:hover,
 .pagination-next:hover,
-.pagination-link:hover {background-color:var(--gray100);}
+.pagination-link:hover {@include hover-button;}
 .pagination-link.is-current {background-color:var(--color-primary);color:var(--gray0);}
 .pagination-ellipsis {@include avatar-medium;border:none;background-color:var(--gray0);color:var(--gray400);letter-spacing:1px;}
 // .pagination-last:before {content:'...';display:block;width:32px;height:32px;cursor:default;}

@@ -22,6 +22,25 @@ export function stopAnimation() {
   )
 }
 
+export function loadLazyImages() {
+  // todo hero 영역 이미지들 안 됨.. 왜
+  if (!('IntersectionObserver' in window)) return
+
+  const targets = document.querySelectorAll('[data-src]')
+  const imageObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return
+
+      const target = entry.target as any // todo
+
+      target.src = target.dataset.src
+      imageObserver.unobserve(target)
+    })
+  })
+
+  targets.forEach(image => imageObserver.observe(image))
+}
+
 // let start = null
 // const element = document.querySelector('.js-navbar')
 

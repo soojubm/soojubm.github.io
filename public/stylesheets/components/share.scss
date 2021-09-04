@@ -5,6 +5,7 @@
     max-width:400px;@include tile-elevated;
 }
 .share-back {@include avatar-medium;position:absolute;right:.5rem;top:.5rem;}
+.share-back:hover {@include hover-button;}
 .share-title {margin:var(--space-leading-subhead) 0 0 0;@include subhead;}
 .share-facebook {display:flex;align-items:center;width:100%;margin:var(--space) 0;position:relative;z-index:var(--zindex-default);}
 .share-facebook:hover {@include hover-item;}
