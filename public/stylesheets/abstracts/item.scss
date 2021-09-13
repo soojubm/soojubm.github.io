@@ -25,11 +25,11 @@
 }
 
 .item {@include item;}
-.item-avatar {float:left;@include avatar-large;margin:0 var(--space) 0 0;background:var(--gray800);}
+.item-avatar {float:left;@include avatar-large;margin:0 var(--space) 0 0;}
 .item-name {font-size:var(--font-size-body);}
 .item-description {color:var(--gray400);}
 .item-action {@include button-secondary;@include button-small;@include position-right-top;right:0;}
-.item-action.is-active {@include button-tertiary;@include button-small;@include position-right-top;right:0;}
+.item-action.is-active {@include button-tertiary;}
 
 .item + .item {margin:var(--space) 0 0 0;}
 .item:hover {@include hover-item;}

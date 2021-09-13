@@ -2,7 +2,7 @@
 // todo 프로필 오버플로우 메뉴보다 낮아야함zindex가
 .titlebar-back {position:relative;z-index:var(--zindex-default);}
 .titlebar-back-icon {@include avatar-medium;transform:rotate(180deg);}
-.titlebar-title {margin:-1px 0 0;padding:0 3rem;font-size:var(--font-size-body);position:absolute;}
+.titlebar-title {margin:-1px 0 0;font-size:var(--font-size-body);position:absolute;left:50%;transform:translateX(-50%);}
 .titlebar-cta {margin-left:auto;}
 .titlebar-cta svg {width:1rem;}
 .titlebar-background {@include bleeding;background-color:var(--gray0);}

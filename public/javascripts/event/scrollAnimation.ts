@@ -14,13 +14,16 @@ const scrollAnimation = ({ selector: selector }) => {
   function callback(entries, observer) {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return
-      
+
       entry.target.classList.toggle(ANIMATED_CLASSNAME, entry.isIntersecting)
 
       // entry.target.classList.add('pulse')
       // entry.target.addEventListener('animationend', event => event.currentTarget.classList.remove(ANIMATED_CLASSNAME));
       // observer.unobserve(entry.target) // once
-      // if(entry.intersectionRatio > 0) {}
+
+      // const isInView = entry.intersectionRatio > 0
+      // if(isInView) { entry.target.classList.add('tada')}
+      // else { entry.target.classList.remove('tada')}
     })
   }
 }

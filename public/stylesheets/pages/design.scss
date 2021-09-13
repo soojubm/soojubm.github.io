@@ -74,7 +74,7 @@
 }
 .stamp p {
   font-size: var(--font-size-subhead);
-  color: var(--color-primary);
+  font-weight: bold;
   margin: 0;
 }
 .stamp .circle {
@@ -88,9 +88,7 @@
   animation: rotation 9.5s linear infinite;
 }
 .stamp .circle span {
-  font-size: 1rem;
-  height: 5vmax;
-  color: var(--color-primary);
+  height: 4vmax;
   position: absolute;
   display: inline-block;
   left: 0;
@@ -100,88 +98,37 @@
 
 
 .char1 {
-  transform: rotate(13deg);
+  transform: rotate(16deg);
 }
 .char2 {
-  transform: rotate(26deg);
+  transform: rotate(32deg);
 }
 .char3 {
-  transform: rotate(39deg);
+  transform: rotate(48deg);
 }
 .char4 {
-  transform: rotate(52deg);
+  transform: rotate(64deg);
 }
 .char5 {
-  transform: rotate(65deg);
+  transform: rotate(80deg);
 }
 .char6 {
-          transform: rotate(78deg);
+  transform: rotate(96deg);
 }
 .char7 {
-          transform: rotate(91deg);
+          transform: rotate(112deg);
 }
 .char8 {
-          transform: rotate(104deg);
+          transform: rotate(128deg);
 }
 .char9 {
-          transform: rotate(117deg);
+          transform: rotate(146deg);
 }
 .char10 {
-          transform: rotate(130deg);
+          transform: rotate(162deg);
 }
 .char11 {
-          transform: rotate(143deg);
-}
-.char12 {
-          transform: rotate(156deg);
-}
-.char13 {
-          transform: rotate(169deg);
-}
-.char14 {
-          transform: rotate(182deg);
-}
-.char15 {
-          transform: rotate(195deg);
-}
-.char16 {
-          transform: rotate(208deg);
-}
-.char17 {
-          transform: rotate(221deg);
-}
-.char18 {
-          transform: rotate(234deg);
-}
-.char19 {
-          transform: rotate(247deg);
-}
-.char20 {
-          transform: rotate(260deg);
-}
-.char21 {
-          transform: rotate(273deg);
-}
-.char22 {
-          transform: rotate(286deg);
-}
-.char23 {
-          transform: rotate(299deg);
-}
-.char24 {
-  transform: rotate(312deg);
-}
-.char25 {
-  transform: rotate(325deg);
-}
-.char26 {
-  transform: rotate(338deg);
-}
-.char27 {
-  transform: rotate(351deg);
-}
-.char28 {
-  transform: rotate(364deg);
+  transform: rotate(178deg);
 }
 
 // background:url(/public/images/soo.png) no-repeat center center var(--gray100);background-size:auto 100%;
@@ -404,3 +351,13 @@
 	background: linear-gradient(to bottom, rgba(37,45,41,0), rgba(37,45,41,.75), rgba(37,45,41,1));
 
 }
+
+
+
+
+.postitem {width:100%;min-height:var(--size-height);}
+.postitem +.postitem {margin:var(--space) 0 0 0;}
+.postitem-cover {@include avatar-huge;float:right;margin:0 0 0 var(--space);}
+.postitem-time {color:var(--gray400);}
+.postitem-title {@include subhead;}
+.postitem-description {margin:var(--space-small) 0 1rem 0;}

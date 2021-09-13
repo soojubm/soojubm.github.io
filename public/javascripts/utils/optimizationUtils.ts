@@ -26,7 +26,6 @@ export function loadLazyImages() {
   // todo hero 영역 이미지들 안 됨.. 왜
   if (!('IntersectionObserver' in window)) return
 
-  const targets = document.querySelectorAll('[data-src]')
   const imageObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return
@@ -38,6 +37,7 @@ export function loadLazyImages() {
     })
   })
 
+  const targets = document.querySelectorAll('[data-src]')
   targets.forEach(image => imageObserver.observe(image))
 }
 

@@ -177,6 +177,9 @@
 .icon-more::before {content:'';display:block;width:3px;height:3px;background:inherit;border-radius:50%;position: absolute;top:-5px;left:50%;margin-left:-1.5px;}
 .icon-more::after {content:'';display:block;width:3px;height:3px;background:inherit;border-radius:50%;position: absolute;top:5px;left:50%;margin-left:-1.5px;}
 
+.is-active .icon-more {background-color:var(--color-primary);}
+.is-active .icon-more::before {background-color:var(--color-primary);}
+.is-active .icon-more::after {background-color:var(--color-primary);}
 // .icon-home {display:inline-block;position:relative;}
 // .icon-home span:nth-of-type(1):before {content:'';display:block;width:10px;height:10px;background:var(--gray800);transform:rotate(45deg);position:absolute;left:2px;top:-9px;}
 // .icon-home span:nth-of-type(1):after {content:'';display:block;width:16px;height:8px;background:var(--gray0);position:absolute;left:-2px;top:-4px;}

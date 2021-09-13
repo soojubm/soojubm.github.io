@@ -244,7 +244,7 @@
     <header class="titlebar js-titlebar" role="navigation">
       <div class="titlebar-background"></div>
       <!-- todo 타이틀영역과, 버튼의 타이틀을 분리 -->
-      <h1 class="titlebar-title js-page-title" title="page title"></h1>
+      <h1 class="titlebar-title js-page-title" title="page title">페이지타이틀</h1>
       <button class="titlebar-back" onclick="javascript:window.location.href='/';">
         <span class="titlebar-back-icon"><i class="icon-arrow"></i></span>
       </button>
@@ -275,15 +275,17 @@
     </nav> -->
 
     <div id="sitemap"></div>
+    <div id="footer"></div>
 
     <div class="footer" style="margin-top:800px;">infinite scroll test</div>
-    <div id="footer"></div>
+
+    
     <aside id="modal"></aside>
 
     <script>
       document.addEventListener('DOMContentLoaded', () => {
-        // renderComponent('sitemap')
-        // renderComponent('footer')
+        renderComponent('sitemap')
+        renderComponent('footer')
       })
 
       async function renderComponent(componentName) {

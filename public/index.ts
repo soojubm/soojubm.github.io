@@ -473,7 +473,6 @@ function lazyLoading() {
     // load polyfill now
   }
   const lazyBackgrounds = [].slice.call(document.querySelectorAll('.footer'))
-  console.log('lllzay', lazyBackgrounds)
   const options = {
     root: null,
     rootMargin: '0px 0px 0px 0px',
@@ -486,6 +485,7 @@ function lazyLoading() {
   function callback(entries, observer) {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return
+
       observer.unobserve(entry.target)
       fetchData()
     })
@@ -520,36 +520,6 @@ function closeParentElement(event) {
 
   targetElement.parentNode.hidden = true
 }
-
-// intersectionObserver
-// if ('IntersectionObserver' in window && 'IntersectionObserverEntry' in window && 'intersectionRatio' in window.IntersectionObserverEntry.prototype) {
-//   const lazyBackgrounds = [].slice.call(document.querySelectorAll('.js-parallax-test'))
-//   const options = {
-//     root: null,
-//     rootMargin: '0px 0px 0px 0px',
-//     threshold: 0.1,
-//   }
-//   let observer = new IntersectionObserver(callback, options)
-
-//   lazyBackgrounds.forEach(element => observer.observe(element))
-// }
-
-// function callback(entries, observer) {
-//   entries.forEach(entry => {
-//     if (!entry.isIntersecting) return
-
-//     if(entry.intersectionRatio > 0) {
-//       entry.target.style.animation = `fadeup 1s fowards ease-out`
-//       entry.target.classList.remove('is-bbb')
-//       entry.target.classList.add('is-aaa')
-
-//       // entry.target.style.opacity = String((rate2 / 100).toFixed(1))
-//     } else {
-//       entry.target.style.animation = 'none'
-//       entry.target.classList.remove('is-aaa')
-//       entry.target.classList.add('is-bbb')
-//     }
-//   })
 
 // const targetElements = document.querySelectorAll<HTMLElement>('.js-parallax-test')
 // const tt = document.querySelector<HTMLElement>('.js-parallax-parent')
