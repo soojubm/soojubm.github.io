@@ -98,11 +98,11 @@ $transition-fade: opacity 0.15s linear;
   --width-popover: 240px;
   --width-dialog: 0;
 
-  --size-huge: 80px;
-  --size-large: 48px;
-  --size-medium: 32px;
-  --size-small: 24px;
-  --size-tiny: 16px;
+  --size-huge: 5rem; // 80px
+  --size-large: 3rem; // 3rem
+  --size-medium: 2rem; // 32px
+  --size-small: 1.5rem; 24px
+  --size-tiny: 1rem; // 1rem
 
   
   --space: .75rem;
