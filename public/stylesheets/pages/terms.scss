@@ -8,10 +8,10 @@
 .terms-archive-link {display:block;margin:0 0 .25rem 0;}
 
 .terms-body {max-width:var(--width-medium);margin:2rem auto;padding:0 4%;box-sizing:border-box;}
-.terms-body h2 {margin:4rem 0 1rem 0;@include subhead;}
+.terms-body h2 {margin:4rem 0 1rem 0;@include text-subhead;}
 .terms-body p {}
 
-.terms-sidebar {width:100%;max-width:320px;background:var(--gray0);padding:8rem 1.5rem;border-right:var(--border100);box-sizing:border-box;overflow-y:auto;position:fixed;top:0;bottom:0;z-index:var(--zindex-default);}
+.terms-sidebar {width:100%;max-width:320px;background:var(--gray0);padding:8rem 1.5rem;border-right:var(--border);box-sizing:border-box;overflow-y:auto;position:fixed;top:0;bottom:0;z-index:var(--zindex-default);}
 .terms-sidebar a {display:block;line-height:40px;}
 
 @media (--breakpoint-large) {
@@ -28,7 +28,7 @@
 
 
 .personal {@include container-medium;}
-.personal-title {margin:0 0 1rem 0;@include subhead;}
+.personal-title {margin:0 0 1rem 0;@include text-subhead;}
 .personal-description {margin:0 0 2rem 0;}
 .personal dl {display:flex;padding:.25rem 0;}
 .personal dl dt {font-weight:var(--font-weight-bold);}

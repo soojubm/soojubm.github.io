@@ -1,22 +1,93 @@
 // @ts-nocheck
-
 // g모든전역 i대소문자구분없이 m멀티라인 u유니코드 y스틱검색 ^시작
 
 // const hName = /^[가-힣]+$/;
 // const hName2 =  /^[가-힣a-zA-Z]+$/;
 // const onlyNumbers = /^[0-9]*$/;
 // const password = /^(?=.*[a-zA-Z])((?=.*\d)|(?=.*\W)).{6,20}$/; // 영숫특
-// const email = /^[a-z0-9_+.-]+@([a-z0-9-]+\.)+[a-z0-9]{2,4}$/;
 // const phone = /^\d{2,3}-\d{3,4}-\d{4}$/; //  ex)123-123-1234
 // const phone2 =  /^01([0|1|6|7|8|9]?)-?([0-9]{3,4})-?([0-9]{4})$/; // 010-0000-0000
 // const url = /^(file|gopher|news|nntp|telnet|https?|ftps?|sftp):\/\/([a-z0-9-]+\.)+[a-z0-9]{2,4}.*$/;
 
-function checkValidity() {
-  validityState.isRequired(values.email)
+const validationMessages = [
+  {
+    value: 'username',
+    messages: {
+      isTooShort: '',
+      isTooLong: '',
+      isSpecialCharacter: '',
+      isEmpty: '',
+    },
+  },
+  {
+    value: 'password',
+    message: {},
+  },
+]
+
+function getValidationMessage(valueType, pattern) {
+  const result = validationMessages.find(item => {
+    if (item.value === valueType) return item[pattern]
+
+    return null
+  })
 }
 
-const validationMessage = {
-  email: '이메일 형식이 아닙니다.',
+export function validateUsername(value: string) {
+  const isTooShort = value.length < 4
+  const isTooLong = value.length > 16
+  const isSpecialCharacter = /[^가-힣ㄱ-ㅎㅏ-ㅣa-zA-Z0-9]/gi.test(value)
+  const isEmpty = !value || value.length === 0
+
+  if (isEmpty) return '닉네임 필수.'
+  if (isTooShort || isTooLong) return '닉네임은 4~16자.'
+  if (isSpecialCharacter) return '닉네임 특수문자 포함 불가능.'
+
+  return ''
+  // getValidationMessage return null
+  // username helperText는 항상 동일하기 때문에 모아둘 필요가 있을까?
+}
+
+export function validateEmail(value: string) {
+  const regex = /^[가-힣a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[가-힣A-Z0-9.-]+\.[A-Z]{2,}$/i
+  const isEmail = regex.test(value.toLowerCase())
+
+  if (!isEmail) return '이메일이 아님.'
+
+  return ''
+}
+
+export function validatePassword(value: string) {
+  const isTooShort = value.length < 8
+
+  if (isTooShort) return '8자 이상.'
+
+  return ''
+}
+
+
+
+
+
+
+
+
+// 일단 함수로만.
+// 자릿수가 안 맞을 때 리턴하는 값이 다르고, 특수문자가 포함되었을 때 리턴하는 값이 다름.
+export function isValidEmail(value: string) {
+  const regex = /^[가-힣a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[가-힣A-Z0-9.-]+\.[A-Z]{2,}$/i
+
+  return regex.test(value.toLowerCase())
+}
+export function isValidPassword(value: string) {
+  return value.length >= 8
+}
+export function isValidUsername(value: string) {
+  // 특수문자 제외, 스페이스 허용 /^[a-zA-Zㄱ-힣0-9|s]*$/;
+  const regex = /^[a-zA-Zㄱ-힣0-9]*$/
+  const isValidLength = value.length >= 4 && value.length <= 16
+
+  return regex.test(value) && isValidLength
 }
 
 export const validityState = {
@@ -28,9 +99,6 @@ export const validityState = {
   },
   isAlphabet(value) {
     return /[a-z]/gi.test(value)
-  },
-  isEmail(value) {
-    return /^[가-힣a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[가-힣A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value.toLowerCase())
   },
   isLowerCase(value) {
     return value === value.toLowerCase()
@@ -44,7 +112,6 @@ export const validityState = {
   isTooShort() {},
 }
 
-// Function receives an input with its properties
 function validateForm(inputProps) {
   const inputName = inputProps.name
   const verifyInputName = {
@@ -82,6 +149,24 @@ document.querySelectorAll('input').forEach(input => {
 //    */
 //   console.log(input.validity)
 // })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // 오류 메시지 사전을 만든다
 // const validityMessage = {

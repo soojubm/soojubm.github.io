@@ -1,15 +1,14 @@
 .dialog {max-width:400px;@include tile-elevated;}
-.dialog-object {position:absolute;left:50%;top:0;z-index:-1;width:100px;transform:translate(-50%, -50%);}
-.dialog-title {font-size:var(--font-size-subhead);font-weight:var(--font-weight-bold);}
+.dialog-head {display:flex;justify-content:space-between;}
+.dialog-head-title {margin:0 auto;@include text-subhead;}
+.dialog-title {@include text-subhead;}
 .dialog-description {margin:.5rem 0 1.5rem;}
-// .dialog-footer {display:flex;justify-content:space-around;margin:2rem -1.5rem -1.5rem;padding:.25rem;border-top:var(--border100);}
-// .dialog-footer button {width:100%;}
-// .dialog-footer-close {@include button-text;color:var(--gray400);}
-// .dialog-footer-confirm {@include button-text;color:var(--color-primary);}
-.dialog-footer {display:flex;justify-content:space-between;margin:2rem 0 0;}
-.dialog-footer-close {@include button-tertiary;width:var(--grid-column)}
+.dialog-footer {display:flex;flex-direction:row-reverse;justify-content:space-between;margin:2rem 0 0;}
 .dialog-footer-confirm {@include button-primary;width:var(--grid-column)}
+.dialog-footer-cancel {@include button-tertiary;width:var(--grid-column)}
 .dialog-close {@include avatar-medium;@include position-right-top;}
+
+
 
 .toast {position:fixed;left:1rem;bottom:1rem;z-index:var(--zindex-toast);}
 @media (--breakpoint-small) {

@@ -59,15 +59,16 @@
 
 .icon-search {}
 .icon-search:before {content: '';display: block;width:10px;height:10px;border-radius:50%;margin:0 auto;border:2px solid var(--gray800);transform:translateX(-1px)}
-.icon-search:after {content: '';display: block;width:6px;height:2px;background: var(--gray800);margin:0 auto;border-radius:var(--radius400);transform: rotate(45deg) translate(3px,-5px);}
+.icon-search:after {content: '';display: block;width:6px;height:2px;background: var(--gray800);margin:0 auto;border-radius:var(--radius);transform: rotate(45deg) translate(3px,-5px);}
 .is-active .icon-search:before {content:'';width:10px;height:2px;background-color:var(--gray800);position:absolute;left:50%;top:50%;transform: translate(-50%, -50%) rotate(45deg);border:none;border-radius:0;}
 .is-active .icon-search:after {content:'';width:2px;height:10px;background:var(--gray800);position:absolute;left:50%;top:50%;transform:translate(-50%, -50%) rotate(45deg);}
 
 
 // sort
-.icon-caret {display:inline-block;vertical-align:middle;width:0;height:0;border-top:4px solid var(--gray800);border-left:4px solid transparent;border-right:4px solid transparent;border-radius:var(--radius400);}
+.icon-caret {display:inline-block;vertical-align:middle;width:0;height:0;border-top:4px solid var(--gray800);border-left:4px solid transparent;border-right:4px solid transparent;border-radius:var(--radius);}
 .icon-caret.is-left {transform:rotate(90deg);}
 .icon-caret.is-right {transform:rotate(-90deg);}
+.is-active .icon-caret {border-top-color:var(--color-primary);}
 
 // 지워도 됨
 // .icon-exclamation {display:inline-block;vertical-align:middle;width:16px;height:16px;border:1px solid;border-radius:50%;position:relative;}

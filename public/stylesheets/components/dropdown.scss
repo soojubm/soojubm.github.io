@@ -6,7 +6,7 @@
 .dropdown-trigger-icon {@include avatar-small;@include chip-tailing;}
 
 .is-active .icon-caret {transform:rotate(180deg);}
-.is-active .icon-morevert {background-color:var(--gray0);}
+.is-active .icon-more {background-color:var(--gray0);}
 
 .dropdown-menu {@include tile-elevated-small;min-width:var(--width-dropdown);padding:0;position:absolute;z-index:var(--zindex-popover);height:0;transform:scale(0);transform-origin:left top;}
 

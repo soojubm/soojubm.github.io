@@ -1,13 +1,13 @@
-// .banner {display:flex;justify-content:center;align-items:center;padding:2rem 0;border-radius:var(--radius400);background:var(--gray0);border:1px solid var(--color-box-border);text-align:center;position:relative;}
+// .banner {display:flex;justify-content:center;align-items:center;padding:2rem 0;border-radius:var(--radius);background:var(--gray0);border:1px solid var(--color-box-border);text-align:center;position:relative;}
 // .banner-image {margin:0 1rem 0 -4rem;}
-// .banner-title {margin:0 2rem 0 0;@include subhead;}
+// .banner-title {margin:0 2rem 0 0;@include text-subhead;}
 // .banner-button {@include button-secondary;}
 
-.banner {padding:2rem var(--grid-margin);border-radius:var(--radius400);text-align:center;position:relative;}
+.banner {padding:2rem var(--grid-margin);border-radius:var(--radius);text-align:center;position:relative;}
 .banner-background {@include bleeding;}
 .banner-image {@include avatar-large;}
 .banner-eyebrow {@include tag;margin:0 0 .5rem 0;}
-.banner-title {@include title;}
+.banner-title {@include text-title;}
 .banner-description {margin:1rem 0;}
 .banner-button {@include button-text;}
 

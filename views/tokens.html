@@ -25,14 +25,11 @@
     </div>
   </div>
 
-  <section style="font-size:1.5rem;letter-spacing:-.025rem;">
-    <p style="padding:1rem 5%;border-bottom:1px solid var(--gray200);"><b>메모</b></p>
-    <!-- <p style="padding:1rem 5%;border-bottom:1px solid var(--gray200);">디바이스의 또는 접속 환경에 따라 구별하지 않습니다.</p>
-    <p style="padding:1rem 5%;border-bottom:1px solid var(--gray200);">최소한의 에셋으로. 예를 들면, 왜 gray600이 필요하지 않은가? + 위계 설정에 대비를 2개 이상 적용하지 않는다.</p> -->
-    <!-- <p style="padding:1rem 5%;border-bottom:1px solid var(--gray200);">가이드가 없는 디자인이 틀린 것은 아니다.</p> -->
-    <p style="padding:1rem 5%;border-bottom:1px solid var(--gray200);">modal, toast, popover 등는 UI가 아니라 기능(?)에 가까움.</p>
-    <p style="padding:1rem 5%;border-bottom:1px solid var(--gray200);">todo. pattern으로 정의할 필요가 있는 것. tile, item / base 네이밍 생략?</p>
-  </section>
+  <!-- <section style="font-size:1.5rem;letter-spacing:-.025rem;">
+    <p style="padding:1rem 5%;border-bottom:1px solid var(--gray200);">디바이스의 또는 접속 환경에 따라 구별하지 않습니다.</p>
+    <p style="padding:1rem 5%;border-bottom:1px solid var(--gray200);">최소한의 에셋으로. 예를 들면, 왜 gray600이 필요하지 않은가? + 위계 설정에 대비를 2개 이상 적용하지 않는다.</p>
+    <p style="padding:1rem 5%;border-bottom:1px solid var(--gray200);">modal, toast, popover 등는 UI가 아니라 기능(?)에 가까움. todo. pattern으로 정의할 필요가 있는 것. tile, item / base 네이밍 생략?</p>
+  </section> -->
 
   <!-- <nav class="sidebar">
     <h4 class="sidebar-heading" style="margin-top:-.25rem;">대분류</h4>
@@ -62,7 +59,7 @@
       <h6 class="title-bordered">클릭Clickable</h6>
       <span style="display:block;color:var(--color-primary);cursor:pointer;">브랜드 컬러 텍스트는 대부분 클릭할 수 있다.</span>
       <span style="display:block;margin:var(--space) 0;cursor:pointer;">❤️ 아이콘이나 이모지가 있으면 대부분 클릭할 수 있다.</span>
-      <span style="display:block;padding:var(--space-small);box-sizing:border-box;margin:var(--space) 0;background:var(--gray100);border-radius:var(--radius400);cursor:pointer;">연한 회색의 오브젝트는 대부분 클릭할 수 있다.</span>
+      <span style="display:block;padding:var(--space-small);box-sizing:border-box;margin:var(--space) 0;background:var(--gray100);border-radius:var(--radius);cursor:pointer;">연한 회색의 오브젝트는 대부분 클릭할 수 있다.</span>
       <div class="tile-elevated" style="cursor:pointer;">
         <p style="margin-top:var(--space-leading-subhead);margin-bottom:var(--space);">elevated 오브젝트는 대부분 클릭할 수 있다. 또는 오브젝트 내부에 클릭할 수 있는 요소가 존재한다.</p>
         <footer>
@@ -72,7 +69,7 @@
 
       <br />
 
-      <h6 class="title-bordered">non-clickable 또는 비활성disabled, 읽기전용readonly</h6>
+      <h6 class="title-bordered">non-clickable(비활성disabled, 읽기전용readonly)</h6>
       <div class="tile-elevated-small" style="opacity:.5;cursor:not-allowed;box-shadow:none;">
         <p>샘플. 투명도 0.5 / 커서 not-allowed / flat style (그림자 제거)</p>
       </div>
@@ -80,24 +77,24 @@
       <br />
 
       <h6 class="title-bordered">외부 링크external link</h6>
-      <i class="icon-arrow is-external"></i>
+      <figure class="chip"><i class="icon-arrow is-external"></i></figure>
 
       <br />
 
       <h6 class="title-bordered">확장Expanable & Collapsible</h6>
-      <div><i class="icon-chevron" style="display:inline-block;transform:rotate(45deg);"></i></div>
-      <div><i class="icon-caret" style="display:inline-block;"></i></div>
+      <figure class="chip"><i class="icon-chevron" style="display:inline-block;transform:rotate(45deg);"></i></figure>
+      <figure class="chip" style="margin:var(--space-small) 0 0 0;"><i class="icon-caret" style="display:inline-block;"></i></figure>
 
 
       <br />
 
       <h6 class="title-bordered">모두보기view all -> 페이지 전환</h6>
-      <div><i class="icon-chevron" style="display:inline-block;"></i></div>
+      <figure class="chip"><i class="icon-chevron" style="display:inline-block;"></i></figure>
 
       <br />
 
       <h6 class="title-bordered">닫기removable / memo: cursor(pinterest)</h6>
-      <div><i class="icon-x" style="display:inline-block;"></i></div>
+      <figure class="chip"><i class="icon-x" style="display:inline-block;"></i></figure>
 
       <!-- <h6 class="title-bordered">selection</h6>
       <h6 class="title-bordered">click - tag 컴포넌트/화살표/아이콘 아이템 전체가 클릭 영역</h6>
@@ -109,18 +106,18 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Sizes</h1>
-      <p class="design-article-description">주로 세로 크기에 사용하며, alert, accodion 등의 컴포넌트에서는 세로 크기를 정의하지 않고 유연하게 사용하세요.</p>
+      <p class="design-article-description">반응형 엘리먼트에서 가로 사이즈는 비교적 유연하게 사용하기 때문에, 주로 세로 크기에 사용합니다. alert, accodion 등의 컴포넌트에서는 정의하지 않은 세로 크기를 사용할 수 있습니다. 오히려 권장(글줄이 2개 이상이 될 수 있는 경우)</p>
       <!-- <p class="design-article-description">alert, accordion 등 예외 케이스.</p> -->
       <code class="design-article-description" style="padding:1rem;">
+        <p>--size-huge: 5rem;</p>
+        <p>--size-large: 3rem;</p>
+        <p>--size-medium: 2rem;</p>
+        <p>--size-small: 1.5rem;</p>
+        <p>--size-tiny: 1rem;</p>
+        <hr />
         <p>--navbar-height: 80px;</p>
         <p>--navbar-padding: 2rem;</p>
         <p>--subheader-height: 2rem; // or titlebar</p>
-        <hr />
-        <p>--size-huge: 80px;</p>
-        <p>--size-large: 48px;</p>
-        <p>--size-medium: 32px;</p>
-        <p>--size-small: 24px;</p>
-        <p>--size-tiny: 16px;</p>
         <hr />
         <p>--button-height-medium: var(--size-large);</p>
         <p>--button-height-small: var(--size-medium);</p>
@@ -229,15 +226,20 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Palette</h1>
-      <p class="design-article-description">background/border/text/state. todo: --button-background-color와 같은 변수는 불필요하다. 왜냐하면 버튼의 각 스타일을 개별적으로 사용하는 경우는 없기 때문에 관리해야 하는 에셋만 많아진다. 바로 mixin 하면 되겠다.</p>
+      <p class="design-article-description">background/border/text/state.</p>
+
       <div class="design-article-description">
-        <!-- <p class="checklist"><span><i></i></span> 녹색, 빨간색 및 주황색은 양식 유효성 검사 및 메시징과 같은 특별한 경우에만 사용됩니다.</p> -->
-        <!-- <p class="checklist"><span><i></i></span> todo: 다크테마를 위한 elevation800을 추가하고 400을 조정. 다크테마를 위한 gradient 정의하기.</p> -->
-        <p class="checklist"><span><i></i></span> todo 두 테마에서 모두 동일한 색으로으로 보여야 하는 케이스를 정의.</p>
-        <p class="xlist"><i></i> 다크테마를 위한 인버트 컬러셋을 추가로 정의하지 마세요.</p>
+        <p class="checklist"><span><i></i></span> red는 양식 유효성 검사 및 alert 맥락에서 사용합니다.</p>
+        <p class="xlist"><i></i> 다크테마를 위한 인버트 컬러셋을 추가로 정의하지 마세요. todo: 두 테마에서 모두 동일한 색으로으로 보여야 하는 케이스 정의. todo: 다크테마를 위한 gradient 정의.</p>
+        <!-- <p class="checklist"><span><i></i></span> todo: 다크테마를 위한 elevation800을 추가하고 400을 조정. </p> -->
       </div>
 
-      <button class="user-logout js-darkmode2" title="change theme" style="border-radius:var(--radius400);box-shadow:var(--shadow400);padding:.5rem;border:var(--border100);">
+      <blockquote>
+        <p><span style="color:var(--gray800);">Why!</span> 왜 --button-background-color를 정의하지 않나요?</p>
+        버튼에서 사용하는 수치를 다른 곳에서 재사용하는 경우는 없기 때문입니다. 관리해야 하는 에셋이 많아지기 때문에 버튼을 mixin하여 사용하세요. => 문제! 토큰을 관리하기 어렵다.
+      </blockquote>
+
+      <button class="user-logout js-darkmode2" title="change theme" style="border-radius:var(--radius);box-shadow:var(--shadow);padding:.5rem;border:var(--border);">
         <figure class="user-logout-icon"><i class="icon-moon"></i></figure>
         <span class="user-logout-label">어둡게 보기</span>
         <span class="switch" style="margin-left:auto;">
@@ -252,10 +254,10 @@
         <p>--gray400: #ffffff;</p>
         <p>--gray600: #ffffff; // outdated</p>
         <p>--gray800: #ffffff;</p>
-        <p>--shadow400: null; // 한 가지로 시작.</p>
+        <p>--shadow: null; // 한 가지로 시작.</p>
         <p>--shadow-tooltip: null;</p>
         <p>--shadow-card: 0;</p>
-        <p>--radius400: 4px; // 한 가지로 시작.</p>
+        <p>--radius: 4px; // 한 가지로 시작.</p>
         <hr />
         <p>--color-background: var(--gray100);</p>
         <hr />
@@ -385,10 +387,9 @@
 
     <article class="design-article typography js-scrollspy-section">
       <h1 class="design-article-title">Typography</h1>
-      <p class="design-article-description">텍스트 정보.</p>
+      <p class="design-article-description">텍스트.</p>
       <div class="design-article-description">
-        <p class="checklist"><span><i></i></span> bottom navigation의 label에는 10px을 사용합니다.</p>
-        <p class="checklist"><span><i></i></span> 태그라인 등은 작은 화면에서 추가적인 개행이 필요하지 않도록 짧고 임팩트있는 문장을 사용하세요. 미리 끊어서 디자인하기. 하지만 이것은 상대적으로 깨기 쉬운 법칙.</p>
+        <p class="checklist"><span><i></i></span> 태그라인은 작은 화면에서 개행하지 짧고 임팩트있는 문장을 사용하세요. 미리 끊어서 디자인하기. 하지만 이것은 상대적으로 깨기 쉬운 법칙.</p>
         <p class="xlist"><span><i></i></span> 단어나 구문을 underline, bold, primary color로 강조하지 마세요.</p>
         <!-- <p>primary color = link</p> -->
 
@@ -398,6 +399,11 @@
         <p class="checklist"><span><i></i></span> <b class="token-item-tag" data-appearance="secondary" style="margin:0 0 0 var(--space);">예외</b> bottom navigation에서 레이블의 폰트 크기를 10px로 사용합니다. </p>
         <p class="checklist"><span><i></i></span> memo: 타이틀의 역할을 하는 텍스트는 단어 하나(타이틀)가 될 수도, 태그라인이 될 수도 있다. 태그라인일 경우 글자수와 단어수를 제한하고, 개행 조건도 정의하자. 작은 디바이스에서도 최대한 맞게.</p> -->
       </div>
+      <blockquote>
+        <span style="color:var(--gray800);">예외 케이스</span>
+        bottom navigation의 label에서 10px을 사용합니다.
+      </blockquote>
+
       <!-- <li>asap의 dash를 마이너스로 쓰면 어색. 무게가 살짝 다름. role에 따라 구분하자. caption, helper 등 같은 값을 가지는 텍스트로 따로 모듈화하는 것이 좋겠다. letter-spacing은 크기마다 다르게 적용하시요</li> -->
 
       <button class="user-logout tile-elevated-small js-default-font" title="change theme">
@@ -510,7 +516,7 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Spacing</h1>
-      <p class="design-article-description">간격. inset을 1.5rem으로 사용하면 모바일에서 공간이 큼.</p>
+      <p class="design-article-description">간격.</p>
       <code style="padding:1rem;">
         <p>--space: .75rem;</p>
         <p>--space-small: .5rem;</p>
@@ -525,8 +531,8 @@
         <p>--space-leading-title: -.25rem;</p>
         <p>--space-leading-subhead: -.125rem;</p>
         <hr />
-        <p>--space-between-groupitem: .25rem;</p>
-        <p>--space-between-groupitem-minus: calc(var(--space-between-groupitem) * -1);</p>
+        <p>--space-before-groupitem: .25rem;</p>
+        <p>--space-before-groupitem-minus: calc(var(--space-before-groupitem) * -1);</p>
         <hr />
         <p>--space-after-avatar-huge: 1rem;</p>
         <p>--space-after-avatar-large: var(--space);</p>
@@ -588,33 +594,33 @@
           <span class="avatar-badge"></span>
         </figure>
         <!-- <div style="width:var(--space-after-avatar-huge);height:var(--size-huge);background:var(--green800);border-radius:4px;position:absolute;left:calc(var(--size-huge) + var(--space-small));"></div> -->
-        <h3 style="font-size:var(--font-size-subhead);font-weight:var(--font-weight-bold);">huge 80px / space 1rem</h3>
+        <h3 style="font-size:var(--font-size-subhead);font-weight:var(--font-weight-bold);">huge 5rem / space 1rem</h3>
         <p style="color:var(--gray400);">huge와 large는 디스크립션을 가집니다.</p>
       </article>
-      <div class="space" style="height:var(--space);">var(--space-between-groupitem)</div>
+      <div class="space" style="height:var(--space);">var(--space-before-groupitem)</div>
       <article class="item tile-flat-small" data-size="large">
         <figure class="item-avatar"></figure>
         <!-- <div style="width:var(--space-after-avatar-large);height:48px;background:var(--green800);box-sizing:border-box;border-radius:4px;position:absolute;left:calc(var(--size-large) + var(--space-small));"></div> -->
-        <h3 style="font-weight:var(--font-weight-bold);font-size:var(--font-size-body);">large 48px / space 1rem</h3>
+        <h3 style="font-weight:var(--font-weight-bold);font-size:var(--font-size-body);">large 3rem / space 1rem</h3>
         <p style="color:var(--gray400);">huge와 large는 디스크립션을 가집니다.</p>
       </article>
-      <div class="space" style="height:var(--space);">var(--space-between-groupitem)</div>
+      <div class="space" style="height:var(--space);">var(--space-before-groupitem)</div>
       <article class="item tile-flat-small" data-size="medium">
         <figure class="item-avatar"></figure>
         <!-- <div style="width:var(--space-after-avatar-medium);height:32px;background:var(--green800);box-sizing:border-box;border-radius:4px;position:absolute;left:calc(var(--size-medium) + var(--space-small));"></div> -->
-        <p style="display:block;width:calc(100% - 32px - 1rem);height:32px;line-height:32px;">medium 32px / space .5rem</p>
+        <p style="display:block;width:calc(100% - 32px - 1rem);height:32px;line-height:32px;">medium 2rem / space .5rem</p>
       </article>
-      <div class="space" style="height:var(--space);">var(--space-between-groupitem)</div>
+      <div class="space" style="height:var(--space);">var(--space-before-groupitem)</div>
       <article class="item tile-flat-small" data-size="small">
         <figure class="item-avatar"></figure>
         <!-- <div style="display:block;width:var(--space-after-avatar-small);height:24px;background:var(--green800);box-sizing:border-box;border-radius:4px;position:absolute;left:calc(var(--size-small) + var(--space-small));"> -->
           <!-- <span class="space">var(--space-after-avatar-small)</span> -->
         </div>
-        <p style="width:calc(100% - 24px - .5rem);height:24px;line-height:24px;">small 24px / space .5rem</p>
+        <p style="width:calc(100% - 24px - .5rem);height:24px;line-height:24px;">small 1.5rem / space .5rem</p>
       </article>
       <!-- <div style="display:flex;">
         <a href="#" class="design-article-avatar-tiny"></a>
-        <div style="display:block;width:.5rem;height:inherit;border-radius:var(--radius400);background:var(--green100);box-sizing:border-box;"></div>
+        <div style="display:block;width:.5rem;height:inherit;border-radius:var(--radius);background:var(--green100);box-sizing:border-box;"></div>
         <div style="display:block;width:calc(100% - 16px - .5rem);height:inherit;font-size:var(--font-size-caption);line-height:16px;">tiny 16px</div>
       </div> -->
 
@@ -643,8 +649,6 @@
 
       <!-- <li></li> -->
       <!-- <li><span class="token-item-tag">내부 옵션을 리스트업.</span></li> -->
-        <!-- <p class="checklist"><span><i></i></span> history: padding 1.5rem에서 1rem으로 변경하고 두 가지 사이즈로 확장. 1.5rem 단일 사이즈로 사용 시 모바일에서 공간이 큼.</p> -->
-
       <blockquote>
         <dl class="design-article-description">
           <dt>Medium</dt><dd>padding 1rem</dd>
@@ -700,7 +704,7 @@
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">States</h1>
       <!-- <p class="design-article-description">카드 또는 아이템의 hover state로 여러 개의 코드 또는 스타일이 필요하지 않습니다. 하나의 mixin을 정의.</p> -->
-      <p class="design-article-description">가능한 스타일을 통일하여 디자인/개발 비용을 줄이고 사용자가가 인지하기 쉽도록. todo: pagination, slider 등에서 icon button의 hover 스타일을 통일하기.</p>
+      <p class="design-article-description">일관된 스타일로 사용자의 인지를 돕고, 제품 개발 효율을 높입니다.</p>
 
       <!-- https://material.io/design/interaction/states.html -->
       <code class="design-article-description" style="padding:1rem;">
@@ -711,9 +715,9 @@
         <p>--active-border-color: null;</p>
         <p>--active-background-color: null;</p>
         <p>--disabled-opacity: .5;</p>
-        <p>--warning-text-color: null;
-        <p>--warning-background-color: null;
-        <p>--warning-border-color: null;
+        <p>--warning-text-color: null;</p>
+        <p>--warning-background-color: null;</p>
+        <p>--warning-border-color: null;</p>
       </code>
 
       <h6 class="title-bordered">hover - item & card</h6>
@@ -725,7 +729,7 @@
       </button>
       <br />
 
-      <h6 class="title-bordered">selected</h6>
+      <h6 class="title-bordered">selected / active(todo 팔로우/팔로잉)</h6>
       <button class="chip is-active">
         <span class="chip-label">옵션</span>
       </button>
@@ -745,7 +749,9 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Groups</h1>
-      <p class="design-article-description">그룹. 그룹, 리스트박스, 컨테이너의 차이. 리스트박스: 수량에 제한이 없는 일관된 컴포넌트의 집합 / 그룹: 2~3개의 일관된 또는 일관되지 않은 요소의 집합</p>
+      <p class="design-article-description">2~3개의 같은 맥락 요소의 집합.</p>
+      
+      <p class="design-article-description">리스트박스: 수량 제한없는 일관된 컴포넌트의 집합. 컨테이너: 레이아웃.</p>
       <!-- <p class="design-article-description">role=group/row/rowgroup, role=menuitem, role=treeitem</p> -->
       <code class="design-article-description" style="padding:1rem;">
         <p>@mixin group {}</p>
@@ -832,7 +838,7 @@
 
 <footer
 style="max-width: var(--width-large);
-margin: 0 auto;padding:0 5%;"
+margin: 0 auto;padding:0 5%;display:none;"
 >
   <div class="uxsitemap">
     <header>

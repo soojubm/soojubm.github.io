@@ -2,8 +2,8 @@
 
 .cake-head {position:relative;}
 .cake-background {@include bleeding;height:380px;background:url('/public/images/newman.jpg') no-repeat 0 -200px fixed;}
-.cake-head-title {@include title;}
-.cake-head-engtitle {@include subhead;}
+.cake-head-title {@include text-title;}
+.cake-head-engtitle {@include text-subhead;}
 .cake-head-description {margin:1rem 0 0 0;}
 
 .cake-poster {max-width:320px;height:470px;@include tile-elevated-small;overflow:hidden;;position: absolute;right:0;z-index:var(--zindex-default);}
@@ -11,17 +11,17 @@
 .cake-head-button {@include button-primary;min-width:11rem;margin-right:1rem;}
 .cake-head-review {@include button-text;min-width:11rem;}
 
-.cake-meta {max-width:var(--width-large);margin:0 auto;padding:1rem 0;border-radius:var(--radius400);background:var(--gray0);}
+.cake-meta {max-width:var(--width-large);margin:0 auto;padding:1rem 0;border-radius:var(--radius);background:var(--gray0);}
 .cake-meta ul {position:relative;}
 .cake-meta ul li {margin:0 0 .25rem 0;padding:0;}
 .cake-meta ul li::before {display:none;}
 .cake-meta ul li b {float:left;width:72px;margin:0 1rem 0 0;font-weight:normal;color:var(--gray400);}
 .cake-meta-summary {padding:1rem 50% 0 0;}
 
-.cake-info {display:flex;flex-wrap:wrap;max-width:var(--width-large);margin:0 auto;padding:2rem 0 2.25rem;border-top:var(--border100);border-bottom:var(--border100);position:relative;}
+.cake-info {display:flex;flex-wrap:wrap;max-width:var(--width-large);margin:0 auto;padding:2rem 0 2.25rem;border-top:var(--border);border-bottom:var(--border);position:relative;}
 .cake-info + .cake-info {border-top:none;}
 // .cake-info button {@include button-tertiary;position:absolute;left:0;bottom:3rem;}
-.cake-info h2 {width:400px;flex-shrink:0;@include subhead;}
+.cake-info h2 {width:400px;flex-shrink:0;@include text-subhead;}
 .cake-info p {width:calc(100% - 400px);}
 .cake-info footer {margin-left: 400px;margin-top:1rem;}
 
@@ -55,7 +55,7 @@
   width: 100px;
   height: 100px;
   overflow: hidden;
-  border-radius: var(--radius400);
+  border-radius: var(--radius);
   position: relative;
 }
 .person figure:hover {@include hover-item;}

@@ -1,6 +1,6 @@
 .quantity {max-width:8rem;height:var(--size-medium);text-align:center;position:relative;}
-.quantity-input {width:calc(100% - 64px);height:100%;padding-bottom:2px;background:var(--gray100);border:var(--border100);box-sizing:border-box;font-family:inherit;font-size:var(--font-size-body);color:var(--gray800);text-align:center;border-radius:0;} // br = iOS
-.quantity-decrement {width:var(--size-medium);height:var(--size-medium);border:var(--border100);border-radius:var(--radius400) 0 0 var(--radius400);cursor:pointer;position:absolute;left:1px;top:0px;}
-.quantity-increment {width:var(--size-medium);height:var(--size-medium);border:var(--border100);border-radius:0 var(--radius400) var(--radius400) 0;cursor:pointer;position:absolute;right:1px;top:0px;}
+.quantity-input {width:calc(100% - 64px);height:100%;padding-bottom:2px;background:var(--gray100);border:var(--border);box-sizing:border-box;font-family:inherit;font-size:var(--font-size-body);color:var(--gray800);text-align:center;border-radius:0;} // br = iOS
+.quantity-decrement {width:var(--size-medium);height:var(--size-medium);border:var(--border);border-radius:var(--radius) 0 0 var(--radius);cursor:pointer;position:absolute;left:1px;top:0px;}
+.quantity-increment {width:var(--size-medium);height:var(--size-medium);border:var(--border);border-radius:0 var(--radius) var(--radius) 0;cursor:pointer;position:absolute;right:1px;top:0px;}
 .quantity-decrement:disabled {opacity:.5;cursor:not-allowed;}
 .quantity-increment:disabled {opacity:.5;cursor:not-allowed;}

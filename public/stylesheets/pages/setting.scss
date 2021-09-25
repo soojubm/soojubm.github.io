@@ -1,20 +1,26 @@
 .setting {@include container-medium;}
 .setting-head {margin:0 0 2rem;}
-.setting-head-title {@include title;}
+.setting-head-title {@include text-title;}
 .setting-head-description {margin:var(--space-after-title) 0 0 0;}
 
 .setting-body {margin:4rem 0 0;}
 .setting-body-heading {margin:0 0 var(--space) 0;font-size:var(--font-size-body);}
 .setting-body-description {margin:-1rem 0 1.5rem 0;}
 
-.setting-row {display:flex;overflow:hidden;padding:var(--space) 0;border-bottom:var(--border100);box-sizing:border-box;cursor:pointer;position:relative;}
-.setting-row:nth-of-type(1) {border-top:var(--border100);}
+.setting-row {
+  @include tile-elevated;
+  display:flex;overflow:hidden;
+  margin:var(--space) 0;
+  // padding:var(--space) 0;border-bottom:var(--border);box-sizing:border-box;
+  cursor:pointer;position:relative;
+}
+.setting-row:nth-of-type(1) {border-top:var(--border);}
 .setting-row-label {width:100px;font-size:var(--font-size-body);line-height:32px;font-weight:400;color:var(--gray400);}
 .setting-row-value {display:flex;flex-wrap:wrap;align-items:center;width:calc(100% - 10rem);color:var(--gray800);line-height:32px;}
 .setting-row-value-username {width:100%;}
 .setting-row-value-address {width:100%;margin:-.25rem 0;line-height:1.5;}
 .setting-row-value-phone {width:100%;}
-.setting-row-change {@include avatar-medium;font-size:var(--font-size-body);position:absolute;right:0;}
+.setting-row-change {@include avatar-medium;font-size:var(--font-size-body);position:absolute;right:1rem;}
 .setting-row-change b {display:none;background:var(--gray0);transform:translateX(200px);transition:all .5s;position:relative;z-index:var(--zindex-default);}
 .setting-row-change i {}
 .setting-row-form {}
@@ -24,13 +30,13 @@
 .setting-row-foot-cancel {@include button-text;margin:0 0 0 var(--space-after-button);}
 // line-height:24px; 이거 모듈화~!
 .setting-row .textfield {
-  margin: 0 0 1rem 0;
+  margin: 0 0 var(--space) 0;
 }
 .setting-row:hover {}
 .setting-row:hover .setting-row-change b {transform:translateX(0);}
 .setting-row.is-opened {}
 
-.setting-foot {margin:1rem 0;}
+.setting-foot {margin:2rem 0 0 0;}
 .setting-foot-delete {text-decoration:underline;color:var(--gray800);}
 
 .setting-row-form {padding:1rem 0;cursor:default;}

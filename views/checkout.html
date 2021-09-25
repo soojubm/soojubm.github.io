@@ -1,7 +1,6 @@
 <!-- // invoice랑 구분 -->
 
 <form class="checkout">
-  <div class="checkout-step"></div>
   <header class="checkout-head">
     <!-- <div class="checkout-head-eyebrow">주문확인</div> -->
     <div class="checkout-head-background"></div>
@@ -10,6 +9,21 @@
       주문/결제 기능에 필요한 체크아웃 페이지입니다.<br />주문정보와 결제수단을 확인/입력을 위한 최소한의 기능으로 뉴닉에서 사용했습니다.
     </p>
   </header>
+
+  <section class="checkout-step step" style="margin:0 0 2rem 0;">
+    <div class="step-item is-active">
+      <span class="step-item-icon">1</span>
+      <h3 class="step-item-title">장바구니</h3>
+    </div>
+    <div class="step-item">
+      <span class="step-item-icon">2</span>
+      <h3 class="step-item-title">결제</h3>
+    </div>
+    <div class="step-item">
+      <span class="step-item-icon">3</span>
+      <h3 class="step-item-title">주문완료</h3>
+    </div>
+  </section>
 
   <section class="checkout-product">
     <!-- <h2 class="checkout-product-title">주문상품</h2> -->
@@ -37,7 +51,7 @@
 
   <fieldset class="checkout-shipping">
     <h2 class="checkout-shipping-title">배송정보</h2>
-    <div class="setting-row" style="width:100%;margin:0 0 2rem 0;">
+    <div class="setting-row" style="width:100%;margin:0 0 var(--space) 0;">
       <h2 class="setting-row-label">배송지</h2>
       <div class="setting-row-value">
         <p class="setting-row-value-username">이경수</p>
@@ -46,21 +60,22 @@
       </div>
       <span class="setting-row-change"><b>저장하기</b> <i class="icon-arrow"></i></span>
     </div>
-    <div class="checkout-shipping-name textfield">
-      <label class="checkout-shipping-name-label textfield-label">받는 사람</label>
-      <input class="checkout-shipping-name-value textfield-input" type="text" name="email" id="login-email" placeholder="수줍이" />
+    <hr />
+    <div class="tile-elevated" style="display: flex;flex-wrap: wrap;justify-content: space-around;">
+      <div class="checkout-shipping-name textfield">
+        <label class="checkout-shipping-name-label textfield-label">받는 사람</label>
+        <input class="checkout-shipping-name-value textfield-input" type="text" name="email" id="login-email" placeholder="수줍이" />
+      </div>
+      <div class="checkout-shipping-phone textfield">
+        <label class="checkout-shipping-phone-label textfield-label">연락처</label>
+        <input class="checkout-shipping-phone-value textfield-input" type="text" name="email" id="login-email" placeholder="01012345678" />
+      </div>
+      <div class="checkout-shipping-address textfield">
+        <label class="checkout-shipping-address-label textfield-label" for="address">주소</label>
+        <input class="checkout-shipping-address-value textfield-input" type="text" name="email" id="address" placeholder="클릭하여 우편번호 찾기" />
+      </div>
+      <p style="width:100%;margin:var(--space) 0 0 0;">- 주소가 저장되어 있으면 이화면. 누르면 수정화면-주소 저장되어 있지 않으면 수정화면.</p>
     </div>
-    <br />
-    <div class="checkout-shipping-phone textfield">
-      <label class="checkout-shipping-phone-label textfield-label">연락처</label>
-      <input class="checkout-shipping-phone-value textfield-input" type="text" name="email" id="login-email" placeholder="01012345678" />
-    </div>
-    <br />
-    <div class="checkout-shipping-address textfield">
-      <label class="checkout-shipping-address-label textfield-label" for="address">주소</label>
-      <input class="checkout-shipping-address-value textfield-input" type="text" name="email" id="address" placeholder="클릭하여 우편번호 찾기" />
-    </div>
-    <p>- 주소가 저장되어 있으면 이화면. 누르면 수정화면-주소 저장되어 있지 않으면 수정화면.</p>
     <!-- <div class="order-address-address2 textfield">
       <label class="textfield-label" for="login-email">상세주소</label>
       <input class="textfield-input" type="text" name="email" id="login-email" placeholder="" />
@@ -79,7 +94,7 @@
     <h2 class="checkout-payment-title">결제수단</h2>
     <!-- <p class="checkout-payment-description">현재 신용카드 결제만 가능합니다.</p> -->
     <fieldset>
-      <div class="radio theme-button" style="border-bottom:var(--border100);">
+      <div class="radio theme-button" style="border-bottom:var(--border);">
         <input type="radio" id="raidio5" name="gender" value="" checked />
         <label for="raidio5" title="">신용/체크카드</label>
       </div>

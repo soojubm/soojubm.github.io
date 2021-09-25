@@ -1,15 +1,15 @@
 @mixin tile-flat {
   padding: 1rem; // 텍스트가 올 때 시각보정. 아이콘이 오면 아이콘에서 margin-top:.5rem?
-  border: var(--border100);
-  border-radius: var(--radius400);
+  border: var(--border);
+  border-radius: var(--radius);
   box-sizing: border-box;
   background: var(--gray0);
   position: relative;
   // @media (--breakpoint-small) {}
 }
-@mixin tile-elevated {@include tile-flat;box-shadow:var(--shadow400);}
+@mixin tile-elevated {@include tile-flat;box-shadow:var(--shadow);}
 @mixin tile-flat-small {@include tile-flat;padding:.5rem;}
-@mixin tile-elevated-small {@include tile-flat;padding:.5rem;box-shadow:var(--shadow400);}
+@mixin tile-elevated-small {@include tile-flat;padding:.5rem;box-shadow:var(--shadow);}
 
 
 .tile-flat {@include tile-flat;}

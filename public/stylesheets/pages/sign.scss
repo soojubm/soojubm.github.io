@@ -1,7 +1,7 @@
 .login {max-width:var(--width-small);margin:0 auto;padding:2rem 5%;position:relative;}
 .login-head {padding:0 0 1rem 0;}
 .login-head-logo {@include avatar-medium;margin:0 0 var(--space) 0;}
-.login-title {@include title;}
+.login-title {@include text-title;}
 .login-description {margin:1rem 0;font-size:var(--font-size-body);}
 .login-email {margin:var(--space-after-textfield) 0;}
 .login-password {}
@@ -22,17 +22,17 @@
 
 .signup {@include container-small;}
 .signup-head {padding:0 0 1rem 0;}
-.signup-head-title {@include title;}
+.signup-head-title {@include text-title;}
 .signup-head-description {margin:1rem 0 0 0;color:var(--gray800);}
 .signup-foot {margin:2rem 0;}
 .signup-foot-submit {@include button-primary;width:100%;}
 .signup .textfield {margin:var(--space-after-textfield) 0;}
 .signup-terms {}
-.signup-terms-content {height:120px;padding:8px 16px;border:var(--border100);border-radius:var(--radius400);box-sizing:border-box;font-size:var(--font-size-caption);color:var(--gray400);overflow-y:scroll;}
+.signup-terms-content {height:120px;padding:8px 16px;border:var(--border);border-radius:var(--radius);box-sizing:border-box;font-size:var(--font-size-caption);color:var(--gray400);overflow-y:scroll;}
 
 .password {@include container-medium;}
 .password-head {margin-bottom:3rem;position:relative;}
-.password-title {@include title;}
+.password-title {@include text-title;}
 .password-description {margin:1rem 0 0 0;}
 .password-foot {display:flex;align-items:center;justify-content:space-between;margin:var(--space-after-button) 0 0 0;}
 .password-foot-submit {@include button-primary;width:50%;}
@@ -48,9 +48,9 @@
 .delete-head-title {}
 .delete-head-description {margin:1rem 0;}
 .delete-suggest {}
-.delete-suggest-subhead {margin:1rem 0;@include subhead;}
+.delete-suggest-subhead {margin:1rem 0;@include text-subhead;}
 .delete-why {padding:0 0%;}
-.delete-why-title {@include subhead;}
+.delete-why-title {@include text-subhead;}
 .delete-why-description {margin:1rem 0;}
 .delete-action {padding:4rem 0;}
 .delete-action-confirm {@include button-primary;border-color:var(--red800);background:var(--red800);}

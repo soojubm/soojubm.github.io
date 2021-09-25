@@ -46,16 +46,16 @@
   border-radius: 4px;
   box-sizing: border-box;
   border-top-left-radius: 0;}
-// .token-item:nth-of-type(1) {border-top:var(--border100);}
+// .token-item:nth-of-type(1) {border-top:var(--border);}
 .token-item + .token-item {margin:var(--space) 0 0 0;}
-.token-item-avatar {height:var(--size-large);width:100%;border-radius:var(--radius400);background:var(--gray100);}
+.token-item-avatar {height:var(--size-large);width:100%;border-radius:var(--radius);background:var(--gray100);}
 .token-item-name {margin:0 0 .125rem 0;font-size:var(--body);}
 .token-item-description {line-height:var(--font-line-height-small);}
 .token-item-value {}
 .token-item-tags {}
 .token-item-tag {@include hashtag;font-size:var(--font-size-tiny);}
 
-.token-item.is-gray000 figure {border:var(--border100);background:var(--gray0);}
+.token-item.is-gray000 figure {border:var(--border);background:var(--gray0);}
 .token-item.is-gray100 figure {background:var(--gray100);}
 .token-item.is-gray200 figure {background:var(--gray200);}
 .token-item.is-gray400 figure {background:var(--gray400);}
@@ -66,7 +66,7 @@
 .token-item.is-primary100 figure {background:var(--green100);}
 .token-item.is-primary200 figure {background:var(--color-primary);}
 .token-item.is-gradient figure {background-color:none;background-image:linear-gradient(106deg,var(--red800),var(--color-primary));}
-.token-item.is-elevation figure {background:none;box-shadow:var(--shadow400);}
+.token-item.is-elevation figure {background:none;box-shadow:var(--shadow);}
 
 
 
@@ -86,7 +86,7 @@
 
 // .color-group {}
 // .color-group .color-skeleton {@include avatar-large;}
-// .color-gray000 {@include avatar-large;border:var(--border100);background:var(--gray0);}
+// .color-gray000 {@include avatar-large;border:var(--border);background:var(--gray0);}
 // .color-gray100 {@include avatar-large;background:var(--gray100);}
 // .color-gray200 {@include avatar-large;background:var(--gray200);}
 // .color-gray400 {@include avatar-large;background:var(--gray400);}
@@ -97,5 +97,5 @@
 // .color-green100 {@include avatar-large;background:var(--green100);}
 // .color-green800 {@include avatar-large;background:var(--green800);}
 // .color-gold {@include avatar-large;background:gold;}
-// .color-elevation {@include avatar-large;background:var(--gray0);box-shadow:var(--shadow400);}
+// .color-elevation {@include avatar-large;background:var(--gray0);box-shadow:var(--shadow);}
 // .color-gradient {@include avatar-large;background-image:linear-gradient(106deg,var(--red800),var(--color-primary));}

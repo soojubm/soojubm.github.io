@@ -1,8 +1,8 @@
 .empty {width:100%;max-width:var(--width-small);margin:0 auto;padding:4rem 5%;box-sizing:border-box;text-align:center;}
 .empty-icon {@include avatar-huge;margin:0 auto 1.5rem;font-size:40px;}
-.empty-title {@include subhead;}
+.empty-title {@include text-subhead;}
 .empty-description {margin:var(--space-after-subhead) 0 2rem;}
-.empty-list {margin:2rem auto;padding:1rem 0 0 0;border-top:var(--border100);}
+.empty-list {margin:2rem auto;padding:1rem 0 0 0;border-top:var(--border);}
 .empty-list-item {display:flex;justify-content:space-between;margin:.25rem 0;}
 .empty-list-item b {font-weight:normal;}
 .empty-list-item span {}
@@ -14,7 +14,7 @@
   position: relative;
 }
 .error-title {
-  @include title;
+  @include text-title;
 }
 .error-name {
   font: 300px/1 'Courier New';
