@@ -25,11 +25,12 @@
     </div>
   </div>
 
-  <!-- <section style="font-size:1.5rem;letter-spacing:-.025rem;">
-    <p style="padding:1rem 5%;border-bottom:1px solid var(--gray200);">디바이스의 또는 접속 환경에 따라 구별하지 않습니다.</p>
+  <section style="font-size:1.5rem;letter-spacing:-.025rem;">
+    <p style="padding:1rem 5%;border-bottom:1px solid var(--gray200);">목록의 나머지를 더 보여줄 때는 [모두보기], 미리보기 형식의 텍스트를 더 보여줄 때는 [전체보기].</p>
+    <p style="padding:1rem 5%;border-bottom:1px solid var(--gray200);">사용자의 환경에 맞춰 경험을 최적화하고, 유아이의 변경은 최소화합니다.</p>
     <p style="padding:1rem 5%;border-bottom:1px solid var(--gray200);">최소한의 에셋으로. 예를 들면, 왜 gray600이 필요하지 않은가? + 위계 설정에 대비를 2개 이상 적용하지 않는다.</p>
     <p style="padding:1rem 5%;border-bottom:1px solid var(--gray200);">modal, toast, popover 등는 UI가 아니라 기능(?)에 가까움. todo. pattern으로 정의할 필요가 있는 것. tile, item / base 네이밍 생략?</p>
-  </section> -->
+  </section>
 
   <!-- <nav class="sidebar">
     <h4 class="sidebar-heading" style="margin-top:-.25rem;">대분류</h4>
@@ -52,7 +53,6 @@
       <h1 class="design-article-title">기표signifier</h1>
       <p class="design-article-description"></p>
       <div class="design-article-description">
-        <p class="checklist"><span><i></i></span> 목록의 나머지를 더 보여줄 때는 [모두보기], 미리보기 형식의 텍스트를 더 보여줄 때는 [전체보기].</p>
         <p class="xlist"><span><i></i></span> '확장할 수 있음'으로 plus icon을 사용하지 마세요.</p>
       </div>
 
@@ -85,7 +85,6 @@
       <figure class="chip"><i class="icon-chevron" style="display:inline-block;transform:rotate(45deg);"></i></figure>
       <figure class="chip" style="margin:var(--space-small) 0 0 0;"><i class="icon-caret" style="display:inline-block;"></i></figure>
 
-
       <br />
 
       <h6 class="title-bordered">모두보기view all -> 페이지 전환</h6>
@@ -97,7 +96,7 @@
       <figure class="chip"><i class="icon-x" style="display:inline-block;"></i></figure>
 
       <!-- <h6 class="title-bordered">selection</h6>
-      <h6 class="title-bordered">click - tag 컴포넌트/화살표/아이콘 아이템 전체가 클릭 영역</h6>
+      <h6 class="title-bordered">목록의 나머지를 더 보여줄 때는 [모두보기], 미리보기 형식의 텍스트를 더 보여줄 때는 [전체보기].click - tag 컴포넌트/화살표/아이콘 아이템 전체가 클릭 영역</h6>
       <h6 class="title-bordered">link - internal/external</h6>
       <dt>모두보기</dt><dd>see all(15)(internal, arrow-right)</dd>
       <dt>더보기</dt><dd>더보기vs더불러오기(more, arrow-down), 자세히보기, learn more 등(external, arrow-right-top)</dd> -->
@@ -106,7 +105,11 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Sizes</h1>
-      <p class="design-article-description">반응형 엘리먼트에서 가로 사이즈는 비교적 유연하게 사용하기 때문에, 주로 세로 크기에 사용합니다. alert, accodion 등의 컴포넌트에서는 정의하지 않은 세로 크기를 사용할 수 있습니다. 오히려 권장(글줄이 2개 이상이 될 수 있는 경우)</p>
+      <p class="design-article-description">반응형 엘리먼트에서 가로 사이즈는 비교적 유연하게 사용하기 때문에, 주로 세로 크기에 사용합니다.</p>
+      <div class="design-article-description">
+        <p class="checklist"><span><i></i></span> alert, accodion 등의 컴포넌트에서는 정의하지 않은 세로 크기를 사용할 수 있습니다. 오히려 권장(글줄이 2개 이상이 될 수 있는 경우)</p>
+      </div>
+
       <!-- <p class="design-article-description">alert, accordion 등 예외 케이스.</p> -->
       <code class="design-article-description" style="padding:1rem;">
         <p>--size-huge: 5rem;</p>
@@ -229,9 +232,8 @@
       <p class="design-article-description">background/border/text/state.</p>
 
       <div class="design-article-description">
-        <p class="checklist"><span><i></i></span> red는 양식 유효성 검사 및 alert 맥락에서 사용합니다.</p>
+        <p class="checklist"><span><i></i></span> red는 alert 맥락에서 사용합니다. 양식 유효성 unvalid 텍스트, 취소/삭제 부정 액션.</p>
         <p class="xlist"><i></i> 다크테마를 위한 인버트 컬러셋을 추가로 정의하지 마세요. todo: 두 테마에서 모두 동일한 색으로으로 보여야 하는 케이스 정의. todo: 다크테마를 위한 gradient 정의.</p>
-        <!-- <p class="checklist"><span><i></i></span> todo: 다크테마를 위한 elevation800을 추가하고 400을 조정. </p> -->
       </div>
 
       <blockquote>
@@ -587,7 +589,7 @@
 
       <br />
 
-      <h6 class="title-bordered">space, item</h6>
+      <h6 class="title-bordered">space, item(entry)</h6>
       <!-- todo 전체가 클릭영역인 경우가 있고 버튼을 포함하는 경우가 있음. 위 2개만 버튼을 포함함.  -->
       <article class="item tile-flat-small" data-size="huge">
         <figure class="item-avatar">
@@ -639,7 +641,7 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title" title="or Box">Tiles</h1>
-      <p class="design-article-description">관련된 콘텐츠를 시각적으로 묶습니다?.</p>
+      <p class="design-article-description">연관성이 있는 콘텐츠를 시각적으로 묶습니다.</p>
       
       <div class="design-article-description">
         <!-- <p>아이콘/텍스트 leading에 맞춰 시각보정이 필요. line-height 때문. tile이 아니더라도 elevated 스타일이 적용되는 케이스 존재.</p> -->
@@ -696,10 +698,6 @@
       </div>
     </article> -->
 
-    <!-- <article class="design-article js-scrollspy-section">
-      <h1 class="design-article-title">Shadow</h1>
-      <p class="design-article-description"></p>
-    </article> -->
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">States</h1>

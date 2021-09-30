@@ -14,7 +14,7 @@ strong,b,th,legend {font-weight:var(--font-weight-bold);color:var(--gray800);} l
 cite,i,address,em,dfn {font-style:normal;} em {color:var(--color-primary);}
 small {font-size:var(--font-size-caption);} abbr {text-decoration:none;}
 a {text-decoration:none;text-decoration-skip-ink:auto;color:var(--color-primary);} a:link,a:visited {} a:hover,a:focus {} a:active {}
-mark {padding:0 2px 2px;border-radius:var(--radius);background:var(--gray100);}
+mark {background:gold;border-radius:var(--radius);}
 
 // br {content:'';display:block;height:1rem;}
 hr {margin:var(--space) 0;border-top: thin solid var(--gray200);position:relative;}

@@ -173,7 +173,7 @@
   color: var(--gray400);
   font-weight: 400;
 }
-.title-bordered {@include text-title-bordered;}
+.title-bordered {@include title-bordered;}
 
 
 @mixin theme($theme: DarkGray) {

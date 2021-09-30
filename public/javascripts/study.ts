@@ -387,3 +387,28 @@ textboxEle.addEventListener('keypress', function(e) {
 // 	return responses.map(response => {
 // 		return response.json();
 // 	});
+
+// typescript
+// type TextEditorBlockProps {
+//   width: number;
+//   height: number;
+//   top: number;
+//   left: number;
+//   parentStyle?: ParentStyle; // It defines area where component can't escape. If you don't define it, then your component can move in all screen.
+//   unit: string;
+//   // Initial- props are options just for first rendering.
+//   initialFontSize?: number; // default: 0.22
+//   initialFontColor?: string; // default: "black"
+//   initialFontStyle?: InitialFontStyle; // default: ""
+//   initialText?: string; // default: ""
+//   initialFontName?: string; // default: ""
+// }
+
+// type ParentStyle {
+//   width: number;
+//   height: number;
+// }
+
+// type InitialFontStyle = "twin-color-text" | "box-text" | "down-side-text" | "out-line-text" | "bubble-shadow-text";
+
+// type InitialFontName = "andada-pro" | "bebas-nenu" | "montecarlo" | "roboto" | "stix-two-text" | "style-script";

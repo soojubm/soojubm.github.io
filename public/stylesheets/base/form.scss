@@ -116,6 +116,7 @@ input[type=checkbox]:checked + label + * {display:block;margin:0.25rem 0 var(--s
   &.theme-button {
     padding: 9px 1rem 11px;
     border: var(--border);
+    box-shadow: var(--shadow);
     background: var(--gray0);
     label {
       display: flex;
@@ -192,7 +193,6 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 // todo
 .searchfield {}
 .searchfield .textfield-prefix {top:11px !important;}
-.searchfield .textfield-surfix {top:11px !important;}
 
 @mixin textfield-prefix {
   @include avatar-small;position:absolute;left:1rem;top:40px;pointer-events:none;
@@ -204,18 +204,19 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 }
 
 
+// 검색필드는 레이블이 없다.
 .textfield-check {@include textfield-surfix;}
 .textfield-prefix {@include textfield-prefix;background:var(--gray100);}
 .textfield-prefix ~ .textfield-input {padding-left:calc(1rem + 2rem + .25rem);}
 .textfield-surfix {@include textfield-surfix;}
 .selectbox-indicator {@include textfield-surfix;}
-.textfield-clear {display:none !important;}
-.textfield-done {line-height:var(--size-large);visibility:hidden;position:absolute;right:0;top:0;}
+// .textfield-clear {display:none !important;}
+.textfield-clear {@include avatar-small;background:var(--gray200);@include textfield-surfix;top:11px;}
+.textfield-clear .icon-x:before {background-color:var(--gray400);}
+.textfield-clear .icon-x:after {background-color:var(--gray400);}
 
 .textfield-input[type=search] ~ .textfield-prefix {top:1rem;}
-.textfield-input[type=search]:focus {width:92%;}
-.textfield-input[type=search]:focus ~ .textfield-done {visibility:visible;}
-.textfield-input[type=search]:focus ~ .textfield-clear {display:flex !important; pointer-events:all;right:10%;}
+.textfield-input[type=search]:focus ~ .textfield-clear {display:flex !important;pointer-events:all;}
 
 .textfield.is-small {padding:0 !important;font-size:var(--font-size-caption) !important;}
 .textfield.is-small .textfield-label {margin-bottom:0;}

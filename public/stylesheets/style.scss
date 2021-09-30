@@ -39,7 +39,7 @@
 @import 'components/skeleton';
 
 @import 'layout/navbar';
-@import 'layout/header';
+@import 'layout/titlebar';
 @import 'layout/footer';
 
 @import 'pages/design';
@@ -311,8 +311,8 @@
 .newneek-asis-tobe {display:flex;border:1px solid #000;border-top:none;text-align:center;}
 .newneek-asis {width:50%;padding:2rem 5%;box-sizing:border-box;}
 .newneek-asis-title {margin:0 auto .5rem;@include text-subhead;
-  width: 10rem;
-  height: 5rem;
+  width: 8rem;
+  height: 4rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -321,8 +321,8 @@
   color: #fff !important;}
 .newneek-asis-item {}
 .newneek-tobe {width:50%;padding:2rem 5%;box-sizing:border-box;}
-.newneek-tobe-title {margin:0 auto .5rem;@include text-subhead;width: 10rem;
-  height: 5rem;
+.newneek-tobe-title {margin:0 auto .5rem;@include text-subhead;width: 8rem;
+  height: 4rem;
   display: flex;
   align-items: center;
   justify-content: center;

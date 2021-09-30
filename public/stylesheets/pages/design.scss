@@ -25,6 +25,9 @@
 .design-article.is-scrolled {animation:fadeup .8s forwards;}
 .design-article-helper {margin:var(--space-after-item);font-size:var(--font-size-caption);}
 
+.design-article-anatomy {@include tile-flat;margin:2rem 0 var(--space);font-size:var(--font-size-caption);}
+.design-article-anatomy-title {display:inline-block;margin:0 0 .25rem 0;font-size:inherit;text-transform:uppercase;text-decoration:underline;}
+
 .design-article dl {}
 .design-article dl dt {width:8rem;}
 .design-article dl dd {width:calc(100% - 10rem);}
@@ -168,7 +171,7 @@
 .jobitem-name {margin:var(--space-leading-subhead) 0 0 0;@include text-subhead;}
 .jobitem-tags {margin:var(--space-small) 0 0 0;}
 .jobitem-tags .tag {border:var(--border);background:none;}
-.jobitem-view {@include button-tertiary;@include position-right-top;}
+.jobitem-view {@include button-tertiary;position:absolute;right:1rem;top:50%;transform:translateY(-50%);}
 
 
 .textbox {}
@@ -234,7 +237,7 @@
 
 .sheet {@include tile-elevated;}
 // todo title label
-.sheet-title {margin:0 0 var(--space);font-size:var(--font-size-body);font-weight:var(--font-weight-normal);color:var(--gray400);}
+.sheet-title {margin:0 0 var(--space);@include text-label;}
 .sheet button {position:relative;z-index:var(--zindex-default);}
 .sheet button:hover {@include hover-item;}
 

@@ -8,28 +8,23 @@
 .navbar-menu-item:before {display:none;}
 .navbar-menu-item i {margin-left:8px;}
 .navbar-menu-item menu {display:flex;justify-content:center;padding:48px 5rem 0;background-color:var(--color-primary);position:fixed;left:0;right:0;top:-240px;z-index:var(--zindex-navigation);transition:$transition-base;}
-.navbar-menu-item menu a {margin:0 var(--space);font-size:var(--font-size-body);line-height:60px;color:var(--gray0);opacity:0;transition:all .4s ease .4s;}
-// .navbar-menu-item:hover {@include hover-text;}
-// .navbar-menu-item:hover menu a {text-decoration:none;}
-// .navbar-menu-item menu a:hover {@include hover-text;}
+.navbar-menu-item menu a {margin:0 var(--space);font-size:var(--font-size-body);line-height:60px;color:var(--gray0);opacity:0;transition:all .4s ease .3s;}
+.navbar-menu-item menu a:hover {@include hover-text;}
 
-.navbar-search {margin:0 0 0 auto;position:relative;}
 .navbar-search-trigger {@include avatar-medium;}
-.navbar-search-trigger img {width:20px;pointer-events:none;}
-.navbar-search-trigger:after {content:'';display:block;position:absolute;left:-.5rem;right:-.5rem;top:-.5rem;bottom:-.5rem;}
-.navbar-search a i {vertical-align:middle;color:var(--gray800);}
 
 // todo close icon rotate
 .search {}
-.search-form {background:var(--gray0);padding:.5rem var(--grid-margin);box-sizing:border-box;position:fixed;left:0;right:0;top:0;bottom:0;}
+.search-form {background:var(--gray0);padding:.5rem var(--navbar-padding);box-sizing:border-box;}
 .search-form-close {@include avatar-medium;position:absolute;left:1rem;top:14px;transform:rotate(180deg);}
 .search-form-title {margin:0 auto 1rem;font-size:var(--font-size-subhead);}
-.search-form-field input {padding-left:56px;}
-.search-form .textfield {}
 .search-recommend {}
-.search-recommend-title {margin:4rem auto var(--space-after-subhead);@include text-subhead;}
+.search-recommend-title {margin:0 auto var(--space);@include text-label;}
 .search-recommend-item {@include chip;}
-.is-active + .search-form {display:block;}
+.search-preview {}
+.search-preview-item {display:flex;align-items:center;}
+.search-preview-item + .search-preview-item {margin:var(--space-after-item) 0 0 0;}
+.search-preview-item-avatar {@include avatar-medium;margin:0 var(--space-small) 0 0;}
 
 // todo dropdown width mixin
 // todo menu, empty 통일
@@ -78,8 +73,8 @@
 .user-name {margin:var(--space-leading-subhead) 0 0 0;@include text-subhead;}
 .user-email {}
 
-
-.user-logout {display:flex;align-items:center;width:100%;margin:var(--space) 0;position:relative;}
+// todo this is item
+.user-logout {display:flex;align-items:center;width:100%;margin:var(--space-after-item) 0;position:relative;}
 .user-logout-icon {@include avatar-medium;}
 .user-logout-label {margin:0 0 0 var(--space-small);}
 

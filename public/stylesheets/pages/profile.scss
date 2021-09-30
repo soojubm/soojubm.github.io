@@ -12,8 +12,9 @@
 .profile-user-career {display:block;margin:.5rem 0 0;color:var(--gray400);}
 .profile-user-description {max-height:4.8em;margin:1.5rem 0;white-space:normal;overflow:hidden;text-overflow:ellipsis;word-wrap:break-word;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;line-height:1.6;position:relative;}
 .profile-user-description-more {margin:0 .5rem;@include link-outer;}
-.profile-user-toggle {width:100%;margin:1rem 0;text-align:center;color:var(--gray800);}
-.profile-user-toggle-icon {@include avatar-medium;}
+.profile-user-toggle {width:100%;margin:1rem 0;text-align:center;color:var(--gray800);position:relative;}
+.profile-user-toggle-icon {@include avatar-small;}
+.profile-user-toggle:hover {@include hover-item;}
 .profile-user-category {padding:4px 16px;background:coral;font-size:var(--font-size-caption);color:var(--gray0);border-radius:50px;}
 .profile-user-address {}
 .profile-user-address div {}

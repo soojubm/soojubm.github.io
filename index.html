@@ -149,40 +149,11 @@
         <a class="navbar-menu-item" onClick="javascript:alert('준비 중이니 기다려주세요!')">소개</a>
       </div>
 
-      <div class="navbar-search" role="search" aria-label="site" hidden>
-        <a class="navbar-search-trigger js-navbar-toggle" href="#">
-          <i class="icon-search"></i>
-          <!-- <img src="/public/icons/search.svg" alt="" /> -->
-        </a>
-        <form class="search-form" hidden>
-          <button class="search-form-close js-close" aria-label="delete">
-            <i class="icon-arrow"></i>
-          </button>
-          <!-- <p role="status">수줍이와(과) 일치하는 검색결과가 없습니다.</p> -->
-          <fieldset class="search-form-field textfield">
-            <legend class="filter-fieldset-legend" hidden aria-hidden="true">
-              검색하기
-            </legend>
-            <label class="textfield-label" for="help-search" hidden aria-hidden="true">검색하기</label>
-            <input class="textfield-input" type="search" id="help-search" placeholder="검색어를 입력해 주세요." />
-            <button class="textfield-reset" type="reset" hidden title="clear search input">
-              <i class="icon-x"></i>
-            </button>
-          </fieldset>
-          <!-- <button type="submit">
-            <span class="visually-hidden">Submit</span>
-            <svg role="img"></svg>
-          </button> -->
-          <section class="search-recommend">
-            <h2 class="search-recommend-title">당신을 위한 추천</h2>
-            <div role="group">
-              <a class="search-recommend-item" href="#">개구리</a>
-              <a class="search-recommend-item" href="#">달팽이</a>
-              <a class="search-recommend-item" href="#">매미</a>
-            </div>
-          </section>
-        </form>
-      </div>
+
+      <!-- <a class="navbar-search-trigger js-navbar-toggle" href="#">
+        <i class="icon-search"></i>
+      </a> -->
+
 
       <div class="navbar-user" style="margin-left:auto;">
         <button class="navbar-user-trigger js-navbar-toggle" aria-haspopup="menu" aria-expanded="false">
@@ -236,23 +207,79 @@
           </footer>
         </div>
       </div>
-
       <!-- <div class="navbar-user"></div> -->
     </nav>
 
-
     <header class="titlebar js-titlebar" role="navigation">
       <div class="titlebar-background"></div>
-      <!-- todo 타이틀영역과, 버튼의 타이틀을 분리 -->
       <h1 class="titlebar-title js-page-title" title="page title">페이지타이틀</h1>
       <button class="titlebar-back" onclick="javascript:window.location.href='/';">
-        <span class="titlebar-back-icon"><i class="icon-arrow"></i></span>
+        <figure class="titlebar-back-icon" title="이전 페이지로"><i class="icon-arrow is-left"></i></figure>
+        <!-- <figure class="titlebar-back-icon"><i class="icon-close"></i></figure> -->
+        <span class="titlebar-back-label">뒤로</span>
       </button>
-      <button class="titlebar-cta" style="color:var(--color-primary);">
-        공유
+      <button class="titlebar-action" style="color:var(--color-primary);">
+        <figure class="titlebar-action-icon" hidden></figure>
+        <span class="titlebar-action-label">공유</span>
       </button>
     </header>
-    <!-- <header class="titlebar-backdrop js-header"></header> -->
+<fieldset style="padding:0 var(--navbar-padding);">
+  <legend class="filter-fieldset-legend" hidden aria-hidden="true">검색</legend>
+      <div class="textfield searchfield">
+        <button class="textfield-prefix"><i class="icon-search"></i></button>
+        <!-- <label class="textfield-label" for="search" hidden>검색</label> -->
+        <input class="textfield-input js-input-test" type="search" id="search" placeholder="궁금한 인물이나 이슈가 있나요?">
+        <button class="textfield-clear" hidden=""><i class="icon-x" style="border-color:var(--gray400);"></i></button>
+      </div>
+</fieldset>
+<hr />
+<section class="navbar-search" role="search" aria-label="site">
+  <form class="search-form">
+    <p role="status">수줍이와(과) 일치하는 검색결과가 없습니다.</p>
+    <p>chip VS item</p>
+    <p>자동완성이 있는 경우 검색결과는 항상 존재</p>
+    <hr style="margin:1.5rem 0 1rem;" />
+    <section class="search-preview">
+      <h2 class="search-recommend-title">자동 완성</h2>
+      <div class="search-preview-item item">
+        <figure class="search-preview-item-avatar">
+          <i></i>
+        </figure>
+        <p>ff</p>
+      </div>
+      <div class="search-preview-item item">
+        <figure class="search-preview-item-avatar">
+          <i></i>
+        </figure>
+        <p>ff</p>
+      </div>
+      <div class="search-preview-item item">
+        <figure class="search-preview-item-avatar" style="background:var(--color-primary);">
+          <i></i>
+        </figure>
+        <p style="color:var(--color-primary);">ff에 대한 동영상 검색</p>
+      </div>
+    </section>
+    <hr style="margin:1.5rem 0 1rem;" />
+    <section class="search-recommend">
+      <h2 class="search-recommend-title">추천 검색</h2>
+      <div class="chip-group" role="group">
+        <a class="search-recommend-item" href="#"><span class="chip-label">개구리</span></a>
+        <a class="search-recommend-item" href="#"><span class="chip-label">달팽이</span></a>
+        <a class="search-recommend-item" href="#"><span class="chip-label">매미</span></a>
+      </div>
+    </section>
+    <hr style="margin:1.5rem 0 1rem;" />
+    <section class="search-recent">
+      <h2 class="search-recommend-title">최근 검색</h2>
+      <button class="search-recommend-modify">수정</button>
+      </div>
+    </section>
+    <hr />
+  </form>
+</section>
+
+    <!-- <div class="titlebar-backdrop js-header"></div> -->
 
     <div id="view">
       <div class="home"></div>

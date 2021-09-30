@@ -94,16 +94,8 @@
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Avatars</h1>
       <p class="design-article-description">단독으로 사용하거나 텍스트와 함께 사용하여 콘텐츠의 주목도를 높입니다. (현재의 정의는 일반적인 아바타를 넘어 동일한 형태를 포괄하는 개념에 가까움)</p>
-      <blockquote>
-        <!-- <h6>anatomy</h6> -->
-        <dl class="design-article-description">
-          <dt>avatar-group</dt><dd></dd>
-          <dt>avatar</dt><dd></dd>
-          <dt>avatar-thumbnail</dt><dd></dd>
-          <dt>avatar-label</dt><dd>optional - name</dd>
-          <dt>avatar-badge</dt><dd>optional - unread/new indicator</dd>
-        </dl>
-      </blockquote>
+
+
       <div>
         <p class="checklist"><span><i></i></span> design tokens에서 정의한 5가지 사이즈 중 huge, large, medium, small 4가지를 사용합니다.</p>
         <p class="checklist"><span><i></i></span> 썸네일 이미지, 유저 프로필, 아이콘 버튼에 사용합니다</p>
@@ -112,7 +104,18 @@
         <!-- <p class="checklist"><span><i></i></span> 아이템 컴포넌트: card component, page 레벨에서 상대적으로 중요도가 낮은 경우 오른쪽에 배치할 수 있습니다.</p> -->
         <!-- <p class="checklist"><span><i></i></span> 아이템 컴포넌트: 텍스트 말 줄임표 조건 정의. 리스트업 조건 정의.</li> -->
       </div>
-      <br />
+
+      <div class="design-article-anatomy">
+        <mark class="design-article-anatomy-title">anatomy</mark>
+        <ol class="design-article-anatomy-list">
+          <!-- <li>avatar-group</li>
+          <li>avatar</li> -->
+          <!-- <hr /> -->
+          <li>Avatar <mark style="background:var(--gray100);">thumbnail</mark></li>
+          <li>Avatar <mark style="background:var(--gray100);">label</mark> (optional)</li>
+          <li>Avatar <mark style="background:var(--gray100);">badge</mark> - unread/new indicator</li>
+        </ol>
+      </div>
 
       <!-- <h6 class="title-bordered">AvatarGroup</h6> -->
       <article class="tile-flat-small" style="margin:var(--space) 0;">
@@ -159,35 +162,37 @@
       </div>
 
       <blockquote>
-        <dl>
-          <dt>group-chip</dt><dd>aria-orientation="horizontal"</dd>
-          <dt>chip</dt><dd>default,active,disabled</dd>
-          <dt>chip-icon</dt><dd>heading/tailing</dd>
-          <dt>chip-label</dt><dd></dd>
-        </dl>
-        <hr />
         <p>필터에서 액티브 상태에 브랜드 컬러를 많이 안 쓰는 경향. 콘텐츠 탐색이 cta라서?</p>
         <p>tag/pill/chip/label</p>
         <p>todo 안드로이드 chipGroup, HorizontalScrollView, singleLine, action/entry/filter(check active)/choice</p>
       </blockquote>
 
-      <blockquote>
-      </blockquote>
-
-      <div class="chip-group" role="group" aria-orientation="horizontal">
-        <button class="chip">
-          <span class="chip-label">default</span>
-        </button>
-        <button class="chip is-active">
-          <span class="chip-label">active</span>
-        </button>
-        <button class="chip" style="opacity:.5;cursor:not-allowed;" disabled>
-          <span class="chip-label">disabled</span>
-        </button>
+      <div class="design-article-anatomy">
+        <mark class="design-article-anatomy-title">anatomy</mark>
+        <ol class="design-article-anatomy-list">
+          <!-- <li>avatar-group</li>
+          <li>avatar</li> -->
+          <!-- <hr /> -->
+          <li>Chip icon - optional (heading/tailing)</li>
+          <li>Chip label</li>
+        </ol>
+        <em>states(default,active,disabled), aligns(horizental,vertical)</em>
       </div>
 
-      <hr  role="separator" />
-      
+<div class="tile-flat-small">
+        <div class="chip-group" role="group" aria-orientation="horizontal">
+          <button class="chip">
+            <span class="chip-label">default</span>
+          </button>
+          <button class="chip is-active">
+            <span class="chip-label">active</span>
+          </button>
+          <button class="chip" style="opacity:.5;cursor:not-allowed;" disabled>
+            <span class="chip-label">disabled</span>
+          </button>
+        </div>
+</div>
+
       <h6 class="title-bordered">Filter 1</h6>
       <div class="chip-group js-chip" role="group" aria-orientation="horizontal">
         <button class="chip is-active">
@@ -220,12 +225,12 @@
           <fieldset role="radiogroup">
             <!-- <legend class="title-bordered" style="margin-bottom:0;">radiogroup</legend> -->
             <div class="radio">
-              <input type="radio" id="gender-man" name="gender" value="">
-              <label for="gender-man" title="Video Killed the Radio Button">1~3명</label>
+              <input type="radio" id="gogo1" name="gogo" value="">
+              <label for="gogo1" title="Video Killed the Radio Button">1~3명</label>
             </div>
             <div class="radio">
-              <input type="radio" id="gender-etc" name="gender" value="" checked>
-              <label for="gender-etc" title="Video Killed the Radio Button">3명 이상</label>
+              <input type="radio" id="gogo2" name="gogo" value="" checked>
+              <label for="gogo2" title="Video Killed the Radio Button">3명 이상</label>
             </div>
           </fieldset>
           <hr />
@@ -362,23 +367,19 @@
         <p class="xlist"><i></i> cta 아래에 가이드 텍스트를 배치하지 마세요. 일반적으로 네거티브 액션(?)의 텍스트 버튼이 위치합니다.</p>
         <p class="xlist"><i></i> more load 버튼은 full-width로 사용하지 마세요. 콘텐츠보다 작게 사용하여 대비를 주세요.</p>
       </div>
+
+      <div class="design-article-anatomy">
+        <mark class="design-article-anatomy-title">anatomy</mark>
+        <ol class="design-article-anatomy-list">
+          <!-- <p>aria-pressed={isActivated ? "true" : "false"} / min-width, padding-left, padding-right</p> -->
+          <li>Button <mark style="background:var(--gray100);">label</mark></li>
+          <li>Button <mark style="background:var(--gray100);">icon</mark> (role="img" aria-label="plus icon")</li>
+          <li>Button <mark style="background:var(--gray100);">badge</mark> - amount</li>
+        </ol>
+      </div>
+
       <!-- <li>네이밍: style = solid/outline/plain/text (모든 스타일을 망라해야 하기 때문에 유아이 라이브러리에 어울리는 네이밍) appearance = link / subtle / primary, space = compact/fullwidth</li> -->
-      <blockquote class="design-article-description" style="font-size:var(--font-size-tiny);">
-        <p style="margin:0 0 var(--space) 0;color:var(--gray800);">anatomy</p>
-        <dl>
-          <dt>group-button</dt><dd></dd>
-          <dt>button</dt><dd>aria-pressed={isActivated ? "true" : "false"}</dd>
-          <dt>button-label</dt><dd></dd>
-          <dt>button-icon</dt><dd>role="img" aria-label="plus icon" / </dd>
-          <dt>button-badge</dt><dd>amount</dd>
-          <hr />
-        </dl>
-        <hr />
-        <p>min-width, padding-left, padding-right</p>
-      </blockquote>
       
-      <br />
-    
       <!-- <a class="button" href="#">Anchor button</a>
       <button>Button element</button>
       <input type="submit" value="submit input">
@@ -614,17 +615,18 @@
         <p class="xlist"><span><i></i></span> 검색 필드를 네비게이션바/앱바에 포함하지 마세요. <b hidden>(prefix에 뒤로가기 버튼이 포함되지 않는 형태로만 사용)</b></p>
       </div>
 
-      <blockquote style="font-size:var(--font-size-tiny);">
-        <p style="margin:0 0 var(--space) 0;color:var(--gray800);">anatomy</p>
-        <dl class="design-article-description">
-          <dt>textfield</dt><dd></dd>
-          <dt>textfield-input</dt><dd></dd>
-          <dt>textfield-label</dt><dd></dd>
-          <dt>textfield-helper</dt><dd>optional</dd>
-          <dt>textfield-icon</dt><dd>optional (heading/tailing)</dd>
-          <dt>textfield-indicator</dt><dd>optional (selection)</dd>
-        </dl>
-      </blockquote>
+      <div class="design-article-anatomy">
+        <mark class="design-article-anatomy-title">anatomy</mark>
+        <ol class="design-article-anatomy-list">
+          <li>Textfield <mark style="background:var(--gray100);">label</mark> - optional searchfield only</li>
+          <li>Textfield input</li>
+          <li>Textfield helper</li>
+          <li>Textfield icon</li>
+          <li>Textfield clear - searchfield</li>
+          <li>Textfield indicator - selectbox</li>
+        </ol>
+      </div>
+
       <!-- <p>unit, choose/enter</p> -->
       <h6 class="title-bordered">Number (quantity)</h6>
       <div class="quantity js-quantity">
@@ -648,8 +650,7 @@
         <button class="textfield-prefix"><i class="icon-search"></i></button>
         <!-- <label class="textfield-label" for="search">검색(시각적으로숨겨야함)</label> -->
         <input class="textfield-input js-input-test" type="search" id="search" placeholder="궁금한 인물이나 이슈가 있나요?" />
-        <button class="textfield-surfix textfield-clear" hidden><i class="icon-x"></i></button>
-        <button class="textfield-done">검색</button>
+        <button class="textfield-clear" hidden><i class="icon-x"></i></button>
       </div>
 
       <br />
@@ -853,18 +854,20 @@
         <p class="xlist"><span><i></i></span>콘텐츠 필터링에 사용하지 마세요. 필터링에는 chip을 사용합니다. 스크롤스파이할 수 없습니다.</p>
         <p class="xlist"><span><i></i></span>글로벌 탐색 패턴으로 햄버거 메뉴와 탭(바텀네비게이션, 탭바)을 함께 사용하지 마세요.</p>
       </ul>
-      <blockquote>
-        <dl>
-          <dt>tab-list</dt><dd></dd>
-          <dt>tab-panel</dt><dd></dd>
-          <dt>tab-indicator</dt><dd>activebar</dd>
-          <dt>tab-badge</dt><dd>optional</dd>
-          <dt>tab-unread</dt><dd>optional, 미구현. badge가 하나 이상일 수 있다. quantity와 unread.</dd>
-          <dt>container-tab</dt>
-        </dl>
-        <hr />
+
+      <div class="design-article-anatomy">
+        <mark class="design-article-anatomy-title">anatomy</mark>
+        <ol class="design-article-anatomy-list">
+          <li>Tablist</li>
+          <li>Tab</li>
+          <li>Tab Panel</li>
+          <li>Tab Indicator (Acitive bar)</li>
+          <li>Tab Badge - optional</li>
+          <li>Tab Unread - optional, 미구현. badge가 하나 이상일 수 있다. quantity와 unread.</li>
+        </ol>
         <p>todo: 브라우저 히스토리 저장(?tab=projects). 탭의 갯수 제한 4~5개 또는 가로 스크롤. HIG의 segmented control</p>
-      </blockquote>
+      </div>
+
       <nav class="profile-tablist" role="tablist">
 				<button class="profile-tablist-tab" role="tab" aria-selected="true">프로젝트 <i class="profile-tablist-tab-badge">5</i></button>
 				<button class="profile-tablist-tab" role="tab" aria-selected="false">웹페이지 <i class="profile-tablist-tab-badge">5</i></button>
@@ -892,11 +895,13 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Tooltip</h1>
-      <p class="design-article-description">생소한 용어나 집계된 수치의 근거 등에 사용하세요. 페이지를 불러 온 시점에 열어 두는 경우 대비 doorhanger 필요.</p>
+      <p class="design-article-description">생소한 용어나 집계된 수치의 근거 등에 사용하세요.</p>
       <div class="design-article-description">
         <p class="xlist"><span><i></i></span>사용자의 행동을 유도하는 가이드로 사용하지 마세요.</p>
         <p class="xlist"><span><i></i></span>페이지 링크로 사용하지 마세요. 항상 팝오버 형태를 따릅니다.</p>
       </div>
+      <blockquote>
+        페이지를 불러 온 시점에 열어 두는 경우 대비 doorhanger 필요.
       </blockquote>
       <aside class="tooltip">
         <span class="tooltip-trigger" aria-describedby="tooltip1">툴팁 <i>?</i></span>
@@ -1647,7 +1652,7 @@
           <span class="share-facebook-label">kakao로 공유하기</span>
         </button>
         <hr />
-        <div class="share-copy textfield is-small">
+        <div class="share-copy textfield">
           <input class="share-copy-url textfield-input" type="text" value="https://newneek.co/post/jadebabo" readonly />
           <button class="share-copy-button js-copy" type="button" tabindex="0">
             주소 복사
