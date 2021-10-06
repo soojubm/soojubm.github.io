@@ -31,29 +31,13 @@ function modal({ selector: trigger }: Parameter) {
   let previousActiveElement
   let previousPageYOffset
 
+  if (!modalContainer) return
+
   modalTriggers.forEach(modalTrigger =>
     modalTrigger.addEventListener('click', event => {
       event.preventDefault()
 
-      if (!modalContainer) return
-
-      async function fetchData() {
-        try {
-          const modalId = modalTrigger.dataset.modal
-          const uri = `/views/${modalId}.html`
-          const response = await fetch(uri)
-          if (!response.ok) throw 'Something went wrong.'
-          const html = await response.text()
-          modalContainer!.innerHTML = html
-          previousActiveElement = document.activeElement
-          pushBrowserHistory({}, '', modalId)
-
-          // modalContainer?.querySelector('button').focus()
-        } catch (error) {}
-      }
-
-      fetchData()
-
+      fetchData(modalTrigger)
       openModal(window.pageYOffset)
 
       document.addEventListener('keydown', checkCloseDialog)
@@ -61,6 +45,25 @@ function modal({ selector: trigger }: Parameter) {
       modalContainer?.addEventListener('click', temp)
     }),
   )
+
+  //const isOutside = !event.target.closest('.modal-inner');
+
+  async function fetchData(modalTrigger: any) {
+    try {
+      const modalId = modalTrigger.dataset.modal
+      const endpoint = `/views/${modalId}.html`
+      const response = await fetch(endpoint)
+      if (!response.ok) throw 'Something went wrong.'
+
+      const html = await response.text()
+
+      modalContainer!.innerHTML = html
+      previousActiveElement = document.activeElement
+      pushBrowserHistory({}, '', modalId)
+
+      // modalContainer?.querySelector('button').focus()
+    } catch (error) {}
+  }
 
   function temp(event) {
     const target = event.target as HTMLElement
@@ -85,10 +88,12 @@ function modal({ selector: trigger }: Parameter) {
 
     // previousActiveElement.focus()
   }
+
   function checkCloseDialog(event) {
     const isKeyEsc = event.keyCode === 27
     if (isKeyEsc) backHistory()
   }
+
   function backHistory() {
     history.back()
   }

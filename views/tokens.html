@@ -51,7 +51,7 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">기표signifier</h1>
-      <p class="design-article-description"></p>
+      <p class="design-article-description">test</p>
       <div class="design-article-description">
         <p class="xlist"><span><i></i></span> '확장할 수 있음'으로 plus icon을 사용하지 마세요.</p>
       </div>
@@ -69,35 +69,35 @@
 
       <br />
 
-      <h6 class="title-bordered">non-clickable(비활성disabled, 읽기전용readonly)</h6>
+      <h6 class="title-bordered">non-clickable - 비활성disabled, 읽기전용readonly</h6>
       <div class="tile-elevated-small" style="opacity:.5;cursor:not-allowed;box-shadow:none;">
-        <p>샘플. 투명도 0.5 / 커서 not-allowed / flat style (그림자 제거)</p>
+        <p>opacity 0.5 / cursor not-allowed / flat style - 그림자 제거</p>
       </div>
 
       <br />
 
       <h6 class="title-bordered">외부 링크external link</h6>
-      <figure class="chip"><i class="icon-arrow is-external"></i></figure>
+      <figure class="chip" style="width:32px"><i class="icon-arrow is-external"></i></figure>
 
       <br />
 
       <h6 class="title-bordered">확장Expanable & Collapsible</h6>
-      <figure class="chip"><i class="icon-chevron" style="display:inline-block;transform:rotate(45deg);"></i></figure>
-      <figure class="chip" style="margin:var(--space-small) 0 0 0;"><i class="icon-caret" style="display:inline-block;"></i></figure>
+      <figure class="chip" style="width:32px"><i class="icon-chevron" style="display:inline-block;transform:rotate(45deg);"></i></figure>
+      <figure class="chip" style="width:32px;margin:var(--space-small) 0 0 0;"><i class="icon-caret" style="display:inline-block;"></i></figure>
 
       <br />
 
-      <h6 class="title-bordered">모두보기view all -> 페이지 전환</h6>
-      <figure class="chip"><i class="icon-chevron" style="display:inline-block;"></i></figure>
+      <h6 class="title-bordered">내부 링크internal link(view all)</h6>
+      <figure class="chip" style="width:32px"><i class="icon-chevron" style="display:inline-block;"></i></figure>
 
       <br />
 
-      <h6 class="title-bordered">닫기removable / memo: cursor(pinterest)</h6>
-      <figure class="chip"><i class="icon-x" style="display:inline-block;"></i></figure>
+      <h6 class="title-bordered">닫기removable</h6>
+      <figure class="chip" style="width:32px"><i class="icon-x" style="display:inline-block;"></i></figure>
 
       <!-- <h6 class="title-bordered">selection</h6>
       <h6 class="title-bordered">목록의 나머지를 더 보여줄 때는 [모두보기], 미리보기 형식의 텍스트를 더 보여줄 때는 [전체보기].click - tag 컴포넌트/화살표/아이콘 아이템 전체가 클릭 영역</h6>
-      <h6 class="title-bordered">link - internal/external</h6>
+      <h6 class="title-bordered">link - /external</h6>
       <dt>모두보기</dt><dd>see all(15)(internal, arrow-right)</dd>
       <dt>더보기</dt><dd>더보기vs더불러오기(more, arrow-down), 자세히보기, learn more 등(external, arrow-right-top)</dd> -->
     </article>
@@ -107,7 +107,7 @@
       <h1 class="design-article-title">Sizes</h1>
       <p class="design-article-description">반응형 엘리먼트에서 가로 사이즈는 비교적 유연하게 사용하기 때문에, 주로 세로 크기에 사용합니다.</p>
       <div class="design-article-description">
-        <p class="checklist"><span><i></i></span> alert, accodion 등의 컴포넌트에서는 정의하지 않은 세로 크기를 사용할 수 있습니다. 오히려 권장(글줄이 2개 이상이 될 수 있는 경우)</p>
+        <p class="checklist"><span><i></i></span> alert, accodion 등의 컴포넌트에서는 고정된 세로 크기를 사용하지 않는 것이 좋다. 글줄이 두 줄 이상이 될 수 있는 경우.</p>
       </div>
 
       <!-- <p class="design-article-description">alert, accordion 등 예외 케이스.</p> -->
@@ -262,6 +262,9 @@
         <p>--radius: 4px; // 한 가지로 시작.</p>
         <hr />
         <p>--color-background: var(--gray100);</p>
+        <p>--color-border: var(--gray200);</p>
+        <p>--color-text: var(--gray800);</p>
+        <p>--color-text-light: var(--gray400);</p>
         <hr />
         <p>--button-background-color: var(--gray100);</p>
         <p>--button-border-color: var(--gray100);</p>
@@ -669,9 +672,9 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Containers</h1>
-      <p class="design-article-description">페이지, 섹션 레벨의 레이아웃. 현대 유아이에서 컨테이너의 개념이 모호한 이유는 모바일에서는 섹션, 아티클, 심지어 하나의 컴포넌트가 페이지의 맥락이 될 수 있기 때문.</p>
+      <p class="design-article-description">페이지, 섹션 레벨의 레이아웃. 현대 유아이에서 컨테이너의 개념이 모호한 이유는 모바일에서는 섹션, 아티클, 심지어 하나의 컴포넌트가 페이지의 맥락이 되기도 함.</p>
       <div class="design-article-description">
-        <p class="checklist"><span><i></i></span> 그리드 시스템을 사용하지 않습니다. 그리드 시스템을 구현하는 것은 효율이 떨어지며 모바일 퍼스트, 가로 스크롤 트랜드와 부합하지 않습니다. 칼럼의 수를 제한하고, 컨테이너와 컨테이너 내부에서 사용하는 아이템의 크기와 간격을 정의하는 것이 도움이 됩니다.</p>
+        <p class="checklist"><span><i></i></span> 그리드 시스템을 사용하지 않습니다. 그리드 시스템을 구현하는 것은 효율이 떨어지며 모바일 퍼스트, 가로 스크롤 트랜드와 부합하지 않습니다. 컨테이너의 크기를 정의하고, 컨테이너 내부에서 사용하는 칼럼의 갯수를 제한하거나 아이템의 크기를 정의하여 가로 스크롤하세요.</p>
         <p class="checklist"><span><i></i></span> 행동 패턴에 따라 컨테이너 모듈을 대비. 예를 들어, 비밀번호찾기는(어떤 맥락인지 설명 추가하기) 로그인/회원가입과 조금 큰 컨테이너 모듈.</p>
         <p class="checklist"><span><i></i></span> 약간 다른 맥락이지만 설정, 글쓰기 등의 페이지에서는 배경색으로 일반적인 페이지와 대비.</p>
         

@@ -185,6 +185,7 @@
 
 
 
+// todo outer
 @mixin tag {
   display: inline-block;
   height: 24px;
@@ -198,6 +199,7 @@
 }
 @mixin tag-primary {@include tag;background-color:gold;color:#252d29;}
 
+// todo
 @mixin tag-group {@include group;}
 
 @mixin hashtag {

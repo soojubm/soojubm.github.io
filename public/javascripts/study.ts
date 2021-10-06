@@ -412,3 +412,21 @@ textboxEle.addEventListener('keypress', function(e) {
 // type InitialFontStyle = "twin-color-text" | "box-text" | "down-side-text" | "out-line-text" | "bubble-shadow-text";
 
 // type InitialFontName = "andada-pro" | "bebas-nenu" | "montecarlo" | "roboto" | "stix-two-text" | "style-script";
+
+// graphQL
+// const endpoint = 'https://fakerql.com/graphql'
+// const query = `{
+//     Todo(id: "cjkskilwt00422c10dezjgdhw") {
+//       id
+//       title
+//       completed
+//     }
+//   }`
+
+// fetch(endpoint, {
+//   method: 'POST',
+//   headers: { 'Content-Type': 'application/json' },
+//   body: JSON.stringify({ query }),
+// })
+//   .then(res => res.json())
+//   .then(json => console.log(JSON.stringify(json.data, null, 2)))

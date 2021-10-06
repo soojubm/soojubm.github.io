@@ -33,13 +33,14 @@ $transition-fade: opacity 0.15s linear;
 
   --navbar-height: 56px;
   --navbar-padding: 2rem;
-  --subheader-height: 56px;
+  --titlebar-height: 56px;
 
   --font-size-huge: 2rem;
   --font-size-large: 1.125rem;
   --font-size-medium: .875rem;
   --font-size-tiny: .75rem;
-  // 
+
+  // mixin으로 써야함 
   --font-size-display: var(--font-size-huge);
   --font-size-title: var(--font-size-huge);
   --font-size-subhead: var(--font-size-large);
@@ -77,11 +78,10 @@ $transition-fade: opacity 0.15s linear;
 
 
   // ! what-target-option(thiness/states), 타크테마에도 바뀌지 않는.
-  --color-background: 0;
-  --color-border: 0;
-  --color-border-dark: 0;
-  --color-text: 0;
-  --color-text-light: 0;
+  --color-background: var(--gray100);
+  --color-border: var(--gray200);
+  --color-text: var(--gray800);
+  --color-text-light: var(--gray400);
 
   --color-background-hover: 0;
   --color-background-ative: 0;

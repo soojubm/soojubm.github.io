@@ -15,7 +15,7 @@ const scrollspy = ({ menusSelector: menusClass, sectionsSelector: sectionsClass 
     element.addEventListener('click', event => {
       event.preventDefault()
 
-      const targetOffsetY = sections[index].offsetTop - 100
+      const targetOffsetY = sections[index].offsetTop + sections[index].clientHeight / 1.5
       window.scrollTo(0, targetOffsetY)
       // const targetOffsetY = document.querySelector(element.getAttribute('href')).getBoundingClientRect().top
     })
@@ -27,7 +27,7 @@ const scrollspy = ({ menusSelector: menusClass, sectionsSelector: sectionsClass 
     let activeOffsetLeft
 
     sections.forEach((section, index) => {
-      const isObserved = section.offsetTop <= window.pageYOffset - 200
+      const isObserved = section.offsetTop <= window.pageYOffset + sections[index].clientHeight / 1.5
       if (!isObserved) return
 
       const targetMenu = menus[index] as any

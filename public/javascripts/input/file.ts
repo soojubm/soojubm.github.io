@@ -19,12 +19,12 @@ function attach(fileInput: HTMLInputElement) {
     if (!validFileType(file)) return alert('파일타입 jpeg pjpeg png 중 하나가 아니야~')
 
     const fileTemplate = `
-			<a class="file-attachment-item" href="#">
+			<div class="file-attachment-item">
 				<figure class="file-attachment-item-image"><img src=${window.URL.createObjectURL(file)} alt=${file.name}></figure>
-				<b class="file-attachment-item-name" href="#">${file.name}</b>
+				<b class="file-attachment-item-name">${file.name}</b>
 				<small class="file-attachment-item-size" >${returnFileSize(file.size)}</small>
 				<button class="file-attachment-item-delete js-remove-this"><i class="icon-x"></i></button>
-			</a>`
+			</div>`
 
     attachmentList.innerHTML += fileTemplate
     // attachmentList.append(fileTemplate);

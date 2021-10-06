@@ -9,8 +9,8 @@
 .profile-user-avatar:hover {box-shadow:var(--shadow);}
 .profile-user-name {@include text-subhead;}
 .profile-user-id {display:block;}
-.profile-user-career {display:block;margin:.5rem 0 0;color:var(--gray400);}
-.profile-user-description {max-height:4.8em;margin:1.5rem 0;white-space:normal;overflow:hidden;text-overflow:ellipsis;word-wrap:break-word;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;line-height:1.6;position:relative;}
+.profile-user-career {display:block;margin:.25rem 0 0;color:var(--gray400);}
+.profile-user-description {max-height:5.4em;margin:1.25rem 0;white-space:normal;overflow:hidden;text-overflow:ellipsis;word-wrap:break-word;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;position:relative;}
 .profile-user-description-more {margin:0 .5rem;@include link-outer;}
 .profile-user-toggle {width:100%;margin:1rem 0;text-align:center;color:var(--gray800);position:relative;}
 .profile-user-toggle-icon {@include avatar-small;}
@@ -25,8 +25,8 @@
 
 .profile-user-statistic {}
 .profile-user-socials {}
-.profile-user-socials-title {margin:0.5rem 0;font-size:var(--font-size-body);font-weight:normal;color:var(--gray400);}
-.profile-user-socials-link {display:block;color:var(--gray800);line-height:var(--size-medium);}
+.profile-user-socials-title {margin:0.5rem 0;@include text-label;}
+.profile-user-socials-link {}
 .profile-user-socials-link:hover {color:var(--color-primary);}
 .profile-user-controls {display:flex;margin:2rem 0 1rem;}
 .profile-user-controls-follow {@include button-primary;width:calc(70% - var(--space-after-button));}
@@ -34,9 +34,9 @@
 
 // todo
 .social {}
-.social-link {@include item;margin-bottom:var(--space-small);}
+.social-link {display:flex;align-items:center;@include item;margin-bottom:var(--space-small);}
 .social-link-icon {@include item-avatar-medium;}
-.social-link-label {}
+.social-link-label {@include item-label;}
 .social-link:hover {@include hover-item;}
 
 
@@ -55,7 +55,7 @@
 // avatar를 floating하면 아이콘 버튼으로 쓰기 어려운가? clearfix
 // 아이템의 크기에 따라 텍스트 갯수와 스타일이 달라짐.
 
-.profile-foot-follow {@include button-tertiary;width:100%;}
+.profile-foot-follow {@include button-secondary;width:100%;}
 .profile-body {padding:0 0 64px 398px;box-sizing:border-box;position:relative;}
 
 .profile-display {display:flex;}
@@ -92,7 +92,7 @@
 .card-tags-item {@include hashtag;margin:0 var(--space-small) 0 0;font-size:var(--font-size-caption);}
 
 .card-item {height:var(--size-large);margin:1rem 0;position:relative;z-index:var(--zindex-default);}
-.card-item-avatar {@include item-avatar;}
+.card-item-avatar {@include item-avatar;margin:0 var(--space) 0 0;}
 .card-item-name {}
 .card-item-price {}
 .card-item:hover {@include hover-item;}

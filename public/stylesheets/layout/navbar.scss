@@ -1,5 +1,5 @@
 .navbar {display:flex;align-items:center;height:var(--navbar-height);padding:0 var(--navbar-padding);background:var(--gray0);position:relative;left:0;right:0;top:0;z-index:var(--zindex-navigation);}
-.navbar-logo {@include avatar-medium;background-color:gold;border-radius:50%;font-size:var(--font-size-body);}
+.navbar-logo {@include avatar-medium;background-color:gold;border-radius:50%;}
 .navbar-burger {@include avatar-medium;display:none;margin:0 .5rem 0 0;z-index:calc(var(--zindex-navigation) + 1);}
 .navbar-menu {display:flex;align-items:center;margin-left:auto;margin-top:-3px;position:relative;z-index:var(--zindex-navigation);}
 .navbar-menu-item {padding:0 1rem;color:var(--gray800);position:relative;z-index:var(--zindex-default);transition:all .4s;} // m p reset
@@ -22,7 +22,7 @@
 .search-recommend-title {margin:0 auto var(--space);@include text-label;}
 .search-recommend-item {@include chip;}
 .search-preview {}
-.search-preview-item {display:flex;align-items:center;}
+.search-preview-item {display:flex;align-items:center;position:relative;z-index:1;}
 .search-preview-item + .search-preview-item {margin:var(--space-after-item) 0 0 0;}
 .search-preview-item-avatar {@include avatar-medium;margin:0 var(--space-small) 0 0;}
 
@@ -51,7 +51,8 @@
 
 .notification {}
 .notification-list {padding:1rem 2rem;}
-.notification-item {min-height:var(--size-large);margin:var(--space) 0;padding-left:calc(48px + var(--space));position:relative;z-index:var(--zindex-default);}
+.notification-item {min-height:var(--size-large);padding-left:calc(48px + var(--space));position:relative;z-index:var(--zindex-default);}
+.notification-item + .notification-item {margin:var(--space) 0 0 0;}
 .notification-item:hover {@include hover-item;}
 .notification-item-avatar {@include avatar-large;position:absolute;left:0;top:0;}
 .notification-item-user {display:block;font-size:var(--font-size-body);line-height:1.4;}
@@ -81,7 +82,7 @@
 .user-logout:hover {@include hover-item;}
 .user-logout:hover .user-logout-icon {background:var(--gray0);}
 
-.user-myinfo {@include link-outer;margin:.5rem 0 0;}
+.user-myinfo {@include link-outer;margin:.25rem 0 0;}
 .user-footer {}
 .user-footer a {font-size:var(--font-size-caption);color:var(--gray400);}
 

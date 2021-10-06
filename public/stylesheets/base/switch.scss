@@ -1,0 +1,18 @@
+.switch {display:block;position:relative;}
+input[type=checkbox][role=switch] + label {display:block;height:20px;line-height:18px;padding-left:calc(48px + .75rem);cursor:pointer;}
+input[type=checkbox][role=switch] + label:before {content:'';display:block;width:48px;height:20px;border:none;border-radius:var(--radius);box-sizing:border-box;background:var(--gray200);position:absolute;left:0;top:0;transition:background .2s;}
+input[type=checkbox][role=switch] + label:after {content:'';display:block;/*18px*/width:16px;height:16px;border:none;border-radius:var(--radius);background:var(--gray0);box-shadow:var(--shadow);position:absolute;left:2px;top:2px;transition:left .2s;transform:rotate(0deg);}
+input[type=checkbox][role=switch]:checked + label {color:var(--color-primary);}
+input[type=checkbox][role=switch]:checked + label:before {background:var(--color-primary);}
+input[type=checkbox][role=switch]:checked + label:after {left:calc(48px - 16px - 2px);}
+input[type=checkbox][role=switch]:disabled {}
+input[type=checkbox][role=switch]:disabled + label {cursor:not-allowed;}
+input[type=checkbox][role=switch]:disabled:checked + label {color:var(--color-primary);}
+input[type=checkbox][role=switch]:disabled:checked + label:before {background:var(--color-primary);}
+input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
+
+// .switch-wrap {display:inline-block;width:var(--size-medium);height:var(--size-medium);overflow:hidden;cursor:pointer;}
+// .day {display:block;width:var(--size-medium);transition:all .4s ease;position:absolute;top:0;transition:all .4s ease .3s;}
+// .night {display:block;width:var(--size-medium);position:absolute;top:32px;transition:all .4s ease 0s;}
+// .theme-dark .day {top:var(--size-medium);transition:all .4s ease 0s;}
+// .theme-dark .night {top:0;transition:all .4s ease .3s;}

@@ -1,6 +1,8 @@
 @import 'button';
 @import 'checkbox';
 @import 'quantity';
+@import 'textfield';
+@import 'switch';
 
 select,
 textarea,
@@ -18,26 +20,8 @@ input:matches(
   -webkit-appearance: none;
 }
 
-@mixin reset-textinput {
-  -webkit-appearance:none;-moz-appearance:none;appearance:none;
-}
-
 textarea:focus, input:focus, button:focus {
   outline: none;
-}
-
-
-
-// input, textarea {
-//   -webkit-appearance:none;-moz-appearance:none;appearance:none;
-// }
-input, select, textarea {
-  // width: 100%;
-  // max-width: 100%;
-  // border-radius:0px;
-  // -webkit-border-radius:0;
-  // color:inherit;
-  // font:inherit;
 }
 
 // input[type="checkbox"],
@@ -67,14 +51,13 @@ input[type=number]::-webkit-outer-spin-button {-webkit-appearance:none;}
 input[type=date] {display:block;max-height:48px;}  // 패딩으로 설정한 세로값 크롬에서(only?) 다른 텍스트 필드와 달라짐. iOS displayblock
 input[type=date]::-webkit-calendar-picker-indicator {width:100%;opacity:0;position:absolute;left:0;bottom:0;}
 input[type=date]::-webkit-inner-spin-button {display:none;}
-// input[type=email]:valid {border-color:var(--red800);}
+input[type=email]:valid {}
 input[type=email]:invalid {border-color:var(--red800);}
 
 
 // rem 으로 모듈화하기 어렵다. ex 1.5rem => top:0.125rem
 // line-heght로 리셋스타일에 종속되지 않도록 함. + block
 // height 테이블 내에서 세로 정렬에 필요
-// radio-input // radio-label
 // nextjs + css module에서 type selector 이슈 .checkbox-input / .checkbox-label
 .checkbox,.radio {display:block;position:relative;}
 input[type=checkbox] {width:0;height:0;opacity:0;position:absolute;outline:auto;}
@@ -145,7 +128,6 @@ input[type=checkbox]:checked + label + * {display:block;margin:0.25rem 0 var(--s
 
 
 
-
 .range {}
 .range input[type=range] {width:100%;height:4px;background:var(--gray100);appearance:none;-webkit-appearance:none;}
 .range input[type=range]::-webkit-slider-thumb {appearance:none;width:16px;height:16px;padding:4px;background:var(--red800);border-radius:var(--radius);cursor:pointer;appearance:none;-webkit-appearance:none;}
@@ -172,70 +154,6 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 // .theme-dark .night {top:0;transition:all .4s ease .3s;}
 
 
-.textfield {position:relative;}
-.textfield-label {display:block;
-  margin:0 0 .125rem 0;
-}
-.textfield-label small {margin:0 0 0 .25rem;color:var(--gray400);}
-.textfield-input {display:block;width:100%;min-height:var(--size-large);padding:var(--padding-input);padding-right:40px;background:var(--gray100);border:1px solid transparent;border-radius:var(--radius);box-sizing:border-box;font:inherit;color:var(--gray800);/*-appearance:none;*/} // textarea 하단 간격
-.textfield-input:disabled {border-color:var(--gray200);background:var(--gray200);color:var(--gray100);cursor:not-allowed;}
-// .textfield-input:not(select):readonly {background:none;padding-left:0;padding-right:0;border:none;outline:none;}
-// .textfield-input:not(select):readonly::placeholder {color:var(--gray800);}
-.textfield-input:focus {background:var(--gray0);border-color:var(--gray200);outline:0;}
-.textfield-reveal {position:absolute;right:1rem;bottom:calc(1rem - 1px);z-index:var(--zindex-default);font-size:var(--font-size-caption);color:var(--gray400);}
-.textfield-unit {width:40px;height:46px;padding:0 1rem;line-height:50px;text-align:right;color:rgba(0, 0, 0, 0.4);position:absolute;right:0;bottom:0;}
-.textfield-helper {margin-top:.25rem;color:var(--red800);}
-.textfield-button {border-top-left-radius:0;border-bottom-left-radius:0;position:absolute;right:0;top:0;}
-.textfield-link {font-size:var(--font-size-caption);position:absolute;right:0;top:0;}
-// .textfield-reset {}
-// .textfield-prefix + .textfield-input {display:inline-block;padding-right:100px;}
-
-// todo
-.searchfield {}
-.searchfield .textfield-prefix {top:11px !important;}
-
-@mixin textfield-prefix {
-  @include avatar-small;position:absolute;left:1rem;top:40px;pointer-events:none;
-  @media (--breakpoint-small) {top: 40px;}
-}
-@mixin textfield-surfix {
-  @include avatar-small;background-color:var(--gray0);position:absolute;right:1rem;top:40px;pointer-events:none;
-  // @media (--breakpoint-small) {top:35px;}
-}
-
-
-// 검색필드는 레이블이 없다.
-.textfield-check {@include textfield-surfix;}
-.textfield-prefix {@include textfield-prefix;background:var(--gray100);}
-.textfield-prefix ~ .textfield-input {padding-left:calc(1rem + 2rem + .25rem);}
-.textfield-surfix {@include textfield-surfix;}
-.selectbox-indicator {@include textfield-surfix;}
-// .textfield-clear {display:none !important;}
-.textfield-clear {@include avatar-small;background:var(--gray200);@include textfield-surfix;top:11px;}
-.textfield-clear .icon-x:before {background-color:var(--gray400);}
-.textfield-clear .icon-x:after {background-color:var(--gray400);}
-
-.textfield-input[type=search] ~ .textfield-prefix {top:1rem;}
-.textfield-input[type=search]:focus ~ .textfield-clear {display:flex !important;pointer-events:all;}
-
-.textfield.is-small {padding:0 !important;font-size:var(--font-size-caption) !important;}
-.textfield.is-small .textfield-label {margin-bottom:0;}
-.textfield.is-small .textfield-input {height:var(--size-medium);padding:6px 1rem;}
-.textfield.is-inline.textfield {padding-left:5rem !important;}
-.textfield.is-inline .textfield-label {line-height:var(--size-medium);position:absolute;left:0;top:0;}
-.textfield.is-inline .textfield-input {}
-.textfield.is-floating {}
-.textfield.is-floating input {padding:0.75rem 0rem;border-top:none;border-left:none;border-right:none;}
-.textfield.is-floating input {padding:0.75rem 0rem;border-top:none;border-left:none;border-right:none;}
-.textfield.is-floating label {height:20px;position:absolute;left:0;top:6px;transition:all 0.2s ease;cursor:text;}
-.textfield.is-floating input:focus + label {color:var(--gray400);font-size:11px;top:-12px;}
-
-// .is-invalid .textfield-label {color:var(--red800);}
-// .is-valid .textfield-input {border-color:var(--green100);background:var(--green100);}
-
-.is-invalid .textfield-input {border-color:var(--red800);color:var(--red800);}
-.is-invalid .textfield-byte {color:var(--red800);}
-.is-invalid .textfield-byte b {color:var(--red800);}
 
 .boxed-form {}
 .boxed-form h4 {margin:2rem 0 0.75rem 0;}
@@ -257,26 +175,27 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 
 // file
 input[type=file] {width:0;height:0;opacity:0;position:absolute;}
-input[type=file] + label {display:inline-block;}
+input[type=file] + label {}
 input[type=file] + label:after {display:none;}
 
 .file {}
 .file-title {}
 .file-helper {margin:.25rem 0 0;}
 .file-input {opacity:0;}
-.file-label {@include button-secondary;cursor:pointer;}
+// todo
+.file-label {@include button-secondary;padding-bottom:10px;cursor:pointer;}
 .file-attachment {margin:2rem 0 0;}
-.file-attachment-title {margin:.5rem 0;font-size:var(--font-size-body);font-weight:400;color:var(--gray400);}
+.file-attachment-title {margin:.5rem 0;@include text-label;}
 .file-attachment-helper {}
 .file-attachment-list:after {content:'';display:block;clear:both;}
-.file-attachment-item {display:block;width:100%;background:var(--gray100);border-radius:var(--radius);overflow:hidden;position:relative;}
+.file-attachment-item {@include tile-elevated-small;max-width:300px;}
 .file-attachment-item:not(:first-child) {margin-top:.5rem;}
-.file-attachment-item-image {float:left;width:80px;height:80px;margin-right:1.5rem;overflow:hidden;position:relative;}
-.file-attachment-item-image img {width:auto;height:auto;max-width:auto;min-height:80px;max-height:100px;margin:auto;position:absolute;left:0;right:0;top:0;bottom:0;}
-.file-attachment-item-name {display:block;margin:.75rem 0 -.25rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.file-attachment-item-image {width:var(--size-huge);height:var(--size-huge);border-radius:var(--radius);overflow:hidden;position:relative;}
+.file-attachment-item-image img {width:auto;height:auto;max-width:auto;min-height:var(--size-huge);max-height:100px;margin:auto;position:absolute;left:0;right:0;top:0;bottom:0;}
+.file-attachment-item-name {display:block;margin:.25rem 0 -.25rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 .file-attachment-item-size {color:var(--gray400);}
-.file-attachment-item-delete {@include avatar-medium;position:absolute;right:0;top:0;}
-.file-attachment-item-delete:hover {background:#f9f9f6;}
+.file-attachment-item-delete {@include avatar-medium;@include position-right-top;}
+.file-attachment-item-delete:hover {}
 
 
 // date

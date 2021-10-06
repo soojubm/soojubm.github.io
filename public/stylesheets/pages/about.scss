@@ -31,8 +31,9 @@
 .about-book-inner {padding: 0 5%;white-space: nowrap;font-size: 0;}
 
   .bookitem {@include tile-elevated;}
-  .bookitem-cover {height:14rem;margin:-1rem -1rem 1rem;background: var(--gray100);border-radius: var(--radius);position:relative;}
-  .bookitem-cover img{width: auto;
+  .bookitem-cover {height:14rem;background: var(--gray100);border-radius:var(--radius);position:relative;}
+  .bookitem-cover img{
+    width: auto;
     height: auto;
     max-width: 8rem;
     max-height: 100%;

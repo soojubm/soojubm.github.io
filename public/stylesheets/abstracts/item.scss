@@ -8,20 +8,27 @@
 
 // => avatar medium, avatar large(우측정렬, 버튼 아래)
 
+// item disaply:flex; align-items:center;
+
 @mixin item {
-  @include clearfix;width:100%;position:relative;z-index:1;
+  @include clearfix;
+  width:100%;
+  position:relative;
+  z-index:1;
 }
 @mixin item-avatar {
-  float:left;margin-right:var(--space);
+  float:left;
   @include avatar-large;
 }
 @mixin item-avatar-medium {
-  float:left;margin-right:var(--space);
+  float:left;
   @include avatar-medium;
 }
 @mixin item-label {
   // ! 아이콘 단독으로 사용하는 경우가 있기 때문에 레이블에서 마진을 적용
+  // ! a 태그 텍스트 컬러 초기화
   margin-left:var(--space);
+  color: var(--gray800);
 }
 
 
