@@ -8,7 +8,7 @@
 .banner-image {@include avatar-large;}
 .banner-eyebrow {@include tag;margin:0 0 .5rem 0;}
 .banner-title {@include text-title;}
-.banner-description {margin:1rem 0;}
+.banner-description {margin:var(--space-after-subhead) 0 var(--space-after-description);}
 .banner-button {@include button-text;}
 
 @media (--breakpoint-small) {

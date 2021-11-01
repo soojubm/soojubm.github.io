@@ -1,9 +1,9 @@
-.post {@include container-medium;} // img - margin
+.post {@include container-medium;padding:40px 5%;} // img - margin
 .post-head {position:relative;}
 .post-head-category {display:flex;align-items:center;@include link-outer;position:relative;}
 .post-head-category:hover {}
 .post-head-category figure {@include avatar-tiny;margin:0 .5rem 0 0;font-size:10px;}
-.post-head-headline {padding:.25rem 0 2rem 0;@include text-title;} /* 상하단 패딩 똑같이해야 스키티때 */
+.post-head-headline {padding:.25rem 0 2rem 0;@include text-title;font-family:'DunkelSans';} /* 상하단 패딩 똑같이해야 스키티때 */
 .post-head-dateline {}
 .post-head-readingtime {}
 .post-head-progress {display:none;height:4px;background:var(--color-primary);position:absolute;bottom:0;}
@@ -87,29 +87,13 @@
 
 .comment-write {display:flex;flex-wrap:wrap;justify-content:space-between;}
 .comment-write-text {width:100%;margin:0 0 var(--space-after-button) 0;}
+// line-height 때무네 space로 간격을 주지 않고 1rem을 줌.
 .comment-write-name {display:none;width:var(--grid-column);margin:0 0 1rem 0;}
 .comment-write-password {display:none;width:var(--grid-column);margin:0 0 1rem 0;}
 .comment-write-submit {@include button-primary;}
 .comment-write-cancel {@include button-text;margin:0 auto 0 var(--space-after-button);}
 .is-focused .comment-write-name {display:block;}
 .is-focused .comment-write-password {display:block;}
-
-.post-item {width:auto;margin:0 10%;padding-left:320px;padding-right:2rem;padding-bottom:4rem;box-sizing:border-box;position:relative;}
-.post-item-thumbnail {height:160px;overflow:hidden;background:rgba(0,0,0,4);position:absolute;left:0;right:0;top:0;z-index:-1;transition:all .4s .1s;}
-.post-item-thumbnail img {opacity:.75;transition:all .4s .1s;}
-.post-item-category {display:block;color:coral;position:absolute;left:2rem;top:8rem;transition:all .4s .2s;}
-.post-item-date {display:block;color:var(--gray0);position:absolute;right:2rem;top:8rem;transition:all .4s .2s;}
-.post-item-title {margin:0 0 3rem 0;padding:8rem 0 0;font-size:var(--font-size-subhead);color:var(--gray0);transition:all .4s;}
-.post-item-summary {margin:0 0 .5rem 0;transition:all .4s .2s;}
-.post-item-tag {color:var(--gray400);text-decoration:underline;}
-
-.post-item:hover {padding-bottom:4rem;}
-.post-item:hover .post-item-thumbnail {left:-50%;right:-50%;height:100%;}
-.post-item:hover .post-item-thumbnail img {margin-top:-10%;opacity:.5;transform:scale(1.1);}
-.post-item:hover .post-item-title {margin:0 0 1rem 0;}
-.post-item:hover .post-item-summary {margin-bottom:2rem;color:var(--gray0);}
-.post-item:hover .post-item-category {left:0;}
-.post-item:hover .post-item-date {right:0;}
 
 // pager
 
@@ -129,7 +113,6 @@
 .post-pagination-next-postname {@include text-subhead;color:var(--gray800);}
 
 @media (--breakpoint-small) {
-	.post {padding:40px 5%;}
 	.post-body-image {float:none;margin-left:-8%;margin-right:-8%;}
 
 	.post-pagination {flex-wrap:wrap;flex-direction:column-reverse;}

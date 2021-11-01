@@ -1,4 +1,4 @@
-// const isDarkMode = window.matchMedia &&
+// const isDarkTheme = window.matchMedia &&
 //   window.matchMedia('(prefers-color-scheme: dark)').matches;
 
 export const DARK_THEME_CLASS = 'theme-dark'
@@ -6,54 +6,38 @@ export const LIGHT_THEME_CLASS = 'theme-light'
 
 function darkTheme(classname) {
   const darkThemeTrigger = document.querySelector(classname)
-  const darkThemeSwitch = darkThemeTrigger?.querySelector('input')
-  if (!darkThemeTrigger || !darkThemeSwitch) return
+  if (!darkThemeTrigger) return
 
-  loadTheme(darkThemeSwitch)
+  // 3가지 body class, check attribute, local storage
+  const isDarkTheme = () => document.body.classList.contains(DARK_THEME_CLASS)
 
-  darkThemeTrigger.addEventListener('click', () => toggleDarkTheme(darkThemeSwitch), false)
+  loadTheme()
+  darkThemeTrigger.addEventListener('click', toggleDarkTheme)
 
-  function toggleDarkTheme(darkThemeSwitch) {
+  function toggleDarkTheme() {
     document.body.classList.toggle(DARK_THEME_CLASS)
+    localStorage.setItem('theme', isDarkTheme() ? DARK_THEME_CLASS : LIGHT_THEME_CLASS)
 
-    const isDarkmode = document.body.classList.contains(DARK_THEME_CLASS)
-    darkThemeSwitch.checked = isDarkmode
-
-    localStorage.setItem('theme', isDarkmode ? DARK_THEME_CLASS : LIGHT_THEME_CLASS)
+    detectSwitch()
   }
 
-  function loadTheme(darkThemeSwitch) {
+  function loadTheme() {
     const savedTheme = localStorage.getItem('theme')
     if (!savedTheme) return
 
     document.body.classList.add(savedTheme)
-    darkThemeSwitch.checked = savedTheme === DARK_THEME_CLASS
+
+    detectSwitch()
+  }
+
+  function detectSwitch() {
+    const darkThemeSwitch = darkThemeTrigger?.querySelector('input')
+    darkThemeSwitch.checked = isDarkTheme()
   }
 }
 
-// function darkTheme() {
-//   const darkmodeButton = document.querySelector('.js-darkmode')
-//   if(!darkmodeButton) return
-
-//   const DARK_CLASS = 'theme-dark'
-//   const isDarkmode = document.body.classList.contains(DARK_CLASS)
-
-//   darkmodeButton.addEventListener('click', setTheme, false)
-
-//   loadTheme()
-
-//   function setTheme() {
-//     document.body.classList.toggle(DARK_CLASS)
-
-//     darkmodeButton!.querySelector('input')!.checked = isDarkmode
-
-//     if (isDarkmode) {
-//       saveTheme(DARK_CLASS)
-//     } else {
-//       clearTheme()
-//     }
-
-//   }
+// function usePrefersDarkMode() {
+//   return useMedia(["(prefers-color-scheme: dark)"], [true], false);
 // }
 
 export default darkTheme
@@ -71,6 +55,7 @@ export default darkTheme
 
 // document.documentElement.classList.add('color-theme-in-transition')
 // document.documentElement.setAttribute('data-theme', theme)
+
 // window.setTimeout(function() {
 //   document.documentElement.classList.remove('color-theme-in-transition')
 // }, 1000)

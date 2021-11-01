@@ -24,7 +24,7 @@
 			사용자 프로필 페이지 유아이를 포트폴리오 리스트로 사용합니다.
 			<a class="profile-user-description-more" href="javascript:alert('준비중');">자세히보기</a>
 		</p>
-		<div class="profile-user-hashtags tag-group" role="group">
+		<div class="profile-user-hashtags" role="group">
 			<a class="tag" href="#profile">HTML5</a>
 			<a class="tag" href="#profile">SASS</a>
 			<a class="tag" href="#profile">VanillaJS</a>
@@ -40,10 +40,12 @@
 			<button class="profile-user-controls-follow">팔로우</button>
 			<button class="profile-user-controls-message">메시지</button>
 		</div>
+
 		<button class="profile-user-toggle js-toggle" hidden>
 			수줍이님이 더 궁금하신가요?
 			<figure class="profile-user-toggle-icon"><i class="icon-caret"></i></figure>
 		</button>
+
 		<section class="profile-user-info">
 			<hr role="separator" />
 			<div class="profile-user-statistic">
@@ -57,14 +59,31 @@
 						<span class="statistic-value">8</span>
 					</div>
 				</div>
+				<article class="avatarlist" style="display:flex;align-items:center;margin:var(--space) 0 0 0;">
+					<span>Followed by</span>
+					<figure class="design-article-avatar-small" style="margin-left:.5rem;box-shadow: var(--gray0) 0px 0px 0px 2px;">
+						<img src="/public/images/soo.png" alt="">
+					</figure>
+					<figure class="design-article-avatar-small" style="margin-left:-.5rem;box-shadow: var(--gray0) 0px 0px 0px 2px;">
+						<img src="/public/images/soo.png" alt="">
+					</figure>
+					<figure class="design-article-avatar-small" style="margin-left:-.5rem;box-shadow: var(--gray0) 0px 0px 0px 2px;">
+						<img src="/public/images/soo.png" alt="">
+					</figure>
+					<figure class="design-article-avatar-small" style="margin-left:-.5rem;box-shadow: var(--gray0) 0px 0px 0px 2px;">
+						<img src="/public/images/soo.png" alt="">
+					</figure>
+					<!-- <span style="margin:0 0 0 var(--space-small);">수줍이 외 4명</span> -->
+				</article>
+				<small class="mutiual" style="display:block;margin:var(--space) 0 0 0;">내가 팔로우하는 사용자 중에는 팔로워가 없습니다. (twitter)</small>
 			</div>
-			<hr role="separator" />
+			<!-- <hr role="separator" />
 			<div class="profile-user-address">
 				<div><b>Tel</b> <span>+82 10 3121 7045</span></div>
 				<div><b>Email</b> <span>soojubm@gmail.com</span></div>
 				<div><img hidden aria-hidden="false" src="/public/icons/map-pin.svg" alt="map" /><b>Location</b>
 					<span>서울시 강서구 화곡동</span></div>
-			</div>
+			</div> -->
 			<hr role="separator" />
 			<div class="profile-user-socials social">
 				<h2 class="profile-user-socials-title social-title" hidden>소셜 미디어</h2>
@@ -92,12 +111,11 @@
 	<section class="profile-body js-tab">
 		<nav class="profile-tablist" role="tablist">
 			<button class="profile-tablist-tab" role="tab" name="project" aria-selected="true">프로젝트
-				<i class="profile-tablist-tab-badge">3</i>
+				<!-- <i class="profile-tablist-tab-badge">3</i> -->
 			</button>
 			<!-- <button class="profile-tablist-tab" role="tab" name="webpage" aria-selected="false">웹페이지 <i
 					class="profile-tablist-tab-badge">5</i></button> -->
 			<button class="profile-tablist-tab" role="tab" name="case-study" aria-selected="false">케이스스터디
-				<i class="profile-tablist-tab-badge">4</i>
 			</button>
 			<button class="profile-tablist-tab" role="tab" name="blank" aria-selected="false">빈 상태
 				</button>
@@ -123,15 +141,15 @@
 				<b aria-hidden="true" hidden>List</b></button>
 		</div>
 
-		<div class="profile-sorting" style="position:absolute;right:0;top:58px;">
-			<!-- <div class="sorting" style="position:relative;display:flex;;">
-        <label class="" for="select2">Sort by</label>
-        <select class="" id="select2" style="background:none;border:none;padding:0 var(--space) 0 0;font:inherit;color:var(--gray800);">
+		<div class="profile-sorting" style="position:absolute;right:0;top:57px;top:61px;">
+			<div class="sorting" style="display:flex;position:relative;">
+        <!-- <label class="" for="select2">Sort by</label> -->
+        <select class="" id="select2" style="background:none;border:none;padding:0 var(--space-small) 0 0;font:inherit;color:var(--gray800);">
           <option class="select-option" value="select-option1">최신순</option>
         </select>
         <span class="selectbox-indicator" role="img" style="background:var(--gray100);position:relative;right:auto;top:auto;"><i class="icon-caret"></i></span>
-      </div> -->
-      <div class="dropdown">
+      </div>
+      <!-- <div class="dropdown">
         <button class="dropdown-trigger js-toggle" aria-expanded="true">
           <span class="dropdown-trigger-label">최신순</span>
           <figure class="dropdown-trigger-icon"><i class="icon-caret"></i></figure>
@@ -141,7 +159,7 @@
           <a class="dropdown-menu-link" href="#">인기순</a>
           <a class="dropdown-menu-link" href="#">최신순</a>
         </menu>
-      </div>
+      </div> -->
 		</div>
 
 		<hr role="separator" />
@@ -163,8 +181,9 @@
 					<span class="card-tags-item">디자인</span>
 					<span class="card-tags-item">프론트엔드개발</span>
 				</div>
-				<hr />
-				<button style="display:flex;align-items:center;margin-top:-.25rem;margin-left:.5rem;color:var(--gray400);font-size:var(--font-size-caption);"><i class="icon-heart" style="margin-right:1rem;"></i> 좋아요</button>
+				<!-- <hr />
+				<span>궁둥이</span> -->
+				<!-- <button style="display:flex;align-items:center;margin-top:-.25rem;margin-left:.5rem;color:var(--gray400);font-size:var(--font-size-caption);"><i class="icon-heart" style="margin-right:1rem;"></i> 좋아요</button> -->
 				<button class="card-more" hidden><i class="icon-more"></i></button>
 			</a>
 

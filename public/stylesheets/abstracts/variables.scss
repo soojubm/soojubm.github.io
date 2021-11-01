@@ -32,7 +32,6 @@ $transition-fade: opacity 0.15s linear;
   --font-family-caption: 0;
 
   --navbar-height: 56px;
-  --navbar-padding: 2rem;
   --titlebar-height: 56px;
 
   --font-size-huge: 2rem;
@@ -107,7 +106,8 @@ $transition-fade: opacity 0.15s linear;
   --error-color: #fff;
 
   // dark / light / gray?
-  --gradient: linear-gradient(to bottom, var(--gray1000), rgba(37,45,41,.75), var(--gray800));
+  // --gradient: linear-gradient(to bottom, var(--gray1000), rgba(37,45,41,.75), var(--gray800));
+  --gradient: linear-gradient(to bottom, var(--gray100), var(--gray800));
 
   // container width
   --width-tiny: 320px;
@@ -115,8 +115,8 @@ $transition-fade: opacity 0.15s linear;
   --width-medium: 640px;
   --width-large: 1180px;
 
-  --width-dropdown: 240px;
-  --width-popover: 240px;
+  --width-dropdown: 280px;
+  --width-popover: 280px;
   --width-dialog: 0;
 
   --size-huge: 5rem; // 80px
@@ -133,7 +133,7 @@ $transition-fade: opacity 0.15s linear;
 
   // ! in TILE
   --space-leading-title: -.25rem;
-  --space-leading-subhead: -.25rem;
+  --space-leading-subhead: -.125rem;
   --space-leading-body: -.125rem;
 
   --space-after-title: 1.5rem;
@@ -221,7 +221,7 @@ $transition-fade: opacity 0.15s linear;
   --zindex-loader: 10;
 
 
-  --grid-column: calc(50% - .375rem);
+  --grid-column: calc(50% - .5rem);
   --grid-gutter: 1rem;
   --grid-margin: 5%;
   --grid-margin-minus: calc(var(--grid-margin) * -1);
@@ -237,7 +237,6 @@ $transition-fade: opacity 0.15s linear;
 
   @media (--breakpoint-large) {
     --width-large: 1020px;
-    --navbar-padding: 5%;
   }
   
 
@@ -259,6 +258,8 @@ $transition-fade: opacity 0.15s linear;
     --color-box-border: var(--gray100);
 
     --shadow: 0px 0px 2rem rgba(0, 0, 0, 0.25);
+
+    --gradient: linear-gradient(to bottom, var(--gray400), var(--gray800));
 
     color: var(--gray800);
 

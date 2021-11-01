@@ -5,118 +5,49 @@
     }
   </style>
 
-  <div class="today">
-    <!-- <header class="today-head">
-      <div class="innerbox">
-        <span>
-          {getTodayDate()}
-        </span>
-        <h1 class="today-head-title">
-          {userStore.user.name} 뉴니커, <br />
-          좋은 하루!
-        </h1>
-      </div>
-    </header> -->
-    <div class="today-topbar">
-      <span>today</span>
-      <a class="today-user" to="{routes.mobileSetting}">
-        <Emoji emoji="🦔" />
-      </a>
-    </div>
-
-    <section class="today-poll">
-      <h2>오늘 기분이 어때요?</h2>
-      <!-- <p style="width:100%;text-align:center;">🦔고슴이: 고슴이는...!</p> -->
-      <div>
-        <figure><span>🧒</span></figure>
-        <span class="label">기타</span>
-      </div>
-      <div>
-        <figure><span>👧</span></figure>
-        <span class="label">여성</span>
-      </div>
-      <div>
-        <figure><span>👦</span></figure>
-        <span class="label">남성</span>
-      </div>
-    </section>
-
-    <a class="today-newsletter" href="">
-      <h1>오늘의 뉴스레터</h1>
-      <p>뉴스레터 제목</p>
-      <div>
-        <span>#안녕</span>
-      </div>
-      <figure style="min-height:400px;">
-        <!-- <img src="" alt="" /> -->
-        <!-- <div class="overay"></div> -->
-        <div class="marquee">
-          <p>오늘 뉴스레터를 다 읽었어요!</p>
-          <p>오늘 뉴스레터를 다 읽었어요!</p>
-          <p>오늘 뉴스레터를 다 읽었어요!</p>
-          <p>오늘 뉴스레터를 다 읽었어요!</p>
-          <p>오늘 뉴스레터를 다 읽었어요!</p>
-          <p>오늘 뉴스레터를 다 읽었어요!</p>
-        </div>
-      </figure>
-    </a>
-    <aside class="today-prev">
-      <a href="#">
-        <span>지난 뉴스레터 보기</span>
-        <i class="icon-arrow"></i>
-      </a>
-    </aside>
-
-    <section class="today-timeline">
-      <span class="today-timeline-eyebrow">editor's pick</span>
-      <h2 class="today-timeline-heading">유난했던 2020년<br />이런 일들이 있었어요.</h2>
-      <a class="today-timeline-item" href="#">
-        <span class="today-timeline-item-media">👦</span>
-        <h3 class="today-timeline-item-title">제목</h3>
-        <time class="today-timeline-item-time">날짜</time>
-      </a>
-      <a class="today-timeline-item" href="#">
-        <span class="today-timeline-item-media">👦</span>
-        <h3 class="today-timeline-item-title">제목</h3>
-        <time class="today-timeline-item-time">날짜</time>
-      </a>
-      <a class="today-timeline-item" href="#">
-        <span class="today-timeline-item-media">👦</span>
-        <h3 class="today-timeline-item-title">제목</h3>
-        <time class="today-timeline-item-time">날짜</time>
-      </a>
-    </section>
-  </div>
-
   <header>
     <h1>
       Making<br />
       things better
     </h1>
     <p>디자인 시스템을 코드 베이스에서 실험하며<br />베스트 프랙티스를 찾습니다.</p>
+    <div style="display:flex;align-items:center;margin-top:1.5rem">
+      <div class="checklist" style="margin-right:2rem;">
+        <span><i></i></span> easy to change
+      </div>
+      <div class="checklist" style="margin-right:2rem;">
+        <span><i></i></span> everyone call the same
+      </div>
+      <div class="checklist" style="margin-top:0;">
+        <span><i></i></span> simplicity
+      </div>
+    </div>
   </header>
 
   <nav>
     <a href="#tokens" data-toggleId="tokens"
       >Design Tokens
-      <div class="tag" data-appearance="secondary">Draft</div>
       <span><i class="icon-arrow"></i></span>
     </a>
     <a href="#components" data-toggleId="components"
       >Components
-      <div class="tag" data-appearance="secondary">Draft</div>
+      <!-- <div class="tag" data-appearance="secondary">Draft</div> -->
       <span><i class="icon-arrow"></i></span>
     </a>
-    <a href="#" readonly data-toggleId="principles"
+    <a href="#changelog" data-toggleId="changelog"
+      >Changelog
+      <span><i class="icon-arrow"></i></span>
+    </a>
+    <a href="#design" readonly data-toggleId="principles" onClick="javascript:alert('준비중입니다')"
       >Principles
       <span><i class="icon-arrow"></i></span>
     </a>
-    <a href="#" readonly data-toggleId="writings"
-      >Voices & Tone (or Writings)
+    <a href="#design" readonly data-toggleId="writings" onClick="javascript:alert('준비중입니다')"
+      >Voices & Tone
       <span><i class="icon-arrow"></i></span>
     </a>
-    <a href="#" readonly data-toggleId="coding"
-      >Coding Conventions
+    <a href="#design" readonly data-toggleId="coding" onClick="javascript:alert('준비중입니다')">
+      Coding Conventions
       <span><i class="icon-arrow"></i></span>
     </a>
   </nav>
@@ -337,7 +268,7 @@
       <div class="card-note">마일리지 적립 200P</div>
       <button class="card-more" hidden><i class="icon-more"></i></button>
     </div>
-    <div class="quote design-ticker-item" style="max-width:400px;min-width:400px;">
+    <article class="quote design-ticker-item" style="max-width:400px;min-width:400px;">
       <div class="quote-avatar">🥫</div>
       <h3 class="quote-title">Quote</h3>
       <p class="quote-body" style="white-space:unset;">Don't you know that God is Pooh bear? Don't you know that God is Pooh bear?</p>
@@ -347,7 +278,7 @@
       </div>
       <button class="quote-action">자세히 알아보기</button>
       <!-- <button class="quote-later">지금은 괜찮아요</button> -->
-    </div>
+    </article>
     <div
       class="navbar-user-menu is-active design-ticker-item"
       style="max-width:400px;min-width:400px;position:relative;left:auto;right:auto;top:auto;bottom:auto;z-index:0;height:auto;"

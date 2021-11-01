@@ -3,7 +3,7 @@
 import './stylesheets/style.scss'
 
 import routePage, { routes } from './javascripts/router'
-import { detectLoad, lockBodyElement } from './javascripts/load'
+import { detectLoad, lockBodyElement, unlockBodyElement } from './javascripts/load'
 import carousel from './javascripts/event/carousel'
 import event from './javascripts/event/index'
 import input from './javascripts/input/index'
@@ -26,12 +26,29 @@ document.addEventListener('DOMContentLoaded', domEvents)
 document.addEventListener('DOMContentLoaded', () => {
   stopAnimation()
 
+  // lockbody
+  // 여러 개 묶여 있음.
   event.toggleClass({
     selector: '.js-navbar-toggle',
     // activeClassname: 'is-navbar-active'
   })
   event.positionSticky({ selector: '.js-titlebar', addClass: 'is-sticky-titlebar', isPassed: false })
 })
+
+// document.addEventListener('click', event => {
+//   const closestElement = (event.target as HTMLElement).closest('.js-navbar-toggle')
+//   if (!closestElement) return
+
+//   closestElement.classList.toggle('is-active')
+
+//   if (closestElement.classList.contains('is-active')) {
+//     lockBodyElement()
+//   } else {
+//     unlockBodyElement()
+//   }
+
+//   const navbarMenu = closestElement.nextElementSibling
+// })
 
 window.addEventListener('scroll', throttle(scrollProgress), true)
 function scrollProgress(): void {
@@ -487,7 +504,8 @@ function lazyLoading() {
       if (!entry.isIntersecting) return
 
       observer.unobserve(entry.target)
-      fetchData()
+      // infinite
+      // fetchData()
     })
   }
 
@@ -632,15 +650,11 @@ function mouseenterElement(event) {
 
   // todo hoverelement
   // todo mouseout vs else
-  let hoverElement
   if (targetElement) {
-    hoverElement = targetElement
-
     targetElement.setAttribute('aria-expanded', 'true')
     document.body.classList.add(ACTIVE_CLASSNAME)
   } else {
     if (!document.body.classList.contains(ACTIVE_CLASSNAME)) return
-
     // hoverElement?.setAttribute('aria-expanded', 'true')
     document.body.classList.remove(ACTIVE_CLASSNAME)
   }

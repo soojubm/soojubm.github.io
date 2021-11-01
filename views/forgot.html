@@ -5,8 +5,9 @@
 				<p class="password-description" titl="We get it, stuff happens! What's your email address?">
 					비밀번호가 기억이 안 나세요? 걱정 말아요<i style="font-style:italic;">!</i>
 					<br />
-					비밀번호를 재설정할 수 있는 링크를 이메일로 보내드릴게요. (재설정 메일을 받지 못한 경우, 재시도 등에 대한 안내를 해주자)</i>
+					임시 비밀번호를 이메일로 보내드릴게요.</i>
 				</p>
+				<!-- <p>비밀번호를 재설정할 수 있는 링크를 이메일로 보내드릴게요.</p> -->
 				<!-- <span style="font-size:3rem;position:absolute;right:0;top:0;">🖐️</span> -->
 			</header>
 			<section class="password-body">
@@ -21,16 +22,46 @@
 					<!-- <span class="password-link" title="Remember your password after all?">이메일이 기억 안 나세요? <a href="signin.html">가입하기</a></span> -->
 				</footer>
 			</section>
+
+			<br />
+			<aside class="tile-elevated">
+				<p>이메일을 받지 못하셨나요? <a href="">이유가 뭔가요?</a></p>
+			</aside>
+		</form>
+
+		<form class="password" action="">
+			<p>안전한 비밀번호를 만들고 같은 비밀번호를 다른 계정에 사용하지 마세요.</p>
+			<p>8자 이상 입력하세요. 다른 사이트에서 쓰는 비밀번호나 애완동물의 이름처럼 추측하기 쉬운 이름은 사용하지 마세요.</p>
+			<p>비밀번호를 변경하면 기기에서 로그아웃되지만, 일부 예외가 있습니다.</p>
+			<br />
+			<section class="password-body">
+				<div class="textfield">
+					<label class="textfield-label" for="find-email" title="Email Address">새 비밀번호</label>
+					<input class="textfield-input" type="text" id="find-email" class="required" placeholder="soojubm@gmail.com" autofocus />
+					<p role="alert" class="textfield-helper" hidden>이메일 형식이 아니에요.</p>
+				</div>
+				<div class="textfield">
+					<label class="textfield-label" for="find-email" title="Email Address">새 비밀번호 확인</label>
+					<input class="textfield-input" type="text" id="find-email" class="required" placeholder="soojubm@gmail.com" autofocus />
+					<p role="alert" class="textfield-helper" hidden>이메일 형식이 아니에요.</p>
+				</div>
+				<footer class="password-foot">
+					<button type="submit" class="password-foot-submit">비밀번호 변경</button>
+				</footer>
+			</section>
 		</form>
 
 		<section class="password-result" hidden>
-			<h2 class="password-result-title">
+			<h2 class="password-result-title">메일함을 확인하세요.</h2>
+			<p>
 				faf@faf.co으로
 				<br />
 				비밀번호 재설정 링크를 발송했습니다.
-				<br />
-				메일함을 확인해주세요.
-			</h2>
+			</p>
+			<p>이메일 재전송 버튼</p>
 			<a class="password-result-login" href="#">로그인하기</a>
 		</section>
+
+
+		<!-- https://support.google.com/accounts/answer/32040?visit_id=637702064644854938-965259796&p=pw_dont_reuse&hl=ko&rd=1 -->
 	</main>

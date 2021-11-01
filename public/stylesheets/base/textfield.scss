@@ -1,81 +1,57 @@
-// input, textarea {
-//   -webkit-appearance:none;-moz-appearance:none;appearance:none;
-// }
-input, select, textarea {
-  // width: 100%;
-  // max-width: 100%;
-  // border-radius:0px;
-  // -webkit-border-radius:0;
-  // color:inherit;
-  // font:inherit;
-}
-
 
 @mixin reset-textinput {
-  -webkit-appearance:none;-moz-appearance:none;appearance:none;
+  background: var(--gray100);
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  box-sizing: border-box;
+  font: inherit;
+  color: var(--gray800); // for safari #fff
 }
 
+
 @mixin textfield-prefix {
-  @include avatar-small;position:absolute;left:1rem;top:40px;pointer-events:none;
-  @media (--breakpoint-small) {top: 40px;}
+  @include avatar-small;position:absolute;left:1rem;top:38px;pointer-events:none;
 }
 @mixin textfield-surfix {
-  @include avatar-small;background-color:var(--gray0);position:absolute;right:1rem;top:40px;pointer-events:none;
+  @include avatar-small;position:absolute;right:1rem;top:38px;pointer-events:none;
   // @media (--breakpoint-small) {top:35px;}
 }
 
 
 .textfield {position:relative;}
-.textfield-label {display:block;
-  margin:0 0 .125rem 0;
-}
+.textfield-label {display:block;margin:0 0 .125rem 0;}
 .textfield-label small {margin:0 0 0 .25rem;color:var(--gray400);}
-.textfield-input {display:block;width:100%;min-height:var(--size-large);padding:var(--padding-input);padding-right:40px;background:var(--gray100);border:1px solid transparent;border-radius:var(--radius);box-sizing:border-box;font:inherit;color:var(--gray800);/*-appearance:none;*/} // textarea 하단 간격
-.textfield-input:focus {background:var(--gray0);border-color:var(--gray200);outline:0;}
+.textfield-input {display:block;width:100%;min-height:var(--size-large);padding:var(--padding-input);padding-right:40px;@include reset-textinput;}
+// .textfield-input:focus {background:var(--gray0);border-color:var(--gray200);outline:0;}
 .textfield-input:disabled {border-color:var(--gray200);background:var(--gray200);color:var(--gray100);cursor:not-allowed;}
-.textfield-input::readonly {background:none;padding-left:0;padding-right:0;border:none;outline:none;}
-.textfield-input::readonly::placeholder {color:var(--gray800);}
+.textfield-input:read-only {color:var(--gray400);cursor:default;}
+.textfield-input:read-only:focus {}
 .textfield-reveal {position:absolute;right:1rem;bottom:calc(1rem - 1px);z-index:var(--zindex-default);font-size:var(--font-size-caption);color:var(--gray400);}
 .textfield-helper {margin-top:.25rem;color:var(--red800);}
 .textfield-button {border-top-left-radius:0;border-bottom-left-radius:0;position:absolute;right:0;top:0;}
 .textfield-link {font-size:var(--font-size-caption);position:absolute;right:0;top:0;}
 .textfield-unit {}
-.textfield-clear {}
 
-// todo
-.searchfield {}
-.searchfield .textfield-prefix {top:11px !important;}
-
-
-// 검색필드는 레이블이 없다.
 .textfield-check {@include textfield-surfix;}
 .textfield-prefix {@include textfield-prefix;background:var(--gray100);}
 .textfield-prefix ~ .textfield-input {padding-left:calc(1rem + 2rem + .25rem);}
-.textfield-surfix {@include textfield-surfix;}
-.selectbox-indicator {@include textfield-surfix;}
-// .textfield-clear {display:none !important;}
-.textfield-clear {@include avatar-small;background:var(--gray200);@include textfield-surfix;top:11px;}
+.selectbox-indicator {@include textfield-surfix;background:var(--gray0);}
+.textfield-clear {@include avatar-small;@include textfield-surfix;top:11px;}
 .textfield-clear .icon-x:before {background-color:var(--gray400);}
 .textfield-clear .icon-x:after {background-color:var(--gray400);}
+.textfield-clear {display:none;}
+.textfield-input:focus + .textfield-clear {display:flex;}
 
-.textfield-input[type=search] ~ .textfield-prefix {top:1rem;}
-.textfield-input[type=search]:focus ~ .textfield-clear {display:flex !important;pointer-events:all;}
+// 검색필드는 레이블이 없다. label ~로 하면 되긴 함.
+// input container
 
-.textfield.is-small {padding:0 !important;font-size:var(--font-size-caption) !important;}
-.textfield.is-small .textfield-label {margin-bottom:0;}
-.textfield.is-small .textfield-input {height:var(--size-medium);padding:6px 1rem;}
-.textfield.is-inline.textfield {padding-left:5rem !important;}
-.textfield.is-inline .textfield-label {line-height:var(--size-medium);position:absolute;left:0;top:0;}
-.textfield.is-inline .textfield-input {}
 .textfield.is-floating {}
 .textfield.is-floating input {padding:0.75rem 0rem;border-top:none;border-left:none;border-right:none;}
 .textfield.is-floating input {padding:0.75rem 0rem;border-top:none;border-left:none;border-right:none;}
 .textfield.is-floating label {height:20px;position:absolute;left:0;top:6px;transition:all 0.2s ease;cursor:text;}
 .textfield.is-floating input:focus + label {color:var(--gray400);font-size:11px;top:-12px;}
 
-// .is-invalid .textfield-label {color:var(--red800);}
-// .is-valid .textfield-input {border-color:var(--green100);background:var(--green100);}
-
+.is-invalid .textfield-label {}
 .is-invalid .textfield-input {border-color:var(--red800);color:var(--red800);}
 .is-invalid .textfield-byte {color:var(--red800);}
 .is-invalid .textfield-byte b {color:var(--red800);}

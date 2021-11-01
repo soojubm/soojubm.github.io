@@ -27,7 +27,7 @@ const scrollspy = ({ menusSelector: menusClass, sectionsSelector: sectionsClass 
     let activeOffsetLeft
 
     sections.forEach((section, index) => {
-      const isObserved = section.offsetTop <= window.pageYOffset + sections[index].clientHeight / 1.5
+      const isObserved = section.offsetTop <= window.pageYOffset + 100
       if (!isObserved) return
 
       const targetMenu = menus[index] as any

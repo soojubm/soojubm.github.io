@@ -210,7 +210,7 @@
       <!-- <div class="navbar-user"></div> -->
     </nav>
 
-    <header class="titlebar js-titlebar" role="navigation">
+  <header class="titlebar js-titlebar" role="navigation">
       <div class="titlebar-background"></div>
       <h1 class="titlebar-title js-page-title" title="page title">페이지타이틀</h1>
       <button class="titlebar-back" onclick="javascript:window.location.href='/';">
@@ -223,59 +223,45 @@
         <span class="titlebar-action-label">공유</span>
       </button>
     </header>
-<fieldset style="padding:0 var(--navbar-padding);">
+<fieldset style="padding:0 var(--grid-margin);">
   <legend class="filter-fieldset-legend" hidden aria-hidden="true">검색</legend>
       <div class="textfield searchfield">
-        <button class="textfield-prefix"><i class="icon-search"></i></button>
+        <button class="textfield-prefix" style="top:11px;"><i class="icon-search"></i></button>
         <!-- <label class="textfield-label" for="search" hidden>검색</label> -->
         <input class="textfield-input js-input-test" type="search" id="search" placeholder="궁금한 인물이나 이슈가 있나요?">
         <button class="textfield-clear" hidden=""><i class="icon-x" style="border-color:var(--gray400);"></i></button>
       </div>
 </fieldset>
 <hr />
-<section class="navbar-search" role="search" aria-label="site">
-  <form class="search-form">
-    <p role="status" style="text-align:center;">수줍이와(과) 일치하는 검색결과가 없습니다. 자동완성이 있는 경우 검색결과는 항상 존재. chip VS item</p>
-    <hr style="margin:1.5rem 0 1rem;" />
-    <section class="search-preview">
-      <h2 class="search-recommend-title">자동 완성</h2>
-      <div class="search-preview-item item">
-        <figure class="search-preview-item-avatar">
-          <i></i>
-        </figure>
-        <p>ff</p>
-      </div>
-      <div class="search-preview-item item">
-        <figure class="search-preview-item-avatar">
-          <i></i>
-        </figure>
-        <p>ff</p>
-      </div>
-      <div class="search-preview-item item">
-        <figure class="search-preview-item-avatar" style="background:var(--color-primary);">
-          <i></i>
-        </figure>
-        <p style="color:var(--color-primary);">ff에 대한 동영상 검색</p>
-      </div>
-    </section>
-    <hr style="margin:1.5rem 0 1rem;" />
-    <section class="search-recommend">
-      <h2 class="search-recommend-title">추천 검색</h2>
-      <div class="chip-group" role="group">
-        <a class="search-recommend-item" href="#"><span class="chip-label">개구리</span></a>
-        <a class="search-recommend-item" href="#"><span class="chip-label">달팽이</span></a>
-        <a class="search-recommend-item" href="#"><span class="chip-label">매미</span></a>
-      </div>
-    </section>
-    <hr style="margin:1.5rem 0 1rem;" />
-    <section class="search-recent">
-      <h2 class="search-recommend-title">최근 검색</h2>
-      <button class="search-recommend-modify">수정</button>
-      </div>
-    </section>
-    <hr style="margin:1.25rem 0 1rem;" />
-  </form>
-</section>
+    <!-- <form action="">
+      <input type="checkbox">
+      <input type="radio">
+      <hr />
+      <select name="" id="">
+        <option value=""></option>
+      </select>
+      <input type="text" placeholder="text">
+      <input type="email" placeholder="email">
+      <input type="password" placeholder="password">
+      <input type="url" placeholder="url">
+      <input type="tel" placeholder="tel">
+      <input type="date" placeholder="date">
+      <input type="time" placeholder="time">
+
+      <textarea name="" id=""></textarea>
+      <button type="submit">제출</button>
+    </form> -->
+
+    <!-- <input id="myURL" name="myURL" type="url"
+       list="defaultURLs">
+
+<datalist id="defaultURLs">
+  <option value="https://developer.mozilla.org/">
+  <option value="http://www.google.com/">
+  <option value="http://www.microsoft.com/">
+  <option value="https://www.mozilla.org/">
+  <option value="http://w3.org/">
+</datalist> -->
 
     <!-- <div class="titlebar-backdrop js-header"></div> -->
 
@@ -283,33 +269,16 @@
       <div class="home"></div>
     </div>
 
-    <!-- <nav class="bottombar is-temp-real">
-      <a href="#about" class="bottombar-item is-active">
-        <span class="bottombar-item-media"><i class="icon-person"></i></span>
-        <span class="bottombar-item-label">소개</span>
-        <em></em>
-      </a>
-      <a href="#design" class="bottombar-item">
-        <span class="bottombar-item-media"><i class="icon-person"></i></span>
-        <span class="bottombar-item-label">디자인시스템</span>
-      </a>
-      <a href="#profile" class="bottombar-item">
-        <span class="bottombar-item-media"><i class="icon-hamberger"></i></span>
-        <span class="bottombar-item-label">페이지샘플</span>
-      </a>
-    </nav> -->
-
     <div id="sitemap"></div>
     <div id="footer"></div>
 
-    <div class="footer" style="margin-top:800px;">infinite scroll test</div>
-
+    <!-- <div class="footer" style="margin-top:800px;">infinite scroll test</div> -->
     
     <aside id="modal"></aside>
 
     <script>
       document.addEventListener('DOMContentLoaded', () => {
-        renderComponent('sitemap')
+        // renderComponent('sitemap')
         renderComponent('footer')
       })
 

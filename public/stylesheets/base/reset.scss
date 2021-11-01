@@ -14,7 +14,7 @@ strong,b,th,legend {font-weight:var(--font-weight-bold);color:var(--gray800);} l
 cite,i,address,em,dfn {font-style:normal;} em {color:var(--color-primary);}
 small {font-size:var(--font-size-caption);} abbr {text-decoration:none;}
 a {text-decoration:none;text-decoration-skip-ink:auto;color:var(--color-primary);} a:link,a:visited {} a:hover,a:focus {} a:active {}
-mark {background:gold;border-radius:var(--radius);}
+mark {background:var(--green100);border-radius:var(--radius);}
 
 // br {content:'';display:block;height:1rem;}
 hr {margin:var(--space) 0;border-top: thin solid var(--gray200);position:relative;}
@@ -27,8 +27,9 @@ pre {}
 del {color:var(--gray400);} ins {text-decoration:none;}
 
 html {min-width:320px;height:100%;font:16px/1.8 var(--fontstack);color:var(--gray800);-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overscroll-behavior:contain;}
-body {background:var(--gray0);overflow-x:hidden;font-size:.875rem;}
+body {background:var(--gray0);font-size:.875rem;}
 
+// overflow-x:hidden;
 // letter-spacing:-.0125rem;
 
 blockquote {margin:2rem 0;padding:0 0 0 var(--space);border-left:4px solid var(--gray200);border-radius:4px 0 0 0;color:var(--gray400);}
@@ -115,25 +116,7 @@ svg {color:var(--gray800);}
 .visually-hidden {width:1px;height:1px;clip:rect(1px 1px 1px 1px);overflow:hidden;position:absolute;user-select:none;} // if(true) 리더기가 무시. // speak: never;
 // [aria-hidden=false] {width:1px;height:1px;clip:rect(1px 1px 1px 1px);overflow:hidden;position:absolute;user-select:none;}
 
-button.visually-hidden:focus,
-input[type=submit].visually-hidden:focus {
-  position: fixed;
-  top: 10px;
-  left: 10px;
-  clip: unset;
-  width: unset;
-  height: unset;
-  border: 3px solid;
-  padding: 5px;
-  background: var(--gray0);
-}
 
-.focus-outline {
-  outline-width: 1px;
-  outline-style: auto;
-  outline-color: Highlight;
-  outline-color: -webkit-focus-ring-color;
-}
 
 
 @media print {

@@ -40,6 +40,7 @@ function modal({ selector: trigger }: Parameter) {
       fetchData(modalTrigger)
       openModal(window.pageYOffset)
 
+      // 모달이 열려 있을 때만
       document.addEventListener('keydown', checkCloseDialog)
       window.addEventListener('popstate', closeModal)
       modalContainer?.addEventListener('click', temp)

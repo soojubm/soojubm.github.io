@@ -25,35 +25,19 @@
     </div>
   </div>
 
-  <section style="font-size:1.5rem;letter-spacing:-.025rem;">
-    <p style="padding:1rem 5%;border-bottom:1px solid var(--gray200);">목록의 나머지를 더 보여줄 때는 [모두보기], 미리보기 형식의 텍스트를 더 보여줄 때는 [전체보기].</p>
-    <p style="padding:1rem 5%;border-bottom:1px solid var(--gray200);">사용자의 환경에 맞춰 경험을 최적화하고, 유아이의 변경은 최소화합니다.</p>
+  <!-- <section style="font-size:1.5rem;letter-spacing:-.025rem;">
     <p style="padding:1rem 5%;border-bottom:1px solid var(--gray200);">최소한의 에셋으로. 예를 들면, 왜 gray600이 필요하지 않은가? + 위계 설정에 대비를 2개 이상 적용하지 않는다.</p>
     <p style="padding:1rem 5%;border-bottom:1px solid var(--gray200);">modal, toast, popover 등는 UI가 아니라 기능(?)에 가까움. todo. pattern으로 정의할 필요가 있는 것. tile, item / base 네이밍 생략?</p>
-  </section>
-
-  <!-- <nav class="sidebar">
-    <h4 class="sidebar-heading" style="margin-top:-.25rem;">대분류</h4>
-    <div class="sidebar-item" role="listitem">
-      <figure class="sidebar-item-icon">⚽</figure>
-      <span class="sidebar-item-label">축구</span>
-    </div>
-    <div class="sidebar-item" role="listitem">
-      <figure class="sidebar-item-icon">🏹</figure>
-      <span class="sidebar-item-label">양궁</span>
-      <span class="sidebar-item-tag tag" data-appearance="primary">새소식</span>
-    </div>
-  </nav> -->
+    <h1 class="design-article-title">프로모션을 위한 단발성 페이지에서는 유연하게.</h1>
+  </section> -->
 
   <section class="tokens-body">
-
-    <!-- <h1 class="design-article-title">프로모션을 위한 단발성 페이지에서는 유연하게.</h1> -->
-
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">기표signifier</h1>
       <p class="design-article-description">test</p>
       <div class="design-article-description">
         <p class="xlist"><span><i></i></span> '확장할 수 있음'으로 plus icon을 사용하지 마세요.</p>
+        <p class="xlist"><span><i></i></span> '클릭할 수 있음'으로 bold text를 사용하지 마세요.</p>
       </div>
 
       <h6 class="title-bordered">클릭Clickable</h6>
@@ -83,6 +67,10 @@
 
       <h6 class="title-bordered">확장Expanable & Collapsible</h6>
       <figure class="chip" style="width:32px"><i class="icon-chevron" style="display:inline-block;transform:rotate(45deg);"></i></figure>
+
+      <br />
+
+      <h6 class="title-bordered">팝오버Popover</h6>
       <figure class="chip" style="width:32px;margin:var(--space-small) 0 0 0;"><i class="icon-caret" style="display:inline-block;"></i></figure>
 
       <br />
@@ -119,7 +107,6 @@
         <p>--size-tiny: 1rem;</p>
         <hr />
         <p>--navbar-height: 80px;</p>
-        <p>--navbar-padding: 2rem;</p>
         <p>--subheader-height: 2rem; // or titlebar</p>
         <hr />
         <p>--button-height-medium: var(--size-large);</p>
@@ -392,7 +379,7 @@
 
     <article class="design-article typography js-scrollspy-section">
       <h1 class="design-article-title">Typography</h1>
-      <p class="design-article-description">텍스트.</p>
+      <p class="design-article-description">텍스트. kicker/overline</p>
       <div class="design-article-description">
         <p class="checklist"><span><i></i></span> 태그라인은 작은 화면에서 개행하지 짧고 임팩트있는 문장을 사용하세요. 미리 끊어서 디자인하기. 하지만 이것은 상대적으로 깨기 쉬운 법칙.</p>
         <p class="xlist"><span><i></i></span> 단어나 구문을 underline, bold, primary color로 강조하지 마세요.</p>
@@ -438,6 +425,8 @@
         <p>@mixin text-caption {}</p>
         <hr />
         <p>@mixin truncate {}</p>
+
+        <p>todo : long-form content</p>
       </code>
 
       <h6 class="title-bordered">Font Family</h6>
@@ -552,7 +541,7 @@
         <p>--safearea-inset-bottom: null; // inprogress</p>
         <!-- <p style="color:var(--red800);">// 모바일 기준의 하나의 레이아웃을 정의하고, 컨테이너 시스템을 사용합니다.</p> -->
         <p>--grid-column: calc(50% - 2rem);</p>
-        <p>--grid-margin: 5%;</p>
+        <p>--grid-margin: 5wv; // 퍼센트를 사용하지 않는 이유</p>
       </code>
 
       <!-- <h6 class="title-bordered">space</h6>

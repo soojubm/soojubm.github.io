@@ -1,10 +1,5 @@
-
-
-.tag-group {@include tag-group;}
-
 .tag {@include tag;}
 .tag[data-appearance=primary] {@include tag-primary;}
 .tag[data-appearance=secondary] {@include tag;background-color:var(--green100);color:var(--green800);}
-
 
 .hashtag {@include hashtag;}

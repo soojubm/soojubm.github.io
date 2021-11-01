@@ -4,26 +4,19 @@
       <button class="modal-close js-modal-close"><i class="icon-x"></i><span hidden>닫기</span></button>
       <h1 class="modal-head-title">뉴닉</h1>
 
-      <table class="is-borderless">
-        <tbody>
-          <tr>
-            <th>Team</th>
-            <td>프로덕트 디자이너 1명 ✋, 백엔드 엔지니어 1명</td>
-          </tr>
-          <tr>
-            <th>Role</th>
-            <td>
-              <p>서비스 기획</p>
-              <p>디자인 Userflow/UI/GUI</p>
-              <p>프론트엔드개발 React/MobX</p>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+
+      <p>Team</p>
+      <p>프로덕트 디자이너 1명 ✋, 백엔드 엔지니어 1명</p>
+      <p>Role</p>
+      <div>
+        <p>서비스 기획</p>
+        <p>디자인 Userflow/UI/GUI</p>
+        <p>프론트엔드개발 React/MobX</p>
+      </div>
 
       <br /><br />
     
-    <hr style="background:#000;" />
+    <hr />
     <a href="https://www.notion.so/90eb61e64b18407196422b3405a3bab6" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;justify-content:space-between;color:#000;">
       <p>3월 8일에 업데이트된 <span class="mobile-block">뉴닉의 여성용어 가이드
         <span role="img" aria-label="">🍞🌹</span></span>
@@ -32,21 +25,21 @@
         <div class="line"></div>
       </figure>
     </a>
-    <hr style="background:#000;" />
+    <hr />
     <a href="https://napp.newneek.co/2020election" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;justify-content:space-between;color:#000;">
       뉴닉 총선 프로젝트
       <figure class="cta-arrow">
         <div class="line"></div>
       </figure>
     </a>
-    <hr style="background:#000;" />
+    <hr />
     <a href="https://newneek.co" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;justify-content:space-between;color:#000;">
       뉴닉 웹사이트 
       <figure class="cta-arrow">
         <div class="line"></div>
       </figure>
     </a>
-    <hr style="background:#000;" />
+    <hr />
 
       <h3 class="post-body-subhead">회고</h3>
       <ul>
@@ -272,7 +265,7 @@
         <li>웹사이트에서 사이트 개선을 위해 수집하는 피드백의 상당이 뉴스레터에 관한 피드백이다. 뉴스레터 피드백은 뉴스레터 하단에서 받고 있다.</li>
         <li>구독 과정에서 이름, 직업 등 개인정보를 입력하는 것이 허들이 될 것이다.</li>
         <li>구독 과정에서 직업을 사용자가 직접 입력하는 방식으로 수집하면 데이터를 정제하는 비용이 발생한다.</li>
-        <li>뉴스레터에서. 추가적인 설명이 필요할 때 관련 기사를 언론사로의 외부 링크로 뉴닉팀과 사용자가 얻는 것이 많지 않으며 콘텐츠 생산과 검수하는 비용이 발생한다. 시간이 없으니 쉽게 풀어준다는 브랜드 가치와도 충돌.</li>
+        <li>뉴스레터에서. 추가적인 설명이 필요할 때 관련 기사를 언론사 페이지(외부 링크)로 뉴닉팀과 사용자가 얻는 것이 많지 않으며 콘텐츠 생산과 검수하는 비용이 발생한다. 시간이 없으니 쉽게 풀어준다는 브랜드 가치와도 충돌.</li>
         <li>웹사이트 가입 시 어떤 베네핏을 제공할까.</li>
         <li>회사 이메일을 사용로 구독하는 사용자는 퇴사 시 이메일을 사용할 수 없으며 새로 구독하게 된다면 기존 사용자 데이터가 유실된다.</li>
         <li>홈페이지에서 뉴닉팀이 큐레이션하는 뉴스 콘텐츠의 클릭율이 낮다. 웹사이트 독점 콘텐츠가 부족하다.</li>
@@ -293,6 +286,95 @@
 
     </section>
   </article>
+
+
+
+  <div class="today">
+    <!-- <header class="today-head">
+      <div class="innerbox">
+        <span>
+          {getTodayDate()}
+        </span>
+        <h1 class="today-head-title">
+          {userStore.user.name} 뉴니커, <br />
+          좋은 하루!
+        </h1>
+      </div>
+    </header> -->
+    <div class="today-topbar">
+      <span>today</span>
+      <a class="today-user" to="{routes.mobileSetting}">
+        <Emoji emoji="🦔" />
+      </a>
+    </div>
+  
+    <section class="today-poll">
+      <h2>오늘 기분이 어때요?</h2>
+      <!-- <p style="width:100%;text-align:center;">🦔고슴이: 고슴이는...!</p> -->
+      <div>
+        <figure><span>🧒</span></figure>
+        <span class="label">기타</span>
+      </div>
+      <div>
+        <figure><span>👧</span></figure>
+        <span class="label">여성</span>
+      </div>
+      <div>
+        <figure><span>👦</span></figure>
+        <span class="label">남성</span>
+      </div>
+    </section>
+  
+    <a class="today-newsletter" href="">
+      <h1>오늘의 뉴스레터</h1>
+      <p>뉴스레터 제목</p>
+      <div>
+        <span>#안녕</span>
+      </div>
+      <figure style="min-height:400px;">
+        <!-- <img src="" alt="" /> -->
+        <!-- <div class="overay"></div> -->
+        <div class="marquee">
+          <p>오늘 뉴스레터를 다 읽었어요!</p>
+          <p>오늘 뉴스레터를 다 읽었어요!</p>
+          <p>오늘 뉴스레터를 다 읽었어요!</p>
+          <p>오늘 뉴스레터를 다 읽었어요!</p>
+          <p>오늘 뉴스레터를 다 읽었어요!</p>
+          <p>오늘 뉴스레터를 다 읽었어요!</p>
+        </div>
+      </figure>
+    </a>
+    <aside class="today-prev">
+      <a href="#">
+        <span>지난 뉴스레터 보기</span>
+        <i class="icon-arrow"></i>
+      </a>
+    </aside>
+  
+    <section class="today-timeline">
+      <span class="today-timeline-eyebrow">editor's pick</span>
+      <h2 class="today-timeline-heading">유난했던 2020년<br />이런 일들이 있었어요.</h2>
+      <a class="today-timeline-item" href="#">
+        <span class="today-timeline-item-media">👦</span>
+        <h3 class="today-timeline-item-title">제목</h3>
+        <time class="today-timeline-item-time">날짜</time>
+      </a>
+      <a class="today-timeline-item" href="#">
+        <span class="today-timeline-item-media">👦</span>
+        <h3 class="today-timeline-item-title">제목</h3>
+        <time class="today-timeline-item-time">날짜</time>
+      </a>
+      <a class="today-timeline-item" href="#">
+        <span class="today-timeline-item-media">👦</span>
+        <h3 class="today-timeline-item-title">제목</h3>
+        <time class="today-timeline-item-time">날짜</time>
+      </a>
+    </section>
+  </div>
+  
+
+
+
 </aside>
       <!-- <p>고민: 팬덤이 있는 프로덕트, 브랜드 이미지가 좋기 때문에 일반적인 사용자 인터렉션을 고집할 필요가 있을가? 어느 정도?, 넛징을 위한 다크패턴 지양.</p> -->
       <!-- <p>뉴스레터 내 광고(브랜디드 컨텐츠)의 비중을 줄여갈 예정이었으나 더 스킴이나 모닝브루 등의 해외 뉴스레터 서비스는 이메일 광고 BM을 유지하고 있었으나, </p> -->
@@ -376,3 +458,7 @@
         </li>
       </ol>
       <p>수집한 데이터의 한계 :: 뉴니커 일반이 아닌 독서를 좋아하는 사용자에 한정된 데이터</p>
+
+
+
+      
