@@ -4,7 +4,7 @@
 
 @mixin text-headlilne {text-indent:-3px;}
 @mixin text-title {font-size:var(--font-size-huge);line-height:1.4;font-weight:var(--font-weight-bold);color:var(--gray800);letter-spacing:-.0125rem;text-indent:-1px;}
-@mixin text-subhead {font-size:var(--font-size-subhead);font-weight:var(--font-weight-bold);letter-spacing:-.025rem;}
+@mixin text-subhead {font-size:var(--font-size-subhead);font-weight:var(--font-weight-bold);letter-spacing:-.0125rem;}
 @mixin text-body {font-size:14px;font-weight:var(--font-weight-normal);}
 @mixin text-body-large {font-size:var(--font-size-subhead);}
 @mixin text-caption {font-size:var(--font-size-caption);font-weight:var(--font-weight-bold);}

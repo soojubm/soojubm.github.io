@@ -2,6 +2,8 @@
 // Fira Sans 350 있으면..
 // all: unset
 
+
+
 // @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css');
 
 body,dl,dd,figure,blockquote,h1,h2,h3,h4,h5,h6,p,input[type=radio] {margin:0;}
@@ -32,7 +34,7 @@ body {background:var(--gray0);font-size:.875rem;}
 // overflow-x:hidden;
 // letter-spacing:-.0125rem;
 
-blockquote {margin:2rem 0;padding:0 0 0 var(--space);border-left:4px solid var(--gray200);border-radius:4px 0 0 0;color:var(--gray400);}
+blockquote {margin:2rem 0;padding:0 0 0 var(--space);border-left:4px solid var(--gray200);border-radius:4px 0 0 0;}
 
 table {
   width:100%;border-collapse:collapse;border-spacing:0;border-left-style:hidden;border-right-style:hidden;
@@ -54,7 +56,12 @@ table.is-borderless tbody tr {border:0;}
 
 ul {}
 ul li {margin:.25rem 0;padding:0 0 0  1rem;position:relative;}
-ul li:before {content:'\2022';position:absolute;left:0;}
+// ul li:before {content:'\2022';position:absolute;left:0;}
+ul li:before {    content: "-";
+  color: var(--gray);
+  position: absolute;
+  margin-left: -20px;
+}
 ul li:marker {
   unicode-bidi: isolate;
   font-variant-numeric: tabular-nums;
@@ -172,3 +179,8 @@ svg {color:var(--gray800);}
   animation: none !important;
   transition: none !important;
 }
+
+
+
+
+// accessibility-text(visually-hidden)

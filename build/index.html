@@ -149,7 +149,6 @@
         <a class="navbar-menu-item" onClick="javascript:alert('준비 중이니 기다려주세요!')">소개</a>
       </div>
 
-
       <!-- <a class="navbar-search-trigger js-navbar-toggle" href="#">
         <i class="icon-search"></i>
       </a> -->
@@ -199,7 +198,7 @@
             <span class="user-logout-label">로그아웃</spa>
           </button>
           <hr role="separator" />
-          <footer class="user-footer" style="margin:-.5rem 0 0 0;">
+          <footer class="user-footer" style="margin:-.25rem 0 0 0;">
             <!-- <a href="#">Privacy Policy</a>
             <i class="icon-bullet"></i>
             <a href="#">Terms of Service</a> -->
@@ -281,6 +280,14 @@
         // renderComponent('sitemap')
         renderComponent('footer')
       })
+
+
+      // todp
+      const hash = window.location.hash
+      const navbarItem = document.querySelector(`[href="${hash}"]`)
+      navbarItem?.classList.add('is-active')
+
+
 
       async function renderComponent(componentName) {
         const selector = `#${componentName}`

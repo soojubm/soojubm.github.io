@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     selector: '.js-navbar-toggle',
     // activeClassname: 'is-navbar-active'
   })
-  event.positionSticky({ selector: '.js-titlebar', addClass: 'is-sticky-titlebar', isPassed: false })
+  // event.positionSticky({ selector: '.js-titlebar', addClass: 'is-sticky-titlebar', isPassed: false })
 })
 
 // document.addEventListener('click', event => {

@@ -2,11 +2,18 @@
   <form class="signup" name="signup-foot-submit" action="" method="">
     <header class="signup-head">
       <h3 class="signup-head-title">Welcome<i style="font-style:italic;">!</i></h3>
-      <!-- <p class="signup-head-description">Find your people. Engage your customers. Build your brand. Do it all with Mailchimp’s Marketing Platform. Already have an account? <a href="#">Log in</a></p> -->
+      <p class="signup-head-description">
+        Find your people. Engage your customers. Build your brand. Do it all with Mailchimp’s Marketing Platform. Already have an account?
+        <a href="#">Log in</a>
+      </p>
     </header>
     <fieldset class="signup-required">
       <legend hidden>필수입력</legend>
-      <div class="textfield is-valid">
+      <div class="login-social" style="margin-top:1rem;">
+        <button class="login-social-facebook">페이스북으로 시작하기 <small hidden>Sing in with Facebook</small></button>
+      </div>
+      <div class="login-separator" role="separator">또는</div>
+      <div class="textfield is-valid" style="margin-top:-.5rem;">
         <label class="textfield-label" for="email">이메일</label>
         <input class="textfield-input" type="text" name="email" placeholder="soojubm@gmail.com" value="soojubm@gmail.com" id="email" />
         <!-- <small class="textfield-helper" role="alert">이메일을 입력하시와아요.</small> -->
@@ -57,11 +64,11 @@
     <fieldset class="signup-terms">
       <legend class="signup-terms-title" hidden>약관 동의</legend>
       <!-- <strong>회원가입 시 <a href="#">이용약관</a>과 <a href="#">개인정보처리방침</a>에 동의하는 것으로 간주합니다.</strong> -->
-      <div class="checkbox">
+      <!-- <div class="checkbox">
         <input type="checkbox" class="js-checkall" id="check-all" />
         <label for="check-all"><em>모두 동의합니다.</em></label>
-      </div>
-      <div class="checkbox">
+      </div> -->
+      <!-- <div class="checkbox">
         <input type="checkbox" class="js-check js-required" id="agree-terms" />
         <label for="agree-terms">이용약관 동의</label>
         <div class="signup-terms-content">
@@ -76,10 +83,24 @@
       <div class="checkbox">
         <input type="checkbox" class="js-check js-required" id="agree-policy" />
         <label for="agree-policy">개인정보 수집/이용 동의</label>
+      </div> -->
+      <div class="checkbox">
+        <input type="checkbox" class="js-check js-required" id="agree-terms" />
+        <label for="agree-terms"><a href="#">서비스이용약관</a>과&nbsp;<a href="#">개인정보수집</a>에 동의합니다</label>
+        <div class="signup-terms-content">
+          <p>
+            - 개인정보를 제공받는 자: 엔에이치엔페이코(주)<br />
+            - 제공항목: 광고ID, 이용자 단말기 내 설치된 어플리케이션 정보(앱 설치·실행시각 포함)<br />
+            - 제공받는 자의 개인정보 이용목적: 이용자 관심 등에 기반한 맞춤형 서비스 제공<br />
+            - 제공받는자의 개인정보 보유이용기간: 수집일로부터 2년
+          </p>
+        </div>
       </div>
       <div class="checkbox">
         <input type="checkbox" class="js-check" id="check-three" />
-        <label for="check-three">이벤트 혜택 알림 수신 동의<small style="margin-left:.5rem;color:var(--gray400);">선택</small></label>
+        <label for="check-three"
+          >이메일로 이벤트 정보를 보내드려요. 언제든 해지할 수 있어요<small style="margin-left:.5rem;color:var(--gray400);">선택</small></label
+        >
       </div>
     </fieldset>
     <!-- <div class="checkbox">
@@ -87,12 +108,13 @@
       <label for="user-agree"><strong>웹사이트 <a href="#">이용약관</a>과 <a href="#">개인정보처리방침</a>에 동의합니다.</strong></label>
     </div> -->
     <footer class="signup-foot">
-      <button class="signup-foot-submit" type="submit" disabled>가입하기</button>
+      <button class="signup-foot-submit" type="submit" disabled>이메일 주소로 가입하기</button>
+    </footer>
+
+    <footer style="padding:2rem var(--grid-margin);">
+      <p>©2001–2021 All Rights Reserved. Mailchimp® is a registered trademark of The Rocket Science Group. Cookie Preferences, Privacy, and Terms.</p>
     </footer>
   </form>
-  <footer>
-    <p>©2001–2021 All Rights Reserved. Mailchimp® is a registered trademark of The Rocket Science Group. Cookie Preferences, Privacy, and Terms.</p>
-  </footer>
 </main>
 <script defer>
   function onChangePhoneNumberFormat(num) {

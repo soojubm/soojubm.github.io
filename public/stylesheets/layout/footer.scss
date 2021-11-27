@@ -18,7 +18,7 @@
 .footer-background {@include bleeding;background:var(--gray100);}
 .footer-address {}
 .footer-address-logo {display:block;font-size:var(--font-size-subhead);filter:grayscale(100%);opacity:.5;}
-.footer-address-slogan {@include text-subhead;margin:var(--space) 0;}
+.footer-address-slogan {@include text-subhead;margin:0 0 var(--space) 0;}
 .footer-address-info {}
 .footer-copyright {display:block;}
 

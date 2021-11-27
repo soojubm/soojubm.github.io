@@ -7,39 +7,51 @@
 
   <header>
     <h1>
-      Making<br />
+      <span style="-webkit-text-stroke: 1px black;color:#fff;">Making</span><br />
       things better
     </h1>
-    <p>디자인 시스템을 코드 베이스에서 실험하며<br />베스트 프랙티스를 찾습니다.</p>
-    <div style="display:flex;align-items:center;margin-top:1.5rem">
-      <div class="checklist" style="margin-right:2rem;">
-        <span><i></i></span> easy to change
+    <p>디자인 시스템을 코드 베이스에서 실험하며<br />베스트 프랙티스를 찾습니다. <a href="#principles">어떤 원칙이 있는지 궁금해요.</a></p>
+
+    <!-- <a
+      class="tile-elevated"
+      href="#changelog"
+      style="width:160px;height:160px;display:flex;align-items:center;justify-content:center;border-radius:50%;
+      position:absolute;right:5%;top:4rem;font-size:var(--font-size-subhead);color:var(--gray800);font-weight:var(--font-weight-bold);"
+      >changelog</a
+    > -->
+
+    <div style="display:flex;align-items:center;margin:2rem 0 0;">
+      <div style="margin-right:1.25rem;">
+        <span><i class="icon-check" style="margin-right:.5rem;"></i></span> easy to change
       </div>
-      <div class="checklist" style="margin-right:2rem;">
-        <span><i></i></span> everyone call the same
+      <div style="margin-right:1.25rem;">
+        <span><i class="icon-check" style="margin-right:.5rem;"></i></span> everyone call the same
       </div>
-      <div class="checklist" style="margin-top:0;">
-        <span><i></i></span> simplicity
+      <div style="margin-top:0;">
+        <span><i class="icon-check" style="margin-right:.5rem;"></i></span> simplicity
       </div>
     </div>
+    <!-- <p>
+      어떤 원칙으로 시스템을 만들고 있을까요?
+    </p> -->
   </header>
 
   <nav>
+    <!-- <a href="#principles" data-toggleId="principles"
+      >Principles
+      <div class="tag" data-appearance="secondary">Draft</div>
+      <span><i class="icon-arrow"></i></span>
+    </a> -->
     <a href="#tokens" data-toggleId="tokens"
       >Design Tokens
       <span><i class="icon-arrow"></i></span>
     </a>
     <a href="#components" data-toggleId="components"
       >Components
-      <!-- <div class="tag" data-appearance="secondary">Draft</div> -->
       <span><i class="icon-arrow"></i></span>
     </a>
-    <a href="#changelog" data-toggleId="changelog"
-      >Changelog
-      <span><i class="icon-arrow"></i></span>
-    </a>
-    <a href="#design" readonly data-toggleId="principles" onClick="javascript:alert('준비중입니다')"
-      >Principles
+    <a href="#changelog" data-toggleId="coding">
+      Changelog
       <span><i class="icon-arrow"></i></span>
     </a>
     <a href="#design" readonly data-toggleId="writings" onClick="javascript:alert('준비중입니다')"
@@ -52,7 +64,7 @@
     </a>
   </nav>
 
-  <section class="design-ticker">
+  <section class="design-ticker" style="overflow:hidden;">
     <article class="design-ticker-item tile-elevated" style="max-width:400px;">
       <div class="item" role="listitem">
         <figure class="item-avatar"></figure>
@@ -82,7 +94,7 @@
     </article>
 
     <div class="share design-ticker-item" style="max-width:400px;min-width:400px;">
-      <h2 class="share-title">가족이나 친구들과<br />함께 보세요!</h2>
+      <h2 class="share-title">가족이나 친구와<br />함께 보세요!</h2>
       <hr />
       <button class="share-back"><i class="icon-x"></i></button>
       <button class="share-facebook">
@@ -221,7 +233,7 @@
     </article>
 
     <div class="share design-ticker-item" style="max-width:400px;min-width:400px;">
-      <h2 class="share-title">가족이나 친구들과<br />함께 보세요!</h2>
+      <h2 class="share-title">가족이나 친구와<br />함께 보세요!</h2>
       <hr />
       <button class="share-back"><i class="icon-x"></i></button>
       <button class="share-facebook">
@@ -330,6 +342,10 @@
       </footer>
     </div>
     <div class="design-ticker-overay"></div>
+  </section>
+
+  <section style="padding:8rem var(--grid-margin);">
+    <h1 style="font-size:2.5rem;font-family:'DunkelSans';">Who wants this</h1>
   </section>
 </main>
 

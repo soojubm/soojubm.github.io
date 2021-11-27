@@ -30,22 +30,6 @@
 .icon-x.is-red:before {background-color:var(--red800);}
 .icon-x.is-red:after {background-color:var(--red800);}
 
-// todo span 
-.checklist {    position: relative;margin-left:-3px;
-  padding: 0px 0px 0px 25px;}
-.checklist span {display:inline-flex;align-items:center;justify-content:center;width:var(--size-tiny);height:var(--size-tiny);margin-right:.5rem;position:absolute;left:0;top:6px;}
-.checklist span i {display:inline-block;width:7px;height:3px;border-left:1px solid;border-bottom:1px solid;border-color:var(--gray800);vertical-align:middle;transform:translateY(-3px) rotate(-45deg);}
-
-.checklist + .checklist,
-.checklist + .xlist,
-.xlist + .xlist {margin-top:.125rem;}
-
-.xlist {    position: relative;margin-left:-3px;
-  padding: 0px 0px 0px 25px;}
-.xlist i {display:inline-block;vertical-align:middle;width:var(--size-tiny);height:var(--size-tiny);position:relative;margin-right:.5rem;position:absolute;left:0;top:5px;}
-.xlist i:before {content:'';width:10px;height:.5px;background-color:var(--gray800);position:absolute;left:50%;top:50%;transform:translate(-50%, -50%) rotate(45deg);}
-.xlist i:after {content:'';width:.5px;height:10px;background-color:var(--gray800);position:absolute;left:50%;top:50%;transform:translate(-50%, -50%) rotate(45deg);}
-
 .icon-check {display:inline-block;width:7px;height:2px;border-left:2px solid;border-bottom:2px solid;border-color:var(--gray800);vertical-align:middle;transform:translateY(-2px) rotate(-45deg);}
 
 .icon-heart {position:relative;}
@@ -57,7 +41,7 @@
 .icon-ribbon:before {content: '';display: block;width:8px;height:12px;background:var(--gray800);margin:6px auto 0;}
 .icon-ribbon:after {content: '';display: block;width:8px;height:8px;background:var(--gray100);margin:-2px auto 0;transform: rotate(45deg);}
 
-.icon-search {margin:1px 0 0 0;}
+.icon-search {}
 .icon-search:before {content: '';display: block;width:10px;height:10px;border-radius:50%;margin:0 auto;border:2px solid var(--gray800);transform:translateX(-1px)}
 .icon-search:after {content: '';display: block;width:6px;height:2px;background: var(--gray800);margin:0 auto;border-radius:var(--radius);transform: rotate(45deg) translate(3px,-5px);}
 // .is-active .icon-search:before {content:'';width:10px;height:2px;background-color:var(--gray800);position:absolute;left:50%;top:50%;transform: translate(-50%, -50%) rotate(45deg);border:none;border-radius:0;}
