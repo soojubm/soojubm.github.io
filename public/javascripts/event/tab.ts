@@ -13,13 +13,15 @@ function tab() {
   const tabPanels = tabElement.querySelectorAll('[role=tabpanel]')
   let selectedTab = tabs[0] as HTMLElement
 
-  initializeTabIndicator()
+  initializeIndicator()
+
+  console.log('ttt', getElementWidth(selectedTab))
 
   tabs.forEach((tab, tabIndex) => {
     tab.addEventListener('click', () => {
       selectedTab = tab as HTMLElement
 
-      initializeTabIndicator()
+      initializeIndicator()
 
       // selectTab
       tabs.forEach(tab => tab.setAttribute('aria-selected', 'false'))
@@ -34,11 +36,13 @@ function tab() {
   })
 
   // var tempEEE = throttle(initializeTabIndicator).bind(this)
-  window.addEventListener('resize', throttle(initializeTabIndicator), true)
+  window.addEventListener('resize', throttle(initializeIndicator), true)
   // window.removeEventListener('resize', tempEEE, true)
 
-  function initializeTabIndicator() {
+  function initializeIndicator() {
     if (!tabElement) return
+
+    console.log(`${getElementWidth(selectedTab)} - 4px`)
 
     const indicatorElement = tabElement.querySelector<HTMLElement>('.profile-tablist-indicator')
     if (!indicatorElement) return

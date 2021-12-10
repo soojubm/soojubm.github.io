@@ -33,3 +33,7 @@ const download = () => {
   // // Free the URL created above
   // window.URL.revokeObjectURL(url);
 }
+
+const siblings = [].slice.call(parent.children).filter(function(child) {
+  return child !== ele
+})

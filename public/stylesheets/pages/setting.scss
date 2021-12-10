@@ -23,7 +23,7 @@
 .setting-row-change {@include avatar-medium;font-size:var(--font-size-body);position:absolute;right:1rem;}
 .setting-row-change b {display:none;background:var(--gray0);transform:translateX(200px);transition:all .5s;position:relative;z-index:var(--zindex-default);}
 .setting-row-change i {}
-.setting-row-form {}
+.setting-row-form {width:100%;}
 .setting-row-form-foot {}
 .setting-row-foot {display:flex;}
 .setting-row-foot-confirm {@include button-primary;}

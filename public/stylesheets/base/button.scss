@@ -104,7 +104,7 @@ button {@include reset-button;}
   &:active {}
   &:disabled {}
 }
-
+.button-text {@include button-text;}
 @mixin button-small {
   min-width: auto;
   height: var(--size-medium);

@@ -20,4 +20,5 @@
 .share-copy {display:flex;flex-wrap:wrap;width:100%;}
 .share-copy-label {}
 .share-copy-url {}
-.share-copy-button {@include button-text;@include button-small;min-width:auto;position:absolute;right:1rem;top:.5rem;}
+.share-copy-button {@include avatar-small;font-size:var(--font-size-caption);position:absolute;right:1rem;top:50%;transform:translateY(-50%);}
+// .share-copy-button {@include button-small;min-width:auto;position:absolute;right:1rem;top:.5rem;}

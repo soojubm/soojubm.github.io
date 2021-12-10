@@ -6,11 +6,11 @@
 .design-article {margin:var(--space-before-article) 0;position:relative;}
 .design-article-title {margin:0 0 var(--space-after-subhead) 0;@include text-subhead;}
 .design-article-description {margin:1.5rem 0;}
-
+.design-article-tile {margin:2rem 0;}
 
 
 // todo span 
-.checklist {    position: relative;margin-left:-3px;
+.checklist {position: relative;margin-left:-3px;
   padding: 0px 0px 0px 25px;}
 .checklist span {display:inline-flex;align-items:center;justify-content:center;width:var(--size-tiny);height:var(--size-tiny);margin-right:.5rem;position:absolute;left:0;top:6px;}
 .checklist span i {display:inline-block;width:7px;height:3px;border-left:1px solid;border-bottom:1px solid;border-color:var(--gray800);vertical-align:middle;transform:translateY(-3px) rotate(-45deg);}
@@ -19,35 +19,33 @@
 .xlist i:before {content:'';width:10px;height:.5px;background-color:var(--gray800);position:absolute;left:50%;top:50%;transform:translate(-50%, -50%) rotate(45deg);}
 .xlist i:after {content:'';width:.5px;height:10px;background-color:var(--gray800);position:absolute;left:50%;top:50%;transform:translate(-50%, -50%) rotate(45deg);}
 
-
-
-.design-article-description p {
-  padding: 0px 0px 0px 1.25rem;
-  position: relative;
+@mixin reset-list {
+  li:before {
+    content: '';
+  }
 }
-.design-article-description p + p {
-  margin-top: .25rem;
-}
-.design-article-description i {margin:0 .5rem 0 0;opacity:.6;position:absolute;left:0;top:11px;}
+
+.design-article-checklist {@include reset-list;margin:1.25rem 0;}
+.design-article-checklist li {position: relative;}
+.design-article-checklist li + li {margin-top: .25rem;}
+.design-article-checklist li i {margin:0 .5rem 0 0;opacity:.6;position:absolute;left:0;top:11px;}
 .design-article-title + .design-article-description {margin-top:0;}
 // .design-article-description + .design-article-description {margin-top:-1rem;}
 .design-article-more {display:flex;align-items:center;font-size:var(--font-size-caption);color:var(--color-primary);font-weight:var(--font-weight-bold);position:absolute;right:0;top:0;}
 .design-article-more i {margin-left:1.5rem;}
 .design-article-helper {margin:var(--space-after-item);font-size:var(--font-size-caption);}
 
-.design-article-role {
-  @include tile-flat-small;
-  margin: 1rem 0;
+.design-article-role {@include tile-flat-small;margin:var(--space) 0;font-size:var(--font-size-caption);
 }
-.design-article-role + .design-article-role {
-  margin-top: calc(var(--space-small) * -1);
-}
-.design-article-anatomy {@include tile-flat;margin:2rem 0;}
-.design-article-anatomy-title {display:inline-block;background:none;text-decoration:underline;}
+.design-article-role-title {@include tag;margin:0 1rem 0 -1rem;}
+.design-article-role-item {display:inline-block;margin:0 var(--space-small);}
+.design-article-role-item.is-nested {}
 
-.design-article dl {}
-.design-article dl dt {width:8rem;}
-.design-article dl dd {width:calc(100% - 10rem);}
+.design-article-anatomy {@include tile-flat-small;margin:var(--space) 0;font-size:var(--font-size-caption);}
+.design-article-anatomy-title {@include tag;margin:0 0 .25rem -1rem;}
+.design-article-anatomy-item {display:block;}
+.design-article-anatomy-item.is-nested {margin-left:var(--space);}
+.design-article-anatomy-item .is-optional {margin:0 0 .5rem 0;font-size:10px;color:var(--gray400);}
 
 // todo fadeup 그냥 up
 .design-article.is-scrolled {animation:fadeup .8s forwards;}
@@ -169,7 +167,7 @@
 .userlist {@include tile-elevated;max-width:400px;}
 .userlist header {display:flex;align-items:center;justify-content:space-between;margin:var(--space-leading-subhead) 0 var(--space-after-subhead);}
 .userlist header h1 {@include text-subhead;}
-.userlist header a {font-weight:var(--font-weight-bold);}
+.userlist header a {}
 .userlist .profile-user:hover {@include hover-item;}
 .userlist-cta {@include button-tertiary;}
 // .userlist:after {
@@ -240,7 +238,8 @@
 
 .sidebar {}
 .sidebar-heading {margin:0 0 .5rem 0;@include text-label;}
-.sidebar-item {display:flex;align-items:center;margin:var(--space) 0;position:relative;z-index:var(--zindex-default);}
+.sidebar-item {display:flex;align-items:center;position:relative;z-index:var(--zindex-default);}
+.sidebar-item + .sidebar-item {margin:var(--space) 0 0 0;}
 .sidebar-item:hover {@include hover-item;}
 .sidebar-item figure {@include avatar-medium;margin:0 var(--space) 0 0;font-size:var(--font-size-body);}
 .sidebar-item-icon {}

@@ -146,20 +146,9 @@
   @include avatar-tiny;border:2px solid var(--gray0);background:gold;position:absolute;left:-.25rem;top:-.25rem;
 }
 
-.todo {}
-.todo legend {margin:24px 0 4px 0;color:var(--gray400);}
-.todo-body {}
-.todo-list {}
-.todo-list li {margin:.5rem 0;padding:1rem 2rem;background:#f6f6f6;position:relative;}
-.todo-list li button {position:absolute;right:16px;top:50%;transform:translateY(-50%);}
-.todo-item {}
-.todo-control {margin:1rem 0 0 0;text-align:right;}
-.todo-control-add {}
-.todo-control-remove {}
-.completed {text-decoration: line-through;}
 
 .statistic {display:flex;justify-content:space-between;}
-.statistic-item {width:100%;position:relative;z-index:1;}
+.statistic-item {position:relative;z-index:1;}
 .statistic-item:hover {@include hover-item;}
 .statistic-label {display:block;color:var(--gray400);}
 .statistic-value {display:block;margin:-.25rem 0 0 0;@include text-subhead;}
@@ -275,13 +264,11 @@
 
 .pricing-item {max-width:400px;@include tile-elevated;}
 .pricing-item-title {@include text-subhead;}
-.pricing-item-price {display:block;@include text-title;}
+.pricing-item-price {display:block;margin:1.5rem 0 1rem 0;@include text-title;}
 .pricing-item-price-unit {}
-.pricing-item-price- {color:var(--gray400);}
-.pricing-item-period {display:inline-block;color:var(--gray800);}
-.pricing-item-period:before {content:' / ';margin:0 .5rem;color:var(--gray400);}
+.pricing-item-price-per {display:block;margin:0 0 -.25rem 0;color:var(--gray400);}
 .pricing-item-description {margin:var(--space) 0;}
-.pricing-item ul {margin:var(--space) 0 2rem 0;}
+.pricing-item ul {margin:var(--space) 0 1rem 0;}
 .pricing-item ul li {display:flex;align-items:center;padding:0;}
 .pricing-item ul li:before {content:'';display:none;}
 .pricing-item ul li .icon-check {margin:0 .75rem 0 0;border-color:var(--font-size-subhead);}

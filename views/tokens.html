@@ -34,11 +34,12 @@
   <section class="tokens-body">
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">기표signifier</h1>
-      <p class="design-article-description">test</p>
-      <div class="design-article-description">
-        <p class="xlist"><span><i></i></span> '확장할 수 있음'으로 plus icon을 사용하지 마세요.</p>
-        <p class="xlist"><span><i></i></span> '클릭할 수 있음'으로 bold text를 사용하지 마세요.</p>
-      </div>
+      <p class="design-article-description">일관된 스타일로 사용자의 인지를 돕고, 제품 개발 효율을 높입니다.</p>
+
+      <ul class="design-article-checklist">
+        <li><i class="icon-check"></i>'확장할 수 있음'으로 plus icon을 사용하지 마세요.</li>
+        <li><i class="icon-check"></i>'클릭할 수 있음'으로 bold text를 사용하지 마세요.</li>
+      </ul>
 
       <div class="tile-flat-small" style="margin:0 0 var(--space-small) 0;">
         <p>클릭Clickable</p>
@@ -59,7 +60,7 @@
 
       <div class="tile-flat-small" style="display:flex;align-items:center;margin:0 0 var(--space-small) 0;">
         <figure class="chip" style="width:32px"><i class="icon-arrow is-external"></i></figure>
-        <span>외부링크External Link</span>
+        <span style="margin-left:var(--space);">외부링크External Link</span>
       </div>
       <div class="tile-flat-small" style="display:flex;align-items:center;margin:0 0 var(--space-small) 0;">
         <figure class="chip" style="width:32px"><i class="icon-chevron" style="display:inline-block;transform:rotate(45deg);"></i></figure>
@@ -78,6 +79,48 @@
         <span>닫기removable</span>
       </div>
 
+      <!-- <p class="design-article-description">카드 또는 아이템의 hover state로 여러 개의 코드 또는 스타일이 필요하지 않습니다. 하나의 mixin을 정의.</p> -->
+
+      <!-- https://material.io/design/interaction/states.html -->
+      <code class="design-article-description" style="padding:1rem;">
+        <p>@mixin hover-text {}</p>
+        <p>@mixin hover-item {}</p>
+        <hr />
+        <p>--active-text-color: null;</p>
+        <p>--active-border-color: null;</p>
+        <p>--active-background-color: null;</p>
+        <p>--disabled-opacity: .5;</p>
+        <p>--warning-text-color: null;</p>
+        <p>--warning-background-color: null;</p>
+        <p>--warning-border-color: null;</p>
+      </code>
+
+      <h6 class="title-bordered">hover - item & card</h6>
+      <button class="user-logout" title="sign out">
+        <figure class="user-logout-icon">
+          <i class="icon-out"><span class="icon-out-door"></span></i>
+        </figure>
+        <span class="user-logout-label">로그아웃</span>
+      </button>
+      <br />
+
+      <h6 class="title-bordered">selected, active/inactive</h6>
+      <button class="chip is-active">
+        <span class="chip-label">옵션</span>
+      </button>
+      <br />
+
+      <h6 class="title-bordered">disabled</h6>
+      <p>opacity .5</p>
+      <br />
+
+      <!-- / success / warning / danger ? -->
+      <h6 class="title-bordered">valid & invalid</h6>
+      <div class="" role="group" >
+        <span class="textfield-check" style="position:relative;right:auto;top:auto;background:var(--gray100);"><i class="icon-check" style="border-color:var(--color-primary);"></i></span>
+        <span class="textfield-check" style="position:relative;right:auto;top:auto;background:var(--gray100);"><i class="icon-x is-red"></i></span>
+      </div>
+
       <!-- <h6 class="title-bordered">selection</h6>
       <h6 class="title-bordered">목록의 나머지를 더 보여줄 때는 [모두보기], 미리보기 형식의 텍스트를 더 보여줄 때는 [전체보기].click - tag 컴포넌트/화살표/아이콘 아이템 전체가 클릭 영역</h6>
       <h6 class="title-bordered">link - /external</h6>
@@ -89,9 +132,9 @@
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Sizing</h1>
       <p class="design-article-description">반응형 엘리먼트에서 가로 사이즈는 비교적 유연하게 사용하기 때문에, 주로 세로 크기에 사용합니다.</p>
-      <div class="design-article-description">
-        <p class="checklist"><span><i></i></span> alert, accodion 등의 컴포넌트의 세로 크기에는 정의된 토큰을 사용하지 않는 것이 좋다. 글줄이 두 줄 이상이 될 수 있는 경우.</p>
-      </div>
+      <ul class="design-article-checklist">
+        <li><i class="icon-check"></i>alert, accodion 등 글줄이 두 줄 이상이 될 수 있는 경우 정의된 토큰을 사용하지 않는 것이 좋습니다.</li>
+      </ul>
 
       <!-- <p class="design-article-description">alert, accordion 등 예외 케이스.</p> -->
       <code class="design-article-description" style="padding:1rem;">
@@ -212,11 +255,9 @@
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Palette</h1>
       <p class="design-article-description">background/border/text/state.</p>
-
-      <div class="design-article-description">
-
-        <p class="xlist"><i></i> 다크테마를 위한 인버트 컬러셋을 추가로 정의하지 마세요. todo: 두 테마에서 모두 동일한 색으로으로 보여야 하는 케이스 정의. todo: 다크테마를 위한 gradient 정의.</p>
-      </div>
+      <ul class="design-article-checklist">
+        <li><i class="icon-check"></i>다크테마를 위한 인버트 컬러셋을 추가로 정의하지 마세요. todo: 두 테마에서 모두 동일한 색으로으로 보여야 하는 케이스 정의. todo: 다크테마를 위한 gradient 정의.</li>
+      </ul>
 
       <blockquote>
         <p><span style="color:var(--gray800);">Why!</span> 왜 --button-background-color를 정의하지 않나요?</p>
@@ -376,17 +417,18 @@
     <article class="design-article typography js-scrollspy-section">
       <h1 class="design-article-title">Typography</h1>
       <p class="design-article-description">텍스트. kicker/overline</p>
-      <div class="design-article-description">
-        <p class="checklist"><span><i></i></span> 태그라인은 작은 화면에서 개행하지 짧고 임팩트있는 문장을 사용하세요. 미리 끊어서 디자인하기. 하지만 이것은 상대적으로 깨기 쉬운 법칙.</p>
-        <p class="xlist"><span><i></i></span> 단어나 구문을 underline, bold, primary color로 강조하지 마세요.</p>
+      <ul class="design-article-checklist">
+        <li><i class="icon-check"></i>태그라인은 작은 화면에서 개행하지 짧고 임팩트있는 문장을 사용하세요. 미리 끊어서 디자인하기. 하지만 이것은 상대적으로 깨기 쉬운 법칙.</p>
+        <li><i class="icon-check"></i>단어나 구문을 underline, bold, primary color로 강조하지 마세요.</p>
         <!-- <p>primary color = link</p> -->
 
-        <!-- <p class="checklist"><span><i></i></span> display 크기는 프로모션 페이지에서 제목으로만 사용하세요.</p>
-        <p class="checklist"><span><i></i></span> subhead 크기는 카드, 아티클 레벨에서 소제목으로 사용하세요. 포스트, 약관 등 텍스트 중심의 페이지에서 본문으로 사용할 수 있습니다.</p>
-        <p class="checklist"><span><i></i></span> caption 크기는 벨리데이션 피드백, 보조 텍스트 등 도움말 맥락에서 사용하세요.</p>
-        <p class="checklist"><span><i></i></span> <b class="token-item-tag" data-appearance="secondary" style="margin:0 0 0 var(--space);">예외</b> bottom navigation에서 레이블의 폰트 크기를 10px로 사용합니다. </p>
-        <p class="checklist"><span><i></i></span> memo: 타이틀의 역할을 하는 텍스트는 단어 하나(타이틀)가 될 수도, 태그라인이 될 수도 있다. 태그라인일 경우 글자수와 단어수를 제한하고, 개행 조건도 정의하자. 작은 디바이스에서도 최대한 맞게.</p> -->
-      </div>
+        <!--
+        <p><i></i> display 크기는 프로모션 페이지에서 제목으로만 사용하세요.</p>
+        <p><i></i> subhead 크기는 카드, 아티클 레벨에서 소제목으로 사용하세요. 포스트, 약관 등 텍스트 중심의 페이지에서 본문으로 사용할 수 있습니다.</p>
+        <p><i></i> caption 크기는 벨리데이션 피드백, 보조 텍스트 등 도움말 맥락에서 사용하세요.</p>
+        <p><i></i> <b class="token-item-tag" data-appearance="secondary" style="margin:0 0 0 var(--space);">예외</b> bottom navigation에서 레이블의 폰트 크기를 10px로 사용합니다. </p>
+        <p><i></i> memo: 타이틀의 역할을 하는 텍스트는 단어 하나(타이틀)가 될 수도, 태그라인이 될 수도 있다. 태그라인일 경우 글자수와 단어수를 제한하고, 개행 조건도 정의하자. 작은 디바이스에서도 최대한 맞게.</p> -->
+        </ul>
       <blockquote>
         <span style="color:var(--gray800);">예외 케이스</span>
         bottom navigation의 label에서 10px을 사용합니다.
@@ -630,12 +672,11 @@
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title" title="or Box">Tiles</h1>
       <p class="design-article-description">연관성이 있는 콘텐츠를 시각적으로 묶습니다.</p>
-      
-      <div class="design-article-description">
+      <ul class="design-article-checklist">
         <!-- <p>아이콘/텍스트 leading에 맞춰 시각보정이 필요. line-height 때문. tile이 아니더라도 elevated 스타일이 적용되는 케이스 존재.</p> -->
-        <p class="checklist"><span><i></i></span> '클릭할 수 있음'의 기표로 elevated 스타일을 사용합니다.  타일 전체를 클릭할 수도 있고, 타일 내부에 클릭 가능한 요소를 포함할 수도 있습니다.</p>
-        <p class="xlist"><i></i> 페이지 레벨의 타이틀, 디스크립션을 타일로 만들지 마세요.</p>
-      </div>
+        <li><i class="icon-check"></i>'클릭할 수 있음'의 기표로 elevated 스타일을 사용합니다.  타일 전체를 클릭할 수도 있고, 타일 내부에 클릭 가능한 요소를 포함할 수도 있습니다.</li>
+        <li><i class="icon-check"></i>페이지 레벨의 타이틀, 디스크립션을 타일로 만들지 마세요.</p>
+      </ul>
 
       <!-- <li></li> -->
       <!-- <li><span class="token-item-tag">내부 옵션을 리스트업.</span></li> -->
@@ -658,12 +699,11 @@
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Containers</h1>
       <p class="design-article-description">페이지, 섹션 레벨의 레이아웃. 현대 유아이에서 컨테이너의 개념이 모호한 이유는 모바일에서는 섹션, 아티클, 심지어 하나의 컴포넌트가 페이지의 맥락이 되기도 함.</p>
-      <div class="design-article-description">
-        <p class="checklist"><span><i></i></span> 그리드 시스템을 사용하지 않습니다. 그리드 시스템을 구현하는 것은 효율이 떨어지며 모바일 퍼스트, 가로 스크롤 트랜드와 부합하지 않습니다. 컨테이너의 크기를 정의하고, 컨테이너 내부에서 사용하는 칼럼의 갯수를 제한하거나 아이템의 크기를 정의하여 가로 스크롤하세요.</p>
-        <p class="checklist"><span><i></i></span> 행동 패턴에 따라 컨테이너 모듈을 대비. 예를 들어, 비밀번호찾기는(어떤 맥락인지 설명 추가하기) 로그인/회원가입과 조금 큰 컨테이너 모듈.</p>
-        <p class="checklist"><span><i></i></span> 약간 다른 맥락이지만 설정, 글쓰기 등의 페이지에서는 배경색으로 일반적인 페이지와 대비.</p>
-        
-      </div>
+      <ul class="design-article-checklist">
+        <li><i class="icon-check"></i>그리드 시스템을 사용하지 않습니다. 그리드 시스템을 구현하는 것은 효율이 떨어지며 모바일 퍼스트, 가로 스크롤 트랜드와 부합하지 않습니다. 컨테이너의 크기를 정의하고, 컨테이너 내부에서 사용하는 칼럼의 갯수를 제한하거나 아이템의 크기를 정의하여 가로 스크롤하세요.</p>
+        <li><i class="icon-check"></i>행동 패턴에 따라 컨테이너 모듈을 대비. 예를 들어, 비밀번호찾기는(어떤 맥락인지 설명 추가하기) 로그인/회원가입과 조금 큰 컨테이너 모듈.</p>
+        <li><i class="icon-check"></i>약간 다른 맥락이지만 설정, 글쓰기 등의 페이지에서는 배경색으로 일반적인 페이지와 대비.</p>
+      </ul>
       <code class="design-article-description" style="padding:1rem;">
         <p>@mixin container-large {}</p>
         <hr />
@@ -675,8 +715,8 @@
       <h1 class="design-article-title">Border Radius</h1>
       <p class="design-article-description">요소에 모서리를 정의합니다.  오브젝트에 일관된 모서리를 사용하여,</p>
       <div class="design-article-description">
-        <p class="checklist"><span><i></i></span> 컨테이너의 크기에 따라 radius의 크기도 커지는 것이 밸런스에 맞으나 토큰을 최소화하는 것이 초기 스테이지에서 좋읍니다.</p>
-        <p class="xlist"><span><i></i></span> 알약pill 스타일, 원형Circle 스타일 기본default(가칭) 스타일을 혼용하지 마세요.</p>
+        <p>컨테이너의 크기에 따라 radius의 크기도 커지는 것이 밸런스에 맞으나 토큰을 최소화하는 것이 초기 스테이지에서 좋읍니다.</p>
+        <p>알약pill 스타일, 원형Circle 스타일 기본default(가칭) 스타일을 혼용하지 마세요.</p>
       </div>
   
       <div class="token-item">
@@ -686,58 +726,11 @@
       </div>
     </article> -->
 
-
-    <article class="design-article js-scrollspy-section">
-      <h1 class="design-article-title">States</h1>
-      <!-- <p class="design-article-description">카드 또는 아이템의 hover state로 여러 개의 코드 또는 스타일이 필요하지 않습니다. 하나의 mixin을 정의.</p> -->
-      <p class="design-article-description">일관된 스타일로 사용자의 인지를 돕고, 제품 개발 효율을 높입니다.</p>
-
-      <!-- https://material.io/design/interaction/states.html -->
-      <code class="design-article-description" style="padding:1rem;">
-        <p>@mixin hover-text {}</p>
-        <p>@mixin hover-item {}</p>
-        <hr />
-        <p>--active-text-color: null;</p>
-        <p>--active-border-color: null;</p>
-        <p>--active-background-color: null;</p>
-        <p>--disabled-opacity: .5;</p>
-        <p>--warning-text-color: null;</p>
-        <p>--warning-background-color: null;</p>
-        <p>--warning-border-color: null;</p>
-      </code>
-
-      <h6 class="title-bordered">hover - item & card</h6>
-      <button class="user-logout" title="sign out">
-        <figure class="user-logout-icon">
-          <i class="icon-out"><span class="icon-out-door"></span></i>
-        </figure>
-        <span class="user-logout-label">로그아웃</span>
-      </button>
-      <br />
-
-      <h6 class="title-bordered">selected / active(todo 팔로우/팔로잉)</h6>
-      <button class="chip is-active">
-        <span class="chip-label">옵션</span>
-      </button>
-      <br />
-
-      <h6 class="title-bordered">disabled</h6>
-      <p>opacity .5</p>
-      <br />
-
-      <!-- / success / warning / danger ? -->
-      <h6 class="title-bordered">valid & invalid</h6>
-      <div class="" role="group" >
-        <span class="textfield-check" style="position:relative;right:auto;top:auto;background:var(--gray100);"><i class="icon-check" style="border-color:var(--color-primary);"></i></span>
-        <span class="textfield-check" style="position:relative;right:auto;top:auto;background:var(--gray100);"><i class="icon-x is-red"></i></span>
-      </div>
-    </article>
-
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Groups</h1>
-      <p class="design-article-description">2~3개의 같은 맥락 요소의 집합.</p>
+      <p class="design-article-description">준비 중.</p>
       
-      <p class="design-article-description">리스트박스: 수량 제한없는 일관된 컴포넌트의 집합. 컨테이너: 레이아웃.</p>
+      <!-- <p class="design-article-description">리스트박스: 수량 제한없는 일관된 컴포넌트의 집합. 컨테이너: 레이아웃.</p> -->
       <!-- <p class="design-article-description">role=group/row/rowgroup, role=menuitem, role=treeitem</p> -->
       <code class="design-article-description" style="padding:1rem;">
         <p>@mixin group {}</p>
@@ -777,8 +770,8 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">z-index</h1>
-      <p class="design-article-description"></p>
-      <dl>
+      <p class="design-article-description">준비 중</p>
+      <!-- <dl>
         <dt>toast</dt>
         <dd>9</dd>
         <dt>modal</dt>
@@ -795,7 +788,7 @@
         <dd>1</dd>
         <dt>temp</dt>
         <dd>-1</dd>
-      </dl>
+      </dl> -->
     </article>
 
     <article class="design-article js-scrollspy-section">

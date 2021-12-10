@@ -14,8 +14,9 @@ export function getWindowScrollTop() {
 }
 
 export function getElementWidth(element) {
+  // return element.getBoundingClientRect().width
   return getComputedStyle(element).width
-  // return element.offsetWidth
+  // return `${element.offsetWidth}px`
 }
 
 // Hide the menu when clicking outside of it
