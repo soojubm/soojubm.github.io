@@ -14,11 +14,11 @@
 .sitemap-item-link {display:block;margin:var(--space-small) 0;color:var(--gray800);}
 .sitemap-item-link:hover {@include hover-text;}
 
-.footer {display:block;padding:4rem var(--grid-margin);overflow:hidden;position:relative;z-index:var(--zindex-default);}
+.footer {display:block;padding:4rem var(--grid-margin);overflow:hidden;text-align:center;position:relative;z-index:var(--zindex-default);}
 .footer-background {@include bleeding;background:var(--gray100);}
 .footer-address {}
 .footer-address-logo {display:block;font-size:var(--font-size-subhead);filter:grayscale(100%);opacity:.5;}
-.footer-address-slogan {@include text-subhead;margin:0 0 var(--space) 0;}
+.footer-address-slogan {@include text-subhead;margin:2rem 0 var(--space) 0;}
 .footer-address-info {}
 .footer-copyright {display:block;}
 
@@ -43,10 +43,9 @@
 
 
 .footer-temp {
-	float: right;
+	margin:0 0 2rem 0;
 	a {
-		display:block;
-		text-align:right;
+		margin: 0 var(--space);
 		font-size: var(--font-size-subhead);
 		font-weight: var(--font-weight-bold);
 		color: var(--gray800);

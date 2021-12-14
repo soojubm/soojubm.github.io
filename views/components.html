@@ -788,7 +788,7 @@
 
     <article class="design-article js-observer js-scrollspy-section js-tab">
       <h1 class="design-article-title">Tab</h1>
-      <p class="design-article-description">콘텐츠 영역을 같은 맥락의 다른 콘텐츠로 전환합니다.<p>
+      <p class="design-article-description">맥락이 같은 다른 콘텐츠끼리 정돈합니다.<p>
 
       <aside>
         <p></p>
@@ -1635,10 +1635,10 @@
           <label for="" class="textfield-label">이메일 주소</label>
           <input class="textfield-input" placeholder="Enter Your Email.." />
         </div>
-        <button class="subscribe-submit" type="submit">뉴스레터 구독</button>
         <p class="subscribe-helper">
-          뉴스레터 수신을 위한 <a href="#">개인정보 수집 및 이용</a>에 동의합니다. .
+          뉴스레터 수신을 위한 <a href="#">개인정보 수집 및 이용</a>에 동의합니다.
         </p>
+        <button class="subscribe-submit" type="submit">뉴스레터 구독</button>
       </form>
 
       <br />
@@ -1757,12 +1757,13 @@
 
       <article class="tile-elevated">
         <header>
-          <h1 class="share-title">목록 추가</h1>
+          <h1 class="share-title">컬렉션에 추가</h1>
         </header>
         <fieldset>
           <div class="checkbox">
             <input class="" type="checkbox" id="playlist" value="" aira-checked="mixed" aria-controls="1 2" />
-            <label for="playlist" title="play list">재생 목록 1</label>
+            <label for="playlist" title="play list">재생 목록 1,</label>
+            <small>나만 보기</small>
           </div>
           <div class="checkbox">
             <input class="" type="checkbox" id="playlist2" value="" aira-checked="mixed" aria-controls="1 2" />
@@ -1770,15 +1771,19 @@
           </div>
         </fieldset>
         <footer style="margin:var(--space) 0;">
-          <button class="profile-foot-follow">목록 만들기</button>
+          <div class="item" role="listitem">
+            <figure class="item-avatar" style="background-image:none;background-color:var(--gray100);"><i class="icon-plus" style="transform:scale(1.25);"></i></figure>
+            <h2 class="item-name" style="line-height:48px;">새 컬렉션 만들기</h2>
+          </div>
         </footer>
         <br />
         <div class="textfield">
-          <label class="textfield-label" for="">목록 이름</label>
+          <label class="textfield-label" for="">컬렉션 이름</label>
           <input class="textfield-input" type="text" placeholder="어떤 이름이 좋을까요?">
         </div>
         <footer class="user-foot" style="display:flex;justify-content:space-between;margin:var(--space) 0 0 0;">
-          <button class="button-text" style="width:100%;">목록에 추가</button>
+          <button class="button-text" style="width:100%;">컬렉션 만들기</button>
+          <button class="button-primary" style="width:100%;">취소</button>
         </footer>
       </article>
 

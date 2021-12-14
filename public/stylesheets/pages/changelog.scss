@@ -1,5 +1,9 @@
 .changelog {padding:0 var(--grid-margin) 8rem;}
 
+.changelog-head {
+  font-family:'DunkelSans';font-size:2rem;padding:4rem 0;
+}
+
 .changelog-filter {@include chip-group;}
 .changelog-filter-chip {@include chip;}
 .changelog-filter-chip-label {@include chip-label;}
@@ -13,7 +17,7 @@
 .changelog-item-tag {@include avatar-medium;margin:0 1.5rem 0 0;font-size:var(--font-size-caption);}
 .changelog-item-time {}
 .changelog-item-title {font-size:var(--font-size-body);font-weight:var(--font-weight-normal);}
-.changelog-item-content {margin:var(--space) 0 0 0;font-size:var(--font-size-body);}
+.changelog-item-content {margin:var(--space) 0 0 11.5rem;font-size:var(--font-size-body);}
 // .changelog-item-target {display:block;margin:var(--space-after-subhead) 0 0 0;font-weight:var(--font-weight-normal);color:var(--gray400);}
 .changelog-item div {display:none;}
 

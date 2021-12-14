@@ -5,9 +5,8 @@
 	</style>
 	<!-- <header class="profile-head">
 		<div class="profile-head-background"></div>
-		<h1 class="profile-head-headline">부끄러우니까 보지마요.</h1>
+		<h1 class="profile-head-headline"></h1>
 		<p class="profile-head-description">가상의 서비스를 전제로 디자인시스템을 구축하고 지속적으로 발전시키며 웹앱을 구성하는 컴포넌트와 페이지 유아이를 반응형으로 스케치합니다.</p>
-		<button class="profile-head-share" onclick="javascript:alert('준비중');">프로필 공유하기</button>
 	</header> -->
 	<section class="profile-user">
 		<article class="user">
@@ -107,7 +106,7 @@
 	<section class="profile-body js-tab">
 		<nav class="profile-tablist" role="tablist">
 			<button class="profile-tablist-tab" role="tab" name="project" aria-selected="true">프로젝트
-				<!-- <i class="profile-tablist-tab-badge">3</i> -->
+				<i class="profile-tablist-tab-badge">4</i>
 			</button>
 			<!-- <button class="profile-tablist-tab" role="tab" name="webpage" aria-selected="false">웹페이지 <i
 					class="profile-tablist-tab-badge">5</i></button> -->
@@ -137,38 +136,36 @@
 				<b aria-hidden="true" hidden>List</b></button>
 		</div>
 
-		<div class="profile-sorting" style="position:absolute;right:0;top:57px;">
-      <div class="dropdown">
-        <button class="dropdown-trigger js-toggle" aria-expanded="true">
-          <span class="dropdown-trigger-label">최신순</span>
-          <figure class="dropdown-trigger-icon"><i class="icon-caret"></i></figure>
-        </button>
-        <menu class="dropdown-menu" role="menu" style="right:0;">
-          <h6 class="dropdown-menu-title" hidden>sorting options</h6>
-          <a class="dropdown-menu-link" href="#">인기순</a>
-          <a class="dropdown-menu-link" href="#">최신순</a>
-        </menu>
-      </div>
+		<div class="profile-sorting dropdown" style="position:absolute;right:0;top:62px;">
+			<button class="dropdown-trigger js-toggle" aria-expanded="true">
+				<span class="dropdown-trigger-label">최신순</span>
+				<figure class="dropdown-trigger-icon"><i class="icon-caret"></i></figure>
+			</button>
+			<menu class="dropdown-menu" role="menu" style="right:0;">
+				<h6 class="dropdown-menu-title" hidden>sorting options</h6>
+				<a class="dropdown-menu-link" href="#">인기순</a>
+				<a class="dropdown-menu-link" href="#">최신순</a>
+			</menu>
 		</div>
 
 		<hr role="separator" />
 
 		<section class="profile-tabpanel" role="tabpanel" aria-hidden="false" data-index="1">
-			<!-- <a class="card js-modal" href="#" data-modal="leedotype">
+			<a class="card js-modal" href="#woolf" data-modal="woolf">
 				<figure class="card-thumbnail">
-					<img src="/public/images/newneek/gosum-spinner.png" style="margin-top:.75rem;" alt="" />
 				</figure>
-				<h3 class="card-title">이도타입</h3>
-				<div class="card-category">정리중</div>
+				<h3 class="card-title">이도타입 울프woolf</h3>
 				<div class="card-byline">
 					<figure class="card-byline-avatar"><img src="/public/images/soo.png" alt="" /></figure>
 					<span class="card-byline-name">수줍이</span>
 				</div>
 				<div class="card-tags" role="group">
+					<span class="card-tags-item">단기 프로젝트</span>
+					<span class="card-tags-item">UX</span>
 					<span class="card-tags-item">프론트엔드개발</span>
 				</div>
 				<button class="card-more" hidden><i class="icon-more"></i></button>
-			</a> -->
+			</a>
 
 			<a class="card js-modal" href="#" data-modal="newneek">
 				<figure class="card-thumbnail">
