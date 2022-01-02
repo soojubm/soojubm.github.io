@@ -116,6 +116,18 @@
 				</button>
 			<i class="profile-tablist-indicator"></i>
 		</nav>
+
+		<div class="profile-sorting dropdown" style="float:right;">
+			<button class="dropdown-trigger js-toggle" aria-expanded="true">
+				<span class="dropdown-trigger-label">최신순</span>
+				<figure class="dropdown-trigger-icon"><i class="icon-caret"></i></figure>
+			</button>
+			<menu class="dropdown-menu" role="menu" style="right:0;">
+				<h6 class="dropdown-menu-title" hidden>sorting options</h6>
+				<a class="dropdown-menu-link" href="#">인기순</a>
+				<a class="dropdown-menu-link" href="#">최신순</a>
+			</menu>
+		</div>
 		<div class="profile-display">
 			<p class="profile-display-status" role="status" hidden>Viewing 1,000 Projects</p>
 			<button class="profile-display-button js-display-grid js-test-toggle js-display-button is-selected" name="grid">
@@ -134,18 +146,6 @@
 					<span></span>
 				</i>
 				<b aria-hidden="true" hidden>List</b></button>
-		</div>
-
-		<div class="profile-sorting dropdown" style="position:absolute;right:0;top:62px;">
-			<button class="dropdown-trigger js-toggle" aria-expanded="true">
-				<span class="dropdown-trigger-label">최신순</span>
-				<figure class="dropdown-trigger-icon"><i class="icon-caret"></i></figure>
-			</button>
-			<menu class="dropdown-menu" role="menu" style="right:0;">
-				<h6 class="dropdown-menu-title" hidden>sorting options</h6>
-				<a class="dropdown-menu-link" href="#">인기순</a>
-				<a class="dropdown-menu-link" href="#">최신순</a>
-			</menu>
 		</div>
 
 		<hr role="separator" />
@@ -199,8 +199,9 @@
 					<span class="card-byline-name">수줍이</span>
 				</div>
 				<div class="card-tags" role="group">
-					<span class="card-tags-item">프리랜서</span>
-					<span class="card-tags-item">구축</span>
+					<span class="card-tags-item">프리랜서 구축</span>
+					<span class="card-tags-item">디자인</span>
+					<span class="card-tags-item">워드프레스</span>
 				</div>
 			</a>
 
@@ -245,7 +246,7 @@
 			<section class="empty">
 				<i class="empty-icon">🧟</i>
 				<h1 class="empty-title">아직 새 글이 없어요.</h1>
-				<p class="empty-description">포트폴리오를 업로드하여<br />작업물을 홍보하세요.</p>
+				<p class="empty-description">포트폴리오를 업로드하여<br />수줍이님을 알려보세요.</p>
 				<a class="empty-action" href="#">업로드하기</a>
 			</section>
 		</section>

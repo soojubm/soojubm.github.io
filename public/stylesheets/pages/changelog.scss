@@ -12,12 +12,12 @@
 // .changelog-item time {@include tile-flat;position:absolute;left:-8rem;top:-2px;}
 .changelog-item-icon {margin-left:auto;margin-right:1rem;transform:rotate(90deg);}
 .changelog-item-head {display:flex;align-items:center;}
-.changelog-item-target {display:flex;width:8rem;font-weight:var(--font-weight-bold);text-decoration:underline;}
+.changelog-item-target {display:flex;width:8rem;font-weight:var(--font-weight-bold);}
 .changelog-item-body {padding:var(--space) 0 0 0;}
 .changelog-item-tag {@include avatar-medium;margin:0 1.5rem 0 0;font-size:var(--font-size-caption);}
 .changelog-item-time {}
 .changelog-item-title {font-size:var(--font-size-body);font-weight:var(--font-weight-normal);}
-.changelog-item-content {margin:var(--space) 0 0 11.5rem;font-size:var(--font-size-body);}
+.changelog-item-content {margin:0 0 0 11.5rem;font-size:var(--font-size-body);}
 // .changelog-item-target {display:block;margin:var(--space-after-subhead) 0 0 0;font-weight:var(--font-weight-normal);color:var(--gray400);}
 .changelog-item div {display:none;}
 

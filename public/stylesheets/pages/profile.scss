@@ -106,7 +106,8 @@
 .card:hover:not(.has-item) {@include hover-item;}
 .card:hover .card-more {display:block;}
 
-.list .card {float:none;width:100% !important;margin-bottom:var(--space);}
+// padding.. todo
+.list .card {float:none;width:100% !important;margin-bottom:var(--space);padding:var(--space);}
 .list .card-thumbnail {float:left;width:80px;height:80px;margin-right:var(--space);padding-top:0;}
 .list .card-thumbnail img {max-width:150%;}
 .list .card-title {padding-top:0;}

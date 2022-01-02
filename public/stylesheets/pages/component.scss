@@ -1,6 +1,6 @@
 
 .component {}
-.component-hero {float:left;width:45%;height:100vh;padding:4rem var(--grid-margin) 6rem;border-radius:var(--radius);box-sizing:border-box;overflow:hidden;background:var(--gray200);position:sticky;top:0;left:5%;}
+.component-hero {float:left;width:50%;height:100vh;padding:4rem var(--grid-margin);border-radius:var(--radius);box-sizing:border-box;overflow:hidden;background:var(--gray200);position:sticky;top:0;}
 .component-navigation {margin:4rem 0;}
 // .component-navigation-background {@include bleeding;border-bottom:var(--border);}
 .component-navigation-scroll {@include chip-group;}
@@ -19,10 +19,9 @@
 @media (--breakpoint-small) {
   .design-body {padding-left:var(--grid-margin);padding-right:var(--grid-margin);}
 
-  .component-hero {float:none;width:90%;height:auto;position:relative;}
+  .component-hero {float:none;width:100%;height:auto;position:relative;}
 
   // .component-navigation {padding:.75rem var(--grid-margin);background:var(--gray0);position:sticky;top:calc(var(--titlebar-height) - 1px);z-index:6 ;}
-
   .component-navigation-scroll {margin:0 var(--grid-margin-minus);padding:0 var(--grid-margin);}
   // .component-navigation-scroll {@include group-bleeding;margin:0 -10rem;padding:0 10rem;position:relative;}
 

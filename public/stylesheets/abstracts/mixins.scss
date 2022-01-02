@@ -3,7 +3,7 @@
 // text란 prefix가 필요한가?
 
 @mixin text-headlilne {text-indent:-3px;}
-@mixin text-title {font-size:var(--font-size-huge);line-height:1.4;font-weight:var(--font-weight-bold);color:var(--gray800);letter-spacing:-.0125rem;text-indent:-1px;}
+@mixin text-title {font-size:var(--font-size-huge);line-height:var(--font-line-height-small);font-weight:var(--font-weight-bold);color:var(--gray800);letter-spacing:-.0125rem;text-indent:-1px;}
 @mixin text-subhead {font-size:var(--font-size-subhead);font-weight:var(--font-weight-bold);letter-spacing:-.0125rem;}
 @mixin text-body {font-size:14px;font-weight:var(--font-weight-normal);}
 @mixin text-body-large {font-size:var(--font-size-subhead);}
@@ -109,10 +109,10 @@
 @mixin group {
   display: flex;
   flex-wrap: wrap;
-  margin: var(--space-before-groupitem-minus);
+  margin: var(--space-groupitem-minus);
   > * {
     display: block;
-    margin:var(--space-before-groupitem);
+    margin:var(--space-groupitem);
   }
 }
 // group-pull 등은 ㅔㄹ이아웃..
@@ -121,16 +121,16 @@
   // display:block;
   white-space:nowrap;font-size:0;overflow:auto;
   // display:inline-flex; // ! todo
-  > * {display:inline-block;margin:0 calc(var(--space-before-groupitem) * 2) 0 0;font-size:var(--font-size-body);}
+  > * {display:inline-block;margin:0 calc(var(--space-groupitem) * 2) 0 0;font-size:var(--font-size-body);}
   &::-webkit-scrollbar {display:none;}
 }
 @mixin chip-group {
   display: flex;
   flex-wrap: wrap;
-  margin: var(--space-before-groupitem-minus);
+  margin: var(--space-groupitem-minus);
   > * {
     display: block;
-    margin:var(--space-before-groupitem);
+    margin:var(--space-groupitem);
   }
 }
 @mixin tag-group {@include chip-group;}
@@ -163,10 +163,8 @@
 //   // img {filter: brightness(.8) contrast(1.2);}
 // }
 
-
-// todo right top inset
-@mixin position-left-top {position:absolute;left:.5rem;top:.5rem;}
-@mixin position-right-top {position:absolute;right:.5rem;top:.5rem;}
+@mixin position-left-top {position:absolute;left:var(--space-inset);top:var(--space-inset);}
+@mixin position-right-top {position:absolute;right:var(--space-inset);top:var(--space-inset);}
 @mixin position-center {position:absolute;left:50%;transform:translateX(-50%);}
 @mixin position-center-center {position:absolute;left:50%;top:50%;transform:translate(-50%, -50%)}
 @mixin position-bottom {position:fixed;left:0;right:0;bottom:0;z-index:var(--zindex-navigation);}
@@ -179,22 +177,13 @@
   transform: none;
 }
 
-
-@mixin title-bordered {
-  // height: 24px;
-  // line-height: .8;
-  display: flex;
-  box-sizing: border-box;
-  align-items: center;
-  width: 100%;
+@mixin heading-label {
   margin: var(--space) 0;
-  padding: 0 0 .25rem 0;
-  border-bottom: var(--border);
-  font-size:var(--font-size-caption);
+  font-size:var(--font-size-body);
+  font-weight: var(--font-weight-normal);
   color: var(--gray400);
-  font-weight: 400;
 }
-.title-bordered {@include title-bordered;}
+.heading-label {@include heading-label;}
 
 
 @mixin theme($theme: DarkGray) {

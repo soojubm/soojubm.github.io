@@ -78,7 +78,7 @@
 .qna {padding:16px 0;border-bottom:var(--border);}
 .question-item {position:relative;}
 .question-item-category {display:block;font-size:var(--font-size-caption);color:var(--color-primary);}
-.question-item-title {margin:16px 0 8px 0;line-height:1.4;color:var(--gray800);}
+.question-item-title {margin:16px 0 8px 0;line-height:var(--font-line-height-small);color:var(--gray800);}
 .question-item-writer {font-size:var(--font-size-caption);color:var(--gray400);}
 .question-item-date {margin:0 0 0 16px;font-size:var(--font-size-caption);color:var(--gray400);}
 .answer-item {margin:16px 0 0;padding:16px 16px 16px 40px;border:var(--border);box-sizing:border-box;position:relative;}
@@ -328,11 +328,12 @@
 .newneek-section2 {background:#ebebeb;text-align:center;color:#000;}
 .newneek-section2 figure {max-width:600px;margin:0 auto;}
 .newneek-section2 footer {padding:1rem 1rem;border:1px solid #000;border-top:0;border-bottom:0;}
-.newneek-keyword-wrap {display:flex;flex-wrap:wrap;justify-content:space-evenly;padding:2rem 0 3rem;border:1px solid #000;border-top:0;}
-.newneek-keyword {width:calc(40% - 1rem);padding:1rem;background:#ebebeb;font-size:var(--font-size-body);}
+.newneek-keyword-wrap {width:100%;border:1px solid #000;border-top:0;}
+.newneek-keyword {padding:1rem;background:#ebebeb;text-align:center;font-size:var(--font-size-body);}
+.newneek-keyword + .newneek-keyword {border-top:1px solid #000;}
 .newneek-keyword b {}
 .newneek-keyword small {display:block;}
-.newneek-keyword i {display:block;font-size:var(--font-size-huge);}
+.newneek-keyword i {display:block;margin-bottom:.5rem;line-height:1;font-size:var(--font-size-huge);}
 .newneek .numbering {
   display: flex;
   align-items: center;
@@ -357,11 +358,12 @@
 
 
 
-.newneek-section1 {display:flex;flex-wrap:wrap;justify-content:space-between;margin:4rem 0 0;padding:8rem 7.5%;background:#fb7800;color:#000;position:relative;}
+.newneek-section1 {margin:4rem 0 0;padding:4rem 7.5%;background:#fb7800;color:#000;position:relative;}
 .newneek-section1 footer {width:100%;margin:4rem 0 0 0;}
-.bubble {max-width:calc(var(--grid-column) - 1rem);}
-.bubble-user {padding:.5rem 1.5rem;border:2px solid #000;background:#000;font-size:var(--font-size-body);color:#fff;font-weight:var(--font-weight-bold);}
-.bubble-text {padding:1.5rem 1.5rem 2rem;border:1px solid #000;background:#ebebeb;}
+.bubble {}
+.bubble + .bubble {margin-top:1rem;}
+.bubble-user {padding:.5rem 1rem;border:2px solid #000;background:#000;font-size:var(--font-size-body);color:#fff;font-weight:var(--font-weight-bold);}
+.bubble-text {padding:1rem;border:1px solid #000;background:#ebebeb;}
 
 
 

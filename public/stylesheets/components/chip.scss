@@ -35,7 +35,8 @@
 }
 
 @mixin chip-heading {float:left;margin:0 0 0 .25rem;background:var(--gray0);}
-@mixin chip-tailing {float:right;margin:0 .25rem 0 0;background:var(--gray0);}
+@mixin chip-tailing {margin:0 .25rem 0 0;background:var(--gray0);}
+// @mixin chip-tailing {float:right;}
 
 @mixin chip-icon {
   @include avatar-small;
@@ -43,6 +44,7 @@
 }
 @mixin chip-label {
   padding:0 var(--space-chip-inset);
+  line-height: 1; // todo
 }
 
 .chip {@include chip}

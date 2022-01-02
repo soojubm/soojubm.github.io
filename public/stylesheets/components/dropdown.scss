@@ -6,7 +6,7 @@
 .dropdown-trigger-label {@include chip-label;}
 .dropdown-trigger-icon {@include avatar-small;@include chip-tailing;}
 
-.is-active .icon-caret {transform:rotate(180deg);}
+.is-active .icon-caret {transform:translateY(-1px) rotate(180deg);}
 
 .dropdown-menu {@include tile-elevated-small;min-width:var(--width-dropdown);padding:0;position:absolute;top:calc(var(--size-medium) + var(--space-small));z-index:var(--zindex-popover);height:0;transform:scale(0);transform-origin:left top;}
 .dropdown-menu-title {}

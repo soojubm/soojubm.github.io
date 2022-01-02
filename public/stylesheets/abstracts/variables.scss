@@ -57,6 +57,7 @@ $transition-fade: opacity 0.15s linear;
 
   --font-line-height: 1.8;
   --font-line-height-small: 1.4;
+  --font-line-height-heading: var(--font-line-height-small);
 
   --font-letter-spacing: 0;
 
@@ -111,6 +112,7 @@ $transition-fade: opacity 0.15s linear;
   --gradient: linear-gradient(to bottom, var(--gray100), var(--gray800));
 
   // container width
+  // size => square
   --width-tiny: 320px;
   --width-small: 480px;
   --width-medium: 640px;
@@ -126,11 +128,14 @@ $transition-fade: opacity 0.15s linear;
   --size-small: 1.5rem; // 24px
   --size-tiny: 1rem; // 1rem
 
-  --space: .75rem;
+  --space: 1rem;
   --space-minus: calc(var(--space) * -1);
 
   --space-small: .5rem;
   --space-small-minus: calc(var(--space-small) * -1);
+
+  // todo: 현재 mixin positioning에서만사용
+  --space-inset: var(--space-small);
 
   // ! in TILE
   --space-leading-title: -.25rem;
@@ -152,8 +157,10 @@ $transition-fade: opacity 0.15s linear;
   
   --space-before-tag: .125rem;
   --space-before-tag-minus: calc(var(--space-before-tag) * -1);
-  --space-before-groupitem: .25rem; // listitem
-  --space-before-groupitem-minus: calc(var(--space-before-groupitem) * -1);
+
+  --space-groupitem: .25rem; // listitem
+  --space-groupitem-minus: calc(var(--space-groupitem) * -1);
+  
   --space-before-article: 10rem;
   --space-before-section: 12rem;
   --space-before-badge: .75rem;
@@ -189,6 +196,8 @@ $transition-fade: opacity 0.15s linear;
   --shadow-hover: 0;
   --shadow-modal: 0;
   --shadow-card: 0;
+  --shadow-active: 0;
+  --shadow-pageheader: 0;
 
   --duration-quickly: 0;
   --duration-slowly: 0;

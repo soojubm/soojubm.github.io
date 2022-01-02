@@ -456,13 +456,12 @@ function toggleDetails(event) {
 
   const targetElement = event.target.closest('.js-accordion')
 
-  console.log('contains', event.target.contains(targetElement))
-
   let isExpanded = Boolean(targetElement.getAttribute('aria-expanded'))
   targetElement.setAttribute('aria-expanded', String(!isExpanded))
   targetElement.classList.toggle('is-active')
 
-  // 패널을 포함한 전체 영역을 토글할 수 있음. 따라서 accordion-item 전체를 toggle class만 해줏면 됨.
+  // 패널을 포함한 전체 영역을 토글할 수 있음.
+  // 따라서 accordion-item 전체를 toggle class만 해줏면 됨.
   // 1. 클릭한 패널을 토글한다.
   // 도큐먼트를 클릭하면 닫을 것인지.
   // 다른 accordion-item을 클릭했을 때 닫을 것인지?
