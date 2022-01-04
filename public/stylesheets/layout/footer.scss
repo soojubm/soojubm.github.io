@@ -4,7 +4,7 @@
 .subscribe-description {margin:var(--space-after-subhead) 0 var(--space-after-description) 0;}
 .subscribe-field {}
 .subscribe-submit {@include button-primary;width:50%;margin-top:var(--space-after-button);}
-.subscribe-helper {display:block;margin:.5rem 0 0 0;font-size:var(--font-size-caption);}
+.subscribe-helper {display:block;margin:.25rem 0 0 0;font-size:var(--font-size-caption);}
 
 .sitemap {display:flex;max-width:var(--width-large);margin:0 auto;padding:4rem var(--grid-margin);position:relative;z-index:var(--zindex-default);}
 .sitemap-background {@include bleeding;background:var(--gray100);}

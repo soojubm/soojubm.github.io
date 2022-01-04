@@ -1,24 +1,30 @@
 <main class="changelog">
   <header class="changelog-head">
     <p>Changelog</p>
-    <span>추가, 변경, 삭제된 내용을 새로운 팀원에게 알려주세요. (?)</span>
+    <span>히스토리와 근거를 공유하세요. (?)</span>
   </header>
   <nav class="changelog-filter">
     <button class="changelog-filter-chip is-active"><span class="changelog-filter-chip-label">모두</span></button>
-    <button class="changelog-filter-chip"><span class="changelog-filter-chip-label">변경</span></button>
-    <button class="changelog-filter-chip"><span class="changelog-filter-chip-label">추가</span></button>
-    <button class="changelog-filter-chip"><span class="changelog-filter-chip-label">삭제</span></button>
+    <button class="changelog-filter-chip" onClick="javascript:alert('필터링 준비 중.');">
+      <span class="changelog-filter-chip-label">변경</span>
+    </button>
+    <button class="changelog-filter-chip" onClick="javascript:alert('필터링 준비 중.');">
+      <span class="changelog-filter-chip-label">추가</span>
+    </button>
+    <button class="changelog-filter-chip" onClick="javascript:alert('필터링 준비 중.');">
+      <span class="changelog-filter-chip-label">삭제</span>
+    </button>
   </nav>
   <hr />
   <article class="changelog-item js-accordion">
     <header class="changelog-item-head">
-      <em class="changelog-item-tag">🔨</em>
       <span class="changelog-item-target">Variables</span>
+      <em class="changelog-item-tag">🔨</em>
       <h3 class="changelog-item-title">--space: 0.75rem => --space: 1rem</h3>
       <figure class="changelog-item-icon"><i class="icon-arrow"></i></figure>
     </header>
-    <div class="changelog-item-body">
-      <p class="changelog-item-content">
+    <div class="changelog-item-content">
+      <p>
         space와 space-small을 / tile과 tile-small과 페어링
       </p>
     </div>
@@ -26,14 +32,13 @@
   <article class="changelog-item js-accordion">
     <!-- <time>2021. 11. 06</time> -->
     <header class="changelog-item-head">
-      <!-- <em class="changelog-item-tag">🔨 변경</em> -->
-      <em class="changelog-item-tag">🔨</em>
       <span class="changelog-item-target">Signup</span>
+      <em class="changelog-item-tag">🔨</em>
       <h3 class="changelog-item-title">소셜 가입을 상단으로 이동</h3>
       <figure class="changelog-item-icon"><i class="icon-arrow"></i></figure>
     </header>
-    <div class="changelog-item-body">
-      <p class="changelog-item-content">
+    <div class="changelog-item-content">
+      <p>
         내용 없음.
       </p>
     </div>
@@ -41,35 +46,34 @@
   <article class="changelog-item js-accordion">
     <!-- <time>2021. 11. 06</time> -->
     <header class="changelog-item-head">
-      <em class="changelog-item-tag">✂️</em>
       <span class="changelog-item-target">Button</span>
-      <h3 class="changelog-item-title">스몰 버튼 삭제</h3>
+      <em class="changelog-item-tag">✂️</em>
+      <h3 class="changelog-item-title">삭제, 스몰 사이즈</h3>
       <figure class="changelog-item-icon"><i class="icon-arrow"></i></figure>
     </header>
-    <div class="changelog-item-body">
-      <p class="changelog-item-content">
-        chip과 button small이 텍스트의 무게 차이 뿐이며 용법 혼동(??) todo
+    <div class="changelog-item-content">
+      <p>
+        chip과 button small이 스타일의 변별력이 없고 용법 중복.
       </p>
     </div>
   </article>
   <article class="changelog-item js-accordion">
     <header class="changelog-item-head">
-      <em class="changelog-item-tag">🔨</em>
       <span class="changelog-item-target">Tile</span>
+      <em class="changelog-item-tag">🔨</em>
       <h3 class="changelog-item-title">inset을 1.5rem에서 1rem으로 변경</h3>
       <figure class="changelog-item-icon"><i class="icon-arrow"></i></figure>
     </header>
-    <div>
-      <p class="changelog-item-content">
+    <div class="changelog-item-content">
+      <p>
         1.5rem 단일 사이즈로 사용 시 모바일에서 공간 낭비가 낭비가 있어 medium / small 두 가지 사이즈로 확장
       </p>
-      <b class="changelog-item-target">Tile Component</b>
     </div>
   </article>
   <article class="changelog-item js-accordion">
     <header class="changelog-item-head">
-      <em class="changelog-item-tag">🧶</em>
       <span class="changelog-item-target">Size</span>
+      <em class="changelog-item-tag">🧶</em>
       <h3 class="changelog-item-title">small(1.5rem / 24x24) 추가</h3>
       <figure class="changelog-item-icon"><i class="icon-arrow"></i></figure>
     </header>
@@ -79,14 +83,13 @@
   </article>
   <article class="changelog-item js-accordion">
     <header class="changelog-item-head">
-      <em class="changelog-item-tag">🔨</em>
       <span class="changelog-item-target">Breadcrumb</span>
+      <em class="changelog-item-tag">🔨</em>
       <h3 class="changelog-item-title">홈 아이콘을 텍스트로 변경</h3>
       <figure class="changelog-item-icon"><i class="icon-arrow"></i></figure>
     </header>
-    <div>
-      <p class="changelog-item-content">아이콘을 사용할 때의 주목도를 낮춤.</p>
-      <b class="changelog-item-target">Component, Breadcrumb</b>
+    <div class="changelog-item-content">
+      <p>아이콘을 사용할 때의 주목도를 낮춤.</p>
     </div>
   </article>
   <!-- <article class="changelog-item js-accordion">
@@ -102,8 +105,8 @@
   </article> -->
   <article class="changelog-item js-accordion">
     <header class="changelog-item-head">
-      <em class="changelog-item-tag">✂️</em>
       <span class="changelog-item-target">Color</span>
+      <em class="changelog-item-tag">✂️</em>
       <h3 class="changelog-item-title">gray600 삭제</h3>
       <figure class="changelog-item-icon"><i class="icon-arrow"></i></figure>
     </header>

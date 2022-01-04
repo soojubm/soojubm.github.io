@@ -153,17 +153,17 @@
 
     <article class="design-article js-observer js-scrollspy-section">
       <h1 class="design-article-title">Buttons</h1>
-      <p class="design-article-description">사용자와 인터렉션하고 행동을 유도합니다.</p>
+      <p class="design-article-description">핵심 과업.</p>
       <ul class="design-article-checklist">
         <!-- <p><span><i></i></span> 크기가 다른 버튼을 함께 사용하지 마세요. (버튼 그룹)</p> -->
         <!-- <li><i class="icon-check"></i> 아이콘 버튼의 아이콘은 관습적인 메타포를 사용하세요.</li> -->
         <!-- <p><span><i></i></span> 역할이 명확한 모두보기, 불러오는중, 더보기 등의 버튼은 합성해서 컴포넌트로 관리.</p> -->
         <!-- <li><i class="icon-check"></i> 버튼의 테마와 무관하게 상대 스타일은 모두 같다.</li> -->
-        <li><i class="icon-check"></i> 라지 버튼은 프로모션 페이지의 call to action에 제한적으로 사용합니다.</li>
+        <li><i class="icon-check"></i> large 크기는 프로모션 페이지에서 call to action으로 제한적으로 씁니다.</li>
         <li><i class="icon-check"></i> 레이블을 생략할 수 없습니다.</li>
-        <li><i class="icon-check"></i> binary choice에서 primary 버튼과 secondary 버튼을 함께 사용하지 마세요. => 버튼 그룹에 대한 가이드</li>
-        <li><i class="icon-check"></i> cta 아래에 가이드 텍스트를 배치하지 마세요. secondary 액션으로 text 버튼이 위치하는 케이스가 있기 때문입니다.</li>
-        <li><i class="icon-check"></i> more load 버튼을 full-width로 사용하지 마세요. 콘텐츠 보다 작게 사용하여 대비를 주세요.</li>
+        <li><i class="icon-check"></i> binary choice에서 primary 버튼과 secondary 버튼을 함께 사용하지 않습니다. => todo 버튼 그룹 가이드</li>
+        <li><i class="icon-check"></i> cta 아래에 가이드 텍스트를 배치하지 않습니다. text 버튼이 secondary 액션으로 위치하는 케이스가 있기 때문입니다.</li>
+        <li><i class="icon-check"></i> more load 버튼을 full-width로 사용하지 않습니다. 콘텐츠 너비보다 작게 사용하여 대비를 주세요.</li>
       </ul>
 
       <div class="design-article-anatomy">
@@ -241,7 +241,7 @@
       <p class="design-article-description">상대적으로 작은 액션.</p>
       <ul class="design-article-checklist">
         <li><i class="icon-check"></i> 맥락이 다른 chip을 그루핑할 수 있습니다. 이 때 단일선택, 다중선택, 삭제여부, 펼침메뉴 등의 기표를 충분히 제공하세요.</li>
-        <li><i class="icon-check"></i> 정렬sorting에 chip을 나열하지 마세요. selectbox로 현재 정렬 상태만 표시하세요.</li>
+        <li><i class="icon-check"></i> 정렬sorting에 chip을 나열하지 않습니다. selectbox로 현재 정렬 상태만 요약하세요.</li>
       </ul>
 
       <div class="design-article-anatomy">
@@ -268,7 +268,7 @@
         <p>안드로이드: chipGroup, HorizontalScrollView, singleLine, action/entry/filter(check active)/choice</p>
       </blockquote> -->
 
-      <div class="chip-group" role="group" aria-orientation="horizontal">
+      <div class="chip-group tile-elevated-small" role="group" aria-orientation="horizontal">
         <button class="chip">
           <span class="chip-label">default</span>
         </button>
@@ -282,7 +282,7 @@
 
       <div class="design-article-tile">
         <h6 class="heading-label">Keywords</h6>
-        <div class="keywords-group" role="group">
+        <div class="keywords-group tile-elevated-small" role="group">
           <a href="#" class="keywords-group-keyword">
             <span class="keywords-keyword-label chip-label">국정감사</span>
           </a>
@@ -302,7 +302,7 @@
       </div>
 <div class="design-article-tile">
         <h6 class="heading-label">Filter / Selection</h6>
-        <div class="chip-group js-chip" role="group" aria-orientation="horizontal">
+        <div class="chip-group tile-elevated-small js-chip" role="group" aria-orientation="horizontal">
           <button class="chip is-active">
             <span class="chip-label">전체</span>
           </button>
@@ -323,56 +323,58 @@
 </div>
       <div class="design-article-tile">
         <h6 class="heading-label">Dropdown / Overflow menu</h6>
-        <div class="chip-group">
-          <div class="dropdown">
-            <button class="dropdown-trigger js-toggle" aria-expanded="true">
-              <span class="dropdown-trigger-label">드롭다운/풀다운</span>
-              <figure class="dropdown-trigger-icon"><i class="icon-caret"></i></figure>
-            </button>
-            <menu class="dropdown-menu" role="menu">
-              <h6 class="dropdown-menu-title" hidden>Dropdown header</h6>
-              <a class="dropdown-menu-link" href="#" disabled>
-                프로필 관리
-                <!-- <i class="icon-check"></i> -->
-              </a>
-              <a class="dropdown-menu-link" href="#">고객센터</a>
-              <hr class="dropdown-menu-divider" />
-              <a class="dropdown-menu-link" href="#">로그아웃</a>
-            </menu>
+ <div class="tile-elevated-small">
+          <div class="chip-group">
+            <div class="dropdown">
+              <button class="dropdown-trigger js-toggle" aria-expanded="true">
+                <span class="dropdown-trigger-label">드롭다운/풀다운</span>
+                <figure class="dropdown-trigger-icon"><i class="icon-caret"></i></figure>
+              </button>
+              <menu class="dropdown-menu" role="menu">
+                <h6 class="dropdown-menu-title" hidden>Dropdown header</h6>
+                <a class="dropdown-menu-link" href="#" disabled>
+                  프로필 관리
+                  <!-- <i class="icon-check"></i> -->
+                </a>
+                <a class="dropdown-menu-link" href="#">고객센터</a>
+                <hr class="dropdown-menu-divider" />
+                <a class="dropdown-menu-link" href="#">로그아웃</a>
+              </menu>
+            </div>
+            <div class="dropdown">
+              <button class="dropdown-trigger js-toggle" aria-expanded="true">
+                <span class="dropdown-trigger-label">일행 당 인원 수</span>
+                <figure class="dropdown-trigger-icon"><i class="icon-caret"></i></figure>
+              </button>
+              <menu class="dropdown-menu" role="menu" style="padding:.75rem;">
+                <fieldset role="radiogroup">
+                  <!-- <legend class="heading-label" style="margin-bottom:0;">radiogroup</legend> -->
+                  <div class="radio">
+                    <input type="radio" id="gogo1" name="gogo" value="">
+                    <label for="gogo1" title="">1~3명</label>
+                  </div>
+                  <div class="radio">
+                    <input type="radio" id="gogo2" name="gogo" value="" checked>
+                    <label for="gogo2" title="">3명 이상</label>
+                  </div>
+                </fieldset>
+                <footer style="display:flex;justify-content:space-between;margin:var(--space) 0 0 0;">
+                  <!-- <button>옵션 초기화</button> -->
+                  <button class="chip" style="width:100%;"><span class="chip-label">24개 상품 보기</span></button>
+                </footer>
+              </menu>
+            </div>
+            <div class="dropdown">
+              <button class="dropdown-trigger js-toggle" aria-haspopup="menu" aria-expanded="false">
+                <span class=""><i class="icon-more"></i></span>
+              </button>
+              <menu class="dropdown-menu">
+                <a class="dropdown-menu-link" href="#componets">수정</a>
+                <a class="dropdown-menu-link" href="#componets">삭제</a>
+              </menu>
+            </div>
           </div>
-          <div class="dropdown">
-            <button class="dropdown-trigger js-toggle" aria-expanded="true">
-              <span class="dropdown-trigger-label">일행 당 인원 수</span>
-              <figure class="dropdown-trigger-icon"><i class="icon-caret"></i></figure>
-            </button>
-            <menu class="dropdown-menu" role="menu" style="padding:.75rem;">
-              <fieldset role="radiogroup">
-                <!-- <legend class="heading-label" style="margin-bottom:0;">radiogroup</legend> -->
-                <div class="radio">
-                  <input type="radio" id="gogo1" name="gogo" value="">
-                  <label for="gogo1" title="">1~3명</label>
-                </div>
-                <div class="radio">
-                  <input type="radio" id="gogo2" name="gogo" value="" checked>
-                  <label for="gogo2" title="">3명 이상</label>
-                </div>
-              </fieldset>
-              <footer style="display:flex;justify-content:space-between;margin:var(--space) 0 0 0;">
-                <!-- <button>옵션 초기화</button> -->
-                <button class="chip" style="width:100%;"><span class="chip-label">24개 상품 보기</span></button>
-              </footer>
-            </menu>
-          </div>
-          <div class="dropdown">
-            <button class="dropdown-trigger js-toggle" aria-haspopup="menu" aria-expanded="false">
-              <span class=""><i class="icon-more"></i></span>
-            </button>
-            <menu class="dropdown-menu">
-              <a class="dropdown-menu-link" href="#componets">수정</a>
-              <a class="dropdown-menu-link" href="#componets">삭제</a>
-            </menu>
-          </div>
-        </div>
+ </divc>
       </div>
       <div class="design-article-tile">
         <h6 class="heading-label">Others- addable/removable, todo: chip-icon의 hover</h6>
@@ -399,7 +401,7 @@
 
     <article class="design-article js-observer js-scrollspy-section">
       <h1 class="design-article-title">Tags (or badge/label)</h1>
-      <p class="design-article-description">상태, 분류, 키워드로 인접한 요소를 부연합니다.</p>
+      <p class="design-article-description">상태, 분류, 키워드의 레이블로 역할로 인접한 요소를 부연합니다.</p>
       <p class="design-article-description"><em>todo 클릭할 수 있는 태그와 클릭할 수 없는 태그. post 페이지에서 태그와 컴포넌트에서의 태그. hashtag 컴포넌트는 tag 컴포넌트와 구별. chip이 2 댑스로.</em></p>
       <ul class="design-article-checklist">
         <!-- <li><i class="icon-check"></i> 클릭할 수 없습니다.</li> -->
@@ -467,7 +469,7 @@
       </div>
     </article>
 
-    <article class="design-article js-scrollspy-section">
+    <article class="design-article js-observer js-scrollspy-section">
       <h1 class="design-article-title" title="or Box">Tiles</h1>
       <p class="design-article-description">연관성이 있는 콘텐츠를 시각적으로 묶는 컨테이너 컴포넌트입니다. (todo: borderless)</p>
       <ul class="design-article-checklist">
@@ -591,8 +593,8 @@
       <p class="design-article-description">정보를 입력, 수정, 선택합니다.</p>
       <ul class="design-article-checklist">
         <!-- <p><span><i></i></span> 벨리데이션 실행 조건: <b>제출(구현이 쉬움)</b> / 키보드 쉬움 / 블러(구현이 복잡함. 흐름이 끊어짐)</b></p> -->
-        <li><span><i class="icon-check"></i></span> 레이블을 왼쪽에 배치하지 마세요. <b hidden>(prefix에 뒤로가기 버튼이 포함되지 않는 형태로만 사용)</b></li>
-        <li><span><i class="icon-check"></i></span> 검색 필드를 네비게이션바/앱바에 포함하지 마세요. (뒤로가기 버튼이 포함된 스타일) <b hidden>(prefix에 뒤로가기 버튼이 포함되지 않는 형태로만 사용)</b></li>
+        <li><span><i class="icon-check"></i></span> 레이블을 왼쪽에 배치하지 않습니다.</li>
+        <li><span><i class="icon-check"></i></span> 앱바에서 검색 필드 내에 뒤로가기 버튼을 포함하지 않습니다.</li>
       </ul>
 
       <div class="design-article-anatomy" style="margin-bottom:1.5rem;">
@@ -676,7 +678,7 @@
 
     <article class="design-article js-observer js-scrollspy-section">
       <h1 class="design-article-title">Seperator</h1>
-      <p class="design-article-description">콘텐츠를 구획여 맥락을 전환합니다. 반복되는 패턴이나 대비되는 컴포넌트가 구획되었다는 인상을 주기 때문에 남용하지 마세요.</p>
+      <p class="design-article-description">콘텐츠를 구획으로 맥락을 전환합니다. 반복되는 패턴이나 대비되는 컴포넌트가 구획되었다는 인상을 주기 때문에 남용하지 마세요.</p>
       <ul class="design-article-checklist">
         <li><i class="icon-check"></i> 아티클 레벨에서 사용하세요. 섹션 레벨, 페이지 레벨의 콘텐츠 구획에 사용하지 마세요.</lip>
         <li><i class="icon-check"></i> border 속성으로 스타일링하지 마세요. hr 태그를 사용하면 의미론적으로 주제를 분리할 수 있고 컴포넌트의 고유성을 유지할 수 있습니다.</p>
@@ -1226,11 +1228,11 @@
 
     <article class="design-article js-observer js-scrollspy-section">
       <h1 class="design-article-title">Dialog</h1>
-      <p class="design-article-description">다이얼로그.</p>
+      <p class="design-article-description">작성 중.</p>
       <ul class="design-article-checklist">
         <li><i class="icon-check"></i> theme="unary(confirm) | binary(cancel/confirm)"</li>
-        <li><i class="icon-check"></i> modal과 구분. component in modal의 개념. dialog in modal / page in modal. dim엘리먼트를 클릭 시 모달을 닫는다. 리액트에서.</li>
-        <li><i class="icon-check"></i> dialog header/body/footer 단순 다이얼로그는 바디가 필요 없음. </li>
+        <!-- <li><i class="icon-check"></i> dim엘리먼트를 클릭 시 모달을 닫는다. 리액트에서. 구현하기 쉬움</li> -->
+        <!-- <li><i class="icon-check"></i> dialog header/body/footer 단순 다이얼로그는 바디가 필요 없음.</li> -->
       </ul>
       <aside class="dialog" role="dialog" aria-labelledby="dialog-title" aria-describedby="dialog-description">
         <!-- <header class="dialog-head">
@@ -1771,7 +1773,7 @@
             <span>Startup</span>
           </div>
         </div>
-        <div class="tile-elevated-small" style="display:flex;margin:var(--space) 0;">
+        <div class="tile-elevated-small" style="display:flex;margin:var(--space) 0 0 0;">
           <i style="margin:0 var(--space-small) 0 0;">🦄</i>
           <span>샘플 유아이</span>
           <i class="icon-arrow" style="margin-left:auto;margin-right:.5rem;"></i>

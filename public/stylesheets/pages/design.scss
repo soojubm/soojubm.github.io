@@ -6,7 +6,7 @@
 .design-article {margin:var(--space-before-article) 0;position:relative;}
 .design-article-title {margin:0 0 var(--space-after-subhead) 0;@include text-subhead;}
 .design-article-description {margin:1.5rem 0;}
-.design-article-tile {margin:2rem 0;}
+.design-article-tile {margin:3rem 0;}
 
 
 // todo span 
@@ -66,13 +66,7 @@
 
 
 .spacing-card {@include tile-elevated;}
-.space {display:flex;align-items:center;justify-content:center;height:100%;background:var(--green800);font-size:10px;color:#fff;position:relative;}
-.space .tag {margin:0;padding:0 .25rem;border-radius:var(--radius);background:var(--color-primary);color:var(--gray0);position: absolute;
-  left: 50%;
-  /* z-index: 5151515; */
-  top: 50%;
-  transform: translate(-50%, -50%);}
-.space .tag:before {content:'';}
+.space {display:flex;align-items:center;justify-content:center;height:100%;background:var(--green100);font-size:10px;position:relative;}
 
 
 @media (--breakpoint-small) {
@@ -262,7 +256,7 @@
 .avatarlist:hover {@include hover-item;}
 
 
-.temp8 {position:relative;z-index:1;}
+.temp8 {position:relative;}
 .temp8 div {
   @include tile-elevated-small;
   margin-right:var(--space-small);

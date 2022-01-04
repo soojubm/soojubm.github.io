@@ -18,7 +18,7 @@
   margin: 1rem;
   animation: fade-up 1s ease infinite alternate;
 }
-.tokens-hero {display:flex;flex-direction:row-reverse;min-height:50vh;position:relative;}
+.tokens-hero {display:flex;flex-direction:row-reverse;position:relative;}
 .tokens-hero-image {display:flex;flex-wrap:nowrap;justify-content:center;align-items:center;width:50%;padding:0 0 1rem 0;background:#343c38;overflow:hidden;position:relative;}
 .tokens-hero-image img {@include image-centered;}
 .tokens-hero-image-butter {@include token-emoji;}

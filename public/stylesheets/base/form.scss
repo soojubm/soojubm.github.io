@@ -123,7 +123,7 @@ input[type=checkbox]:checked + label + * {display:block;margin:0.25rem 0 var(--s
     }
   }
 
-  &.theme-button:first-child {
+  &.theme-button:nth-of-type(1) {
     border-radius: var(--radius) var(--radius) 0 0;
   }
   &.theme-button:last-child {
