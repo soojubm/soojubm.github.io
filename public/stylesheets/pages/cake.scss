@@ -3,22 +3,19 @@
 .cake-head {position:relative;}
 .cake-background {@include bleeding;height:380px;background:url('/public/images/newman.jpg') no-repeat 0 -200px fixed;}
 .cake-head-title {@include text-title;}
-.cake-head-engtitle {@include text-subhead;}
+.cake-head-engtitle {margin:0 0 var(--space-after-description) 0;@include text-subhead;}
 .cake-head-description {margin:1rem 0 0 0;}
 
 .cake-poster {max-width:320px;height:470px;@include tile-elevated-small;overflow:hidden;;position: absolute;right:0;z-index:var(--zindex-default);}
 .cake-poster img {}
 .cake-head-button {@include button-primary;min-width:11rem;margin-right:1rem;}
-.cake-head-review {@include button-text;min-width:11rem;}
+.cake-head-review {@include chip;display:inline-block;margin:var(--space-small) 0;}
 
-.cake-meta {max-width:var(--width-large);margin:0 auto;padding:1rem 0;border-radius:var(--radius);background:var(--gray0);}
-.cake-meta ul {position:relative;}
-.cake-meta ul li {margin:0 0 .25rem 0;padding:0;}
-.cake-meta ul li::before {display:none;}
-.cake-meta ul li b {float:left;width:72px;margin:0 1rem 0 0;font-weight:normal;color:var(--gray400);}
-.cake-meta-summary {padding:1rem 50% 0 0;}
+.cake-meta {max-width:var(--width-medium);background:var(--gray0);}
+.cake-meta dl {margin:.25rem 0;}
+.cake-meta-summary {padding:var(--space) 0 0 0;}
 
-.cake-info {display:flex;flex-wrap:wrap;max-width:var(--width-large);margin:0 auto;padding:2rem 0 2.25rem;border-top:var(--border);border-bottom:var(--border);position:relative;}
+.cake-info {display:flex;flex-wrap:wrap;max-width:var(--width-large);margin:0 auto;padding:2rem 0 2.25rem;border-top:var(--border);position:relative;}
 .cake-info + .cake-info {border-top:none;}
 // .cake-info button {@include button-tertiary;position:absolute;left:0;bottom:3rem;}
 .cake-info h2 {width:400px;flex-shrink:0;@include text-subhead;}
@@ -34,8 +31,6 @@
   .cake-info h2 {width:100%;margin:0 0 1rem 0;}
   .cake-info p {width:100%;}
   .cake-info footer {margin-left:0;}
-
-  .person-list {margin-top:.5rem !important;}
 }
 
 
@@ -45,12 +40,10 @@
   width: 160px;
 }
 .person {
-  display: block;
   @include tile-elevated-small;
   margin: 0 var(--space) 0 0;
-  position: relative;
-  z-index: 1;
 }
+.person:hover {@include hover-item;}
 .person figure {
   width: 100px;
   height: 100px;
@@ -58,7 +51,6 @@
   border-radius: var(--radius);
   position: relative;
 }
-.person figure:hover {@include hover-item;}
 .person figure img {
   height: 100%;
   object-fit: cover;

@@ -104,7 +104,7 @@
 
 .rating2 {display:flex;align-items:center;}
 .rating2-star {margin:0 .25rem 0 0;font-size:var(--font-size-body);color:var(--red800);}
-.rating2-score {margin:0 0 0 .5rem;font-size:var(--font-size-body);}
+.rating2-score {font-size:var(--font-size-body);}
 
 .rating2.is-large {display:flex;align-items:center;}
 .rating2.is-large .rating2-star {margin:0 .5rem 0 0;font-size:var(--font-size-subhead);color:var(--red800);}
@@ -269,9 +269,7 @@
 .pricing-item-price-per {display:block;margin:0 0 -.25rem 0;color:var(--gray400);}
 .pricing-item-description {margin:var(--space) 0;}
 .pricing-item ul {margin:var(--space) 0 1rem 0;}
-.pricing-item ul li {display:flex;align-items:center;padding:0;}
-.pricing-item ul li:before {content:'';display:none;}
-.pricing-item ul li .icon-check {margin:0 var(--space-small) 0 0;border-color:var(--font-size-subhead);}
+.pricing-item ul li {}
 .pricing-item-upgrade {@include button-primary;width:100%;}
 .pricing-item-more {width:100%;@include button-text;margin:var(--space-after-button) 0 0 0;}
 
@@ -298,7 +296,7 @@
 .newneek {}
 .newneek .modal-dialog {}
 .newneek-orange {}
-.newneek-asis-tobe {display:flex;border:1px solid #000;border-top:none;text-align:center;}
+.newneek-asis-tobe {display:flex;text-align:center;}
 .newneek-asis {width:50%;padding:2rem 5%;box-sizing:border-box;}
 .newneek-asis-title {margin:0 auto .5rem;@include text-subhead;
   width: 8rem;
@@ -322,14 +320,14 @@
 .newneek-tobe-item {}
 
 
-.editor-says {padding:.5rem 1rem;border:1px solid #000;text-align:center;font-family:'DunkelSans';color:#000;}
-.gosum-says {padding:.5rem 1rem;border:1px solid #000;border-top:0;color:#000;text-align:center;}
+.editor-says {padding:.5rem 1rem;border-bottom:1px solid #000;font-family:'DunkelSans';}
+.gosum-says {padding:.5rem 1rem;border-bottom:1px solid #000;border-top:0;}
 
-.newneek-section2 {background:#ebebeb;text-align:center;color:#000;}
+.newneek-section2 {background:#ebebeb;}
 .newneek-section2 figure {max-width:600px;margin:0 auto;}
 .newneek-section2 footer {padding:1rem 1rem;border:1px solid #000;border-top:0;border-bottom:0;}
-.newneek-keyword-wrap {width:100%;border:1px solid #000;border-top:0;}
-.newneek-keyword {padding:1rem;background:#ebebeb;text-align:center;font-size:var(--font-size-body);}
+.newneek-keyword-wrap {width:100%;}
+.newneek-keyword {padding:1rem;background:#ebebeb;font-size:var(--font-size-body);}
 .newneek-keyword + .newneek-keyword {border-top:1px solid #000;}
 .newneek-keyword b {}
 .newneek-keyword small {display:block;}

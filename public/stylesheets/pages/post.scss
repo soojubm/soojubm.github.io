@@ -117,7 +117,7 @@
 
 	.post-pagination {flex-wrap:wrap;flex-direction:column-reverse;}
 	.post-pagination-previous {width:100%;margin-top: 0;}
-	.post-pagination-next {width:100%;}
+	.post-pagination-next {width:100%;margin:0 0 var(--space) 0;}
 }
 
 .post-relation {display:flex;flex-wrap:wrap;justify-content:space-between;max-width:var(--width-medium);margin:4rem auto 8rem;}

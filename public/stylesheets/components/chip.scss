@@ -4,7 +4,6 @@
 @mixin chip {
   display: flex;
   align-items: center;
-  justify-content: center;
   min-width:var(--size-medium);
   height:var(--size-medium);
   border:1px solid var(--gray100);

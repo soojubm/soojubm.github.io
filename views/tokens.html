@@ -31,8 +31,7 @@
   </section> -->
 
   <section class="tokens-body">
-    
-    <!-- <article class="design-article js-scrollspy-section">
+    <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">기표signifier</h1>
       <p class="design-article-description">사용자의 인지를 돕고, 제품 개발 효율을 높입니다.</p>
 
@@ -41,45 +40,92 @@
         <li><i class="icon-check"></i>'클릭할 수 있음'으로 bold text를 사용하지 마세요.</li>
       </ul>
 
-      <div class="tile-flat-small" style="margin:0 0 var(--space-small) 0;">
-        <p>클릭Clickable</p>
-        <span style="display:block;color:var(--color-primary);cursor:pointer;">브랜드 컬러 텍스트는 대부분 클릭할 수 있다.</span>
-        <span style="display:block;margin:var(--space) 0;cursor:pointer;">❤️ 아이콘이나 이모지가 있으면 대부분 클릭할 수 있다.</span>
-        <span style="display:block;padding:var(--space-small);box-sizing:border-box;margin:var(--space) 0;background:var(--gray100);border-radius:var(--radius);cursor:pointer;">연한 회색의 오브젝트는 대부분 클릭할 수 있다.</span>
-        <div class="tile-elevated" style="cursor:pointer;">
-          <p style="margin-top:var(--space-leading-subhead);margin-bottom:var(--space);">elevated 오브젝트는 대부분 클릭할 수 있다. 또는 오브젝트 내부에 클릭할 수 있는 요소가 존재한다.</p>
-          <footer>
-            <button class="design-article-primary-small">알겠읍니다</button>
-          </footer>
-        </div>
+      <h6 class="heading-label">클릭Clickable</h6>
+      <div class="tile-elevated-small"  class="tile-elevated" style="cursor:pointer;">
+        <p style="margin-top:var(--space-leading-subhead);">elevated 오브젝트는 대부분(?) 클릭할 수 있다. 또는 오브젝트 내부에 클릭할 수 있는 요소가 존재한다.</p>
+      </div>
+      <div class="tile-flat-small" style="display:block;background:var(--gray100);border-radius:var(--radius);cursor:pointer;">
+        <p>연한 회색의 오브젝트는 대부분 클릭할 수 있다.</p>
+      </div>
+      <div class="tile-flat-small" style="display:block;color:var(--color-primary);cursor:pointer;">
+        <p>브랜드 컬러 텍스트는 대부분 클릭할 수 있다.</p>
+      </div>
+      <div class="tile-flat-small" style="display:block;margin:var(--space-small) 0;cursor:pointer;">
+        <p>❤️ 아이콘(이모지)는 대부분 클릭할 수 있다.</p>
       </div>
 
-      <div class="tile-flat-small" style="display:flex;align-items:center;margin:0 0 var(--space-small) 0;">
-        <span>non-clickable - 비활성disabled, 읽기전용readonly . opacity 0.5 / cursor not-allowed / flat style - 그림자 제거</span>
+      <br />
+
+      <h6 class="heading-label">클릭할 수 없음non-clickable</h6>
+      <div class="tile-flat-small" style="cursor:default;">
+        <div>
+          <span class="tag">읽기전용readonly</span>
+          cursor default</div>
+      </div>
+      <div class="tile-flat-small" style="opacity:.5;cursor:not-allowed;">
+        <div>
+          <span class="tag">비활성disabled</span>
+          opacity 50% / cursor not-allowed / flat style</div>
       </div>
 
-      <div class="tile-flat-small" style="display:flex;align-items:center;margin:0 0 var(--space-small) 0;">
-        <figure class="chip" style="width:32px"><i class="icon-arrow is-external"></i></figure>
-        <span style="margin-left:var(--space);">외부링크External Link</span>
-      </div>
-      <div class="tile-flat-small" style="display:flex;align-items:center;margin:0 0 var(--space-small) 0;">
-        <figure class="chip" style="width:32px"><i class="icon-chevron" style="display:inline-block;transform:rotate(45deg);"></i></figure>
-        <span>확장Expanable & Collapsible</span>
-      </div>
-      <div class="tile-flat-small" style="display:flex;align-items:center;margin:0 0 var(--space-small) 0;">
-        <figure class="chip" style="width:32px;"><i class="icon-caret" style="display:inline-block;"></i></figure>
-        <span>팝오버Popover</span>
-      </div>
-      <div class="tile-flat-small" style="display:flex;align-items:center;margin:0 0 var(--space-small) 0;">
-        <figure class="chip" style="width:32px"><i class="icon-chevron" style="display:inline-block;"></i></figure>
-        <span>내부 링크internal link(view all)</span>
-      </div>
-      <div class="tile-flat-small" style="display:flex;align-items:center;margin:0 0 var(--space-small) 0;">
-        <figure class="chip" style="width:32px"><i class="icon-x" style="display:inline-block;"></i></figure>
-        <span>닫기removable</span>
-      </div>
+      <br />
 
-      <code class="design-article-description" style="padding:1rem;">
+      <h6 class="heading-label">아이콘 기표</h6>
+      <div class="tile-flat-small">
+        <figure class="chip-thumbnail" style="margin:0 -.25rem 0 0;background:var(--gray100);">
+          <i class="icon-arrow is-external"></i>
+        </figure>
+        <span class="chip-label">External Link</span>
+      </div>
+      <div class="tile-flat-small">
+        <figure class="chip-thumbnail" style="margin:0 -.25rem 0 0;background:var(--gray100);"><i class="icon-chevron is-down"></i></figure>
+        <span class="chip-label">Expanable & Collapsible</span>
+      </div>
+      <div class="tile-flat-small">
+        <figure class="chip-thumbnail" style="margin:0 -.25rem 0 0;background:var(--gray100);">
+          <i class="icon-caret" style="display:inline-block;"></i>
+        </figure>
+        <span class="chip-label">Popover</span>
+      </div>
+      <div class="tile-flat-small">
+        <figure class="chip-thumbnail" style="margin:0 -.25rem 0 0;background:var(--gray100);">
+          <i class="icon-chevron" style="display:inline-block;"></i>
+        </figure>
+        <span class="chip-label">internal link(view all)</span>
+      </div>
+      <div class="tile-flat-small">
+        <figure class="chip-thumbnail" style="margin:0 -.25rem 0 0;background:var(--gray100);">
+          <i class="icon-x" style="display:inline-block;"></i>
+        </figure>
+        <span class="chip-label">removable</span>
+      </div>
+      <div class="tile-flat-small">
+        <figure class="chip-thumbnail" style="margin:0 -.25rem 0 0;background:var(--gray100);">
+          <i class="icon-plus" style="display:inline-block;"></i>
+        </figure>
+        <span class="chip-label">addable</span>
+      </div>
+      
+      <br />
+
+      <h6 class="heading-label">hover</h6>
+      <div class="tile-flat-small" style="margin:0 0 var(--space) 0;">
+        <a href="#" style="text-decoration:underline;">Text Hover</a>
+      </div>
+      <button class="user-logout is-hover" title="sign out" style="margin:0;">
+        <figure class="user-logout-icon">
+          <i class="icon-out"><span class="icon-out-door"></span></i>
+        </figure>
+        <span class="user-logout-label">Item(or Card) Hover</span>
+      </button>
+      <br />
+
+      <h6 class="heading-label">valid & invalid</h6>
+      <div class="" role="group" style="display:flex;">
+        <span class="textfield-check" style="margin-right:var(--space-small);position:relative;right:auto;top:auto;background:var(--green100);"><i class="icon-check" style="border-color:var(--color-primary);"></i></span>
+        <span class="textfield-check" style="position:relative;right:auto;top:auto;background:var(--red100);"><i class="icon-x is-red"></i></span>
+      </div>
+      <!-- <code class="design-article-description" style="padding:1rem;">
         <p>@mixin hover-text {}</p>
         <p>@mixin hover-item {}</p>
         <hr />
@@ -90,33 +136,8 @@
         <p>--warning-text-color: null;</p>
         <p>--warning-background-color: null;</p>
         <p>--warning-border-color: null;</p>
-      </code>
-
-      <h6 class="heading-label">hover - item & card</h6>
-      <button class="user-logout" title="sign out">
-        <figure class="user-logout-icon">
-          <i class="icon-out"><span class="icon-out-door"></span></i>
-        </figure>
-        <span class="user-logout-label">로그아웃</span>
-      </button>
-      <br />
-
-      <h6 class="heading-label">selected, active/inactive</h6>
-      <button class="chip is-active">
-        <span class="chip-label">옵션</span>
-      </button>
-      <br />
-
-      <h6 class="heading-label">disabled</h6>
-      <p>opacity .5</p>
-      <br />
-
-      <h6 class="heading-label">valid & invalid</h6>
-      <div class="" role="group" >
-        <span class="textfield-check" style="position:relative;right:auto;top:auto;background:var(--gray100);"><i class="icon-check" style="border-color:var(--color-primary);"></i></span>
-        <span class="textfield-check" style="position:relative;right:auto;top:auto;background:var(--gray100);"><i class="icon-x is-red"></i></span>
-      </div>
-    </article> -->
+      </code> -->
+    </article>
     <!-- / success / warning / danger ? -->
 
  <!-- <h6 class="heading-label">selection</h6>
@@ -134,7 +155,7 @@
       <h1 class="design-article-title">Sizing</h1>
       <p class="design-article-description">요소의 너비와 높이를 정의합니다.</p>
       <ul class="design-article-checklist">
-        <li><i class="icon-check"></i>간격은 별도로 정의합니다.</li>
+        <!-- <li><i class="icon-check"></i>간격은 별도로 정의합니다.</li> -->
         <li><i class="icon-check"></i>너비는 반응형으로 비교적 유동적이기 때문에 주로 높이를 정의합니다.</li>
         <li><i class="icon-check"></i>정의하지 않은 높이를 쓸 수 있습니다.</li>
       </ul>
@@ -372,7 +393,7 @@
 
     <article class="design-article typography js-scrollspy-section">
       <h1 class="design-article-title">Typography</h1>
-      <p class="design-article-description">콘텐츠 계층 설계를 위해 텍스트 용법을 정의합니다. (? todo)</p>
+      <p class="design-article-description">콘텐츠 계층을 위한 텍스트 용법을 정의합니다. (? todo)</p>
       <ul class="design-article-checklist">
         <li><i class="icon-check"></i>단어와 구문을 underline, bold, primary color로 강조 않습니다.</li>
         <li><i class="icon-check"></i>불릿, 괄호, 쉼표 등으로 텍스트를 분류 않습니다. 디자인되지 않았다는 인상을 주기 때문입니다.</li>
@@ -406,11 +427,11 @@
       <div class="tile-flat-small">
         <b>--fontstack: 'Asap', 'AritaSans', san-serif;</b>
       </div>
-      <div class="tile-flat-small" style="margin:var(--space-small) 0;">
+      <div class="tile-flat-small">
         <p><b>--font-weight-normal: 400;</b></p>
         <p><b>--font-weight-bold: 800;</b></p>
       </div>
-      <div class="tile-flat-small" style="margin:var(--space-small) 0;">
+      <div class="tile-flat-small">
         <p><b>--font-line-height: 1.8;</b></p>
         <p><b>--font-line-height-small: 1.4;</b></p>
       </div>
@@ -419,7 +440,7 @@
 
       <h6 class="heading-label">Levels</h6>
       <p>long-form content는 항상 2줄에서 truncate.</p>
-      <div class="tile-flat-small" style="margin-top:var(--space-small);font-size:var(--font-size-caption);">
+      <div class="tile-flat-small" style="font-size:var(--font-size-caption);">
         <p><b>heading levels</b></p>
         <p>display/title - subhead - label</p>
         <br />
@@ -513,15 +534,15 @@
       <h6 class="heading-label">Media Queries</h6>
       <div class="tile-flat-small">
         <p class="token-item-name">@custom-media --breakpoint-large (max-width:1200px);</p>
-        <!-- <p style="margin-top:var(--space-small);color:var(--gray400);">일반적으로(? todo 모호한 writing) tablet보다 큰 폼 팩터 ex) desktop, tv</p> -->
-        <div style="margin-top:var(--space-small);font-size:var(--font-size-tiny);">
+        <!-- <p style="color:var(--gray400);">일반적으로(? todo 모호한 writing) tablet보다 큰 폼 팩터 ex) desktop, tv</p> -->
+        <div style="font-size:var(--font-size-tiny);">
           <p>@media (--breakpoint-large) {}</p>
         </div>
       </div>
       <div class="tile-flat-small"  style="margin:var(--space) 0;">
         <p class="token-item-name">@custom-media --breakpoint-small (max-width:1000px);</p>
-        <!-- <p style="margin-top:var(--space-small);margin-bottom:var(--space);color:var(--gray400);">tablet보다 작은 폼 팩터. ex) tablet, phone</p> -->
-        <div style="margin-top:var(--space-small);font-size:var(--font-size-tiny);">
+        <!-- <p style="margin-bottom:var(--space);color:var(--gray400);">tablet보다 작은 폼 팩터. ex) tablet, phone</p> -->
+        <div style="font-size:var(--font-size-tiny);">
           <p>@media (--breakpoint-small) {}</p>
         </div>
       </div>
@@ -541,7 +562,7 @@
         <b>--container-large: 1000px</b>
       </div>
       <div class="tile-flat-small" style="margin:var(--space-small) 0;">
-        <div style="margin-top:var(--space-small);font-size:var(--font-size-tiny);">
+        <div style="font-size:var(--font-size-tiny);">
           <p>--forgot-container: var(--container-smaller)</p>
           <p>--post-container: var(--container-smaller)</p>
           <p>--terms-container: var(--container-smaller)</p>
@@ -549,14 +570,14 @@
       </div>
       <div class="tile-flat-small" style="margin:var(--space-small) 0;">
         <b>--container-small: 640px</b>
-        <div style="margin-top:var(--space-small);font-size:var(--font-size-tiny);">
+        <div style="font-size:var(--font-size-tiny);">
           <p>--page-login-width</p>
           <p>--page-signup-width</p>
         </div>
       </div>
       <div class="tile-flat-small" style="margin:var(--space-small) 0;">
         <b>--container-tiny: 400px</b>
-        <div style="margin-top:var(--space-small);font-size:var(--font-size-tiny);">
+        <div style="font-size:var(--font-size-tiny);">
           <p>--dropdown-width: var(--container-tiny)</p>
           <p>--dialog-width: var(--container-tiny)</p>
           <p>--popover-width: var(--container-tiny)</p>
@@ -568,7 +589,7 @@
       <h6 class="heading-label">Groups</h6>
       <div class="tile-flat-small">
         <b>@mixin group {display:flex;flex-wrap:wrap;}</b>
-        <div style="margin-top:var(--space-small);font-size:var(--font-size-tiny);">
+        <div style="font-size:var(--font-size-tiny);">
           <!-- <p>@mixin group-bleeding {}</p> -->
           <p>@mixin tag-group {}</p>
           <p>@mixin chip-group {}</p>
@@ -691,7 +712,7 @@
 
       <div class="tile-flat-small" style="margin:var(--space-small) 0;">
         <b>--z-index-popover: null;</b>
-        <div style="margin-top:var(--space-small);font-size:var(--font-size-tiny);">
+        <div style="font-size:var(--font-size-tiny);">
           <p>--z-index-dropdown: null;</p>
           <p>--z-index-tooltip: null;</p>
           <p>--z-index-drawer: null; ?</p>
@@ -700,20 +721,20 @@
       </div>
       <div class="tile-flat-small" style="margin:var(--space-small) 0;">
         <b>--z-index-sticky: null;</b>
-        <div style="margin-top:var(--space-small);font-size:var(--font-size-tiny);">
+        <div style="font-size:var(--font-size-tiny);">
           <p>햄버거 메뉴보다 낮음. 모달보다 낮음.</p>
         </div>
       </div>
       <div class="tile-flat-small" style="margin:var(--space-small) 0;">
         <b>--z-index-modal: null;</b>
         <b>--z-index-modal-dim: null;</b>
-        <div style="margin-top:var(--space-small);font-size:var(--font-size-tiny);">
+        <div style="font-size:var(--font-size-tiny);">
           <p>토스트보다 낮음. 툴팁보다 낮음.</p>
         </div>
       </div>
       <div class="tile-flat-small" style="margin:var(--space-small) 0;">
         <b>--z-index-toast: null;</b>
-        <div style="margin-top:var(--space-small);font-size:var(--font-size-tiny);">
+        <div style="font-size:var(--font-size-tiny);">
           <p>최상위포식자?</p>
         </div>
       </div>

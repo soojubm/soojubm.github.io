@@ -72,9 +72,11 @@
     --hover-outline: calc(var(--space) / 2 * -1);
     content:'';display:block;background:var(--gray100);border-radius:var(--radius);position:absolute;left:var(--hover-outline);right:var(--hover-outline);top:var(--hover-outline);bottom:var(--hover-outline);z-index:-1;
   }
-  // 기본적으로 transparent 보더가 필요.
-  figure {background-color:var(--gray0);border:1px solid var(--gray200);}
+  // todo 기본적으로 transparent 보더가 필요.
+  // figure {background-color:var(--gray0);border:1px solid var(--gray200);}
 }
+
+.is-hover {@include hover-item;}
 
 @mixin container-page {
   // width: 100%;
@@ -133,7 +135,15 @@
     margin:var(--space-groupitem);
   }
 }
-@mixin tag-group {@include chip-group;}
+@mixin tag-group {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 0 var(--space-small-minus) 0;
+  > * {
+    display: block;
+    margin: 0 var(--space-small) var(--space-small) 0;
+  }
+}
 
 .avatar-group {@include chip-group;}
 .chip-group {@include chip-group;}
@@ -178,13 +188,13 @@
 }
 
 @mixin heading-label {
-  margin: var(--space) 0;
-  font-size:var(--font-size-body);
+  margin: var(--space-small) 0;
+  font-size:var(--font-size-caption);
   font-weight: var(--font-weight-normal);
   color: var(--gray400);
 }
 .heading-label {@include heading-label;}
-.heading-label + p {margin-top:-.5rem;margin-bottom:var(--space);}
+.heading-label + p {margin-bottom:var(--space);}
 
 
 @mixin theme($theme: DarkGray) {

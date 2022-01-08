@@ -8,6 +8,11 @@
 .design-article-description {margin:1.5rem 0;}
 .design-article-tile {margin:3rem 0;}
 
+.design .tile-small-flat {
+  margin-left: var(--space-small-minus);
+  margin-right: var(--space-small-minus);
+}
+
 
 // todo span 
 .checklist {position: relative;margin-left:-3px;
@@ -307,8 +312,8 @@
 // .design-home header p:after {content:'';display:block;width:4rem;height:4rem;border-radius:4px;background:#000;position:absolute;bottom:0;right:0;}
 
 .design-home nav {display:flex;flex-wrap:wrap;width:100%;max-width:1000px;margin:var(--space-small-minus);padding:0 var(--grid-margin) 6rem;position:relative;z-index:var(--zindex-default);}
-.design-home nav a {display:flex;align-items:center;width:33%;max-width:300px;margin:var(--space-small);
-  @include tile-elevated;@include text-subhead;color:inherit;}
+.design-home nav a {display:flex;align-items:center;width:33%;max-width:300px;
+  @include tile-elevated;@include text-subhead;margin:var(--space-small);color:inherit;}
 
 .design-home nav a[readonly] {opacity:.5;cursor:not-allowed;box-shadow:none;}
 .design-home nav a:hover:not([readonly]) {@include hover-item;}
@@ -316,7 +321,7 @@
 .design-home nav a div {margin:0 0 0 var(--space-before-badge);}
 
 @media (--breakpoint-small) {
-  .design-home nav {}
+  .design-home nav {display:block;}
   .design-home nav a {width:100%;max-width:100%;}
 }
 

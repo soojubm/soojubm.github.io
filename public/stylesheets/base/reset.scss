@@ -83,12 +83,14 @@ table.is-borderless tbody tr {border:0;}
 // ol li ol li:before {content: counter(sub-list-item,lower-alpha) '.';}
 // todo 
 ul, ol {list-style:initial;}
-li {margin-left:1rem;padding-left:0 !important;}
+li {margin:.125rem 0 .125rem 1rem;padding-left:0 !important;}
 li .icon-check {display:none;}
 
 dl {display:flex;flex-wrap:wrap;}
-dl dt {width:80px;margin:.125rem var(--space-small) .125rem 0;color:var(--gray400);}
-dl dd {width:calc(100% - 80px - var(--space));margin:.125rem 0;}
+dl dt {margin:0 var(--space-small) 0 0;@include text-label;}
+dl dd {margin:0 var(--space) 0 0;}
+// dl dt {width:80px;margin:.125rem var(--space-small) .125rem 0;color:var(--gray400);}
+// dl dd {width:calc(100% - 80px - var(--space));margin:.125rem 0;}
 
 svg {color:var(--gray800);}
 
