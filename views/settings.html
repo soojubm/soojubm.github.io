@@ -2,8 +2,10 @@
   <section class="setting">
     <header class="setting-head">
       <h1 class="setting-head-title" hidden>설정</h1>
-      <p class="setting-head-title">프로필을 완성하고<br />맞춤형 서비스를받아보세요!</p>
-      <p class="setting-head-description">뉴닉 서비스 초기의 설정 페이지</p>
+      <!-- <p class="setting-head-title">프로필을 완성하고<br />맞춤형 콘텐츠를</p> -->
+      <p class="setting-head-description">
+        뉴닉 서비스 초기의 설정 페이지. iOS13. 세팅 아이템을 감싸는 레이블이 존재하는 경우, 구조가 복잡해진다. 구 setting-body.
+      </p>
     </header>
     <div class="setting-body">
       <!-- <article class="user">
@@ -16,101 +18,111 @@
         <a class="user-myinfo" href="#settings">프로필 사진 바꾸기</a>
       </article>
       <br /><br /> -->
+      <div class="setting-item">
+        <h2 class="setting-item-label" style="font-size:var(--font-size-subhead);color:var(--gray800);">개인정보</h2>
+        <span class="setting-item-change"><b>변경하기</b> <i class="icon-arrow"></i></span>
+      </div>
 
-      <h2 class="setting-body-heading">기본 프로필</h2>
+      <h2 class="setting-subhead">개인정보</h2>
       <!-- <p class="setting-body-description">인스타그램에서는 개인정보로 묶음</p> -->
-      <div class="setting-row is-opened" role="button" style="flex-wrap:wrap;">
-        <h2 class="setting-row-label">닉네임</h2>
-        <div class="setting-row-value">수줍이</div>
-        <span class="setting-row-change"><b>변경하기</b> <i class="icon-arrow"></i></span>
-        <form class="setting-row-form">
+      <div class="setting-item is-opened" role="button" style="flex-wrap:wrap;">
+        <h2 class="setting-item-label">이름</h2>
+        <div class="setting-item-value">수줍이</div>
+        <span class="setting-item-change"><b>변경하기</b> <i class="icon-arrow"></i></span>
+        <form class="setting-item-form">
           <!-- <h1>어떻게 불러드릴까요?</h1> -->
-          <aside style="margin:0 0 var(--space) 0;">
-            <p>
-              회원님의 알려진 이름을 사용하여 사람들이 회원님의 계정을 찾을 수 있도록 도와주세요.
-              <!-- 활성화 시 다른 수정버튼을 비활성화 vs -->
-            </p>
-          </aside>
           <div class="textfield">
-            <label class="textfield-label" for="username">닉네임</label>
+            <label class="textfield-label" for="username">이름</label>
             <small class="textfield-byte"><b>0</b> / 20</small>
             <input class="textfield-input" type="text" id="username" placeholder="예) 수줍이" aria-describedby="error" aria-invalid="true" />
             <small class="textfield-helper is-error" role="alert"></small>
           </div>
-          <footer class="setting-row-foot">
-            <button class="setting-row-foot-confirm">저장</button>
-            <button class="setting-row-foot-cancel" type="button">취소</button>
+          <footer class="setting-item-foot">
+            <button class="setting-item-foot-confirm">저장</button>
+            <button class="setting-item-foot-cancel" type="button">취소</button>
           </footer>
         </form>
       </div>
+      <aside style="margin:-.5rem 0 2rem 0;">
+        <small style="color:var(--gray400);">
+          알려진 이름을 사용하여 사람들이 회원님을 찾을 수 있도록 도와주세요.
+          <!-- 활성화 시 다른 수정버튼을 비활성화 vs -->
+        </small>
+      </aside>
 
-      <div class="setting-row">
-        <h2 class="setting-row-label">생년월일</h2>
-        <div class="setting-row-value">1988년 1월 11일</div>
-        <span class="setting-row-change"><b>변경하기</b> <i class="icon-arrow"></i></span>
+      <div class="setting-item">
+        <h2 class="setting-item-label">생년월일</h2>
+        <div class="setting-item-value">1988년 1월 11일</div>
+        <span class="setting-item-change"><b>변경하기</b> <i class="icon-arrow"></i></span>
       </div>
-      <div class="setting-row">
-        <h2 class="setting-row-label">성별</h2>
-        <div class="setting-row-value">기타</div>
-        <span class="setting-row-change"><b>변경하기</b> <i class="icon-arrow"></i></span>
+      <div class="setting-item">
+        <h2 class="setting-item-label">성별</h2>
+        <div class="setting-item-value">기타</div>
+        <span class="setting-item-change"><b>변경하기</b> <i class="icon-arrow"></i></span>
       </div>
 
-      <div class="setting-row">
-        <h2 class="setting-row-label">배송지</h2>
-        <div class="setting-row-value">
-          <p class="setting-row-value-username">이경수</p>
-          <p class="setting-row-value-address">[07655] 서울특별시 강서구 까치산로 182</p>
-          <p class="setting-row-value-phone">010-3121-7045</p>
+      <div class="setting-item">
+        <h2 class="setting-item-label">배송지</h2>
+        <div class="setting-item-value">
+          <p class="setting-item-value-username">이경수</p>
+          <p class="setting-item-value-address">[07655] 서울특별시 강서구 까치산로 182</p>
+          <p class="setting-item-value-phone">010-3121-7045</p>
         </div>
-        <span class="setting-row-change"><b>변경하기</b> <i class="icon-arrow"></i></span>
+        <span class="setting-item-change"><b>변경하기</b> <i class="icon-arrow"></i></span>
       </div>
     </div>
 
     <div class="setting-body">
-      <h2 class="setting-body-heading">뉴니커 정보</h2>
+      <h2 class="setting-subhead">뉴니커 정보</h2>
       <!-- <p class="setting-body-description">뉴니커 정보를 입력하고 뽐내보세요.</p> -->
-      <div class="setting-row">
-        <h2 class="setting-row-label">이모지</h2>
-        <div class="setting-row-value">🐻</div>
-        <span class="setting-row-change"><b>변경하기</b> <i class="icon-arrow"></i></span>
+      <div class="setting-item">
+        <h2 class="setting-item-label">이모지</h2>
+        <div class="setting-item-value">🐻</div>
+        <span class="setting-item-change"><b>변경하기</b> <i class="icon-arrow"></i></span>
       </div>
-      <div class="setting-row">
-        <h2 class="setting-row-label">관심분야</h2>
-        <div class="setting-row-value">문화/예술, 인권, 환경</div>
-        <span class="setting-row-change"><b>변경하기</b> <i class="icon-arrow"></i></span>
+      <div class="setting-item">
+        <h2 class="setting-item-label">관심분야</h2>
+        <div class="setting-item-value">문화/예술, 인권, 환경</div>
+        <span class="setting-item-change"><b>변경하기</b> <i class="icon-arrow"></i></span>
+      </div>
+      <small style="display:block;margin-top:-.25rem;color:var(--gray400);">관심있는 분야의 콘텐츠를 추천 받으세요.</small>
+    </div>
+
+    <div class="setting-body">
+      <h2 class="setting-subhead">비밀번호 변경</h2>
+      <div class="setting-item">
+        <h2 class="setting-item-label">비밀번호</h2>
+        <div class="setting-item-value" style="letter-spacing:.25rem;">••••••••</div>
+        <span class="setting-item-change"><b>변경하기</b> <i class="icon-arrow"></i></span>
       </div>
     </div>
 
     <div class="setting-body">
-      <h2 class="setting-body-heading">비밀번호 변경</h2>
-      <div class="setting-row">
-        <h2 class="setting-row-label">비밀번호</h2>
-        <div class="setting-row-value" style="letter-spacing:.25rem;">••••••••</div>
-        <span class="setting-row-change"><b>변경하기</b> <i class="icon-arrow"></i></span>
+      <h2 class="setting-subhead">이메일 수신여부</h2>
+      <div class="setting-item">
+        <h2 class="setting-item-label">이메일</h2>
+        <div class="setting-item-value">soojubm@gmail.com</div>
+        <span class="setting-item-change"><b>변경하기</b> <i class="icon-arrow"></i></span>
       </div>
-    </div>
-
-    <div class="setting-body">
-      <h2 class="setting-body-heading">이메일 수신여부</h2>
-      <div class="setting-row">
-        <h2 class="setting-row-label">이메일</h2>
-        <div class="setting-row-value">soojubm@gmail.com</div>
-        <span class="setting-row-change"><b>변경하기</b> <i class="icon-arrow"></i></span>
-      </div>
-      <div class="setting-row">
-        <h2 class="setting-row-label">뉴스레터</h2>
-        <div class="setting-row-value">
+      <div class="setting-item">
+        <h2 class="setting-item-label">뉴스레터</h2>
+        <div class="setting-item-value">
           <span class="switch">
             <input type="checkbox" id="switch1" name="" role="switch" value="on" checked />
             <label for="switch1" title="Receive weekly newsletter">시사 뉴스레터</label>
           </span>
         </div>
       </div>
+      <aside style="margin:-.5rem 0 2rem 0;">
+        <small style="color:var(--gray400);">
+          매 주 월요일, 수요일, 금요일 아침에 받아볼 수 있어요.
+        </small>
+      </aside>
     </div>
 
     <div class="setting-body">
-      <h2 class="setting-body-heading">계정삭제</h2>
-      <div class="setting-row" style="flex-wrap:wrap;border-color:var(--color-warning);">
+      <h2 class="setting-subhead">계정삭제</h2>
+      <div class="setting-item" style="flex-wrap:wrap;border-color:var(--color-warning);">
         <p>
           Permanently remove your Personal Account and all of its contents from the Vercel platform. This action is not reversible, so please continue
           with caution.

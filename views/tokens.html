@@ -112,6 +112,9 @@
       <div class="tile-flat-small" style="margin:0 0 var(--space) 0;">
         <a href="#" style="text-decoration:underline;">Text Hover</a>
       </div>
+      <button class="user-logout" title="sign out" style="margin:0;">
+        <span class="user-logout-label">Button Hover</span>
+      </button>
       <button class="user-logout is-hover" title="sign out" style="margin:0;">
         <figure class="user-logout-icon">
           <i class="icon-out"><span class="icon-out-door"></span></i>
@@ -159,7 +162,7 @@
         <li><i class="icon-check"></i>너비는 반응형으로 비교적 유동적이기 때문에 주로 높이를 정의합니다.</li>
         <li><i class="icon-check"></i>정의하지 않은 높이를 쓸 수 있습니다.</li>
       </ul>
-      <code class="design-article-description" style="margin:2rem 0;padding:1rem;">
+      <code class="design-article-description" style="padding:1rem;">
         <!--
           <p>--button-height-medium: var(--size-large);</p>
         <p>--chip-height: var(--size-medium);</p>
@@ -251,7 +254,7 @@
       <p class="design-article-description">컬러(background/border/text/state)와 표면surface(shadow/radius)을 정의합니다.</p>
       <ul class="design-article-checklist">
         <li><i class="icon-check"></i>다크테마를 위한 인버트 컬러셋을 추가로 정의하지 않습니다. (todo 테마와 무관한 컬러셋 토큰. 다크테마를 위한 gradient.)</li>
-        <li><i class="icon-check"></i>하나의 모서리 크기를 사용합니다. 크기에 비례해서 radius가 커지는 것이 밸런스에 맞으나 경량화가 중요한 스테이지입니다.</li>
+        <li><i class="icon-check"></i>하나의 모서리 토큰 사용합니다. 크기와 radius가  크기를 사용합니다. 크기와 비례해서 radius의 밸런스를 조절하는 것이 좋지만 경량화가 중요한 스테이지입니다.</li>
       </ul>
 
       <button class="user-logout js-darkmode2" title="change theme" style="border-radius:var(--radius);box-shadow:var(--shadow);padding:.5rem;border:var(--border);">
@@ -569,14 +572,14 @@
         </div>
       </div>
       <div class="tile-flat-small" style="margin:var(--space-small) 0;">
-        <b>--container-small: 640px</b>
+        <div style="margin:0 0 var(--space-small) 0;"><b>--container-small: 640px</b></div>
         <div style="font-size:var(--font-size-tiny);">
           <p>--page-login-width</p>
           <p>--page-signup-width</p>
         </div>
       </div>
       <div class="tile-flat-small" style="margin:var(--space-small) 0;">
-        <b>--container-tiny: 400px</b>
+        <div style="margin:0 0 var(--space-small) 0;"><b>--container-tiny: 400px</b></div>
         <div style="font-size:var(--font-size-tiny);">
           <p>--dropdown-width: var(--container-tiny)</p>
           <p>--dialog-width: var(--container-tiny)</p>
@@ -588,7 +591,7 @@
 
       <h6 class="heading-label">Groups</h6>
       <div class="tile-flat-small">
-        <b>@mixin group {display:flex;flex-wrap:wrap;}</b>
+        <div style="margin:0 0 var(--space-small) 0;"><b>@mixin group {display:flex;flex-wrap:wrap;}</b></div>
         <div style="font-size:var(--font-size-tiny);">
           <!-- <p>@mixin group-bleeding {}</p> -->
           <p>@mixin tag-group {}</p>
@@ -602,7 +605,7 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Spacing</h1>
-      <p class="design-article-description">모든 요소는 이름과 역할이 있습니다. 따라서 상호관계에서 정해진 간격을 따릅니다.</p>
+      <p class="design-article-description">작성 중.</p>
 
       <h6 class="heading-label">grid</h6>
       <div style="display:flex;align-items:center;width:100%;height:10rem;text-align:center;font-size:var(--font-size-caption);position:relative;">
@@ -616,11 +619,11 @@
       <br />
 
       <h6 class="heading-label">tile? article?</h6>
-      <div class="spacing-card">
-        <div class="space" style="height:var(--space-tile-inset);position:absolute;left:0;right:0;top:-1px;"><span class="">var(--space-tile-inset): var(--space)</span></div>
-        <div class="space" style="height:var(--space-tile-inset);position:absolute;left:0;right:0;bottom:-1px;z-index:0;"><span class="">var(--space-tile-inset): var(--space)</span></div>
-        <div class="space" style="width:var(--space-tile-inset);height:100%;writing-mode:vertical-lr;position:absolute;left:0;top:0;bottom:0;z-index:0;"><span class="">var(--space-tile-inset): var(--space)</span></div>
-        <div class="space" style="width:var(--space-tile-inset);height:100%;writing-mode:vertical-lr;position:absolute;right:0;top:0;bottom:0;z-index:0;"><span class="">var(--space-tile-inset): var(--space)</span></div>
+      <div class="spacing-card" style="margin:0;">
+        <div class="space" style="height:var(--space-tile-inset);position:absolute;left:0;right:0;top:-1px;"><span class="">var(--space-tile-inset)</span></div>
+        <div class="space" style="height:var(--space-tile-inset);position:absolute;left:0;right:0;bottom:-1px;z-index:0;"><span class="">var(--space-tile-inset)</span></div>
+        <div class="space" style="width:var(--space-tile-inset);height:100%;writing-mode:vertical-lr;position:absolute;left:0;top:0;bottom:0;z-index:0;"><span class="">var(--space-tile-inset)</span></div>
+        <div class="space" style="width:var(--space-tile-inset);height:100%;writing-mode:vertical-lr;position:absolute;right:0;top:0;bottom:0;z-index:0;"><span class="">var(--space-tile-inset)</span></div>
        
         <h4 class="typography-subhead" style="font-size:var(--font-size-subhead);">선약이 있어서 ✋ <span style="display:block;">자아실현은 못할 것 같아요.</span></h4>
         <div class="space" style="height:var(--space-after-subhead);"><span class="">var(--space-after-subhead)</span></div>
@@ -638,7 +641,7 @@
       <h6 class="heading-label">Item</h6>
       <!-- todo 전체가 클릭영역인 경우가 있고 버튼을 포함하는 경우가 있음. -->
       <div>
-        <article class="item tile-flat-small" data-size="huge">
+        <article class="item tile-flat-small" data-size="huge" style="margin:0;">
           <figure class="item-avatar">
             <span class="avatar-badge"></span>
           </figure>
@@ -647,20 +650,20 @@
           <p style="color:var(--gray400);">huge와 large는 디스크립션을 가집니다.</p>
         </article>
         <div class="space" style="height:var(--space);">var(--space-groupitem)</div>
-        <article class="item tile-flat-small" data-size="large">
+        <article class="item tile-flat-small" data-size="large" style="margin:0;">
           <figure class="item-avatar"></figure>
           <!-- <div style="width:var(--space-after-avatar-large);height:48px;background:var(--green800);box-sizing:border-box;border-radius:4px;position:absolute;left:calc(var(--size-large) + var(--space-small));"></div> -->
           <h3 style="font-weight:var(--font-weight-bold);font-size:var(--font-size-body);">large</h3>
           <p style="color:var(--gray400);">huge와 large는 디스크립션을 가집니다.</p>
         </article>
         <div class="space" style="height:var(--space);">var(--space-groupitem)</div>
-        <article class="item tile-flat-small" data-size="medium">
+        <article class="item tile-flat-small" data-size="medium" style="margin:0;">
           <figure class="item-avatar"></figure>
           <!-- <div style="width:var(--space-after-avatar-medium);height:32px;background:var(--green800);box-sizing:border-box;border-radius:4px;position:absolute;left:calc(var(--size-medium) + var(--space-small));"></div> -->
           <p style="display:block;width:calc(100% - 32px - 1rem);height:32px;line-height:32px;">medium</p>
         </article>
         <div class="space" style="height:var(--space);">var(--space-groupitem)</div>
-        <article class="item tile-flat-small" data-size="small">
+        <article class="item tile-flat-small" data-size="small" style="margin:0;">
           <figure class="item-avatar"></figure>
           <!-- <div style="display:block;width:var(--space-after-avatar-small);height:24px;background:var(--green800);box-sizing:border-box;border-radius:4px;position:absolute;left:calc(var(--size-small) + var(--space-small));"> -->
           <!-- <span class="space">var(--space-after-avatar-small)</span> -->
@@ -701,7 +704,7 @@
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">z-index</h1>
-      <p class="design-article-description">준비 중</p>
+      <p class="design-article-description">작성 중.</p>
 
       <div class="tile-flat-small" style="margin:var(--space-small) 0;">
         <b>--z-index-deepdive: -1;</b>
@@ -711,23 +714,27 @@
       </div>
 
       <div class="tile-flat-small" style="margin:var(--space-small) 0;">
-        <b>--z-index-popover: null;</b>
-        <div style="font-size:var(--font-size-tiny);">
-          <p>--z-index-dropdown: null;</p>
-          <p>--z-index-tooltip: null;</p>
-          <p>--z-index-drawer: null; ?</p>
-          <p>툴팁은 더 위에 열릴 수 있음. 툴팁은 햄버거 메뉴보다 높아야.</p>
+        <div style="margin:0 0 var(--space-small) 0;">
+          <div style="margin:0 0 var(--space-small) 0;"><b>--z-index-popover: null;</b></div>
+          <div style="font-size:var(--font-size-tiny);">
+            <p>--z-index-dropdown: null;</p>
+            <p>--z-index-tooltip: null;</p>
+            <p>--z-index-drawer: null; ?</p>
+            <p>툴팁은 더 위에 열릴 수 있음. 툴팁은 햄버거 메뉴보다 높아야.</p>
+          </div>
         </div>
       </div>
       <div class="tile-flat-small" style="margin:var(--space-small) 0;">
-        <b>--z-index-sticky: null;</b>
+        <div style="margin:0 0 var(--space-small) 0;">
+          <b>--z-index-sticky: null;</b>
+        </div>
         <div style="font-size:var(--font-size-tiny);">
           <p>햄버거 메뉴보다 낮음. 모달보다 낮음.</p>
         </div>
       </div>
       <div class="tile-flat-small" style="margin:var(--space-small) 0;">
-        <b>--z-index-modal: null;</b>
-        <b>--z-index-modal-dim: null;</b>
+        <div><b>--z-index-modal: null;</b></div>
+        <div><b>--z-index-modal-dim: null;</b></div>
         <div style="font-size:var(--font-size-tiny);">
           <p>토스트보다 낮음. 툴팁보다 낮음.</p>
         </div>
@@ -741,17 +748,20 @@
     </article>
 
     <article class="design-article js-scrollspy-section">
-      <h1 class="design-article-title">Timing (or Animation)</h1>
+      <h1 class="design-article-title">Timing <span class="tag">draft</span></h1>
       <p class="design-article-description">inactive로 전환될 때는 항상 instantly.</p>
-      <code class="design-article-description" style="padding:1rem;">
-        <p>--bazier-base: cubic-bezier(0.455, 0.03, 0.515, 0.955);</p>
+      <div class="tile-flat-small">
+        <p><b>--bazier-base: cubic-bezier(0.455, 0.03, 0.515, 0.955);</b></p>
+      </div>
+      <div class="tile-flat-small">
         <p>--transition-fade: null;</p>
-        <hr />
+      </div>
+      <div class="tile-flat-small">
         <p>--duration: .4s</p>
         <p>--duration-instantly: 0s;</p>
         <p>--duration-slowly: null;</p>
         <p>--duration-quickly: null;</p>
-      </code>
+      </div>
     </article>
   </section>
 

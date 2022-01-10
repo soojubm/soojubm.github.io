@@ -8,7 +8,10 @@
 
 .is-active .icon-caret {transform:translateY(-1px) rotate(180deg);}
 
-.dropdown-menu {@include tile-elevated-small;min-width:var(--width-dropdown);padding:0;position:absolute;top:calc(var(--size-medium) + var(--space-small));z-index:var(--zindex-popover);height:0;transform:scale(0);transform-origin:left top;}
+.dropdown-menu {@include tile-elevated-small;min-width:var(--width-dropdown);
+  margin: 0; // todo tile margin
+  padding:0;
+  position:absolute;top:calc(var(--size-medium) + var(--space-small));z-index:var(--zindex-popover);height:0;transform:scale(0);transform-origin:left top;}
 .dropdown-menu-title {}
 .dropdown-menu-link {display:block;margin:var(--space);color:var(--gray800);position:relative;z-index:var(--zindex-default);}
 .dropdown-menu-link:hover {@include hover-item;}

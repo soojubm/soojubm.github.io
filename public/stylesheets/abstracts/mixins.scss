@@ -73,10 +73,10 @@
     content:'';display:block;background:var(--gray100);border-radius:var(--radius);position:absolute;left:var(--hover-outline);right:var(--hover-outline);top:var(--hover-outline);bottom:var(--hover-outline);z-index:-1;
   }
   // todo 기본적으로 transparent 보더가 필요.
-  // figure {background-color:var(--gray0);border:1px solid var(--gray200);}
+  figure {background-color:var(--gray0);border:1px solid var(--gray200);}
 }
 
-.is-hover {@include hover-item;}
+// .is-hover {@include hover-item;}
 
 @mixin container-page {
   // width: 100%;

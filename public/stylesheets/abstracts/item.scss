@@ -34,7 +34,7 @@
 
 // todo entry / message / created
 .item {@include item;}
-.item-avatar {float:left;@include avatar-large;margin:0 var(--space-after-avatar-medium) 0 0;}
+.item-avatar {float:left;@include avatar-large;margin:0 var(--space-after-avatar-large) 0 0;}
 .item-name {font-size:var(--font-size-body);}
 .item-description {line-height:var(--font-line-height-small);color:var(--gray400);}
 .item-description + .item-name {margin-top:-.125rem;}

@@ -7,6 +7,7 @@
   box-sizing: border-box;
   background: var(--gray0);
   position: relative;
+  // z-index: 1; // todo: for item hover. tile 안에 tile z-index 중복.
   // @media (--breakpoint-small) {}
 }
 @mixin tile-elevated {@include tile-flat;box-shadow:var(--shadow);}

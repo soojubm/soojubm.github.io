@@ -3,42 +3,41 @@
 .setting-head-title {@include text-title;}
 .setting-head-description {margin:var(--space-after-title) 0 0 0;}
 
-.setting-body {margin:4rem 0 0;}
-.setting-body-heading {margin:0 0 var(--space) 0;font-size:var(--font-size-body);}
+.setting-body {margin:2rem 0 0;}
+.setting-subhead {display:none;margin:0 0 var(--space) 0;font-size:var(--font-size-body);}
 .setting-body-description {margin:-1rem 0 1.5rem 0;}
 
-.setting-row {
+.setting-item {
   @include tile-elevated;
-  display:flex;overflow:hidden;
+  display:flex;
+  // align-items:center;
   margin:var(--space) 0;
   // padding:var(--space) 0;border-bottom:var(--border);box-sizing:border-box;
   cursor:pointer;position:relative;
 }
-.setting-row:nth-of-type(1) {border-top:var(--border);}
-.setting-row-label {width:100px;font-size:var(--font-size-body);line-height:32px;font-weight:400;color:var(--gray400);}
-.setting-row-value {display:flex;flex-wrap:wrap;align-items:center;width:calc(100% - 10rem);color:var(--gray800);line-height:32px;}
-.setting-row-value-username {width:100%;}
-.setting-row-value-address {width:100%;margin:-.25rem 0;line-height:1.5;}
-.setting-row-value-phone {width:100%;}
-.setting-row-change {@include avatar-medium;font-size:var(--font-size-body);position:absolute;right:1rem;}
-.setting-row-change b {display:none;background:var(--gray0);transform:translateX(200px);transition:all .5s;position:relative;z-index:var(--zindex-default);}
-.setting-row-change i {}
-.setting-row-form {width:100%;}
-.setting-row-form-foot {}
-.setting-row-foot {display:flex;}
-.setting-row-foot-confirm {@include button-primary;}
-.setting-row-foot-cancel {@include button-text;margin:0 0 0 var(--space-after-button);}
+.setting-item:nth-of-type(1) {border-top:var(--border);}
+.setting-item-label {width:5rem;@include text-label;line-height:var(--size-medium);}
+.setting-item-value {display:flex;flex-wrap:wrap;align-items:center;line-height:32px;}
+.setting-item-value-username {width:100%;}
+.setting-item-value-address {width:100%;margin:-.25rem 0;line-height:1.5;}
+.setting-item-value-phone {width:100%;}
+.setting-item-change {@include avatar-medium;font-size:var(--font-size-body);position:absolute;right:1rem;}
+.setting-item-change b {display:none;background:var(--gray0);transform:translateX(200px);transition:all .5s;position:relative;z-index:var(--zindex-default);}
+.setting-item-change i {}
+.setting-item-form {width:100%;}
+.setting-item-form-foot {}
+.setting-item-foot {display:flex;}
+.setting-item-foot-confirm {@include button-primary;}
+.setting-item-foot-cancel {@include button-text;margin:0 0 0 var(--space-after-button);}
 // line-height:24px; 이거 모듈화~!
-.setting-row .textfield {
+.setting-item .textfield {
   margin: 0 0 var(--space) 0;
 }
-.setting-row:hover {}
-.setting-row:hover .setting-row-change b {transform:translateX(0);}
-.setting-row.is-opened {}
+.setting-item:hover {@include hover-item;}
+.setting-item:hover .setting-item-change b {transform:translateX(0);}
+.setting-item.is-opened {}
 
-.setting-row-form {padding:1rem 0 0;cursor:default;}
+.setting-item-form {padding:1rem 0 0;cursor:default;}
 
 @media (--breakpoint-small) {
-  // .setting-row-label {width:6rem;}
-  // .setting-row-value {width:calc(100% - 6rem);}
 }

@@ -8,10 +8,14 @@
 .navbar-menu-item:before {display:none;}
 .navbar-menu-item i {margin-left:8px;}
 .navbar-menu-item menu {display:flex;justify-content:center;padding:48px 5rem 0;background-color:var(--color-primary);position:fixed;left:0;right:0;top:-240px;z-index:var(--zindex-navigation);transition:$transition-base;}
-.navbar-menu-item menu a {margin:0 var(--space);font-size:var(--font-size-body);line-height:60px;color:var(--gray0);opacity:0;transition:all .4s ease .3s;}
+.navbar-menu-item menu a {margin:0 var(--space);line-height:60px;color:var(--gray0);opacity:0;transition:all .4s ease .3s;}
 .navbar-menu-item menu a:hover {@include hover-text;}
 
+.navbar-menu-item-submenu
+// item - link
+
 .navbar-menu-item.is-active {text-decoration:underline;}
+
 .navbar-search-trigger {@include avatar-medium;}
 
 // todo close icon rotate
@@ -64,14 +68,18 @@
 .notification-item:hover {@include hover-item;}
 .notification-item-avatar {@include avatar-large;position:absolute;left:0;top:0;}
 .notification-item-user {display:block;font-size:var(--font-size-body);line-height:var(--font-line-height-small);}
-.notification-item-date {font-size:var(--font-size-caption);color:var(--gray400);position:absolute;right:0;top:-2px;}
+.notification-item-date {color:var(--gray400);}
 .notification-item-content {}
 
 .notification-unread {display:block;@include avatar-tiny;font-size:var(--font-size-caption);position:absolute;left:-.125rem;top:-.125rem;z-index:var(--zindex-default);}
 
-.navbar-user {margin:0 0 0 .5rem;position:relative;}
-.navbar-user-trigger {display:flex;justify-content:center;align-items:center;height:32px;}
-.navbar-user-trigger-media {@include avatar-medium;pointer-events:none;}
+// todo util
+.navbar-user {display:flex;align-items:center;margin:0 0 0 auto;position:relative;}
+.navbar-user-trigger {margin:0 0 0 var(--space-small);}
+.navbar-user-trigger-avatar {@include avatar-medium;pointer-events:none;}
+// todo--
+.navbar-user-trigger-avatar:hover {@include hover-button;}
+
 .navbar-user-menu {width:var(--width-tiny);height:0;@include tile-elevated;position:absolute;top:24px;right:0;z-index:var(--zindex-popover);transform:scale(0);}
 .is-active + .navbar-user-menu {height:auto;transform:scale(1);}
 
@@ -95,9 +103,12 @@
 .is-active .navbar-logo {z-index:calc(var(--zindex-navigation) + 2);z-index:5;}
 .is-active .navbar-user {z-index:calc(var(--zindex-navigation) + 2);z-index:5;}
 .is-active .navbar-user .navbar-user-trigger img {background:var(--gray0);}
+.is-active .navbar-menu {}
 .is-active .navbar-menu-item {color:var(--gray0);}
 .is-active .navbar-menu-item > a {position:relative;z-index:calc(var(--zindex-navigation) + 2);}
 .is-active .navbar-menu-item i {border-top-color:var(--gray0);}
+.is-active .navbar-menu-item menu {top:0;}
+.is-active .navbar-menu-item menu a {opacity:1;}
 // .is-darktheme .navbar-menu-item {color:var(--gray0);}
 .is-darktheme .navbar-user-search-trigger i {color:var(--gray0);}
 .is-darktheme .navbar-notification-trigger i {color:var(--gray0);}
@@ -113,9 +124,9 @@
 
 	.navbar-menu {display:block;margin-left:0;padding:4rem 0;box-sizing:border-box;background:var(--gray0);box-shadow:var(--shadow);position:fixed;left:0px;right:10%;top:0px;bottom:0px;transition:all .8s cubic-bezier(.165,.84,.44,1);transform:translateX(-100%);}
 	.navbar-menu-item {display:block;padding:var(--space-small) var(--grid-margin);font-size:var(--font-size-subhead);}
-	.navbar-menu-item menu {flex-wrap:wrap;padding:var(--space) 0;background:var(--gray0);position:static;left:auto;right:auto;top:auto;transition:none;}
+	.navbar-menu-item menu {flex-wrap:wrap;padding:var(--space-small) 0;background:var(--gray0);position:static;left:auto;right:auto;top:auto;transition:none;}
 	// .navbar-menu-item:hover menu {display:block;}
-	.navbar-menu-item menu a {display:block;width:100%;margin-left:0;padding:.5rem 0 .5rem 1.5rem;border-left:var(--border);font-size:1rem;line-height:24px;color:var(--gray800);opacity:1;}
+	.navbar-menu-item menu a {display:block;width:100%;margin-left:0;padding:.5rem 0 .5rem 1.5rem;border-left:var(--border);font-size:var(--font-size-body);line-height:24px;color:var(--gray800);opacity:1;}
 	
 
 	.is-active .navbar-logo {z-index:3;}

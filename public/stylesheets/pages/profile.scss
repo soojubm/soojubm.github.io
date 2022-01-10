@@ -76,7 +76,8 @@
 .profile-tabpanel .card {width:calc(33.3333% - 1rem);margin:0 .5rem 1rem;}
 
 
-.card {display:block;background:var(--gray0);position:relative;@include tile-elevated;
+.card {display:block;position:relative;@include tile-elevated;
+  // todo
   --inset: .5rem;
 }
 .card-more {@include avatar-medium;display:none;position:absolute;right:var(--inset);top:var(--inset);}

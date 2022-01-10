@@ -1,31 +1,45 @@
 <main class="changelog">
   <header class="changelog-head">
     <p>Changelog</p>
-    <span>히스토리와 근거를 공유하세요. (?)</span>
+    <!-- <span>히스토리와 근거(?)</span> -->
   </header>
   <nav class="changelog-filter">
     <button class="changelog-filter-chip is-active"><span class="changelog-filter-chip-label">모두</span></button>
     <button class="changelog-filter-chip" onClick="javascript:alert('필터링 준비 중.');">
-      <span class="changelog-filter-chip-label">🔨 변경</span>
+      <span class="changelog-filter-chip-label">변경</span>
     </button>
     <button class="changelog-filter-chip" onClick="javascript:alert('필터링 준비 중.');">
-      <span class="changelog-filter-chip-label">🧶 추가</span>
+      <span class="changelog-filter-chip-label">추가</span>
     </button>
     <button class="changelog-filter-chip" onClick="javascript:alert('필터링 준비 중.');">
-      <span class="changelog-filter-chip-label">✂️ 삭제</span>
+      <span class="changelog-filter-chip-label">삭제</span>
     </button>
   </nav>
   <hr />
   <article class="changelog-item js-accordion">
     <header class="changelog-item-head">
-      <em class="changelog-item-tag">🔨</em>
-      <span class="changelog-item-target">Variables</span>
-      <h3 class="changelog-item-title">--space: 0.75rem => --space: 1rem</h3>
-      <figure class="changelog-item-icon"><i class="icon-arrow"></i></figure>
+      <em class="changelog-item-tag is-negative">✂️</em>
+      <span class="changelog-item-target">Settings</span>
+      <h3 class="changelog-item-title">page title 제거</h3>
+      <figure class="changelog-item-icon"><i class="icon-chevron"></i></figure>
     </header>
     <div class="changelog-item-content">
       <p>
-        space와 space-small을 / tile과 tile-small과 페어링
+        페이지 타이틀이 한 두가지의 세팅에 해당하는 지엽적인 베네핏에 관한 가이드였다. 이러한 가이드는 해당 설정 영역에 가까이 배치하고 모바일
+        친화적으로 타이틀을 제거했다.
+      </p>
+    </div>
+  </article>
+  <article class="changelog-item js-accordion">
+    <header class="changelog-item-head">
+      <em class="changelog-item-tag">🔨</em>
+      <span class="changelog-item-target">Variables</span>
+      <h3 class="changelog-item-title">--space: 0.75rem => --space: 1rem</h3>
+      <figure class="changelog-item-icon"><i class="icon-chevron"></i></figure>
+    </header>
+    <div class="changelog-item-content">
+      <p>
+        space와 space-small을 각각 tile과 tile-small과 페어링. 토큰화하지 않고 사용하던 크게 3가지 size를 2가지 축소하기 위함.
       </p>
     </div>
   </article>
@@ -35,7 +49,7 @@
       <em class="changelog-item-tag">🔨</em>
       <span class="changelog-item-target">Signup</span>
       <h3 class="changelog-item-title">소셜 가입을 상단으로 이동</h3>
-      <figure class="changelog-item-icon"><i class="icon-arrow"></i></figure>
+      <figure class="changelog-item-icon"><i class="icon-chevron"></i></figure>
     </header>
     <div class="changelog-item-content">
       <p>
@@ -49,11 +63,11 @@
       <em class="changelog-item-tag is-negative">✂️</em>
       <span class="changelog-item-target">Button</span>
       <h3 class="changelog-item-title">스몰 사이즈 삭제</h3>
-      <figure class="changelog-item-icon"><i class="icon-arrow"></i></figure>
+      <figure class="changelog-item-icon"><i class="icon-chevron"></i></figure>
     </header>
     <div class="changelog-item-content">
       <p>
-        chip과 button small이 스타일의 변별력이 없고 용법 중복.
+        chip과 button small 형태의 변별력이 없고 용법이 중복.
       </p>
     </div>
   </article>
@@ -63,11 +77,11 @@
       <span class="changelog-item-target">Tile</span>
 
       <h3 class="changelog-item-title">inset을 1.5rem에서 1rem으로 변경</h3>
-      <figure class="changelog-item-icon"><i class="icon-arrow"></i></figure>
+      <figure class="changelog-item-icon"><i class="icon-chevron"></i></figure>
     </header>
     <div class="changelog-item-content">
       <p>
-        1.5rem 단일 사이즈로 사용 시 모바일에서 공간 낭비가 낭비가 있어 medium / small 두 가지 사이즈로 확장
+        1.5rem 단일 간격으로 모든 화면에서 쓸 때 모바일에서 낭비되는 공간. medium / small 두 가지 사이즈로 확장
       </p>
     </div>
   </article>
@@ -76,11 +90,11 @@
       <em class="changelog-item-tag is-positive">🧶</em>
       <span class="changelog-item-target">Size</span>
 
-      <h3 class="changelog-item-title">small(1.5rem / 24x24) 추가</h3>
-      <figure class="changelog-item-icon"><i class="icon-arrow"></i></figure>
+      <h3 class="changelog-item-title">small 사이즈 추가</h3>
+      <figure class="changelog-item-icon"><i class="icon-chevron"></i></figure>
     </header>
     <div>
-      <p class="changelog-item-content">2021-05.</p>
+      <p class="changelog-item-content">2021-05. 1.5rem / 24x24. 텍스트 필드 내부에서 힌트 아이콘.</p>
     </div>
   </article>
   <article class="changelog-item js-accordion">
@@ -89,10 +103,10 @@
       <span class="changelog-item-target">Breadcrumb</span>
 
       <h3 class="changelog-item-title">홈 아이콘을 텍스트로 변경</h3>
-      <figure class="changelog-item-icon"><i class="icon-arrow"></i></figure>
+      <figure class="changelog-item-icon"><i class="icon-chevron"></i></figure>
     </header>
     <div class="changelog-item-content">
-      <p>아이콘을 사용할 때의 주목도를 낮춤.</p>
+      <p>페이지에서 상대적으로 덜 중요한 정보. 주목도를 낮추기 위함.</p>
     </div>
   </article>
   <!-- <article class="changelog-item js-accordion">
@@ -100,7 +114,7 @@
       <em class="changelog-item-tag">🧶</em>
       <span class="changelog-item-target">Typography</span>
       <h3 class="changelog-item-title">bold weight(800) 추가</h3>
-      <figure class="changelog-item-icon"><i class="icon-arrow"></i></figure>
+      <figure class="changelog-item-icon"><i class="icon-chevron"></i></figure>
     </header>
     <div>
       <p class="changelog-item-content">제목용 텍스트에 대한 일반적인(?) 사용자의 인식. 조금 더 간결한 위계 설정.</p>
@@ -112,10 +126,10 @@
       <span class="changelog-item-target">Color</span>
 
       <h3 class="changelog-item-title">gray600 삭제</h3>
-      <figure class="changelog-item-icon"><i class="icon-arrow"></i></figure>
+      <figure class="changelog-item-icon"><i class="icon-chevron"></i></figure>
     </header>
     <div>
-      <p class="changelog-item-content">본문용으로 주로 사용했으나 모바일로 야외의 밝은 조명에서 특히 잘 보이지 않음.</p>
+      <p class="changelog-item-content">본문용으로 주로 사용했으나 모바일에서 긴 글을 읽을 경우 야외나 밝은 조명 아래서 가시성이 떨어짐.</p>
     </div>
   </article>
 </main>
