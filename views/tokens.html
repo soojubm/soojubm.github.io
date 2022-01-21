@@ -1,19 +1,37 @@
 <main class="design">
   <div class="tokens-hero">
-    <figure class="tokens-hero-image">
+    <!-- <figure class="tokens-hero-image">
       <span class="tokens-hero-image-butter">🧈</span>
       <span class="tokens-hero-image-salt">🧂</span>
       <span class="tokens-hero-image-egg">🥚</span>
       <span class="tokens-hero-image-milk">🥛</span>
-    </figure>
-    <!-- <div style="width:100px;height:60px;border-radius:50%;border:2px solid var(--gray800);transform:rotate(15deg);display:flex;align-items:center;justify-content:center;position:absolute;left:50%;z-index:8;background:var(--gray0);margin-left:-100px;">작성 중</div> -->
+    </figure> -->
     <div class="tokens-hero-head">
       <!-- <span style="display:flex;align-items:center;margin:0 0 var(--space) 0;font-size:var(--font-size-title);">🥺<span style="margin:0 0 0 var(--space-small);font-size:var(--font-size-caption);color:var(--gray0);" hidden>진행중이에요<i style="font-style:italic;">!</i></span></span> -->
       <span style="font-size:var(--font-size-body);color:var(--gray0);">
         Design Tokens
       </span>
       <h1 style="font-size:var(--font-size-title);margin-top:.5rem;color:var(--gray0);">Welcome,<br />This is sample text</h1>
-      <!-- <br />
+
+      <div class="temp8" style="display:flex;margin-top:var(--space);">
+        <div>
+          <figure>🎨</figure>
+          <span>Palette</span>
+        </div>
+        <div>
+          <figure style="background:cadetblue;">🌭</figure>
+          <span>Cinema</span>
+        </div>
+        <div>
+          <figure style="background:darkseagreen;">🌮</figure>
+          <span>Design System</span>
+        </div>
+        <div>
+          <figure style="background:lightsalmon;">🍿</figure>
+          <span>Startup</span>
+        </div>
+      </div>
+      <!--
       <div class="about-intro-hashtags" role="group">
         <span class="tag" style="display:inline-block;">Sizing</span>
         <span class="tag" style="display:inline-block;">Spacing</span>
@@ -24,143 +42,193 @@
     </div>
   </div>
 
+  <!-- <nav class="token-navigation">
+    <div class="token-navigation-background"></div>
+    <div class="token-navigation-scroll">
+      <a class="js-scrollspy-trigger" href="#"><i class="icon-arrow is-down"></i><span class="chip-label">Avatars</span></a>
+      <a class="js-scrollspy-trigger" href="#"><i class="icon-arrow is-down"></i><span class="chip-label">Buttons</span></a>
+      <a class="js-scrollspy-trigger" href="#"><i class="icon-arrow is-down"></i><span class="chip-label">Chips</span></a>
+      <a class="js-scrollspy-trigger" href="#"><i class="icon-arrow is-down"></i><span class="chip-label">Tags</span></a>
+    </div>
+  </nav> -->
+
+  
+    <!-- <p style="padding:1rem 5%;border-bottom:var(--border);">토큰 최소화. 예를 들면, 왜 gray600이 필요하지 않은가? 위계 설정에 대비를 2개 이상 적용하지 않는다는 규칙에 근거.</p>
+    <p style="padding:1rem 5%;border-bottom:var(--border);">modal, toast, popover 등는 UI가 아니라 기능(또는 컨테이너 맥락의 컴포넌트).</p>
+  <p style="padding:1rem 5%;border-bottom:var(--border);">프로모션을 위한 단발성 페이지에서는 유연하게.</p> -->
+  <!-- <nav class="token-navigation" style="font-size:1.25rem;letter-spacing:-.025rem;">
+    <div class="token-navigation-scroll">
+      <a class="js-scrollspy-trigger" href="#" style="border-bottom:var(--border);">팔레트</a>
+      <a class="js-scrollspy-trigger" href="#" style="border-bottom:var(--border);">버튼</a>
+      <a class="js-scrollspy-trigger" href="#" style="border-bottom:var(--border);">칩</a>
+      <a class="js-scrollspy-trigger" href="#" style="border-bottom:var(--border);">태그</a>
+    </div>
+  </nav> -->
+
   <!-- <section style="font-size:1.5rem;letter-spacing:-.025rem;">
-    <p style="padding:1rem 5%;border-bottom:1px solid var(--gray200);">최소한의 에셋으로. 예를 들면, 왜 gray600이 필요하지 않은가? + 위계 설정에 대비를 2개 이상 적용하지 않는다.</p>
-    <p style="padding:1rem 5%;border-bottom:1px solid var(--gray200);">modal, toast, popover 등는 UI가 아니라 기능(?)에 가까움. todo. pattern으로 정의할 필요가 있는 것. tile, item / base 네이밍 생략?</p>
-    <h1 class="design-article-title">프로모션을 위한 단발성 페이지에서는 유연하게.</h1>
+    <p style="padding:1rem 5%;border-bottom:var(--border);">토큰 최소화. 예를 들면, 왜 gray600이 필요하지 않은가? 위계 설정에 대비를 2개 이상 적용하지 않는다는 규칙에 근거.</p>
+    <p style="padding:1rem 5%;border-bottom:var(--border);">modal, toast, popover 등는 UI가 아니라 기능(또는 컨테이너 맥락의 컴포넌트).</p>
+    <p style="padding:1rem 5%;border-bottom:var(--border);">프로모션을 위한 단발성 페이지에서는 유연하게.</p>
   </section> -->
 
   <section class="tokens-body">
-    <article class="design-article js-scrollspy-section">
-      <h1 class="design-article-title">기표signifier</h1>
-      <p class="design-article-description">사용자의 인지를 돕고, 제품 개발 효율을 높입니다.</p>
 
+    <article class="design-article js-scrollspy-section">
+      <h1 class="design-article-title">Palette</h1>
+      <p class="design-article-description">컬러(background/border/text/state)와 표면surface(shadow/radius)을 정의합니다.</p>
       <ul class="design-article-checklist">
-        <li><i class="icon-check"></i>'확장할 수 있음'으로 plus icon을 사용하지 마세요.</li>
-        <li><i class="icon-check"></i>'클릭할 수 있음'으로 bold text를 사용하지 마세요.</li>
+        <li><i class="icon-check"></i>다크테마를 위한 인버트 컬러셋을 추가로 정의하지 않습니다. (todo 테마와 무관한 컬러셋 토큰. 다크테마를 위한 gradient.)</li>
+        <li><i class="icon-check"></i>하나의 모서리 토큰이면 충분합니다. 크기와 비례해서 radius의 밸런스를 조절이 필요하지만 경량화가 중요한 스테이지입니다.</li>
       </ul>
 
-      <h6 class="heading-label">클릭Clickable</h6>
-      <div class="tile-elevated-small"  class="tile-elevated" style="cursor:pointer;">
-        <p style="margin-top:var(--space-leading-subhead);">elevated 오브젝트는 대부분(?) 클릭할 수 있다. 또는 오브젝트 내부에 클릭할 수 있는 요소가 존재한다.</p>
-      </div>
-      <div class="tile-flat-small" style="display:block;background:var(--gray100);border-radius:var(--radius);cursor:pointer;">
-        <p>연한 회색의 오브젝트는 대부분 클릭할 수 있다.</p>
-      </div>
-      <div class="tile-flat-small" style="display:block;color:var(--color-primary);cursor:pointer;">
-        <p>브랜드 컬러 텍스트는 대부분 클릭할 수 있다.</p>
-      </div>
-      <div class="tile-flat-small" style="display:block;margin:var(--space-small) 0;cursor:pointer;">
-        <p>❤️ 아이콘(이모지)는 대부분 클릭할 수 있다.</p>
-      </div>
-
-      <br />
-
-      <h6 class="heading-label">클릭할 수 없음non-clickable</h6>
-      <div class="tile-flat-small" style="cursor:default;">
-        <div>
-          <span class="tag">읽기전용readonly</span>
-          cursor default</div>
-      </div>
-      <div class="tile-flat-small" style="opacity:.5;cursor:not-allowed;">
-        <div>
-          <span class="tag">비활성disabled</span>
-          opacity 50% / cursor not-allowed / flat style</div>
-      </div>
-
-      <br />
-
-      <h6 class="heading-label">아이콘 기표</h6>
-      <div class="tile-flat-small">
-        <figure class="chip-thumbnail" style="margin:0 -.25rem 0 0;background:var(--gray100);">
-          <i class="icon-arrow is-external"></i>
-        </figure>
-        <span class="chip-label">External Link</span>
-      </div>
-      <div class="tile-flat-small">
-        <figure class="chip-thumbnail" style="margin:0 -.25rem 0 0;background:var(--gray100);"><i class="icon-chevron is-down"></i></figure>
-        <span class="chip-label">Expanable & Collapsible</span>
-      </div>
-      <div class="tile-flat-small">
-        <figure class="chip-thumbnail" style="margin:0 -.25rem 0 0;background:var(--gray100);">
-          <i class="icon-caret" style="display:inline-block;"></i>
-        </figure>
-        <span class="chip-label">Popover</span>
-      </div>
-      <div class="tile-flat-small">
-        <figure class="chip-thumbnail" style="margin:0 -.25rem 0 0;background:var(--gray100);">
-          <i class="icon-chevron" style="display:inline-block;"></i>
-        </figure>
-        <span class="chip-label">internal link(view all)</span>
-      </div>
-      <div class="tile-flat-small">
-        <figure class="chip-thumbnail" style="margin:0 -.25rem 0 0;background:var(--gray100);">
-          <i class="icon-x" style="display:inline-block;"></i>
-        </figure>
-        <span class="chip-label">removable</span>
-      </div>
-      <div class="tile-flat-small">
-        <figure class="chip-thumbnail" style="margin:0 -.25rem 0 0;background:var(--gray100);">
-          <i class="icon-plus" style="display:inline-block;"></i>
-        </figure>
-        <span class="chip-label">addable</span>
-      </div>
-      
-      <br />
-
-      <h6 class="heading-label">hover</h6>
-      <div class="tile-flat-small" style="margin:0 0 var(--space) 0;">
-        <a href="#" style="text-decoration:underline;">Text Hover</a>
-      </div>
-      <button class="user-logout" title="sign out" style="margin:0;">
-        <span class="user-logout-label">Button Hover</span>
+      <button class="user-logout js-darkmode2" title="change theme" style="border-radius:var(--radius);box-shadow:var(--shadow);padding:.5rem;border:var(--border);">
+        <figure class="user-logout-icon"><i class="icon-moon"></i></figure>
+        <span class="user-logout-label">어둡게 보기</span>
+        <span class="switch" style="margin-left:auto;">
+          <input type="checkbox" id="temp55" name="" role="switch" />
+          <label for="temp55" style="padding-left:48px;"></label>
+        </span>
       </button>
-      <button class="user-logout is-hover" title="sign out" style="margin:0;">
-        <figure class="user-logout-icon">
-          <i class="icon-out"><span class="icon-out-door"></span></i>
-        </figure>
-        <span class="user-logout-label">Item(or Card) Hover</span>
-      </button>
+
+      <br />
+      <h2 class="heading-label">Border Radius</h2>
+      <div class="">
+        <article class="token-item is-gray000">
+          <figure style="border-right-color: #000;
+          border-top-color:#000;
+          border-right-width: 2px;
+          border-top-width: 2px;
+          /* border-bottom: 0; */
+          /* border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0; */
+          "></figure>
+          <h3 class="token-item-name">--radius:4px</h3>
+        </article>
+      </div>
+      <br />
+      <h2 class="heading-label">Grayscales</h2>
+      <div class="">
+        <article class="token-item is-gray000">
+          <figure class=""></figure>
+          <h3 class="token-item-name">--gray0: #000</h3>
+          <div style="margin-left:calc(var(--size-large) + var(--space));font-size:var(--font-size-caption);">
+            <p>--color-background: var(--color-background);</p>
+            <p>--color-text: var(--gray800);</p>
+
+            <h6 style="margin:var(--space) 0 0 0;">darktheme</h6>
+            <p>--color-text: var(--gray0);</p>
+          </div>
+        </article>
+        <article class="token-item is-gray100">
+          <figure class=""></figure>
+          <h3 class="token-item-name">--gray100: #fff</h3>
+          <div style="margin-left:calc(var(--size-large) + var(--space));font-size:var(--font-size-caption);">
+            <p>--color-background-lightgray</p>
+            <p>--button-background-color</p>
+            <p>--button-border-color</p>
+            <p>--button-border-color-active</p>
+          </div>
+        </article>
+        <article class="token-item is-gray200">
+          <figure class=""></figure>
+          <h3 class="token-item-name">--gray200: #fff</h3>
+          <div style="margin-left:calc(var(--size-large) + var(--space));font-size:var(--font-size-caption);">
+            <p>--color-background-gray: var(--gray200);</p>
+            <p>--color-border: var(--gray200);</p>
+            <p>--color-hover-background: var(--gray200);</p>
+          </div>
+        </article>
+        <article class="token-item is-gray400">
+          <figure class=""></figure>
+          <h3 class="token-item-name">--gray400: #fff</h3>
+          <div style="margin-left:calc(var(--size-large) + var(--space));font-size:var(--font-size-caption);">
+            <p>--color-text-lighter: var(--gray400);</p>
+            <p>--color-disabled-text: var(--gray400);</p>
+          </div>
+        </article>
+        <article class="token-item is-gray800">
+          <figure class=""></figure>
+          <h3 class="token-item-name">--gray800: #fff</h3>
+          <div style="margin-left:calc(var(--size-large) + var(--space));font-size:var(--font-size-caption);">
+            <p>--color-background-darkgray: var(--gray800);</p>
+            <p>--color-text: var(--gray800);</p>
+            <p>--color-text-dark: var(--gray0);</p>
+          </div>
+        </article>
+      </div>
+      <br />
+      <h2 class="heading-label">Coloreds</h2>
+      <div class="">
+        <article class="token-item is-primary100">
+          <figure class=""></figure>
+          <h3 class="token-item-name">--green100: #fff</h3>
+          <div style="margin-left:calc(var(--size-large) + var(--space));font-size:var(--font-size-caption);">
+            <p>--color-background-primary-lighter: var(--green100);</p>
+            <p>--color-background-active: var(--green100);</p>
+          </div>
+        </article>
+        <article class="token-item is-primary200">
+          <figure class="size-"></figure>
+          <h3 class="token-item-name">--green800: #fff</h3>
+          <div style="margin-left:calc(var(--size-large) + var(--space));font-size:var(--font-size-caption);">
+            <mark>--color-primary: var(--green800);</mark>
+            <p>--color-background-primary: var(--color-primary);</p>
+            <p>--color-border-active: var(--color-primary);</p>
+          </div>
+        </article>
+        <article class="token-item is-red800">
+          <figure class="size-"></figure>
+          <h3 class="token-item-name">--red800: #fff</h3>
+          <!-- <p>양식 유효성 unvalid 텍스트, 취소/삭제 부정 액션</p> -->
+          <div style="margin-left:calc(var(--size-large) + var(--space));font-size:var(--font-size-caption);">
+            <mark>--color-danger: var(--red800);</mark>
+            <p>--color-textfield-helper: var(--color-danger);</p>
+          </div>
+        </article>
+        <article class="token-item">
+          <figure class="size-" style="background:gold"></figure>
+          <h3 class="token-item-name">--yellow800: gold</h3>
+          <div style="margin-left:calc(var(--size-large) + var(--space));font-size:var(--font-size-caption);">
+            <mark>--color-accent: var(--gold800);</mark>
+            <p>--color-accent: var(--color-primary);</p>
+          </div>
+        </article>
+      </div>
+
       <br />
 
-      <h6 class="heading-label">valid & invalid</h6>
-      <div class="" role="group" style="display:flex;">
-        <span class="textfield-check" style="margin-right:var(--space-small);position:relative;right:auto;top:auto;background:var(--green100);"><i class="icon-check" style="border-color:var(--color-primary);"></i></span>
-        <span class="textfield-check" style="position:relative;right:auto;top:auto;background:var(--red100);"><i class="icon-x is-red"></i></span>
+      <h2 class="heading-label" title="Surface or Elevation">Elevation</h2>
+      <div class="">
+        <article class="token-item is-elevation">
+          <figure class="size-"></figure>
+          <h3 class="token-item-name">--shadow:var(--shadow400);</h3>
+          <div style="margin-left:calc(var(--size-large) + var(--space));font-size:var(--font-size-caption);">
+            <p>--shadow-tooltip: var(--shadow);</p>
+            <p>--shadow-card: var(--shadow);</p>
+            <p>--shadow-dropdown: var(--shadow);</p>
+          </div>
+        </article>
       </div>
-      <!-- <code class="design-article-description" style="padding:1rem;">
-        <p>@mixin hover-text {}</p>
-        <p>@mixin hover-item {}</p>
-        <hr />
-        <p>--active-text-color: null;</p>
-        <p>--active-border-color: null;</p>
-        <p>--active-background-color: null;</p>
-        <p>--disabled-opacity: .5;</p>
-        <p>--warning-text-color: null;</p>
-        <p>--warning-background-color: null;</p>
-        <p>--warning-border-color: null;</p>
-      </code> -->
+      <br />
+      <h2 class="heading-label">Skeleton</h2>
+      <div class="">
+        <article class="token-item">
+          <figure class="size-large color-skeleton" style="background-color:none;height:var(--size-huge);"></figure>
+          <h3 class="token-item-name">skeleton</h3>
+          <div style="margin-left:calc(var(--size-large) + var(--space));font-size:var(--font-size-caption);">
+            <p>작성 중.</p>
+          </div>
+        </article>
+      </div>
     </article>
-    <!-- / success / warning / danger ? -->
-
- <!-- <h6 class="heading-label">selection</h6>
-      <h6 class="heading-label">목록의 나머지를 더 보여줄 때는 [모두보기], 미리보기 형식의 텍스트를 더 보여줄 때는 [전체보기].click - tag 컴포넌트/화살표/아이콘 아이템 전체가 클릭 영역</h6>
-      <h6 class="heading-label">link - /external</h6>
-      <dt>모두보기</dt><dd>see all(15)(internal, arrow-right)</dd>
-      <dt>더보기</dt><dd>더보기vs더불러오기(more, arrow-down), 자세히보기, learn more 등(external, arrow-right-top)</dd> -->
-    <!-- https://material.io/design/interaction/states.html -->
-
-    <!-- <article class="design-article js-scrollspy-section">
-      <p>site(app)-page-section-article(dialog,card등 article level로 정의. tile은 article level에 사용.)-item-</p>
-    </article> -->
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Sizing</h1>
       <p class="design-article-description">요소의 너비와 높이를 정의합니다.</p>
       <ul class="design-article-checklist">
         <!-- <li><i class="icon-check"></i>간격은 별도로 정의합니다.</li> -->
-        <li><i class="icon-check"></i>너비는 반응형으로 비교적 유동적이기 때문에 주로 높이를 정의합니다.</li>
-        <li><i class="icon-check"></i>정의하지 않은 높이를 쓸 수 있습니다.</li>
+        <li><i class="icon-check"></i>너비는 반응형으로 유동적일 수 있습니다.</li>
       </ul>
       <code class="design-article-description" style="padding:1rem;">
         <!--
@@ -249,156 +317,12 @@
       </code>
     </article> -->
 
-    <article class="design-article js-scrollspy-section">
-      <h1 class="design-article-title">Palette</h1>
-      <p class="design-article-description">컬러(background/border/text/state)와 표면surface(shadow/radius)을 정의합니다.</p>
-      <ul class="design-article-checklist">
-        <li><i class="icon-check"></i>다크테마를 위한 인버트 컬러셋을 추가로 정의하지 않습니다. (todo 테마와 무관한 컬러셋 토큰. 다크테마를 위한 gradient.)</li>
-        <li><i class="icon-check"></i>하나의 모서리 토큰 사용합니다. 크기와 radius가  크기를 사용합니다. 크기와 비례해서 radius의 밸런스를 조절하는 것이 좋지만 경량화가 중요한 스테이지입니다.</li>
-      </ul>
-
-      <button class="user-logout js-darkmode2" title="change theme" style="border-radius:var(--radius);box-shadow:var(--shadow);padding:.5rem;border:var(--border);">
-        <figure class="user-logout-icon"><i class="icon-moon"></i></figure>
-        <span class="user-logout-label">어둡게 보기</span>
-        <span class="switch" style="margin-left:auto;">
-          <input type="checkbox" id="temp55" name="" role="switch" />
-          <label for="temp55" style="padding-left:48px;"></label>
-        </span>
-      </button>
-
-      <br />
-      <h2 class="heading-label">Border Radius</h2>
-      <div class="">
-        <article class="token-item is-gray000">
-          <figure style="border-right-color: #000;
-          border-top-color:#000;
-          border-right-width: 2px;
-          border-top-width: 2px;
-          /* border-bottom: 0; */
-          /* border-top-left-radius: 0;
-          border-bottom-left-radius: 0;
-          border-bottom-right-radius: 0; */
-          "></figure>
-          <h3 class="token-item-name">--radius:4px</h3>
-        </article>
-      </div>
-      <br />
-      <h2 class="heading-label">Grayscales</h2>
-      <div class="">
-        <article class="token-item is-gray000">
-          <figure class=""></figure>
-          <h3 class="token-item-name">--gray0: #000</h3>
-          <div style="margin-left:calc(var(--size-large) + var(--space));font-size:var(--font-size-caption);">
-            <p>--color-background: var(--gray0);</p>
-            <p>--darktheme-color-text: var(--gray0);</p>
-          </div>
-        </article>
-        <article class="token-item is-gray100">
-          <figure class=""></figure>
-          <h3 class="token-item-name">--gray100: #fff</h3>
-          <div style="margin-left:calc(var(--size-large) + var(--space));font-size:var(--font-size-caption);">
-            <p>--color-background-lightgray</p>
-            <p>--button-background-color</p>
-            <p>--button-border-color</p>
-            <p>--button-border-color-active</p>
-          </div>
-        </article>
-        <article class="token-item is-gray200">
-          <figure class=""></figure>
-          <h3 class="token-item-name">--gray200: #fff</h3>
-          <div style="margin-left:calc(var(--size-large) + var(--space));font-size:var(--font-size-caption);">
-            <p>--color-background-gray: var(--gray200);</p>
-            <p>--color-border: var(--gray200);</p>
-            <p>--color-state-hover: var(--gray200);</p>
-          </div>
-        </article>
-        <article class="token-item is-gray400">
-          <figure class=""></figure>
-          <h3 class="token-item-name">--gray400: #fff</h3>
-          <div style="margin-left:calc(var(--size-large) + var(--space));font-size:var(--font-size-caption);">
-            <p>--color-text-lighter: var(--gray400);</p>
-            <p>--color-state-disabled: var(--gray400);</p>
-          </div>
-        </article>
-        <article class="token-item is-gray800">
-          <figure class=""></figure>
-          <h3 class="token-item-name">--gray800: #fff</h3>
-          <div style="margin-left:calc(var(--size-large) + var(--space));font-size:var(--font-size-caption);">
-            <p>--color-background-darkgray: var(--gray800);</p>
-            <p>--color-text: var(--gray800);</p>
-          </div>
-        </article>
-      </div>
-      <br />
-      <h2 class="heading-label">Coloreds</h2>
-      <div class="">
-        <article class="token-item is-primary100">
-          <figure class=""></figure>
-          <h3 class="token-item-name">--green100: #fff</h3>
-          <div style="margin-left:calc(var(--size-large) + var(--space));font-size:var(--font-size-caption);">
-            <p>--color-background-primary-lighter: var(--green100);</p>
-            <p>--color-background-active: var(--green100);</p>
-          </div>
-        </article>
-        <article class="token-item is-primary200">
-          <figure class="size-"></figure>
-          <h3 class="token-item-name">--color-primary: var(--green800)</h3>
-          <div style="margin-left:calc(var(--size-large) + var(--space));font-size:var(--font-size-caption);">
-            <p>--color-background-primary: var(--color-primary);</p>
-            <p>--color-border-active: var(--color-primary);</p>
-          </div>
-        </article>
-        <article class="token-item is-red800">
-          <figure class="size-"></figure>
-          <h3 class="token-item-name">--color-danger: var(--red800);</h3>
-          <!-- <p>양식 유효성 unvalid 텍스트, 취소/삭제 부정 액션</p> -->
-          <div style="margin-left:calc(var(--size-large) + var(--space));font-size:var(--font-size-caption);">
-            <p>--color-danger: var(--red800);</p>
-            <p>--color-textfield-helper: var(--color-danger);</p>
-          </div>
-        </article>
-        <article class="token-item">
-          <figure class="size-" style="background:gold"></figure>
-          <h3 class="token-item-name">gold</h3>
-          <div style="margin-left:calc(var(--size-large) + var(--space));font-size:var(--font-size-caption);">
-            <p>--background-primary: var(--color-primary);</p>
-            <p>--color-accent: var(--color-primary);</p>
-          </div>
-        </article>
-      </div>
-
-      <br />
-
-      <h2 class="heading-label" title="Surface or Elevation">Elevation</h2>
-      <div class="">
-        <article class="token-item is-elevation">
-          <figure class="size-"></figure>
-          <h3 class="token-item-name">--shadow:var(--shadow400);</h3>
-          <div style="margin-left:calc(var(--size-large) + var(--space));font-size:var(--font-size-caption);">
-            <p>--shadow-tooltip: var(--shadow);</p>
-            <p>--shadow-card: var(--shadow);</p>
-            <p>--shadow-dropdown: var(--shadow);</p>
-          </div>
-        </article>
-      </div>
-      <br />
-      <h2 class="heading-label">Skeleton</h2>
-      <div class="">
-        <article class="token-item">
-          <figure class="size-large color-skeleton" style="background-color:none;height:var(--size-huge);"></figure>
-          <h3 class="token-item-name">skeleton400</h3>
-          <div style="margin-left:calc(var(--size-large) + var(--space));font-size:var(--font-size-caption);">
-            <p>--shadow: var(--shadow400);</p>
-          </div>
-        </article>
-      </div>
-    </article>
 
     <article class="design-article typography js-scrollspy-section">
       <h1 class="design-article-title">Typography</h1>
       <p class="design-article-description">콘텐츠 계층을 위한 텍스트 용법을 정의합니다. (? todo)</p>
       <ul class="design-article-checklist">
-        <li><i class="icon-check"></i>단어와 구문을 underline, bold, primary color로 강조 않습니다.</li>
+        <li><i class="icon-check"></i>단어와 구문을 underline, bold, primary color로 강조하지 않습니다.</li>
         <li><i class="icon-check"></i>불릿, 괄호, 쉼표 등으로 텍스트를 분류 않습니다. 디자인되지 않았다는 인상을 주기 때문입니다.</li>
         <li><i class="icon-check"></i>태그라인은 작은 화면에서도 임팩트를 줄 있도록 작성 단계에서 행갈이(개행?)를 고려합니다. 상대적으로 깨기 쉬운 법칙입니다. (todo: 글자 및 단어를 제한하고 개행 조건 정의)</li>
         <li><i class="icon-check"></i>bottom navigation의 label 텍스트 크기는 예외적으로 10px입니다.</li>
@@ -412,14 +336,13 @@
       <br />
 
       <h6 class="heading-label">Typefaces<span hidden>Font Family</span></h6>
-      <p>Spectrum uses the typefaces Adobe Clean, Adobe Clean Serif, Adobe Clean Han, and Source Code Pro. These are available for download on the</p>
       <div class="design-typograph-group" style="margin-bottom:var(--space-small);">
         <div class="design-typograph-item">
-          <span style="display:block;margin-top:var(--space-leading-subhead);color:var(--gray400);">한글</span>
+          <span style="display:block;margin-top:var(--space-leading-subhead);color:var(--color-text-light);">한글</span>
           <b style="display:block;font-size:var(--font-size-subhead);line-height:1.5;font-weight:var(--font-weight-bold);">아리타 산스</b>
         </div>
         <div class="design-typograph-item">
-          <span style="display:block;margin-top:var(--space-leading-subhead);color:var(--gray400);">영문</span>
+          <span style="display:block;margin-top:var(--space-leading-subhead);color:var(--color-text-light);">영문</span>
           <b style="display:block;font-size:var(--font-size-subhead);line-height:1.5;font-weight:var(--font-weight-bold);">Asap</b style="display:block;font-size:var(--font-size-subhead);margin-top:.5rem;">
           <!-- <div class="tag-group" role="group" style="margin-top:var(--space-after-subhead);">
             <span class="token-item-tag">normal</span>
@@ -510,7 +433,7 @@
           </figure> -->
           <h3 class="token-item-name">--font-size-tiny: .75rem;</h3>
           <div style="font-size:var(--font-size-caption);">
-            <p>@mixin text-lable {font-size:var(--font-size-tiny);color:var(--gray400)}</p>
+            <p>@mixin text-lable {font-size:var(--font-size-tiny);color:var(--color-text-light)}</p>
             <p>@mixin text-helper {font-size:var(--font-size-tiny);}</p>
             <p>@mixin text-helper-validity {font-size:var(--font-size-tiny);color:var(--color-danger)}</p>
             <p>도움말 맥락</p>
@@ -526,10 +449,10 @@
       <h1 class="design-article-title">Layouts</h1>
       <p class="design-article-description">페이지 레벨과 섹션 레벨의 레이아웃을 정의합니다.</p>
       <ul class="design-article-checklist">
-        <li><i class="icon-check"></i>섹션, 아티클 그리고 모달, 드롭다운 등의 컴포넌트도 작은 화면에서는 페이지 맥락이 될 수 있습니다.</li>
-        <li><i class="icon-check"></i>모바일 퍼스트, 가로 스크롤 트랜드 기조에서 12 column grid 등 엄격한 그리드 시스템을 정의하지 않습니다.</p>
+        <li><i class="icon-check"></i>섹션, 아티클 그리고 모달, 드롭다운 등의 컴포넌트도 작은 화면에서는 페이지 맥락이 될 수 있음을 고려합니다.</li>
+        <li><i class="icon-check"></i>모바일 퍼스트, 가로 스크롤 트랜드 기조로 12 column grid 등 엄격한 그리드 시스템을 정의하지 않습니다.</p>
         <li><i class="icon-check"></i>컨테이너는 최대 4개 칼럼을 가집니다.</p>
-        <li><i class="icon-check"></i>리스트는 언제든 가로 스크롤로 변경할 수 있도록 설계합니다.</li>
+        <li><i class="icon-check"></i>리스트는 가로 스크롤로 변경하기 쉽도록 설계합니다.</li>
         <li><i class="icon-check"></i>페이지의 맥락에 따라 컨테이너 너비로 대비를 줄 수 있습니다. 예를 들면 비밀번호찾기와 로그인/회원가입 페이지는 각각 다른 레이아웃 모듈로써 역할(맥락)을 구분합니다.</p>
         <li><i class="icon-check"></i>설정, 글쓰기, 소개 등 페이지에서 의도적으로 레이아웃 모듈이나 배경색으로 대비를 줄 수 있습니다.</p>
       </ul>
@@ -537,14 +460,14 @@
       <h6 class="heading-label">Media Queries</h6>
       <div class="tile-flat-small">
         <p class="token-item-name">@custom-media --breakpoint-large (max-width:1200px);</p>
-        <!-- <p style="color:var(--gray400);">일반적으로(? todo 모호한 writing) tablet보다 큰 폼 팩터 ex) desktop, tv</p> -->
+        <!-- <p style="color:var(--color-text-light);">일반적으로(? todo 모호한 writing) tablet보다 큰 폼 팩터 ex) desktop, tv</p> -->
         <div style="font-size:var(--font-size-tiny);">
           <p>@media (--breakpoint-large) {}</p>
         </div>
       </div>
       <div class="tile-flat-small"  style="margin:var(--space) 0;">
         <p class="token-item-name">@custom-media --breakpoint-small (max-width:1000px);</p>
-        <!-- <p style="margin-bottom:var(--space);color:var(--gray400);">tablet보다 작은 폼 팩터. ex) tablet, phone</p> -->
+        <!-- <p style="margin-bottom:var(--space);color:var(--color-text-light);">tablet보다 작은 폼 팩터. ex) tablet, phone</p> -->
         <div style="font-size:var(--font-size-tiny);">
           <p>@media (--breakpoint-small) {}</p>
         </div>
@@ -559,7 +482,10 @@
       <!-- <p>full-width는 정의않고 grid-margin을 padding으로 씁니다.</p>
       <p>모든 container는 --breakpoint-small부터 max-width:100%을 갖는다.</p> -->
       <div class="tile-flat-small">
-        <b>--container-huge: 1200px</b>
+        <div style="margin:0 0 var(--space-small) 0;"><b>--container-huge: 1200px</b></div>
+        <div style="font-size:var(--font-size-tiny);">
+          <p>--profile-container: var(--container-huge)</p>
+        </div>
       </div>
       <div class="tile-flat-small" style="margin:var(--space-small) 0;">
         <b>--container-large: 1000px</b>
@@ -647,14 +573,14 @@
           </figure>
           <!-- <div style="width:var(--space-after-avatar-huge);height:var(--size-huge);background:var(--green800);border-radius:4px;position:absolute;left:calc(var(--size-huge) + var(--space-small));"></div> -->
           <h3 style="font-size:var(--font-size-subhead);font-weight:var(--font-weight-bold);">huge</h3>
-          <p style="color:var(--gray400);">huge와 large는 디스크립션을 가집니다.</p>
+          <p style="color:var(--color-text-light);">huge와 large는 디스크립션을 가집니다.</p>
         </article>
         <div class="space" style="height:var(--space);">var(--space-groupitem)</div>
         <article class="item tile-flat-small" data-size="large" style="margin:0;">
           <figure class="item-avatar"></figure>
           <!-- <div style="width:var(--space-after-avatar-large);height:48px;background:var(--green800);box-sizing:border-box;border-radius:4px;position:absolute;left:calc(var(--size-large) + var(--space-small));"></div> -->
           <h3 style="font-weight:var(--font-weight-bold);font-size:var(--font-size-body);">large</h3>
-          <p style="color:var(--gray400);">huge와 large는 디스크립션을 가집니다.</p>
+          <p style="color:var(--color-text-light);">huge와 large는 디스크립션을 가집니다.</p>
         </article>
         <div class="space" style="height:var(--space);">var(--space-groupitem)</div>
         <article class="item tile-flat-small" data-size="medium" style="margin:0;">
@@ -712,43 +638,37 @@
       <div class="tile-flat-small" style="margin:var(--space-small) 0;">
         <b>--z-index-default: 1;</b>
       </div>
-
+      <div class="tile-flat-small" style="margin:var(--space-small) 0;">
+        <div><b>--z-index-modal: 5;</b></div>
+        <div><b>--z-index-modal-dim: 4;</b></div>
+      </div>
       <div class="tile-flat-small" style="margin:var(--space-small) 0;">
         <div style="margin:0 0 var(--space-small) 0;">
-          <div style="margin:0 0 var(--space-small) 0;"><b>--z-index-popover: null;</b></div>
+          <div style="margin:0 0 var(--space-small) 0;"><b>--z-index-popover: 6;</b></div>
           <div style="font-size:var(--font-size-tiny);">
-            <p>--z-index-dropdown: null;</p>
-            <p>--z-index-tooltip: null;</p>
-            <p>--z-index-drawer: null; ?</p>
+            <p>--z-index-dropdown: 6;</p>
+            <p>--z-index-tooltip: 6;</p>
+            <p>--z-index-drawer: 6;</p>
             <p>툴팁은 더 위에 열릴 수 있음. 툴팁은 햄버거 메뉴보다 높아야.</p>
           </div>
         </div>
       </div>
       <div class="tile-flat-small" style="margin:var(--space-small) 0;">
         <div style="margin:0 0 var(--space-small) 0;">
-          <b>--z-index-sticky: null;</b>
-        </div>
-        <div style="font-size:var(--font-size-tiny);">
-          <p>햄버거 메뉴보다 낮음. 모달보다 낮음.</p>
+          <b>--z-index-sticky: 7;</b>
         </div>
       </div>
       <div class="tile-flat-small" style="margin:var(--space-small) 0;">
-        <div><b>--z-index-modal: null;</b></div>
-        <div><b>--z-index-modal-dim: null;</b></div>
-        <div style="font-size:var(--font-size-tiny);">
-          <p>토스트보다 낮음. 툴팁보다 낮음.</p>
-        </div>
+        <div><b>--z-index-menu: 8;</b></div>
       </div>
       <div class="tile-flat-small" style="margin:var(--space-small) 0;">
-        <b>--z-index-toast: null;</b>
-        <div style="font-size:var(--font-size-tiny);">
-          <p>최상위포식자?</p>
-        </div>
+        <b>--z-index-toast: 9;</b>
       </div>
     </article>
 
     <article class="design-article js-scrollspy-section">
-      <h1 class="design-article-title">Timing <span class="tag">draft</span></h1>
+      <h1 class="design-article-title">Timing</h1>
+      <span class="tag">draft</span>
       <p class="design-article-description">inactive로 전환될 때는 항상 instantly.</p>
       <div class="tile-flat-small">
         <p><b>--bazier-base: cubic-bezier(0.455, 0.03, 0.515, 0.955);</b></p>
@@ -763,13 +683,138 @@
         <p>--duration-quickly: null;</p>
       </div>
     </article>
+
+
+    <article class="design-article js-scrollspy-section">
+      <h1 class="design-article-title">기표signifier</h1>
+      <p class="design-article-description">일관된 기표로 사용자의 인지를 돕습니다.</p>
+
+      <ul class="design-article-checklist">
+        <li><i class="icon-check"></i>'확장할 수 있음'으로 plus icon을 사용하지 마세요.</li>
+        <li><i class="icon-check"></i>'클릭할 수 있음'으로 bold text를 사용하지 마세요.</li>
+      </ul>
+
+      <h6 class="heading-label">클릭Clickable</h6>
+      <div class="tile-elevated-small"  class="tile-elevated" style="cursor:pointer;">
+        <p style="margin-top:var(--space-leading-subhead);">elevated 오브젝트는 대부분(?) 클릭할 수 있다. 또는 오브젝트 내부에 클릭할 수 있는 요소가 존재한다.</p>
+      </div>
+      <div class="tile-flat-small" style="display:block;background:var(--gray100);border-radius:var(--radius);cursor:pointer;">
+        <p>연한 회색의 오브젝트는 대부분 클릭할 수 있다.</p>
+      </div>
+      <div class="tile-flat-small" style="display:block;color:var(--color-primary);cursor:pointer;">
+        <p>브랜드 컬러 텍스트는 대부분 클릭할 수 있다.</p>
+      </div>
+      <div class="tile-flat-small" style="display:block;margin:var(--space-small) 0;cursor:pointer;">
+        <p>❤️ 아이콘(이모지)는 대부분 클릭할 수 있다.</p>
+      </div>
+
+      <br />
+
+      <h6 class="heading-label">클릭할 수 없음non-clickable</h6>
+      <div class="tile-flat-small" style="cursor:default;">
+        <div>
+          <span class="tag">읽기전용readonly</span>
+          cursor default</div>
+      </div>
+      <div class="tile-flat-small" style="opacity:.5;cursor:not-allowed;">
+        <div>
+          <span class="tag">비활성disabled</span>
+          opacity 50% / cursor not-allowed / flat style</div>
+      </div>
+
+      <br />
+
+      <h6 class="heading-label">아이콘</h6>
+      <div class="tile-flat-small">
+        <figure class="chip-thumbnail" style="margin:0 -.25rem 0 0;background:var(--gray100);">
+          <i class="icon-arrow is-external"></i>
+        </figure>
+        <span class="chip-label">External Link</span>
+      </div>
+      
+      <div class="tile-flat-small">
+        <figure class="chip-thumbnail" style="margin:0 -.25rem 0 0;background:var(--gray100);">
+          <i class="icon-chevron" style="display:inline-block;"></i>
+        </figure>
+        <span class="chip-label">internal link(view all)</span>
+      </div>
+      <div class="tile-flat-small">
+        <figure class="chip-thumbnail" style="margin:0 -.25rem 0 0;background:var(--gray100);"><i class="icon-chevron is-down"></i></figure>
+        <span class="chip-label">Expanable & Collapsible</span>
+      </div>
+      <div class="tile-flat-small">
+        <figure class="chip-thumbnail" style="margin:0 -.25rem 0 0;background:var(--gray100);">
+          <i class="icon-caret" style="display:inline-block;"></i>
+        </figure>
+        <span class="chip-label">Popover</span>
+      </div>
+      <div class="tile-flat-small">
+        <figure class="chip-thumbnail" style="margin:0 -.25rem 0 0;background:var(--gray100);">
+          <i class="icon-x" style="display:inline-block;"></i>
+        </figure>
+        <span class="chip-label">Removable</span>
+      </div>
+      <div class="tile-flat-small">
+        <figure class="chip-thumbnail" style="margin:0 -.25rem 0 0;background:var(--gray100);">
+          <i class="icon-plus" style="display:inline-block;"></i>
+        </figure>
+        <span class="chip-label">Addable</span>
+      </div>
+      
+      <br />
+
+      <h6 class="heading-label">hover</h6>
+      <div class="tile-flat-small" style="margin:0 0 var(--space) 0;">
+        <a href="#" style="text-decoration:underline;">Text Hover</a>
+      </div>
+      <!-- <button class="user-logout" title="sign out" style="margin:0;">
+        <span class="user-logout-label">Button Hover</span>
+      </button> -->
+      <button class="user-logout is-hover" title="sign out" style="margin:0;">
+        <figure class="user-logout-icon">
+          <i class="icon-out"><span class="icon-out-door"></span></i>
+        </figure>
+        <span class="user-logout-label">Item(or Card) Hover</span>
+      </button>
+      <br />
+
+      <h6 class="heading-label">valid & invalid</h6>
+      <div class="" role="group" style="display:flex;">
+        <span class="textfield-check" style="margin-right:var(--space-small);position:relative;right:auto;top:auto;background:var(--green100);"><i class="icon-check" style="border-color:var(--color-primary);"></i></span>
+        <span class="textfield-check" style="position:relative;right:auto;top:auto;background:var(--red100);"><i class="icon-x is-red"></i></span>
+      </div>
+      <!-- <code class="design-article-description" style="padding:1rem;">
+        <p>@mixin hover-text {}</p>
+        <p>@mixin hover-item {}</p>
+        <hr />
+        <p>--active-text-color: null;</p>
+        <p>--active-border-color: null;</p>
+        <p>--active-background-color: null;</p>
+        <p>--disabled-opacity: .5;</p>
+        <p>--warning-text-color: null;</p>
+        <p>--warning-background-color: null;</p>
+        <p>--warning-border-color: null;</p>
+      </code> -->
+    </article>
+    <!-- / success / warning / danger ? -->
+
+ <!-- <h6 class="heading-label">selection</h6>
+      <h6 class="heading-label">목록의 나머지를 더 보여줄 때는 [모두보기], 미리보기 형식의 텍스트를 더 보여줄 때는 [전체보기].click - tag 컴포넌트/화살표/아이콘 아이템 전체가 클릭 영역</h6>
+      <h6 class="heading-label">link - /external</h6>
+      <dt>모두보기</dt><dd>see all(15)(internal, arrow-right)</dd>
+      <dt>더보기</dt><dd>더보기vs더불러오기(more, arrow-down), 자세히보기, learn more 등(external, arrow-right-top)</dd> -->
+    <!-- https://material.io/design/interaction/states.html -->
+
+    <!-- <article class="design-article js-scrollspy-section">
+      <p>site(app)-page-section-article(dialog,card등 article level로 정의. tile은 article level에 사용.)-item-</p>
+    </article> -->
   </section>
 
-  <section>
+  <!-- <section>
     <p>seleect,  role="listbox" aria-orientation="vertical" ul/li role="option"</p>
     <p>role="group" 목록 컨텍스트에서는 자식이 role="listitem" / figure role="group"</p>
     <p>menu -> group -> menuitem</p>
-  </section>
+  </section> -->
 </main>
 
 

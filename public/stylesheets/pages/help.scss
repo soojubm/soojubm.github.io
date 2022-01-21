@@ -2,29 +2,29 @@
 .help-head {padding:4rem 0 6rem;text-align:center;position:relative;}
 .help-head-title {@include text-title;}
 .help-head-description {margin:1rem 0;}
-.search-result {max-width:560px;height:auto;margin:0 auto;padding:.5rem 0;border:var(--border);box-sizing:border-box;background:var(--gray0);text-align:left;position:absolute;left:0;right:0;top:89px;z-index:var(--zindex-default);}
+.search-result {max-width:560px;height:auto;margin:0 auto;padding:.5rem 0;border:var(--border);box-sizing:border-box;background:var(--color-background);text-align:left;position:absolute;left:0;right:0;top:89px;z-index:var(--zindex-default);}
 .search-result-title {margin:0 0 0 0;padding:.75rem 1.5rem;font-size:var(--font-size-body);text-decoration:underline;}
 .search-result-item {display:block;padding:.75rem 1.5rem;line-height:32px;}
 .search-result-item h3 {font-size:var(--font-size-body);}
-.search-result-item p {color:var(--gray400);line-height:1.6;}
+.search-result-item p {color:var(--color-text-light);line-height:1.6;}
 .search-result-item:hover {background:#f9f9f6;}
 
 .help-board {max-width:var(--width-medium);margin:2rem auto;padding:0 var(--grid-margin);position:relative;}
 .help-board-title {margin:0 0 1rem 1.5rem;font-size:var(--font-size-subhead);}
 .help-board-item {display:block;padding:1rem 1.5rem;border:var(--border);background:var(--gray100);position:relative;transition:all .4s;}
 .help-board-item + .help-board-item {margin-top:-1px;}
-.help-board-item:hover {background:var(--gray0);}
+.help-board-item:hover {background:var(--color-background);}
 .help-board-item-tag {margin:0 0 0 .5rem;padding:.25rem .75rem;border-radius:var(--radius);background:var(--gray800);vertical-align:middle;color:var(--gray0);font-size:11px;cursor:default;}
 .help-board-item-category {margin:0 .5rem 0 0;text-decoration:underline;}
 .help-board-item-title {}
-.help-board-item-file {display:block;max-width:120px;margin:.25rem 0 0 0;background:var(--gray0);border-radius:var(--radius);padding:.25rem 1rem;border:var(--border);text-align:center;font-size:var(--font-size-caption);}
+.help-board-item-file {display:block;max-width:120px;margin:.25rem 0 0 0;background:var(--color-background);border-radius:var(--radius);padding:.25rem 1rem;border:var(--border);text-align:center;font-size:var(--font-size-caption);}
 .help-board-item-link {position:absolute;left:0;right:0;top:0;bottom:0;}
 .help-board-item-meta {position: absolute;right: 1.5rem;top:13px}
-.help-board-item-meta-label {font-size:var(--font-size-caption);color:var(--gray400);}
+.help-board-item-meta-label {font-size:var(--font-size-caption);color:var(--color-text-light);}
 .help-board-item-meta-value {font-size:var(--font-size-caption);color:var(--gray800);}
 .help-board-item-meta-divider {margin:0 8px;color:var(--gray200);}
 .help-board-item-content {display:none;margin:1rem 0 0 0;color:var(--gray800);animation:fadeup .4s ease;}
-.is-active.help-board-item {background:var(--gray0);}
+.is-active.help-board-item {background:var(--color-background);}
 .is-active .help-board-item-content {display:block;}
 .is-active .help-feedback {display:flex;}
 
@@ -44,7 +44,7 @@
 .faq-head {padding:2rem 0;position:relative;}
 .faq-head-title {margin:0 0 1rem 0;@include text-subhead;}
 .faq-head-ask {@include button-tertiary;}
-.faq-item {padding:var(--space);border-top:var(--border);box-sizing:border-box;background:var(--gray0);position:relative;}
+.faq-item {padding:var(--space);border-top:var(--border);box-sizing:border-box;background:var(--color-background);position:relative;}
 .faq-item-question {font-size:var(--font-size-subhead);font-weight:var(--font-weight-bold);cursor:pointer;}
 .faq-item-question i {margin: 0 1rem 0 0;}
 .faq-item-answer {max-width:60%;margin:1rem 0 0;}
@@ -65,7 +65,7 @@
 
 .faq-reaction {margin:4rem 0 0;padding:2.5rem 5% 3.5rem;}
 .faq-reaction-title {margin:0 0 1rem 0;font-size:var(--font-size-body);font-weight:var(--font-weight-bold);}
-.faq-reaction-button {margin:0 2rem;color:var(--gray400);}
+.faq-reaction-button {margin:0 2rem;color:var(--color-text-light);}
 .faq-reaction-button-emoji {display:block;font-size:var(--font-size-huge);}
 
 .faq-partnership {padding:4rem 0;}

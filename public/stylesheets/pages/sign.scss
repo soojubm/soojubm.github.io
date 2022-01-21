@@ -8,7 +8,7 @@
 .login-remember {margin:var(--space-small) 0;}
 .login-separator {margin:var(--space) auto;text-align:center;position:relative;z-index:var(--zindex-default);}
 .login-separator:before {content:'';display:block;width:100%;height:1px;background:var(--gray100);position:absolute;top:50%;transform:translateY(-1px);}
-.login-separator:after {content:'또는';width:4rem;line-height:24px;background:var(--gray0);font-size:var(--font-size-caption);color:var(--gray400);position:absolute;left:50%;top:0;transform:translateX(-50%);}
+.login-separator:after {content:'또는';width:4rem;line-height:24px;background:var(--color-background);font-size:var(--font-size-caption);color:var(--color-text-light);position:absolute;left:50%;top:0;transform:translateX(-50%);}
 .login-foot-submit {@include button-primary;width:100%;}
 .login-social {}
 .login-social-facebook {@include button-primary;width:100%;border-color:var(--color-facebook) !important;background-color:var(--color-facebook);}
@@ -23,12 +23,12 @@
 .signup {@include container-small;}
 .signup-head {padding:0 0 2rem 0;}
 .signup-head-title {@include text-title;}
-.signup-head-description {margin:var(--space-after-subhead) 0 0 0;color:var(--gray800);}
+.signup-head-description {margin:var(--space-after-subhead) 0 0 0;color:var(--color-text);}
 .signup-foot {margin:2rem 0;}
 .signup-foot-submit {@include button-primary;width:100%;}
 .signup .textfield {margin:var(--space-after-textfield) 0;}
 .signup-terms {}
-.signup-terms-content {height:120px;padding:8px 16px;border:var(--border);border-radius:var(--radius);box-sizing:border-box;font-size:var(--font-size-caption);color:var(--gray400);overflow-y:scroll;}
+.signup-terms-content {height:120px;padding:8px 16px;border:var(--border);border-radius:var(--radius);box-sizing:border-box;font-size:var(--font-size-caption);color:var(--color-text-light);overflow-y:scroll;}
 
 .password {@include container-medium;}
 .password-head {margin-bottom:3rem;position:relative;}

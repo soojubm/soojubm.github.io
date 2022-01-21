@@ -22,7 +22,7 @@
 .setting-item-value-address {width:100%;margin:-.25rem 0;line-height:1.5;}
 .setting-item-value-phone {width:100%;}
 .setting-item-change {@include avatar-medium;font-size:var(--font-size-body);position:absolute;right:1rem;}
-.setting-item-change b {display:none;background:var(--gray0);transform:translateX(200px);transition:all .5s;position:relative;z-index:var(--zindex-default);}
+.setting-item-change b {display:none;background:var(--color-background);transform:translateX(200px);transition:all .5s;position:relative;z-index:var(--zindex-default);}
 .setting-item-change i {}
 .setting-item-form {width:100%;}
 .setting-item-form-foot {}

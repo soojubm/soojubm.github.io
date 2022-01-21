@@ -45,9 +45,9 @@
     bottom: -.5rem;
     transition: all .4s;}
   .bookitem-name {height:4.5rem;margin:1rem 0 0;font-size:var(--font-size-body);white-space:normal;}
-  .bookitem-description {display:block;margin:.75rem 0 0 0;font-weight:400;color:var(--gray400);}
+  .bookitem-description {display:block;margin:.75rem 0 0 0;font-weight:400;color:var(--color-text-light);}
   .bookitem-byline {}
-  .bookitem-publishedyear {color:var(--gray400);}
+  .bookitem-publishedyear {color:var(--color-text-light);}
 
 
 
@@ -80,16 +80,11 @@
 .links a span {display:block;}
 .links a div {}
 .links .cta-arrow {display:none;}
-// .links a {display:block;width:400px;height:240px;margin:1rem;padding:2rem;box-sizing:border-box;background:var(--gray0);box-shadow:var(--shadow);}
+// .links a {display:block;width:400px;height:240px;margin:1rem;padding:2rem;box-sizing:border-box;background:var(--color-background);box-shadow:var(--shadow);}
 
 // .about-head {max-width:calc(var(--width-large) - 50%);margin:0 auto;padding:4rem 0;position:relative;}
 // .about-head-slogan {margin:2rem 0;font-size:4rem;}
 // .about-intro {max-width:var(--width-large);margin:0 auto;padding:0 0 0 720px;box-sizing:border-box;font-size:var(--font-size-subhead);}
-
-.font-name {color:var(--gray800);}
-.font-maker {}
-.font-famliy {}
-.font-preview {}
 
 .about-brief {}
 .about-brief h2 {margin:0rem 0 1rem 0px;font-size:var(--font-size-subhead);}

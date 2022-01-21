@@ -5,22 +5,22 @@
 .profile::after {content:'';display:block;clear:both;}
 
 .profile-user {float:left;width:320px;position:relative;z-index:var(--zindex-default);}
-.profile-user-avatar {float:right;@include avatar-huge;background-image:url('/public/images/soo.png');background-size:contain;transition:all 0.4s ease;}
+.profile-user-avatar {float:right;@include avatar-huge;background-image:url('/public/images/soo.png');background-size:contain;}
 .profile-user-avatar:hover {box-shadow:var(--shadow);}
 .profile-user-name {@include text-subhead;}
 .profile-user-id {display:block;}
-.profile-user-career {display:block;margin:.25rem 0 0;color:var(--gray400);}
+.profile-user-career {display:block;margin:.25rem 0 0;color:var(--color-text-light);}
 .profile-user-description {max-height:5.4em;margin:1.25rem 0;white-space:normal;overflow:hidden;text-overflow:ellipsis;word-wrap:break-word;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;position:relative;}
 .profile-user-description-more {margin:0 .5rem;@include link-outer;}
 .profile-user-toggle {width:100%;margin:1rem 0;text-align:center;color:var(--gray800);position:relative;}
 .profile-user-toggle-icon {@include avatar-small;}
 .profile-user-toggle:hover {@include hover-item;}
-.profile-user-category {padding:4px 16px;background:coral;font-size:var(--font-size-caption);color:var(--gray0);border-radius:50px;}
+.profile-user-category {padding:4px 16px;background:coral;font-size:var(--font-size-caption);color:var(--color-text);border-radius:50px;}
 .profile-user-address {}
 .profile-user-address div {}
-.profile-user-address div b {margin:0 .5rem 0 0;font-weight:normal;color:var(--gray400);}
+.profile-user-address div b {margin:0 .5rem 0 0;font-weight:normal;color:var(--color-text-light);}
 // .profile-user-address div img {width:1rem;margin-right:.5rem;opacity:.4;}
-.profile-user-address i {margin:0 .5rem 0 0;font-size:14px;color:var(--gray400);vertical-align:middle;}
+.profile-user-address i {margin:0 .5rem 0 0;font-size:14px;color:var(--color-text-light);vertical-align:middle;}
 .profile-user-hashtags {@include tag-group;}
 
 .profile-user-statistic {}
@@ -34,7 +34,7 @@
 
 // todo
 .social {}
-.social-link {display:flex;align-items:center;@include item;margin-bottom:var(--space-small);}
+.social-link {display:flex;align-items:center;@include item;margin-bottom:.75rem;}
 .social-link-icon {@include item-avatar-medium;}
 .social-link-label {@include item-label;}
 .social-link:hover {@include hover-item;}
@@ -66,7 +66,7 @@
 .profile-display-button i {vertical-align:middle;}
 
 .profile-tablist {@include tile-elevated-small;display:flex;margin:0 0 var(--space) 0;position:relative;}
-.profile-tablist-tab {display:flex;align-items:center;height:var(--size-medium);padding:0 1rem;color:var(--gray400);position:relative;z-index:var(--zindex-default);}
+.profile-tablist-tab {display:flex;align-items:center;height:var(--size-medium);padding:0 1rem;color:var(--color-text-light);position:relative;z-index:var(--zindex-default);}
 // .profile-tablist-tab:hover {box-shadow:var(--shadow);}
 .profile-tablist-tab[aria-selected=true] {color:var(--gray800);}
 .profile-tablist-tab-badge {margin:0 0 0 var(--space-small);}
@@ -90,7 +90,7 @@
 .card-title {padding:.75rem 0 0;font-size:var(--font-size-body);}
 .card-text {margin:0 0 1rem 0;padding:.5rem 0 1rem;@include truncate-multi;}
 .card-category {@include tag-primary;@include position-left-top;}
-.card-date {display:none;color:var(--gray400);}
+.card-date {display:none;color:var(--color-text-light);}
 .card-tags {@include tag-group;margin-top:var(--space);}
 .card-tags-item {@include tag;}
 

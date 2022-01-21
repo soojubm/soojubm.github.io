@@ -5,7 +5,7 @@
   border: var(--border);
   border-radius: var(--radius);
   box-sizing: border-box;
-  background: var(--gray0);
+  background: var(--color-background);
   position: relative;
   // z-index: 1; // todo: for item hover. tile 안에 tile z-index 중복.
   // @media (--breakpoint-small) {}

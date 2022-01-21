@@ -1,12 +1,16 @@
 
 .design {}
+
 .design-head {overflow:hidden;background:var(--color-primary);position:fixed;left:0;right:0;top:0;bottom:0;z-index:-1;transform:translateX(-50%);transition:transform .8s $bezier-base .4s;}
 .design-head.is-scrolled {transform:translateX(-50%);transition:transform .8s $bezier-base .4s;}
 
-.design-article {margin:var(--space-before-article) 0;position:relative;}
+.design-article {max-width:560px;padding:4rem var(--grid-margin) 4rem calc(50% + var(--grid-margin));position:relative;}
 .design-article-title {margin:0 0 var(--space-after-subhead) 0;@include text-subhead;}
 .design-article-description {margin:1.5rem 0;}
 .design-article-tile {margin:3rem 0;}
+
+/// todo
+.tokens-body .design-article {max-width:auto;padding-left:var(--grid-margin);}
 
 .design .tile-small-flat {
   margin-left: var(--space-small-minus);
@@ -30,7 +34,7 @@
   }
 }
 
-.design-article-checklist {@include reset-list;margin:1.25rem 0 1.5rem;}
+.design-article-checklist {@include reset-list;margin:1.5rem 0 2rem;}
 .design-article-checklist li {padding-left:18px;position: relative;}
 .design-article-checklist li + li {margin-top: .25rem;}
 .design-article-checklist li i {margin:0 .5rem 0 0;position:absolute;left:0;top:12px;}
@@ -38,7 +42,8 @@
 // .design-article-description + .design-article-description {margin-top:-1rem;}
 .design-article-more {display:flex;align-items:center;font-size:var(--font-size-caption);color:var(--color-primary);font-weight:var(--font-weight-bold);position:absolute;right:0;top:0;}
 .design-article-more i {margin-left:1.5rem;}
-.design-article-helper {margin:var(--space-after-item);font-size:var(--font-size-caption);}
+// todo
+.design-article-helper {@include text-label;font-size:var(--font-size-caption);}
 
 .design-article-role {@include tile-flat-small;margin:var(--space) 0;font-size:var(--font-size-caption);
 }
@@ -50,7 +55,7 @@
 .design-article-anatomy-title {@include tag;margin:0 0 .25rem -1rem;}
 .design-article-anatomy-item {display:block;}
 .design-article-anatomy-item.is-nested {margin-left:var(--space);}
-.design-article-anatomy-item .is-optional {margin:0 0 .5rem 0;font-size:10px;color:var(--gray400);}
+.design-article-anatomy-item .is-optional {margin:0 0 .5rem 0;font-size:10px;color:var(--color-text-light);}
 
 // todo fadeup 그냥 up
 .design-article.is-scrolled {animation:fadeup .8s forwards;}
@@ -60,7 +65,7 @@
 .design-typograph-group .design-typograph-item {width:var(--grid-column);}
 
 
-.design-buttongroup {@include group-bleeding;padding: .5rem 0;margin: -.5rem 0;}
+.design-buttongroup {@include tile-flat-small;@include group-bleeding;}
 
 .design-tile-flat {@include tile-flat;}
 .design-tile-flat-small {@include tile-flat-small;}
@@ -75,7 +80,7 @@
 
 
 @media (--breakpoint-small) {
-  // .design-article {width:100%;}
+  .design-article {padding-left:var(--grid-margin);}
 }
 
 
@@ -143,8 +148,6 @@
 .char11 {
   transform: rotate(178deg);
 }
-
-// background:url(/public/images/soo.png) no-repeat center center var(--gray100);background-size:auto 100%;
 
 .design-article-primary {@include button-primary;}
 .design-article-secondary {@include button-secondary;}
@@ -296,16 +299,18 @@
 .accordion + .accordion {margin:var(--space) 0 0 0;cursor:pointer;}
 .accordion-title {display:flex;align-items:center;justify-content:space-between;@include text-subhead;}
 .accordion-title-icon {@include avatar-medium;}
-.accordion-panel {display:none;}
-.accordion-panel p {margin:1rem 0;}
-.is-active .accordion-panel {display:block;}
+.accordion-panel {display:none;cursor:default;}
+.accordion-panel p + p {margin:1rem 0 0 0;}
+.is-active .accordion-panel {display:block;padding:1rem 0;}
+// todo 
+.is-active .accordion-title-icon {transform:rotate(180deg)}
 // [aria-expanded=true] + .accordion-panel {}
 
 
 
 
 .design-home {display:flex;flex-wrap:wrap;}
-.design-home header {width:100%;padding:4rem var(--grid-margin);background:var(--gray0);position:relative;}
+.design-home header {width:100%;padding:4rem var(--grid-margin);background:var(--color-background);position:relative;}
 .design-home header h1 {@include text-title;font-family:'DunkelSans';font-size:2.5rem;position:relative;} // todo
 // .design-home header h1:after {content:'';display:block;width:6.5rem;height:6.5rem;border-radius:4px;background:#000;position:absolute;bottom:4px;right:0;}
 .design-home header p {margin:var(--space-after-title) 0 0 0;font-size:var(--font-size-subhead);letter-spacing:-.025rem;position:relative;}
@@ -381,10 +386,10 @@
 
 
 
-.postitem {width:100%;min-height:var(--size-height);}
+.postitem {width:100%;min-height:var(--size-height);@include tile-elevated;}
 .postitem +.postitem {margin:var(--space) 0 0 0;}
 .postitem-cover {@include avatar-huge;float:right;margin:0 0 0 var(--space);}
-.postitem-time {color:var(--gray400);}
+.postitem-time {color:var(--color-text-light);}
 .postitem-title {@include text-subhead;}
 .postitem-description {margin:var(--space-small) 0 1rem 0;}
 
@@ -439,13 +444,13 @@
   font-size: 1.5rem;
   text-transform: uppercase;
   // background: $color-primary;
-  color: var(--gray800);
+  color: var(--color-text);
   
   .today-user {
     display: block;
     width: 40px;
     height: 40px;
-    background: var(--gray0);
+    background: var(--color-background);
     border: 2px solid #000;
     font-size: 1.5rem;
   }
@@ -464,7 +469,7 @@
   }
   div {
     margin: 0 0.5rem;
-    background: var(--gray0);
+    background: var(--color-background);
     text-align: center;
     figure {
       border: 2px solid #000;
@@ -495,7 +500,7 @@
   @include today-container;
   padding: 2rem 0 1rem;
   border: 2px solid #000;
-  background: var(--gray0);;
+  background: var(--color-background);;
   text-align: center;
   position: relative;
   h1 {
@@ -639,7 +644,7 @@ $linecolor: var(--gray800);
   padding: 1.5rem 2rem;
   border: 2px solid #000;
   box-sizing: border-box;
-  background: var(--gray0);
+  background: var(--color-background);
   position: relative;
 }
 .today-timeline-eyebrow {

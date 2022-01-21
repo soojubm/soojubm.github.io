@@ -28,7 +28,7 @@
   // ! 아이콘 단독으로 사용하는 경우 대응 레이블에 마진을 적용
   // ! a 태그 텍스트 컬러 초기화
   margin-left: var(--space-after-avatar-medium);
-  color: var(--gray800);
+  color: var(--color-text);
 }
 
 
@@ -36,7 +36,7 @@
 .item {@include item;}
 .item-avatar {float:left;@include avatar-large;margin:0 var(--space-after-avatar-large) 0 0;}
 .item-name {font-size:var(--font-size-body);}
-.item-description {line-height:var(--font-line-height-small);color:var(--gray400);}
+.item-description {line-height:var(--font-line-height-small);color:var(--color-text-light);}
 .item-description + .item-name {margin-top:-.125rem;}
 .item-action {@include button-secondary;@include button-small;@include position-right-top;right:0;}
 .item-action.is-active {@include button-tertiary;@include button-small;position:absolute !important;}

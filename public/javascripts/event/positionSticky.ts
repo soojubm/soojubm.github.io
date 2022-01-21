@@ -11,9 +11,12 @@ type Parameters = {
   isPassed: boolean
 }
 // todo renaming isPassed
+// todo 라우팅 되었을 때 다시. 아니면 null 일 때도 실행이 디ㅗㅁ.
 const positionSticky = ({ selector, addClass, isPassed }: Parameters) => {
   const element = document.querySelector<HTMLElement>(selector)
-  if(!element) return
+
+  console.log('sticky', element)
+  if (!element) return
 
   const elementHeight = element.offsetHeight
   let offsetTop = getElementOffsetTop(element)
@@ -31,7 +34,7 @@ const positionSticky = ({ selector, addClass, isPassed }: Parameters) => {
   function handleElementScroll() {
     let currentScrollTop = getWindowScrollTop()
     const isStuck = currentScrollTop >= previousScrollTop
-    
+
     document.body.classList.toggle(addClass, isStuck)
     document.body.style.paddingTop = isStuck ? `${elementHeight}px` : '0'
   }

@@ -43,7 +43,7 @@ button {@include reset-button;}
     border: 1px solid var(--gray800);
   }
   &:focus, &.is-focus {
-    // todo focus styleing
+    // todo
     outline:0;
     box-shadow:0 0 0 2px var(--gray800);
   }
@@ -120,13 +120,13 @@ button {@include reset-button;}
 
 // ! 모바일에서 100%로 되는 컴포넌트가 있고 아닌 컴포넌트가 있다.
 
-.danger-button {@include button;background:var(--red800);border:1px solid var(--red800);color:var(--gray0);}
+.danger-button {@include button;background:var(--red800);border:1px solid var(--red800);color:var(--color-text);}
 
 .group-sample {display:flex;justify-content:space-between;}
 .group-sample-prev {@include button-tertiary;}
 .group-sample-next {@include button-primary;}
 .group-sample-cancel {@include button-text;}
-.group-sample-next i {margin-left:1.5rem;background:var(--gray0);}
+.group-sample-next i {margin-left:1.5rem;background:var(--color-background);}
 
 
 .button-heading {}

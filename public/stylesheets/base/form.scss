@@ -20,7 +20,7 @@
 //   height: unset;
 //   border: 3px solid;
 //   padding: 5px;
-//   background: var(--gray0);
+//   background: var(--color-background);
 // }
 
 // .focus-outline {
@@ -30,6 +30,10 @@
 //   outline-color: -webkit-focus-ring-color;
 // }
 
+// todo...
+input:focus-visible {
+  outline: 0;
+}
 
 select {-webkit-appearance:none;padding-right:1.5rem;} // for appearance on safari
 select::-ms-expand {display:none;}
@@ -97,7 +101,7 @@ input[type=radio]:checked + label:before {border-color:var(--color-primary);anim
 input[type=radio]:checked + label:after {display:block;background:var(--color-primary);transform:scale(1);}
 input[type=radio]:disabled + label {color:var(--gray200);cursor:not-allowed;}
 input[type=radio]:disabled + label:before {background:var(--gray200);border-color:var(--gray200);}
-input[type=radio]:disabled + label:after {background:var(--gray0);}
+input[type=radio]:disabled + label:after {background:var(--color-background);}
 
 // .checkbox-helper,.radio-helper {padding:0.5rem 0 1.5rem 28px;}
 // hidden attribute
@@ -114,7 +118,7 @@ input[type=checkbox]:checked + label + * {display:block;margin:0.25rem 0 var(--s
     padding: 9px 1rem 11px;
     border: var(--border);
     box-shadow: var(--shadow);
-    background: var(--gray0);
+    background: var(--color-background);
     label {
       display: flex;
       justify-content: space-between;
@@ -151,7 +155,7 @@ input[type=checkbox]:checked + label + * {display:block;margin:0.25rem 0 var(--s
 .switch {display:block;position:relative;}
 input[type=checkbox][role=switch] + label {display:block;height:20px;line-height:18px;padding-left:calc(48px + .75rem);cursor:pointer;}
 input[type=checkbox][role=switch] + label:before {content:'';display:block;width:48px;height:20px;border:none;border-radius:var(--radius);box-sizing:border-box;background:var(--gray200);position:absolute;left:0;top:0;transition:background .2s;}
-input[type=checkbox][role=switch] + label:after {content:'';display:block;/*18px*/width:16px;height:16px;border:none;border-radius:var(--radius);background:var(--gray0);box-shadow:var(--shadow);position:absolute;left:2px;top:2px;transition:left .2s;transform:rotate(0deg);}
+input[type=checkbox][role=switch] + label:after {content:'';display:block;/*18px*/width:16px;height:16px;border:none;border-radius:var(--radius);background:var(--color-background);box-shadow:var(--shadow);position:absolute;left:2px;top:2px;transition:left .2s;transform:rotate(0deg);}
 input[type=checkbox][role=switch]:checked + label {color:var(--color-primary);}
 input[type=checkbox][role=switch]:checked + label:before {background:var(--color-primary);}
 input[type=checkbox][role=switch]:checked + label:after {left:calc(48px - 16px - 2px);}
@@ -163,10 +167,10 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 
 .boxed-form {}
 .boxed-form h4 {margin:2rem 0 0.75rem 0;}
-.boxed-form div {background:var(--gray0);padding:1rem 2rem 1.25rem;border:var(--border);}
+.boxed-form div {background:var(--color-background);padding:1rem 2rem 1.25rem;border:var(--border);}
 .boxed-form div:nth-of-type(1) {border-radius:var(--radius);border-bottom-left-radius:0;border-bottom-right-radius:0;}
 .boxed-form div:nth-last-of-type(1) {border-radius:var(--radius);border-top-left-radius:0;border-top-right-radius:0;}
-.boxed-form div label {margin:0;color:var(--gray400);}
+.boxed-form div label {margin:0;color:var(--color-text-light);}
 .boxed-form div input {margin-top:-2px;padding:0;background:inherit;border:none;}
 .boxed-form div + div {margin-top:-1px;}
 
@@ -199,7 +203,7 @@ input[type=file] + label:after {display:none;}
 .file-attachment-item-image {width:var(--size-huge);height:var(--size-huge);border-radius:var(--radius);overflow:hidden;position:relative;}
 .file-attachment-item-image img {width:auto;height:auto;max-width:auto;min-height:var(--size-huge);max-height:100px;margin:auto;position:absolute;left:0;right:0;top:0;bottom:0;}
 .file-attachment-item-name {display:block;margin:.25rem 0 -.25rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-.file-attachment-item-size {color:var(--gray400);}
+.file-attachment-item-size {color:var(--color-text-light);}
 .file-attachment-item-delete {@include avatar-medium;@include position-right-top;}
 .file-attachment-item-delete:hover {}
 

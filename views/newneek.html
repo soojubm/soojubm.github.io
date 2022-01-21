@@ -18,7 +18,7 @@
       </div> -->
       
       <ul>
-        <li>뉴닉팀이 뉴스레터 서비스를 넘어 플랫폼으로 나아가기 위한 기반을 마련하고 PMF 검증을 위해 일정과 스펙을 트레이트 오프하는 일이 중요했다. 프로덕트 디자이너로 합류하였으나 프론트엔드개발까지 하느라 비즈니스 임팩트를 줄 수 있는 아이디어나 사용자 경험을 설계하는 데 깊이 기여하지 못한 게 아쉽다.</li>
+        <!-- <li>뉴닉팀이 뉴스레터 서비스를 넘어 플랫폼으로 나아가기 위한 기반을 마련하고 PMF 검증을 위해 일정과 스펙을 트레이트 오프하는 일이 중요했다. 프로덕트 디자이너로 합류하였으나 프론트엔드개발까지 하느라 비즈니스 임팩트를 줄 수 있는 아이디어나 사용자 경험을 설계하는 데 깊이 기여하지 못한 게 아쉽다.</li> -->
         <!-- <li>매일 아침 루틴이 된 이메일 인박스에서의 콘텐츠 소비 환경을 올멱가는 것은 쉽지 않았다. </li> -->
         <!-- 기구독자의 웹사이트 가입 전환. 콘텐츠 플랫폼임에도 불구하고 뉴스레터에서 다루지 않는 독자적인 콘텐츠를 웹사이트로 수급할 수 없는 상황에서는 웹사이트에 가입할 근거가 부족. 팀에서도 가입 유도를 위한 기능들이 제안되었기 때문에 스펙 관리가 힘들었다. -->
         <!-- <li>성과를 측정 혹은 평가하기 어려운 실험. 완벽한 실험 보다 의사결정에 도움이 되는가. 수치화되는 목표 설정. 수치화되는 목표를 성과 지표로 채택한 것. 데이터보다 직관에 의존해야 하는 단계가 아니었을까</li> -->
@@ -29,16 +29,16 @@
     </header>
 
     <section class="modal-body">
-      <section class="newneek-section1 zigzag" style="border-radius: var(--radius);">
+      <section class="newneek-section1">
         <div class="bubble">
-          <div class="bubble-user">👧 신규사용자</div>
+          <div class="bubble-user">신규방문자</div>
           <div class="bubble-text">
             <p>OOO이 이슈인데 신문은 어렵고 재미없어. 뉴닉? 뭐야 이렇게 쉬운 이슈였어?</p>
             <p style="margin-top:1rem;"><b>이메일로 받아보자!</b></p>
           </div>
         </div>
         <div class="bubble">
-          <div class="bubble-user">👵 기구독사용자</div>
+          <div class="bubble-user">기구독자</div>
           <div class="bubble-text">
             <!-- <del>뉴닉 웹사이트에 가입하고 싶어!</del><br /> -->
             예전에 비슷한 이슈가 있었던 것 같은데... 뉴닉이 어떻게 쉽고 재미있게 풀어줬더라? 
@@ -48,6 +48,8 @@
               <li>관심 분야로 탐색</li>
               <li>큐레이션 콘텐츠 탐색</li>
               <li><b>이슈 및 인물로 검색</b></li>
+              <li>관심 콘텐츠 저장</li>
+
             </ul>
           </div>
         </div>
@@ -92,7 +94,7 @@
           </div>
 
           
-      <header class="intro-head">
+      <!-- <header class="intro-head">
         <div class="subscribe-gosum">
           <img src="https://newneek.co/static/media/gosum-home.7b7f5b6b.png" alt=""></div>
           <h1 class="intro-head-title">
@@ -118,27 +120,13 @@
                   <label for="subscribeAgree"><a rel="noopener noreferrer" style="display: inline; position: static; left: auto; cursor: pointer;color:inherit;text-decoration:underline;">
                   개인정보 수집·이용</a>에 동의합니다</label>
                 </div>
-                <button class="subscribe-field-cta" style="display: inline-block;
-                  min-width: 104px;
-                  background: #fb7800;
-                  padding: 10px 1.5rem 11px;
-                  border-radius: 0;
-                  text-align: center;
-                  cursor: pointer;
-                  position: relative;
-                  background: #161616;
-                  border: 1px solid #161616;
-                  color: #fff;
-                  background: #161616;
-                  margin: 1rem 0 0;
-                  padding-right: 1.75rem;"
-                >
+                <button class="subscribe-field-cta">
                   뉴스레터 무료로 구독하기
                 </button>
                 </form>
               </div>
             </div>
-          </header>
+          </header> -->
 
           <br /><br />
 
@@ -147,7 +135,7 @@
               <div class="home-mangrove-object">
                 <img class="mangrove1" src="/public/images/newneek/home-mangrove1.png" alt="" />
                 <img class="mangrove2" src="/public/images/newneek/home-mangrove2.png" alt="" />
-              </ㅇ>
+              </div>
               <div class="mangrove-foot">
                 <span style="margin-right:1rem;">고슴이는 집을 찾을 수 있을까요? </span>
                 <div class="cta-arrow"><div class="line"></div></div>
@@ -166,9 +154,9 @@
         <div class="accordion-panel">
           <a href="https://napp.newneek.co/2020election" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;justify-content:space-between;font-size:var(--font-size-subhead);color:var(--gray800);">
             사이트 링크
-            <figure class="cta-arrow">
+            <div class="cta-arrow">
               <div class="line"></div>
-            </figure>
+            </div>
           </a>
         </div>
       </article>
@@ -184,9 +172,9 @@
             <li>아이디어 검증을 위해 최소한의 리소스로 페이지를 구축하여 구글폼으로 신청.</li>
             <li>유저 데이터 확보와 신청 절차의 간소화를 위해 자체 입력 폼 개발.</li>
             <li>담당 에디터가 직접 관리할 수 있도록 간단한 백오피스 추가.</li>
+            <li>도서가 아카이브됨에 따라 진행 중인 도서과 완료된 도서의 필터링 기능 추가.</li>
             <li>페이지 내에서 도서와 관련된 뉴닉 콘텐츠를 추천하여 체류시간 및 페이지뷰 확보.</li>
-            <li>도서의 양이 많아져서 신청 가능한 도서와 종료된 도서를 필터링 할 수 있는 기능 추가</li>
-            <li>문제: 추천 콘텐츠를 3개 선별하는 비용. 솔루션: 3번째 콘텐츠의 클릭율 상대적으로 떨어져서 추천 콘텐츠를 3개에서 2개로 축소.</li>
+            <li>문제: 에디터가 추천 콘텐츠를 3개 선별하는 비용. 솔루션: 클릭율이 상대적으로 떨어지는 3번째 추천 콘텐츠를 제거하여 2개의 콘텐츠만 제공.</li>
           </ol>
 
           <div>
@@ -418,10 +406,6 @@
       <p>✋문제: 오픈율에 영향을 미치는 요소 측정이 어렵다.</p>
       <p>✋문제: 회사 이메일을 사용하는 사용자들의 내부 망 사 사용에 따라 발생하는 이슈와 이직</p>
       <p>솔루션: 구독 이메일 주소 변경 기능을 제공</p> -->
-
-      <!-- <style>
-        .loader{position:fixed;left:0;right:0;top:0;bottom:0;background:#ebebeb;z-index:10;-webkit-transition:all .4s;transition:all .4s}.loader.is-hidden{opacity:0;visibility:hidden;z-index:-1}.loader-object{max-width:200px;position:fixed;left:50%;top:50%;z-index:10;margin:-100px 0 0 -100px;-webkit-animation:spin 12s ease infinite;animation:spin 12s ease infinite}@media (--breakpoint-small){.loader-object{display:none}}.loader-heading{font-size:3rem;font-weight:700;text-align:center;margin-top:10%}@-webkit-keyframes marquee{0%{-webkit-transform:translateX(0);transform:translateX(0)}to{-webkit-transform:translateX(-100%);transform:translateX(-100%)}}@keyframes marquee{0%{-webkit-transform:translateX(0);transform:translateX(0)}to{-webkit-transform:translateX(-100%);transform:translateX(-100%)}}@-webkit-keyframes marquee-right{0%{-webkit-transform:translateX(0);transform:translateX(0)}to{-webkit-transform:translateX(100%);transform:translateX(100%)}}@keyframes marquee-right{0%{-webkit-transform:translateX(0);transform:translateX(0)}to{-webkit-transform:translateX(100%);transform:translateX(100%)}}.home-economy{display:flex;align-items:center;justify-content:center;flex-direction:column;margin:14rem 0 8rem;border-top:2px solid #000;background:#fb7800;position:relative}.home-economy .home-economy-object{max-width:340px;margin-top:-6rem;margin-bottom:-3rem;-webkit-transition:all .4s ease .05s;transition:all .4s ease .05s}.home-economy .mangrove-foot{display:flex;justify-content:center;align-items:center;width:100%;padding:1rem 0;border-top:1px solid #161616;border-bottom:2px solid #000;background:#fff;position:relative}.home-economy .mangrove-foot span{font-size:1.125rem;color:#000}.home-economy:hover .home-economy-object{-webkit-transform:translateY(-1.05rem);transform:translateY(-1.05rem)}.today{padding:0 0 8rem;background:#ebebeb;overflow:hidden}.today hr{height:2px;background:#363636}.today-topbar{padding:env(safe-area-inset-top) 0 0;font-family:"Chelsea Market";font-size:1.5rem;text-transform:uppercase;background:#fb7800;position:fixed;left:0;right:0;top:0;z-index:9}.today-topbar .innerbox{width:90%;max-width:640px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;height:56px}.today-topbar-backdrop{padding:env(safe-area-inset-top) 0 0;height:56px;text-indent:-9999px}.today-body{background:#ebebeb;border-top:2px solid #000;position:relative;z-index:4}.today-user{display:flex;align-items:center;justify-content:center;background-color:var(--gray100);overflow:hidden;border-radius:0;position:relative;width:32px;height:32px;background:#fff;border:2px solid #000;font-size:1.5rem}.today-head{padding:2rem 0;background:#fb7800}.today-head .innerbox{width:90%;max-width:640px;margin:0 auto}.today-head-title{font-size:2.5rem;font-weight:900}.today-newsletter{display:block;width:90%;max-width:640px;margin:0 auto;padding:2.25rem 0 1rem;border:2px solid #000;border-top:0;background:#fff;color:#161616;text-align:center;position:relative}.today-newsletter h1{margin:0 0 .25rem;font-size:var(--font-size-huge)}.today-newsletter p{margin:.25rem 0 1rem;font-size:1.125rem}.today-newsletter div span{margin:0 .5rem;font-size:var(--font-size-subhead);color:#000}.today-newsletter figure{margin:1.25rem -2.9rem 0;border:2px solid #000;background:#fff;overflow:hidden;position:relative}.today-newsletter figure .overay{background:rgba(0,0,0,.6);position:absolute;left:0;right:0;top:0;bottom:0}.today-newsletter figure .marquee{display:flex;padding:1.25rem 0;border:2px solid #000;background:#ebebeb;position:absolute;left:-2rem;right:-2rem;top:42.5%;z-index:5;-webkit-transform:rotate(-5deg);transform:rotate(-5deg)}.today-newsletter figure .marquee p{margin:0 -1.5rem;font-size:var(--font-size-subhead);font-weight:700;color:#161616}.today-timeline{width:90%;max-width:640px;margin:4rem auto 0;padding:2rem 2rem 1rem;border:2px solid #000;box-sizing:border-box;background:#fff;position:relative}.today-timeline-eyebrow{font-family:"Chelsea Market";text-transform:uppercase}.today-timeline-heading{margin:.25rem 0 2rem;font-size:var(--font-size-huge)}.today-timeline-description{margin:-1rem 0 2rem}.today-timeline-item{display:block;height:48px;margin:1.5rem 0;color:#161616;position:relative}.today-timeline-item-media{float:left;display:block;margin-right:1rem;display:flex;align-items:center;justify-content:center;background-color:var(--gray100);overflow:hidden;border-radius:0;position:relative;width:48px;height:48px;background:#ddd;font-size:var(--font-size-huge)}.today-timeline-item-title{display:block;font-weight:400;color:var(--gray800)}.today-timeline-item-time{color:#999;position:relative}.today-prev{margin:2rem 0 4rem}.today-prev a{display:flex;justify-content:center;align-items:center;font-size:var(--font-size-subhead);color:#161616;font-weight:700}.today-orange{width:90%;max-width:640px;margin:4rem auto 0;padding:2rem 2rem 2.5rem;box-sizing:border-box;background:#fb7800;border:2px solid #000}.today-orange h2{margin:0 0 1rem;font-size:var(--font-size-huge)}.today-orange p{margin:0 0 2rem;font-size:1.17em}.today-orange p+.cta-arrow{margin-left:0}.today-statics{width:90%;max-width:640px;margin:4rem auto 0;padding:0 2rem;box-sizing:border-box}.today-statics-heading{font-size:1.5rem;line-height:1.6}.today-statics span{font-size:var(--font-size-huge)}.today-guide{width:90%;max-width:640px;margin:4rem auto 0;padding:2rem;border:2px solid #000;box-sizing:border-box;position:relative}.today-guide h2{margin:0 0 2rem;font-size:var(--font-size-huge)}.today-guide .emoji{float:right;font-size:4rem}.today-poll{width:90%;max-width:640px;display:flex;justify-content:center;flex-wrap:wrap;margin:4rem auto}.today-poll h2{width:100%;margin:0 0 2rem;text-align:center}.today-poll>div{margin:0 .5rem;background:#fff;text-align:center}.today-poll>div div{border:solid #000;border-width:2px 2px 1px}.today-poll>div div span{display:block;margin-top:-2.5rem;padding:1.5rem 1.5rem .5rem;font-size:4rem;line-height:1.2}.today-poll>div .label{display:block;padding:.25rem 0;border:2px solid #000;border-top:0;background:#ebebeb;font-size:1.125rem;font-weight:700}.zigzag-wrap{width:90%;max-width:640px;margin:0 auto}.zigzag2,.zigzag-wrap{height:16px;position:relative}.zigzag2{background:#ebebeb;z-index:1}.zigzag2:after,.zigzag2:before{content:"";display:block;position:absolute;left:0;right:0}.zigzag2:before{height:12px;top:120%;background:linear-gradient(-135deg,#161616 8px,transparent 0) 0 8px,linear-gradient(135deg,#161616 8px,transparent 0) 0 8px;background-position:0 0;background-repeat:repeat-x;background-size:16px 16px}.zigzag2:after{height:16px;top:100%;background:linear-gradient(-135deg,#ebebeb 8px,transparent 0) 0 8px,linear-gradient(135deg,#ebebeb 8px,transparent 0) 0 8px;background-position:0 0;background-repeat:repeat-x;background-size:16px 16px}.white-bg{display:none;height:400px;background:#fff;border-bottom:2px solid #000;position:absolute;left:0;right:0}
-      </style> -->
 
       <!-- <main class="today"><div class="today-topbar"><div class="innerbox"><span>today</span><a class="today-user" href="/mobile/setting"><span role="img" aria-label="">🦔</span></a></div></div><div class="today-topbar-backdrop">today</div><header class="today-head"><div class="innerbox"><span style="display: block; margin: 0px 0px 0.25rem; font-size:var(--font-size-subhead); font-family: &quot;Chelsea Market&quot; letter-spacing: 0.05rem;">2021/03/01 Mon</span><h1 class="today-head-title">1231 뉴니커, <br>좋은 하루!</h1></div></header><section class="today-body"><br><br><div class="zigzag-wrap"><div class="zigzag2"></div></div><a class="today-newsletter" href="/today/newsletter/210208"><h1>오늘의 뉴닉</h1><p>🦔판사, 중립과 중립 사이</p><figure><img src="https://newneek-image.s3.ap-northeast-2.amazonaws.com/image/article/thumbnail/MHUrdK" alt=""></figure></a><section class="today-timeline"><span class="today-timeline-eyebrow">editor's pick</span><h2 class="today-timeline-heading">뉴닉이 쉽고 재미있게<br>정리한 이슈 타임라인</h2><a class="today-timeline-item" href="/today/newsletter/post/lJRosm"><span class="today-timeline-item-media">🚑</span><h3 class="today-timeline-item-title">공공의료의 (거의) 모든 것</h3><time class="today-timeline-item-time">2020/09/15</time></a><a class="today-timeline-item" href="/today/newsletter/post/IX1g09"><span class="today-timeline-item-media">⚖️</span><h3 class="today-timeline-item-title">검경수사권, 다 알려줄게📃</h3><time class="today-timeline-item-time">2020/09/01</time></a><a class="today-timeline-item" href="/today/newsletter/post/9a49d"><span class="today-timeline-item-media">💸</span><h3 class="today-timeline-item-title">한국형 뉴딜에 대한 (거의) 모든 것</h3><time class="today-timeline-item-time">2020/07/21</time></a></section></section></main> -->
 

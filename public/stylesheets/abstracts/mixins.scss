@@ -3,19 +3,15 @@
 // text란 prefix가 필요한가?
 
 @mixin text-headlilne {text-indent:-3px;}
-@mixin text-title {font-size:var(--font-size-huge);line-height:var(--font-line-height-small);font-weight:var(--font-weight-bold);color:var(--gray800);letter-spacing:-.0125rem;text-indent:-1px;}
-@mixin text-subhead {font-size:var(--font-size-subhead);font-weight:var(--font-weight-bold);letter-spacing:-.0125rem;}
+@mixin text-title {font-size:var(--font-size-huge);line-height:var(--font-line-height-small);font-weight:var(--font-weight-bold);color:var(--color-text);letter-spacing:-.0125rem;text-indent:-1px;}
+@mixin text-subhead {font-size:var(--font-size-subhead);font-weight:var(--font-weight-bold);color:var(--color-text);letter-spacing:-.0125rem;}
 @mixin text-body {font-size:14px;font-weight:var(--font-weight-normal);}
 @mixin text-body-large {font-size:var(--font-size-subhead);}
 @mixin text-caption {font-size:var(--font-size-caption);font-weight:var(--font-weight-bold);}
-@mixin text-label {font-size:var(--font-size-body);font-weight:normal;color:var(--gray400);}
+@mixin text-label {font-size:var(--font-size-body);font-weight:normal;color:var(--color-text-light);}
 
 @mixin truncate {white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 @mixin truncate-multi {@include truncate;height:2.4em;white-space:normal;overflow:hidden;text-overflow:ellipsis;word-wrap:break-word;display: -webkit-box;-webkit-line-clamp:2;-webkit-box-orient: vertical;}
-
-@mixin heading-label {color:var(--gray400);font-weight:var(--font-weight-normal);}
-
-
 
 @mixin link-inner {
   display:inline-block;
@@ -58,7 +54,6 @@
   &:after {content:'';display:block;clear:both;}
 }
 
-
 @mixin hover-chip {border-color:var(--gray800);}
 @mixin hover-text {text-decoration:underline;}
 
@@ -66,14 +61,13 @@
 // item in card component // active
 @mixin hover-item {
   // 부모태그에 position: relative;zindex:1;
-  // background: var(--gray100);
   cursor: pointer;
   &:before {
     --hover-outline: calc(var(--space) / 2 * -1);
     content:'';display:block;background:var(--gray100);border-radius:var(--radius);position:absolute;left:var(--hover-outline);right:var(--hover-outline);top:var(--hover-outline);bottom:var(--hover-outline);z-index:-1;
   }
   // todo 기본적으로 transparent 보더가 필요.
-  figure {background-color:var(--gray0);border:1px solid var(--gray200);}
+  figure {background-color:var(--color-background);border:1px solid var(--gray200);}
 }
 
 // .is-hover {@include hover-item;}
@@ -98,11 +92,11 @@
 }
 
 
-// [role=group] input[type=radio] + label {margin:0 16px 0 0;color:var(--gray400);padding-left:0;}
+// [role=group] input[type=radio] + label {margin:0 16px 0 0;color:var(--color-text-light);padding-left:0;}
 // [role=group] input[type=radio] + label:before {content:'';display:inline-block;width:2px;height:2px;background:var(--gray400);margin:0 10px 0 0;vertical-align:3px;position:static;left:auto;top:auto;}
 // [role=group] input[type=radio] + label:after {display:none;}
-// [role=group] input[type=radio]:checked + label {color:var(--gray800)}
-// [role=group] input[type=radio]:checked + label:before {border-color:var(--gray800);width:10px;height:4px;border-left: 2px solid #f3f2f1;border-bottom: 2px solid #f3f2f1;background:none;margin:0 8px 0 0;border-color:var(--gray400);vertical-align:3px;transform:rotate(-45deg);border-radius:0;border-right:0;border-top:0;position:static;left:auto;top:auto;}
+// [role=group] input[type=radio]:checked + label {color:var(--color-text)}
+// [role=group] input[type=radio]:checked + label:before {border-color:var(--color-text);width:10px;height:4px;border-left: 2px solid #f3f2f1;border-bottom: 2px solid #f3f2f1;background:none;margin:0 8px 0 0;border-color:var(--color-text-light);vertical-align:3px;transform:rotate(-45deg);border-radius:0;border-right:0;border-top:0;position:static;left:auto;top:auto;}
 
 
 // ! group vs row vs rowgroup
@@ -149,8 +143,6 @@
 .chip-group {@include chip-group;}
 .tag-group {@include tag-group;}
 
-
-
 .link-inner {@include link-inner;}
 .link-outer {@include link-outer;}
 
@@ -191,11 +183,10 @@
   margin: var(--space-small) 0;
   font-size:var(--font-size-caption);
   font-weight: var(--font-weight-normal);
-  color: var(--gray400);
+  color: var(--color-text-light);
 }
 .heading-label {@include heading-label;}
 .heading-label + p {margin-bottom:var(--space);}
-
 
 @mixin theme($theme: DarkGray) {
   background: $theme;
@@ -204,24 +195,22 @@
 }
 
 
-
-
 // todo outer
 @mixin tag {
   display: inline-block;
   height: 24px;
-  line-height: 23px;
   padding: 0 .5rem;
   border-radius: var(--radius);
+  border: var(--border);
   box-sizing: border-box;
-  background-color: var(--gray100);
+  background: var(--color-background);
   font-size: var(--font-size-caption);
-  color: var(--gray800);
+  color: var(--color-text);
 }
 @mixin tag-primary {@include tag;background-color:gold;color:#252d29;}
 
 @mixin hashtag {
-  color: var(--gray400);
+  color: var(--color-text-light);
   &:before {content:'#';}
 }
 

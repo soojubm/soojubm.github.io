@@ -3,7 +3,7 @@
 .contact-head {padding:4rem 10% 0;box-sizing:border-box;position:relative;}
 .contact-head-background {max-width:1920px;margin:0 auto;position:absolute;left:-50%;right:-50%;top:0;bottom:0;z-index:-1;}
 .contact-head-title {margin:0 0 24px 0;padding:0 32px;box-sizing:border-box;@include text-title;}
-.contact-head-description {float:left;width:50%;padding:0 64px 0 32px;box-sizing:border-box;color:var(--gray400);}
+.contact-head-description {float:left;width:50%;padding:0 64px 0 32px;box-sizing:border-box;color:var(--color-text-light);}
 .contact-head-phone {float:left;width:25%;padding:0 32px;box-sizing:border-box;}
 .contact-head-address {float:left;width:25%;padding:0 32px;box-sizing:border-box;}
 // .contact-top:after {content:'';display:block;background:var(--gray800);position:absolute;left:-50%;right:-50%;top:0;bottom:0;z-index:-1;}

@@ -1,13 +1,13 @@
 @mixin item {display:flex;align-items:center;padding:0 0 .75rem;border-radius:var(--radius);position:relative;}
 @mixin item-emoji {display:none;margin-top:-.25rem;position:absolute;left:0;top:50%;transform:translate(0, -50%);}
-@mixin item-label {width:120px;margin-left:0;color:var(--gray400);font-size:var(--font-size-body);}
+@mixin item-label {width:120px;margin-left:0;color:var(--color-text-light);font-size:var(--font-size-body);}
 @mixin item-value {}
 
 .checkout {@include container-large;}
 .checkout-step {}
 .checkout-head {padding:4rem 0;position:relative;}
 .checkout-head-background {display:none;background:var(--gray100);position:absolute;left:-200%;right:-200%;top:0;bottom:0;z-index:-1;}
-.checkout-head-eyebrow {margin-bottom:.5rem;font-size:var(--font-size-body);color:var(--gray400);}
+.checkout-head-eyebrow {margin-bottom:.5rem;font-size:var(--font-size-body);color:var(--color-text-light);}
 .checkout-head-title {@include text-title;}
 .checkout-head-description {margin:var(--space-after-title) 0 0 0;}
 
@@ -15,12 +15,12 @@
 .checkout-head-byline h2 {font-size:var(--font-size-body);}
 .checkout-head-byline figure {@include avatar-medium;display:flex;}
 
-.checkout-product {width:var(--width-small);@include tile-flat;position:absolute;right:0;top:4rem;}
+.checkout-product {width:var(--width-small);@include tile-flat;}
 .checkout-product-title {margin:0 0 1rem 0;@include text-subhead;}
 .checkout-product-item {height:var(--size-huge);margin:0 0 1rem 0;position:relative;}
 .checkout-product-item-media {float:left;@include avatar-huge;margin:0 var(--space) 0 0;}
 .checkout-product-item-name {font-size:var(--font-size-body);}
-.checkout-product-item-text {color:var(--gray400);}
+.checkout-product-item-text {color:var(--color-text-light);}
 .checkout-product-item-price {@include text-subhead;}
 .checkout-product-subtotal {display:flex;justify-content:space-between;margin:.5rem 0;}
 .checkout-product-subtotal-label {}
@@ -66,7 +66,7 @@
   //   margin: 0;
   //   padding: 1rem 1rem calc(constant(safe-area-inset-bottom) + 1rem);
   //   padding: 1rem 1rem calc(env(safe-area-inset-bottom) + 1rem);
-  //   background: var(--gray0);
+  //   background: var(--color-background);
   //   position: fixed;
   //   left: 0;
   //   right: 0;

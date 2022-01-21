@@ -5,7 +5,7 @@
   border-radius: var(--radius);
   box-sizing: border-box;
   font: inherit;
-  color: var(--gray800); // for safari #fff
+  color: var(--color-text); // for safari #fff
 }
 
 
@@ -20,13 +20,13 @@
 
 .textfield {position:relative;}
 .textfield-label {display:block;margin:0 0 .125rem 0;}
-.textfield-label small {margin:0 0 0 .25rem;color:var(--gray400);}
+.textfield-label small {margin:0 0 0 .25rem;color:var(--color-text-light);}
 .textfield-input {display:block;width:100%;min-height:var(--size-large);padding:var(--padding-input);padding-right:40px;@include reset-textinput;}
-// .textfield-input:focus {background:var(--gray0);border-color:var(--gray200);outline:0;}
+// .textfield-input:focus {background:var(--color-background);border-color:var(--gray200);outline:0;}
 .textfield-input:disabled {border-color:var(--gray200);background:var(--gray200);color:var(--gray100);cursor:not-allowed;}
-.textfield-input:read-only {color:var(--gray400);cursor:default;}
+.textfield-input:read-only {color:var(--color-text-light);cursor:default;}
 .textfield-input:read-only:focus {}
-.textfield-reveal {position:absolute;right:1rem;bottom:calc(1rem - 1px);z-index:var(--zindex-default);font-size:var(--font-size-caption);color:var(--gray400);}
+.textfield-reveal {position:absolute;right:1rem;bottom:calc(1rem - 1px);z-index:var(--zindex-default);font-size:var(--font-size-caption);color:var(--color-text-light);}
 .textfield-helper {margin-top:.25rem;color:var(--red800);}
 .textfield-button {border-top-left-radius:0;border-bottom-left-radius:0;position:absolute;right:0;top:0;}
 .textfield-link {font-size:var(--font-size-caption);position:absolute;right:0;top:0;}
@@ -35,10 +35,10 @@
 .textfield-check {@include textfield-surfix;}
 .textfield-prefix {@include textfield-prefix;background:var(--gray100);}
 .textfield-prefix ~ .textfield-input {padding-left:calc(1rem + 2rem + .25rem);}
-.selectbox-indicator {@include textfield-surfix;background:var(--gray0);}
+.selectbox-indicator {@include textfield-surfix;background:var(--color-background);}
 .textfield-clear {@include avatar-small;@include textfield-surfix;top:11px;}
-.textfield-clear .icon-x:before {background-color:var(--gray400);}
-.textfield-clear .icon-x:after {background-color:var(--gray400);}
+.textfield-clear .icon-x:before {background-color:var(--color-text-light);}
+.textfield-clear .icon-x:after {background-color:var(--color-text-light);}
 .textfield-clear {display:none;}
 .textfield-input:focus + .textfield-clear {display:flex;}
 
@@ -49,7 +49,7 @@
 .textfield.is-floating input {padding:0.75rem 0rem;border-top:none;border-left:none;border-right:none;}
 .textfield.is-floating input {padding:0.75rem 0rem;border-top:none;border-left:none;border-right:none;}
 .textfield.is-floating label {height:20px;position:absolute;left:0;top:6px;transition:all 0.2s ease;cursor:text;}
-.textfield.is-floating input:focus + label {color:var(--gray400);font-size:11px;top:-12px;}
+.textfield.is-floating input:focus + label {color:var(--color-text-light);font-size:11px;top:-12px;}
 
 .is-invalid .textfield-label {}
 .is-invalid .textfield-input {border-color:var(--red800);color:var(--red800);}

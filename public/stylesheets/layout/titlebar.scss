@@ -8,8 +8,8 @@
 .titlebar-action {margin-left:auto;}
 .titlebar-action-icon {}
 .titlebar-action-label {color:var(--color-primary);}
-.titlebar-background {@include bleeding;background-color:var(--gray0);}
-.titlebar-backdrop {height:32px;padding:var(--space) 0;background:var(--gray0);}
+.titlebar-background {@include bleeding;background-color:var(--color-background);}
+.titlebar-backdrop {height:32px;padding:var(--space) 0;background:var(--color-background);}
 
 .is-sticky-titlebar .titlebar {position:fixed;top:0;}
 .is-sticky-titlebar .titlebar-background {box-shadow:var(--shadow);}

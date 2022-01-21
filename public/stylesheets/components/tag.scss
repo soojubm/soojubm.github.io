@@ -1,5 +1,5 @@
 .tag {@include tag;}
-.tag[data-appearance=primary] {@include tag-primary;}
-.tag[data-appearance=secondary] {@include tag;background-color:var(--green100);color:var(--green800);}
+.tag[data-appearance=primary] {@include tag-primary;border-color:var(--gold);}
+.tag[data-appearance=secondary] {@include tag;border-color:var(--green100);background-color:var(--green100);color:var(--green800);}
 
 .hashtag {@include hashtag;}

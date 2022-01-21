@@ -1,4 +1,4 @@
-// .banner {display:flex;justify-content:center;align-items:center;padding:2rem 0;border-radius:var(--radius);background:var(--gray0);border:1px solid var(--color-box-border);text-align:center;position:relative;}
+// .banner {display:flex;justify-content:center;align-items:center;padding:2rem 0;border-radius:var(--radius);background:var(--color-background);border:1px solid var(--color-box-border);text-align:center;position:relative;}
 // .banner-image {margin:0 1rem 0 -4rem;}
 // .banner-title {margin:0 2rem 0 0;@include text-subhead;}
 // .banner-button {@include button-secondary;}
@@ -16,5 +16,5 @@
   // .banner-title {width:100%;margin:0 0 1rem 0;}
 }
 
-.is-closed-topbanner .header {background:var(--gray0);margin-top:-225px;transition:margin .2s, background-color .4s;}
+.is-closed-topbanner .header {background:var(--color-background);margin-top:-225px;transition:margin .2s, background-color .4s;}
 .is-closed-topbanner .topbanner {z-index:-1;}

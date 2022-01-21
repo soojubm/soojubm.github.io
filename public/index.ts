@@ -22,6 +22,7 @@ window.addEventListener('hashchange', initializeNavbar)
 window.addEventListener('hashchange', domEvents)
 
 document.addEventListener('DOMContentLoaded', domEvents)
+document.addEventListener('DOMContentLoaded', () => darkTheme('.js-darkmode'))
 
 document.addEventListener('DOMContentLoaded', () => {
   stopAnimation()
@@ -86,7 +87,7 @@ async function domEvents() {
 
   await routePage()
   // detectTheme()
-  darkTheme('.js-darkmode')
+
   darkTheme('.js-darkmode2')
 
   // const hash = window.location.hash.substring(1)
@@ -456,6 +457,8 @@ function toggleDetails(event) {
 
   const targetElement = event.target.closest('.js-accordion')
 
+  targetElement.querySelector('.accordion-panel')?.addEventListener('click', event => event.stopPropagation())
+
   let isExpanded = Boolean(targetElement.getAttribute('aria-expanded'))
   targetElement.setAttribute('aria-expanded', String(!isExpanded))
   targetElement.classList.toggle('is-active')
@@ -643,7 +646,6 @@ export function toggleDarkTheme(event) {
 
 function mouseenterElement(event) {
   // mouseover 버블링.closest.여러번실행 / mouseenter 한번실행.closestdksehla
-
   const ACTIVE_CLASSNAME = 'is-active'
   const targetElement = event.target.closest('.js-hover-trigger')
 

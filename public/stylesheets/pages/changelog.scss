@@ -20,8 +20,8 @@
 
 .changelog-item-time {}
 .changelog-item-title {font-size:var(--font-size-body);font-weight:var(--font-weight-normal);}
-.changelog-item-content {@include tile-flat-small;margin:var(--space) 0 0 0;}
-// .changelog-item-target {display:block;margin:var(--space-after-subhead) 0 0 0;font-weight:var(--font-weight-normal);color:var(--gray400);}
+.changelog-item-content {margin:var(--space) 0 0 0;}
+// .changelog-item-target {display:block;margin:var(--space-after-subhead) 0 0 0;font-weight:var(--font-weight-normal);color:var(--color-text-light);}
 .changelog-item div {display:none;}
 
 .changelog-item.is-active div {display:block;}

@@ -10,13 +10,11 @@
   border:1px solid var(--gray100);
   border-radius:var(--radius);
   box-sizing:border-box;
-  background:var(--gray100);
+  background:var(--color-background-gray);
+  color: var(--color-text);
   line-height:30px;
-  color:var(--gray800);
   position:relative;
-
   &:hover {border-color:var(--gray800);}
-  &:hover figure {}
   // &:hover figure {border-top-color:inherit !important;border-bottom-color:inherit !important;background:none;}
   &:disabled {border-color:transparent;}
   &:disabled figure {}
@@ -24,18 +22,14 @@
   &.is-active {
     // medium
     border-color:var(--color-primary);background:var(--green100);color:var(--color-primary);
-    
-    // background: var(--gray800);
-    // border-color: var(--gray800);
-    // color: var(--gray0);
   }
   &.is-active figure {
     // border-top-color:var(--color-primary) !important;border-bottom-color:var(--color-primary) !important;
   }
 }
 
-@mixin chip-heading {float:left;margin:0 0 0 .25rem;background:var(--gray0);}
-@mixin chip-tailing {margin:0 .25rem 0 0;background:var(--gray0);}
+@mixin chip-heading {float:left;margin:0 0 0 .25rem;background:var(--color-background);}
+@mixin chip-tailing {margin:0 .25rem 0 0;background:var(--color-background);}
 // @mixin chip-tailing {float:right;}
 
 @mixin chip-icon {
@@ -56,5 +50,6 @@
 .chip-icon .icon-check {border-color: var(--color-primary);}
 .chip-icon .icon-x {}
 
-.is-active .chip-icon .icon-x::before {background:var(--gray0);}
-.is-active .chip-icon .icon-x::after {background:var(--gray0);}
+.is-active .chip-label {color: var(--color-primary);}
+.is-active .chip-icon .icon-x::before {background:var(--color-background);}
+.is-active .chip-icon .icon-x::after {background:var(--color-background);}

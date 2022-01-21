@@ -9,7 +9,7 @@
 .post-head-progress {display:none;height:4px;background:var(--color-primary);position:absolute;bottom:0;}
 
 // .is-sticky-post-head .post {padding-top:110px;}
-.is-sticky-post-head .post-head {background:var(--gray0);box-shadow:var(--shadow);text-align:left;position:fixed;left:0;right:0;top:0;z-index:var(--zindex-navigation);}
+.is-sticky-post-head .post-head {background:var(--color-background);box-shadow:var(--shadow);text-align:left;position:fixed;left:0;right:0;top:0;z-index:var(--zindex-navigation);}
 .is-sticky-post-head .post-head-category {display:none;}
 // todo + border-width + space
 .is-sticky-post-head .post-head-headline {padding:var(--space) var(--grid-margin) 1rem;box-sizing:border-box;font-size:var(--font-size-body);line-height:32px;text-align:center;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;}
@@ -19,16 +19,14 @@
 .is-sticky-post-head .post-head-progress {display:block;}
 
 .post-byline {display:flex;align-items:center;position:relative;}
-.post-byline-avatar {@include avatar-medium;margin:0 var(--space) 0 0;}
+.post-byline-avatar {@include avatar-medium;margin:0 var(--space-after-avatar-medium) 0 0;}
 .post-byline-name {}
 .post-byline:hover {@include hover-item;}
 
 .post-body {position:relative;} /* graident 때문에 아래요소에서 마진값주기 */
-.post-body-title {display:block;margin:0 0 24px 0px;}
-.post-body-title i {display:inline-block;width:40px;height:40px;line-height:40px;margin-right:12px;border-radius:var(--radius);background:#f3f3f3;text-align:center;color:var(--gray800);font-size:var(--font-size-subhead);vertical-align:middle;}
-.post-body-kicker {margin:2rem 0 2.5rem 0;font-size:var(--font-size-subhead);color:var(--gray800);position:relative;}
-// .post-body-image {float:left;width:400px;height:600px;overflow:hidden;margin:0 0 0 -240px;background:var(--gray800);}
-.post-body-image {height:240px;overflow:hidden;margin:4rem -10rem;background:var(--gray800);border-radius:var(--radius);}
+.post-body-kicker {margin:2rem 0 2.5rem 0;font-size:var(--font-size-subhead);position:relative;}
+// .post-body-image {float:left;width:400px;height:600px;overflow:hidden;margin:0 0 0 -240px;}
+.post-body-image {height:240px;overflow:hidden;margin:4rem -10rem;border-radius:var(--radius);}
 .post-body-subhead {margin:4rem 0 1rem 0px;@include text-subhead;}
 .post-body-paragraph {margin:1rem 0px;}
 .post-body-paragraph:first-line {}
@@ -37,8 +35,8 @@
 .post-body-code {display:block;margin: 0 0 2rem 0;}
 .post-body pre {margin:0;padding:0;}
 
-.post-hashtag {display:flex;flex-wrap:wrap;margin:2rem 0;}
-.post-hashtag-item {margin:0 1rem .25rem 0;color:var(--gray400)}
+.post-hashtag {@include chip-group;}
+.post-hashtag-item {@include chip;}
 
 .post-share {margin:2rem 0;}
 .post-share-title {}
@@ -66,12 +64,13 @@
 .post-comment-list-item {position:relative;}
 .post-comment-list-item-avatar {@include avatar-medium;margin:0 0 .25rem;}
 .post-comment-list-item-avatar img {}
-.post-comment-list-item-author {font-weight:var(--font-weight-bold);color:var(--gray800);}
-.post-comment-list-item-date {display:block;margin-top:-.25rem;color:var(--gray400);font-size:var(--font-size-caption);}
-.post-comment-list-item-text {margin:.5rem 0 0;}
+.post-comment-list-item-author {font-weight:var(--font-weight-bold);color:var(--color-text);}
+.post-comment-list-item-date {display:block;margin-top:-.25rem;color:var(--color-text-light);font-size:var(--font-size-caption);}
+.post-comment-list-item-text {margin:var(--space-small) 0 0;}
 .post-comment-list-item-morevert {@include avatar-medium;position:absolute;right:0;top:0;}
 .post-comment-list-item-morevert:hover {@include hover-button;}
-.post-comment-list-item-menu {display:none;@include tile-elevated;width:var(--width-dropdown);padding:0;position:absolute;right:40px;top:0;z-index:var(--zindex-default);}
+// todo tile margin
+.post-comment-list-item-menu {display:none;@include tile-elevated;width:var(--width-dropdown);margin:0;padding:0;position:absolute;right:40px;top:0;z-index:var(--zindex-default);}
 
 // todo
 .post-comment-list-item-menu button {display: block;width:calc(100% - 2rem);margin: 1rem;text-align:left;position: relative;z-index: 1;}
@@ -81,7 +80,6 @@
 .is-active + .post-comment-list-item-menu {display:block;}
 
 // .post-comment-list-item:hover > .post-comment-list-item-morevert {display:block;}
-
 .post-comment-list-item .post-comment-list-item {margin:1rem 0;padding-left:1rem;}
 .post-comment-list-item .post-comment-list-item:before {content:'';display:block;width:2px;height:100%;background-color:var(--gray100);position:absolute;left:0;top:0;}
 
@@ -92,10 +90,9 @@
 .comment-write-password {display:none;width:var(--grid-column);margin:0 0 1rem 0;}
 .comment-write-submit {@include button-primary;}
 .comment-write-cancel {@include button-text;margin:0 auto 0 var(--space-after-button);}
+
 .is-focused .comment-write-name {display:block;}
 .is-focused .comment-write-password {display:block;}
-
-// pager
 
 .post-pagination {display:flex;justify-content:space-between;padding:2rem var(--grid-margin);
 	border-top:var(--border);border-bottom:var(--border);
@@ -104,13 +101,13 @@
 .post-pagination-previous {width:var(--grid-column);text-align:left;position:relative;}
 .post-pagination-previous:hover {@include hover-item;}
 .post-pagination-previous-media {@include avatar-medium;margin-bottom:1rem;}
-.post-pagination-previous-label {margin:0 0 .25rem 0;font-size:var(--font-size-body);font-weight:normal;color:var(--gray400);}
-.post-pagination-previous-postname {@include text-subhead;color:var(--gray800);}
+.post-pagination-previous-label {margin:0 0 .25rem 0;font-size:var(--font-size-body);font-weight:normal;color:var(--color-text-light);}
+.post-pagination-previous-postname {@include text-subhead;}
 .post-pagination-next {width:var(--grid-column);text-align:right;position:relative;}
 .post-pagination-next:hover {@include hover-item;}
 .post-pagination-next-media {@include avatar-medium;margin-bottom:1rem;margin-left:auto;}
-.post-pagination-next-label {margin:0 0 .25rem 0;font-size:var(--font-size-body);font-weight:normal;color:var(--gray400);}
-.post-pagination-next-postname {@include text-subhead;color:var(--gray800);}
+.post-pagination-next-label {margin:0 0 .25rem 0;font-size:var(--font-size-body);font-weight:normal;color:var(--color-text-light);}
+.post-pagination-next-postname {@include text-subhead;}
 
 @media (--breakpoint-small) {
 	.post-body-image {float:none;margin-left:-8%;margin-right:-8%;}
