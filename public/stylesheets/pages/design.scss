@@ -4,7 +4,8 @@
 .design-head {overflow:hidden;background:var(--color-primary);position:fixed;left:0;right:0;top:0;bottom:0;z-index:-1;transform:translateX(-50%);transition:transform .8s $bezier-base .4s;}
 .design-head.is-scrolled {transform:translateX(-50%);transition:transform .8s $bezier-base .4s;}
 
-.design-article {max-width:560px;padding:4rem var(--grid-margin) 4rem calc(50% + var(--grid-margin));position:relative;}
+// todo overflow;
+.design-article {max-width:560px;padding:4rem var(--grid-margin) 4rem calc(50% + var(--grid-margin));overflow:hidden;position:relative;}
 .design-article-title {margin:0 0 var(--space-after-subhead) 0;@include text-subhead;}
 .design-article-description {margin:1.5rem 0;}
 .design-article-tile {margin:3rem 0;}

@@ -28,7 +28,7 @@
 .footer-scroll {}
 .footer-scroll-indicator {}
 .footer-scroll-indicator i {width:2px;height:8px;background:var(--gray800);margin:8px auto 0;animation:bounce 0.5s infinite alternate;transform:rotate(90deg);}
-.footer-scroll-top {@include avatar-medium;margin:0 0 2rem 0;background:var(--color-background);}
+.footer-scroll-top {@include chip;}
 .footer-scroll-top i {transform:rotate(-90deg);}
 .footer-scroll-bottom {display:none;}
 // .footer-scroll-top .is-visible {right:50px;}

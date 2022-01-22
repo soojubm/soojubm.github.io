@@ -96,9 +96,9 @@ async function domEvents() {
 
   navItemElements?.forEach(element => {
     const isCurrentPage = element.getAttribute('href')?.includes(hash)
-    
-    if(isCurrentPage) element.classList.add('is-current')
-  }
+
+    if (isCurrentPage) element.classList.add('is-current')
+  })
 
   // const page = routes.find(route => route.path.substring(1) === hash)
   // const pageTitleElement = document.querySelector('.js-page-title')
