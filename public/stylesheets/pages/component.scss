@@ -1,11 +1,9 @@
 
 .component {}
 .component-hero {width:45%;height:calc(100vh - 2rem);position:sticky;top:1rem;bottom:1rem;}
-
 .component-navigation {padding:0 var(--grid-margin) 0 calc(50% + var(--grid-margin));}
 // .component-navigation-background {@include bleeding;border-bottom:var(--border);}
 .component-navigation-scroll {@include chip-group;}
-
 
 @media (--breakpoint-large) {
   .design {padding:0;}
@@ -15,7 +13,4 @@
   .component-navigation-scroll {@include group-bleeding;flex-wrap:unset;margin:0 -5%;padding:var(--space) 5%;position:relative;}
   .component-navigation-scroll > * {min-width:auto;} // todo
   // .component-navigation-scroll {margin:0 var(--grid-margin-minus);padding:0 var(--grid-margin);}
-}
-
-@media (--breakpoint-medium) {
 }

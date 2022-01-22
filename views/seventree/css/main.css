@@ -30,8 +30,6 @@
 .main-visual .slick-dots li.slick-active button { background-color:#FFF; border:0px; transition:0.2s; }
 
 
-
-
 .main-hero {}
 .main-hero-form {width:100%;max-width:1240px;height:78px;margin:-39px auto 0;background:#fff;overflow:hidden;box-shadow:2px 2px 16px rgba(0,0,0,.1);font-size:19px;position: relative;z-index:var(--zindex-default);}
 .main-hero-form .title {float:left;width:189px;padding-left:25px;border-right:1px solid #e2e2e2;box-sizing:border-box;font-size:19px;font-weight:var(--font-weight-bold);line-height:78px;}

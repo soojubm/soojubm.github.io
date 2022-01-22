@@ -8,10 +8,10 @@
 .design-article {max-width:560px;padding:4rem var(--grid-margin) 4rem calc(50% + var(--grid-margin));overflow:hidden;position:relative;}
 .design-article-title {margin:0 0 var(--space-after-subhead) 0;@include text-subhead;}
 .design-article-description {margin:1.5rem 0;}
-.design-article-tile {margin:3rem 0;}
+.design-article-tile {margin:2.5rem 0;}
 
 /// todo
-.tokens-body .design-article {max-width:auto;padding-left:var(--grid-margin);}
+.tokens-body .design-article {max-width:auto;margin:0 auto;padding-left:var(--grid-margin);}
 
 .design .tile-small-flat {
   margin-left: var(--space-small-minus);
@@ -80,7 +80,7 @@
 .space {display:flex;align-items:center;justify-content:center;height:100%;background:var(--green100);font-size:10px;position:relative;}
 
 
-@media (--breakpoint-small) {
+@media (--breakpoint-large) {
   .design-article {padding-left:var(--grid-margin);}
 }
 
@@ -257,7 +257,7 @@
 
 .keywords {@include tile-elevated;max-width:400px;}
 .keywords-title {@include text-subhead;margin:var(--space-leading-subhead) 0 .75rem 0;}
-.keywords-group {@include chip-group;margin:0;}
+.keywords-group {@include chip-group;}
 .keywords-group-keyword {@include chip;}
 .keywords-group-keyword-label {@include chip-label;}
 
