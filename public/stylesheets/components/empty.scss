@@ -1,4 +1,4 @@
-.empty {width:100%;max-width:var(--width-small);margin:0 auto;padding:4rem 5%;box-sizing:border-box;text-align:center;}
+.empty {width:100%;max-width:var(--width-small);margin:0 auto;padding:4rem var(--grid-margin);box-sizing:border-box;text-align:center;}
 .empty-icon {@include avatar-huge;margin:0 auto 1.5rem;font-size:40px;}
 .empty-title {@include text-subhead;}
 .empty-description {margin:var(--space-after-subhead) 0 2rem;}

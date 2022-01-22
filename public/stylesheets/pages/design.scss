@@ -439,8 +439,8 @@
   height: 64px;
   background: var(--color-newneek);
 
-  padding: calc(constant(safe-area-inset-top)) 5% ;
-  padding: calc(env(safe-area-inset-top)) 5% ;
+  padding: calc(constant(safe-area-inset-top)) var(--grid-margin);
+  padding: calc(env(safe-area-inset-top)) var(--grid-margin);
   // font-family: 'Chelsea Market';
   font-size: 1.5rem;
   text-transform: uppercase;

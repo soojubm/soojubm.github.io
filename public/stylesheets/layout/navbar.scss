@@ -1,4 +1,4 @@
-.navbar {display:flex;@include tile-elevated;margin:1rem;padding-left:calc(5vw - 1rem);padding-right:calc(5vw - 1rem);z-index:var(--zindex-navigation);}
+.navbar {display:flex;@include tile-elevated;margin:1rem;padding-left:calc(var(--grid-margin) - 1rem);padding-right:calc(var(--grid-margin) - 1rem);z-index:var(--zindex-navigation);}
 .navbar-logo {@include avatar-medium;background-color:gold;border-radius:50%;}
 .navbar-burger {@include avatar-medium;display:none;margin:0 var(--space-small) 0 0;z-index:calc(var(--zindex-navigation) + 1);}
 .navbar-menu {display:flex;align-items:center;margin:-2px 0 0 var(--space);position:relative;z-index:var(--zindex-navigation);}
