@@ -29,7 +29,7 @@
 .textfield-reveal {position:absolute;right:1rem;bottom:calc(1rem - 1px);z-index:var(--zindex-default);font-size:var(--font-size-caption);color:var(--color-text-light);}
 .textfield-helper {margin-top:.25rem;color:var(--red800);}
 .textfield-button {border-top-left-radius:0;border-bottom-left-radius:0;position:absolute;right:0;top:0;}
-.textfield-link {font-size:var(--font-size-caption);position:absolute;right:0;top:0;}
+.textfield-link {@include link-outer;font-size:var(--font-size-caption);position:absolute;right:0;top:0;}
 .textfield-unit {}
 
 .textfield-check {@include textfield-surfix;}

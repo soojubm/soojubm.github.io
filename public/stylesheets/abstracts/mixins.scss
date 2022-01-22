@@ -206,6 +206,7 @@
   background: var(--color-background);
   font-size: var(--font-size-caption);
   color: var(--color-text);
+  line-height: 23px; // todo inline-flx;
 }
 @mixin tag-primary {@include tag;background-color:gold;color:#252d29;}
 

@@ -29,27 +29,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // lockbody
   // 여러 개 묶여 있음.
-  event.toggleClass({
-    selector: '.js-navbar-toggle',
-    // activeClassname: 'is-navbar-active'
-  })
+  // event.toggleClass({
+  //   selector: '.js-navbar-toggle',
+  // })
   // event.positionSticky({ selector: '.js-titlebar', addClass: 'is-sticky-titlebar', isPassed: false })
 })
 
-// document.addEventListener('click', event => {
-//   const closestElement = (event.target as HTMLElement).closest('.js-navbar-toggle')
-//   if (!closestElement) return
+document.addEventListener('click', event => {
+  const hambergerElement = (event.target as HTMLElement).closest('.js-navbar-toggle')
+  if (!hambergerElement) return
 
-//   closestElement.classList.toggle('is-active')
+  hambergerElement.classList.toggle('is-active')
 
-//   if (closestElement.classList.contains('is-active')) {
-//     lockBodyElement()
-//   } else {
-//     unlockBodyElement()
-//   }
+  // if (hambergerElement.classList.contains('is-active')) {
+  //   lockBodyElement()
+  // } else {
+  //   unlockBodyElement()
+  // }
 
-//   const navbarMenu = closestElement.nextElementSibling
-// })
+  // const navbarMenu = closestElement.nextElementSibling
+})
 
 window.addEventListener('scroll', throttle(scrollProgress), true)
 function scrollProgress(): void {
@@ -86,11 +85,21 @@ async function domEvents() {
   lazyLoading()
 
   await routePage()
+
   // detectTheme()
 
   darkTheme('.js-darkmode2')
 
-  // const hash = window.location.hash.substring(1)
+  // todo
+  const navItemElements = document.querySelectorAll('.navbar-menu-item')
+  const hash = window.location.hash.substring(1)
+
+  navItemElements?.forEach(element => {
+    const isCurrentPage = element.getAttribute('href')?.includes(hash)
+    
+    if(isCurrentPage) element.classList.add('is-current')
+  }
+
   // const page = routes.find(route => route.path.substring(1) === hash)
   // const pageTitleElement = document.querySelector('.js-page-title')
 
@@ -125,7 +134,6 @@ async function domEvents() {
   // input.textarea()
   input.number()
 
-  // event.toggleClass({ selector: '.js-accordion' })
   event.toggleClass({ selector: '.js-toggle' })
 
   event.tab()

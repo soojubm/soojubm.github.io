@@ -17,7 +17,7 @@
 .login-social-naver {margin-bottom:8px;background:#3bcc15;}
 .login-social-kakao {float:left;width:49%;color:var(--gray0);margin-right:2%;background:#f9df34;}
 .login-option {margin:2rem 0;text-align:center;}
-.login-option-link {margin:0 .25rem;}
+.login-option-link {margin:0 .25rem;@include link-outer;}
 .login-fail {display:block;margin:var(--space) 0;color:var(--red800);}
 
 .signup {@include container-small;}

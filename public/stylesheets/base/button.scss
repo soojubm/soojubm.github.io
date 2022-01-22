@@ -120,7 +120,7 @@ button {@include reset-button;}
 
 // ! 모바일에서 100%로 되는 컴포넌트가 있고 아닌 컴포넌트가 있다.
 
-.danger-button {@include button;background:var(--red800);border:1px solid var(--red800);color:var(--color-text);}
+.danger-button {@include button;background:var(--red800);border:1px solid var(--red800);color:var(--gray0);}
 
 .group-sample {display:flex;justify-content:space-between;}
 .group-sample-prev {@include button-tertiary;}

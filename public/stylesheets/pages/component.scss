@@ -1,6 +1,6 @@
 
 .component {}
-.component-hero {width:45%;height:100vh;position:sticky;top:0;}
+.component-hero {width:45%;height:calc(100vh - 2rem);position:sticky;top:1rem;bottom:1rem;}
 
 .component-navigation {padding:0 var(--grid-margin) 0 calc(50% + var(--grid-margin));}
 // .component-navigation-background {@include bleeding;border-bottom:var(--border);}
@@ -10,7 +10,7 @@
 @media (--breakpoint-large) {
   .design {padding:0;}
 
-  .component-hero {float:none;height:auto;position:relative;}
+  .component-hero {float:none;width:auto;height:auto;position:relative;}
   .component-navigation {width:90vw;background:var(--color-background);padding-left:var(--grid-margin);position:sticky;top:calc(var(--titlebar-height) - 1px);top:0;z-index:6 ;}
   .component-navigation-scroll {@include group-bleeding;flex-wrap:unset;margin:0 -5%;padding:var(--space) 5%;position:relative;}
   .component-navigation-scroll > * {min-width:auto;} // todo
