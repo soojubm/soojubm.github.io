@@ -35,7 +35,7 @@
   }
 }
 
-// todo ul li
+// todo ul
 .design-article-checklist {@include reset-list;margin:1.5rem 0 2rem;}
 .design-article-checklist li {}
 .design-article-checklist li + li {margin-top: .25rem;}
@@ -60,7 +60,7 @@
 .design-article-anatomy-item .is-optional {margin:0 0 .5rem 0;font-size:10px;color:var(--color-text-light);}
 
 // todo fadeup 그냥 up
-.design-article.is-scrolled {animation:fadeup .8s forwards;}
+.design-article.is-scrolled {animation:fadeup .8s;}
 
 
 .design-typograph-group {display:flex;justify-content:space-between;@include tile-elevated;}
@@ -313,7 +313,7 @@
 
 .design-home {display:flex;flex-wrap:wrap;}
 .design-home header {width:100%;padding:4rem var(--grid-margin);background:var(--color-background);position:relative;}
-.design-home header h1 {@include text-title;font-family:'DunkelSans';font-size:2.5rem;position:relative;} // todo
+.design-home header h1 {@include text-title;font-family:'DunkelSans';position:relative;} // todo
 // .design-home header h1:after {content:'';display:block;width:6.5rem;height:6.5rem;border-radius:4px;background:#000;position:absolute;bottom:4px;right:0;}
 .design-home header p {margin:var(--space-after-title) 0 0 0;font-size:var(--font-size-subhead);letter-spacing:-.025rem;position:relative;}
 // .design-home header p:after {content:'';display:block;width:4rem;height:4rem;border-radius:4px;background:#000;position:absolute;bottom:0;right:0;}
@@ -328,8 +328,8 @@
 .design-home nav a div {margin:0 0 0 var(--space-before-badge);}
 
 @media (--breakpoint-small) {
-  .design-home nav {display:block;}
-  .design-home nav a {width:auto;max-width:100%;margin-top:var(--space);margin-bottom:var(--space);}
+  .design-home nav {display:block;margin:0;}
+  .design-home nav a {width:auto;max-width:100%;margin:var(--space) 0;}
 }
 
 

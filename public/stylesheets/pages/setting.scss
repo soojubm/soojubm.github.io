@@ -1,4 +1,5 @@
-.setting {@include container-medium;}
+.setting {@include container-medium;padding-top:0;}
+// todo padding-top
 .setting-head {margin:0 0 2rem;}
 .setting-head-title {@include text-title;}
 .setting-head-description {margin:var(--space-after-title) 0 0 0;}
@@ -19,7 +20,7 @@
 .setting-item-label {width:5rem;@include text-label;line-height:var(--size-medium);}
 .setting-item-value {display:flex;flex-wrap:wrap;align-items:center;line-height:32px;}
 .setting-item-value-username {width:100%;}
-.setting-item-value-address {width:100%;margin:-.25rem 0;line-height:1.5;}
+.setting-item-value-address {width:100%;line-height:var(--font-line-height-small);}
 .setting-item-value-phone {width:100%;}
 .setting-item-change {@include avatar-medium;font-size:var(--font-size-body);position:absolute;right:1rem;}
 .setting-item-change b {display:none;background:var(--color-background);transform:translateX(200px);transition:all .5s;position:relative;z-index:var(--zindex-default);}

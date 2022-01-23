@@ -1,11 +1,27 @@
 <main>
+  <style>
+    .navbar {
+      display: none;
+    }
+  </style>
+  <header class="titlebar js-titlebar tile-elevated" role="navigation" style="margin:var(--space-small);">
+    <div class="titlebar-background"></div>
+    <h1 class="titlebar-title js-page-title" title="page title">설정</h1>
+    <button class="titlebar-back" onclick="javascript:window.location.href='/';">
+      <figure class="titlebar-back-icon" title="이전 페이지로"><i class="icon-arrow is-left"></i></figure>
+      <!-- <figure class="titlebar-back-icon"><i class="icon-close"></i></figure> -->
+      <!-- <span class="titlebar-back-label">뒤로</span> -->
+    </button>
+    <button class="titlebar-action" style="color:var(--color-primary);">
+      <figure class="titlebar-action-icon" hidden></figure>
+      <!-- <span class="titlebar-action-label">공유</span> -->
+    </button>
+  </header>
   <section class="setting">
     <header class="setting-head">
       <h1 class="setting-head-title" hidden>설정</h1>
       <!-- <p class="setting-head-title">프로필을 완성하고<br />맞춤형 콘텐츠를</p> -->
-      <p class="setting-head-description">
-        뉴닉 서비스 초기의 설정 페이지. 초기 서비스에서는 정보의 양이 적긱 대문에 소제목 없어도 되겠다.
-      </p>
+      <p class="setting-head-description"></p>
     </header>
     <div class="setting-body">
       <!-- <article class="user">
@@ -29,7 +45,11 @@
         <h2 class="setting-item-label">이름</h2>
         <div class="setting-item-value">수줍이</div>
         <span class="setting-item-change"><b>변경하기</b> <i class="icon-arrow"></i></span>
-        <form class="setting-item-form">
+      </div>
+      <div class="setting-item is-opened" role="button" style="flex-wrap:wrap;">
+        <!-- <h2 class="setting-item-label">이름</h2>
+        <div class="setting-item-value">수줍이</div> -->
+        <form class="setting-item-form" style="padding:0;">
           <!-- <h1>어떻게 불러드릴까요?</h1> -->
           <div class="textfield">
             <label class="textfield-label" for="username">이름</label>
@@ -65,7 +85,8 @@
         <h2 class="setting-item-label">배송지</h2>
         <div class="setting-item-value">
           <p class="setting-item-value-username">이경수</p>
-          <p class="setting-item-value-address">[07655] 서울특별시 강서구 까치산로 182</p>
+          <p class="setting-item-value-address">[07655]</p>
+          <p class="setting-item-value-address">서울특별시 강서구 까치산로 182</p>
           <p class="setting-item-value-phone">010-3121-7045</p>
         </div>
         <span class="setting-item-change"><b>변경하기</b> <i class="icon-arrow"></i></span>
@@ -133,7 +154,7 @@
           Permanently remove your Personal Account and all of its contents from the Vercel platform. This action is not reversible, so please continue
           with caution.
         </p>
-        <p class="danger-button" style="margin:var(--space) 0 0 0;">계정을 삭제하겠습니다.</p>
+        <p class="danger-button" style="margin:var(--space) 0 0 0;">계정을 삭제하겠습니다</p>
       </div>
     </div>
   </section>

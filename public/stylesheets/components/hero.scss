@@ -1,4 +1,4 @@
-.hero {margin:0 var(--grid-margin);padding:4rem var(--grid-margin);border-radius:var(--radius);box-sizing:border-box;overflow:hidden;background:var(--color-primary);position:relative;z-index:var(--zindex-default);}
+.hero {margin:0 var(--grid-margin);padding:4rem var(--grid-margin);border-radius:var(--radius);box-sizing:border-box;overflow:hidden;background:var(--color-background-gray);position:relative;z-index:var(--zindex-default);}
 .hero-background {@include bleeding;background:inherit;}
 // .hero-eyebrow {display:block;margin:0 0 .25rem 0;font-size:var(--font-size-caption);animation:fadeup .2s cubic-bezier(.455, .03, .515, .955) forwards .4s;opacity:0;}
 .hero-title {@include text-title;}

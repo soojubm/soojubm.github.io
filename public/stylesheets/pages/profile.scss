@@ -91,7 +91,7 @@
 .card-text {margin:0 0 1rem 0;padding:.5rem 0 1rem;@include truncate-multi;}
 .card-category {@include tag-primary;@include position-left-top;}
 .card-date {display:none;color:var(--color-text-light);}
-.card-tags {@include tag-group;margin-top:var(--space-small);}
+.card-tags {@include tag-group;margin-top:var(--space);}
 .card-tags-item {@include tag;}
 
 .card-item {height:var(--size-large);margin:1rem 0;position:relative;z-index:var(--zindex-default);}
