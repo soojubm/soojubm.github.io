@@ -29,7 +29,7 @@
 .tokens-hero-image-salt {@include token-emoji;}
 .tokens-hero-image-egg {@include token-emoji;}
 .tokens-hero-image-milk {@include token-emoji;}
-.tokens-hero-head {margin:0 var(--grid-margin);padding:4rem var(--grid-margin) 6rem;border-radius:var(--radius);box-sizing:border-box;font-size:var(--font-size-subhead);position:relative;}
+.tokens-hero-head {padding:4rem var(--grid-margin) 6rem;border-radius:var(--radius);box-sizing:border-box;font-size:var(--font-size-subhead);position:relative;}
 
 .design-article code {padding-left:2rem !important;padding-right:2rem !important;margin-left:-2rem;margin-right:-2rem;}
 

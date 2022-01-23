@@ -1,7 +1,9 @@
 .titlebar {display:flex;align-items:center;padding:var(--space) var(--grid-margin);overflow:hidden;position:relative;left:0;right:0;z-index:3;}
 // todo 프로필 오버플로우 메뉴보다 zindex가 낮아야함
-.titlebar-title {margin:-3px 0 0;font-size:var(--font-size-subhead);font-weight:var(--font-weight-normal);position:absolute;left:50%;transform:translateX(-50%);}
-.titlebar-back {display:flex;align-items:center;position:relative;}
+.titlebar-title {margin:-3px 0 0;font-size:var(--font-size-subhead);font-weight:var(--font-weight-normal);}
+// .titlebar-title {margin:-3px 0 0;font-size:var(--font-size-subhead);font-weight:var(--font-weight-normal);position:absolute;left:50%;transform:translateX(-50%);}
+.titlebar-back {display:flex;align-items:center;position:relative;display:none;}
+// todo back button
 .titlebar-back:hover {@include hover-item;}
 .titlebar-back-icon {@include avatar-medium;}
 .titlebar-back-label {margin:0 0 0 var(--space);}
