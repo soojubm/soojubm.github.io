@@ -35,8 +35,9 @@
   }
 }
 
+// todo ul li
 .design-article-checklist {@include reset-list;margin:1.5rem 0 2rem;}
-.design-article-checklist li {padding-left:18px;position: relative;}
+.design-article-checklist li {}
 .design-article-checklist li + li {margin-top: .25rem;}
 .design-article-checklist li i {margin:0 .5rem 0 0;position:absolute;left:0;top:12px;}
 .design-article-title + .design-article-description {margin-top:0;}
