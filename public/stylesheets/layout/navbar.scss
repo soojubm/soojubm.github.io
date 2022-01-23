@@ -120,7 +120,7 @@
 .is-sticky-navbar .navbar {background:var(--color-background);position:fixed;top:0;left:0;right:0;}
 
 @media (--breakpoint-small) {
-	.navbar {margin:var(--space-small);padding-left:var(--grid-margin);padding-right:var(--grid-margin);background:var(--color-background);}
+	.navbar {margin:var(--space-small);background:var(--color-background);}
 	.navbar-logo {position:absolute;left:50%;transform:translateX(-50%);}
 	.navbar-burger {display:block;}
 	.navbar-burger.is-active {position:fixed;}

@@ -60,9 +60,8 @@ ul {}
 ul li {margin:.25rem 0;padding:0 0 0 1rem;position:relative;}
 // ul li:before {content:'\2022';position:absolute;left:0;}
 ul li:before {
-  content: "\25e6";
+  content: "";
   list-style: disc;
-  color: var(--gray);
   position: absolute;
 }
 ul li:marker {
