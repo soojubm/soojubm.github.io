@@ -1,9 +1,7 @@
 
 .share-trigger {@include avatar-medium;margin:0 0 1rem 0;}
 .share-trigger svg {width:1rem;}
-.share {
-    max-width:400px;@include tile-elevated;
-}
+.share {@include tile-elevated;}
 .share-group {@include chip-group;}
 .share-back {@include avatar-medium;position:absolute;right:.5rem;top:.5rem;}
 .share-back:hover {@include hover-button;}

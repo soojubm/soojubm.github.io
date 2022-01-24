@@ -5,12 +5,13 @@
 .design-head.is-scrolled {transform:translateX(-50%);transition:transform .8s $bezier-base .4s;}
 
 // todo overflow;
-.design-article {max-width:560px;margin:0 auto;padding:4rem var(--grid-margin);position:relative;}
+.design-article {max-width:560px;margin:0 auto;padding:4rem var(--grid-margin);overflow:hidden;position:relative;}
 .design-article-title {margin:0 0 var(--space-after-subhead) 0;@include text-subhead;}
 .design-article-description {margin:1.5rem 0;}
 .design-article-tile {margin:2.5rem 0;}
 
 /// todo
+.component-body {background:var(--color-background-gray);margin:0 var(--grid-margin);border-radius:var(--radius);}
 .tokens-body .design-article {max-width:auto;margin:0 auto;padding-left:var(--grid-margin);}
 
 .design .tile-small-flat {
@@ -60,7 +61,7 @@
 .design-article-anatomy-item .is-optional {margin:0 0 .5rem 0;font-size:10px;color:var(--color-text-light);}
 
 // todo fadeup 그냥 up
-.design-article.is-scrolled {animation:fadeup .8s;}
+.design-article.is-scrolled {animation:fadeup .8s forwards;}
 
 
 .design-typograph-group {display:flex;justify-content:space-between;@include tile-elevated;}

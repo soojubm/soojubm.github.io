@@ -1,6 +1,5 @@
 
 // todo
-
 // figure 왼쪽 vs 오른쪽 margin-right는 size에 따라 변함.
 // heading name / title, tiny font-sze 작음
 // description 수치(날짜/금액/수량) 이륾보다 더 강조될 수도 있음.
@@ -38,8 +37,8 @@
 .item-name {font-size:var(--font-size-body);}
 .item-description {line-height:var(--font-line-height-small);color:var(--color-text-light);}
 .item-description + .item-name {margin-top:-.125rem;}
-.item-action {@include button-secondary;@include button-small;@include position-right-top;right:0;}
-.item-action.is-active {@include button-tertiary;@include button-small;position:absolute !important;}
+.item-action {@include chip;background:var(--color-background-gray);padding:0 var(--space);@include position-right-top;right:0;}
+.item-action.is-active {border:none;position:absolute !important;}
 // todo active style
 
 .item + .item {margin:var(--space) 0 0 0;}

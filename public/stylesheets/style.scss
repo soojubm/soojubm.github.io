@@ -15,8 +15,6 @@
 @import 'base/reset';
 @import 'base/form';
 
-@import 'abstracts/item';
-
 @import 'components/chip';
 @import 'components/breadcrumb.css';
 @import 'components/graph.css';
@@ -37,6 +35,10 @@
 
 @import 'components/skip';
 @import 'components/skeleton';
+
+// todo components
+@import 'abstracts/item';
+
 
 @import 'layout/navbar';
 @import 'layout/titlebar';

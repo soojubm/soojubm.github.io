@@ -1,5 +1,4 @@
-// .subscribe {max-width:var(--width-large);margin:0 auto;padding:4rem var(--grid-margin) 6rem;position:relative;z-index:var(--zindex-default);}
-.subscribe {@include tile-elevated;max-width:400px;}
+.subscribe {@include tile-elevated;}
 .subscribe-title {@include text-subhead;}
 .subscribe-description {margin:var(--space-after-subhead) 0 var(--space-after-description) 0;}
 .subscribe-field {}

@@ -29,11 +29,10 @@ pre {}
 del {color:var(--color-text-light);} ins {text-decoration:none;}
 
 html {min-width:320px;height:100%;font:16px/1.8 var(--fontstack);color:var(--color-text);-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overscroll-behavior:contain;}
-body {overflow-x:hidden;background:var(--color-background);font-size:.875rem;}
+body {overflow-x:hidden;background:var(--color-background);font-size:.875rem;letter-spacing:-.0125rem;}
 
 // todo 왜 뺐었을가?
 // overflow-x:hidden;
-// letter-spacing:-.0125rem;
 
 blockquote {margin:2rem 0;padding:0 0 0 var(--space);border-left:4px solid var(--gray200);border-radius:4px 0 0 0;}
 
@@ -57,7 +56,7 @@ table.is-borderless tbody tr {border:0;}
 
 // todo icon-check
 ul {}
-ul li {margin:.25rem 0;padding:0 0 0 1rem;position:relative;}
+ul li {margin:.25rem 0;padding:0 0 0 1.125rem;position:relative;}
 // ul li:before {content:'\2022';position:absolute;left:0;}
 ul li:before {
   content: "";
