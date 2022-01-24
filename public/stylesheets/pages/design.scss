@@ -83,7 +83,9 @@
 
 
 @media (--breakpoint-large) {
+  .component-body {margin-left:0;margin-right:0;}
   .design-article {padding-left:var(--grid-margin);}
+  
 }
 
 
