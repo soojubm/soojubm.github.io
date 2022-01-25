@@ -11,8 +11,8 @@
 .design-article-tile {margin:2.5rem 0;}
 
 /// todo
-.component-body {background:var(--color-background-gray);margin:0 var(--grid-margin);border-radius:var(--radius);}
-.tokens-body .design-article {max-width:auto;margin:0 auto;padding-left:var(--grid-margin);}
+.tokens-body,
+.component-body {border-top:var(--border);border-bottom:var(--border);border-radius:var(--radius);}
 
 .design .tile-small-flat {
   margin-left: var(--space-small-minus);
@@ -48,8 +48,7 @@
 // todo
 .design-article-helper {@include text-label;font-size:var(--font-size-caption);}
 
-.design-article-role {@include tile-flat-small;margin:var(--space) 0;font-size:var(--font-size-caption);
-}
+.design-article-role {@include tile-flat-small;margin:var(--space) 0;font-size:var(--font-size-caption);}
 .design-article-role-title {@include tag;margin:0 var(--space) 0 -1rem;}
 .design-article-role-item {display:inline-block;margin:0 .25rem;}
 .design-article-role-item.is-nested {}
@@ -62,7 +61,6 @@
 
 // todo fadeup 그냥 up
 .design-article.is-scrolled {animation:fadeup .8s forwards;}
-
 
 .design-typograph-group {display:flex;justify-content:space-between;@include tile-elevated;}
 .design-typograph-group .design-typograph-item {width:var(--grid-column);}
