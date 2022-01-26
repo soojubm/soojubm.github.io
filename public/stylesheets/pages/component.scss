@@ -9,8 +9,11 @@
 
 @media (--breakpoint-large) {
   .design {padding:0;}
-
-  .component-hero {float:none;width:auto;height:auto;position:relative;}
   .component-navigation {width:90vw;}
   // .component-navigation-scroll {margin:0 var(--grid-margin-minus);padding:0 var(--grid-margin);}
 }
+
+.sds-component {max-width:600px;margin:0 auto;font-size:var(--font-size-subhead);}
+.sds-component-title {margin:var(--space) 0 0 0;@include text-title;}
+.sds-component-description {margin:var(--space) 0;}
+.sds-component-checklist {margin:var(--space) 0;}

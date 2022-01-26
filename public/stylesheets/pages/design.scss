@@ -81,9 +81,6 @@
 
 
 @media (--breakpoint-large) {
-  .component-body {margin-left:0;margin-right:0;}
-  .design-article {padding-left:var(--grid-margin);}
-  
 }
 
 
@@ -247,7 +244,7 @@
 .sidebar-item:hover {@include hover-item;}
 .sidebar-item figure {@include avatar-medium;margin:0 var(--space) 0 0;font-size:var(--font-size-body);}
 .sidebar-item-icon {}
-.sidebar-item-label {margin:0 var(--space) 0 0;font-size:var(--font-size-subhead);font-weight:var(--font-weight-bold);}
+.sidebar-item-label {margin:0 var(--space) 0 0;font-size:var(--font-size-subhead);font-weight:var(--font-weight-bold);line-height:30px;}
 .sidebar-item-tag {margin-top:2px;}
 
 

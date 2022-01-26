@@ -18,7 +18,7 @@
 
     <article class="accordion js-accordion" aria-expanded="false" style="max-width:560px;">
       <h3 class="accordion-title" role="button" style="font-family:'DunkelSans">
-        가이드 작성에 관한 가이드. ㅠ.ㅠ
+        가이드 작성을 위한 가이드
         <span class="accordion-title-icon"><i class="icon-chevron is-down"></i></span>
         <!-- <span class="accordion-title-icon"><i class="icon-chevron is-down"></i></span> -->
       </h3>
@@ -432,7 +432,7 @@
     <article class="design-article js-observer js-scrollspy-section">
       <h1 class="design-article-title">Tags (or badge/label)</h1>
       <p class="design-article-description">인접 요소를 부연합니다.</p>
-      <p class="design-article-description"><em>todo 클릭할 수 있는 태그와 클릭할 수 없는 태그 구분하기. 예를 들면 post 페이지에서 태그와 컴포넌트에서의 태그. hashtag는 tag 컴포넌트와 역할이 다르기 때문에 별도의 컴포넌트로 만들어주어야 한다. 현재 hashtag(keyword)는 chip으로 대체. todo. 댑스가 2이상 인 케이스.</em></p>
+      <!-- <p class="design-article-description"><em>todo 클릭할 수 있는 태그와 클릭할 수 없는 태그 구분하기. 예를 들면 post 페이지에서 태그와 컴포넌트에서의 태그. hashtag는 tag 컴포넌트와 역할이 다르기 때문에 별도의 컴포넌트로 만들어주어야 한다. 현재 hashtag(keyword)는 chip으로 대체. todo. 댑스가 2이상 인 케이스.</em></p> -->
       <ul class="design-article-checklist">
         <!-- <li><i class="icon-check"></i> 클릭할 수 없습니다.</li> -->
         <!-- <li><i class="icon-check"></i> secondary 사용 안 함.</li> -->
@@ -511,7 +511,7 @@
         <!-- <p>아이콘/텍스트 leading에 맞춰 시각보정이 필요. line-height 때문. tile이 아니더라도 elevated 스타일이 적용되는 케이스 존재.</p> -->
         <li><i class="icon-check"></i>컨테이너 컴포넌트입니다.</li>
         <li><i class="icon-check"></i>'클릭할 수 있음'의 기표로 elevated 스타일을 사용합니다.  타일 전체가 클릭 영역일 수도, 타일 내부에 클릭 가능한 요소를 포함할 수도 있습니다.</li>
-        <li><i class="icon-check"></i>페이지 레벨의 타이틀과 디스크립션을 타일로 만들지 마세요.</p>
+        <li><i class="icon-check"></i>페이지 레벨의 타이틀과 디스크립션을 타일로 만들지 않습니다.</p>
       </ul>
       <div class="design-tile-flat" style="line-height:var(--font-line-height-small);">
         <b>flat</b> is non clickable. no one.
@@ -531,7 +531,7 @@
       <!-- (리액트에서 id  이슈 input in label.) -->
       <ul class="design-article-checklist">
         <li><i class="icon-check"></i> checkbox와 radio는 항상 세로 정렬합니다.</li>
-        <li><i class="icon-check"></i> radio는 1개의 옵션을 선택된 상태로 제공하세요.</li>
+        <!-- <li><i class="icon-check"></i> radio는 1개의 옵션을 선택된 상태로 제공하세요.</li> -->
         <!-- <li><i class="icon-check"></i> switch는 기능이나 옵션을 켜고 끄는 뉘앙스 (on/off)</li> -->
         <li><i class="icon-check"></i> 옵션이 6개 이상일 때 selectbox나 chip group을 사용합니다.</li>
         <!-- <li><i class="icon-check"></i> selectbox/dropdown를 다중 선택에 사용하지 않습니다.</li> -->
@@ -1000,7 +1000,7 @@
       <p class="design-article-description">생소한 용어, 수치 및 정보의 근거를 보충합니다. todo. 페이지 로딩 시점에 열려 있는 경우 doorhanger 필요.</p>
       <ul class="design-article-checklist">
         <li><i class="icon-check"></i> 사용자의 행동을 유도하는 가이드로 사용하지 않습니다.</li>
-        <li><i class="icon-check"></i> 페이지 링크로 사용하지 않습니다. 항상 팝오버 형태를 따릅니다.</li>
+        <li><i class="icon-check"></i> 페이지 링크로 사용하지 않습니다.</li>
       </ul>
       <aside class="tooltip">
         <span class="tooltip-trigger" aria-describedby="tooltip1">툴팁 <i>?</i></span>
@@ -1466,7 +1466,7 @@
 
     <article class="design-article js-observer js-scrollspy-section">
       <h1 class="design-article-title">Step</h1>
-      <p class="design-article-description">워크플로우입니다. changelog: 조금 더 클릭하고 싶지 않은 스타일로 변경 2021.10</p>
+      <p class="design-article-description">워크플로우입니다. changelog: 클릭하고 싶지 않은 스타일로 변경 2021.10</p>
       <!-- <p class="design-article-description">타임라인(역순)/히스토리 맥락. 확장<small class="is-optional">optional</small>, 링크<small class="is-optional">optional</small>, indentation</p> -->
       <!-- <blockquote>
         <p>css속성으로 -webkit-appearance: slider-vertical slider 속성 값을 사용하기 때문에 slider는 carousel로 명명. input type="range" 형태를 stepper로 명명하는 경우가 있음.</p>
@@ -1564,7 +1564,7 @@
         <figure class="item-avatar"></figure>
         <h2 class="item-name">Gyeongsoo I</h2>
         <span class="item-description">유아이 디자이너</span>
-        <button class="item-action is-active" style="position:relative;right:3.5rem;top:50%;transform:translateY(-50%);font-weight:var(--font-weight-normal);">팔로잉</button>
+        <button class="item-action is-active" style="position:relative;right:3.25rem;top:50%;transform:translateY(-50%);font-weight:var(--font-weight-normal);">팔로잉</button>
         <button class="chip" style="background:none;border:none;position:absolute;right:1rem;top:50%;transform:translateY(-50%)"><i class="icon-more"></i></button>
       </div>
 
