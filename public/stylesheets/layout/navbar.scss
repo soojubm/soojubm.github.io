@@ -1,6 +1,6 @@
 .navbar {display:flex;padding:var(--space) var(--grid-margin);background:var(--color-background);position:sticky;top:0;z-index:var(--zindex-navigation);}
 .navbar-logo {@include avatar-medium;background-color:gold;border-radius:50%;}
-.navbar-burger {@include chip;display:none;margin:0 var(--space-small) 0 0;z-index:calc(var(--zindex-navigation) + 1);}
+.navbar-burger {@include chip;margin:0 var(--space-small) 0 0;z-index:calc(var(--zindex-navigation) + 1);}
 .navbar-menu {display:flex;align-items:center;margin:-2px 0 0 var(--space);position:relative;z-index:var(--zindex-navigation);}
 .navbar-menu-item {padding:0 var(--space);color:var(--color-text);position:relative;z-index:var(--zindex-default);transition:all .4s;} // m p reset
 .navbar-menu-item.has-submenu {z-index:0;}
@@ -119,29 +119,23 @@
 .is-sticky-navbar {padding-top:64px;}
 .is-sticky-navbar .navbar {background:var(--color-background);position:fixed;top:0;left:0;right:0;}
 
+
+
+// todo 모바일 온리로..
+.navbar-burger.is-active {position:fixed;}
+
+.navbar-menu {display:block;margin-left:0;padding:4rem 0;box-sizing:border-box;background:var(--color-background);box-shadow:var(--shadow);position:fixed;left:0px;right:0;top:0px;bottom:0px;transition:all .8s cubic-bezier(.165,.84,.44,1);transform:translateX(-100%);}
+.navbar-menu-item {display:block;padding:var(--space-small) var(--grid-margin);font-size:var(--font-size-subhead);}
+.navbar-menu-item menu {flex-wrap:wrap;padding:var(--space-small) 0;background:var(--color-background);position:static;left:auto;right:auto;top:auto;transition:none;}
+// .navbar-menu-item:hover menu {display:block;}
+.navbar-menu-item menu a {display:block;width:100%;margin-left:0;padding:.5rem 0 .5rem 1.5rem;border-left:var(--border);font-size:var(--font-size-body);line-height:24px;color:var(--gray800);opacity:1;}
+
+.is-active + .navbar-menu {transform:translateX(0);}
+.is-active .navbar-menu-item {color:var(--gray800);} // animation:fadeup .4s cubic-bezier(.455, .03, .515, .955) both;
+// .navbar-menu-item menu a {color:var(--gray800);}
+.is-active .navbar-menu-item i {border-top-color:var(--gray800);}
+// .is-active .navbar-menu-item:nth-child(1) {animation-delay:.3s;}
+// .is-active .navbar-menu-item:nth-child(2) {animation-delay:.4s;}
 @media (--breakpoint-small) {
-	.navbar {}
-	.navbar-logo {position:absolute;left:50%;transform:translateX(-50%);}
-	.navbar-burger {display:block;}
-	.navbar-burger.is-active {position:fixed;}
 
-	.navbar-menu {display:block;margin-left:0;padding:4rem 0;box-sizing:border-box;background:var(--color-background);box-shadow:var(--shadow);position:fixed;left:0px;right:0;top:0px;bottom:0px;transition:all .8s cubic-bezier(.165,.84,.44,1);transform:translateX(-100%);}
-	.navbar-menu-item {display:block;padding:var(--space-small) var(--grid-margin);font-size:var(--font-size-subhead);}
-	.navbar-menu-item menu {flex-wrap:wrap;padding:var(--space-small) 0;background:var(--color-background);position:static;left:auto;right:auto;top:auto;transition:none;}
-	// .navbar-menu-item:hover menu {display:block;}
-	.navbar-menu-item menu a {display:block;width:100%;margin-left:0;padding:.5rem 0 .5rem 1.5rem;border-left:var(--border);font-size:var(--font-size-body);line-height:24px;color:var(--gray800);opacity:1;}
-	
-
-	.is-active .navbar-logo {z-index:3;}
-	.is-active .navbar-user {z-index:3;}
-	.is-active + .navbar-menu {transform:translateX(0);}
-	.is-active .navbar-menu-item {color:var(--gray800);} // animation:fadeup .4s cubic-bezier(.455, .03, .515, .955) both;
-	// .navbar-menu-item menu a {color:var(--gray800);}
-	.is-active .navbar-menu-item i {border-top-color:var(--gray800);}
-	// .is-active .navbar-menu-item:nth-child(1) {animation-delay:.3s;}
-	// .is-active .navbar-menu-item:nth-child(2) {animation-delay:.4s;}
-	// .is-active .navbar-menu-item:nth-child(3) {animation-delay:.5s;}
-	// .is-active .navbar-menu-item:nth-child(4) {animation-delay:.6s;}
-	// .is-active .navbar-menu-item:nth-child(5) {animation-delay:.7s;}
-	// .is-active .navbar-menu-item:nth-child(6) {animation-delay:.8s;}
 }
