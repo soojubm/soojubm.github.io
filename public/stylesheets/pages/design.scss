@@ -690,15 +690,15 @@ $linecolor: var(--gray800);
 // .principle-head {width:50%;height:100vh;padding:4rem var(--grid-margin);box-sizing:border-box;background:var(--green800);position:absolute;left:0;top:0;}
 
 .principle {@include container-large;position:relative;}
-.principle-head {padding:4rem var(--grid-margin);}
+.principle-head {padding:4rem 0;}
 .principle-head-title {font-size:2rem;font-family:'DunkelSans';}
 .principle-head-description {margin:var(--space-after-subhead) 0 0 0;font-size:var(--font-size-title);letter-spacing:-.025rem;font-family:'DunkelSans';}
 
-.principle-item {padding:2rem var(--grid-margin);}
+.principle-item {padding:2rem 0;}
 .principle-item-avatar {@include avatar-medium;margin:0 0 1.5rem 0;}
 .principle-item-title {font-size:var(--font-size-subhead);}
 .principle-item-kicker {margin:1rem 0 0 0;font-size:var(--font-size-subhead);}
-.principle-item-description {margin:var(--space-after-subhead);}
+.principle-item-description {margin:var(--space-after-subhead) 0;}
 
 
 .reactions {@include chip-group;}

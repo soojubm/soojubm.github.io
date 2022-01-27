@@ -127,7 +127,15 @@
         <i class="icon-hamberger"></i>
       </button>
       <div class="navbar-menu" role="navigation">
-        <a route="/design" class="navbar-menu-item" href="#design">디자인시스템</a>
+        <div class="navbar-menu-item has-submenu js-hover-trigger">
+          <a href="#" role="menuitem">디자인 시스템<i class="icon-caret"></i></a>
+          <menu>
+            <a route="/design" href="#tokens">디자인 토큰</a>
+            <a route="/design" href="#components">컴포넌트</a>
+          </menu>
+        </div>
+        <br />
+        <!-- <a route="/design" class="navbar-menu-item" href="#design">디자인시스템</a> -->
         <div class="navbar-menu-item has-submenu js-hover-trigger">
           <a href="#" role="menuitem">샘플페이지<i class="icon-caret"></i></a>
           <menu>
