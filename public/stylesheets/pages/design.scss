@@ -706,3 +706,12 @@ $linecolor: var(--gray800);
 .reaction-item-avatar {margin:0 var(--space-small) 0 0;}
 .reaction-item-label {display:none;}
 .reaction-item-count {}
+
+
+.theme-dark .design-ticker-item {
+  filter: grayscale(0);
+  > * {
+    filter: grayscale(.875);
+
+  }
+}

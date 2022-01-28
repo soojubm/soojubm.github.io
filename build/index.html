@@ -47,7 +47,6 @@
 
     <link rel="canonical" href="https://soojubm.github.io/" />
 
-    
     <!-- icon in the highest resolution we need it for 48px -->
     <link rel="icon" sizes="192x192" href="icon.png" />
 
@@ -158,7 +157,6 @@
       </div>
       <a class="navbar-logo" href="/">🐤</a>
 
-
       <!-- <a class="navbar-search-trigger js-navbar-toggle" href="#">
         <i class="icon-search"></i>
       </a> -->
@@ -166,8 +164,15 @@
       <div class="navbar-user">
         <!-- <a class="" href="#">로그인</a> 
         <a class="chip" href="#">계정 만들기</a>  -->
-        <button class="navbar-user-trigger js-navbar-toggle" aria-haspopup="menu" aria-expanded="false">
-          <!-- <figure class="navbar-user-trigger-avatar"></figure> -->
+        <button class="user-logout js-darkmode" title="change theme" style="margin:0;">
+          <figure class="user-logout-icon"><i class="icon-moon"></i></figure>
+          <!-- <span class="user-logout-label">어둡게 보기</span> -->
+          <span class="switch" style="margin-left:auto;">
+            <input type="checkbox" id="temp55" name="" role="switch" />
+            <label for="temp55" style="padding-left:0;opacity:0;"></label>
+          </span>
+        </button>
+        <!-- <button class="navbar-user-trigger js-navbar-toggle" aria-haspopup="menu" aria-expanded="false">
           <img src="/public/images/soo.png" alt=""/>
         </button>
         <div class="navbar-user-menu">
@@ -194,7 +199,7 @@
               <i class="icon-out"><span class="icon-out-door"></span></i>
             </figure>
             <span class="user-logout-label">고객센터 및 도움말</span>
-            <!-- <span style="display:flex;align-items:center;justify-content:center;background:var(--gray100);width:32px;height:32px;border-radius:var(--radius);margin-left:auto;"><i class="icon-arrow"></i></span> -->
+            <span style="display:flex;align-items:center;justify-content:center;background:var(--gray100);width:32px;height:32px;border-radius:var(--radius);margin-left:auto;"><i class="icon-arrow"></i></span>
           </button>
           <hr />
           <button class="user-logout" title="sign out">
@@ -205,17 +210,17 @@
           </button>
           <hr role="separator" />
           <footer class="user-footer" style="margin:-.25rem 0 0 0;">
-            <!-- <a href="#">Privacy Policy</a>
+            <a href="#">Privacy Policy</a>
             <i class="icon-bullet"></i>
-            <a href="#">Terms of Service</a> -->
+            <a href="#">Terms of Service</a>
             <small>샘플 유아이 컴포넌트입니다.</small>
           </footer>
-        </div>
+        </div> -->
       </div>
       <!-- <div class="navbar-user"></div> -->
     </nav>
 
-  <!-- <form style="padding:0 var(--grid-margin);">
+    <!-- <form style="padding:0 var(--grid-margin);">
     <legend class="filter-fieldset-legend" hidden aria-hidden="true">검색</legend>
       <fieldset class="textfield searchfield">
         <button class="textfield-prefix" style="top:11px;"><i class="icon-search"></i></button>
@@ -224,7 +229,7 @@
         <button class="textfield-clear" hidden=""><i class="icon-x" style="border-color:var(--color-text-light);"></i></button>
       </fieldset>
   </form> -->
-  <!-- <hr /> -->
+    <!-- <hr /> -->
     <!-- <form action="">
       <input type="checkbox">
       <input type="radio">
@@ -260,7 +265,7 @@
     <div id="footer"></div>
 
     <!-- <div class="footer" style="margin-top:800px;">infinite scroll test</div> -->
-    
+
     <aside id="modal"></aside>
 
     <script>
@@ -318,7 +323,6 @@
         offlineElement.hidden = !isOnline
       }
     </script>
-
   </body>
 </html>
 
