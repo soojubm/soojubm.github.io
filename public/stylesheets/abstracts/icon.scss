@@ -31,6 +31,9 @@
 .icon-x.is-red:after {background-color:var(--red800);}
 
 .icon-check {display:inline-block;width:7px;height:2px;border-left:2px solid;border-bottom:2px solid;border-color:var(--gray800);vertical-align:middle;transform:translateY(-2px) rotate(-45deg);}
+.icon-check {display:inline-block;width:8px;height:4px;border-left:1px solid;border-bottom:1px solid;border-color:var(--gray800);vertical-align:middle;transform:translateY(0) rotate(-45deg);}
+
+
 
 .icon-heart {position:relative;}
 .icon-heart:before {content:'';background:var(--gray800);width:7px;height:12px;border-radius:50px 50px 0 0;transform: rotate(-45deg);position:absolute;left:-5px;top:-6px;}

@@ -468,11 +468,11 @@
 .portfolio-features-item-title {margin:0 0 .5rem 0;font-size:var(--font-size-body);}
 .portfolio-features-item-description {}
 
-.daylist {display:flex;}
-.day {@include tile-elevated;flex-wrap:wrap;margin:0 1rem 0 0;text-align:center;}
-.day:hover {@include hover-item;}
-.day-label {width:100%;font-size:var(--font-size-caption);color:var(--color-text-light);text-transform:uppercase;}
-.day-value {width:100%;margin:-2rem 0 0 0;@include text-subhead;}
+// .daylist {display:flex;}
+// .day {@include tile-elevated;flex-wrap:wrap;margin:0 1rem 0 0;text-align:center;}
+// .day:hover {@include hover-item;}
+// .day-label {width:100%;font-size:var(--font-size-caption);color:var(--color-text-light);text-transform:uppercase;}
+// .day-value {width:100%;margin:-2rem 0 0 0;@include text-subhead;}
 
 
 .menulist {@include tile-elevated;}

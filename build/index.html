@@ -85,6 +85,8 @@
 
     <link rel="stylesheet" href="./build/style.css" />
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lucaburgio/iconoir@master/css/iconoir.css" />
+
     <script src="./public/javascripts/polyfill.js"></script>
     <script src="./build/bundle.js"></script>
 
@@ -129,28 +131,28 @@
         <div class="navbar-menu-item has-submenu js-hover-trigger">
           <a href="#" role="menuitem">디자인 시스템<i class="icon-caret"></i></a>
           <menu>
-            <a route="/design" href="#tokens">디자인 토큰</a>
-            <a route="/design" href="#components">컴포넌트</a>
+            <a route="/design" href="#tokens">Design Tokens</a>
+            <a route="/design" href="#components">Components</a>
           </menu>
         </div>
         <br />
         <!-- <a route="/design" class="navbar-menu-item" href="#design">디자인시스템</a> -->
         <div class="navbar-menu-item has-submenu js-hover-trigger">
           <a href="#" role="menuitem">샘플페이지<i class="icon-caret"></i></a>
+          <aside class="tile-flat-small"><small style="display:block;">디자인 시스템이 적용된 샘플 페이지</small></aside>
           <menu>
-            <a route="/design" href="#profile">유저프로필</a>
-            <a route="/design" href="#login">로그인</a>
-            <a route="/design" href="#signup">회원가입</a>
-            <a route="/design" href="#forgot">비밀번호찾기</a>
-            <a route="/design" href="#settings">설정</a>
-            <a route="/design" href="#post">포스트</a>
-            <a route="/design" href="#product">상품</a>
-            <a route="/design" href="#cart">카트</a>
-            <a route="/design" href="#checkout">주문서</a>
-            <a route="/design" href="#orders">주문</a>
-            <a route="/design" href="#event">프로모션(draft)</a>
-            <a route="/design" href="#cake">상세</a>
-            <!-- <a route="/design" href="#" onClick="javascript:alert('준비 중이니 기다려주세요!')">대시보드</a> -->
+            <a route="/design" href="#profile">User Profile</a>
+            <a route="/design" href="#login">Sign In</a>
+            <a route="/design" href="#signup">Sign Up</a>
+            <a route="/design" href="#forgot">Forgot Password</a>
+            <a route="/design" href="#settings">Settings</a>
+            <a route="/design" href="#post">Post</a>
+            <a route="/design" href="#product">Product</a>
+            <a route="/design" href="#cart">Cart</a>
+            <a route="/design" href="#checkout">Checkout</a>
+            <a route="/design" href="#orders">Orders</a>
+            <!-- <a route="/design" href="#event">프로모션(draft)</a> -->
+            <a route="/design" href="#cake">Product 2</a>
             <!-- <a href="#terms">약관</a> -->
           </menu>
         </div>
@@ -164,8 +166,11 @@
       <div class="navbar-user">
         <!-- <a class="" href="#">로그인</a> 
         <a class="chip" href="#">계정 만들기</a>  -->
-        <button class="user-logout js-darkmode" title="change theme" style="margin:0;">
-          <figure class="user-logout-icon"><i class="icon-moon"></i></figure>
+        <button class="switch-wrap js-darkmode" title="change theme" style="margin:0;">
+          <figure class="user-logout-icon">
+            <span class="day"><i class="icon-moon"></i></span>
+            <span class="night"><i class="icon-moon"></i></span>
+          </figure>
           <!-- <span class="user-logout-label">어둡게 보기</span> -->
           <span class="switch" style="margin-left:auto;">
             <input type="checkbox" id="temp55" name="" role="switch" />

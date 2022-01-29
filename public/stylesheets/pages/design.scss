@@ -40,7 +40,7 @@
 .design-article-checklist {@include reset-list;margin:1.5rem 0 2rem;}
 .design-article-checklist li {}
 .design-article-checklist li + li {margin-top: .25rem;}
-.design-article-checklist li i {margin:0 .5rem 0 0;position:absolute;left:0;top:12px;}
+.design-article-checklist li i {margin:0 var(--space-small) 0 0;position:absolute;left:0;top:8px;}
 .design-article-title + .design-article-description {margin-top:0;}
 // .design-article-description + .design-article-description {margin-top:-1rem;}
 .design-article-more {display:flex;align-items:center;font-size:var(--font-size-caption);color:var(--color-primary);font-weight:var(--font-weight-bold);position:absolute;right:0;top:0;}
