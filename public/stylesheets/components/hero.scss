@@ -2,7 +2,7 @@
 .hero-background {@include bleeding;background:inherit;}
 // .hero-eyebrow {display:block;margin:0 0 .25rem 0;font-size:var(--font-size-caption);animation:fadeup .2s cubic-bezier(.455, .03, .515, .955) forwards .4s;opacity:0;}
 .hero-title {@include text-title;}
-.hero-description {margin:0 0 var(--space-after-description) 0;@include text-title;color:#000;}
+.hero-description {margin:0 0 var(--space-after-description) 0;@include text-title;}
 .hero-foot {display:flex;margin:var(--space-after-button) 0 0 0;animation:fadeup .2s cubic-bezier(.455, .03, .515, .955) forwards 1s;}
 .hero-cta {@include button-primary;}
 .hero-detail {@include button-text;margin:0 0 0 var(--space-after-button);}

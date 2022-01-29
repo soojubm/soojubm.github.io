@@ -73,7 +73,7 @@ document.addEventListener('click', closeParentElement)
 document.addEventListener('mouseover', mouseenterElement)
 
 export const DARK_THEME_CLASS = 'theme-dark'
-export const LIGHT_THEME_CLASS = 'theme-light'
+export const LIGHT_THEME_CLASS = ''
 const DARKTHEME_SELECTOR = '.js-darkmode'
 
 // todo darktheme 이벤트전파이슈

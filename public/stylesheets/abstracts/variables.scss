@@ -111,6 +111,11 @@ $transition-fade: opacity 0.15s linear;
   --accent-color: #fff;
   --error-color: #fff;
 
+
+  // todo icon scope
+  --icon-background: var(--gray800);
+  --icon-border-color: var(--gray800);
+
   // dark / light / gray?
   // --gradient: linear-gradient(to bottom, var(--gray1000), rgba(37,45,41,.75), var(--gray800));
   --gradient: linear-gradient(to bottom, var(--gray100), var(--gray800));
@@ -274,12 +279,17 @@ $transition-fade: opacity 0.15s linear;
     --gray100: #343c38; // bg
     --gray200: #4e5351; // divider border
     --gray400: #979d9a; // caption
-    --gray800: #d1d2d3; // heading // 너무 밝아서 잠시
+    // --gray800: #d1d2d3; // heading // 너무 밝아서 잠시
 
-    --color-text: var(--gray800);
+
+    --color-text: #d1d2d3;
     --color-text-light: var(--gray400);
     --color-background: #252d29;
     --color-background-gray: var(--gray100);
+
+      // todo icon scope
+    --icon-background: #d1d2d3;
+    --icon-border-color: #d1d2d3;
 
     --border: 1px solid var(--gray100);
     --color-box-border: var(--gray100);
@@ -287,8 +297,6 @@ $transition-fade: opacity 0.15s linear;
     --shadow: 0px 0px 2rem rgba(0, 0, 0, 0.25);
 
     --gradient: linear-gradient(to bottom, var(--gray400), var(--gray800));
-
-    color: var(--gray800);
 
     input[type=checkbox][role=switch] + label::after {background:#fff;}
   }

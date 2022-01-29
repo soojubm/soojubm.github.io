@@ -36,7 +36,7 @@
 
 .tokens {}
 // .tokens-inner {@include group-bleeding;}
-.token-item {min-height:var(--size-large);overflow:hidden;@include tile-flat-small;position:relative;}
+.token-item {min-height:var(--size-large);overflow:hidden;@include tile-flat;position:relative;}
 .token-item figure {@include avatar-large;float:left;margin:0 var(--space) 0 0;}
 // .token-item figure:before {content:'';display:block;height:var(--size-huge);background:var(--gray100);position:absolute;left:0;right:0;top:0;bottom:0;z-index:-1;}
 .token-item figure:after {content:'';display:block;background:var(--gray100);height: 80px;

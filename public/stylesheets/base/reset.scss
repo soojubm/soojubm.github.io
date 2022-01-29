@@ -28,11 +28,11 @@ pre {}
 
 del {color:var(--color-text-light);} ins {text-decoration:none;}
 
-html {min-width:320px;height:100%;font:16px/1.8 var(--fontstack);color:var(--color-text);-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overscroll-behavior:contain;}
-body {overflow-x:hidden;background:var(--color-background);font-size:.875rem;letter-spacing:-.0125rem;}
+html {min-width:320px;height:100%;overflow-x:hidden;-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overscroll-behavior:contain;}
+body {background:var(--color-background);font:16px/1.8 var(--fontstack);color:var(--color-text);font-size:.875rem;}
 
 // todo 왜 뺐었을가?
-// overflow-x:hidden;
+// overflow-x:hidden;letter-spacing:-.0125rem;
 
 blockquote {margin:2rem 0;padding:0 0 0 var(--space);border-left:4px solid var(--gray200);border-radius:4px 0 0 0;}
 
