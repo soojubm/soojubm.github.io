@@ -151,14 +151,11 @@
             <a route="/design" href="#cart">Cart</a>
             <a route="/design" href="#checkout">Checkout</a>
             <a route="/design" href="#orders">Orders</a>
-            <!-- <a route="/design" href="#event">프로모션(draft)</a> -->
             <a route="/design" href="#cake">Product 2</a>
-            <!-- <a href="#terms">약관</a> -->
           </menu>
         </div>
       </div>
       <a class="navbar-logo" href="/">🐤</a>
-
       <!-- <a class="navbar-search-trigger js-navbar-toggle" href="#">
         <i class="icon-search"></i>
       </a> -->
@@ -171,16 +168,16 @@
             <span class="day"><i class="icon-moon"></i></span>
             <span class="night"><i class="icon-moon"></i></span>
           </figure>
-          <!-- <span class="user-logout-label">어둡게 보기</span> -->
+          <span class="user-logout-label" hidden>어둡게 보기</span>
           <span class="switch" style="margin-left:auto;">
             <input type="checkbox" id="temp55" name="" role="switch" />
             <label for="temp55" style="padding-left:0;opacity:0;"></label>
           </span>
         </button>
-        <!-- <button class="navbar-user-trigger js-navbar-toggle" aria-haspopup="menu" aria-expanded="false">
+        <button class="navbar-user-trigger js-navbar-toggle" aria-haspopup="menu" aria-expanded="false">
           <img src="/public/images/soo.png" alt=""/>
         </button>
-        <div class="navbar-user-menu">
+        <div class="navbar-user-card">
           <a class="user" href="#settings">
             <figure class="user-avatar">
               <img src="/public/images/soo.png" alt="" />
@@ -220,9 +217,8 @@
             <a href="#">Terms of Service</a>
             <small>샘플 유아이 컴포넌트입니다.</small>
           </footer>
-        </div> -->
+        </div>
       </div>
-      <!-- <div class="navbar-user"></div> -->
     </nav>
 
     <!-- <form style="padding:0 var(--grid-margin);">
@@ -234,7 +230,6 @@
         <button class="textfield-clear" hidden=""><i class="icon-x" style="border-color:var(--color-text-light);"></i></button>
       </fieldset>
   </form> -->
-    <!-- <hr /> -->
     <!-- <form action="">
       <input type="checkbox">
       <input type="radio">
@@ -269,7 +264,7 @@
 
     <div id="footer"></div>
 
-    <!-- <div class="footer" style="margin-top:800px;">infinite scroll test</div> -->
+    <!-- <div class="footer">infinite scroll test</div> -->
 
     <aside id="modal"></aside>
 
@@ -330,66 +325,3 @@
     </script>
   </body>
 </html>
-
-<!--
-<div>
-  <div class="js-counter1" data-number="54">54%</div>
-  <div class="js-counter2" data-number="80">80%</div>
-</div>
--->
-
-<!-- <i class="cursor"></i> -->
-<!-- <div class="countdown">
-  <div class="days">
-    <div class="days-value js-days"></div>
-    <div class="days-label">days</div>
-  </div>
-  <div class="hours">
-    <div class="hours-value js-hours"></div>
-    <div class="hours-label">hours</div>
-  </div>
-  <div class="minutes">
-    <div class="minutes-value js-minutes"></div>
-    <div class="minutes-label">minutes</div>
-  </div>
-  <div class="seconds">
-    <div class="seconds-value js-seconds"></div>
-    <div class="seconds-label">seconds</div>
-  </div>
-</div> -->
-
-<!-- <script>
-  var renderTime = function () {
-    var time = new Date();
-    document.querySelector('.clock').textContent = time.toLocaleString(navigator.language || 'en-US', {year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true});
-    // time.toLocaleString(navigator.language || 'en-US', {year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true});
-  };
-  renderTime()
-  setInterval(renderTime, 1000);
-
-  setTimeout(() => {
-    countUp({ selector: '.js-counter' })
-    countUp({ selector: '.js-counter2' })
-  }, 2000)
-
-  function countUp({ selector: selector }) {
-    let element = document.querySelector(selector)
-    if (!element) return
-
-    let number = 0
-    let elementValue = element.dataset.number || element.getAttribute('data-number')
-
-    // if (!element || !elementValue) return
-
-    let interval = setInterval(() => {
-      renderNumber()
-
-      if (number >= elementValue) clearInterval(interval)
-    }, 10)
-
-    function renderNumber() {
-      ++number
-      element.innerHTML = `${number}%`
-    }
-  }
-</script> -->

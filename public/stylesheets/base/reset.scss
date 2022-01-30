@@ -28,8 +28,8 @@ pre {}
 
 del {color:var(--color-text-light);} ins {text-decoration:none;}
 
-html {min-width:320px;height:100%;overflow-x:hidden;-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overscroll-behavior:contain;}
-body {background:var(--color-background);font:16px/1.8 var(--fontstack);color:var(--color-text);font-size:.875rem;}
+html {min-width:320px;height:100%;overflow-x:hidden;font:16px/1.8 var(--fontstack);-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overscroll-behavior:contain;}
+body {background:var(--color-background);color:var(--color-text);font-size:.875rem;}
 
 // todo 왜 뺐었을가?
 // overflow-x:hidden;letter-spacing:-.0125rem;

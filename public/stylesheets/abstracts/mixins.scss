@@ -207,7 +207,7 @@
   font-size: var(--font-size-caption);
   color: var(--color-text);
 }
-@mixin tag-primary {@include tag;background-color:gold;color:#252d29;}
+@mixin tag-primary {@include tag;border-color:gold;background-color:gold;color:var(--gray800);}
 
 @mixin hashtag {
   color: var(--color-text-light);

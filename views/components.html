@@ -86,11 +86,11 @@
 
     <article class="design-article js-observer js-scrollspy-section">
       <h1 class="design-article-title">Avatars</h1>
-      <p class="design-article-description">단독으로 사용하거나 텍스트와 함께 사용하여 콘텐츠의 주목도를 높입니다. (현재의 정의는 일반적인 아바타를 넘어 동일한 형태를 포괄하는 개념에 가까움 medium과 chip을 구분할 필요.)</p>
+      <p class="design-article-description">단독으로 사용하거나 텍스트와 함께 사용하여 콘텐츠의 주목도를 높입니다.</p>
 
       <ul class="design-article-checklist">
+        <li><i class="icon-check"></i> <em>todo</em> 클릭할 수 없음. 따라서 chip의 역할을 하는 아이콘 chip과 명확한 분리가 필요함. pagination item은 chip과 같은 높이를 갖지만 chip이 아님. textfield 내부의 clear 버튼은? 그냥 clear button임. textfield-surfix 로 정의되어야?</li>
         <li><i class="icon-check"></i> 이미지, 텍스트, 아이콘을 포함합니다.</li>
-        <!-- <li><i class="icon-check"></i> design tokens에서 정의한 5가지 사이즈 중 huge, large, medium, small 4가지를 사용합니다.</li> -->
         <!-- <li><i class="icon-check"></i> 아이템 컴포넌트: huge, medium은 디스크립션을 가질 수 있습니다.</li> -->
         <!-- <li><i class="icon-check"></i> 아이템 컴포넌트: card component, page 레벨에서 상대적으로 중요도가 낮은 경우 오른쪽에 배치할 수 있습니다.</li> -->
         <!-- <li><i class="icon-check"></i> 아이템 컴포넌트: 텍스트 말 줄임표 조건 정의. 리스트업 조건 정의.</li> -->
@@ -108,12 +108,13 @@
         <span class="design-article-role-item">아이콘버튼</span>
         <span class="design-article-role-item">유저아바타</span>
       </div> -->
+
       <div class="design-article-anatomy">
         <span class="design-article-anatomy-title tag"><i class="tag-label">anatomy</i></span>
         <span class="design-article-anatomy-item">avatar</span>
         <span class="design-article-anatomy-item is-nested">thumbnail</span>
         <span class="design-article-anatomy-item is-nested">label <small class="is-optional">optional</small></span>
-        <span class="design-article-anatomy-item is-nested">badge <small class="is-optional">optional</small> - unread / new indicator / live</span>
+        <span class="design-article-anatomy-item is-nested">badge <small class="is-optional">optional</small> - unread / new / live</span>
       </div>
 
       <article class="tile-flat-small" style="margin:var(--space-small) 0;">
@@ -132,22 +133,64 @@
           </figure>
         </div>
       </article>
-      <article class="avatarlist" style="display:flex;align-items:center;">
-        <span>Followed by</span>
-        <figure class="design-article-avatar-small" style="margin-left:.5rem;box-shadow: var(--color-background) 0px 0px 0px 2px;">
-          <img src="/public/images/soo.png" alt="">
-        </figure>
-        <figure class="design-article-avatar-small" style="margin-left:-.5rem;box-shadow: var(--color-background) 0px 0px 0px 2px;">
-          <img src="/public/images/soo.png" alt="">
-        </figure>
-        <figure class="design-article-avatar-small" style="margin-left:-.5rem;box-shadow: var(--color-background) 0px 0px 0px 2px;">
-          <img src="/public/images/soo.png" alt="">
-        </figure>
-        <figure class="design-article-avatar-small" style="margin-left:-.5rem;box-shadow: var(--color-background) 0px 0px 0px 2px;">
-          <img src="/public/images/soo.png" alt="">
-        </figure>
-        <span style="margin:0 0 0 var(--space-small);">수줍이 외 4명</span>
-      </article>
+
+      <section class="design-article-tile">
+        <h6 class="heading-label">avatar stack</h6>
+        <article class="avatarlist" style="display:flex;align-items:center;">
+          <span>Followed by</span>
+          <figure class="design-article-avatar-small" style="margin-left:.5rem;box-shadow: var(--color-background) 0px 0px 0px 2px;">
+            <img src="/public/images/soo.png" alt="">
+          </figure>
+          <figure class="design-article-avatar-small" style="margin-left:-.5rem;box-shadow: var(--color-background) 0px 0px 0px 2px;">
+            <img src="/public/images/soo.png" alt="">
+          </figure>
+          <figure class="design-article-avatar-small" style="margin-left:-.5rem;box-shadow: var(--color-background) 0px 0px 0px 2px;">
+            <img src="/public/images/soo.png" alt="">
+          </figure>
+          <figure class="design-article-avatar-small" style="margin-left:-.5rem;box-shadow: var(--color-background) 0px 0px 0px 2px;">
+            <img src="/public/images/soo.png" alt="">
+          </figure>
+          <span style="margin:0 0 0 var(--space-small);">수줍이 외 4명</span>
+        </article>
+      </section>
+
+      <section class="design-article-tile">
+        <h6 class="heading-label">Entry</h6>
+        <a class="tile-flat user" href="#components">
+          <figure class="user-avatar">
+            <img src="/public/images/soo.png" alt="" />
+            <div class="user-avatar-change"></div>
+          </figure>
+          <h2 class="user-name">soojubm</h2>
+          <div class="user-email">soojubm@gamil.com</div>
+          <div class="user-myinfo">내 프로필 관리</div>
+        </a>
+
+        <article class="item tile-flat" data-size="huge">
+          <figure class="item-avatar">
+            <span class="avatar-badge"></span>
+          </figure>
+          <h3 style="font-size:var(--font-size-subhead);font-weight:var(--font-weight-bold);">huge</h3>
+          <p style="color:var(--color-text-light);">huge는 디스크립션을 갖습니다.</p>
+        </article>
+        <article class="item tile-flat" data-size="large">
+          <figure class="item-avatar"></figure>
+          <h3 style="font-weight:var(--font-weight-bold);font-size:var(--font-size-body);">large</h3>
+          <p style="color:var(--color-text-light);">large는 디스크립션을 갖습니다.</p>
+        </article>
+        <article class="item tile-flat" data-size="medium">
+          <figure class="item-avatar"></figure>
+          <p style="display:block;width:calc(100% - 32px - 1rem);height:32px;line-height:32px;">medium</p>
+        </article>
+        <article class="item tile-flat" data-size="small">
+          <figure class="item-avatar"></figure>
+          <p style="width:calc(100% - 24px - .5rem);height:24px;line-height:24px;">small</p>
+        </article>
+        <aside class="design-article-helper">
+          <p>tile 내부에서 사용합니다.</p>
+        </aside>
+      </section>
+
     </article>
 
     <article class="design-article js-observer js-scrollspy-section">

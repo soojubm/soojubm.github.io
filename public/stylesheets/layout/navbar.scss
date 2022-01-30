@@ -1,4 +1,4 @@
-.navbar {display:flex;padding:var(--space) var(--grid-margin);box-sizing:border-box;overflow:hidden;background:var(--color-background);position:sticky;top:0;z-index:var(--zindex-navigation);}
+.navbar {display:flex;padding:var(--space) var(--grid-margin);box-sizing:border-box;background:var(--color-background);position:sticky;top:0;z-index:var(--zindex-navigation);}
 .navbar-logo {@include avatar-medium;background-color:var(--green800);border-radius:50%;}
 .navbar-burger {@include chip;margin:0 var(--space-small) 0 0;z-index:calc(var(--zindex-navigation) + 1);}
 .navbar-menu {display:flex;align-items:center;margin:-2px 0 0 var(--space);position:relative;z-index:var(--zindex-navigation);}
@@ -83,8 +83,8 @@
 // todo--
 .navbar-user-trigger-avatar:hover {@include hover-button;}
 
-.navbar-user-menu {width:var(--width-tiny);height:0;@include tile-elevated;position:absolute;top:32px;right:0;z-index:var(--zindex-popover);transform:scale(0);}
-.is-active + .navbar-user-menu {height:auto;transform:scale(1);}
+.navbar-user-card {width:var(--width-tiny);height:0;@include tile-elevated;position:absolute;top:32px;right:0;z-index:var(--zindex-popover);transform:scale(0);}
+.is-active + .navbar-user-card {height:auto;transform:scale(1);}
 
 .user {display:block;color:var(--color-text);position:relative;z-index:var(--zindex-default);@include clearfix;}
 .user:hover {@include hover-item;}

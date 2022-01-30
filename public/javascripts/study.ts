@@ -430,3 +430,73 @@ textboxEle.addEventListener('keypress', function(e) {
 // })
 //   .then(res => res.json())
 //   .then(json => console.log(JSON.stringify(json.data, null, 2)))
+
+// <div>
+//   <div class="js-counter1" data-number="54">54%</div>
+//   <div class="js-counter2" data-number="80">80%</div>
+// </div>
+
+// <i class="cursor"></i>
+
+// <div class="countdown">
+//   <div class="days">
+//     <div class="days-value js-days"></div>
+//     <div class="days-label">days</div>
+//   </div>
+//   <div class="hours">
+//     <div class="hours-value js-hours"></div>
+//     <div class="hours-label">hours</div>
+//   </div>
+//   <div class="minutes">
+//     <div class="minutes-value js-minutes"></div>
+//     <div class="minutes-label">minutes</div>
+//   </div>
+//   <div class="seconds">
+//     <div class="seconds-value js-seconds"></div>
+//     <div class="seconds-label">seconds</div>
+//   </div>
+// </div>
+
+var renderTime = function() {
+  var time = new Date()
+  document.querySelector('.clock')?.textContent = time.toLocaleString(navigator.language || 'en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    hour: 'numeric',
+    minute: 'numeric',
+    second: 'numeric',
+    hour12: true,
+  })
+  // time.toLocaleString(navigator.language || 'en-US', {year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true});
+}
+renderTime()
+setInterval(renderTime, 1000)
+
+setTimeout(() => {
+  countUp({ selector: '.js-counter' })
+  countUp({ selector: '.js-counter2' })
+}, 2000)
+
+function countUp({ selector: selector }) {
+  let element = document.querySelector(selector)
+  if (!element) return
+
+  let number = 0
+  let elementValue = element.dataset.number || element.getAttribute('data-number')
+
+  // if (!element || !elementValue) return
+
+  let interval = setInterval(() => {
+    renderNumber()
+
+    if (number >= elementValue) clearInterval(interval)
+  }, 10)
+
+  function renderNumber() {
+    ++number
+    element.innerHTML = `${number}%`
+  }
+}
+
+//////
