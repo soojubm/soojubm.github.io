@@ -1,9 +1,6 @@
 
 .design {}
 
-.design-head {overflow:hidden;background:var(--color-primary);position:fixed;left:0;right:0;top:0;bottom:0;z-index:-1;transform:translateX(-50%);transition:transform .8s $bezier-base .4s;}
-.design-head.is-scrolled {transform:translateX(-50%);transition:transform .8s $bezier-base .4s;}
-
 // todo overflow;
 .design-article {max-width:560px;margin:0 auto;padding:6rem var(--grid-margin);overflow:hidden;position:relative;}
 .design-article-title {margin:0 0 var(--space-after-subhead) 0;@include text-subhead;}

@@ -8,7 +8,7 @@
   <section class="hero component-hero" role="banner">
     <div class="hero-background component-hero-background"></div>
     <h1 class="hero-title component-hero-title" style="font-family:'DunkelSans';color:var(--green800);">컴포넌트,</h1>
-    <h1 class="hero-title component-hero-title" style="font-family:'DunkelSans';margin:var(--space-small) 0 0 0;">역할과 형태.</h1>
+    <h1 class="hero-title component-hero-title" style="font-family:'DunkelSans';margin:var(--space-small) 0 0 0;">역할과 형태. 역할 기반의 컴포넌트.</h1>
     <!-- <p class="hero-description component-hero-description"></p> -->
     <!-- <p class="design-article-description">
       tokens: size/color/space/font/border/shadow/radius<br />
@@ -195,7 +195,7 @@
 
     <article class="design-article js-observer js-scrollspy-section">
       <h1 class="design-article-title">Buttons</h1>
-      <p class="design-article-description">사용자와 서비스 사이의 핵심적인 상호작용입니다.</p>
+      <p class="design-article-description">사용자와 서비스 간 핵심적인 상호작용입니다.</p>
       <ul class="design-article-checklist">
         <!-- <p><span><i></i></span> 크기가 다른 버튼을 함께 사용하지 않습니다. (버튼 그룹)</p> -->
         <!-- <li><i class="icon-check"></i> 아이콘 버튼의 아이콘은 관습적인 메타포를 사용하세요.</li> -->
@@ -389,7 +389,7 @@
           <div class="chip-group">
             <div class="dropdown">
               <button class="dropdown-trigger js-toggle" aria-expanded="true">
-                <span class="dropdown-trigger-label">드롭다운/풀다운</span>
+                <span class="dropdown-trigger-label">메뉴</span>
                 <figure class="dropdown-trigger-icon"><i class="icon-caret"></i></figure>
               </button>
               <menu class="dropdown-menu" role="menu">
@@ -405,7 +405,7 @@
             </div>
             <div class="dropdown">
               <button class="dropdown-trigger js-toggle" aria-expanded="true">
-                <span class="dropdown-trigger-label">일행 당 인원 수</span>
+                <span class="dropdown-trigger-label" title="일행 당 인원 수">필터</span>
                 <figure class="dropdown-trigger-icon"><i class="icon-caret"></i></figure>
               </button>
               <menu class="dropdown-menu" role="menu" style="padding:.75rem;">
@@ -790,6 +790,11 @@
       <div class="design-article-description">
         <b>external link</b>
         a target="_blank" rel="noopener noreferrer"
+      </div>
+
+      <div class="design-article-description">
+        <span class="tag">@mixin link-outer</span>
+        <span class="tag">@mixin link-inner</span>
       </div>
 
       <ul class="design-article-checklist">
