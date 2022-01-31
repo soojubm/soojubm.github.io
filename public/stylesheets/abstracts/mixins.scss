@@ -169,7 +169,7 @@
 @mixin position-right-top {position:absolute;right:var(--space-inset);top:var(--space-inset);}
 @mixin position-center {position:absolute;left:50%;transform:translateX(-50%);}
 @mixin position-center-center {position:absolute;left:50%;top:50%;transform:translate(-50%, -50%)}
-@mixin position-bottom {position:fixed;left:0;right:0;bottom:0;z-index:var(--zindex-navigation);}
+@mixin position-bottom {position:fixed;left:0;right:0;bottom:0;z-index:var(--zindex-menu);}
 @mixin reset-position {
   position: relative;
   left: auto;

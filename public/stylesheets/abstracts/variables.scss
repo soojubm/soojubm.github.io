@@ -227,16 +227,17 @@ $transition-fade: opacity 0.15s linear;
   --zindex-menu: 2;
   --zindex-dropdown: 2;
 
-  --zindex-navigation: 4; // !
   --zindex-sticky: 4;
   --zindex-fixed: 4;
 
   --zindex-modal-dim: 6; // !
   --zindex-modal: 7; // !
+
+  --zindex-floating: null;
   --zindex-toast: 9; // !
 
+  --zindex-menu: 8;
   --zindex-bottombar: 8;
-  --zindex-floating: null;
   --zindex-loader: 10;
 
 

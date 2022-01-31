@@ -9,7 +9,7 @@
 .post-head-progress {display:none;height:4px;background:var(--color-primary);position:absolute;bottom:0;}
 
 // .is-sticky-post-head .post {padding-top:110px;}
-.is-sticky-post-head .post-head {background:var(--color-background);box-shadow:var(--shadow);text-align:left;position:fixed;left:0;right:0;top:0;z-index:var(--zindex-navigation);}
+.is-sticky-post-head .post-head {background:var(--color-background);box-shadow:var(--shadow);text-align:left;position:fixed;left:0;right:0;top:0;z-index:var(--zindex-menu);}
 .is-sticky-post-head .post-head-category {display:none;}
 // todo + border-width + space
 .is-sticky-post-head .post-head-headline {padding:var(--space) var(--grid-margin) 1rem;box-sizing:border-box;font-size:var(--font-size-subhead);line-height:32px;text-align:center;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;}

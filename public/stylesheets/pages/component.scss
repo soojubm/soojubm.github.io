@@ -1,7 +1,7 @@
 
 .component {}
 .component-hero {}
-.component-navigation {background:var(--color-background);padding-left:var(--grid-margin);position:sticky;top:calc(var(--titlebar-height) - .25rem);z-index:6;}
+.component-navigation {background:var(--color-background);padding-left:var(--grid-margin);position:sticky;top:calc(var(--titlebar-height) - .5rem);z-index:7;}
 // .component-navigation-background {@include bleeding;border-bottom:var(--border);}
 .component-navigation-scroll {@include chip-group;@include group-bleeding;flex-wrap:unset;margin:0 -5%;padding:var(--space) 5%;}
 .component-navigation-scroll > * {min-width:auto;} // todo
