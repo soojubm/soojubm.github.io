@@ -137,7 +137,7 @@ $transition-fade: opacity 0.15s linear;
   --size-small: 1.5rem; // 24px
   --size-tiny: 1rem; // 1rem
 
-  --space: .75rem;
+  --space: 1rem;
   --space-minus: calc(var(--space) * -1);
 
   --space-small: .5rem;
@@ -176,8 +176,8 @@ $transition-fade: opacity 0.15s linear;
 
 
   // todo, position
-  --space-tile-inset: 1rem;
-  --space-tile-inset-small: .5rem;
+  --space-tile-inset: var(--space);
+  --space-tile-inset-small: var(--space-small);
 
   --space-inset-head: 2rem;
 

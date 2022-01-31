@@ -1,7 +1,7 @@
 <main class="post">
   <header class="post-head js-post-head">
     <a class="post-head-category" href="#post">Murmur</a>
-    <h2 class="post-head-headline">포스트 페이지 샘플 본문 텍스트는 최소 16px</h2>
+    <h2 class="post-head-headline">콘텐츠 타이틀</h2>
     <time class="post-head-dateline">2018. 06. 29.</time>
     <i class="icon-bullet"></i>
     <span class="post-head-readingtime">약 40초 분량</span>
@@ -17,7 +17,8 @@
       <figcaption class="post-body-caption"></figcaption>
     </figure>
     <p class="post-body-kicker">
-      구조와 표현, 행동을 엄격하게 분리합니다. <span class="linebreak">하나의 엘리먼트는 하나의 시멘틱한 클래스를 가집니다. 형태가 같다고 하여 같은 클래스를 사용하지 않습니다.</span>
+      구조와 표현, 행동을 엄격하게 분리합니다.
+      <span class="linebreak">하나의 엘리먼트는 하나의 시멘틱한 클래스를 가집니다. 형태가 같다고 하여 같은 클래스를 사용하지 않습니다.</span>
     </p>
 
     <p class="post-body-paragraph">
@@ -95,7 +96,7 @@
       const bodySection = body.querySelector('section');
     </code>
     <p class="post-body-paragraph">스크립팅 클래스는 js- 접두어를 사용하여 합니다.</p>
-    <!-- <p class="post-body-paragraph">포스트를 수정하고 삭제하기 위한 버튼이 필요하다. 신고를 위한 버튼은 처음부터 필요한 기능은 아니기 때문에 뺀다. 작성자에게만 필요한 버튼은 포스트 내부가 아닌 브라우저의 구석에 눈에 띄게 배치한다.</p>
+    <!-- <p class="post-body-paragraph">포스트를 수정하고 삭제하기 위한 버튼이 필요하다. 신고를 위한 버튼은 처음부터 필요한 기능은 아니기 때문에 뺀다. 작성자에게만 필요한 버튼은 콘텐츠 내부가 아닌 브라우저의 구석에 눈에 띄게 배치한다.</p>
 		<ol class="post-body-paragraph" type="1">
 			<li>문단을 구분하는 들여쓰기는 개행을 사용한다.</li>
 			<li>본문은 왼끝 맞추기(오른끝 흘리기)를 적용한다.</li>
@@ -110,8 +111,6 @@
     <a class="post-hashtag-item"><span class="post-hashtag-item-label chip-label">#accessibility</span></a>
     <a class="post-hashtag-item"><span class="post-hashtag-item-label chip-label">#typography</span></a>
   </section>
-
-
 
   <aside class="post-attract">
     <div class="post-attract-blur"></div>
@@ -185,31 +184,36 @@
 <nav class="post-pagination">
   <a class="post-pagination-previous" href="#">
     <figure class="post-pagination-previous-media"><i class="icon-arrow is-left"></i></figure>
-    <h6 class="post-pagination-previous-label" title="prev article">이전 포스트</h6>
+    <h6 class="post-pagination-previous-label" title="prev article">이전 콘텐츠</h6>
     <span class="post-pagination-previous-postname">Return to all articles</span>
   </a>
   <a class="post-pagination-next" href="#">
     <figure class="post-pagination-next-media"><i class="icon-arrow"></i></figure>
-    <h6 class="post-pagination-next-label">다음 포스트</h6>
+    <h6 class="post-pagination-next-label">다음 콘텐츠</h6>
     <span class="post-pagination-next-postname">Avoid invisible text during font loading</span>
   </a>
 </nav>
 
-<div class="post-relation">
-  <h2 class="post-relation-title">관련된 콘텐츠</h2>
-  <!-- <article class="postitem">
+<!-- <div class="post-relation">
+  <h2 class="post-relation-title">이 콘텐츠를 본 사람들은</h2>
+  <article class="postitem">
     <figure class="postitem-cover">
       <img src="" alt="">
     </figure>
-    <h3 class="postitem-name">모바일용 포스트 제목</h3>
+    <h3 class="postitem-name">모바일용 콘텐츠 제목</h3>
     <p class="postitem-description">구글 최고의 혁신 전문가가 찾아낸 비즈니스 설계와 검증의 방법론</ㅔ>
     <tiem class="postitem-time">2021. 06. 18</tiem>
-      <!-- <p class="postitem-byline">${item.author || '정보가 없습니다'}</p> -->
-    <time class="postitem-publishedyear"></time>
-    <div>
-      <span>test</span>
-      <span>test</span>
-      <span>test</span>
-    </div>
-  </article> -->
-</div>
+    <p class="postitem-byline" hidden>${item.author || '정보가 없습니다'}</p>
+    <time class="postitem-publishedyear" hidden></time>
+  </article>
+  <article class="postitem">
+    <figure class="postitem-cover">
+      <img src="" alt="">
+    </figure>
+    <h3 class="postitem-name">모바일용 콘텐츠 제목</h3>
+    <p class="postitem-description">구글 최고의 혁신 전문가가 찾아낸 비즈니스 설계와 검증의 방법론</ㅔ>
+    <tiem class="postitem-time">2021. 06. 18</tiem>
+    <p class="postitem-byline" hidden>${item.author || '정보가 없습니다'}</p>
+    <time class="postitem-publishedyear" hidden></time>
+  </article>
+</div> -->

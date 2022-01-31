@@ -51,7 +51,6 @@
   box-sizing: border-box;
   border-top-left-radius: 0;}
 
-.token-item + .token-item {margin:var(--space-small) 0 0 0;}
 .token-item-avatar {height:var(--size-large);width:100%;border-radius:var(--radius);background:var(--gray100);}
 .token-item-name {margin:0 0 var(--space-small) 0;font-size:var(--body);font-weight:var(--font-weight-bold);}
 .token-item-description {line-height:var(--font-line-height-small);}

@@ -51,14 +51,14 @@
   <nav class="component-navigation">
     <div class="component-navigation-background"></div>
     <div class="component-navigation-scroll">
-      <a class="chip is-active js-scrollspy-trigger" href="#"><span class="chip-label">Avatars</span></a>
-      <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Buttons</span></a>
-      <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Chips</span></a>
-      <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Tags</span></a>
-      <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Tiles</span></a>
-      <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Tiles</span></a>
-      <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Tiles</span></a>
-      <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Tiles</span></a>
+      <a class="chip is-active js-scrollspy-trigger" href="#"><span class="chip-label">Palette</span></a>
+      <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Sizing</span></a>
+      <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Typography</span></a>
+      <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Layouts</span></a>
+      <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Spacing</span></a>
+      <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">z-index</span></a>
+      <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Timing</span></a>
+      <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Signifier</span></a>
     </div>
   </nav>
 
@@ -89,7 +89,7 @@
       <h1 class="design-article-title">Palette</h1>
       <p class="design-article-description">컬러(background/border/text/state)와 표면surface(shadow/radius)을 정의합니다.</p>
       <ul class="design-article-checklist">
-        <li><i class="icon-check"></i>다크테마를 위한 인버트 컬러셋을 추가로 정의하지 않습니다. (todo 테마와 무관한 컬러셋 토큰. 다크테마를 위한 gradient.)</li>
+        <li><i class="icon-check"></i>다크테마를 위한 인버트 컬러셋을 추가로 정의하지 않습니다.</li>
       </ul>
 
       <button class="user-logout js-darkmode2" title="change theme" style="background:var(--color-background);border-radius:var(--radius);box-shadow:var(--shadow);padding:.5rem;border:var(--border);">
@@ -117,7 +117,7 @@
           <h3 class="token-item-name">--radius:4px</h3>
         </article>
         <aside class="design-article-helper" style="margin-top:-.25rem;margin-bottom:.5rem;">
-          <p>하나의 모서리 토큰이면 충분합니다. 크기와 비례해서 radius의 밸런스를 조절이 필요하지만 경량화가 중요한 스테이지입니다.</p>
+          <p>크기와 비례해서 radius 조절이 필요하지만 경량화가 중요한 스테이지입니다.</p>
         </aside>
       </div>
 
@@ -214,6 +214,19 @@
 
       <br />
 
+      <h2 class="heading-label" title="Surface or Elevation">Gradient</h2>
+      <div class="">
+        <article class="token-item is-elevation">
+          <figure class="size-"></figure>
+          <h3 class="token-item-name">--color-gradient:var(--gradient);</h3>
+          <div style="margin-left:calc(var(--size-large) + var(--space));font-size:var(--font-size-caption);">
+            <p>--darktheme-color-gradient: null;</p>
+          </div>
+        </article>
+      </div>
+
+      <br />
+
       <h2 class="heading-label" title="Surface or Elevation">Elevation</h2>
       <div class="">
         <article class="token-item is-elevation">
@@ -226,7 +239,9 @@
           </div>
         </article>
       </div>
+
       <br />
+
       <h2 class="heading-label">Skeleton</h2>
       <div class="">
         <article class="token-item">
@@ -336,14 +351,14 @@
 
     <article class="design-article typography js-scrollspy-section">
       <h1 class="design-article-title">Typography</h1>
-      <p class="design-article-description">콘텐츠 계층 구조를 위해 텍스트를 정의합니다.</p>
+      <p class="design-article-description">콘텐츠 계층 구조를 정의합니다. todo</p>
       <ul class="design-article-checklist">
         <li><i class="icon-check"></i>단어와 구문을 underline, bold, primary color로 강조하지 않습니다.</li>
-        <li><i class="icon-check"></i>불릿, 괄호, 쉼표 등으로 텍스트를 분류 않습니다. 디자인되지 않았다는 인상을 주기 때문입니다.</li>
-        <li><i class="icon-check"></i>태그라인은 작은 화면에서도 임팩트를 줄 있도록 작성 단계에서 행갈이(개행?)를 고려합니다. 상대적으로 깨기 쉬운 법칙입니다. (todo: 글자 및 단어를 제한하고 개행 조건 정의)</li>
+        <!-- <li><i class="icon-check"></i>불릿, 괄호, 쉼표 등으로 텍스트를 분류 않습니다. 디자인되지 않았다는 인상을 주기 때문입니다.</li> -->
+        <!-- <li><i class="icon-check"></i>태그라인은 작은 화면에서도 임팩트를 줄 있도록 작성 단계에서 행갈이(개행?)를 고려합니다. 상대적으로 깨기 쉬운 법칙입니다. (todo: 글자 및 단어를 제한하고 개행 조건 정의)</li> -->
         <li><i class="icon-check"></i>bottom navigation의 label 텍스트 크기는 예외적으로 10px입니다.</li>
       </ul>
-      <!-- <li>asap의 dash를 마이너스로 쓰면 어색. 무게가 살짝 다름. role에 따라 구분하자. caption, helper 등 같은 값을 가지는 텍스트로 따로 모듈화하는 것이 좋겠다. letter-spacing은 크기마다 다르게 적용하시요</li> -->
+      <!-- <li> letter-spacing은 크기마다 다르게 적용하시요</li> -->
       <button class="user-logout tile-elevated-small js-default-font" title="change theme">
         <figure class="user-logout-icon">icon</figure>
         <span class="user-logout-label">시스템 폰트로 보기</span>
@@ -378,9 +393,9 @@
         <p><b>--font-line-height-small: 1.4;</b></p>
       </div>
 
-      <br />
+      <!-- <br /> -->
 
-      <h6 class="heading-label">Levels</h6>
+      <!-- <h6 class="heading-label">Levels</h6>
       <p>long-form content는 항상 2줄에서 truncate.</p>
       <div class="tile-flat" style="font-size:var(--font-size-caption);">
         <p><b>heading levels</b></p>
@@ -392,7 +407,7 @@
         <br />
         <p>@mixin truncate {}</p>
         <p>@mixin truncate-multiple {}</p>
-      </div>
+      </div> -->
 
       <br />
 
@@ -405,17 +420,24 @@
           </figure> -->
           <h3 class="token-item-name">--font-size-huge: 3rem</h3>
           <div style="font-size:var(--font-size-caption);">
-            <p>@mixin text-display {} // 프로모션 페이지의 헤드라인에 한정.</p>
+            <p>@mixin text-display {}</p>
           </div>
         </div>
+        <aside class="design-article-helper" style="margin-top:-.25rem;margin-bottom:.5rem;">
+          <p>프로모션 페이지의 헤드라인으로 제한적으로 사용합니다.</p>
+        </aside>
+
+        <aside>
+         
+        </aside>
   
         <div class="token-item">
           <!-- <figure class="token-item-avatar" style="float:none;justify-content:flex-start;width:100%;height:auto;margin:0 0 var(--space-small) 0;padding:var(--space-small) var(--space);line-height:1;">
             <span style="font-size:var(--font-size-title);">선약이 있어서</span>
           </figure> -->
-          <h3 class="token-item-name">--font-size-large: 2rem;</h3>
+          <h3 class="token-item-name">--font-size-large: 2rem</h3>
           <div style="font-size:var(--font-size-caption);">
-            <p>@mixin text-pagetitle {line-height:var(--font-line-height-small);}</p>
+            <p>@mixin text-title {line-height:var(--font-line-height-small);}</p>
           </div>
         </div>
 
@@ -423,7 +445,7 @@
           <!-- <figure class="token-item-avatar" style="float:none;justify-content:flex-start;width:100%;height:auto;margin:0 0 var(--space-small) 0;padding:var(--space-small) var(--space);line-height:1;">
             <span style="font-size:var(--font-size-subhead);">선약이 있어서</span>
           </figure> -->
-          <h3 class="token-item-name">--font-size-medium: 1.125rem;</h3>
+          <h3 class="token-item-name">--font-size-medium: 1.125rem</h3>
           <div style="font-size:var(--font-size-caption);">
             <p>@mixin text-subhead {} // for article level</p>
             <p>@mixin text-body-large {}</p>
@@ -449,17 +471,15 @@
           </figure> -->
           <h3 class="token-item-name">--font-size-tiny: .75rem;</h3>
           <div style="font-size:var(--font-size-caption);">
-            <p>@mixin text-lable {font-size:var(--font-size-tiny);color:var(--color-text-light)}</p>
-            <p>@mixin text-helper {font-size:var(--font-size-tiny);}</p>
-            <p>@mixin text-helper-validity {font-size:var(--font-size-tiny);color:var(--color-danger)}</p>
+            <p>@mixin text-lable {font-size:var(--font-size-tiny);color:var(--color-text-light);}</p>
+            <p>@mixin text-helper {}</p>
+            <p>@mixin text-helper-validity {@include text-helper;color:var(--color-danger)}</p>
             <p>도움말 맥락</p>
           </div>
         </div>
       </div>
     </article>
 
-
-    
 
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Layouts</h1>
@@ -549,6 +569,31 @@
       <h1 class="design-article-title">Spacing</h1>
       <p class="design-article-description">작성 중.</p>
 
+      <div class="tile-flat">
+        <div style="margin:0 0 var(--space-small) 0;"><b>--space: 1rem</b></div>
+        <div style="font-size:var(--font-size-tiny);">
+          <p>--space-after-subhead</p>
+          <p>--space-tile-inset</p>
+          <p>--grid-gutter</p>
+        </div>
+      </div>
+
+      <div class="tile-flat">
+        <div style="margin:0 0 var(--space-small) 0;"><b>--space-small: .5rem</b></div>
+        <div style="font-size:var(--font-size-tiny);">
+          <p>--space-tile-small-inset // --inset-tile-small</p>
+        </div>
+      </div>
+
+      <div class="tile-flat">
+        <div style="margin:0 0 var(--space-small) 0;"><b>ETC</b></div>
+        <div style="font-size:var(--font-size-tiny);">
+          <p>--space-between-article</p>
+          <p>--space-between-section</p>
+          <p style="color:var(--color-text-light);">inset, outset 구분이 필요.</p>
+        </div>
+      </div>
+
       <h6 class="heading-label">grid</h6>
       <div class="tile-flat" style="display:flex;align-items:center;width:100%;height:10rem;text-align:center;font-size:var(--font-size-caption);padding:0;position:relative;">
         <div class="space" style="width:var(--grid-margin);writing-mode: vertical-rl"><span class="">var(--grid-margin)</span></div>
@@ -583,21 +628,6 @@
       <h6 class="heading-label">Item</h6>
       <!-- todo 전체가 클릭영역인 경우가 있고 버튼을 포함하는 경우가 있음. -->
       <div>
-        <article class="item tile-flat" data-size="huge" style="margin:0;">
-          <figure class="item-avatar">
-            <span class="avatar-badge"></span>
-          </figure>
-          <!-- <div style="width:var(--space-after-avatar-huge);height:var(--size-huge);background:var(--green800);border-radius:4px;position:absolute;left:calc(var(--size-huge) + var(--space-small));"></div> -->
-          <h3 style="font-size:var(--font-size-subhead);font-weight:var(--font-weight-bold);">huge</h3>
-          <p style="color:var(--color-text-light);">huge와 large는 디스크립션을 가집니다.</p>
-        </article>
-        <div class="space" style="height:var(--space);">var(--space-groupitem)</div>
-        <article class="item tile-flat" data-size="large" style="margin:0;">
-          <figure class="item-avatar"></figure>
-          <!-- <div style="width:var(--space-after-avatar-large);height:48px;background:var(--green800);box-sizing:border-box;border-radius:4px;position:absolute;left:calc(var(--size-large) + var(--space-small));"></div> -->
-          <h3 style="font-weight:var(--font-weight-bold);font-size:var(--font-size-body);">large</h3>
-          <p style="color:var(--color-text-light);">huge와 large는 디스크립션을 가집니다.</p>
-        </article>
         <div class="space" style="height:var(--space);">var(--space-groupitem)</div>
         <article class="item tile-flat" data-size="medium" style="margin:0;">
           <figure class="item-avatar"></figure>
@@ -670,7 +700,7 @@
         </div>
       </div>
       <div class="tile-flat" style="margin:var(--space-small) 0;">
-        <div style="margin:0 0 var(--space-small) 0;">
+        <div>
           <b>--z-index-sticky: 7;</b>
         </div>
       </div>
@@ -702,7 +732,7 @@
 
 
     <article class="design-article js-scrollspy-section">
-      <h1 class="design-article-title">기표signifier</h1>
+      <h1 class="design-article-title">Signifier</h1>
       <p class="design-article-description">일관된 기표로 사용자의 인지를 돕습니다.</p>
 
       <ul class="design-article-checklist">
@@ -711,7 +741,7 @@
       </ul>
 
       <h6 class="heading-label">클릭Clickable</h6>
-      <div class="tile-elevated-small"  class="tile-elevated" style="cursor:pointer;">
+      <div class="tile-elevated" style="cursor:pointer;">
         <p style="margin-top:var(--space-leading-subhead);">elevated 오브젝트는 대부분(?) 클릭할 수 있다. 또는 오브젝트 내부에 클릭할 수 있는 요소가 존재한다.</p>
       </div>
       <div class="tile-flat" style="display:block;background:var(--gray100);border-radius:var(--radius);cursor:pointer;">
@@ -747,16 +777,21 @@
         </figure>
         <span class="chip-label">External Link</span>
       </div>
-      
+      <div class="tile-flat">
+        <figure class="chip-thumbnail" style="margin:0 -.25rem 0 0;background:var(--gray100);">
+          <i class="icon-arrow" style="display:inline-block;"></i>
+        </figure>
+        <span class="chip-label">internal Link (ex: view all)</span>
+      </div>
       <div class="tile-flat">
         <figure class="chip-thumbnail" style="margin:0 -.25rem 0 0;background:var(--gray100);">
           <i class="icon-chevron" style="display:inline-block;"></i>
         </figure>
-        <span class="chip-label">internal link(view all)</span>
+        <span class="chip-label">Expanable & Collapsible (vertical)</span>
       </div>
       <div class="tile-flat">
         <figure class="chip-thumbnail" style="margin:0 -.25rem 0 0;background:var(--gray100);"><i class="icon-chevron is-down"></i></figure>
-        <span class="chip-label">Expanable & Collapsible</span>
+        <span class="chip-label">Expanable & Collapsible (horizental)</span>
       </div>
       <div class="tile-flat">
         <figure class="chip-thumbnail" style="margin:0 -.25rem 0 0;background:var(--gray100);">

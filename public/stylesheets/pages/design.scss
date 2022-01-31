@@ -378,10 +378,9 @@
 
 
 .postitem {width:100%;min-height:var(--size-height);@include tile-elevated;}
-.postitem +.postitem {margin:var(--space) 0 0 0;}
 .postitem-cover {@include avatar-huge;float:right;margin:0 0 0 var(--space);}
-.postitem-time {color:var(--color-text-light);}
-.postitem-title {@include text-subhead;}
+.postitem-name {@include text-body;}
+.postitem-time {display:block;color:var(--color-text-light);}
 .postitem-description {margin:var(--space-small) 0 1rem 0;}
 
 
