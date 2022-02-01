@@ -70,7 +70,6 @@ $transition-fade: opacity 0.15s linear;
   --gray400: #979d9a; // caption
   // --gray600: #4e5351;
   --gray800: #343c38; // heading
-  --gray999: #343c38; // 테마와 무관하게 항상 가장 진한 회색
   --green100: rgba(10, 160, 80, 0.1); // previous #ddf5e9;
   --green800: #1b995c;
   // --red100: rgba(243, 68, 97 / 6%);
@@ -137,7 +136,7 @@ $transition-fade: opacity 0.15s linear;
   --size-small: 1.5rem; // 24px
   --size-tiny: 1rem; // 1rem
 
-  --space: 1rem;
+  --space: .75rem;
   --space-minus: calc(var(--space) * -1);
 
   --space-small: .5rem;
@@ -230,8 +229,8 @@ $transition-fade: opacity 0.15s linear;
   --zindex-sticky: 4;
   --zindex-fixed: 4;
 
-  --zindex-modal-dim: 6; // !
-  --zindex-modal: 7; // !
+  --zindex-modal-dim: 8; // !
+  --zindex-modal: 9; // !
 
   --zindex-floating: null;
   --zindex-toast: 9; // !
@@ -243,7 +242,7 @@ $transition-fade: opacity 0.15s linear;
 
   --grid-column: calc(50% - var(--space-small));
   --grid-gutter: 1rem;
-  --grid-margin: 5%;
+  --grid-margin: 5vw;
   --grid-margin-minus: calc(var(--grid-margin) * -1);
 
   --grid-column-small: calc(50% - .125rem);

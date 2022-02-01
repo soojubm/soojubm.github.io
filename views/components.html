@@ -10,16 +10,15 @@
     <h1 class="hero-title component-hero-title" style="font-family:'DunkelSans';color:var(--green800);">컴포넌트,</h1>
     <h1 class="hero-title component-hero-title" style="font-family:'DunkelSans';margin:var(--space-small) 0 0 0;">역할과 형태. 역할 기반의 컴포넌트.</h1>
     <!-- <p class="hero-description component-hero-description"></p> -->
-    <!-- <p class="design-article-description">
+    <p>
       tokens: size/color/space/font/border/shadow/radius<br />
       components(style): avatar/chip/tile/text?/textfield<br />
       patterns(role): label/button/filter/selectbox/dropdown/text input/
-    </p> -->
+    </p>
 
     <br />
 
     <ul class="design-article-checklist">
-      <li><i class="icon-check"></i>보편적인 명칭도 중요하지만 팀의 언어를 정의한다는 맥락으로 접근합니다.</li>
       <li><i class="icon-check"></i>목록을 열거하거나 목록의 가짓수를 쓰지 않습니다.</li>
       <li><i class="icon-check"></i>특정할 수 없는 모호한 표현을 쓰지 않습니다. (ex 상황에 따라, 목적에 맞게)</li>
       <!-- <li><i class="icon-check"></i>예외 케이스를 별도로 정의합니다.</li> -->
@@ -33,10 +32,10 @@
       <a class="hero-cta">공사중입니다</a>
       <a class="hero-detail">자세히 알아보기</a>
     </footer> -->
-    <div class="hero-obj1"></div>
+
+    <!-- <div class="hero-obj1"></div>
     <div class="hero-obj2"></div>
-    <div class="hero-obj3"></div>
-    <img class="hero-obj4" src="/public/images/blob-shape.svg" alt="" />
+    <div class="hero-obj3"></div> -->
   </section>
 
   <nav class="component-navigation">
@@ -168,23 +167,23 @@
           <div class="user-myinfo">내 프로필 관리</div>
         </a>
 
-        <article class="item tile-flat" data-size="huge">
+        <article class="item" data-size="huge">
           <figure class="item-avatar">
             <span class="avatar-badge"></span>
           </figure>
           <h3 style="font-size:var(--font-size-subhead);font-weight:var(--font-weight-bold);">huge</h3>
           <p style="color:var(--color-text-light);">huge는 디스크립션을 갖습니다.</p>
         </article>
-        <article class="item tile-flat" data-size="large">
+        <article class="item" data-size="large">
           <figure class="item-avatar"></figure>
           <h3 style="font-weight:var(--font-weight-bold);font-size:var(--font-size-body);">large</h3>
           <p style="color:var(--color-text-light);">large는 디스크립션을 갖습니다.</p>
         </article>
-        <article class="item tile-flat" data-size="medium">
+        <article class="item" data-size="medium">
           <figure class="item-avatar"></figure>
           <p style="display:block;width:calc(100% - 32px - 1rem);height:32px;line-height:32px;">medium</p>
         </article>
-        <article class="item tile-flat" data-size="small">
+        <article class="item" data-size="small">
           <figure class="item-avatar"></figure>
           <p style="width:calc(100% - 24px - .5rem);height:24px;line-height:24px;">small</p>
         </article>
@@ -197,14 +196,14 @@
 
     <article class="design-article js-observer js-scrollspy-section">
       <h1 class="design-article-title">Buttons</h1>
-      <p class="design-article-description">사용자와 서비스 간 핵심적인 상호작용입니다.</p>
+      <p class="design-article-description">사용자와 서비스의 핵심적인 상호작용입니다.</p>
       <ul class="design-article-checklist">
         <!-- <p><span><i></i></span> 크기가 다른 버튼을 함께 사용하지 않습니다. (버튼 그룹)</p> -->
         <!-- <li><i class="icon-check"></i> 아이콘 버튼의 아이콘은 관습적인 메타포를 사용하세요.</li> -->
         <!-- <p><span><i></i></span> 역할이 명확한 모두보기, 불러오는중, 더보기 등의 버튼은 합성해서 컴포넌트로 관리.</p> -->
         <!-- <li><i class="icon-check"></i> 버튼의 테마와 무관하게 상대 스타일은 모두 같다.</li> -->
         <li><i class="icon-check"></i> 레이블을 생략하지 않습니다.</li>
-        <li><i class="icon-check"></i> 버튼 아래에 가이드 텍스트를 배치하지 않습니다. (text 버튼이 secondary 액션으로 버튼의 아래에 위치하는 패턴 고려).</li>
+        <li><i class="icon-check"></i> 버튼 아래에 가이드 텍스트를 배치하지 않습니다. (secondary 액션의 text 버튼이 아래에 위치하는 패턴 고려).</li>
         <li><i class="icon-check"></i> more load 버튼은 full-width로 사용하지 않습니다. 콘텐츠 너비보다 작게 사용해서 대비를 주세요. </li>
       </ul>
 
@@ -299,7 +298,7 @@
       <p class="design-article-description">버튼에 비해 상대적으로</p>
       <ul class="design-article-checklist">
         <li><i class="icon-check"></i> 맥락이 다른 chip을 그루핑할 수 있습니다. 이 때 단일선택, 다중선택, 삭제여부, 펼침메뉴 등의 기표를 충분히 제공하세요.</li>
-        <li><i class="icon-check"></i> chip group으로 정렬 기능sorting을 제공하지 않습니다. selectbox로 현재 정렬 상태만 요약합니다.</li>
+        <li><i class="icon-check"></i> chip group으로 정렬sorting하지 않습니다. selectbox로 현재 정렬 상태를 요약합니다.</li>
       </ul>
 
       <div class="design-article-anatomy">
@@ -424,7 +423,7 @@
                 </fieldset>
                 <footer style="margin:var(--space-small) 0 0 0;">
                   <!-- <button>옵션 초기화</button> -->
-                  <button class="chip" style="width:100%;"><span class="chip-label">24개 상품 보기</span></button>
+                  <button class="chip" style="width:100%;"><span class="chip-label">적용 / 24개 상품 보기 (airbnb)</span></button>
                 </footer>
               </menu>
             </div>
@@ -566,7 +565,7 @@
 
       <!-- (리액트에서 id  이슈 input in label.) -->
       <ul class="design-article-checklist">
-        <li><i class="icon-check"></i> checkbox와 radio는 항상 세로 정렬합니다.</li>
+        <li><i class="icon-check"></i> checkbox와 radio는 항상 세로 정렬입니다.</li>
         <!-- <li><i class="icon-check"></i> radio는 1개의 옵션을 선택된 상태로 제공하세요.</li> -->
         <!-- <li><i class="icon-check"></i> switch는 기능이나 옵션을 켜고 끄는 뉘앙스 (on/off)</li> -->
         <li><i class="icon-check"></i> 옵션이 6개 이상일 때 selectbox나 chip group을 사용합니다.</li>
@@ -755,7 +754,7 @@
 
     <article class="design-article js-observer js-scrollspy-section">
       <h1 class="design-article-title">Seperator</h1>
-      <p class="design-article-description">콘텐츠를 구획하여 맥락을 전환합니다. 반복되는 패턴이나 컴포넌트의 대비로 구획되었다는 인상을 줄 수 있기 때문에 남용하지 않습니다.</p>
+      <p class="design-article-description">콘텐츠를 구획하여 맥락을 전환합니다. 반복되는 패턴이나 컴포넌트의 대비로 구획되었다는 인상을 주기 때문에 남용하지 않습니다.</p>
       <ul class="design-article-checklist">
         <li><i class="icon-check"></i> 아티클 레벨에서 사용합니다. 섹션 레벨과 페이지 레벨에서는 충분한 여백으로 콘텐츠를 구획합니다.</lip>
         <li><i class="icon-check"></i> border 속성으로 스타일링하지 않습니다. hr 태그를 사용하면 의미론적으로 주제를 분리할 수 있고 컴포넌트의 고유성을 유지할 수 있습니다.</p>
@@ -815,12 +814,13 @@
 
     <article class="design-article js-observer js-scrollspy-section">
       <h1 class="design-article-title">Texts</h1>
-      <p class="design-article-description">텍스트 인터페이스를 모았습니다. 3가지 이상의 대비로 위계를 설정하지 마세요.</p>
+      <p class="design-article-description">텍스트 인터페이스.</p>
         
       <!-- checklist(price card 등에서 사용) 정의. -->
       <ul class="design-article-checklist">
         <li><i class="icon-check"></i> 리스트 태그(ul, ol, dl)는 텍스트 형태의 목록에만 마크업하세요. role=listbox/listitem</li>
-        <li><i class="icon-check"></i> 리스트는 2단계 댑스로 제공하지 마세요.</li>
+        <li><i class="icon-check"></i> 리스트는 2 댑스로 제공하지 않습니다.</li>
+        <li><i class="icon-check"></i> 3가지 이상의 대비로 위계를 설정하지 않습니다.</li>
       </ul>
 
 
@@ -918,7 +918,7 @@
 
     <article class="design-article js-observer js-scrollspy-section js-tab">
       <h1 class="design-article-title">Tab</h1>
-      <p class="design-article-description">동일한 맥락의 콘텐츠를 주제에 맞게 분류합니다.<p>
+      <p class="design-article-description">같은 맥락의 콘텐츠를 주제 별로 분류합니다.<p>
 
       <!-- <aside>
         <p>memo: Chip이 탭의 역할을 많이 가져온 모양새. 탭과 탭바를 구분. iOS는 segmented control이 탭의 역할을 하지만 대체로 페이지 댑스를 깊이 가져가는 패턴.</p>
@@ -1605,7 +1605,7 @@
         <figure class="item-avatar"></figure>
         <h2 class="item-name">Gyeongsoo I</h2>
         <span class="item-description">유아이 디자이너</span>
-        <button class="item-action is-active" style="position:relative;right:3.25rem;top:50%;transform:translateY(-50%);font-weight:var(--font-weight-normal);">팔로잉</button>
+        <button class="item-action is-active" style="right:3.25rem;top:50%;transform:translateY(-50%);font-weight:var(--font-weight-normal);">팔로잉</button>
         <button class="chip" style="background:none;border:none;position:absolute;right:1rem;top:50%;transform:translateY(-50%)"><i class="icon-more"></i></button>
       </div>
 

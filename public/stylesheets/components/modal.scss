@@ -15,7 +15,7 @@
 .modal-head {}
 .modal-head-title {margin:2rem 0 var(--space-after-subhead) 0;@include text-subhead;}
 .modal-body {}
-.modal-body h2 {margin:2rem 0 var(--space) 0;font-size:var(--font-size-body);}
+.modal-body-subhead {margin:2rem 0 var(--space) 0;font-size:var(--font-size-body);}
 .modal-body-description {max-width:560px;margin:var(--space-after-subhead) 0 var(--space-after-description);}
 .modal-body-paragraph {margin:var(--space-after-subhead) 0 var(--space-after-description);}
 .modal-body-image {}

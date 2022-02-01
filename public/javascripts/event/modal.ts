@@ -48,7 +48,6 @@ function modal({ selector: trigger }: Parameter) {
   )
 
   //const isOutside = !event.target.closest('.modal-inner');
-
   async function fetchData(modalTrigger: any) {
     try {
       const modalId = modalTrigger.dataset.modal
@@ -60,7 +59,8 @@ function modal({ selector: trigger }: Parameter) {
 
       modalContainer!.innerHTML = html
       previousActiveElement = document.activeElement
-      pushBrowserHistory({}, '', modalId)
+      // todo
+      // pushBrowserHistory({}, '', ${`modalId`})
 
       // modalContainer?.querySelector('button').focus()
     } catch (error) {}
@@ -76,6 +76,7 @@ function modal({ selector: trigger }: Parameter) {
     document.body.classList.add('is-modal-visible', 'body-lock')
     document.body.style.top = `-${pageYOffset}px`
   }
+
   function closeModal() {
     // cleanup Events
     document.removeEventListener('keydown', checkCloseDialog)

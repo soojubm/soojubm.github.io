@@ -6,6 +6,13 @@
 .component-navigation-scroll {@include chip-group;@include group-bleeding;flex-wrap:unset;margin:0 -5%;padding:var(--space) 5%;}
 .component-navigation-scroll > * {min-width:auto;} // todo
 
+// .component .tile-flat,
+// .component .tile-flat-small,
+// .component .tile-elevated,
+// .component .tile-elevated-small {
+//   margin-left:-.5rem;
+//   margin-right:-.5rem;
+// }
 
 @media (--breakpoint-large) {
   .design {padding:0;}

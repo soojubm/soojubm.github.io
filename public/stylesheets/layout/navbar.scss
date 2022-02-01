@@ -86,7 +86,7 @@
 .navbar-user-card {width:var(--width-tiny);height:0;@include tile-elevated;position:absolute;top:32px;right:0;z-index:var(--zindex-popover);transform:scale(0);}
 .is-active + .navbar-user-card {height:auto;transform:scale(1);}
 
-.user {display:block;color:var(--color-text);position:relative;z-index:var(--zindex-default);@include clearfix;}
+.user {display:block;color:var(--color-text);position:relative;@include clearfix;}
 .user:hover {@include hover-item;}
 .user-avatar {float:right;@include avatar-huge;}
 .user-avatar-change {width:32px;height:32px;border-radius:var(--radius);position:absolute;right:-8px;bottom:-8px;}
