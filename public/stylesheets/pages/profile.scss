@@ -1,6 +1,3 @@
-
-
-
 .profile {@include container-large;max-width:1400px;}
 .profile::after {content:'';display:block;clear:both;}
 
@@ -104,8 +101,12 @@
 .card-cta {@include button-primary;width:100%;margin:2rem 0;}
 .card-foot {display:flex;justify-content:space-between;margin:2rem 0 0;}
 
-.card:hover:not(.has-item) {@include hover-item;}
-.card:hover .card-more {display:block;}
+
+@media (hover: hover) and (pointer: fine) {
+  .card:hover:not(.has-item) {@include hover-item;}
+  .card:hover .card-more {display:block;}
+}
+
 
 // padding.. todo
 .list .card {float:none;width:100% !important;margin-bottom:var(--space);}
