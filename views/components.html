@@ -136,7 +136,7 @@
       </article>
 
       <section class="design-article-tile">
-        <h6 class="heading-label">avatar stack</h6>
+        <h6 class="heading-label">Avatar stack</h6>
         <article class="avatarlist" style="display:flex;align-items:center;">
           <span>Followed by</span>
           <figure class="design-article-avatar-small" style="margin-left:.5rem;box-shadow: var(--color-background) 0px 0px 0px 2px;">
@@ -187,9 +187,9 @@
           <figure class="item-avatar"></figure>
           <p style="width:calc(100% - 24px - .5rem);height:24px;line-height:24px;">small</p>
         </article>
-        <aside class="design-article-helper">
-          <p>tile 내부에서 사용합니다.</p>
-        </aside>
+        <!-- <aside class="design-article-helper">
+          <p>tile 내부에서.</p>
+        </aside> -->
       </section>
 
     </article>
@@ -324,7 +324,7 @@
         <p>안드로이드: chipGroup, HorizontalScrollView, singleLine, action/entry/filter(check active)/choice</p>
       </blockquote> -->
 
-      <div class="tile-elevated-small">
+      <!-- <div class="tile-elevated-small">
         <div class="chip-group" role="group" aria-orientation="horizontal">
           <button class="chip">
             <span class="chip-label">default</span>
@@ -336,7 +336,7 @@
             <span class="chip-label">disabled</span>
           </button>
         </div>
-      </div>
+      </div> -->
 
       <div class="design-article-tile">
         <h6 class="heading-label">Keywords</h6>
@@ -440,7 +440,7 @@
         </div>
       </div>
       <div class="design-article-tile">
-        <h6 class="heading-label">Others- addable/removable, todo: chip-icon의 hover</h6>
+        <h6 class="heading-label">Others- addable/removable, todo: chip-icon의 hover... 결국 chip과 분리된 컴포넌트가 필요함. 역할이 다르기 때문에 괜찮음.</h6>
         <!-- Markup(button vs radio,checkbox) -->
         <div class="tile-flat-small">
           <div class="chip-group" role="group">
@@ -548,13 +548,13 @@
         <li><i class="icon-check"></i>'클릭할 수 있음'의 기표로 elevated 스타일을 사용합니다.  타일 전체가 클릭 영역일 수도, 타일 내부에 클릭 가능한 요소를 포함할 수도 있습니다.</li>
         <li><i class="icon-check"></i>페이지 레벨의 타이틀과 디스크립션을 타일로 만들지 않습니다.</p>
       </ul>
-      <div class="design-tile-flat" style="line-height:var(--font-line-height-small);">
+      <div class="design-tile-flat">
         <b>flat</b> is non clickable. no one.
       </div>
-      <div class="design-outer-elevated" style="margin-top:var(--space);line-height:var(--font-line-height-small);">
+      <div class="design-outer-elevated">
         <b>elevated</b> is clickable. target or children. 
       </div>
-      <div class="design-tile-flat tile-flat-small" style="margin:var(--space) 0 0 0;padding:.5rem;line-height:var(--font-line-height-small);">
+      <div class="design-tile-flat tile-flat-small">
         <b>flat</b>, too. This is small tile.
       </div>
     </article>
@@ -928,7 +928,7 @@
       <ul class="design-article-checklist">
         <li><i class="icon-check"></i> 탭을 중첩하여 플로우를 설계하지 않습니다.</li>
         <li><i class="icon-check"></i> 정렬sorting, 필터링에 사용하지 않습니다.</li>
-        <li><i class="icon-check"></i> 스크롤스파이를 위해 사용하지 않습니다.</li>
+        <li><i class="icon-check"></i> 스크롤스파이 기능을 하지 않습니다.</li>
         <li><i class="icon-check"></i> todo. 글로벌 탐색 패턴으로 햄버거 메뉴와 탭(바텀네비게이션, 탭바)을 함께 사용하지 않습니다.</li>
         <li><i class="icon-check"></i> <del>페이지 링크로 사용하지 않습니다.</del> (todo SPA에서 페이지 링크의 개념이 모호)</li>
       </ul>
@@ -1201,7 +1201,6 @@
         <div><small role="" style="display:block;margin:var(--space) 0 0;text-align:center;">숙소 300개 이상 중 281 – 300</small>
       </div>
 
-        
       <div class="design-article-tile">
         <h6 class="heading-label">Type 2</h6>
         <nav class="pagination2">
@@ -1218,9 +1217,6 @@
     <article class="design-article js-observer js-scrollspy-section">
       <h1 class="design-article-title">Table</h1>
       <p class="design-article-description">표.</p>
-      <!-- <div class="design-article-description">
-        <p>layout으로 사용하지 않습니다.</p>
-      </div>  -->
       <table>
         <caption>히라가나 오십음도</caption>
         <!-- <colgroup>
@@ -1254,7 +1250,6 @@
             <td class="right">9,600</td>
           </tr>
           <tr>
-            <!-- <td><input type="checkbox"><label for=""></label></td> -->
             <td>わ</td>
             <td>ゐ wi</td>
             <td>-</td>
@@ -1282,21 +1277,16 @@
           </tr>
         </tbody>
       </table>
-      <!-- <div role="rowgroup">
-        <div class="row is-head" role="row"></div>
-      </div> -->
     </article>
 
     <article class="design-article js-observer js-scrollspy-section">
       <h1 class="design-article-title">Accordion (Details)</h1>
-      <p class="design-article-description">요약된 목록에서 필요한 정보를 취사선택합니다.</p>
+      <p class="design-article-description">사용자는 요약된 목록에서 필요한 정보를 취사선택 합니다.</p>
       <ul class="design-article-checklist">
-        <!-- <li><i class="icon-check"></i> expandable/collapsible 기표를 제공하세요.</li> -->
         <li><i class="icon-check"></i> heading은 한 문장으로 간결하게 작성하세요.</li>
         <li><i class="icon-check"></i> 복잡한 정보나 사용자가 필수적으로 숙지해야 하는 정보에 사용하지 않습니다.</li>
       </div>
       <blockquote>
-        <!-- <p>plus icon을 addable, expandable?</p> -->
         <p>클릭 영역 정의(본문, 외부를 클릭했을 때). 본문을 클릭 영역으로 지정하는 경우 내부에 링크를 사용할 수 없다. 제목을 클릭 영역으로 한정하기.</p>
       </blockquote>
 
@@ -1305,19 +1295,19 @@
         <p>안녕</p>
       </details> -->
 
-      <!-- <section class="faq" title="Frequently asked questions" hidden>FAQ</section>
-      <div class="textfield" hidden>selectbox</div> -->
-      <!-- <header style="padding:4rem 0;">
-        <small>FIND YOUR ANSWERS</small>
+      <section class="faq" title="Frequently asked questions" hidden>FAQ</section>
+
+      <header style="padding:4rem 0;">
+        <small>Find Your Answers</small>
         <h2 style="margin:0 0 1rem 0;font-size:var(--font-size-title);" title="FAQs">Questions?</h2>
         <p>궁금증을 해결하지 못하셨나요? <a href="#">Get in touch with us.</a></p>
-      </header> -->
+      </header>
+
       <section class="faq">
         <article class="accordion js-accordion" aria-expanded="false">
           <h3 class="accordion-title" role="button">
             탈퇴하고 싶어요.
             <span class="accordion-title-icon"><i class="icon-chevron is-down"></i></span>
-            <!-- <span class="accordion-title-icon"><i class="icon-chevron is-down"></i></span> -->
           </h3>
           <div class="accordion-panel">
             <p>모든 국민은 건강하고 쾌적한 환경에서 생활할 권리를 가지며, 국가와 국민은 환경보전을 위하여 노력하여야 한다. 대통령은 내우·외환·천재·지변 또는 중대한 재정·경제상의 위기에 있어서 국가의 안전보장 또는 공공의 안녕질서를 유지하기 위하여 긴급한 조치가 필요하고 국회의 집회를 기다릴 여유가 없을 때에 한하여 최소한으로 필요한 재정·경제상의 처분을 하거나 이에 관하여 법률의 효력을 가지는 명령을 발할 수 있다.</p>

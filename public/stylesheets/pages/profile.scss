@@ -125,6 +125,8 @@
   .profile-body {margin:0 auto;padding-left:0;}
   .profile-user-toggle {display:flex;align-items:center;justify-content:space-between;}
   .profile-user-info {display:none;}
+  
+  .profile-tablist {margin-left:var(--space-minus);margin-right:var(--space-minus);}
 
   .is-active  + .profile-user-toggle-icon {transform:rotate(180deg);}
   .is-active  + .profile-user-info {display:block;margin-bottom:4rem;}

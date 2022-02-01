@@ -187,6 +187,8 @@
 }
 .heading-label {@include heading-label;}
 .heading-label + p {margin-bottom:var(--space);}
+// todo tile's default margin
+.heading-label + * {margin-top:var(--space-small) !important;}
 
 @mixin theme($theme: DarkGray) {
   background: $theme;

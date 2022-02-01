@@ -50,6 +50,6 @@
 .chip-icon .icon-check {border-color: var(--color-primary);}
 .chip-icon .icon-x {}
 
-.is-active .chip-label {color: var(--color-primary);}
+.is-active .chip-label {color:inherit;}
 .is-active .chip-icon .icon-x::before {background:var(--color-background);}
 .is-active .chip-icon .icon-x::after {background:var(--color-background);}
