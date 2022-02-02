@@ -1,18 +1,17 @@
 <main class="design">
-  <div class="tokens-hero">
+  <section class="tokens-hero">
     <!-- <figure class="tokens-hero-image">
       <span class="tokens-hero-image-butter">🧈</span>
       <span class="tokens-hero-image-salt">🧂</span>
       <span class="tokens-hero-image-egg">🥚</span>
       <span class="tokens-hero-image-milk">🥛</span>
     </figure> -->
-    <div class="tokens-hero-head" style="overflow:hidden;">
-      <h1 style="font-size:var(--font-size-title);font-family:'DunkelSans';">디자인 토큰,</h1>
-      <!-- <h1 style="font-size:var(--font-size-title);font-family:'DunkelSans';">This is sample text.</h1> -->
-      <section style="margin:var(--space-after-description) 0 0 0;font-size:var(--font-size-subhead);line-height:var(--line-height-small);">
-        <p>공통의 시각 언어로 커뮤니케이션 비용을 줄입니다.</p>
+    <div class="tokens-hero-head">
+      <h1 style="font-size:var(--font-size-title);font-family:'DunkelSans';">디자인 토큰</h1>
+      <!-- <section style="margin:var(--space-after-description) 0 0 0;font-size:var(--font-size-subhead);line-height:var(--line-height-small);">
+        <p>공통의 시각 언어로 효율적으로 커뮤니케이션합니다.</p>
         <p>모든 플랫폼에 일관된 시각적 경험을 제공합니다.</p>
-      </section>
+      </section> -->
       
       <!-- <div class="temp8" style="display:flex;margin-top:2.25rem;">
         <div>
@@ -24,28 +23,9 @@
           <span>Palette</span>
         </div>
         <div>
-          <figure style="background:darkseagreen;">🪑</figure>
-          <span>Palette</span>
-        </div>
-        <div>
-          <figure style="background:cadetblue;">📰</figure>
-          <span>Typography</span>
-        </div>
-        <div>
-          <figure style="background:darkseagreen;">🪑</figure>
-          <span>Spacing</span>
-        </div>
-        <div>
-          <figure style="background:cadetblue;">📰</figure>
-          <span>Typography</span>
-        </div>
-        <div>
-          <figure style="background:darkseagreen;">🪑</figure>
-          <span>Spacing</span>
-        </div>
       </div> -->
     </div>
-  </div>
+  </section>
 
   <nav class="component-navigation">
     <div class="component-navigation-background"></div>
@@ -61,11 +41,9 @@
     </div>
   </nav>
 
-  <section style="font-size:1.5rem;letter-spacing:-.025rem;">
-    <p style="padding:1rem 5%;border-bottom:var(--border);">토큰 최소화. 예를 들면, 왜 gray600이 필요하지 않은가? 위계 설정에 대비를 2개 이상 적용하지 않는다는 규칙에 근거.</p>
-    <p style="padding:1rem 5%;border-bottom:var(--border);">modal, toast, popover 등는 UI가 아니라 기능(또는 컨테이너 맥락의 컴포넌트).</p>
-    <p style="padding:1rem 5%;border-bottom:var(--border);">프로모션을 위한 단발성 페이지에서는 유연하게.</p>
-  </section>
+  <!-- <section style="font-size:1.5rem;letter-spacing:-.025rem;">
+    <p style="padding:1rem 5%;border-bottom:var(--border);">테스트</p>
+  </section> -->
 
   <section class="tokens-body">
     <article class="design-article js-scrollspy-section">
@@ -235,7 +213,6 @@
           <figure class="size-large color-skeleton" style="background-color:none;height:var(--size-huge);"></figure>
           <h3 class="token-item-name">skeleton</h3>
           <div style="margin-left:calc(var(--size-large) + var(--space));font-size:var(--font-size-caption);">
-            <p>작성 중.</p>
           </div>
         </article>
       </div>
@@ -338,7 +315,7 @@
 
     <article class="design-article typography js-scrollspy-section">
       <h1 class="design-article-title">Typography</h1>
-      <p class="design-article-description">콘텐츠 계층 구조를 정의합니다. todo</p>
+      <p class="design-article-description">텍스트 계층 구조를 정의합니다.</p>
       <ul class="design-article-checklist">
         <li><i class="icon-check"></i>단어나 구문을 underline, bold, primary color로 강조하지 않습니다.</li>
         <!-- <li><i class="icon-check"></i>불릿, 괄호, 쉼표 등으로 텍스트를 분류 않습니다. 디자인하지 않았다는 인상.</li> -->
@@ -435,8 +412,7 @@
           <div style="font-size:var(--font-size-caption);">
             <p>@mixin text-subhead {} // for article level</p>
             <p>@mixin text-body-large {}</p>
-            <p>@mixin text-post-body {@include text-body-large}</p>
-            <p>@mixin text-term-body {@include text-body-large}</p>
+            <!-- <p>@mixin text-term-body {@include text-body-large}</p> -->
           </div>
           <!-- <span class="token-item-tag">body - kicker/overline</span> -->
         </div>
@@ -460,9 +436,11 @@
             <p>@mixin text-lable {font-size:var(--font-size-tiny);color:var(--color-text-light);}</p>
             <p>@mixin text-helper {}</p>
             <p>@mixin text-helper-validity {@include text-helper;color:var(--color-danger)}</p>
-            <p>도움말 맥락</p>
           </div>
         </div>
+        <aside class="design-article-helper" style="margin-top:-.25rem;margin-bottom:.5rem;">
+          <p>도움말 맥락에서 사용합니다.</p>
+        </aside>
       </div>
     </article>
 

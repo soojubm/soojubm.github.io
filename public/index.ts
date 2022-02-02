@@ -39,15 +39,14 @@ document.addEventListener('click', event => {
   const hambergerElement = (event.target as HTMLElement).closest('.js-navbar-toggle')
   if (!hambergerElement) return
 
+  const navbarMenu = hambergerElement.nextElementSibling
+
   hambergerElement.classList.toggle('is-active')
 
-  // if (hambergerElement.classList.contains('is-active')) {
   //   lockBodyElement()
-  // } else {
-  //   unlockBodyElement()
-  // }
-
-  // const navbarMenu = closestElement.nextElementSibling
+  navbarMenu?.addEventListener('click', event => {
+    event.stopPropagation()
+  })
 })
 
 window.addEventListener('scroll', throttle(scrollProgress), true)
@@ -652,6 +651,7 @@ export function toggleDarkTheme(event) {
   localStorage.setItem('theme', isDarkmode ? DARK_THEME_CLASS : LIGHT_THEME_CLASS)
 }
 
+// 2222.02.02 menu에서 제거 navbar-menu-item has-submenu js-hover-trigger
 function mouseenterElement(event) {
   // mouseover 버블링.closest.여러번실행 / mouseenter 한번실행.closestdksehla
   const ACTIVE_CLASSNAME = 'is-active'

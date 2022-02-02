@@ -101,10 +101,23 @@
 .card-cta {@include button-primary;width:100%;margin:2rem 0;}
 .card-foot {display:flex;justify-content:space-between;margin:2rem 0 0;}
 
-
-@media (hover: hover) and (pointer: fine) {
+@media (hover: none) and (pointer: coarse) {
   .card:hover:not(.has-item) {@include hover-item;}
   .card:hover .card-more {display:block;}
+}
+
+
+/* smartphones, touchscreens */
+@media (hover: none) and (pointer: coarse) {
+}
+/* stylus-based screens */
+@media (hover: none) and (pointer: fine) {
+}
+/* Nintendo Wii controller, Microsoft Kinect */
+@media (hover: hover) and (pointer: coarse) {
+}
+/* mouse, touch pad */
+@media (hover: hover) and (pointer: fine) {
 }
 
 

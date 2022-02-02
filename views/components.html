@@ -7,24 +7,23 @@
   <!-- https://story.pxd.co.kr/1451 -->
   <section class="hero component-hero" role="banner">
     <div class="hero-background component-hero-background"></div>
-    <h1 class="hero-title component-hero-title" style="font-family:'DunkelSans';color:var(--green800);">컴포넌트,</h1>
-    <h1 class="hero-title component-hero-title" style="font-family:'DunkelSans';margin:var(--space-small) 0 0 0;">역할과 형태. 역할 기반의 컴포넌트.</h1>
+    <h1 class="hero-title component-hero-title" style="font-family:'DunkelSans';color:var(--green800);">컴포넌트, <span style="display:block;margin:var(--space-small) 0 0 0;color:var(--color-text);">역할과 형태. 역할 기반의 컴포넌트.</span></h1>
     <!-- <p class="hero-description component-hero-description"></p> -->
-    <p>
+    <!-- <p>
       tokens: size/color/space/font/border/shadow/radius<br />
       components(style): avatar/chip/tile/text?/textfield<br />
       patterns(role): label/button/filter/selectbox/dropdown/text input/
-    </p>
+    </p> -->
 
     <br />
 
     <ul class="design-article-checklist">
-      <li><i class="icon-check"></i>목록을 열거하거나 목록의 가짓수를 쓰지 않습니다.</li>
-      <li><i class="icon-check"></i>특정할 수 없는 모호한 표현을 쓰지 않습니다. (ex 상황에 따라, 목적에 맞게)</li>
-      <!-- <li><i class="icon-check"></i>예외 케이스를 별도로 정의합니다.</li> -->
+      <li><i class="icon-check"></i>목록을 열거하거나 목록의 가짓수를 가이드하지 않습니다.</li>
+      <li><i class="icon-check"></i>특정할 수 없거나 모호하게 가이드하지 않습니다. (ex 상황에 따라, 목적에 맞게)</li>
       <li><i class="icon-check"></i>기본적인 내용을 가이드하지 않습니다. 이 문서를 읽는 사람은 체크박스와 라디오의 차이를 이해하고 있습니다.</li>
-      <li><i class="icon-check"></i>일어날 법 하지 않는 don't 케이스를 정의하지 않습니다. (ex 라인 chip)</li>
-      <li><i class="icon-check"></i>'-때', '경우', '사용' 최소화. 부정어/긍정어/명령형? 하세요, 할 수 있습니다. 보다 합니다. 입니다?</li>
+      <li><i class="icon-check"></i>일어날 법 하지 않는 don't 케이스를 가이드하지 않습니다. (ex 라인 chip)</li>
+      <li><i class="icon-check"></i>1~2회 낮은 빈도의 케이스는 가이드에 추가하지 않고 예외 케이스 별도로 정의합니다.</li>
+      <!-- <li><i class="icon-check"></i>'-때', '경우', '사용' 최소화. 부정어/긍정어/명령형? 하세요, 할 수 있습니다. 보다 합니다. 입니다?</li> -->
       <!-- <li><i class="icon-check"></i>복합명사 띄어쓰기 정의</li> -->
     </ul>
 
@@ -218,12 +217,11 @@
       <div class="design-article-anatomy">
         <p class="design-article-anatomy-title"><span class="tag-label">props or types</span></p>
         <!-- <span class="design-article-anatomy-item">appearance: 'link' | 'subtle' | 'primary'</span> -->
-        <span class="design-article-anatomy-item">appearance: 'primary' | 'secondary' | 'tertiary'</span>
+        <span class="design-article-anatomy-item">appearance: 'primary' | 'secondary' | 'tertiary' | 'text'</span>
         <span class="design-article-anatomy-item">size: 'large' | 'medium'</span>
-        <span class="design-article-anatomy-item">// isFullwidth(boolean)과 비교하면 버튼 그룹에서 사용할 때 유리.</span>
-        <span class="design-article-anatomy-item">space: 'compact' | 'fullwidth'</span>
+        <span class="design-article-anatomy-item">space: 'compact' | 'fullwidth' // 버튼 그룹에서도 쓸 수 있도록 isFullWidth(boolean)에서 변경.</span>
         <span class="design-article-anatomy-item">href?: string</span>
-        <span class="design-article-anatomy-item">type?: 'submit' || 'button'</span>
+        <span class="design-article-anatomy-item">type?: 'submit' || 'button' // LinkButton component에서 정의하지 않음.</span>
       </div>
       <!-- <li>네이밍: style = solid/outline/plain/text (모든 스타일을 망라해야 하기 때문에 유아이 라이브러리에 어울리는 네이밍) </li> -->
       
@@ -754,7 +752,7 @@
 
     <article class="design-article js-observer js-scrollspy-section">
       <h1 class="design-article-title">Seperator</h1>
-      <p class="design-article-description">콘텐츠를 구획하여 맥락을 전환합니다. 반복되는 패턴이나 컴포넌트의 대비로 구획되었다는 인상을 주기 때문에 남용하지 않습니다.</p>
+      <p class="design-article-description">콘텐츠를 구획하여 맥락을 전환합니다. 반복되는 패턴이나 컴포넌트의 대비가 구획되었다는 인상을 주기 때문에 남용하지 않습니다.</p>
       <ul class="design-article-checklist">
         <li><i class="icon-check"></i> 아티클 레벨에서 사용합니다. 섹션 레벨과 페이지 레벨에서는 충분한 여백으로 콘텐츠를 구획합니다.</lip>
         <li><i class="icon-check"></i> border 속성으로 스타일링하지 않습니다. hr 태그를 사용하면 의미론적으로 주제를 분리할 수 있고 컴포넌트의 고유성을 유지할 수 있습니다.</p>
@@ -928,7 +926,7 @@
       <ul class="design-article-checklist">
         <li><i class="icon-check"></i> 탭을 중첩하여 플로우를 설계하지 않습니다.</li>
         <li><i class="icon-check"></i> 정렬sorting, 필터링에 사용하지 않습니다.</li>
-        <li><i class="icon-check"></i> 스크롤스파이 기능을 하지 않습니다.</li>
+        <li><i class="icon-check"></i> 스크롤스파이 기능을 위해 사용하지 않습니다.</li>
         <li><i class="icon-check"></i> todo. 글로벌 탐색 패턴으로 햄버거 메뉴와 탭(바텀네비게이션, 탭바)을 함께 사용하지 않습니다.</li>
         <li><i class="icon-check"></i> <del>페이지 링크로 사용하지 않습니다.</del> (todo SPA에서 페이지 링크의 개념이 모호)</li>
       </ul>
@@ -1051,13 +1049,13 @@
 
     <article class="design-article js-observer js-scrollspy-section">
       <h1 class="design-article-title">Alerts (Flag)</h1>
-      <p class="design-article-description">시스템 이나 브라우저의 상태 이상과 사용자의 행동에 피드백합니다. (modal,inline,toast)</p>
+      <p class="design-article-description">시스템이나 브라우저의 상태 이상, 사용자의 행동에 피드백합니다. (modal,inline,toast)</p>
       <ul class="design-article-checklist">
         <li><i class="icon-check"></i> 한 문장으로 간결하게 피드백합니다.</li>
-        <li><i class="icon-check"></i> 모든 액션에 피드백하지 않습니다. (ex bad case: 인스타그램 앱에서 로그인되었다는 alert. 홈으로 화면이 이동하는 것으로 충분.)</li>
-        <li><i class="icon-check"></i> 사용자의 귀책이 아닌 경우, 단순 "오류" 대신 "시스템 오류"와 같은 용어를 사용하여 사용자가 잘못한 것처럼 느끼지 않도록 합닏다.</li>
+        <li><i class="icon-check"></i> 모든 액션에 피드백할 필요는 없습니다. (ex bad case: 인스타그램 앱에서 로그인되었다는 toast. 홈으로 이동하며 피드가 노출만으로 로그인 상태를 인지할 수 있다.)</li>
+        <li><i class="icon-check"></i> 사용자의 귀책이 아닌 경우, 단순 "오류" 대신 "시스템 오류"와 같은 용어를 사용하여 사용자가 잘못한 것처럼 느끼지 않도록 합니다.</li>
         <!-- <li><i class="icon-check"></i> 브라우저가 role="alert" 속성이 있는 요소를 발견 하면 즉시 사용자에게 경고 내용을 읽습니다.</li> -->
-        <li><i class="icon-check"></i> Don't show more than one at a time.. </li>
+        <li><i class="icon-check"></i> Don't show more than one at a time.</li>
         <!-- <li>( + 게임에서 파티 탈퇴와 같이 직접 실행하지 않은, 시간을 특정하기 힘든 연속적인... 경우 여러 개가 필요하구나.)</li> -->
         <!-- <p>toast=>snackbar(withAction) - 정리하기, single line / multiple lines (head,body 텍스트)</p> -->
       </ul>
