@@ -67,9 +67,10 @@ function modal({ selector: trigger }: Parameter) {
   }
 
   function temp(event) {
-    const target = event.target as HTMLElement
-    if (target.classList.contains('modal')) backHistory()
-    if (target.classList.contains('js-modal-close')) backHistory()
+    modalContainer!.innerHTML = ''
+    // const target = event.target as HTMLElement
+    // if (target.classList.contains('modal')) backHistory()
+    // if (target.classList.contains('js-modal-close')) backHistory()
   }
 
   function openModal(pageYOffset) {

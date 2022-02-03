@@ -19,11 +19,11 @@
 
     <span class="tag" style="margin-top:2rem;display:inline-block;">가이드를 위한 가이드</span>
     <ul class="design-article-checklist" style="margin-top:1rem;">
-      <li><i class="icon-check"></i>목록을 열거하거나 목록의 가짓수를 가이드하지 않습니다.</li>
-      <li><i class="icon-check"></i>특정할 수 없거나 모호하게 가이드하지 않습니다. (ex 상황에 따라, 목적에 맞게)</li>
-      <li><i class="icon-check"></i>기본적인 내용을 가이드하지 않습니다. 이 문서를 읽는 사람은 체크박스와 라디오의 차이를 이해하고 있습니다.</li>
+      <li><i class="icon-check"></i>목록을 열거하거나 가짓수를 가이드하지 않습니다.</li>
+      <li><i class="icon-check"></i>특정할 수 없거나 모호한 용어로 가이드하지 않습니다. (ex 밀리의서재 '상황에 따라', '목적에 맞게')</li>
+      <li><i class="icon-check"></i>기본적인 내용을 가이드하지 않습니다. 이 문서를 읽는 사람은 체크박스와 라디오의 차이를 이해하고 있습니다. <del>그렇다면 어떻게??? 디스크립션은 사용자의 관점에서 서술.</del></li>
       <li><i class="icon-check"></i>일어날 법 하지 않는 don't 케이스를 가이드하지 않습니다. (ex 라인 chip)</li>
-      <li><i class="icon-check"></i>1~2회 낮은 빈도의 케이스는 가이드에 추가하지 않고 예외 케이스 별도로 정의합니다.</li>
+      <li><i class="icon-check"></i>낮은 빈도로 사용하는 케이스는 가이드에 추가하지 않고 예외 케이스로 정의합니다.</li>
       <!-- <li><i class="icon-check"></i>'-때', '경우', '사용' 최소화. 부정어/긍정어/명령형? 하세요, 할 수 있습니다. 보다 합니다. 입니다?</li> -->
       <!-- <li><i class="icon-check"></i>복합명사 띄어쓰기 정의</li> -->
     </ul>
@@ -90,7 +90,7 @@
       <p class="design-article-description">단독으로 사용하거나 텍스트와 함께 사용하여 콘텐츠의 주목도를 높입니다.</p>
 
       <ul class="design-article-checklist">
-        <li><i class="icon-check"></i> <em>todo</em> 클릭할 수 없음. 따라서 chip의 역할을 하는 아이콘 chip과 명확한 분리가 필요함. pagination item은 chip과 같은 높이를 갖지만 chip이 아님. textfield 내부의 clear 버튼은? 그냥 clear button임. textfield-surfix 로 정의되어야?</li>
+        <!-- <li><i class="icon-check"></i> <em>todo</em> 클릭할 수 없음. 따라서 chip의 역할을 하는 아이콘 chip과 명확한 분리가 필요함. pagination item은 chip과 같은 높이를 갖지만 chip이 아님. textfield 내부의 clear 버튼은? 그냥 clear button임. textfield-surfix 로 정의되어야?</li> -->
         <li><i class="icon-check"></i> 이미지, 텍스트, 아이콘을 포함합니다.</li>
         <!-- <li><i class="icon-check"></i> 아이템 컴포넌트: huge, medium은 디스크립션을 가질 수 있습니다.</li> -->
         <!-- <li><i class="icon-check"></i> 아이템 컴포넌트: card component, page 레벨에서 상대적으로 중요도가 낮은 경우 오른쪽에 배치할 수 있습니다.</li> -->
@@ -196,7 +196,7 @@
 
     <article class="design-article js-observer js-scrollspy-section">
       <h1 class="design-article-title">Buttons</h1>
-      <p class="design-article-description">사용자와 서비스의 핵심적인 상호작용입니다.</p>
+      <p class="design-article-description">사용자는 버튼을 통해 서비스의 핵심적인 기능과 상호작용합니다.</p>
       <ul class="design-article-checklist">
         <!-- <p><span><i></i></span> 크기가 다른 버튼을 함께 사용하지 않습니다. (버튼 그룹)</p> -->
         <!-- <li><i class="icon-check"></i> 아이콘 버튼의 아이콘은 관습적인 메타포를 사용하세요.</li> -->
@@ -294,10 +294,10 @@
 
     <article class="design-article js-observer js-scrollspy-section">
       <h1 class="design-article-title">Chips</h1>
-      <p class="design-article-description">버튼에 비해 상대적으로</p>
+      <p class="design-article-description">버튼에 비해 상대적으로...</p>
       <ul class="design-article-checklist">
-        <li><i class="icon-check"></i> 맥락이 다른 chip을 그루핑할 수 있습니다. 이 때 단일선택, 다중선택, 삭제여부, 펼침메뉴 등의 기표를 충분히 제공하세요.</li>
-        <li><i class="icon-check"></i> chip group으로 정렬sorting하지 않습니다. selectbox로 현재 정렬 상태를 요약합니다.</li>
+        <li><i class="icon-check"></i> 맥락이 다른 chip을 나열할 수 있습니다. 이 때 단일선택, 다중선택, 삭제여부, 펼침메뉴 등의 기표를 충분히 제공하세요.</li>
+        <li><i class="icon-check"></i> chip을 나열하여 정렬 옵션을 표시하지 않습니다. selectbox로 현재의 정렬 상태만 요약합니다.</li>
       </ul>
 
       <div class="design-article-anatomy">
@@ -368,10 +368,6 @@
             </button>
             <button class="chip">
               <span class="chip-label">결제완료</span>
-              <!-- <figure class="chip-thumbnail"></figure>
-              <figure class="chip-remove">결제완료</figure>
-              <figure class="chip-check">결제완료</figure> -->
-              <!-- <small class="chip-count">5</small> -->
             </button>
             <button class="chip">
               <span class="chip-label">주문취소</span>
@@ -445,6 +441,9 @@
           <div class="chip-group" role="group">
             <button class="chip">
               <figure class="chip-thumbnail">🦔</figure>
+              <!-- <figure class="chip-remove">결제완료</figure>
+              <figure class="chip-check">결제완료</figure>
+              <small class="chip-count">5</small> -->
               <span class="chip-label">타이포그래피</span>
             </button>
             <button class="chip">
@@ -583,8 +582,8 @@
       </div> -->
 
       <fieldset role="checkgroup">
-        <legend class="heading-label" style="margin-bottom:.5rem;">checkgroup</legend>
-        <div class="checkbox">
+        <legend class="heading-label" style="margin-bottom:0;">checkgroup</legend>
+        <div class="checkbox" style="margin-top:0;">
           <input class="js-checkall" type="checkbox" id="line00" value="" aira-checked="mixed" aria-controls="1 2" data-indeterminate="true" indeterminate />
           <label for="line00" title="Check All"><em>모두 동의합니다</em></label>
         </div>
@@ -600,8 +599,8 @@
       </fieldset>
       <br />
       <fieldset role="radiogroup">
-        <legend class="heading-label" style="margin-bottom:.5rem;">radiogroup</legend>
-        <div class="radio">
+        <legend class="heading-label" style="margin-bottom:0;">radiogroup</legend>
+        <div class="radio" style="margin-top:0;">
           <input type="radio" id="gender-man" name="gender" value="">
           <label for="gender-man" title="Video Killed the Radio Button">Video Killed the Radio Button</label>
           <p class="radio-helper">선택한 옵션의 보조 텍스트 영역입니다. 좁은 화면에서 충분한 공간 확보를 위해 들여쓰지 않습니다.</p>
@@ -635,8 +634,8 @@
 
       <br />
 
-      <h6 class="heading-label">switch</h6>
-      <span class="switch" style="margin: 0 0 var(--space) 0;">
+      <h6 class="heading-label" style="margin-bottom:0;">switch</h6>
+      <span class="switch" style="margin-top:0;">
         <input type="checkbox" id="switch1" name="" role="switch" value="on" checked />
         <label for="switch1" title="Receive weekly newsletter">주간 뉴스레터 받아보기</label>
       </span>

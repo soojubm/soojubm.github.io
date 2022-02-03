@@ -27,7 +27,7 @@ const inputNumber = () => {
     if (!isNumberInput) return
 
     document.addEventListener('keyup', setLimitNumber)
-    
+
     function setLimitNumber() {
       const MAXIMUM = 300
       const MINIMUN = 0
@@ -57,7 +57,6 @@ const inputNumber = () => {
 }
 
 export default inputNumber
-
 
 const inputTest = document.querySelector<HTMLInputElement>('.js-input-test')
 if (inputTest) {
@@ -91,37 +90,6 @@ if (inputTest) {
   //   selection = { start: target.selectionStart, end: target.selectionEnd };
   // });
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // export const inputquantity = () => {
 // 	const quantity = document.querySelector('.js-quantity');
@@ -185,6 +153,10 @@ if (inputTest) {
 // parseInt vs Number => 숫자로 시작하면 숫자를 저장 아니면 NaN
 document.addEventListener('click', event => {
   const { target }: any = event
+
+  // todo ..... bubbling으로 변경 후 엉망이 됨.
+  if (!target.closest('.js-quantity-decrement') || !target.closest('.js-quantity-increment')) return
+
   const inputElement = target.parentNode.querySelector('.js-quantity-input')
   const decrementElement = target.parentNode.querySelector('.js-quantity-decrement')
   const incrementElement = target.parentNode.querySelector('.js-quantity-increment')
@@ -202,7 +174,7 @@ document.addEventListener('click', event => {
     if (inputElement.value === MAX_VALUE) return
 
     ++inputElement.value
-    
+
     if (inputElement.value >= MAX_VALUE) target.setAttribute('disabled', 'true')
     if (inputElement.value > MIN_VALUE) decrementElement.removeAttribute('disabled')
   }
