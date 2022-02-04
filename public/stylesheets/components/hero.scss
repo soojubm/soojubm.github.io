@@ -1,7 +1,7 @@
 .hero {padding:4rem var(--grid-margin) 2rem;overflow:hidden;position:relative;z-index:var(--zindex-default);}
 .hero-background {@include bleeding;background:inherit;}
 // .hero-eyebrow {display:block;margin:0 0 .25rem 0;font-size:var(--font-size-caption);animation:fadeup .2s cubic-bezier(.455, .03, .515, .955) forwards .4s;opacity:0;}
-.hero-title {@include text-title;}
+.hero-title {@include text-title;font-family:'DunkelSans';transition:all .4s;}
 .hero-description {margin:0 0 var(--space-after-description) 0;@include text-title;}
 .hero-foot {display:flex;margin:var(--space-after-button) 0 0 0;animation:fadeup .2s cubic-bezier(.455, .03, .515, .955) forwards 1s;}
 .hero-cta {@include button-primary;}
@@ -20,6 +20,18 @@
 .is-scrolled .hero-obj2 {animation:scaleout .4s ease 1.4s both;}
 .is-scrolled .hero-obj3 {animation:scaleout .4s ease 1.2s both;}
 .is-scrolled .hero-obj4 {animation:scaleout .4s ease 1s both;}
+
+.is-sticky-hero .hero {
+  display: flex;align-items: center;
+  height:var(--navbar-height);padding:0 var(--grid-margin);    position: fixed;
+
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 12;
+  background:var(--color-background);
+}
+.is-sticky-hero .hero-title {padding-top:.75rem;font-size:var(--font-size-subhead);}
 
 @media (--breakpoint-small) {
   .hero-obj1, .hero-obj2, .hero-obj3, .hero-obj4 {display:none;}

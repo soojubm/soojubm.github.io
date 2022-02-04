@@ -15,12 +15,11 @@ type Parameters = {
 const positionSticky = ({ selector, addClass, isPassed }: Parameters) => {
   const element = document.querySelector<HTMLElement>(selector)
 
-  console.log('sticky', element)
   if (!element) return
 
   const elementHeight = element.offsetHeight
   let offsetTop = getElementOffsetTop(element)
-  const offsetBottom = getElementOffsetTop(element) + elementHeight
+  const offsetBottom = offsetTop + elementHeight
 
   let previousScrollTop = isPassed ? offsetBottom : offsetTop
 
@@ -33,10 +32,15 @@ const positionSticky = ({ selector, addClass, isPassed }: Parameters) => {
 
   function handleElementScroll() {
     let currentScrollTop = getWindowScrollTop()
-    const isStuck = currentScrollTop >= previousScrollTop
+    // >= 두두두두 flick
+    const isStuck = currentScrollTop + 56 > previousScrollTop
 
     document.body.classList.toggle(addClass, isStuck)
     document.body.style.paddingTop = isStuck ? `${elementHeight}px` : '0'
+
+    //  todo 일단.. 빠르ㅔㄱ..
+    // navbar.....height...
+    if (selector === '.hero') document.body.style.paddingTop = '0'
   }
 
   // window.addEventListener('resize', throttle())
