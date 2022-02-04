@@ -155,19 +155,18 @@ async function domEvents() {
   // element should be replaced with the actual target element on which you have applied scroll, use window in case of no target element.
   document.addEventListener('scroll', throttle(test))
 
-  // todo 
+  // todo
   function test() {
-      var st = window.pageYOffset || document.documentElement.scrollTop // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
-      if (st > lastScrollTop && window.scrollY > 100) {
-        heroElement?.classList.add('is-fixed')
-        document.body.style.paddingTop = '140px'
-      } else {
-        heroElement?.classList.remove('is-fixed')
-        document.body.style.paddingTop = '0'
-      }
-
-      lastScrollTop = st <= 0 ? 0 : st // For Mobile or negative scrolling
+    var st = window.pageYOffset || document.documentElement.scrollTop // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
+    if (st > lastScrollTop && window.scrollY > 100) {
+      heroElement?.classList.add('is-fixed')
+      document.body.style.paddingTop = '140px'
+    } else {
+      heroElement?.classList.remove('is-fixed')
+      document.body.style.paddingTop = '0'
     }
+
+    lastScrollTop = st <= 0 ? 0 : st // For Mobile or negative scrolling
   }
 
   createGraph()
