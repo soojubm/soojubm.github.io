@@ -17,13 +17,13 @@
 
     <br />
 
-    <span class="tag" style="margin-top:2rem;display:inline-block;">가이드를 위한 가이드</span>
+    <span class="tag" style="margin-top:2rem;display:inline-block;">✨ 가이드를 위한 가이드</span>
     <ul class="design-article-checklist" style="margin-top:1rem;margin-bottom:0;">
       <li><i class="icon-check"></i>목록을 열거하거나 가짓수를 가이드하지 않습니다.</li>
       <li><i class="icon-check"></i>특정할 수 없거나 모호한 용어로 가이드하지 않습니다. (ex 밀리의서재 '상황에 따라', '목적에 맞게')</li>
       <li><i class="icon-check"></i>기본적인 내용을 가이드하지 않습니다. 이 문서를 읽는 사람은 체크박스와 라디오의 차이를 이해하고 있습니다. <del>그렇다면 어떻게??? 디스크립션은 사용자의 관점에서 서술.</del></li>
       <li><i class="icon-check"></i>일어날 법 하지 않는 don't 케이스를 가이드하지 않습니다. (ex 라인 chip)</li>
-      <li><i class="icon-check"></i>낮은 빈도로 사용하는 케이스는 가이드에 추가하지 않고 예외 케이스로 정의합니다.</li>
+      <li><i class="icon-check"></i>사용 빈도가 낮은 케이스는 예외 케이스로 정의합니다.</li>
       <!-- <li><i class="icon-check"></i>'-때', '경우', '사용' 최소화. 부정어/긍정어/명령형? 하세요, 할 수 있습니다. 보다 합니다. 입니다?</li> -->
       <!-- <li><i class="icon-check"></i>복합명사 띄어쓰기 정의</li> -->
     </ul>
@@ -360,6 +360,10 @@
             </a>
           </div>
         </div>
+        <aside class="design-article-helper">
+          정렬에 사용.
+        </aside>
+
       </div>
       <div class="design-article-section">
         <h6 class="heading-label">Filter / Selection</h6>
@@ -381,7 +385,7 @@
         </div>
       </div>
       <div class="design-article-section">
-        <h6 class="heading-label">Dropdown / Overflow menu</h6>
+        <h6 class="heading-label">Dropdown (Overflow menu)</h6>
         <!-- // todo 마이너스 마진 때문에 하나 더  -->
         <div class="tile-flat-small">
           <div class="chip-group">
@@ -435,7 +439,11 @@
             </div>
           </div>
         </div>
+        <aside class="design-article-helper">
+          정렬에 사용.
+        </aside>
       </div>
+
       <div class="design-article-section">
         <h6 class="heading-label">Others- addable/removable, todo: chip-icon의 hover... 결국 chip과 분리된 컴포넌트가 필요함. 역할이 다르기 때문에 괜찮음.</h6>
         <!-- Markup(button vs radio,checkbox) -->
@@ -473,6 +481,7 @@
         <!-- <li><i class="icon-check"></i> secondary 사용 안 함.</li> -->
         <li><i class="icon-check"></i> 상태, 분류, 키워드 맥락의 레이블링입니다.</li>
         <li><i class="icon-check"></i> 아이콘을 포함하지 않습니다.</li>
+        <li><i class="icon-check"></i> 페이지 이동이나 액션으로 사용하지 않습니다.</li>
       </ul>
       <div class="design-article-anatomy">
         <span class="design-article-anatomy-title">anatomy</span>
@@ -541,13 +550,13 @@
 
     <article class="design-article js-observer js-scrollspy-section">
       <h1 class="design-article-title" title="or Box">Tiles</h1>
-      <p class="design-article-description">연관성이 있는 콘텐츠를 시각적으로 묶습니다.</p>
+      <p class="design-article-description">관련된 콘텐츠를 시각적으로 묶습니다.</p>
       <ul class="design-article-checklist">
-        <!-- <p>아이콘/텍스트 leading에 맞춰 시각보정이 필요. line-height 때문. tile이 아니더라도 elevated 스타일이 적용되는 케이스 존재.</p> -->
+        <!-- tile이 아니더라도 elevated 스타일의 예외 케이스. -->
         <li><i class="icon-check"></i>컨테이너 컴포넌트입니다.</li>
         <li><i class="icon-check"></i>'클릭할 수 있음'의 기표로 elevated 스타일을 사용합니다.  타일 전체가 클릭 영역일 수도, 타일 내부에 클릭 가능한 요소를 포함할 수도 있습니다.</li>
         <li><i class="icon-check"></i>페이지 레벨의 타이틀과 디스크립션을 타일로 만들지 않습니다.</p>
-        <li><i class="icon-check"></i>시작과 끝의 엘리먼트에 따른 시각보정이 필요합니다.</p>
+        <li><i class="icon-check"></i>leading, tailing 엘리먼트의 line-height 차이에 따른 시각보정이 필요합니다.</p>
       </ul>
       <div class="design-tile-flat">
         <b>flat</b> is non clickable. no one.
@@ -562,8 +571,10 @@
 
     <article class="design-article js-observer js-scrollspy-section">
       <h1 class="design-article-title">Selections</h1>
-      <p class="design-article-description">하나 이상의 옵션을 선택합니다. todo chip/selectbox 등도 selection role</p>
-
+      <p class="design-article-description">하나 이상의 옵션을 선택합니다.</p>
+      <blockquote>
+        <p>todo: chip/selectbox도 selection role</p>
+      </blockquote>
       <!-- (리액트에서 id  이슈 input in label.) -->
       <ul class="design-article-checklist">
         <li><i class="icon-check"></i> checkbox와 radio는 항상 세로 정렬입니다.</li>
@@ -638,15 +649,18 @@
       <br />
 
       <h6 class="heading-label">switch</h6>
-      <span class="switch" style="margin-bottom:var(--space);">
-        <input type="checkbox" id="switch1" name="" role="switch" value="on" checked />
-        <label for="switch1" title="Receive weekly newsletter">주간 뉴스레터 받아보기</label>
-      </span>
+<div class="tile-flat-small">
+        <span class="switch">
+          <input type="checkbox" id="switch1" name="" role="switch" value="on" checked />
+          <label for="switch1" title="Receive weekly newsletter">주간 뉴스레터 받아보기</label>
+        </span>
+</div>
+<div class="tile-flat-small">
       <span class="switch">
         <input type="checkbox" id="switch2" name="" role="switch" value="off" disabled />
         <label for="switch2" title="Receive weekly newsletter">주간 뉴스레터 받아보기</label>
       </span>
-
+</div>
       <!-- <datalist></datalist> -->
       <!--
       <h6 class="heading-label">selectbox</h6>
@@ -674,8 +688,8 @@
           <span class="design-article-anatomy-item is-nested">label</span>
           <span class="design-article-anatomy-item is-nested">input</span>
           <span class="design-article-anatomy-item is-nested">helper</span>
-          <span class="design-article-anatomy-item is-nested">clear button - searchfield</span>
-          <span class="design-article-anatomy-item is-nested">indicator - selectbox</span>
+          <span class="design-article-anatomy-item is-nested">clear button<small>optional</small></span>
+          <span class="design-article-anatomy-item is-nested">indicator<small>optional</small></span>
           <!-- <li>required indicator / optional indicator (모든 textfield는 required. optional만 가이드) / validations / masked</li> -->
       </div>
 
@@ -788,10 +802,10 @@
     <article class="design-article js-observer js-scrollspy-section">
       <h1 class="design-article-title">Links (Anchor)</h1>
       <p class="design-article-description">페이지를 이동하거나 요약된 콘텐츠를 확장합니다.</p>
-      
-      <div class="design-article-description">
-        <b>external link</b>
-        a target="_blank" rel="noopener noreferrer"
+
+      <div class="design-article-anatomy">
+        <p class="design-article-anatomy-title"><span class="tag-label">anatomy & a11y</span></p>
+        <span class="design-article-anatomy-item is-nested">a target="_blank" rel="noopener noreferrer" // external link only</span>
       </div>
 
       <div class="design-article-description">
@@ -827,7 +841,7 @@
 
       <div class="design-article-section">
         <h6 class="heading-label">List</h6>
-        <div class=" tile-flat" style="margin-top:0;">
+        <div class=" tile-flat">
           <ul class="list-sample">
             <li title="unordered list, level 1">순서가 없는 리스트
               <!-- <ul>
@@ -948,7 +962,8 @@
       </div>
 
       <!-- <section class="profile-tabs"></section> -->
-      <nav class="profile-tablist" role="tablist" aria-label="sample tabs">
+      <!-- todo -->
+      <nav class="profile-tablist" role="tablist" aria-label="sample tabs" style="margin-left:0;margin-right:0;padding-left:var(--space-small);padding-right:var(--space-small);">
         <button class="profile-tablist-tab" role="tab" aria-selected="true" aria-controls="panel-1" id="tab-1" tabindex="0">첫번째 탭</button>
         <button class="profile-tablist-tab" role="tab" aria-selected="false" aria-controls="panel-2" id="tab-2" tabindex="-1">두번째 탭</button>
         <button class="profile-tablist-tab" role="tab" aria-selected="false" aria-controls="panel-3" id="tab-3" tabindex="-1">세번째 탭</button>
@@ -1506,44 +1521,48 @@
 
       <div class="design-article-section">
         <h6 class="heading-label">Vertical</h6>
-        <section class="step" style="margin:var(--space) 0 0 0;">
-          <div class="step-item is-active">
-            <span class="step-item-icon">1</span>
-            <h3 class="step-item-title">장바구니</h3>
-            <p class="step-item-description">대통령은 국가의 원수이며, 외국에 대하여 국가를 대표한다. 국가원로자문회의의 조직·직무범위 기타 필요한 사항은 법률로 정한다. 국가는 대외무역을 육성하며, 이를 규제·조정할 수 있다.</p>
-          </div>
-          <div class="step-item">
-            <span class="step-item-icon">2</span>
-            <h3 class="step-item-title">결제</h3>
-          </div>
-          <!-- <div class="step-space">
-            <span class="step-space-dot"></span>
-            <span class="step-space-dot"></span>
-            <span class="step-space-dot"></span>
-          </div> -->
-          <div class="step-item">
-            <span class="step-item-icon">3</span>
-            <h3 class="step-item-title">주문완료</h3>
-          </div>
-        </section>
+        <div class="token-item">
+          <section class="step">
+            <div class="step-item is-active">
+              <span class="step-item-icon">1</span>
+              <h3 class="step-item-title">장바구니</h3>
+              <p class="step-item-description">대통령은 국가의 원수이며, 외국에 대하여 국가를 대표한다. 국가원로자문회의의 조직·직무범위 기타 필요한 사항은 법률로 정한다. 국가는 대외무역을 육성하며, 이를 규제·조정할 수 있다.</p>
+            </div>
+            <div class="step-item">
+              <span class="step-item-icon">2</span>
+              <h3 class="step-item-title">결제</h3>
+            </div>
+            <!-- <div class="step-space">
+              <span class="step-space-dot"></span>
+              <span class="step-space-dot"></span>
+              <span class="step-space-dot"></span>
+            </div> -->
+            <div class="step-item">
+              <span class="step-item-icon">3</span>
+              <h3 class="step-item-title">주문완료</h3>
+            </div>
+          </section>
+        </div>
       </div>
 
       <div class="design-article-section">
         <h6 class="heading-label">Horizental</h6>
-        <section class="step is-vertical" style="margin:var(--space) 0 0 0;">
-          <div class="step-item is-active">
-            <span class="step-item-icon">1</span>
-            <h3 class="step-item-title">장바구니</h3>
-          </div>
-          <div class="step-item">
-            <span class="step-item-icon">2</span>
-            <h3 class="step-item-title">결제</h3>
-          </div>
-          <div class="step-item">
-            <span class="step-item-icon">3</span>
-            <h3 class="step-item-title">주문완료</h3>
-          </div>
-        </section>
+        <div class="token-item">
+          <section class="step is-vertical">
+            <div class="step-item is-active">
+              <span class="step-item-icon">1</span>
+              <h3 class="step-item-title">장바구니</h3>
+            </div>
+            <div class="step-item">
+              <span class="step-item-icon">2</span>
+              <h3 class="step-item-title">결제</h3>
+            </div>
+            <div class="step-item">
+              <span class="step-item-icon">3</span>
+              <h3 class="step-item-title">주문완료</h3>
+            </div>
+          </section>
+        </div>
       </div>
 
     </article>
@@ -1552,7 +1571,7 @@
       <h1 class="design-article-title">Result</h1>
       <p class="design-article-description">실행 결과. 오류. 내용없음.</p>
       <ul class="design-article-checklist">
-        <li><i class="icon-check"></i> 기본적인 콘텐츠 모듈인 왼쪽 정렬과 대비를 위해 가운데 정렬합니다.</li>
+        <li><i class="icon-check"></i> 왼쪽 정렬의 기본적인 텍스트 콘텐츠 모듈과의 대비를 위해 가운데 정렬합니다.</li>
         <li><i class="icon-check"></i> 페이지나 섹션의 empty, error, complete 상황에서 사용합니다.</li>
       </ul>
       <blockquote>
@@ -1560,7 +1579,7 @@
       </blockquote>
       <section class="empty" style="border:1px solid var(--color-box-border);border-radius:var(--radius);margin:0;">
         <i class="empty-icon">🧟</i>
-        <h1 class="empty-title">상품이 결제되었습니다.</h1>
+        <h1 class="empty-title">주문이 완료되었습니다.</h1>
         <p class="empty-description">헌법재판소 재판관의 임기는 6년으로 하며, 법률이 정하는 바에 의하여 연임할 수 있다. 대통령은 법률안의 일부에 대하여 또는 법률안을 수정하여 재의를 요구할 수 없다.</p>
         <div class="empty-list">
           <div class="empty-list-item"><b>주문시간</b><span>2019-08-10</span></div>

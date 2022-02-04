@@ -92,13 +92,13 @@
           <p>--color-text: var(--gray800);</p>
         </div>
       </article>
-      <aside class="design-article-helper" style="margin-top:-.25rem;margin-bottom:.5rem;">
+      <!-- <aside class="design-article-helper" style="margin-top:-.25rem;margin-bottom:.5rem;">
         <p>다크 테마와 페어링 관련. 항상 검정색을 쓰는 예외 케이스.</p>
-      </aside>
+      </aside> -->
 
       <article class="token-item is-gray100">
         <figure class="token-item-avatar"></figure>
-        <b>--gray100: #fff</b>
+        <b>--gray100: #f1f4f1</b>
         <div style="margin-left:calc(var(--size-large) + var(--space));font-size:var(--font-size-caption);">
           <p>--color-background-lightgray</p>
           <p>--button-background-color</p>
@@ -108,7 +108,7 @@
       </article>
       <article class="token-item is-gray200">
         <figure class="token-item-avatar"></figure>
-        <b>--gray200: #fff</b>
+        <b>--gray200: #e0e2e1</b>
         <div style="margin-left:calc(var(--size-large) + var(--space));font-size:var(--font-size-caption);">
           <p>--color-background-gray: var(--gray200);</p>
           <p>--color-border: var(--gray200);</p>
@@ -117,7 +117,7 @@
       </article>
       <article class="token-item is-gray400">
         <figure class="token-item-avatar"></figure>
-        <b>--gray400: #fff</b>
+        <b>--gray400: #979d9a</b>
         <div style="margin-left:calc(var(--size-large) + var(--space));font-size:var(--font-size-caption);">
           <p>--color-text-lighter: var(--gray400);</p>
           <p>--color-disabled-text: var(--gray400);</p>
@@ -125,7 +125,7 @@
       </article>
       <article class="token-item is-gray800">
         <figure class="token-item-avatar"></figure>
-        <b>--gray800: #fff</b>
+        <b>--gray800: #343c38</b>
         <div style="margin-left:calc(var(--size-large) + var(--space));font-size:var(--font-size-caption);">
           <p>--color-background-darkgray: var(--gray800);</p>
           <p>--color-text: var(--gray800);</p>
@@ -138,7 +138,7 @@
       <h2 class="heading-label">Coloreds</h2>
       <article class="token-item is-primary100">
         <figure class="token-item-avatar"></figure>
-        <b>--green100: #fff</b>
+        <b>--green100: rgba(10, 160, 80, 0.1)</b>
         <div style="margin-left:calc(var(--size-large) + var(--space));font-size:var(--font-size-caption);">
           <p>--color-background-primary-lighter: var(--green100);</p>
           <p>--color-background-active: var(--green100);</p>
@@ -146,7 +146,7 @@
       </article>
       <article class="token-item is-primary200">
         <figure class="token-item-avatar"></figure>
-        <b>--green800: #fff</b>
+        <b>--green800: #1b995c</b>
         <div style="margin-left:calc(var(--size-large) + var(--space));font-size:var(--font-size-caption);">
           <mark>--color-primary: var(--green800);</mark>
           <p>--color-background-primary: var(--color-primary);</p>
@@ -155,7 +155,11 @@
       </article>
       <article class="token-item is-red800">
         <figure class="token-item-avatar"></figure>
-        <b>--red800: #fff</b>
+        <b>--red100: rgba(243, 68, 97, .06)</b>
+      </article>
+      <article class="token-item is-red800">
+        <figure class="token-item-avatar"></figure>
+        <b>--red800: #f02849</b>
         <!-- <p>양식 유효성 unvalid 텍스트, 취소/삭제 부정 액션</p> -->
         <div style="margin-left:calc(var(--size-large) + var(--space));font-size:var(--font-size-caption);">
           <mark>--color-danger: var(--red800);</mark>
@@ -472,24 +476,24 @@
           <p>--profile-container: var(--container-huge)</p>
         </div>
       </div>
-      <div class="token-item" style="margin:var(--space-small) 0;">
+      <div class="token-item">
         <b>--container-large: 1000px</b>
       </div>
-      <div class="token-item" style="margin:var(--space-small) 0;">
+      <div class="token-item">
         <div style="font-size:var(--font-size-tiny);">
           <p>--forgot-container: var(--container-smaller)</p>
           <p>--post-container: var(--container-smaller)</p>
           <p>--terms-container: var(--container-smaller)</p>
         </div>
       </div>
-      <div class="token-item" style="margin:var(--space-small) 0;">
+      <div class="token-item">
         <b>--container-small: 640px</b>
         <div style="font-size:var(--font-size-tiny);">
           <p>--page-login-width</p>
           <p>--page-signup-width</p>
         </div>
       </div>
-      <div class="token-item" style="margin:var(--space-small) 0;">
+      <div class="token-item">
         <b>--container-tiny: 400px</b>
         <div style="font-size:var(--font-size-tiny);">
           <p>--dropdown-width: var(--container-tiny)</p>
@@ -502,7 +506,7 @@
 
       <h6 class="heading-label">Groups</h6>
       <div class="token-item">
-        <div style="margin:0 0 var(--space-small) 0;"><b>@mixin group {display:flex;flex-wrap:wrap;}</b></div>
+        <b>@mixin group {display:flex;flex-wrap:wrap;}</b>
         <div style="font-size:var(--font-size-tiny);">
           <!-- <p>@mixin group-bleeding {}</p> -->
           <p>@mixin tag-group {}</p>
@@ -600,17 +604,17 @@
       <h1 class="design-article-title">z-index</h1>
       <p class="design-article-description">작성 중.</p>
 
-      <div class="token-item" style="margin:var(--space-small) 0;">
+      <div class="token-item">
         <b>--zindex-deepdive: -1;</b>
       </div>
-      <div class="token-item" style="margin:var(--space-small) 0;">
+      <div class="token-item">
         <b>--zindex-default: 1;</b>
       </div>
-      <div class="token-item" style="margin:var(--space-small) 0;">
+      <div class="token-item">
         <div><b>--zindex-modal: 5;</b></div>
         <div><b>--zindex-modal-dim: 4;</b></div>
       </div>
-      <div class="token-item" style="margin:var(--space-small) 0;">
+      <div class="token-item">
         <div>
           <div style="margin:0 0 var(--space-small) 0;"><b>--z-index-popover: 6;</b></div>
           <div style="font-size:var(--font-size-tiny);">
@@ -621,15 +625,15 @@
           </div>
         </div>
       </div>
-      <div class="token-item" style="margin:var(--space-small) 0;">
+      <div class="token-item">
         <div>
           <b>--zindex-sticky: 7;</b>
         </div>
       </div>
-      <div class="token-item" style="margin:var(--space-small) 0;">
+      <div class="token-item">
         <div><b>--zindex-menu: 8;</b></div>
       </div>
-      <div class="token-item" style="margin:var(--space-small) 0;">
+      <div class="token-item">
         <b>--zindex-toast: 9;</b>
       </div>
     </article>
@@ -663,7 +667,7 @@
       </ul>
 
       <h6 class="heading-label">클릭Clickable</h6>
-      <div class="tile-elevated" style="cursor:pointer;">
+      <div class="tile-elevated token-item" style="cursor:pointer;">
         <p style="margin-top:var(--space-leading-subhead);">elevated 오브젝트는 대부분(?) 클릭할 수 있다. 또는 오브젝트 내부에 클릭할 수 있는 요소가 존재한다.</p>
       </div>
       <div class="token-item" style="display:block;background:var(--gray100);border-radius:var(--radius);cursor:pointer;">

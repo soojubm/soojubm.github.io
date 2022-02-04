@@ -51,12 +51,12 @@
 // todo
 .design-article-helper {@include text-label;font-size:var(--font-size-caption);line-height:var(--font-line-height-small);}
 
-.design-article-role {@include tile-flat-small;margin:var(--space) 0;font-size:var(--font-size-caption);}
+.design-article-role {@include tile-flat-small;font-size:var(--font-size-caption);}
 .design-article-role-title {@include tag;margin:0 var(--space) 0 -1rem;}
 .design-article-role-item {display:inline-block;margin:0 .25rem;}
 .design-article-role-item.is-nested {}
 
-.design-article-anatomy {@include tile-flat-small;margin:var(--space) 0;font-size:var(--font-size-caption);}
+.design-article-anatomy {@include tile-flat-small;font-size:var(--font-size-caption);}
 .design-article-anatomy-title {@include tag;margin:0 0 .25rem -1rem;}
 .design-article-anatomy-item {display:block;}
 .design-article-anatomy-item.is-nested {margin-left:var(--space);}

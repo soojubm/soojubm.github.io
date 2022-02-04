@@ -1,7 +1,7 @@
 
 .component {}
 
-.component-navigation {background:var(--color-background);padding-left:var(--grid-margin);position:sticky;top:calc(var(--titlebar-height) - .5rem);z-index:var(--zindex-menu);}
+.component-navigation {background:var(--color-background);padding-left:var(--grid-margin);overflow:hidden;position:sticky;top:calc(var(--titlebar-height) - .5rem);z-index:var(--zindex-menu);}
 // .component-navigation-background {@include bleeding;border-bottom:var(--border);}
 .component-navigation-scroll {@include chip-group;@include group-bleeding;flex-wrap:unset;margin:0 var(--grid-margin-minus);padding:var(--space) var(--grid-margin);}
 .component-navigation-scroll > * {min-width:auto;} // todo

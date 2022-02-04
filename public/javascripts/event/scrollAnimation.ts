@@ -13,9 +13,15 @@ const scrollAnimation = ({ selector: selector }) => {
 
   function callback(entries, observer) {
     entries.forEach(entry => {
-      if (!entry.isIntersecting) return
+      // if (!entry.isIntersecting) return
 
-      entry.target.classList.toggle(ANIMATED_CLASSNAME, entry.isIntersecting)
+      // entry.target.classList.toggle(ANIMATED_CLASSNAME, entry.isIntersecting)
+
+      if (entry.isIntersecting) {
+        entry.target.classList.add(ANIMATED_CLASSNAME)
+      } else {
+        entry.target.classList.remove(ANIMATED_CLASSNAME)
+      }
 
       // entry.target.classList.add('pulse')
       // entry.target.addEventListener('animationend', event => event.currentTarget.classList.remove(ANIMATED_CLASSNAME));

@@ -185,7 +185,7 @@
   font-weight: var(--font-weight-normal);
   color: var(--color-text-light);
 }
-.heading-label {@include heading-label;}
+.heading-label {@include heading-label;text-transform:capitalize;}
 .heading-label + p {margin-bottom:var(--space);}
 // todo tile's default margin
 .heading-label + * {margin-top:var(--space-small) !important;}
