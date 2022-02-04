@@ -157,6 +157,8 @@ async function domEvents() {
 
   // todo
   function test() {
+    if (!heroElement) return
+
     var st = window.pageYOffset || document.documentElement.scrollTop // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
     if (st > lastScrollTop && window.scrollY > 100) {
       heroElement?.classList.add('is-fixed')
