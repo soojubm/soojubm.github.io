@@ -140,7 +140,7 @@ async function domEvents() {
 
   event.positionSticky({ selector: '.js-post-head', addClass: 'is-sticky-post-head', isPassed: true })
 
-  event.positionSticky({ selector: '.hero-title', addClass: 'is-sticky-hero', isPassed: false })
+  // event.positionSticky({ selector: '.hero-title', addClass: 'is-sticky-hero', isPassed: false })
 
   event.scrollAnimation({ selector: '.js-observer' })
   // event.scrollAnimation({ selector: '.token-item' })
@@ -148,6 +148,27 @@ async function domEvents() {
   event.scrollspy({ menusSelector: '.js-scrollspy-trigger', sectionsSelector: '.js-scrollspy-section' })
 
   event.parallax('.js-parallax')
+
+  var lastScrollTop = 0
+  const heroElement = document.querySelector('.hero')
+
+  // element should be replaced with the actual target element on which you have applied scroll, use window in case of no target element.
+  document.addEventListener('scroll', throttle(test))
+
+  // todo 
+  function test() {
+      var st = window.pageYOffset || document.documentElement.scrollTop // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
+      if (st > lastScrollTop && window.scrollY > 100) {
+        heroElement?.classList.add('is-fixed')
+        document.body.style.paddingTop = '140px'
+      } else {
+        heroElement?.classList.remove('is-fixed')
+        document.body.style.paddingTop = '0'
+      }
+
+      lastScrollTop = st <= 0 ? 0 : st // For Mobile or negative scrolling
+    }
+  }
 
   createGraph()
   carousel()
