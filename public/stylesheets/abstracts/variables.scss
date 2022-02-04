@@ -136,14 +136,15 @@ $transition-fade: opacity 0.15s linear;
   --size-small: 1.5rem; // 24px
   --size-tiny: 1rem; // 1rem
 
-  --space: .75rem;
+  --space: 1rem;
   --space-minus: calc(var(--space) * -1);
 
   --space-small: .5rem;
   --space-small-minus: calc(var(--space-small) * -1);
 
-  // todo: 현재 mixin positioning에서만사용
+  // todo: only mixin positioning
   --space-inset: var(--space-small);
+
 
   // ! in TILE
   --space-leading-title: -.25rem;
@@ -156,8 +157,6 @@ $transition-fade: opacity 0.15s linear;
   --space-after-button: .75rem;
   --space-after-textfield: 1rem;
 
-  --space-after-item: .75rem;
-  
   --space-after-avatar-huge: 1rem;
   --space-after-avatar-large: var(--space);
   --space-after-avatar-medium: var(--space-small);
@@ -173,19 +172,16 @@ $transition-fade: opacity 0.15s linear;
   --space-before-section: 12rem;
   --space-before-badge: .75rem;
 
-
   // todo, position
+  --space-inset-card: null;
   --space-tile-inset: var(--space);
   --space-tile-inset-small: var(--space-small);
-
   --space-inset-head: 2rem;
-
-  --space-chip-inset: .75rem;
-
+  --space-inset-chip: .75rem;
 
   --border: 1px solid var(--gray200);
   --border-active: 1px solid var(--color-primary);
-  --background-active: var(--color-primary);
+  --background-active: null;
   --text-active: var(--color-primary);
 
 

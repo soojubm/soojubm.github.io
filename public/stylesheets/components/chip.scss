@@ -37,7 +37,7 @@
   @include chip-tailing;
 }
 @mixin chip-label {
-  padding:0 var(--space-chip-inset);
+  padding:0 var(--space-inset-chip);
   line-height: 1; // todo
 }
 
