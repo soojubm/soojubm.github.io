@@ -133,3 +133,10 @@
 .post-attract-title {margin:0 0 var(--space-after-subhead) 0;@include text-subhead;}
 .post-attract-description {}
 .post-attract-signup {@include button-primary;width: 50%;margin:var(--space-after-description) 0;}
+
+
+.theme-dark {
+	.post-attract-blur {
+		background: linear-gradient(to bottom, rgba(37,45,41,0), rgba(37,45,41,.75), rgba(37,45,41,1));
+	}
+}

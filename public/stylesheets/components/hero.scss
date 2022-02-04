@@ -31,7 +31,12 @@
   z-index: 11;
   background:var(--color-background);
 }
-.hero.is-fixed .hero-title {padding-top:.75rem;font-size:var(--font-size-subhead);}
+
+ // todo
+.hero.is-fixed .hero-title {padding-top:.5rem;font-size:var(--font-size-body);}
+.hero.is-fixed .hero-title span {display:none;}
+.hero.is-fixed .hero-title + .tag {display:none;}
+.hero.is-fixed .hero-title + .tag + .design-article-checklist {display:none;}
 
 @media (--breakpoint-small) {
   .hero-obj1, .hero-obj2, .hero-obj3, .hero-obj4 {display:none;}
