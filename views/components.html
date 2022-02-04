@@ -5,9 +5,9 @@
   <p>inline error / detour derror / blocking error</p> -->
   <!-- 시스템 디자이너로서 제품을 소비할 때 디자이너와 개발자의 경험을 대규모로 최적화하는 것은 우리의 의무입니다. 시스템 자체. 스타일 프리미티브 구성이 우선순위가 지정되지 않으면 디자이너와 개발자 사이에 많은 마찰이 있을 뿐만 아니라 토큰 아키텍처를 통해 피할 수 있는 많은 스타일 불일치가 있을 것입니다. -->
   <!-- https://story.pxd.co.kr/1451 -->
-  <section class="hero component-hero" role="banner">
-    <div class="hero-background component-hero-background"></div>
-    <h1 class="hero-title component-hero-title" style="font-family:'DunkelSans';color:var(--green800);">컴포넌트, <span style="display:block;color:var(--color-text);">역할과 형태.<br />역할 기반의 컴포넌트.</span></h1>
+  <section class="hero" role="banner">
+    <div class="hero-background"></div>
+    <h1 class="hero-title" style="font-family:'DunkelSans';color:var(--green800);">컴포넌트, <span style="display:block;color:var(--color-text);">역할과 형태.<br />역할 기반의 컴포넌트.</span></h1>
     <!-- <p class="hero-description component-hero-description"></p> -->
     <!-- <p>
       tokens: size/color/space/font/border/shadow/radius<br />
@@ -18,7 +18,7 @@
     <br />
 
     <span class="tag" style="margin-top:2rem;display:inline-block;">가이드를 위한 가이드</span>
-    <ul class="design-article-checklist" style="margin-top:1rem;">
+    <ul class="design-article-checklist" style="margin-top:1rem;margin-bottom:0;">
       <li><i class="icon-check"></i>목록을 열거하거나 가짓수를 가이드하지 않습니다.</li>
       <li><i class="icon-check"></i>특정할 수 없거나 모호한 용어로 가이드하지 않습니다. (ex 밀리의서재 '상황에 따라', '목적에 맞게')</li>
       <li><i class="icon-check"></i>기본적인 내용을 가이드하지 않습니다. 이 문서를 읽는 사람은 체크박스와 라디오의 차이를 이해하고 있습니다. <del>그렇다면 어떻게??? 디스크립션은 사용자의 관점에서 서술.</del></li>
@@ -70,7 +70,7 @@
 
   <!-- <article class="design-article js-observer">
     <h1 class="design-article-title">Bullet</h1>
-    <p class="design-article-description">불릿은 [좁은 화면]에서 텍스트를 분리??. 불릿, 콤마, 콜론, 슬래시, 따옴표, 괄호 등 지양. 정보가 복잡도가 증가. 슬래시가 대표적인 불릿의 역할. 컴포넌트화. 남용 시 디자인하지 않은 인상.</p>
+    <p class="design-article-description">불릿, 콤마, 콜론, 슬래시, 따옴표, 괄호 등 지양. 정보의 복잡도가 증가하고 디자인하지 않았다는 인상 슬래시가 대표적인 불릿의 역할. 컴포넌트화해야 함. </p>
     <div style="font-size:12px;">
       <p style="margin-top:var(--space);font-size:12px;"><span style="margin-right:.75rem;"><i class="icon-check"></i></span>클립보드에 복사를 위해 드래그 했을 때 불릿은 선택되지 않아야 합니다.</p>
       <p style="font-size:12px;"><span style="margin-right:.75rem;"><i class="icon-check"></i></span>불릿과 같은 용법인 슬래시(/)는 사용하지 않습니다. 정의된 스타일만을 불릿 용법으로 사용합니다.</p>
@@ -135,7 +135,7 @@
         </div>
       </article>
 
-      <section class="design-article-tile">
+      <section class="design-article-section">
         <h6 class="heading-label">Avatar stack</h6>
         <article class="avatarlist" style="display:flex;align-items:center;">
           <span>Followed by</span>
@@ -155,7 +155,7 @@
         </article>
       </section>
 
-      <section class="design-article-tile">
+      <section class="design-article-section">
         <h6 class="heading-label">Entry</h6>
         <!-- <a class="tile-flat user" href="#components">
           <figure class="user-avatar">
@@ -166,29 +166,32 @@
           <div class="user-email">soojubm@gamil.com</div>
           <div class="user-myinfo">내 프로필 관리</div>
         </a> -->
-        <article class="item" data-size="huge">
-          <figure class="item-avatar">
-            <span class="avatar-badge"></span>
-          </figure>
-          <h3 style="font-size:var(--font-size-subhead);font-weight:var(--font-weight-bold);">huge</h3>
-          <p style="color:var(--color-text-light);">huge는 디스크립션을 갖습니다.</p>
-        </article>
-        <article class="item" data-size="large">
-          <figure class="item-avatar"></figure>
-          <h3 style="font-weight:var(--font-weight-bold);font-size:var(--font-size-body);">large</h3>
-          <p style="color:var(--color-text-light);">large는 디스크립션을 갖습니다.</p>
-        </article>
-        <article class="item" data-size="medium">
-          <figure class="item-avatar"></figure>
-          <p style="display:block;width:calc(100% - 32px - 1rem);height:32px;line-height:32px;">medium</p>
-        </article>
-        <article class="item" data-size="small">
-          <figure class="item-avatar"></figure>
-          <p style="width:calc(100% - 24px - .5rem);height:24px;line-height:24px;">small</p>
-        </article>
-        <!-- <aside class="design-article-helper">
-          <p>tile 내부에서.</p>
-        </aside> -->
+        <!-- // todo z-inex/ -->
+        <div class="tile-flat" style="z-index:1;">
+          <article class="item" data-size="huge">
+            <figure class="item-avatar">
+              <span class="avatar-badge"></span>
+            </figure>
+            <h3 style="font-size:var(--font-size-subhead);font-weight:var(--font-weight-bold);">huge</h3>
+            <p style="color:var(--color-text-light);">huge는 디스크립션을 갖습니다.</p>
+          </article>
+          <article class="item" data-size="large">
+            <figure class="item-avatar"></figure>
+            <h3 style="font-weight:var(--font-weight-bold);font-size:var(--font-size-body);">large</h3>
+            <p style="color:var(--color-text-light);">large는 디스크립션을 갖습니다.</p>
+          </article>
+          <article class="item" data-size="medium">
+            <figure class="item-avatar"></figure>
+            <p style="display:block;width:calc(100% - 32px - 1rem);height:32px;line-height:32px;">medium</p>
+          </article>
+          <article class="item" data-size="small">
+            <figure class="item-avatar"></figure>
+            <p style="width:calc(100% - 24px - .5rem);height:24px;line-height:24px;">small</p>
+          </article>
+          <!-- <aside class="design-article-helper">
+            <p>tile 내부에서.</p>
+          </aside> -->
+        </div>
       </section>
 
     </article>
@@ -203,7 +206,7 @@
         <!-- <li><i class="icon-check"></i> 버튼의 테마와 무관하게 상대 스타일은 모두 같다.</li> -->
         <li><i class="icon-check"></i> 레이블을 생략하지 않습니다.</li>
         <li><i class="icon-check"></i> 버튼 아래에 가이드 텍스트를 배치하지 않습니다. (secondary 액션의 text 버튼이 아래에 위치하는 패턴 고려).</li>
-        <li><i class="icon-check"></i> more load 버튼은 full-width로 사용하지 않습니다. 콘텐츠 너비보다 작게 사용해서 대비를 주세요. </li>
+        <li><i class="icon-check"></i> more load 버튼은 full-width로 사용하지 않습니다. 콘텐츠 너비보다 작게 사용해서 대비를 줍니다. </li>
       </ul>
 
       <div class="design-article-anatomy">
@@ -229,7 +232,7 @@
       <button>Button element</button>
       <input type="submit" value="submit input">
       <input type="button" value="button input"> -->
-      <div class="design-article-tile">
+      <div class="design-article-section">
         <h6 class="heading-label">Sizes</h6>
         <div class="design-buttongroup">
           <button class="design-article-primary" style="height:auto;padding:12px 0 15px;font-size:var(--font-size-subhead);vertical-align:bottom;">
@@ -242,7 +245,7 @@
           <p>large 버튼은 프로모션 페이지의 call to action으로 제한적으로 사용합니다.</p>
         </aside>
       </div>
-      <div class="design-article-tile">
+      <div class="design-article-section">
         <h6 class="heading-label">Appearances</h6>
         <div class="design-buttongroup">
           <button class="design-article-primary">Primary</button>
@@ -251,7 +254,7 @@
           <button class="design-article-text">Text</button>
         </div>
       </div>
-      <div class="design-article-tile">
+      <div class="design-article-section">
         <h6 class="heading-label">States</h6>
         <div class="design-buttongroup">
           <button class="design-article-tertiary is-hover">Hover</button>
@@ -263,7 +266,7 @@
           <p>todo 색맹 등의 시각적 장애가 있는 사용자를 위해 색상 외의 대비를 사용할 것.</p>
         </aside>
       </div>
-      <div class="design-article-tile">
+      <div class="design-article-section">
         <h6 class="heading-label">Button Group</h6>
         <div class="design-buttongroup">
           <button class="design-article-primary">확인</button>
@@ -336,7 +339,7 @@
         </div>
       </div> -->
 
-      <div class="design-article-tile">
+      <div class="design-article-section">
         <h6 class="heading-label">Keywords</h6>
         <div class="tile-flat-small">
           <div class="keywords-group" role="group">
@@ -358,7 +361,7 @@
           </div>
         </div>
       </div>
-      <div class="design-article-tile">
+      <div class="design-article-section">
         <h6 class="heading-label">Filter / Selection</h6>
         <div class="tile-flat-small">
           <div class="chip-group js-chip" role="group" aria-orientation="horizontal">
@@ -377,7 +380,7 @@
           </div>
         </div>
       </div>
-      <div class="design-article-tile">
+      <div class="design-article-section">
         <h6 class="heading-label">Dropdown / Overflow menu</h6>
         <!-- // todo 마이너스 마진 때문에 하나 더  -->
         <div class="tile-flat-small">
@@ -433,7 +436,7 @@
           </div>
         </div>
       </div>
-      <div class="design-article-tile">
+      <div class="design-article-section">
         <h6 class="heading-label">Others- addable/removable, todo: chip-icon의 hover... 결국 chip과 분리된 컴포넌트가 필요함. 역할이 다르기 때문에 괜찮음.</h6>
         <!-- Markup(button vs radio,checkbox) -->
         <div class="tile-flat-small">
@@ -544,6 +547,7 @@
         <li><i class="icon-check"></i>컨테이너 컴포넌트입니다.</li>
         <li><i class="icon-check"></i>'클릭할 수 있음'의 기표로 elevated 스타일을 사용합니다.  타일 전체가 클릭 영역일 수도, 타일 내부에 클릭 가능한 요소를 포함할 수도 있습니다.</li>
         <li><i class="icon-check"></i>페이지 레벨의 타이틀과 디스크립션을 타일로 만들지 않습니다.</p>
+        <li><i class="icon-check"></i>시작과 끝의 엘리먼트에 따른 시각보정이 필요합니다.</p>
       </ul>
       <div class="design-tile-flat">
         <b>flat</b> is non clickable. no one.
@@ -551,7 +555,7 @@
       <div class="design-outer-elevated">
         <b>elevated</b> is clickable. target or children. 
       </div>
-      <div class="design-tile-flat tile-flat-small">
+      <div class="design-tile-flat-small">
         <b>flat</b>, too. This is small tile.
       </div>
     </article>
@@ -633,8 +637,8 @@
 
       <br />
 
-      <h6 class="heading-label" style="margin-bottom:0;">switch</h6>
-      <span class="switch" style="margin-top:0;">
+      <h6 class="heading-label">switch</h6>
+      <span class="switch" style="margin-bottom:var(--space);">
         <input type="checkbox" id="switch1" name="" role="switch" value="on" checked />
         <label for="switch1" title="Receive weekly newsletter">주간 뉴스레터 받아보기</label>
       </span>
@@ -676,7 +680,7 @@
       </div>
 
       <!-- <p>unit, choose/enter</p> -->
-      <div class="design-article-tile">
+      <div class="design-article-section">
         <h6 class="heading-label">Number (quantity)</h6>
         <div class="quantity js-quantity">
           <input class="quantity-input js-quantity-input js-number-input" name="quantity1" type="number" value="0" min="5" max="20" >
@@ -686,7 +690,7 @@
         </div>
       </div>
 
-      <div class="design-article-tile">
+      <div class="design-article-section">
         <h6 class="heading-label">States (valid / invalid)</h6>
         <div class="textfield is-invalid">
           <label class="textfield-label" for="abc123" style="margin-top:var(--space-leading-subhead);">레이블 <abbr aria-label="optional" style="font-size:var(--font-size-caption);">선택입력</abbr></label>
@@ -696,7 +700,7 @@
       </div>
       <!-- // todo readonly -->
 
-      <div class="design-article-tile">
+      <div class="design-article-section">
         <h6 class="heading-label">Search</h6>
         <div class="textfield searchfield">
           <button class="textfield-prefix" style="top:11px;"><i class="icon-search"></i></button>
@@ -706,7 +710,7 @@
         </div>
       </div> 
 
-      <div class="design-article-tile">
+      <div class="design-article-section">
         <h6 class="heading-label">Textarea</h6>
         <div class="textfield">
           <label class="textfield-label" for="search1">레이블</label>
@@ -715,7 +719,7 @@
         </div>
       </div>
 
-      <div class="design-article-tile">
+      <div class="design-article-section">
         <h6 class="heading-label">Input Date</h6>
         <div class="textfield-group" style="display:flex;justify-content:space-between;">
           <div class="textfield" style="width:var(--grid-column);">
@@ -731,7 +735,7 @@
         </div>
       </div>
 
-      <div class="design-article-tile">
+      <div class="design-article-section">
         <h6 class="heading-label">Selectbox</h6>
         <div class="textfield">
           <label class="textfield-label" for="select1">셀렉트박스</label>
@@ -821,7 +825,7 @@
       </ul>
 
 
-      <div class="design-article-tile">
+      <div class="design-article-section">
         <h6 class="heading-label">List</h6>
         <div class=" tile-flat" style="margin-top:0;">
           <ul class="list-sample">
@@ -843,7 +847,7 @@
         </div>
       </div>
 
-      <div class="design-article-tile">
+      <div class="design-article-section">
         <h6 class="heading-label">Statistic</h6>
         <div class="statistic tile-flat" style="margin-top:0;">
           <div class="statistic-item">
@@ -861,7 +865,7 @@
         </div>
       </div>
 
-      <div class="design-article-tile">
+      <div class="design-article-section">
         <h6 class="heading-label">Summary</h6>
         <section class="summary tile-flat" style="margin-top:0;">
           <div class="summary-item">
@@ -879,7 +883,7 @@
         </section>
       </div>
 
-      <div class="design-article-tile">
+      <div class="design-article-section">
         <h6 class="heading-label">Metadata (description list)</h6>
         <section class="kb tile-flat" style="margin-top:0;">
           <table>
@@ -899,7 +903,7 @@
 
       <!-- <p style="font-size:var(--font-size-caption);">아이콘을 레이블없이 단독으로 사용하지 않습니다. todo 참고 링크(아이콘은 클릭할 수 있음을 나타내는 역할)</p> -->
       
-      <div class="design-article-tile">
+      <div class="design-article-section">
         <h6 class="heading-label">Suggestion</h6>
         <div class="product-info-price tile-flat" role="suggestion">
           <del class="product-info-price-deletion" role="deletion">₩30,000</del>
@@ -1076,12 +1080,12 @@
         </p>
       </aside> -->
 
-      <div class="design-article-tile">
+      <div class="design-article-section">
         <h6 class="heading-label">Inline</h6>
         <p role="alert" style="color:var(--red800);">비밀번호가 일치하지 않습니다.</p>
       </div>
 
-      <div class="design-article-tile">
+      <div class="design-article-section">
         <h6 class="heading-label">Toast</h6>
         <aside class="alert">
           <span class="alert-icon">🧡</span>
@@ -1180,7 +1184,7 @@
         <li><i class="icon-check"></i> 첫 페이지와 마지막 페이지에 더블 화살표 아이콘을 사용하지 않습니다. 최초와 최종 페이지 넘버로 대략적인 콘텐츠의 수량을 파악할 수 있도록 도와주세요.</li>
       </ul>
 
-      <div class="design-article-tile">
+      <div class="design-article-section">
         <h6 class="heading-label">Type 1</h6>
         <nav class="pagination" role="navigation" aria-label="pagination">
           <a class="pagination-previous" href="#" title="앞 페이지로 이동" aria-label="">이전</a>
@@ -1198,7 +1202,7 @@
         <div><small role="" style="display:block;margin:var(--space) 0 0;text-align:center;">숙소 300개 이상 중 281 – 300</small>
       </div>
 
-      <div class="design-article-tile">
+      <div class="design-article-section">
         <h6 class="heading-label">Type 2</h6>
         <nav class="pagination2">
           <a href="#" class="pagination2-prev" title="앞 페이지로 이동">이전</a>
@@ -1500,7 +1504,7 @@
         <p>css속성으로 -webkit-appearance: slider-vertical slider 속성 값을 사용하기 때문에 slider는 carousel로 명명. input type="range" 형태를 stepper로 명명하는 경우가 있음.</p>
       </blockquote> -->
 
-      <div class="design-article-tile">
+      <div class="design-article-section">
         <h6 class="heading-label">Vertical</h6>
         <section class="step" style="margin:var(--space) 0 0 0;">
           <div class="step-item is-active">
@@ -1524,7 +1528,7 @@
         </section>
       </div>
 
-      <div class="design-article-tile">
+      <div class="design-article-section">
         <h6 class="heading-label">Horizental</h6>
         <section class="step is-vertical" style="margin:var(--space) 0 0 0;">
           <div class="step-item is-active">

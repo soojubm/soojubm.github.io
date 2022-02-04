@@ -1,5 +1,4 @@
 <main class="rules">
-
   <!-- <div class="hero-features">
     <div class="">
       <h3 style="font-size:var(--font-size-subhead);font-weight:var(--font-weight-bold);margin:0 0 .5rem 0;">단순성</h3>
@@ -14,93 +13,74 @@
       <p>UI는 사용자의 추가적인 학습을 최소화할 정도로 보편타당해야 합니다.</p>
     </div>
   </div> -->
-      <h3 class="accordion-title js-toggle" role="button" aria-expanded="false">
-        Todolist
-        <span class="accordion-title-icon"><i class="icon-plus"></i></span>
-      </h3>
-        소셜 컴포넌트를 재사용하려면. 범용성을 위해 디자인은 톤다운된 회색 배경. 아이콘은 회색 또는 브랜드 컬러.
-        <p>컴포넌트 내에서 룰을 볼 수 있게</p>
+    <h3 class="accordion-title js-toggle" role="button" aria-expanded="false">
+      Todolist
+      <span class="accordion-title-icon"><i class="icon-plus"></i></span>
+    </h3>
+      소셜 컴포넌트를 재사용하려면. 범용성을 위해 디자인은 톤다운된 회색 배경. 아이콘은 회색 또는 브랜드 컬러.
 
-        <p>coding - common : 스타일을 처음 선언할 때 margin:0 0 0 0 풀어서 사용하고, 재선언할 때 margin-left로 재할당을 암시하고 오버라이딩 최소화하기.</p>
+      <p>coding - common : 스타일을 처음 선언할 때 margin:0 0 0 0 풀어서 사용하고, 재선언할 때 margin-left로 재할당을 암시하고 오버라이딩 최소화하기.</p>
 
-        <p>overflow:hidden을 clear로 사용할 때 더 명확한 mixin으로 사용ㅎ세요</p>
-        <p><strong>스타일(ex:bg/border, size)과 롤(sorting, text input)을 분리하는 것이 좋겠다.</strong></p>
-
-
-        <p>아이템 - 타일(카드는스타일의느낌)</p>
-        <p>반응형 이미지</p>
-
-        <p>왜 rem 단위를 사용하는가 정리</p>
-        <p>왜 엄격한 grid system을 사용하지 않는가 정리. 가로스크롤 트랜드 등</p>
-    
-        <p>iphone의 safe area 관련 코드 모듈화</p>
-        <p>맥북 13인치 1680x1050 / x1나노 2160x1350 / 1440은 애매한 브레이크포인트</p>
-
-        <p>코딩 컨벤션, 컴포넌트별로 페이지 분리(우선순위 낮음)</p>
-
-        <p>버튼과 클릭할 수 없는 태그의 스타일을 시각적으로 분리하는 것이 좋을까</p>
-        
-        <li>writing: (자세히보기 / 더보기 / -보러가기)</li>
-        <li>writing: 복합명사는 붙여씁니다. 결제 완료 x /  결제완료</li>
-        <li>writing: d경우vs때 -> 에서</li>
-        <li>writing: 총결제금액 / 결제예정금액</li>
-        <li>writing: 개인적인 checklist: 유저->사용자, 혹은->또는, 및->과/와</li>
-
-        <p>coding: 속성을 제거할 때 static 대신 relative를 사용하기. z-index 값을 보전할 수 있기 때문.</li>
-        </p>
-        <p>coding: 가운데 정렬에서 우 large 컨테이너를 사용.</p>
-        <p>coding: -action(choice에서 안 어울림) vs -control</p>
-
-        <p>formatPrice(KRW) ₩1,000</p>
-      <p>formatDate() YYYY/MM/DD</p>
-      <p><del>두개</del> 2개</p>
-      <dt>접근성</dt><dd>모양(네모, 동그란 등), 방향(왼쪽/오른쪽/위/아래), 위치(여기/이곳), 색상 등을 가이드 텍스트에 포함하지 마세요.</dd>
-        <code>code tag</code>
-    </article>
+      <p>overflow:hidden을 clear로 사용할 때 더 명확한 mixin으로 사용ㅎ세요</p>
+      <p><strong>스타일(ex:bg/border, size)과 롤(sorting, text input)을 분리하는 것이 좋겠다.</strong></p>
 
 
+      <p>아이템 - 타일(카드는스타일의느낌)</p>
+      <p>반응형 이미지</p>
 
-    <article class="design-article js-scrollspy-section">
-      <h1 class="design-article-title">Naming Conventions</h1>
-      <p class="design-article-description"></p>
-      <p>?? < component < page < site</p>
-      <hr />
-      <h6 class="heading-label">Sizes</h6>
-      <div role="group">
-        <span class="tag">huge</span>
-        <span class="tag">large</span>
-        <span class="tag">medium</span>
-        <span class="tag">small</span>
-        <span class="tag">tiny</span>
-      </div>
-      <br />
-      <h6 class="heading-label">Etc</h6>
-      <ul>
-        <li>모달, 토스트, 툴팁은 유아이 스타일보다는 기능에 가깝다. 다이얼로그 모달, 얼럿 토스트!</li>
-        <li>특정 스타일로 클래스 네이밍하지 마세요. 스타일(gui)는 언제나 변경될 수 있습니다.</li>
-        <li>naming: -s vs - list</li>
-      </ul>
-    </article>
+      <p>왜 rem 단위를 사용하는가 정리</p>
+      <p>왜 엄격한 grid system을 사용하지 않는가 정리. 가로스크롤 트랜드 등</p>
+  
+      <p>iphone의 safe area 관련 코드 모듈화</p>
+      <p>맥북 13인치 1680x1050 / x1나노 2160x1350 / 1440은 애매한 브레이크포인트</p>
 
-    <article class="design-article js-scrollspy-section">
-      <h1 class=design-article-title>Rules</h1>
-      <p class="design-article-description"></p>
-      <ul>
-        영어나 어려운 문장 최소화. 가이드는 모든 사람이 읽을 수 있어야 한다. 
-        요소로(목적으로) 사용합니다.
-        어포던스 -> '클릭할 수 있음'
-        <li>아이템이 3개 이하일 때 제목 우측에 모두보기 버튼을 위치할 수 있지만, 아이템이 4개 이상이라면 아이템의 아래에 모두보기 버튼이 위치. 가로 스크롤인 경우 스크롤 최 우측.</li>
+      <p>코딩 컨벤션, 컴포넌트별로 페이지 분리(우선순위 낮음)</p>
 
-        <li>action indicator :이상 혹은 이하를 표기할 때 >, < 를 사용하지 않습니다. 액션 인디케이터와 혼동이 될 수 있어서. 이상, 이하 한글로 명확하게 전달하ㄱ시오!</li>
-      </ul>
-    </article>
+      <p>버튼과 클릭할 수 없는 태그의 스타일을 시각적으로 분리하는 것이 좋을까</p>
+      
+      <li>writing: (자세히보기 / 더보기 / -보러가기)</li>
+      <li>writing: 복합명사는 붙여씁니다. 결제 완료 x /  결제완료</li>
+      <li>writing: d경우vs때 -> 에서</li>
+      <li>writing: 총결제금액 / 결제예정금액</li>
+      <li>writing: 개인적인 checklist: 유저->사용자, 혹은->또는, 및->과/와</li>
+
+      <p>coding: 속성을 제거할 때 static 대신 relative를 사용하기. z-index 값을 보전할 수 있기 때문.</li>
+      </p>
+      <p>coding: 가운데 정렬에서 우 large 컨테이너를 사용.</p>
+      <p>coding: -action(choice에서 안 어울림) vs -control</p>
+
+      <p>formatPrice(KRW) ₩1,000</p>
+    <p>formatDate() YYYY/MM/DD</p>
+    <p><del>두개</del> 2개</p>
+    <dt>접근성</dt><dd>모양(네모, 동그란 등), 방향(왼쪽/오른쪽/위/아래), 위치(여기/이곳), 색상 등을 가이드 텍스트에 포함하지 마세요.</dd>
+      <code>code tag</code>
+  </article>
+
+
+
+  <article class="design-article js-scrollspy-section">
+    <h1 class="design-article-title">Naming Conventions</h1>
+    <p class="design-article-description"></p>
+    <ul>
+      <li>모달, 토스트, 툴팁은 유아이 스타일보다는 기능에 가깝다. 다이얼로그 모달, 얼럿 토스트!</li>
+      <li>특정 스타일로 클래스 네이밍하지 마세요. 스타일(gui)는 언제나 변경될 수 있습니다.</li>
+      <li>naming: -s vs - list</li>
+    </ul>
+  </article>
+
+  <article class="design-article js-scrollspy-section">
+    <h1 class=design-article-title>Rules</h1>
+    <p class="design-article-description"></p>
+    <ul>
+      영어나 어려운 문장 최소화. 가이드는 모든 사람이 읽을 수 있어야 한다. 
+      요소로(목적으로) 사용합니다.
+      어포던스 -> '클릭할 수 있음'
+      <li>아이템이 3개 이하일 때 제목 우측에 모두보기 버튼을 위치할 수 있지만, 아이템이 4개 이상이라면 아이템의 아래에 모두보기 버튼이 위치. 가로 스크롤인 경우 스크롤 최 우측.</li>
+
+      <li>action indicator :이상 혹은 이하를 표기할 때 >, < 를 사용하지 않습니다. 액션 인디케이터와 혼동이 될 수 있어서. 이상, 이하 한글로 명확하게 전달하ㄱ시오!</li>
+    </ul>
+  </article>
 </main>
-
-
-<ul>
-  <li>선택 옵션이 5개 이상일 때는 selectbox, chip을 사용하세요.</li>
-</ul>
-
 
   <!--
     <picture>

@@ -490,25 +490,25 @@
 .class-order-action-share {}
 
 
-:root {
-  --zigzag-size: 1rem;
-}
-.zigzag {background:var(--color-newneek);position:relative;}
-.zigzag:before {
-  content: "";
-  width: 100%;
-  height: var(--zigzag-size);
-  position: absolute;
-  left: 0;
-  top: calc(var(--zigzag-size) * -1);
-  background-image:
-    linear-gradient(-45deg, transparent var(--zigzag-size), var(--color-newneek) 0),
-    linear-gradient(45deg, transparent var(--zigzag-size), var(--color-newneek) 0);
-  background-size: var(--zigzag-size) var(--zigzag-size);
-  background-repeat: repeat-x;
-  background-position: -3px 0;
-  transform: rotateX(180deg);
-}
+// :root {
+//   --zigzag-size: 1rem;
+// }
+// .zigzag {background:var(--color-newneek);position:relative;}
+// .zigzag:before {
+//   content: "";
+//   width: 100%;
+//   height: var(--zigzag-size);
+//   position: absolute;
+//   left: 0;
+//   top: calc(var(--zigzag-size) * -1);
+//   background-image:
+//     linear-gradient(-45deg, transparent var(--zigzag-size), var(--color-newneek) 0),
+//     linear-gradient(45deg, transparent var(--zigzag-size), var(--color-newneek) 0);
+//   background-size: var(--zigzag-size) var(--zigzag-size);
+//   background-repeat: repeat-x;
+//   background-position: -3px 0;
+//   transform: rotateX(180deg);
+// }
 
 
 q {position:relative;}

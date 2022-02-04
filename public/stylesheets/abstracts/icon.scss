@@ -14,12 +14,6 @@
 .icon-plus:after {content:'';display:inline-block;width:2px;height:10px;background:var(--icon-background);position:absolute;left:50%;top:50%;transform:translate(-50%, -50%);}
 .is-active .icon-plus {transform:rotate(135deg);}
 
-
-
-:root {
-  --list-icon-width: 1px;
-  
-}
 .icon-o {display:block;width:6px;height:6px;border:2px solid var(--icon-background);border-radius:50%;position:relative;transition:all .5s ease;}
 
 .icon-x {display:inline-block;vertical-align:middle;width:var(--size-tiny);height:var(--size-tiny);position:relative;transition:all .5s ease;}

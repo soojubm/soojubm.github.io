@@ -1,9 +1,9 @@
 
 .component {}
-.component-hero {}
-.component-navigation {background:var(--color-background);padding-left:var(--grid-margin);position:sticky;top:calc(var(--titlebar-height) - .5rem);z-index:7;}
+
+.component-navigation {background:var(--color-background);padding-left:var(--grid-margin);position:sticky;top:calc(var(--titlebar-height) - .5rem);z-index:var(--zindex-menu);}
 // .component-navigation-background {@include bleeding;border-bottom:var(--border);}
-.component-navigation-scroll {@include chip-group;@include group-bleeding;flex-wrap:unset;margin:0 -5%;padding:var(--space) 5%;}
+.component-navigation-scroll {@include chip-group;@include group-bleeding;flex-wrap:unset;margin:0 var(--grid-margin-minus);padding:var(--space) var(--grid-margin);}
 .component-navigation-scroll > * {min-width:auto;} // todo
 
 // .component .tile-flat,
@@ -16,7 +16,6 @@
 
 @media (--breakpoint-large) {
   .design {padding:0;}
-  .component-navigation {width:90vw;}
   // .component-navigation-scroll {margin:0 var(--grid-margin-minus);padding:0 var(--grid-margin);}
 }
 
