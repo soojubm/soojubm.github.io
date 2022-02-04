@@ -14,7 +14,8 @@
 .navbar-menu-item menu a:hover {@include hover-text;}
 
 // item - link
-// .navbar-burger.is-active {position:fixed;left:5%;}
+// todo z-index
+.navbar-burger.is-active {position:fixed;left:5%;top:1rem;z-index:10;}
 .navbar-menu-item.is-active {text-decoration:underline;}
 
 .navbar-search-trigger {@include avatar-medium;}
@@ -124,7 +125,7 @@
 // .navbar-menu-item:hover menu {display:block;}
 .navbar-menu-item menu a {display:block;width:50%;font-size:var(--font-size-subhead);font-weight:var(--font-weight-bold);opacity:1;}
 
-.is-active + .navbar-menu {transform:translateX(0);}
+.is-active + .navbar-menu {transform:translateX(0);z-index:9;overflow-y:auto;}
 .is-active .navbar-menu-item {color:var(--gray800);} // animation:fadeup .4s cubic-bezier(.455, .03, .515, .955) both;
 // .navbar-menu-item menu a {color:var(--gray800);}
 .is-active .navbar-menu-item i {border-top-color:var(--gray800);}

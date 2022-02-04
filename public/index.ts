@@ -41,7 +41,15 @@ document.addEventListener('click', event => {
 
   const navbarMenu = hambergerElement.nextElementSibling
 
-  hambergerElement.classList.toggle('is-active')
+  // hambergerElement.classList.toggle('is-active')
+
+  if (hambergerElement.classList.contains('is-active')) {
+    hambergerElement.classList.remove('is-active')
+    unlockBodyElement()
+  } else {
+    hambergerElement.classList.add('is-active')
+    lockBodyElement()
+  }
 
   //   lockBodyElement()
   navbarMenu?.addEventListener('click', event => {

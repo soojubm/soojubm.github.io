@@ -23,12 +23,12 @@
 
 .hero.is-fixed {
   display: flex;align-items: center;
-  height:var(--navbar-height);padding:0 var(--grid-margin);
+  height:56px;padding:0 var(--grid-margin);
   position: fixed;
   left: 0;
   right: 0;
   top: 0;
-  z-index: 11;
+  z-index: 8; // todo
   background:var(--color-background);
 }
 
