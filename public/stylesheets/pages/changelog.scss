@@ -1,7 +1,7 @@
 .changelog {padding:0 var(--grid-margin) 8rem;}
 
 .changelog-head {
-  font-family:'DunkelSans';font-size:2rem;padding:4rem 0;
+  font-family:'DunkelSans';font-size:2rem;padding:4rem 0 2rem;
 }
 
 .changelog-filter {@include chip-group;}

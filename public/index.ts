@@ -3,13 +3,13 @@
 import './stylesheets/style.scss'
 
 import routePage, { routes } from './javascripts/router'
+import { stopAnimation, throttle } from './javascripts/utils/optimizationUtils'
+
 import { detectLoad, lockBodyElement, unlockBodyElement } from './javascripts/load'
 import carousel from './javascripts/event/carousel'
 import event from './javascripts/event/index'
 import input from './javascripts/input/index'
 import darkTheme from './javascripts/local/darkTheme'
-
-import { stopAnimation, throttle } from './javascripts/utils/optimizationUtils'
 
 // import { validity } from './javascripts/utils/validations'
 // import { copyClipboard } from './javascripts/utils/formatUtils.js'
@@ -29,32 +29,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // lockbody
   // 여러 개 묶여 있음.
-  // event.toggleClass({
-  //   selector: '.js-navbar-toggle',
-  // })
   // event.positionSticky({ selector: '.js-titlebar', addClass: 'is-sticky-titlebar', isPassed: false })
 })
 
-document.addEventListener('click', event => {
-  const hambergerElement = (event.target as HTMLElement).closest('.js-navbar-toggle')
-  if (!hambergerElement) return
+document.addEventListener('click', event => toggleNavbarMenu(event))
 
-  const navbarMenu = hambergerElement.nextElementSibling
+function toggleNavbarMenu(event) {
+  const navbarBurgerElement = (event.target as HTMLElement).closest('.js-navbar-toggle')
+  if (!navbarBurgerElement) return
 
-  // hambergerElement.classList.toggle('is-active')
+  const navbarMenu = navbarBurgerElement.nextElementSibling
+  const isOpendNavbarMenu = navbarBurgerElement.classList.contains('is-active')
+  // navbarBurgerElement.classList.toggle('is-active')
 
-  if (hambergerElement.classList.contains('is-active')) {
-    hambergerElement.classList.remove('is-active')
+  if (isOpendNavbarMenu) {
+    navbarBurgerElement.classList.remove('is-active')
     unlockBodyElement()
   } else {
-    hambergerElement.classList.add('is-active')
+    navbarBurgerElement.classList.add('is-active')
     lockBodyElement()
   }
 
-  //   lockBodyElement()
-  navbarMenu?.addEventListener('click', event => {
-    event.stopPropagation()
-  })
+  navbarMenu?.addEventListener('click', event => event.stopPropagation())
+}
+
+document.addEventListener('mouseover', () => {
+  document.removeEventListener('click', toggleNavbarMenu)
 })
 
 window.addEventListener('scroll', throttle(scrollProgress), true)
@@ -127,7 +127,6 @@ async function domEvents() {
   }
 
   // // ! 디자인시스템에 추가한 거 임시
-
   document.querySelector('.js-default-font')?.addEventListener('click', () => {
     document.body.classList.toggle('font-default')
   })
@@ -148,8 +147,6 @@ async function domEvents() {
 
   event.positionSticky({ selector: '.js-post-head', addClass: 'is-sticky-post-head', isPassed: true })
 
-  // event.positionSticky({ selector: '.hero-title', addClass: 'is-sticky-hero', isPassed: false })
-
   event.scrollAnimation({ selector: '.js-observer' })
   // event.scrollAnimation({ selector: '.token-item' })
 
@@ -161,25 +158,24 @@ async function domEvents() {
   const heroElement = document.querySelector('.hero')
 
   // element should be replaced with the actual target element on which you have applied scroll, use window in case of no target element.
-  document.addEventListener('scroll', throttle(test))
+  // document.addEventListener('scroll', throttle(test))
 
-  // todo
-  function test() {
-    if (!heroElement) return
+  // // todo
+  // function test() {
+  //   if (!heroElement) return
 
-    var st = window.pageYOffset || document.documentElement.scrollTop // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
-    if (st > lastScrollTop && window.scrollY > 100) {
-      heroElement?.classList.add('is-fixed')
-      document.body.style.paddingTop = '140px'
-    } else {
-      heroElement?.classList.remove('is-fixed')
-      document.body.style.paddingTop = '0'
-    }
+  //   var st = window.pageYOffset || document.documentElement.scrollTop // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
+  //   if (st > lastScrollTop && window.scrollY > 100) {
+  //     heroElement?.classList.add('is-fixed')
+  //     document.body.style.paddingTop = '140px'
+  //   } else {
+  //     heroElement?.classList.remove('is-fixed')
+  //     document.body.style.paddingTop = '0'
+  //   }
 
-    lastScrollTop = st <= 0 ? 0 : st // For Mobile or negative scrolling
-  }
+  //   lastScrollTop = st <= 0 ? 0 : st // For Mobile or negative scrolling
+  // }
 
-  createGraph()
   carousel()
   focusComment()
   // countDownClock(20, 'days')
@@ -218,18 +214,14 @@ async function domEvents() {
     { once: true },
   )
 
-  setTimeout(() => {
-    // parent?.removeEventListener('click', printHi)
-  }, 2000)
-
   document.addEventListener('click', event => {
     const target = event.target as any
     if (!target.closest('.js-test-toggle')) return
 
-    const conatainerElement = target.closest('.profile-body')
+    const containerElement = target.closest('.profile-body')
     const siblingElements = [...target.parentElement.children]
 
-    conatainerElement.classList.toggle('list', target.name === 'list')
+    containerElement.classList.toggle('list', target.name === 'list')
 
     siblingElements.forEach(siblingElement => siblingElement.classList.remove('is-selected'))
     target.classList.add('is-selected')
@@ -240,38 +232,11 @@ function initializeNavbar() {
   const navigationTrigger = document.querySelector<HTMLElement>('.js-navbar-toggle')
 
   navigationTrigger?.classList.remove('is-active')
-}
 
-function createGraph() {
-  // todo 지금은 바가 100px 이라서 1:1로 대입
-  const graphItems = document.querySelectorAll('.js-graph .graph-item')
-  if (!graphItems) return
+  unlockBodyElement()
 
-  graphItems.forEach(element => {
-    const graphItemBar = element.querySelector<HTMLElement>('.graph-item-bar')
-    const graphItemValue = element.querySelector<HTMLElement>('.graph-item-value')
-    if (!graphItemBar || !graphItemValue) return
-
-    const graphValue = parseInt(graphItemValue.innerText)
-
-    graphItemBar.style.height = `${graphValue}px`
-    graphItemValue.style.bottom = `${graphValue}px`
-  })
-}
-
-function calculateReadTime() {
-  const readTimeElement = document.querySelector<HTMLElement>('.post-head')
-  const postContent = document.querySelector<HTMLElement>('.post-body-paragraph')
-  if (!postContent || !readTimeElement) return
-
-  const text = postContent?.textContent || postContent?.innerText
-  let textLength = text.split(' ').length || 1
-  const wordsPerMinute = 200
-  let value = Math.ceil(textLength / wordsPerMinute)
-  const result = `${value} min read`
-  console.log(result)
-
-  readTimeElement.innerText = result
+  // todo removeEvnetListeners
+  document.removeEventListener('click', () => {})
 }
 
 function focusComment() {
@@ -487,10 +452,10 @@ function toggle(event) {
 }
 
 function scrollToTop(event) {
-  if (event.target.closest('.js-to-top')) {
-    event.preventDefault()
-    window.scrollTo(0, 0)
-  }
+  if (!event.target.closest('.js-to-top')) return
+
+  event.preventDefault()
+  window.scrollTo(0, 0)
 }
 
 function toggleDetails(event) {

@@ -16,7 +16,7 @@
     </button>
   </nav>
   <hr />
-  <article class="changelog-item js-accordion">
+  <!-- <article class="changelog-item js-accordion">
     <header class="changelog-item-head">
       <em class="changelog-item-tag is-negative">✂️</em>
       <span class="changelog-item-target">Tag Group</span>
@@ -25,10 +25,10 @@
     </header>
     <div class="changelog-item-content">
       <p>
-        space-small => .25rem. 모바일로 봤을 때 공간이 넓어 보임.
+        space-small => .25rem. 모바일 환경에서 공간이 커보입니다.
       </p>
     </div>
-  </article>
+  </article> -->
   <!-- <article class="changelog-item js-accordion">
     <header class="changelog-item-head">
       <em class="changelog-item-tag is-negative">✂️</em>
@@ -46,12 +46,12 @@
     <header class="changelog-item-head">
       <em class="changelog-item-tag">🔨</em>
       <span class="changelog-item-target">Variables</span>
-      <h3 class="changelog-item-title">--space: 0.75rem => --space: 1rem</h3>
+      <h3 class="changelog-item-title">space 변경</h3>
       <figure class="changelog-item-icon"><i class="icon-chevron"></i></figure>
     </header>
     <div class="changelog-item-content">
       <p>
-        space와 space-small을 각각 tile과 tile-small과 페어링. 파편화되어 있던 3가지 space를 2가지로 축소.
+        space와 space-small을 각각 tile과 tile-small의 inset과 페어링합니다. 파편화되어 있던 3가지 space를 2가지로 축소합니다.
       </p>
     </div>
   </article>
@@ -73,7 +73,7 @@
     <header class="changelog-item-head">
       <em class="changelog-item-tag is-negative">✂️</em>
       <span class="changelog-item-target">Button</span>
-      <h3 class="changelog-item-title">스몰 사이즈 삭제</h3>
+      <h3 class="changelog-item-title">small 삭제</h3>
       <figure class="changelog-item-icon"><i class="icon-chevron"></i></figure>
     </header>
     <div class="changelog-item-content">
@@ -87,12 +87,13 @@
       <em class="changelog-item-tag">🔨</em>
       <span class="changelog-item-target">Tile</span>
 
-      <h3 class="changelog-item-title">inset을 1.5rem에서 1rem으로 변경</h3>
+      <h3 class="changelog-item-title">inset 변경. 케이스 추가.</h3>
       <figure class="changelog-item-icon"><i class="icon-chevron"></i></figure>
     </header>
     <div class="changelog-item-content">
       <p>
-        1.5rem 단일 간격은 모바일 확장성이 떨어짐. 공간이 과함. small 0.5rem을 추가하여 두 가지로 확장
+        1.5rem의 inset은 모바일에서 공간의 낭비가 생깁니다. 1rem으로 변경합니다. 0.5rem inset을 가지는 small 사이즈 tile을 추가하여 두 가지로
+        확장합니다.
       </p>
     </div>
   </article>
@@ -113,11 +114,11 @@
       <em class="changelog-item-tag">🔨</em>
       <span class="changelog-item-target">Breadcrumb</span>
 
-      <h3 class="changelog-item-title">홈 아이콘을 텍스트로 변경</h3>
+      <h3 class="changelog-item-title">label 변경</h3>
       <figure class="changelog-item-icon"><i class="icon-chevron"></i></figure>
     </header>
     <div class="changelog-item-content">
-      <p>페이지에서 상대적으로 덜 중요한 정보. 주목도를 낮추기 위함.</p>
+      <p>홈 아이콘을 텍스트로 변경합니다. 페이지에서 상대적으로 중요도가 낮은 정보이기 때문에 주목도를 낮춥니다.</p>
     </div>
   </article>
   <!-- <article class="changelog-item js-accordion">
@@ -140,7 +141,9 @@
       <figure class="changelog-item-icon"><i class="icon-chevron"></i></figure>
     </header>
     <div>
-      <p class="changelog-item-content">본문용으로 주로 사용했으나 모바일에서 긴 글을 읽을 경우 야외나 밝은 조명 아래서 가시성이 떨어짐.</p>
+      <p class="changelog-item-content">
+        gray600을 제거합니다. 본문용으로 사용했으나 야외나 밝은 조명 아래서 가시성이 떨어질 수 있습니다.
+      </p>
     </div>
   </article>
 </main>

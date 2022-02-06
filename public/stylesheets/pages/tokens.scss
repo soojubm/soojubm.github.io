@@ -39,6 +39,9 @@
 .token-item.is-scrolled {margin-top:.75rem;}
 .token-item-avatar {@include avatar-large;float:left;margin:0 var(--space) 0 0;}
 
+.token-item b {display:block;margin:0 0 var(--space-small) 0;}
+// .token-item div {@include tag-group;}
+// .token-item div p {@include tag}
 .token-item figure:before {content:'';display:block;height:var(--size-huge);background:var(--gray100);position:absolute;left:0;right:0;top:0;bottom:0;z-index:-1;}
 // .token-item-avatar:after {content:'';display:block;background:var(--gray100);height: 80px;
 //   z-index: -1;

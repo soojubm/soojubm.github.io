@@ -6,8 +6,6 @@ $bezier-base: cubic-bezier(0.455, 0.03, 0.515, 0.955);
 $transition-base: all 0.4s $bezier-base;
 $transition-fade: opacity 0.15s linear;
 
-// 정의되지 않았으나 필요한 변수는 0으로 만들어둠.
-
 :root {
   color-scheme: light dark;
 
@@ -15,20 +13,13 @@ $transition-fade: opacity 0.15s linear;
   --padding-input: 9px 1rem 11px; // 48
   --padding-inupt-small: 4px 1rem 5px; // 32
 
-  // ! body에 width를 주는 것은?
-  --breakpoint-phone: 0;
-  --breakpoint-tablet: 0;
-  --breakpoint-laptop: 0;
-  --breakpoint-desktop: 0;
-  --breakpoint-tv: 0;
-
   // ! viewport : desktop first
 
   --fontstack: 'Asap', 'AritaDotum', sans-serif;
   --font-family: 0;
-  --font-family-heading: 0;
-  --font-family-body: 0;
-  --font-family-caption: 0;
+  --font-family-heading: null;
+  --font-family-body: null;
+  --font-family-caption: null;
 
   --navbar-height: 56px;
   --titlebar-height: 56px;
@@ -38,7 +29,7 @@ $transition-fade: opacity 0.15s linear;
   --font-size-medium: .875rem;
   --font-size-tiny: .75rem;
 
-  // mixin으로 써야함 
+  // mixin
   --font-size-display: var(--font-size-huge);
   --font-size-title: var(--font-size-huge);
   --font-size-subhead: var(--font-size-large);
@@ -50,16 +41,14 @@ $transition-fade: opacity 0.15s linear;
 
   --font-weight-normal: normal;
   --font-weight-bold: bold;
-  --font-weight-extrabold: 0;
-
+  --font-weight-extrabold: null;
   --font-color: var(--gray800);
   --font-color-light: var(--gray400);
   --font-color-dark: 0;
   --font-color-highlight: var(--gray800);
-
   --font-line-height: 1.8;
   --font-line-height-small: 1.4;
-  --font-line-height-heading: var(--font-line-height-small);
+  --font-line-height-heading: null;
 
   --font-letter-spacing: 0;
 
@@ -76,25 +65,8 @@ $transition-fade: opacity 0.15s linear;
   --red100: rgba(243, 68, 97, .06);
   --red800: #f02849;
 
-  // ! what-target-option(thiness/states), 타크테마에도 바뀌지 않는.
-  --color-background: var(--gray0);
-  --color-background-gray: var(--gray100);
-  
-  --color-border: var(--gray200);
-
-  --color-text: var(--gray800);
-  --color-text-light: var(--gray400);
-
-  --color-warning: var(--red800);
-
-  --color-background-hover: 0;
-  --color-background-ative: 0;
-  --color-border-hover: 0;
-  --color-border-active: 0;
-  
   --color-primary: var(--green800);
   --color-secondary: gold;
-
   --color-google: #fff;
   --color-facebook: hsl(214, 89%, 52%);
   --color-twitter: rgb(29, 161, 242);
@@ -102,15 +74,28 @@ $transition-fade: opacity 0.15s linear;
   --color-kakao: #ffdf00;
   --color-newneek: #fb7800;
 
+
+  // ! what-target-option(thiness/states), 타크테마에도 바뀌지 않는.
+  --color-background: var(--gray0);
+  --color-background-gray: var(--gray100);
+  
+  --color-background-hover: 0;
+  --color-background-ative: 0;
+  --color-border: var(--gray200);
+  --color-border-hover: 0;
+  --color-border-active: 0;
+  --color-text: var(--gray800);
+  --color-text-light: var(--gray400);
+
+  --color-warning: var(--red800);
+
+  --text-color: null;
+
   --color-container-border: #000;
   --color-box-border: var(--gray100);
   --color-button-border: #000;
   --color-button-body: #000;
-  --link-color: #fff;
-  --accent-color: #fff;
-  --error-color: #fff;
-
-
+  
   // todo icon scope
   --icon-background: var(--gray800);
   --icon-border-color: var(--gray800);
@@ -187,7 +172,6 @@ $transition-fade: opacity 0.15s linear;
 
   // ! 필요에 따라 린하게 추가하기. 지금은 하나만 쓰는 중.
   --radius: 4px;
-  --radius-default: var(--radius);
   --radius-avatar: var(--radius);
   --radius-card: var(--radius);
   --radius-container: var(--radius);
@@ -210,11 +194,11 @@ $transition-fade: opacity 0.15s linear;
   --card-border: 1px solid #fff;
   --card-padding: 1.5rem;
 
-
   --button-background: #fff;
   --button-text-color: #fff;
 
   // ! z-index
+  // ! padding 중첩되면 같은 역할이라도. 마이너스 마진.
   --zindex-default: 1;
 
   --zindex-popover: 5; // !
@@ -235,7 +219,6 @@ $transition-fade: opacity 0.15s linear;
   --zindex-bottombar: 8;
   --zindex-loader: 10;
 
-
   --grid-column: calc(50% - var(--space-small));
   --grid-gutter: 1rem;
   --grid-margin: 5vw;
@@ -248,6 +231,8 @@ $transition-fade: opacity 0.15s linear;
 
   --button-background: 0;
   --button-border: 0;
+  --button-radius: var(--radius);
+  --button-border-color: null;
 
 
 
@@ -255,6 +240,12 @@ $transition-fade: opacity 0.15s linear;
 
   // components
   --dialog-inset: 0;
+
+
+
+
+
+
   
 
   @media (--breakpoint-large) {
