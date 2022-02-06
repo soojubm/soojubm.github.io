@@ -147,7 +147,7 @@ async function domEvents() {
 
   event.positionSticky({ selector: '.js-post-head', addClass: 'is-sticky-post-head', isPassed: true })
 
-  event.scrollAnimation({ selector: '.js-observer' })
+  // event.scrollAnimation({ selector: '.js-observer' })
   // event.scrollAnimation({ selector: '.token-item' })
 
   event.scrollspy({ menusSelector: '.js-scrollspy-trigger', sectionsSelector: '.js-scrollspy-section' })

@@ -436,13 +436,11 @@
             </div>
           </div>
         </div>
-        <aside class="design-article-helper">
-          정렬에 사용.
-        </aside>
       </div>
 
       <div class="design-article-section">
-        <h6 class="heading-label">Others- addable/removable, todo: chip-icon의 hover... 결국 chip과 분리된 컴포넌트가 필요함. 역할이 다르기 때문에 괜찮음.</h6>
+        <h6 class="heading-label">Others</h6>
+        <!-- <p>- addable/removable, todo: chip-icon의 hover... 결국 chip과 분리된 컴포넌트가 필요함. 역할이 다르기 때문에 괜찮음.</p> -->
         <!-- Markup(button vs radio,checkbox) -->
         <div class="tile-flat-small">
           <div class="chip-group" role="group">
@@ -470,7 +468,7 @@
     </article>
 
     <article class="design-article js-observer js-scrollspy-section">
-      <h1 class="design-article-title">Tags (or badge/label)</h1>
+      <h1 class="design-article-title">Tags <span hidden>(or badge/label)</span></h1>
       <p class="design-article-description">인접 요소를 부연합니다.</p>
       <!-- <p class="design-article-description"><em>todo 클릭할 수 있는 태그와 클릭할 수 없는 태그 구분하기. 예를 들면 post 페이지에서 태그와 컴포넌트에서의 태그. hashtag는 tag 컴포넌트와 역할이 다르기 때문에 별도의 컴포넌트로 만들어주어야 한다. 현재 hashtag(keyword)는 chip으로 대체. todo. 댑스가 2이상 인 케이스.</em></p> -->
       <ul class="design-article-checklist">
@@ -557,13 +555,13 @@
         <li><i class="icon-check"></i>leading, tailing 엘리먼트의 line-height 차이에 따른 시각보정이 필요합니다.</p>
       </ul>
       <div class="design-tile-flat">
-        <b>flat</b> is non clickable. no one.
+        <b>flat</b>
       </div>
       <div class="design-outer-elevated">
-        <b>elevated</b> is clickable. target or children. 
+        <b>elevated</b>
       </div>
       <div class="design-tile-flat-small">
-        <b>flat</b>, too. This is small tile.
+        <b>flat small</b>
       </div>
     </article>
 
@@ -571,7 +569,7 @@
       <h1 class="design-article-title">Selections</h1>
       <p class="design-article-description">하나 이상의 옵션을 선택합니다.</p>
       <blockquote>
-        <p>todo: chip/selectbox도 selection role</p>
+        <p>selection role: chip/selectbox</p>
       </blockquote>
       <!-- (리액트에서 id  이슈 input in label.) -->
       <ul class="design-article-checklist">
@@ -647,17 +645,16 @@
       <br />
 
       <h6 class="heading-label">switch</h6>
-<div class="tile-flat-small">
+<div class="tile-flat">
         <span class="switch">
           <input type="checkbox" id="switch1" name="" role="switch" value="on" checked />
           <label for="switch1" title="Receive weekly newsletter">주간 뉴스레터 받아보기</label>
         </span>
-</div>
-<div class="tile-flat-small">
-      <span class="switch">
-        <input type="checkbox" id="switch2" name="" role="switch" value="off" disabled />
-        <label for="switch2" title="Receive weekly newsletter">주간 뉴스레터 받아보기</label>
-      </span>
+        <hr />
+        <span class="switch" style="margin-top:var(--space-small)">
+          <input type="checkbox" id="switch2" name="" role="switch" value="off" disabled />
+          <label for="switch2" title="Receive weekly newsletter">주간 뉴스레터 받아보기</label>
+        </span>
 </div>
       <!-- <datalist></datalist> -->
       <!--
@@ -703,7 +700,7 @@
       </div>
 
       <div class="design-article-section">
-        <h6 class="heading-label">States (valid / invalid)</h6>
+        <h6 class="heading-label">Input</h6>
         <div class="textfield is-invalid">
           <label class="textfield-label" for="abc123" style="margin-top:var(--space-leading-subhead);">레이블 <abbr aria-label="optional" style="font-size:var(--font-size-caption);">선택입력</abbr></label>
           <input class="textfield-input js-input-test" type="text" id="abc123" placeholder="Textarea Placeholder..." value="soojubm@gmail.com" aria-describedby="error" aria-invalid="true" />
@@ -780,7 +777,7 @@
       <h1 class="design-article-title">Breadcrumb</h1>
       <p class="design-article-description">현재 위치를 계층으로 보여줍니다.</p>
       <ul class="design-article-checklist">
-        <li><i class="icon-check"></i> 3레벨 이상의 페이지 뎁스에서 선택적으로(? todo 모호함) 사용하세요.</li>
+        <li><i class="icon-check"></i> 3레벨 이상의 페이지 뎁스에서 사용합니다.</li>
         <!-- <li><i class="icon-check"></i> 프로모션용 랜딩 페이지에서 사용자의 여정을 돕기 위해 사용할 수 있습니다.</li> -->
         <li><i class="icon-check"></i> 푸터에서 사이트맵과 함께 사용할 수 있습니다.</li>
         <li><i class="icon-check"></i> 모바일 환경에서 네비게이션 바와 함께 사용하지 않습니다.</li>
