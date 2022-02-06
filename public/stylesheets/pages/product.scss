@@ -27,7 +27,7 @@
 .product-image-navigation button {width:8px;height:8px;margin:0 .25rem;border:var(--border);background:var(--color-background-gray);}
 .product-image-navigation button.is-current {background:var(--gray800);}
 .product-info {width:27.5%;margin:0 auto 0 0;position:relative;}
-.product-info-name {width:28px;text-align:center;word-break:normal;@include text-title;line-height:1.25;position:absolute;left:-64px;top:0px;}
+.product-info-name {width:28px;text-align:center;word-break:normal;@include text-title;line-height:1.25;position:absolute;left:-56px;top:0px;}
 .product-info-price {display:flex;align-items:center;margin:var(--space-small) 0 0 0;font-size:var(--font-size-subhead);}
 .product-info-price del {}
 .product-info-price b {margin:0 .5rem;}
