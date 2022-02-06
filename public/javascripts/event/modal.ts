@@ -31,7 +31,7 @@ function modal({ selector: trigger }: Parameter) {
   let previousActiveElement
   let previousPageYOffset
 
-  if (!modalContainer) return
+  if (!modalTriggers || !modalContainer) return
 
   modalTriggers.forEach(modalTrigger =>
     modalTrigger.addEventListener('click', event => {
@@ -60,17 +60,17 @@ function modal({ selector: trigger }: Parameter) {
       modalContainer!.innerHTML = html
       previousActiveElement = document.activeElement
       // todo
-      // pushBrowserHistory({}, '', ${`modalId`})
+      pushBrowserHistory({}, '', `/#profile/${modalId}`)
 
-      // modalContainer?.querySelector('button').focus()
+      // modalContainer.querySelector('button').focus()
     } catch (error) {}
   }
 
   function temp(event) {
-    modalContainer!.innerHTML = ''
-    // const target = event.target as HTMLElement
-    // if (target.classList.contains('modal')) backHistory()
-    // if (target.classList.contains('js-modal-close')) backHistory()
+    // modalContainer!.innerHTML = ''
+    const target = event.target as HTMLElement
+    if (target.classList.contains('modal')) backHistory()
+    if (target.classList.contains('js-modal-close')) backHistory()
   }
 
   function openModal(pageYOffset) {

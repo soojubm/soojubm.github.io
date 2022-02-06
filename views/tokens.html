@@ -95,10 +95,10 @@
       <h2 class="heading-label">Grayscales</h2>
       <article class="token-item is-gray000">
         <figure class="token-item-avatar"></figure>
-        <b>--gray0: #000</b>
+        <b>--gray0: #fff</b>
         <div style="margin-left:calc(var(--size-large) + var(--space));font-size:var(--font-size-caption);">
-          <p>--color-background: var(--color-background);</p>
-          <p>--color-text: var(--gray800)</p>
+          <p>--color-background</p>
+          <!-- <p>--color-text: var(--gray800)</p> -->
         </div>
       </article>
       <!-- <aside class="design-article-helper" style="margin-top:-.25rem;margin-bottom:.5rem;">
@@ -112,15 +112,15 @@
           <p>--color-background-lightgray</p>
           <p>--button-background-color</p>
           <p>--button-border-color</p>
-          <p>--textfield-background-color</p>
+          <!-- <p>--textfield-background-color</p> -->
         </div>
       </article>
       <article class="token-item is-gray200">
         <figure class="token-item-avatar"></figure>
         <b>--gray200: #e0e2e1</b>
         <div style="margin-left:calc(var(--size-large) + var(--space));font-size:var(--font-size-caption);">
-          <p>--color-background-gray: var(--gray200)</p>
-          <p>--color-border: var(--gray200)</p>
+          <p>--color-background-gray</p>
+          <p>--color-border</p>
           <!-- <p>--color-hover-background: var(--gray200)</p> -->
         </div>
       </article>
@@ -128,8 +128,8 @@
         <figure class="token-item-avatar"></figure>
         <b>--gray400: #979d9a</b>
         <div style="margin-left:calc(var(--size-large) + var(--space));font-size:var(--font-size-caption);">
-          <p>--color-text-lighter: var(--gray400)</p>
-          <p>--color-text-disabled: var(--gray400)</p>
+          <p>--color-text-lighter</p>
+          <p>--color-text-disabled</p>
           <!-- <p>--textfield-background-color-disabled</p> -->
         </div>
       </article>
@@ -137,7 +137,7 @@
         <figure class="token-item-avatar"></figure>
         <b>--gray800: #343c38</b>
         <div style="margin-left:calc(var(--size-large) + var(--space));font-size:var(--font-size-caption);">
-          <p>--color-text: var(--gray800)</p>
+          <p>--color-text</p>
         </div>
       </article>
 
@@ -159,10 +159,10 @@
           <mark>--color-primary: var(--green800)</mark>
           <p>--color-background-primary</p>
           <p>--color-border-active</p>
-          <p>--button-text-color-active</p>
+          <!-- <p>--button-text-color-active</p>
           <p>--button-border-color-active</p>
           <p>--button-primary-background-color</p>
-          <p>--link-text-color</p>
+          <p>--link-text-color</p> -->
         </div>
       </article>
       <article class="token-item is-red800">
@@ -175,15 +175,14 @@
         <!-- <p>양식 유효성 unvalid 텍스트, 취소/삭제 부정 액션</p> -->
         <div style="margin-left:calc(var(--size-large) + var(--space));font-size:var(--font-size-caption);">
           <mark>--color-danger: var(--red800)</mark>
-          <p>--textfield-helper-color: var(--color-danger)</p>
+          <!-- <p>--textfield-helper-color: var(--color-danger)</p> -->
         </div>
       </article>
       <article class="token-item">
         <figure class="token-item-avatar" style="background:gold"></figure>
         <b>--yellow800: gold</b>
         <div style="margin-left:calc(var(--size-large) + var(--space));font-size:var(--font-size-caption);">
-          <mark>--color-accent: var(--gold800)</mark>
-          <p>--color-accent: var(--color-primary)</p>
+          <mark>--color-accent: var(--yellow800)</mark>
         </div>
       </article>
 
@@ -201,7 +200,7 @@
       <h2 class="heading-label" title="Surface or Elevation">Elevation</h2>
       <article class="token-item is-elevation">
         <figure class="token-item-avatar"></figure>
-        <b>--shadow:var(--shadow400)</b>
+        <b>--shadow: var(--shadow400)</b>
         <div style="margin-left:calc(var(--size-large) + var(--space));font-size:var(--font-size-caption);">
           <p>--shadow-tooltip: var(--shadow)</p>
           <p>--shadow-card: var(--shadow)</p>
@@ -213,7 +212,7 @@
 
       <h2 class="heading-label">Skeleton</h2>
       <article class="token-item">
-        <figure class="token-item-avatar size-large color-skeleton" style="background-color:none;height:var(--size-huge);"></figure>
+        <figure class="token-item-avatar size-large color-skeleton" style="height:var(--size-huge);"></figure>
         <b>skeleton</b>
         <div style="margin-left:calc(var(--size-large) + var(--space));font-size:var(--font-size-caption);">
         </div>
@@ -281,12 +280,12 @@
         </div>
         <div class="token-item">
           <figure class="token-item-avatar size-tiny"></figure>
-          <b>--size-tiny: 1rem;</b>
+          <b>--size-tiny: 1rem</b>
           <div style="margin-left:calc(var(--size-large) + var(--space));font-size:var(--font-size-caption);">
-            <p>--avatar-tiny: var(--size-tiny)</p>
-            <p>--checkbox-height: var(--size-tiny)</p>
-            <p>--radio-height: var(--size-tiny)</p>
-            <p>--switch-height: var(--size-tiny)</p>
+            <p>--avatar-tiny</p>
+            <p>--checkbox-height</p>
+            <p>--radio-height</p>
+            <p>--switch-height</p>
           </div>
         </div>
       </div>
@@ -387,7 +386,7 @@
             <p>@mixin text-display {}</p>
           </div>
         </div>
-        <aside class="design-article-helper" style="margin-top:-.25rem;margin-bottom:.5rem;">
+        <aside class="design-article-helper" style="margin-top:-.125rem;margin-bottom:.75rem;">
           <p>프로모션 페이지의 헤드라인으로 제한적으로 사용합니다.</p>
         </aside>
 
@@ -401,7 +400,7 @@
           </figure> -->
           <b>--font-size-large: 2rem</b>
           <div style="font-size:var(--font-size-caption);">
-            <p>@mixin text-title {line-height:var(--font-line-height-small);}</p>
+            <p>@mixin text-title</p>
           </div>
         </div>
 
@@ -434,9 +433,9 @@
           </figure> -->
           <b>--font-size-tiny: .75rem;</b>
           <div style="font-size:var(--font-size-caption);">
-            <p>@mixin text-lable {font-size:var(--font-size-tiny);color:var(--color-text-light);}</p>
+            <p>@mixin text-lable {}</p>
             <p>@mixin text-helper {}</p>
-            <p>@mixin text-helper-validity {@include text-helper;color:var(--color-danger)}</p>
+            <p>@mixin text-helper-validity {}</p>
           </div>
         </div>
         <!-- <aside class="design-article-helper" style="margin-top:-.25rem;margin-bottom:.5rem;">
@@ -485,7 +484,7 @@
       <div class="token-item">
         <b>--container-huge: 1200px</b>
         <div style="font-size:var(--font-size-tiny);">
-          <p>--profile-container: var(--container-huge)</p>
+          <p>--profile-container</p>
         </div>
       </div>
       <div class="token-item">
@@ -506,9 +505,9 @@
       <div class="token-item">
         <b>--container-tiny: 400px</b>
         <div style="font-size:var(--font-size-tiny);">
-          <p>--dropdown-width: var(--container-tiny)</p>
-          <p>--dialog-width: var(--container-tiny)</p>
-          <p>--popover-width: var(--container-tiny)</p>
+          <!-- <p>--dropdown-width: var(--container-tiny)</p> -->
+          <p>--dialog-width</p>
+          <!-- <p>--popover-width: var(--container-tiny)</p> -->
         </div>
       </div>
 
@@ -552,7 +551,7 @@
       </div>
 
       <div class="token-item">
-        <div><b>ETC</b></div>
+        <!-- <div><b>ETC</b></div> -->
         <div style="font-size:var(--font-size-tiny);">
           <p>--space-between-article</p>
           <p>--space-between-section</p>
@@ -596,13 +595,14 @@
       <!-- todo 전체가 클릭영역인 경우가 있고 버튼을 포함하는 경우가 있음. -->
       <h6 class="heading-label">Item</h6>
       <div>
-        <article class="item token-item" data-size="medium" style="margin:0;">
+        <!-- todo overflow.. -->
+        <article class="item token-item" data-size="medium" style="margin:0;overflow:auto;">
           <figure class="item-avatar"></figure>
           <!-- <div style="width:var(--space-after-avatar-medium);height:32px;background:var(--green800);box-sizing:border-box;border-radius:4px;position:absolute;left:calc(var(--size-medium) + var(--space-small));"></div> -->
           <p style="display:block;width:calc(100% - 32px - 1rem);height:32px;line-height:32px;">medium</p>
         </article>
         <div class="space" style="height:var(--space-small);">var(--space-small)</div>
-        <article class="item token-item" data-size="small" style="margin:0;">
+        <article class="item token-item" data-size="small" style="margin:0;overflow:auto;">
           <figure class="item-avatar"></figure>
           <!-- <div style="display:block;width:var(--space-after-avatar-small);height:24px;background:var(--green800);box-sizing:border-box;border-radius:4px;position:absolute;left:calc(var(--size-small) + var(--space-small));"> -->
           <!-- <span class="space">var(--space-after-avatar-small)</span> -->
