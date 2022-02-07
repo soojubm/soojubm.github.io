@@ -15,14 +15,14 @@
       patterns(role): label/button/filter/selectbox/dropdown/text input/
     </p> -->
 
-    <!-- <span class="tag" style="margin-top:2rem;">✨ 가이드를 위한 가이드</span>
+    <span class="tag" style="margin-top:2rem;">✨ 가이드를 위한 가이드</span>
     <ul class="design-article-checklist" style="margin-top:1rem;margin-bottom:0;">
       <li><i class="icon-check"></i>목록을 열거하거나 가짓수를 가이드하지 않습니다.</li>
       <li><i class="icon-check"></i>특정할 수 없거나 모호한 용어로 가이드하지 않습니다. (ex 밀리의서재 '상황에 따라', '목적에 맞게')</li>
-      <li><i class="icon-check"></i>기본적인 내용을 가이드하지 않습니다. 이 문서를 읽는 사람은 체크박스와 라디오의 차이를 이해하고 있습니다. <del>그렇다면 어떻게??? 디스크립션은 사용자의 관점에서 서술.</del></li>
-      <li><i class="icon-check"></i>일어날 법 하지 않는 don't 케이스를 가이드하지 않습니다. (ex 라인 chip)</li>
-      <li><i class="icon-check"></i>사용 빈도가 낮은 케이스는 예외 케이스로 정의합니다.</li>
-    </ul> -->
+      <li><i class="icon-check"></i>기본적인 내용을 가이드하지 않습니다. 이 문서를 읽는 사람은 체크박스와 라디오의 차이를 이해하고 있습니다.</li>
+      <li><i class="icon-check"></i>일어날 법 하지 않는 don't 케이스를 가이드하지 않습니다. (ex 라인 chip -> 2월 기준 없어졌다)</li>
+      <!-- <li><i class="icon-check"></i>사용 빈도가 낮은 케이스는 예외 케이스로 정의합니다.</li> -->
+    </ul>
     
     <!-- <li><i class="icon-check"></i>'-때', '경우', '사용' 최소화. 부정어/긍정어/명령형? 하세요, 할 수 있습니다. 보다 합니다. 입니다?</li> -->
     <!-- <li><i class="icon-check"></i>복합명사 띄어쓰기 정의</li> -->
@@ -800,7 +800,7 @@
         <li><i class="icon-check"></i> 모바일 환경에서 네비게이션 바와 함께 사용하지 않습니다.</li>
       </ul>
       <blockquote>
-        <p>flat sitemap 트렌드에서 낮은 빈도로 사용. 주로 도움말, 상품 등 카테고리. pg 심사 시 제품군(토스페이-구엘지페이먼츠시절)</p>
+        <p>flat sitemap 트렌드에서 낮은 빈도로 사용. 주로 도움말, 상품 등 카테고리. pg 심사 시 제품군 정보가 필요할 수 있음(토스페이-구엘지페이먼츠시절)</p>
       </blockquote>
       <nav class="breadcrumb" aria-label="breadcrumb">
         <a class="breadcrumb-item breadcrumb-home" href="/">홈</a>
@@ -980,13 +980,13 @@
         <button class="profile-tablist-tab" role="tab" aria-selected="false" aria-controls="panel-3" id="tab-3" tabindex="-1">세번째 탭</button>
         <i class="profile-tablist-indicator"></i>
       </nav>
-      <div id="panel-1" role="tabpanel" tabindex="0" aria-labelledby="tab-1">
+      <div class="profile-tabpanel" id="panel-1" role="tabpanel" tabindex="0" aria-labelledby="tab-1" style="margin:0;">
         <p>Content for the first panel</p>
       </div>
-      <div id="panel-2" role="tabpanel" tabindex="0" aria-labelledby="tab-2" hidden>
+      <div class="profile-tabpanel" id="panel-2" role="tabpanel" tabindex="0" aria-labelledby="tab-2" aria-hidden="true" style="margin:0;">
         <p>Content for the second panel</p>
       </div>
-      <div id="panel-3" role="tabpanel" tabindex="0" aria-labelledby="tab-3" hidden>
+      <div class="profile-tabpanel" id="panel-3" role="tabpanel" tabindex="0" aria-labelledby="tab-3" aria-hidden="true" style="margin:0;">
         <p>Content for the third panel</p>
       </div>
 
