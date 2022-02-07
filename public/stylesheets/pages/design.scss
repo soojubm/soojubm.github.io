@@ -4,7 +4,7 @@
 // todo tokens
 .design-head h1 span {-webkit-text-stroke: 1px var(--color-text);color:var(--color-background);}
 
-.design-article {max-width:560px;margin:0 auto;padding:6rem var(--grid-margin);overflow:hidden;position:relative;}
+.design-article {max-width:560px;margin:0 auto;padding:4rem var(--grid-margin);overflow:hidden;position:relative;}
 .design-article-title {margin:0 0 var(--space-after-subhead) 0;@include text-subhead;}
 .design-article-description {margin:1.5rem 0;}
 .design-article-section {margin:2.5rem 0;}

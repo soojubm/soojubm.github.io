@@ -221,7 +221,7 @@
         <span class="design-article-anatomy-item">size: 'large' | 'medium'</span>
         <span class="design-article-anatomy-item">space: 'compact' | 'fullwidth' // 버튼 그룹에서도 쓸 수 있도록 isFullWidth(boolean)에서 변경.</span>
         <span class="design-article-anatomy-item">href?: string</span>
-        <span class="design-article-anatomy-item">type?: 'submit' || 'button' // LinkButton component에서 정의하지 않음.</span>
+        <span class="design-article-anatomy-item">type?: 'submit' || 'button' <span hidden>// LinkButton component에서 정의하지 않음.</span></span>
       </div>
       <!-- <li>네이밍: style = solid/outline/plain/text (모든 스타일을 망라해야 하기 때문에 유아이 라이브러리에 어울리는 네이밍) </li> -->
       
@@ -490,10 +490,9 @@
       <!-- <p class="design-article-description"><em>todo 클릭할 수 있는 태그와 클릭할 수 없는 태그 구분하기. 예를 들면 post 페이지에서 태그와 컴포넌트에서의 태그. hashtag는 tag 컴포넌트와 역할이 다르기 때문에 별도의 컴포넌트로 만들어주어야 한다. 현재 hashtag(keyword)는 chip으로 대체. todo. 댑스가 2이상 인 케이스.</em></p> -->
       <ul class="design-article-checklist">
         <!-- <li><i class="icon-check"></i> secondary 사용 안 함.</li> -->
-        <li><i class="icon-check"></i> 상태, 분류, 키워드 맥락의 레이블링입니다.</li>
-        <li><i class="icon-check"></i> 클릭할 수 없습니다.</li>
-        <li><i class="icon-check"></i> 아이콘을 포함하지 않습니다.</li>
+        <li><i class="icon-check"></i> 상태, 분류, 키워드 맥락의 레이블로 사용합니다.</li>
         <li><i class="icon-check"></i> 페이지 이동이나 액션으로 사용하지 않습니다.</li>
+        <li><i class="icon-check"></i> 아이콘을 포함하지 않습니다.</li>
         <li><i class="icon-check"></i> 해시태그(#)는 항상 클릭할 수 있어야 합니다.</li>
       </ul>
       <div class="design-article-anatomy">
@@ -569,7 +568,7 @@
         <li><i class="icon-check"></i>컨테이너 컴포넌트입니다.</li>
         <li><i class="icon-check"></i>'클릭할 수 있음'의 기표로 elevated 스타일을 사용합니다.  타일 전체가 클릭 영역일 수도, 타일 내부에 클릭 가능한 요소를 포함할 수도 있습니다.</li>
         <li><i class="icon-check"></i>페이지 레벨의 타이틀과 디스크립션을 타일로 만들지 않습니다.</p>
-        <li><i class="icon-check"></i>leading, tailing 엘리먼트의 line-height 차이에 따른 시각보정이 필요합니다.</p>
+        <li><i class="icon-check"></i>leading, tailing 엘리먼트의 line-height 차이에 따른 시각보정이 필요할 수 있습니다.</p>
       </ul>
       <div class="design-tile-flat">
         <b>flat</b>
@@ -1532,7 +1531,7 @@
 
       <div class="design-article-section">
         <h6 class="heading-label">Vertical</h6>
-        <div class="token-item">
+        <div class="token-item" style="padding:var(--space-inset);">
           <section class="step">
             <div class="step-item is-active">
               <span class="step-item-icon">1</span>
@@ -1558,7 +1557,7 @@
 
       <div class="design-article-section">
         <h6 class="heading-label">Horizental</h6>
-        <div class="token-item">
+        <div class="token-item" style="padding:var(--space-inset);">
           <section class="step is-vertical">
             <div class="step-item is-active">
               <span class="step-item-icon">1</span>
