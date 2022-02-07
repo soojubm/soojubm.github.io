@@ -169,21 +169,21 @@
             <figure class="item-avatar">
               <span class="avatar-badge"></span>
             </figure>
-            <h3 style="font-size:var(--font-size-subhead);font-weight:var(--font-weight-bold);">huge</h3>
-            <p style="color:var(--color-text-light);">huge는 디스크립션을 갖습니다. list로 사용하지 않습니다.</p>
+            <h3 class="item-name">huge</h3>
+            <p class="item-description">huge는 디스크립션을 갖습니다. list로 사용하지 않습니다.</p>
           </article>
           <article class="item" data-size="large">
             <figure class="item-avatar"></figure>
-            <h3 style="font-weight:var(--font-weight-bold);font-size:var(--font-size-body);">large</h3>
-            <p style="color:var(--color-text-light);">large는 디스크립션을 갖습니다.</p>
+            <h3 class="item-name">large</h3>
+            <p class="item-description">large는 디스크립션을 갖습니다.</p>
           </article>
           <article class="item" data-size="medium">
             <figure class="item-avatar"></figure>
-            <p style="display:block;width:calc(100% - 32px - 1rem);height:32px;line-height:32px;">medium</p>
+            <h3 class="item-name">medium</h3>
           </article>
           <article class="item" data-size="small">
             <figure class="item-avatar"></figure>
-            <p style="width:calc(100% - 24px - .5rem);height:24px;line-height:24px;">small</p>
+            <h3 class="item-name">small</h3>
           </article>
           <!-- <aside class="design-article-helper">
             <p>tile 내부에서.</p>
@@ -260,7 +260,7 @@
           <button class="danger-button" aria-label="danger">Danger</button>
         </div>
         <aside class="design-article-helper">
-          <p>todo 색맹 등의 시각적 장애가 있는 사용자를 위해 색상 외의 대비를 사용할 것.</p>
+          <p>정보의 접근성을 위해 색상 외의 대비를 사용합니다.</p>
         </aside>
       </div>
       <div class="design-article-section">
@@ -357,11 +357,8 @@
             </a>
           </div>
         </div>
-        <aside class="design-article-helper">
-          정렬에 사용.
-        </aside>
-
       </div>
+
       <div class="design-article-section">
         <h6 class="heading-label">Filter / Selection</h6>
         <div class="tile-flat-small">
@@ -426,6 +423,23 @@
               </menu>
             </div>
             <div class="dropdown">
+              <button class="dropdown-trigger js-toggle" aria-expanded="true">
+                <span class="dropdown-trigger-label">최신순</span>
+                <figure class="dropdown-trigger-icon"><i class="icon-caret"></i></figure>
+              </button>
+              <menu class="dropdown-menu" role="menu">
+                <h6 class="dropdown-menu-title" hidden>Dropdown header</h6>
+                <!-- // todo  -->
+                <a class="dropdown-menu-link" href="#" disabled style="display:flex;justify-content:space-between;align-items:center;">
+                  최신순
+                  <i class="icon-check"></i>
+                </a>
+                <a class="dropdown-menu-link" href="#" disabled>
+                  최신순
+                </a>
+              </menu>
+            </div>
+            <div class="dropdown">
               <button class="dropdown-trigger js-toggle" aria-haspopup="menu" aria-expanded="false">
                 <span class=""><i class="icon-more"></i></span>
               </button>
@@ -436,6 +450,9 @@
             </div>
           </div>
         </div>
+        <aside class="design-article-helper">
+          todo: 형태로 묶여 있으나 역할에 따라 추상화하세요.
+        </aside>
       </div>
 
       <div class="design-article-section">
@@ -462,7 +479,7 @@
         <a href="https://material.io/components/menus" target="_blank" style="display:block;">MD menu</a>
         <a href="https://developer.apple.com/design/human-interface-guidelines/ios/controls/pull-down-menus/" target="_blank" style="display:block;">HIG pull down menu</a>
         <a href="https://developer.android.com/reference/com/google/android/material/chip/ChipGroup">
-          tt
+          MD chip group
         </a>
       </div>
     </article>
@@ -472,9 +489,9 @@
       <p class="design-article-description">인접 요소를 부연합니다.</p>
       <!-- <p class="design-article-description"><em>todo 클릭할 수 있는 태그와 클릭할 수 없는 태그 구분하기. 예를 들면 post 페이지에서 태그와 컴포넌트에서의 태그. hashtag는 tag 컴포넌트와 역할이 다르기 때문에 별도의 컴포넌트로 만들어주어야 한다. 현재 hashtag(keyword)는 chip으로 대체. todo. 댑스가 2이상 인 케이스.</em></p> -->
       <ul class="design-article-checklist">
-        <!-- <li><i class="icon-check"></i> 클릭할 수 없습니다.</li> -->
         <!-- <li><i class="icon-check"></i> secondary 사용 안 함.</li> -->
         <li><i class="icon-check"></i> 상태, 분류, 키워드 맥락의 레이블링입니다.</li>
+        <li><i class="icon-check"></i> 클릭할 수 없습니다.</li>
         <li><i class="icon-check"></i> 아이콘을 포함하지 않습니다.</li>
         <li><i class="icon-check"></i> 페이지 이동이나 액션으로 사용하지 않습니다.</li>
         <li><i class="icon-check"></i> 해시태그(#)는 항상 클릭할 수 있어야 합니다.</li>

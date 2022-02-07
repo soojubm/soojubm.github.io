@@ -84,7 +84,7 @@ $transition-fade: opacity 0.15s linear;
   --color-background-hover: 0;
   --color-background-ative: 0;
   --color-border: var(--gray200);
-  --color-border-hover: 0;
+  --color-border-hover: var(--gray800);
   --color-border-active: 0;
   --color-text: var(--gray800);
   --color-text-light: var(--gray400);
@@ -166,7 +166,7 @@ $transition-fade: opacity 0.15s linear;
   --space-inset-head: 2rem;
   --space-inset-chip: .75rem;
 
-  --border: 1px solid var(--gray200);
+  --border: 1px solid var(--color-border);
   --border-active: 1px solid var(--color-primary);
   --background-active: null;
   --text-active: var(--color-primary);
@@ -265,23 +265,29 @@ $transition-fade: opacity 0.15s linear;
     
     // todo
     // --gray0: #252d29;
-    --gray100: #343c38; // bg
+    // --gray100: #343c38; // bg gray800
+    
     --gray200: #4e5351; // divider border
-    --gray400: #979d9a; // caption
     // --gray800: #d1d2d3; // heading // 너무 밝아서 잠시
 
 
     --color-text: #d1d2d3;
     --color-text-light: var(--gray400);
     --color-background: #252d29;
-    --color-background-gray: var(--gray100);
+    --color-background-gray: var(--gray800);
+    --color-border: var(--gray800);
+    --color-border-hover: var(--gray0);
+
+
+    // 변수가 같더라도 재할당이 필요하다.
+    --border: 1px solid var(--color-border);
+
 
       // todo icon scope
     --icon-background: #d1d2d3;
     --icon-border-color: #d1d2d3;
 
-    --border: 1px solid var(--gray100);
-    --color-box-border: var(--gray100);
+    // --color-box-border: var(--gray100);
 
     --shadow: 0px 0px 2rem rgba(0, 0, 0, 0.25);
 
