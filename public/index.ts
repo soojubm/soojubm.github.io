@@ -36,21 +36,28 @@ document.addEventListener('click', event => toggleNavbarMenu(event))
 
 function toggleNavbarMenu(event) {
   const navbarBurgerElement = (event.target as HTMLElement).closest('.js-navbar-toggle')
-  if (!navbarBurgerElement) return
+  const navbarMenu = navbarBurgerElement?.nextElementSibling
+  const isOpendNavbarMenu = navbarBurgerElement?.classList.contains('is-active')
 
-  const navbarMenu = navbarBurgerElement.nextElementSibling
-  const isOpendNavbarMenu = navbarBurgerElement.classList.contains('is-active')
-  // navbarBurgerElement.classList.toggle('is-active')
+  if (navbarBurgerElement) {
+    // navbarBurgerElement.classList.toggle('is-active')
 
-  if (isOpendNavbarMenu) {
-    navbarBurgerElement.classList.remove('is-active')
-    unlockBodyElement()
+    if (isOpendNavbarMenu) {
+      navbarBurgerElement.classList.remove('is-active')
+      unlockBodyElement()
+    } else {
+      navbarBurgerElement.classList.add('is-active')
+      lockBodyElement()
+    }
+
+    navbarMenu?.addEventListener('click', event => event.stopPropagation())
   } else {
-    navbarBurgerElement.classList.add('is-active')
-    lockBodyElement()
-  }
+    if (isOpendNavbarMenu) {
+      alert()
 
-  navbarMenu?.addEventListener('click', event => event.stopPropagation())
+      navbarBurgerElement!.classList.remove('is-active')
+    }
+  }
 }
 
 document.addEventListener('mouseover', () => {
