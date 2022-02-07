@@ -37,7 +37,7 @@
 .item-name {font-size:var(--font-size-body);}
 .item-description {color:var(--color-text-light);}
 .item-description + .item-name {margin-top:-.125rem;}
-.item-action {@include chip;background:var(--color-background-gray);padding:0 var(--space);@include position-right-top;right:0;}
+.item-action {@include chip;background:var(--color-background-weak);padding:0 var(--space);@include position-right-top;right:0;}
 .item-action.is-active {border-color:transparent;}
 .item-action.is-active:hover {border-color:var(--gray800)}
 // todo active style

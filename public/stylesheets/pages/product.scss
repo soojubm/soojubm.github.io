@@ -1,5 +1,5 @@
 .product {@include container-large;max-width:1360px;}
-.product-image {width:480px;background:var(--color-background-gray);border-radius:var(--radius);@include position-center;}
+.product-image {width:480px;background:var(--color-background-weak);border-radius:var(--radius);@include position-center;}
 .product-image:after {content:'';display:block;padding-bottom:100%;}
 
 // 안에서
@@ -24,7 +24,7 @@
 
 .product-iamge-list {position:absolute;}
 .product-image-navigation {width:inherit;text-align:center;position:fixed;left:10%;top:520px;}
-.product-image-navigation button {width:8px;height:8px;margin:0 .25rem;border:var(--border);background:var(--color-background-gray);}
+.product-image-navigation button {width:8px;height:8px;margin:0 .25rem;border:var(--border);background:var(--color-background-weak);}
 .product-image-navigation button.is-current {background:var(--gray800);}
 .product-info {width:27.5%;margin:0 auto 0 0;position:relative;}
 .product-info-name {width:28px;text-align:center;word-break:normal;@include text-title;line-height:1.25;position:absolute;left:-56px;top:0px;}

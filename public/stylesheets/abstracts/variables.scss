@@ -78,11 +78,11 @@ $transition-fade: opacity 0.15s linear;
   // ! what-target-option(thiness/states), 타크테마에도 바뀌지 않는.
   // ! gray is... non semantic
   --color-background: var(--gray0);
-  --color-background-gray: var(--gray100);
+  --color-background-weak: var(--gray100);
   --color-background-darkest: null;
   
   --color-background-hover: 0;
-  --color-background-ative: 0;
+  --color-background-active: 0;
   --color-border: var(--gray200);
   --color-border-hover: var(--gray800);
   --color-border-active: 0;
@@ -273,7 +273,7 @@ $transition-fade: opacity 0.15s linear;
     --color-text: #d1d2d3;
     --color-text-light: var(--gray400);
     --color-background: #252d29;
-    --color-background-gray: var(--gray800);
+    --color-background-weak: var(--gray800);
     --color-border: var(--gray800);
     --color-border-hover: var(--gray0);
 

@@ -86,7 +86,7 @@ button {@include reset-button;}
 }
 @mixin button-tertiary {
   @include button;
-  background:var(--color-background-gray);color:var(--color-text);
+  background:var(--color-background-weak);color:var(--color-text);
   &:hover:not(:disabled), &.is-hover:not(:disabled) {
     // border-color:var(--gray200);background:var(--gray200);
   }
