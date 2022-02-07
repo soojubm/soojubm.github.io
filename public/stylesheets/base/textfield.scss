@@ -33,7 +33,7 @@
 .textfield-unit {}
 
 .textfield-check {@include textfield-surfix;}
-.textfield-prefix {@include textfield-prefix;background:var(--gray100);}
+.textfield-prefix {@include textfield-prefix;background:var(--color-background-gray);}
 .textfield-prefix ~ .textfield-input {padding-left:calc(1rem + 2rem + .25rem);}
 .selectbox-indicator {@include textfield-surfix;background:var(--color-background);}
 .textfield-clear {@include avatar-small;@include textfield-surfix;top:11px;}
