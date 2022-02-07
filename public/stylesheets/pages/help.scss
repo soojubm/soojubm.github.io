@@ -31,7 +31,7 @@
 .help-feedback {position:relative;}
 .help-feedback-title {}
 .help-feedback-status {display:block;margin:0 0 var(--space) 0;}
-.help-feedback-button {@include button-tertiary;@include button-small;margin:0 .25rem 0 0;}
+.help-feedback-button {@include chip;margin:0 var(--space-small) 0 0;}
 
 .help-foot {display:flex;max-width:var(--width-medium);margin:0 auto;padding:1rem 2rem;box-sizing:border-box;background:var(--gray100);box-shadow:var(--shadow);position:relative;}
 .help-foot-body {}
