@@ -101,7 +101,7 @@
 .card-cta {@include button-primary;width:100%;margin:2rem 0;}
 .card-foot {display:flex;justify-content:space-between;margin:2rem 0 0;}
 
-@media (hover: none) and (pointer: coarse) {
+@media (hover) and (pointer: fine) {
   .card:hover:not(.has-item) {@include hover-item;}
   .card:hover .card-more {display:block;}
 }

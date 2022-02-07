@@ -57,7 +57,7 @@
   height: 100%;
   object-fit: cover;
 }
-.person-name {@include truncate-multi;}
+.person-name {@include truncate-multi;color:var(--color-text);}
 .person-test {
   @include tag;
   position: absolute;
