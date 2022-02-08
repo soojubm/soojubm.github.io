@@ -84,7 +84,7 @@
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0; */
         "></figure>
-        <b>--radius:4px</b>
+        <b>--radius: 4px</b>
       </article>
       <aside class="design-article-helper" style="margin-top:-.25rem;margin-bottom:.5rem;">
         <p>크기와 비례해서 radius 조절이 필요하지만 경량화.</p>
@@ -148,7 +148,8 @@
         <figure class="token-item-avatar"></figure>
         <b>--green100: rgba(10, 160, 80, 0.1)</b>
         <div style="margin-left:calc(var(--size-large) + var(--space));font-size:var(--font-size-caption);">
-          <p>--color-background-primary-lighter</p>
+          <mark>--color-primary-light</mark>
+          <p>--color-background-primary-light</p>
           <p>--color-background-active</p>
         </div>
       </article>
@@ -156,7 +157,7 @@
         <figure class="token-item-avatar"></figure>
         <b>--green800: #1b995c</b>
         <div style="margin-left:calc(var(--size-large) + var(--space));font-size:var(--font-size-caption);">
-          <mark>--color-background-primary-lighter</mark>
+          <mark>--color-primary</mark>
           <p>--color-background-primary</p>
           <p>--color-border-active</p>
           <!-- <p>--button-text-color-active</p>
@@ -208,15 +209,14 @@
         </div>
       </article>
 
-      <br />
-
+      <!-- <br />
       <h2 class="heading-label">Skeleton</h2>
       <article class="token-item">
-        <figure class="token-item-avatar size-large color-skeleton" style="height:var(--size-huge);"></figure>
+        <figure class="token-item-avatar size-huge color-skeleton"></figure>
         <b>skeleton</b>
         <div style="margin-left:calc(var(--size-large) + var(--space));font-size:var(--font-size-caption);">
         </div>
-      </article>
+      </article> -->
     </article>
 
     <article class="design-article js-scrollspy-section">
@@ -410,7 +410,7 @@
           </figure> -->
           <b>--font-size-medium: 1.125rem</b>
           <div style="font-size:var(--font-size-caption);">
-            <p>@mixin text-subhead {} // for article level</p>
+            <p>@mixin text-subhead {}</p>
             <p>@mixin text-body-large {}</p>
             <!-- <p>@mixin text-term-body {@include text-body-large}</p> -->
           </div>
@@ -454,7 +454,7 @@
         <li><i class="icon-check"></i>컨테이너는 최대 4개 칼럼을 가집니다.</p>
         <li><i class="icon-check"></i>리스트는 언제든 가로 스크롤로 변경할 수 있도록 설계합니다.</li>
         <li><i class="icon-check"></i>페이지의 맥락에 따라 컨테이너 너비로 대비를 줄 수 있습니다. 예를 들면 비밀번호찾기와 로그인/회원가입 페이지는 각각 다른 레이아웃 모듈로써 역할(맥락)을 구분합니다.</p>
-        <li><i class="icon-check"></i>설정, 글쓰기, 소개 등 페이지에서 의도적으로 레이아웃 모듈이나 배경색으로 대비를 줄 수 있습니다.</p>
+        <li><i class="icon-check"></i>설정, 글쓰기, 소개 등 페이지에서 의도적으로 레이아웃 모듈이나 배경색에 대비를 줄 수 있습니다.</p>
       </ul>
 
       <h6 class="heading-label">Media Queries</h6>
