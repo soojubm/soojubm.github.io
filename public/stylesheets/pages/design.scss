@@ -322,7 +322,7 @@
 .design-home nav a[readonly] {opacity:.5;cursor:not-allowed;box-shadow:none;}
 .design-home nav a:hover:not([readonly]) {@include hover-item;}
 .design-home nav a span {@include avatar-medium;margin-left:auto;}
-.design-home nav a div {margin:0 0 0 var(--space-before-badge);}
+.design-home nav a div {margin:0 0 0 var(--space-small);}
 
 @media (--breakpoint-small) {
   .design-home nav {display:block;margin-left:0;margin-right:0;}

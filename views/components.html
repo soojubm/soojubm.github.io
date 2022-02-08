@@ -18,7 +18,7 @@
     <span class="tag" style="margin-top:2rem;">✨ 가이드를 위한 가이드</span>
     <ul class="design-article-checklist" style="margin-top:1rem;margin-bottom:0;">
       <li><i class="icon-check"></i>목록을 열거하거나 가짓수를 서술하지 않습니다.</li>
-      <li><i class="icon-check"></i>특정할 수 없거나 모호한 용어로 서술하지 않습니다. (ex 밀리의서재 '상황에 따라', '목적에 맞게')</li>
+      <li><i class="icon-check"></i>특정할 수 없거나 모호한 용어로 서술하지 않습니다. (ex '경우에 따라' '상황에 따라', '목적에 맞게')</li>
       <li><i class="icon-check"></i>기본적인 내용을 서술하지 않습니다. 이 문서를 읽는 사람은 체크박스와 라디오의 차이를 이해하고 있습니다.</li>
       <li><i class="icon-check"></i>일어날 법 하지 않는 don't 케이스를 서술하지 않습니다.</li>
       <!-- <li><i class="icon-check"></i>사용 빈도가 낮은 케이스는 예외 케이스로 정의합니다.</li> -->
@@ -487,7 +487,7 @@
     <article class="design-article js-observer js-scrollspy-section">
       <h1 class="design-article-title">Tags <span hidden>(or badge/label)</span></h1>
       <p class="design-article-description">인접 요소를 부연합니다.</p>
-      <!-- <p class="design-article-description"><em>todo 클릭할 수 있는 태그와 클릭할 수 없는 태그 구분하기. 예를 들면 post 페이지에서 태그와 컴포넌트에서의 태그. hashtag는 tag 컴포넌트와 역할이 다르기 때문에 별도의 컴포넌트로 만들어주어야 한다. 현재 hashtag(keyword)는 chip으로 대체. todo. 댑스가 2이상 인 케이스.</em></p> -->
+      <!-- <p class="design-article-description"><em>post 페이지에서 태그와 컴포넌트에서의 태그. hashtag는 tag 컴포넌트와 역할이 다르기 때문에 별도의 컴포넌트로 만들어주어야 한다. 현재 hashtag(keyword)는 chip으로 대체. todo. 댑스가 2이상 인 케이스.</em></p> -->
       <ul class="design-article-checklist">
         <!-- <li><i class="icon-check"></i> secondary 사용 안 함.</li> -->
         <li><i class="icon-check"></i> 상태, 분류, 키워드 맥락의 레이블로 사용합니다.</li>
@@ -505,7 +505,7 @@
         <span class="design-article-role-item">eyebrow</span>
         <span class="design-article-role-item">badge</span>
         <span class="design-article-role-item">keyword</span>
-        <span class="design-article-role-item">hashtag (clickable or not)</span>
+        <span class="design-article-role-item">hashtag</span>
       </div> -->
       <div class="tag-group" role="group" style="margin-top:1.5rem;">
         <span class="tag" data-appearance="primary">Primary</span>
@@ -543,7 +543,6 @@
           <span class="button-minus-label">감소</span>
         </button>
         <button class="design-article-icon"><i class="icon-plus"></i></button>
-
         <button class="design-article-icon"><i class="icon-more"></i></button>
         <button class="design-article-icon"><i class="icon-x"></i></button>
         <button class="design-article-icon"><i class="icon-o"></i></button>
@@ -564,7 +563,6 @@
       <h1 class="design-article-title" title="or Box">Tiles</h1>
       <p class="design-article-description">관련된 콘텐츠를 시각적으로 묶습니다.</p>
       <ul class="design-article-checklist">
-        <!-- tile이 아니더라도 elevated 스타일의 예외 케이스. -->
         <li><i class="icon-check"></i>컨테이너 컴포넌트입니다.</li>
         <li><i class="icon-check"></i>'클릭할 수 있음'의 기표로 elevated 스타일을 사용합니다.  타일 전체가 클릭 영역일 수도, 타일 내부에 클릭 가능한 요소를 포함할 수도 있습니다.</li>
         <li><i class="icon-check"></i>페이지 레벨의 타이틀과 디스크립션을 타일로 만들지 않습니다.</p>
@@ -589,9 +587,8 @@
       </blockquote>
       <!-- (리액트에서 id  이슈 input in label.) -->
       <ul class="design-article-checklist">
-        <li><i class="icon-check"></i> checkbox와 radio는 항상 세로 정렬입니다.</li>
+        <li><i class="icon-check"></i> checkbox와 radio는 항상 세로로 정렬합니다.</li>
         <!-- <li><i class="icon-check"></i> radio는 1개의 옵션을 선택된 상태로 제공하세요.</li> -->
-        <!-- <li><i class="icon-check"></i> switch는 기능이나 옵션을 켜고 끄는 뉘앙스 (on/off)</li> -->
         <li><i class="icon-check"></i> 옵션이 6개 이상일 때 selectbox나 chip group을 사용합니다.</li>
         <!-- <li><i class="icon-check"></i> selectbox/dropdown를 다중 선택에 사용하지 않습니다.</li> -->
       </ul>
@@ -661,7 +658,7 @@
       <br />
 
       <h6 class="heading-label">switch</h6>
-<div class="tile-flat">
+      <div class="tile-flat">
         <span class="switch">
           <input type="checkbox" id="switch1" name="" role="switch" value="on" checked />
           <label for="switch1" title="Receive weekly newsletter">주간 뉴스레터 받아보기</label>
@@ -671,7 +668,10 @@
           <input type="checkbox" id="switch2" name="" role="switch" value="off" disabled />
           <label for="switch2" title="Receive weekly newsletter">주간 뉴스레터 받아보기</label>
         </span>
-</div>
+      </div>
+      <!-- <aside>
+        switch는 기능이나 옵션을 켜고 끄는 뉘앙스 (on/off)
+      </aside> -->
       <!-- <datalist></datalist> -->
       <!--
       <h6 class="heading-label">selectbox</h6>
@@ -826,7 +826,7 @@
 
       <ul class="design-article-checklist">
         <li><i class="icon-check"></i> 텍스트 단락과 함께 사용합니다.</li>
-        <li><i class="icon-check"></i> 단락의 내/외부에서의 형태를 구분합니다. 단락 내부에서 언더라인으로 기본 텍스트와 구별합니다.</li>
+        <li><i class="icon-check"></i> 단락의 내/외부에서의 형태를 구분합니다. 단락 내부에서 언더라인을 추가하여 텍스트와 대비를 추가합니다.</li>
       </ul>
       
       <p>형무소 안에서는 소장의 말이 곧 법이었으며 죄수들의 잘못과 실수는 결코 용납되지 않는다. 어머니의 사망 소식을 듣고 인해 2번이나 탈옥을 시도했다가 체포된 <a class="link-inner" href="#">루크</a>의 발에 쇠통이 채워지며 루크는…<a class="more link-outer" href="#" style="margin-left:.25rem;">더 보기</a></p>
@@ -1062,7 +1062,7 @@
       </div>
     </article>
 
-    <article class="design-article js-observer js-scrollspy-section" style="overflow:auto;">
+    <article class="design-article js-observer js-scrollspy-section" style="overflow:visible;">
       <h1 class="design-article-title">Tooltip</h1>
       <p class="design-article-description">생소한 용어, 수치 및 정보의 근거를 보충합니다. todo. 페이지 로딩 시점에 열려 있는 경우 doorhanger 필요.</p>
       <ul class="design-article-checklist">
@@ -1080,7 +1080,7 @@
       <p class="design-article-description">시스템이나 브라우저의 상태 이상, 사용자의 행동에 피드백합니다. (modal,inline,toast)</p>
       <ul class="design-article-checklist">
         <li><i class="icon-check"></i> 한 문장으로 간결하게 피드백합니다.</li>
-        <li><i class="icon-check"></i> 모든 액션에 피드백할 필요는 없습니다. (ex bad case: 인스타그램 앱에서 로그인되었다는 toast. 홈으로 이동하며 피드가 노출만으로 로그인 상태를 인지할 수 있다.)</li>
+        <li><i class="icon-check"></i> 모든 액션에 피드백할 필요는 없습니다. (ex bad case: 인스타그램 앱에서 로그인되었다는 toast. 홈으로 이동과 피드 노출만으로 로그인 상태를 인지할 수 있다.)</li>
         <li><i class="icon-check"></i> 사용자의 귀책이 아닌 경우, 단순 "오류" 대신 "시스템 오류"와 같은 용어를 사용하여 사용자가 잘못한 것처럼 느끼지 않도록 합니다.</li>
         <!-- <li><i class="icon-check"></i> 브라우저가 role="alert" 속성이 있는 요소를 발견 하면 즉시 사용자에게 경고 내용을 읽습니다.</li> -->
         <li><i class="icon-check"></i> Don't show more than one at a time.</li>
@@ -1286,8 +1286,9 @@
         </tbody>
       </table>
       <br />
+      <!-- // todo 가로 스크롤 패턴 -->
       <table>
-        <caption>히라가나 오십음도 horizental scrolling<small class="is-optional">optional</small></caption>
+        <caption>히라가나 오십음도</caption>
         <tbody role="rowgroup">
           <tr role="row" aria-rowindex="11">
             <th scope="row">제목</th>
@@ -1311,7 +1312,8 @@
       <ul class="design-article-checklist">
         <li><i class="icon-check"></i> heading은 한 문장으로 간결하게 작성하세요.</li>
         <li><i class="icon-check"></i> 복잡한 정보나 사용자가 필수적으로 숙지해야 하는 정보에 사용하지 않습니다.</li>
-      </div>
+      </ul>
+
       <!-- <blockquote>
         <p>클릭 영역 정의(본문, 외부를 클릭했을 때). 본문을 클릭 영역으로 지정하는 경우 내부에 링크를 사용할 수 없다. 제목을 클릭 영역으로 한정하기.</p>
       </blockquote> -->
@@ -1531,7 +1533,7 @@
 
       <div class="design-article-section">
         <h6 class="heading-label">Vertical</h6>
-        <div class="token-item" style="padding:var(--space-inset);">
+        <div class="token-item" style="padding:var(--space);">
           <section class="step">
             <div class="step-item is-active">
               <span class="step-item-icon">1</span>
@@ -1557,7 +1559,7 @@
 
       <div class="design-article-section">
         <h6 class="heading-label">Horizental</h6>
-        <div class="token-item" style="padding:var(--space-inset);">
+        <div class="token-item" style="padding:var(--space);">
           <section class="step is-vertical">
             <div class="step-item is-active">
               <span class="step-item-icon">1</span>
@@ -1582,7 +1584,7 @@
       <p class="design-article-description">실행 결과. 오류. 내용없음.</p>
       <ul class="design-article-checklist">
         <li><i class="icon-check"></i> 왼쪽 정렬의 기본적인 텍스트 콘텐츠 모듈과의 대비를 위해 가운데 정렬합니다.</li>
-        <li><i class="icon-check"></i> 페이지나 섹션의 empty, error, complete 상황에서 사용합니다.</li>
+        <li><i class="icon-check"></i> 페이지 레벨과 섹션 레벨에서 empty, error, complete 상황에서 사용합니다.</li>
       </ul>
       <blockquote>
         <p>blankslate, empty state. result.</p>

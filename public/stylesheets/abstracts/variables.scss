@@ -9,10 +9,6 @@ $transition-fade: opacity 0.15s linear;
 :root {
   color-scheme: light dark;
 
-  // ! 세로 고정값으로 사용
-  --padding-input: 9px 1rem 11px; // 48
-  --padding-inupt-small: 4px 1rem 5px; // 32
-
   // ! viewport : desktop first
 
   --fontstack: 'Asap', 'AritaDotum', sans-serif;
@@ -50,18 +46,15 @@ $transition-fade: opacity 0.15s linear;
   --font-line-height-small: 1.4;
   --font-line-height-heading: null;
 
-  --font-letter-spacing: 0;
-
   // ! colours
-  --gray0: #fff; // white for dark theme
-  --gray100: #f1f4f1; // bg 156
-  --gray200: #e0e2e1; // divider border F8F7F5
-  --gray400: #979d9a; // caption
+  --gray0: #fff;
+  --gray100: #f1f4f1;
+  --gray200: #e0e2e1; // F8F7F5
+  --gray400: #979d9a;
   // --gray600: #4e5351;
-  --gray800: #343c38; // heading
-  --green100: rgba(10, 160, 80, 0.1); // previous #ddf5e9;
+  --gray800: #343c38;
+  --green100: rgba(10, 160, 80, 0.1); // #ddf5e9;
   --green800: #1b995c;
-  // --red100: rgba(243, 68, 97 / 6%);
   --red100: rgba(243, 68, 97, .06);
   --red800: #f02849;
 
@@ -88,10 +81,10 @@ $transition-fade: opacity 0.15s linear;
   --color-border-active: 0;
   --color-text: var(--gray800);
   --color-text-light: var(--gray400);
+  --color-text-link: var(--color-primary);
+
 
   --color-warning: var(--red800);
-
-  --text-color: null;
 
   --color-container-border: #000;
   --color-box-border: var(--gray100);
@@ -102,7 +95,6 @@ $transition-fade: opacity 0.15s linear;
   --icon-background: var(--gray800);
   --icon-border-color: var(--gray800);
 
-  // dark / light / gray?
   // --gradient: linear-gradient(to bottom, var(--gray1000), rgba(37,45,41,.75), var(--gray800));
   --gradient: linear-gradient(to bottom, var(--gray100), var(--gray800));
 
@@ -117,23 +109,18 @@ $transition-fade: opacity 0.15s linear;
   --width-popover: 280px;
   --width-dialog: 0;
 
-  --size-huge: 5rem; // 80px
-  --size-large: 3rem; // 3rem
-  --size-medium: 2rem; // 32px
-  --size-small: 1.5rem; // 24px
-  --size-tiny: 1rem; // 1rem
+  --size-huge: 5rem;
+  --size-large: 3rem;
+  --size-medium: 2rem;
+  --size-small: 1.5rem;
+  --size-tiny: 1rem;
 
   --space: 1rem;
   --space-minus: calc(var(--space) * -1);
-
   --space-small: .5rem;
   --space-small-minus: calc(var(--space-small) * -1);
-
-  // todo: only mixin positioning
   --space-inset: var(--space-small);
 
-
-  // ! in TILE
   --space-leading-title: -.25rem;
   --space-leading-subhead: -.125rem;
   --space-leading-body: -.125rem;
@@ -144,7 +131,7 @@ $transition-fade: opacity 0.15s linear;
   --space-after-button: .75rem;
   --space-after-textfield: 1rem;
 
-  --space-after-avatar-huge: 1rem;
+  --space-after-avatar-huge: var(--space);
   --space-after-avatar-large: var(--space);
   --space-after-avatar-medium: var(--space-small);
   --space-after-avatar-small: var(--space-small);
@@ -157,7 +144,6 @@ $transition-fade: opacity 0.15s linear;
   
   --space-before-article: 10rem;
   --space-before-section: 12rem;
-  --space-before-badge: .75rem;
 
   // todo, position
   --space-inset-card: null;
@@ -169,10 +155,7 @@ $transition-fade: opacity 0.15s linear;
   --border: 1px solid var(--color-border);
   --border-active: 1px solid var(--color-primary);
   --background-active: null;
-  --text-active: var(--color-primary);
 
-
-  // ! 필요에 따라 린하게 추가하기. 지금은 하나만 쓰는 중.
   --radius: 4px;
   --radius-avatar: var(--radius);
   --radius-card: var(--radius);
@@ -196,8 +179,10 @@ $transition-fade: opacity 0.15s linear;
   --card-border: 1px solid #fff;
   --card-padding: 1.5rem;
 
+  --button-space-inset: null;
   --button-background: #fff;
   --button-text-color: #fff;
+  --button-font-size: var(--font-size-body);
 
   // ! z-index
   // ! padding 중첩되면 같은 역할이라도. 마이너스 마진.
@@ -236,17 +221,14 @@ $transition-fade: opacity 0.15s linear;
   --button-radius: var(--radius);
   --button-border-color: null;
 
+  --textfield-space-inset: null;
+  --textfield-text-color: null;
+  --textfiled-placeholder-color: null;
+  --textfield-border-color: null;
   --textfield-background-color: var(--background-gray);
-
-
 
   // components
   --dialog-inset: 0;
-
-
-
-
-
 
   
 
@@ -264,12 +246,9 @@ $transition-fade: opacity 0.15s linear;
     // }
     
     // todo
-    // --gray0: #252d29;
-    // --gray100: #343c38; // bg gray800
     --gray200: #4e5351; // divider border
-    // --gray800: #d1d2d3; // heading // 너무 밝아서 잠시
 
-
+    // todo d1d2d3는 팔렛트에 없어요
     --color-text: #d1d2d3;
     --color-text-light: var(--gray400);
     --color-background: #252d29;
@@ -281,12 +260,9 @@ $transition-fade: opacity 0.15s linear;
     // 변수가 같더라도 재할당이 필요하다.
     --border: 1px solid var(--color-border);
 
-
     // todo gray800
     --icon-background: #d1d2d3;
     --icon-border-color: #d1d2d3;
-
-    // --color-box-border: var(--gray100);
 
     --shadow: 0px 0px 2rem rgba(0, 0, 0, 0.25);
 

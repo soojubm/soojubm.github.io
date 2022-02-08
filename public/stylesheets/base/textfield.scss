@@ -21,7 +21,8 @@
 .textfield {position:relative;}
 .textfield-label {display:block;margin:0 0 .125rem 0;}
 .textfield-label small {margin:0 0 0 .25rem;color:var(--color-text-light);}
-.textfield-input {display:block;width:100%;min-height:var(--size-large);padding:var(--padding-input);padding-right:40px;@include reset-textinput;}
+// todo padding top bottom은 textarea를 위해서
+.textfield-input {display:block;width:100%;min-height:var(--size-large);padding:9px var(--space) 10px;padding-right:40px;@include reset-textinput;}
 // .textfield-input:focus {background:var(--color-background);border-color:var(--gray200);outline:0;}
 .textfield-input:disabled {border-color:var(--gray200);background:var(--gray200);color:var(--gray100);cursor:not-allowed;}
 .textfield-input:read-only {color:var(--color-text-light);cursor:default;}
