@@ -98,7 +98,6 @@ button {@include reset-button;}
   @include button;
   border:1px solid transparent;color:var(--color-primary);
   &:hover:not(:disabled), &.is-hover:not(:disabled) {
-    // border-color:var(--gray100);background:var(--gray100);
   }
   &:focus:not(:disabled) {}
   &:active {}

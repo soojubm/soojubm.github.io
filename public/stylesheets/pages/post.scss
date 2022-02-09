@@ -96,7 +96,6 @@
 
 .post-pagination {display:flex;justify-content:space-between;padding:2rem var(--grid-margin);
 	border-top:var(--border);border-bottom:var(--border);
-	// background:var(--gray100);
 }
 .post-pagination-previous {width:var(--grid-column);text-align:left;position:relative;}
 .post-pagination-previous:hover {@include hover-item;}

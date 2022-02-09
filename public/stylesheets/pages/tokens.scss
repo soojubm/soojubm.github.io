@@ -42,7 +42,7 @@
 .token-item b {display:block;}
 // .token-item div {@include tag-group;}
 // .token-item div p {@include tag}
-.token-item figure:before {content:'';display:block;height:var(--size-huge);background:var(--gray100);position:absolute;left:0;right:0;top:0;bottom:0;z-index:-1;}
+.token-item figure:before {content:'';display:block;height:var(--size-huge);background:var(--color-background-weak);position:absolute;left:0;right:0;top:0;bottom:0;z-index:-1;}
 // .token-item-avatar:after {content:'';display:block;background:var(--gray100);height: 80px;
 //   z-index: -1;
 //   position: absolute;

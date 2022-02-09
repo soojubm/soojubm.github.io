@@ -165,7 +165,7 @@
 .design-article-avatar-small {@include avatar-small;background-image:url('/public/images/soo.png');}
 
 .number {display:flex;justify-content:center;}
-.number-card {display:flex;justify-content:center;align-items:center;width:48px;height:64px;background:var(--gray100);border-radius:var(--radius);font-size:var(--font-size-huge);font-weight:var(--font-weight-bold);margin:0 .25rem;}
+.number-card {display:flex;justify-content:center;align-items:center;width:48px;height:64px;background:var(--color-background-weak);border-radius:var(--radius);font-size:var(--font-size-huge);font-weight:var(--font-weight-bold);margin:0 .25rem;}
 
 .userlist {@include tile-elevated;max-width:400px;}
 .userlist header {display:flex;align-items:center;justify-content:space-between;margin:var(--space-leading-subhead) 0 var(--space-after-subhead);}

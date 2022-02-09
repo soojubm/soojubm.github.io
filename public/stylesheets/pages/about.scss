@@ -5,7 +5,7 @@
 .about-intro-image img {@include image-centered;max-height:250%;}
 .about-intro-description {width:50%;padding:var(--grid-margin);box-sizing:border-box;background:var(--color-primary);font-size:var(--font-size-subhead);}
 
-.about-contact {max-width:var(--width-large);margin:0 auto;padding:4rem var(--grid-margin);background:var(--gray100);position:relative;}
+.about-contact {max-width:var(--width-large);margin:0 auto;padding:4rem var(--grid-margin);background:var(--color-background-weak);position:relative;}
 .about-contact-meida {}
 .about-contact-title {@include text-subhead;margin:0 0 var(--space-after-title) 0;}
 

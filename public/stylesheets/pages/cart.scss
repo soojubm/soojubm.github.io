@@ -7,7 +7,6 @@
 .cart-item {@include tile-elevated;margin:var(--space) 0;}
 .cart-item:after {content:'';display:block;clear:both;}
 .cart-item-delete {@include chip;position:absolute;left:.5rem;top:.5rem;z-index:var(--zindex-default);}
-.cart-item-checkout {background:var(--gray100);position:absolute;left:-32px;top:60px;}
 .cart-item-thumbnail {float:left;display:block;width:20%;height:160px;background:var(--color-background-weak);border-radius:var(--radius);box-sizing:border-box;position:relative;}
 .cart-item-thumbnail img {width:auto;height:auto;max-width:100%;max-height:130%;margin:auto;position:absolute;left:0;right:0;top:40%;bottom:0;transition:all .4s;}
 .cart-item-thumbnail:hover img {transform:translateY(-4px);}
