@@ -13,10 +13,9 @@
   @include avatar-small;position:absolute;left:1rem;top:38px;pointer-events:none;
 }
 @mixin textfield-surfix {
-  @include avatar-small;position:absolute;right:1rem;top:38px;pointer-events:none;
+  @include avatar-small;background:var(--color-background);position:absolute;right:1rem;top:38px;
   // @media (--breakpoint-small) {top:35px;}
 }
-
 
 .textfield {position:relative;}
 .textfield-label {display:block;margin:0 0 .125rem 0;}
@@ -36,7 +35,7 @@
 .textfield-check {@include textfield-surfix;}
 .textfield-prefix {@include textfield-prefix;background:var(--color-background-weak);}
 .textfield-prefix ~ .textfield-input {padding-left:calc(1rem + 2rem + .25rem);}
-.selectbox-indicator {@include textfield-surfix;background:var(--color-background);}
+.selectbox-indicator {@include textfield-surfix;pointer-events:none;}
 .textfield-clear {@include avatar-small;@include textfield-surfix;top:11px;}
 .textfield-clear .icon-x:before {background-color:var(--color-text-light);}
 .textfield-clear .icon-x:after {background-color:var(--color-text-light);}
