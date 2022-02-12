@@ -55,6 +55,17 @@
   </section> -->
 
   <section class="tokens-body">
+
+    <article class="design-article tile-flat" style="margin:4rem auto;">
+      <h1 class="design-article-title">Naming Conventions</h1>
+      <p class="design-article-description"><span class="tag">--sds</span> prefix로 다른 라이브러리와 충돌을 방지합니다.</p>
+      <p>/ component tokens</p>
+      <p><span class="tag">--sds-{attributeName}-{}</span></p>
+      <p>attributeName = size / space / radius / color / zindex / </p>
+      <p>이름을 정하는 데 너무 많은 시간을 쓰지 않도록. </p>
+    </article>
+
+
     <article class="design-article js-scrollspy-section">
       <h1 class="design-article-title">Palette</h1>
       <p class="design-article-description">컬러(background/border/text/state)와 표면surface(shadow/radius)을 정의합니다.</p>
@@ -649,6 +660,9 @@
       <div class="token-item">
         <b>--zindex-toast: 9;</b>
       </div>
+      <div class="token-item">
+        <b>--zindex-skipmenu: 10;</b>
+      </div>
     </article>
 
     <article class="design-article js-scrollspy-section">
@@ -663,9 +677,9 @@
       </div>
       <div class="token-item">
         <p>--duration: .4s</p>
-        <p>--duration-instantly: 0s;</p>
-        <p>--duration-slowly: null;</p>
-        <p>--duration-quickly: null;</p>
+        <p>--duration-instant: 0s;</p>
+        <p>--duration-quick: .2s;</p>
+        <p>--duration-slow: .8s;</p>
       </div>
     </article>
 
