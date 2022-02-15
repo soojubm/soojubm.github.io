@@ -216,3 +216,8 @@
   &:before {content:'#';}
 }
 
+
+
+@mixin background {
+  position: absolute;
+}

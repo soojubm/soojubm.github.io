@@ -153,6 +153,11 @@ $transition-fade: opacity 0.15s linear;
   --space-inset-head: 2rem;
   --space-inset-chip: .75rem;
 
+  //
+  --space-page-inset: 8rem;
+  --space-header-inset: 2rem;
+  --space-section-inset: 4rem;
+
   --border: 1px solid var(--color-border);
   --border-active: 1px solid var(--color-primary);
   --background-active: null;
