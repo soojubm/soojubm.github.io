@@ -18,5 +18,4 @@
 @mixin avatar-tiny {@include avatar;width:var(--size-tiny);height:var(--size-tiny);}
 
 
-
-
+.avatar-small {@include avatar-small;}

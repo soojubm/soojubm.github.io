@@ -1,25 +1,41 @@
 <main class="post">
+  <article class="user" style="margin:3rem 0 2em;">
+    <figure
+      class="profile-user-avatar"
+      style="float:left;margin:0 var(--space-after-avatar-large) 0 0;width:var(--size-large);height:var(--size-large);"
+    ></figure>
+    <h2 class="profile-user-name" style="font-size:var(--font-size-body);">수줍이</h2>
+    <!-- <span class="profile-user-id">soojubm@gmail.com</span> -->
+    <span class="profile-user-career" style="margin-top:0rem;display:block;">Youtube Subscriber</span>
+  </article>
+
   <header class="post-head js-post-head">
-    <a class="post-head-category" href="#post">Murmur</a>
-    <h2 class="post-head-headline">콘텐츠 타이틀</h2>
-    <time class="post-head-dateline">2018. 06. 29.</time>
-    <i class="icon-bullet"></i>
-    <span class="post-head-readingtime">약 40초 분량</span>
+    <!-- <a class="post-head-category" href="#post">Murmur</a> -->
+    <h2 class="post-head-headline">Component Encyclopedia beta</h2>
+    <p class="post-head-kicker" style="margin-top:-1.75rem;margin-bottom:1rem;font-size:var(--font-size-subhead);">
+      How we’re cataloging every UI component in the world
+    </p>
+    <time class="post-head-dateline"></time>
+    <!-- <i class="icon-bullet"></i>
+    <span class="post-head-readingtime">약 40초 분량</span> -->
     <div class="post-head-progress" role="progressbar" aria-valuenow=""></div>
   </header>
-  <hr role="separator" />
-  <address class="post-byline">
+
+  <!-- <hr role="separator" /> -->
+
+  <!-- <address class="post-byline">
     <figure class="post-byline-avatar"><img src="" alt="" /></figure>
     <span class="post-byline-name">soojubm</span>
-  </address>
+    <time class="post-byline-time">2018. 06. 29.</time>
+  </address> -->
   <section class="post-body">
     <figure class="post-body-image" style="background:url('/public/images/newman.jpg') no-repeat center center fixed;background-size:1200px auto;">
       <figcaption class="post-body-caption"></figcaption>
     </figure>
-    <p class="post-body-kicker">
+    <!-- <p class="post-body-kicker">
       구조와 표현, 행동을 엄격하게 분리합니다.
       <span class="linebreak">하나의 엘리먼트는 하나의 시멘틱한 클래스를 가집니다. 형태가 같다고 하여 같은 클래스를 사용하지 않습니다.</span>
-    </p>
+    </p> -->
 
     <p class="post-body-paragraph">
       한글 ipsum. 사랑의 없는 보이는 이상을 피어나기 청춘에서만 끓는다. 있음으로써 위하여 가치를 것이다. 군영과 보는 풀밭에 가장 아름다우냐? 되려니와,
@@ -32,9 +48,7 @@
     <p class="post-body-paragraph">
       하나의 엘리먼트에는 하나의 시멘틱한 클래스를 가집니다. 엘리먼트의 상태status를 표현하는 경우 여러개의 클래스를 가질 수 있습니다.
     </p>
-    <blockquote>
-      <p>사랑의 없는 보이는 이상을 피어나기 청춘에서만 끓는다. 있음으로써 위하여 가치를 것이다. 군영과 보는 풀밭에 가장 아름다우냐?</p>
-    </blockquote>
+
     <p class="post-body-paragraph">
       track, media, supporting text(supporter), elevated (hover), 도어메트 네비게이션, 유틸리티 링크(네비게이션)
     </p>
@@ -193,27 +207,3 @@
     <span class="post-pagination-next-postname">Avoid invisible text during font loading</span>
   </a>
 </nav>
-
-<!-- <div class="post-relation">
-  <h2 class="post-relation-title">이 콘텐츠를 본 사람들은</h2>
-  <article class="postitem">
-    <figure class="postitem-cover">
-      <img src="" alt="">
-    </figure>
-    <h3 class="postitem-name">모바일용 콘텐츠 제목</h3>
-    <p class="postitem-description">구글 최고의 혁신 전문가가 찾아낸 비즈니스 설계와 검증의 방법론</ㅔ>
-    <tiem class="postitem-time">2021. 06. 18</tiem>
-    <p class="postitem-byline" hidden>${item.author || '정보가 없습니다'}</p>
-    <time class="postitem-publishedyear" hidden></time>
-  </article>
-  <article class="postitem">
-    <figure class="postitem-cover">
-      <img src="" alt="">
-    </figure>
-    <h3 class="postitem-name">모바일용 콘텐츠 제목</h3>
-    <p class="postitem-description">구글 최고의 혁신 전문가가 찾아낸 비즈니스 설계와 검증의 방법론</ㅔ>
-    <tiem class="postitem-time">2021. 06. 18</tiem>
-    <p class="postitem-byline" hidden>${item.author || '정보가 없습니다'}</p>
-    <time class="postitem-publishedyear" hidden></time>
-  </article>
-</div> -->

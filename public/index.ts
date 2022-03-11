@@ -39,26 +39,35 @@ function toggleNavbarMenu(event) {
   const navbarMenu = navbarBurgerElement?.nextElementSibling
   const isOpendNavbarMenu = navbarBurgerElement?.classList.contains('is-active')
 
-  if (navbarBurgerElement) {
-    // navbarBurgerElement.classList.toggle('is-active')
+  const OPENED_MENU_CLASSNAME = 'is-opened-menu'
 
-    if (isOpendNavbarMenu) {
-      navbarBurgerElement.classList.remove('is-active')
-      unlockBodyElement()
-    } else {
-      navbarBurgerElement.classList.add('is-active')
-      lockBodyElement()
-    }
+  if (!navbarBurgerElement) return
+  // navbarBurgerElement.classList.toggle('is-active')
 
-    navbarMenu?.addEventListener('click', event => event.stopPropagation())
+  if (isOpendNavbarMenu) {
+    // document.body.classList('')
+    navbarBurgerElement.classList.remove('is-active')
+    // unlockBodyElement()
+    document.body.classList.remove(OPENED_MENU_CLASSNAME)
   } else {
-    if (isOpendNavbarMenu) {
-      alert()
-
-      navbarBurgerElement!.classList.remove('is-active')
-    }
+    navbarBurgerElement.classList.add('is-active')
+    // lockBodyElement()
+    document.body.classList.add(OPENED_MENU_CLASSNAME)
   }
+
+  // navbarMenu?.addEventListener('click', event => event.stopPropagation())
 }
+
+// document.addEventListener('click', event => {
+//   const navbarBurgerElement = document.querySelector('.js-navbar-toggle')
+//   const isOpendNavbarMenu = navbarBurgerElement?.classList.contains('is-active')
+
+//   navbarBurgerElement?.addEventListener('click', event => event.stopPropagation())
+
+//   console.log('@@@@@@', navbarBurgerElement)
+//   // if (!isOpendNavbarMenu) return
+//   navbarBurgerElement?.classList.remove('is-active')
+// })
 
 document.addEventListener('mouseover', () => {
   document.removeEventListener('click', toggleNavbarMenu)
@@ -241,6 +250,9 @@ function initializeNavbar() {
   navigationTrigger?.classList.remove('is-active')
 
   unlockBodyElement()
+
+  // todo
+  document.body.classList.remove('is-opened-menu')
 
   // todo removeEvnetListeners
   document.removeEventListener('click', () => {})
@@ -441,22 +453,6 @@ function focusComment() {
 //       intersectionObserver.observe(element) // el에 대하여 관측 시작
 //     })
 // }
-
-document.addEventListener('click', toggle)
-
-function toggle(event) {
-  const targetElement = event.target
-  const { toggleid } = event.target.dataset
-  if (!toggleid) return
-
-  const ACTIVE_CLASS = 'is-active'
-
-  targetElement.setAttribute('aria-expanded', 'true')
-  targetElement.classList.toggle(ACTIVE_CLASS)
-
-  // const targetElement = document.querySelector(toggleid)
-  // targetElement.classList.toggle(ACTIVE_CLASS)
-}
 
 function scrollToTop(event) {
   if (!event.target.closest('.js-to-top')) return

@@ -1,32 +1,35 @@
-.post {@include container-medium;padding:40px 5%;} // img - margin
+.post {@include container-medium;padding:40px var(--grid-margin);} // img - margin
 .post-head {position:relative;}
 .post-head-category {display:flex;align-items:center;@include link-outer;position:relative;}
 .post-head-category:hover {}
 .post-head-category figure {@include avatar-tiny;margin:0 .5rem 0 0;font-size:10px;}
-.post-head-headline {padding:.25rem 0 2rem 0;@include text-title;} /* 상하단 패딩 똑같이해야 스키티때 */
+.post-head-headline {padding:0 0 2rem 0;@include text-title;} /* 상하단 패딩 똑같이해야 스키티때 */
 .post-head-dateline {}
 .post-head-readingtime {}
 .post-head-progress {display:none;height:4px;background:var(--color-primary);position:absolute;bottom:0;}
 
 // .is-sticky-post-head .post {padding-top:110px;}
-.is-sticky-post-head .post-head {background:var(--color-background);box-shadow:var(--shadow);text-align:left;position:fixed;left:0;right:0;top:0;z-index:var(--zindex-menu);}
+.is-sticky-post-head .post-head {background:var(--color-background);text-align:left;position:fixed;left:0;right:0;top:0;z-index:var(--zindex-menu);}
 .is-sticky-post-head .post-head-category {display:none;}
 // todo + border-width + space
 .is-sticky-post-head .post-head-headline {padding:var(--space) var(--grid-margin) 1rem;box-sizing:border-box;font-size:var(--font-size-subhead);line-height:32px;text-align:center;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;}
 .is-sticky-post-head .post-head-dateline {display:none;}
+.is-sticky-post-head .post-head-kicker {display:none;}
 .is-sticky-post-head .post-head-readingtime {display:none;}
 .is-sticky-post-head .post-head-dateline + .icon-bullet {display:none;}
 .is-sticky-post-head .post-head-progress {display:block;}
 
-.post-byline {display:flex;align-items:center;position:relative;}
-.post-byline-avatar {@include avatar-medium;margin:0 var(--space-after-avatar-medium) 0 0;}
-.post-byline-name {}
+// .post-byline {display:flex;align-items:center;position:relative;}
+.post-byline {position:relative;}
+.post-byline-avatar {float:left;@include avatar-large;margin:0 var(--space-after-avatar-large) 0 0;}
+.post-byline-name {display:block;margin:var(--space-leading-subhead) 0 0 0;}
+.post-byline-time {color:var(--color-text-light);}
 .post-byline:hover {@include hover-item;}
 
 .post-body {position:relative;} /* graident 때문에 아래요소에서 마진값주기 */
 .post-body-kicker {margin:2rem 0 2.5rem 0;font-size:var(--font-size-subhead);position:relative;}
 // .post-body-image {float:left;width:400px;height:600px;overflow:hidden;margin:0 0 0 -240px;}
-.post-body-image {height:240px;overflow:hidden;margin:4rem -10rem;border-radius:var(--radius);}
+.post-body-image {height:240px;overflow:hidden;margin:3rem -10rem 4rem;border-radius:var(--radius);}
 .post-body-subhead {margin:4rem 0 1rem 0px;@include text-subhead;}
 .post-body-paragraph {margin:1rem 0px;}
 .post-body-paragraph:first-line {}

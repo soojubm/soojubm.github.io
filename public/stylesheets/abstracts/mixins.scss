@@ -132,10 +132,11 @@
 @mixin tag-group {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 0 -.25rem 0;
+  // .25rem 너무 작고 .5rem은 너무 커서
+  margin: 0 0 -6px 0;
   > * {
     display: block;
-    margin: 0 .25rem .25rem 0;
+    margin: 0 6px 6px 0;
   }
 }
 
@@ -178,17 +179,6 @@
   bottom: auto;
   transform: none;
 }
-
-@mixin heading-label {
-  margin: var(--space-small) 0;
-  font-size:var(--font-size-caption);
-  font-weight: var(--font-weight-normal);
-  color: var(--color-text-light);
-}
-.heading-label {@include heading-label;text-transform:capitalize;}
-.heading-label + p {margin-bottom:var(--space);}
-// todo tile's default margin
-.heading-label + * {margin-top:var(--space-small) !important;}
 
 @mixin theme($theme: DarkGray) {
   background: $theme;

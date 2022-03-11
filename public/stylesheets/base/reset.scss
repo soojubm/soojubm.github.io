@@ -16,8 +16,9 @@ strong,b,th,legend {font-weight:var(--font-weight-bold);color:var(--color-text);
 cite,i,address,em,dfn {font-style:normal;} em {color:var(--color-primary);}
 small {font-size:var(--font-size-caption);} abbr {text-decoration:none;}
 a {text-decoration:none;text-decoration-skip-ink:auto;color:var(--color-primary);} a:link,a:visited {} a:hover,a:focus {} a:active {}
-mark {background:var(--green100);border-radius:var(--radius);color:var(--color-text);}
-
+mark {color:inherit;}
+// mark::before {content: " [강조 시작] ";}
+// mark::after {content: " [강조 끝] ";}
 // br {content:'';display:block;height:1rem;}
 hr {margin:var(--space) 0;border-top: thin solid var(--gray200);position:relative;}
 
@@ -29,7 +30,7 @@ pre {}
 del {color:var(--color-text-light);} ins {text-decoration:none;}
 
 html {min-width:320px;height:100%;overflow-x:hidden;font:16px/1.8 var(--fontstack);-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overscroll-behavior:contain;}
-body {background:var(--color-background);color:var(--color-text);font-size:.875rem;}
+body {background:var(--color-background);color:var(--color-text);font-size:.875rem;letter-spacing:-.005rem;}
 
 // todo 왜 뺐었을가?
 // overflow-x:hidden;letter-spacing:-.0125rem;

@@ -17,6 +17,14 @@ $md-radio-ripple-size: .25rem;
 @keyframes marquee {
   0% {transform: translateX(0);}
   to {transform: translateX(calc(-2000px - (1.5rem * 10)));}
+	// 100% {transform:translateX(calc(-100%))}
+	// todo 
+	// linear-gradient( to left,var(--white),var(--whiteNoOpacity) )
+	// content: "";
+  //   height: 100%;
+  //   width: 40px;
+  //   position: absolute;
+  //   top: 0px;
 }
 
 @keyframes rotation {

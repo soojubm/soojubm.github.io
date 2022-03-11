@@ -6,7 +6,7 @@
 .dialog-footer {display:flex;flex-direction:row-reverse;justify-content:space-between;margin:2rem 0 0;}
 .dialog-footer-confirm {@include button-primary;width:var(--grid-column)}
 .dialog-footer-cancel {@include button-tertiary;width:var(--grid-column)}
-.dialog-close {@include avatar-medium;@include position-right-top;}
+.dialog-close {@include chip;@include position-right-top;}
 
 
 

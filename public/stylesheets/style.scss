@@ -95,10 +95,6 @@
 .rating2-star {margin:0 .25rem 0 0;font-size:var(--font-size-body);color:var(--red800);}
 .rating2-score {font-size:var(--font-size-body);}
 
-.rating2.is-large {display:flex;align-items:center;}
-.rating2.is-large .rating2-star {margin:0 .5rem 0 0;font-size:var(--font-size-subhead);color:var(--red800);}
-.rating2.is-large .rating2-score {font-size:1.25em;}
-
 .scroll {position:fixed;bottom:1rem;right:1rem;z-index:var(--z-index-default);}
 .scroll-indicator {}
 .scroll-indicator i {width:2px;height:8px;background:var(--gray800);margin:8px auto 0;animation:bounce 0.5s infinite alternate;transform:rotate(90deg);}
@@ -534,7 +530,7 @@ q:before {
 .landing-2-title {@include text-subhead;margin:0 0 0 var(--left);}
 .landing-2-description {margin:var(--space) 0;margin-left:var(--left);}
 .landing-2-button {@include link-outer;display:block;margin-left:var(--left);margin-top:var(--space-after-description);}
-.landing-2-figure {float:left;width:100%;max-width:47.5%;height:200px;background:crimson;}
+.landing-2-figure {float:left;width:100%;max-width:47.5%;height:200px;border-radius:var(--radius);background:crimson;}
 
 .landing-3 {@include container-large;padding: var(--section-inset) var(--grid-margin);}
 .landing-3-background {}
@@ -545,7 +541,7 @@ q:before {
 
 .landing .product-features {padding-left:var(--grid-margin);padding-right:var(--grid-margin);}
 .landing .product-features-item-title {font-size:var(--font-size-body);}
-.landing .product-features-item-avatar:before {width:100%;}
+// .landing .product-features-item-avatar:before {width:100%;}
 
 .landing-footer {padding:var(--section-inset);background:#000;}
 
@@ -556,4 +552,25 @@ q:before {
     --left: 0;
   }
   .landing-2-figure {float:none;max-width:100%;margin:0 0 2rem 0;}
+}
+
+
+
+
+
+
+// todo?
+.menu-item {display:flex;align-items:center;justify-content:space-between;width:100%;@include text-subhead;position:relative;z-index:1;}
+.menu-item + .menu-item {margin:var(--space) 0 0;}
+.menu-item:hover {@include hover-item;}
+
+main {transition:all .6s ease;}
+.is-opened-menu main {padding-left:400px;}
+.is-opened-menu .navbar-logo {z-index: 8;}
+
+.is-opened-menu .profile {max-width:1000px;}
+.is-opened-menu .profile-tabpanel .card {width:calc(50% - 1rem);}
+
+@media (--breakpoint-small) {
+  .is-opened-menu main {padding-left:var(--grid-margin);}
 }

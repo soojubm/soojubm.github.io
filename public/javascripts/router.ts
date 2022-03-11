@@ -64,26 +64,16 @@ const routePage = async () => {
 
 export default routePage
 
-// const navigate = (event) => {
-// 	const route = findCurrentTarget.attributes[0].value;
-// 	const routeInfo = myFirstRouter.routes.find(r => r.path === route);
-// 	if(!routeInfo) {
-// 		view.innerHTML = 'No route exists with this path';
-// };
-
 // const activeRoutes = document.querySelectorAll('[route]')
 // activeRoutes.forEach(route => route.addEventListener('click', navigate, false))
+//   const route = routes.filter(item => item.path === currentPath)
 function navigate(event) {
   const route = event.target.attributes[0].value
   const routeInfo = routes.filter(item => item.path === route)[0]
+  // 	const routeInfo = myFirstRouter.routes.find(r => r.path === route);
   // if (!routeInfo) {
   //   pushBrowserHistory({}, '', 'error')
   //   view.innerHTML = 'no route exists'
   // }
   pushBrowserHistory({}, '', routeInfo.path)
 }
-
-//   const route = routes.filter(item => item.path === currentPath)
-//   if (!route) view.innerHTML = '404'
-
-//   view.innerHTML = `${route.name}`

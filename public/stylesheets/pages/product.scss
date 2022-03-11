@@ -88,7 +88,7 @@
 .product-features-head h1 {@include text-title;word-break:keep-all;}
 .product-features-head p {margin:var(--space-after-title) 0 0 0;}
 
-.product-features-item {max-width:300px;position:relative;}
+.product-features-item {max-width:320px;position:relative;}
 .product-features-item-avatar {display:block;font-size:var(--font-size-huge);position:relative;}
 .product-features-item-avatar:before {content:'';display:block;@include avatar-medium;position:absolute;left:0rem;top:0rem;z-index:-1;}
 .product-features-item-title {margin:var(--space-after-subhead) 0 0 0;@include text-subhead;}

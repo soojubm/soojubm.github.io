@@ -58,7 +58,7 @@
 
 
 @media (--breakpoint-small) {
-  .cart {padding:0 var(--grid-margin);}
+  .cart {}
   .cart-item-thumbnail {float:none;width:100%;margin:0 0 1rem 0;}
   .cart-item-thumbnail img {max-width:120%;max-height: 120%;width: auto;height: auto;margin: auto;top: 40px;}
   .cart-item-name {float:none;width:100%;padding:1rem 0 0;}

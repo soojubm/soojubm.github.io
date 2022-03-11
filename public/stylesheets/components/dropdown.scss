@@ -4,9 +4,7 @@
 .dropdown {position:relative;}
 .dropdown-trigger {@include chip;}
 .dropdown-trigger-label {@include chip-label;}
-.dropdown-trigger-icon {@include avatar-small;@include chip-tailing;}
-
-.is-active .icon-caret {transform:translateY(-1px) rotate(180deg);}
+.dropdown-trigger-icon {@include avatar-small;@include chip-tailing;background-color:inherit;}
 
 .dropdown-menu {@include tile-elevated-small;min-width:var(--width-dropdown);
   margin: 0; // todo tile margin

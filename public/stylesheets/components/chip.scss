@@ -14,7 +14,9 @@
   color: var(--color-text);
   line-height:30px;
   position:relative;
-  &:hover {border-color:var(--color-border-hover);}
+  @media (hover) and (pointer: fine) {
+    &:hover {outline:4px solid rgba(0,0,0,.1);}
+  }
   // &:hover figure {border-top-color:inherit !important;border-bottom-color:inherit !important;background:none;}
   &:disabled {border-color:transparent;}
   &:disabled figure {}
@@ -29,7 +31,7 @@
 }
 
 @mixin chip-heading {float:left;margin:0 0 0 .25rem;background:var(--color-background);}
-@mixin chip-tailing {margin:0 .25rem 0 0;background:var(--color-background);}
+@mixin chip-tailing {margin:0 .25rem 0 -.25rem;}
 // @mixin chip-tailing {float:right;}
 
 @mixin chip-icon {

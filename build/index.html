@@ -100,7 +100,7 @@
       gtag('config', 'UA-83531239-1');
     </script> -->
   <script defer src="bundle.js"></script><link href="style.css" rel="stylesheet"></head>
-  <body>
+  <body class="is-opened-menu">
     <noscript>This website requires JavaScript.</noscript>
 
     <aside class="browser js-browser" role="complementary">
@@ -129,7 +129,7 @@
       </button>
       <div class="navbar-menu" role="navigation">
         <div class="navbar-menu-item has-submenu">
-          <a role="menuitem" style="cursor:none;">디자인 시스템<i class="icon-caret"></i></a>
+          <!-- <a role="menuitem" style="cursor:none;">디자인 시스템<i class="icon-caret"></i></a> -->
           <menu>
             <a route="/design" href="#tokens">Design Tokens</a>
             <a route="/design" href="#components">Components</a>
@@ -138,7 +138,6 @@
         <!-- <a route="/design" class="navbar-menu-item" href="#design">디자인시스템</a> -->
         <div class="navbar-menu-item has-submenu">
           <a role="menuitem" style="cursor:none;">샘플페이지<i class="icon-caret"></i></a>
-          <aside class="tile-flat-small"><small style="display:block;">디자인 시스템이 적용한 샘플 페이지</small></aside>
           <menu>
             <!-- todo 페이지 변경이 없을 때 네비게이션이 닫히지 않는다. -->
             <a route="/design" href="#profile">User Profile</a>
@@ -201,8 +200,8 @@
         </button>
         <!-- <button class="navbar-user-trigger js-navbar-toggle" aria-haspopup="menu" aria-expanded="false">
           <img src="/public/images/soo.png" alt=""/>
-        </button>
-        <div class="navbar-user-card">
+        </button> -->
+        <!-- <div class="navbar-user-card">
           <a class="user" href="#settings">
             <figure class="user-avatar">
               <img src="/public/images/so
@@ -227,7 +226,6 @@
               <i class="icon-out"><span class="icon-out-door"></span></i>
             </figure>
             <span class="user-logout-label">고객센터 및 도움말</span>
-            <span style="display:flex;align-items:center;justify-content:center;background:var(--color-background-weak);width:32px;height:32px;border-radius:var(--radius);margin-left:auto;"><i class="icon-arrow"></i></span>
           </button>
           <hr />
           <button class="user-logout" title="sign out">
@@ -300,9 +298,9 @@
       })
 
       // todp
-      const hash = window.location.hash
-      const navbarItem = document.querySelector(`[href="${hash}"]`)
-      navbarItem?.classList.add('is-active')
+      // const hash = window.location.hash
+      // const navbarItem = document.querySelector(`[href="${hash}"]`)
+      // navbarItem?.classList.add('is-active')
 
       async function renderComponent(componentName) {
         const selector = `#${componentName}`

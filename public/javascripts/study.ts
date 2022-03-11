@@ -532,3 +532,11 @@ function calculateReadTime() {
 
   readTimeElement.innerText = result
 }
+
+function hasClass(element, cls) {
+  return (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1
+}
+// Call the pretty-printer after we've fixed up the code blocks.
+var pretty = document.createElement('script')
+pretty.src = 'https://cdn.rawgit.com/google/code-prettify/master/loader/' + 'run_prettify.js'
+document.body.appendChild(pretty)

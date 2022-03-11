@@ -1,5 +1,5 @@
 <main class="design-home">
-  <!-- <div class="stamp">
+  <!-- <div class="stamp" style="position:absolute;right:10%;top:12rem;">
     <div class="circle">
       <p id="circle-content">
         <span class="char1">부</span>
@@ -17,45 +17,59 @@
     </div>
   </div> -->
 
-  <header class="design-head">
-    <h1>
+  <header class="design-head hero">
+    <h1 class="hero-title" style="line-height:1.2;">
       <span>Making</span><br />
       things better.
     </h1>
-    <p>디자인 시스템을 코드 베이스에서 실험하며<br />베스트 프랙티스를 찾고 있습니다.</p>
-    <ul class="design-article-checklist" style="display:flex;">
+    <p>디자인 시스템을 코드 베이스에서 실험하며<br />베스트 프랙티스를 찾습니다.</p>
+    <!-- <ul class="article-checklist" style="display:flex;">
       <li style="margin-right:1.25rem;"><i class="icon-check"></i> Consistency</li>
-      <li><i class="icon-check"></i> Flexibility</li>
-    </ul>
+      <li style="margin-right:1.25rem;"><i class="icon-check"></i> Flexibility</li>
+    </ul> -->
   </header>
 
   <nav class="design-navigation">
-    <a href="#tokens" data-toggleId="tokens"
-      >Design Tokens
+    <a href="#tokens">
+      <figure role="img"><i style="display:block;margin-top:-.7rem;">🐽</i></figure>
+      Design Tokens
       <span><i class="icon-arrow"></i></span>
     </a>
-    <a href="#components" data-toggleId="components"
-      >Components
+    <a href="#components">
+      <figure role="img"><i style="display:block;margin-top:-.4rem;">🐷</i></figure>
+      Components
       <span><i class="icon-arrow"></i></span>
     </a>
-    <a href="#changelog" data-toggleId="coding">
-      Changelog
+    <a href="#" onclick="javascript:alert('coming soon!')" disabled>
+      <figure role="img"><i style="display:block;margin-top:-.65rem;">🐖</i></figure>
+      Pages
       <span><i class="icon-arrow"></i></span>
     </a>
-    <a href="#design" readonly data-toggleId="writings"
+    <!-- <a href="#changelog">
+      📜 Changelog
+      <span><i class="icon-arrow"></i></span>
+    </a>
+    <a href="#design" readonly
       >Principles
       <span><i class="icon-arrow"></i></span>
-    </a>
-    <a href="#design" readonly data-toggleId="writings"
-      >Voice & Tone
-      <span><i class="icon-arrow"></i></span>
-    </a>
-    <a href="#design" readonly data-toggleId="coding">
-      Coding Conventions
-      <!-- <div class="tag" data-appearance="secondary">Draft</div> -->
-      <span><i class="icon-arrow"></i></span>
-    </a>
+    </a> -->
   </nav>
+
+  <!-- <header class="design-head hero" style="max-width:720px;">
+    <h1 class="hero-title" style="line-height:1.2;font-size:var(--font-size-title);">
+      Writings.
+    </h1>
+    <div>
+      <a class="profile-tabpanel-item card js-modal" href="#woolf" style="width:100%;margin-right:1rem;">
+        <h3 class="card-title" style="padding:0;font-size:var(--font-size-subhead);">디자인 원칙의 역사.</h3>
+        <div class="card-tags" role="group">
+          <span class="card-tags-item">파트타임</span>
+          <span class="card-tags-item">UX</span>
+          <span class="card-tags-item">프론트엔드개발</span>
+        </div>
+      </a>
+    </div>
+  </header> -->
 
   <section class="design-ticker">
     <article class="design-ticker-item tile-elevated" style="max-width:400px;">
@@ -65,7 +79,7 @@
         <h2 class="item-name">Gyeongsoo I</h2>
         <button class="item-action">팔로우</button>
       </div>
-      <div class="temp8" style="display:flex;margin-top:var(--space);">
+      <div class="temp8">
         <div>
           <figure>🧀</figure>
           <span>Typography</span>
@@ -192,7 +206,7 @@
         <h2 class="item-name">Gyeongsoo I</h2>
         <button class="item-action">팔로우</button>
       </div>
-      <div class="temp8" style="display:flex;margin-top:var(--space);">
+      <div class="temp8">
         <div>
           <figure>🧀</figure>
           <span>Typography</span>
@@ -313,10 +327,30 @@
     </div>
     <div class="design-ticker-overay"></div>
   </section>
-  <!-- <section
-    class="tile-flat"
-    style="width:100%;margin:-1rem var(--grid-margin) 0;display:flex;flex-wrap:wrap;padding-left:2rem;padding-right:2rem;z-index:1;"
-  ></section> -->
+
+  <!-- <div class="post-relation">
+  <h2 class="post-relation-title">이 콘텐츠를 본 사람들은</h2>
+  <article class="postitem">
+    <figure class="postitem-cover">
+      <img src="" alt="">
+    </figure>
+    <h3 class="postitem-name">모바일용 콘텐츠 제목</h3>
+    <p class="postitem-description">구글 최고의 혁신 전문가가 찾아낸 비즈니스 설계와 검증의 방법론</ㅔ>
+    <tiem class="postitem-time">2021. 06. 18</tiem>
+    <p class="postitem-byline" hidden>${item.author || '정보가 없습니다'}</p>
+    <time class="postitem-publishedyear" hidden></time>
+  </article>
+  <article class="postitem">
+    <figure class="postitem-cover">
+      <img src="" alt="">
+    </figure>
+    <h3 class="postitem-name">모바일용 콘텐츠 제목</h3>
+    <p class="postitem-description">구글 최고의 혁신 전문가가 찾아낸 비즈니스 설계와 검증의 방법론</ㅔ>
+    <tiem class="postitem-time">2021. 06. 18</tiem>
+    <p class="postitem-byline" hidden>${item.author || '정보가 없습니다'}</p>
+    <time class="postitem-publishedyear" hidden></time>
+  </article>
+</div> -->
 </main>
 
 <!-- <div class="grandparent" style="width:300px;height:300px;background-color:lightsalmon;">

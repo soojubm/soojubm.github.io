@@ -55,7 +55,7 @@
 .about-experience-head {}
 .about-experience-head-title {@include text-subhead;margin:0 0 1.5rem 0;}
 .about-experience-item {margin:var(--space) 0;padding:0 0 0 100px;position:relative;}
-.about-experience-item-date {@include heading-label;position:absolute;left:0;}
+.about-experience-item-date {position:absolute;left:0;}
 .about-experience-item-date:after {content:'0000 ㅡ 0000';visibility:hidden;}
 .about-experience-item-job {}
 .about-experience-item-job + .icon-arrow {margin:0 0 0 .5rem;}

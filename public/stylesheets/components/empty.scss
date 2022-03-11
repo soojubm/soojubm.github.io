@@ -6,7 +6,7 @@
 .empty-list-item {display:flex;justify-content:space-between;margin:.25rem 0;}
 .empty-list-item b {font-weight:normal;}
 .empty-list-item span {}
-.empty-action {@include button-secondary;width:var(--grid-column);}
+.empty-action {@include button-secondary;width:100%;}
 
 
 .error {

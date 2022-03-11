@@ -121,12 +121,5 @@ button {@include reset-button;}
 
 .danger-button {@include button;background:var(--red800);border:1px solid var(--red800);color:var(--gray0);}
 
-.group-sample {display:flex;justify-content:space-between;}
-.group-sample-prev {@include button-tertiary;}
-.group-sample-next {@include button-primary;}
-.group-sample-cancel {@include button-text;}
-.group-sample-next i {margin-left:1.5rem;background:var(--color-background);}
-
-
 .button-heading {}
 .button-tailing {@include avatar-small;display:inline-flex;}

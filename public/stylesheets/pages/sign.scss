@@ -32,7 +32,7 @@
 
 .password {@include container-medium;}
 .password-head {margin-bottom:3rem;position:relative;}
-.password-title {@include text-title;}
+.password-title {@include text-title;font-family:'Changa One';font-weight:var(--font-weight-normal);}
 .password-description {margin:1rem 0 0 0;}
 .password-foot {display:flex;align-items:center;justify-content:space-between;margin:var(--space-after-button) 0 0 0;}
 .password-foot-submit {@include button-primary;width:50%;}
