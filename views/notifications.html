@@ -1,0 +1,76 @@
+<main class="notifications" style="padding-top:0;">
+  <header class="hero" role="banner" style="padding-left:0;padding-right:0;">
+    <div class="hero-background"></div>
+    <span class="hero-eyebrow">Notifications</span>
+    <h1 class="hero-title" style="line-height:1.3;margin-top:.25rem;"><span style="color:var(--color-text-light);">Ring</span> them bells.</h1>
+    <p class="hero-description">
+      특정 컨테이너에 종속되지 않아야 한다. 모두보기 버튼 배치하는 방법. 페이지에서는 item 간격이 더 커져야할까.
+    </p>
+    <ul class="article-checklist" style="list-style:disc;">
+      <li>
+        <i class="icon-check"></i>
+        <b>popover: </b>
+        <span>모두보기 notification 페이지가 필요하다. 모두보기(페이지 링크)는 '알림' 타이틀 우측에 배치.</span>
+      </li>
+      <li>
+        <i class="icon-check"></i>
+        <b>modal: </b> <span>모달 내에서 모든 알림을 보여줄 수 있기 때문에 모두보기 notification 페이지가 필요하지 않다.</span>
+      </li>
+      <li>
+        <i class="icon-check"></i>
+        like/comment은 tab. read/unread는 filter(chip)
+      </li>
+      <li>
+        <i class="icon-check"></i>
+        all/read/unread 칩 3개로 필터링할 수 있고 checkbox 토글을 제공 읽지 않은 알림만 필터링할 수도 있다.
+      </li>
+      <li>
+        <i class="icon-check"></i>
+        infinite scroll vs more load(fixed/notfixed)
+      </li>
+    </ul>
+  </header>
+
+  <!-- <nav
+    class="profile-tablist"
+    role="tablist"
+    aria-label="sample tabs"
+    style="margin-left:0;margin-right:0;padding-left:var(--space-small);padding-right:var(--space-small);"
+  >
+    <button class="profile-tablist-tab" role="tab" aria-selected="true" aria-controls="panel-1" id="tab-1" tabindex="0">첫번째 탭</button>
+    <button class="profile-tablist-tab" role="tab" aria-selected="false" aria-controls="panel-2" id="tab-2" tabindex="-1">두번째 탭</button>
+    <button class="profile-tablist-tab" role="tab" aria-selected="false" aria-controls="panel-3" id="tab-3" tabindex="-1">세번째 탭</button>
+    <i class="profile-tablist-indicator"></i>
+  </nav> -->
+  <!-- todo padding-bottom vs min-height -->
+  <div class="navbar-notification" style="margin-left:0;padding-bottom:8rem;">
+    <!-- <a class="navbar-notification-trigger js-navbar-toggle" href="#" aria-haspopup="true" aria-expanded="false">
+      <img src="/public/icons/bell.svg" />
+      <em>new</em>
+    </a> -->
+    <menu class="navbar-notification-empty">
+      <p>최근 알림 메세지가 없습니다.</p>
+    </menu>
+    <menu class="navbar-notification-menu">
+      <!-- <h6 class="navbar-notification-menu-title">알림</h6>
+      <a class="navbar-notification-menu-all" href="#">모두 보기</a> -->
+      <div class="notification-item">
+        <em class="notification-unread"></em>
+        <figure class="notification-item-avatar"></figure>
+        <b class="notification-item-user">John Cassavetes</b>
+        <span class="notification-item-content">comment on <b>John Cassavetes</b></span>
+        <time class="notification-item-date">5일 전</time>
+      </div>
+      <div class="notification-item">
+        <em class="notification-unread"></em>
+        <figure class="notification-item-avatar"></figure>
+        <b class="notification-item-user">John Cassavetes</b>
+        <span class="notification-item-content">like on <b>John Cassavetes</b></span>
+        <time class="notification-item-date">5일 전</time>
+      </div>
+      <footer>
+        <button>더 불러오기</button>
+      </footer>
+    </menu>
+  </div>
+</main>

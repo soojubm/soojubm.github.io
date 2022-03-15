@@ -18,7 +18,7 @@ import darkTheme from './javascripts/local/darkTheme'
 document.addEventListener('DOMContentLoaded', lockBodyElement)
 window.addEventListener('load', detectLoad)
 
-window.addEventListener('hashchange', initializeNavbar)
+// window.addEventListener('hashchange', initializeNavbar)
 window.addEventListener('hashchange', domEvents)
 
 document.addEventListener('DOMContentLoaded', domEvents)
@@ -37,20 +37,22 @@ document.addEventListener('click', event => toggleNavbarMenu(event))
 function toggleNavbarMenu(event) {
   const navbarBurgerElement = (event.target as HTMLElement).closest('.js-navbar-toggle')
   const navbarMenu = navbarBurgerElement?.nextElementSibling
-  const isOpendNavbarMenu = navbarBurgerElement?.classList.contains('is-active')
+  // const isOpendNavbarMenu = navbarBurgerElement?.classList.contains('is-active')
 
   const OPENED_MENU_CLASSNAME = 'is-opened-menu'
+
+  const isOpendNavbarMenu = document.body.classList.contains(OPENED_MENU_CLASSNAME)
 
   if (!navbarBurgerElement) return
   // navbarBurgerElement.classList.toggle('is-active')
 
   if (isOpendNavbarMenu) {
     // document.body.classList('')
-    navbarBurgerElement.classList.remove('is-active')
+    // navbarBurgerElement.classList.remove('is-active')
     // unlockBodyElement()
     document.body.classList.remove(OPENED_MENU_CLASSNAME)
   } else {
-    navbarBurgerElement.classList.add('is-active')
+    // navbarBurgerElement.classList.add('is-active')
     // lockBodyElement()
     document.body.classList.add(OPENED_MENU_CLASSNAME)
   }

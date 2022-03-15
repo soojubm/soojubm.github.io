@@ -21,8 +21,11 @@
 // .cake-info button {@include button-tertiary;position:absolute;left:0;bottom:3rem;}
 .cake-info h2 {width:300px;flex-shrink:0;@include text-subhead;}
 .cake-info p {width:calc(100% - 320px);}
-.cake-info footer {margin-left: 320px;margin-top:1rem;}
+.cake-info footer {margin-left: 300px;margin-top:1rem;}
 .cake-info footer a {@include link-outer;}
+
+.cake .profile-tablist {margin-top:14rem;}
+
 
 @media (--breakpoint-small) {
   .cake-poster {height:auto;margin:0 0 var(--space) 0;@include reset-position;}
@@ -33,6 +36,8 @@
   .cake-info h2 {width:100%;margin:0 0 1rem 0;}
   .cake-info p {width:100%;}
   .cake-info footer {margin-left:0;}
+
+  .cake .profile-tablist {margin-top:4rem;}
 }
 
 
@@ -43,7 +48,7 @@
 }
 .person {
   @include tile-elevated-small;
-  margin: 0 var(--space) 0 0;
+  margin: 0 .75rem 0 0;
   padding: var(--space-small);
 }
 .person:hover {@include hover-item;}
@@ -63,7 +68,8 @@
   top: .25rem;
   z-index: 1;
 }
-
+.person-viewall {min-width:100px;padding-top:2.5rem;display:flex;flex-wrap:wrap;justify-content:center;position:relative;}
+.person-viewall:hover {@include hover-item;}
 
 
 .cake-short {display:flex;position:relative;}

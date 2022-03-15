@@ -6,7 +6,7 @@
 .post-head-headline {padding:0 0 2rem 0;@include text-title;} /* 상하단 패딩 똑같이해야 스키티때 */
 .post-head-dateline {}
 .post-head-readingtime {}
-.post-head-progress {display:none;height:4px;background:var(--color-primary);position:absolute;bottom:0;}
+.post-head-progress {display:none;height:2px;background:var(--color-primary);border-radius:var(--radius);position:absolute;bottom:0;}
 
 // .is-sticky-post-head .post {padding-top:110px;}
 .is-sticky-post-head .post-head {background:var(--color-background);text-align:left;position:fixed;left:0;right:0;top:0;z-index:var(--zindex-menu);}

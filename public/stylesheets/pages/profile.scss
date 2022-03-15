@@ -65,8 +65,8 @@
 .profile-display-button i {vertical-align:middle;}
 
 .profile-tablist {@include tile-elevated-small;display:flex;margin:0 0 var(--space) 0;position:relative;}
-.profile-tablist-tab {display:flex;align-items:center;justify-content:center;flex:auto;height:var(--size-medium);padding:0 1rem;color:var(--color-text-light);position:relative;z-index:var(--zindex-default);}
-// .profile-tablist-tab:hover {box-shadow:var(--shadow);}
+.profile-tablist-tab {display:flex;align-items:center;justify-content:center;height:var(--size-medium);padding:0 var(--space);color:var(--color-text-light);position:relative;z-index:var(--zindex-default);}
+// .profile-tablist-tab:hover {box-shadow:var(--shadow);} flex:auto;
 .profile-tablist-tab[aria-selected=true] {color:var(--color-text);}
 .profile-tablist-tab-badge {margin:0 0 0 var(--space-small);}
 .profile-tablist-indicator {display:block;height:calc(100% - .5rem);@include chip;position:absolute;top:.5rem;transition:all var(--duration);}
@@ -147,6 +147,18 @@
 
   .is-active  + .profile-user-toggle-icon {transform:rotate(180deg);}
   .is-active  + .profile-user-info {display:block;margin-bottom:4rem;}
+}
+
+// todo... styles.scss
+@media (--breakpoint-large) {
+  .is-opened-menu .profile {max-width:640px;}
+  .profile-user {float:none;width:100%;box-sizing:border-box;}
+  .profile-user-description {margin:1rem 0 2rem;}
+
+  .profile-body {margin:0 auto;padding-left:0;}
+  .profile-user-toggle {display:flex;align-items:center;justify-content:space-between;}
+  .profile-user-info {display:none;}
+  
 }
 
 @media (max-width:720px) {

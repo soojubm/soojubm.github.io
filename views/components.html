@@ -50,7 +50,7 @@
       <li><i class="icon-check"></i>특정할 수 없거나 모호한 용어를 쓰지 않습니다. (ex '경우에 따라' '상황에 따라', '목적에 맞게')</li>
       <li><i class="icon-check"></i>기본적인 내용을 서술하지 않습니다. 이 문서를 읽는 사람은 체크박스와 라디오의 차이를 이해하고 있습니다.</li>
       <li><i class="icon-check"></i>일어날 법 하지 않는 don't 케이스를 정의하지 않습니다.</li>
-      <li><i class="icon-check"></i>자세히보기 => 더 알아보기</li>
+      <li><i class="icon-check"></i>자세히보기/더보기 => 더 알아보기</li>
       <li><i class="icon-check"></i>긍정문 / 한자 지양 / -적</li>
       <li><i class="icon-check"></i>variants / sizes / states</li>
       <!-- <li><i class="icon-check"></i>dos / don'ts 케이스는 캡쳐 이미지를 사용하지 않고 간결하게 서술합니다.</li> -->
@@ -129,7 +129,7 @@
       </div>
     </nav> -->
 
-    <article class="article">
+    <!-- <article class="article">
       <table>
         <tbody>
           <tr style="border:0;">
@@ -142,17 +142,14 @@
           </tr>
         </tbody>
       </table>
-    </article>
-
-
-
+    </article> -->
 
     <article class="article js-observer js-scrollspy-section">
       <span class="hashtag">시각정보</span>
       <h1 class="article-title">Avatars</h1>
       <p class="article-description">아바타는 개체를 대표하는 시각 정보입니다. 아바타의 시각 이미지로 사용자의 흥미를 끌 수 있습니다.</p>
 
-      <blockquote>
+      <blockquote hidden>
         <q>인물, 그룹, 회사, 프로젝트 등의 unique entity로 대부분의 디자인 시스템에서 정의. 여기서는 조금 더 포괄적인 개념.</q>
       </blockquote>
 
@@ -828,7 +825,7 @@
 
       <h4 class="article-subhead">Editorial</h4>
       <ul class="article-checklist">
-        <li><span><i class="icon-check"></i></span> 선택 입력 필드는 레이블 우측에 가이드합니다. 암묵적으로 필수 입력을 전제합니다.</li>
+        <li><span><i class="icon-check"></i></span> 필수 입력을 전제합니다. 선택 입력 항목인 경우 '선택'으로 가이드를 작성합니다.</li>
       </ul>
 
       <h4 class="article-subhead">anatomy</h4>
@@ -1087,10 +1084,10 @@
 
       <h4 class="article-subhead">Guidelines</h4>
       <ul class="article-checklist">
-        <li><i class="icon-check"></i> 탭을 중첩하여 플로우를 설계하지 않습니다. (탭 + 칩 그룹의 패턴)</li>
-        <li><i class="icon-check"></i> 정렬sorting, 필터링에 사용하지 않습니다.</li>
+        <li><i class="icon-check"></i> 탭을 중첩하여 플로우를 설계하지 않습니다.<span hidden>(탭 + 칩 그룹의 패턴)</네무></li>
+        <li><i class="icon-check"></i> 정렬, 필터로 사용하지 않습니다.</li>
         <li><i class="icon-check"></i> 스크롤스파이로 사용하지 않습니다.</li>
-        <li><i class="icon-check"></i> 글로벌 탐색 패턴으로 햄버거 메뉴와 탭(바텀네비게이션, 탭바)을 함께 사용하지 않습니다. (todo: tab과 tab bar(app bar)를 구분해야 함)</li>
+        <li><i class="icon-check"></i> 글로벌 탐색 패턴으로 햄버거 메뉴와 탭(바텀네비게이션, 탭바)을 함께 사용하지 않습니다. (todo: tab과 tab bar(app bar)를 구분)</li>
         <li><i class="icon-check"></i> <del>페이지 링크로 사용하지 않습니다.</del> (todo SPA 라우팅에서 페이지 링크의 개념이 모호)</li>
       </ul>
 
@@ -1288,7 +1285,7 @@
 
     <article class="article">
       <h1 class="article-title">Menu Item</h1>
-      <p class="article-description">tool.</p>
+      <p class="article-description">tool과 구분. entity small 형태는 tool(button) 역할.</p>
 
       <h4 class="article-subhead">anatomy</h4>
       <div class="article-anatomy is-anatomy">
@@ -1526,7 +1523,6 @@
       <ul class="article-checklist">
         <!-- <li><i class="icon-check"></i> dim엘리먼트 클릭 시 모달을 닫는다. 리액트에서. 구현하기 쉬움</li> -->
         <!-- <li><i class="icon-check"></i> dialog header/body/footer 단순 다이얼로그는 바디가 필요 없음.</li> -->
-        <li><i class="icon-check"></i> 모달로 사용합니다. (todo 모달과 구분)</li>
         <!-- <li><i class="icon-check"></i> 두 개 이상의 레이어를 쌓지 않습니다.</li> -->
       </ul>
 
@@ -1775,7 +1771,7 @@
       <h1 class="article-title">Dummies</h1>
       <p class="article-description">유아이 샘플.</p>
 
-			<div class="file-attachment-item">
+			<div class="file-attachment-item" style="max-width:400px;">
 				<figure class="file-attachment-item-image"><img src="/public/images/springsteen.jpg" alt=${file.name}></figure>
 				<b class="file-attachment-item-name">${file.name}</b>
 				<small class="file-attachment-item-size" >${returnFileSize(file.size)}</small>
@@ -1859,37 +1855,6 @@
           <a class="keywords-group-keyword" href="#"><span class="keywords-group-keyword-label">추미매법무부장관</span class="keywords-group-keyword-label"></a>
         </div>
       </article>
-      
-      <div class="navbar-notification" style="margin-left:0;">
-        <!-- <a class="navbar-notification-trigger js-navbar-toggle" href="#" aria-haspopup="true" aria-expanded="false">
-          <img src="/public/icons/bell.svg" />
-          <em>new</em>
-        </a> -->
-        <!-- <menu class="navbar-notification-empty">
-          <p>최근 알림 메세지가 없습니다.</p>
-        </menu> -->
-        <menu class="navbar-notification-menu">
-          <h6 class="navbar-notification-menu-title">알림</h6>
-          <a class="navbar-notification-menu-all" href="#">모두 보기</a>
-          <div class="notification-item">
-            <em class="notification-unread"></em>
-            <figure class="notification-item-avatar"></figure>
-            <b class="notification-item-user">John Cassavetes</b>
-            <time class="notification-item-date">5일 전, </time>
-            <span class="notification-item-content" style="color:var(--color-text-light);">comment on <em>John Cassavetes</em></span>
-          </div>
-          <div class="notification-item">
-            <em class="notification-unread"></em>
-            <figure class="notification-item-avatar"></figure>
-            <b class="notification-item-user">John Cassavetes</b>
-            <time class="notification-item-date">5일 전, </time>
-            <span class="notification-item-content" style="color:var(--color-text-light);">like on <em>John Cassavetes</em></span>
-          </div>
-          <!-- <footer>
-            <button>알림 전체 보기</button>
-          </footer> -->
-        </menu>
-      </div>
 
       <div class="quote">
         <figure class="quote-avatar">🥫</figure>

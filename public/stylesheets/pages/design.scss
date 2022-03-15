@@ -4,7 +4,7 @@
 // todo tokens
 .design-head h1 span {-webkit-text-stroke: 1px var(--color-text);color:var(--color-background);}
 
-.article {margin:4rem 0;padding:4rem var(--grid-margin);overflow:hidden;position:relative;}
+.article {padding:4rem var(--grid-margin);overflow:hidden;position:relative;}
 .article-aka {@include tag-group;align-items:center;font-size:var(--font-size-tiny);}
 .article-title {margin:0 0 var(--space-after-subhead) 0;@include text-subhead;font-family:'Changa One';font-weight:var(--font-weight-normal);font-size:1.5rem;letter-spacing:0;}
 .article-description {margin:0 0 2rem;font-size:16px;}

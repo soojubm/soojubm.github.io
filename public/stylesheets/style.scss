@@ -128,7 +128,7 @@
 }
 // todo
 .notification-unread {
-  @include avatar-tiny;border:2px solid var(--gray0);background:gold;position:absolute;left:-.25rem;top:-.25rem;
+  @include avatar-tiny;border:2px solid var(--color-background);background:gold;position:absolute;left:-.25rem;top:-.25rem;
 }
 
 
@@ -564,13 +564,13 @@ q:before {
 .menu-item + .menu-item {margin:var(--space) 0 0;}
 .menu-item:hover {@include hover-item;}
 
-main {transition:all .6s ease;}
-.is-opened-menu main {padding-left:400px;}
+main, #footer {transition:all .6s ease;}
+.is-opened-menu main, .is-opened-menu #footer {padding-left:400px;}
 .is-opened-menu .navbar-logo {z-index: 8;}
 
-.is-opened-menu .profile {max-width:1000px;}
+.is-opened-menu .profile {max-width:1000px;padding-left:200px;}
 .is-opened-menu .profile-tabpanel .card {width:calc(50% - 1rem);}
 
 @media (--breakpoint-small) {
-  .is-opened-menu main {padding-left:var(--grid-margin);}
+  .is-opened-menu main, .is-opened-menu #footer {padding-left:var(--grid-margin);}
 }
