@@ -108,7 +108,7 @@ const DARKTHEME_SELECTOR = '.js-darkmode'
 
 async function domEvents() {
   // todo
-  const mediaSize760 = window.matchMedia('(max-width: 760px)')
+  const mediaSize760 = window.matchMedia('(max-width: 1000px)')
   const changeMedia = function(e) {
     if (e.matches) {
       // document.body.classList.remove('is-opened-menu')
@@ -136,12 +136,12 @@ async function domEvents() {
     element.classList.remove('is-current')
 
     const isCurrentPage = element.getAttribute('href')?.includes(hash)
-
-    if (isCurrentPage) element.classList.add('is-current')
+    const isHomePage = !hash
+    if (!isCurrentPage || isHomePage) return
+    element.classList.add('is-current')
   })
 
   // const page = routes.find(route => route.path.substring(1) === hash)
-  console.log('page', hash)
   // const pageTitleElement = document.querySelector('.js-page-title')
 
   // if (pageTitleElement) {

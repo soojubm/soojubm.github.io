@@ -71,7 +71,7 @@
 .post-comment-list-item-date {display:block;margin-top:-.25rem;color:var(--color-text-light);font-size:var(--font-size-caption);}
 .post-comment-list-item-text {margin:var(--space-small) 0 0;}
 .post-comment-list-item-morevert {@include avatar-medium;position:absolute;right:0;top:0;}
-.post-comment-list-item-morevert:hover {@include hover-button;}
+.post-comment-list-item-morevert:hover {}
 // todo tile margin
 .post-comment-list-item-menu {display:none;@include tile-elevated;width:var(--width-dropdown);margin:0;padding:0;position:absolute;right:40px;top:0;z-index:var(--zindex-default);}
 

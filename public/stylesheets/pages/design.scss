@@ -364,7 +364,7 @@
 
 }
 .design-ticker-item {
-  animation: marquee 28s linear infinite;
+  animation: marquee 28s linear infinite normal none;
   // todo
   margin: 0 1.5rem !important;
   filter: grayscale(.85);
