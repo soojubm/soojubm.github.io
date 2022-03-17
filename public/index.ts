@@ -107,6 +107,19 @@ const DARKTHEME_SELECTOR = '.js-darkmode'
 // document.addEventListener('click', toggleDarkTheme)
 
 async function domEvents() {
+  // todo
+  const mediaSize760 = window.matchMedia('(max-width: 760px)')
+  const changeMedia = function(e) {
+    if (e.matches) {
+      // document.body.classList.remove('is-opened-menu')
+      initializeNavbar()
+    } else {
+      document.body.classList.add('is-opened-menu')
+    }
+  }
+  mediaSize760.addListener(changeMedia)
+  changeMedia(mediaSize760)
+
   lazyLoading()
 
   await routePage()
@@ -250,9 +263,7 @@ function initializeNavbar() {
   const navigationTrigger = document.querySelector<HTMLElement>('.js-navbar-toggle')
 
   navigationTrigger?.classList.remove('is-active')
-
   unlockBodyElement()
-
   // todo
   document.body.classList.remove('is-opened-menu')
 
