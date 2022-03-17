@@ -15,7 +15,7 @@
 .checkout-head-byline h2 {font-size:var(--font-size-body);}
 .checkout-head-byline figure {@include avatar-medium;display:flex;}
 
-.checkout-product {@include tile-flat;}
+.checkout-product {}
 .checkout-product-title {margin:0 0 var(--space) 0;@include text-subhead;}
 .checkout-product-item {height:var(--size-huge);position:relative;}
 .checkout-product-item-media {float:left;@include avatar-huge;margin:0 var(--space) 0 0;}
@@ -50,9 +50,6 @@
 .checkout-foot-pay {@include button-primary;width:50%;max-width:20rem;}
 
 @media (--breakpoint-large) {
-  .checkout {}
-  .checkout-product {@include reset-position;}
-  .checkout-shipping {max-width:100%;padding-right:0;}
   // .checkout-foot {
   //   margin: 0;
   //   padding: 1rem 1rem calc(constant(safe-area-inset-bottom) + 1rem);

@@ -1,4 +1,4 @@
-.profile {@include container-large;max-width:1400px;}
+.profile {@include container-huge;}
 .profile::after {content:'';display:block;clear:both;}
 
 .profile-user {float:left;width:320px;position:relative;z-index:var(--zindex-default);}
@@ -86,12 +86,12 @@
 .card-byline:hover {@include hover-item;}
 .card-byline-avatar {@include avatar-small;margin:0 var(--space-small) 0 0;}
 .card-byline-name {}
-.card-title {padding:.75rem 0 0;font-size:var(--font-size-body);}
+.card-title {padding:.75rem 0 .25rem;font-size:var(--font-size-body);}
 .card-text {margin:0 0 1rem 0;padding:.5rem 0 1rem;@include truncate-multi;}
 .card-category {@include tag-primary;@include position-left-top;}
 .card-date {display:none;color:var(--color-text-light);}
-.card-tags {@include tag-group;margin-top:.25rem;margin-bottom:-.25rem;}
-.card-tags-item {@include hashtag;margin:0 var(--space-small) var(--space-small) 0;font-size:var(--font-size-caption);}
+.card-tags {@include tag-group;padding-bottom:var(--space-small);}
+.card-tags-item {@include hashtag;margin-bottom:0;font-size:var(--font-size-caption);}
 
 .card-item {height:var(--size-large);margin:1rem 0;position:relative;z-index:var(--zindex-default);}
 .card-item-avatar {@include item-avatar;margin:0 var(--space) 0 0;}
@@ -130,13 +130,17 @@
 .list .card-title {padding-top:0;}
 .list .card-byline {margin-top:.5rem;margin-bottom:.5rem;}
 
-@media (--breakpoint-large) {
+// todo loarge
+@media (max-width: 1600px) {
+  .is-opened-menu .profile {max-width:880px;}
   .profile-tabpanel .card {width:calc(50% - 1rem);}
 }
 
-@media (--breakpoint-small) {
+@media (max-width: 1400px) {
   // todo mixin 공통으로 해도 문제가 없을까.
   .profile {max-width:640px;}
+
+  // .is-opened-menu .profile {max-width:880px;} 
   .profile-user {float:none;width:100%;box-sizing:border-box;}
   .profile-user-description {margin:1rem 0 2rem;}
 
@@ -150,8 +154,7 @@
 }
 
 // todo... styles.scss
-@media (--breakpoint-large) {
-  .is-opened-menu .profile {max-width:640px;}
+@media (--breakpoint-small) {
   .profile-user {float:none;width:100%;box-sizing:border-box;}
   .profile-user-description {margin:1rem 0 2rem;}
 

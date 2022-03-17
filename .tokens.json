@@ -1,0 +1,185 @@
+
+// 숫자 값	문자열 값 별칭
+// 100	thin,hairline
+// 200	extra-light,ultra-light
+// 300	light
+// 400	normal, regular,book
+// 500	medium
+// 600	semi-bold,demi-bold
+// 700	bold
+// 800	extra-bold,ultra-bold
+// 900	black,heavy
+// 950	extra-black,ultra-black
+
+// https://design-tokens.github.io/community-group/format/
+
+
+{
+  "brand": {
+    "$description": "Design tokens from our brand guidelines",
+
+    "color": {
+      "$type": "color",
+      "acid green": {
+        "$value": "#00ff66"
+      },
+      "hot pink": {
+        "$value": "#dd22cc"
+      }
+    },
+    "typeface": {
+      "$type": "fontFamily",
+      "primary": {
+        "$value": "Comic Sans MS"
+      },
+      "secondary": {
+        "$value": "Times New Roman"
+      }
+    }
+  }
+}
+
+{
+  "Majestic magenta": {
+    "$value": "#ff00ff",
+    "$ype": "color"
+  },
+  "Translucent shadow": {
+    "$value": "#00000088",
+    "$type": "color"
+  }
+}
+
+{
+  "spacingStack1X": {
+    "$value": "0.25rem",
+    "$type": "dimension"
+  }
+}
+
+{
+  "Primary font": {
+    "$value": "Comic Sans MS",
+    "$type": "fontFamily"
+  },
+  "Body font": {
+    "$value": ["Helvetica", "Arial"],
+    "$type": "fontFamily"
+  }
+}
+
+{
+  "font-weight-default": {
+    "$value": 350,
+    "$type": "fontWeight"
+  },
+  "font-weight-thick": {
+    "$value": "extra-bold",
+    "$type": "fontWeight"
+  }
+}
+
+{
+  "Duration-100": {
+    "$value": "100ms",
+    "$type": "duration"
+  },
+  "Duration-200": {
+    "$value": "200ms",
+    "$type": "duration"
+  }
+}
+
+{
+  "Accelerate": {
+    "$value": [0.5, 0, 1, 1],
+    "$type": "cubicBezier"
+  },
+  "Decelerate": {
+    "$value": [0, 0, 0.5, 1],
+    "$type": "cubicBezier"
+  }
+}
+
+
+Composite token 복합토큰
+{
+  "space": {
+    "small": {
+      "$type": "dimension",
+      "$value": "0.5rem"
+    }
+  },
+
+  "color": {
+    "shadow-050": {
+      "$type": "color",
+      "$value": "#00000088"
+    }
+  },
+
+  "shadow": {
+    "medium": {
+      "$type": "shadow",
+      "$description": "A composite token where some sub-values are references to tokens that have the correct type and others are explicit values",
+      "$value": {
+        "color": "{color.shadow-050}",
+        "offsetX": "{space.small}",
+        "offsetY": "{space.small}",
+        "blur": "1.5rem",
+        "spread": "0rem"
+      }
+    }
+  },
+
+  "component": {
+    "card": {
+      "box-shadow": {
+        "$description": "This token is an alias for the composite token {shadow.medium}",
+        "$value": "{shadow.medium}"
+      }
+    }
+  }
+}
+
+{
+  "notification-border-style": {
+    "$type": "strokeStyle",
+    "$value": {
+      "dashArray": ["{dash-length-medium}", "0.25rem"],
+      "lineCap": "butt"
+    }
+  },
+
+  "dash-length-medium": {
+    "$type": "dimension",
+    "$value": "10px"
+  }
+}
+
+
+
+
+{
+  "border": {
+    "heavy": {
+      "$type": "border",
+      "$value": {
+        "color": "#36363600",
+        "width": "3px",
+        "style": "solid"
+      }
+    },
+    "focusring": {
+      "$type": "border",
+      "$value": {
+        "color": "{color.focusring}",
+        "width": "1px",
+        "style": {
+          "dashArray": ["0.5rem", "0.25rem"],
+          "lineCap": "round"
+        }
+      }
+    }
+  }
+}

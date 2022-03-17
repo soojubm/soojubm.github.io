@@ -37,12 +37,24 @@
     aria-label="sample tabs"
     style="margin-left:0;margin-right:0;padding-left:var(--space-small);padding-right:var(--space-small);"
   >
-    <button class="profile-tablist-tab" role="tab" aria-selected="true" aria-controls="panel-1" id="tab-1" tabindex="0">첫번째 탭</button>
-    <button class="profile-tablist-tab" role="tab" aria-selected="false" aria-controls="panel-2" id="tab-2" tabindex="-1">두번째 탭</button>
-    <button class="profile-tablist-tab" role="tab" aria-selected="false" aria-controls="panel-3" id="tab-3" tabindex="-1">세번째 탭</button>
+    <button class="profile-tablist-tab" role="tab" aria-selected="true" aria-controls="panel-1" id="tab-1" tabindex="0">All</button>
+    <button class="profile-tablist-tab" role="tab" aria-selected="false" aria-controls="panel-2" id="tab-2" tabindex="-1">댓글</button>
+    <button class="profile-tablist-tab" role="tab" aria-selected="false" aria-controls="panel-3" id="tab-3" tabindex="-1">좋아요</button>
     <i class="profile-tablist-indicator"></i>
   </nav> -->
+  <div class="chip-group" style="margin:0 0 var(--space) 0;">
+    <button class="chip is-active" style="margin-left:0;">
+      <span class="chip-label">모두</span>
+    </button>
+    <button class="chip">
+      <span class="chip-label">읽지않음</span>
+    </button>
+  </div>
   <!-- todo padding-bottom vs min-height -->
+  <!-- <div class="checkbox" style="margin:0 0 -.5rem auto;">
+    <input class="js-check" type="checkbox" id="line03" value="" />
+    <label for="line03" title="Everyday is like sunday">읽지 않은 알림 보기</label>
+  </div> -->
   <div class="navbar-notification" style="margin-left:0;padding-bottom:8rem;">
     <!-- <a class="navbar-notification-trigger js-navbar-toggle" href="#" aria-haspopup="true" aria-expanded="false">
       <img src="/public/icons/bell.svg" />
@@ -68,9 +80,9 @@
         <span class="notification-item-content">like on <b>John Cassavetes</b></span>
         <time class="notification-item-date">5일 전</time>
       </div>
-      <footer>
+      <!-- <footer>
         <button>더 불러오기</button>
-      </footer>
+      </footer> -->
     </menu>
   </div>
 </main>

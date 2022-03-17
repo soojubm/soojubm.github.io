@@ -78,6 +78,10 @@
   padding: 2rem var(--grid-margin) 8rem; // mobile padding 패딩은 page-head에서 주는 게 좋음. -margin 주는 게 좋을 듯.
   position: relative;
 }
+@mixin container-huge {
+  max-width: 1320px;
+  @include container-page;
+}
 @mixin container-large {
   max-width: var(--width-large);
   @include container-page;

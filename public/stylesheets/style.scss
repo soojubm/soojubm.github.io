@@ -565,11 +565,8 @@ q:before {
 .menu-item:hover {@include hover-item;}
 
 main, #footer {transition:all .6s ease;}
-.is-opened-menu main, .is-opened-menu #footer {padding-left:400px;}
+.is-opened-menu main, .is-opened-menu #footer {padding-left:calc(var(--menu-width));}
 .is-opened-menu .navbar-logo {z-index: 8;}
-
-.is-opened-menu .profile {max-width:1000px;padding-left:200px;}
-.is-opened-menu .profile-tabpanel .card {width:calc(50% - 1rem);}
 
 @media (--breakpoint-small) {
   .is-opened-menu main, .is-opened-menu #footer {padding-left:var(--grid-margin);}

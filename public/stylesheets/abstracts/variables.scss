@@ -1,4 +1,5 @@
-@custom-media --breakpoint-large (max-width: 1380px);
+@custom-media --breakpoint-huge (min-width: 1560px);
+@custom-media --breakpoint-large (max-width: 1560px);
 @custom-media --breakpoint-small (max-width: 1080px);
 @custom-media --breakpoint-tiny (max-width: 760px);
 
@@ -109,11 +110,14 @@ $transition-fade: opacity 0.15s linear;
   --width-tiny: 320px;
   --width-small: 480px;
   --width-medium: 640px;
-  --width-large: 1180px;
+  --width-large: 1000px;
 
   --width-dropdown: 280px;
   --width-popover: 280px;
   --width-dialog: 0;
+
+
+  --menu-width: 400px;
 
   --size-huge: 5rem;
   --size-large: 3rem;
@@ -246,7 +250,7 @@ $transition-fade: opacity 0.15s linear;
   
 
   @media (--breakpoint-large) {
-    --width-large: 1020px;
+    // --width-large: 1020px;
   }
   
 
