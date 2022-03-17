@@ -129,16 +129,19 @@ async function domEvents() {
   darkTheme('.js-darkmode2')
 
   // todo
-  const navItemElements = document.querySelectorAll('.navbar-menu-item')
+  const navItemElements = document.querySelectorAll('.navbar-menu a')
   const hash = window.location.hash.substring(1)
 
   navItemElements?.forEach(element => {
+    element.classList.remove('is-current')
+
     const isCurrentPage = element.getAttribute('href')?.includes(hash)
 
     if (isCurrentPage) element.classList.add('is-current')
   })
 
   // const page = routes.find(route => route.path.substring(1) === hash)
+  console.log('page', hash)
   // const pageTitleElement = document.querySelector('.js-page-title')
 
   // if (pageTitleElement) {

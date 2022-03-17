@@ -23,7 +23,7 @@
     border-bottom: var(--border);
   }
 </style>
-<main class="" style="display:flex;max-width:1000px;margin:0 auto;">
+<main class="" style="max-width:1000px;margin:0 auto;padding:0 var(--grid-margin);">
   <nav class="sidebar" style="float:left;width:100%;max-width:240px;margin-top:4rem;">
     <!-- <button class="sidebar-current tile-elevated" style="width:100%;margin:0 0 1rem 0;text-align:left;font-weight:bold;">
       <span>Avatars</span>
@@ -48,7 +48,23 @@
       <span class="sidebar-item-label">Checkbox</span>
     </div>
   </nav>
+
+  <nav class="component-navigation">
+    <div class="component-navigation-background"></div>
+    <div class="component-navigation-scroll">
+      <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Actionable</span></a>
+      <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Visual Information</span></a>
+      <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Text</span></a>
+    </div>
+  </nav>
+
   <article class="article" style="max-width:auto;margin:0;padding-top:4rem;">
+    <aside class="toc">
+      <h4>Contents</h4>
+      <a href="#" class="toc-item">Quickstart</a>
+      <a href="#" class="toc-item">Tutorial</a>
+    </aside>
+
     <span class="tag">selection</span>
     <h1 class="article-title" title="or Box">Radioes</h1>
     <p class="article-kicker">
@@ -76,9 +92,4 @@
       이네들은 있습니다. 그리고 헤는 하나에 어머니, 별 이름과 듯합니다. 내 어머님, 써 속의 부끄러운 않은 다 계십니다.
     </p>
   </article>
-
-  <!-- <aside class="toc">
-    <a href="#" class="toc-item">Quickstart</a>
-    <a href="#" class="toc-item">Tutorial</a>
-  </aside> -->
 </main>
