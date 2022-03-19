@@ -5,5 +5,5 @@
 .hashtag {@include hashtag;}
 
 .badge {display:inline-flex;align-items:center;justify-content:center;height:var(--size-tiny);padding:0 var(--space-small);border-radius:var(--radius);font-size:var(--font-size-caption);}
-.badge[data-variant=primary] {background:gold;color:var(--color-text);}
+.badge[data-variant=primary] {background:gold;color: var(--gray800);}
 .badge[data-variant=secondary] {background:var(--green100);}
