@@ -3,6 +3,10 @@
 <!-- https://biings.design/#/ -->
 <!-- todo top hat -->
 
+<script>
+  const radio = {id: 'radio', description: '테스트'}
+</script>
+
 <main class="component">
   <!--
     <p>
@@ -35,30 +39,32 @@
   -->
   <!-- https://story.pxd.co.kr/1451 -->
   <section class="hero" role="banner">
-    <div class="hero-background"></div>
-    <span class="hero-eyebrow">Components</span>
-    <h1 class="hero-title" style="line-height:1.3;margin-top:.25rem;"><span style="color:var(--color-text-light);">We 🐷</span><br />built this city.</h1>
+    <!-- <div class="hero-background"></div> -->
+    <!-- <span class="hero-eyebrow">Components</span> -->
+    <!-- <h1 class="hero-title" style="line-height:1.3;margin-top:.25rem;"><span style="color:var(--color-text-light);">We 🐷</span><br />built this city.</h1> -->
+    <h1 class="hero-title">Components</h1>
+    <p class="hero-description">디스크립션..</p>
     <!-- <p>
       tokens: size/color/space/font/border/shadow/radius<br />
       components(style): avatar/chip/tile/text?/textfield<br />
       patterns(role): label/button/filter/selectbox/dropdown/text input/
     </p> -->
 
-    <ul class="article-checklist" style="margin-top:3rem;">
-      <li><i class="icon-check"></i>디스크립션 + 효능</li>
-      <li><i class="icon-check"></i>목록을 열거하거나 가짓수를 보충하지 않습니다.</li>
-      <li><i class="icon-check"></i>특정할 수 없거나 모호한 용어를 쓰지 않습니다. (ex '경우에 따라' '상황에 따라', '목적에 맞게')</li>
+    <h4 class="article-subhead">Don'ts</h4>
+    <ul class="article-checklist">
+      <li><i class="icon-check"></i>목록을 열거. 가짓수 보충.</li>
+      <li title="경우에따라.상황에따라.목적에맞게"><i class="icon-check"></i>특정할 수 없거나 모호한 용어.</li>
       <li><i class="icon-check"></i>기본적인 내용을 서술하지 않습니다. 이 문서를 읽는 사람은 체크박스와 라디오의 차이를 이해하고 있습니다.</li>
       <li><i class="icon-check"></i>일어날 법 하지 않는 don't 케이스를 정의하지 않습니다.</li>
       <li><i class="icon-check"></i>자세히보기/더보기 => 더 알아보기</li>
-      <li><i class="icon-check"></i>긍정문 / 한자 지양 / -적</li>
+      <li><i class="icon-check"></i>시각적인 레이블</li>
+      <li><i class="icon-check"></i>긍정문 / 한자 지양 / -적 / 복합명사는 붙여쓰기</li>
       <li><i class="icon-check"></i>variants / sizes / states</li>
-      <!-- <li><i class="icon-check"></i>dos / don'ts 케이스는 캡쳐 이미지를 사용하지 않고 간결하게 서술합니다.</li> -->
+      <!-- <li><i class="icon-check"></i>dos / don'ts 케이스는 이미지를 사용하지 않고 간결하게 서술합니다. </li> -->
       <!-- <li><i class="icon-check"></i>사용 빈도가 낮은 케이스는 예외 케이스로 정의합니다.</li> -->
     </ul>
     
     <!-- <li><i class="icon-check"></i>'-때', '경우', '사용' 최소화. 부정어/긍정어/명령형? 하세요, 할 수 있습니다. 보다 합니다. 입니다?</li> -->
-    <!-- <li><i class="icon-check"></i>복합명사 띄어쓰기 정의</li> -->
     <!-- <footer class="hero-foot">
       <a class="hero-cta">공사중입니다</a>
       <a class="hero-detail">더 알아보기</a>
@@ -141,7 +147,7 @@
     <article class="article js-observer js-scrollspy-section">
       <span class="hashtag">시각정보</span>
       <h1 class="article-title">Avatars</h1>
-      <p class="article-description">아바타는 개체(유저, 회사, 프로젝트 등)를 대표하는 시각 정보입니다. 아바타의 시각 이미지로 사용자의 흥미를 높일 수 있습니다.</p>
+      <p class="article-description">개체(유저, 회사, 프로젝트 등)를 대표하는 시각 정보입니다. 아바타의 시각 이미지를 통해 사용자의 흥미를 높일 수 있습니다.</p>
 
       <blockquote hidden>
         <q>인물, 그룹, 회사, 프로젝트 등의 unique entity로 대부분의 디자인 시스템에서 정의. 여기서는 조금 더 포괄적인 개념.</q>
@@ -206,7 +212,7 @@
 
     <article class="article js-observer js-scrollspy-section">
       <h1 class="article-title">Entities</h1>
-      <p class="article-description">...</p>
+      <p class="article-description">요약된 정보 개체.</p>
 
        <!-- <li><i class="icon-check"></i> 아이템 컴포넌트: card component, page 레벨에서 상대적으로 중요도가 낮은 경우 오른쪽에 배치할 수 있습니다.</li> -->
         <!-- <li><i class="icon-check"></i> 아이템 컴포넌트: 텍스트 말 줄임표 조건 정의.</li> -->
@@ -234,9 +240,10 @@
     </article>
 
     <article class="article js-observer js-scrollspy-section">
-      <span class="hashtag">action</span>
+      <span class="hashtag">action/submit</span>
+      <span class="hashtag">action/link</span>
       <h1 class="article-title">Buttons</h1>
-      <p class="article-description">버튼은 사용자 여정에서 가장 중요한 액션입니다. 사용자가 페이지의 핵심 과업을 인지할 수 있도록 돕습니다.</p>
+      <p class="article-description">사용자 과업을 위한 행동을 유도합니다.</p>
       <!-- <p>Split Button</p> -->
 
       <!-- <li><i class="icon-check"></i> 아이콘 버튼의 아이콘은 관습적인 메타포를 사용하세요.</li> -->
@@ -254,9 +261,9 @@
       
       <h4 class="article-subhead">Editorial</h4>
       <ul class="article-checklist" style="margin-top:.75rem;">
-        <li><i class="icon-check"></i> 레이블 없이 아이콘 버튼으로 쓰지 않습니다.</li>
-        <li><i class="icon-check"></i> 버튼 레이블은 8자 이하로 작성합니다.</li>
-        <!-- <li><i class="icon-check"></i> 버튼 레이블은 사용자 시점으로 작성합니다. (ex 보내기 => 받기)</li> -->
+        <li><i class="icon-check"></i> 8자 이하로 작성합니다.</li>
+        <li><i class="icon-check"></i> 레이블을 생략하여 아이콘 버튼으로 쓰지 않습니다.</li>
+        <li><i class="icon-check"></i> 사용자 시점으로 작성합니다. (ex 보내기 => 받기)</li>
         <!-- <li><i class="icon-check"></i> 다이얼로그의 버튼 레이블은 질문의 동사와 페어링.</li> -->
       </ul>
 
@@ -289,7 +296,7 @@
       <p class="article-subhead">sizes</p>
       <div class="article-anatomy">
         <div class="design-buttongroup">
-          <button class="article-tertiary" style="height:auto;padding:12px 0 15px;font-size:var(--font-size-subhead);vertical-align:bottom;">Large</button>
+          <button class="article-tertiary" style="height:64px;font-size:var(--font-size-subhead);vertical-align:bottom;">Large</button>
           <button class="article-tertiary" style="vertical-align:bottom;">Medium</button>
           <!-- <button class="article-tertiary-small">Small</button> -->
         </div>
@@ -318,7 +325,7 @@
         </div>
       </div>
       <aside class="article-helper">
-        <p>정보의 접근성을 위해 색상 외의 대비를 사용합니다.</p>
+        <p>정보의 접근성을 위해 색상 외의 형식으로 대비를 주세요.</p>
       </aside>
     </article>
 
@@ -333,11 +340,12 @@
     
 
     <article class="article js-observer js-scrollspy-section">
-      <span class="hashtag" title="action">실행</span>
-      <span class="hashtag" title="choice">선택</span>
-      <span class="hashtag" title="filtering">필터</span>
+      <span class="hashtag" title="action">action</span>
+      <span class="hashtag" title="choice">selection</span>
+      <span class="hashtag" title="filtering">filtering</span>
+      <span class="hashtag" title="filtering">action/search</span>
       <h1 class="article-title">Chips</h1>
-      <p class="article-description">칩은 사용자 여정을 보조하는 액션입니다. 사용자는 액션을 실행한 페이지에서 즉각적인 결과를 기대할 수 있습니다.</p>
+      <p class="article-description">사용자 여정을 보조하는 액션입니다. 실행 페이지에서 즉각적인 결과를 피드백해야 합니다.</p>
 
       <aside class="article-aka">
         <span class="tag">a.k.a.</span>
@@ -535,19 +543,18 @@
     <article class="article js-observer js-scrollspy-section">
       <span class="hashtag">시각정보</span>
       <h1 class="article-title">Tags <span hidden>(or badge/label)</span></h1>
-      <p class="article-description">태그는 인접 요소나 부모 요소를 부연하는 시각 정보입니다. 상태 또는 카테고리, 키워드(또는 키워드 목록)로 강조된 시각 정보는 사용자가 복잡한 정보 더미에서 중요한 정보를 우선적으로 파악하도록 돕습니다.</p>
+      <p class="article-description">인접 요소나 부모 요소를 부연하는 시각 정보입니다. 상태, 카테고리, 키워드(또는 키워드 목록)로 강조된 시각 정보는 사용자가 복잡한 정보 더미에서 중요한 정보를 우선적으로 파악하도록 돕습니다.</p>
 
       <h4 class="article-subhead">Editorial</h4>
       <ul class="article-checklist">
-        <li><i class="icon-check"></i> 상태, 카테고리, 키워드.</li>
-        <li><i class="icon-check"></i> 레이블은 동사가 아닌 형용사나 명사로 작성합니다.</li>
+        <li><i class="icon-check"></i> 형용사나 명사로 작성합니다.</li>
+        <li><i class="icon-check"></i> 하나의 단어로 작성합니다.</li>
       </ul>
 
       <h4 class="article-subhead">Guidelines</h4>
       <ul class="article-checklist">
         <!-- <li><i class="icon-check"></i> secondary 사용 안 함.</li> -->
         <li><i class="icon-check"></i> 페이지 링크로 사용하지 않습니다. <span hidden>triggering interaction</span></li>
-        <li><i class="icon-check"></i> 액션으로 사용하지 않습니다. </li>
         <li><i class="icon-check"></i> 아이콘을 포함하지 않습니다. 따라서 추가, 제거할 수 없습니다.</li>
         <li><i class="icon-check"></i> 태그 그룹은 3개 이상의 태그를 포함할 수 없습니다.</li>
         <!-- <li><i class="icon-check"></i> 해시태그(#)는 항상 클릭할 수 있어야 합니다.</li> -->
@@ -644,7 +651,7 @@
       <ul class="article-checklist">
         <li><i class="icon-check"></i> '클릭할 수 있음'의 기표로 elevated 스타일을 사용합니다. 타일 전체가 클릭 영역일 수도, 타일 내부에 클릭 가능한 요소를 포함할 수도 있습니다.</li>
         <li><i class="icon-check"></i> 아티클 레벨에 사용합니다. 페이지 레벨의 타이틀과 디스크립션을 타일로 만들지 않습니다.</p>
-        <li><i class="icon-check"></i> leading, tailing 엘리먼트의 line-height에 따른 시각보정이 필요할 수 있습니다.</p>
+        <li><i class="icon-check"></i> leading, tailing 엘리먼트의 line-height에 따른 시각보정이 필요합니다.</p>
       </ul>
       <div class="design-tile-flat">
         <b>flat</b>
@@ -660,7 +667,7 @@
     <article class="article js-observer js-scrollspy-section">
       <span class="hashtag">selection</span>
       <h1 class="article-title" title="or Box">Switch</h1>
-      <p class="article-description">스위치는 켜거나 끌 수 있는 하나의 옵션입니다.</p>
+      <p class="article-description">스위치는 켜거나 끌 수 있는 설정 옵션입니다.</p>
       <p hidden>A switch is a visual toggle between two mutually exclusive states — on and off.</p>
 
       <aside class="article-aka">
@@ -671,8 +678,8 @@
       <h4 class="article-subhead">Editorial</h4>
       <ul class="article-checklist">
         <!-- <li><i class="icon-check"></i> 왼쪽 오른쪽에 필터나 탭으로 쓰지 않습니다.</li> -->
-        <li><i class="icon-check"></i> 레이블은 동사를 포함하여 작성합니다.</li>
-        <li><i class="icon-check"></i> 스위치의 상태(on/off) 값을 레이블로 제공하지 않습니다. (ex. dribble / flex)</li>
+        <li><i class="icon-check"></i> 동사를 포함합니다.</li>
+        <li><i class="icon-check"></i> 상태(on/off)를 위한 레이블을 제공하지 않습니다.</li>
       </ul>
 
       <span class="switch">
@@ -688,33 +695,39 @@
     <article class="article js-observer js-scrollspy-section">
       <span class="hashtag">selection</span>
       <h1 class="article-title" title="or Box">Checkboxes</h1>
-      <p class="article-description">하나의 옵션을 선택하거나 옵션 목록에서 여러 개의 옵션을 선택합니다.</p>
-
-      <p>todo: 체크박스와 체크박스그룹의 역할이 다름.</p>
+      <p class="article-description">체크할 수 있는 인터렉션 컨트롤. 하나의 옵션을 선택하거나 옵션 목록에서 여러 개의 옵션을 선택합니다.</p>
 
       <h4 class="article-subhead">Guidelines</h4>
       <ul class="article-checklist">
-        <!-- <li><i class="icon-check"></i> 기본값으 제공하지 않습니다.</li> -->
         <!-- 서낵하지 않을 수 있다. -->
+        <li><i class="icon-check"></i> 초기값은 체크되지 않은 상태로 제공합니다.</li>
+        <li><i class="icon-check"></i> switch 역할로 하나의 체크박스를 제공할 수 있습니다.</li>
         <li><i class="icon-check"></i> 레이블은 동사를 포함하여 2단어 이상으로 작성합니다.</li>
+        <li><i class="icon-check"></i> 옵션을 선택하는 경우 Chip.</li>
+      </ul>
+      
+      <h4 class="article-subhead">Editorial</h4>
+      <ul class="article-checklist">
+        <li><i class="icon-check"></i> 동사를 포함합니다.</li>
+        <li><i class="icon-check"></i> 2단어 이상으로 작성합니다.</li>
       </ul>
 
-        <fieldset role="checkgroup">
-          <!-- <legend">checkgroup</legend> -->
-          <div class="checkbox">
-            <input class="js-checkall" type="checkbox" id="line00" value="" aira-checked="mixed" aria-controls="1 2" data-indeterminate="true" indeterminate />
-            <label for="line00" title="Check All"><em>모두 동의합니다</em></label>
-          </div>
-          <div class="checkbox">
-            <input class="js-check" type="checkbox" id="line03" value="" checked disabled />
-            <label for="line03" title="Everyday is like sunday">비활성 체크박스에요</label>
-          </div>
-          <div class="checkbox textfield">
-            <input class="js-check" type="checkbox" id="other" name="interest" value="other">
-            <label for="other">기타</label>
-            <input type="text" name="other-more" class="textfield-input" placeholder="기타로 오토바이를 타자." hidden>
-          </div>
-        </fieldset>
+      <fieldset role="checkgroup">
+        <!-- <legend">checkgroup</legend> -->
+        <div class="checkbox">
+          <input class="js-checkall" type="checkbox" id="line00" value="" aira-checked="mixed" aria-controls="1 2" data-indeterminate="true" indeterminate />
+          <label for="line00" title="Check All"><em>모두 동의합니다</em></label>
+        </div>
+        <div class="checkbox">
+          <input class="js-check" type="checkbox" id="line03" value="" checked disabled />
+          <label for="line03" title="Everyday is like sunday">비활성 체크박스에요</label>
+        </div>
+        <div class="checkbox textfield">
+          <input class="js-check" type="checkbox" id="other" name="interest" value="other">
+          <label for="other">기타</label>
+          <input type="text" name="other-more" class="textfield-input" placeholder="기타로 오토바이를 타자." hidden>
+        </div>
+      </fieldset>
     </article>
 
     <article class="article js-observer js-scrollspy-section">
@@ -724,9 +737,9 @@
 
       <h4 class="article-subhead">Guidelines</h4>
       <ul class="article-checklist">
-        <li><i class="icon-check"></i> 선택 상태의 기본 옵션을 한 가지 제공합니다.</li>
-        <li><i class="icon-check"></i> 항상 세로로 정렬합니다.</li>
-        <li><i class="icon-check"></i> 옵션이 6개 이상일 때 selectbox나 chip을 사용합니다.</li>
+        <li><i class="icon-check"></i> 첫 번째 항목을 선택된 상태로 제공합니다.</li>
+        <li><i class="icon-check"></i> 세로로 정렬합니다.</li>
+        <li><i class="icon-check"></i> 최대 5개의 옵션을 제공합니다.</li>
       </ul>
 
       <!-- <h4 class="article-subhead">Editorial</h4>
@@ -812,16 +825,17 @@
     </article>
 
     <article class="article js-observer js-scrollspy-section">
-      <span class="hashtag">입력</span>
-      <span class="hashtag">선택</span>
+      <span class="hashtag">input</span>
       <h1 class="article-title">Textfields</h1>
-      <p class="article-description">사용자가 정보를 입력하거나 수정합니다.</p>
+      <p class="article-description">사용자가 정보를 입력하거나 수정합니다</p>
 
       <h4 class="article-subhead">Guidelines</h4>
       <ul class="article-checklist">
         <!-- <p><span><i></i></span> 벨리데이션 실행 조건: <b>제출(구현이 쉬움)</b> / 키보드 입력 쉬움 / 블러(구현이 복잡함. 흐름이 끊어짐)</b></p> -->
         <li><span><i class="icon-check"></i></span> 레이블을 왼쪽에 배치하지 않습니다.</li>
         <li><span><i class="icon-check"></i></span> 검색 필드에 뒤로가기 버튼을 포함하지 않습니다.</li>
+        <li><span><i class="icon-check"></i></span> selectbox는 선택할 수 있는 정보 목록을 제공하여 사용자의 정보 입력을 돕는 맥락입니다.<li>
+
       </ul>
 
       <h4 class="article-subhead">Editorial</h4>
@@ -922,11 +936,11 @@
     <article class="article js-observer js-scrollspy-section">
       <span class="hashtag">네비게이션</span>
       <h1 class="article-title">Breadcrumb</h1>
-      <p class="article-description">브레드크럼은 계층 구조의 네비게이션입니다. 사용자는 전체 사이트 구조에서 현재 페이지를 알 수 있으며 이전 페이지로 이동할 수도 있습니다.</p>
+      <p class="article-description">계층 구조의 네비게이션입니다. 사용자는 전체 서비스 구조 상 현재의 위치를 알 수 있으며 이전 페이지로 이동할 수도 있습니다.</p>
 
       <h4 class="article-subhead">Guidelines</h4>
       <ul class="article-checklist">
-        <li><i class="icon-check"></i> 페이지 뎁스 3 이상에서 선택적으로 사용합니다.</li>
+        <li><i class="icon-check"></i> 페이지 뎁스 3 이상에서 사용합니다.</li>
         <li><i class="icon-check"></i> 프로모션용 랜딩 페이지에서 사용자의 여정을 돕기 위해 사용할 수 있습니다.</li>
         <li><i class="icon-check"></i> 푸터에서 사이트맵과 함께 사용할 수 있습니다.</li>
         <li><i class="icon-check"></i> 모바일 환경에서 네비게이션 바와 함께 사용하지 않습니다.</li>
@@ -1459,11 +1473,11 @@
 
     <article class="article js-observer js-scrollspy-section">
       <h1 class="article-title">Accordion / Details</h1>
-      <p class="article-description">요약한 정보 목록입니다. 사용자는 필요에 따라 정보를 취사선택합니다.</p>
+      <p class="article-description">필요에 따라 취사선택할 수 있도록 정보를 요약합니다.</p>
 
       <h4 class="article-subhead">Guidelines</h4>
       <ul class="article-checklist">
-        <li><i class="icon-check"></i> 복잡한 정보나 사용자가 반드시 숙지해야 하는 정보를 요약하지 않습니다. (툴팁과 묶기)</li>
+        <li><i class="icon-check"></i> 사용자가 반드시 숙지해야 하는 정보를 요약해서 보여주지 않습니다. (툴팁과 묶기)</li>
       </ul>
 
       <h4 class="article-subhead">Editorial</h4>
@@ -1519,17 +1533,17 @@
       <p class="article-description">작성 중.</p>
       <!-- <p>사용자는 모달 형태의 집중된 환경에서(?) 리스크를 관리할 수 있습니다.</p> -->
 
-      <h4 class="article-subhead">Guidelines</h4>
+      <!-- <h4 class="article-subhead">Guidelines</h4>
       <ul class="article-checklist">
-        <!-- <li><i class="icon-check"></i> dim엘리먼트 클릭 시 모달을 닫는다. 리액트에서. 구현하기 쉬움</li> -->
-        <!-- <li><i class="icon-check"></i> dialog header/body/footer 단순 다이얼로그는 바디가 필요 없음.</li> -->
-        <!-- <li><i class="icon-check"></i> 두 개 이상의 레이어를 쌓지 않습니다.</li> -->
+        <li><i class="icon-check"></i> dim엘리먼트 클릭 시 모달을 닫는다. 리액트에서. 구현하기 쉬움</li>
+        <li><i class="icon-check"></i> dialog header/body/footer 단순 다이얼로그는 바디가 필요 없음.</li>
+        <li><i class="icon-check"></i> 두 개 이상의 레이어를 쌓지 않습니다.</li>
       </ul>
 
       <h4 class="article-subhead">Editorial</h4>
       <ul class="article-checklist">
         <li><i class="icon-check"></i> 버튼 레이블은 다이얼로그 제목의 동사와 맞추어 작성하세요</li>
-      </ul>
+      </ul> -->
 
       <h4 class="article-subhead">anatomy</h4>
       <div class="article-anatomy is-anatomy">
@@ -1558,7 +1572,7 @@
 
     <article class="article js-observer js-scrollspy-section">
       <h1 class="article-title">Title Bar</h1>
-      <p class="article-description">네이밍.</p>
+      <p class="article-description">작성 중.</p>
       <header class="titlebar js-titlebar" role="navigation" style="padding:0;">
         <div class="titlebar-background"></div>
         <h1 class="titlebar-title js-page-title" title="page title">페이지 타이틀</h1>
@@ -1582,7 +1596,7 @@
 
     <article class="article js-observer js-scrollspy-section">
       <h1 class="article-title">Bottom Navigation</h1>
-      <p class="article-description">바텀 네비게이션.</p>
+      <p class="article-description">모바일 환경에서의 글로벌 네비게이션.</p>
 
       <!-- <h4 class="article-subehad">같이보기</h4>
       <ul>
@@ -2062,7 +2076,7 @@
           <div class="checkbox">
             <input class="" type="checkbox" id="playlist" value="" aira-checked="mixed" aria-controls="1 2" />
             <label for="playlist" title="play list">재생 목록 1,</label>
-            <small>나만 보기</small>
+            <!-- <small>나만 보기</small> -->
           </div>
           <div class="checkbox">
             <input class="" type="checkbox" id="playlist2" value="" aira-checked="mixed" aria-controls="1 2" />

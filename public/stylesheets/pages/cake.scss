@@ -8,14 +8,13 @@
 .cake-head-engtitle {margin:0 0 var(--space-after-description) 0;@include text-subhead;}
 .cake-head-description {margin:1rem 0 0 0;}
 
-.cake-poster {width:50%;max-width:240px;border:var(--border);border-radius:var(--radius);overflow:hidden;position:absolute;right:0;z-index:var(--zindex-default);}
+.cake-poster {width:50%;max-width:280px;border:var(--border);border-radius:var(--radius);overflow:hidden;position:absolute;right:0;z-index:var(--zindex-default);}
 .cake-poster img {display:block;}
 .cake-head-button {@include button-primary;min-width:11rem;margin-right:1rem;}
-.cake-head-review {@include chip;display:inline-block;margin:var(--space-small) 0;}
 
 .cake-meta {max-width:var(--width-medium);background:var(--color-background);}
 .cake-meta dl {}
-.cake-meta-summary {padding:var(--space) 0 0 0;}
+.cake-meta-summary {}
 
 .cake-info {display:flex;flex-wrap:wrap;padding:2rem 0 2.25rem;position:relative;}
 // .cake-info button {@include button-tertiary;position:absolute;left:0;bottom:3rem;}

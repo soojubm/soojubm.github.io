@@ -131,10 +131,10 @@
 .list .card-byline {margin-top:.5rem;margin-bottom:.5rem;}
 
 // todo loarge
-@media (max-width: 1600px) {
-  .is-opened-menu .profile {max-width:880px;}
-  .profile-tabpanel .card {width:calc(50% - 1rem);}
-}
+// @media (max-width: 1600px) {
+//   .is-opened-menu .profile {max-width:880px;}
+//   .profile-tabpanel .card {width:calc(50% - 1rem);}
+// }
 
 @media (max-width: 1400px) {
   // todo mixin 공통으로 해도 문제가 없을까.

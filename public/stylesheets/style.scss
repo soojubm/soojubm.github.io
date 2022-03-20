@@ -132,7 +132,7 @@
 }
 
 
-.statistic {display:flex;justify-content:space-between;}
+.statistic {display:flex;justify-content:space-evenly;}
 .statistic-item {position:relative;z-index:1;}
 .statistic-item:hover {@include hover-item;}
 .statistic-label {display:block;color:var(--color-text-light);}

@@ -44,7 +44,7 @@
 
 
 // todo ul
-.article-checklist {@include reset-list;margin:1.5rem 0 2rem;list-style:none;}
+.article-checklist {@include reset-list;margin:1.5rem 0 0;list-style:none;}
 .article-checklist li {padding-left:1.125rem;}
 .article-checklist li + li {margin-top: .25rem;}
 .article-checklist li .icon-check {margin:0 var(--space-small) 0 0;position:absolute;left:1px;top:12px;}

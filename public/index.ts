@@ -108,7 +108,7 @@ const DARKTHEME_SELECTOR = '.js-darkmode'
 
 async function domEvents() {
   // todo
-  const mediaSize760 = window.matchMedia('(max-width: 1000px)')
+  const mediaSize760 = window.matchMedia('(max-width: 1080px)')
   const changeMedia = function(e) {
     if (e.matches) {
       // document.body.classList.remove('is-opened-menu')
