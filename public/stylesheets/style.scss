@@ -564,6 +564,8 @@ q:before {
 .menu-item + .menu-item {margin:var(--space) 0 0;}
 .menu-item:hover {@include hover-item;}
 
+
+// todo 제외 샘플 페이지들
 main, #footer {transition:all .6s ease;}
 .is-opened-menu main, .is-opened-menu #footer {padding-left:calc(var(--menu-width));}
 .is-opened-menu .navbar-logo {z-index: 8;}

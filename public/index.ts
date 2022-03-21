@@ -169,7 +169,7 @@ async function domEvents() {
   //   document.execCommand(command, false, value);
   // }
 
-  input.checkbox({ checkAllSelector: '.js-checkall', checkSelector: '.js-check' }).initialize()
+  input.checkbox({ checkAllSelector: '.js-checkall', checkSelector: '.js-check' })
   input.file()
   // input.textarea()
   input.number()
