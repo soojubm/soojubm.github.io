@@ -68,3 +68,15 @@ $md-radio-ripple-size: .25rem;
 	0% {transform:scale(0);}
 	100% {transform:scale(1.0);}
 }
+
+
+
+@keyframes shake {
+	from {
+		transform: rotate(10deg);
+	}
+	to {
+		transform-origin:center center;
+		transform: rotate(-10deg);
+	}
+}

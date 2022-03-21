@@ -10,7 +10,6 @@
     <h1 class="hero-title">Design Tokens</h1>
     <!-- <p class="hero-description">공통의 시각 언어를 정의하고,<br />일관된 시각적 경험을 제공합니다.</p> -->
     <p class="hero-description">디스크립션...</p>
-    <p>Foundation / level, signify</p>
 <!-- 
     <h3 style="margin:0 0 var(--space) 0;">Naming Conventions</h3>
     <div class="tile-flat-small" style="margin:var(--space) 0;">
@@ -50,7 +49,7 @@
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Layouts</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Spacing</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">z-index</span></a>
-      <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Timing</span></a>
+      <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Animation</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Signifier</span></a>
     </div>
   </nav>
@@ -437,7 +436,7 @@
         <li><i class="icon-check"></i>모바일 퍼스트, 가로 스크롤 트랜드 기조로 12 column grid 등 엄격한 그리드 시스템을 정의하지 않습니다.</p>
         <li><i class="icon-check"></i>컨테이너는 최대 4개 칼럼을 가집니다.</p>
         <li><i class="icon-check"></i>리스트는 언제든 가로 스크롤로 변경할 수 있도록 설계합니다.</li>
-        <li><i class="icon-check"></i>컨테이너 너비로 페이지 간의 대비를 줄 수 있습니다. 예를 들면 비밀번호찾기와 로그인/회원가입 페이지는 각각 다른 레이아웃 모듈로써 역할(맥락)을 구분할 수 있습니다.</p>
+        <li><i class="icon-check"></i>컨테이너 너비의 대비로 페이지의 맥락을 구분할 수 있습니다. 예를 들면 비밀번호찾기와 로그인/회원가입 페이지는 각각 다른 레이아웃 모듈을 사용합니다.</p>
         <li><i class="icon-check"></i>설정, 글쓰기, 소개 등 페이지에서 의도적으로 레이아웃 모듈이나 배경색에 대비를 줄 수 있습니다.</p>
       </ul>
 
@@ -504,6 +503,8 @@
       </ul> -->
 
       <!-- <blockquote>todo: space-inset 3가지로 확장. 코드에 반영.</blockquote> -->
+
+      <h4 class="article-subhead">Primary</h4>
       <div class="token-item">
         <b>--space: 1rem</b>
         <div>
@@ -529,6 +530,7 @@
         <!-- Squish Inset/Stretch Inset --space-inset-squish, Stack margin -->
       </div>
 
+      <h4 class="article-subhead">Secondary</h4>
       <div class="token-item">
         <div>
           <p>--space-between-article</p>
@@ -608,7 +610,7 @@
     </article>
 
     <article class="article js-scrollspy-section">
-      <h1 class="article-title">Timing</h1>
+      <h1 class="article-title">Animation</h1>
       <!-- <p class="article-description">inactive에는 항상 instantly.</p> -->
       <div class="token-item">
         <b style="margin:0;">--bazier-base: cubic-bezier(0.455, 0.03, 0.515, 0.955);</b>
@@ -627,7 +629,7 @@
 
     <article class="article js-scrollspy-section">
       <h1 class="article-title">Signifier</h1>
-      <p class="article-description">토큰은 아님. 일관된 기표로 사용자의 인지를 돕습니다.</p>
+      <p class="article-description">todo. fundation 페이지 생성 후 이동. 일관된 기표로 사용자의 인지를 돕습니다.</p>
 
       <ul class="article-checklist">
         <li><i class="icon-check"></i>'확장할 수 있음'으로 plus icon을 사용하지 마세요.</li>

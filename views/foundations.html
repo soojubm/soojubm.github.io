@@ -1,0 +1,56 @@
+<main class="design">
+  <section class="hero">
+    <h1 class="hero-title">Foundations</h1>
+    <p class="hero-description">일관된 경험을 위해.</p>
+    <style>
+      .foundation-item {
+      }
+      .foundation-item a {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        width: 100%;
+        padding: var(--space-small) 0 var(--space);
+        font-size: var(--font-size-title);
+        font-family: 'Changa One';
+        color: var(--color-text);
+        border-bottom: var(--border);
+      }
+      .foundation-item a:hover {
+        /* @include hover-item; */
+      }
+      .foundation-item a i:nth-of-type(1) {
+        margin: 0 0 0 var(--space-small);
+      }
+      .foundation-item a:hover i {
+        animation: shake 0.1s ease-in-out infinite alternate;
+      }
+      .foundation-item a:hover i:nth-of-type(2) {
+        animation-delay: var(--animation-delay-second);
+      }
+      .foundation-item a:hover i:nth-of-type(3) {
+        animation-delay: var(--animation-delay-third);
+      }
+    </style>
+
+    <div class="foundation-item">
+      <a>
+        Level <i>👋</i>
+        <span style="display:block;width:100%;font-size:var(--font-size-body);font-family:var(--fontstack);"
+          >Summary. 컨테이너의 레벨에 의한 자식 컴포넌트 결정론.</span
+        >
+      </a>
+      <a>
+        Layout <i>👋</i><i>👋</i>
+        <span style="display:block;width:100%;font-size:var(--font-size-body);font-family:var(--fontstack);"
+          >Summary. 디바이스나 브라우저의 크기는 잊어라.</span
+        >
+      </a>
+      <a>
+        Signifier <i>👋</i><i>👋</i><i>👋</i>
+
+        <span style="display:block;width:100%;font-size:var(--font-size-body);font-family:var(--fontstack);">Summary. 동일 상태 동일 형태</span>
+      </a>
+    </div>
+  </section>
+</main>
