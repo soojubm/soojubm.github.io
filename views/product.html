@@ -57,14 +57,14 @@
 		</section>
 		<form class="product-order" onClick="javascript:(event) => event.preventDefault();">
 			<div class="product-order-option textfield">
-				<label class="textfield-label" for="">상품선택</label>
+				<label class="textfield-label" for="">상품선택 (상품 옵션이 있는 경우)</label>
 				<select class="textfield-input" name="" id="">
 					<option value="">상품 옵션</option>
 				</select>
 				<span class="selectbox-indicator"><i class="icon-caret"></i></span>
 			</div>
 			<div class="product-order-size">
-				<b class="product-order-size-title">사이즈</b>
+				<b class="product-order-size-title">사이즈 (상품 옵션이 없는 경우)</b>
 				<!-- <button>사이즈 가이드</button> -->
 				<button class="product-order-size-item">S</button>
 				<button class="product-order-size-item is-selected">M</button>
@@ -77,6 +77,16 @@
 			</div>
 			<div class="product-order-item" style="margin-top:2rem;">
 				<h4 class="product-order-item-title"><span class="aaa"></span> 정통 베네치아식 파스타소스 <i class="icon-bullet"></i> M</h4>
+				<button class="product-order-item-close"><i class="icon-x"></i></button>
+				<div class="product-order-item-quantity quantity js-quantity">
+					<input class="quantity-input js-quantity-input" type="number" value="1">
+					<button class="quantity-decrement js-quantity-decrement"><i class="icon-minus"></i></button>
+					<button class="quantity-increment js-quantity-increment"><i class="icon-plus"></i></button>
+				</div>
+				<p class="product-order-item-price">₩23,000</p>
+			</div>
+			<div class="product-order-item">
+				<h4 class="product-order-item-title"><span class="aaa"></span> 정통 베네치아식 파스타소스 <i class="icon-bullet"></i> L</h4>
 				<button class="product-order-item-close"><i class="icon-x"></i></button>
 				<div class="product-order-item-quantity quantity js-quantity">
 					<input class="quantity-input js-quantity-input" type="number" value="1">

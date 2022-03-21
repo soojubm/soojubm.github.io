@@ -10,20 +10,20 @@
 .cart-item-thumbnail {float:left;display:block;width:20%;height:160px;background:var(--color-background-weak);border-radius:var(--radius);box-sizing:border-box;position:relative;}
 .cart-item-thumbnail img {width:auto;height:auto;max-width:100%;max-height:130%;margin:auto;position:absolute;left:0;right:0;top:40%;bottom:0;transition:all .4s;}
 .cart-item-thumbnail:hover img {transform:translateY(-4px);}
-.cart-item-name {float:left;width:35%;margin:-.5rem 0 0 0;padding:0 2rem;box-sizing:border-box;}
+.cart-item-name {float:left;width:35%;margin:-.5rem 0 0 0;padding:0 var(--space);box-sizing:border-box;}
 .cart-item-name-label {display:block;color:var(--color-text-light);}
 .cart-item-name-value {@include text-subhead;line-height:var(--font-line-height-small)}
-.cart-item-color {float:left;width:15%;margin:-.5rem 0 0 0;padding:0 2rem;box-sizing:border-box;text-align:right;}
+.cart-item-color {float:left;width:15%;margin:-.5rem 0 0 0;padding:0 var(--space);box-sizing:border-box;text-align:right;}
 .cart-item-color-label {display:block;color:var(--color-text-light);}
 .cart-item-color-value {@include text-subhead;line-height:var(--font-line-height-small)}
-.cart-item-qty {float:left;width:15%;margin:-.5rem 0 0 0;padding:0 2rem;box-sizing:border-box;text-align:right;}
+.cart-item-qty {float:left;width:15%;margin:-.5rem 0 0 0;padding:0 var(--space);box-sizing:border-box;text-align:right;}
 .cart-item-qty-label {display:block;color:var(--color-text-light);}
 .cart-item-qty-value {@include text-subhead;line-height:var(--font-line-height-small)}
-.cart-item-price {float:left;width:15%;margin:-.5rem 0 0 0;padding:0 0 0 2rem;box-sizing:border-box;text-align:right;}
+.cart-item-price {float:left;width:15%;margin:-.5rem 0 0 0;padding:0 0 0 var(--space);box-sizing:border-box;text-align:right;}
 .cart-item-price-label {display:block;color:var(--color-text-light);}
 .cart-item-price-value {@include text-subhead;line-height:var(--font-line-height-small)}
 
-.cart-summary {max-width:var(--width-medium);margin:2rem 0 0 auto;position:relative;}
+.cart-summary {max-width:var(--width-small);margin:2rem 0 0 auto;position:relative;}
 .cart-summary-subtotal {margin:.5rem 0;}
 .cart-summary-discount {margin:.5rem 0;}
 .cart-summary-shipping {margin:.5rem 0;}
@@ -37,19 +37,19 @@
 
 
 			
-.cart-item-more {margin:.75rem 0 var(--space-small);padding:0 2rem;box-sizing:border-box;text-align:left;color:var(--color-primary);}
+.cart-item-more {margin:.75rem 0 var(--space-small);padding:0 var(--space);box-sizing:border-box;text-align:left;color:var(--color-primary);}
 .cart-item-more i {margin:0 0 0 var(--space-small);}
 .cart-item-remove {float:right;margin:.75rem 0 var(--space-small);color:var(--color-primary);}
-.cart-item-addition {width:calc(100% - 20% - 2rem);margin:0 0 0 calc(20% + 2rem);padding:var(--space-small) 0 .75rem;border-top:var(--border);box-sizing:border-box;position:relative;}
+.cart-item-addition {width:calc(100% - 20% - var(--space));margin:0 0 0 calc(20% + var(--space));padding:var(--space-small) 0 .75rem;border-top:var(--border);box-sizing:border-box;position:relative;}
 .cart-item-addition-description {font-size:var(--font-size-caption);line-height:var(--font-line-height-small);color:var(--color-text-light);}
 .cart-item-addition p {width:80%;}
 .cart-item-addition-price {float:right;position:absolute;right:0;top:.5rem;}
-.cart-item-ship {width:calc(100% - 20% - 2rem);margin:0 0 0 calc(20% + 2rem);padding:var(--space-small) 0 0;border-top:var(--border);position:relative;}
+.cart-item-ship {width:calc(100% - 20% - var(--space));margin:0 0 0 calc(20% + var(--space));padding:var(--space-small) 0 0;border-top:var(--border);position:relative;}
 .cart-item-ship p {}
 // .cart-item-ship p + p {margin:.125rem 0 .25rem;}
 .cart-item-ship-description {font-size:var(--font-size-caption);line-height:var(--font-line-height-small);color:var(--color-text-light);}
 .cart-item-ship span {float:right;position:absolute;right:0;top:.5rem;}
-.cart-item-coupon {margin-left:calc(20% + 2rem);padding:.5rem 1rem;border:var(--border);box-sizing:border-box;color:var(--color-text-light);}
+.cart-item-coupon {margin-left:calc(20% + 2rem);padding:.5rem var(--space);border:var(--border);box-sizing:border-box;color:var(--color-text-light);}
 
 .is-expanded .cart-item-addition {display:none;}
 .is-expanded .cart-item-ship {display:none;}

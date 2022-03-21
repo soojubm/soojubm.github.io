@@ -86,7 +86,7 @@
 .card-byline:hover {@include hover-item;}
 .card-byline-avatar {@include avatar-small;margin:0 var(--space-small) 0 0;}
 .card-byline-name {}
-.card-title {padding:.75rem 0 .25rem;font-size:var(--font-size-body);}
+.card-title {padding:.75rem 0 .25rem;font-size:var(--font-size-body);font-weight:var(--font-weight-normal);}
 .card-text {margin:0 0 1rem 0;padding:.5rem 0 1rem;@include truncate-multi;}
 .card-category {@include tag-primary;@include position-left-top;}
 .card-date {display:none;color:var(--color-text-light);}

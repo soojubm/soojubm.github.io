@@ -5,7 +5,8 @@
 .design-head h1 span {-webkit-text-stroke: 1px var(--color-text);color:var(--color-background);}
 
 .article {padding:4rem var(--grid-margin);overflow:hidden;position:relative;}
-.article-aka {@include tag-group;align-items:center;font-size:var(--font-size-tiny);}
+.article-aka {@include tag-group;align-items:center;margin:var(--space) 0;font-size:var(--font-size-tiny);}
+.article-aka .hashtag:before {content:'';}
 .article-title {margin:0 0 var(--space-after-subhead) 0;@include text-subhead;font-family:'Changa One';font-weight:var(--font-weight-normal);font-size:1.5rem;letter-spacing:0;}
 .article-description {margin:0 0 2rem;font-size:16px;}
 // border-top:var(--border);border-bottom:var(--border);
@@ -44,7 +45,7 @@
 
 
 // todo ul
-.article-checklist {@include reset-list;margin:1.5rem 0 0;list-style:none;}
+.article-checklist {@include reset-list;margin:1.5rem 0;list-style:none;}
 .article-checklist li {padding-left:1.125rem;}
 .article-checklist li + li {margin-top: .25rem;}
 .article-checklist li .icon-check {margin:0 var(--space-small) 0 0;position:absolute;left:1px;top:12px;}

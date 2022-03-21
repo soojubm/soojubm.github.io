@@ -90,6 +90,10 @@ $transition-fade: opacity 0.15s linear;
   --color-text-weak: var(--gray0);
   --color-text-light: var(--gray400);
   --color-text-link: var(--color-primary);
+  --color-text-disabled: 0; // todo
+  --disabled-color-text: 0;
+  --disabled-color-background: 0;
+  --disabled-color-border: 0;
 
 
   --color-warning: var(--red800);
@@ -118,7 +122,7 @@ $transition-fade: opacity 0.15s linear;
   --width-dialog: 0;
 
 
-  --menu-width: 360px;
+  --menu-width: 380px;
 
   --size-huge: 5rem;
   --size-large: 3rem;
@@ -270,6 +274,7 @@ $transition-fade: opacity 0.15s linear;
     --color-text: #d1d2d3;
     --color-text-weak: var(--gray800);
     --color-text-light: var(--gray400);
+
     --color-background: #252d29;
     --color-background-weak: var(--gray800);
     --color-background-strong: var(--gray0);
