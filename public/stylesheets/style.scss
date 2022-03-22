@@ -570,10 +570,9 @@ main, #footer {transition:all .6s ease;}
 .is-opened-menu .design,
 .is-opened-menu .component,
 .is-opened-menu .token,
-.is-opened-menu .foundation,
-.is-opened-menu #footer {padding-left:calc(var(--menu-width));}
+.is-opened-menu .foundation {padding-left:calc(var(--menu-width));}
 .is-opened-menu .navbar-logo {z-index: 8;}
 
 @media (--breakpoint-small) {
-  .is-opened-menu main, .is-opened-menu #footer {padding-left:var(--grid-margin);}
+  .is-opened-menu main {padding-left:var(--grid-margin);}
 }

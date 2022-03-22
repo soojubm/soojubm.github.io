@@ -255,7 +255,7 @@
       <span class="hashtag">action</span>
       <span class="hashtag">link</span>
       <h1 class="article-title">Buttons</h1>
-      <p class="article-description">사용자가 과업을 달성하기 위한 액션입니다(?).</p>
+      <p class="article-description">사용자 과업을 위한 액션입니다.</p>
       <!-- <p>Split Button</p> -->
 
       <!-- <li><i class="icon-check"></i> 아이콘 버튼의 아이콘은 관습적인 메타포를 사용하세요.</li> -->
@@ -264,7 +264,7 @@
       <!-- <li><i class="icon-check"></i> more load 버튼은 full-width로 사용하지 않습니다. 콘텐츠보다 작은 크기로 대비를 줍니다. </li> -->
 
       <h4 class="article-subhead">Guidelines</h4>
-      <ul class="article-checklist" style="margin-top:.75rem;">
+      <ul class="article-checklist">
         <li><i class="icon-check"></i> 반드시 피드백합니다. 페이지 이동이나 새로고침, 정보 구조의 변화도 피드백이 될 수 있습니다.</li>
         <li><i class="icon-check"></i> 모든 버튼은 일관된 상태 스타일을 가집니다.</li>
         <li><i class="icon-check"></i> binary choice에서 primary 버튼과 secondary 버튼을 함께 배치하지 않습니다.</li>
@@ -272,12 +272,12 @@
       </ul>
       
       <h4 class="article-subhead">Editorial</h4>
-      <ul class="article-checklist">
-        <span class="tag">최대 8자</span>
-        <span class="tag">사용자 시점 (ex 보내기 => 받기)</span>
-        <span class="tag">레이블 생략 불가능</span>
+      <ul class="article-checklist" style="display:flex;">
+        <li><i class="icon-check"></i> 최대 8자</li>
+        <li style="margin-left: 1rem;margin-right:1rem;"><i class="icon-check"></i> 사용자 시점 (ex 보내기 => 받기)</li>
+        <li><i class="icon-check"></i> 레이블 생략 불가능</li>
       </ul>
-        <!-- <ul class="article-checklist" style="margin-top:.75rem;">
+        <!-- <ul class="article-checklist">
           <li><i class="icon-check"></i> 레이블을 생략하여 아이콘 버튼으로 쓰지 않습니다.</li>
           <li><i class="icon-check"></i> 다이얼로그의 버튼 레이블은 질문의 동사와 페어링.</li>
         </ul> -->
@@ -360,7 +360,8 @@
       <span class="hashtag" title="filtering">filtering</span>
       <span class="hashtag" title="filtering">search</span>
       <h1 class="article-title">Chips</h1>
-      <p class="article-description">사용자 여정을 보조하는 액션입니다. 실행 페이지에서 즉각적인 결과를 피드백해야 합니다.</p>
+      <p class="article-description">사용자 여정을 보조하는 액션입니다.</p>
+      <!-- <p> 실행 페이지에서 즉각적인 결과를 피드백해야 합니다.</p> -->
 
       <aside class="article-aka">
         <span class="">a.k.a.</span>
@@ -375,7 +376,7 @@
       <h4 class="article-subhead">Guidelines</h4>
       <ul class="article-checklist">
         <li><i class="icon-check"></i> 맥락이 다른 chip을 나열할 수 있습니다. 이 때 단일선택, 다중선택, 삭제여부, 펼침메뉴 등의 기표를 충분히 제공하세요.</li>
-        <li><i class="icon-check"></i> 콘텐츠의 정렬을 위해 chip을 나열하여 정렬 옵션을 표시하지 않습니다. selectbox로 현재의 정렬 상태만 요약합니다.</li>
+        <li><i class="icon-check"></i> 콘텐츠 정렬sorting을 위해 chip을 나열하지 않고 dropdown으로 현재 정렬 상태만 표시합니다.</li>
         <li><i class="icon-check"></i> 페이지 링크로 사용하지 않습니다.</li>
       </ul>
 
@@ -570,9 +571,11 @@
       </ul>
 
       <h4 class="article-subhead">Editorial</h4>
-      <span class="tag">형용사</span>
-      <span class="tag">명사</span>
-      <span class="tag">최대 1단어</span>
+      <div class="tag-group">
+        <span class="tag">형용사</span>
+        <span class="tag">명사</span>
+        <span class="tag">최대 1단어</span>
+      </div>
       
       <h4 class="article-subhead">anatomy</h4>
       <div class="article-anatomy is-anatomy">
@@ -693,7 +696,7 @@
       </ul>
       
       <h4 class="article-subhead">Editorial</h4>
-      <div class="article-checklist">
+      <div class="tag-group">
         <span class="tag">동사포함</span>
         <span class="tag">최대 2단어</span>
         <span class="tag">최대 8자</span>
