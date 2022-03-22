@@ -50,21 +50,32 @@
       patterns(role): label/button/filter/selectbox/dropdown/text input/
     </p> -->
 
-    <h4 class="article-subhead">Don'ts</h4>
+    <!-- <h4 class="article-subhead">Don'ts</h4>
     <ul class="article-checklist">
       <li><i class="icon-check"></i>목록을 열거. 가짓수 보충.</li>
       <li title="경우에따라.상황에따라.목적에맞게"><i class="icon-check"></i>특정할 수 없거나 모호한 용어.</li>
       <li><i class="icon-check"></i>기본적인 내용을 서술하지 않습니다. 이 문서를 읽는 사람은 체크박스와 라디오의 차이를 이해하고 있습니다.</li>
       <li><i class="icon-check"></i>일어날 법 하지 않는 don't 케이스를 정의하지 않습니다.</li>
       <li><i class="icon-check"></i>자세히보기/더보기 => 더 알아보기</li>
-      <li><i class="icon-check"></i>시각적인 레이블</li>
-      <li><i class="icon-check"></i>긍정문 / 한자 지양 / -적 / 복합명사는 붙여쓰기</li>
-      <li><i class="icon-check"></i>variants / sizes / states</li>
+    </ul> -->
+
+      <!-- / success / warning / danger ? -->
+      <!-- <h4 class="article-subhead">selection</h4>
+        <h4 class="article-subhead">목록의 나머지를 더 보여줄 때는 [모두보기], 미리보기 형식의 텍스트를 더 보여줄 때는 [전체보기].click - tag 컴포넌트/화살표/아이콘 아이템 전체가 클릭 영역</h4>
+        <h4 class="article-subhead">link - /external</h4>
+        <dt>모두보기</dt><dd>see all(15)(internal, arrow-right)</dd>
+        <dt>더보기</dt><dd>더보기vs더불러오기(more, arrow-down), 자세히보기, learn more 등(external, arrow-right-top)</dd> -->
+      <!-- https://material.io/design/interaction/states.html -->
+      <!-- variants -->
+      <!-- <article class="article js-scrollspy-section">
+        <p>site(app)-page-section-article(dialog,card등 article level로 정의. tile은 article level에 사용.)-item-</p>
+      </article> -->
       <!-- <li><i class="icon-check"></i>dos / don'ts 케이스는 이미지를 사용하지 않고 간결하게 서술합니다. </li> -->
       <!-- <li><i class="icon-check"></i>사용 빈도가 낮은 케이스는 예외 케이스로 정의합니다.</li> -->
-    </ul>
+      <!-- 긍정문 / 한자 지양 / -적 / 복합명사는 붙여쓰기
+      '-때', '경우', '사용' 최소화. 부정어/긍정어/명령형?
+      하세요, 할 수 있습니다. 보다 합니다. 입니다 -->
     
-    <!-- <li><i class="icon-check"></i>'-때', '경우', '사용' 최소화. 부정어/긍정어/명령형? 하세요, 할 수 있습니다. 보다 합니다. 입니다?</li> -->
     <!-- <footer class="hero-foot">
       <a class="hero-cta">공사중입니다</a>
       <a class="hero-detail">더 알아보기</a>
@@ -79,7 +90,7 @@
     <div class="component-navigation-background"></div>
     <div class="component-navigation-scroll">
       <a class="chip is-active js-scrollspy-trigger" href="#"><span class="chip-label">Avatars</span></a>
-      <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Entries</span></a>
+      <!-- <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Entities</span></a> -->
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Buttons</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Chips</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Tags</span></a>
@@ -145,7 +156,7 @@
     </article> -->
 
     <article class="article js-observer js-scrollspy-section">
-      <span class="hashtag">시각정보</span>
+      <span class="hashtag">visual information</span>
       <h1 class="article-title">Avatars</h1>
       <p class="article-description">개체(유저, 회사, 프로젝트 등)를 대표하는 시각 정보입니다. 아바타의 시각 이미지를 통해 사용자의 흥미를 높일 수 있습니다.</p>
 
@@ -208,15 +219,8 @@
         </figure>
         <span style="margin:0 0 0 var(--space-small);">수줍이 외 4명</span>
       </article>
-    </article>
 
-    <article class="article js-observer js-scrollspy-section">
-      <h1 class="article-title">Entities</h1>
-      <p class="article-description">요약된 정보 개체.</p>
-
-       <!-- <li><i class="icon-check"></i> 아이템 컴포넌트: card component, page 레벨에서 상대적으로 중요도가 낮은 경우 오른쪽에 배치할 수 있습니다.</li> -->
-        <!-- <li><i class="icon-check"></i> 아이템 컴포넌트: 텍스트 말 줄임표 조건 정의.</li> -->
-
+      <p class="article-subhead">Entities</p>
       <article class="item" data-size="huge">
         <figure class="item-avatar">
           <span class="avatar-badge"></span>
@@ -239,11 +243,19 @@
       </article>
     </article>
 
+    <!-- <article class="article js-observer js-scrollspy-section">
+      <h1 class="article-title">Entities</h1>
+      <p class="article-description">요약된 정보 개체.</p>
+       <li><i class="icon-check"></i> 아이템 컴포넌트: card component, page 레벨에서 상대적으로 중요도가 낮은 경우 오른쪽에 배치할 수 있습니다.</li>
+        <li><i class="icon-check"></i> 아이템 컴포넌트: 텍스트 말 줄임표 조건 정의.</li>
+
+    </article> -->
+
     <article class="article js-observer js-scrollspy-section">
       <span class="hashtag">action</span>
       <span class="hashtag">link</span>
       <h1 class="article-title">Buttons</h1>
-      <p class="article-description">사용자 과업을 위한 행동을 유도합니다.</p>
+      <p class="article-description">사용자가 과업을 달성하기 위한 액션입니다(?).</p>
       <!-- <p>Split Button</p> -->
 
       <!-- <li><i class="icon-check"></i> 아이콘 버튼의 아이콘은 관습적인 메타포를 사용하세요.</li> -->
@@ -544,7 +556,7 @@
 
     <!-- <p class="article-description"><em>post 페이지에서 태그와 컴포넌트에서의 태그. hashtag는 tag 컴포넌트와 역할이 다르기 때문에 별도의 컴포넌트로 만들어주어야 한다. 현재 hashtag(keyword)는 chip으로 대체. todo. 댑스가 2이상 인 케이스.</em></p> -->
     <article class="article js-observer js-scrollspy-section">
-      <span class="hashtag">시각정보</span>
+      <span class="hashtag">visual information</span>
       <h1 class="article-title">Tags <span hidden>(or badge/label)</span></h1>
       <p class="article-description">인접 요소나 부모 요소를 부연하는 시각 정보입니다. 상태, 카테고리, 키워드(또는 키워드 목록)로 강조된 시각 정보는 사용자가 복잡한 정보 더미에서 중요한 정보를 우선적으로 파악하도록 돕습니다.</p>
 
@@ -583,7 +595,7 @@
 
     <!-- <p>Badges show the count of some adjacent data. A dot badge notifies the user that something is new or updated without showing a count.</p> -->
     <!-- <article class="article js-observer js-scrollspy-section" >
-      <span class="hashtag">시각정보</span>
+      <span class="hashtag">visual information</span>
       <h1 class="article-title">Badges</h1>
       <p class="article-description">수치</p>
       <em class="badge" data-variant="primary">24</em>
@@ -687,14 +699,16 @@
         <span class="tag">최대 8자</span>
       </div>
 
-      <span class="switch">
-        <input type="checkbox" id="switch1" name="" role="switch" value="on" checked />
-        <label for="switch1" title="Receive weekly newsletter">주간 뉴스레터 받아보기</label>
-      </span>
-      <span class="switch" style="margin-top:var(--space);">
-        <input type="checkbox" id="switch2" name="" role="switch" value="off" disabled />
-        <label for="switch2" title="Receive weekly newsletter">주간 뉴스레터 받아보기</label>
-      </span>
+      <div class="tile-elevated">
+        <span class="switch">
+          <input type="checkbox" id="switch1" name="" role="switch" value="on" checked />
+          <label for="switch1" title="Receive weekly newsletter">주간 뉴스레터 받아보기</label>
+        </span>
+        <span class="switch" style="margin-top:var(--space);">
+          <input type="checkbox" id="switch2" name="" role="switch" value="off" disabled />
+          <label for="switch2" title="Receive weekly newsletter">주간 뉴스레터 받아보기</label>
+        </span>
+      </div>
     </article>
 
     <article class="article js-observer js-scrollspy-section">
@@ -924,7 +938,7 @@
     </article>
 
     <article class="article js-observer js-scrollspy-section">
-      <span class="hashtag">시각정보</span>
+      <span class="hashtag">visual information</span>
       <h1 class="article-title">Seperator</h1>
       <p class="article-description">선으로 콘텐츠를 구획합니다. 반복과 대비가 구획되었다는 인상을 주기 때문에 남용하지 않습니다.</p>
       

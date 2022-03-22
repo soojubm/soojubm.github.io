@@ -15,7 +15,7 @@ function checkbox({ checkAllSelector, checkSelector }: Parameter) {
   })
 
   function checkTarget(checkItems, checkAll) {
-    const checkboxElements: HTMLInputElement[] = Array.from(checkElements)
+    const checkboxElements: HTMLInputElement[] = Array.from(checkItems)
 
     let isCheckedAll = checkboxElements.every(checkItem => checkItem.checked)
     let isCheckedSome = checkboxElements.some(checkItem => checkItem.checked)

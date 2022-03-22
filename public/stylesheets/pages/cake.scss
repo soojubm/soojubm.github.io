@@ -1,11 +1,11 @@
 // todo
-.cake {@include container-large;}
+.cake {@include container-huge;}
 
 
 .cake-head {position:relative;}
 .cake-background {@include bleeding;height:380px;background:url('/public/images/newman.jpg') no-repeat 0 -200px fixed;}
 .cake-head-title {@include text-title;}
-.cake-head-engtitle {margin:0 0 var(--space-after-description) 0;@include text-subhead;}
+.cake-head-engtitle {margin:0 0 1.5rem 0;@include text-subhead;}
 .cake-head-description {margin:1rem 0 0 0;}
 
 .cake-poster {width:50%;max-width:280px;border:var(--border);border-radius:var(--radius);overflow:hidden;position:absolute;right:0;z-index:var(--zindex-default);}
@@ -49,22 +49,25 @@
   @include tile-elevated-small;
   margin: 0 .75rem 0 0;
   padding: var(--space-small);
+  padding: .75rem;
 }
 .person:hover {@include hover-item;}
 .person figure {
   @include avatar-huge;
+  width: 100px;
+  height: 100px;
   overflow: hidden;
 }
 .person figure img {
   height: 100%;
   object-fit: cover;
 }
-.person-name {display:block;margin:.25rem 0 0 0;font-size:var(--font-size-caption);color:var(--color-text);line-height:var(--font-line-height-small);word-break:keep-all;}
+.person-name {display:block;margin:.25rem 0 0 0;color:var(--color-text);line-height:var(--font-line-height-small);word-break:keep-all;}
 .person-test {
   @include tag-primary;
   position: absolute;
-  left: .25rem;
-  top: .25rem;
+  left: .5rem;
+  top: .5rem;
   z-index: 1;
 }
 .person-viewall {min-width:100px;padding-top:2.5rem;display:flex;flex-wrap:wrap;justify-content:center;position:relative;}

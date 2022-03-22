@@ -36,27 +36,21 @@ document.addEventListener('click', event => toggleNavbarMenu(event))
 
 function toggleNavbarMenu(event) {
   const navbarBurgerElement = (event.target as HTMLElement).closest('.js-navbar-toggle')
-  const navbarMenu = navbarBurgerElement?.nextElementSibling
-  // const isOpendNavbarMenu = navbarBurgerElement?.classList.contains('is-active')
+  // const navbarMenu = navbarBurgerElement?.nextElementSibling
+
+  if (!navbarBurgerElement) return
 
   const OPENED_MENU_CLASSNAME = 'is-opened-menu'
 
   const isOpendNavbarMenu = document.body.classList.contains(OPENED_MENU_CLASSNAME)
 
-  if (!navbarBurgerElement) return
-  // navbarBurgerElement.classList.toggle('is-active')
-
   if (isOpendNavbarMenu) {
-    // document.body.classList('')
-    // navbarBurgerElement.classList.remove('is-active')
     // unlockBodyElement()
     document.body.classList.remove(OPENED_MENU_CLASSNAME)
   } else {
-    // navbarBurgerElement.classList.add('is-active')
     // lockBodyElement()
     document.body.classList.add(OPENED_MENU_CLASSNAME)
   }
-
   // navbarMenu?.addEventListener('click', event => event.stopPropagation())
 }
 
@@ -143,10 +137,7 @@ async function domEvents() {
 
   // const page = routes.find(route => route.path.substring(1) === hash)
   // const pageTitleElement = document.querySelector('.js-page-title')
-
-  // if (pageTitleElement) {
-  //   pageTitleElement.textContent = page?.name || '페이지타이틀'
-  // }
+  // pageTitleElement?.textContent = page?.name || '페이지타이틀'
 
   const chip = document.querySelector('.js-chip')
   const chipElements = chip?.querySelectorAll('button')
