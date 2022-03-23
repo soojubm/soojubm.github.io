@@ -272,9 +272,9 @@
       </ul>
       
       <h4 class="article-subhead">Editorial</h4>
-      <ul class="article-checklist" style="display:flex;">
+      <ul class="article-checklist" data-align="horizontal">
         <li><i class="icon-check"></i> 최대 8자</li>
-        <li style="margin-left: 1rem;margin-right:1rem;"><i class="icon-check"></i> 사용자 시점 (ex 보내기 => 받기)</li>
+        <li><i class="icon-check"></i> 사용자 시점 (ex 보내기 => 받기)</li>
         <li><i class="icon-check"></i> 레이블 생략 불가능</li>
       </ul>
         <!-- <ul class="article-checklist">
@@ -969,6 +969,7 @@
       <!-- <blockquote>
         <p>🐹: flat sitemap 트렌드에서 사용 빈도가 높지 않아요. 주로 도움말, 상품 등 카테고리 구조에서 활용하며, pg 심사 시 제품군 정보가 요구될 수 있어요. (토스페이-구엘지페이먼츠시절)</p>
       </blockquote> -->
+      <hr />
       <nav class="breadcrumb" aria-label="breadcrumb">
         <a class="breadcrumb-item breadcrumb-home" href="/">홈</a>
         <i class="breadcrumb-divider">/</i>
@@ -1025,27 +1026,39 @@
         <li><i class="icon-check"></i> 3가지 이상의 대비로 위계를 설정하지 않습니다.</li>
       </ul> -->
 
-      <!-- <div class="article-section">
+      <div class="article-section">
         <span class="article-anatomy-title">List</span>
         <div class=" tile-flat">
-          <ul class="list-sample">
-            <li title="unordered list, level 1">순서가 없는 리스트
+          <ul class="article-checklist">
+            <!-- <li title="unordered list, level 1"><i class="icon-check"></i> 순서가 없는 리스트
               <ul>
                 <li title="unordered list, level 2">순서가 없는 리스트</li>
               </ul>
-            </li>
-            <li>순서가 없는 리스트</li>
+            </li> -->
+            <li><i class="icon-check"></i> 순서가 없는 리스트</li>
+            <li><i class="icon-check"></i> 순서가 없는 리스트</li>
           </ul>
-          <ol class="list-sample" style="margin:var(--space-small) 0 0 0;">
+          <hr />
+          <ul class="article-checklist" data-align="horizontal">
+            <!-- <li title="unordered list, level 1"><i class="icon-check"></i> 순서가 없는 리스트
+              <ul>
+                <li title="unordered list, level 2">순서가 없는 리스트</li>
+              </ul>
+            </li> -->
+            <li><i class="icon-check"></i> 순서가 없는 리스트</li>
+            <li><i class="icon-check"></i> 순서가 없는 리스트</li>
+            <li><i class="icon-check"></i> 순서가 없는 리스트</li>
+          </ul>
+          <!-- <ol style="margin:var(--space-small) 0 0 0;">
             <li>순서가 있는 리스트
               <ol>
                 <li>순서가 있는 리스트</li>
               </ol>
             </li>
             <li>순서가 있는 리스트</li>
-          </ol>
+          </ol> -->
         </div>
-      </div> -->
+      </div>
 
       <h4 class="article-subhead">Statistic</h4>
       <div class="statistic tile-flat" style="margin-top:0;">
@@ -1064,7 +1077,7 @@
       </div>
 
       <h4 class="article-subhead">Summary</h4>
-      <section class="summary tile-flat" style="margin-top:0;">
+      <section class="summary tile-flat" style="margin-top:0;padding-top:var(--space-small);">
         <div class="summary-item">
           <div class="summary-item-label">상품 금액</div>
           <div class="summary-item-value">₩160,000</div>

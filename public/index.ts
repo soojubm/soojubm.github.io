@@ -126,6 +126,10 @@ async function domEvents() {
   const navItemElements = document.querySelectorAll('.navbar-menu a')
   const hash = window.location.hash.substring(1)
 
+  // todo
+  const temps = ['', 'foundations', 'components', 'tokens']
+  if (!temps.includes(hash)) initializeNavbar()
+
   navItemElements?.forEach(element => {
     element.classList.remove('is-current')
 
