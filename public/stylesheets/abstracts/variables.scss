@@ -181,6 +181,10 @@ $transition-fade: opacity 0.15s linear;
   --background-active: null;
 
   --radius: 6px;
+  // --radius-round: 50%;
+  // --radius-sharp: 0;
+  // --radius-soft: 0
+
   --radius-avatar: var(--radius);
   --radius-card: var(--radius);
   --radius-container: var(--radius);
@@ -203,6 +207,7 @@ $transition-fade: opacity 0.15s linear;
   --animation-duration: .4s;
   --animation-delay-second: .2s;
   --animation-delay-third: .4s;
+  // --animation-timing-function-ease: null;
 
   --card-background: #fff;
   --card-border: 1px solid #fff;
