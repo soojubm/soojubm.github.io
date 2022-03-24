@@ -335,7 +335,7 @@
 
 @media (--breakpoint-small) {
   // .design-navigation {display:block;margin-left:0;margin-right:0;}
-  // .design-navigation a {width:50%;}
+  .design-navigation a {width:calc(50% - var(--space));}
 }
 
 
