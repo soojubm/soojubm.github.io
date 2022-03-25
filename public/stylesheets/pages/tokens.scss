@@ -38,7 +38,7 @@
 
 .token-item b {display:block;margin:var(--space-leading-title) 0 .125rem 0;font-weight:var(--font-weight-normal);}
 .token-item > div {font-size:var(--font-size-caption);color:var(--color-text-light);}
-// .token-item div p {@include tag}
+.token-item div p {color:var(--color-text-light);}
 .token-item strong {font-weight:var(--font-weight-bold);color:var(--text-color-light);}
 .token-item figure:before {content:'';display:block;height:var(--size-huge);background:var(--color-background-weak);position:absolute;left:0;right:0;top:0;bottom:0;z-index:-1;}
 // .token-item-avatar:after {content:'';display:block;background:var(--gray100);height: 80px;
