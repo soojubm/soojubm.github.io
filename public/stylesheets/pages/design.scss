@@ -4,14 +4,14 @@
 // todo tokens
 .design-head h1 span {-webkit-text-stroke: 1px var(--color-text);color:var(--color-background);}
 
-.article {padding:4rem var(--grid-margin);overflow:hidden;position:relative;}
+.article {max-width:640px;padding:4rem var(--grid-margin);overflow:hidden;position:relative;}
 .article-aka {@include tag-group;align-items:center;margin:var(--space) 0;font-size:var(--font-size-tiny);}
+.article-aka .hashtag {margin:0 .5rem .5rem 0;}
 .article-aka .hashtag:before {content:'';}
 .article-title {margin:0 0 var(--space-after-subhead) 0;@include text-subhead;font-family:'Changa One';font-weight:var(--font-weight-normal);font-size:1.5rem;letter-spacing:0;}
 .article-description {margin:0 0 2rem;font-size:16px;}
 // border-top:var(--border);border-bottom:var(--border);
 .article-section {margin:2.5rem 0;}
-.article > * {max-width:640px;}
 
 .article > .hashtag {margin:0 .25rem 0 0;font-size:var(--font-size-caption);}
 
@@ -56,7 +56,7 @@
 .article-more {display:flex;align-items:center;font-size:var(--font-size-caption);color:var(--color-primary);font-weight:var(--font-weight-bold);position:absolute;right:0;top:0;}
 .article-more i {margin-left:1.5rem;}
 // todo
-.article-helper {margin:-.25rem 0 var(--space) 0;@include text-label;font-size:var(--font-size-caption);color:var(--color-text);line-height:var(--font-line-height-small);}
+.article-helper {margin:0 0 var(--space) 0;@include text-label;font-size:var(--font-size-caption);color:var(--color-text);line-height:var(--font-line-height-small);}
 
 .article-anatomy {@include tile-flat-small;padding:.75rem;letter-spacing:.25px;}
 .article-anatomy.is-anatomy {font-family:consolas,monospace;font-size:var(--font-size-caption);}
@@ -87,8 +87,8 @@
 
 
 .spacing-card {@include tile-elevated;overflow:hidden;}
-.space {display:flex;align-items:center;justify-content:center;height:100%;background:var(--green100);font-size:10px;position:relative;}
-
+.space {display:flex;align-items:center;justify-content:center;height:100%;background:var(--green100);position:relative;}
+.space span {font-size:10px;}
 
 @media (--breakpoint-large) {
 }

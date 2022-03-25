@@ -61,10 +61,16 @@
 // item in card component // active
 @mixin hover-item {
   // 부모태그에 position: relative;zindex:1;
+  // --hover-outline: calc(var(--space) / 2 * -1);
+  // outline: var(--hover-outline) solid var(--color-background-weak);
   cursor: pointer;
   &:before {
     --hover-outline: calc(var(--space) / 2 * -1);
-    content:'';display:block;background:var(--color-background-weak);border-radius:var(--radius);position:absolute;left:var(--hover-outline);right:var(--hover-outline);top:var(--hover-outline);bottom:var(--hover-outline);z-index:-1;
+    content:'';
+    display:block;background:var(--color-background-weak);border-radius:var(--radius);
+    position:absolute;
+    left:var(--hover-outline);right:var(--hover-outline);top:var(--hover-outline);bottom:var(--hover-outline);
+    z-index:-1;
   }
   // todo 기본적으로 transparent 보더가 필요.
   figure {background-color:var(--color-background);border:1px solid var(--gray200);}
