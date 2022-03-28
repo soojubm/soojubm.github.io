@@ -135,7 +135,7 @@ $transition-fade: opacity 0.15s linear;
   --space-small: .5rem;
   --space-small-minus: calc(var(--space-small) * -1);
   --space-xsmall: .25rem;
-  --space-xsmall: calc(var(--space-xsmall) * -1);
+  --space-xsmall-minus: calc(var(--space-xsmall) * -1);
 
   --space-inset: var(--space);
   --space-inset-small: var(--space-small);
