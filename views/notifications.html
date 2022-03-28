@@ -1,4 +1,4 @@
-<main class="notifications" style="padding-top:0;">
+<main class="notifications js-tab" style="padding-top:0;">
   <header class="hero" role="banner" style="padding-left:0;padding-right:0;">
     <div class="hero-background"></div>
     <span class="hero-eyebrow">Notifications</span>
@@ -39,17 +39,6 @@
     </ul>
   </header>
 
-  <!-- <nav
-    class="profile-tablist"
-    role="tablist"
-    aria-label="sample tabs"
-    style="margin-left:0;margin-right:0;padding-left:var(--space-small);padding-right:var(--space-small);"
-  >
-    <button class="profile-tablist-tab" role="tab" aria-selected="true" aria-controls="panel-1" id="tab-1" tabindex="0">All</button>
-    <button class="profile-tablist-tab" role="tab" aria-selected="false" aria-controls="panel-2" id="tab-2" tabindex="-1">댓글</button>
-    <button class="profile-tablist-tab" role="tab" aria-selected="false" aria-controls="panel-3" id="tab-3" tabindex="-1">좋아요</button>
-    <i class="profile-tablist-indicator"></i>
-  </nav> -->
   <div class="chip-group" style="margin:0 0 var(--space) 0;">
     <button class="chip is-active" style="margin-left:0;">
       <span class="chip-label">모두</span>
@@ -94,5 +83,28 @@
   <button class="navbar-notification-trigger js-navbar-toggle" aria-haspopup="true" aria-expanded="false">
     <img src="/public/icons/bell.svg" />
     <em>new</em>
-  </ㅠ>
+  </button>
+  <hr />
+  <nav
+    class="profile-tablist"
+    role="tablist"
+    aria-label="sample tabs"
+    style="margin-left:0;margin-right:0;padding-left:var(--space-small);padding-right:var(--space-small);"
+  >
+    <!-- <button class="profile-tablist-tab" role="tab" aria-selected="true" aria-controls="panel-1" id="tab-1" tabindex="0">All</button> -->
+    <button class="profile-tablist-tab" role="tab" aria-selected="false" aria-controls="panel-2" id="tab-2" tabindex="-1">팔로워</button>
+    <button class="profile-tablist-tab" role="tab" aria-selected="false" aria-controls="panel-3" id="tab-3" tabindex="-1">팔로잉</button>
+    <i class="profile-tablist-indicator"></i>
+  </nav>
+  <div class="" role="listitem" style="position: relative;">
+    <figure class="item-avatar"></figure>
+    <h2 class="item-name">Gyeongsoo I</h2>
+    <span class="item-description">유아이 디자이너</span>
+    <button class="item-action is-active" style="right:0;top:50%;transform:translateY(-50%);font-weight:var(--font-weight-normal);">
+      팔로잉
+    </button>
+    <!-- <button class="chip" style="background:none;border:none;position:absolute;right:1rem;top:50%;transform:translateY(-50%)">
+      <i class="icon-more"></i>
+    </button> -->
+  </div>
 </main>

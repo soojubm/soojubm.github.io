@@ -10,6 +10,8 @@
 @mixin text-caption {font-size:var(--font-size-caption);font-weight:var(--font-weight-bold);}
 @mixin text-label {font-size:var(--font-size-body);font-weight:normal;color:var(--color-text-light);}
 
+// overline
+
 @mixin truncate {white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 @mixin truncate-multi {@include truncate;height:2.4em;white-space:normal;overflow:hidden;text-overflow:ellipsis;word-wrap:break-word;display: -webkit-box;-webkit-line-clamp:2;-webkit-box-orient: vertical;}
 

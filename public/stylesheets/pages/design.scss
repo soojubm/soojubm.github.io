@@ -6,6 +6,7 @@
 
 .article {max-width:640px;padding:4rem var(--grid-margin);overflow:hidden;position:relative;}
 .article-aka {@include tag-group;align-items:center;margin:var(--space) 0;font-size:var(--font-size-tiny);}
+.article-aka .tag {margin:0 .5rem .5rem 0;}
 .article-aka .hashtag {margin:0 .5rem .5rem 0;}
 .article-aka .hashtag:before {content:'';}
 .article-title {margin:0 0 var(--space-after-subhead) 0;@include text-subhead;font-family:'Changa One';font-weight:var(--font-weight-normal);font-size:1.5rem;letter-spacing:0;}
@@ -322,8 +323,8 @@
 .design header p {margin:var(--space-after-title) 0 0 0;font-size:var(--font-size-subhead);letter-spacing:-.0125rem;position:relative;}
 
 .design-navigation {display:flex;flex-wrap:wrap;width:100%;max-width:1000px;margin:-2.5rem var(--space-small-minus) 0;padding:0 var(--grid-margin) 4em;position:relative;z-index:var(--zindex-default);}
-.design-navigation a {display:block;width:33%;max-width:240px;@include tile-elevated;margin:var(--space-small);color:inherit;}
-.design-navigation a figure {display:block;@include avatar-huge;width:100%;margin:0 0 var(--space-after-avatar-medium) 0;font-size:var(--font-size-title);}
+.design-navigation a {display:block;width:33%;max-width:240px;@include tile-elevated;margin:var(--space-small);padding:.75rem;color:inherit;}
+.design-navigation a figure {display:block;@include avatar-huge;width:100%;margin:0 0 var(--space-medium) 0;font-size:var(--font-size-title);}
 
 .design-navigation a[readonly] {opacity:.5;cursor:not-allowed;box-shadow:none;}
 .design-navigation a:hover:not([readonly]) {@include hover-item;}
