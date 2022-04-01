@@ -42,7 +42,7 @@
   }
 }
 
-
+.article-icon {@include avatar-medium;}
 
 
 // todo ul
@@ -57,7 +57,7 @@
 .article-more {display:flex;align-items:center;font-size:var(--font-size-caption);color:var(--color-primary);font-weight:var(--font-weight-bold);position:absolute;right:0;top:0;}
 .article-more i {margin-left:1.5rem;}
 // todo
-.article-helper {margin:0 0 var(--space) 0;@include text-label;font-size:var(--font-size-caption);color:var(--color-text);line-height:var(--font-line-height-small);}
+.article-helper {margin:-.25rem 0 var(--space) 0;@include text-label;font-size:var(--font-size-caption);color:var(--color-text);line-height:var(--font-line-height-small);}
 
 .article-anatomy {@include tile-flat-small;padding:.75rem;letter-spacing:.25px;}
 .article-anatomy.is-anatomy {font-family:consolas,monospace;font-size:var(--font-size-caption);}
