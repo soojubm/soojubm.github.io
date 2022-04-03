@@ -41,8 +41,11 @@
 .item-action {@include chip;background:var(--green100);color:var(--color-primary);padding:0 var(--space);@include position-right-top;right:0;}
 .item-action.is-active {border-color:transparent;background:var(--color-background-weak);color:var(--color-text);}
 .item-action.is-active:hover {border-color:var(--border-color-hover)}
-// todo active style
 
+// todo small
+.item-delete {@include chip;width:var(--size-small);height:var(--size-small);margin:0 0 0 auto;}
+.item-delete:hover {}
+// todo active style
 .item + .item {margin:var(--space) 0 0 0;}
 .item:hover {@include hover-item;}
 

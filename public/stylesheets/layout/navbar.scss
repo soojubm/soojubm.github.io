@@ -22,7 +22,7 @@
 
 // todo close icon rotate
 .search {}
-.search-form {background:var(--color-background);padding:.5rem var(--grid-margin);box-sizing:border-box;}
+.search-form {}
 .search-form-close {@include avatar-medium;position:absolute;left:1rem;top:14px;transform:rotate(180deg);}
 .search-form-title {margin:0 auto 1rem;font-size:var(--font-size-subhead);}
 .search-recommend {}

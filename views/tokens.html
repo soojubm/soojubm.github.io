@@ -613,17 +613,39 @@
     <article class="article js-scrollspy-section">
       <h1 class="article-title">Animation</h1>
       <!-- <p class="article-description">inactive에는 항상 instantly.</p> -->
+      
+      <h4 class="article-subhead">Timing</h4>
       <div class="token-item">
         <b style="margin:0;">--bazier-base: cubic-bezier(0.455, 0.03, 0.515, 0.955);</b>
       </div>
       <div class="token-item">
         <p>--transition-fade: null;</p>
       </div>
+
+      <h4 class="article-subhead">Duration</h4>
       <div class="token-item">
-        <p>--duration: .4s</p>
         <p>--duration-instant: 0s;</p>
-        <p>--duration-quick: .2s;</p>
-        <p>--duration-slow: .8s;</p>
+      </div>
+      <aside class="article-helper">
+        <p>inactive로 전환될 때 즉시 실행합니다.</p>
+      </aside>
+      <div class="token-item">
+        <p>--duration-quick: .2s</p>
+      </div>
+      <div class="token-item">
+        <!-- <span class="token-item-badge">Default</span> -->
+        <p>--duration: .4s</p>
+      </div>
+      <div class="token-item">
+        <p>--duration-slow: .8s</p>
+      </div>
+
+      <h4 class="article-subhead">Delay</h4>
+      <div class="token-item">
+        <p>--animation-delay-first: 0s</p>
+      </div>
+      <div class="token-item">
+        <p>--animation-delay-second: .2s</p>
       </div>
     </article>
 

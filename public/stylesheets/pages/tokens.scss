@@ -36,6 +36,7 @@
 .token-item.is-scrolled {margin-top:.75rem;}
 .token-item-avatar {@include avatar-large;float:right;}
 
+.token-item-badge {@include tag;position:absolute;right:.25rem;top:.25rem;}
 .token-item b {display:block;margin:var(--space-leading-title) 0 .125rem 0;font-weight:var(--font-weight-normal);}
 .token-item > div {font-size:var(--font-size-caption);color:var(--color-text-light);}
 .token-item div p {color:var(--color-text-light);}
