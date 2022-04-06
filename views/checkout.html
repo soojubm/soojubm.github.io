@@ -8,7 +8,7 @@
     </h1>
     <p class="hero-description">
       2칼럼으로 우측에 결제를 위한 칼럼을 만들었을 때, 상품&서머리&결제버튼을 같은 구조에 배치. 모바일에서 결제 버튼을 누르기 전에 최종 금액을
-      확인하기 어려운 구조가 된다.
+      확인하기 어려운 구조.
     </p>
   </header>
 
@@ -117,7 +117,8 @@
 
   <hr />
 
-  <footer class="cart-summary">
+  <!-- todo max-width -->
+  <footer class="cart-summary" style="max-width:100%;">
     <div class="cart-summary-subtotal">
       <span class="cart-summary-label">총 상품금액</span>
       <span class="cart-summary-value">₩ 30,000</span>
@@ -134,10 +135,13 @@
       <button class="cart-summary-checkout">결제</button>
     </div>
   </footer>
+
+  <div>
+    결제정보 - 결제방법/주문상태/주문접수일시/주문완료일시/배송비/쿠폰사용금액/결제금액
+  </div>
 </main>
 
 <script>
-
   var form = document.getElementById('subscription-form');
   ​
   form.addEventListener('submit', function (ev) {

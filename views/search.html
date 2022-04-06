@@ -32,7 +32,6 @@
     <a class="profile-tabpanel-item card js-modal" href="#woolf" data-modal="woolf">
       <figure class="card-thumbnail"></figure>
       <h3 class="card-title">이도타입</h3>
-      <div class="card-category">최근</div>
       <div class="card-byline">
         <figure class="card-byline-avatar"><img src="/public/images/soo.png" alt="" /></figure>
         <span class="card-byline-name">수줍이</span>
@@ -47,7 +46,7 @@
     <a class="profile-tabpanel-item card js-modal" href="#woolf" data-modal="woolf">
       <figure class="card-thumbnail"></figure>
       <h3 class="card-title">이도타입</h3>
-      <div class="card-category">최근</div>
+      <!-- <div class="card-category">최근</div> -->
       <div class="card-byline">
         <figure class="card-byline-avatar"><img src="/public/images/soo.png" alt="" /></figure>
         <span class="card-byline-name">수줍이</span>
@@ -72,7 +71,7 @@
       </div>
     </section> -->
     <section class="search-preview">
-      <h2 class="search-recommend-title">테스트</h2>
+      <h2 class="search-recommend-title">자동완성 유아이 테스트</h2>
       <div class="search-preview-item item">
         <figure class="search-preview-item-avatar">
           <i></i>
@@ -106,29 +105,31 @@
   </div>
 
   <hr />
-  <fieldset role="radiogroup">
-    <legend class="" style="color:var(--color-text-light);font-weight:var(--font-weight-normal);">인원</legend>
-    <div class="radio">
-      <input type="radio" id="gogo1" name="gogo" value="" />
-      <label for="gogo1" title="">1~3명</label>
-    </div>
-    <div class="radio">
-      <input type="radio" id="gogo2" name="gogo" value="" checked />
-      <label for="gogo2" title="">3명 이상</label>
-    </div>
-  </fieldset>
-  <br />
-  <fieldset role="radiogroup">
-    <legend class="" style="color:var(--color-text-light);font-weight:var(--font-weight-normal);">사용자</legend>
-    <div class="radio">
-      <input type="radio" id="ttt1" name="ttt" value="" />
-      <label for="ttt1" title="">모든 사용자</label>
-    </div>
-    <div class="radio">
-      <input type="radio" id="ttt2" name="ttt" value="" checked />
-      <label for="ttt2" title="">내가 팔로우하는 사람들</label>
-    </div>
-  </fieldset>
+  <div style="display:flex;">
+    <fieldset role="radiogroup" style="flex:auto;">
+      <legend class="" style="color:var(--color-text-light);font-weight:var(--font-weight-normal);">인원</legend>
+      <div class="radio">
+        <input type="radio" id="gogo1" name="gogo" value="" />
+        <label for="gogo1" title="">1~3명</label>
+      </div>
+      <div class="radio">
+        <input type="radio" id="gogo2" name="gogo" value="" checked />
+        <label for="gogo2" title="">3명 이상</label>
+      </div>
+    </fieldset>
+    <br />
+    <fieldset role="radiogroup" style="flex:auto;">
+      <legend class="" style="color:var(--color-text-light);font-weight:var(--font-weight-normal);">사용자</legend>
+      <div class="radio">
+        <input type="radio" id="ttt1" name="ttt" value="" />
+        <label for="ttt1" title="">모든 사용자</label>
+      </div>
+      <div class="radio">
+        <input type="radio" id="ttt2" name="ttt" value="" checked />
+        <label for="ttt2" title="">내가 팔로우하는 사람들</label>
+      </div>
+    </fieldset>
+  </div>
 
   <div class="tile-flat">
     <h1>#TagName</h1>
@@ -141,12 +142,13 @@
     <p role="status" style="text-align:center;">수줍이와(과) 일치하는 검색결과가 없습니다.</p>
   </div>
   <ul class="article-checklist" style="margin:0 var(--grid-margin);">
-    <li><i class="icon-check"></i>해시태그나 카테고리를 통한 검색.</li>
+    <li><i class="icon-check"></i>해시태그/카테고리 등 제공된 키워드 통한 검색.</li>
+    <li><i class="icon-check"></i>직접 검색어 입력.</li>
     <li><i class="icon-check"></i>검색어 자동완성.</li>
     <li><i class="icon-check"></i>검색어를 입력할 때마다 검색할 수 있고, 검색 버ㅡㄴ이나 enter할 때 검색할 수 있다.</li>
     <li><i class="icon-check"></i>검색 결과가 없는 상태를 보여줄 수 있고 유사한 결과를 하나 이상 항상 보여줄 수도 있다.</li>
-    <li><i class="icon-check"></i>검색어를 입력하는 순간 검색을 실행하는 경우에는 검색 하나 이상의 검색 결과를 항상 보여주는 것이 자연스럽다.</li>
+    <li><i class="icon-check"></i>검색어를 입력하는 순간 검색을 실행하는 경우에는 하나 이상의 검색 결과를 항상 보여주는 것이 자연스럽다.</li>
     <li><i class="icon-check"></i>개별 검색 내역은 삭제할 수 있다.</li>
-    <li><i class="icon-check"></i>전체 검색 내역의 삭제는 사용자에게 유용할 수도 있지만 리스크도 있기 때문에 제공하지 않는 것이 좋다.</li>
+    <li><i class="icon-check"></i>전체 검색 내역의 삭제는 사용자에게 유용할 수도 있지만 리스크도 있기 때문에 제공하지 않아도 좋다.</li>
   </ul>
 </main>

@@ -5,20 +5,21 @@ export const DARK_THEME_CLASS = 'theme-dark'
 export const LIGHT_THEME_CLASS = 'theme-light'
 
 function darkTheme(classname) {
-  const darkThemeTrigger = document.querySelector(classname)
-  if (!darkThemeTrigger) return
+  const themeTrigger = document.querySelector(classname)
+  if (!themeTrigger) return
 
   // 3가지 body class, check attribute, local storage
   const isDarkTheme = () => document.body.classList.contains(DARK_THEME_CLASS)
 
   loadTheme()
-  darkThemeTrigger.addEventListener('click', toggleDarkTheme)
+  themeTrigger.addEventListener('click', toggletheme)
 
-  function toggleDarkTheme() {
+  function toggletheme() {
+    const currentTheme = isDarkTheme() ? DARK_THEME_CLASS : LIGHT_THEME_CLASS
     document.body.classList.toggle(DARK_THEME_CLASS)
-    localStorage.setItem('theme', isDarkTheme() ? DARK_THEME_CLASS : LIGHT_THEME_CLASS)
+    localStorage.setItem('theme', currentTheme)
 
-    detectSwitch()
+    checkSwitch()
   }
 
   function loadTheme() {
@@ -27,11 +28,11 @@ function darkTheme(classname) {
 
     document.body.classList.add(savedTheme)
 
-    detectSwitch()
+    checkSwitch()
   }
 
-  function detectSwitch() {
-    const darkThemeSwitch = darkThemeTrigger?.querySelector('input')
+  function checkSwitch() {
+    const darkThemeSwitch = themeTrigger?.querySelector('input')
     darkThemeSwitch.checked = isDarkTheme()
   }
 }
