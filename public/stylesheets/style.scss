@@ -69,7 +69,7 @@
 .bottombar {display:flex;justify-content:space-around;padding:.25rem 0 calc(constant(safe-area-inset-bottom) + .5rem);padding:.5rem 0 calc(env(safe-area-inset-bottom) + .5rem);border-radius:var(--radius);background:var(--color-background);box-shadow:var(--shadow);}
 .bottombar-item {width:100%;position:relative;}
 .bottombar-item-icon {@include avatar-medium;margin:0 auto;background:none;}
-.bottombar-item-label {display:block;margin:-.25rem 0 0 0;text-align:center;font-size:10px;text-decoration:none;color:var(--color-text);}
+.bottombar-item-label {display:block;margin:-.25rem 0 0 0;text-align:center;font-size:10px;letter-spacing:.5px;text-decoration:none;color:var(--color-text);}
 .bottombar-item em {display:flex;width:4px;height:4px;background:var(--red800);border-radius:var(--radius);position:absolute;left:50%;top:50%;transform:translate(.75rem,-1.125rem);}
 .bottombar.is-temp-real {@include position-bottom;
   // padding-bottom:.5rem;bottom:calc(constant(safe-area-inset-bottom));bottom:calc(env(safe-area-inset-bottom));margin:.5rem;z-index:var(--zindex-bottombar);
@@ -574,5 +574,8 @@ main, #footer {transition:all .6s ease;}
 .is-opened-menu .navbar-logo {z-index: 8;}
 
 @media (--breakpoint-small) {
-  .is-opened-menu main {padding-left:var(--grid-margin);}
+  .is-opened-menu .design,
+  .is-opened-menu .component,
+  .is-opened-menu .token,
+  .is-opened-menu .foundation {padding-left:var(--grid-margin);}
 }

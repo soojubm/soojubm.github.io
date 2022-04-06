@@ -87,14 +87,16 @@
 .card-byline-avatar {@include avatar-small;margin:0 var(--space-small) 0 0;}
 .card-byline-name {color:var(--color-text);}
 .card-title {padding:var(--space-small) 0;font-size:var(--font-size-body);font-weight:var(--font-weight-normal);}
-.card-text {margin:0 0 1rem 0;padding:.5rem 0 1rem;@include truncate-multi;}
+.card-text {margin:0 0 var(--space) 0;padding:0 0 var(--space);@include truncate-multi;}
 .card-category {@include tag-primary;@include position-left-top;}
 .card-date {display:none;color:var(--color-text-light);}
 .card-tags {@include tag-group;padding-bottom:var(--space-small);}
 .card-tags-item {@include hashtag;margin-bottom:0;font-size:var(--font-size-caption);}
 
-.card-item {height:var(--size-large);margin:1rem 0;position:relative;z-index:var(--zindex-default);}
-.card-item-avatar {@include item-avatar;margin:0 var(--space) 0 0;}
+
+// todo
+.card-item {height:var(--size-large);margin:var(--space) 0;position:relative;z-index:var(--zindex-default);}
+.card-item-avatar {@include item-avatar;margin:0 var(--space-after-avatar-large) 0 0;}
 .card-item-name {}
 .card-item-price {}
 .card-item:hover {@include hover-item;}

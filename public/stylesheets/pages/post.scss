@@ -113,7 +113,7 @@
 .post-pagination-next-postname {@include text-subhead;}
 
 @media (--breakpoint-small) {
-	.post-body-image {float:none;margin-left:-8%;margin-right:-8%;}
+	.post-body-image {float:none;margin-left:-5vw;margin-right:-5vw;}
 
 	.post-pagination {flex-wrap:wrap;flex-direction:column-reverse;}
 	.post-pagination-previous {width:100%;margin-top: 0;}
