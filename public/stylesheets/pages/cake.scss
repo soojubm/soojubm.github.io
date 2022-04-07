@@ -1,5 +1,5 @@
 // todo
-.cake {@include container-huge;}
+.cake {@include container-large;}
 
 
 .cake-head {position:relative;}
@@ -18,8 +18,8 @@
 
 .cake-info {display:flex;flex-wrap:wrap;padding:2rem 0 2.25rem;position:relative;}
 // .cake-info button {@include button-tertiary;position:absolute;left:0;bottom:3rem;}
-.cake-info h2 {width:300px;flex-shrink:0;@include text-subhead;}
-.cake-info p {width:calc(100% - 320px);}
+.cake-info h2 {width:240px;flex-shrink:0;@include text-subhead;}
+.cake-info p {width:calc(100% - 240px);}
 .cake-info footer {margin-left: 300px;margin-top:1rem;}
 .cake-info footer a {@include link-outer;}
 

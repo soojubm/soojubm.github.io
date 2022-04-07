@@ -377,7 +377,7 @@
       <h4 class="article-subhead">Guidelines</h4>
       <ul class="article-checklist">
         <li><i class="icon-check"></i> 맥락이 다른 chip을 나열할 수 있습니다. 이 때 단일선택, 다중선택, 삭제여부, 펼침메뉴 등의 기표를 충분히 제공하세요.</li>
-        <li><i class="icon-check"></i> 콘텐츠 정렬sorting을 위해 chip을 나열하지 않고 dropdown으로 현재 정렬 상태만 표시합니다.</li>
+        <li><i class="icon-check"></i> 콘텐츠 정렬sorting 기능으로 chip group으로 chip을 나열하지 않습니다. dropdown으로 현재 정렬 상태만 요약합니다. (bad case: 2022.04 최근 구글 지도 바뀐 것)</li>
         <li><i class="icon-check"></i> 페이지 링크로 사용하지 않습니다.</li>
       </ul>
 
@@ -618,15 +618,15 @@
         <span class="hashtag" title="protocol mozilla">EmphasisBox</span>
         <span class="hashtag" title="biings">Box</span>
         <span class="hashtag" title="">Card</span>
-
       </aside>
 
       <h4 class="article-subhead">Guidelines</h4>
       <ul class="article-checklist">
         <li><i class="icon-check"></i> '클릭할 수 있음'의 기표로 elevated 스타일을 사용합니다. 타일 전체가 클릭 영역일 수도, 타일 내부에 클릭 가능한 요소를 포함할 수도 있습니다.</li>
         <li><i class="icon-check"></i> 아티클 레벨에 사용합니다. 페이지 레벨의 타이틀과 디스크립션을 타일로 만들지 않습니다.</p>
-        <li><i class="icon-check"></i> leading, tailing 엘리먼트의 line-height에 따른 시각보정이 필요합니다.</p>
+        <li><i class="icon-check"></i> leading, tailing 엘리먼트의 line-height에 차이를 시각보정합니다.</p>
       </ul>
+      <br />
       <div class="design-tile-flat">
         <b>flat</b>
       </div>
@@ -687,12 +687,12 @@
         <li><i class="icon-check"></i> switch 역할로 하나의 체크박스를 제공할 수 있습니다.</li>
         <!-- <li><i class="icon-check"></i> 옵션을 선택하는 경우 Chip.</li> -->
       </ul>
-      
+
       <h4 class="article-subhead">Editorial</h4>
-      <div class="article-checklist">
-        <span class="tag">동사 포함</span>
-        <span class="tag">최대 2단어</span>
-      </div>
+      <ul class="article-checklist" data-align="horizontal">
+        <li><i class="icon-check"></i> 동사포함</li>
+        <li><i class="icon-check"></i> 최대 2단어</li>
+      </ul>
       
       <h4 class="article-subhead">Checkgroup</h4>
       <fieldset role="checkgroup">
@@ -720,10 +720,12 @@
 
       <h4 class="article-subhead">Guidelines</h4>
       <ul class="article-checklist">
-        <li><i class="icon-check"></i> 기본 옵션을 선택 상태로 제공합니다.</li>
-        <li><i class="icon-check"></i> 항상 세로 정렬합니다.</li>
-        <li><i class="icon-check"></i> 최대 5개의 옵션을 제공할 수 있습니다.</li>
+        <li><i class="icon-check"></i> 기본 옵션을 선택된 상태로 제공합니다.</li>
+        <li><i class="icon-check"></i> 가로로 정렬하지 않습니단.</li>
+        <!-- <li><i class="icon-check"></i> 최대 5개의 옵션</li> -->
       </ul>
+
+      <br />
 
       <!-- <h4 class="article-subhead">Editorial</h4>
       <ul class="article-checklist">
