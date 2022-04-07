@@ -23,6 +23,8 @@ type Parameter = {
 // 마우스로 가능한 context menus는 키보드로도 되어야
 // 비모달 다이얼로그를 위해서 열려 있는 다이얼로그와 메인 페이지간에 포커스를 이동시킬 수 있는 전역 키보드 단축키가 필요하다는 점을 유의하십시오.
 
+// ! backHistory -> restoreScroll 안 됨.
+
 function modal({ selector: trigger }: Parameter) {
   const modalTriggers = document.querySelectorAll<HTMLElement>(trigger)
   const modalContainer = document.querySelector<HTMLElement>('#modal')
@@ -59,7 +61,9 @@ function modal({ selector: trigger }: Parameter) {
 
       modalContainer!.innerHTML = html
       previousActiveElement = document.activeElement
+
       // todo
+      // 스크로 위치..
       pushBrowserHistory({}, '', `/#profile/${modalId}`)
 
       // modalContainer.querySelector('button').focus()
@@ -67,6 +71,7 @@ function modal({ selector: trigger }: Parameter) {
   }
 
   function temp(event) {
+    console.log(event.target, 'tet')
     // modalContainer!.innerHTML = ''
     const target = event.target as HTMLElement
     if (target.classList.contains('modal')) backHistory()
@@ -75,7 +80,11 @@ function modal({ selector: trigger }: Parameter) {
 
   function openModal(pageYOffset) {
     document.body.classList.add('is-modal-visible', 'body-lock')
+
+    // todo offset 임시로 다시...
     document.body.style.top = `-${pageYOffset}px`
+
+    previousPageYOffset = pageYOffset
   }
 
   function closeModal() {
@@ -87,7 +96,14 @@ function modal({ selector: trigger }: Parameter) {
     document.body.classList.remove('is-modal-visible', 'body-lock')
 
     modalContainer!.innerHTML = ''
-    window.scrollTo(0, window.pageYOffset)
+
+    // restoreScroll
+    // document.body.style.top = '0'
+
+    console.log(previousPageYOffset)
+    setTimeout(() => {
+      window.scrollTo(0, 1000)
+    }, 1)
 
     // previousActiveElement.focus()
   }

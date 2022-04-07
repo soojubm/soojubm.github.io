@@ -12,11 +12,12 @@ function darkTheme(classname) {
   const isDarkTheme = () => document.body.classList.contains(DARK_THEME_CLASS)
 
   loadTheme()
-  themeTrigger.addEventListener('click', toggletheme)
+  themeTrigger.addEventListener('click', toggleTheme)
 
-  function toggletheme() {
-    const currentTheme = isDarkTheme() ? DARK_THEME_CLASS : LIGHT_THEME_CLASS
+  function toggleTheme() {
     document.body.classList.toggle(DARK_THEME_CLASS)
+
+    const currentTheme = isDarkTheme() ? DARK_THEME_CLASS : LIGHT_THEME_CLASS
     localStorage.setItem('theme', currentTheme)
 
     checkSwitch()
