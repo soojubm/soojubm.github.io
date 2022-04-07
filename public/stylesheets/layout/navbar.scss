@@ -1,4 +1,4 @@
-.navbar {display:flex;padding:var(--space) var(--grid-margin);border-bottom:var(--border);box-sizing:border-box;background:var(--color-background);position:sticky;top:0;z-index:var(--zindex-menu);}
+.navbar {display:flex;height:var(--navbar-height);padding:var(--space) var(--grid-margin);border-bottom:var(--border);box-sizing:border-box;background:var(--color-background);position:fixed;top:0;left:0;right:0;z-index:var(--zindex-menu);}
 .navbar-logo {@include avatar-medium;background-color:var(--color-background-strong);border-radius:50%;}
 .navbar-burger {@include avatar-medium;margin:0 var(--space-small) 0 0;z-index:calc(var(--zindex-menu) + 1);}
 .navbar-menu {display:flex;align-items:center;margin:-2px 0 0 var(--space);position:relative;z-index:var(--zindex-menu);}
@@ -13,6 +13,8 @@
 .navbar-menu-item menu a {display:block;margin:var(--space-small) 0;color:var(--color-text);opacity:0;position:relative;z-index:var(--zindex-default);}
 .navbar-menu-item menu a:hover {@include hover-item;}
 .navbar-menu-item menu a.is-current {@include hover-item;}
+
+.navbar-backdrop {height:var(--navbar-height);}
 
 // item - link
 // todo z-index
