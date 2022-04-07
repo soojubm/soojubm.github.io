@@ -319,11 +319,11 @@
 
 .design {display:flex;flex-wrap:wrap;}
 .design header {width:100%;padding:4rem var(--grid-margin);background:var(--color-background);position:relative;}
-.design header h1 {@include text-title;font-family:'Changa One';font-size:2.5rem;font-weight:normal;position:relative;} // todo
+.design header h1 {@include text-title;font-family:'Changa One';font-size:var(--font-size-huge);font-weight:normal;position:relative;} // todo
 .design header p {margin:var(--space-after-title) 0 0 0;font-size:var(--font-size-subhead);letter-spacing:-.0125rem;position:relative;}
 
-.design-navigation {display:flex;flex-wrap:wrap;width:100%;max-width:1000px;margin:-2.5rem var(--space-small-minus) 0;padding:0 var(--grid-margin) 4em;position:relative;z-index:var(--zindex-default);}
-.design-navigation a {display:block;width:33%;max-width:240px;@include tile-elevated;margin:var(--space-small);padding:.75rem;color:inherit;}
+.design-navigation {display:flex;flex-wrap:wrap;width:100%;max-width:1000px;margin:-2.5rem -.75rem 0;padding:0 var(--grid-margin) 4em;position:relative;z-index:var(--zindex-default);}
+.design-navigation a {display:block;width:33%;max-width:240px;@include tile-elevated;margin:3.75;padding:.75rem;color:inherit;}
 .design-navigation a figure {display:block;@include avatar-huge;width:100%;margin:0 0 var(--space-xsmall) 0;font-size:var(--font-size-title);}
 
 .design-navigation a[readonly] {opacity:.5;cursor:not-allowed;box-shadow:none;}
@@ -338,7 +338,7 @@
   // todo scroll error. because minus margin
   .design-navigation {margin-left:0;margin-right:0;}
   .design-navigation a {width:calc(50% - var(--space-small));margin-left:0;margin-right:0;}
-  .design-navigation a:nth-of-type(2) {margin-left:var(--space);}
+  .design-navigation a:nth-of-type(2) {margin-left:.75rem;}
 }
 
 
