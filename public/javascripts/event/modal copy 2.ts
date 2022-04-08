@@ -25,7 +25,6 @@ type Parameter = {
 
 // ! backHistory -> restoreScroll 안 됨.
 
-
 function modal({ selector: trigger }: Parameter) {
   const modalTriggers = document.querySelectorAll<HTMLElement>(trigger)
   const modalContainer = document.querySelector<HTMLElement>('#modal')
@@ -37,14 +36,12 @@ function modal({ selector: trigger }: Parameter) {
   let previousActiveElement
   let previousPageYOffset
 
-
   modalTriggers.forEach(modalTrigger =>
     modalTrigger.addEventListener('click', event => {
       event.preventDefault()
 
       previousPageYOffset = window.pageYOffset
       const modalId = modalTrigger.dataset.modal
-      fetchData(modalId)
       openModal()
     }),
   )
@@ -52,8 +49,6 @@ function modal({ selector: trigger }: Parameter) {
   document.addEventListener('keydown', enterEscKey)
   modalContainer.addEventListener('click', checkClose)
   window.addEventListener('popstate', closeModal)
-
-
 
   function checkClose(event) {
     const target = event.target as HTMLElement
