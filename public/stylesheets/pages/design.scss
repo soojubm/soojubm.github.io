@@ -4,7 +4,7 @@
 // todo tokens
 .design-head h1 span {-webkit-text-stroke: 1px var(--color-text);color:var(--color-background);}
 
-.article {max-width:640px;padding:4rem var(--grid-margin);overflow:hidden;position:relative;}
+.article {max-width:640px;padding:6rem var(--grid-margin);overflow:hidden;position:relative;}
 .article-aka {@include tag-group;align-items:center;margin:var(--space) 0;font-size:var(--font-size-tiny);}
 .article-aka .tag {margin:0 .5rem .5rem 0;}
 .article-aka .hashtag {margin:0 .5rem .5rem 0;}
@@ -48,9 +48,11 @@
 // todo ul
 .article-checklist {@include reset-list;list-style:none;}
 .article-checklist li {padding-left:1.125rem;}
+.article-checklist li:before {content:'✓';font-size:var(--font-size-caption);left:0;top:2px;}
 .article-checklist li + li {margin-top: .25rem;}
-.article-checklist li .icon-check {margin:0 var(--space-small) 0 0;position:absolute;left:1px;top:12px;}
-.article-checklist li .icon-check {border-width:1px;width:6px;}
+.article-checklist li .icon-check {display:none;}
+// .article-checklist li .icon-check {margin:0 var(--space-small) 0 0;position:absolute;left:1px;top:12px;}
+// .article-checklist li .icon-check {border-width:1px;width:6px;}
 .article-checklist[data-align=horizontal] {display:flex;flex-wrap:wrap;}
 .article-checklist[data-align=horizontal] li {margin:0 var(--space) 0 0;}
 
@@ -322,8 +324,8 @@
 .design header h1 {@include text-title;font-family:'Changa One';font-size:var(--font-size-huge);font-weight:normal;position:relative;} // todo
 .design header p {margin:1.75rem 0 2.25rem 0;font-size:var(--font-size-subhead);line-height:var(--font-line-height-small);letter-spacing:-.0125rem;position:relative;}
 
-.design-navigation {display:flex;flex-wrap:wrap;width:100%;max-width:1000px;margin:-1rem -.75rem 0;padding:0 var(--grid-margin) 4em;position:relative;z-index:var(--zindex-default);}
-.design-navigation a {display:block;width:33%;max-width:240px;@include tile-elevated;margin:.375rem;padding:.75rem;color:inherit;}
+.design-navigation {display:flex;flex-wrap:wrap;width:100%;max-width:1000px;margin:-1rem var(--space-small-minus) 0;padding:0 var(--grid-margin) 4em;position:relative;z-index:var(--zindex-default);}
+.design-navigation a {display:block;width:33%;max-width:240px;@include tile-elevated;margin:var(--space-small);padding:.75rem;color:inherit;}
 .design-navigation a figure {display:block;@include avatar-huge;width:100%;margin:0 0 var(--space-xsmall) 0;font-size:var(--font-size-title);}
 
 .design-navigation a[readonly] {opacity:.5;cursor:not-allowed;box-shadow:none;}
@@ -337,8 +339,8 @@
 @media (--breakpoint-tiny) {
   // todo scroll error. because minus margin
   .design-navigation {margin-left:0;margin-right:0;}
-  .design-navigation a {width:calc(50% - .375rem);margin-left:0;margin-right:0;}
-  .design-navigation a:nth-of-type(2) {margin-left:.75rem;margin-right:0;}
+  .design-navigation a {width:calc(50% - var(--space-smalltg));margin-left:0;margin-right:0;}
+  .design-navigation a:nth-of-type(2) {margin-left:var(--space);margin-right:0;}
 }
 
 

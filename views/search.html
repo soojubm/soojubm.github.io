@@ -60,6 +60,9 @@
     </a>
   </section>
 
+  <br /><br /><br />
+  <br /><br /><br />
+
   <div class="tile-elevated">
     <!-- <section class="search-recent">
       <h2 class="search-recent-title">최근 검색</h2>
@@ -105,8 +108,8 @@
   </div>
 
   <hr />
-  <div style="display:flex;">
-    <fieldset role="radiogroup" style="flex:auto;">
+  <div style="display:flex;flex-wrap:wrap;">
+    <fieldset role="radiogroup" style="width:50%;">
       <legend class="" style="color:var(--color-text-light);font-weight:var(--font-weight-normal);">인원</legend>
       <div class="radio">
         <input type="radio" id="gogo1" name="gogo" value="" />
@@ -118,7 +121,7 @@
       </div>
     </fieldset>
     <br />
-    <fieldset role="radiogroup" style="flex:auto;">
+    <fieldset role="radiogroup" style="width:50%;">
       <legend class="" style="color:var(--color-text-light);font-weight:var(--font-weight-normal);">사용자</legend>
       <div class="radio">
         <input type="radio" id="ttt1" name="ttt" value="" />
@@ -129,6 +132,10 @@
         <label for="ttt2" title="">내가 팔로우하는 사람들</label>
       </div>
     </fieldset>
+    <footer style="display:flex;width:100%;padding:var(--space) 0 0 0;">
+      <button>지우기</button>
+      <button class="chip"><span class="chip-label">저장</span></button>
+    </footer>
   </div>
 
   <div class="tile-flat">
@@ -151,4 +158,38 @@
     <li><i class="icon-check"></i>개별 검색 내역은 삭제할 수 있다.</li>
     <li><i class="icon-check"></i>전체 검색 내역의 삭제는 사용자에게 유용할 수도 있지만 리스크도 있기 때문에 제공하지 않아도 좋다.</li>
   </ul>
+
+  <style>
+    .quantity {
+      --padding-left: 5rem;
+    }
+  </style>
+  <button class="" style="display: flex;align-items: center;">
+    <i class="icon-person"></i>
+    <span class="button-label" style="margin:0 1rem 0 .75rem;">2</span>
+    <i class="icon-caret"></i>
+  </button>
+  <section class="tile-elevated" style="max-width:var(--width-popover);">
+    <div class="quantity js-quantity" style="max-width:8rem;padding-left:var(--padding-left);margin:0 0 .75rem 0;">
+      <label class="quantity-label" for="" style="position: absolute;left:0;">어린이</label>
+      <input class="quantity-input js-quantity-input js-number-input" name="quantity1" type="number" value="0" min="5" max="20" />
+      <!-- <input type="text" inputmode="numeric" pattern="[0-9]*"> -->
+      <button class="quantity-decrement js-quantity-decrement" style="left:var(--padding-left);"><i class="icon-minus"></i></button>
+      <button class="quantity-increment js-quantity-increment"><i class="icon-plus"></i></button>
+    </div>
+    <div class="quantity js-quantity" style="max-width:8rem;padding-left:var(--padding-left);">
+      <label class="quantity-label" for="" style="position: absolute;left:0;top:-.25rem;">성인</label>
+      <small style="position: absolute;left:0;top:1rem;color:var(--color-text-light);">만 13세 이상</small>
+      <input class="quantity-input js-quantity-input js-number-input" name="quantity1" type="number" value="0" min="5" max="20" />
+      <!-- <input type="text" inputmode="numeric" pattern="[0-9]*"> -->
+      <button class="quantity-decrement js-quantity-decrement" style="left:var(--padding-left);"><i class="icon-minus"></i></button>
+      <button class="quantity-increment js-quantity-increment"><i class="icon-plus"></i></button>
+    </div>
+    <footer style="margin:1rem 0 0 0;text-align:right;">
+      <button class="button-text" style="font-weight:var(--font-weight-normal);min-width:auto;height:auto;padding:.25rem;margin-right:1.5rem;">
+        취소
+      </button>
+      <button class="button-text" style="font-weight:var(--font-weight-normal);min-width:auto;height:auto;padding:.25rem;">확인</button>
+    </footer>
+  </section>
 </main>

@@ -1,5 +1,5 @@
 <main class="foundation">
-  <section class="hero">
+  <header class="hero">
     <h1 class="hero-title">Foundations</h1>
     <p class="hero-description">추상</p>
     <style>
@@ -10,17 +10,20 @@
         flex-wrap: wrap;
         align-items: center;
         width: 100%;
-        padding: var(--space-small) 0 var(--space);
+        padding: 0 0 3rem;
         color: var(--color-text);
       }
       .foundation-item h2 {
-        margin: 0.5rem 0;
-        font-size: var(--font-size-title);
+        margin: 0 0 var(--space-small) 0;
         font-family: 'Changa One';
+        font-size: var(--font-size-subhead);
         font-weight: var(--font-weight-normal);
       }
       .foundation-item a:hover {
         /* @include hover-item; */
+      }
+      .foundation-item a i {
+        display: none;
       }
       .foundation-item a i:nth-of-type(1) {
         margin: 0 0 0 var(--space-small);
@@ -35,7 +38,8 @@
         animation-delay: var(--animation-delay-third);
       }
     </style>
-
+  </header>
+  <div style="margin:0 var(--grid-margin);">
     <div class="foundation-item">
       <a>
         <h2>Level <i>👋</i></h2>
@@ -97,5 +101,5 @@
         </tr>
       </tbody>
     </table>
-  </section>
+  </div>
 </main>
