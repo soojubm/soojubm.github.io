@@ -97,6 +97,8 @@
 .user-avatar {float:right;@include avatar-huge;}
 .user-avatar-change {width:32px;height:32px;border-radius:var(--radius);position:absolute;right:-8px;bottom:-8px;}
 .user-name {margin:var(--space-leading-subhead) 0 0 0;@include text-subhead;}
+.user-id {margin:-.125rem 0 0 0;}
+.user-job {margin:var(--space-xsmall) 0 0 0;}
 .user-email {}
 // todo this is item
 .user-logout {display:flex;align-items:center;width:100%;margin:var(--space-after-item) 0;position:relative;}

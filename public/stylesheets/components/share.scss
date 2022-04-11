@@ -1,6 +1,7 @@
 
 .share-trigger {@include avatar-medium;margin:0 0 1rem 0;}
 .share-trigger svg {width:1rem;}
+
 .share {@include tile-elevated;}
 .share-group {@include chip-group;}
 .share-back {@include avatar-medium;position:absolute;right:.5rem;top:.5rem;}
@@ -18,5 +19,5 @@
 .share-copy {display:flex;flex-wrap:wrap;width:100%;}
 .share-copy-label {}
 .share-copy-url {}
-.share-copy-button {@include avatar-small;font-size:var(--font-size-caption);position:absolute;right:1rem;top:50%;transform:translateY(-50%);}
+.share-copy-button {font-size:var(--font-size-caption);color:var(--color-primary);position:absolute;right:1rem;top:50%;transform:translateY(-50%);}
 // .share-copy-button {@include button-small;min-width:auto;position:absolute;right:1rem;top:.5rem;}
