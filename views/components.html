@@ -309,7 +309,7 @@
 
       <h4 class="article-subhead">Guidelines</h4>
       <ul class="article-checklist">
-        <li><i class="icon-check"></i> 액션 실행 후 피드백합니다. 물리적인 인터페이스 뿐 아니라 예측 가능한 페이지 이동이나 새로고침, 정보 구조의 변화도 피드백이 될 수 있습니다.</li>
+        <li><i class="icon-check"></i> 액션 실행 후 피드백합니다. 물리적인 인터페이스의 출현(?) 뿐만 아니라 예측 가능한 페이지 이동이나 새로고침, 정보 구조의 변화도 피드백이 될 수 있습니다.</li>
         <li><i class="icon-check"></i> 통일된 시각 효과로 버튼의 상태를 표현합니다. 상태를 표현하는 시각 정보는 개별 버튼 컴포넌트에 종속되지 않아야 합니다.</li>
         <!-- <li><i class="icon-check"></i> binary choice에서 primary 버튼과 secondary 버튼을 함께 배치하지 않습니다.</li> -->
         <!-- <li><i class="icon-check"></i> 키보드 접근성을 위해 버튼 그룹에서 항상 primary 버튼을 먼저 마크업하세요.</li> -->
@@ -422,7 +422,7 @@
       <h4 class="article-subhead">Guidelines</h4>
       <ul class="article-checklist">
         <li><i class="icon-check"></i> 맥락이 다른 chip을 나열할 수 있습니다. 이 때 단일선택, 다중선택, 삭제여부, 펼침메뉴 등의 기표를 충분히 제공하세요.</li>
-        <li><i class="icon-check"></i> 콘텐츠 정렬sorting 기능으로 chip group으로 chip을 나열하지 않습니다. dropdown으로 현재 정렬 상태만 요약합니다. (bad case: 2022.04 최근 구글 지도 바뀐 것)</li>
+        <li><i class="icon-check"></i> 콘텐츠 정렬sorting 기능을 위해 chip group으로 chip을 나열하지 않습니다. dropdown으로 현재 정렬 상태만 요약합니다. (bad case: 2022.04 구글 지도 바뀐 것)</li>
         <li><i class="icon-check"></i> 페이지 링크로 사용하지 않습니다.</li>
       </ul>
 
@@ -454,7 +454,6 @@
           </button>
         </div>
       </div> -->
-
 
       <p class="article-subhead">Keywords</p>
       <div class="article-anatomy">
@@ -711,11 +710,11 @@
       <div class="tile-elevated">
         <span class="switch">
           <input type="checkbox" id="switch1" name="" role="switch" value="on" checked />
-          <label for="switch1" title="Receive weekly newsletter">주간 뉴스레터 받아보기</label>
+          <label for="switch1" title="Receive weekly newsletter">뉴스레터 받아보기</label>
         </span>
         <span class="switch" style="margin-top:var(--space);">
           <input type="checkbox" id="switch2" name="" role="switch" value="off" disabled />
-          <label for="switch2" title="Receive weekly newsletter">주간 뉴스레터 받아보기</label>
+          <label for="switch2" title="Receive weekly newsletter">뉴스레터 받아보기</label>
         </span>
       </div>
     </article>
@@ -972,7 +971,7 @@
       <h4 class="article-subhead">Guidelines</h4>
       <ul class="article-checklist">
         <li><i class="icon-check"></i> 페이지 뎁스 3 이상에서 사용합니다.</li>
-        <li><i class="icon-check"></i> 프로모션용 랜딩 페이지에서 사용자의 여정을 돕기 위해 사용할 수 있습니다.</li>
+        <li><i class="icon-check"></i> 프로모션용 랜딩 페이지에서 사용자 여정을 돕기 위해 사용할 수 있습니다.</li>
         <li><i class="icon-check"></i> 푸터에서 사이트맵과 함께 사용할 수 있습니다.</li>
         <li><i class="icon-check"></i> 모바일 환경에서 네비게이션 바와 함께 사용하지 않습니다.</li>
       </ul>
@@ -1019,7 +1018,7 @@
         <span class="article-anatomy-item">a // for internal link</span>
         <span class="article-anatomy-item">a target="_blank" rel="noopener noreferrer" // for external link</span>
       </div>
-      
+      <br />
       <p>형무소 안에서는 소장의 말이 곧 법이었으며 죄수들의 잘못과 실수는 결코 용납되지 않는다. 어머니의 사망 소식을 듣고 인해 2번이나 탈옥을 시도했다가 체포된 <a class="link-inner" href="#">루크</a>의 발에 쇠통이 채워지며 루크는…<a class="more link-outer" href="#" style="margin-left:.25rem;">더 보기</a></p>
     </article>
 
@@ -1521,7 +1520,7 @@
 
     <article class="article js-observer js-scrollspy-section">
       <h1 class="article-title">Accordion / Details</h1>
-      <p class="article-description">필요에 따라 취사선택할 수 있도록 정보를 요약합니다.</p>
+      <p class="article-description">필요에 따라 취사선택할 수 있도록 정보나 정보 목록을 요약합니다.</p>
 
       <h4 class="article-subhead">Guidelines</h4>
       <ul class="article-checklist">
@@ -1929,7 +1928,7 @@
       <article class="card has-item" role="listitem" style="max-width:400px;">
         <figure class="card-thumbnail"><img src="/public/images/springsteen.jpg" alt="" /></figure>
         <h3 class="card-title">카드 유아이</h3>
-        <p class="card-text">따봉은 상세페이지에서 제공하세요. 북마크는 밖에 두어도 좋은가? 상세페이지에서 제공하는 것이 좋음. 기능이 많아짐. 신선식품 장바구니는 밖에 인정. 보조 텍스트는 최대 두 줄이다.</p>
+        <p class="card-text">따봉은 상세페이지에서 제공하세요.  뉴스피드 유아이에서는 밖에서 제공할 수 있어요.북마크는 밖에 두어도 좋은가? 상세페이지에서 제공하는 것이 좋음. 기능이 많아짐. 신선식품 장바구니는 밖에 인정. 보조 텍스트는 최대 두 줄이다.</p>
         <time class="card-date">2017. 12. 21.</time>
         <div class="card-tags" role="group">
           <span class="card-tags-item">기획</span>

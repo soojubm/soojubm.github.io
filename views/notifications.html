@@ -9,17 +9,16 @@
     <ul class="article-checklist" style="list-style:disc;">
       <li>
         <i class="icon-check"></i>
-        <b>popover: </b>
-        <span>특정 컨테이너에 종속되지 않도록 모두보기 버튼 배치하고 item 간격을 설정. </span>
+        <span>특정 컨테이너에 종속되지 않도록 item 간격을 설정. </span>
       </li>
       <li>
         <i class="icon-check"></i>
         <b>popover: </b>
-        <span>모두보기 notification 페이지가 필요하다. 모두보기(페이지 링크)는 '알림' 타이틀 우측에 배치.</span>
+        <span>전체 알림 목록을 볼 수 있는 페이지가 필요. 모두보기(페이지 링크)는 '알림' 타이틀 우측에 배치.</span>
       </li>
       <li>
         <i class="icon-check"></i>
-        <b>modal: </b> <span>모달 내에서 모든 알림을 보여줄 수 있기 때문에 모두보기 notification 페이지가 필요하지 않다.</span>
+        <b>modal: </b> <span>전체 알림 목록을 볼 수 있는 페이지 필요 없음. 모달 내에서 infinite scroll vs more load(fixed/notfixed).</span>
       </li>
       <li>
         <i class="icon-check"></i>
@@ -28,10 +27,6 @@
       <li>
         <i class="icon-check"></i>
         all/unread 2개 chip component로 필터링할 수 있고 checkbox 토글로 읽지 않은 알림만 필터링할 수도 있다.
-      </li>
-      <li>
-        <i class="icon-check"></i>
-        infinite scroll vs more load(fixed/notfixed)
       </li>
       <li>
         <i class="icon-check"></i>
@@ -67,8 +62,10 @@
       <div class="notification-item">
         <em class="notification-unread"></em>
         <figure class="notification-item-avatar"></figure>
-        <b class="notification-item-user">John Cassavetes</b>
-        <span class="notification-item-content">comment on <b>John Cassavetes</b></span>
+        <p style="line-height:var(--font-line-height-small);">
+          <b class="notification-item-user">John Cassavetes</b>
+          <span class="notification-item-content">comment on <b>John Cassavetes</b></span>
+        </p>
         <time class="notification-item-date">5일 전</time>
       </div>
       <div class="notification-item">
@@ -116,7 +113,7 @@
     <button class="profile-tablist-tab" role="tab" aria-selected="false" aria-controls="panel-3" id="tab-3" tabindex="-1">팔로잉</button>
     <i class="profile-tablist-indicator"></i>
   </nav>
-  <div class="item" role="listitem" style="position: relative;">
+  <div class="item" role="listitem" data-size="large" style="position: relative;">
     <figure class="item-avatar"></figure>
     <h2 class="item-name">Gyeongsoo I</h2>
     <span class="item-description">유튜브 구독자</span>

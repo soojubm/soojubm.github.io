@@ -12,8 +12,8 @@
   @include tile-elevated;
   display:flex;
   // align-items:center;
-  margin:var(--space) -.75rem;
-  padding: .75rem var(--space);
+  margin: var(--space) 0;
+  padding: var(--space);
   // padding:var(--space) 0;border-bottom:var(--border);box-sizing:border-box;
   cursor:pointer;position:relative;
 }
