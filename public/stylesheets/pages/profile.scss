@@ -64,12 +64,12 @@
 .profile-display-button.is-selected {background:var(--color-background-weak);}
 .profile-display-button i {vertical-align:middle;}
 
-.profile-tablist {@include tile-elevated-small;display:flex;margin:0 0 var(--space) 0;padding:.25rem;position:relative;}
+.profile-tablist {@include tile-elevated-small;display:flex;margin:0 0 var(--space) 0;position:relative;}
 .profile-tablist-tab {display:flex;align-items:center;justify-content:center;height:var(--size-medium);padding:0 var(--space);color:var(--color-text-light);position:relative;z-index:var(--zindex-default);}
 // .profile-tablist-tab:hover {box-shadow:var(--shadow);} flex:auto;
 .profile-tablist-tab[aria-selected=true] {color:var(--color-text);}
 .profile-tablist-tab-badge {margin:0 0 0 var(--space-small);}
-.profile-tablist-indicator {display:block;height:calc(100% - .5rem);@include chip;position:absolute;top:.25rem;transition:all var(--duration);}
+.profile-tablist-indicator {display:block;height:calc(100% - .5rem);@include chip;position:absolute;top:.5rem;transition:all var(--duration);}
 .profile-tabpanel {display:flex;flex-wrap:wrap;margin:0 -.5rem;}
 .profile-tabpanel[aria-hidden=true] {display:none;}
 .profile-tabpanel .card {width:calc(33.3333% - 1rem);margin:0 .5rem 1rem;padding:.75rem;}
