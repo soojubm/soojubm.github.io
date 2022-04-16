@@ -155,6 +155,8 @@ $transition-fade: opacity 0.15s linear;
   --space-after-avatar-large: .75rem;
   --space-after-avatar-medium: var(--space-small);
   --space-after-avatar-small: var(--space-small);
+
+  --space-after-item: .75rem;
   
   --space-before-tag: .125rem;
   --space-before-tag-minus: calc(var(--space-before-tag) * -1);
