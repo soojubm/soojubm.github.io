@@ -34,7 +34,7 @@
 // min-height:var(--size-large);todo
 .token-item {@include tile-flat-small;margin:.75rem 0;padding:.75rem;overflow:hidden;letter-spacing:0px;transition:margin .8s;}
 // todo ! 
-// .token-item + .article-helper {margin:var(--space-small-minus) 0 0 0;}
+.token-item + .article-helper {margin:-.25rem 0 1rem 0;}
 .token-item.is-scrolled {margin-top:.75rem;}
 .token-item-avatar {@include avatar-large;float:right;}
 
