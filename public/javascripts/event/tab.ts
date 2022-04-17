@@ -42,8 +42,6 @@ function tab() {
   function initializeIndicator() {
     if (!tabElement) return
 
-    console.log(`${getElementWidth(selectedTab)} - 4px`)
-
     const indicatorElement = tabElement.querySelector<HTMLElement>('.profile-tablist-indicator')
     if (!indicatorElement) return
 
