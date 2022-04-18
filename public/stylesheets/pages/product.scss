@@ -134,7 +134,7 @@
 	.product {max-width:100%;}
 	.product-image {@include reset-position;width:50%;position:absolute;}
 	.product-info {width:50%;margin-right:0;padding-left:55%;}
-	.product-info-name {width:100%;text-align:left;line-height:var(--font-line-height-small);position:initial;}
+	.product-info-name {width:100%;text-align:left;line-height:var(--font-line-height-small);@include reset-position;}
 
 	.product-order {width:50%;margin-top:2rem;padding-left:55%;}
 

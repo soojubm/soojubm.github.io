@@ -74,6 +74,7 @@
 .notification-item + .notification-item {margin:var(--space) 0 0 0;}
 .notification-item:hover {@include hover-item;}
 .notification-item-avatar {@include avatar-large;position:absolute;left:0;top:0;}
+.notification-item-avatar + p {margin-bottom:.125rem;}
 .notification-item-user {font-size:var(--font-size-body);line-height:var(--font-line-height-small);}
 .notification-item-content {color:var(--color-text-light);line-height:var(--font-line-height-small);}
 .notification-item-content b {font-weight:var(--font-weight-normal);}
