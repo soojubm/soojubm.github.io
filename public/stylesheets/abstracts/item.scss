@@ -31,7 +31,7 @@
 }
 
 // todo entry / message / created
-.item {@include item;}
+.item {@include item;margin:var(--space-after-item) 0;}
 .item-avatar {@include item-avatar;}
 .item-name {font-size:var(--font-size-body);}
 .item-description {color:var(--color-text-light);}
@@ -47,7 +47,7 @@
 .item-delete {@include chip;width:var(--size-small);height:var(--size-small);margin:0 0 0 auto;}
 .item-delete:hover {}
 // todo active style
-.item + .item {margin:var(--space) 0 0 0;}
+
 .item:hover {@include hover-item;}
 
 .item[data-size=huge] .item-avatar {width:var(--size-huge);height:var(--size-huge);margin-right:var(--space-after-avatar-huge);}

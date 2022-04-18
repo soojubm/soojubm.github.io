@@ -70,8 +70,7 @@
 .notifications {@include container-medium;}
 .notification {}
 .notification-list {padding:1rem 2rem;}
-.notification-item {min-height:var(--size-large);padding-left:calc(48px + var(--space-after-avatar-large));position:relative;z-index:var(--zindex-default);}
-.notification-item + .notification-item {margin:var(--space) 0 0 0;}
+.notification-item {min-height:var(--size-large);margin:.75rem 0 0 0;padding-left:calc(48px + var(--space-after-avatar-large));position:relative;z-index:var(--zindex-default);}
 .notification-item:hover {@include hover-item;}
 .notification-item-avatar {@include avatar-large;position:absolute;left:0;top:0;}
 .notification-item-avatar + p {margin-bottom:.125rem;}

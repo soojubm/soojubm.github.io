@@ -5,28 +5,32 @@
       <button class="textfield-prefix" style="top:11px;"><i class="icon-search"></i></button>
       <label class="textfield-label" for="search" hidden style="display:none;">검색</label>
       <input class="textfield-input js-input-test" type="search" id="search" placeholder="궁금한 인물이나 이슈가 있나요? (샘플 유아이)" />
-      <button class="textfield-clear" hidden=""><i class="icon-x" style="border-color:var(--color-text-light);"></i></button>
+      <button class="textfield-clear" hidden="" type="button"><i class="icon-x" style="border-color:var(--color-text-light);"></i></button>
     </fieldset>
-    <nav class="profile-tablist" role="tablist" aria-label="sample tabs">
-      <button class="profile-tablist-tab" role="tab" aria-selected="true" aria-controls="panel-1" id="tab-1" tabindex="0">
+    <nav class="search-tablist" role="tablist" aria-label="sample tabs" style="margin:0 0 .75rem 0;">
+      <button class="profile-tablist-tab" type="button" role="tab" aria-selected="true" aria-controls="panel-1" id="tab-1" tabindex="0">
         인기
         <!-- <em class="badge" data-variant="secondary" style="margin-left:var(--space-small);">24</em> -->
       </button>
-      <button class="profile-tablist-tab" role="tab" aria-selected="false" aria-controls="panel-2" id="tab-2" tabindex="-1">사용자</button>
-      <button class="profile-tablist-tab" role="tab" aria-selected="false" aria-controls="panel-3" id="tab-3" tabindex="-1">사진</button>
+      <button class="profile-tablist-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-2" id="tab-2" tabindex="-1">
+        사용자
+      </button>
+      <button class="profile-tablist-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-3" id="tab-3" tabindex="-1">
+        사진
+      </button>
       <i class="profile-tablist-indicator"></i>
     </nav>
 
-    <div class="search-filter profile-display" style="margin:var(--space) 0;">
+    <!-- todo chip label  -->
+    <!-- <div class="search-filter profile-display" style="margin:var(--space) 0;">
       <p class="profile-display-status" role="status" hidden>Viewing 1,000 Projects</p>
       <button class="profile-display-button js-display-grid js-test-toggle js-display-button is-selected" style="width:auto;">
         <span class="chip-label">최신순</span>
-        <!-- todo chip label  -->
       </button>
       <button class="profile-display-button js-display-list js-test-toggle js-display-button" style="width:auto;">
         <span class="chip-label">클릭율 높은순</span>
       </button>
-    </div>
+    </div> -->
   </form>
 
   <section class="profile-tabpanel" role="tabpanel" aria-hidden="false" data-index="1">
