@@ -1,7 +1,7 @@
-.album {max-width:1080px;margin:10rem auto 16rem;padding-left:30%;box-sizing:border-box;position:relative;}
+.album {max-width:1080px;margin:10rem auto 16rem;padding:0 var(--grid-margin);box-sizing:border-box;position:relative;}
 .album-background {background:url('/public/images/springsteen.jpg') no-repeat center center;background-size:cover;position:fixed;left:10%;right:10%;top:0%;bottom:20%;z-index:-1;}
 
-.album-list {max-width:50%;position:absolute;left:0;top:0;z-index:var(--zindex-default);}
+.album-list {max-width:50%;}
 .album-list-date {color:var(--color-text);}
 .album-list-title {margin:0 0 .5rem 0;font-size:32px;line-height:1.2;color:var(--color-text);}
 .album-list-artist {color:var(--color-text);}
@@ -10,15 +10,18 @@
 .album-track {padding:9rem 0 0 0;color:var(--color-text);}
 .album-track-title {margin:0 0 .5rem 0;font-size:var(--font-size-subhead);color:inherit;}
 .album-track-label {display:flex;}
-.album-track-label-item {padding:.5rem 0;color:rgba(255,255,255,.4);}
-.album-track-label-item:nth-of-type(1) {width:10%;}
-.album-track-label-item:nth-of-type(2) {width:75%;}
+.album-track-label-item {margin:.5rem 0;color:var(--color-text-light);}
+.album-track-label-item:nth-of-type(1) {width:1rem;text-align:right;}
+.album-track-label-item:nth-of-type(2) {width:75%;padding-left:1rem;padding-right:1rem;}
 .album-track-label-item:nth-of-type(3) {width:15%;text-align:right;}
-.album-track-list {display:flex;}
-.album-track-list-item {padding:.5rem 0;}
-.album-track-list-item:nth-of-type(1) {width:10%;}
-.album-track-list-item:nth-of-type(2) {width:75%;}
-.album-track-list-item:nth-of-type(3) {width:15%;text-align:right;}
+.album-track-list-item b {}
+.album-track-list-item small {display:block;margin:.125rem 0 0 0;color:var(--color-text-light);}
+.album-track-list {display:flex;position:relative;}
+.album-track-list:hover {@include hover-item;}
+.album-track-list-item {margin:.5rem 0;line-height:var(--font-line-height-small);}
+.album-track-list-item:nth-of-type(1) {width:1rem;color:var(--color-text-light);text-align:right;}
+.album-track-list-item:nth-of-type(2) {width:75%;padding-left:1rem;padding-right:1rem;}
+.album-track-list-item:nth-of-type(3) {width:15%;color:var(--color-text-light);text-align:right;}
 
 .album-others {max-width:1080px;margin:30rem auto;}
 .album-others-title {margin:0 0 1rem 0;font-size:var(--font-size-subhead);}

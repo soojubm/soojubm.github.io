@@ -121,6 +121,12 @@ button {@include reset-button;}
 
 // ! 모바일에서 100%로 되는 컴포넌트가 있고 아닌 컴포넌트가 있다.
 
+.button-elevated {@include tile-elevated-small;display:flex;align-items:center;width:100%;}
+.button-elevated:hover {@include hover-item;}
+.button-elevated-avatar {@include avatar-medium;margin:0 var(--space-after-avatar-medium) 0 0;}
+.button-elevated-label {}
+.button-elevated-helper {margin-left:auto;margin-right:.5rem;}
+
 .danger-button {@include button;background:var(--red800);border:1px solid var(--red800);color:var(--gray0);}
 
 .button-heading {}
