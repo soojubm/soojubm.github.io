@@ -12,14 +12,14 @@
   @include tile-elevated;
   display:flex;
   // align-items:center;
-  margin: var(--space) 0;
+  margin: var(--space-after-item) 0;
   padding: var(--space);
   // padding:var(--space) 0;border-bottom:var(--border);box-sizing:border-box;
   cursor:pointer;position:relative;
 }
 .setting-item:nth-of-type(1) {border-top:var(--border);}
 .setting-item-label {width:5rem;@include text-label;line-height:var(--size-medium);}
-.setting-item-value {display:flex;flex-wrap:wrap;align-items:center;width:calc(100% - 4rem);line-height:32px;}
+.setting-item-value {display:flex;flex-wrap:wrap;align-items:center;width:calc(100% - 5rem);line-height:32px;}
 .setting-item-value-username {width:100%;}
 .setting-item-value-address {width:100%;line-height:var(--font-line-height-small);}
 .setting-item-value-phone {width:100%;}
