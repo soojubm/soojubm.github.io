@@ -206,8 +206,21 @@
 .textbox-footer-publish {@include button-primary;}
 .textbox-footer-back {}
 
+@mixin group-button {
+  display: flex;
+  justify-content: space-between;
+}
 
 
+.greeting {}
+.greeting-avatar {@include avatar-large;float:right;margin:0 0 0 var(--space);position:relative;}
+.greeting-avatar:hover {@include hover-item;cursor:pointer;background:var(--color-background);}
+.greeting-title {@include text-subhead;}
+.greeting-description {@include text-body;margin:0 0 0;line-height:var(--font-line-height-small);color:var(--color-text-light);}
+
+.onboarding-control {@include group-button;}
+.onboarding-control-skip {@include button-tertiary;width:var(--column-width);}
+.onboarding-control-next {@include button-primary;width:var(--column-width);}
 
 .hover-sample {@include avatar-huge;}
 .hover-sample:hover {@include hover-item;}

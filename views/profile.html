@@ -131,17 +131,6 @@
       <i class="profile-tablist-indicator"></i>
     </nav>
 
-    <div class="profile-sorting dropdown" style="float:right;margin-top:.75rem;">
-      <button class="dropdown-trigger js-toggle" aria-expanded="true">
-        <span class="dropdown-trigger-label">최신순</span>
-        <figure class="dropdown-trigger-icon"><i class="icon-caret"></i></figure>
-      </button>
-      <menu class="dropdown-menu" role="menu" style="right:0;">
-        <h6 class="dropdown-menu-title" hidden>sorting options</h6>
-        <span class="dropdown-menu-link" onclick="javascript:alert('샘플이에요');">인기순</span>
-        <span class="dropdown-menu-link" onclick="javascript:alert('샘플이에요');">최신순</span>
-      </menu>
-    </div>
     <div class="profile-display">
       <p class="profile-display-status" role="status" hidden>Viewing 1,000 Projects</p>
       <button class="profile-display-button js-display-grid js-test-toggle js-display-button is-selected" name="grid">
@@ -161,6 +150,17 @@
         </i>
         <b aria-hidden="true" hidden>List</b>
       </button>
+      <div class="profile-sorting dropdown" style="margin-left:auto;">
+        <button class="dropdown-trigger js-toggle" aria-expanded="true">
+          <span class="dropdown-trigger-label">최신순</span>
+          <figure class="dropdown-trigger-icon"><i class="icon-caret"></i></figure>
+        </button>
+        <menu class="dropdown-menu" role="menu" style="right:0;">
+          <h6 class="dropdown-menu-title" hidden>sorting options</h6>
+          <span class="dropdown-menu-link" onclick="javascript:alert('샘플이에요');">인기순</span>
+          <span class="dropdown-menu-link" onclick="javascript:alert('샘플이에요');">최신순</span>
+        </menu>
+      </div>
     </div>
 
     <section class="profile-tabpanel" href="#newneek" role="tabpanel" aria-hidden="false" data-index="1">

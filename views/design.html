@@ -17,6 +17,69 @@
     </div>
   </div> -->
 
+  <div style="max-width:400px;margin:0 var(--grid-margin);padding:2rem 0 0 0;">
+    <section class="titlebar js-titlebar" role="navigation" style="padding:0;">
+      <div class="titlebar-background"></div>
+      <h1 class="titlebar-title js-page-title" title="page title">테스트</h1>
+      <button class="titlebar-back" onclick="javascript:window.location.href='/';">
+        <figure class="titlebar-back-icon" title="이전 페이지로"><i class="icon-arrow is-left"></i></figure>
+        <!-- <figure class="titlebar-back-icon"><i class="icon-close"></i></figure> -->
+        <!-- <span class="titlebar-back-label">뒤로</span> -->
+      </button>
+      <button class="titlebar-action" style="color:var(--color-primary);">
+        <figure class="titlebar-action-icon" hidden></figure>
+        <span class="titlebar-action-label">공유</span>
+      </button>
+    </section>
+    <section class="greeting" style="padding:1rem 0;">
+      <figure class="greeting-avatar" style="font-size:1.5rem;">🐶</figure>
+      <h1 class="greeting-title">Hello, Stranger<i style="font-style:italic;">!</i></h1>
+      <p class="greeting-description">Tender is the night.</p>
+    </section>
+    <section class="" style="height:160px;margin:0 -2rem;background:gray;border-radius:var(--radius);">banner</section>
+    <div class="temp8" style="margin-top:.25rem;justify-content:space-between;;">
+      <div style="width:100%;flex:auto;">
+        <figure style="width:auto;">🧀</figure>
+        <span>Typography</span>
+      </div>
+      <div style="width:100%;flex:auto;">
+        <figure style="width:auto;background:cadetblue;">🌭</figure>
+        <span>Cinema</span>
+      </div>
+      <div style="width:100%;flex:auto;">
+        <figure style="width:auto;background:lightsalmon;">🍿</figure>
+        <span>Startup</span>
+      </div>
+    </div>
+    <aside class="tile-flat" style="padding-top:.5rem;padding-bottom:.75rem;">
+      <p>
+        todo. 페이지에서 인삿말과 함께 우측에 아바타나 아이콘을 배치하는 패턴이 꽤 트랜디. 이 패턴에서 아바타는 시각 정보가 아니라 링크로 사용(바텀
+        네비게이션 맨 우측 마이페이지 링크 대신). 이 디자인 시스템에서 한 사람의 유저를 강조(?)할 때 사용하는 유저 유아이(우측에 아바타가 배치된)
+        패턴은 이 유아이 패턴(greeting)와 시각적으로 분리할 필요가 있음.
+      </p>
+    </aside>
+
+    <article class="card onboarding" role="listitem" style="text-align:center;">
+      <!-- <div class="card-note" style="margin:0 0 .5rem;">Onboarding</div> -->
+
+      <figure class="card-thumbnail" style="object-fit:cover;">
+        <img src="https://source.unsplash.com/random" alt="" style="max-height:fit-content;" />
+      </figure>
+
+      <h3 class="card-title" style="font-weight: bold;padding:.75rem 0 .25rem 0;">Welcome to...</h3>
+      <p class="card-text" style="width:90%;margin:0 auto;font-size:var(--font-size-body);line-height:var(--font-line-height-small);">
+        버튼 그룹은 2개 이상의 버튼을 가질 수 없도록. 2개 이상이 필요한 것은 버튼이 아닌 툴바.
+      </p>
+      <!-- <p>We're glad to have you onboard. Here are some quick tips to get you up and running. </p> -->
+      <br />
+      <footer class="onboarding-control">
+        <button class="onboarding-control-skip button-tertiary">Skip</button>
+        <button class="onboarding-control-next button-primary">Next</button>
+      </footer>
+      <!-- <button class="button-elevated">Don't Ask Again</button> -->
+    </article>
+  </div>
+
   <header class="design-head hero">
     <h1 class="hero-title" style="margin-top:-1.25rem;font-size:2.5rem;line-height:1.2;">
       <span>Making</span><br />
@@ -32,9 +95,9 @@
 
     <p>
       <small>2204. space .75rem 추가 - card / entity / button group... 의 outset에 사용한다. 네이밍 컨벤션. space-xxsmall?</small>
-      <small style="display:block;">space-after-item: .75rem;</small>
-      <small style="display:block;">space-after-seperator: var(--space)</small>
-      <small style="display:block;">inset 1rem인 경우는 subhead 크기의 텍스트가 있는 경우.</small>
+      <small style="display:block;">space-after-item: .75rem / space-after-seperator: var(--space)</small>
+      <small style="display:block;">inset 1rem : subhead 크기의 텍스트.</small>
+      Specify Words You Like
     </p>
     <!-- <p>디자인 시스템이 비즈니스 로직, 도메인별 스타일 또는 기타 복잡한 UI 요소를 배포하기 위한 것이 아니기 때문에 필요한 정보를 찾지 못할 수 있다.문의-></p> -->
     <!-- <p>모든 플랫폼에서 일관된 브랜드 이미지를 유지하려면 모든 팀(디자인, 마케팅 및 개발)이 스타일 가이드를 잘 알고 있어야 합니다. </p> -->

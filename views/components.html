@@ -1318,6 +1318,8 @@
       <ul class="article-checklist">
         <li><i class="icon-check"></i> 모든 액션에 피드백할 필요는 없습니다. (ex bad case: 인스타그램 앱에서 로그인되었다는 toast. 홈으로 이동과 피드 노출만으로 로그인 상태를 인지할 수 있다.)</li>
         <li><i class="icon-check"></i> Don't show more than one at a time.</li>
+        <li><i class="icon-check"></i> 닫기나 되돌리기와 같은 액션을 포함할 수 없습니다. 그러면 더 주목도가 높은 다이얼로그 등을 쓰라.</li>
+        <li>사라지는 시간을 정의.</li>
       </ul>
     
       <h4 class="article-subhead">Editorial</h4>
@@ -1470,6 +1472,8 @@
       <p class="article-description">페이지네이션.</p>
       <ul class="article-checklist">
         <li><i class="icon-check"></i> 첫 페이지와 마지막 페이지에 더블 화살표 아이콘을 사용하지 않습니다. 최초와 최종 페이지 넘버로 대략적인 콘텐츠의 수량을 파악할 수 있도록 도와주세요.</li>
+        <li><i class="icon-check"></i> more load</li>
+        <li><i class="icon-check"></i> infinite scroll</li>
       </ul>
 
       <h6 class="article-subhead">Type 1</h6>
@@ -1971,6 +1975,8 @@
         <p class="bookitem-byline">${item.author || '정보가 없습니다'}</p>
         <time class="bookitem-publishedyear">${item.publishedDate || '정보가 없습니다'}</time>
       </article> -->
+
+      
 
       <article class="card has-item" role="listitem" style="max-width:400px;">
         <figure class="card-thumbnail"><img src="/public/images/springsteen.jpg" alt="" /></figure>
