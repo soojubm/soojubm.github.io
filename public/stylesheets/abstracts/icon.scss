@@ -70,11 +70,11 @@
 .icon-chevron.is-down {transform:rotate(45deg) translate(0, -2px);}
 
 .icon-grid {padding:7px;position:relative;}
-.icon-grid span {float:left;display:block;margin:1px;padding:1px;border:2px solid var(--icon-background);}
+.icon-grid span {float:left;display:block;margin:1px;padding:1px;border:2px solid var(--icon-background);background:var(--icon-background);border-radius:1px;}
 
 .icon-list {padding:4px;position:relative;}
-.icon-list span {display:block;width:12px;height:2px;margin:2px 0 2px 4px;background-color:var(--icon-background);position:relative;}
-.icon-list span:before {content:'';width:2px;height:2px;background-color:inherit;position:absolute;left:-4px;}
+.icon-list span {display:block;width:11px;height:3px;margin:2px 0 2px 4px;background-color:var(--icon-background);border-radius:1px;position:relative;}
+.icon-list span:before {content:'';width:3px;height:inherit;background-color:inherit;border-radius:1px;position:absolute;left:-5px;}
 
 // .icon-bullet {
 //   display: inline-block;
