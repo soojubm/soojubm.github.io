@@ -208,7 +208,15 @@
 
 @mixin group-button {
   display: flex;
+  flex-direction: row-reverse;
   justify-content: space-between;
+
+}
+@mixin group-button-primary {
+  @include button-primary;width:var(--column-width);
+}
+@mixin group-button-secondary {
+  @include button-tertiary;width:var(--column-width);
 }
 
 
@@ -219,8 +227,8 @@
 .greeting-description {@include text-body;margin:0 0 0;line-height:var(--font-line-height-small);color:var(--color-text-light);}
 
 .onboarding-control {@include group-button;}
-.onboarding-control-skip {@include button-tertiary;width:var(--column-width);}
-.onboarding-control-next {@include button-primary;width:var(--column-width);}
+.onboarding-control-next {@include group-button-primary;}
+.onboarding-control-skip {@include group-button-secondary;}
 
 .hover-sample {@include avatar-huge;}
 .hover-sample:hover {@include hover-item;}
