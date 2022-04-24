@@ -48,7 +48,8 @@
 // todo ul
 .article-checklist {@include reset-list;list-style:none;}
 .article-checklist li {padding-left:1.125rem;}
-.article-checklist li:before {content:'✓';font-size:var(--font-size-caption);left:0;top:2px;}
+// .article-checklist li:before {content:'✓';font-size:var(--font-size-caption);left:0;top:2px;}
+.article-checklist li:before {content:'✓';left:0;top:0;}
 .article-checklist li + li {margin-top: .25rem;}
 .article-checklist li .icon-check {display:none;}
 // .article-checklist li .icon-check {margin:0 var(--space-small) 0 0;position:absolute;left:1px;top:12px;}
@@ -220,8 +221,8 @@
 }
 
 
-.search-similar-item {@include tile-elevated-small;display:flex;align-items:center;margin:.375rem;}
-.search-similar-item:hover {@include hover-item;}
+.search-similar-item {@include tile-elevated-small;display:flex;align-items:center;margin:.25rem;padding:.25rem;}
+// .search-similar-item:hover {@include hover-item;}
 .search-similar-item figure {@include avatar-medium;margin:0 var(--space-after-avatar-medium) 0 0;}
 .search-similar-item span {color:var(--color-text);}
 
