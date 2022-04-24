@@ -69,11 +69,12 @@
 .icon-chevron.is-up {margin-top:4px;transform:rotate(-135deg);}
 .icon-chevron.is-down {transform:rotate(45deg) translate(0, -2px);}
 
+// todo opacity
 .icon-grid {padding:7px;position:relative;}
-.icon-grid span {float:left;display:block;margin:1px;padding:1px;border:2px solid var(--icon-background);background:var(--icon-background);border-radius:1px;}
+.icon-grid span {float:left;display:block;margin:1px;padding:1px;border:2px solid var(--icon-background);background:var(--icon-background);border-radius:1px;opacity:.75;}
 
 .icon-list {padding:4px;position:relative;}
-.icon-list span {display:block;width:11px;height:3px;margin:2px 0 2px 4px;background-color:var(--icon-background);border-radius:1px;position:relative;}
+.icon-list span {display:block;width:11px;height:3px;margin:2px 0 2px 4px;background-color:var(--icon-background);border-radius:1px;position:relative;opacity:.75;}
 .icon-list span:before {content:'';width:3px;height:inherit;background-color:inherit;border-radius:1px;position:absolute;left:-5px;}
 
 // .icon-bullet {

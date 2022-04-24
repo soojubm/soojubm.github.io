@@ -220,6 +220,11 @@
 }
 
 
+.search-similar-item {@include tile-elevated-small;display:flex;align-items:center;margin:.375rem;}
+.search-similar-item:hover {@include hover-item;}
+.search-similar-item figure {@include avatar-medium;margin:0 var(--space-after-avatar-medium) 0 0;}
+.search-similar-item span {color:var(--color-text);}
+
 .greeting {}
 .greeting-avatar {@include avatar-large;float:right;margin:0 0 0 var(--space);position:relative;}
 .greeting-avatar:hover {@include hover-item;cursor:pointer;background:var(--color-background);}
