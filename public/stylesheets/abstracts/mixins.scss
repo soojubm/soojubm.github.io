@@ -11,12 +11,10 @@
 @mixin text-label {font-size:var(--font-size-body);font-weight:normal;color:var(--color-text-light);}
 
 // overline
-
 @mixin truncate {white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 @mixin truncate-multi {@include truncate;height:2.4em;white-space:normal;overflow:hidden;text-overflow:ellipsis;word-wrap:break-word;display: -webkit-box;-webkit-line-clamp:2;-webkit-box-orient: vertical;}
 
 @mixin link-inner {
-  display:inline-block;
   color:var(--color-primary);
   text-decoration:underline;
   &:hover {text-decoration:none;}
@@ -25,7 +23,6 @@
   color:var(--color-primary);
   &:hover {text-decoration:underline;}
 }
-
 
 
 @mixin image-centered {width:auto;height:auto;max-width:150%;max-height:150%;margin:auto;position:absolute;left:0;right:0;top:0;bottom:0;}
@@ -45,23 +42,17 @@
 //   overflow-x: scroll;
 //   overflow-y: hidden;
 // }
-// .card {
-//   width: 120px;
-//   height: 50px;
-//   flex: 0 0 auto;
-// }
+// .card {flex: 0 0 auto;}
 
 
 @mixin clearfix {
   &:after {content:'';display:block;clear:both;}
 }
 
-@mixin hover-chip {border-color:var(--gray800);}
 @mixin hover-text {text-decoration:underline;}
-
 @mixin hover-button {border:1px solid var(--gray800);}
-// item in card component // active
 @mixin hover-item {
+  // item in card component // active
   // 부모태그에 position: relative;zindex:1;
   // --hover-outline: calc(var(--space) / 2 * -1);
   // outline: var(--hover-outline) solid var(--color-background-weak);
@@ -80,16 +71,35 @@
 
 .is-hover {@include hover-item;}
 
+@mixin layout {}
+@mixin layout-page {}
+@mixin layout-page-tiny {}
+@mixin layout-page-small {}
+@mixin layout-page-large {}
+
+
+@mixin layout-popover {
+  // ! dropdown / tooltip
+}
+@mixin layout-modal {}
+@mixin layout-modal-full {}
+
+
+@mixin layout-login {}
+@mixin layout-join {}
+@mixin layout-password {}
+@mixin layout-setting {}
+@mixin layout-profile {}
+@mixin layout-product {}
+@mixin layout-search {}
+
 @mixin container-page {
-  // width: 100%;
   margin: 0 auto;
-  padding: 2rem var(--grid-margin) 8rem; // mobile padding 패딩은 page-head에서 주는 게 좋음. -margin 주는 게 좋을 듯.
+  padding: 2rem var(--grid-margin) 8rem;
+  // mobile padding 패딩은 page-head에서 주는 게 좋음. -margin 주는 게 좋을 듯.
   position: relative;
 }
-@mixin container-huge {
-  max-width: 1320px;
-  @include container-page;
-}
+
 @mixin container-large {
   max-width: var(--width-large);
   @include container-page;
@@ -119,17 +129,21 @@
   flex-wrap: wrap;
   margin: var(--space-groupitem-minus);
   > * {
-    display: block;
+    // display: block;
     margin:var(--space-groupitem);
   }
 }
 // group-pull 등은 ㅔㄹ이아웃..
 // @mixin group-pull {display:flex;justify-content:space-between;align-items:center;}
 @mixin group-bleeding {
-  // display:block;
-  white-space:nowrap;font-size:0;overflow:auto;
-  // display:inline-flex; // ! todo
-  > * {display:inline-block;margin:0 calc(var(--space-groupitem) * 2) 0 0;font-size:var(--font-size-body);}
+  display:flex;
+  white-space:nowrap;
+  overflow:auto;
+  // display:inline-flex; // todo
+  > * {
+    // display:inline-block; for lable padding
+    margin:0 calc(var(--space-groupitem) * 2) 0 0;font-size:var(--font-size-body);
+  }
   &::-webkit-scrollbar {display:none;}
 }
 @mixin chip-group {

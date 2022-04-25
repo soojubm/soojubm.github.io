@@ -1,4 +1,4 @@
-.profile {@include container-huge;}
+.profile {max-width:1320px;margin:2rem auto;}
 .profile::after {content:'';display:block;clear:both;}
 
 .profile-user {float:left;width:320px;position:relative;z-index:var(--zindex-default);}

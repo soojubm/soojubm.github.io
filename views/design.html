@@ -21,17 +21,6 @@
     <div class="ripples__dot"></div>
   </div>
 
-  <div style="display:flex;padding:1rem;">
-    <a href="" class="search-similar-item">
-      <figure>🦔</figure>
-      <span>dyed madras</span>
-    </a>
-    <a href="" class="search-similar-item">
-      <figure>🐈‍⬛</figure>
-      <span>간격/텍스트기준선</span>
-    </a>
-  </div>
-
   <style>
     .ripples {
       --uib-size: 45px;
@@ -126,22 +115,56 @@
   <header class="design-head hero">
     <h1 class="hero-title" style="margin-top:-1.25rem;font-size:2.5rem;line-height:1.2;">
       <span>Making</span><br />
-      things better.
+      things better✍
     </h1>
-    <p>디자인 시스템을 코드 베이스에서 실험하며<br />베스트 프랙티스를 찾습니다.</p>
+    <p class="hero-description">디자인 시스템을 코드 베이스에서 실험하며<br />베스트 프랙티스를 찾습니다.</p>
     <ul class="article-checklist" data-align="horizontal">
       <li>documentation for everyone</li>
       <li>every element has its name</li>
       <li>feature1</li>
       <!-- <li>increases our overall consistency and design and development efficiency</li> -->
     </ul>
+    <span style="display:block;margin:var(--space-small) 0 0 0;">Feature project collaborators to build your community.</span>
 
+    <!-- https://www.w3.org/WAI/standards-guidelines/wcag/ -->
+    <span>functional vs decorative</span>
+    <span>문자열의 형식으로 날짜를 표현할 수 있다면 장식을 위한 아이콘은 불필요</span>
+    <span>아이콘과 일러스트레이션을 구분</span>
+    <span>1px의 선은 특정 화면에서 잘 보이지 않을 수 있음. 마찬가지로 적당한 속공간 배분.. (1x에서 주로 발생)</span>
+    <span>on/off. on 상태를 위해 filled 아이콘을 사용하는 것은 리소스 낭비라는 생각. 배경색이나 indicator를..</span>
+    <span>switch에서도 on/off 상태를 나타내는 아이콘을 추가하는 게 접근성에 좋을 수 잇다.</span>
+    <span>pressed / processing state</span>
+    <span>포괄적이고 윤리적인 아이콘.. 성중립/다중성별</span>
+    <span>다양한 리액션. 부정적 ㅇ리액션을 유도하지 않도록. (유투브 싫어요 숫자 숨겨진 것 등..)</span>
+
+    <p>https://w3c.github.io/wcag/understanding/target-size-minimum.html / 24px 이상 desktop</p>
+
+    <!-- <p>아이콘을 텍스트 레이블과 함께 사용할 경우 alt 속성으로 레이블이 두 번 읽히지 않도록</p>
+    <a href="/" aria-label="labelll">
+      <svg aria-hidden="true" ...></svg>
+    </a> -->
+
+    <!-- <p>Using the same icon for the same concept and only for this one concept is important as well.</p> -->
+    <!-- <p>적록색맹을 위해 색상만으로 성공/실패 등의 상태를 표현하지 맙시다.</p>
+    <p>Use background shapes, changing shapes or indicators like dots to show active state.</p>
+    <p>Showing state with icons</p>
     <p>
+      Custom states like “downloaded” or “playing” can be indicated by adding icons. Icons can even include an alt text that makes states accessible
+      for screen readers.
+    </p> -->
+
+    <!-- Don’t rely on color alone to convey any meaning or function
+Focus on sufficient contrast when choosing colors
+Use patterns and shapes for infographics
+Avoid vibrant color combinations
+Use alternative visual clues for states, interactive elements and to show hierarchy
+Try to follow UI conventions for colors -->
+    <!-- <p>
       <small>2204. space .75rem 추가 - card / entity / button group... 의 outset에 사용한다. 네이밍 컨벤션. space-xxsmall?</small>
       <small style="display:block;">space-after-item: .75rem / space-after-seperator: var(--space)</small>
       <small style="display:block;">inset 1rem : subhead 크기의 텍스트.</small>
       Specify Words You Like
-    </p>
+    </p> -->
     <!-- <p>디자인 시스템이 비즈니스 로직, 도메인별 스타일 또는 기타 복잡한 UI 요소를 배포하기 위한 것이 아니기 때문에 필요한 정보를 찾지 못할 수 있다.문의-></p> -->
     <!-- <p>모든 플랫폼에서 일관된 브랜드 이미지를 유지하려면 모든 팀(디자인, 마케팅 및 개발)이 스타일 가이드를 잘 알고 있어야 합니다. </p> -->
     <!-- 사용자 그룹tow user groups : 팀team / 제품 사용자product users -->

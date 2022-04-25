@@ -161,9 +161,9 @@
 .carousel-dots-dot:hover {width:30px;border-radius:5px;opacity:.5;}
 .carousel-arrows {}
 .carousel-arrows-prev {@include avatar-medium;box-shadow:var(--shadow);position:absolute;left:calc(0 - 16px);top:50%;z-index:var(--zindex-default);transform:translateY(-50%);}
-.carousel-arrows-prev:hover {@include hover-chip;}
+.carousel-arrows-prev:hover {}
 .carousel-arrows-next {@include avatar-medium;box-shadow:var(--shadow);position:absolute;right:-16px;top:50%;z-index:var(--zindex-default);transform:translateY(-50%);}
-.carousel-arrows-next:hover {@include hover-chip;}
+.carousel-arrows-next:hover {}
 .carousel-arrows button.is-disabled {opacity:.2;}
 
 .quote {max-width:400px;@include tile-elevated;}

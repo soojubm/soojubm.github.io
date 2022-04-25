@@ -220,7 +220,7 @@
   @include button-tertiary;width:var(--column-width);
 }
 
-.search-similar-item {@include tile-elevated-small;display:flex;align-items:center;margin:.25rem;padding:.25rem;}
+.search-similar-item {@include tile-elevated-small;display:flex;align-items:center;margin:.25rem;padding:.25rem .5rem .25rem;}
 // .search-similar-item:hover {@include hover-item;}
 .search-similar-item figure {@include avatar-medium;margin:0 var(--space-after-avatar-medium) 0 0;}
 .search-similar-item span {display:block;padding:0 0 var(--adjust-label-line) 0;color:var(--color-text);}
@@ -348,7 +348,7 @@
 .design {display:flex;flex-wrap:wrap;}
 .design header {width:100%;padding:4rem var(--grid-margin);background:var(--color-background);position:relative;}
 .design header h1 {@include text-title;font-family:'Changa One';font-size:var(--font-size-huge);font-weight:normal;position:relative;} // todo
-.design header p {margin:1.75rem 0 2.25rem 0;font-size:var(--font-size-subhead);letter-spacing:-.0125rem;position:relative;}
+.design header p {margin:1.75rem 0;font-size:var(--font-size-subhead);letter-spacing:-.0125rem;position:relative;}
 
 .design-navigation {display:flex;flex-wrap:wrap;width:100%;max-width:1000px;margin:-1rem var(--space-small-minus) 0;padding:0 var(--grid-margin) 4em;position:relative;z-index:var(--zindex-default);}
 .design-navigation a {display:block;width:33%;max-width:240px;@include tile-elevated;margin:.365rem;padding:.75rem;color:inherit;}

@@ -4,9 +4,25 @@
     <fieldset class="textfield" style="max-width:560px;margin:2rem auto;">
       <button class="textfield-prefix" style="top:11px;"><i class="icon-search"></i></button>
       <label class="textfield-label" for="search" hidden style="display:none;">검색</label>
-      <input class="textfield-input js-input-test" type="search" id="search" placeholder="궁금한 인물이나 이슈가 있나요? (샘플 유아이)" />
+      <input class="textfield-input js-input-test" type="search" id="search" placeholder="cta 버튼이 없으니 검색 판독이 떨어지는 듯." />
       <button class="textfield-clear" hidden="" type="button"><i class="icon-x" style="border-color:var(--color-text-light);"></i></button>
     </fieldset>
+
+    <div style="display:flex;justify-content:center;margin:-.25rem;margin-top:-1rem;margin-bottom:1.5rem;">
+      <a href="" class="search-similar-item">
+        <figure>🦔</figure>
+        <span>dyed madras</span>
+      </a>
+      <a href="" class="search-similar-item">
+        <figure>🐈‍⬛</figure>
+        <span>간격/텍스트기준선</span>
+      </a>
+      <a href="" class="search-similar-item">
+        <figure>🐈‍⬛</figure>
+        <span>chip과구분</span>
+      </a>
+    </div>
+
     <nav class="search-tablist" role="tablist" aria-label="sample tabs" style="margin:0 0 .75rem 0;">
       <button class="profile-tablist-tab" type="button" role="tab" aria-selected="true" aria-controls="panel-1" id="tab-1" tabindex="0">
         인기
@@ -22,15 +38,15 @@
     </nav>
 
     <!-- todo chip label  -->
-    <!-- <div class="search-filter profile-display" style="margin:var(--space) 0;">
+    <div class="search-filter profile-display" style="margin:var(--space) 0;">
       <p class="profile-display-status" role="status" hidden>Viewing 1,000 Projects</p>
-      <button class="profile-display-button js-display-grid js-test-toggle js-display-button is-selected" style="width:auto;">
+      <button class="profile-display-button js-display-grid js-test-toggle js-display-button is-selected" type="button" style="width:auto;">
         <span class="chip-label">최신순</span>
       </button>
-      <button class="profile-display-button js-display-list js-test-toggle js-display-button" style="width:auto;">
+      <button class="profile-display-button js-display-list js-test-toggle js-display-button" type="button" style="width:auto;">
         <span class="chip-label">클릭율 높은순</span>
       </button>
-    </div> -->
+    </div>
   </form>
 
   <section class="profile-tabpanel" role="tabpanel" aria-hidden="false" data-index="1">
@@ -68,6 +84,10 @@
   <br /><br /><br />
   <br /><br /><br />
 
+  <div class="result tile-flat">
+    <p role="status" style="text-align:center;">수줍이와(과) 일치하는 검색결과가 없습니다.</p>
+  </div>
+
   <div class="tile-elevated">
     <!-- <section class="search-recent">
       <h2 class="search-recent-title">최근 검색</h2>
@@ -79,26 +99,26 @@
       </div>
     </section> -->
     <section class="search-preview">
-      <h2 class="search-recommend-title">자동완성 유아이 테스트</h2>
-      <div class="search-preview-item item">
+      <!-- <h2 class="search-recommend-title">자동완성 유아이 테스트</h2> -->
+      <div class="search-preview-item item" style="margin-top:0;">
         <figure class="search-preview-item-avatar">
           <i></i>
         </figure>
-        <p class="item-label">ff</p>
+        <p class="item-label">자동완성</p>
         <button class="item-delete"><i class="icon-x"></i></button>
       </div>
       <div class="search-preview-item item">
         <figure class="search-preview-item-avatar">
           <i></i>
         </figure>
-        <p>ff</p>
+        <p>자동완성유아이</p>
         <button class="item-delete" style="border:none;background:none;color:var(--color-text-light);">삭제</button>
       </div>
-      <div class="search-preview-item item">
-        <figure class="search-preview-item-avatar" style="background:var(--color-primary);">
-          <i></i>
+      <div class="search-preview-item item button-elevated" style="margin-left: -.5rem;margin-right: -.5rem;">
+        <figure class="search-preview-item-avatar">
+          <i class="icon-search"></i>
         </figure>
-        <p style="color:var(--color-primary);">ff에 대한 동영상 검색</p>
+        <p style="color:var(--color-primary);"><span>자동완성</span>에 대한 동영상 검색</p>
       </div>
     </section>
     <hr />
@@ -114,7 +134,22 @@
 
   <hr />
   <div style="display:flex;flex-wrap:wrap;">
-    <fieldset role="radiogroup" style="width:50%;">
+    <fieldset role="radiogroup" style="width:50%;max-width:300px;">
+      <legend class="" style="color:var(--color-text-light);font-weight:var(--font-weight-normal);">인원</legend>
+      <div class="radio">
+        <input type="radio" id="gogo1" name="gogo" value="" />
+        <label for="gogo1" title="">1~3명</label>
+      </div>
+      <div class="radio">
+        <input type="radio" id="gogo2" name="gogo" value="" checked />
+        <label for="gogo2" title="">3명 이상</label>
+      </div>
+      <footer style="display:flex;width:100%;padding:var(--space-small) 0 0 0;">
+        <button class="chip" style="width:25%;"><span class="chip-label">저장</span></button>
+        <button style="width:25%;">지우기</button>
+      </footer>
+    </fieldset>
+    <fieldset role="radiogroup" style="width:50%;max-width:300px;margin:0 1rem;">
       <legend class="" style="color:var(--color-text-light);font-weight:var(--font-weight-normal);">인원</legend>
       <div class="radio">
         <input type="radio" id="gogo1" name="gogo" value="" />
@@ -125,8 +160,7 @@
         <label for="gogo2" title="">3명 이상</label>
       </div>
     </fieldset>
-    <br />
-    <fieldset role="radiogroup" style="width:50%;">
+    <fieldset role="radiogroup" style="width:50%;max-width:300px;">
       <legend class="" style="color:var(--color-text-light);font-weight:var(--font-weight-normal);">사용자</legend>
       <div class="radio">
         <input type="radio" id="ttt1" name="ttt" value="" />
@@ -137,23 +171,17 @@
         <label for="ttt2" title="">내가 팔로우하는 사람들</label>
       </div>
     </fieldset>
-    <footer style="display:flex;width:100%;padding:var(--space) 0 0 0;">
-      <button>지우기</button>
-      <button class="chip"><span class="chip-label">저장</span></button>
-    </footer>
   </div>
 
   <div class="tile-flat">
-    <h1>#TagName</h1>
+    <h1>#ThisIsTagPage</h1>
     <button class="chip"><span class="chip-label">공유</span></button>
     <p>조회수(틱톡)/이카테고리에글쓰기(미디엄)/카테고리팔로우(개인화)</p>
   </div>
 
   <br />
-  <div class="result tile-flat">
-    <p role="status" style="text-align:center;">수줍이와(과) 일치하는 검색결과가 없습니다.</p>
-  </div>
-  <ul class="article-checklist" style="margin:0 var(--grid-margin);">
+
+  <ul class="article-checklist">
     <li><i class="icon-check"></i>해시태그/카테고리 등 제공된 키워드 통한 검색.</li>
     <li><i class="icon-check"></i>직접 검색어 입력.</li>
     <li><i class="icon-check"></i>검색어 자동완성.</li>
