@@ -220,7 +220,7 @@
   @include button-tertiary;width:var(--column-width);
 }
 
-.search-similar-item {@include tile-elevated-small;display:flex;align-items:center;margin:.25rem;padding:.25rem .5rem .25rem;}
+.search-similar-item {@include tile-elevated-small;display:flex;align-items:center;margin:.25rem;padding:.25rem .5rem .25rem .25rem;}
 // .search-similar-item:hover {@include hover-item;}
 .search-similar-item figure {@include avatar-medium;margin:0 var(--space-after-avatar-medium) 0 0;}
 .search-similar-item span {display:block;padding:0 0 var(--adjust-label-line) 0;color:var(--color-text);}

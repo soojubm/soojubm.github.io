@@ -58,10 +58,10 @@
 .profile-foot-follow {@include button-primary;width:50%;margin:0 auto;display:block;}
 .profile-body {padding:0 0 64px 398px;box-sizing:border-box;position:relative;}
 
-// todo padding
-[role=tablist] {@include tile-elevated-small;display:flex;padding:.125rem !important;}
+// todo padding margin .... border?? -.25rem 하면 안 맞다
+[role=tablist] {@include tile-elevated-small;display:flex;padding:.25rem !important;}
 .profile-tablist {}
-.profile-tablist-tab {display:flex;align-items:center;justify-content:center;height:var(--size-medium);padding:0 var(--space);color:var(--color-text-light);position:relative;z-index:var(--zindex-default);}
+.profile-tablist-tab {display:flex;align-items:center;justify-content:center;flex:auto;height:var(--size-medium);padding:0 var(--space);color:var(--color-text-light);position:relative;z-index:var(--zindex-default);}
 // .profile-tablist-tab:hover {box-shadow:var(--shadow);} flex:auto;
 .profile-tablist-tab[aria-selected=true] {color:var(--color-text-weak);}
 .profile-tablist-tab-label {padding:0 0 var(--adjust-label-line) 0;}
@@ -75,7 +75,7 @@
 .profile-tabpanel .card {width:calc(33.3333% - .75rem);margin:0 .375rem .75rem;padding:.75rem;}
 
 
-.profile-display {display:flex;margin:var(--space-small) 0 .75rem 0;}
+.profile-display {display:flex;margin:.75rem 0 var(--space);}
 .profile-display-title {margin:0 0 0.25rem 0;font-size:var(--font-size-caption);}
 .profile-display-button {@include avatar-medium;background:none;color:var(--color-text);}
 // .profile-display-button:hover {@include hover-item;}

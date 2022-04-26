@@ -1,44 +1,29 @@
 <main class="search js-tab" role="search" aria-label="site" style="max-width:1000px;margin:0 auto;padding:0 var(--grid-margin) 0;">
   <form class="search-form">
     <legend class="filter-fieldset-legend" hidden aria-hidden="true">검색</legend>
-    <fieldset class="textfield" style="max-width:560px;margin:2rem auto;">
+    <fieldset class="textfield" style="max-width:560px;margin:2rem auto 1rem;">
       <button class="textfield-prefix" style="top:11px;"><i class="icon-search"></i></button>
       <label class="textfield-label" for="search" hidden style="display:none;">검색</label>
       <input class="textfield-input js-input-test" type="search" id="search" placeholder="cta 버튼이 없으니 검색 판독이 떨어지는 듯." />
       <button class="textfield-clear" hidden="" type="button"><i class="icon-x" style="border-color:var(--color-text-light);"></i></button>
     </fieldset>
 
-    <div style="display:flex;justify-content:center;margin:-.25rem;margin-top:-1rem;margin-bottom:1.5rem;">
-      <a href="" class="search-similar-item">
-        <figure>🦔</figure>
-        <span>dyed madras</span>
-      </a>
-      <a href="" class="search-similar-item">
-        <figure>🐈‍⬛</figure>
-        <span>간격/텍스트기준선</span>
-      </a>
-      <a href="" class="search-similar-item">
-        <figure>🐈‍⬛</figure>
-        <span>chip과구분</span>
-      </a>
-    </div>
-
-    <nav class="search-tablist" role="tablist" aria-label="sample tabs" style="margin:0 0 .75rem 0;">
+    <nav class="search-tablist" role="tablist" aria-label="sample tabs" style="margin-left:-.25rem;margin-right:-.25rem;">
       <button class="profile-tablist-tab" type="button" role="tab" aria-selected="true" aria-controls="panel-1" id="tab-1" tabindex="0">
-        인기
+        <span class="profile-tablist-tab-label">인기</span>
         <!-- <em class="badge" data-variant="secondary" style="margin-left:var(--space-small);">24</em> -->
       </button>
       <button class="profile-tablist-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-2" id="tab-2" tabindex="-1">
-        사용자
+        <span class="profile-tablist-tab-label">사용자</span>
       </button>
       <button class="profile-tablist-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-3" id="tab-3" tabindex="-1">
-        사진
+        <span class="profile-tablist-tab-label">사진</span>
       </button>
       <i class="profile-tablist-indicator"></i>
     </nav>
 
     <!-- todo chip label  -->
-    <div class="search-filter profile-display" style="margin:var(--space) 0;">
+    <div class="search-filter profile-display" style="margin:.75rem 0 var(--space) 0;">
       <p class="profile-display-status" role="status" hidden>Viewing 1,000 Projects</p>
       <button class="profile-display-button js-display-grid js-test-toggle js-display-button is-selected" type="button" style="width:auto;">
         <span class="chip-label">최신순</span>
@@ -85,7 +70,22 @@
   <br /><br /><br />
 
   <div class="result tile-flat">
-    <p role="status" style="text-align:center;">수줍이와(과) 일치하는 검색결과가 없습니다.</p>
+    <p role="status" style="text-align:center;">수줍이와(과)<br />일치하는 검색결과가 없습니다.</p>
+
+    <div style="display:flex;justify-content:center;margin:-.25rem;margin-top:-1rem;margin-bottom:1.5rem;">
+      <a href="" class="search-similar-item">
+        <figure>🦔</figure>
+        <span>dyed madras</span>
+      </a>
+      <a href="" class="search-similar-item">
+        <figure>🐈‍⬛</figure>
+        <span>간격/텍스트기준선</span>
+      </a>
+      <a href="" class="search-similar-item">
+        <figure>🐈‍⬛</figure>
+        <span>chip과구분</span>
+      </a>
+    </div>
   </div>
 
   <div class="tile-elevated">

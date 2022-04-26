@@ -18,7 +18,7 @@
 }
 
 .textfield {position:relative;}
-.textfield-label {display:block;margin:0 0 .125rem 0;}
+.textfield-label {display:block;}
 .textfield-label small {margin:0 0 0 .25rem;color:var(--color-text-light);}
 // todo padding top bottom은 textarea를 위해서
 .textfield-input {display:block;width:100%;min-height:var(--size-large);padding:9px var(--space) 10px;padding-right:40px;@include reset-textinput;}
