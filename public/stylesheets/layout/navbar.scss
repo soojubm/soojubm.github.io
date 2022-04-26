@@ -98,7 +98,7 @@
 .user-avatar-change {width:32px;height:32px;border-radius:var(--radius);position:absolute;right:-8px;bottom:-8px;}
 .user-name {margin:var(--space-leading-subhead) 0 0 0;@include text-subhead;text-align:center;}
 .user-id {margin:-.125rem 0 0 0;text-align:center;}
-.user-job {margin:var(--space-xsmall) 0 0 0;text-align:center;}
+.user-job {margin:var(--space-xsmall) 0 0 0;text-align:center;color:var(--color-text-light);}
 .user-email {}
 // todo this is item
 .user-logout {display:flex;align-items:center;width:100%;margin:var(--space-after-item) 0;position:relative;}
@@ -128,7 +128,8 @@
 .is-sticky-navbar .navbar {background:var(--color-background);position:fixed;top:0;left:0;right:0;}
 
 .navbar-menu {display:block;max-width:var(--menu-width);margin-left:0;background:var(--color-background);border-right:var(--border);position:fixed;left:0px;right:0;top:67px;bottom:0px;transition:transform var(--duration-slowly) cubic-bezier(.165,.84,.44,1);transform:translateX(-100%);}
-.navbar-menu-item {display:block;padding:var(--space-small) var(--grid-margin);font-size:var(--font-size-subhead);}
+// todo padding
+.navbar-menu-item {display:block;padding:var(--space-small) 2rem var(--space-small) var(--grid-margin);font-size:var(--font-size-subhead);}
 .navbar-menu-item menu {flex-wrap:wrap;padding:var(--space-small) 0;background:var(--color-background);position:static;left:auto;right:auto;top:auto;transition:none;}
 // .navbar-menu-item:hover menu {display:block;}
 .navbar-menu-item menu a {display:block;width:100%;font-size:var(--font-size-subhead);font-weight:var(--font-weight-bold);opacity:1;}

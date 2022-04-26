@@ -231,7 +231,7 @@
         <!-- <p class="user-description" style="margin:var(--space-small) 0 0 0;">TBreaking news alerts and updates from the BBC. For news, features, analysis follow </p> -->
 
         <footer class="user-foot" style="margin:var(--space) 0;">
-          <button class="profile-foot-follow"><span class="item-action-label">팔로우 버튼이 이렇게 크지 않아도 됨</span></button>
+          <button class="profile-foot-follow"><span class="item-action-label">팔로우</span></button>
         </footer>
         <!-- <footer class="user-foot" style="display:flex;margin:1rem 0;">
           <span class="tag">대한민국</span>
@@ -247,6 +247,7 @@
             <span class="statistic-value">8</span>
           </div>
         </div>
+        <aside class="tile-flat-small">이 패턴에서 팔로우 팔로워 수치는 인라인으로 톤다운됨. 팔로우 버튼 위로 이동. 하지만 statistic 컴포넌트를 하나 더 만들어주어야 함.</aside>
         <article class="avatarlist" style="margin:var(--space-after-item) 0 0 0;">
           <span>Followed by</span>
           <figure class="article-avatar-small" style="margin-left:.5rem;box-shadow: var(--color-background) 0px 0px 0px 2px;">
@@ -621,6 +622,7 @@
         </div>
       </div>
 
+
       <!-- <p>- addable/removable, todo: chip-icon의 hover... 결국 chip과 분리된 컴포넌트가 필요함. 역할이 다르기 때문에 괜찮음.</p> -->
       <!-- Markup(button vs radio,checkbox) -->
       <p class="article-subhead">Others</p>
@@ -637,8 +639,15 @@
             <span class="chip-label">소설</span>
             <figure class="chip-icon"><i class="icon-x"></i></figure>
           </button>
+          <button class="chip is-active">
+            <figure class="chip-thumbnail" style="background:none;"><i class="icon-check"></i></figure>
+            <span class="chip-label" style="margin-left:0;">소설</span>
+          </button>
         </div>
       </div>
+      <aside class="article-helper">
+        <p>todo active state (selected)색상만으로 표현하지 않기</p>
+      </aside>
 
       <h4 class="article-subhead">references</h4>
       <div class="">
@@ -1225,7 +1234,7 @@
         <i class="profile-tablist-indicator"></i>
       </nav>
       <div class="profile-tabpanel" id="panel-1" role="tabpanel" tabindex="0" aria-labelledby="tab-1" style="margin:0;">
-        <p>Content for the first panel. 결국 tile inset에 .25rem을 쓰고 말았다.</p>
+        <p>Content for the first panel. 결국 tile inset에 .25rem을 쓰고 말았다. 2022.04 padding 줄여서 segmented controls와 조금 더 비슷하게 바꿔봄.</p>
       </div>
       <div class="profile-tabpanel" id="panel-2" role="tabpanel" tabindex="0" aria-labelledby="tab-2" aria-hidden="true" style="margin:0;">
         <p>Content for the second panel</p>
