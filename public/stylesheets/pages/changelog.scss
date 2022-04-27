@@ -1,28 +1,33 @@
-.changelog {@include container-medium;padding:0 var(--grid-margin) 8rem;}
-
+.changelog {@include container-small;padding:0 var(--grid-margin) 8rem;}
 .changelog-head {
-  font-family:'DunkelSans';font-size:2rem;padding:4rem 0 2rem;
+  padding:3rem 0 2rem;
 }
 
 .changelog-filter {@include chip-group;}
 .changelog-filter-chip {@include chip;}
 .changelog-filter-chip-label {@include chip-label;}
 
-.changelog-item {@include tile-elevated;margin:var(--space) 0 0 0;border-bottom:var(--border);}
-.changelog-item:hover {@include hover-item;}
+.changelog-item {margin:2rem 0 0 0;position:relative;}
 // .changelog-item time {@include tile-flat;position:absolute;left:-8rem;top:-2px;}
 .changelog-item-icon {margin-left:auto;@include avatar-small;transform:rotate(90deg);}
-.changelog-item-head {display:flex;align-items:center;}
-.changelog-item-target {@include tag;width:88px;margin:0 var(--space) 0 0;text-align:center;}
-.changelog-item-tag {@include avatar-small;margin:0 var(--space-small) 0 0;font-size:var(--font-size-caption);}
+.changelog-item-head {@include tag-group;}
+.changelog-item-target {@include tag;text-align:center;}
+.changelog-item-tag {@include avatar-small;font-size:var(--font-size-caption);}
 .changelog-item-tag.is-negative {background-color:var(--red100);}
 .changelog-item-tag.is-positive {background-color:var(--green100);}
 
+.changelog-category {@include avatar-large;margin-bottom:.5rem;font-size:1.5rem;}
+
 .changelog-item-time {}
 .changelog-item-title {font-size:var(--font-size-body);font-weight:var(--font-weight-normal);}
-.changelog-item-content {margin:var(--space) 0 0 0;}
+.changelog-item-content {margin:var(--space-small) 0 0 0;}
+.changelog-item-content b {margin:0 var(--space-small) 0 0;font-weight:var(--font-weight-normal);color:var(--color-text-light);}
+.changelog-item-content p {display:inline-block;line-height: var(--font-line-height-small);}
+.changelog-item-content time {display:block;margin:var(--space-small) 0 0 0;color:var(--color-text-light);}
 // .changelog-item-target {display:block;margin:var(--space-after-subhead) 0 0 0;font-weight:var(--font-weight-normal);color:var(--color-text-light);}
-.changelog-item div {display:none;}
+.changelog-item div {}
 
-.changelog-item.is-active div {display:block;}
-.changelog-item.is-active .changelog-item-icon {transform:rotate(-90deg);}
+.is-component .changelog-item figure i {display:block;margin:-7px 0 0 0;}
+
+// .changelog-item.is-active div {display:block;}
+// .changelog-item.is-active .changelog-item-icon {transform:rotate(-90deg);}

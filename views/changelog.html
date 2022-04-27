@@ -1,6 +1,11 @@
 <section class="changelog">
-  <header class="changelog-head">
-    <p>Changelog</p>
+  <header class="changelog-head hero-head">
+    <h1 class="hero-title" style="margin-bottom:1rem;">Changelog</h1>
+
+    <ul class="article-checklist" data-align="horizontal">
+      <li>historical</li>
+      <li>for onboarding</li>
+    </ul>
   </header>
   <!-- <nav class="changelog-filter">
     <button class="changelog-filter-chip is-active"><span class="changelog-filter-chip-label">모두</span></button>
@@ -42,16 +47,15 @@
     </div>
   </article> -->
   <article class="changelog-item js-accordion">
+    <figure class="changelog-category"><i style="display:block;margin-top:-7px;">🐽</i></figure>
     <header class="changelog-item-head">
       <em class="changelog-item-tag">🔨</em>
-      <span class="changelog-item-target">Variables</span>
-      <h3 class="changelog-item-title">space 변경</h3>
-      <figure class="changelog-item-icon"><i class="icon-chevron"></i></figure>
+      <span class="changelog-item-target">Space</span>
     </header>
     <div class="changelog-item-content">
-      <p>
-        space와 space-small을 각각 tile과 tile-small의 inset과 페어링합니다. 파편화되어 있던 3가지 space를 2가지로 축소합니다.
-      </p>
+      <p>space와 space-small을 각각 tile과 tile-small의 inset과 페어링합니다. 파편화되어 있던 3가지 space를 2가지로 축소합니다.</p>
+      <!-- <p><b>근거</b>space와 space-small을 각각 tile과 tile-small의 inset과 페어링합니다. 파편화되어 있던 3가지 space를 2가지로 축소합니다.</p> -->
+      <time>2022-01-01</time>
     </div>
   </article>
   <!-- <article class="changelog-item js-accordion">
@@ -69,55 +73,58 @@
   </article> -->
   <article class="changelog-item js-accordion">
     <!-- <time>2021. 11. 06</time> -->
+    <figure class="changelog-category">🐷</figure>
     <header class="changelog-item-head">
       <em class="changelog-item-tag is-negative">✂️</em>
       <span class="changelog-item-target">Button</span>
-      <h3 class="changelog-item-title">small 삭제</h3>
-      <figure class="changelog-item-icon"><i class="icon-chevron"></i></figure>
+      <!-- <span class="changelog-item-target">Size</span> -->
     </header>
     <div class="changelog-item-content">
+      <h3 class="changelog-item-title">small 삭제</h3>
       <p>
         chip과 button small 형태의 변별력이 없고 용법이 중복.
       </p>
+      <time>2022-01-01</time>
     </div>
   </article>
   <article class="changelog-item js-accordion">
+    <figure class="changelog-category">🐽</figure>
     <header class="changelog-item-head">
       <em class="changelog-item-tag">🔨</em>
       <span class="changelog-item-target">Tile</span>
-
-      <h3 class="changelog-item-title">inset 변경</h3>
-      <figure class="changelog-item-icon"><i class="icon-chevron"></i></figure>
     </header>
     <div class="changelog-item-content">
+      <h3 class="changelog-item-title">inset 변경</h3>
+
       <p>
-        1.5rem의 inset은 모바일에서 공간의 낭비가 생깁니다. 1rem으로 변경합니다. 0.5rem inset을 가지는 small 사이즈 tile을 추가하여 두 가지로
-        확장합니다.
+        1.5rem의 inset은 모바일 환경에서 과잉. 1rem으로 변경합니다. 0.5rem inset을 가지는 small 사이즈 tile을 추가하여 두 가지로 확장합니다.
       </p>
+      <time>2022-01-01</time>
     </div>
   </article>
   <article class="changelog-item js-accordion">
+    <figure class="changelog-category">🐽</figure>
     <header class="changelog-item-head">
       <em class="changelog-item-tag is-positive">🧶</em>
       <span class="changelog-item-target">Size</span>
-
-      <h3 class="changelog-item-title">small 추가</h3>
-      <figure class="changelog-item-icon"><i class="icon-chevron"></i></figure>
     </header>
-    <div>
-      <p class="changelog-item-content">2021-05. 1.5rem / 24x24. 텍스트 필드 내부에서 힌트 아이콘.</p>
+    <div class="changelog-item-content">
+      <h3 class="changelog-item-title">small 추가</h3>
+
+      <p>2021-05. 1.5rem / 24x24. 텍스트 필드 내부에서 힌트 아이콘.</p>
+      <time>2022-01-01</time>
     </div>
   </article>
   <article class="changelog-item js-accordion">
+    <figure class="changelog-category">🐽</figure>
     <header class="changelog-item-head">
       <em class="changelog-item-tag">🔨</em>
       <span class="changelog-item-target">Breadcrumb</span>
-
-      <h3 class="changelog-item-title">label 변경</h3>
-      <figure class="changelog-item-icon"><i class="icon-chevron"></i></figure>
     </header>
     <div class="changelog-item-content">
+      <h3 class="changelog-item-title">label 변경</h3>
       <p>홈 아이콘을 텍스트로 변경합니다. 페이지에서 상대적으로 중요도가 낮은 정보이기 때문에 주목도를 낮춥니다.</p>
+      <time>2022-01-01</time>
     </div>
   </article>
   <!-- <article class="changelog-item js-accordion">
@@ -125,24 +132,23 @@
       <em class="changelog-item-tag">🧶</em>
       <span class="changelog-item-target">Typography</span>
       <h3 class="changelog-item-title">bold weight(800) 추가</h3>
-      <figure class="changelog-item-icon"><i class="icon-chevron"></i></figure>
     </header>
     <div>
       <p class="changelog-item-content">제목용 텍스트에 대한 일반적인(?) 사용자의 인식. 조금 더 간결한 위계 설정.</p>
     </div>
   </article> -->
   <article class="changelog-item js-accordion">
+    <figure class="changelog-category">🐽</figure>
     <header class="changelog-item-head">
       <em class="changelog-item-tag is-negative">✂️</em>
       <span class="changelog-item-target">Color</span>
-
-      <h3 class="changelog-item-title">gray600 삭제</h3>
-      <figure class="changelog-item-icon"><i class="icon-chevron"></i></figure>
     </header>
-    <div>
-      <p class="changelog-item-content">
+    <div class="changelog-item-content">
+      <h3 class="changelog-item-title">gray600 삭제</h3>
+      <p>
         본문용으로 사용했으나 야외나 밝은 조명 아래서 가시성이 떨어질 수 있습니다.
       </p>
+      <time>2022-01-01</time>
     </div>
   </article>
 </section>
