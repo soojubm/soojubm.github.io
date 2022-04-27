@@ -44,7 +44,7 @@
     <!-- <h1 class="hero-title" style="line-height:1.3;margin-top:.25rem;"><span style="color:var(--color-text-light);">We 🐷</span><br />built this city.</h1> -->
     <h1 class="hero-title">Components</h1>
     <p class="hero-description">디스크립션..</p>
-    <div>rules #클릭할수없음 #클릭할수있음 #groupable</div>
+    <!-- <div>rules #클릭할수없음 #클릭할수있음 #groupable</div> -->
     <!-- <p>
       tokens: size/color/space/font/border/shadow/radius<br />
       components(style): avatar/chip/tile/text?/textfield<br />
@@ -404,7 +404,11 @@
         <!-- <li><i class="icon-check"></i> 키보드 접근성을 위해 버튼 그룹에서 항상 primary 버튼을 먼저 마크업하세요.</li> -->
         <!-- <li> Dialog 에서 T F</li> -->
       </ul>
-      <p class="article-exception" style="margin:var(--space) 0 0 0;"><span class="tag" style="margin:0 var(--space-small) 0 0;">예외케이스</span> follow/unfollow 버튼은 별도의 버튼 컴포넌트로 정의. 액션의 위계가 달라지는 케이스.</p>
+      <p class="article-exception" style="margin:var(--space) 0 0 0;">
+        <span class="tag" style="margin:0 0 var(--space-small) 0;">예외케이스</span>
+        <br />
+        follow/unfollow 버튼은 별도의 버튼 컴포넌트로 정의. 액션의 위계가 달라지는 케이스.
+      </p>
       
       <h4 class="article-subhead">Editorial</h4>
       <ul class="article-checklist" data-align="horizontal">
@@ -476,6 +480,7 @@
           <button class="article-tertiary is-hover">Hover</button>
           <button class="article-tertiary is-focus">Focus</button>
           <button class="article-tertiary" disabled>Disabled</button>
+          <button class="article-tertiary" disabled>TODO: Progressing</button>
           <button class="danger-button" aria-label="danger">Danger</button>
         </div>
       </div>
@@ -495,15 +500,19 @@
     
     <!-- todo 단순 액션(팔로우 등) -->
     <article class="article js-observer js-scrollspy-section">
-      <span class="hashtag" title="action">action</span>
-      <span class="hashtag" title="choice">selection</span>
-      <span class="hashtag" title="filtering">filtering</span>
-      <span class="hashtag" title="filtering">search</span>
       <h1 class="article-title">Chips</h1>
       <p class="article-description">사용자 여정을 보조하는 액션입니다.</p>
       <!-- <p> 실행 페이지에서 즉각적인 결과를 피드백해야 합니다.</p> -->
 
-      <aside class="article-aka">
+
+      <aside class="article-aka" style="margin:var(--space) 0 0 0;">
+        <span class="tag">roles</span>
+        <span class="hashtag" title="action">action</span>
+        <span class="hashtag" title="choice">selection</span>
+        <span class="hashtag" title="filtering">filtering</span>
+        <span class="hashtag" title="filtering">search</span>
+      </aside>
+      <aside class="article-aka" style="margin:0;">
         <span class="tag">a.k.a.</span>
         <span class="hashtag" title="">Tag</span>
         <span class="hashtag" title="">Pill</span>
@@ -664,11 +673,14 @@
           </div>
         </div>
       </div>
+      <aside class="article-helper">
+        <p>todo: overflow menu 분리하기. 드롭다운/셀렉트박스/바텀시트.</p>
+      </aside>
 
 
       <!-- <p>- addable/removable, todo: chip-icon의 hover... 결국 chip과 분리된 컴포넌트가 필요함. 역할이 다르기 때문에 괜찮음.</p> -->
       <!-- Markup(button vs radio,checkbox) -->
-      <p class="article-subhead">Others</p>
+      <p class="article-subhead">Deletable / Selectable(with check) / Clickable (all)</p>
       <div class="article-anatomy">
         <div class="chip-group" role="group">
           <button class="chip">
@@ -688,9 +700,6 @@
           </button>
         </div>
       </div>
-      <aside class="article-helper">
-        <p>todo active state (selected)색상만으로 표현하지 않기</p>
-      </aside>
 
       <h4 class="article-subhead">references</h4>
       <div class="">
@@ -731,7 +740,7 @@
         <span class="article-anatomy-item is-nested">label</span>
       </div>
 
-      <h4 class="article-subhead">appearance</h4>
+      <br />
       <div class="tile-elevated">
         <div class="tag-group">
           <span class="tag" data-appearance="primary" style="margin:0 .5rem 0 0;">Primary</span>
@@ -798,7 +807,7 @@
       <h4 class="article-subhead">Guidelines</h4>
       <ul class="article-checklist">
         <!-- <li><i class="icon-check"></i> 왼쪽 오른쪽에 필터나 탭으로 쓰지 않습니다.</li> -->
-        <li><i class="icon-check"></i> 상태(on/off)를 위한 레이블을 제공하지 않습니다.</li>
+        <li><i class="icon-check"></i> 2개의 레이블과 함께 콘텐츠 스위칭으로 사용하지 않습니다.</li>
       </ul>
       
       <h4 class="article-subhead">Editorial</h4>
@@ -808,7 +817,8 @@
         <li><i class="icon-check"></i> 최대 8자</li>
       </ul>
 
-      <h4 class="article-subhead">Appearance</h4>
+      <br />
+
       <div class="tile-elevated">
         <span class="switch">
           <input type="checkbox" id="switch1" name="" role="switch" value="on" checked />
@@ -840,7 +850,6 @@
         <li><i class="icon-check"></i> 최대 2단어</li>
       </ul>
       
-      <h4 class="article-subhead">Checkgroup</h4>
       <fieldset role="checkgroup">
         <!-- <legend">checkgroup</legend> -->
         <div class="checkbox">
@@ -1137,7 +1146,7 @@
       </ul> -->
 
       <div class="article-section">
-        <span class="article-anatomy-title">List</span>
+        <h4 class="article-subhead">List</h4>
         <div class=" tile-flat">
           <ul class="article-checklist">
             <!-- <li title="unordered list, level 1"><i class="icon-check"></i> 순서가 없는 리스트
@@ -1145,17 +1154,6 @@
                 <li title="unordered list, level 2">순서가 없는 리스트</li>
               </ul>
             </li> -->
-            <li><i class="icon-check"></i> 순서가 없는 리스트</li>
-            <li><i class="icon-check"></i> 순서가 없는 리스트</li>
-          </ul>
-          <hr />
-          <ul class="article-checklist" data-align="horizontal">
-            <!-- <li title="unordered list, level 1"><i class="icon-check"></i> 순서가 없는 리스트
-              <ul>
-                <li title="unordered list, level 2">순서가 없는 리스트</li>
-              </ul>
-            </li> -->
-            <li><i class="icon-check"></i> 순서가 없는 리스트</li>
             <li><i class="icon-check"></i> 순서가 없는 리스트</li>
             <li><i class="icon-check"></i> 순서가 없는 리스트</li>
           </ul>
@@ -1167,6 +1165,18 @@
             </li>
             <li>순서가 있는 리스트</li>
           </ol> -->
+        </div>
+        <div class="tile-flat">
+          <ul class="article-checklist" data-align="horizontal">
+            <!-- <li title="unordered list, level 1"><i class="icon-check"></i> 순서가 없는 리스트
+              <ul>
+                <li title="unordered list, level 2">순서가 없는 리스트</li>
+              </ul>
+            </li> -->
+            <li><i class="icon-check"></i> 순서가 없는 리스트</li>
+            <li><i class="icon-check"></i> 순서가 없는 리스트</li>
+            <li><i class="icon-check"></i> 순서가 없는 리스트</li>
+          </ul>
         </div>
       </div>
 
@@ -1221,12 +1231,12 @@
       <!-- <p style="font-size:var(--font-size-caption);">아이콘을 레이블없이 단독으로 사용하지 않습니다. todo 참고 링크(아이콘은 클릭할 수 있음을 나타내는 역할)</p> -->
       
       <h6 class="article-subhead">Suggestion</h6>
-      <div class="product-info-price tile-flat" role="suggestion">
+      <div class="product-info-price article-anatomy" role="suggestion">
         <del class="product-info-price-deletion" role="deletion">₩30,000</del>
         <b class="product-info-price-insertion" role="insertion">₩20,000</b>
         <em class="product-info-price-percentage">(30%)</em>
       </div>
-      <aside class="article-helper">
+      <aside class="article-helper" style="margin:var(--space-small) 0 0 0;">
         <p>role=suggestion/deletion/insertion]</p>
       </aside>
 
@@ -1409,7 +1419,7 @@
         <span class="alert-icon">🧡</span>
         <p class="alert-text">좋아요 표시한 동영상에 추가됨</p>
       </aside>
-      <aside class="alert" style="margin:var(--space) 0 0 0;border-color:var(--red800);background:var(--red800);">
+      <aside class="alert" style="border-color:var(--red800);background:var(--red800);">
         <p class="alert-head" style="color:var(--gray0);">인터넷에 연결되어 있지 않습니다.</p>
         <!-- <button class="alert-close" aria-label="close alert"><i class="icon-x"></i></button> -->
       </aside>
@@ -1743,13 +1753,17 @@
         </button>
       </header>
 
+      <hr />
 
-      <header class="titlebar js-titlebar" role="navigation" style="padding:0;margin:var(--space) 0 0 0;">
+      <header class="titlebar js-titlebar" role="navigation" style="padding:0;">
         <div class="titlebar-background"></div>
         <h1 class="titlebar-title js-page-title" title="page title">페이지 타이틀</h1>
         <button class="titlebar-back" onclick="javascript:window.location.href='/';">
           <figure class="titlebar-back-icon"><i class="icon-x"></i></figure>
           <!-- <span class="titlebar-back-label">뒤로</span> -->
+        </button>
+        <button class="titlebar-action" style="color:var(--color-primary);">
+          <span class="titlebar-action-label">저장</span>
         </button>
       </header>
       <!-- <div class="titlebar-backdrop js-header"></div> -->

@@ -30,7 +30,7 @@ pre {}
 del {color:var(--color-text-light);} ins {text-decoration:none;}
 
 html {min-width:320px;height:100%;overflow-x:hidden;font:16px/1.8 var(--fontstack);-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overscroll-behavior:contain;}
-body {background:var(--color-background);color:var(--color-text);font-size:.875rem;letter-spacing:-.0125rem;}
+body {background:var(--color-background);color:var(--color-text);font-size:.875rem;}
 
 // todo fixed blink 현상..;
 p, li {color:var(--color-text);}
