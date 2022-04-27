@@ -16,7 +16,8 @@
 .changelog-item-tag.is-negative {background-color:var(--red100);}
 .changelog-item-tag.is-positive {background-color:var(--green100);}
 
-.changelog-category {@include avatar-large;margin-bottom:.5rem;font-size:1.5rem;}
+.changelog-category {display:flex;align-items:center;margin-bottom:.5rem;font-size:var(--font-size-caption);}
+.changelog-category figcaption {margin:0 0 0 var(--space-small);}
 
 .changelog-item-time {}
 .changelog-item-title {font-size:var(--font-size-body);font-weight:var(--font-weight-normal);}

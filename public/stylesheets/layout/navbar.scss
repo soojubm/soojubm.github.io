@@ -89,7 +89,7 @@
 // todo--
 .navbar-user-trigger-avatar:hover {@include hover-button;}
 
-.navbar-user-card {width:var(--width-tiny);height:0;@include tile-elevated;position:absolute;top:32px;right:0;z-index:var(--zindex-popover);transform:scale(0);}
+.navbar-user-card {max-width:400px;height:0;@include tile-elevated;position:absolute;top:32px;right:0;z-index:var(--zindex-popover);transform:scale(0);}
 .is-active + .navbar-user-card {height:auto;transform:scale(1);}
 
 .user {display:block;color:var(--color-text);position:relative;@include clearfix;text-align:center;}

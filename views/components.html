@@ -226,12 +226,51 @@
       </aside>
 
       <p class="article-subhead">User Cards??</p>
-      <article class="tile-elevated" style="max-width:320px;">
+      <div style="width:100%;max-width:400px;">
+        <section class="greeting">
+          <figure class="greeting-avatar" style="font-size:1.5rem;">🐶</figure>
+          <h1 class="greeting-title">Hello, Stranger<i style="font-style:italic;">!</i></h1>
+          <p class="greeting-description">Tender is the night.</p>
+        </section>
+    
+        <!-- <ul class="article-checklist" style="font-size:var(--font-size-caption);">
+          <li>모든 아이콘에 배경색이 있어서 너무 강조되어 보인다.</li>
+          <li>탭이 지금보다 상위 위계로 보이도록 시각적으로 강조해야 한다.</li>
+          <li>디자인 퀄리티를 높이고 싶은데 지금 색상과 텍스트 크기 등으로 한계가 명확한 듯. 조금 더 일반적인 유아이를</li>
+        </ul> -->
+        <!-- <aside class="tile-flat" style="padding-top:.5rem;padding-bottom:.75rem;">
+          <p>
+            todo. 페이지에서 인삿말과 함께 우측에 아바타나 아이콘을 배치하는 패턴이 꽤 트랜디. 이 패턴에서 아바타는 시각 정보가 아니라 링크로 사용(바텀
+            네비게이션 맨 우측 마이페이지 링크 대신). 이 디자인 시스템에서 한 사람의 유저를 강조(?)할 때 사용하는 유저 유아이(우측에 아바타가 배치된)
+            패턴은 이 유아이 패턴(greeting)와 시각적으로 분리할 필요가 있음.
+          </p>
+        </aside> -->
+    
+        <!-- <article class="card onboarding" role="listitem" style="text-align:center;">
+          <figure class="card-thumbnail" style="object-fit:cover;">
+            <img src="https://source.unsplash.com/random" alt="" style="max-height:fit-content;" />
+          </figure>
+    
+          <h3 class="card-title" style="font-weight: bold;padding:.75rem 0 .25rem 0;">Welcome to...</h3>
+          <p class="card-text" style="width:90%;margin:0 auto;font-size:var(--font-size-body);line-height:var(--font-line-height-small);">
+            버튼 그룹은 2개 이상의 버튼을 가질 수 없도록. 2개 이상이 필요한 것은 버튼이 아닌 툴바.
+          </p>
+          <br />
+          <footer class="onboarding-control">
+            <button class="onboarding-control-next button-primary">Next</button>
+            <button class="onboarding-control-skip button-tertiary">Skip</button>
+          </footer>
+        </article> -->
+      </div>
+
+      <article class="tile-elevated" style="max-width:400px;">
         <figure class="user-avatar"><img src="/public/images/soo.png" alt=""></figure>
         <h2 class="user-name">Gyeongsoo I</h2>
         <div class="user-id">@soojubm</div>
         <div class="user-job">Youtube Subscriber</div>
         <!-- <p class="user-description" style="margin:var(--space-small) 0 0 0;">TBreaking news alerts and updates from the BBC. For news, features, analysis follow </p> -->
+
+
 
         <footer class="user-foot" style="margin:var(--space) 0;">
           <button class="profile-foot-follow"><span class="item-action-label">팔로우</span></button>
@@ -240,18 +279,18 @@
           <span class="tag">대한민국</span>
           <span class="tag">자전거</span>
         </footer> -->
-        <div class="statistic">
-          <div class="statistic-item" onclick="javascript:alert('샘플 유아이에요!')" style="width:var(--grid-column);">
+        <div class="statistic" style="justify-content:center;margin:1.5rem 0 var(--space) 0;">
+          <div class="statistic-item" onclick="javascript:alert('샘플 유아이에요!')" style="display:flex;">
             <i class="statistic-label">팔로워</i>
-            <span class="statistic-value">62</span>
+            <span class="statistic-value" style="margin:0 0 0 var(--space-small);font-size:var(--font-size-body);">62</span>
           </div>
-          <div class="statistic-item" onclick="javascript:alert('샘플 유아이에요!')" style="width:var(--grid-column);">
+          <i class="icon-bullet"></i>
+          <div class="statistic-item" onclick="javascript:alert('샘플 유아이에요!')" style="display:flex;">
             <i class="statistic-label">팔로잉</i>
-            <span class="statistic-value">8</span>
+            <span class="statistic-value" style="margin:0 0 0 var(--space-small);font-size:var(--font-size-body);">8</span>
           </div>
         </div>
-        <aside class="tile-flat-small">이 패턴에서 팔로우 팔로워 수치는 인라인으로 톤다운됨. 팔로우 버튼 위로 이동. 하지만 statistic 컴포넌트를 하나 더 만들어주어야 함.</aside>
-        <article class="avatarlist" style="margin:var(--space-after-item) 0 0 0;">
+        <article class="avatarlist" style="margin:var(--space) 0 0 0;">
           <span>Followed by</span>
           <figure class="article-avatar-small" style="margin-left:.5rem;box-shadow: var(--color-background) 0px 0px 0px 2px;">
             <img src="/public/images/soo.png" alt="">
@@ -265,12 +304,13 @@
           <figure class="article-avatar-small" style="margin-left:-.5rem;box-shadow: var(--color-background) 0px 0px 0px 2px;">
             <img src="/public/images/soo.png" alt="">
           </figure>
+          <span style="margin:0 0 0 var(--space-small);">수줍이 외 4명</span>
         </article>
       </article>
 
       <div
         class="navbar-user-card is-active"
-        style="display:block;transform:scale(1);position:relative;left:auto;right:auto;top:auto;bottom:auto;z-index:0;height:auto;"
+        style="display:block;max-width:400px;width:100%;transform:scale(1);position:relative;left:auto;right:auto;top:auto;bottom:auto;z-index:0;height:auto;"
       >
         <a class="user" href="#settings">
           <figure class="user-avatar">
