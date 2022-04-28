@@ -38,7 +38,6 @@
 .item-description + .item-name {margin-top:-.125rem;}
 .item-action {@include chip;background:var(--green100);color:var(--color-primary);@include position-right-top;right:0;}
 .item-action.is-active {border-color:transparent;background:var(--color-background-weak);color:var(--color-text);}
-.item-action.is-active:hover {border-color:var(--border-color-hover)}
 .item-action-label {@include chip-label;}
 // todo 팔로우 버튼은 특수한 패턴임.
 .entity-follow {}
