@@ -11,6 +11,7 @@
 .setting-item {
   @include tile-elevated;
   display:flex;
+  padding: .75rem .75rem calc(.75rem + 2px) !important;
   // align-items:center;
   margin: var(--space-after-item) 0;
   padding: var(--space);

@@ -183,7 +183,7 @@
           <thead>
             <tr>
               <td style="padding:var(--space-small) 0;">
-                <span class="textfield-check" style="margin-right:var(--space-small);position:relative;right:auto;top:auto;background:var(--green100);"><i class="icon-check" style="border-color:var(--color-primary);"></i></span>
+                <span class="textfield-check" style="margin-right:var(--space-small);position:relative;right:auto;top:auto;background:var(--green100);"><i class="icon-o" style="border-color:var(--color-primary);"></i></span>
               </td>
               <td style="padding:var(--space-small) 0;">
                 <span class="textfield-check" style="position:relative;right:auto;top:auto;background:var(--red100);"><i class="icon-x is-red"></i></span>
@@ -191,7 +191,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
+            <tr style="border:none;">
               <td>
                 <b>Alerte de Retour</b>
                 <br />
@@ -564,6 +564,7 @@
         <li><i class="icon-check"></i> 맥락이 다른 chip을 나열할 수 있습니다. 이 때 단일선택, 다중선택, 삭제여부, 펼침메뉴 등의 기표를 충분히 제공하세요.</li>
         <li><i class="icon-check"></i> 콘텐츠 정렬sorting 기능을 위해 chip group으로 chip을 나열하지 않습니다. dropdown으로 현재 정렬 상태만 요약합니다. (bad case: 2022.04 구글 지도 바뀐 것)</li>
         <li><i class="icon-check"></i> 페이지 링크로 사용하지 않습니다.</li>
+        <li>todo: uncheckable/removable를 구분할 수 잇는 기표 제공. 단일/다중/</li>
       </ul>
 
       <h4 class="article-subhead">anatomy</h4>
@@ -619,7 +620,7 @@
         <p>키워드로 검색합니다.</p>
       </aside>
 
-      <p class="article-subhead">Filtering / Selection</p>
+      <p class="article-subhead">Filtering / 단일선택</p>
       <div class="article-anatomy">
         <div class="chip-group js-chip" role="group" aria-orientation="horizontal">
           <button class="chip is-active">
@@ -636,6 +637,26 @@
           </button>
         </div>
       </div>
+
+      <p class="article-subhead">Multiple Selections 다중선택</p>
+      <div class="article-anatomy">
+        <div class="chip-group js-chip" role="group" aria-orientation="horizontal">
+          <button class="chip is-active">
+            <figure class="chip-thumbnail" style="background:none;"><i class="icon-check"></i></figure>
+            <span class="chip-label" style="margin-left:0;">소설</span>
+          </button>
+          <button class="chip">
+            <span class="chip-label" style="margin-left:0;">소설</span>
+          </button>
+          <button class="chip">
+            <span class="chip-label" style="margin-left:0;">소설</span>
+          </button>
+        </div>
+      </div>
+      <footer style="margin-left:0;">
+        <p style="margin:0 0 var(--space-small) 0;color:var(--color-text-light);">selected <em>10</em> / 50</p>
+        <button class="chip" style="background:var(--red100);"><span class="chip-label" style="color:var(--red800);">Reset</span></button>
+      </footer>
 
       <p class="article-subhead">Dropdown (Overflow menu)</p>
       <div class="article-anatomy">
@@ -730,10 +751,6 @@
           <button class="chip">
             <span class="chip-label">소설</span>
             <figure class="chip-icon"><i class="icon-x"></i></figure>
-          </button>
-          <button class="chip is-active">
-            <figure class="chip-thumbnail" style="background:none;"><i class="icon-check"></i></figure>
-            <span class="chip-label" style="margin-left:0;">소설</span>
           </button>
         </div>
       </div>
@@ -1399,6 +1416,7 @@
       <ul class="article-checklist">
         <li><i class="icon-check"></i> 행동을 유도하는 가이드로 사용하지 않습니다.</li>
         <li><i class="icon-check"></i> 페이지 링크로 사용하지 않습니다.</li>
+        lji 
       </ul>
       <br />
       <aside class="tooltip">
