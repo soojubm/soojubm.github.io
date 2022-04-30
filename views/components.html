@@ -178,7 +178,36 @@
         <span class="article-role-item">썸네일/아이콘버튼/유저아바타</span>
       </div> -->
 
-      <div class="tile-flat" style="margin:var(--space) var(--space-minus);padding-top:.25rem;border:none;background:var(--color-background-weak);">
+      <br />
+      <p style="font-size:var(--font-size-caption);">- Clickable은 Linkable과 Actionable/Submittable로 나누기?</p>
+      <p style="font-size:var(--font-size-caption);">- "Feedback Needed" after action</p>
+      <p style="font-size:var(--font-size-caption);">- removable, selectable(single/multiple), checkable/uncheckable, addable </p>
+      <p style="margin:0 0 var(--space) 0;font-size:var(--font-size-caption);">- Groupable과 Stackable을 구분하는 것이 좋을찌?</p>
+
+      <div class="article-anatomy">
+        <table>
+          <tbody>
+            <tr style="border:none;">
+              <td style="width: 100px;">Clickable
+              </td>
+              <td>
+                <span class="textfield-check" style="margin-right:var(--space-small);position:relative;right:auto;top:auto;background:var(--green100);"><i class="icon-o" style="border-color:var(--color-primary);"></i></span>
+              </td>
+            </tr>
+            <tr style="border:none;">
+              <td>
+                Groupable
+              </td>
+              <td>
+                <span class="textfield-check" style="position:relative;right:auto;top:auto;background:var(--red100);"><i class="icon-x is-red"></i></span>
+
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="article-anatomy" style="margin-top:var(--space);">
         <table>
           <thead>
             <tr>
@@ -223,8 +252,8 @@
         <span class="article-anatomy-item is-nested">badge <small class="is-optional">optional</small> - unread / new / live</span>
       </div>
 
-      <h4 class="article-subhead">sizes</h4>
-      <article class="article-anatomy">
+      <h4 class="article-subhead">Sizes</h4>
+      <article class="article-box">
         <div class="avatar-group" role="group">
           <figure class="article-avatar-huge" title="huge avatar" style="background-image:url('/public/images/springsteen.jpg');border:none;">
             <span class="avatar-badge"></span>
@@ -484,8 +513,8 @@
       <input type="submit" value="submit input">
       <input type="button" value="button input"> -->
 
-      <p class="article-subhead">sizes</p>
-      <div class="article-anatomy">
+      <p class="article-subhead">Sizes</p>
+      <div class="article-box">
         <div class="design-buttongroup">
           <button class="article-tertiary" style="height:64px;font-size:var(--font-size-subhead);vertical-align:bottom;">Large</button>
           <button class="article-tertiary" style="vertical-align:bottom;">Medium</button>
@@ -497,7 +526,7 @@
       </aside>
 
       <p class="article-subhead">appearance</p>
-      <div class="article-anatomy" style="z-index:1;">
+      <div class="article-box" style="z-index:1;">
         <div class="design-buttongroup" style="margin-right:var(--space-minus);padding-right:var(--space);">
           <button class="article-primary">Primary</button>
           <button class="article-secondary">Secondary</button>
@@ -512,7 +541,7 @@
       <p>todo: text 버튼 지양. 특정한 배치</p>
 
       <p class="article-subhead">states</p>
-      <div class="article-anatomy">
+      <div class="article-box">
         <div class="design-buttongroup" style="margin-right:var(--space-minus);padding-right:var(--space);">
           <button class="article-tertiary is-hover">Hover</button>
           <button class="article-tertiary is-focus">Focus</button>
@@ -597,7 +626,7 @@
       </div> -->
 
       <p class="article-subhead">Keywords</p>
-      <div class="article-anatomy">
+      <div class="article-box">
         <div class="keywords-group" role="group">
           <a class="keywords-group-keyword" href="#components">
             <span class="keywords-keyword-label chip-label">국정감사</span>
@@ -621,7 +650,7 @@
       </aside>
 
       <p class="article-subhead">Filtering / 단일선택</p>
-      <div class="article-anatomy">
+      <div class="article-box">
         <div class="chip-group js-chip" role="group" aria-orientation="horizontal">
           <button class="chip is-active">
             <span class="chip-label">전체</span>
@@ -639,7 +668,7 @@
       </div>
 
       <p class="article-subhead">Multiple Selections 다중선택</p>
-      <div class="article-anatomy">
+      <div class="article-box">
         <div class="chip-group js-chip" role="group" aria-orientation="horizontal">
           <button class="chip is-active">
             <figure class="chip-thumbnail" style="background:none;"><i class="icon-check"></i></figure>
@@ -659,7 +688,7 @@
       </footer>
 
       <p class="article-subhead">Dropdown (Overflow menu)</p>
-      <div class="article-anatomy">
+      <div class="article-box">
         <!-- // todo 마이너스 마진 때문에 하나 더  -->
         <div>
           <div class="chip-group">
@@ -739,7 +768,7 @@
       <!-- <p>- addable/removable, todo: chip-icon의 hover... 결국 chip과 분리된 컴포넌트가 필요함. 역할이 다르기 때문에 괜찮음.</p> -->
       <!-- Markup(button vs radio,checkbox) -->
       <p class="article-subhead">Deletable / Selectable(with check) / Clickable (all)</p>
-      <div class="article-anatomy">
+      <div class="article-box">
         <div class="chip-group" role="group">
           <button class="chip">
             <figure class="chip-thumbnail">🦔</figure>
@@ -819,7 +848,7 @@
     <article class="article js-observer js-scrollspy-section">
       <span class="hashtag">container</span>
       <h1 class="article-title" title="or Box">Tiles</h1>
-      <p class="article-description">연관 정보를 묶어 시각적으로 강조하는 컨테이너입니다.</p>
+      <p class="article-description">연관 정보를 묶어 시각적으로 강조하는 컨테이너입니다. todo.. .75rem를 default로? 지금 .5 .75 1 3가지로 확장함..</p>
       <!-- <p>normal size는 모바일에서 공간 낭비처럼 보인다.</p> -->
 
       <aside class="article-aka">
@@ -1285,7 +1314,7 @@
       <!-- <p style="font-size:var(--font-size-caption);">아이콘을 레이블없이 단독으로 사용하지 않습니다. todo 참고 링크(아이콘은 클릭할 수 있음을 나타내는 역할)</p> -->
       
       <h6 class="article-subhead">Suggestion</h6>
-      <div class="product-info-price article-anatomy" role="suggestion">
+      <div class="product-info-price article-box" role="suggestion">
         <del class="product-info-price-deletion" role="deletion">₩30,000</del>
         <b class="product-info-price-insertion" role="insertion">₩20,000</b>
         <em class="product-info-price-percentage">(30%)</em>
@@ -1330,6 +1359,8 @@
         <span class="article-anatomy-item is-nested-nested">quantity <small class="is-optional">optional</small></span>
         <!-- <li>required indicator / optional indicator (모든 textfield는 required. optional만 가이드) / validations / masked</li> -->
       </div>
+
+      <br />
 
       <nav class="profile-tablist" role="tablist" aria-label="sample tabs" style="margin-left:0;margin-right:0;">
         <button class="profile-tablist-tab" role="tab" aria-selected="true" aria-controls="panel-1" id="tab-1" tabindex="0">
@@ -2025,7 +2056,7 @@
       <h1 class="article-title">Dummies</h1>
       <p class="article-description">유아이 샘플.</p>
 
-      <div class="tile-flat" style="margin:var(--space) var(--space-minus);padding-top:.25rem;border:none;background:var(--color-background-weak);">
+      <div class="design-anatomy">
         <table>
           <thead>
             <tr>
