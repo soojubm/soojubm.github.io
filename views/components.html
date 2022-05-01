@@ -43,13 +43,20 @@
     <!-- <span class="hero-eyebrow">Components</span> -->
     <!-- <h1 class="hero-title" style="line-height:1.3;margin-top:.25rem;"><span style="color:var(--color-text-light);">We 🐷</span><br />built this city.</h1> -->
     <h1 class="hero-title">Components</h1>
-    <p class="hero-description">디스크립션..</p>
+    <p class="hero-description">디스크립션.</p>
     <!-- <div>rules #클릭할수없음 #클릭할수있음 #groupable</div> -->
     <!-- <p>
       tokens: size/color/space/font/border/shadow/radius<br />
       components(style): avatar/chip/tile/text?/textfield<br />
       patterns(role): label/button/filter/selectbox/dropdown/text input/
     </p> -->
+
+    <ul class="article-checklist">
+      <li><i class="icon-check"></i>형태로보기 - 버튼/칩...</li>
+      <li><i class="icon-check"></i>역할로보기 - 컨테이너/시각정보/인터렉션(필터/정렬...)...</li>
+      <li>모든 시각정보는 non-clickable. 모든 인터렉션은 clickable.</li>
+    </ul>
+
 
     <!-- <h4 class="article-subhead">Don'ts</h4>
     <ul class="article-checklist">
@@ -179,9 +186,9 @@
       </div> -->
 
       <br />
-      <p style="font-size:var(--font-size-caption);">- Clickable은 Linkable과 Actionable/Submittable로 나누기?</p>
+      <p style="font-size:var(--font-size-caption);">- Clickable은 Link/Action/Submit</p>
       <p style="font-size:var(--font-size-caption);">- "Feedback Needed" after action</p>
-      <p style="font-size:var(--font-size-caption);">- removable, selectable(single/multiple), checkable/uncheckable, addable </p>
+      <p style="font-size:var(--font-size-caption);">- Actions: removable, selectable(single/multiple), checkable/uncheckable, addable</p>
       <p style="margin:0 0 var(--space) 0;font-size:var(--font-size-caption);">- Groupable과 Stackable을 구분하는 것이 좋을찌?</p>
 
       <div class="article-anatomy">
@@ -462,6 +469,21 @@
       <!-- <li><i class="icon-check"></i> 버튼 아래에 가이드 텍스트를 배치하지 않습니다.<span hidden> (secondary 액션의 text 버튼이 아래에 위치하는 패턴 고려).</spanhi></li> -->
       <!-- <li><i class="icon-check"></i> more load 버튼은 full-width로 사용하지 않습니다. 콘텐츠보다 작은 크기로 대비를 줍니다. </li> -->
 
+      <div class="article-anatomy">
+        <table>
+          <tbody>
+            <tr style="border:none;">
+              <td style="width: 100px;">Actionable
+              </td>
+              <td>
+                <span class="textfield-check" style="margin-right:var(--space-small);position:relative;right:auto;top:auto;background:var(--green100);"><i class="icon-o" style="border-color:var(--color-primary);"></i></span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
       <h4 class="article-subhead">Guidelines</h4>
       <ul class="article-checklist">
         <li><i class="icon-check"></i> 액션 실행 후 피드백합니다. 물리적인 인터페이스의 출현(?) 뿐만 아니라 예측 가능한 페이지 이동이나 새로고침, 정보 구조의 변화도 피드백이 될 수 있습니다.</li>
@@ -538,7 +560,9 @@
           <span class="button-elevated-label">아티클 레벨에서 쓰는 elevated style 버튼</span>
         </button>
       </div>
-      <p>todo: text 버튼 지양. 특정한 배치</p>
+      <aside class="article-helper">
+        <p>todo: text 버튼 지양(시각 장애. 버튼 처럼 보이지 않을 수도) 특수한 패턴의 배치를 사용.</p>
+      </aside>
 
       <p class="article-subhead">states</p>
       <div class="article-box">
@@ -587,14 +611,47 @@
       <!-- //smallbutton -->
         <span class="hashtag" title="">Label</span>
       </aside>
-
+      
       <h4 class="article-subhead">Guidelines</h4>
       <ul class="article-checklist">
+        <li><i class="icon-check"></i> 모든 Chip은 Clickable속성입니다.</li>
         <li><i class="icon-check"></i> 맥락이 다른 chip을 나열할 수 있습니다. 이 때 단일선택, 다중선택, 삭제여부, 펼침메뉴 등의 기표를 충분히 제공하세요.</li>
         <li><i class="icon-check"></i> 콘텐츠 정렬sorting 기능을 위해 chip group으로 chip을 나열하지 않습니다. dropdown으로 현재 정렬 상태만 요약합니다. (bad case: 2022.04 구글 지도 바뀐 것)</li>
-        <li><i class="icon-check"></i> 페이지 링크로 사용하지 않습니다.</li>
         <li>todo: uncheckable/removable를 구분할 수 잇는 기표 제공. 단일/다중/</li>
       </ul>
+
+      <h4 class="article-subhead">Test</h4>
+      <div class="article-anatomy" style="margin-top:var(--space);">
+        <table>
+          <thead>
+            <tr>
+              <td style="padding:var(--space-small) 0;">
+                <span class="textfield-check" style="margin-right:var(--space-small);position:relative;right:auto;top:auto;background:var(--green100);"><i class="icon-o" style="border-color:var(--color-primary);"></i></span>
+              </td>
+              <td style="padding:var(--space-small) 0;">
+                <span class="textfield-check" style="position:relative;right:auto;top:auto;background:var(--red100);"><i class="icon-x is-red"></i></span>
+              </td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border:none;">
+              <td>
+                <b>Select
+              </td>
+              <td>
+                Link
+              </td>
+            </tr>
+            <tr>
+              <td style="border:none;">test
+              </td>
+              <td style="border:none;">
+                cette notification expire dans 5 jours
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
       <h4 class="article-subhead">anatomy</h4>
       <div class="article-anatomy is-anatomy">
@@ -649,7 +706,7 @@
         <p>키워드로 검색합니다.</p>
       </aside>
 
-      <p class="article-subhead">Filtering / 단일선택</p>
+      <p class="article-subhead">Single Selection - Contents Filtering</p>
       <div class="article-box">
         <div class="chip-group js-chip" role="group" aria-orientation="horizontal">
           <button class="chip is-active">
@@ -667,7 +724,7 @@
         </div>
       </div>
 
-      <p class="article-subhead">Multiple Selections 다중선택</p>
+      <p class="article-subhead">Multiple Selections</p>
       <div class="article-box">
         <div class="chip-group js-chip" role="group" aria-orientation="horizontal">
           <button class="chip is-active">
@@ -733,7 +790,7 @@
             </div>
             <div class="dropdown">
               <button class="dropdown-trigger js-toggle" aria-expanded="true">
-                <span class="dropdown-trigger-label">최신순</span>
+                <span class="dropdown-trigger-label">정렬</span>
                 <figure class="dropdown-trigger-icon"><i class="icon-caret"></i></figure>
               </button>
               <menu class="dropdown-menu" role="menu">
@@ -761,13 +818,27 @@
         </div>
       </div>
       <aside class="article-helper">
-        <p>todo: overflow menu 분리하기. 드롭다운/셀렉트박스/바텀시트.</p>
+        <p>필터옵션/정렬</p>
+        <p>드롭다운/셀렉트박스/바텀시트/모달</p>
+      </aside>
+
+      <p class="article-subhead">Removable</p>
+      <div class="article-box">
+        <div class="chip-group" role="group">
+          <button class="chip" data-property="removable">
+            <span class="chip-label">소설</span>
+            <figure class="chip-icon"><i class="icon-x"></i></figure>
+          </button>
+        </div>
+      </div>
+      <aside class="article-helper">
+        <p>Checkable의 Uncheckable기표가 될 수 없습니다.</p>
       </aside>
 
 
       <!-- <p>- addable/removable, todo: chip-icon의 hover... 결국 chip과 분리된 컴포넌트가 필요함. 역할이 다르기 때문에 괜찮음.</p> -->
       <!-- Markup(button vs radio,checkbox) -->
-      <p class="article-subhead">Deletable / Selectable(with check) / Clickable (all)</p>
+      <p class="article-subhead">with Icon</p>
       <div class="article-box">
         <div class="chip-group" role="group">
           <button class="chip">
@@ -776,10 +847,6 @@
             <figure class="chip-check">결제완료</figure>
             <small class="chip-count">5</small> -->
             <span class="chip-label">타이포그래피</span>
-          </button>
-          <button class="chip">
-            <span class="chip-label">소설</span>
-            <figure class="chip-icon"><i class="icon-x"></i></figure>
           </button>
         </div>
       </div>
@@ -803,7 +870,7 @@
       <h4 class="article-subhead">Guidelines</h4>
       <ul class="article-checklist">
         <!-- <li><i class="icon-check"></i> secondary 사용 안 함.</li> -->
-        <li><i class="icon-check"></i> non-clickable 링크나 액션을 위한 clickable 요소로 쓰지 않습니다.  <span hidden>triggering interaction</span></li>
+        <li><i class="icon-check"></i> non-clickable: 링크나 액션을 위한 clickable 요소로 쓰지 않습니다.  <span hidden>triggering interaction</span></li>
         <!-- <li><i class="icon-check"></i> 아이콘을 포함하지 않습니다. </li> -->
         <!-- <li><i class="icon-check"></i> 3개 이상의 태그를 포함할 수 없습니다.</li> -->
         <!-- <li><i class="icon-check"></i> 해시태그(#)는 항상 클릭할 수 있어야 합니다.</li> -->
@@ -932,6 +999,8 @@
         <li><i class="icon-check"></i> 동사포함</li>
         <li><i class="icon-check"></i> 최대 2단어</li>
       </ul>
+
+      <br />
       
       <fieldset role="checkgroup">
         <!-- <legend">checkgroup</legend> -->
@@ -1062,7 +1131,7 @@
 
       <h4 class="article-subhead">Editorial</h4>
       <ul class="article-checklist">
-        <li><span><i class="icon-check"></i></span> 필수 입력을 전제합니다. 선택 입력 항목인 경우 '선택'으로 가이드를 작성합니다.</li>
+        <li><span><i class="icon-check"></i></span> 모든 텍스트필드는 필수 입력 항목입니다. 선택 입력 항목인 경우 '선택'으로 가이드를 제공합니다.</li>
         <li><span><i class="icon-check"></i></span> todo: help text / feedback message.</li>
       </ul>
 

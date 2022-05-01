@@ -4,7 +4,8 @@
 .cart-description {}
 .cart-head time {display:block;margin:2rem 0 0;}
 
-.cart-item {@include tile-elevated;margin:var(--space) 0;}
+//todo margin
+.cart-item {@include tile-elevated;margin:var(--space) var(--space-minus);}
 .cart-item:after {content:'';display:block;clear:both;}
 .cart-item-delete {@include chip;position:absolute;left:.5rem;top:.5rem;z-index:var(--zindex-default);}
 .cart-item-thumbnail {float:left;display:block;width:20%;height:160px;background:var(--color-background-weak);border-radius:var(--radius);box-sizing:border-box;position:relative;}

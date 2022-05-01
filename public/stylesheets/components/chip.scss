@@ -28,6 +28,14 @@
   &.is-active figure {
     // border-top-color:var(--color-primary) !important;border-bottom-color:var(--color-primary) !important;
   }
+
+  // todo
+  &[data-property=removable] {
+    &:hover {cursor:default;
+      outline:none;
+}
+    .chip-icon {background:var(--color-background);cursor:pointer;}
+  }
 }
 
 @mixin chip-heading {float:left;margin:0 0 0 .25rem;background:var(--color-background);}

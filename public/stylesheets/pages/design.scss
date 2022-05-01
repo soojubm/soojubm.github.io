@@ -63,7 +63,7 @@
 .article-helper {margin:0 0 var(--space) 0;@include text-label;font-size:var(--font-size-caption);color:var(--color-text);line-height:var(--font-line-height-small);}
 
 
-.article-box {@include tile-flat;margin:.75rem;padding:.75rem;}
+.article-box {@include tile-flat;margin:.75rem 0;padding:.75rem;}
 
 .article-anatomy {margin:0 -1.5rem;padding:.75rem 1.5rem;background:var(--color-background-weak);border-radius:var(--radius);letter-spacing:.25px;}
 .article-anatomy.is-anatomy {font-family:consolas,monospace;font-size:var(--font-size-caption);}
