@@ -139,6 +139,7 @@
   display:flex;
   white-space:nowrap;
   overflow:auto;
+  font-size:0;
   // display:inline-flex; // todo
   > * {
     // display:inline-block; for lable padding

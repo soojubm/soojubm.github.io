@@ -30,10 +30,10 @@
 .cart-summary-shipping {margin:.5rem 0;}
 .cart-summary-label {}
 .cart-summary-value {float:right;}
-.cart-summary-total {margin:var(--space) 0;@include text-subhead;}
+.cart-summary-total {margin:var(--space-small) 0 var(--space);@include text-subhead;}
 .cart-summary-total .cart-summary-label {}
 .cart-summary-total .cart-summary-value {}
-.cart-summary-controls {padding:var(--space) 0;}
+.cart-summary-controls {}
 .cart-summary-checkout {@include button-primary;width:100%;}
 
 

@@ -1,6 +1,6 @@
-.alert {@include tile-flat;display:flex;flex-wrap:wrap;align-items:center;padding:var(--space) 1rem;position:relative;}
+.alert {@include tile-flat;display:flex;flex-wrap:wrap;align-items:center;margin:.75rem 0;padding:.75rem .75rem calc(.75rem + var(--adjust-label-line));position:relative;}
 .alert-icon {@include avatar-small;margin:0 var(--space-small) 0 0;background:none;font-size:var(--font-size-body);}
 .alert-close {@include avatar-medium;position:absolute;right:.5rem;top:.5rem;}
-.alert-head {position:relative;}
-.alert-body {}
 .alert-text {}
+
+.alert[data-temp=danger] {border-color:var(--red800);background:var(--red800);}
