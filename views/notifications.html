@@ -35,6 +35,20 @@
     </ul>
   </header>
 
+  <header class="titlebar js-titlebar" role="navigation" style="padding-left:0;padding-right:0;">
+    <div class="titlebar-background"></div>
+    <h1 class="titlebar-title js-page-title" title="page title">알림</h1>
+    <button class="titlebar-back" onclick="javascript:window.location.href='/';">
+      <figure class="titlebar-back-icon" title="이전 페이지로"><i class="icon-arrow is-left"></i></figure>
+      <!-- <figure class="titlebar-back-icon"><i class="icon-close"></i></figure> -->
+      <!-- <span class="titlebar-back-label">뒤로</span> -->
+    </button>
+    <button class="titlebar-action" style="color:var(--color-primary);">
+      <figure class="titlebar-action-icon" hidden></figure>
+      <span class="titlebar-action-label">편집</span>
+    </button>
+  </header>
+
   <div class="chip-group" style="margin:0 0 var(--space) 0;">
     <button class="chip is-active" style="margin-left:0;">
       <span class="chip-label">모두</span>

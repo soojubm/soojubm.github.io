@@ -1,0 +1,98 @@
+<main class="feeds" style="max-width:520px;margin:2rem auto;padding:0 var(--grid-margin) 0;">
+  <style>
+    .feed-content {margin:.125rem -1rem;}
+    .feed-content-media {height:200px;overflow:hidden;object-fit:cover;border-radius:var(--radius);}
+    .feed-content-paragraph {margin:.75rem 0;line-height:1.6;}
+    .feed-reaction {
+      margin:var(--space) 0 0 0;position:relative;z-index:1;
+    }
+  </style>
+  
+  <article class="feed" style="margin:0 0 3rem 0;">
+    <div class="tile-flat-small" style="display:flex;align-items:center;line-height:16px;">
+      <!-- todo tag with icon? 하지만 태그는 아이콘 못 쓰게 했는데. -->
+      <div class="quote-avatar" style="margin-right:.25rem;background:none;width:16px;height:16px;" role="img">🔥</div>
+      <small>Most Popular</small>
+    </div>
+    <article class="feed-user item" data-size="medium" style="display:flex;align-items:center;">
+      <!-- todo flex 아니네 -->
+      <figure class="item-avatar">
+        <img src="https://twitter.com/elonmusk/photo" alt="" />
+      </figure>
+      <h3 class="item-name" style="width:auto;">Elon Musk</h3>
+      <!-- <i class="icon-bullet"></i> -->
+      <time style="margin:0 0 0 .5rem;color:var(--color-text-light);">2 hour</time>
+    </article>
+    <div class="feed-content tile-elevated">
+      <!-- todo: 카드 안의 figure 컴포넌트 radius..-->
+      <figure class="feed-content-media">
+        <img src="https://source.unsplash.com/random" alt="" />
+      </figure>
+      <p class="feed-content-paragraph">
+        Monotonectally productivate progressive human capital without user friendly portals. Globally benchmark top-line ideas with distributed
+        catalysts for change. Authoritatively restore ubiquitous partnerships vis-a-vis <a href="#feed">synergistic models</a>.
+      </p>
+      <ul class="article-checklist" style="margin:0 0 1.5rem 0;line-height:var(--font-line-height-small);">
+        <li>
+          피드의 상세 페이지에서 전체 댓글 목록과 액션을 제공할 수 있다.
+        </li>
+        <li>원활한 피드 탐색 경험을 위해 피드의 콘텐츠를 일부 생략해서 보여줄 수 있다.</li>
+        <li>
+          리액션 버튼과 리액션 수치를 각각 제공할 수 있고 따로 제공할 수 있다. 리액션한 사용자 목록을 어떻게 보여줄 것인가에 의존성이 있다.
+        </li>
+        <li>리액션에서 한 번 정리했던 것인데, 중복 리액션과 횟수 등 정의.</li>
+        <li>
+          피드가 노출되는 이유를 알려줄 수 있다. 마찬가지로 사용자는 보고 싶은 피드와 보고 싶지 않은 피드를 결정할 수 있다.
+        </li>
+        <li>시의성이 강조되는 서비스이거나 현안을 다루는 서비스라면 스텟을 실시간으로 갱신할 필요가 있다.</li>
+        <li>피드 작성 폼의 양식 인터페이스를 제공할 필요가 있다.</li>
+        <li>하나 이상의 이미지를 포함할 수 있다면, 하나 이상의 이미지를 볼 수 있는 인터페이스가 필요하다.</li>
+        <li>리액션 => 알림</li>
+        <li>글줄의 길이는 상대적으로 좁게 짜는 경향이 있다.</li>
+        <li>대충 이 정도..</li>
+      </ul>
+
+      <div class="feed-tag tag-group">
+        <span class="tag">Google</span>
+      </div>
+      <div class="feed-reaction" style="margin:var(--space) 0 0 0;">
+        <div class="post-reaction-like">
+          <figure class="post-reaction-like-icon" style="width:24px;height:24px;">💕</figure>
+          <span class="post-reaction-like-count" style="font-size:var(--font-size-caption);">119</span>
+        </div>
+      </div>
+      <!-- <footer>
+        <time></time>
+        <button></button>
+      </footer> -->
+    </div>
+  </article>
+
+  <article class="feed">
+    <article class="feed-user item" data-size="medium" style="display:flex;align-items:center;">
+      <!-- todo flex 아니네 -->
+      <figure class="item-avatar">
+        <img src="https://twitter.com/elonmusk/photo" alt="" />
+      </figure>
+      <h3 class="item-name" style="width:auto;">Bruce Springsteen</h3>
+      <!-- <i class="icon-bullet"></i> -->
+      <time style="margin:0 0 0 .5rem;color:var(--color-text-light);">22. 05. 02.</time>
+    </article>
+    <div class="feed-content tile-elevated">
+      <!-- todo: 카드 안의 figure 컴포넌트 radius..-->
+      <figure class="feed-content-media">
+        <img src="https://source.unsplash.com/random" alt="" />
+      </figure>
+      <p class="feed-content-paragraph">
+        Monotonectally productivate progressive human capital without user friendly portals. Globally benchmark top-line ideas with distributed
+        catalysts for change. Authoritatively restore ubiquitous partnerships vis-a-vis <a href="#feed">synergistic models</a>.
+      </p>
+
+      <div class="feed-reaction">
+        <div class="post-reaction-like">
+          <figure class="post-reaction-like-icon" style="width:24px;height:24px;">💕</figure>
+          <span class="post-reaction-like-count" style="font-size:var(--font-size-caption);">119</span>
+        </div>
+      </div>
+  </article>
+</main>
