@@ -1,6 +1,7 @@
 .tag {@include tag;}
 .tag[data-appearance=primary] {@include tag-primary;border-color:gold;}
 .tag[data-appearance=secondary] {@include tag;border-color:var(--green100);background-color:var(--green100);color:var(--green800);}
+.tag[data-role=accent] {display:flex;}
 
 .hashtag {@include hashtag;}
 

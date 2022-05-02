@@ -177,6 +177,7 @@
       <ul class="article-checklist">
         <!-- <li><i class="icon-check"></i> <em>todo</em> 클릭할 수 없음. 따라서 chip의 역할을 하는 아이콘 chip과 명확한 분리가 필요함. pagination item은 chip과 같은 높이를 갖지만 chip이 아님. textfield 내부의 clear 버튼은? 그냥 clear button임. textfield-surfix 로 정의되어야?</li> -->
         <li><i class="icon-check"></i> 이미지, 텍스트, 아이콘을 포함합니다.</li>
+        <li>todo hoverable... 상세 사용자 정보를 팝오버로 제공할 수 있다.</li>
         <!-- <li><i class="icon-check"></i> chip 컴포넌트는 active 상태를 포함하고 있기 때문에 다른 기표로 active 상태를 표시하는 경우에는 사용하지 않습니다.</li> -->
        
       </ul>
@@ -897,6 +898,11 @@
           <!-- <span class="tag" role="listitem" data-appearance="secondary" style="border-color:var(--green100);background:var(--green100);color:var(--green800);">Secondary</span> -->
           <span class="tag" role="listitem">Tertiary</span>
           <span class="tag" role="listitem" style="background:var(--red100);border-color:var(--red100);color:var(--red800);">15</span>
+          <!-- todo -->
+          <span class="tag" data-role="accent" style="width:100%;margin-top:.25rem;">
+            <figure class="tag-icon" role="img">🔥</figure>
+            <small class="tag-label">Most Popular 22.05.02 추가. 1개 이상 사용 못 함. with icon</small>
+          </span>
         </div>
       </div>
       
@@ -2307,11 +2313,15 @@
       </article>
 
       <div class="pricing-item" style="max-width:400px;">
-        <div style="display:flex;align-items:center;line-height:16px;">
-          <div class="quote-avatar" style="margin-right:.5rem;width:16px;height:16px;" role="img">🔥</div>
-          <small>Most Popular</small>
-        </div>
-        <h1 class="pricing-item-title" style="margin:1rem 0 0;">Standard</h1>
+        <span class="tag" data-role="accent" style="
+        margin-left: -1.5rem;
+        display: inline-flex;
+        position: absolute;
+        top:.75rem;">
+          <figure class="tag-icon" role="img">🔥</figure>
+          <small class="tag-label">Most Popular</small>
+        </span>
+        <h1 class="pricing-item-title" style="margin:1.75rem 0 0;">Standard</h1>
         <p class="pricing-item-description">전직대통령의 신분과 예우에 관하여는 법률로 정한다. 대법원장은 국회의 동의를 얻어 대통령이 임명한다.</p>
         <ul class="article-checklist">
           <li><i class="icon-check"></i>스토리지 2TB</li>
