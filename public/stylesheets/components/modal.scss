@@ -1,8 +1,13 @@
-// .body-lock {width:100%;position:fixed;overflow-y:scroll;overflow:hidden;margin-right:17px;}
+.body-lock {width:100%;position:fixed;overflow-y:scroll;overflow:hidden;margin-right:17px;}
 .body-lock {
   // height: 100vh;
   overflow-y: hidden;
   padding-right: 17px;
+}
+// todo 닫을 때 popState 되기 때문에 스크롤이 최상단으로 가 버림...
+
+.is-modal-visible {
+  width:100%;position:fixed;overflow-y:scroll;overflow:hidden;margin-right:17px;
 }
 
 @mixin dialog {}
