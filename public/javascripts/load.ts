@@ -10,6 +10,7 @@ export function detectLoad() {
   const loaderElement = document.querySelector<HTMLElement>('.js-loader')
   if (!loaderElement) return
 
-  loaderElement.hidden = true
   unlockBodyElement()
+
+  loaderElement.hidden = true
 }
