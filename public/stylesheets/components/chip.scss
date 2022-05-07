@@ -31,10 +31,11 @@
 
   // todo
   &[data-property=removable] {
-    &:hover {cursor:default;
+    &:hover {
+      cursor:default;
       outline:none;
-}
-    .chip-icon {background:var(--color-background);cursor:pointer;}
+    }
+    .chip-icon:hover {background:var(--color-background);cursor:pointer;}
   }
 }
 

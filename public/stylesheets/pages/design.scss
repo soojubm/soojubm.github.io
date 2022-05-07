@@ -74,7 +74,7 @@
 .article-anatomy-item .is-optional {margin:0 0 .5rem 0;font-size:10px;color:var(--color-text-light);}
 
 .article-subhead {margin:3rem 0 var(--space-small) 0;font-size:var(--font-size-body);font-weight:var(--font-weight-bold);text-transform:capitalize;}
-.article-subhead + * {margin-top:var(--space-small) !important;}
+.article-subhead + * {margin-top:var(--space-small) !important;margin-bottom:var(--space-small) !important;}
 
 // todo fadeup 그냥 up
 .article.is-scrolled {animation:fadeup .8s forwards;}
