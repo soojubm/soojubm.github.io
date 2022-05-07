@@ -191,7 +191,7 @@
       <p style="font-size:var(--font-size-caption);">- Actions: removable, selectable(single/multiple), checkable/uncheckable, addable</p>
       <p style="margin:0 0 var(--space) 0;font-size:var(--font-size-caption);">- Groupable과 Stackable을 구분하는 것이 좋을찌?</p>
 
-      <div class="article-anatomy">
+      <!-- <div class="article-anatomy">
         <table>
           <tbody>
             <tr style="border:none;">
@@ -212,44 +212,7 @@
             </tr>
           </tbody>
         </table>
-      </div>
-
-      <div class="article-anatomy" style="margin-top:var(--space);padding-top:.5rem;">
-        <table>
-          <thead>
-            <tr>
-              <td style="padding:var(--space-small) 0;">
-                <span class="textfield-check" style="margin-right:var(--space-small);position:relative;right:auto;top:auto;background:var(--green100);"><i class="icon-o" style="border-color:var(--color-primary);"></i></span>
-              </td>
-              <td style="padding:var(--space-small) 0;">
-                <span class="textfield-check" style="position:relative;right:auto;top:auto;background:var(--red100);"><i class="icon-x is-red"></i></span>
-              </td>
-            </tr>
-          </thead>
-          <tbody>
-            <tr style="border:none;">
-              <td>
-                <b>Alerte de Retour</b>
-                <br />
-                cette notification expire dans 5 jours
-              </td>
-              <td>
-                <b>Alerte de Retour</b>
-                <br />
-                cette notification expire dans 5 jours
-              </td>
-            </tr>
-            <tr>
-              <td style="border:none;">
-                cette notification expire dans 5 jours
-              </td>
-              <td style="border:none;">
-                cette notification expire dans 5 jours
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      </div> -->
 
       <h4 class="article-subhead">anatomy</h4>
       <div class="article-anatomy is-anatomy">
@@ -295,7 +258,8 @@
         <span style="margin:0 0 0 var(--space-small);">수줍이 외 4명</span>
       </article>
 
-      <h4 class="article-subhead">Entities</h4>
+      <h4 class="article-subhead">Entities // clickable</h4>
+      <p>todo: container는 항상 button이거나 linkButton?</p>
       <article class="item" data-size="huge">
         <figure class="item-avatar">
           <span class="avatar-badge"></span>
@@ -423,11 +387,12 @@
             <label for="temp55" style="padding-left:48px;"></label>
           </span>
         </button>
-        <button class="user-logout" title="sign out">
-          <figure class="user-logout-icon">
+        <!-- todo -->
+        <button class="item" data-size="medium" title="sign out" style="display:flex;align-items:center;text-align:left;">
+          <figure class="item-avatar">
             <i class="icon-out"><span class="icon-out-door"></span></i>
           </figure>
-          <span class="user-logout-label">고객센터 및 도움말</span>
+          <span class="item-label">고객센터 및 도움말</span>
         </button>
         <hr role="separator" style="margin-left:-1rem;margin-right:-1rem;" />
         <button class="user-logout" title="sign out">
@@ -964,13 +929,13 @@
       <h4 class="article-subhead">Editorial</h4>
       <ul class="article-checklist" data-align="horizontal">
         <li><i class="icon-check"></i> 동사포함</li>
-        <li><i class="icon-check"></i> 최대 2단어</li>
+        <!-- <li><i class="icon-check"></i> 최대 2단어</li> -->
         <li><i class="icon-check"></i> 최대 8자</li>
       </ul>
 
       <br />
 
-      <div class="tile-elevated">
+      <div class="tile-elevated" style="margin-bottom:.75rem;">
         <span class="switch">
           <input type="checkbox" id="switch1" name="" role="switch" value="on" checked />
           <label for="switch1" title="Receive weekly newsletter">뉴스레터 받아보기</label>
@@ -980,6 +945,42 @@
           <label for="switch2" title="Receive weekly newsletter">뉴스레터 받아보기</label>
         </span>
       </div>
+
+      <hr />
+
+      <header class="titlebar js-titlebar" role="navigation" style="padding:0;">
+        <div class="titlebar-background"></div>
+        <h1 class="titlebar-title js-page-title" title="page title">데이터 백업 설정</h1>
+        <button class="titlebar-back" onclick="javascript:window.location.href='/';">
+          <figure class="titlebar-back-icon" title="이전 페이지로"><i class="icon-arrow is-left"></i></figure>
+          <!-- <figure class="titlebar-back-icon"><i class="icon-close"></i></figure> -->
+        </button>
+      </header>
+
+      <section style="margin:2rem 0;">
+        <p>이 기기에서<br />Google 계정 스토리지에 저장하려는 데이터를 선택하세요. <a href="">자세히 알아보기</a></p>
+        <p style="margin-top:.75rem;">마지막 백업: 방금 전</p>
+      </section>
+
+      <button class="button-elevated" title="" style="margin-bottom:var(--space-xsmall);">
+        <figure class="button-elevated-avatar">🐺</figure>
+        <span class="button-elevated-label">연락처 백업</span>
+        <span class="switch" style="margin-left:auto;">
+          <input type="checkbox" id="temp1234" name="" role="switch" />
+          <label for="temp1234" style="padding-left:48px;"></label>
+        </span>
+      </button>
+      <small>Google 주소록에 백업</small>
+
+      <button class="button-elevated" title="" style="margin-bottom:var(--space-xsmall);">
+        <figure class="button-elevated-avatar">🦊</figure>
+        <span class="button-elevated-label">사진 및 동영상 백업</span>
+        <span class="switch" style="margin-left:auto;">
+          <input type="checkbox" id="temp123456" name="" role="switch" />
+          <label for="temp123456" style="padding-left:48px;"></label>
+        </span>
+      </button>
+      <small>Google 포토에 최대 해상도로 백업</small>
     </article>
 
     <article class="article js-observer js-scrollspy-section">
@@ -1300,7 +1301,7 @@
 
       <div class="article-section">
         <h4 class="article-subhead">List</h4>
-        <div class=" tile-flat">
+        <div class=" tile-flat-small" style="padding-left:var(--space);">
           <ul class="article-checklist">
             <!-- <li title="unordered list, level 1"><i class="icon-check"></i> 순서가 없는 리스트
               <ul>
@@ -1319,7 +1320,7 @@
             <li>순서가 있는 리스트</li>
           </ol> -->
         </div>
-        <div class="tile-flat">
+        <div class="tile-flat-small" style="padding-left:var(--space);">
           <ul class="article-checklist" data-align="horizontal">
             <!-- <li title="unordered list, level 1"><i class="icon-check"></i> 순서가 없는 리스트
               <ul>
