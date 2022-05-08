@@ -1,32 +1,35 @@
 'use strict'
 
+// import { validity } from './javascripts/utils/validations'
+// import { copyClipboard } from './javascripts/utils/formatUtils.js'
+
 import './stylesheets/style.scss'
 
-import routePage, { routes } from './javascripts/router'
+import routePage from './javascripts/router'
 import { stopAnimation, throttle } from './javascripts/utils/optimizationUtils'
 
 import { detectLoad, lockBodyElement, unlockBodyElement } from './javascripts/load'
 import carousel from './javascripts/event/carousel'
 import event from './javascripts/event/index'
 import input from './javascripts/input/index'
-import darkTheme from './javascripts/local/darkTheme'
 
-// import { validity } from './javascripts/utils/validations'
-// import { copyClipboard } from './javascripts/utils/formatUtils.js'
+import detectTheme from './javascripts/theme/dectectTheme'
+import toggleTheme from './javascripts/theme/toggleTheme'
 
-// todo 네이밍을 다시하고 lockbody는 유틸성
 document.addEventListener('DOMContentLoaded', lockBodyElement)
 window.addEventListener('load', detectLoad)
 
 // window.addEventListener('hashchange', initializeNavbar)
+document.addEventListener('DOMContentLoaded', domEvents)
 window.addEventListener('hashchange', domEvents)
 
-document.addEventListener('DOMContentLoaded', domEvents)
-document.addEventListener('DOMContentLoaded', () => darkTheme('.js-darkmode'))
+// document.addEventListener('DOMContentLoaded', detectTheme)
+document.addEventListener('click', toggleTheme)
+
+// ! 여기까지 리팩토링 해봄..
 
 document.addEventListener('DOMContentLoaded', () => {
   stopAnimation()
-
   // lockbody
   // 여러 개 묶여 있음.
   // event.positionSticky({ selector: '.js-titlebar', addClass: 'is-sticky-titlebar', isPassed: false })
@@ -36,34 +39,17 @@ document.addEventListener('click', event => toggleNavbarMenu(event))
 
 function toggleNavbarMenu(event) {
   const navbarBurgerElement = (event.target as HTMLElement).closest('.js-navbar-toggle')
-  // const navbarMenu = navbarBurgerElement?.nextElementSibling
 
   if (!navbarBurgerElement) return
 
   const OPENED_MENU_CLASSNAME = 'is-opened-menu'
-
   const isOpendNavbarMenu = document.body.classList.contains(OPENED_MENU_CLASSNAME)
 
-  if (isOpendNavbarMenu) {
-    // unlockBodyElement()
-    document.body.classList.remove(OPENED_MENU_CLASSNAME)
-  } else {
-    // lockBodyElement()
-    document.body.classList.add(OPENED_MENU_CLASSNAME)
-  }
+  document.body.classList.toggle(OPENED_MENU_CLASSNAME, !isOpendNavbarMenu)
+
+  // const navbarMenu = navbarBurgerElement?.nextElementSibling
   // navbarMenu?.addEventListener('click', event => event.stopPropagation())
 }
-
-// document.addEventListener('click', event => {
-//   const navbarBurgerElement = document.querySelector('.js-navbar-toggle')
-//   const isOpendNavbarMenu = navbarBurgerElement?.classList.contains('is-active')
-
-//   navbarBurgerElement?.addEventListener('click', event => event.stopPropagation())
-
-//   console.log('@@@@@@', navbarBurgerElement)
-//   // if (!isOpendNavbarMenu) return
-//   navbarBurgerElement?.classList.remove('is-active')
-// })
 
 document.addEventListener('mouseover', () => {
   document.removeEventListener('click', toggleNavbarMenu)
@@ -91,15 +77,6 @@ document.addEventListener('click', closeParentElement)
 
 document.addEventListener('mouseover', mouseenterElement)
 
-export const DARK_THEME_CLASS = 'theme-dark'
-export const LIGHT_THEME_CLASS = ''
-const DARKTHEME_SELECTOR = '.js-darkmode'
-
-// todo darktheme 이벤트전파이슈
-// tokens에 있는 버튼 때문에 domEvents로
-// document.addEventListener('DOMContentLoaded', detectTheme)
-// document.addEventListener('click', toggleDarkTheme)
-
 async function domEvents() {
   // todo
   const mediaSize760 = window.matchMedia('(max-width: 1080px)')
@@ -118,9 +95,7 @@ async function domEvents() {
 
   await routePage()
 
-  // detectTheme()
-
-  darkTheme('.js-darkmode2')
+  detectTheme()
 
   // todo
   const navItemElements = document.querySelectorAll('.navbar-menu a')
@@ -167,7 +142,7 @@ async function domEvents() {
   input.checkbox({ checkAllSelector: '.js-checkall', checkSelector: '.js-check' })
   input.file()
   // input.textarea()
-  input.number()
+  input.quantity()
 
   event.toggleClass({ selector: '.js-toggle' })
 
@@ -629,40 +604,6 @@ function closeParentElement(event) {
 //     // temp!.style.opacity = String(Math.abs(window.pageYOffset + element.offsetTop) * 0.00125)
 // }), false)
 // })
-
-export function detectTheme() {
-  // todo 바로 swithc 셀렉터로
-  // todo 같은 기능의 버튼이 여러 군데에 있을 때.
-  const savedTheme = localStorage.getItem('theme')
-  if (!savedTheme) return
-
-  const darkThemeTrigger = document.querySelectorAll(DARKTHEME_SELECTOR)
-  const isDarkmode = savedTheme === DARK_THEME_CLASS
-
-  darkThemeTrigger?.forEach((element: any) => {
-    element.querySelector('input').checked = isDarkmode
-  })
-
-  document.body.classList.add(DARK_THEME_CLASS)
-}
-
-export function toggleDarkTheme(event) {
-  console.log(event.target.closest(DARKTHEME_SELECTOR))
-
-  if (!event.target.closest(DARKTHEME_SELECTOR)) return
-
-  // const savedTheme = localStorage.getItem('theme')
-  // todo removeLocalStorage
-  const isDarkmode = document.body.classList.contains(DARK_THEME_CLASS)
-
-  const darkThemeSwitch = event.target.closest(DARKTHEME_SELECTOR).querySelector('input')
-  if (!darkThemeSwitch) return
-
-  darkThemeSwitch.checked = isDarkmode
-  document.body.classList.toggle(DARK_THEME_CLASS)
-
-  localStorage.setItem('theme', isDarkmode ? DARK_THEME_CLASS : LIGHT_THEME_CLASS)
-}
 
 // 2222.02.02 menu에서 제거 navbar-menu-item has-submenu js-hover-trigger
 function mouseenterElement(event) {

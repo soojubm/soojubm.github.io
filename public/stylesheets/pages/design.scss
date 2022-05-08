@@ -47,9 +47,9 @@
 
 // todo ul
 .article-checklist {@include reset-list;list-style:none;}
-.article-checklist li {padding-left:1.125rem;}
+.article-checklist li {padding-left:1rem;text-transform:capitalize;}
 // .article-checklist li:before {content:'✓';font-size:var(--font-size-caption);left:0;top:2px;}
-.article-checklist li:before {content:'✓';left:0;top:0;}
+.article-checklist li:before {content:'';left:0;top:8px;width:1rem;height:1rem;background:url('/public/icons/Black_check.svg') no-repeat 0 0;background-size:9px;opacity:.7;}
 .article-checklist li + li {margin-top: .25rem;}
 .article-checklist li .icon-check {display:none;}
 // .article-checklist li .icon-check {margin:0 var(--space-small) 0 0;position:absolute;left:1px;top:12px;}
@@ -355,7 +355,7 @@
 
 .design-navigation {display:flex;flex-wrap:wrap;width:100%;max-width:1000px;margin:-1rem var(--space-small-minus) 0;padding:0 var(--grid-margin) 4em;position:relative;z-index:var(--zindex-default);}
 .design-navigation a {display:block;width:33%;max-width:240px;margin:.5rem;color:var(--color-text);position:relative;}
-.design-navigation a figure {display:block;@include avatar-huge;width:100%;margin:0 0 var(--space-xsmall) 0;font-size:var(--font-size-title);}
+.design-navigation a figure {display:block;@include avatar-huge;width:100%;margin:0 0 .125rem 0;font-size:var(--font-size-title);}
 
 .design-navigation a[readonly] {opacity:.5;cursor:not-allowed;box-shadow:none;}
 .design-navigation a:hover:not([readonly]) {@include hover-item;}
