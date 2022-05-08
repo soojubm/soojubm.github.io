@@ -16,43 +16,25 @@ import input from './javascripts/input/index'
 import detectTheme from './javascripts/theme/dectectTheme'
 import toggleTheme from './javascripts/theme/toggleTheme'
 
+import { toggleNavbarMenu, initializeNavbar } from './javascripts/common/navbar'
+
 document.addEventListener('DOMContentLoaded', lockBodyElement)
 window.addEventListener('load', detectLoad)
 
-// window.addEventListener('hashchange', initializeNavbar)
 document.addEventListener('DOMContentLoaded', domEvents)
 window.addEventListener('hashchange', domEvents)
 
-// document.addEventListener('DOMContentLoaded', detectTheme)
 document.addEventListener('click', toggleTheme)
 
-// ! 여기까지 리팩토링 해봄..
+document.addEventListener('click', toggleNavbarMenu)
+
+// ! 여기까지 리팩토링 1차로 해 봄..
 
 document.addEventListener('DOMContentLoaded', () => {
   stopAnimation()
   // lockbody
   // 여러 개 묶여 있음.
   // event.positionSticky({ selector: '.js-titlebar', addClass: 'is-sticky-titlebar', isPassed: false })
-})
-
-document.addEventListener('click', event => toggleNavbarMenu(event))
-
-function toggleNavbarMenu(event) {
-  const navbarBurgerElement = (event.target as HTMLElement).closest('.js-navbar-toggle')
-
-  if (!navbarBurgerElement) return
-
-  const OPENED_MENU_CLASSNAME = 'is-opened-menu'
-  const isOpendNavbarMenu = document.body.classList.contains(OPENED_MENU_CLASSNAME)
-
-  document.body.classList.toggle(OPENED_MENU_CLASSNAME, !isOpendNavbarMenu)
-
-  // const navbarMenu = navbarBurgerElement?.nextElementSibling
-  // navbarMenu?.addEventListener('click', event => event.stopPropagation())
-}
-
-document.addEventListener('mouseover', () => {
-  document.removeEventListener('click', toggleNavbarMenu)
 })
 
 window.addEventListener('scroll', throttle(scrollProgress), true)
@@ -77,32 +59,31 @@ document.addEventListener('click', closeParentElement)
 
 document.addEventListener('mouseover', mouseenterElement)
 
-async function domEvents() {
-  // todo
+// common 요소는 1번 이벤트..
+// ! hashchange 마다 이벤트를 생성하는 것이 문제.
+// todo
+document.addEventListener('DOMContentLoaded', () => {
   const mediaSize760 = window.matchMedia('(max-width: 1080px)')
   const changeMedia = function(e) {
-    if (e.matches) {
+    const isMobile = e.matches
+    if (isMobile) {
       // document.body.classList.remove('is-opened-menu')
       initializeNavbar()
-    } else {
+    }
+    if (!isMobile) {
       document.body.classList.add('is-opened-menu')
     }
   }
   mediaSize760.addListener(changeMedia)
   changeMedia(mediaSize760)
-
-  lazyLoading()
-
-  await routePage()
-
-  detectTheme()
-
+})
+async function domEvents() {
   // todo
   const navItemElements = document.querySelectorAll('.navbar-menu a')
   const hash = window.location.hash.substring(1)
 
-  // todo
   const temps = ['', 'foundations', 'components', 'tokens']
+
   if (!temps.includes(hash)) initializeNavbar()
 
   navItemElements?.forEach(element => {
@@ -113,6 +94,10 @@ async function domEvents() {
     if (!isCurrentPage || isHomePage) return
     element.classList.add('is-current')
   })
+
+  detectTheme()
+  lazyLoading()
+  await routePage()
 
   // const page = routes.find(route => route.path.substring(1) === hash)
   // const pageTitleElement = document.querySelector('.js-page-title')
@@ -152,15 +137,13 @@ async function domEvents() {
   event.positionSticky({ selector: '.js-post-head', addClass: 'is-sticky-post-head', isPassed: true })
 
   // event.scrollAnimation({ selector: '.js-observer' })
-  // event.scrollAnimation({ selector: '.token-item' })
 
   event.scrollspy({ menusSelector: '.js-scrollspy-trigger', sectionsSelector: '.js-scrollspy-section' })
 
   event.parallax('.js-parallax')
 
-  var lastScrollTop = 0
-  const heroElement = document.querySelector('.hero')
-
+  // var lastScrollTop = 0
+  // const heroElement = document.querySelector('.hero')
   // element should be replaced with the actual target element on which you have applied scroll, use window in case of no target element.
   // document.addEventListener('scroll', throttle(test))
 
@@ -184,39 +167,6 @@ async function domEvents() {
   focusComment()
   // countDownClock(20, 'days')
   // document.querySelector('.js-copy')?.addEventListener('click', () => copyClipboard('fafaf'))
-  const grandparent = document.querySelector('.grandparent')
-  const parent = document.querySelector('.parent')
-  const chlidren = document.querySelector('.children')
-
-  grandparent?.addEventListener(
-    'click',
-    event => {
-      console.log('1. GRANDPARENT')
-    },
-    false,
-  )
-  parent?.addEventListener(
-    'click',
-    event => {
-      console.log('2. PARENT')
-    },
-    false,
-  )
-  chlidren?.addEventListener(
-    'click',
-    event => {
-      console.log('3. CHILDRENT')
-    },
-    false,
-  )
-
-  document.addEventListener(
-    'click',
-    event => {
-      console.log('0. DOCUMENT')
-    },
-    { once: true },
-  )
 
   document.addEventListener('click', event => {
     const target = event.target as any
@@ -232,28 +182,12 @@ async function domEvents() {
   })
 }
 
-function initializeNavbar() {
-  const navigationTrigger = document.querySelector<HTMLElement>('.js-navbar-toggle')
-
-  navigationTrigger?.classList.remove('is-active')
-  unlockBodyElement()
-  // todo
-  document.body.classList.remove('is-opened-menu')
-
-  // todo removeEvnetListeners
-  document.removeEventListener('click', () => {})
-}
-
 function focusComment() {
   const commentWrite = document.querySelector<HTMLElement>('.js-comment-write')
   const commentTextfield = document.querySelectorAll<HTMLElement>('.js-comment-textfield')
   if (!commentWrite || !commentTextfield) return
 
-  commentTextfield.forEach(element =>
-    element.addEventListener('focus', () => {
-      commentWrite.classList.add('is-focused')
-    }),
-  )
+  commentTextfield.forEach(element => element.addEventListener('focus', () => commentWrite.classList.add('is-focused')))
 }
 
 // let company = {

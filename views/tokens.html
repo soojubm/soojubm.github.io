@@ -58,7 +58,6 @@
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Layouts</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">z-index</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Animation</span></a>
-      <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Signifier</span></a>
     </div>
   </nav>
 
@@ -704,118 +703,6 @@
       </div>
     </article> -->
 
-    <article class="article js-scrollspy-section">
-      <h1 class="article-title">Signifier</h1>
-      <p class="article-description">todo. fundations. 일관된 기표로 사용자의 인지를 돕습니다.</p>
-
-      <ul class="article-checklist">
-        <li><i class="icon-check"></i>'확장할 수 있음'으로 plus icon을 사용하지 마세요.</li>
-        <li><i class="icon-check"></i>'클릭할 수 있음'으로 bold text를 사용하지 마세요.</li>
-      </ul>
-
-      <h4 class="article-subhead">Clickable? interactive element</h4>
-      <div class="tile-elevated token-item">
-        <p style="margin-top:var(--space-leading-subhead);">elevated 오브젝트는 대부분(?) 클릭할 수 있다. 또는 오브젝트 내부에 클릭할 수 있는 요소가 존재한다.</p>
-      </div>
-      <div class="token-item" style="display:block;background:var(--color-background-weak);border-radius:var(--radius);">
-        <p>연한 회색의 오브젝트는 대부분 클릭할 수 있다.</p>
-      </div>
-      <div class="token-item" style="display:block;color:var(--color-primary);">
-        <p><em>브랜드 컬러 텍스트</em>는 대부분 클릭할 수 있다.</p>
-      </div>
-      <div class="token-item" style="display:block;margin:var(--space-small) 0;">
-        <p>❤️ 아이콘(이모지)는 대부분 클릭할 수 있다.</p>
-      </div>
-
-      <h4 class="article-subhead">non-clickable</h4>
-      <div class="token-item" style="cursor:default;">
-        <div class="tag-group">
-          <span class="tag" data-appearance="secondary">읽기전용readonly</span>
-          <span class="tag">cursor default</span>
-        </div>
-      </div>
-      <div class="token-item">
-        <div class="tag-group" style="opacity:.5;cursor:not-allowed;">
-          <span class="tag" data-appearance="secondary">비활성disabled state</span>
-          <span class="tag">opacity 50%</span>
-          <span class="tag">cursor not-allowed</span>
-          <span class="tag">flat style</span>
-        </div>
-      </div>
-
-      <h4 class="article-subhead">Icons</h4>
-      <div class="token-item">
-        <figure class="chip-thumbnail" style="margin:0 -.25rem 0 0;background:var(--color-background-weak);">
-          <i class="icon-arrow is-external"></i>
-        </figure>
-        <span class="chip-label">External Link</span>
-      </div>
-      <div class="token-item">
-        <figure class="chip-thumbnail" style="margin:0 -.25rem 0 0;background:var(--color-background-weak);">
-          <i class="icon-arrow" style="display:inline-block;"></i>
-        </figure>
-        <span class="chip-label">internal Link (ex: view all)</span>
-      </div>
-      <div class="token-item">
-        <figure class="chip-thumbnail" style="margin:0 -.25rem 0 0;background:var(--color-background-weak);">
-          <i class="icon-chevron" style="display:inline-block;"></i>
-        </figure>
-        <span class="chip-label">Expanable & Collapsible (vertical)</span>
-      </div>
-      <div class="token-item">
-        <figure class="chip-thumbnail" style="margin:0 -.25rem 0 0;background:var(--color-background-weak);"><i class="icon-chevron is-down"></i></figure>
-        <span class="chip-label">Expanable & Collapsible (horizental)</span>
-      </div>
-      <div class="token-item">
-        <figure class="chip-thumbnail" style="margin:0 -.25rem 0 0;background:var(--color-background-weak);"><i class="icon-search"></i></figure>
-        <span class="chip-label">Searchable</span>
-      </div>
-      <div class="token-item">
-        <figure class="chip-thumbnail" style="margin:0 -.25rem 0 0;background:var(--color-background-weak);">
-          <i class="icon-caret" style="display:inline-block;"></i>
-        </figure>
-        <span class="chip-label">Popover</span>
-      </div>
-      <div class="token-item">
-        <figure class="chip-thumbnail" style="margin:0 -.25rem 0 0;background:var(--color-background-weak);">
-          <i class="icon-x" style="display:inline-block;"></i>
-        </figure>
-        <span class="chip-label">Removable</span>
-      </div>
-      <div class="token-item">
-        <figure class="chip-thumbnail" style="margin:0 -.25rem 0 0;background:var(--color-background-weak);">
-          <i class="icon-plus" style="display:inline-block;"></i>
-        </figure>
-        <span class="chip-label">Addable</span>
-      </div>
-      <div class="token-item">
-        <span class="textfield-check" style="margin-right:var(--space-small);position:relative;right:auto;top:auto;background:var(--green100);"><i class="icon-check" style="border-color:var(--color-primary);"></i></span>
-        <span class="chip-label">Valid</span>
-      </div>
-      <div class="token-item">
-        <span class="textfield-check" style="position:relative;right:auto;top:auto;background:var(--red100);"><i class="icon-x is-red"></i></span>
-        <span class="chip-label">InValid</span>
-      </div>
-
-      <!-- todo states -->
-      <h4 class="article-subhead">hover</h4>
-      <div class="token-item">
-        <p style="margin:0 0 .25rem;">@mixin hover-text {}</p>
-        <a href="#" style="text-decoration:underline;">Text</a>
-      </div>
-      <div class="token-item" style="z-index:1;">
-        <p style="margin:0 0 .75rem;">@mixin hover-item {}</p>
-        <button class="user-logout is-hover" title="sign out">
-          <figure class="user-logout-icon">
-            <i class="icon-out"><span class="icon-out-door"></span></i>
-          </figure>
-          <span class="user-logout-label" style="color:var(--color-text);">Item</span>
-        </button>
-      </div>
-
-
-      <h4 class="article-subhead">Pressed / Progressing</h4>
-    </article>
   </section>
 
 

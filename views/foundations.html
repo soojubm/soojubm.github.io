@@ -53,65 +53,202 @@
     </style>
   </header>
   <div style="margin:0 var(--grid-margin);">
+    <div class="font-size:var(--font-size-small);">
+      <li>Dictionary 만들기. .</li>
+      <li>새로운 구성원의 온보딩을 위한 changelog로 히스토리 쌓ㅇ기</li>
+      <li>가이드 작성을 위한 가이드 문서 만들기.</li>
+      <li>디자인 시스템을 쉽게 피드백할 수 있도록 하고 반영된 경우 크레딧 부여하기.</li>
+      <li>예외 케이스를 정의. ux부채/기술부채를 어떻게 트래킹할 것인가?</li>
+      <li>실제 서비스에서 동작하지 않는 스타일 가이드, 디자이너 개인의 영달을 위한 포트폴리오로 작용하지 않아야 함..!</li>
+    </div>
+
+    <li>todo. 분류. 시각정보/인터렉션/컨테이너/모달리티(? 컨터이너 개념인데 조금 다를.ㅁ)</li>
     <div class="foundation-item">
       <a>
         <h2>Level <i>👋</i></h2>
         <span style="display:block;width:100%;font-size:var(--font-size-body);font-family:var(--fontstack);">
           Summary. 컨테이너의 레벨에 의한 자식 컴포넌트 결정론. App - Page - Section - Article...
         </span>
+        <ul class="article-checklist">
+          <li>hero, banner 등이 section 레벨.</li>
+          <li>section 레벨의 최상위 위계으 액션은 button 컴포넌트가 된다.</li>
+          <li>article 레벨의 컴포넌트만 tile을 쓸 수 수 있다.</li>
+          <li>article 레벨의 자식이 entity(item) list를 가진다....;.</li>
+          <li>article 레벨은 button으로 액션할 수 없다.</li>
+          <li>
+            todo. 버튼 그룹은 2개 이상의 버튼을 가질 수 없음. 복잡도 최소화. 툴바는 여러 개의 액션(버튼의 역할을 하는 chip group)을 가질 수 있다.
+          </li>
+        </ul>
       </a>
       <a>
         <h2>Layout <i>👋</i><i>👋</i></h2>
         <span style="display:block;width:100%;font-size:var(--font-size-body);font-family:var(--fontstack);"
           >Summary. 디바이스나 브라우저에 비종속.</span
         >
-      </a>
-      <a>
-        <h2>Signifier <i>👋</i><i>👋</i><i>👋</i></h2>
-        <span style="display:block;width:100%;font-size:var(--font-size-body);font-family:var(--fontstack);">Summary. 동일 상태 동일 형태</span>
+        <ul class="article-checklist">
+          <li>modal / popover / dropdown / 등의 맥락은 모바일에서 페이지 레벨이 될 수 있도록 구조화하기.</li>
+        </ul>
       </a>
     </div>
-
-    <table>
-      <thead>
-        <tr>
-          <th style="text-align:left;"><strong>Platform</strong></th>
-          <th style="text-align:left;"><strong>Chrome</strong></th>
-          <th style="text-align:left;"><strong>Firefox</strong></th>
-          <th style="text-align:left;"><strong>Safari</strong></th>
-          <th style="text-align:left;"><strong>Edge</strong></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td style="text-align:left;">Windows 10</td>
-          <td style="text-align:left;">Yes</td>
-          <td style="text-align:left;">Yes</td>
-          <td style="text-align:left;"></td>
-          <td style="text-align:left;">Yes</td>
-        </tr>
-        <tr>
-          <td style="text-align:left;">Windows 7</td>
-          <td style="text-align:left;">Yes</td>
-          <td style="text-align:left;"></td>
-          <td style="text-align:left;"></td>
-          <td style="text-align:left;"></td>
-        </tr>
-        <tr>
-          <td style="text-align:left;">Mobile iOS</td>
-          <td style="text-align:left;"></td>
-          <td style="text-align:left;"></td>
-          <td style="text-align:left;">Mobile version</td>
-          <td style="text-align:left;"></td>
-        </tr>
-        <tr>
-          <td style="text-align:left;">OS X 10.13</td>
-          <td style="text-align:left;">Yes</td>
-          <td style="text-align:left;"></td>
-          <td style="text-align:left;">Yes</td>
-          <td style="text-align:left;"></td>
-        </tr>
-      </tbody>
-    </table>
   </div>
+
+  <article class="article js-scrollspy-section">
+    <h1 class="article-title">Signifier</h1>
+    <p class="article-description">일관된 기표로 사용자의 인지를 돕고 일관된 경험을 제공합니다.</p>
+
+    <ul class="article-checklist">
+      <li><i class="icon-check"></i>'확장할 수 있음'으로 plus icon을 사용하지 마세요.</li>
+      <li><i class="icon-check"></i>'클릭할 수 있음'으로 bold text를 사용하지 마세요.</li>
+    </ul>
+
+    <h4 class="article-subhead">Clickable? interactive element</h4>
+    <div class="tile-elevated token-item">
+      <p style="margin-top:var(--space-leading-subhead);">
+        elevated 오브젝트는 대부분(?) 클릭할 수 있다. 또는 오브젝트 내부에 클릭할 수 있는 요소가 존재한다.
+      </p>
+    </div>
+    <div class="token-item" style="display:block;background:var(--color-background-weak);border-radius:var(--radius);">
+      <p>연한 회색의 오브젝트는 대부분 클릭할 수 있다.</p>
+    </div>
+    <div class="token-item" style="display:block;color:var(--color-primary);">
+      <p><em>브랜드 컬러 텍스트</em>는 대부분 클릭할 수 있다.</p>
+    </div>
+    <div class="token-item" style="display:block;margin:var(--space-small) 0;">
+      <p>❤️ 아이콘(이모지)는 대부분 클릭할 수 있다.</p>
+    </div>
+
+    <h4 class="article-subhead">non-clickable</h4>
+    <div class="token-item" style="cursor:default;">
+      <div class="tag-group">
+        <span class="tag" data-appearance="secondary">읽기전용readonly</span>
+        <span class="tag">cursor default</span>
+      </div>
+    </div>
+    <div class="token-item">
+      <div class="tag-group" style="opacity:.5;cursor:not-allowed;">
+        <span class="tag" data-appearance="secondary">비활성disabled state</span>
+        <span class="tag">opacity 50%</span>
+        <span class="tag">cursor not-allowed</span>
+        <span class="tag">flat style</span>
+      </div>
+    </div>
+
+    <h4 class="article-subhead">Icons</h4>
+    <div class="token-item">
+      <figure class="chip-thumbnail" style="margin:0 -.25rem 0 0;background:var(--color-background-weak);">
+        <i class="icon-arrow is-external"></i>
+      </figure>
+      <span class="chip-label">External Link</span>
+    </div>
+    <div class="token-item">
+      <figure class="chip-thumbnail" style="margin:0 -.25rem 0 0;background:var(--color-background-weak);">
+        <i class="icon-arrow" style="display:inline-block;"></i>
+      </figure>
+      <span class="chip-label">internal Link (ex: view all)</span>
+    </div>
+    <div class="token-item">
+      <figure class="chip-thumbnail" style="margin:0 -.25rem 0 0;background:var(--color-background-weak);">
+        <i class="icon-chevron" style="display:inline-block;"></i>
+      </figure>
+      <span class="chip-label">Expanable & Collapsible (vertical)</span>
+    </div>
+    <div class="token-item">
+      <figure class="chip-thumbnail" style="margin:0 -.25rem 0 0;background:var(--color-background-weak);">
+        <i class="icon-chevron is-down"></i>
+      </figure>
+      <span class="chip-label">Expanable & Collapsible (horizental)</span>
+    </div>
+    <div class="token-item">
+      <figure class="chip-thumbnail" style="margin:0 -.25rem 0 0;background:var(--color-background-weak);"><i class="icon-search"></i></figure>
+      <span class="chip-label">Searchable</span>
+    </div>
+    <div class="token-item">
+      <figure class="chip-thumbnail" style="margin:0 -.25rem 0 0;background:var(--color-background-weak);">
+        <i class="icon-caret" style="display:inline-block;"></i>
+      </figure>
+      <span class="chip-label">Popover</span>
+    </div>
+    <div class="token-item">
+      <figure class="chip-thumbnail" style="margin:0 -.25rem 0 0;background:var(--color-background-weak);">
+        <i class="icon-x" style="display:inline-block;"></i>
+      </figure>
+      <span class="chip-label">Removable</span>
+    </div>
+    <div class="token-item">
+      <figure class="chip-thumbnail" style="margin:0 -.25rem 0 0;background:var(--color-background-weak);">
+        <i class="icon-plus" style="display:inline-block;"></i>
+      </figure>
+      <span class="chip-label">Addable</span>
+    </div>
+    <div class="token-item">
+      <span class="textfield-check" style="margin-right:var(--space-small);position:relative;right:auto;top:auto;background:var(--green100);"
+        ><i class="icon-check" style="border-color:var(--color-primary);"></i
+      ></span>
+      <span class="chip-label">Valid</span>
+    </div>
+    <div class="token-item">
+      <span class="textfield-check" style="position:relative;right:auto;top:auto;background:var(--red100);"><i class="icon-x is-red"></i></span>
+      <span class="chip-label">InValid</span>
+    </div>
+
+    <!-- todo states -->
+    <h4 class="article-subhead">hover</h4>
+    <div class="token-item">
+      <p style="margin:0 0 .25rem;">@mixin hover-text {}</p>
+      <a href="#" style="text-decoration:underline;">Text</a>
+    </div>
+    <div class="token-item" style="z-index:1;">
+      <p style="margin:0 0 .75rem;">@mixin hover-item {}</p>
+      <button class="user-logout is-hover" title="sign out">
+        <figure class="user-logout-icon">
+          <i class="icon-out"><span class="icon-out-door"></span></i>
+        </figure>
+        <span class="user-logout-label" style="color:var(--color-text);">Item</span>
+      </button>
+    </div>
+
+    <h4 class="article-subhead">Pressed / Progressing</h4>
+  </article>
+
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align:left;"><strong>Platform</strong></th>
+        <th style="text-align:left;"><strong>Chrome</strong></th>
+        <th style="text-align:left;"><strong>Firefox</strong></th>
+        <th style="text-align:left;"><strong>Safari</strong></th>
+        <th style="text-align:left;"><strong>Edge</strong></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align:left;">Windows 10</td>
+        <td style="text-align:left;">Yes</td>
+        <td style="text-align:left;">Yes</td>
+        <td style="text-align:left;"></td>
+        <td style="text-align:left;">Yes</td>
+      </tr>
+      <tr>
+        <td style="text-align:left;">Windows 7</td>
+        <td style="text-align:left;">Yes</td>
+        <td style="text-align:left;"></td>
+        <td style="text-align:left;"></td>
+        <td style="text-align:left;"></td>
+      </tr>
+      <tr>
+        <td style="text-align:left;">Mobile iOS</td>
+        <td style="text-align:left;"></td>
+        <td style="text-align:left;"></td>
+        <td style="text-align:left;">Mobile version</td>
+        <td style="text-align:left;"></td>
+      </tr>
+      <tr>
+        <td style="text-align:left;">OS X 10.13</td>
+        <td style="text-align:left;">Yes</td>
+        <td style="text-align:left;"></td>
+        <td style="text-align:left;">Yes</td>
+        <td style="text-align:left;"></td>
+      </tr>
+    </tbody>
+  </table>
 </main>
