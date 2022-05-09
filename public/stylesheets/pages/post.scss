@@ -31,7 +31,7 @@
 .post-body-kicker {margin:2rem 0 2.5rem 0;font-size:var(--font-size-subhead);position:relative;}
 // .post-body-image {float:left;width:400px;height:600px;overflow:hidden;margin:0 0 0 -240px;}
 .post-body-image {height:240px;overflow:hidden;margin:3rem -10rem 3.5rem;border-radius:var(--radius);}
-.post-body-subhead {margin:4rem 0 1rem 0px;@include text-subhead;}
+.post-body-subhead {margin:4rem 0 var(--space-after-subhead) 0px;@include text-subhead;}
 .post-body-paragraph {margin:1rem 0px;line-height:1.9;}
 .post-body-paragraph:first-line {}
 .post-body-paragraph:not(:nth-of-type(1))::first-letter {padding-left:0;}

@@ -61,8 +61,9 @@ document.addEventListener('mouseover', mouseenterElement)
 
 // common 요소는 1번 이벤트..
 // ! hashchange 마다 이벤트를 생성하는 것이 문제.
-// todo
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {})
+async function domEvents() {
+  // todo
   const mediaSize760 = window.matchMedia('(max-width: 1080px)')
   const changeMedia = function(e) {
     const isMobile = e.matches
@@ -76,8 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   mediaSize760.addListener(changeMedia)
   changeMedia(mediaSize760)
-})
-async function domEvents() {
+
   // todo
   const navItemElements = document.querySelectorAll('.navbar-menu a')
   const hash = window.location.hash.substring(1)
