@@ -706,73 +706,71 @@
       <h4 class="article-subhead">Dropdown (Overflow menu)</h4>
       <div class="article-box">
         <!-- // todo 마이너스 마진 때문에 하나 더  -->
-        <div>
-          <div class="chip-group">
-            <div class="dropdown">
-              <button class="dropdown-trigger js-toggle" aria-expanded="true">
-                <span class="dropdown-trigger-label">메뉴</span>
-                <figure class="dropdown-trigger-icon"><i class="icon-caret"></i></figure>
-              </button>
-              <menu class="dropdown-menu" role="menu">
-                <h6 class="dropdown-menu-title" hidden>Dropdown header</h6>
-                <a class="dropdown-menu-link" href="#" disabled>
-                  프로필 관리
-                  <!-- <i class="icon-check"></i> -->
-                </a>
-                <a class="dropdown-menu-link" href="#">고객센터</a>
-                <hr class="dropdown-menu-divider" />
-                <a class="dropdown-menu-link" href="#">로그아웃</a>
-              </menu>
-            </div>
-            <div class="dropdown">
-              <button class="dropdown-trigger js-toggle" aria-expanded="true">
-                <span class="dropdown-trigger-label" title="일행 당 인원 수">필터</span>
-                <figure class="dropdown-trigger-icon"><i class="icon-caret"></i></figure>
-              </button>
-              <menu class="dropdown-menu" role="menu" style="padding:.75rem;">
-                <fieldset role="radiogroup">
-                  <!-- <legend class="article-anatomy-title" style="margin-bottom:0;">radiogroup</legend> -->
-                  <div class="radio">
-                    <input type="radio" id="gogo1" name="gogo" value="">
-                    <label for="gogo1" title="">1~3명</label>
-                  </div>
-                  <div class="radio">
-                    <input type="radio" id="gogo2" name="gogo" value="" checked>
-                    <label for="gogo2" title="">3명 이상</label>
-                  </div>
-                </fieldset>
-                <footer style="margin:var(--space-small) 0 0 0;">
-                  <!-- <button>옵션 초기화</button> -->
-                  <button class="chip" style="width:100%;"><span class="chip-label">적용 / 24개 상품 보기 (airbnb)</span></button>
-                </footer>
-              </menu>
-            </div>
-            <div class="dropdown">
-              <button class="dropdown-trigger js-toggle" aria-expanded="true">
-                <span class="dropdown-trigger-label">정렬</span>
-                <figure class="dropdown-trigger-icon"><i class="icon-caret"></i></figure>
-              </button>
-              <menu class="dropdown-menu" role="menu">
-                <h6 class="dropdown-menu-title" hidden>Dropdown header</h6>
-                <!-- // todo  -->
-                <a class="dropdown-menu-link" href="#" disabled style="display:flex;justify-content:space-between;align-items:center;">
-                  최신순
-                  <i class="icon-check"></i>
-                </a>
-                <a class="dropdown-menu-link" href="#" disabled>
-                  최신순
-                </a>
-              </menu>
-            </div>
-            <div class="dropdown">
-              <button class="dropdown-trigger js-toggle" aria-label="" aria-haspopup="menu" aria-expanded="false">
-                <span class=""><i class="icon-more"></i></span>
-              </button>
-              <menu class="dropdown-menu">
-                <a class="dropdown-menu-link" href="#componets">수정</a>
-                <a class="dropdown-menu-link" href="#componets">삭제</a>
-              </menu>
-            </div>
+        <div class="chip-group">
+          <div class="dropdown">
+            <button class="dropdown-trigger js-toggle" aria-expanded="true">
+              <span class="dropdown-trigger-label">메뉴</span>
+              <figure class="dropdown-trigger-icon"><i class="icon-caret"></i></figure>
+            </button>
+            <menu class="dropdown-menu" role="menu">
+              <h6 class="dropdown-menu-title" hidden>Dropdown header</h6>
+              <a class="dropdown-menu-link" href="#" disabled>
+                프로필 관리
+                <!-- <i class="icon-check"></i> -->
+              </a>
+              <a class="dropdown-menu-link" href="#">고객센터</a>
+              <hr class="dropdown-menu-divider" />
+              <a class="dropdown-menu-link" href="#">로그아웃</a>
+            </menu>
+          </div>
+          <div class="dropdown">
+            <button class="dropdown-trigger js-toggle" aria-expanded="true">
+              <span class="dropdown-trigger-label" title="일행 당 인원 수">필터</span>
+              <figure class="dropdown-trigger-icon"><i class="icon-caret"></i></figure>
+            </button>
+            <menu class="dropdown-menu" role="menu" style="padding:.75rem;">
+              <fieldset role="radiogroup">
+                <!-- <legend class="article-anatomy-title" style="margin-bottom:0;">radiogroup</legend> -->
+                <div class="radio">
+                  <input type="radio" id="gogo1" name="gogo" value="">
+                  <label for="gogo1" title="">1~3명</label>
+                </div>
+                <div class="radio">
+                  <input type="radio" id="gogo2" name="gogo" value="" checked>
+                  <label for="gogo2" title="">3명 이상</label>
+                </div>
+              </fieldset>
+              <footer style="margin:var(--space-small) 0 0 0;">
+                <!-- <button>옵션 초기화</button> -->
+                <button class="chip" style="width:100%;"><span class="chip-label">적용 / 24개 상품 보기 (airbnb)</span></button>
+              </footer>
+            </menu>
+          </div>
+          <div class="dropdown">
+            <button class="dropdown-trigger js-toggle" aria-expanded="true">
+              <span class="dropdown-trigger-label">정렬</span>
+              <figure class="dropdown-trigger-icon"><i class="icon-caret"></i></figure>
+            </button>
+            <menu class="dropdown-menu" role="menu">
+              <h6 class="dropdown-menu-title" hidden>Dropdown header</h6>
+              <!-- // todo  -->
+              <a class="dropdown-menu-link" href="#" disabled style="display:flex;justify-content:space-between;align-items:center;">
+                최신순
+                <i class="icon-check"></i>
+              </a>
+              <a class="dropdown-menu-link" href="#" disabled>
+                최신순
+              </a>
+            </menu>
+          </div>
+          <div class="dropdown">
+            <button class="dropdown-trigger js-toggle" aria-label="" aria-haspopup="menu" aria-expanded="false">
+              <span class=""><i class="icon-more"></i></span>
+            </button>
+            <menu class="dropdown-menu">
+              <a class="dropdown-menu-link" href="#componets">수정</a>
+              <a class="dropdown-menu-link" href="#componets">삭제</a>
+            </menu>
           </div>
         </div>
       </div>
@@ -808,6 +806,25 @@
             <span class="chip-label">타이포그래피</span>
           </button>
         </div>
+      </div>
+
+      <h4 class="article-subhead">Test - dropdown controls</h4>
+      <div class="article-box tile-elevated" style="max-width:360px;overflow:hidden;">
+        <p>임시 콘텐츠</p>
+        <hr style="margin:.75rem -1rem;" />
+        <footer class="chip-group js-chip" role="group" aria-orientation="horizontal">
+          <p style="margin-top:6px;margin-right:auto;">Going?</p>
+          <button class="chip">
+            <span class="chip-label">Yes</span>
+            <figure class="dropdown-trigger-icon"><i class="icon-caret"></i></figure>
+          </button>
+          <button class="chip">
+            <span class="chip-label">No</span>
+          </button>
+          <button class="chip">
+            <span class="chip-label">Maybe</span>
+          </button>
+        </footer>
       </div>
 
       <h4 class="article-subhead">references</h4>
