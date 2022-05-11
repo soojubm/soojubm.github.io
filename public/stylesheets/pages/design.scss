@@ -57,6 +57,9 @@
 .article-checklist[data-align=horizontal] {display:flex;flex-wrap:wrap;}
 .article-checklist[data-align=horizontal] li {margin:0 var(--space) 0 0;}
 
+
+.theme-dark .article-checklist li:before {background-image:url('/public/icons/White_check.svg');}
+
 .article-more {display:flex;align-items:center;font-size:var(--font-size-caption);color:var(--color-primary);font-weight:var(--font-weight-bold);position:absolute;right:0;top:0;}
 .article-more i {margin-left:1.5rem;}
 // todo

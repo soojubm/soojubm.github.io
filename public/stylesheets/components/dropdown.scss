@@ -14,3 +14,6 @@
 .dropdown-menu-link {display:block;margin:.75rem;color:var(--color-text);position:relative;z-index:var(--zindex-default);}
 .dropdown-menu-link:hover {@include hover-item;}
 .is-active + .dropdown-menu {height:auto;transform:scale(1);}
+
+.dropdown-footer {@include chip-group;margin:var(--space) var(--space-minus) -.25rem;padding:var(--space-small) .75rem 0;border-top:var(--border);}
+.dropdown-footer-question {margin-top:6px;margin-right:auto;}

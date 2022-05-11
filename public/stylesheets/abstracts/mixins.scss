@@ -152,7 +152,7 @@
   flex-wrap: wrap;
   margin: var(--space-groupitem-minus);
   > * {
-    display: block;
+    // display: block;
     margin:var(--space-groupitem);
   }
 }
