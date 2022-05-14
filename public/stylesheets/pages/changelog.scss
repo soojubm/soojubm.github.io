@@ -8,9 +8,9 @@
 .changelog-filter-chip-label {@include chip-label;}
 
 .changelog-item {display:flex;align-items:center;margin:1.25rem 0;font-size:var(--font-size-caption);position:relative;}
-.changelog-item-date {display:none;width:2.5rem;padding:0 var(--space-xsmall);}
+.changelog-item-date {width:2.5rem;padding:0 var(--space-small);}
 .changelog-item-icon {margin-left:auto;@include avatar-small;transform:rotate(90deg);}
-.changelog-item-target {@include tag;margin:0 var(--space-xsmall) 0 0;width:6rem;text-align:center;}
+.changelog-item-target {@include tag;margin:0 var(--space-small) 0 0;width:6rem;text-align:center;}
 .changelog-item-tag {@include avatar-small;font-size:var(--font-size-caption);}
 .changelog-item-tag.is-negative {background-color:var(--red100);}
 .changelog-item-tag.is-positive {background-color:var(--green100);}
@@ -23,6 +23,6 @@
 
   .changelog-item {margin-bottom:1.5rem;flex-wrap:wrap;}
   .changelog-date {display:none;}
-  .changelog-item-target {width:calc(100% - 24px - var(--space-xsmall));}
+  .changelog-item-target {width:calc(100% - 24px - var(--space-small));}
   .changelog-item-content {width:100%;padding-left:0;padding-right:0;padding-top:var(--space-small);}
 }
