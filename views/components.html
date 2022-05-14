@@ -43,7 +43,7 @@
     <!-- <span class="hero-eyebrow">Components</span> -->
     <!-- <h1 class="hero-title" style="line-height:1.3;margin-top:.25rem;"><span style="color:var(--color-text-light);">We 🐷</span><br />built this city.</h1> -->
     <h1 class="hero-title">Components</h1>
-    <p class="hero-description">디스크립션.</p>
+    <!-- <p class="hero-description">디스크립션.</p> -->
     <!-- <div>rules #클릭할수없음 #클릭할수있음 #groupable</div> -->
     <!-- <p>
       tokens: size/color/space/font/border/shadow/radius<br />
@@ -51,11 +51,15 @@
       patterns(role): label/button/filter/selectbox/dropdown/text input/
     </p> -->
 
-    <ul class="article-checklist">
+    
+
+    <!-- <ul class="article-checklist">
+      <li>역할 중심</li>
+      <li>변경하기 쉬운 (이것도 ㅓㅁ포넌트)</li>
       <li><i class="icon-check"></i>형태로보기 - 버튼/칩...</li>
       <li><i class="icon-check"></i>역할로보기 - 컨테이너/시각정보/인터렉션(필터/정렬...)...</li>
       <li>모든 시각정보는 non-clickable. 모든 인터렉션은 clickable.</li>
-    </ul>
+    </ul> -->
 
 
     <!-- <h4 class="article-subhead">Don'ts</h4>
@@ -120,6 +124,7 @@
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Table</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Accordion</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Dialog</span></a>
+      <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Title Bar</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Bottom Navigation</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Graph</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Step</span></a>
@@ -166,7 +171,7 @@
     <article class="article js-observer js-scrollspy-section">
       <span class="hashtag">visual information</span>
       <h1 class="article-title">Avatars</h1>
-      <p class="article-description">개체(유저, 회사, 프로젝트 등)를 대표하는 시각 정보입니다. 아바타의 시각 이미지를 통해 사용자의 흥미를 높일 수 있습니다.</p>
+      <p class="article-description">개체(유저, 회사, 프로젝트 등)를 대표하는 시각 정보입니다. 아바타의 시각 이미지는 사용자의 흥미를 높일 수 있습니다.</p>
 
       <blockquote hidden>
         <q>인물, 그룹, 회사, 프로젝트 등의 unique entity로 대부분의 디자인 시스템에서 정의. 여기서는 조금 더 포괄적인 개념.</q>
@@ -259,26 +264,28 @@
       </article>
 
       <h4 class="article-subhead">Entities // button/linkButton? - clickable</h4>
-      <article class="item" data-size="huge">
-        <figure class="item-avatar">
-          <span class="avatar-badge"></span>
-        </figure>
-        <h3 class="item-name">huge</h3>
-        <p class="item-description">huge는 디스크립션을 갖습니다.</p>
-      </article>
-      <article class="item" data-size="large">
-        <figure class="item-avatar"></figure>
-        <h3 class="item-name">large</h3>
-        <p class="item-description">large는 디스크립션을 갖습니다.</p>
-      </article>
-      <article class="item" data-size="medium">
-        <figure class="item-avatar"></figure>
-        <h3 class="item-name">medium</h3>
-      </article>
-      <article class="item" data-size="small">
-        <figure class="item-avatar"></figure>
-        <h3 class="item-name">small</h3>
-      </article>
+      <div class="article-box">
+        <article class="item" data-size="huge">
+          <figure class="item-avatar">
+            <span class="avatar-badge"></span>
+          </figure>
+          <h3 class="item-name">huge</h3>
+          <p class="item-description">huge는 디스크립션을 갖습니다.</p>
+        </article>
+        <article class="item" data-size="large">
+          <figure class="item-avatar"></figure>
+          <h3 class="item-name">large</h3>
+          <p class="item-description">large는 디스크립션을 갖습니다.</p>
+        </article>
+        <article class="item" data-size="medium">
+          <figure class="item-avatar"></figure>
+          <h3 class="item-name">medium</h3>
+        </article>
+        <article class="item" data-size="small">
+          <figure class="item-avatar"></figure>
+          <h3 class="item-name">small</h3>
+        </article>
+      </div>
 
 
       <h4 class="article-subhead">User Cards??</h4>
@@ -419,32 +426,25 @@
     </article> -->
 
     <article class="article js-observer js-scrollspy-section">
-      <span class="hashtag">action</span>
-      <span class="hashtag">link</span>
+      <span class="hashtag">interaction</span>
+      <!-- <span class="hashtag">link</span> -->
       <h1 class="article-title">Buttons</h1>
-      <p class="article-description">사용자 여정의 핵심적인 액션입니다.</p>
+      <p class="article-description">과업 수행을 위한 페이지 이동, 데이터 제출 등 사용자 여정의 핵심적인 액션입니다.</p>
 
       <!-- <p>Split Button</p> -->
 
       <!-- <li><i class="icon-check"></i> 아이콘 버튼의 아이콘은 관습적인 메타포를 사용하세요.</li> -->
       <!-- <p><span><i></i></span> 역할이 명확한 모두보기, 불러오는중, 더보기 등의 버튼은 합성해서 컴포넌트로 관리.</p> -->
       <!-- <li><i class="icon-check"></i> 버튼 아래에 가이드 텍스트를 배치하지 않습니다.<span hidden> (secondary 액션의 text 버튼이 아래에 위치하는 패턴 고려).</spanhi></li> -->
-      <!-- <li><i class="icon-check"></i> more load 버튼은 full-width로 사용하지 않습니다. 콘텐츠보다 작은 크기로 대비를 줍니다. </li> -->
 
       <h4 class="article-subhead">?? Checklist</h4>
       <ul class="article-checklist">
         <li><i class="icon-check"></i> 액션 실행 후 피드백합니다. 물리적인 인터페이스의 출현(?) 뿐만 아니라 예측 가능한 페이지 이동이나 새로고침, 정보 구조의 변화도 피드백이 될 수 있습니다.</li>
-        <li><i class="icon-check"></i> 통일된 시각 효과로 버튼의 상태를 표현합니다. 상태를 표현하는 시각 정보는 개별 버튼 컴포넌트에 종속되지 않아야 합니다.</li>
-        <li><i class="icon-check"></i> 아이콘 버튼은 Chip을 사용합니다.</li>
+        <li><i class="icon-check"></i> 통일된 시각 효과로 버튼의 상태를 표현합니다. 상태를 표현하는 시각 정보는 개별 버튼 컴포넌트에 종속되지 않고 제품 전체에 일관되게 표현합니다.</li>
         <!-- <li><i class="icon-check"></i> binary choice에서 primary 버튼과 secondary 버튼을 함께 배치하지 않습니다.</li> -->
         <!-- <li><i class="icon-check"></i> 키보드 접근성을 위해 버튼 그룹에서 항상 primary 버튼을 먼저 마크업하세요.</li> -->
         <!-- <li> Dialog 에서 T F</li> -->
       </ul>
-      <p class="article-exception" style="margin:var(--space) 0 0 0;">
-        <span class="tag" style="margin:0 0 var(--space-small) 0;">예외케이스</span>
-        <br />
-        follow/unfollow 버튼은 별도의 버튼 컴포넌트로 정의. 액션의 위계가 달라지는 케이스.
-      </p>
       
       <h4 class="article-subhead">Editing Checklist</h4>
       <ul class="article-checklist" data-align="horizontal">
@@ -492,7 +492,7 @@
         </div>
       </div>
       <aside class="article-helper">
-        <p>large 버튼은 프로모션 페이지의 call to action으로 제한적으로 사용합니다.</p>
+        <p>large 크기는 프로모션 페이지의 call to action으로 제한적으로 사용합니다.</p>
       </aside>
 
       <h4 class="article-subhead">Appearance</h4>
@@ -505,7 +505,7 @@
         </div>
         <button class="button-elevated" style="margin:.75rem 0 0 0;">
           <figure class="button-elevated-avatar"></figure>
-          <span class="button-elevated-label">아티클 레벨에서 쓰는 elevated style 버튼</span>
+          <span class="button-elevated-label">아티클 레벨에서 쓰는 elevated 버튼</span>
         </button>
       </div>
       <aside class="article-helper">
@@ -519,7 +519,6 @@
           <button class="article-tertiary is-focus">Focus</button>
           <button class="article-tertiary" disabled>Disabled</button>
           <button class="article-tertiary" disabled>TODO: Progressing</button>
-          <button class="danger-button" aria-label="danger">Danger</button>
         </div>
       </div>
       <aside class="article-helper">
@@ -530,12 +529,16 @@
       <h4 class="article-subhead">Specifics?</h4>
       <div class="article-box">
         <div class="design-buttongroup" style="margin-right:var(--space-minus);padding-right:var(--space);">
-          <button class="article-tertiary">More Load</button>
-          <button class="article-tertiary" style="background:var(--green100);color:var(--green800);">Follow</button>
+          <button class="article-tertiary">More Load (TODO icon)</button>
+          <button class="article-tertiary" style="border-color:var(--green100);background:var(--green100);color:var(--green800);">Follow</button>
           <button class="article-tertiary">Unfollow</button>
-
+          <button class="danger-button" aria-label="danger">Danger</button>
         </div>
       </div>
+      <aside class="article-helper">
+        <p>more load를 full-width로 사용하지 마세요. 콘텐츠보다 작은 크기로 대비를 줍니다..</p>
+      </aside>
+
     </article>
 
     <!-- <article class="article">
@@ -573,9 +576,9 @@
       
       <h4 class="article-subhead">?? Checklist</h4>
       <ul class="article-checklist">
-        <li><i class="icon-check"></i> 모든 Chip은 Clickable속성입니다.</li>
+        <li><i class="icon-check"></i> Clickable.</li>
         <li><i class="icon-check"></i> 맥락이 다른 chip을 나열할 수 있습니다. 이 때 단일선택, 다중선택, 삭제여부, 펼침메뉴 등의 기표를 충분히 제공하세요.</li>
-        <li><i class="icon-check"></i> 콘텐츠 정렬sorting 기능을 위해 chip group으로 chip을 나열하지 않습니다. dropdown으로 현재 정렬 상태만 요약합니다. (bad case: 2022.04 구글 지도 바뀐 것)</li>
+        <li><i class="icon-check"></i> 콘텐츠 정렬sorting을 위해 chip group으로 chip을 나열하지 않습니다. dropdown으로 현재 정렬 상태만 요약합니다. (bad case: 2022.04 구글 지도 바뀐 것)</li>
         <li>todo: uncheckable/removable를 구분할 수 잇는 기표 제공. 단일/다중/</li>
       </ul>
 
@@ -662,7 +665,7 @@
         </div>
       </div>
       <aside class="article-helper">
-        <p>키워드로 검색합니다.</p>
+        <p>검색의 맥락.</p>
       </aside>
 
       <h4 class="article-subhead">Single Selection - Contents Filtering</h4>
@@ -810,7 +813,7 @@
 
       <h4 class="article-subhead">Test - dropdown controls</h4>
       <div class="article-box tile-elevated" style="max-width:360px;overflow:hidden;">
-        <p>임시 콘텐츠</p>
+        <p>콘텐츠 영역</p>
         <footer class="dropdown-footer chip-group" role="group" aria-orientation="horizontal">
           <p class="dropdown-footer-question">Going?</p>
           <button class="dropdown-footer-action chip">
@@ -825,6 +828,9 @@
           </button>
         </footer>
       </div>
+      <aside class="article-helper">
+        <p>페이지 맥락이 될 때 버튼이 더 눈에 띄어야 할 수 있다.</p>
+      </aside>
 
       <h4 class="article-subhead">references</h4>
       <div class="">
@@ -845,7 +851,7 @@
       <h4 class="article-subhead">?? Checklist</h4>
       <ul class="article-checklist">
         <!-- <li><i class="icon-check"></i> secondary 사용 안 함.</li> -->
-        <li><i class="icon-check"></i> non-clickable: 링크나 액션을 위한 clickable 요소로 쓰지 않습니다.  <span hidden>triggering interaction</span></li>
+        <li><i class="icon-check"></i> non-clickable<span hidden>triggering interaction</span></li>
         <!-- <li><i class="icon-check"></i> 아이콘을 포함하지 않습니다. </li> -->
         <!-- <li><i class="icon-check"></i> 3개 이상의 태그를 포함할 수 없습니다.</li> -->
         <!-- <li><i class="icon-check"></i> 해시태그(#)는 항상 클릭할 수 있어야 합니다.</li> -->
@@ -912,6 +918,9 @@
         <li><i class="icon-check"></i> leading, tailing 엘리먼트의 line-height에 차이를 시각보정합니다.</p>
       </ul>
       <br />
+      <div class="design-tile-flat" style="padding:1rem;">
+        <h5 style="font-size:var(--font-size-subhead);">flat large with subhead</h5>
+      </div>
       <div class="design-tile-flat">
         <b>flat</b>
       </div>
@@ -924,7 +933,7 @@
     </article>
 
     <article class="article js-observer js-scrollspy-section">
-      <span class="hashtag">selection</span>
+      <span class="hashtag">interaction</span>
       <h1 class="article-title" title="or Box">Switch</h1>
       <p class="article-description">스위치는 켜거나 끌 수 있는 설정 옵션입니다.</p>
       <p hidden>A switch is a visual toggle between two mutually exclusive states — on and off.</p>
@@ -938,7 +947,7 @@
       <ul class="article-checklist">
         <!-- <li><i class="icon-check"></i> 왼쪽 오른쪽에 필터나 탭으로 쓰지 않습니다.</li> -->
         <!-- <li><i class="icon-check"></i> 결과를 즉시 반영합니다. 그런데 두 번쨰 패턴은 그렇지 않음</li> -->
-        <li><i class="icon-check"></i> 2개의 레이블과 함께 콘텐츠 스위칭으로 사용하지 않습니다.</li>
+        <li><i class="icon-check"></i> 스위치의 왼쪽과 오른쪽에 각각 레이블을 배치하여 콘텐츠 스위칭으로 사용하지 않습니다.</li>
       </ul>
       
       <h4 class="article-subhead">Editing Checklist</h4>
@@ -999,7 +1008,7 @@
     </article>
 
     <article class="article js-observer js-scrollspy-section">
-      <span class="hashtag">selection</span>
+      <span class="hashtag">interaction</span>
       <h1 class="article-title" title="or Box">Checkboxes</h1>
       <p class="article-description">옵션 목록에서 하나 이상의 옵션을 선택합니다.</p>
       <!-- 체크할 수 있는 인터렉션 컨트롤. -->
@@ -1038,7 +1047,7 @@
     </article>
 
     <article class="article js-observer js-scrollspy-section">
-      <span class="hashtag">selection</span>
+      <span class="hashtag">interaction</span>
       <h1 class="article-title" title="or Box">Radioes</h1>
       <p class="article-description">옵션 목록에서 하나의 옵션을 선택합니다.</p>
 
@@ -1134,7 +1143,7 @@
     </article>
 
     <article class="article js-observer js-scrollspy-section">
-      <span class="hashtag">input</span>
+      <span class="hashtag">interaction</span>
       <h1 class="article-title">Textfields</h1>
       <p class="article-description">텍스트 정보를 입력합니다.</p>
 
@@ -1246,7 +1255,7 @@
     <article class="article js-observer js-scrollspy-section">
       <span class="hashtag">navigation</span>
       <h1 class="article-title">Breadcrumb</h1>
-      <p class="article-description">사용자의 현재 위치를 나타내는 계층 구조의 네비게이션입니다. 이전 페이지로 이동할 수 있습니다.</p>
+      <p class="article-description">사용자의 현재 위치를 나타내는 계층 구조의 네비게이션입니다.</p>
 
       <h4 class="article-subhead">?? Checklist</h4>
       <ul class="article-checklist">
@@ -1269,7 +1278,7 @@
     </article>
 
     <article class="article js-observer js-scrollspy-section">
-      <span class="hashtag">link</span>
+      <span class="hashtag">interaction?</span>
       <h1 class="article-title">Links</h1>
       <p class="article-description">페이지를 이동하거나 요약된 콘텐츠를 확장합니다.</p>
 
@@ -1413,7 +1422,7 @@
     </article>
 
     <article class="article js-observer js-scrollspy-section js-tab">
-      <span class="hashtag">action</span>
+      <span class="hashtag">interaction</span>
       <h1 class="article-title">Tab</h1>
       <p class="article-description">맥락이 같은 콘텐츠를 주제별로 분류합니다. 2204 tab flex:auto로 해야 탭이 탭의 위계를 갖기는 하는데..<p>
 
@@ -1527,14 +1536,13 @@
     <article class="article js-observer js-scrollspy-section" style="overflow:visible;">
       <h1 class="article-title">Tooltip</h1>
       <!-- Popover -->
-      <p class="article-description">용어를 설명하거나 정보의 근거를 보충합니다.</p>
+      <p class="article-description">용어를 설명하거나 정보의 근거를 보충합니다. todo 아이콘의 레이블로 쓰는 경우.</p>
       <!-- todo. 페이지 로딩 시점에 열려 있는 경우 doorhanger 필요. 엄밀하게는 이것은 툴팁이 아님 -->
       
       <h4 class="article-subhead">?? Checklist</h4>
       <ul class="article-checklist">
         <li><i class="icon-check"></i> 행동을 유도하는 가이드로 사용하지 않습니다.</li>
         <li><i class="icon-check"></i> 페이지 링크로 사용하지 않습니다.</li>
-        lji 
       </ul>
       <br />
       <aside class="tooltip">
@@ -1559,13 +1567,13 @@
         <li><i class="icon-check"></i> 모든 액션에 피드백할 필요는 없습니다. (ex bad case: 인스타그램 앱에서 로그인되었다는 toast. 홈으로 이동과 피드 노출만으로 로그인 상태를 인지할 수 있다.)</li>
         <li><i class="icon-check"></i> Don't show more than one at a time.</li>
         <li><i class="icon-check"></i> 닫기나 되돌리기와 같은 액션을 포함할 수 없습니다. 그러면 더 주목도가 높은 다이얼로그 등을 쓰라.</li>
+        <li><i class="icon-check"></i> 사용자의 귀책이 아닌 경우, 단순 "오류" 대신 "시스템 오류"와 같은 용어를 사용하여 사용자가 잘못한 것처럼 느끼지 않도록 합니다.</li>
         <li>사라지는 시간을 정의.</li>
       </ul>
     
       <h4 class="article-subhead">Editing Checklist</h4>
       <ul class="article-checklist">
-        <li><i class="icon-check"></i> 한 문장으로 간결하게 작성합니다.</li>
-        <li><i class="icon-check"></i> 사용자의 귀책이 아닌 경우, 단순 "오류" 대신 "시스템 오류"와 같은 용어를 사용하여 사용자가 잘못한 것처럼 느끼지 않도록 합니다.</li>
+        <li><i class="icon-check"></i> 한 문장</li>
       </ul>
       <!-- Icon: Informs users of the kind of notification at a glance.
       Title: Gives users a quick overview of the notification.
@@ -1820,7 +1828,7 @@
 
       <h4 class="article-subhead">?? Checklist</h4>
       <ul class="article-checklist">
-        <li><i class="icon-check"></i> 사용자가 반드시 숙지해야 하는 정보를 요약해서 보여주지 않습니다. (툴팁과 묶기)</li>
+        <li><i class="icon-check"></i> 사용자가 반드시 숙지해야 하는 정보를 요약해서 보여주지 않습니다. (툴팁도 마찬가지)</li>
       </ul>
 
       <h4 class="article-subhead">Editing Checklist</h4>
@@ -1871,10 +1879,10 @@
 
 
     <article class="article js-observer js-scrollspy-section">
-      <span class="hashtag">attention</span>
-      <span class="hashtag">confirm</span>
+      <!-- <span class="hashtag">attention</span>
+      <span class="hashtag">confirm</span> -->
       <h1 class="article-title">Dialog</h1>
-      <p class="article-description">작성 중.</p>
+      <p class="article-description">작성 중. 다이얼로그는 모달이 아님. todo modality 개념..</p>
       <!-- <p>사용자는 모달 형태의 집중된 환경에서(?) 리스크를 관리할 수 있습니다.</p> -->
 
       <!-- <h4 class="article-subhead">?? Checklist</h4>
@@ -2083,7 +2091,7 @@
 
     <article class="article js-observer js-scrollspy-section">
       <h1 class="article-title">Step</h1>
-      <p class="article-description">워크플로우입니다. changelog: 클릭하고 싶지 않은 스타일로 변경 2021.10</p>
+      <p class="article-description">워크플로우입니다. changelog: 클릭하고 싶지 않은 형태로 변경 2021.10</p>
       <!-- <p class="article-description">타임라인(역순)/히스토리 맥락. 확장<small class="is-optional">optional</small>, 링크<small class="is-optional">optional</small>, indentation</p> -->
       <!-- <blockquote>
         <p>css속성으로 -webkit-appearance: slider-vertical slider 속성 값을 사용하기 때문에 slider는 carousel로 명명. input type="range" 형태를 stepper로 명명하는 경우가 있음.</p>

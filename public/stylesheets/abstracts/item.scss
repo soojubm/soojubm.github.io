@@ -31,7 +31,8 @@
 }
 
 // todo entry / message / created
-.item {@include item;margin:var(--space-after-item) 0;}
+.item {@include item;}
+.item + .item {margin:var(--space-after-item) 0 0 0;}
 .item-avatar {@include item-avatar;}
 .item-name {font-size:var(--font-size-body);}
 .item-description {display:block;line-height:var(--font-line-height-small);color:var(--color-text-light);}

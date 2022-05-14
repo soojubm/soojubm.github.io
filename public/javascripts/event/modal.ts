@@ -42,9 +42,10 @@ function modal({ selector: trigger }: Parameter) {
 
       openModal(window.pageYOffset)
 
-      document.addEventListener('keydown', checkCloseDialog)
       window.addEventListener('popstate', closeModal)
       modalContainer!.addEventListener('click', temp)
+      document.addEventListener('keydown', checkCloseDialog)
+
     }),
   )
 

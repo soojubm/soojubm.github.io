@@ -3,7 +3,7 @@
 .post-head-category {display:flex;align-items:center;@include link-outer;position:relative;}
 .post-head-category:hover {}
 .post-head-category figure {@include avatar-tiny;margin:0 .5rem 0 0;font-size:10px;}
-.post-head-headline {@include text-title;} /* 상하단 패딩 똑같이해야 스키티때 */
+.post-head-headline {@include text-title;line-height:1.4;} /* 상하단 패딩 똑같이해야 스키티때 */
 .post-head-dateline {}
 .post-head-readingtime {}
 .post-head-progress {display:none;height:2px;background:var(--color-primary);border-radius:var(--radius);position:absolute;bottom:0;}

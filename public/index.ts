@@ -61,7 +61,9 @@ document.addEventListener('mouseover', mouseenterElement)
 
 // common 요소는 1번 이벤트..
 // ! hashchange 마다 이벤트를 생성하는 것이 문제.
-document.addEventListener('DOMContentLoaded', () => {})
+document.addEventListener('DOMContentLoaded', () => {
+  carousel()
+})
 async function domEvents() {
   // todo
   const mediaSize760 = window.matchMedia('(max-width: 1080px)')

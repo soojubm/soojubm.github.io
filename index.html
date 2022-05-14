@@ -130,14 +130,17 @@
       <div class="navbar-menu" role="navigation">
         <div class="navbar-menu-item has-submenu">
           <!-- <a role="menuitem" style="cursor:none;">디자인 시스템<i class="icon-caret"></i></a> -->
+          <!-- <a class="is-active" route="/design" href="#">Home</a> -->
           <menu>
-            <!-- <a class="is-active" route="/design" href="#">Home</a> -->
-
             <a class="" route="/design" href="https://www.notion.so/soojubm/9c18f4dd39eb4181b9f9c2ee76896618" target="_blank">
               About
               <i class="icon-arrow is-external" style="margin-left:var(--space-small);margin-bottom:4px"></i>
             </a>
-            <hr />
+          </menu>
+        </div>
+        <div class="navbar-menu-item has-submenu" style="margin:var(--space-small) 0 0 0;">
+          <span role="menuitem">디자인시스템<i class="icon-caret"></i></span>
+          <menu>
             <a route="/design" href="#tokens">Design Tokens</a>
             <a route="/design" href="#components">Components</a>
             <!-- <a style="color:var(--color-text-light);cursor:not-allowed;" onclick="javascript:'(준비중)';">Dictionary</a> -->
@@ -145,8 +148,7 @@
               Foundations
               <span class="tag" style="margin-left:var(--space-small);vertical-align:middle;font-weight:var(--font-weight-normal);">draft</span>
             </a>
-            <!-- <a href="#changelog">Changelog</a> -->
-            <!-- <a>Changelog</a> -->
+            <a href="#changelog">Changelog</a>
           </menu>
         </div>
         <!-- <a route="/design" class="navbar-menu-item" href="#design">디자인시스템</a> -->
