@@ -31,7 +31,7 @@
 .signup-terms-content {height:120px;padding:8px 16px;border:var(--border);border-radius:var(--radius);box-sizing:border-box;font-size:var(--font-size-caption);color:var(--color-text-light);overflow-y:scroll;}
 
 .password {@include container-medium;}
-.password-head {margin-bottom:3rem;position:relative;}
+.password-head {margin:2rem 0;position:relative;}
 .password-title {@include text-title;font-family:'Changa One';font-weight:var(--font-weight-normal);}
 .password-description {margin:1rem 0 0 0;}
 .password-foot {display:flex;align-items:center;justify-content:space-between;margin:.75rem 0 0 0;}

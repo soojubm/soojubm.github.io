@@ -8,7 +8,7 @@
 .cake-head-engtitle {margin:0 0 1.5rem 0;@include text-subhead;}
 .cake-head-description {margin:1rem 0 0 0;}
 
-.cake-poster {width:50%;max-width:280px;border:var(--border);border-radius:var(--radius);overflow:hidden;position:absolute;right:0;z-index:var(--zindex-default);}
+.cake-poster {width:50%;max-width:272px;border:var(--border);border-radius:var(--radius);overflow:hidden;position:absolute;right:0;z-index:var(--zindex-default);}
 .cake-poster img {display:block;}
 .cake-head-button {@include button-primary;min-width:11rem;margin-right:1rem;}
 
