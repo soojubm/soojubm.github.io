@@ -84,16 +84,10 @@
 
       <h4 class="article-subhead">Radius</h4>
       <article class="token-item is-gray000">
-        <figure class="token-item-avatar" style="border-left-color: var(--gray800);
-        border-top-color:var(--gray800);
-        border-left-width: 2px;
-        border-top-width: 2px;
-        /* border-bottom: 0; */
-        /* border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0; */
-        "></figure>
-        <b>--radius: 4px</b>
+        <figure class="token-item-avatar">
+          <em style="width:1rem;height:1rem;border-radius:var(--radius);background:var(--color-background-strong);display:block;position:absolute;left:-1px;top:-1px;border-top-right-radius:0;border-bottom-right-radius:0;border-bottom-left-radius:0;"></em>
+        </figure>
+        <b>--radius: <del>4px</del>6px</b>
       </article>
       <aside class="article-helper">
         <p>크기와 비례해서 radius 조절이 필요하지만 경량화.</p>
@@ -349,8 +343,7 @@
       <code style="padding:1rem;">
         <small>// 정의한 토큰과 같은 값이라도 독립적으로 사용하는 것이 좋은 케이스. (todo 근거)</small>
         <p><del>--navbar-height: var(--size-huge)</del></p>
-        <p>--navbar-height: 4rem</p>
-        <p>--titlebar-height: 4rem</p>
+        <p>--navbar-height: 5rem</p>
       </code>
       <div class="tokens">
         <div class="token-item">
@@ -417,7 +410,7 @@
 
       <!-- <blockquote>todo: space-inset 3가지로 확장. 코드에 반영.</blockquote> -->
 
-      <h4 class="article-subhead">Values?</h4>
+      <!-- <h4 class="article-subhead">Values?</h4> -->
       <div class="token-item">
         <b>--space-xsmall: .25rem</b>
         <div>
@@ -461,7 +454,7 @@
         <div class="space" style="width:5%;writing-mode: vertical-rl;color:var(--color-text);"><span class="">var(--grid-margin)</span></div>
       </article>
 
-      <h4 class="article-subhead">Tile(article level)</h4>
+      <h4 class="article-subhead">Tile (outdated)</h4>
       <article class="spacing-card">
         <div class="space" style="height:var(--space-tile-inset);position:absolute;left:0;right:0;top:-1px;"><span class="">var(--space-tile-inset)</span></div>
         <div class="space" style="height:var(--space-tile-inset);position:absolute;left:0;right:0;bottom:-1px;z-index:0;"><span class="">var(--space-tile-inset)</span></div>

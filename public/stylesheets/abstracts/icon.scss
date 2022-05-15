@@ -38,7 +38,7 @@
 .icon-ribbon:after {content: '';display: block;width:8px;height:8px;background:var(--gray100);margin:-2px auto 0;transform: rotate(45deg);}
 
 .icon-search {}
-.icon-search:before {content: '';display: block;width:10px;height:10px;border-radius:50%;margin:0 auto;border:2px solid var(--icon-background);transform:translateX(-1px)}
+.icon-search:before {content: '';display: block;width:9px;height:9px;border-radius:50%;margin:0 auto;border:2px solid var(--icon-background);transform:translateX(-1px)}
 .icon-search:after {content: '';display: block;width:6px;height:2px;background: var(--icon-background);margin:0 auto;border-radius:var(--radius);transform: rotate(45deg) translate(3px,-5px);}
 // .is-active .icon-search:before {content:'';width:10px;height:2px;background-color:var(--icon-background);position:absolute;left:50%;top:50%;transform: translate(-50%, -50%) rotate(45deg);border:none;border-radius:0;}
 // .is-active .icon-search:after {content:'';width:2px;height:10px;background:var(--icon-background);position:absolute;left:50%;top:50%;transform:translate(-50%, -50%) rotate(45deg);}

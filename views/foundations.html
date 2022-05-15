@@ -14,6 +14,9 @@
 
   <header class="hero">
     <h1 class="hero-title">Foundations</h1>
+    <h1 class="hero-title" style="color:var(--color-primary);font-family:'DunkelSans';font-size:28px;margin:var(--space-small) 0 0 0;">
+      우리가<br />해결하려는 문제는<br />사용자 인터페이스가 아니다.
+    </h1>
     <p class="hero-description">추상적으로..</p>
     <style>
       .foundation-item {
@@ -102,65 +105,52 @@
   </article>
 
   <article class="article js-scrollspy-section">
-    <h1 class="article-title">Level 👋</h1>
+    <h1 class="article-title">Level 👋? Container??</h1>
 
     <span style="display:block;width:100%;font-size:var(--font-size-body);font-family:var(--fontstack);">
-      Summary. 컨테이너의 레벨에 의한 자식 컴포넌트 결정론. App - Page - Section - Article...
+      <!-- Summary. 컨테이너의 레벨에 의한 자식 컴포넌트 결정론. -->
     </span>
+
+    <h3 style="margin:0 0 var(--space-small) 0;">App</h3>
+    <p>navbar / footer</p>
+
+    <br />
+    <h3 style="margin:0 0 var(--space-small) 0;">Page</h3>
+    <p>section / local footer</p>
+    <br />
+
+    <h3 style="margin:0 0 var(--space-small) 0;">Section</h3>
+    <p>hero / banner / tab</p>
+    <p>CTA / button</p>
+    <br />
+
+    <h3 style="margin:0 0 var(--space-small) 0;">Article</h3>
+    <p>subhead</p>
+    <p>tile</p>
+    <p>entity list</p>
+    <p>contents filtering - chip group</p>
+    <p>버튼 x / tab x</p>
+    <p>mobile에서 page</p>
+    <br />
+
+    <h3 style="margin:0 0 var(--space-small) 0;">Group</h3>
+    <p>단독으로 사용할 수 없는 컨테이너 컴포넌트.</p>
+    <p>avatar / button / chip / tag. checkgroup/radiogroup은 조금 다른 맥락</p>
+    <br />
     <ol>
       <li>컴포넌트들의 레베루</li>
       <li>레벨 컴포넌트가 자닐 수 있는 컴포넌트</li>
     </ol>
+
     <ul class="article-checklist">
-      <li>hero, banner 등이 section 레벨.</li>
-      <li>section 레벨의 최상위 위계으 액션은 button 컴포넌트가 된다.</li>
-      <li>article 레벨의 컴포넌트만 tile을 쓸 수 수 있다.</li>
-      <li>article 레벨의 자식이 entity(item) list를 가진다....;.</li>
-      <li>article 레벨은 button으로 액션할 수 없다.</li>
-      <li>article 레벨에서는 탭을 쓸 수 없음. chip group으로 필터링은 가능. 이거 구분하기.</li>
-      <li>article 레벨의 제목은 subhead.</li>
-      <li>!!! article 레벨의 모든 컴포넌트는 페이지 맥락이 될 수 있음...</li>
-      <li>그룹 = avatar/button/tag/chip 총 4개. checkgroup/radiogroup은 조금 다른 맥락.</li>
       <li>
         todo. 버튼 그룹은 2개 이상의 버튼을 가질 수 없음. 복잡도 최소화. 툴바는 여러 개의 액션(버튼의 역할을 하는 chip group)을 가질 수 있다.
       </li>
       <li>검색 레벨 :: 글로벌 / 로컬 패턴 정리</li>
       <li>Progressing. Loader의 레벨</li>
-
       <li>aaa스몰 사이즈 버튼은 필요없다.</li>
       <li>온보딩을 위한 디자인 시스템.</li>
     </ul>
-
-    <div>
-      <span class="tag" data-appearance="secondary">App</span>
-      <span class="tag">Navbar</span>
-      <span class="tag">Footer</span>
-    </div>
-    <div>
-      <span class="tag" data-appearance="secondary">Page</span>
-      <span class="tag">Tab</span>
-      <span class="tag"></span>
-    </div>
-
-    <div>
-      <span class="tag" data-appearance="secondary">Section</span>
-      <span class="tag">Hero</span>
-      <span class="tag">Banner</span>
-    </div>
-
-    <div>
-      <span class="tag" data-appearance="secondary">Article</span>
-      <span class="tag">Card</span>
-      <span class="tag"></span>
-
-      <span>subhead / paragraph</span>
-    </div>
-
-    <div>
-      <span class="tag" data-appearance="secondary">Item / Entity</span>
-      <span class="tag">Avatar</span>
-      <span class="tag">Chip</span>
-    </div>
   </article>
 
   <!-- 2018년 Spotify는 계속해서 빠르게 성장했습니다. 
