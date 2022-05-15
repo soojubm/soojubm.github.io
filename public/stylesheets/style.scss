@@ -522,7 +522,7 @@ q:before {
 
 // todo variables
 .landing {
-  --section-inset: 6rem;
+  --section-inset: var(--grid-margin);
   --left: 52.5%;
 }
 
@@ -549,7 +549,7 @@ q:before {
 
 @media (--breakpoint-small) {
   .landing {
-    --section-inset: 4rem;
+    // --section-inset: 4rem;
     --left: 0;
   }
   .landing-2-figure {float:none;max-width:100%;margin:0 0 2rem 0;}
