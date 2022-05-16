@@ -44,14 +44,6 @@
     <!-- <h1 class="hero-title" style="line-height:1.3;margin-top:.25rem;"><span style="color:var(--color-text-light);">We 🐷</span><br />built this city.</h1> -->
     <h1 class="hero-title">Components</h1>
     <!-- <p class="hero-description">디스크립션.</p> -->
-    <!-- <div>rules #클릭할수없음 #클릭할수있음 #groupable</div> -->
-    <!-- <p>
-      tokens: size/color/space/font/border/shadow/radius<br />
-      components(style): avatar/chip/tile/text?/textfield<br />
-      patterns(role): label/button/filter/selectbox/dropdown/text input/
-    </p> -->
-
-    
 
     <!-- <ul class="article-checklist">
       <li>역할 중심</li>
@@ -135,39 +127,16 @@
 
   <!-- <article class="article js-observer">
     <h1 class="article-title">Bullet</h1>
-    <p class="article-description">불릿, 콤마, 콜론, 슬래시, 따옴표, 괄호 등 지양. 정보의 복잡도가 증가하고 디자인하지 않았다는 인상 슬래시가 대표적인 불릿의 역할. 컴포넌트화해야 함. </p>
-    <div style="font-size:12px;">
-      <p style="margin-top:var(--space);font-size:12px;"><span style="margin-right:.75rem;"><i class="icon-check"></i></span>클립보드에 복사를 위해 드래그 했을 때 불릿은 선택되지 않아야 합니다.</p>
-      <p style="font-size:12px;"><span style="margin-right:.75rem;"><i class="icon-check"></i></span>불릿과 같은 용법인 슬래시(/)는 사용하지 않습니다. 정의된 스타일만을 불릿 용법으로 사용합니다.</p>
-    </div>
-    <br />
-    <div>
-      <span>텍스트</span>
-      <i class="icon-bullet"></i>
-      <span>텍스트</span>
-    </div>
+    <p style="font-size:12px;">불릿, 콤마, 콜론, 슬래시, 따옴표, 괄호 등 지양. 정보의 복잡도가 증가하고 디자인하지 않았다는 인상.</p>
+    <p style="font-size:12px;">클립보드에 복사를 위해 드래그 했을 때 불릿은 선택되지 않아야 합니다.</p>
   </article> -->
 
-  
+  <!-- <p style="font-size:var(--font-size-caption);">- Clickable은 Link/Action/Submit</p>
+  <p style="font-size:var(--font-size-caption);">- "Feedback Needed" after action</p>
+  <p style="font-size:var(--font-size-caption);">- Actions: removable, selectable(single/multiple), checkable/uncheckable, addable</p>
+  <p style="margin:0 0 var(--space) 0;font-size:var(--font-size-caption);">- Groupable과 Stackable을 구분하는 것이 좋을찌?</p> -->
 
   <section class="component-body">
-
-
-    <!-- <article class="article">
-      <table>
-        <tbody>
-          <tr style="border:0;">
-            <th>entity</th>
-            <td>개체</td>
-          </tr>
-          <tr style="border:0;">
-            <th>action</th>
-            <td>행동</td>
-          </tr>
-        </tbody>
-      </table>
-    </article> -->
-
     <article class="article js-observer js-scrollspy-section">
       <span class="hashtag">visual information</span>
       <h1 class="article-title">Avatars</h1>
@@ -183,18 +152,11 @@
         <li><i class="icon-check"></i> 이미지, 텍스트, 아이콘을 포함합니다.</li>
         <li>todo hoverable... 상세 사용자 정보를 팝오버로 제공할 수 있다.</li>
         <!-- <li><i class="icon-check"></i> chip 컴포넌트는 active 상태를 포함하고 있기 때문에 다른 기표로 active 상태를 표시하는 경우에는 사용하지 않습니다.</li> -->
-       
       </ul>
       <!-- <div class="article-role">
         <span class="article-role-title">role</span>
         <span class="article-role-item">썸네일/아이콘버튼/유저아바타</span>
       </div> -->
-
-      <br />
-      <p style="font-size:var(--font-size-caption);">- Clickable은 Link/Action/Submit</p>
-      <p style="font-size:var(--font-size-caption);">- "Feedback Needed" after action</p>
-      <p style="font-size:var(--font-size-caption);">- Actions: removable, selectable(single/multiple), checkable/uncheckable, addable</p>
-      <p style="margin:0 0 var(--space) 0;font-size:var(--font-size-caption);">- Groupable과 Stackable을 구분하는 것이 좋을찌?</p>
 
       <!-- <div class="article-anatomy">
         <table>
@@ -497,7 +459,7 @@
 
       <h4 class="article-subhead">Appearance</h4>
       <div class="article-box" style="z-index:1;">
-        <div class="design-buttongroup" style="margin-right:var(--space-minus);padding-right:var(--space);">
+        <div class="design-buttongroup">
           <button class="article-primary">Primary</button>
           <button class="article-secondary">Secondary</button>
           <button class="article-tertiary">Tertiary</button>
@@ -514,8 +476,8 @@
 
       <h4 class="article-subhead">States</h4>
       <div class="article-box">
-        <div class="design-buttongroup" style="margin-right:var(--space-minus);padding-right:var(--space);">
-          <button class="article-tertiary is-hover">Hover</button>
+        <div class="design-buttongroup">
+          <button class="article-tertiary is-hover" style="margin-right:.75rem;">Hover</button>
           <button class="article-tertiary is-focus">Focus</button>
           <button class="article-tertiary" disabled>Disabled</button>
           <button class="article-tertiary" disabled>TODO: Progressing</button>
@@ -528,7 +490,7 @@
 
       <h4 class="article-subhead">Specifics?</h4>
       <div class="article-box">
-        <div class="design-buttongroup" style="margin-right:var(--space-minus);padding-right:var(--space);">
+        <div class="design-buttongroup">
           <button class="article-tertiary">More Load (TODO icon)</button>
           <button class="article-tertiary" style="border-color:var(--green100);background:var(--green100);color:var(--green800);">Follow</button>
           <button class="article-tertiary">Unfollow</button>

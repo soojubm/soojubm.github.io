@@ -86,7 +86,7 @@
 .design-typograph-group .design-typograph-item {width:var(--grid-column);}
 
 
-.design-buttongroup {@include group-bleeding;overflow:auto;margin:var(--space-small-minus) 0;padding:var(--space-small) 0;}
+.design-buttongroup {@include group-bleeding;overflow:auto;margin:var(--space-small-minus);padding:var(--space-small);}
 
 .design-tile-flat {@include tile-flat;}
 .design-tile-flat-small {@include tile-flat-small;}
@@ -360,7 +360,7 @@
 .design header p {margin:1.5rem 0;font-size:var(--font-size-subhead);letter-spacing:-.0125rem;position:relative;}
 
 .design-navigation {display:flex;flex-wrap:wrap;width:100%;max-width:1000px;margin:-1rem var(--space-small-minus) 0;padding:0 var(--grid-margin) 4em;position:relative;z-index:var(--zindex-default);}
-.design-navigation a {display:block;width:33%;max-width:160px;margin:.5rem;color:var(--color-text);position:relative;}
+.design-navigation a {display:block;@include tile-elevated;padding:.75rem;width:33%;max-width:160px;margin:.375rem;color:var(--color-text);position:relative;}
 .design-navigation a figure {display:block;@include avatar-huge;width:100%;margin:0 0 .125rem 0;font-size:var(--font-size-title);}
 
 .design-navigation a[readonly] {opacity:.5;cursor:not-allowed;box-shadow:none;}
