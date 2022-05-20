@@ -13,10 +13,11 @@
 @mixin dialog {}
 
 // todo dialog container
+// todo portfolio modal width
 .modal {overflow:auto;background:rgba(0,0,0,.6);position:fixed;left:0;top:0;right:0;bottom:0;z-index:var(--zindex-modal);} /* pointer-events:none */
 .modal-close {@include avatar-medium;}
 .modal-dim {display:none;background:rgba(0,0,0,.6);position:fixed;left:0;right:0;top:0;bottom:0;z-index:-1;cursor:zoom-out;}
-.modal-dialog {max-width:var(--width-large);margin:5% auto;padding:4rem 5%;background:var(--color-background);border-radius:var(--radius);box-shadow:var(--shadow);animation:modal .2s forwards;position:relative;}
+.modal-dialog {max-width:1000px;margin:5% auto;padding:4rem 5%;background:var(--color-background);border-radius:var(--radius);box-shadow:var(--shadow);animation:modal .2s forwards;position:relative;}
 .modal-head {}
 .modal-head-title {margin:2rem 0 var(--space-after-subhead) 0;@include text-subhead;}
 .modal-body {}

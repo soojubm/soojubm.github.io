@@ -5,13 +5,13 @@
 .about-intro-image img {@include image-centered;max-height:250%;}
 .about-intro-description {width:50%;padding:var(--grid-margin);box-sizing:border-box;background:var(--color-primary);font-size:var(--font-size-subhead);}
 
-.about-contact {max-width:var(--width-large);margin:0 auto;padding:4rem var(--grid-margin);background:var(--color-background-weak);position:relative;}
+.about-contact {padding:4rem var(--grid-margin);background:var(--color-background-weak);position:relative;}
 .about-contact-meida {}
 .about-contact-title {@include text-subhead;margin:0 0 var(--space-after-title) 0;}
 
-.about-feature {max-width:var(--width-large);margin:0 auto;}
+.about-feature {}
 
-.about-career {@include container-large;}
+.about-career {}
 .about-career-head {}
 .about-career-title {margin:0 0 2rem 0;@include text-title;}
 .about-career .timeline {}
@@ -21,9 +21,9 @@
 // .about-career.is-scrolled .timeline-item:nth-of-type(2) {animation:fadeup .4s ease;}
 // .about-career.is-scrolled .timeline-item:nth-of-type(3) {animation:fadeup .4s ease;}
 
-.about-education {@include container-large;}
+.about-education {}
 
-.about-subscribe {@include container-large;padding:0 var(--grid-margin);}
+.about-subscribe {}
 .about-subscribe-title {margin:0 0 1rem 0;@include text-subhead;}
 
 .about-book {padding:6rem 0 8%;}
@@ -69,7 +69,7 @@
 .about-education div cite {display:block;}
 
 
-.about-bookmark {@include container-large;display:flex;flex-wrap:wrap;justify-content:space-between;padding-top:6rem;}
+.about-bookmark {display:flex;flex-wrap:wrap;justify-content:space-between;padding-top:6rem;}
 .about-bookmark h1 {width:100%;}
 .links {width:100%;position:relative;}
 .links h4 {margin:1rem 0 0 0;@include text-subhead;font-size:var(--font-size-body);}
@@ -82,9 +82,9 @@
 .links .cta-arrow {display:none;}
 // .links a {display:block;width:400px;height:240px;margin:1rem;padding:2rem;box-sizing:border-box;background:var(--color-background);box-shadow:var(--shadow);}
 
-// .about-head {max-width:calc(var(--width-large) - 50%);margin:0 auto;padding:4rem 0;position:relative;}
+// .about-head {margin:0 auto;padding:4rem 0;position:relative;}
 // .about-head-slogan {margin:2rem 0;font-size:4rem;}
-// .about-intro {max-width:var(--width-large);margin:0 auto;padding:0 0 0 720px;box-sizing:border-box;font-size:var(--font-size-subhead);}
+// .about-intro {padding:0 0 0 720px;box-sizing:border-box;font-size:var(--font-size-subhead);}
 
 .about-brief {}
 .about-brief h2 {margin:0rem 0 1rem 0px;font-size:var(--font-size-subhead);}
@@ -92,9 +92,7 @@
 
 
 
-.about-fonts {
-  @include container-large;
-}
+.about-fonts {}
 .about-fonts-title {margin:0 0 1rem 0;@include text-subhead;}
 
 .about-banner {padding:4rem 5%;background:var(--color-primary);}

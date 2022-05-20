@@ -82,9 +82,6 @@
   // ! dropdown / tooltip
 }
 @mixin layout-modal {}
-@mixin layout-modal-full {}
-
-
 @mixin layout-login {}
 @mixin layout-join {}
 @mixin layout-password {}
@@ -96,20 +93,21 @@
 @mixin container-page {
   margin: 0 auto;
   padding: 2rem var(--grid-margin) 8rem;
-  // mobile padding 패딩은 page-head에서 주는 게 좋음. -margin 주는 게 좋을 듯.
   position: relative;
+  // mobile padding 패딩은 page-head에서 주는 게 좋음. -margin 주는 게 좋을 듯.
 }
 
+// todo pagehead :: padding.
 @mixin container-large {
-  max-width: var(--width-large);
+  max-width: 1200px;
   @include container-page;
 }
 @mixin container-medium {
-  max-width: var(--width-medium);
+  max-width: 640px;
   @include container-page;
 }
 @mixin container-small {
-  max-width: var(--width-small);
+  max-width: 480px;
   @include container-page;
 }
 

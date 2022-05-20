@@ -1,4 +1,4 @@
-.profile {max-width:1320px;margin:2rem auto;padding:0 var(--grid-margin);}
+.profile {@include container-large;}
 .profile::after {content:'';display:block;clear:both;}
 
 .profile-user {float:left;width:320px;position:relative;z-index:var(--zindex-default);}
@@ -59,7 +59,7 @@
 .profile-body {padding:0 0 64px 398px;box-sizing:border-box;position:relative;}
 
 // todo padding margin .... border?? -.25rem 하면 안 맞다
-[role=tablist] {@include tile-elevated-small;display:flex;margin-top:.75rem;margin-bottom:.75rem;padding:.25rem !important;}
+[role=tablist] {@include tile-elevated-small;margin-top:0;display:flex;padding:.25rem !important;}
 .profile-tablist {}
 .profile-tablist-tab {display:flex;align-items:center;justify-content:center;flex:auto;height:var(--size-medium);padding:0 var(--space);color:var(--color-text-light);position:relative;z-index:var(--zindex-default);}
 // .profile-tablist-tab:hover {box-shadow:var(--shadow);} flex:auto;

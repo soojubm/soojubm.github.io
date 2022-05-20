@@ -119,8 +119,6 @@ $transition-fade: opacity 0.15s linear;
   // size => square
   --width-tiny: 320px;
   --width-small: 480px;
-  --width-medium: 640px;
-  --width-large: 1000px;
 
   --width-dropdown: 240px;
   --width-popover: 240px;
@@ -281,12 +279,6 @@ $transition-fade: opacity 0.15s linear;
   // components
   --dialog-inset: 0;
 
-  
-
-  @media (--breakpoint-large) {
-    // --width-large: 1020px;
-  }
-  
 
   html[date-theme=dark] {}
   .theme-dark {

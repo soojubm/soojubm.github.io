@@ -1,4 +1,4 @@
-.login {max-width:var(--width-small);margin:0 auto;padding:2rem 5%;position:relative;}
+.login {@include container-small;}
 .login-head {padding:0 0 1rem 0;}
 .login-head-logo {@include avatar-medium;margin:0 0 var(--space) 0;}
 .login-title {@include text-title;}

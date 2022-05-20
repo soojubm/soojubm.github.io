@@ -9,7 +9,7 @@
 .search-result-item p {color:var(--color-text-light);line-height:1.6;}
 .search-result-item:hover {background:#f9f9f6;}
 
-.help-board {max-width:var(--width-medium);margin:2rem auto;padding:0 var(--grid-margin);position:relative;}
+.help-board {margin:2rem auto;padding:0 var(--grid-margin);position:relative;}
 .help-board-title {margin:0 0 1rem 1.5rem;font-size:var(--font-size-subhead);}
 .help-board-item {display:block;padding:1rem 1.5rem;border:var(--border);background:var(--gray100);position:relative;transition:all .4s;}
 .help-board-item + .help-board-item {margin-top:-1px;}
@@ -33,7 +33,7 @@
 .help-feedback-status {display:block;margin:0 0 var(--space) 0;}
 .help-feedback-button {@include chip;margin:0 var(--space-small) 0 0;}
 
-.help-foot {display:flex;max-width:var(--width-medium);margin:0 auto;padding:1rem 2rem;box-sizing:border-box;background:var(--gray100);box-shadow:var(--shadow);position:relative;}
+.help-foot {display:flex;padding:1rem 2rem;box-sizing:border-box;background:var(--gray100);box-shadow:var(--shadow);position:relative;}
 .help-foot-body {}
 .help-foot-body em {color:var(--gray800);text-decoration:underline;}
 .help-foot-link {margin-left:auto;}

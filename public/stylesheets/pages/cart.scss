@@ -24,7 +24,7 @@
 .cart-item-price-label {display:block;color:var(--color-text-light);}
 .cart-item-price-value {@include text-subhead;line-height:var(--font-line-height-small)}
 
-.cart-summary {max-width:var(--width-small);margin:2rem 0 0 auto;position:relative;}
+.cart-summary {max-width:var(--width-small);margin:var(--space) 0 0 auto;position:relative;}
 .cart-summary-subtotal {margin:.5rem 0;}
 .cart-summary-discount {margin:.5rem 0;}
 .cart-summary-shipping {margin:.5rem 0;}

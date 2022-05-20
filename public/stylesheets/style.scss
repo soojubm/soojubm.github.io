@@ -475,7 +475,7 @@
 
 .class-head-thumbnail {width:50%;margin-left:-5%;overflow:hidden;border-radius:4px;}
 
-.class {max-width:var(--width-large);margin:0 auto;position:relative;}
+.class {position:relative;}
 .class-head {padding:0 0 0;}
 .class-head-eyebrow {@include tag-primary;display:inline-block;padding:0 .5rem;}
 .class-head-title {@include text-title;margin:1rem 0 0 0;}

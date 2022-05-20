@@ -5,7 +5,7 @@
 .subscribe-submit {@include button-primary;width:50%;margin-top:var(--space-after-button);}
 .subscribe-helper {display:block;margin:.25rem 0 0 0;font-size:var(--font-size-caption);}
 
-.sitemap {display:flex;max-width:var(--width-large);margin:0 auto;padding:4rem var(--grid-margin);position:relative;z-index:var(--zindex-default);}
+.sitemap {display:flex;padding:4rem var(--grid-margin);position:relative;z-index:var(--zindex-default);}
 .sitemap-background {@include bleeding;background:var(--color-background-weak);}
 .sitemap-title {margin:0 0 1rem 0;@include text-subhead;}
 .sitemap-item {width:25%;}
