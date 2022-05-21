@@ -769,10 +769,10 @@ $linecolor: var(--gray800);
 
 
 
-.chat {margin:var(--space) 0;padding:0 0 0 calc(var(--size-large) + .75rem);position:relative;}
-.chat-avatar {@include avatar-large;overflow:hidden;position:absolute;left:0;bottom:0;}
+.chat {margin:var(--space) 0;padding:0 0 0 calc(var(--size-medium) + var(--space-after-avatar-medium));position:relative;}
+.chat-avatar {@include avatar-medium;overflow:hidden;position:absolute;left:0;bottom:0;}
 .chat-avatar img {height:100%;}
 .chat-username {}
 .chat-time {margin: 0 0 0 var(--space-xsmall);color:var(--color-text-light);font-size:var(--font-size-caption);color:var(--color-text-light);position:absolute;bottom:-1.5rem;}
-.chat-bubble {width:fit-content;max-width:calc(80% - var(--size-large));margin:var(--space-small) 0 0 0;padding:.75rem 1rem .9rem;background:var(--color-background-weak);  border-radius:1.5rem;border-top-left-radius:0;}
+.chat-bubble {width:fit-content;max-width:calc(90% - var(--size-medium));margin:var(--space-small) 0 0 0;padding:.75rem 1rem .9rem;background:var(--color-background-weak);  border-radius:1.5rem;border-top-left-radius:0;}
 .chat-bubble p {font-size:var(--font-size-caption);line-height:var(--font-line-height-small);}
