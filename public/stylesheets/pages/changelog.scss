@@ -20,7 +20,7 @@
 // .changelog-item.is-active .changelog-item-icon {transform:rotate(-90deg);}
 @media (--breakpoint-small) {
 
-  .changelog-item {flex-wrap:wrap;}
+  .changelog-item {}
   .changelog-item-date {}
   .changelog-item-target {width:auto;}
   .changelog-item-content {}
