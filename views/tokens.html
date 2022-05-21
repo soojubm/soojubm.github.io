@@ -496,42 +496,38 @@
 
       <h4 class="article-subhead">Media Queries</h4>
       <div class="token-item">
-        <b>@custom-media --breakpoint-large (max-width:1200px)</b>
-        <!-- <p style="color:var(--color-text-light);">일반적으로(? todo 모호한 writing) tablet보다 큰 폼 팩터 ex) desktop, tv</p> -->
+        <b>@custom-media --breakpoint-large (max-width: ?)</b>
         <div>
           <p>@media (--breakpoint-large) {}</p>
         </div>
+        <small>편의상 PC 크기.</small>
       </div>
       <div class="token-item">
-        <b>@custom-media --breakpoint-small (max-width:1000px)</b>
+        <b>@custom-media --breakpoint-small (max-width: ?)</b>
         <!-- <p style="margin-bottom:var(--space);color:var(--color-text-light);">tablet보다 작은 폼 팩터. ex) tablet, phone</p> -->
         <div>
           <p>@media (--breakpoint-small) {}</p>
         </div>
+        <small>편의상 phone & tablet 크기.</small>
       </div>
       <div class="token-item">
         <del><b>--media-query-tiny: only screen and (max-width: 760px)</b></del>
       </div>
 
       <h4 class="article-subhead">Containers</h4>
-      <!-- <p>full-width는 정의않고 grid-margin을 padding으로 씁니다.</p>
-      <p>모든 container는 --breakpoint-small부터 max-width:100%을 갖는다.</p> -->
+      <p>좌우 grid-margin을 padding으로 씁니다.</p>
+      <p>모든 container는 --breakpoint-small부터 max-width:100%을 갖는다.</p>
+      <p>pagehead에서 상하 패딩이 페이지마다 달라질 수 있다.</p>
       <div class="token-item">
-        <b>--container-huge: todo</b>
-        <div>
-          <p>--profile-container</p>
-        </div>
-      </div>
-      <div class="token-item">
-        <b>--container-large: todo</b>
-        <div>
+        <b>--container-large: 1200px</b>
+        <!-- <div>
           <p>--forgot-container</p>
           <p>--post-container</p>
           <p>--terms-container</p>
-        </div>
+        </div> -->
       </div>
       <div class="token-item">
-        <b>--container-small: 640px</b>
+        <b>--container-small</b>
         <div>
           <p>--login-container</p>
           <p>--signup-container</p>
@@ -555,21 +551,12 @@
       </div>
       <div class="token-item">
         <b>@mixin group-tag</b>
-        <div>
-          <p>--dialog-width</p>
-        </div>
       </div>
       <div class="token-item">
         <b>@mixin group-chip</b>
-        <div>
-          <p>--dialog-width</p>
-        </div>
       </div>
       <div class="token-item">
         <b>@mixin group-button</b>
-        <div>
-          <p>--dialog-width</p>
-        </div>
       </div>
       <aside class="article-helper">
         <p>버튼 그룹은 최대 2개의 버튼</p>

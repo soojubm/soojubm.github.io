@@ -1,9 +1,7 @@
 <section class="changelog">
   <header class="changelog-head hero-head">
-    <h1 class="hero-title" style="margin-bottom:1rem;">Changelog sample</h1>
+    <h1 class="hero-title" style="margin-bottom:1rem;">Changelog</h1>
   </header>
-
-  <p>수정 / 삭제 / 변경 아이콘이 큰 의미는 없어보임..</p>
 
   <!-- <nav class="changelog-filter">
     <button class="changelog-filter-chip is-active"><span class="changelog-filter-chip-label">모두</span></button>
@@ -17,26 +15,6 @@
       <span class="changelog-filter-chip-label">삭제</span>
     </button>
   </nav> -->
-
-  <div class="dropdown">
-    <button class="dropdown-trigger js-toggle" aria-expanded="true">
-      <span class="dropdown-trigger-label">최신순</span>
-      <figure class="dropdown-trigger-icon"><i class="icon-caret"></i></figure>
-    </button>
-    <menu class="dropdown-menu" role="menu">
-      <h6 class="dropdown-menu-title" hidden>Dropdown header</h6>
-      <!-- // todo  -->
-      <a class="dropdown-menu-link" href="#" disabled style="display:flex;justify-content:space-between;align-items:center;">
-        최신순
-        <i class="icon-check"></i>
-      </a>
-      <a class="dropdown-menu-link" href="#" disabled>
-        최신순
-      </a>
-    </menu>
-  </div>
-
-  <hr />
 
   <!-- <article class="changelog-item js-accordion">
     <header class="changelog-item-head">
@@ -65,65 +43,52 @@
     </div>
   </article> -->
   <article class="changelog-item js-accordion">
-    <span class="changelog-item-target">Tile</span>
-    <em class="changelog-item-tag is-positive">🧶</em>
+    <time class="changelog-item-date">2022. 08. 15.</time>
     <p class="changelog-item-content">
+      <em class="changelog-item-tag is-positive">🧶</em>
       large 추가
-      <time class="changelog-item-date">1일전</time>
+      <span class="changelog-item-target">Tile</span>
     </p>
-  </article>
 
-  <article class="changelog-item js-accordion">
-    <span class="changelog-item-target">Signup</span>
-    <em class="changelog-item-tag">🔨</em>
     <p class="changelog-item-content">
-      소셜 가입을 상단으로 이동
-      <time class="changelog-item-date">1일전</time>
-    </p>
-  </article>
-
-  <article class="changelog-item js-accordion">
-    <span class="changelog-item-target">Button</span>
-    <em class="changelog-item-tag is-negative">✂️</em>
-    <p class="changelog-item-content">
-      small 크기 삭제. chip과 button small 형태의 변별력이 없고 용법이 중복.
-      <time class="changelog-item-date">1일전</time>
-    </p>
-  </article>
-
-  <article class="changelog-item js-accordion">
-    <span class="changelog-item-target">Tile</span>
-    <em class="changelog-item-tag">🔨</em>
-    <p class="changelog-item-content">
-      medium 크기의 inset을 1.5rem에서 1rem으로 변경 / small 추가
-      <time class="changelog-item-date">1일전</time>
-    </p>
-  </article>
-
-  <article class="changelog-item js-accordion">
-    <span class="changelog-item-target">Size</span>
-    <em class="changelog-item-tag is-positive">🧶</em>
-    <p class="changelog-item-content">
-      small 추가
-      <time class="changelog-item-date" datetime="2021-05">1일전</time>
-    </p>
-  </article>
-
-  <article class="changelog-item js-accordion">
-    <span class="changelog-item-target">Breadcrumb</span>
-    <em class="changelog-item-tag is-positive">🧶</em>
-    <p class="changelog-item-content">
+      <span class="changelog-item-target">Breadcrumb</span>
+      <em class="changelog-item-tag is-positive">🧶</em>
       홈 아이콘을 텍스트로 변경. 페이지에서 상대적으로 중요도가 낮은 정보이기 때문에 주목도를 낮춤.
-      <time class="changelog-item-date" datetime="5">1일전</time>
+    </p>
+    <p class="changelog-item-content">
+      <span class="changelog-item-target">Signup</span>
+      <em class="changelog-item-tag">🔨</em>
+      소셜 가입을 상단으로 이동
+    </p>
+
+    <div class="changelog-item-content">
+      <span class="changelog-item-target">Tile</span>
+      <em class="changelog-item-tag">🔨</em>
+      medium 크기의 inset을 1.5rem에서 1rem으로 변경 / small 추가
+      <ul>
+        <li>- small 추가</li>
+      </ul>
+    </div>
+
+    <p class="changelog-item-content">
+      <span class="changelog-item-target">Button</span>
+      <em class="changelog-item-tag is-negative">✂️</em>
+      small 크기 삭제. chip과 button small 형태의 변별력이 없고 용법이 중복.
+    </p>
+
+    <p class="changelog-item-content">
+      <span class="changelog-item-target">Color</span>
+      <em class="changelog-item-tag is-negative">✂️</em>
+      gray600 삭제. 본문용으로 야외나 밝은 조명 아래서 가시성이 떨어짐.
     </p>
   </article>
 
   <article class="changelog-item js-accordion">
-    <span class="changelog-item-target">Color</span>
-    <em class="changelog-item-tag is-negative">✂️</em>
+    <time class="changelog-item-date" datetime="2021-05">2021. 05. 19.</time>
     <p class="changelog-item-content">
-      gray600 삭제. 본문용으로 야외나 밝은 조명 아래서 가시성이 떨어짐.</h3>
-      <time class="changelog-item-date" datetime="5">1일전</time>
+      <span class="changelog-item-target">Size</span>
+      <em class="changelog-item-tag is-positive">🧶</em>
+      small 추가
     </p>
   </article>
 
@@ -137,6 +102,4 @@
       <p class="changelog-item-content">제목용 텍스트에 대한 일반적인(?) 사용자의 인식. 조금 더 간결한 위계 설정.</p>
     </div>
   </article> -->
-
-
 </section>
