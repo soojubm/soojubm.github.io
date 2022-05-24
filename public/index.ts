@@ -66,27 +66,15 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 async function domEvents() {
   // todo
-  const mediaSize760 = window.matchMedia('(max-width: 1080px)')
-  const changeMedia = function(e) {
-    const isMobile = e.matches
-    if (isMobile) {
-      // document.body.classList.remove('is-opened-menu')
-      initializeNavbar()
-    }
-    if (!isMobile) {
-      document.body.classList.add('is-opened-menu')
-    }
-  }
-  mediaSize760.addListener(changeMedia)
-  changeMedia(mediaSize760)
-
-  // todo
   const navItemElements = document.querySelectorAll('.navbar-menu a')
   const hash = window.location.hash.substring(1)
+
+  const isHome = window.location.hash === ''
 
   const temps = ['', 'foundations', 'components', 'tokens']
 
   if (!temps.includes(hash)) initializeNavbar()
+  if (isHome) initializeNavbar()
 
   navItemElements?.forEach(element => {
     element.classList.remove('is-current')
@@ -96,6 +84,18 @@ async function domEvents() {
     if (!isCurrentPage || isHomePage) return
     element.classList.add('is-current')
   })
+  // todo
+  const mediaSize760 = window.matchMedia('(max-width: 1080px)')
+  const changeMedia = function(e) {
+    const isMobile = e.matches
+
+    if (isMobile) initializeNavbar()
+    if (!isMobile && !isHome) {
+      document.body.classList.add('is-opened-menu')
+    }
+  }
+  mediaSize760.addListener(changeMedia)
+  changeMedia(mediaSize760)
 
   detectTheme()
   lazyLoading()

@@ -13,7 +13,8 @@
 .changelog-item-tag {@include avatar-small;margin:0 .5rem 0 0;font-size:var(--font-size-caption);position:absolute;left:0;}
 .changelog-item-tag.is-negative {background-color:var(--red100);}
 .changelog-item-tag.is-positive {background-color:var(--green100);}
-.changelog-item-content {margin:.75rem 0;padding:0 0 0 32px;position:relative;}
+// todo.... !
+.changelog-item-content {margin:.75rem 0;padding:2px 0 0 32px;line-height:var(--font-line-height-small);position:relative;}
 .changelog-item-content ul {margin:0 0 var(--space-small);}
 // .changelog-item-target {display:block;margin:var(--space-after-subhead) 0 0 0;font-weight:var(--font-weight-normal);color:var(--color-text-light);}
 // .changelog-item.is-active div {display:block;}

@@ -1,16 +1,16 @@
 <main class="" style="max-width:560px;margin:2rem auto;padding:0 var(--grid-margin);">
-  <div class="chat-date" style="margin:1rem var(--grid-margin);text-align:center;">
-    <span class="tag" style="font-size:var(--font-size-caption);">2022년 5월 17일</span>
+  <div class="chat-date">
+    <span class="tag">2022년 5월 17일</span>
   </div>
   <div class="chat">
-    <figure class="chat-avatar" style="top:.25rem;bottom:auto;border:none;">
+    <figure class="chat-avatar">
       <img src="https://source.unsplash.com/random" alt="" />
     </figure>
     <div>
       <h5 class="chat-username">KO Google</h5>
       <!-- <time class="chat-time">12:00 am</time> -->
     </div>
-    <div class="chat-bubble" style="margin-top:.25rem;">
+    <div class="chat-bubble">
       <p>
         날짜는 버블 밖으로 나와야한다. width fit-content 속성의 브라우저 지원 알아보기. 이름과 날짜를 어떻게 보여줄지가 중요해보임. 리얼타임.. 챗이
         제대로 전송되었는지 상태를 알려주어야 한다. reaction. iMessage에서 날짜는 터치 제스쳐. 1:1대화 / 1:n 대화
@@ -23,30 +23,41 @@
         radius의 굴곡에 따른 시각보정이 필요하다. 아바타의 radius도 비율을 맞춰주는 게 보기 좋겠다.
       </p>
     </div>
-    <div class="chat-bubble" style="margin-top:.5rem;padding:0;background:none;">
-      <figure style="width:90%;height:200px;border-radius:1.25rem;overflow:hidden;">
-        <img src="https://source.unsplash.com/random" style="object-fit:none;" alt="" />
+    <div class="chat-bubble has-image">
+      <figure>
+        <img src="https://source.unsplash.com/random" alt="" />
       </figure>
       <time class="chat-time">12:00 am</time>
     </div>
   </div>
 
-  <div class="chat is-mine" style="margin:1.5rem 0;padding-right:0;">
-    <figure class="chat-avatar" style="display:none;top:.25rem;bottom:auto;border:none;right:0;left:auto;">
+  <div class="chat is-mine">
+    <figure class="chat-avatar" hidden>
       <img src="https://source.unsplash.com/random" alt="" />
     </figure>
-    <div style="text-align:right;display:flex;align-items:center;flex-direction: row-reverse;">
+    <div>
       <h5 class="chat-username">수줍이</h5>
-      <!-- <time class="chat-time" style="margin:0 .25rem;">지금</time> -->
     </div>
-    <div
-      class="chat-bubble"
-      style="margin-top:.25rem;margin-left:auto;border-radius:1.5rem;border-top-right-radius:0;background:var(--color-primary);"
-    >
-      <p style="font-size:var(--font-size-caption);color:var(--gray0);">
+    <div class="chat-bubble">
+      <p>
         감사합니다! 아바타와 닉네임 없어도 됨.
       </p>
-      <small class="chat-time chat-bubble-status" role="status" style="text-align:right;right:0;">전송됨</small>
+      <small class="chat-time chat-bubble-status" role="status">전송됨</small>
+    </div>
+  </div>
+
+  <div class="chat is-mine">
+    <figure class="chat-avatar" hidden>
+      <img src="https://source.unsplash.com/random" alt="" />
+    </figure>
+    <div>
+      <h5 class="chat-username">Deeeee</h5>
+    </div>
+    <div class="chat-bubble">
+      <p>
+        뉴닉하면 어떤 색이 가장 먼저 떠오르나요?
+      </p>
+      <small class="chat-time chat-bubble-status" role="status">전송됨</small>
     </div>
   </div>
 </main>
