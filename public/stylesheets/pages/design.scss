@@ -376,8 +376,8 @@
     padding-right: 0;
     overflow: hidden;
   }
-  .design-navigation-bleeding {white-space:nowrap;overflow:auto;padding:0 calc(var(--grid-margin) - .375rem);}
-  .design-navigation a {width:var(--item-width);max-width:calc(50% - .375rem);}
+  .design-navigation-bleeding {display:block;white-space:nowrap;overflow:auto;padding:0 calc(var(--grid-margin) - .375rem);font-size:0;}
+  .design-navigation a {display:inline-block;width:var(--item-width);max-width:calc(50% - .375rem);font-size:var(--font-size-body);}
 }
 
 
