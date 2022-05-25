@@ -90,7 +90,7 @@ async function domEvents() {
     const isMobile = e.matches
 
     if (isMobile) initializeNavbar()
-    if (!isMobile && !isHome) {
+    if (!isMobile && !isHome && !temps.includes(hash)) {
       document.body.classList.add('is-opened-menu')
     }
   }

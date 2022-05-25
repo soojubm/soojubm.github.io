@@ -1,12 +1,13 @@
 <main class="event">
   <header class="event-header">
     <span class="event-header-eyebrow">프로모션 제목</span>
-    <h1 class="event-header-title">프로모션,<br />태그라인은 쪼개서<br />3줄 정도.</h1>
+    <h1 class="event-header-title">프로모션,<br />태그라인 쪼개서<br />3줄 정도</h1>
     <p class="event-header-description">사용자 리워드 중심으로<br />2줄로 요약하세요. 조금 더 길어도.</p>
-    <dl>
-      <dt>이벤트 기간</dt>
+    <dl style="display:block;margin-top:1.5rem;">
+      <dt style="color:var(--color-text);">이벤트 기간</dt>
       <dd>2022. 05. 10. ~ 2022. 05. 20.</dd>
-      <dt>당첨자 발표</dt>
+      <br />
+      <dt style="color:var(--color-text);">당첨자 발표</dt>
       <dd>2022. 05. 24.</dd>
     </dl>
     <time style="margin-top:1rem;display:block;">일러스트레이션 / 기한이 있다면 정보가 중복되어도 좋다.</time>
@@ -24,19 +25,27 @@
     <span class="event-header-objects-item"></span>
   </header>
 
-  <section class="event-intro" style="padding-bottom:6rem;">
+  <section class="event-intro" style="padding-bottom:4rem;">
     <figure style="font-size:3rem;">🦍</figure>
     <span class="event-intro-eyebrow tag">이벤트 하나</span>
     <h2 class="event-intro-title" style="margin:var(--space) 0;">글자 수와<br />개행 원칙을<br />정의해둡니다.</h2>
     <p class="event-intro-description">
-      mini 만들면 니니즈 신상 이모티콘 100%
-      <br />
-      ~ 11월 30일까지
+      내용 요약
     </p>
     <a href="#"></a>
   </section>
 
-  <section class="event-share" style="background:var(--color-background-strong);color:var(--gray0);text-align:center;padding:2rem 0;">
+  <section class="event-intro" style="padding-top:0;padding-bottom:6rem;">
+    <figure style="font-size:3rem;">🦍</figure>
+    <span class="event-intro-eyebrow tag">이벤트 하나</span>
+    <h2 class="event-intro-title" style="margin:var(--space) 0;">글자 수와<br />개행 원칙을<br />정의해둡니다.</h2>
+    <p class="event-intro-description">
+      내용 요약
+    </p>
+    <a href="#"></a>
+  </section>
+
+  <section class="event-share" style="background:var(--gray800);color:var(--gray0);text-align:center;padding:2rem 0;">
     공유 섹션
 
     <button class="event-share-facebook">f</button>
@@ -46,6 +55,7 @@
   <section class="event-faq"></section>
 
   <aside class="event-note">
+    <div class="event-note-background"></div>
     <h2 class="event-note-title">반드시 확인해주세요!</h2>
     <ul class="article-checklist">
       <li>본 이벤트는 당사 사정에 따라 사전 예고 없이 내용 변경 및 조기 종료될 수 있습니다.</li>
@@ -59,174 +69,3 @@
     <button class="event-footer-cta">Call to action</button>
   </footer>
 </main>
-
-<style>
-  .event-header {
-    padding: 8rem 5% 10rem;
-    overflow: hidden;
-    background: gold;
-    text-align: center;
-    position: relative;
-  }
-  .event-header-eyebrow {
-    height: 36px;
-    margin: 0 0 1rem 0;
-    padding: 9px 1rem 11px;
-    border-radius: 50px;
-    background: var(--color-background-strong);
-    line-height: 35px;
-    color: #fff;
-  }
-  .event-header-title {
-    margin: 1rem 0 2rem;
-    font-size: 3rem;
-    line-height: 1.4;
-    color: var(--gray800);
-  }
-  .event-header-description {
-    font-size: var(--font-size-subhead);
-    color: var(--gray800);
-  }
-  .event-header-objects {
-  }
-  .event-header-objects-item {
-    display: block;
-    width: var(--size-tiny);
-    height: var(--size-tiny);
-    background: red;
-    border-radius: 50%;
-    animation: falling 5s linear infinite;
-    position: absolute;
-    top: -2rem;
-  }
-  .event-header-objects-item:nth-of-type(1) {
-    left: 10%;
-    animation-delay: 0.4s;
-  }
-  .event-header-objects-item:nth-of-type(2) {
-    left: 20%;
-    animation-delay: 1.2s;
-    animation-duration: 6s;
-  }
-  .event-header-objects-item:nth-of-type(3) {
-    left: 30%;
-    animation-delay: 0.8s;
-  }
-  .event-header-objects-item:nth-of-type(4) {
-    left: 40%;
-    animation-delay: 1.6s;
-  }
-  .event-header-objects-item:nth-of-type(5) {
-    right: 10%;
-    animation: falling2 5s linear infinite;
-    animation-delay: 1.6s;
-  }
-  .event-header-objects-item:nth-of-type(6) {
-    right: 20%;
-    animation: falling2 5s linear infinite;
-    animation-delay: 1.2s;
-  }
-  .event-header-objects-item:nth-of-type(7) {
-    right: 30%;
-    animation: falling2 5s linear infinite;
-    animation-delay: 0.4s;
-  }
-  .event-header-objects-item:nth-of-type(8) {
-    right: 40%;
-    animation: falling2 5s linear infinite;
-    animation-delay: 0.8s;
-  }
-
-  .event-intro {
-    margin: 0 auto;
-    padding: 4rem 0;
-    text-align: center;
-  }
-  .event-intro a {
-  }
-
-  .event-note {
-    margin: 0 auto;
-    padding: 3rem var(--grid-margin) 4rem;
-    background: var(--color-background-weak);
-  }
-  .event-note {
-  }
-  .event-note-title {
-    margin: 0 0 var(--space-after-subhead) 0;
-    font-size: var(--font-size-subhead);
-  }
-  .event-note-title ul {
-  }
-  .event-note-title ul li {
-  }
-
-  .event-footer {
-    padding: 1rem;
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 6;
-  }
-  .event-footer-cta {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    padding: 1rem;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    background: var(--color-primary);
-    font-size: var(--font-size-subhead);
-    color: #fff;
-  }
-
-  @keyframes falling {
-    0% {
-      transform: translate(0, 0);
-    }
-    25% {
-      transform: translate(20px, 15vh);
-    }
-    50% {
-      transform: translate(-10px, 30vh);
-    }
-    75% {
-      transform: translate(20px, 45vh);
-    }
-    100% {
-      transform: translate(0, 60vh);
-    }
-
-    /* 0% {
-        -webkit-transform:
-            translate3d(300,0,0)
-            rotate(0deg);
-    }
-    
-    100% {
-        -webkit-transform:
-            translate3d(-350px,700px,0)
-            rotate(90deg);
-        opacity: 0;
-    } */
-  }
-
-  @keyframes falling2 {
-    0% {
-      transform: translate(0, 0);
-    }
-    25% {
-      transform: translate(-20px, 15vh);
-    }
-    50% {
-      transform: translate(10px, 30vh);
-    }
-    75% {
-      transform: translate(-20px, 45vh);
-    }
-    100% {
-      transform: translate(0, 60vh);
-    }
-  }
-</style>

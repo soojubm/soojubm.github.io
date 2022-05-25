@@ -33,7 +33,7 @@
 // todo entry / message / created
 .item {@include item;}
 .item + .item {margin:var(--space-after-item) 0 0 0;}
-.item-avatar {@include item-avatar;}
+.item-avatar {@include item-avatar;background:url('/public/images/soo.png)') no-repeat center center;}
 .item-name {font-size:var(--font-size-body);}
 .item-description {display:block;line-height:var(--font-line-height-small);color:var(--color-text-light);}
 .item-description + .item-name {margin-top:-.125rem;}
