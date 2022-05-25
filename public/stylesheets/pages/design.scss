@@ -357,20 +357,26 @@
 .design header h1 {@include text-title;font-family:'Changa One';font-size:var(--font-size-huge);font-weight:normal;position:relative;} // todo
 .design header p {margin:1.5rem 0;font-size:var(--font-size-subhead);letter-spacing:-.0125rem;position:relative;}
 
-.design-navigation {display:flex;flex-wrap:wrap;margin:0 -.375rem;padding:0 var(--grid-margin) 2rem;position:relative;z-index:var(--zindex-default);}
+.design-navigation {display:flex;flex-wrap:wrap;margin:0 -.375rem;padding:0 var(--grid-margin) 2rem;box-sizing:border-box;position:relative;z-index:var(--zindex-default);}
 .design-navigation a {display:block;@include tile-elevated;flex:auto;padding:.75rem;margin:.375rem;color:var(--color-text);position:relative;}
 .design-navigation a figure {display:block;@include avatar-huge;width:100%;margin:0 0 .125rem 0;font-size:var(--font-size-title);}
 
-.design-navigation a[readonly] {opacity:.5;cursor:not-allowed;box-shadow:none;}
-.design-navigation a:hover:not([readonly]) {@include hover-item;}
-
+// .design-navigation a[readonly] {opacity:.5;cursor:not-allowed;box-shadow:none;}
+// .design-navigation a:hover:not([readonly]) {@include hover-item;}
 
 
 @media (--breakpoint-tiny) {
   // todo scroll error. because minus margin
-  .design-navigation {margin-left:0;margin-right:0;}
-  .design-navigation a {width:100%;max-width:calc(50% - .375rem);margin-left:0;margin-right:0;}
-  .design-navigation a:nth-of-type(2) {margin-left:.75rem;margin-right:0;}
+  .design-navigation {
+    --item-width: 200px;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+    overflow: hidden;
+  }
+  .design-navigation-bleeding {display:flex;white-space:nowrap;overflow:auto;padding:0 calc(var(--grid-margin) - .375rem);}
+  .design-navigation a {width:var(--item-width);max-width:calc(50% - .375rem);}
 }
 
 
