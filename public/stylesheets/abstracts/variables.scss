@@ -7,6 +7,9 @@ $bezier-base: cubic-bezier(0.455, 0.03, 0.515, 0.955);
 $transition-base: all 0.4s $bezier-base;
 $transition-fade: opacity 0.15s linear;
 
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+
 :root {
   color-scheme: light dark;
 
@@ -14,7 +17,7 @@ $transition-fade: opacity 0.15s linear;
 
   --adjust-label-line: 1px;
 
-  --fontstack: 'Asap', 'AritaDotum', sans-serif;
+  --fontstack: 'Pretendard', 'Asap', 'AritaDotum', sans-serif;
   // --fontstack: 'Spoqa Han Sans Neo', 'Asap', 'AritaDotum', sans-serif;
   // --fontstack: 'Apple SD Gothic Neo', san-serif;
   --fontstach-code: 'Asap', 'AritaDotum', 'consolas', monospace;
