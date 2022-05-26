@@ -69,8 +69,8 @@
 .profile-tablist-tab-badge {margin:0 0 0 var(--space-small);}
 .profile-tablist-indicator {display:block;height:calc(100% - .5rem);@include chip;background:var(--color-background-strong);position:absolute;transition:all var(--duration);}
 
-.type-t[role=tablist] {border:none;border-bottom:var(--border);border-radius:0;box-shadow:none;}
-.type-t .profile-tablist-indicator {background:none;border-radius:0;border:0;border-bottom:4px solid var(--color-primary);bottom:0;}
+.type-t[role=tablist] {padding:0 !important;border:none;border-bottom:var(--border);border-radius:0;box-shadow:none;}
+.type-t .profile-tablist-indicator {background:none;border-radius:0;border:0;border-bottom:4px solid var(--color-primary);bottom:-1px;}
 .type-t [role=tab] {height:var(--size-large);font-weight:bold;color:var(--color-text-light);font-size:16px;}
 .type-t [role=tab][aria-selected=true] {color:var(--color-text);}
 
