@@ -476,8 +476,80 @@
     </div>
   </nav>
 
+  <section style="padding:4rem var(--grid-margin);">
+    <h2 style="font-family:'Changa One';font-size:2rem;font-weight:normal;;">Writings</h2>
+    <hr />
+    <div>
+      <p>(가제) Tab과 Segmented Controls, 그리고 Chip Group.</p>
+    </div>
+
+    <h3>사전 지식</h3>
+    <p>링크</p>
+
+    <h3>내용</h3>
+    <p style="margin:var(--space-small) 0;">
+      후려치면 세콘은 아이오에스용 탭이다. 콘텐츠 스위칭. 약간 필터링 느낌. 탭에 대한 용법을 약속하면 어떻게 쓰던 상관은 없다.
+    </p>
+    <p style="margin:var(--space-small) 0;">
+      사실은 hig에는 탭이 없다. 그로 인해 페이지의 댑스가 안드로이드와 비교하면 깊어질 수 밖에 없다. 이게 터치 제스쳐로 뒤로가기를 쉬게 만든 것과
+      관련이 있지 않을까하는 뇌피셜..
+    </p>
+
+    <p style="margin:var(--space-small) 0;">MD에서 바텀 네비게이션이라고 부르는 탭 바 정도가 진짜 탭의 역할을 하는 유일한 컴포넌트.</p>
+
+    <h3>case study</h3>
+
+    <div class="js-tab">
+      <nav class="profile-tablist type-t" role="tablist" aria-label="sample tabs" style="max-width:520px;margin:0 auto;">
+        <button class="profile-tablist-tab" role="tab" aria-selected="true" aria-controls="panel-1" id="tab-1" tabindex="0">
+          첫번째 탭
+          <!-- <em class="profile-tablist-tab-badge badge">24</em> -->
+        </button>
+        <button class="profile-tablist-tab" role="tab" aria-selected="false" aria-controls="panel-2" id="tab-2" tabindex="-1">두번째 탭</button>
+        <button class="profile-tablist-tab" role="tab" aria-selected="false" aria-controls="panel-3" id="tab-3" tabindex="-1">세번째 탭</button>
+        <i class="profile-tablist-indicator"></i>
+      </nav>
+    </div>
+
+    <br />
+
+    <div class="js-tab">
+      <nav class="profile-tablist type-sc" role="tablist" aria-label="sample tabs" style="max-width:240px;margin:0 auto;">
+        <button class="profile-tablist-tab" role="tab" aria-selected="true" aria-controls="panel-1" id="tab-1" tabindex="0">
+          뉴스
+          <!-- <em class="profile-tablist-tab-badge badge">24</em> -->
+        </button>
+        <button class="profile-tablist-tab" role="tab" aria-selected="false" aria-controls="panel-2" id="tab-2" tabindex="-1">회사소식</button>
+        <i class="profile-tablist-indicator" style="width:50%;"></i>
+      </nav>
+    </div>
+
+    <br />
+
+    <div class="chip-group js-chip" role="group" aria-orientation="horizontal" style="max-width:520px;margin:0 auto;">
+      <button class="chip is-active">
+        <span class="chip-label">어제</span>
+      </button>
+      <button class="chip">
+        <span class="chip-label">3달 전에</span>
+      </button>
+      <button class="chip">
+        <span class="chip-label">1년 전에</span>
+      </button>
+      <button class="chip">
+        <span class="chip-label">5년 전에</span>
+      </button>
+    </div>
+
+    <p>
+      토스 주식에 왜 chip group 형태의 콘텐츠 필터링에 두 가지 형태의 컴포넌트를 정의했을까? list 콘텐츠의 버튼에 상승 하락을 위한 색상 떄문에 훨씬 더
+      눈에 띄는 active state가 필요했던 것이 아닐까. 톤다운하는 것이 오히려 대비를 높이기도 하기 때문에 하나로 만들어보기.
+    </p>
+    <p>segmented controls 스타일의 컨텐츠 스위칭에서도 chip group을 쓰지 않을 이유가 없다..</p>
+  </section>
+
   <section
-    style="background:blueviolet;margin:1rem var(--grid-margin);padding:1.5rem 1.5rem 2rem;border-radius:var(--radius);background: #159957;  /* fallback for old browsers */
+    style="background:blueviolet;margin:0 var(--grid-margin);padding:1.5rem 1.5rem 2rem;border-radius:var(--radius);background: #159957;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to bottom, #155799, #159957);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to bottom, #155799, #159957); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   "
