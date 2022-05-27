@@ -71,7 +71,7 @@
 
 .type-t[role=tablist] {padding:0 !important;border:none;border-bottom:var(--border);border-radius:0;box-shadow:none;}
 .type-t .profile-tablist-indicator {background:none;border-radius:0;border:0;border-bottom:4px solid var(--color-primary);bottom:-1px;}
-.type-t [role=tab] {height:var(--size-large);font-weight:bold;color:var(--color-text-light);font-size:16px;}
+.type-t [role=tab] {height:56px;padding-bottom:4px;font-weight:bold;color:var(--color-text-light);font-size:16px;}
 .type-t [role=tab][aria-selected=true] {color:var(--color-text);}
 
 .type-sc[role=tablist] {border:none;border-radius:50px;box-shadow:none;background:var(--color-background-weak);}

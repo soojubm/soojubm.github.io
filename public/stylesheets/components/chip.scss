@@ -23,7 +23,8 @@
   
   &.is-active {
     // medium
-    border-color:var(--color-primary);background:var(--green100);color:var(--color-primary);
+    // border-color:var(--color-primary);background:var(--green100);color:var(--color-primary);
+    background: var(--color-background-strong);color:#fff;
   }
   &.is-active figure {
     // border-top-color:var(--color-primary) !important;border-bottom-color:var(--color-primary) !important;
