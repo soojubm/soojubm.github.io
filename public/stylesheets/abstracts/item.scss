@@ -18,6 +18,7 @@
 @mixin item-avatar {
   float:left;
   @include avatar-large;
+  background-image:url('/public/images/soo.png'); // default avatar
 }
 @mixin item-avatar-medium {
   float:left;
@@ -33,7 +34,7 @@
 // todo entry / message / created
 .item {@include item;}
 .item + .item {margin:var(--space-after-item) 0 0 0;}
-.item-avatar {@include item-avatar;background:url('/public/images/soo.png)') no-repeat center center;}
+.item-avatar {@include item-avatar;}
 .item-name {font-size:var(--font-size-body);}
 .item-description {display:block;line-height:var(--font-line-height-small);color:var(--color-text-light);}
 .item-description + .item-name {margin-top:-.125rem;}

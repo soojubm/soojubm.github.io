@@ -39,15 +39,16 @@ button {@include reset-button;}
   @content;
   &:hover:not(:disabled), &.is-hover:not(:disabled) {
     // box-shadow: inset 0px 0px 2px rgba(0,0,0,.4);
-    // box-shadow: 0 0 2px var(--gray400);
+    box-shadow: 0 0 0 4px rgba(0,0,0,.1);
     // border: 1px solid var(--color-border-hover);
     // @include hover-item;
-    outline:4px solid rgba(0,0,0,.1);
+    // outline:4px solid ;
+
   }
   &:focus, &.is-focus {
     // todo
     outline:0;
-    box-shadow:0 0 0 2px var(--color-border-hover);
+    box-shadow:0 0 0 2px var(--color-border-hover); // hover override
   }
   &:active {}
   &:visited {}
@@ -68,7 +69,6 @@ button {@include reset-button;}
   }
   &:hover:not(:disabled), &.is-hover:not(:disabled) {
     // box-shadow: inset 0 0 2px rgba(27, 153, 92, 0.8);
-    box-shadow: inset 0px 0px 2px rgba(0,0,0,.4);
     // border-color:darken($green800, 2.5%);background:darken($green800, 2.5%);
   }
   &:focus {}
@@ -79,40 +79,18 @@ button {@include reset-button;}
   @include button;
   border:1px solid transparent;
   background:var(--green100);color:var(--color-primary);
-  &:hover:not(:disabled), &.is-hover:not(:disabled) {
-    // border-color:darken($green100, 2%);background:darken($green100, 2%);color:darken($green800, 5%);
-  }
-  &:focus:not(:disabled) {}
-  &:active {}
-  &:disabled {}
 }
 @mixin button-tertiary {
   @include button;
   border: 1px solid var(--color-background-weak);
   background:var(--color-background-weak);color:var(--color-text);
-  &:hover:not(:disabled), &.is-hover:not(:disabled) {
-    // border-color:var(--gray200);background:var(--gray200);
-  }
-  &:focus:not(:disabled) 
-  &:active {}
-  &:disabled {}
 }
 @mixin button-text {
   @include button;
   border:1px solid transparent;color:var(--color-primary);
-  &:hover:not(:disabled), &.is-hover:not(:disabled) {
-  }
-  &:focus:not(:disabled) {}
-  &:active {}
-  &:disabled {}
 }
+
 .button-text {@include button-text;}
-@mixin button-small {
-  min-width: auto;
-  height: var(--size-medium);
-  padding: 0 1rem;
-  font-size: var(--font-size-caption);
-}
 
 @mixin button-close {
   @include avatar-medium;

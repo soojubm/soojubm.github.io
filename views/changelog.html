@@ -1,4 +1,5 @@
-<section class="changelog">
+<!-- todo component 클래스 말고 사태 클래스로. -->
+<section class="component changelog">
   <header class="changelog-head hero-head">
     <h1 class="hero-title" style="margin-bottom:1rem;">Changelog</h1>
   </header>
@@ -44,43 +45,24 @@
   </article> -->
   <article class="changelog-item js-accordion">
     <time class="changelog-item-date">2022. 08. 15.</time>
-    <p class="changelog-item-content">
-      <em class="changelog-item-tag is-positive">🧶</em>
-      tile large 추가
-      <span class="changelog-item-target">Tile</span>
-    </p>
 
-    <p class="changelog-item-content">
-      <span class="changelog-item-target">Breadcrumb</span>
-      <em class="changelog-item-tag is-positive">🧶</em>
-      홈 아이콘을 텍스트로 변경. 페이지에서 상대적으로 중요도가 낮은 정보이기 때문에 주목도를 낮춤.
-    </p>
-    <p class="changelog-item-content">
-      <span class="changelog-item-target">Signup</span>
-      <em class="changelog-item-tag">🔨</em>
-      소셜 가입을 상단으로 이동
-    </p>
+    <em class="changelog-item-tag">수정</em>
+    <ul class="article-checklist">
+      <li>Signup 소셜 가입을 상단으로 이동</li>
+      <li>tile medium의 inset을 1.5rem에서 1rem으로 변경 / small 추가</li>
+    </ul>
 
-    <div class="changelog-item-content">
-      <span class="changelog-item-target">Tile</span>
-      <em class="changelog-item-tag">🔨</em>
-      tile medium의 inset을 1.5rem에서 1rem으로 변경 / small 추가
-      <ul>
-        <li>- small 추가</li>
-      </ul>
-    </div>
+    <em class="changelog-item-tag is-positive">추가</em>
+    <ul class="article-checklist">
+      <li>tile large 추가</li>
+      <li>Breadcrumb 홈 아이콘을 텍스트로 변경. 페이지에서 상대적으로 중요도가 낮은 정보이기 때문에 주목도를 낮춤.</li>
+    </ul>
 
-    <p class="changelog-item-content">
-      <span class="changelog-item-target">Button</span>
-      <em class="changelog-item-tag is-negative">✂️</em>
-      button small 삭제. chip과 형태의 변별력이 없고 용법이 중복.
-    </p>
-
-    <p class="changelog-item-content">
-      <span class="changelog-item-target">Color</span>
-      <em class="changelog-item-tag is-negative">✂️</em>
-      color gray600 삭제. 본문용으로 야외나 밝은 조명 아래서 가시성이 떨어짐.
-    </p>
+    <em class="changelog-item-tag is-negative">삭제</em>
+    <ul class="article-checklist">
+      <li>button small 삭제. chip과 형태의 변별력이 없고 용법이 중복.</li>
+      <li>color gray600 삭제. 본문용으로 야외나 밝은 조명 아래서 가시성이 떨어짐.</li>
+    </ul>
   </article>
 
   <article class="changelog-item js-accordion">

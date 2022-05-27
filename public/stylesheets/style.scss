@@ -276,66 +276,6 @@
 
 
 
-
-
-// newneek
-.newneek {}
-.newneek .modal-dialog {}
-.newneek-orange {}
-
-
-.newneek-section2 {background:#ebebeb;}
-.newneek-section2 figure {max-width:600px;margin:0 auto;}
-.newneek-section2 footer {padding:1rem 1rem;border:1px solid #000;border-top:0;border-bottom:0;}
-.newneek .numbering {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 2rem;
-  height: 2rem;
-  font-size: 1rem;
-  margin: auto auto 1rem;
-  border-radius: 50%;
-  font-size: 12px;
-  background: #000;
-  color: #fff;
-  display: none;
-}
-
-.newneek-section3 {background:#fff;color:#000;}
-.newneek-section2, 
-.newneek-section3 {
-  h1, h2, h3, h4, b {color:#000;}
-}
-
-
-
-
-.newneek-section1 {margin:4rem 0 0;padding:4rem var(--grid-margin);background:#fb7800;color:#000;position:relative;}
-.newneek-section1 footer {width:100%;margin:4rem 0 0 0;}
-.bubble {}
-.bubble + .bubble {margin-top:1rem;}
-.bubble-user {padding:.5rem 1rem;border:2px solid #000;background:#000;font-size:var(--font-size-body);color:#fff;font-weight:var(--font-weight-bold);}
-.bubble-text {padding:1rem;border:1px solid #000;background:#ebebeb;}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .subscribe-gosum {    position: absolute;
   top: 5rem;
   left: 50%;
@@ -393,18 +333,6 @@
 
 
 
-
-.newneek .charaters {}
-.newneek .charaters figure {width:400px;margin:1rem 0;padding:1.5rem;border:1px solid #000;}
-.newneek .charaters figure i {}
-.newneek .charaters figure b {font-size:var(--font-size-body);}
-.newneek .charaters figure p {font-size:var(--font-size-body);}
-
-
-
-
-
-
 .home-mangrove {
   display: flex;
   flex-direction: column;
@@ -414,34 +342,32 @@
   position: relative;
   .mangrove1 {
     display: block;
-    max-width: 300px;
+    max-width: 240px;
     margin-top: -140px;
     margin-bottom: 110px;
     transition: all 0.4s;
   }
   .mangrove2 {
     display: block;
-    max-width: 270px;
-    margin-left: 4rem;
+    max-width: 230px;
+    margin-left: 2rem;
     position: absolute;
     bottom: 2rem;
     transition: all 0.4s ease 0.05s;
   }
-  .home-mangrove-object {
-    margin-right: 2rem;
-  }
   .mangrove-foot {
     display: flex;
+    align-items: center;
     justify-content: center;
     width: 100%;
-    padding: 1rem 0;
+    padding: .5rem 0;
     border-top: 1px solid #000;
     border-bottom: 2px solid #000;
     background: #fff;
     position: relative;
     z-index: 1;
     span {
-      font-size:var(--font-size-subhead);
+      font-size: 16px;
       color: #000;
     }
   }
@@ -456,13 +382,6 @@
   }
 }
 
-
-
-
-.portfolio-features {}
-.portfolio-features-item {margin:2rem 0;}
-.portfolio-features-item-title {margin:0 0 .5rem 0;font-size:var(--font-size-body);}
-.portfolio-features-item-description {}
 
 // .daylist {display:flex;}
 // .day {@include tile-elevated;flex-wrap:wrap;margin:0 1rem 0 0;text-align:center;}

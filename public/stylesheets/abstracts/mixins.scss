@@ -69,7 +69,8 @@
   figure {background-color:var(--color-background);border:1px solid var(--gray200);}
 }
 
-.is-hover {@include hover-item;}
+// todo
+.is-hovered {@include hover-item;}
 
 @mixin layout {}
 @mixin layout-page {}
