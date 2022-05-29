@@ -16,7 +16,7 @@
 .cake-meta dl {}
 .cake-meta-summary {max-width:640px;}
 
-.cake-info {display:flex;flex-wrap:wrap;padding:2rem 0 2.25rem;position:relative;}
+.cake-info {display:flex;flex-wrap:wrap;padding:2rem 0 2.25rem;overflow:auto;position:relative;}
 // .cake-info button {@include button-tertiary;position:absolute;left:0;bottom:3rem;}
 .cake-info h2 {width:240px;flex-shrink:0;@include text-subhead;}
 .cake-info p {width:calc(100% - 240px);}
