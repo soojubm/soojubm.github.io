@@ -57,10 +57,12 @@
       margin:var(--space) 0 0 0;position:relative;z-index:1;
     }
 
-    .feed .article-checklist li {padding-left:1rem;}
-
     .feed-user {margin:.75rem 0;}
+    .feed .article-checklist li:before {top:5px;}
+
   </style>
+
+  <br />
   
   <article class="feed" style="margin:0 0 3rem 0;">
     <!-- todo tag with icon? 하지만 태그는 아이콘 못 쓰게 했는데. -->
@@ -86,6 +88,12 @@
         Monotonectally productivate progressive human capital without user friendly portals. Globally benchmark top-line ideas with distributed
         catalysts for change. Authoritatively restore ubiquitous partnerships vis-a-vis <a href="#feed">synergistic models</a>.
       </p>
+
+      
+      <div class="feed-tag tag-group" style="margin:0 0 var(--space) 0;">
+        <span class="tag">Google</span>
+      </div>
+
       <ul class="article-checklist" style="margin:0 0 1.5rem 0;line-height:var(--font-line-height-small);font-size:var(--font-size-caption);">
         <li>
           피드의 상세 페이지에서 전체 댓글 목록과 액션을 제공할 수 있다.
@@ -106,9 +114,6 @@
         <li>대충 이 정도..</li>
       </ul>
 
-      <div class="feed-tag tag-group">
-        <span class="tag">Google</span>
-      </div>
       <div class="feed-reaction" style="margin:var(--space-small) 0 0 0;">
         <div class="post-reaction-like">
           <figure class="post-reaction-like-icon" style="width:24px;height:24px;font-size:var(--font-size-caption);">💕</figure>

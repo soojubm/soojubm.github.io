@@ -14,7 +14,7 @@
 
 .cake-meta {}
 .cake-meta dl {}
-.cake-meta-summary {}
+.cake-meta-summary {max-width:640px;}
 
 .cake-info {display:flex;flex-wrap:wrap;padding:2rem 0 2.25rem;position:relative;}
 // .cake-info button {@include button-tertiary;position:absolute;left:0;bottom:3rem;}

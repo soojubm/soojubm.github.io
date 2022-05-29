@@ -90,7 +90,7 @@
 
 .product-features-item {max-width:300px;position:relative;}
 .product-features-item-avatar {display:block;font-size:var(--font-size-huge);position:relative;}
-.product-features-item-avatar:before {content:'';display:block;@include avatar-medium;background:none;border:var(--border) !important;position:absolute;left:0rem;top:0rem;z-index:-1;}
+.product-features-item-avatar:before {content:'';display:block;@include avatar-medium;position:absolute;left:0rem;top:0rem;z-index:-1;}
 .product-features-item-title {margin:.25rem 0 0 0;@include text-subhead;}
 .product-features-item-description {margin:var(--space-after-subhead) 0 0 0;}
 .product-features-item-link {display:block;margin:var(--space-after-description) 0 0 0;}

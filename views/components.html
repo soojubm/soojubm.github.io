@@ -150,7 +150,7 @@
       <ul class="article-checklist">
         <!-- <li><i class="icon-check"></i> <em>todo</em> 클릭할 수 없음. 따라서 chip의 역할을 하는 아이콘 chip과 명확한 분리가 필요함. pagination item은 chip과 같은 높이를 갖지만 chip이 아님. textfield 내부의 clear 버튼은? 그냥 clear button임. textfield-surfix 로 정의되어야?</li> -->
         <li><i class="icon-check"></i> 이미지, 텍스트, 아이콘을 포함합니다.</li>
-        <li>todo hoverable... 상세 사용자 정보를 팝오버로 제공할 수 있다.</li>
+        <!-- <li>todo hoverable... 상세 사용자 정보를 팝오버로 제공할 수 있다.</li> -->
         <!-- <li><i class="icon-check"></i> chip 컴포넌트는 active 상태를 포함하고 있기 때문에 다른 기표로 active 상태를 표시하는 경우에는 사용하지 않습니다.</li> -->
       </ul>
       <!-- <div class="article-role">
@@ -225,7 +225,7 @@
         <span style="margin:0 0 0 var(--space-small);">수줍이 외 4명</span>
       </article>
 
-      <h4 class="article-subhead">Entities // button/linkButton? - clickable</h4>
+      <h4 class="article-subhead">Entities</h4>
       <div class="article-box">
         <article class="item" data-size="huge">
           <figure class="item-avatar">
@@ -248,9 +248,12 @@
           <h3 class="item-name">small</h3>
         </article>
       </div>
+      <aside class="article-helper">
+        <p>todo button/linkButton - clickable / hoverable</p>
+      </aside>
 
 
-      <h4 class="article-subhead">User Cards??</h4>
+      <h4 class="article-subhead">Dummies</h4>
       <div style="width:100%;max-width:400px;">
         <section class="greeting">
           <figure class="greeting-avatar" style="font-size:1.5rem;">🐶</figure>
@@ -374,7 +377,7 @@
         </button>
         <!-- todo -->
         <button class="item" data-size="medium" title="sign out" style="display:flex;align-items:center;text-align:left;">
-          <figure class="item-avatar">
+          <figure class="item-avatar" style="background-image:none;">
             <i class="icon-out"><span class="icon-out-door"></span></i>
           </figure>
           <span class="item-label">고객센터 및 도움말</span>
@@ -418,8 +421,8 @@
 
       <h4 class="article-subhead">Guidelines</h4>
       <ul class="article-checklist">
-        <li><i class="icon-check"></i> 액션 실행 후 피드백합니다. 물리적인 인터페이스의 출현(?) 뿐만 아니라 예측 가능한 페이지 이동이나 새로고침, 정보 구조의 변화도 피드백이 될 수 있습니다.</li>
-        <li><i class="icon-check"></i> 통일된 시각 효과로 버튼의 상태를 표현합니다. 상태를 표현하는 시각 정보는 개별 버튼 컴포넌트에 종속되지 않고 제품 전체에 일관되게 표현합니다.</li>
+        <li><i class="icon-check"></i> 액션 실행 후 피드백합니다. 물리적인 인터페이스의 출현(?) 뿐 아니라 예측할 수 있는 페이지 이동이나 페이지 새로고침, 정보 구조의 변화도 피드백으로 취급될 수 있습니다. (bad case. 인스타그램의 로그인 성공 toast)</li>
+        <li><i class="icon-check"></i> 통일된 시각적 단서로 버튼의 상태를 표현합니다. 상태를 표현하는 시각 정보는 개별 컴포넌트에 종속되지 않고 제품 전체에 일관되게 표현합니다.</li>
         <!-- <li><i class="icon-check"></i> binary choice에서 primary 버튼과 secondary 버튼을 함께 배치하지 않습니다.</li> -->
         <!-- <li><i class="icon-check"></i> 키보드 접근성을 위해 버튼 그룹에서 항상 primary 버튼을 먼저 마크업하세요.</li> -->
         <!-- <li> Dialog 에서 T F</li> -->
@@ -501,7 +504,7 @@
         </div>
       </div>
       <aside class="article-helper">
-        <p>정보의 접근성을 위해 색상 외의 형식으로 대비를 주세요.</p>
+        <p>정보의 접근성을 위해 색상만으로 상태를 표현하지 않습니다.</p>
       </aside>
 
 
@@ -515,7 +518,7 @@
         </div>
       </div>
       <aside class="article-helper">
-        <p>more load를 full-width로 사용하지 마세요. 콘텐츠보다 작은 크기로 대비를 줍니다..</p>
+        <p>more load를 full-width로 사용하지 마세요. 작게 사용해서 대비를 주세요.</p>
         <p>follow/unfollow - toggle button</p>
       </aside>
 
@@ -556,44 +559,10 @@
       
       <h4 class="article-subhead">Guidelines</h4>
       <ul class="article-checklist">
-        <li><i class="icon-check"></i> Clickable.</li>
         <li><i class="icon-check"></i> 맥락이 다른 chip을 나열할 수 있습니다. 이 때 단일선택, 다중선택, 삭제여부, 펼침메뉴 등의 기표를 충분히 제공하세요.</li>
         <li><i class="icon-check"></i> 콘텐츠 정렬sorting을 위해 chip group으로 chip을 나열하지 않습니다. dropdown으로 현재 정렬 상태만 요약합니다. (bad case: 2022.04 구글 지도 바뀐 것)</li>
         <li>todo: uncheckable/removable를 구분할 수 잇는 기표 제공. 단일/다중/</li>
       </ul>
-
-      <h4 class="article-subhead">Test</h4>
-      <div class="article-anatomy" style="margin-top:var(--space);">
-        <table>
-          <thead>
-            <tr>
-              <td style="padding:var(--space-small) 0;">
-                <span class="textfield-check" style="margin-right:var(--space-small);position:relative;right:auto;top:auto;background:var(--green100);"><i class="icon-o" style="border-color:var(--color-primary);"></i></span>
-              </td>
-              <td style="padding:var(--space-small) 0;">
-                <span class="textfield-check" style="position:relative;right:auto;top:auto;background:var(--red100);"><i class="icon-x is-red"></i></span>
-              </td>
-            </tr>
-          </thead>
-          <tbody>
-            <tr style="border:none;">
-              <td>
-                <b>Select
-              </td>
-              <td>
-                Link
-              </td>
-            </tr>
-            <tr>
-              <td style="border:none;">test
-              </td>
-              <td style="border:none;">
-                cette notification expire dans 5 jours
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
 
       <h4 class="article-subhead">anatomy</h4>
       <div class="article-anatomy is-anatomy">
@@ -645,7 +614,7 @@
         </div>
       </div>
       <aside class="article-helper">
-        <p>검색의 맥락.</p>
+        <p>검색의 맥락. todo 해시태그나 태그 컴포넌트의 역할을 구분</p>
       </aside>
 
       <h4 class="article-subhead">Single Selection</h4>
@@ -669,7 +638,7 @@
         <p>Contents Filtering의 맥락</p>
       </aside>
 
-      <h4 class="article-subhead">Multiple Selections</h4>
+      <!-- <h4 class="article-subhead">Multiple Selections (todo)</h4>
       <div class="article-box">
         <div class="chip-group js-chip" role="group" aria-orientation="horizontal">
           <button class="chip is-active">
@@ -687,7 +656,7 @@
       <footer style="margin-left:0;">
         <p style="margin:0 0 var(--space-small) 0;color:var(--color-text-light);">selected <em>10</em> / 50</p>
         <button class="chip" style="background:var(--red100);"><span class="chip-label" style="color:var(--red800);">Reset</span></button>
-      </footer>
+      </footer> -->
 
       <h4 class="article-subhead">Dropdown (Overflow menu)</h4>
       <div class="article-box">
@@ -898,7 +867,7 @@
       <ul class="article-checklist">
         <li><i class="icon-check"></i> '클릭할 수 있음'의 기표로 elevated 스타일을 사용합니다. 타일 전체가 클릭 영역일 수도, 타일 내부에 클릭 가능한 요소를 포함할 수도 있습니다.</li>
         <li><i class="icon-check"></i> 아티클 레벨에 사용합니다. 페이지 레벨의 타이틀과 디스크립션을 타일로 만들지 않습니다.</p>
-        <li><i class="icon-check"></i> leading, tailing 엘리먼트의 line-height에 차이를 시각보정합니다.</p>
+        <li><i class="icon-check"></i> leading, tailing 엘리먼트에 시각보정이 필요할 수 있습니다.</p>
       </ul>
       <br />
       <div class="design-tile-flat" style="padding:1rem;">
@@ -1135,12 +1104,12 @@
         <!-- <p><span><i></i></span> 벨리데이션 실행 조건: <b>제출(구현이 쉬움)</b> / 키보드 입력 쉬움 / 블러(구현이 복잡함. 흐름이 끊어짐)</b></p> -->
         <li><span><i class="icon-check"></i></span> 레이블을 왼쪽에 배치하지 않습니다.</li>
         <li><span><i class="icon-check"></i></span> 검색 필드에 뒤로가기 버튼을 포함하지 않습니다.</li>
-        <li><span><i class="icon-check"></i></span> 사용자의 정보 입력을 돕기 위해 selectbox로 선택할 수 있는 정보 목록을 제공합니다.</li>
+        <!-- <li><span><i class="icon-check"></i></span> 사용자의 정보 입력을 돕기 위해 selectbox로 선택할 수 있는 정보 목록을 제공합니다.</li> -->
       </ul>
 
       <h4 class="article-subhead">Editing Checklist</h4>
       <ul class="article-checklist">
-        <li><span><i class="icon-check"></i></span> 모든 텍스트필드는 필수 입력 항목입니다. 선택 입력 항목인 경우 '선택'으로 가이드를 제공합니다.</li>
+        <li><span><i class="icon-check"></i></span> 모든 textfield는 필수 입력 항목입니다. 선택 입력 항목인 경우에 '선택' 텍스트 가이드를 제공합니다.</li>
         <li><span><i class="icon-check"></i></span> todo: help text / feedback message.</li>
       </ul>
 
@@ -1174,7 +1143,7 @@
       </div>
       <br />
       <!-- <span class="article-anatomy-title">Search</span> -->
-      <p>검색 아이콘과 드롭다운 목록이 필요할 수 있어서 따로 컴포넌트 구조를 만드는 게 좋을 수도.</p>
+      <p>검색 아이콘과 드롭다운 목록이 필요할 수 있어서 textfield에서 분리하는 게 좋을 수도.</p>
       <div class="textfield">
         <button class="textfield-prefix" style="top:11px;"><i class="icon-search"></i></button>
         <!-- <label class="textfield-label" for="search">검색(시각적으로숨겨야함)</label> -->
@@ -1407,7 +1376,7 @@
     <article class="article js-observer js-scrollspy-section js-tab">
       <span class="hashtag">interaction</span>
       <h1 class="article-title">Tab</h1>
-      <p class="article-description">맥락이 같은 콘텐츠를 주제별로 분류합니다. 2204 tab flex:auto로 해야 탭이 탭의 위계를 갖기는 하는데..<p>
+      <p class="article-description">맥락이 같은 콘텐츠를 주제별로 분류합니다. page/section navigation. 2204 tab flex:auto로 해야 탭이 탭의 위계를 갖기는 하는데..<p>
 
       <!-- <aside>
         <p>memo: Chip이 탭의 역할을 많이 가져온 모양새. 탭과 탭바를 구분. iOS는 segmented control이 탭의 역할을 하지만 대체로 페이지 댑스를 깊이 가져가는 패턴.</p>
@@ -1451,7 +1420,7 @@
         <i class="profile-tablist-indicator"></i>
       </nav>
       <div class="profile-tabpanel" id="panel-1" role="tabpanel" tabindex="0" aria-labelledby="tab-1" style="margin:0;">
-        <p>Content for the first panel. 결국 tile inset에 .25rem을 쓰고 말았다. 2022.04 padding 줄여서 segmented controls와 조금 더 비슷하게 바꿔봄.</p>
+        <p>Content for the first panel. tablist는 tile inset에 .25rem을 쓰는 예외 케이스...</p>
       </div>
       <div class="profile-tabpanel" id="panel-2" role="tabpanel" tabindex="0" aria-labelledby="tab-2" aria-hidden="true" style="margin:0;">
         <p>Content for the second panel</p>
@@ -1647,8 +1616,7 @@
       </button> -->
       <br />
 
-      <p>1. dropdown</p>
-      <p>2.bottom sheet/aside bar (check icon)</p>
+      <p>dropdown ///// bottomsheet/asidebar</p>
 
       <hr />
       <button class="menu-item">
