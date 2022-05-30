@@ -7,10 +7,8 @@ function detectTheme() {
   const savedTheme = localStorage.getItem('theme')
   if (!savedTheme) return
 
-  console.log('savedTheme is DARK_THEME_CLASS', savedTheme)
-
   document.body.classList.add(DARK_THEME_CLASS)
-  
+
   const darkThemeTriggers = document.querySelectorAll(DARKTHEME_SELECTOR)
   darkThemeTriggers?.forEach((element: any) => {
     element.querySelector('input').checked = true

@@ -106,14 +106,16 @@ async function domEvents() {
   // pageTitleElement?.textContent = page?.name || '페이지타이틀'
 
   const chip = document.querySelector('.js-chip')
-  const chipElements = chip?.querySelectorAll('button')
+  const chips = chip?.querySelectorAll('button')
+
+  function active(eTemp) {
+    chips?.forEach(element => element.classList.remove('is-active'))
+    eTemp.classList.add('is-active') // this
+  }
   // todo selector
-  if (chip && chipElements) {
-    chipElements.forEach(element => {
-      element.addEventListener('click', () => {
-        chipElements.forEach(element => element.classList.remove('is-active'))
-        element.classList.add('is-active')
-      })
+  if (chip && chips) {
+    chips.forEach(element => {
+      element.addEventListener('click', () => active(element))
     })
   }
 

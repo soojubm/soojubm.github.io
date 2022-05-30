@@ -70,7 +70,7 @@
 .profile-tablist-indicator {display:block;height:calc(100% - .5rem);@include chip;background:var(--color-background-strong);border-color:var(--color-background-strong) !important;position:absolute;transition:all var(--duration);}
 
 // todo 
-.follow-tablist {margin-top:-.25rem;margin-bottom:.75rem;z-index:7;}
+.follow-tablist {margin-bottom:.75rem;z-index:7;}
 
 .type-t[role=tablist] {justify-content:space-between;padding:0 !important;border:none;border-bottom:var(--border);border-radius:0;box-shadow:none;}
 .type-t .profile-tablist-indicator {background:none;border-radius:0;border:0;border-bottom:4px solid var(--color-primary);bottom:-1px;}

@@ -26,8 +26,8 @@ $transition-fade: opacity 0.15s linear;
   --font-family-body: null;
   --font-family-caption: null;
 
-  --navbar-height: 64px;
-  --titlebar-height: 64px;
+  --navbar-height: calc(32px + 1.5rem);
+  --titlebar-height: calc(32px + 1.5rem);
 
   --font-size-huge: 2rem;
   --font-size-large: 1.125rem;

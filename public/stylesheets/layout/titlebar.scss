@@ -1,4 +1,4 @@
-.titlebar {display:flex;align-items:center;padding:var(--space) var(--grid-margin);position:relative;left:0;right:0;z-index:3;}
+.titlebar {display:flex;align-items:center;padding:.75rem var(--grid-margin);position:relative;left:0;right:0;z-index:3;}
 // todo 프로필 오버플로우 메뉴보다 zindex가 낮아야함
 .titlebar-title {margin:-1px 0 0;font-size:var(--font-size-subhead);font-weight:var(--font-weight-normal);position:absolute;left:50%;transform:translateX(-50%);}
 .titlebar-back {display:flex;align-items:center;position:relative;}
