@@ -3,10 +3,6 @@
 <!-- https://biings.design/#/ -->
 <!-- todo top hat -->
 
-<script>
-  const radio = {id: 'radio', description: '테스트'}
-</script>
-
 <main class="component">
   <!--
     <p>
@@ -43,7 +39,7 @@
     <!-- <span class="hero-eyebrow">Components</span> -->
     <!-- <h1 class="hero-title" style="line-height:1.3;margin-top:.25rem;"><span style="color:var(--color-text-light);">We 🐷</span><br />built this city.</h1> -->
     <h1 class="hero-title">Components</h1>
-    <!-- <p class="hero-description">디스크립션.</p> -->
+    <p class="hero-description">todo loading state</p>
 
     <!-- <ul class="article-checklist">
       <li>역할 중심</li>
@@ -140,7 +136,8 @@
     <article class="article js-observer js-scrollspy-section">
       <span class="hashtag">visual information</span>
       <h1 class="article-title">Avatars</h1>
-      <p class="article-description">개체(유저, 회사, 프로젝트 등)를 대표하는 시각 정보입니다. 아바타의 시각 이미지는 사용자의 흥미를 유도합니다.</p>
+      <p class="article-description">개체(유저, 회사, 프로젝트 등)를 대표하는 시각 정보입니다.</p>
+      <!-- <p> 아바타의 시각 이미지는 텍스트 정보 더미보다 상위 위계. 사용자의 흥미.</p> -->
 
       <blockquote hidden>
         <q>인물, 그룹, 회사, 프로젝트 등의 unique entity로 대부분의 디자인 시스템에서 정의. 여기서는 조금 더 포괄적인 개념.</q>
@@ -148,10 +145,10 @@
 
       <h4 class="article-subhead">Guidelines</h4>
       <ul class="article-checklist">
-        <!-- <li><i class="icon-check"></i> <em>todo</em> 클릭할 수 없음. 따라서 chip의 역할을 하는 아이콘 chip과 명확한 분리가 필요함. pagination item은 chip과 같은 높이를 갖지만 chip이 아님. textfield 내부의 clear 버튼은? 그냥 clear button임. textfield-surfix 로 정의되어야?</li> -->
-        <li><i class="icon-check"></i> 이미지, 텍스트, 아이콘을 포함합니다.</li>
+        <!-- <li><em>todo</em> 클릭할 수 없음. 따라서 chip의 역할을 하는 아이콘 chip과 명확한 분리가 필요함. pagination item은 chip과 같은 높이를 갖지만 chip이 아님. textfield 내부의 clear 버튼은? 그냥 clear button임. textfield-surfix 로 정의되어야?</li> -->
+        <li>이미지, 텍스트, 아이콘을 포함합니다.</li>
         <!-- <li>todo hoverable... 상세 사용자 정보를 팝오버로 제공할 수 있다.</li> -->
-        <!-- <li><i class="icon-check"></i> chip 컴포넌트는 active 상태를 포함하고 있기 때문에 다른 기표로 active 상태를 표시하는 경우에는 사용하지 않습니다.</li> -->
+        <!-- <li>chip 컴포넌트는 active 상태를 포함하고 있기 때문에 다른 기표로 active 상태를 표시하는 경우에는 사용하지 않습니다.</li> -->
       </ul>
       <!-- <div class="article-role">
         <span class="article-role-title">role</span>
@@ -402,8 +399,8 @@
     <!-- <article class="article js-observer js-scrollspy-section">
       <h1 class="article-title">Entities</h1>
       <p class="article-description">요약된 정보 개체.</p>
-       <li><i class="icon-check"></i> 아이템 컴포넌트: card component, page 레벨에서 상대적으로 중요도가 낮은 경우 오른쪽에 배치할 수 있습니다.</li>
-        <li><i class="icon-check"></i> 아이템 컴포넌트: 텍스트 말 줄임표 조건 정의.</li>
+       <li>아이템 컴포넌트: card component, page 레벨에서 상대적으로 중요도가 낮은 경우 오른쪽에 배치할 수 있습니다.</li>
+        <li>아이템 컴포넌트: 텍스트 말 줄임표 조건 정의.</li>
 
     </article> -->
 
@@ -411,32 +408,34 @@
       <span class="hashtag">interaction</span>
       <!-- <span class="hashtag">link</span> -->
       <h1 class="article-title">Buttons</h1>
+      <!-- // 작업 수행, 클릭할 수 있는  -->
       <p class="article-description">과업 수행을 위한 페이지 이동, 데이터 제출 등 사용자 여정의 핵심적인 액션입니다.</p>
 
       <!-- <p>Split Button</p> -->
 
-      <!-- <li><i class="icon-check"></i> 아이콘 버튼의 아이콘은 관습적인 메타포를 사용하세요.</li> -->
+      <!-- <li>아이콘 버튼의 아이콘은 관습적인 메타포를 사용하세요.</li> -->
       <!-- <p><span><i></i></span> 역할이 명확한 모두보기, 불러오는중, 더보기 등의 버튼은 합성해서 컴포넌트로 관리.</p> -->
-      <!-- <li><i class="icon-check"></i> 버튼 아래에 가이드 텍스트를 배치하지 않습니다.<span hidden> (secondary 액션의 text 버튼이 아래에 위치하는 패턴 고려).</spanhi></li> -->
+      <!-- <li>버튼 아래에 가이드 텍스트를 배치하지 않습니다.<span hidden> (secondary 액션의 text 버튼이 아래에 위치하는 패턴 고려).</spanhi></li> -->
 
       <h4 class="article-subhead">Guidelines</h4>
       <ul class="article-checklist">
-        <li><i class="icon-check"></i> 액션 실행 후 피드백합니다. 물리적인 인터페이스의 출현(?) 뿐 아니라 예측할 수 있는 페이지 이동이나 페이지 새로고침, 정보 구조의 변화도 피드백으로 취급될 수 있습니다. (bad case. 인스타그램의 로그인 성공 toast)</li>
-        <li><i class="icon-check"></i> 통일된 시각적 단서로 버튼의 상태를 표현합니다. 상태를 표현하는 시각 정보는 개별 컴포넌트에 종속되지 않고 제품 전체에 일관되게 표현합니다.</li>
-        <!-- <li><i class="icon-check"></i> binary choice에서 primary 버튼과 secondary 버튼을 함께 배치하지 않습니다.</li> -->
-        <!-- <li><i class="icon-check"></i> 키보드 접근성을 위해 버튼 그룹에서 항상 primary 버튼을 먼저 마크업하세요.</li> -->
+        <li>액션 실행 후 피드백합니다. 물리적인 인터페이스의 출현(?) 뿐 아니라 예측할 수 있는 페이지 이동이나 페이지 새로고침, 정보 구조의 변화도 피드백으로 취급될 수 있습니다. (bad case. 인스타그램의 로그인 성공 toast)</li>
+        <li>통일된 시각적 단서로 버튼의 상태를 표현합니다. 상태를 표현하는 시각 정보는 개별 컴포넌트에 종속되지 않고 제품 전체에 일관되게 표현합니다.</li>
+        <li>버튼과 링크</li>
+        <!-- <li>binary choice에서 primary 버튼과 secondary 버튼을 함께 배치하지 않습니다.</li> -->
+        <!-- <li>키보드 접근성을 위해 버튼 그룹에서 항상 primary 버튼을 먼저 마크업하세요.</li> -->
         <!-- <li> Dialog 에서 T F</li> -->
       </ul>
       
       <h4 class="article-subhead">Editing Checklist</h4>
       <ul class="article-checklist" data-align="horizontal">
-        <li><i class="icon-check"></i> 최대 8자</li>
-        <li><i class="icon-check"></i> 사용자 시점 (ex 보내기 => 받기)</li>
-        <li><i class="icon-check"></i> 레이블 생략 불가능</li>
+        <li>최대 8자</li>
+        <li>사용자 시점 (ex 보내기 => 받기)</li>
+        <li>레이블 생략 불가능</li>
       </ul>
         <!-- <ul class="article-checklist">
-          <li><i class="icon-check"></i> 레이블을 생략하여 아이콘 버튼으로 쓰지 않습니다.</li>
-          <li><i class="icon-check"></i> 다이얼로그의 버튼 레이블은 질문의 동사와 페어링.</li>
+          <li>레이블을 생략하여 아이콘 버튼으로 쓰지 않습니다.</li>
+          <li>다이얼로그의 버튼 레이블은 질문의 동사와 페어링.</li>
         </ul> -->
 
       <h4 class="article-subhead">anatomy & a11y</h4>
@@ -559,8 +558,8 @@
       
       <h4 class="article-subhead">Guidelines</h4>
       <ul class="article-checklist">
-        <li><i class="icon-check"></i> 맥락이 다른 chip을 나열할 수 있습니다. 이 때 단일선택, 다중선택, 삭제여부, 펼침메뉴 등의 기표를 충분히 제공하세요.</li>
-        <li><i class="icon-check"></i> 콘텐츠 정렬sorting을 위해 chip group으로 chip을 나열하지 않습니다. dropdown으로 현재 정렬 상태만 요약합니다. (bad case: 2022.04 구글 지도 바뀐 것)</li>
+        <li>맥락이 다른 chip을 나열할 수 있습니다. 이 때 단일선택, 다중선택, 삭제여부, 펼침메뉴 등의 기표를 충분히 제공하세요.</li>
+        <li>콘텐츠 정렬sorting을 위해 chip group으로 chip을 나열하지 않습니다. dropdown으로 현재 정렬 상태만 요약합니다. (bad case: 2022.04 구글 지도 바뀐 것)</li>
         <li>todo: uncheckable/removable를 구분할 수 잇는 기표 제공. 단일/다중/</li>
       </ul>
 
@@ -671,7 +670,7 @@
               <h6 class="dropdown-menu-title" hidden>Dropdown header</h6>
               <a class="dropdown-menu-link" href="#" disabled>
                 프로필 관리
-                <!-- <i class="icon-check"></i> -->
+                <!-- -->
               </a>
               <a class="dropdown-menu-link" href="#">고객센터</a>
               <hr class="dropdown-menu-divider" />
@@ -802,18 +801,18 @@
 
       <h4 class="article-subhead">Guidelines</h4>
       <ul class="article-checklist">
-        <!-- <li><i class="icon-check"></i> secondary 사용 안 함.</li> -->
-        <li><i class="icon-check"></i> non-clickable<span hidden>triggering interaction</span></li>
-        <!-- <li><i class="icon-check"></i> 아이콘을 포함하지 않습니다. </li> -->
-        <!-- <li><i class="icon-check"></i> 3개 이상의 태그를 포함할 수 없습니다.</li> -->
-        <!-- <li><i class="icon-check"></i> 해시태그(#)는 항상 클릭할 수 있어야 합니다.</li> -->
+        <!-- <li>secondary 사용 안 함.</li> -->
+        <li>non-clickable<span hidden>triggering interaction</span></li>
+        <!-- <li>아이콘을 포함하지 않습니다. </li> -->
+        <!-- <li>3개 이상의 태그를 포함할 수 없습니다.</li> -->
+        <!-- <li>해시태그(#)는 항상 클릭할 수 있어야 합니다.</li> -->
       </ul>
 
       <h4 class="article-subhead">Editing Checklist</h4>
       <ul class="article-checklist" data-align="horizontal">
-        <li><i class="icon-check"></i> 형용사</li>
-        <li><i class="icon-check"></i> 명사</li>
-        <li><i class="icon-check"></i> 최대 1단어</li>
+        <li>형용사</li>
+        <li>명사</li>
+        <li>최대 1단어</li>
       </ul>
       
       <h4 class="article-subhead">anatomy</h4>
@@ -865,9 +864,9 @@
 
       <h4 class="article-subhead">Guidelines</h4>
       <ul class="article-checklist">
-        <li><i class="icon-check"></i> '클릭할 수 있음'의 기표로 elevated 스타일을 사용합니다. 타일 전체가 클릭 영역일 수도, 타일 내부에 클릭 가능한 요소를 포함할 수도 있습니다.</li>
-        <li><i class="icon-check"></i> 아티클 레벨에 사용합니다. 페이지 레벨의 타이틀과 디스크립션을 타일로 만들지 않습니다.</p>
-        <li><i class="icon-check"></i> leading, tailing 엘리먼트에 시각보정이 필요할 수 있습니다.</p>
+        <li>'클릭할 수 있음'의 기표로 elevated 스타일을 사용합니다. 타일 전체가 클릭 영역일 수도, 타일 내부에 클릭 가능한 요소를 포함할 수도 있습니다.</li>
+        <li>아티클 레벨에 사용합니다. 페이지 레벨의 타이틀과 디스크립션을 타일로 만들지 않습니다.</p>
+        <li>leading, tailing 엘리먼트에 시각보정이 필요할 수 있습니다.</p>
       </ul>
       <br />
       <div class="design-tile-flat" style="padding:1rem;">
@@ -897,16 +896,16 @@
 
       <h4 class="article-subhead">Guidelines</h4>
       <ul class="article-checklist">
-        <!-- <li><i class="icon-check"></i> 왼쪽 오른쪽에 필터나 탭으로 쓰지 않습니다.</li> -->
-        <!-- <li><i class="icon-check"></i> 결과를 즉시 반영합니다. 그런데 두 번쨰 패턴은 그렇지 않음</li> -->
-        <li><i class="icon-check"></i> 스위치의 왼쪽과 오른쪽에 각각 레이블을 배치하여 콘텐츠 스위칭으로 사용하지 않습니다.</li>
+        <!-- <li>왼쪽 오른쪽에 필터나 탭으로 쓰지 않습니다.</li> -->
+        <!-- <li>결과를 즉시 반영합니다. 그런데 두 번쨰 패턴은 그렇지 않음</li> -->
+        <li>스위치의 왼쪽과 오른쪽에 각각 레이블을 배치하여 콘텐츠 스위칭으로 사용하지 않습니다.</li>
       </ul>
       
       <h4 class="article-subhead">Editing Checklist</h4>
       <ul class="article-checklist" data-align="horizontal">
-        <li><i class="icon-check"></i> 동사포함</li>
-        <!-- <li><i class="icon-check"></i> 최대 2단어</li> -->
-        <li><i class="icon-check"></i> 최대 8자</li>
+        <li>동사포함</li>
+        <!-- <li>최대 2단어</li> -->
+        <li>최대 8자</li>
       </ul>
 
       <br />
@@ -967,15 +966,15 @@
       <h4 class="article-subhead">Guidelines</h4>
       <ul class="article-checklist">
         <!-- 서낵하지 않을 수 있다. -->
-        <li><i class="icon-check"></i> 체크하지 않은 상태로 제공합니다.</li>
-        <li><i class="icon-check"></i> switch 역할로 하나의 체크박스를 제공할 수 있습니다.</li>
-        <!-- <li><i class="icon-check"></i> 옵션을 선택하는 경우 Chip.</li> -->
+        <li>체크하지 않은 상태로 제공합니다.</li>
+        <li>switch 역할로 하나의 체크박스를 제공할 수 있습니다.</li>
+        <!-- <li>옵션을 선택하는 경우 Chip.</li> -->
       </ul>
 
       <h4 class="article-subhead">Editing Checklist</h4>
       <ul class="article-checklist" data-align="horizontal">
-        <li><i class="icon-check"></i> 동사포함</li>
-        <li><i class="icon-check"></i> 최대 2단어</li>
+        <li>동사포함</li>
+        <li>최대 2단어</li>
       </ul>
 
       <br />
@@ -1005,18 +1004,18 @@
 
       <h4 class="article-subhead">Guidelines</h4>
       <ul class="article-checklist">
-        <li><i class="icon-check"></i> 기본 옵션을 선택된 상태로 제공합니다.</li>
-        <li><i class="icon-check"></i> 가로로 정렬하지 않습니단.</li>
-        <!-- <li><i class="icon-check"></i> 최대 5개의 옵션</li> -->
+        <li>기본 옵션을 선택된 상태로 제공합니다.</li>
+        <li>가로로 정렬하지 않습니단.</li>
+        <!-- <li>최대 5개의 옵션</li> -->
       </ul>
 
       <br />
 
       <!-- <h4 class="article-subhead">Editing Checklist</h4>
       <ul class="article-checklist">
-        <li><i class="icon-check"></i> 레이블은 동사형으로 작성합니다.</li>
+        <li>레이블은 동사형으로 작성합니다.</li>
       </ul> -->
-      <!-- <li><i class="icon-check"></i> selectbox/dropdown를 다중 선택에 사용하지 않습니다.</li> -->
+      <!-- <li>selectbox/dropdown를 다중 선택에 사용하지 않습니다.</li> -->
 
       <fieldset role="radiogroup">
         <legend hidden>radiogroup</legend>
@@ -1143,7 +1142,7 @@
       </div>
       <br />
       <!-- <span class="article-anatomy-title">Search</span> -->
-      <p>검색 아이콘과 드롭다운 목록이 필요할 수 있어서 textfield에서 분리하는 게 좋을 수도.</p>
+      <p>검색 아이콘과 드롭다운 목록이 필요할 수 있어서 textfield에서 분리하여 별도의 컴포넌트로 관리하는 것이 좋다.</p>
       <div class="textfield">
         <button class="textfield-prefix" style="top:11px;"><i class="icon-search"></i></button>
         <!-- <label class="textfield-label" for="search">검색(시각적으로숨겨야함)</label> -->
@@ -1196,8 +1195,8 @@
       
       <h4 class="article-subhead">Guidelines</h4>
       <ul class="article-checklist">
-        <li><i class="icon-check"></i> 아티클 레벨에서 사용합니다. 섹션 레벨과 페이지 레벨에서는 충분한 여백으로 콘텐츠를 구획합니다.</lip>
-        <li><i class="icon-check"></i> border 속성으로 스타일링하지 않습니다. hr 태그를 사용하면 의미론적으로 주제를 분리할 수 있고 컴포넌트의 고유성을 유지할 수 있습니다.</p>
+        <li>아티클 레벨에서 사용합니다. 섹션 레벨과 페이지 레벨에서는 충분한 여백으로 콘텐츠를 구획합니다.</lip>
+        <li>border 속성으로 스타일링하지 않습니다. hr 태그를 사용하면 의미론적으로 주제를 분리할 수 있고 컴포넌트의 고유성을 유지할 수 있습니다.</p>
         <!-- <p> -> 문제: 수정이 어렵다. (or css 인접 연산자)<</p> -->
       </ul>
       <br />
@@ -1211,10 +1210,10 @@
 
       <h4 class="article-subhead">Guidelines</h4>
       <ul class="article-checklist">
-        <li><i class="icon-check"></i> 페이지 뎁스 3 이상에서 사용합니다.</li>
-        <li><i class="icon-check"></i> 프로모션용 랜딩 페이지에서 사용자 여정을 돕기 위해 사용할 수 있습니다.</li>
-        <li><i class="icon-check"></i> 푸터에서 사이트맵과 함께 사용할 수 있습니다.</li>
-        <li><i class="icon-check"></i> 모바일 환경에서 네비게이션 바와 함께 사용하지 않습니다.</li>
+        <li>페이지 뎁스 3 이상에서 사용합니다.</li>
+        <li>프로모션용 랜딩 페이지에서 사용자 여정을 돕기 위해 사용할 수 있습니다.</li>
+        <li>푸터에서 사이트맵과 함께 사용할 수 있습니다.</li>
+        <li>모바일 환경에서 네비게이션 바와 함께 사용하지 않습니다.</li>
       </ul>
       <!-- <blockquote>
         <p>🐹: flat sitemap 트렌드에서 사용 빈도가 높지 않아요. 주로 도움말, 상품 등 카테고리 구조에서 활용하며, pg 심사 시 제품군 정보가 요구될 수 있어요. (토스페이-구엘지페이먼츠시절)</p>
@@ -1232,7 +1231,7 @@
     <article class="article js-observer js-scrollspy-section">
       <span class="hashtag">interaction?</span>
       <h1 class="article-title">Links</h1>
-      <p class="article-description">페이지를 이동하거나 요약된 콘텐츠를 확장합니다.</p>
+      <p class="article-description">페이지를 이동하거나 요약된 콘텐츠를 확장합니다. destination that can be bookmarked</p>
 
       <!-- <aside>
         aka. Anchor
@@ -1240,14 +1239,14 @@
 
       <h4 class="article-subhead">Guidelines</h4>
       <ul class="article-checklist">
-        <li><i class="icon-check"></i> 텍스트 단락과 함께 사용합니다.</li>
-        <!-- <li><i class="icon-check"></i> 모달, 시트 등...</li> -->
-        <!-- <li><i class="icon-check"></i> 텍스트 단락의 내/외부에서의 형태를 구분합니다. 단락 내부에서 언더라인을 추가하여 텍스트와 대비를 추가합니다.</li> -->
+        <li>텍스트 단락과 함께 사용합니다.</li>
+        <!-- <li>모달, 시트 등...</li> -->
+        <!-- <li>텍스트 단락의 내/외부에서의 형태를 구분합니다. 단락 내부에서 언더라인을 추가하여 텍스트와 대비를 추가합니다.</li> -->
       </ul>
 
       <!-- <h4 class="article-subhead">Editing Checklist</h4>
       <ul class="article-checklist">
-        <li><i class="icon-check"></i> '여기', '클릭', '확장' 등 시각적인 .</li>
+        <li>'여기', '클릭', '확장' 등 시각적인 .</li>
       </ul> -->
       <!-- <div class="tag-group">
         <span class="tag">@mixin link-outer</span>
@@ -1271,22 +1270,22 @@
         
       <!-- checklist(price card 등에서 사용) 정의. -->
       <!-- <ul class="article-checklist">
-        <li><i class="icon-check"></i> 리스트 태그(ul, ol, dl)는 텍스트 형태의 목록에만 마크업하세요. role=listbox/listitem</li>
-        <li><i class="icon-check"></i> 리스트는 2 댑스로 제공하지 않습니다.</li>
-        <li><i class="icon-check"></i> 3가지 이상의 대비로 위계를 설정하지 않습니다.</li>
+        <li>리스트 태그(ul, ol, dl)는 텍스트 형태의 목록에만 마크업하세요. role=listbox/listitem</li>
+        <li>리스트는 2 댑스로 제공하지 않습니다.</li>
+        <li>3가지 이상의 대비로 위계를 설정하지 않습니다.</li>
       </ul> -->
 
       <div class="article-section">
         <h4 class="article-subhead">List</h4>
         <div class=" tile-flat-small" style="padding-left:var(--space);">
           <ul class="article-checklist">
-            <!-- <li title="unordered list, level 1"><i class="icon-check"></i> 순서가 없는 리스트
+            <!-- <li title="unordered list, level 1">순서가 없는 리스트
               <ul>
                 <li title="unordered list, level 2">순서가 없는 리스트</li>
               </ul>
             </li> -->
-            <li><i class="icon-check"></i> 순서가 없는 리스트</li>
-            <li><i class="icon-check"></i> 순서가 없는 리스트</li>
+            <li>순서가 없는 리스트</li>
+            <li>순서가 없는 리스트</li>
           </ul>
           <!-- <ol style="margin:var(--space-small) 0 0 0;">
             <li>순서가 있는 리스트
@@ -1299,14 +1298,14 @@
         </div>
         <div class="tile-flat-small" style="padding-left:var(--space);">
           <ul class="article-checklist" data-align="horizontal">
-            <!-- <li title="unordered list, level 1"><i class="icon-check"></i> 순서가 없는 리스트
+            <!-- <li title="unordered list, level 1">순서가 없는 리스트
               <ul>
                 <li title="unordered list, level 2">순서가 없는 리스트</li>
               </ul>
             </li> -->
-            <li><i class="icon-check"></i> 순서가 없는 리스트</li>
-            <li><i class="icon-check"></i> 순서가 없는 리스트</li>
-            <li><i class="icon-check"></i> 순서가 없는 리스트</li>
+            <li>순서가 없는 리스트</li>
+            <li>순서가 없는 리스트</li>
+            <li>순서가 없는 리스트</li>
           </ul>
         </div>
       </div>
@@ -1385,11 +1384,11 @@
 
       <h4 class="article-subhead">Guidelines</h4>
       <ul class="article-checklist">
-        <li><i class="icon-check"></i> 탭을 중첩하여 플로우를 설계하지 않습니다.<span hidden>(탭 + 칩 그룹의 패턴)</네무></li>
-        <li><i class="icon-check"></i> 정렬, 필터로 사용하지 않습니다.</li>
-        <li><i class="icon-check"></i> 스크롤스파이로 사용하지 않습니다.</li>
-        <li><i class="icon-check"></i> 글로벌 탐색 패턴으로 햄버거 메뉴와 탭(바텀네비게이션, 탭바)을 함께 사용하지 않습니다. (todo: tab과 tab bar(app bar)를 구분)</li>
-        <li><i class="icon-check"></i> <del>페이지 링크로 사용하지 않습니다.</del> (todo SPA 라우팅에서 페이지 링크의 개념이 모호)</li>
+        <li>탭을 중첩하여 플로우를 설계하지 않습니다.<span hidden>(탭 + 칩 그룹의 패턴)</네무></li>
+        <li>정렬, 필터로 사용하지 않습니다.</li>
+        <li>스크롤스파이로 사용하지 않습니다.</li>
+        <li>글로벌 탐색 패턴으로 햄버거 메뉴와 탭(바텀네비게이션, 탭바)을 함께 사용하지 않습니다. (todo: tab과 tab bar(app bar)를 구분)</li>
+        <li><del>페이지 링크로 사용하지 않습니다.</del> (todo SPA 라우팅에서 페이지 링크의 개념이 모호)</li>
       </ul>
 
       <br />
@@ -1493,8 +1492,8 @@
       
       <h4 class="article-subhead">Guidelines</h4>
       <ul class="article-checklist">
-        <li><i class="icon-check"></i> 행동을 유도하는 가이드로 사용하지 않습니다.</li>
-        <li><i class="icon-check"></i> 페이지 링크로 사용하지 않습니다.</li>
+        <li>행동을 유도하는 가이드로 사용하지 않습니다.</li>
+        <li>페이지 링크로 사용하지 않습니다.</li>
       </ul>
       <br />
       <aside class="tooltip">
@@ -1509,23 +1508,23 @@
       <h1 class="article-title">Alerts / Message</h1>
       <p class="article-description">시스템이나 브라우저의 상태 이상, 사용자의 행동에 피드백합니다.</p>
       <!-- <ul class="article-checklist">
-        <li><i class="icon-check"></i> 브라우저가 role="alert" 속성이 있는 요소를 발견 하면 즉시 사용자에게 경고 내용을 읽습니다.</li>
+        <li>브라우저가 role="alert" 속성이 있는 요소를 발견 하면 즉시 사용자에게 경고 내용을 읽습니다.</li>
         <li>( + 게임에서 파티 탈퇴와 같이 직접 실행하지 않은, 시간을 특정하기 힘든 연속적인... 경우 여러 개가 필요하구나.)</li>
         <p>toast=>snackbar(withAction) - 정리하기, single line / multiple lines (head,body 텍스트)</p>
       </ul> -->
 
       <h4 class="article-subhead">Guidelines</h4>
       <ul class="article-checklist">
-        <li><i class="icon-check"></i> 모든 액션에 피드백할 필요는 없습니다. (ex bad case: 인스타그램 앱에서 로그인되었다는 toast. 홈으로 이동과 피드 노출만으로 로그인 상태를 인지할 수 있다.)</li>
-        <li><i class="icon-check"></i> Don't show more than one at a time.</li>
-        <li><i class="icon-check"></i> 닫기나 되돌리기와 같은 액션을 포함할 수 없습니다. 그러면 더 주목도가 높은 다이얼로그 등을 쓰라.</li>
-        <li><i class="icon-check"></i> 사용자의 귀책이 아닌 경우, 단순 "오류" 대신 "시스템 오류"와 같은 용어를 사용하여 사용자가 잘못한 것처럼 느끼지 않도록 합니다.</li>
+        <li>모든 액션에 피드백할 필요는 없습니다. (ex bad case: 인스타그램 앱에서 로그인되었다는 toast. 홈으로 이동과 피드 노출만으로 로그인 상태를 인지할 수 있다.)</li>
+        <li>Don't show more than one at a time.</li>
+        <li>닫기나 되돌리기와 같은 액션을 포함할 수 없습니다. 그러면 더 주목도가 높은 다이얼로그 등을 쓰라.</li>
+        <li>사용자의 귀책이 아닌 경우, 단순 "오류" 대신 "시스템 오류"와 같은 용어를 사용하여 사용자가 잘못한 것처럼 느끼지 않도록 합니다.</li>
         <li>사라지는 시간을 정의.</li>
       </ul>
     
       <h4 class="article-subhead">Editing Checklist</h4>
       <ul class="article-checklist">
-        <li><i class="icon-check"></i> 한 문장</li>
+        <li>한 문장</li>
       </ul>
       <!-- Icon: Informs users of the kind of notification at a glance.
       Title: Gives users a quick overview of the notification.
@@ -1629,8 +1628,8 @@
       <h1 class="article-title">Carousel</h1>
       <p class="article-description">작성 중.</p>
       <ul class="article-checklist">
-        <li><i class="icon-check"></i> 서드파티 라이브러리를 사용하지 않고 가로 스크롤을 활용합니다.</li>
-        <li><i class="icon-check"></i> 터치 제스쳐를 지원하지 않는 환경에서는 arrow 버튼을 제공합니다.</li>
+        <li>서드파티 라이브러리를 사용하지 않고 가로 스크롤을 활용합니다.</li>
+        <li>터치 제스쳐를 지원하지 않는 환경에서는 arrow 버튼을 제공합니다.</li>
       </ul>
       <br />
       <section class="carousel" style="max-width:auto;">
@@ -1675,9 +1674,9 @@
       <h1 class="article-title">Paginations</h1>
       <p class="article-description">페이지네이션.</p>
       <ul class="article-checklist">
-        <li><i class="icon-check"></i> 첫 페이지와 마지막 페이지에 더블 화살표 아이콘을 사용하지 않습니다. 최초와 최종 페이지 넘버로 대략적인 콘텐츠의 수량을 파악할 수 있도록 도와주세요.</li>
-        <li><i class="icon-check"></i> more load</li>
-        <li><i class="icon-check"></i> infinite scroll</li>
+        <li>첫 페이지와 마지막 페이지에 더블 화살표 아이콘을 사용하지 않습니다. 최초와 최종 페이지 넘버로 대략적인 콘텐츠의 수량을 파악할 수 있도록 도와주세요.</li>
+        <li>more load</li>
+        <li>infinite scroll</li>
       </ul>
 
       <h6 class="article-subhead">Type 1</h6>
@@ -1779,12 +1778,12 @@
 
       <h4 class="article-subhead">Guidelines</h4>
       <ul class="article-checklist">
-        <li><i class="icon-check"></i> 사용자가 반드시 숙지해야 하는 정보를 요약해서 보여주지 않습니다. (툴팁도)</li>
+        <li>사용자가 반드시 숙지해야 하는 정보를 요약해서 보여주지 않습니다. (툴팁도)</li>
       </ul>
 
       <h4 class="article-subhead">Editing Checklist</h4>
       <ul class="article-checklist">
-        <li><i class="icon-check"></i> heading은 한 문장으로 간결하게 작성하세요.</li>
+        <li>heading은 한 문장으로 간결하게 작성하세요.</li>
       </ul>
 
       <br />
@@ -1838,14 +1837,14 @@
 
       <!-- <h4 class="article-subhead">Guidelines</h4>
       <ul class="article-checklist">
-        <li><i class="icon-check"></i> dim엘리먼트 클릭 시 모달을 닫는다. 리액트에서. 구현하기 쉬움</li>
-        <li><i class="icon-check"></i> dialog header/body/footer 단순 다이얼로그는 바디가 필요 없음.</li>
-        <li><i class="icon-check"></i> 두 개 이상의 레이어를 쌓지 않습니다.</li>
+        <li>dim엘리먼트 클릭 시 모달을 닫는다. 리액트에서. 구현하기 쉬움</li>
+        <li>dialog header/body/footer 단순 다이얼로그는 바디가 필요 없음.</li>
+        <li>두 개 이상의 레이어를 쌓지 않습니다.</li>
       </ul>
 
       <h4 class="article-subhead">Editing Checklist</h4>
       <ul class="article-checklist">
-        <li><i class="icon-check"></i> 버튼 레이블은 다이얼로그 제목의 동사와 맞추어 작성하세요</li>
+        <li>버튼 레이블은 다이얼로그 제목의 동사와 맞추어 작성하세요</li>
       </ul> -->
 
       <h4 class="article-subhead">anatomy</h4>
@@ -2104,8 +2103,8 @@
 
       <h4 class="article-subhead">Guidelines</h4>
       <ul class="article-checklist">
-        <li><i class="icon-check"></i> 왼쪽 정렬의 기본적인 텍스트 모듈과 대비를 위해 가운데 정렬합니다.</li>
-        <li><i class="icon-check"></i> 페이지 레벨과 섹션 레벨의 empty, error, complete 상황에서 사용합니다.</li>
+        <li>왼쪽 정렬의 기본적인 텍스트 모듈과 대비를 위해 가운데 정렬합니다.</li>
+        <li>페이지 레벨과 섹션 레벨의 empty, error, complete 상황에서 사용합니다.</li>
       </ul>
 
       <section class="empty" style="border:var(--border);border-radius:var(--radius);margin:2rem 0 0 0;">

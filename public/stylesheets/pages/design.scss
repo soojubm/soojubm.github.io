@@ -358,7 +358,7 @@
 // .design-navigation a[readonly] {opacity:.5;cursor:not-allowed;box-shadow:none;}
 
 
-@media (--breakpoint-tiny) {
+@media (--breakpoint-small) {
   .design-head {padding-top:0 !important;}
   // todo scroll error. because minus margin
   .design-navigation {
