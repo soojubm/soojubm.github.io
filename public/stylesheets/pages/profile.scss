@@ -69,6 +69,8 @@
 .profile-tablist-tab-badge {margin:0 0 0 var(--space-small);}
 .profile-tablist-indicator {display:block;height:calc(100% - .5rem);@include chip;background:var(--color-background-strong);border-color:var(--color-background-strong) !important;position:absolute;transition:all var(--duration);}
 
+// .profile-tablist-tab:nth-child(1)[aria-selected=true] ~ .profile-tablist-indicator {transform: translateX(clac(70px * 1))}
+
 // todo 
 .follow-tablist {margin-bottom:.75rem;z-index:7;}
 
