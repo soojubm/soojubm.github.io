@@ -3,8 +3,7 @@
 
 .dropdown {position:relative;}
 .dropdown-trigger {@include chip;}
-.dropdown-trigger.is-active {background:none;color:none;}
-.dropdown-trigger:hover {outline:none;} // todo 임시로
+// .dropdown-trigger.is-active {background:none;color:none;}
 .dropdown-trigger-label {@include chip-label;}
 .dropdown-trigger-icon {@include avatar-small;@include chip-tailing;background-color:inherit;}
 

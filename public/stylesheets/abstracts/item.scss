@@ -35,7 +35,7 @@
 .item {@include item;}
 .item + .item {margin:var(--space-after-item) 0 0 0;}
 .item-avatar {@include item-avatar;}
-.item-name {font-size:var(--font-size-body);}
+.item-name {font-size:var(--font-size-body);color:var(--color-text);}
 .item-description {display:block;line-height:var(--font-line-height-small);color:var(--color-text-light);}
 .item-description + .item-name {margin-top:-.125rem;}
 .item-action {@include chip;background:var(--green100);color:var(--color-primary);@include position-right-top;right:0;}

@@ -511,7 +511,7 @@
       <div class="article-box">
         <div class="design-buttongroup">
           <button class="article-tertiary">More Load (TODO icon)</button>
-          <button class="article-tertiary" style="border-color:var(--green100);background:var(--green100);color:var(--green800);">Follow</button>
+          <button class="article-secondary">Follow</button>
           <button class="article-tertiary">Unfollow</button>
           <button class="danger-button" aria-label="danger">Danger</button>
         </div>
@@ -743,7 +743,7 @@
         </div>
       </div>
       <aside class="article-helper">
-        <p>Uncheckable과 Removable을 구분하세요.</p>
+        <p>Selection 맥락. Uncheckable과 Removable을 구분하세요.</p>
       </aside>
 
 
@@ -966,8 +966,10 @@
       <h4 class="article-subhead">Guidelines</h4>
       <ul class="article-checklist">
         <!-- 서낵하지 않을 수 있다. -->
-        <li>체크하지 않은 상태로 제공합니다.</li>
-        <li>switch 역할로 하나의 체크박스를 제공할 수 있습니다.</li>
+        <!-- <li>체크하지 않은 상태로 제공합니다.</li>
+        <li>switch 역할로 하나의 체크박스를 제공할 수 있습니다.</li> -->
+        <li>memo 레거시 형태의 체크박스와 라디오는 모바일 친화적이지 않으며 실제로 사용하는 케이스도 적다. 머티리얼 디자인 3에도 포함되어 있지 않다.</li>
+        <li>memo radio와 체크박스를 합치기? tile 형태에서만 checked description이 나타나도록 사용. unchecked 상태에서 helper가 필요한 케이스도 드물게 존재.(mailchimp). Form Elements로 그루핑할 수도 있음.</li>
         <!-- <li>옵션을 선택하는 경우 Chip.</li> -->
       </ul>
 
@@ -1103,6 +1105,8 @@
         <!-- <p><span><i></i></span> 벨리데이션 실행 조건: <b>제출(구현이 쉬움)</b> / 키보드 입력 쉬움 / 블러(구현이 복잡함. 흐름이 끊어짐)</b></p> -->
         <li><span><i class="icon-check"></i></span> 레이블을 왼쪽에 배치하지 않습니다.</li>
         <li><span><i class="icon-check"></i></span> 검색 필드에 뒤로가기 버튼을 포함하지 않습니다.</li>
+        <li><span><i class="icon-check"></i></span> 다중 선택을 위해 셀렉트박스를 사용하지 마세요.</li>
+
         <!-- <li><span><i class="icon-check"></i></span> 사용자의 정보 입력을 돕기 위해 selectbox로 선택할 수 있는 정보 목록을 제공합니다.</li> -->
       </ul>
 
@@ -1138,6 +1142,7 @@
         <label class="textfield-label" for="abc123" style="margin-top:var(--space-leading-subhead);">레이블 <abbr aria-label="optional" style="font-size:var(--font-size-caption);">선택입력</abbr></label>
         <input class="textfield-input js-input-test" type="text" id="abc123" placeholder="Textarea Placeholder..." value="soojubm@gmail.com" aria-describedby="error" aria-invalid="true" />
         <small class="textfield-helper is-error">이미 등록된 이메일입니다.</small>
+        <!-- validation feedback -->
           <!-- // todo readonly -->
       </div>
       <br />
