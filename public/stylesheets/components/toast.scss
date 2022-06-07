@@ -1,4 +1,4 @@
-.dialog {max-width:400px;@include tile-elevated;}
+.dialog {max-width:400px;@include tile-elevated;padding:1rem;}
 .dialog-head {display:flex;justify-content:space-between;}
 .dialog-head-title {margin:0 auto;@include text-subhead;}
 .dialog-title {@include text-subhead;}

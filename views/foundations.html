@@ -80,34 +80,38 @@
   <article class="article js-scrollspy-section">
     <h1 class="article-title" title="visual cue">Level</h1>
     <p class="article-description">컨테이너의 레벨에 따라 자식 컴포넌트 결정.</p>
+    <!-- todo 해당 레빌이 어떤 컴포넌트인지 / 어떤 자식 컴포넌트를 가질 수 있는지 -->
 
-    <!-- <h3 style="margin:0 0 var(--space-small) 0;">Page Level</h3>
-    <p>(local) footer / (local) navigation / main - section</p> -->
+    <h3 class="article-subhead">Page Level</h3>
+    <div class="tile-flat">(local) footer / (local) navigation / main - section</div>
+
+    <h3 class="article-subhead">Article Level</h3>
+    <div class="tile-flat">
+      <p>subhead</p>
+      <p>contents filtering - chip group</p>
+      <p>entity list</p>
+      <p>tab x</p>
+      <p>modal / popover / dropdown 등 페이지 레벨이 될 수 있도록 설계 = 컨테이너 컴포넌트다.</p>
+    </div>
+
+    <h3 class="article-subhead">Group Level ? List?</h3>
+    <div class="tile-flat">
+      <p>단독으로 사용할 수 없는 컨테이너 컴포넌트.</p>
+      <p>avatar / button / chip / tag. checkgroup/radiogroup은 조금 다른 맥락</p>
+      <p>
+        todo. 버튼 그룹은 2개 이상의 버튼을 가질 수 없음. 복잡도 최소화. 여러 개의 액션(버튼의 역할을 하는 chip group)을 가지는 것은 툴 바로 정의한다.
+      </p>
+    </div>
 
     <!-- <h3 style="margin:0 0 var(--space-small) 0;">Section Level</h3>
       <p>hero / banner / tab</p>
       <p>CTA / button</p>
-      <br />
-
-      <h3 style="margin:0 0 var(--space-small) 0;">Article Level</h3>
-      <p>subhead</p>
-      <p>tile</p>
-      <p>entity list</p>
-      <p>contents filtering - chip group</p>
-      <p>버튼 x / tab x</p>
-      <p>mobile에서 page</p>
-      <p>modal / popover / dropdown / 등은 모바일에서 쉽게 페이지 레벨이 될 수 있도록 설계. article level임.</p>
-      <br /> -->
+      <br />-->
 
     <!-- <h3 style="margin:0 0 var(--space-small) 0;">Group Level</h3>
-    <p>그룹은 단독으로 사용할 수 없는 컨테이너 컴포넌트입니다.</p>
-    <p>avatar / button / chip / tag. checkgroup/radiogroup은 조금 다른 맥락</p>
     <br />
 
     <ul class="article-checklist">
-      <li>
-        todo. 버튼 그룹은 2개 이상의 버튼을 가질 수 없음. 복잡도 최소화. 여러 개의 액션(버튼의 역할을 하는 chip group)을 가지는 것은 툴 바로 정의한다.
-      </li>
       <li>검색 : 글로벌 / 로컬 패턴 정리 , Progressing. Loader의 레벨</li>
     </ul> -->
   </article>
@@ -226,6 +230,9 @@
         <span class="item-name">Item</span>
       </div>
     </div>
+    <article class="article-helper">
+      <p>todo hover-item small/large</p>
+    </article>
 
     <h4 class="article-subhead">Pressed / Progressing</h4>
   </article>
