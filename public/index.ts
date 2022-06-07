@@ -71,9 +71,13 @@ async function domEvents() {
 
   const isHome = window.location.hash === ''
 
-  const temps = ['', 'foundations', 'components', 'tokens']
+  const temps = ['', 'foundations', 'components', 'tokens', 'changelog']
 
-  if (!temps.includes(hash)) initializeNavbar()
+  console.log(hash)
+
+  if (!temps.includes(hash)) {
+    initializeNavbar()
+  }
   if (isHome) initializeNavbar()
 
   navItemElements?.forEach(element => {
@@ -90,9 +94,6 @@ async function domEvents() {
     const isMobile = e.matches
 
     if (isMobile) initializeNavbar()
-    if (!isMobile && !isHome && !temps.includes(hash)) {
-      document.body.classList.add('is-opened-menu')
-    }
   }
   mediaSize760.addListener(changeMedia)
   changeMedia(mediaSize760)

@@ -1105,7 +1105,7 @@
         <!-- <p><span><i></i></span> 벨리데이션 실행 조건: <b>제출(구현이 쉬움)</b> / 키보드 입력 쉬움 / 블러(구현이 복잡함. 흐름이 끊어짐)</b></p> -->
         <li><span><i class="icon-check"></i></span> 레이블을 왼쪽에 배치하지 않습니다.</li>
         <li><span><i class="icon-check"></i></span> 검색 필드에 뒤로가기 버튼을 포함하지 않습니다.</li>
-        <li><span><i class="icon-check"></i></span> 다중 선택을 위해 셀렉트박스를 사용하지 마세요.</li>
+        <li><span><i class="icon-check"></i></span> 다중 선택을 위해 셀렉트박스를 사용하지 않습니다.</li>
 
         <!-- <li><span><i class="icon-check"></i></span> 사용자의 정보 입력을 돕기 위해 selectbox로 선택할 수 있는 정보 목록을 제공합니다.</li> -->
       </ul>
@@ -1335,17 +1335,20 @@
       <section class="summary tile-flat" style="margin-top:0;padding-top:var(--space-small);">
         <div class="summary-item">
           <div class="summary-item-label">상품 금액</div>
-          <div class="summary-item-value">₩160,000</div>
+          <div class="summary-item-value">₩ 160,000</div>
         </div>
         <div class="summary-item">
           <div class="summary-item-label">서비스 수수료</div>
-          <div class="summary-item-value">₩3,000</div>
+          <div class="summary-item-value">₩ 3,000</div>
         </div>
         <div class="summary-total">
           <div class="summary-total-label">총 합계 (KRW)</div>
-          <div class="summary-total-value">₩163,000</div>
+          <div class="summary-total-value">₩ 163,000</div>
         </div>
       </section>
+      <aside class="article-helper">
+        <p>가격과 날짜 텍스트 포멧은 formatPrice() / formatDatetime() 등 유틸성 함수를 사용.</p>
+      </aside>
 
       <h6 class="article-subhead">Metadata (description list)</h6>
       <section class="kb tile-flat" style="margin-top:0;">
