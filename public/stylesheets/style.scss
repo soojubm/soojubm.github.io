@@ -15,6 +15,9 @@
 @import 'base/reset';
 @import 'base/form';
 
+@import 'pages/presentations';
+
+
 @import 'components/chip';
 @import 'components/breadcrumb.css';
 @import 'components/graph.css';
@@ -32,6 +35,7 @@
 @import 'components/tag';
 @import 'components/share';
 @import 'components/dropdown';
+
 
 @import 'components/skip';
 @import 'components/skeleton';
@@ -91,9 +95,6 @@
 .rating-star-back {position:absolute;left:0;top:0;z-index:0;}
 .rating-count {}
 
-.rating2 {display:flex;align-items:center;}
-.rating2-star {margin:0 .25rem 0 0;font-size:var(--font-size-body);color:var(--red800);}
-.rating2-score {font-size:var(--font-size-body);}
 
 .scroll {position:fixed;bottom:1rem;right:1rem;z-index:var(--z-index-default);}
 .scroll-indicator {}
@@ -510,3 +511,11 @@ main, .footer {transition:all .6s ease;}
 
 .foundation-c2 {display:flex;}
 .foundation-c2 div {width:50%;padding:4rem var(--grid-margin);}
+
+
+.foundation-unit {@include container-large;display:flex;flex-wrap:wrap;justify-content:space-between;}
+.foundation-unit-title {width:100%;@include text-title;font-family:'Changa One';font-weight:var(--font-weight-normal);}
+.foundation-unit-box {width:calc(50%);@include tile-flat;}
+
+.foundation-unit-title  + .foundation-unit-box {margin-left:-.75rem;}
+.foundation-unit-box + .foundation-unit-box {margin-right:-.75rem;}

@@ -39,8 +39,7 @@
 
 .search-preview {}
 .search-preview-item {display:flex;align-items:center;position:relative;z-index:1;}
-.search-preview-item + .search-preview-item {margin:.75rem 0 0 0;}
-.search-preview-item-avatar {@include avatar-medium;margin:0 var(--space-small) 0 0;}
+.search-preview-item-avatar {@include avatar-medium;}
 
 
 // todo dropdown width mixin

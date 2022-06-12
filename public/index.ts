@@ -71,7 +71,7 @@ async function domEvents() {
 
   const isHome = window.location.hash === ''
 
-  const temps = ['', 'foundations', 'components', 'tokens', 'changelog']
+  const temps = ['', 'components', 'tokens', 'changelog']
 
   console.log(hash)
 

@@ -40,6 +40,7 @@
     <!-- <h1 class="hero-title" style="line-height:1.3;margin-top:.25rem;"><span style="color:var(--color-text-light);">We 🐷</span><br />built this city.</h1> -->
     <h1 class="hero-title">Components</h1>
     <p class="hero-description">todo loading state / dfn/abbr</p>
+    <p>역할 기반. container / visual information (text/) / action / selection /</p>
 
     <!-- <ul class="article-checklist">
       <li>역할 중심</li>
@@ -289,7 +290,7 @@
           <h3 class="item-name">medium</h3>
         </article>
         <p class="user-description" style="margin:var(--space-xsmall) 0;">Youtube Subscriber</p> 
-        <div class="statistic" style="justify-content:flex-start;">
+        <div class="statistic" style="justify-content:flex-start;margin-top:.5rem;">
           <div class="statistic-item" onclick="javascript:alert('샘플 유아이에요!')" style="display:flex;">
             <i class="statistic-label">팔로워</i>
             <span class="statistic-value" style="margin:0 0 0 var(--space-small);font-size:var(--font-size-body);">62</span>
@@ -302,7 +303,7 @@
         </div>
       </article>
 
-      <article class="tile-elevated" style="max-width:400px;padding:1rem;">
+      <article class="tile-elevated" style="max-width:400px;padding:1rem;z-index:1;">
         <figure class="user-avatar"><img src="/public/images/soo.png" alt=""></figure>
         <h2 class="user-name">Gyeongsoo I</h2>
         <div class="user-id">@soojubm</div>
@@ -479,7 +480,7 @@
           <button class="article-tertiary">Tertiary</button>
           <button class="article-text">Text</button>
         </div>
-        <button class="button-elevated" style="margin:.75rem 0 0 0;">
+        <button class="button-elevated" style="margin-bottom:0;">
           <figure class="button-elevated-avatar"></figure>
           <span class="button-elevated-label">아티클 레벨에서 쓰는 elevated 버튼</span>
         </button>
@@ -930,7 +931,7 @@
     <article class="article js-observer js-scrollspy-section">
       <span class="hashtag">interaction</span>
       <h1 class="article-title" title="or Box">Checkboxes</h1>
-      <p class="article-description">옵션 목록에서 하나 이상의 옵션을 선택합니다.</p>
+      <p class="article-description">옵션 목록에서 하나 이상의 옵션을 선택합니다. (todo 기본적인 내용이라 설명할 필요가 없음)</p>
       <!-- 체크할 수 있는 인터렉션 컨트롤. -->
       <h4 class="article-subhead">Guidelines</h4>
       <ul class="article-checklist">
@@ -1073,6 +1074,7 @@
         <li><span><i class="icon-check"></i></span> 레이블을 왼쪽에 배치하지 않습니다.</li>
         <li><span><i class="icon-check"></i></span> 검색 필드에 뒤로가기 버튼을 포함하지 않습니다.</li>
         <li><span><i class="icon-check"></i></span> 다중 선택을 위해 셀렉트박스를 사용하지 않습니다.</li>
+        <li><span><i class="icon-check"></i></span> stepper(quantity) / search field / selectbox(combo)</li>
 
         <!-- <li><span><i class="icon-check"></i></span> 사용자의 정보 입력을 돕기 위해 selectbox로 선택할 수 있는 정보 목록을 제공합니다.</li> -->
       </ul>
@@ -1115,7 +1117,7 @@
       </div>
       <br />
       <!-- <span class="article-anatomy-title">Search</span> -->
-      <p>검색 아이콘과 드롭다운 목록이 필요할 수 있어서 textfield에서 분리하여 별도의 컴포넌트로 관리하는 것이 좋다.</p>
+      <p>검색 아이콘과 드롭다운 목록이 필요할 수 있어서 textfield에서 분리하여 별도의 컴포넌트로 관리하는 것이 좋다. 검색이 중요한 서비스에서 큰 사이즈의 검색 필드 정의가 필요</p>
       <div class="textfield">
         <button class="textfield-prefix" style="top:11px;"><i class="icon-search"></i></button>
         <!-- <label class="textfield-label" for="search">검색(시각적으로숨겨야함)</label> -->
@@ -1314,9 +1316,6 @@
           <div class="summary-total-value">₩ 163,000</div>
         </div>
       </section>
-      <aside class="article-helper">
-        <p>가격과 날짜 텍스트 포멧은 formatPrice() / formatDatetime() 등 유틸성 함수를 사용.</p>
-      </aside>
 
       <h6 class="article-subhead">Metadata (description list)</h6>
       <section class="kb tile-flat" style="margin-top:0;">
@@ -1813,7 +1812,12 @@
       <!-- <span class="hashtag">attention</span>
       <span class="hashtag">confirm</span> -->
       <h1 class="article-title">Dialog</h1>
-      <p class="article-description">작성 중. 다이얼로그는 모달이 아님. todo modality 개념..</p>
+      <p class="article-description">작성 중. 사용자의 정보나 재산이 변경되기 전에 다시 확인할 수 있도록.  todo modality 개념..</p>
+      <aside class="article-aka" style="margin:0;">
+        <span class="tag">a.k.a.</span>
+        <span class="hashtag" title="">Alert</span>
+        <span class="hashtag" title="">Modal</span>
+      </aside>
       <!-- <p>사용자는 모달 형태의 집중된 환경에서(?) 리스크를 관리할 수 있습니다.</p> -->
 
       <!-- <h4 class="article-subhead">Guidelines</h4>
@@ -1926,49 +1930,6 @@
       </nav>
     </article>
 
-    <article class="article" hidden>
-      <h1 class="article-title">Rating</h1>
-      <p class="article-description">레이팅</p>
-      <!-- <div class="rating">
-        <h1 class="rating-title" aria-hidden="true">별점</h1>
-        <span class="rating-score">.3</span>
-        <div class="rating-star">
-            <i class="">★</i>
-            <i class="">★</i>
-            <i class="">★</i>
-            <i class="">★</i>
-            <i class="">★</i>
-          <span class="rating-star-front">☆☆☆☆☆</span>
-          <span class="rating-star-back">★★★★★</span>
-        </div>
-        <small class="rating-count">총 24개의 평가</small>
-      </div> -->
-
-      <div class="rating2">
-        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 12px; width: 12px; fill: var(--red800);"><path d="M15.094 1.579l-4.124 8.885-9.86 1.27a1 1 0 0 0-.542 1.736l7.293 6.565-1.965 9.852a1 1 0 0 0 1.483 1.061L16 25.951l8.625 4.997a1 1 0 0 0 1.482-1.06l-1.965-9.853 7.293-6.565a1 1 0 0 0-.541-1.735l-9.86-1.271-4.127-8.885a1 1 0 0 0-1.814 0z" fill-rule="evenodd"></path></svg>
-        <b class="rating2-score">4.32</b>
-      </div>
-      <hr />
-      <dl class="row1 is-pull" style="display: flex;justify-content: space-between;">
-        <dt>신선도</dt>
-        <dd style="display: flex;align-items: center;">
-          <div class="graph-item is-horizontal">
-            <span class="graph-item-value">4.8</span>
-            <div class="graph-item-bar"></div>
-          </div>
-        </dd>
-      </dl>
-      <div>
-        <span>클라우드 스토리지</span>
-        <span style="display:block;align-items: center;margin-top:-.5rem;">
-          <div class="graph-item is-horizontal" style="margin:0;width:100%;">
-            <span class="graph-item-value" style="font-size:var(--font-size-body);right:0;bottom:12px;">92%</span>
-            <div class="graph-item-bar"></div>
-          </div>
-          <small>2GB 중 5,218KB 사용됨</small>
-        </span>
-      </div>
-    </article>
 
 
     <!-- <style>
@@ -2178,7 +2139,7 @@
         </div>
       </div>
 
-      <!-- <article class="bookitem">
+      <article class="bookitem">
         <figure class="bookitem-cover">
           <img src="${item.imgSrc}" alt="${item.title}">
         </figure>
@@ -2189,38 +2150,9 @@
         <hr />
         <p class="bookitem-byline">${item.author || '정보가 없습니다'}</p>
         <time class="bookitem-publishedyear">${item.publishedDate || '정보가 없습니다'}</time>
-      </article> -->
-
-      
-
-      <article class="card has-item" role="listitem" style="max-width:400px;">
-        <figure class="card-thumbnail"><img src="/public/images/springsteen.jpg" alt="" /></figure>
-        <h3 class="card-title">카드 유아이</h3>
-        <p class="card-text">따봉은 상세페이지에서 제공하세요.  뉴스피드 유아이에서는 밖에서 제공할 수 있어요.북마크는 밖에 두어도 좋은가? 상세페이지에서 제공하는 것이 좋음. 기능이 많아짐. 신선식품 장바구니는 밖에 인정. 보조 텍스트는 최대 두 줄이다.</p>
-        <time class="card-date">2017. 12. 21.</time>
-        <div class="card-tags" role="group">
-          <span class="card-tags-item">기획</span>
-          <span class="card-tags-item">UI</span>
-          <span class="card-tags-item">React</span>
-        </div>
-        <div class="card-byline">
-          <figure class="card-byline-avatar"><img src="/public/images/soo.png" alt="" /></figure>
-          <span class="card-byline-name">수줍이</span>
-        </div>
-        <span class="card-category">카테고리</span>
-        <hr />
-        <div class="card-item">
-          <figure class="card-item-avatar">🍊</figure>
-          <h4 class="card-item-name">퓨어 오렌지 주스</h4>
-          <div class="card-item-price">
-            <del>₩19,000</del> ₩16,000 <em>할인율 20%</em>
-          </div>
-        </div>
-        <div class="card-note">마일리지 적립 200P</div>
-        <button class="card-more" hidden><i class="icon-more"></i></button>
       </article>
 
-      <article class="keywords" style="padding:1rem;">
+      <article class="keywords" style="padding:1rem;z-index:1;">
         <h3 class="keywords-title">지금 인기있는 이슈 키워드</h3>
         <div class="keywords-group" role="group">
           <a class="keywords-group-keyword" href="#"><span class="keywords-group-keyword-label">국정감사</span></a>
@@ -2230,7 +2162,7 @@
           <a class="keywords-group-keyword" href="#"><span class="keywords-group-keyword-label">차별금지법</span></a>
           <a class="keywords-group-keyword" href="#"><span class="keywords-group-keyword-label">추미매법무부장관</span class="keywords-group-keyword-label"></a>
         </div>
-        <button class="button-elevated" style="margin:.75rem 0 0 0;">
+        <button class="button-elevated" style="margin-bottom:0;">
           <figure class="button-elevated-avatar"></figure>
           <span class="button-elevated-label">직접 검색</span>
         </button>
@@ -2248,25 +2180,23 @@
         <!-- <button class="quote-later">지금은 괜찮아요</button> -->
       </div>
 
-      <div class="quote" style="background-image:url('../public/images/springsteen.jpg');background-size:cover;padding:1rem;">
-        <figure class="quote-avatar">🥫</figure>
-        <h3 class="quote-title">Quote</h3>
-        <p class="quote-body">Don't you know that God is Pooh bear? Don't you know that God is Pooh bear?</p>
+      <div class="quote" style="background-image:url('../public/images/springsteen.jpg');background-size:cover;padding:8rem 1rem 1rem;">
+        <h3 class="quote-title" style="color:#fff;">Quote</h3>
+        <p class="quote-body" style="color:#fff;">Don't you know that God is Pooh bear? Don't you know that God is Pooh bear?</p>
         <cite class="quote-byline">
-          <div class="quote-byline-name">Jack Kerouac</div>
+          <div class="quote-byline-name" style="color:#fff;">Jack Kerouac</div>
           <div class="quote-byline-job">Poet / Novelist</div>
         </cite>
-        <button class="quote-action">더 알아보기</button>
-        <!-- <button class="quote-later">지금은 괜찮아요</button> -->
       </div>
 
       <article class="userlist" style="max-width:400px;padding:1rem;overflow:hidden;z-index:1;">
         <button class="sheet-toggle"></button>
-        <header>
-          <h1>팔로워</h1>
-          <a class="link-outer" href="#">모두 보기 (todo 위치)</a>
-        </header>
-        <!-- <hr /> -->
+        <h1>팔로워</h1>
+          <!-- <a class="link-outer" href="#">모두 보기 (todo 위치)</a> -->
+        <div class="share-group" role="group" style="margin-top:.75rem;margin-bottom:.5rem;">
+          <button class="chip is-active"><span class="chip-label">필터링 1</span></button>
+          <button class="chip"><span class="chip-label">필터링 2</span></button>
+        </div>
         <div class="item" role="listitem" data-size="large">
           <figure class="item-avatar"></figure>
           <h2 class="item-name">Gyeongsoo I</h2>
@@ -2279,7 +2209,7 @@
           <span class="item-description">유아이 디자이너</span>
           <button class="item-action"><span class="item-action-label">팔로우</span></button>
         </div>
-        <button class="button-elevated" style="margin:.75rem 0 0 0;">
+        <button class="button-elevated" style="margin-bottom:0;">
           <figure class="button-elevated-avatar"></figure>
           <span class="button-elevated-label">더 많은 친구를 찾아보세요!</span>
         </button>
@@ -2348,7 +2278,7 @@
       <article class="sheet" style="max-width:400px;padding:1rem;">
         <h3 class="sheet-title">목록 정렬</h3>
         <button class="menu-item">
-          바텀 시트 옵션
+          iOS 액션 시트 참고
         </button>
         <button class="menu-item">
           바텀 시트 옵션 <i class="icon-check"></i>
@@ -2368,27 +2298,6 @@
           <span class="sidebar-item-tag tag" data-appearance="primary">새소식</span>
         </div>
       </nav>
-
-      <article class="share" style="max-width:400px;padding:1rem;">
-        <h2 class="share-title">제목</h2>
-        <!-- <p class="share-description"></p> -->
-        <div class="share-group" role="group">
-          <button class="chip is-active"><span class="chip-label">옵션 1</span></button>
-          <button class="chip"><span class="chip-label">옵션 2</span></button>
-        </div>
-        <div style="margin-top:1rem;" role="listbox">
-          <div class="item" role="listitem" data-size="large">
-            <figure class="item-avatar"></figure>
-            <h2 class="item-name">Gyeongsoo I</h2>
-            <span class="item-description">유아이 디자이너</span>
-          </div>
-          <div class="item" role="listitem" data-size="large">
-            <figure class="item-avatar"></figure>
-            <h2 class="item-name">Gyeongsoo I</h2>
-            <span class="item-description">유아이 디자이너</span>
-          </div>
-        </div>
-      </article>
 
       <!-- // ! todo z-index tile in tile -->
       <article class="tile-elevated" style="max-width:400px;padding:1rem;z-index:1;">
@@ -2439,7 +2348,7 @@
             <label for="playlist2" title="play list2">재생 목록 2</label>
           </div>
         </fieldset>
-        <button class="button-elevated" style="margin:.75rem 0 0 0;">
+        <button class="button-elevated">
           <figure class="button-elevated-avatar">
             <i class="icon-plus" style="transform:scale(1.25);"></i>
           </figure>
@@ -2463,7 +2372,7 @@
           <time class="post-comment-list-item-date" datetime="2016">1 day ago</time>
           <p class="post-comment-list-item-text">코멘트는 노출 순서와 정렬 기능 여부 갯수, 답글 스타일, 최초 노출형태, 신고/수정/삭제/아바타는 우선순위를 낮게 설정하고, 리뷰와 코멘트는 비슷한 구조이지만 별도의 컴포넌트로 관리되어야 한다. 또 있을까?</p>
           
-          <button class="button-elevated" style="margin:.75rem 0 0 0;">
+          <button class="button-elevated">
             <figure class="button-elevated-avatar">🦄</figure>
             <span class="button-elevated-label">샘플 유아이</span>
             <i class="button-elevated-helper icon-arrow"></i>

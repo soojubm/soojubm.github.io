@@ -1,0 +1,44 @@
+@mixin dim {
+  // memo overay / dim optional
+  overflow:auto;
+  background:rgba(0,0,0,.6);
+  position:fixed;left:0;top:0;right:0;bottom:0;
+  z-index:var(--zindex-modal);
+}
+
+@mixin sheet {
+  @include tile-elevated;
+  padding: 1rem;
+  // todo include position-sheet
+  position: fixed;
+  left: var(--space);
+  right: var(--space);
+  bottom: var(--space);
+  z-index: var(--zindex-bottombar); // todo 
+}
+
+@mixin modal-dialog {
+  max-width:1000px;
+  margin:5% auto;
+  padding:4rem var(--grid-margin);
+  background:var(--color-background);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  animation:modal .2s forwards;
+  position:relative;
+}
+
+@mixin toast {
+  position: fixed;
+  left: var(--space);
+  bottom: var(--space);
+}
+
+.presentation {@include dim;}
+.presentation [data-presentation=sheet] {@include sheet;}
+.presentation [data-presentation=modal] {@include modal-dialog;}
+.presentation [data-presentation=toast] {@include toast;}
+
+
+.is-opened-sheet .presentation {display:block;}
+.is-opened-modal .presentation {}

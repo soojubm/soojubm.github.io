@@ -54,7 +54,7 @@
 .item[data-size=huge] .item-avatar {width:var(--size-huge);height:var(--size-huge);margin-right:var(--space-after-avatar-huge);}
 .item[data-size=huge] .item-name {@include text-subhead;}
 .item[data-size=large] .item-avatar {width:var(--size-large);height:var(--size-large);margin-right:var(--space-after-avatar-large);}
-.item[data-size=large] .item-name {font-weight:var(--font-weight-bold);font-size:var(--font-size-body);}
+.item[data-size=large] .item-name {font-weight:var(--font-weight-normal);font-size:var(--font-size-body);}
 .item[data-size=medium] .item-avatar {width:var(--size-medium);height:var(--size-medium);margin-right:var(--space-after-avatar-medium);}
 .item[data-size=medium] .item-name {width:calc(100% - var(--size-medium) - 1rem);height:var(--size-medium);line-height:var(--size-medium);}
 .item[data-size=small] .item-avatar {width:var(--size-small);height:var(--size-small);margin-right:var(--space-after-avatar-small);}

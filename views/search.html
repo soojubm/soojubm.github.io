@@ -9,6 +9,22 @@
       <button>todo 취소 (iOS pattern)</button>
     </fieldset>
 
+    <div style="display:flex;">
+      <a href="" class="search-similar-item">
+        <figure>🦔</figure>
+        <span>간격/텍스트기준선</span>
+      </a>
+      <a href="" class="search-similar-item">
+        <span style="padding:0 .5rem;">chip과구분</span>
+      </a>
+      <a href="" class="search-similar-item">
+        <figure>🐈‍⬛</figure>
+        <span>chip과구분</span>
+      </a>
+    </div>
+
+    <br />
+
     <nav class="search-tablist" role="tablist" aria-label="sample tabs">
       <button class="profile-tablist-tab" type="button" role="tab" aria-selected="true" aria-controls="panel-1" id="tab-1" tabindex="0">
         <span class="profile-tablist-tab-label">인기</span>
@@ -23,6 +39,14 @@
       <i class="profile-tablist-indicator"></i>
     </nav>
 
+    <section class="search-recommend">
+      <h2 class="search-recommend-title">추천 검색어</h2>
+      <div class="search-recommend-group" role="group">
+        <a class="search-recommend-group-item" href="#"><span class="chip-label">개구리</span></a>
+        <a class="search-recommend-group-item" href="#"><span class="chip-label">달팽이</span></a>
+        <a class="search-recommend-group-item" href="#"><span class="chip-label">매미</span></a>
+      </div>
+    </section>
     <!-- todo chip label  -->
     <!-- <div class="search-filter profile-display" style="margin:.75rem 0 var(--space) 0;">
       <p class="profile-display-status" role="status" hidden>Viewing 1,000 Projects</p>
@@ -35,58 +59,8 @@
     </div> -->
   </form>
 
-  <section class="profile-tabpanel" role="tabpanel" aria-hidden="false" data-index="1" style="margin-top:var(--space);">
-    <a class="profile-tabpanel-item card js-modal" href="#woolf" data-modal="woolf">
-      <figure class="card-thumbnail"></figure>
-      <h3 class="card-title">이도타입</h3>
-      <div class="card-byline">
-        <figure class="card-byline-avatar"><img src="/public/images/soo.png" alt="" /></figure>
-        <span class="card-byline-name">수줍이</span>
-      </div>
-      <div class="card-tags" role="group">
-        <span class="card-tags-item">파트타임</span>
-        <span class="card-tags-item">UX</span>
-        <span class="card-tags-item">프론트엔드개발</span>
-      </div>
-      <button class="card-more" hidden><i class="icon-more"></i></button>
-    </a>
-    <a class="profile-tabpanel-item card js-modal" href="#woolf" data-modal="woolf">
-      <figure class="card-thumbnail"></figure>
-      <h3 class="card-title">이도타입</h3>
-      <!-- <div class="card-category">최근</div> -->
-      <div class="card-byline">
-        <figure class="card-byline-avatar"><img src="/public/images/soo.png" alt="" /></figure>
-        <span class="card-byline-name">수줍이</span>
-      </div>
-      <div class="card-tags" role="group">
-        <span class="card-tags-item">파트타임</span>
-        <span class="card-tags-item">UX</span>
-        <span class="card-tags-item">프론트엔드개발</span>
-      </div>
-      <button class="card-more" hidden><i class="icon-more"></i></button>
-    </a>
-  </section>
-
-  <br /><br /><br />
-  <br /><br /><br />
-
   <div class="result tile-flat" style="padding-top:2rem;padding-bottom:2.5rem;">
     <p role="status" style="text-align:center;">수줍이와(과)<br />일치하는 검색결과가 없습니다.</p>
-    <br />
-    <div style="display:flex;justify-content:center;">
-      <a href="" class="search-similar-item">
-        <figure>🦔</figure>
-        <span>dyed madras</span>
-      </a>
-      <a href="" class="search-similar-item">
-        <figure>🐈‍⬛</figure>
-        <span>간격/텍스트기준선</span>
-      </a>
-      <a href="" class="search-similar-item">
-        <figure>🐈‍⬛</figure>
-        <span>chip과구분</span>
-      </a>
-    </div>
   </div>
 
   <div class="tile-elevated">
@@ -100,7 +74,7 @@
       </div>
     </section> -->
     <section class="search-preview">
-      <!-- <h2 class="search-recommend-title">자동완성 유아이 테스트</h2> -->
+      <!-- <h2 class="search-recommend-title"></h2> -->
       <div class="search-preview-item item" style="margin-top:0;">
         <figure class="search-preview-item-avatar">
           <i></i>
@@ -109,26 +83,15 @@
         <button class="item-delete"><i class="icon-x"></i></button>
       </div>
       <div class="search-preview-item item">
-        <figure class="search-preview-item-avatar">
-          <i></i>
-        </figure>
+        <figure class="search-preview-item-avatar"></figure>
         <p>자동완성유아이</p>
         <button class="item-delete" style="border:none;background:none;color:var(--color-text-light);">삭제</button>
       </div>
-      <div class="search-preview-item item button-elevated" style="margin-left: -.5rem;margin-right: -.5rem;">
+      <div class="search-preview-item button-elevated">
         <figure class="search-preview-item-avatar">
           <i class="icon-search"></i>
         </figure>
         <p style="color:var(--color-primary);"><span>자동완성</span>에 대한 동영상 검색</p>
-      </div>
-    </section>
-    <hr />
-    <section class="search-recommend">
-      <h2 class="search-recommend-title">추천 검색어</h2>
-      <div class="search-recommend-group" role="group">
-        <a class="search-recommend-group-item" href="#"><span class="chip-label">개구리</span></a>
-        <a class="search-recommend-group-item" href="#"><span class="chip-label">달팽이</span></a>
-        <a class="search-recommend-group-item" href="#"><span class="chip-label">매미</span></a>
       </div>
     </section>
   </div>
@@ -149,17 +112,6 @@
         <button class="chip" style="width:25%;"><span class="chip-label">저장</span></button>
         <button style="width:25%;">지우기</button>
       </footer>
-    </fieldset>
-    <fieldset role="radiogroup" style="width:50%;max-width:300px;margin:0 1rem;">
-      <legend class="" style="color:var(--color-text-light);font-weight:var(--font-weight-normal);">인원</legend>
-      <div class="radio">
-        <input type="radio" id="gogo1" name="gogo" value="" />
-        <label for="gogo1" title="">1~3명</label>
-      </div>
-      <div class="radio">
-        <input type="radio" id="gogo2" name="gogo" value="" checked />
-        <label for="gogo2" title="">3명 이상</label>
-      </div>
     </fieldset>
     <fieldset role="radiogroup" style="width:50%;max-width:300px;">
       <legend class="" style="color:var(--color-text-light);font-weight:var(--font-weight-normal);">사용자</legend>
@@ -183,14 +135,17 @@
   <br />
 
   <ul class="article-checklist">
-    <li><i class="icon-check"></i>해시태그/카테고리 등 제공된 키워드 통한 검색.</li>
-    <li><i class="icon-check"></i>직접 검색어 입력.</li>
-    <li><i class="icon-check"></i>검색어 자동완성.</li>
-    <li><i class="icon-check"></i>검색어를 입력할 때마다 검색할 수 있고, 검색 버ㅡㄴ이나 enter할 때 검색할 수 있다.</li>
-    <li><i class="icon-check"></i>검색 결과가 없는 상태를 보여줄 수 있고 유사한 결과를 하나 이상 항상 보여줄 수도 있다.</li>
-    <li><i class="icon-check"></i>검색어를 입력하는 순간 검색을 실행하는 경우에는 하나 이상의 검색 결과를 항상 보여주는 것이 자연스럽다.</li>
-    <li><i class="icon-check"></i>개별 검색 내역은 삭제할 수 있다.</li>
-    <li><i class="icon-check"></i>전체 검색 내역의 삭제는 사용자에게 유용할 수도 있지만 리스크도 있기 때문에 제공하지 않아도 좋다.</li>
+    <li><i class="icon-check"></i>해시태그/카테고리 등 제공된 키워드 통한 검색. (액션)</li>
+    <li><i class="icon-check"></i>직접 검색어 입력 - 검색어 자동완성</li>
+    <li>
+      <i class="icon-check"></i>검색 실행. 키보드를 입력할 때 마다(하나 이상의 검색 결과를 항상 보여주는 것이 자연스럽다.) / 버튼 클릭이나 enter
+    </li>
+    <li>
+      <i class="icon-check"></i>검색 결과. 없을 때. 상태를 보여줄 수 있고 유사한 결과를 하나 이상 항상 보여줄 수도 있다. (ott나 컨텐츠 플랫폼에서
+      유용)
+    </li>
+    <li><i class="icon-check"></i>개별 검색 내역의 삭제.</li>
+    <li><i class="icon-check"></i>전체 검색 내역의 삭제. 사용자에게 유용할 수도 있지만 리스크도 있기 때문에 제공하지 않아도 좋다.</li>
   </ul>
 
   <style>
