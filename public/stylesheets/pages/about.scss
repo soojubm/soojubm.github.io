@@ -31,7 +31,7 @@
 .about-book-inner {padding: 0 5%;white-space: nowrap;font-size: 0;}
 
   .bookitem {@include tile-elevated;}
-  .bookitem-cover {height:14rem;background: var(--gray100);border-radius:var(--radius);position:relative;}
+  .bookitem-cover {height:14rem;background:var(--gray100);border-radius:var(--radius);position:relative;}
   .bookitem-cover img{
     width: auto;
     height: auto;
@@ -44,8 +44,8 @@
     right: 0;
     bottom: -.5rem;
     transition: all .4s;}
-  .bookitem-name {height:4.5rem;margin:1rem 0 0;font-size:var(--font-size-body);white-space:normal;}
-  .bookitem-description {display:block;margin:.75rem 0 0 0;font-weight:400;color:var(--color-text-light);}
+  .bookitem-name {margin:1rem 0 0;font-size:var(--font-size-body);white-space:normal;}
+  .bookitem-description {display:block;color:var(--color-text-light);}
   .bookitem-byline {}
   .bookitem-publishedyear {color:var(--color-text-light);}
 

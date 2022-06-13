@@ -7,9 +7,8 @@
 
 .article {max-width:640px;padding:6rem var(--grid-margin);overflow:hidden;position:relative;}
 .article-aka {@include tag-group;align-items:center;margin:var(--space) 0;font-size:var(--font-size-tiny);}
-.article-aka .tag {margin:0 .5rem .5rem 0;}
-.article-aka .hashtag {margin:0 .5rem .5rem 0;}
 .article-aka .hashtag:before {content:'';}
+.article-aka .tag {margin-right:.75rem;}
 .article-title {margin:0 0 var(--space-after-subhead) 0;@include text-subhead;font-family:'Changa One';font-weight:var(--font-weight-normal);font-size:1.5rem;letter-spacing:0;}
 .article-description {margin:0 0 2rem;font-size:16px;}
 // border-top:var(--border);border-bottom:var(--border);
