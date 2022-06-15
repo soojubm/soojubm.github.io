@@ -6,8 +6,8 @@
   content:'';display:block;position:absolute;left:0;right:50%;top:-8px;bottom:0;
 }
 
-.tooltip.is-icon {}
-.is-icon .tooltip-content {font-size:var(--font-size-caption);}
+.tooltip.is-icon {display:inline-block;}
+.is-icon .tooltip-content {white-space: pre;font-size:var(--font-size-caption);left:50%;transform:translateX(-50%);}
 /* .tooltip-content:before {content:'';display:block;
   vertical-align: middle;
   width: 0;
@@ -18,4 +18,4 @@
   box-shadow: 0 0 0 rgba(0,0,0,.25rem);
   position:absolute;left:.5rem;top:-.5rem;z-index:var(--zindex-default);}
 .tooltip-content:after {content:'';display:block;width:2rem;height:1.25rem;background:inherit;position:absolute;left:2px;top:0px;z-index:var(--zindex-default);} */
-.tooltip-trigger:hover + .tooltip-content {display:block;}
+.tooltip:hover .tooltip-content {display:block;}

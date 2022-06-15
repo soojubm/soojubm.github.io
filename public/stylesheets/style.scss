@@ -480,11 +480,6 @@ q:before {
 
 
 
-// todo?
-.menu-item {display:flex;align-items:center;justify-content:space-between;width:100%;@include text-subhead;position:relative;z-index:1;}
-.menu-item + .menu-item {margin:var(--space) 0 0;}
-.menu-item:hover {@include hover-item;}
-
 
 // todo not
 main, .footer {transition:all .6s ease;}
