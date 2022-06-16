@@ -62,6 +62,31 @@
     </article>
   </aside>
 
+  <!-- <div class="marquee">
+    <div class="marquee--inner">
+      <span>
+        <div class="orb"></div>
+        <div class="orb red"></div>
+        <div class="orb yellow"></div>
+        <div class="orb blue"></div>
+        <div class="orb orange"></div>
+        <div class="orb purple"></div>
+        <div class="orb green"></div>
+        <div class="orb"></div>
+      </span>
+      <span>
+        <div class="orb"></div>
+        <div class="orb red"></div>
+        <div class="orb yellow"></div>
+        <div class="orb blue"></div>
+        <div class="orb orange"></div>
+        <div class="orb purple"></div>
+        <div class="orb green"></div>
+        <div class="orb"></div>
+      </span>
+    </div>
+  </div> -->
+
   <section class="product-features" style="margin-top:6rem;margin-bottom:5rem;">
     <header class="product-features-head">
       <h1
@@ -119,6 +144,49 @@
     <a class="landing-3-button" href="">Create a plugin</a>
     <figure class="landing-3-figure"></figure>
   </section>
+
+  <style>
+    .aa {
+      background-color: var(--color-background);
+      overflow: hidden;
+      position: relative;
+    }
+    .aa a {
+      display: flex;
+      align-items: center;
+    }
+    .aa p {
+      white-space: nowrap;
+      animation-name: marquee;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      animation-duration: 4s;
+      will-change: auto;
+      color: var(--color-text-light);
+      font-family: 'Changa One';
+      font-size: 5rem;
+    }
+    .aa p:after {
+      content: '';
+      white-space: nowrap;
+      padding-right: 50px;
+    }
+  </style>
+
+  <div class="aa">
+    <a href="#" target="_blank">
+      <p>I don't wanna grow up</p>
+      <p>I don't wanna grow up</p>
+      <p>I don't wanna grow up</p>
+      <p>I don't wanna grow up</p>
+      <p>I don't wanna grow up</p>
+      <p>I don't wanna grow up</p>
+      <p>I don't wanna grow up</p>
+      <p>I don't wanna grow up</p>
+      <p>I don't wanna grow up</p>
+    </a>
+    <!-- <div><img src="" alt=""></div> -->
+  </div>
   <footer class="landing-footer">
     <div class="banner-background"></div>
     <span class="banner-eyebrow">Eyebrow</span>
