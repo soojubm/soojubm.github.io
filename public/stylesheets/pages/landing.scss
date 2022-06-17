@@ -1,0 +1,55 @@
+
+// todo variables
+.landing {
+  --section-inset: var(--grid-margin);
+  --left: 52.5%;
+}
+
+@mixin landing-section-title {
+	font-size: var(--font-size-subhead);
+	font-family:'Changa One';font-weight:var(--font-weight-normal);
+}
+
+.landing-hero {max-width:1080px;margin:0 auto;background:antiquewhite;padding-top:5em;padding-bottom:8rem;text-align:left;}
+.landing-hero-object1 {width:340px;height:440px;background:url('https://source.unsplash.com/random') center;background-size:cover;border-radius:var(--radius);position:absolute;right:5vw;top:3rem;animation:bounceY 4s ease infinite alternate;			}
+.landing-hero-object2 {max-width:320px;padding:1rem;z-index:1;position:absolute;right:260px;top:6rem;pointer-events:none;animation:bounceY 6s ease infinite alternate;}
+.landing-hero-cta {margin-right:.5rem;background:var(--color-primary);color:#fff;}
+
+
+.landing .product-features {margin-top:8rem;margin-bottom:6rem;}
+
+.landing-2 {@include container-large;padding: var(--section-inset) var(--grid-margin);}
+.landing-2-background {@include bleeding;background:var(--color-background-weak);}
+.landing-2-title {@include landing-section-title;margin:0 0 0 var(--left);}
+.landing-2-description {margin:var(--space) 0;margin-left:var(--left);}
+.landing-2-button {@include link-outer;display:block;margin-left:var(--left);margin-top:var(--space-after-description);}
+.landing-2-figure {float:left;width:100%;max-width:47.5%;height:200px;border-radius:var(--radius);background:crimson;}
+
+.landing-3 {@include container-large;padding: var(--section-inset) var(--grid-margin);}
+.landing-3-background {}
+.landing-3-title {@include landing-section-title}
+.landing-3-description {margin:var(--space) 0;}
+.landing-3-button {@include link-outer;display:block;margin-top:var(--space-after-description);}
+.landing-3-figure {}
+
+.landing .product-features {padding-left:var(--grid-margin);padding-right:var(--grid-margin);}
+.landing .product-features-item-title {font-size:var(--font-size-body);}
+// .landing .product-features-item-avatar:before {width:100%;}
+
+.landing-footer {padding:var(--section-inset);background:#000;}
+
+
+@media (--breakpoint-small) {
+  .landing {
+    // --section-inset: 4rem;
+    --left: 0;
+  }
+
+	.landing-hero {max-width:1080px;margin:0 auto;background:antiquewhite;padding-top:5em;padding-bottom:8rem;text-align:left;}
+	.landing-hero-object1 {width:300px;height:400px;top:75%;}
+	.landing-hero-object2 {right:260px;top:80%;}
+
+	.landing .product-features {margin-top:22rem;}
+  .landing-2-figure {float:none;max-width:100%;margin:0 0 2rem 0;}
+}
+
