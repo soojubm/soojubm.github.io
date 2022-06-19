@@ -75,16 +75,15 @@
 
     <link rel="apple-touch-icon" href="/images/touchicon-180.png" />
 
+    <meta name="application-name" content="몰바요" />
+
     <meta name="msapplication-TileColor" content="#FFFFFF" />
     <meta name="msapplication-TileImage" content="/path/to/favicon-144.png" />
-    <!-- <meta name="application-name" content="Name" />
-    <meta name="msapplication-tooltip" content="Tooltip" />
+    <meta name="msapplication-tooltip" content="몰바" />
+    <!-- 
     <meta name="msapplication-config" content="/path/to/ieconfig.xml" /> -->
 
-    <!-- <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" /> -->
-
     <link rel="stylesheet" href="./build/style.css" />
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lucaburgio/iconoir@master/css/iconoir.css" />
 
     <script src="./public/javascripts/polyfill.js"></script>
@@ -150,7 +149,6 @@
             </a>
           </menu>
         </div>
-        <!-- <a route="/design" class="navbar-menu-item" href="#design">디자인시스템</a> -->
         <div class="navbar-menu-item has-submenu" style="margin:var(--space-small) 0 0 0;">
           <span class="menu-label" role="menuitem">샘플페이지<i class="icon-caret"></i></span>
           <menu>
@@ -169,7 +167,6 @@
             <a route="/design" href="#landing"
               >Landing <span class="tag" style="margin-left:var(--space-small);vertical-align:middle;">in progress</span></a
             >
-            <!-- <a route="/design" href="#article">Article</a> -->
             <a route="/design" href="#notifications">Notifications</a>
             <a route="/design" href="#search">Search</a>
             <a route="/design" href="#feed">Feed</a>
@@ -180,7 +177,7 @@
 
         <br />
         <!-- todo className -->
-        <!-- <div class="navbar-menu-item profile-user-socials social">
+        <div class="profile-user-socials social">
           <h2 class="profile-user-socials-title social-title" hidden>소셜 미디어</h2>
           <a class="profile-user-socials-link social-link" href="https://github.com/soojubm" target="_blank" rel="noopener noreferrer">
             <figure class="social-link-icon"></figure>
@@ -199,7 +196,7 @@
             <figure class="social-link-icon"></figure>
             <span class="social-link-label">instagram</span>
           </a>
-        </div> -->
+        </div>
       </div>
       <a class="navbar-logo" href="/">🐹</a>
       <!-- <a class="navbar-search-trigger js-navbar-toggle" href="#">

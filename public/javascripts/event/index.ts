@@ -1,4 +1,4 @@
-import toggleClass from './toggleClass'
+import toggleElement from './toggleElement'
 import enterTarget from './enterTarget'
 import tab from './tab'
 import modal from './modal'
@@ -11,7 +11,7 @@ import scrollspy from './scrollspy'
 import parallax from './parallax'
 
 export default {
-  toggleClass,
+  toggleElement,
   enterTarget,
   modal,
   tab,
@@ -21,5 +21,5 @@ export default {
   scrollspy,
   closeParentElement,
   customCursor,
-  parallax
+  parallax,
 }

@@ -106,24 +106,8 @@ async function domEvents() {
   // const pageTitleElement = document.querySelector('.js-page-title')
   // pageTitleElement?.textContent = page?.name || '페이지타이틀'
 
-  const chip = document.querySelector('.js-chip')
-  const chips = chip?.querySelectorAll('button')
-
-  function active(eTemp) {
-    chips?.forEach(element => element.classList.remove('is-active'))
-    eTemp.classList.add('is-active') // this
-  }
-  // todo selector
-  if (chip && chips) {
-    chips.forEach(element => {
-      element.addEventListener('click', () => active(element))
-    })
-  }
-
   // // ! 디자인시스템에 추가한 거 임시
-  document.querySelector('.js-default-font')?.addEventListener('click', () => {
-    document.body.classList.toggle('font-default')
-  })
+  document.querySelector('.js-default-font')?.addEventListener('click', () => document.body.classList.toggle('font-default'))
 
   // function format(command, value) {
   //   document.execCommand(command, false, value);
@@ -134,7 +118,7 @@ async function domEvents() {
   // input.textarea()
   input.quantity()
 
-  event.toggleClass({ selector: '.js-toggle' })
+  event.toggleElement({ selector: '.js-toggle' })
 
   event.tab()
   event.modal({ selector: '.js-modal' })
@@ -156,7 +140,7 @@ async function domEvents() {
   // function test() {
   //   if (!heroElement) return
 
-  //   var st = window.pageYOffset || document.documentElement.scrollTop // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
+  //   var st = window.pageYOffset || document.documentElement.scrollTop
   //   if (st > lastScrollTop && window.scrollY > 100) {
   //     heroElement?.classList.add('is-fixed')
   //     document.body.style.paddingTop = '140px'
@@ -171,7 +155,6 @@ async function domEvents() {
   carousel()
   focusComment()
   // countDownClock(20, 'days')
-  // document.querySelector('.js-copy')?.addEventListener('click', () => copyClipboard('fafaf'))
 
   document.addEventListener('click', event => {
     const target = event.target as any
@@ -208,7 +191,6 @@ function focusComment() {
 // }
 // const value = company?.name ?? 'default name'
 // const companyName = company?.['name'] ?? 'default value'
-// company.getUserNames?.()
 
 // ! click 이벤트 외부에 넣으니까 파폭에서만 오류. event undefined
 // TODO: 도큐먼트가 아니라 event.target.parent 가 아닌 것을 클릭했을 때 다당야 하나
@@ -226,30 +208,12 @@ function focusComment() {
 // 	return null;
 // };
 
-// document.addEventListener('click', event => {
-// 	const filteredCountry = films.filter(item => item.country === '미국');
-// 	console.log(filteredCountry);
-// 	if(event.target.name === 'usa') {
-// 		boardElement.innerHTML = '';
-// 		filteredCountry.map(item => {
-// 			boardElement.innerHTML += `
-// 				<div class="board-body">
-// 					<div class="board-head-title">${item.id}</div>
-// 					<div class="board-head-title">${item.releaseDate}</div>
-// 					<div class="board-head-title">${item.titleKorean}<div>${item.titleEnglish}</div></div>
-// 					<div class="board-head-title">${item.director}</div>
-// 					<div class="board-head-title">${item.country}</div>
-// 				</div>`;
-// 		});
-// 	}
-// });
-
 // document.addEventListener('input', event => {
-// 	// const helpers = document.querySelectorAll('.textfield-helper');
-// 	// helpers.forEach(helper => helper.style.display = 'none');
-// 	// let loginData = {email: '', password: ''};
+// const helpers = document.querySelectorAll('.textfield-helper');
+// helpers.forEach(helper => helper.style.display = 'none');
+// let loginData = {email: '', password: ''};
 
-// 	// const isEmail = event.target === email;
+//  const isEmail = event.target === email;
 // 	const isPassword = event.target === password;
 
 // 	const handleValidate = ({ target: any, validate: void, message: any }) => {
@@ -276,8 +240,6 @@ function focusComment() {
 // 	}
 
 // });
-
-// document.addEventListener('blur', event => {}, true); // blur is not bubble
 
 // event.target.reset();
 
@@ -397,24 +359,20 @@ function toggleDetails(event) {
   targetElement.setAttribute('aria-expanded', String(!isExpanded))
   targetElement.classList.toggle('is-active')
 
-  // 패널을 포함한 전체 영역을 토글할 수 있음.
-  // 따라서 accordion-item 전체를 toggle class만 해줏면 됨.
   // 1. 클릭한 패널을 토글한다.
-  // 도큐먼트를 클릭하면 닫을 것인지.
-  // 다른 accordion-item을 클릭했을 때 닫을 것인지?
+  // 2. 다른 accordion-item을 클릭했을 때 닫을 것인지?
+  // 3. 도큐먼트를 클릭하면 닫을 것인지?
+  // 4. panel을 클릭하면 닫을 것인지?
 }
 
 function revealPassword(event) {
-  const SELECTOR = '.js-view-password'
-  if (!event.target.closest(SELECTOR)) return
+  const targetElement = event.target.closest('.js-view-password') as any
+  if (!targetElement) return
 
-  const targetElement = event.target.closest(SELECTOR) as any
   const inputElement = targetElement.parentNode.querySelector('input')
-
   const isPasswordType = inputElement.getAttribute('type') === 'password'
-  const inputType = isPasswordType ? 'text' : 'password'
 
-  inputElement.setAttribute('type', inputType)
+  inputElement.setAttribute('type', isPasswordType ? 'text' : 'password')
 }
 
 function lazyLoading() {
@@ -567,4 +525,39 @@ interface IUser {
   age: number
   isAdult?: boolean
   readonly test: string
+}
+
+class GreetingMessage extends HTMLElement {
+  /**
+   * The class constructor object
+   */
+  constructor() {
+    // Always call super first in constructor
+    super()
+
+    // Render HTML
+    this.innerHTML = `<p>
+				<button>Hi there!</button>
+			</p>
+			<div class="message" aria-live="polite"></div>`
+  }
+
+  /**
+   * Runs each time the element is appended to or moved in the DOM
+   */
+  connectedCallback() {
+    console.log('connected!', this)
+  }
+
+  /**
+   * Runs when the element is removed from the DOM
+   */
+  disconnectedCallback() {
+    console.log('disconnected', this)
+  }
+}
+
+// Define the new web component
+if ('customElements' in window) {
+  customElements.define('greeting-message', GreetingMessage)
 }

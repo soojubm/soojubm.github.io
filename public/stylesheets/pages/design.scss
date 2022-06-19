@@ -9,7 +9,7 @@
 .article-aka {@include tag-group;align-items:center;margin:var(--space) 0;font-size:var(--font-size-tiny);}
 .article-aka .hashtag:before {content:'';}
 .article-aka .tag {margin-right:.75rem;}
-.article-title {margin:0 0 var(--space-after-subhead) 0;@include text-subhead;font-family:'Changa One';font-weight:var(--font-weight-normal);font-size:1.5rem;letter-spacing:0;}
+.article-title {margin:0 0 var(--space-after-subhead) 0;@include text-subhead;}
 .article-description {margin:0 0 2rem;font-size:16px;}
 // border-top:var(--border);border-bottom:var(--border);
 .article-section {margin:2.5rem 0;}
@@ -48,7 +48,7 @@
 // todo ul
 .article-checklist {@include reset-list;list-style:none;}
 .article-checklist li {padding-left:1rem;}
-.article-checklist li:before {content:'';left:0;top:8px;width:1rem;height:1rem;background:url('/public/icons/Black_check.svg') no-repeat 0 0;background-size:9px;opacity:.5;}
+.article-checklist li:before {content:'';left:0;top:7px;width:1rem;height:1rem;background:url('/public/icons/Black_check.svg') no-repeat 0 0;background-size:9px;opacity:.5;}
 .article-checklist li + li {margin-top: .25rem;}
 .article-checklist li .icon-check {display:none;}
 // .article-checklist li .icon-check {margin:0 var(--space-small) 0 0;position:absolute;left:1px;top:12px;}
@@ -350,7 +350,7 @@
 
 
 .design-head {padding:2rem var(--grid-margin) 3rem;background:var(--color-background);position:relative;}
-.design header h1 {@include text-title;font-family:'Changa One';font-size:var(--font-size-huge);font-weight:normal;position:relative;} // todo
+.design header h1 {@include text-title;font-size:var(--font-size-huge);position:relative;} // todo
 .design header p {margin:1.5rem 0;font-size:var(--font-size-subhead);letter-spacing:-.0125rem;position:relative;}
 
 .design-navigation {position:relative;z-index:var(--zindex-default);}
@@ -783,7 +783,7 @@ $linecolor: var(--gray800);
 .principle-item {@include tile-flat;width:calc(50% - 2rem);margin:var(--space);}
 .principle-item-avatar {display:block;font-size:var(--font-size-huge);position:relative;}
 .principle-item-avatar:before {content:'';display:block;@include avatar-medium;position:absolute;left:0;top:0rem;z-index:-1;}
-.principle-item-title {font-family:'Changa One';font-weight:var(--font-weight-normal);font-size:var(--font-size-subhead);}
+.principle-item-title {font-size:var(--font-size-subhead);}
 .principle-item-kicker {margin:.5rem 0;font-size:var(--font-size-subhead);line-height:var(--font-line-height-small);}
 .principle-item-description {margin:var(--space-after-subhead) 0;}
 
