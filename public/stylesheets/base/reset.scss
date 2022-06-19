@@ -37,7 +37,7 @@ blockquote {margin:2rem 0;padding:0 0 0 var(--space);border-left:4px solid var(-
 
 table {
   width:100%;border-collapse:collapse;border-spacing:0;border-left-style:hidden;border-right-style:hidden;
-  --table-padding: 5px 0;
+  --table-padding: .5rem 0;
   --table-lineheight: 1.6;
 }
 table caption {padding:.5rem 0;font-size:var(--font-size-caption);text-align:left;}

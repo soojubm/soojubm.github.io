@@ -46,23 +46,20 @@
     <p>역할로 나눌 때의 문제 :: chip의 다양한 역할. 하지만 우연히 지금의 chip 형태가 같은 뿐인 것이지 디지털 환경에서 하는 역할은 고정되어 있는.</p>
     <p>anatomy vs props 설명하려고 하는 정보 유사함. 잘 구분해보기. anatomy에서 접근성 속성과 html 구조를 다룬다.</p>
 
-    <!-- <ul>
-      <li>역할 중심</li>
-      <li>변경하기 쉬운 (이것도 ㅓㅁ포넌트)</li>
-      <li><i class="icon-check"></i>형태로보기 - 버튼/칩...</li>
-      <li><i class="icon-check"></i>역할로보기 - 컨테이너/시각정보/인터렉션(필터/정렬...)...</li>
-      <li>모든 시각정보는 non-clickable. 모든 인터렉션은 clickable.</li>
-    </ul> -->
+      <!-- <li>변경하기 쉬운 (이것도 ㅓㅁ포넌트)</li>
+      <li>형태로보기 - 버튼/칩...</li>
+      <li>역할로보기 - 컨테이너/시각정보/인터렉션(필터/정렬...)...</li>
+      <li>모든 시각정보는 non-clickable. 모든 인터렉션은 clickable.</li> -->
 
 
-    <!-- <h4 class="article-subhead">Don'ts</h4>
+    <h4 class="article-subhead">가이드 작성을 위한 가이드..</h4>
     <ul>
-      <li><i class="icon-check"></i>목록을 열거. 가짓수 보충.</li>
-      <li title="경우에따라.상황에따라.목적에맞게"><i class="icon-check"></i>특정할 수 없거나 모호한 용어.</li>
-      <li><i class="icon-check"></i>기본적인 내용을 서술하지 않습니다. 이 문서를 읽는 사람은 체크박스와 라디오의 차이를 이해하고 있습니다.</li>
-      <li><i class="icon-check"></i>일어날 법 하지 않는 don't 케이스를 정의하지 않습니다.</li>
-      <li><i class="icon-check"></i>자세히보기/더보기 => 더 알아보기</li>
-    </ul> -->
+      <li>목록을 열거하거나 가짓수 보충하는 등의 단순한 정보를 포함하지 마세요.</li>
+      <li>경우에따라.상황에따라.목적에맞게 와 같은 특정이 안 되는 용어로 용도를 정의하지 마세요.</li>
+      <li>기본적인 내용을 서술하지 않습니다. 이 문서를 읽는 사람은 체크박스와 라디오의 차이를 이해하고 있습니다.</li>
+      <li>일어날 법 하지 않는 don't 케이스를 정의하지 않습니다.</li>
+      <li>자세히보기/더보기 => 더 알아보기</li>
+    </ul>
 
       <!-- / success / warning / danger ? -->
       <!-- <h4 class="article-subhead">selection</h4>
@@ -178,6 +175,10 @@
         <!-- <caption>Table Caption</caption> -->
         <tbody role="rowgroup">
           <tr role="row">
+            <th scope="row" style="font-weight:var(--font-weight-bold);color:var(--color-text);">name</th>
+            <th style="font-weight:var(--font-weight-bold);color:var(--color-text);">type</th>
+          </tr>
+          <tr role="row">
             <th scope="row">name</th>
             <td>string</td>
           </tr>
@@ -209,7 +210,7 @@
         <dd>인물 목록?</dd>
       </dl>
       <!-- <h4 class="article-subhead">Avatar Stack</h4> -->
-      <article class="avatarlist" style="margin-bottom:1.5rem;">
+      <article class="avatarlist" style="max-width:400px;margin-bottom:1.5rem;">
         <span>Followed by</span>
         <figure>
           <img src="https://source.unsplash.com/random" alt="">
@@ -815,6 +816,20 @@
       <h1 class="article-title">Tags <span hidden>(or badge/label)</span></h1>
       <p class="article-description">인접 요소나 부모 요소를 부연하는 시각 정보입니다. 상태, 카테고리, 키워드(또는 키워드 목록)로 강조된 시각 정보는 사용자가 복잡한 정보 더미에서 중요한 정보를 우선적으로 파악하도록 돕습니다.</p>
 
+      <div class="">
+        <div class="tag-group">
+          <span class="tag" data-appearance="primary" style="margin:0 .5rem 0 0;">Primary</span>
+          <!-- <span class="tag" role="listitem" data-appearance="secondary" style="border-color:var(--green100);background:var(--green100);color:var(--green800);">Secondary</span> -->
+          <span class="tag" role="listitem">Tertiary</span>
+          <span class="tag" role="listitem" style="background:var(--red100);border-color:var(--red100);color:var(--red800);">15</span>
+          <!-- todo -->
+          <span class="tag" data-role="accent" style="width:100%;margin-top:.25rem;">
+            <figure class="tag-icon" role="img">🔥</figure>
+            <small class="tag-label">Most Popular 22.05.02. 최대 1개. w icon</small>
+          </span>
+        </div>
+      </div>
+
       <h4 class="article-subhead">Guidelines</h4>
       <ul>
         <!-- <li>secondary 사용 안 함.</li> -->
@@ -836,21 +851,6 @@
         <span class="article-anatomy-item">tag group</span>
         <span class="article-anatomy-item">tag</span>
         <span class="article-anatomy-item is-nested">label</span>
-      </div>
-
-      <br />
-      <div class="tile-elevated">
-        <div class="tag-group">
-          <span class="tag" data-appearance="primary" style="margin:0 .5rem 0 0;">Primary</span>
-          <!-- <span class="tag" role="listitem" data-appearance="secondary" style="border-color:var(--green100);background:var(--green100);color:var(--green800);">Secondary</span> -->
-          <span class="tag" role="listitem">Tertiary</span>
-          <span class="tag" role="listitem" style="background:var(--red100);border-color:var(--red100);color:var(--red800);">15</span>
-          <!-- todo -->
-          <span class="tag" data-role="accent" style="width:100%;margin-top:.25rem;">
-            <figure class="tag-icon" role="img">🔥</figure>
-            <small class="tag-label">Most Popular 22.05.02. 최대 1개. w icon</small>
-          </span>
-        </div>
       </div>
       
     </article>
@@ -887,12 +887,15 @@
       <br />
       <div class="design-tile-flat" style="padding:1rem;">
         <h5 style="font-size:var(--font-size-subhead);">flat large with subhead</h5>
+        <p style="margin:var(--space-after-description);">변별력이 없기는 하지만 inset을 더 키우면 작은 화면에서 공간 낭비가 발생하여 더 작게 해줘야 한다. 하지만 가운데 정렬하는 경우 inset을 더 크게 설정할 수 있겠다.</p>
+        <p style="margin-top:.75rem;">이 tile은 페이지 레벨의 컴포넌트가 될 수 있다.</p> 
       </div>
       <div class="design-tile-flat">
         <b>flat</b>
       </div>
       <div class="design-outer-elevated">
         <b>elevated</b>
+        <p style="margin-top:.75rem;">TODO flat 형태와 구별이 잘 안 됨.</p>
       </div>
       <div class="design-tile-flat-small">
         <b>flat small</b>
@@ -1023,7 +1026,7 @@
           <input type="radio" id="raidio5" name="gender" value="">
           <label for="raidio5" title="">
             버튼 appearance
-            <b>₩2,000</b>
+            <b>₩ 2,000</b>
           </label>
           <div>
             test
@@ -1033,7 +1036,7 @@
           <input type="radio" id="raidio6" name="gender" value="">
           <label for="raidio6" title="">
             버튼 appearance
-            <b>₩8,000</b>
+            <b>₩ 8,000</b>
           </label>
           <div>
             test
@@ -1093,18 +1096,18 @@
       <h4 class="article-subhead">Guidelines</h4>
       <ul>
         <!-- <p><span><i></i></span> 벨리데이션 실행 조건: <b>제출(구현이 쉬움)</b> / 키보드 입력 쉬움 / 블러(구현이 복잡함. 흐름이 끊어짐)</b></p> -->
-        <li><span><i class="icon-check"></i></span> 레이블을 왼쪽에 배치하지 않습니다.</li>
-        <li><span><i class="icon-check"></i></span> 검색 필드에 뒤로가기 버튼을 포함하지 않습니다.</li>
-        <li><span><i class="icon-check"></i></span> 다중 선택을 위해 셀렉트박스를 사용하지 않습니다.</li>
-        <li><span><i class="icon-check"></i></span> stepper(quantity) / search field / selectbox(combo)</li>
+        <li>레이블을 왼쪽에 배치하지 않습니다.</li>
+        <li>검색 필드에 뒤로가기 버튼을 포함하지 않습니다.</li>
+        <li>다중 선택을 위해 셀렉트박스를 사용하지 않습니다.</li>
+        <li>stepper(quantity) / search field / selectbox(combo)</li>
 
         <!-- <li><span><i class="icon-check"></i></span> 사용자의 정보 입력을 돕기 위해 selectbox로 선택할 수 있는 정보 목록을 제공합니다.</li> -->
       </ul>
 
       <h4 class="article-subhead">Editing Checklist</h4>
       <ul>
-        <li><span><i class="icon-check"></i></span> 모든 textfield는 필수 입력 항목입니다. 선택 입력 항목인 경우에 '선택' 텍스트 가이드를 제공합니다.</li>
-        <li><span><i class="icon-check"></i></span> todo: helper(help message)와 feedback message를 분리하기</li>
+        <li>모든 textfield는 필수 입력 항목입니다. 선택 입력 항목인 경우에 '선택' 텍스트 가이드를 제공합니다.</li>
+        <li>todo: helper(help message)와 feedback message를 분리하기</li>
       </ul>
 
       <h4 class="article-subhead">anatomy</h4>
