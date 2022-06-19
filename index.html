@@ -98,7 +98,9 @@
       }
       gtag('js', new Date())
 
-      gtag('config', 'UA-83531239-1')
+      gtag('config', 'UA-83531239-1', {
+        page_path: location.pathname + location.hash,
+      })
     </script>
   </head>
   <body class="is-opened-menu">
