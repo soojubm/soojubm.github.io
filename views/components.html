@@ -166,6 +166,7 @@
         <!-- <li>이미지, 텍스트, 아이콘, 이모지를 포함합니다.</li> -->
         <li>todo default avatar</li>
         <li>memo chip(아이콘 버튼)과 명확한 분리가 필요함. 아이콘 버튼과 아바타 medium은 우연히 사이즈가 동일한 것임. pagination item은 chip과 같은 높이를 갖지만 chip이 아님. textfield 내부의 clear 버튼은 아이콘 버튼? 그냥 clear button?. textfield-surfix?</li>
+        <li>memo mui에서 아이콘 아바타를 사용함</li>
         <p>todo button/linkButton</p>
         <!-- <li>
           인물, 그룹, 회사, 프로젝트 등의 unique entity로 대부분의 디자인 시스템에서 정의하지만 현재 이 디자인 시스템에서는.
@@ -322,7 +323,7 @@
       </div>
 
       <article class="tile-elevated" style="max-width:400px;padding:1rem;z-index:1;">
-        <figure class="user-avatar"><img src="https://source.unsplash.com/random" alt=""></figure>
+        <figure class="user-avatar"></figure>
         <h2 class="user-name">Gyeongsoo I</h2>
         <div class="user-id">@soojubm</div>
         <div class="user-job">Youtube Subscriber</div>
@@ -370,7 +371,6 @@
       >
         <a class="user" href="#settings">
           <figure class="user-avatar">
-            <img src="https://source.unsplash.com/random" alt="" />
             <div class="user-avatar-change"></div>
           </figure>
           <h2 class="user-name">soojubm</h2>
@@ -798,9 +798,11 @@
       </aside>
 
       <h4 class="article-subhead">references</h4>
-      <div class="">
+      <div class="" style="display:flex;flex-wrap:wrap;">
         <a href="https://material.io/components/menus" target="_blank" style="display:block;">MD menu</a>
+        <span class="icon-bullet"></span>
         <a href="https://developer.apple.com/design/human-interface-guidelines/ios/controls/pull-down-menus/" target="_blank" style="display:block;">HIG pull down menu</a>
+        <span class="icon-bullet"></span>
         <a href="https://developer.android.com/reference/com/google/android/material/chip/ChipGroup" target="_blank">
           MD chip group
         </a>

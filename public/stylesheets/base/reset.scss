@@ -55,6 +55,7 @@ table.is-borderless tbody tr {border:0;}
 
 
 ul {list-style:disc;padding-left:1rem;}
+ul li {margin:.25em 0;} // for font-size.
 // todo ul
 .article-checklist li {padding-left:1rem;}
 .article-checklist li:before {content:'';left:0;top:7px;width:1rem;height:1rem;background:url('/public/icons/Black_check.svg') no-repeat 0 0;background-size:9px;opacity:.5;}
