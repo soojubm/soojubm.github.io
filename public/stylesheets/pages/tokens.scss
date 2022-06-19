@@ -32,7 +32,7 @@
 
 .tokens {}
 // min-height:var(--size-large);todo
-.token-item {@include tile-flat;overflow:hidden;letter-spacing:0px;}
+.token-item {@include tile-flat;overflow:hidden;}
 // todo ! 
 .token-item.is-scrolled {margin-top:.75rem;}
 .token-item-avatar {@include avatar-large;width:100%;margin:0 0 var(--space-small) 0;}

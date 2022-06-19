@@ -93,7 +93,7 @@
 
 .user {display:block;color:var(--color-text);position:relative;@include clearfix;text-align:center;}
 // .user:hover {@include hover-item;}
-.user-avatar {float:right;@include avatar-huge;float:none;margin:0 auto var(--space-small);}
+.user-avatar {@include avatar-huge;float:none;margin:0 auto var(--space-small);}
 .user-avatar-change {width:32px;height:32px;border-radius:var(--radius);position:absolute;right:-8px;bottom:-8px;}
 .user-name {margin:var(--space-leading-subhead) 0 0 0;@include text-subhead;text-align:center;}
 .user-id {margin:-.125rem 0 0 0;text-align:center;}

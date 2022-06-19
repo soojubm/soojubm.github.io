@@ -9,7 +9,12 @@
   box-sizing: border-box;
   background: var(--color-background-weak);
   background-size: cover;
+  // overflow:hidden; // todo badge
   position: relative;
+  img {
+    height: inherit;
+    border-radius: var(--radius);
+  }
 }
 
 @mixin avatar-huge {@include avatar;width:var(--size-huge);height:var(--size-huge);}
@@ -17,6 +22,5 @@
 @mixin avatar-medium {@include avatar;width:var(--size-medium);height:var(--size-medium);}
 @mixin avatar-small {@include avatar;width:var(--size-small);height:var(--size-small);}
 @mixin avatar-tiny {@include avatar;width:var(--size-tiny);height:var(--size-tiny);}
-
 
 .avatar-small {@include avatar-small;}

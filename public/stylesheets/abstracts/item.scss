@@ -18,7 +18,7 @@
 @mixin item-avatar {
   float:left;
   @include avatar-large;
-  background-image:url('/public/images/soo.png'); // default avatar
+  background-image:url('https://source.unsplash.com/random'); // default avatar
 }
 @mixin item-avatar-medium {
   float:left;

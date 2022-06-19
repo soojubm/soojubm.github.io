@@ -53,25 +53,30 @@ table .right {text-align:right;}
 
 table.is-borderless tbody tr {border:0;}
 
-// todo icon-check
-ul li {margin:.25rem 0;padding:0 0 0 1.125rem;padding-left:0;position:relative;}
-// ul li:before {content:'\2022';position:absolute;left:0;}
-ul li:before {
-  content: "";
-  list-style: disc;
-  position: absolute;
-}
-ul li:marker {
-  unicode-bidi: isolate;
-  font-variant-numeric: tabular-nums;
-  text-transform: none;
-  text-indent: 0px !important;
-  text-align: start !important;
-  text-align-last: start !important;
-}
-ul li ul {margin:0 0 .5rem 0;}
-ul li ul li {}
-ul li ul li:before {content:'\25e6';border-radius:var(--radius);}
+
+ul {list-style:disc;padding-left:1rem;}
+// todo ul
+.article-checklist li {padding-left:1rem;}
+.article-checklist li:before {content:'';left:0;top:7px;width:1rem;height:1rem;background:url('/public/icons/Black_check.svg') no-repeat 0 0;background-size:9px;opacity:.5;}
+.article-checklist li + li {margin-top: .25rem;}
+.article-checklist li .icon-check {display:none;}
+// .article-checklist li .icon-check {margin:0 var(--space-small) 0 0;position:absolute;left:1px;top:12px;}
+// .article-checklist li .icon-check {border-width:1px;width:6px;}
+.article-checklist[data-align=horizontal] {display:flex;flex-wrap:wrap;}
+.article-checklist[data-align=horizontal] li {margin:0 var(--space) 0 0;}
+
+// todo span 
+.checklist {position: relative;margin-left:-3px;
+  padding: 0px 0px 0px 25px;}
+.checklist span {display:inline-flex;align-items:center;justify-content:center;width:var(--size-tiny);height:var(--size-tiny);margin-right:.5rem;position:absolute;left:0;top:6px;}
+.checklist span i {display:inline-block;width:7px;height:3px;border-left:1px solid;border-bottom:1px solid;border-color:var(--gray800);vertical-align:middle;transform:translateY(-3px) rotate(-45deg);}
+
+.xlist i {display:inline-block;vertical-align:middle;width:var(--size-tiny);height:var(--size-tiny);position:relative;margin-right:.5rem;position:absolute;left:0;top:5px;}
+.xlist i:before {content:'';width:10px;height:.5px;background-color:var(--gray800);position:absolute;left:50%;top:50%;transform:translate(-50%, -50%) rotate(45deg);}
+.xlist i:after {content:'';width:.5px;height:10px;background-color:var(--gray800);position:absolute;left:50%;top:50%;transform:translate(-50%, -50%) rotate(45deg);}
+
+.article-icon {@include avatar-medium;}
+
 
 // ol {}
 // ol li {margin:.25rem 0;padding: 0 0 0 1rem;position:relative;counter-increment:listitem;}

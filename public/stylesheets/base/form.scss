@@ -123,7 +123,7 @@ input[type=checkbox]:checked + label + * {display:block;margin:0.25rem 0 var(--s
 .checkbox,
 .radio {
   &.theme-button {
-    padding: 9px 1rem 11px;
+    padding: 9px 1rem calc(9px + var(--adjust-label-line));
     border: var(--border);
     box-shadow: var(--shadow);
     background: var(--color-background);
