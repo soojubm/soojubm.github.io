@@ -90,14 +90,16 @@
     <script src="./build/bundle.js"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-83531239-1"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-83531239-1"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+      window.dataLayer = window.dataLayer || []
+      function gtag() {
+        dataLayer.push(arguments)
+      }
+      gtag('js', new Date())
 
-      gtag('config', 'UA-83531239-1');
-    </script> -->
+      gtag('config', 'UA-83531239-1')
+    </script>
   </head>
   <body class="is-opened-menu">
     <noscript>This website requires JavaScript.</noscript>
@@ -138,10 +140,17 @@
           </menu>
         </div>
         <div class="navbar-menu-item has-submenu" style="margin:var(--space-small) 0 0 0;">
-          <span role="menuitem">디자인시스템<i class="icon-caret"></i></span>
+          <span role="menuitem">Components<i class="icon-caret"></i></span>
+          <menu>
+            <a href="#components">Components</a>
+            <a href="#forms">Forms - Inputs</a>
+            <a href="#selections">Forms - Selections</a>
+          </menu>
+        </div>
+        <div class="navbar-menu-item has-submenu" style="margin:var(--space-small) 0 0 0;">
+          <span role="menuitem">Test<i class="icon-caret"></i></span>
           <menu>
             <a route="/design" href="#tokens">Design Tokens</a>
-            <a route="/design" href="#components">Components</a>
             <a href="#changelog">Changelog</a>
             <a href="#foundations" style="display:flex;align-items:center;">
               Foundations
@@ -150,7 +159,7 @@
           </menu>
         </div>
         <div class="navbar-menu-item has-submenu" style="margin:var(--space-small) 0 0 0;">
-          <span class="menu-label" role="menuitem">샘플페이지<i class="icon-caret"></i></span>
+          <span class="menu-label" role="menuitem">Dummies<i class="icon-caret"></i></span>
           <menu>
             <!-- todo 페이지 변경이 없을 때 네비게이션이 닫히지 않는다. -->
             <a route="/design" href="#profile">User Profile</a>

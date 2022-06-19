@@ -9,7 +9,7 @@
 .article-aka {@include tag-group;align-items:center;margin:var(--space) 0;font-size:var(--font-size-tiny);}
 .article-aka .hashtag:before {content:'';}
 .article-aka .tag {margin-right:.75rem;}
-.article-title {margin:0 0 var(--space-after-subhead) 0;@include text-subhead;}
+.article-title {margin:0 0 var(--space-after-title) 0;@include text-title;}
 .article-description {margin:0 0 2rem;font-size:16px;}
 // border-top:var(--border);border-bottom:var(--border);
 .article-section {margin:2.5rem 0;}
