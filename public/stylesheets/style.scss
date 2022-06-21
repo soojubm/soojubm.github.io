@@ -446,17 +446,18 @@ q:before {
 // todo not
 main, .footer {transition:all .6s ease;}
 
-.foundation-tagline {padding:4rem var(--grid-margin);font-size:3rem;}
-
-
+.is-opened-menu .design,
 .is-opened-menu .component,
 .is-opened-menu .token,
 .is-opened-menu .foundation {padding-left:calc(var(--menu-width));}
+
 .is-opened-menu .navbar-logo {z-index: 8;}
+
 .is-opened-menu .footer {margin-left:calc(var(--menu-width));}
 
 @media (--breakpoint-small) {
   .is-opened-menu .footer {margin-left:0;}
+  .is-opened-menu .design,
   .is-opened-menu .component,
   .is-opened-menu .token,
   .is-opened-menu .foundation {padding-left:var(--grid-margin);}

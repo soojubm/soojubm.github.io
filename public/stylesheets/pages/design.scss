@@ -154,8 +154,8 @@
 .jobitem {@include tile-elevated;}
 .jobitem-name {margin:var(--space-leading-subhead) 0 var(--space-small) 0;@include text-subhead;}
 .jobitem-tags {@include tag-group;}
-.jobitem-tags .tag {border:var(--border);background:none;}
-.jobitem-view {@include button-tertiary;position:absolute;right:1rem;top:50%;transform:translateY(-50%);}
+.jobitem-tags .tag {}
+.jobitem-view {@include button-tertiary;position:absolute;right:.75rem;top:50%;transform:translateY(-50%);}
 
 
 .textbox {}
@@ -321,7 +321,7 @@
 .design-head {padding:2rem var(--grid-margin) 3rem;background:var(--color-background);position:relative;}
 .design header h1 {@include text-title;font-size:var(--font-size-huge);position:relative;} // todo
 .design header span {display:block;}
-.design header p {margin:1.5rem 0;font-size:var(--font-size-subhead);position:relative;}
+.design header p {margin:var(--space-after-title) 0 0 0;font-size:var(--font-size-subhead);position:relative;}
 
 .design-navigation {position:relative;z-index:var(--zindex-default);}
 .design-navigation-bleeding {display:flex;padding:var(--space-small) var(--grid-margin);}
@@ -399,10 +399,10 @@
 
 
 
-.postitem {width:100%;min-height:var(--size-height);@include tile-elevated;}
-.postitem-cover {@include avatar-huge;float:right;margin:0 0 0 var(--space);}
-.postitem-name {@include text-body;}
-.postitem-time {display:block;color:var(--color-text-light);}
+.postitem {width:100%;margin:4rem 0;position:relative;}
+.postitem:hover {@include hover-item;}
+.postitem-cover {display:none;width:8rem;height:1rem;margin:0 0 var(--space-small) 0;background:var(--color-newneek);border-radius:var(--radius);}
+.postitem-name {@include text-title;}
 .postitem-description {margin:var(--space-small) 0 1rem 0;}
 
 

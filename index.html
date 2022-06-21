@@ -90,7 +90,7 @@
     <script src="./build/bundle.js"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-83531239-1"></script>
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-83531239-1"></script>
     <script>
       window.dataLayer = window.dataLayer || []
       function gtag() {
@@ -101,7 +101,7 @@
       gtag('config', 'UA-83531239-1', {
         page_path: location.pathname + location.hash,
       })
-    </script>
+    </script> -->
   </head>
   <body class="is-opened-menu">
     <noscript>This website requires JavaScript.</noscript>
@@ -142,6 +142,12 @@
           </menu>
         </div>
         <div class="navbar-menu-item has-submenu" style="margin:var(--space-small) 0 0 0;">
+          <span role="menuitem">Overview?<i class="icon-caret"></i></span>
+          <menu>
+            <a route="/design" href="#tokens">Design Tokens</a>
+          </menu>
+        </div>
+        <div class="navbar-menu-item has-submenu" style="margin:var(--space-small) 0 0 0;">
           <span role="menuitem">Components<i class="icon-caret"></i></span>
           <menu>
             <!-- <a href="#avatar">Avatar</a>
@@ -156,13 +162,13 @@
             <!-- <a href="#containers">Containers</a> -->
             <!-- <a href="#feedbacks">Feedbacks</a> -->
             <!-- <a href="#actions">Actions</a> -->
+            <a href="#texts">Texts</a>
             <a href="#dummies">Dummies</a>
           </menu>
         </div>
         <div class="navbar-menu-item has-submenu" style="margin:var(--space-small) 0 0 0;">
           <span role="menuitem">Test<i class="icon-caret"></i></span>
           <menu>
-            <a route="/design" href="#tokens">Design Tokens</a>
             <a href="#changelog">Changelog</a>
             <a href="#foundations" style="display:flex;align-items:center;">
               Foundations

@@ -51,16 +51,6 @@
       <li>역할로보기 - 컨테이너/시각정보/인터렉션(필터/정렬...)...</li>
       <li>모든 시각정보는 non-clickable. 모든 인터렉션은 clickable.</li> -->
 
-
-    <h4 class="article-subhead">가이드 작성을 위한 가이드..</h4>
-    <ul>
-      <li>목록을 열거하거나 가짓수를 보충하는 등의 단순한 정보를 반복하지 마세요.</li>
-      <li>경우에따라.상황에따라.목적에맞게 와 같은 특정이 안 되는 용도를 사용하지 마세요.</li>
-      <li>기본적인 내용을 서술하지 마세요. 이 문서를 읽는 사람은 체크박스와 라디오의 차이를 이해하고 있습니다.</li>
-      <li>일어날 법 하지 않는 don't 케이스를 작성하지 마세요.</li>
-      <li>자세히보기/더보기 => 더 알아보기</li>
-    </ul>
-
       <!-- / success / warning / danger ? -->
       <!-- <h4 class="article-subhead">selection</h4>
         <h4 class="article-subhead">목록의 나머지를 더 보여줄 때는 [모두보기], 미리보기 형식의 텍스트를 더 보여줄 때는 [전체보기].click - tag 컴포넌트/화살표/아이콘 아이템 전체가 클릭 영역</h4>
@@ -99,7 +89,6 @@
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Tiles - container</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Seporator</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Links</span></a>
-      <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Texts</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Tooltip</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Alerts</span></a>
       <!-- <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">File Uploader</span></a> -->
@@ -110,12 +99,6 @@
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Result</span></a>
     </div>
   </nav>
-
-  <!-- <article class="article js-observer">
-    <h1 class="article-title">Bullet</h1>
-    <p style="font-size:12px;">불릿, 콤마, 콜론, 슬래시, 따옴표, 괄호 등 지양. 정보의 복잡도가 증가하고 디자인하지 않았다는 인상.</p>
-    <p style="font-size:12px;">클립보드에 복사를 위해 드래그 했을 때 불릿은 선택되지 않아야 합니다.</p>
-  </article> -->
 
   <!-- <p style="font-size:var(--font-size-caption);">- Clickable은 Link/Action/Submit</p>
   <p style="font-size:var(--font-size-caption);">- "Feedback Needed" after action</p>
@@ -290,10 +273,68 @@
       <p class="article-description">과업 수행을 위한 페이지 이동, 데이터 제출 등 사용자 여정의 핵심적인 액션입니다.</p>
 
       <!-- <p>Split Button</p> -->
-
       <!-- <li>아이콘 버튼의 아이콘은 관습적인 메타포를 사용하세요.</li> -->
       <!-- <p><span><i></i></span> 역할이 명확한 모두보기, 불러오는중, 더보기 등의 버튼은 합성해서 컴포넌트로 관리.</p> -->
       <!-- <li>버튼 아래에 가이드 텍스트를 배치하지 않습니다.<span hidden> (secondary 액션의 text 버튼이 아래에 위치하는 패턴 고려).</spanhi></li> -->
+
+      <div class="tile-flat">
+        <div class="design-buttongroup">
+          <button class="article-tertiary" style="height:64px;font-size:var(--font-size-subhead);vertical-align:bottom;">Large</button>
+          <button class="article-tertiary" style="vertical-align:bottom;">Medium</button>
+          <!-- <button class="article-tertiary-small">Small</button> -->
+        </div>
+      </div>
+      <aside class="article-helper">
+        <p>large는 프로모션 페이지의 call to action으로 제한적으로 사용합니다.</p>
+      </aside>
+
+      <h4 class="article-subhead">Props</h4>
+      <table>
+        <caption hidden>Table Caption</caption>
+        <tbody role="rowgroup">
+          <tr role="row">
+            <th scope="row" style="font-weight:var(--font-weight-bold);color:var(--color-text);">name</th>
+            <th style="font-weight:var(--font-weight-bold);color:var(--color-text);">type</th>
+          </tr>
+          <tr role="row">
+            <th scope="row">appearance</th>
+            <td>"primary" | "secondary" | "tertiary"</td>
+      <!-- appearance: 'link' | 'subtle' | 'primary' -->
+          </tr>
+          <tr role="row">
+            <th scope="row">size<attr>?</attr></th>
+            <td>"huge" | "medium"</td>
+          </tr>
+          <tr role="row">
+            <th scope="row">name</th>
+            <td>string</td>
+          </tr>
+          <tr role="row">
+            <th scope="row">label</th>
+            <td>string</td>
+          </tr>
+          <tr role="row">
+            <th scope="row">isDisabled</th>
+            <td>boolean</td>
+          </tr>
+          <tr role="row">
+            <th scope="row">isFullwidth</th>
+            <td>boolean
+              <p>buttonGroup에서?</p>
+            </td>
+          </tr>
+          <tr role="row">
+            <th scope="row">href<attr>?</attr></th>
+            <td>string
+              <p>LinkButton 컴포넌트 정의</p>
+            </td>
+          </tr>
+          <tr role="row">
+            <th scope="row">onClick<attr>?</attr></th>
+            <td>(event: React.MouseEvent<HTMLButtonElement>) => void</td>
+          </tr>
+        </tbody>
+      </table>
 
       <h4 class="article-subhead">Guidelines</h4>
       <ul>
@@ -324,16 +365,6 @@
         <!-- <span class="article-anatomy-item is-nested">badge - amount</span> -->
         <!-- <p> / min-width, padding-left, padding-right</p> -->
       </div>
-
-      <h4 class="article-subhead">props or types</h4>
-      <div class="article-anatomy is-anatomy">
-        <!-- <span class="article-anatomy-item">appearance: 'link' | 'subtle' | 'primary'</span> -->
-        <span class="article-anatomy-item">appearance: 'primary' | 'secondary' | 'tertiary' | 'text'</span>
-        <span class="article-anatomy-item">size: 'large' | 'medium'</span>
-        <span class="article-anatomy-item">space: 'compact' | 'fullwidth'<span hidden> // 버튼 그룹에서도 쓸 수 있도록 isFullWidth(boolean)에서 변경.</span></span>
-        <span class="article-anatomy-item">href?: string</span>
-        <span class="article-anatomy-item">type?: 'submit' || 'button' <span hidden>// LinkButton component에서 정의하지 않음.</span></span>
-      </div>
       
       <!-- <li>네이밍: style = solid/outline/plain/text (모든 스타일을 망라해야 하기 때문에 유아이 라이브러리에 어울리는 네이밍) </li> -->
       
@@ -342,17 +373,7 @@
       <input type="submit" value="submit input">
       <input type="button" value="button input"> -->
 
-      <h4 class="article-subhead">Sizes</h4>
-      <div class="tile-flat">
-        <div class="design-buttongroup">
-          <button class="article-tertiary" style="height:64px;font-size:var(--font-size-subhead);vertical-align:bottom;">Large</button>
-          <button class="article-tertiary" style="vertical-align:bottom;">Medium</button>
-          <!-- <button class="article-tertiary-small">Small</button> -->
-        </div>
-      </div>
-      <aside class="article-helper">
-        <p>large는 프로모션 페이지의 call to action으로 제한적으로 사용합니다.</p>
-      </aside>
+
 
       <h4 class="article-subhead">Appearance</h4>
       <div class="tile-flat" style="z-index:1;">
@@ -416,7 +437,6 @@
       <p class="article-description">사용자 여정을 보조하는 액션입니다.</p>
       <!-- <p> 실행 페이지에서 즉각적인 결과를 피드백해야 합니다.</p> -->
 
-
       <aside class="article-aka" style="margin:var(--space) 0 0 0;">
         <span class="tag">roles</span>
         <span class="hashtag" title="action">action</span>
@@ -439,6 +459,7 @@
         <li>맥락이 다른 chip을 나열할 수 있습니다. 이 때 단일선택, 다중선택, 삭제여부, 펼침메뉴 등의 기표를 충분히 제공하세요.</li>
         <li>콘텐츠 정렬sorting을 위해 chip group으로 chip을 나열하지 않습니다. dropdown으로 현재 정렬 상태만 요약합니다. (bad case: 2022.04 구글 지도 바뀐 것)</li>
         <li>todo: uncheckable/removable를 구분할 수 잇는 기표 제공. 단일/다중/</li>
+        <li>memo: overflow menu의 trigger는 chip이지만 menulist는 바텀시트/드롭다운/셀렉트박스가 될 수 있다. sorting filtering 등의 역할로 나누고 chip을 mixin하는 형태가 되어야 하는데,</li>
       </ul>
 
       <h4 class="article-subhead">anatomy</h4>
@@ -694,7 +715,6 @@
 
       <h4 class="article-subhead">Guidelines</h4>
       <ul>
-        <!-- <li>secondary 사용 안 함.</li> -->
         <li>non-clickable<span hidden>triggering interaction</span></li>
         <!-- <li>아이콘을 포함하지 않습니다. </li> -->
         <!-- <li>3개 이상의 태그를 포함할 수 없습니다.</li> -->
@@ -703,8 +723,7 @@
 
       <h4 class="article-subhead">Editing Checklist</h4>
       <ul data-align="horizontal">
-        <li>형용사</li>
-        <li>명사</li>
+        <li>형용사 또는 명사</li>
         <li>최대 1단어</li>
       </ul>
     </article>
@@ -722,7 +741,6 @@
     <article class="article js-observer js-scrollspy-section">
       <h1 class="article-title" title="or Box">Tiles</h1>
       <p class="article-description">연관 정보를 묶어 시각적으로 강조하는 컨테이너입니다.</p>
-      <!-- <p>normal size는 모바일에서 공간 낭비처럼 보인다.</p> -->
 
       <aside class="article-aka">
         <span class="tag">a.k.a.</span>
@@ -805,114 +823,6 @@
     </article>
 
     <!-- <p>strong 태그는 의미론적 강조. mark, u, em, b, strong. 문장 안에서 텍스트를 두 가지 방법으로 강조할 수 있습니다. <mark>이렇게</mark>와 <u>이렇게</u></p> -->
-
-    <article class="article js-observer js-scrollspy-section">
-      <h1 class="article-title">Texts</h1>
-      <p class="article-description">텍스트 인터페이스.</p>
-        
-      <!-- checklist(price card 등에서 사용) 정의. -->
-      <!-- <ul>
-        <li>리스트 태그(ul, ol, dl)는 텍스트 형태의 목록에만 마크업하세요. role=listbox/listitem</li>
-        <li>리스트는 2 댑스로 제공하지 않습니다.</li>
-        <li>3가지 이상의 대비로 위계를 설정하지 않습니다.</li>
-      </ul> -->
-
-      <div class="article-section">
-        <h4 class="article-subhead">List</h4>
-        <div class=" tile-flat-small" style="padding-left:var(--space);">
-          <ul>
-            <!-- <li title="unordered list, level 1">순서가 없는 리스트
-              <ul>
-                <li title="unordered list, level 2">순서가 없는 리스트</li>
-              </ul>
-            </li> -->
-            <li>순서가 없는 리스트</li>
-            <li>순서가 없는 리스트</li>
-          </ul>
-          <!-- <ol style="margin:var(--space-small) 0 0 0;">
-            <li>순서가 있는 리스트
-              <ol>
-                <li>순서가 있는 리스트</li>
-              </ol>
-            </li>
-            <li>순서가 있는 리스트</li>
-          </ol> -->
-        </div>
-        <div class="tile-flat-small" style="padding-left:var(--space);">
-          <ul data-align="horizontal">
-            <!-- <li title="unordered list, level 1">순서가 없는 리스트
-              <ul>
-                <li title="unordered list, level 2">순서가 없는 리스트</li>
-              </ul>
-            </li> -->
-            <li>순서가 없는 리스트</li>
-            <li>순서가 없는 리스트</li>
-            <li>순서가 없는 리스트</li>
-          </ul>
-        </div>
-      </div>
-
-      <h4 class="article-subhead">Statistic</h4>
-      <div class="statistic tile-flat" style="margin-top:0;">
-        <div class="statistic-item">
-          <i class="statistic-label">팔로워</i>
-          <span class="statistic-value">21,682</span>
-        </div>
-        <div class="statistic-item">
-          <i class="statistic-label">Repository</i>
-          <span class="statistic-value">100만 이상</span>
-        </div>
-        <div class="statistic-item">
-          <i class="statistic-label">Size</i>
-          <span class="statistic-value">Small</span>
-        </div>
-      </div>
-
-      <h4 class="article-subhead">Summary</h4>
-      <section class="summary tile-flat" style="margin-top:0;padding-top:var(--space-small);">
-        <div class="summary-item">
-          <div class="summary-item-label">상품 금액</div>
-          <div class="summary-item-value">₩ 160,000</div>
-        </div>
-        <div class="summary-item">
-          <div class="summary-item-label">서비스 수수료</div>
-          <div class="summary-item-value">₩ 3,000</div>
-        </div>
-        <div class="summary-total">
-          <div class="summary-total-label">총 합계 (KRW)</div>
-          <div class="summary-total-value">₩ 163,000</div>
-        </div>
-      </section>
-
-      <h6 class="article-subhead">Metadata (description list)</h6>
-      <section class="kb tile-flat" style="margin-top:0;">
-        <table>
-          <tbody>
-            <tr style="border:0;">
-              <th>레이블</th>
-              <td>값</td>
-            </tr>
-            <tr style="border:0;">
-              <th>레이블</th>
-              <td>값</td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-
-      <!-- <p style="font-size:var(--font-size-caption);">아이콘을 레이블없이 단독으로 사용하지 않습니다. todo 참고 링크(아이콘은 클릭할 수 있음을 나타내는 역할)</p> -->
-      
-      <h6 class="article-subhead">Suggestion</h6>
-      <div class="product-info-price tile-flat" role="suggestion">
-        <del class="product-info-price-deletion" role="deletion">₩30,000</del>
-        <b class="product-info-price-insertion" role="insertion">₩20,000</b>
-        <em class="product-info-price-percentage">(30%)</em>
-      </div>
-      <aside class="article-helper" style="margin:var(--space-small) 0 0 0;">
-        <p>role=suggestion/deletion/insertion]</p>
-      </aside>
-
-    </article>
 
 
     <article class="article js-observer js-scrollspy-section" style="overflow:visible;">
