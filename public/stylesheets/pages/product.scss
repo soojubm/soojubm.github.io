@@ -95,12 +95,11 @@
 .product-features-item-description {margin:var(--space-after-subhead) 0 0 0;}
 .product-features-item-link {display:block;margin:var(--space-after-description) 0 0 0;}
 
-.feature {display:flex;flex-wrap:wrap;justify-content:space-between;margin:8rem 0;padding:6rem var(--grid-margin) 7rem;background:var(--color-background-weak);}
+.feature {display:flex;flex-wrap:wrap;justify-content:space-between;max-width:1000px;margin:0 auto;padding:6rem var(--grid-margin) 7rem;}
 .feature-title {width:100%;margin:0 0 var(--space-after-title) 0;@include text-subhead;}
-.feature-item {width:100%;max-width:320px;margin:2rem 0 0 0;}
+.feature-item {width:100%;max-width:240px;margin:3rem 0 0 0;}
 .feature-item-title {@include text-subhead;font-size:var(--font-size-body);}
 .feature-item-description {margin:var(--space-after-subhead) 0 0 0;}
-
 
 .product-quick {display:flex;align-items:center;height:var(--size-huge);background:var(--color-background);position:fixed;left:0;right:0;bottom:0;z-index:var(--zindex-navigatoin);}
 .product-quick:before {content:'';display:block;height:var(--size-huge);background:var(--color-background);border-top:var(--border);position:fixed;left:0;right:0;bottom:0;}
@@ -114,11 +113,6 @@
 .product-quick-controls {position:relative;}
 .product-quick-controls-purchase {@include button-primary;width:100%;}
 
-.product-faq {}
-.product-faq-head {margin:var(--space) 0;}
-.product-faq-head-title {@include text-title;}
-.product-faq-head-description {margin:var(--space-after-title) 0 0 0;}
-
 .product-detail-headline {@include text-title;}
 
 .product-detail-intro {display:flex;justify-content:center;width:100%;margin:0 0 12rem;padding:0 10%;box-sizing:border-box;}
@@ -128,7 +122,6 @@
 // .product-detail-summary dl {width:66.6666%;overflow:hidden;box-sizing:border-box;}
 // .product-detail-summary dt {float:left;width:8rem;margin:.25rem 0;color:var(--color-text-light);}
 // .product-detail-summary dd {float:left;width:calc(100% - 8rem);margin:.25rem 0;color:var(--gray800);}
-
 
 .product-policy {margin:12rem 0;}
 .product-policy-title {}
@@ -185,9 +178,6 @@
 .products-item-brand {display:block;margin:1rem 1.5rem 0;}
 .products-item-name {margin:.5rem 1.5rem 1rem;@include text-subhead;}
 .products-item-price {display:block;margin:1rem 1.5rem;}
-
-
-
 
 .product-detail-gallary {display:flex;flex-wrap:wrap;justify-content:center;}
 .product-detail-gallary figure {margin:.5rem;border-radius:var(--radius);overflow:hidden;position:relative;}

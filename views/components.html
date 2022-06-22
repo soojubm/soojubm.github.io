@@ -161,14 +161,12 @@
             <th scope="row">size</th>
             <td>"huge" | "large" | "medium" | "small"</td>
           </tr>
-        </tr>
-        <tr role="row">
-          <th scope="row">badge<abbr>?</abbr></th>
-          <td>"unread" | "new" | "live"</td>
-        </tr>
+          <tr role="row">
+            <th scope="row">badge<abbr>?</abbr></th>
+            <td>"unread" | "new" | "live"</td>
+          </tr>
         </tbody>
       </table>
-
 
       <h4 class="article-subhead"></h4>
       <dl>
@@ -434,9 +432,8 @@
     <!-- todo 단순 액션(팔로우 등) -->
     <article class="article js-observer js-scrollspy-section">
       <h1 class="article-title">Chips</h1>
-      <p class="article-description">사용자 여정을 보조하는 액션입니다.</p>
-      <!-- <p> 실행 페이지에서 즉각적인 결과를 피드백해야 합니다.</p> -->
-
+      <p class="article-description">사용자 여정을 보조하는 액션입니다. 실행 페이지 내에서 사용자가 즉각적인 결과를 기대할 수 있는 액션입니다.</p>
+      
       <aside class="article-aka" style="margin:var(--space) 0 0 0;">
         <span class="tag">roles</span>
         <span class="hashtag" title="action">action</span>
@@ -453,6 +450,51 @@
       <!-- //smallbutton -->
         <span class="hashtag" title="">Label</span>
       </aside>
+
+      <br />
+
+      <div class="chip-group" role="group" aria-orientation="horizontal">
+        <button class="chip">
+          <span class="chip-label">default</span>
+        </button>
+        <button class="chip is-active">
+          <span class="chip-label">active</span>
+        </button>
+        <button class="chip" style="opacity:.5;cursor:not-allowed;" disabled>
+          <span class="chip-label">disabled</span>
+        </button>
+      </div>
+
+      <h4 class="article-subhead">Props</h4>
+      <table>
+        <caption hidden>Table Caption</caption>
+        <tbody role="rowgroup">
+          <tr role="row">
+            <th scope="row" style="font-weight:var(--font-weight-bold);color:var(--color-text);">name</th>
+            <th style="font-weight:var(--font-weight-bold);color:var(--color-text);">type</th>
+          </tr>
+          <tr role="row">
+            <th scope="row">name</th>
+            <td>string</td>
+          </tr>
+          <tr role="row">
+            <th scope="row">label</th>
+            <td>string</td>
+          </tr>
+          <tr role="row">
+            <th scope="row">isRemovable<attr>?</attr></th>
+            <td>boolean</td>
+          </tr>
+          <tr role="row">
+            <th scope="row">isAddable<attr>?</attr></th>
+            <td>boolean</td>
+          </tr>
+          <tr role="row">
+            <th scope="row">onClick</th>
+            <td>function()</td>
+          </tr>
+        </tbody>
+      </table>
       
       <h4 class="article-subhead">Guidelines</h4>
       <ul>
@@ -460,6 +502,7 @@
         <li>콘텐츠 정렬sorting을 위해 chip group으로 chip을 나열하지 않습니다. dropdown으로 현재 정렬 상태만 요약합니다. (bad case: 2022.04 구글 지도 바뀐 것)</li>
         <li>todo: uncheckable/removable를 구분할 수 잇는 기표 제공. 단일/다중/</li>
         <li>memo: overflow menu의 trigger는 chip이지만 menulist는 바텀시트/드롭다운/셀렉트박스가 될 수 있다. sorting filtering 등의 역할로 나누고 chip을 mixin하는 형태가 되어야 하는데,</li>
+        <li>memo: 필터에서 액티브 상태에 브랜드 컬러를 많이 안 쓰는 경향. 콘텐츠 탐색이 cta.</li>
       </ul>
 
       <h4 class="article-subhead">anatomy</h4>
@@ -472,24 +515,7 @@
         <span class="article-anatomy-item is-nested">remove icon <small class="is-optional">optional</small></span>
       </div>
 
-      <!-- <blockquote>
-        <p>필터에서 액티브 상태에 브랜드 컬러를 많이 안 쓰는 경향. 콘텐츠 탐색이 cta라서?</p>
-\        <p>안드로이드: chipGroup, HorizontalScrollView, singleLine, action/entry/filter(check active)/choice</p>
-      </blockquote> -->
-      <!-- <h4 class="article-subhead">appearance</h4>
-      <div class="tile-elevated-small">
-        <div class="chip-group" role="group" aria-orientation="horizontal">
-          <button class="chip">
-            <span class="chip-label">default</span>
-          </button>
-          <button class="chip is-active">
-            <span class="chip-label">active</span>
-          </button>
-          <button class="chip" style="opacity:.5;cursor:not-allowed;" disabled>
-            <span class="chip-label">disabled</span>
-          </button>
-        </div>
-      </div> -->
+      <!-- <p>안드로이드: chipGroup, HorizontalScrollView, singleLine, action/entry/filter(check active)/choice</p> -->
 
       <h4 class="article-subhead">Keywords</h4>
       <div class="tile-flat">
@@ -701,8 +727,8 @@
 
       <div class="">
         <div class="tag-group">
-          <span class="tag" data-appearance="primary" style="margin:0 .5rem 0 0;">Primary</span>
-          <!-- <span class="tag" role="listitem" data-appearance="secondary" style="border-color:var(--green100);background:var(--green100);color:var(--green800);">Secondary</span> -->
+          <span class="tag" data-appearance="primary">Primary</span>
+          <span class="tag" role="listitem" data-appearance="secondary" style="border-color:var(--green100);background:var(--green100);color:var(--green800);">Secondary (outdated)</span>
           <span class="tag" role="listitem">Tertiary</span>
           <span class="tag" role="listitem" style="background:var(--red100);border-color:var(--red100);color:var(--red800);">15</span>
           <!-- todo -->
@@ -716,7 +742,6 @@
       <h4 class="article-subhead">Guidelines</h4>
       <ul>
         <li>non-clickable<span hidden>triggering interaction</span></li>
-        <!-- <li>아이콘을 포함하지 않습니다. </li> -->
         <!-- <li>3개 이상의 태그를 포함할 수 없습니다.</li> -->
         <!-- <li>해시태그(#)는 항상 클릭할 수 있어야 합니다.</li> -->
       </ul>
@@ -793,37 +818,36 @@
       <h1 class="article-title">Links</h1>
       <p class="article-description">페이지를 이동하거나 요약된 콘텐츠를 확장합니다. destination that can be bookmarked</p>
 
-      <!-- <aside>
-        aka. Anchor
-      </aside> -->
+      <aside class="article-aka">
+        <span class="tag">a.k.a.</span>
+        <span class="hashtag" title="">Anchor</span>
+      </aside>
+
+      <p>형무소 안에서는 소장의 말이 곧 법이었으며 죄수들의 잘못과 실수는 결코 용납되지 않는다. 어머니의 사망 소식을 듣고 인해 2번이나 탈옥을 시도했다가 체포된 <a class="link-inner" href="#">루크</a>의 발에 쇠통이 채워지며 루크는…<a class="more link-outer" href="#" style="margin-left:.25rem;">더 보기</a></p>
+      <div style="margin-top:.75rem;">
+        <a class="hashtag" href="">이것은헤시태그다</a>
+        <a class="hashtag" href="">해시태그는클릭할수있다?</a>
+      </div>
 
       <h4 class="article-subhead">Guidelines</h4>
       <ul>
         <li>텍스트 단락과 함께 사용합니다.</li>
-        <!-- <li>모달, 시트 등...</li> -->
-        <!-- <li>텍스트 단락의 내/외부에서의 형태를 구분합니다. 단락 내부에서 언더라인을 추가하여 텍스트와 대비를 추가합니다.</li> -->
+        <li>텍스트 단락의 내/외부에서의 형태를 구분합니다. 단락 내부에서는 본문 텍스트와 대비를 위해 언더라인을 추가합니다.</li>
+        <li>'여기', '클릭', '확장' 등의 시각 정보로 텍스트를 작성하지 마세요.</li>
       </ul>
 
-      <!-- <h4 class="article-subhead">Editing Checklist</h4>
-      <ul>
-        <li>'여기', '클릭', '확장' 등 시각적인 .</li>
-      </ul> -->
-      <!-- <div class="tag-group">
-        <span class="tag">@mixin link-outer</span>
-        <span class="tag">@mixin link-inner</span>
-      </div> -->
+      <!-- <span class="tag">@mixin link-outer</span>
+      <span class="tag">@mixin link-inner</span> -->
 
       <h4 class="article-subhead">anatomy & a11y</h4>
       <div class="article-anatomy is-anatomy">
-        <span class="article-anatomy-item">a // for internal link</span>
-        <span class="article-anatomy-item">a target="_blank" rel="noopener noreferrer" // for external link</span>
+        <div class="article-anatomy-item">
+          a // for internal link</div>
+        <div class="article-anatomy-item">
+          a target="_blank" rel="noopener noreferrer" // for external link
+        </div>
       </div>
-      <br />
-      <p>형무소 안에서는 소장의 말이 곧 법이었으며 죄수들의 잘못과 실수는 결코 용납되지 않는다. 어머니의 사망 소식을 듣고 인해 2번이나 탈옥을 시도했다가 체포된 <a class="link-inner" href="#">루크</a>의 발에 쇠통이 채워지며 루크는…<a class="more link-outer" href="#" style="margin-left:.25rem;">더 보기</a></p>
     </article>
-
-    <!-- <p>strong 태그는 의미론적 강조. mark, u, em, b, strong. 문장 안에서 텍스트를 두 가지 방법으로 강조할 수 있습니다. <mark>이렇게</mark>와 <u>이렇게</u></p> -->
-
 
     <article class="article js-observer js-scrollspy-section" style="overflow:visible;">
       <h1 class="article-title">Tooltip</h1>
@@ -835,7 +859,7 @@
       <ul>
         <li>행동을 유도하는 가이드로 사용하지 않습니다.</li>
         <li>페이지 링크로 사용하지 않습니다.</li>
-        <li>사용자가 반드시 숙지해야 하는 중요한 정보라면 버튼이나 링크 텍스트로 강조합니다.</li>
+        <li>사용자가 반드시 숙지해야 하는 중요한 정보라면 버튼이나 링크 텍스트로 강조하세요.</li>
       </ul>
       <br />
       <aside class="tooltip">
@@ -854,10 +878,10 @@
     <article class="article js-observer js-scrollspy-section">
       <!-- <span class="hashtag">attention</span> -->
       <span class="hashtag">feedback</span>
-      <h1 class="article-title">Alerts / Message</h1>
+      <h1 class="article-title">작성 중</h1>
       <p class="article-description">시스템이나 브라우저의 상태 이상, 사용자의 행동에 피드백합니다.</p>
 
-      <aside class="article-aka" style="margin:0;">
+      <aside class="article-aka">
         <span class="tag">a.k.a.</span>
         <span class="hashtag" title="">Alert</span>
         <span class="hashtag" title="">Message</span>
@@ -903,7 +927,7 @@
       <h6 class="article-subhead">Inline</h6>
       <p role="alert" style="color:var(--red800);">비밀번호가 일치하지 않습니다.</p>
 
-      <h6 class="article-subhead">with Toast</h6>
+      <h6 class="article-subhead">Callouts with Toast</h6>
       <aside class="alert">
         <span class="alert-icon">🧡</span>
         <p class="alert-text">좋아요 표시한 동영상에 추가됨</p>
@@ -1100,7 +1124,7 @@
 
     <article class="article js-observer js-scrollspy-section">
       <h1 class="article-title">Accordion / Details</h1>
-      <p class="article-description">필요에 따라 취사선택할 수 있도록 정보 목록을 요약합니다.</p>
+      <p class="article-description">사용자의 필요에 따라 취사선택할 수 있도록 정보 목록을 요약합니다.</p>
 
       <h4 class="article-subhead">Guidelines</h4>
       <ul>

@@ -54,6 +54,9 @@ table .right {text-align:right;}
 table.is-borderless tbody tr {border:0;}
 
 
+table tbody[role=rowgroup] tr th {width:30%;}
+table tbody[role=rowgroup] tr th + th {width:auto;} // todo
+
 ul {list-style:disc;padding-left:1rem;}
 ul li {margin:.25em 0;} // for font-size.
 // todo ul

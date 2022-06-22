@@ -97,6 +97,7 @@ $transition-fade: opacity 0.15s linear;
   --color-text: var(--gray800);
   --color-text-weak: var(--gray0);
   --color-text-light: var(--gray400);
+  --color-text-strong: var(--gray0);
   --color-text-link: var(--color-primary);
   --color-text-disabled: 0; // todo
   --disabled-color-text: 0;
@@ -292,6 +293,7 @@ $transition-fade: opacity 0.15s linear;
     --color-text: #d1d2d3;
     --color-text-weak: var(--gray800);
     --color-text-light: var(--gray400);
+    --color-text-strong: var(--gray0);
 
     --color-background: #252d29;
     --color-background-weak: var(--gray800);
