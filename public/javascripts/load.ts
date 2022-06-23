@@ -1,3 +1,4 @@
+// todo function
 export function lockBodyElement() {
   document.body.classList.add('body-lock')
 }
@@ -7,6 +8,8 @@ export function unlockBodyElement() {
 }
 
 export function detectLoad() {
+  document.body.classList.remove('is-loading')
+
   const loaderElement = document.querySelector<HTMLElement>('.js-loader')
   if (!loaderElement) return
 

@@ -428,8 +428,8 @@
     
     <!-- todo 단순 액션(팔로우 등) -->
     <article class="article js-observer js-scrollspy-section">
-      <h1 class="article-title">Chips</h1>
-      <p class="article-description">사용자 여정을 보조하는 액션입니다. 실행 페이지 내에서 사용자가 즉각적인 결과를 기대할 수 있는 액션입니다.</p>
+      <h1 class="article-title">Chips 🔥</h1>
+      <p class="article-description">사용자 여정을 보조하는 액션입니다. 실행 페이지 내에서 사용자가 즉각적인 결과를 기대할 수 있습니다.</p>
       
       <!-- <aside class="article-aka" style="margin:var(--space) 0 0 0;">
         <span class="tag">roles</span>
@@ -444,7 +444,6 @@
         <span class="hashtag" title="">Pill</span>
         <span class="hashtag" title="">Badge</span>
         <span class="hashtag" title="gitlab">Token</span>
-      <!-- //smallbutton -->
         <span class="hashtag" title="">Label</span>
       </aside>
 
@@ -729,7 +728,7 @@
           <span class="tag" role="listitem">Tertiary</span>
           <span class="tag" role="listitem" style="background:var(--red100);border-color:var(--red100);color:var(--red800);">15</span>
           <!-- todo -->
-          <span class="tag" data-role="accent" style="width:100%;margin-top:.25rem;">
+          <span class="tag" data-role="accent">
             <figure class="tag-icon" role="img">🔥</figure>
             <small class="tag-label">Most Popular 22.05.02. 최대 1개. w icon</small>
           </span>
@@ -739,14 +738,15 @@
       <h4 class="article-subhead">Guidelines</h4>
       <ul>
         <li>non-clickable<span hidden>triggering interaction</span></li>
-        <!-- <li>3개 이상의 태그를 포함할 수 없습니다.</li> -->
+        <li>Primary는 하나의 콘텐츠에 1개만 사용하세요.</li>
+        <li>태그 그룹에 4개 이상의 태그를 포함하지 마세요. <mark>핵심 키워드를 요약</mark>하여 사용자의 콘텐츠 탐색과 선택을 도와주기 위한 역할이기 때문에 너무 많은 태그 목록은 정보를 복잡하게 만들어 콘텐츠 탐색을 어렵게 합니다.</li>
         <!-- <li>해시태그(#)는 항상 클릭할 수 있어야 합니다.</li> -->
       </ul>
 
       <h4 class="article-subhead">Editing Checklist</h4>
       <ul data-align="horizontal">
         <li>형용사 또는 명사</li>
-        <li>최대 1단어</li>
+        <li>최대 2단어</li>
       </ul>
     </article>
 
@@ -775,12 +775,12 @@
       <ul>
         <li>'클릭할 수 있음'의 기표로 elevated 스타일을 사용합니다. 타일 전체가 클릭 영역일 수도, 타일 내부에 클릭 가능한 요소를 포함할 수도 있습니다.</li>
         <li>아티클 레벨에 사용합니다. 페이지 레벨의 타이틀과 디스크립션을 타일로 만들지 않습니다.</p>
-        <li>leading, tailing 엘리먼트에 시각보정이 필요할 수 있습니다.</p>
+        <li>타일 내부 leading, tailing 엘리먼트의 시각보정이 필요할 수 있습니다.</p>
       </ul>
       <br />
       <div class="design-tile-flat" style="padding:1rem;">
         <h5 style="font-size:var(--font-size-subhead);">flat large with subhead</h5>
-        <p style="margin:var(--space-after-description);">변별력이 없기는 하지만 inset을 더 키우면 작은 화면에서 공간 낭비가 발생하여 더 작게 해줘야 한다. 하지만 가운데 정렬하는 경우 inset을 더 크게 설정할 수 있겠다.</p>
+        <p style="margin:var(--space-after-description);">변별력이 없기는 하지만 inset을 더 키우면 작은 화면에서 공간 낭비로 미디어쿼리로 inset 조정이 필요해진다. 하지만 콘텐츠를 가운데 정렬로 용법을 제한한다면 괜찮다.</p>
         <p style="margin-top:.75rem;">이 tile은 페이지 레벨의 컴포넌트가 될 수 있다.</p> 
       </div>
       <div class="design-tile-flat">
@@ -822,8 +822,9 @@
 
       <p>형무소 안에서는 소장의 말이 곧 법이었으며 죄수들의 잘못과 실수는 결코 용납되지 않는다. 어머니의 사망 소식을 듣고 인해 2번이나 탈옥을 시도했다가 체포된 <a class="link-inner" href="#">루크</a>의 발에 쇠통이 채워지며 루크는…<a class="more link-outer" href="#" style="margin-left:.25rem;">더 보기</a></p>
       <div style="margin-top:.75rem;">
-        <a class="hashtag" href="">이것은헤시태그다</a>
+        <a class="hashtag" href="">이것은헤시태그</a>
         <a class="hashtag" href="">해시태그는클릭할수있다?</a>
+        <a class="hashtag" href="">해시태그는검색의맥락</a>
       </div>
 
       <h4 class="article-subhead">Guidelines</h4>
@@ -855,8 +856,8 @@
       <h4 class="article-subhead">Guidelines</h4>
       <ul>
         <li>행동을 유도하는 가이드로 사용하지 않습니다.</li>
-        <li>페이지 링크로 사용하지 않습니다.</li>
-        <li>사용자가 반드시 숙지해야 하는 중요한 정보라면 버튼이나 링크 텍스트로 강조하세요.</li>
+        <li>툴팁의 물음표 아이콘을 페이지 링크로 사용하지 않습니다.</li>
+        <li>사용자가 반드시 숙지해야 하는 중요한 정보라면 버튼이나 링크 텍스트로 강조하고 모달 형태의 컨테이너를 사용하세요.</li>
       </ul>
       <br />
       <aside class="tooltip">
@@ -911,25 +912,14 @@
       <h1 class="article-title">Menu Item</h1>
       <p class="article-description">작성 중.</p>
 
-      <h4 class="article-subhead">anatomy</h4>
-      <div class="article-anatomy is-anatomy">
-        <span class="article-anatomy-item"><b>MenuItem</b></span>
-        <span class="article-anatomy-item is-nested">label</span>
-        <span class="article-anatomy-item is-nested">heading icon <small class="is-optional">optional</small></span>
-        <span class="article-anatomy-item is-nested">tailing icon <small class="is-optional">optional</small></span>
-      </div>
-
-      <!-- <button class="user-logout js-darkmode" title="change theme">
+      <button class="user-logout js-darkmode" title="change theme">
         <figure class="user-logout-icon"><i class="icon-moon"></i></figure>
         <span class="user-logout-label">어둡게 보기</span>
         <span class="switch" style="margin-left:auto;">
           <input type="checkbox" id="temp55" name="" role="switch" />
           <label for="temp55" style="padding-left:48px;"></label>
         </span>
-      </button> -->
-      <br />
-
-      <p>dropdown ///// bottomsheet/asidebar</p>
+      </button>
 
       <hr />
       <button class="menu-item">
@@ -942,6 +932,22 @@
         <span class="sidebar-item-label">툴? avatar medium?</span>
         <span class="sidebar-item-tag tag" data-appearance="primary">새소식</span>
       </div>
+
+      <h4 class="article-subhead">anatomy</h4>
+      <div class="article-anatomy is-anatomy">
+        <span class="article-anatomy-item"><b>MenuItem</b></span>
+        <span class="article-anatomy-item is-nested">label</span>
+        <span class="article-anatomy-item is-nested">badge</span>
+        <span class="article-anatomy-item is-nested">heading icon <small class="is-optional">optional</small></span>
+        <span class="article-anatomy-item is-nested">tailing icon <small class="is-optional">optional</small></span>
+      </div>
+
+      <h4 class="article-subhead">Memo</h4>
+      <ul>
+        <li>액션 타입과 링크 타입?</li>
+        <li>todo:: dropdown에서 사용하는 형태(작은)와 sheet(tile)/sidebar에서 사용하는 형태를 구분해야 한다.</li>
+        <li>결국 option menu와 side menu 컴포넌트를 각각 정의하는 것이 맞을 듯. 거기서 text와 entity를 include하는 방식이 베스트로 보임.</li>
+      </ul>
     </article>
 
     <article class="article js-observer js-scrollspy-section">
@@ -1214,12 +1220,6 @@ textarea1.addEventListener('mouseup', onMouseUp, false);
 textarea2.addEventListener('mouseup', onMouseUp, false);
 -->
 
-
-    <!-- <article class="article">
-      <h1 class="article-title">Spinner</h1>
-      <p class="article-description">로딩 스피너</p>
-      <div class="loader-spinner" style="position:static;"></div>
-    </article> -->
 
     <!-- <article class="article">
       <h1 class="article-title">Range</h1>

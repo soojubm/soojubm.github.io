@@ -8,7 +8,7 @@
   border-radius: var(--radius);
   box-sizing: border-box;
   background: var(--color-background-weak);
-  background-size: cover;
+  background-size: cover !important;
   // overflow:hidden; // todo badge
   position: relative;
   img {

@@ -19,6 +19,8 @@ import toggleTheme from './javascripts/theme/toggleTheme'
 import { toggleNavbarMenu, initializeNavbar } from './javascripts/common/navbar'
 
 document.addEventListener('DOMContentLoaded', lockBodyElement)
+
+
 window.addEventListener('load', detectLoad)
 
 document.addEventListener('DOMContentLoaded', domEvents)
@@ -71,7 +73,7 @@ async function domEvents() {
 
   const isHome = window.location.hash === ''
 
-  const temps = ['', 'components', 'tokens', 'changelog', 'forms', 'selections', 'dummies', 'navigations', 'texts', 'presentations']
+  const temps = ['', 'components', 'tokens', 'changelog', 'forms', 'selections', 'dummies', 'alerts', 'texts', 'presentations']
 
   if (!temps.includes(hash)) {
     initializeNavbar()

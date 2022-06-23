@@ -90,7 +90,7 @@
     <script src="./build/bundle.js"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-83531239-1"></script>
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-83531239-1"></script>
     <script>
       window.dataLayer = window.dataLayer || []
       function gtag() {
@@ -101,9 +101,9 @@
       gtag('config', 'UA-83531239-1', {
         page_path: location.pathname + location.hash,
       })
-    </script>
+    </script> -->
   <script defer src="bundle.js"></script><link href="style.css" rel="stylesheet"></head>
-  <body class="is-opened-menu">
+  <body class="is-opened-menu is-loading">
     <noscript>This website requires JavaScript.</noscript>
 
     <aside class="browser js-browser" role="complementary">
@@ -116,7 +116,11 @@
     </aside>
 
     <aside class="loader js-loader">
-      <div class="loader-spinner js-loader-spinner"></div>
+      <div class="spinner">
+        <div class="double-bounce1"></div>
+        <div class="double-bounce2"></div>
+      </div>
+      <!-- <div class="loader-spinner"></div> -->
     </aside>
 
     <nav class="skip" role="navigation">
@@ -181,7 +185,7 @@
           </menu>
         </div>
         <div class="navbar-menu-item has-submenu" style="margin:var(--space-small) 0 0 0;">
-          <span class="menu-label" role="menuitem">Dummies<i class="icon-caret"></i></span>
+          <span class="menu-label" role="menuitem">Pages<i class="icon-caret"></i></span>
           <menu>
             <!-- todo 페이지 변경이 없을 때 네비게이션이 닫히지 않는다. -->
             <a route="/design" href="#profile">User Profile</a>
