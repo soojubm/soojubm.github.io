@@ -71,7 +71,7 @@ async function domEvents() {
 
   const isHome = window.location.hash === ''
 
-  const temps = ['', 'components', 'tokens', 'changelog', 'forms', 'selections', 'dummies', 'navigations', 'texts']
+  const temps = ['', 'components', 'tokens', 'changelog', 'forms', 'selections', 'dummies', 'navigations', 'texts', 'presentations']
 
   if (!temps.includes(hash)) {
     initializeNavbar()

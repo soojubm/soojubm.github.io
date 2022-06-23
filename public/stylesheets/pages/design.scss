@@ -380,7 +380,7 @@
 .design-ticker-overay {
   // position: absolute;left:0;right:0;top:0;bottom:0;
   height: 300px;
-  background: linear-gradient(to bottom, rgba(255,255,255,.1), rgba(255,255,255,.5), rgba(255,255,255,1));
+  background: linear-gradient(to bottom, rgba(255,255,255,.25),rgba(255,255,255,.25),rgba(255,255,255,.25),rgba(255,255,255,1));
   @include bleeding;
   z-index: 0;
   top: auto;
@@ -388,7 +388,7 @@
 
 
 .theme-dark .design-ticker-overay {
-	background: linear-gradient(to bottom, rgba(37,45,41,0), rgba(37,45,41,.75), rgba(37,45,41,1));
+	background: linear-gradient(to bottom, rgba(37,45,41,0), rgba(37,45,41,.5), rgba(37,45,41,1));
 
 }
 

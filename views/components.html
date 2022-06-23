@@ -42,7 +42,6 @@
     <p class="hero-description"><em>todo 문서 작성에 도움이 안 되는 조잡한 정보 최소하기. check icon을 제거하고 커스텀 li를 위한 클래스를 정의하기. checklist for users</em></p>
 
     <p class="hero-description">todo loading state / dfn/abbr</p>
-    <p>역할 기반. container / visual information (text/) / action / selection /</p>
     <p>역할로 나눌 때의 문제 :: chip의 다양한 역할. 하지만 우연히 지금의 chip 형태가 같은 뿐인 것이지 디지털 환경에서 하는 역할은 고정되어 있는. => chip과 avatar는 그냥 그대로 정의해도 좋을 듯. 린하게...</p>
     <p>anatomy vs props 설명하려고 하는 정보 유사함. 잘 구분해보기. anatomy에서 접근성 속성과 html 구조를 다룬다.</p>
 
@@ -90,12 +89,10 @@
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Seporator</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Links</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Tooltip</span></a>
-      <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Alerts</span></a>
       <!-- <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">File Uploader</span></a> -->
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Carousel</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Table - data</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Accordion</span></a>
-      <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Dialog</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Result</span></a>
     </div>
   </nav>
@@ -113,7 +110,7 @@
       <!-- <h4 class="article-subhead">Sizes</h4> -->
       <article class="tile-flat">
         <div class="avatar-group" role="group">
-          <figure class="item-avatar" data-size="huge" title="huge avatar" style="width:var(--size-huge);height:var(--size-huge);background-image:url('/public/images/springsteen.jpg');border:none;">
+          <figure class="item-avatar" data-size="huge" title="huge avatar" style="width:var(--size-huge);height:var(--size-huge);border:none;">
             <span class="avatar-badge"></span>
           </figure>
           <figure class="item-avatar" data-size="large" title="large avatar" style="width:var(--size-large);height:var(--size-large);">
@@ -122,7 +119,7 @@
           <figure class="item-avatar" data-size="medium" style="width:var(--size-medium);height:var(--size-medium);background-image:none;font-weight:var(--font-weight-bold);color:var(--colro-text);">
             수
           </figure>
-          <figure class="item-avatar" data-size="small" title="small avatar" style="width:var(--size-small);height:var(--size-small);background-image:url('/public/images/springsteen.jpg');">
+          <figure class="item-avatar" data-size="small" title="small avatar" style="width:var(--size-small);height:var(--size-small);">
             <i class="icon-x"></i>
           </figure>
         </div>
@@ -206,15 +203,15 @@
           <h3 class="item-name">예시 인터페이스</h3>
         </article>
         <p class="user-description" style="margin:var(--space-xsmall) 0;">Youtube Subscriber</p> 
-        <div class="statistic" style="justify-content:flex-start;margin-top:.5rem;">
-          <div class="statistic-item" onclick="javascript:alert('샘플 유아이에요!')" style="display:flex;">
+        <div class="statistic" data-size="small">
+          <div class="statistic-item" onclick="javascript:alert('샘플 유아이에요!')">
             <i class="statistic-label">팔로워</i>
-            <span class="statistic-value" style="margin:0 0 0 var(--space-small);font-size:var(--font-size-body);">62</span>
+            <span class="statistic-value">62</span>
           </div>
           <i class="icon-bullet"></i>
-          <div class="statistic-item" onclick="javascript:alert('샘플 유아이에요!')" style="display:flex;">
+          <div class="statistic-item" onclick="javascript:alert('샘플 유아이에요!')">
             <i class="statistic-label">팔로잉</i>
-            <span class="statistic-value" style="margin:0 0 0 var(--space-small);font-size:var(--font-size-body);">8</span>
+            <span class="statistic-value">8</span>
           </div>
         </div>
       </article>
@@ -434,13 +431,13 @@
       <h1 class="article-title">Chips</h1>
       <p class="article-description">사용자 여정을 보조하는 액션입니다. 실행 페이지 내에서 사용자가 즉각적인 결과를 기대할 수 있는 액션입니다.</p>
       
-      <aside class="article-aka" style="margin:var(--space) 0 0 0;">
+      <!-- <aside class="article-aka" style="margin:var(--space) 0 0 0;">
         <span class="tag">roles</span>
         <span class="hashtag" title="action">action</span>
         <span class="hashtag" title="choice">selection</span>
         <span class="hashtag" title="filtering">filtering</span>
         <span class="hashtag" title="filtering">search</span>
-      </aside>
+      </aside> -->
       <aside class="article-aka" style="margin:0;">
         <span class="tag">a.k.a.</span>
         <span class="hashtag" title="">Tag</span>
@@ -875,70 +872,6 @@
       <!-- <span class="tooltip" data-tooltip="Just like this one.">Any element</span> -->
     </article>
 
-    <article class="article js-observer js-scrollspy-section">
-      <!-- <span class="hashtag">attention</span> -->
-      <span class="hashtag">feedback</span>
-      <h1 class="article-title">작성 중</h1>
-      <p class="article-description">시스템이나 브라우저의 상태 이상, 사용자의 행동에 피드백합니다.</p>
-
-      <aside class="article-aka">
-        <span class="tag">a.k.a.</span>
-        <span class="hashtag" title="">Alert</span>
-        <span class="hashtag" title="">Message</span>
-        <span class="hashtag" title="">Callout</span>
-        <span class="hashtag" title="">Banner</span>
-      </aside>
-      <!-- <ul>
-        <li>브라우저가 role="alert" 속성이 있는 요소를 발견 하면 즉시 사용자에게 경고 내용을 읽습니다.</li>
-        <li>( + 게임에서 파티 탈퇴와 같이 직접 실행하지 않은, 시간을 특정하기 힘든 연속적인... 경우 여러 개가 필요하구나.)</li>
-        <p>toast=>snackbar(withAction) - 정리하기, single line / multiple lines (head,body 텍스트)</p>
-      </ul> -->
-
-      <h4 class="article-subhead">Guidelines</h4>
-      <ul>
-        <li>모든 액션에 피드백할 필요는 없습니다. (ex bad case: 인스타그램 앱에서 로그인되었다는 toast. 홈으로 이동과 피드 노출만으로 로그인 상태를 인지할 수 있다.)</li>
-        <li>닫기나 되돌리기와 같은 액션을 포함하지 않습니다. 액션이 필요한 경우에는 주목도가 높은 모달 형태를 사용하세요.</li>
-        <li>사용자의 귀책이 아닌 경우, 단순 "오류" 대신 "시스템 오류"와 같은 용어를 사용하여 사용자가 잘못한 것처럼 느끼지 않도록 합니다.</li>
-        <li>Don't show more than one at a time.</li>
-        <li>사라지는 시간을 정의.</li>
-      </ul>
-    
-      <h4 class="article-subhead">Editing Checklist</h4>
-      <ul>
-        <li>최대 2문장.</li>
-      </ul>
-      <!-- Icon: Informs users of the kind of notification at a glance.
-      Title: Gives users a quick overview of the notification.
-      Message (1optional): Provides additional detail and actionable steps for the user to take.
-      Inline notification action (1optional): Ghost button that allows users to address the notification or navigates them to a page with further details.
-      Close button (1optional): Closes the notification.
-      Time stamp (1optional): Shows the time the toast notification was sent. -->
-
-      <!-- <aside class="alert">
-        <button class="alert-close" aria-label="close"><i class="icon-x"></i></button>
-        <p class="alert-head">
-          This includes the <a href="#">global HTML attributes</a>.
-        </p>
-        <p class="alert-body">
-          <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus.
-        </p>
-      </aside> -->
-
-      <h6 class="article-subhead">Inline</h6>
-      <p role="alert" style="color:var(--red800);">비밀번호가 일치하지 않습니다.</p>
-
-      <h6 class="article-subhead">Callouts with Toast</h6>
-      <aside class="alert">
-        <span class="alert-icon">🧡</span>
-        <p class="alert-text">좋아요 표시한 동영상에 추가됨</p>
-      </aside>
-      <aside class="alert" data-temp="danger">
-        <p class="alert-text" style="color:var(--gray0);">인터넷에 연결되어 있지 않습니다.</p>
-        <!-- <button class="alert-close" aria-label="close alert"><i class="icon-x"></i></button> -->
-      </aside>
-
-    </article>
-
     <article class="article js-observer" hidden>
       <h1 class="article-title">File Uploader</h1>
       <p class="article-description">프로필 사진 또는 이미지 업로드.</p>
@@ -1179,55 +1112,6 @@
       <br />
       <p style="margin:var(--space-small) 0 0 0;">궁금증을 해결하지 못하셨나요? <a href="#">Get in touch with us.</a></p>
 
-    </article>
-
-
-    <article class="article js-observer js-scrollspy-section">
-      <!-- <span class="hashtag">attention</span>
-      <span class="hashtag">confirm</span> -->
-      <h1 class="article-title">Dialog</h1>
-      <p class="article-description">작성 중. todo modality 개념..</p>
-      <!-- <p>사용자의 정보나 재산이 변경되기 전에 다시 확인할 수 있도록.  </p> -->
-      <aside class="article-aka" style="margin:0;">
-        <span class="tag">a.k.a.</span>
-        <span class="hashtag" title="">Alert</span>
-        <span class="hashtag" title="">Modal</span>
-      </aside>
-      <!-- <p>사용자는 모달 형태의 집중된 환경에서(?) 리스크를 관리할 수 있습니다.</p> -->
-
-      <!-- <h4 class="article-subhead">Guidelines</h4>
-      <ul>
-        <li>dim엘리먼트 클릭 시 모달을 닫는다. 리액트에서. 구현하기 쉬움</li>
-        <li>dialog header/body/footer 단순 다이얼로그는 바디가 필요 없음.</li>
-        <li>두 개 이상의 레이어를 쌓지 않습니다.</li>
-      </ul>
-
-      <h4 class="article-subhead">Editing Checklist</h4>
-      <ul>
-        <li>버튼 레이블은 다이얼로그 제목의 동사와 맞추어 작성하세요</li>
-      </ul> -->
-
-      <h4 class="article-subhead">anatomy</h4>
-      <div class="article-anatomy is-anatomy">
-        <span class="article-anatomy-item"><b>dialog</b> role aria-labelledby aria-describedby</span>
-        <span class="article-anatomy-item is-nested">title</span>
-        <span class="article-anatomy-item is-nested">description <small class="is-optional">optional</small></span>
-        <span class="article-anatomy-item is-nested">buttonGroup theme="unary(confirm) | binary(cancel/confirm) <small class="is-optional">optional</small></span>
-      </div>
-      <aside class="dialog" role="dialog" aria-labelledby="dialog-title" aria-describedby="dialog-description">
-        <!-- <header class="dialog-head">
-          <h2 class="dialog-head-title">제목</h2>
-          <button class="dialog-close js-close" style="position:relative;right:auto;top:auto;" aria-label="delete"><i class="icon-x"></i></button>
-        </header>
-        <div class="dialog-body"></div> -->
-        <h1 class="dialog-title" id="dialog-title">부끄러우니까 보지마요!</h1>
-        <p class="dialog-description" id="dialog-description">다이얼로그 디스크립션입니다.</p>
-        <footer class="dialog-footer">
-          <button class="dialog-footer-confirm">안 볼래요</button>
-          <button class="dialog-footer-cancel">볼래요</button>
-        </footer>
-        <button class="dialog-close js-close" aria-label="delete"><i class="icon-x"></i></button>
-      </aside>
     </article>
 
 

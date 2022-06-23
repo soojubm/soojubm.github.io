@@ -22,28 +22,63 @@
     <article class="article js-observer">
       <h1 class="article-title">Bullet</h1>
       <p class="article-description">작성 중.</p>
+
+      <h6 class="article-subhead">Guidelines</h6>
       <ul>
-        <li>불릿, 콤마, 콜론, 슬래시, 따옴표, 괄호 등 지양. 정보의 복잡도가 증가하고 디자인하지 않았다는 인상.</li>
-        <li>클립보드에 복사를 위해 드래그 했을 때 불릿은 선택되지 않아야 합니다.</li>
+        <li>불릿, 콤마, 콜론, 슬래시, 따옴표, 괄호 등은 정보의 복잡도를 높이고 디자인하지 않은 인상을 주기 때문에 지양하세요.</li>
+        <li>클립보드 복사를 위해 텍스트 더미를 드래그앤드롭으로 선택할 때에 불릿은 선택되지 않아야 합니다.</li>
       </ul>
     </article>
 
     <article class="article js-observer">
       <h1 class="article-title">List</h1>
-      <p class="article-description">테스트.</p>
+      <p class="article-description">작성 중. 용어를 통일 (리스트 vs 목록).</p>
+
+      <div class="tile-flat">
+        <ul>
+          <li>순서가 없는 리스트</li>
+          <li>순서가 없는 리스트</li>
+        </ul>
+        <ol style="margin:.75rem 0;">
+          <li>순서가 있는 리스트</li>
+          <li>순서가 있는 리스트</li>
+        </ol>
+        <ul data-align="horizontal">
+          <li title="unordered list, level 1">순서가 없는 리스트</li>
+          <li style="margin:0 2rem 0 1rem;">가로로 정렬할 수 있어요</li>
+          <li>조건이 있어요</li>
+        </ul>
+        <table style="margin:.75rem 0;">
+          <tbody>
+            <tr style="border:0;">
+              <th>레이블</th>
+              <td>값</td>
+            </tr>
+            <tr style="border:0;">
+              <th>레이블</th>
+              <td>값</td>
+            </tr>
+          </tbody>
+        </table>
+        <dl>
+          <dt>Metadata</dt>
+          <dd>description list</dd>
+          <dt>Metadata</dt>
+          <dd>description list</dd>
+        </dl>
+      </div>
+
+      <!-- checklist(price card 등에서 사용) 정의. -->
+      <h4 class="article-subhead">Guidelines</h4>
+      <ul>
+        <li>텍스트 목록에 한정하여 리스트 태그(ul, ol, dl)로 마크업하세요. role=listbox/listitem</li>
+        <li>목록은 2 댑스로 제공하지 마세요. 작은 화면에서 들여쓰기로 인한 공간 낭비.</li>
+      </ul>
     </article>
 
     <article class="article js-observer">
       <h1 class="article-title">Statistic</h1>
       <p class="article-description">테스트.</p>
-
-      <ul>
-        <li>todo medium/small</li>
-        <li>todo countup</li>
-        <li>todo clickable</li>
-      </ul>
-
-      <br />
 
       <div class="statistic">
         <div class="statistic-item">
@@ -59,6 +94,13 @@
           <span class="statistic-value">Small</span>
         </div>
       </div>
+
+      <h6 class="article-subhead">Guidelines</h6>
+      <ul>
+        <li>todo medium/small</li>
+        <li>todo countup</li>
+        <li>todo clickable</li>
+      </ul>
     </article>
 
     <article class="article js-observer">
@@ -94,75 +136,10 @@
         <p>role=suggestion/deletion/insertion]</p>
       </aside>
 
-      <br />
-
+      <h6 class="article-subhead">Guidelines</h6>
       <ul>
-        <li>formattedCurrency() 함수로 금액을 표시하세요.</li>
+        <li>formattedCurrency()</li>
       </ul>
-    </article>
-
-    <article class="article js-observer js-scrollspy-section">
-      <h1 class="article-title">Texts</h1>
-
-      <!-- checklist(price card 등에서 사용) 정의. -->
-      <!-- <ul>
-        <li>리스트 태그(ul, ol, dl)는 텍스트 형태의 목록에만 마크업하세요. role=listbox/listitem</li>
-        <li>리스트는 2 댑스로 제공하지 않습니다.</li>
-        <li>3가지 이상의 대비로 위계를 설정하지 않습니다.</li>
-      </ul> -->
-
-      <div class="article-section">
-        <h4 class="article-subhead">List</h4>
-        <div class=" tile-flat-small" style="padding-left:var(--space);">
-          <ul>
-            <!-- <li title="unordered list, level 1">순서가 없는 리스트
-              <ul>
-                <li title="unordered list, level 2">순서가 없는 리스트</li>
-              </ul>
-            </li> -->
-            <li>순서가 없는 리스트</li>
-            <li>순서가 없는 리스트</li>
-          </ul>
-          <!-- <ol style="margin:var(--space-small) 0 0 0;">
-            <li>순서가 있는 리스트
-              <ol>
-                <li>순서가 있는 리스트</li>
-              </ol>
-            </li>
-            <li>순서가 있는 리스트</li>
-          </ol> -->
-        </div>
-        <div class="tile-flat-small" style="padding-left:var(--space);">
-          <ul data-align="horizontal">
-            <!-- <li title="unordered list, level 1">순서가 없는 리스트
-              <ul>
-                <li title="unordered list, level 2">순서가 없는 리스트</li>
-              </ul>
-            </li> -->
-            <li>순서가 없는 리스트</li>
-            <li>순서가 없는 리스트</li>
-            <li>순서가 없는 리스트</li>
-          </ul>
-        </div>
-      </div>
-
-      <h6 class="article-subhead">Metadata (description list)</h6>
-      <section class="kb tile-flat" style="margin-top:0;">
-        <table>
-          <tbody>
-            <tr style="border:0;">
-              <th>레이블</th>
-              <td>값</td>
-            </tr>
-            <tr style="border:0;">
-              <th>레이블</th>
-              <td>값</td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-
-      <!-- <p style="font-size:var(--font-size-caption);">아이콘을 레이블없이 단독으로 사용하지 않습니다. todo 참고 링크(아이콘은 클릭할 수 있음을 나타내는 역할)</p> -->
     </article>
   </section>
 </main>

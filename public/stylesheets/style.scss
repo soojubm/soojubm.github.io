@@ -140,6 +140,10 @@
 .statistic-label {display:block;color:var(--color-text-light);}
 .statistic-value {display:block;margin:-.25rem 0 0 0;@include text-subhead;}
 
+.statistic[data-size=small] {justify-content:flex-start;margin-top:.5rem;}
+.statistic[data-size=small] .statistic-item {display:flex;}
+.statistic[data-size=small] .statistic-value {margin-left:var(--space-xsmall);font-size:var(--font-size-body);}
+
 .full-width {
 	width: 100vw;
 	max-width: 100vw;

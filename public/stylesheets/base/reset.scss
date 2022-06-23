@@ -59,19 +59,14 @@ table tbody[role=rowgroup] tr th + th {width:auto;} // todo
 
 ul {list-style:disc;padding-left:1rem;}
 ul li {margin:.25em 0;} // for font-size.
+
 // todo ul
-.article-checklist li {padding-left:1rem;}
 .article-checklist li:before {content:'';left:0;top:7px;width:1rem;height:1rem;background:url('/public/icons/Black_check.svg') no-repeat 0 0;background-size:9px;opacity:.5;}
-.article-checklist li + li {margin-top: .25rem;}
-.article-checklist li .icon-check {display:none;}
-// .article-checklist li .icon-check {margin:0 var(--space-small) 0 0;position:absolute;left:1px;top:12px;}
-// .article-checklist li .icon-check {border-width:1px;width:6px;}
-.article-checklist[data-align=horizontal] {display:flex;flex-wrap:wrap;}
-.article-checklist[data-align=horizontal] li {margin:0 var(--space) 0 0;}
+// [data-align=horizontal] {display:flex;flex-wrap:wrap;}
+// [data-align=horizontal] li {margin:0 var(--space) 0 0;}
 
 // todo span 
-.checklist {position: relative;margin-left:-3px;
-  padding: 0px 0px 0px 25px;}
+.checklist {position: relative;margin-left:-3px;padding: 0px 0px 0px 25px;}
 .checklist span {display:inline-flex;align-items:center;justify-content:center;width:var(--size-tiny);height:var(--size-tiny);margin-right:.5rem;position:absolute;left:0;top:6px;}
 .checklist span i {display:inline-block;width:7px;height:3px;border-left:1px solid;border-bottom:1px solid;border-color:var(--gray800);vertical-align:middle;transform:translateY(-3px) rotate(-45deg);}
 
@@ -79,15 +74,12 @@ ul li {margin:.25em 0;} // for font-size.
 .xlist i:before {content:'';width:10px;height:.5px;background-color:var(--gray800);position:absolute;left:50%;top:50%;transform:translate(-50%, -50%) rotate(45deg);}
 .xlist i:after {content:'';width:.5px;height:10px;background-color:var(--gray800);position:absolute;left:50%;top:50%;transform:translate(-50%, -50%) rotate(45deg);}
 
-.article-icon {@include avatar-medium;}
-
-
-// ol {}
-// ol li {margin:.25rem 0;padding: 0 0 0 1rem;position:relative;counter-increment:listitem;}
-// ol li:before {content: counter(listitem) '.';position:absolute;left:0;}
-// ol li ol {margin:0 0 .5rem 0;}
-// ol li ol li {counter-increment:sub-list-item;}
-// ol li ol li:before {content: counter(sub-list-item,lower-alpha) '.';}
+ol {}
+ol li {margin:.25rem 0;padding: 0 0 0 1rem;position:relative;counter-increment:listitem;}
+ol li:before {content: counter(listitem) '.';position:absolute;left:0;}
+ol li ol {margin:0 0 .5rem 0;}
+ol li ol li {counter-increment:sub-list-item;}
+ol li ol li:before {content: counter(sub-list-item,lower-alpha) '.';}
 
 dl {display:flex;flex-wrap:wrap;}
 dl dt {margin:0 var(--space-small) 0 0;@include text-label;}
