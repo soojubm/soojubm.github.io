@@ -27,20 +27,28 @@
 .search-form {}
 .search-form-close {@include avatar-medium;position:absolute;left:1rem;top:14px;transform:rotate(180deg);}
 .search-form-title {margin:0 auto 1rem;font-size:var(--font-size-subhead);}
+
+
 .search-recommend {}
 .search-recommend-title {margin:0 auto var(--space-small);@include text-label;}
 .search-recommend-group {@include chip-group;}
 .search-recommend-group-item {@include chip;}
+
+.search-similar-item {@include tile-elevated-small;display:flex;align-items:center;margin:.25rem;padding:.25rem .5rem .25rem .25rem;}
+.search-similar-item figure {@include avatar-medium;margin:0 var(--space-after-avatar-medium) 0 0;}
+.search-similar-item span {display:block;padding:0 0 var(--adjust-label-line) 0;color:var(--color-text);}
+
 
 .search-recent {}
 .search-recent-title {margin:0 0 var(--space) 0;@include text-label;}
 .search-recent-group {@include chip-group;}
 .search-recent-group-item {@include chip;}
 
-.search-preview {}
-.search-preview-item {display:flex;align-items:center;position:relative;z-index:1;}
-.search-preview-item-avatar {@include avatar-medium;}
-
+.search-suggestion {}
+.search-suggestion-item {display:flex;align-items:center;position:relative;z-index:1;}
+.search-suggestion-item-avatar {@include avatar-medium;margin:0 var(--space-after-avatar-medium) 0 0;}
+.search-suggestion-item-delete {margin-left:auto;padding:.25rem;border-radius:var(--radius);color:var(--color-text-light);}
+.search-suggestion-item-delete:hover {background:var(--color-background);} // todo
 
 // todo dropdown width mixin
 // todo menu, empty 통일

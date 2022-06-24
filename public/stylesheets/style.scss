@@ -92,15 +92,8 @@
 .star.is-rated {color:#ffe623;transform:scale(1.2);}
 .star.is-hovered {color:#fc0;transform:scale(1.2);}
 
-.rating {text-align:center;position:relative;}
-.rating-title {}
-.rating-score {display:block;font-size:var(--font-size-huge);color:var(--color-text);}
-.rating-star {display:flex;justify-content:center;height:32px;position:relative;}
-.rating-star i {color:var(--gray200);}
-.rating-star-front {position:absolute;left:0;top:0;z-index:var(--zindex-default);}
-.rating-star-front i {color:rgba(255,200,0,1);}
-.rating-star-back {position:absolute;left:0;top:0;z-index:0;}
-.rating-count {}
+
+
 
 
 .scroll {position:fixed;bottom:1rem;right:1rem;z-index:var(--z-index-default);}
@@ -444,3 +437,83 @@ main, .footer {transition:all .6s ease;}
 
 .foundation-unit-title  + .foundation-unit-box {margin-left:-.75rem;}
 .foundation-unit-box + .foundation-unit-box {margin-right:-.75rem;}
+
+
+
+
+
+
+
+
+
+
+
+
+.bookitem {@include tile-elevated;}
+.bookitem-cover {height:14rem;background:var(--gray100);border-radius:var(--radius);position:relative;}
+.bookitem-cover img{
+  width: auto;
+  height: auto;
+  max-width: 8rem;
+  max-height: 100%;
+  margin: auto;
+  box-shadow: var(--shadow);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -.5rem;
+  transition: all .4s;}
+.bookitem-name {margin:1rem 0 0;font-size:var(--font-size-body);white-space:normal;}
+.bookitem-description {display:block;color:var(--color-text-light);}
+.bookitem-byline {}
+.bookitem-publishedyear {color:var(--color-text-light);}
+
+.ticker-headline {
+  cursor: default;
+  display: flex;
+  text-align: center;
+  user-select: none;
+}
+.ticker-headline h1 {
+  animation: marquee 12s linear infinite;
+  white-space: nowrap;
+  padding: 0 1em;
+}
+.ticker-headline:hover h1 {
+  animation-play-state: paused;
+}
+
+
+
+
+
+.graph2 {
+  display: flex;
+  align-items: center;
+}
+.graph-bar {
+  flex: auto;
+  height: 0.5rem;
+  margin: 0 var(--space-small);
+  background-color: var(--color-background-weak);
+  border-radius: var(--radius);
+  overflow: hidden;
+  position: relative;
+}
+.graph-bar b {
+  width: 90%;
+  height: inherit;
+  display: block;
+  background: gold;
+  position: absolute;
+}
+.graph-label {
+  display: block;
+  width: 46px;
+  font-weight: var(--font-weight-normal);
+}
+.graph-value {
+  width: 1.75rem;
+  text-align: right;
+  color: var(--color-text-light);
+}

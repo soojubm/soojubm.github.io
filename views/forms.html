@@ -1,18 +1,13 @@
 <main class="component">
-  
   <section class="hero" role="banner">
     <!-- <div class="hero-background"></div> -->
     <!-- <span class="hero-eyebrow">Components</span> -->
     <!-- <h1 class="hero-title" style="line-height:1.3;margin-top:.25rem;"><span style="color:var(--color-text-light);">We 🐷</span><br />built this city.</h1> -->
-    <h1 class="hero-title">Forms</h1>
-    <p class="hero-description">forms - input / forms - selection. 셀렉트박스는 무엇? 인터렉션 액션을 포함해서 묶는 방식. => 페이지가 너무 커짐.</p>
-
-    <h4>공통 가이드?</h4>
+    <h1 class="hero-title">Forms - Inputs</h1>
+    <p class="hero-description">키보드 입력이 필요한 폼 필드.</p>
     <ul>
       <li>레이블을 왼쪽에 배치하지 않습니다.</li>
-      <li>모든 textfield는 필수 입력 항목입니다. 선택 입력 항목인 경우에 '선택' 텍스트 가이드를 제공합니다.</li>
     </ul>
-
   </section>
 
   <nav class="component-navigation">
@@ -28,7 +23,7 @@
   <section class="component-body">
 
     <article class="article js-observer js-scrollspy-section">
-      <h1 class="article-title">Searchfields</h1>
+      <h1 class="article-title">Searchfield</h1>
       <p class="article-description">검색어를 입력합니다. 검색 실행하면 입력한 검색어에 맞는 콘텐츠를 결과로 표시합니다.</p>
 
       <div class="textfield">
@@ -37,6 +32,43 @@
         <input class="textfield-input js-input-test" type="search" id="search" placeholder="궁금한 인물이나 이슈가 있나요?" />
         <button class="textfield-clear" hidden><i class="icon-x"></i></button>
       </div>
+
+      <section class="search-recent" style="margin-top:1rem;">
+        <!-- <h2 class="search-recent-title">최근 검색</h2> -->
+        <!-- <button class="search-recommend-modify">수정</button> -->
+        <div class="search-suggestion-item item">
+          <figure class="search-suggestion-item-avatar"><i></i></figure>
+          <p class="item-label">개구리</p>
+          <button class="search-suggestion-item-delete">삭제</button>
+        </div>
+        <div class="search-suggestion-item item">
+          <figure class="search-suggestion-item-avatar"><i></i></figure>
+          <p class="item-label">올챙이</p>
+          <button class="search-suggestion-item-delete">삭제</button>
+        </div>
+        <!-- <div class="search-recent-group" role="group">
+          <a class="search-recent-group-item" href="#"><span class="chip-label">개구리</span></a>
+          <a class="search-recent-group-item" href="#"><span class="chip-label">달팽이</span></a>
+          <a class="search-recent-group-item" href="#"><span class="chip-label">매미</span></a>
+        </div> -->
+      </section>
+
+      <br />
+
+      <section class="search-suggestion">
+        <div class="search-suggestion-item item">
+          <figure class="search-suggestion-item-avatar"><i></i></figure>
+          <p class="item-label">자동완성</p>
+        </div>
+        <div class="search-suggestion-item item">
+          <figure class="search-suggestion-item-avatar"></figure>
+          <p>자동완성유아이</p>
+        </div>
+        <div class="search-suggestion-item button-elevated" style="z-index:auto;">
+          <figure class="search-suggestion-item-avatar"><i class="icon-search"></i></figure>
+          <p style="color:var(--color-primary);"><span>자동완</span>(으)로 검색</p>
+        </div>
+      </section>
 
       <h4 class="article-subhead">Props (TODO)</h4>
       <table>
@@ -143,6 +175,7 @@
       <h4 class="article-subhead">Guidelines</h4>
       <ul>
         <!-- <p><span><i></i></span> 벨리데이션 실행 조건: <b>제출(구현이 쉬움)</b> / 키보드 입력 쉬움 / 블러(구현이 복잡함. 흐름이 끊어짐)</b></p> -->
+        <li>기본적으로 Textfield는 필수 입력 필드입니다. 선택 입력에는 '선택' 텍스트로 가이드합니다.</li>
         <li>다중 선택을 위해 셀렉트박스를 사용하지 않습니다.</li>
         <li>stepper(quantity) / search field / selectbox(combo)</li>
 

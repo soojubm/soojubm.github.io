@@ -252,10 +252,8 @@
             <label for="temp55" style="padding-left:0;opacity:0;"></label>
           </span>
         </button>
-        <!-- <button class="navbar-user-trigger js-navbar-toggle" aria-haspopup="menu" aria-expanded="false">
-          <img src="https://source.unsplash.com/random" alt=""/>
-        </button> -->
-        <!-- <div class="navbar-user-card">
+        <!-- <button class="navbar-user-trigger" aria-haspopup="menu" aria-expanded="false"></button> -->
+        <div class="navbar-user-card" style="display:block;">
           <a class="user" href="#settings">
             <figure class="user-avatar">
               <div class="user-avatar-change"></div>
@@ -293,10 +291,44 @@
             <a href="#">Terms of Service</a>
             <small>샘플 유아이 컴포넌트입니다.</small>
           </footer>
-        </div> -->
+        </div>
       </div>
     </nav>
     <div class="navbar-backdrop"></div>
+
+    <article class="tile-elevated" style="max-width:400px;margin:0 auto;padding:1rem;z-index:1;">
+      <h3 style="text-align:center;">Ratings</h3>
+      <div class="statistic-item tile-flat" aria-label="별점 5개 만점에 3.9개를 받았습니다." style="text-align:center;z-index:auto;">
+        <i class="statistic-label">리뷰 116만개</i>
+        <span class="statistic-value" style="margin-left:-.5rem;">⭐ 4.8</span>
+      </div>
+      <div class="graph2">
+        <b class="graph-label">5 Stars</b>
+        <div class="graph-bar"><b style="width:68%;"></b></div>
+        <span class="graph-value">68%</span>
+      </div>
+      <div class="graph2">
+        <b class="graph-label">4 Stars</b>
+        <div class="graph-bar"><b style="width:24%;"></b></div>
+        <span class="graph-value">24%</span>
+      </div>
+      <div class="graph2">
+        <b class="graph-label">3 Stars</b>
+        <div class="graph-bar"><b style="width:0;"></b></div>
+        <span class="graph-value">0%</span>
+      </div>
+      <div class="graph2">
+        <b class="graph-label">2 Stars</b>
+        <div class="graph-bar"><b style="width:2%;"></b></div>
+        <span class="graph-value">2%</span>
+      </div>
+      <div class="graph2">
+        <b class="graph-label">1 Star</b>
+        <div class="graph-bar"><b style="width:6%;"></b></div>
+        <span class="graph-value">6%</span>
+      </div>
+      <small>별 다섯개에서 점수만큼 채우는 유아이는 요즘 잘 안 보임.</small>
+    </article>
 
     <!-- <form action="">
       <input type="checkbox">
@@ -314,27 +346,25 @@
       <input type="time" placeholder="time">
 
       <textarea name="" id=""></textarea>
+
+      
+      <input id="myURL" name="myURL" type="url" list="defaultURLs" />
+      <datalist id="defaultURLs">
+        <option value="https://developer.mozilla.org/"> </option>
+        <option value="http://www.google.com/"> </option>
+      </datalist>
+      
       <button type="submit">제출</button>
     </form> -->
-
-    <!-- <input id="myURL" name="myURL" type="url" list="defaultURLs">
-    <datalist id="defaultURLs">
-      <option value="https://developer.mozilla.org/">
-      <option value="http://www.google.com/">
-      <option value="http://www.microsoft.com/">
-      <option value="https://www.mozilla.org/">
-      <option value="http://w3.org/">
-    </datalist> -->
 
     <div id="view">
       <div class="home"></div>
     </div>
 
     <div id="footer"></div>
+    <aside id="modal"></aside>
 
     <!-- <div class="footer">infinite scroll test</div> -->
-
-    <aside id="modal"></aside>
 
     <script>
       document.addEventListener('DOMContentLoaded', () => {
