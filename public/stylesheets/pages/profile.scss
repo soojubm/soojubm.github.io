@@ -2,7 +2,7 @@
 .profile::after {content:'';display:block;clear:both;}
 
 .profile-user {float:left;width:320px;position:relative;z-index:var(--zindex-default);}
-.profile-user-avatar {float:right;@include avatar-huge;background-image:url('/public/images/soo.png');background-size:contain;}
+.profile-user-avatar {float:right;@include avatar-huge;background-image:url('https://source.unsplash.com/random');background-size:contain;}
 .profile-user-name {@include text-subhead;}
 .profile-user-id {display:block;}
 .profile-user-job {display:block;margin:.25rem 0 0;color:var(--color-text-light);}
@@ -42,7 +42,7 @@
 
 
 .profile-user {float:left;width:320px;position:relative;z-index:var(--zindex-default);}
-.profile-user-avatar {float:right;@include avatar-huge;background-image:url('/public/images/soo.png');background-size:contain;}
+.profile-user-avatar {float:right;@include avatar-huge;background-image:url('https://source.unsplash.com/random');background-size:contain;}
 .profile-user-name {@include text-subhead;}
 .profile-user-id {display:block;}
 
@@ -55,7 +55,7 @@
 
 // todo...
 .profile-foot-follow {@include button-primary;width:50%;margin:0 auto;display:block;}
-.profile-body {padding:0 0 64px 398px;box-sizing:border-box;position:relative;}
+.profile-body {padding:0 0 64px calc(320px + var(--size-large));box-sizing:border-box;position:relative;}
 
 // todo padding margin .... border?? -.25rem 하면 안 맞다
 [role=tablist] {@include tile-elevated-small;margin-top:0;display:flex;padding:.25rem !important;}

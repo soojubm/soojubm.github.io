@@ -1,41 +1,27 @@
 .setting {@include container-medium;padding-top:0;padding-bottom:2rem;}
-// todo padding-top
-.setting-head {margin:0 0 2rem;}
-.setting-head-title {@include text-title;}
-.setting-head-description {margin:var(--space-after-title) 0 0 0;}
 
-.setting-body {}
-.setting-subhead {display:none;margin:0 0 var(--space) 0;font-size:var(--font-size-body);}
-.setting-body-description {margin:-1rem 0 1.5rem 0;}
+.setting-subhead {margin:0 0 .75rem 0;font-size:var(--font-size-body);}
 
-.setting-item {
-  @include tile-elevated;
-  display:flex;
-  // padding-top:.5rem !important;padding-bottom:calc(.5rem + 2px) !important; // todo 2px
-  cursor:pointer;
-}
-.setting-item-label {width:5rem;@include text-label;line-height:var(--size-medium);}
-.setting-item-value {display:flex;flex-wrap:wrap;align-items:center;width:calc(100% - 5rem);margin-top:-.125rem;line-height:32px;}
+.setting-item {@include tile-elevated;}
+.setting-item:hover {@include hover-item;}
+.setting-item-label {@include text-label;}
+.setting-item-value {}
 .setting-item-value-username {width:100%;}
-.setting-item-value-address {width:100%;line-height:var(--font-line-height-small);}
+.setting-item-value-address {width:100%;}
 .setting-item-value-phone {width:100%;}
-.setting-item-change {@include avatar-medium;font-size:var(--font-size-body);position:absolute;right:1rem;}
-.setting-item-change b {display:none;background:var(--color-background);transform:translateX(200px);transition:all .5s;position:relative;z-index:var(--zindex-default);}
-.setting-item-change i {}
-.setting-item-form {width:100%;}
-.setting-item-form-foot {}
+
+.setting-item-form {padding:1rem 0 0;cursor:default;}
+
 .setting-item-foot {display:flex;}
 .setting-item-foot-confirm {@include button-primary;}
 .setting-item-foot-cancel {@include button-text;margin:0 0 0 var(--space-after-button);}
-// line-height:24px; 이거 모듈화~!
-.setting-item .textfield {
-  margin: 0 0 var(--space) 0;
-}
-.setting-item:hover {@include hover-item;}
-.setting-item:hover .setting-item-change b {transform:translateX(0);}
-.setting-item.is-opened {}
 
-.setting-item-form {padding:1rem 0 0;cursor:default;}
+
+// todo padding
+.setting-toggle {@include tile-elevated;display:flex;align-items:center;justify-content:space-between;padding:1rem .75rem;}
+.setting-toggle-label {@include text-body;}
+.setting-toggle-switch {}
+.setting-toggle-switch label {padding-left:48px !important;font-size:0;} // todo
 
 @media (--breakpoint-small) {
 }
