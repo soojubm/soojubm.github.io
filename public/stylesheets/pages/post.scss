@@ -73,10 +73,8 @@
 .post-comment-list-item-text {margin:var(--space-small) 0 0;}
 .post-comment-list-item-morevert {@include avatar-medium;position:absolute;right:0;top:0;}
 .post-comment-list-item-morevert:hover {}
-// todo tile margin
-.post-comment-list-item-menu {display:none;@include tile-elevated;width:var(--width-dropdown);margin:0;padding:0;position:absolute;right:40px;top:0;z-index:var(--zindex-default);}
-
-// todo
+// todo tile margin / menuitem
+.post-comment-list-item-menu {display:none;@include tile-elevated-small;width:var(--width-dropdown);margin:0;padding:0;position:absolute;right:40px;top:0;z-index:var(--zindex-default);}
 .post-comment-list-item-menu button {display: block;width:calc(100% - 2rem);margin: 1rem;text-align:left;position: relative;z-index: 1;}
 .post-comment-list-item-menu button:hover {@include hover-item;}
 .post-comment-list-item-reply {margin:1rem 0 0 0;@include link-outer;}
@@ -92,7 +90,7 @@
 // line-height 때무네 space로 간격을 주지 않고 1rem을 줌.
 .comment-write-name {display:none;width:var(--grid-column);margin:0 0 1rem 0;}
 .comment-write-password {display:none;width:var(--grid-column);margin:0 0 1rem 0;}
-.comment-write-submit {@include button-primary;}
+.comment-write-submit {@include button-secondary;}
 .comment-write-cancel {@include button-text;margin:0 auto 0 var(--space-after-button);}
 
 .is-focused .comment-write-name {display:block;}

@@ -204,31 +204,33 @@
             <p>🥰 뉴닉이 정리했다. <br />뉴닉이 정리한 ‘아이오와 코커스’ 콘텐츠 읽으러 가기.</p>
           </div>
         </div>
+
+        <div class="chat is-mine">
+          <figure class="chat-avatar" hidden>
+            <img src="https://source.unsplash.com/random" alt="" />
+          </figure>
+          <div>
+            <h5 class="chat-username">디자이너</h5>
+          </div>
+          <div class="chat-bubble" style="background:var(--color-newneek);">
+            <p style="color:#000;">
+              브랜드 경험에 대한 고민: 클릭율이 잘 나오도록 자극적인 단어를 활용 등이 대안 언론의 저널리즘?
+            </p>
+          </div>
+          <div class="chat-bubble" style="background:var(--color-newneek);">
+            <p style="color:#000;">
+              내일 뉴스레터를 받아볼 수 있다고 알려주면 구독 전환에 도움이 될까?
+            </p>
+          </div>
+          <div class="chat-bubble" style="background:var(--color-newneek);">
+            <p style="color:#000;">
+              어떻게 하면 뉴스레터 구독자가 웹사이트에 가입할까?
+            </p>
+          </div>
+        </div>
       </section>
 
-      <div class="chat is-mine">
-        <figure class="chat-avatar" hidden>
-          <img src="https://source.unsplash.com/random" alt="" />
-        </figure>
-        <div>
-          <h5 class="chat-username">디자이너</h5>
-        </div>
-        <div class="chat-bubble" style="background:var(--color-newneek);">
-          <p style="color:#000;">
-            브랜드 경험에 대한 고민: 클릭율이 잘 나오도록 자극적인 단어를 활용 등이 대안 언론의 저널리즘?
-          </p>
-        </div>
-        <div class="chat-bubble" style="background:var(--color-newneek);">
-          <p style="color:#000;">
-            내일 뉴스레터를 받아볼 수 있다고 알려주면 구독 전환에 도움이 될까?
-          </p>
-        </div>
-        <div class="chat-bubble" style="background:var(--color-newneek);">
-          <p style="color:#000;">
-            어떻게 하면 뉴스레터 구독자가 웹사이트에 가입할까?
-          </p>
-        </div>
-      </div>
+
 
       <p style="text-align:left;">2. 콘텐츠 말미 관련 콘텐츠를 추천하며 웹사이트로 랜딩. 콘텐츠 내부의 주황 링크보다 콘텐츠의 마지막에 관련 콘텐츠를 추천함으로써 콘텐츠를 읽는 흐름을 유지할 수 있고, 클릭율이 상대적으로 높다.</p>
       
@@ -241,7 +243,6 @@
       <!-- <article class="accordion js-accordion" aria-expanded="false">
         <h3 class="accordion-title" role="button">
           푸터 유틸리티 네비게이션에 서비스 피드백 링크를 배치(높은 접근성). 뉴스레터 피드백은 이미 뉴스레터에서 수집하고 있는데 웹사이트 피드백을 위한 링크에서 대부분의 피드백의 뉴스레터에 대한 피드백. 피드백 창구 일원화를 위해 웹사이트를 적극적으로 활용하는 사용자를 대상으로 피드백을 수집하기 위해 마이페이지로 옮겨서 필터링.
-          <span class="accordion-title-icon"><i class="icon-plus"></i></span>
         </h3>
         <section class="accordion-panel">
         </section>
@@ -249,7 +250,7 @@
 
       <!-- <article class="accordion js-accordion" aria-expanded="false">
         <h3 class="accordion-title" role="button">
-          작은 문제와 가설들 (todo)          <span class="accordion-title-icon"><i class="icon-plus"></i></span>
+          작은 문제와 가설들 (todo)
         </h3>
         <section class="accordion-panel">
           <li>웹사이트에서 사이트 개선을 위해 수집하는 피드백의 상당이 뉴스레터에 관한 피드백이다. 뉴스레터 피드백은 뉴스레터 하단에서 받고 있다.</li>
@@ -284,93 +285,22 @@
         </section>
       </article> -->
 
-       
-
-<!-- 
-      <div class="today">
-        <header class="today-head">
-          <div class="innerbox">
-            <span>
-              {getTodayDate()}
-            </span>
-            <h1 class="today-head-title">
-              {userStore.user.name} 뉴니커, <br />
-              좋은 하루!
-            </h1>
-          </div>
-        </header>
-        <div class="today-topbar">
-          <span>today</span>
-          <a class="today-user" to="{routes.mobileSetting}">
-            <Emoji emoji="🦔" />
-          </a>
+      <section class="today-poll">
+        <h2>오늘 기분이 어때요?</h2>
+        <p style="width:100%;text-align:center;">🦔고슴이: 고슴이는...!</p>
+        <div>
+          <figure><span>🧒</span></figure>
+          <span class="label">기타</span>
         </div>
-      
-        <section class="today-poll">
-          <h2>오늘 기분이 어때요?</h2>
-          <p style="width:100%;text-align:center;">🦔고슴이: 고슴이는...!</p>
-          <div>
-            <figure><span>🧒</span></figure>
-            <span class="label">기타</span>
-          </div>
-          <div>
-            <figure><span>👧</span></figure>
-            <span class="label">여성</span>
-          </div>
-          <div>
-            <figure><span>👦</span></figure>
-            <span class="label">남성</span>
-          </div>
-        </section>
-      
-        <a class="today-newsletter" href="">
-          <h1>오늘의 뉴스레터</h1>
-          <p>뉴스레터 제목</p>
-          <div>
-            <span>#안녕</span>
-          </div>
-          <figure style="min-height:400px;">
-            <img src="" alt="" /> -->
-            <!-- <div class="overay"></div>
-            <div class="marquee">
-              <p>오늘 뉴스레터를 다 읽었어요!</p>
-              <p>오늘 뉴스레터를 다 읽었어요!</p>
-              <p>오늘 뉴스레터를 다 읽었어요!</p>
-              <p>오늘 뉴스레터를 다 읽었어요!</p>
-              <p>오늘 뉴스레터를 다 읽었어요!</p>
-              <p>오늘 뉴스레터를 다 읽었어요!</p>
-            </div>
-          </figure>
-        </a>
-        <aside class="today-prev">
-          <a href="#">
-            <span>지난 뉴스레터 보기</span>
-            <i class="icon-arrow"></i>
-          </a>
-        </aside>
-      
-        <section class="today-timeline">
-          <span class="today-timeline-eyebrow">editor's pick</span>
-          <h2 class="today-timeline-heading">유난했던 2020년<br />이런 일들이 있었어요.</h2>
-          <a class="today-timeline-item" href="#">
-            <span class="today-timeline-item-media">👦</span>
-            <h3 class="today-timeline-item-title">제목</h3>
-            <time class="today-timeline-item-time">날짜</time>
-          </a>
-          <a class="today-timeline-item" href="#">
-            <span class="today-timeline-item-media">👦</span>
-            <h3 class="today-timeline-item-title">제목</h3>
-            <time class="today-timeline-item-time">날짜</time>
-          </a>
-          <a class="today-timeline-item" href="#">
-            <span class="today-timeline-item-media">👦</span>
-            <h3 class="today-timeline-item-title">제목</h3>
-            <time class="today-timeline-item-time">날짜</time>
-          </a>
-        </section>
-      </div> -->
-
-    </section>
+        <div>
+          <figure><span>👧</span></figure>
+          <span class="label">여성</span>
+        </div>
+        <div>
+          <figure><span>👦</span></figure>
+          <span class="label">남성</span>
+        </div>
+      </section>
   </article>
 
 

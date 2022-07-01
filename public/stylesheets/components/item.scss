@@ -1,0 +1,43 @@
+// description 수치(날짜/금액/수량) 이륾보다 더 강조될 수도 있음.
+// => avatar medium, avatar large (우측정렬, 버튼 아래)
+// 모든 item은 clickable? => no 액션 버튼이 존재할 수도 있음.
+// todo entry / message / created
+
+
+@mixin item {@include clearfix;width:100%;position:relative;z-index:1;}
+@mixin item-avatar-huge {@include avatar-huge;float:left;margin-right:var(--space-after-avatar-huge);background:url('https://source.unsplash.com/random') no-repeat center var(--color-background-weak);}
+@mixin item-avatar-large {@include avatar-large;float:left;margin-right:var(--space-after-avatar-large);}
+@mixin item-avatar-medium {@include avatar-medium;float:left;margin-right:var(--space-after-avatar-medium);}
+@mixin item-avatar-small {@include avatar-medium;float:left;margin-right:var(--space-after-avatar-small);}
+@mixin item-label {margin-left: var(--space-after-avatar-medium);color: var(--color-text);}
+
+.item {@include item;}
+.item:hover {@include hover-item;}
+.item + .item {margin:var(--space-after-item) 0 0 0;}
+.item-avatar {@include item-avatar-large;}
+.item-name {font-size:var(--font-size-body);color:var(--color-text);}
+.item-description {display:block;line-height:var(--font-line-height-small);color:var(--color-text-light);}
+.item-description + .item-name {margin-top:-.125rem;}
+
+.item-action {@include chip;background:var(--green100);color:var(--color-primary);@include position-right-top;}
+.item-action.is-active {border-color:transparent;background:var(--color-background-weak);color:var(--color-text);}
+.item-action-label {@include chip-label;}
+
+.item-delete {@include chip;position:absolute;right:0;top:0;}
+.item-delete:hover {}
+
+.item-follow {}
+
+
+
+.item[data-size=huge] .item-avatar {@include item-avatar-huge;}
+.item[data-size=huge] .item-name {@include text-subhead;}
+
+.item[data-size=large] .item-avatar {@include item-avatar-large;}
+.item[data-size=large] .item-name {font-weight:var(--font-weight-normal);font-size:var(--font-size-body);}
+
+.item[data-size=medium] .item-avatar {@include item-avatar-medium;}
+.item[data-size=medium] .item-name {line-height:var(--size-medium);}
+
+.item[data-size=small] .item-avatar {@include item-avatar-small;}
+.item[data-size=small] .item-name {line-height:var(--size-small);}

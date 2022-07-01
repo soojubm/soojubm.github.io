@@ -35,13 +35,12 @@
 @import 'components/tag';
 @import 'components/share';
 @import 'components/dropdown';
-
+@import 'components/timeline';
 
 @import 'components/skip';
 @import 'components/skeleton';
 
-// todo components
-@import 'abstracts/item';
+@import 'components/item';
 
 
 @import 'layout/navbar';
@@ -86,14 +85,6 @@
   // padding-bottom:.5rem;bottom:calc(constant(safe-area-inset-bottom));bottom:calc(env(safe-area-inset-bottom));margin:.5rem;z-index:var(--zindex-bottombar);
 }
 .bottombar-item.is-active {}
-
-.star {padding:0;font-size:var(--font-size-subhead);line-height:1;color:var(--color-text-light);transition:all .2s ease;}
-.star + .star {}
-.star.is-rated {color:#ffe623;transform:scale(1.2);}
-.star.is-hovered {color:#fc0;transform:scale(1.2);}
-
-
-
 
 
 .scroll {position:fixed;bottom:1rem;right:1rem;z-index:var(--z-index-default);}

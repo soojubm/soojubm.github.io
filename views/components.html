@@ -39,8 +39,6 @@
     <!-- <span class="hero-eyebrow">Components</span> -->
     <!-- <h1 class="hero-title" style="line-height:1.3;margin-top:.25rem;"><span style="color:var(--color-text-light);">We 🐷</span><br />built this city.</h1> -->
     <h1 class="hero-title">Components</h1>
-    <p class="hero-description"><em>todo 문서 작성에 도움이 안 되는 조잡한 정보 최소하기. check icon을 제거하고 커스텀 li를 위한 클래스를 정의하기. checklist for users</em></p>
-
     <p class="hero-description">todo loading state / dfn/abbr</p>
     <p>역할로 나눌 때의 문제 :: chip의 다양한 역할. 하지만 그 기능들은 지금 우연히 형태가 같을 뿐이지만 디지털 환경에서 하는 역할은 고정되어 있으며 더 좋은 경험을 위해 언제든 개선의 여지가 있다. => chip과 avatar는 그냥 그대로 정의해도 좋을 듯. 린하게...</p>
     <p>anatomy vs props 설명하려고 하는 정보 유사함. 잘 구분해보기. anatomy에서 접근성 속성과 html 구조를 다룬다.</p>
@@ -107,9 +105,8 @@
       <h1 class="article-title">Avatars</h1>
       <p class="article-description">개체(유저, 회사, 프로젝트 등)를 대표하는 시각 정보입니다.</p>
 
-      <!-- <h4 class="article-subhead">Sizes</h4> -->
       <article class="tile-flat">
-        <div class="avatar-group" role="group">
+        <div class="avatar-group" role="group" style="display:flex;">
           <figure class="item-avatar" data-size="huge" title="huge avatar" style="width:var(--size-huge);height:var(--size-huge);border:none;">
             <span class="avatar-badge"></span>
           </figure>
@@ -129,11 +126,11 @@
       <ul>
         <li>인접한 정보 중 최상위 위계의 시각 정보입니다.</li>
         <!-- <li>이미지, 텍스트, 아이콘, 이모지를 포함합니다.</li> -->
-        <li>todo default avatar</li>
         <li>memo chip(아이콘 버튼)과 명확한 분리가 필요함. 아이콘 버튼과 아바타 medium은 우연히 사이즈가 동일한 것임. pagination item은 chip과 같은 높이를 갖지만 chip이 아님. textfield 내부의 clear 버튼은 아이콘 버튼? 그냥 clear button?. textfield-surfix?</li>
         <li>memo mui에서 아이콘 아바타를 사용함</li>
+        <li>todo default avatar</li>
         <li>todo space-after-avatar</li>
-        <p>todo button/linkButton</p>
+        <li>todo button/linkButton</li>
         <!-- <li>
           인물, 그룹, 회사, 프로젝트 등의 unique entity로 대부분의 디자인 시스템에서 정의하지만 현재 이 디자인 시스템에서는.
           chip 컴포넌트는 active 상태를 포함하고 있기 때문에 다른 기표로 active 상태를 표시하는 경우에는 사용하지 않습니다.</li> -->
@@ -204,7 +201,7 @@
           <h3 class="item-name">예시 인터페이스</h3>
         </article>
         <p class="user-description" style="margin:var(--space-xsmall) 0;">Youtube Subscriber</p> 
-        <div class="statistic" data-size="small">
+        <div class="statistic" data-size="small" style="justify-content:flex-start;margin:var(--space-small) 0 0 0;">
           <div class="statistic-item" onclick="javascript:alert('샘플 유아이에요!')">
             <i class="statistic-label">팔로워</i>
             <span class="statistic-value">62</span>
@@ -242,6 +239,7 @@
         <article class="item" data-size="medium">
           <figure class="item-avatar"></figure>
           <h3 class="item-name">medium</h3>
+          <button class="item-delete"><i class="icon-x"></i></button>
         </article>
         <article class="item" data-size="small">
           <figure class="item-avatar"></figure>
@@ -250,6 +248,7 @@
       </div>
       <aside class="article-helper">
         <p>현재 이 컴포넌트가 썸네일 카드의 역할까지 하는 상황. 참고 profile 페이지의 display button.</p>
+        <p>우측 닫기/칩 액션 포지셔닝. 정렬 top:0/top:50%. large = chip / medium = close</p>
       </aside>
 
     </article>
@@ -273,15 +272,20 @@
       <!-- <p><span><i></i></span> 역할이 명확한 모두보기, 불러오는중, 더보기 등의 버튼은 합성해서 컴포넌트로 관리.</p> -->
       <!-- <li>버튼 아래에 가이드 텍스트를 배치하지 않습니다.<span hidden> (secondary 액션의 text 버튼이 아래에 위치하는 패턴 고려).</spanhi></li> -->
 
-      <div class="tile-flat">
+      <div class="tile-flat" style="z-index:1;">
         <div class="design-buttongroup">
-          <button class="article-tertiary" style="height:64px;font-size:var(--font-size-subhead);vertical-align:bottom;">Large</button>
-          <button class="article-tertiary" style="vertical-align:bottom;">Medium</button>
-          <!-- <button class="article-tertiary-small">Small</button> -->
+          <button class="article-primary">Primary</button>
+          <button class="article-secondary">Secondary</button>
+          <button class="article-tertiary">Tertiary</button>
+          <button class="article-text">Text</button>
         </div>
+        <button class="button-elevated" style="margin-bottom:0;">
+          <figure class="button-elevated-avatar"></figure>
+          <span class="button-elevated-label">elevated 버튼</span>
+        </button>
       </div>
       <aside class="article-helper">
-        <p>large는 프로모션 페이지의 call to action으로 제한적으로 사용합니다.</p>
+        <p>todo: text 버튼 지양(시각 장애. 버튼 처럼 보이지 않을 수도) 특수한 패턴의 배치를 사용.</p>
       </aside>
 
       <h4 class="article-subhead">Props</h4>
@@ -369,24 +373,18 @@
       <input type="submit" value="submit input">
       <input type="button" value="button input"> -->
 
-
-
-      <h4 class="article-subhead">Appearance</h4>
-      <div class="tile-flat" style="z-index:1;">
+      <h4 class="article-subhead">Sizes</h4>
+      <div class="tile-flat">
         <div class="design-buttongroup">
-          <button class="article-primary">Primary</button>
-          <button class="article-secondary">Secondary</button>
-          <button class="article-tertiary">Tertiary</button>
-          <button class="article-text">Text</button>
+          <button class="article-tertiary" style="height:64px;font-size:var(--font-size-subhead);vertical-align:bottom;">Large</button>
+          <button class="article-tertiary" style="vertical-align:bottom;">Medium</button>
+          <!-- <button class="article-tertiary-small">Small</button> -->
         </div>
-        <button class="button-elevated" style="margin-bottom:0;">
-          <figure class="button-elevated-avatar"></figure>
-          <span class="button-elevated-label">아티클 레벨에서 쓰는 elevated 버튼</span>
-        </button>
       </div>
       <aside class="article-helper">
-        <p>todo: text 버튼 지양(시각 장애. 버튼 처럼 보이지 않을 수도) 특수한 패턴의 배치를 사용.</p>
+        <p>large는 프로모션 페이지의 call to action으로 제한적으로 사용합니다.</p>
       </aside>
+
 
       <h4 class="article-subhead">States</h4>
       <div class="tile-flat">
@@ -405,15 +403,13 @@
       <h4 class="article-subhead">etc</h4>
       <div class="tile-flat">
         <div class="design-buttongroup">
-          <button class="article-tertiary">More Load (TODO icon)</button>
-          <button class="article-secondary">Follow</button>
-          <button class="article-tertiary">Unfollow</button>
+          <button class="article-tertiary" style="display:inline-flex;align-items:center;">Show more <figure style="display:flex;align-items:center;justify-content:center;width:var(--size-small);height:var(--size-small);"><i class="icon-arrow is-down"></i></figure></button>
+          <button class="article-secondary">Follow (toggle)</button>
           <button class="danger-button" aria-label="danger">Danger</button>
         </div>
       </div>
       <aside class="article-helper">
-        <p>more load를 full-width로 사용하지 마세요. 작게 사용해서 대비를 주세요.</p>
-        <p>follow/unfollow - toggle button</p>
+        <p>more load를 full-width로 사용하지 마세요. 콘텐츠보다 작아도 대비가 커서 훨씬 눈에 띕니다.</p>
       </aside>
 
     </article>
@@ -740,7 +736,7 @@
       <ul>
         <li>non-clickable<span hidden>triggering interaction</span></li>
         <li>Primary는 하나의 콘텐츠에 1개만 사용하세요.</li>
-        <li>태그 그룹에 4개 이상의 태그를 포함하지 마세요. <mark>핵심 키워드를 요약</mark>하여 사용자의 콘텐츠 탐색과 선택을 도와주기 위한 역할이기 때문에 너무 많은 태그 목록은 정보를 복잡하게 만들어 콘텐츠 탐색을 어렵게 합니다.</li>
+        <li>태그 그룹에 4개 이상의 태그를 포함하지 마세요. <mark>핵심 키워드를 요약</mark>하여 사용자의 콘텐츠 탐색과 선택을 돕는 역할이기 때문에 너무 많은 태그 목록을 노출하는 것은 콘텐츠 탐색을 어렵게 합니다.</li>
         <!-- <li>해시태그(#)는 항상 클릭할 수 있어야 합니다.</li> -->
       </ul>
 
@@ -772,13 +768,6 @@
         <span class="hashtag" title="">Card</span>
       </aside>
 
-      <h4 class="article-subhead">Guidelines</h4>
-      <ul>
-        <li>'클릭할 수 있음'의 기표로 elevated 스타일을 사용합니다. 타일 전체가 클릭 영역일 수도, 타일 내부에 클릭 가능한 요소를 포함할 수도 있습니다.</li>
-        <li>아티클 레벨에 사용합니다. 페이지 레벨의 타이틀과 디스크립션을 타일로 만들지 않습니다.</p>
-        <li>타일 내부 leading, tailing 엘리먼트의 시각보정이 필요할 수 있습니다.</p>
-      </ul>
-      <br />
       <div class="design-tile-flat" style="padding:1rem;">
         <h5 style="font-size:var(--font-size-subhead);">flat large with subhead</h5>
         <p style="margin:var(--space-after-description);">변별력이 없기는 하지만 inset을 더 키우면 작은 화면에서 공간 낭비로 미디어쿼리로 inset 조정이 필요해진다. 하지만 콘텐츠를 가운데 정렬로 용법을 제한한다면 괜찮다.</p>
@@ -794,6 +783,13 @@
       <div class="design-tile-flat-small">
         <b>flat small</b>
       </div>
+
+      <h4 class="article-subhead">Guidelines</h4>
+      <ul>
+        <li>'클릭할 수 있음'의 기표로 elevated 스타일을 사용합니다. 타일 전체가 클릭 영역일 수도, 타일 내부에 클릭 가능한 요소를 포함할 수도 있습니다.</li>
+        <li>아티클 레벨에 사용합니다. 페이지 레벨의 타이틀과 디스크립션을 타일로 만들지 않습니다.</p>
+        <li>타일 내부 leading, tailing 엘리먼트의 시각보정이 필요할 수 있습니다.</p>
+      </ul>
     </article>
 
 
@@ -801,7 +797,7 @@
       <span class="hashtag">visual information</span>
       <h1 class="article-title">Seperator</h1>
       <p class="article-description">선으로 콘텐츠를 구획합니다. 반복과 대비가 구획되었다는 인상을 주기 때문에 남용하지 않습니다.</p>
-      
+      <hr role="separator" />
       <h4 class="article-subhead">Guidelines</h4>
       <ul>
         <li>아티클 레벨에서 사용합니다. 섹션 레벨과 페이지 레벨에서는 충분한 여백으로 콘텐츠를 구획합니다.</lip>
@@ -809,7 +805,6 @@
         <!-- <p> -> 문제: 수정이 어렵다. (or css 인접 연산자)<</p> -->
       </ul>
       <br />
-      <hr role="separator" />
     </article>
 
     <article class="article js-observer js-scrollspy-section">
@@ -921,27 +916,18 @@
           <label for="temp55" style="padding-left:48px;"></label>
         </span>
       </button>
-
       <hr />
+      <div class="sidebar-item" role="listitem">
+        <figure class="sidebar-item-icon">🏹</figure>
+        <span class="sidebar-item-label">entity와 구별</span>
+        <span class="sidebar-item-tag tag" data-appearance="primary">새소식</span>
+      </div>
+      <hr />
+
       <button class="menu-item">
         <span class="menu-item-label">메뉴 아이템 레이블</span>
         <em class="menu-item-icon"><i class="icon-check"></i></em>
       </button>
-      <hr />
-      <div class="sidebar-item" role="listitem">
-        <figure class="sidebar-item-icon">🏹</figure>
-        <span class="sidebar-item-label">툴? avatar medium?</span>
-        <span class="sidebar-item-tag tag" data-appearance="primary">새소식</span>
-      </div>
-
-      <h4 class="article-subhead">anatomy</h4>
-      <div class="article-anatomy is-anatomy">
-        <span class="article-anatomy-item"><b>MenuItem</b></span>
-        <span class="article-anatomy-item is-nested">label</span>
-        <span class="article-anatomy-item is-nested">badge</span>
-        <span class="article-anatomy-item is-nested">heading icon <small class="is-optional">optional</small></span>
-        <span class="article-anatomy-item is-nested">tailing icon <small class="is-optional">optional</small></span>
-      </div>
 
       <h4 class="article-subhead">Memo</h4>
       <ul>
@@ -1097,7 +1083,7 @@
         <article class="accordion js-accordion" aria-expanded="false">
           <h3 class="accordion-title" role="button">
             탈퇴하고 싶어요.
-            <span class="accordion-title-icon"><i class="icon-chevron is-down"></i></span>
+            <figure class="accordion-title-icon"><i class="icon-chevron is-down"></i></figure>
           </h3>
           <div class="accordion-panel">
             <p>모든 국민은 건강하고 쾌적한 환경에서 생활할 권리를 가지며, 국가와 국민은 환경보전을 위하여 노력하여야 한다. 대통령은 내우·외환·천재·지변 또는 중대한 재정·경제상의 위기에 있어서 국가의 안전보장 또는 공공의 안녕질서를 유지하기 위하여 긴급한 조치가 필요하고 국회의 집회를 기다릴 여유가 없을 때에 한하여 최소한으로 필요한 재정·경제상의 처분을 하거나 이에 관하여 법률의 효력을 가지는 명령을 발할 수 있다.</p>
@@ -1107,7 +1093,7 @@
         <article class="accordion js-accordion" aria-expanded="false">
           <h3 class="accordion-title" role="button">
             주문을 취소하고 싶어요.
-            <span class="accordion-title-icon"><i class="icon-chevron is-down"></i></span>
+            <figure class="accordion-title-icon"><i class="icon-chevron is-down"></i></figure>
           </h3>
           <div class="accordion-panel">
             <p>모든 국민은 건강하고 쾌적한 환경에서 생활할 권리를 가지며, 국가와 국민은 환경보전을 위하여 노력하여야 한다. 대통령은 내우·외환·천재·지변 또는 중대한 재정·경제상의 위기에 있어서 국가의 안전보장 또는 공공의 안녕질서를 유지하기 위하여 긴급한 조치가 필요하고 국회의 집회를 기다릴 여유가 없을 때에 한하여 최소한으로 필요한 재정·경제상의 처분을 하거나 이에 관하여 법률의 효력을 가지는 명령을 발할 수 있다.</p>
@@ -1116,8 +1102,7 @@
         </article>
       </section>
 
-      <br />
-      <p style="margin:var(--space-small) 0 0 0;">궁금증을 해결하지 못하셨나요? <a href="#">Get in touch with us.</a></p>
+      <p style="margin:var(--space) 0 0 0;">궁금증을 해결하지 못하셨나요? <a href="#">Get in touch with us.</a></p>
 
     </article>
 
@@ -1147,6 +1132,41 @@
         <span class="hashtag" title="">EmptyState</span>
         <span class="hashtag" title="github">Blankslate</span>
       </aside>
+
+      <h4 class="article-subhead">Props</h4>
+      <table>
+        <caption hidden>Table Caption</caption>
+        <tbody role="rowgroup">
+          <tr role="row">
+            <th scope="row" style="font-weight:var(--font-weight-bold);color:var(--color-text);">name</th>
+            <th style="font-weight:var(--font-weight-bold);color:var(--color-text);">type</th>
+          </tr>
+          <tr role="row">
+            <th scope="row">src<abbr>?</abbr></th>
+            <td>string</td>
+          </tr>
+          <tr role="row">
+            <th scope="row">title<abbr>?</abbr></th>
+            <td>string</td>
+          </tr>
+          <tr role="row">
+            <th scope="row">description<abbr>?</abbr></th>
+            <td>string</td>
+          </tr>
+          <tr role="row">
+            <th scope="row">primaryActionLabel<abbr>?</abbr></th>
+            <td>string</td>
+          </tr>
+          <tr role="row">
+            <th scope="row">primaryActionHref<abbr>?</abbr></th>
+            <td>string</td>
+          </tr>
+          <tr role="row">
+            <th scope="row">secondaryActionLabel<abbr>?</abbr></th>
+            <td>string</td>
+          </tr>
+        </tbody>
+      </table>
 
       <h4 class="article-subhead">Guidelines</h4>
       <ul>

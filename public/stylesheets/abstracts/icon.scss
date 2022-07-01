@@ -91,23 +91,20 @@
 
 
 // todo icon-back
-.icon-arrow {
-  // 색사 정의하기.
-  position: relative;
-}
+.icon-arrow {position:relative;}
 .icon-arrow:before {
   content: '';
   border-top: 2px solid var(--icon-background);
   border-left: 2px solid var(--icon-background);
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
   position: absolute;
   left: calc(50% + 2px);
   top: 50%;
   transform: translate(-50%, -50%) rotate(135deg);}
 .icon-arrow:after {
   content: '';
-  width: 12px;
+  width: 10px;
   height: 2px;
   background-color: var(--icon-background);
   position: absolute;
@@ -116,14 +113,12 @@
   transform: translate(-50%, -50%);
 }
 .icon-arrow.is-left {transform:rotate(180deg);}
-.icon-arrow-right {padding:16px;position:relative;}
-.icon-arrow-right:before {content:'';display:block;width:16px;height:1px;background:var(--icon-background);position:absolute;left:16px;top:24px;transition:all .4s ease;}
-.icon-arrow-right:after {content:'';display:block;width:5px;height:1px;background:var(--icon-background);position:absolute;left:27px;top:22px;transform:rotate(45deg);transition:all .4s ease;}
+.icon-arrow.is-down {transform:rotate(90deg);}
 
-.icon-arrow.is-primary {
-  &:before {border-color:var(--green800);}
-  &:after {background-color:var(--green800);}
-}
+.icon-arrow-right {padding:16px;position:relative;}
+.icon-arrow-right:before {content:'';display:block;width:16px;height:1px;background:var(--icon-background);position:absolute;left:16px;top:24px;}
+.icon-arrow-right:after {content:'';display:block;width:5px;height:1px;background:var(--icon-background);position:absolute;left:27px;top:22px;transform:rotate(45deg);}
+
 
 .icon-arrow.is-external {display:inline-block;vertical-align:middle;transform:rotate(-45deg);}
 .icon-arrow.is-external:before {}
