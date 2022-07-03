@@ -93,7 +93,7 @@
 .navbar-user-trigger {@include avatar-medium;margin:0 0 0 var(--space-small);}
 // .navbar-user-trigger-avatar {width:24px;pointer-events:none;}
 .navbar-user-trigger img {display:block;width:24px;}
-.navbar-user-trigger-avatar:hover {@include hover-button;}
+.navbar-user-trigger-avatar:hover {}
 
 .navbar-user-card {max-width:400px;height:0;@include tile-elevated;position:absolute;top:32px;right:0;z-index:var(--zindex-popover);transform:scale(0);}
 .is-active + .navbar-user-card {height:auto;transform:scale(1);}

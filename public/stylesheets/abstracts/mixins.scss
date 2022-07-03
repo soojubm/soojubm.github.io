@@ -50,7 +50,6 @@
 }
 
 @mixin hover-text {text-decoration:underline;}
-@mixin hover-button {border:1px solid var(--gray800);}
 @mixin hover-item {
   // item in card component // active
   // 부모태그에 position: relative;zindex:1;
@@ -65,9 +64,8 @@
     left:var(--hover-outline);right:var(--hover-outline);top:var(--hover-outline);bottom:var(--hover-outline);
     z-index:-1;
   }
-  // todo 기본적으로 transparent 보더가 필요.
   // todo data 속성으로 override되기 떄문에 important.. 임시로 사용.
-  figure {background-color:var(--color-background) !important;border:1px solid var(--gray200) !important;}
+  figure {background-color:var(--color-background) !important;}
 }
 
 // todo
@@ -120,7 +118,6 @@
 // [role=group] input[type=radio]:checked + label {color:var(--color-text)}
 // [role=group] input[type=radio]:checked + label:before {border-color:var(--color-text);width:10px;height:4px;border-left: 2px solid #f3f2f1;border-bottom: 2px solid #f3f2f1;background:none;margin:0 8px 0 0;border-color:var(--color-text-light);vertical-align:3px;transform:rotate(-45deg);border-radius:0;border-right:0;border-top:0;position:static;left:auto;top:auto;}
 
-
 // ! group vs row vs rowgroup
 // 그냥나열되는경우(display:flex flex-wrap vs inline-block) 마진중첩서로 다르게 적용이 된다. / 
 // ? bleeding vs default = design navigation vs taglist
@@ -167,7 +164,6 @@
   }
 }
 
-// .avatar-group {@include chip-group;}
 .chip-group {@include chip-group;}
 .tag-group {@include tag-group;}
 
@@ -207,12 +203,6 @@
   transform: none;
 }
 
-@mixin theme($theme: DarkGray) {
-  background: $theme;
-  box-shadow: 0 0 1px rgba($theme, .25);
-  color: #fff;
-}
-
 
 // todo outer
 @mixin tag {
@@ -231,10 +221,4 @@
 @mixin hashtag {
   color: var(--color-text-light);
   &:before {content:'#';}
-}
-
-
-
-@mixin background {
-  position: absolute;
 }

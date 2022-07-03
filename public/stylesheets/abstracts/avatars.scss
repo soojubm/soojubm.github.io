@@ -1,8 +1,10 @@
 // ! avatar-medium의 display:flex가 hidden 속성과 충돌
-@mixin avatar {
+@mixin avatar($size: var(--size-medium)) {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: $size;
+  height: $size;
   border: var(--border);
   border-color: transparent;
   border-radius: var(--radius);
@@ -22,5 +24,3 @@
 @mixin avatar-medium {@include avatar;width:var(--size-medium);height:var(--size-medium);}
 @mixin avatar-small {@include avatar;width:var(--size-small);height:var(--size-small);}
 @mixin avatar-tiny {@include avatar;width:var(--size-tiny);height:var(--size-tiny);}
-
-.avatar-small {@include avatar-small;}

@@ -9,13 +9,13 @@
 	font-size: var(--font-size-subhead);
 }
 
-.landing-hero {max-width:1080px;margin:0 auto;background:antiquewhite;padding-top:5em;padding-bottom:8rem;text-align:left;}
-.landing-hero-object1 {width:320px;height:440px;background:url('https://source.unsplash.com/random') center;background-size:cover;border-radius:var(--radius);position:absolute;right:5vw;top:3rem;animation:bounceY 4s ease infinite alternate;			}
+.landing-hero {max-width:1080px;margin:2rem auto;padding-top:5em;padding-bottom:6rem;background:var(--color-background-weak);text-align:left;}
+.landing-hero-object1 {width:320px;height:400px;background:url('https://source.unsplash.com/random') center;background-size:cover;border-radius:var(--radius);position:absolute;right:5vw;top:3rem;animation:bounceY 4s ease infinite alternate;			}
 .landing-hero-object2 {max-width:320px;padding:1rem;z-index:1;position:absolute;right:260px;top:6rem;pointer-events:none;animation:bounceY 6s ease infinite alternate;}
 .landing-hero-cta {margin-right:.5rem;background:var(--color-primary);color:#fff;}
 
 
-.landing .product-features {margin-top:8rem;margin-bottom:6rem;}
+.landing .product-features {margin-top:10rem;margin-bottom:6rem;}
 
 .landing-2 {@include container-large;padding: var(--section-inset) var(--grid-margin);}
 .landing-2-background {@include bleeding;background:var(--color-background-weak);}

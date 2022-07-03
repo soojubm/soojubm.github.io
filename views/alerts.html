@@ -43,11 +43,52 @@
         <button class="dialog-close js-close" aria-label="delete"><i class="icon-x"></i></button>
       </aside>
 
+      <h4 class="article-subhead">Props</h4>
+      <table>
+        <caption hidden>
+          Table Caption
+        </caption>
+        <tbody role="rowgroup">
+          <tr role="row">
+            <th scope="row" style="font-weight:var(--font-weight-bold);color:var(--color-text);">name</th>
+            <th style="font-weight:var(--font-weight-bold);color:var(--color-text);">type</th>
+          </tr>
+          <tr role="row">
+            <th scope="row">title</th>
+            <td>string</td>
+          </tr>
+          <tr role="row">
+            <th scope="row">description<abbr>?</abbr></th>
+            <td>string</td>
+          </tr>
+          <tr role="row">
+            <th scope="row">DialogFooter</th>
+            <td>
+              React.Node - ButtonGroup
+              <p>또는 label</p>
+            </td>
+          </tr>
+          <tr role="row">
+            <th scope="row">primaryActionLabel<abbr>?</abbr></th>
+            <td>string</td>
+          </tr>
+          <tr role="row">
+            <th scope="row">secondaryActionLabel<abbr>?</abbr></th>
+            <td>string | '취소?'</td>
+          </tr>
+          <tr role="row">
+            <th scope="row">onSubmit</th>
+            <td>function()</td>
+          </tr>
+        </tbody>
+      </table>
+
       <h4 class="article-subhead">Guidelines</h4>
       <ul>
         <li>레이어를 2개 이상 쌓지 마세요..</li>
         <li>memo: dialog의 구조: header/body/footer 단순 다이얼로그는 복잡한 구조가 필요 없지만.</li>
         <li>memo: dim엘리먼트 클릭 시 모달을 닫으면 리액트에서 구현이 쉬움</li>
+        <li>memo: with buttonGroup(+ props)</li>
       </ul>
 
       <h4 class="article-subhead">Editing Checklist</h4>

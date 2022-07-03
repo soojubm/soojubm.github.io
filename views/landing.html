@@ -20,12 +20,12 @@
       <footer class="user-foot" style="position:absolute;right:1rem;top:1rem;">
         <button
           class="profile-foot-follow"
-          style="width:100px;height:var(--size-medium);padding-top:0;padding-bottom:0;font-weight:var(--font-weight-normal);background:var(--green100);border:none;color:var(--color-primary);"
+          style="width:auto;height:var(--size-medium);padding-top:0;padding-bottom:0;font-weight:var(--font-weight-normal);background:var(--green100);border:none;color:var(--color-primary);"
         >
-          <span class="item-action-label">팔로우</span>
+          <span class="item-action-label" style="padding:0;">팔로우</span>
         </button>
       </footer>
-      <div class="statistic" data-size="small">
+      <div class="statistic" data-size="small" style="justify-content:flex-start;margin-left:0;">
         <div class="statistic-item" onclick="javascript:alert('샘플 유아이에요!')" style="display:flex;">
           <i class="statistic-label">팔로워</i>
           <span class="statistic-value" style="margin:0 0 0 var(--space-small);font-size:var(--font-size-body);">62</span>
@@ -128,9 +128,9 @@
       Our creators are building plugins like linters, chart generators, animation tools, and many more productivity enhancers. You can, too.
     </p>
     <ul class="landing-3-description article-checklist">
-      <li><i class="icon-check" style="margin-right:var(--space-small)"></i>page inset.</li>
-      <li><i class="icon-check" style="margin-right:var(--space-small)"></i>header inset.</li>
-      <li><i class="icon-check" style="margin-right:var(--space-small)"></i>section inset.</li>
+      <li>page inset.</li>
+      <li>header inset.</li>
+      <li>section inset.</li>
     </ul>
     <a class="landing-3-button" href="">Create a plugin</a>
     <figure class="landing-3-figure"></figure>
@@ -151,10 +151,11 @@
       animation-name: marquee;
       animation-timing-function: linear;
       animation-iteration-count: infinite;
-      animation-duration: 4s;
+      animation-duration: 8s;
       will-change: auto;
       color: var(--color-text-light);
       font-size: 5rem;
+      font-weight: var(--font-weight-bold);
     }
     .aa p:after {
       content: '';

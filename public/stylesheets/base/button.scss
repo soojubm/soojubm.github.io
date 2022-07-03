@@ -29,7 +29,7 @@ button {@include reset-button;}
   display: inline-block;
   // min-width: 5rem;
   height: var(--size-large);
-  padding: 9px 1rem calc(9px + var(--adjust-label-line));
+  padding: 11px 1rem calc(11px + var(--adjust-label-line));
   box-sizing:border-box;
   border-radius: var(--radius);
   text-align: center;

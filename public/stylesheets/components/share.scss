@@ -5,7 +5,7 @@
 .share {@include tile-elevated;}
 .share-group {@include chip-group;}
 .share-back {@include avatar-medium;position:absolute;right:.5rem;top:.5rem;}
-.share-back:hover {@include hover-button;}
+.share-back:hover {}
 .share-title {margin:var(--space-leading-subhead) 0 var(--space-after-subhead) 0;@include text-subhead;}
 .share-facebook {display:flex;align-items:center;width:100%;margin:var(--space) 0;position:relative;z-index:var(--zindex-default);}
 .share-facebook:hover {@include hover-item;}
