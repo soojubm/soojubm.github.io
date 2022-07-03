@@ -46,7 +46,7 @@
 
 .search-suggestion {}
 // .search-suggestion-item {display:flex;align-items:center;position:relative;z-index:1;}
-// .search-suggestion-item-avatar {@include avatar-medium;margin:0 var(--space-after-avatar-medium) 0 0;}
+.search-suggestion-item-avatar {@include avatar-medium;margin:0 var(--space-after-avatar-medium) 0 0;}
 // .search-suggestion-item-delete {margin-left:auto;padding:.25rem;border-radius:var(--radius);color:var(--color-text-light);}
 .search-suggestion-item-delete:hover {background:var(--color-background);} // todo
 

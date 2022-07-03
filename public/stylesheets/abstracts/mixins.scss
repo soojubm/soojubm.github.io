@@ -64,8 +64,7 @@
     left:var(--hover-outline);right:var(--hover-outline);top:var(--hover-outline);bottom:var(--hover-outline);
     z-index:-1;
   }
-  // todo data 속성으로 override되기 떄문에 important.. 임시로 사용.
-  figure {background-color:var(--color-background) !important;}
+  figure {}
 }
 
 // todo
@@ -207,7 +206,7 @@
 // todo outer
 @mixin tag {
   display: inline-block;
-  height: 24px;
+  height: var(--size-small);
   padding: 0 .5rem;
   border-radius: var(--radius);
   border: var(--border);

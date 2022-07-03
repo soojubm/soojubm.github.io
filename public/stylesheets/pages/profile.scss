@@ -33,7 +33,7 @@
 .social {}
 .social-link {display:flex;align-items:center;@include item;margin-bottom:.75rem;}
 .social-link-icon {@include item-avatar-medium;}
-.social-link-label {@include item-label;}
+.social-link-label {@include item-label;margin-left:0;}
 .social-link:hover {@include hover-item;}
 .social-facebook figure {background-color:var(--color-facebook);}
 .social-pinterest figure {background-color:var(--color-pinterest);}

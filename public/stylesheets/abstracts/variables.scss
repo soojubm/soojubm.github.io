@@ -44,8 +44,8 @@ $transition-fade: opacity 0.15s linear;
   --font-size-helper: var(--font-size-tiny);
   --font-size-caption: var(--font-size-tiny);
 
-  --font-weight-normal: normal;
-  --font-weight-bold: bold;
+  --font-weight-normal: 400;
+  --font-weight-bold: 800;
   --font-weight-extrabold: null;
   --font-color: var(--gray800);
   --font-color-light: var(--gray400);

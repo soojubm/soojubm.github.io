@@ -5,12 +5,26 @@
 .cart-head time {display:block;margin:2rem 0 0;}
 
 //todo margin
-.cart-item {@include tile-elevated;margin:var(--space) var(--space-minus);}
+.cart-item {@include tile-elevated;padding:1rem;}
 .cart-item:after {content:'';display:block;clear:both;}
 .cart-item-delete {@include chip;position:absolute;left:.5rem;top:.5rem;z-index:var(--zindex-default);}
-.cart-item-thumbnail {float:left;display:block;width:20%;height:160px;background:var(--color-background-weak);border-radius:var(--radius);box-sizing:border-box;position:relative;}
-.cart-item-thumbnail img {width:auto;height:auto;max-width:100%;max-height:130%;margin:auto;position:absolute;left:0;right:0;top:40%;bottom:0;transition:all .4s;}
-.cart-item-thumbnail:hover img {transform:translateY(-4px);}
+.cart-item-thumbnail {float:left;display:block;width:20%;background:var(--color-background-weak);border-radius:var(--radius);box-sizing:border-box;position:relative;}
+// .cart-item-thumbnail img {width:auto;height:auto;max-width:100%;max-height:130%;margin:auto;position:absolute;left:0;right:0;top:40%;bottom:0;transition:all .4s;}
+.cart-item-thumbnail img {bottom: 0;
+  height: auto;
+  left: 0;
+  margin: auto;
+  max-height: 100%;
+  max-width: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: auto;}
+  // todo media size
+.cart-item-thumbnail:after {    content: "";
+  display: block;
+  padding-bottom: 100%;
+}
 .cart-item-name {float:left;width:35%;margin:-.5rem 0 0 0;padding:0 var(--space);box-sizing:border-box;}
 .cart-item-name-label {display:block;color:var(--color-text-light);}
 .cart-item-name-value {@include text-subhead;line-height:var(--font-line-height-small)}
@@ -61,7 +75,6 @@
 @media (--breakpoint-small) {
   .cart {}
   .cart-item-thumbnail {float:none;width:100%;margin:0 0 1rem 0;}
-  .cart-item-thumbnail img {max-width:120%;max-height: 120%;width: auto;height: auto;margin: auto;top: 40px;}
   .cart-item-name {float:none;width:100%;padding:1rem 0 0;}
   .cart-item-color {width:35%;margin:.5rem 0;padding:0;text-align:left;}
   .cart-item-qty {width:25%;margin:.5rem 0;padding:0;text-align:left;}
