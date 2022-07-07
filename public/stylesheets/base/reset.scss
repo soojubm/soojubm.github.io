@@ -62,8 +62,8 @@ ul li {margin:.25em 0;} // for font-size.
 
 // todo ul
 .article-checklist li:before {content:'';left:0;top:7px;width:1rem;height:1rem;background:url('/public/icons/Black_check.svg') no-repeat 0 0;background-size:9px;opacity:.5;}
-// [data-align=horizontal] {display:flex;flex-wrap:wrap;}
-// [data-align=horizontal] li {margin:0 var(--space) 0 0;}
+[data-align=horizontal] {display:flex;flex-wrap:wrap;}
+[data-align=horizontal] li {margin:0 2rem 0 0;}
 
 // todo span 
 .checklist {position: relative;margin-left:-3px;padding: 0px 0px 0px 25px;}

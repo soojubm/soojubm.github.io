@@ -1,24 +1,20 @@
 <main class="setting">
   <!-- <p class="setting-head-title">프로필을 완성하고 맞춤형 콘텐츠를</p> -->
   <!-- <p>Your name appears on your Profile page, as your byline, and in your responses. It is a required field.</p> -->
-
-  <br />
-  <br />
-  <!-- todo -->
   <article class="user" style="text-align:left;">
     <figure class="profile-user-avatar"></figure>
     <h2 class="profile-user-name">수줍이</h2>
     <span class="profile-user-id">soojubm@gmail.com</span>
     <span class="profile-user-job">UI Designer / Frontend Engineer</span>
   </article>
-  <hr />
+  <br />
   <div class="sidebar-item" role="listitem">
-    <figure class="sidebar-item-icon">🏹</figure>
-    <span class="sidebar-item-label">양궁</span>
+    <figure class="sidebar-item-icon"></figure>
+    <span class="sidebar-item-label">개인정보</span>
   </div>
   <div class="sidebar-item" role="listitem">
-    <figure class="sidebar-item-icon">🏹</figure>
-    <span class="sidebar-item-label">양궁</span>
+    <figure class="sidebar-item-icon"></figure>
+    <span class="sidebar-item-label">비밀번호 변경</span>
   </div>
 
   <br />
@@ -161,17 +157,18 @@
 
         <fieldset role="radiogroup">
           <legend hidden>radiogroup</legend>
+
+          <div class="radio">
+            <input type="radio" id="gender-etc" name="gender" value="" checked />
+            <label for="gender-etc" title="Video Killed the Radio Button">기타</label>
+          </div>
           <div class="radio" style="margin-top:0;">
             <input type="radio" id="gender-man" name="gender" value="" />
             <label for="gender-man" title="Video Killed the Radio Button">남성</label>
           </div>
           <div class="radio">
-            <input type="radio" id="gender-etc" name="gender" value="" checked />
-            <label for="gender-etc" title="Video Killed the Radio Button">여성</label>
-          </div>
-          <div class="radio">
-            <input type="radio" id="gender-etc" name="gender" value="" checked />
-            <label for="gender-etc" title="Video Killed the Radio Button">공개 안 함</label>
+            <input type="radio" id="gender-woman" name="gender" value="" />
+            <label for="gender-woman" title="Video Killed the Radio Button">여성</label>
           </div>
         </fieldset>
         <!-- <footer class="setting-item-foot">

@@ -200,8 +200,7 @@ input[type=file] + label:after {display:none;}
 .file-title {}
 .file-helper {margin:.25rem 0 0;}
 .file-input {opacity:0;}
-// todo
-.file-label {@include button-secondary;padding-bottom:10px;cursor:pointer;}
+.file-label {@include button-secondary;cursor:pointer;}
 .file-attachment {margin:2rem 0 0;}
 .file-attachment-title {margin:.5rem 0;@include text-label;}
 .file-attachment-helper {}

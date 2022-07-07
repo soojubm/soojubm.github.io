@@ -3,10 +3,8 @@
 @import 'abstracts/variables';
 @import 'abstracts/mixins';
 
-// todo mixins
-@import 'abstracts/avatars';
-@import 'abstracts/tiles';
-
+@import 'components/avatars'; // -elevated-avatar
+@import 'components/tiles'; // for elevated-button
 
 @import 'abstracts/webfonts';
 @import 'abstracts/icon';
@@ -115,17 +113,11 @@
 }
 
 
-.avatar-badge {
-  @include avatar-tiny;border:2px solid var(--color-background);background:gold;position:absolute;left:-.25rem;top:-.25rem;
-}
-// todo
-.notification-unread {
-  @include avatar-tiny;border:2px solid var(--color-background);background:gold;position:absolute;left:-.25rem;top:-.25rem;
-}
+.avatar-badge {@include avatar-tiny;border:2px solid var(--color-background);background:var(--color-accent);position:absolute;left:-.25rem;top:-.25rem;z-index:1;}
 
 
 .statistic {display:flex;justify-content:space-evenly;}
-.statistic-item {position:relative;z-index:1;}
+.statistic-item {position:relative;}
 .statistic-item:hover {@include hover-item;}
 .statistic-label {display:block;color:var(--color-text-light);}
 .statistic-value {display:block;margin:-.25rem 0 0 0;@include text-subhead;}
@@ -394,7 +386,6 @@ q:before {
 
 
 
-// todo not
 main, .footer {transition:all .6s ease;}
 
 .is-opened-menu .design,
@@ -404,10 +395,7 @@ main, .footer {transition:all .6s ease;}
 
 .is-opened-menu .navbar-logo {z-index: 8;}
 
-.is-opened-menu .footer {margin-left:calc(var(--menu-width));}
-
 @media (--breakpoint-small) {
-  .is-opened-menu .footer {margin-left:0;}
   .is-opened-menu .design,
   .is-opened-menu .component,
   .is-opened-menu .token,
@@ -495,7 +483,7 @@ main, .footer {transition:all .6s ease;}
   width: 90%;
   height: inherit;
   display: block;
-  background: gold;
+  background: var(--color-accent);
   position: absolute;
 }
 .graph-label {

@@ -29,8 +29,9 @@
       <div class="textfield">
         <button class="textfield-prefix" style="top:11px;"><i class="icon-search"></i></button>
         <!-- <label class="textfield-label" for="search">검색(시각적으로숨겨야함)</label> -->
-        <input class="textfield-input js-input-test" type="search" id="search" placeholder="궁금한 인물이나 이슈가 있나요?" />
-        <button class="textfield-clear" hidden><i class="icon-x"></i></button>
+        <input class="textfield-input js-input-test" type="search" id="search" placeholder="궁금한 인물이나 이슈가 있나요?" style="width:calc(100% - var(--size-huge));" />
+        <button class="textfield-clear" hidden style="right:calc(var(--size-huge) + var(--space));"><i class="icon-x"></i></button>
+        <button class="textfield-back" style="position:absolute;right:0;top:0;">취소</button>
       </div>
 
       <section class="search-recent" style="margin-top:1rem;">
@@ -123,11 +124,6 @@
         </tbody>
       </table>
 
-      <h4 class="article-subhead">Editing Checklist</h4>
-      <ul>
-        <li>내용없음.</li>
-      </ul>
-
       <h4 class="article-subhead">Guidelines</h4>
       <ul>
         <li>검색 필드 내부에 뒤로가기 버튼을 포함하지 않습니다. 뒤로가기 버튼은 항상 title bar에 위치합니다.</li>
@@ -135,10 +131,19 @@
         <li>iOS 검색 패턴 중 하나. 검색필드를 클릭하면 필드에 focus되는 것이 아니라 네이티브 검색바와 검색 화면을 보여주는 패턴.</li>
         <li>검색 페이지 또는 검색 탭에서 focus 상태 상태에 따라 추천 컨텐츠(focusout)와 최근 검색 결과(focuson)를 구분하여 표시합니다.</li>
         <li>일반 텍스트필드와 구별할 수 있도록 시각적인 단서를 제공하기.</li>
-        <li>todo: iOS 취소 버튼 (focusout 액션과 함께 추천/개인화 콘텐츠 탐색 화면)</li>
+        <li>취소 버튼은 iOS 패턴. (focusout 되며 추천/개인화 콘텐츠 탐색 화면으로 전환)</li>
         <li>todo: 글로벌 검색 패턴과 로컬 검색 패턴을 정의하기.</li>
       </ul>
 
+      <h4 class="article-subhead">Editing Checklist</h4>
+      <ul>
+        <li>placeholder 작성법.</li>
+      </ul>
+
+      <blockquote>
+        <p>검색 필드를 클릭했을 때 검색을 입력할 수 있는 패턴과 검색 탭으로 이동하는 2가지 패턴이 가능하다. 검색 탭으로 이동하는 패턴에서는 readonly.</p>
+        <p>검색 필드는 helper text가 필요 없음.</p>
+      </blockquote>
 
       <h4 class="article-subhead">References</h4>
       <a href="https://developer.apple.com/documentation/uikit/uisearchbar">HIG searchbar</a>
@@ -185,7 +190,7 @@
 
       <h4 class="article-subhead">Editing Checklist</h4>
       <ul>
-        <li>todo: helper(help message)와 feedback message를 분리하기</li>
+        <li>todo: helper(help message)와 feedback message를 구별</li>
       </ul>
 
       <h4 class="article-subhead">anatomy</h4>

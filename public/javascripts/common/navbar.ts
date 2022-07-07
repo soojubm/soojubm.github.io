@@ -11,7 +11,6 @@ export function initializeNavbar() {
   // todo
   document.body.classList.remove('is-opened-menu')
 
-  // todo removeEvnetListeners
   // document.removeEventListener('click', () => {})
 }
 

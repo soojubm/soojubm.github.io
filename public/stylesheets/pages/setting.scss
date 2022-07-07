@@ -1,4 +1,4 @@
-.setting {@include container-medium;padding-top:0;padding-bottom:2rem;}
+.setting {@include container-medium;}
 
 .setting-subhead {margin:0 0 .75rem 0;font-size:var(--font-size-body);}
 
@@ -18,7 +18,7 @@
 
 
 // todo padding
-.setting-toggle {@include tile-elevated;display:flex;align-items:center;justify-content:space-between;padding:1rem .75rem;}
+.setting-toggle {@include tile-elevated;display:flex;align-items:center;justify-content:space-between;}
 .setting-toggle-label {@include text-body;}
 .setting-toggle-switch {}
 .setting-toggle-switch label {padding-left:48px !important;font-size:0;} // todo

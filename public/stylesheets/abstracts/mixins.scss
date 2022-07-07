@@ -1,12 +1,13 @@
 // todo bleeding / group-bleeding
 // nextjs cssmodule composes
-// text란 prefix가 필요한가?
 
-@mixin text-headlilne {text-indent:-3px;}
+// ! text-heading-medium / text-heading-small
 @mixin text-title {font-size:var(--font-size-huge);line-height:var(--font-line-height-small);font-weight:var(--font-weight-bold);color:var(--color-text);letter-spacing:-.0125rem;text-indent:-1px;}
 @mixin text-subhead {font-size:var(--font-size-subhead);font-weight:var(--font-weight-bold);color:var(--color-text);letter-spacing:-.0125rem;}
-@mixin text-body {font-size:14px;font-weight:var(--font-weight-normal);}
+
+@mixin text-body {font-size:.875rem;font-weight:var(--font-weight-normal);}
 @mixin text-body-large {font-size:var(--font-size-subhead);}
+
 @mixin text-caption {font-size:var(--font-size-caption);font-weight:var(--font-weight-bold);}
 @mixin text-label {font-size:var(--font-size-body);font-weight:normal;color:var(--color-text-light);}
 
@@ -23,7 +24,8 @@
   color:var(--color-primary);
   &:hover {text-decoration:underline;}
 }
-
+.link-inner {@include link-inner;}
+.link-outer {@include link-outer;}
 
 @mixin image-centered {width:auto;height:auto;max-width:150%;max-height:150%;margin:auto;position:absolute;left:0;right:0;top:0;bottom:0;}
 @mixin bleeding {
@@ -166,8 +168,7 @@
 .chip-group {@include chip-group;}
 .tag-group {@include tag-group;}
 
-.link-inner {@include link-inner;}
-.link-outer {@include link-outer;}
+
 
 
 .linebreak-always {}
@@ -215,7 +216,7 @@
   font-size: var(--font-size-caption);
   color: var(--color-text);
 }
-@mixin tag-primary {@include tag;border-color:gold;background-color:gold;color:var(--gray800);}
+@mixin tag-primary {@include tag;border-color:var(--color-accent);background-color:var(--color-accent);color:var(--gray800);}
 
 @mixin hashtag {
   color: var(--color-text-light);

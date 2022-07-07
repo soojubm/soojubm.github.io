@@ -32,17 +32,16 @@ $transition-fade: opacity 0.15s linear;
   --font-size-huge: 2rem;
   --font-size-large: 1.125rem;
   --font-size-medium: .875rem;
-  --font-size-tiny: .75rem;
+  --font-size-small: .75rem;
 
   // mixin
-  --font-size-display: 4rem;
   --font-size-title: var(--font-size-huge);
   --font-size-subhead: var(--font-size-large);
   --font-size-body: var(--font-size-medium);
-  --font-size-body-large: null;
+  --font-size-body-large: var(--font-size-large);
 
-  --font-size-helper: var(--font-size-tiny);
-  --font-size-caption: var(--font-size-tiny);
+  --font-size-helper: var(--font-size-small);
+  --font-size-caption: var(--font-size-small);
 
   --font-weight-normal: 400;
   --font-weight-bold: 800;
@@ -67,10 +66,12 @@ $transition-fade: opacity 0.15s linear;
   --green800: #1b995c;
   --red100: rgba(243, 68, 97, .06);
   --red800: #f02849;
+  --yellow800: gold;
 
   --color-primary: var(--green800);
-  --clor-primary-light: null;
-  --color-secondary: gold;
+  --color-primary-light: null;
+  --color-secondary: var(--yellow800);
+  --color-accent: var(--yellow800);
   --color-google: #fff;
   --color-facebook: hsl(214, 89%, 52%);
   --color-twitter: rgb(29, 161, 242);
@@ -99,7 +100,7 @@ $transition-fade: opacity 0.15s linear;
   --color-text-light: var(--gray400);
   --color-text-strong: var(--gray0);
   --color-text-link: var(--color-primary);
-  --color-text-disabled: 0; // todo
+  --color-text-disabled: null;
   --disabled-color-text: 0;
   --disabled-color-background: 0;
   --disabled-color-border: 0;

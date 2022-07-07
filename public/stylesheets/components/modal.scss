@@ -13,7 +13,6 @@
 @mixin dialog {}
 
 // todo dialog container
-// todo portfolio modal width
 .modal {@include dim;} /* pointer-events:none */
 .modal-close {@include avatar-medium;}
 .modal-dim {display:none;@include dim;}
@@ -27,8 +26,7 @@
 .modal-body-image {}
 .modal-body-image img {display:block;}
 .modal-body-image img + img {margin:var(--space) 0 0 0;}
-// todo
-.modal-foot {padding:16px 0;text-align:right;}
+.modal-foot {padding:var(--space) 0;text-align:right;}
 
 @media (--breakpoint-small) {
   .modal-dialog {padding-left:5%;padding-right:5%;padding-top:2rem;}

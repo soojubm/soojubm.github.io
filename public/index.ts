@@ -418,7 +418,7 @@ function lazyLoading() {
 
         view.insertAdjacentHTML(
           'beforeend',
-          `<div style="height:120px;line-height:120px;background:gold;text-align:center;">무한스크롤 ${item.name}</div>`,
+          `<div style="height:120px;line-height:120px;background:var(--color-accent);text-align:center;">무한스크롤 ${item.name}</div>`,
         )
       })
     } catch (error) {}

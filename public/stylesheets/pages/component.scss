@@ -4,17 +4,7 @@
 .component-navigation {background:var(--color-background);padding-left:var(--grid-margin);overflow:hidden;position:sticky;top:calc(var(--titlebar-height));z-index:7;}
 // .component-navigation-background {@include bleeding;border-bottom:var(--border);}
 .component-navigation-scroll {@include group-bleeding;flex-wrap:unset;margin:0 var(--grid-margin-minus);padding:.75rem var(--grid-margin);}
-.component-navigation-scroll > * {min-width:auto;} // todo
-
-// todo
-
-// .component .tile-flat,
-// .component .tile-flat-small,
-// .component .tile-elevated,
-// .component .tile-elevated-small {
-//   margin-left:-.5rem;
-//   margin-right:-.5rem;
-// }
+.component-navigation-scroll > * {min-width:auto;}
 
 @media (--breakpoint-large) {
   .design {padding:0;}

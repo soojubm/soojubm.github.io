@@ -4,7 +4,7 @@
 .navbar-menu {display:flex;align-items:center;margin:-2px 0 0 var(--space);position:relative;z-index:var(--zindex-menu);}
 .navbar-menu-item {padding:0 var(--space);color:var(--color-text);position:relative;z-index:var(--zindex-default);transition:all .4s;} // m p reset
 .navbar-menu-item.has-submenu {z-index:0;}
-.navbar-menu-item.is-current:before {content:'';display:block;width:4px;height:4px;background:gold;}
+.navbar-menu-item.is-current:before {content:'';display:block;width:4px;height:4px;background:var(--color-accent);}
 
 .navbar-menu-item > span {display:block;margin-top:-.5rem;color:inherit;@include text-label;}
 .navbar-menu-item:before {display:none;}
@@ -17,7 +17,6 @@
 .navbar-backdrop {height:var(--navbar-height);}
 
 // item - link
-// todo z-index
 // .navbar-burger.is-active {position:fixed;}
 
 .navbar-search-trigger {@include avatar-medium;}
@@ -65,7 +64,7 @@
 .navbar-notification-menu-title {margin:var(--space-leading-subhead) 0 var(--space-after-subhead);font-size:var(--font-size-subhead);}
 .navbar-notification-menu-all {position:absolute;top:13px;right:1rem;}
 .navbar-notification-menu-item {padding:.5rem 1rem;cursor:pointer;position:relative;}
-.navbar-notification-menu-item:hover {background:var(--color-background);;}
+.navbar-notification-menu-item:hover {background:var(--color-background);}
 .navbar-notification-menu footer {padding:var(--space) 0;}
 .navbar-notification-menu footer button {@include link-outer;}
 .navbar-notification-empty {width:var(--width-tiny);@include tile-elevated;position:absolute;top:36px;right:0;z-index:var(--zindex-menu);transform:scale(0);}
@@ -86,7 +85,6 @@
 .notification-item-content b {font-weight:var(--font-weight-normal);}
 .notification-item-date {display:block;font-size:var(--font-size-caption);color:var(--color-text-light);}
 
-.notification-unread {display:block;@include avatar-tiny;font-size:var(--font-size-caption);position:absolute;left:-.125rem;top:-.125rem;z-index:var(--zindex-default);}
 
 // todo util
 .navbar-user {display:flex;align-items:center;margin:0 0 0 auto;position:relative;}

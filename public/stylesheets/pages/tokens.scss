@@ -33,8 +33,6 @@
 .tokens {}
 // min-height:var(--size-large);todo
 .token-item {@include tile-flat;overflow:hidden;}
-// todo ! 
-.token-item.is-scrolled {margin-top:.75rem;}
 .token-item-avatar {@include avatar-large;width:100%;margin:0 0 var(--space-small) 0;}
 .token-item b {display:block;margin:var(--space-leading-title) 0 0 0;font-weight:var(--font-weight-normal);}
 .token-item > div {font-size:var(--font-size-caption);color:var(--color-text-light);}

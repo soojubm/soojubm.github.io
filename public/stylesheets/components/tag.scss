@@ -1,11 +1,11 @@
 .tag {@include tag;}
 .tag-icon {margin:0 var(--space-xsmall) 0 0;}
-.tag[data-appearance=primary] {@include tag-primary;border-color:gold;}
+.tag[data-appearance=primary] {@include tag-primary;border-color:var(--color-accent);}
 .tag[data-appearance=secondary] {@include tag;border-color:var(--green100);background-color:var(--green100);color:var(--green800);}
 .tag[data-role=accent] {display:inline-flex;} // todo selector
 
 .hashtag {@include hashtag;}
 
 .badge {display:inline-flex;align-items:center;justify-content:center;height:var(--size-tiny);padding:0 var(--space-small);border-radius:var(--radius);font-size:var(--font-size-caption);}
-.badge[data-variant=primary] {background:gold;color: var(--gray800);}
+.badge[data-variant=primary] {background:var(--color-accent);color: var(--gray800);}
 .badge[data-variant=secondary] {background:var(--green100);}

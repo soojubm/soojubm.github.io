@@ -9,8 +9,8 @@
 .hero-detail {@include button-text;margin:0 0 0 var(--space-after-button);}
 //todofor  darktheme text color
 
-.hero-obj1 {position:absolute;right:-1rem;top:1rem;width:40px;height:40px;background:gold;border-radius:50%;}
-.hero-obj2 {position:absolute;right:480px;bottom:-2rem;width:80px;height:80px;background:gold;border-radius:50%;}
+.hero-obj1 {position:absolute;right:-1rem;top:1rem;width:40px;height:40px;background:var(--color-accent);border-radius:50%;}
+.hero-obj2 {position:absolute;right:480px;bottom:-2rem;width:80px;height:80px;background:var(--color-accent);border-radius:50%;}
 .hero-obj3 {position:absolute;right:420px;top:24px;width:16px;height:16px;background:#0057ff;border-radius:50%;}
 .hero-obj4 {position:absolute;right:0;top:-9rem;width:32rem;transform:scale(0);}
 
