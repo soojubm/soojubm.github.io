@@ -77,7 +77,7 @@ async function domEvents() {
   if (!temps.includes(hash)) {
     initializeNavbar()
   }
-  if (isHome) initializeNavbar()
+  // if (isHome) initializeNavbar()
 
   navItemElements?.forEach(element => {
     element.classList.remove('is-current')
