@@ -25,7 +25,7 @@
 
 .article-helper {margin:-.25rem 0 var(--space) 0;font-size:var(--font-size-caption);line-height:var(--font-line-height-small);}
 
-.article-anatomy {margin:0 -1.5rem;padding:.75rem 1.5rem;background:var(--color-background-weak);border-radius:var(--radius);}
+.article-anatomy {margin:0 -1.5rem;padding:.75rem 1.5rem;border:var(--border);border-radius:var(--radius);}
 .article-anatomy.is-anatomy {font-family:consolas,monospace;font-size:var(--font-size-caption);}
 .article-anatomy-item {display:block;}
 .article-anatomy-item.is-nested {margin-left:var(--space);position:relative;}

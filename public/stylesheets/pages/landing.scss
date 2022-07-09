@@ -9,7 +9,8 @@
 	font-size: var(--font-size-subhead);
 }
 
-.landing-hero {max-width:1080px;margin:2rem auto;padding-top:5em;padding-bottom:6rem;background:var(--color-background-weak);text-align:left;}
+.landing-hero {max-width:1080px;margin:0 auto;padding-top:5em;padding-bottom:6rem;text-align:left;}
+.landing-hero-background {@include bleeding;background:var(--color-background-weak);}
 .landing-hero-object1 {width:320px;height:400px;background:url('https://source.unsplash.com/random') center;background-size:cover;border-radius:var(--radius);position:absolute;right:5vw;top:2rem;animation:bounceY 4s ease infinite alternate;			}
 .landing-hero-object2 {max-width:320px;padding:1rem;z-index:1;position:absolute;right:260px;top:3rem;pointer-events:none;animation:bounceY 6s ease infinite alternate;}
 .landing-hero-cta {margin-right:.5rem;background:var(--color-primary);color:#fff;}
