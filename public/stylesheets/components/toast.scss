@@ -7,7 +7,7 @@
 // todo buttongroup column과 그냥 column 달르다.
 .dialog-footer-confirm {@include button-primary;width:var(--grid-column);width:calc(50% - .25rem);}
 .dialog-footer-cancel {@include button-tertiary;width:calc(50% - .25rem);}
-.dialog-close {@include chip;@include position-right-top;}
+.dialog-close {@include chip;@include position-right-top;right:.25rem;}
 
 
 

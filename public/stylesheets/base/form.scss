@@ -182,14 +182,14 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 .boxed-form div input {margin-top:-2px;padding:0;background:inherit;border:none;}
 .boxed-form div + div {margin-top:-1px;}
 
-.filter {display:flex;flex-direction:column;}
-.filter-title {@include text-subhead;}
-.filter-fieldset {margin:1rem 0;padding:1.75rem 0 2rem 0;position:relative;}
-.filter-fieldset-legend {width:100%;line-height:1;font-weight:var(--font-weight-bold);position:absolute;top:0;}
-.filter-fieldset-description {margin:0 0 8px 0;}
-.filter-foot {margin:auto 0 0 0;}
-.filter-foot-confirm {@include button-secondary;width:100%;}
-.filter-foot-reset {@include button-text;width:100%;margin:var(--space-after-button) 0 0 0;}
+.filter {}
+.filter-title {margin:0 0 var(--space-after-title) 0;@include text-title;}
+.filter-fieldset {margin:1rem 0;padding:2.5rem 0 0;position:relative;}
+.filter-fieldset-legend {@include text-subhead;position:absolute;top:0;}
+.filter-fieldset-description {margin:-.125rem 0 .75rem 0;color:var(--color-text-light);}
+.filter-foot {display:flex;margin:2rem 0 0 0;}
+.filter-foot-confirm {@include button-secondary;margin:0 var(--space-after-button) 0 0;}
+.filter-foot-reset {@include button-text;}
 
 // file
 input[type=file] {width:0;height:0;opacity:0;position:absolute;}
