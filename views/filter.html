@@ -1,4 +1,4 @@
-<main class="components" style="padding:0 var(--grid-margin);">
+<main class="components" style="max-width:640px;margin:0 auto;padding:0 var(--grid-margin);">
   <style>
     h1 {
       padding: 2rem 0;
@@ -23,8 +23,25 @@
   <h1>Filter Pattern</h1>
   <p>먼저 필터의 일반적인 pattern을 알아본 후 best practice를 정의한다.</p>
 
+
+  <i class="icon-filter">
+    <div style="transform:scale(.75);">
+      <span></span>
+      <span></span>
+    </div>
+    <em class="badge" style="background:var(--color-accent);font-size:10px;color:var(--color-text);position:absolute;right:-.5rem;top:-.5rem;">2</em>
+  </i>
+
   <br />
-  single / multiple
+
+  <h2>Presentation</h2>
+  <ul>
+    <li>Dropdown: desktop에서 상. moblie에서 중.</li>
+    <li>Sheet: desktop에서 하. mobile에서 상.</li>
+    <li>Modal: desktop과 mobile에서 중. modesktop과 mobile에 동일한 경험과 낮은 개발 비용.</li>
+  </ul>
+  <p>필터 옵션의 presentation 컴포넌트는 환경에 최적화된 경험을 위해 변경하기 쉬워야 한다.</p>
+  <p>presentation 컴포넌트가 필터의 상태나 적용 방법에 많은 영향을 준다.</p>
 
   <h2>필터의 적용</h2>
   <ul>
@@ -32,13 +49,17 @@
     <li>Batch updates. 적용 버튼을 클릭할 때 적용 (onSubmit)</li>
   </ul>
 
-  <h2>적용된 필터의 해제</h2>
+  <h2>적용된 필터의 해제Reset</h2>
   <ul>
-    <li>부분 리셋</li>
-    <li>전체 리셋</li>
+    <li>부분 해제</li>
+    <li>전체 해제</li>
   </ul>
 
   <h2>적용된 필터의 상태</h2>
+  <ul>
+    <li>필터 목록을 하나의 화면에 나열: 필터 옵션을 여는 버튼에 적용된 필터의 갯수를 표시.</li>
+    <li>필터 목록을 chip으로 나열: 시각적으로 적용 상태를 표현하고 적용된 필터로 레이블을 변경. multiple selections을 사용하는 경우.</li>
+  </ul>
   <p>적용된 필터 상태를 chip group with removable로 추가 제공하지 마세요. (worst case. 오늘의집/네이버카페)</p>
 
   <h2>필터링와 소팅의 위계</h2>
@@ -47,21 +68,13 @@
     초기화를 위한 x 아이콘은 bad)
   </p>
 
-  <h2>Presentation ?</h2>
-  <ul>
-    <li>Dropdown: for desktop.</li>
-    <li>Sheet: for mobile.</li>
-    <li>Modal: desktop과 mobile에 동일한 경험과 낮은 개발 비용.</li>
-  </ul>
-  <p>필터 옵션의 container는 디바이스 별 사용성을 극대화를 위해 컴포넌트는 변경될 수 있어야, 변경하기 쉬워야 한다.</p>
-
   <h2>Questions</h2>
   <p>사용자는 적용된 필터 옵션 전체를 초기화하기 위해 새로고침을 할까?</p>
   <p>하나의 화면에서 모든 옵션 목록을 나열할 때 옵션 별로 다른 컴포넌트를 가져갈 수 있다. => 디자인과 개발 비용의 증가 만큼 사용자 경험이 월등한가? (case. airbnb)</o>
 
   <ul>
     <li>
-      <mark>2가지 패턴을 권장한다. chip group과 open button(filter options on modal)</mark> 전자를 권장. 후자는 구매결정(전환)에 필수불가결한 옵션이
+      <mark>2가지 중 chip group과 open button(filter options on modal)</mark> 전자를 권장. 후자는 구매결정(전환)에 필수불가결한 옵션이
       존재하는 경우(다소막연).
     </li>
     <li>필터의 버튼 그룹의 정렬 기준을 정의. hero 섹션과 같고 dialog와는 다르다.</li>

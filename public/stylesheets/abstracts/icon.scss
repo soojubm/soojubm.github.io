@@ -6,6 +6,12 @@
 // .is-active .icon-hamberger:after {transform:rotate(-45deg) translate(0,0);left:0px;top:50%;}
 
 
+.icon-filter {@include avatar-medium;flex-direction:column;}
+.icon-filter span:nth-of-type(1) {display:block;width:18px;height:2px;border-radius:var(--radius);background:var(--icon-background);position:relative;}
+.icon-filter span:nth-of-type(1):after {content:'';display:block;padding:1px;background:var(--color-background-weak);border:2px solid var(--icon-background);border-radius:50%;position:absolute;top:-2px;right:2px;}
+.icon-filter span:nth-of-type(2) {display:block;width:18px;height:2px;margin:6px 0 0 0;background:var(--icon-background);position:relative;}
+.icon-filter span:nth-of-type(2):after {content:'';display:block;padding:1px;background:var(--color-background-weak);border:2px solid var(--icon-background);border-radius:50%;position:absolute;top:-2px;left:2px;}
+
 .icon-minus {position:relative;}
 .icon-minus:before {content:'';display:inline-block;width:8px;height:2px;background-color:var(--icon-background);position:absolute;left:50%;top:50%;transform: translate(-50%, -50%);transition:all .5s ease;}
 
