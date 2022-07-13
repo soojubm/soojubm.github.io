@@ -11,10 +11,18 @@
 
 .landing-hero {max-width:1080px;margin:0 auto;padding-top:5em;padding-bottom:6rem;text-align:left;}
 .landing-hero-background {@include bleeding;background:var(--color-background-weak);}
-.landing-hero-object1 {width:320px;height:400px;background:url('https://source.unsplash.com/random') center;background-size:cover;border-radius:var(--radius);position:absolute;right:5vw;top:2rem;animation:bounceY 4s ease infinite alternate;			}
-.landing-hero-object2 {max-width:320px;padding:1rem;z-index:1;position:absolute;right:260px;top:3rem;pointer-events:none;animation:bounceY 6s ease infinite alternate;}
+.landing-hero-object1 {width:320px;height:400px;background:url('https://source.unsplash.com/random') center;background-size:cover;border-radius:var(--radius);position:absolute;right:5vw;top:2rem;}
+.landing-hero-object2 {max-width:320px;padding:1rem;z-index:1;position:absolute;right:260px;top:3rem;pointer-events:none;}
 .landing-hero-cta {margin-right:.5rem;background:var(--color-primary);color:#fff;}
 
+
+.is-scrolled .landing-hero-background {}
+.is-scrolled .landing-hero-title {animation:fadeup .4s .4s backwards;}
+.is-scrolled .landing-hero-description {animation:fadeup .4s .8s backwards;}
+.is-scrolled .landing-hero-cta {animation:fadeup .4s 1.2s backwards;}
+.is-scrolled .landing-hero-more {animation:fadeup .4s 1.4s backwards;}
+.is-scrolled .landing-hero-object1 {animation:bounceY 2s ease infinite alternate;}
+.is-scrolled .landing-hero-object2 {animation:bounceY 4s ease infinite alternate;}
 
 .landing .product-features {margin-top:10rem;margin-bottom:6rem;}
 

@@ -1,7 +1,9 @@
 const scrollAnimation = ({ selector: selector }) => {
   const ANIMATED_CLASSNAME = 'is-scrolled'
   const elements = Array.from(document.querySelectorAll(selector))
-  // console.log([].slice.call(document.querySelectorAll('.js-scroll-animation')), Array.from(document.querySelectorAll('.js-scroll-animation')),  document.querySelectorAll('.js-scroll-animation'))
+  // [].slice.call(document.querySelectorAll('.js-scroll-animation')),
+  // Array.from(document.querySelectorAll('.js-scroll-animation')),
+  // document.querySelectorAll('.js-scroll-animation'))
   const options = {
     root: null,
     rootMargin: '-100px 0px -100px 0px',
