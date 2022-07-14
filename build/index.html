@@ -90,7 +90,7 @@
     <script src="./build/bundle.js"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-83531239-1"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-83531239-1"></script>
     <script>
       window.dataLayer = window.dataLayer || []
       function gtag() {
@@ -101,7 +101,7 @@
       gtag('config', 'UA-83531239-1', {
         page_path: location.pathname + location.hash,
       })
-    </script> -->
+    </script>
   <script defer src="bundle.js"></script><link href="style.css" rel="stylesheet"></head>
   <body class="is-opened-menu is-loading">
     <noscript>This website requires JavaScript.</noscript>
@@ -149,12 +149,17 @@
           <!-- <span role="menuitem"><i class="icon-caret"></i></span> -->
           <menu>
             <a route="/design" href="#tokens">Design Tokens</a>
-            <a route="/design" href="#filter">Patterns / Filtering</a>
-            <a route="/design" href="#filter">Patterns / Search</a>
           </menu>
         </div>
         <div class="navbar-menu-item has-submenu" style="margin:var(--space-small) 0 0 0;">
-          <span role="menuitem">Components<i class="icon-caret"></i></span>
+          <span role="menuitem">Patterns<i class="icon-caret"></i></span>
+          <menu>
+            <a route="/design" href="#filter">Filtering</a>
+            <a route="/design" href="#search">Search</a>
+          </menu>
+        </div>
+        <div class="navbar-menu-item has-submenu" style="margin:var(--space-small) 0 0 0;">
+          <span role="menuitem">UI Components<i class="icon-caret"></i></span>
           <menu>
             <!-- <a href="#avatar">Avatar</a>
             <a href="#chip">Chip</a> -->
@@ -171,8 +176,8 @@
             <a href="#texts">Texts</a>
             <a href="#presentations"
             >Presentations
-            <span class="tag" style="margin-left:var(--space-small);vertical-align:middle;font-weight:var(--font-weight-normal);">정리중</span>
-          </a>
+              <span class="tag" style="margin-left:var(--space-small);vertical-align:middle;font-weight:var(--font-weight-normal);">정리중</span>
+            </a>
             <a href="#dummies">Dummies</a>
           </menu>
         </div>

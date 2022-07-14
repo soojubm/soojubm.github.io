@@ -13,8 +13,8 @@
   <nav class="component-navigation">
     <div class="component-navigation-background"></div>
     <div class="component-navigation-scroll">
-      <a class="chip is-active js-scrollspy-trigger" href="#"><span class="chip-label">Textfield</span></a>
-      <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Searchfield</span></a>
+      <a class="chip is-active js-scrollspy-trigger" href="#"><span class="chip-label">Searchfield</span></a>
+      <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Textfield</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Numberfield</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Datefield</span></a>
     </div>
@@ -31,29 +31,8 @@
         <!-- <label class="textfield-label" for="search">검색(시각적으로숨겨야함)</label> -->
         <input class="textfield-input js-input-test" type="search" id="search" placeholder="궁금한 인물이나 이슈가 있나요?" style="width:calc(100% - var(--size-huge));" />
         <button class="textfield-clear" hidden style="right:calc(var(--size-huge) + var(--space));"><i class="icon-x"></i></button>
-        <button class="textfield-back" style="position:absolute;right:0;top:0;">취소</button>
+        <button class="searchfield-cancel">취소</button>
       </div>
-
-      <section class="search-recent" style="margin-top:1rem;">
-        <!-- <h2 class="search-recent-title">최근 검색</h2> -->
-        <!-- <button class="search-recommend-modify">수정</button> -->
-        <div class="search-suggestion-item item" data-size="medium">
-          <figure class="search-suggestion-item-avatar item-avatar"><i></i></figure>
-          <p class="item-name">개구리</p>
-          <button class="search-suggestion-item-delete item-delete" style="border:none;background:none;color:var(--color-text-light);">삭제</button>
-        </div>
-        <div class="search-suggestion-item item" data-size="medium">
-          <figure class="search-suggestion-item-avatar item-avatar"><i></i></figure>
-          <p class="item-name">올챙이</p>
-          <button class="search-suggestion-item-delete item-delete" style="border:none;background:none;color:var(--color-text-light);">삭제</button>
-        </div>
-        <div class="tile-flat">최근 검색 내역 없음</div>
-        <!-- <div class="search-recent-group" role="group">
-          <a class="search-recent-group-item" href="#"><span class="chip-label">개구리</span></a>
-          <a class="search-recent-group-item" href="#"><span class="chip-label">달팽이</span></a>
-          <a class="search-recent-group-item" href="#"><span class="chip-label">매미</span></a>
-        </div> -->
-      </section>
 
       <br />
 

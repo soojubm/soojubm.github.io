@@ -1,19 +1,72 @@
-<main class="search js-tab" role="search" aria-label="site" style="max-width:1000px;margin:0 auto;padding:0 var(--grid-margin) 0;">
-  <form class="search-form">
-    <nav class="search-tablist" role="tablist" aria-label="sample tabs">
-      <button class="profile-tablist-tab" type="button" role="tab" aria-selected="true" aria-controls="panel-1" id="tab-1" tabindex="0">
-        <span class="profile-tablist-tab-label">인기</span>
-        <!-- <em class="badge" data-variant="secondary" style="margin-left:var(--space-small);">24</em> -->
-      </button>
-      <button class="profile-tablist-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-2" id="tab-2" tabindex="-1">
-        <span class="profile-tablist-tab-label">사용자</span>
-      </button>
-      <button class="profile-tablist-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-3" id="tab-3" tabindex="-1">
-        <span class="profile-tablist-tab-label">사진</span>
-      </button>
-      <i class="profile-tablist-indicator"></i>
-    </nav>
+<main class="search pattern js-tab" role="" aria-label="site">
 
+  <div class="article">
+    <span class="article-eyebrow">작성중</span>
+    <h1 class="article-title">Search Pattern</h1>
+    <p class="article-description">글로벌 검색 패턴과 로컬 검색 패턴의 구분. 검색의 인지.
+    </p>
+
+    <ul>
+      <li>검색 결과 쿼리를 몇 개 제공할 것인가. 모바일 키보드 고려.</li>
+      <li>iOS의 검색 패턴 따로 정의하기. onFocus.</li>
+      <li>검색 결과 페이지의 공유를 허용할 것인가?</li>
+    </ul>
+    
+    <h2 class="article-subhead">검색의 시작</h2>
+    <ul>
+      <li>해시태그나 카테고리 등의 인기/추천 키워드 검색. (액션/button) - clickable과 non-clickable 요소를 함께 정의하면 좋다.</li>
+      <li>직접 키워드 입력 - 검색어 자동완성 (입력/input)</li>
+    </ul>
+    
+    <h2 class="article-subhead">최근 검색 내역</h2>
+    <ul style="margin:0 0 1rem 0;">
+      <li>비회원의 검색 내역도 저장할 것인가?</li>
+    </ul>
+    <section class="search-recent">
+      <!-- <h2 class="search-recent-title">최근 검색</h2> -->
+      <!-- <button class="search-recommend-modify">수정</button> -->
+      <div class="search-suggestion-item item" data-size="medium">
+        <figure class="search-suggestion-item-avatar item-avatar"><i></i></figure>
+        <p class="item-name">개구리</p>
+        <button class="search-suggestion-item-delete item-delete" style="border:none;background:none;color:var(--color-text-light);">삭제</button>
+      </div>
+      <div class="search-suggestion-item item" data-size="medium">
+        <figure class="search-suggestion-item-avatar item-avatar"><i></i></figure>
+        <p class="item-name">올챙이</p>
+        <button class="search-suggestion-item-delete item-delete" style="border:none;background:none;color:var(--color-text-light);">삭제</button>
+      </div>
+      <div class="tile-flat">또는, 최근 검색 내역 없음</div>
+      <!-- <div class="search-recent-group" role="group">
+        <a class="search-recent-group-item" href="#"><span class="chip-label">개구리</span></a>
+        <a class="search-recent-group-item" href="#"><span class="chip-label">달팽이</span></a>
+        <a class="search-recent-group-item" href="#"><span class="chip-label">매미</span></a>
+      </div> -->
+    </section>
+
+    <h2 class="article-subhead">최근 검색 내역의 삭제</h2>
+    <ul>
+      <li>개별 검색 내역의 삭제.</li>
+      <li>전체 검색 내역의 삭제. 사용자에게 유용할 수도 있지만 리스크를 고려하라. 서비스의 특성에 맞게 제공.</li>
+    </ul>
+
+    <h2 class="article-subhead">검색의 실행</h2>
+    <ul>
+      <li>onChange: 키보드를 입력할 때 마다.</li>
+      <li>onSubmit: 검색 버튼을 클릭 또는 enter key를 입력.</li>
+    </ul>
+
+    <h2 class="article-subhead">검색의 결과</h2>
+    <ul>
+      <li>검색어와 일치하지 않더라도 유사한 검색 결과를 항상 하나 이상 보여줄 수 있다. onSubmit에는 해당하지 않는다.</li>
+      <li>상태(결과 없음)를 보여줄 수 있다. 또는, 추천 검색어나 추천 콘텐츠를 보여줄 수 있다. 추천 콘텐츠를 노출하는 것은 ott 등의 컨텐츠 플랫폼에서 유용할 수 있지만 명확한 결과를 기대할 때는 주의.</li>
+      <li>결과의 필터링 또는 소팅. link to filtering pattern page</li>
+    </ul>
+    <div class="result tile-flat" style="padding-top:2rem;padding-bottom:2.5rem;">
+      <p role="status" style="text-align:center;">수줍이와(과)<br />일치하는 검색결과가 없습니다.</p>
+    </div>
+
+
+    <h2 class="article-subhead">검색어 추천</h2>
     <div style="display:flex;margin-left:-.25rem;">
       <a href="" class="search-similar-item">
         <span style="padding:0 .5rem;">검색어 추천</span>
@@ -28,48 +81,25 @@
       </a>
     </div>
 
-    <!-- <section class="search-recommend">
+  <!-- <form class="search-form">
+    <nav class="search-tablist" role="tablist" aria-label="sample tabs">
+    </nav>
+
+   <section class="search-recommend">
       <h2 class="search-recommend-title">추천 검색어</h2>
       <div class="search-recommend-group" role="group">
         <a class="search-recommend-group-item" href="#"><span class="chip-label">개구리</span></a>
         <a class="search-recommend-group-item" href="#"><span class="chip-label">달팽이</span></a>
         <a class="search-recommend-group-item" href="#"><span class="chip-label">매미</span></a>
       </div>
-    </section> -->
+    </section>
+  </form> -->
 
-    <!-- todo chip label  -->
-    <div class="search-filter profile-display" style="margin:.75rem 0 var(--space) 0;">
-      <p class="profile-display-status" role="status" hidden>Viewing 1,000 Projects</p>
-      <button class="profile-display-button js-display-grid js-test-toggle js-display-button is-selected" type="button" style="width:auto;">
-        <span class="chip-label">최신순</span>
-      </button>
-      <button class="profile-display-button js-display-list js-test-toggle js-display-button" type="button" style="width:auto;">
-        <span class="chip-label">클릭율 높은순</span>
-      </button>
-    </div>
-  </form>
-
-  <div class="result tile-flat" style="padding-top:2rem;padding-bottom:2.5rem;">
-    <p role="status" style="text-align:center;">수줍이와(과)<br />일치하는 검색결과가 없습니다.</p>
-  </div>
-
-  <div class="">
+  <!-- <div class="">
     <h1>#ThisIsTagPage</h1>
     <button class="chip"><span class="chip-label">공유</span></button>
     <p>조회수(틱톡)/이카테고리에글쓰기(미디엄)/카테고리팔로우(개인화)</p>
   </div>
-
-  <br />
-
-  <ul>
-    <li>해시태그/카테고리 등 제공된 키워드 통한 검색. (액션)</li>
-    <li>직접 검색어 입력 - 검색어 자동완성</li>
-    <li>검색 실행. 키보드를 입력할 때 마다(하나 이상의 검색 결과를 항상 보여주는 것이 자연스럽다.) / 버튼 클릭이나 enter</li>
-    <li>검색 결과. 없을 때. 상태를 보여줄 수 있고 유사한 결과나 추천 콘텐츠를 하나 이상 항상 보여줄 수도 있다. (ott나 컨텐츠 플랫폼에서 유용)</li>
-    <li>개별 검색 내역의 삭제.</li>
-    <li>전체 검색 내역의 삭제. 사용자에게 유용할 수도 있지만 리스크도 있기 때문에 제공하지 않아도 좋다.</li>
-    <li>검색 결과 쿼리를 몇 개 제공할 것인가. 모바일 키보드 고려.</li>
-  </ul>
 
   <style>
     .quantity {
@@ -85,7 +115,7 @@
     <div class="quantity js-quantity" style="max-width:8rem;padding-left:var(--padding-left);margin:0 0 .75rem 0;">
       <label class="quantity-label" for="" style="position: absolute;left:0;">어린이</label>
       <input class="quantity-input js-quantity-input js-number-input" name="quantity1" type="number" value="0" min="5" max="20" />
-      <!-- <input type="text" inputmode="numeric" pattern="[0-9]*"> -->
+      <input type="text" inputmode="numeric" pattern="[0-9]*">
       <button class="quantity-decrement js-quantity-decrement" style="left:var(--padding-left);"><i class="icon-minus"></i></button>
       <button class="quantity-increment js-quantity-increment"><i class="icon-plus"></i></button>
     </div>
@@ -93,7 +123,7 @@
       <label class="quantity-label" for="" style="position: absolute;left:0;top:-.35rem;">성인</label>
       <small style="position: absolute;left:0;top:.75rem;color:var(--color-text-light);">만 13세 이상</small>
       <input class="quantity-input js-quantity-input js-number-input" name="quantity1" type="number" value="0" min="5" max="20" />
-      <!-- <input type="text" inputmode="numeric" pattern="[0-9]*"> -->
+      <input type="text" inputmode="numeric" pattern="[0-9]*">
       <button class="quantity-decrement js-quantity-decrement" style="left:var(--padding-left);"><i class="icon-minus"></i></button>
       <button class="quantity-increment js-quantity-increment"><i class="icon-plus"></i></button>
     </div>
@@ -105,5 +135,5 @@
         <span class="chip-label">No</span>
       </button>
     </footer>
-  </section>
+  </section> -->
 </main>

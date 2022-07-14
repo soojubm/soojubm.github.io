@@ -1,216 +1,203 @@
-<main class="components" style="max-width:640px;margin:0 auto;padding:0 var(--grid-margin);">
-  <style>
-    h1 {
-      padding: 2rem 0;
-    }
-    h2 {
-      margin: 0 0 var(--space-after-subhead) 0;
-      font-size: var(--font-size-subhead);
-    }
-    p {
-      margin: 0 0 2rem 0;
-    }
-    p + p {
-      margin: -1.5rem 0 2rem 0;
-    }
-    ul {
-      margin: 0 0 2rem 0;
-    }
-    ul + p {
-      margin: -1rem 0 2rem 0;
-    }
-  </style>
-  <h1>Filter Pattern</h1>
-  <p>먼저 필터의 일반적인 pattern을 알아본 후 best practice를 정의한다.</p>
+<main class="pattern">
 
-
-  <i class="icon-filter">
-    <div style="transform:scale(.75);">
-      <span></span>
-      <span></span>
+  <div class="article">
+    <span class="article-eyebrow">작성중</span>
+    <h1 class="article-title">Filter Pattern</h1>
+    <p class="article-description">
+      먼저, 필터의 일반적인 pattern을 알아본 후 best practice를 정의한다.
+      <br/>
+      Single Filter / Multiple Filters 후자는 구매결정(전환)에 필수불가결한 옵션이 존재하는 경우(다소막연).
+    </p>
+  
+    <div class="chip-group">
+      <div class="dropdown">
+        <button class="dropdown-trigger js-toggle" aria-expanded="true">
+          <span class="dropdown-trigger-label" title="일행 당 인원 수">예약옵션</span>
+          <figure class="dropdown-trigger-icon"><i class="icon-caret"></i></figure>
+        </button>
+        <menu class="dropdown-menu" role="menu" style="padding:.75rem;">
+          <fieldset role="radiogroup">
+            <!-- <legend class="article-anatomy-title" style="margin-bottom:0;">radiogroup</legend> -->
+            <div class="radio">
+              <input type="radio" id="gogo1" name="gogo" value="" />
+              <label for="gogo1" title="">1~3명</label>
+            </div>
+            <div class="radio">
+              <input type="radio" id="gogo2" name="gogo" value="" checked />
+              <label for="gogo2" title="">3명 이상</label>
+            </div>
+          </fieldset>
+          <footer style="margin:var(--space-small) 0 0 0;">
+            <!-- <button>옵션 초기화</button> -->
+            <button class="chip" style="width:100%;"><span class="chip-label">적용 / 24개 상품 보기 (airbnb)</span></button>
+          </footer>
+        </menu>
+      </div>
+      <div class="dropdown">
+        <button class="dropdown-trigger js-toggle" aria-expanded="true">
+          <span class="dropdown-trigger-label">예산</span>
+          <figure class="dropdown-trigger-icon"><i class="icon-caret"></i></figure>
+        </button>
+        <menu class="dropdown-menu" role="menu">
+          <h6 class="dropdown-menu-title" hidden>Dropdown header</h6>
+          <a class="dropdown-menu-link" href="#" disabled style="display:flex;justify-content:space-between;align-items:center;">
+            최신순
+            <i class="icon-check"></i>
+          </a>
+          <a class="dropdown-menu-link" href="#" disabled>
+            최신순
+          </a>
+        </menu>
+      </div>
+      <div class="dropdown">
+        <button class="dropdown-trigger js-toggle is-active" aria-expanded="true">
+          <span class="dropdown-trigger-label">10평 미만</span>
+          <figure class="dropdown-trigger-icon"><i class="icon-caret"></i></figure>
+        </button>
+      </div>
+      <div class="dropdown">
+        <button class="dropdown-trigger js-toggle" aria-expanded="true">
+          <span class="dropdown-trigger-label">접근성 편의</span>
+          <figure class="dropdown-trigger-icon"><i class="icon-caret"></i></figure>
+        </button>
+      </div>
     </div>
-    <em class="badge" style="background:var(--color-accent);font-size:10px;color:var(--color-text);position:absolute;right:-.5rem;top:-.5rem;">2</em>
-  </i>
 
-  <br />
+    <hr style="margin:2rem 0;" />
 
-  <h2>Presentation</h2>
-  <ul>
-    <li>Dropdown: desktop에서 상. moblie에서 중.</li>
-    <li>Sheet: desktop에서 하. mobile에서 상.</li>
-    <li>Modal: desktop과 mobile에서 중. modesktop과 mobile에 동일한 경험과 낮은 개발 비용.</li>
-  </ul>
-  <p>필터 옵션의 presentation 컴포넌트는 환경에 최적화된 경험을 위해 변경하기 쉬워야 한다.</p>
-  <p>presentation 컴포넌트가 필터의 상태나 적용 방법에 많은 영향을 준다.</p>
+    <button style="margin-bottom:.75rem;">
+      <i class="icon-filter">
+        <div style="transform:scale(.75);">
+          <span></span>
+          <span></span>
+        </div>
+        <em class="badge" style="background:var(--color-accent);font-size:10px;color:var(--color-text);position:absolute;right:-.5rem;top:-.5rem;">2</em>
+      </i>
+    </button>
+    <form class="filter tile-elevated" style="    overflow: hidden;
+    margin: 0 -0.75rem;">
+      <header class="titlebar js-titlebar" role="navigation" style="padding:0;">
+        <div class="titlebar-background"></div>
+        <h1 class="titlebar-title js-page-title" title="page title">필터</h1>
+        <button class="titlebar-back" onclick="javascript:window.location.href='/';">
+          <figure class="titlebar-back-icon"><i class="icon-x"></i></figure>
+          <!-- <span class="titlebar-back-label">뒤로</span> -->
+        </button>
+        <!-- <button class="titlebar-action" style="color:var(--color-primary);">
+          <span class="titlebar-action-label">적용(todo)</span>
+        </button> -->
+      </header>
+      <br />
+      <!-- <header class="filter-head">
+        <h1 class="filter-title">필터</h1>
+        <p class="filter-description">타이틀바 컴포넌트로 head를 짜는 것이 좋다.</p>
+      </header> -->
+      <fieldset class="filter-fieldset" role="radiogroup">
+        <legend class="filter-fieldset-legend">예약옵션</legend>
+        <button class="button-elevated" title="" style="border:none;box-shadow:none;padding:0;margin-top:0;margin-bottom:.125rem;">
+          <!-- <figure class="button-elevated-avatar">🦊</figure> -->
+          <span class="button-elevated-label">즉시 예약</span>
+          <span class="switch" style="margin-left:auto;">
+            <input type="checkbox" id="temp123456" name="" role="switch" />
+            <label for="temp123456" style="padding-left:48px;"></label>
+          </span>
+        </button>
+        <small style="display:block;margin:0 0 var(--space-small) 0;color:var(--color-text-light);"
+          >호스트 승인을 기다릴 필요 없이 예약할 수 있는 숙소
+        </small>
+      </fieldset>
 
-  <h2>필터의 적용</h2>
-  <ul>
-    <li>각각의 필터를 즉시 적용 (onChange) - 더 좋은 사용자 경험 but 데이터 소모</li>
-    <li>Batch updates. 적용 버튼을 클릭할 때 적용 (onSubmit)</li>
-  </ul>
+      <hr />
 
-  <h2>적용된 필터의 해제Reset</h2>
-  <ul>
-    <li>부분 해제</li>
-    <li>전체 해제</li>
-  </ul>
-
-  <h2>적용된 필터의 상태</h2>
-  <ul>
-    <li>필터 목록을 하나의 화면에 나열: 필터 옵션을 여는 버튼에 적용된 필터의 갯수를 표시.</li>
-    <li>필터 목록을 chip으로 나열: 시각적으로 적용 상태를 표현하고 적용된 필터로 레이블을 변경. multiple selections을 사용하는 경우.</li>
-  </ul>
-  <p>적용된 필터 상태를 chip group with removable로 추가 제공하지 마세요. (worst case. 오늘의집/네이버카페)</p>
-
-  <h2>필터링와 소팅의 위계</h2>
-  <p>
-    필터링와 소팅은 같은 컴포넌트라도 위계는 달라야 한다. 소팅은 필터링의 하위 위계임을 시각적으로 명시하라. (good case. tumblbug 하지만 적용된 필터
-    초기화를 위한 x 아이콘은 bad)
-  </p>
-
-  <h2>Questions</h2>
-  <p>사용자는 적용된 필터 옵션 전체를 초기화하기 위해 새로고침을 할까?</p>
-  <p>하나의 화면에서 모든 옵션 목록을 나열할 때 옵션 별로 다른 컴포넌트를 가져갈 수 있다. => 디자인과 개발 비용의 증가 만큼 사용자 경험이 월등한가? (case. airbnb)</o>
-
-  <ul>
-    <li>
-      <mark>2가지 중 chip group과 open button(filter options on modal)</mark> 전자를 권장. 후자는 구매결정(전환)에 필수불가결한 옵션이
-      존재하는 경우(다소막연).
-    </li>
-    <li>필터의 버튼 그룹의 정렬 기준을 정의. hero 섹션과 같고 dialog와는 다르다.</li>
-    <li>range option</li>
-  </ul>
-  <br />
-  <div class="chip-group">
-    <div class="dropdown">
-      <button class="dropdown-trigger js-toggle" aria-expanded="true">
-        <span class="dropdown-trigger-label" title="일행 당 인원 수">예약옵션</span>
-        <figure class="dropdown-trigger-icon"><i class="icon-caret"></i></figure>
-      </button>
-      <menu class="dropdown-menu" role="menu" style="padding:.75rem;">
-        <fieldset role="radiogroup">
-          <!-- <legend class="article-anatomy-title" style="margin-bottom:0;">radiogroup</legend> -->
-          <div class="radio">
-            <input type="radio" id="gogo1" name="gogo" value="" />
-            <label for="gogo1" title="">1~3명</label>
-          </div>
-          <div class="radio">
-            <input type="radio" id="gogo2" name="gogo" value="" checked />
-            <label for="gogo2" title="">3명 이상</label>
-          </div>
-        </fieldset>
-        <footer style="margin:var(--space-small) 0 0 0;">
-          <!-- <button>옵션 초기화</button> -->
-          <button class="chip" style="width:100%;"><span class="chip-label">적용 / 24개 상품 보기 (airbnb)</span></button>
-        </footer>
-      </menu>
-    </div>
-    <div class="dropdown">
-      <button class="dropdown-trigger js-toggle" aria-expanded="true">
-        <span class="dropdown-trigger-label">예산</span>
-        <figure class="dropdown-trigger-icon"><i class="icon-caret"></i></figure>
-      </button>
-      <menu class="dropdown-menu" role="menu">
-        <h6 class="dropdown-menu-title" hidden>Dropdown header</h6>
-        <a class="dropdown-menu-link" href="#" disabled style="display:flex;justify-content:space-between;align-items:center;">
-          최신순
-          <i class="icon-check"></i>
-        </a>
-        <a class="dropdown-menu-link" href="#" disabled>
-          최신순
-        </a>
-      </menu>
-    </div>
-    <div class="dropdown">
-      <button class="dropdown-trigger js-toggle" aria-expanded="true">
-        <span class="dropdown-trigger-label">평수</span>
-        <figure class="dropdown-trigger-icon"><i class="icon-caret"></i></figure>
-      </button>
-    </div>
-    <div class="dropdown">
-      <button class="dropdown-trigger js-toggle" aria-expanded="true">
-        <span class="dropdown-trigger-label">접근성 편의</span>
-        <figure class="dropdown-trigger-icon"><i class="icon-caret"></i></figure>
-      </button>
-    </div>
-  </div>
-  <hr />
-  <form class="filter">
-    <header class="titlebar js-titlebar" role="navigation" style="padding:0;">
-      <div class="titlebar-background"></div>
-      <h1 class="titlebar-title js-page-title" title="page title">필터</h1>
-      <button class="titlebar-back" onclick="javascript:window.location.href='/';">
-        <figure class="titlebar-back-icon"><i class="icon-x"></i></figure>
-        <!-- <span class="titlebar-back-label">뒤로</span> -->
-      </button>
-      <button class="titlebar-action" style="color:var(--color-primary);">
-        <span class="titlebar-action-label">적용(todo)</span>
-      </button>
-    </header>
+      <fieldset class="filter-fieldset" role="radiogroup">
+        <legend class="filter-fieldset-legend">예산</legend>
+        <div class="radio">
+          <input type="radio" id="gender-man" name="gender" value="" />
+          <label for="gender-man" title="Video Killed the Radio Button">50,000원 미만</label>
+        </div>
+        <div class="radio">
+          <input type="radio" id="gender-etc" name="gender" value="" checked />
+          <label for="gender-etc" title="Video Killed the Radio Button">100,000원 미만</label>
+        </div>
+        <div class="radio">
+          <input type="radio" id="gender-etc" name="gender" value="" checked />
+          <label for="gender-etc" title="Video Killed the Radio Button">150,000원 미만</label>
+        </div>
+      </fieldset>
+      <hr />
+      <fieldset class="filter-fieldset" role="radiogroup">
+        <legend class="filter-fieldset-legend">평수</legend>
+        <div class="chip-group is-bleeded" style="margin-bottom:.25rem;">
+          <button class="chip"><span class="chip-label">10평 미만</span></button>
+          <button class="chip"><span class="chip-label">20평</span></button>
+          <button class="chip"><span class="chip-label">30평</span></button>
+        </div>
+      </fieldset>
+      <hr />
+      <fieldset class="filter-fieldset" role="radiogroup">
+        <legend class="filter-fieldset-legend">접근성 편의</legend>
+        <p class="filter-fieldset-description">호스트가 제공하고 에어비앤비에서 검토한 정보입니다.</p>
+        <div class="checkbox">
+          <input class="js-check" type="checkbox" id="line03" value="" />
+          <label for="line03" title="Everyday is like sunday">게스트 출입구에 계단이나 문턱 없음</label>
+        </div>
+        <div class="checkbox textfield">
+          <input class="js-check" type="checkbox" id="other" name="interest" value="other" />
+          <label for="other">너비 81cm 이상의 게스트 출입구</label>
+        </div>
+        <div class="checkbox textfield">
+          <input class="js-check" type="checkbox" id="other" name="interest" value="other" />
+          <label for="other">휠체어 접근 가능 주차 공간</label>
+        </div>
+      </fieldset>
+      <footer class="filter-foot">
+        <button class="filter-foot-confirm">적용/숙소 25개 표시 (todo fixed)</button>
+        <button class="filter-foot-reset" style="color:var(--color-text);">전체 해제clear filters</button>
+      </footer>
+    </form>
     <br />
-    <!-- <header class="filter-head">
-      <h1 class="filter-title">필터</h1>
-      <p class="filter-description">타이틀바 컴포넌트로 head를 짜는 것이 좋다.</p>
-    </header> -->
-    <fieldset class="filter-fieldset" role="radiogroup">
-      <legend class="filter-fieldset-legend">예약옵션</legend>
-      <button class="button-elevated" title="" style="border:none;box-shadow:none;padding:0;margin-top:0;margin-bottom:.125rem;">
-        <!-- <figure class="button-elevated-avatar">🦊</figure> -->
-        <span class="button-elevated-label">즉시 예약</span>
-        <span class="switch" style="margin-left:auto;">
-          <input type="checkbox" id="temp123456" name="" role="switch" />
-          <label for="temp123456" style="padding-left:48px;"></label>
-        </span>
-      </button>
-      <small style="display:block;margin:0 0 var(--space-small) 0;color:var(--color-text-light);"
-        >호스트 승인을 기다릴 필요 없이 예약할 수 있는 숙소
-      </small>
-    </fieldset>
-    <hr />
-    <fieldset class="filter-fieldset" role="radiogroup">
-      <legend class="filter-fieldset-legend">예산</legend>
-      <div class="radio">
-        <input type="radio" id="gender-man" name="gender" value="" />
-        <label for="gender-man" title="Video Killed the Radio Button">50,000원 미만</label>
-      </div>
-      <div class="radio">
-        <input type="radio" id="gender-etc" name="gender" value="" checked />
-        <label for="gender-etc" title="Video Killed the Radio Button">100,000원 미만</label>
-      </div>
-      <div class="radio">
-        <input type="radio" id="gender-etc" name="gender" value="" checked />
-        <label for="gender-etc" title="Video Killed the Radio Button">150,000원 미만</label>
-      </div>
-    </fieldset>
-    <hr />
-    <fieldset class="filter-fieldset" role="radiogroup">
-      <legend class="filter-fieldset-legend">평수</legend>
-      <div class="chip-group is-bleeded" style="margin-bottom:.25rem;">
-        <button class="chip"><span class="chip-label">10평 미만</span></button>
-        <button class="chip"><span class="chip-label">20평</span></button>
-        <button class="chip"><span class="chip-label">30평</span></button>
-      </div>
-    </fieldset>
-    <hr />
-    <fieldset class="filter-fieldset" role="radiogroup">
-      <legend class="filter-fieldset-legend">접근성 편의</legend>
-      <p class="filter-fieldset-description">호스트가 제공하고 에어비앤비에서 검토한 정보입니다.</p>
-      <div class="checkbox">
-        <input class="js-check" type="checkbox" id="line03" value="" />
-        <label for="line03" title="Everyday is like sunday">게스트 출입구에 계단이나 문턱 없음</label>
-      </div>
-      <div class="checkbox textfield">
-        <input class="js-check" type="checkbox" id="other" name="interest" value="other" />
-        <label for="other">너비 81cm 이상의 게스트 출입구</label>
-      </div>
-      <div class="checkbox textfield">
-        <input class="js-check" type="checkbox" id="other" name="interest" value="other" />
-        <label for="other">휠체어 접근 가능 주차 공간</label>
-      </div>
-    </fieldset>
-    <footer class="filter-foot">
-      <button class="filter-foot-confirm">적용/숙소 25개 표시 (todo fixed)</button>
-      <button class="filter-foot-reset" style="color:var(--color-text);">전체 해제clear filters</button>
-    </footer>
-  </form>
+  
+    <h2 class="article-subhead">Presentation</h2 class="article-subhead">
+    <ul>
+      <li>Dropdown: desktop에서 상. moblie에서 중.</li>
+      <li>Sheet: desktop에서 하. mobile에서 상.</li>
+      <li>Modal: desktop과 mobile에서 중. desktop과 mobile에 동일한 경험과 낮은 개발 비용.</li>
+    </ul>
+    <p>필터 옵션의 presentation 컴포넌트는 환경에 최적화된 경험을 위해 변경하기 쉬워야 한다.</p>
+    <p>presentation 컴포넌트가 필터의 상태나 적용 방법에 많은 영향을 준다.</p>
+  
+    <h2 class="article-subhead">필터의 적용</h2 class="article-subhead">
+    <ul>
+      <li>Instant updates. 각각의 필터를 즉시 적용 (onChange) - 더 좋은 사용자 경험 but 데이터 소모</li>
+      <li>Batch updates. 적용 버튼을 클릭할 때 적용 (onSubmit) - multiple filters</li>
+    </ul>
+  
+    <h2 class="article-subhead">적용된 필터의 해제Reset</h2 class="article-subhead">
+    <ul>
+      <li>부분 해제</li>
+      <li>전체 해제</li>
+    </ul>
+  
+    <h2 class="article-subhead">적용된 필터의 상태</h2 class="article-subhead">
+    <ul>
+      <li>Multiple Options: 빌터 버튼에 적용된 필터의 갯수 표시.</li>
+      <li>Single Option: 액티브 상태와 레이블을 표기. (todo multiple)</li>
+      <li>적용된 필터 상태를 chip group with removable로 추가 제공(case. 오늘의집/네이버카페)</li>
+    </ul>
+  
+    <h2 class="article-subhead">필터링와 소팅의 위계</h2 class="article-subhead">
+    <p>
+      같은 컴포넌트일지라도 위계는 다르다. 소팅은 필터링의 하위 위계임을 시각적으로(위치 등) 명시하라.
+    </p>
+  
+    <h2 class="article-subhead">Questions</h2 class="article-subhead">
+    <p>사용자는 적용된 필터 옵션 전체를 초기화하기 위해 새로고침을 할까?</p>
+    <p>하나의 화면에서 모든 옵션 목록을 나열할 때 옵션 별로 다른 컴포넌트를 가져갈 수 있다. => 디자인과 개발 비용의 증가 만큼 사용자 경험이 월등한가? (case. airbnb)</o>
+  
+    <ul>
+      <li>필터의 버튼 그룹의 정렬 기준을 정의. hero 섹션과 같고 dialog와는 다르다.</li>
+      <li>range option</li>
+      <li>모든 필터 옵션을 세로 목록형 가로 스크롤로 나열할 수도 있다.</li>
+    </ul>
+  </div>
 </main>

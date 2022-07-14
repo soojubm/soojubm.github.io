@@ -31,7 +31,6 @@
 .textfield-button {border-top-left-radius:0;border-bottom-left-radius:0;position:absolute;right:0;top:0;}
 .textfield-link {@include link-outer;font-size:var(--font-size-caption);position:absolute;right:0;top:0;}
 .textfield-unit {}
-.textfield-back {@include button-text;}
 
 .textfield-check {@include textfield-surfix;}
 .textfield-prefix {@include textfield-prefix;background:var(--color-background-weak);}
@@ -43,6 +42,8 @@
 .textfield-clear {display:none;}
 .textfield-input:focus + .textfield-clear {display:flex;}
 
+
+.searchfield-cancel {@include button-text;position:absolute;right:0;top:0;}
 // 검색필드는 레이블이 없다. label ~로 하면 되긴 함.
 // input container
 

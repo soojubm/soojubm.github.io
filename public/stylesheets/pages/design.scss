@@ -36,8 +36,7 @@
 .article-subhead {margin:3rem 0 var(--space-small) 0;font-size:var(--font-size-body);font-weight:var(--font-weight-bold);text-transform:capitalize;}
 .article-subhead + * {margin-top:var(--space-small) !important;}
 
-
-.article.is-scrolled {animation:fadeup .8s forwards;}
+// .article.is-scrolled {animation:fadeup .8s forwards;}
 
 .design-typograph-group {display:flex;justify-content:space-between;@include tile-elevated;}
 .design-typograph-group .design-typograph-item {width:var(--grid-column);}
