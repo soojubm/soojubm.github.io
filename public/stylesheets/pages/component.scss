@@ -1,7 +1,7 @@
 
 .component {}
 
-.pattern {max-width:720px;margin:0 auto;padding:0 var(--grid-margin);}
+.pattern {max-width:720px;margin:0 auto;}
 
 .component-navigation {background:var(--color-background);padding-left:var(--grid-margin);overflow:hidden;position:sticky;top:calc(var(--titlebar-height));z-index:7;}
 // .component-navigation-background {@include bleeding;border-bottom:var(--border);}
