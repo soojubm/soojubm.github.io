@@ -4,7 +4,7 @@
     <!-- <span class="hero-eyebrow">Components</span> -->
     <!-- <h1 class="hero-title" style="line-height:1.3;margin-top:.25rem;"><span style="color:var(--color-text-light);">We 🐷</span><br />built this city.</h1> -->
     <h1 class="hero-title">Actions</h1>
-    <p class="hero-description">크게 action와 link로 나눈다. chip 형태가 너무나 많은 역할을 하는데, 역할로 나눌 필요성.</p>
+    <p class="hero-description">크게 action와 link로 나눈다.</p>
     <!-- <p>액션과 링크의 차이를 설명하기. fluid vs fullWidth.</p> -->
     <ul>
       <li>Text Link와 Text Button의 구분</li>
@@ -28,17 +28,12 @@
       <!-- // 작업 수행, 클릭할 수 있는  -->
       <p class="article-description">과업 수행을 위한 페이지 이동, 데이터 제출 등 사용자 여정의 핵심적인 액션입니다.</p>
 
-      <ul>
-        <li>Primary</li>
-        <li>Cancel</li>
-        <li>Destructive</li>
-      </ul>
       <!-- <p>Split Button</p> -->
       <!-- <li>아이콘 버튼의 아이콘은 관습적인 메타포를 사용하세요.</li> -->
       <!-- <p><span><i></i></span> 역할이 명확한 모두보기, 불러오는중, 더보기 등의 버튼은 합성해서 컴포넌트로 관리.</p> -->
       <!-- <li>버튼 아래에 가이드 텍스트를 배치하지 않습니다.<span hidden> (secondary 액션의 text 버튼이 아래에 위치하는 패턴 고려).</spanhi></li> -->
       
-      <h4 class="article-subhead">Component Tokens</h4>
+      <!-- <h4 class="article-subhead">Component Tokens</h4>
       <div class="tag-group">
         <small class="tag">--button-color-background</small>
         <small class="tag">--button-color-border</small>
@@ -49,7 +44,7 @@
         <small class="tag">--button-size-min-width</small>
         <small class="tag">--button-font-size</small>
         <small class="tag">--button-font-weight</small>
-      </div>
+      </div> -->
 
 
       <h4 class="article-subhead">Props</h4>
@@ -141,6 +136,10 @@
       <input type="button" value="button input"> -->
 
       <h4 class="article-subhead">Styles</h4>
+      <ul>
+        <li>text 버튼은 버튼 처럼 보이지 않을 수 있기 때문에 특정 패턴에서만 사용하세요.</li>
+      </ul>
+
 
       <div class="tile-flat" style="z-index:1;">
         <div class="design-buttongroup">
@@ -151,13 +150,11 @@
         </div>
         <button class="button-elevated" style="margin-bottom:0;">
           <figure class="button-elevated-avatar"></figure>
-          <span class="button-elevated-label">elevated 버튼</span>
+          <span class="button-elevated-label">Elevated</span>
         </button>
       </div>
-      <aside class="article-helper">
-        <p>text 버튼은 버튼 처럼 보이지 않을 수 있기 때문에 특정 패턴에서만 사용하세요.</p>
-      </aside>
 
+      <p style="margin:2rem 0 0;"><b>Sizes</b>. large는 프로모션 페이지의 call to action으로 제한적으로 사용합니다.</p>
       <div class="tile-flat">
         <div class="design-buttongroup">
           <button class="article-tertiary" style="height:64px;font-size:var(--font-size-subhead);vertical-align:bottom;">Large</button>
@@ -165,10 +162,8 @@
           <!-- <button class="article-tertiary-small">Small</button> -->
         </div>
       </div>
-      <aside class="article-helper">
-        <p>large는 프로모션 페이지의 call to action으로 제한적으로 사용합니다.</p>
-      </aside>
 
+      <p style="margin:2rem 0 0;"><b>States</b>. 정보의 접근성을 위해 색상만으로 상태를 표현하지 않습니다.</p>
       <!-- <h4 class="article-subhead">States</h4> -->
       <div class="tile-flat">
         <div class="design-buttongroup">
@@ -178,11 +173,8 @@
           <button class="article-tertiary">Loading</button>
         </div>
       </div>
-      <aside class="article-helper">
-        <p>정보의 접근성을 위해 색상만으로 상태를 표현하지 않습니다.</p>
-      </aside>
 
-      <!-- <h4 class="article-subhead">etc</h4> -->
+      <h4 class="article-subhead">todo</h4>
       <div class="tile-flat">
         <div class="design-buttongroup">
           <button class="article-tertiary" style="display:inline-flex;align-items:center;">Show more <figure style="display:flex;align-items:center;justify-content:center;width:var(--size-small);height:var(--size-small);"><i class="icon-chevron is-down"></i></figure></button>
@@ -191,7 +183,7 @@
         </div>
       </div>
       <aside class="article-helper">
-        <p>load 보다 show. full-width로 사용하지 마세요. 콘텐츠와 버튼의 크기가 같은 것보다 크기를 다르게 설정하여 대비와 어포던스를 높이세요.</p>
+        <p>cancel / load 보다 show. full-width로 사용하지 마세요. 콘텐츠와 버튼의 크기가 같은 것보다 크기를 다르게 설정하여 대비와 어포던스를 높이세요.</p>
       </aside>
 
       <h4 class="article-subhead">Button group</h4>
@@ -223,21 +215,6 @@
       <h1 class="article-title">Chips 🔥</h1>
       <p class="article-description">사용자 여정을 보조하는 액션입니다. 실행 페이지 내에서 사용자가 즉각적인 결과를 기대할 수 있습니다.</p>
       
-
-      <p>MD 기준.</p>
-      <ul>
-        <li>Input - removable</li>
-        <li>Choice</li>
-        <li>Filter with check icon</li>
-        <li>Action with icon</li>
-      </ul>
-      <!-- <aside class="article-aka" style="margin:var(--space) 0 0 0;">
-        <span class="tag">roles</span>
-        <span class="hashtag" title="action">action</span>
-        <span class="hashtag" title="choice">selection</span>
-        <span class="hashtag" title="filtering">filtering</span>
-        <span class="hashtag" title="filtering">search</span>
-      </aside> -->
       <aside class="article-aka" style="margin:0;">
         <span class="tag">a.k.a.</span>
         <span class="hashtag" title="">Tag</span>
@@ -247,48 +224,31 @@
         <span class="hashtag" title="">Label</span>
       </aside>
 
-      <br />
-
-      <h4 class="article-subhead">anatomy</h4>
-      <div class="tile-flat">
+      <!-- <h4 class="article-subhead">anatomy</h4>
+      <div class="">
         <span class="article-anatomy-item">chip group</span>
         <span class="article-anatomy-item">chip aria-expanded aria-haspopup</span>
-        <span class="article-anatomy-item is-nested">icon role="label" <small class="is-optional">optional</small></span>
-        <span class="article-anatomy-item is-nested">label</span>
-        <span class="article-anatomy-item is-nested">avatar <small class="is-optional">optional</small></span>
-        <span class="article-anatomy-item is-nested">remove icon <small class="is-optional">optional</small></span>
       </div>
-      
-      <!-- <h4 class="article-subhead">Component tokens</h4> -->
-      <div class="tile-flat">
-        <div class="tag-group">
-          <small class="tag">--chip-color-background</small>
-          <small class="tag">--chip-color-border</small>
-          <small class="tag">--chip-color-text</small>
-          <small class="tag">--chip-space-inset</small>
-          <small class="tag">--chip-space-outset</small>
-          <small class="tag">--chip-size-height</small>
-          <small class="tag">--chip-size-min-width</small>
-        </div>
-      </div>
-
+      <ul>
+        <li>icon role="label" <small class="is-optional">optional</small></li>
+        <li>text label</li>
+        <li>avatar <small class="is-optional">optional</small></li>
+        <li>remove icon <small class="is-optional">optional</small></li>
+      </ul> -->
 
       <!-- <h4 class="article-subhead">Props</h4> -->
-      <div class="tile-flat">
-        <dl>
-          <dt style="width:45%;">name</dt>
-          <dd style="width:45%;">string</dd>
-          <dt style="width:45%;">label</dt>
-          <dd style="width:45%;">string</dd>
-          <dt style="width:45%;">isRemovable<attr>?</attr></dt>
-          <dd style="width:45%;">boolean</dd>
-          <dt style="width:45%;">onClick</dt>
-          <dd style="width:45%;">function()</dd>
-          
-          <!-- <dt>isAddable / isCheckable?<attr>?</attr></dt> -->
-          <!-- <dd>boolean</dd> -->
-        </dl>
-      </div>
+      <!-- <dl>
+        <dt style="width:45%;">name</dt>
+        <dd style="width:45%;">string</dd>
+        <dt style="width:45%;">label</dt>
+        <dd style="width:45%;">string</dd>
+        <dt style="width:45%;">isRemovable<attr>?</attr></dt>
+        <dd style="width:45%;">boolean</dd>
+        <dt style="width:45%;">onClick</dt>
+        <dd style="width:45%;">function()</dd>
+        <dt>isAddable / isCheckable?<attr>?</attr></dt>
+        <dd>boolean</dd>
+      </dl> -->
 
       <h4 class="article-subhead">Best practices</h4>
       <ul>
@@ -324,11 +284,19 @@
         <div class="chip-group" role="group">
           <button class="chip" data-property="removable">
             <span class="chip-label">removable</span>
-            <figure class="chip-icon"><i class="icon-x"></i></figure>
+            <figure class="chip-remove"><i class="icon-x"></i></figure>
           </button>
           <button class="chip">
             <figure class="chip-icon">🦔</figure>
             <span class="chip-label">with icon</span>
+          </button>
+          <button class="chip is-active">
+            <figure class="chip-icon" style="background:none;"><i class="icon-check" style="border-color:var(--color-background);"></i></figure>
+            <span class="chip-label" style="padding-left:0;">checkable</span>
+          </button>
+          <button class="dropdown-trigger js-toggle" aria-expanded="true">
+            <span class="dropdown-trigger-label">expandable</span>
+            <figure class="dropdown-trigger-icon"><i class="icon-caret"></i></figure>
           </button>
         </div>
       </div>
@@ -338,8 +306,15 @@
       <!-- <p>안드로이드: chipGroup, HorizontalScrollView, singleLine, action/entry/filter(check active)/choice</p> -->
 
       <h4 class="article-subhead">Roles</h4>
-
-      <h6 class="article-label">Keywords</h6>
+<!-- 
+      <p>MD 기준.</p>
+      <ul>
+        <li>Input - removable</li>
+        <li>Choice</li>
+        <li>Filter with check icon</li>
+        <li>Action with icon</li>
+      </ul> -->
+      <h6 class="article-label">Keywords (action / search)</h6>
       <div class="tile-flat">
         <div class="keywords-group" role="group">
           <a class="keywords-group-keyword" href="#components">
@@ -359,9 +334,6 @@
           </a>
         </div>
       </div>
-      <aside class="article-helper">
-        <p>검색의 맥락.</p>
-      </aside>
 
       <h4 class="article-label">Contents Filtering - Single Selection</h4>
       <div class="tile-flat">
@@ -375,13 +347,9 @@
         </div>
       </div>
 
-      <h4 class="article-label">Choice - Multiple Selections witch check icon</h4>
+      <h4 class="article-label">Choice - Multiple Selections</h4>
       <div class="tile-flat">
         <div class="chip-group" role="group" aria-orientation="horizontal">
-          <button class="chip is-active">
-            <figure class="chip-icon" style="background:none;"><i class="icon-check" style="border-color:var(--color-background);"></i></figure>
-            <span class="chip-label" style="padding-left:0;">소설</span>
-          </button>
           <button class="chip">
             <span class="chip-label">소설</span>
           </button>
@@ -461,9 +429,6 @@
           </div>
         </div>
       </div>
-      <aside class="article-helper">
-        <p>필터옵션/정렬</p>
-      </aside>
 
       <h4 class="article-label">Dropdown controls</h4>
       <div class="tile-flat tile-elevated" style="max-width:360px;overflow:hidden;">

@@ -31,9 +31,9 @@
 .article-anatomy-item.is-nested {margin-left:var(--space);position:relative;}
 .article-anatomy-item.is-nested-nested {margin-left:2rem;}
 .article-anatomy-item.is-nested:before{content:'';display:block;width:1px;height:100%;background:var(--color-text);}
-.article-anatomy-item .is-optional {margin:0 0 .5rem 0;font-size:10px;color:var(--color-text-light);}
+.article-anatomy-item .is-optional {margin:0 0 .5rem 0;font-size:10px;color:var(--color-text-light);vertical-align:top;}
 
-.article-subhead {margin:3rem 0 var(--space-after-subhead) 0;@include text-subhead;text-transform:capitalize;}
+.article-subhead {margin:4rem 0 .75rem;@include text-subhead;text-transform:capitalize;}
 .article-subhead + * {margin-top:var(--space-small) !important;}
 
 .article-label {margin:var(--space) 0 -.25rem;@include text-label;}
