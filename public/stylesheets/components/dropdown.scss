@@ -5,7 +5,7 @@
 .dropdown-trigger {@include chip;}
 // .dropdown-trigger.is-active {background:none;color:none;}
 .dropdown-trigger-label {@include chip-label;}
-.dropdown-trigger-icon {@include avatar-small;@include chip-tailing;background-color:inherit;}
+.dropdown-trigger-icon {@include chip-icon;background-color:inherit;}
 
 .dropdown-menu {@include tile-elevated-small;min-width:var(--width-dropdown);
   margin: 0; // todo tile margin
@@ -16,5 +16,5 @@
 .dropdown-menu-link:hover {@include hover-item;}
 .is-active + .dropdown-menu {height:auto;transform:scale(1);}
 
-.dropdown-footer {@include chip-group;margin:var(--space) var(--space-minus) -.25rem;padding:var(--space-small) .75rem 0;border-top:var(--border);}
-.dropdown-footer-question {margin-top:6px;margin-right:auto;}
+.dropdown-footer {@include chip-group;align-items:centetr;margin:var(--space) var(--space-minus) -.25rem;padding:var(--space-small) .75rem 0;border-top:var(--border);}
+.dropdown-footer-question {margin-right:auto;}

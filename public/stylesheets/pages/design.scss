@@ -33,8 +33,11 @@
 .article-anatomy-item.is-nested:before{content:'';display:block;width:1px;height:100%;background:var(--color-text);}
 .article-anatomy-item .is-optional {margin:0 0 .5rem 0;font-size:10px;color:var(--color-text-light);}
 
-.article-subhead {margin:3rem 0 var(--space-small) 0;font-size:var(--font-size-body);font-weight:var(--font-weight-bold);text-transform:capitalize;}
+.article-subhead {margin:3rem 0 var(--space-after-subhead) 0;@include text-subhead;text-transform:capitalize;}
 .article-subhead + * {margin-top:var(--space-small) !important;}
+
+.article-label {margin:var(--space) 0 -.25rem;@include text-label;}
+// .article-label + p {margin:var(--space-small) 0 0 0;}
 
 // .article.is-scrolled {animation:fadeup .8s forwards;}
 

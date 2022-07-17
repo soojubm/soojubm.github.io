@@ -30,7 +30,7 @@
 .icon-x.is-red:before {background-color:var(--red800);}
 .icon-x.is-red:after {background-color:var(--red800);}
 
-.icon-check {display:inline-block;width:7px;height:2px;border-left:2px solid;border-bottom:2px solid;border-color:var(--icon-background);vertical-align:middle;transform:translateY(-2px) rotate(-45deg);}
+.icon-check {display:inline-block;width:7px;height:2px;border-left:2px solid;border-bottom:2px solid;border-color:var(--icon-background);vertical-align:middle;transform:translateY(-3px) rotate(-45deg);}
 // .icon-check {display:inline-block;width:8px;height:4px;border-left:1px solid;border-bottom:1px solid;border-color:var(--icon-background);vertical-align:middle;transform:translateY(0) rotate(-45deg);}
 
 
@@ -73,7 +73,7 @@
 .icon-chevron {display:block;margin:0 3px 0 0;padding:3px;border:solid var(--icon-background);border-width:0 2px 2px 0;transform:rotate(-45deg);}
 .icon-chevron.is-left {margin:0 0 0 3px;transform:rotate(135deg);}
 .icon-chevron.is-up {margin-top:4px;transform:rotate(-135deg);}
-.icon-chevron.is-down {transform:rotate(45deg) translate(0, -2px);}
+.icon-chevron.is-down {transform:rotate(45deg) translate(0, -3px);}
 
 // todo opacity
 .icon-grid {padding:7px;position:relative;}

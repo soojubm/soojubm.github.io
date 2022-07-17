@@ -6,6 +6,9 @@
     <h1 class="hero-title">Actions</h1>
     <p class="hero-description">크게 action와 link로 나눈다. chip 형태가 너무나 많은 역할을 하는데, 역할로 나눌 필요성.</p>
     <!-- <p>액션과 링크의 차이를 설명하기. fluid vs fullWidth.</p> -->
+    <ul>
+      <li>Text Link와 Text Button의 구분</li>
+    </ul>
   </section>
 
   <nav class="component-navigation">
@@ -25,26 +28,29 @@
       <!-- // 작업 수행, 클릭할 수 있는  -->
       <p class="article-description">과업 수행을 위한 페이지 이동, 데이터 제출 등 사용자 여정의 핵심적인 액션입니다.</p>
 
+      <ul>
+        <li>Primary</li>
+        <li>Cancel</li>
+        <li>Destructive</li>
+      </ul>
       <!-- <p>Split Button</p> -->
       <!-- <li>아이콘 버튼의 아이콘은 관습적인 메타포를 사용하세요.</li> -->
       <!-- <p><span><i></i></span> 역할이 명확한 모두보기, 불러오는중, 더보기 등의 버튼은 합성해서 컴포넌트로 관리.</p> -->
       <!-- <li>버튼 아래에 가이드 텍스트를 배치하지 않습니다.<span hidden> (secondary 액션의 text 버튼이 아래에 위치하는 패턴 고려).</spanhi></li> -->
-
-      <div class="tile-flat" style="z-index:1;">
-        <div class="design-buttongroup">
-          <button class="article-primary">Primary</button>
-          <button class="article-secondary">Secondary</button>
-          <button class="article-tertiary">Tertiary</button>
-          <button class="article-text">Text</button>
-        </div>
-        <button class="button-elevated" style="margin-bottom:0;">
-          <figure class="button-elevated-avatar"></figure>
-          <span class="button-elevated-label">elevated 버튼</span>
-        </button>
+      
+      <h4 class="article-subhead">Component Tokens</h4>
+      <div class="tag-group">
+        <small class="tag">--button-color-background</small>
+        <small class="tag">--button-color-border</small>
+        <small class="tag">--button-color-text</small>
+        <small class="tag">--button-space-inset</small>
+        <small class="tag">--button-space-outset</small>
+        <small class="tag">--button-size-height</small>
+        <small class="tag">--button-size-min-width</small>
+        <small class="tag">--button-font-size</small>
+        <small class="tag">--button-font-weight</small>
       </div>
-      <aside class="article-helper">
-        <p>text 버튼은 버튼 처럼 보이지 않을 수 있기 때문에 특정 패턴에서만 사용하세요.</p>
-      </aside>
+
 
       <h4 class="article-subhead">Props</h4>
       <table>
@@ -106,14 +112,12 @@
         </tbody>
       </table>
 
-      <h4 class="article-subhead">Guidelines</h4>
+      <h4 class="article-subhead">Best practices</h4>
       <ul>
         <li>액션 실행 후 피드백합니다. 물리적인 인터페이스의 출현 뿐 아니라 예측할 수 있는 페이지 이동이나 페이지 새로고침, 정보 구조의 변화도 피드백으로 취급될 수 있습니다. (bad case. 인스타그램의 로그인 성공 toast)</li>
-        <li>통일된 시각적 단서로 버튼의 상태를 표현합니다. 상태를 표현하는 시각 정보는 개별 컴포넌트에 종속되지 않고 제품 전체에 일관되게 표현합니다.</li>
-        <li>버튼그룹에서 primary 버튼과 secondary 버튼을 함께 배치하지 마세요.</li>
-        <li>버튼그룹에서 항상 primary 버튼을 먼저 마크업하거나 tab index를 설정하여 탭으로 먼저 접근할 수 있도록 하세요.</li>
-        <li>레이블을 생략하여 아이콘 버튼으로 쓰지 않습니다.</li>
-        <!-- <li>버튼 레이블 : 버튼이 수행</li> -->
+        <li>사용자가 다음에 일어날 일을 예측할 수 있도록 레이블을 작성하세요. 텍스트 레이블을 생략하는 경우 보편적인 메타포의 아이콘과 대체 텍스트를 제공하세요.</li>
+        <li>통일된 시각 언어로 버튼의 상태를 표현하세요. 상태를 표현하는 시각 언어는 일부 컴포넌트에 종속되지 않고 제품 전체에 일관되어야 합니다.</li>
+        <!-- <li>버튼에 장식적인 아이콘을 포함하지 마세요. </li> -->
       </ul>
       
       <h4 class="article-subhead">Editing Checklist</h4>
@@ -136,7 +140,24 @@
       <input type="submit" value="submit input">
       <input type="button" value="button input"> -->
 
-      <h4 class="article-subhead">Sizes</h4>
+      <h4 class="article-subhead">Styles</h4>
+
+      <div class="tile-flat" style="z-index:1;">
+        <div class="design-buttongroup">
+          <button class="article-primary">Primary</button>
+          <button class="article-secondary">Secondary</button>
+          <button class="article-tertiary">Tertiary</button>
+          <button class="article-text">Text</button>
+        </div>
+        <button class="button-elevated" style="margin-bottom:0;">
+          <figure class="button-elevated-avatar"></figure>
+          <span class="button-elevated-label">elevated 버튼</span>
+        </button>
+      </div>
+      <aside class="article-helper">
+        <p>text 버튼은 버튼 처럼 보이지 않을 수 있기 때문에 특정 패턴에서만 사용하세요.</p>
+      </aside>
+
       <div class="tile-flat">
         <div class="design-buttongroup">
           <button class="article-tertiary" style="height:64px;font-size:var(--font-size-subhead);vertical-align:bottom;">Large</button>
@@ -148,31 +169,29 @@
         <p>large는 프로모션 페이지의 call to action으로 제한적으로 사용합니다.</p>
       </aside>
 
-
-      <h4 class="article-subhead">States</h4>
+      <!-- <h4 class="article-subhead">States</h4> -->
       <div class="tile-flat">
         <div class="design-buttongroup">
           <button class="article-tertiary is-hover" style="margin-right:.75rem;">Hover</button>
           <button class="article-tertiary is-focus">Focus</button>
           <button class="article-tertiary" disabled>Disabled</button>
-          <button class="article-tertiary" disabled>TODO: Progressing</button>
+          <button class="article-tertiary">Loading</button>
         </div>
       </div>
       <aside class="article-helper">
         <p>정보의 접근성을 위해 색상만으로 상태를 표현하지 않습니다.</p>
       </aside>
 
-
-      <h4 class="article-subhead">etc</h4>
+      <!-- <h4 class="article-subhead">etc</h4> -->
       <div class="tile-flat">
         <div class="design-buttongroup">
           <button class="article-tertiary" style="display:inline-flex;align-items:center;">Show more <figure style="display:flex;align-items:center;justify-content:center;width:var(--size-small);height:var(--size-small);"><i class="icon-chevron is-down"></i></figure></button>
           <button class="article-secondary">Follow (toggle)</button>
-          <button class="danger-button" aria-label="danger">Danger</button>
+          <button class="danger-button" aria-label="danger">Destructive</button>
         </div>
       </div>
       <aside class="article-helper">
-        <p>more load를 full-width로 사용하지 마세요. 콘텐츠와 버튼의 크기가 같은 것보다 크기를 다르게 설정하여 대비와 어포던스를 높이세요.</p>
+        <p>load 보다 show. full-width로 사용하지 마세요. 콘텐츠와 버튼의 크기가 같은 것보다 크기를 다르게 설정하여 대비와 어포던스를 높이세요.</p>
       </aside>
 
       <h4 class="article-subhead">Button group</h4>
@@ -184,6 +203,8 @@
       </div>
       <aside class="article-helper">
         <p>최대 2가지 액션을 사용할 수 있습니다. 3가지 이상의 액션 모음을 위한 toolbar 컴포넌트를 정의하기.</p>
+        <p>버튼그룹에서 primary 버튼과 secondary 버튼을 함께 배치하지 마세요.</p>
+        <p>버튼그룹에서 항상 primary 버튼을 먼저 마크업하거나 tab index를 설정하여 탭으로 먼저 접근할 수 있도록 하세요.</p>
       </aside>
 
     </article>
@@ -202,6 +223,14 @@
       <h1 class="article-title">Chips 🔥</h1>
       <p class="article-description">사용자 여정을 보조하는 액션입니다. 실행 페이지 내에서 사용자가 즉각적인 결과를 기대할 수 있습니다.</p>
       
+
+      <p>MD 기준.</p>
+      <ul>
+        <li>Input - removable</li>
+        <li>Choice</li>
+        <li>Filter with check icon</li>
+        <li>Action with icon</li>
+      </ul>
       <!-- <aside class="article-aka" style="margin:var(--space) 0 0 0;">
         <span class="tag">roles</span>
         <span class="hashtag" title="action">action</span>
@@ -220,6 +249,59 @@
 
       <br />
 
+      <h4 class="article-subhead">anatomy</h4>
+      <div class="tile-flat">
+        <span class="article-anatomy-item">chip group</span>
+        <span class="article-anatomy-item">chip aria-expanded aria-haspopup</span>
+        <span class="article-anatomy-item is-nested">icon role="label" <small class="is-optional">optional</small></span>
+        <span class="article-anatomy-item is-nested">label</span>
+        <span class="article-anatomy-item is-nested">avatar <small class="is-optional">optional</small></span>
+        <span class="article-anatomy-item is-nested">remove icon <small class="is-optional">optional</small></span>
+      </div>
+      
+      <!-- <h4 class="article-subhead">Component tokens</h4> -->
+      <div class="tile-flat">
+        <div class="tag-group">
+          <small class="tag">--chip-color-background</small>
+          <small class="tag">--chip-color-border</small>
+          <small class="tag">--chip-color-text</small>
+          <small class="tag">--chip-space-inset</small>
+          <small class="tag">--chip-space-outset</small>
+          <small class="tag">--chip-size-height</small>
+          <small class="tag">--chip-size-min-width</small>
+        </div>
+      </div>
+
+
+      <!-- <h4 class="article-subhead">Props</h4> -->
+      <div class="tile-flat">
+        <dl>
+          <dt style="width:45%;">name</dt>
+          <dd style="width:45%;">string</dd>
+          <dt style="width:45%;">label</dt>
+          <dd style="width:45%;">string</dd>
+          <dt style="width:45%;">isRemovable<attr>?</attr></dt>
+          <dd style="width:45%;">boolean</dd>
+          <dt style="width:45%;">onClick</dt>
+          <dd style="width:45%;">function()</dd>
+          
+          <!-- <dt>isAddable / isCheckable?<attr>?</attr></dt> -->
+          <!-- <dd>boolean</dd> -->
+        </dl>
+      </div>
+
+      <h4 class="article-subhead">Best practices</h4>
+      <ul>
+        <li>맥락이 다른 chip을 나열할 수 있습니다. 이 때 단일선택, 다중선택, 삭제여부, 펼침메뉴 등의 기표를 충분히 제공하세요.</li>
+        <li>콘텐츠 정렬sorting을 위해 chip group으로 chip을 나열하지 않습니다. dropdown으로 현재 정렬 상태만 요약합니다. (bad case: 2022.04 구글 지도 바뀐 것)</li>
+      </ul>
+
+      <blockquote>
+        <p>콘텐츠 필터링을 위한 칩 그룹에서, 액티브 상태에 브랜드 컬러를 쓰지 않는 경향이 있습니다. 콘텐츠 탐색이 cta이기 때문인데요.</p>
+        <p>overflow menu의 trigger는 chip이지만 menulist는 시트/드롭다운/셀렉트박스/모달이 될 수 있어야 합니다. 모달이 가장 범용적. sorting/filtering 등 역할 기반 컴포넌트를 만들고 chip을 mixin.</p>
+      </blockquote>
+
+      <h4 class="article-subhead">Styles</h4>
       <div class="tile-flat">
         <div class="chip-group" role="group" aria-orientation="horizontal">
           <button class="chip">
@@ -231,67 +313,33 @@
           <button class="chip" style="opacity:.5;cursor:not-allowed;" disabled>
             <span class="chip-label">disabled</span>
           </button>
+          <button class="chip" style="background:var(--red100);">
+            <span class="chip-label" style="color:var(--red800);">Destructive</span>
+          </button>
         </div>
       </div>
 
-      <h4 class="article-subhead">Props</h4>
-      <table>
-        <caption hidden>Table Caption</caption>
-        <tbody role="rowgroup">
-          <tr role="row">
-            <th scope="row" style="font-weight:var(--font-weight-bold);color:var(--color-text);">name</th>
-            <th style="font-weight:var(--font-weight-bold);color:var(--color-text);">type</th>
-          </tr>
-          <tr role="row">
-            <th scope="row">name</th>
-            <td>string</td>
-          </tr>
-          <tr role="row">
-            <th scope="row">label</th>
-            <td>string</td>
-          </tr>
-          <tr role="row">
-            <th scope="row">isRemovable<attr>?</attr></th>
-            <td>boolean</td>
-          </tr>
-          <tr role="row">
-            <th scope="row">isAddable / isCheckable?<attr>?</attr></th>
-            <td>boolean</td>
-          </tr>
-          <tr role="row">
-            <th scope="row">onClick</th>
-            <td>function()</td>
-          </tr>
-        </tbody>
-      </table>
-      
-      <h4 class="article-subhead">Guidelines</h4>
-      <ul>
-        <li>맥락이 다른 chip을 나열할 수 있습니다. 이 때 단일선택, 다중선택, 삭제여부, 펼침메뉴 등의 기표를 충분히 제공하세요.</li>
-        <li>콘텐츠 정렬sorting을 위해 chip group으로 chip을 나열하지 않습니다. dropdown으로 현재 정렬 상태만 요약합니다. (bad case: 2022.04 구글 지도 바뀐 것)</li>
-        <li>todo: uncheckable/removable를 구분할 수 있는 기표 제공. 단일/다중/</li>
-        <li>todo: checked 상태를 아이콘을 추가 제공하는 것이 좋은가</li>
-      </ul>
-
-
-      <blockquote>
-        <p>콘텐츠 필터링을 위한 칩 그룹에서, 액티브 상태에 브랜드 컬러를 쓰지 않는 경향. 콘텐츠 탐색이 cta.</p>
-        <p>overflow menu의 trigger는 chip이지만 menulist는 시트/드롭다운/셀렉트박스/모달이 될 수 있다. 모달이 가장 범용적. sorting/filtering 등 역할 기반 컴포넌트를 만들고 chip을 mixin.</p>
-      </blockquote>
-
-      <h4 class="article-subhead">anatomy</h4>
-      <div class="article-anatomy is-anatomy">
-        <span class="article-anatomy-item">chip group</span>
-        <span class="article-anatomy-item">chip aria-expanded aria-haspopup</span>
-        <span class="article-anatomy-item is-nested">icon role="label" <small class="is-optional">optional</small></span>
-        <span class="article-anatomy-item is-nested">label</span>
-        <span class="article-anatomy-item is-nested">avatar <small class="is-optional">optional</small></span>
-        <span class="article-anatomy-item is-nested">remove icon <small class="is-optional">optional</small></span>
+      <!-- <h4 class="article-subhead">Removable</h4> -->
+      <div class="tile-flat">
+        <div class="chip-group" role="group">
+          <button class="chip" data-property="removable">
+            <span class="chip-label">removable</span>
+            <figure class="chip-icon"><i class="icon-x"></i></figure>
+          </button>
+          <button class="chip">
+            <figure class="chip-icon">🦔</figure>
+            <span class="chip-label">with icon</span>
+          </button>
+        </div>
       </div>
-
+      
+      <!-- <p>- addable/removable, todo: chip-icon의 hover... 결국 chip과 분리된 컴포넌트가 필요함. 역할이 다르기 때문에 괜찮음.</p> -->
+      <!-- Markup(button vs radio,checkbox) -->
       <!-- <p>안드로이드: chipGroup, HorizontalScrollView, singleLine, action/entry/filter(check active)/choice</p> -->
 
-      <h4 class="article-subhead">Keywords</h4>
+      <h4 class="article-subhead">Roles</h4>
+
+      <h6 class="article-label">Keywords</h6>
       <div class="tile-flat">
         <div class="keywords-group" role="group">
           <a class="keywords-group-keyword" href="#components">
@@ -312,10 +360,10 @@
         </div>
       </div>
       <aside class="article-helper">
-        <p>검색의 맥락. todo 해시태그나 태그 컴포넌트의 역할을 구분</p>
+        <p>검색의 맥락.</p>
       </aside>
 
-      <h4 class="article-subhead">Single Selection</h4>
+      <h4 class="article-label">Contents Filtering - Single Selection</h4>
       <div class="tile-flat">
         <div class="chip-group" role="group" aria-orientation="horizontal">
           <button class="chip js-toggle is-active">
@@ -324,23 +372,14 @@
           <button class="chip js-toggle">
             <span class="chip-label">결제완료</span>
           </button>
-          <button class="chip js-toggle">
-            <span class="chip-label">주문취소</span>
-          </button>
-          <button class="chip js-toggle">
-            <span class="chip-label">+5</span>
-          </button>
         </div>
       </div>
-      <aside class="article-helper">
-        <p>Contents Filtering의 맥락</p>
-      </aside>
 
-      <!-- <h4 class="article-subhead">Multiple Selections (todo)</h4>
+      <h4 class="article-label">Choice - Multiple Selections witch check icon</h4>
       <div class="tile-flat">
         <div class="chip-group" role="group" aria-orientation="horizontal">
           <button class="chip is-active">
-            <figure class="chip-thumbnail" style="background:none;"><i class="icon-check" style="border-color:var(--color-primary);"></i></figure>
+            <figure class="chip-icon" style="background:none;"><i class="icon-check" style="border-color:var(--color-background);"></i></figure>
             <span class="chip-label" style="padding-left:0;">소설</span>
           </button>
           <button class="chip">
@@ -351,12 +390,9 @@
           </button>
         </div>
       </div>
-      <footer style="margin-left:0;">
-        <p style="margin:0 0 var(--space-small) 0;color:var(--color-text-light);">selected <em>10</em> / 50</p>
-        <button class="chip" style="background:var(--red100);"><span class="chip-label" style="color:var(--red800);">Reset</span></button>
-      </footer> -->
+      <!-- <p style="margin:0 0 var(--space-small) 0;color:var(--color-text-light);">selected <em>10</em> / 50</p> -->
 
-      <h4 class="article-subhead">Dropdown (Overflow menu)</h4>
+      <h4 class="article-label">Dropdown (Overflow menu)</h4>
       <div class="tile-flat">
         <!-- // todo 마이너스 마진 때문에 하나 더  -->
         <div class="chip-group">
@@ -411,9 +447,7 @@
                 최신순
                 <i class="icon-check"></i>
               </a>
-              <a class="dropdown-menu-link" href="#" disabled>
-                최신순
-              </a>
+              <a class="dropdown-menu-link" href="#" disabled>최신순</a>
             </menu>
           </div>
           <div class="dropdown">
@@ -429,39 +463,9 @@
       </div>
       <aside class="article-helper">
         <p>필터옵션/정렬</p>
-        <p>드롭다운/셀렉트박스/바텀시트/모달</p>
       </aside>
 
-      <h4 class="article-subhead">Removable</h4>
-      <div class="tile-flat">
-        <div class="chip-group" role="group">
-          <button class="chip" data-property="removable">
-            <span class="chip-label">소설</span>
-            <figure class="chip-icon"><i class="icon-x"></i></figure>
-          </button>
-        </div>
-      </div>
-      <aside class="article-helper">
-        <p>Selection 맥락. </p>
-      </aside>
-
-
-      <!-- <p>- addable/removable, todo: chip-icon의 hover... 결국 chip과 분리된 컴포넌트가 필요함. 역할이 다르기 때문에 괜찮음.</p> -->
-      <!-- Markup(button vs radio,checkbox) -->
-      <h4 class="article-subhead">with Icon</h4>
-      <div class="tile-flat">
-        <div class="chip-group" role="group">
-          <button class="chip">
-            <figure class="chip-thumbnail">🦔</figure>
-            <!-- <figure class="chip-remove">결제완료</figure>
-            <figure class="chip-check">결제완료</figure>
-            <small class="chip-count">5</small> -->
-            <span class="chip-label">타이포그래피</span>
-          </button>
-        </div>
-      </div>
-
-      <h4 class="article-subhead">Test - dropdown controls</h4>
+      <h4 class="article-label">Dropdown controls</h4>
       <div class="tile-flat tile-elevated" style="max-width:360px;overflow:hidden;">
         <p>콘텐츠 영역</p>
         <footer class="dropdown-footer chip-group" role="group" aria-orientation="horizontal">
@@ -513,21 +517,13 @@
       </div>
 
       <h4 class="article-subhead">Props</h4>
-      <table>
-        <caption hidden>Table Caption</caption>
-        <tbody role="rowgroup">
-          <tr role="row">
-            <th scope="row" style="font-weight:var(--font-weight-bold);color:var(--color-text);">name</th>
-            <th style="font-weight:var(--font-weight-bold);color:var(--color-text);">type</th>
-          </tr>
-          <tr role="row">
-            <th scope="row">todo</th>
-            <td>todo</td>
-          </tr>
-        </tbody>
-      </table>
+      <dl>
+        <dt title="a target=_blank rel=noopener noreferrer">isExternal<attr>?</attr></dt>
+        <dd>boolean</dd>
+      </dl>
 
-      <h4 class="article-subhead">Guidelines</h4>
+
+      <h4 class="article-subhead">Best practices</h4>
       <ul>
         <li>텍스트 단락과 함께 사용합니다.</li>
         <li>텍스트 단락의 내/외부에서의 형태를 구분합니다. 단락 내부에서는 본문 텍스트와 대비를 위해 언더라인을 추가합니다.</li>
@@ -536,15 +532,6 @@
 
       <!-- <span class="tag">@mixin link-outer</span>
       <span class="tag">@mixin link-inner</span> -->
-
-      <h4 class="article-subhead">anatomy & a11y</h4>
-      <div class="article-anatomy is-anatomy">
-        <div class="article-anatomy-item">
-          a // for internal link</div>
-        <div class="article-anatomy-item">
-          a target="_blank" rel="noopener noreferrer" // for external link
-        </div>
-      </div>
     </article>
 
     <article class="article js-observer js-scrollspy-section">

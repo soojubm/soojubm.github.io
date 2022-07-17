@@ -4,66 +4,36 @@
 @mixin chip {
   display: flex;
   align-items: center;
-  justify-content: center; // todo / for icon button
-  min-width:var(--size-medium);
-  height:var(--size-medium);
-  border:1px solid var(--color-background-weak); // todo
-  border-radius:var(--radius);
-  box-sizing:border-box;
-  background:var(--color-background-weak);
+  justify-content: center;
+  min-width: var(--size-medium);
+  height: var(--size-medium);
+  border-radius: var(--radius);
+  background: var(--color-background-weak);
   color: var(--color-text);
-  // line-height:30px;
-  position:relative;
   @media (hover) and (pointer: fine) {
     &:hover {outline:4px solid rgba(0,0,0,.1);}
   }
-  // &:hover figure {border-top-color:inherit !important;border-bottom-color:inherit !important;background:none;}
   &:disabled {border-color:transparent;}
-  &:disabled figure {}
   
   &.is-active {
-    // medium
-    // border-color:var(--color-primary);background:var(--green100);color:var(--color-primary);
     border-color: var(--color-background-strong);
     background: var(--color-background-strong);
     color: var(--color-text-weak);
   }
-  &.is-active figure {
-    // border-top-color:var(--color-primary) !important;border-bottom-color:var(--color-primary) !important;
-  }
 
-  // todo
   &[data-property=removable] {
-    &:hover {
-      cursor:default;
-      outline:none;
-    }
-    .chip-icon:hover {background:var(--color-background);cursor:pointer;}
+    &:hover {outline:none;cursor:default;}
+    // .chip-icon:hover {background:var(--color-background);cursor:pointer;}
   }
 }
 
-@mixin chip-heading {float:left;margin:0 0 0 .25rem;background:var(--color-background);}
-@mixin chip-tailing {margin:0 .25rem 0 -.25rem;}
-// @mixin chip-tailing {float:right;}
-
-@mixin chip-icon {
-  @include avatar-small;
-  @include chip-tailing;
-}
-@mixin chip-label {
-  padding:0 var(--space-inset-chip) var(--adjust-label-line);
-  // line-height: 1; // todo why??
-}
+@mixin chip-icon {@include avatar-medium;}
+@mixin chip-label {padding:0 var(--space-inset-chip) var(--adjust-label-line);}
 
 .chip {@include chip}
 .chip-label {@include chip-label;}
-.chip-thumbnail {@include avatar-small;@include chip-heading;}
-
 .chip-icon {@include chip-icon;}
-.chip-icon .icon-caret {}
-.chip-icon .icon-check {border-color: var(--color-primary);}
-.chip-icon .icon-x {}
 
-.is-active .chip-label {color:inherit;}
-.is-active .chip-icon .icon-x::before {background:var(--color-background);}
-.is-active .chip-icon .icon-x::after {background:var(--color-background);}
+.chip-close {}
+.chip-add {}
+.chip-checked {} // chip-avatar
