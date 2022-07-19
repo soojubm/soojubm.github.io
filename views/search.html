@@ -13,10 +13,24 @@
     </ul>
     
     <h2 class="article-subhead">검색의 시작</h2>
-    <ul>
+    <ul style="margin:0 0 1rem 0;">
       <li>해시태그나 카테고리 등 제공된 인기/추천 키워드를 통한 검색. (액션/button) - clickable과 non-clickable 요소를 함께 정의하면 좋다.</li>
       <li>직접 키워드 입력 - 검색어 자동완성 (입력/input)</li>
     </ul>
+    <section class="search-suggestion">
+      <div class="search-suggestion-item item" data-size="medium">
+        <figure class="search-suggestion-item-avatar item-avatar"><i></i></figure>
+        <p class="item-name">자동완성</p>
+      </div>
+      <div class="search-suggestion-item item" data-size="medium">
+        <figure class="search-suggestion-item-avatar item-avatar"></figure>
+        <p class="item-name">자동완성유아이</p>
+      </div>
+      <div class="search-suggestion-item button-elevated" style="z-index:auto;">
+        <figure class="search-suggestion-item-avatar"><i class="icon-search"></i></figure>
+        <p style="color:var(--color-primary);"><span>자동완</span>(으)로 검색</p>
+      </div>
+    </section>
     
     <h2 class="article-subhead">최근 검색 내역</h2>
     <ul style="margin:0 0 1rem 0;">
@@ -68,9 +82,6 @@
 
     <h2 class="article-subhead">검색어 추천</h2>
     <div style="display:flex;margin-left:-.25rem;">
-      <a href="" class="search-similar-item">
-        <span style="padding:0 .5rem;">검색어 추천</span>
-      </a>
       <a href="" class="search-similar-item">
         <figure>🦔</figure>
         <span>간격/텍스트기준선</span>
@@ -127,13 +138,5 @@
       <button class="quantity-decrement js-quantity-decrement" style="left:var(--padding-left);"><i class="icon-minus"></i></button>
       <button class="quantity-increment js-quantity-increment"><i class="icon-plus"></i></button>
     </div>
-    <footer class="dropdown-footer" role="group" aria-orientation="horizontal">
-      <button class="dropdown-footer-action chip">
-        <span class="chip-label">Yes</span>
-      </button>
-      <button class="dropdown-footer-action chip">
-        <span class="chip-label">No</span>
-      </button>
-    </footer>
   </section> -->
 </main>

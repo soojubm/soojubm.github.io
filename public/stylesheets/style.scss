@@ -115,7 +115,6 @@
 
 .avatar-badge {@include avatar-tiny;border:2px solid var(--color-background);background:var(--color-accent);position:absolute;left:-.25rem;top:-.25rem;z-index:1;}
 
-
 .statistic {display:flex;justify-content:space-evenly;}
 .statistic-item {position:relative;}
 .statistic-item:hover {@include hover-item;}

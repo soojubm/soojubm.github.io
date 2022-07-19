@@ -3,18 +3,16 @@
 
 .dropdown {position:relative;}
 .dropdown-trigger {@include chip;}
-// .dropdown-trigger.is-active {background:none;color:none;}
 .dropdown-trigger-label {@include chip-label;}
-.dropdown-trigger-icon {@include chip-icon;background-color:inherit;}
-
-.dropdown-menu {@include tile-elevated-small;min-width:var(--width-dropdown);
-  margin: 0; // todo tile margin
-  padding:0;
-  position:absolute;top:calc(var(--size-medium) + var(--space-small));z-index:var(--zindex-popover);height:0;transform:scale(0);transform-origin:left top;}
+.dropdown-trigger-icon {@include chip-icon;}
+.dropdown-menu {@include tile-elevated-small;min-width:var(--width-dropdown);margin:0;padding:0;
+  position:absolute;top:calc(var(--size-medium) + var(--space-small));z-index:var(--zindex-popover);
+  height:0;transform:scale(0);transform-origin:left top;}
 .dropdown-menu-title {}
 .dropdown-menu-link {display:block;margin:.75rem;color:var(--color-text);position:relative;z-index:var(--zindex-default);}
 .dropdown-menu-link:hover {@include hover-item;}
-.is-active + .dropdown-menu {height:auto;transform:scale(1);}
 
 .dropdown-footer {@include chip-group;align-items:centetr;margin:var(--space) var(--space-minus) -.25rem;padding:var(--space-small) .75rem 0;border-top:var(--border);}
 .dropdown-footer-question {margin-right:auto;}
+
+.is-active + .dropdown-menu {height:auto;transform:scale(1);}

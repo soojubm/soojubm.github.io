@@ -1,22 +1,14 @@
 <main class="token">
   <section class="hero">
-    <!-- <figure class="tokens-hero-image">
-      <span class="tokens-hero-image-item">🐽</span>
-      <span class="tokens-hero-image-item">🐷</span>
-      <span class="tokens-hero-image-item">🐖</span>
-    </figure> -->
-    <!-- <h1 class="hero-title" style="line-height:1.3;margin-top:.25rem;"><span style="color:var(--color-text-light);">Design Tokens</span><br />simply dummy text of the printing<br />and typesetting industry.</h1> -->
-    <h1 class="hero-title">Design Tokens</h1>
-    <!-- <p class="hero-description"></p> -->
+    <h1 class="hero-title"><span style="color:var(--color-text-light);">Design Tokens</span><br />simply dummy text of the printing<br />and typesetting industry.</h1>
     <br />
     <ul>
       <li>global :  --[name]-[componentName]-[role]-[?state]</li>
       <li>컴포넌트 토큰은 컴포넌트 스코프로 정의합니다.</li>
-      <hr />
-      <li>SCSS/LESS: kebab-case</li>
+      <!-- <li>SCSS/LESS: kebab-case</li>
       <li>JS: PascalCase</li>
       <li>Android: snake_case</li>
-      <li>iOS: PascalCase</li>
+      <li>iOS: PascalCase</li> -->
     </ul>
     <!-- <p>모든 세부사항을 정의할 필요는 없습니다. 예를 들면, border width와 같은 한정된 용법은 약속을 하지 않는 편이 좋다. 변경이 어렵지 않기 때문이다. 볼륨이 커질 때 약속을 해도 충분하다. 문제 해결을 위한 도구가 복잡해지지 않도록 유지하는 것도 중요하다는 생각이다.</p> -->
     <!-- <ul data-align="horizontal">
@@ -24,7 +16,7 @@
       <li><i class="icon-check"></i> 플랫폼 비종속</li>
       <li><i class="icon-check"></i> 확장성과 유지 보수성</li>
     </ul> -->
-<!-- 
+    <!-- 
     <h3 style="margin:0 0 var(--space) 0;">Naming Conventions</h3>
     <ul style="margin-left:1rem;">
       <li>접두어를 쓰는 이유. 라이브러리를 사용할 때 변수의 충돌 방지.</li>
@@ -52,10 +44,6 @@
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Animation</span></a>
     </div>
   </nav>
-
-  <!-- <section style="font-size:1.5rem;letter-spacing:-.025rem;">
-    <p style="padding:1rem 5%;border-bottom:var(--border);">테스트</p>
-  </section> -->
 
   <section class="tokens-body">
     <!-- <article class="article tile-flat" style="margin:4rem auto;">
@@ -243,16 +231,16 @@
         <span class="user-logout-label">시스템 폰트로 보기</span>
       </button>
 
-      <h4 class="article-subhead">Typefaces (outdated...)<span hidden>Font Family</span></h4>
-      <p>잘 안 쓰는 폰트를 조합해보고 싶었는데, 윈도우즈 환경에서 bold 표현이 약해서 바꿔 봄.</p>
+      <h4 class="article-subhead">Typefaces</h4>
+      <!-- <p>history 아리타 산스 잘 안 쓰는 폰트를 조합해보고 싶었는데, 윈도우즈 환경에서 bold 표현이 약해서 바꿔 봄.</p> -->
       <div class="design-typograph-group">
         <div class="design-typograph-item">
           <span style="display:block;margin-top:var(--space-leading-subhead);color:var(--color-text-light);">한글</span>
-          <b style="display:block;font-size:var(--font-size-subhead);line-height:1.5;font-weight:var(--font-weight-bold);">아리타 산스</b>
+          <b style="display:block;font-size:var(--font-size-subhead);line-height:1.5;font-weight:var(--font-weight-bold);">Gothic A1</b>
         </div>
         <div class="design-typograph-item">
           <span style="display:block;margin-top:var(--space-leading-subhead);color:var(--color-text-light);">영문</span>
-          <b style="display:block;font-size:var(--font-size-subhead);line-height:1.5;font-weight:var(--font-weight-bold);">Asap</b style="display:block;font-size:var(--font-size-subhead);margin-top:.5rem;">
+          <b style="display:block;font-size:var(--font-size-subhead);line-height:1.5;font-weight:var(--font-weight-bold);">Karla</b style="display:block;font-size:var(--font-size-subhead);margin-top:.5rem;">
           <!-- <div class="tag-group" role="group" style="margin-top:var(--space-after-subhead);">
             <span class="token-item-tag">normal</span>
             <span class="token-item-tag">bold</span>
@@ -260,7 +248,7 @@
         </div>
       </div>
       <div class="token-item">
-        <p><b style="margin:0;">--fontstack: 'Asap', 'AritaSans', san-serif</b></p s>
+        <p><b style="margin:0;">--fontstack: 'Karla', 'Gothic A1', sans-serif;</b></p>
       </div>
       <div class="token-item">
         <p><b>--font-weight-normal: 400</b></p>
@@ -285,7 +273,7 @@
         <p>@mixin truncate-multiple {}</p>
       </div> -->
 
-      <h4 class="article-subhead">Font Sizes</h4>
+      <h4 class="article-subhead">Font sizes</h4>
       <div class="token-item">
         <!-- <figure class="token-item-avatar"></figure> -->
         <!-- <figure class="token-item-avatar" style="float:none;justify-content:flex-start;width:100%;height:auto;margin:0 0 var(--space-small) 0;padding:var(--space-small) var(--space);line-height:1;">
@@ -341,11 +329,11 @@
 
     <article class="article js-scrollspy-section">
       <h1 class="article-title">Sizing</h1>
-      <!-- <p class="article-description">엘리먼트의 너비와 높이를 정의합니다.</p> -->
-      <!-- <ul>
-        <li><i class="icon-check"></i>간격.</li>
-        <li><i class="icon-check"></i>너비는 반응형으로 유동적</li>
-      </ul> -->
+      <h4 class="article-subhead">Best practices</h4>
+      <ul>
+        <!-- <li>너비는 반응형으로 유동적</li> -->
+      </ul>
+
       <code style="padding:1rem;">
         <small>// 정의한 토큰과 같은 값이라도 독립적으로 사용하는 것이 좋은 케이스. (todo 근거)</small>
         <p><del>--navbar-height: var(--size-huge)</del></p>
@@ -396,7 +384,6 @@
           <figure class="token-item-avatar size-tiny"></figure>
           <b>--size-tiny: 1rem</b>
           <div>
-            <p>--avatar-tiny</p>
             <p>--checkbox-height</p>
             <p>--radio-height</p>
             <p>--switch-height</p>
@@ -407,20 +394,16 @@
 
     <article class="article js-scrollspy-section">
       <h1 class="article-title">Spacing</h1>
-      <p class="article-description">inset / outset</p>
-
-      <!-- <h4 class="article-subhead">Best practices</h4>
+      <h4 class="article-subhead">Best practices</h4>
       <ul>
-        <li><i class="icon-check"></i> 버튼 padding은 spacing으로 정의하지 않고 size로 정의합니다. 단, 버튼 레이블을 두 줄로 작성하지 않는다는 전제가 필요.</li>
-      </ul> -->
-
+        <li>버튼 padding은 spacing으로 정의하지 않고 size로 정의합니다. 단, 버튼 레이블을 두 줄로 작성하지 않는다는 전제가 필요.</li>
+      </ul>
       <!-- <blockquote>todo: space-inset 3가지로 확장. 코드에 반영.</blockquote> -->
 
-      <!-- <h4 class="article-subhead">Values?</h4> -->
       <div class="token-item">
         <b>--space-xsmall: .25rem</b>
         <div>
-          <p>--space-after-tag</p>
+          <p>--space-tag-outer</p>
         </div>
         <!-- Squish Inset/Stretch Inset --space-inset-squish, Stack margin -->
       </div>
@@ -449,7 +432,7 @@
       <h4 class="article-subhead">grid</h4>
       <div class="token-item">
         <b>--grid-column: null</b>
-        <b>--grid-margin: null</b>
+        <b>--grid-margin: 5vw</b>
         <b>--grid-gutter: null</b>
       </div>
       <article class="token-item" style="display:flex;align-items:center;width:100%;height:10rem;text-align:center;font-size:var(--font-size-caption);padding:0;position:relative;">
@@ -503,7 +486,6 @@
         <div>
           <p>@media (--breakpoint-large) {}</p>
         </div>
-        <small>// PC</small>
       </div>
       <div class="token-item">
         <b>@custom-media --breakpoint-small (max-width: ?)</b>
@@ -511,20 +493,20 @@
         <div>
           <p>@media (--breakpoint-small) {}</p>
         </div>
-        <small>// phone & tablet</small>
       </div>
       <div class="token-item">
         <del><b>--media-query-tiny: only screen and (max-width: 760px)</b></del>
       </div>
 
       <h4 class="article-subhead">Containers</h4>
-      <p>좌우 grid-margin을 padding으로 씁니다.</p>
-      <p>모든 container는 --breakpoint-small부터 max-width:100%을 갖는다.</p>
-      <p>pagehead에서 상하 패딩이 페이지마다 달라질 수 있다.</p>
+      <ul>
+        <li>grid-margin이 좌우 padding이 된다.</li>
+        <li>모든 container는 --breakpoint-small부터 100% max-width가 된다.</li>
+        <li>pagehead의 상하 padding은 페이지마다 달라질 수 있다.</li>
+      </ul>
       <div class="token-item">
         <b>--container-large: 1200px</b>
         <!-- <div>
-          <p>--forgot-container</p>
           <p>--post-container</p>
           <p>--terms-container</p>
         </div> -->
@@ -548,9 +530,6 @@
       <h4 class="article-subhead">Groups</h4>
       <div class="token-item">
         <b>@mixin group-avatar</b>
-        <div>
-          <p>grou보다 stack 느낌.</p>
-        </div>
       </div>
       <div class="token-item">
         <b>@mixin group-tag</b>
@@ -568,11 +547,16 @@
 
     <article class="article js-scrollspy-section">
       <h1 class="article-title">z-index</h1>
+      <h4 class="article-subhead">Best practices</h4>
+      <ul>
+        <li></li>
+      </ul>
       <!-- <p class="article-description">작성 중.</p> -->
 
       <!-- <blockquote>
         <p>툴팁은 햄버거 메뉴에서 열릴 수 있다. 팝오버는 메뉴에서 열릴 수 있다. 모달은 메뉴보다 위에 있다. 토스트는 가장 위에 있다. 스티키 엘리먼트는 메뉴와 동일하지만 마이너스 마진이 필요할 수 있다.</p>
       </blockquote> -->
+
 
       <div class="token-item">
         <b style="margin:0;">--zindex-deepdive: -1</b>

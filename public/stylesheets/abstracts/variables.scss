@@ -2,7 +2,6 @@
 @custom-media --breakpoint-small (max-width: 1080px);
 
 
-@import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;800&family=Karla:wght@400;800&display=swap');
 $bezier-base: cubic-bezier(0.455, 0.03, 0.515, 0.955);
 $transition-base: all 0.4s $bezier-base;
 $transition-fade: opacity 0.15s linear;
@@ -17,10 +16,9 @@ $transition-fade: opacity 0.15s linear;
 
   --adjust-label-line: 0px;
 
-  --fontstack: 'Karla', 'Gothic A1', 'AritaDotum', sans-serif;
-  // --fontstack: 'Spoqa Han Sans Neo', 'Asap', 'AritaDotum', sans-serif;
+  --fontstack: 'Karla', 'Gothic A1', sans-serif;
   // --fontstack: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Apple SD Gothic Neo", san-serif;
-  --fontstach-code: 'Asap', 'AritaDotum', 'consolas', monospace;
+  // --fontstack-code: 'Asap', 'AritaDotum', 'consolas', monospace;
   --font-family: 0;
   --font-family-heading: null;
   --font-family-body: null;
@@ -177,7 +175,7 @@ $transition-fade: opacity 0.15s linear;
 
   // todo, position
   --space-inset-card: null;
-  --space-tile-inset: var(--space);
+  --space-tile-inset: .75rem;
   --space-tile-inset-small: var(--space-small);
   --space-inset-head: 2rem;
   --space-inset-chip: .75rem;
