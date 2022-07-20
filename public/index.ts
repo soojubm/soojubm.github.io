@@ -74,6 +74,7 @@ async function domEvents() {
 
   const temps = [
     '',
+    'avatars',
     'actions',
     'search',
     'filter',

@@ -32,8 +32,8 @@
 .token-item {@include tile-flat;overflow:hidden;}
 .token-item-avatar {@include avatar-large;width:100%;margin:0 0 .25rem 0;}
 .token-item b {display:block;font-weight:var(--font-weight-normal);}
-.token-item > div {margin:0 0 .125rem 0;font-size:var(--font-size-caption);color:var(--color-text-light);}
-.token-item div p {color:var(--color-text-light);}
+.token-item > div {margin:0 0 .125rem 0;}
+.token-item div p {font-size:var(--font-size-caption);color:var(--color-text-light);}
 .token-item strong {font-weight:var(--font-weight-bold);color:var(--text-color-light);}
 // .token-item figure:before {content:'';display:block;height:var(--size-huge);background:var(--color-background-weak);position:absolute;left:0;right:0;top:0;bottom:0;z-index:-1;}
 // .token-item-avatar:after {content:'';display:block;background:var(--gray100);height: 80px;
