@@ -20,13 +20,13 @@
 .modal-head {}
 .modal-head-title {margin:2rem 0 var(--space-after-subhead) 0;@include text-subhead;}
 .modal-body {}
-.modal-body-subhead {margin:2rem 0 var(--space) 0;font-size:var(--font-size-body);}
+.modal-body-subhead {margin:2rem 0 var(--space-4) 0;font-size:var(--font-size-body);}
 .modal-body-description {max-width:560px;margin:var(--space-after-subhead) 0 var(--space-after-description);}
 .modal-body-paragraph {margin:var(--space-after-subhead) 0 var(--space-after-description);}
 .modal-body-image {}
 .modal-body-image img {display:block;}
-.modal-body-image img + img {margin:var(--space) 0 0 0;}
-.modal-foot {padding:var(--space) 0;text-align:right;}
+.modal-body-image img + img {margin:var(--space-4) 0 0 0;}
+.modal-foot {padding:var(--space-4) 0;text-align:right;}
 
 @media (--breakpoint-small) {
   .modal-dialog {padding-left:5%;padding-right:5%;padding-top:2rem;}

@@ -55,11 +55,11 @@
 @mixin hover-item {
   // item in card component // active
   // 부모태그에 position: relative;zindex:1;
-  // --hover-outline: calc(var(--space) / 2 * -1);
+  // --hover-outline: calc(var(--space-4) / 2 * -1);
   // outline: var(--hover-outline) solid var(--color-background-weak);
   cursor: pointer;
   &:before {
-    --hover-outline: calc(var(--space) / 2 * -1);
+    --hover-outline: calc(var(--space-4) / 2 * -1);
     content:'';
     display:block;background:var(--color-background-weak);border-radius:var(--radius);
     position:absolute;

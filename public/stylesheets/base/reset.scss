@@ -8,7 +8,7 @@ fieldset,iframe,img,hr {border:0 none} dl,ol,ul,menu {list-style:none}
 main, picture {display:block;}
 iframe,img,video {width:100%;} /*img {vertical-align:middle;}*/
 h1,h2,h3,h4,h5,h6 {line-height:var(--font-line-height-small);font-weight:var(--font-weight-bold);color:var(--color-text);word-break:keep-all;}
-strong,b,th,legend {font-weight:var(--font-weight-bold);color:var(--color-text);} legend {margin:0 0 var(--space-xsmall) 0;}
+strong,b,th,legend {font-weight:var(--font-weight-bold);color:var(--color-text);} legend {margin:0 0 var(--space-1) 0;}
 cite,i,address,em,dfn {font-style:normal;} em {color:var(--color-primary);}
 small {font-size:var(--font-size-caption);} abbr {text-decoration:none;}
 a {text-decoration:none;text-decoration-skip-ink:auto;color:var(--color-primary);} a:link,a:visited {} a:hover,a:focus {} a:active {}
@@ -16,7 +16,7 @@ mark {color:inherit;}
 // mark::before {content: " [강조 시작] ";}
 // mark::after {content: " [강조 끝] ";}
 // br {content:'';display:block;height:1rem;}
-hr {margin:var(--space) 0;border-top: thin solid var(--gray200);position:relative;}
+hr {margin:var(--space-4) 0;border-top: thin solid var(--gray200);position:relative;}
 
 u {text-decoration:none;position:relative;}
 u:after {content:'';height:.4em;border-radius:2px;background:var(--green100);position:absolute;left:-.125rem;right:-.125rem;bottom:0;z-index:-1;}
@@ -33,7 +33,7 @@ p, li {color:var(--color-text);}
 // todo 왜 뺐었을가?
 // overflow-x:hidden;letter-spacing:-.0125rem;
 
-blockquote {margin:2rem 0;padding:0 0 0 var(--space);border-left:4px solid var(--gray200);border-radius:4px 0 0 0;}
+blockquote {margin:2rem 0;padding:0 0 0 var(--space-4);border-left:4px solid var(--gray200);border-radius:4px 0 0 0;}
 
 table {
   width:100%;border-collapse:collapse;border-spacing:0;border-left-style:hidden;border-right-style:hidden;
@@ -82,10 +82,10 @@ ol li ol li {counter-increment:sub-list-item;}
 ol li ol li:before {content: counter(sub-list-item,lower-alpha) '.';}
 
 dl {display:flex;flex-wrap:wrap;}
-dl dt {margin:0 var(--space-small) 0 0;@include text-label;}
-dl dd {margin:0 var(--space) 0 0;}
-// dl dt {width:80px;margin:.125rem var(--space-small) .125rem 0;color:var(--color-text-light);}
-// dl dd {width:calc(100% - 80px - var(--space));margin:.125rem 0;}
+dl dt {margin:0 var(--space-2) 0 0;@include text-label;}
+dl dd {margin:0 var(--space-4) 0 0;}
+// dl dt {width:80px;margin:var(--space-05) var(--space-2) var(--space-05) 0;color:var(--color-text-light);}
+// dl dd {width:calc(100% - 80px - var(--space-4));margin:var(--space-05) 0;}
 
 svg {color:var(--gray800);}
 

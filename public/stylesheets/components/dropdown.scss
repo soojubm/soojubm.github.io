@@ -6,13 +6,13 @@
 .dropdown-trigger-label {@include chip-label;}
 .dropdown-trigger-icon {@include chip-icon;}
 .dropdown-menu {@include tile-elevated-small;min-width:var(--width-dropdown);margin:0;padding:0;
-  position:absolute;top:calc(var(--size-medium) + var(--space-small));z-index:var(--zindex-popover);
+  position:absolute;top:calc(var(--size-medium) + var(--space-2));z-index:var(--zindex-popover);
   height:0;transform:scale(0);transform-origin:left top;}
 .dropdown-menu-title {}
-.dropdown-menu-link {display:block;margin:.75rem;color:var(--color-text);position:relative;z-index:var(--zindex-default);}
+.dropdown-menu-link {display:block;margin:var(--space-3);color:var(--color-text);position:relative;z-index:var(--zindex-default);}
 .dropdown-menu-link:hover {@include hover-item;}
 
-.dropdown-footer {@include chip-group;align-items:centetr;margin:var(--space) var(--space-minus) -.25rem;padding:var(--space-small) .75rem 0;border-top:var(--border);}
+.dropdown-footer {@include chip-group;align-items:centetr;margin:var(--space-4) 0 -.25rem;padding:var(--space-2) var(--space-3) 0;border-top:var(--border);}
 .dropdown-footer-question {margin-right:auto;}
 
 .is-active + .dropdown-menu {height:auto;transform:scale(1);}

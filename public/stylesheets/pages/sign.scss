@@ -1,12 +1,12 @@
 .login {@include container-small;}
 .login-head {padding:0 0 1rem 0;}
-.login-head-logo {@include avatar-medium;margin:0 0 var(--space) 0;}
+.login-head-logo {@include avatar-medium;margin:0 0 var(--space-4) 0;}
 .login-title {@include text-title;}
 .login-description {margin:1rem 0;font-size:var(--font-size-body);}
 .login-email {margin:var(--space-after-textfield) 0;}
 .login-password {}
-.login-remember {margin:var(--space-small) 0;}
-.login-separator {margin:var(--space) auto;text-align:center;position:relative;z-index:var(--zindex-default);}
+.login-remember {margin:var(--space-2) 0;}
+.login-separator {margin:var(--space-4) auto;text-align:center;position:relative;z-index:var(--zindex-default);}
 .login-separator:before {content:'';display:block;width:100%;height:1px;background:var(--color-background-weak);position:absolute;top:50%;transform:translateY(-1px);}
 .login-separator:after {content:'또는';width:4rem;line-height:24px;background:var(--color-background);font-size:var(--font-size-caption);color:var(--color-text-light);position:absolute;left:50%;top:0;transform:translateX(-50%);}
 .login-foot-submit {@include button-primary;width:100%;}
@@ -17,8 +17,8 @@
 .login-social-naver {margin-bottom:8px;background:#3bcc15;}
 .login-social-kakao {float:left;width:49%;color:var(--gray0);margin-right:2%;background:#f9df34;}
 .login-option {margin:2rem 0;text-align:center;}
-.login-option-link {margin:0 var(--space-xsmall);@include link-outer;}
-.login-fail {display:block;margin:var(--space) 0;color:var(--red800);}
+.login-option-link {margin:0 var(--space-1);@include link-outer;}
+.login-fail {display:block;margin:var(--space-4) 0;color:var(--red800);}
 
 .signup {@include container-small;}
 .signup-head {padding:0 0 2rem 0;}
@@ -34,7 +34,7 @@
 .password-head {margin:2rem 0;position:relative;}
 .password-title {@include text-title;}
 .password-description {margin:1rem 0 0 0;}
-.password-foot {display:flex;align-items:center;justify-content:space-between;margin:.75rem 0 0 0;}
+.password-foot {display:flex;align-items:center;justify-content:space-between;margin:var(--space-3) 0 0 0;}
 .password-foot-submit {@include button-primary;width:50%;}
 .password-result {margin:4rem var(--grid-margin);text-align:center;}
 .password-result-title {margin:0 0 2rem 0;}

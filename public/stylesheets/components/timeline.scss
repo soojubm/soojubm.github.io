@@ -9,5 +9,5 @@
 .timeline-item-panel {margin:1rem 0 0 0;padding:1.5rem;border:var(--border);border-radius:var(--radius);background:var(--color-background);position:relative;}
 .timeline-item-panel.is-expanded {height:auto;overflow:auto;}
 .timeline-item-panel-title {margin:.5rem 0;font-size:var(--font-size-body);font-weight:var(--font-weight-bold);}
-.timeline-item-panel-description {margin:0 0 .75rem 0;}
+.timeline-item-panel-description {margin:0 0 var(--space-3) 0;}
 .timeline-item-panel-subhead {margin:0 0 .5rem 0;color:var(--color-text-light);font-size:var(--font-size-body);font-weight:400;}

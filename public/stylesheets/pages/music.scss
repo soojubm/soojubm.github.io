@@ -15,7 +15,7 @@
 .album-track-label-item:nth-of-type(2) {width:75%;padding-left:1rem;padding-right:1rem;}
 .album-track-label-item:nth-of-type(3) {width:15%;text-align:right;}
 .album-track-list-item b {}
-.album-track-list-item small {display:block;margin:.125rem 0 0 0;color:var(--color-text-light);}
+.album-track-list-item small {display:block;margin:var(--space-05) 0 0 0;color:var(--color-text-light);}
 .album-track-list {display:flex;position:relative;}
 .album-track-list:hover {@include hover-item;}
 .album-track-list-item {margin:.5rem 0;line-height:var(--font-line-height-small);}

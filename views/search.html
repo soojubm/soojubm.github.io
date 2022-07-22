@@ -14,7 +14,7 @@
     
     <h2 class="article-subhead">검색의 시작</h2>
     <ul style="margin:0 0 1rem 0;">
-      <li>해시태그나 카테고리 등 제공된 인기/추천 키워드를 통한 검색. (액션/button) - clickable과 non-clickable 요소를 함께 정의하면 좋다.</li>
+      <li>해시태그나 카테고리 등 서비스가 제공하는 인기/추천 키워드의 클릭을 통한 검색. (액션/button) - clickable과 non-clickable 요소를 함께 정의하면 좋다.</li>
       <li>직접 키워드 입력 - 검색어 자동완성 (입력/input)</li>
     </ul>
     <section class="search-suggestion">
@@ -119,11 +119,11 @@
   </style>
   <button class="" style="display: flex;align-items: center;">
     <i class="icon-person"></i>
-    <span class="button-label" style="margin:0 1rem 0 .75rem;">2</span>
+    <span class="button-label" style="margin:0 1rem 0 var(--space-3);">2</span>
     <i class="icon-caret"></i>
   </button>
   <section class="tile-elevated" style="max-width:var(--width-popover);">
-    <div class="quantity js-quantity" style="max-width:8rem;padding-left:var(--padding-left);margin:0 0 .75rem 0;">
+    <div class="quantity js-quantity" style="max-width:8rem;padding-left:var(--padding-left);margin:0 0 var(--space-3) 0;">
       <label class="quantity-label" for="" style="position: absolute;left:0;">어린이</label>
       <input class="quantity-input js-quantity-input js-number-input" name="quantity1" type="number" value="0" min="5" max="20" />
       <input type="text" inputmode="numeric" pattern="[0-9]*">
@@ -132,7 +132,7 @@
     </div>
     <div class="quantity js-quantity" style="max-width:8rem;padding-left:var(--padding-left);">
       <label class="quantity-label" for="" style="position: absolute;left:0;top:-.35rem;">성인</label>
-      <small style="position: absolute;left:0;top:.75rem;color:var(--color-text-light);">만 13세 이상</small>
+      <small style="position: absolute;left:0;top:var(--space-3);color:var(--color-text-light);">만 13세 이상</small>
       <input class="quantity-input js-quantity-input js-number-input" name="quantity1" type="number" value="0" min="5" max="20" />
       <input type="text" inputmode="numeric" pattern="[0-9]*">
       <button class="quantity-decrement js-quantity-decrement" style="left:var(--padding-left);"><i class="icon-minus"></i></button>

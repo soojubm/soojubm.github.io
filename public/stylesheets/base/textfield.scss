@@ -10,10 +10,10 @@
 
 
 @mixin textfield-prefix {
-  @include avatar-small;background:none !important;position:absolute;left:var(--space);top:36px;pointer-events:none;
+  @include avatar-small;background:none !important;position:absolute;left:var(--space-4);top:36px;pointer-events:none;
 }
 @mixin textfield-surfix {
-  @include avatar-small;position:absolute;right:var(--space);top:36px;
+  @include avatar-small;position:absolute;right:var(--space-4);top:36px;
   // @media (--breakpoint-small) {top:35px;}
 }
 
@@ -21,7 +21,7 @@
 .textfield-label {display:block;}
 .textfield-label small {margin:0 0 0 .25rem;color:var(--color-text-light);}
 // todo padding top bottom은 textarea를 위해서
-.textfield-input {display:block;width:100%;height:var(--size-large);padding:11px var(--space) calc(11px + var(--adjust-label-line));padding-right:40px;@include reset-textinput;}
+.textfield-input {display:block;width:100%;height:var(--size-large);padding:11px var(--space-4) calc(11px + var(--adjust-label-line));padding-right:40px;@include reset-textinput;}
 .textfield-input:focus {background:var(--color-background);outline:3px solid var(--color-background-weak);}
 .textfield-input:disabled {border-color:var(--gray200);background:var(--gray200);color:var(--gray100);cursor:not-allowed;}
 .textfield-input:read-only {color:var(--color-text-light);cursor:default;}
@@ -48,8 +48,7 @@
 // input container
 
 .textfield.is-floating {}
-.textfield.is-floating input {padding:0.75rem 0rem;border-top:none;border-left:none;border-right:none;}
-.textfield.is-floating input {padding:0.75rem 0rem;border-top:none;border-left:none;border-right:none;}
+.textfield.is-floating input {padding:var(--space-3) 0rem;border-top:none;border-left:none;border-right:none;}
 .textfield.is-floating label {height:20px;position:absolute;left:0;top:6px;transition:all 0.2s ease;cursor:text;}
 .textfield.is-floating input:focus + label {color:var(--color-text-light);font-size:11px;top:-12px;}
 

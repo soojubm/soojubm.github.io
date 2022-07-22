@@ -99,8 +99,8 @@ button {@include reset-button;}
 // ! backButton closeButton :: back close 아이콘은 어차피 단독으로 쓰이지 않는다!
 
 // ! 모바일에서 100%로 되는 컴포넌트가 있고 아닌 컴포넌트가 있다.
-// ! todo 작은 킨구도 margin:.75rem
-.button-elevated {@include tile-elevated-small;margin:.75rem 0;display:flex;align-items:center;width:100%;}
+// ! todo 작은 킨구도 margin:var(--space-3)
+.button-elevated {@include tile-elevated-small;margin:var(--space-3) 0;display:flex;align-items:center;width:100%;}
 .button-elevated:hover {@include hover-item;}
 .button-elevated-avatar {@include avatar-medium;margin:0 var(--space-after-avatar-medium) 0 0;}
 .button-elevated-label {padding:0 0 var(--adjust-label-line) 0;}

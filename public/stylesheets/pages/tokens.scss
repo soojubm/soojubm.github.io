@@ -1,7 +1,7 @@
 
 .token-navigation {}
-.token-navigation a {display:block;align-items:center;padding:var(--space);color:var(--color-text);}
-// .token-navigation a i {margin:0 var(--space-small) 0 0;transform:rotate(90deg);}
+.token-navigation a {display:block;align-items:center;padding:var(--space-4);color:var(--color-text);}
+// .token-navigation a i {margin:0 var(--space-2) 0 0;transform:rotate(90deg);}
 
 .token-item .size-huge {@include avatar-huge;background:var(--color-primary);}
 .token-item .size-large {@include avatar-large;background:var(--color-primary);}
@@ -11,7 +11,7 @@
 .token-item .color {overflow:hidden;}
 .token-item .color-group {display:flex;flex-wrap:wrap;justify-content:space-between;}
 .token-item .color-item {@include tile-flat-small;width:100%;}
-.token-item .color-item + .color-item {margin:var(--space-small) 0 0 0;}
+.token-item .color-item + .color-item {margin:var(--space-2) 0 0 0;}
 
 @keyframes emoji-temp {
   0% {transform:translateY(0)}
@@ -32,9 +32,8 @@
 .token-item {@include tile-flat;overflow:hidden;}
 .token-item-avatar {@include avatar-large;width:100%;margin:0 0 .25rem 0;}
 .token-item b {display:block;font-weight:var(--font-weight-normal);}
-.token-item > div {margin:0 0 .125rem 0;}
+.token-item > div {margin:0 0 var(--space-05) 0;}
 .token-item div p {font-size:var(--font-size-caption);color:var(--color-text-light);}
-.token-item strong {font-weight:var(--font-weight-bold);color:var(--text-color-light);}
 // .token-item figure:before {content:'';display:block;height:var(--size-huge);background:var(--color-background-weak);position:absolute;left:0;right:0;top:0;bottom:0;z-index:-1;}
 // .token-item-avatar:after {content:'';display:block;background:var(--gray100);height: 80px;
 //   z-index: -1;
@@ -49,7 +48,7 @@
 //   border-top-left-radius: 0;
 // }
 
-.token-item-name {margin:0 0 var(--space-small) 0;font-size:var(--body);font-weight:var(--font-weight-bold);}
+.token-item-name {margin:0 0 var(--space-2) 0;font-size:var(--body);font-weight:var(--font-weight-bold);}
 .token-item-description {line-height:var(--font-line-height-small);}
 .token-item-value {}
 .token-item-tags {@include tag-group;width:100%;}
@@ -71,7 +70,7 @@
 
 
 
-.color-item div {float:left;@include avatar-large;margin:0 var(--space) 0 0;}
+.color-item div {float:left;@include avatar-large;margin:0 var(--space-4) 0 0;}
 .color-item h3 {font-size:var(--font-size-body);text-transform:capitalize;}
 .color-item span {color:var(--color-text-light);}
 

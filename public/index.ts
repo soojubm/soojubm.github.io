@@ -73,7 +73,6 @@ async function domEvents() {
   const isHome = window.location.hash === ''
 
   const temps = [
-    '',
     'avatars',
     'actions',
     'search',

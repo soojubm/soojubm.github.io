@@ -11,9 +11,9 @@
   padding: 1rem;
   // todo include position-sheet
   position: fixed;
-  left: var(--space);
-  right: var(--space);
-  bottom: var(--space);
+  left: var(--space-4);
+  right: var(--space-4);
+  bottom: var(--space-4);
   z-index: var(--zindex-bottombar); // todo 
 }
 
@@ -30,8 +30,8 @@
 
 @mixin toast {
   position: fixed;
-  left: var(--space);
-  bottom: var(--space);
+  left: var(--space-4);
+  bottom: var(--space-4);
 }
 
 .presentation {@include dim;}

@@ -16,8 +16,8 @@
 .changelog-item-tag {@include avatar-small;width:3rem;margin:1.5rem .5rem .5rem 0;padding-bottom:1px;color:var(--color-text);}
 .changelog-item-tag.is-negative {background-color:var(--red100);color:var(--red800);}
 .changelog-item-tag.is-positive {background-color:var(--green100);color:var(--green800);}
-.changelog-item-content {margin:.75rem 0;line-height:var(--font-line-height-small);position:relative;}
-.changelog-item-content ul {margin:0 0 var(--space-small);}
+.changelog-item-content {margin:var(--space-3) 0;line-height:var(--font-line-height-small);position:relative;}
+.changelog-item-content ul {margin:0 0 var(--space-2);}
 
 .changelog-item-date + .changelog-item-date {margin-top:1rem;}
 

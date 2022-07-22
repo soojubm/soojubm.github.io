@@ -1,8 +1,9 @@
 <main class="token">
   <section class="hero">
-    <h1 class="hero-title"><span style="color:var(--color-text-light);">Design Tokens</span><br />simply dummy text of the printing<br />and typesetting industry.</h1>
+    <h1 class="hero-title"><span style="color:var(--color-text-light);">Tokens</span><br />simply dummy text of the printing<br />and typesetting industry.</h1>
     <br />
     <ul>
+      <li>1을 .25rem으로 정의합니다.</li>
       <li>global :  --[name]-[componentName]-[role]-[?state]</li>
       <li>컴포넌트 토큰은 컴포넌트 스코프로 정의합니다.</li>
       <li>todo Figma usage	를 정의하자</li>
@@ -18,7 +19,7 @@
       <li><i class="icon-check"></i> 확장성과 유지 보수성</li>
     </ul> -->
     <!-- 
-    <h3 style="margin:0 0 var(--space) 0;">Naming Conventions</h3>
+    <h3 style="margin:0 0 var(--space-4) 0;">Naming Conventions</h3>
     <ul style="margin-left:1rem;">
       <li>접두어를 쓰는 이유. 라이브러리를 사용할 때 변수의 충돌 방지.</li>
       <li>컴포넌트 스코프의 토큰. 을 글로벌로 정의할 필요가 있을까?</li>
@@ -141,7 +142,7 @@
         <figure class="token-item-avatar"></figure>
         <b>--green100: rgba(10, 160, 80, 0.1)</b>
         <div>
-          <strong>--color-primary-light</strong>
+          <p>--color-primary-light</p>
           <p>--color-background-primary-light</p>
           <p>--color-background-active</p>
         </div>
@@ -150,7 +151,7 @@
         <figure class="token-item-avatar"></figure>
         <b>--green800: #1b995c</b>
         <div>
-          <strong>--color-primary</strong>
+          <p>--color-primary</p>
           <p>--color-background-primary</p>
           <p>--color-border-active</p>
           <!-- <p>--button-text-color-active</p>
@@ -163,7 +164,7 @@
         <figure class="token-item-avatar" style="background:rgba(243, 68, 97, .06)"></figure>
         <b>--red100: rgba(243, 68, 97, .06)</b>
         <div>
-          <strong>--color-danger-light</strong>
+          <p>--color-danger-light</p>
         </div>
       </article>
       <article class="token-item is-red800">
@@ -171,7 +172,7 @@
         <b>--red800: #f02849</b>
         <!-- <p>양식 유효성 unvalid 텍스트, 취소/삭제 부정 액션</p> -->
         <div>
-          <strong>--color-danger</strong>
+          <p>--color-danger</p>
           <p>--button-danger-background-color</p>
           <p>--textfield-helper-color</p>
         </div>
@@ -180,7 +181,7 @@
         <figure class="token-item-avatar" style="background:var(--color-accent);"></figure>
         <b>--yellow800: var(--color-accent);</b>
         <div>
-          <strong>--color-accent</strong>
+          <p>--color-accent</p>
           <p>--badge-background</p>
         </div>
       </article>
@@ -390,25 +391,30 @@
       </ul> -->
       <!-- <blockquote>todo: space-inset 3가지로 확장. 코드에 반영.</blockquote> -->
       <div class="token-item">
-        <article class="item" style="display:flex;margin-bottom:1rem;" data-size="small">
-          <figure class="item-avatar" style="margin-right:0;"></figure>
-          <span style="display:block;width:var(--space-small);height:var(--size-small);border-radius:var(--radius);background:var(--green100);"></span>
-          <figure class="item-avatar"></figure>
-        </article>
-        <b>--space-xsmall: .25rem</b>
+        <b>--space-05: .125rem</b>
         <div>
           <p>--space-tag-outer</p>
         </div>
         <!-- Squish Inset/Stretch Inset --space-inset-squish, Stack margin -->
       </div>
       <div class="token-item">
-        <b>--space-small: .5rem</b>
+        <b>--space-1: .25rem</b>
+        <div>
+          <p>--space-tag-outer</p>
+        </div>
+        <!-- Squish Inset/Stretch Inset --space-inset-squish, Stack margin -->
+      </div>
+      <div class="token-item">
+        <b>--space-2: .5rem</b>
         <div>
           <p>--space-inset-small</p>
         </div>
       </div>
       <div class="token-item">
-        <b>--space: 1rem</b>
+        <b>--space-3: .75rem</b>
+      </div>
+      <div class="token-item">
+        <b>--space-4: 1rem</b>
         <div>
           <p>--space-after-subhead</p>
           <!-- <p>--space-after-description</p> -->
@@ -483,7 +489,7 @@
       </div>
       <div class="token-item">
         <b>@custom-media --breakpoint-small (max-width: ?)</b>
-        <!-- <p style="margin-bottom:var(--space);color:var(--color-text-light);">tablet보다 작은 폼 팩터. ex) tablet, phone</p> -->
+        <!-- <p style="margin-bottom:var(--space-4);color:var(--color-text-light);">tablet보다 작은 폼 팩터. ex) tablet, phone</p> -->
         <div>
           <p>@media (--breakpoint-small) {}</p>
         </div>
@@ -600,7 +606,7 @@
         <p>--duration-instant: 0s;</p>
       </div>
       <aside class="article-helper">
-        <p>inactive로 전환될 때 즉시 실행합니다.</p>
+        <p>inactive 상태로 바뀔 때 instant로 실행합니다.</p>
       </aside>
       <div class="token-item">
         <p>--duration-quick: .2s</p>

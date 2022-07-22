@@ -1,6 +1,6 @@
 .setting {@include container-medium;}
 
-.setting-subhead {margin:0 0 .75rem 0;font-size:var(--font-size-body);}
+.setting-subhead {margin:0 0 var(--space-3) 0;font-size:var(--font-size-body);}
 
 .setting-item {@include tile-elevated;}
 .setting-item:hover {@include hover-item;}

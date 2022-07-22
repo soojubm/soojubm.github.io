@@ -131,15 +131,17 @@ $transition-fade: opacity 0.15s linear;
   --size-small: 1.5rem;
   --size-tiny: 1rem;
 
-  --space: 1rem;
-  --space-minus: calc(var(--space) * -1);
-  --space-small: .5rem;
-  --space-small-minus: calc(var(--space-small) * -1);
-  --space-xsmall: .25rem;
-  --space-xsmall-minus: calc(var(--space-xsmall) * -1);
 
-  --space-inset: var(--space);
-  --space-inset-small: var(--space-small);
+  --space-05: .125rem;
+  --space-1: .25rem;
+  --space-1-minus: calc(var(--space-1) * -1);
+  --space-2: .5rem;
+  --space-2-minus: calc(var(--space-2) * -1);
+  --space-3: .75rem;
+  --space-4: 1rem;
+
+  --space-inset: var(--space-4);
+  --space-inset-small: var(--space-2);
 
   --space-leading-title: -.25rem;
   --space-leading-subhead: -.125rem;
@@ -153,8 +155,8 @@ $transition-fade: opacity 0.15s linear;
 
   --space-after-avatar-huge: .75rem;
   --space-after-avatar-large: .5rem;
-  --space-after-avatar-medium: var(--space-small);
-  --space-after-avatar-small: var(--space-small);
+  --space-after-avatar-medium: var(--space-2);
+  --space-after-avatar-small: var(--space-2);
 
   
   --space-before-tag: .125rem;
@@ -176,7 +178,7 @@ $transition-fade: opacity 0.15s linear;
   // todo, position
   --space-inset-card: null;
   --space-tile-inset: .75rem;
-  --space-tile-inset-small: var(--space-small);
+  --space-tile-inset-small: var(--space-2);
   --space-inset-head: 2rem;
   --space-inset-chip: .75rem;
 
@@ -249,13 +251,13 @@ $transition-fade: opacity 0.15s linear;
   --zindex-bottombar: 8;
   --zindex-loader: 10;
 
-  --grid-column: calc(50% - var(--space-small));
+  --grid-column: calc(50% - var(--space-2));
   --grid-gutter: 1rem;
   --grid-margin: 5vw;
   --grid-margin-minus: calc(var(--grid-margin) * -1);
 
   // todo
-  --column-width: calc(50% - var(--space-xsmall));
+  --column-width: calc(50% - var(--space-1));
 
   --grid-column-small: calc(50% - .125rem);
 
