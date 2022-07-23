@@ -39,7 +39,6 @@
 .article-anatomy-item .is-optional {margin:0 0 .5rem 0;font-size:10px;color:var(--color-text-light);vertical-align:top;}
 
 .article-subhead {margin:4rem 0 var(--space-3);@include text-subhead;}
-.article-subhead + * {margin-top:var(--space-2) !important;}
 
 .article-label {margin:var(--space-4) 0 -.25rem;@include text-label;}
 
@@ -51,7 +50,7 @@
 .design-typograph-group {display:flex;justify-content:space-between;@include tile-elevated;}
 .design-typograph-group .design-typograph-item {width:var(--grid-column);}
 
-.design-buttongroup {@include group-bleeding;overflow:auto;margin:var(--space-2-minus)  -var(--space-3) var(--space-2-minus) var(--space-2-minus);padding:var(--space-2);}
+.design-buttongroup {@include group-bleeding;overflow:auto;margin:var(--space-2-minus) var(--space-3) var(--space-2-minus) var(--space-2-minus);padding:var(--space-2);}
 
 .spacing-card {@include tile-elevated;overflow:hidden;}
 .space {display:flex;align-items:center;justify-content:center;height:100%;background:var(--green100);position:relative;}
@@ -254,10 +253,10 @@
 .keywords-group-keyword {@include chip;}
 .keywords-group-keyword-label {@include chip-label;}
 
-.avatarlist {@include tile-elevated-small;display:flex;align-items:center;color:var(--color-text);}
-.avatarlist:hover {@include hover-item;}
-.avatarlist figure {@include avatar-small;margin-left:.5rem;box-shadow: var(--color-background) 0px 0px 0px 2px;}
-.avatarlist figure + figure {margin-left:-.5rem;}
+.avatargroup {@include tile-elevated-small;display:flex;align-items:center;color:var(--color-text);}
+.avatargroup:hover {@include hover-item;}
+.avatargroup figure {@include avatar-small;margin-left:.5rem;box-shadow: var(--color-background) 0px 0px 0px 2px;}
+.avatargroup figure + figure {margin-left:-.5rem;}
 
 .temp8 {display:flex;margin:var(--space-2) 0 0 0;position:relative;}
 .temp8 > * {

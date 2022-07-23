@@ -12,7 +12,7 @@
 .dropdown-menu-link {display:block;margin:var(--space-3);color:var(--color-text);position:relative;z-index:var(--zindex-default);}
 .dropdown-menu-link:hover {@include hover-item;}
 
-.dropdown-footer {@include chip-group;align-items:centetr;margin:var(--space-4) 0 -.25rem;padding:var(--space-2) var(--space-3) 0;border-top:var(--border);}
+.dropdown-footer {@include chip-group;align-items:centetr;margin:var(--space-4) 0 -.25rem;padding:var(--space-2) 0 0;border-top:var(--border);}
 .dropdown-footer-question {margin-right:auto;}
 
 .is-active + .dropdown-menu {height:auto;transform:scale(1);}

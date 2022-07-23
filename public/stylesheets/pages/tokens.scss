@@ -25,15 +25,13 @@
 .tokens-hero {position:relative;}
 .tokens-hero-head {padding:4rem var(--grid-margin);border-radius:var(--radius);box-sizing:border-box;font-size:var(--font-size-subhead);position:relative;}
 
-.article code {padding-left:2rem !important;padding-right:2rem !important;margin-left:-2rem;margin-right:-2rem;}
-
 .tokens {}
 // min-height:var(--size-large);todo
 .token-item {@include tile-flat;overflow:hidden;}
-.token-item-avatar {@include avatar-large;width:100%;margin:0 0 .25rem 0;}
-.token-item b {display:block;font-weight:var(--font-weight-normal);}
+.token-item-avatar {@include avatar-large;width:100%;}
+.token-item b {display:block;margin:var(--space-2) 0 0;font-weight:var(--font-weight-normal);}
 .token-item > div {margin:0 0 var(--space-05) 0;}
-.token-item div p {font-size:var(--font-size-caption);color:var(--color-text-light);}
+.token-item div p {color:var(--color-text-light);}
 // .token-item figure:before {content:'';display:block;height:var(--size-huge);background:var(--color-background-weak);position:absolute;left:0;right:0;top:0;bottom:0;z-index:-1;}
 // .token-item-avatar:after {content:'';display:block;background:var(--gray100);height: 80px;
 //   z-index: -1;

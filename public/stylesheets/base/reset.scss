@@ -37,17 +37,16 @@ blockquote {margin:2rem 0;padding:0 0 0 var(--space-4);border-left:4px solid var
 
 table {
   width:100%;border-collapse:collapse;border-spacing:0;border-left-style:hidden;border-right-style:hidden;
-  --table-padding: .5rem 0;
   --table-lineheight: 1.6;
 }
 table caption {padding:.5rem 0;font-size:var(--font-size-caption);text-align:left;}
 table thead {}
 table thead tr {}
-table thead tr th {padding:var(--table-padding);font-weight:normal;line-height:var(--table-lineheight);color:var(--color-text-light);text-align:left;}
+table thead tr th {padding:var(--space-3) 0;font-weight:normal;line-height:var(--table-lineheight);color:var(--color-text-light);text-align:left;}
 table tbody {}
 table tbody tr {border:var(--border);line-height:var(--table-lineheight);position:relative;}
-table tbody tr th {width:6rem;padding:var(--table-padding);font-weight:normal;text-align:left;color:var(--color-text-light);vertical-align:baseline;}
-table tbody tr td {padding:var(--table-padding);}
+table tbody tr th {width:6rem;padding:var(--space-3) 0;font-weight:normal;text-align:left;color:var(--color-text-light);vertical-align:baseline;}
+table tbody tr td {padding:var(--space-3) 0;}
 table tbody tr:hover {}
 table .right {text-align:right;}
 

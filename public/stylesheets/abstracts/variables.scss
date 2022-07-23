@@ -52,14 +52,11 @@ $transition-fade: opacity 0.15s linear;
   --font-line-height-small: 1.5;
   --font-line-height-heading: null;
 
-  // ! colours
   --gray0: #fff;
   --gray100: #f1f4f1;
-  --gray200: #e0e2e1; // F8F7F5
+  --gray200: #e0e5e3; // F8F7F5
   --gray400: #979d9a;
-  // --gray600: #4e5351;
   --gray800: #343c38;
-  // --gray800: #3c4043;
   --green100: rgba(10, 160, 80, 0.1); // #ddf5e9;
   --green800: #1b995c;
   --red100: rgba(243, 68, 97, .06);
@@ -123,7 +120,7 @@ $transition-fade: opacity 0.15s linear;
   --width-dialog: 0;
 
 
-  --menu-width: 340px;
+  --menu-width: 360px;
 
   --size-huge: 5rem;
   --size-large: 3rem;

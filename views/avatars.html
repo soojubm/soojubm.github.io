@@ -21,112 +21,162 @@
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Menu Items</span></a>
     </div>
   </nav> -->
+  <article class="article js-observer js-scrollspy-section">
+    <h1 class="article-title">Avatars</h1>
+    <p class="article-description">개체(유저, 회사, 프로젝트 등)를 대표하는 시각 정보입니다.</p>
 
-  <section class="component-body">
-    <article class="article js-observer js-scrollspy-section">
-      <h1 class="article-title">Avatars</h1>
-      <p class="article-description">개체(유저, 회사, 프로젝트 등)를 대표하는 시각 정보입니다.</p>
+    <article class="tile-flat" style="display:flex;">
+      <figure class="item-avatar" data-size="huge" title="huge avatar" style="width:var(--size-huge);height:var(--size-huge);border:none;">
+        <span class="avatar-badge"></span>
+      </figure>
+      <figure class="item-avatar" data-size="large" title="large avatar">
+        <span class="avatar-badge"></span>
+      </figure>
+      <figure class="item-avatar" data-size="medium" style="width:var(--size-medium);height:var(--size-medium);background-image:none;">
+        수
+      </figure>
+      <figure
+        class="item-avatar"
+        data-size="small"
+        title="small avatar"
+        style="width:var(--size-small);height:var(--size-small);background-image:none;"
+      >
+        <i class="icon-x"></i>
+      </figure>
+    </article>
 
-      <article class="tile-flat" style="display:flex;">
-        <figure class="item-avatar" data-size="huge" title="huge avatar" style="width:var(--size-huge);height:var(--size-huge);border:none;">
+    <div class="tile-flat" style="padding-top:2rem;">
+      <span class="tag" data-apperance="primary" style="position:absolute;left:-.25rem;top:-.25rem;">Compositions</span>
+      <article class="item" data-size="huge">
+        <figure class="item-avatar">
           <span class="avatar-badge"></span>
         </figure>
-        <figure class="item-avatar" data-size="large" title="large avatar" style="width:var(--size-large);height:var(--size-large);">
-          <span class="avatar-badge"></span>
-        </figure>
-        <figure class="item-avatar" data-size="medium" style="width:var(--size-medium);height:var(--size-medium);background-image:none;">
-          수
-        </figure>
-        <figure
-          class="item-avatar"
-          data-size="small"
-          title="small avatar"
-          style="width:var(--size-small);height:var(--size-small);background-image:none;"
-        >
-          <i class="icon-x"></i>
-        </figure>
+        <h3 class="item-name">Entity huge</h3>
+        <p class="item-description">huge는 디스크립션을 2개(?) 갖습니다.</p>
+        <span></span>
       </article>
-
-      <h4 class="article-subhead">Best practices</h4>
-      <ul>
-        <li>인접한 정보 중 최상위 위계의 시각 정보입니다.</li>
-        <li>todo 아바타의 기본 이미지(이미지 또는 이니셜)</li>
-        <li><del>이미지, 텍스트, 아이콘, 이모지를 포함합니다.</del> 아이콘 버튼은 avatar가 아니라 chip입니다. mui에서 아이콘 아바타를 사용함</li>
-        <li>pagination item은 chip과 같은 size token을 사용하지만 chip도 avatar도 아닙니다.</li>
-        <li>textfield 내부의 clear button은 textfield-surfix입니다. chip도 avatar도 icon button도 아닙니다.</li>
-        <!-- <li>
-          인물, 그룹, 회사, 프로젝트 등의 unique entity로 대부분의 디자인 시스템에서 정의하지만 현재 이 디자인 시스템에서는.
-          chip 컴포넌트는 active 상태를 포함하고 있기 때문에 다른 기표로 active 상태를 표시하는 경우에는 사용하지 않습니다.</li> -->
-      </ul>
-
-      <blockquote>
-        <p>아바타만 단독으로 사용하는 케이스를 모아보기. (+ space-after-avatar). avatar는 clickable/non-clickable. entity는 clickable.</p>
-      </blockquote>
-
-      <h4 class="article-subhead">Props</h4>
-      <dl class="article-props">
-        <dt>name</dt>
-        <dd>string</dd>
-        <dt>src<abbr>?</abbr></dt>
-        <dd>string</dd>
-        <dt>size</dt>
-        <dd>"huge" | "large" | "medium" | "small"</dd>
-        <dt>badge<abbr>?</abbr></dt>
-        <dd>"unread" | "new" | "live"</dd>
-      </dl>
-
-      <h4 class="article-subhead"></h4>
-      <dl>
-        <dt>is-clickable</dt>
-        <dd>모든 아바타는 클릭할 수 있다.</dd>
-      </dl>
-      <hr />
-      <dl>
-        <dt>is-groupable</dt>
-        <dd>avatar 목록. 클릭하면 entity list on modal.</dd>
-      </dl>
-      <!-- <h4 class="article-subhead">Avatar Stack</h4> -->
-      <article class="avatarlist" style="max-width:400px;margin-bottom:1.5rem;">
-        <span>Followed by</span>
-        <figure>
-          <img src="https://source.unsplash.com/random" alt="" />
-        </figure>
-        <figure>
-          <img src="https://source.unsplash.com/random" alt="" />
-        </figure>
-        <figure>
-          <img src="https://source.unsplash.com/random" alt="" />
-        </figure>
-        <figure>
-          <img src="https://source.unsplash.com/random" alt="" />
-        </figure>
-        <span style="margin:0 0 0 var(--space-2);">수줍이 외 4명</span>
+      <article class="item" data-size="large">
+        <figure class="item-avatar"></figure>
+        <h3 class="item-name">Entity large</h3>
+        <p class="item-description">large는 디스크립션을 갖습니다.</p>
       </article>
-      <hr />
-      <dl>
-        <dt>is-hoverable</dt>
-        <dd>상세 사용자 정보.</dd>
-      </dl>
-      <article class="tile-elevated" style="max-width:400px;padding:var(--space-3);">
-        <article class="item" data-size="medium">
-          <figure class="item-avatar"></figure>
-          <h3 class="item-name">사용자이름</h3>
+      <article class="item" data-size="medium">
+        <figure class="item-avatar"></figure>
+        <h3 class="item-name">Entity medium</h3>
+        <button class="item-delete"><i class="icon-x"></i></button>
+      </article>
+      <article class="item" data-size="small">
+        <figure class="item-avatar"></figure>
+        <h3 class="item-name">Entity small</h3>
+      </article>
+    </div>
+    <aside class="article-helper">
+      <p>현재 이 컴포넌트가 썸네일 카드의 역할까지 하는 상황. 참고 profile 페이지의 display button.</p>
+      <p>우측 닫기/칩 액션 포지셔닝. 정렬 top:0/top:50%. large = chip / medium = close</p>
+      <p>todo. byline에서 작성일을 표기하는 경우.</p>
+      <p>todo. 아직 entity와 avatar를 함께 정의.</p>
+    </aside>
+
+    <h4 class="article-subhead">Features</h4>
+    <ul>
+      <li><b>clickable.</b></li>
+      <li>
+        <b>non-clickable.</b> avatar를 오른쪽에 배치.
+        <article class="user tile-flat" style="text-align:left;">
+          <figure class="profile-user-avatar"></figure>
+          <h2 class="profile-user-name">수줍이</h2>
+          <span class="profile-user-id">soojubm@gmail.com</span>
+          <span class="profile-user-job">UI Designer / Frontend Engineer</span>
         </article>
-        <p class="user-description" style="margin:var(--space-1) 0;">Youtube Subscriber</p>
-        <div class="statistic" data-size="small" style="justify-content:flex-start;margin:var(--space-2) 0 0 0;">
-          <div class="statistic-item" onclick="javascript:alert('샘플 유아이에요!')">
-            <i class="statistic-label">팔로워</i>
-            <span class="statistic-value">62</span>
+      </li>
+      <li>
+        <b>groupable.</b> entity list on modal.
+        <article class="avatargroup">
+          <span>Followed by</span>
+          <figure>
+            <img src="https://source.unsplash.com/random" alt="" />
+          </figure>
+          <figure>
+            <img src="https://source.unsplash.com/random" alt="" />
+          </figure>
+          <figure>
+            <img src="https://source.unsplash.com/random" alt="" />
+          </figure>
+          <figure>
+            <img src="https://source.unsplash.com/random" alt="" />
+          </figure>
+          <span style="margin:0 0 0 var(--space-2);">수줍이 외 4명</span>
+        </article>
+      </li>
+      <li>
+        <b>hoverable.</b> 상세 사용자 정보.
+        <article class="tile-elevated">
+          <article class="item" data-size="medium">
+            <figure class="item-avatar"></figure>
+            <h3 class="item-name">사용자이름</h3>
+          </article>
+          <p class="user-description" style="margin:var(--space-2) 0;">Youtube subscriber</p>
+          <div class="statistic" data-size="small" style="justify-content:flex-start;margin:var(--space-2) 0 0 0;">
+            <div class="statistic-item" onclick="javascript:alert('샘플 유아이에요!')">
+              <i class="statistic-label">팔로워</i>
+              <span class="statistic-value">62</span>
+            </div>
+            <i class="icon-bullet"></i>
+            <div class="statistic-item" onclick="javascript:alert('샘플 유아이에요!')">
+              <i class="statistic-label">팔로잉</i>
+              <span class="statistic-value">8</span>
+            </div>
           </div>
-          <i class="icon-bullet"></i>
-          <div class="statistic-item" onclick="javascript:alert('샘플 유아이에요!')">
-            <i class="statistic-label">팔로잉</i>
-            <span class="statistic-value">8</span>
-          </div>
-        </div>
-      </article>
+        </article>
+      </li>
+    </ul>
 
-      <!-- <h4 class="article-subhead">anatomy</h4>
+    <h4 class="article-subhead">Best practices</h4>
+    <ul>
+      <li>todo. 아이콘 버튼을 여기서 분리해야 한다. 하지만 entity와 함께 사용되는 케이스를 충분히 고려</li>
+      <li>인접한 정보 중 최상위 위계의 시각 정보입니다.</li>
+      <li>todo fallback</li>
+      <li><del>이미지, 텍스트, 아이콘, 이모지를 포함합니다.</del> 아이콘 버튼은 avatar가 아니라 chip입니다. mui에서 아이콘 아바타를 사용함</li>
+      <li>pagination item은 chip과 같은 size token을 사용하지만 chip도 avatar도 아닙니다.</li>
+      <li>textfield 내부의 clear button은 textfield-surfix입니다. chip도 avatar도 icon button도 아닙니다.</li>
+    </ul>
+
+    <blockquote>
+      <p>아바타만 단독으로 사용하는 케이스를 모아보기. (+ space-after-avatar). avatar는 clickable/non-clickable. entity는 clickable.</p>
+    </blockquote>
+
+    <h4 class="article-subhead">Props</h4>
+    <table>
+      <caption hidden>
+        Table Caption
+      </caption>
+      <tbody role="rowgroup">
+        <tr role="row">
+          <th scope="row">name</th>
+          <th>type</th>
+        </tr>
+        <!-- appearance: 'link' | 'subtle' | 'primary' -->
+        <tr role="row">
+          <th scope="row"><code>appearance</code></th>
+          <td>"primary" | "secondary" | "tertiary"</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <br />
+
+    <dl class="article-props">
+      <dt>name</dt>
+      <dd>string</dd>
+      <dt>src<abbr>?</abbr></dt>
+      <dd>string</dd>
+      <dt>size</dt>
+      <dd>"huge" | "large" | "medium" | "small"</dd>
+      <dt>badge<abbr>?</abbr></dt>
+      <dd>"unread" | "new" | "live"</dd>
+    </dl>
+
+    <!-- <h4 class="article-subhead">anatomy</h4>
       <div class="article-anatomy">
         <span class="article-anatomy-item">avatar role=img</span>
         <span class="article-anatomy-item is-nested">media (todo)</span>
@@ -134,38 +184,7 @@
         <span class="article-anatomy-item is-nested">badge <small class="is-optional">optional</small> - unread/new/live</span>
       </div> -->
 
-      <h4 class="article-subhead">Entities (Composition)</h4>
-      <div class="tile-flat">
-        <article class="item" data-size="huge">
-          <figure class="item-avatar">
-            <span class="avatar-badge"></span>
-          </figure>
-          <h3 class="item-name">huge</h3>
-          <p class="item-description">huge는 디스크립션을 갖습니다.</p>
-        </article>
-        <article class="item" data-size="large">
-          <figure class="item-avatar"></figure>
-          <h3 class="item-name">large</h3>
-          <p class="item-description">large는 디스크립션을 갖습니다.</p>
-        </article>
-        <article class="item" data-size="medium">
-          <figure class="item-avatar"></figure>
-          <h3 class="item-name">medium</h3>
-          <button class="item-delete"><i class="icon-x"></i></button>
-        </article>
-        <article class="item" data-size="small">
-          <figure class="item-avatar"></figure>
-          <h3 class="item-name">small</h3>
-        </article>
-      </div>
-      <aside class="article-helper">
-        <p>현재 이 컴포넌트가 썸네일 카드의 역할까지 하는 상황. 참고 profile 페이지의 display button.</p>
-        <p>우측 닫기/칩 액션 포지셔닝. 정렬 top:0/top:50%. large = chip / medium = close</p>
-        <p>memo: non-clickable use case : 아바타 오른쪽 배치</p>
-      </aside>
-
-      <h4 class="article-subhead">Related components</h4>
-      <a href=""></a>
-    </article>
-  </section>
+    <h4 class="article-subhead">Related components</h4>
+    <a href=""></a>
+  </article>
 </main>
