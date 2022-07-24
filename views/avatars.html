@@ -1,4 +1,4 @@
-<main class="component">
+<main class="component component-row">
   <!-- <section class="hero" role="banner">
     
     <h1 class="hero-title">Actions</h1>
@@ -21,10 +21,8 @@
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Menu Items</span></a>
     </div>
   </nav> -->
-  <article class="article js-observer js-scrollspy-section">
-    <h1 class="article-title">Avatars</h1>
-    <p class="article-description">개체(유저, 회사, 프로젝트 등)를 대표하는 시각 정보입니다.</p>
 
+  <section class="component-style component-column">
     <article class="tile-flat" style="display:flex;">
       <figure class="item-avatar" data-size="huge" title="huge avatar" style="width:var(--size-huge);height:var(--size-huge);border:none;">
         <span class="avatar-badge"></span>
@@ -44,41 +42,47 @@
         <i class="icon-x"></i>
       </figure>
     </article>
+    <div class="tile-flat" style="margin-top:var(--space-2);">
+      <article class="item" data-size="huge">
+        <figure class="item-avatar">
+          <span class="avatar-badge"></span>
+        </figure>
+        <h3 class="item-name">Entity huge</h3>
+        <p class="item-description">huge는 디스크립션을 2개(?) 갖습니다.</p>
+        <span></span>
+      </article>
+      <article class="item" data-size="large">
+        <figure class="item-avatar"></figure>
+        <h3 class="item-name">Entity large</h3>
+        <p class="item-description">large는 디스크립션을 갖습니다.</p>
+      </article>
+      <article class="item" data-size="medium">
+        <figure class="item-avatar"></figure>
+        <h3 class="item-name" style="font-weight:var(--font-weight-normal);">Entity medium</h3>
+        <!-- <time>작성일</time> -->
+        <!-- <button class="item-delete"><i class="icon-x"></i></button> -->
+      </article>
+      <article class="item" data-size="small">
+        <figure class="item-avatar"></figure>
+        <h3 class="item-name" style="font-weight:var(--font-weight-normal);">Entity small</h3>
+      </article>
+    </div>
+  </section>
+
+  <article class="article js-observer js-scrollspy-section component-column">
+    <h1 class="article-title">Avatars</h1>
+    <p class="article-description">개체(유저, 회사, 프로젝트 등)를 대표하는 시각 정보입니다.</p>
+
+    <ul>
+      <li>현재 이 컴포넌트가 썸네일 카드의 역할까지 하는 상황. 참고 profile 페이지의 display button.</li>
+      <li>todo. byline에서 작성일을 표기하는 경우.</li>
+      <li>use case. checkout: product item / profile: user / setting: toggle item</li>
+    </ul>
 
     <h4 class="article-subhead">Features</h4>
     <ul>
       <li>
         <b>clickable.</b>
-        <div class="tile-flat" style="margin-top:var(--space-2);">
-          <article class="item" data-size="huge">
-            <figure class="item-avatar">
-              <span class="avatar-badge"></span>
-            </figure>
-            <h3 class="item-name">Entity huge</h3>
-            <p class="item-description">huge는 디스크립션을 2개(?) 갖습니다.</p>
-            <span></span>
-          </article>
-          <article class="item" data-size="large">
-            <figure class="item-avatar"></figure>
-            <h3 class="item-name">Entity large</h3>
-            <p class="item-description">large는 디스크립션을 갖습니다.</p>
-          </article>
-          <article class="item" data-size="medium">
-            <figure class="item-avatar"></figure>
-            <h3 class="item-name" style="font-weight:var(--font-weight-normal);">Entity medium</h3>
-            <!-- <time>작성일</time> -->
-            <!-- <button class="item-delete"><i class="icon-x"></i></button> -->
-          </article>
-          <article class="item" data-size="small">
-            <figure class="item-avatar"></figure>
-            <h3 class="item-name" style="font-weight:var(--font-weight-normal);">Entity small</h3>
-          </article>
-        </div>
-        <aside class="article-helper">
-          <p>현재 이 컴포넌트가 썸네일 카드의 역할까지 하는 상황. 참고 profile 페이지의 display button.</p>
-          <p>todo. byline에서 작성일을 표기하는 경우.</p>
-          <p>use case. checkout: product item / profile: user / setting: toggle item</p>
-        </aside>
       </li>
       <li>
         <b>non-clickable.</b> avatar를 오른쪽에 배치.
@@ -91,8 +95,7 @@
       </li>
       <li>
         <b>groupable.</b> entity list on modal.
-        <article class="avatargroup" style="margin:var(--space-2) 0 var(--space-4);">
-          <span>Followed by</span>
+        <article class="avatargroup">
           <figure>
             <img src="https://source.unsplash.com/random" alt="" />
           </figure>
@@ -105,7 +108,7 @@
           <figure>
             <img src="https://source.unsplash.com/random" alt="" />
           </figure>
-          <span style="margin:0 0 0 var(--space-2);">수줍이 외 4명</span>
+          <span style="margin:0 0 0 var(--space-2);">Followed by 수줍이 외 4명</span>
         </article>
       </li>
       <li>
@@ -186,7 +189,7 @@
     <h4 class="article-subhead">Related components</h4>
     <a href="">Entities</a>
 
-    <h4 class="article-subhead">Use cases</h4>
+    <h4 class="article-subhead">Other cases</h4>
     <p>mui에서 아이콘 아바타를 사용.</p>
   </article>
 </main>

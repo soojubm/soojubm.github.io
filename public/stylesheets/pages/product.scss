@@ -92,7 +92,6 @@
 
 // todo 칼럼의 갯수에 따라 width를.
 .feature {display:flex;flex-wrap:wrap;justify-content:space-between;max-width:1000px;margin:0 auto;padding:6rem var(--grid-margin) 7rem;}
-.feature {display:flex;flex-wrap:wrap;justify-content:space-between;max-width:1080px;}
 .feature-head {width:100%;margin:0 auto 4rem;}
 .feature-head-title {@include text-title;word-break:keep-all;}
 .feature-head-description {margin:var(--space-after-title) 0 0 0;font-size:var(--font-size-subhead);}

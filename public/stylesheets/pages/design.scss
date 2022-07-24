@@ -256,7 +256,7 @@
 
 .avatargroup {@include tile-elevated-small;display:flex;align-items:center;color:var(--color-text);}
 .avatargroup:hover {@include hover-item;}
-.avatargroup figure {@include avatar-small;margin-left:.5rem;box-shadow: var(--color-background) 0px 0px 0px 2px;}
+.avatargroup figure {@include avatar-small;box-shadow:var(--color-background) 0px 0px 0px 2px;}
 .avatargroup figure + figure {margin-left:-.5rem;}
 
 .temp8 {display:flex;margin:var(--space-1) 0 0 0;position:relative;}
