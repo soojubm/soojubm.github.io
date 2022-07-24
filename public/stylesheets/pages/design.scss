@@ -2,7 +2,7 @@
 .design {}
 // todo tokens
 
-.article {max-width:640px;padding:6rem var(--grid-margin);overflow:hidden;position:relative;}
+.article {max-width:640px;padding:4rem var(--grid-margin);overflow:hidden;position:relative;}
 .article-aka {@include tag-group;align-items:center;margin:var(--space-4) 0;font-size:var(--font-size-small);}
 .article-aka .hashtag:before {content:'';}
 .article-aka .tag {margin-right:var(--space-3);}
@@ -239,7 +239,7 @@
 .sidebar-item-label {@include menuitem-label;}
 .sidebar-item-tag {margin:0 0 0 var(--space-3);}
 
-.sidebar-item + .sidebar-item {margin:var(--space-3) 0;}
+.sidebar-item + .sidebar-item {margin:var(--space-3) 0 0 0;}
 
 
 // .sheet {@include tile-elevated;}
@@ -258,7 +258,7 @@
 .avatargroup figure {@include avatar-small;margin-left:.5rem;box-shadow: var(--color-background) 0px 0px 0px 2px;}
 .avatargroup figure + figure {margin-left:-.5rem;}
 
-.temp8 {display:flex;margin:var(--space-2) 0 0 0;position:relative;}
+.temp8 {display:flex;margin:var(--space-1) 0 0 0;position:relative;}
 .temp8 > * {
   @include tile-elevated-small;
   margin-right: var(--space-3);
@@ -294,13 +294,13 @@
 
 
 // todo padding
-.accordion {@include tile-elevated;padding:1rem;}
+.accordion {@include tile-elevated;padding:var(--space-4);}
 .accordion:hover {@include hover-item;}
 .accordion-title {display:flex;align-items:center;justify-content:space-between;@include text-subhead;}
 .accordion-title-icon {@include avatar-medium;}
 .accordion-panel {display:none;cursor:default;}
-.accordion-panel p + p {margin:1rem 0 0 0;}
-.is-active .accordion-panel {display:block;padding:1rem 0;}
+.accordion-panel p + p {margin:var(--space-4) 0 0 0;}
+.is-active .accordion-panel {display:block;padding:var(--space-3) 0;}
 .is-active .accordion-title-icon {transform:rotate(180deg)}
 // [aria-expanded=true] + .accordion-panel {}
 
@@ -507,7 +507,7 @@
 .chat {margin:1.5rem 0;padding:0 0 0 calc(var(--size-medium) + var(--space-after-avatar-medium));position:relative;}
 .chat-avatar {@include avatar-medium;border:none;overflow:hidden;position:absolute;left:0;top:0;}
 .chat-avatar img {height:100%;}
-.chat-username {}
+.chat-username {font-size:var(--font-size-caption);}
 .chat-time {margin:0 0 0 var(--space-1);color:var(--color-text-light);font-size:var(--font-size-caption);color:var(--color-text-light);position:absolute;bottom:-1.5rem;}
 .chat-bubble {width:fit-content;max-width:calc(90% - var(--size-medium));margin:var(--space-1) 0 0 0;padding:var(--space-3) 1rem;background:var(--color-background-weak);  border-radius:1.5rem;border-top-left-radius:0;}
 .chat-bubble p {}

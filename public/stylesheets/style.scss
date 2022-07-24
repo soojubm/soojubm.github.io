@@ -234,7 +234,7 @@
 .intro-head{overflow:hidden;position:relative}
 .intro-head-title{padding:1rem 0;border-bottom:1px solid #000;font-size:3rem;}
 .intro-head-subhead{display:block;font-size:var(--font-size-subhead);position:relative;z-index:1}
-.intro-head-subhead b{font-weight:700}
+.intro-head-subhead b{font-weight:var(--font-weight-bold);}
 .intro-head-description{padding:2rem 0 3rem;background:#fb7800;box-sizing:border-box}
 .intro-head-description p{max-width:560px;font-size:var(--font-size-subhead);}
 .intro-head-description .textfield-input {

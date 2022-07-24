@@ -35,6 +35,7 @@ const routePage = async () => {
   try {
     const response = await fetch(uri)
     if (!response.ok) throw 'Something went wrong.'
+    
     const html = await response.text()
     view.innerHTML = html
 
