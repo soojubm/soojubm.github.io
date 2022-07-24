@@ -1,6 +1,6 @@
 
 .component {}
-.component-style {height:100vh;padding:4rem var(--grid-margin);background-color:var(--color-primary);position:sticky;top:0;}
+.component-style {height:100vh;margin-top:calc(var(--titlebar-height) * -1);padding:calc(4rem + var(--titlebar-height)) var(--grid-margin);background-color:var(--color-primary);position:sticky;top:0;}
 .component-style .tile-flat {width:100%;max-width:640px;margin:.375rem auto;}
 
 .component-row {display:flex;}
@@ -21,6 +21,7 @@
 @media (--breakpoint-small) {
   .component-row {display:block;}
   .component-column {width:100%;}
+  .component-column + .component-column {box-sizing:border-box;}
   .component-style {height:auto;position:relative;}
 }
 
