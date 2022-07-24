@@ -24,7 +24,6 @@
 .is-scrolled .landing-hero-object1 {animation:bounceY 2s ease infinite alternate;}
 .is-scrolled .landing-hero-object2 {animation:bounceY 4s ease infinite alternate;}
 
-.landing .product-features {margin-top:10rem;margin-bottom:6rem;}
 
 .landing-2 {@include container-large;padding: var(--section-inset) var(--grid-margin);}
 .landing-2-background {@include bleeding;background:var(--color-background-weak);}
@@ -40,10 +39,6 @@
 .landing-3-button {@include link-outer;display:block;margin-top:var(--space-after-description);}
 .landing-3-figure {}
 
-.landing .product-features {padding-left:var(--grid-margin);padding-right:var(--grid-margin);}
-.landing .product-features-item-title {font-size:var(--font-size-body);}
-// .landing .product-features-item-avatar:before {width:100%;}
-
 .landing-footer {padding:var(--section-inset);background:#000;}
 
 
@@ -57,7 +52,6 @@
 	.landing-hero-object1 {width:300px;height:400px;top:75%;}
 	.landing-hero-object2 {right:260px;top:80%;}
 
-	.landing .product-features {margin-top:22rem;}
   .landing-2-figure {float:none;max-width:100%;margin:0 0 2rem 0;}
 }
 

@@ -85,26 +85,26 @@
 .product-detail-summary {}
 .product-detail-summary-title {margin:4rem 0 1rem 0;@include text-subhead;}
 
-.product-features {display:flex;flex-wrap:wrap;justify-content:space-between;max-width:1080px;margin:8rem auto 10rem;}
-.product-features-head {width:100%;margin:0 auto 4rem;}
-.product-features-head h1 {@include text-title;word-break:keep-all;}
-.product-features-head p {margin:var(--space-after-title) 0 0 0;}
 
-.product-features-item {max-width:300px;position:relative;}
-.product-features-item-avatar {display:block;font-size:var(--font-size-huge);position:relative;}
-.product-features-item-avatar:before {content:'';display:block;@include avatar-medium;position:absolute;left:0rem;top:0rem;z-index:-1;}
-.product-features-item-title {margin:.25rem 0 0 0;@include text-subhead;}
-.product-features-item-description {margin:var(--space-after-subhead) 0 0 0;}
-.product-features-item-link {display:block;margin:var(--space-after-description) 0 0 0;}
+
+
 
 
 // todo 칼럼의 갯수에 따라 width를.
 .feature {display:flex;flex-wrap:wrap;justify-content:space-between;max-width:1000px;margin:0 auto;padding:6rem var(--grid-margin) 7rem;}
+.feature {display:flex;flex-wrap:wrap;justify-content:space-between;max-width:1080px;}
+.feature-head {width:100%;margin:0 auto 4rem;}
+.feature-head-title {@include text-title;word-break:keep-all;}
+.feature-head-description {margin:var(--space-after-title) 0 0 0;font-size:var(--font-size-subhead);}
 .feature-title {width:100%;margin:0 0 var(--space-after-title) 0;@include text-subhead;}
 .feature-item {width:100%;max-width:220px;margin:3rem 0 0 0;position:relative;}
+.feature-item-avatar {display:block;margin:0 0 var(--space-1) 0;font-size:var(--font-size-huge);position:relative;}
+.feature-item-avatar:before {content:'';display:block;@include avatar-medium;position:absolute;left:0rem;top:0rem;z-index:-1;}
 .feature-item-avatar {}
 .feature-item-title {@include text-subhead;font-size:var(--font-size-body);}
 .feature-item-description {margin:var(--space-after-subhead) 0 0 0;}
+.feature-item-link {display:block;margin:var(--space-after-description) 0 0 0;}
+
 
 .product-quick {display:flex;align-items:center;height:var(--size-huge);padding:0 var(--grid-margin);background:var(--color-background);position:fixed;left:0;right:0;bottom:0;z-index:var(--zindex-navigatoin);}
 .product-quick:before {content:'';display:block;height:inherit;background:inherit;border-top:var(--border);position:fixed;left:0;right:0;bottom:0;}
@@ -173,10 +173,7 @@
   
 	.product-detail {margin:10rem auto;}
 
-  .product-features-item {display:block;width:100%;max-width:100%;margin:2rem 0;}
-
-
-	.feature-item {max-width:100%;}
+	.feature-item {max-width:100%;margin:2rem 0;}
 }
 
 

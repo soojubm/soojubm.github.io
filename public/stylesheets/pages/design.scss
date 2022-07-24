@@ -3,6 +3,7 @@
 // todo tokens
 
 .article {max-width:640px;padding:4rem var(--grid-margin);overflow:hidden;position:relative;}
+.article + .article {padding-top:6rem;}
 .article-aka {@include tag-group;align-items:center;margin:var(--space-4) 0;font-size:var(--font-size-small);}
 .article-aka .hashtag:before {content:'';}
 .article-aka .tag {margin-right:var(--space-3);}
@@ -38,7 +39,7 @@
 .article-anatomy-item.is-nested:before{content:'';display:block;width:1px;height:100%;background:var(--color-text);}
 .article-anatomy-item .is-optional {margin:0 0 .5rem 0;font-size:10px;color:var(--color-text-light);vertical-align:top;}
 
-.article-subhead {margin:4rem 0 var(--space-3);@include text-subhead;}
+.article-subhead {margin:3rem 0 var(--space-3);@include text-subhead;}
 
 .article-label {margin:var(--space-4) 0 -.25rem;@include text-label;}
 
@@ -304,8 +305,8 @@
 .is-active .accordion-title-icon {transform:rotate(180deg)}
 // [aria-expanded=true] + .accordion-panel {}
 
-.design-head {max-width: 1000px;margin: 0 auto;padding:2rem var(--grid-margin) 0;background:var(--color-background);text-align:center;position:relative;}
-.design header h1 {@include text-title;font-size:3rem;line-height:1.4;}
+.design-head {max-width: 1000px;margin: 0 auto;padding:0 var(--grid-margin);background:var(--color-background);text-align:center;position:relative;}
+.design header h1 {@include text-title;font-size:3rem;}
 
 .design-navigation {position:relative;z-index:var(--zindex-default);}
 .design-navigation-bleeding {display:flex;padding:var(--space-2) var(--grid-margin);}
@@ -316,7 +317,6 @@
 
 
 @media (--breakpoint-small) {
-  .design-head {padding-top:0 !important;}
   // todo scroll error. because minus margin
   .design-navigation {
     overflow: hidden;
@@ -354,7 +354,9 @@
 }
 .marquee-box:hover {animation-play-state:paused;}
 
-.design-ticker-item {width: 380px;margin:0 1rem !important;filter: grayscale(.85);}
+.design-ticker-item {width: 380px;margin:0 1rem !important;
+  filter: grayscale(.5);
+}
 
 
 .design-ticker-overay {
@@ -375,7 +377,7 @@
 
 
 
-.postitem {display:block;width:100%;margin:4rem 0;position:relative;}
+.postitem {display:block;width:100%;margin:3rem 0;position:relative;}
 .postitem:hover {@include hover-item;}
 .postitem-cover {display:none;width:8rem;height:1rem;margin:0 0 var(--space-2) 0;background:var(--color-newneek);border-radius:var(--radius);}
 .postitem-name {@include text-title;}

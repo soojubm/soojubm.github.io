@@ -2,7 +2,7 @@
 
   <div class="article">
     <span class="article-eyebrow">작성중</span>
-    <h1 class="article-title">Filter Pattern</h1>
+    <h1 class="article-title">Filter</h1>
     <p class="article-description">
       먼저, 필터의 일반적인 pattern을 알아본 후 best practice를 정의한다.
       <br/>
@@ -74,8 +74,8 @@
         <em class="badge" style="background:var(--color-accent);font-size:10px;color:var(--color-text);position:absolute;right:-.5rem;top:-.5rem;">2</em>
       </i>
     </button>
-    <form class="filter tile-elevated" style="    overflow: hidden;
-    margin: 0 -0var(--space-3);">
+    <form class="filter tile-elevated" style="padding:1rem;overflow: hidden;
+    margin:0;">
       <header class="titlebar js-titlebar" role="navigation" style="padding:0;">
         <div class="titlebar-background"></div>
         <h1 class="titlebar-title js-page-title" title="page title">필터</h1>
@@ -157,7 +157,7 @@
     </form>
     <br />
   
-    <h2 class="article-subhead">Presentation</h2 class="article-subhead">
+    <h2 class="article-subhead">Presentation</h2>
     <ul>
       <li>Dropdown: desktop에서 상. moblie에서 중.</li>
       <li>Sheet: desktop에서 하. mobile에서 상.</li>
@@ -166,31 +166,31 @@
     <p>필터 옵션의 presentation 컴포넌트는 환경에 최적화된 경험을 위해 변경하기 쉬워야 한다.</p>
     <p>presentation 컴포넌트가 필터의 상태나 적용 방법에 많은 영향을 준다.</p>
   
-    <h2 class="article-subhead">필터의 적용</h2 class="article-subhead">
+    <h2 class="article-subhead">필터의 적용</h2>
     <ul>
       <li>Instant updates. 각각의 필터를 즉시 적용 (onChange) - 더 좋은 사용자 경험 but 데이터 소모</li>
       <li>Batch updates. 적용 버튼을 클릭할 때 적용 (onSubmit) - multiple filters</li>
     </ul>
   
-    <h2 class="article-subhead">적용된 필터의 해제Reset</h2 class="article-subhead">
+    <h2 class="article-subhead">적용된 필터의 해제Reset</h2>
     <ul>
       <li>부분 해제</li>
       <li>전체 해제</li>
     </ul>
   
-    <h2 class="article-subhead">적용된 필터의 상태</h2 class="article-subhead">
+    <h2 class="article-subhead">적용된 필터의 상태</h2>
     <ul>
       <li>Multiple Options: 빌터 버튼에 적용된 필터의 갯수 표시.</li>
       <li>Single Option: 액티브 상태와 레이블을 표기. (todo multiple)</li>
       <li>적용된 필터 상태를 chip group with removable로 추가 제공(case. 오늘의집/네이버카페)</li>
     </ul>
   
-    <h2 class="article-subhead">필터링와 소팅의 위계</h2 class="article-subhead">
+    <h2 class="article-subhead">필터링와 소팅의 위계</h2>
     <p>
       같은 컴포넌트일지라도 위계는 다르다. 소팅은 필터링의 하위 위계임을 시각적으로(위치 등) 명시하라.
     </p>
   
-    <h2 class="article-subhead">Questions</h2 class="article-subhead">
+    <h2 class="article-subhead">궁굼이</h2>
     <p>사용자는 적용된 필터 옵션 전체를 초기화하기 위해 새로고침을 할까?</p>
     <p>하나의 화면에서 모든 옵션 목록을 나열할 때 옵션 별로 다른 컴포넌트를 가져갈 수 있다. => 디자인과 개발 비용의 증가 만큼 사용자 경험이 월등한가? (case. airbnb)</o>
   

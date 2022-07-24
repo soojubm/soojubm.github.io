@@ -41,9 +41,11 @@
     <h1 class="hero-title">Components</h1>
     <p class="hero-description">todo 페이지나누기/loading state/dfn/abbr</p>
     <p>pain: 지금 환경에서 무리하게 페이지를 나누고 가이드를 추가하다보니 비효율 폭발.</p>
+    <p>1. article-title의 textnode를 뽑아서 chip group navigation이라도 그려주자.</p>
     <code>
       {
         name: 'button',
+        role: action',
         description: '',
         aka: ['string', 'string'],
         features: [],
@@ -100,13 +102,31 @@
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Tiles - container</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Seporator</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Tooltip</span></a>
+
+
+      
+      <!-- // navigations -->
+      <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Breadcrumb</span></a>
+      <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Tab</span></a>
+      <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Title Bar</span></a>
+      <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Bottom Navigation</span></a>
+      <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Paginations</span></a>
+
       <!-- <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">File Uploader</span></a> -->
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Carousel</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Table - data</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Accordion</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Result</span></a>
+
+      
+
+      <!-- <p class="hero-description">keywords: attention / feedback / confirm</p> -->
+      <a class="chip is-active js-scrollspy-trigger" href="#"><span class="chip-label">Dialog</span></a>
+      <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Callout</span></a>
+      
     </div>
   </nav>
+    
 
   <!-- <p style="font-size:var(--font-size-caption);">- Clickable은 Link/Action/Submit</p>
   <p style="font-size:var(--font-size-caption);">- "Feedback Needed" after action</p>
@@ -523,7 +543,7 @@
 
       <div class="tile-flat" style="padding:1rem;">
         <h5 style="font-size:var(--font-size-subhead);">flat large with subhead</h5>
-        <p style="margin:var(--space-after-description);">변별력이 없기는 하지만 inset을 더 키우면 작은 화면에서 공간 낭비로 미디어쿼리로 inset 조정이 필요해진다. 하지만 콘텐츠를 가운데 정렬로 용법을 제한한다면 괜찮다.</p>
+        <p style="margin:var(--space-after-description);">현재 크기에 따른 변별력이 없다. 하지만 inset이 더 커지게 되면 모바일 등의 작은 화면에서 미디어쿼리로 inset 조정이 필요하다다. 단, 더 큰 사이즈를 정의하고 콘텐츠를 가운데 정렬로 제한할 수도 있다.</p>
         <p style="margin-top:var(--space-3);">이 tile은 페이지 레벨의 컴포넌트가 될 수 있다.</p> 
       </div>
       <div class="tile-flat">
@@ -588,6 +608,344 @@
       </aside>
 
       <!-- <span class="tooltip" data-tooltip="Just like this one.">Any element</span> -->
+    </article>
+
+    <article class="article js-observer js-scrollspy-section">
+      <h1 class="article-title">Breadcrumb</h1>
+      <p class="article-description">사용자의 현재 위치를 나타내는 계층 구조의 네비게이션입니다.</p>
+
+      <nav class="breadcrumb" aria-label="breadcrumb">
+        <a class="breadcrumb-item breadcrumb-home" href="/">홈</a>
+        <i class="breadcrumb-divider">/</i>
+        <a class="breadcrumb-item " href="#">페이지 이름</a>
+        <i class="breadcrumb-divider">/</i>
+        <span class="breadcrumb-item breadcrumb-last" href="#">페이지 이름</span>
+      </nav>
+
+      <h4 class="article-subhead">Props</h4>
+      <p style="margin-bottom:var(--space-3);">router를 정의하는 방식(예를 들면 json)과 함께 고민해야 함.</p>
+      <table>
+        <caption hidden>
+          Table Caption
+        </caption>
+        <tbody role="rowgroup">
+          <tr role="row">
+            <th scope="row" style="font-weight:var(--font-weight-bold);color:var(--color-text);">name</th>
+            <th style="font-weight:var(--font-weight-bold);color:var(--color-text);">type</th>
+          </tr>
+          <tr role="row">
+            <th scope="row">currentPage</th>
+            <td>
+              string
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h4 class="article-subhead">Best practices</h4>
+      <ul>
+        <li>페이지 뎁스 3 이상에서 사용합니다.</li>
+        <li>프로모션용 랜딩 페이지에서 사용자 여정을 돕기 위해 사용할 수 있습니다.</li>
+        <li>푸터에서 사이트맵과 함께 사용할 수 있습니다.</li>
+        <li>모바일 환경에서 네비게이션 바(탑 바/타이틀 바/바텀 네비게이션 등)와 함께 사용하지 않습니다.</li>
+      </ul>
+      <!-- <p>🐹: flat sitemap 트렌드에서 사용 빈도가 높지 않아요. 주로 도움말, 상품 등 카테고리 구조에서 활용하며, pg 심사 시 제품군 정보가 요구될 수 있어요. (토스페이-구엘지페이먼츠시절)</p> -->
+    </article>
+
+    <article class="article js-observer js-scrollspy-section js-tab">
+      <h1 class="article-title">Tab</h1>
+      <p class="article-description">맥락이 같은 콘텐츠를 주제별로 분류합니다.<p>
+      <nav class="profile-tablist" role="tablist" aria-label="sample tabs" style="margin:0 0 var(--space-3) 0;">
+        <button class="profile-tablist-tab" role="tab" aria-selected="true" aria-controls="panel-1" id="tab-1" tabindex="0">
+          첫번째 탭
+          <!-- <em class="profile-tablist-tab-badge badge">24</em> -->
+        </button>
+        <button class="profile-tablist-tab" role="tab" aria-selected="false" aria-controls="panel-2" id="tab-2" tabindex="-1">두번째 탭</button>
+        <button class="profile-tablist-tab" role="tab" aria-selected="false" aria-controls="panel-3" id="tab-3" tabindex="-1">세번째 탭</button>
+        <i class="profile-tablist-indicator"></i>
+      </nav>
+      <div class="profile-tabpanel" id="panel-1" role="tabpanel" tabindex="0" aria-labelledby="tab-1" style="margin:0;">
+        <p>Content for the first panel. tablist는 tile inset에 .25rem을 쓰는 예외 케이스...</p>
+      </div>
+      <div class="profile-tabpanel" id="panel-2" role="tabpanel" tabindex="0" aria-labelledby="tab-2" aria-hidden="true" style="margin:0;">
+        <p>Content for the second panel</p>
+      </div>
+      <div class="profile-tabpanel" id="panel-3" role="tabpanel" tabindex="0" aria-labelledby="tab-3" aria-hidden="true" style="margin:0;">
+        <p>Content for the third panel</p>
+      </div>
+
+      <script>
+        window.addEventListener("DOMContentLoaded", () => {
+          const tabs = document.querySelectorAll('[role="tab"]');
+          const tabList = document.querySelector('[role="tablist"]');
+
+          tabs.forEach(tab => tab.addEventListener("click", changeTabs));
+
+          // Enable arrow navigation between tabs in the tab list
+          let tabFocus = 0;
+          tabList.addEventListener("keydown", e => {
+            // Move right
+            if (e.keyCode === 39 || e.keyCode === 37) {
+              tabs[tabFocus].setAttribute("tabindex", -1);
+              if (e.keyCode === 39) {
+                tabFocus++;
+                // If we're at the end, go to the start
+                if (tabFocus >= tabs.length) {
+                  tabFocus = 0;
+                }
+                // Move left
+              } else if (e.keyCode === 37) {
+                tabFocus--;
+                // If we're at the start, move to the end
+                if (tabFocus < 0) {
+                  tabFocus = tabs.length - 1;
+                }
+              }
+
+              tabs[tabFocus].setAttribute("tabindex", 0);
+              tabs[tabFocus].focus();
+            }
+          });
+        });
+
+        function changeTabs(e) {
+          const target = e.target;
+          const parent = target.parentNode;
+          const grandparent = parent.parentNode;
+
+          parent
+            .querySelectorAll('[aria-selected="true"]')
+            .forEach(t => t.setAttribute("aria-selected", false));
+
+          target.setAttribute("aria-selected", true);
+
+          grandparent
+            .querySelectorAll('[role="tabpanel"]')
+            .forEach(p => p.setAttribute("hidden", true));
+
+          grandparent.parentNode
+            .querySelector(`#${target.getAttribute("aria-controls")}`)
+            .removeAttribute("hidden");
+        }
+      </script>
+
+      <h4 class="article-subhead">Props (todo)</h4>
+      <table>
+        <caption hidden>
+          Table Caption
+        </caption>
+        <tbody role="rowgroup">
+          <tr role="row">
+            <th scope="row" style="font-weight:var(--font-weight-bold);color:var(--color-text);">name</th>
+            <th style="font-weight:var(--font-weight-bold);color:var(--color-text);">type</th>
+          </tr>
+          <tr role="row">
+            <th scope="row">tablist</th>
+            <td>
+              TabType[]
+            </td>
+          </tr>
+          <tr role="row">
+            <th scope="row">tabPanel</th>
+            <td>
+              React.Node
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h4 class="article-subhead">Best practices</h4>
+      <ul>
+        <li>페이지 레벨, 섹션 레벨에서 사용합니다.</li>
+        <li>탭을 중첩하여 플로우를 설계하지 마세요.<span hidden>(탭 + 칩 그룹의 패턴)</네무></li>
+        <li>콘텐츠 정렬, 콘텐츠 필터로 사용하지 않습니다.</li>
+        <li>스크롤스파이로 사용하지 않습니다.</li>
+        <li>글로벌 탐색 패턴으로 햄버거 메뉴와 탭(바텀네비게이션, 탭바)을 함께 사용하지 않습니다. (todo: tab과 tab bar(app bar)를 구분)</li>
+        <li><del>페이지 링크로 사용하지 않습니다.</del> (todo SPA 라우팅에서 페이지 링크의 개념이 모호)</li>
+        <li>todo 탭 갯수를 제한하거나 가로 스크롤을 가능하게 하거나.</p></li>
+        <li>todo 브라우저 히스토리 저장 여부.tab(?tab=projects) / linktab</li>
+      </ul>
+
+      <!-- <h4 class="article-subhead">anatomy</h4>
+      <div class="article-anatomy">
+        <span class="article-anatomy-item">Tabs</span>
+        <span class="article-anatomy-item is-nested">tablist</span>
+        <span class="article-anatomy-item is-nested-nested">tab</span>
+        <span class="article-anatomy-item is-nested">panel</span>
+        <span class="article-anatomy-item is-nested-nested">Indicator (acitive bar)</span>
+        <span class="article-anatomy-item is-nested-nested">badge <small class="is-optional">optional</small></span>
+        <span class="article-anatomy-item is-nested-nested">unread <small class="is-optional">optional</small></span>
+        <span class="article-anatomy-item is-nested-nested">quantity <small class="is-optional">optional</small></span>
+        <li>required indicator / optional indicator (모든 textfield는 required. optional만 가이드) / validations / masked</li>
+      </div> -->
+    </article>
+
+    <article class="article js-observer js-scrollspy-section">
+      <h1 class="article-title">Title Bar</h1>
+      <p class="article-description">작성 중. 모바일.</p>
+
+      <header class="titlebar js-titlebar" role="navigation" style="padding:0;">
+        <div class="titlebar-background"></div>
+        <h1 class="titlebar-title js-page-title" title="page title">쇼핑 탭</h1>
+        <button class="titlebar-action" style="color:var(--color-primary);">
+          <span class="titlebar-action-label">장바구니</span>
+        </button>
+      </header>
+
+      <hr />
+
+      <header class="titlebar js-titlebar" role="navigation" style="padding:0;">
+        <div class="titlebar-background"></div>
+        <h1 class="titlebar-title js-page-title" title="page title">페이지 타이틀</h1>
+        <button class="titlebar-back" onclick="javascript:window.location.href='/';">
+          <figure class="titlebar-back-icon" title="이전 페이지로"><i class="icon-arrow is-left"></i></figure>
+          <!-- <figure class="titlebar-back-icon"><i class="icon-close"></i></figure> -->
+          <!-- <span class="titlebar-back-label">뒤로</span> -->
+        </button>
+        <button class="titlebar-action" style="color:var(--color-primary);">
+          <figure class="titlebar-action-icon" hidden></figure>
+          <span class="titlebar-action-label">공유</span>
+        </button>
+      </header>
+
+      <hr />
+
+      <header class="titlebar js-titlebar" role="navigation" style="padding:0;">
+        <div class="titlebar-background"></div>
+        <h1 class="titlebar-title js-page-title" title="page title">페이지 타이틀</h1>
+        <button class="titlebar-back" onclick="javascript:window.location.href='/';">
+          <figure class="titlebar-back-icon"><i class="icon-x"></i></figure>
+          <!-- <span class="titlebar-back-label">뒤로</span> -->
+        </button>
+        <button class="titlebar-action" style="color:var(--color-primary);">
+          <span class="titlebar-action-label">저장</span>
+        </button>
+      </header>
+      <!-- <div class="titlebar-backdrop js-header"></div> -->
+
+      <h4 class="article-subhead">Props</h4>
+      <table>
+        <caption hidden>
+          Table Caption
+        </caption>
+        <tbody role="rowgroup">
+          <tr role="row">
+            <th scope="row" style="font-weight:var(--font-weight-bold);color:var(--color-text);">name</th>
+            <th style="font-weight:var(--font-weight-bold);color:var(--color-text);">type</th>
+          </tr>
+          <tr role="row">
+            <th scope="row">title<attr>?</attr></th>
+            <td>
+              string
+              <p>truncate보다 타이틀 글자 수 제한이 좋음</p>
+            </td>
+          </tr>
+          <tr role="row">
+            <th scope="row">hasBack<attr>?</attr></th>
+            <td>
+              boolean
+              <p></p>
+            </td>
+          </tr>
+          <tr role="row">
+            <th scope="row">hasNext<attr>?</attr></th>
+            <td>
+              boolean
+              <p>함수만 넘겨줘서 next 액션을 랜더링하는 방법이 나을 지도.</p>
+            </td>
+          </tr>
+          <tr role="row">
+            <th scope="row">hasClose<attr>?</attr></th>
+            <td>
+              boolean
+            </td>
+          </tr>
+          <tr role="row">
+            <th scope="row">isDisabled<attr>?</attr></th>
+            <td>
+              boolean
+            </td>
+          </tr>
+          <tr role="row">
+            <th scope="row">onComplete(?) / onCancel<attr>?</attr></th>
+            <td>
+              function()
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h4 class="article-subhead">Best practices</h4>
+      <ul>
+        <li>todo 아이콘 배경색 빼는 게 좋지만 버튼 아이콘에서 정의가 안 된 케이스.</li>
+        <li>todo 뒤로가기/닫기 패턴 정의하기. 탭 바로 접근하는 경우 등.</li>
+      </ul>
+    </article>
+
+    <article class="article js-observer js-scrollspy-section">
+      <h1 class="article-title">Bottom Navigation</h1>
+      <p class="article-description">모바일 환경에서의 글로벌 네비게이션.</p>
+
+      <nav class="bottombar">
+        <a href="#" class="bottombar-item is-active">
+          <figure class="bottombar-item-icon"><i class="icon-person"></i></figure>
+          <span class="bottombar-item-label">홈</span>
+          <em></em>
+        </a>
+        <a href="#" class="bottombar-item">
+          <figure class="bottombar-item-icon"><i class="icon-hamberger"></i></figure>
+          <span class="bottombar-item-label">카테고리</span>
+        </a>
+        <a href="#" class="bottombar-item">
+          <figure class="bottombar-item-icon"><i class="icon-person"></i></figure>
+          <span class="bottombar-item-label">설정</span>
+        </a>
+      </nav>
+
+      <h4 class="article-subhead">Memo</h4>
+      <ul>
+        <li>커머스 도매인에서 카테고리를 표시하기 위해 햄버거 아이콘을 사용하는데, 주로 왼쪽에 배치 됨.</li>
+        <li>todo 바텀 네비게이션과 햄버거 메뉴를 같이 사용할 수 있는 패턴을 따로 정의.</li>
+        <li>active 상태를 위해 filled 아이콘을 사용하면 추가적인 리소스 발생.</li>
+      </ul>
+
+      <!-- // iOS isTranslucent: Bool -->
+    </article>
+
+    
+    <article class="article js-observer js-scrollspy-section">
+      <h1 class="article-title">Paginations</h1>
+      <p class="article-description">todo. pagination vs more load vs infinite scroll</p>
+
+      <nav class="pagination" role="navigation" aria-label="pagination">
+        <a class="pagination-previous" href="#" title="앞 페이지로 이동" aria-label="">이전</a>
+        <a class="pagination-next" href="#" title="뒷 페이지로 이동">다음</a>
+        <a class="pagination-link" href="#" title="맨 앞 페이지로 이동">1</a>
+        <i class="pagination-ellipsis" title="맨 앞 페이지로 이동">...</i>
+        <a class="pagination-link" href="#" title="1 페이지로 이동">5</a>
+        <a class="pagination-link" href="#" title="1 페이지로 이동">6</a>
+        <a class="pagination-link is-current" href="#" title="1 페이지로 이동" aria-current="true">7</a>
+        <a class="pagination-link" href="#" title="1 페이지로 이동">8</a>
+        <a class="pagination-link" href="#" title="1 페이지로 이동">9</a>
+        <i class="pagination-ellipsis" title="맨 앞 페이지로 이동">...</i>
+        <a class="pagination-link" href="#" title="맨 뒤 페이지로 이동">50</a>
+      </nav>
+      <aside><small role="" style="display:block;margin:var(--space-4) 0 0;text-align:center;">숙소 300개 이상 중 281 – 300 (airbnb)</small>
+
+      <h4 class="article-subhead">Best practices</h4>
+      <ul>
+        <li>첫 페이지와 마지막 페이지에 더블 화살표 아이콘을 사용하지 않습니다. 최초와 최종 페이지 넘버로 사용자가 대략적인 콘텐츠의 수량을 파악할 수 있도록 도와주세요.</li>
+        <li>게시글이나 상품 목록의 탐색에 유용합니다. 하지만 최근 본 목록이나 섬네일에서 북마크를 제공한다면 load more이나 infinite scroll을 권장합니다.</li>
+      </ul>
+
+      <!-- <nav class="pagination2">
+        <a href="#" class="pagination2-prev" title="앞 페이지로 이동">이전</a>
+        <span class="pagination2-current">1</span>
+        <span class="pagination2-divider"> / </span>
+        <span class="pagination2-all">44</span>
+        <span>page 2 of 22</span>
+        <a href="#" class="pagination2-next" title="뒷 페이지로 이동">다음</a>
+      </nav> -->
     </article>
 
     <article class="article js-observer">
@@ -796,22 +1154,6 @@
 
     </article>
 
-
-    <!-- <style>
-      .container {
-        display: flex;
-        height: 300px;
-        justify-content: space-between;
-        align-items: flex-end;
-      }
-
-      .item { width: 14%; }
-      .item-1 { height: 40%; }
-      .item-2 { height: 50%; }
-      .item-3 { height: 60%; }
-      .item-4 { height: 20%; }
-      .item-5 { height: 30%; }
-    </style> -->
     
     <article class="article js-observer js-scrollspy-section">
       <h1 class="article-title">Result</h1>
@@ -855,6 +1197,167 @@
         <li>왼쪽 정렬의 기본적인 텍스트 모듈과 대비를 위해 가운데 정렬합니다.</li>
         <li>페이지 레벨과 섹션 레벨의 empty, error, complete 상황에서 사용합니다.</li>
       </ul>
+    </article>
+
+    
+
+    <article class="article js-observer js-scrollspy-section">
+      <h1 class="article-title">Dialog</h1>
+      <p class="article-description">
+        정보나 재산의 변경 또는 삭제 시 확인. 사용자는 모달 형태의 집중된 환경에서(?) 리스크를 관리할 수 있습니다.
+      </p>
+
+      <aside class="article-aka" style="margin:0;">
+        <span class="tag">a.k.a.</span>
+        <span class="hashtag" title="">Alert</span>
+        <span class="hashtag" title="">Modal</span>
+      </aside>
+
+      <aside class="dialog" role="dialog" aria-labelledby="dialog-title" aria-describedby="dialog-description">
+        <!-- <header class="dialog-head">
+          <h2 class="dialog-head-title">제목</h2>
+          <button class="dialog-close js-close" style="position:relative;right:auto;top:auto;" aria-label="delete"><i class="icon-x"></i></button>
+        </header>
+        <div class="dialog-body"></div> -->
+        <h1 class="dialog-title" id="dialog-title">부끄러우니까 보지마요!</h1>
+        <p class="dialog-description" id="dialog-description">다이얼로그 디스크립션입니다.</p>
+        <footer class="dialog-footer">
+          <button class="dialog-footer-confirm">안 볼래요</button>
+          <button class="dialog-footer-cancel">볼래요</button>
+        </footer>
+        <button class="dialog-close js-close" aria-label="delete"><i class="icon-x"></i></button>
+      </aside>
+
+      <h4 class="article-subhead">Props</h4>
+      <table>
+        <caption hidden>
+          Table Caption
+        </caption>
+        <tbody role="rowgroup">
+          <tr role="row">
+            <th scope="row" style="font-weight:var(--font-weight-bold);color:var(--color-text);">name</th>
+            <th style="font-weight:var(--font-weight-bold);color:var(--color-text);">type</th>
+          </tr>
+          <tr role="row">
+            <th scope="row">title</th>
+            <td>string</td>
+          </tr>
+          <tr role="row">
+            <th scope="row">description<abbr>?</abbr></th>
+            <td>string</td>
+          </tr>
+          <tr role="row">
+            <th scope="row">DialogFooter</th>
+            <td>
+              React.Node - ButtonGroup
+              <p>또는 label</p>
+            </td>
+          </tr>
+          <tr role="row">
+            <th scope="row">primaryActionLabel<abbr>?</abbr></th>
+            <td>string</td>
+          </tr>
+          <tr role="row">
+            <th scope="row">secondaryActionLabel<abbr>?</abbr></th>
+            <td>string | '취소?'</td>
+          </tr>
+          <tr role="row">
+            <th scope="row">onSubmit</th>
+            <td>function()</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h4 class="article-subhead">Best practices</h4>
+      <ul>
+        <li>레이어를 2개 이상 쌓지 마세요..</li>
+        <li>memo: dialog의 구조: header/body/footer 단순 다이얼로그는 복잡한 구조가 필요 없지만.</li>
+        <li>memo: dim엘리먼트 클릭 시 모달을 닫으면 리액트에서 구현이 쉬움</li>
+        <li>memo: with buttonGroup(+ props)</li>
+      </ul>
+
+      <h4 class="article-subhead">Editing checklist</h4>
+      <ul>
+        <li>버튼의 레이블은 다이얼로그 제목의 동사와 페어링합니다.</li>
+      </ul>
+
+      <h4 class="article-subhead">anatomy</h4>
+      <div class="article-anatomy">
+        <span class="article-anatomy-item"><b>dialog</b> role aria-labelledby aria-describedby</span>
+        <span class="article-anatomy-item is-nested">title</span>
+        <span class="article-anatomy-item is-nested">description <small class="is-optional">optional</small></span>
+        <span class="article-anatomy-item is-nested"
+          >buttonGroup theme="unary(confirm) | binary(cancel/confirm) <small class="is-optional">optional</small></span
+        >
+      </div>
+    </article>
+
+    <article class="article js-observer js-scrollspy-section">
+      <h1 class="article-title">Callouts</h1>
+      <p class="article-description">시스템이나 브라우저의 상태 이상, 사용자의 행동에 피드백합니다.</p>
+
+      <aside class="article-aka">
+        <span class="tag">a.k.a.</span>
+        <span class="hashtag" title="">Alert</span>
+        <span class="hashtag" title="">Message</span>
+        <span class="hashtag" title="">Callout</span>
+        <span class="hashtag" title="">Banner</span>
+        <span class="hashtag" title="">Information</span>
+      </aside>
+      <!-- <ul>
+        <li>브라우저가 role="alert" 속성이 있는 요소를 발견 하면 즉시 사용자에게 경고 내용을 읽습니다.</li>
+        <li>( + 게임에서 파티 탈퇴와 같이 직접 실행하지 않은, 시간을 특정하기 힘든 연속적인... 경우 여러 개가 필요하구나.)</li>
+        <p>toast=>snackbar(withAction) - 정리하기, single line / multiple lines (head,body 텍스트)</p>
+      </ul> -->
+
+      <h4 class="article-subhead">Best practices</h4>
+      <ul>
+        <li>
+          모든 액션에 피드백할 필요는 없습니다. (ex bad case: 인스타그램 앱에서 로그인되었다는 toast. 홈으로 이동과 피드 노출만으로 로그인 상태를
+          인지할 수 있다.)
+        </li>
+        <li>닫기나 되돌리기와 같은 액션을 포함하지 않습니다. 액션이 필요한 경우에는 주목도가 높은 모달 형태를 사용하세요.</li>
+        <li>사용자의 귀책이 아닌 경우, 단순 "오류" 대신 "시스템 오류"와 같은 용어를 사용하여 사용자가 잘못한 것처럼 느끼지 않도록 합니다.</li>
+        <li>Don't show more than one at a time.</li>
+        <li>사라지는 시간을 정의.</li>
+      </ul>
+
+      <h4 class="article-subhead">Editing checklist</h4>
+      <ul>
+        <li>최대 2문장.</li>
+      </ul>
+      <!-- Icon: Informs users of the kind of notification at a glance.
+      Title: Gives users a quick overview of the notification.
+      Message (1optional): Provides additional detail and actionable steps for the user to take.
+      Inline notification action (1optional): Ghost button that allows users to address the notification or navigates them to a page with further details.
+      Close button (1optional): Closes the notification.
+      Time stamp (1optional): Shows the time the toast notification was sent. -->
+
+      <!-- <aside class="alert">
+        <button class="alert-close" aria-label="close"><i class="icon-x"></i></button>
+        <p class="alert-head">
+          This includes the <a href="#">global HTML attributes</a>.
+        </p>
+        <p class="alert-body">
+          <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus.
+        </p>
+      </aside> -->
+
+      <h6 class="article-subhead">Inline</h6>
+      <p role="alert" style="color:var(--red800);">비밀번호가 일치하지 않습니다.</p>
+
+      <h6 class="article-subhead">Inform (todo)</h6>
+      <p role="alert">느낌표 아이콘 + 디스크립션 형태</p>
+
+      <h6 class="article-subhead">Boxed with Toast</h6>
+      <aside class="alert">
+        <span class="alert-icon">🧡</span>
+        <p class="alert-text">좋아요 표시한 동영상에 추가됨</p>
+      </aside>
+      <aside class="alert" data-temp="danger">
+        <p class="alert-text" style="color:var(--gray0);">인터넷에 연결되어 있지 않습니다.</p>
+        <!-- <button class="alert-close" aria-label="close alert"><i class="icon-x"></i></button> -->
+      </aside>
     </article>
   </section>
 

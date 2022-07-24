@@ -8,9 +8,8 @@
 .changelog-item {position:relative;}
 // .changelog-item  ul li {font-size:var(--font-size-caption) !important;}
 // .changelog-item  ul li:before {top:6px;}
-.changelog-item + .changelog-item {margin:8rem 0 0;}
-.changelog-item h4 {margin-top:2rem !important;}
-.changelog-item-date {display:block;margin:0 0 var(--space-after-subhead);@include text-subhead;}
+.changelog-item + .changelog-item {margin:6rem 0 0;}
+.changelog-item-date {display:block;margin:0 0 var(--space-after-subhead);@include text-title;}
 .changelog-item-icon {margin-left:auto;@include avatar-small;transform:rotate(90deg);}
 .changelog-item-target {@include tag;margin:0 4px 0 0;display:none;}
 .changelog-item-tag {@include avatar-small;width:3rem;margin:1.5rem .5rem .5rem 0;padding-bottom:1px;color:var(--color-text);}

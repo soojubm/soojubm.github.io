@@ -42,8 +42,13 @@
 .textfield-clear {display:none;}
 .textfield-input:focus + .textfield-clear {display:flex;}
 
+.searchfield {}
+.searchfield-prefix {top:11px;}
+.searchfield-clear {right:64px;}
+.searchfield-cancel {@include button-text;position:absolute;right:0;top:0;padding:0;}
+.is-focused .searchfield-input {display:block;width:calc(100% - var(--size-large));}
+.is-focused .searchfield-cancel {right:0;}
 
-.searchfield-cancel {@include button-text;position:absolute;right:0;top:0;}
 // 검색필드는 레이블이 없다. label ~로 하면 되긴 함.
 // input container
 
