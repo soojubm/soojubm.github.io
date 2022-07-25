@@ -145,9 +145,9 @@ $transition-fade: opacity 0.15s linear;
   --space-leading-body: -.125rem;
 
   --space-after-title: 1.25rem;
-  --space-after-subhead: 1rem;
+  --space-after-subhead: var(--space-3);
   --space-after-description: 2rem;
-  --space-after-button: .5rem;
+  --space-after-button: var(--space-2);
   --space-after-textfield: 1rem;
 
   --space-after-avatar-huge: .75rem;
@@ -155,7 +155,6 @@ $transition-fade: opacity 0.15s linear;
   --space-after-avatar-medium: var(--space-2);
   --space-after-avatar-small: var(--space-2);
 
-  
   --space-before-tag: .125rem;
   --space-before-tag-minus: calc(var(--space-before-tag) * -1);
 

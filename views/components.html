@@ -3,6 +3,7 @@
 <!-- https://biings.design/#/ -->
 <!-- todo top hat -->
 
+
 <main class="component">
   <!--
     <p>
@@ -42,6 +43,8 @@
     <p class="hero-description">todo 페이지나누기/loading state/dfn/abbr</p>
     <p>pain: 지금 환경에서 무리하게 페이지를 나누고 가이드를 추가하다보니 비효율 폭발.</p>
     <p>1. article-title의 textnode를 뽑아서 chip group navigation이라도 그려주자.</p>
+
+
     <code>
       {
         name: 'button',
@@ -55,13 +58,16 @@
         useCases: [],
       }
     </code>
-    <!-- <p>역할로 나눌 때의 문제 :: chip의 다양한 역할. 하지만 그 기능들은 지금 우연히 형태가 같을 뿐이지만 디지털 환경에서 하는 역할은 고정되어 있으며 더 좋은 경험을 위해 언제든 개선의 여지가 있다. => chip과 avatar는 그냥 그대로 정의해도 좋을 듯. 린하게...</p>
+
+    <ul>
+      <li>역할에 기반한 컴포넌트. 예를 들면 스포티파이의 encore에서 track row 컴포넌트. 도메인 특수성.</li>
+      <li>1~2 가지 케이스는 예외 케이스로 정의한다.</li>
+      <li>dos / don'ts 케이스는 이미지를 사용하지 않고 간결하게 서술합니다. => 컴포넌트는 계속 변경되기 때문에 유지보수 비용 증가. </li>
+    </ul>
+    <!-- <p>역할로 나눌 때의 문제 :: chip의 다양한 역할. 하지만 그 기능들은 지금 우연히 형태가 같을 뿐이지만 디지털 환경에서 하는 역할은 고정되어 있으며 더 좋은 경험을 위해 언제든 개선의 여지가 있다.</p>
     <p>anatomy vs props 설명하려고 하는 정보 유사함. 잘 구분해보기. anatomy에서 접근성 속성과 html 구조를 다룬다.</p> -->
 
-      <!-- <li>변경하기 쉬운 (이것도 ㅓㅁ포넌트)</li>
-      <li>형태로보기 - 버튼/칩...</li>
-      <li>역할로보기 - 컨테이너/시각정보/인터렉션(필터/정렬...)...</li>
-      <li>모든 시각정보는 non-clickable. 모든 인터렉션은 clickable.</li> -->
+      <!-- <li>모든 시각정보는 non-clickable. 모든 인터렉션은 clickable.</li> -->
 
       <!-- / success / warning / danger ? -->
       <!-- <h4 class="article-subhead">selection</h4>
@@ -71,13 +77,9 @@
         <dt>더보기</dt><dd>더보기vs더불러오기(more, arrow-down), 자세히보기, learn more 등(external, arrow-right-top)</dd> -->
       <!-- https://material.io/design/interaction/states.html -->
       <!-- variants -->
-      <!-- <article class="article js-scrollspy-section">
-        <p>site(app)-page-section-article(dialog,card등 article level로 정의. tile은 article level에 사용.)-item-</p>
-      </article> -->
-      <!-- <li><i class="icon-check"></i>dos / don'ts 케이스는 이미지를 사용하지 않고 간결하게 서술합니다. </li> -->
-      <!-- <li><i class="icon-check"></i>사용 빈도가 낮은 케이스는 예외 케이스로 정의합니다.</li> -->
-      <!-- 긍정문 / 한자 지양 / -적 / 복합명사는 붙여쓰기
-      '-때', '경우', '사용' 최소화. 부정어/긍정어/명령형?
+      <!--
+      부정어/긍정어/명령어 / 한자 지양 / -적 / 복합명사는 붙여쓰기
+      '-때', '경우', '사용' 최소화.
       하세요, 할 수 있습니다. 보다 합니다. 입니다 -->
     
     <!-- <footer class="hero-foot">
@@ -103,8 +105,6 @@
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Seporator</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Tooltip</span></a>
 
-
-      
       <!-- // navigations -->
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Breadcrumb</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Tab</span></a>
@@ -118,8 +118,6 @@
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Accordion</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Result</span></a>
 
-      
-
       <!-- <p class="hero-description">keywords: attention / feedback / confirm</p> -->
       <a class="chip is-active js-scrollspy-trigger" href="#"><span class="chip-label">Dialog</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Callout</span></a>
@@ -131,7 +129,6 @@
   <!-- <p style="font-size:var(--font-size-caption);">- Clickable은 Link/Action/Submit</p>
   <p style="font-size:var(--font-size-caption);">- "Feedback Needed" after action</p>
   <p style="font-size:var(--font-size-caption);">- Actions: removable, selectable(single/multiple), checkable/uncheckable, addable</p>
-  <p style="margin:0 0 var(--space-4) 0;font-size:var(--font-size-caption);">- Groupable과 Stackable을 구분하는 것이 좋을찌?</p> -->
 
   <section class="component-body">
     <section class="component-body">

@@ -12,6 +12,20 @@
       <li>검색 결과 페이지의 공유를 허용할 것인가?</li>
       <li>검색 탭 또는 검색 페이지는 탐색을 역할을 하는가?</li>
     </ul>
+
+    <h4 class="article-subhead">iOS에서의 검색 패턴</h4>
+    <ul>
+      <li><b>onFocus.</b> 검색내역 등 히스토리 제공. 취소 버튼을 통한 onBlur.</li>
+      <li><b>onBlur. (default)</b>인기/개인화 콘텐츠 추천 및 탐색.</li>
+    </ul>
+
+    <div class="textfield searchfield is-focused">
+      <button class="textfield-prefix searchfield-prefix"><i class="icon-search"></i></button>
+      <!-- <label class="textfield-label" for="search">검색(시각적으로숨겨야함)</label> -->
+      <input class="textfield-input searchfield-input js-input-test" type="search" id="search" placeholder="궁금한 인물이나 이슈가 있나요?" />
+      <button class="textfield-clear searchfield-clear" hidden><i class="icon-x"></i></button>
+      <button class="searchfield-cancel">취소</button>
+    </div>
     
     <h2 class="article-subhead">검색의 시작</h2>
     <ul style="margin:0 0 1rem 0;">
@@ -72,8 +86,8 @@
 
     <h2 class="article-subhead">검색의 결과</h2>
     <ul>
-      <li>검색어와 일치하지 않더라도 유사한 검색 결과를 항상 하나 이상 보여줄 수 있다. onSubmit에는 해당하지 않는다.</li>
-      <li>상태(결과 없음)를 보여줄 수 있다. 또는, 추천 검색어나 추천 콘텐츠를 보여줄 수 있다. 추천 콘텐츠를 노출하는 것은 ott 등의 컨텐츠 플랫폼에서 유용할 수 있지만 명확한 결과를 기대할 때는 주의.</li>
+      <li><b>onChange로 검색:</b> 일치하는 결과가 없더라도 하나 이상의 결과를 항상 노출하는 경우. 추천 검색어나 추천 콘텐츠를 대신 노출할 수 있다. 단, ott 등의 컨텐츠 플랫폼에서 유용할 수 있지만 명확한 결과를 기대할 때는 주의.</li>
+      <li><b>onSubmit로 검색:</b> 상태(결과 없음)를 보여줄 수 있다. 결국 하나 또는 하나 이상의 명확한 결과를 원하는 경우.</li>
       <li>결과의 필터링 또는 소팅. link to filtering pattern page</li>
     </ul>
     <div class="result tile-flat" style="padding-top:2rem;padding-bottom:2.5rem;">

@@ -33,15 +33,14 @@
 
   <article class="article js-observer js-scrollspy-section component-column">
     <h1 class="article-title">Buttons</h1>
-    <!-- // 작업 수행, 클릭할 수 있는  -->
     <p class="article-description">과업 수행을 위한 페이지 이동, 데이터 제출 등 사용자 여정의 핵심적인 액션입니다.</p>
 
     <ul>
       <li><b>text.</b> 버튼은 버튼 처럼 보이지 않을 수 있기 때문에 특정 패턴에서만 사용하세요.</li>
-      <p><b>large.</b> 프로모션 페이지의 call to action으로 제한적으로 사용합니다.</p>
-      <p><b>medium.</b> default size.</p>
-      <p>색상만으로 상태를 표현하지 않습니다.</p>
-      <p><b>Show more.</b> 콘텐츠와 대비를 위해 full-width로 사용하지 마세요.</p>
+      <li><b>large.</b> 프로모션 페이지의 call to action으로 제한적으로 사용합니다.</li>
+      <li><b>medium.</b> default size.</li>
+      <li><b>states.</b> 색상만으로 상태를 표현하지 마세요. 상태 표현을 위해 서비스 전반에 일관된 단서를 제공하세요.</li>
+      <li><b>show more.</b> 사용자가 정보를 탐색할 때 행동 유도성을 높이기 위해 단일 콘텐츠 또는 콘텐츠 목록보다 작은 크기로 대비를 주세요.</li>
     </ul>
     <!-- <h4 class="article-subhead">Appearance</h4>
     <div class="tile-flat" style="z-index:1;">
@@ -88,14 +87,9 @@
         <button class="danger-button" aria-label="danger">Destructive</button>
       </div>
     </div>
-    <p><b>Show more.</b> 콘텐츠와 대비를 위해 full-width로 사용하지 마세요.</p> -->
-
-    <!-- <p>Split Button</p> -->
     <!-- <li>아이콘 버튼의 아이콘은 관습적인 메타포를 사용하세요.</li> -->
-    <!-- <p><span><i></i></span> 역할이 명확한 모두보기, 불러오는중, 더보기 등의 버튼은 합성해서 컴포넌트로 관리.</p> -->
-    <!-- <li>버튼 아래에 가이드 텍스트를 배치하지 않습니다.<span hidden> (secondary 액션의 text 버튼이 아래에 위치하는 패턴 고려).</spanhi></li> -->
     
-    <!-- <h4 class="article-subhead">Component Tokens</h4>
+    <h4 class="article-subhead">Component Tokens</h4>
     <div class="tag-group">
       <small class="tag">--button-color-background</small>
       <small class="tag">--button-color-border</small>
@@ -106,14 +100,20 @@
       <small class="tag">--button-size-min-width</small>
       <small class="tag">--button-font-size</small>
       <small class="tag">--button-font-weight</small>
-    </div> -->
+    </div>
+
+
+    <h4 class="article-subhead">Anatomy</h4>
+    <!-- <ul>
+      <li>icon</li>
+      <li>text label</li>
+    </ul> -->
 
 
     <h4 class="article-subhead">Props</h4>
     <table>
       <caption hidden>Table Caption</caption>
       <tbody role="rowgroup">
-        <!-- appearance: 'link' | 'subtle' | 'primary' -->
         <tr role="row">
           <th scope="row">appearance</th>
           <td>"primary" | "secondary" | "tertiary"</td>
@@ -168,45 +168,48 @@
     <h4 class="article-subhead">Best practices</h4>
     <ul>
       <li>액션 실행 후 피드백합니다. 물리적인 인터페이스의 출현 뿐 아니라 예측할 수 있는 페이지 이동이나 페이지 새로고침, 정보 구조의 변화도 피드백으로 취급될 수 있습니다. (bad case. 인스타그램의 로그인 성공 toast)</li>
-      <li>사용자가 다음에 일어날 일을 예측할 수 있도록 레이블을 작성하세요. 텍스트 레이블을 생략하는 경우 보편적인 메타포의 아이콘과 대체 텍스트를 제공하세요.</li>
+      <li>사용자가 다음에 일어날 일을 예측할 수 있도록 레이블을 작성하세요. 부득이 텍스트 레이블을 생략하는 경우 보편적인 메타포의 아이콘을 사용하고 대체 텍스트를 제공해야 합니다..</li>
       <li>통일된 시각 언어로 버튼의 상태를 표현하세요. 상태를 표현하는 시각 언어는 일부 컴포넌트에 종속되지 않고 제품 전체에 일관되어야 합니다.</li>
-      <!-- <li>버튼에 장식적인 아이콘을 포함하지 마세요. </li> -->
+      <li>장식적인 아이콘을 포함하지 마세요. </li>
+      <li>버튼 아래에 가이드 텍스트를 배치하지 마세요.<span hidden> (secondary 액션의 text 버튼이 아래에 위치하는 패턴 고려).</span></li>
+      <li>페이지 내에서 여러 번 반복될 수 있는 action에 버튼을 사용하지 마세요.</li>
     </ul>
     
     <h4 class="article-subhead">Editing checklist</h4>
     <ul data-align="horizontal">
-      <li>The button text should clearly indicate what will happen when the button is clicked.</li>
+      <!-- <li>The button text should clearly indicate what will happen when the button is clicked.</li> -->
       <li>최대 8자</li>
       <li>사용자 시점 (ex 보내기 => 받기)</li>
       <li>레이블 생략 불가능</li>
     </ul>
 
+    <h4 class="article-subhead">Accessibility</h4>
+
+    <h4 class="article-subhead">Related components</h4>
+    <ul>
+      <li><b>button group.</b>
+        <div class="tile-flat">
+          <div class="design-buttongroup">
+            <button class="article-tertiary">취소</button>
+            <button class="article-primary">저장</button>
+          </div>
+        </div>
+        <aside class="article-helper">
+          <p>최대 2가지 액션을 사용할 수 있습니다. 3가지 이상의 액션 모음을 위한 toolbar 컴포넌트를 정의하기.</p>
+          <p>버튼그룹에서 primary 버튼과 secondary 버튼을 함께 배치하지 마세요.</p>
+          <p>버튼그룹에서 항상 primary 버튼을 먼저 마크업하거나 tab index를 설정하여 탭으로 먼저 접근할 수 있도록 하세요.</p>
+        </aside>
+      </li>
+      <li><b>show more.</b></li>
+    </ul>
+
     <h4 class="article-subhead">Other cases</h4>
     <ul data-align="horizontal">
       <li><b>shopify.</b> 모든 액션을 button으로 명명함. chip과 dropdown trigger 까지 포함하여 button.</li>
+      <li><b>split button.</b></li>
+      <li> 'link' | 'subtle' | 'primary'</li>
+      <li>style = solid/outline/plain/text <b hidden>(모든 스타일을 망라해야 하기 때문에 유아이 라이브러리에 어울리는 네이밍)</b></li>
     </ul>
-
-
-    <h4 class="article-subhead">Related components</h4>
-    <h3>button group</h3>
-    <div class="tile-flat">
-      <div class="design-buttongroup">
-        <button class="article-tertiary">취소</button>
-        <button class="article-primary">저장</button>
-      </div>
-    </div>
-    <aside class="article-helper">
-      <p>최대 2가지 액션을 사용할 수 있습니다. 3가지 이상의 액션 모음을 위한 toolbar 컴포넌트를 정의하기.</p>
-      <p>버튼그룹에서 primary 버튼과 secondary 버튼을 함께 배치하지 마세요.</p>
-      <p>버튼그룹에서 항상 primary 버튼을 먼저 마크업하거나 tab index를 설정하여 탭으로 먼저 접근할 수 있도록 하세요.</p>
-    </aside>
-
-    <!-- <h4 class="article-subhead">anatomy & a11y</h4>
-    <span class="article-anatomy-item is-nested"><b>icon</b> role="img" aria-label="plus icon" <small class="is-optional">optional</small></span> -->
-    <!-- <span class="article-anatomy-item is-nested">badge - amount</span> -->
-    <!-- <p> / min-width, padding-left, padding-right</p> -->
-    
-    <!-- <li>네이밍: style = solid/outline/plain/text (모든 스타일을 망라해야 하기 때문에 유아이 라이브러리에 어울리는 네이밍) </li> -->
     
     <!-- <a class="button" href="#">Anchor button</a>
     <button>Button element</button>

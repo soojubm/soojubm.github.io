@@ -100,7 +100,7 @@
 .feature-item-avatar {display:block;margin:0 0 var(--space-1) 0;font-size:var(--font-size-huge);position:relative;}
 .feature-item-avatar:before {content:'';display:block;@include avatar-medium;position:absolute;left:0rem;top:0rem;z-index:-1;}
 .feature-item-avatar {}
-.feature-item-title {@include text-subhead;font-size:var(--font-size-body);}
+.feature-item-title {@include text-subhead;}
 .feature-item-description {margin:var(--space-after-subhead) 0 0 0;}
 .feature-item-link {display:block;margin:var(--space-after-description) 0 0 0;}
 
