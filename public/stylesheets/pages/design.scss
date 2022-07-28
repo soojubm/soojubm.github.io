@@ -339,6 +339,7 @@
 
 .marquee-box {
   display: flex;
+  width: calc((380px + 1rem) * 5);
   // animation: marquee 28s linear 0s infinite normal none running;
   animation: marquee 28s linear 0s infinite;
   animation-play-state: running;
