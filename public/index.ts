@@ -428,6 +428,8 @@ function lazyLoading() {
 
       data.items.forEach(item => {
         const view = document.querySelector('body')
+
+        //todo fragmentElement
         if (!view) return
 
         view.insertAdjacentHTML(

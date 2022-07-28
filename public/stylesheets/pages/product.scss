@@ -173,6 +173,7 @@
 	.product-detail {margin:10rem auto;}
 
 	.feature-item {max-width:100%;margin:2rem 0;}
+	.feature-item + .feature-item {margin-top:0;}
 }
 
 

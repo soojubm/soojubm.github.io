@@ -9,6 +9,7 @@ export function throttle(callback) {
 
 export function stopAnimation() {
   let resizeTimer
+  
   window.addEventListener(
     'resize',
     throttle(() => {

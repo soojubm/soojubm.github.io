@@ -34,13 +34,11 @@
 
 .person-list {
   display: flex;
-  width: 160px;
 }
 .person {
-  @include tile-elevated-small;
+  @include tile-elevated;
+  width:calc(100px + var(--space-3) * 2);
   margin: 0 var(--space-3) 0 0;
-  padding: var(--space-2);
-  padding: var(--space-3);
 }
 .person:hover {@include hover-item;}
 .person figure {
