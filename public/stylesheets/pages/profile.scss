@@ -6,6 +6,7 @@
 .profile-user-name {@include text-subhead;}
 .profile-user-id {display:block;}
 .profile-user-job {display:block;margin:var(--space-1) 0 0;color:var(--color-text-light);}
+
 .profile-user-description {max-height:5.4em;margin:1.25rem 0;white-space:normal;overflow:hidden;text-overflow:ellipsis;word-wrap:break-word;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;position:relative;}
 .profile-user-description-more {margin:0 var(--space-2);@include link-outer;}
 .profile-user-toggle {width:100%;margin:var(--space-4) 0;text-align:center;color:var(--color-text);position:relative;}
@@ -41,10 +42,6 @@
 .social-github figure {background-color:var(--color-github);}
 
 
-.profile-user {float:left;width:320px;position:relative;z-index:var(--zindex-default);}
-.profile-user-avatar {float:right;@include avatar-huge;background-image:url('https://source.unsplash.com/random');background-size:contain;}
-.profile-user-name {@include text-subhead;}
-.profile-user-id {display:block;}
 
 // todo active state
 // 포지션 라이트탑은. 불필요.
