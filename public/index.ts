@@ -38,11 +38,42 @@ document.addEventListener('DOMContentLoaded', () => {
   // event.positionSticky({ selector: '.js-titlebar', addClass: 'is-sticky-titlebar', isPassed: false })
 })
 
-window.addEventListener('scroll', throttle(scrollProgress), true)
-function scrollProgress(): void {
+const debounce = (callback, delay) => {
+  let timerId
+  return event => {
+    // delay가 경과하기 이전에 이벤트가 발생하면 이전 타이머를 취소하고 새로운 타이머를 재설정
+    // delay보다 짧은 간격으로 이벤트가 발생하면 callback은 호출되지 않는다.
+    if (timerId) clearTimeout(timerId)
+    timerId = setTimeout(callback, delay, event)
+  }
+}
+
+// ! scroll rAF
+const throttle2 = (callback, delay) => {
+  let timerId
+  return event => {
+    // delay가 경과하기 전에 이벤트가 발생하면 아무동작도 하지 않는다.
+    // delay가 경과했을 때 이벤트가 발생하면서 새로운 타이머를 재설정한다.
+    // 따라서 delay 간격으로 callback이 호출된다.
+    if (timerId) return
+    timerId = setTimeout(
+      () => {
+        callback(event)
+        timerId = null
+      },
+      delay,
+      event,
+    )
+  }
+}
+window.addEventListener('scroll', throttle2(scrollProgress, 50), true)
+
+function scrollProgress() {
   const containerElement = document.querySelector<HTMLElement>('.post')
   const progressBar = document.querySelector<HTMLElement>('.post-head-progress')
   if (!containerElement || !progressBar) return
+
+  console.log('thththth')
 
   const scrollPercent = `${(window.pageYOffset / (containerElement.scrollHeight - window.innerHeight)) * 100}%`
   progressBar.style.width = scrollPercent
@@ -61,7 +92,7 @@ document.addEventListener('click', closeParentElement)
 document.addEventListener('mouseover', mouseenterElement)
 
 // common 요소는 1번 이벤트..
-// ! hashchange 마다 이벤트를 생성하는 것이 문제.
+// ! hashchange 마다 cn 생성하는 것이 문제.
 document.addEventListener('DOMContentLoaded', () => {
   carousel()
 })
@@ -69,8 +100,6 @@ async function domEvents() {
   // todo
   const navItemElements = document.querySelectorAll('.navbar-menu a')
   const hash = window.location.hash.substring(1)
-
-  const isHome = window.location.hash === ''
 
   const temps = [
     'actions',
@@ -428,7 +457,6 @@ function lazyLoading() {
 
       data.items.forEach(item => {
         const view = document.querySelector('body')
-
         //todo fragmentElement
         if (!view) return
 
@@ -469,54 +497,6 @@ function closeParentElement(event) {
 //   }))
 // }
 
-// targetElements.forEach((element, index) => {
-//   window.addEventListener('scroll', throttle(() => {
-
-//     let offsetBottom = element.offsetTop + element.offsetHeight
-//     let isScrolled = window.pageYOffset > offsetBottom
-//     let rate2 = Math.abs(window.pageYOffset) * 0.1
-//     // let rate2 = Math.abs(window.pageYOffset + element.offsetTop) * 0.1
-
-//     let isTemp = Number(window.getComputedStyle(element).getPropertyValue('opacity')) >= 1
-//     let isTemp2 = Number(window.getComputedStyle(element).getPropertyValue('opacity')) < 0
-
-//     console.log(isTemp2, window.getComputedStyle(element).getPropertyValue('opacity'))
-
-//     const abc = () => {
-//       let opacity1 = String((rate2 / 100).toFixed(1))
-//       let opacity2 = String((-rate2 / 100).toFixed(1))
-//       if(isScrolled) {
-//         if(isTemp) return false
-//         return opacity1
-//       } else {
-//         if(isTemp2) return false
-//         return opacity2
-//       }
-//     }
-//     const ccc = () => {
-//       let opacity1 = `translateY(-${rate2 * 2}px)`
-//       let opacity2 = `translateY(${rate2 * 2}px)`
-//       if(isScrolled) {
-//         if(window.pageYOffset > 600) return false
-//         return opacity1
-
-//       } else {
-//         return opacity2
-//       }
-//     }
-
-//     // 괴ㅗㅇ장히 실행이 여러번되느넫?
-//     // console.log(window.getComputedStyle(element).getPropertyValue('transform'))
-//     element.style.opacity = String(abc())
-//     element.style.transform = String(ccc())
-
-//     // if(targetElements.length === index + 1) {}
-
-//     // const temp = document.querySelector<HTMLElement>('.js-parallax-parent')
-//     // temp!.style.opacity = String(Math.abs(window.pageYOffset + element.offsetTop) * 0.00125)
-// }), false)
-// })
-
 // 2222.02.02 menu에서 제거 navbar-menu-item has-submenu js-hover-trigger
 function mouseenterElement(event) {
   // mouseover 버블링.closest.여러번실행 / mouseenter 한번실행.closestdksehla
@@ -543,36 +523,23 @@ interface IUser {
 }
 
 class GreetingMessage extends HTMLElement {
-  /**
-   * The class constructor object
-   */
   constructor() {
-    // Always call super first in constructor
     super()
 
-    // Render HTML
     this.innerHTML = `<p>
 				<button>Hi there!</button>
 			</p>
 			<div class="message" aria-live="polite"></div>`
   }
 
-  /**
-   * Runs each time the element is appended to or moved in the DOM
-   */
   connectedCallback() {
     console.log('connected!', this)
   }
-
-  /**
-   * Runs when the element is removed from the DOM
-   */
   disconnectedCallback() {
     console.log('disconnected', this)
   }
 }
 
-// Define the new web component
 if ('customElements' in window) {
   customElements.define('greeting-message', GreetingMessage)
 }

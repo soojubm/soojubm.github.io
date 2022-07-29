@@ -384,7 +384,7 @@
           </footer>
         </div>
         <aside class="article-helper">
-          <p>페이지 레벨(시트/모달 등)이 될 때 액션이 더 눈에 강조되어야 한다.</p>
+          <p>페이지 레벨(시트/모달 등)이 될 때 액션이 더 강조되어야 한다.</p>
         </aside>
   
         <h4 class="article-subhead">references</h4>
@@ -446,7 +446,7 @@
   
       <article class="article js-observer js-scrollspy-section">
         <h1 class="article-title">Menu Item</h1>
-        <p class="article-description">사용자가 수행할 수 있는 링크나 행동(작업)의 목록.</p>
+        <p class="article-description">사용자가 수행할 수 있는 행동(또는 링크) 목록.</p>
   
         <button class="user-logout js-darkmode" title="change theme">
           <figure class="user-logout-icon"><i class="icon-moon"></i></figure>
@@ -1312,7 +1312,7 @@
           모든 액션에 피드백할 필요는 없습니다. (ex bad case: 인스타그램 앱에서 로그인되었다는 toast. 홈으로 이동과 피드 노출만으로 로그인 상태를
           인지할 수 있다.)
         </li>
-        <li>닫기나 되돌리기와 같은 액션을 포함하지 않습니다. 액션이 필요한 경우에는 주목도가 높은 모달 형태를 사용하세요.</li>
+        <li>닫기나 되돌리기와 같은 액션을 포함하지 않습니다. 인터렉션이 필요한 경우에는 주목도가 높은 모달 형태를 사용하세요.</li>
         <li>사용자의 귀책이 아닌 경우, 단순 "오류" 대신 "시스템 오류"와 같은 용어를 사용하여 사용자가 잘못한 것처럼 느끼지 않도록 합니다.</li>
         <li>Don't show more than one at a time.</li>
         <li>사라지는 시간을 정의.</li>
@@ -1399,14 +1399,14 @@ function onMouseUp(e) {
     activeTextarea.selectionStart, activeTextarea.selectionEnd
   );
 
-  const outputElement = document.getElementById('output-element');
-  const outputText = document.getElementById('output-text');
+  const outputElement = document.querySelector('.output-element');
+  const outputText = document.querySelector('.output-text');
   outputElement.innerHTML = activeTextarea.id;
   outputText.innerHTML = selection;
 }
 
-const textarea1 = document.getElementById('ta-example-one');
-const textarea2 = document.getElementById('ta-example-two');
+const textarea1 = document.querySelector('.ta-example-one');
+const textarea2 = document.querySelector('.ta-example-two');
 textarea1.addEventListener('mouseup', onMouseUp, false);
 textarea2.addEventListener('mouseup', onMouseUp, false);
 -->
@@ -1424,15 +1424,6 @@ textarea2.addEventListener('mouseup', onMouseUp, false);
           <option value="10" label="10"></option>
         </datalist>
       </div>
-      <script>
-      var carousel = document.getElementById("myRange");
-      var output = document.getElementById("demo");
-      output.innerHTML = carousel.value; // Display the default carousel value
-      // Update the current carousel value (each time you drag the carousel handle)
-      carousel.oninput = function() {
-        output.innerHTML = this.value;
-      }
-    </script>
     </article> -->
 
 

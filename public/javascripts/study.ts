@@ -1,69 +1,5 @@
 // @ts-nocheck
 
-const postsView = {
-  init(el) {
-    if (!el) throw Error('el')
-    this.el = el
-    this.data = []
-    return this
-  },
-  setData(data) {
-    this.data = data
-    return this
-  },
-  render() {
-    this.el.innerHTML = this.html()
-  },
-  html() {
-    return (
-      this.data.reduce((html, post) => {
-        html += `
-        <h2>${post.title}</h2>
-        <article>${this.text(post.text)}</article>
-       `
-        return html
-      }, '<div>') + '</div>'
-    )
-  },
-  text(post) {
-    return post.substring(0, 100) + '...'
-  },
-}
-
-export default postsView
-
-postsView.init(document.querySelector('#app'))
-api.fetch().then(data => {
-  postView.setData(data).render()
-})
-
-class HTTPError extends Error {
-  constructor(statusCode: number, message?: string) {
-    super(message) // 반드시 호출해야함
-    this.name = `HTTPError`
-    this.statusCode = statusCode
-  }
-}
-const fetchPosts = async () => {
-  const response = await fetch(`/api/posts`)
-  if (response.ok) {
-    return await response.json()
-  } else {
-    throw new HTTPError(response.status, response.statusText)
-  }
-}
-const renderPosts = async () => {
-  try {
-    const posts = await fetchPosts()
-    // Do something with posts
-  } catch (e) {
-    console.error(e.statusCode) // <- 컴파일 에러
-    if (e instanceof HTTPError) {
-      alert(`fetching posts failed, error code is ${e.statusCode}`) // 이건 정상
-    }
-  }
-}
-
 // 포스트를 가져온 다음
 // 만들어진 순서 역순으로 정리를 하고
 // `타이틀 - 작가명` 으로 `title` 필드를 수정해준 다음
@@ -84,9 +20,7 @@ function attachKeyUpEvent() {
     const nodeName = event.target.nodeName
     const inputProps = event.target
 
-    if (nodeName === 'INPUT') {
-      validateForm(inputProps)
-    }
+    if (nodeName === 'INPUT') validateForm(inputProps)
   })
 }
 
@@ -164,10 +98,7 @@ let evenMoreSandwiches = Array.from(sandwiches)
 // Add a few sandwiches
 sandwiches.push('italian', 'blt')
 
-// logs ["turkey", "ham", "pb&j", "italian", "blt"]
 console.log(sandwiches)
-
-// logs ["turkey", "ham", "pb&j"]
 console.log(evenMoreSandwiches)
 
 // Create an immutable copy
@@ -176,31 +107,10 @@ let evenMoreLunch = Object.assign({}, lunch)
 // Add a snack
 lunch.snack = 'cookies'
 
-// Logs {sandwich: 'turkey', drink: soda, snack: 'cookies'}
 console.log(lunch)
-
-// Logs {sandwich: 'turkey', drink: soda}
 console.log(evenMoreLunch)
 
-ReactGA.initialize(process.env.REACT_APP_TRACKING_ID, { debug: true })
 const history = createBrowserHistory()
-history.listen((location: any) => {
-  ReactGA.set({ page: location.pathname }) // Update the user's current page
-  ReactGA.pageview(location.pathname) // Record a pageview for the given page
-})
-
-var pagItems = document.querySelectorAll('.pagination__item')
-
-for (var i = 0; i < pagItems.length; i++) {
-  var counter = i + 1
-  var string = 'Page ' + counter
-
-  if (pagItems[i].getAttribute('aria-current')) {
-    string = 'Page ' + counter + ', Current Page'
-  }
-
-  pagItems[i].setAttribute('aria-label', string)
-}
 
 class scrollbox {
   constructor() {
@@ -277,7 +187,6 @@ console.log(scrollbox.width) //-> 17 (Windows, Chrome)
 //   }
 
 //   document.body.addEventListener('mousemove', hasMouse);
-
 //   document.body.addEventListener('touchstart', function ()  {
 //       is_touch_event = true;
 //   });
@@ -287,7 +196,6 @@ console.log(scrollbox.width) //-> 17 (Windows, Chrome)
 //   document.body.addEventListener('click', function ()  {
 //       if(is_touch_event) is_touch_event = false;
 //   });
-
 //   function isTouchDevice() {
 //       try {
 //           document.createEvent('TouchEvent');
@@ -297,18 +205,17 @@ console.log(scrollbox.width) //-> 17 (Windows, Chrome)
 //       }
 //   }
 
-//   if(isTouchDevice()) {
-//       document.documentElement.classList.add('touch');
-//   }
+//   if(isTouchDevice()) document.documentElement.classList.add('touch');
 // })();
 
 const spanElem = document.querySelector('span')
 function navigateLink(e) {
-  if (e.type === 'click' || e.key === 'Enter') {
-    let ref = e.target != null ? e.target : e.srcElement
-    if (ref) {
-      window.open(ref.getAttribute('data-href'), '_blank')
-    }
+  const isNavigateAction = e.type === 'click' || e.key === 'Enter'
+  if (!isNavigateAction) return
+
+  let ref = e.target == null ? e.srcElement : e.target
+  if (ref) {
+    window.open(ref.getAttribute('data-href'), '_blank')
   }
 }
 spanElem.addEventListener('click', navigateLink)
@@ -364,7 +271,6 @@ textboxEle.addEventListener('keydown', function(e) {
 
 textboxEle.addEventListener('keypress', function(e) {
   const isMac = /Mac/.test(navigator.platform)
-
   const keyCode = e.keyCode || e.which
 
   // Is the _Shift_ key pressed?
@@ -410,26 +316,7 @@ textboxEle.addEventListener('keypress', function(e) {
 // }
 
 // type InitialFontStyle = "twin-color-text" | "box-text" | "down-side-text" | "out-line-text" | "bubble-shadow-text";
-
 // type InitialFontName = "andada-pro" | "bebas-nenu" | "montecarlo" | "roboto" | "stix-two-text" | "style-script";
-
-// graphQL
-// const endpoint = 'https://fakerql.com/graphql'
-// const query = `{
-//     Todo(id: "cjkskilwt00422c10dezjgdhw") {
-//       id
-//       title
-//       completed
-//     }
-//   }`
-
-// fetch(endpoint, {
-//   method: 'POST',
-//   headers: { 'Content-Type': 'application/json' },
-//   body: JSON.stringify({ query }),
-// })
-//   .then(res => res.json())
-//   .then(json => console.log(JSON.stringify(json.data, null, 2)))
 
 // <div>
 //   <div class="js-counter1" data-number="54">54%</div>
@@ -514,12 +401,8 @@ function calculateReadTime() {
   readTimeElement.innerText = result
 }
 
-function hasClass(element, cls) {
-  return (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1
-}
-// Call the pretty-printer after we've fixed up the code blocks.
 var pretty = document.createElement('script')
-pretty.src = 'https://cdn.rawgit.com/google/code-prettify/master/loader/' + 'run_prettify.js'
+pretty.src = 'https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js'
 document.body.appendChild(pretty)
 
 // !
@@ -558,7 +441,6 @@ const animateCountUp = el => {
   }, frameDuration)
 }
 
-// Run the animation on all elements with a class of ‘countup’
 const runAnimations = () => {
   const countupEls = document.querySelectorAll('.countup')
   countupEls.forEach(animateCountUp)

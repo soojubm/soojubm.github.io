@@ -1,9 +1,8 @@
-// @ts-nocheck
 import { pushBrowserHistory } from './utils/browserUtils'
-// type routeType = {
-//   name: string
-//   path: string
-// }
+type routeType = {
+  name: string
+  path: string
+}
 export const routes = [
   { name: '디자인시스템', path: '/' },
   { name: '홈', path: '/home' },
@@ -26,55 +25,56 @@ export const routes = [
 const currentPath = window.location.pathname
 
 const routePage = async () => {
-  const view = document.getElementById('view')
-  if (!view) return
+  let currentPath = window.location.hash.substring(1) // fast than .replace('#', '')
+  let uri = currentPath ? `/views/${currentPath}.html` : '/views/design.html'
 
-  let hash = window.location.hash.substring(1) // fast than .replace('#', '')
-  const uri = hash ? `/views/${hash}.html` : '/views/design.html'
+  // const navigators = document.querySelectorAll('.navbar-menu a')
+  // navigators.forEach(navigator => {
+  //   navigator.addEventListener('click', event => {
+  //     let currentPath
+  //     // event.preventDefault()
+  //     if (event.target instanceof HTMLAnchorElement) {
+  //       console.log('navigator', event.target.getAttribute('href')!.substring(1), uri)
+  //       currentPath = event.target.getAttribute('href')!.substring(1)
+  //     }
+
+  //     window.history.pushState(undefined, '타이틀', `/${currentPath}`)
+  //   })
+  // })
 
   try {
-    const response = await fetch(uri)
-    if (!response.ok) throw 'Something went wrong.'
-    
-    const html = await response.text()
-    view.innerHTML = html
-
-    window.scrollTo(0, 0)
-
-    // https://developer.mozilla.org/ko/docs/Web/API/Fetch_API/Using_Fetch
-    // fetch(url, {
-    //   method: 'POST', // or 'PUT'
-    //   body: JSON.stringify(data), // data can be `string` or {object}!
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    // })
-    //   .then(res => res.json())
-    //   .then(response => console.log('Success:', JSON.stringify(response)))
-    //   .catch(error => console.error('Error:', error))
-
-    //     var parser = new DOMParser()
-    //     var doc = parser.parseFromString(html, 'text/html')
-    //     var img = doc.querySelector('img')
-
-    // view.insertAdjacentHTML('afterbegin', html);
+    const page = await fetchPage(uri)
+    renderPage(page)
   } catch (error) {
     console.warn('router: ', error)
   }
+}
+
+async function fetchPage(uri) {
+  const response = await fetch(uri)
+  if (!response.ok) throw 'Something went wrong.'
+
+  const html = await response.text()
+  return html
+}
+
+function renderPage(content) {
+  const view = document.querySelector('#view')
+  if (!view) return
+
+  view.innerHTML = content
+  // view.insertAdjacentHTML('afterbegin', html);
+
+  window.scrollTo(0, 0) // todo
 }
 
 export default routePage
 
 // const activeRoutes = document.querySelectorAll('[route]')
 // activeRoutes.forEach(route => route.addEventListener('click', navigate, false))
-//   const route = routes.filter(item => item.path === currentPath)
-function navigate(event) {
-  const route = event.target.attributes[0].value
-  const routeInfo = routes.filter(item => item.path === route)[0]
-  // 	const routeInfo = myFirstRouter.routes.find(r => r.path === route);
-  // if (!routeInfo) {
-  //   pushBrowserHistory({}, '', 'error')
-  //   view.innerHTML = 'no route exists'
-  // }
-  pushBrowserHistory({}, '', routeInfo.path)
-}
+// const route = routes.filter(item => item.path === currentPath)
+// if (!route) {
+//   pushBrowserHistory({}, '', 'error')
+//   view.innerHTML = 'no route exists'
+// }
+// pushBrowserHistory({}, '', routeInfo.path)
