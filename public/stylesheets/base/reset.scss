@@ -16,7 +16,8 @@ mark {color:inherit;}
 // mark::before {content: " [강조 시작] ";}
 // mark::after {content: " [강조 끝] ";}
 // br {content:'';display:block;height:1rem;}
-hr {margin:var(--space-4) 0;border-top: thin solid var(--gray200);position:relative;}
+// thin solid
+hr {margin:var(--space-4) 0;border-top:1px solid var(--gray200);position:relative;}
 
 u {text-decoration:none;position:relative;}
 u:after {content:'';height:.4em;border-radius:2px;background:var(--green100);position:absolute;left:-.125rem;right:-.125rem;bottom:0;z-index:-1;}
