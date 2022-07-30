@@ -9,99 +9,55 @@
   <section class="component-style component-column"></section>
 
   <article class="article js-observer js-scrollspy-section component-column">
-    <section style="max-width:800px;">
-      <header class="home-asset">
-        <h1 class="home-asset-heading">
-          내 자산
-          <br />
-          <button>0원</button>
-        </h1>
-        <button class="home-asset-refresh">불러오기</button>
-        <button class="home-asset-creditinfo">신용점수 확인하기 <i class="icon-arrow" hidden></i></button>
-      </header>
-
-      <div class="banner" role="banner" data-size="small" style="margin:var(--space-4) 0;background:var(--color-primary);">
-        <h2 class="banner-title">저기... 정보 좀 드릴까요?</h2>
-        <p class="banner-description">필요한 것만 딱딱 챙겨놨어요.</p>
-      </div>
-
-      <section>
-        <div class="sidebar-item" role="listitem">
-          <figure class="sidebar-item-avatar"></figure>
-          <span class="sidebar-item-label">계좌</span>
-          <span class="sidebar-item-icon"><b>연결하기</b> <i class="icon-arrow"></i> </span>
-        </div>
-        <div class="sidebar-item" role="listitem">
-          <figure class="sidebar-item-avatar"></figure>
-          <span class="sidebar-item-label">카드</span>
-          <span class="sidebar-item-icon"><b>연결하기</b> <i class="icon-arrow"></i> </span>
-        </div>
-        <div class="sidebar-item" role="listitem">
-          <figure class="sidebar-item-avatar"></figure>
-          <span class="sidebar-item-label">투자</span>
-          <span class="sidebar-item-icon"><b>연결하기</b> <i class="icon-arrow"></i> </span>
-        </div>
-        <div class="sidebar-item" role="listitem" data-size="large">
-          <figure class="sidebar-item-avatar"></figure>
-          <span class="sidebar-item-label">대출</span>
-          <span class="sidebar-item-icon"><b>연결하기</b> <i class="icon-arrow"></i> </span>
-        </div>
-
-        <!-- ! 기존에 부모 태그에서 콘트롤 했던 부분을 아바타와 레이블 각각 컨트롤할 수 있도록 하기. -->
-        <div class="sidebar-item" role="listitem">
-          <figure class="sidebar-item-avatar" style="width:var(--size-large);height:var(--size-large);"></figure>
-          <span class="sidebar-item-label">조금 더 강조된 형태</span>
-          <span class="sidebar-item-icon"><b>연결하기</b> <i class="icon-arrow"></i> </span>
-        </div>
-        <div class="sidebar-item" role="listitem">
-          <figure class="sidebar-item-avatar" style="width:var(--size-large);height:var(--size-large);"></figure>
-          <span class="sidebar-item-label">조금 더 강조된 형태</span>
-          <span class="sidebar-item-icon"><b>연결하기</b> <i class="icon-arrow"></i> </span>
-        </div>
-        <div class="sidebar-item" role="listitem">
-          <figure class="sidebar-item-avatar" style="width:var(--size-large);height:var(--size-large);"></figure>
-          <span class="sidebar-item-label">조금 더 강조된 형태</span>
-          <span class="sidebar-item-icon"><b>직접 등록하기</b> <i class="icon-arrow"></i> </span>
-        </div>
-      </section>
-
-      <div class="banner" role="banner" data-size="small" style="margin:2rem 0;background:var(--color-background-weak);">
-        <h2 class="banner-title" style="font-size:var(--font-size-body);color:var(--color-text);">기본 형태의 small 배너</h2>
-        <p class="banner-description" style="color:var(--color-text);">헤딩이 더 작아짐.</p>
-      </div>
-
-      <section style="padding:0 0 2rem 0;">
-        <h2 class="text-subhead" style="margin:0 0 var(--space-after-subhead) 0;">자산관리에 도움 받아보세요!</h2>
-        <article class="item" data-size="large">
-          <figure class="item-avatar"></figure>
-          <h3 class="item-name">병원비 소액이라도 돌려받아야죠</h3>
-          <p class="item-description">실손보험 청구하기</p>
-        </article>
-        <hr />
-        <article class="item" data-size="large">
-          <figure class="item-avatar"></figure>
-          <h3 class="item-name">공모주 청약 일정 놓치지 마세요</h3>
-          <p class="item-description">관심있는 청약 소식 알림 받기</p>
-        </article>
-        <hr />
-        <article class="item" data-size="large">
-          <figure class="item-avatar"></figure>
-          <h3 class="item-name">시드머니 모아볼까?</h3>
-          <p class="item-description">적금&주식계좌 만들기</p>
-        </article>
-      </section>
-    </section>
-
     <h1 class="article-title">Menu</h1>
     <p class="article-description">다중 옵션의 목록. 모바일 친화적.</p>
+    <!-- <p class="article-description">사용자가 수행할 수 있는 행동(또는 링크) 목록.</p> -->
+
+    <button class="user-logout js-darkmode" title="change theme">
+      <figure class="user-logout-icon"><i class="icon-moon"></i></figure>
+      <span class="user-logout-label">어둡게 보기</span>
+      <span class="switch" style="margin-left:auto;">
+        <input type="checkbox" id="temp55" name="" role="switch" />
+        <label for="temp55" style="padding-left:48px;"></label>
+      </span>
+    </button>
+    <hr />
+    <div class="item" data-size="medium" role="listitem">
+      <figure class="item-avatar">🏹</figure>
+      <span class="item-label">entity와 구별</span>
+      <span class="item-tag" data-appearance="primary">새소식</span>
+    </div>
+    <hr />
+    <button class="item">
+      <span class="item-label">메뉴 아이템 레이블</span>
+      <em class="item-icon"><i class="icon-check"></i></em>
+    </button>
+    <div class="checkbox menutype" data-size="medium">
+      <input type="checkbox" id="menutype1" name="gender" value="" checked />
+      <label for="menutype1" title="">
+        <figure class="item-avatar"></figure>
+        카카오뱅크
+      </label>
+    </div>
+
+    <h4 class="article-subhead">Memo</h4>
+    <ul>
+      <li>액션 타입/링크 타입/토글 타입/선택 타입</li>
+      <li>dropdown에서의 형태(smaller)와 sheet/sidebar에서의 형태를 구분.</li>
+      <li>leading icon / tailing icon / badge. => props로 제공해도 되는 정보.</li>
+      <li>제목 isTruncated or 2줄.</li>
+    </ul>
 
     <blockquote>
-      <p>entity와 형태가 굉장히 유사하기 때문에 조금 더 고민해보기</p>
+      <p>
+        entity와 형태가 굉장히 유사함. solution: menu item는 description이 없기 때문에 align-items: center 속성을 가지는 flexbox로 기술적인 구분을 할
+        수는 있겠음.
+      </p>
       <p>multiple selections을 위해 checkbox의 checkable 기표를 컴포넌트화</p>
     </blockquote>
 
     <ul>
-      <li><b>presentations:</b> modal, dropdown, sheet</li>
+      <li><b>presentations:</b> modal, dropdown, sheet, sidebar</li>
       <li><b>aligns:</b> vertical</li>
     </ul>
 
@@ -119,6 +75,9 @@
       </li>
       <li>
         <b>linkable.</b>
+      </li>
+      <li>
+        <b>bookmarkable.</b>
       </li>
       <li><b>single selectable.</b></li>
       <li><b>multiple selectable.</b></li>

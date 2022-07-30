@@ -149,7 +149,7 @@ input[type=checkbox]:checked + label + * {display:block;margin:0.25rem 0 var(--s
     }
     label:after {
       display:block;
-      left:auto;top:11px;right:4px;
+      left:auto;top:11px;right:5px;
       width:12px;height:4px;
     }
     input:checked + label:before {

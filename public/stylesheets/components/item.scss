@@ -5,13 +5,14 @@
 
 
 // ! avatar-medium과 chip
-
-@mixin item {@include clearfix;width:100%;position:relative;z-index:1;}
+// ! text-align: left는 button element.
+@mixin item {@include clearfix;width:100%;text-align:left;position:relative;z-index:1;}
 @mixin item-avatar-huge {@include avatar-huge;float:left;margin-right:var(--space-after-avatar-huge);background:url('https://source.unsplash.com/random') no-repeat center var(--color-background-weak);}
 @mixin item-avatar-large {@include avatar-large;float:left;margin-right:var(--space-after-avatar-large);background:url('https://source.unsplash.com/random') no-repeat center var(--color-background-weak);}
 @mixin item-avatar-medium {@include avatar-medium;float:left;margin-right:var(--space-after-avatar-medium);background:url('https://source.unsplash.com/random') no-repeat center var(--color-background-weak);}
 @mixin item-avatar-small {@include avatar-small;float:left;margin-right:var(--space-after-avatar-small);background:url('https://source.unsplash.com/random') no-repeat center var(--color-background-weak);}
-@mixin item-label {margin-left: var(--space-after-avatar-medium);color: var(--color-text);}
+@mixin item-label {margin-left:var(--space-after-avatar-medium);color:var(--color-text);}
+@mixin item-icon {display:flex;align-items:center;position:absolute;right:0rem;top:50%;transform:translateY(-50%);}
 
 .item {@include item;}
 .item:hover {@include hover-item;}
@@ -20,6 +21,7 @@
 .item-name {font-size:var(--font-size-body);color:var(--color-text);}
 .item-description {display:block;line-height:var(--font-line-height-small);color:var(--color-text-light);}
 .item-description + .item-name {margin-top:-.125rem;}
+.item-tag {margin:0 0 0 var(--space-3);}
 
 .item-action {@include chip;background:var(--green100);color:var(--color-primary);@include position-right-top;}
 .item-action.is-active {border-color:transparent;background:var(--color-background-weak);color:var(--color-text);}
@@ -28,18 +30,34 @@
 .item-delete {@include chip;position:absolute;right:0;top:0;}
 .item-delete:hover {}
 
+.item-icon {@include item-icon;font-size:var(--font-size-caption);color:var(--color-primary);}
+.item-icon-label {} // ! action-label
+.item-icon i {@include avatar-small;margin-left:-.4rem;background:none;transform:scale(.75);}
+.item-icon i:before {border-color:var(--color-primary);}
+.item-icon i:after {display:none;background-color:var(--color-primary);}
+// todo signify
+
+.is-gray.item-icon i:before {border-color:var(--icon-background);}
+
 .item-follow {}
 
 
 
 [data-size=huge] .item-avatar {@include item-avatar-huge;}
 [data-size=huge] .item-name {@include text-subhead;}
-
 [data-size=large] .item-avatar {@include item-avatar-large;}
 [data-size=large] .item-name {font-weight:var(--font-weight-normal);font-size:var(--font-size-body);}
-
 [data-size=medium] .item-avatar {@include item-avatar-medium;}
 [data-size=medium] .item-name {line-height:var(--size-medium);}
-
 [data-size=small] .item-avatar {@include item-avatar-small;}
 [data-size=small] .item-name {line-height:var(--size-small);}
+
+
+
+
+// todo checkitem space-between or position absolute;
+@mixin menuitem {display:flex;align-items:center;width:100%;position:relative;z-index:var(--zindex-default);}
+@mixin menuitem-label {@include text-subhead;line-height:var(--size-medium);}
+
+.sidebar {}
+.sidebar-heading {margin:0 0 var(--space-2) 0;@include text-label;}

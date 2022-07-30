@@ -36,7 +36,10 @@
 .sds-component-checklist {margin:var(--space-4) 0;}
 
 .home-asset {position:relative;}
-.home-asset-heading {font-size:var(--font-size-title);color:var(--color-text-light);}
-.home-asset-heading button {color:var(--color-text);}
-.home-asset-refresh {position:absolute;right:0;top:0;}
+.home-asset-heading {font-size:var(--font-size-title);line-height:1.4;color:var(--color-text-light);}
+.home-asset-heading button {display:flex;align-items:center;color:var(--color-text);}
+.home-asset-heading button span {margin-left:.4rem;@include reset-position;} // ! position-reset
+.home-asset-heading button span i {}
+.home-asset-heading button span i:before {width:.75rem;height:.75rem;border-color:var(--gray400) !important;}
+.home-asset-refresh {font-size:var(--font-size-caption);color:var(--color-text-light);position:absolute;right:0;top:0;}
 .home-asset-creditinfo {margin:var(--space-4) 0;@include link-outside;}
