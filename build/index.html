@@ -89,19 +89,7 @@
     <script src="./public/javascripts/polyfill.js"></script>
     <script src="./build/bundle.js"></script>
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-83531239-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || []
-      function gtag() {
-        dataLayer.push(arguments)
-      }
-      gtag('js', new Date())
 
-      gtag('config', 'UA-83531239-1', {
-        page_path: location.pathname + location.hash,
-      })
-    </script> -->
 
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -117,7 +105,9 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-      gtag('config', 'G-R4K1SS8B5C');
+      gtag('config', 'G-R4K1SS8B5C', {
+        page_path: location.pathname + location.hash,
+      });
     </script>
   <script defer src="bundle.js"></script><link href="style.css" rel="stylesheet"></head>
   <body class="is-opened-menu is-loading">
