@@ -66,7 +66,7 @@
 .navbar-notification-menu-item {padding:.5rem 1rem;cursor:pointer;position:relative;}
 .navbar-notification-menu-item:hover {background:var(--color-background);}
 .navbar-notification-menu footer {padding:var(--space-4) 0;}
-.navbar-notification-menu footer button {@include link-outer;}
+.navbar-notification-menu footer button {@include link-outside;}
 .navbar-notification-empty {width:var(--width-tiny);@include tile-elevated;position:absolute;top:36px;right:0;z-index:var(--zindex-menu);transform:scale(0);}
 .navbar-notification-empty:before {content:'';display:block;position:absolute;left:50%;right:0;top:-8px;bottom:0;}
 .is-active + .navbar-notification-menu,
@@ -110,7 +110,7 @@
 .user-logout-label {margin:0 0 0 var(--space-2);}
 .user-logout:hover {@include hover-item;}
 .user-logout:hover .user-logout-icon {background:var(--color-background);}
-.user-myinfo {@include link-outer;margin:.25rem 0 0;}
+.user-myinfo {@include link-outside;margin:.25rem 0 0;}
 .user-footer {}
 .user-footer a {font-size:var(--font-size-caption);color:var(--color-text-light);}
 

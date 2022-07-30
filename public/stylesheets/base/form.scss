@@ -119,7 +119,7 @@ input[type=radio]:checked + label + *,
 input[type=checkbox]:checked + label + * {display:block;margin:0.25rem 0 var(--space-4) 0px;}
 
 
-
+// todo...
 .checkbox,
 .radio {
   &.theme-button {
@@ -135,21 +135,34 @@ input[type=checkbox]:checked + label + * {display:block;margin:0.25rem 0 var(--s
     }
   }
 
-  &.theme-button:nth-of-type(1) {
-    border-radius: var(--radius) var(--radius) 0 0;
-  }
-  &.theme-button:last-child {
-    border-radius: 0 0 var(--radius) var(--radius);
+  &.menutype {
+    border:0;
+    box-shadow:none;
+    padding:0;
+    margin:var(--space-3) 0;
+    label {justify-content: flex-start;padding-left:0;}
+    label:before {
+      left:auto;right: 0;
+      width: var(--size-small);
+      height: var(--size-small);
+
+    }
+    label:after {
+      display:block;
+      left:auto;top:11px;right:4px;
+      width:12px;height:4px;
+    }
+    input:checked + label:before {
+      background-color: var(--color-primary);
+    }
+    input:checked + label:after {
+      border-color: var(--gray0);
+    }
   }
 
-  &.theme-button + .theme-button {
-    border-top: 0;
-  }
-
-  &.theme-right {
-    label:before {left:auto;right:0;}
-    label:after {left:auto;right:3px;}
-  }
+  &.theme-button:nth-of-type(1) {border-radius: var(--radius) var(--radius) 0 0;}
+  &.theme-button:last-child {border-radius: 0 0 var(--radius) var(--radius);}
+  &.theme-button + .theme-button {border-top: 0;}
 }
 
 

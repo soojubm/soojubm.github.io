@@ -1,0 +1,154 @@
+<main class="component component-row">
+  <!-- <section class="hero" role="banner"> -->
+  <!-- <div class="hero-background"></div> -->
+  <!-- <span class="hero-eyebrow">Components</span> -->
+  <!-- <h1 class="hero-title">Actions</h1> -->
+  <!-- <p class="hero-description">크게 action와 link로 나눈다.</p> -->
+  <!-- </section> -->
+
+  <section class="component-style component-column"></section>
+
+  <article class="article js-observer js-scrollspy-section component-column">
+    <section style="max-width:800px;">
+      <header class="home-asset">
+        <h1 class="home-asset-heading">
+          내 자산
+          <br />
+          <button>0원</button>
+        </h1>
+        <button class="home-asset-refresh">불러오기</button>
+        <button class="home-asset-creditinfo">신용점수 확인하기 <i class="icon-arrow" hidden></i></button>
+      </header>
+
+      <div class="banner" role="banner" data-size="small" style="margin:var(--space-4) 0;background:var(--color-primary);">
+        <h2 class="banner-title">저기... 정보 좀 드릴까요?</h2>
+        <p class="banner-description">필요한 것만 딱딱 챙겨놨어요.</p>
+      </div>
+
+      <section>
+        <div class="sidebar-item" role="listitem">
+          <figure class="sidebar-item-avatar"></figure>
+          <span class="sidebar-item-label">계좌</span>
+          <span class="sidebar-item-icon"><b>연결하기</b> <i class="icon-arrow"></i> </span>
+        </div>
+        <div class="sidebar-item" role="listitem">
+          <figure class="sidebar-item-avatar"></figure>
+          <span class="sidebar-item-label">카드</span>
+          <span class="sidebar-item-icon"><b>연결하기</b> <i class="icon-arrow"></i> </span>
+        </div>
+        <div class="sidebar-item" role="listitem">
+          <figure class="sidebar-item-avatar"></figure>
+          <span class="sidebar-item-label">투자</span>
+          <span class="sidebar-item-icon"><b>연결하기</b> <i class="icon-arrow"></i> </span>
+        </div>
+        <div class="sidebar-item" role="listitem" data-size="large">
+          <figure class="sidebar-item-avatar"></figure>
+          <span class="sidebar-item-label">대출</span>
+          <span class="sidebar-item-icon"><b>연결하기</b> <i class="icon-arrow"></i> </span>
+        </div>
+
+        <!-- ! 기존에 부모 태그에서 콘트롤 했던 부분을 아바타와 레이블 각각 컨트롤할 수 있도록 하기. -->
+        <div class="sidebar-item" role="listitem">
+          <figure class="sidebar-item-avatar" style="width:var(--size-large);height:var(--size-large);"></figure>
+          <span class="sidebar-item-label">조금 더 강조된 형태</span>
+          <span class="sidebar-item-icon"><b>연결하기</b> <i class="icon-arrow"></i> </span>
+        </div>
+        <div class="sidebar-item" role="listitem">
+          <figure class="sidebar-item-avatar" style="width:var(--size-large);height:var(--size-large);"></figure>
+          <span class="sidebar-item-label">조금 더 강조된 형태</span>
+          <span class="sidebar-item-icon"><b>연결하기</b> <i class="icon-arrow"></i> </span>
+        </div>
+        <div class="sidebar-item" role="listitem">
+          <figure class="sidebar-item-avatar" style="width:var(--size-large);height:var(--size-large);"></figure>
+          <span class="sidebar-item-label">조금 더 강조된 형태</span>
+          <span class="sidebar-item-icon"><b>직접 등록하기</b> <i class="icon-arrow"></i> </span>
+        </div>
+      </section>
+
+      <div class="banner" role="banner" data-size="small" style="margin:2rem 0;background:var(--color-background-weak);">
+        <h2 class="banner-title" style="font-size:var(--font-size-body);color:var(--color-text);">기본 형태의 small 배너</h2>
+        <p class="banner-description" style="color:var(--color-text);">헤딩이 더 작아짐.</p>
+      </div>
+
+      <section style="padding:0 0 2rem 0;">
+        <h2 class="text-subhead" style="margin:0 0 var(--space-after-subhead) 0;">자산관리에 도움 받아보세요!</h2>
+        <article class="item" data-size="large">
+          <figure class="item-avatar"></figure>
+          <h3 class="item-name">병원비 소액이라도 돌려받아야죠</h3>
+          <p class="item-description">실손보험 청구하기</p>
+        </article>
+        <hr />
+        <article class="item" data-size="large">
+          <figure class="item-avatar"></figure>
+          <h3 class="item-name">공모주 청약 일정 놓치지 마세요</h3>
+          <p class="item-description">관심있는 청약 소식 알림 받기</p>
+        </article>
+        <hr />
+        <article class="item" data-size="large">
+          <figure class="item-avatar"></figure>
+          <h3 class="item-name">시드머니 모아볼까?</h3>
+          <p class="item-description">적금&주식계좌 만들기</p>
+        </article>
+      </section>
+    </section>
+
+    <h1 class="article-title">Menu</h1>
+    <p class="article-description">다중 옵션의 목록. 모바일 친화적.</p>
+
+    <blockquote>
+      <p>entity와 형태가 굉장히 유사하기 때문에 조금 더 고민해보기</p>
+      <p>multiple selections을 위해 checkbox의 checkable 기표를 컴포넌트화</p>
+    </blockquote>
+
+    <ul>
+      <li><b>presentations:</b> modal, dropdown, sheet</li>
+      <li><b>aligns:</b> vertical</li>
+    </ul>
+
+    <h4 class="article-subhead">Anatomy</h4>
+    <ul>
+      <li><b>avatar</b> optional</li>
+      <li><b>text label</b></li>
+      <li><b>icons</b> check/chevron(arrow) with text label</li>
+    </ul>
+
+    <h4 class="article-subhead">Features</h4>
+    <ul>
+      <li>
+        <b>actionable.</b>
+      </li>
+      <li>
+        <b>linkable.</b>
+      </li>
+      <li><b>single selectable.</b></li>
+      <li><b>multiple selectable.</b></li>
+    </ul>
+
+    <h4 class="article-subhead">Best practices</h4>
+    <ul></ul>
+
+    <h4 class="article-subhead">Props</h4>
+
+    <dl class="article-props">
+      <dt>name</dt>
+      <dd>string</dd>
+      <dt>src<abbr>?</abbr></dt>
+      <dd>string</dd>
+      <dt>size</dt>
+      <dd>"huge" | "large" | "medium" | "small"</dd>
+      <dt>badge<abbr>?</abbr></dt>
+      <dd>"unread" | "new" | "live"</dd>
+    </dl>
+
+    <h4 class="article-subhead">Related components</h4>
+    <a href="">entity</a>
+    <span class="icon-bullet"></span>
+    <a href="">avatar</a>
+    <span class="icon-bullet"></span>
+    <a href="">checkbox</a>
+    <span class="icon-bullet"></span>
+    <a href="">radio</a>
+
+    <h4 class="article-subhead">Other cases</h4>
+  </article>
+</main>

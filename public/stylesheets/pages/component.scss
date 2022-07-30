@@ -34,3 +34,9 @@
 .sds-component-title {margin:var(--space-4) 0 0 0;@include text-title;}
 .sds-component-description {margin:var(--space-after-title) 0;}
 .sds-component-checklist {margin:var(--space-4) 0;}
+
+.home-asset {position:relative;}
+.home-asset-heading {font-size:var(--font-size-title);color:var(--color-text-light);}
+.home-asset-heading button {color:var(--color-text);}
+.home-asset-refresh {position:absolute;right:0;top:0;}
+.home-asset-creditinfo {margin:var(--space-4) 0;@include link-outside;}

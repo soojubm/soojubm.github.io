@@ -8,8 +8,14 @@
 .banner-image {@include avatar-large;}
 .banner-eyebrow {@include tag;margin:0 0 .5rem 0;}
 .banner-title {@include text-title;}
-.banner-description {margin:var(--space-after-subhead) 0 var(--space-after-description);}
-.banner-button {@include button-text;}
+.banner-description {margin:var(--space-after-subhead) 0 0;}
+.banner-button {margin:0 0 var(--space-after-description) 0;@include button-text;}
+// 버튼이 생략될 수 있다.
+
+.banner[data-size=small] {padding:var(--space-4);text-align:left;}
+.banner[data-size=small] .banner-title {@include text-subhead;color:var(--gray0);}
+.banner[data-size=small] .banner-description {margin:var(--space-1) 0 0;color:var(--gray0);opacity:.75;}
+.banner[data-size=small] .banner-button {@include button-text;}
 
 @media (--breakpoint-small) {
   // .banner {flex-wrap:wrap;}

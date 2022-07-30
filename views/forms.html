@@ -108,7 +108,41 @@
           <label for="other">기타</label>
           <input type="text" name="other-more" class="textfield-input" placeholder="기타로 오토바이를 타자." hidden />
         </div>
+        <!-- todo -->
+        <hr />
+        <!-- <button>전체선택</button> -->
+        <div class="checkbox menutype" data-size="medium">
+          <input type="checkbox" id="menutype1" name="gender" value="" checked />
+          <label for="menutype1" title="">
+            <figure class="item-avatar"></figure>
+            카카오뱅크
+          </label>
+        </div>
+        <div class="checkbox menutype" data-size="medium">
+          <input type="checkbox" id="menutype2" name="gender" value="" />
+          <label for="menutype2" title="">
+            <figure class="item-avatar"></figure>
+            신한은행
+          </label>
+        </div>
       </fieldset>
+
+      <h4 class="article-subhead">Props</h4>
+      <dl>
+        <dt>name</dt>
+        <dd>string</dd>
+        <dt>label</dt>
+        <dd>string</dd>
+        <dt>value</dt>
+        <dd>string</dd>
+        <dt>isChecked</dt>
+        <dd>boolean</dd>
+        <dt>isDisabled<attr>?</attr></dt>
+        <dd>boolean</dd>
+        <dt>onChange</dt>
+        <dd>event => (React.FormEvent<HTMLInputElement>): void</dd>
+        <dd>React.ChangeEventHandler<> / @types/react</dd>
+      </dl>
 
       <h4 class="article-subhead">Best practices</h4>
       <ul>

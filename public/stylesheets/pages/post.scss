@@ -1,6 +1,6 @@
 .post {@include container-medium;max-width:720px;padding:40px var(--grid-margin);} // img - margin
 .post-head {position:relative;}
-.post-head-category {display:flex;align-items:center;@include link-outer;position:relative;}
+.post-head-category {display:flex;align-items:center;@include link-outside;position:relative;}
 .post-head-category:hover {}
 .post-head-headline {@include text-title;line-height:1.4;} /* 상하단 패딩 똑같이해야 스키티때 */
 .post-head-dateline {}
@@ -76,7 +76,7 @@
 .post-comment-list-item-menu {display:none;@include tile-elevated-small;width:var(--width-dropdown);margin:0;padding:0;position:absolute;right:40px;top:0;z-index:var(--zindex-default);}
 .post-comment-list-item-menu button {display: block;width:calc(100% - 2rem);margin: 1rem;text-align:left;position: relative;z-index: 1;}
 .post-comment-list-item-menu button:hover {@include hover-item;}
-.post-comment-list-item-reply {margin:1rem 0 0 0;@include link-outer;}
+.post-comment-list-item-reply {margin:1rem 0 0 0;@include link-outside;}
 
 .is-active + .post-comment-list-item-menu {display:block;}
 
