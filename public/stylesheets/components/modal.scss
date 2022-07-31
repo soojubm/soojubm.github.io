@@ -16,6 +16,7 @@
 .modal {@include dim;} /* pointer-events:none */
 .modal-close {@include avatar-medium;}
 .modal-dim {display:none;@include dim;}
+
 .modal-dialog {@include modal-dialog;}
 .modal-head {}
 .modal-head-title {margin:2rem 0 var(--space-after-subhead) 0;@include text-subhead;}

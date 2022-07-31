@@ -84,27 +84,13 @@
     <meta name="msapplication-config" content="/path/to/ieconfig.xml" /> -->
 
     <link rel="stylesheet" href="./build/style.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lucaburgio/iconoir@master/css/iconoir.css" />
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lucaburgio/iconoir@master/css/iconoir.css" /> -->
 
-    <script src="./public/javascripts/polyfill.js"></script>
-    <script src="./build/bundle.js"></script>
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-83531239-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || []
-      function gtag() {
-        dataLayer.push(arguments)
-      }
-      gtag('js', new Date())
-
-      gtag('config', 'UA-83531239-1', {
-        page_path: location.pathname + location.hash,
-      })
-    </script> -->
+    <script src="./public/javascripts/polyfill.js" defer></script>
+    <script src="./build/bundle.js" defer></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4K1SS8B5C"></script>
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4K1SS8B5C"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -119,7 +105,7 @@
           page_path: location.pathname + location.hash,
         });
       })
-    </script>
+    </script> -->
   <script defer src="bundle.js"></script><link href="style.css" rel="stylesheet"></head>
   <body class="is-opened-menu is-loading">
     <noscript>This website requires JavaScript.</noscript>
@@ -149,7 +135,8 @@
 
     <nav class="navbar js-navbar" role="navigation">
       <!-- todo tab index -->
-      <button class="navbar-burger js-navbar-toggle" aria-expanded="false">
+      <!--  aria-controls="menu" haspopup / expanded -->
+      <button class="navbar-burger js-navbar-toggle" aria-label="전체메뉴" aria-haspopup="true" aria-expanded="false">
         <i class="icon-hamberger"></i>
       </button>
       <div class="navbar-menu" role="navigation">
@@ -206,7 +193,7 @@
             </a>
           </menu>
         </div> -->
-        <div class="navbar-menu-item has-submenu" style="margin:var(--space-2) 0 0 0;">
+        <div class="navbar-menu-item has-submenu" style="margin:var(--space-2) 0 0 0;" role="menu">
           <span class="menu-label" role="menuitem">Pages<i class="icon-caret"></i></span>
           <menu>
             <!-- todo 페이지 변경이 없을 때 네비게이션이 닫히지 않는다. -->
@@ -287,8 +274,8 @@
             <figure class="user-logout-icon"><i class="icon-moon"></i></figure>
             <span class="user-logout-label">어둡게 보기</span>
             <span class="switch" style="margin-left:auto;">
-              <input type="checkbox" id="temp55" name="" role="switch" />
-              <label for="temp55" style="padding-left:48px;"></label>
+              <input type="checkbox" id="temp56" name="" role="switch" />
+              <label for="temp56" style="padding-left:48px;"></label>
             </span>
           </button>
           <button class="user-logout" title="sign out">
@@ -316,7 +303,8 @@
     </nav>
     <div class="navbar-backdrop"></div>
 
-    <!-- <form action="">
+    <!--
+    <form action="">
       <input type="checkbox">
       <input type="radio">
       <hr />
@@ -333,7 +321,6 @@
 
       <textarea name="" id=""></textarea>
 
-      
       <input id="myURL" name="myURL" type="url" list="defaultURLs" />
       <datalist id="defaultURLs">
         <option value="https://developer.mozilla.org/"> </option>
@@ -342,67 +329,9 @@
       
       <button type="submit">제출</button>
     </form> -->
-    <!-- <section class="timeline">
-      <div class="timeline-item">
-        <span class="timeline-item-icon">🦔</span>
-        <h1 class="timeline-item-title">뉴닉, 프로덕트 디자이너</h1>
-        <time class="timeline-item-date">2020. 02. - 2021. 02</time>
-        <ul>
-          <li>MVP / Feature 일정 산정 및 스펙 정의</li>
-          <li>이슈 트래킹, 우선순위 관리를 위한 백로그 구축</li>
-          <li>온라인 리서치, VOC 분석을 통한 문제 정의</li>
-          <li>Userflow / UI / GUI</li>
-          <li>프론트엔드 개발 (react/mobx/typescript)</li>
-          <li>하이브리드 앱 개발 (react-native-webview) - 미출시</li>
-          <li>데이터 트래킹 및 분석 (hotjar, google analytics, google optimize)</li>
-        </ul>
-      </div>
-      <div class="timeline-item">
-        <span class="timeline-item-icon">🦔</span>
-        <h1 class="timeline-item-title">폰트 디자인</h1>
-        <time class="timeline-item-date">2021</time>
-        <span>이도타입 / 한동훈</span>
-      </div>
-      <div class="timeline-item">
-        <span class="timeline-item-icon">🦔</span>
-        <h1 class="timeline-item-title">그로스해킹 - 데이터와 실험을 통해 성장하는 서비스를 만드는 방법</h1>
-        <time class="timeline-item-date">2020</time>
-        <span>인프런 양승화</span>
-      </div>
-      <div class="timeline-item">
-        <span class="timeline-item-icon">🔢</span>
-        <h1 class="timeline-item-title">FE CONF2020 프론트엔드 컨퍼런스</h1>
-        <time class="timeline-item-date">2019. 05. - 2021. 02</time>
-        <span>롯데타워</span>
-      </div>
-      <div class="timeline-item">
-        <span class="timeline-item-icon">🐺</span>
-        <h1 class="timeline-item-title">자바스크립트 기본</h1>
-        <time class="timeline-item-date">2018.07 ~ 2018.09</time>
-        <span>양재동코드랩 / 서울창업허브 세미나실 3 김영보</span>
-      </div>
-      <div class="timeline-item">
-        <span class="timeline-item-icon">🔢</span>
-        <h1 class="timeline-item-title">글자, 그리고 표현</h1>
-        <time class="timeline-item-date">2017.07 ~ 2017.09</time>
-        <span>한글타이포그래피학교 현승재</span>
-      </div>
-      <div class="timeline-item">
-        <span class="timeline-item-icon">🐺</span>
-        <h1 class="timeline-item-title">GUI 디자인</h1>
-        <time class="timeline-item-date">2015. 06. - 2015. 05</time>
-        <span>SK 상생협력센터 T아카데미</span>
-      </div>
-      <div class="timeline-item">
-        <span class="timeline-item-icon">🐺</span>
-        <h1 class="timeline-item-title">크로스브라우징 디지털 퍼블리싱 4기</h1>
-        <time class="timeline-item-date">2014.01 ~ 2014.06</time>
-        <span>경원직업전문학교</span>
-      </div>
-    </section> -->
+    
 
     <div id="view">
-      <div class="home"></div>
     </div>
 
     <div id="footer"></div>
@@ -460,8 +389,8 @@
 
       function detectOnline() {
         const offlineElement = document.querySelector('.js-offline')
-
         const isOnline = navigator.onLine
+
         offlineElement.hidden = !isOnline
       }
     </script>

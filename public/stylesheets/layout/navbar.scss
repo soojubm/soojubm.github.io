@@ -104,12 +104,13 @@
 .user-id {margin:-.125rem 0 0 0;text-align:center;}
 .user-job {margin:var(--space-1) 0 0 0;text-align:center;color:var(--color-text-light);}
 .user-email {}
+
 // todo this is item
 .user-logout {display:flex;align-items:center;width:100%;margin:var(--space-after-item) 0;position:relative;}
 .user-logout-icon {@include avatar-medium;}
-.user-logout-label {margin:0 0 0 var(--space-2);}
+.user-logout-label {@include item-label;}
 .user-logout:hover {@include hover-item;}
-.user-logout:hover .user-logout-icon {background:var(--color-background);}
+
 .user-myinfo {@include link-outside;margin:.25rem 0 0;}
 .user-footer {}
 .user-footer a {font-size:var(--font-size-caption);color:var(--color-text-light);}

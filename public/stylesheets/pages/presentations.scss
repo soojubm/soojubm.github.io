@@ -11,9 +11,10 @@
   padding: 1rem;
   // todo include position-sheet
   position: fixed;
-  left: var(--space-4);
-  right: var(--space-4);
-  bottom: var(--space-4);
+  left: var(--space-2);
+  right: var(--space-2);
+  margin-bottom: var(--space-2); // todo outset
+  bottom:calc(constant(safe-area-inset-bottom));bottom:calc(env(safe-area-inset-bottom));
   z-index: var(--zindex-bottombar); // todo 
 }
 
@@ -39,6 +40,17 @@
 .presentation [data-presentation=modal] {@include modal-dialog;}
 .presentation [data-presentation=toast] {@include toast;}
 
+
+.sheet {@include sheet;transform:translateY(50vh);transition:all 1s;}
+.sheet.is-visible {transform:translateY(0);}
+.sheet-title {margin:0 0 var(--space-3);@include text-subhead;}
+.sheet-toggle {width:80px;height:.25rem;border-radius:var(--radius);background:var(--color-background-weak);position:absolute;left:50%;top:.5rem;transform:translateX(-50%);}
+// .sheet.is-hidden {animation:temp111 1s forwards}
+
+@keyframes temp111 {
+  from {}
+  to {}
+}
 
 .is-opened-sheet .presentation {display:block;}
 .is-opened-modal .presentation {}

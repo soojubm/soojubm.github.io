@@ -13,13 +13,11 @@ $transition-fade: opacity 0.15s linear;
   color-scheme: light dark;
 
   // ! viewport : desktop first
-
   --adjust-label-line: 0px;
 
   --fontstack: 'Karla', 'Gothic A1', sans-serif;
   // --fontstack: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Apple SD Gothic Neo", san-serif;
-  // --fontstack-code: 'Asap', 'AritaDotum', 'consolas', monospace;
-  --font-family: 0;
+  --font-family: null;
   --font-family-heading: null;
   --font-family-body: null;
   --font-family-caption: null;
@@ -37,7 +35,6 @@ $transition-fade: opacity 0.15s linear;
   --font-size-subhead: var(--font-size-large);
   --font-size-body: var(--font-size-medium);
   --font-size-body-large: var(--font-size-large);
-
   --font-size-helper: var(--font-size-small);
   --font-size-caption: var(--font-size-small);
 
@@ -46,7 +43,7 @@ $transition-fade: opacity 0.15s linear;
   --font-weight-extrabold: null;
   --font-color: var(--gray800);
   --font-color-light: var(--gray400);
-  --font-color-dark: 0;
+  --font-color-dark: null;
   --font-color-highlight: var(--gray800);
   --font-line-height: 1.8;
   --font-line-height-small: 1.5;
@@ -67,6 +64,8 @@ $transition-fade: opacity 0.15s linear;
   --color-primary-light: null;
   --color-secondary: var(--yellow800);
   --color-accent: var(--yellow800);
+  --color-warning: var(--red800);
+
   --color-google: #fff;
   --color-facebook: hsl(214, 89%, 52%);
   --color-twitter: rgb(29, 161, 242);
@@ -77,16 +76,14 @@ $transition-fade: opacity 0.15s linear;
   --color-github: #000;
   --color-instagram: #333;
 
-
   // ! what-target-option(thiness/states), 타크테마에도 바뀌지 않는.
   // ! gray is... non semantic
   --color-background: var(--gray0);
   --color-background-weak: var(--gray100);
   --color-background-strong: var(--gray800);
-  --color-background-darkest: null;
+  // --color-background-darkest: null;
   
-  --color-background-hover: 0;
-  --color-background-active: 0;
+
   --color-border: var(--gray200);
   --color-border-hover: var(--gray800);
   --color-border-active: 0;
@@ -96,11 +93,11 @@ $transition-fade: opacity 0.15s linear;
   --color-text-strong: var(--gray0);
   --color-text-link: var(--color-primary);
   --color-text-disabled: null;
-  --disabled-color-text: 0;
-  --disabled-color-background: 0;
-  --disabled-color-border: 0;
-
-  --color-warning: var(--red800);
+  --color-disabled-text: null;
+  --color-disabled-background: null;
+  --color-disabled-border: null;
+  --color-hover-background: null;
+  --color-active-border: null;
   
   // todo icon scope
   --icon-background: var(--gray800);
@@ -127,7 +124,6 @@ $transition-fade: opacity 0.15s linear;
   --size-small: 1.5rem;
   --size-tiny: 1rem;
 
-
   --space-05: .125rem;
   --space-1: .25rem;
   --space-1-minus: calc(var(--space-1) * -1);
@@ -135,9 +131,6 @@ $transition-fade: opacity 0.15s linear;
   --space-2-minus: calc(var(--space-2) * -1);
   --space-3: .75rem;
   --space-4: 1rem;
-
-  --space-inset: var(--space-4);
-  --space-inset-small: var(--space-2);
 
   --space-leading-title: -.25rem;
   --space-leading-subhead: -.125rem;
@@ -159,41 +152,24 @@ $transition-fade: opacity 0.15s linear;
 
   --space-after-item: .75rem;
 
-  --space-outset: 1rem;
-  --space-outset-small: .75rem;
-  --space-outset-xsmall: .5rem;
-  --space-outset-xxsmall: .25rem;
-
   --space-groupitem: .25rem; // listitem
   --space-groupitem-minus: calc(var(--space-groupitem) * -1);
   
-  --space-before-article: 10rem;
-  --space-before-section: 12rem;
-
   // todo, position
   --space-inset-card: null;
-  --space-tile-inset: .75rem;
-  --space-tile-inset-small: var(--space-2);
+  --space-inset-tile: .75rem;
   --space-inset-head: 2rem;
   --space-inset-chip: .75rem;
-
-  //
-  --space-page-inset: 8rem;
-  --space-header-inset: 2rem;
-  --space-section-inset: 4rem;
+  --space-inset-header: 2rem;
+  --space-inset-section: 4rem;
 
   --border: 1px solid var(--color-border);
   --border-active: 1px solid var(--color-primary);
-  --background-active: null;
 
   --radius: 6px;
-  // --radius-round: 50%;
-  // --radius-sharp: 0;
-  // --radius-soft: 0
-
-  --radius-avatar: var(--radius);
-  --radius-card: var(--radius);
-  --radius-container: var(--radius);
+  --radius-round: 50%;
+  --radius-sharp: null;
+  --radius-soft: null;
 
   // --shadow: 0px 0px 1rem rgba(0, 0, 0, 0.125);
   // --shadow: 0 0 0 1px rgb(0 0 0 / 5%), 0 1px 4px rgb(0 0 0 / 10%);
@@ -204,7 +180,6 @@ $transition-fade: opacity 0.15s linear;
   --shadow-modal: 0;
   --shadow-card: 0;
   --shadow-active: 0;
-  --shadow-pageheader: 0;
 
   --duration: .4s;
   --duration-quickly: .2s;
@@ -214,10 +189,6 @@ $transition-fade: opacity 0.15s linear;
   --animation-delay-second: .2s;
   --animation-delay-third: .4s;
   // --animation-timing-function-ease: null;
-
-  --card-background: #fff;
-  --card-border: 1px solid #fff;
-  --card-padding: 1.5rem;
 
   --button-space-inset: null;
   --button-background: #fff;
@@ -246,15 +217,16 @@ $transition-fade: opacity 0.15s linear;
   --zindex-bottombar: 8;
   --zindex-loader: 10;
 
+  --zindex-sheet: 7;
+
   --grid-column: calc(50% - var(--space-2));
+  --grid-column-small: calc(50% - .125rem);
   --grid-gutter: 1rem;
   --grid-margin: 5vw;
   --grid-margin-minus: calc(var(--grid-margin) * -1);
 
   // todo
   --column-width: calc(50% - var(--space-1));
-
-  --grid-column-small: calc(50% - .125rem);
 
   --safearea-inset-bottom1: constant(safe-area-inset-bottom);
   --safearea-inset-bottom2: env(safe-area-inset-bottom);
@@ -269,10 +241,6 @@ $transition-fade: opacity 0.15s linear;
   --textfiled-placeholder-color: null;
   --textfield-border-color: null;
   --textfield-background-color: var(--background-gray);
-
-  // components
-  --dialog-inset: 0;
-
 
   html[date-theme=dark] {}
   .theme-dark {

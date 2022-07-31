@@ -65,7 +65,6 @@
 // >
 // display:block;width:6px;height:6px;border-left:2px solid var(--icon-background);border-top:2px solid var(--icon-background);transform:rotate(-135deg);position:absolute;right:16px;bottom:22px;
 
-
 .icon-circled-arrow {display:inline-block;margin:0 0 0 6px;padding:8px;border:1px solid var(--color-primary);border-radius:50%;vertical-align:middle;position:relative;}
 .icon-circled-arrow:before {content:'';display:block;width:8px;height:1px;background:var(--color-primary);position:absolute;left:4px;top:8px;transition:all .4s ease;}
 .icon-circled-arrow:after {content:'';display:block;width:3px;height:1px;background:var(--color-primary);position:absolute;left:8px;top:6px;transform:rotate(45deg);transition:all .4s ease;}
@@ -76,21 +75,12 @@
 .icon-chevron.is-down {transform:rotate(45deg) translate(0, -3px);}
 
 // todo opacity
-.icon-grid {padding:7px;position:relative;}
+.icon-grid {padding:8px;position:relative;}
 .icon-grid span {float:left;display:block;margin:1px;padding:1px;border:2px solid var(--icon-background);background:var(--icon-background);border-radius:1px;opacity:.75;}
 
 .icon-list {padding:4px;position:relative;}
 .icon-list span {display:block;width:11px;height:3px;margin:2px 0 2px 4px;background-color:var(--icon-background);border-radius:1px;position:relative;opacity:.75;}
 .icon-list span:before {content:'';width:3px;height:inherit;background-color:inherit;border-radius:1px;position:absolute;left:-5px;}
-
-// .icon-bullet {
-//   display: inline-block;
-//   vertical-align: middle;
-//   width: 2px;
-//   height: 2px;
-//   background: var(--gray400);
-//   box-sizing: border-box;margin:0 .5rem;
-// }
 
 .icon-bullet:before {content:'\002F';margin:0 var(--space-2);color:var(--gray200);}
 

@@ -9,7 +9,7 @@ export function throttle(callback) {
 
 export function stopAnimation() {
   let resizeTimer
-  
+
   window.addEventListener(
     'resize',
     throttle(() => {
@@ -55,3 +55,11 @@ export function loadLazyImages() {
 // }
 
 // window.requestAnimationFrame(step)
+
+// if (navigator.connection && navigator.connection.effectiveType) {
+//   if (navigator.connection.effectiveType === '4g') {
+//     // Load video
+//   } else {
+//     // Load image
+//   }
+// }

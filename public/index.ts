@@ -81,7 +81,11 @@ function scrollProgress() {
 
 window.addEventListener('load', () => console.log('loaded!'))
 window.addEventListener('beforeunload', () => '저장되지 않은 변경사항이 있습니다. 정말 페이지를 떠나실 건 가요?')
-window.addEventListener('unload', () => console.log('unload event'))
+
+// `unload` 이벤트는 안정적으로 실행되지 않으며 이 이벤트를 리스닝하면 뒤로-앞으로 캐시와 같은 브라우저 최적화 기능을 사용하지 못할 수 있습니다. `pagehide` 또는 `visibilitychange` 이벤트를 대신 사용하세요. 자세히 알아보기
+// window.addEventListener('unload', () => console.log('unload event'))
+// https://web.dev/bfcache/?utm_source=lighthouse&utm_medium=devtools#never-use-the-unload-event
+
 document.addEventListener('readystatechange', () => console.log(document.readyState))
 
 document.addEventListener('click', scrollToTop)
@@ -97,7 +101,6 @@ document.addEventListener('DOMContentLoaded', () => {
   carousel()
 })
 async function domEvents() {
-  // todo
   const navItemElements = document.querySelectorAll('.navbar-menu a')
   const hash = window.location.hash.substring(1)
 
@@ -150,6 +153,17 @@ async function domEvents() {
 
   // // ! 디자인시스템에 추가한 거 임시
   document.querySelector('.js-default-font')?.addEventListener('click', () => document.body.classList.toggle('font-default'))
+
+  // todo
+  const sheetElement = document.querySelector('.js-sheet')
+  const sheetCloseElement = sheetElement?.querySelector('.js-sheet-close')
+
+  window.addEventListener('load', () => {
+    sheetElement?.classList.add('is-visible')
+  })
+  sheetCloseElement?.addEventListener('click', () => {
+    sheetCloseElement.parentElement?.classList.remove('is-visible')
+  })
 
   // function format(command, value) {
   //   document.execCommand(command, false, value);

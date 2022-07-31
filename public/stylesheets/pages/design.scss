@@ -218,13 +218,6 @@
 .summary-item-value {}
 .summary-total {display:flex;justify-content:space-between;padding:.5rem 0 0;@include text-subhead;}
 
-
-
-// .sheet {@include tile-elevated;}
-// todo title label
-.sheet-title {margin:0 0 var(--space-4);@include text-label;}
-.sheet button:hover {@include hover-item;}
-
 .keywords {@include tile-elevated;max-width:400px;}
 .keywords-title {@include text-subhead;margin:var(--space-leading-subhead) 0 var(--space-3) 0;}
 .keywords-group {@include chip-group;}
@@ -235,6 +228,7 @@
 .avatargroup:hover {@include hover-item;}
 .avatargroup figure {@include avatar-small;box-shadow:var(--color-background) 0px 0px 0px 2px;}
 .avatargroup figure + figure {margin-left:-.5rem;}
+.avatargroup-label {margin:0 0 0 var(--space-2);}
 
 .temp8 {display:flex;margin:var(--space-1) 0 0 0;position:relative;}
 .temp8 > * {
