@@ -3,8 +3,11 @@
     <h1 class="home-asset-heading">
       내 자산
       <br />
-      <button>
-        28,000원 <span class="item-icon is-gray"><i class="icon-arrow"></i></span>
+      <button style="display:flex;align-items:center;">
+        28,000원
+        <figure style="display: flex;
+        align-items: center;
+        justify-content: center;width:var(--size-small);height:var(--size-small);margin-left:.5rem;background:var(--color-background-weak);border-radius:var(--radius);"><i class="icon-chevron is-down" style="padding:2px;margin-top:2px;"></i></figure>
       </button>
     </h1>
     <button class="home-asset-refresh">(아이콘) 조금 전</button>
@@ -156,12 +159,12 @@
     <div style="margin-top:var(--space-4);padding-top:var(--space-4);border-top:var(--border);"></div>
 
     <div class="item" data-size="large" role="menuitem">
-      <figure class="item-avatar" style="border-radius:50%;background:var(--color-background-strong);">🐏</figure>
+      <figure class="item-avatar" style="border-radius:50%;background:var(--color-accent);">🐏</figure>
       <b class="item-label">카카오페이 첫 결제</b>
       <span class="item-icon is-gray"><i class="icon-arrow"></i></span>
     </div>
     <div class="item" data-size="large" role="menuitem">
-      <figure class="item-avatar" style="border-radius:50%;background:var(--color-background-strong);">🐕‍🦺</figure>
+      <figure class="item-avatar" style="border-radius:50%;background:var(--color-accent);">🐕‍🦺</figure>
       <b class="item-label">카카오페이머니 결제</b>
       <span class="item-icon is-gray"><i class="icon-arrow"></i></span>
     </div>
@@ -207,6 +210,37 @@
       <h2 class="banner-title" style="color:var(--color-text);">상환일/만기일 알림</h2>
       <p class="banner-description" style="color:var(--color-text);">이제 까먹지 마세요.<br />카톡으롤 미리 알려드려요.</p>
       <figure style="display:flex;align-items:center;justify-content:center;width:4rem;height:4rem;margin:var(--space-3) 0 0 auto;background:gold;border-radius:50%;font-size:var(--font-size-subhead);">🐏</figu>
+    </div>
+
+    <div class="js-tab">
+      <nav class="profile-tablist type-sc" role="tablist" aria-label="sample tabs" style="max-width:11rem;margin:0 auto;">
+        <button class="profile-tablist-tab" role="tab" aria-selected="true" aria-controls="panel-1" id="tab-1" tabindex="0">
+          뉴스
+        </button>
+        <button class="profile-tablist-tab" role="tab" aria-selected="false" aria-controls="panel-2" id="tab-2" tabindex="-1">회사소식</button>
+        <i class="profile-tablist-indicator" style="width:50%;"></i>
+      </nav>
+    </div>
+
+    <div class="js-tab" style="display:flex;justify-content:space-between;align-items:center;margin:4rem 0 var(--space-3);">
+      <h2>전체</h2>
+      <nav class="" style="display:flex;">
+        <button style="display:flex;align-items:center;font-size:var(--font-size-caption);">
+          <figure style="margin:0 var(--space-2) 0 0;opacity:.5;"><i class="icon-check" style="border-width:1px;"></i></figure>
+          온라인
+        </button>
+        <button style="display:flex;align-items:center;margin:0 0 0 var(--space-4);font-size:var(--font-size-caption);">
+          <figure style="margin:0 var(--space-2) 0 0;opacity:.5;"><i class="icon-check" style="border-width:1px;"></i></figure>
+          오프라인
+        </button>
+        <!-- <i class="profile-tablist-indicator" style="width:50%;"></i> -->
+      </nav>
+    </div>
+
+    <div class="chip-group is-bleeded" role="group">
+      <button class="chip is-active"><span class="chip-label">전체</span></button>
+      <button class="chip"><span class="chip-label">금융</span></button>
+      <button class="chip"><span class="chip-label">쇼핑</span></button>
     </div>
 
     <!-- <aside class="sheet-dim"></aside> -->

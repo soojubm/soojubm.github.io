@@ -8,8 +8,6 @@ type Parameter = {
 }
 type modalId = 'newneek' | 'woolf' | 'lettering' | 'etc-works' | any
 
-// 페이지 / 다이얼로그
-
 // toggleClass 어떤 이벤트인지 개발자 도구로 알 수 가 없네
 
 // 마우스로 가능한 context menus는 키보드로도 되어야
@@ -18,10 +16,12 @@ type modalId = 'newneek' | 'woolf' | 'lettering' | 'etc-works' | any
 // 전역 키보드 단축키가 필요하다는 점을 유의하십시오.
 
 // ! 모달을 닫았을 때 이전 엘리먼트로 포커스
-// todo 어떤 버튼을 클릭해도 닫아야 함. (확인/취소)
+// TODO 어떤 버튼을 클릭해도 닫아야 함. (확인/취소)
 // TODO 모달 밖의 컨텐츠에 aria-hidden 모달의 위치는 바디 안에?
 // TODO 다이얼로그 안에서만 탭이 돌아야
-// TODO 
+// TODO
+// TODO 지금 라우팅에서 history를 저장할 때의 문제.
+// ! spa에서 모달은 결
 
 function modal({ selector: trigger }: Parameter) {
   const modalTriggers = document.querySelectorAll<HTMLElement>(trigger)
@@ -32,24 +32,24 @@ function modal({ selector: trigger }: Parameter) {
   let previousPageYOffset
 
   const isOpened = document.body.classList.contains('is-modal-visible')
+  //const isOutside = !event.target.closest('.modal-inner');
 
-  modalTriggers.forEach(modalTrigger =>
-    modalTrigger.addEventListener('click', event => {
+  modalTriggers.forEach(trigger =>
+    trigger.addEventListener('click', event => {
       event.preventDefault()
 
-      const modalId = modalTrigger.dataset.modal
+      const modalId = trigger.dataset.modal
       fetchData(modalId)
 
-      openModal(window.pageYOffset)
+      openModal()
 
-      window.addEventListener('popstate', closeModal)
-      modalContainer!.addEventListener('click', temp)
+      // window.addEventListener('popstate', closeModal)
       document.addEventListener('keydown', checkCloseDialog)
 
+      modalContainer!.addEventListener('click', closeModalTemp)
     }),
   )
 
-  //const isOutside = !event.target.closest('.modal-inner');
   async function fetchData(modalId: modalId) {
     try {
       const endpoint = `/views/${modalId}.html`
@@ -60,35 +60,37 @@ function modal({ selector: trigger }: Parameter) {
 
       modalContainer!.innerHTML = html
 
-      pushBrowserHistory({}, '', `/#profile/modal/${modalId}`)
-
+      // pushBrowserHistory({}, '', `/#profile/modal/${modalId}`)
       previousActiveElement = document.activeElement
       // modalContainer.querySelector('button').focus()
     } catch (error) {}
   }
 
-  function temp(event) {
+  function closeModalTemp(event) {
     const target = event.target as HTMLElement
-    if (target.classList.contains('modal')) backHistory()
-    if (target.classList.contains('js-modal-close')) backHistory()
+    const isCloseElement = target.classList.contains('modal') || target.classList.contains('js-modal-close')
+    // if (isCloseElement) backHistory()
+
+    if (isCloseElement) closeModal()
   }
 
-  function openModal(pageYOffset) {
+  function openModal() {
+    previousPageYOffset = window.pageYOffset
     document.body.classList.add('is-modal-visible', 'body-lock')
-    document.body.style.top = `-${pageYOffset}px`
+    document.body.style.top = `-${previousPageYOffset}px`
   }
   function closeModal() {
     document.body.classList.remove('is-modal-visible', 'body-lock')
 
     modalContainer!.innerHTML = ''
-    window.scrollTo(0, window.pageYOffset)
+    window.scrollTo(0, previousPageYOffset)
 
     previousActiveElement.focus()
 
     // cleanup Events
     document.removeEventListener('keydown', checkCloseDialog)
-    modalContainer?.removeEventListener('click', temp)
-    window.removeEventListener('popstate', closeModal)
+    modalContainer?.removeEventListener('click', closeModalTemp)
+    // window.removeEventListener('popstate', closeModal)
   }
   function checkCloseDialog(event) {
     const isKeyEsc = event.keyCode === 27

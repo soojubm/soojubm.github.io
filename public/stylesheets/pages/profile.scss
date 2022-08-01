@@ -75,7 +75,7 @@
 .type-t [role=tab] {height:56px;padding-bottom:var(--space-1);font-weight:bold;color:var(--color-text-light);font-size:16px;}
 .type-t [role=tab][aria-selected=true] {color:var(--color-text);}
 
-.type-sc[role=tablist] {padding:var(--font-size-subhead) !important;border:none;box-shadow:none;background:var(--color-background-weak);}
+.type-sc[role=tablist] {padding:.125rem !important;border:none;box-shadow:none;background:var(--color-background-weak);}
 .type-sc [role=tab] {width:50%;color:var(--color-text);height:var(--size-small);font-size:var(--font-size-caption);}
 .type-sc .profile-tablist-indicator {width:33.3333%;height:var(--size-small);box-shadow:var(--shadow);background:var(--color-background);border-color:transparent !important;}
 

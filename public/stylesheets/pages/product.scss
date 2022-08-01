@@ -155,7 +155,7 @@
 	.product-info-price {margin:.5rem 0 0 0;}
 	.product-image {width:100%;height:400px;margin:0 0 1rem 0;position:relative;top:auto;}
 	.product-image:before {content:'';display:block;background:var(--color-background-weak);position:absolute;top:-320px;left:-240px;bottom:240px;z-index:-1;}
-	.product-order {width:100%;margin:0;padding:.5rem calc(var(--grid-margin) * .75) calc(constant(safe-area-inset-bottom) + var(--space-3));padding:var(--space-3) calc(var(--grid-margin) * .75) calc(env(safe-area-inset-bottom) + .5rem);box-sizing:border-box;background:var(--color-background);box-shadow:var(--shadow);position:fixed;left:0;bottom:0;z-index:var(--zindex-menu);}
+	.product-order {width:100%;margin:0;padding:.5rem calc(var(--grid-margin) * .75) calc(constant(safe-area-inset-bottom) + var(--space-3));padding:var(--space-3) calc(var(--grid-margin) * .75) calc(env(safe-area-inset-bottom) + var(--space-3));box-sizing:border-box;background:var(--color-background);box-shadow:var(--shadow);position:fixed;left:0;bottom:0;z-index:var(--zindex-menu);}
 	
 	.product-order hr,
 	.product-order-variant,
