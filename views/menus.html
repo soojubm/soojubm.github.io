@@ -28,10 +28,6 @@
       <span class="item-tag" data-appearance="primary">새소식</span>
     </div>
     <hr />
-    <button class="item" role="menuitem">
-      <span class="item-label">메뉴 아이템 레이블</span>
-      <em class="item-icon"><i class="icon-check"></i></em>
-    </button>
     <div class="checkbox menutype" data-size="medium">
       <input type="checkbox" id="menutype1" name="gender" value="" checked />
       <label for="menutype1" title="">
@@ -45,22 +41,16 @@
       <li>액션 타입/링크 타입/토글 타입/선택 타입</li>
       <li>dropdown에서의 형태(smaller)와 sheet/sidebar에서의 형태를 구분.</li>
       <li>leading icon / tailing icon / badge. => props로 제공해도 되는 정보.</li>
+      <li><b>presentations:</b> modal, dropdown, sheet, sidebar</li>
+      <li><b>aligns:</b> vertical</li>
       <li>제목 isTruncated or 2줄.</li>
-      <li>role=menuitem 속성을 display:flex;align-items:center.</li>
+      <li>role=menuitem 속성에 display:flex;align-items:center. menu item는 description이 없는 entity 컴포넌트.</li>
+      <li>entity. role=listitem</li>
     </ul>
 
     <blockquote>
-      <p>
-        entity와 형태가 굉장히 유사함. solution: menu item는 description이 없기 때문에 align-items: center 속성을 가지는 flexbox로 기술적인 구분을 할
-        수는 있겠음.
-      </p>
-      <p>multiple selections을 위해 checkbox의 checkable 기표를 컴포넌트화</p>
+      <p>todo. check icon을 컴포넌트로 만들고 checkbox의 구조를 변경하기.</p>
     </blockquote>
-
-    <ul>
-      <li><b>presentations:</b> modal, dropdown, sheet, sidebar</li>
-      <li><b>aligns:</b> vertical</li>
-    </ul>
 
     <h4 class="article-subhead">Anatomy</h4>
     <ul>

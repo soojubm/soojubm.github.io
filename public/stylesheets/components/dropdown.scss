@@ -5,6 +5,12 @@
 .dropdown-trigger {@include chip;}
 .dropdown-trigger-label {@include chip-label;}
 .dropdown-trigger-icon {@include chip-icon;}
+.is-active .dropdown-trigger-icon {
+  background: var(--color-background-strong);
+}
+.is-active .dropdown-trigger-icon .icon-caret {
+  border-top-color: var(--color-background);
+}
 .dropdown-menu {@include tile-elevated-small;min-width:var(--width-dropdown);margin:0;padding:0;
   position:absolute;top:calc(var(--size-medium) + var(--space-2));z-index:var(--zindex-popover);
   height:0;transform:scale(0);transform-origin:left top;}
