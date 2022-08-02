@@ -240,7 +240,7 @@
         <!-- Markup(button vs radio,checkbox) -->
         <!-- <p>안드로이드: chipGroup, HorizontalScrollView, singleLine, action/entry/filter(check active)/choice</p> -->
   
-        <h4 class="article-subhead">Roles</h4>
+        <h4 class="article-subhead">Roles?</h4>
         <!-- 
         <p>MD 기준.</p>
         <ul>
@@ -249,146 +249,159 @@
           <li>Filter with check icon</li>
           <li>Action with icon</li>
         </ul> -->
-        <p style="margin:2rem 0 0;"><b>Keywords</b>. (action / search)/p></p>
-        <div class="tile-flat">
-          <div class="keywords-group" role="group">
-            <a class="keywords-group-keyword" href="#components">
-              <span class="keywords-keyword-label chip-label">국정감사</span>
-            </a>
-            <a class="keywords-group-keyword" href="#components">
-              <span class="chip-label">윤석열검찰총장</span>
-            </a>
-            <a class="keywords-group-keyword" href="#components">
-              <span class="chip-label">조국</span>
-            </a>
-            <a class="keywords-group-keyword" href="#components">
-              <span class="chip-label">차별금지법</span>
-            </a>
-            <a class="keywords-group-keyword" href="#components">
-              <span class="chip-label">추미매법무부장관</span>
-            </a>
-          </div>
-        </div>
-  
-        <h4 class="article-label">Contents Filtering - Single Selection</h4>
-        <div class="tile-flat">
-          <div class="chip-group" role="group" aria-orientation="horizontal">
-            <button class="chip js-toggle is-active">
-              <span class="chip-label">전체</span>
-            </button>
-            <button class="chip js-toggle">
-              <span class="chip-label">결제완료</span>
-            </button>
-          </div>
-        </div>
-  
-        <h4 class="article-label">Choice - Multiple Selections</h4>
-        <div class="tile-flat">
-          <div class="chip-group" role="group" aria-orientation="horizontal">
-            <button class="chip">
-              <span class="chip-label">소설</span>
-            </button>
-            <button class="chip">
-              <span class="chip-label">소설</span>
-            </button>
-          </div>
-        </div>
+        <ul>
+          <li>Keywords. (action / search)
+            <div class="tile-flat" style="margin:var(--space-2) 0 var(--space-4);">
+              <div class="keywords-group" role="group">
+                <a class="keywords-group-keyword" href="#components">
+                  <span class="keywords-keyword-label chip-label">국정감사</span>
+                </a>
+                <a class="keywords-group-keyword" href="#components">
+                  <span class="chip-label">윤석열검찰총장</span>
+                </a>
+                <a class="keywords-group-keyword" href="#components">
+                  <span class="chip-label">조국</span>
+                </a>
+                <a class="keywords-group-keyword" href="#components">
+                  <span class="chip-label">차별금지법</span>
+                </a>
+                <a class="keywords-group-keyword" href="#components">
+                  <span class="chip-label">추미매법무부장관</span>
+                </a>
+              </div>
+            </div>
+          </li>
+          <li>Contents Filtering - Single Selection
+            <div class="tile-flat" style="margin:var(--space-2) 0 var(--space-4);">
+              <div class="chip-group" role="group" aria-orientation="horizontal">
+                <button class="chip js-toggle is-active">
+                  <span class="chip-label">전체</span>
+                </button>
+                <button class="chip js-toggle">
+                  <span class="chip-label">결제완료</span>
+                </button>
+              </div>
+            </div>
+          </li>
+          <li>Choice - Multiple Selections (test)
+            <div class="tile-flat" style="margin:var(--space-2) 0 var(--space-4);">
+              <div class="chip-group" role="group" aria-orientation="horizontal">
+                <button class="chip is-active" style="border:1px solid var(--green800);background-color:var(--green100);">
+                  <figure class="chip-icon" style="background:none !important;"><i class="icon-check" style="border-color:var(--green800);"></i></figure>
+                  <span class="chip-label" style="padding-left:0;color:var(--green800);">소설</span>
+                </button>
+                <button class="chip is-active" style="border:1px solid var(--green800);background-color:var(--green100);">
+                  <figure class="chip-icon" style="background:none !important;"><i class="icon-check" style="border-color:var(--green800);"></i></figure>
+                  <span class="chip-label" style="padding-left:0;color:var(--green800);">영화</span>
+                </button>
+                <button class="chip">
+                  <!-- <figure class="chip-icon"><i class="icon-check"></i></figure> -->
+                  <span class="chip-label">타이포그래피</span>
+                </button>
+              </div>
+            </div>
+          </li>
+          <li>Dropdown (Overflow/pulldown)
+            <div class="tile-flat" style="margin:var(--space-2) 0 var(--space-4);">
+              <div class="chip-group">
+                <div class="dropdown">
+                  <button class="dropdown-trigger js-toggle" aria-expanded="true">
+                    <span class="dropdown-trigger-label">메뉴</span>
+                    <figure class="dropdown-trigger-icon"><i class="icon-caret"></i></figure>
+                  </button>
+                  <menu class="dropdown-menu" role="menu">
+                    <h6 class="dropdown-menu-title" hidden>Dropdown header</h6>
+                    <a class="dropdown-menu-link" href="#" disabled>
+                      프로필 관리
+                      <!-- -->
+                    </a>
+                    <a class="dropdown-menu-link" href="#">고객센터</a>
+                    <hr class="dropdown-menu-divider" />
+                    <a class="dropdown-menu-link" href="#">로그아웃</a>
+                  </menu>
+                </div>
+                <div class="dropdown">
+                  <button class="dropdown-trigger js-toggle" aria-expanded="true">
+                    <span class="dropdown-trigger-label" title="일행 당 인원 수">필터</span>
+                    <figure class="dropdown-trigger-icon"><i class="icon-caret"></i></figure>
+                  </button>
+                  <menu class="dropdown-menu" role="menu" style="padding:var(--space-3);">
+                    <fieldset role="radiogroup">
+                      <!-- <legend class="article-anatomy-title" style="margin-bottom:0;">radiogroup</legend> -->
+                      <div class="radio">
+                        <input type="radio" id="gogo1" name="gogo" value="" />
+                        <label for="gogo1" title="">1~3명</label>
+                      </div>
+                      <div class="radio">
+                        <input type="radio" id="gogo2" name="gogo" value="" checked />
+                        <label for="gogo2" title="">3명 이상</label>
+                      </div>
+                    </fieldset>
+                    <footer style="margin:var(--space-2) 0 0 0;">
+                      <!-- <button>옵션 초기화</button> -->
+                      <button class="chip" style="width:100%;"><span class="chip-label">적용 / 24개 상품 보기 (airbnb)</span></button>
+                    </footer>
+                  </menu>
+                </div>
+                <div class="dropdown">
+                  <button class="dropdown-trigger js-toggle" aria-expanded="true">
+                    <span class="dropdown-trigger-label">정렬</span>
+                    <figure class="dropdown-trigger-icon"><i class="icon-caret"></i></figure>
+                  </button>
+                  <menu class="dropdown-menu" role="menu">
+                    <h6 class="dropdown-menu-title" hidden>Dropdown header</h6>
+                    <!-- // todo  -->
+                    <a class="dropdown-menu-link" href="#" disabled style="display:flex;justify-content:space-between;align-items:center;">
+                      최신순
+                      <i class="icon-check"></i>
+                    </a>
+                    <a class="dropdown-menu-link" href="#" disabled>최신순</a>
+                  </menu>
+                </div>
+                <div class="dropdown">
+                  <button class="dropdown-trigger js-toggle" aria-label="" aria-haspopup="menu" aria-expanded="false">
+                    <span class=""><i class="icon-more"></i></span>
+                  </button>
+                  <menu class="dropdown-menu">
+                    <a class="dropdown-menu-link" href="#componets">수정</a>
+                    <a class="dropdown-menu-link" href="#componets">삭제</a>
+                  </menu>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            menu controls
+            <div class="tile-flat tile-elevated" style="max-width:360px;margin:var(--space-2) 0 var(--space-4);overflow:hidden;">
+              <p>콘텐츠 영역</p>
+              <footer class="dropdown-footer chip-group" role="group" aria-orientation="horizontal">
+                <p class="dropdown-footer-question">Going?</p>
+                <button class="dropdown-footer-action chip">
+                  <span class="chip-label">Yes</span>
+                  <figure class="dropdown-trigger-icon"><i class="icon-caret"></i></figure>
+                </button>
+                <button class="dropdown-footer-action chip">
+                  <span class="chip-label">No</span>
+                </button>
+                <button class="dropdown-footer-action chip">
+                  <span class="chip-label">Maybe</span>
+                </button>
+              </footer>
+            </div>
+            <aside class="article-helper">
+              <p>페이지 레벨(시트/모달 등)이 될 때 액션이 더 강조되어야 한다.</p>
+            </aside>
+          </li>
+        </ul>
+        
         <!-- <p style="margin:0 0 var(--space-2) 0;color:var(--color-text-light);">selected <em>10</em> / 50</p> -->
+
   
-        <h4 class="article-label">Dropdown (Overflow menu)</h4>
-        <div class="tile-flat">
-          <!-- // todo 마이너스 마진 때문에 하나 더  -->
-          <div class="chip-group">
-            <div class="dropdown">
-              <button class="dropdown-trigger js-toggle" aria-expanded="true">
-                <span class="dropdown-trigger-label">메뉴</span>
-                <figure class="dropdown-trigger-icon"><i class="icon-caret"></i></figure>
-              </button>
-              <menu class="dropdown-menu" role="menu">
-                <h6 class="dropdown-menu-title" hidden>Dropdown header</h6>
-                <a class="dropdown-menu-link" href="#" disabled>
-                  프로필 관리
-                  <!-- -->
-                </a>
-                <a class="dropdown-menu-link" href="#">고객센터</a>
-                <hr class="dropdown-menu-divider" />
-                <a class="dropdown-menu-link" href="#">로그아웃</a>
-              </menu>
-            </div>
-            <div class="dropdown">
-              <button class="dropdown-trigger js-toggle" aria-expanded="true">
-                <span class="dropdown-trigger-label" title="일행 당 인원 수">필터</span>
-                <figure class="dropdown-trigger-icon"><i class="icon-caret"></i></figure>
-              </button>
-              <menu class="dropdown-menu" role="menu" style="padding:var(--space-3);">
-                <fieldset role="radiogroup">
-                  <!-- <legend class="article-anatomy-title" style="margin-bottom:0;">radiogroup</legend> -->
-                  <div class="radio">
-                    <input type="radio" id="gogo1" name="gogo" value="" />
-                    <label for="gogo1" title="">1~3명</label>
-                  </div>
-                  <div class="radio">
-                    <input type="radio" id="gogo2" name="gogo" value="" checked />
-                    <label for="gogo2" title="">3명 이상</label>
-                  </div>
-                </fieldset>
-                <footer style="margin:var(--space-2) 0 0 0;">
-                  <!-- <button>옵션 초기화</button> -->
-                  <button class="chip" style="width:100%;"><span class="chip-label">적용 / 24개 상품 보기 (airbnb)</span></button>
-                </footer>
-              </menu>
-            </div>
-            <div class="dropdown">
-              <button class="dropdown-trigger js-toggle" aria-expanded="true">
-                <span class="dropdown-trigger-label">정렬</span>
-                <figure class="dropdown-trigger-icon"><i class="icon-caret"></i></figure>
-              </button>
-              <menu class="dropdown-menu" role="menu">
-                <h6 class="dropdown-menu-title" hidden>Dropdown header</h6>
-                <!-- // todo  -->
-                <a class="dropdown-menu-link" href="#" disabled style="display:flex;justify-content:space-between;align-items:center;">
-                  최신순
-                  <i class="icon-check"></i>
-                </a>
-                <a class="dropdown-menu-link" href="#" disabled>최신순</a>
-              </menu>
-            </div>
-            <div class="dropdown">
-              <button class="dropdown-trigger js-toggle" aria-label="" aria-haspopup="menu" aria-expanded="false">
-                <span class=""><i class="icon-more"></i></span>
-              </button>
-              <menu class="dropdown-menu">
-                <a class="dropdown-menu-link" href="#componets">수정</a>
-                <a class="dropdown-menu-link" href="#componets">삭제</a>
-              </menu>
-            </div>
-          </div>
-        </div>
-  
-        <h4 class="article-label">Dropdown controls</h4>
-        <div class="tile-flat tile-elevated" style="max-width:360px;overflow:hidden;">
-          <p>콘텐츠 영역</p>
-          <footer class="dropdown-footer chip-group" role="group" aria-orientation="horizontal">
-            <p class="dropdown-footer-question">Going?</p>
-            <button class="dropdown-footer-action chip">
-              <span class="chip-label">Yes</span>
-              <figure class="dropdown-trigger-icon"><i class="icon-caret"></i></figure>
-            </button>
-            <button class="dropdown-footer-action chip">
-              <span class="chip-label">No</span>
-            </button>
-            <button class="dropdown-footer-action chip">
-              <span class="chip-label">Maybe</span>
-            </button>
-          </footer>
-        </div>
-        <aside class="article-helper">
-          <p>페이지 레벨(시트/모달 등)이 될 때 액션이 더 강조되어야 한다.</p>
-        </aside>
-  
-        <h4 class="article-subhead">references</h4>
+        <h4 class="article-subhead">References</h4>
         <div class="" style="display:flex;flex-wrap:wrap;">
           <a href="https://material.io/components/menus" target="_blank" style="display:block;">MD menu</a>
+          <span class="icon-bullet"></span>
+          <a href="https://developer.apple.com/design/human-interface-guidelines/components/menus-and-actions/pull-down-buttons">pull down button</a>
           <span class="icon-bullet"></span>
           <a href="https://developer.apple.com/design/human-interface-guidelines/ios/controls/pull-down-menus/" target="_blank" style="display:block;"
             >HIG pull down menu</a
@@ -732,6 +745,9 @@
         <li>todo 탭 갯수를 제한하거나 가로 스크롤을 가능하게 하거나.</p></li>
         <li>todo 브라우저 히스토리 저장 여부.tab(?tab=projects) / linktab</li>
       </ul>
+
+      <h4 class="article-subhead">References</h4>
+      <a href="https://developer.apple.com/design/human-interface-guidelines/components/layout-and-organization/tab-views" target="_blank">HIG tab views</a>
 
       <!-- <h4 class="article-subhead">anatomy</h4>
       <div class="article-anatomy">

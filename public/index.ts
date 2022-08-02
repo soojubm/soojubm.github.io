@@ -109,7 +109,6 @@ async function domEvents() {
     'search',
     'filter',
     'components',
-    'tokens',
     'changelog',
     'forms',
     'selections',

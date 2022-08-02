@@ -17,6 +17,7 @@
         memo tile 형태에서만 description이 나타나도록 사용? Form Elements로
         그루핑할 수도 있음.
       </li>
+      <li>textarea를 분리.</li>
     </ul>
   </section>
 
@@ -24,8 +25,8 @@
     <div class="component-navigation-background"></div>
     <div class="component-navigation-scroll">
       <a class="chip is-active js-scrollspy-trigger" href="#"><span class="chip-label">Switch</span></a>
-      <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Checkbox</span></a>
-      <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Radio</span></a>
+      <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Checkboxes</span></a>
+      <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Radioes</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Searchfield</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Textfield</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Numberfield</span></a>
@@ -146,8 +147,8 @@
 
       <h4 class="article-subhead">Best practices</h4>
       <ul>
-        <!-- <li>선택하지 않을 수 있다. 체크하지 않은 상태로 제공합니다.</li>
-        <li>switch 역할로 하나의 체크박스를 제공할 수 있습니다.</li> -->
+        <li>default. 체크하지 않은 상태로 제공합니다.</li>
+        <!-- <li>switch 역할로 하나의 체크박스를 제공할 수 있습니다.</li> -->
       </ul>
 
       <h4 class="article-subhead">Editing checklist</h4>
@@ -177,7 +178,6 @@
           <input type="radio" id="gender-etc" name="gender" value="" checked disabled />
           <label for="gender-etc" title="Video Killed the Radio Button">Video Killed the Radio Button</label>
         </div>
-
         <div class="radio theme-button" style="margin:var(--space-4) 0 0 0;">
           <input type="radio" id="raidio5" name="gender" value="" />
           <label for="raidio5" title="">
@@ -205,6 +205,7 @@
         <li>기본 옵션을 선택된 상태로 제공합니다.</li>
         <li><b>align.</b> 가로로 정렬하지 않습니다.</li>
         <li>옵션 목록은 최대 5개입니다.</li>
+        <li>항상 그룹으로 사용합니다.</li>
       </ul>
 
       <!-- <h4 class="article-subhead">Editing checklist</h4>
@@ -214,45 +215,7 @@
 
       <!-- A Toggle Switch lets people turn a single setting on or off immediately. -->
       <!-- (리액트에서 id  이슈 input in label.) -->
-      <!-- <div
-        role="checkbox"
-        aria-checked="false"
-        tabindex="0"
-        onclick="toggleGroupCheckbox(event)"
-        onkeydown="toggleGroupCheckbox(event)"
-        onfocus="focusCheckbox(event)"
-        onblur="blurCheckbox(event)">
-      All condiments
-      </div> -->
-
-      <!-- <fieldset class="is-tile" role="checkgroup">
-        <legend class="article-anatomy-title" style="margin-bottom:0;">checkgroup</legend>
-        <div class="checkbox" style="margin-top:0;">
-          <input class="js-checkall" type="checkbox" id="tile1" value="" aira-checked="mixed" aria-controls="1 2" data-indeterminate="true" indeterminate />
-          <label for="tile1" title="tile1">
-            <figure class="avatar-small"></figure>
-            <span>tile1</span>
-          </label>
-        </div>
-        <div class="checkbox">
-          <input class="js-check" type="checkbox" id="tile2" value="" />
-          <label for="tile2" title="tile2">
-            <figure class="avatar-small"></figure>
-            <span>tile2</span>
-          </label>
-        </div>
-      </fieldset> -->
-
       <!-- <datalist></datalist> -->
-
-      <!-- <span class="article-anatomy-title">selectbox</span>
-      <div class="sorting" style="position:relative;display:flex;">
-        <label cselect>lass="" for="select2">Sort by</label>
-        <select class="" id="select2" style="background:none;border:none;padding:0 var(--space-4) 0 0;font:inherit;color:var(--color-text);">
-          <option class="select-option" value="select-option1">최신순</option>
-        </
-        <span class="selectbox-indicator" role="img" style="background:var(--color-background-weak);position:relative;right:auto;top:auto;"><i class="icon-caret"></i></span>
-      </div> -->
     </article>
 
 
@@ -380,7 +343,6 @@
 
       <br />
       <!-- <p>unit, choose/enter</p> -->
-      <!-- <span class="article-anatomy-title">Input</span> -->
       <!-- <abbr title="필수입력">*</abbr> -->
       <div class="textfield is-invalid">
         <label class="textfield-label" for="abc123" style="margin-top:var(--space-leading-subhead);">레이블 <small aria-label="optional">선택입력</small></label>
@@ -419,6 +381,16 @@
           <option class="select-option" value="select-option1">Choose an option</option>
         </select>
         <span class="selectbox-indicator" role="img"><i class="icon-caret"></i></span>
+      </div>
+
+
+      <br />
+      <div class="sorting" style="position:relative;display:flex;">
+        <label class="" for="select2" style="margin:0 var(--space-2) 0 0;">Sort by</label>
+        <select class="" id="select2" style="background:none;border:none;padding:0 var(--space-3) 0 0;font:inherit;color:var(--color-text);">
+          <option class="select-option" value="select-option1">최신순</option>
+        </select>
+        <span class="selectbox-indicator" role="img" style="background:var(--color-background-weak);position:relative;right:auto;top:auto;"><i class="icon-caret"></i></span>
       </div>
 
       <!-- var selected = Array.from(dnd.options).filter(function (option) {

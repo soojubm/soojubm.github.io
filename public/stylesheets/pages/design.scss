@@ -42,18 +42,13 @@
 .article-subhead {margin:3rem 0 var(--space-3);@include text-subhead;}
 
 .article-label {margin:var(--space-4) 0 -.25rem;@include text-label;}
-
-
 // .article-label + p {margin:var(--space-2) 0 0 0;}
 
 // .article.is-scrolled {animation:fadeup .8s forwards;}
 
-.design-typograph-group {display:flex;justify-content:space-between;@include tile-elevated;}
-.design-typograph-group .design-typograph-item {width:var(--grid-column);}
-
 .design-buttongroup {@include group-bleeding;overflow:auto;margin:var(--space-2-minus) var(--space-3) var(--space-2-minus) var(--space-2-minus);padding:var(--space-2);}
 
-.spacing-card {@include tile-elevated;overflow:hidden;}
+.spacing-card {padding:var(--space-inset-tile);overflow:hidden;position:relative;}
 .space {display:flex;align-items:center;justify-content:center;height:100%;background:var(--green100);position:relative;}
 .space span {font-size:10px;}
 

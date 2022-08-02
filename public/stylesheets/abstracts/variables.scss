@@ -1,13 +1,10 @@
 @custom-media --breakpoint-large (max-width: 1560px);
 @custom-media --breakpoint-small (max-width: 1080px);
 
-
+// todo
 $bezier-base: cubic-bezier(0.455, 0.03, 0.515, 0.955);
 $transition-base: all 0.4s $bezier-base;
 $transition-fade: opacity 0.15s linear;
-
-// @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
-
 
 :root {
   color-scheme: light dark;
@@ -185,6 +182,7 @@ $transition-fade: opacity 0.15s linear;
   --duration-quickly: .2s;
   --duration-slowly: .6s;
 
+  --bazier-base: cubic-bezier(0.455, 0.03, 0.515, 0.955);
   --animation-duration: .4s;
   --animation-delay-second: .2s;
   --animation-delay-third: .4s;
