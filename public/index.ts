@@ -104,6 +104,8 @@ async function domEvents() {
   const navItemElements = document.querySelectorAll('.navbar-menu a')
   const hash = window.location.hash.substring(1)
 
+  document.title = `이경수 ${hash}`
+
   const temps = [
     'actions',
     'search',
@@ -368,33 +370,33 @@ function focusComment() {
 //   event.returnValue = '테스트'
 // })
 
-//   let currentPage = 1
-//   const DATA_PER_PAGE = 10
-//   const lastPage = 10
+let currentPage = 1
+const DATA_PER_PAGE = 10
+const lastPage = 10
 
-//   function fetchData(currentPage) {
-//       const list = document.querySelector(".footer")
-//       if(!list) return
+function fetchData(currentPage) {
+  const list = document.querySelector('.footer')
+  if (!list) return
 
-//       for(let i = (currentPage - 1) * DATA_PER_PAGE + 1; i <= currentPage * DATA_PER_PAGE; i++) {
-//         const li = document.createElement("li")
-//         li.textContent = `${currentPage}페이지 : ${i}번째 데이터`
-//         list.appendChild(li)
-//       }
-//   }
+  for (let i = (currentPage - 1) * DATA_PER_PAGE + 1; i <= currentPage * DATA_PER_PAGE; i++) {
+    const li = document.createElement('li')
+    li.textContent = `${currentPage}페이지 : ${i}번째 데이터`
+    list.appendChild(li)
+  }
+}
 
-//   function observeLastChild(intersectionObserver) {
-//     const listItems = document.querySelectorAll(".footer li")
-//     listItems.forEach(element => {
-//       if (currentPage >= lastPage) {
-//         intersectionObserver.disconnect()
-//         return
-//       }
-//       if(element.nextSibling) return
+function observeLastChild(intersectionObserver) {
+  const listItems = document.querySelectorAll('.footer li')
+  listItems.forEach(element => {
+    if (currentPage >= lastPage) {
+      intersectionObserver.disconnect()
+      return
+    }
+    if (element.nextSibling) return
 
-//       intersectionObserver.observe(element) // el에 대하여 관측 시작
-//     })
-// }
+    intersectionObserver.observe(element) // el에 대하여 관측 시작
+  })
+}
 
 function scrollToTop(event) {
   if (!event.target.closest('.js-to-top')) return
@@ -453,7 +455,7 @@ function lazyLoading() {
       if (!entry.isIntersecting) return
 
       observer.unobserve(entry.target)
-      // infinite
+      // ! infinite scroll
       // fetchData()
     })
   }

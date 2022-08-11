@@ -34,12 +34,10 @@
 .item-icon-label {} // ! action-label
 
 // todo ... checkiton
-.item-icon i {@include avatar-small;margin-left:-.4rem;background:none;transform:scale(.75);}
-.item-icon i:before {border-color:var(--color-primary);}
-.item-icon i:after {display:none;background-color:var(--color-primary);}
+.item-icon .icon-chevron {margin:-1px 0 0 var(--space-05);border-color:var(--color-primary);transform:rotate(-45deg) scale(.75);}
+.is-gray.item-icon .icon-chevron {border-color:var(--icon-background);}
 // todo signify
 
-.is-gray.item-icon i:before {border-color:var(--icon-background);}
 
 .item-follow {}
 

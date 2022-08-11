@@ -1,16 +1,13 @@
-// 16px 14px : .875rem / 18px : 1.125rem
-// Fira Sans 350 있으면..
 // all: unset
-
 body,dl,dd,figure,blockquote,h1,h2,h3,h4,h5,h6,p,input[type=radio] {margin:0;}
 ul,ol,menu,fieldset,legend {margin:0;padding:0;}
-fieldset,iframe,img,hr {border:0 none} dl,ol,ul,menu {list-style:none}
+fieldset,iframe,img,hr {border:none} ol,ul,menu {list-style:none}
 main, picture {display:block;}
 iframe,img,video {width:100%;} /*img {vertical-align:middle;}*/
 h1,h2,h3,h4,h5,h6 {line-height:var(--font-line-height-small);font-weight:var(--font-weight-bold);color:var(--color-text);word-break:keep-all;}
-strong,b,th,legend {font-weight:var(--font-weight-bold);color:var(--color-text);} legend {margin:0 0 var(--space-1) 0;}
+strong,b,th,legend {font-weight:var(--font-weight-bold);} legend {margin:0 0 var(--space-1) 0;}
 cite,i,address,em,dfn {font-style:normal;} em {color:var(--color-primary);}
-small {font-size:var(--font-size-caption);} abbr {text-decoration:none;}
+small {font-size:var(--font-size-caption);} abbr,ins {text-decoration:none;} del {color:var(--color-text-light);}
 a {text-decoration:none;text-decoration-skip-ink:auto;color:var(--color-primary);} a:link,a:visited {} a:hover,a:focus {} a:active {}
 mark {color:inherit;}
 // mark::before {content: " [강조 시작] ";}
@@ -18,13 +15,10 @@ mark {color:inherit;}
 // br {content:'';display:block;height:1rem;}
 // thin solid
 hr {margin:var(--space-4) 0;border-top:1px solid var(--gray200);position:relative;}
-
 u {text-decoration:none;position:relative;}
 u:after {content:'';height:.4em;border-radius:2px;background:var(--green100);position:absolute;left:-.125rem;right:-.125rem;bottom:0;z-index:-1;}
 code {display:block;background:var(--color-background-weak);border-radius:var(--radius);font-family:var(--fontstack-code);font-size:var(--font-size-caption);letter-spacing:.0125rem;}
 pre {}
-
-del {color:var(--color-text-light);} ins {text-decoration:none;}
 
 html {min-width:320px;height:100%;overflow-x:hidden;font:16px/1.8 var(--fontstack);-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overscroll-behavior:contain;}
 body {background:var(--color-background);color:var(--color-text);font-size:.875rem;}
@@ -33,7 +27,6 @@ body {background:var(--color-background);color:var(--color-text);font-size:.875r
 p, li {color:var(--color-text);}
 // todo 왜 뺐었을가?
 // overflow-x:hidden;letter-spacing:-.0125rem;
-
 blockquote {margin:2rem 0;padding:0 0 0 var(--space-4);border-left:4px solid var(--gray200);border-radius:4px 0 0 0;}
 
 table {

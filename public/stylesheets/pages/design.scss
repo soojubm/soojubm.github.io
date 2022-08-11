@@ -8,21 +8,14 @@
 .article-aka .hashtag:before {content:'';}
 .article-aka .tag {margin-right:var(--space-3);}
 .article-title {margin:0 0 var(--space-after-title) 0;@include text-title;}
+.article-subhead {margin:3rem 0 var(--space-3);@include text-subhead;}
 .article-description {margin:0 0 2rem;font-size:16px;}
 // border-top:var(--border);border-bottom:var(--border);
-.article-section {margin:2.5rem 0;}
-
 .article > .hashtag {margin:0 .25rem 0 0;font-size:var(--font-size-caption);}
 
 /// todo
 .tokens-body,
 .component-body {border-top:var(--border);border-bottom:var(--border);}
-
-.design .tile-small-flat {
-  margin-left: var(--space-2-minus);
-  margin-right: var(--space-2-minus);
-}
-
 
 
 .article-props {}
@@ -39,21 +32,13 @@
 .article-anatomy-item.is-nested:before{content:'';display:block;width:1px;height:100%;background:var(--color-text);}
 .article-anatomy-item .is-optional {margin:0 0 .5rem 0;font-size:10px;color:var(--color-text-light);vertical-align:top;}
 
-.article-subhead {margin:3rem 0 var(--space-3);@include text-subhead;}
-
-.article-label {margin:var(--space-4) 0 -.25rem;@include text-label;}
-// .article-label + p {margin:var(--space-2) 0 0 0;}
 
 // .article.is-scrolled {animation:fadeup .8s forwards;}
-
-.design-buttongroup {@include group-bleeding;overflow:auto;margin:var(--space-2-minus) var(--space-3) var(--space-2-minus) var(--space-2-minus);padding:var(--space-2);}
-
 .spacing-card {padding:var(--space-inset-tile);overflow:hidden;position:relative;}
 .space {display:flex;align-items:center;justify-content:center;height:100%;background:var(--green100);position:relative;}
 .space span {font-size:10px;}
 
 @media (--breakpoint-large) {}
-
 
 .stamp {
   // position: absolute;
@@ -117,11 +102,6 @@
   transform: rotate(178deg);
 }
 
-.article-primary {@include button-primary;}
-.article-secondary {@include button-secondary;}
-.article-tertiary {@include button-tertiary;}
-.article-text {@include button-text;}
-
 .number {display:flex;justify-content:center;}
 .number-card {display:flex;justify-content:center;align-items:center;width:48px;height:64px;background:var(--color-background-weak);border-radius:var(--radius);font-size:var(--font-size-huge);font-weight:var(--font-weight-bold);margin:0 .25rem;}
 
@@ -129,12 +109,6 @@
 .userlist h1 {@include text-subhead;}
 .userlist .profile-user:hover {@include hover-item;}
 .userlist-cta {@include button-tertiary;}
-// .userlist:after {
-//   content:'';display:block;clear:both;
-// }
-// .userlist .profile-user:hover:after {
-//   content:'';display:block;box-shadow:var(--shadow);border-radius:var(--radius);position:absolute;left:-.5rem;right:-.5rem;top:-.5rem;bottom:-.5rem;z-index:-1;
-// }
 
 
 .jobitem {@include tile-elevated;}
@@ -142,7 +116,6 @@
 .jobitem-tags {@include tag-group;}
 .jobitem-tags .tag {}
 .jobitem-view {@include button-tertiary;position:absolute;right:var(--space-3);top:50%;transform:translateY(-50%);}
-
 
 .textbox {}
 .textbox-toolbar {@include tile-elevated-small;display:flex;}
@@ -157,13 +130,6 @@
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
-
-}
-@mixin group-button-primary {
-  @include button-primary;width:var(--column-width);
-}
-@mixin group-button-secondary {
-  @include button-tertiary;width:var(--column-width);
 }
 
 .greeting {}
@@ -173,8 +139,8 @@
 .greeting-description {@include text-body;margin:0 0 0;line-height:var(--font-line-height-small);color:var(--color-text-light);}
 
 .onboarding-control {@include group-button;}
-.onboarding-control-next {@include group-button-primary;}
-.onboarding-control-skip {@include group-button-secondary;}
+.onboarding-control-next {@include button-primary;width:var(--column-width);}
+.onboarding-control-skip {@include button-secondary;width:var(--column-width);}
 
 .hover-sample {@include avatar-huge;}
 .hover-sample:hover {@include hover-item;}
@@ -245,21 +211,6 @@
   line-height: var(--font-line-height-small);
 }
 
-
-
-
-@mixin group {display:flex;}
-@mixin group-vertical {@include group;flex-direction:column;}
-@mixin group-horizental {@include group;flex-direction:row-reverse;}
-
-@mixin listbox {
-  display: flex;
-}
-
-
-
-
-
 // todo padding
 .accordion {@include tile-elevated;padding:var(--space-4);}
 .accordion:hover {@include hover-item;}
@@ -288,9 +239,6 @@
 .uxsitemap .map-head {margin:1rem 0;}
 .uxsitemap .map-body {margin:1rem 1rem;}
 // .uxsitemap > section {width:8rem;height:8rem;margin:1rem 0;background:var(--green100);}
-
-
-.coding {margin:0 auto;padding:0 var(--grid-margin);}
 
 
 .design-ticker {

@@ -31,9 +31,7 @@
 // }
 
 // todo...
-input:focus-visible {
-  outline: 0;
-}
+input:focus-visible {outline: 0;}
 
 select {-webkit-appearance:none;padding-right:1.5rem;} // for appearance on safari
 select::-ms-expand {display:none;}
@@ -59,16 +57,10 @@ input[type=password] {-webkit-appearance:none;letter-spacing:.5rem;}
 input[type=password]::placeholder {letter-spacing:0;}
 
 input[type=search] {-webkit-appearance:none;} // for corner rounded on sarafri
-// input[type=search]::-webkit-search-cancel-button {display:none;}
 input[type=search]::-webkit-search-decoration,
 input[type=search]::-webkit-search-cancel-button,
 input[type=search]::-webkit-search-results-button,
 input[type=search]::-webkit-search-results-decoration {display:none;}
-
-
-// input {
-//   font-family: inherit;
-// }
 
 
 
