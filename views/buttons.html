@@ -34,14 +34,36 @@
   <article class="article js-observer js-scrollspy-section component-column">
     <h1 class="article-title">Buttons</h1>
     <p class="article-description">과업 수행을 위한 페이지 이동, 데이터 제출 등 사용자 여정의 핵심적인 액션입니다.</p>
+    
+    <!-- <h4 class="article-subhead">Best practices</h4> -->
+    <ul>
+      <li><b>버튼의 상태.</b> 상태를 표현하는 시각 언어는 일부 컴포넌트에 종속되지 않고 제품 전체에 일관되어야 합니다. 색각 이상자를 위해 색상 외의 시각 언어로 상태를 표현하세요.</li>
+      <li><b>버튼의 실행.</b> 액션 실행 후 피드백합니다. 물리적인 인터페이스의 출현 뿐 아니라 예측할 수 있는 페이지 이동이나 페이지 새로고침, 정보 구조의 변화도 피드백으로 취급될 수 있습니다. (bad case. 인스타그램의 로그인 성공 toast)</li>
+      <li><b>버튼의 레이블.</b> 사용자가 다음에 일어날 일을 예측할 수 있도록 텍스트를 작성하세요. 부득이 텍스트 레이블을 생략하는 경우 보편적인 메타포의 아이콘을 사용하고 대체 텍스트를 제공해야 합니다..</li>
+      <li>버튼의 아래에 실행 유도나 실행 결과를 가이드하는 텍스트를 배치하지 마세요. <span hidden> (secondary 액션의 text 버튼이 아래에 위치하는 패턴 고려). 제목/디스크립션/버튼레이블도 충분.</span></li>
+      <p><b>text.</b> 버튼은 버튼 처럼 보이지 않을 수 있기 때문에 특정 패턴에서만 사용하세요.</li>
+        <p><b>large.</b> 프로모션 페이지의 call to action으로 제한적으로 사용합니다.</li>
+        <p><b>show more.</b> 사용자가 정보를 탐색할 때 행동 유도성을 높이기 위해 단일 콘텐츠 또는 콘텐츠 목록보다 작은 크기로 대비를 주세요.</li>
+    </ul>
 
     <ul>
-      <li><b>text.</b> 버튼은 버튼 처럼 보이지 않을 수 있기 때문에 특정 패턴에서만 사용하세요.</li>
-      <li><b>large.</b> 프로모션 페이지의 call to action으로 제한적으로 사용합니다.</li>
-      <li><b>medium.</b> default size.</li>
-      <li><b>states.</b> 색상만으로 상태를 표현하지 마세요. 상태 표현을 위해 서비스 전반에 일관된 단서를 제공하세요.</li>
-      <li><b>show more.</b> 사용자가 정보를 탐색할 때 행동 유도성을 높이기 위해 단일 콘텐츠 또는 콘텐츠 목록보다 작은 크기로 대비를 주세요.</li>
+      <li>작업 / 액션 / 실행</li>
+      <!-- <li>장식적인 아이콘을 포함하지 마세요. </li> -->
+      <!-- <li>페이지 내에서 여러 번 반복될 수 있는 action에 버튼을 사용하지 마세요.</li> -->
     </ul>
+    
+    <h4 class="article-subhead">Editing checklist</h4>
+    <ul data-align="horizontal">
+      <!-- <li>The button text should clearly indicate what will happen when the button is clicked.</li> -->
+      <li>최대 8자</li>
+      <li>사용자 시점 (ex 보내기 => 받기)</li>
+      <li>레이블 생략(truncated) 불가능</li>
+      <li>동사 포함</li>
+      <!-- <p>텍스트가 짧은 경우에는 120px의 최소 단추 너비를 사용하여 명령 단추가 좁아지지 않도록 합니다.</p>
+      <p>텍스트가 긴 경우에는 텍스트의 최대 길이를 26자로 제한하여 명령 단추가 넓어지지 않도록 합니다.</p> -->
+    </ul>
+
+
     <!-- <h4 class="article-subhead">Appearance</h4>
     <div class="tile-flat" style="z-index:1;">
       <div class="buttongroup">
@@ -102,13 +124,10 @@
       <small class="tag">--button-font-weight</small>
     </div>
 
-
-    <h4 class="article-subhead">Anatomy</h4>
     <!-- <ul>
       <li>icon</li>
       <li>text label</li>
     </ul> -->
-
 
     <h4 class="article-subhead">Props</h4>
     <table>
@@ -148,7 +167,7 @@
         </tr>
         <tr role="row">
           <th scope="row">onClick<attr>?</attr></th>
-          <td>(event: React.MouseEvent<HTMLButtonElement>) => void</td>
+          <td>(event: React.MouseEvent<HTMLButtonElement>)</td>
         </tr>
         <tr role="row">
           <th scope="row">aria-pressed<attr>?</attr></th>
@@ -165,43 +184,23 @@
       </tbody>
     </table>
 
-    <h4 class="article-subhead">Best practices</h4>
-    <ul>
-      <li>액션 실행 후 피드백합니다. 물리적인 인터페이스의 출현 뿐 아니라 예측할 수 있는 페이지 이동이나 페이지 새로고침, 정보 구조의 변화도 피드백으로 취급될 수 있습니다. (bad case. 인스타그램의 로그인 성공 toast)</li>
-      <li>사용자가 다음에 일어날 일을 예측할 수 있도록 레이블을 작성하세요. 부득이 텍스트 레이블을 생략하는 경우 보편적인 메타포의 아이콘을 사용하고 대체 텍스트를 제공해야 합니다..</li>
-      <li>통일된 시각 언어로 버튼의 상태를 표현하세요. 상태를 표현하는 시각 언어는 일부 컴포넌트에 종속되지 않고 제품 전체에 일관되어야 합니다.</li>
-      <li>장식적인 아이콘을 포함하지 마세요. </li>
-      <li>버튼 아래에 가이드 텍스트를 배치하지 마세요.<span hidden> (secondary 액션의 text 버튼이 아래에 위치하는 패턴 고려).</span></li>
-      <li>페이지 내에서 여러 번 반복될 수 있는 action에 버튼을 사용하지 마세요.</li>
-    </ul>
-    
-    <h4 class="article-subhead">Editing checklist</h4>
-    <ul data-align="horizontal">
-      <!-- <li>The button text should clearly indicate what will happen when the button is clicked.</li> -->
-      <li>최대 8자</li>
-      <li>사용자 시점 (ex 보내기 => 받기)</li>
-      <li>레이블 생략(truncated) 불가능</li>
-      <li></li>
-    </ul>
+    <!-- <p>사용자에게 단추를 한 번에 한 개 또는 두 개만 표시합니다(예: 수락 및 취소). 사용자에게 더 많은 작업을 표시해야 하는 경우 사용자가 하나의 명령 단추로 작업을 선택하여 트리거할 수 있도록 확인란 또는 라디오 단추를 사용하는 것이 좋습니다.</p> -->
+
 
     <h4 class="article-subhead">Accessibility</h4>
 
     <h4 class="article-subhead">Related components</h4>
+    <b>button group.</b>
+    <div class="tile-flat">
+      <div class="buttongroup">
+        <button class="button-tertiary">취소</button>
+        <button class="button-primary">저장</button>
+      </div>
+    </div>
     <ul>
-      <li><b>button group.</b>
-        <div class="tile-flat">
-          <div class="buttongroup">
-            <button class="button-tertiary">취소</button>
-            <button class="button-primary">저장</button>
-          </div>
-        </div>
-        <aside class="article-helper">
-          <p>최대 2가지 액션을 사용할 수 있습니다. 3가지 이상의 액션 모음을 위한 toolbar 컴포넌트를 정의하기.</p>
-          <p>버튼그룹에서 primary 버튼과 secondary 버튼을 함께 배치하지 마세요.</p>
-          <p>버튼그룹에서 항상 primary 버튼을 먼저 마크업하거나 tab index를 설정하여 탭으로 먼저 접근할 수 있도록 하세요.</p>
-        </aside>
-      </li>
-      <li><b>show more.</b></li>
+      <li>최대 2가지 액션을 사용할 수 있습니다. 3가지 이상의 액션 모음을 위한 toolbar 컴포넌트를 정의하기.</li>
+      <li>버튼그룹에서 primary 버튼과 secondary 버튼을 함께 배치하지 마세요.</li>
+      <li>버튼그룹에서 항상 primary 버튼을 먼저 마크업하거나 tab index를 설정하여 탭으로 먼저 접근할 수 있도록 하세요.</li>
     </ul>
 
     <h4 class="article-subhead">Other cases</h4>

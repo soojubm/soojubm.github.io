@@ -8,6 +8,7 @@ button {@include reset-button;}
 @mixin button {
   display: inline-block;
   height: var(--size-large);
+  min-width: 6rem;
   // padding: 11px var(--space-4) calc(11px + var(--adjust-label-line));
   padding: 0 var(--space-4);
   border-radius: var(--radius);

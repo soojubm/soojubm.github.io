@@ -459,13 +459,12 @@ function lazyLoading() {
       // fetchData()
     })
   }
-
+  // const fetchPosts: () => Promise<HTTPResponse<{ posts: any[] }>> = async () => {
   async function fetchData() {
     try {
       const URL =
         'https://gist.githubusercontent.com/prof3ssorSt3v3/1944e7ba7ffb62fe771c51764f7977a4/raw/c58a342ab149fbbb9bb19c94e278d64702833270/infinite.json'
       const response = await fetch(URL)
-
       if (!response.ok) throw 'Something went wrong.'
 
       let data = await response.json()
