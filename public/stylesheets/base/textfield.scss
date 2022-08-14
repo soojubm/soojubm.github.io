@@ -45,7 +45,7 @@
 .searchfield {}
 .searchfield-prefix {top:11px;}
 .searchfield-clear {right:64px;}
-.searchfield-cancel {@include button-text;position:absolute;right:0;top:0;padding:0;}
+.searchfield-cancel {@include button-text;min-width:auto;position:absolute;right:0;top:0;padding:0;}
 .is-focused .searchfield-input {display:block;width:calc(100% - var(--size-large));}
 .is-focused .searchfield-cancel {right:0;}
 

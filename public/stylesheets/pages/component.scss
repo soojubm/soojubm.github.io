@@ -2,13 +2,14 @@
 .component {}
 // .component-style {margin-top:calc(var(--titlebar-height) * -1);padding:calc(4rem + var(--titlebar-height)) var(--grid-margin);background-color:var(--color-primary);position:sticky;top:0;
 .component-style {margin:3rem -5vw;padding:2rem var(--grid-margin);background-color:var(--color-primary);position:sticky;top:0;
-  
-  border-radius: var(--radius);
   background: #159957;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to bottom, #155799, #159957);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to bottom, #155799, #159957); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
-.component-style .tile-flat {width:100%;max-width:640px;margin:.375rem auto;}
+
+// todo..
+.component-style .tile-flat,
+.component-style .tile-elevated, .component-style .tile-flat-small {width:100%;max-width:640px;margin:.375rem auto;}
 
 // .component-row {display:flex;}
 // .component-column {width:50%;box-sizing:border-box;}
@@ -25,12 +26,13 @@
   // .component-navigation-scroll {margin:0 var(--grid-margin-minus);padding:0 var(--grid-margin);}
 }
 
-// @media (--breakpoint-small), (max-height: 800px) {
+@media (--breakpoint-small), (max-height: 800px) {
 //   .component-row {display:block;}
 //   .component-column {width:100%;}
 //   .component-column + .component-column {max-width:calc(640px + var(--grid-margin) * 2);margin:0 auto;box-sizing:border-box;}
 //   .component-style {height:auto;padding-bottom:4rem;position:relative;}
-// }
+.component-style {margin-top:2rem;margin-bottom:2rem;}
+}
 
 .sds-component {max-width:720px;margin:4rem auto;font-size:16px;font-family:sans-serif;}
 .sds-component-title {margin:var(--space-4) 0 0 0;@include text-title;}

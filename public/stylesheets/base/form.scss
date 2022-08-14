@@ -114,19 +114,7 @@ input[type=checkbox]:checked + label + * {display:block;margin:0.25rem 0 var(--s
 // todo...
 .checkbox,
 .radio {
-  &.theme-button {
-    padding: 9px 1rem calc(9px + var(--adjust-label-line));
-    border: var(--border);
-    box-shadow: var(--shadow);
-    background: var(--color-background);
-    label {
-      display: flex;
-      justify-content: space-between;
-      height: auto;
-      cursor: pointer;
-    }
-  }
-
+  b {margin-left: auto;}
   &.menutype {
     border:0;
     box-shadow:none;
@@ -152,9 +140,6 @@ input[type=checkbox]:checked + label + * {display:block;margin:0.25rem 0 var(--s
     }
   }
 
-  &.theme-button:nth-of-type(1) {border-radius: var(--radius) var(--radius) 0 0;}
-  &.theme-button:last-child {border-radius: 0 0 var(--radius) var(--radius);}
-  &.theme-button + .theme-button {border-top: 0;}
 }
 
 

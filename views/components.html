@@ -3,7 +3,6 @@
 <!-- https://biings.design/#/ -->
 <!-- todo top hat -->
 
-
 <main class="component">
   <!--
     <p>
@@ -35,15 +34,25 @@
     토큰 아키텍처를 통해 피할 수 있는 많은 스타일 불일치가 있을 것입니다.
   -->
   <!-- https://story.pxd.co.kr/1451 -->
-  <section class="hero" role="banner">
-    <!-- <div class="hero-background"></div> -->
-    <!-- <h1 class="hero-title" style="line-height:1.3;margin-top:.25rem;"><span style="color:var(--color-text-light);">We 🐷</span><br />built this city.</h1> -->
+  <!-- <section class="hero" role="banner">
+    <div class="hero-background"></div>
     <h1 class="hero-title">Components</h1>
     <p class="hero-description">컴포넌트 모음</p>
-    <!-- <p>todo 페이지나누기/loading state/dfn/abbr</p> -->
-    <!-- <p>pain: 지금 환경에서 무리하게 페이지를 나누고 가이드를 추가하다보니 비효율 폭발.</p>
-    <p>1. article-title의 textnode를 뽑아서 chip group navigation이라도 그려주자.</p>
+    
+    <footer class="hero-foot">
+      <a class="hero-cta">공사중입니다</a>
+      <a class="hero-detail">더 알아보기</a>
+    </footer>
 
+    <ul>
+      <li>역할에 기반한 컴포넌트. 예를 들면 스포티파이의 encore에서 track row 컴포넌트. 도메인 특수성.</li>
+      <li>1~2 가지 케이스는 예외 케이스로 정의한다.</li>
+      <li>모든 시각정보는 non-clickable. 모든 인터렉션은 clickable.</li>
+      <li>dos / don'ts 케이스는 이미지를 사용하지 않고 간결하게 서술합니다. => 컴포넌트는 계속 변경되기 때문에 유지보수 비용 증가. </li>
+    </ul>
+    <p>todo 페이지나누기/loading state/dfn/abbr</p>
+    <p>pain: 지금 환경에서 무리하게 페이지를 나누고 가이드를 추가하다보니 비효율 폭발.</p>
+    <p>1. article-title의 textnode를 뽑아서 chip group navigation이라도 그려주자.</p>
     <code>
       {
         name: 'button',
@@ -56,40 +65,28 @@
         relatedComponents: [],
         useCases: [],
       }
-    </code> -->
+    </code>
 
-    <ul>
-      <li>역할에 기반한 컴포넌트. 예를 들면 스포티파이의 encore에서 track row 컴포넌트. 도메인 특수성.</li>
-      <li>1~2 가지 케이스는 예외 케이스로 정의한다.</li>
-      <li>dos / don'ts 케이스는 이미지를 사용하지 않고 간결하게 서술합니다. => 컴포넌트는 계속 변경되기 때문에 유지보수 비용 증가. </li>
-    </ul>
-    <!-- <p>역할로 나눌 때의 문제 :: chip의 다양한 역할. 하지만 그 기능들은 지금 우연히 형태가 같을 뿐이지만 디지털 환경에서 하는 역할은 고정되어 있으며 더 좋은 경험을 위해 언제든 개선의 여지가 있다.</p>
-    <p>anatomy vs props 설명하려고 하는 정보 유사함. 잘 구분해보기. anatomy에서 접근성 속성과 html 구조를 다룬다.</p> -->
+    <p>역할로 나눌 때의 문제 :: chip의 다양한 역할. 하지만 그 기능들은 지금 우연히 형태가 같을 뿐이지만 디지털 환경에서 하는 역할은 고정되어 있으며 더 좋은 경험을 위해 언제든 개선의 여지가 있다.</p>
+    <p>anatomy vs props 설명하려고 하는 정보 유사함. 잘 구분해보기. anatomy에서 접근성 속성과 html 구조를 다룬다.</p>
 
-      <!-- <li>모든 시각정보는 non-clickable. 모든 인터렉션은 clickable.</li> -->
-
-      <!-- / success / warning / danger ? -->
-      <!-- <h4 class="article-subhead">selection</h4>
+      / success / warning / danger ?
+      <h4 class="article-subhead">selection</h4>
         <h4 class="article-subhead">목록의 나머지를 더 보여줄 때는 [모두보기], 미리보기 형식의 텍스트를 더 보여줄 때는 [전체보기].click - tag 컴포넌트/화살표/아이콘 아이템 전체가 클릭 영역</h4>
         <h4 class="article-subhead">link - /external</h4>
         <dt>모두보기</dt><dd>see all(15)(internal, arrow-right)</dd>
-        <dt>더보기</dt><dd>더보기vs더불러오기(more, arrow-down), 자세히보기, learn more 등(external, arrow-right-top)</dd> -->
-      <!-- https://material.io/design/interaction/states.html -->
-      <!-- variants -->
-      <!--
+        <dt>더보기</dt><dd>더보기vs더불러오기(more, arrow-down), 자세히보기, learn more 등(external, arrow-right-top)</dd>
+      https://material.io/design/interaction/states.html
+      variants
+      
       부정어/긍정어/명령어 / 한자 지양 / -적 / 복합명사는 붙여쓰기
       '-때', '경우', '사용' 최소화.
-      하세요, 할 수 있습니다. 보다 합니다. 입니다 -->
+      하세요, 할 수 있습니다. 보다 합니다. 입니다
     
-    <!-- <footer class="hero-foot">
-      <a class="hero-cta">공사중입니다</a>
-      <a class="hero-detail">더 알아보기</a>
-    </footer> -->
-
-    <!-- <div class="hero-obj1"></div>
+    <div class="hero-obj1"></div>
     <div class="hero-obj2"></div>
-    <div class="hero-obj3"></div> -->
-  </section>
+    <div class="hero-obj3"></div>
+  </section> -->
 
   <nav class="component-navigation">
     <div class="component-navigation-background"></div>
@@ -99,6 +96,10 @@
       <a class="chip  js-scrollspy-trigger" href="#"><span class="chip-label">Chips</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Links</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Tags</span></a>
+      <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Switch</span></a>
+      <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Checkboxes</span></a>
+      <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Radioes</span></a>
+      <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Textfields</span></a>
 
 
       <!-- <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Badges</span></a> -->
@@ -318,9 +319,7 @@
       </article>
       
       <article class="article js-observer js-scrollspy-section component-column">
-        <h1 class="article-title"><span style="color:var(--color-text-light);">Button</span>은 과업 수행을 위한 페이지 이동, 데이터 제출 등 사용자 여정의 핵심적인 액션입니다.
-
-        </h1>
+        <h1 class="article-title">Button</h1>
         <p class="article-description">과업 수행을 위한 페이지 이동, 데이터 제출 등 사용자 여정의 핵심적인 액션입니다.</p>
         
         <section class="component-style component-column">
@@ -409,66 +408,31 @@
         </ul> -->
 
         <h4 class="article-subhead">Props</h4>
-        <table>
-          <caption hidden>Table Caption</caption>
-          <tbody role="rowgroup">
-            <tr role="row">
-              <th scope="row">appearance</th>
-              <td>"primary" | "secondary" | "tertiary"</td>
-            </tr>
-            <tr role="row">
-              <th scope="row">size<attr>?</attr></th>
-              <td>"large" | "medium"</td>
-            </tr>
-            <tr role="row">
-              <th scope="row">name</th>
-              <td>string</td>
-            </tr>
-            <tr role="row">
-              <th scope="row">label</th>
-              <td>string</td>
-            </tr>
-            <tr role="row">
-              <th scope="row">isDisabled</th>
-              <td>boolean</td>
-            </tr>
-            <tr role="row">
-              <th scope="row">isFullwidth</th>
-              <td>boolean
-                <p>buttonGroup에서?</p>
-              </td>
-            </tr>
-            <tr role="row">
-              <th scope="row">href<attr>?</attr></th>
-              <td>string
-                <p>LinkButton 컴포넌트 정의</p>
-              </td>
-            </tr>
-            <tr role="row">
-              <th scope="row">onClick<attr>?</attr></th>
-              <td>(event: React.MouseEvent<HTMLButtonElement>)</td>
-            </tr>
-            <tr role="row">
-              <th scope="row">aria-pressed<attr>?</attr></th>
-              <td></td>
-            </tr>
-            <tr role="row">
-              <th scope="row">aria-expanded<attr>?</attr></th>
-              <td></td>
-            </tr>
-            <tr role="row">
-              <th scope="row">aria-haspopup<attr>?</attr></th>
-              <td></td>
-            </tr>
-          </tbody>
-        </table>
+        <dl>
+          <dt>appearance</dt>
+          <dd>"primary" | "secondary" | "tertiary"</dd>
+          <dt>size<attr>?</attr></dt>
+          <dd>"large" | "medium"</dd>
+          <dt>name</dt>
+          <dd>string</dd>
+          <dt>label</dt>
+          <dd>string</dd>
+          <dt>isDisabled</dt>
+          <td>boolean</td>
+          <dt>isFullwidth</dt>
+          <dd>boolean / buttonGroup에서?</dd>
+          <dt>href<attr>?</attr></dt>
+          <dd>string</dd>
+          <dt>onClick<attr>?</attr></dt>
+          <dd>(event: React.MouseEvent<HTMLButtonElement>)</td>
+          <dt>aria-pressed<attr>?</attr></dt>
+          <dt>aria-expanded<attr>?</attr></dt>
+          <dt>aria-haspopup<attr>?</attr></dt>
+        </dl>
 
         <!-- <p>사용자에게 단추를 한 번에 한 개 또는 두 개만 표시합니다(예: 수락 및 취소). 사용자에게 더 많은 작업을 표시해야 하는 경우 사용자가 하나의 명령 단추로 작업을 선택하여 트리거할 수 있도록 확인란 또는 라디오 단추를 사용하는 것이 좋습니다.</p> -->
 
-
-        <h4 class="article-subhead">Accessibility</h4>
-
-        <h4 class="article-subhead">Related components</h4>
+        <h4 class="article-subhead">Groupable - Button group</h4>
         <div class="tile-flat">
           <div class="buttongroup">
             <button class="button-tertiary">취소</button>
@@ -481,10 +445,17 @@
           <li>버튼그룹에서 항상 primary 버튼을 먼저 마크업하거나 tab index를 설정하여 탭으로 먼저 접근할 수 있도록 하세요.</li>
         </ul>
 
+        <h4 class="article-subhead">Accessibility</h4>
+
+        <h4 class="article-subhead">Related components</h4>
+        
+
         <h4 class="article-subhead">Other cases</h4>
-        <p><b>shopify.</b> 모든 액션을 button으로 명명함. chip과 dropdown trigger 까지 포함하여 button.</p>
-        <p><b>morningstar.</b> icon only</p>
-        <p><b>split button.</b></p>
+        <ul>
+          <li><b>shopify.</b> 모든 액션을 button으로 명명함. chip과 dropdown trigger 까지 포함하여 button.</li>
+          <li><b>morningstar.</b> icon only</li>
+          <li><b>split button.</b></li>
+        </ul>
         <!-- <p>'link' | 'subtle' | 'primary'</p> -->
         <!-- <p>style = solid/outline/plain/text <b hidden>(모든 스타일을 망라해야 하기 때문에 유아이 라이브러리에 어울리는 네이밍)</b></p> -->
         <!-- <a class="button" href="#">Anchor button</a>
@@ -507,6 +478,47 @@
           <span class="hashtag" title="">Label</span>
         </aside>
   
+        <div class="component-style">
+          <div class="tile-flat">
+            <div class="chip-group" role="group" aria-orientation="horizontal">
+              <button class="chip">
+                <span class="chip-label">default</span>
+              </button>
+              <button class="chip is-active">
+                <span class="chip-label">active</span>
+              </button>
+              <button class="chip" style="opacity:.5;cursor:not-allowed;" disabled>
+                <span class="chip-label">disabled</span>
+              </button>
+              <button class="chip" style="background:var(--red100);">
+                <span class="chip-label" style="color:var(--red800);">Destructive</span>
+              </button>
+            </div>
+          </div>
+    
+          <!-- <h4 class="article-subhead">Removable</h4> -->
+          <div class="tile-flat">
+            <div class="chip-group" role="group">
+              <button class="chip" data-property="removable">
+                <span class="chip-label">removable</span>
+                <figure class="chip-remove"><i class="icon-x"></i></figure>
+              </button>
+              <button class="chip">
+                <figure class="chip-icon">🦔</figure>
+                <span class="chip-label">with icon</span>
+              </button>
+              <button class="chip is-active">
+                <figure class="chip-icon" style="background:none;"><i class="icon-check" style="border-color:var(--color-background);"></i></figure>
+                <span class="chip-label" style="padding-left:0;">checkable</span>
+              </button>
+              <button class="dropdown-trigger js-toggle" aria-expanded="true">
+                <span class="dropdown-trigger-label">expandable</span>
+                <figure class="dropdown-trigger-icon"><i class="icon-caret"></i></figure>
+              </button>
+            </div>
+          </div>
+    
+        </div>
         <!-- <h4 class="article-subhead">anatomy</h4>
         <div class="">
           <span class="article-anatomy-item">chip group</span>
@@ -548,46 +560,7 @@
             등 역할 기반 컴포넌트를 만들고 chip을 mixin.
           </p>
         </blockquote>
-  
-        <div class="tile-flat">
-          <div class="chip-group" role="group" aria-orientation="horizontal">
-            <button class="chip">
-              <span class="chip-label">default</span>
-            </button>
-            <button class="chip is-active">
-              <span class="chip-label">active</span>
-            </button>
-            <button class="chip" style="opacity:.5;cursor:not-allowed;" disabled>
-              <span class="chip-label">disabled</span>
-            </button>
-            <button class="chip" style="background:var(--red100);">
-              <span class="chip-label" style="color:var(--red800);">Destructive</span>
-            </button>
-          </div>
-        </div>
-  
-        <!-- <h4 class="article-subhead">Removable</h4> -->
-        <div class="tile-flat">
-          <div class="chip-group" role="group">
-            <button class="chip" data-property="removable">
-              <span class="chip-label">removable</span>
-              <figure class="chip-remove"><i class="icon-x"></i></figure>
-            </button>
-            <button class="chip">
-              <figure class="chip-icon">🦔</figure>
-              <span class="chip-label">with icon</span>
-            </button>
-            <button class="chip is-active">
-              <figure class="chip-icon" style="background:none;"><i class="icon-check" style="border-color:var(--color-background);"></i></figure>
-              <span class="chip-label" style="padding-left:0;">checkable</span>
-            </button>
-            <button class="dropdown-trigger js-toggle" aria-expanded="true">
-              <span class="dropdown-trigger-label">expandable</span>
-              <figure class="dropdown-trigger-icon"><i class="icon-caret"></i></figure>
-            </button>
-          </div>
-        </div>
-  
+        
         <!-- <p>- addable/removable, todo: chip-icon의 hover... 결국 chip과 분리된 컴포넌트가 필요함. 역할이 다르기 때문에 괜찮음.</p> -->
         <!-- Markup(button vs radio,checkbox) -->
         <!-- <p>안드로이드: chipGroup, HorizontalScrollView, singleLine, action/entry/filter(check active)/choice</p> -->
@@ -601,150 +574,142 @@
           <li>Filter with check icon</li>
           <li>Action with icon</li>
         </ul> -->
-        <ul>
-          <li>Keywords. (action / search)
-            <div class="tile-flat" style="margin:var(--space-2) 0 var(--space-4);">
-              <div class="keywords-group" role="group">
-                <a class="keywords-group-keyword" href="#components">
-                  <span class="keywords-keyword-label chip-label">국정감사</span>
+        <span>Keywords. (action / search)</span>
+        <div class="tile-flat" style="margin:var(--space-2) 0 var(--space-4);">
+          <div class="keywords-group" role="group">
+            <a class="keywords-group-keyword" href="#components">
+              <span class="keywords-keyword-label chip-label">국정감사</span>
+            </a>
+            <a class="keywords-group-keyword" href="#components">
+              <span class="chip-label">윤석열검찰총장</span>
+            </a>
+            <a class="keywords-group-keyword" href="#components">
+              <span class="chip-label">조국</span>
+            </a>
+            <a class="keywords-group-keyword" href="#components">
+              <span class="chip-label">차별금지법</span>
+            </a>
+            <a class="keywords-group-keyword" href="#components">
+              <span class="chip-label">추미매법무부장관</span>
+            </a>
+          </div>
+        </div>
+        <span>Contents Filtering - Single Selection</span>
+        <div class="tile-flat" style="margin:var(--space-2) 0 var(--space-4);">
+          <div class="chip-group" role="group" aria-orientation="horizontal">
+            <button class="chip js-toggle is-active">
+              <span class="chip-label">전체</span>
+            </button>
+            <button class="chip js-toggle">
+              <span class="chip-label">결제완료</span>
+            </button>
+          </div>
+        </div>
+        <span>Choice - Multiple Selections (test)</span>
+        <div class="tile-flat" style="margin:var(--space-2) 0 var(--space-4);">
+          <div class="chip-group" role="group" aria-orientation="horizontal">
+            <button class="chip is-active" style="border:1px solid var(--green800);background-color:var(--green100);">
+              <figure class="chip-icon" style="background:none !important;"><i class="icon-check" style="border-color:var(--green800);"></i></figure>
+              <span class="chip-label" style="padding-left:0;color:var(--green800);">소설</span>
+            </button>
+            <button class="chip is-active" style="border:1px solid var(--green800);background-color:var(--green100);">
+              <figure class="chip-icon" style="background:none !important;"><i class="icon-check" style="border-color:var(--green800);"></i></figure>
+              <span class="chip-label" style="padding-left:0;color:var(--green800);">영화</span>
+            </button>
+            <button class="chip">
+              <!-- <figure class="chip-icon"><i class="icon-check"></i></figure> -->
+              <span class="chip-label">타이포그래피</span>
+            </button>
+          </div>
+        </div>
+        <span>Dropdown (Overflow/pulldown)</span>
+        <div class="tile-flat" style="margin:var(--space-2) 0 var(--space-4);">
+          <div class="chip-group">
+            <div class="dropdown">
+              <button class="dropdown-trigger js-toggle" aria-expanded="true">
+                <span class="dropdown-trigger-label">메뉴</span>
+                <figure class="dropdown-trigger-icon"><i class="icon-caret"></i></figure>
+              </button>
+              <menu class="dropdown-menu" role="menu">
+                <h6 class="dropdown-menu-title" hidden>Dropdown header</h6>
+                <a class="dropdown-menu-link" href="#" disabled>
+                  프로필 관리
+                  <!-- -->
                 </a>
-                <a class="keywords-group-keyword" href="#components">
-                  <span class="chip-label">윤석열검찰총장</span>
+                <a class="dropdown-menu-link" href="#">고객센터</a>
+                <hr class="dropdown-menu-divider" />
+                <a class="dropdown-menu-link" href="#">로그아웃</a>
+              </menu>
+            </div>
+            <div class="dropdown">
+              <button class="dropdown-trigger js-toggle" aria-expanded="true">
+                <span class="dropdown-trigger-label" title="일행 당 인원 수">필터</span>
+                <figure class="dropdown-trigger-icon"><i class="icon-caret"></i></figure>
+              </button>
+              <menu class="dropdown-menu" role="menu" style="padding:var(--space-3);">
+                <fieldset role="radiogroup">
+                  <!-- <legend class="article-anatomy-title" style="margin-bottom:0;">radiogroup</legend> -->
+                  <div class="radio">
+                    <input type="radio" id="gogo1" name="gogo" value="" />
+                    <label for="gogo1" title="">1~3명</label>
+                  </div>
+                  <div class="radio">
+                    <input type="radio" id="gogo2" name="gogo" value="" checked />
+                    <label for="gogo2" title="">3명 이상</label>
+                  </div>
+                </fieldset>
+                <footer style="margin:var(--space-2) 0 0 0;">
+                  <!-- <button>옵션 초기화</button> -->
+                  <button class="chip" style="width:100%;"><span class="chip-label">적용 / 24개 상품 보기 (airbnb)</span></button>
+                </footer>
+              </menu>
+            </div>
+            <div class="dropdown">
+              <button class="dropdown-trigger js-toggle" aria-expanded="true">
+                <span class="dropdown-trigger-label">정렬</span>
+                <figure class="dropdown-trigger-icon"><i class="icon-caret"></i></figure>
+              </button>
+              <menu class="dropdown-menu" role="menu">
+                <h6 class="dropdown-menu-title" hidden>Dropdown header</h6>
+                <!-- // todo  -->
+                <a class="dropdown-menu-link" href="#" disabled style="display:flex;justify-content:space-between;align-items:center;">
+                  최신순
+                  <i class="icon-check"></i>
                 </a>
-                <a class="keywords-group-keyword" href="#components">
-                  <span class="chip-label">조국</span>
-                </a>
-                <a class="keywords-group-keyword" href="#components">
-                  <span class="chip-label">차별금지법</span>
-                </a>
-                <a class="keywords-group-keyword" href="#components">
-                  <span class="chip-label">추미매법무부장관</span>
-                </a>
-              </div>
+                <a class="dropdown-menu-link" href="#" disabled>최신순</a>
+              </menu>
             </div>
-          </li>
-          <li>Contents Filtering - Single Selection
-            <div class="tile-flat" style="margin:var(--space-2) 0 var(--space-4);">
-              <div class="chip-group" role="group" aria-orientation="horizontal">
-                <button class="chip js-toggle is-active">
-                  <span class="chip-label">전체</span>
-                </button>
-                <button class="chip js-toggle">
-                  <span class="chip-label">결제완료</span>
-                </button>
-              </div>
+            <div class="dropdown">
+              <button class="dropdown-trigger js-toggle" aria-label="" aria-haspopup="menu" aria-expanded="false">
+                <span class=""><i class="icon-more"></i></span>
+              </button>
+              <menu class="dropdown-menu">
+                <a class="dropdown-menu-link" href="#componets">수정</a>
+                <a class="dropdown-menu-link" href="#componets">삭제</a>
+              </menu>
             </div>
-          </li>
-          <li>Choice - Multiple Selections (test)
-            <div class="tile-flat" style="margin:var(--space-2) 0 var(--space-4);">
-              <div class="chip-group" role="group" aria-orientation="horizontal">
-                <button class="chip is-active" style="border:1px solid var(--green800);background-color:var(--green100);">
-                  <figure class="chip-icon" style="background:none !important;"><i class="icon-check" style="border-color:var(--green800);"></i></figure>
-                  <span class="chip-label" style="padding-left:0;color:var(--green800);">소설</span>
-                </button>
-                <button class="chip is-active" style="border:1px solid var(--green800);background-color:var(--green100);">
-                  <figure class="chip-icon" style="background:none !important;"><i class="icon-check" style="border-color:var(--green800);"></i></figure>
-                  <span class="chip-label" style="padding-left:0;color:var(--green800);">영화</span>
-                </button>
-                <button class="chip">
-                  <!-- <figure class="chip-icon"><i class="icon-check"></i></figure> -->
-                  <span class="chip-label">타이포그래피</span>
-                </button>
-              </div>
-            </div>
-          </li>
-          <li>Dropdown (Overflow/pulldown)
-            <div class="tile-flat" style="margin:var(--space-2) 0 var(--space-4);">
-              <div class="chip-group">
-                <div class="dropdown">
-                  <button class="dropdown-trigger js-toggle" aria-expanded="true">
-                    <span class="dropdown-trigger-label">메뉴</span>
-                    <figure class="dropdown-trigger-icon"><i class="icon-caret"></i></figure>
-                  </button>
-                  <menu class="dropdown-menu" role="menu">
-                    <h6 class="dropdown-menu-title" hidden>Dropdown header</h6>
-                    <a class="dropdown-menu-link" href="#" disabled>
-                      프로필 관리
-                      <!-- -->
-                    </a>
-                    <a class="dropdown-menu-link" href="#">고객센터</a>
-                    <hr class="dropdown-menu-divider" />
-                    <a class="dropdown-menu-link" href="#">로그아웃</a>
-                  </menu>
-                </div>
-                <div class="dropdown">
-                  <button class="dropdown-trigger js-toggle" aria-expanded="true">
-                    <span class="dropdown-trigger-label" title="일행 당 인원 수">필터</span>
-                    <figure class="dropdown-trigger-icon"><i class="icon-caret"></i></figure>
-                  </button>
-                  <menu class="dropdown-menu" role="menu" style="padding:var(--space-3);">
-                    <fieldset role="radiogroup">
-                      <!-- <legend class="article-anatomy-title" style="margin-bottom:0;">radiogroup</legend> -->
-                      <div class="radio">
-                        <input type="radio" id="gogo1" name="gogo" value="" />
-                        <label for="gogo1" title="">1~3명</label>
-                      </div>
-                      <div class="radio">
-                        <input type="radio" id="gogo2" name="gogo" value="" checked />
-                        <label for="gogo2" title="">3명 이상</label>
-                      </div>
-                    </fieldset>
-                    <footer style="margin:var(--space-2) 0 0 0;">
-                      <!-- <button>옵션 초기화</button> -->
-                      <button class="chip" style="width:100%;"><span class="chip-label">적용 / 24개 상품 보기 (airbnb)</span></button>
-                    </footer>
-                  </menu>
-                </div>
-                <div class="dropdown">
-                  <button class="dropdown-trigger js-toggle" aria-expanded="true">
-                    <span class="dropdown-trigger-label">정렬</span>
-                    <figure class="dropdown-trigger-icon"><i class="icon-caret"></i></figure>
-                  </button>
-                  <menu class="dropdown-menu" role="menu">
-                    <h6 class="dropdown-menu-title" hidden>Dropdown header</h6>
-                    <!-- // todo  -->
-                    <a class="dropdown-menu-link" href="#" disabled style="display:flex;justify-content:space-between;align-items:center;">
-                      최신순
-                      <i class="icon-check"></i>
-                    </a>
-                    <a class="dropdown-menu-link" href="#" disabled>최신순</a>
-                  </menu>
-                </div>
-                <div class="dropdown">
-                  <button class="dropdown-trigger js-toggle" aria-label="" aria-haspopup="menu" aria-expanded="false">
-                    <span class=""><i class="icon-more"></i></span>
-                  </button>
-                  <menu class="dropdown-menu">
-                    <a class="dropdown-menu-link" href="#componets">수정</a>
-                    <a class="dropdown-menu-link" href="#componets">삭제</a>
-                  </menu>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li>
-            menu controls
-            <div class="tile-flat tile-elevated" style="max-width:360px;margin:var(--space-2) 0 var(--space-4);overflow:hidden;">
-              <p>콘텐츠 영역</p>
-              <footer class="dropdown-footer chip-group" role="group" aria-orientation="horizontal">
-                <p class="dropdown-footer-question">Going?</p>
-                <button class="dropdown-footer-action chip">
-                  <span class="chip-label">Yes</span>
-                  <figure class="dropdown-trigger-icon"><i class="icon-caret"></i></figure>
-                </button>
-                <button class="dropdown-footer-action chip">
-                  <span class="chip-label">No</span>
-                </button>
-                <button class="dropdown-footer-action chip">
-                  <span class="chip-label">Maybe</span>
-                </button>
-              </footer>
-            </div>
-            <aside class="article-helper">
-              <p>페이지 레벨(시트/모달 등)이 될 때 액션이 더 강조되어야 한다.</p>
-            </aside>
-          </li>
-        </ul>
+          </div>
+        </div>
+        <span>menu controls</span>
+        <div class="tile-flat tile-elevated" style="max-width:360px;margin:var(--space-2) 0 var(--space-4);overflow:hidden;">
+          <p>콘텐츠 영역</p>
+          <footer class="dropdown-footer chip-group" role="group" aria-orientation="horizontal">
+            <p class="dropdown-footer-question">Going?</p>
+            <button class="dropdown-footer-action chip">
+              <span class="chip-label">Yes</span>
+              <figure class="dropdown-trigger-icon"><i class="icon-caret"></i></figure>
+            </button>
+            <button class="dropdown-footer-action chip">
+              <span class="chip-label">No</span>
+            </button>
+            <button class="dropdown-footer-action chip">
+              <span class="chip-label">Maybe</span>
+            </button>
+          </footer>
+        </div>
+        <aside class="article-helper">
+          <p>페이지 레벨(시트/모달 등)이 될 때 액션이 더 강조되어야 한다.</p>
+        </aside>
         
         <!-- <p style="margin:0 0 var(--space-2) 0;color:var(--color-text-light);">selected <em>10</em> / 50</p> -->
 
@@ -776,20 +741,25 @@
           <span class="hashtag" title="">Anchor</span>
         </aside>
   
-        <p>
-          형무소 안에서는 소장의 말이 곧 법이었으며 죄수들의 잘못과 실수는 결코 용납되지 않는다. 어머니의 사망 소식을 듣고 인해 2번이나 탈옥을
-          시도했다가 체포된 <a class="link-inner" href="#">루크</a>의 발에 쇠통이 채워지며 루크는…<a
-            class="more link-outside"
-            href="#"
-            style="margin-left:.25rem;"
-            >더 보기</a
-          >
-        </p>
-        <div style="margin-top:var(--space-3);">
-          <a class="hashtag" href="">이것은헤시태그</a>
-          <a class="hashtag" href="">해시태그는클릭할수있다?</a>
-          <a class="hashtag" href="">해시태그는검색의맥락</a>
+        <div class="component-style">
+          <div class="tile-flat">
+            <p>
+              형무소 안에서는 소장의 말이 곧 법이었으며 죄수들의 잘못과 실수는 결코 용납되지 않는다. 어머니의 사망 소식을 듣고 인해 2번이나 탈옥을
+              시도했다가 체포된 <a class="link-inner" href="#">루크</a>의 발에 쇠통이 채워지며 루크는…<a
+                class="more link-outside"
+                href="#"
+                style="margin-left:.25rem;"
+                >더 보기</a
+              >
+            </p>
+            <div style="margin-top:var(--space-3);">
+              <a class="hashtag" href="">이것은헤시태그</a>
+              <a class="hashtag" href="">해시태그는클릭할수있다?</a>
+              <a class="hashtag" href="">해시태그는검색의맥락</a>
+            </div>
+          </div>
         </div>
+
   
         <h4 class="article-subhead">Props</h4>
         <dl>
@@ -818,26 +788,32 @@
 
     <article class="article js-observer js-scrollspy-section">
       <h1 class="article-title">Tags <span hidden>(or badge/label)</span></h1>
-      <p class="article-description">인접 요소나 부모 요소를 부연하는 시각 정보입니다. 상태, 카테고리, 키워드(또는 키워드 목록)로 강조된 시각 정보는 사용자가 복잡한 정보 더미에서 중요한 정보를 우선적으로 파악하도록 돕습니다.</p>
+      <p class="article-description">인접 요소나 부모 요소를 부연하는 시각 정보입니다. 상태, 카테고리, 키워드로 강조된 시각 정보는 사용자가 복잡한 정보 더미에서 중요한 정보를 우선적으로 파악하도록 돕습니다.</p>
 
       <aside class="article-aka">
         <span class="tag">a.k.a.</span>
         <span class="hashtag" title="">Badge</span>
+        <span class="hashtag" title="">Label</span>
+        <span class="hashtag" title="">Keyword</span>
       </aside>
 
-      <div class="">
-        <div class="tag-group">
-          <span class="tag" data-appearance="primary">Primary</span>
-          <span class="tag" role="listitem" data-appearance="secondary">Secondary (outdated)</span>
-          <span class="tag" role="listitem">Tertiary</span>
-          <span class="tag" role="listitem" style="background:var(--red100);border-color:var(--red100);color:var(--red800);">15</span>
-          <!-- todo -->
-          <span class="tag" data-role="accent">
-            <figure class="tag-icon" role="img">🔥</figure>
-            <small class="tag-label">Most Popular 22.05.02. 최대 1개. w icon</small>
-          </span>
+      <div class="component-style">
+        <div class="tile-flat">
+          <div class="tag-group">
+            <span class="tag" data-appearance="primary">Primary</span>
+            <span class="tag" role="listitem" data-appearance="secondary">Secondary (outdated)</span>
+            <span class="tag" role="listitem">Tertiary</span>
+            <span class="tag" role="listitem" style="background:var(--red100);border-color:var(--red100);color:var(--red800);">15</span>
+            <!-- todo -->
+            <span class="tag" data-role="accent">
+              <figure class="tag-icon" role="img">🔥</figure>
+              <small class="tag-label">Most Popular 22.05.02. 최대 1개. w icon</small>
+            </span>
+          </div>
         </div>
       </div>
+
+
 
       <h4 class="article-subhead">Best practices</h4>
       <ul>
@@ -854,20 +830,20 @@
       </ul>
     </article>
 
-  <ul>
-    <li>레이블을 왼쪽에 배치하지 않습니다.</li>
-    <li>
-      레거시 형태의 체크박스와 라디오는 모바일 친화적이지 않으며 사용 케이스도 감소세. 머티리얼3에도 포함되어 있지 않다. 약관 동의 정도를 제외하면
-      거의.
-    </li>
-    <li>
-      memo tile 형태에서만 description이 나타나도록 사용? Form Elements로
-      그루핑할 수도 있음.
-    </li>
-    <li>textarea를 분리.</li>
-  </ul>
+    <ul>
+      <li>레이블을 왼쪽에 배치하지 않습니다.</li>
+      <li>textarea와 searchfield는 별도 컴포넌트로 관리하는 것이 좋다.</li>
+      
+      <li>
+        레거시 형태의 체크박스와 라디오는 모바일 친화적이지 않으며 사용 케이스도 감소세. 머티리얼3에도 포함되어 있지 않다. 약관 동의 정도를 제외하면
+        거의.
+      </li>
+      <li>
+        memo tile 형태에서만 description이 나타나도록 사용? Form Elements로
+        그루핑할 수도 있음.
+      </li>
+    </ul>
 
-  <section class="component-body">
     <article class="article js-observer js-scrollspy-section">
       <h1 class="article-title" title="or Box">Switch</h1>
       <p class="article-description">켜거나 끌 수 있는 설정 옵션입니다.</p>
@@ -878,15 +854,18 @@
         <span class="hashtag" title="protocol mozilla">Toggle</span>
       </aside>
 
-      <br />
-      <span class="switch">
-        <input type="checkbox" id="switch1" name="" role="switch" value="on" checked />
-        <label for="switch1" title="Receive weekly newsletter">뉴스레터 받아보기</label>
-      </span>
-      <span class="switch" style="margin-top:var(--space-4);">
-        <input type="checkbox" id="switch2" name="" role="switch" value="off" disabled />
-        <label for="switch2" title="Receive weekly newsletter">뉴스레터 받아보기</label>
-      </span>
+      <section class="component-style">
+        <div class="tile-flat">
+          <span class="switch">
+            <input type="checkbox" id="switch1" name="" role="switch" value="on" checked />
+            <label for="switch1" title="Receive weekly newsletter">뉴스레터 받아보기</label>
+          </span>
+          <span class="switch" style="margin-top:var(--space-4);">
+            <input type="checkbox" id="switch2" name="" role="switch" value="off" disabled />
+            <label for="switch2" title="Receive weekly newsletter">뉴스레터 받아보기</label>
+          </span>
+        </div>
+      </section>
 
       <h4 class="article-subhead">Best practices</h4>
       <ul>
@@ -901,26 +880,13 @@
         <!-- <li>최대 2단어</li> -->
         <!-- <li>최대 8자</li> -->
       </ul>
-
-      <br />
-
-      <button class="button-elevated" title="" style="margin-bottom:.25rem;">
-        <figure class="button-elevated-avatar">🦊</figure>
-        <span class="button-elevated-label">사진 및 동영상 백업</span>
-        <span class="switch" style="margin-left:auto;">
-          <input type="checkbox" id="temp123456" name="" role="switch" />
-          <label for="temp123456" style="padding-left:48px;"></label>
-        </span>
-      </button>
-      <small>Google 포토에 최대 해상도로 백업</small>
     </article>
 
     <article class="article js-observer js-scrollspy-section">
       <h1 class="article-title" title="or Box">Checkboxes</h1>
       <p class="article-description">옵션 목록에서 하나 이상의 옵션을 선택합니다.</p>
       <div class="component-style">
-
-        <fieldset role="checkgroup">
+        <fieldset class="tile-flat" role="checkgroup">
           <!-- <legend">checkgroup</legend> -->
           <div class="checkbox">
             <input
@@ -1003,62 +969,104 @@
       <h1 class="article-title" title="or Box">Radioes</h1>
       <p class="article-description">옵션 목록에서 하나의 옵션을 선택합니다. 항상 그룹으로 사용합니다.</p>
 
-      <fieldset role="radiogroup">
-        <legend hidden>radiogroup</legend>
-        <div class="radio" style="margin-top:0;">
-          <input type="radio" id="gender-man" name="gender" value="" />
-          <label for="gender-man" title="Video Killed the Radio Button">Video Killed the Radio Button</label>
-          <p class="radio-helper">선택한 옵션의 보조 텍스트 영역입니다. 좁은 화면에서 충분한 공간 확보를 위해 들여쓰지 않습니다.</p>
-        </div>
-        <div class="radio">
-          <input type="radio" id="gender-etc" name="gender" value="" checked disabled />
-          <label for="gender-etc" title="Video Killed the Radio Button">Video Killed the Radio Button</label>
-        </div>
-        <div class="radio theme-button" style="margin:var(--space-4) 0 0 0;">
-          <input type="radio" id="raidio5" name="gender" value="" />
-          <label for="raidio5" title="">
-            버튼 appearance
-            <b>₩ 2,000</b>
-          </label>
-          <div>
-            test
+      <section class="component-style">
+        <fieldset class="tile-flat" role="radiogroup">
+          <legend hidden>radiogroup</legend>
+          <div class="radio" style="margin-top:0;">
+            <input type="radio" id="gender-man" name="gender" value="" />
+            <label for="gender-man" title="Video Killed the Radio Button">Video Killed the Radio Button</label>
+            <p class="radio-helper">선택한 옵션의 보조 텍스트 영역입니다. 좁은 화면에서 충분한 공간 확보를 위해 들여쓰지 않습니다.</p>
           </div>
-        </div>
-        <div class="radio theme-button">
-          <input type="radio" id="raidio6" name="gender" value="" />
-          <label for="raidio6" title="">
-            버튼 appearance
-            <b>₩ 8,000</b>
-          </label>
-          <div>
-            test
+          <div class="radio">
+            <input type="radio" id="gender-etc" name="gender" value="" checked disabled />
+            <label for="gender-etc" title="Video Killed the Radio Button">Video Killed the Radio Button</label>
           </div>
-        </div>
-      </fieldset>
+          <div class="radio tile-elevated" style="margin:var(--space-4) 0 0 0;">
+            <input type="radio" id="raidio5" name="gender" value="" />
+            <label for="raidio5" title="">
+              버튼 appearance
+              <b>₩ 2,000</b>
+            </label>
+            <div>
+              test
+            </div>
+          </div>
+          <div class="radio tile-elevated">
+            <input type="radio" id="raidio6" name="gender" value="" />
+            <label for="raidio6" title="">
+              버튼 appearance
+              <b>₩ 8,000</b>
+            </label>
+            <div>
+              test
+            </div>
+          </div>
+        </fieldset>
+      </section>
 
-      <h4 class="article-subhead">Best practices</h4>
       <ul>
         <li>기본 옵션을 선택된 상태로 제공합니다.</li>
         <li><b>align.</b> 가로로 정렬하지 않습니다.</li>
         <li>옵션 목록은 최대 5개입니다.</li>
         <li>항상 그룹으로 사용합니다.</li>
       </ul>
-
-      <!-- <h4 class="article-subhead">Editing checklist</h4>
-      <ul>
-        <li>동사 포함</li>
-      </ul> -->
-
       <!-- A Toggle Switch lets people turn a single setting on or off immediately. -->
       <!-- (리액트에서 id  이슈 input in label.) -->
-      <!-- <datalist></datalist> -->
     </article>
 
-
-  <section class="component-body">
     <article class="article js-observer js-scrollspy-section">
-      <h1 class="article-title">Searchfield</h1>
-      <p class="article-description">검색어를 입력합니다. 검색 실행하면 입력한 검색어에 맞는 콘텐츠를 결과로 표시합니다.</p>
+      <h1 class="article-title">Textfields</h1>
+      <p class="article-description">텍스트 정보를 입력합니다.</p>
+
+      <!-- <p>unit, choose/enter</p> -->
+      <!-- <abbr title="필수입력">*</abbr> -->
+      <div class="textfield is-invalid">
+        <label class="textfield-label" for="abc123" style="margin-top:var(--space-leading-subhead);">레이블 <small aria-label="optional">선택입력</small></label>
+        <input class="textfield-input js-input-test" type="text" id="abc123" placeholder="Textarea Placeholder..." value="soojubm@gmail.com" aria-describedby="error" aria-invalid="true" />
+        <small class="textfield-helper is-error">이미 등록된 이메일입니다.</small>
+        <!-- validation feedback -->
+          <!-- // todo readonly -->
+      </div>
+      <br />
+      <!-- <span class="article-anatomy-title">Textarea</span> -->
+      <div class="textfield">
+        <label class="textfield-label" for="search1">레이블</label>
+        <small class="textfield-byte"><b>0 KB</b> / 100 KB</small>
+        <textarea class="textfield-input" rows="3" placeholder="Textarea Placeholder..."></textarea>
+      </div>
+      <br />
+        <!-- <span class="article-anatomy-title">Input Date</span> -->
+        <div class="textfield-group" style="display:flex;justify-content:space-between;">
+          <div class="textfield" style="width:var(--column-width);">
+            <label class="textfield-label" for="date-start"><i class="">체크인</i></label>
+            <label class="textfield-prefix" for="date-start" style="background:var(--color-background);">-</label>
+            <input class="textfield-input" type="date" id="date-start" placeholder="날짜를 설정해주세요." />
+          </div>
+          <div class="textfield" style="width:var(--column-width)">
+            <label class="textfield-label" for="date-end"><i class="">체크아웃</i></label>
+            <label class="textfield-prefix" for="date-end" style="background:var(--color-background);">-</label>
+            <input class="textfield-input" type="date" id="date-end" placeholder="날짜를 설정해주세요." />
+          </div>
+        </div>
+      </div>
+      <br />
+      <!-- <span class="article-anatomy-title">Selectbox</span> -->
+      <div class="textfield">
+        <label class="textfield-label" for="select1">셀렉트박스</label>
+        <select class="textfield-input" id="select1">
+          <option class="select-option" value="select-option1">Choose an option</option>
+        </select>
+        <span class="selectbox-indicator" role="img"><i class="icon-caret"></i></span>
+      </div>
+
+      <br />
+      <div class="sorting" style="position:relative;display:flex;">
+        <label class="" for="select2" style="margin:0 var(--space-2) 0 0;">Sort by</label>
+        <select class="" id="select2" style="background:none;border:none;padding:0 var(--space-3) 0 0;font:inherit;color:var(--color-text);">
+          <option class="select-option" value="select-option1">최신순</option>
+        </select>
+        <span class="selectbox-indicator" role="img" style="background:var(--color-background-weak);position:relative;right:auto;top:auto;"><i class="icon-caret"></i></span>
+      </div>
 
       <div class="textfield">
         <button class="textfield-prefix searchfield-prefix"><i class="icon-search"></i></button>
@@ -1067,6 +1075,39 @@
         <button class="textfield-clear" hidden><i class="icon-x"></i></button>
       </div>
 
+      <div class="quantity js-quantity" style="max-width:8rem;">
+        <input class="quantity-input js-quantity-input js-number-input" name="quantity1" type="number" value="0" min="5" max="20" >
+        <!-- <input type="text" inputmode="numeric" pattern="[0-9]*"> -->
+        <button class="quantity-decrement js-quantity-decrement"><i class="icon-minus"></i></button>
+        <button class="quantity-increment js-quantity-increment"><i class="icon-plus"></i></button>
+      </div>
+
+      
+      <h4 class="article-subhead">Best practices</h4>
+      <ul>
+        <!-- <p><span><i></i></span> 벨리데이션 실행 조건: <b>제출(구현이 쉬움)</b> / 키보드 입력 쉬움 / 블러(구현이 복잡함. 흐름이 끊어짐)</b></p> -->
+        <li>기본적으로 Textfield는 필수 입력 필드입니다. 선택 입력에는 '선택' 텍스트로 가이드합니다.</li>
+        <li>다중 선택을 위해 셀렉트박스를 사용하지 않습니다.</li>
+        <li>stepper(quantity) / search field / selectbox(combo)</li>
+        <li>검색이 중요한 서비스에서는 큰 사이즈의 검색필드를 추가로 정의하세요.</li>
+        <li>일반 텍스트필드와 구별할 수 있도록 시각적인 단서를 제공하세요. (검색 아이콘)</li>
+        <li>clear button / indicator(leading icon</li>
+        <!-- <li><span><i class="icon-check"></i></span> 사용자의 정보 입력을 돕기 위해 selectbox로 선택할 수 있는 정보 목록을 제공합니다.</li> -->
+        <!-- <li>required indicator / / validations / masked</li> -->
+        <li>todo: helper(help message)와 feedback message를 구별</li>
+        <li>최소값와 최대값을 정의합니다. 입력 제한 피드백을 위해 팝업vsdisabled버튼</li>
+      </ul>
+
+      <h4 class="article-subhead">References</h4>
+      <a href="https://developer.apple.com/documentation/uikit/uisearchbar">HIG searchbar</a>
+
+
+      <!-- var selected = Array.from(dnd.options).filter(function (option) {
+        return option.selected;
+      }).map(function (option) {
+        return option.value;
+      }); -->
+      
       <h4 class="article-subhead">Props (TODO)</h4>
       <table>
         <caption hidden>Table Caption</caption>
@@ -1118,129 +1159,6 @@
           </tr>
         </tbody>
       </table>
-
-      <h4 class="article-subhead">Best practices</h4>
-      <ul>
-        <li>검색필드에 뒤로가기 버튼을 포함하지 않습니다. 뒤로가기는 title bar에 종속되는 액션입니다.</li>
-        <li>검색이 중요한 서비스에서는 큰 사이즈의 검색필드를 추가로 정의하세요.</li>
-        <li>iOS 검색 패턴 중 하나. 검색필드를 클릭하면 필드에 focus되는 것이 아니라 네이티브 검색바와 검색 화면을 보여주는 패턴.</li>
-        <li>검색 페이지 또는 검색 탭에서 focus 상태 상태에 따라 추천 컨텐츠/개인화 콘텐츠(focusout)와 최근 검색 결과(focuson)를 구분하여 표시합니다.</li>
-        <li>일반 텍스트필드와 구별할 수 있도록 시각적인 단서를 제공하세요. (검색 아이콘)</li>
-      </ul>
-
-      <h4 class="article-subhead">Editing checklist</h4>
-      <ul>
-        <li>placeholder 작성법.</li>
-      </ul>
-
-      <blockquote>
-        <p>검색 필드를 클릭했을 때 검색을 입력할 수 있는 패턴과 검색 탭으로 이동하는 2가지 패턴이 가능하다. 검색 탭으로 이동하는 패턴에서는 readonly.</p>
-        <p>검색 필드는 helper text가 필요 없음.</p>
-      </blockquote>
-
-      <h4 class="article-subhead">References</h4>
-      <a href="https://developer.apple.com/documentation/uikit/uisearchbar">HIG searchbar</a>
-
-      <h4 class="article-subhead">Other cases</h4>
-      <ul>
-        <li>검색 페이지 또는 검색 탭으로 이동하는 버튼의 역할(readonly)</li>
-      </ul>
-    </article>
-
-    <article class="article js-observer js-scrollspy-section">
-      <h1 class="article-title">Textfields</h1>
-      <p class="article-description">텍스트 정보를 입력합니다.</p>
-
-      <h4 class="article-subhead">Best practices</h4>
-      <ul>
-        <!-- <p><span><i></i></span> 벨리데이션 실행 조건: <b>제출(구현이 쉬움)</b> / 키보드 입력 쉬움 / 블러(구현이 복잡함. 흐름이 끊어짐)</b></p> -->
-        <li>기본적으로 Textfield는 필수 입력 필드입니다. 선택 입력에는 '선택' 텍스트로 가이드합니다.</li>
-        <li>다중 선택을 위해 셀렉트박스를 사용하지 않습니다.</li>
-        <li>stepper(quantity) / search field / selectbox(combo)</li>
-
-        <!-- <li><span><i class="icon-check"></i></span> 사용자의 정보 입력을 돕기 위해 selectbox로 선택할 수 있는 정보 목록을 제공합니다.</li> -->
-      </ul>
-
-      <h4 class="article-subhead">Editing checklist</h4>
-      <ul>
-        <li>todo: helper(help message)와 feedback message를 구별</li>
-      </ul>
-
-      <h4 class="article-subhead">anatomy</h4>
-      <div class="article-anatomy">
-        <span class="article-anatomy-item">textfield</span>
-        <span class="article-anatomy-item is-nested">label</span>
-        <span class="article-anatomy-item is-nested">input</span>
-        <span class="article-anatomy-item is-nested">helper</span>
-        <span class="article-anatomy-item is-nested">clear button <small class="is-optional">optional</small></span>
-        <span class="article-anatomy-item is-nested">indicator <small class="is-optional">optional</small></span>
-        <!-- <li>required indicator / / validations / masked</li> -->
-      </div>
-
-      <br />
-      <!-- <p>unit, choose/enter</p> -->
-      <!-- <abbr title="필수입력">*</abbr> -->
-      <div class="textfield is-invalid">
-        <label class="textfield-label" for="abc123" style="margin-top:var(--space-leading-subhead);">레이블 <small aria-label="optional">선택입력</small></label>
-        <input class="textfield-input js-input-test" type="text" id="abc123" placeholder="Textarea Placeholder..." value="soojubm@gmail.com" aria-describedby="error" aria-invalid="true" />
-        <small class="textfield-helper is-error">이미 등록된 이메일입니다.</small>
-        <!-- validation feedback -->
-          <!-- // todo readonly -->
-      </div>
-      <br />
-      <!-- <span class="article-anatomy-title">Textarea</span> -->
-      <div class="textfield">
-        <label class="textfield-label" for="search1">레이블</label>
-        <small class="textfield-byte"><b>0 KB</b> / 100 KB</small>
-        <textarea class="textfield-input" rows="3" placeholder="Textarea Placeholder..."></textarea>
-      </div>
-      <br />
-        <!-- <span class="article-anatomy-title">Input Date</span> -->
-        <div class="textfield-group" style="display:flex;justify-content:space-between;">
-          <div class="textfield" style="width:var(--column-width);">
-            <label class="textfield-label" for="date-start"><i class="">체크인</i></label>
-            <label class="textfield-prefix" for="date-start" style="background:var(--color-background);">-</label>
-            <input class="textfield-input" type="date" id="date-start" placeholder="날짜를 설정해주세요." />
-          </div>
-          <div class="textfield" style="width:var(--column-width)">
-            <label class="textfield-label" for="date-end"><i class="">체크아웃</i></label>
-            <label class="textfield-prefix" for="date-end" style="background:var(--color-background);">-</label>
-            <input class="textfield-input" type="date" id="date-end" placeholder="날짜를 설정해주세요." />
-          </div>
-        </div>
-      </div>
-      <br />
-      <!-- <span class="article-anatomy-title">Selectbox</span> -->
-      <div class="textfield">
-        <label class="textfield-label" for="select1">셀렉트박스</label>
-        <select class="textfield-input" id="select1">
-          <option class="select-option" value="select-option1">Choose an option</option>
-        </select>
-        <span class="selectbox-indicator" role="img"><i class="icon-caret"></i></span>
-      </div>
-
-      <br />
-      <div class="sorting" style="position:relative;display:flex;">
-        <label class="" for="select2" style="margin:0 var(--space-2) 0 0;">Sort by</label>
-        <select class="" id="select2" style="background:none;border:none;padding:0 var(--space-3) 0 0;font:inherit;color:var(--color-text);">
-          <option class="select-option" value="select-option1">최신순</option>
-        </select>
-        <span class="selectbox-indicator" role="img" style="background:var(--color-background-weak);position:relative;right:auto;top:auto;"><i class="icon-caret"></i></span>
-      </div>
-
-      <div class="quantity js-quantity" style="max-width:8rem;">
-        <input class="quantity-input js-quantity-input js-number-input" name="quantity1" type="number" value="0" min="5" max="20" >
-        <!-- <input type="text" inputmode="numeric" pattern="[0-9]*"> -->
-        <button class="quantity-decrement js-quantity-decrement"><i class="icon-minus"></i></button>
-        <button class="quantity-increment js-quantity-increment"><i class="icon-plus"></i></button>
-      </div>
-      <li>최소값와 최대값을 정의합니다. 입력 제한 피드백을 위해 팝업vsdisabled버튼</li>
-
-      <!-- var selected = Array.from(dnd.options).filter(function (option) {
-        return option.selected;
-      }).map(function (option) {
-        return option.value;
-      }); -->
     </article>
 
     <!-- <article class="article js-observer js-scrollspy-section">
@@ -1261,31 +1179,30 @@
         <span class="hashtag" title="">Card</span>
       </aside>
 
-      <div class="tile-flat" style="padding:1rem;">
-        <h5 style="font-size:var(--font-size-subhead);">flat large with subhead</h5>
-        <p style="margin:var(--space-after-description);">현재 크기에 따른 변별력이 없다. 하지만 inset이 더 커지게 되면 모바일 등의 작은 화면에서 미디어쿼리로 inset 조정이 필요하다다. 단, 더 큰 사이즈를 정의하고 콘텐츠를 가운데 정렬로 제한할 수도 있다.</p>
-        <p style="margin-top:var(--space-3);">이 tile은 페이지 레벨의 컴포넌트가 될 수 있다.</p> 
-      </div>
-      <div class="tile-flat">
-        <b>flat</b>
-      </div>
-      <div class="tile-elevated">
-        <b>elevated</b>
-        <p style="margin-top:var(--space-3);">TODO flat 형태와 구별이 잘 안 됨.</p>
-      </div>
-      <div class="tile-flat-small">
-        <b>flat small</b>
-      </div>
+      <section class="component-style" style="background:var(--color-background-weak);">
+        <div class="tile-flat" style="padding:1rem;">
+          <h5 style="font-size:var(--font-size-subhead);">flat large with subhead</h5>
+          <p style="margin:var(--space-after-description);">현재 크기에 따른 변별력이 없다. 하지만 inset이 더 커지게 되면 모바일 등의 작은 화면에서 미디어쿼리로 inset 조정이 필요하다다. 단, 더 큰 사이즈를 정의하고 콘텐츠를 가운데 정렬로 제한할 수도 있다.</p>
+          <p style="margin-top:var(--space-3);">이 tile은 페이지 레벨의 컴포넌트가 될 수 있다.</p> 
+        </div>
+        <div class="tile-flat">
+          <b>flat</b>
+        </div>
+        <div class="tile-elevated">
+          <b>elevated</b>
+          <p style="margin-top:var(--space-3);">TODO flat 형태와 구별이 잘 안 됨.</p>
+        </div>
+        <div class="tile-flat-small">
+          <b>flat small</b>
+        </div>
+      </section>
 
-      <h4 class="article-subhead">Best practices</h4>
       <ul>
         <li>'클릭할 수 있음'의 기표로 elevated 스타일을 사용합니다. 타일 전체가 클릭 영역일 수도, 타일 내부에 클릭 가능한 요소를 포함할 수도 있습니다.</li>
         <li>아티클 레벨에 사용합니다. 페이지 레벨의 타이틀과 디스크립션을 타일로 만들지 마세요.</li>
         <li>타일 내부 leading, tailing 엘리먼트의 시각보정이 필요할 수 있습니다.</li>
         <li>tile의 내부에 subhead text가 포함되어 있다면 large size의 tile을 사용하세요.</li>
       </ul>
-
-
     </article>
 
 
@@ -1301,8 +1218,6 @@
       </ul>
       <br />
     </article>
-
-    
 
     <article class="article js-observer js-scrollspy-section" style="overflow:visible;">
       <h1 class="article-title">Tooltip</h1>
@@ -1334,33 +1249,24 @@
       <h1 class="article-title">Breadcrumb</h1>
       <p class="article-description">사용자의 현재 위치를 나타내는 계층 구조의 네비게이션입니다.</p>
 
-      <nav class="breadcrumb" aria-label="breadcrumb">
-        <a class="breadcrumb-item breadcrumb-home" href="/">홈</a>
-        <i class="breadcrumb-divider">/</i>
-        <a class="breadcrumb-item " href="#">페이지 이름</a>
-        <i class="breadcrumb-divider">/</i>
-        <span class="breadcrumb-item breadcrumb-last" href="#">페이지 이름</span>
-      </nav>
+      <section class="component-style">
+        <div class="tile-flat">
+          <nav class="breadcrumb" aria-label="breadcrumb">
+            <a class="breadcrumb-item breadcrumb-home" href="/">홈</a>
+            <i class="breadcrumb-divider">/</i>
+            <a class="breadcrumb-item " href="#">페이지 이름</a>
+            <i class="breadcrumb-divider">/</i>
+            <span class="breadcrumb-item breadcrumb-last" href="#">페이지 이름</span>
+          </nav>
+        </div>
+      </section>
 
       <h4 class="article-subhead">Props</h4>
       <p style="margin-bottom:var(--space-3);">router를 정의하는 방식(예를 들면 json)과 함께 고민해야 함.</p>
-      <table>
-        <caption hidden>
-          Table Caption
-        </caption>
-        <tbody role="rowgroup">
-          <tr role="row">
-            <th scope="row" style="font-weight:var(--font-weight-bold);color:var(--color-text);">name</th>
-            <th style="font-weight:var(--font-weight-bold);color:var(--color-text);">type</th>
-          </tr>
-          <tr role="row">
-            <th scope="row">currentPage</th>
-            <td>
-              string
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      <dl>
+        <dt>currentPage</dt>
+        <dd>string</dd>
+      </dl>
 
       <h4 class="article-subhead">Best practices</h4>
       <ul>
@@ -1375,24 +1281,29 @@
     <article class="article js-observer js-scrollspy-section js-tab">
       <h1 class="article-title">Tab</h1>
       <p class="article-description">맥락이 같은 콘텐츠를 주제별로 분류합니다.<p>
-      <nav class="profile-tablist" role="tablist" aria-label="sample tabs" style="margin:0 0 var(--space-3) 0;">
-        <button class="profile-tablist-tab" role="tab" aria-selected="true" aria-controls="panel-1" id="tab-1" tabindex="0">
-          첫번째 탭
-          <!-- <em class="profile-tablist-tab-badge badge">24</em> -->
-        </button>
-        <button class="profile-tablist-tab" role="tab" aria-selected="false" aria-controls="panel-2" id="tab-2" tabindex="-1">두번째 탭</button>
-        <button class="profile-tablist-tab" role="tab" aria-selected="false" aria-controls="panel-3" id="tab-3" tabindex="-1">세번째 탭</button>
-        <i class="profile-tablist-indicator"></i>
-      </nav>
-      <div class="profile-tabpanel" id="panel-1" role="tabpanel" tabindex="0" aria-labelledby="tab-1" style="margin:0;">
-        <p>Content for the first panel. tablist는 tile inset에 .25rem을 쓰는 예외 케이스...</p>
-      </div>
-      <div class="profile-tabpanel" id="panel-2" role="tabpanel" tabindex="0" aria-labelledby="tab-2" aria-hidden="true" style="margin:0;">
-        <p>Content for the second panel</p>
-      </div>
-      <div class="profile-tabpanel" id="panel-3" role="tabpanel" tabindex="0" aria-labelledby="tab-3" aria-hidden="true" style="margin:0;">
-        <p>Content for the third panel</p>
-      </div>
+
+      <section class="component-style">
+        <div class="tile-flat">
+          <nav class="profile-tablist" role="tablist" aria-label="sample tabs" style="margin:0 0 var(--space-2) 0;">
+            <button class="profile-tablist-tab" role="tab" aria-selected="true" aria-controls="panel-1" id="tab-1" tabindex="0">
+              첫번째 탭
+              <!-- <em class="profile-tablist-tab-badge badge">24</em> -->
+            </button>
+            <button class="profile-tablist-tab" role="tab" aria-selected="false" aria-controls="panel-2" id="tab-2" tabindex="-1">두번째 탭</button>
+            <button class="profile-tablist-tab" role="tab" aria-selected="false" aria-controls="panel-3" id="tab-3" tabindex="-1">세번째 탭</button>
+            <i class="profile-tablist-indicator"></i>
+          </nav>
+          <div class="profile-tabpanel" id="panel-1" role="tabpanel" tabindex="0" aria-labelledby="tab-1" style="margin:0;">
+            <p>Content for the first panel. tablist는 tile inset에 .25rem을 쓰는 예외 케이스...</p>
+          </div>
+          <div class="profile-tabpanel" id="panel-2" role="tabpanel" tabindex="0" aria-labelledby="tab-2" aria-hidden="true" style="margin:0;">
+            <p>Content for the second panel</p>
+          </div>
+          <div class="profile-tabpanel" id="panel-3" role="tabpanel" tabindex="0" aria-labelledby="tab-3" aria-hidden="true" style="margin:0;">
+            <p>Content for the third panel</p>
+          </div>
+        </div>
+      </section>
 
       <script>
         window.addEventListener("DOMContentLoaded", () => {
@@ -1449,31 +1360,6 @@
         }
       </script>
 
-      <h4 class="article-subhead">Props (todo)</h4>
-      <table>
-        <caption hidden>
-          Table Caption
-        </caption>
-        <tbody role="rowgroup">
-          <tr role="row">
-            <th scope="row" style="font-weight:var(--font-weight-bold);color:var(--color-text);">name</th>
-            <th style="font-weight:var(--font-weight-bold);color:var(--color-text);">type</th>
-          </tr>
-          <tr role="row">
-            <th scope="row">tablist</th>
-            <td>
-              TabType[]
-            </td>
-          </tr>
-          <tr role="row">
-            <th scope="row">tabPanel</th>
-            <td>
-              React.Node
-            </td>
-          </tr>
-        </tbody>
-      </table>
-
       <h4 class="article-subhead">Best practices</h4>
       <ul>
         <li>페이지 레벨, 섹션 레벨에서 사용합니다.</li>
@@ -1485,6 +1371,20 @@
         <li>todo 탭 갯수를 제한하거나 가로 스크롤을 가능하게 하거나.</p></li>
         <li>todo 브라우저 히스토리 저장 여부.tab(?tab=projects) / linktab</li>
       </ul>
+
+      
+
+      <h4 class="article-subhead">Props (todo)</h4>
+      <dl>
+        <dt scope="row">tablist</dt>
+        <dd>
+          TabType[]
+        </dd>
+        <dt scope="row">tabPanel</th>
+        <dd>
+          React.Node
+        </dd>
+      </dl>
 
       <h4 class="article-subhead">References</h4>
       <a href="https://developer.apple.com/design/human-interface-guidelines/components/layout-and-organization/tab-views" target="_blank">HIG tab views</a>
@@ -1507,162 +1407,170 @@
       <h1 class="article-title">Title Bar</h1>
       <p class="article-description">작성 중. 모바일.</p>
 
-      <header class="titlebar js-titlebar" role="navigation" style="padding:0;">
-        <div class="titlebar-background"></div>
-        <h1 class="titlebar-title js-page-title" title="page title">쇼핑 탭</h1>
-        <button class="titlebar-action" style="color:var(--color-primary);">
-          <span class="titlebar-action-label">장바구니</span>
-        </button>
-      </header>
-
-      <hr />
-
-      <header class="titlebar js-titlebar" role="navigation" style="padding:0;">
-        <div class="titlebar-background"></div>
-        <h1 class="titlebar-title js-page-title" title="page title">페이지 타이틀</h1>
-        <button class="titlebar-back" onclick="javascript:window.location.href='/';">
-          <figure class="titlebar-back-icon" title="이전 페이지로"><i class="icon-arrow is-left"></i></figure>
-          <!-- <figure class="titlebar-back-icon"><i class="icon-close"></i></figure> -->
-          <!-- <span class="titlebar-back-label">뒤로</span> -->
-        </button>
-        <button class="titlebar-action" style="color:var(--color-primary);">
-          <figure class="titlebar-action-icon" hidden></figure>
-          <span class="titlebar-action-label">공유</span>
-        </button>
-      </header>
-
-      <hr />
-
-      <header class="titlebar js-titlebar" role="navigation" style="padding:0;">
-        <div class="titlebar-background"></div>
-        <h1 class="titlebar-title js-page-title" title="page title">페이지 타이틀</h1>
-        <button class="titlebar-back" onclick="javascript:window.location.href='/';">
-          <figure class="titlebar-back-icon"><i class="icon-x"></i></figure>
-          <!-- <span class="titlebar-back-label">뒤로</span> -->
-        </button>
-        <button class="titlebar-action" style="color:var(--color-primary);">
-          <span class="titlebar-action-label">저장</span>
-        </button>
-      </header>
-      <!-- <div class="titlebar-backdrop js-header"></div> -->
-
-      <h4 class="article-subhead">Props</h4>
-      <table>
-        <caption hidden>
-          Table Caption
-        </caption>
-        <tbody role="rowgroup">
-          <tr role="row">
-            <th scope="row" style="font-weight:var(--font-weight-bold);color:var(--color-text);">name</th>
-            <th style="font-weight:var(--font-weight-bold);color:var(--color-text);">type</th>
-          </tr>
-          <tr role="row">
-            <th scope="row">title<attr>?</attr></th>
-            <td>
-              string
-              <p>truncate보다 타이틀 글자 수 제한이 좋음</p>
-            </td>
-          </tr>
-          <tr role="row">
-            <th scope="row">hasBack<attr>?</attr></th>
-            <td>
-              boolean
-              <p></p>
-            </td>
-          </tr>
-          <tr role="row">
-            <th scope="row">hasNext<attr>?</attr></th>
-            <td>
-              boolean
-              <p>함수만 넘겨줘서 next 액션을 랜더링하는 방법이 나을 지도.</p>
-            </td>
-          </tr>
-          <tr role="row">
-            <th scope="row">hasClose<attr>?</attr></th>
-            <td>
-              boolean
-            </td>
-          </tr>
-          <tr role="row">
-            <th scope="row">isDisabled<attr>?</attr></th>
-            <td>
-              boolean
-            </td>
-          </tr>
-          <tr role="row">
-            <th scope="row">onComplete(?) / onCancel<attr>?</attr></th>
-            <td>
-              function()
-            </td>
-          </tr>
-        </tbody>
-      </table>
-
-      <h4 class="article-subhead">Best practices</h4>
+      <section class="component-style">
+        <div class="tile-flat" style="overflow:hidden;">
+          <header class="titlebar js-titlebar" role="navigation" style="padding-left:0;padding-right:0;">
+            <div class="titlebar-background"></div>
+            <h1 class="titlebar-title js-page-title" title="page title">쇼핑 탭</h1>
+            <button class="titlebar-action" style="color:var(--color-primary);">
+              <span class="titlebar-action-label">장바구니</span>
+            </button>
+          </header>
+    
+          <header class="titlebar js-titlebar" role="navigation" style="padding-left:0;padding-right:0;">
+            <div class="titlebar-background"></div>
+            <h1 class="titlebar-title js-page-title" title="page title">페이지 타이틀</h1>
+            <button class="titlebar-back" onclick="javascript:window.location.href='/';">
+              <figure class="titlebar-back-icon" title="이전 페이지로"><i class="icon-arrow is-left"></i></figure>
+              <!-- <figure class="titlebar-back-icon"><i class="icon-close"></i></figure> -->
+              <!-- <span class="titlebar-back-label">뒤로</span> -->
+            </button>
+            <button class="titlebar-action" style="color:var(--color-primary);">
+              <figure class="titlebar-action-icon" hidden></figure>
+              <span class="titlebar-action-label">공유</span>
+            </button>
+          </header>
+    
+          <header class="titlebar js-titlebar" role="navigation" style="padding-left:0;padding-right:0;">
+            <div class="titlebar-background"></div>
+            <h1 class="titlebar-title js-page-title" title="page title">페이지 타이틀</h1>
+            <button class="titlebar-back" onclick="javascript:window.location.href='/';">
+              <figure class="titlebar-back-icon"><i class="icon-x"></i></figure>
+              <!-- <span class="titlebar-back-label">뒤로</span> -->
+            </button>
+            <button class="titlebar-action" style="color:var(--color-primary);">
+              <span class="titlebar-action-label">저장</span>
+            </button>
+          </header>
+        </div>
+        <!-- <div class="titlebar-backdrop js-header"></div> -->
+      </section>
+      
       <ul>
         <li>todo 아이콘 배경색 빼는 게 좋지만 버튼 아이콘에서 정의가 안 된 케이스.</li>
         <li>todo 뒤로가기/닫기 패턴 정의하기. 탭 바로 접근하는 경우 등.</li>
       </ul>
+
+      <h4 class="article-subhead">Props</h4>
+      <dl>
+        <dt>title<attr>?</attr></dt>
+        <dd>
+          string / truncate보다 타이틀 글자 수 제한이 좋음
+        </dd>
+        <dt>hasBack<attr>?</attr></dt>
+        <dd>
+          boolean
+        </dd>
+        <dt>hasNext<attr>?</attr></th>
+        <dd>
+          boolean / 함수만 넘겨줘서 next 액션을 랜더링하는 방법이 나을 지도.
+        </dd>
+        <dt>hasClose<attr>?</attr></dt>
+        <dd>
+          boolean
+        </dd>
+        <dt>isDisabled<attr>?</attr></dt>
+        <dd>
+          boolean
+        </dd>
+        <dt>onComplete(?) / onCancel<attr>?</attr></dt>
+        <dd>
+          function()
+        </dd>
+      </dl>
     </article>
+
+    <article class="article js-observer js-scrollspy-section">
+      <h1 class="article-title">Bottom Navigation / --Bar?</h1>
+      <p class="article-description">모바일 환경에서의 글로벌 네비게이션.</p>
+
+      <section class="component-style">
+        <div class="tile-flat">
+          <nav class="bottombar">
+            <a href="#" class="bottombar-item is-active">
+              <figure class="bottombar-item-icon"><i class="icon-person"></i></figure>
+              <span class="bottombar-item-label">홈</span>
+              <em></em>
+            </a>
+            <a href="#" class="bottombar-item">
+              <figure class="bottombar-item-icon"><i class="icon-hamberger"></i></figure>
+              <span class="bottombar-item-label">카테고리</span>
+            </a>
+            <a href="#" class="bottombar-item">
+              <figure class="bottombar-item-icon"><i class="icon-person"></i></figure>
+              <span class="bottombar-item-label">설정</span>
+            </a>
+          </nav>
+        </div>
+      </section>
+
+      <ul>
+        <li>커머스 도매인에서 카테고리를 표시하기 위해 햄버거 아이콘을 사용하는데, 주로 왼쪽에 배치 됨.</li>
+        <li>todo 바텀 네비게이션과 햄버거 메뉴를 같이 사용할 수 있는 패턴을 따로 정의.</li>
+        <li>active 상태를 위해 filled 아이콘을 사용하면 추가적인 리소스 발생.</li>
+      </ul>
+
+      <!-- // iOS isTranslucent: Bool -->
+    </article>
+
+    
 
     <article class="article js-observer js-scrollspy-section component-column">
       <h1 class="article-title">Menu</h1>
-      <p class="article-description">다중 옵션의 목록. 모바일 친화적.</p>
+      <p class="article-description">다중 옵션의 목록. 모바일 친화적. tailing actions = chip/checkbox/switch. menuitem/listitem</p>
       <!-- <p class="article-description">사용자가 수행할 수 있는 행동(또는 링크) 목록.</p> -->
 
-      <button class="item js-darkmode" role="menuitem" data-size="medium" title="change theme">
-        <figure class="item-avatar" style="background-image:none;"><i class="icon-moon"></i></figure>
-        <span class="item-label">어둡게 보기</span>
-        <span class="switch" style="margin-left:auto;">
-          <input type="checkbox" id="temp55" name="" role="switch" />
-          <label for="temp55" style="padding-left:48px;"></label>
-        </span>
-      </button>
-      <hr />
-      <div class="item" data-size="medium" role="menuitem">
-        <figure class="item-avatar">🏹</figure>
-        <span class="item-label">entity와 구별</span>
-        <span class="item-tag" data-appearance="primary">새소식</span>
-      </div>
-      <hr />
-      <div class="checkbox menutype" data-size="medium">
-        <input type="checkbox" id="menutype1" name="gender" value="" checked />
-        <label for="menutype1" title="">
-          <figure class="item-avatar"></figure>
-          카카오뱅크
-        </label>
-      </div>
+      <section class="component-style">
+        <div class="tile-flat">
+          <button class="button-elevated" title="" style="margin-bottom:.25rem;">
+            <figure class="button-elevated-avatar">🦊</figure>
+            <span class="button-elevated-label">사진 및 동영상 백업</span>
+            <span class="switch" style="margin-left:auto;">
+              <input type="checkbox" id="temp123456" name="" role="switch" />
+              <label for="temp123456" style="padding-left:48px;"></label>
+            </span>
+          </button>
+          <small>Google 포토에 최대 해상도로 백업</small>
+          <hr />
+          <button class="item js-darkmode" role="menuitem" data-size="medium" title="change theme">
+            <figure class="item-avatar" style="background-image:none;"><i class="icon-moon"></i></figure>
+            <span class="item-label">어둡게 보기</span>
+            <span class="switch" style="margin-left:auto;">
+              <input type="checkbox" id="temp55" name="" role="switch" />
+              <label for="temp55" style="padding-left:48px;"></label>
+            </span>
+          </button>
+          <hr />
+          <div class="item" data-size="medium" role="menuitem">
+            <figure class="item-avatar">🏹</figure>
+            <span class="item-label">entity와 구별</span>
+            <span class="item-tag" data-appearance="primary">새소식</span>
+          </div>
+          <hr />
+          <div class="checkbox menutype" data-size="medium">
+            <input type="checkbox" id="menutype1" name="gender" value="" checked />
+            <label for="menutype1" title="">
+              <figure class="item-avatar"></figure>
+              카카오뱅크
+            </label>
+          </div>
+        </div>
+      </section>
 
-      <h4 class="article-subhead">Memo</h4>
       <ul>
+        <li>settings 페이지에서 사용할 때는 조금 달라짐. 1~2개의 메뉴아이템 vs </li>
         <li>액션 타입/링크 타입/토글 타입/선택 타입</li>
+        <li><b>icons</b> check/chevron(arrow) with text label</li>
         <li>dropdown에서의 형태(smaller)와 sheet/sidebar에서의 형태를 구분.</li>
-        <li>leading icon / tailing icon / badge. => props로 제공해도 되는 정보.</li>
         <li><b>presentations:</b> modal, dropdown, sheet, sidebar</li>
         <li><b>aligns:</b> vertical</li>
         <li>제목 isTruncated or 2줄.</li>
         <li>role=menuitem 속성에 display:flex;align-items:center. menu item는 description이 없는 entity 컴포넌트.</li>
         <li>entity. role=listitem</li>
+        <li>todo. check icon을 컴포넌트로 만들고 checkbox의 구조를 변경하기.</li>
       </ul>
-
-      <blockquote>
-        <p>todo. check icon을 컴포넌트로 만들고 checkbox의 구조를 변경하기.</p>
-      </blockquote>
-
-      <h4 class="article-subhead">Anatomy</h4>
-      <ul>
-        <li><b>avatar</b> optional</li>
-        <li><b>text label</b></li>
-        <li><b>icons</b> check/chevron(arrow) with text label</li>
-      </ul>
-
-      <h4 class="article-subhead">Features</h4>
-
-      <h4 class="article-subhead">Best practices</h4>
-      <ul></ul>
 
       <h4 class="article-subhead">Props</h4>
-
       <dl class="article-props">
         <dt>name</dt>
         <dd>string</dd>
@@ -1682,38 +1590,6 @@
       <a href="">checkbox</a>
       <span class="icon-bullet"></span>
       <a href="">radio</a>
-
-      <h4 class="article-subhead">Other cases</h4>
-    </article>
-
-    <article class="article js-observer js-scrollspy-section">
-      <h1 class="article-title">Bottom Navigation</h1>
-      <p class="article-description">모바일 환경에서의 글로벌 네비게이션.</p>
-
-      <nav class="bottombar">
-        <a href="#" class="bottombar-item is-active">
-          <figure class="bottombar-item-icon"><i class="icon-person"></i></figure>
-          <span class="bottombar-item-label">홈</span>
-          <em></em>
-        </a>
-        <a href="#" class="bottombar-item">
-          <figure class="bottombar-item-icon"><i class="icon-hamberger"></i></figure>
-          <span class="bottombar-item-label">카테고리</span>
-        </a>
-        <a href="#" class="bottombar-item">
-          <figure class="bottombar-item-icon"><i class="icon-person"></i></figure>
-          <span class="bottombar-item-label">설정</span>
-        </a>
-      </nav>
-
-      <h4 class="article-subhead">Memo</h4>
-      <ul>
-        <li>커머스 도매인에서 카테고리를 표시하기 위해 햄버거 아이콘을 사용하는데, 주로 왼쪽에 배치 됨.</li>
-        <li>todo 바텀 네비게이션과 햄버거 메뉴를 같이 사용할 수 있는 패턴을 따로 정의.</li>
-        <li>active 상태를 위해 filled 아이콘을 사용하면 추가적인 리소스 발생.</li>
-      </ul>
-
-      <!-- // iOS isTranslucent: Bool -->
     </article>
 
     
@@ -1786,8 +1662,6 @@
     </article> -->
     <!-- // Chris said Marcus replied -->
 
-
-    
 
     <article class="article js-observer js-scrollspy-section">
       <h1 class="article-title">Carousel</h1>
@@ -1904,18 +1778,6 @@
       <h1 class="article-title">Accordion / Details</h1>
       <p class="article-description">사용자의 필요에 따라 취사선택할 수 있도록 정보 목록을 요약합니다.</p>
 
-      <!-- <h4 class="article-subhead">Best practices</h4> -->
-      <ul>
-        <li>사용자가 반드시 숙지해야 하는 정보를 아코디언으로 요약해서 보여주지 마세요. (툴팁도)</li>
-        <li>heading은 한 문장으로 간결하게 작성하세요.</li>
-      </ul>
-
-      <blockquote>
-        <p>레거시 유아이. 자주묻는질문(FAQ) 정도 외에는 잘 쓰지 않음. 교육 도매인에서 커리큘럼 정도에서 보임. 간단한 콘텐츠 확장에는 모바일 친화적인 모달이나 시트를 사용함. </p>
-        <p>클릭 영역의 정의. 제목/제목+본문. 단, 아코디언이 활성화 상태일 때 본문을 클릭하여 닫을 수 있게 되면, 본문에 페이지 링크를 사용할 수 없음.</p>
-      </blockquote>
-
-
       <!-- <details class="details">
         <summary class="details-summary">써머리</summary>
         <p>안녕</p>
@@ -1926,7 +1788,6 @@
         <!-- <small>Find Your Answers</small> -->
         <h2 style="font-size:var(--font-size-title);" title="FAQs">궁금한 점이 있으신가요?</h2>
       </header>
-
       <section class="faq">
         <article class="accordion js-accordion" aria-expanded="false">
           <h3 class="accordion-title" role="button">
@@ -1949,14 +1810,26 @@
           </div>
         </article>
       </section>
+      <footer>
+        <p style="margin:var(--space-4) 0 0 0;">궁금증이 해결되지 않는다면? <a href="#">Get in touch with us.</a></p>
+      </footer>
 
-      <p style="margin:var(--space-4) 0 0 0;">궁금증을 해결하지 못하셨나요? <a href="#">Get in touch with us.</a></p>
+      <br />
+      
+      <ul>
+        <li>사용자가 반드시 숙지해야 하는 정보를 아코디언으로 요약해서 보여주지 마세요. (툴팁도)</li>
+        <li>heading은 한 문장으로 간결하게 작성하세요.</li>
+      </ul>
+
+      <blockquote>
+        <p>레거시 유아이. 자주묻는질문(FAQ) 정도 외에는 잘 쓰지 않음. 교육 도매인에서 커리큘럼 정도에서 보임. 간단한 콘텐츠 확장에는 모바일 친화적인 모달이나 시트를 사용함. </p>
+        <p>클릭 영역의 정의. 제목/제목+본문. 단, 아코디언이 활성화 상태일 때 본문을 클릭하여 닫을 수 있게 되면, 본문에 페이지 링크를 사용할 수 없음.</p>
+      </blockquote>
     </article>
 
-    
     <article class="article js-observer js-scrollspy-section">
       <h1 class="article-title">Result</h1>
-      <p class="article-description">실행 결과. 오류. 내용 없음. 케이스에 모두 사용할 수 있는.</p>
+      <p class="article-description">실행 결과. 오류. 내용 없음. 케이스에 모두 사용할 수 있는. + ErrorFallback</p>
 
       <aside class="article-aka">
         <span class="tag">a.k.a.</span>
@@ -1975,6 +1848,13 @@
         <a class="empty-action" href="#">주문내역 보기</a>
       </section>
 
+      <br />
+
+      <ul>
+        <li>왼쪽 정렬의 기본적인 텍스트 모듈과 대비를 위해 가운데 정렬합니다.</li>
+        <li>페이지 레벨과 섹션 레벨의 empty, error, complete 상황에서 사용합니다.</li>
+      </ul>
+
       <h4 class="article-subhead">Props</h4>
       <dl>
         <dt>src<abbr>?</abbr></dt>
@@ -1990,12 +1870,6 @@
         <dt>secondaryActionLabel<abbr>?</abbr></dt>
         <dd>string</dd>
       </dl>
-
-      <h4 class="article-subhead">Best practices</h4>
-      <ul>
-        <li>왼쪽 정렬의 기본적인 텍스트 모듈과 대비를 위해 가운데 정렬합니다.</li>
-        <li>페이지 레벨과 섹션 레벨의 empty, error, complete 상황에서 사용합니다.</li>
-      </ul>
     </article>
 
     <article class="article js-observer js-scrollspy-section">
@@ -2011,83 +1885,51 @@
         <span class="hashtag" title="">Modal</span>
       </aside>
 
-      <aside class="dialog" role="alertdialog" aria-modal="true" aria-labelledby="dialog-title" aria-describedby="dialog-description">
-        <!-- <header class="dialog-head">
-          <h2 class="dialog-head-title">제목</h2>
-          <button class="dialog-close js-close" style="position:relative;right:auto;top:auto;" aria-label="delete"><i class="icon-x"></i></button>
-        </header>
-        <div class="dialog-body"></div> -->
-        <h1 class="dialog-title" id="dialog-title">부끄러우니까 보지마요!</h1>
-        <p class="dialog-description" id="dialog-description">다이얼로그 디스크립션입니다.</p>
-        <footer class="dialog-footer">
-          <button class="dialog-footer-confirm">안 볼래요</button>
-          <button class="dialog-footer-cancel">볼래요</button>
-        </footer>
-        <button class="dialog-close js-close" aria-label="delete"><i class="icon-x"></i></button>
-      </aside>
-
-      <h4 class="article-subhead">Props</h4>
-      <table>
-        <caption hidden>
-          Table Caption
-        </caption>
-        <tbody role="rowgroup">
-          <tr role="row">
-            <th scope="row" style="font-weight:var(--font-weight-bold);color:var(--color-text);">name</th>
-            <th style="font-weight:var(--font-weight-bold);color:var(--color-text);">type</th>
-          </tr>
-          <tr role="row">
-            <th scope="row">title</th>
-            <td>string</td>
-          </tr>
-          <tr role="row">
-            <th scope="row">description<abbr>?</abbr></th>
-            <td>string</td>
-          </tr>
-          <tr role="row">
-            <th scope="row">DialogFooter</th>
-            <td>
-              React.Node - ButtonGroup
-              <p>또는 label</p>
-            </td>
-          </tr>
-          <tr role="row">
-            <th scope="row">primaryActionLabel<abbr>?</abbr></th>
-            <td>string</td>
-          </tr>
-          <tr role="row">
-            <th scope="row">secondaryActionLabel<abbr>?</abbr></th>
-            <td>string | '취소?'</td>
-          </tr>
-          <tr role="row">
-            <th scope="row">onSubmit</th>
-            <td>function()</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <h4 class="article-subhead">Best practices</h4>
+      <section class="component-style">
+          <aside class="dialog" role="alertdialog" aria-modal="true" aria-labelledby="dialog-title" aria-describedby="dialog-description">
+            <!-- <header class="dialog-head">
+              <h2 class="dialog-head-title">제목</h2>
+              <button class="dialog-close js-close" style="position:relative;right:auto;top:auto;" aria-label="delete"><i class="icon-x"></i></button>
+            </header>
+            <div class="dialog-body"></div> -->
+            <h1 class="dialog-title" id="dialog-title">부끄러우니까 보지마요!</h1>
+            <p class="dialog-description" id="dialog-description">다이얼로그 디스크립션입니다.</p>
+            <footer class="dialog-footer">
+              <button class="dialog-footer-confirm">안 볼래요</button>
+              <button class="dialog-footer-cancel">볼래요</button>
+            </footer>
+            <button class="dialog-close js-close" aria-label="delete"><i class="icon-x"></i></button>
+          </aside>
+      </section>
+      
       <ul>
         <li>레이어를 2개 이상 쌓지 마세요..</li>
+        <li>버튼의 레이블은 다이얼로그 제목의 동사와 페어링합니다.</li>
         <li>memo: dialog의 구조: header/body/footer 단순 다이얼로그는 복잡한 구조가 필요 없지만.</li>
         <li>memo: dim엘리먼트 클릭 시 모달을 닫으면 리액트에서 구현이 쉬움</li>
         <li>memo: with buttonGroup(+ props)</li>
-      </ul>
-
-      <h4 class="article-subhead">Editing checklist</h4>
-      <ul>
-        <li>버튼의 레이블은 다이얼로그 제목의 동사와 페어링합니다.</li>
-      </ul>
-
-      <h4 class="article-subhead">anatomy</h4>
-      <div class="article-anatomy">
         <span class="article-anatomy-item"><b>dialog</b> role aria-labelledby aria-describedby</span>
-        <span class="article-anatomy-item is-nested">title</span>
-        <span class="article-anatomy-item is-nested">description <small class="is-optional">optional</small></span>
         <span class="article-anatomy-item is-nested"
           >buttonGroup theme="unary(confirm) | binary(cancel/confirm) <small class="is-optional">optional</small></span
         >
-      </div>
+      </ul>
+
+      <h4 class="article-subhead">Props</h4>
+      <dl>
+        <dt scope="row">title</dt>
+        <dd>string</dd>
+        <dt scope="row">description<abbr>?</abbr></th>
+        <dd>string</dd>
+        <dt>
+          React.Node - ButtonGroup 또는 label
+        </dt>
+        <dt scope="row">primaryActionLabel<abbr>?</abbr></dt>
+        <dd>string</dd>
+        <dt scope="row">secondaryActionLabel<abbr>?</abbr></dt>
+        <dd>string | '취소?'</dd>
+        <dt scope="row">onSubmit</dt>
+        <dd>function()</dd>
+      </dl>
     </article>
 
     <article class="article js-observer js-scrollspy-section">
@@ -2102,6 +1944,20 @@
         <span class="hashtag" title="">Banner</span>
         <span class="hashtag" title="">Information</span>
       </aside>
+
+      <section class="component-style">
+        <div class="tile-flat">
+          <p role="alert" style="color:var(--red800);">비밀번호가 일치하지 않습니다.</p>
+          <aside class="alert">
+            <span class="alert-icon">🧡</span>
+            <p class="alert-text">좋아요 표시한 동영상에 추가됨</p>
+          </aside>
+          <aside class="alert" data-temp="danger">
+            <p class="alert-text" style="color:var(--gray0);">인터넷에 연결되어 있지 않습니다.</p>
+            <!-- <button class="alert-close" aria-label="close alert"><i class="icon-x"></i></button> -->
+          </aside>
+        </div>
+      </section>
       <!-- <ul>
         <li>브라우저가 role="alert" 속성이 있는 요소를 발견 하면 즉시 사용자에게 경고 내용을 읽습니다.</li>
         <li>( + 게임에서 파티 탈퇴와 같이 직접 실행하지 않은, 시간을 특정하기 힘든 연속적인... 경우 여러 개가 필요하구나.)</li>
@@ -2118,11 +1974,9 @@
         <li>사용자의 귀책이 아닌 경우, 단순 "오류" 대신 "시스템 오류"와 같은 용어를 사용하여 사용자가 잘못한 것처럼 느끼지 않도록 합니다.</li>
         <li>Don't show more than one at a time.</li>
         <li>사라지는 시간을 정의.</li>
-      </ul>
-
-      <h4 class="article-subhead">Editing checklist</h4>
-      <ul>
         <li>최대 2문장.</li>
+        <p role="alert">Inform (todo) 느낌표 아이콘 + 디스크립션 형태</p>
+        <li>toast / inline</li>
       </ul>
       <!-- Icon: Informs users of the kind of notification at a glance.
       Title: Gives users a quick overview of the notification.
@@ -2140,35 +1994,8 @@
           <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus.
         </p>
       </aside> -->
-
-      <h6 class="article-subhead">Inline</h6>
-      <p role="alert" style="color:var(--red800);">비밀번호가 일치하지 않습니다.</p>
-
-      <h6 class="article-subhead">Inform (todo)</h6>
-      <p role="alert">느낌표 아이콘 + 디스크립션 형태</p>
-
-      <h6 class="article-subhead">Boxed with Toast</h6>
-      <aside class="alert">
-        <span class="alert-icon">🧡</span>
-        <p class="alert-text">좋아요 표시한 동영상에 추가됨</p>
-      </aside>
-      <aside class="alert" data-temp="danger">
-        <p class="alert-text" style="color:var(--gray0);">인터넷에 연결되어 있지 않습니다.</p>
-        <!-- <button class="alert-close" aria-label="close alert"><i class="icon-x"></i></button> -->
-      </aside>
     </article>
    
-    </section>
-      <!-- <article class="article js-observer js-scrollspy-section">
-        <h1 class="article-title">Warning Box</h1>
-        <p class="article-description">
-          유의사항 등. 이벤트 페이지 등의 최하단에 주로 사용. text list.
-        </p>
-        <h6 class="article-subhead">Best practices</h6>
-        <ul>
-          <li>전환을 위한 핵심 콘텐츠는 아니기 때문에 background-strong 등의 강조된 형태를 사용하지 마세요.</li>
-        </ul>
-      </article> -->
   
       <!-- <article class="article js-observer js-scrollspy-section">
         <h1 class="article-title">Bullet</h1>
@@ -2285,13 +2112,10 @@
           <b class="product-info-price-insertion" role="insertion">₩ 20,000</b>
           <em class="product-info-price-percentage">(30%)</em>
         </div>
-        <aside class="article-helper" style="margin:var(--space-2) 0 0 0;">
-          <p>role=suggestion/deletion/insertion]</p>
-        </aside>
-  
-        <h6 class="article-subhead">Best practices</h6>
+        
         <ul>
-          <li>formattedCurrency()</li>
+          <li>formatCurrency()</li>
+          <li>role=suggestion/deletion/insertion]</p>
         </ul>
       </article>
   </section>
