@@ -2,14 +2,15 @@
 .design {}
 // todo tokens
 
-.article {max-width:640px;padding:4rem var(--grid-margin);overflow:hidden;position:relative;}
+.article {padding:4rem var(--grid-margin);overflow:hidden;position:relative;}
 .article + .article {padding-top:6rem;}
 .article-aka {@include tag-group;align-items:center;margin:var(--space-4) 0;font-size:var(--font-size-small);}
 .article-aka .hashtag:before {content:'';}
 .article-aka .tag {margin-right:var(--space-3);}
-.article-title {margin:0 0 var(--space-after-title) 0;@include text-title;}
+.article-title {@include text-title;}
+.article-description {margin:0 0 2rem;@include text-title;}
+
 .article-subhead {margin:3rem 0 var(--space-3);@include text-subhead;}
-.article-description {margin:0 0 2rem;font-size:16px;}
 // border-top:var(--border);border-bottom:var(--border);
 .article > .hashtag {margin:0 .25rem 0 0;font-size:var(--font-size-caption);}
 

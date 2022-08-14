@@ -6,72 +6,71 @@
   <!-- <p class="hero-description">크게 action와 link로 나눈다.</p> -->
   <!-- </section> -->
 
-  <section class="component-style component-column">
-    <article class="tile-flat" style="display:flex;">
-      <figure class="item-avatar" data-size="huge" title="huge avatar" style="width:var(--size-huge);height:var(--size-huge);border:none;">
-        <span class="avatar-badge"></span>
-      </figure>
-      <figure class="item-avatar" data-size="large" title="large avatar">
-        <span class="avatar-badge"></span>
-      </figure>
-      <figure class="item-avatar" data-size="medium" style="width:var(--size-medium);height:var(--size-medium);background-image:none;">
-        수
-      </figure>
-      <figure
-        class="item-avatar"
-        data-size="small"
-        title="small avatar"
-        style="width:var(--size-small);height:var(--size-small);background-image:none;"
-      >
-        <i class="icon-x"></i>
-      </figure>
-    </article>
-    <div class="tile-flat" style="margin-top:var(--space-2);">
-      <article class="item" data-size="huge">
-        <figure class="item-avatar">
-          <span class="avatar-badge"></span>
-        </figure>
-        <h3 class="item-name">Entity huge</h3>
-        <p class="item-description">description area.</p>
-        <span>description area2.</span>
-      </article>
-      <article class="item" data-size="large">
-        <figure class="item-avatar"></figure>
-        <h3 class="item-name">Entity large</h3>
-        <p class="item-description">description area.</p>
-      </article>
-      <article class="item" data-size="medium" style="display:flex;align-items:center;">
-        <figure class="item-avatar"></figure>
-        <h3 class="item-name" style="font-weight:var(--font-weight-normal);">Entity medium</h3>
-        <time style="margin:0 0 0 var(--space-2);color:var(--color-text-light);">36.4만</time>
-        <!-- <button class="item-delete"><i class="icon-x"></i></button> -->
-      </article>
-      <article class="item" data-size="small">
-        <figure class="item-avatar"></figure>
-        <h3 class="item-name" style="font-weight:var(--font-weight-normal);">Entity small</h3>
-      </article>
-    </div>
-    <div class="tile-flat" style="display:flex;margin-top:var(--space-2);">
-      <a class="person" href="#">
-        <!-- <span class="person-test">Cast</span> -->
-        <figure>
-          <img src="https://source.unsplash.com/random" alt="" />
-        </figure>
-        <span class="person-name">name</span>
-      </a>
-    </div>
-  </section>
-
-  <article class="article js-observer js-scrollspy-section component-column">
+  <article class="article js-observer js-scrollspy-section">
     <h1 class="article-title">Avatars</h1>
     <p class="article-description">개체(유저, 회사, 프로젝트 등)를 대표하는 시각 정보입니다.</p>
+    <div class="component-style">
+      <article class="tile-flat" style="display:flex;">
+        <figure class="item-avatar" data-size="huge" title="huge avatar" style="width:var(--size-huge);height:var(--size-huge);border:none;">
+          <span class="avatar-badge"></span>
+        </figure>
+        <figure class="item-avatar" data-size="large" title="large avatar">
+          <span class="avatar-badge"></span>
+        </figure>
+        <figure class="item-avatar" data-size="medium" style="width:var(--size-medium);height:var(--size-medium);background-image:none;">
+          수
+        </figure>
+        <figure
+          class="item-avatar"
+          data-size="small"
+          title="small avatar"
+          style="width:var(--size-small);height:var(--size-small);background-image:none;"
+        >
+          <i class="icon-x"></i>
+        </figure>
+      </article>
+      <div class="tile-flat" style="margin-top:var(--space-2);">
+        <article class="item" data-size="huge">
+          <figure class="item-avatar">
+            <span class="avatar-badge"></span>
+          </figure>
+          <h3 class="item-name">Entity huge</h3>
+          <p class="item-description">description area.</p>
+          <span>description area2.</span>
+        </article>
+        <article class="item" data-size="large">
+          <figure class="item-avatar"></figure>
+          <h3 class="item-name">Entity large</h3>
+          <p class="item-description">description area.</p>
+        </article>
+        <article class="item" data-size="medium" style="display:flex;align-items:center;">
+          <figure class="item-avatar"></figure>
+          <h3 class="item-name" style="font-weight:var(--font-weight-normal);">Entity medium</h3>
+          <time style="margin:0 0 0 var(--space-2);color:var(--color-text-light);">36.4만</time>
+          <!-- <button class="item-delete"><i class="icon-x"></i></button> -->
+        </article>
+        <article class="item" data-size="small">
+          <figure class="item-avatar"></figure>
+          <h3 class="item-name" style="font-weight:var(--font-weight-normal);">Entity small</h3>
+        </article>
+      </div>
+      <div class="tile-flat" style="display:flex;margin-top:var(--space-2);">
+        <a class="person" href="#">
+          <!-- <span class="person-test">Cast</span> -->
+          <figure>
+            <img src="https://source.unsplash.com/random" alt="" />
+          </figure>
+          <span class="person-name">name</span>
+        </a>
+      </div>
+    </div>
 
     <ul>
       <li>현재 이 컴포넌트가 썸네일 카드의 역할까지 하는 상황. 참고 profile 페이지의 display button.</li>
+      <li>아바타를 조합하는 대표적인 형태의 컴포넌트를 entity로 명명하고 한시적으로 avatar와 함께 가이드한다.</li>
     </ul>
 
-    <h2 class="article-subhead">Features</h2>
-    <p style="margin:0 0 1rem 0;">아바타를 조합하는 대표적인 형태의 컴포넌트를 entity로 명명하고 한시적으로 avatar와 함께 가이드한다.</p>
+    <!-- <h2 class="article-subhead">Features</h2> -->
     <ul>
       <li>
         <b>clickable.</b>

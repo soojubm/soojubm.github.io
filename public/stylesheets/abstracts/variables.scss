@@ -278,3 +278,10 @@ $transition-fade: opacity 0.15s linear;
     input[type=checkbox][role=switch] + label::after {background:#fff;}
   }
 }
+
+
+@media (--breakpoint-small) {
+  :root {
+    --font-size-huge: 1.5rem;
+  }
+}

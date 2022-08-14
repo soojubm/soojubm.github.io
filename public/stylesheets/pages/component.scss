@@ -1,16 +1,18 @@
 
 .component {}
-.component-style {height:100vh;margin-top:calc(var(--titlebar-height) * -1);padding:calc(4rem + var(--titlebar-height)) var(--grid-margin);background-color:var(--color-primary);position:sticky;top:0;
+// .component-style {margin-top:calc(var(--titlebar-height) * -1);padding:calc(4rem + var(--titlebar-height)) var(--grid-margin);background-color:var(--color-primary);position:sticky;top:0;
+.component-style {margin:3rem -5vw;padding:2rem var(--grid-margin);background-color:var(--color-primary);position:sticky;top:0;
+  
+  border-radius: var(--radius);
   background: #159957;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to bottom, #155799, #159957);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to bottom, #155799, #159957); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
 }
 .component-style .tile-flat {width:100%;max-width:640px;margin:.375rem auto;}
 
-.component-row {display:flex;}
-.component-column {width:50%;box-sizing:border-box;}
-.component-column + .component-column {box-sizing:content-box;}
+// .component-row {display:flex;}
+// .component-column {width:50%;box-sizing:border-box;}
+// .component-column + .component-column {box-sizing:content-box;}
 
 .component-navigation {background:var(--color-background);padding-left:var(--grid-margin);overflow:hidden;position:sticky;top:calc(var(--titlebar-height));z-index:7;}
 // .component-navigation-background {@include bleeding;border-bottom:var(--border);}
@@ -23,12 +25,12 @@
   // .component-navigation-scroll {margin:0 var(--grid-margin-minus);padding:0 var(--grid-margin);}
 }
 
-@media (--breakpoint-small), (max-height: 800px) {
-  .component-row {display:block;}
-  .component-column {width:100%;}
-  .component-column + .component-column {max-width:calc(640px + var(--grid-margin) * 2);margin:0 auto;box-sizing:border-box;}
-  .component-style {height:auto;padding-bottom:4rem;position:relative;}
-}
+// @media (--breakpoint-small), (max-height: 800px) {
+//   .component-row {display:block;}
+//   .component-column {width:100%;}
+//   .component-column + .component-column {max-width:calc(640px + var(--grid-margin) * 2);margin:0 auto;box-sizing:border-box;}
+//   .component-style {height:auto;padding-bottom:4rem;position:relative;}
+// }
 
 .sds-component {max-width:720px;margin:4rem auto;font-size:16px;font-family:sans-serif;}
 .sds-component-title {margin:var(--space-4) 0 0 0;@include text-title;}
