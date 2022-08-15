@@ -1,5 +1,5 @@
 .tokens {}
-.tokens .article {max-width:1000px;}
+// .tokens .article {max-width:1000px;}
 
 // todo page-padding / header-padding. minus
 .token-group {display:flex;flex-wrap:wrap;margin:0 calc(var(--space-3) / 2 * -1);}
@@ -17,7 +17,7 @@
 .token-navigation {}
 .token-navigation a {display:block;align-items:center;padding:var(--space-4);color:var(--color-text);}
 
-.token-item {@include tile-flat;width:100%;max-width:calc(50% - var(--space-3));margin:calc(var(--space-3) / 2);overflow:hidden;}
+.token-item {@include tile-flat;width:100%;max-width:calc(20% - var(--space-3));margin:calc(var(--space-3) / 2);overflow:hidden;}
 .token-item-avatar {@include avatar-large;width:100%;margin:0 0 var(--space-2);}
 .token-item b {display:block;font-weight:var(--font-weight-normal);}
 .token-item > div {margin:0 0 var(--space-05) 0;}

@@ -139,6 +139,12 @@
 // .navbar-menu-item:hover menu {display:block;}
 .navbar-menu-item menu a {display:block;width:100%;font-size:var(--font-size-subhead);font-weight:var(--font-weight-bold);opacity:1;}
 
+.navbar-menu::-webkit-scrollbar {width:.5rem;height:auto;padding:.125rem;}
+.navbar-menu::-webkit-scrollbar-track {background:inherit;}
+.navbar-menu::-webkit-scrollbar-thumb {margin:.125rem;background:var(--color-background-weak);border-radius:var(--radius);}
+.navbar-menu::-webkit-scrollbar-button {display:none;background-color:inherit;}
+.navbar-menu::-webkit-scrollbar-corner {background-color:inherit;}
+
 
 // is-active => is-opened-menu
 .is-opened-menu .navbar-menu {transform:translateX(0);z-index:9;overflow-y:auto;}

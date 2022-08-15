@@ -61,9 +61,9 @@ prominent또는 pronounced더 눈에 띄는
     <article class="article js-scrollspy-section">
       <h1 class="article-title">Palette</h1>
       <p class="article-description">color(background/border/text/state). surface(shadow/radius). system: error / success / warning / info</p>
-      <h4 class="article-subhead">Best practices</h4>
       <ul>
         <li>다크테마를 위한 인버트 컬러셋을 별도로 정의하지 않습니다. 하나의 컬러셋으로 다양한 테마 또는 커스텀 유아이에 대응할 수 있어야 합니다.</li>
+        <li>크기와 비례해서 radius 조절이 필요하지만 경량화.</li>
       </ul>
       <button class="button-elevated js-darkmode" title="change theme" style="background:var(--color-background);border-radius:var(--radius);box-shadow:var(--shadow);padding:.5rem;border:var(--border);">
         <figure class="button-elevated-avatar"><i class="icon-moon"></i></figure>
@@ -75,9 +75,6 @@ prominent또는 pronounced더 눈에 띄는
       </button>
 
       <h4 class="article-subhead">Surfaces</h4>
-      <ul>
-        <li>크기와 비례해서 radius 조절이 필요하지만 경량화.</li>
-      </ul>
       <div class="token-group">
         <article class="token-item is-gray000">
           <figure class="token-item-avatar" style="border:4px solid var(--color-text-light);border-bottom-right-radius:0;border-bottom-left-radius:0;border-top-right-radius:0;border-right:var(--border);border-bottom:var(--border);">
@@ -196,7 +193,6 @@ prominent또는 pronounced더 눈에 띄는
     <article class="article typography js-scrollspy-section">
       <h1 class="article-title">Typography</h1>
 
-      <h4 class="article-subhead">Best practices</h4>
       <ul>
         <li>단어나 구문을 underline, bold, primary color로 강조하지 않습니다.</li>
         <li>불릿, 괄호, 쉼표 등으로 텍스트를 분류하지 않습니다. 디자인하지 않았다는 인상.</li>
@@ -292,7 +288,6 @@ prominent또는 pronounced더 눈에 띄는
 
     <article class="article js-scrollspy-section">
       <h1 class="article-title">Sizing</h1>
-      <h4 class="article-subhead">Best practices</h4>
       <ul>
         <li>정의한 토큰과 같은 값이라도 독립적으로 사용하는 것이 좋은 케이스. (todo 근거)
           <p><del>--navbar-height: var(--size-huge)</del></p>
@@ -351,7 +346,6 @@ prominent또는 pronounced더 눈에 띄는
     <article class="article js-scrollspy-section">
       <h1 class="article-title">Spacing</h1>
 
-      <h4 class="article-subhead">Best practices</h4>
       <ul>
         <li>1을 .25rem으로 정의합니다.</li>
         <li>버튼 padding은 spacing으로 정의하지 않고 size로 정의합니다. 단, 버튼 레이블을 두 줄로 작성하지 않는다는 전제가 필요.</li>
@@ -435,7 +429,6 @@ prominent또는 pronounced더 눈에 띄는
         <dt>medium</dt><dd>필수. 1080px 이하</dd>
         <dt>large</dt><dd>선택. > 1380 이하</dd>
       </dl> -->
-      <h4 class="article-subhead">Best practices</h4>
       <ul>
         <li>섹션, 아티클 그리고 모달, 드롭다운 등의 컴포넌트도 작은 화면에서는 페이지 맥락이 될 수 있음을 고려합니다.</li>
         <li>모바일 퍼스트, 가로 스크롤 트랜드 기조로 12 column grid 등 엄격한 그리드 시스템을 정의하지 않습니다.</p>
@@ -517,7 +510,6 @@ prominent또는 pronounced더 눈에 띄는
     <article class="article js-scrollspy-section">
       <h1 class="article-title">Positioning</h1>
       
-      <h4 class="article-subhead">Best practices</h4>
       <ul>
         <li>z-index를 보전하기 위해 static이 아닌 relative로 초기화.</li>
       </ul>
@@ -538,17 +530,12 @@ prominent또는 pronounced더 눈에 띄는
         </div>
         <div class="token-item">
           <b>@mixin position-root-bottom</b>
-          <div>
-            <p>bottom:calc(constant(safe-area-inset-bottom) + var(--space-3));</p>
-            <p>bottom:calc(env(safe-area-inset-bottom) + var(--space-3));</p>
-          </div>
         </div>
       </div>
     </article>
 
     <article class="article js-scrollspy-section">
       <h1 class="article-title">z-index</h1>
-      <h4 class="article-subhead">Best practices</h4>
       <ul>
         <li>memo. 툴팁은 햄버거 메뉴에서 열릴 수 있다. 팝오버는 메뉴에서 열릴 수 있다. 모달은 메뉴보다 위에 있다. 토스트는 가장 위에 있다. 스티키 엘리먼트는 메뉴와 동일하지만 마이너스 마진이 필요할 수 있다.</li>
       </ul>
@@ -591,6 +578,9 @@ prominent또는 pronounced더 눈에 띄는
     <article class="article js-scrollspy-section">
       <h1 class="article-title">Animation</h1>
       <!-- <h4 class="article-subhead">Timing / Duration / Delay</h4> -->
+      <ul>
+        <li>inactive로 전환 시 instant</li>
+      </ul>
       <div class="token-group">
         <div class="token-item">
           <p><b>--bazier-base: cubic-bezier(0.455, 0.03, 0.515, 0.955)</b></p>
@@ -600,7 +590,6 @@ prominent또는 pronounced더 눈에 띄는
           <p>--duration-quick: .2s</p>
           <p>--duration-slow: .8s</p>
           <p>--duration-instant: 0s</p>
-          <p>inactive로 전환 시 instant.</p>
         </div>
         <div class="token-item">
           <div class="" style="display:flex;">
@@ -628,7 +617,7 @@ prominent또는 pronounced더 눈에 띄는
       <p class="article-description">일관된 기표는 사용자가 다음에 일어날 일을 예측하기 쉽게 합니다.</p>
   
       <a href="https://developer.apple.com/design/human-interface-guidelines/components/layout-and-organization/disclosure-controls">disclosure-controls</a>
-      <h4 class="article-subhead">Best practices</h4>
+      
       <ul>
         <li>Plus icon을 expandable로 사용하지 마세요.</li>
         <li>Bold text를 clickable로 사용하지 마세요. (참고. 단락 더 보기)</li>

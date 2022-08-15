@@ -9,6 +9,7 @@
 .article-aka .tag {margin-right:var(--space-3);}
 .article-title {@include text-title;}
 .article-description {margin:0 0 2rem;@include text-title;}
+.article ul:not[data-horizontal] {margin:2rem 0;}
 
 .article-subhead {margin:3rem 0 var(--space-3);@include text-subhead;}
 // border-top:var(--border);border-bottom:var(--border);
@@ -223,8 +224,8 @@
 .is-active .accordion-title-icon {transform:rotate(180deg)}
 // [aria-expanded=true] + .accordion-panel {}
 
-.design-head {max-width: 1000px;margin: 0 auto;padding:0 var(--grid-margin);background:var(--color-background);text-align:center;position:relative;}
-.design header h1 {@include text-title;font-size:2.75rem;}
+.design-head {padding:0 var(--grid-margin);background:var(--color-background);position:relative;}
+.design header h1 {@include text-title;}
 
 .design-navigation {
   overflow: hidden;

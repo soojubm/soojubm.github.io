@@ -8,8 +8,10 @@
 }
 
 // todo..
-.component-style .tile-flat,
-.component-style .tile-elevated, .component-style .tile-flat-small {width:100%;max-width:640px;margin:.375rem auto;}
+.component-style > .tile-flat,
+.component-style > .tile-elevated, .component-style > .tile-flat-small {width:100%;max-width:640px;
+  margin:.75rem 0;
+}
 
 // .component-row {display:flex;}
 // .component-column {width:50%;box-sizing:border-box;}

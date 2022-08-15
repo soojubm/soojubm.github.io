@@ -120,13 +120,13 @@
 
   <section class="profile-body js-tab">
     <nav class="profile-tablist" role="tablist">
-      <button class="profile-tablist-tab" role="tab" name="project" aria-selected="true">
+      <button class="profile-tablist-tab" role="tab" name="project" aria-selected="true" data-index="1">
         <span class="profile-tablist-tab-label">프로젝트</span>
       </button>
-      <button class="profile-tablist-tab" role="tab" name="case-study" aria-selected="false">
+      <button class="profile-tablist-tab" role="tab" name="case-study" aria-selected="false" data-index="2">
         <span class="profile-tablist-tab-label">두 번째 탭</span>
       </button>
-      <button class="profile-tablist-tab" role="tab" name="blank" aria-selected="false">
+      <button class="profile-tablist-tab" role="tab" name="blank" aria-selected="false" data-index="3">
         <span class="profile-tablist-tab-label">빈 상태</span>
       </button>
       <i class="profile-tablist-indicator"></i>
@@ -166,7 +166,7 @@
       </div> -->
     </div>
 
-    <section class="profile-tabpanel" href="#newneek" role="tabpanel" aria-hidden="false" data-index="1">
+    <section class="profile-tabpanel" role="tabpanel" aria-hidden="false" data-index="1">
       <a class="profile-tabpanel-item card js-modal" href="#woolf" data-modal="woolf">
         <figure class="card-thumbnail"></figure>
         <h3 class="card-title">이도타입</h3>
@@ -235,7 +235,7 @@
       </a>
     </section>
 
-    <section class="profile-tabpanel" hidden role="tabpanel" aria-hidden="true" data-index="3">
+    <section class="profile-tabpanel" hidden role="tabpanel" aria-hidden="true" data-index="2">
       <a class="card js-modal" href="#" data-modal="flat_sitemap">
         <figure class="card-thumbnail"></figure>
         <h3 class="card-title">Flat Sitemap</h3>
@@ -243,13 +243,13 @@
       </a>
     </section>
 
-    <section class="profile-tabpanel" hidden role="tabpanel" aria-hidden="true" data-index="4">
-      <section class="empty">
+    <section class="profile-tabpanel" hidden role="tabpanel" aria-hidden="true" data-index="3">
+      <div class="empty">
         <i class="empty-icon">🧟</i>
         <h1 class="empty-title">아직 새 글이 없어요.</h1>
         <p class="empty-description">포트폴리오를 업로드하여<br />수줍이님을 알려보세요.</p>
         <a class="empty-action" href="#">업로드</a>
-      </section>
+      </div>
     </section>
   </section>
 </main>

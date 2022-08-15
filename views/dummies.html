@@ -1,5 +1,4 @@
 <main class="component" style="overflow:hidden;">
-  
   <section class="hero" role="banner">
     <!-- <div class="hero-background"></div> -->
     <!-- <span class="hero-eyebrow">Components</span> -->
@@ -8,12 +7,16 @@
     <p class="hero-description">내용없음.</p>
   </section>
 
-
-  <div>
-    <!-- 홈/자산/혜택 ------ 전체 -->
-  </div>
-
   <section class="component-body" style="padding:2rem var(--grid-margin);">
+
+
+    <div class="sorting" style="position:relative;display:flex;">
+      <label class="" for="select2" style="margin:0 var(--space-2) 0 0;">Sort by</label>
+      <select class="" id="select2" style="background:none;border:none;padding:0 var(--space-3) 0 0;font:inherit;color:var(--color-text);">
+        <option class="select-option" value="select-option1">최신순</option>
+      </select>
+      <span class="selectbox-indicator" role="img" style="background:var(--color-background-weak);position:relative;right:auto;top:auto;"><i class="icon-caret"></i></span>
+    </div>
 
     <div
     class="warningbox"
@@ -722,45 +725,41 @@
         <p>css속성으로 -webkit-appearance: slider-vertical slider 속성 값을 사용하기 때문에 slider는 carousel로 명명. input type="range" 형태를 stepper로 명명하는 경우가 있음.</p>
       </blockquote> -->
 
-      <div class="token-item" style="padding:var(--space-4);">
-        <section class="step">
-          <div class="step-item is-active">
-            <span class="step-item-icon">1</span>
-            <h3 class="step-item-title">장바구니</h3>
-            <p class="step-item-description">대통령은 국가의 원수이며, 외국에 대하여 국가를 대표한다. 국가원로자문회의의 조직·직무범위 기타 필요한 사항은 법률로 정한다. 국가는 대외무역을 육성하며, 이를 규제·조정할 수 있다.</p>
-          </div>
-          <div class="step-item">
-            <span class="step-item-icon">2</span>
-            <h3 class="step-item-title">결제</h3>
-          </div>
-          <!-- <div class="step-space">
-            <span class="step-space-dot"></span>
-            <span class="step-space-dot"></span>
-            <span class="step-space-dot"></span>
-          </div> -->
-          <div class="step-item">
-            <span class="step-item-icon">3</span>
-            <h3 class="step-item-title">주문완료</h3>
-          </div>
-        </section>
-      </div>
+      <section class="step">
+        <div class="step-item is-active">
+          <span class="step-item-icon">1</span>
+          <h3 class="step-item-title">장바구니</h3>
+          <p class="step-item-description">대통령은 국가의 원수이며, 외국에 대하여 국가를 대표한다. 국가원로자문회의의 조직·직무범위 기타 필요한 사항은 법률로 정한다. 국가는 대외무역을 육성하며, 이를 규제·조정할 수 있다.</p>
+        </div>
+        <div class="step-item">
+          <span class="step-item-icon">2</span>
+          <h3 class="step-item-title">결제</h3>
+        </div>
+        <!-- <div class="step-space">
+          <span class="step-space-dot"></span>
+          <span class="step-space-dot"></span>
+          <span class="step-space-dot"></span>
+        </div> -->
+        <div class="step-item">
+          <span class="step-item-icon">3</span>
+          <h3 class="step-item-title">주문완료</h3>
+        </div>
+      </section>
 
-      <div class="token-item" style="padding:var(--space-4);">
-        <section class="step is-vertical">
-          <div class="step-item is-active">
-            <span class="step-item-icon">1</span>
-            <h3 class="step-item-title">장바구니</h3>
-          </div>
-          <div class="step-item">
-            <span class="step-item-icon">2</span>
-            <h3 class="step-item-title">결제</h3>
-          </div>
-          <div class="step-item">
-            <span class="step-item-icon">3</span>
-            <h3 class="step-item-title">주문완료</h3>
-          </div>
-        </section>
-      </div>
+      <section class="step is-vertical">
+        <div class="step-item is-active">
+          <span class="step-item-icon">1</span>
+          <h3 class="step-item-title">장바구니</h3>
+        </div>
+        <div class="step-item">
+          <span class="step-item-icon">2</span>
+          <h3 class="step-item-title">결제</h3>
+        </div>
+        <div class="step-item">
+          <span class="step-item-icon">3</span>
+          <h3 class="step-item-title">주문완료</h3>
+        </div>
+      </section>
 
     </article>
   </section>
