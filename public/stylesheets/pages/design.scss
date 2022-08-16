@@ -9,7 +9,7 @@
 .article-aka .tag {margin-right:var(--space-3);}
 .article-title {@include text-title;}
 .article-description {margin:0 0 2rem;@include text-title;}
-.article ul:not[data-horizontal] {margin:2rem 0;}
+.article ul:not([data-horizontal]) {margin:2rem 0;}
 
 .article-subhead {margin:3rem 0 var(--space-3);@include text-subhead;}
 // border-top:var(--border);border-bottom:var(--border);
@@ -141,8 +141,8 @@
 .greeting-description {@include text-body;margin:0 0 0;line-height:var(--font-line-height-small);color:var(--color-text-light);}
 
 .onboarding-control {@include group-button;}
-.onboarding-control-next {@include button-primary;width:var(--column-width);}
-.onboarding-control-skip {@include button-secondary;width:var(--column-width);}
+.onboarding-control-next {@include button-primary;width:var(--grid-column);}
+.onboarding-control-skip {@include button-secondary;width:var(--grid-column);}
 
 .hover-sample {@include avatar-huge;}
 .hover-sample:hover {@include hover-item;}
@@ -255,14 +255,14 @@
 
 .marquee-box {
   display: flex;
-  width: calc((380px + 1rem) * 5);
+  width: calc((380px + 2rem) * 5);
   // animation: marquee 28s linear 0s infinite normal none running;
   animation: marquee 28s linear 0s infinite;
   animation-play-state: running;
 }
 .marquee-box:hover {animation-play-state:paused;}
 
-.design-ticker-item {width: 380px;margin:0 1rem !important;
+.design-ticker-item {width:380px;margin:0 1rem !important;
   filter: grayscale(.5);
 }
 

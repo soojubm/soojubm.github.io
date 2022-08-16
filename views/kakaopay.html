@@ -1,4 +1,4 @@
-<main style="background:var(--color-primary);">
+<main style="background:var(--color-background-weak);">
 
   <div style="max-width:460px;margin:0 auto;padding:1rem;box-shadow:var(--shadow);background:var(--color-background);overflow: hidden;">
     
@@ -25,7 +25,7 @@
       </button>
     </header>
   
-    <div class="banner" data-size="small" role="banner" style="margin:var(--space-4) 0;background:steelblue;">
+    <div class="banner" role="banner" data-size="small" data-theme="colored" style="margin:var(--space-4) 0;background:steelblue;">
       <h2 class="banner-title">저기... 정보 좀 드릴까요?</h2>
       <p class="banner-description">필요한 것만 딱딱 챙겨놨어요.</p>
     </div>
@@ -90,9 +90,9 @@
       </div>
     </section>
   
-    <div class="banner" role="banner" data-size="small" style="margin:2rem 0;background:var(--color-background-weak);">
-      <h2 class="banner-title" style="color:var(--color-text);">기본 형태의 small 배너</h2>
-      <p class="banner-description" style="color:var(--color-text);">헤딩의 크기를 통일함.</p>
+    <div class="banner" role="banner" data-size="small" style="margin:2rem 0;">
+      <h2 class="banner-title">기본 형태의 small 배너</h2>
+      <p class="banner-description">헤딩의 크기를 통일함.</p>
     </div>
   
     <section>
@@ -224,15 +224,7 @@
         <figure style="display:flex;align-items:center;justify-content:center;width:4rem;height:4rem;margin:var(--space-3) 0 0 auto;background:gold;border-radius:50%;font-size:var(--font-size-subhead);">🐏</figu>
       </div>
   
-      <div class="js-tab">
-        <nav class="profile-tablist type-sc" role="tablist" aria-label="sample tabs" style="max-width:11rem;margin:0 auto;">
-          <button class="profile-tablist-tab" role="tab" aria-selected="true" aria-controls="panel-1" id="tab-1" tabindex="0">
-            뉴스
-          </button>
-          <button class="profile-tablist-tab" role="tab" aria-selected="false" aria-controls="panel-2" id="tab-2" tabindex="-1">회사소식</button>
-          <i class="profile-tablist-indicator" style="width:50%;"></i>
-        </nav>
-      </div>
+
   
       <div class="js-tab" style="display:flex;justify-content:space-between;align-items:center;margin:4rem 0 var(--space-3);">
         <h2>전체</h2>
@@ -248,13 +240,7 @@
           <!-- <i class="profile-tablist-indicator" style="width:50%;"></i> -->
         </nav>
       </div>
-  
-      <br /><br />
-  
-      <button style="display:flex;align-items:center;font-size:var(--font-size-caption);">
-        <figure style="margin:0 var(--space-2) 0 0;opacity:.5;"><i class="icon-check" style="border-width:1px;"></i></figure>
-        온라인만 보기
-      </button>
+
   
       <br />
   
@@ -310,5 +296,52 @@
       </div>
       <p>windows에서는 버튼의 형태로 label이 아닌 quick action으로 사용됨.</p>
     </section>
+
+    <!-- <section style="display:flex;margin:1rem -.5rem;">
+      <a class="" href="#" style="margin:0 .5rem;text-align:center;">
+        <figure style="width:var(--size-large);height:var(--size-large);border-radius:var(--radius);background:var(--color-background-weak);overflow:hidden;">
+        </figure>
+        <span class="person-name">송금하기</span>
+      </a>
+      <a class="" href="#" style="margin:0 .5rem;text-align:center;">
+        <figure style="width:var(--size-large);height:var(--size-large);border-radius:var(--radius);border:var(--border);box-sizing:border-box;overflow:hidden;">
+        </figure>
+        <span class="person-name">name</span>
+      </a>
+      <a class="" href="#" style="margin:0 .5rem;text-align:center;">
+        <figure style="width:var(--size-large);height:var(--size-large);border-radius:var(--radius);border:var(--border);box-sizing:border-box;overflow:hidden;">
+        </figure>
+        <span class="person-name">name</span>
+      </a>
+      <a class="" href="#" style="margin:0 .5rem;text-align:center;">
+        <figure style="width:var(--size-large);height:var(--size-large);border-radius:var(--radius);border:var(--border);box-sizing:border-box;overflow:hidden;">
+        </figure>
+        <span class="person-name">name</span>
+      </a>
+    </section>
+    <div class="banner" role="banner" data-size="small" style="margin:2rem 0;">
+      <h2 class="banner-title">기본 형태의 small 배너</h2>
+      <p class="banner-description">헤딩의 크기를 통일함.</p>
+    </div> -->
+
+    <!-- todo back icon은 항상 arrow left 형태를 갖는다. -->
+    <header class="titlebar js-titlebar" role="navigation" style="height:var(--navbar-height);padding:0;">
+      <div class="titlebar-background"></div>
+      <h1 class="titlebar-title" title="page title" style="font-weight:var(--font-weight-bold);font-size:16px;">예약송금 등록</h1>
+      <button class="titlebar-back" onclick="javascript:window.location.href='/';">
+        <figure class="titlebar-back-icon"><i class="icon-arrow is-left"></i></figure>
+        <!-- <span class="titlebar-back-label">뒤로</span> -->
+      </button>
+    </header>
+    <div class="js-tab">
+      <nav class="profile-tablist type-sc" role="tablist" aria-label="sample tabs" style="max-width:11rem;margin:.5rem auto;">
+        <button class="profile-tablist-tab" role="tab" aria-selected="true" aria-controls="panel-1" id="tab-1" tabindex="0">
+          1회예약
+        </button>
+        <button class="profile-tablist-tab" role="tab" aria-selected="false" aria-controls="panel-2" id="tab-2" tabindex="-1">반복예약</button>
+        <i class="profile-tablist-indicator" style="width:50%;"></i>
+      </nav>
+    </div>
+    <!-- <p>예약송금 -> 복합명사가 어려움. 송금 예약(하기)</p> -->
   </div>
 </main>

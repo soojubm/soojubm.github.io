@@ -197,8 +197,9 @@
 //   // img {filter: brightness(.8) contrast(1.2);}
 // }
 
-@mixin position-left-top {position:absolute;left:var(--space-inset-small);top:var(--space-inset-small);}
-@mixin position-right-top {position:absolute;right:var(--space-inset-small);top:var(--space-inset-small);}
+@mixin position-left-top {position:absolute;left:var(--space-1);top:var(--space-1);}
+@mixin position-right-top {position:absolute;right:var(--space-1);top:var(--space-1);}
+
 @mixin position-center {position:absolute;left:50%;transform:translateX(-50%);}
 @mixin position-center-center {position:absolute;left:50%;top:50%;transform:translate(-50%, -50%)}
 @mixin position-bottom {position:fixed;left:0;right:0;bottom:0;z-index:var(--zindex-menu);}

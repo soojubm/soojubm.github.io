@@ -38,10 +38,7 @@ $transition-fade: opacity 0.15s linear;
   --font-weight-normal: 400;
   --font-weight-bold: 700;
   --font-weight-extrabold: null;
-  --font-color: var(--gray800);
-  --font-color-light: var(--gray400);
-  --font-color-dark: null;
-  --font-color-highlight: var(--gray800);
+
   --font-line-height: 1.8;
   --font-line-height-small: 1.5;
   --font-line-height-heading: null;
@@ -79,22 +76,14 @@ $transition-fade: opacity 0.15s linear;
   --color-background-weak: var(--gray100);
   --color-background-strong: var(--gray800);
   // --color-background-darkest: null;
-  
 
   --color-border: var(--gray200);
   --color-border-hover: var(--gray800);
-  --color-border-active: 0;
   --color-text: var(--gray800);
   --color-text-weak: var(--gray0);
   --color-text-light: var(--gray400);
   --color-text-strong: var(--gray0);
   --color-text-link: var(--color-primary);
-  --color-text-disabled: null;
-  --color-disabled-text: null;
-  --color-disabled-background: null;
-  --color-disabled-border: null;
-  --color-hover-background: null;
-  --color-active-border: null;
   
   // todo icon scope
   --icon-background: var(--gray800);
@@ -103,17 +92,13 @@ $transition-fade: opacity 0.15s linear;
   // --gradient: linear-gradient(to bottom, var(--gray1000), rgba(37,45,41,.75), var(--gray800));
   --gradient: linear-gradient(to bottom, var(--gray100), var(--gray800));
 
-  // container width
   // size => square
-  --width-tiny: 320px;
-  --width-small: 480px;
 
+  --width-small: 480px;
+  --menu-width: 360px;
   --width-dropdown: 240px;
-  --width-popover: 240px;
-  --width-popover-small: 240px;
   --width-dialog: 0;
 
-  --menu-width: 360px;
 
   --size-huge: 5rem;
   --size-large: 3rem;
@@ -137,27 +122,24 @@ $transition-fade: opacity 0.15s linear;
   --space-after-subhead: var(--space-3);
   --space-after-description: 2rem;
   --space-after-button: var(--space-2);
-  --space-after-textfield: 1rem;
+  --space-after-textfield: var(--space-4);
 
-  --space-after-avatar-huge: .75rem;
-  --space-after-avatar-large: .5rem;
+  --space-after-avatar-huge: var(--space-3);
+  --space-after-avatar-large: var(--space-3);
   --space-after-avatar-medium: var(--space-2);
   --space-after-avatar-small: var(--space-2);
 
-  --space-before-tag: .125rem;
+  --space-before-tag: var(--space-05);
   --space-before-tag-minus: calc(var(--space-before-tag) * -1);
 
-  --space-after-item: .75rem;
+  --space-after-item: var(--space-3);
 
-  --space-groupitem: .25rem; // listitem
+  --space-groupitem: var(--space-1); // listitem
   --space-groupitem-minus: calc(var(--space-groupitem) * -1);
   
   // todo, position
   --space-inset-card: null;
   --space-inset-tile: .75rem;
-  --space-inset-head: 2rem;
-  --space-inset-chip: .75rem;
-  --space-inset-header: 2rem;
   --space-inset-section: 4rem;
 
   --border: 1px solid var(--color-border);
@@ -168,15 +150,10 @@ $transition-fade: opacity 0.15s linear;
   --radius-sharp: null;
   --radius-soft: null;
 
-  // --shadow: 0px 0px 1rem rgba(0, 0, 0, 0.125);
-  // --shadow: 0 0 0 1px rgb(0 0 0 / 5%), 0 1px 4px rgb(0 0 0 / 10%);
-  // --shadow-bold: 0px 0px 2rem rgba(0, 0, 0, 0.5);
   --shadow: 0 0 .25rem rgb(0 0 0 / 7.5%);
-  --shadow-tooltip: 0;
-  --shadow-hover: 0;
-  --shadow-modal: 0;
-  --shadow-card: 0;
-  --shadow-active: 0;
+  // --shadow: 0px 0px .5rem rgba(0, 0, 0, 0.1);
+  // --shadow: 0 0 0 1px rgb(0 0 0 / 5%), 0 1px 4px rgb(0 0 0 / 10%);
+  --shadow-active: null;
 
   --duration: .4s;
   --duration-quickly: .2s;
@@ -188,10 +165,6 @@ $transition-fade: opacity 0.15s linear;
   --animation-delay-third: .4s;
   // --animation-timing-function-ease: null;
 
-  --button-space-inset: null;
-  --button-background: #fff;
-  --button-text-color: #fff;
-  --button-font-size: var(--font-size-body);
 
   // ! z-index
   // ! padding 중첩되면 같은 역할이라도. 마이너스 마진.
@@ -214,31 +187,16 @@ $transition-fade: opacity 0.15s linear;
   --zindex-menu: 8;
   --zindex-bottombar: 8;
   --zindex-loader: 10;
-
   --zindex-sheet: 7;
 
-  --grid-column: calc(50% - var(--space-2));
-  --grid-column-small: calc(50% - .125rem);
-  --grid-gutter: 1rem;
+  // todo..
+  --grid-column: calc(50% - var(--space-1));
+  --grid-gutter: null;
   --grid-margin: 5vw;
   --grid-margin-minus: calc(var(--grid-margin) * -1);
 
-  // todo
-  --column-width: calc(50% - var(--space-1));
-
   --safearea-inset-bottom1: constant(safe-area-inset-bottom);
   --safearea-inset-bottom2: env(safe-area-inset-bottom);
-
-  --button-background: 0;
-  --button-border: 0;
-  --button-radius: var(--radius);
-  --button-border-color: null;
-
-  --textfield-space-inset: null;
-  --textfield-text-color: null;
-  --textfiled-placeholder-color: null;
-  --textfield-border-color: null;
-  --textfield-background-color: var(--background-gray);
 
   html[date-theme=dark] {}
   .theme-dark {

@@ -67,7 +67,7 @@
 .navbar-notification-menu-item:hover {background:var(--color-background);}
 .navbar-notification-menu footer {padding:var(--space-4) 0;}
 .navbar-notification-menu footer button {@include link-outside;}
-.navbar-notification-empty {width:var(--width-tiny);@include tile-elevated;position:absolute;top:36px;right:0;z-index:var(--zindex-menu);transform:scale(0);}
+.navbar-notification-empty {width:320px;@include tile-elevated;position:absolute;top:36px;right:0;z-index:var(--zindex-menu);transform:scale(0);}
 .navbar-notification-empty:before {content:'';display:block;position:absolute;left:50%;right:0;top:-8px;bottom:0;}
 .is-active + .navbar-notification-menu,
 .is-active + .navbar-notification-empty {height:auto;transform:scale(1);}
@@ -81,9 +81,9 @@
 .notification-item-avatar {@include avatar-large;position:absolute;left:0;top:0;}
 .notification-item-avatar + p {margin-bottom:var(--space-05);}
 .notification-item-user {font-size:var(--font-size-body);}
-.notification-item-content {color:var(--color-text-light);}
+.notification-item-content {display:block;}
 .notification-item-content b {font-weight:var(--font-weight-normal);}
-.notification-item-date {display:block;font-size:var(--font-size-caption);color:var(--color-text-light);}
+.notification-item-date {margin:0 0 0 var(--space-1);font-size:var(--font-size-caption);color:var(--color-text-light);}
 
 
 // todo util

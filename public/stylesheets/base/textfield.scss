@@ -17,6 +17,8 @@
   // @media (--breakpoint-small) {top:35px;}
 }
 
+.textfield-group {display:flex;justify-content:space-between;}
+.textfield-group .textfield {width:calc(50% - var(--space-1))}
 .textfield {position:relative;}
 .textfield-label {display:block;}
 .textfield-label small {margin:0 0 0 .25rem;color:var(--color-text-light);}

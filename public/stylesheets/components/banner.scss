@@ -1,21 +1,14 @@
-// .banner {display:flex;justify-content:center;align-items:center;padding:2rem 0;border-radius:var(--radius);background:var(--color-background);btext-align:center;position:relative;}
-// .banner-image {margin:0 1rem 0 -4rem;}
-// .banner-title {margin:0 2rem 0 0;@include text-subhead;}
-// .banner-button {@include button-secondary;}
-
-.banner {padding:2rem var(--grid-margin);border-radius:var(--radius);text-align:center;position:relative;}
+// for mobile
+.banner {padding:var(--space-4);border-radius:var(--radius);background:var(--color-background-weak);position:relative;}
 .banner-background {@include bleeding;}
-.banner-image {@include avatar-large;}
 .banner-eyebrow {@include tag;margin:0 0 .5rem 0;}
-.banner-title {@include text-title;}
-.banner-description {margin:var(--space-after-subhead) 0 0;}
+.banner-title {font-size:var(--font-size-body);font-weight:var(--font-weight-bold);}
+.banner-description {margin:var(--space-1) 0 0;line-height:var(--font-line-height-small);}
 .banner-button {margin:0 0 var(--space-after-description) 0;@include button-text;}
 // 버튼이 생략될 수 있다.
 
-.banner[data-size=small] {padding:var(--space-4);text-align:left;}
-.banner[data-size=small] .banner-title {font-size:var(--font-size-body);font-weight:var(--font-weight-bold);color:var(--gray0);}
-.banner[data-size=small] .banner-description {margin:var(--space-1) 0 0;color:var(--gray0);line-height:var(--font-line-height-small);opacity:.75;}
-.banner[data-size=small] .banner-button {@include button-text;}
+.banner[data-theme=colored] .banner-title {color:var(--gray0);}
+.banner[data-theme=colored] .banner-description {color:var(--gray0);opacity:.75;}
 
 @media (--breakpoint-small) {
   // .banner {flex-wrap:wrap;}
