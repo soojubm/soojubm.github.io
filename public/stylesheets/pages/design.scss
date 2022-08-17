@@ -9,7 +9,7 @@
 .article-aka .tag {margin-right:var(--space-3);}
 .article-title {@include text-title;}
 .article-description {margin:0 0 2rem;@include text-title;}
-.article ul:not([data-horizontal]) {margin:2rem 0;}
+.article ul {margin:0 0 2rem 0;}
 
 .article-subhead {margin:3rem 0 var(--space-3);@include text-subhead;}
 // border-top:var(--border);border-bottom:var(--border);
@@ -24,16 +24,7 @@
 .article-props dt {margin-right:.25rem;}
 .article-props dd {}
 
-.article-helper {margin:-.25rem 0 var(--space-4) 0;font-size:var(--font-size-caption);line-height:var(--font-line-height-small);}
-
-.article-anatomy {margin:0 -1.5rem;padding:var(--space-3) 1.5rem;border:var(--border);border-radius:var(--radius);}
-.article-anatomy.is-anatomy {font-family:consolas,monospace;font-size:var(--font-size-caption);}
-.article-anatomy-item {display:block;}
-.article-anatomy-item.is-nested {margin-left:var(--space-4);position:relative;}
-.article-anatomy-item.is-nested-nested {margin-left:2rem;}
-.article-anatomy-item.is-nested:before{content:'';display:block;width:1px;height:100%;background:var(--color-text);}
-.article-anatomy-item .is-optional {margin:0 0 .5rem 0;font-size:10px;color:var(--color-text-light);vertical-align:top;}
-
+.article-helper {}
 
 // .article.is-scrolled {animation:fadeup .8s forwards;}
 .spacing-card {padding:var(--space-inset-tile);overflow:hidden;position:relative;}
