@@ -1,24 +1,11 @@
-<!-- // invoice랑 구분 -->
 <main class="checkout">
-  <header class="hero" role="banner" style="padding-left:0;padding-right:0;">
-    <div class="hero-background"></div>
-    <span class="hero-eyebrow">Checkout</span>
-    <h1 class="hero-title">
-      <span style="color:var(--color-text-light);">Lorem Ipsum is</span><br />simply dummy text of the printing and typesetting industry.
-    </h1>
-    <p class="hero-description">
-      1칼럼(모바일)에서 결제 버튼을 누르기 전 최종 금액을 확인할 수 있는 구조가 되려면 2칼럼에서 우측을 결제를 위한 칼럼을 배치할 때(체크아웃페이지의
-      일반적인 레이아웃) 상품&서머리&결제버튼이 같은 컨테이너로 포함되어야.
-    </p>
-  </header>
-
   <!-- <header class="checkout-head">
-    <div class="checkout-head-eyebrow">주문확인</div>
     <div class="checkout-head-background"></div>
     <h1 class="checkout-head-title">주문정보를<br />확인하세요<i style="font-style:italic;">!</i></h1>
     <p class="checkout-head-description"></p>
   </header> -->
-  <!-- 
+  <!-- // invoice랑 구분 -->
+
   <section class="checkout-step step" style="margin:0 0 2rem 0;">
     <div class="step-item is-active">
       <span class="step-item-icon">1</span>
@@ -27,12 +14,19 @@
     <div class="step-item is-active">
       <span class="step-item-icon">2</span>
       <h3 class="step-item-title">상품결제</h3>
+      <p class="step-item-description">
+        1칼럼(모바일)에서 결제 버튼을 누르기 전 최종 금액을 확인할 수 있는 구조가 되려면 2칼럼에서 우측을 결제를 위한 칼럼을 배치할
+        때(체크아웃페이지의 일반적인 레이아웃) 상품&서머리&결제버튼이 같은 컨테이너로 포함되어야.
+      </p>
+      <p class="step-item-description">결제정보 - 결제방법/주문상태/주문접수일시/주문완료일시/배송비/쿠폰사용금액/결제금액</p>
+      <p class="step-item-description">주문 시도 이력을 로컬스토리지에 저장.</p>
+      <p class="step-item-description">할인 쿠폰 및 코드. 신용카드 할인. 간편결제.</p>
     </div>
     <div class="step-item">
       <span class="step-item-icon">3</span>
       <h3 class="step-item-title">주문완료</h3>
     </div>
-  </section> -->
+  </section>
 
   <h2 class="checkout-product-title" title="summary">상품정보</h2>
   <section class="checkout-product">
@@ -55,14 +49,16 @@
         <p class="setting-item-value-phone">010-3121-7045</p>
       </div>
     </div>
-    <div class="tile-elevated" style="display: flex;flex-wrap: wrap;justify-content: space-between;">
-      <div class="checkout-shipping-name textfield">
-        <label class="checkout-shipping-name-label textfield-label">받는 사람</label>
-        <input class="checkout-shipping-name-value textfield-input" type="text" name="email" id="login-email" placeholder="수줍이" />
-      </div>
-      <div class="checkout-shipping-phone textfield">
-        <label class="checkout-shipping-phone-label textfield-label">연락처</label>
-        <input class="checkout-shipping-phone-value textfield-input" type="text" name="email" id="login-email" placeholder="01012345678" />
+    <div class="tile-elevated" style="width:100%;">
+      <div class="textfield-group">
+        <div class="checkout-shipping-name textfield">
+          <label class="checkout-shipping-name-label textfield-label">받는 사람</label>
+          <input class="checkout-shipping-name-value textfield-input" type="text" name="email" id="login-email" placeholder="수줍이" />
+        </div>
+        <div class="checkout-shipping-phone textfield">
+          <label class="checkout-shipping-phone-label textfield-label">연락처</label>
+          <input class="checkout-shipping-phone-value textfield-input" type="text" name="email" id="login-email" placeholder="01012345678" />
+        </div>
       </div>
       <div class="checkout-shipping-address textfield">
         <label class="checkout-shipping-address-label textfield-label" for="address">주소</label>
@@ -70,48 +66,43 @@
       </div>
       <div class="checkbox" style="margin-right: auto;margin-top: var(--space-2);">
         <input class="js-checkall" type="checkbox" id="line00" value="" aira-checked="mixed" aria-controls="1 2" indeterminate />
-        <label for="line00" title="Check All"><em>이 배송지를 저장합니다</em></label>
+        <label for="line00" title="Check All"><em>기본 배송지로 설정합니다</em></label>
       </div>
     </div>
-    <!-- <div class="order-address-address2 textfield">
+    <div class="order-address-address2 textfield">
       <label class="textfield-label" for="login-email">상세주소</label>
       <input class="textfield-input" type="text" name="email" id="login-email" placeholder="" />
-    </div> -->
-    <!-- <div class="order-address-zipcode textfield">
-      <label class="textfield-label" for="login-email">우편번호</label>
+    </div>
+    <div class="order-address-zipcode textfield">
+      <label class="textfield-label" for="login-email">First name, Last Name, Country / Region, State, Zipcode</label>
       <input class="textfield-input" type="text" name="email" id="login-email" placeholder="soojubm@gmail.com" autofocus />
-    </div> -->
-    <!-- <div class="checkbox">
-      <input class="js-checkall" type="checkbox" id="line00" value="" aira-checked="mixed" aria-controls="1 2" />
-      <label for="line00" title="Check All">기본 배송지로 등록</label>
-    </div> -->
+    </div>
+    <button>우편번호 찾기</button>
   </fieldset>
 
   <section class="checkout-payment">
     <h2 class="checkout-payment-title">결제수단</h2>
     <!-- <p class="checkout-payment-description">현재 신용카드 결제만 가능합니다.</p> -->
     <fieldset>
-      <div class="radio tile-elevated" style="border-bottom:var(--border);">
+      <div class="radio tile-elevated" style="margin-top:0;border-bottom:var(--border);">
         <input type="radio" id="raidio5" name="gender" value="" checked />
         <label for="raidio5" title="">신용/체크카드</label>
       </div>
       <div class="radio tile-elevated">
         <input type="radio" id="raidio5" name="gender" value="" disabled />
-        <label for="raidio5" title=""
+        <label for="raidio5"
           >무통장입금 <small style="color:var(--color-text);">COMING SOON<i style="font-style:italic">!</i></small></label
         >
       </div>
     </fieldset>
-    <!-- <button class="checkout-payment-button">신용/체크카드</button> -->
-    <!-- <button class="checkout-payment-button">네이버페이<i class="checkout-payment-button-check icon-check"></i></button> -->
-    <!-- <footer style="margin:2rem 0;">
+    <footer style="margin:2rem 0;">
       <span style="color:var(--color-text-light);">결제 안내</span>
       <p>신용카드 결제만 가능합니다.</p>
       <p>해외에서 발행된 카드는 이용할 수 없습니다.</p>
       <br />
       <span style="color:var(--color-text-light);">주문취소 및 환불 안내</span>
-      <p>주문 취소나 환불은 <a href="#">고객센터</a>로 문의해 주세요.</p>
-    </footer> -->
+      <p>주문취소 또는 환불은 <a href="#">고객센터</a>로 문의해 주세요.</p>
+    </footer>
   </section>
 
   <hr />
@@ -133,22 +124,14 @@
       <button class="cart-summary-checkout">결제</button>
     </div>
   </footer>
-
-  <div>
-    결제정보 - 결제방법/주문상태/주문접수일시/주문완료일시/배송비/쿠폰사용금액/결제금액
-  </div>
 </main>
 
 <script>
   var form = document.getElementById('subscription-form');
-  ​
-  form.addEventListener('submit', function (ev) {
+  form.addEventListener('submit', (ev) => {
     ev.preventDefault();
-  ​
     // If a previous payment was attempted, get the latest invoice
-    const latestInvoicePaymentIntentStatus = localStorage.getItem(
-      'latestInvoicePaymentIntentStatus'
-    );
+    const latestInvoicePaymentIntentStatus = localStorage.getItem('latestInvoicePaymentIntentStatus');
   ​
     if (latestInvoicePaymentIntentStatus === 'requires_payment_method') {
       const invoiceId = localStorage.getItem('latestInvoiceId');

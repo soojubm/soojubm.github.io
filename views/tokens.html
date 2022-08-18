@@ -22,12 +22,6 @@
       <li>강도: Weak, Moderate, Strong, Extreme</li>
       <li>속도: instant, immediate, quick / fast, moderate, slow,deliberate</li>
       li  Informational.
-Tip.
-Warning.
-Error.
-Success.
-New.
-Updated.
 
 tone추가된 회색 또는 덜 생생한
 shade블랙 또는 더 어두운 추가
@@ -39,7 +33,7 @@ prominent또는 pronounced더 눈에 띄는
     </ul> -->
     <p>core: give a name to a raw value to enable theming and make improve maintainability / semantic / component</p>
     <p>--md [namespace]</p>
-    <p>20 - 20px. tailwind 값을 조정할 수 있도록 추상화. 디자인 토큰에서 얻을 수 있는 추상화 및 기타 이점을 무효화합니다.</p>
+    <p>20 - 20px. tailwind의 단점. 디자인 토큰에서 얻을 수 있는 추상화 및 기타 이점이 무효화됨. 값을 조정할 수 있도록 추상화.</p>
     <p>unit- 1x</p>
   </section>
 
@@ -60,10 +54,12 @@ prominent또는 pronounced더 눈에 띄는
   <section class="tokens-body">
     <article class="article js-scrollspy-section">
       <h1 class="article-title">Palette</h1>
-      <p class="article-description">color(background/border/text/state). surface(shadow/radius). system: error / success / warning / info</p>
+      <p class="article-description">작성 중.</p>
+      <!-- system: error / success / warning / info / update (new) -->
       <ul>
+        <li>color(background/border/text/state). surface(shadow/radius).</li>
         <li>다크테마를 위한 인버트 컬러셋을 별도로 정의하지 않습니다. 하나의 컬러셋으로 다양한 테마 또는 커스텀 유아이에 대응할 수 있어야 합니다.</li>
-        <li>크기와 비례해서 radius 조절이 필요하지만 경량화.</li>
+        <li>크기와 비례해서 radius 조절이 필요하지만 경량화. shadow도 마찬가지.</li>
       </ul>
       <button class="button-elevated js-darkmode" title="change theme" style="background:var(--color-background);border-radius:var(--radius);box-shadow:var(--shadow);padding:.5rem;border:var(--border);">
         <figure class="button-elevated-avatar"><i class="icon-moon"></i></figure>
@@ -180,12 +176,14 @@ prominent또는 pronounced더 눈에 띄는
 
     <article class="article typography js-scrollspy-section">
       <h1 class="article-title">Typography</h1>
+      <p class="article-description">작성 중.</p>
 
       <ul>
         <li>단어나 구문을 underline, bold, primary color로 강조하지 않습니다.</li>
         <li>불릿, 괄호, 쉼표 등으로 텍스트를 분류하지 않습니다. 디자인하지 않았다는 인상.</li>
         <li>태그라인은 작은 화면에서도 임팩트를 줄 있도록 작성 단계에서 행갈이를 고려합니다. (todo: 글자 및 단어를 제한하고 개행 조건 정의)</li>
         <li>bottom navigation의 label은 예외적으로 10px입니다.</li>
+          <!-- <p>프로모션 페이지의 헤드라인으로 제한적으로 사용합니다.</p> -->
       </ul>
       <button class="user-logout tile-elevated-small js-default-font" title="change theme">
         <span class="user-logout-label">시스템 폰트로 보기</span>
@@ -260,7 +258,6 @@ prominent또는 pronounced더 눈에 띄는
           <div>
             <p>@mixin text-display {}</p>
           </div>
-          <p>프로모션 페이지의 헤드라인으로 제한적으로 사용합니다.</p>
         </div>
         <div class="token-item">
           <b>--font-size-small: .75rem</b>
@@ -276,6 +273,7 @@ prominent또는 pronounced더 눈에 띄는
 
     <article class="article js-scrollspy-section">
       <h1 class="article-title">Sizing</h1>
+      <p class="article-description">작성 중.</p>
       <ul>
         <li>정의한 토큰과 같은 값이라도 독립적으로 사용하는 것이 좋은 케이스. (todo 근거)
           <p><del>--navbar-height: var(--size-huge)</del></p>
@@ -333,7 +331,7 @@ prominent또는 pronounced더 눈에 띄는
 
     <article class="article js-scrollspy-section">
       <h1 class="article-title">Spacing</h1>
-
+      <p class="article-description">요소 사이의 간격. outset과 inset.</p>
       <ul>
         <li>1을 .25rem으로 정의합니다.</li>
         <li>버튼 padding은 spacing으로 정의하지 않고 size로 정의합니다. 단, 버튼 레이블을 두 줄로 작성하지 않는다는 전제가 필요.</li>
@@ -408,7 +406,7 @@ prominent또는 pronounced더 눈에 띄는
 
     <article class="article js-scrollspy-section">
       <h1 class="article-title">Layouts</h1>
-      <!-- <p class="article-description">페이지 레벨과 섹션 레벨의 레이아웃을 정의합니다.</p> -->
+      <p class="article-description">페이지 레벨과 섹션 레벨의 레이아웃.</p>
       
       <!-- <p class="article-description">최소 pc, mobile device 2개. 모든 페이지의 컨테이너 모듈이 동일할 필요는 없습니다. calc(width-large + alpha)로 정의하는 것이 좋을꽈</p>
       <p>서비스가 출시 환경이 웹온리(웹/태블릿+모바일) vs 웹+모바일앱(웹+태블릿/모바일)</p>
@@ -602,135 +600,6 @@ prominent또는 pronounced더 눈에 띄는
           <p>@keyframes fadeup</p>
         </div>
       </div>
-    </article>
-
-    <article class="article js-scrollspy-section">
-      <h1 class="article-title" title="visual cue">Signifier <span hidden>Interaction States (MD)</span></h1>
-      <p class="article-description">사용자가 다음에 일어날 일을 예측할 수 있도록 일관된 기표를 제공합니다.</p>
-  
-      <a href="https://developer.apple.com/design/human-interface-guidelines/components/layout-and-organization/disclosure-controls">disclosure-controls</a>
-      
-      <ul>
-        <li>Plus icon을 expandable로 사용하지 마세요.</li>
-        <li>Bold text를 clickable로 사용하지 마세요. (참고. 단락 더 보기)</li>
-      </ul>
-  
-      <h4 class="article-subhead">Clickable? interactive element?</h4>
-      <div class="token-group">
-        <div class="tile-elevated token-item">
-          <p>
-            elevated 오브젝트는 클릭할 수 있다. 또는 오브젝트 내부에 클릭할 수 있는 요소가 존재한다.
-          </p>
-        </div>
-        <div class="token-item" style="border:none;background:var(--color-background-weak);">
-          <p>연한 회색의 오브젝트는 클릭할 수 있다.</p>
-        </div>
-        <div class="token-item">
-          <p><em>브랜드 컬러 텍스트</em>는 클릭할 수 있다.</p>
-        </div>
-        <div class="token-item">
-          <p>❤️ 아이콘(이모지)는 클릭할 수 있다. + 이미지</p>
-        </div>
-      </div>
-  
-      <!-- <h4 class="article-subhead">non-clickable</h4>
-      <div class="token-item" style="cursor:default;">
-        <div class="tag-group">
-          <span class="tag" data-appearance="secondary" st>읽기전용readonly</span>
-          <span class="tag">cursor default</span>
-        </div>
-      </div>
-      <div class="token-item">
-        <div class="tag-group" style="opacity:.5;cursor:not-allowed;">
-          <span class="tag" data-appearance="secondary">비활성disabled state</span>
-          <span class="tag">opacity 50%</span>
-          <span class="tag">cursor not-allowed</span>
-          <span class="tag">flat style</span>
-        </div>
-      </div> -->
-  
-      <h4 class="article-subhead">Icons</h4>
-      <div class="token-group">
-        <div class="token-item">
-          <figure class="chip-icon">
-            <i class="icon-arrow is-external"></i>
-          </figure>
-          <span>External Link</span>
-        </div>
-        <div class="token-item">
-          <figure class="chip-icon">
-            <i class="icon-arrow" style="display:inline-block;"></i>
-          </figure>
-          <span>internal Link (ex: view all)</span>
-        </div>
-        <div class="token-item">
-          <figure class="chip-icon">
-            <i class="icon-chevron" style="display:inline-block;"></i>
-          </figure>
-          <span>Expanable & Collapsible (vertical)</span>
-        </div>
-        <div class="token-item">
-          <figure class="chip-icon">
-            <i class="icon-chevron is-down"></i>
-          </figure>
-          <span>Expanable & Collapsible (horizental)</span>
-        </div>
-        <div class="token-item">
-          <figure class="chip-icon"><i class="icon-search"></i></figure>
-          <span>Searchable</span>
-        </div>
-        <div class="token-item">
-          <figure class="chip-icon">
-            <i class="icon-caret" style="display:inline-block;"></i>
-          </figure>
-          <span>Popover</span>
-        </div>
-        <div class="token-item">
-          <figure class="chip-icon">
-            <i class="icon-x" style="display:inline-block;"></i>
-          </figure>
-          <span>Removable</span>
-        </div>
-        <div class="token-item">
-          <figure class="chip-icon">
-            <i class="icon-plus" style="display:inline-block;"></i>
-          </figure>
-          <span>Addable</span>
-        </div>
-        <div class="token-item">
-          <span class="textfield-check" style="margin-right:var(--space-2);position:relative;right:auto;top:auto;background:var(--green100);"
-            ><i class="icon-check" style="border-color:var(--color-primary);"></i
-          ></span>
-          <span>Valid</span>
-        </div>
-        <div class="token-item">
-          <span class="textfield-check" style="position:relative;right:auto;top:auto;background:var(--red100);"><i class="icon-x is-red"></i></span>
-          <span>InValid</span>
-        </div>
-      </div>
-  
-      <!-- todo states -->
-      <h4 class="article-subhead">Hover state</h4>
-      <div class="token-group">
-        <div class="token-item">
-          <p style="margin:0 0 .25rem;">@mixin hover-text {}</p>
-          <a href="#" style="text-decoration:underline;">Text</a>
-        </div>
-        <div class="token-item" style="z-index:1;">
-          <p style="margin:0 0 var(--space-3);">@mixin hover-item {}</p>
-          <div class="item is-hoverable" data-size="medium" title="sign out">
-            <figure class="item-avatar" style="background-image:none;">
-              <i class="icon-out"><span class="icon-out-door"></span></i>
-            </figure>
-            <span class="item-name">Item</span>
-          </div>
-        </div>
-      </div>
-      <article class="article-helper">
-        <p>todo hover-item. hover-action. (smaller)</p>
-      </article>
-  
-      <h4 class="article-subhead">Pressed / Progressing</h4>
     </article>
   </section>
 
