@@ -7,19 +7,18 @@
     <ul>
       <li>React portal의 개념을 가져와서 모든 Presentations를 루트 엘리먼트(body) 안에 위치하자</li>
       <li>한 번에 하나의 presentation만 열 수 있다. 하지만 예시. 모달 안에서 드롭다운 메뉴.</li>
-      <li>결국 시트와 모달을 한 번에 하나만 열 수 있다.</li>
+      <li>결국 시트와 모달은 하나만 열 수 있다.</li>
+      <li>모달에 브라우저 히스토리를 저장해서 url을 통한 접근을 허용할 것인가.</li>
     </ul>
 
     <p>사용자의 인터렉션이 필요해요 -> 모달/시트 -> 1. 반응형이에요 -> 모달 / 2. 모바일앱이에요 -> 시트</p>
-    <p>사용자의 인터렉션이 필요없어요 -> 토스트</p>
+    <p>사용자의 인터렉션이 필요없어요 -> 토스트 (feedback..)</p>
     <p>md. When adapting for larger screens, a bottom sheet can become a context menu.</p>
     <p>md. Swap the bottom sheet for a side sheet in landscape layouts.</p>
     <p>md. sheet. modal bottom sheet. expanding bottom sheet.</p>
-  </section>
 
-  <blockquote>
-    <p>/</p>
-  </blockquote>
+    <h4 class="article-subhead"></h4>
+  </section>
 
   <section class="component-body">
     <article class="article js-observer js-scrollspy-section">
@@ -27,34 +26,32 @@
       <p class="article-description">사용자의 인터렉션이 필요한 경우 또는 이전 페이지와 맥락을 유지하는 콘텐츠 표시</p>
 
       <footer>
-        <button class="button-tertiary js-modal" data-modal="woolf">모달 열기</button>
+        <button class="button-secondary js-modal" data-modal="woolf">모달 열기</button>
       </footer>
-      <ul>
-        <li>사이즈</li>
-      </ul>
 
       <h4 class="article-subhead">모달이 될 수 있는 컴포넌트.</h4>
       <ul>
         <li>Dialog - small</li>
-        <li>Pages - large</li>
-        <li>Dropdown</li>
-        <li>Morevert</li>
+        <li>Page - large</li>
+        <li>Dropdown menu</li>
       </ul>
 
       <ul>
         <li>모바일에서 페이지가 될 수 있다. airbnb case: 모달일 때 x 버튼. 모바일에서 페이지처럼 보이면서 arrow 버튼으로 변경됨</li>
+        <li>닫기 버튼을 왼쪽에 배치하는 케이스와 오른쪽에 배치하는 케이스를 공부해보기.</li>
       </ul>
     </article>
 
     <article class="article js-observer js-scrollspy-section">
       <h1 class="article-title">Toast</h1>
       <p class="article-description"></p>
-      <footer>
-        <button class="button-tertiary js-toggle">토스트 열기</button>
-        <aside class="toast" role="alert">
-          toast test
-        </aside>
-      </footer>
+
+      <button class="button-secondary js-toggle">토스트 열기</button>
+      <aside class="toast" role="alert">
+        toast test
+      </aside>
+
+      <h4 class="article-subhead">토스트가 될 수 있는 컴포넌트</h4>
       <ul>
         <li>callout</li>
         <li>dialog</li>
@@ -63,35 +60,41 @@
       <ul>
         <li>모든 환경에서 동일한 형태로 제공한다.</li>
       </ul>
+
+      <h4 class="article-subhead">Cases</h4>
+      <ul>
+        <li>삭제 후 복원</li>
+      </ul>
     </article>
 
     <article class="article js-observer js-scrollspy-section">
       <h1 class="article-title">Sheet / Action sheet</h1>
       <p class="article-description"></p>
-      <footer>
-        <button class="button-tertiary js-toggle">시트 열기</button>
+      <button class="button-secondary js-toggle">시트 열기</button>
 
-        <article class="sheet js-sheet" role="presentation">
-          <button class="sheet-toggle"></button>
-          <h2 class="sheet-title">Presentation - sheet</h2>
-          <!-- todo close button -->
-          <button class="dialog-close js-sheet-close" aria-label="close sheet">
-            <i class="icon-x"></i>
-          </button>
-          <button class="item" data-size="medium" role="menuitem">
-            <figure class="item-avatar"></figure>
-            <span class="item-label">iOS 액션 시트 참고</span>
-          </button>
-          <button class="item" data-size="medium" role="menuitem">
-            <figure class="item-avatar"></figure>
-            <span class="item-label">바텀 시트 옵션</span>
-            <!-- <figure class="item-icon"><i class="icon-check"></i></figure> -->
-          </button>
-        </article>
-      </footer>
+      <article class="sheet js-sheet" role="presentation">
+        <button class="sheet-toggle"></button>
+        <h2 class="sheet-title">Presentation - sheet</h2>
+        <!-- todo close button -->
+        <button class="dialog-close js-sheet-close" aria-label="close sheet">
+          <i class="icon-x"></i>
+        </button>
+        <button class="item" data-size="medium" role="menuitem">
+          <figure class="item-avatar"></figure>
+          <span class="item-label">iOS 액션 시트 참고</span>
+        </button>
+        <button class="item" data-size="medium" role="menuitem">
+          <figure class="item-avatar"></figure>
+          <span class="item-label">바텀 시트 옵션</span>
+          <!-- <figure class="item-icon"><i class="icon-check"></i></figure> -->
+        </button>
+      </article>
+
+      <h4 class="article-subhead">시트가 될 수 있는 컴포넌트</h4>
       <ul>
         <li>entity list</li>
         <li>dialog</li>
+        <li>기능(역할) 단위로 구분하면 공유하기 등과 같은</li>
       </ul>
 
       <ul>

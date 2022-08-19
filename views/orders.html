@@ -1,56 +1,62 @@
 <!-- // invoice랑 구분 -->
 <main class="order">
   <header class="order-head">
-    <h1 class="order-head-title">soojubm님, 주문내역 블라블라 입니다.</h1>
-    <p class="order-head-description">
-      대통령은 국가의 원수이며, 외국에 대하여 국가를 대표한다. 국가원로자문회의의 조직·직무범위 기타 필요한 사항은 법률로 정한다. 국가는 대외무역을
-      육성하며, 이를 규제·조정할 수 있다.
-    </p>
+    <h1 class="order-head-title"></h1>
+    <p class="order-head-description"></p>
   </header>
-  <hr />
-  <section style="display:flex;justify-content: space-around;">
-    <div class="statistic"><i class="statistic-label">배송중</i><span class="statistic-value">4</span></div>
-    <div class="statistic"><i class="statistic-label">주문완료</i><span class="statistic-value">15</span></div>
-    <div class="statistic"><i class="statistic-label">취소/교환/환불</i><span class="statistic-value">1</span></div>
+
+  <ul>
+    <li>주문 하나에 여러 개의 상품 vs 하나의 상품</li>
+    <li>order detail: 결제 정보. 주문자 정보.</li>
+  </ul>
+  <section>
+    <div class="statistic-item">
+      <i class="statistic-label">배송중</i>
+      <span class="statistic-value">4</span>
+    </div>
+    <div class="statistic-item">
+      <i class="statistic-label">주문완료</i>
+      <span class="statistic-value">15</span>
+    </div>
+    <div class="statistic-item">
+      <i class="statistic-label">취소/교환/환불</i>
+      <span class="statistic-value">1</span>
+    </div>
   </section>
-  <hr />
   <div class="order-item">
     <header class="order-item-head">
-      <time class="order-item-head-date">2020/04/20 09:35:48</time>
-      <span class="order-item-head-id" style="float:right;">ORD20201031-8375693</span>
-      <span class="order-item-head-method">신용카드</span>
-      <span class="order-item-head-status">결제완료</span>
-      <!-- <div class="order-item-head-date">
-        <span class="order-item-head-date-label">주문일시</span>
-        <time class="order-item-head-date-value">2020/04/20 09:35:48</time>
-      </div> -->
-      <!-- <div class="order-item-head-status">
-        <span class="order-item-head-status-label">주문상태</span>
-        <span class="order-item-head-status-value">결제완료</span>
-      </div> -->
-      <!-- <div class="order-item-head-method">
-        <span class="order-item-head-method-label">결제방법</span>
-        <span class="order-item-head-method-value">신용카드</span>
-      </div> -->
-      <!-- <span class="order-item-head-code">503-9764331-2937463</span>
-      <span class="order-item-head-total">주문총액42,000원</span> -->
+      <span class="order-item-head-status">
+        <b class="order-item-head-status-label" hidden>주문상태</b>
+        결제완료
+      </span>
+      <time class="order-item-head-date">08. 24 결제</time>
+      <!-- <span class="order-item-head-method">
+        <b class="order-item-head-method-label" hidden>결제방법</b>신용카드
+      </span> -->
+      <span class="order-item-head-total">주문총액 42,000원</span>
     </header>
-    <div class="order-item-body">
-      <div class="order-item-product">
-        <figure class="order-item-product-thumbnail">
-          <img src="https://source.unsplash.com/random" alt="" />
-        </figure>
-        <h3 class="order-item-product-name">뉴닉이 풀어 쓴 경제상식사전</h3>
-        <div class="order-item-product-price">₩45,000 / 2개</div>
-        <small class="order-item-product-helper" title="이용기간 2020.04.20. 09:35 ~ 2020.05.19. 23:59">2020년 1월 1일까지 볼 수 있어요!</small>
-      </div>
+    <div class="order-item-product">
+      <figure class="order-item-product-thumbnail">
+        <img src="https://source.unsplash.com/random" alt="" />
+      </figure>
+      <h3 class="order-item-product-name">뉴닉이 풀어 쓴 경제상식사전</h3>
+      <small class="order-item-product-helper">2020년 1월 1일까지 볼 수 있어요!</small>
+      <div class="order-item-product-price">₩ 45,000</div>
     </div>
     <footer class="order-item-foot">
       <button class="order-item-foot-button">배송조회</button>
     </footer>
   </div>
 
-  <footer class="order-foot">
-    <!-- <p class="order-item-foot-helper">환불 및 문의사항은 whatsup@newneek.co로 보내주세요!</p> -->
-  </footer>
+  <section class="order-detail">
+    <div class="order-detail-item">
+      <h2>배송지정보</h2>
+    </div>
+    <div class="order-detail-item">
+      <h2>결제정보</h2>
+      <p>카드 간편결제</p>
+      <b>53,800원</b>
+      <p>현대(5121-****-****-****) 일시불</p>
+    </div>
+  </section>
 </main>

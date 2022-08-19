@@ -1,33 +1,12 @@
 .contact {}
-
-.contact-head {padding:4rem 10% 0;box-sizing:border-box;position:relative;}
+.contact-head {padding:4rem 10% 0;position:relative;}
 .contact-head-background {max-width:1920px;margin:0 auto;position:absolute;left:-50%;right:-50%;top:0;bottom:0;z-index:-1;}
 .contact-head-title {margin:0 0 24px 0;padding:0 32px;box-sizing:border-box;@include text-title;}
 .contact-head-description {float:left;width:50%;padding:0 64px 0 32px;box-sizing:border-box;color:var(--color-text-light);}
 .contact-head-phone {float:left;width:25%;padding:0 32px;box-sizing:border-box;}
 .contact-head-address {float:left;width:25%;padding:0 32px;box-sizing:border-box;}
-// .contact-top:after {content:'';display:block;background:var(--gray800);position:absolute;left:-50%;right:-50%;top:0;bottom:0;z-index:-1;}
-
 .contact-map {height:480px;overflow:hidden;margin:4rem auto 20rem;padding:0 10%;position:relative;}
 .contact-map iframe {height:480px;border-radius:var(--radius);box-shadow:0px 1px 4px rgba(0,0,0,.1);}
-
-.contact-form {
-  &:after {
-    content:'';
-    display:block;
-    clear:both;
-  }
-  h1 {
-    margin: 0 0 4rem 0;
-    text-align: center;
-  }
-  h4 {
-    margin: 0 auto .5rem;
-    color: var(--gray800);
-  }
-  div {
-  }
-}
 
 @media (--breakpoint-large) {
   .contact-head {padding:80px 0px;}

@@ -9,36 +9,14 @@
 .search-result-item p {color:var(--color-text-light);line-height:1.6;}
 .search-result-item:hover {background:#f9f9f6;}
 
-.help-board {margin:2rem auto;padding:0 var(--grid-margin);position:relative;}
-.help-board-title {margin:0 0 1rem 1.5rem;font-size:var(--font-size-subhead);}
-.help-board-item {display:block;padding:1rem 1.5rem;border:var(--border);background:var(--gray100);position:relative;transition:all .4s;}
-.help-board-item + .help-board-item {margin-top:-1px;}
-.help-board-item:hover {background:var(--color-background);}
-.help-board-item-tag {margin:0 0 0 .5rem;padding:.25rem var(--space-3);border-radius:var(--radius);background:var(--gray800);vertical-align:middle;color:var(--gray0);font-size:11px;cursor:default;}
-.help-board-item-category {margin:0 .5rem 0 0;text-decoration:underline;}
-.help-board-item-title {}
-.help-board-item-file {display:block;max-width:120px;margin:.25rem 0 0 0;background:var(--color-background);border-radius:var(--radius);padding:.25rem 1rem;border:var(--border);text-align:center;font-size:var(--font-size-caption);}
-.help-board-item-link {position:absolute;left:0;right:0;top:0;bottom:0;}
-.help-board-item-meta {position: absolute;right: 1.5rem;top:13px}
-.help-board-item-meta-label {font-size:var(--font-size-caption);color:var(--color-text-light);}
-.help-board-item-meta-value {font-size:var(--font-size-caption);color:var(--gray800);}
-.help-board-item-meta-divider {margin:0 8px;color:var(--gray200);}
-.help-board-item-content {display:none;margin:1rem 0 0 0;color:var(--gray800);animation:fadeup .4s ease;}
-.is-active.help-board-item {background:var(--color-background);}
-.is-active .help-board-item-content {display:block;}
-.is-active .help-feedback {display:flex;}
-
 .help-feedback {position:relative;}
 .help-feedback-title {}
 .help-feedback-status {display:block;margin:0 0 var(--space-4) 0;}
 .help-feedback-button {@include chip;margin:0 var(--space-2) 0 0;}
 
-.help-foot {display:flex;padding:1rem 2rem;box-sizing:border-box;background:var(--gray100);box-shadow:var(--shadow);position:relative;}
+.help-foot {@include tile-elevated;;}
 .help-foot-body {}
-.help-foot-body em {color:var(--gray800);text-decoration:underline;}
-.help-foot-link {margin-left:auto;}
-.help-foot-link i {display:inline-block;}
-
+.help-foot-link {}
 
 .faq {}
 .faq-head {padding:2rem 0;position:relative;}
@@ -47,27 +25,21 @@
 .faq-item {padding:var(--space-4);border-top:var(--border);box-sizing:border-box;background:var(--color-background);position:relative;}
 .faq-item-question {font-size:var(--font-size-subhead);font-weight:var(--font-weight-bold);cursor:pointer;}
 .faq-item-question i {margin: 0 1rem 0 0;}
-.faq-item-answer {max-width:60%;margin:1rem 0 0;}
+.faq-item-answer {margin:1rem 0 0;}
 // [role=button] {cursor:pointer;}
 
 .faq-contact {padding:3rem 0 4rem;}
 .faq-contact-emoji {display:block;margin:0 0 1rem 0;font-size:3rem;}
-.faq-contact-title {font-size:var(--font-size-huge);font-weight:var(--font-weight-bold);}
+.faq-contact-title {@include text-title;}
 .faq-contact-description {margin:1rem auto 2rem;}
 .faq-contact-form {margin:4rem 0;}
 .faq-contact-form-foot {}
 .faq-contact-form-foot-ask {@include button-primary;padding-left:4rem;padding-right:4rem;}
 .faq-contact-privacy {padding:2rem 0;}
-.faq-contact-privacy-title {font-size:var(--font-size-body);font-weight:var(--font-weight-bold);}
+.faq-contact-privacy-title {@include text-subhead;}
 .faq-contact-privacy-description {margin:1rem 0;}
 
-.faq-contact .textfield {margin: 1rem 0;}
-
-.faq-reaction {margin:4rem 0 0;padding:2.5rem 5% 3.5rem;}
-.faq-reaction-title {margin:0 0 1rem 0;font-size:var(--font-size-body);font-weight:var(--font-weight-bold);}
+.faq-reaction {}
+.faq-reaction-title {margin:0 0 var(--space-2) 0;@include text-subhead;}
 .faq-reaction-button {margin:0 2rem;color:var(--color-text-light);}
 .faq-reaction-button-emoji {display:block;font-size:var(--font-size-huge);}
-
-.faq-partnership {padding:4rem 0;}
-.faq-partnership-title {font-size:var(--font-size-body);font-weight:var(--font-weight-bold);}
-.faq-partnership-description {margin:1rem 0 0;}

@@ -4,8 +4,6 @@
     <h1 class="article-title">Search Pattern</h1>
     <p class="article-description">글로벌 검색 패턴과 로컬 검색 패턴의 구분. 검색의 인지.</p>
 
-
-
     <ul>
       <li>검색필드에 뒤로가기 버튼을 포함하지 않습니다. 뒤로가기는 title bar에 종속되는 액션입니다.</li>
     </ul>
@@ -26,60 +24,74 @@
       <li><b>onBlur. (default)</b>인기, 추천 등 개인화 콘텐츠 탐색.</li>
     </ul>
 
-    <div class="textfield searchfield is-focused" style="margin:var(--space-2) 0 0 0;">
-      <button class="textfield-prefix searchfield-prefix"><i class="icon-search"></i></button>
-      <!-- <label class="textfield-label" for="search">검색(시각적으로숨겨야함)</label> -->
-      <input class="textfield-input searchfield-input js-input-test" type="search" id="search" placeholder="궁금한 인물이나 이슈가 있나요?" />
-      <button class="textfield-clear searchfield-clear" hidden><i class="icon-x"></i></button>
-      <button class="searchfield-cancel">취소</button>
-    </div>
+    <section class="component-style">
+      <div class="tile-flat">
+        <div class="textfield searchfield is-focused">
+          <button class="textfield-prefix searchfield-prefix"><i class="icon-search"></i></button>
+          <!-- <label class="textfield-label" for="search">검색(시각적으로숨겨야함)</label> -->
+          <input class="textfield-input searchfield-input js-input-test" type="search" id="search" placeholder="궁금한 인물이나 이슈가 있나요?" />
+          <button class="textfield-clear searchfield-clear" hidden><i class="icon-x"></i></button>
+          <button class="searchfield-cancel">취소</button>
+        </div>
+      </div>
+    </section>
 
   <h2 class="article-subhead">검색의 시작</h2>
-  <ul style="margin:0 0 1rem 0;">
+  <ul>
     <li>
       해시태그나 카테고리 등 서비스가 제공하는 인기/추천 키워드의 클릭을 통한 검색. (액션/button) - clickable과 non-clickable 요소를 함께 정의하면
       좋다.
     </li>
     <li>직접 키워드 입력 - 검색어 자동완성 (입력/input)</li>
   </ul>
-  <section class="search-suggestion">
-    <div class="search-suggestion-item item" data-size="medium">
-      <figure class="search-suggestion-item-avatar item-avatar"><i></i></figure>
-      <p class="item-name">자동완성</p>
-    </div>
-    <div class="search-suggestion-item item" data-size="medium">
-      <figure class="search-suggestion-item-avatar item-avatar"></figure>
-      <p class="item-name">자동완성유아이</p>
-    </div>
-    <div class="search-suggestion-item button-elevated" style="z-index:auto;">
-      <figure class="search-suggestion-item-avatar"><i class="icon-search"></i></figure>
-      <p style="color:var(--color-primary);"><span>자동완</span>(으)로 검색</p>
+  <section class="component-style">
+    <div class="tile-flat">
+      <section class="search-suggestion">
+        <div class="search-suggestion-item item" data-size="medium">
+          <figure class="search-suggestion-item-avatar item-avatar"><i></i></figure>
+          <p class="item-name">자동완성</p>
+        </div>
+        <div class="search-suggestion-item item" data-size="medium">
+          <figure class="search-suggestion-item-avatar item-avatar"></figure>
+          <p class="item-name">자동완성유아이</p>
+        </div>
+        <div class="search-suggestion-item button-elevated" style="z-index:auto;">
+          <figure class="search-suggestion-item-avatar"><i class="icon-search"></i></figure>
+          <p style="color:var(--color-primary);"><span>자동완</span>(으)로 검색</p>
+        </div>
+      </section>
     </div>
   </section>
 
   <h2 class="article-subhead">최근 검색 내역</h2>
-  <ul style="margin:0 0 1rem 0;">
+  <ul>
     <li>비회원의 검색 내역도 저장할 것인가?</li>
   </ul>
-  <section class="search-recent">
-    <!-- <h2 class="search-recent-title">최근 검색</h2> -->
-    <!-- <button class="search-recommend-modify">수정</button> -->
-    <div class="search-suggestion-item item" data-size="medium">
-      <figure class="search-suggestion-item-avatar item-avatar"><i></i></figure>
-      <p class="item-name">개구리</p>
-      <button class="search-suggestion-item-delete item-delete" style="border:none;background:none;color:var(--color-text-light);">삭제</button>
+  <section class="component-style">
+    <div class="tile-flat">
+      <section class="search-recent">
+        <h2 class="search-recent-title">최근 검색</h2>
+        <!-- <button class="search-recommend-modify">수정</button> -->
+        <div class="search-suggestion-item item" data-size="medium">
+          <figure class="search-suggestion-item-avatar item-avatar"><i></i></figure>
+          <p class="item-name">개구리</p>
+          <button class="search-suggestion-item-delete item-delete" style="border:none;background:none;color:var(--color-text-light);">삭제</button>
+        </div>
+        <div class="search-suggestion-item item" data-size="medium">
+          <figure class="search-suggestion-item-avatar item-avatar"><i></i></figure>
+          <p class="item-name">올챙이</p>
+          <button class="search-suggestion-item-delete item-delete" style="border:none;background:none;color:var(--color-text-light);">삭제</button>
+        </div>
+      </section>
     </div>
-    <div class="search-suggestion-item item" data-size="medium">
-      <figure class="search-suggestion-item-avatar item-avatar"><i></i></figure>
-      <p class="item-name">올챙이</p>
-      <button class="search-suggestion-item-delete item-delete" style="border:none;background:none;color:var(--color-text-light);">삭제</button>
-    </div>
-    <div class="tile-flat">또는, 최근 검색 내역 없음</div>
-    <!-- <div class="search-recent-group" role="group">
+    <div class="tile-flat">
+      <div role="status">또는, 최근 검색 내역 없음</div>
+      <div class="search-recent-group" role="group">
         <a class="search-recent-group-item" href="#"><span class="chip-label">개구리</span></a>
         <a class="search-recent-group-item" href="#"><span class="chip-label">달팽이</span></a>
         <a class="search-recent-group-item" href="#"><span class="chip-label">매미</span></a>
-      </div> -->
+      </div>
+    </div>
   </section>
 
   <h2 class="article-subhead">최근 검색 내역의 삭제</h2>
@@ -103,31 +115,35 @@
     <li><b>onSubmit로 검색:</b> 상태(결과 없음)를 보여줄 수 있다. 결국 하나 또는 하나 이상의 명확한 결과가 필요한 경우.</li>
     <li>결과의 필터링 또는 소팅. link to filtering pattern page</li>
   </ul>
-  <div class="result tile-flat" style="padding-top:2rem;padding-bottom:2.5rem;">
-    <p role="status" style="text-align:center;">수줍이와(과)<br />일치하는 검색결과가 없습니다.</p>
-    <div style="display:flex;justify-content:center;margin-top:1rem;margin-left:-.25rem;">
+  <section class="component-style">
+    <section class="result tile-flat" style="padding-top:2rem;padding-bottom:2.5rem;">
+      <p role="status" style="text-align:center;">수줍이와(과)<br />일치하는 검색결과가 없습니다.</p>
+      <div style="display:flex;justify-content:center;margin-top:1rem;margin-left:-.25rem;">
+        <a href="" class="search-similar-item">
+          <figure>🦔</figure>
+          <span>검색어 제공</span>
+        </a>
+        <a href="" class="search-similar-item">
+          <figure>🐈‍⬛</figure>
+          <span>검색어 제공</span>
+        </a>
+      </div>
+    </section>
+  </section>
+
+  <h2 class="article-subhead">검색어 추천</h2>
+  <section class="component-style">
+    <div style="display:flex;margin-left:-.25rem;">
       <a href="" class="search-similar-item">
         <figure>🦔</figure>
-        <span>검색어 제공</span>
+        <span>간격/텍스트기준선</span>
       </a>
       <a href="" class="search-similar-item">
         <figure>🐈‍⬛</figure>
-        <span>검색어 제공</span>
+        <span>chip과구분</span>
       </a>
     </div>
-  </div>
-
-  <h2 class="article-subhead">검색어 추천</h2>
-  <div style="display:flex;margin-left:-.25rem;">
-    <a href="" class="search-similar-item">
-      <figure>🦔</figure>
-      <span>간격/텍스트기준선</span>
-    </a>
-    <a href="" class="search-similar-item">
-      <figure>🐈‍⬛</figure>
-      <span>chip과구분</span>
-    </a>
-  </div>
+  </section>
 
   <h2 class="article-subhead">placeholder의 작성</h2>
 
