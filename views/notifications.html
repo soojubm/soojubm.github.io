@@ -55,43 +55,27 @@
     </button>
   </div>
   <!-- todo padding-bottom vs min-height -->
-  <!-- <div class="checkbox" style="margin:0 0 -.5rem auto;">
-    <input class="js-check" type="checkbox" id="line03" value="" />
-    <label for="line03" title="Everyday is like sunday">읽지 않은 알림 보기</label>
-  </div> -->
-  <div class="navbar-notification" style="margin-left:0;padding-bottom:8rem;">
-    <menu class="navbar-notification-empty">
-      <p>최근 알림 메세지가 없습니다.</p>
-    </menu>
-    <menu class="navbar-notification-menu">
+  <div class="notification" style="margin-left:0;padding-bottom:8rem;">
+    <p role="status">최근 알림 메세지가 없습니다.</p>
+    <menu class="notification-menu">
       <!-- <h6 class="navbar-notification-menu-title">알림</h6>
       <a class="navbar-notification-menu-all" href="#">모두 보기</a> -->
-      <div class="notification-item">
+      <div class="item" data-size="large">
         <em class="notification-unread avatar-badge"></em>
-        <figure class="notification-item-avatar"></figure>
+        <figure class="item-avatar"></figure>
         <p style="line-height:1.4;">
-          <b class="notification-item-user">John Cassavetes</b>
-          <time class="notification-item-date">5일 전</time>
+          <b class="item-name" style="font-weight:var(--font-weight-bold);">John Cassavetes</b>
+          <time class="item-time">5일 전</time>
           <span class="notification-item-content">comment on <b>John Cassavetes</b></span>
         </p>
-        <div class="tile-elevated-small" style="margin-bottom:var(--space-4);">
+        <div class="tile-elevated-small" style="margin:var(--space-2) 0;">
           <figure class="avatar"></figure>
-          <p>알림 관련 페이지. hover 영역 재설정.</p>
+          <p>알림 관련 페이지. hover 영역 재설정. item vs notification-item</p>
         </div>
-      </div>
-      <div class="notification-item">
-        <em class="notification-unread avatar-badge"></em>
-        <figure class="notification-item-avatar"></figure>
-        <p style="line-height:1.4;">
-          <b class="notification-item-user">John Cassavetes</b>
-          <span class="notification-item-content">comment on <b>John Cassavetes</b></span>
-        </p>
-        <time class="notification-item-date">5일 전</time>
       </div>
       <!-- <footer>
         <button>더 불러오기</button>
       </footer> -->
-
       <hr />
       <div class="notification-item" style="padding-left:0;">
         <p style="line-height:1.4;">

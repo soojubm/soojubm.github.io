@@ -95,7 +95,7 @@ $transition-fade: opacity 0.15s linear;
   // size => square
 
   --width-small: 480px;
-  --menu-width: 360px;
+  --menu-width: 320px;
   --width-dropdown: 240px;
   --width-dialog: 0;
 
@@ -210,7 +210,7 @@ $transition-fade: opacity 0.15s linear;
     --gray200: #4e5351; // divider border
 
     // todo d1d2d3는 팔렛트에 없어요
-    --color-text: #d1d2d3;
+    --color-text: #d3d4d5;
     --color-text-weak: var(--gray800);
     --color-text-light: var(--gray400);
     --color-text-strong: var(--gray800);

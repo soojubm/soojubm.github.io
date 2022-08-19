@@ -51,9 +51,9 @@
 .post-reaction {}
 .post-reaction-like {display:flex;align-items:center;cursor:pointer;position:relative;}
 .post-reaction-like:hover {@include hover-item;}
-.post-reaction-like-icon {@include avatar-medium;}
+.post-reaction-like-icon {@include avatar-small;margin:0 var(--space-after-avatar-small) 0 0;}
 .post-reaction-like-icon img {display:flex;width:20px;margin-top:1px;margin-left:2px;}
-.post-reaction-like-count {margin:0 0 0 var(--space-after-avatar-medium);}
+.post-reaction-like-count {}
 .is-reacted {}
 .is-reacted .post-reaction-like-count {color:var(--red800);}
 

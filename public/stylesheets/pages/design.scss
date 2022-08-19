@@ -133,7 +133,7 @@
 
 .onboarding-control {@include group-button;}
 .onboarding-control-next {@include button-primary;width:var(--grid-column);}
-.onboarding-control-skip {@include button-secondary;width:var(--grid-column);}
+.onboarding-control-skip {@include button-tertiary;width:var(--grid-column);}
 
 .hover-sample {@include avatar-huge;}
 .hover-sample:hover {@include hover-item;}

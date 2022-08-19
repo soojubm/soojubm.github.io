@@ -19,6 +19,7 @@
 .item + .item {margin:var(--space-after-item) 0 0 0;}
 .item-avatar {@include item-avatar-large;}
 .item-name {font-size:var(--font-size-body);color:var(--color-text);}
+.item-time {margin:0 0 0 var(--space-1);color:var(--color-text-light);} // mediumm. large.
 .item-description {display:block;line-height:var(--font-line-height-small);color:var(--color-text-light);}
 .item-description + .item-name {margin-top:-.125rem;}
 .item-tag {@include tag;margin:0 0 0 var(--space-3);}

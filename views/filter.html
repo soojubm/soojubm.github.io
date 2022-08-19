@@ -159,7 +159,7 @@
   
     <h2 class="article-subhead">Presentation</h2>
     <ul>
-      <li>Dropdown: desktop에서 상. moblie에서 중.</li>
+      <li>Dropdown with chip group: desktop에서 상. moblie에서 중. desktop과 mobile에 동일한 경험과 낮은 개발 비용. 막연한 탐색.</li>
       <li>Sheet: desktop에서 하. mobile에서 상.</li>
       <li>Modal: desktop과 mobile에서 중. desktop과 mobile에 동일한 경험과 낮은 개발 비용.</li>
     </ul>
@@ -169,7 +169,7 @@
     <h2 class="article-subhead">필터의 적용</h2>
     <ul>
       <li>Instant updates. 각각의 필터를 즉시 적용 (onChange) - 더 좋은 사용자 경험 but 데이터 소모</li>
-      <li>Batch updates. 적용 버튼을 클릭할 때 적용 (onSubmit) - multiple filters</li>
+      <li>Batch updates. 적용 버튼을 클릭할 때 적용 (onSubmit) - 주로 multiple filters. single filter에서도 사용하는 케이스가 있음...</li>
     </ul>
   
     <h2 class="article-subhead">적용된 필터의 해제Reset</h2>
@@ -192,12 +192,12 @@
   
     <h2 class="article-subhead">궁굼이</h2>
     <p>사용자는 적용된 필터 옵션 전체를 초기화하기 위해 새로고침을 할까?</p>
-    <p>하나의 화면에서 모든 옵션 목록을 나열할 때 옵션 별로 다른 컴포넌트를 가져갈 수 있다. => 디자인과 개발 비용의 증가 만큼 사용자 경험이 월등한가? (case. airbnb)</o>
+    <p>하나의 화면에서 모든 옵션 목록을 나열할 때 옵션 별로 다른 컴포넌트로 제공할 수 있다. 예를 들면 드롭다운, chip, radio의 혼합 => 디자인과 개발 비용의 증가 만큼 사용자 경험이 월등한가? (case. airbnb)</o>
   
     <ul>
       <li>필터의 버튼 그룹의 정렬 기준을 정의. hero 섹션과 같고 dialog와는 다르다.</li>
       <li>range option</li>
-      <li>모든 필터 옵션을 세로 목록형 가로 스크롤로 나열할 수도 있다.</li>
+      <li>모든 필터 옵션을 세로 목록형 가로 스크롤로 나열할 수도 있다. 큰 화면에서 상대적으로 유용하다.</li>
     </ul>
   </div>
 </main>

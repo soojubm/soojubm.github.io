@@ -15,7 +15,6 @@
 // todo dialog container
 .modal {@include dim;} /* pointer-events:none */
 .modal-dim {display:none;@include dim;}
-
 .modal-dialog {@include modal-dialog;}
 .modal-head {    display: flex;
   justify-content: space-between;
@@ -43,5 +42,8 @@
   from {opacity:0;transform:scale(1.05);}
   to {opacity:1;transform:scale(1);}
 }
+
+// todo
+.is-active .modal {display:block;}
 
 /*팝업을 띄우면서 스크롤을 막으려면 스크롤바를 없애줘야 하는데, 이게 생각보다 복잡하다. 크롬에서는 html에 overflow:hidden를 잘 주면 끝인데, 익스플로러에선 스크롤 제어하려면 body에 먹여야 한다. html에 overflow:hidden;을주고 모달에 overflow-y를 주면(조건:모달이 윈도우창보다 작아질때)*/

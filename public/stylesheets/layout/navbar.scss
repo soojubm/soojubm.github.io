@@ -58,25 +58,18 @@
 .navbar-notification-trigger img {width:20px;pointer-events:none;}
 .navbar-notification-trigger em {display:block;width:.5rem;height:.5rem;border-radius:50%;border:2px solid var(--color-background-weak);box-sizing:border-box;background:var(--red800);text-indent:-9999px;position:absolute;right:5px;top:5px;}
 // tile + width-small
-// .navbar-notification-menu {width:400px;@include tile-elevated;}
-.navbar-notification-menu {}
-.navbar-notification-menu:before {content:'';display:block;position:absolute;left:50%;right:0;top:-8px;bottom:0;}
-.navbar-notification-menu-title {margin:var(--space-leading-subhead) 0 var(--space-after-subhead);font-size:var(--font-size-subhead);}
+
+.navbar-notification-menu {width:400px;@include tile-elevated;}
+// .navbar-notification-menu:before {content:'';display:block;position:absolute;left:50%;right:0;top:-8px;bottom:0;}
+.navbar-notification-menu-title {}
 .navbar-notification-menu-all {position:absolute;top:13px;right:1rem;}
-.navbar-notification-menu-item {padding:.5rem 1rem;cursor:pointer;position:relative;}
-.navbar-notification-menu-item:hover {background:var(--color-background);}
-.navbar-notification-menu footer {padding:var(--space-4) 0;}
-.navbar-notification-menu footer button {@include link-outside;}
-.navbar-notification-empty {width:320px;@include tile-elevated;position:absolute;top:36px;right:0;z-index:var(--zindex-menu);transform:scale(0);}
-.navbar-notification-empty:before {content:'';display:block;position:absolute;left:50%;right:0;top:-8px;bottom:0;}
+.navbar-notification-empty {}
 .is-active + .navbar-notification-menu,
 .is-active + .navbar-notification-empty {height:auto;transform:scale(1);}
 
-
 .notifications {@include container-medium;}
 .notification {}
-.notification-list {padding:1rem 2rem;}
-.notification-item {min-height:var(--size-large);margin:var(--space-3) 0 0 0;padding-left:calc(48px + var(--space-after-avatar-large));position:relative;z-index:var(--zindex-default);}
+.notification-item {@include item;}
 .notification-item:hover {@include hover-item;}
 .notification-item-avatar {@include avatar-large;position:absolute;left:0;top:0;}
 .notification-item-avatar + p {margin-bottom:var(--space-05);}

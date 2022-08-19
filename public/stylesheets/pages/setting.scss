@@ -1,20 +1,18 @@
 .setting {@include container-medium;}
-
 .setting-subhead {margin:0 0 var(--space-3) 0;font-size:var(--font-size-body);}
 
 .setting-item {@include tile-elevated;}
-.setting-item:hover {@include hover-item;}
 .setting-item-label {@include text-label;}
 .setting-item-value {}
 .setting-item-value-username {width:100%;}
 .setting-item-value-address {width:100%;}
 .setting-item-value-phone {width:100%;}
-
 .setting-item-form {padding:1rem 0 0;cursor:default;}
-
 .setting-item-foot {display:flex;}
 .setting-item-foot-confirm {@include button-primary;}
 .setting-item-foot-cancel {@include button-text;margin:0 0 0 var(--space-after-button);}
+.setting-item:hover {@include hover-item;}
+
 
 
 // todo padding

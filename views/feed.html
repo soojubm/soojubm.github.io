@@ -8,18 +8,18 @@
       다이얼로그나 아티클에서만 1rem의 inset을 갖는 tile을 쓸 수 있다. 기본 tile은 기존 1rem에서 .75rem으로 변경한다. 이 패턴의 heading은 1.25rem이다.
       feed entity와 같은 콘테이너. footer는 toolbar이다.
     </p>
-    <time style="color:var(--color-text-light);">수정된 시간: 3월 14일</time>
+    <time style="color:var(--color-text-light);">3월 14일 수정됨</time>
     <div
-      class="tile-elevated-small item"
+      class="item"
       data-size="large"
-      style="z-index:auto;"
+      style="margin-top:.75rem;z-index:auto;"
     >
       <figure class="item-avatar" style="overflow:hidden;"><img src="https://source.unsplash.com/random" style="height:100%;" alt="" /></figure>
       <h3 class="item-name">Kakao (bigger than)</h3>
       <p class="item-description">https://www.kakaocorp.com</p>
     </div>
     <div
-      class="tile-elevated-small item"
+      class="item"
       data-size="large"
       style="z-index:auto;"
     >
@@ -27,31 +27,14 @@
       <h3 class="item-name">Naver</h3>
       <p class="item-description">https://www.naver.com</p>
     </div>
-    <button style="margin-top:.5rem;">간략히</button>
-
-    <footer class="toolbar" style="display:flex;margin-top:1.5rem;">
-      <button class="chip">
-        <i class="icon-person" style="opacity:.5;"></i>
-      </button>
-      <button class="chip" style="margin-left:.5rem;">
-        <i class="icon-person" style="opacity:.5;"></i>
-      </button>
-    </footer>
   </article>
 
-  <br />
-
-
-  <article class="feed" style="margin:0 0 3rem 0;">
-    <!-- todo tag with icon? 하지만 태그는 아이콘 못 쓰게 했는데. -->
-    <span class="tag" data-role="accent">
-      <figure class="tag-icon" role="img">🔥</figure>
-    </span>
-    <article class="feed-user item" data-size="medium" style="display:flex;align-items:center;">
+  <article class="feed" style="margin:3rem 0;">
+    <article class="feed-user item" data-size="medium" role="menuitem">
       <figure class="item-avatar">
       </figure>
-      <h3 class="item-name" style="width:auto;">Elon Musk</h3>
-      <time style="margin:0 0 0 .5rem;color:var(--color-text-light);">2 hour</time>
+      <h3 class="item-name">수줍이</h3>
+      <time class="item-time" style="margin:0 0 0 .5rem;color:var(--color-text-light);">2 hour</time>
     </article>
     <div class="feed-content tile-elevated">
       <p class="feed-content-paragraph">
@@ -62,10 +45,10 @@
       <p>props가 바뀌지 않는다면 다시 랜더링할 필요가 없다. memo..</p>
       <p>https://yceffort.kr/2022/04/deep-dive-in-react-rendering</p>
 
-      <div class="feed-reaction" style="margin:var(--space-2) 0 0 0;">
+      <div class="feed-reaction">
         <div class="post-reaction-like">
-          <figure class="post-reaction-like-icon" style="width:24px;height:24px;font-size:var(--font-size-caption);">💕</figure>
-          <span class="post-reaction-like-count" style="font-size:var(--font-size-caption);">119</span>
+          <figure class="post-reaction-like-icon">💕</figure>
+          <span class="post-reaction-like-count">119</span>
         </div>
       </div>
       <!-- <footer>
@@ -76,17 +59,13 @@
   </article>
   
   <article class="feed" style="margin:0 0 3rem 0;">
-    <!-- todo tag with icon? 하지만 태그는 아이콘 못 쓰게 했는데. -->
     <span class="tag" data-role="accent">
       <figure class="tag-icon" role="img">🔥</figure>
       <small class="tag-label">Most Popular</small>
     </span>
-    <article class="feed-user item" data-size="medium" style="display:flex;align-items:center;">
-      <!-- todo flex 아니네 -->
-      <figure class="item-avatar">
-      </figure>
-      <h3 class="item-name" style="width:auto;">Elon Musk</h3>
-      <!-- <i class="icon-bullet"></i> -->
+    <article class="feed-user item" data-size="medium" role="menuitem">
+      <figure class="item-avatar"></figure>
+      <h3 class="item-name">Elon Musk</h3>
       <time style="margin:0 0 0 .5rem;color:var(--color-text-light);">2 hour</time>
     </article>
     <div class="feed-content tile-elevated">
@@ -97,7 +76,6 @@
         Monotonectally productivate progressive human capital without user friendly portals. Globally benchmark top-line ideas with distributed
         catalysts for change. Authoritatively restore ubiquitous partnerships vis-a-vis <a href="#feed">synergistic models</a>.
       </p>
-
       
       <div class="feed-tag tag-group" style="margin:0 0 var(--space-4) 0;">
         <span class="tag">Google</span>
@@ -123,26 +101,19 @@
         <li>대충 이 정도..</li>
       </ul>
 
-      <div class="feed-reaction" style="margin:var(--space-2) 0 0 0;">
+      <div class="feed-reaction">
         <div class="post-reaction-like">
-          <figure class="post-reaction-like-icon" style="width:24px;height:24px;font-size:var(--font-size-caption);">💕</figure>
-          <span class="post-reaction-like-count" style="font-size:var(--font-size-caption);">119</span>
+          <figure class="post-reaction-like-icon">💕</figure>
+          <span class="post-reaction-like-count">119</span>
         </div>
       </div>
-      <!-- <footer>
-        <time></time>
-        <button></button>
-      </footer> -->
     </div>
   </article>
 
   <article class="feed">
-    <article class="feed-user item" data-size="medium" style="display:flex;align-items:center;">
-      <!-- todo flex 아니네 -->
-      <figure class="item-avatar">
-      </figure>
-      <h3 class="item-name" style="width:auto;">Bruce Springsteen</h3>
-      <!-- <i class="icon-bullet"></i> -->
+    <article class="feed-user item" data-size="medium" role="menuitem">
+      <figure class="item-avatar"></figure>
+      <h3 class="item-name">Bruce Springsteen</h3>
       <time style="margin:0 0 0 .5rem;color:var(--color-text-light);">22. 05. 02.</time>
     </article>
     <div class="feed-content tile-elevated">
@@ -150,11 +121,10 @@
         Monotonectally productivate progressive human capital without user friendly portals. Globally benchmark top-line ideas with distributed
         catalysts for change. Authoritatively restore ubiquitous partnerships vis-a-vis <a href="#feed">synergistic models</a>.
       </p>
-
-      <div class="feed-reaction" style="margin:var(--space-2) 0 0 0;">
+      <div class="feed-reaction">
         <div class="post-reaction-like">
-          <figure class="post-reaction-like-icon" style="width:24px;height:24px;font-size:var(--font-size-caption);">💕</figure>
-          <span class="post-reaction-like-count" style="font-size:var(--font-size-caption);">119</span>
+          <figure class="post-reaction-like-icon">💕</figure>
+          <span class="post-reaction-like-count">119</span>
         </div>
       </div>
   </article>
