@@ -3,7 +3,7 @@
 
 // ! text-heading-medium / text-heading-small
 @mixin text-title {font-size:var(--font-size-huge);line-height:var(--font-line-height-small);font-weight:var(--font-weight-bold);color:var(--color-text);letter-spacing:-.0125rem;text-indent:-1px;}
-@mixin text-subhead {font-size:var(--font-size-subhead);font-weight:var(--font-weight-bold);color:var(--color-text);letter-spacing:-.0125rem;}
+@mixin text-subhead {font-size:var(--font-size-subhead);font-weight:var(--font-weight-bold);color:var(--color-text);}
 
 @mixin text-body {font-size:.875rem;font-weight:var(--font-weight-normal);}
 @mixin text-body-large {font-size:var(--font-size-subhead);}

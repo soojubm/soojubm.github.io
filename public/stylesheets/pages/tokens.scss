@@ -2,7 +2,7 @@
 // .tokens .article {max-width:1000px;}
 
 // todo page-padding / header-padding. minus
-.token-group {display:flex;flex-wrap:wrap;margin:0 calc(var(--space-3) / 2 * -1);}
+.token-group {display:flex;flex-wrap:wrap;margin:calc(var(--space-3) / 2 * -1);}
 .design-typograph-group {display:flex;@include tile-elevated;}
 
 .animation-rotation {animation:rotation 1s var(--bazier-base) infinite;}
