@@ -1,10 +1,8 @@
 <main class="pattern">
-
   <div class="article">
-    <span class="article-eyebrow">작성중</span>
     <h1 class="article-title">Filtering</h1>
     <p class="article-description">
-      먼저, 필터의 일반적인 pattern을 알아본 후 best practice를 정의한다.
+      실제 서비스의 디자인 시스템이 아니기 때문에 필터의 일반적인 pattern을 알아보자.
       <br/>
       Single Filter / Multiple Filters 후자는 구매결정(전환)에 필수불가결한 옵션이 존재하는 경우(다소막연).
     </p>
@@ -74,7 +72,7 @@
         <em class="badge" style="background:var(--color-accent);font-size:10px;color:var(--gray800);position:absolute;right:-.5rem;top:-.5rem;">2</em>
       </i>
     </button>
-    <form class="filter tile-elevated" style="padding:1rem;overflow: hidden;
+    <form class="filter tile-elevated" style="max-width:640px;padding:1rem;overflow: hidden;
     margin:0;">
       <header class="titlebar js-titlebar" role="navigation" style="padding:0;">
         <div class="titlebar-background"></div>
@@ -180,9 +178,9 @@
   
     <h2 class="article-subhead">적용된 필터의 상태</h2>
     <ul>
-      <li>Multiple Options: 빌터 버튼에 적용된 필터의 갯수 표시.</li>
+      <li>Multiple Options: 필터 트리거 버튼에 적용된 필터의 갯수 표시.</li>
       <li>Single Option: 액티브 상태와 레이블을 표기. (todo multiple)</li>
-      <li>적용된 필터 상태를 chip group with removable로 추가 제공(case. 오늘의집/네이버카페)</li>
+      <li>적용된 필터 상태를 removable chips로 추가 제공(case. 오늘의집, 네이버카페) => 필요한 인터페이스인가?</li>
     </ul>
   
     <h2 class="article-subhead">필터링와 소팅의 위계</h2>
@@ -191,10 +189,9 @@
     </p>
   
     <h2 class="article-subhead">궁굼이</h2>
-    <p>사용자는 적용된 필터 옵션 전체를 초기화하기 위해 새로고침을 할까?</p>
-    <p>하나의 화면에서 모든 옵션 목록을 나열할 때 옵션 별로 다른 컴포넌트로 제공할 수 있다. 예를 들면 드롭다운, chip, radio의 혼합 => 디자인과 개발 비용의 증가 만큼 사용자 경험이 월등한가? (case. airbnb)</o>
-  
     <ul>
+      <li>사용자는 적용된 필터 옵션 전체를 초기화하기 위해 새로고침을 할까?</li>
+      <li>하나의 화면에서 모든 옵션 목록을 나열할 때 옵션 별로 다른 컴포넌트로 제공할 수 있다. 예를 들면 드롭다운, chip, radio의 혼합 => 디자인과 개발 비용의 증가 만큼 사용자 경험이 월등한가? (case. airbnb)</o>
       <li>필터의 버튼 그룹의 정렬 기준을 정의. hero 섹션과 같고 dialog와는 다르다.</li>
       <li>range option</li>
       <li>모든 필터 옵션을 세로 목록형 가로 스크롤로 나열할 수도 있다. 큰 화면에서 상대적으로 유용하다.</li>

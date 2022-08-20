@@ -96,23 +96,23 @@
 
   <h2 class="article-subhead">최근 검색 내역의 삭제</h2>
   <ul>
-    <li>개별 검색 내역의 삭제.</li>
-    <li>전체 검색 내역의 삭제. 사용자에게 유용할 수도 있지만 리스크를 고려하라. 서비스의 특성에 맞게 제공.</li>
+    <li>개별 검색 내역의 삭제. 휘발되기 쉬운 정보라 편집 모듈보다 주로 내역의 우측에 x 버튼으로 제공한다.</li>
+    <li>전체 검색 내역의 삭제. 사용자에게 유용할 수도 있지만 리스크를 고려. 서비스의 특성에 맞게 제공.</li>
   </ul>
 
   <h2 class="article-subhead">검색의 실행</h2>
   <ul>
-    <li>onChange: 키보드를 입력할 때 마다.</li>
+    <li>onChange: 키보드를 입력할 때 마다. (+ debouncing). 검색어나 기대 결과를 미리 보여줄 수 있다.</li>
     <li>onSubmit: 검색 버튼을 클릭 또는 enter key를 입력.</li>
   </ul>
 
   <h2 class="article-subhead">검색의 결과</h2>
   <ul>
     <li>
-      <b>onChange로 검색:</b> 일치하는 결과가 없더라도 하나 이상의 결과를 항상 노출하는 경우. 추천 검색어나 추천 콘텐츠를 대신 노출할 수 있다. 단, ott
-      등의 컨텐츠 플랫폼에서 유용할 수 있지만 명확한 결과를 기대할 때는 주의.
+      <b>onChange로 검색:</b> 일치하는 결과가 없더라도 하나 이상의 결과를 항상 노출. 유사 콘텐츠, 또는 추천 콘텐츠를 제안할 수 있다. ott
+      등의 컨텐츠 플랫폼에서 유용할 수도 있지만 명확한 결과를 기대할 수 없는 경험.
     </li>
-    <li><b>onSubmit로 검색:</b> 상태(결과 없음)를 보여줄 수 있다. 결국 하나 또는 하나 이상의 명확한 결과가 필요한 경우.</li>
+    <li><b>onSubmit로 검색:</b> 상태(결과 없음)를 보여줄 수 있다. 하나 또는 하나 이상의 명확한 결과가 필요한 경우에 좋다.</li>
     <li>결과의 필터링 또는 소팅. link to filtering pattern page</li>
   </ul>
   <section class="component-style">
@@ -131,21 +131,12 @@
     </section>
   </section>
 
-  <h2 class="article-subhead">검색어 추천</h2>
-  <section class="component-style">
-    <div style="display:flex;margin-left:-.25rem;">
-      <a href="" class="search-similar-item">
-        <figure>🦔</figure>
-        <span>간격/텍스트기준선</span>
-      </a>
-      <a href="" class="search-similar-item">
-        <figure>🐈‍⬛</figure>
-        <span>chip과구분</span>
-      </a>
-    </div>
-  </section>
-
   <h2 class="article-subhead">placeholder의 작성</h2>
+
+  <h2 class="article-subhead">궁금이</h2>
+  <ul>
+    <li>검색 데이터는 어떻게 수집하는가.</li>
+  </ul>
 
   <!-- <form class="search-form">
     <nav class="search-tablist" role="tablist" aria-label="sample tabs">

@@ -139,6 +139,28 @@ async function domEvents() {
   // const pageTitleElement = document.querySelector('.js-page-title')
   // pageTitleElement?.textContent = page?.name || '페이지타이틀'
 
+  function onMouseUp(e) {
+    const activeTextarea = document.activeElement as HTMLTextAreaElement
+
+    const { id, value, selectionStart, selectionEnd } = activeTextarea
+    const selection = value.substring(selectionStart, selectionEnd)
+
+    const outputElement = document.querySelector('#output-element') as HTMLElement
+    const outputText = document.querySelector('#output-text') as HTMLElement
+
+    outputElement.innerHTML = id
+    outputText.innerHTML = selection
+    console.log(activeTextarea.tabIndex)
+  }
+
+  const textarea1 = document.querySelector('#ta-example-one')
+  const textarea2 = document.querySelector('#ta-example-two')
+
+  if (textarea1 && textarea2) {
+    textarea1.addEventListener('mouseup', onMouseUp, false)
+    textarea2.addEventListener('mouseup', onMouseUp, false)
+  }
+
   // // ! 디자인시스템에 추가한 거 임시
   document.querySelector('.js-default-font')?.addEventListener('click', () => document.body.classList.toggle('font-default'))
 
@@ -523,24 +545,26 @@ interface IUser {
   readonly test: string
 }
 
-class GreetingMessage extends HTMLElement {
-  constructor() {
-    super()
+// class GreetingMessage extends HTMLElement {
+//   constructor() {
+//     super()
 
-    this.innerHTML = `<p>
-				<button>Hi there!</button>
-			</p>
-			<div class="message" aria-live="polite"></div>`
-  }
+//     this.innerHTML = `
+//       <p>
+// 				<button>Hi there!</button>
+// 			</p>
+// 			<div class="message" aria-live="polite"></div>
+//     `
+//   }
 
-  connectedCallback() {
-    console.log('connected!', this)
-  }
-  disconnectedCallback() {
-    console.log('disconnected', this)
-  }
-}
+//   connectedCallback() {
+//     console.log('connected!', this)
+//   }
+//   disconnectedCallback() {
+//     console.log('disconnected', this)
+//   }
+// }
 
-if ('customElements' in window) {
-  customElements.define('greeting-message', GreetingMessage)
-}
+// if ('customElements' in window) {
+//   customElements.define('greeting-message', GreetingMessage)
+// }

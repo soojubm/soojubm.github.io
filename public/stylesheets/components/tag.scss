@@ -6,6 +6,6 @@
 
 .hashtag {@include hashtag;}
 
-.badge {display:inline-flex;align-items:center;justify-content:center;height:var(--size-tiny);padding:0 var(--space-2);border-radius:var(--radius);font-size:var(--font-size-caption);}
+.badge {display:inline-flex;align-items:center;justify-content:center;height:var(--size-tiny);padding:0 var(--space-2);border-radius:var(--radius);font-size:var(--font-size-caption);line-height:1;}
 .badge[data-variant=primary] {background:var(--color-accent);color: var(--gray800);}
 .badge[data-variant=secondary] {background:var(--green100);}

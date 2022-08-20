@@ -130,7 +130,7 @@
 .navbar-menu-item {display:block;padding:var(--space-2) 2rem var(--space-2) var(--grid-margin);font-size:var(--font-size-subhead);}
 .navbar-menu-item menu {flex-wrap:wrap;background:var(--color-background);position:static;left:auto;right:auto;top:auto;transition:none;}
 // .navbar-menu-item:hover menu {display:block;}
-.navbar-menu-item menu a {display:block;width:100%;font-size:var(--font-size-subhead);font-weight:var(--font-weight-bold);opacity:1;}
+.navbar-menu-item menu a {display:block;width:100%;height:var(--size-medium);font-size:var(--font-size-subhead);font-weight:var(--font-weight-bold);opacity:1;}
 
 .navbar-menu::-webkit-scrollbar {width:.5rem;height:auto;padding:.125rem;}
 .navbar-menu::-webkit-scrollbar-track {background:inherit;}

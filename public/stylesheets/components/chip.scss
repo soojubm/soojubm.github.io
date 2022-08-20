@@ -10,6 +10,7 @@
   border-radius: var(--radius);
   background: var(--color-background-weak);
   color: var(--color-text);
+  position: relative;
   @media (hover) and (pointer: fine) {
     &:hover {outline:4px solid rgba(0,0,0,.1);}
   }
@@ -34,7 +35,7 @@
 @mixin chip-label {padding:0 var(--space-3) var(--adjust-label-line);}
 
 .chip {@include chip}
-.chip-label {@include chip-label;}
+.chip-label {@include chip-label;padding-top:1px;}
 .chip-icon {@include chip-icon;}
 .is-active .chip-icon .icon-check {border-color:var(--color-background);}
 

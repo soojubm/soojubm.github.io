@@ -2,6 +2,11 @@
   <section class="hero">
     <!-- <h1 class="hero-title"><span style="color:var(--color-text-light);">Tokens</span><br />simply dummy text of the printing<br />and typesetting industry.</h1> -->
     <h1 class="hero-title">Tokens</h1>
+    <h1 class="hero-title">일관된 시각 경험. 크로스 플랫폼. 확장과 유지 보수.</h1>
+
+    <ul>
+      <li>프로덕션이 아니기 때문에 namespace를 생략. </li>
+    </ul>
     <!-- <ul style="margin:1.5rem 0 0 0;">
       <li>global :  --[name]-[componentName]-[role]-[?state]</li>
       <li>컴포넌트 토큰은 상대적으로 변경 가능성이 높고 범용성이 낮기 때문에 컴포넌트 스코프에서 정의합니다.</li>
@@ -15,7 +20,6 @@
       <li>JS: PascalCase</li>
       <li>Android: snake_case</li>
       <li>iOS: PascalCase</li> -->
-      <!-- <li>일관된 시각 경험 / 플랫폼 비종속 / 확장성과 유지 보수성</li> -->
     <!-- <ul>
       <li>중요도: Primary, Secondary, Tertiary,</li>
       <li>강도: none, low, normal, medium, high,max</li>
@@ -32,7 +36,6 @@ bold더 강하게, 더 강렬하게, 더 크게
 prominent또는 pronounced더 눈에 띄는
     </ul> -->
     <p>core: give a name to a raw value to enable theming and make improve maintainability / semantic / component</p>
-    <p>--md [namespace]</p>
     <p>20 - 20px. tailwind의 단점. 디자인 토큰에서 얻을 수 있는 추상화 및 기타 이점이 무효화됨. 값을 조정할 수 있도록 추상화.</p>
     <p>unit- 1x</p>
   </section>
@@ -58,8 +61,9 @@ prominent또는 pronounced더 눈에 띄는
       <!-- system: error / success / warning / info / update (new) -->
       <ul>
         <li>color(background/border/text/state). surface(shadow/radius).</li>
-        <li>다크테마를 위한 인버트 컬러셋을 별도로 정의하지 않습니다. 하나의 컬러셋으로 다양한 테마 또는 커스텀 유아이에 대응할 수 있어야 합니다.</li>
-        <li>크기와 비례해서 radius 조절이 필요하지만 경량화. shadow도 마찬가지.</li>
+        <li>다크테마를 위한 인버트 컬러셋을 별도로 정의하지 않습니다. 하나의 컬러셋으로 다양한 테마 또는 커스텀 유아이에 대응합니다. 가이드 문서를 background-weak / background-strong 등 시멘틱 레벨에서 정리할 필요가 있다.</li>
+        <li>크기와 비례해서 radius 조절이 필요하지만 경량화. shadow도 마찬가지. 하나의 값을 사용하고 있습니다.</li>
+        <li>radius. pill과 non-pill은 양자택일인가?</li>
       </ul>
       <button class="button-elevated js-darkmode" title="change theme" style="background:var(--color-background);border-radius:var(--radius);box-shadow:var(--shadow);padding:.5rem;border:var(--border);">
         <figure class="button-elevated-avatar"><i class="icon-moon"></i></figure>
@@ -100,6 +104,7 @@ prominent또는 pronounced더 눈에 띄는
           <div>
             <p>--color-background</p>
           </div>
+          <button class="chip"><span class="chip-label">copy</span></button>
         </article>
         <article class="token-item is-gray100">
           <figure class="token-item-avatar"></figure>
@@ -183,21 +188,24 @@ prominent또는 pronounced더 눈에 띄는
         <li>불릿, 괄호, 쉼표 등으로 텍스트를 분류하지 않습니다. 디자인하지 않았다는 인상.</li>
         <li>태그라인은 작은 화면에서도 임팩트를 줄 있도록 작성 단계에서 행갈이를 고려합니다. (todo: 글자 및 단어를 제한하고 개행 조건 정의)</li>
         <li>bottom navigation의 label은 예외적으로 10px입니다.</li>
+        <li>line-height는 주변 또는 부모 요소의 내부 간격에 영향을 받습니다. title, subhead, body, caption 크기에 따라 항상 일정할 수 없습니다.</li>
+        <li>kicker/overline</li>
+        <li>long-form content에서 truncate-multiple를 사용할 때는 항상 일정한 2줄로 자릅니다.</li>
           <!-- <p>프로모션 페이지의 헤드라인으로 제한적으로 사용합니다.</p> -->
       </ul>
       <button class="user-logout tile-elevated-small js-default-font" title="change theme">
         <span class="user-logout-label">시스템 폰트로 보기</span>
       </button>
-      <h4 class="article-subhead">Typefaces</h4>
+      <h4 class="article-subhead">Typefaces <sup>2</sup></h4>
       <!-- <p>history 아리타 산스 잘 안 쓰는 폰트를 조합해보고 싶었는데, 윈도우즈 환경에서 bold 표현이 약해서 바꿔 봄.</p> -->
       <div class="design-typograph-group">
         <div class="statistic-item" style="width:50%;">
           <span class="statistic-label">한글</span>
-          <b class="statistic-value">Gothic A1</b>
+          <b class="statistic-value">고딕 에이원Gothic A1</b>
         </div>
         <div class="statistic-item" style="width:50%;">
           <span class="statistic-label">영문</span>
-          <b class="statistic-value">Karla</b>
+          <b class="statistic-value"><del>Karla</del> Quattrocento Sans</b>
           <!-- <div class="tag-group" role="group" style="margin-top:var(--space-after-subhead);">
             <span class="token-item-tag">normal</span>
             <span class="token-item-tag">bold</span>
@@ -205,70 +213,100 @@ prominent또는 pronounced더 눈에 띄는
         </div>
       </div>
       <div class="token-group">
-        <div class="token-item">
-          <p><b>--fontstack: 'Karla', 'Gothic A1', sans-serif;</b></p>
+        <div class="token-item" style="max-width:100%;">
+          <p><b>--fontstack: 'Quattrocento Sans', 'Gothic A1', sans-serif;</b></p>
         </div>
-        <div class="token-item">
-          <p><b>--font-weight-normal: 400</b></p>
-          <p><b>--font-weight-bold: 800</b></p>
-        </div>
-        <div class="token-item">
-          <p><b>--font-line-height: 1.8</b></p>
-          <p><b>--font-line-height-small: 1.4</b></p>
-        </div>
+      </div>
+      <p style="margin:var(--space-1) 0 0 0;"><em style="color:var(--red800);">! 바꾼 영문 폰트의 line-height가 한글보다 더 커서 세로 가격이 조금씩 안 맞음.</em></p>
+
+      <h4 class="article-subhead">Sizes <sup>5</sup></h4>
+      <div class="token-group">
         <div class="token-item">
           <p><b>--font-size-huge: 3rem</b></p>
-          <p><b>--font-size-large: 2rem</b></p>
-          <p><b>--font-size-medium: 1.125rem</b></p>
-          <p><b>--font-size-small: .875rem</b></p>
-          <p><b>--font-size-tiny: .75rem</b></p>
         </div>
         <div class="token-item">
+          <p><b>--font-size-large: 2rem</b></p>
+        </div>
+        <div class="token-item">
+          <p><b>--font-size-medium: 1.125rem</b></p>
+        </div>
+        <div class="token-item">
+          <p><b>--font-size-small: .875rem</b></p>
+        </div>
+        <div class="token-item">
+          <p><b>--font-size-tiny: .75rem</b></p>
+        </div>
+      </div>
+
+      <h4 class="article-subhead">Weights <sup>2</sup></h4>
+      <div class="token-group">
+        <div class="token-item">
+          <p><b>--font-weight-normal: 400</b></p>
+        </div>
+        <div class="token-item">
+          <p><b>--font-weight-bold: 800</b></p>
+        </div>
+      </div>
+
+      <h4 class="article-subhead">Line heights <sup>2</sup></h4>
+      <div class="token-group">
+        <div class="token-item">
+          <p><b>--font-line-height: 1.8</b></p>
+        </div>
+        <div class="token-item">
+          <p><b>--font-line-height-small: 1.4</b></p>
+        </div>
+      </div>
+
+      <h4 class="article-subhead">Compositions 🔥</h4>
+      <p style="margin-bottom:1rem;">2가지 body text, 3가지 heading, 1가지 caption, 2가지 truncate</p>
+      <div class="token-group">
+        <div class="token-item">
           <p><b>@mixin text-title</b></p>
-          <b>--font-size-large: 2rem</b>
+          <div>
+            <p>--font-size-large</p>
+            <p>--font-weight-bold</p>
+          </div>
         </div>
         <div class="token-item">
           <p><b>@mixin text-subhead</b></p>
+          <div>
+            <p>--font-size-medium // todo large..</p>
+            <p>--font-weight-bold</p>
+          </div>
         </div>
         <div class="token-item">
           <p><b>@mixin text-body</b></p>
-          <b>--font-size-small: .875rem</b>
-        </div>
-        <div class="token-item">
-          <p><b>@mixin text-body-large {}</b></p>
-          <b>--font-size-small: .875rem</b>
-        </div>
-  
-        <!-- <span class="token-item-tag">body - kicker/overline</span> -->
-        <!-- <h4 class="article-subhead">Levels</h4>
-        <p>long-form content는 항상 2줄에서 truncate.</p>
-        <div class="token-item">
-          <p><b>heading levels</b></p>
-          <p>display/title - subhead - label</p>
-          <br />
-  
-          <p><b>body levels</b></p>
-          <p>작성 중.</p>
-          <br />
-          <p>@mixin truncate {}</p>
-          <p>@mixin truncate-multiple {}</p>
-        </div> -->
-        <div class="token-item">
-          <b>--font-size-huge: 3rem</b>
           <div>
-            <p>@mixin text-display {}</p>
+            <p>--font-size-small</p>
           </div>
         </div>
         <div class="token-item">
-          <b>--font-size-small: .75rem</b>
+          <p><b>@mixin text-body-large</b></p>
           <div>
-            <p>@mixin text-lable {}</p>
-            <p>@mixin text-helper {}</p>
-            <p>@mixin text-helper-validity {}</p>
+            <p>--font-size-medium</p>
           </div>
+        </div>
+        <div class="token-item">
+          <p><b>@mixin text-label</b></p>
+          <div>
+            <p>--font-size-small</p>
+            <p>--color-text-weak</p>
+          </div>
+        </div>
+        <div class="token-item">
+          <p><b>@mixin text-body-caption</b></p>
+          <div>
+            <p>--font-size-tiny</p>
+          </div>
+        </div>
+        <div class="token-item">
+          <p><b>@mixin truncate</b></p>
+        </div>
+        <div class="token-item">
+          <p><b>@mixin truncate-multiple</b></p>
         </div>
       </div>
-      <!-- <p>도움말 맥락에서 사용합니다.</p> -->
     </article>
 
     <article class="article js-scrollspy-section">
@@ -333,10 +371,10 @@ prominent또는 pronounced더 눈에 띄는
       <h1 class="article-title">Spacing</h1>
       <p class="article-description">요소 사이의 간격. outset과 inset.</p>
       <ul>
-        <li>1을 .25rem으로 정의합니다.</li>
-        <li>버튼 padding은 spacing으로 정의하지 않고 size로 정의합니다. 단, 버튼 레이블을 두 줄로 작성하지 않는다는 전제가 필요.</li>
+        <li>1 unit을 .25rem으로 정의해서 사용해 봄.</li>
+        <li>버튼의 height를 padding에 spacing으로 정의하지 않고 height를 size token으로 정의합니다. 단, 버튼 레이블을 두 줄로 작성하지 않는다 전제합니다.</li>
+        <li>참고. 폰트마다 기준선이 다르기 때문에 섞어짤 때에 padding으로 시각보정을 해주는 것이 좋습니다.</li>
       </ul>
-      <!-- <blockquote>todo: space-inset 3가지로 확장. 코드에 반영.</blockquote> -->
       <div class="token-group">
         <div class="token-item">
           <b>--space-05: .125rem</b>
@@ -350,7 +388,6 @@ prominent또는 pronounced더 눈에 띄는
           <div>
             <p>--space-tag-outer</p>
           </div>
-          <!-- Squish Inset/Stretch Inset --space-inset-squish, Stack margin -->
         </div>
         <div class="token-item">
           <b>--space-2: .5rem</b>
@@ -383,7 +420,7 @@ prominent또는 pronounced더 눈에 띄는
         </div>
       </div>
 
-      <h4 class="article-subhead">outdated</h4>
+      <h4 class="article-subhead">Outdated</h4>
       <div class="" style="display:flex;align-items:center;width:100%;height:10rem;text-align:center;font-size:var(--font-size-caption);padding:0;position:relative;">
         <div class="space" style="width:5%;margin:0;writing-mode: vertical-rl;color:var(--color-text);"><span class="">var(--grid-margin)</span></div>
         <div style="display:flex;align-items:center;justify-content:center;width:calc(50% - 5% - .5rem);height:100%;color:var(--color-text);">column<br />var(--grid-column)</div>
@@ -420,7 +457,7 @@ prominent또는 pronounced더 눈에 띄는
         <li>모바일 퍼스트, 가로 스크롤 트랜드 기조로 12 column grid 등 엄격한 그리드 시스템을 정의하지 않습니다.</p>
         <li>컨테이너는 최대 4개 칼럼을 가집니다.</p>
         <li>리스트는 언제든 가로 스크롤로 변경할 수 있도록 설계합니다.</li>
-        <li>컨테이너 너비의 대비로 페이지의 맥락을 구분할 수 있습니다. 예를 들면 비밀번호찾기와 로그인/회원가입 페이지는 각각 다른 레이아웃 모듈을 사용합니다.</p>
+        <li>페이지의 너비로 맥락을 구분할 수 있습니다. 예를 들면 비밀번호찾기와 로그인/회원가입 페이지는 각각 다른 레이아웃 모듈을 사용합니다.</p>
         <li>설정, 글쓰기, 소개 등 페이지에서 의도적으로 레이아웃 모듈이나 배경색에 대비를 줄 수 있습니다.</p>
       </ul>
 
@@ -444,7 +481,7 @@ prominent또는 pronounced더 눈에 띄는
         </div>
       </div>
 
-      <h4 class="article-subhead">Containers</h4>
+      <h4 class="article-subhead">Containers (todo)</h4>
       <ul>
         <li>grid-margin이 좌우 padding이 된다.</li>
         <li>모든 container는 --breakpoint-small부터 max-width가 100%가 된다.</li>
@@ -476,6 +513,10 @@ prominent또는 pronounced더 눈에 띄는
       </div>
 
       <h4 class="article-subhead">Groups</h4>
+      <ul>
+        <li>버튼 그룹은 최대 2개의 버튼</li>
+        <li>textfield-group의 case. 시작일/종료일, 해외주소(3개. zipcode...)</li>
+      </ul>
       <div class="token-group">
         <div class="token-item">
           <b>@mixin group-avatar</b>
@@ -488,20 +529,18 @@ prominent또는 pronounced더 눈에 띄는
         </div>
         <div class="token-item">
           <b>@mixin group-button</b>
-          <p>버튼 그룹은 최대 2개의 버튼</p>
         </div>
         <div class="token-item">
           <b>@mixin group-textfield</b>
-          <p>시작일과 종료일.</p>
         </div>
       </div>
     </article>
 
     <article class="article js-scrollspy-section">
       <h1 class="article-title">Positioning</h1>
-      
+      <p class="article-description">위치잡기.</p>
       <ul>
-        <li>z-index를 보전하기 위해 static이 아닌 relative로 초기화.</li>
+        <li>z-index 보전을 위해 static이 아닌 relative로 초기화.</li>
       </ul>
 
       <div class="token-group">
@@ -526,8 +565,10 @@ prominent또는 pronounced더 눈에 띄는
 
     <article class="article js-scrollspy-section">
       <h1 class="article-title">z-index</h1>
+      <p class="article-description">내용</p>
       <ul>
         <li>memo. 툴팁은 햄버거 메뉴에서 열릴 수 있다. 팝오버는 메뉴에서 열릴 수 있다. 모달은 메뉴보다 위에 있다. 토스트는 가장 위에 있다. 스티키 엘리먼트는 메뉴와 동일하지만 마이너스 마진이 필요할 수 있다.</li>
+        <li>navigation</li>
       </ul>
       <div class="token-group">
         <div class="token-item">
@@ -567,19 +608,15 @@ prominent또는 pronounced더 눈에 띄는
 
     <article class="article js-scrollspy-section">
       <h1 class="article-title">Animation</h1>
+      <p class="article-description">내용.</p>
       <!-- <h4 class="article-subhead">Timing / Duration / Delay</h4> -->
       <ul>
-        <li>inactive로 전환 시 instant</li>
+        <li>inactive로 전환 시(닫기 등) instant</li>
+        <li>뷰에서 최대 3개의 요소로 delay를 제한합니다. 너무 많은 애니메이션은 사용자가 콘텐츠보다 애니메이션에 집중하게 만든다.</li>
       </ul>
       <div class="token-group">
         <div class="token-item">
           <p><b>--bazier-base: cubic-bezier(0.455, 0.03, 0.515, 0.955)</b></p>
-        </div>
-        <div class="token-item">
-          <p>--duration: .4s</p>
-          <p>--duration-quick: .2s</p>
-          <p>--duration-slow: .8s</p>
-          <p>--duration-instant: 0s</p>
         </div>
         <div class="token-item">
           <div class="" style="display:flex;">
@@ -591,13 +628,39 @@ prominent또는 pronounced더 눈에 띄는
           <p>--animation-delay-second: .2s</p>
           <p>--animation-delay-third: .4s</p>
         </div>
+      </div>
+
+      <h4 class="article-subhead">Durations</h4>
+      <div class="token-group">
+        <div class="token-item" style="overflow:auto;">
+          <span class="tag" data-appearance="primary" style="position:absolute;right:.25rem;bottom:.25rem;">기본값</span>
+          <p>--duration: .4s</p>
+        </div>
+        <div class="token-item">
+          <p>--duration-quick: .2s</p>
+        </div>
+        <div class="token-item">
+          <p>--duration-slow: .8s</p>
+        </div>
+        <div class="token-item">
+          <p>--duration-instant: 0s</p>
+        </div>
+      </div>
+
+      <h4 class="article-subhead">Keyframes</h4>
+      <div class="token-group">
         <div class="token-item">
           <figure class="item-avatar animation-fadeup" style="float:none;"></figure>
           <p>@keyframes fadeup</p>
         </div>
         <div class="token-item">
-          <figure class="item-avatar animation-rotation" style="float:none;"></figure>
           <p>@keyframes fadeup</p>
+        </div>
+        <div class="token-item">
+          <p>@keyframes modal</p>
+        </div>
+        <div class="token-item">
+          <p>@keyframes marquee</p>
         </div>
       </div>
     </article>

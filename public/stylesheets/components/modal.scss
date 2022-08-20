@@ -20,10 +20,9 @@
   justify-content: space-between;
   align-items: center;
   flex-direction: row-reverse;
-  margin:0 var(--space-2-minus);
   padding:var(--space-2) 0;background:var(--color-background);position:sticky;top:0;}
 .modal-close {@include avatar-medium;}
-.modal-head-title {margin:0 var(--space-after-title) 0;@include text-title;}
+.modal-head-title {margin:0 0 var(--space-after-title) 0;@include text-title;}
 
 .modal-body {}
 .modal-body-subhead {margin:var(--space-4) 0;font-size:var(--font-size-body);}

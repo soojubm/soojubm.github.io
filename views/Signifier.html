@@ -3,14 +3,13 @@
     <h1 class="article-title" title="visual cue">Signifier <span hidden>Interaction States (MD)</span></h1>
     <p class="article-description">사용자가 다음에 일어날 일을 예측할 수 있도록 일관된 기표를 제공합니다.</p>
 
-    <a href="https://developer.apple.com/design/human-interface-guidelines/components/layout-and-organization/disclosure-controls"
-      >disclosure-controls</a
-    >
+    <a href="https://developer.apple.com/design/human-interface-guidelines/components/layout-and-organization/disclosure-controls" target="_blank">disclosure-controls</a>
 
     <ul>
-      <li>Plus icon을 expandable로 사용하지 마세요.</li>
-      <li>Bold text를 clickable로 사용하지 마세요. (참고. 단락 더 보기로 다른 서비스에서 자주 사용됨)</li>
+      <li>plus icon을 expandable로 사용하지 마세요.</li>
+      <li>bold text를 clickable로 사용하지 마세요. (참고. 단락 더 보기로 다른 서비스에서 자주 사용됨)</li>
       <li>텍스트 강조를 위해 브랜드 컬러 텍스트를 사용하지 마세요.</li>
+      <li>removable과 uncheckable의 구분.</li>
     </ul>
 
     <h4 class="article-subhead">Clickable? interactive element?</h4>
@@ -24,7 +23,7 @@
         <p>연한 회색의 오브젝트는 클릭할 수 있다.</p>
       </div>
       <div class="token-item">
-        <p><em>브랜드 컬러 텍스트</em>는 클릭할 수 있다.</p>
+        <em>브랜드 컬러 텍스트</em>는 클릭할 수 있다.</p>
       </div>
       <div class="token-item">
         <p>❤️ 아이콘(이모지)는 클릭할 수 있다. + 이미지</p>
@@ -100,24 +99,23 @@
       </div>
     </div>
 
-    <!-- todo states -->
     <h4 class="article-subhead">Hover state</h4>
     <div class="token-group">
       <div class="token-item">
-        <p style="margin:0 0 .25rem;">@mixin hover-text {}</p>
+        <b style="margin:0 0 .125rem;">@mixin hover-text</b>
         <a href="#" style="text-decoration:underline;">Text</a>
       </div>
       <div class="token-item" style="z-index:1;">
-        <p style="margin:0 0 var(--space-3);">@mixin hover-item {}</p>
+        <b style="margin:0 0 var(--space-2);">@mixin hover-item</b>
         <div class="item is-hoverable" data-size="medium" title="sign out">
-          <figure class="item-avatar">
+          <figure class="item-avatar" style="margin-bottom:0;">
             <i class="icon-out"><span class="icon-out-door"></span></i>
           </figure>
           <span class="item-name">Item</span>
         </div>
       </div>
       <div class="token-item">
-        <p style="margin:0 0 .25rem;">@mixin hover-button {}</p>
+        <b style="margin:0 0 .25rem;">@mixin hover-button</b>
         <button class="chip" style="outline:4px solid rgba(0,0,0,.1);"><span class="chip-label">button & chip</span></button>
       </div>
     </div>
@@ -125,15 +123,9 @@
     <h4 class="article-subhead">Disabled state</h4>
     <!-- <p class="article-description">clickable이 아닌 모든 것이 non-clickable이지만 명시적인 클릭 불가.</p> -->
     <div class="tile-flat" style="opacity:.5;cursor:not-allowed;">
-      <p>
-        opacity 50%
-      </p>
-      <p>
-        cursor not-allowed
-      </p>
-      <p>
-        removed elevated style
-      </p>
+      <p>opacity 50%</p>
+      <p>cursor not-allowed</p>
+      <p>removed elevated style</p>
       <p><button class="button-primary">주문</button></p>
     </div>
 
@@ -143,6 +135,7 @@
     <p>inline / toast / modal / refresh</p>
 
     <h4 class="article-subhead">Error</h4>
-    <p>global - 인터넷연결오류: toast + callout / section - 데이터패칭, 랜더링: result 컴포넌트 /</p>
+    <p>global. 인터넷연결오류: toast + callout</p>
+    <p>local(section). 데이터패칭, 랜더링: result 컴포넌트</p>
   </article>
 </main>

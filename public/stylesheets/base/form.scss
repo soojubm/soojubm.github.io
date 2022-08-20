@@ -241,17 +241,13 @@ input[type=file] + label:after {display:none;}
   display: flex;
   justify-content: center;
   align-items: center;
-  width:var(--date-width);height:var(--date-width);border-radius:var(--radius);background:#eee;font-size:var(--font-size-caption);
+  width:var(--date-width);height:var(--date-width);border-radius:var(--radius);background:var(--color-background-weak);font-size:var(--font-size-caption);
   cursor: pointer;
   &:hover {
     background: var(--color-primary);
     color: var(--gray0);
   }
 }
-
-
-
-
 
 progress[value] {
   border: 0;

@@ -8,7 +8,18 @@
   </section>
 
   <section class="component-body" style="padding:2rem var(--grid-margin);">
+    <nav class="index">
+      <h2 class="index-title">Table of contents.</h2>
+      <ol>
+        <li><a href="#">Xero</a></li>
+        <li><a href="#">Xero</a></li>
+        <li><a href="#">Xero</a></li>
+        <li><a href="#">Xero</a></li>
+        <li><a href="#">Xero</a></li>
+      </ol>
+    </nav>
 
+    <br />
 
     <div class="sorting" style="position:relative;display:flex;">
       <label class="" for="select2" style="margin:0 var(--space-2) 0 0;">Sort by</label>
@@ -30,7 +41,7 @@
         <li style="color:var(--color-text-light);">background weak는 clickable 요소이지만 텍스트를 톤 다운해서 보완.</li>
       </ul>
     </div>
-    <div class="feature-item tile-elevated" style="max-width:400px;padding:1rem;background-color:mediumpurple;position:realtive;z-index:0;">
+    <div class="feature-item tile-elevated" style="max-width:400px;padding:1rem;background-color:floralwhite;border:0;box-shadow:none;z-index:0;">
       <span class="feature-item-avatar" role="img">💃</span>
       <h3 class="feature-item-title">무료로 숙소 등록하기</h3>
       <p class="feature-item-description">남는 방 하나부터 별장까지, 다양한 형태의 공간을 무료로 등록하고 공유하세요.</p>
@@ -98,38 +109,41 @@
       </div> -->
     </section>
 
-
+    <br />
 
     <form class="tile-elevated" action="" style="max-width:400px;">
-      <header class="titlebar">
+      <header class="titlebar" style="padding:0;">
         <h1 class="titlebar-title">게시물 만들기</h1>
+        <button class="titlebar-back" onclick="javascript:window.location.href='/';">
+          <figure class="titlebar-back-icon" title="이전 페이지로"><i class="icon-arrow is-left"></i></figure>
+          <!-- <figure class="titlebar-back-icon"><i class="icon-close"></i></figure> -->
+          <!-- <span class="titlebar-back-label">뒤로</span> -->
+        </button>
       </header>
-      <article class="item" data-size="medium" style="margin:var(--space-3) 0;">
+      <div class="item tile" data-size="medium" style="margin:var(--space-4) 0 0;">
         <figure class="item-avatar"></figure>
         <h3 class="item-name" style="font-weight:var(--font-weight-normal);">수줍이</h3>
-      </article>
+      </div>
       <div class="textfield comment-write-text" style="margin:var(--space-3) 0;">
         <!-- <label class="textfield-label" for="" aria-hidden="true">댓글</label> -->
         <textarea
           class="textfield-input"
           rows="4"
           name="comment"
-          placeholder="hover 제거. 이 패턴은 feed에서, comment에서 사용할 수 있다. textarea 컴포넌트 정의. 클릭할 수 없는 entity의 존재.. 기술적으로 필요할 수도 있다. 취소 버튼을 버튼 그룹에 둘 지. 타이틀바에 둘 지."
-          style="height:auto;padding:0;background:none;"
+          placeholder="무슨 생각을 하고 계신가요?"
+          style="height:auto;"
         ></textarea>
       </div>
-      <div class="tile-elevated-small">
-        toolbar
-      </div>
+
+      <p class="tile-flat">feed에서, comment에서 사용할 수 있다. textarea 컴포넌트 정의. 취소 버튼의 위치. toolbar.</p>
       <footer>
-        <button class="comment-write-submit" type="submit">게시</button>
-        <!-- <button class="comment-write-cancel" style="color:var(--color-text);margin-left:0;">취소</button> -->
+        <button class="comment-write-submit" type="submit" style="width:50%;">게시</button>
       </footer>
     </form>
 
 
     <article class="tile-elevated" style="max-width:400px;z-index:1;">
-      <h3 style="text-align:center;">Ratings</h3>
+      <h3 style="text-align:center;font-size:var(--font-size-subhead);">Ratings</h3>
       <div class="statistic-item tile-flat" aria-label="별점 5개 만점에 3.9개를 받았습니다." style="text-align:center;z-index:auto;">
         <i class="statistic-label">리뷰 116만개</i>
         <span class="statistic-value" style="margin-left:-.5rem;">⭐ 4.8</span>
@@ -163,7 +177,7 @@
     </article>
     <br />
     <div style="max-width:400px;position:relative;">
-      <h3 style="text-align:center;">See this post in</h3>
+      <h3 style="text-align:center;font-size:var(--font-size-subhead);">See this post in</h3>
       <button class="" style="position:absolute;right:0;top:-.25rem;"><figure class="chip"><i class="icon-x"></i></figure></button>
       <hr />
       <div class="item" role="listitem" data-size="large">
@@ -180,56 +194,49 @@
 
     <br />
 
-
     <section class="greeting" style="max-width:400px;">
       <figure class="greeting-avatar" style="font-size:1.5rem;">🐶</figure>
       <h1 class="greeting-title">Hello, Stranger<i style="font-style:italic;">!</i></h1>
       <p class="greeting-description">Tender is the night.</p>
     </section>
     
-        <!-- <ul style="font-size:var(--font-size-caption);">
-          <li>모든 아이콘에 배경색이 있어서 너무 강조되어 보인다.</li>
-          <li>탭이 지금보다 상위 위계로 보이도록 시각적으로 강조해야 한다.</li>
-          <li>디자인 퀄리티를 높이고 싶은데 지금 색상과 텍스트 크기 등으로 한계가 명확한 듯. 조금 더 일반적인 유아이를</li>
-        </ul> -->
-        <!-- <aside class="tile-flat" style="padding-top:.5rem;padding-bottom:var(--space-3);">
-          <p>
-            todo. 페이지에서 인삿말과 함께 우측에 아바타나 아이콘을 배치하는 패턴이 꽤 트랜디. 이 패턴에서 아바타는 시각 정보가 아니라 링크로 사용(바텀
-            네비게이션 맨 우측 마이페이지 링크 대신). 이 디자인 시스템에서 한 사람의 유저를 강조(?)할 때 사용하는 유저 유아이(우측에 아바타가 배치된)
-            패턴은 이 유아이 패턴(greeting)와 시각적으로 분리할 필요가 있음.
-          </p>
-        </aside> -->
-    
-        <article class="card onboarding" role="listitem" style="max-width:400px;text-align:center;">
-          <figure class="card-thumbnail" style="object-fit:cover;">
-            <img src="https://source.unsplash.com/random" alt="" style="max-height:fit-content;" />
-          </figure>
-          <h3 class="card-title" style="font-weight: bold;padding:var(--space-3) 0 .25rem 0;">Welcome to...</h3>
-          <p class="card-text" style="width:90%;margin:0 auto;font-size:var(--font-size-body);line-height:var(--font-line-height-small);">
-            버튼 그룹은 2개 이상의 버튼을 가질 수 없도록. 2개 이상이 필요한 것은 버튼이 아닌 툴바.
-          </p>
-          <br />
-          <footer class="onboarding-control">
-            <button class="onboarding-control-next button-primary">Next</button>
-            <button class="onboarding-control-skip button-tertiary">Skip / Prev라면 secondary필요할지도..</button>
-          </footer>
-        </article>
+    <!-- <aside class="tile-flat">
+      <p>
+        todo. 페이지에서 인삿말과 함께 우측에 아바타나 아이콘을 배치하는 패턴이 트랜디. 이 패턴에서 아바타는 시각 정보가 아니라 링크로 사용(바텀
+        네비게이션 맨 우측 마이페이지 링크 대신)
+      </p>
+    </aside> -->
+
+    <article class="card onboarding" role="listitem" style="max-width:400px;text-align:center;">
+      <figure class="card-thumbnail" style="object-fit:cover;">
+        <img src="https://source.unsplash.com/random" alt="" style="max-height:fit-content;" />
+      </figure>
+      <h3 class="card-title" style="font-weight: bold;padding:var(--space-3) 0 .25rem 0;">Welcome to...</h3>
+      <p class="card-text" style="width:90%;margin:0 auto;font-size:var(--font-size-body);line-height:var(--font-line-height-small);">
+        버튼 그룹은 2개 이상의 버튼을 가질 수 없도록. 2개 이상이 필요한 것은 버튼이 아닌 툴바.
+      </p>
+      <br />
+      <footer class="onboarding-control">
+        <button class="onboarding-control-next button-primary">Next</button>
+        <button class="onboarding-control-skip button-tertiary">Skip / Prev라면 secondary필요할지도..</button>
+      </footer>
+    </article>
 
     <article class="tile-elevated" style="max-width:400px;padding:1rem;z-index:1;">
       <figure class="user-avatar"></figure>
       <h2 class="user-name">Gyeongsoo I</h2>
       <div class="user-id">@soojubm</div>
       <div class="user-job">Youtube Subscriber</div>
+      <footer class="tag-group">
+        <span class="tag">대한민국</span>
+        <span class="tag">자전거</span>
+      </footer>
       <p>여기서 팔로우 버튼을 작게 제공하는 게 트랜드..</p>
       <!-- <p class="user-description" style="margin:var(--space-2) 0 0 0;">TBreaking news alerts and updates from the BBC. For news, features, analysis follow </p> -->
 
       <footer class="user-foot" style="margin:var(--space-3) 0;">
         <button class="profile-foot-follow"><span class="item-action-label">팔로우</span></button>
       </footer>
-      <!-- <footer class="user-foot" style="display:flex;margin:1rem 0;">
-        <span class="tag">대한민국</span>
-        <span class="tag">자전거</span>
-      </footer> -->
       <div class="statistic" data-size="small">
         <div class="statistic-item" onclick="javascript:alert('샘플 유아이에요!')">
           <i class="statistic-label">팔로워</i>
@@ -610,10 +617,6 @@
         <label class="textfield-label" for="">컬렉션 이름</label>
         <input class="textfield-input" type="text" placeholder="컬렉션 이름">
       </div>
-      <!-- <footer class="user-foot" style="display:flex;justify-content:space-between;margin:var(--space-4) 0 0 0;">
-        <button class="button-text" style="width:100%;">컬렉션 만들기</button>
-        <button class="button-primary" style="width:100%;">취소</button>
-      </footer> -->
     </article>
 
     <section class="post-comment-list" style="max-width:400px;">
@@ -650,38 +653,21 @@
       </article>
     </section>
 
-
-    <!-- <div class="daylist">
-      <div class="day" role="listitem">
-        <span class="day-label">mon</span>
-        <b class="day-value">24</b>
-      </div>
-      <div class="day" role="listitem">
-        <span class="day-label">tue</span>
-        <b class="day-value">25</b>
-      </div>
-      <div class="day" role="listitem">
-        <span class="day-label">wed</span>
-        <b class="day-value">26</b>
-      </div>
-    </div> -->
-
-    <br />
-
-<!-- 
     <div class="number">
       <div class="number-card">8</div>
-      <div class="number-card">8</div>p
-    </div> -->
+      <div class="number-card">8</div>
+      <div class="number-card">2</div>
+      <div class="number-card">0</div>
+    </div>
 
-    <!-- <aside class="help-feedback">
+    <aside class="help-feedback tile-elevated">
       <p class="help-feedback-title">이 문서가 도움이 되었나요?</p>
       <small class="help-feedback-status" title="17 out of 439 found this helpful">417명 중 349명이 도움을 받았어요.</small>
       <footer style="display:flex;">
         <button class="help-feedback-button"><span class="chip-label">도움이 됐어요</span></button>
         <button class="help-feedback-button"><span class="chip-label">부족해요</span></button>
       </footer>
-    </aside> -->
+    </aside>
 
     <br />
 
@@ -690,41 +676,39 @@
       <figcaption style="margin:var(--space-3) 0 0 0;color:var(--color-text-light);">Byline</figcaption>
     </figure>
 
-
-    
-      <div class="graph" style="border:var(--border);border-radius:var(--radius);">
-        <div class="graph-title">1월 26일 <em>컴퓨터통신 분야</em>에서는<br><em>7백명의 지식iN</em>들이 답변하셨습니다.</div>
-        <div class="graph-item">
-          <span class="graph-item-value">40%</span>
-          <div class="graph-item-bar"></div>
-          <span class="graph-item-label">10대</span>
-        </div>
-        <div class="graph-item">
-          <span class="graph-item-value">30%</span>
-          <div class="graph-item-bar"></div>
-          <span class="graph-item-label">20대</span>
-        </div>
-        <div class="graph-item">
-          <span class="graph-item-value">20%</span>
-          <div class="graph-item-bar"></div>
-          <span class="graph-item-label">30대</span>
-        </div>
-        <div class="graph-item">
-          <span class="graph-item-value">10%</span>
-          <div class="graph-item-bar"></div>
-          <span class="graph-item-label">40대</span>
-        </div>
+    <div class="graph" style="border:var(--border);border-radius:var(--radius);">
+      <div class="graph-title">1월 26일 <em>컴퓨터통신 분야</em>에서는<br><em>7백명의 지식iN</em>들이 답변하셨습니다.</div>
+      <div class="graph-item">
+        <span class="graph-item-value">40%</span>
+        <div class="graph-item-bar"></div>
+        <span class="graph-item-label">10대</span>
       </div>
-      <!-- <div class="tile-flat" style="background:var(--color-background-weak);">
-        최근 3개월간 네이버플러스 멤버십으로<br />
-        <em>15,799원 추가 적립 혜택</em>이 생겼어요!
-      </div> -->
+      <div class="graph-item">
+        <span class="graph-item-value">30%</span>
+        <div class="graph-item-bar"></div>
+        <span class="graph-item-label">20대</span>
+      </div>
+      <div class="graph-item">
+        <span class="graph-item-value">20%</span>
+        <div class="graph-item-bar"></div>
+        <span class="graph-item-label">30대</span>
+      </div>
+      <div class="graph-item">
+        <span class="graph-item-value">10%</span>
+        <div class="graph-item-bar"></div>
+        <span class="graph-item-label">40대</span>
+      </div>
+    </div>
+    <div class="tile-flat" style="text-align:center;">
+      최근 3개월간 네이버플러스 멤버십으로<br />
+      <em>15,799원 추가 적립 혜택</em>이 생겼어요!
+    </div>
 
-      <!-- <p class="article-description">워크플로우입니다. changelog: 클릭하고 싶지 않은 형태로 변경 2021.10</p> -->
-      <!-- <p class="article-description">타임라인(역순)/히스토리 맥락. 확장<small class="is-optional">optional</small>, 링크<small class="is-optional">optional</small>, indentation</p> -->
-      <!-- <blockquote>
+      <p>워크플로우입니다. changelog: 클릭하고 싶지 않은 형태로 변경 2021.10</p>
+      <p>타임라인(역순)/히스토리 맥락. 확장, 링크, indentation</p>
+      <blockquote>
         <p>css속성으로 -webkit-appearance: slider-vertical slider 속성 값을 사용하기 때문에 slider는 carousel로 명명. input type="range" 형태를 stepper로 명명하는 경우가 있음.</p>
-      </blockquote> -->
+      </blockquote>
 
       <section class="step">
         <div class="step-item is-active">

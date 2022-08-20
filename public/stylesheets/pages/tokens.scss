@@ -1,4 +1,6 @@
-.tokens {}
+.tokens {
+  --item-width: 20%;
+}
 // .tokens .article {max-width:1000px;}
 
 // todo page-padding / header-padding. minus
@@ -17,11 +19,12 @@
 .token-navigation {}
 .token-navigation a {display:block;align-items:center;padding:var(--space-4);color:var(--color-text);}
 
-.token-item {@include tile-flat;width:100%;max-width:calc(20% - var(--space-3));margin:calc(var(--space-3) / 2);overflow:hidden;}
+.token-item {@include tile-flat;width:100%;max-width:calc(var(--item-width) - var(--space-3));margin:calc(var(--space-3) / 2);overflow:hidden;}
+.token-item figure {margin:0 0 var(--space-2) 0;}
 .token-item-avatar {@include avatar-large;width:100%;margin:0 0 var(--space-2);}
-.token-item b {display:block;font-weight:var(--font-weight-normal);}
-.token-item > div {margin:0 0 var(--space-05) 0;}
-.token-item div p {color:var(--color-text-light);}
+.token-item b {display:block;margin:var(--space-1-minus) 0;font-weight:var(--font-weight-bold);}
+.token-item div {margin:var(--space-1) 0 0 0;}
+.token-item div p {font-size:var(--font-size-caption);}
 
 .token-item.is-gray000 figure {border:var(--border);background:var(--color-background);}
 .token-item.is-gray100 figure {background:var(--gray100);}
@@ -47,7 +50,13 @@
 .token-item .color-item + .color-item {margin:var(--space-2) 0 0 0;}
 
 
+@media (--breakpoint-large) {
+  .tokens {
+    --item-width: 33.3333%;
+  }
+}
+
 @media (--breakpoint-small) {
-  .token-group {margin:0;}
-  .token-item {max-width:100%;margin:var(--space-2) 0;}
+  .token-group {display:block;margin:0;}
+  .token-item {max-width:100%;}
 }

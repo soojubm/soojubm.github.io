@@ -1,5 +1,5 @@
 .login {@include container-small;}
-.login-head {padding:0 0 1rem 0;}
+.login-head {padding:0 0 2rem 0;}
 .login-head-logo {@include avatar-medium;margin:0 0 var(--space-4) 0;}
 .login-title {@include text-title;}
 .login-description {margin:1rem 0;font-size:var(--font-size-body);}
@@ -31,7 +31,7 @@
 .signup-terms-content {height:120px;padding:8px 16px;border:var(--border);border-radius:var(--radius);box-sizing:border-box;font-size:var(--font-size-caption);color:var(--color-text-light);overflow-y:scroll;}
 
 .password {@include container-medium;}
-.password-head {margin:2rem 0;position:relative;}
+.password-head {margin:0 0 2rem 0;position:relative;}
 .password-title {@include text-title;}
 .password-description {margin:1rem 0 0 0;}
 .password-foot {display:flex;align-items:center;justify-content:space-between;margin:var(--space-3) 0 0 0;}
