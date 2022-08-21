@@ -76,16 +76,6 @@
 // todo
 .is-hoverable {@include hover-item;}
 
-@mixin layout {}
-@mixin layout-page {}
-@mixin layout-page-tiny {}
-@mixin layout-page-small {}
-@mixin layout-page-large {}
-
-
-@mixin layout-popover {
-  // ! dropdown / tooltip
-}
 @mixin layout-modal {}
 @mixin layout-login {}
 @mixin layout-join {}
@@ -153,6 +143,7 @@
   display: flex;
   flex-wrap: wrap;
   margin: var(--space-groupitem-minus);
+
   > * {
     // display: block;
     margin:var(--space-groupitem);
@@ -171,7 +162,7 @@
 
 
 // todo...
-.chip-group {@include chip-group;}
+.chip-group {  @include group-bleeding;}
 .tag-group {@include tag-group;}
 .is-bleeded {@include group-bleeding;padding:.25rem;margin:-.25rem;}
 .chip-group.is-bleeded {display:block;margin-left:calc(var(--grid-margin) * -1);padding-left:var(--grid-margin);margin-right: -50%;padding-right: 200px;}

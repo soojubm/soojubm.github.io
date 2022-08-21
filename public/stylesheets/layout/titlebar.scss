@@ -1,14 +1,13 @@
-.titlebar {display:flex;align-items:center;padding:var(--space-3) var(--grid-margin);position:relative;z-index:3;}
 // todo 프로필 오버플로우 메뉴보다 zindex가 낮아야함
+
+.titlebar {display:flex;align-items:center;padding:var(--space-3) var(--grid-margin);position:relative;z-index:3;}
+.titlebar-background {@include bleeding;background-color:var(--color-background);}
+
 .titlebar-title {margin:-1px 0 0;font-size:var(--font-size-subhead);font-weight:var(--font-weight-normal);position:absolute;left:50%;transform:translateX(-50%);}
-.titlebar-back {display:flex;align-items:center;position:relative;}
-// todo back button
-.titlebar-back-icon {@include chip;}
-.titlebar-back-label {margin:0 0 0 var(--space-4);}
+.titlebar-back {@include chip;}
 .titlebar-action {margin-left:auto;}
 .titlebar-action-icon {}
 .titlebar-action-label {color:var(--color-primary);}
-.titlebar-background {@include bleeding;background-color:var(--color-background);}
 .titlebar-backdrop {height:32px;padding:var(--space-4) 0;background:var(--color-background);}
 
 .is-sticky-titlebar .titlebar {position:fixed;top:0;}

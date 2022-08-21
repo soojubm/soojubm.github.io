@@ -1,5 +1,5 @@
 
-.component {}
+.component {max-width:var(--width-huge);margin:0 auto;}
 // .component-style {margin-top:calc(var(--titlebar-height) * -1);padding:calc(4rem + var(--titlebar-height)) var(--grid-margin);background-color:var(--color-primary);position:sticky;top:0;
 .component-style {margin:3rem -5vw;padding:2rem var(--grid-margin);background-color:var(--color-primary);position:sticky;top:0;
   background: #159957;  /* fallback for old browsers */
@@ -23,7 +23,6 @@
 .component-navigation-scroll > * {min-width:auto;}
 
 @media (--breakpoint-large) {
-
   .design {padding:0;}
   // .component-navigation-scroll {margin:0 var(--grid-margin-minus);padding:0 var(--grid-margin);}
 }

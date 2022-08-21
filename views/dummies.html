@@ -41,7 +41,7 @@
         <li style="color:var(--color-text-light);">background weak는 clickable 요소이지만 텍스트를 톤 다운해서 보완.</li>
       </ul>
     </div>
-    <div class="feature-item tile-elevated" style="max-width:400px;padding:1rem;background-color:floralwhite;border:0;box-shadow:none;z-index:0;">
+    <div class="feature-item tile-elevated" style="max-width:400px;padding:1rem;z-index:0;">
       <span class="feature-item-avatar" role="img">💃</span>
       <h3 class="feature-item-title">무료로 숙소 등록하기</h3>
       <p class="feature-item-description">남는 방 하나부터 별장까지, 다양한 형태의 공간을 무료로 등록하고 공유하세요.</p>
@@ -114,10 +114,8 @@
     <form class="tile-elevated" action="" style="max-width:400px;">
       <header class="titlebar" style="padding:0;">
         <h1 class="titlebar-title">게시물 만들기</h1>
-        <button class="titlebar-back" onclick="javascript:window.location.href='/';">
-          <figure class="titlebar-back-icon" title="이전 페이지로"><i class="icon-arrow is-left"></i></figure>
-          <!-- <figure class="titlebar-back-icon"><i class="icon-close"></i></figure> -->
-          <!-- <span class="titlebar-back-label">뒤로</span> -->
+        <button class="titlebar-back" aria-label="이전 페이지로">
+          <span class="material-symbols-outlined">arrow_back</span>
         </button>
       </header>
       <div class="item tile" data-size="medium" style="margin:var(--space-4) 0 0;">
@@ -137,7 +135,7 @@
 
       <p class="tile-flat">feed에서, comment에서 사용할 수 있다. textarea 컴포넌트 정의. 취소 버튼의 위치. toolbar.</p>
       <footer>
-        <button class="comment-write-submit" type="submit" style="width:50%;">게시</button>
+        <button class="comment-write-submit" type="submit">게시</button>
       </footer>
     </form>
 

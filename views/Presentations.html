@@ -2,11 +2,12 @@
   <section class="hero" role="banner">
     <span>작성 중</span>
     <h1 class="hero-title">Presentations? Views?</h1>
-    <h1 class="hero-title">something that requires the user’s attention.</h1>
+    <h1 class="hero-title">Page. Modal. Sheet. Toast.</h1>
     <p class="hero-description">
-      스터디 케이스 정도로 정리 해보자. <br />크로스 플랫폼을 위한 디자인에서 iOS에만 있거나 android에만 있는 요소를 혼합해서 사용하게 되면 작은 화면에서 sheet가 toast나 floating action
-      button 등과 위치나 용법이 중복되기 때문에 생각할 지점이 많아진다. 사용자들에게 눈에 띄게 큰 효용을 주는 것이 아니라면, 적은 수의
-      패턴으로 관리 비용을 줄이는 동시에 일관된 경험을 줄 도 있다. material design이나 human interface guideline은 하나의 거대한 운영체제 하에서 다양한 케이스를 망라하는 가이드이다. 이 모든 규칙을 엄격하게 수용하고 반영하려는 시도는 우리 제품의 당면한 문제인가?
+      정리. 크로스 플랫폼을 위한 디자인에서 iOS에만 있거나 android에만 있는 요소를 혼합해서 사용하게 되면 작은 화면에서 sheet가 toast나 floating
+      action button 등과 위치나 용법이 중복되기 때문에 생각할 지점이 많아진다. 사용자들에게 눈에 띄게 큰 효용을 주는 것이 아니라면, 대체 가능한 패턴을
+      활용하면 관리 비용을 줄이는 동시에 일관된 경험을 줄 수 있다. material design이나 human interface guideline은 하나의 거대한 운영체제 하에서
+      다양한 케이스를 망라하는 가이드이다. 이 모든 규칙을 엄격하게 수용하고 반영하려는 시도는 우리 제품의 당면한 문제인가?
     </p>
 
     <ul>
@@ -16,62 +17,155 @@
         것인지, 특정 위치(왼쪽 아래)에 위치하는 맥락으로 toast를 정의할 것인지. 너무 많은 콘텐츠를 모달에 표시하지 않도록 제한할 것인지, dribble,
         pinterest처럼 상세페이지 전체에 모달 뷰를 허용할 것인지?
       </li>
-      <li>React portal의 개념을 가져와서 모든 Presentations를 루트 엘리먼트(body) 안에 위치시킬 수 있다.</li>
+      <li>React portal의 개념을 가져와서 모든 Presentations를 루트 엘리먼트(body) 안에 위치시킬 수 있다. root -> page/modal/toast/sheet</li>
       <li>
         한 번에 하나의 presentation만 열 수 있다. 하지만 모달 안에서 드롭다운 등의 패턴은 허용할 것인가? 분명한 사실. 시트와 모달은 하나만 열 수 있다.
       </li>
-      <li>페이지 로딩이 트리거가 될 수 있는가? =></li>
-      <li>dim/overay를 포함하는가? => 시트/모달. non-modal dialog 등의 패턴도 정의할 수는 있다.</li>
-
-      <li>사용자의 인터렉션이 필요해요 -> 모달/시트 -> 1. 반응형이에요 -> 모달 / 2. 모바일앱이에요 -> 시트</ㅣ>
-      <li>사용자의 인터렉션이 필요없어요 -> 토스트 (feedback..)</ㅣ>
     </ul>
 
-    <p>md. When adapting for larger screens, a bottom sheet can become a context menu.</p>
-    <p>md. Swap the bottom sheet for a side sheet in landscape layouts.</p>
-    <p>md. sheet. modal bottom sheet. expanding bottom sheet.</p>
+    <div style="display:flex;">
+      <div style="width:50%;">
+        <h4 class="article-subhead">Related Componenets</h4>
+        <ul>
+          <li>Title bar</li>
+          <li>Button group</li>
+          <li>Dim/Overay</li>
+          <li>Elevated Tile</li>
+          <li>Close icon / Back icon</li>
+        </ul>
+      </div>
+      <div style="width:50%;">
+        <h4 class="article-subhead">Triggers</h4>
+        <ul>
+          <li>window.load</li>
+          <li>action button</li>
+        </ul>
+      </div>
+    </div>
+
+    <h4 class="article-subhead">Needed interactions with dim</h4>
+    <ul>
+      <li>Sheet (mobile)</li>
+      <li>Modal (desktop)</li>
+    </ul>
+    <p style="margin:.5rem 0 1.5rem;">
+      사용자 인터렉션이 필요한 경우 주의를 집중 시키기 위해 dim을 사용합니다. toast는 단순 피드백의 역할이기 때문에 기본 뷰를 유지합니다.
+    </p>
+
+    <div class="tile-flat">
+      <b>memo</b>
+      <p>md. When adapting for larger screens, a bottom sheet can become a context menu.</p>
+      <p>md. Swap the bottom sheet for a side sheet in landscape layouts.</p>
+      <p>md. sheet. modal bottom sheet. expanding bottom sheet.</p>
+    </div>
   </section>
 
   <section class="component-body">
     <article class="article js-observer js-scrollspy-section">
-      <h1 class="article-title">Modal</h1>
-      <p class="article-description">작성 중.</p>
+      <h1 class="article-title">Page</h1>
+      <p class="article-description">기본적인 콘텐츠 뷰</p>
+    </article>
 
+    <article class="article js-observer js-scrollspy-section">
+      <h1 class="article-title">Modal</h1>
+      <p class="article-description">something that requires the user’s attention.</p>
       <footer>
         <button class="button-secondary js-modal" data-modal="woolf">모달 열기</button>
       </footer>
-
-      <h4 class="article-subhead">모달이 될 수 있는 컴포넌트.</h4>
+      <hr />
       <ul>
-        <li>Dialog</li>
+        <li>
+          사용자의 워크플로를 완료하는 데 필요한 사용자 입력을 요청. input. 일반적으로 편집 또는 관리 작업과 같은 짧고 자주 발생하지 않는 작업에 사
+        </li>
+        <li>사용자가 직접 모달을 열도록 트리거. 현재 모달을 암시하는 기표는 없음. 사용자의 학습이 필요.</li>
+        <li><b>사용자의 인터렉션이 요구될 때.</b> 사용자가 모달을 해제할 때까지 이전 워크플로로 돌아갈 수 없습니다.</li>
+        <li>이전 페이지와 맥락을 유지하는 콘텐츠 정보를 표시</li>
+        <li>닫기 버튼을 왼쪽에 배치하는 케이스와 오른쪽에 배치하는 케이스를 공부해보기.</li>
+        <li>x button / arrow button</li>
+        <li>All Modals have a max-width of 100%.</li>
+      </ul>
+      <table>
+        <thead>
+          <tr>
+            <td style="padding:var(--space-2) 0;">
+              <span class="textfield-check" style="margin-right:var(--space-2);position:relative;right:auto;top:auto;background:var(--green100);"
+                ><i class="icon-check" style="border-color:var(--color-primary);"></i
+              ></span>
+            </td>
+            <td style="padding:var(--space-2) 0;">
+              <span class="textfield-check" style="position:relative;right:auto;top:auto;background:var(--red100);"
+                ><i class="icon-x is-red"></i
+              ></span>
+            </td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <b>Close on outside click</b>
+              <br />
+              내용 없음
+            </td>
+            <td>
+              <b>Non-modal dialog</b>
+              <br />
+              다이얼로그는 항상 모달로 사용합니다.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h4 class="article-subhead">모달이 될 수 있는 컴포넌트</h4>
+      <ul>
         <li>Page - portfolio work / width 정의하기</li>
+        <li>Dialog</li>
         <li>Multiple filters</li>
         <li>Dropdown menu</li>
       </ul>
 
-      <ul>
-        <li>
-          사용자의 워크플로를 완료하는 데 필요한 사용자 입력을 요청 input. 일반적으로 편집 또는 관리 작업과 같은 짧고 자주 발생하지 않는 작업에 사
-        </li>
-        <li>사용자가 모달을 해제할 때까지 이전 워크플로로 돌아갈 수 없습니다</li>
-        <li>사용자의 인터렉션이 필요한 경우</li>
-        <li>이전 페이지와 맥락을 유지하는 콘텐츠 표시</li>
-        <li>사용자가 직접 모달을 열도록 트리거.</li>
-        <li>모바일에서 페이지가 될 수 있다. airbnb case: 모달일 때 x 버튼. 모바일에서 페이지처럼 보이면서 arrow 버튼으로 변경됨</li>
-        <li>닫기 버튼을 왼쪽에 배치하는 케이스와 오른쪽에 배치하는 케이스를 공부해보기.</li>
+      <h4 class="article-subhead">with Page <sup>800px</sup></h4>
+      <aside class="modal tile-elevated" role="dialog" style="margin-left:-5vw;margin-right:-5vw;border-radius:0;position:relative;">
+        <article class="modal-dialog" style="margin:0;">
+          <!-- <header class="dialog-head"></header>
+          <div class="dialog-body"></div> -->
+          <header class="titlebar" style="padding:0;">
+            <h1 class="titlebar-title">모달 제목</h1>
+            <button class="titlebar-back" aria-label="이전 페이지로">
+              <span class="material-symbols-outlined">arrow_back</span>
+            </button>
+          </header>
+          <section style="padding:2rem 0 0;">
+            <ul>
+              <li>
+                <b>with title bar component.</b> 모달 보기의 작업 이름을 지정하는 제목 또는 작업을 설명하거나 지침을 제공하는 추가 텍스트를 제공하면
+                사람들이 앱에서 자신의 위치를​​유지하도록 도울 수 있습니다.
+              </li>
+              <li>sticky title bar.</li>
+              <li>use case. user profile의 portfolio에서 사용.</li>
+              <li>with button group.</li>
+              <li>모바일에서 페이지처럼 보인다.</li>
+            </ul>
+          </section>
+        </article>
+      </aside>
 
-        <li>
-          모달 보기의 작업 이름을 지정하는 제목 또는 작업을 설명하거나 지침을 제공하는 추가 텍스트를 제공하면 사람들이 앱에서 자신의 위치를
-          ​​유지하도록 도울 수 있습니다.
-        </li>
-      </ul>
+      <h4 class="article-subhead">with Dialog <sup>400px</sup></h4>
+      <aside class="dialog" role="alertdialog" aria-modal="true" aria-labelledby="dialog-title" aria-describedby="dialog-description">
+        <h1 class="dialog-title" id="dialog-title">페이지를 나가시겠어요?</h1>
+        <p class="dialog-description" id="dialog-description">아직 게시물을 공유하지 않았습니다. 게시하지 않고 나가시겠어요?</p>
+        <footer class="dialog-footer">
+          <button class="dialog-footer-confirm">페이지 나가기</button>
+          <button class="dialog-footer-cancel">계속 수정</button>
+        </footer>
+        <button class="dialog-close js-close" aria-label="닫기"><i class="icon-x"></i></button>
+      </aside>
 
       <h4 class="article-subhead">모달의 종료</h4>
       <ul>
         <li>click. dim / overay</li>
         <li>click. x button</li>
+        <li>click. 작업완료(primary) / 취소(tertiary)</li>
         <li>keydown. esc 키</li>
-        <li>click. 작업완료 / 취소</li>
       </ul>
 
       <h4 class="article-subhead">모달의 기능</h4>
@@ -86,12 +180,18 @@
           <b>ibm.</b> Don’t use to display complex or large amounts of data. Don’t recreate a full app or page in a dialog. 이 디자인 시스템에서는
           모달은 페이지가 될 수 있는 맥락이어야.
         </li>
+        <li><b>ibm.</b> non-modal.</li>
+        <li><b>airbnb.</b> 큰 화면에서 x 버튼. 모바일에서 페이지처럼 변하면서 arrow 버튼으로 변경됨</li>
+        <li><b>pinterest.</b> onDismiss / Preventing close on outside click</li>
       </ul>
+
+      <h4 class="article-subhead">References</h4>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alertdialog_role">alertdialog role</a>
     </article>
 
     <article class="article js-observer js-scrollspy-section">
       <h1 class="article-title">Toast</h1>
-      <p class="article-description">현재 사용하고 있지 않음.</p>
+      <p class="article-description" title="temporary feedback on an interaction">인터렉션의 일시적인 피드백. 현재 사용하지 않음.</p>
 
       <button class="button-secondary js-toggle">토스트 열기</button>
       <aside class="toast" role="alert">
@@ -101,7 +201,6 @@
       <h4 class="article-subhead">토스트가 될 수 있는 컴포넌트</h4>
       <ul>
         <li>callout</li>
-        <li>dialog</li>
       </ul>
 
       <h4 class="article-subhead">toast와 snackbar</h4>
@@ -111,14 +210,17 @@
 
       <h4 class="article-subhead">Cases</h4>
       <ul>
-        <li>삭제 후 되돌리기. 휴지통이 있다면 중요하지 않은 기능.</li>
-        <li>HIG에 없다. iOS spotify에서 라이브러리에 추가되었습니다.</li>
+        <li>삭제 후 되돌리기. 휴지통이 있다면 대체할 수 있는 기능.</li>
+        <li>HIG에 없다. iOS spotify. 라이브러리에 추가되었습니다.</li>
       </ul>
     </article>
 
     <article class="article js-observer js-scrollspy-section">
       <h1 class="article-title">Sheet</h1>
-      <p class="article-description">현재 사용하지 않음.</p>
+      <p class="article-description">
+        현재 사용하지 않음. To allow users to view optional information or complete sub-tasks in a workflow while keeping the context of the current
+        page, use Sheet.
+      </p>
       <button class="button-secondary js-toggle">시트 열기</button>
 
       <article class="sheet js-sheet" role="presentation">
@@ -151,28 +253,43 @@
 
       <h4 class="article-subhead">시트가 될 수 있는 컴포넌트</h4>
       <ul>
-        <li>entity list</li>
         <li>dialog</li>
-        <li>기능(역할) 단위로 구분하면 공유하기 등과 같은</li>
+        <li>기능(역할) 단위. 공유하기. 등.</li>
       </ul>
 
       <ul>
-        <li>데스크탑에서 모달이 될 수 있다. 사실 시트의 역할을 모달이 충분히 대체할 수는 있다.</li>
+        <li>데스크탑에서는 시트보다 모달의 사용성이 더 좋다. 모달이 충분히 대체할 수는 있다.</li>
       </ul>
-
-      <h4 class="article-subhead">Cases</h4>
+      <!-- <h4 class="article-subhead">Cases</h4>
       <ul>
-        <li>네이버쇼핑과 왓챠에서 본 것 같음.</li>
-      </ul>
+        <li>액션시트. 네이버쇼핑과 왓챠에서 본 것 같음.</li>
+      </ul> -->
     </article>
 
     <article class="article js-observer js-scrollspy-section">
       <h1 class="article-title">Popover</h1>
-      <p class="article-description"></p>
-      <!-- <footer>
-        <button class="button-tertiary js-toggle">팝오버 열기</button>
-        <div></div>
-      </footer> -->
+      <p class="article-description">floating tiles</p>
+      <footer style="position:relative;">
+        <button class="button-secondary js-toggle">팝오버 열기</button>
+        <div class="popover tile-elevated">
+          <header class="titlebar" style="padding:0;">
+            <h1 class="titlebar-title">프로필</h1>
+            <button class="titlebar-back" aria-label="이전 페이지로">
+              <span class="material-symbols-outlined">close</span>
+            </button>
+          </header>
+          <section style="margin:var(--space-4) 0 0 0;">
+            <div class="item" role="listitem" data-size="large">
+              <figure class="item-avatar"></figure>
+              <h2 class="item-name">Gyeongsoo I</h2>
+              <span class="item-description">유아이 디자이너</span>
+              <button class="item-action is-active"><span class="item-action-label">팔로잉</span></button>
+            </div>
+          </section>
+        </div>
+      </footer>
+
+      <h4 class="article-subhead">팝오버 컴포넌트</h4>
       <ul>
         <li>overflow menu</li>
         <li>tooltip</li>
@@ -181,21 +298,8 @@
       <ul>
         <li>큰화면에서 사용하는 유아이.</li>
         <li>모바일에서 모달이나 시트가 될 수 있어야 한다.</li>
-        <li></li>
+        <li>aka. drawer</li>
       </ul>
-    </article>
-
-    <!-- <article class="article js-observer js-scrollspy-section">
-      <h1 class="article-title">Drawer</h1>
-      <p class="article-description"></p>
-      <ul>
-        <li>popover와 구별하거나 퉁치거나.</li>
-      </ul>
-    </article> -->
-
-    <article class="article js-observer js-scrollspy-section">
-      <h1 class="article-title">Page</h1>
-      <p class="article-description">기본적인 콘텐츠 뷰</p>
     </article>
   </section>
 </main>

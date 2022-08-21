@@ -70,3 +70,6 @@
 .actionsheet button {
   display:block;width:100%;height:var(--size-large);text-align:center;background:var(--color-background-weak);border-radius:var(--radius);
 }
+
+.popover {display:none;width:100%;max-width:400px;}
+.is-active + .popover {display:block;position:absolute;left:0;top:calc(var(--size-large));}
