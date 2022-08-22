@@ -1,16 +1,20 @@
 <main class="pattern tokens">
   <article class="article js-scrollspy-section">
     <h1 class="article-title" title="visual cue">Signifier <span hidden>Interaction States (MD)</span></h1>
-    <p class="article-description">사용자가 다음에 일어날 일을 예측할 수 있도록 일관된 기표를 제공합니다.</p>
+    <p class="article-description">사용자는 다음에 일어날 일을 예측할 수 있어야 합니다.</p>
 
-    <a href="https://developer.apple.com/design/human-interface-guidelines/components/layout-and-organization/disclosure-controls" target="_blank">disclosure-controls</a>
+    <p class="article-description" style="color:var(--red800);">safari에서 outline이 radius를 못 가져옴. box-shadow는 컨테이너의 padding이 없으면 잘림. + ::before {border:0;radius} 수도 선택자의 장점. 역할(상태)를 확실히 분리할 수 있다ㅏ.</p>
 
     <ul>
       <li>plus icon을 expandable로 사용하지 마세요.</li>
       <li>bold text를 clickable로 사용하지 마세요. (참고. 단락 더 보기로 다른 서비스에서 자주 사용됨)</li>
       <li>텍스트 강조를 위해 브랜드 컬러 텍스트를 사용하지 마세요.</li>
       <li>removable과 uncheckable의 구분.</li>
+      <li>22.08. material icon으로 교체 예정...</li>
     </ul>
+
+    <h4 class="article-subhead">References</h4>
+    <a href="https://developer.apple.com/design/human-interface-guidelines/components/layout-and-organization/disclosure-controls" target="_blank">disclosure-controls</a>
 
     <h4 class="article-subhead">Clickable? interactive element?</h4>
     <div class="token-group">
@@ -26,11 +30,15 @@
         <em>브랜드 컬러 텍스트</em>는 클릭할 수 있다.</p>
       </div>
       <div class="token-item">
-        <p>❤️ 아이콘(이모지)는 클릭할 수 있다. + 이미지</p>
+        <p>❤️ 아이콘(또는 이모지?)는 클릭할 수 있다. + 이미지</p>
       </div>
     </div>
 
     <h4 class="article-subhead">Icons</h4>
+    <ul>
+      <li>icon button과 icon button을 포함하는 컨테이너</li>
+      <li>aria-haspopup vs aria-expanded</li>
+    </ul>
     <div class="token-group">
       <div class="token-item">
         <figure class="chip-icon">
@@ -116,7 +124,7 @@
       </div>
       <div class="token-item">
         <b style="margin:0 0 .25rem;">@mixin hover-button</b>
-        <button class="chip" style="outline:4px solid rgba(0,0,0,.1);"><span class="chip-label">button & chip</span></button>
+        <button class="chip" style="box-shadow:var(--state-hover);"><span class="chip-label">button & chip</span></button>
       </div>
     </div>
 

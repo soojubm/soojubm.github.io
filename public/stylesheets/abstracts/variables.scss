@@ -79,6 +79,7 @@ $transition-fade: opacity 0.15s linear;
 
   --color-border: var(--gray200);
   --color-border-hover: var(--gray800);
+  
   --color-text: var(--gray800);
   --color-text-weak: var(--gray0);
   --color-text-light: var(--gray400);
@@ -152,6 +153,8 @@ $transition-fade: opacity 0.15s linear;
   --radius-soft: null;
 
   --shadow: 0 0 .25rem rgb(0 0 0 / 7.5%);
+  --state-focus: 0 0 0 2px var(--color-border-hover);
+  --state-hover: 0 0 0 2px rgba(0,0,0,.1);
   // --shadow: 0px 0px .5rem rgba(0, 0, 0, 0.1);
   // --shadow: 0 0 0 1px rgb(0 0 0 / 5%), 0 1px 4px rgb(0 0 0 / 10%);
   --shadow-active: null;

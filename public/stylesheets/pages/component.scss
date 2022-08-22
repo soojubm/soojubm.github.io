@@ -19,7 +19,7 @@
 
 .component-navigation {background:var(--color-background);padding-left:var(--grid-margin);overflow:hidden;position:sticky;top:calc(var(--titlebar-height));z-index:7;}
 // .component-navigation-background {@include bleeding;border-bottom:var(--border);}
-.component-navigation-scroll {@include group-bleeding;flex-wrap:unset;margin:0 var(--grid-margin-minus);padding:var(--space-3) var(--grid-margin);}
+.component-navigation-scroll {@include group-bleeding;flex-wrap:unset;margin:0 var(--grid-margin-minus);padding:var(--space-2) var(--grid-margin);}
 .component-navigation-scroll > * {min-width:auto;}
 
 @media (--breakpoint-large) {

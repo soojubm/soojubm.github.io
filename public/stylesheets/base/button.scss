@@ -22,11 +22,11 @@ button {@include reset-button;}
   @content;
   &:hover:not(:disabled), &.is-hover:not(:disabled) {
     // box-shadow: inset 0px 0px 2px rgba(0,0,0,.4);
-    box-shadow: 0 0 0 4px rgba(0,0,0,.1);
+    box-shadow: var(--state-hover);
   }
   &:focus, &.is-focus {
     outline: 0;
-    box-shadow:0 0 0 2px var(--color-border-hover); // hover override
+    box-shadow: var(--state-focus); // hover override
   }
   &:active {}
   &:visited {}

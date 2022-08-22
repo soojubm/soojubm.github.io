@@ -39,7 +39,7 @@
 
 
 .search-recent {}
-.search-recent-title {margin:0 0 var(--space-4) 0;@include text-label;}
+.search-recent-title {margin:0 0 var(--space-2) 0;@include text-label;} // todo after-label
 .search-recent-group {@include chip-group;}
 .search-recent-group-item {@include chip;}
 

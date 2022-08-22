@@ -10,7 +10,7 @@
 
 
 @mixin textfield-prefix {
-  @include avatar-small;background:none !important;position:absolute;left:var(--space-4);top:36px;pointer-events:none;
+  @include avatar-small;background:none !important;position:absolute;left:var(--space-3);top:36px;pointer-events:none;
 }
 @mixin textfield-surfix {
   @include avatar-small;position:absolute;right:var(--space-4);top:36px;
@@ -24,7 +24,7 @@
 .textfield-label small {margin:0 0 0 .25rem;color:var(--color-text-light);}
 // todo padding top bottom은 textarea를 위해서
 .textfield-input {display:block;width:100%;height:var(--size-large);padding:11px var(--space-4);@include reset-textinput;}
-.textfield-input:focus {background:var(--color-background);outline:3px solid var(--color-background-weak);}
+.textfield-input:focus {background:var(--color-background);outline:0;box-shadow:var(--state-hover);} // todo outline -> shadow
 .textfield-input:disabled {border-color:var(--gray200);background:var(--gray200);color:var(--gray100);cursor:not-allowed;}
 .textfield-input:read-only {color:var(--color-text-light);cursor:default;}
 .textfield-input:read-only:focus {}
@@ -36,7 +36,7 @@
 
 .textfield-check {@include textfield-surfix;}
 .textfield-prefix {@include textfield-prefix;background:var(--color-background-weak);}
-.textfield-prefix ~ .textfield-input {padding-left:calc(1rem + 2rem + .25rem);}
+.textfield-prefix ~ .textfield-input {padding-left:calc(var(--size-medium) + var(--space-after-avatar-medium));}
 .selectbox-indicator {@include textfield-surfix;pointer-events:none;}
 .textfield-clear {@include avatar-small;@include textfield-surfix;top:11px;}
 .textfield-clear .icon-x:before {background-color:var(--color-text-light);}
@@ -46,9 +46,10 @@
 
 .searchfield {}
 .searchfield-prefix {top:11px;}
-.searchfield-clear {right:64px;}
-.searchfield-cancel {@include button-text;min-width:auto;position:absolute;right:0;top:0;padding:0;}
-.is-focused .searchfield-input {display:block;width:calc(100% - var(--size-large));}
+.searchfield-clear {right:calc(var(--size-medium) + var(--space-after-avatar-medium) + var(--space-3));} // + inset
+// todo... size-medium + after-avatar-medium
+.searchfield-cancel {@include button-text;min-width:auto;width:var(--size-medium);position:absolute;right:0;top:0;padding:0;}
+.is-focused .searchfield-input {display:block;width:calc(100% - var(--size-medium) - var(--space-after-avatar-medium));}
 .is-focused .searchfield-cancel {right:0;}
 
 // 검색필드는 레이블이 없다. label ~로 하면 되긴 함.

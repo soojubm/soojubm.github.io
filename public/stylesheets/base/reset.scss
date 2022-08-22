@@ -3,9 +3,9 @@ body,dl,dd,figure,blockquote,h1,h2,h3,h4,h5,h6,p,input[type=radio] {margin:0;}
 ul,ol,menu,fieldset,legend {margin:0;padding:0;}
 fieldset,iframe,img,hr {border:none} ol,ul,menu {list-style:none}
 main, picture {display:block;}
-iframe,img,video {width:100%;} /*img {vertical-align:middle;}*/
+iframe,img,video {width:100%;display:block;} /*img {vertical-align:middle;}*/
 // h1,h2,h3,h4,h5,h6 {line-height:var(--font-line-height-small);font-weight:var(--font-weight-bold);color:var(--color-text);word-break:keep-all;}
-strong,b,th,legend {font-weight:var(--font-weight-bold);} legend {margin:0 0 var(--space-1) 0;}
+strong,b,th,legend {font-weight:var(--font-weight-bold);} legend {}
 cite,i,address,em,dfn {font-style:normal;} em {color:var(--color-primary);}
 small {font-size:var(--font-size-caption);} abbr,ins {text-decoration:none;} del {color:var(--color-text-light);}
 a {text-decoration:none;text-decoration-skip-ink:auto;color:var(--color-primary);} a:link,a:visited {} a:hover,a:focus {} a:active {}

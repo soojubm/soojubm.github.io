@@ -53,6 +53,7 @@
 @import 'pages/profile';
 @import 'pages/cart';
 @import 'pages/product';
+@import 'pages/class';
 @import 'pages/contact';
 @import 'pages/terms';
 @import 'pages/help';
@@ -204,18 +205,6 @@
 .pricing-item-more {width:100%;@include button-text;margin:var(--space-after-button) 0 0 0;}
 
 
-
-
-.material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 300,
-  'GRAD' -25,
-  'opsz' 24
-}
-
-
-
 // mask-size: contain;
 // mask-repeat: no-repeat;
 // mask-position: center;
@@ -334,17 +323,6 @@
 
 .menulist {@include tile-elevated;}
 
-.class-head-thumbnail {width:50%;margin-left:-5%;overflow:hidden;border-radius:4px;}
-
-.class {position:relative;}
-.class-head {padding:0 0 0;}
-.class-head-eyebrow {@include tag-primary;display:inline-block;padding:0 .5rem;}
-.class-head-title {@include text-title;margin:1rem 0 0 0;}
-.class-head-description {margin:1rem 0 0 0;}
-.class-order {@include tile-elevated;width:100%;max-width:60%;padding:3rem;position:absolute;right:0;top:4rem;}
-.class-order-price {font-size:var(--font-size-subhead);}
-.class-order-action-purchase {@include button-primary;width:100%;}
-.class-order-action-share {}
 
 
 // :root {

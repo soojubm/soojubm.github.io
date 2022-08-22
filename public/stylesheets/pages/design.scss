@@ -198,7 +198,7 @@
 .accordion {@include tile-elevated;padding:var(--space-4);}
 .accordion:hover {@include hover-item;}
 .accordion-title {display:flex;align-items:center;justify-content:space-between;@include text-subhead;}
-.accordion-title-icon {@include avatar-medium;}
+.accordion-title-icon {@include avatar-small;}
 .accordion-panel {display:none;cursor:default;}
 .accordion-panel p + p {margin:var(--space-4) 0 0 0;}
 .is-active .accordion-panel {display:block;padding:var(--space-3) 0;}

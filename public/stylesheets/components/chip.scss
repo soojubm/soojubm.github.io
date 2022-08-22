@@ -12,7 +12,7 @@
   color: var(--color-text);
   position: relative;
   @media (hover) and (pointer: fine) {
-    &:hover {outline:4px solid rgba(0,0,0,.1);}
+    &:hover {box-shadow:var(--state-hover);}
   }
   &:disabled {border-color:transparent;}
   
@@ -40,7 +40,7 @@
 .is-active .chip-icon .icon-check {border-color:var(--color-background);}
 
 .chip-remove {@include chip-icon;}
-.chip-remove:hover {outline:2px solid #eee;}
+.chip-remove:hover {box-shadow:var(--state-hover);}
 .chip-close {}
 .chip-add {}
 .chip-checked {} // chip-avatar
