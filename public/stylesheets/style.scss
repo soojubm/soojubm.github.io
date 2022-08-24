@@ -122,7 +122,7 @@
 .statistic-label {display:block;color:var(--color-text-light);}
 .statistic-value {display:block;margin:-.25rem 0 0 0;@include text-subhead;}
 
-.statistic[data-size=small] {justify-content:center;margin:var(--space-3);}
+.statistic[data-size=small] {align-items:center;justify-content:center;margin:var(--space-3);}
 .statistic[data-size=small] .statistic-item {display:flex;}
 .statistic[data-size=small] .statistic-value {margin:0 0 0 var(--space-1);font-size:var(--font-size-body);}
 
