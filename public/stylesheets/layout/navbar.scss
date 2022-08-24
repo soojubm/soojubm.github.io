@@ -96,7 +96,7 @@
 .user-name {margin:var(--space-leading-subhead) 0 0 0;@include text-subhead;text-align:center;}
 .user-id {margin:-.125rem 0 0 0;text-align:center;}
 .user-job {margin:var(--space-1) 0 0 0;text-align:center;color:var(--color-text-light);}
-.user-email {}
+.user-email {line-height:var(--font-line-height-small);}
 
 // todo this is item
 .user-logout {display:flex;align-items:center;width:100%;margin:var(--space-after-item) 0;position:relative;}

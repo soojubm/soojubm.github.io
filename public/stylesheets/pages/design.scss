@@ -400,7 +400,7 @@
 .chat-avatar img {height:100%;}
 .chat-username {font-size:var(--font-size-caption);}
 .chat-time {margin:0 0 0 var(--space-1);color:var(--color-text-light);font-size:var(--font-size-caption);color:var(--color-text-light);position:absolute;bottom:-1.5rem;}
-.chat-bubble {width:fit-content;max-width:calc(90% - var(--size-medium));margin:var(--space-1) 0 0 0;padding:var(--space-3) 1rem;background:var(--color-background-weak);  border-radius:1.5rem;border-top-left-radius:0;}
+.chat-bubble {width:fit-content;max-width:calc(90% - var(--size-medium));padding:var(--space-3) 1rem;background:var(--color-background-weak);  border-radius:1.5rem;border-top-left-radius:0;}
 .chat-bubble p {}
 .chat-bubble figure {width:90%;height:200px;border-radius:1.25rem;overflow:hidden;}
 .chat-bubble.has-image {padding:0;background:none;}
