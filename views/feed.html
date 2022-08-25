@@ -1,4 +1,4 @@
-<main class="feeds" style="max-width:520px;margin:2rem auto;padding:0 var(--grid-margin) 0;">
+<main class="feeds" role="feed" aria-busy="false">
   <article class="tile-elevated" style="padding:1rem;z-index:1;">
     <h2 style="margin-bottom:.5rem;line-height:var(--font-line-height-small);">Heading</h2>
     <p style="margin-bottom:.5rem;">
@@ -29,7 +29,7 @@
     </div>
   </article>
 
-  <article class="feed" style="margin:3rem 0;">
+  <article class="feed" aria-setsize="3" aria-posinset="1">
     <article class="feed-user item" data-size="medium" role="menuitem">
       <figure class="item-avatar">
       </figure>
@@ -44,7 +44,7 @@
       <p>컴포넌트 최적화 https://blog.naver.com/PostView.naver?blogId=pjt3591oo&logNo=222281569378&parentCategoryNo=&categoryNo=103&viewDate=&isShowPopularPosts=false&from=postView</p>
       <p>props가 바뀌지 않는다면 다시 랜더링할 필요가 없다. memo..</p>
       <p>https://yceffort.kr/2022/04/deep-dive-in-react-rendering</p>
-
+      <p>https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-busy</p>
       <div class="feed-reaction">
         <div class="post-reaction-like">
           <figure class="post-reaction-like-icon">💕</figure>
@@ -58,7 +58,7 @@
     </div>
   </article>
   
-  <article class="feed" style="margin:0 0 3rem 0;">
+  <article class="feed">
     <span class="tag" data-role="accent">
       <figure class="tag-icon" role="img">🔥</figure>
       <small class="tag-label">Most Popular</small>

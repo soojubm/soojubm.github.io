@@ -58,5 +58,5 @@
 
 @media (--breakpoint-small) {
   .token-group {display:block;margin:0;}
-  .token-item {max-width:100%;}
+  .token-item {max-width:100%;margin:var(--space-3) 0;}
 }

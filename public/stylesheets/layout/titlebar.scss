@@ -10,6 +10,9 @@
 .titlebar-action-label {color:var(--color-primary);}
 .titlebar-backdrop {height:32px;padding:var(--space-4) 0;background:var(--color-background);}
 
+
+.titlebar[data-size=large] {align-items:baseline;height:100px;}
+.titlebar[data-size=large] .titlebar-title {@include text-subhead;font-size:1.5rem;position:absolute;left:0;top:calc(var(--titlebar-height) - .25rem);transform:translateX(0);}
 .is-sticky-titlebar .titlebar {position:fixed;top:0;}
 .is-sticky-titlebar .titlebar-background {box-shadow:var(--shadow);}
 

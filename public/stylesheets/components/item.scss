@@ -27,6 +27,7 @@
 .item-action {@include chip;background:var(--green100);color:var(--color-primary);position:absolute;right:0;top:50%;transform:translateY(-50%);}
 .item-action.is-active {border-color:transparent;background:var(--color-background-weak);color:var(--color-text);}
 .item-action-label {@include chip-label;}
+.item-follow {}
 
 .item-delete {@include chip;position:absolute;right:0;top:0;}
 .item-delete:hover {}
@@ -39,15 +40,10 @@
 .is-gray.item-icon .icon-chevron {border-color:var(--icon-background);}
 // todo signify
 
-
-.item-follow {}
-
-
 .item[data-align=vertical] {width:auto;text-align:center;}
 .item[data-align=vertical] .item-avatar {float:none;margin-right:0;}
 .item[data-align=vertical] .item-name {margin-top:var(--space-1);}
 .item[data-align=vertical] .item-description {margin:0;}
-
 
 
 [data-size=huge] .item-avatar {@include item-avatar-huge;}

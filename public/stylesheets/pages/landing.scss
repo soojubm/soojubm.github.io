@@ -25,14 +25,14 @@
 .is-scrolled .landing-hero-object2 {animation:bounceY 4s ease infinite alternate;}
 
 
-.landing-2 {@include container-large;padding: var(--section-inset) var(--grid-margin);}
+.landing-2 {@include layout-large;padding: var(--section-inset) var(--grid-margin);}
 .landing-2-background {@include bleeding;background:var(--color-background-weak);}
 .landing-2-title {@include landing-section-title;margin:0 0 0 var(--left);}
 .landing-2-description {margin:var(--space-4) 0;margin-left:var(--left);}
 .landing-2-button {@include link-outside;display:block;margin-left:var(--left);margin-top:var(--space-after-description);}
 .landing-2-figure {float:left;width:100%;max-width:47.5%;height:220px;border-radius:var(--radius);background:crimson;}
 
-.landing-3 {@include container-large;padding: var(--section-inset) var(--grid-margin);}
+.landing-3 {@include layout-large;padding: var(--section-inset) var(--grid-margin);}
 .landing-3-background {}
 .landing-3-title {@include landing-section-title}
 .landing-3-description {margin:var(--space-4) 0;}

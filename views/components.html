@@ -3,7 +3,6 @@
 <!-- https://biings.design/#/ -->
 
 <!-- https://nuli.navercorp.com/community/article -->
-<!-- 접근성 -->
 <!-- todo top hat -->
 
 <main class="component">
@@ -76,7 +75,7 @@
       <li>모든 시각정보는 non-clickable. 모든 인터렉션은 clickable.</li>
       <li>dos / don'ts 케이스는 이미지를 사용하지 않고 간결하게 서술합니다. => 컴포넌트는 계속 변경되기 때문에 유지보수 비용 증가. </li>
     </ul>
-    <p>todo 페이지나누기/loading state/dfn/abbr</p>
+    <p>loading state/dfn/abbr</p>
     <p>1. article-title의 textnode를 뽑아서 chip group navigation이라도 그려주자.</p>
     https://material.io/design/interaction/states.html
     <code>
@@ -104,10 +103,10 @@
 
   <nav class="component-navigation">
     <div class="component-navigation-background"></div>
-    <div class="component-navigation-scroll">
+    <div class="component-navigation-scroll" role="group" data-align="bleed">
       <a class="chip is-active js-scrollspy-trigger" href="#"><span class="chip-label">Avatars</span></a>
-      <a class="chip  js-scrollspy-trigger" href="#"><span class="chip-label">Buttons</span></a>
-      <a class="chip  js-scrollspy-trigger" href="#"><span class="chip-label">Chips</span></a>
+      <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Buttons</span></a>
+      <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Chips</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Links</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Tags</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Switch</span></a>
@@ -132,7 +131,6 @@
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Table</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Accordion</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Result</span></a>
-
       <!-- <p class="hero-description">keywords: attention / feedback / confirm</p> -->
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Dialog</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Callout</span></a>
@@ -150,13 +148,12 @@
   <section class="component-body">
     <greeting-message></greeting-message>
 
-
-    <p>사용하다 -> 제공하다 / 사용자 관점으로. 도큐멘터이션의 사용자가 아닌 서비스의 사용자.</p>
-    <p>Props로 대략적인 구조와 기능을 메모할 수 있다.</p>
-    <p>fluid vs fullWidth</p>
-    <p>action vs link</p>
-    <p>"Feedback Needed"</p>
-    <p>Actions: remove, select, check/uncheck, add, link, action? toggle?, submit</p>
+    <article class="article">
+      <p>사용하다 -> 제공하다 / 사용자 관점으로. 도큐멘터이션의 사용자가 아닌 서비스의 사용자.</p>
+      <p>Props로 대략적인 구조와 기능을 메모할 수 있다.</p>
+      <p>fluid vs fullWidth / action vs link</p>
+      <p>Actions: remove, select, check/uncheck, add, link, action? toggle?, submit</p></ul>
+    </article>
 
     <article class="article js-observer js-scrollspy-section">
       <h1 class="article-title">Avatars</h1>
@@ -231,6 +228,7 @@
         <li>memeo. medium. 이하의 크기에 항상 align-items:center 방법.</li>
         <li>pagination item은 chip과 같은 size token을 사용하지만 chip도 avatar도 아닙니다.</li>
         <li>searchfield clear button은 textfield-surfix(?). icon-button(?).</li>
+        
       </ul>
   
       <!-- <blockquote>
@@ -322,7 +320,7 @@
       <p class="article-description">과업 수행을 위한 페이지 이동, 데이터 제출 등 사용자 여정의 핵심적인 액션입니다.</p>
       
       <section class="component-style component-column">
-        <div class="buttongroup tile-flat">
+        <div class="tile-flat" role="group">
           <button class="button-primary">Primary</button>
           <button class="button-secondary">Secondary</button>
           <button class="button-tertiary">Tertiary</button>
@@ -334,13 +332,13 @@
             <span class="button-elevated-label">Elevated</span>
           </button>
         </div>
-        <div class="buttongroup tile-flat">
+        <div class="tile-flat" role="group">
           <button class="button-tertiary" style="height:64px;font-size:var(--font-size-subhead);vertical-align:bottom;">Large</button>
           <button class="button-tertiary" style="vertical-align:bottom;">Medium</button>
           <!-- <button class="button-tertiary-small">Small</button> -->
         </div>
-        <div class="buttongroup tile-flat">
-          <button class="button-tertiary is-hover" style="margin-right:var(--space-3);">Hover</button>
+        <div class="tile-flat" role="group">
+          <button class="button-tertiary is-hover">Hover</button>
           <button class="button-tertiary is-focus">Focus</button>
           <button class="button-tertiary" disabled>Disabled</button>
           <button class="button-tertiary">Loading</button>
@@ -350,7 +348,7 @@
       <ul>
         <li>버튼은 페이지 내에서 여러 번 반복될 수 없는 최종적인 인터렉션입니다. 단, 전송이 실패하는 경우에는 여러 번 반복해서 실행할 수 있습니다.</li>
         <li>상태를 표현하는 시각 언어는 일부 컴포넌트에 종속되지 않고 제품 전체에 일관되어야 합니다. 색각 이상자를 위해 색상 외의 시각 언어로 상태 정보를 표현하세요.</li>
-        <li>액션 실행 후 피드백합니다. 물리적인 인터페이스의 출현 뿐 아니라 예측할 수 있는 페이지 이동이나 페이지 새로고침, 정보 구조의 변화도 피드백으로 취급될 수 있습니다. (bad case. 인스타그램의 로그인 성공 toast)</li>
+        <li>Feedback needed. 액션 실행 후 피드백합니다. 물리적인 인터페이스의 출현 뿐 아니라 예측할 수 있는 페이지 이동이나 페이지 새로고침, 정보 구조의 변화도 피드백으로 취급될 수 있습니다. (bad case. 인스타그램의 로그인 성공 toast)</li>
         <li>레이블은 사용자가 다음에 일어날 일을 예측할 수 있도록 작성하세요. 부득이 텍스트 레이블을 생략하는 경우 보편적인 메타포의 아이콘을 사용하고 대체 텍스트를 제공해야 합니다. <span hidden>(북마크, 찜이나 장바구니-카트 정도)</span></li>
         <li>버튼의 아래에 실행 유도나 실행 결과를 가이드하는 텍스트를 배치하지 마세요. <span hidden> (secondary 액션의 text 버튼이 아래에 위치하는 패턴 고려). 제목/디스크립션/버튼레이블도 충분.</span></li>
         <!-- <p><b>text.</b> 버튼은 버튼 처럼 보이지 않을 수 있기 때문에 특정 패턴에서만 사용하세요.</li> -->
@@ -418,7 +416,7 @@
 
       <h4 class="article-subhead">Groupable<br />최대 2개의 버튼 - binary choices</h4>
       <div class="tile-flat">
-        <div class="buttongroup">
+        <div class="button-group">
           <button class="button-tertiary">취소</button>
           <button class="button-primary">저장</button>
         </div>
@@ -463,7 +461,7 @@
 
       <section class="component-style">
         <div class="tile-flat">
-          <div class="chip-group" role="group" aria-orientation="horizontal">
+          <div class="chip-group" role="group" data-align="bleed">
             <button class="chip">
               <span class="chip-label">default</span>
             </button>
@@ -481,7 +479,7 @@
   
         <!-- <h4 class="article-subhead">Removable</h4> -->
         <div class="tile-flat">
-          <div class="chip-group" role="group">
+          <div class="chip-group" role="group" data-align="bleed">
             <button class="chip" data-property="removable">
               <span class="chip-label">removable</span>
               <figure class="chip-remove"><i class="icon-x"></i></figure>
@@ -512,7 +510,8 @@
           overflow menu의 trigger는 chip이지만 menulist는 시트/드롭다운/셀렉트박스/모달이 될 수 있어야 합니다. 모달이 가장 범용적. sorting/filtering
           등 역할 기반 컴포넌트를 만들고 chip을 mixin.
         </li>
-        <li>콘텐츠 필터링을 위한 칩 그룹에서, 액티브 상태에 브랜드 컬러를 쓰지 않는 경향. 콘텐츠 탐색이 cta. 눈에 띄지 않는 무채색 활용이 높아짐.</ㅣ>
+        <li>콘텐츠 필터링을 위한 칩 그룹에서, 액티브 상태에 브랜드 컬러를 쓰지 않는 경향. 콘텐츠 탐색이 cta. 눈에 띄지 않는 무채색 활용이 높아짐.</li>
+        <li>HorizontalScrollView. md</li>
       </ul>
       
       <h4 class="article-subhead">Props (todo)</h4>
@@ -564,7 +563,7 @@
       </div>
       <h4 class="article-subhead">Contents Filtering - Single Selection</h4>
       <div class="tile-flat" style="margin:var(--space-2) 0 var(--space-4);">
-        <div class="chip-group" role="group" aria-orientation="horizontal">
+        <div class="chip-group" role="group" data-align="bleed">
           <button class="chip js-toggle is-active">
             <span class="chip-label">전체</span>
           </button>
@@ -575,16 +574,16 @@
       </div>
       <h4 class="article-subhead">Choice - Multiple Selections (test)</h4>
       <div class="tile-flat" style="margin:var(--space-2) 0 var(--space-4);">
-        <div class="chip-group" role="group" aria-orientation="horizontal">
-          <button class="chip is-active" style="border:1px solid var(--green800);background-color:var(--green100);">
+        <div class="chip-group" role="group" aria-multiselectable="true" data-align="bleed">
+          <button class="chip is-active" aria-selected="true" style="border:1px solid var(--green800);background-color:var(--green100);">
             <figure class="chip-icon" style="background:none !important;"><i class="icon-check" style="border-color:var(--green800);"></i></figure>
             <span class="chip-label" style="padding-left:0;color:var(--green800);">소설</span>
           </button>
-          <button class="chip is-active" style="border:1px solid var(--green800);background-color:var(--green100);">
+          <button class="chip is-active" aria-selected="false" style="border:1px solid var(--green800);background-color:var(--green100);">
             <figure class="chip-icon" style="background:none !important;"><i class="icon-check" style="border-color:var(--green800);"></i></figure>
             <span class="chip-label" style="padding-left:0;color:var(--green800);">영화</span>
           </button>
-          <button class="chip">
+          <button class="chip" aria-selected="false">
             <!-- <figure class="chip-icon"><i class="icon-check"></i></figure> -->
             <span class="chip-label">타이포그래피</span>
           </button>
@@ -646,7 +645,7 @@
       <h4 class="article-subhead">menu controls</h4>
       <div class="tile-flat tile-elevated" style="max-width:360px;margin:var(--space-2) 0 var(--space-4);overflow:hidden;">
         <p>콘텐츠 영역</p>
-        <footer class="dropdown-footer chip-group" role="group" aria-orientation="horizontal">
+        <footer class="dropdown-footer chip-group" role="group" data-align="bleed">
           <p class="dropdown-footer-question">Going?</p>
           <button class="dropdown-footer-action chip">
             <span class="chip-label">Yes</span>
@@ -859,8 +858,7 @@
     </div>
     
     <ul>
-      <li>체크하지 않은 상태를 기본값으로 제공합니다.</li>
-      <li>todo. terms pattern</li>
+      <li>체크하지 않은 상태를 기본값으로 제공합니다. 사용자가 직접 체크</li>
       <li>
         레거시 형태의 체크박스와 라디오는 모바일 친화적이지 않으며 사용 케이스도 감소세. 머티리얼3에도 포함되어 있지 않다. 약관 동의 정도를 제외하면
         거의.
@@ -871,12 +869,15 @@
       </li>
       <li>case. switch 역할로 하나의 체크박스를 제공할 수 있습니다. '포토리뷰만 보기'</li>
     </ul>
-
+    
     <h4 class="article-subhead">Editing checklist</h4>
     <ul data-align="horizontal">
       <li>동사 포함</li>
       <li>최대 2단어</li>
     </ul>
+
+    <h4 class="article-subhead">Terms and conditions</h4>
+
 
     <h4 class="article-subhead">Props</h4>
     <dl>
@@ -1018,7 +1019,7 @@
       <!-- required indicator / optional indicator -->
     </ul>
     
-    <h4 class="article-subhead">Props (TODO)</h4>
+    <h4 class="article-subhead">Props</h4>
     <dl>
       <dt>type</dt>
       <dd>"search" | "text" | number | "textarea"
@@ -1209,7 +1210,7 @@
       <li>todo 브라우저 히스토리 저장. (?tab=projects)</li>
     </ul>
 
-    <h4 class="article-subhead">Props (todo)</h4>
+    <h4 class="article-subhead">Props</h4>
     <dl>
       <dt>tablist</dt>
       <dd>
@@ -1221,7 +1222,7 @@
       </dd>
     </dl>
 
-    <h4 class="article-subhead">Anatomy (todo)</h4>
+    <h4 class="article-subhead">Anatomy</h4>
     <ul>
       <li>Indicator (acitive bar)</li>
       <li>badge / quantity / unread</li>
@@ -1268,9 +1269,9 @@
         </header>
       </div>
       <div class="tile-flat" style="overflow:hidden;">
-        <header class="titlebar js-titlebar" role="navigation" style="padding:0;">
+        <header class="titlebar js-titlebar" role="navigation" data-size="large" style="padding:0;">
           <div class="titlebar-background"></div>
-          <h1 class="titlebar-title js-page-title" title="page title">페이지 타이틀</h1>
+          <h1 class="titlebar-title js-page-title" title="page title">Large Case</h1>
           <button class="titlebar-back" onclick="javascript:window.location.href='/';">
             <figure class="titlebar-back-icon"><i class="icon-x"></i></figure>
             <!-- <span class="titlebar-back-label">뒤로</span> -->
@@ -1284,11 +1285,10 @@
     </section>
     
     <ul>
-      <li>todo 아이콘 배경색 빼는 게 좋지만 버튼 아이콘에서 정의가 안 된 케이스.</li>
-      <li>todo 뒤로가기/닫기 패턴 정의하기. 탭 바로 접근하는 경우 등.</li>
-      <li>todo 여러 개의 컴포넌트로 구별하는 것이 좋을까</li>
-      <li>todo 아이콘으로 대체하는 경우 아이콘의 갯수 제한</li>
-      <li>truncate / 타이틀 글자 수 제한</li>
+      <li>현재 페이지와 관련된 액션을 제공합니다.</li>
+      <li>페이지 타이틀은 최대 8자로 제한하세요. truncated 하지 않는 것이 좋은 사용자 경험.</li>
+      <li>todo 뒤로가기/닫기 패턴 정의하기. 탭 바로 접근하는 경우 등. 여러 개의 컴포넌트?</li>
+      <li>todo 우측 actions. 갯수 제한. md에서 최대 3개. hamberger case.</li>
     </ul>
 
     <h4 class="article-subhead">Props</h4>
@@ -1297,32 +1297,36 @@
       <dd>
         string
       </dd>
-      <dt>hasBack<attr>?</attr></dt>
+      <dt>backType<attr>?</attr></dt>
       <dd>
-        boolean
+        'close' | 'arrow'
       </dd>
-      <dt>hasNext<attr>?</attr></th>
+      <dt>actions</dt>
+      <dd>React.Node</dd>
+      <!-- <dt>hasNext<attr>?</attr></th>
       <dd>
         boolean / 함수만 넘겨줘서 next 액션을 랜더링하는 방법이 나을 지도.
-      </dd>
-      <dt>hasClose<attr>?</attr></dt>
-      <dd>
-        boolean
-      </dd>
-      <dt>isDisabled<attr>?</attr></dt>
-      <dd>
-        boolean
-      </dd>
+      </dd> -->
       <dt>onComplete(?) / onCancel<attr>?</attr></dt>
       <dd>
-        function()
+        () => void
       </dd>
     </dl>
+
+    <h4 class="article-subhead">References</h4>
+    <ul>
+      <li><a href="https://m3.material.io/components/top-app-bar/overview" target="_blank">MD3 top app bar</a></li>
+    </ul>
   </article>
 
   <article class="article js-observer js-scrollspy-section">
     <h1 class="article-title">Bottom Navigation / --Bar?</h1>
     <p class="article-description">모바일 환경의 글로벌 네비게이션.</p>
+
+    <aside class="article-aka">
+      <span class="tag">a.k.a.</span>
+      <span class="hashtag" title="google">Navigation Bar</span>
+    </aside>
 
     <section class="component-style">
       <div class="tile-flat">
@@ -1345,9 +1349,13 @@
     </section>
 
     <ul>
+      <li>todo 바텀 네비게이션과 햄버거 메뉴를 같이 사용할 수 있는 패턴을 정의.</li>
+      <li>memo active 상태를 위해 filled 아이콘을 사용하면 불필요한 리소스.</li>
+    </ul>
+
+    <h4 class="article-subhead">Cases</h4>
+    <ul>
       <li>커머스 도매인에서 카테고리를 나타내는 햄버거는 주로 왼쪽에 배치.</li>
-      <li>todo 바텀 네비게이션과 햄버거 메뉴를 같이 사용할 수 있는 패턴을 따로 정의.</li>
-      <li>active 상태를 위해 filled 아이콘을 사용하면 추가적인 리소스 발생.</li>
     </ul>
     <!-- // iOS isTranslucent: Bool -->
   </article>
@@ -1411,7 +1419,8 @@
       <li><b>aligns:</b> vertical</li>
       <li>제목. truncated or 2줄.</li>
       <li>entity. role=listitem</li>
-      <li>todo. check icon을 컴포넌트로 만들고 checkbox의 구조를 변경하기?</li>
+      <li>todo. only text</li>
+      <li>todo. check icon을 컴포넌트로 만들고 checkbox의 구조를 변경하기. check icon을 svg를 스위칭하게 될 수도 있기 때문에. 미리 check icon 컴포넌트를 만들어두는 것이 좋을지도.</li>
     </ul>
 
     <h4 class="article-subhead">menuitem vs listitem</h4>
@@ -1454,18 +1463,22 @@
       <div class="tile-flat">
         <nav class="pagination2">
           <a href="#" class="pagination2-prev" title="앞 페이지로 이동">이전</a>
-          <span class="pagination2-current">1</span>
+          <b class="pagination2-current">1</b>
           <span class="pagination2-divider"> / </span>
           <span class="pagination2-all">44</span>
-          <span>page 2 of 22</span>
+          <!-- <span>page 2 of 22</span> -->
           <a href="#" class="pagination2-next" title="뒷 페이지로 이동">다음</a>
         </nav>
       </div>
     </section>
     <ul>
       <li>첫 페이지와 마지막 페이지에 더블 화살표 아이콘을 사용하지 않습니다. 최초와 최종 페이지 넘버로 사용자가 대략적인 콘텐츠의 수량을 파악할 수 있도록 도와주세요.</li>
-      <li>게시글이나 상품 목록의 탐색에 유용합니다. 하지만 최근 본 목록이나 섬네일에서 북마크를 제공한다면 load more이나 infinite scroll을 권장합니다.</li>
       <li>todo. pagination vs more load vs infinite scroll 케이스 정리</li>
+    </ul>
+
+    <h4 class="article-subhead">Cases</h4>
+    <ul>
+      <li>약간 레거시 유아이. 느린 탐색 경험이 필요할 때. 게시판이나 상품 목록의 탐색에서 이전에 탐색한 상품의 위치를 찾기 편리함. 최근 본 목록이나 섬네일에서 북마크를 제공한다면?</li>
     </ul>
   </article>
 
@@ -1536,8 +1549,8 @@
 
     
     <ul>
-      <li>서드파티 라이브러리를 사용하지 않고 가로 스크롤을 활용합니다.</li>
-      <li>터치 제스쳐를 지원하지 않는 환경에서는 arrow 버튼을 제공합니다.</li>
+      <li>서드파티 라이브러리를 사용하지 않고 가로 스크롤로 제공하세요.</li>
+      <li>터치 제스쳐를 지원하지 않는 환경에서는 arrow 버튼을 제공하세요.</li>
     </ul>
   </article>
 
@@ -1849,37 +1862,39 @@
       <h1 class="article-title">List</h1>
       <p class="article-description">작성 중. 용어를 통일 (리스트 vs 목록).</p>
 
-      <div class="tile-flat">
-        <ul>
-          <li>순서가 없는 리스트</li>
-          <li>순서가 없는 리스트</li>
-        </ul>
-        <ol style="margin:var(--space-3) 0;">
-          <li>순서가 있는 리스트</li>
-          <li>순서가 있는 리스트</li>
-        </ol>
-        <ul data-align="horizontal">
-          <li title="unordered list, level 1">순서가 없는 리스트</li>
-          <li style="margin:0 2rem 0 1rem;">가로로 정렬할 수 있어요</li>
-          <li>조건이 있어요</li>
-        </ul>
-        <dl>
-          <dt>Metadata</dt>
-          <dd>description list</dd>
-          <dt>Metadata</dt>
-          <dd>description list</dd>
-        </dl>
-      </div>
+      <section class="component-style">
+        <div class="tile-flat">
+          <ul style="margin:0;">
+            <li>순서가 없는 리스트</li>
+            <li>순서가 없는 리스트</li>
+          </ul>
+          <ol style="margin:var(--space-3) 0;">
+            <li>순서가 있는 리스트</li>
+            <li>순서가 있는 리스트</li>
+          </ol>
+          <ul data-align="horizontal" style="margin:0;">
+            <li title="unordered list, level 1">순서가 없는 리스트</li>
+            <li style="margin:0 2rem 0 1rem;">가로로 정렬할 수 있어요</li>
+            <li>조건이 있어요</li>
+          </ul>
+          <dl>
+            <dt>Metadata</dt>
+            <dd>description list</dd>
+            <dt>Metadata</dt>
+            <dd>description list</dd>
+          </dl>
+        </div>
+      </section>
       <ul>
         <li>텍스트 목록에 한정하여 리스트 태그(ul, ol, dl)로 마크업하세요. role=listbox/listitem</li>
-        <li>목록은 2 댑스로 제공하지 마세요. 작은 화면에서 들여쓰기로 인한 공간 낭비.</li>
-        <li>checklist 정의. price item에서 사용.</li>
+        <li>목록을 2 댑스로 제공하지 마세요. 중첩된 목록은 콘텐츠를 읽기 어렵게 하고 작은 화면에서의 들여쓰기는 불필요한 공간을 차지합니다.</li>
+        <li>todo. price item에서 checklist.</li>
       </ul>
     </article>
 
     <article class="article js-observer js-scrollspy-section">
       <h1 class="article-title">Statistic</h1>
-      <p class="article-description">작성 중.</p>
+      <p class="article-description">수치 데이터.</p>
 
       <section class="component-style">
         <div class="tile-flat" style="position: relative; z-index:1;">
@@ -1898,32 +1913,48 @@
             </div>
           </div>
         </div>
+        <div class="tile-flat" style="position: relative; z-index:1;">
+          <div class="statistic" data-size="small">
+            <div class="statistic-item">
+              <i class="statistic-label">팔로워</i>
+              <span class="statistic-value">21,682</span>
+            </div>
+            <div class="statistic-item">
+              <i class="statistic-label">Repository</i>
+              <span class="statistic-value">100만 이상</span>
+            </div>
+            <div class="statistic-item">
+              <i class="statistic-label">Size</i>
+              <span class="statistic-value">Small</span>
+            </div>
+          </div>
       </section>
 
       <ul>
-        <li>todo medium/small</li>
         <li>todo countup</li>
-        <li>todo clickable</li>
+        <li>todo clickable. non-clickable.</li>
       </ul>
     </article>
 
     <article class="article js-observer js-scrollspy-section">
       <h1 class="article-title">Summary</h1>
-      <p class="article-description">커머스 도매인의 주문서(checkout) 등에서 금액 요약.</p>
+      <p class="article-description">금액 요약.</p>
 
-      <section class="summary tile-flat">
-        <div class="summary-item">
-          <div class="summary-item-label">상품 금액</div>
-          <div class="summary-item-value">₩ 160,000</div>
-        </div>
-        <div class="summary-item">
-          <div class="summary-item-label">서비스 수수료</div>
-          <div class="summary-item-value">₩ 3,000</div>
-        </div>
-        <div class="summary-total">
-          <div class="summary-total-label">총 합계 (KRW)</div>
-          <div class="summary-total-value">₩ 163,000</div>
-        </div>
+      <section class="component-style">
+        <section class="summary tile-flat">
+          <div class="summary-item">
+            <div class="summary-item-label">상품 금액</div>
+            <div class="summary-item-value">₩ 160,000</div>
+          </div>
+          <div class="summary-item">
+            <div class="summary-item-label">서비스 수수료</div>
+            <div class="summary-item-value">₩ 3,000</div>
+          </div>
+          <div class="summary-total">
+            <div class="summary-total-label">총 합계 (KRW)</div>
+            <div class="summary-total-value">₩ 163,000</div>
+          </div>
+        </section>
       </section>
     </article>
 
@@ -1931,11 +1962,13 @@
       <h1 class="article-title">Suggestion</h1>
       <p class="article-description">샘플.</p>
 
-      <div class="product-info-price tile-flat" role="suggestion">
-        <del class="product-info-price-deletion" role="deletion">₩ 30,000</del>
-        <b class="product-info-price-insertion" role="insertion">₩ 20,000</b>
-        <em class="product-info-price-percentage">(30%)</em>
-      </div>
+     <section class="component-style">
+        <div class="product-info-price tile-flat" role="suggestion" style="margin:0;">
+          <del class="product-info-price-deletion" role="deletion">₩ 30,000</del>
+          <b class="product-info-price-insertion" role="insertion">₩ 20,000</b>
+          <em class="product-info-price-percentage">(30%)</em>
+        </div>
+     </section>
       
       <ul>
         <li>formatCurrency()</li>

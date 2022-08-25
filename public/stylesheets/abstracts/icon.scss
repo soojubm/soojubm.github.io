@@ -73,7 +73,6 @@
 .icon-chevron.is-up {margin-top:4px;transform:rotate(-135deg);}
 .icon-chevron.is-down {transform:rotate(45deg) translate(0, -3px);}
 
-// todo opacity
 .icon-grid {padding:8px;position:relative;}
 .icon-grid span {float:left;display:block;margin:1px;padding:1px;border:2px solid var(--icon-background);background:var(--icon-background);border-radius:1px;opacity:.75;}
 
@@ -107,7 +106,7 @@
   top: 50%;
   transform: translate(-50%, -50%);
 }
-.icon-arrow.is-left {transform:rotate(180deg);}
+.icon-arrow.is-left {transform:rotate(-180deg);}
 .icon-arrow.is-down {transform:rotate(90deg);}
 
 .icon-arrow-right {padding:16px;position:relative;}

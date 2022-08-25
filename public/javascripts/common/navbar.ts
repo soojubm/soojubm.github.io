@@ -8,7 +8,6 @@ export function initializeNavbar() {
 
   navigationTrigger?.classList.remove('is-active')
   // unlockBodyElement()
-  // todo
   document.body.classList.remove('is-opened-menu')
 
   // document.removeEventListener('click', () => {})

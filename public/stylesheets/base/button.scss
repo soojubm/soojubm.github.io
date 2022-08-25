@@ -72,7 +72,6 @@ button {@include reset-button;}
   }
 }
 
-.buttongroup {@include group-bleeding;overflow:auto;margin:var(--space-2-minus) var(--space-3) var(--space-2-minus) var(--space-2-minus);padding:var(--space-2);}
 .button-primary {@include button-primary;}
 .button-secondary {@include button-secondary;}
 .button-tertiary {@include button-tertiary;}

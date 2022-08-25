@@ -1,6 +1,6 @@
 
 .class {
-  @include container-large;display:flex;flex-wrap:wrap;
+  @include layout-large;display:flex;flex-wrap:wrap;
   --width-section: 60%;
   --outset-section: 4rem 0;
   --newneek-border: 2px solid #000;
@@ -13,7 +13,7 @@
 .class-order-description {margin:var(--space-after-subhead) 0 0 0;}
 .class-order-price {margin:var(--space-4) 0 0 0;font-size:var(--font-size-subhead);}
 .class-order-action {margin:var(--space-2) 0 0 0;}
-.class-order-action-purchase {@include button-primary;width:100%;border:var(--newneek-border);}
+.class-order-action-purchase {@include button-primary;width:100%;border:var(--newneek-border);border-bottom-width:4px;border-right-width:4px;}
 .class-order-action-share {}
 
 .class-intro {width:100%;padding:var(--section-padding);border:var(--newneek-border);border-top:0;text-align:center;}
@@ -33,7 +33,7 @@
 .class-faq-item + .class-faq-item {margin:var(--space-2) 0 0 0;}
 
 .minicards {margin:var(--space-4) 0;}
-.minicards .minicard {display:flex;align-items:center;width:50%;}
+.minicards .minicard {display:flex;align-items:center;}
 .minicards .minicard span {margin:0 .25rem 0 0;font-size:1.125rem;}
 
 .class-order.is-scrolled {width:320px;position:fixed;top:60px;}
@@ -41,7 +41,11 @@
 .class h2 {margin:0 0 var(--space-after-title) 0;}
 .class h3 {margin:0 0 var(--space-after-subhead) 0;}
 
-@media (--breakpoint-small) {
+
+.class-overview {@include tile-flat;width:100%;max-width:360px;margin:2rem auto;padding:1rem;border:var(--newneek-border);}
+.class-overview-title {margin-bottom:0 !important;@include text-subhead;}
+
+@media (--breakpoint-large) {
   .class {
     padding:0;
     --section-padding: 2rem var(--grid-margin);

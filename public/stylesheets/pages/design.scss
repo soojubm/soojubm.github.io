@@ -4,7 +4,7 @@
 
 .article {padding:4rem var(--grid-margin);overflow:hidden;position:relative;}
 .article + .article {padding-top:6rem;}
-.article-aka {@include tag-group;align-items:center;margin:var(--space-4) 0;font-size:var(--font-size-small);}
+.article-aka {@include tag-group;margin:var(--space-4) 0;}
 .article-aka .hashtag:before {content:'';}
 .article-aka .tag {margin-right:var(--space-3);}
 .article-title {@include text-title;}
@@ -22,7 +22,9 @@
 .space {display:flex;align-items:center;justify-content:center;height:100%;background:var(--green100);position:relative;}
 .space span {font-size:10px;}
 
-@media (--breakpoint-large) {}
+@media (--breakpoint-large) {
+  .design {padding:0;}
+}
 
 .stamp {
   // position: absolute;

@@ -1,6 +1,4 @@
-// todo bleeding / group-bleeding
 // nextjs cssmodule composes
-
 // ! text-heading-medium / text-heading-small
 @mixin text-title {font-size:var(--font-size-huge);line-height:var(--font-line-height-small);font-weight:var(--font-weight-bold);color:var(--color-text);letter-spacing:-.0125rem;text-indent:-1px;}
 @mixin text-subhead {font-size:var(--font-size-subhead);line-height:var(--font-line-height-small);font-weight:var(--font-weight-bold);color:var(--color-text);}
@@ -12,7 +10,6 @@
 @mixin text-caption {font-size:var(--font-size-caption);font-weight:var(--font-weight-bold);}
 
 .text-subhead {@include text-subhead;}
-
 
 
 // overline
@@ -59,8 +56,6 @@
 @mixin hover-item {
   // item in card component // active
   // 부모태그에 position: relative;zindex:1;
-  // --hover-outline: calc(var(--space-4) / 2 * -1);
-  // outline: var(--hover-outline) solid var(--color-background-weak);
   cursor: pointer;
   &:before {
     --hover-outline: calc(var(--space-4) / 2 * -1);
@@ -72,101 +67,52 @@
   }
   figure {background-color:var(--color-background);}
 }
-
-// todo
 .is-hoverable {@include hover-item;}
 
-@mixin layout-modal {}
-@mixin layout-login {}
-@mixin layout-join {}
-@mixin layout-password {}
-@mixin layout-setting {}
-@mixin layout-profile {}
-@mixin layout-product {}
-@mixin layout-search {}
 
-@mixin container-page {
+// mobile padding 패딩은 page-head에서 주는 게 좋음. -margin 주는 게 좋을 듯.
+ // 4rem -> 2rem
+@mixin layout($size: 800px) {
+  max-width: $size;
   margin: 0 auto;
   padding: 2rem var(--grid-margin) 8rem;
   position: relative;
-  // mobile padding 패딩은 page-head에서 주는 게 좋음. -margin 주는 게 좋을 듯.
 }
 
-// todo pagehead :: padding.
-@mixin container-large {
-  max-width: 1200px;
-  @include container-page;
-}
-@mixin container-medium {
-  max-width: 640px;
-  @include container-page;
-}
-@mixin container-small {
-  max-width: 480px;
-  @include container-page;
-}
+@mixin layout-large {@include layout(1200px);}
+@mixin layout-medium {@include layout(640px);}
+@mixin layout-small {@include layout(480px);}
 
-
-// [role=group] input[type=radio] + label {margin:0 16px 0 0;color:var(--color-text-light);padding-left:0;}
-// [role=group] input[type=radio] + label:before {content:'';display:inline-block;width:2px;height:2px;background:var(--gray400);margin:0 10px 0 0;vertical-align:3px;position:static;left:auto;top:auto;}
-// [role=group] input[type=radio] + label:after {display:none;}
-// [role=group] input[type=radio]:checked + label {color:var(--color-text)}
-// [role=group] input[type=radio]:checked + label:before {border-color:var(--color-text);width:10px;height:4px;border-left: 2px solid #f3f2f1;border-bottom: 2px solid #f3f2f1;background:none;margin:0 8px 0 0;border-color:var(--color-text-light);vertical-align:3px;transform:rotate(-45deg);border-radius:0;border-right:0;border-top:0;position:static;left:auto;top:auto;}
-
-// ! group vs row vs rowgroup
-// 그냥나열되는경우(display:flex flex-wrap vs inline-block) 마진중첩서로 다르게 적용이 된다. / 
-// ? bleeding vs default = design navigation vs taglist
+// 그냥나열되는경우(display:flex flex-wrap vs inline-block) 마진중첩서로 다르게 적용이 된다.
+// bleeding chip, slider 사용함. 간격을 variables로.
 @mixin group {
-  display: flex;
-  flex-wrap: wrap;
-  margin: var(--space-groupitem-minus);
-  > * {
-    // display: block;
-    margin:var(--space-groupitem);
-  }
+  display:flex;flex-wrap:wrap;margin:var(--space-groupitem-minus) !important; // todo with tile
+  > * {margin:var(--space-groupitem)}
 }
-// group-pull 등은 ㅔㄹ이아웃..
-// @mixin group-pull {display:flex;justify-content:space-between;align-items:center;}
+@mixin tag-group {@include group;}
+@mixin chip-group {@include group;}
+[role=group] {@include group;}
+
 @mixin group-bleeding {
   display:flex;
+  flex-wrap: unset; // todo..
   white-space:nowrap;
   overflow:auto;
-  font-size:0;
-  // display:inline-flex; // todo
-  > * {
-    // display:inline-block; for lable padding
-    margin:0 calc(var(--space-groupitem) * 2) 0 0;font-size:var(--font-size-body);
-  }
+  margin: var(--space-1-minus);
+  margin-right: var(--space-3-minus);
+  padding: var(--space-1);
+  padding-right: var(--space-3);
+  > * {min-width:auto;margin: 0 var(--space-2) 0 0;}
   &::-webkit-scrollbar {display:none;}
 }
-@mixin chip-group {
-  display: flex;
-  flex-wrap: wrap;
-  margin: var(--space-groupitem-minus);
-
-  > * {
-    // display: block;
-    margin:var(--space-groupitem);
-  }
-}
-@mixin tag-group {
-  display: flex;
-  flex-wrap: wrap;
-  // .25rem 너무 작고 .5rem은 너무 커서
-  margin: 0 0 -6px 0;
-  > * {
-    display: block;
-    margin: 0 6px 6px 0;
-  }
-}
-
 
 // todo...
-.chip-group {  @include group-bleeding;}
 .tag-group {@include tag-group;}
-.is-bleeded {@include group-bleeding;padding:.25rem;margin:-.25rem;}
-.chip-group.is-bleeded {display:block;margin-left:calc(var(--grid-margin) * -1);padding-left:var(--grid-margin);margin-right: -50%;padding-right: 200px;}
-.chip-group.is-bleeded .chip {display:inline-flex;}
+.chip-group {@include group;}
+.chip-group[data-align=bleed] {@include group-bleeding;}
+
+.button-group {@include group;}
+.button-group > * {flex:auto;}
 
 
 
@@ -180,17 +126,8 @@
   @media (--breakpoint-small) {display:block;}
 }
 
-// @media (prefers-color-scheme: dark) {
-//   :root {
-//     // --title-color: #EFEFEF;
-//     // --desc-color: peachpuff;
-//   }
-//   // img {filter: brightness(.8) contrast(1.2);}
-// }
-
 @mixin position-left-top {position:absolute;left:var(--space-1);top:var(--space-1);}
 @mixin position-right-top {position:absolute;right:var(--space-1);top:var(--space-1);}
-
 @mixin position-center {position:absolute;left:50%;transform:translateX(-50%);}
 @mixin position-center-center {position:absolute;left:50%;top:50%;transform:translate(-50%, -50%)}
 @mixin position-bottom {position:fixed;left:0;right:0;bottom:0;z-index:var(--zindex-menu);}
@@ -223,3 +160,15 @@
   color: var(--color-text-light);
   &:before {content:'#';}
 }
+
+
+
+
+
+// @media (prefers-color-scheme: dark) {
+//   :root {
+//     // --title-color: #EFEFEF;
+//     // --desc-color: peachpuff;
+//   }
+//   // img {filter: brightness(.8) contrast(1.2);}
+// }

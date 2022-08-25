@@ -1,4 +1,4 @@
-.product {@include container-large;padding-top:0;}
+.product {@include layout-large;padding-top:0;}
 .product-image {width:460px;background:var(--color-background-weak);border-radius:var(--radius);@include position-center;}
 .product-image:after {content:'';display:block;padding-bottom:100%;}
 

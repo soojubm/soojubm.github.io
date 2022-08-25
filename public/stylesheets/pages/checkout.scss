@@ -3,7 +3,7 @@
 @mixin item-label {width:120px;margin-left:0;color:var(--color-text-light);font-size:var(--font-size-body);}
 @mixin item-value {}
 
-.checkout {@include container-medium;}
+.checkout {@include layout-medium;}
 .checkout-step {}
 .checkout-head {position:relative;}
 // .checkout-head-background {display:none;background:var(--color-background-weak);position:absolute;left:-200%;right:-200%;top:0;bottom:0;z-index:-1;}

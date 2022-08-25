@@ -67,7 +67,7 @@
 .is-active + .navbar-notification-menu,
 .is-active + .navbar-notification-empty {height:auto;transform:scale(1);}
 
-.notifications {@include container-medium;}
+.notifications {@include layout-medium;}
 .notification {}
 .notification-item {@include item;}
 .notification-item:hover {@include hover-item;}
