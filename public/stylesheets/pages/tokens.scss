@@ -9,6 +9,7 @@
 
 .animation-rotation {animation:rotation 1s var(--bazier-base) infinite;}
 .animation-fadeup {animation:fadeup 1s var(--bazier-base) infinite;}
+.animation-marquee {animation:marquee 4s var(--bazier-base) infinite;}
 
 .delay-second {animation-delay:var(--animation-delay-second);}
 .delay-third {animation-delay:var(--animation-delay-third);}

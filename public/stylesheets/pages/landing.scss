@@ -11,6 +11,8 @@
 
 .landing-hero {max-width:1000px;margin:0 auto;padding:5em var(--grid-margin) 6rem;text-align:left;}
 .landing-hero-background {@include bleeding;background:var(--color-background-weak);}
+.landing-hero-title {@include text-title;}
+.landing-hero-description {margin:var(--space-after-title) 0 var(--space-after-description) 0;}
 .landing-hero-object1 {width:320px;height:400px;background:url('https://source.unsplash.com/random') center;background-size:cover;border-radius:var(--radius);position:absolute;right:5vw;top:2rem;}
 .landing-hero-object2 {max-width:320px;padding:1rem;z-index:1;position:absolute;right:260px;top:3rem;pointer-events:none;}
 .landing-hero-cta {margin-right:.5rem;background:var(--color-primary);color:#fff;}

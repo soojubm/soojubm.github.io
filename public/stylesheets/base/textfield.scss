@@ -12,10 +12,7 @@
 @mixin textfield-prefix {
   @include avatar-small;background:none !important;position:absolute;left:var(--space-3);top:36px;pointer-events:none;
 }
-@mixin textfield-surfix {
-  @include avatar-small;position:absolute;right:var(--space-4);top:36px;
-  // @media (--breakpoint-small) {top:35px;}
-}
+@mixin textfield-surfix {@include avatar-small;position:absolute;right:var(--space-4);top:37px;}
 
 .textfield-group {display:flex;justify-content:space-between;}
 .textfield-group .textfield {width:calc(50% - var(--space-1))}

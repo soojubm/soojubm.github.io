@@ -86,7 +86,7 @@
 // 그냥나열되는경우(display:flex flex-wrap vs inline-block) 마진중첩서로 다르게 적용이 된다.
 // bleeding chip, slider 사용함. 간격을 variables로.
 @mixin group {
-  display:flex;flex-wrap:wrap;margin:var(--space-groupitem-minus) !important; // todo with tile
+  display:flex;flex-wrap:wrap;margin:var(--space-groupitem-minus);
   > * {margin:var(--space-groupitem)}
 }
 @mixin tag-group {@include group;}
@@ -110,6 +110,7 @@
 .tag-group {@include tag-group;}
 .chip-group {@include group;}
 .chip-group[data-align=bleed] {@include group-bleeding;}
+[role=group][data-align=bleed] {@include group-bleeding;}
 
 .button-group {@include group;}
 .button-group > * {flex:auto;}

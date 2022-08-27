@@ -147,13 +147,12 @@
   </article> -->
   <section class="component-body">
     <greeting-message></greeting-message>
-
+<!-- 
     <article class="article">
       <p>사용하다 -> 제공하다 / 사용자 관점으로. 도큐멘터이션의 사용자가 아닌 서비스의 사용자.</p>
-      <p>Props로 대략적인 구조와 기능을 메모할 수 있다.</p>
       <p>fluid vs fullWidth / action vs link</p>
       <p>Actions: remove, select, check/uncheck, add, link, action? toggle?, submit</p></ul>
-    </article>
+    </article> -->
 
     <article class="article js-observer js-scrollspy-section">
       <h1 class="article-title">Avatars</h1>
@@ -315,16 +314,18 @@
       <p><b>mui.</b> 아이콘 아바타를 사용.</p>
     </article>
     
-    <article class="article js-observer js-scrollspy-section component-column">
+    <article class="article js-observer js-scrollspy-section">
       <h1 class="article-title">Button</h1>
       <p class="article-description">과업 수행을 위한 페이지 이동, 데이터 제출 등 사용자 여정의 핵심적인 액션입니다.</p>
       
-      <section class="component-style component-column">
-        <div class="tile-flat" role="group">
-          <button class="button-primary">Primary</button>
-          <button class="button-secondary">Secondary</button>
-          <button class="button-tertiary">Tertiary</button>
-          <button class="button-text">Text</button>
+      <section class="component-style">
+        <div class="tile-flat">
+          <div role="group" data-align="bleed">
+            <button class="button-primary">Primary</button>
+            <button class="button-secondary">Secondary</button>
+            <button class="button-tertiary">Tertiary</button>
+            <button class="button-text">Text</button>
+          </div>
         </div>
         <div class="tile-flat" style="z-index:1;">
           <button class="button-elevated" style="width:100%;margin-top:0;margin-bottom:0;">
@@ -332,17 +333,21 @@
             <span class="button-elevated-label">Elevated</span>
           </button>
         </div>
-        <div class="tile-flat" role="group">
-          <button class="button-tertiary" style="height:64px;font-size:var(--font-size-subhead);vertical-align:bottom;">Large</button>
-          <button class="button-tertiary" style="vertical-align:bottom;">Medium</button>
-          <!-- <button class="button-tertiary-small">Small</button> -->
+        <div class="tile-flat">
+          <div role="group">
+            <button class="button-tertiary" style="height:64px;font-size:var(--font-size-subhead);vertical-align:bottom;">Large</button>
+            <button class="button-tertiary" style="vertical-align:bottom;">Medium</button>
+            <!-- <button class="button-tertiary-small">Small</button> -->
+          </div>
         </div>
-        <div class="tile-flat" role="group">
-          <button class="button-tertiary is-hover">Hover</button>
-          <button class="button-tertiary is-focus">Focus</button>
-          <button class="button-tertiary" disabled>Disabled</button>
-          <button class="button-tertiary">Loading</button>
-          <button class="danger-button" aria-label="danger">Destructive</button>
+        <div class="tile-flat">
+          <div role="group" data-align="bleed">
+            <button class="button-tertiary is-hover">Hover</button>
+            <button class="button-tertiary is-focus">Focus</button>
+            <button class="button-tertiary" disabled>Disabled</button>
+            <button class="button-tertiary">Loading</button>
+            <button class="danger-button" aria-label="danger">Destructive</button>
+          </div>
         </div>
       </section>
       <ul>
@@ -413,6 +418,11 @@
 
       <!-- <p>사용자에게 단추를 한 번에 한 개 또는 두 개만 표시합니다(예: 수락 및 취소).
         사용자에게 더 많은 작업을 표시해야 하는 경우 사용자가 하나의 명령 단추로 작업을 선택하여 트리거할 수 있도록 확인란 또는 라디오 단추를 사용하는 것이 좋습니다.</p> -->
+
+        <h4 class="article-subhead">Close Button</h4>
+        <div class="tile-flat">
+          CloseButton aria-label="" /
+        </div>
 
       <h4 class="article-subhead">Groupable<br />최대 2개의 버튼 - binary choices</h4>
       <div class="tile-flat">
@@ -520,13 +530,17 @@
         <dd>string</dd>
         <dt>label</dt>
         <dd>string</dd>
-        <dt>isRemovable<attr>?</attr></dt>
+        <dt>isChecked<attr>?</attr></dt>
         <dd>boolean</dd>
         <dt>onClick</dt>
         <dd>() => void</dd>
-        <dt>isAddable / isCheckable?<attr>?</attr></dt>
-        <dd>boolean</dd>
+        <dt>onRemoveClick</dt>
+        <dd>() => void</dd>
+        <!-- <dt>isRemovable<attr>?</attr></dt> -->
+        <!-- <dt>isAddable<attr>?</attr></dt>
+        <dd>boolean</dd> -->
         <dt>ariaHaspopup</dt><dd></dd>
+        <dt>ariaSelected</dt><dd></dd>
 
       </dl>
       <!-- <p>- addable/removable, todo: chip-icon의 hover... 결국 chip과 분리된 컴포넌트가 필요함. 역할이 다르기 때문에 괜찮음.</p> -->
@@ -584,12 +598,12 @@
             <span class="chip-label" style="padding-left:0;color:var(--green800);">영화</span>
           </button>
           <button class="chip" aria-selected="false">
-            <!-- <figure class="chip-icon"><i class="icon-check"></i></figure> -->
             <span class="chip-label">타이포그래피</span>
           </button>
         </div>
       </div>
       <h4 class="article-subhead">Dropdown (Overflow/pulldown)</h4>
+      <p>다른 컴포넌트로</p>
       <div class="tile-flat" style="margin:var(--space-2) 0 var(--space-4);">
         <div class="chip-group">
           <div class="dropdown">
@@ -639,28 +653,26 @@
               <!-- <hr class="dropdown-menu-divider" /> -->
               <a class="dropdown-menu-link" href="#componets">삭제</a>
             </menu>
+            <!-- <footer class="dropdown-footer">
+              <p class="dropdown-footer-question">Going?</p>
+              <button class="dropdown-footer-action chip">
+                <span class="chip-label">Yes</span>
+                <figure class="dropdown-trigger-icon"><i class="icon-caret"></i></figure>
+              </button>
+              <button class="dropdown-footer-action chip">
+                <span class="chip-label">No</span>
+              </button>
+              <button class="dropdown-footer-action chip">
+                <span class="chip-label">Maybe</span>
+              </button>
+            </footer> -->
           </div>
         </div>
       </div>
-      <h4 class="article-subhead">menu controls</h4>
-      <div class="tile-flat tile-elevated" style="max-width:360px;margin:var(--space-2) 0 var(--space-4);overflow:hidden;">
-        <p>콘텐츠 영역</p>
-        <footer class="dropdown-footer chip-group" role="group" data-align="bleed">
-          <p class="dropdown-footer-question">Going?</p>
-          <button class="dropdown-footer-action chip">
-            <span class="chip-label">Yes</span>
-            <figure class="dropdown-trigger-icon"><i class="icon-caret"></i></figure>
-          </button>
-          <button class="dropdown-footer-action chip">
-            <span class="chip-label">No</span>
-          </button>
-          <button class="dropdown-footer-action chip">
-            <span class="chip-label">Maybe</span>
-          </button>
-        </footer>
-      </div>
-      <p>페이지 레벨(시트/모달 등)이 될 때 액션이 더 강조되어야 한다.</p>
-      <!-- <p style="margin:0 0 var(--space-2) 0;color:var(--color-text-light);">selected <em>10</em> / 50</p> -->
+
+      <h4 class="article-subhead">Chip Group</h4>
+      <div class="tile-flat"></div>
+      
       <h4 class="article-subhead">References</h4>
       <div class="" style="display:flex;flex-wrap:wrap;">
         <a href="https://material.io/components/menus" target="_blank" style="display:block;">MD menu</a>
@@ -807,6 +819,16 @@
     <ul data-align="horizontal">
       <li>동사 포함</li>
     </ul>
+
+    <h4 class="article-subhead">Props (memo radio와 비교)</h4>
+    <dl>
+      <dt>id</dt><dd>string</dd>
+      <dt>name</dt><dd>string</dd>
+      <dt>value</dt><dd>string</dd>
+      <dt>label</dt><dd>string</dd>
+      <dt>isChecked</dt><dd>boolean</dd>
+      <dt>onChange</dt><dd>() => void</dd>
+    </dl>
   </article>
 
   <article class="article js-observer js-scrollspy-section">
@@ -953,7 +975,11 @@
   <article class="article js-observer js-scrollspy-section">
     <h1 class="article-title">Textfields</h1>
     <p class="article-description">텍스트 정보를 입력합니다.</p>
-
+    <aside class="article-aka">
+      <span class="tag">a.k.a.</span>
+      <span class="hashtag" title="">TextInput</span>
+      <span class="hashtag" title="">Input</span>
+    </aside>
     <section class="component-style">
       <div class="tile-flat">
         <!-- <p>unit, choose/enter</p> -->
@@ -1039,6 +1065,8 @@
       </td>
       <dt>states</dt>
       <dd>"disabled" | "readonly"</dd>
+      <dt>isFocused<attr>?</attr></dt>
+      <dd>boolean</dd>
       <dt>isAutoFocus<attr>?</attr></dt>
       <dd>boolean</dd>
       <dt>onChange</dt>
@@ -1360,7 +1388,7 @@
     <!-- // iOS isTranslucent: Bool -->
   </article>
 
-  <article class="article js-observer js-scrollspy-section component-column">
+  <article class="article js-observer js-scrollspy-section">
     <h1 class="article-title">Menu</h1>
     <p class="article-description">사용자가 수행할 수 있는 행동 목록. tailing actions = chip/checkbox/switch. menuitem/listitem</p>
 
@@ -1622,13 +1650,13 @@
           <small>Find Your Answers</small>
           <h2 style="font-size:var(--font-size-title);" title="FAQs">궁금한 점이 있으신가요?</h2>
         </header> -->
-        <article class="accordion js-accordion" aria-expanded="false">
+        <article class="accordion js-accordion is-active" aria-expanded="false">
           <h3 class="accordion-title" role="button">
             탈퇴하고 싶어요.
             <figure class="accordion-title-icon"><i class="icon-chevron is-down"></i></figure>
           </h3>
           <div class="accordion-panel">
-            <p>모든 국민은 건강하고 쾌적한 환경에서 생활할 권리를 가지며, 국가와 국민은 환경보전을 위하여 노력하여야 한다. 대통령은 내우·외환·천재·지변 또는 중대한 재정·경제상의 위기에 있어서 국가의 안전보장 또는 공공의 안녕질서를 유지하기 위하여 긴급한 조치가 필요하고 국회의 집회를 기다릴 여유가 없을 때에 한하여 최소한으로 필요한 재정·경제상의 처분을 하거나 이에 관하여 법률의 효력을 가지는 명령을 발할 수 있다.</p>
+            <p>모든 국민은 건강하고 쾌적한 환경에서 생활할 권리를 가지며, 국가와 국민은 환경보전을 위하여 노력하여야 한다.</p>
             <p>제1항의 지시를 받은 당해 행정기관은 이에 응하여야 한다. 국회의원은 법률이 정하는 직을 겸할 수 없다. 대통령의 임기연장 또는 중임변경을 위한 헌법개정은 그 헌법개정 제안 당시의 대통령에 대하여는 효력이 없다.</p>
           </div>
         </article>
@@ -1638,7 +1666,7 @@
             <figure class="accordion-title-icon"><i class="icon-chevron is-down"></i></figure>
           </h3>
           <div class="accordion-panel">
-            <p>모든 국민은 건강하고 쾌적한 환경에서 생활할 권리를 가지며, 국가와 국민은 환경보전을 위하여 노력하여야 한다. 대통령은 내우·외환·천재·지변 또는 중대한 재정·경제상의 위기에 있어서 국가의 안전보장 또는 공공의 안녕질서를 유지하기 위하여 긴급한 조치가 필요하고 국회의 집회를 기다릴 여유가 없을 때에 한하여 최소한으로 필요한 재정·경제상의 처분을 하거나 이에 관하여 법률의 효력을 가지는 명령을 발할 수 있다.</p>
+            <p>모든 국민은 건강하고 쾌적한 환경에서 생활할 권리를 가지며, 국가와 국민은 환경보전을 위하여 노력하여야 한다.</p>
             <p>제1항의 지시를 받은 당해 행정기관은 이에 응하여야 한다. 국회의원은 법률이 정하는 직을 겸할 수 없다. 대통령의 임기연장 또는 중임변경을 위한 헌법개정은 그 헌법개정 제안 당시의 대통령에 대하여는 효력이 없다.</p>
           </div>
         </article>

@@ -2,12 +2,15 @@
   <section class="hero">
     <!-- <h1 class="hero-title"><span style="color:var(--color-text-light);">Tokens</span><br />simply dummy text of the printing<br />and typesetting industry.</h1> -->
     <h1 class="hero-title">Tokens</h1>
-    <h1 class="hero-title">일관된 시각 경험. 크로스 플랫폼. 확장과 유지 보수.</h1>
+    <!-- <h1 class="hero-title">일관된 시각 경험. 크로스 플랫폼. 확장과 유지 보수.</h1> -->
+    <!-- https://developer.mozilla.org/ko/docs/Web/Guide/HTML/Content_categories -->
 
-    <ul>
+    <!-- <ul>
       <li>프로덕션이 아니기 때문에 namespace를 생략. </li>
-      <!-- https://developer.mozilla.org/ko/docs/Web/Guide/HTML/Content_categories -->
-    </ul>
+      <p>core: give a name to a raw value to enable theming and make improve maintainability / semantic / component</p>
+      <p>20 - 20px. tailwind의 단점. 디자인 토큰에서 얻을 수 있는 추상화 및 기타 이점이 무효화됨. 값을 조정할 수 있도록 추상화.</p>
+      <p>unit- 1x</p>
+    </ul> -->
     <!-- <ul style="margin:1.5rem 0 0 0;">
       <li>global :  --[name]-[componentName]-[role]-[?state]</li>
       <li>컴포넌트 토큰은 상대적으로 변경 가능성이 높고 범용성이 낮기 때문에 컴포넌트 스코프에서 정의합니다.</li>
@@ -36,9 +39,6 @@ intense또는 vibrant더 강렬하고 다채로운
 bold더 강하게, 더 강렬하게, 더 크게
 prominent또는 pronounced더 눈에 띄는
     </ul> -->
-    <p>core: give a name to a raw value to enable theming and make improve maintainability / semantic / component</p>
-    <p>20 - 20px. tailwind의 단점. 디자인 토큰에서 얻을 수 있는 추상화 및 기타 이점이 무효화됨. 값을 조정할 수 있도록 추상화.</p>
-    <p>unit- 1x</p>
   </section>
 
   <nav class="component-navigation">
@@ -189,7 +189,7 @@ prominent또는 pronounced더 눈에 띄는
         <li>불릿, 괄호, 쉼표 등으로 텍스트를 분류하지 않습니다. 디자인하지 않았다는 인상.</li>
         <li>태그라인은 작은 화면에서도 임팩트를 줄 있도록 작성 단계에서 행갈이를 고려합니다. (todo: 글자 및 단어를 제한하고 개행 조건 정의)</li>
         <li>bottom navigation의 label은 예외적으로 10px입니다.</li>
-        <li>line-height는 주변 또는 부모 요소의 내부 간격에 영향을 받습니다. title, subhead, body, caption 크기에 따라 항상 일정할 수 없습니다.</li>
+        <li>line-height는 주변 또는 부모 요소의 내부 간격에 영향을 받습니다. title, subhead, body, caption에 따라 보정이 필요합니다.</li>
         <li>kicker/overline</li>
         <li>long-form content에서 truncate-multiple를 사용할 때는 항상 2줄로 자릅니다.</li>
           <!-- <p>프로모션 페이지의 헤드라인으로 제한적으로 사용합니다.</p> -->
@@ -584,7 +584,6 @@ prominent또는 pronounced더 눈에 띄는
           <div>
             <p>--zindex-dropdown: 6</p>
             <p>--zindex-tooltip: 6</p>
-            <p>--zindex-drawer: 6</p>
           </div>
         </div>
         <div class="token-item">
@@ -629,7 +628,6 @@ prominent또는 pronounced더 눈에 띄는
       <h4 class="article-subhead">Durations</h4>
       <div class="token-group">
         <div class="token-item" style="overflow:auto;">
-          <span class="tag" data-appearance="primary" style="position:absolute;right:.25rem;bottom:.25rem;">기본값</span>
           <p>--duration: .4s</p>
         </div>
         <div class="token-item">
@@ -654,10 +652,11 @@ prominent또는 pronounced더 눈에 띄는
           <p>@keyframes rotation</p>
         </div>
         <div class="token-item">
-          <p>@keyframes modal</p>
+          <figure class="item-avatar animation-marquee" style="float:none;"></figure>
+          <p>@keyframes marquee</p>
         </div>
         <div class="token-item">
-          <p>@keyframes marquee</p>
+          <p>@keyframes modal</p>
         </div>
       </div>
     </article>
