@@ -63,6 +63,3 @@
 // todo checkitem space-between or position absolute;
 @mixin menuitem {display:flex;align-items:center;width:100%;position:relative;z-index:var(--zindex-default);}
 @mixin menuitem-label {@include text-subhead;line-height:var(--size-medium);}
-
-.sidebar {}
-.sidebar-heading {margin:0 0 var(--space-2) 0;@include text-label;}

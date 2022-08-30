@@ -30,6 +30,267 @@ document.addEventListener('click', toggleTheme)
 document.addEventListener('click', toggleNavbarMenu)
 
 // ! 여기까지 리팩토링 1차로 해 봄..
+// customElements.define('hello-button', HelloButton, { extends: 'button' })
+
+function updateStyle(elem) {
+  // const shadow = elem.shadowRoot
+  // shadow.querySelector('style').textContent = `
+  //   div {
+  //     width: ${elem.getAttribute('l')}px;
+  //     height: ${elem.getAttribute('l')}px;
+  //     background-color: ${elem.getAttribute('c')};
+  //   }
+  // `
+}
+class Entity extends HTMLElement {
+  constructor() {
+    super()
+    // this.name = 'no name'
+    this.addEventListener('click', () => this.toggle())
+
+    this.innerHTML = `
+      <div class="item">
+        <figure class="item-avatar"></figure>
+        <b class="item-name">this.size</b>
+      </div>
+    `
+  }
+  toggle() {
+    this.classList.toggle('test')
+    alert(this.size)
+  }
+  static get observedAttributes() {
+    return ['size', 'test']
+  }
+
+  // set value(val) {
+  //   if (val) {
+  //     this.setAttribute('value', val)
+  //   } else {
+  //     this.removeAttribute('value')
+  //   }
+  // }
+
+  get size() {
+    return this.hasAttribute('size')
+  }
+
+  // set disabled(val) {
+  //   if (val) {
+  //     this.setAttribute('disabled', val)
+  //   } else {
+  //     this.removeAttribute('disabled')
+  //   }
+  // }
+  connectedCallback() {
+    console.log('connected!', this)
+  }
+
+  disconnectedCallback() {
+    console.log('disconnected', this)
+  }
+
+  attributeChangedCallback(name, oldValue, newValue) {
+    console.log('changed', name, oldValue, newValue, this)
+
+    if (name === 'logout') {
+      // ...
+    }
+  }
+}
+class FancyButton extends HTMLButtonElement {
+  constructor() {
+    super() // always call super() first in the constructor.
+    this.addEventListener('click', e => this.drawRipple(e.offsetX, e.offsetY))
+  }
+
+  // Material design ripple animation.
+  drawRipple(x, y) {
+    alert()
+    let div = document.createElement('div')
+    div.classList.add('ripple')
+    this.appendChild(div)
+    div.style.top = `${y - div.clientHeight / 2}px`
+    div.style.left = `${x - div.clientWidth / 2}px`
+    div.style.backgroundColor = 'currentColor'
+    div.classList.add('run')
+    div.addEventListener('transitionend', e => div.remove())
+  }
+}
+
+const template = document.createElement('template')
+
+template.innerHTML = `
+  <style>
+    :host {
+      display: inline-block;
+      background: crimson;
+      width: 24px;
+      height: 24px;
+      --size-medium: 24px;
+      --size-tiny: 16px;
+    }
+    :host([hidden]) {
+      display: none;
+    }
+    :host([checked]) {
+      background: blue;
+    }
+    :host([disabled]) {
+      background:green;
+    }
+    :host([checked][disabled]) {
+      background: yellow;
+    }
+
+    .checkbox,.radio {display:block;position:relative;}
+    input[type=checkbox] {width:0;height:0;opacity:0;position:absolute;}
+    input[type=checkbox] ~ label {display:flex;align-items:center;height:var(--size-medium);padding-left:calc(var(--size-tiny) + var(--space-2));line-height:1rem;position:relative;}
+    input[type=checkbox] + label:before {content:'';display:block;width:var(--size-tiny);height:var(--size-tiny);border-radius:4px;border:var(--border);box-sizing:border-box;position:absolute;left:0;}
+    input[type=checkbox] + label:after {content:'';display:none;width:6px;height:2px;border-left:2px solid;border-bottom:2px solid;border-color:var(--gray200);position:absolute;left:4px;top:13px;transform:rotate(-45deg);}
+    input[type=checkbox]:checked + label:before {border-color:var(--color-primary);animation:ripple2 0.2s linear forwards;}
+    input[type=checkbox]:checked + label:after {display:block;border-color:var(--color-primary);}
+    input[type=checkbox]:disabled + label {color:var(--gray200);cursor:not-allowed;}
+    input[type=checkbox]:disabled + label:before {background:var(--gray200);border-color:var(--gray200);}
+    input[type=checkbox]:disabled + label:after {border-color:var(--gray0);}
+    input[type=checkbox][indeterminate=true] + label:before,
+    input[type=checkbox][data-indeterminate=true] + label:before {border-color:var(--green800);background:var(--green100);}
+    input[type=checkbox][indeterminate=true] + label:after,
+    input[type=checkbox][data-indeterminate=true] + label:after {display:block;width:8px;background:var(--color-primary);border:none;left:4px;top:48%;transform:rotate(0deg);}
+
+  </style>
+`
+class HowToCheckbox extends HTMLElement {
+  static get observedAttributes() {
+    return ['checked', 'disabled', 'label']
+  }
+
+  constructor() {
+    super()
+    this.attachShadow({ mode: 'open' })
+
+    let wrapper = document.createElement('div')
+    wrapper.setAttribute('class', 'checkbox')
+    let label = document.createElement('label')
+    label.setAttribute('class', 'checkbox-label')
+    let text = this.getAttribute('label')
+    label.textContent = text
+    let input = document.createElement('input')
+    input.setAttribute('type', 'checkbox')
+    input.setAttribute('checked', 'false')
+    input.setAttribute('class', 'checkbox-input')
+    wrapper.appendChild(input)
+    wrapper.appendChild(label)
+
+    // 외부 스타일을 shadow dom에 적용합니다
+    // const linkElem = document.createElement('link')
+    // linkElem.setAttribute('rel', 'stylesheet')
+    // linkElem.setAttribute('href', '/public/stylesheets/base/form.scss')
+    // this?.shadowRoot?.appendChild(linkElem)
+    this?.shadowRoot?.appendChild(wrapper)
+    this?.shadowRoot?.appendChild(template.content.cloneNode(true))
+  }
+
+  connectedCallback() {
+    if (!this.hasAttribute('role')) this.setAttribute('role', 'checkbox')
+    if (!this.hasAttribute('tabindex')) this.setAttribute('tabindex', '0')
+
+    this._upgradeProperty('checked')
+    this._upgradeProperty('disabled')
+
+    this.addEventListener('keyup', this._onKeyUp)
+    this.addEventListener('click', this._onClick)
+  }
+  disconnectedCallback() {
+    this.removeEventListener('keyup', this._onKeyUp)
+    this.removeEventListener('click', this._onClick)
+  }
+
+  _upgradeProperty(prop) {
+    if (!this.hasOwnProperty(prop)) return
+
+    let value = this[prop]
+    delete this[prop]
+    this[prop] = value
+  }
+
+  set checked(value) {
+    this.toggleAttribute('checked', Boolean(value))
+  }
+
+  get checked() {
+    return this.hasAttribute('checked')
+  }
+  get disabled() {
+    return this.hasAttribute('disabled')
+  }
+
+  set disabled(value) {
+    const isDisabled = Boolean(value)
+    if (isDisabled) this.setAttribute('disabled', '')
+    else this.removeAttribute('disabled')
+  }
+
+  attributeChangedCallback(name, oldValue, newValue) {
+    const hasValue = newValue !== null
+
+    if (name === 'checked') {
+      this.setAttribute('aria-checked', hasValue.toString())
+    }
+    if (name === 'disabled') {
+      this.setAttribute('aria-disabled', hasValue.toString())
+      this.toggleAttribute('tabindex', hasValue)
+
+      if (hasValue) this.blur()
+    }
+  }
+
+  _onKeyUp(event) {
+    if (event.altKey) return
+
+    switch (event.keyCode) {
+      case event.keyCode.SPACE:
+        event.preventDefault()
+        this._toggleChecked()
+        break
+      default:
+        return
+    }
+  }
+
+  _onClick(event) {
+    this._toggleChecked()
+  }
+  _toggleChecked() {
+    if (this.disabled) return
+
+    this.checked = !this.checked
+    this.dispatchEvent(
+      new CustomEvent('change', {
+        detail: {
+          checked: this.checked,
+        },
+        bubbles: true,
+      }),
+    )
+  }
+}
+
+class Chip extends HTMLButtonElement {
+  constructor() {
+    super()
+    this.innerHTML = `test`
+
+    this.addEventListener('click', () => alert('test'))
+  }
+  connectedCallback() {
+    console.log('connected!', this)
+  }
+
+  disconnectedCallback() {
+    console.log('disconnected', this)
+  }
+}
 
 document.addEventListener('DOMContentLoaded', () => {
   stopAnimation()
@@ -134,6 +395,14 @@ async function domEvents() {
   detectTheme()
   lazyLoading()
   await routePage()
+
+  // Define the new web component
+  if ('customElements' in window) {
+    // customElements.define('chip', Chip)
+    customElements.define('fancy-button', FancyButton, { extends: 'button' })
+    customElements.define('sjb-entity', Entity)
+    window.customElements.define('howto-checkbox', HowToCheckbox)
+  }
 
   // const page = routes.find(route => route.path.substring(1) === hash)
   // const pageTitleElement = document.querySelector('.js-page-title')
@@ -544,27 +813,3 @@ interface IUser {
   isAdult?: boolean
   readonly test: string
 }
-
-// class GreetingMessage extends HTMLElement {
-//   constructor() {
-//     super()
-
-//     this.innerHTML = `
-//       <p>
-// 				<button>Hi there!</button>
-// 			</p>
-// 			<div class="message" aria-live="polite"></div>
-//     `
-//   }
-
-//   connectedCallback() {
-//     console.log('connected!', this)
-//   }
-//   disconnectedCallback() {
-//     console.log('disconnected', this)
-//   }
-// }
-
-// if ('customElements' in window) {
-//   customElements.define('greeting-message', GreetingMessage)
-// }

@@ -1,4 +1,5 @@
 .setting {@include layout-medium;}
+.setting-background {@include bleeding;background-color:var(--color-background-weak);}
 .setting-subhead {margin:0 0 var(--space-3) 0;font-size:var(--font-size-body);}
 
 .setting-item {@include tile-elevated;}

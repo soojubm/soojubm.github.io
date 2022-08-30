@@ -11,17 +11,12 @@
 .terms-body h2 {margin:4rem 0 1rem 0;@include text-subhead;}
 .terms-body p {}
 
-.terms-sidebar {width:100%;max-width:320px;background:var(--color-background);padding:8rem 1.5rem;border-right:var(--border);box-sizing:border-box;overflow-y:auto;position:fixed;top:0;bottom:0;z-index:var(--zindex-default);}
-.terms-sidebar a {display:block;line-height:40px;}
-
 @media (--breakpoint-large) {
-  .terms-sidebar {max-width:280px;}
   .terms-head {}
   .terms-body {}
   
 }
 @media (--breakpoint-small) {
-  .terms-sidebar {display:none;}
   .terms-head {margin:0 auto;}
   .terms-body {margin:0 auto;}
 }

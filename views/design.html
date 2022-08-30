@@ -74,7 +74,7 @@
         </div>
       </div>
       <div class="card has-item design-ticker-item" role="listitem">
-        <figure class="card-thumbnail"><img src="/public/images/springsteen.jpg" alt="" /></figure>
+        <figure class="card-thumbnail"><img src="/public/images/springsteen.jpg" alt="" loading="lazy" /></figure>
         <h3 class="card-title">카드 유아이</h3>
         <p class="card-text">
           따봉은 상세페이지에서 제공하세요. 뉴스피드 유아이에서는 밖에서 제공할 수 있어요.북마크는 밖에 두어도 좋은가? 상세페이지에서 제공하는 것이
@@ -220,7 +220,7 @@
         </div>
       </div>
       <div class="card has-item design-ticker-item" role="listitem">
-        <figure class="card-thumbnail"><img src="/public/images/springsteen.jpg" alt="" /></figure>
+        <figure class="card-thumbnail"><img src="/public/images/springsteen.jpg" alt="" loading="lazy" /></figure>
         <h3 class="card-title">카드 유아이</h3>
         <p class="card-text">
           따봉은 상세페이지에서 제공하세요. 뉴스피드 유아이에서는 밖에서 제공할 수 있어요.북마크는 밖에 두어도 좋은가? 상세페이지에서 제공하는 것이
@@ -290,8 +290,17 @@
   </section>
 
   <header class="design-head">
-    <h1 class="" title="making things better" style="line-height:var(--font-line-height);">Making things better.</h1>
-    <p class="hero-description" style="margin-top:0;font-size:var(--font-size-huge);">지속가능하고 일관된 경험을 위해<br />베스트 프렉티스를 만들고 있습니다.</p>
+    <h1 class="" title="making things better" style="line-height:var(--font-line-height);">더 나은 경험을 위해.</h1>
+    <!-- <p>모두를 위한 </p> -->
+    <p class="hero-description" style="margin-top:0;font-size:var(--font-size-huge);">효율적인 인터페이스를 탐구합니다.</p>
+    
+    <p>라이브 중인 서비스의 디자인 시스템이 아니기 때문에 보편적인 인터페이스와 최소한의 시각 언어라는 일종의 메타 원칙 하에 컴포넌트를 설계합니다.
+      <br />시각 언어를 확장하며 디자인 디테일과 코드 환경에서의 효율성을 함께 고민하며, 최적의 사례를 문서화하고 있습니다.</p>
+    <!-- principle 1. 역할에 기반한 visual cue
+    principle 2. 설계와 변경이 쉬운 component structure
+    principle 3. 플랫폼에 종속되지 않는 user experience
+
+사용기술. scss, vanillajs, typescript, webpack -->
     
     <!-- <li>자세히보기/더보기 => 더 알아보기</li> -->
 
@@ -472,12 +481,16 @@
       <figure class="postitem-cover"></figure>
       <h3 class="postitem-name">현대 유아이에서 칩이 중요한 이유</h3>
       <p class="postitem-description">모바일 시대에 맞는 정보 형태, 그리고 콘텐츠 시대의 탐색 경험.</p>
+      <ul>
+        <li>버튼의 역할 강화 또는 축소.</li>
+      </ul>
     </ㅁ>
     <a class="postitem" href="/" onclick="javascript:alert('샘플 유아이입니다.')">
       <figure class="postitem-cover"></figure>
       <h3 class="postitem-name">Segmented Controls과 Tabs</h3>
       <p class="postitem-description">Human Interface Guidelines에는 전통적인 형태의 Tab 컴포넌트가 없다?</p>
       <ul>
+        <li>우리 서비스에 tab과 segmented control이 모두 정의되어 있다면?/li>
         <li>iOS. 깊은댑스. 뒤로가기버튼레이블. 모달리티패턴.</li>
         <li>android. tabs. backdrop.</li>
       </ul>

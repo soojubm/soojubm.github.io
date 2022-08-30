@@ -63,11 +63,6 @@
     <div class="hero-obj1"></div>
     <div class="hero-obj2"></div>
     <div class="hero-obj3"></div>
-    
-    <footer class="hero-foot">
-      <a class="hero-cta">공사중입니다</a>
-      <a class="hero-detail">더 알아보기</a>
-    </footer>
 
     <ul>
       <li>역할에 기반한 컴포넌트. 예를 들면 스포티파이의 encore에서 track row 컴포넌트. 도메인 특수성.</li>
@@ -146,7 +141,12 @@
     </figure>
   </article> -->
   <section class="component-body">
-    <greeting-message></greeting-message>
+    <chip>test</chip>
+    <button is="fancy-button" class="test-class">Fancy button!</button>
+    <sjb-entity value="large" size="large"></sjb-entity>
+    <howto-checkbox label="checkbox">checkbox</howto-checkbox>
+    <!-- <button is="hello-button">Click me</button>
+    <button button is="hello-button">Disabled</button> -->
 <!-- 
     <article class="article">
       <p>사용하다 -> 제공하다 / 사용자 관점으로. 도큐멘터이션의 사용자가 아닌 서비스의 사용자.</p>
@@ -419,10 +419,14 @@
       <!-- <p>사용자에게 단추를 한 번에 한 개 또는 두 개만 표시합니다(예: 수락 및 취소).
         사용자에게 더 많은 작업을 표시해야 하는 경우 사용자가 하나의 명령 단추로 작업을 선택하여 트리거할 수 있도록 확인란 또는 라디오 단추를 사용하는 것이 좋습니다.</p> -->
 
-        <h4 class="article-subhead">Close Button</h4>
-        <div class="tile-flat">
-          CloseButton aria-label="" /
-        </div>
+      <h4 class="article-subhead">Close Button ? Icon Buttons</h4>
+      <div class="tile-flat">
+        CloseButton aria-label="" /
+      </div>
+
+      <h4 class="article-subhead">Image Button</h4>
+      <div class="tile-flat">
+      </div>
 
       <h4 class="article-subhead">Groupable<br />최대 2개의 버튼 - binary choices</h4>
       <div class="tile-flat">
