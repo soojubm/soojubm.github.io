@@ -54,9 +54,7 @@
 }
 
 
-.char1 {
-  transform: rotate(16deg);
-}
+.char1 {transform: rotate(16deg);}
 .char2 {
   transform: rotate(32deg);
 }
@@ -87,6 +85,32 @@
 .char11 {
   transform: rotate(178deg);
 }
+.char12 {
+  transform: rotate(180deg);
+}
+.char13 {
+  transform: rotate(196deg);
+}
+.char14 {
+  transform: rotate(208deg);
+}
+.char15 {
+  transform: rotate(220deg);
+}
+.char16 {
+  transform: rotate(234deg);
+}
+.char17 {
+  transform: rotate(234deg);
+}
+.char18 {
+  transform: rotate(246deg);
+}
+
+
+
+
+
 
 .number {display:flex;justify-content:center;}
 .number-card {display:flex;justify-content:center;align-items:center;width:48px;height:64px;background:var(--color-background-weak);border-radius:var(--radius);font-size:var(--font-size-huge);font-weight:var(--font-weight-bold);margin:0 .25rem;}
@@ -208,16 +232,12 @@
 // [aria-expanded=true] + .accordion-panel {}
 
 .design-head {padding:0 var(--grid-margin);background:var(--color-background);position:relative;}
-.design header h1 {@include text-title;}
-
-.design-navigation {
-  overflow: hidden;
-  position:relative;z-index:var(--zindex-default);}
-.design-navigation-bleeding {display:block;white-space:nowrap;overflow:auto;font-size:0;}
-.design-navigation a {display:inline-block;@include tile-elevated;width:240px;margin:0 var(--space-3) 0 0;padding:var(--space-3);color:var(--color-text);position:relative;}
-.design-navigation a figure {display:block;@include avatar-huge;width:100%;margin:0 0 var(--space-05) 0;font-size:var(--font-size-title);}
-.design-navigation a:hover:not([readonly]) {@include hover-item;}
-
+.design-head h1 {@include text-title;}
+.design-guide {margin:6rem 0 0;}
+.design-guide h2 {padding:0 var(--grid-margin);}
+.design-guide ul {padding-left:0;border-top:1px solid;list-style:none;}
+.design-guide ul li {margin:0;padding:1rem var(--grid-margin) .75rem;border-bottom:1px solid;font-size:var(--font-size-title);line-height:var(--font-line-height-small);}
+.post-relation {max-width:1200px;margin:0 auto;padding:0 var(--grid-margin);}
 
 .uxsitemap {position:relative;}
 .uxsitemap .map {margin-left:1rem;}

@@ -96,7 +96,7 @@
 .feature-head-title {@include text-title;word-break:keep-all;}
 .feature-head-description {margin:var(--space-after-title) 0 0 0;font-size:var(--font-size-subhead);}
 .feature-title {width:100%;margin:0 0 var(--space-after-title) 0;@include text-subhead;}
-.feature-item {width:100%;max-width:220px;margin:3rem 0 0 0;position:relative;}
+.feature-item {width:100%;max-width:220px;margin:2rem 0 0 0;position:relative;}
 .feature-item-avatar {display:block;margin:0 0 var(--space-1) 0;font-size:var(--font-size-huge);position:relative;}
 .feature-item-avatar:before {content:'';display:block;@include avatar-medium;position:absolute;left:0rem;top:0rem;z-index:-1;}
 .feature-item-avatar {}
