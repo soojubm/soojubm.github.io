@@ -1,43 +1,37 @@
 <main class="tokens">
-  <section class="hero">
+  <!-- <section class="hero">
     <h1 class="hero-title">Tokens</h1>
-    <!-- <h1 class="hero-title">일관된 시각 경험. 크로스 플랫폼. 확장과 유지 보수.</h1> -->
-    <!-- https://developer.mozilla.org/ko/docs/Web/Guide/HTML/Content_categories -->
-    <!-- <ul>
-      <li>프로덕션이 아니기 때문에 namespace를 생략. </li>
-      <p>core: give a name to a raw value to enable theming and make improve maintainability / semantic / component</p>
-      <p>20 - 20px. tailwind의 단점. 디자인 토큰에서 얻을 수 있는 추상화 및 기타 이점이 무효화됨. 값을 조정할 수 있도록 추상화.</p>
-      <p>unit- 1x</p>
-    </ul> -->
-    <!-- <ul style="margin:1.5rem 0 0 0;">
-      <li>global :  --[name]-[componentName]-[role]-[?state]</li>
-      <li>컴포넌트 토큰은 상대적으로 변경 가능성이 높고 범용성이 낮기 때문에 컴포넌트 스코프에서 정의합니다.</li>
-    </ul> -->
-    
-      <!-- <li>todo Figma usage</li> -->
-      <!-- <li>prefix. 라이브러리와 충돌을 방지합니다.</li> -->
-      <!-- <li>모든 세부사항을 정의할 필요는 없습니다. 예를 들면, border width와 같은 한정된 용법은 약속을 하지 않는 편이 좋다. 변경이 어렵지 않기 때문이다. 볼륨이 커질 때 약속을 해도 충분하다. 문제 해결을 위한 도구가 복잡해지지 않도록 유지하는 것도 중요.</li> -->
-      <!-- <li>값을 직접적으로 이름에 포함하지 마세요. 추상화를 통한 장점의 유실.</li> -->
-      <!-- <li>SCSS/LESS: kebab-case</li>
-      <li>JS: PascalCase</li>
-      <li>Android: snake_case</li>
-      <li>iOS: PascalCase</li> -->
-    <!-- <ul>
-      <li>중요도: Primary, Secondary, Tertiary,</li>
-      <li>강도: none, low, normal, medium, high,max</li>
-      <li>강도: Weak, Moderate, Strong, Extreme</li>
-      <li>속도: instant, immediate, quick / fast, moderate, slow,deliberate</li>
-      li  Informational.
-
-tone추가된 회색 또는 덜 생생한
-shade블랙 또는 더 어두운 추가
-tint흰색 또는 라이터 추가
-subtle덜 강렬하거나 활기찬
-intense또는 vibrant더 강렬하고 다채로운
-bold더 강하게, 더 강렬하게, 더 크게
-prominent또는 pronounced더 눈에 띄는
-    </ul> -->
-  </section>
+  </section> -->
+  
+  <!-- <h1 class="hero-title">일관된 시각 경험. 크로스 플랫폼. 확장과 유지 보수.</h1> -->
+  <!-- <ul>
+    <li>프로덕션이 아니기 때문에 namespace를 생략.</li>
+    <p>core: give a name to a raw value to enable theming and make improve maintainability / semantic / component</p>
+    <p>20 - 20px. tailwind의 단점. 디자인 토큰에서 얻을 수 있는 추상화 및 기타 이점이 무효화. 값을 조정하기 쉽도록 추상화.</p>
+    <li>global :  --[name]-[componentName]-[role]-[?state]</li>
+    <li>컴포넌트 토큰은 상대적으로 변경 가능성이 높고 범용성이 낮기 때문에 컴포넌트 스코프에서 정의합니다.</li>
+  </ul> -->
+  
+  <!-- <li>todo Figma usage</li> -->
+  <!-- <li>prefix. 라이브러리와 충돌을 방지합니다.</li> -->
+  <!-- <li>모든 세부사항을 정의할 필요는 없습니다. 예를 들면, border width와 같은 한정된 용법은 약속을 하지 않는 편이 좋다. 변경이 어렵지 않기 때문이다. 볼륨이 커질 때 약속을 해도 충분하다. 문제 해결을 위한 도구가 복잡해지지 않도록 유지하는 것도 중요.</li> -->
+  <!-- <li>값을 직접적으로 이름에 포함하지 마세요. 추상화를 통한 장점의 유실.</li> -->
+  <!-- <li>SCSS/LESS: kebab-case</li>
+  <li>JS: PascalCase</li>
+  <li>Android: snake_case</li>
+  <li>iOS: PascalCase</li> -->
+  <!-- <ul>
+    <li>중요도: Primary, Secondary, Tertiary,</li>
+    <li>강도: none, low, normal, medium, high,max</li>
+    <li>강도: Weak, Moderate, Strong, Extreme</li>
+    <li>속도: instant, immediate, quick / fast, moderate, slow, deliberate</li>
+    li  Informational.
+    tone / shade / tint / subtle
+    intense또는 vibrant더 강렬하고 다채로운
+    bold더 강하게, 더 강렬하게, 더 크게
+    prominent또는 pronounced더 눈에 띄는
+  </ul> -->
+  <!-- system: error / success / warning / info / update (new) -->
 
   <nav class="component-navigation">
     <div class="component-navigation-background"></div>
@@ -57,13 +51,12 @@ prominent또는 pronounced더 눈에 띄는
   <section class="tokens-body">
     <article class="article js-scrollspy-section">
       <h1 class="article-title">Palette</h1>
-      <p class="article-description">작성 중.</p>
-      <!-- system: error / success / warning / info / update (new) -->
+      <p class="article-description">color(background/border/text/state). surface(shadow/radius).</p>
       <ul>
-        <li>color(background/border/text/state). surface(shadow/radius).</li>
-        <li>다크테마를 위한 인버트 컬러셋을 별도로 정의하지 않습니다. 하나의 컬러셋으로 다양한 테마 또는 커스텀 유아이에 대응합니다. 가이드 문서를 background-weak / background-strong 등 시멘틱 레벨에서 정리할 필요가 있다.</li>
+        <li>다크테마를 위한 인버트 컬러셋을 별도로 정의하지 않습니다. 하나의 컬러셋으로 다양한 테마 또는 커스텀 유아이에 대응합니다.</li>
         <li>크기와 비례해서 radius 조절이 필요하지만 경량화. shadow도 마찬가지. 하나의 값을 사용하고 있습니다.</li>
-        <li>radius. pill과 non-pill은 양자택일인가?</li>
+        <li>memo. pill과 non-pill은 양자택일이어야. circle은 인물 아바트를 위해 부분적으로 허용 가능.</li>
+        <li>todo. 가이드 문서를 background-weak / background-strong 등 시멘틱 레벨에서 정리할 필요가 있다.</li>
       </ul>
       <button class="button-elevated js-darkmode" title="change theme" style="background:var(--color-background);border-radius:var(--radius);box-shadow:var(--shadow);padding:.5rem;border:var(--border);">
         <figure class="button-elevated-avatar"><i class="icon-moon"></i></figure>
@@ -112,7 +105,7 @@ prominent또는 pronounced더 눈에 띄는
           <div>
             <p>--color-background</p>
           </div>
-          <button class="chip"><span class="chip-label">copy</span></button>
+          <button class="chip" style="margin:1rem 0 0 0;"><span class="chip-label">copy</span></button>
         </article>
         <article class="token-item is-gray100">
           <figure class="token-item-avatar"></figure>
@@ -321,7 +314,7 @@ prominent또는 pronounced더 눈에 띄는
       <h1 class="article-title">Sizing</h1>
       <p class="article-description">작성 중.</p>
       <ul>
-        <li>정의한 토큰과 같은 값이라도 독립적으로 사용하는 것이 좋은 케이스. (todo 근거)
+        <li>정의한 토큰과 같은 값이라도 독립적으로 사용하는 것이 좋은 케이스에 주의하세요. (todo 근거)
           <p><del>--navbar-height: var(--size-huge)</del></p>
           <p>--navbar-height: 5rem</p>
         </li>
@@ -514,8 +507,8 @@ prominent또는 pronounced더 눈에 띄는
 
       <h4 class="article-subhead">Groups</h4>
       <ul>
-        <li>버튼 그룹은 최대 2개의 버튼</li>
-        <li>textfield-group의 case. 시작일/종료일, 해외주소(3개. zipcode...)</li>
+        <li>버튼 그룹은 최대 2개의 버튼을 가집니다.</li>
+        <li>textfield-group의 cases. 시작일/종료일, 해외주소(3개), 이름/성별</li>
       </ul>
       <div class="token-group">
         <div class="token-item">
