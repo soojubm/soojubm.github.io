@@ -31,7 +31,7 @@
 }
 
 @mixin chip-icon {@include avatar-medium;}
-@mixin chip-label {padding:0 var(--space-3) var(--adjust-label-line);}
+@mixin chip-label {padding:1px var(--space-3) var(--adjust-label-line);}
 
 .chip {@include chip}
 .chip-label {@include chip-label;padding-top:1px;}

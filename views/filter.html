@@ -2,9 +2,7 @@
   <div class="article">
     <h1 class="article-title">Filtering</h1>
     <p class="article-description">
-      실제 서비스의 디자인 시스템이 아니기 때문에 필터의 일반적인 pattern을 알아보자.
-      <br/>
-      Single Filter / Multiple Filters 후자는 구매결정(전환)에 필수불가결한 옵션이 존재하는 경우(다소막연).
+      Single Filter / Multiple Filters 후자는 전환에 필수불가결한 옵션이 존재하는 경우(다소막연).
     </p>
   
     <div class="chip-group">
@@ -150,7 +148,7 @@
       </fieldset>
       <footer class="filter-foot">
         <button class="filter-foot-confirm">적용/숙소 25개 표시 (todo fixed)</button>
-        <button class="filter-foot-reset" style="color:var(--color-text);">전체 해제clear filters</button>
+        <button class="filter-foot-reset" title="clear filters" style="color:var(--color-text);">전체 해제</button>
       </footer>
     </form>
     <br />
@@ -160,9 +158,8 @@
       <li>Dropdown with chip group: desktop에서 상. moblie에서 중. desktop과 mobile에 동일한 경험과 낮은 개발 비용. 막연한 탐색.</li>
       <li>Sheet: desktop에서 하. mobile에서 상.</li>
       <li>Modal: desktop과 mobile에서 중. desktop과 mobile에 동일한 경험과 낮은 개발 비용.</li>
+      <li>presentation 컴포넌트가 필터의 상태나 적용 방법에 많은 영향을 준다. 필터 옵션의 presentation 컴포넌트는 환경에 최적화된 경험을 위해 변경하기 쉬워야 한다.</li>
     </ul>
-    <p>필터 옵션의 presentation 컴포넌트는 환경에 최적화된 경험을 위해 변경하기 쉬워야 한다.</p>
-    <p>presentation 컴포넌트가 필터의 상태나 적용 방법에 많은 영향을 준다.</p>
   
     <h2 class="article-subhead">필터의 적용</h2>
     <ul>

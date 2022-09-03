@@ -196,7 +196,7 @@ input[type=file] + label:after {display:none;}
 .file-attachment-item-image img {width:auto;height:auto;max-width:auto;min-height:var(--size-huge);max-height:100px;margin:auto;position:absolute;left:0;right:0;top:0;bottom:0;}
 .file-attachment-item-name {display:block;margin:.25rem 0 -.25rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 .file-attachment-item-size {color:var(--color-text-light);}
-.file-attachment-item-delete {@include avatar-medium;@include position-right-top;}
+.file-attachment-item-delete {@include avatar-medium;@include position-right-top;right:.5rem;top:.5rem;}
 .file-attachment-item-delete:hover {}
 
 

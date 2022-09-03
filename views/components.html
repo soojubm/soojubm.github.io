@@ -141,10 +141,10 @@
     </figure>
   </article> -->
   <section class="component-body">
-    <chip>test</chip>
+    <!-- <chip>test</chip>
     <button is="fancy-button" class="test-class">Fancy button!</button>
     <sjb-entity value="large" size="large"></sjb-entity>
-    <howto-checkbox label="checkbox">checkbox</howto-checkbox>
+    <howto-checkbox label="checkbox">checkbox</howto-checkbox> -->
     <!-- <button is="hello-button">Click me</button>
     <button button is="hello-button">Disabled</button> -->
 <!-- 
@@ -221,34 +221,18 @@
       <ul>
         <li>인접한 정보 더미 중 최상위 위계의 시각 정보입니다.</li>
         <li>이미지, 텍스트, 아이콘, 이모지를 포함할 수 있습니다.</li>
-        <li>fallback. username의 첫 자리 이니셜을 사용합니다.</li>
         <li>현재 이 컴포넌트가 썸네일 카드의 역할까지 하는 상황. 참고 profile 페이지의 display button.</li>
         <li>아바타를 조합하는 대표적인 형태의 컴포넌트를 entity로 명명하고 한시적으로 avatar와 함께 가이드한다.</li>
-        <li>memeo. medium. 이하의 크기에 항상 align-items:center 방법.</li>
-        <li>pagination item은 chip과 같은 size token을 사용하지만 chip도 avatar도 아닙니다.</li>
-        <li>searchfield clear button은 textfield-surfix(?). icon-button(?).</li>
-        
+        <li>fallback. username의 첫 자리 이니셜을 사용합니다.</li>
+        <!-- <li>memeo. medium. 이하의 크기에 항상 align-items:center.</li> -->
+        <!-- <li>pagination item은 chip과 같은 size token을 사용하지만 chip도 avatar도 아닙니다.</li> -->
+        <!-- <li>searchfield clear button은 textfield-surfix(?). icon-button(?).</li> -->
       </ul>
   
       <!-- <blockquote>
         <p>아바타만 단독으로 사용하는 케이스를 모아보기. (+ space-after-avatar 항상 필요하지는 않음.).</p>
       </blockquote> -->
       <h2 class="article-subhead">Props</h2>
-      <!-- <table>
-        <caption hidden>
-          Table Caption
-        </caption>
-        <tbody role="rowgroup">
-          <tr role="row">
-            <th scope="row">name</th>
-            <th>type</th>
-          </tr>
-          <tr role="row">
-            <th scope="row"><code>appearance</code></th>
-            <td>"primary" | "secondary" | "tertiary"</td>
-          </tr>
-        </tbody>
-      </table> -->
       <!-- appearance: 'link' | 'subtle' | 'primary' -->
       <dl>
         <dt>name</dt>
@@ -528,7 +512,7 @@
         <li>HorizontalScrollView. md</li>
       </ul>
       
-      <h4 class="article-subhead">Props (todo)</h4>
+      <h4 class="article-subhead">Props</h4>
       <dl>
         <dt>name</dt>
         <dd>string</dd>
@@ -884,14 +868,9 @@
     </div>
     
     <ul>
-      <li>체크하지 않은 상태를 기본값으로 제공합니다. 사용자가 직접 체크</li>
+      <li>체크하지 않은 상태를 기본값으로 제공합니다.</li>
       <li>
-        레거시 형태의 체크박스와 라디오는 모바일 친화적이지 않으며 사용 케이스도 감소세. 머티리얼3에도 포함되어 있지 않다. 약관 동의 정도를 제외하면
-        거의.
-      </li>
-      <li>
-        memo tile 형태에서만 description이 나타나도록 사용? Form Elements로
-        그루핑할 수도 있음.
+        레거시 형태의 체크박스와 라디오는 모바일 친화적이지 않으며 사용 케이스도 감소세. 머티리얼3에도 포함되어 있지 않다. 약관 동의 유즈 캐이스를 따로 정의하는 것이 좋다.
       </li>
       <li>case. switch 역할로 하나의 체크박스를 제공할 수 있습니다. '포토리뷰만 보기'</li>
     </ul>
@@ -903,7 +882,6 @@
     </ul>
 
     <h4 class="article-subhead">Terms and conditions</h4>
-
 
     <h4 class="article-subhead">Props</h4>
     <dl>
@@ -944,7 +922,7 @@
           <input type="radio" id="gender-etc" name="gender" value="" checked disabled />
           <label for="gender-etc" title="Video Killed the Radio Button">Video Killed the Radio Button</label>
         </div>
-        <div class="radio tile-elevated" style="margin:var(--space-4) 0 0 0;">
+        <div class="radio tile-elevated-small" style="margin:var(--space-4) 0 0 0;">
           <input type="radio" id="raidio5" name="gender" value="" />
           <label for="raidio5" title="">
             tile appearance
@@ -988,44 +966,60 @@
       <div class="tile-flat">
         <!-- <p>unit, choose/enter</p> -->
         <!-- <abbr title="필수입력">*</abbr> -->
+        <!-- validation feedback -->
+          <!-- // todo readonly -->
         <div class="textfield is-invalid">
           <label class="textfield-label" for="abc123" style="margin-top:var(--space-leading-subhead);">레이블 <small aria-label="optional">선택입력</small></label>
           <input class="textfield-input js-input-test" type="text" id="abc123" placeholder="Textarea Placeholder..." value="soojubm@gmail.com" aria-describedby="error" aria-invalid="true" />
           <small class="textfield-helper is-error">이미 등록된 이메일입니다.</small>
-          <!-- validation feedback -->
-            <!-- // todo readonly -->
         </div>
-        <div class="textfield" style="margin:var(--space-2) 0;">
+      </div>
+      <div class="textfield-group tile-flat">
+        <div class="textfield">
+          <label class="textfield-label" for="date-start"><i class="">체크인</i></label>
+          <label class="textfield-prefix" for="date-start">
+            <span class="material-symbols-outlined">today</span>
+          </label>
+          <input class="textfield-input" type="date" id="date-start" placeholder="날짜를 설정해주세요." />
+        </div>
+        <div class="textfield">
+          <label class="textfield-label" for="date-end"><i class="">체크아웃</i></label>
+          <label class="textfield-prefix" for="date-end">
+            <span class="material-symbols-outlined">event</span>
+          </label>
+          <input class="textfield-input" type="date" id="date-end" placeholder="날짜를 설정해주세요." />
+        </div>
+      </div>
+
+      <div class="tile-flat">
+        <div class="textfield">
           <label class="textfield-label" for="search1">레이블</label>
           <small class="textfield-byte"><b>0 KB</b> / 100 KB</small>
-          <textarea class="textfield-input" rows="3" placeholder="Textarea Placeholder..."></textarea>
+          <textarea class="textfield-input" rows="2" placeholder="Textarea Placeholder..." style="height:auto;"></textarea>
         </div>
-        <div class="textfield-group" style="margin:var(--space-2) 0;">
-          <div class="textfield">
-            <label class="textfield-label" for="date-start"><i class="">체크인</i></label>
-            <label class="textfield-prefix" for="date-start" style="background:var(--color-background);">-</label>
-            <input class="textfield-input" type="date" id="date-start" placeholder="날짜를 설정해주세요." />
-          </div>
-          <div class="textfield">
-            <label class="textfield-label" for="date-end"><i class="">체크아웃</i></label>
-            <label class="textfield-prefix" for="date-end" style="background:var(--color-background);">-</label>
-            <input class="textfield-input" type="date" id="date-end" placeholder="날짜를 설정해주세요." />
-          </div>
+      </div>
+
+      <div class="tile-flat">
+        <div class="textfield">
+          <button class="textfield-prefix searchfield-prefix">
+            <span class="material-symbols-outlined">search</span>
+          </button>
+          <!-- <label class="textfield-label" for="search">검색(시각적으로숨겨야함)</label> -->
+          <input class="textfield-input searchfield-input js-input-test" type="search" id="search" placeholder="궁금한 인물이나 이슈가 있나요?" />
+          <button class="textfield-clear" hidden><i class="icon-x"></i></button>
         </div>
-        <!-- <span class="article-anatomy-title">Selectbox</span> -->
-        <div class="textfield" style="margin:var(--space-2) 0;">
+      </div>
+
+      <div class="tile-flat">
+        <div class="textfield">
           <label class="textfield-label" for="select1">셀렉트박스</label>
           <select class="textfield-input" id="select1">
             <option class="select-option" value="select-option1">Choose an option</option>
           </select>
           <span class="selectbox-indicator" role="img"><i class="icon-caret"></i></span>
         </div>
-        <div class="textfield" style="margin:var(--space-2) 0;">
-          <button class="textfield-prefix searchfield-prefix"><i class="icon-search"></i></button>
-          <!-- <label class="textfield-label" for="search">검색(시각적으로숨겨야함)</label> -->
-          <input class="textfield-input searchfield-input js-input-test" type="search" id="search" placeholder="궁금한 인물이나 이슈가 있나요?" />
-          <button class="textfield-clear" hidden><i class="icon-x"></i></button>
-        </div>
+      </div>
+      <div class="tile-flat">
         <div class="quantity js-quantity" style="max-width:8rem;">
           <input class="quantity-input js-quantity-input js-number-input" name="quantity1" type="number" value="0" min="5" max="20" >
           <!-- <input type="text" inputmode="numeric" pattern="[0-9]*"> -->
@@ -1033,28 +1027,26 @@
           <button class="quantity-increment js-quantity-increment"><i class="icon-plus"></i></button>
         </div>
       </div>
+    </div>
     </section>
 
     <ul>
       <!-- <p><span><i></i></span> 벨리데이션 실행 조건: <b>제출(구현이 쉬움)</b> / 키보드 입력 쉬움 / 블러(구현이 복잡함. 흐름이 끊어짐)</b></p> -->
-      <li>Textfield는 필수 입력 필드입니다. 단, 선택 입력 필드는 '선택' 텍스트로 가이드합니다.</li>
-      <li>다중 선택 기능을 위해 셀렉트박스를 제공하지 마세요. 다중 선택 옵션은 chip group으로 제공합니다.</li>
-      <li>검색 필드는 일반 텍스트필드와 구별할 수 있도록 검색 아이콘 등의 시각적인 단서를 제공하세요.</li>
+      <li>필수 입력을 전제로 제공하세요. 선택 입력 필드는 '선택입력' 텍스트로 가이드합니다.</li>
+      <li>다중 선택을 셀렉트박스로 제공하지 마세요. chip group으로 선택 옵션을 풀어서 제공하세요.</li>
+      <li>검색 필드는 일반 텍스트필드와 구별할 수 있도록 검색 아이콘 등 시각적인 단서를 제공하세요.</li>
       <li>레이블을 텍스트필드 왼쪽에 배치하지 마세요.</li>
       <!-- <li>required indicator / / validations / masked</li> -->
-      <li>todo numberfield 최소값와 최대값을 정의. 입력 제한 피드백에 disabled 상태 제공.</li>
-      <li>todo textarea와 searchfield는 별도 컴포넌트로 분리하기. searchfiled without label</li>
+      <li>todo numberfield 최소값와 최대값을 정의. 입력 제한 피드백에 disabled 상태 제공. 앞자리0제거.숫자만입력.3자리마다콤마</li>
       <li>todo: helper(help message)와 feedback message를 구별</li>
-      <li>todo 앞자리0제거.숫자만입력.3자리마다콤마</li>
+      <li>searchfield. without label and helper text</li>
       <!-- required indicator / optional indicator -->
     </ul>
     
     <h4 class="article-subhead">Props</h4>
     <dl>
       <dt>type</dt>
-      <dd>"search" | "text" | number | "textarea"
-        <!-- <p>HTMLInputTypeAttribute</p> -->
-      </dd>
+      <dd>HTMLInputTypeAttribute? | "search" | "text" | "number" | "tel" | "textarea"</dd>
       <dt>placeholder</dt>
       <dd>string</dd>
       <dt>name</dt>
@@ -1104,7 +1096,7 @@
     <section class="component-style" style="background:var(--color-background-weak);">
       <div class="tile-flat" style="padding:1rem;">
         <h5 style="font-size:var(--font-size-subhead);">flat large with subhead</h5>
-        <p style="margin:var(--space-after-description);">현재 크기에 따른 변별력이 없다. 하지만 inset이 더 커지게 되면 모바일 등의 작은 화면에서 미디어쿼리로 inset 조절이 필요해진다. 단, 더 큰 사이즈를 정의하고 콘텐츠를 가운데 정렬로 제한할 수도 있다.</p>
+        <p style="margin:1rem;">현재 크기에 따른 변별력이 없다. 하지만 inset이 더 커지게 되면 모바일 등의 작은 화면에서 미디어쿼리로 inset 조절이 필요해진다. 단, 더 큰 사이즈를 정의하고 콘텐츠를 가운데 정렬로 제한할 수도 있다.</p>
         <p style="margin-top:var(--space-3);">이 tile은 페이지 레벨의 컴포넌트가 될 수 있다.</p> 
       </div>
       <div class="tile-flat">
@@ -1135,28 +1127,32 @@
     <br />
     <ul>
       <li>아티클 레벨에서 사용합니다. 섹션 레벨과 페이지 레벨에서는 충분한 여백으로 콘텐츠를 구획합니다.</lip>
-      <li>border 속성으로 스타일링하지 않습니다. hr 태그를 사용하면 의미론적으로 주제를 분리할 수 있고 컴포넌트의 고유성을 유지할 수 있습니다.</p>
+      <li>border 속성으로 스타일링하지 않습니다. hr 태그를 사용하면 의미론적으로 주제를 분리할 수 있고 컴포넌트의 고유성을 유지할 수 있습니다. + 선의 굵기 버그.</p>
     </ul>
   </article>
 
   <article class="article js-observer js-scrollspy-section" style="overflow:visible;">
     <h1 class="article-title">Tooltip</h1>
-    <!-- Popover -->
     <p class="article-description">용어를 설명하거나 정보의 근거를 보충합니다.</p>
 
     <section class="component-style">
       <div class="tile-flat">
         <aside class="tooltip">
-          <span class="tooltip-trigger" aria-describedby="tooltip1">툴팁 <i class="tooltip-trigger-question">?</i></span>
+          <span class="tooltip-trigger" aria-describedby="tooltip1">
+            <span class="material-symbols-outlined">contact_support</span>
+          </span>
           <p class="tooltip-content" role="tooltip" id="tooltip1"  hidden>제1항의 해임건의는 국회재적의원 3분의 1 이상의 발의에 의하여 국회재적의원 과반수의 찬성이 있어야 한다.</p>
         </aside>
-        <hr />
+      </div>
+      <div class="tile-flat">
         <aside class="tooltip is-icon">
-          <span class="tooltip-trigger" aria-describedby="tooltip1"><i class="icon-person"></i></span>
+          <span class="tooltip-trigger" aria-describedby="tooltip1">
+            <i class="icon-person"></i>
+          </span>
           <p class="tooltip-content" role="tooltip" id="tooltip1"  hidden>로그인</p>
         </aside>
-        <!-- <span class="tooltip" data-tooltip="Just like this one.">Any element</span> -->
       </div>
+      <!-- <span class="tooltip" data-tooltip="Just like this one.">Any element</span> -->
     </section>
     
     <ul>
@@ -1238,8 +1234,7 @@
       <li>스크롤스파이로 사용하지 마세요. 스크롤스파이는 콘텐츠 필터링의 맥락입니다. ( + 필터링과 스위칭으로 정의하기?)</li>
       <li>글로벌 탐색 패턴으로 햄버거 메뉴와 탭(바텀네비게이션, 탭바)을 함께 사용하지 마세요. (todo: tab과 tab bar(app bar)를 구분)</li>
       <li><del>페이지 링크로 사용하지 마세요.</del> SPA에서 페이지 링크의 개념이 모호하지만 탭을 클릭 후의 뷰에서 탭 바는 유지되어야 합니다.</li>
-      <li>todo 탭 갯수의 제한과 가로 스크롤.</p></li>
-      <li>todo 브라우저 히스토리 저장. (?tab=projects)</li>
+      <li>todo 탭 갯수의 제한과 가로 스크롤. 브라우저 히스토리 저장. (?tab=projects)</li>
     </ul>
 
     <h4 class="article-subhead">Props</h4>
@@ -1318,7 +1313,7 @@
     
     <ul>
       <li>현재 페이지와 관련된 액션을 제공합니다.</li>
-      <li>페이지 타이틀은 최대 8자로 제한하세요. truncated 하지 않는 것이 좋은 사용자 경험.</li>
+      <li>페이지 타이틀은 최대 8자로 제한합니다. 타이틀은 가능한 truncated 않는 것이 좋습니다.</li>
       <li>todo 뒤로가기/닫기 패턴 정의하기. 탭 바로 접근하는 경우 등. 여러 개의 컴포넌트?</li>
       <li>todo 우측 actions. 갯수 제한. md에서 최대 3개. hamberger case.</li>
     </ul>
@@ -1431,32 +1426,39 @@
           </label>
         </div>
       </div>
-      <hr />
-      <div class="item" data-size="large" role="menuitem">
-        <figure class="item-avatar"></figure>
-        <b class="item-label">메뉴 아이템</b>
-        <button class="chip" style="margin-left:auto;margin-right:var(--space-2);">
-          <span class="chip-label">휴대폰과 연결 열기</span>
-        </button>
-        <i class="icon-chevron"></i>
+      <div class="tile-flat">
+        <div class="item" data-size="large" role="menuitem">
+          <figure class="item-avatar"></figure>
+          <b class="item-label">모바일 공간 부족</b>
+          <button class="chip" style="margin-left:auto;margin-right:var(--space-2);">
+            <span class="chip-label">휴대폰과 연결 열기</span>
+          </button>
+          <i class="icon-chevron"></i>
+        </div>
+      </div>
+      <div class="tile-flat">
+        <div class="navbar-menu-item has-submenu" style="margin:var(--space-2) 0 0 0;padding:0;">
+          <span role="menuitem">subheading<i class="icon-caret"></i></span>
+          <menu>
+            <a href="#design">Only Text</a>
+            <a href="#design">Only Text Menu</a>
+          </menu>
+        </div>
       </div>
     </section>
 
     <ul>
-      <li>role=menuitem을 description이 올 수 없는 아이템으로 정의해보자.</li>
-
       <li>settings 페이지에서 사용할 때는 조금 달라짐. 1~2개의 메뉴아이템 vs </li>
       <li>링크(with text label / with icon? chevron)/토글(follow/unfollow)/선택(with checkbox / with switch)/액션?</li>
       <li><b>presentations:</b> modal, dropdown, sheet, sidebar. dropdown과 sheet/sidebar에서의 형태를 구분.</li>
-      <li><b>aligns:</b> vertical</li>
       <li>제목. truncated or 2줄.</li>
-      <li>entity. role=listitem</li>
-      <li>todo. only text</li>
       <li>todo. check icon을 컴포넌트로 만들고 checkbox의 구조를 변경하기. check icon을 svg를 스위칭하게 될 수도 있기 때문에. 미리 check icon 컴포넌트를 만들어두는 것이 좋을지도.</li>
     </ul>
 
     <h4 class="article-subhead">menuitem vs listitem</h4>
-    <p>listitem - entity / person.</p>
+    <p>listitem - entity / person. </p>
+    <p>menuitem을 description이 올 수 없는. aligns: vertical.</p>
+
 
     <h4 class="article-subhead">Props</h4>
 
@@ -1657,7 +1659,9 @@
         <article class="accordion js-accordion is-active" aria-expanded="false">
           <h3 class="accordion-title" role="button">
             탈퇴하고 싶어요.
-            <figure class="accordion-title-icon"><i class="icon-chevron is-down"></i></figure>
+            <figure class="accordion-title-icon">
+              <span class="material-symbols-outlined">expand_more</span>
+            </figure>
           </h3>
           <div class="accordion-panel">
             <p>모든 국민은 건강하고 쾌적한 환경에서 생활할 권리를 가지며, 국가와 국민은 환경보전을 위하여 노력하여야 한다.</p>
@@ -1693,7 +1697,7 @@
 
   <article class="article js-observer js-scrollspy-section">
     <h1 class="article-title">Result</h1>
-    <p class="article-description">실행 결과. 오류. 내용 없음. 케이스에 모두 사용할 수 있는. + ErrorFallback</p>
+    <p class="article-description">실행 결과. 오류. 내용 없음.</p>
 
     <aside class="article-aka">
       <span class="tag">a.k.a.</span>
@@ -1702,7 +1706,7 @@
     </aside>
 
     <section class="component-style">
-      <div class="empty tile-flat">
+      <div class="empty tile-flat" style="margin:0;">
         <i class="empty-icon">🧟</i>
         <h1 class="empty-title">주문을 확인해주세요.</h1>
         <p class="empty-description">헌법재판소 재판관의 임기는 6년으로 하며, 법률이 정하는 바에 의하여 연임할 수 있다. 대통령은 법률안의 일부에 대하여 또는 법률안을 수정하여 재의를 요구할 수 없다.</p>
@@ -1715,8 +1719,9 @@
     </section>
 
     <ul>
-      <li>왼쪽 정렬의 기본적인 텍스트 모듈과 달리 가운데 정렬로 대비를 높입니다. 콘텐츠 모듈의 대비로 상태를 구분...</li>
-      <li>페이지 레벨이나 섹션 레벨의 empty, error, complete 상태에서 사용합니다. 용도를 더 구별해줄 필요도 있겠다.</li>
+      <li>왼쪽 정렬의 기본적인 텍스트 모듈과 달리 가운데 정렬로 대비를 높입니다. 콘텐츠 모듈로 콘텐츠의 맥락을 구분하는 것이 foundation 중 하나.</li>
+      <li>페이지 레벨이나 섹션 레벨의 empty, error, complete 상태에서 사용합니다.</li>
+      <li>React ErrorBoundary</li>
     </ul>
 
     <h4 class="article-subhead">Props</h4>
@@ -1734,11 +1739,13 @@
       <dt>secondaryActionLabel<abbr>?</abbr></dt>
       <dd>string</dd>
     </dl>
+
+    <h4 class="article-subhead">ErrorFallback</h4>
   </article>
 
   <article class="article js-observer js-scrollspy-section">
     <h1 class="article-title">Dialog</h1>
-    <p class="article-description">사용자의 정보나 재산의 변경 또는 삭제에서 확인. 모달 형태의 집중된 환경에서(?) 리스크를 관리할 수 있습니다.</p>
+    <p class="article-description">사용자의 정보나 재산의 변경 또는 삭제 확인. 사용자는 모달 형태의 집중된 환경에서(?) 리스크를 관리할 수 있습니다.</p>
 
     <aside class="article-aka" style="margin:0;">
       <span class="tag">a.k.a.</span>
@@ -1846,7 +1853,6 @@
       <li>사라지는 시간을 정의.</li>
       <li>최대 2문장.</li>
       <p role="alert">Inform (todo) 느낌표 아이콘 + 디스크립션 형태</p>
-      <li>with toast / inline</li>
       <li>memo. { content: 'text label', url: 'https://www.xxx.com', }</li>
     </ul>
 
@@ -1859,6 +1865,8 @@
       <dt>primaryAction</dt>
       <dd>() => void</dd>
     </dl>
+
+    <h4 class="article-subhead">with Toast</h4>
     <!-- Icon: Informs users of the kind of notification at a glance.
     Title: Gives users a quick overview of the notification.
     Message (1optional): Provides additional detail and actionable steps for the user to take.
@@ -1909,6 +1917,8 @@
             <li style="margin:0 2rem 0 1rem;">가로로 정렬할 수 있어요</li>
             <li>조건이 있어요</li>
           </ul>
+        </div>
+        <div class="tile-flat">
           <dl>
             <dt>Metadata</dt>
             <dd>description list</dd>
@@ -1935,7 +1945,7 @@
               <i class="statistic-label">팔로워</i>
               <span class="statistic-value">21,682</span>
             </div>
-            <div class="statistic-item">
+            <div class="statistic-item" style="margin:0 1rem;">
               <i class="statistic-label">Repository</i>
               <span class="statistic-value">100만 이상</span>
             </div>

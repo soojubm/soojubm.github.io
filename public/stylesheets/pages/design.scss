@@ -223,7 +223,7 @@
 // todo padding
 .accordion {@include tile-elevated;padding:var(--space-4);}
 .accordion:hover {@include hover-item;}
-.accordion-title {display:flex;align-items:center;justify-content:space-between;@include text-subhead;}
+.accordion-title {display:flex;align-items:center;justify-content:space-between;@include text-body-large;}
 .accordion-title-icon {@include avatar-small;}
 .accordion-panel {display:none;cursor:default;}
 .accordion-panel p + p {margin:var(--space-4) 0 0 0;}
@@ -233,10 +233,10 @@
 
 .design-head {padding:0 var(--grid-margin);background:var(--color-background);position:relative;}
 .design-head h1 {@include text-title;}
-.design-guide {margin:6rem 0 0;overflow:hidden;}
-.design-guide h2 {padding:0 var(--grid-margin);}
+.design-guide {margin:4rem 0 0;overflow:hidden;}
+.design-guide-title {padding:var(--space-3) var(--grid-margin);@include text-label;}
 .design-guide ul {padding-left:0;border-top:var(--border);list-style:none;}
-.design-guide ul li {margin:0;padding:1rem var(--grid-margin) .75rem;border-bottom:var(--border);font-size:var(--font-size-title);line-height:var(--font-line-height-small);}
+.design-guide ul li {margin:0;padding:1rem var(--grid-margin) .75rem;border-bottom:var(--border);font-size:var(--font-size-subhead);line-height:var(--font-line-height-small);}
 .post-relation {max-width:1200px;margin:0 auto;padding:0 var(--grid-margin);}
 
 .uxsitemap {position:relative;}
