@@ -101,7 +101,6 @@ $transition-fade: opacity 0.15s linear;
   --menu-width: 320px;
   --width-dropdown: 240px;
 
-
   --size-huge: 5rem;
   --size-large: 3rem;
   --size-medium: 2rem;
@@ -212,7 +211,7 @@ $transition-fade: opacity 0.15s linear;
     // }
     
     // todo
-    --gray200: #4e5351; // divider border
+    --gray200: #252d29; // divider border
 
     // todo d1d2d3는 팔렛트에 없어요
     --color-text: #d3d4d5;
@@ -220,7 +219,7 @@ $transition-fade: opacity 0.15s linear;
     --color-text-light: var(--gray400);
     --color-text-strong: var(--gray800);
 
-    --color-background: #252d29;
+    --color-background: rgb(31, 35, 33);
     --color-background-weak: var(--gray800);
     --color-background-strong: var(--gray0);
     --color-border: var(--gray800);

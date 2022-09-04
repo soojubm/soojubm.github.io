@@ -112,7 +112,7 @@
 .card-date {display:none;color:var(--color-text-light);}
 
 .card-tags {@include tag-group;padding-bottom:var(--space-2);}
-.card-tags-item {@include hashtag;margin-bottom:0;font-size:var(--font-size-caption);}
+.card-tags-item {@include hashtag;margin-top:0;margin-bottom:0;font-size:var(--font-size-caption);}
 
 .card-note {@include tag;width:100%;margin:var(--space-3) 0 0 0;text-align:center;}
 

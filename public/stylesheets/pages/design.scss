@@ -221,7 +221,8 @@
 }
 
 // todo padding
-.accordion {@include tile-elevated;padding:var(--space-4);}
+.accordion {padding:var(--space-4);border-radius:var(--radius);background:var(--color-background-weak);}
+.accordion + .accordion {margin:calc(var(--space-3) + 1px) 0 var(--space-3);}
 .accordion:hover {@include hover-item;}
 .accordion-title {display:flex;align-items:center;justify-content:space-between;@include text-body-large;}
 .accordion-title-icon {@include avatar-small;}
@@ -237,7 +238,16 @@
 .design-guide-title {padding:var(--space-3) var(--grid-margin);@include text-label;}
 .design-guide ul {padding-left:0;border-top:var(--border);list-style:none;}
 .design-guide ul li {margin:0;padding:1rem var(--grid-margin) .75rem;border-bottom:var(--border);font-size:var(--font-size-subhead);line-height:var(--font-line-height-small);}
-.post-relation {max-width:1200px;margin:0 auto;padding:0 var(--grid-margin);}
+
+.post-relation {margin:0 auto;padding:0 var(--grid-margin);}
+.post-relation {margin:4rem auto 8rem;}
+.post-relation-title {width:100%;margin:0 0 var(--space-after-title) 0;@include text-subhead;}
+.post-relation-description {font-size:var(--font-size-subhead);color:var(--color-text-light)}
+
+
+.design-categories {margin:4rem var(--grid-margin);}
+.design-categories h2 {@include text-title;}
+.design-categories .tag {height:auto;margin:var(--space-2);padding:var(--space-3);font-size:var(--font-size-subhead);}
 
 .uxsitemap {position:relative;}
 .uxsitemap .map {margin-left:1rem;}
@@ -265,11 +275,9 @@
 }
 .marquee-box:hover {animation-play-state:paused;}
 
-.design-ticker-item {width:380px;margin:0 1rem !important;
+.design-ticker-item {width:380px;margin:0 var(--space-3) !important;box-shadow:none !important;
   filter: grayscale(.5);
 }
-
-
 .design-ticker-overay {
   // position: absolute;left:0;right:0;top:0;bottom:0;
   height: inherit;
@@ -281,11 +289,8 @@
 
 
 .theme-dark .design-ticker-overay {
-	background: linear-gradient(to bottom, rgba(37,45,41,0), rgba(37,45,41,.5), rgba(37,45,41,1));
-
+	background: linear-gradient(to bottom, rgba(31,35,33,0), rgba(31,35,33,.5), rgba(31,35,33,1));
 }
-
-
 
 
 .postitem {display:block;width:100%;margin:3rem 0;position:relative;}

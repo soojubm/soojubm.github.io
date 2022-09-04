@@ -1,6 +1,6 @@
 .tooltip {height:var(--size-small);position:relative;}
 .tooltip-trigger {display:inline-flex;align-items:center;}
-.tooltip-content {max-width:320px;padding:.5rem var(--space-3) calc(.5rem + 2px);border-radius:var(--radius);background:var(--color-background-strong);box-shadow:var(--shadow);color:var(--color-text-weak);position:absolute;left:0;top:var(--size-medium);z-index:6;}
+.tooltip-content {max-width:320px;padding:.5rem var(--space-3);border-radius:var(--radius);background:var(--color-background-strong);box-shadow:var(--shadow);color:var(--color-text-weak);position:absolute;left:0;top:var(--size-medium);z-index:6;}
 .tooltip-content:before {
   content:'';display:block;position:absolute;left:0;right:50%;top:-8px;bottom:0;
 }

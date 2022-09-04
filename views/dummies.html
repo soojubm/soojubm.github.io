@@ -1,7 +1,11 @@
 <main class="component" style="overflow:hidden;">
   <section class="hero" role="banner">
     <div class="hero-background"></div>
-    <h1 class="hero-title" style="color:var(--color-text-light);">Dummies</h1>
+    <h1 class="hero-title" style="display:flex;align-items:center;color:var(--color-text-light);">
+      Dummies
+      <span class="selectbox-indicator" role="img" style="margin-left:.5rem;background:var(--color-background-weak);position:relative;right:auto;top:auto;"><i class="icon-caret"></i></span>
+
+    </h1>
     <h1 class="hero-title">Hero Component의 description은<br />최대 두 줄까지 허용합니다.</h1>
     <p class="hero-description">히어로 섹션의 샘플. e.detail.originalEvent</p>
     <footer>
@@ -606,9 +610,11 @@
 
     <section class="post-comment-list" style="max-width:400px;">
       <article class="post-comment-list-item" role="comment">
-        <a class="post-comment-list-item-avatar" href="#"><img src="https://source.unsplash.com/random"></a>
-        <a class="post-comment-list-item-author" href="#">soojubm</a>
-        <time class="post-comment-list-item-date" datetime="2016">1 day ago</time>
+        <a class="post-comment-list-item-avatar" href="#">
+          <img src="https://source.unsplash.com/random">
+          <b class="post-comment-list-item-author" href="#">soojubm</b>
+          <time class="post-comment-list-item-date" datetime="2016">1 day ago</time>
+        </a>
         <p class="post-comment-list-item-text">코멘트는 노출 순서와 정렬 기능 여부 갯수, 답글 스타일, 최초 노출형태, 신고/수정/삭제/아바타는 우선순위를 낮게 설정하고, 리뷰와 코멘트는 비슷한 구조이지만 별도의 컴포넌트로 관리되어야 한다. 또 있을까?</p>
         
         <button class="button-elevated">

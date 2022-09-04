@@ -121,10 +121,10 @@
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Bottom Navigation</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Menu</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Paginations</span></a>
-      <!-- <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">File Uploader</span></a> -->
+      <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">File Uploader</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Carousel</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Table</span></a>
-      <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Accordion</span></a>
+      <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Accordions</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Result</span></a>
       <!-- <p class="hero-description">keywords: attention / feedback / confirm</p> -->
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Dialog</span></a>
@@ -339,7 +339,7 @@
         <li>상태를 표현하는 시각 언어는 일부 컴포넌트에 종속되지 않고 제품 전체에 일관되어야 합니다. 색각 이상자를 위해 색상 외의 시각 언어로 상태 정보를 표현하세요.</li>
         <li>Feedback needed. 액션 실행 후 피드백합니다. 물리적인 인터페이스의 출현 뿐 아니라 예측할 수 있는 페이지 이동이나 페이지 새로고침, 정보 구조의 변화도 피드백으로 취급될 수 있습니다. (bad case. 인스타그램의 로그인 성공 toast)</li>
         <li>레이블은 사용자가 다음에 일어날 일을 예측할 수 있도록 작성하세요. 부득이 텍스트 레이블을 생략하는 경우 보편적인 메타포의 아이콘을 사용하고 대체 텍스트를 제공해야 합니다. <span hidden>(북마크, 찜이나 장바구니-카트 정도)</span></li>
-        <li>버튼의 아래에 실행 유도나 실행 결과를 가이드하는 텍스트를 배치하지 마세요. <span hidden> (secondary 액션의 text 버튼이 아래에 위치하는 패턴 고려). 제목/디스크립션/버튼레이블도 충분.</span></li>
+        <li>버튼의 아래에 실행을 유도하거나 실행의 결과를 가이드하는 텍스트를 배치하지 마세요.<span hidden> (secondary 액션의 text 버튼이 아래에 위치하는 패턴 고려). 제목/디스크립션/버튼레이블도 충분.</span></li>
         <!-- <p><b>text.</b> 버튼은 버튼 처럼 보이지 않을 수 있기 때문에 특정 패턴에서만 사용하세요.</li> -->
         <li>large 버튼은 프로모션 페이지의 call to action으로 제한적으로 사용합니다.</li>
         <li>show more 버튼은 단일 콘텐츠 또는 콘텐츠 목록보다 좁은 크기를 통한 대비로 강조하세요.</li>
@@ -1093,18 +1093,18 @@
       <span class="hashtag" title="pinterest gestalt">Module</span>
     </aside>
 
-    <section class="component-style" style="background:var(--color-background-weak);">
-      <div class="tile-flat" style="padding:1rem;">
-        <h5 style="font-size:var(--font-size-subhead);">flat large with subhead</h5>
+    <section class="component-style">
+      <div class="tile-elevated" style="padding:1rem;">
+        <h5 style="font-size:var(--font-size-subhead);">elevated large with subhead</h5>
         <p style="margin:1rem;">현재 크기에 따른 변별력이 없다. 하지만 inset이 더 커지게 되면 모바일 등의 작은 화면에서 미디어쿼리로 inset 조절이 필요해진다. 단, 더 큰 사이즈를 정의하고 콘텐츠를 가운데 정렬로 제한할 수도 있다.</p>
         <p style="margin-top:var(--space-3);">이 tile은 페이지 레벨의 컴포넌트가 될 수 있다.</p> 
-      </div>
-      <div class="tile-flat">
-        <b>flat</b>
       </div>
       <div class="tile-elevated">
         <b>elevated</b>
         <p style="margin-top:var(--space-3);">TODO flat 형태와 구별이 잘 안 됨. 어떤 배경에서는 눈에 띄지 않음.</p>
+      </div>
+      <div class="tile-flat">
+        <b>flat</b>
       </div>
       <div class="tile-flat-small">
         <b>flat small</b>
@@ -1393,7 +1393,7 @@
 
     <section class="component-style">
       <div class="tile-flat">
-        <button class="button-elevated" title="" style="margin-bottom:.25rem;">
+        <button class="button-elevated" title="" style="margin-top:0;margin-bottom:.125rem;">
           <figure class="button-elevated-avatar">🦊</figure>
           <span class="button-elevated-label">사진 및 동영상 백업</span>
           <span class="switch" style="margin-left:auto;">
@@ -1638,10 +1638,8 @@
   </article>
 
   <article class="article js-observer js-scrollspy-section">
-    <h1 class="article-title">Accordion / Details</h1>
+    <h1 class="article-title">Accordions</h1>
     <p class="article-description">사용자의 필요에 따라 취사선택할 수 있도록 정보 목록을 요약합니다.</p>
-
-
 
     <section class="component-style">
       <div class="tile-flat">
@@ -1773,7 +1771,7 @@
     <ul>
       <!-- <li>레이어를 2개 이상 쌓지 마세요. 모달의 가이드</li> -->
       <li>버튼의 레이블은 다이얼로그 제목의 동사와 페어링합니다.</li>
-      <li>memo: dialog의 구조: header/body/footer. 하지만 단순 다이얼로그는 복잡한 구조가 필요 없다.</li>
+      <li>memo: modal의 구조: header/body/footer. 단순 다이얼로그는 복잡한 구조가 필요 없다.</li>
       <li>memo: dim엘리먼트 클릭 시 모달을 닫으면 리액트에서 구현이 쉬움. 이 dim은 sheet에서 재사용할 수 있다.</li>
       <li>buttonGroup theme="unary(confirm) | binary(cancel/confirm)</li>
     </ul>
@@ -1850,9 +1848,8 @@
       <li>닫기 또는 되돌리기 등 액션을 포함하지 마세요. 인터렉션이 필요하다면 주목도가 높은 모달 형태로 제공하세요.</li>
       <li>사용자의 귀책이 아닌 경우, 단순 "오류" 대신 "시스템 오류"와 같은 용어를 사용하여 사용자가 잘못한 것처럼 느끼지 않도록 하세요.</li>
       <li>토스트. Don't show more than one at a time.</li>
-      <li>사라지는 시간을 정의.</li>
-      <li>최대 2문장.</li>
-      <p role="alert">Inform (todo) 느낌표 아이콘 + 디스크립션 형태</p>
+      <li>최대 2문장의 텍스트 작성 규칙. 사라지는 시간을 정의.</li>
+      <!-- <p role="alert">Inform (todo) 느낌표 아이콘 + 디스크립션 형태</p> -->
       <li>memo. { content: 'text label', url: 'https://www.xxx.com', }</li>
     </ul>
 
