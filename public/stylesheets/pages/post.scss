@@ -76,7 +76,7 @@
 .post-comment-list-item-menu {display:none;@include tile-elevated-small;width:var(--width-dropdown);margin:0;padding:0;position:absolute;right:40px;top:0;z-index:var(--zindex-default);}
 .post-comment-list-item-menu button {display: block;width:calc(100% - 2rem);margin: 1rem;text-align:left;position: relative;z-index: 1;}
 .post-comment-list-item-menu button:hover {@include hover-item;}
-.post-comment-list-item-reply {margin:1rem 0 0 0;@include link-outside;}
+.post-comment-list-item-reply {margin:var(--space-2) 0 0 0;@include link-outside;}
 
 .is-active + .post-comment-list-item-menu {display:block;}
 

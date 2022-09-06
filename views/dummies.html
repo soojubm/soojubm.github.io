@@ -13,12 +13,39 @@
     </footer>
   </section>
 
+
+  <p>A tooltip is not considered to be a popup in this context, as it is not interactive.</p>
+  <p>Note: Make sure the role of the element that serves as the container for the popup content is a menu, listbox, tree, grid or dialog and that the value of aria-haspopup matches the role of the popup container.</p>
+  <p>Elements with role combobox have an implicit aria-haspopup value of listbox.</p>
   <section class="component-body" style="padding:2rem var(--grid-margin);">
+    <div style="display:flex;margin:0 -.75rem;">
+      <div class="tile-elevated" style="width:240px;margin:0 .75rem;padding:1rem;box-shadow:none;border:0;background:var(--green100);">
+        <h2 style="line-height:var(--font-line-height-small);">Designers</h2>
+        <p>50 People</p>
+      </div>
+      <div class="" style="width:240px;margin:0 .75rem;padding:1rem;">
+        <h2 style="line-height:var(--font-line-height-small);">Engineers</h2>
+        <p>50 People</p>
+      </div>
+    </div>
+    <div class="chip-group" style="margin-top:1rem;margin-bottom:2rem;">
+      <button class="chip js-toggle" aria-haspopup="menu">
+        <span class="chip-label" title="일행 당 인원 수">예약옵션</span>
+        <figure class="chip-icon"><i class="icon-caret"></i></figure>
+      </button>
+      <div class="dropdown">
+        <button class="dropdown-trigger js-toggle" aria-expanded="true">
+          <span class="dropdown-trigger-label">예산</span>
+          <figure class="dropdown-trigger-icon"><i class="icon-caret"></i></figure>
+        </button>
+      </div>
+    </div>
+
+    <hr />
+
     <nav class="index">
-      <h2 class="index-title">Table of contents.</h2>
+      <h2 class="index-title" style="font-size:var(--font-siez-body);">Table of contents.</h2>
       <ol>
-        <li><a href="#">Xero</a></li>
-        <li><a href="#">Xero</a></li>
         <li><a href="#">Xero</a></li>
         <li><a href="#">Xero</a></li>
         <li><a href="#">Xero</a></li>
@@ -133,12 +160,11 @@
           class="textfield-input"
           rows="4"
           name="comment"
-          placeholder="무슨 생각을 하고 계신가요?"
+          placeholder="무슨 생각을 하고 계신가요? feed와 comment에서 사용. textarea 컴포넌트 정의. 취소 버튼의 위치. toolbar."
           style="height:auto;"
         ></textarea>
       </div>
 
-      <p class="tile-flat">feed와 comment에서 사용. textarea 컴포넌트 정의. 취소 버튼의 위치. toolbar.</p>
       <footer>
         <button class="comment-write-submit" type="submit">게시</button>
       </footer>
@@ -147,7 +173,7 @@
 
     <article class="tile-elevated" style="max-width:400px;z-index:1;">
       <h3 style="text-align:center;font-size:var(--font-size-subhead);">Ratings</h3>
-      <div class="statistic-item tile-flat" aria-label="별점 5개 만점에 3.9개를 받았습니다." style="text-align:center;z-index:auto;">
+      <div class="statistic-item tile-flat" aria-label="별점 5개 만점에 3.9개를 받았습니다." style="margin-top:.5rem;text-align:center;z-index:auto;">
         <i class="statistic-label">리뷰 116만개</i>
         <span class="statistic-value" style="margin-left:-.5rem;">⭐ 4.8</span>
       </div>
@@ -234,7 +260,7 @@
         <span class="tag">대한민국</span>
         <span class="tag">자전거</span>
       </footer>
-      <p>여기서 팔로우 버튼을 작게 제공하는 게 트랜드..</p>
+      <p>여기서 팔로우 버튼이 작은 것이 트랜드..</p>
       <!-- <p class="user-description" style="margin:var(--space-2) 0 0 0;">TBreaking news alerts and updates from the BBC. For news, features, analysis follow </p> -->
 
       <footer class="user-foot" style="margin:var(--space-3) 0;">

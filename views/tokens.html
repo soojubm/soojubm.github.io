@@ -162,7 +162,6 @@
           <div>
             <p>--color-danger</p>
           </div>
-          <small style="display:block;margin:var(--space-1) 0;">양식 유효성 unvalid 텍스트, 취소/삭제 부정 액션</small>
         </article>
         <article class="token-item">
           <figure class="token-item-avatar" style="background:var(--color-accent);"></figure>
@@ -217,7 +216,7 @@
           <p><b>--fontstack: 'Quattrocento Sans', 'Gothic A1', sans-serif;</b></p>
         </div>
       </div>
-      <p style="margin:var(--space-1) 0 0 0;"><em style="color:var(--red800);">! 바꾼 영문 폰트의 line-height가 한글보다 더 커서 세로 가격이 조금씩 안 맞음.</em></p>
+      <p style="margin:var(--space-1) 0 0 0;"><em style="color:var(--red800);">! 변경한 폰트의 baseline이 안 맞아서 세로 가격이 조금씩 틀어짐. 이러한 케이스를 폰트를 변경하지 않고 대응할 수 있는 솔루션은? 텍스트노드의 상단 패딩에 변수값을 하나 넣어주면.</em></p>
 
       <h4 class="article-subhead">Sizes <sup>5</sup></h4>
       <div class="token-group">
@@ -604,11 +603,11 @@
       <!-- <h4 class="article-subhead">Timing / Duration / Delay</h4> -->
       <ul>
         <li>inactive로 전환 시(닫기 등) instant</li>
-        <li>뷰에서 최대 3개의 요소로 delay를 제한합니다. 너무 많은 애니메이션은 사용자가 콘텐츠보다 애니메이션에 집중하게 만든다.</li>
+        <li>뷰에서 최대 3개의 요소로 delay를 제한합니다. 너무 많은 애니메이션은 사용자가 콘텐츠보다 애니메이션에 집중시킬 수 있습니다.</li>
       </ul>
       <div class="token-group">
         <div class="token-item">
-          <p><b>--bazier-base: cubic-bezier(0.455, 0.03, 0.515, 0.955)</b></p>
+          <p><b>--bazier: cubic-bezier(0.455, 0.03, 0.515, 0.955)</b></p>
         </div>
         <div class="token-item">
           <div class="" style="display:flex;">
