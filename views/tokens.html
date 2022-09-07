@@ -52,13 +52,6 @@
     <article class="article js-scrollspy-section">
       <h1 class="article-title">Palette</h1>
       <p class="article-description">color와 surface.</p>
-      <ul>
-        <li>background/border/text/state와 shadow/radius.</li>
-        <li>다크테마를 위한 인버트 컬러셋을 별도로 정의하지 않습니다. 하나의 컬러셋으로 다양한 테마 또는 커스텀 유아이에 대응합니다.</li>
-        <li>크기와 비례해서 radius 조절이 필요하지만 경량화. shadow도 마찬가지. 하나의 값을 사용하고 있습니다.</li>
-        <li>memo. pill과 non-pill은 양자택일. circle은 인물 아바타를 차별화하기 위해 부분적으로 허용 가능.</li>
-        <li>todo. 가이드 문서를 background-weak / background-strong 등 시멘틱 레벨에서 정리할 필요가 있다.</li>
-      </ul>
       <button class="button-elevated js-darkmode" title="change theme" style="background:var(--color-background);border-radius:var(--radius);box-shadow:var(--shadow);padding:.5rem;border:var(--border);">
         <figure class="button-elevated-avatar"><i class="icon-moon"></i></figure>
         <span class="button-elevated-label">어둡게 보기</span>
@@ -68,7 +61,14 @@
         </span>
       </button>
 
-      <h4 class="article-subhead">Surfaces</h4>
+      <h4 class="article-subhead">Meta problems</h4>
+      <ul>
+        <li>hierarchy. 크기와 비례해서 radius와 shadow 조절이 필요하지만 경량화하여 하나의 값을 사용하고 있습니다.</li>
+        <li>radius. pill과 non-pill은 양자택일. 인물 아바타의 차별화를 위해 circle은 허용.</li>
+        <li>theme. 다크테마를 위한 인버트 컬러셋을 별도로 정의하지 않습니다. 하나의 컬러셋으로 다양한 테마 또는 커스텀 유아이에 대응합니다.</li>
+      </ul>
+
+      <h4 class="article-subhead">Surfaces<br />shadow/radius</h4>
       <div class="token-group">
         <article class="token-item is-gray000">
           <figure class="token-item-avatar" style="border:4px solid var(--color-text-light);border-bottom-right-radius:0;border-bottom-left-radius:0;border-top-right-radius:0;border-right:var(--border);border-bottom:var(--border);">
@@ -85,14 +85,10 @@
         <article class="token-item is-elevation" title="Surface or Elevation">
           <figure class="token-item-avatar"></figure>
           <b>--shadow: 0 0 .5rem rgb(0 0 0 / 7.5%)</b>
-          <div>
-            <p>--shadow-tooltip</p>
-            <p>--shadow-card</p>
-          </div>
         </article>
       </div>
 
-      <h4 class="article-subhead">Colours</h4>
+      <h4 class="article-subhead">Colours<br />background/border/text/state</h4>
       <div class="token-group">
         <article class="token-item is-gray000">
           <figure class="token-item-avatar"></figure>
@@ -185,11 +181,11 @@
       <ul>
         <li>단어나 구문을 underline, <del>bold</del>, primary color로 강조하지 않습니다. underline과 pirmary colored text는 링크의 기표이기 때문입니다.</li>
         <li>괄호, 쉼표 등으로 텍스트를 분류하지 않습니다. 디자인하지 않았다는 인상으로 정보 더미를 읽기 편하게 정리하세요.</li>
-        <li>태그라인은 작은 화면에서도 임팩트를 줄 있도록 작성 단계에서 행갈이를 고려합니다. 글자 및 단어를 제한하고 개행 조건을 정의하세요.</li>
+        <li>태그라인은 작은 화면에서도 임팩트를 줄 있도록 작성 단계에서 행갈이를 고려하세요. 글자 또는 단어를 제한하고 개행 조건을 정의하세요.</li>
         <li>bottom navigation의 label은 예외적으로 10px입니다.</li>
         <li>line-height는 주변 또는 부모 요소의 간격에 맞춰 시각 보정하세요.</li>
         <!-- <li>kicker/overline</li> -->
-        <li>long-form content에서 truncate-multiple를 사용할 때는 항상 2줄로 자릅니다.</li>
+        <li>long-form content의 truncate-multiple는 항상 2줄로 자릅니다.</li>
           <!-- <p>프로모션 페이지의 헤드라인으로 제한적으로 사용합니다.</p> -->
       </ul>
       <button class="user-logout tile-elevated-small js-default-font" title="change theme">
@@ -258,7 +254,6 @@
       </div>
 
       <h4 class="article-subhead">Compositions 🔥</h4>
-      <p style="margin-bottom:1rem;">2가지 body text, 3가지 heading, 1가지 caption, 2가지 truncate</p>
       <div class="token-group">
         <div class="token-item">
           <p><b>@mixin text-title</b></p>
@@ -313,9 +308,9 @@
 
     <article class="article js-scrollspy-section">
       <h1 class="article-title">Sizing</h1>
-      <p class="article-description">요소의 가로와 세로 크기.</p>
+      <p class="article-description">요소의 너비와 길이.</p>
       <ul>
-        <li>반응형 또는 small breakpoint에서 너비는 유동적입니다.</li>
+        <li>반응형 또는 small breakpoint에서도 너비를 변경하지 마세요.</li>
         <li>정의한 토큰과 같은 값이라도 독립적으로 사용하는 것이 좋은 케이스에 주의하세요.
           <p>--navbar-height: <del>var(--size-huge)</del>5rem</p>
         </li>
@@ -445,9 +440,9 @@
       <!-- <p>서비스가 출시 환경이 웹온리(웹/태블릿+모바일) vs 웹+모바일앱(웹+태블릿/모바일)</p> -->
       <ul>
         <li>섹션, 아티클 그리고 모달, 드롭다운 등의 컴포넌트도 작은 화면에서는 페이지 맥락이 될 수 있음을 고려합니다.</li>
-        <li><b>유연한 그리드 시스템.</b> 모바일 퍼스트, 가로 스크롤 트랜드 기조로 12 column grid 등 엄격한 그리드 시스템을 정의하지 않습니다. 최대 4개의 칼럼을 기준으로 그리드 시스템을 설계하세요. 칼럼 또는 리스트는 언제든 가로 스크롤로 변경하기 쉬워야 합니다.</p>
+        <li><b>유연한 그리드 시스템.</b> 모바일 퍼스트, 가로 스크롤 트랜드 기조로 12 column grid 등 엄격한 그리드 시스템을 정의하지 않습니다. 최대 4개의 칼럼을 기준으로 그리드 시스템을 설계하세요. 칼럼 또는 리스트는 가로 스크롤로 변경하기 쉬워야 합니다.</p>
         <!-- <li>컨테이너는 최대 4개 칼럼을 가집니다.</p> -->
-        <li><b>페이지 모듈을 통한 맥락 구분.</b>  이전 맥락의 컨테이너와 레이아웃 모듈 또는 배경색의 대비를 활용할 수 있습니다. 1. 컨테이너 너비(비밀번호찾기와 로그인/회원가입) 2. 배경색(설정, 글쓰기, 소개 등)</p>
+        <li><b>페이지 모듈을 통한 맥락 구분.</b> 맥락의 전환을 표현하기 위해 레이아웃 모듈 또는 배경색의 대비를 활용할 수 있습니다. 1. 컨테이너 너비(비밀번호찾기와 로그인/회원가입) 2. 배경색(설정, 글쓰기, 소개 등)</p>
         <!-- <p style="margin-bottom:var(--space-4);color:var(--color-text-light);">tablet보다 작은 폼 팩터. ex) tablet, phone</p> -->
       </ul>
 
@@ -456,13 +451,13 @@
         <div class="token-item">
           <b>@custom-media --large (max-width: ?)</b>
           <div>
-            <p>@media (--large) {}</p>
+            <p>@media (--large)</p>
           </div>
         </div>
         <div class="token-item">
           <b>@custom-media --small (max-width: ?)</b>
           <div>
-            <p>@media (--small) {}</p>
+            <p>@media (--small)</p>
             <p>% 단위로 설정</p>
           </div>
         </div>
@@ -471,12 +466,11 @@
         </div>
       </div>
 
-      <h4 class="article-subhead">Containers (todo)</h4>
-      <ul>
-        <li>grid-margin이 좌우 padding이 된다.</li>
-        <li>모든 container는 --breakpoint-small부터 max-width가 100%가 된다.</li>
+      <h4 class="article-subhead">Layouts</h4>
+      <!-- <ul>
+        <li>모든 container는 --small부터 max-width가 100%.</li>
         <li>pagehead의 상하 padding은 페이지마다 달라질 수 있다.</li>
-      </ul>
+      </ul> -->
       <div class="token-group">
         <div class="token-item">
           <b>--layout-large: 1200px</b>
@@ -525,7 +519,7 @@
       <h1 class="article-title">Positioning</h1>
       <p class="article-description">위치잡기.</p>
       <ul>
-        <li>reset. 주로 mobile화면으로 전환될 때 사용하며 z-index 보전을 위해 static이 아닌 relative로 초기화합니다.</li>
+        <li>reset. 주로 mobile화면으로 전환될 때 사용하며 z-index 보전을 위해 static이 아닌 relative로 초기화하세요.</li>
       </ul>
 
       <div class="token-group">
