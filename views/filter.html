@@ -2,7 +2,7 @@
   <div class="article">
     <h1 class="article-title">Filtering</h1>
     <p class="article-description">
-      Single Filter / Multiple Filters 후자는 전환에 필수불가결한 옵션이 존재하는 경우(다소막연).
+      Single Filter / Multiple Filters
     </p>
   
     <div class="chip-group">
@@ -34,16 +34,6 @@
           <span class="dropdown-trigger-label">예산</span>
           <figure class="dropdown-trigger-icon"><i class="icon-caret"></i></figure>
         </button>
-        <menu class="dropdown-menu" role="menu">
-          <h6 class="dropdown-menu-title" hidden>Dropdown header</h6>
-          <a class="dropdown-menu-link" href="#" disabled style="display:flex;justify-content:space-between;align-items:center;">
-            최신순
-            <i class="icon-check"></i>
-          </a>
-          <a class="dropdown-menu-link" href="#" disabled>
-            최신순
-          </a>
-        </menu>
       </div>
       <div class="dropdown">
         <button class="dropdown-trigger js-toggle is-active" aria-expanded="true">
@@ -76,7 +66,7 @@
         <div class="titlebar-background"></div>
         <h1 class="titlebar-title js-page-title" title="page title">필터</h1>
         <button class="titlebar-back" onclick="javascript:window.location.href='/';">
-          <figure class="titlebar-back-icon"><i class="icon-x"></i></figure>
+          <span class="titlebar-back-icon material-symbols-outlined">close</span>
           <!-- <span class="titlebar-back-label">뒤로</span> -->
         </button>
         <!-- <button class="titlebar-action" style="color:var(--color-primary);">
@@ -175,7 +165,7 @@
   
     <h2 class="article-subhead">적용된 필터의 상태</h2>
     <ul>
-      <li>Multiple Options: 필터 트리거 버튼에 적용된 필터의 갯수 표시.</li>
+      <li>Multiple Options: 필터 트리거 버튼에 적용된 필터의 갯수 표시. 전환에 필수불가결한 옵션이 존재하는 경우(다소막연).</li>
       <li>Single Option: 액티브 상태와 레이블을 표기. (todo multiple)</li>
       <li>적용된 필터 상태를 removable chips로 추가 제공(case. 오늘의집, 네이버카페) => 과연 효용이 있는 인터페이스인가?</li>
     </ul>

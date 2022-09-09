@@ -174,7 +174,7 @@
             title="small avatar"
             style="width:var(--size-small);height:var(--size-small);background-image:none;"
           >
-            <span class="material-symbols-outlined">close</span>
+            <span class="material-symbols-outlined" style="transform:scale(75%);">close</span>
           </figure>
         </article>
         <div class="tile-flat" style="margin-top:var(--space-2);">
@@ -217,6 +217,19 @@
           </article>
         </div>
       </div>
+
+      <span class="textfield-check" style="position:relative;right:auto;top:auto;background:var(--green100);"><i class="icon-o" style="border-color:var(--color-primary);"></i></span>
+      <td>
+        <b>Clickable</b>
+        <br>
+        cette notification expire dans 5 jours
+      </td>
+      <td style="border:none;">
+        cette notification expire dans 5 jours
+      </td>
+      <span class="textfield-check" style="right:auto;top:auto;background:var(--red100);"><i class="icon-x is-red"></i></span>
+
+      <br />
   
       <ul>
         <li>인접한 정보 더미 중 최상위 위계의 시각 정보입니다.</li>
@@ -267,13 +280,13 @@
         <span class="avatargroup-label">Followed by 수줍이 외 4명</span>
       </article>
 
-      <h2 class="article-subhead">hoverable<br />요약된 사용자 정보와 프로필 페이지 링크 제공</h2>
+      <h2 class="article-subhead">hoverable<br />요약된 사용자 정보와 프로필 페이지 링크</h2>
       <article class="tile-elevated" style="margin:var(--space-2) 0 var(--space-3);">
         <article class="item" data-size="medium">
           <figure class="item-avatar"></figure>
           <h3 class="item-name">사용자이름</h3>
         </article>
-        <p class="user-description" style="margin:var(--space-2) 0;">Youtube subscriber</p>
+        <p class="user-description" style="margin:var(--space-1) 0;">Youtube subscriber</p>
         <div class="statistic" data-size="small" style="justify-content:flex-start;margin:var(--space-2) 0 0 0;">
           <div class="statistic-item" onclick="javascript:alert('샘플 유아이에요!')">
             <i class="statistic-label">팔로워</i>
@@ -290,6 +303,8 @@
   
       <h2 class="article-subhead">Related components</h2>
       <a href="">Entities</a>
+      <span class="icon-bullet"></span>
+      <a href="">Badge</a>
   
       <h2 class="article-subhead">Other cases</h2>
       <p><b>mui.</b> 아이콘 아바타를 사용.</p>
@@ -813,19 +828,6 @@
       <fieldset class="tile-flat" role="checkgroup">
         <!-- <legend">checkgroup</legend> -->
         <div class="checkbox">
-          <input
-            class="js-checkall"
-            type="checkbox"
-            id="line00"
-            value=""
-            aira-checked="mixed"
-            aria-controls="1 2"
-            data-indeterminate="true"
-            indeterminate
-          />
-          <label for="line00" title="Check All"><em>모두 동의합니다</em></label>
-        </div>
-        <div class="checkbox">
           <input class="js-check" type="checkbox" id="line03" value="" checked disabled />
           <label for="line03" title="Everyday is like sunday">비활성 체크박스에요</label>
         </div>
@@ -834,9 +836,7 @@
           <label for="other">기타</label>
           <input type="text" name="other-more" class="textfield-input" placeholder="기타로 오토바이를 타자." hidden />
         </div>
-        <!-- todo -->
         <hr />
-        <!-- <button>전체선택</button> -->
         <div class="checkbox menutype" data-size="medium">
           <input type="checkbox" id="menutype1" name="gender" value="" checked />
           <label for="menutype1" title="">
@@ -869,6 +869,27 @@
     </ul>
 
     <h4 class="article-subhead">Terms and conditions</h4>
+    <div class="checkbox tile-flat-small" data-size="large">
+      <input
+        class="js-checkall"
+        type="checkbox"
+        id="line00"
+        value=""
+        aira-checked="mixed"
+        aria-controls="1 2"
+        data-indeterminate="true"
+        indeterminate
+      />
+      <label for="line00" title="Check All"><em>모두 동의합니다</em></label>
+    </div>
+    <div class="checkbox textfield">
+      <input class="js-check" type="checkbox" id="other" name="interest" value="other" />
+      <label for="other">기타</label>
+    </div>
+    <div class="checkbox textfield">
+      <input class="js-check" type="checkbox" id="other" name="interest" value="other" />
+      <label for="other">기타</label>
+    </div>
 
     <h4 class="article-subhead">Props</h4>
     <dl>

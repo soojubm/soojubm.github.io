@@ -111,16 +111,13 @@ input[type=checkbox]:checked + label + * {display:block;margin:var(--space-2) 0;
 .radio {
   b {margin-left: auto;}
   &.menutype {
-    border:0;
-    box-shadow:none;
-    padding:0;
+    border:0;box-shadow:none;padding:0;
     margin:var(--space-3) 0;
-    label {justify-content: flex-start;padding-left:0;}
+    label {justify-content:flex-start;padding-left:0;}
     label:before {
-      left:auto;right: 0;
+      left:auto;right:0;
       width: var(--size-small);
       height: var(--size-small);
-
     }
     label:after {
       display:block;
@@ -134,7 +131,18 @@ input[type=checkbox]:checked + label + * {display:block;margin:var(--space-2) 0;
       border-color: var(--gray0);
     }
   }
+}
 
+.checkbox[data-size=large] {
+  label {padding-left:36px;font-size:16px;}
+  label:before {
+    width: var(--size-small);
+    height: var(--size-small);
+  }
+  label:after {
+    display:block;top:11px;left:5px;
+    width:12px;height:4px;
+  }
 }
 
 

@@ -36,7 +36,7 @@
       <li>action button</li>
     </ul>
 
-    <h4 class="article-subhead">Needed interactions with dim</h4>
+    <h4 class="article-subhead">Needed interactions</h4>
     <ul>
       <li>Sheet (mobile)</li>
       <li>Modal (desktop)</li>
@@ -68,13 +68,13 @@
       <hr />
       <ul>
         <li>
-          <b>사용자의 인터렉션 요구.</b> 사용자가 모달을 해제할 때까지 이전 워크플로로 돌아갈 수 없습니다. 사용자의 워크플로를 완료하는 데 필요한
-          입력을 요청. 편집 또는 관리와 같은 짧고 낮은 빈도.
+          <b>사용자의 인터렉션.</b> 사용자가 모달을 해제할 때까지 이전 워크플로로 돌아갈 수 없습니다. 사용자의 워크플로를 완료하는 데 필요한 입력을
+          요청. 편집 또는 관리와 같은 짧고 낮은 빈도.
         </li>
         <li>사용자가 모달을 직접 열 수 있는 트리거를 제공하세요. 현재 모달을 암시하는 기표는 없음. 사용자의 학습이 필요.</li>
         <li>이전 페이지와 맥락을 유지하는 콘텐츠 정보를 표시</li>
         <li>x button / arrow button, left / right</li>
-        <li>All Modals have a max-width of 100%.</li>
+        <!-- <li>All Modals have a max-width of 100%.</li> -->
         <li>
           중요도를 명확히 설정하는 것이 중요함. 정말로 중요한 입력이 요구되는 경우, 모달의 바깥을 클릭해서 닫을 수 없는 게 더 맞는 맥락. 또한 반드시
           모달이어야 하는가.
@@ -153,15 +153,15 @@
           <button class="dialog-footer-confirm">나가기</button>
           <button class="dialog-footer-cancel">계속 작성</button>
         </footer>
-        <button class="dialog-close js-close" aria-label="닫기"><i class="icon-x"></i></button>
+        <button class="dialog-close js-close" aria-label="닫기"><span class="material-symbols-outlined">close</span></button>
       </aside>
 
       <h4 class="article-subhead">모달의 종료</h4>
       <ul>
-        <li>click. dim / overay</li>
-        <li>click. x button</li>
+        <li>click. dim</li>
+        <li>click. close button</li>
         <li>click. 작업완료(primary) / 취소(tertiary)</li>
-        <li>keydown. esc 키</li>
+        <li>keydown. esc key. enter key. space bar</li>
       </ul>
 
       <h4 class="article-subhead">모달의 기능</h4>
