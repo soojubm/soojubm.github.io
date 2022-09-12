@@ -26,7 +26,7 @@
 .post-byline-time {color:var(--color-text-light);}
 .post-byline:hover {@include hover-item;}
 
-.post-body {font-size:var(--font-size-subhead);position:relative;} /* graident 때문에 아래요소에서 마진값주기 */
+.post-body {position:relative;} /* graident 때문에 아래요소에서 마진값주기 */
 .post-body-kicker {margin:2rem 0 2.5rem 0;font-size:var(--font-size-subhead);position:relative;}
 // .post-body-image {float:left;width:400px;height:600px;overflow:hidden;margin:0 0 0 -240px;}
 .post-body-image {height:240px;overflow:hidden;margin:3rem -10rem 3.5rem;border-radius:var(--radius);}

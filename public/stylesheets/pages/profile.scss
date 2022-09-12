@@ -2,7 +2,7 @@
 .profile::after {content:'';display:block;clear:both;}
 
 .profile-user {float:left;width:320px;position:relative;z-index:var(--zindex-default);}
-.profile-user-avatar {float:right;@include avatar-huge;background-image:url('https://source.unsplash.com/random');background-size:contain;}
+.profile-user-avatar {float:right;@include avatar-huge;background-image:url('/public/images/springsteen.jpg');background-size:contain;}
 .profile-user-name {@include text-subhead;}
 .profile-user-id {display:block;line-height:var(--font-line-height-small);}
 .profile-user-job {display:block;margin:var(--space-1) 0 0;color:var(--color-text-light);}

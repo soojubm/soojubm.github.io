@@ -327,7 +327,7 @@ const throttle2 = (callback, delay) => {
     )
   }
 }
-window.addEventListener('scroll', throttle2(scrollProgress, 50), true)
+// window.addEventListener('scroll', throttle2(scrollProgress, 50), true)
 
 function scrollProgress() {
   const containerElement = document.querySelector<HTMLElement>('.post')

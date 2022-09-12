@@ -2,7 +2,6 @@
 @import 'checkbox';
 @import 'quantity';
 @import 'textfield';
-@import 'switch';
 
 // todo 사파리에서 버튼 클릭 효과 제가
 // :valid / :invalid
@@ -68,6 +67,9 @@ input[type=search]::-webkit-search-results-decoration {display:none;}
 // line-heght로 리셋스타일에 종속되지 않도록 함. + block
 // height 테이블 내에서 세로 정렬에 필요
 // nextjs + css module에서 type selector 이슈 .checkbox-input / .checkbox-label
+
+// ! :focus
+
 .checkbox,.radio {display:block;position:relative;}
 input[type=checkbox] {width:0;height:0;opacity:0;position:absolute;} // outline:auto;
 input[type=checkbox] + label {display:flex;align-items:center;height:var(--size-medium);padding-left:calc(var(--size-tiny) + var(--space-2));line-height:1rem;position:relative;}
@@ -154,7 +156,7 @@ input[type=checkbox]:checked + label + * {display:block;margin:var(--space-2) 0;
 
 
 .switch {display:block;position:relative;}
-input[type=checkbox][role=switch] + label {display:block;height:20px;line-height:18px;padding-left:calc(48px + var(--space-3));cursor:pointer;}
+input[type=checkbox][role=switch] + label {display:block;height:20px;padding-left:calc(48px + var(--space-3));cursor:pointer;}
 input[type=checkbox][role=switch] + label:before {content:'';display:block;width:48px;height:20px;border:none;border-radius:var(--radius);box-sizing:border-box;background:var(--gray200);position:absolute;left:0;top:0;transition:background .2s;}
 input[type=checkbox][role=switch] + label:after {content:'';display:block;/*18px*/width:16px;height:16px;border:none;border-radius:var(--radius);background:var(--color-background);box-shadow:var(--shadow);position:absolute;left:2px;top:2px;transition:left .2s;transform:rotate(0deg);}
 input[type=checkbox][role=switch]:checked + label {color:var(--color-primary);}

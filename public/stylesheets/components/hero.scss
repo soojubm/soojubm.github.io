@@ -22,7 +22,7 @@
 .landing-hero-description {@include hero-description;}
 .landing-hero-actions-primary {@include hero-actions-primary;}
 .landing-hero-actions-secondary {@include hero-actions-secondary;}
-.landing-hero-object1 {width:320px;height:400px;background:url('https://source.unsplash.com/random') center;background-size:cover;border-radius:var(--radius);position:absolute;right:5vw;top:2rem;}
+.landing-hero-object1 {width:320px;height:400px;background:url('/public/images/springsteen.jpg') center;background-size:cover;border-radius:var(--radius);position:absolute;right:5vw;top:2rem;}
 .landing-hero-object2 {max-width:320px;padding:1rem;z-index:1;position:absolute;right:260px;top:3rem;pointer-events:none;}
 
 

@@ -7,10 +7,10 @@
 // ! avatar-medium과 chip
 // ! text-align: left는 button element.
 @mixin item {@include clearfix;width:100%;position:relative;z-index:1;}
-@mixin item-avatar-huge {@include avatar-huge;float:left;margin-right:var(--space-after-avatar-huge);background:url('https://source.unsplash.com/random') no-repeat center var(--color-background-weak);}
-@mixin item-avatar-large {@include avatar-large;float:left;margin-right:var(--space-after-avatar-large);background:url('https://source.unsplash.com/random') no-repeat center var(--color-background-weak);}
-@mixin item-avatar-medium {@include avatar-medium;float:left;margin-right:var(--space-after-avatar-medium);background:url('https://source.unsplash.com/random') no-repeat center var(--color-background-weak);}
-@mixin item-avatar-small {@include avatar-small;float:left;margin-right:var(--space-after-avatar-small);background:url('https://source.unsplash.com/random') no-repeat center var(--color-background-weak);}
+@mixin item-avatar-huge {@include avatar-huge;float:left;margin-right:var(--space-after-avatar-huge);background:url('/public/images/springsteen.jpg') no-repeat center var(--color-background-weak);}
+@mixin item-avatar-large {@include avatar-large;float:left;margin-right:var(--space-after-avatar-large);background:url('/public/images/springsteen.jpg') no-repeat center var(--color-background-weak);}
+@mixin item-avatar-medium {@include avatar-medium;float:left;margin-right:var(--space-after-avatar-medium);background:url('/public/images/springsteen.jpg') no-repeat center var(--color-background-weak);}
+@mixin item-avatar-small {@include avatar-small;float:left;margin-right:var(--space-after-avatar-small);background:url('/public/images/springsteen.jpg') no-repeat center var(--color-background-weak);}
 @mixin item-label {margin-left:var(--space-after-avatar-medium);color:var(--color-text);}
 @mixin item-icon {display:flex;align-items:center;position:absolute;right:0rem;top:50%;transform:translateY(-50%);}
 

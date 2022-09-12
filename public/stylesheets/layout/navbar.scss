@@ -85,7 +85,7 @@
 
 .user {display:block;color:var(--color-text);position:relative;@include clearfix;text-align:center;}
 // .user:hover {@include hover-item;}
-.user-avatar {@include avatar-huge;float:none;margin:0 auto var(--space-2);background:url('https://source.unsplash.com/random') no-repeat center;}
+.user-avatar {@include avatar-huge;float:none;margin:0 auto var(--space-2);background:url('/public/images/springsteen.jpg') no-repeat center;}
 .user-avatar-change {width:32px;height:32px;border-radius:var(--radius);position:absolute;right:-8px;bottom:-8px;}
 .user-name {margin:var(--space-leading-subhead) 0 0 0;@include text-subhead;text-align:center;}
 .user-id {margin:-.125rem 0 0 0;text-align:center;}
