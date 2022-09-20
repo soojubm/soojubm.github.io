@@ -45,7 +45,7 @@
 .class-overview {@include tile-flat;width:100%;max-width:360px;margin:2rem auto;padding:1rem;border:var(--newneek-border);}
 .class-overview-title {margin-bottom:0 !important;@include text-subhead;}
 
-@media (--breakpoint-large) {
+@media (--large) {
   .class {
     padding:0;
     --section-padding: 2rem var(--grid-margin);

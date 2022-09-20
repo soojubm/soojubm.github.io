@@ -8,6 +8,7 @@
 .setting-item-value-username {width:100%;}
 .setting-item-value-address {width:100%;}
 .setting-item-value-phone {width:100%;}
+.setting-item-icon {position:absolute;right:.5rem;top:50%;transform:translateY(-50%);}
 .setting-item-form {padding:1rem 0 0;cursor:default;}
 .setting-item-foot {display:flex;}
 .setting-item-foot-confirm {@include button-primary;}
@@ -22,5 +23,5 @@
 .setting-toggle-switch {}
 .setting-toggle-switch label {padding-left:48px !important;font-size:0;} // todo
 
-@media (--breakpoint-small) {
+@media (--small) {
 }

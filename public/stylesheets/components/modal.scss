@@ -33,7 +33,7 @@
 .modal-body-image img + img {margin:var(--space-4) 0 0 0;}
 .modal-foot {padding:var(--space-4) 0;text-align:right;}
 
-@media (--breakpoint-small) {
+@media (--small) {
   .modal-dialog {padding-top:2rem;}
 }
 

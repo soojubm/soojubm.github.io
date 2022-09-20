@@ -51,13 +51,13 @@
 .token-item .color-item + .color-item {margin:var(--space-2) 0 0 0;}
 
 
-@media (--breakpoint-large) {
+@media (--large) {
   .tokens {
     --item-width: 33.3333%;
   }
 }
 
-@media (--breakpoint-small) {
+@media (--small) {
   .token-group {display:block;margin:0;}
   .token-item {max-width:100%;margin:var(--space-3) 0;}
 }

@@ -14,7 +14,7 @@
 .toast {background:crimson;position:fixed;left:1rem;bottom:1rem;z-index:var(--zindex-toast);transition:all .4s ease;transform:translateX(-100vw)}
 .is-active + .toast {transform: translateX(0);}
 
-@media (--breakpoint-small) {
+@media (--small) {
   .toast {width:auto;max-width:100%;left:1rem;right:1rem;bottom:calc(constant(safe-area-inset-bottom) + 1rem);bottom:calc(env(safe-area-inset-bottom) + 1rem);}
 }
 

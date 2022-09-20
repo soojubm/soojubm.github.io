@@ -85,24 +85,30 @@
 
 // 그냥나열되는경우(display:flex flex-wrap vs inline-block) 마진중첩서로 다르게 적용이 된다.
 // bleeding chip, slider 사용함. 간격을 variables로.
+// todo flex일 대 min-width가 필수가 된다..
 @mixin group {
   display:flex;flex-wrap:wrap;margin:var(--space-groupitem-minus);
   > * {margin:var(--space-groupitem)}
 }
-@mixin tag-group {@include group;}
-@mixin chip-group {@include group;}
-[role=group] {@include group;}
-
 @mixin group-bleeding {
-  display:flex;
+  display:flex; // 중복
   flex-wrap: unset; // todo..
   white-space:nowrap;
   overflow:auto;
   margin: var(--space-1-minus) var(--space-3-minus);
   padding: var(--space-1) var(--space-3);
+
+  // margin: 0 var(--grid-margin-minus);
+  // padding: 0 var(--grid-margin);
   > * {min-width:auto;margin: 0 var(--space-2) 0 0;}
   &::-webkit-scrollbar {display:none;}
 }
+
+
+@mixin tag-group {@include group;}
+@mixin chip-group {@include group;}
+[role=group] {@include group;}
+
 
 // todo...
 .tag-group {@include tag-group;}
@@ -118,11 +124,11 @@
 .linebreak-always {}
 .linebreak-desktop {
   display:block;
-  @media (--breakpoint-small) {display:inline;}
+  @media (--small) {display:inline;}
 }
 .linebreak-mobile {
   display:inline;
-  @media (--breakpoint-small) {display:block;}
+  @media (--small) {display:block;}
 }
 
 @mixin position-left-top {position:absolute;left:var(--space-1);top:var(--space-1);}

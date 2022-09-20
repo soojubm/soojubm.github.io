@@ -32,7 +32,7 @@
 .footer-scroll-bottom {display:none;}
 // .footer-scroll-top .is-visible {right:50px;}
 
-@media (--breakpoint-small) {
+@media (--small) {
 	.subscribe-field {width:100%;}
 
 	.sitemap {flex-direction: column;}
@@ -42,11 +42,9 @@
 
 
 .footer-temp {
-	margin:0 0 2rem 0;
+	margin:0 0 var(--space-4) 0;
 	a {
 		display: block;
-		font-size: var(--font-size-subhead);
-		font-weight: var(--font-weight-bold);
-		color: var(--color-text);
+		@include text-subhead;
 	}
 }

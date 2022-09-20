@@ -23,17 +23,19 @@ export function stopAnimation() {
   )
 }
 
+// ! hero 영역 이미지들 안 됨.. 왜
 export function loadLazyImages() {
-  // todo hero 영역 이미지들 안 됨.. 왜
   if (!('IntersectionObserver' in window)) return
 
   const imageObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return
 
-      const target = entry.target as any // todo
+      const target = entry.target as HTMLImageElement
+      target.src = target.dataset.src || ''
 
-      target.src = target.dataset.src
+      console.log(target)
+
       imageObserver.unobserve(target)
     })
   })

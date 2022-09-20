@@ -109,7 +109,7 @@
 .post-pagination-next-label {margin:0 0 .25rem 0;font-size:var(--font-size-body);font-weight:normal;color:var(--color-text-light);}
 .post-pagination-next-postname {@include text-subhead;}
 
-@media (--breakpoint-small) {
+@media (--small) {
 	.post-body-image {float:none;margin-left:-5vw;margin-right:-5vw;}
 
 	.post-pagination {flex-wrap:wrap;flex-direction:column-reverse;}

@@ -14,9 +14,30 @@
   </section>
 
 
+
+
   <p>Note: Make sure the role of the element that serves as the container for the popup content is a menu, listbox, tree, grid or dialog and that the value of aria-haspopup matches the role of the popup container.</p>
   <p>Elements with role combobox have an implicit aria-haspopup value of listbox.</p>
   <section class="component-body" style="padding:2rem var(--grid-margin);">
+
+    <div class="textfield">
+      <button class="textfield-prefix searchfield-prefix">
+        <span class="material-symbols-outlined">mail </span>
+      </button>
+      <!-- <label class="textfield-label" for="search">검색(시각적으로숨겨야함)</label> -->
+      <input class="textfield-input searchfield-input js-input-test" type="search" id="search" placeholder="you@gamil.com" />
+      <button class="textfield-clear" hidden><span class="material-symbols-outlined">close</span></button>
+    </div>
+    <div class="textfield" style="margin:var(--space-2) 0;">
+      <button class="textfield-prefix searchfield-prefix">
+        <span class="material-symbols-outlined">mail </span>
+      </button>
+      <!-- <label class="textfield-label" for="search">검색(시각적으로숨겨야함)</label> -->
+      <input class="textfield-input searchfield-input js-input-test" type="search" id="search" placeholder="you@gamil.com" />
+      <button class="textfield-clear" hidden><span class="material-symbols-outlined">close</span></button>
+    </div>
+    <button>add</button>
+
     <div style="display:flex;margin:0 -.75rem;">
       <div class="tile-elevated" style="width:240px;margin:0 .75rem;padding:1rem;box-shadow:none;border:0;background:var(--green100);">
         <h2 style="line-height:var(--font-line-height-small);">Designers</h2>
@@ -307,7 +328,7 @@
       </a>
       <hr role="separator" style="margin-left:-1rem;margin-right:-1rem;" />
       <button class="user-logout js-darkmode" title="change theme">
-        <figure class="user-logout-icon"><i class="icon-moon"></i></figure>
+        <figure class="user-logout-icon"><span class="material-symbols-outlined">nights_stay</span></figure>
         <span class="user-logout-label">어둡게 보기</span>
         <span class="switch" style="margin-left:auto;">
           <input type="checkbox" id="temp55" name="" role="switch" />
@@ -340,7 +361,9 @@
       <thead>
         <tr>
           <td style="padding:var(--space-2) 0;">
-            <span class="textfield-check" style="margin-right:var(--space-2);position:relative;right:auto;top:auto;background:var(--green100);"><i class="icon-check" style="border-color:var(--color-primary);"></i></span>
+            <span class="textfield-check" style="margin-right:var(--space-2);position:relative;right:auto;top:auto;background:var(--green100);">
+              <span class="material-symbols-outlined" style="color:var(--color-primary);">check</span>
+            </span>
           </td>
           <td style="padding:var(--space-2) 0;">
             <span class="textfield-check" style="position:relative;right:auto;top:auto;background:var(--red100);"><i class="icon-x is-red"></i></span>

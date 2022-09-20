@@ -45,7 +45,7 @@
 .checkout-foot-helper {margin:0 0 1rem 0;}
 .checkout-foot-pay {@include button-primary;width:50%;max-width:20rem;}
 
-@media (--breakpoint-large) {
+@media (--large) {
   // .checkout-foot {
   //   margin: 0;
   //   padding: 1rem 1rem calc(constant(safe-area-inset-bottom) + 1rem);

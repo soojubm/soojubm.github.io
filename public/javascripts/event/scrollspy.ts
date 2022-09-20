@@ -11,8 +11,8 @@ const scrollspy = ({ menusSelector: menusClass, sectionsSelector: sectionsClass 
 
   if (!sections || !menus) return
 
-  menus.forEach((element, index) => {
-    element.addEventListener('click', event => {
+  menus.forEach((item, index) => {
+    item.addEventListener('click', event => {
       event.preventDefault()
 
       const targetOffsetY = sections[index].offsetTop - 16 * 4

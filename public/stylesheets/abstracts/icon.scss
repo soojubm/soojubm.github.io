@@ -30,9 +30,6 @@
 .icon-x.is-red:before {background-color:var(--red800);}
 .icon-x.is-red:after {background-color:var(--red800);}
 
-.icon-check {display:inline-block;width:7px;height:2px;border-left:2px solid;border-bottom:2px solid;border-color:var(--icon-background);vertical-align:middle;transform:translateY(-2px) rotate(-45deg);}
-
-
 .icon-heart {position:relative;}
 .icon-heart:before {content:'';background:var(--icon-background);width:7px;height:12px;border-radius:50px 50px 0 0;transform: rotate(-45deg);position:absolute;left:-5px;top:-6px;}
 .icon-heart:after {content:'';background:var(--icon-background);width:7px;height:12px;border-radius: 50px 50px 0 0;	transform: rotate(45deg);position:absolute;left:-1px;top:-6px;}
@@ -73,13 +70,6 @@
 .icon-chevron.is-up {margin-top:4px;transform:rotate(-135deg);}
 .icon-chevron.is-down {transform:rotate(45deg) translate(0, -3px);}
 
-.icon-grid {padding:8px;position:relative;}
-.icon-grid span {float:left;display:block;margin:1px;padding:1px;border:2px solid var(--icon-background);background:var(--icon-background);border-radius:1px;opacity:.75;}
-
-.icon-list {padding:4px;position:relative;}
-.icon-list span {display:block;width:11px;height:3px;margin:2px 0 2px 4px;background-color:var(--icon-background);border-radius:1px;position:relative;opacity:.75;}
-.icon-list span:before {content:'';width:3px;height:inherit;background-color:inherit;border-radius:1px;position:absolute;left:-5px;}
-
 .icon-bullet:before {content:'\002F';margin:0 var(--space-2);color:var(--gray200);}
 
 
@@ -112,11 +102,6 @@
 .icon-arrow-right {padding:16px;position:relative;}
 .icon-arrow-right:before {content:'';display:block;width:16px;height:1px;background:var(--icon-background);position:absolute;left:16px;top:24px;}
 .icon-arrow-right:after {content:'';display:block;width:5px;height:1px;background:var(--icon-background);position:absolute;left:27px;top:22px;transform:rotate(45deg);}
-
-
-.icon-arrow.is-external {display:inline-block;vertical-align:middle;transform:rotate(-45deg);}
-.icon-arrow.is-external:before {}
-.icon-arrow.is-external:after {}
 
 .icon-out {position:relative;}
 .icon-out-door {display:block;width:8px;height:12px;margin-left:-2px;border:2px solid var(--icon-background);border-right:0;}
@@ -177,35 +162,6 @@
 .icon-file {position:relative;transform:translate(2px, 2px);}
 .icon-file::before {content:'';display:block;padding:3px;border:2px solid var(--icon-background);position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);}
 .icon-file::after {content:'';display:block;padding:3px;border:2px solid var(--icon-background);border-right:0;border-bottom:0;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);margin:-5px}
-
-
-
-
-.icon-moon {
-  display: block;
-  height: 15px;
-  width: 15px;
-  margin-top: -9px;
-  margin-left: -9px;
-  border-radius: 50%;
-  box-shadow: 4px 4px 0 0 var(--icon-background);
-}
-
-// .icon-moon {
-//   width: 15px;
-//   height: 15px;
-//   border-radius: 50%;
-//   border: 2px solid var(--icon-background);
-//   // box-shadow: 4px 4px 0 0 var(--icon-background);
-//   &:before {
-//     content: '';
-//     display: block;
-//     height: 15px;
-//     width: 15px;
-//     margin-top: -9px;
-//     margin-left: -9px;
-//   }
-// }
 
 
 .gg-sun {

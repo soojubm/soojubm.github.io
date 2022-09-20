@@ -39,20 +39,15 @@
     ></span>
   </div>
 
-  <div class="item tile-elevated-small" data-size="large" role="listitem" style="z-index:auto;">
-    <figure class="item-avatar"></figure>
-    <span class="item-label">전원 및 배터리</span>
-    <p class="item-description">절전, 배터리 사용, 배터리 절약</p>
-    <span class="item-icon" style="margin-right:.5rem;color:var(--color-text);font-size:var(--font-size-body);"
-      ><i class="icon-chevron" style="margin-left:.5rem;border-color:var(--color-text);transform: rotate(-45deg) scale(1);"></i
-    ></span>
-  </div>
   <br />
 
   <h3 class="setting-subhead">개인정보</h3>
   <div class="setting-item">
     <h2 class="setting-item-label">이메일</h2>
     <div class="setting-item-value">soojubm@gmail.com</div>
+    <span class="setting-item-icon material-symbols-outlined">
+      arrow_forward
+    </span>
   </div>
 
   <div class="setting-item">
@@ -130,9 +125,25 @@
 
     <header class="titlebar js-titlebar" role="navigation" style="padding:0;">
       <div class="titlebar-background"></div>
+      <button class="titlebar-back" onclick="javascript:window.location.href='/';">
+        <figure class="titlebar-back-icon material-symbols-outlined" title="이전 페이지로">arrow_back</figure>
+        <!-- <figure class="titlebar-back-icon"><i class="icon-close"></i></figure> -->
+        <!-- <span class="titlebar-back-label">뒤로</span> -->
+      </button>
+    </header>
+    <div class="is-opened" role="button" style="flex-wrap:wrap;box-shadow:none;border:none;padding:1rem 0;">
+      <form class="setting-item-form" style="padding:0;">
+        <h1 style="line-height:var(--font-line-height-small);">개인 및 계정 정보</h1>
+      </form>
+    </div>
+
+    <br />
+
+    <header class="titlebar js-titlebar" role="navigation" style="padding:0;">
+      <div class="titlebar-background"></div>
       <h1 class="titlebar-title js-page-title" title="page title">이름 바꾸기</h1>
       <button class="titlebar-back" onclick="javascript:window.location.href='/';">
-        <figure class="titlebar-back-icon" title="이전 페이지로"><i class="icon-arrow is-left"></i></figure>
+        <figure class="titlebar-back-icon material-symbols-outlined" title="이전 페이지로">arrow_back</figure>
         <!-- <figure class="titlebar-back-icon"><i class="icon-close"></i></figure> -->
         <!-- <span class="titlebar-back-label">뒤로</span> -->
       </button>
@@ -141,7 +152,6 @@
         <span class="titlebar-action-label">저장</span>
       </button>
     </header>
-
     <div class="is-opened" role="button" style="flex-wrap:wrap;box-shadow:none;border:none;padding:1rem 0;">
       <form class="setting-item-form" style="padding:0;">
         <br />

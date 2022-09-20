@@ -10,7 +10,7 @@
 .banner[data-theme=colored] .banner-title {color:var(--gray0);}
 .banner[data-theme=colored] .banner-description {color:var(--gray0);opacity:.75;}
 
-@media (--breakpoint-small) {
+@media (--small) {
   // .banner {flex-wrap:wrap;}
   // .banner-title {width:100%;margin:0 0 1rem 0;}
 }

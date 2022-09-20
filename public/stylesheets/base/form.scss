@@ -168,6 +168,13 @@ input[type=checkbox][role=switch]:disabled:checked + label {color:var(--color-pr
 input[type=checkbox][role=switch]:disabled:checked + label:before {background:var(--color-primary);}
 input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 
+.switch-wrap {display:inline-block;width:var(--size-medium);height:var(--size-medium);overflow:hidden;}
+.day {display:flex;align-items:center;justify-content:center;width:100%;height:100%;position:absolute;top:0;transition:all .2s ease .3s;}
+.night {display:flex;align-items:center;justify-content:center;width:100%;height:100%;position:absolute;top:var(--size-medium);transition:all .2s ease 0s;}
+.theme-dark .day {top:var(--size-medium);transition-delay:0s;}
+.theme-dark .night {top:0;transition-delay:.3s;}
+
+
 .boxed-form {}
 .boxed-form h4 {margin:2rem 0 var(--space-3) 0;}
 .boxed-form div {background:var(--color-background);padding:1rem 2rem 1.25rem;border:var(--border);}

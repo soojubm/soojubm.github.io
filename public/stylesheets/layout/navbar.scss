@@ -10,7 +10,7 @@
 .navbar-menu-item:before {display:none;}
 .navbar-menu-item i {display:none;margin-left:8px;}
 .navbar-menu-item menu {display:flex;justify-content:center;justify-content:flex-start;position:fixed;left:0;right:0;top:-240px;z-index:var(--zindex-menu);transition:$transition-base;}
-.navbar-menu-item menu a {display:block;margin:var(--space-2) 0;color:var(--color-text);opacity:0;position:relative;z-index:var(--zindex-default);}
+.navbar-menu-item menu a {display:flex;align-items:center;margin:var(--space-2) 0;color:var(--color-text);opacity:0;position:relative;z-index:var(--zindex-default);}
 .navbar-menu-item menu a:hover {@include hover-item;}
 .navbar-menu-item menu a.is-current {@include hover-item;}
 
@@ -102,7 +102,6 @@
 .user-footer {}
 .user-footer a {font-size:var(--font-size-caption);color:var(--color-text-light);}
 
-
 // .is-active .navbar-logo {z-index:calc(var(--zindex-menu) + 2);z-index:5;}
 // .is-active .navbar-user {z-index:calc(var(--zindex-menu) + 2);z-index:5;}
 // .is-active .navbar-user .navbar-user-trigger img {background:var(--color-background);}
@@ -124,7 +123,7 @@
 .navbar-menu-item {display:block;padding:var(--space-2) 2rem var(--space-2) var(--grid-margin);font-size:var(--font-size-subhead);}
 .navbar-menu-item menu {flex-wrap:wrap;background:var(--color-background);position:static;left:auto;right:auto;top:auto;transition:none;}
 // .navbar-menu-item:hover menu {display:block;}
-.navbar-menu-item menu a {display:block;width:100%;height:var(--size-medium);font-size:var(--font-size-subhead);font-weight:var(--font-weight-bold);opacity:1;}
+.navbar-menu-item menu a {width:100%;height:var(--size-medium);font-size:var(--font-size-subhead);font-weight:var(--font-weight-bold);opacity:1;}
 
 .navbar-menu::-webkit-scrollbar {width:.5rem;height:auto;padding:.125rem;}
 .navbar-menu::-webkit-scrollbar-track {background:inherit;}
@@ -138,6 +137,6 @@
 .is-opened-menu .navbar-menu-item {color:var(--gray800);} // animation:fadeup .4s cubic-bezier(.455, .03, .515, .955) both;
 .is-opened-menu .navbar-menu-item i {border-top-color:var(--gray800);}
 // .is-active .navbar-menu-item:nth-child(1) {animation-delay:.3s;}
-@media (--breakpoint-small) {
+@media (--small) {
 
 }

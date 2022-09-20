@@ -495,7 +495,9 @@
               <span class="chip-label">with icon</span>
             </button>
             <button class="chip is-active">
-              <figure class="chip-icon" style="background:none;"><i class="icon-check" style="border-color:var(--color-background);"></i></figure>
+              <figure class="chip-icon" style="background:none !important;">
+                <span class="material-symbols-outlined" style="color:var(--color-text-weak);">check</span>
+              </figure>
               <span class="chip-label" style="padding-left:0;">checkable</span>
             </button>
             <button class="dropdown-trigger js-toggle" aria-expanded="true">
@@ -504,6 +506,17 @@
             </button>
           </div>
         </div>
+
+        <div class="tile-flat">
+          <p>icon button = avatar / chip(clickable) 일단 button 엘리먼트에 avatar를 include. 2개의 사이즈 확장 small은 textfield에서 사용하거나 일반 텍스트 우측.</p>
+          <div role="group">
+            <button class="icon-button" data-size="medium">
+              <span class="material-symbols-outlined">close</span>
+            </button>
+            <button class="icon-button" data-size="small">
+              <span class="material-symbols-outlined">close</span>
+            </button>
+          </div>
       </section>
   
       <ul style="margin-top:2rem;">
@@ -583,11 +596,15 @@
       <div class="tile-flat" style="margin:var(--space-2) 0 var(--space-4);">
         <div class="chip-group" role="group" aria-multiselectable="true" data-align="bleed">
           <button class="chip is-active" aria-selected="true" style="border:1px solid var(--green800);background-color:var(--green100);">
-            <figure class="chip-icon" style="background:none !important;"><i class="icon-check" style="border-color:var(--green800);"></i></figure>
+            <figure class="chip-icon" style="background:none !important;">
+              <span class="material-symbols-outlined" style="color:var(--color-primary);">check</span>
+            </figure>
             <span class="chip-label" style="padding-left:0;color:var(--green800);">소설</span>
           </button>
           <button class="chip is-active" aria-selected="false" style="border:1px solid var(--green800);background-color:var(--green100);">
-            <figure class="chip-icon" style="background:none !important;"><i class="icon-check" style="border-color:var(--green800);"></i></figure>
+            <figure class="chip-icon" style="background:none !important;">
+              <span class="material-symbols-outlined" style="color:var(--color-primary);">check</span>
+            </figure>
             <span class="chip-label" style="padding-left:0;color:var(--green800);">영화</span>
           </button>
           <button class="chip" aria-selected="false">
@@ -631,7 +648,7 @@
               <!-- // todo  -->
               <a class="dropdown-menu-link" href="#" disabled style="display:flex;justify-content:space-between;align-items:center;">
                 최신순
-                <i class="icon-check"></i>
+                <span class="material-symbols-outlined">check</span>
               </a>
               <a class="dropdown-menu-link" href="#" disabled>최신순</a>
             </menu>
@@ -858,6 +875,7 @@
         레거시 형태의 체크박스와 라디오는 모바일 친화적이지 않으며 사용 케이스도 감소세. 머티리얼3에도 포함되어 있지 않다. 약관 동의 유즈 캐이스를 따로 정의하는 것이 좋다.
       </li>
       <li>case. switch 역할로 하나의 체크박스를 제공할 수 있습니다. '포토리뷰만 보기'</li>
+      <li>case. don't ask again</li>
     </ul>
     
     <h4 class="article-subhead">Editing checklist</h4>
@@ -867,7 +885,7 @@
     </ul>
 
     <h4 class="article-subhead">Terms and conditions</h4>
-    <div class="checkbox tile-flat-small" data-size="large">
+    <!-- <div class="checkbox tile-flat-small" data-size="large">
       <input
         class="js-checkall"
         type="checkbox"
@@ -887,7 +905,7 @@
     <div class="checkbox textfield">
       <input class="js-check" type="checkbox" id="other" name="interest" value="other" />
       <label for="other">기타</label>
-    </div>
+    </div> -->
 
     <h4 class="article-subhead">Props</h4>
     <dl>
@@ -1405,7 +1423,7 @@
         <small>Google 포토에 최대 해상도로 백업</small>
         <hr />
         <button class="item js-darkmode" role="menuitem" data-size="medium" title="change theme">
-          <figure class="item-avatar" style="background-image:none;"><i class="icon-moon"></i></figure>
+          <figure class="item-avatar" style="background-image:none;"><span class="material-symbols-outlined">nights_stay</span></figure>
           <span class="item-label">어둡게 보기</span>
           <span class="switch" style="margin-left:auto;">
             <input type="checkbox" id="temp55" name="" role="switch" />

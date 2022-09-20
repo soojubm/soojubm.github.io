@@ -11,12 +11,12 @@
 .terms-body h2 {margin:4rem 0 1rem 0;@include text-subhead;}
 .terms-body p {}
 
-@media (--breakpoint-large) {
+@media (--large) {
   .terms-head {}
   .terms-body {}
   
 }
-@media (--breakpoint-small) {
+@media (--small) {
   .terms-head {margin:0 auto;}
   .terms-body {margin:0 auto;}
 }

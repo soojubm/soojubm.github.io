@@ -15,7 +15,7 @@
 .component-navigation-scroll {@include group-bleeding;margin:0 var(--grid-margin-minus) !important;padding:var(--space-3) var(--grid-margin) !important;}
 
 
-@media (--breakpoint-small), (max-height: 800px) {
+@media (--small), (max-height: 800px) {
   //   .component-style {height:auto;padding-bottom:4rem;position:relative;}
   .component-style {margin-top:2rem;margin-bottom:2rem;}
 }

@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: var(--size-medium);
+  min-width: var(--size-medium); // for... bleeding?
   height: var(--size-medium);
   border-radius: var(--radius);
   background: var(--color-background-weak);
@@ -36,6 +36,8 @@
 .chip {@include chip}
 .chip-label {@include chip-label;padding-top:1px;}
 .chip-icon {@include chip-icon;}
+
+
 .is-active .chip-icon .icon-check {border-color:var(--color-background);}
 
 .chip-remove {@include chip-icon;}

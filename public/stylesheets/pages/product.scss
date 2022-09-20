@@ -134,7 +134,7 @@
 .product-recommend-title {width:100%;margin:0 0 var(--space-after-title);text-align:center;@include text-subhead;}
 
 
-@media (--breakpoint-large) {
+@media (--large) {
 	.product {max-width:100%;}
 	.product-image {@include reset-position;width:50%;position:absolute;}
 	.product-info {width:50%;margin-right:0;padding-left:55%;}
@@ -147,7 +147,7 @@
 }
 
 
-@media (--breakpoint-small) {
+@media (--small) {
 	.product {padding-top:0;}
 	
 	.product-info {width:100%;padding-left:0;}

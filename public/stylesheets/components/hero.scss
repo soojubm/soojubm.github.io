@@ -52,7 +52,7 @@
 .is-scrolled .hero-obj3 {animation:scaleout .4s ease 1.2s both;}
 .is-scrolled .hero-obj4 {animation:scaleout .4s ease 1s both;}
 
-@media (--breakpoint-small) {
+@media (--small) {
   .hero-obj1, .hero-obj2, .hero-obj3, .hero-obj4 {display:none;}
   .hero-obj4 {top:-18rem;right:-2rem;}
 }

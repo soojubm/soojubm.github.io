@@ -1,5 +1,5 @@
-@custom-media --breakpoint-large (max-width: 1560px);
-@custom-media --breakpoint-small (max-width: 1080px);
+@custom-media --large (max-width: 1560px);
+@custom-media --small (max-width: 1080px);
 
 // todo
 $bezier-base: cubic-bezier(0.455, 0.03, 0.515, 0.955);
@@ -248,7 +248,7 @@ $transition-fade: opacity 0.15s linear;
 }
 
 
-@media (--breakpoint-small) {
+@media (--small) {
   :root {
     --font-size-huge: 1.5rem;
   }
