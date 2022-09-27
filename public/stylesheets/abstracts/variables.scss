@@ -1,15 +1,11 @@
 @custom-media --large (max-width: 1560px);
 @custom-media --small (max-width: 1080px);
 
-// todo
-$bezier-base: cubic-bezier(0.455, 0.03, 0.515, 0.955);
-$transition-base: all 0.4s $bezier-base;
-$transition-fade: opacity 0.15s linear;
+
 
 :root {
   color-scheme: light dark;
 
-  // ! viewport : desktop first
   --adjust-label-line: 0px;
 
   --fontstack: 'Quattrocento Sans', 'Gothic A1', sans-serif;
@@ -21,6 +17,21 @@ $transition-fade: opacity 0.15s linear;
 
   --navbar-height: calc(32px + 1.5rem);
   --titlebar-height: calc(32px + 1.5rem);
+
+  --layout-width-large: 1200px;
+  --layout-width-small: 640px;
+  --layout-width-tiny: 480px;
+  // todo.. layout
+  --grid-column: calc(50% - var(--space-1));
+  --grid-gutter: null;
+  --grid-margin: 5vw;
+  --grid-margin-minus: calc(var(--grid-margin) * -1);
+
+  --width-huge: 1440px;
+  --width-small: 480px;
+
+  --menu-width: 320px;
+  --width-dropdown: 240px;
 
   --font-size-huge: 2rem;
   --font-size-large: 1.125rem;
@@ -76,10 +87,9 @@ $transition-fade: opacity 0.15s linear;
   --color-background-weak: var(--gray100);
   --color-background-strong: var(--gray800);
   // --color-background-darkest: null;
-
   --color-border: var(--gray200);
   --color-border-hover: var(--gray800);
-  
+  // 
   --color-text: var(--gray800);
   --color-text-weak: var(--gray0);
   --color-text-light: var(--gray400);
@@ -94,13 +104,6 @@ $transition-fade: opacity 0.15s linear;
   --gradient: linear-gradient(to bottom, var(--gray100), var(--gray800));
 
   // size => square
-
-  --width-huge: 1440px;
-  --width-small: 480px;
-
-  --menu-width: 320px;
-  --width-dropdown: 240px;
-
   --size-huge: 5rem;
   --size-large: 3rem;
   --size-medium: 2rem;
@@ -155,51 +158,39 @@ $transition-fade: opacity 0.15s linear;
   --shadow: 0 0 .25rem rgb(0 0 0 / 7.5%);
   --shadow-active: null;
 
-  // --shadow: 0px 0px .5rem rgba(0, 0, 0, 0.1);
-  // --shadow: 0 0 0 1px rgb(0 0 0 / 5%), 0 1px 4px rgb(0 0 0 / 10%);
-  
   --state-focus: 0 0 0 2px var(--color-border-hover);
   --state-hover: 0 0 0 2px rgba(0,0,0,.1);
 
+  // ! animation
   --duration: .4s;
   --duration-quickly: .2s;
   --duration-slowly: .6s;
 
   --bazier: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  --transition-base: all 0.4s var(--bazier);
   --animation-duration: .4s;
   --animation-delay-second: .2s;
   --animation-delay-third: .4s;
   // --animation-timing-function-ease: null;
 
 
-  // ! z-index
-  // ! padding 중첩되면 같은 역할이라도. 마이너스 마진.
+  // ! z-index :: padding 중첩되면 같은 역할이라도. 마이너스 마진.
   --zindex-default: 1;
-
   --zindex-popover: 5; // !
   --zindex-tooltip: 2;
   --zindex-menu: 2;
   --zindex-dropdown: 2;
-
   --zindex-sticky: 4;
   --zindex-fixed: 4;
-
   --zindex-modal-dim: 8; // !
   --zindex-modal: 9; // !
-
   --zindex-floating: null;
   --zindex-toast: 9; // !
-
   --zindex-menu: 8;
   --zindex-bottombar: 8;
   --zindex-loader: 10;
   --zindex-sheet: 7;
 
-  // todo..
-  --grid-column: calc(50% - var(--space-1));
-  --grid-gutter: null;
-  --grid-margin: 5vw;
-  --grid-margin-minus: calc(var(--grid-margin) * -1);
 
   --safearea-inset-bottom1: constant(safe-area-inset-bottom);
   --safearea-inset-bottom2: env(safe-area-inset-bottom);
@@ -228,12 +219,10 @@ $transition-fade: opacity 0.15s linear;
     --color-border: var(--gray800);
     --color-border-hover: var(--gray0);
 
-    // 재할당..
-    --state-focus: 0 0 0 2px var(--color-border-hover);
-    --state-hover: 0 0 0 2px rgba(255,255,255,.25);
-
     // 변수가 같더라도 재할당이 필요하다.
     --border: 1px solid var(--color-border);
+    --state-focus: 0 0 0 2px var(--color-border-hover);
+    --state-hover: 0 0 0 2px rgba(255,255,255,.25);
 
     // todo gray800
     --icon-background: #d1d2d3;

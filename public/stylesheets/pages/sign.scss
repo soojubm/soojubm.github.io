@@ -48,10 +48,10 @@
 .delete-head-title {}
 .delete-head-description {margin:1rem 0;}
 .delete-suggest {}
-.delete-suggest-subhead {margin:1rem 0;@include text-subhead;}
+.delete-suggest-subhead {margin:1rem 0;}
 .delete-why {padding:0 0%;}
 .delete-why-title {@include text-subhead;}
 .delete-why-description {margin:1rem 0;}
 .delete-action {padding:4rem 0;}
-.delete-action-confirm {@include button-primary;border-color:var(--red800);background:var(--red800);}
+.delete-action-confirm {@include button-primary;}
 .delete-action-back {@include button-text;}

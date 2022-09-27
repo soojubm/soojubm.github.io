@@ -59,13 +59,13 @@ function modal({ selector: trigger }: Parameter) {
   }
 
   function openModal() {
-    document.body.classList.add('is-modal-visible', 'body-lock')
+    document.body.classList.add('is-modal-visible', 'lock-scroll')
 
     // document.body.style.top = `-${previousPageYOffset}px`
   }
 
   function closeModal() {
-    document.body.classList.remove('is-modal-visible', 'body-lock')
+    document.body.classList.remove('is-modal-visible', 'lock-scroll')
     modalContainer!.innerHTML = ''
 
     restoreScroll()

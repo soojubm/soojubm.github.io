@@ -1,34 +1,29 @@
 // all: unset
 body,dl,dd,figure,blockquote,h1,h2,h3,h4,h5,h6,p,input[type=radio] {margin:0;}
 ul,ol,menu,fieldset,legend {margin:0;padding:0;}
-fieldset,iframe,img,hr {border:none} ol,ul,menu {list-style:none}
+fieldset,iframe,img,hr {border:none}
 main, picture {display:block;}
 iframe,img,video {width:100%;display:block;} /*img {vertical-align:middle;}*/
+// ol,ul,menu {list-style:none}
 // h1,h2,h3,h4,h5,h6 {line-height:var(--font-line-height-small);font-weight:var(--font-weight-bold);color:var(--color-text);word-break:keep-all;}
-strong,b,th,legend {font-weight:var(--font-weight-bold);} legend {}
+strong,b,th,legend {font-weight:var(--font-weight-bold);}
 cite,i,address,em,dfn {font-style:normal;} em {color:var(--color-primary);}
 small {font-size:var(--font-size-caption);} abbr,ins {text-decoration:none;} del {color:var(--color-text-light);}
 a {text-decoration:none;text-decoration-skip-ink:auto;color:var(--color-primary);} a:link,a:visited {} a:hover,a:focus {} a:active {}
-mark {color:inherit;}
-// mark::before {content: " [강조 시작] ";}
-// mark::after {content: " [강조 끝] ";}
-// br {content:'';display:block;height:1rem;}
+mark {color:inherit;} mark::before {content: " [강조 시작] ";} mark::after {content: " [강조 끝] ";}
 // thin solid
 hr {margin:var(--space-4) 0;border-top:1px solid var(--gray200);position:relative;}
 u {text-decoration:none;position:relative;}
 u:after {content:'';height:.4em;border-radius:2px;background:var(--green100);position:absolute;left:-.125rem;right:-.125rem;bottom:0;z-index:-1;}
 code {display:block;background:var(--color-background-weak);border-radius:var(--radius);font-family:var(--fontstack-code);font-size:var(--font-size-caption);letter-spacing:.0125rem;}
-pre {}
 
 html {min-width:320px;height:100%;overflow-x:hidden;font:16px/1.8 var(--fontstack);-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overscroll-behavior:contain;}
 body {background:var(--color-background);color:var(--color-text);font-size:.875rem;}
 
-// todo fixed blink 현상..;
+// fixed blink 테마변경 
 p, li {color:var(--color-text);}
-// todo 왜 뺐었을가?
-// overflow-x:hidden;letter-spacing:-.0125rem;
-blockquote {margin:2rem 0;padding:0 0 0 var(--space-4);border-left:4px solid var(--gray200);border-radius:4px 0 0 0;}
 
+blockquote {margin:2rem 0;padding:0 0 0 var(--space-4);border-left:4px solid var(--gray200);border-radius:4px 0 0 0;}
 table {
   width:100%;border-collapse:collapse;border-spacing:0;border-left-style:hidden;border-right-style:hidden;
   --table-lineheight: 1.6;
@@ -46,29 +41,16 @@ table .right {text-align:right;}
 
 table.is-borderless tbody tr {border:0;}
 
-
 table tbody[role=rowgroup] tr th {width:25%;}
 table tbody[role=rowgroup] tr th + th {width:auto;} // todo
 
-ul {list-style:disc;padding-left:1rem;}
-ul li {margin:.25em 0;} // for font-size.
-
-// todo ul
-.article-checklist li:before {content:'';left:0;top:7px;width:1rem;height:1rem;background:url('/public/icons/Black_check.svg') no-repeat 0 0;background-size:9px;opacity:.5;}
+ul {padding-left:var(--space-4);}
+ul li {margin:var(--space-1) 0;} // for font-size.
 [data-align=horizontal] {display:flex;flex-wrap:wrap;}
-[data-align=horizontal] li {margin:0 2rem 0 0;}
-
-// todo span 
-.checklist {position: relative;margin-left:-3px;padding: 0px 0px 0px 25px;}
-.checklist span {display:inline-flex;align-items:center;justify-content:center;width:var(--size-tiny);height:var(--size-tiny);margin-right:.5rem;position:absolute;left:0;top:6px;}
-.checklist span i {display:inline-block;width:7px;height:3px;border-left:1px solid;border-bottom:1px solid;border-color:var(--gray800);vertical-align:middle;transform:translateY(-3px) rotate(-45deg);}
-
-.xlist i {display:inline-block;vertical-align:middle;width:var(--size-tiny);height:var(--size-tiny);position:relative;margin-right:.5rem;position:absolute;left:0;top:5px;}
-.xlist i:before {content:'';width:10px;height:.5px;background-color:var(--gray800);position:absolute;left:50%;top:50%;transform:translate(-50%, -50%) rotate(45deg);}
-.xlist i:after {content:'';width:.5px;height:10px;background-color:var(--gray800);position:absolute;left:50%;top:50%;transform:translate(-50%, -50%) rotate(45deg);}
+[data-align=horizontal] li {margin:0 var(--space-4) 0 0;}
 
 ol {}
-ol li {margin:.25rem 0;padding: 0 0 0 1rem;position:relative;counter-increment:listitem;}
+ol li {margin:var(--space-1) 0;padding:0 0 0 1rem;position:relative;counter-increment:listitem;}
 ol li:before {content: counter(listitem) '.';position:absolute;left:0;}
 ol li ol {margin:0 0 .5rem 0;}
 ol li ol li {counter-increment:sub-list-item;}
@@ -77,8 +59,6 @@ ol li ol li:before {content: counter(sub-list-item,lower-alpha) '.';}
 dl {display:flex;flex-wrap:wrap;}
 dl dt {margin:0 var(--space-2) 0 0;@include text-label;}
 dl dd {margin:0 var(--space-4) 0 0;}
-// dl dt {width:80px;margin:var(--space-05) var(--space-2) var(--space-05) 0;color:var(--color-text-light);}
-// dl dd {width:calc(100% - 80px - var(--space-4));margin:var(--space-05) 0;}
 
 svg {color:var(--gray800);}
 
@@ -86,13 +66,6 @@ svg {color:var(--gray800);}
 ::placeholder {color:var(--color-text-light);}
 
 // [hidden] {display:none !important;}
-
-
-// @media (--small) {
-//   html {font-size:12px;}
-// }
-
-.browser {text-align:center;padding:2rem;background:var(--red800);background:var(--color-background);position:fixed;left:0;right:0;bottom:0;z-index:var(--zindex-modal);}
 
 //backface-visibility:hidden
 // writing-mode: horizontal-tb / vertical-rl / vertical-lr;
@@ -112,13 +85,9 @@ svg {color:var(--gray800);}
 [aria-pressed=true] {} // 음소거 등
 [aria-modal=true] {}
 [aria-label=close] {}
-[role=listitem] {}
 
 .visually-hidden {width:1px;height:1px;clip:rect(1px 1px 1px 1px);overflow:hidden;position:absolute;user-select:none;} // if(true) 리더기가 무시. // speak: never;
 // [aria-hidden=false] {width:1px;height:1px;clip:rect(1px 1px 1px 1px);overflow:hidden;position:absolute;user-select:none;}
-
-
-
 
 @media print {
   /* For links in content, visually display the link */ 
@@ -126,6 +95,8 @@ svg {color:var(--gray800);}
     content: " (" attr(href) ")";
   }
 }
+
+.browser {text-align:center;padding:2rem;background:var(--red800);background:var(--color-background);position:fixed;left:0;right:0;bottom:0;z-index:var(--zindex-modal);}
 
 .cta-arrow {
   max-width: 67px;
@@ -163,11 +134,7 @@ svg {color:var(--gray800);}
 }
 
 
-
-.font-default {
-  font-family: san-serif;
-}
-
+.font-default {font-family:san-serif;}
 
 // todo
 // .resize-animation-stopper * {

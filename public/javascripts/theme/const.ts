@@ -19,12 +19,12 @@ export const isDarkTheme = () => document.body.classList.contains(DARK_THEME_CLA
 //   const newTheme = currentTheme === 'dark' ? 'light' : 'dark'
 
 //   // 최상위 엘리먼트에 설정, 로컬 스토리지에 설정을 저장
-//   document.documentElement.setAttribute('data-theme', newTheme)
+//   document.documentElement.setAttribute('data-style', newTheme)
 //   localStorage.setItem('theme', newTheme)
 // }
 
 // document.documentElement.classList.add('color-theme-in-transition')
-// document.documentElement.setAttribute('data-theme', theme)
+// document.documentElement.setAttribute('data-style', theme)
 
 // window.setTimeout(function() {
 //   document.documentElement.classList.remove('color-theme-in-transition')

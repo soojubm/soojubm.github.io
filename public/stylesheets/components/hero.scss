@@ -46,7 +46,7 @@
 
 .is-scrolled .hero-title {height:auto;animation:fadeup .4s ease .8s both;}
 .is-scrolled .hero-description {height:auto;animation:fadeup .4s ease .8s both;}
-.is-scrolled .hero-background {bottom: 0;transition: bottom .2s $bezier-base .6s;}
+.is-scrolled .hero-background {bottom: 0;transition: bottom .2s var(--bazier) .6s;}
 .is-scrolled .hero-obj1 {animation:scaleout .4s ease .8s both;}
 .is-scrolled .hero-obj2 {animation:scaleout .4s ease 1.4s both;}
 .is-scrolled .hero-obj3 {animation:scaleout .4s ease 1.2s both;}

@@ -3,8 +3,12 @@
     <div class="hero-background"></div>
     <h1 class="hero-title" style="display:flex;align-items:center;color:var(--color-text-light);">
       Dummies
-      <span class="selectbox-indicator" role="img" style="margin-left:.5rem;background:var(--color-background-weak);position:relative;right:auto;top:auto;"><i class="icon-caret"></i></span>
-
+      <span
+        class="selectbox-indicator"
+        role="img"
+        style="margin-left:.5rem;background:var(--color-background-weak);position:relative;right:auto;top:auto;"
+        ><i class="icon-caret"></i
+      ></span>
     </h1>
     <h1 class="hero-title">Hero Component의 description은<br />최대 두 줄까지 허용합니다.</h1>
     <p class="hero-description">히어로 섹션의 샘플. e.detail.originalEvent</p>
@@ -13,13 +17,12 @@
     </footer>
   </section>
 
-
-
-
-  <p>Note: Make sure the role of the element that serves as the container for the popup content is a menu, listbox, tree, grid or dialog and that the value of aria-haspopup matches the role of the popup container.</p>
+  <p>
+    Note: Make sure the role of the element that serves as the container for the popup content is a menu, listbox, tree, grid or dialog and that the
+    value of aria-haspopup matches the role of the popup container.
+  </p>
   <p>Elements with role combobox have an implicit aria-haspopup value of listbox.</p>
   <section class="component-body" style="padding:2rem var(--grid-margin);">
-
     <div class="textfield">
       <button class="textfield-prefix searchfield-prefix">
         <span class="material-symbols-outlined">mail </span>
@@ -79,13 +82,14 @@
       <select class="" id="select2" style="background:none;border:none;padding:0 var(--space-2) 0 0;font:inherit;color:var(--color-text);">
         <option class="select-option" value="select-option1">최신순</option>
       </select>
-      <span class="selectbox-indicator" role="img" style="background:var(--color-background-weak);position:relative;right:auto;top:auto;"><i class="icon-caret"></i></span>
+      <span class="selectbox-indicator" role="img" style="background:var(--color-background-weak);position:relative;right:auto;top:auto;"
+        ><i class="icon-caret"></i
+      ></span>
     </div>
 
     <br />
 
-    <div class="warningbox"
-    style="background-color:var(--color-background-weak);padding:1rem var(--grid-margin);font-size:var(--font-size-caption);">
+    <div class="warningbox" style="background-color:var(--color-background-weak);padding:1rem var(--grid-margin);font-size:var(--font-size-caption);">
       <div class="warningbox-background"></div>
       <ul>
         <li style="color:var(--color-text-light);">금융투자상품은 예금자보호법에 따라 예금보험공사가 보호하지 않습니다.</li>
@@ -190,7 +194,6 @@
       </footer>
     </form>
 
-
     <article class="tile-elevated" style="max-width:400px;z-index:1;">
       <h3 style="text-align:center;font-size:var(--font-size-subhead);">Ratings</h3>
       <div class="statistic-item tile-flat" aria-label="별점 5개 만점에 3.9개를 받았습니다." style="margin-top:.5rem;text-align:center;z-index:auto;">
@@ -227,7 +230,9 @@
     <br />
     <div style="max-width:400px;position:relative;">
       <h3 style="text-align:center;font-size:var(--font-size-subhead);">See this post in</h3>
-      <button class="" style="position:absolute;right:0;top:-.25rem;"><figure class="chip"><i class="icon-x"></i></figure></button>
+      <button class="" style="position:absolute;right:0;top:-.25rem;">
+        <figure class="chip"><i class="icon-x"></i></figure>
+      </button>
       <hr />
       <div class="item" role="listitem" data-size="large">
         <figure class="item-avatar"></figure>
@@ -248,7 +253,7 @@
       <h1 class="greeting-title">Hello, Stranger<i style="font-style:italic;">!</i></h1>
       <p class="greeting-description">Tender is the night.</p>
     </section>
-    
+
     <!-- <aside class="tile-flat">
       <p>
         todo. 페이지에서 인삿말과 함께 우측에 아바타나 아이콘을 배치하는 패턴이 트랜디. 이 패턴에서 아바타는 시각 정보가 아니라 링크로 사용(바텀
@@ -299,16 +304,16 @@
       </div>
       <article class="avatargroup" style="margin-bottom:0;justify-content:center;">
         <figure>
-          <img src="/public/images/springsteen.jpg" alt="">
+          <img src="/public/images/springsteen.jpg" alt="" />
         </figure>
         <figure>
-          <img src="/public/images/springsteen.jpg" alt="">
+          <img src="/public/images/springsteen.jpg" alt="" />
         </figure>
         <figure>
-          <img src="/public/images/springsteen.jpg" alt="">
+          <img src="/public/images/springsteen.jpg" alt="" />
         </figure>
         <figure>
-          <img src="/public/images/springsteen.jpg" alt="">
+          <img src="/public/images/springsteen.jpg" alt="" />
         </figure>
         <span class="avatargroup-label">Followed by 수줍이 외 4명</span>
       </article>
@@ -338,14 +343,18 @@
       <!-- todo -->
       <button class="item" data-size="medium" title="sign out" style="display:flex;align-items:center;text-align:left;">
         <figure class="item-avatar" style="background-image:none;">
-          <i class="icon-out"><span class="icon-out-door"></span></i>
+          <span class="material-symbols-outlined">
+            logout
+          </span>
         </figure>
         <span class="item-label">고객센터 및 도움말</span>
       </button>
       <hr role="separator" style="margin-left:-1rem;margin-right:-1rem;" />
       <button class="user-logout" title="sign out">
         <figure class="user-logout-icon">
-          <i class="icon-out"><span class="icon-out-door"></span></i>
+          <span class="material-symbols-outlined">
+            logout
+          </span>
         </figure>
         <span class="user-logout-label">로그아웃</span>
       </button>
@@ -422,13 +431,12 @@
       <button class="card-more" hidden><i class="icon-more"></i></button>
     </article>
 
-    <div class="" role="group" style="display:flex;">
-    </div>
+    <div class="" role="group" style="display:flex;"></div>
 
     <div class="file-attachment-item" style="max-width:400px;">
-      <figure class="file-attachment-item-image"><img src="/public/images/springsteen.jpg" alt=${file.name}></figure>
+      <figure class="file-attachment-item-image"><img src="/public/images/springsteen.jpg" alt="${file.name}" /></figure>
       <b class="file-attachment-item-name">${file.name}</b>
-      <small class="file-attachment-item-size" >${returnFileSize(file.size)}</small>
+      <small class="file-attachment-item-size">${returnFileSize(file.size)}</small>
       <button class="file-attachment-item-delete js-remove-this"><i class="icon-x"></i></button>
     </div>
     <div class="reactions" style="margin:1rem 0;">
@@ -455,7 +463,9 @@
         <h2 class="item-name">Gyeongsoo I</h2>
         <span class="item-description">유아이 디자이너</span>
         <button class="item-action is-active" style="right:2.25rem;"><span class="item-action-label">팔로잉</span></button>
-        <button class="chip" style="background:none;border:none;position:absolute;right:0;top:50%;transform:translateY(-50%)"><i class="icon-more"></i></button>
+        <button class="chip" style="background:none;border:none;position:absolute;right:0;top:50%;transform:translateY(-50%)">
+          <i class="icon-more"></i>
+        </button>
       </div>
     </div>
 
@@ -463,9 +473,7 @@
       <figure class="bookitem-cover">
         <img src="/public/images/springsteen.jpg" alt="" />
       </figure>
-      <h3 class="bookitem-name">
-        <span role="img" aria-label="">📙</span> ${item.title}
-      </h3>
+      <h3 class="bookitem-name"><span role="img" aria-label="">📙</span> ${item.title}</h3>
       <span class="bookitem-description">이미지의 크기가 다른 케이스</span>
       <hr />
       <p class="bookitem-byline">${item.author || '정보가 없습니다'}</p>
@@ -480,7 +488,7 @@
         <a class="keywords-group-keyword" href="#"><span class="keywords-group-keyword-label">조국</span></a>
         <a class="keywords-group-keyword" href="#"><span class="keywords-group-keyword-label">뉴닉</span></a>
         <a class="keywords-group-keyword" href="#"><span class="keywords-group-keyword-label">차별금지법</span></a>
-        <a class="keywords-group-keyword" href="#"><span class="keywords-group-keyword-label">추미매법무부장관</span class="keywords-group-keyword-label"></a>
+        <a class="keywords-group-keyword" href="#"><span class="keywords-group-keyword-label">추미매법무부장관</span></a>
       </div>
       <button class="button-elevated" style="margin-bottom:0;">
         <figure class="button-elevated-avatar">
@@ -513,7 +521,7 @@
 
     <article class="userlist" style="max-width:400px;padding:1rem;overflow:hidden;z-index:1;">
       <h1>팔로워</h1>
-        <!-- <a class="link-outside" href="#">모두 보기 (todo 위치)</a> -->
+      <!-- <a class="link-outside" href="#">모두 보기 (todo 위치)</a> -->
       <div class="share-group" role="group" style="margin-top:var(--space-3);margin-bottom:.5rem;">
         <button class="chip is-active"><span class="chip-label">필터링 1</span></button>
         <button class="chip"><span class="chip-label">필터링 2</span></button>
@@ -537,11 +545,15 @@
     </article>
 
     <div class="pricing-item" style="max-width:400px;padding:1rem;">
-      <span class="tag" data-role="accent" style="
+      <span
+        class="tag"
+        data-role="accent"
+        style="
       margin-left: -1.5rem;
       display: inline-flex;
       position: absolute;
-      top:var(--space-3);">
+      top:var(--space-3);"
+      >
         <figure class="tag-icon" role="img">🔥</figure>
         <small class="tag-label">Most Popular</small>
       </span>
@@ -561,7 +573,7 @@
       <button class="pricing-item-upgrade">업그레이드</button>
       <button class="pricing-item-more">And More...</button>
     </div>
-    
+
     <form class="subscribe" style="max-width:400px;padding:1rem;">
       <h2 class="subscribe-title">수줍이 뉴스레터</h2>
       <p class="subscribe-description">섭스크라이브 유아이 콤포넌트 입니다. <br />두 줄 단락을 위해 쓰고 있습니다.</p>
@@ -622,7 +634,7 @@
           <span>Startup</span>
         </div>
       </div>
-      
+
       <button class="button-elevated" style="margin:.25rem 0 0 0;">
         <figure class="button-elevated-avatar">🦄</figure>
         <span class="button-elevated-label">샘플 유아이</span>
@@ -654,25 +666,28 @@
       <br />
       <div class="textfield">
         <label class="textfield-label" for="">컬렉션 이름</label>
-        <input class="textfield-input" type="text" placeholder="컬렉션 이름">
+        <input class="textfield-input" type="text" placeholder="컬렉션 이름" />
       </div>
     </article>
 
     <section class="post-comment-list" style="max-width:400px;">
       <article class="post-comment-list-item" role="comment">
         <a class="post-comment-list-item-avatar" href="#">
-          <img src="/public/images/springsteen.jpg">
+          <img src="/public/images/springsteen.jpg" />
           <b class="post-comment-list-item-author" href="#">soojubm</b>
           <time class="post-comment-list-item-date" datetime="2016">1 day ago</time>
         </a>
-        <p class="post-comment-list-item-text">코멘트는 노출 순서와 정렬 기능 여부 갯수, 답글 스타일, 최초 노출형태, 신고/수정/삭제/아바타는 우선순위를 낮게 설정하고, 리뷰와 코멘트는 비슷한 구조이지만 별도의 컴포넌트로 관리되어야 한다. 또 있을까?</p>
-        
+        <p class="post-comment-list-item-text">
+          코멘트는 노출 순서와 정렬 기능 여부 갯수, 답글 스타일, 최초 노출형태, 신고/수정/삭제/아바타는 우선순위를 낮게 설정하고, 리뷰와 코멘트는
+          비슷한 구조이지만 별도의 컴포넌트로 관리되어야 한다. 또 있을까?
+        </p>
+
         <button class="button-elevated">
           <figure class="button-elevated-avatar">🦄</figure>
           <span class="button-elevated-label">샘플 유아이</span>
           <i class="button-elevated-helper icon-arrow"></i>
         </button>
-        
+
         <button class="post-comment-list-item-reply">답글 <small>7</small></button>
         <button class="post-comment-list-item-morevert js-toggle"><i class="icon-more"></i></button>
         <menu class="post-comment-list-item-menu">
@@ -680,17 +695,20 @@
           <button class="">삭제</button>
         </menu>
         <!-- 대댓글 샘플 -->
-        <article class="post-comment-list-item" role="comment">
-          <a class="post-comment-list-item-avatar" href="#"><img src="/public/images/springsteen.jpg"></a>
+        <div class="post-comment-list-item" role="comment">
+          <a class="post-comment-list-item-avatar" href="#"><img src="/public/images/springsteen.jpg"/></a>
           <a class="post-comment-list-item-author" href="#">soojubm</a>
           <time class="post-comment-list-item-date" datetime="2016">1 day ago</time>
-          <p class="post-comment-list-item-text">우와 처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요. 우와 처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요.</p>
+          <p class="post-comment-list-item-text">
+            우와 처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요. 우와 처음으로 댓글 남겨요! 댓글이 길어지면 어떻게
+            보일까요? 두 줄로 세 줄로 안녕하세요.
+          </p>
           <button class="post-comment-list-item-morevert js-toggle"><i class="icon-more"></i></button>
           <menu class="post-comment-list-item-menu">
             <button class="">수정</button>
             <button class="">삭제</button>
           </menu>
-        </article>
+        </div>
       </article>
     </section>
 
@@ -713,12 +731,15 @@
     <br />
 
     <figure class="tile-flat">
-      <q>I'm impressed by how GitHub Copilot seems to know exactly what I want to type next. GitHub Copilot is particularly helpful when working on React components, where it makes eerily accurate predictions. GitHub Copilot has become an indispensable part of my programmer toolbelt.</q>
+      <q
+        >I'm impressed by how GitHub Copilot seems to know exactly what I want to type next. GitHub Copilot is particularly helpful when working on
+        React components, where it makes eerily accurate predictions. GitHub Copilot has become an indispensable part of my programmer toolbelt.</q
+      >
       <figcaption style="margin:var(--space-3) 0 0 0;color:var(--color-text-light);">Byline</figcaption>
     </figure>
 
     <div class="graph" style="border:var(--border);border-radius:var(--radius);">
-      <div class="graph-title">1월 26일 <em>컴퓨터통신 분야</em>에서는<br><em>7백명의 지식iN</em>들이 답변하셨습니다.</div>
+      <div class="graph-title">1월 26일 <em>컴퓨터통신 분야</em>에서는<br /><em>7백명의 지식iN</em>들이 답변하셨습니다.</div>
       <div class="graph-item">
         <span class="graph-item-value">40%</span>
         <div class="graph-item-bar"></div>
@@ -745,48 +766,52 @@
       <em>15,799원 추가 적립 혜택</em>이 생겼어요!
     </div>
 
-      <p>워크플로우입니다. changelog: 클릭하고 싶지 않은 형태로 변경 2021.10</p>
-      <p>타임라인(역순)/히스토리 맥락. 확장, 링크, indentation</p>
-      <blockquote>
-        <p>css속성으로 -webkit-appearance: slider-vertical slider 속성 값을 사용하기 때문에 slider는 carousel로 명명. input type="range" 형태를 stepper로 명명하는 경우가 있음.</p>
-      </blockquote>
+    <p>워크플로우입니다. changelog: 클릭하고 싶지 않은 형태로 변경 2021.10</p>
+    <p>타임라인(역순)/히스토리 맥락. 확장, 링크, indentation</p>
+    <blockquote>
+      <p>
+        css속성으로 -webkit-appearance: slider-vertical slider 속성 값을 사용하기 때문에 slider는 carousel로 명명. input type="range" 형태를 stepper로
+        명명하는 경우가 있음.
+      </p>
+    </blockquote>
 
-      <section class="step">
-        <div class="step-item is-active">
-          <span class="step-item-icon">1</span>
-          <h3 class="step-item-title">장바구니</h3>
-          <p class="step-item-description">대통령은 국가의 원수이며, 외국에 대하여 국가를 대표한다. 국가원로자문회의의 조직·직무범위 기타 필요한 사항은 법률로 정한다. 국가는 대외무역을 육성하며, 이를 규제·조정할 수 있다.</p>
-        </div>
-        <div class="step-item">
-          <span class="step-item-icon">2</span>
-          <h3 class="step-item-title">결제</h3>
-        </div>
-        <!-- <div class="step-space">
-          <span class="step-space-dot"></span>
-          <span class="step-space-dot"></span>
-          <span class="step-space-dot"></span>
-        </div> -->
-        <div class="step-item">
-          <span class="step-item-icon">3</span>
-          <h3 class="step-item-title">주문완료</h3>
-        </div>
-      </section>
+    <section class="step">
+      <div class="step-item is-active">
+        <span class="step-item-icon">1</span>
+        <h3 class="step-item-title">장바구니</h3>
+        <p class="step-item-description">
+          대통령은 국가의 원수이며, 외국에 대하여 국가를 대표한다. 국가원로자문회의의 조직·직무범위 기타 필요한 사항은 법률로 정한다. 국가는
+          대외무역을 육성하며, 이를 규제·조정할 수 있다.
+        </p>
+      </div>
+      <div class="step-item">
+        <span class="step-item-icon">2</span>
+        <h3 class="step-item-title">결제</h3>
+      </div>
+      <!-- <div class="step-space">
+        <span class="step-space-dot"></span>
+        <span class="step-space-dot"></span>
+        <span class="step-space-dot"></span>
+      </div> -->
+      <div class="step-item">
+        <span class="step-item-icon">3</span>
+        <h3 class="step-item-title">주문완료</h3>
+      </div>
+    </section>
 
-      <section class="step is-vertical">
-        <div class="step-item is-active">
-          <span class="step-item-icon">1</span>
-          <h3 class="step-item-title">장바구니</h3>
-        </div>
-        <div class="step-item">
-          <span class="step-item-icon">2</span>
-          <h3 class="step-item-title">결제</h3>
-        </div>
-        <div class="step-item">
-          <span class="step-item-icon">3</span>
-          <h3 class="step-item-title">주문완료</h3>
-        </div>
-      </section>
-
-    </article>
+    <section class="step is-vertical">
+      <div class="step-item is-active">
+        <span class="step-item-icon">1</span>
+        <h3 class="step-item-title">장바구니</h3>
+      </div>
+      <div class="step-item">
+        <span class="step-item-icon">2</span>
+        <h3 class="step-item-title">결제</h3>
+      </div>
+      <div class="step-item">
+        <span class="step-item-icon">3</span>
+        <h3 class="step-item-title">주문완료</h3>
+      </div>
+    </section>
   </section>
 </main>

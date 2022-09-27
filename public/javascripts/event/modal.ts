@@ -76,11 +76,11 @@ function modal({ selector: trigger }: Parameter) {
 
   function openModal() {
     previousPageYOffset = window.pageYOffset
-    document.body.classList.add('is-modal-visible', 'body-lock')
+    document.body.classList.add('is-modal-visible', 'lock-scroll')
     document.body.style.top = `-${previousPageYOffset}px`
   }
   function closeModal() {
-    document.body.classList.remove('is-modal-visible', 'body-lock')
+    document.body.classList.remove('is-modal-visible', 'lock-scroll')
 
     modalContainer!.innerHTML = ''
     window.scrollTo(0, previousPageYOffset)

@@ -9,7 +9,7 @@
 .navbar-menu-item > span {display:block;margin-top:-.5rem;color:inherit;@include text-label;}
 .navbar-menu-item:before {display:none;}
 .navbar-menu-item i {display:none;margin-left:8px;}
-.navbar-menu-item menu {display:flex;justify-content:center;justify-content:flex-start;position:fixed;left:0;right:0;top:-240px;z-index:var(--zindex-menu);transition:$transition-base;}
+.navbar-menu-item menu {display:flex;justify-content:center;justify-content:flex-start;position:fixed;left:0;right:0;top:-240px;z-index:var(--zindex-menu);transition:var(--transition-base);}
 .navbar-menu-item menu a {display:flex;align-items:center;margin:var(--space-2) 0;color:var(--color-text);opacity:0;position:relative;z-index:var(--zindex-default);}
 .navbar-menu-item menu a:hover {@include hover-item;}
 .navbar-menu-item menu a.is-current {@include hover-item;}

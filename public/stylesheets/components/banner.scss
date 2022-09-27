@@ -7,8 +7,8 @@
 .banner-button {margin:0 0 var(--space-after-description) 0;@include button-text;}
 // 버튼이 생략될 수 있다.
 
-.banner[data-theme=colored] .banner-title {color:var(--gray0);}
-.banner[data-theme=colored] .banner-description {color:var(--gray0);opacity:.75;}
+.banner[data-style=colored] .banner-title {color:var(--gray0);}
+.banner[data-style=colored] .banner-description {color:var(--gray0);opacity:.75;}
 
 @media (--small) {
   // .banner {flex-wrap:wrap;}

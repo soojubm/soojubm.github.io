@@ -77,11 +77,14 @@ button {@include reset-button;}
 .button-tertiary {@include button-tertiary;}
 .button-text {@include button-text;}
 
-
+@mixin icon-button {@include avatar-medium;}
+@mixin icon-button-small {
+  @include avatar-small;
+  span {font-size:20px;}
+}
 // todo naming
-.icon-button[data-size=medium] {@include avatar-medium;}
-.icon-button[data-size=small] {@include avatar-small;}
-.icon-button[data-size=small] span {font-size:20px;}
+.icon-button[data-size=medium] {@include icon-button;}
+.icon-button[data-size=small] {@include icon-button-small;}
 
 // ! backButton closeButton :: back close 아이콘은 어차피 단독으로 쓰이지 않는다!
 // ! 모바일에서 100%로 되는 컴포넌트가 있고 아닌 컴포넌트가 있다.

@@ -10,9 +10,9 @@
 
 
 @mixin textfield-prefix {
-  @include avatar-small;background:none !important;position:absolute;left:var(--space-3);top:36px;pointer-events:none;
+  @include icon-button-small;background:none !important;position:absolute;left:var(--space-3);top:36px;pointer-events:none;
 }
-@mixin textfield-surfix {@include avatar-small;position:absolute;right:var(--space-4);top:37px;}
+@mixin textfield-surfix {@include icon-button-small;position:absolute;right:var(--space-4);top:37px;}
 
 .textfield-group {display:flex;justify-content:space-between;}
 .textfield-group .textfield {width:calc(50% - var(--space-1))}
@@ -35,10 +35,8 @@
 .textfield-prefix {@include textfield-prefix;background:var(--color-background-weak);}
 .textfield-prefix ~ .textfield-input {padding-left:calc(var(--size-medium) + var(--space-after-avatar-medium));}
 .selectbox-indicator {@include textfield-surfix;pointer-events:none;}
-.textfield-clear {@include avatar-small;@include textfield-surfix;top:11px;}
-.textfield-clear .icon-x:before {background-color:var(--color-text-light);}
-.textfield-clear .icon-x:after {background-color:var(--color-text-light);}
-.textfield-clear {display:none;}
+
+.textfield-clear {@include icon-button-small;@include textfield-surfix;top:11px;display:none;}
 .textfield-input:focus + .textfield-clear {display:flex;}
 
 .searchfield {}

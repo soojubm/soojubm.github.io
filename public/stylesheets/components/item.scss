@@ -32,12 +32,9 @@
 .item-delete {@include chip;position:absolute;right:0;top:0;}
 .item-delete:hover {}
 
-.item-icon {@include item-icon;color:var(--color-primary);transform:translateY(-50%) scale(.8);}
+.item-icon {@include item-icon;}
 .item-icon-label {} // ! action-label
 
-// todo ... checkiton
-.item-icon .icon-chevron {margin:-1px 0 0 var(--space-1);border-color:var(--color-primary);}
-.is-gray.item-icon .icon-chevron {border-color:var(--icon-background);}
 // todo signify
 
 .item[data-align=vertical] {width:auto;text-align:center;}
@@ -49,7 +46,7 @@
 [data-size=huge] .item-avatar {@include item-avatar-huge;}
 [data-size=huge] .item-name {@include text-subhead;}
 [data-size=large] .item-avatar {@include item-avatar-large;}
-[data-size=large] .item-name {font-weight:var(--font-weight-normal);font-size:var(--font-size-body);}
+[data-size=large] .item-name {font-weight:var(--font-weight-normal);font-size:var(--font-size-body);line-height:var(--font-line-height-small);}
 [data-size=medium] .item-avatar {@include item-avatar-medium;}
 [data-size=medium] .item-name {line-height:var(--size-medium);}
 [data-size=small] .item-avatar {@include item-avatar-small;}

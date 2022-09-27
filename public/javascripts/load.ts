@@ -1,10 +1,10 @@
 // todo function
 export function lockBodyElement() {
-  document.body.classList.add('body-lock')
+  document.body.classList.add('lock-scroll')
 }
 
 export function unlockBodyElement() {
-  document.body.classList.remove('body-lock')
+  document.body.classList.remove('lock-scroll')
 }
 
 export function detectLoad() {

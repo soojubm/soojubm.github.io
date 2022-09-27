@@ -1,44 +1,86 @@
-<main class="setting" role="menu">
+<main class="setting js-tab" role="menu">
   <!-- <aside class="setting-background"></aside> -->
-  <!-- <p class="setting-head-title">프로필을 완성하고 맞춤형 콘텐츠를</p> -->
-  <!-- <p>Your name appears on your Profile page, as your byline, and in your responses. It is a required field.</p> -->
-  <article class="user" style="text-align:left;">
+  <p class="setting-head-title">프로필을 완성하고 맞춤형 콘텐츠를</p>
+  <p>Your name appears on your Profile page, as your byline, and in your responses. It is a required field.</p>
+  <!-- <article class="user" style="text-align:left;">
     <figure class="profile-user-avatar"></figure>
     <h2 class="profile-user-name">수줍이</h2>
     <span class="profile-user-id">soojubm@gmail.com</span>
     <span class="profile-user-job">UI Designer</span>
-  </article>
+  </article> -->
+
   <br />
-  <div class="item" data-size="medium" role="menuitem">
-    <figure class="item-avatar"></figure>
-    <span class="item-label">개인정보</span>
-    <!-- <span class="item-icon"> <b hidden>변경하기</b> <i class="icon-arrow"></i> </span> -->
+
+  <ul>
+    <li>설정이 많지 않다면 원 페이지. 프로필 수정은 설정이 아닌 프로필 페이지에서 진입할 수 있다.</li>
+    <li>사이드바(또는 탭) vs 깊은 댑스 (모바일 친화)</li>
+    <li>writing. 개인정보 vs 프로필. 개인정보는 공개 프로필에 포함되지 않아야 하는 정보. 명확하게.</li>
+    <li>계정 탈퇴 등의 링크는 별로의 url이 존재하는 것이 좋다.</li>
+  </ul>
+
+  <br />
+
+  <div class="item tile-elevated-small" data-size="large" role="listitem" style="z-index:auto;">
+    <figure class="item-avatar" style="background-image:none;">
+      <span class="material-symbols-outlined">
+        badge
+      </span>
+    </figure>
+    <span class="item-label">사용자 정보</span>
+    <p class="item-description">전자 메일, 일정, 연락처에서 사용하는 계정</p>
   </div>
-  <div class="item" data-size="medium" role="menuitem">
+  <div class="item" data-size="medium" role="menuitem" style="margin-left:.5rem;">
+    <figure class="item-avatar"></figure>
+    <span class="item-label">이메일</span>
+    <!-- <span class="setting-item-icon"> <b hidden>변경하기</b> <i class="icon-arrow"></i> </span> -->
+  </div>
+  <div class="item" data-size="medium" role="menuitem" style="margin-left:.5rem;">
+    <figure class="item-avatar"></figure>
+    <span class="item-label">일정</span>
+    <!-- <span class="setting-item-icon"> <b hidden>변경하기</b> <i class="icon-arrow"></i> </span> -->
+  </div>
+  <div class="item" data-size="medium" role="menuitem" style="margin-left:.5rem;">
     <figure class="item-avatar"></figure>
     <span class="item-label">비밀번호 변경</span>
     <!-- <span class="setting-item-icon"> <b hidden>변경하기</b> <i class="icon-arrow"></i> </span> -->
   </div>
-
-  <br />
-  <ul>
-    <li>설정이 많지 않다면 원 페이지.</li>
-    <li>사이드바(또는 탭) vs 깊은 댑스 (모바일 친화)</li>
-    <li>writing. 개인정보 vs 프로필. 개인정보는 공개 프로필에 포함되지 않아야 하는 정보.</li>
-    <li>프로필 수정은 프로필 페이지. 설정은.</li>
-    <li>프로필 사진 바꾸기</li>
-    <li>arrow icon</li>
-  </ul>
-
   <div class="item tile-elevated-small" data-size="large" role="listitem" style="z-index:auto;">
-    <figure class="item-avatar"></figure>
+    <figure class="item-avatar" style="background-image:none;">
+      <span class="material-symbols-outlined">
+        campaign
+      </span>
+    </figure>
     <span class="item-label">알림</span>
     <p class="item-description">앱 및 시스템의 할인</p>
-    <span class="item-icon" style="margin-right:.5rem;color:var(--color-text);font-size:var(--font-size-body);"
-      >설정하기<i class="icon-chevron" style="margin-left:.5rem;border-color:var(--color-text);transform: rotate(-45deg) scale(1);"></i
-    ></span>
+  </div>
+  <div class="item" data-size="medium" role="menuitem" style="margin-left:.5rem;">
+    <figure class="item-avatar"></figure>
+    <span class="item-label">알알림</span>
+    <!-- <span class="item-icon"> <b hidden>변경하기</b> <i class="icon-arrow"></i> </span> -->
   </div>
 
+  <br /><br />
+
+  <h3 class="setting-subhead">프로필 사진</h3>
+  <div class="setting-item">
+    <figure class="profile-user-avatar" style="float:none;"></figure>
+    <div class="" role="group" style="margin-top:.5rem;margin-bottom:.5rem;">
+      <button class="chip"><span class="chip-label">프로필 사진 추가 / 업데이트</span></button>
+      <button class="chip">
+        <span class="material-symbols-outlined">
+          delete
+        </span>
+      </button>
+    </div>
+    <p>10MB 이내의 JPEG, PNG, GIF 형식이어야 합니다.</p>
+    <button>Go to your persnal profile</button>
+    <!-- <aside class="callout" style="margin:.75rem 0 0 0;padding:.75rem;border:var(--radius);background:var(--green100);">
+      <p>프로필 사진을 업데이트했습니다. 멋져 보이네요, soojubm님!</p>
+      <p>프로필 사진을 삭제했습니다.</p>
+    </aside> -->
+  </div>
+
+  <br />
   <br />
 
   <h3 class="setting-subhead">개인정보</h3>
@@ -49,45 +91,77 @@
       arrow_forward
     </span>
   </div>
-
   <div class="setting-item">
     <h2 class="setting-item-label">배송지</h2>
     <div class="setting-item-value">
+      배송지를 관리하고 기본 배송지를 설정하세요.
+    </div>
+    <span class="setting-item-icon material-symbols-outlined">arrow_forward</span>
+  </div>
+  <div style="display:flex;">
+    <div class="tile-flat" style="width:calc(50% - .375rem);margin-top:0;margin-right:.75rem;">
+      <div class="radio">
+        <input type="radio" id="gender-etc" name="gender" value="" checked />
+        <label for="gender-etc" title="Video Killed the Radio Button">집</label>
+      </div>
+      <b></b>
       <p class="setting-item-value-username">이경수</p>
       <p class="setting-item-value-address">[07655]</p>
       <p class="setting-item-value-address">서울특별시 강서구 까치산로 182</p>
       <p class="setting-item-value-phone">010-3121-7045</p>
+
+      <footer>
+        <button class="chip">삭제</button>
+      </footer>
     </div>
   </div>
-  <p>memeo: 배송지 여러 개. 기본 배송지.</p>
+  <p>라디오 indicator는 별도의 컴포넌트어야 한다.</p>
 
   <br />
   <br />
 
-  <h2 class="setting-subhead">뉴니커 정보</h2>
-  <!-- <p class="setting-body-description">뉴니커 정보를 입력하고 뽐내보세요.</p> -->
+  <h2 class="setting-subhead">프로필</h2>
+  <!-- <p class="setting-description">뉴니커 정보를 입력하고 뽐내보세요.</p> -->
+  <div class="setting-item">
+    <h2 class="setting-item-label">닉네임</h2>
+    <div class="setting-item-value">수줍이</div>
+    <span class="setting-item-icon material-symbols-outlined">arrow_forward</span>
+  </div>
+  <small style="display:block;margin:-.1255rem 0 var(--space-3) 0;line-height:var(--font-line-height-small);">
+    soojubm 닉네임을 만드세요! 닉네임을 중국어, 일본어, 한국어 문자로 설정하면 60일 동안 변경할 수 없습니다 — 취소할 수 없습니다! Twitch 이용규약을
+    위반한 닉네임은 계정이 영구정지될 수 있으니 주의하세요.
+  </small>
   <div class="setting-item">
     <h2 class="setting-item-label">이모지</h2>
     <div class="setting-item-value">🐻</div>
+    <span class="setting-item-icon material-symbols-outlined">arrow_forward</span>
   </div>
   <div class="setting-item">
     <h2 class="setting-item-label">관심분야</h2>
     <div class="setting-item-value">문화/예술, 인권, 환경</div>
+    <span class="setting-item-icon material-symbols-outlined">arrow_forward</span>
   </div>
-  <p>관심있는 분야의 콘텐츠를 추천 받으세요.</p>
+  <small style="display:block;margin:-.1255rem 0 var(--space-3) 0;line-height:var(--font-line-height-small);">
+    관심있는 분야의 콘텐츠를 추천 받으세요.
+  </small>
+  <p></p>
 
   <br />
   <br />
 
-  <h2 class="setting-subhead">비밀번호 변경</h2>
+  <h2 class="setting-subhead">보안</h2>
   <div class="setting-item">
-    <h2 class="setting-item-label">비밀번호</h2>
-    <div class="setting-item-value" style="letter-spacing:.25rem;">••••••••</div>
+    <h2 class="setting-item-label">비밀번호 변경</h2>
+    <div class="setting-item-value"><a href="">비밀번호를 변경</a>하세요. 강력한 비밀번호로 보안을 강화하세요.</div>
+    <span class="setting-item-icon material-symbols-outlined">arrow_forward</span>
   </div>
-  <p>비밀번호 변경 관련 안내를 해주어도 좋겠다.</p>
+  <small style="display:block;margin:-.1255rem 0 var(--space-3) 0;line-height:var(--font-line-height-small);">
+    비밀번호 변경 관련 안내를 해주어도 좋겠다. 비밀번호는 설정, 분실 시 이메일 모두 동일할 수 있을까.
+  </small>
 
   <br />
   <br />
+
   <h2 class="setting-subhead">뉴스레터</h2>
   <div class="setting-toggle">
     <h2 class="setting-toggle-label">시사 뉴스레터</h2>
@@ -96,33 +170,24 @@
       <label for="switch1" title="Receive weekly newsletter">시사 뉴스레터</label>
     </span>
   </div>
-  <p>매 주 월요일, 수요일, 금요일 아침에 받아볼 수 있어요.</p>
-  <p>todo 클릭 영역..</p>
-
-  <h2>Membership</h2>
-  <h3>Upgrade to Medium membership</h3>
-  <p>Subscribe for unlimited access to the smartest writers and biggest ideas on Medium.</p>
+  <small style="display:block;margin:-.1255rem 0 var(--space-3) 0;line-height:var(--font-line-height-small);">
+    매 주 월요일, 수요일, 금요일 아침에 받아볼 수 있어요. todo 클릭 영역..
+  </small>
 
   <br />
-
   <br />
 
-  <div class="tile-flat">
-    <span style="display:block;width:100%;color:var(--red800);text-align:center;">로그아웃</span>
-  </div>
-
-  <h2 class="setting-subhead">계정삭제</h2>
+  <h2 class="setting-subhead">계정삭제 vs 계정비활성화</h2>
   <div class="setting-item">
-    <p>
-      Permanently remove your Personal Account and all of its contents from the Vercel platform. This action is not reversible, so please continue
-      with caution.
-    </p>
-    <p class="danger-button" style="margin:var(--space-4) 0 0 0;">계정을 삭제하겠습니다</p>
+    <h2 class="setting-item-label">계정 비활성화</h2>
+    <div class="setting-item-value">계정 비활성화는 계정 <a href="">비활성화 페이지</a>에서 할 수 있습니다.</div>
+    <span class="setting-item-icon material-symbols-outlined">arrow_forward</span>
   </div>
+
+  <span class="button-tertiary">로그아웃</span>
 
   <div>
     <br /><br />
-
     <header class="titlebar js-titlebar" role="navigation" style="padding:0;">
       <div class="titlebar-background"></div>
       <button class="titlebar-back" onclick="javascript:window.location.href='/';">
@@ -134,9 +199,31 @@
     <div class="is-opened" role="button" style="flex-wrap:wrap;box-shadow:none;border:none;padding:1rem 0;">
       <form class="setting-item-form" style="padding:0;">
         <h1 style="line-height:var(--font-line-height-small);">개인 및 계정 정보</h1>
+        <p style="margin:var(--space-after-subhead) 0 0 0;">
+          잠시 Twitch를 쉬고 싶으세요? 이미 준비되어 있습니다! 계정을 비활성화하면 프로필과 콘텐츠가 임시로 비활성화되며 유저 정보는 삭제되지
+          않습니다. 나중에 마음이 바뀌면 계정에 다시 로그인하여 프로필을 다시 활성화할 수 있습니다.
+        </p>
       </form>
+      <hr />
+      <fieldset role="radiogroup">
+        <legend hidden>radiogroup</legend>
+
+        <div class="radio">
+          <input type="radio" id="gender-etc" name="gender" value="" checked />
+          <label for="gender-etc" title="Video Killed the Radio Button">기타</label>
+        </div>
+        <div class="radio">
+          <input type="radio" id="gender-man" name="gender" value="" />
+          <label for="gender-man" title="Video Killed the Radio Button">남성</label>
+        </div>
+        <div class="radio">
+          <input type="radio" id="gender-woman" name="gender" value="" />
+          <label for="gender-woman" title="Video Killed the Radio Button">여성</label>
+        </div>
+      </fieldset>
     </div>
 
+    <br />
     <br />
 
     <header class="titlebar js-titlebar" role="navigation" style="padding:0;">
@@ -153,10 +240,10 @@
       </button>
     </header>
     <div class="is-opened" role="button" style="flex-wrap:wrap;box-shadow:none;border:none;padding:1rem 0;">
+      <div>설정 - 프로필 - 이름 todo</div>
       <form class="setting-item-form" style="padding:0;">
         <br />
         <h1 style="line-height:var(--font-line-height-small);">어떻게<br />불러드릴까요?</h1>
-
         <p style="margin:var(--space-after-subhead) 0 0 0;">
           성별 정보는 Google이 사용자를 지칭하는 방식을 포함해 Google 서비스에서 맞춤설정된 환경을 제공하는 데 사용될 수 있습니다.
           <a href="">자세히 알아보기</a>
@@ -169,25 +256,6 @@
           <input class="textfield-input" type="text" id="username" placeholder="수줍이" aria-describedby="error" aria-invalid="true" />
           <small class="textfield-helper is-error" role="alert"></small>
         </div>
-
-        <br />
-
-        <fieldset role="radiogroup">
-          <legend hidden>radiogroup</legend>
-
-          <div class="radio tile-elevated">
-            <input type="radio" id="gender-etc" name="gender" value="" checked />
-            <label for="gender-etc" title="Video Killed the Radio Button">기타</label>
-          </div>
-          <div class="radio tile-elevated">
-            <input type="radio" id="gender-man" name="gender" value="" />
-            <label for="gender-man" title="Video Killed the Radio Button">남성</label>
-          </div>
-          <div class="radio tile-elevated">
-            <input type="radio" id="gender-woman" name="gender" value="" />
-            <label for="gender-woman" title="Video Killed the Radio Button">여성</label>
-          </div>
-        </fieldset>
         <!-- <footer class="setting-item-foot">
             <button class="setting-item-foot-confirm">저장</button>
             <button class="setting-item-foot-cancel" type="button">취소</button>

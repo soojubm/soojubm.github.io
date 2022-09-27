@@ -1,4 +1,4 @@
-.post {@include layout-medium;max-width:720px;padding:40px var(--grid-margin);} // img - margin
+.post {@include layout-medium;padding:40px var(--grid-margin);} // img - margin
 .post-head {position:relative;}
 .post-head-category {display:flex;align-items:center;@include link-outside;position:relative;}
 .post-head-category:hover {}

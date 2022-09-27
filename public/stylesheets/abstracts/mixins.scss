@@ -79,9 +79,9 @@
   position: relative;
 }
 
-@mixin layout-large {@include layout(1200px);}
-@mixin layout-medium {@include layout(640px);}
-@mixin layout-small {@include layout(480px);}
+@mixin layout-large {@include layout(var(--layout-width-large));}
+@mixin layout-medium {@include layout(var(--layout-width-small));}
+@mixin layout-small {@include layout(var(--layout-width-tiny));}
 
 // 그냥나열되는경우(display:flex flex-wrap vs inline-block) 마진중첩서로 다르게 적용이 된다.
 // bleeding chip, slider 사용함. 간격을 variables로.
@@ -104,16 +104,18 @@
   &::-webkit-scrollbar {display:none;}
 }
 
-
-@mixin tag-group {@include group;}
+// todo .25rem
+@mixin tag-group {
+  display:flex;flex-wrap:wrap;margin:var(--space-groupitem-minus);
+  > * {margin:var(--space-groupitem)}
+}
 @mixin chip-group {@include group;}
 [role=group] {@include group;}
 
 
-// todo...
 .tag-group {@include tag-group;}
 .chip-group {@include group;}
-.chip-group[data-align=bleed] {@include group-bleeding;}
+.chip-group[data-align=bleed], 
 [role=group][data-align=bleed] {@include group-bleeding;}
 
 .button-group {@include group;}

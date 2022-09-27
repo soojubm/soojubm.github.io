@@ -29,8 +29,6 @@ const modal = ({ selector: trigger }: Parameter) => ({
         this.showModal(nextElementSibling, pageYOffset)
         closeTrigger.addEventListener('click', this.backHistory)
 
-
-
         window.addEventListener('popstate', () => {
           this.closeModal(nextElementSibling, pageYOffset)
         })
@@ -57,11 +55,11 @@ const modal = ({ selector: trigger }: Parameter) => ({
     this.unlockBody(pageYOffset)
   },
   lockBody(pageYOffset) {
-    document.body.classList.add('body-lock')
+    document.body.classList.add('lock-scroll')
     document.body.style.top = `-${pageYOffset}px`
   },
   unlockBody(pageYOffset) {
-    document.body.classList.remove('body-lock')
+    document.body.classList.remove('lock-scroll')
     window.scrollTo(0, pageYOffset)
   },
 })
