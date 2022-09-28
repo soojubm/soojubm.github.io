@@ -6,28 +6,7 @@
 // todo 사파리에서 버튼 클릭 효과 제가
 // :valid / :invalid
 // 년도 월 일 순서로 포커싱 됨
-// breadcrumb 등 상하 잘림
 // 사파리의 인풋은 기본이 검정임. 그래서 텍스트도 흰색.
-
-// button.visually-hidden:focus,
-// input[type=submit].visually-hidden:focus {
-//   position: fixed;
-//   top: 10px;
-//   left: 10px;
-//   clip: unset;
-//   width: unset;
-//   height: unset;
-//   border: 3px solid;
-//   padding: 5px;
-//   background: var(--color-background);
-// }
-
-// .focus-outline {
-//   outline-width: 1px;
-//   outline-style: auto;
-//   outline-color: Highlight;
-//   outline-color: -webkit-focus-ring-color;
-// }
 
 // todo...
 input:focus-visible {outline: 0;}
@@ -61,13 +40,10 @@ input[type=search]::-webkit-search-cancel-button,
 input[type=search]::-webkit-search-results-button,
 input[type=search]::-webkit-search-results-decoration {display:none;}
 
-
-
 // rem 으로 모듈화하기 어렵다. ex 1.5rem => top:0.125rem
 // line-heght로 리셋스타일에 종속되지 않도록 함. + block
 // height 테이블 내에서 세로 정렬에 필요
 // nextjs + css module에서 type selector 이슈 .checkbox-input / .checkbox-label
-
 // ! :focus
 
 .checkbox,.radio {display:block;position:relative;}
@@ -84,11 +60,6 @@ input[type=checkbox][indeterminate=true] + label:before,
 input[type=checkbox][data-indeterminate=true] + label:before {border-color:var(--green800);background:var(--green100);}
 input[type=checkbox][indeterminate=true] + label:after,
 input[type=checkbox][data-indeterminate=true] + label:after {display:block;width:8px;background:var(--color-primary);border:none;left:4px;top:48%;transform:rotate(0deg);}
-
-// .is-right input[type=checkbox] + label {display:block;height:auto;}
-// .is-right input[type=checkbox] + label figure {margin:0 0 var(--space-2);}
-// .is-right input[type=checkbox] + label:before {content:'';left:auto;right:var(--space-4);}
-// .is-right input[type=checkbox] + label:after {content:'';left:auto;right:var(--space-4);}
 
 input[type=radio] {width:0;height:0;opacity:0;position:absolute;}
 input[type=radio] + label {display:flex;align-items:center;height:var(--size-medium);padding-left:calc(var(--size-tiny) + var(--space-2));line-height:1rem;position:relative;}
@@ -147,8 +118,6 @@ input[type=checkbox]:checked + label + * {display:block;margin:var(--space-2) 0;
   }
 }
 
-
-
 .range {}
 .range input[type=range] {width:100%;height:4px;background:var(--color-background-weak);appearance:none;-webkit-appearance:none;}
 .range input[type=range]::-webkit-slider-thumb {appearance:none;width:16px;height:16px;padding:4px;background:var(--red800);border-radius:var(--radius);cursor:pointer;appearance:none;-webkit-appearance:none;}
@@ -175,25 +144,28 @@ input[type=checkbox][role=switch]:disabled:checked + label:after {left:30px;}
 .theme-dark .night {top:0;transition-delay:.3s;}
 
 
-.boxed-form {}
-.boxed-form h4 {margin:2rem 0 var(--space-3) 0;}
-.boxed-form div {background:var(--color-background);padding:1rem 2rem 1.25rem;border:var(--border);}
-.boxed-form div:nth-of-type(1) {border-radius:var(--radius);border-bottom-left-radius:0;border-bottom-right-radius:0;}
-.boxed-form div:nth-last-of-type(1) {border-radius:var(--radius);border-top-left-radius:0;border-top-right-radius:0;}
-.boxed-form div label {margin:0;color:var(--color-text-light);}
-.boxed-form div input {margin-top:-2px;padding:0;background:inherit;border:none;}
-.boxed-form div + div {margin-top:-1px;}
+progress[value] {
+  border: 0;
+  background-color: #bbb;
+  -webkit-appearance: none;
+}
 
-.filter {}
-.filter-title {margin:0 0 var(--space-after-title) 0;@include text-title;}
-.filter-fieldset {margin:1rem 0;padding:2.25rem 0 0;position:relative;}
-.filter-fieldset-legend {@include text-subhead;position:absolute;top:0;}
-.filter-fieldset-description {margin:-.125rem 0 var(--space-3) 0;color:var(--color-text-light);}
-.filter-foot {display:flex;margin:2rem 0 0 0;}
-.filter-foot-confirm {@include button-secondary;margin:0 var(--space-after-button) 0 0;}
-.filter-foot-reset {@include button-text;}
+progress[value]::-webkit-progress-bar {
+  background-color: #bbb;
+}
 
-// file
+progress[value]::-webkit-progress-value {
+  background: rebeccapurple;
+}
+progress[value]::-moz-progress-bar { 
+  background: rebeccapurple;
+}
+
+progress:not([value]) {
+  /* indeterminate styles */
+}
+
+// custom file
 input[type=file] {width:0;height:0;opacity:0;position:absolute;}
 input[type=file] + label {}
 input[type=file] + label:after {display:none;}
@@ -261,23 +233,23 @@ input[type=file] + label:after {display:none;}
   }
 }
 
-progress[value] {
-  border: 0;
-  background-color: #bbb;
-  -webkit-appearance: none;
-}
 
-progress[value]::-webkit-progress-bar {
-  background-color: #bbb;
-}
+// button.visually-hidden:focus,
+// input[type=submit].visually-hidden:focus {
+//   position: fixed;
+//   top: 10px;
+//   left: 10px;
+//   clip: unset;
+//   width: unset;
+//   height: unset;
+//   border: 3px solid;
+//   padding: 5px;
+//   background: var(--color-background);
+// }
 
-progress[value]::-webkit-progress-value {
-  background: rebeccapurple;
-}
-progress[value]::-moz-progress-bar { 
-  background: rebeccapurple;
-}
-
-progress:not([value]) {
-  /* indeterminate styles */
-}
+// .focus-outline {
+//   outline-width: 1px;
+//   outline-style: auto;
+//   outline-color: Highlight;
+//   outline-color: -webkit-focus-ring-color;
+// }

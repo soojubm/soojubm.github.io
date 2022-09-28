@@ -211,10 +211,6 @@
 .product-review-list .inner .quote {display:inline-block;width:320px;font-size:var(--font-size-body);}
 .product-review-list .inner .quote-body {white-space:wrap;}
 
-.product-review-arrows {display:flex;position:absolute;right:0;top:0;}
-.product-review nav .prev {background:var(--color-primary);border-radius:var(--radius);/*position:absolute;left:-24px;top:50%;*/}
-.product-review nav .next {background:var(--color-primary);border-radius:var(--radius);/*position:absolute;right:-24px;top:50%;*/}
-
 .review-item {width:320px;}
 .review-item-thumbnail {height:200px;margin:0 0 1rem 0;background:var(--gray800);}
 .review-item-title {margin:0 0 .5rem 0;font-size:var(--font-size-subhead);}

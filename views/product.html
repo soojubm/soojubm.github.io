@@ -1,108 +1,105 @@
 <nav class="breadcrumb" aria-label="breadcrumb" style="max-width:1200px;margin:0 auto;padding:1rem var(--grid-margin);">
-	<a class="breadcrumb-item breadcrumb-home" href="#">Home</a>
-	<i class="breadcrumb-divider">/</i>
-	<a class="breadcrumb-item breadcrumb-home" href="#">Accesory <small>173</small></a>
-	<i class="breadcrumb-divider">/</i>
-	<span class="breadcrumb-item breadcrumb-last">상품명</span>
+  <a class="breadcrumb-item breadcrumb-home" href="#">Home</a>
+  <i class="breadcrumb-divider">/</i>
+  <a class="breadcrumb-item breadcrumb-home" href="#">Accesory <small>173</small></a>
+  <i class="breadcrumb-divider">/</i>
+  <span class="breadcrumb-item breadcrumb-last">상품명</span>
 </nav>
 
 <main class="product">
-	<!-- 헤드가 있어야 할 듯.. -->
-	<header class="product-head" style="display:flex;flex-wrap:wrap;position:relative;">
-		<section class="product-image" role="img" aria-labelledby="제품 이미지">
-			<img src="/public/images/product_sample.png" alt="제품 이미지" />
-		</section>
-		<section class="product-info">
-			<h1 class="product-info-name">センチメンタル通り</h1>
-			<p class="product-info-byline">Album by <a href="#">Hachimitsupai</a></p>
-			<div class="product-info-price" role="suggestion">
-				<del role="deletion">₩ 30,000</del> <b role="insertion">₩ 23,000</b> <em>(30%)</em>
-			</div>
-			<p class="product-info-description">레이아웃 테스트. 아마존, yes24 3칼럼.</p>
-			<hr />
-			<ul class="product-info-delivery" data-align="horizontal">
-				<li>배송비 2,500원</li>
-				<li>30,000원 이상 무료배송</li>
-				<li>제주, 도서, 산간지역 추가 배송비 3,000원</li>
-			</ul>
-			<div class="product-info-benefit">뷰티포인트 460P 적립 <i class="icon-bullet"></i>  현대카드 5% 청구할인</div>
-		</section>
-		<form class="product-order" onClick="javascript:(event) => event.preventDefault();">
-			<div class="product-order-variant textfield">
-				<label class="textfield-label" for="">상품구성</label>
-				<select class="textfield-input" name="" id="">
-					<option value="">수량</option>
-					<option value="">색상</option>
+  <!-- 헤드가 있어야 할 듯.. -->
+  <header class="product-head" style="display:flex;flex-wrap:wrap;position:relative;">
+    <section class="product-image" role="img" aria-labelledby="제품 이미지">
+      <img src="/public/images/product_sample.png" alt="제품 이미지" />
+    </section>
+    <section class="product-info">
+      <h1 class="product-info-name">センチメンタル通り</h1>
+      <p class="product-info-byline">Album by <a href="#">Hachimitsupai</a></p>
+      <div class="product-info-price" role="suggestion"><del role="deletion">₩ 30,000</del> <b role="insertion">₩ 23,000</b> <em>(30%)</em></div>
+      <p class="product-info-description">레이아웃 테스트. 아마존, yes24 3칼럼.</p>
+      <hr />
+      <ul class="product-info-delivery" data-align="horizontal">
+        <li>배송비 2,500원</li>
+        <li>30,000원 이상 무료배송</li>
+        <li>제주, 도서, 산간지역 추가 배송비 3,000원</li>
+      </ul>
+      <div class="product-info-benefit">뷰티포인트 460P 적립 <i class="icon-bullet"></i> 현대카드 5% 청구할인</div>
+    </section>
+    <form class="product-order" onClick="javascript:(event) => event.preventDefault();">
+      <div class="product-order-variant textfield">
+        <label class="textfield-label" for="">상품구성</label>
+        <select class="textfield-input" name="" id="">
+          <option value="">수량</option>
+          <option value="">색상</option>
+        </select>
+        <span class="selectbox-indicator"><i class="icon-caret"></i></span>
+      </div>
+      <div class="product-order-item">
+        <h4 class="product-order-item-title">정통 베네치아식 파스타소스</h4>
+        <p class="product-order-item-price">₩ 23,000</p>
+        <button class="product-order-item-close"><i class="icon-x"></i></button>
+        <div class="product-order-item-quantity quantity js-quantity">
+          <input class="quantity-input js-quantity-input" type="number" value="1" />
+          <button class="quantity-decrement js-quantity-decrement"><i class="icon-minus"></i></button>
+          <button class="quantity-increment js-quantity-increment"><i class="icon-plus"></i></button>
+        </div>
+      </div>
 
-				</select>
-				<span class="selectbox-indicator"><i class="icon-caret"></i></span>
-			</div>
-			<div class="product-order-item">
-				<h4 class="product-order-item-title">정통 베네치아식 파스타소스</h4>
-				<p class="product-order-item-price">₩ 23,000</p>
-				<button class="product-order-item-close"><i class="icon-x"></i></button>
-				<div class="product-order-item-quantity quantity js-quantity">
-					<input class="quantity-input js-quantity-input" type="number" value="1">
-					<button class="quantity-decrement js-quantity-decrement"><i class="icon-minus"></i></button>
-					<button class="quantity-increment js-quantity-increment"><i class="icon-plus"></i></button>
-				</div>
-			</div>
-
-			<!-- <h4 class="product-order-option-title" style="margin:1rem 0 0 0;">사이즈</h4>
+      <!-- <h4 class="product-order-option-title" style="margin:1rem 0 0 0;">사이즈</h4>
 			<button>사이즈 표</button> -->
-			<div class="product-order-option">
-				<h3 class="product-order-option-name">Sketching Brushes</h3>
-				<p class="product-order-option-description">크라우드 펀딩 도메인에서 옵션을 펼치는 경향. 그리고 애플. todo 선택 상태의 타일 디자인.</p>
-				<b class="product-order-option-price">$ 14.99</b>
-			</div>
-			<div class="product-order-option">
-				<h3 class="product-order-option-name">Painting Brushes</h3>
-				<p class="product-order-option-description">20+ brushes created to breathe life into your paintings.</p>
-				<b class="product-order-option-price">$ 14.99</b>
-			</div>
-			<div class="product-order-size">
-				<b class="product-order-size-title">사이즈: Medium</b>
-				<button class="product-order-size-item"><span class="chip-label">Small</span></button>
-				<button class="product-order-size-item is-selected"><span class="chip-label">Medium</span></button>
-				<button class="product-order-size-item"><span class="chip-label">Large</span></button>
-			</div>
-			<div class="product-order-color">
-				<b class="product-order-color-title">색상: Salmon</b>
-				<button class="product-order-color-item"><span class="chip-label">Crimson</span></button>
-				<button class="product-order-color-item is-selected"><span class="chip-label">Salmon</span></button>
-			</div>
-			<div class="product-order-total">
-				<p class="product-order-total-label">총 상품 금액</p>
-				<div class="product-order-total-value">₩ 23,000</div>
-			</div>
-			<footer class="product-order-control">
-				<button class="product-order-control-purchase">장바구니 todo 제거</button>
-				<button class="product-order-control-cart">찜</button>
-			</footer>
-			<!-- <a href="">환불 안내</a> -->
-		</form>
-	</header>
+      <div class="product-order-option">
+        <h3 class="product-order-option-name">Sketching Brushes</h3>
+        <p class="product-order-option-description">크라우드 펀딩 도메인에서 옵션을 펼치는 경향. 그리고 애플. todo 선택 상태의 타일 디자인.</p>
+        <b class="product-order-option-price">$ 14.99</b>
+      </div>
+      <div class="product-order-option">
+        <h3 class="product-order-option-name">Painting Brushes</h3>
+        <p class="product-order-option-description">20+ brushes created to breathe life into your paintings.</p>
+        <b class="product-order-option-price">$ 14.99</b>
+      </div>
+      <div class="product-order-size">
+        <b class="product-order-size-title">사이즈: Medium</b>
+        <button class="product-order-size-item"><span class="chip-label">Small</span></button>
+        <button class="product-order-size-item is-selected"><span class="chip-label">Medium</span></button>
+        <button class="product-order-size-item"><span class="chip-label">Large</span></button>
+      </div>
+      <div class="product-order-color">
+        <b class="product-order-color-title">색상: Salmon</b>
+        <button class="product-order-color-item"><span class="chip-label">Crimson</span></button>
+        <button class="product-order-color-item is-selected"><span class="chip-label">Salmon</span></button>
+      </div>
+      <div class="product-order-total">
+        <p class="product-order-total-label">총 상품 금액</p>
+        <div class="product-order-total-value">₩ 23,000</div>
+      </div>
+      <footer class="product-order-control">
+        <button class="product-order-control-purchase">장바구니 todo 제거</button>
+        <button class="product-order-control-cart">찜</button>
+      </footer>
+      <!-- <a href="">환불 안내</a> -->
+    </form>
+  </header>
 
-	<aside class="product-quick">
-		<figure class="product-quick-head">
-			<div class="product-quick-head-image">
-				<img src="/public/images/product_sample.png" alt="" />
-			</div>
-			<figcaption>
-				<h3 class="product-quick-head-title">センチメンタル通り SPF34 PA++</h3>
-				<div class="product-quick-head-description"><del>₩29,000</del> <b>₩24,000</b> <em class="rate">(25%)</em> </div>
-			</figcaption>
-		</figure>
-		<section class="product-quick-total">
-			<span class="product-quick-total-count">2개</span>
-			<span class="product-quick-total-price">₩ 23,000<small class="unit"></small></span>
-		</section>
-		<footer class="product-quick-controls">
-			<button class="product-quick-controls-purchase">장바구니 담기</button>
-		</footer>
-	</aside>
+  <aside class="product-quick">
+    <figure class="product-quick-head">
+      <div class="product-quick-head-image">
+        <img src="/public/images/product_sample.png" alt="" />
+      </div>
+      <figcaption>
+        <h3 class="product-quick-head-title">センチメンタル通り SPF34 PA++</h3>
+        <div class="product-quick-head-description"><del>₩29,000</del> <b>₩24,000</b> <em class="rate">(25%)</em></div>
+      </figcaption>
+    </figure>
+    <section class="product-quick-total">
+      <span class="product-quick-total-count">2개</span>
+      <span class="product-quick-total-price">₩ 23,000<small class="unit"></small></span>
+    </section>
+    <footer class="product-quick-controls">
+      <button class="product-quick-controls-purchase">장바구니 담기</button>
+    </footer>
+  </aside>
 
-	<!-- <nav class="profile-tablist" role="tablist">
+  <!-- <nav class="profile-tablist" role="tablist">
 		<button class="profile-tablist-tab" role="tab" name="project" aria-selected="true">
 			<span class="profile-tablist-tab-label">프로젝트</span>
 		</button>
@@ -115,257 +112,231 @@
 		<i class="profile-tablist-indicator"></i>
 	</nav> -->
 
-	<!-- <nav class="product-navigation" >
+  <!-- <nav class="product-navigation" >
 		<a class="profile-tablist-tab" href="#">상세정보</a>
 		<a class="profile-tablist-tab" href="#">배송/교환/반품</a>
 		<a class="profile-tablist-tab" href="#">리뷰</a>
 		<a class="profile-tablist-tab" href="#">문의</a>
 	</nav> -->
 
-	<section class="product-detail">
-		<br /><br /><br /><br />
+  <section class="product-detail">
+    <br /><br /><br /><br />
 
-		<h4 class="article-subhead">메모</h4>
-		<ul>
-			<li>우측 상품 정보 부분을 고정 또는 하단에서 퀵바 형태.</li>
-			<li>3칼럼 레이아웃은 스크롤 고정 영역을 고려해야 한다. 상품 이미지를 가운데 배치하면 어렵다.</li>
-			<li>수량을 어디에서 선택할 수 있게 할 것인가. 상품상세 또는 장바구니.</li>
-			<li>단건 위주의 구매가 발생하거나 초기 검증(실험) 단계에서 장바구니 없어도. 같은 맥락으로 모든 상품 구성이나 옵션 선택을 셀렉트박스로 제공할 수 있다.</li>
-			<li>해외 사이트에서 페이지 이동 없이 장바구니를 drawer 형태로 열어 볼 수 있다. 쇼피파이?</li>
-			<li>최근 모바일에서 하단 고정된 구매하기(장바구니) 클릭 후 옵션을 선택하는 경험.</li>
-			<li>todo 쿠폰 / 카드 할인</li>
-			<li>리뷰 또는 별점이 구매 결정에 주는 영향에 따라 리뷰나 별점의 강조를 결정.</li>
-			<p style="margin:.5rem 0 1rem;">
-				신선식품 커머스. 유통기한, 원산지, 포장(친환경) 등이 현명한(?) 소비자의 구매 결정에 영향을 주는 요인으로 작용하여 최상단으로 상품 정보가 올라오는 경향.
-				그 동안 법적으로 강제되었으나 상세페이지의 이미지에 포함되거나 하단에 눈에 띄지 않게 고지되었으나. 베네핏, 포인트, 배송 안내에 더하여 일부를 전략 배치할 수 있다.
-			</p>
-		</ul>
+    <h4 class="article-subhead">메모</h4>
+    <ul>
+      <li>우측 상품 정보 부분을 고정 또는 하단에서 퀵바 형태.</li>
+      <li>3칼럼 레이아웃은 스크롤 고정 영역을 고려해야 한다. 상품 이미지를 가운데 배치하면 어렵다.</li>
+      <li>수량을 어디에서 선택할 수 있게 할 것인가. 상품상세 또는 장바구니.</li>
+      <li>
+        단건 위주의 구매가 발생하거나 초기 검증(실험) 단계에서 장바구니 없어도. 같은 맥락으로 모든 상품 구성이나 옵션 선택을 셀렉트박스로 제공할 수
+        있다.
+      </li>
+      <li>해외 사이트에서 페이지 이동 없이 장바구니를 drawer 형태로 열어 볼 수 있다. 쇼피파이?</li>
+      <li>최근 모바일에서 하단 고정된 구매하기(장바구니) 클릭 후 옵션을 선택하는 경험.</li>
+      <li>todo 쿠폰 / 카드 할인</li>
+      <li>리뷰 또는 별점이 구매 결정에 주는 영향에 따라 리뷰나 별점의 강조를 결정.</li>
+      <p style="margin:.5rem 0 1rem;">
+        신선식품 커머스. 유통기한, 원산지, 포장(친환경) 등이 현명한(?) 소비자의 구매 결정에 영향을 주는 요인으로 작용하여 최상단으로 상품 정보가
+        올라오는 경향. 그 동안 법적으로 강제되었으나 상세페이지의 이미지에 포함되거나 하단에 눈에 띄지 않게 고지되었으나. 베네핏, 포인트, 배송 안내에
+        더하여 일부를 전략 배치할 수 있다.
+      </p>
+    </ul>
 
-		<div class="product-detail-intro">
-			<figure class="product-detail-intro-image">
-				<img src="" alt="" />
-			</figure>
-			<figure class="product-detail-intro-image">
-				<img src="" alt="" />
-			</figure>
-		</div>
+    <div class="product-detail-intro">
+      <figure class="product-detail-intro-image">
+        <img src="" alt="" />
+      </figure>
+      <figure class="product-detail-intro-image">
+        <img src="" alt="" />
+      </figure>
+    </div>
 
-		<h1 class="product-detail-headline">
-			<span class="linebreak-desktop">우리의 입맛에 맞는 파스타를 엄선하여</span> <span class="linebreak-desktop">이탈리아 지역별 정통 파스타소스를 재현하였습니다.</span>
-		</h1>
-		
-		<section class="product-detail-summary">
-			<h3 class="product-detail-summary-title">상품상세정보 고지</h3>
-			<dl>
-				<dt>제품명</dt>
-				<dd>노멀 헤어퍼퓸</dd>
-				<dt>소재</dt>
-				<dd>금속</dd>
-				<dt>치수</dt>
-				<dd>20mm * 40mm</dd>
-				<dt>전성분</dt>
-				<dd>정제수, 아리수, 활명수</dd>
-				<dt>제조일자</dt>
-				<dd>2019. 11. 08.</dd>
-				<dt>제조업자</dt>
-				<dd>별도표기</dd>
-				<dt>문의전화</dt>
-				<dd>02-000-2000</dd>
-			</dl>
-			<hr />
-			<table class="is-borderless">
-				<tbody>
-					<tr>
-						<th>제품명</th>
-						<td>노멀 헤어퍼퓸</td>
-					</tr>
-					<tr>
-						<th>소재</th>
-						<td>금속</td>
-					</tr>
-					<tr>
-						<th>치수</th>
-						<td>20mm * 40mm</td>
-					</tr>
-					<tr>
-						<th>제조일자</th>
-						<td>2019. 11. 08.</td>
-					</tr>
-					<tr>
-						<th title="제조자 또는 수입자(수입국)">제조업자</th>
-						<td>별도표기</td>
-					</tr>
-					<tr>
-						<th title="제조국 또는 원산지">제조국</th>
-						<td>대한민국</td>
-					</tr>
-					<tr>
-						<th>전성분</th>
-						<td>정제수, 정제수, 정제수</td>
-					</tr>
-					<tr>
-						<th>문의전화</th>
-						<td>02-000-2000</td>
-					</tr>
-				</tbody>
-			</table>
-		</section>
+    <h1 class="product-detail-headline">
+      <span class="linebreak-desktop">우리의 입맛에 맞는 파스타를 엄선하여</span>
+      <span class="linebreak-desktop">이탈리아 지역별 정통 파스타소스를 재현하였습니다.</span>
+    </h1>
 
-		
-		
+    <section class="product-detail-summary">
+      <h3 class="product-detail-summary-title">상품상세정보 고지</h3>
+      <dl>
+        <dt>제품명</dt>
+        <dd>노멀 헤어퍼퓸</dd>
+        <dt>소재</dt>
+        <dd>금속</dd>
+        <dt>치수</dt>
+        <dd>20mm * 40mm</dd>
+        <dt>전성분</dt>
+        <dd>정제수, 아리수, 활명수</dd>
+        <dt>제조일자</dt>
+        <dd>2019. 11. 08.</dd>
+        <dt title="제조자 또는 수입자(수입국)">제조업자</dt>
+        <dd>별도표기</dd>
+        <dt title="제조국 또는 원산지">제조국</dt>
+        <dd>대한민국</dd>
+        <dt>문의전화</dt>
+        <dd>02-000-2000</dd>
+      </dl>
+    </section>
 
-		<!-- <button class="product-detail-more">
+    <!-- <button class="product-detail-more">
 			<i class="icon-plus"></i>
 			<span>상품정보 더 보기</span>
 		</button> -->
-		
-		<!-- todo mobile overflow hidden -->
-		<section class="product-detail-brand" style="margin:6rem 0;overflow:hidden;">
-			<div class="js-parallax" style="height:240px;background:url('/public/images/springsteen.jpg') no-repeat center center;background-size:cover;border-radius:var(--radius);"></div>
-		</section>
 
+    <!-- todo mobile overflow hidden -->
+    <section class="product-detail-brand" style="margin:6rem 0;overflow:hidden;">
+      <div
+        class="js-parallax"
+        style="height:240px;background:url('/public/images/springsteen.jpg') no-repeat center center;background-size:cover;border-radius:var(--radius);"
+      ></div>
+    </section>
 
-		<!-- <section style="border-bottom:1px solid var(--gray800);">
-			<span style="display:block;padding:var(--space-4) var(--grid-margin);font-size:var(--font-size-subhead);font-weight:var(--font-weight-bold);border-top:1px solid var(--gray800);">케이크 메뉴 소개</span>
-		</section>
-		<section style="padding:var(--space-4) var(--grid-margin);border-bottom:1px solid var(--gray800);">
-			고슴이가 케이크 먹고 당과 체력을 쑥쑥 충전하여 더 좋은 레터 보낼 수 있도록, 세 가지 케이크를 준비했어요.
-		</section>
-		<section class="" style="display:flex;border-bottom:1px solid var(--gray800);">
-			<div style="width:50%;background:var(--color-accent);">
-				<img src="" alt="">
-			</div>
-			<div style="width:50%;padding:4rem;box-sizing:border-box;">
-				<h2 style="margin:0 0 var(--space-after-subhead) 0;font-size:var(--font-size-subhead);">뉴닉의 슈퍼파워를 기원하는 케이크</h2>
-				<p>
-					버섯을 먹은 고슴이는 월화수목금 아침 5시마다 레터 보내도 끄떡없다고.
-					<span class="linebreak-desktop">더 재밌는 일을 벌리기 위한 창의력 부스터를 선물해주고 싶다면, 바로 이 케이크예요.</span>
-				</p>
-				<button style="margin:var(--space-after-description) 0 0 0;">view more</button>
-			</div>
-		</section>
-		<section class="" style="display:flex;border-bottom:1px solid var(--gray800);">
-			<div style="width:50%;background:var(--color-accent);">
-				<img src="" alt="">
-			</div>
-			<div style="width:50%;padding:4rem;box-sizing:border-box;">
-				<h2 style="margin:0 0 var(--space-after-subhead) 0;font-size:var(--font-size-subhead);">뉴닉의 슈퍼파워를 기원하는 케이크</h2>
-				<p>
-					버섯을 먹은 고슴이는 월화수목금 아침 5시마다 레터 보내도 끄떡없다고.
-					<span class="linebreak-desktop">더 재밌는 일을 벌리기 위한 창의력 부스터를 선물해주고 싶다면, 바로 이 케이크예요.</span>
-				</p>
-			</div>
-		</section>
-		<section class="" style="display:flex;border-bottom:1px solid var(--gray800);">
-			<div style="width:50%;background:var(--color-accent);">
-				<img src="" alt="">
-			</div>
-			<div style="width:50%;padding:4rem;box-sizing:border-box;">
-				<h2 style="margin:0 0 var(--space-after-subhead) 0;font-size:var(--font-size-subhead);">뉴닉의 슈퍼파워를 기원하는 케이크</h2>
-				<p>
-					버섯을 먹은 고슴이는 월화수목금 아침 5시마다 레터 보내도 끄떡없다고.
-					<span class="linebreak-desktop">더 재밌는 일을 벌리기 위한 창의력 부스터를 선물해주고 싶다면, 바로 이 케이크예요.</span>
-				</p>
-			</div>
-		</section> -->
+    <section style="border-bottom:1px solid var(--gray800);">
+      <span
+        style="display:block;padding:var(--space-4) var(--grid-margin);font-size:var(--font-size-subhead);font-weight:var(--font-weight-bold);border-top:1px solid var(--gray800);"
+        >케이크 메뉴 소개</span
+      >
+    </section>
+    <section style="padding:var(--space-4) var(--grid-margin);border-bottom:1px solid var(--gray800);">
+      고슴이가 케이크 먹고 당과 체력을 쑥쑥 충전하여 더 좋은 레터 보낼 수 있도록, 세 가지 케이크를 준비했어요.
+    </section>
+    <section class="" style="display:flex;border-bottom:1px solid var(--gray800);">
+      <div style="width:50%;background:var(--color-accent);">
+        <img src="" alt="" />
+      </div>
+      <div style="width:50%;padding:4rem;box-sizing:border-box;">
+        <h2 style="margin:0 0 var(--space-after-subhead) 0;font-size:var(--font-size-subhead);">뉴닉의 슈퍼파워를 기원하는 케이크</h2>
+        <p>
+          버섯을 먹은 고슴이는 월화수목금 아침 5시마다 레터 보내도 끄떡없다고.
+          <span class="linebreak-desktop">더 재밌는 일을 벌리기 위한 창의력 부스터를 선물해주고 싶다면, 바로 이 케이크예요.</span>
+        </p>
+        <button style="margin:var(--space-after-description) 0 0 0;">view more</button>
+      </div>
+    </section>
 
+    <section class="product-policy">
+      <h3 class="product-policy-title">배송 정책Shipping Information</h3>
+      <h3 class="product-policy-title">환불 및 교환 정책Returns &Exchanges - 교환 취소(반품?환불?) 섹션 분리하면 보기 쉬울 듯</h3>
 
-		<section class="product-policy">
-			<!-- <h3 class="product-policy-title">배송 정책Shipping Information</h3> -->
-				<!-- <dl>
-					<dt>배송가능지역</dt><dd>전국</dd>
-					<dt>배송가능요일</dt><dd>월화수목금 (공휴일제외)</dd>
-					<dt>배송비</dt><dd>기본 배송비 25,000원 / 총 결제 금액 50,000원 이상 무료배송 / 도서,산간,제주 기본 배송비 5,000d원(기본 배송비 2,000 + 3,000)</dd>
-					<dt>배송방법</dt><dd>택배 (CJ대한통운 1588-1255)</dd>
-					<dt>예상배송시간</dt><dd>결제 완료 후를 기준할 것인지, 배송 시작 후를 기준할 것인지, 영업일 기준 1~3일</dd>
-					<p>배송비 결제 주문 시 결제</p>
-				</dl>
-				<p><del>불가항력적(천재지변, 일시품절, 제조사 상품수급 문제 등)인 사유로 배송이 다소 늦어질 수 있습니다.</del> 배송이 늦어지는 경우 반드시 팝업(구매 전), 문자(구매 후) 등으로 공지해야 함. 특수한 케이스라 여기는 없어도 될 듯. </p>
-				<ul>
-					<li><span>상품의 배송비는 공급업체의 정책에 따라 다르며</span>공휴일 및 휴일은 배송이 불가합니다.</li>
-					<li>동일 브랜드의 상품이라도 상품별 출고일시가 달라 각각 배송될 수 있습니다.</li>
-					<li>일부 주문상품 또는 예약상품의 경우 기본 배송일 외에 추가 배송 소요일이 발생될 수 있습니다.</li>
-				</ul> -->
+      <!-- <dl>
+        <dt>배송가능지역</dt>
+        <dd>전국</dd>
+        <dt>배송가능요일</dt>
+        <dd>월화수목금 (공휴일제외)</dd>
+        <dt>배송비</dt>
+        <dd>기본 배송비 25,000원 / 총 결제 금액 50,000원 이상 무료배송 / 도서,산간,제주 기본 배송비 5,000d원(기본 배송비 2,000 + 3,000)</dd>
+        <dt>배송방법</dt>
+        <dd>택배 (CJ대한통운 1588-1255)</dd>
+        <dt>예상배송시간</dt>
+        <dd>결제 완료 후를 기준할 것인지, 배송 시작 후를 기준할 것인지, 영업일 기준 1~3일</dd>
+        <p>배송비 결제 주문 시 결제</p>
+      </dl>
+      <p>
+        <del>불가항력적(천재지변, 일시품절, 제조사 상품수급 문제 등)인 사유로 배송이 다소 늦어질 수 있습니다.</del> 배송이 늦어지는 경우 반드시
+        팝업(구매 전), 문자(구매 후) 등으로 공지해야 함. 특수한 케이스라 여기는 없어도 될 듯.
+      </p>
+      <ul>
+        <li><span>상품의 배송비는 공급업체의 정책에 따라 다르며</span>공휴일 및 휴일은 배송이 불가합니다.</li>
+        <li>동일 브랜드의 상품이라도 상품별 출고일시가 달라 각각 배송될 수 있습니다.</li>
+        <li>일부 주문상품 또는 예약상품의 경우 기본 배송일 외에 추가 배송 소요일이 발생될 수 있습니다.</li>
+      </ul>
 
-			<div hidden>
-				<h3 class="product-policy-title">환불 및 교환 정책Returns &Exchanges - 교환 취소(반품?환불?) 섹션 분리하면 보기 쉬울 듯</h3>
-				<dl>
-					<dt>교환배송비</dt><dd>6,000원</dd>
-					<dt>반품배송비</dt><dd>3,000원 (부분 반품인 경우)/dd>
+      <div> -->
+      <!-- <dl>
+          <dt>교환배송비</dt>
+          <dd>6,000원</dd>
+          <dt>반품배송비</dt>
+          <dd>3,000원 (부분 반품인 경우)/dd></dd>
 
-					<dt>교환/반품주소</dt><dd>서울시 강서구 화곡로 344-2 1404호</dd>
-					<dt>교환/반품방법</dt><dd>[마이페이지>주문조회>교화/반품 신청하기] 또는 [고객센터>1:1상담] 또는 고객센터(080-619-8888).
-					</dd>
-					
-					<!-- <dt>통신판매업자 귀책</dt>
-			다만, 공급받은 상품이 표시/광고의 내용과 다르거나 계약내용과 다르게 이행된 경우에는 상품을 공급받은 날부터 3개월 이내, 그 사실을 안 날 또는 알 수 있었던 날부터 30일 이내 교환/반품 신청을 하실 수 있습니다. (배송비 회사 부담)
-			<dd>상품의 내용이 표시, 광고 내용과 다르거나 계약내용을 다르게 이행한 경우에는 재화 등을 공급받은 날로부터 3개월 이내, 그 사실을 안 날 또는 알 수 있었던 날로부터 30일 이내에 교환 및 반품이 가능합니다. </dd>
-					<dt>단순변심/구매착오</dt><dd><strong>상품을 받으신 날로부터 7일 이내 교환/반품이 가능합니다.</strong></dd>
-					<dt>교환/반품조건</dt><dd>상품 미훼손 및 미사용한 경우</dd>
-					<li>
-						단, 일부 제품의 경우 포장을 개봉하였거나 포장이 훼손되어 상품가치가 상실된 경우에는 교환 및 반품이 불가능합니다.</li>
-					<li>변심 반품의 경우는 왕복배송비를 차감한 금액이 환불되며, 제품 및 포장 상태가 재판매 가능하여야 합니다.</li>
-					<li>출고 이후 환불요청 시 상품 회수 후 처리됩니다.</li>
-					<li>상품 불량인 경우는 배송비를 포함한 전액이 환불됩니다.</li>
-					<li>해당 상품 구매 시 사은품/증정품 등이 제공된 경우, 상품 교환/반품 시 함께 보내주셔야 합니다.</li>
-					<li>주문 취소의 경우 주문 접수 상태에서는 고객님께서 직접 취소하실 수 있습니다. 주문 접수 상태 이후 취소는 고객센터로 문의 바랍니다.<br>반송을 원하실 경우 주문번호, 요청사항을 메모하여 보내주시면 보다 신속한 처리에 도움이 됩니다.</li>
-					<p>단순변심</p> -->
-				</dl>
+          <dt>교환/반품주소</dt>
+          <dd>서울시 강서구 화곡로 344-2 1404호</dd>
+          <dt>교환/반품방법</dt>
+          <dd>[마이페이지>주문조회>교화/반품 신청하기] 또는 [고객센터>1:1상담] 또는 고객센터(080-619-8888).</dd>
 
-				<hr />
-				<h4>교환/반품이 불가능한 경우가 있나요?</h4>
-				<ul>
-					<li>고객에게 책임이 있는 사유로 상품이 멸실되거나 훼손된 경우 (상품내용을 확인하기 위하여 포장 등을 훼손한 경우는 제외)
-					</li>
-					<li>고객의 사용 또는 일부 소비로 상품 가치가 현저히 감소한 경우</li>
-					<li>시간이 지나 다시 판매하기 곤란할 정도로 상품 가치가 현저히 감소한 경우</li>
-					<li>복제가 가능한 상품의 포장을 훼손한 경우</li>
-					<li>고객의 주문에 따라 개별적으로 생산되는 상품 또는 이와 유사한 상품에 대하여 청약 철회등을 인정하는 경우 통신판매업자에게 회복할 수 없는 중대한 피해가 예상되는 경우로서 사전에 해당 거래에 대하여 별도로 그 사실을 고지하고 고객의 서면(전자문서 포함)에 의한 동의를 받은 경우</li>
-				</ul>
-		
-				<br /><br />
-				<h3 class="product-policy-title">불만처리 및 분쟁해결</h3>
-				<p>
-					교환/반품/대금환불 등에 대한 문의사항 및 불만처리 요청은 쇼핑몰의 1:1문의 게시판을 이용하시거나 쇼핑몰 고객센터(080-619-8888 /
-					운영시간 09:00~18:00(월~금) / 토, 일, 공휴일 휴무)로 연락주시면 됩니다.
-					본 상품의 품질보증 및 피해보상에 관한 사항은 관련 법률 및 공정거래위원회 고시[소비자분쟁해결기준]에 따릅니다.
+          <dt>통신판매업자 귀책</dt>
+          다만, 공급받은 상품이 표시/광고의 내용과 다르거나 계약내용과 다르게 이행된 경우에는 상품을 공급받은 날부터 3개월 이내, 그 사실을 안 날 또는
+          알 수 있었던 날부터 30일 이내 교환/반품 신청을 하실 수 있습니다. (배송비 회사 부담)
+          <dd>
+            상품의 내용이 표시, 광고 내용과 다르거나 계약내용을 다르게 이행한 경우에는 재화 등을 공급받은 날로부터 3개월 이내, 그 사실을 안 날 또는 알
+            수 있었던 날로부터 30일 이내에 교환 및 반품이 가능합니다.
+          </dd>
+          <dt>단순변심/구매착오</dt>
+          <dd><strong>상품을 받으신 날로부터 7일 이내 교환/반품이 가능합니다.</strong></dd>
+          <dt>교환/반품조건</dt>
+          <dd>상품 미훼손 및 미사용한 경우</dd>
+          <li>
+            단, 일부 제품의 경우 포장을 개봉하였거나 포장이 훼손되어 상품가치가 상실된 경우에는 교환 및 반품이 불가능합니다.
+          </li>
+          <li>변심 반품의 경우는 왕복배송비를 차감한 금액이 환불되며, 제품 및 포장 상태가 재판매 가능하여야 합니다.</li>
+          <li>출고 이후 환불요청 시 상품 회수 후 처리됩니다.</li>
+          <li>상품 불량인 경우는 배송비를 포함한 전액이 환불됩니다.</li>
+          <li>해당 상품 구매 시 사은품/증정품 등이 제공된 경우, 상품 교환/반품 시 함께 보내주셔야 합니다.</li>
+          <li>
+            주문 취소의 경우 주문 접수 상태에서는 고객님께서 직접 취소하실 수 있습니다. 주문 접수 상태 이후 취소는 고객센터로 문의 바랍니다.<br />반송을
+            원하실 경우 주문번호, 요청사항을 메모하여 보내주시면 보다 신속한 처리에 도움이 됩니다.
+          </li>
+          <p>단순변심</p>
+        </dl>
 
-					
-					<p>반품 시, 상품대금 환불은 상품 회수 및 청약철회가 확정된 날로부터 3 영업일 이내 진행되며, 기한을 초과한 경우 지연 기간에 대하여 「전자상거래 등에서의 소비자보호에 관한 법률 시행령」 에서 정하는 이율을 곱하여 산정한 지연이자를 지급합니다.</p>
-					<tr>
-						<td>제품하자가 아닌 소비자의 단순변심, 착오구매에 따른 청약철회가 불가능한 경우 그 구체적 사유와 근거</td>
-						<td>전자상거래등에서의소비자보호에관한법률 등에 의한 청약철회 제한 사유에 해당하는 경우 및 기타 객관적으로 이에 준하는 것으로 인정되는 경우 청약철회가 제한될 수 있습니다.</td>
-						</tr>
-						<tr>
-						<td>재화등의 교환·반품·보증 조건 및 품질보증기준</td>
-						<td>소비자분쟁해결기준(공정거래위원회 고시) 및 관계법령에 따릅니다.</td>
-						</tr>
-						<tr>
-						<td>대금환불 및 환불지연에 따른 배상금 안내</td>
-						<td>주문취소 및 대금의 환불은 마이페이지에서 신청할 수 있으며, 전자상거래 등에서의 소비자보호에 관한 법률에 따라 소비자의 청약철회 후 판매자가 재화 등을 반환 받은 날로부터 3영업일 이내에 지급받은 대금의 환급을 정당한 사유 없이 지연하는 때에는 소비자는 지연기간에 대해서 연 20%의 지연배상금을 판매자에게 청구할 수 있습니다.</td>
-					</tr>
-				</p>
-				<br /><br />
-				<h3 class="product-policy-title">미성년자 계약취소에 대한 안내</h3>
-				<p>통신판매업자는 미성년자와 재화등의 거래에 관한 계약을 체결할 때에는 법정대리인이 그 계약에 동의하지 아니하면 미성년자 본인 또는 법정대리인이 그 계약을 취소할 수 있다는 내용을 미성년자에게 고지하여야 한다.</p>
-				<p>
-					해당 상품 구매 계약자가 미성년자일 경우 법정대리인이 동의하지 아니하면 미성년자 본인 또는 법정대리인은 이 계약을 취소할 수 있습니다.
-				</p>
-				
-					<!-- 잘못된 배송지 입력 시 -->
-					<!-- <li>배송지를 잘못 기재하거나 창작자에게 사전 고지 없이 배송지를 수정하여 배송사고가 발생할 경우 책임을 지지 않습니다 .</li> -->
-					<!-- <li>구매자가 미성년자인 경우에는 상품 구입 시 법정대리인이 동의하지 아니하면 미성년자 본인 또는 법정대리인이 구매취소 할 수 있습니다.</li> -->
-					<!-- <li>환불 완료까지 최대 영업일 기준 4일이 소요될 수 있습니다.</li> -->
-					<!-- 고객님의 책임있는 사유로 상품 등이 멸실 또는 훼손된 경우 교환/반품이 불가능합니다.
-					고객님의 사용 또는 일부 소비에 의하여 상품의 가치가 현저히 감소한 경우 교환/반품이 불가능합니다.
-					시간의 경과에 의하여 재판매가 곤란한 정도로 상품 등의 가치가 현저히 감소한 경우 교환/반품이 불가능합니다. -->
-			</div>
-		</section>
+        <hr />
+        <h4>교환/반품이 불가능한 경우가 있나요?</h4>
+        <ul>
+          <li>고객에게 책임이 있는 사유로 상품이 멸실되거나 훼손된 경우 (상품내용을 확인하기 위하여 포장 등을 훼손한 경우는 제외)</li>
+          <li>고객의 사용 또는 일부 소비로 상품 가치가 현저히 감소한 경우</li>
+          <li>시간이 지나 다시 판매하기 곤란할 정도로 상품 가치가 현저히 감소한 경우</li>
+          <li>복제가 가능한 상품의 포장을 훼손한 경우</li>
+          <li>
+            고객의 주문에 따라 개별적으로 생산되는 상품 또는 이와 유사한 상품에 대하여 청약 철회등을 인정하는 경우 통신판매업자에게 회복할 수 없는
+            중대한 피해가 예상되는 경우로서 사전에 해당 거래에 대하여 별도로 그 사실을 고지하고 고객의 서면(전자문서 포함)에 의한 동의를 받은 경우
+          </li>
+        </ul>
 
+        <h3 class="product-policy-title">불만처리 및 분쟁해결</h3>
+        <p>
+          교환/반품/대금환불 등에 대한 문의사항 및 불만처리 요청은 쇼핑몰의 1:1문의 게시판을 이용하시거나 쇼핑몰 고객센터(080-619-8888 / 운영시간
+          09:00~18:00(월~금) / 토, 일, 공휴일 휴무)로 연락주시면 됩니다. 본 상품의 품질보증 및 피해보상에 관한 사항은 관련 법률 및 공정거래위원회
+          고시[소비자분쟁해결기준]에 따릅니다.
+        </p>
 
+        <p>
+          반품 시, 상품대금 환불은 상품 회수 및 청약철회가 확정된 날로부터 3 영업일 이내 진행되며, 기한을 초과한 경우 지연 기간에 대하여 「전자상거래
+          등에서의 소비자보호에 관한 법률 시행령」 에서 정하는 이율을 곱하여 산정한 지연이자를 지급합니다.
+        </p>
+        <tr>
+          <td>제품하자가 아닌 소비자의 단순변심, 착오구매에 따른 청약철회가 불가능한 경우 그 구체적 사유와 근거</td>
+          <td>
+            전자상거래등에서의소비자보호에관한법률 등에 의한 청약철회 제한 사유에 해당하는 경우 및 기타 객관적으로 이에 준하는 것으로 인정되는 경우
+            청약철회가 제한될 수 있습니다.
+          </td>
+          <td>재화등의 교환·반품·보증 조건 및 품질보증기준</td>
+          <td>소비자분쟁해결기준(공정거래위원회 고시) 및 관계법령에 따릅니다.</td>
+          <td>대금환불 및 환불지연에 따른 배상금 안내</td>
+          <td>
+            주문취소 및 대금의 환불은 마이페이지에서 신청할 수 있으며, 전자상거래 등에서의 소비자보호에 관한 법률에 따라 소비자의 청약철회 후 판매자가
+            재화 등을 반환 받은 날로부터 3영업일 이내에 지급받은 대금의 환급을 정당한 사유 없이 지연하는 때에는 소비자는 지연기간에 대해서 연 20%의
+            지연배상금을 판매자에게 청구할 수 있습니다.
+          </td>
+        </tr>
+        <br /><br />
+        <h3 class="product-policy-title">미성년자 계약취소에 대한 안내</h3>
+        <p>
+          통신판매업자는 미성년자와 재화등의 거래에 관한 계약을 체결할 때에는 법정대리인이 그 계약에 동의하지 아니하면 미성년자 본인 또는 법정대리인이
+          그 계약을 취소할 수 있다는 내용을 미성년자에게 고지하여야 한다.
+        </p>
+        <p>
+          해당 상품 구매 계약자가 미성년자일 경우 법정대리인이 동의하지 아니하면 미성년자 본인 또는 법정대리인은 이 계약을 취소할 수 있습니다.
+        </p>
+        잘못된 배송지 입력 시
+        <li>배송지를 잘못 기재하거나 창작자에게 사전 고지 없이 배송지를 수정하여 배송사고가 발생할 경우 책임을 지지 않습니다 .</li>
+        <li>구매자가 미성년자인 경우에는 상품 구입 시 법정대리인이 동의하지 아니하면 미성년자 본인 또는 법정대리인이 구매취소 할 수 있습니다.</li>
+        <li>환불 완료까지 최대 영업일 기준 4일이 소요될 수 있습니다.</li>
+        고객님의 책임있는 사유로 상품 등이 멸실 또는 훼손된 경우 교환/반품이 불가능합니다. 고객님의 사용 또는 일부 소비에 의하여 상품의 가치가 현저히
+        감소한 경우 교환/반품이 불가능합니다. 시간의 경과에 의하여 재판매가 곤란한 정도로 상품 등의 가치가 현저히 감소한 경우 교환/반품이
+        불가능합니다.
+      </div> -->
+    </section>
 
-
-		<!--
+    <!--
 		거래조건에 관한 정보
 
 		공급방법 및 공급시기
@@ -389,13 +360,13 @@
 		5거래에 관한 약관의 내용 또는 확인할 수 있는 방법
 	-->
 
-	<!-- 
+    <!-- 
 		미성년 고객께서 상품을 주문(계약) 하시는 경우,법정대리인(부모님 등)의 동의가 없으면 미성년자 본인 또는 법정대리인(부모님 등)이 그 주문(계약)을 취소하실 수있습니다.
 		안전검사 대상 공산품을 구매하시는 경우 품질경영 및 공산품 안전관리법에 따른 안전검사표시가 있는 제품인지 확인하시기 바랍니다.
 		정보,전기통신기기를 구매하시는 경우 관련법률에 따라 인증 또는 승인을 받은 상품인지 확인하시기 바랍니다.
 		롯데ON의 결제시스템을 이용하지 않고 판매자와 직접거래 하실 경우 상품을 받지 못하거나, 구매한 상품과 상이한 상품을 받는 등 피해가 발생 할 수 있으니 유의하시기 바랍니다.
 	-->
-	<!--
+    <!--
 		1. 소비자에게 제공되는 상품 등의 정보는 색상의 차별화, 테두리의 이용, 전체화면 크기를 고려하여 소비자가 알아보기 쉽도록 위치·글자 크기 등을 선택하여 명확하게 제공하여야 한다.
 		2. 상품 등의 정보는 소비자가 이해하기 쉬운 용어로 작성하여야 한다. 부득이 외국어나 전문용어 등이 사용될 수밖에 없는 경우에는 해당 용어의 바로 옆에 그 구체적인 개념을 주석 등을 통해 부기해 주는 등의 방법으로 소비자가 그 의미를 쉽게 이해할 수 있도록 하여야 한다.
 		3. 방송법 제9조제5항에 따라 방송통신위원회로부터 승인받은 상품소개와 판매에 관한 전문편성을 행하는 방송채널사용사업자와 데이터방송 등을 통하여 상품소개와 판매에 관한 방송을 송신하는 방송사업자가 상품소개 및 판매방송을 하는 경우 제조자, 원산지 등 상품 등의 정보를 소비자가 알아보기 쉽도록 반복적 또는 지속적으로 명확하게 제공하여야 한다.
@@ -406,88 +377,76 @@
 		7. 주된 상품에 부수되는 상품을 추가하여 선택하는 방식으로 판매하는 경우 주된 상품에 대한 정보를 제공하여야 한다. 이때 부수되는 상품이란 주된 상품의 본체 이외의 예비품, 추가 부속품, 일부 기능의 추가로 인한 특별한 부속물 등을 의미한다.
 	-->
 
-
-<!-- 소비자분쟁해결기준(공정거래위원회 고시) 및 관계법령에 따릅니다
+    <!-- 소비자분쟁해결기준(공정거래위원회 고시) 및 관계법령에 따릅니다
 
 		<a href="https://www.law.go.kr/%ED%96%89%EC%A0%95%EA%B7%9C%EC%B9%99/%EC%A0%84%EC%9E%90%EC%83%81%EA%B1%B0%EB%9E%98%EB%93%B1%EC%97%90%EC%84%9C%EC%9D%98%EC%83%81%ED%92%88%EB%93%B1%EC%9D%98%EC%A0%95%EB%B3%B4%EC%A0%9C%EA%B3%B5%EC%97%90%EA%B4%80%ED%95%9C%EA%B3%A0%EC%8B%9C">전자상거래등에서의상품등의정보제공에관한고시</a>
 		<a href="https://easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=25&ccfNo=3&cciNo=1&cnpClsNo=1">인터넷쇼핑몰 사업자의 신원 등 표시 의무 </a>
 		<a href="http://easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=25&ccfNo=3&cciNo=1&cnpClsNo=2">신원 및 거래조건에 관한 정보 제공 의무 </a>
 		 -->
 
-
-		<!-- <section class="product-recommend">
-			<h1 class="product-recommend-title">이 상품을 구매한 </h1>
-			<article class="card has-item" role="listitem" style="width:100%;max-width:400px;margin:0 var(--space-2);">
+    <section class="product-recommend">
+      <h1 class="product-recommend-title">이 상품을 구매한</h1>
+      <article class="card has-item" role="listitem" style="width:100%;max-width:400px;margin:0 var(--space-2);">
         <figure class="card-thumbnail"><img src="/public/images/product_sample.png" style="width:50%;" alt="" /></figure>
-				<h3 class="card-title">에어팟프로 블루투스 이어폰 AirPods PRO</h3>
-				<div class="card-item-price">
-					<del>₩19,000</del> ₩16,000 <em>할인율 20%</em>
-				</div>
-				<a href="#" style="display:block;margin:var(--space-05) 0 var(--space-4) 0;color:var(--gray800);text-decoration:underline;">애플</a>
+        <div
+          class="card-item-price"
+          style="margin:var(--space-4) 0 var(--space-2);font-size:var(--font-size-subhead);font-weight:var(--font-weight-bold);"
+        >
+          <em>₩16,000</em>
+        </div>
+        <h3 class="card-title">에어팟프로 블루투스 이어폰 AirPods PRO. 구매결정까지 탐색이 덜 요구될 때 가격을 강조할 수 있다.</h3>
+        <div class="card-item-price"><del>₩19,000</del> ₩16,000 <em>할인율 20%</em></div>
+        <a href="#" style="display:block;margin:var(--space-05) 0 var(--space-4) 0;color:var(--gray800);text-decoration:underline;">애플</a>
         <span class="card-category">인기있는</span>
         <div class="card-note">무료배송 / 200 포인트 적립</div>
       </article>
-			<article class="card has-item" role="listitem" style="width:100%;max-width:400px;margin:0 var(--space-2);">
-        <figure class="card-thumbnail"><img src="/public/images/product_sample.png" style="width:50%;" alt="" /></figure>
-				<div class="card-item-price" style="margin:var(--space-4) 0 var(--space-2);font-size:var(--font-size-subhead);font-weight:var(--font-weight-bold);">
-					<em>₩16,000</em>
-				</div>
-				<h3 class="card-title" style="padding-top:0;margin-bottom:2rem;font-weight:var(--font-weight-normal);">에어팟프로 블루투스 이어폰 AirPods PRO</h3>
-				<a href="#" style="display:block;margin:var(--space-05) 0 var(--space-4) 0;color:var(--gray800);text-decoration:underline;">애플</a>
-        <span class="card-category">인기있는</span>
-        <div class="card-note">무료배송 / 200 포인트 적립</div>
-      </article>
-		</section> -->
-	</section>
+    </section>
+  </section>
 
-	<!-- <div class="product-review-list">
-	<div class="review">
-		<a class="review-avatar" href="#"><img src=""></a>
-		<a class="review-author" href="#">soojubm</a>
-		<time class="review-time">2019. 11. 08</time>
-		<h3 class="review-title">물건도 좋고 배송도 빨라요.</h3>
-		<p class="review-content">이탈리아의 지역별 무궁무진한 특징을 가진 파스타 요리 중, 우리의 입맛에 맞는 파스타를 엄선하여 이탈리아 지역별 정통 파스타소스를 재현하였습니다. 이탈리아의 지역별 무궁무진한 특징을 가진 파스타 요리 중, 우리의 입맛에 맞는 파스타를 엄선하여 이탈리아 지역별 정통 파스타소스를 재현하였습니다.</p>
-	</div>
-	<section class="product-review">
-		<div>
-			<h3 class="product-review-eyebrow">리뷰</h3>
-			<h1 class="product-review-title">총 83건의 리뷰가 있습니다.</h1>
-		</div>
-		<nav class="product-review-arrows">
-			<button class="product-review-arrows-previous prev" style="background:#f1f3f4;">이전</button>
-			<button class="product-review-arrows-next next">다음</button>
-		</nav>
-		<div class="product-review-list">
-		</div>
-	</section> -->
+  <section class="product-review">
+    <header>
+      <h3 class="product-review-eyebrow">리뷰</h3>
+      <h1 class="product-review-title">총 83건의 리뷰가 있습니다.</h1>
+    </header>
+    <div class="product-review-list">
+      <div class="review">
+        <a class="review-avatar" href="#"><img src=""/></a>
+        <a class="review-author" href="#">soojubm</a>
+        <time class="review-time">2019. 11. 08</time>
+        <h3 class="review-title">물건도 좋고 배송도 빨라요.</h3>
+        <p class="review-content">
+          이탈리아의 지역별 무궁무진한 특징을 가진 파스타 요리 중, 우리의 입맛에 맞는 파스타를 엄선하여 이탈리아 지역별 정통 파스타소스를
+          재현하였습니다. 이탈리아의 지역별 무궁무진한 특징을 가진 파스타 요리 중, 우리의 입맛에 맞는 파스타를 엄선하여 이탈리아 지역별 정통
+          파스타소스를 재현하였습니다.
+        </p>
+      </div>
+    </div>
+  </section>
 </main>
 
-
-
-<!-- <section class="products">
-	<div class="products-item">
-		<figure class="products-item-thumbnail"><img src="" alt=""></figure>
-		<span class="products-item-brand">Kapital</span>
-		<h2 class="products-item-name">リップストップ　キルト作務コート</h2>
-		<span class="products-item-price">60,280 円(税込)</span>
-	</div>
-	<div class="products-item">
-		<figure class="products-item-thumbnail"><img src="" alt=""></figure>
-		<span class="products-item-brand">Kapital</span>
-		<h2 class="products-item-name">リップストップ　キルト作務コート</h2>
-		<span class="products-item-price">60,280 円(税込)</span>
-	</div>
-	<div class="products-item">
-		<figure class="products-item-thumbnail"><img src="" alt=""></figure>
-		<span class="products-item-brand">Kapital</span>
-		<h2 class="products-item-name">リップストップ　キルト作務コート</h2>
-		<span class="products-item-price">60,280 円(税込)</span>
-	</div>
-	<div class="products-item">
-		<figure class="products-item-thumbnail"><img src="" alt=""></figure>
-		<span class="products-item-brand">Kapital</span>
-		<h2 class="products-item-name">リップストップ　キルト作務コート</h2>
-		<span class="products-item-price">60,280 円(税込)</span>
-	</div>
-</section> -->
-
+<section class="products">
+  <div class="products-item">
+    <figure class="products-item-thumbnail"><img src="" alt="" /></figure>
+    <span class="products-item-brand">Test</span>
+    <h2 class="products-item-name">リップストップ　キルト作務コート</h2>
+    <span class="products-item-price">60,280 円(税込)</span>
+  </div>
+  <div class="products-item">
+    <figure class="products-item-thumbnail"><img src="" alt="" /></figure>
+    <span class="products-item-brand">Test</span>
+    <h2 class="products-item-name">リップストップ　キルト作務コート</h2>
+    <span class="products-item-price">60,280 円(税込)</span>
+  </div>
+  <div class="products-item">
+    <figure class="products-item-thumbnail"><img src="" alt="" /></figure>
+    <span class="products-item-brand">Test</span>
+    <h2 class="products-item-name">リップストップ　キルト作務コート</h2>
+    <span class="products-item-price">60,280 円(税込)</span>
+  </div>
+  <div class="products-item">
+    <figure class="products-item-thumbnail"><img src="" alt="" /></figure>
+    <span class="products-item-brand">Test</span>
+    <h2 class="products-item-name">リップストップ　キルト作務コート</h2>
+    <span class="products-item-price">60,280 円(税込)</span>
+  </div>
+</section>

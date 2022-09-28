@@ -39,7 +39,7 @@ table tbody tr td {padding:var(--space-3) 0;}
 table tbody tr:hover {}
 table .right {text-align:right;}
 
-table.is-borderless tbody tr {border:0;}
+// table.is-borderless tbody tr {border:0;}
 
 table tbody[role=rowgroup] tr th {width:25%;}
 table tbody[role=rowgroup] tr th + th {width:auto;} // todo
@@ -47,7 +47,7 @@ table tbody[role=rowgroup] tr th + th {width:auto;} // todo
 ul {padding-left:var(--space-4);}
 ul li {margin:var(--space-1) 0;} // for font-size.
 [data-align=horizontal] {display:flex;flex-wrap:wrap;}
-[data-align=horizontal] li {margin:0 var(--space-4) 0 0;}
+[data-align=horizontal] li {margin:0 2rem 0 0;}
 
 ol {}
 ol li {margin:var(--space-1) 0;padding:0 0 0 1rem;position:relative;counter-increment:listitem;}
