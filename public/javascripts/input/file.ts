@@ -23,7 +23,7 @@ function attach(fileInput: HTMLInputElement) {
 				<figure class="file-attachment-item-image"><img src=${window.URL.createObjectURL(file)} alt=${file.name}></figure>
 				<b class="file-attachment-item-name">${file.name}</b>
 				<small class="file-attachment-item-size" >${returnFileSize(file.size)}</small>
-				<button class="file-attachment-item-delete js-remove-this"><i class="icon-x"></i></button>
+				<button class="file-attachment-item-delete js-remove-this"><span class="material-symbols-outlined">close</span></button>
 			</div>`
 
     attachmentList.innerHTML += fileTemplate

@@ -45,6 +45,7 @@
     <p style="margin:.5rem 0 1.5rem;">
       사용자 인터렉션을 요구할 때 dim으로 주의를 집중 시킵니다. toast는 단순 피드백으로, 뷰를 변경하지 않습니다.
     </p>
+    <p>dim을 열고 body 엘리먼트의 스크롤을 막을 것인가. 스크롤의 크기만큼 좌우의 위치를 보정할 것인가. 비효율적인 작업량.</p>
 
     <div class="tile-flat">
       <b>memo</b>
@@ -85,13 +86,10 @@
         <thead>
           <tr>
             <td style="padding:var(--space-2) 0;">
-              <span class="textfield-check" style="margin-right:var(--space-2);position:relative;right:auto;top:auto;background:var(--green100);">
-              </span>
+              <span class="icon-button is-positive" data-size="small"></span>
             </td>
             <td style="padding:var(--space-2) 0;">
-              <span class="textfield-check" style="position:relative;right:auto;top:auto;background:var(--red100);"
-                ><i class="icon-x is-red"></i
-              ></span>
+              <span class="icon-button is-negative" data-size="small"><span class="material-symbols-outlined">close</span></span>
             </td>
           </tr>
         </thead>
@@ -222,7 +220,7 @@
         <h2 class="sheet-title">Presentation - sheet</h2>
         <!-- todo close button -->
         <button class="dialog-close js-sheet-close" aria-label="close sheet">
-          <i class="icon-x"></i>
+          <span class="material-symbols-outlined">close</span>
         </button>
         <button class="item" data-size="medium" role="menuitem">
           <figure class="item-avatar"></figure>

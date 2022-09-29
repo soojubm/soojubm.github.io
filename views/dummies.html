@@ -3,12 +3,7 @@
     <div class="hero-background"></div>
     <h1 class="hero-title" style="display:flex;align-items:center;color:var(--color-text-light);">
       Dummies
-      <span
-        class="selectbox-indicator"
-        role="img"
-        style="margin-left:.5rem;background:var(--color-background-weak);position:relative;right:auto;top:auto;"
-        ><i class="icon-caret"></i
-      ></span>
+      <span class="selectbox-indicator" role="img" style="margin-left:.5rem;"><i class="icon-caret"></i></span>
     </h1>
     <h1 class="hero-title">Hero Component의 description은<br />최대 두 줄까지 허용합니다.</h1>
     <p class="hero-description">히어로 섹션의 샘플. e.detail.originalEvent</p>
@@ -17,12 +12,32 @@
     </footer>
   </section>
 
-  <p>
-    Note: Make sure the role of the element that serves as the container for the popup content is a menu, listbox, tree, grid or dialog and that the
-    value of aria-haspopup matches the role of the popup container.
-  </p>
-  <p>Elements with role combobox have an implicit aria-haspopup value of listbox.</p>
   <section class="component-body" style="padding:2rem var(--grid-margin);">
+    <p>select indicator: 는 inline or float: right 2가지 타입이 존재. icon-button small의 style</p>
+    <p>textfield-check</p>
+    <p>
+      Note: Make sure the role of the element that serves as the container for the popup content is a menu, listbox, tree, grid or dialog and that the
+      value of aria-haspopup matches the role of the popup container.
+    </p>
+    <p>Elements with role combobox have an implicit aria-haspopup value of listbox.</p>
+    <br />
+
+    <p>presentation 모달 형태가 가장 적</p>
+    <div class="sorting" style="position:relative;display:flex;">
+      <label class="" for="select2" style="margin:0 var(--space-2) 0 0;">Sort by</label>
+      <select class="" id="select2" style="background:none;border:none;padding:0 var(--space-2) 0 0;font:inherit;color:var(--color-text);">
+        <option class="select-option" value="select-option1">최신순</option>
+      </select>
+      <span class="icon-button" data-size="small" role="img"><i class="icon-caret"></i></span>
+    </div>
+    <br />
+    <button style="display:flex;align-items:center;">
+      Learn more
+      <span class="icon-button material-symbols-outlined" data-size="small" style="margin-left:.5rem;">
+        arrow_right_alt
+      </span>
+    </button>
+    <br />
     <div class="textfield">
       <button class="textfield-prefix searchfield-prefix">
         <span class="material-symbols-outlined">mail </span>
@@ -74,18 +89,6 @@
         <li><a href="#">Xero</a></li>
       </ol>
     </nav>
-
-    <br />
-
-    <div class="sorting" style="position:relative;display:flex;">
-      <label class="" for="select2" style="margin:0 var(--space-2) 0 0;">Sort by</label>
-      <select class="" id="select2" style="background:none;border:none;padding:0 var(--space-2) 0 0;font:inherit;color:var(--color-text);">
-        <option class="select-option" value="select-option1">최신순</option>
-      </select>
-      <span class="selectbox-indicator" role="img" style="background:var(--color-background-weak);position:relative;right:auto;top:auto;"
-        ><i class="icon-caret"></i
-      ></span>
-    </div>
 
     <br />
 
@@ -231,7 +234,7 @@
     <div style="max-width:400px;position:relative;">
       <h3 style="text-align:center;font-size:var(--font-size-subhead);">See this post in</h3>
       <button class="" style="position:absolute;right:0;top:-.25rem;">
-        <figure class="chip"><i class="icon-x"></i></figure>
+        <figure class="chip"><span class="material-symbols-outlined">close</span></figure>
       </button>
       <hr />
       <div class="item" role="listitem" data-size="large">
@@ -370,12 +373,12 @@
       <thead>
         <tr>
           <td style="padding:var(--space-2) 0;">
-            <span class="textfield-check" style="margin-right:var(--space-2);position:relative;right:auto;top:auto;background:var(--green100);">
+            <span class="icon-button is-positive" data-size="small">
               <span class="material-symbols-outlined" style="color:var(--color-primary);">check</span>
             </span>
           </td>
           <td style="padding:var(--space-2) 0;">
-            <span class="textfield-check" style="position:relative;right:auto;top:auto;background:var(--red100);"><i class="icon-x is-red"></i></span>
+            <span class="icon-button is-negative" data-size="small"><span class="material-symbols-outlined">close</span></span>
           </td>
         </tr>
       </thead>
@@ -437,7 +440,7 @@
       <figure class="file-attachment-item-image"><img src="/public/images/springsteen.jpg" alt="${file.name}" /></figure>
       <b class="file-attachment-item-name">${file.name}</b>
       <small class="file-attachment-item-size">${returnFileSize(file.size)}</small>
-      <button class="file-attachment-item-delete js-remove-this"><i class="icon-x"></i></button>
+      <button class="file-attachment-item-delete js-remove-this"><span class="material-symbols-outlined">close</span></button>
     </div>
     <div class="reactions" style="margin:1rem 0;">
       <button class="reaction-item">
@@ -588,7 +591,7 @@
     <article class="share" style="max-width:400px;padding:1rem;">
       <h2 class="share-title">가족이나 친구와<br />함께 보세요!</h2>
       <hr />
-      <button class="share-back"><i class="icon-x"></i></button>
+      <button class="share-back"><span class="material-symbols-outlined">close</span></button>
       <button class="share-facebook">
         <figure class="share-facebook-icon"></figure>
         <span class="share-facebook-label">facebook으로 공유하기</span>

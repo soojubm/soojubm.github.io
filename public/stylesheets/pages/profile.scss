@@ -57,7 +57,7 @@
 // todo padding margin .... border?? -.25rem 하면 안 맞다
 [role=tablist] {@include tile-elevated-small;margin-top:0;display:flex;padding:.25rem !important;}
 .profile-tablist {}
-.profile-tablist-tab {display:flex;align-items:center;justify-content:center;height:var(--size-medium);padding:0 var(--space-4) var(--adjust-label-line);color:var(--color-text-light);position:relative;z-index:var(--zindex-default);}
+.profile-tablist-tab {display:flex;align-items:center;justify-content:center;flex:auto;height:var(--size-medium);padding:0 var(--space-4) var(--adjust-label-line);color:var(--color-text-light);position:relative;z-index:var(--zindex-default);}
 // .profile-tablist-tab:hover {box-shadow:var(--shadow);} flex:auto;
 .profile-tablist-tab[aria-selected=true] {color:var(--color-text-weak);}
 // .profile-tablist-tab[aria-selected=true]:before {content:'✓';margin:0 var(--space-2) 0 0;}

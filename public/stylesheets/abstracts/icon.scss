@@ -22,14 +22,6 @@
 
 .icon-o {display:block;width:6px;height:6px;border:2px solid var(--icon-background);border-radius:50%;position:relative;transition:all .5s ease;}
 
-.icon-x {display:inline-block;vertical-align:middle;width:var(--size-tiny);height:var(--size-tiny);position:relative;transition:all .5s ease;}
-.icon-x:before {content:'';width:10px;height:2px;background-color:var(--icon-background);position:absolute;left:50%;top:50%;transform:translate(-50%, -50%) rotate(45deg);}
-.icon-x:after {content:'';width:2px;height:10px;background-color:var(--icon-background);position:absolute;left:50%;top:50%;transform:translate(-50%, -50%) rotate(45deg);}
-
-.icon-x.is-red {}
-.icon-x.is-red:before {background-color:var(--red800);}
-.icon-x.is-red:after {background-color:var(--red800);}
-
 .icon-heart {position:relative;}
 .icon-heart:before {content:'';background:var(--icon-background);width:7px;height:12px;border-radius:50px 50px 0 0;transform: rotate(-45deg);position:absolute;left:-5px;top:-6px;}
 .icon-heart:after {content:'';background:var(--icon-background);width:7px;height:12px;border-radius: 50px 50px 0 0;	transform: rotate(45deg);position:absolute;left:-1px;top:-6px;}
@@ -84,8 +76,6 @@
   top: 50%;
   transform: translate(-50%, -50%);
 }
-.icon-arrow.is-left {transform:rotate(-180deg);}
-.icon-arrow.is-down {transform:rotate(90deg);}
 
 .icon-arrow-right {padding:16px;position:relative;}
 .icon-arrow-right:before {content:'';display:block;width:16px;height:1px;background:var(--icon-background);position:absolute;left:16px;top:24px;}

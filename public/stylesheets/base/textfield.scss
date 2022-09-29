@@ -32,6 +32,8 @@
 .textfield-unit {}
 
 .textfield-check {@include textfield-surfix;}
+.textfield-check {@include textfield-surfix;}
+
 .textfield-prefix {@include textfield-prefix;background:var(--color-background-weak);}
 .textfield-prefix ~ .textfield-input {padding-left:calc(var(--size-medium) + var(--space-after-avatar-medium));}
 .selectbox-indicator {@include textfield-surfix;pointer-events:none;}
