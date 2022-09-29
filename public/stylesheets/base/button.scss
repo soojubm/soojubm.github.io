@@ -94,6 +94,6 @@ button {@include reset-button;}
 .button-elevated:hover {@include hover-item;}
 .button-elevated-avatar {@include avatar-medium;margin:0 var(--space-after-avatar-medium) 0 0;}
 .button-elevated-label {padding:0 0 var(--adjust-label-line) 0;}
-.button-elevated-helper {margin-left:auto;margin-right:.5rem;}
+.button-elevated-helper {@include icon-button-small;margin-left:auto;}
 
 .danger-button {@include button;background:var(--red800);border:1px solid var(--red800);color:var(--gray0);}

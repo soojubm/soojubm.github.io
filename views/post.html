@@ -1,7 +1,7 @@
 <main class="post">
   <header class="post-head js-post-head">
     <a class="post-head-category" href="#post">Murmur</a>
-    <h2 class="post-head-headline">Lorem Ipsum is<br />simply dummy text</h2>
+    <h2 class="post-head-headline">Lorem Ipsum is simply dummy text</h2>
     <p class="post-head-kicker">
       Our collective understanding of work—where it takes place and how it gets done—has been transformed over the last year.
     </p>
@@ -98,10 +98,14 @@
     <p class="post-body-paragraph">무제한(스트리밍) / 1개 무제한(미디엄) / 여러 개 중 1개 (총 1 페이스북) / 여러 개 중 여러 개에 각 1번 (깃허브)</p>
 
     <section class="post-reaction">
-      <div class="post-reaction-like">
-        <figure class="post-reaction-like-icon"><i class="icon-heart"></i></figure>
+      <button class="post-reaction-like">
+        <figure class="post-reaction-like-icon">
+          <span class="material-symbols-outlined">
+            favorite
+          </span>
+        </figure>
         <span class="post-reaction-like-count">119</span>
-      </div>
+      </button>
       <div class="post-reaction-share" hidden>
         <button class="post-reaction-share-trigger"></button>
       </div>
@@ -142,17 +146,17 @@
     </a>
   </aside>
 
-  <!-- <section class="post-share">
+  <section class="post-share">
     <h4 class="post-share-title" hidden>share:</h4>
     <button class="post-share-facebook">
-      <span><img src="/public/icons/facebook.svg" alt=""/></span>
+      <span></span>
       페이스북으로 공유하기
     </button>
     <button class="post-share-twitter">
-      <span><img src="/public/icons/twitter.svg" alt=""/></span>
+      <span></span>
       트위터로 공유하기
     </button>
-  </section> -->
+  </section>
 
   <hr style="margin:2rem 0" />
 
@@ -205,12 +209,12 @@
 
 <nav class="post-pagination">
   <a class="post-pagination-previous" href="#">
-    <figure class="post-pagination-previous-media"><i class="icon-arrow is-left"></i></figure>
+    <figure class="post-pagination-previous-media"><span class="material-symbols-outlined">arrow_back</span></figure>
     <h6 class="post-pagination-previous-label" title="prev article">이전 콘텐츠</h6>
     <span class="post-pagination-previous-postname">Return to all articles</span>
   </a>
   <a class="post-pagination-next" href="#">
-    <figure class="post-pagination-next-media"><i class="icon-arrow"></i></figure>
+    <figure class="post-pagination-next-media"><span class="material-symbols-outlined">arrow_forward</span></figure>
     <h6 class="post-pagination-next-label">다음 콘텐츠</h6>
     <span class="post-pagination-next-postname">Avoid invisible text during font loading</span>
   </a>

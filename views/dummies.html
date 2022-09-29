@@ -3,7 +3,11 @@
     <div class="hero-background"></div>
     <h1 class="hero-title" style="display:flex;align-items:center;color:var(--color-text-light);">
       Dummies
-      <span class="selectbox-indicator" role="img" style="margin-left:.5rem;"><i class="icon-caret"></i></span>
+      <span class="selectbox-indicator" role="img" style="margin-left:.5rem;"
+        ><span class="material-symbols-outlined">
+          arrow_drop_down
+        </span></span
+      >
     </h1>
     <h1 class="hero-title">Hero Component의 description은<br />최대 두 줄까지 허용합니다.</h1>
     <p class="hero-description">히어로 섹션의 샘플. e.detail.originalEvent</p>
@@ -28,7 +32,11 @@
       <select class="" id="select2" style="background:none;border:none;padding:0 var(--space-2) 0 0;font:inherit;color:var(--color-text);">
         <option class="select-option" value="select-option1">최신순</option>
       </select>
-      <span class="icon-button" data-size="small" role="img"><i class="icon-caret"></i></span>
+      <span class="icon-button" data-size="small" role="img"
+        ><span class="material-symbols-outlined">
+          arrow_drop_down
+        </span></span
+      >
     </div>
     <br />
     <button style="display:flex;align-items:center;">
@@ -69,12 +77,20 @@
     <div class="chip-group" style="margin-top:1rem;margin-bottom:2rem;">
       <button class="chip js-toggle" aria-haspopup="menu">
         <span class="chip-label" title="일행 당 인원 수">예약옵션</span>
-        <figure class="chip-icon"><i class="icon-caret"></i></figure>
+        <figure class="chip-icon">
+          <span class="material-symbols-outlined">
+            arrow_drop_down
+          </span>
+        </figure>
       </button>
       <div class="dropdown">
         <button class="dropdown-trigger js-toggle" aria-expanded="true">
           <span class="dropdown-trigger-label">예산</span>
-          <figure class="dropdown-trigger-icon"><i class="icon-caret"></i></figure>
+          <figure class="dropdown-trigger-icon">
+            <span class="material-symbols-outlined">
+              arrow_drop_down
+            </span>
+          </figure>
         </button>
       </div>
     </div>
@@ -641,7 +657,7 @@
       <button class="button-elevated" style="margin:.25rem 0 0 0;">
         <figure class="button-elevated-avatar">🦄</figure>
         <span class="button-elevated-label">샘플 유아이</span>
-        <i class="button-elevated-helper icon-arrow"></i>
+        <i class="button-elevated-helper"><span class="material-symbols-outlined">arrow_forward</span></i>
       </button>
     </article>
 
@@ -662,7 +678,7 @@
       </fieldset>
       <button class="button-elevated">
         <figure class="button-elevated-avatar">
-          <i class="icon-plus" style="transform:scale(1.25);"></i>
+          <span class="material-symbols-outlined">add</span>
         </figure>
         <span class="button-elevated-label">새 컬렉션 만들기</span>
       </button>
@@ -688,7 +704,7 @@
         <button class="button-elevated">
           <figure class="button-elevated-avatar">🦄</figure>
           <span class="button-elevated-label">샘플 유아이</span>
-          <i class="button-elevated-helper icon-arrow"></i>
+          <i class="button-elevated-helper"><span class="material-symbols-outlined">arrow_forward</span></i>
         </button>
 
         <button class="post-comment-list-item-reply">답글 <small>7</small></button>

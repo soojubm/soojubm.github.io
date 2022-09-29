@@ -153,7 +153,7 @@
 .avatargroup:hover {@include hover-item;}
 .avatargroup figure {@include avatar-small;box-shadow:var(--color-background) 0px 0px 0px 2px;}
 .avatargroup figure + figure {margin-left:-.5rem;}
-.avatargroup-label {margin:0 0 0 var(--space-2);}
+.avatargroup-label {margin:0 0 0 var(--space-2);line-height:var(--size-small);}
 
 .temp8 {display:flex;margin:var(--space-1) 0 0 0;position:relative;}
 .temp8 > * {

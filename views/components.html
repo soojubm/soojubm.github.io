@@ -12,7 +12,9 @@
         <select class="" id="select2" style="background:none;border:none;padding:0 var(--space-4) 0 0;font:inherit;color:var(--color-text);">
           <option class="select-option" value="select-option1">나눔고딕</option>
         </select>
-        <span class="selectbox-indicator" role="img"><i class="icon-caret"></i></span>
+        <span class="selectbox-indicator" role="img"><span class="material-symbols-outlined">
+arrow_drop_down
+</span></span>
       </div>
       <button class="textbox-toolbar-bold" style="font-weight:var(--font-weight-bold);">B</button>
       <button class="textbox-toolbar-italic" style="font-style:italic;">I</button>
@@ -133,13 +135,12 @@
   </nav>
 
   <section class="component-body">
-    <div>
+    <!-- <div>
       <div>Presentation style="modal | toast | sheet" ... 이렇게 되면 윈도우 사이즈가 변경될 때 props를 변경해주어야 함.</div>
       <div>Group style="button | chip | tag | textfield | avatar" isHorizantalScroll(isBleeding)...</div>
       <div>React migration classNames 라이브러리를 활용하기 위해서 data- 속성으로 스타일을 주지 않는 것이 좋다.</div>
-      <div>.icon-button.is-size-small</div>
       <div>roles (for designers): filter sort select</div>
-    </div>
+    </div> -->
 
     <!-- <chip>test</chip>
     <button is="fancy-button" class="test-class">Fancy button!</button>
@@ -157,7 +158,16 @@
         <button class="profile-tablist-tab" role="tab" aria-selected="true" aria-controls="panel-1" id="tab-1" tabindex="0" style="padding-top:3px">
           Style
         </button>
-        <button class="profile-tablist-tab" role="tab" aria-selected="false" aria-controls="panel-2" id="tab-2" tabindex="-1" style="padding-top:3px">
+        <button
+          class="profile-tablist-tab"
+          role="tab"
+          aria-selected="false"
+          aria-controls="panel-2"
+          id="tab-2"
+          tabindex="-1"
+          style="padding-top:3px"
+          onclick="javascript:alert('샘플유아이');"
+        >
           Role
         </button>
         <i class="profile-tablist-indicator" style="width:50%;"></i>
@@ -205,7 +215,9 @@
             <figure class="item-avatar"></figure>
             <h3 class="item-name" style="font-weight:var(--font-weight-normal);">Entity medium</h3>
             <time style="margin:0 0 0 var(--space-2);color:var(--color-text-light);">36.4만</time>
-            <!-- <button class="item-delete"><span class="material-symbols-outlined">close</span></button> -->
+            <button class="item-delete icon-button" data-size="small" style="margin-left:auto;min-width:24px;">
+              <span class="material-symbols-outlined">close</span>
+            </button>
           </article>
           <article class="item" data-size="small">
             <figure class="item-avatar"></figure>
@@ -637,7 +649,11 @@
           <div class="dropdown">
             <button class="dropdown-trigger js-toggle" aria-expanded="true">
               <span class="dropdown-trigger-label" title="일행 당 인원 수">필터</span>
-              <figure class="dropdown-trigger-icon"><i class="icon-caret"></i></figure>
+              <figure class="dropdown-trigger-icon">
+                <span class="material-symbols-outlined">
+                  arrow_drop_down
+                </span>
+              </figure>
             </button>
             <menu class="dropdown-menu" role="menu" style="padding:var(--space-3);">
               <fieldset role="radiogroup">
@@ -660,7 +676,11 @@
           <div class="dropdown">
             <button class="dropdown-trigger js-toggle" aria-expanded="true">
               <span class="dropdown-trigger-label">정렬</span>
-              <figure class="dropdown-trigger-icon"><i class="icon-caret"></i></figure>
+              <figure class="dropdown-trigger-icon">
+                <span class="material-symbols-outlined">
+                  arrow_drop_down
+                </span>
+              </figure>
             </button>
             <menu class="dropdown-menu" role="menu">
               <h6 class="dropdown-menu-title" hidden>Dropdown header</h6>
@@ -685,7 +705,9 @@
               <p class="dropdown-footer-question">Going?</p>
               <button class="dropdown-footer-action chip">
                 <span class="chip-label">Yes</span>
-                <figure class="dropdown-trigger-icon"><i class="icon-caret"></i></figure>
+                <figure class="dropdown-trigger-icon"><span class="material-symbols-outlined">
+arrow_drop_down
+</span></figure>
               </button>
               <button class="dropdown-footer-action chip">
                 <span class="chip-label">No</span>
@@ -1100,15 +1122,23 @@
             <select class="textfield-input" id="select1">
               <option class="select-option" value="select-option1">Choose an option</option>
             </select>
-            <span class="selectbox-indicator" role="img"><i class="icon-caret"></i></span>
+            <span class="selectbox-indicator" role="img"
+              ><span class="material-symbols-outlined">
+                arrow_drop_down
+              </span></span
+            >
           </div>
         </div>
         <div class="tile-flat">
           <div class="quantity js-quantity" style="max-width:8rem;">
             <input class="quantity-input js-quantity-input js-number-input" name="quantity1" type="number" value="0" min="5" max="20" />
             <!-- <input type="text" inputmode="numeric" pattern="[0-9]*"> -->
-            <button class="quantity-decrement js-quantity-decrement"><i class="icon-minus"></i></button>
-            <button class="quantity-increment js-quantity-increment"><i class="icon-plus"></i></button>
+            <button class="quantity-decrement js-quantity-decrement">
+              <span class="material-symbols-outlined">
+                remove
+              </span>
+            </button>
+            <button class="quantity-increment js-quantity-increment"><span class="material-symbols-outlined">add</span></button>
           </div>
         </div>
       </section>
@@ -1465,16 +1495,28 @@
         <div class="tile-flat">
           <nav class="bottombar">
             <a href="#" class="bottombar-item is-active">
-              <figure class="bottombar-item-icon"><i class="icon-person"></i></figure>
+              <figure class="bottombar-item-icon">
+                <span class="material-symbols-outlined">
+                  account_circle
+                </span>
+              </figure>
               <span class="bottombar-item-label">홈</span>
               <em></em>
             </a>
             <a href="#" class="bottombar-item">
-              <figure class="bottombar-item-icon"><i class="icon-hamberger"></i></figure>
+              <figure class="bottombar-item-icon">
+                <span class="material-symbols-outlined">
+                  account_circle
+                </span>
+              </figure>
               <span class="bottombar-item-label">카테고리</span>
             </a>
             <a href="#" class="bottombar-item">
-              <figure class="bottombar-item-icon"><i class="icon-person"></i></figure>
+              <figure class="bottombar-item-icon">
+                <span class="material-symbols-outlined">
+                  account_circle
+                </span>
+              </figure>
               <span class="bottombar-item-label">설정</span>
             </a>
           </nav>
@@ -1544,7 +1586,11 @@
         </div>
         <div class="tile-flat">
           <div class="navbar-menu-item has-submenu" style="margin:var(--space-2) 0 0 0;padding:0;">
-            <span role="menuitem">subheading<i class="icon-caret"></i></span>
+            <span role="menuitem"
+              >subheading<span class="material-symbols-outlined">
+                arrow_drop_down
+              </span></span
+            >
             <menu>
               <a href="#design">Only Text</a>
               <a href="#design">Only Text Menu</a>
