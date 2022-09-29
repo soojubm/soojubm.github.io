@@ -99,12 +99,14 @@ svg {color:var(--gray800);}
 .browser {text-align:center;padding:2rem;background:var(--red800);background:var(--color-background);position:fixed;left:0;right:0;bottom:0;z-index:var(--zindex-modal);}
 
 .cta-arrow {
-  max-width: 67px;
-  flex-grow: 1;
+  width:100%;
+  // max-width: 500px;
+  // flex-grow: 1;
   // margin-left: 11px;
   // margin-right: 3px;
   padding: 17px 0;
   position: relative;
+  transition: all .4s;
   .line {
     width: 100%;
     height: 2px;
@@ -132,6 +134,9 @@ svg {color:var(--gray800);}
     }
   }
 }
+
+
+// .arrow-test a:hover .cta-arrow {width:4rem;}
 
 
 .font-default {font-family:san-serif;}
