@@ -39,13 +39,6 @@
 	z-index: -1;
 }
 
-// .scroll-container {
-//   display: flex;
-//   flex-wrap: no-wrap;
-//   overflow-x: scroll;
-//   overflow-y: hidden;
-// }
-// .card {flex: 0 0 auto;}
 
 
 @mixin clearfix {
@@ -58,7 +51,7 @@
   // 부모태그에 position: relative;zindex:1;
   cursor: pointer;
   &:before {
-    --hover-outline: calc(var(--space-4) / 2 * -1);
+    --hover-outline: calc(var(--space-3) / 2 * -1);
     content:'';
     display:block;background:var(--color-background-weak);border-radius:var(--radius);
     position:absolute;
@@ -69,9 +62,7 @@
 }
 .is-hoverable {@include hover-item;}
 
-
 // mobile padding 패딩은 page-head에서 주는 게 좋음. -margin 주는 게 좋을 듯.
- // 4rem -> 2rem
 @mixin layout($size: 800px) {
   max-width: $size;
   margin: 0 auto;
@@ -95,12 +86,9 @@
   flex-wrap: unset; // todo..
   white-space:nowrap;
   overflow:auto;
-  margin: var(--space-1-minus) var(--space-3-minus);
-  padding: var(--space-1) var(--space-3);
-
-  // margin: 0 var(--grid-margin-minus);
-  // padding: 0 var(--grid-margin);
-  > * {min-width:auto;margin: 0 var(--space-2) 0 0;}
+  // margin: var(--space-1-minus) var(--space-3-minus);
+  // padding: var(--space-1) var(--space-3);
+  > * {min-width:auto;}
   &::-webkit-scrollbar {display:none;}
 }
 
@@ -167,8 +155,6 @@
   color: var(--color-text-light);
   &:before {content:'#';}
 }
-
-
 
 
 

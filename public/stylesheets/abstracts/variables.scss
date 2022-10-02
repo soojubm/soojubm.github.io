@@ -1,6 +1,6 @@
 @custom-media --large (max-width: 1560px);
 @custom-media --small (max-width: 1080px);
-
+// $p-breakpoints-lg-only: '(min-width: 65em) and (max-width: 89.9975em)';
 
 
 :root {
@@ -158,8 +158,8 @@
   --shadow: 0 0 .25rem rgb(0 0 0 / 7.5%);
   --shadow-active: null;
 
-  --state-focus: 0 0 0 2px var(--color-border-hover);
-  --state-hover: 0 0 0 2px rgba(0,0,0,.1);
+  --state-focus: 0 0 0 3px var(--color-border-hover);
+  --state-hover: 0 0 0 3px rgba(0,0,0,.1);
 
   // ! animation
   --duration: .4s;

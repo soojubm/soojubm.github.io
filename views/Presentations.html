@@ -1,7 +1,18 @@
 <main class="component">
   <section class="hero" role="banner">
     <h1 class="hero-title">Presentations</h1>
-    <h1 class="hero-title">Page. Modal. Sheet. Toast.</h1>
+    <h1 class="hero-title">콘텐츠 그릇</h1>
+
+    <ul>
+      <li>독립적인 컨테이너로서 동작해야 한다.</li>
+      <li>큰 맥락에서 presentation 컴포넌트는 포지셔닝의 역할만을 해야 한다.</li>
+      <li>루트 엘리먼트가 상태 클래스를 가져야 한다. = 글로벌 상태. (특히 토스트)</li>
+      <li>@mixin modal / sheet / toast / drawer</li>
+      <li>컨테이너가 fixed 되어야 현재 뷰포트에서 노출할 수 있다.</li>
+      <li>dim을 별도의 엘리먼트로 만들면 리액트에서 콘텐츠 외부를 클릭해서 닫는 기능 구현이 쉬움.</li>
+    </ul>
+    <p>layout :: fixed layout / fluid layout</p>
+
     <!-- <p class="hero-description">
       정리. 크로스 플랫폼을 위한 디자인에서 iOS에만 있거나 android에만 있는 요소를 혼합해서 사용하게 되면 작은 화면에서 sheet가 toast나 floating
       action button 등과 위치나 용법이 중복되기 때문에 생각할 지점이 많아진다. 사용자들에게 눈에 띄게 큰 효용을 주는 것이 아니라면, 대체 가능한 패턴을
@@ -22,6 +33,12 @@
       </li>
     </ul> -->
 
+    <h4 class="article-subhead">References</h4>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/presentation_role" target="_blank">ARIA: presentation role </a>
+    <a href="https://developer.apple.com/design/human-interface-guidelines/components/presentation/action-sheets" target="_blank"
+      >Presentation/action-sheets</a
+    >
+
     <h4 class="article-subhead">Related Components</h4>
     <ul>
       <li>Title bar</li>
@@ -37,7 +54,7 @@
       <li>window.resize</li>
     </ul>
 
-    <h4 class="article-subhead">Needed interactions</h4>
+    <h4 class="article-subhead">인터렉션</h4>
     <ul>
       <li>Sheet (mobile)</li>
       <li>Modal (desktop)</li>
@@ -59,6 +76,11 @@
     <article class="article js-observer js-scrollspy-section">
       <h1 class="article-title">Page</h1>
       <p class="article-description">기본적인 콘텐츠 뷰</p>
+      <ul>
+        <li>
+          검색 : 글로벌 / 로컬 패턴 정리 , Progressing. Loader의 레벨
+        </li>
+      </ul>
     </article>
 
     <article class="article js-observer js-scrollspy-section">

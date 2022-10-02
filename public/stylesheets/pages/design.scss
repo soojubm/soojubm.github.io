@@ -14,8 +14,8 @@
 .article-subhead {margin:3rem 0 var(--space-2);@include text-subhead;}
 .article > .hashtag {margin:0 .25rem 0 0;font-size:var(--font-size-caption);}
 
-.tokens-body,
-.component-body {border-top:var(--border);border-bottom:var(--border);}
+// .tokens-body,
+// .component-body {border-top:var(--border);border-bottom:var(--border);}
 
 // .article.is-scrolled {animation:fadeup .8s forwards;}
 .spacing-card {padding:var(--space-inset-tile);overflow:hidden;position:relative;}

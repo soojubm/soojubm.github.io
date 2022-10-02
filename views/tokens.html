@@ -2,6 +2,7 @@
   <!-- <section class="hero">
     <h1 class="hero-title">Tokens</h1>
   </section> -->
+
   
   <!-- <h1 class="hero-title">일관된 시각 경험. 크로스 플랫폼. 확장과 유지 보수.</h1> -->
   <!-- <ul>
@@ -52,7 +53,13 @@
     <article class="article js-scrollspy-section">
       <h1 class="article-title">Palette</h1>
       <p class="article-description">color와 surface.</p>
-      <button class="button-elevated js-darkmode" title="change theme" style="background:var(--color-background);border-radius:var(--radius);box-shadow:var(--shadow);padding:.5rem;border:var(--border);">
+
+      <ul>
+        <li>hierarchy. 크기와 비례해서 radius와 shadow 조절이 필요하지만 경량화하여 하나의 값을 사용하고 있습니다.</li>
+        <li>radius. pill과 non-pill은 양자택일. 인물 아바타의 차별화를 위해 circle은 허용.</li>
+        <li>theme. 다크테마를 위한 인버트 컬러셋을 별도로 정의하지 않습니다. 하나의 컬러셋으로 다양한 테마 또는 커스텀 유아이에 대응합니다.</li>
+      </ul>
+      <button class="button-elevated js-darkmode" title="change theme" style="width:50%;max-width:240px;">
         <figure class="button-elevated-avatar"><span class="material-symbols-outlined">nights_stay</span></figure>
         <span class="button-elevated-label">어둡게 보기</span>
         <span class="switch" style="margin-left:auto;">
@@ -60,13 +67,6 @@
           <label for="temp55" style="padding-left:48px;"></label>
         </span>
       </button>
-
-      <h4 class="article-subhead">Meta problems</h4>
-      <ul>
-        <li>hierarchy. 크기와 비례해서 radius와 shadow 조절이 필요하지만 경량화하여 하나의 값을 사용하고 있습니다.</li>
-        <li>radius. pill과 non-pill은 양자택일. 인물 아바타의 차별화를 위해 circle은 허용.</li>
-        <li>theme. 다크테마를 위한 인버트 컬러셋을 별도로 정의하지 않습니다. 하나의 컬러셋으로 다양한 테마 또는 커스텀 유아이에 대응합니다.</li>
-      </ul>
 
       <h4 class="article-subhead">Surfaces<br />shadow/radius</h4>
       <div class="token-group">
@@ -179,7 +179,7 @@
       <p class="article-description">활자의 위계와 배치.</p>
 
       <ul>
-        <li>단어나 구문을 underline, <del>bold</del>, primary color로 강조하지 않습니다. underline과 pirmary colored text는 링크의 기표이기 때문입니다.</li>
+        <li>단어나 구문을 underline, <del>bold</del>, primary color로 강조하지 않습니다. underline과 pirmary colored text는 링크의 기표입니다.</li>
         <li>괄호, 쉼표 등으로 텍스트를 분류하지 않습니다. 디자인하지 않았다는 인상으로 정보 더미를 읽기 편하게 정리하세요.</li>
         <li>태그라인은 작은 화면에서도 임팩트를 줄 있도록 작성 단계에서 행갈이를 고려하세요. 글자 또는 단어를 제한하고 개행 조건을 정의하세요.</li>
         <li>bottom navigation의 label은 예외적으로 10px입니다.</li>
@@ -188,7 +188,7 @@
         <li>long-form content에서 truncate-multiple는 항상 2줄로 자릅니다.</li>
           <!-- <p>프로모션 페이지의 헤드라인으로 제한적으로 사용합니다.</p> -->
       </ul>
-      <button class="user-logout tile-elevated-small js-default-font" title="change theme">
+      <button class="user-logout tile-elevated-small js-default-font" style="width:50%;max-width:240px;">
         <span class="user-logout-label">시스템 폰트로 보기</span>
       </button>
       <h4 class="article-subhead">Typefaces <sup>2</sup></h4>
@@ -458,13 +458,13 @@
       <h4 class="article-subhead">Media Queries</h4>
       <div class="token-group">
         <div class="token-item">
-          <b>@custom-media --large (max-width: ?)</b>
+          <b>@custom-media --large (max-width: 1560px)</b>
           <div>
             <p>@media (--large)</p>
           </div>
         </div>
         <div class="token-item">
-          <b>@custom-media --small (max-width: ?)</b>
+          <b>@custom-media --small (max-width: 1080px)</b>
           <div>
             <p>@media (--small)</p>
           </div>
@@ -594,7 +594,7 @@
     </article>
 
     <article class="article js-scrollspy-section">
-      <h1 class="article-title">Opacity</h1>
+      <h1 class="article-title">Opacity 🚧</h1>
       <p class="article-description">요소의 투명도.</p>
       <ul>
         <li>todo disabled state</li>

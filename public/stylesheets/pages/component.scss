@@ -11,8 +11,8 @@
 .component-style > .tile-elevated,
 .component-style > .tile-flat-small {width:100%;max-width:640px;}
 
-.component-navigation {background:var(--color-background);padding-left:var(--grid-margin);overflow:hidden;position:sticky;top:calc(var(--titlebar-height));z-index:7;}
-.component-navigation-scroll {@include group-bleeding;margin:0 var(--grid-margin-minus) !important;padding:var(--space-3) var(--grid-margin) !important;}
+.component-navigation {background:var(--color-background);overflow:hidden;position:sticky;top:calc(var(--titlebar-height));z-index:7;}
+.component-navigation-scroll {margin:-.25rem;padding:var(--space-3) var(--grid-margin) !important;}
 
 
 @media (--small), (max-height: 800px) {

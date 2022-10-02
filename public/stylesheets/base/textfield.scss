@@ -9,10 +9,8 @@
 }
 
 
-@mixin textfield-prefix {
-  @include icon-button-small;background:none !important;position:absolute;left:var(--space-3);top:36px;pointer-events:none;
-}
-@mixin textfield-surfix {@include icon-button-small;position:absolute;right:var(--space-4);top:37px;}
+@mixin textfield-prefix {@include icon-button-small;position:absolute;left:var(--space-3);top:36px;}
+@mixin textfield-surfix {@include icon-button-small;position:absolute;right:var(--space-3);top:37px;}
 
 .textfield-group {display:flex;justify-content:space-between;}
 .textfield-group .textfield {width:calc(50% - var(--space-1))}
@@ -34,7 +32,7 @@
 .textfield-check {@include textfield-surfix;}
 .textfield-check {@include textfield-surfix;}
 
-.textfield-prefix {@include textfield-prefix;background:var(--color-background-weak);}
+.textfield-prefix {@include textfield-prefix;}
 .textfield-prefix ~ .textfield-input {padding-left:calc(var(--size-medium) + var(--space-after-avatar-medium));}
 .selectbox-indicator {@include textfield-surfix;pointer-events:none;}
 

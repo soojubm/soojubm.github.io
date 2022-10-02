@@ -3,13 +3,11 @@
     <div class="hero-background"></div>
     <h1 class="hero-title" style="display:flex;align-items:center;color:var(--color-text-light);">
       Dummies
-      <span class="selectbox-indicator" role="img" style="margin-left:.5rem;"
-        ><span class="material-symbols-outlined">
-          arrow_drop_down
-        </span></span
+      <span class="icon-button" data-size="small" role="img" style="margin-left:.5rem;"
+        ><span class="material-symbols-outlined">arrow_drop_down</span></span
       >
     </h1>
-    <h1 class="hero-title">Hero Component의 description은<br />최대 두 줄까지 허용합니다.</h1>
+    <h1 class="hero-title">Hero Component의 description은<br />최대 두 줄로 작성하세요.</h1>
     <p class="hero-description">히어로 섹션의 샘플. e.detail.originalEvent</p>
     <footer>
       <button class="button-primary">샘플 버튼</button>
@@ -26,7 +24,6 @@
     <p>Elements with role combobox have an implicit aria-haspopup value of listbox.</p>
     <br />
 
-    <p>presentation 모달 형태가 가장 적</p>
     <div class="sorting" style="position:relative;display:flex;">
       <label class="" for="select2" style="margin:0 var(--space-2) 0 0;">Sort by</label>
       <select class="" id="select2" style="background:none;border:none;padding:0 var(--space-2) 0 0;font:inherit;color:var(--color-text);">
@@ -46,32 +43,45 @@
       </span>
     </button>
     <br />
-    <div class="textfield">
-      <button class="textfield-prefix searchfield-prefix">
-        <span class="material-symbols-outlined">mail </span>
+    <section style="max-width:480px;">
+      <div class="textfield">
+        <button class="textfield-prefix searchfield-prefix">
+          <span class="material-symbols-outlined">mail </span>
+        </button>
+        <!-- <label class="textfield-label" for="search">검색(시각적으로숨겨야함)</label> -->
+        <input class="textfield-input searchfield-input js-input-test" type="search" id="search" placeholder="you@gamil.com" />
+        <button class="textfield-clear" hidden><span class="material-symbols-outlined">close</span></button>
+      </div>
+      <div class="textfield" style="margin:var(--space-2) 0;">
+        <button class="textfield-prefix searchfield-prefix">
+          <span class="material-symbols-outlined">mail </span>
+        </button>
+        <!-- <label class="textfield-label" for="search">검색(시각적으로숨겨야함)</label> -->
+        <input class="textfield-input searchfield-input js-input-test" type="search" id="search" placeholder="you@gamil.com" />
+        <button class="textfield-clear" hidden><span class="material-symbols-outlined">close</span></button>
+      </div>
+      <button class="button-elevated" style="max-width:240px;margin-bottom:0;">
+        <figure class="button-elevated-avatar">
+          <span class="material-symbols-outlined">add</span>
+        </figure>
+        <span class="button-elevated-label">add</span>
       </button>
-      <!-- <label class="textfield-label" for="search">검색(시각적으로숨겨야함)</label> -->
-      <input class="textfield-input searchfield-input js-input-test" type="search" id="search" placeholder="you@gamil.com" />
-      <button class="textfield-clear" hidden><span class="material-symbols-outlined">close</span></button>
-    </div>
-    <div class="textfield" style="margin:var(--space-2) 0;">
-      <button class="textfield-prefix searchfield-prefix">
-        <span class="material-symbols-outlined">mail </span>
-      </button>
-      <!-- <label class="textfield-label" for="search">검색(시각적으로숨겨야함)</label> -->
-      <input class="textfield-input searchfield-input js-input-test" type="search" id="search" placeholder="you@gamil.com" />
-      <button class="textfield-clear" hidden><span class="material-symbols-outlined">close</span></button>
-    </div>
-    <button>add</button>
+    </section>
 
-    <div style="display:flex;margin:0 -.75rem;">
-      <div class="tile-elevated" style="width:240px;margin:0 .75rem;padding:1rem;box-shadow:none;border:0;background:var(--green100);">
+    <hr />
+
+    <div style="display:flex;margin:0 -.375rem;">
+      <div class="tile-elevated" style="width:240px;margin:0 .375rem;padding:1rem;box-shadow:none;border:0;background:var(--green100);">
         <h2 style="line-height:var(--font-line-height-small);">Designers</h2>
         <p>50 People</p>
       </div>
-      <div class="" style="width:240px;margin:0 .75rem;padding:1rem;">
+      <div class="" style="width:240px;margin:0 .375rem;padding:1rem;border:var(--border);border-radius:var(--radius);">
         <h2 style="line-height:var(--font-line-height-small);">Engineers</h2>
         <p>50 People</p>
+      </div>
+      <div class="" style="width:240px;margin:0 .375rem;padding:1rem;border:var(--border);border-radius:var(--radius);">
+        <h2 style="line-height:var(--font-line-height-small);">Managers</h2>
+        <p>20 People</p>
       </div>
     </div>
     <div class="chip-group" style="margin-top:1rem;margin-bottom:2rem;">
@@ -351,16 +361,15 @@
         <div class="user-myinfo">내 프로필 관리</div>
       </a>
       <hr role="separator" style="margin-left:-1rem;margin-right:-1rem;" />
-      <button class="user-logout js-darkmode" title="change theme">
-        <figure class="user-logout-icon"><span class="material-symbols-outlined">nights_stay</span></figure>
-        <span class="user-logout-label">어둡게 보기</span>
+      <button class="item js-darkmode" data-size="medium" title="change theme" role="menuitem">
+        <figure class="item-avatar" style="background-image:none;"><span class="material-symbols-outlined">nights_stay</span></figure>
+        <span class="item-label">어둡게 보기</span>
         <span class="switch" style="margin-left:auto;">
           <input type="checkbox" id="temp55" name="" role="switch" />
           <label for="temp55" style="padding-left:48px;"></label>
         </span>
       </button>
-      <!-- todo -->
-      <button class="item" data-size="medium" title="sign out" style="display:flex;align-items:center;text-align:left;">
+      <button class="item" data-size="medium" title="sign out" role="menuitem">
         <figure class="item-avatar" style="background-image:none;">
           <span class="material-symbols-outlined">
             logout
@@ -369,13 +378,13 @@
         <span class="item-label">고객센터 및 도움말</span>
       </button>
       <hr role="separator" style="margin-left:-1rem;margin-right:-1rem;" />
-      <button class="user-logout" title="sign out">
-        <figure class="user-logout-icon">
+      <button class="item" data-size="medium" title="sign out" role="menuitem">
+        <figure class="item-avatar" style="background-image:none;">
           <span class="material-symbols-outlined">
             logout
           </span>
         </figure>
-        <span class="user-logout-label">로그아웃</span>
+        <span class="item-label">로그아웃</span>
       </button>
       <hr role="separator" style="margin-left:-1rem;margin-right:-1rem;" />
       <footer class="user-footer" style="margin:-.25rem 0 0 0;">

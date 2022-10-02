@@ -20,12 +20,14 @@
     background: var(--color-background-strong);
     color: var(--color-text-weak);
     .chip-icon {
-      background: var(--color-background-strong) !important; // todo
+      background: var(--color-background-strong) !important;
     }
   }
 
   &[data-property=removable] {
-    &:hover {outline:none;cursor:default;}
+    // todo remove hover style
+    > * {pointer-events:auto;}
+    &:hover {box-shadow:none;outline:none;cursor:default;}
     // .chip-icon:hover {background:var(--color-background);cursor:pointer;}
   }
 }
@@ -36,13 +38,8 @@
 .chip {@include chip}
 .chip-label {@include chip-label;padding-top:1px;}
 .chip-icon {@include chip-icon;}
-
-
-.is-active .chip-icon .icon-check {border-color:var(--color-background);}
-
-.chip-remove {@include chip-icon;}
+.chip-remove {@include chip-icon;cursor:pointer;}
 .chip-remove:hover {box-shadow:var(--state-hover);}
-.chip-close {}
 .chip-add {}
 .chip-checked {} // chip-avatar
 

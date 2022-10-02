@@ -1,22 +1,24 @@
 <main class="pattern tokens">
+  <div class="banner" style="text-align:center;margin:.75rem;background-color:antiquewhite;">
+    <p class="banner-text">22.08. css icon에서 material icon으로 교체 중</p>
+  </div>
   <article class="article js-scrollspy-section">
     <h1 class="article-title" title="visual cue">Signifier <span hidden>Interaction States (MD)</span></h1>
     <p class="article-description">사용자는 다음에 일어날 일을 예측할 수 있습니다.</p>
+
     <!-- <p style="color:var(--red800);">safari에서 outline이 radius를 못 가져옴. box-shadow는 컨테이너의 padding이 없으면 잘림. + ::before {border:0;radius} 수도 선택자의 장점. 역할(상태)를 확실히 분리할 수 있다ㅏ.</p> -->
+    <!-- <li>aria-haspopup vs aria-expanded</li> -->
+    <!-- todo -->
+    <!-- <li> uncheckable을 명확히 정의.</li> -->
 
+    <h4 class="article-subhead">Best Practices</h4>
     <ul>
-      <li>22.08. css icon에서 material icon으로 교체 중</li>
-      <li>MenuButton: 클래스를 토글하는 맥락. hamberger. overflow. 레이블만 달라지면 되는 것인가. [aria-expanded="true"]</li>
-      <li>Menu. MenuButton / MenuList -> MenuItem. MenuLink</li>
-    </ul>
-
-    <h4 class="article-subhead">Checklist</h4>
-    <ul>
-      <li>addable을 expandable로 사용하지 마세요.</li>
-      <li>uncheckable을 명확히 정의.</li>
-      <li>bold text를 clickable로 사용하지 마세요. (비교적 덜 강조된 텍스트로 단락 더 보기 기능에 사용되는 패턴)</li>
-      <li>텍스트 강조를 위해 브랜드 컬러 텍스트를 사용하지 마세요.</li>
-      <li>aria-haspopup vs aria-expanded</li>
+      <li>
+        상태를 표현하는 시각 언어는 일부 컴포넌트에 종속되지 않고 제품 전체에 일관됩니다. 색각 이상자를 위해 색상 외의 시각 언어로 상태 정보를
+        표현하세요.
+      </li>
+      <li>addable을 expandable를 혼동하지 마세요.</li>
+      <li>bold text를 clickable하지 마세요. (볼드 텍스트는 단락 더 보기에서 타 서비스에서 자주 사용되는 패턴)</li>
     </ul>
 
     <h4 class="article-subhead">References</h4>
@@ -45,9 +47,9 @@
 
     <h4 class="article-subhead">Icons</h4>
     <ul>
-      <li>텍스트 레이블 없이 아이콘 단독 사용 가능</li>
-      <li>iOS: chevron</li>
-      <li>todo 조건부 small: close.</li>
+      <li>텍스트 레이블 없이 아이콘을 단독으로 사용할 수 있는 케이스.</li>
+      <li>medium action / small for indicator</li>
+      <li>iOS에서의 뒤로가기. chevron</li>
     </ul>
     <div class="token-group">
       <div class="token-item">
@@ -174,7 +176,7 @@
     </div>
 
     <h4 class="article-subhead">Pressed state</h4>
-    <h4 class="article-subhead">Progressing(or Loading) state</h4>
+    <h4 class="article-subhead">Progressing state</h4>
 
     <h4 class="article-subhead">Feedbacks</h4>
     <p>inline / toast / modal / refresh</p>

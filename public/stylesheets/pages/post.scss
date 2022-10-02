@@ -6,7 +6,7 @@
 .post-head-dateline {}
 .post-head-readingtime {}
 .post-head-progress {display:none;height:2px;background:var(--color-primary);border-radius:var(--radius);position:absolute;bottom:0;}
-.post-head-kicker {margin:var(--space-3) 0 0 0;font-size:var(--font-size-large);line-height:var(--font-line-height-small);}
+.post-head-kicker {margin:var(--space-after-title) 0 0 0;font-size:var(--font-size-large);line-height:var(--font-line-height-small);}
 
 // .is-sticky-post-head .post {padding-top:110px;}
 .is-sticky-post-head .post-head {background:var(--color-background);text-align:left;position:fixed;left:0;right:0;top:0;z-index:var(--zindex-menu);}
@@ -43,10 +43,6 @@
 
 .post-share {margin:2rem 0;}
 .post-share-title {}
-.post-share-facebook {display:flex;align-items:center;margin:.5rem 0 0 0;}
-.post-share-twitter {display:flex;align-items:center;margin:.5rem 0 0 0;}
-.post-share button span {@include avatar-medium;margin-right:1rem;}
-.post-share button span img {width:18px;}
 
 .post-reaction {}
 .post-reaction-like {display:flex;align-items:center;cursor:pointer;position:relative;}

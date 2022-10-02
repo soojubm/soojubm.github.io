@@ -1,9 +1,7 @@
 <main style="background:var(--color-background-weak);">
-
   <div style="max-width:460px;margin:0 auto;padding:1rem;box-shadow:var(--shadow);background:var(--color-background);overflow: hidden;">
-    
-  <p>수줍이(가칭) 디자인 시스템을 활용하여 유아이를 그려보고</p>
-  <hr />
+    <p>수줍이(가칭) 디자인 시스템을 활용하여 유아이를 그려보고</p>
+    <hr />
     <header class="home-asset">
       <h1 class="home-asset-heading">
         내 자산
@@ -20,12 +18,12 @@
         신용점수 확인하기
       </button>
     </header>
-  
+
     <div class="banner" role="banner" data-size="small" data-style="colored" style="margin:var(--space-4) 0;background:steelblue;">
       <h2 class="banner-title">저기... 정보 좀 드릴까요?</h2>
       <p class="banner-description">필요한 것만 딱딱 챙겨놨어요.</p>
     </div>
-  
+
     <section class="carousel" style="max-width:auto;margin-top:-1.75rem;margin-bottom:1rem;">
       <div class="carousel-viewer">
         <div class="carousel-viewer-slide">
@@ -45,12 +43,14 @@
         </div>
       </div>
     </section>
-  
+
     <section role="menu">
       <div class="item" data-size="medium" role="menuitem">
         <figure class="item-avatar"></figure>
         <b class="item-label">계좌</b>
-        <span class="item-icon">연결하기<span class="material-symbols-outlined">chevron_right</span></span>
+        <span class="item-icon"
+          ><span style="line-height:var(--size-small);">연결하기</span><span class="material-symbols-outlined">chevron_right</span></span
+        >
       </div>
       <div class="item" data-size="medium" role="menuitem">
         <figure class="item-avatar"></figure>
@@ -67,7 +67,7 @@
         <b class="item-label">대출</b>
         <span class="item-icon">연결하기<span class="material-symbols-outlined">chevron_right</span></span>
       </div>
-  
+
       <!-- ! 기존에 부모 태그에서 콘트롤 했던 부분을 아바타와 레이블 각각 컨트롤할 수 있도록 하기. -->
       <div class="item" data-size="large" role="menuitem">
         <figure class="item-avatar"></figure>
@@ -85,12 +85,12 @@
         <span class="item-icon">직접 등록하기<span class="material-symbols-outlined">chevron_right</span></span>
       </div>
     </section>
-  
+
     <div class="banner" role="banner" data-size="small" style="margin:2rem 0;">
       <h2 class="banner-title">기본 형태의 small 배너</h2>
       <p class="banner-description">헤딩의 크기를 통일함.</p>
     </div>
-  
+
     <section>
       <h2 class="text-subhead" style="margin:0 0 1.25rem 0;">자산관리에 도움 받아보세요<i style="font-style:italic;">!</i></h2>
       <article class="item" data-size="large">
@@ -112,7 +112,7 @@
         <p class="item-description">적금&주식계좌 만들기</p>
       </article>
     </section>
-  
+
     <section style="margin:3rem 0;position:relative;">
       <h2 class="text-subhead" style="margin:0 0 1.25rem 0;">혜택 유형 (todo 온/오프라인 필터링)</h2>
       <!-- <div class="chip-group tile-elevated-small" role="group" style="justify-content:space-between;padding:.125rem;">
@@ -130,37 +130,41 @@
         <button class="chip"><span class="chip-label">의료/병원</span></button>
         <button class="chip"><span class="chip-label">여행</span></button>
       </div>
-  
+
       <div class="item" data-size="large" style="margin-top:var(--space-4);">
         <figure class="item-avatar"></figure>
         <h3 class="item-name">주중 저녁 10% 할인 + 레드와인 1병</h3>
         <p class="item-description">앤디쉬에서 맛있는 식사 즐기세요</p>
       </div>
-  
+
       <div style="margin-top:var(--space-4);padding-top:var(--space-4);border-top:var(--border);"></div>
-  
+
       <div class="chip-group" role="group" data-align="bleed">
         <button class="dropdown-trigger js-toggle" aria-expanded="true">
           <span class="dropdown-trigger-label" style="padding-right:0;">업종</span>
-          <figure class="dropdown-trigger-icon"><span class="material-symbols-outlined">
-arrow_drop_down
-</span></figure>
+          <figure class="dropdown-trigger-icon">
+            <span class="material-symbols-outlined">
+              arrow_drop_down
+            </span>
+          </figure>
         </button>
         <button class="chip is-active">
           <figure class="chip-icon"><span class="material-symbols-outlined">check</span></figure>
-          <span class="chip-label" style="padding-left:0;">온라인</span></button>
+          <span class="chip-label" style="padding-left:0;">온라인</span>
+        </button>
         <button class="chip is-active">
           <figure class="chip-icon"><span class="material-symbols-outlined">check</span></figure>
-          <span class="chip-label" style="padding-left:0;">오프라인</span></button>
+          <span class="chip-label" style="padding-left:0;">오프라인</span>
+        </button>
       </div>
       <div class="item" data-size="large" style="margin-top:var(--space-4);">
         <figure class="item-avatar"></figure>
         <h3 class="item-name">주중 저녁 10% 할인 + 레드와인 1병</h3>
         <p class="item-description">앤디쉬에서 맛있는 식사 즐기세요</p>
       </div>
-  
+
       <div style="margin-top:var(--space-4);padding-top:var(--space-4);border-top:var(--border);"></div>
-  
+
       <div class="item" data-size="large" role="menuitem">
         <figure class="item-avatar" style="border-radius:50%;background:var(--color-accent);">🐏</figure>
         <b class="item-label">카카오페이 첫 결제</b>
@@ -174,8 +178,8 @@ arrow_drop_down
       <div class="tile-flat-small" style="margin:1rem 0;font-size:var(--font-size-caption);">
         <ul>
           <li>
-            혜택 탭의 여기는 multiple filters 패턴. 혜택 목록이 너무 많음. 상단 노출된 혜택이
-            강조되기는 하지만 혜택의 종류나 카테고리 개괄이 어려움. => 댑스 추가 또는 필터 고도화
+            혜택 탭의 여기는 multiple filters 패턴. 혜택 목록이 너무 많음. 상단 노출된 혜택이 강조되기는 하지만 혜택의 종류나 카테고리 개괄이 어려움.
+            => 댑스 추가 또는 필터 고도화
           </li>
           <!--
           <li>problem 1. 상단 필터가 없으면 온/오프라인 혜택의 구분 어려움.</li>
@@ -194,7 +198,7 @@ arrow_drop_down
           -->
         </ul>
       </div>
-  
+
       <br />
       <header style="position:relative;">
         <h2 class="text-subhead" style="margin:0 0 1.25rem 0;">은행</h2>
@@ -215,15 +219,17 @@ arrow_drop_down
           SC제일은행
         </label>
       </div>
-  
+
       <div class="banner" role="banner" data-size="small" style="max-width:240px;margin:2rem 0;background:var(--color-background-weak);">
         <h2 class="banner-title" style="color:var(--color-text);">상환일/만기일 알림</h2>
         <p class="banner-description" style="color:var(--color-text);">이제 까먹지 마세요.<br />카톡으롤 미리 알려드려요.</p>
-        <figure style="display:flex;align-items:center;justify-content:center;width:4rem;height:4rem;margin:var(--space-3) 0 0 auto;background:gold;border-radius:50%;font-size:var(--font-size-subhead);">🐏</figu>
+        <figure
+          style="display:flex;align-items:center;justify-content:center;width:4rem;height:4rem;margin:var(--space-3) 0 0 auto;background:gold;border-radius:50%;font-size:var(--font-size-subhead);"
+        >
+          🐏
+        </figure>
       </div>
-  
 
-  
       <div class="js-tab" style="display:flex;justify-content:space-between;align-items:center;margin:4rem 0 var(--space-3);">
         <h2>전체</h2>
         <nav class="" style="display:flex;">
@@ -239,9 +245,8 @@ arrow_drop_down
         </nav>
       </div>
 
-  
       <br />
-  
+
       <header class="titlebar js-titlebar" role="navigation" style="height:var(--navbar-height);padding:0;">
         <div class="titlebar-background"></div>
         <h1 class="titlebar-title" title="page title" style="font-weight:var(--font-weight-bold);font-size:16px;">테스트</h1>
@@ -251,10 +256,10 @@ arrow_drop_down
         </button>
       </header>
       <div class="js-tab">
-        <nav class="profile-tablist type-t" role="tablist" aria-label="sample tabs" style="max-width:520px;margin:0 auto;">
-          <button class="profile-tablist-tab" style="width:33.3333%;"role="tab" aria-selected="true" aria-controls="panel-1" id="tab-1" tabindex="0">Material</button>
-          <button class="profile-tablist-tab" style="width:33.3333%;"role="tab" aria-selected="false" aria-controls="panel-2" id="tab-2" tabindex="-1">Tab</button>
-          <button class="profile-tablist-tab" style="width:33.3333%;"role="tab" aria-selected="false" aria-controls="panel-3" id="tab-3" tabindex="-1">Sample</button>
+        <nav class="profile-tablist type-t" role="tablist" aria-label="sample tabs">
+          <button class="profile-tablist-tab" role="tab" aria-selected="true" aria-controls="panel-1" id="tab-1" tabindex="0">Material</button>
+          <button class="profile-tablist-tab" role="tab" aria-selected="false" aria-controls="panel-2" id="tab-2" tabindex="-1">Tab</button>
+          <button class="profile-tablist-tab" role="tab" aria-selected="false" aria-controls="panel-3" id="tab-3" tabindex="-1">Sample</button>
           <i class="profile-tablist-indicator" style="width:33.3333%;"></i>
         </nav>
       </div>
@@ -263,7 +268,7 @@ arrow_drop_down
         <button class="chip"><span class="chip-label">금융</span></button>
         <button class="chip"><span class="chip-label">쇼핑</span></button>
       </div>
-  
+
       <!-- <aside class="sheet-dim"></aside> -->
       <article class="sheet js-sheet" role="presentation">
         <button class="sheet-toggle"></button>
@@ -281,54 +286,36 @@ arrow_drop_down
           <span class="item-label">바텀 시트 옵션</span>
         </button>
       </article>
-
-      <br />
-      <div class="item" data-size="large" role="menuitem">
-        <figure class="item-avatar"></figure>
-        <b class="item-label">메뉴 아이템</b>
-        <button class="chip" style="margin-left:auto;margin-right:var(--space-2);">
-          <span class="chip-label">휴대폰과 연결 열기</span>
-        </button>
-        <span class="material-symbols-outlined">chevron_right</span>
-      </div>
-      <p>windows에서는 버튼의 형태로 label이 아닌 quick action으로 사용됨. 공간이 없어서 모바일에서 쓰기 어려움.</p>
     </section>
 
-    <!-- <section style="display:flex;margin:1rem -.5rem;">
+    <section style="display:flex;margin:1rem -.5rem;">
       <a class="" href="#" style="margin:0 .5rem;text-align:center;">
-        <figure style="width:var(--size-large);height:var(--size-large);border-radius:var(--radius);background:var(--color-background-weak);overflow:hidden;">
-        </figure>
+        <figure
+          style="width:var(--size-large);height:var(--size-large);border-radius:var(--radius);background:var(--color-background-weak);overflow:hidden;"
+        ></figure>
         <span class="person-name">송금하기</span>
       </a>
       <a class="" href="#" style="margin:0 .5rem;text-align:center;">
-        <figure style="width:var(--size-large);height:var(--size-large);border-radius:var(--radius);border:var(--border);box-sizing:border-box;overflow:hidden;">
-        </figure>
+        <figure
+          style="width:var(--size-large);height:var(--size-large);border-radius:var(--radius);border:var(--border);box-sizing:border-box;overflow:hidden;"
+        ></figure>
         <span class="person-name">name</span>
       </a>
       <a class="" href="#" style="margin:0 .5rem;text-align:center;">
-        <figure style="width:var(--size-large);height:var(--size-large);border-radius:var(--radius);border:var(--border);box-sizing:border-box;overflow:hidden;">
-        </figure>
+        <figure
+          style="width:var(--size-large);height:var(--size-large);border-radius:var(--radius);border:var(--border);box-sizing:border-box;overflow:hidden;"
+        ></figure>
         <span class="person-name">name</span>
       </a>
       <a class="" href="#" style="margin:0 .5rem;text-align:center;">
-        <figure style="width:var(--size-large);height:var(--size-large);border-radius:var(--radius);border:var(--border);box-sizing:border-box;overflow:hidden;">
-        </figure>
+        <figure
+          style="width:var(--size-large);height:var(--size-large);border-radius:var(--radius);border:var(--border);box-sizing:border-box;overflow:hidden;"
+        ></figure>
         <span class="person-name">name</span>
       </a>
     </section>
-    <div class="banner" role="banner" data-size="small" style="margin:2rem 0;">
-      <h2 class="banner-title">기본 형태의 small 배너</h2>
-      <p class="banner-description">헤딩의 크기를 통일함.</p>
-    </div> -->
 
     <!-- todo back icon은 항상 arrow left 형태를 갖는다. -->
-    <header class="titlebar js-titlebar" role="navigation" style="height:var(--navbar-height);padding:0;">
-      <div class="titlebar-background"></div>
-      <h1 class="titlebar-title" title="page title" style="font-weight:var(--font-weight-bold);font-size:16px;">예약송금 등록</h1>
-      <button class="titlebar-back" onclick="javascript:window.location.href='/';">
-        <figure class="titlebar-back-icon material-symbols-outlined" title="이전 페이지로">arrow_back</figure>
-        <!-- <span class="titlebar-back-label">뒤로</span> -->
-      </button>
     </header>
     <div class="js-tab">
       <nav class="profile-tablist type-sc" role="tablist" aria-label="sample tabs" style="max-width:11rem;margin:.5rem auto;">
