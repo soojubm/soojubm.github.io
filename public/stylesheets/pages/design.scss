@@ -1,6 +1,12 @@
 
 .design {}
-// todo tokens
+.design-head {padding:0 var(--grid-margin);background:var(--color-background);position:relative;}
+.design-head h1 {@include text-title;}
+.design-guide {margin:4rem 0 0;overflow:hidden;}
+.design-guide-title {padding:var(--space-3) var(--grid-margin);@include text-label;}
+.design-guide ul {padding-left:0;border-top:var(--border);list-style:none;}
+.design-guide ul li {margin:0;padding:1rem var(--grid-margin) .9rem;border-bottom:var(--border);font-size:var(--font-size-subhead);line-height:var(--font-line-height-small);}
+
 
 .article {padding:4rem var(--grid-margin);overflow:hidden;position:relative;}
 .article + .article {padding-top:6rem;}
@@ -9,22 +15,15 @@
 .article-aka .tag {margin-right:var(--space-3);}
 .article-title {@include text-title;}
 .article-description {margin:0 0 2rem;@include text-title;}
-.article ul {margin:0 0 2rem 0;}
+.article ul {margin:var(--space-after-subhead) 0 2rem;}
 
 .article-subhead {margin:3rem 0 var(--space-2);@include text-subhead;}
 .article > .hashtag {margin:0 .25rem 0 0;font-size:var(--font-size-caption);}
-
-// .tokens-body,
-// .component-body {border-top:var(--border);border-bottom:var(--border);}
 
 // .article.is-scrolled {animation:fadeup .8s forwards;}
 .spacing-card {padding:var(--space-inset-tile);overflow:hidden;position:relative;}
 .space {display:flex;align-items:center;justify-content:center;height:100%;background:var(--green100);position:relative;}
 .space span {font-size:10px;}
-
-@media (--large) {
-  .design {padding:0;}
-}
 
 .stamp {
   // position: absolute;
@@ -60,11 +59,6 @@
 .stamp .circle span:nth-of-type(3) {transform: rotate(45deg);}
 .stamp .circle span:nth-of-type(4) {transform: rotate(50deg);}
 .stamp .circle span:nth-of-type(5) {transform: rotate(16deg);}
-
-
-
-
-
 
 
 .number {display:flex;justify-content:center;}
@@ -105,36 +99,6 @@
 .onboarding-control {@include group-button;}
 .onboarding-control-next {@include button-primary;width:var(--grid-column);}
 .onboarding-control-skip {@include button-tertiary;width:var(--grid-column);}
-
-.hover-sample {@include avatar-huge;}
-.hover-sample:hover {@include hover-item;}
-
-
-.guide {
-  // @include tile-elevated;
-  // todo icon do dont로 구분하기
-  .guide-do {
-    display: flex;
-    align-items: center;
-    line-height: 16px;
-    span {
-      i {border-color:var(--color-primary);}
-    }
-  }
-  .guide-donot {
-    display: flex;
-    align-items: center;
-    line-height: 16px;
-    span {
-      i:before, i:after {background-color:var(--red800);}
-    }
-  }
-  span {
-    @include avatar-tiny;
-    margin: 0 .5rem 0 0;
-  }
-}
-
 
 
 .summary {}
@@ -187,12 +151,6 @@
 .is-active .accordion-title-icon {transform:rotate(180deg)}
 // [aria-expanded=true] + .accordion-panel {}
 
-.design-head {padding:0 var(--grid-margin);background:var(--color-background);position:relative;}
-.design-head h1 {@include text-title;}
-.design-guide {margin:4rem 0 0;overflow:hidden;}
-.design-guide-title {padding:var(--space-3) var(--grid-margin);@include text-label;}
-.design-guide ul {padding-left:0;border-top:var(--border);list-style:none;}
-.design-guide ul li {margin:0;padding:1rem var(--grid-margin) .9rem;border-bottom:var(--border);font-size:var(--font-size-subhead);line-height:var(--font-line-height-small);}
 
 .post-relation {margin:0 auto;padding:0 var(--grid-margin);}
 .post-relation {margin:4rem auto 8rem;}
@@ -393,9 +351,6 @@
 .is-mine div {text-align:right;display:flex;align-items:center;flex-direction: row-reverse;} // todo
 .is-mine .chat-bubble {margin-left:auto;border-radius:1.5rem;border-top-right-radius:0;background:var(--color-primary);}
 .is-mine .chat-bubble p {color:var(--gray0);}
-
-
-
 
 
 
