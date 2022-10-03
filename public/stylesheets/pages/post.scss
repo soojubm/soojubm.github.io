@@ -94,12 +94,12 @@
 .post-pagination {display:flex;justify-content:space-between;padding:2rem var(--grid-margin);
 	border-top:var(--border);border-bottom:var(--border);
 }
-.post-pagination-previous {width:var(--grid-column);text-align:left;position:relative;}
+.post-pagination-previous {width:var(--grid-column);text-align:left;color:var(--color-text);position:relative;}
 .post-pagination-previous:hover {@include hover-item;}
 .post-pagination-previous-media {@include avatar-medium;margin-bottom:1rem;}
 .post-pagination-previous-label {margin:0 0 .25rem 0;font-size:var(--font-size-body);font-weight:normal;color:var(--color-text-light);}
 .post-pagination-previous-postname {@include text-subhead;}
-.post-pagination-next {width:var(--grid-column);text-align:right;position:relative;}
+.post-pagination-next {width:var(--grid-column);text-align:right;color:var(--color-text);position:relative;}
 .post-pagination-next:hover {@include hover-item;}
 .post-pagination-next-media {@include avatar-medium;margin-bottom:1rem;margin-left:auto;}
 .post-pagination-next-label {margin:0 0 .25rem 0;font-size:var(--font-size-body);font-weight:normal;color:var(--color-text-light);}
