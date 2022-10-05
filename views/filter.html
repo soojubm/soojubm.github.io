@@ -2,7 +2,7 @@
   <div class="article">
     <h1 class="article-title">Filtering</h1>
     <p class="article-description">
-      Single Filter / Multiple Filters
+      Single filter와 Multiple filters 패턴으로 구분하기?
     </p>
 
     <div class="chip-group">
@@ -161,20 +161,29 @@
 
     <!-- <h2 class="article-subhead">Presentation</h2> -->
     <ul>
-      <li>설정과 비슷한 인터페이스.</li>
-      <li>Dropdown with chip group: desktop에서 상. moblie에서 중. desktop과 mobile에 동일한 경험과 낮은 개발 비용. 막연한 탐색.</li>
-      <li>Sheet: desktop에서 하. mobile에서 상.</li>
-      <li>Modal: desktop과 mobile에서 중. desktop과 mobile에 동일한 경험과 낮은 개발 비용.</li>
       <li>
         presentation 컴포넌트가 필터의 상태나 적용 방법에 많은 영향을 준다. 필터 옵션의 presentation 컴포넌트는 환경에 최적화된 경험을 위해 변경하기
         쉬워야 한다.
       </li>
+      <li>Dropdown with chip group: desktop에서 상. moblie에서 중. desktop과 mobile에 동일한 경험과 낮은 개발 비용. 막연한 탐색.</li>
+      <li>Sheet: desktop에서 하. mobile에서 상.</li>
+      <li>Modal: desktop과 mobile에서 중. desktop과 mobile에 동일한 경험과 낮은 개발 비용.</li>
     </ul>
 
     <h2 class="article-subhead">필터의 적용</h2>
     <ul>
       <li>Instant updates. 각각의 필터를 즉시 적용 (onChange) - 더 좋은 사용자 경험 but 서버 요청, 데이터</li>
-      <li>Batch updates. 적용 버튼을 클릭할 때 적용 (onSubmit) - 주로 multiple filters. single filter에서도 사용하는 케이스가 있음...</li>
+      <li>Batch updates. 적용 버튼을 클릭할 때 적용 (onSubmit) - 주로 multiple filters. single filter에서도 사용하는 케이스도 있지만.</li>
+    </ul>
+
+    <h2 class="article-subhead">적용된 필터의 상태</h2>
+    <ul>
+      <li>
+        Multiple filters: 필터 트리거 버튼에 적용된 필터의 갯수 표시. 전환에 필수불가결한 옵션이 존재하는 경우(다소막연한데 세부적인 검색ㅇ ㅣ필요할
+        때.).
+      </li>
+      <li>Single filter: 액티브 스타일과 레이블을 변경. (todo multiple)</li>
+      <li>적용된 필터 상태를 removable chips로 추가 제공(case. 오늘의집, 네이버카페) => 과연 효용이 있는 인터페이스인가?</li>
     </ul>
 
     <h2 class="article-subhead">적용된 필터의 해제Reset</h2>
@@ -183,28 +192,22 @@
       <li>전체 해제</li>
     </ul>
 
-    <h2 class="article-subhead">적용된 필터의 상태</h2>
-    <ul>
-      <li>Multiple Options: 필터 트리거 버튼에 적용된 필터의 갯수 표시. 전환에 필수불가결한 옵션이 존재하는 경우(다소막연).</li>
-      <li>Single Option: 액티브 상태와 레이블을 표기. (todo multiple)</li>
-      <li>적용된 필터 상태를 removable chips로 추가 제공(case. 오늘의집, 네이버카페) => 과연 효용이 있는 인터페이스인가?</li>
-    </ul>
-
     <h2 class="article-subhead">필터링와 소팅의 위계</h2>
     <p>
       소팅은 필터링의 하위 위계임을 시각적으로(위치 등) 명시하라.
     </p>
 
-    <h2 class="article-subhead">궁굼이</h2>
+    <h2 class="article-subhead">궁굼이 & 생각</h2>
     <ul>
-      <li>사용자는 적용된 필터 옵션 전체를 초기화하기 위해 새로고침을 할까?</li>
+      <li>사용자는 적용된 필터 옵션을 초기화하기 위해 새로고침을 할까?</li>
+      <li>multiple filters에서 각각 목록은 설정(setting)에서 사용하는 패턴과 같음.</li>
       <li>
-        하나의 화면에서 모든 옵션 목록을 나열할 때 옵션 별로 다른 컴포넌트로 제공할 수 있다. 예를 들면 드롭다운, chip, radio의 혼합 => 디자인과 개발
-        비용의 증가 만큼 사용자 경험이 월등한가? (case. airbnb)
+        하나의 화면에서 모든 옵션 목록을 나열할 때 옵션 별로 다른 컴포넌트로 제공하여 옵션 하나 하나에 주의를 집중중시킬 수 있다. dropdown, chip,
+        radio 등의 혼합 => 디자인과 개발 비용이 증가하는 만큼 사용자 경험이 월등한가? (case. airbnb) 아니면 다른 의도?
       </li>
-      <li>필터의 버튼 그룹의 정렬 기준을 정의. hero 섹션과 같고 dialog와는 다르다.</li>
-      <li>range option</li>
-      <li>모든 필터 옵션을 세로 목록형 가로 스크롤로 나열할 수도 있다. 큰 화면에서 상대적으로 유용하다.</li>
+      <li>필터를 적용하고 초기화하는 버튼 그룹의 정렬은 dialog에서 버튼 그룹과 달라질 수 있다. hero 컴포넌트와는 동일하다.</li>
+      <li>범위를 직접 입력하는 필드를 제공한다면 range UI를 추가로 제공하는 것이 얼마나 효율적일까</li>
+      <li>모든 필터 옵션을 세로 목록형 가로 스크롤로 나열할 수도 있다. 큰 화면에서 유용하다. (case. bilibili)</li>
     </ul>
   </div>
 </main>
