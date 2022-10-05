@@ -241,6 +241,7 @@ arrow_drop_down
         </div>
       </div>
       <ul>
+        <li>clickable</li>
         <li>
           인접한 정보 더미 중 최상위 위계의 시각 정보입니다.
         </li>
@@ -350,7 +351,7 @@ arrow_drop_down
         </div>
         <div class="tile-flat">
           <div role="group" data-align="bleed">
-            <button class="button-tertiary is-hover">Hover</button>
+            <button class="button-tertiary is-hover" style="margin-right:.5rem;">Hover</button>
             <button class="button-tertiary is-focus">Focus</button>
             <button class="button-tertiary" disabled>Disabled</button>
             <button class="button-tertiary">Loading</button>
@@ -366,17 +367,17 @@ arrow_drop_down
           변화도 피드백으로 취급될 수 있습니다. (bad case. 인스타그램의 로그인 성공 toast)
         </li>
         <li>
-          레이블은 사용자가 다음에 일어날 일을 예측할 수 있도록 작성하세요. 텍스트 레이블을 생략하는 경우 관습적인 메타포의
-          아이콘(북마크/하트/카트)을 사용하고 대체 텍스트와 툴팁을 제공해야 합니다. 장식적인 용도로 아이콘을 사용하지 마세요.
+          레이블은 사용자가 다음에 일어날 일을 예측할 수 있도록 작성하세요. 텍스트 레이블을 생략하는 경우 관습적인 메타포의 아이콘(북마크/하트/카트)을
+          사용하고 대체 텍스트와 툴팁을 제공해야 합니다. 장식적인 용도로 아이콘을 사용하지 마세요.
         </li>
         <!-- <p><b>text.</b> 버튼은 버튼 처럼 보이지 않을 수 있기 때문에 특정 패턴에서만 사용하세요.</li> -->
         <li>
-          버튼의 형태와 레이블 만으로 버튼의 역할을 할 수 있어야 합니다. 툴팁으로 행동을 유도하거나, 버튼의 주변에서 보조 텍스트로 실행을 유도하거나
-          실행 결과를 가이드할 필요가 없도록 합니다. (이 시스템에는 정의하지 않지만 세로 정렬되는 버튼 그룹에서 text button이 아래에 배치되는 패턴을
-          고려하여 버튼의 아래 가이드 텍스트를 배치하지 않습니다.)
+          형태와 레이블 만으로 버튼의 역할을 할 수 있어야 합니다. 툴팁으로 행동을 유도하거나, 보조 텍스트로 실행을 유도하거나 실행 결과를 가이드할
+          필요가 없도록 합니다. (이 시스템에는 정의하지 않지만 세로 정렬되는 버튼 그룹에서 text button이 아래에 배치되는 패턴을 고려하여 버튼의 아래
+          가이드 텍스트를 배치하지 않습니다.)
         </li>
         <li>naming. 'link' | 'subtle' | 'primary' / 'solid' | 'outline' | 'plain' |'text'</li>
-        <li>memo: secondary style이 자주 필요하지는 않음.</li>
+        <li>memo: secondary style 사용 빈도 상당히 낮음.</li>
         <li>memo: large이 필요한가? 현재 large 버튼은 프로모션 페이지의 call to action으로 제한적으로 사용합니다.</li>
       </ul>
       <!-- <li>작업 / 액션 / 실행</li> -->
@@ -462,7 +463,7 @@ arrow_drop_down
         <li>최대 2가지 액션을 사용할 수 있습니다. toolbar 컴포넌트와 구분하기.</li>
         <li>primary 버튼과 secondary 버튼을 배치하지 마세요. primary 버튼과 충분한 대비를 위해 teriary 버튼을 배치하세요.</li>
         <li>primary 버튼을 먼저 마크업하거나 tab index 속성으로 primary action에 먼저 포커스할 수 있도록 하세요.</li>
-        <li>버튼 그룹에서의 용법을 위해 fullWidth보다 fluid라는 네이밍이 더 유용하다. tablist도 fluid 가능하다.</li>
+        <li>버튼 그룹에서의 용법을 위해 fullWidth보다 fluid라는 명칭이 더 유용하다. tablist도 fluid 가능하다.</li>
       </ul>
       <div class="tile-flat">
         <div class="button-group" style="max-width:var(--layout-width-tiny);">
@@ -547,15 +548,15 @@ arrow_drop_down
       <ul style="margin-top:2rem;">
         <li>맥락이 다른 chip을 나열할 수 있습니다. 이 때 단일선택, 다중선택, 삭제여부, 펼침메뉴 등의 기표를 충분히 제공하세요.</li>
         <li>
-          콘텐츠 정렬sorting에서 옵션 목록을 chip group으로 제공하지 마세요. dropdown으로 현재 정렬 상태만 요약하세요. (bad case: 2022.04 구글 지도
-          바뀐 것)
+          콘텐츠 정렬sorting에서 옵션 목록을 chip group으로 제공하지 마세요. dropdown으로 현재 정렬 상태만 요약 표기하세요. (bad case: 2022.04 구글
+          지도 바뀐 것)
         </li>
-        <li>trigger / menulist를 구별.</li>
         <li>콘텐츠 필터링을 위한 칩 그룹에서, 액티브 상태에 브랜드 컬러를 쓰지 않는 경향. 콘텐츠 탐색이 cta. 눈에 띄지 않는 무채색 활용이 높아짐.</li>
         <li>
-          icon button은 clickable이기 때문에 아바타가 아니라 칩을 mixin. 2개의 사이즈로 확장. small은 용법을 제한하여 textfield에서 사용하거나 일반
-          텍스트 우측에.
+          changelog. icon button은 clickable이기 때문에 아바타가 아니라 칩을 mixin. 2개의 사이즈로 확장. small은 용법을 제한하여 textfield에서
+          사용하거나 일반 텍스트 우측에.
         </li>
+        <li>trigger / menulist를 구별.</li>
       </ul>
 
       <h4 class="article-subhead">Props</h4>
@@ -607,7 +608,7 @@ arrow_drop_down
           </button>
         </div>
       </div>
-      <h4 class="article-subhead">Contents Filtering<br />single selection</h4>
+      <h4 class="article-subhead">Contents filtering<br />single selection</h4>
       <div class="tile-flat" style="margin:var(--space-2) 0 var(--space-4);">
         <div class="chip-group" role="group" data-align="bleed">
           <button class="chip js-toggle is-active">
@@ -835,6 +836,12 @@ arrow_drop_down
       </ul>
 
       <h4 class="article-subhead">Props</h4>
+      <dl>
+        <dt>style</dt>
+        <dd>'primary' | 'secondary' | 'tertiary'</dd>
+        <dt>label</dt>
+        <dd>string</dd>
+      </dl>
 
       <h4 class="article-subhead">Hashtags</h4>
     </article>
@@ -946,6 +953,10 @@ arrow_drop_down
         </li>
         <li>case. on/off switch로 하나의 체크박스를 제공할 수 있다. '포토리뷰만 보기'</li>
         <li>case. don't ask again</li>
+        <li>
+          memo. 선택을 위해 가능한 스타일(체크박스, 라디오, 셀렉트박스, 스위치, 칩 등)을 어떻게 하면 데이터(또는 상태) 와 분리할 수 있을까.
+          체크박스그룹, 라디오그룹이 언제든 칩그룹이 될 수 있어야 한다.
+        </li>
       </ul>
 
       <h4 class="article-subhead">Editing checklist</h4>
@@ -995,10 +1006,7 @@ arrow_drop_down
 
       <h4 class="article-subhead">Other cases</h4>
       <ul>
-        <li>
-          <b>mailchimp.</b> unchecked 상태에서 help text가 제공됨. setting option에서 자주 사용하는 패턴.
-          한다.
-        </li>
+        <li><b>mailchimp.</b> unchecked 상태에서 help text가 제공됨. setting option에서 자주 사용하는 패턴.</li>
       </ul>
 
       <h4 class="article-subhead">Terms and conditions</h4>
@@ -2083,7 +2091,7 @@ arrow_drop_down
 
     <article class="article js-observer js-scrollspy-section">
       <h1 class="article-title">List</h1>
-      <p class="article-description">작성 중. 용어를 통일 (리스트 vs 목록).</p>
+      <p class="article-description">작성 중.</p>
 
       <section class="component-style">
         <div class="tile-flat">

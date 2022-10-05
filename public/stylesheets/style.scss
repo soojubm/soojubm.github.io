@@ -383,7 +383,14 @@ main, .footer {transition:all .6s ease;}
 .foundation-unit-box {width:calc(50%);@include tile-flat;}
 
 
-
+.dictoinary-item {
+  padding: 1rem var(--grid-margin);
+  display: flex;
+  // justify-content: space-between;
+  font-size: var(--font-size-title);
+  b {width:40%;font-weight:var(--font-weight-normal);}
+  span {width:60%;}
+}
 
 
 

@@ -136,6 +136,7 @@
 
     <br />
 
+    <h3>타임라인. 체인지로그에서써도됨.</h3>
     <section class="timeline">
       <div class="timeline-item">
         <span class="timeline-item-icon">🐺</span>
@@ -254,7 +255,7 @@
         <div class="graph-bar"><b style="width:6%;"></b></div>
         <span class="graph-value">6%</span>
       </div>
-      <small>별 다섯개에서 점수만큼 채우는 유아이는 요즘 잘 안 보임.</small>
+      <small>별 다섯개에서 점수만큼 채우는 유아이는 요즘 잘 안 보임. 구현하기 은근 까다로움.</small>
     </article>
     <br />
     <div style="max-width:400px;position:relative;">
@@ -296,12 +297,12 @@
       </figure>
       <h3 class="card-title" style="font-weight: bold;padding:var(--space-3) 0 .25rem 0;">Welcome to...</h3>
       <p class="card-text" style="width:90%;margin:0 auto;font-size:var(--font-size-body);line-height:var(--font-line-height-small);">
-        버튼 그룹은 2개 이상의 버튼을 가질 수 없도록. 2개 이상이 필요한 것은 버튼이 아닌 툴바.
+        디스크립션. PrevButton 이라면 secondary vs tertiary
       </p>
       <br />
       <footer class="onboarding-control">
         <button class="onboarding-control-next button-primary">Next</button>
-        <button class="onboarding-control-skip button-tertiary">Skip / Prev라면 secondary필요할지도..</button>
+        <button class="onboarding-control-skip button-tertiary">Skip</button>
       </footer>
     </article>
 
@@ -482,7 +483,7 @@
         <span class="tag">Korea</span>
         <span class="tag">Remote friendly</span>
       </div>
-      <button class="jobitem-view is-active">View Job</button>
+      <button class="jobitem-view"><span class="chip-label">View Job</span></button>
     </div>
 
     <div class="tile-elevated" style="max-width:400px;padding:var(--space-3);">
@@ -502,7 +503,7 @@
         <img src="/public/images/springsteen.jpg" alt="" />
       </figure>
       <h3 class="bookitem-name"><span role="img" aria-label="">📙</span> ${item.title}</h3>
-      <span class="bookitem-description">이미지의 크기가 다른 케이스</span>
+      <span class="bookitem-description">이미지의 크기가 다를 때. 책 표지. 세로값을 고정하고 가로를 오토. 바운더리 안에 책을 배치.</span>
       <hr />
       <p class="bookitem-byline">${item.author || '정보가 없습니다'}</p>
       <time class="bookitem-publishedyear">${item.publishedDate || '정보가 없습니다'}</time>

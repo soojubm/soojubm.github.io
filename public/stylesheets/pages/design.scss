@@ -73,7 +73,7 @@
 .jobitem-name {margin:var(--space-leading-subhead) 0 var(--space-2) 0;@include text-subhead;}
 .jobitem-tags {@include tag-group;}
 .jobitem-tags .tag {}
-.jobitem-view {@include button-tertiary;position:absolute;right:var(--space-3);top:50%;transform:translateY(-50%);}
+.jobitem-view {@include chip;position:absolute;right:var(--space-3);top:50%;transform:translateY(-50%);}
 
 .textbox {}
 .textbox-toolbar {@include tile-elevated-small;display:flex;}
