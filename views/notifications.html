@@ -1,4 +1,4 @@
-<main class="notifications js-tab">
+<main class="notifications">
     <ul>
       <li>
         <b>popover: </b>
@@ -49,7 +49,9 @@
   </div>
   <!-- todo padding-bottom vs min-height -->
   <div class="notification" style="margin-left:0;padding-bottom:8rem;">
-    <p role="status">최근 알림 메세지가 없습니다.</p>
+    <section class="empty" role="status">
+      <p class="empty-title">최근 알림 메세지가 없습니다.</p>
+    </section>
     <menu class="notification-menu">
       <!-- <h6 class="navbar-notification-menu-title">알림</h6>
       <a class="navbar-notification-menu-all" href="#">모두 보기</a> -->
@@ -57,26 +59,62 @@
         <em class="notification-unread avatar-badge"></em>
         <figure class="item-avatar"></figure>
         <p style="line-height:1.4;">
-          <b class="item-name" style="font-weight:var(--font-weight-bold);">John Cassavetes</b>
+          <b class="item-name">John Cassavetes</b>
           <time class="item-time">5일 전</time>
           <span class="notification-item-content">comment on <b>John Cassavetes</b></span>
         </p>
-        <div class="tile-elevated-small" style="margin:var(--space-2) 0;">
+        <div class="tile-elevated-small" style="margin:var(--space-4) 0 0;">
           <figure class="avatar"></figure>
           <p>알림 관련 페이지. hover 영역 재설정. item vs notification-item</p>
         </div>
       </div>
-      <!-- <footer>
-        <button>더 불러오기</button>
-      </footer> -->
-      <hr />
-      <div class="notification-item" style="padding-left:0;">
-        <p style="line-height:1.4;">
-          <!-- <b class="notification-item-user">John Cassavetes</b> -->
-          <span class="notification-item-content" style="color:var(--color-text);">일반에서 브론즈로 등급이 올라갔습니다.</span>
-        </p>
-        <time class="notification-item-date">5일 전</time>
-      </div>
     </menu>
   </div>
+</main>
+
+
+<main class="notifications js-tab" style="padding-top:0;">
+
+  <header class="titlebar js-titlebar" role="navigation" style="padding-left:0;padding-right:0;">
+    <div class="titlebar-background"></div>
+    <h1 class="titlebar-title js-page-title" title="page title">누구의 페이지</h1>
+    <button class="titlebar-back" onclick="javascript:window.location.href='/';">
+      <figure class="titlebar-back-icon material-symbols-outlined" title="이전 페이지로">arrow_back</figure>
+      <!-- <span class="titlebar-back-label">뒤로</span> -->
+    </button>
+    <!-- <button class="titlebar-action" style="color:var(--color-primary);">
+      <figure class="titlebar-action-icon" hidden></figure>
+      <span class="titlebar-action-label">공유</span>
+    </button> -->
+  </header>
+  <!-- <div class="titlebar-backdrop js-header"></div> -->
+  <nav class="follow-tablist" role="tablist" aria-label="sample tabs">
+    <!-- <button class="profile-tablist-tab" role="tab" aria-selected="true" aria-controls="panel-1" id="tab-1" tabindex="0">All</button> -->
+    <button class="profile-tablist-tab" role="tab" aria-selected="true" aria-controls="panel-2" id="tab-2" tabindex="-1">팔로워</button>
+    <button class="profile-tablist-tab" role="tab" aria-selected="false" aria-controls="panel-3" id="tab-3" tabindex="-1">팔로잉</button>
+    <i class="profile-tablist-indicator"></i>
+  </nav>
+
+  <div class="item" role="listitem" data-size="large" style="position: relative;">
+    <figure class="item-avatar"></figure>
+    <h2 class="item-name">Gyeongsoo I</h2>
+    <span class="item-description">유튜브 구독자</span>
+    <button class="item-action is-active" style="right:0;top:50%;transform:translateY(-50%);font-weight:var(--font-weight-normal);">
+      <span class="item-action-label">팔로잉</span>
+    </button>
+  </div>
+  <div class="item" role="listitem" data-size="large" style="position: relative;">
+    <figure class="item-avatar"></figure>
+    <h2 class="item-name">Gyeongsoo I</h2>
+    <span class="item-description">유아이 디자이너</span>
+    <button class="item-action is-active" style="right:0;top:50%;transform:translateY(-50%);font-weight:var(--font-weight-normal);">
+      <span class="item-action-label">팔로잉</span>
+    </button>
+  </div>
+
+  <footer style="margin:var(--space-4) 0 0 0;">
+    <button class="link-outside">
+      <span class="">더 보기</span>
+    </button>
+  </footer>
 </main>

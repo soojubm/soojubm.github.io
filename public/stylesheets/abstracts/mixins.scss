@@ -94,8 +94,8 @@
 
 // todo .25rem
 @mixin tag-group {
-  display:flex;flex-wrap:wrap;margin:var(--space-groupitem-minus);
-  > * {margin:var(--space-groupitem)}
+  display:flex;flex-wrap:wrap;margin:-.125rem;;
+  > * {margin:.125rem;}
 }
 @mixin chip-group {@include group;}
 [role=group] {@include group;}

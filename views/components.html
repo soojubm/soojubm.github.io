@@ -1004,11 +1004,6 @@ arrow_drop_down
         <dd>React.ChangeEventHandler<> / @types/react</dd>
       </dl>
 
-      <h4 class="article-subhead">Other cases</h4>
-      <ul>
-        <li><b>mailchimp.</b> unchecked 상태에서 help text가 제공됨. setting option에서 자주 사용하는 패턴.</li>
-      </ul>
-
       <h4 class="article-subhead">Terms and conditions</h4>
     </article>
 
@@ -1126,7 +1121,7 @@ arrow_drop_down
             </button>
             <!-- <label class="textfield-label" for="search">검색(시각적으로숨겨야함)</label> -->
             <input class="textfield-input searchfield-input js-input-test" type="search" id="search" placeholder="궁금한 인물이나 이슈가 있나요?" />
-            <button class="textfield-clear" hidden><span class="material-symbols-outlined">close</span></button>
+            <button class="textfield-clear" aria-label="clear keywords" hidden><span class="material-symbols-outlined">close</span></button>
           </div>
         </div>
 
@@ -1168,7 +1163,7 @@ arrow_drop_down
         <li>todo: helper(help message)와 feedback message를 구별</li>
         <li>
           searchfield / commentfield: 아이콘 레이블로 대체하는 경우 텍스트 레이블을 생략할 수 있습니다. Input with hidden label. helper text도
-          필요없다. 벨리데이션을 하지 않는 텍스트필드.
+          필요없다. 그리고 둘 다 벨리데이션을 하지 않는 텍스트필드.
         </li>
         <li></li>
       </ul>
@@ -1228,8 +1223,8 @@ arrow_drop_down
         <div class="tile-elevated" style="padding:1rem;">
           <h5 style="font-size:var(--font-size-subhead);line-height:var(--font-line-height-small);">elevated large with subhead</h5>
           <p style="margin:1rem;">
-            현재 크기에 따른 변별력이 없다. 하지만 inset이 더 커지게 되면 모바일 등의 작은 화면에서 미디어쿼리로 inset 조절이 필요해진다. 단, 더 큰
-            사이즈를 정의하고 콘텐츠를 가운데 정렬로 제한한다면 활용도가 높아진다.
+            문제: 크기에 따른 변별력이 없다. inset이 더 커진다면 모바일 등 작은 화면에서 미디어쿼리로 추가적인 inset 조절이 필요하기 때문에 컴포넌트의
+            고유성을 잃게 된다. 솔루션: inset이 1rem 초과할 때 콘텐츠 모듈을 가운데 정렬로 제한하여 고유성을 유지할 수 있다.
           </p>
           <p style="margin-top:var(--space-3);">이 tile은 페이지 레벨의 컴포넌트가 될 수 있다.</p>
         </div>
@@ -1308,7 +1303,10 @@ arrow_drop_down
         <li>행동을 유도하는 가이드로 사용하지 마세요.</li>
         <li>툴팁의 물음표 아이콘을 페이지 링크로 사용하지 마세요.</li>
         <li>사용자가 반드시 숙지해야 하는 중요한 정보를 툴팁으로 제공하지 마세요. button이나 text link 등 충분히 강조된 형태로 명시하세요.</li>
-        <li>페이지 로딩 시점에 열려 있는 경우 doorhanger/pointing arrow 필요. 하지만 그것은 툴팁이 아닌 다른 컴포넌트로 명명하는 게 좋겠다.</li>
+        <li>
+          페이지 로딩 시점에 열려 있는 경우 doorhanger/pointing arrow 필요. 하지만 그것은 툴팁이 아닌 새로운 컴포넌트로 정의할 필요가 있겠다. 하지만
+          이것을 필요 없도록 인터페이스를 설계하는 것이 가장 훌륭한 UX.
+        </li>
         <li>A tooltip is not considered to be a popup in this context, as it is not interactive.</li>
       </ul>
     </article>
@@ -1609,21 +1607,20 @@ arrow_drop_down
       </section>
 
       <ul>
-        <li>windows에서는 버튼의 형태로 label이 아닌 quick action으로 사용됨. 공간이 없어서 모바일에서 쓰기 어려움.</li>
-        <li>Menu -> MenuButton / MenuList -> MenuItem. MenuLink</li>
         <li>
-          tailing style = textWithChevron/chip/checkbox/switch. 링크/토글(follow/unfollow)/선택(with checkbox / with switch)/액션(chip)
+          메뉴 아이템의 우측에 'new' 등 태그 컴포넌트를 배치하지 마세요. 액션 또는 액션 인티케이터만 위치할 수 있습니다. (bad case 토스. 우측 new)
         </li>
-        <li><b>presentations:</b> modal, dropdown, sheet, sidebar. dropdown과 sheet/sidebar에서의 형태가 구분된다.</li>
-        <li>제목. truncated or 2줄.</li>
+        <li>windows에서는 버튼의 형태로 link가 아닌닌 quick action으로 사용됨. 모바일에서 공간 부족.</li>
+        <li>Menu -> MenuButton / MenuList -> MenuItem. MenuLink</li>
+        <li><b>presentations:</b> modal, dropdown, sheet, sidebar. dropdown</li>
         <li>
-          todo. check icon을 컴포넌트로 만들고 checkbox의 구조를 변경하기. check icon을 svg를 스위칭하게 될 수도 있기 때문에.
+          todo. check icon을 컴포넌트로 만들고 checkbox의 구조를 변경하기. check icon을 svg로 변경.
         </li>
       </ul>
 
       <h4 class="article-subhead">menuitem vs listitem</h4>
-      <p>listitem - entity / person.</p>
-      <p>menuitem을 description이 올 수 없는. aligns: vertical.</p>
+      <p>listitem. - entity. 링크/토글(follow/unfollow)</p>
+      <p>menuitem. - avatar? + title(truncated) + action(chip)/link(chevron?)/선택(checkbox/switch) / aligns: vertical. large/medium</p>
 
       <h4 class="article-subhead">Props</h4>
 
@@ -1864,7 +1861,7 @@ arrow_drop_down
       </section>
 
       <ul>
-        <li>사용자가 반드시 숙지해야 하는 정보를 아코디언으로 요약해서 보여주지 마세요. (툴팁도)</li>
+        <li>사용자가 반드시 숙지해야 하는 정보를 아코디언으로 요약해서 보여주지 마세요. (참고. Tooltip)</li>
         <li>heading은 한 문장으로 간결하게 작성하세요.</li>
         <li>memo. icon with subhead는 small size.</li>
         <li>role="region"</li>
@@ -1886,7 +1883,7 @@ arrow_drop_down
 
     <article class="article js-observer js-scrollspy-section">
       <h1 class="article-title">Result</h1>
-      <p class="article-description">실행 결과. 오류. 내용 없음. StatusBox?</p>
+      <p class="article-description">실행 결과. 오류. 내용 없음. 비공개. StatusBox?</p>
 
       <aside class="article-aka">
         <span class="tag">a.k.a.</span>

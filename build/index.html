@@ -138,13 +138,9 @@
     </nav>
 
     <nav class="navbar js-navbar" role="navigation">
-      <!-- todo tab index -->
       <!--  aria-controls="menu" haspopup / expanded -->
       <button class="navbar-burger js-navbar-toggle" aria-label="전체메뉴" aria-haspopup="true" aria-expanded="false">
-        <!-- <i class="icon-hamberger"></i> -->
-        <span class="material-symbols-outlined">
-          lunch_dining
-        </span>
+        <span class="material-symbols-outlined">lunch_dining</span>
       </button>
       <div class="navbar-menu" role="navigation">
         <div class="navbar-menu-item has-submenu">
@@ -171,22 +167,9 @@
             <a href="#presentations">Presentations 🚧</a>
             <a href="#filter">Filtering 🚧</a>
             <a href="#search">Searching 🚧</a>
-            <!-- <a href="#utils">Utils 🚧</a> -->
             <!-- <a href="#terms">Terms & Privacy</a> -->
           </menu>
         </div>
-        <!-- <div class="navbar-menu-item has-submenu" style="margin:var(--space-2) 0 0 0;">
-          <span role="menuitem">Test<span class="material-symbols-outlined">
-arrow_drop_down
-</span></span>
-          <menu>
-            <a href="#changelog">Changelog</a>
-            <a href="#foundations" style="display:flex;align-items:center;">
-              Foundations
-              <span class="tag" style="margin-left:var(--space-2);vertical-align:middle;font-weight:var(--font-weight-normal);">draft</span>
-            </a>
-          </menu>
-        </div> -->
         <div class="navbar-menu-item has-submenu" style="margin:var(--space-2) 0 0 0;" role="menu">
           <span class="menu-label" role="menuitem">Interfaces</span>
           <menu>
@@ -205,7 +188,6 @@ arrow_drop_down
             <a href="#landing">Landing</a>
             <a href="#notifications">Notifications</a>
             <a href="#feed">Feed</a>
-            <a href="#test">Test</a>
             <a href="#chat">Chat</a>
             <!-- <a href="#contact">Contact</a>
             <a href="#help">Help</a> -->
@@ -215,27 +197,20 @@ arrow_drop_down
         </div>
       </div>
       <a class="navbar-logo" href="/"><span style="margin-top:3px;">🦆</span></a>
-      <!-- <a class="navbar-search-trigger js-navbar-toggle" href="#"></a> -->
 
       <div class="navbar-user">
-        <!-- <a class="" href="#">로그인</a> 
-        <a class="chip" href="#">계정 만들기</a>  -->
+        <!-- <a class="navbar-search-trigger js-navbar-toggle" href="#"></a> -->
+        <!-- <button class="navbar-user-trigger" aria-haspopup="menu" aria-expanded="false"></button> -->
+        <!-- <a class="chip" href="#" style="margin-right:.5rem;"><span class="chip-label">시작하기</span></a> -->
         <button class="switch-wrap js-darkmode" title="change theme">
-          <figure class="user-logout-icon">
-            <span class="day">
-              <span class="material-symbols-outlined">light_mode</span>
-            </span>
-            <span class="night">
-              <span class="material-symbols-outlined">nights_stay</span>
-            </span>
+          <figure class="chip">
+            <span class="day material-symbols-outlined" style="display:flex;">light_mode</span>
+            <span class="night material-symbols-outlined" style="display:flex;">nights_stay</span>
           </figure>
-          <span class="user-logout-label" hidden>어둡게 보기</span>
           <span class="switch" style="margin-left:auto;">
             <input type="checkbox" id="temp55" name="" role="switch" />
-            <label for="temp55" style="padding-left:0;opacity:0;"></label>
           </span>
         </button>
-        <!-- <button class="navbar-user-trigger" aria-haspopup="menu" aria-expanded="false"></button> -->
       </div>
     </nav>
     <div class="navbar-backdrop"></div>

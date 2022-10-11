@@ -1,5 +1,3 @@
-import { unlockBodyElement } from '../load'
-
 const OPENED_MENU_CLASSNAME = 'is-opened-menu'
 const isOpendNavbarMenu = () => document.body.classList.contains(OPENED_MENU_CLASSNAME)
 
@@ -7,20 +5,33 @@ export function initializeNavbar() {
   const navigationTrigger = document.querySelector<HTMLElement>('.js-navbar-toggle')
 
   navigationTrigger?.classList.remove('is-active')
-  // unlockBodyElement()
-  document.body.classList.remove('is-opened-menu')
+  document.body.classList.remove(OPENED_MENU_CLASSNAME)
 
-  // document.removeEventListener('click', () => {})
+  // todo 처음에 열려 있는지 닫혀있는지 체크.
 }
 
 export function toggleNavbarMenu(event) {
-  const navbarBurgerElement = (event.target as HTMLElement).closest('.js-navbar-toggle')
-  if (!navbarBurgerElement) return
+  const trigger = (event.target as HTMLElement).closest('.js-navbar-toggle')
+  if (!trigger) return
+
+  const menuElement = trigger.nextElementSibling
 
   document.body.classList.toggle(OPENED_MENU_CLASSNAME, !isOpendNavbarMenu())
+
+  trigger?.setAttribute('aria-expanded', String(isOpendNavbarMenu()))
+  menuElement?.setAttribute('aria-hidden', String(!isOpendNavbarMenu()))
+
+  const tabIndex = String(isOpendNavbarMenu() ? '0' : '-1')
+
+  menuElement?.querySelectorAll('a').forEach(element => {
+    element.setAttribute('tabindex', tabIndex)
+  })
+
+  function toggleAria(ariaType, force) {
+    // Element.prototype
+  }
   // document.addEventListener('mouseover', () => {
   //   document.removeEventListener('click', toggleNavbarMenu)
   // })
-  // const navbarMenu = navbarBurgerElement?.nextElementSibling
   // navbarMenu?.addEventListener('click', event => event.stopPropagation())
 }

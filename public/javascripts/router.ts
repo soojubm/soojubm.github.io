@@ -65,10 +65,12 @@ function renderPage(content) {
   view.innerHTML = content
   // view.insertAdjacentHTML('afterbegin', html);
 
-  window.scrollTo(0, 0) // todo
+  window.scrollTo(0, 0)
 }
 
 export default routePage
+
+// popstate / pushState() - 같은 페이지라면 실행하지 않음.
 
 // const activeRoutes = document.querySelectorAll('[route]')
 // activeRoutes.forEach(route => route.addEventListener('click', navigate, false))

@@ -1,4 +1,28 @@
 <main class="component" style="overflow:hidden;">
+  <section style="padding:4rem 5vw;">
+    <div class="pill" style="border:none;background:gold;transform:rotate(-5deg);">안녕안녕</div>
+    <div class="pill" style="margin-left:2rem;background:var(--color-background);">
+      테스트 <span style="position:absolute;right:1rem;top:-2.5rem;">🚧</span>
+    </div>
+  </section>
+
+  <style>
+    .pill {
+      display: inline-flex;
+      padding: 0.5rem 5rem;
+      border-radius: 200px;
+      border: 1px solid;
+      font-size: 3rem;
+      font-weight: var(--font-weight-bold);
+      box-sizing: border-box;
+      position: relative;
+    }
+  </style>
+
+  <h4>Accessibility</h4>
+  <p>role=checkbox aria-check=false</p>
+  <p>todo. function toggleAria(ariaType)</p>
+
   <section class="hero" role="banner">
     <div class="hero-background"></div>
     <h1 class="hero-title" style="display:flex;align-items:center;color:var(--color-text-light);">
@@ -15,8 +39,32 @@
   </section>
 
   <section class="component-body" style="padding:2rem var(--grid-margin);">
-    <p>select indicator: 는 inline or float: right 2가지 타입이 존재. icon-button small의 style</p>
-    <p>textfield-check</p>
+    <div class="" style="display:flex;align-items:center;flex-direction:row-reverse;">
+      <label for="">주문 내역 총 <b>3</b>건</label>
+      <select class="chip" name="" id="">
+        <option value="">최근 3개월</option>
+      </select> 
+    </div>
+    <p>최근 3개월 내 주문 내역이 없습니다. <a href="">2022년 주문 내역 보기</a></p>
+    <div class="list">
+      <h2>Your Payments / Wallet</h2>
+      <p>memo. name on card / expiration date. billing address (따로 관리 됨).</p>
+      <a class="card js-modal" href="#newneek" data-modal="newneek" style="display:block;overflow:hidden;">
+        <figure class="card-thumbnail">
+          <img src="https://images-fe.ssl-images-amazon.com/images/G/0…rtal/r1/credit-card-image-blank._CB647740938_.png" alt="" />
+        </figure>
+        <h3 class="card-title" style="padding-bottom:0;">VISA 1988 XXXX 1111</h3>
+        <time class="card-date">Expires on 10/23</time>
+        <!-- <p class="card-description"></p> -->
+        <div class="card-category">기본</div>
+        <em style="display:block;margin-top:.25rem;">Edit</em>
+        <button class="card-more" hidden=""><i class="icon-more"></i></button>
+      </a>
+      <button class="button-elevated">Add a payment method</button>
+    </div>
+
+    <p>TeeVee</p>
+    <p>icon-button size=small === icon-indicator (textfield-check/select indicator) - inline or float: right</p>
     <p>
       Note: Make sure the role of the element that serves as the container for the popup content is a menu, listbox, tree, grid or dialog and that the
       value of aria-haspopup matches the role of the popup container.
@@ -29,11 +77,7 @@
       <select class="" id="select2" style="background:none;border:none;padding:0 var(--space-2) 0 0;font:inherit;color:var(--color-text);">
         <option class="select-option" value="select-option1">최신순</option>
       </select>
-      <span class="icon-button" data-size="small" role="img"
-        ><span class="material-symbols-outlined">
-          arrow_drop_down
-        </span></span
-      >
+      <span class="icon-button" data-size="small" role="img"><i class="material-symbols-outlined">arrow_drop_down</i></span>
     </div>
     <br />
     <button style="display:flex;align-items:center;">
@@ -42,6 +86,37 @@
         arrow_right_alt
       </span>
     </button>
+
+    <br />
+
+    <span class="tag" style="display:inline-flex;align-items:center;"
+      ><span class="material-symbols-outlined" style="margin-right:.25rem;font-size:16px;color:var(--color-text-light);"> business_center </span
+      >Full-Time</span
+    >
+
+    <br />
+
+    <div class="textfield-group" style="display:flex;align-items:flex-end;width:480px;">
+      <div class="textfield">
+        <label class="textfield-label" for="search" style="font-size:11px;line-height:var(--font-line-height-small);">Length</label>
+        <input class="textfield-input" type="number" id="search" placeholder="cm surfix" />
+      </div>
+      <span class="material-symbols-outlined" style="padding:0 var(--space-2);color:var(--color-text-light);line-height:48px;">
+        close
+      </span>
+      <div class="textfield">
+        <label class="textfield-label" for="search" style="font-size:11px;line-height:var(--font-line-height-small);">Width</label>
+        <input class="textfield-input " type="search" id="search" placeholder="x is removable" />
+      </div>
+      <span class="material-symbols-outlined" style="padding:0 var(--space-2);color:var(--color-text-light);line-height:48px;">
+        close
+      </span>
+      <div class="textfield">
+        <label class="textfield-label" for="search" style="font-size:11px;line-height:var(--font-line-height-small);">Height</label>
+        <input class="textfield-input" type="search" id="search" placeholder="cm" />
+      </div>
+    </div>
+
     <br />
     <section style="max-width:480px;">
       <div class="textfield">
@@ -49,7 +124,7 @@
           <span class="material-symbols-outlined">mail </span>
         </button>
         <!-- <label class="textfield-label" for="search">검색(시각적으로숨겨야함)</label> -->
-        <input class="textfield-input searchfield-input js-input-test" type="search" id="search" placeholder="you@gamil.com" />
+        <input class="textfield-input" type="text" id="search" placeholder="you@gamil.com" />
         <button class="textfield-clear" hidden><span class="material-symbols-outlined">close</span></button>
       </div>
       <div class="textfield" style="margin:var(--space-2) 0;">
@@ -57,7 +132,7 @@
           <span class="material-symbols-outlined">mail </span>
         </button>
         <!-- <label class="textfield-label" for="search">검색(시각적으로숨겨야함)</label> -->
-        <input class="textfield-input searchfield-input js-input-test" type="search" id="search" placeholder="you@gamil.com" />
+        <input class="textfield-input" type="text" id="search" placeholder="you@gamil.com" />
         <button class="textfield-clear" hidden><span class="material-symbols-outlined">close</span></button>
       </div>
       <button class="button-elevated" style="max-width:240px;margin-bottom:0;">

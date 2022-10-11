@@ -16,13 +16,6 @@
 .landing-2-button {@include link-outside;display:block;margin-left:var(--left);margin-top:var(--space-after-description);}
 .landing-2-figure {float:left;width:100%;max-width:47.5%;height:220px;border-radius:var(--radius);background:crimson;}
 
-.landing-3 {@include layout-large;padding: var(--section-inset) var(--grid-margin);}
-.landing-3-background {}
-.landing-3-title {@include landing-section-title}
-.landing-3-description {margin:var(--space-4) 0;}
-.landing-3-button {@include link-outside;display:block;margin-top:var(--space-after-description);}
-.landing-3-figure {}
-
 .landing-footer {padding:var(--section-inset);background:#000;}
 
 

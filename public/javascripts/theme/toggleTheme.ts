@@ -9,6 +9,7 @@ export function toggleDarkTheme(event) {
 
   const darkThemeTriggers = document.querySelectorAll(DARKTHEME_SELECTOR)
   darkThemeTriggers?.forEach((element: any) => {
+    // todo toggle과 switch 2종류..
     element.querySelector('input').checked = isDarkTheme()
   })
 
