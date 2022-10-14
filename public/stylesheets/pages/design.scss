@@ -141,7 +141,6 @@
 
 // todo padding
 .accordion {@include tile-elevated;padding:var(--space-4);}
-.accordion + .accordion {margin:calc(var(--space-3) + 1px) 0 var(--space-3);}
 .accordion:hover {@include hover-item;}
 .accordion-title {display:flex;align-items:center;justify-content:space-between;@include text-body-large;}
 .accordion-title-icon {@include icon-button-small;}
@@ -160,6 +159,9 @@
 
 .design-categories {margin:4rem var(--grid-margin);}
 .design-categories h2 {@include text-title;}
+
+.design-bookmarks {margin:4rem 0 0;padding:2rem var(--grid-margin);font-size:var(--font-size-large);background:var(--green100);}
+.design-bookmarks a {display:block;@include link-outside;}
 
 .uxsitemap {position:relative;}
 .uxsitemap .map {margin-left:1rem;}

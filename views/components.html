@@ -98,7 +98,7 @@ arrow_drop_down
     하세요, 할 수 있습니다. 보다 합니다. 입니다
   </section> -->
 
-  <nav class="component-navigation">
+  <nav class="component-navigation" role="menubar">
     <div class="component-navigation-background"></div>
     <div class="component-navigation-scroll" role="group" data-align="bleed">
       <a class="chip is-active js-scrollspy-trigger" href="#"><span class="chip-label">Avatars</span></a>
@@ -266,15 +266,8 @@ arrow_drop_down
         <dd>"unread" | "new" | "live"</dd>
       </dl>
 
-      <!-- <h2 class="article-subhead">Related components</h2>
-      <a href="" style="display:inline-flex;align-items:center;line-height:24px;"
-        >Entities <span class="material-symbols-outlined" style="margin-left:.25rem;font-size:20px;color:var(--color-text-light);">call_made</span></a
-      >
-      <span class="icon-bullet"></span>
-      <a href="">Badge</a> -->
-
       <h2 class="article-subhead">Other cases</h2>
-      <p><b>mui.</b> 아이콘 아바타를 사용.</p>
+      <p><b>mui.</b> 아이콘 아바타를 사용. 아이콘 아바타와 아이콘 버튼의 차이.</p>
 
       <h2 class="article-subhead">non-clickable<br />avatar는 장식 요소로 오른쪽에 배치</h2>
       <article class="user tile-flat" style="margin:var(--space-2) 0 var(--space-4);text-align:left;">
@@ -377,19 +370,16 @@ arrow_drop_down
           가이드 텍스트를 배치하지 않습니다.)
         </li>
         <li>naming. 'link' | 'subtle' | 'primary' / 'solid' | 'outline' | 'plain' |'text'</li>
-        <li>memo: secondary style 사용 빈도 상당히 낮음.</li>
-        <li>memo: large이 필요한가? 현재 large 버튼은 프로모션 페이지의 call to action으로 제한적으로 사용합니다.</li>
+        <li>memo: secondary style과 large size의 사용 빈도 낮음. 현재 large 버튼은 프로모션 페이지의 call to action으로 제한적으로 사용합니다.</li>
       </ul>
       <!-- <li>작업 / 액션 / 실행</li> -->
 
       <h4 class="article-subhead">Editing checklist</h4>
       <ul data-align="horizontal">
-        <li>최대 8자의 한글</li>
+        <li>최소 2자, 최대 8자의 한글</li>
         <li>사용자 시점 (ex 보내기 => 받기)</li>
         <li>레이블 생략(truncated) 불가</li>
         <li>동사 포함</li>
-        <!-- <p>텍스트가 짧은 경우에는 120px의 최소 단추 너비를 사용하여 명령 단추가 좁아지지 않도록 합니다.</p>
-        <p>텍스트가 긴 경우에는 텍스트의 최대 길이를 26자로 제한하여 명령 단추가 넓어지지 않도록 합니다.</p> -->
       </ul>
 
       <h4 class="article-subhead">Component tokens</h4>
@@ -431,8 +421,6 @@ arrow_drop_down
         <dd>null</dd>
       </dl>
 
-      <h4 class="article-subhead">Accessibility</h4>
-
       <h4 class="article-subhead">Other cases</h4>
       <ul>
         <li><b>shopify.</b> 모든 액션을 button으로 명명함. chip과 dropdown trigger 까지 포함하여 button.</li>
@@ -441,13 +429,11 @@ arrow_drop_down
         <li><b>split button.</b></li>
       </ul>
 
-      <!-- <p>사용자에게 단추를 한 번에 한 개 또는 두 개만 표시합니다(예: 수락 및 취소).
-        사용자에게 더 많은 작업을 표시해야 하는 경우 사용자가 하나의 명령 단추로 작업을 선택하여 트리거할 수 있도록 확인란 또는 라디오 단추를 사용하는 것이 좋습니다.</p> -->
+      <!-- <p>사용자에게 단추를 한 번에 한 개 또는 두 개만 표시합니다(예: 수락 및 취소). 사용자에게 더 많은 작업을 표시해야 하는 경우 사용자가 하나의 명령 단추로 작업을 선택하여 트리거할 수 있도록 확인란 또는 라디오 단추를 사용하는 것이 좋습니다.</p> -->
 
-      <h4 class="article-subhead">Image Button, CheckoutButton</h4>
+      <h4 class="article-subhead">ShowMoreButton<span hidden>Image Button, CheckoutButton</span></h4>
       <ul>
-        <li>todo. icon button -> indicator/hint</li>
-        <li>show more 버튼을 fullWidth로 사용하지 마세요. 단일 콘텐츠 또는 콘텐츠 목록보다 좁은 크기를 통한 대비로 강조하세요.</li>
+        <li>fullWidth로 사용하지 마세요. 단일 콘텐츠 또는 콘텐츠 목록보다 좁은 크기로 대비를 높입니다.</li>
       </ul>
       <div class="tile-flat">
         <button class="button-tertiary">
@@ -458,9 +444,10 @@ arrow_drop_down
         </button>
       </div>
 
-      <h4 class="article-subhead">Groupable<br />binary choices. PrevButton & NextButton</h4>
+      <h4 class="article-subhead">Groupable<br />binary choices.</h4>
       <ul>
         <li>최대 2가지 액션을 사용할 수 있습니다. toolbar 컴포넌트와 구분하기.</li>
+        <li>cases. PrevButton & NextButton / CancelButton & ConfirmButton / SkipButton & NextButton</li>
         <li>primary 버튼과 secondary 버튼을 배치하지 마세요. primary 버튼과 충분한 대비를 위해 teriary 버튼을 배치하세요.</li>
         <li>primary 버튼을 먼저 마크업하거나 tab index 속성으로 primary action에 먼저 포커스할 수 있도록 하세요.</li>
         <li>버튼 그룹에서의 용법을 위해 fullWidth보다 fluid라는 명칭이 더 유용하다. tablist도 fluid 가능하다.</li>
@@ -471,11 +458,6 @@ arrow_drop_down
           <button class="button-primary">저장</button>
         </div>
       </div>
-      <!-- <p>style = <b hidden>(모든 스타일을 망라해야 하기 때문에 유아이 라이브러리에 어울리는 네이밍)</b></p> -->
-      <!-- <a class="button" href="#">Anchor button</a>
-      <button>Button element</button>
-      <input type="submit" value="submit input">
-      <input type="button" value="button input"> -->
     </article>
 
     <article class="article js-observer js-scrollspy-section">
@@ -545,7 +527,7 @@ arrow_drop_down
         </div>
       </section>
 
-      <ul style="margin-top:2rem;">
+      <ul>
         <li>맥락이 다른 chip을 나열할 수 있습니다. 이 때 단일선택, 다중선택, 삭제여부, 펼침메뉴 등의 기표를 충분히 제공하세요.</li>
         <li>
           콘텐츠 정렬sorting에서 옵션 목록을 chip group으로 제공하지 마세요. dropdown으로 현재 정렬 상태만 요약 표기하세요. (bad case: 2022.04 구글
@@ -556,7 +538,7 @@ arrow_drop_down
           changelog. icon button은 clickable이기 때문에 아바타가 아니라 칩을 mixin. 2개의 사이즈로 확장. small은 용법을 제한하여 textfield에서
           사용하거나 일반 텍스트 우측에.
         </li>
-        <li>trigger / menulist를 구별.</li>
+        <!-- <li>trigger / menulist를 구별.</li> -->
       </ul>
 
       <h4 class="article-subhead">Props</h4>
@@ -911,11 +893,11 @@ arrow_drop_down
             <input class="js-check" type="checkbox" id="line03" checked disabled />
             <label for="line03" title="Everyday is like sunday">비활성 체크박스에요</label>
           </div>
-          <div class="checkbox textfield">
+          <div class="checkbox">
             <input class="js-check" type="checkbox" id="terms" name="terms" />
             <label for="terms"><a href="" style="text-decoration:underline;">이용약관</a>에 동의합니다.</label>
           </div>
-          <div class="checkbox textfield">
+          <div class="checkbox">
             <input class="js-check" type="checkbox" id="other" name="interest" />
             <label for="other">기타</label>
             <input type="text" name="other-more" class="textfield-input" placeholder="기타로 오토바이를 타자." hidden />
@@ -937,7 +919,7 @@ arrow_drop_down
           </div>
         </fieldset>
         <div class="tile-flat">
-          <div class="checkbox textfield">
+          <div class="checkbox">
             <input class="js-check" type="checkbox" id="setting-item" name="setting-item" />
             <label for="setting-item">setting option with description</label>
             <p class="checkbox-description">주로 세팅 페이지에서 사용되는 디스크립션 영역.</p>
@@ -978,11 +960,11 @@ arrow_drop_down
       />
       <label for="line00" title="Check All"><em>모두 동의합니다</em></label>
     </div>
-    <div class="checkbox textfield">
+    <div class="checkbox">
       <input class="js-check" type="checkbox" id="other" name="interest" value="other" />
       <label for="other">기타</label>
     </div>
-    <div class="checkbox textfield">
+    <div class="checkbox">
       <input class="js-check" type="checkbox" id="other" name="interest" value="other" />
       <label for="other">기타</label>
     </div> -->

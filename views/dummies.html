@@ -1,11 +1,10 @@
 <main class="component" style="overflow:hidden;">
-  <section style="padding:4rem 5vw;">
+  <!-- <section style="padding:4rem 5vw;">
     <div class="pill" style="border:none;background:gold;transform:rotate(-5deg);">안녕안녕</div>
     <div class="pill" style="margin-left:2rem;background:var(--color-background);">
       테스트 <span style="position:absolute;right:1rem;top:-2.5rem;">🚧</span>
     </div>
   </section>
-
   <style>
     .pill {
       display: inline-flex;
@@ -17,11 +16,35 @@
       box-sizing: border-box;
       position: relative;
     }
-  </style>
+  </style> -->
+
+  <button aria-haspopup="true" aria-expanded="false">
+    Difficulty
+    <span aria-hidden="true">&#x25be;</span>
+  </button>
+  <div role="menu">
+    <button role="menuitemradio" tabindex="-1">Easy</button>
+    <button role="menuitemradio" aria-checked="true" tabindex="-1">Medium</button>
+    <button role="menuitemradio" tabindex="-1">Incredibly Hard</button>
+  </div>
+
+  <!-- <p>Naming Conventions</p>
+  <p>
+    Styling hooks follows a specific naming convention to promote predictability and consistency. All SLDS styling hooks adhere to the following
+    convention.
+  </p>
+  <p>
+    --[namespace]-[scope]-[component]-[element]-[category]-[property]-[attribute]-[state]
+  </p> -->
+  <!-- <li>global :  --[name]-[componentName]-[role]-[?state]</li> -->
 
   <h4>Accessibility</h4>
-  <p>role=checkbox aria-check=false</p>
+  <p>role=checkbox aria-checked=false</p>
   <p>todo. function toggleAria(ariaType)</p>
+  <p>menuitemradio, menuitemcheck aria-checked</p>
+  <p>option:checked { box-shadow: 0 0 0 3px lime; color: red; }</p>
+  <input id="startTime" type="text" aria-errormessage="msgID" aria-invalid="true" value="11:30 PM" />
+  <span id="msgID" aria-live="assertive" style="visibility:visible"> Invalid time: the time must be between 9:00 AM and 5:00 PM" </span>
 
   <section class="hero" role="banner">
     <div class="hero-background"></div>
@@ -43,7 +66,7 @@
       <label for="">주문 내역 총 <b>3</b>건</label>
       <select class="chip" name="" id="">
         <option value="">최근 3개월</option>
-      </select> 
+      </select>
     </div>
     <p>최근 3개월 내 주문 내역이 없습니다. <a href="">2022년 주문 내역 보기</a></p>
     <div class="list">
@@ -60,7 +83,7 @@
         <em style="display:block;margin-top:.25rem;">Edit</em>
         <button class="card-more" hidden=""><i class="icon-more"></i></button>
       </a>
-      <button class="button-elevated">Add a payment method</button>
+      <button class="">Add a payment method</button>
     </div>
 
     <p>TeeVee</p>
@@ -98,21 +121,21 @@
 
     <div class="textfield-group" style="display:flex;align-items:flex-end;width:480px;">
       <div class="textfield">
-        <label class="textfield-label" for="search" style="font-size:11px;line-height:var(--font-line-height-small);">Length</label>
+        <label class="textfield-label" for="search">Length</label>
         <input class="textfield-input" type="number" id="search" placeholder="cm surfix" />
       </div>
       <span class="material-symbols-outlined" style="padding:0 var(--space-2);color:var(--color-text-light);line-height:48px;">
         close
       </span>
       <div class="textfield">
-        <label class="textfield-label" for="search" style="font-size:11px;line-height:var(--font-line-height-small);">Width</label>
+        <label class="textfield-label" for="search">Width</label>
         <input class="textfield-input " type="search" id="search" placeholder="x is removable" />
       </div>
       <span class="material-symbols-outlined" style="padding:0 var(--space-2);color:var(--color-text-light);line-height:48px;">
         close
       </span>
       <div class="textfield">
-        <label class="textfield-label" for="search" style="font-size:11px;line-height:var(--font-line-height-small);">Height</label>
+        <label class="textfield-label" for="search">Height</label>
         <input class="textfield-input" type="search" id="search" placeholder="cm" />
       </div>
     </div>
@@ -374,7 +397,6 @@
       <p class="card-text" style="width:90%;margin:0 auto;font-size:var(--font-size-body);line-height:var(--font-line-height-small);">
         디스크립션. PrevButton 이라면 secondary vs tertiary
       </p>
-      <br />
       <footer class="onboarding-control">
         <button class="onboarding-control-next button-primary">Next</button>
         <button class="onboarding-control-skip button-tertiary">Skip</button>
@@ -678,12 +700,27 @@
       <button class="pricing-item-more">And More...</button>
     </div>
 
-    <form class="subscribe" style="max-width:400px;padding:1rem;">
+    <form class="subscribe" style="max-width:560px;padding:1rem;">
       <h2 class="subscribe-title">수줍이 뉴스레터</h2>
       <p class="subscribe-description">섭스크라이브 유아이 콤포넌트 입니다. <br />두 줄 단락을 위해 쓰고 있습니다.</p>
       <div class="subscribe-field textfield">
         <label for="" class="textfield-label">이메일 주소</label>
-        <input class="textfield-input" placeholder="Enter Your Email.." />
+        <input class="textfield-input" type="text" placeholder="Enter Your Email.." />
+      </div>
+      <div class="subscribe-field textfield" style="margin:var(--space-4) 0;">
+        <label for="" class="textfield-label">닉네임</label>
+        <input class="textfield-input" type="text" placeholder="뭐라고 불러 드릴까요?" />
+      </div>
+      <p>
+        걱정하지 마세요. 스팸은 없습니다! 귀하의 정보는 web.dev 및 Chrome 관련 업데이트에만 사용되며 당사에서 보내는 이메일은 일반적으로 한 달에
+        1-2회를 넘지 않습니다. 언제든지 구독을 취소할 수 있습니다.
+      </p>
+      <div class="checkbox" style="margin:var(--space-4) 0;">
+        <input class="checkbox-input" type="checkbox" />
+        <label for="" class="checkbox-label"
+          >본인은 Google의 <a href="" rel="noopener" target="_blank">이용 약관</a>에 동의하며 본인의 정보가 Google의
+          <a href="" rel="noopener" target="_blank">개인정보보호 정책</a>에 따라 이용된다는 것을 인정합니다.</label
+        >
       </div>
 
       <button class="subscribe-submit" type="submit">뉴스레터 구독</button>

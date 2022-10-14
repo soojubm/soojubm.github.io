@@ -38,23 +38,22 @@ table tbody tr th {width:6rem;padding:var(--space-3) 0;font-weight:normal;text-a
 table tbody tr td {padding:var(--space-3) 0;}
 table tbody tr:hover {}
 table .right {text-align:right;}
-
-// table.is-borderless tbody tr {border:0;}
-
 table tbody[role=rowgroup] tr th {width:25%;}
 table tbody[role=rowgroup] tr th + th {width:auto;} // todo
 
+// table.is-borderless tbody tr {border:0;}
 ul {padding-left:var(--space-4);}
 ul li {margin:var(--space-1) 0;} // for font-size.
 [data-align=horizontal] {display:flex;flex-wrap:wrap;}
 [data-align=horizontal] li {margin:0 2rem 0 0;}
 
-ol {}
-ol li {margin:var(--space-1) 0;padding:0 0 0 1rem;position:relative;counter-increment:listitem;}
-ol li:before {content: counter(listitem) '.';position:absolute;left:0;}
-ol li ol {margin:0 0 .5rem 0;}
-ol li ol li {counter-increment:sub-list-item;}
-ol li ol li:before {content: counter(sub-list-item,lower-alpha) '.';}
+ol {padding-left:var(--space-4)}
+ol li {margin:var(--space-1) 0;}
+// ol li {margin:var(--space-1) 0;padding:0 0 0 1rem;position:relative;counter-increment:listitem;}
+// ol li:before {content: counter(listitem) '.';position:absolute;left:0;}
+// ol li ol {margin:0 0 .5rem 0;}
+// ol li ol li {counter-increment:sub-list-item;}
+// ol li ol li:before {content: counter(sub-list-item,lower-alpha) '.';}
 
 dl {display:flex;flex-wrap:wrap;}
 dl dt {margin:0 var(--space-2) 0 0;@include text-label;}
