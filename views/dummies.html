@@ -40,9 +40,7 @@
 
   <h4>Accessibility</h4>
   <p>role=checkbox aria-checked=false</p>
-  <p>todo. function toggleAria(ariaType)</p>
   <p>menuitemradio, menuitemcheck aria-checked</p>
-  <p>option:checked { box-shadow: 0 0 0 3px lime; color: red; }</p>
   <input id="startTime" type="text" aria-errormessage="msgID" aria-invalid="true" value="11:30 PM" />
   <span id="msgID" aria-live="assertive" style="visibility:visible"> Invalid time: the time must be between 9:00 AM and 5:00 PM" </span>
 
@@ -54,7 +52,7 @@
         ><span class="material-symbols-outlined">arrow_drop_down</span></span
       >
     </h1>
-    <h1 class="hero-title">Hero Component의 description은<br />최대 두 줄로 작성하세요.</h1>
+    <h1 class="hero-title">Hero Component의 description은 <span class="linebreak-desktop">최대 두 줄로 작성하세요.</span></h1>
     <p class="hero-description">히어로 섹션의 샘플. e.detail.originalEvent</p>
     <footer>
       <button class="button-primary">샘플 버튼</button>
@@ -62,6 +60,75 @@
   </section>
 
   <section class="component-body" style="padding:2rem var(--grid-margin);">
+    <div style="display:flex;align-items:center;line-height:var(--font-line-height-small);">
+      <span>떡볶이</span>
+      <span class="material-symbols-outlined" style="font-size:var(--font-size-subhead);color:var(--color-text-light);">
+        close
+      </span>
+      <span>5</span>
+    </div>
+
+    <h3 class="article-subhead">Select payment method<br />payment method는 token을 활용한 기존에 없던 형태</h3>
+
+    <div class="payment-method-list temp8" style="margin:var(--space-after-subhead) 0 0 0;">
+      <div class="payment-method-item status-is-active" style="margin:0 .5rem 0 0;">
+        <i class="tag" data-style="primary" style="width:16px;height:16px;padding:0;position:absolute;z-index:5;top:.25rem;left:.25rem;"
+          ><i class="material-symbols-outlined" style="font-size:20px;position:absolute;left:-3px;top:-3px;">check</i></i
+        >
+        <figure style="height:var(--size-large);padding-bottom:.5rem;background:aliceblue;">💳</figure>
+        <span style="display:block;text-align:center;font-size:var(--font-size-body);">신용카드</span>
+      </div>
+      <div class="payment-method-item" style="margin:0 .5rem 0 0;">
+        <figure style="height:var(--size-large);padding-bottom:.25rem;background:#defade;">💵</figure>
+        <span style="display:block;text-align:center;font-size:var(--font-size-body);">현금</span>
+      </div>
+    </div>
+
+    <hr />
+
+    <div style="display:flex;margin:0 -.375rem;">
+      <div class="tile-elevated" style="width:240px;margin:0 .375rem;padding:1rem;box-shadow:none;border:0;background:var(--green100);">
+        <h2 style="line-height:var(--font-line-height-small);">Designers</h2>
+        <p>50 People</p>
+      </div>
+      <div class="tile-elevated" style="width:240px;margin:0 .375rem;padding:1rem;box-shadow:none;border:0;background:aliceblue;">
+        <h2 style="line-height:var(--font-line-height-small);">Engineers</h2>
+        <p>50 People</p>
+      </div>
+      <div class="tile-elevated" style="width:240px;margin:0 .375rem;padding:1rem;">
+        <h2 style="line-height:var(--font-line-height-small);">Managers</h2>
+        <p>20 People</p>
+      </div>
+    </div>
+
+    <hr />
+
+    <div class="meter" style="max-width:800px;">
+      <h1 class="meter-title">200 GB 중 187.23 GB 사용됨</h1>
+      <div class="meter-graph">
+        <div class="meter-graph-bar" style="width:40%;background:crimson;height:var(--size-tiny);border-radius:var(--radius);"></div>
+        <div class="meter-graph-bar" style="width:30%;margin:0 .25rem;background:blue;height:var(--size-tiny);border-radius:var(--radius);"></div>
+        <div class="meter-graph-bar" style="width:7%;background:green;height:var(--size-tiny);border-radius:var(--radius);"></div>
+      </div>
+      <div class="meter-detail">
+        <div class="meter-detail-item">
+          <i class="meter-detail-item-color"></i>
+          <h3 class="meter-detail-item-title">Google 드라이브</h3>
+          <span class="meter-detail-item-value">800,000원</span>
+        </div>
+        <div class="meter-detail-item">
+          <i class="meter-detail-item-color"></i>
+          <h3 class="meter-detail-item-title">Gmail</h3>
+          <span class="meter-detail-item-value">800,000원</span>
+        </div>
+        <div class="meter-detail-item">
+          <i class="meter-detail-item-color"></i>
+          <h3 class="meter-detail-item-title">Google 포토</h3>
+          <span class="meter-detail-item-value">800,000원</span>
+        </div>
+      </div>
+    </div>
+
     <div class="" style="display:flex;align-items:center;flex-direction:row-reverse;">
       <label for="">주문 내역 총 <b>3</b>건</label>
       <select class="chip" name="" id="">
@@ -165,43 +232,6 @@
         <span class="button-elevated-label">add</span>
       </button>
     </section>
-
-    <hr />
-
-    <div style="display:flex;margin:0 -.375rem;">
-      <div class="tile-elevated" style="width:240px;margin:0 .375rem;padding:1rem;box-shadow:none;border:0;background:var(--green100);">
-        <h2 style="line-height:var(--font-line-height-small);">Designers</h2>
-        <p>50 People</p>
-      </div>
-      <div class="" style="width:240px;margin:0 .375rem;padding:1rem;border:var(--border);border-radius:var(--radius);">
-        <h2 style="line-height:var(--font-line-height-small);">Engineers</h2>
-        <p>50 People</p>
-      </div>
-      <div class="" style="width:240px;margin:0 .375rem;padding:1rem;border:var(--border);border-radius:var(--radius);">
-        <h2 style="line-height:var(--font-line-height-small);">Managers</h2>
-        <p>20 People</p>
-      </div>
-    </div>
-    <div class="chip-group" style="margin-top:1rem;margin-bottom:2rem;">
-      <button class="chip js-toggle" aria-haspopup="menu">
-        <span class="chip-label" title="일행 당 인원 수">예약옵션</span>
-        <figure class="chip-icon">
-          <span class="material-symbols-outlined">
-            arrow_drop_down
-          </span>
-        </figure>
-      </button>
-      <div class="dropdown">
-        <button class="dropdown-trigger js-toggle" aria-expanded="true">
-          <span class="dropdown-trigger-label">예산</span>
-          <figure class="dropdown-trigger-icon">
-            <span class="material-symbols-outlined">
-              arrow_drop_down
-            </span>
-          </figure>
-        </button>
-      </div>
-    </div>
 
     <hr />
 
@@ -699,32 +729,6 @@
       <button class="pricing-item-upgrade">업그레이드</button>
       <button class="pricing-item-more">And More...</button>
     </div>
-
-    <form class="subscribe" style="max-width:560px;padding:1rem;">
-      <h2 class="subscribe-title">수줍이 뉴스레터</h2>
-      <p class="subscribe-description">섭스크라이브 유아이 콤포넌트 입니다. <br />두 줄 단락을 위해 쓰고 있습니다.</p>
-      <div class="subscribe-field textfield">
-        <label for="" class="textfield-label">이메일 주소</label>
-        <input class="textfield-input" type="text" placeholder="Enter Your Email.." />
-      </div>
-      <div class="subscribe-field textfield" style="margin:var(--space-4) 0;">
-        <label for="" class="textfield-label">닉네임</label>
-        <input class="textfield-input" type="text" placeholder="뭐라고 불러 드릴까요?" />
-      </div>
-      <p>
-        걱정하지 마세요. 스팸은 없습니다! 귀하의 정보는 web.dev 및 Chrome 관련 업데이트에만 사용되며 당사에서 보내는 이메일은 일반적으로 한 달에
-        1-2회를 넘지 않습니다. 언제든지 구독을 취소할 수 있습니다.
-      </p>
-      <div class="checkbox" style="margin:var(--space-4) 0;">
-        <input class="checkbox-input" type="checkbox" />
-        <label for="" class="checkbox-label"
-          >본인은 Google의 <a href="" rel="noopener" target="_blank">이용 약관</a>에 동의하며 본인의 정보가 Google의
-          <a href="" rel="noopener" target="_blank">개인정보보호 정책</a>에 따라 이용된다는 것을 인정합니다.</label
-        >
-      </div>
-
-      <button class="subscribe-submit" type="submit">뉴스레터 구독</button>
-    </form>
 
     <article class="share" style="max-width:400px;padding:1rem;">
       <h2 class="share-title">가족이나 친구와<br />함께 보세요!</h2>

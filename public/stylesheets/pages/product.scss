@@ -127,7 +127,7 @@
 // .product-detail-summary dt {float:left;width:8rem;margin:.25rem 0;color:var(--color-text-light);}
 // .product-detail-summary dd {float:left;width:calc(100% - 8rem);margin:.25rem 0;color:var(--gray800);}
 
-.product-policy {margin:12rem 0;}
+.product-policy {margin:4rem 0;}
 .product-policy-title {}
 
 .product-recommend {display:flex;flex-wrap:wrap;justify-content:center;margin:8rem 0;}
@@ -202,16 +202,13 @@
 .product-detail-gallary figure:nth-of-type(3) {width:8rem;height:8rem;margin-left:15%;}
 .product-detail-gallary figure:nth-of-type(4) {width:50%;padding-bottom:25%;}
 
-.product-review {margin:4rem 0% 8rem;position:relative;}
+.product-review {position:relative;}
 .product-review-eyebrow {}
 .product-review-title {font-size:var(--font-size-subhead);}
 
 .product-review-list {}
-.product-review-list .inner {overflow:auto;white-space:nowrap;font-size:0;}
-.product-review-list .inner .quote {display:inline-block;width:320px;font-size:var(--font-size-body);}
-.product-review-list .inner .quote-body {white-space:wrap;}
 
-.review-item {width:320px;}
+.review-item {max-width:var(--layout-width-medium);margin:var(--space-3) 0;}
 .review-item-thumbnail {height:200px;margin:0 0 1rem 0;background:var(--gray800);}
 .review-item-title {margin:0 0 .5rem 0;font-size:var(--font-size-subhead);}
 .review-item-comment {line-height:1.6;}
