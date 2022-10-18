@@ -1,5 +1,5 @@
 const scrollAnimation = ({ selector: selector }) => {
-  const ANIMATED_CLASSNAME = 'is-scrolled'
+  const ANIMATED_CLASSNAME = 'is-observed'
   const elements = Array.from(document.querySelectorAll(selector))
   // [].slice.call(document.querySelectorAll('.js-scroll-animation')),
   // Array.from(document.querySelectorAll('.js-scroll-animation')),

@@ -84,6 +84,23 @@
     <h2 class="checkout-payment-title">결제수단</h2>
     <!-- <p class="checkout-payment-description">현재 신용카드 결제만 가능합니다.</p> -->
     <fieldset>
+      <div class="payment-method-list temp8" style="margin:0;">
+        <div class="payment-method-item status-is-active" style="margin:0 .75rem 0 0;">
+          <i class="tag" data-style="primary" style="width:16px;height:16px;padding:0;position:absolute;z-index:5;top:.25rem;left:.25rem;"
+            ><i class="material-symbols-outlined" style="font-size:20px;position:absolute;left:-3px;top:-3px;">check</i></i
+          >
+          <figure style="height:var(--size-large);padding-bottom:.5rem;background:aliceblue;">💳</figure>
+          <span style="display:block;text-align:center;font-size:var(--font-size-body);">신용카드</span>
+        </div>
+        <div class="payment-method-item" style="margin:0 .75rem 0 0;">
+          <figure style="height:var(--size-large);padding-bottom:.25rem;background:#defade;">💵</figure>
+          <span style="display:block;text-align:center;font-size:var(--font-size-body);">현금</span>
+        </div>
+        <div class="payment-method-item" style="margin:0 .75rem 0 0;">
+          <figure style="height:var(--size-large);padding-top:.25rem;background:antiquewhite;font-size:1.8rem;">🫓</figure>
+          <span style="display:block;text-align:center;font-size:var(--font-size-body);">무통장입금</span>
+        </div>
+      </div>
       <div class="radio tile-elevated" style="margin-top:0;border-bottom:var(--border);">
         <input type="radio" id="raidio5" name="gender" value="" checked />
         <label for="raidio5" title="">신용/체크카드</label>
@@ -106,8 +123,8 @@
   </section>
 
   <hr />
-
-  <footer class="cart-summary">
+  <!-- todo summary는 cart / order / checkout에서 사용될 수 있다. -->
+  <footer class="cart-summary" style="max-width:100%;">
     <div class="cart-summary-subtotal">
       <span class="cart-summary-label">총 상품금액</span>
       <span class="cart-summary-value">₩ 30,000</span>

@@ -1,19 +1,24 @@
 <main class="landing">
-  <header class="landing-hero js-observer" role="banner">
-    <div class="landing-hero-background"></div>
+  <header
+    class="landing-hero js-observer"
+    role="banner"
+    style="    max-width: 1200px;
+  margin: 0 auto;"
+  >
+    <!-- <div class="landing-hero-background"></div> -->
     <figure class="landing-hero-object1"></figure>
     <!-- <span class="hero-eyebrow"></span> -->
     <h2 class="landing-hero-title" style="color:var(--color-text-light);">Eyebrow</h2>
     <h2 class="landing-hero-title">This is hero section<i style="font-style:italic;">!</i></h2>
     <p class="landing-hero-description">
-      <span class="linebreak-desktop">Where teams create the world’s best experiences at scale,</span> powered by the leader in creative tools.
+      <span class="linebreak-desktop">Where teams create the world’s best experiences at scale,</span> 오브젝트를 감싸는 컴포넌트가 있는 것이 좋음.
     </p>
     <footer class="landing-hero-actions">
       <button class="landing-hero-actions-primary">Call to action</button>
       <button class="landing-hero-actions-secondary">More</button>
     </footer>
 
-    <article class="tile-elevated landing-hero-object2">
+    <article class="tile-elevated landing-hero-object2" style="width:100%;max-width:380px;">
       <figure class="user-avatar" style="width:var(--size-large);height:var(--size-large);margin-left:0;"></figure>
       <h2 class="user-name" style="text-align:left;">Gyeongsoo I</h2>
       <div class="user-id" style="text-align:left;">@soojubm</div>
@@ -82,22 +87,36 @@
     </div>
   </div> -->
 
-  <section class="feature">
-    <header class="feature-head">
-      <h1 class="feature-head-title">
-        Why go Premium?
-      </h1>
+  <section class="feature" style="max-width:800px;margin:0 auto;justify-content:center;">
+    <header class="feature-head js-observer" style="text-align:center;">
+      <h1 class="feature-head-title">Why go Premium?<br />Get involved in our community. Everyone is welcome!</h1>
       <p class="feature-head-description">Get involved in our community. Everyone is welcome!</p>
     </header>
-    <div class="feature-item" style="margin-top:0;">
+    <div class="feature-item js-observer" style="margin-top:0;">
       <span class="feature-item-avatar" role="img">💃</span>
       <h3 class="feature-item-title">무료로 숙소 등록하기</h3>
       <p class="feature-item-description">남는 방 하나부터 별장까지, 다양한 형태의 공간을 무료로 등록하고 공유하세요.</p>
       <a class="feature-item-link" href="#">숙소 등록</a>
     </div>
+    <div class="feature-item js-observer" style="margin:0 0 0 2rem;">
+      <span class="feature-item-avatar" role="img">💃</span>
+      <h3 class="feature-item-title">무료로 숙소 등록하기</h3>
+      <p class="feature-item-description">남는 방 하나부터 별장까지, 다양한 형태의 공간을 무료로 등록하고 공유하세요.</p>
+    </div>
+    <div class="feature-item js-observer" style="margin-top:3rem;">
+      <span class="feature-item-avatar" role="img">💃</span>
+      <h3 class="feature-item-title">무료로 숙소 등록하기</h3>
+      <p class="feature-item-description">남는 방 하나부터 별장까지, 다양한 형태의 공간을 무료로 등록하고 공유하세요.</p>
+      <a class="feature-item-link" href="#">숙소 등록</a>
+    </div>
+    <div class="feature-item js-observer" style="margin:3rem 0 0 2rem;">
+      <span class="feature-item-avatar" role="img">💃</span>
+      <h3 class="feature-item-title">무료로 숙소 등록하기</h3>
+      <p class="feature-item-description">남는 방 하나부터 별장까지, 다양한 형태의 공간을 무료로 등록하고 공유하세요.</p>
+    </div>
   </section>
 
-  <section class="landing-2">
+  <!-- <section class="landing-2">
     <div class="landing-2-background"></div>
     <figure class="landing-2-figure"></figure>
     <h2 class="landing-2-title">Section heading</h2>
@@ -106,7 +125,7 @@
     </p>
     <p class="landing-2-description">“It's incredibly easy to build Figma plugins. It took one Sunday morning to build my first ever plugin.”</p>
     <a class="landing-2-button" href="">Create a plugin</a>
-  </section>
+  </section> -->
 
   <style>
     .aa {
@@ -136,7 +155,7 @@
     }
   </style>
 
-  <div class="aa">
+  <section class="aa">
     <a href="#" target="_blank">
       <p>I don't wanna grow up</p>
       <p>I don't wanna grow up</p>
@@ -149,7 +168,7 @@
       <p>I don't wanna grow up</p>
     </a>
     <!-- <div><img src="" alt=""></div> -->
-  </div>
+  </section>
   <!-- <footer class="landing-footer">
     <div class="banner-background"></div>
     <span class="banner-eyebrow">Eyebrow</span>

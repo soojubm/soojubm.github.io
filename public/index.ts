@@ -86,6 +86,7 @@ function scrollProgress() {
   progressBar.style.width = scrollPercent
 }
 
+window.addEventListener('orientationChange', () => console.log('orientatoinChange'))
 window.addEventListener('load', () => console.log('loaded!'))
 window.addEventListener('beforeunload', () => '저장되지 않은 변경사항이 있습니다. 정말 페이지를 떠나실 건 가요?')
 
@@ -113,7 +114,7 @@ async function domEvents() {
 
   document.title = `이경수 ${hash}`
 
-  const temps = ['', 'search', 'filter', 'tokens', 'subscribe','components', 'changelog', 'dummies', 'texts', 'signifier', 'presentations']
+  const temps = ['', 'search', 'filter', 'tokens', 'subscribe', 'components', 'changelog', 'dummies', 'texts', 'signifier', 'presentations']
 
   if (!temps.includes(hash)) {
     initializeNavbar()
@@ -835,3 +836,86 @@ class CloseButton extends HTMLElement {
 //     console.log('disconnected', this)
 //   }
 // }
+
+// ! lazy
+// document.addEventListener('DOMContentLoaded', function() {
+//   var lazyloadImages = document.querySelectorAll('img.lazy')
+//   var lazyloadThrottleTimeout
+
+//   function lazyload() {
+//     if (lazyloadThrottleTimeout) {
+//       clearTimeout(lazyloadThrottleTimeout)
+//     }
+
+//     lazyloadThrottleTimeout = setTimeout(function() {
+//       var scrollTop = window.pageYOffset
+//       lazyloadImages.forEach(function(img) {
+//         if (img.offsetTop < window.innerHeight + scrollTop) {
+//           img.src = img.dataset.src
+//           img.classList.remove('lazy')
+//         }
+//       })
+//       if (lazyloadImages.length == 0) {
+//         document.removeEventListener('scroll', lazyload)
+//         window.removeEventListener('resize', lazyload)
+//         window.removeEventListener('orientationChange', lazyload)
+//       }
+//     }, 20)
+//   }
+
+//   document.addEventListener('scroll', lazyload)
+//   window.addEventListener('resize', lazyload)
+//   window.addEventListener('orientationChange', lazyload)
+// })
+
+//////////////////////////////
+
+// document.addEventListener('DOMContentLoaded', function() {
+//   var lazyloadImages
+
+//   if ('IntersectionObserver' in window) {
+//     lazyloadImages = document.querySelectorAll('.lazy')
+//     var imageObserver = new IntersectionObserver(function(entries, observer) {
+//       entries.forEach(function(entry) {
+//         if (entry.isIntersecting) {
+//           var image = entry.target
+//           image.src = image.dataset.src
+//           image.classList.remove('lazy')
+//           imageObserver.unobserve(image)
+//         }
+//       })
+//     })
+
+//     lazyloadImages.forEach(function(image) {
+//       imageObserver.observe(image)
+//     })
+//   } else {
+//     var lazyloadThrottleTimeout
+//     lazyloadImages = document.querySelectorAll('.lazy')
+
+//     function lazyload() {
+//       if (lazyloadThrottleTimeout) {
+//         clearTimeout(lazyloadThrottleTimeout)
+//       }
+
+//       lazyloadThrottleTimeout = setTimeout(function() {
+//         var scrollTop = window.pageYOffset
+//         lazyloadImages.forEach(function(img) {
+//           if (img.offsetTop < window.innerHeight + scrollTop) {
+//             img.src = img.dataset.src
+//             img.classList.remove('lazy')
+//           }
+//         })
+//         if (lazyloadImages.length == 0) {
+//           document.removeEventListener('scroll', lazyload)
+//           window.removeEventListener('resize', lazyload)
+//           window.removeEventListener('orientationChange', lazyload)
+//         }
+//       }, 20)
+//     }
+
+//     document.addEventListener('scroll', lazyload)
+//     window.addEventListener('resize', lazyload)
+//     window.addEventListener('orientationChange', lazyload)
+//   }
+// })

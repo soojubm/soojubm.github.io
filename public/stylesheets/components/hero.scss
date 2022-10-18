@@ -26,13 +26,13 @@
 .landing-hero-object2 {max-width:320px;padding:1rem;z-index:1;position:absolute;right:260px;top:3rem;pointer-events:none;}
 
 
-.is-scrolled .landing-hero-background {}
-.is-scrolled .landing-hero-title {animation:fadeup .4s .4s backwards;}
-.is-scrolled .landing-hero-description {animation:fadeup .4s .8s backwards;}
-.is-scrolled .landing-hero-actions-primary {animation:fadeup .4s 1.2s backwards;}
-.is-scrolled .landing-hero-actions-secondary {animation:fadeup .4s 1.4s backwards;}
-.is-scrolled .landing-hero-object1 {animation:bounceY 2s ease infinite alternate;}
-.is-scrolled .landing-hero-object2 {animation:bounceY 4s ease infinite alternate;}
+.is-observed .landing-hero-background {}
+.is-observed .landing-hero-title {animation:fadeup .4s .4s backwards;}
+.is-observed .landing-hero-description {animation:fadeup .4s .8s backwards;}
+.is-observed .landing-hero-actions-primary {animation:fadeup .4s 1.2s backwards;}
+.is-observed .landing-hero-actions-secondary {animation:fadeup .4s 1.4s backwards;}
+.is-observed .landing-hero-object1 {animation:bounceY 2s ease infinite alternate;}
+.is-observed .landing-hero-object2 {animation:bounceY 4s ease infinite alternate;}
 
 
 
@@ -44,13 +44,13 @@
 .hero-obj3 {position:absolute;right:420px;top:24px;width:16px;height:16px;background:#0057ff;border-radius:50%;}
 .hero-obj4 {position:absolute;right:0;top:-9rem;width:32rem;transform:scale(0);}
 
-.is-scrolled .hero-title {height:auto;animation:fadeup .4s ease .8s both;}
-.is-scrolled .hero-description {height:auto;animation:fadeup .4s ease .8s both;}
-.is-scrolled .hero-background {bottom: 0;transition: bottom .2s var(--bazier) .6s;}
-.is-scrolled .hero-obj1 {animation:scaleout .4s ease .8s both;}
-.is-scrolled .hero-obj2 {animation:scaleout .4s ease 1.4s both;}
-.is-scrolled .hero-obj3 {animation:scaleout .4s ease 1.2s both;}
-.is-scrolled .hero-obj4 {animation:scaleout .4s ease 1s both;}
+.is-observed .hero-title {height:auto;animation:fadeup .4s ease .8s both;}
+.is-observed .hero-description {height:auto;animation:fadeup .4s ease .8s both;}
+.is-observed .hero-background {bottom: 0;transition: bottom .2s var(--bazier) .6s;}
+.is-observed .hero-obj1 {animation:scaleout .4s ease .8s both;}
+.is-observed .hero-obj2 {animation:scaleout .4s ease 1.4s both;}
+.is-observed .hero-obj3 {animation:scaleout .4s ease 1.2s both;}
+.is-observed .hero-obj4 {animation:scaleout .4s ease 1s both;}
 
 @media (--small) {
   .hero-obj1, .hero-obj2, .hero-obj3, .hero-obj4 {display:none;}

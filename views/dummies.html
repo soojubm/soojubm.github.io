@@ -18,15 +18,14 @@
     }
   </style> -->
 
-  <button aria-haspopup="true" aria-expanded="false">
+  <!-- <button aria-haspopup="true" aria-expanded="false">
     Difficulty
     <span aria-hidden="true">&#x25be;</span>
   </button>
   <div role="menu">
     <button role="menuitemradio" tabindex="-1">Easy</button>
     <button role="menuitemradio" aria-checked="true" tabindex="-1">Medium</button>
-    <button role="menuitemradio" tabindex="-1">Incredibly Hard</button>
-  </div>
+  </div> -->
 
   <!-- <p>Naming Conventions</p>
   <p>
@@ -38,11 +37,11 @@
   </p> -->
   <!-- <li>global :  --[name]-[componentName]-[role]-[?state]</li> -->
 
-  <h4>Accessibility</h4>
+  <!-- <h4>Accessibility</h4>
   <p>role=checkbox aria-checked=false</p>
   <p>menuitemradio, menuitemcheck aria-checked</p>
   <input id="startTime" type="text" aria-errormessage="msgID" aria-invalid="true" value="11:30 PM" />
-  <span id="msgID" aria-live="assertive" style="visibility:visible"> Invalid time: the time must be between 9:00 AM and 5:00 PM" </span>
+  <span id="msgID" aria-live="assertive" style="visibility:visible"> Invalid time: the time must be between 9:00 AM and 5:00 PM" </span> -->
 
   <section class="hero" role="banner">
     <div class="hero-background"></div>
@@ -60,6 +59,28 @@
   </section>
 
   <section class="component-body" style="padding:2rem var(--grid-margin);">
+    <article class="item" data-size="large">
+      <figure class="item-avatar" style="background:aliceblue;">
+        <span class="material-symbols-outlined" style="color:blue;">
+          trending_up
+        </span>
+      </figure>
+      <h3 class="item-name">Entity large</h3>
+      <p class="item-description">description area.</p>
+      <span style="color:blue;">35%</span>
+    </article>
+
+    <article class="item" data-size="large">
+      <figure class="item-avatar" style="background:var(--red100);">
+        <span class="material-symbols-outlined" style="color:var(--red800);">
+          trending_down
+        </span>
+      </figure>
+      <h3 class="item-name">Entity large</h3>
+      <p class="item-description">description area.</p>
+      <span style="color:var(--red800);">35%</span>
+    </article>
+
     <div style="display:flex;align-items:center;line-height:var(--font-line-height-small);">
       <span>떡볶이</span>
       <span class="material-symbols-outlined" style="font-size:var(--font-size-subhead);color:var(--color-text-light);">
@@ -68,19 +89,26 @@
       <span>5</span>
     </div>
 
-    <h3 class="article-subhead">Select payment method<br />payment method는 token을 활용한 기존에 없던 형태</h3>
+    <h3 class="article-subhead">
+      Select payment method<br />payment method는 token을 활용한 기존에 없던 형태. 판매자가 선택할 수 있는 결제 방법과 구매자가 선택할 수 있는 결제
+      방법. todo. radio 힌트트
+    </h3>
 
     <div class="payment-method-list temp8" style="margin:var(--space-after-subhead) 0 0 0;">
-      <div class="payment-method-item status-is-active" style="margin:0 .5rem 0 0;">
+      <div class="payment-method-item status-is-active" style="margin:0 .75rem 0 0;">
         <i class="tag" data-style="primary" style="width:16px;height:16px;padding:0;position:absolute;z-index:5;top:.25rem;left:.25rem;"
           ><i class="material-symbols-outlined" style="font-size:20px;position:absolute;left:-3px;top:-3px;">check</i></i
         >
         <figure style="height:var(--size-large);padding-bottom:.5rem;background:aliceblue;">💳</figure>
         <span style="display:block;text-align:center;font-size:var(--font-size-body);">신용카드</span>
       </div>
-      <div class="payment-method-item" style="margin:0 .5rem 0 0;">
+      <div class="payment-method-item" style="margin:0 .75rem 0 0;">
         <figure style="height:var(--size-large);padding-bottom:.25rem;background:#defade;">💵</figure>
         <span style="display:block;text-align:center;font-size:var(--font-size-body);">현금</span>
+      </div>
+      <div class="payment-method-item" style="margin:0 .75rem 0 0;">
+        <figure style="height:var(--size-large);padding-top:.25rem;background:antiquewhite;font-size:1.8rem;">🫓</figure>
+        <span style="display:block;text-align:center;font-size:var(--font-size-body);">무통장입금</span>
       </div>
     </div>
 
@@ -90,6 +118,7 @@
       <div class="tile-elevated" style="width:240px;margin:0 .375rem;padding:1rem;box-shadow:none;border:0;background:var(--green100);">
         <h2 style="line-height:var(--font-line-height-small);">Designers</h2>
         <p>50 People</p>
+        <i class="material-symbols-outlined" style="font-size:20px;position:absolute;left:-3px;top:-3px;">arrow-right</i>
       </div>
       <div class="tile-elevated" style="width:240px;margin:0 .375rem;padding:1rem;box-shadow:none;border:0;background:aliceblue;">
         <h2 style="line-height:var(--font-line-height-small);">Engineers</h2>

@@ -397,7 +397,8 @@ main, .footer {transition:all .6s ease;}
 
 .meter {margin:4rem 0;}
 .meter-status {@include text-title;}
-.meter-graph {display:flex;margin:0 0;padding:var(--space-1);border-radius:var(--radius);background:var(--color-background-weak);}
+.meter-graph {display:flex;position:relative;}
+.meter-graph:before {content:'';display:block;padding:var(--space-1);border-radius:var(--radius);background:var(--color-background-weak);position:absolute;left:var(--space-1-minus);right:var(--space-1-minus);top:var(--space-1-minus);bottom:var(--space-1-minus);z-index:-1;}
 .meter-graph-bar {}
 .meter-detail {max-width:50%;margin:2rem auto 0;}
 .meter-detail-item {display:flex;align-items:center;margin:var(--space-2) 0;position:relative;}
