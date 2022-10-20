@@ -661,7 +661,6 @@ arrow_drop_down
             </button>
             <menu class="dropdown-menu" role="menu">
               <h6 class="dropdown-menu-title" hidden>Dropdown header</h6>
-              <!-- // todo  -->
               <a class="dropdown-menu-link" href="#" disabled style="display:flex;justify-content:space-between;align-items:center;">
                 최신순
                 <span class="material-symbols-outlined">check</span>
@@ -793,7 +792,7 @@ arrow_drop_down
             <span class="tag" role="listitem" data-style="secondary">Secondary</span>
             <span class="tag" role="listitem">Tertiary</span>
             <span class="tag" role="listitem" style="background:var(--red100);border-color:var(--red100);color:var(--red800);">15</span>
-            <span class="tag" data-role="accent">
+            <span class="tag">
               <figure class="tag-icon" role="img">🔥</figure>
               <small class="tag-label">Tertiary with icon</small>
             </span>
@@ -1141,7 +1140,7 @@ arrow_drop_down
           searchfield / commentfield: 아이콘 레이블로 대체하는 경우 텍스트 레이블을 생략할 수 있습니다. Input with hidden label. helper text도
           필요없다. 그리고 둘 다 벨리데이션을 하지 않는 텍스트필드.
         </li>
-        <li></li>
+        <!-- <li>url 등록 시 www 및 https:// 기본 입력</li> -->
       </ul>
 
       <h4 class="article-subhead">Props</h4>
@@ -1686,6 +1685,7 @@ arrow_drop_down
     <article class="article js-observer js-scrollspy-section">
       <h1 class="article-title">Carousel</h1>
       <p class="article-description">작성 중.</p>
+      <p>https://web.dev/carousel-best-practices/</p>
       <section class="component-style">
         <div class="tile-flat">
           <section class="carousel" style="max-width:auto;">
@@ -1729,6 +1729,7 @@ arrow_drop_down
       <ul>
         <li>서드파티 라이브러리를 사용하지 않고 가로 스크롤로 제공하세요.</li>
         <li>터치 제스쳐를 지원하지 않는 환경에서는 arrow 버튼을 제공하세요.</li>
+        <!-- // todo 가로 스크롤 패턴 -->
       </ul>
     </article>
 
@@ -1780,7 +1781,6 @@ arrow_drop_down
         </tbody>
       </table>
       <br />
-      <!-- // todo 가로 스크롤 패턴 -->
     </article>
 
     <article class="article js-observer js-scrollspy-section">
@@ -1876,7 +1876,7 @@ arrow_drop_down
             재의를 요구할 수 없다.
           </p>
           <div class="empty-list">
-            <div class="empty-list-item"><b>주문시간</b><span>2019-08-10</span></div>
+            <div class="empty-list-item"><b>주문시간(summary item)</b><span>2019-08-10</span></div>
             <div class="empty-list-item"><b>결제금액</b><span>₩ 54,000</span></div>
           </div>
           <a class="empty-action" href="#">주문내역 보기</a>

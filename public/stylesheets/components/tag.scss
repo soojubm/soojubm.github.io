@@ -2,7 +2,7 @@
 .tag-icon {margin:0 var(--space-1) 0 0;}
 .tag[data-style=primary] {@include tag-primary;border-color:var(--color-accent);}
 .tag[data-style=secondary] {@include tag;border-color:var(--green100);background-color:var(--green100);color:var(--green800);}
-.tag[data-role=accent] {display:inline-flex;} // todo selector
+
 
 .hashtag {@include hashtag;}
 
