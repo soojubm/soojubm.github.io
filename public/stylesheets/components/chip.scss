@@ -19,16 +19,12 @@
     border-color: var(--color-background-strong);
     background: var(--color-background-strong);
     color: var(--color-text-weak);
-    .chip-icon {
-      background: var(--color-background-strong) !important;
-    }
   }
 
-  &[data-property=removable] {
-    // todo remove hover style
+  // todo has-clickable | card
+  .style-removable {
     > * {pointer-events:auto;}
     &:hover {box-shadow:none;outline:none;cursor:default;}
-    // .chip-icon:hover {background:var(--color-background);cursor:pointer;}
   }
 }
 

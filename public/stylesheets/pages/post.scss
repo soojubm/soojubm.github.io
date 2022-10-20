@@ -8,10 +8,8 @@
 .post-head-progress {display:none;height:2px;background:var(--color-primary);border-radius:var(--radius);position:absolute;bottom:0;}
 .post-head-kicker {margin:var(--space-after-title) 0 0 0;font-size:var(--font-size-large);line-height:var(--font-line-height-small);}
 
-// .is-sticky-post-head .post {padding-top:110px;}
 .is-sticky-post-head .post-head {background:var(--color-background);text-align:left;position:fixed;left:0;right:0;top:0;z-index:var(--zindex-menu);}
 .is-sticky-post-head .post-head-category {display:none;}
-// todo + border-width + space
 .is-sticky-post-head .post-head-headline {padding:var(--space-4) var(--grid-margin) 1rem;box-sizing:border-box;font-size:var(--font-size-subhead);line-height:32px;text-align:center;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;}
 .is-sticky-post-head .post-head-dateline {display:none;}
 .is-sticky-post-head .post-head-kicker {display:none;}
@@ -19,7 +17,6 @@
 .is-sticky-post-head .post-head-dateline + .icon-bullet {display:none;}
 .is-sticky-post-head .post-head-progress {display:block;}
 
-// .post-byline {display:flex;align-items:center;position:relative;}
 .post-byline {position:relative;}
 .post-byline-avatar {float:left;@include avatar-large;margin:0 var(--space-after-avatar-large) 0 0;}
 .post-byline-name {display:block;margin:var(--space-leading-subhead) 0 0 0;}
@@ -28,7 +25,6 @@
 
 .post-body {position:relative;} /* graident 때문에 아래요소에서 마진값주기 */
 .post-body-kicker {margin:2rem 0 2.5rem 0;font-size:var(--font-size-subhead);position:relative;}
-// .post-body-image {float:left;width:400px;height:600px;overflow:hidden;margin:0 0 0 -240px;}
 .post-body-image {height:240px;overflow:hidden;margin:3rem -10rem 3.5rem;border-radius:var(--radius);}
 .post-body-subhead {margin:4rem 0 var(--space-after-subhead) 0px;@include text-subhead;}
 .post-body-paragraph {margin:1rem 0px;line-height:1.9;}
@@ -68,7 +64,6 @@
 .post-comment-list-item-text {margin:var(--space-2) 0 0;}
 .post-comment-list-item-morevert {@include avatar-medium;position:absolute;right:0;top:0;}
 .post-comment-list-item-morevert:hover {}
-// todo tile margin / menuitem
 .post-comment-list-item-menu {display:none;@include tile-elevated-small;width:var(--width-dropdown);margin:0;padding:0;position:absolute;right:40px;top:0;z-index:var(--zindex-default);}
 .post-comment-list-item-menu button {display: block;width:calc(100% - 2rem);margin: 1rem;text-align:left;position: relative;z-index: 1;}
 .post-comment-list-item-menu button:hover {@include hover-item;}
@@ -126,6 +121,14 @@
 .post-attract-title {margin:0 0 var(--space-after-subhead) 0;@include text-subhead;}
 .post-attract-description {}
 .post-attract-signup {@include button-primary;margin:var(--space-after-description) 0;}
+
+
+
+.post-relation {margin:0 auto;padding:0 var(--grid-margin);}
+.post-relation {margin:4rem auto 8rem;}
+.post-relation-title {width:100%;margin:0 0 var(--space-after-title) 0;@include text-subhead;}
+.post-relation-description {font-size:var(--font-size-subhead);color:var(--color-text-light)}
+
 
 
 .theme-dark {

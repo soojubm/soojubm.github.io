@@ -1,4 +1,3 @@
-/* @todo icon > i font-size:inherit; */
 .timeline {position:relative;}
 .timeline-item {padding:1rem 0 0 calc(var(--size-medium) + var(--space-after-avatar-medium));position:relative;}
 .timeline-item:before {content:'';display:block;position:absolute;left:15px;top:0;bottom:0;width:1px;background:var(--gray200);}

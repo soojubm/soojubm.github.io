@@ -68,7 +68,7 @@
           </button>
         </div>
       </div>
-      <div class="card has-item design-ticker-item" role="listitem">
+      <div class="card has-clickable design-ticker-item" role="listitem">
         <figure class="card-thumbnail"><img src="/public/images/springsteen.jpg" alt="" loading="lazy" /></figure>
         <h3 class="card-title">카드 유아이</h3>
         <p class="card-text">
@@ -89,7 +89,11 @@
           <div class="item-price"><del>₩19,000</del> ₩16,000 <em>할인율 20%</em></div>
         </div>
         <div class="card-note">마일리지 적립 200P</div>
-        <button class="card-more" hidden><i class="icon-more"></i></button>
+        <button class="card-more" hidden>
+          <span class="material-symbols-outlined">
+            more_vert
+          </span>
+        </button>
       </div>
       <article class="tile-elevated design-ticker-item">
         <h3 style="text-align:center;">Ratings</h3>
@@ -138,7 +142,6 @@
           <div class="user-myinfo">내 프로필 관리</div>
         </a>
         <hr role="separator" />
-        <!-- todo -->
         <button class="user-logout" title="change theme">
           <figure class="button-elevated-avatar"><span class="material-symbols-outlined">nights_stay</span></figure>
           <span class="button-elevated-label">어둡게 보기</span>
@@ -222,7 +225,7 @@
           </button>
         </div>
       </div>
-      <div class="card has-item design-ticker-item" role="listitem">
+      <div class="card has-clickable design-ticker-item" role="listitem">
         <figure class="card-thumbnail"><img src="/public/images/springsteen.jpg" alt="" loading="lazy" /></figure>
         <h3 class="card-title">카드 유아이</h3>
         <p class="card-text">
@@ -243,7 +246,11 @@
           <div class="item-price"><del>₩19,000</del> ₩16,000 <em>할인율 20%</em></div>
         </div>
         <div class="card-note">마일리지 적립 200P</div>
-        <button class="card-more" hidden><i class="icon-more"></i></button>
+        <button class="card-more" hidden>
+          <span class="material-symbols-outlined">
+            more_vert
+          </span>
+        </button>
       </div>
       <div class="quote design-ticker-item">
         <div class="quote-avatar">🥫</div>
@@ -316,6 +323,80 @@
         <h3 class="feature-item-title">visual cue? clearness?</h3>
         <p class="feature-item-description">예측 가능하고 일관된 사용자 경험. ux 부채 기술 부채 최소화</p>
       </div>
+    </section>
+
+    <section>
+      <p>foundations: tokens / signifier / layout / level /</p>
+      <p>
+        changelog: 221022: before, after 선택자로 checkbox와 switch를 스타일링 하지 않고, 컴포넌트로 정의해서 다양한 인터페이스에 활용할 수 있도록.
+        예를 들면 checkable tile에서, setting item에서.
+      </p>
+
+      <article class="tile-elevated">
+        <h2 style="margin-top:var(--space-leading-subhead);font-size:var(--font-siez-subhead);">test</h2>
+        <p>TODO hover state와 active state를 표현. 클릭 범위와 체크 아이콘의 위치 지정.</p>
+        <div style="margin:var(--space-2) 0;">
+          <input type="checkbox" id="" />
+          <div class="checkbox-input"></div>
+        </div>
+      </article>
+
+      <div class="tt">
+        <input type="checkbox" id="abcde" style="opacity: 0;" />
+        <label class="switch-bar" for="abcde">
+          <div class="switch-thumb"></div>
+        </label>
+      </div>
+
+      <style>
+        .tt label:before,
+        .tt label:after {
+          opacity: 0;
+        }
+        .switch-bar {
+          width: 36px;
+          height: 20px;
+          padding: 2px !important;
+          box-sizing: border-box;
+          background: var(--color-background-weak);
+          border-radius: var(--radius);
+          transition: background 0.2s;
+          cursor: pointer;
+          position: relative;
+        }
+        .switch-thumb {
+          width: var(--size-tiny);
+          height: var(--size-tiny);
+          border-radius: var(--radius);
+          background: var(--color-background);
+          box-shadow: var(--shadow);
+          transition: transform 0.2s;
+        }
+        input:checked + .switch-bar {
+          background: var(--color-primary);
+        }
+        input:checked + .switch-bar .switch-thumb {
+          transform: translateX(16px);
+        }
+
+        .checkbox-input {
+          width: var(--size-tiny);
+          height: var(--size-tiny);
+          border-radius: 4px;
+          border: var(--border);
+          box-sizing: border-box;
+        }
+        input:checked + .checkbox-input {
+          border-color: var(--color-primary);
+          background: var(--color-primary);
+        }
+
+        input[type='checkbox'] ~ label:before {
+          /* position: absolute;
+          left: 0; */
+        }
+        /* input[type=checkbox] ~ label:after {content:'';display:none;width:6px;height:2px;border-left:2px solid;border-bottom:2px solid;border-color:var(--gray200);position:absolute;left:4px;top:9px;transform:rotate(-45deg);} */
+      </style>
     </section>
     <!-- Feature project collaborators to build your community. -->
     <!-- https://www.w3.org/WAI/standards-guidelines/wcag/ -->

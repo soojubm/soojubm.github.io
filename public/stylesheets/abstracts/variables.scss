@@ -21,7 +21,7 @@
   --layout-width-large: 1200px;
   --layout-width-small: 640px;
   --layout-width-tiny: 480px;
-  // todo.. layout
+
   --grid-column: calc(50% - var(--space-1));
   --grid-gutter: null;
   --grid-margin: 5vw;
@@ -96,7 +96,6 @@
   --color-text-strong: var(--gray0);
   --color-text-link: var(--color-primary);
   
-  // todo icon scope
   --icon-background: var(--gray800);
   --icon-border-color: var(--gray800);
 
@@ -142,8 +141,6 @@
   --space-groupitem: var(--space-1); // listitem
   --space-groupitem-minus: calc(var(--space-groupitem) * -1);
   
-  // todo, position
-  --space-inset-card: null;
   --space-inset-tile: .75rem;
   --space-inset-section: 4rem;
 

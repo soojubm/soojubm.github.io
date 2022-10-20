@@ -86,11 +86,6 @@
 .product-detail-summary-title {margin:4rem 0 1rem 0;@include text-subhead;}
 
 
-
-
-
-
-// todo 칼럼의 갯수에 따라 width를.
 .feature {display:flex;flex-wrap:wrap;justify-content:space-between;padding:6rem var(--grid-margin) 7rem;}
 .feature-head {width:100%;margin:0 auto 4rem;}
 .feature-head-title {@include text-title;word-break:keep-all;}

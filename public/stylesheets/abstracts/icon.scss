@@ -8,10 +8,6 @@
 // .icon-caret {width:0;height:0;margin:0 0 1px 0;border-top:4px solid var(--icon-background);border-left:4px solid transparent;border-right:4px solid transparent;border-radius:var(--radius);}
 .icon-bullet:before {content:'\002F';margin:0 var(--space-2);color:var(--gray200);}
 
-.icon-more {display:block;width:3px;height:3px;margin:4px auto;background:var(--icon-background);border-radius:50%;position:relative;}
-.icon-more::before {content:'';display:block;width:3px;height:3px;background:inherit;border-radius:50%;position: absolute;top:-5px;left:50%;margin-left:-1.5px;}
-.icon-more::after {content:'';display:block;width:3px;height:3px;background:inherit;border-radius:50%;position: absolute;top:5px;left:50%;margin-left:-1.5px;}
-
 // .icon-home {display:inline-block;position:relative;}
 // .icon-home span:nth-of-type(1):before {content:'';display:block;width:10px;height:10px;background:var(--icon-background);transform:rotate(45deg);position:absolute;left:2px;top:-9px;}
 // .icon-home span:nth-of-type(1):after {content:'';display:block;width:16px;height:8px;background:var(--color-background);position:absolute;left:-2px;top:-4px;}

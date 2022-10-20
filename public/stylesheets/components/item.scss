@@ -1,8 +1,8 @@
 // description 수치(날짜/금액/수량) 이륾보다 더 강조될 수도 있음.
 // => avatar medium, avatar large (우측정렬, 버튼 아래)
 // 모든 item은 clickable? => no 액션 버튼이 존재할 수도 있음.
-// todo entry / message / created
 
+// todo entry / message / created
 
 // ! avatar-medium과 chip
 // ! text-align: left는 button element.
@@ -35,8 +35,6 @@
 .item-icon {@include item-icon;}
 .item-icon-label {} // ! action-label
 
-// todo signify
-
 .item[data-align=vertical] {width:auto;text-align:center;}
 .item[data-align=vertical] .item-avatar {float:none;margin-right:0;}
 .item[data-align=vertical] .item-name {margin-top:var(--space-1);}
@@ -57,6 +55,5 @@
 [role=menuitemradio] {}
 
 
-// todo checkitem space-between or position absolute;
 @mixin menuitem {display:flex;align-items:center;width:100%;position:relative;z-index:var(--zindex-default);}
 @mixin menuitem-label {@include text-subhead;line-height:var(--size-medium);}

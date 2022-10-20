@@ -13,16 +13,13 @@
 @import 'base/reset';
 @import 'base/form';
 
-@import 'pages/presentations';
-
 
 @import 'components/chip';
 @import 'components/breadcrumb.css';
 @import 'components/graph.css';
-@import 'components/modal';
+// @import 'components/modal';
 @import 'components/snackbar';
 @import 'components/step';
-@import 'components/toast';
 @import 'components/tooltip';
 @import 'components/pagination';
 @import 'components/banner';
@@ -38,6 +35,8 @@
 @import 'components/skeleton';
 
 @import 'components/item';
+
+@import 'pages/presentations';
 
 @import 'layout/navbar';
 @import 'layout/titlebar';

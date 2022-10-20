@@ -56,7 +56,6 @@
 .profile-foot-follow {@include button-primary;width:50%;margin:0 auto;display:block;}
 .profile-body {margin:-1.5rem 0 0 0;padding:0 0 64px calc(320px + var(--size-large));box-sizing:border-box;position:relative;}
 
-// todo padding margin .... border?? -.25rem 하면 안 맞다
 [role=tablist] {@include tile-elevated-small;margin-top:0;display:flex;padding:.25rem !important;}
 .profile-tablist {}
 .profile-tablist-tab {display:flex;align-items:center;justify-content:center;flex:auto;height:var(--size-medium);padding:1px var(--space-4) var(--adjust-label-line);color:var(--color-text-light);position:relative;z-index:var(--zindex-default);}
@@ -65,10 +64,8 @@
 .profile-tablist-tab-label {padding:0 0 var(--adjust-label-line) 0;}
 .profile-tablist-tab-badge {margin:0 0 0 var(--space-2);}
 .profile-tablist-indicator {display:block;height:calc(100% - .5rem);background:var(--color-background-strong);border-color:var(--color-background-strong);border-radius:var(--radius);position:absolute;transition:all var(--duration);}
-
 // .profile-tablist-tab:nth-child(1)[aria-selected=true] ~ .profile-tablist-indicator {transform: translateX(clac(70px * 1))}
 
-// todo 
 .follow-tablist {margin-bottom:var(--space-3);z-index:7;}
 
 .type-t[role=tablist] {padding:0 !important;border:none;border-bottom:var(--border);border-radius:0;box-shadow:none;}
@@ -120,15 +117,11 @@
 .card-more {@include chip;display:none;position:absolute;right:var(--inset);top:var(--inset);}
 
 
-// todo has-item 직관적이지 않음. 전체가 클릭영역이 아니라 내부에 클릭 가능한 영역을 따로 두는 경우.
 @media (hover) and (pointer: fine) {
-  .card:hover:not(.has-item) {@include hover-item;}
+  .card:hover:not(.has-clickable) {@include hover-item;}
   .card:hover .card-more {display:block;}
 }
 
-
-
-// padding.. todo
 .list .card {float:none;width:100% !important;margin-bottom: var(--space-3);}
 .list .card-thumbnail {float:left;width:var(--size-huge);height:var(--size-huge);margin-right:var(--space-after-avatar-huge);padding-top:0;}
 .list .card-thumbnail img {max-width:150%;}

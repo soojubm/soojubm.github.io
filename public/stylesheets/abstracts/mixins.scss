@@ -74,8 +74,6 @@
 @mixin layout-medium {@include layout(var(--layout-width-small));}
 @mixin layout-small {@include layout(var(--layout-width-tiny));}
 
-// 그냥나열되는경우(display:flex flex-wrap vs inline-block) 마진중첩서로 다르게 적용이 된다.
-// bleeding chip, slider 사용함. 간격을 variables로.
 // todo flex일 대 min-width가 필수가 된다..
 @mixin group {
   display:flex;flex-wrap:wrap;margin:var(--space-groupitem-minus);
@@ -92,10 +90,9 @@
   &::-webkit-scrollbar {display:none;}
 }
 
-// todo .25rem
 @mixin tag-group {
-  display:flex;flex-wrap:wrap;margin:-.25rem;;
-  > * {margin:.25rem;}
+  display:flex;flex-wrap:wrap;margin:var(--space-1-minus);
+  > * {margin:var(--space-1);}
 }
 @mixin chip-group {@include group;}
 [role=group] {@include group;}
@@ -136,7 +133,6 @@
 }
 
 
-// todo outer
 @mixin tag {
   display: inline-flex;
   height: var(--size-small);

@@ -1,5 +1,3 @@
-// todo 프로필 오버플로우 메뉴보다 zindex가 낮아야함
-
 .titlebar {display:flex;align-items:center;padding:var(--space-3) var(--grid-margin);position:relative;z-index:3;}
 .titlebar-background {@include bleeding;background-color:var(--color-background);}
 

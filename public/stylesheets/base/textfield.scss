@@ -1,4 +1,3 @@
-
 @mixin reset-textinput {
   background: var(--color-background-weak);
   border: 1px solid transparent;
@@ -8,16 +7,16 @@
   color: var(--color-text); // for safari #fff
 }
 
-
 @mixin textfield-prefix {@include icon-button-small;position:absolute;left:var(--space-3);top:36px;}
 @mixin textfield-surfix {@include icon-button-small;position:absolute;right:var(--space-3);top:37px;}
 
 .textfield-group {display:flex;justify-content:space-between;}
 .textfield-group .textfield {width:calc(50% - var(--space-1))}
+
 .textfield {position:relative;}
 .textfield-label {display:block;}
 .textfield-label small {margin:0 0 0 .25rem;color:var(--color-text-light);}
-// todo padding top bottom은 textarea를 위해서
+// padding top bottom은 textarea를 위해서
 .textfield-input {display:block;width:100%;height:var(--size-large);padding:11px var(--space-4);@include reset-textinput;}
 .textfield-input:focus {background:var(--color-background);outline:0;box-shadow:var(--state-hover);} // todo outline -> shadow
 .textfield-input:disabled {border-color:var(--gray200);background:var(--gray200);color:var(--gray100);cursor:not-allowed;}
@@ -41,19 +40,13 @@
 
 .searchfield {}
 .searchfield-prefix {top:11px;}
-.searchfield-clear {right:calc(var(--size-medium) + var(--space-after-avatar-medium) + var(--space-3));} // + inset
-// todo... size-medium + after-avatar-medium
+.searchfield-clear {right:calc(var(--size-medium) + var(--space-after-avatar-medium) + var(--space-3));}
 .searchfield-cancel {@include button-text;min-width:auto;width:var(--size-medium);position:absolute;right:0;top:0;padding:0;}
 .is-focused .searchfield-input {display:block;width:calc(100% - var(--size-medium) - var(--space-after-avatar-medium));}
 .is-focused .searchfield-cancel {right:0;}
 
 // 검색필드는 레이블이 없다. label ~로 하면 되긴 함.
 // input container
-
-.textfield.is-floating {}
-.textfield.is-floating input {padding:var(--space-3) 0rem;border-top:none;border-left:none;border-right:none;}
-.textfield.is-floating label {height:20px;position:absolute;left:0;top:6px;transition:all 0.2s ease;cursor:text;}
-.textfield.is-floating input:focus + label {color:var(--color-text-light);font-size:11px;top:-12px;}
 
 .is-invalid .textfield-label {}
 .is-invalid .textfield-input {border-color:var(--red800);color:var(--red800);}

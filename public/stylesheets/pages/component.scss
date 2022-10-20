@@ -1,28 +1,18 @@
 .component {}
-// .component-style {margin-top:calc(var(--titlebar-height) * -1);padding:calc(4rem + var(--titlebar-height)) var(--grid-margin);background-color:var(--color-primary);position:sticky;top:0;
-.component-style {margin:3rem -5vw;padding:2rem var(--grid-margin);background-color:var(--color-primary);position:sticky;top:0;
+.component-example {margin:3rem -5vw;padding:2rem var(--grid-margin);background-color:var(--color-primary);position:sticky;top:0;
   background: #159957;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to bottom, #155799, #159957);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to bottom, #155799, #159957); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-// todo..
-.component-style > .tile-flat,
-.component-style > .tile-elevated,
-.component-style > .tile-flat-small {width:100%;max-width:640px;}
+.component-example > .tile-flat,
+.component-example > .tile-elevated,
+.component-example > .tile-flat-small {width:100%;max-width:640px;}
 
 .component-navigation {background:var(--color-background);overflow:hidden;position:sticky;top:calc(var(--titlebar-height));z-index:7;}
 .component-navigation-scroll {margin:-.25rem;padding:var(--space-3) var(--grid-margin) !important;}
 
 
 @media (--small), (max-height: 800px) {
-  //   .component-style {height:auto;padding-bottom:4rem;position:relative;}
-  .component-style {margin-top:2rem;margin-bottom:2rem;}
+  .component-example {margin-top:2rem;margin-bottom:2rem;}
 }
-
-
-.home-asset {position:relative;}
-.home-asset-heading {font-size:var(--font-size-title);line-height:1.4;color:var(--color-text-light);}
-.home-asset-heading button {display:flex;align-items:center;color:var(--color-text);}
-.home-asset-refresh {font-size:var(--font-size-caption);color:var(--color-text-light);position:absolute;right:0;top:0;}
-.home-asset-creditinfo {margin:var(--space-4) 0;@include link-outside;}

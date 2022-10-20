@@ -16,12 +16,5 @@
 .setting-item:hover {@include hover-item;}
 
 
-
-// todo padding
-.setting-toggle {@include tile-elevated;display:flex;align-items:center;justify-content:space-between;}
-.setting-toggle-label {@include text-body;}
-.setting-toggle-switch {}
-.setting-toggle-switch label {padding-left:48px !important;font-size:0;} // todo
-
 @media (--small) {
 }

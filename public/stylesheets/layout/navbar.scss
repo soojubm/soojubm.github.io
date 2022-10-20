@@ -21,7 +21,6 @@
 
 .navbar-search-trigger {@include avatar-medium;}
 
-// todo close icon rotate
 .search {}
 .search-form {}
 .search-form-close {@include avatar-medium;position:absolute;left:1rem;top:14px;transform:rotate(180deg);}
@@ -30,7 +29,6 @@
 .search-similar-item {@include tile-elevated-small;display:flex;align-items:center;margin:.25rem;padding:.25rem .5rem .25rem .25rem;}
 .search-similar-item figure {@include avatar-medium;margin:0 var(--space-after-avatar-medium) 0 0;}
 .search-similar-item span {display:block;padding:0 0 var(--adjust-label-line) 0;color:var(--color-text);}
-
 
 .search-recent {}
 .search-recent-title {margin:0 0 var(--space-2) 0;@include text-label;}
@@ -43,9 +41,7 @@
 // .search-suggestion-item-delete {margin-left:auto;padding:.25rem;border-radius:var(--radius);color:var(--color-text-light);}
 .search-suggestion-item-delete:hover {}
 
-// todo dropdown width mixin
 // todo menu, empty 통일
-// todo hidden state
 .navbar-notification {margin:0 .5rem;position:relative;}
 .navbar-notification-trigger {@include avatar-medium;}
 .navbar-notification-trigger i {vertical-align:middle;color:var(--gray800);}
@@ -73,7 +69,6 @@
 .notification-item-date {margin:0 0 0 var(--space-1);font-size:var(--font-size-caption);color:var(--color-text-light);}
 
 
-// todo util
 .navbar-user {display:flex;align-items:center;margin:0 0 0 auto;position:relative;}
 .navbar-user-trigger {@include avatar-medium;margin:0 0 0 var(--space-2);}
 // .navbar-user-trigger-avatar {width:24px;pointer-events:none;}
@@ -92,7 +87,6 @@
 .user-job {margin:var(--space-1) 0 0 0;text-align:center;color:var(--color-text-light);}
 .user-email {line-height:var(--font-line-height-small);}
 
-// todo this is item
 .user-logout {display:flex;align-items:center;width:100%;margin:var(--space-after-item) 0;position:relative;}
 .user-logout-icon {@include chip;}
 .user-logout-label {@include item-label;}
@@ -119,7 +113,6 @@
 .is-sticky-navbar .navbar {background:var(--color-background);position:fixed;top:0;left:0;right:0;}
 
 .navbar-menu {display:block;max-width:var(--menu-width);margin-left:0;background:var(--color-background);border-right:var(--border);position:fixed;left:0px;right:0;top:calc(var(--navbar-height) + 2px);bottom:0px;transition:transform var(--duration-slowly) cubic-bezier(.165,.84,.44,1);transform:translateX(-100%);}
-// todo padding
 .navbar-menu-item {display:block;padding:var(--space-2) 2rem var(--space-2) var(--grid-margin);font-size:var(--font-size-subhead);}
 .navbar-menu-item menu {flex-wrap:wrap;background:var(--color-background);position:static;left:auto;right:auto;top:auto;transition:none;}
 // .navbar-menu-item:hover menu {display:block;}
