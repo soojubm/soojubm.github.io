@@ -1,7 +1,7 @@
 <main class="component" style="padding-bottom:8rem;">
   <header class="hero">
     <h1 class="hero-title">Dictionary</h1>
-    <p class="hero-title">용어 사전 + ux writings 규칙</p>
+    <p class="hero-title">+ ux writing rules + naming conventions</p>
   </header>
   <div class="dictoinary-item">
     <b>행동</b>
@@ -26,6 +26,9 @@
     <b>더보기 -- 간단히보기</b>
   </div>
   <hr />
+  <div class="dictoinary-item"><b>큰 화면은 주로(주로라는 것은 모호한 용어라서 수정하기),</b> <b>PC 또는 태블릿</b></div>
+  <div class="dictoinary-item"><b>작은 화면은 주로,</b> <b>모바일</b></div>
+  <hr />
   <div class="dictoinary-item"><del>유저</del> <b>사용자</b></div>
   <div class="dictoinary-item"><del>리뷰</del> <b>후기</b></div>
   <div class="dictoinary-item"><del>및/혹은</del> <b>또는</b></div>
@@ -36,5 +39,37 @@
   <hr />
   <div class="dictoinary-item">비효율 1: 테마 토글을 위한 인터페이스가 toggle과 switch 2가지 형태. 엘리먼트 속성이 달라짐.</div>
   <hr />
-  <div class="dictoinary-item">comment UI vs Review UI. 별점. 사진. 제목.</div>
+  <div class="dictoinary-item">comment UI vs Review UI. 별점유무. 사진유무. 제목없음.</div>
+  <div class="dictoinary-item">버튼 네이밍 케이스. 'link' | 'subtle' | 'primary' / 'solid' | 'outline' | 'plain' |'text'</div>
+
+  <hr />
+
+  <div class="dictoinary-item">
+    <p>naming: appearance | theme => style (andriod 코드, iOS 가이드 참고)</p>
+    <p>Style prop value must be an objecteslintreact/style-prop-object</p>
+    <p>button, checkbox - label (iOS) / text (andriod)</p>
+    <p>iOS button role action label</p>
+    <p>token - utility class</p>
+  </div>
+
+  <div class="dictoinary-item" style="margin:.5rem -.5rem;">
+    <span class="tag">#clickable</span>
+    <span class="tag">#non-clickable</span>
+    <span class="tag">#groupable</span>
+    <span class="tag">#removable</span>
+    <span class="tag">#selectable</span>
+    <span class="tag">#checkable</span>
+    <span class="tag">#hovable</span>
+  </div>
+
+  <section class="dictoinary-item design-categories">
+    <h2>Find<br />Our Components</h2>
+    <div role="group" style="margin-top:var(--space-after-subhead);">
+      <span class="chip"><spanc class="chip-label">#시각정보</spanc></span>
+      <span class="chip"><spanc class="chip-label">#인터렉션</spanc></span>
+      <span class="chip"><spanc class="chip-label">#컨테이너</spanc></span>
+      <span class="chip"><spanc class="chip-label">#프레젠테이션</spanc></span>
+      <span class="chip"><spanc class="chip-label">#네비게이션</spanc></span>
+    </div>
+  </section>
 </main>

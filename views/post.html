@@ -3,9 +3,8 @@
     <a class="post-head-category" href="#post">Murmur</a>
     <h2 class="post-head-headline">Lorem Ipsum is simply dummy text</h2>
     <p class="post-head-kicker">
-      Our collective understanding of work—where it takes place and how it gets done—has been transformed over the last year.
+      <b>Kicker area:</b> Our collective understanding of work—where it takes place and how it gets done—has been transformed over the last year.
     </p>
-    <!-- byline은 상단 고정되지 않기 때문에 byline에 작성 시간과 리딩 시간 등을 포함하면 좋다. -->
 
     <!-- <time class="post-head-dateline">2022년 4월 9일</time> -->
     <!-- <i class="icon-bullet"></i>
@@ -19,22 +18,23 @@
     <span class="item-description">Youtube Subscriber</span>
   </div>
 
-  <!-- <hr role="separator" /> -->
-
   <!-- <address class="post-byline">
     <figure class="post-byline-avatar"><img src="" alt="" /></figure>
     <span class="post-byline-name">soojubm</span>
     <time class="post-byline-time">2018. 06. 29.</time>
   </address> -->
+
   <section class="post-body">
     <figure class="post-body-image" style="background:url('/public/images/springsteen.jpg') no-repeat center center fixed;">
       <figcaption class="post-body-caption"></figcaption>
     </figure>
-    <!-- <p class="post-body-kicker">
-      구조와 표현, 행동을 엄격하게 분리합니다.
-      <span class="linebreak">하나의 엘리먼트는 하나의 시멘틱한 클래스를 가집니다. 형태가 같다고 하여 같은 클래스를 사용하지 않습니다.</span>
-    </p> -->
 
+    <p class="post-body-kicker">
+      구조와 표현, 행동을 엄격하게 분리합니다.
+      <span class="linebreak">
+        하나의 엘리먼트에는 하나의 시멘틱한 클래스를 가집니다. 엘리먼트의 상태status를 위해 보조 클래스를 사용할 수 있습니다.
+      </span>
+    </p>
     <p class="post-body-paragraph">
       한글 ipsum. 사랑의 없는 보이는 이상을 피어나기 청춘에서만 끓는다. 있음으로써 위하여 가치를 것이다. 군영과 보는 풀밭에 가장 아름다우냐? 되려니와,
       오직 트고, 부패뿐이다. 피고, 물방아 되는 얼음과 용감하고 방황하여도, 그림자는 목숨을 얼음에 부패뿐이다. 청춘을 평화스러운 끝에 청춘에서만 곳으로
@@ -42,18 +42,34 @@
       대중을 있는가? 거친 영락과 위하여 밥을 얼마나 같은 간에 황금시대를 아니다. 온갖 심장의 예수는 곧 말이다.
     </p>
 
+    <h3 class="post-body-subhead">Byline의 배치</h3>
+    <p class="post-body-paragraph">콘텐츠가 다른 플랫폼에 공유되는 횟수가 많다면 페이지의 상단에 byline을 보여주는 것이 좋다.</p>
+    <p class="post-body-paragraph">byline은 상단 고정되지 않기 때문에 byline에 작성 시간과 리딩 시간 등을 포함하는 것이 좋다.</p>
+
+    <h3 class="post-body-subhead">Reaction</h3>
+    <p class="post-body-paragraph">무제한(스트리밍) / 1개 무제한(미디엄) / 여러 개 중 1개 (총 1 페이스북) / 여러 개 중 여러 개에 각 1번 (깃허브)</p>
+    <p class="post-body-paragraph">공유하기</p>
+    <p class="post-body-paragraph">작성자 정보 보기 또는 팔로잉</p>
+    <section class="post-reaction">
+      <button class="post-reaction-like">
+        <figure class="post-reaction-like-icon">
+          <span class="material-symbols-outlined" style="font-size:20px;">favorite</span>
+        </figure>
+        <span class="post-reaction-like-count">119</span>
+      </button>
+      <div class="post-reaction-share">
+        <button class="post-reaction-share-trigger"></button>
+      </div>
+    </section>
+
+    <h3 class="post-body-subhead">Vertical scroll progressbar</h3>
+    <p>유행 지난 듯. 전체 윈도우 영영 혹은 본문 영역</p>
+
     <h3 class="post-body-subhead">소제목이라고 합니다.</h3>
-    <p class="post-body-paragraph">
-      하나의 엘리먼트에는 하나의 시멘틱한 클래스를 가집니다. 엘리먼트의 상태status를 위해 보조 클래스를 사용할 수 있습니다.
-    </p>
 
     <p class="post-body-paragraph">
       track, media, supporting text(supporter), elevated (hover), 도어메트 네비게이션, 유틸리티 링크(네비게이션)
     </p>
-    <ul class="post-body-paragraph" type="1">
-      <li>들여쓰기는 2칸의 공백을 가지는 탭.</li>
-      <li>아이디 선택자는 재사용과 재정의가 어렵기 때문에 스타일링 목적으로 사용하지 마세요.</li>
-    </ul>
 
     <h3 class="post-body-subhead">스타일시트</h3>
     <p class="post-body-paragraph">
@@ -63,10 +79,22 @@
       대중을 있는가? 거친 영락과 위하여 밥을 얼마나 같은 간에 황금시대를 아니다. 온갖 심장의 예수는 곧 말이다.
     </p>
     <ul class="post-body-paragraph">
+      <li>들여쓰기는 2칸의 공백을 가지는 탭.</li>
+      <li>아이디 선택자는 재사용과 재정의가 어렵기 때문에 스타일링 목적으로 사용하지 마세요.</li>
       <li>케밥 케이스kebab-case</li>
       <li>rem 단위 가이드</li>
       <li>Input zooming on iOS devices :: iOS devices will slightly zoom into the input when the font size is less than 16px.</li>
     </ul>
+
+    <p class="post-body-paragraph">
+      포스트를 수정하고 삭제하기 위한 버튼이 필요하다. 신고를 위한 버튼은 처음부터 필요한 기능은 아니기 때문에 뺀다. 작성자에게만 필요한 버튼은 콘텐츠
+      내부가 아닌 브라우저의 구석에 눈에 띄게 배치한다.
+    </p>
+    <ol class="post-body-paragraph" type="1">
+      <li>문단을 구분하는 들여쓰기는 개행한다.</li>
+      <li>본문은 왼끝 맞추기(오른끝 흘리기) 한다.</li>
+      <!-- <li>비회원의 댓글 유도를 위해 이름과 비밀번호 입력필드는 숨겨둔다.</li> -->
+    </ol>
 
     <!-- <h3 class="post-body-subhead">에셋</h3>
 		<ul class="post-body-paragraph">
@@ -76,55 +104,27 @@
 			<li>색상과 사이즈를 suffix로 구분하는데,</li>
 		</ul> -->
 
-    <!-- <p class="post-body-paragraph">들어가기.</p>
-		<ul class="post-body-paragraph" type="1">
+    <!-- <ul class="post-body-paragraph" type="1">
 			prefix, name, suffix는 언더스코어(_)로 구분합니다.
 			direction / shape / status / color / size
-			에셋의 용량을 줄여야 하는 경우는 jpg를 사용합니다.
 			suffix에서는 direction, shape, status, color, size 등의 요소를 정의합니다.
 			2개 이상의 suffix가 사용되는 경우 direction, shape, status, color, size의 순서로 작성합니다.
 			suffix에서는 단어를 축약하지 않습니다.
 			status는 에셋의 동작에 따른 상태를 정의합니다.
 			size는 셋의 크기를 숫자와 단위를 조합하여 작성합니다.
-			단위는 플랫폼에 맞춰서 작성합니다.
-			예시) android → dp, iOS → px, web → px
+			단위는 플랫폼에 맞춰서 작성합니다. 예시) android → dp, iOS → px, web → px
 			size는 가로를 기준으로 작성하고 세로는 표기하지 않습니다.
 			해상도별로 구분해야 하는 경우 1x, 2x를 사용합니다.
 			제플린과 같이 프로그램에 의해 자동으로 suffix가 붙는 경우는 1x, 2x 가이드를 따르지 않아도 됩니다.
 			이미 배포되어 적용된 에셋에서 suffix가 추가되는 경우, 기존 에셋을 변형하지 않고 구별자를 추가합니다.
 		</ul> -->
 
-    <h3 class="post-body-subhead">리액션 유아이</h3>
-    <p class="post-body-paragraph">무제한(스트리밍) / 1개 무제한(미디엄) / 여러 개 중 1개 (총 1 페이스북) / 여러 개 중 여러 개에 각 1번 (깃허브)</p>
-
-    <section class="post-reaction">
-      <button class="post-reaction-like">
-        <figure class="post-reaction-like-icon">
-          <span class="material-symbols-outlined">
-            favorite
-          </span>
-        </figure>
-        <span class="post-reaction-like-count">119</span>
-      </button>
-      <div class="post-reaction-share" hidden>
-        <button class="post-reaction-share-trigger"></button>
-      </div>
-    </section>
-
-    <h4 style="margin:2rem 0 1rem;font-weight:normal;color:var(--color-text-light);">더 작은 제목</h4>
     <code class="post-body-code">
       const { body } = document;
       <br />
       const bodySection = body.querySelector('section');
     </code>
     <p class="post-body-paragraph">스크립팅 클래스는 js- 접두어를 사용하여 합니다.</p>
-    <!-- <p class="post-body-paragraph">포스트를 수정하고 삭제하기 위한 버튼이 필요하다. 신고를 위한 버튼은 처음부터 필요한 기능은 아니기 때문에 뺀다. 작성자에게만 필요한 버튼은 콘텐츠 내부가 아닌 브라우저의 구석에 눈에 띄게 배치한다.</p>
-		<ol class="post-body-paragraph" type="1">
-			<li>문단을 구분하는 들여쓰기는 개행을 사용한다.</li>
-			<li>본문은 왼끝 맞추기(오른끝 흘리기)를 적용한다.</li>
-			<li>스크롤 플로그래스 바(적용완료) 전체 윈도우 영영 혹은 본문 영역</li>
-			<li>비회원의 댓글 유도를 위해 이름과 비밀번호 입력필드는 숨겨둔다.</li>
-		</ol> -->
   </section>
 
   <section class="post-hashtag">

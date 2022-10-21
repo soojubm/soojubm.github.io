@@ -1,7 +1,18 @@
 <main class="component">
+  <nav class="component-navigation" role="menubar">
+    <div class="component-navigation-background"></div>
+    <div class="component-navigation-scroll" role="group" data-align="bleed">
+      <a class="chip is-active js-scrollspy-trigger" href="#"><span class="chip-label">Page</span></a>
+      <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Modal</span></a>
+      <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Post</span></a>
+      <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Shhet</span></a>
+      <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Popover</span></a>
+    </div>
+  </nav>
+
   <section class="hero" role="banner">
     <h1 class="hero-title">Presentations</h1>
-    <h1 class="hero-title">콘텐츠 그릇</h1>
+    <h1 class="hero-title">사용자가 콘텐츠를 소비하는 환경에 적합한 그릇(?)을 제공합니다. 1. 그릇은 유연하고 2. 콘텐는 독립적으로.</h1>
 
     <!-- <ul>
       <li>독립적인 컨테이너로서 동작해야 한다.</li>
@@ -50,8 +61,8 @@
       <li>Title bar</li>
       <li>Button group</li>
       <li>Dim/Overay</li>
-      <li>Elevated Tile</li>
-      <li>Close icon / Back icon</li>
+      <li>Elevated tile</li>
+      <li>CloseIcon / BackIcon</li>
     </ul>
     <h4 class="article-subhead">Triggers</h4>
     <ul>
@@ -120,9 +131,7 @@
           <tr>
             <td style="padding:var(--space-2) 0;">
               <span class="icon-button is-positive" data-size="small">
-                <span class="material-symbols-outlined">
-                  circle
-                </span>
+                <span class="material-symbols-outlined">check</span>
               </span>
             </td>
             <td style="padding:var(--space-2) 0;">
@@ -193,10 +202,8 @@
 
       <h4 class="article-subhead">모달의 종료</h4>
       <ul>
-        <li>click. dim</li>
-        <li>click. close button</li>
-        <li>click. 작업완료(primary) / 취소(tertiary)</li>
-        <li>keydown. esc key. enter key. space bar</li>
+        <li>click. Dim / CloseButton / ConfirmButton / CancelButton</li>
+        <li>keydown. escKey. enterKey. spaceBar</li>
       </ul>
 
       <h4 class="article-subhead">모달의 기능</h4>
@@ -226,7 +233,7 @@
 
       <button class="button-secondary js-toggle">토스트 열기</button>
       <aside class="toast" role="alert">
-        toast test
+        toast test. 사라지는 시간을 정의.
       </aside>
 
       <h4 class="article-subhead">토스트가 될 수 있는 컴포넌트</h4>
@@ -282,11 +289,12 @@
       <h4 class="article-subhead">시트가 될 수 있는 컴포넌트</h4>
       <ul>
         <li>dialog</li>
-        <li>기능(역할) 단위. 공유하기. 등.</li>
+        <li>기능(역할) 단위 컴포넌트. 공유하기 등.</li>
       </ul>
 
       <ul>
         <li>데스크탑에서는 시트보다 모달의 사용성이 더 좋다. 모달이 충분히 대체할 수는 있다.</li>
+        <li>토스트. Don't show more than one at a time.</li>
       </ul>
       <!-- <h4 class="article-subhead">Cases</h4>
       <ul>
@@ -324,8 +332,7 @@
       </ul>
 
       <ul>
-        <li>큰화면에서 사용하는 유아이.</li>
-        <li>모바일에서 모달이나 시트가 될 수 있어야 한다.</li>
+        <li>큰화면에 어울리는 인터페이스. 작은 화면에서 모달이나 시트가 될 수 있어야 한다.</li>
         <li>한 번에 하나 이상을 열 수 없다.</li>
         <li>aria-haspopup</li>
         <li>aka. drawer</li>

@@ -1,186 +1,26 @@
 <main class="search pattern js-tab" role="" aria-label="site">
-  <div class="article">
-    <h1 class="article-title">Messaging</h1>
-    <p class="article-description">형식으로는 inline, toast, modal로 표현할 수 있고, 역할로는 feedback, helper, status</p>
+  <article class="article">
+    <h1 class="article-title">Feedback</h1>
+    <p class="article-description"></p>
 
-    <p>pattern - status: inline / box</p>
-
-    <h4 class="article-subhead">검색의 인지</h4>
     <ul>
-      <li>키워드 입력</li>
-      <li>해시태그나 카테고리 등 서비스가 제공하는 인기/추천 키워드의 클릭을 통한 검색. (액션/button)</li>
-      <li>검색필드가 focusable이 아닌 clickable 액션인 케이스. (readonly) 검색탭으로 이동하여 콘텐츠 탐색과 검색.</li>
-    </ul>
-
-    <section class="component-example">
-      <div class="tile-flat">
-        <figure class="chip-icon"><span class="material-symbols-outlined">search</span></figure>
-      </div>
-      <div class="tile-flat">
-        <button class="keywords-group-keyword">
-          <span class="chip-label">키워드</span>
-        </button>
-      </div>
-      <div class="tile-flat">
-        <span class="hashtag">해시태그</span>
-      </div>
-    </section>
-
-    <h4 class="article-subhead">검색의 시작<br />onFocus - 키워드 입력 대기</h4>
-    <ul>
-      <li>tabIndex: back - input</li>
-      <li><b>onBlur. (default)</b> 인기 콘텐츠 또는 추천 콘텐츠 등 개인화 콘텐츠 탐색할 수 있다.</li>
-      <li><b>onFocus.</b> 검색내역을 표시하고 검색 키워드를 입력할 수 있다. 취소 버튼으로 onBlur.</li>
-    </ul>
-
-    <section class="component-example">
-      <div class="tile-flat">
-        <div class="textfield searchfield is-focused">
-          <button class="textfield-prefix searchfield-prefix"><span class="material-symbols-outlined">search</span></button>
-          <!-- <label class="textfield-label" for="search">검색(시각적으로숨겨야함)</label> -->
-          <input class="textfield-input searchfield-input js-input-test" type="search" id="search" placeholder="iOS pattern" />
-          <button class="textfield-clear searchfield-clear" hidden><span class="material-symbols-outlined">close</span></button>
-          <button class="searchfield-cancel">취소</button>
-        </div>
-      </div>
-      <div class="tile-flat">
-        <div class="textfield searchfield is-focused">
-          <button class="textfield-prefix searchfield-prefix" style="left:0;">
-            <span class="titlebar-back-icon material-symbols-outlined">arrow_back</span>
-          </button>
-          <!-- <label class="textfield-label" for="search">검색(시각적으로숨겨야함)</label> -->
-          <input
-            class="textfield-input searchfield-input js-input-test"
-            type="search"
-            id="search"
-            placeholder="android pattern"
-            style="width:calc(100% - var(--size-medium));margin-left:auto;padding-left:.75rem;"
-          />
-          <button class="textfield-clear searchfield-clear" hidden style="right:.75rem;"><span class="material-symbols-outlined">close</span></button>
-        </div>
-      </div>
-    </section>
-
-    <h2 class="article-subhead">검색의 시작, 최근 검색 내역<br />onFocus - value.length === 0</h2>
-    <ul>
-      <li>개별 내역의 삭제. 휘발되어도 치명적이지 않은 정보라 편집 모듈 없이 삭제 버튼으로 제공한다.</li>
       <li>
-        전체 내역의 삭제. 사용자에게 유용할 수도 있지만 리스크를 고려. 서비스의 특성에 맞게 제공. 검색 내역의 삭제가 개인화 콘텐츠에 영향을 미치는가.
+        모든 액션에 피드백할 필요는 없습니다. (ex bad case: 인스타그램 앱에서 로그인되었다는 toast. 홈으로 이동과 피드 노출만으로 로그인 상태를 인지할
+        수 있다.)
       </li>
     </ul>
-    <section class="component-example">
-      <div class="tile-flat">
-        <section class="search-recent">
-          <h2 class="search-recent-title">최근 검색</h2>
-          <!-- <button class="search-recommend-modify">수정</button> -->
-          <div class="search-suggestion-item item" data-size="medium" style="display:flex;align-items:center;">
-            <figure class="search-suggestion-item-avatar item-avatar"><i></i></figure>
-            <p class="item-name">개구리</p>
-            <button class="search-suggestion-item-delete item-delete icon-button" data-size="small" style="margin-left:auto;min-width:24px;">
-              <span class="material-symbols-outlined">close</span>
-            </button>
-          </div>
-          <div class="search-suggestion-item item" data-size="medium">
-            <figure class="search-suggestion-item-avatar item-avatar"><i></i></figure>
-            <p class="item-name">올챙이</p>
-            <button class="search-suggestion-item-delete item-delete" style="border:none;background:none;color:var(--color-text-light);">삭제</button>
-          </div>
-        </section>
-      </div>
+  </article>
 
-      <div class="tile-flat">
-        <section class="" style="text-align:center;">
-          <p class="" role="status">최근 검색 내역이 없습니다.</p>
-          <div class="search-recent-group" role="group" style="margin:.25rem 0 0;">
-            <a class="search-recent-group-item" href="#"><span class="chip-label">개구리</span></a>
-            <a class="search-recent-group-item" href="#"><span class="chip-label">달팽이</span></a>
-            <a class="search-recent-group-item" href="#"><span class="chip-label">매미</span></a>
-          </div>
-        </section>
-        <!-- <section class="search-recommend"></section> -->
-      </div>
-    </section>
+  <article class="article">
+    <!-- <h1 class="article-title">Messaging</h1>
+    <p class="article-description">형식으로는 inline, toast, modal로 표현할 수 있고,</p> -->
 
-    <h2 class="article-subhead">검색의 시작, 검색어 자동완성<br />onFocus - value.length > 0</h2>
-    <section class="component-example">
-      <div class="tile-flat">
-        <section class="search-suggestion">
-          <div class="search-suggestion-item item" data-size="medium">
-            <figure class="search-suggestion-item-avatar item-avatar"><i></i></figure>
-            <p class="item-name">자동완성</p>
-          </div>
-          <div class="search-suggestion-item item" data-size="medium">
-            <figure class="search-suggestion-item-avatar item-avatar"></figure>
-            <p class="item-name">자동완성유아이</p>
-          </div>
-          <div class="search-suggestion-item button-elevated" style="margin-bottom:0;z-index:auto;">
-            <figure class="search-suggestion-item-avatar"><span class="material-symbols-outlined">search</span></figure>
-            <p style="color:var(--color-primary);"><span>자동완</span>(으)로 검색</p>
-          </div>
-        </section>
-      </div>
-    </section>
+    <h2 class="article-subhead">Helper</h2>
 
-    <h2 class="article-subhead">검색의 실행<br />onChange - 키보드를 입력할 때 마다</h2>
-    <ul>
-      <li>debouncing.</li>
-      <li>검색어의 자동완성 또는 검색의 기대 결과를 미리 보여준다.</li>
-      <li>
-        결과 없음(상태)을 표시하기 보담 일치하는 결과가 없더라도 유사 콘텐츠 또는 추천 콘텐츠로 대체하여 하나 이상의 결과를 항상 보여줍니다.
-        큐레이션이 강화된 콘텐츠 플랫폼에서 이탈 방지를 위해 활용할 수 있지만 명확한 결과를 기대할 때 오히려 좋지 않은 경험이 될 수 있다.
-      </li>
-    </ul>
+    <h2 class="article-subhead">Status</h2>
+    <p>inline / box</p>
 
-    <h2 class="article-subhead">검색의 실행<br />onSubmit - 검색 버튼을 클릭 또는 enter key</h2>
-    <ul>
-      <li>결과 없음(상태)을 표시할 수 있다.</li>
-      <li>하나 또는 하나 이상의 명확한 결과가 필요한 경우.</li>
-      <li>개발 리소스 적다.</li>
-    </ul>
-
-    <h2 class="article-subhead">검색의 결과</h2>
-    <ul>
-      <li>목록. 필터링 또는 소팅. 모바일 키보드의 높이가 고려된 쿼리의 갯수</li>
-      <li>결과 페이지의 공유를 허용할 것인가?</li>
-    </ul>
-    <section class="component-example">
-      <section class="result tile-flat" style="padding-top:2rem;padding-bottom:2.5rem;">
-        <p role="status" style="text-align:center;">수줍이와(과)<br />일치하는 검색결과가 없습니다.</p>
-        <div style="display:flex;justify-content:center;margin-top:1rem;margin-left:-.25rem;">
-          <a href="" class="search-similar-item">
-            <figure>🦔</figure>
-            <span>검색어 제공</span>
-          </a>
-          <a href="" class="search-similar-item">
-            <figure>🐈‍⬛</figure>
-            <span>검색어 제공</span>
-          </a>
-        </div>
-      </section>
-    </section>
-
-    <h2 class="article-subhead">placeholder의 작성</h2>
-
-    <h2 class="article-subhead">궁금이 & 생각</h2>
-    <ul>
-      <li>검색 데이터는 어떻게 수집하는가.</li>
-      <li>flowchart.</li>
-      <li>searchfield는 textfield와 다른 컴포넌트로 구성하는 것이 좋다.</li>
-      <li>검색 페이지가 탐색을 역할을 겸하는가?</li>
-      <li>비회원의 검색 내역을 저장할 것인가?</li>
-      <li>전체 검색 내역과 최근 검색 내역. 활동 로그. (facebook. 나만 보기)</li>
-      <li>글로벌 검색 패턴과 로컬 검색 패턴</li>
-    </ul>
-
-    <h4 class="article-subhead">References</h4>
-    <a href="https://material.io/design/navigation/search.html">MD search</a>
-    <i class="icon-bullet"></i>
-    <a href="https://developer.android.com/reference/android/widget/SearchView">android searchview</a>
-
-    <!-- <div class="">
-      <h1>#ThisIsTagPage</h1>
-      <p>조회수(틱톡)/이카테고리에글쓰기(미디엄)/카테고리팔로우(개인화)</p>
-      <input type="text" inputmode="numeric" pattern="[0-9]*">
-    </div> -->
-  </div>
+    <h2 class="article-subhead">Attention required</h2>
+    <h2 class="article-subhead">Feedback needed</h2>
+  </article>
 </main>

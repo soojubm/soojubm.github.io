@@ -114,7 +114,20 @@ async function domEvents() {
 
   document.title = `이경수 ${hash}`
 
-  const temps = ['', 'search', 'filter', 'tokens', 'subscribe', 'components', 'changelog', 'dummies', 'texts', 'signifier', 'presentations']
+  const temps = [
+    '',
+    'messaging',
+    'search',
+    'filter',
+    'tokens',
+    'subscribe',
+    'components',
+    'changelog',
+    'dummies',
+    'texts',
+    'signifier',
+    'presentations',
+  ]
 
   if (!temps.includes(hash)) {
     initializeNavbar()

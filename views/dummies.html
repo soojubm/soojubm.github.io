@@ -81,6 +81,86 @@
       <span style="color:var(--red800);">35%</span>
     </article>
 
+    <section>
+      <p>foundations: tokens / signifier / layout / level /</p>
+      <p>
+        changelog: 221022: before, after 선택자로 checkbox와 switch를 스타일링 하지 않고, 컴포넌트로 정의해서 다양한 인터페이스에 활용할 수 있도록.
+        예를 들면 checkable tile에서, setting item에서.
+      </p>
+
+      <article class="tile-elevated">
+        <h2 style="margin-top:var(--space-leading-subhead);font-size:var(--font-siez-subhead);">test</h2>
+        <p>TODO hover state와 active state를 표현. 클릭 범위와 체크 아이콘의 위치 지정.</p>
+        <div style="margin:var(--space-2) 0;">
+          <input type="checkbox" id="" />
+          <div class="checkbox-input"></div>
+        </div>
+      </article>
+
+      <div class="setting-item tt">
+        <div class="item" data-size="small" role="menuitem">
+          <div class="item-avatar"></div>
+          <span style="display:block;padding-top:1px;line-height:24px;">레이블</span>
+          <input type="checkbox" id="abcde" style="opacity: 0;" />
+          <label class="switch-bar" for="abcde" style="margin-left:auto;">
+            <div class="switch-thumb"></div>
+          </label>
+        </div>
+      </div>
+
+      <style>
+        .tt label:before,
+        .tt label:after {
+          opacity: 0;
+        }
+        .switch-bar {
+          width: 36px;
+          height: 20px;
+          padding: 2px !important;
+          box-sizing: border-box;
+          background: var(--color-background-weak);
+          border-radius: var(--radius);
+          transition: background 0.2s;
+          cursor: pointer;
+          position: relative;
+        }
+        .switch-thumb {
+          width: var(--size-tiny);
+          height: var(--size-tiny);
+          border-radius: var(--radius);
+          background: var(--color-background);
+          box-shadow: var(--shadow);
+          transition: transform 0.2s;
+        }
+        input:checked + .switch-bar {
+          background: var(--color-primary);
+        }
+        input:checked + .switch-bar .switch-thumb {
+          transform: translateX(16px);
+        }
+
+        .checkbox-input {
+          width: var(--size-tiny);
+          height: var(--size-tiny);
+          border-radius: 4px;
+          border: var(--border);
+          box-sizing: border-box;
+        }
+        input:checked + .checkbox-input {
+          border-color: var(--color-primary);
+          background: var(--color-primary);
+        }
+
+        input[type='checkbox'] ~ label:before {
+          /* position: absolute;
+          left: 0; */
+        }
+        /* input[type=checkbox] ~ label:after {content:'';display:none;width:6px;height:2px;border-left:2px solid;border-bottom:2px solid;border-color:var(--gray200);position:absolute;left:4px;top:9px;transform:rotate(-45deg);} */
+      </style>
+    </section>
+
+    <hr />
+
     <div style="display:flex;align-items:center;line-height:var(--font-line-height-small);">
       <span>떡볶이</span>
       <span class="material-symbols-outlined" style="font-size:var(--font-size-subhead);color:var(--color-text-light);">

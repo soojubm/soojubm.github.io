@@ -54,27 +54,29 @@
       <h1 class="article-title">Palette</h1>
       <p class="article-description">color와 surface.</p>
 
-      <ul>
+      <blockquote>
         <li>hierarchy. 크기와 비례해서 radius와 shadow 베리에이션이 필요하지만 경량화하여 더 중요한 문제에 집중하고 있습니다.</li>
         <li>radius. pill과 non-pill은 양자택일. 인물 아바타를 특정하기 위해 circle은 허용될 수 있다.</li>
         <li>theme. 인버트 컬러셋을 추가로 정의하지 않습니다. 하나의 컬러셋으로 다크 테마에 대응합니다. (쉽지 않음. 기술 의존이 높은 규칙..)</li>
-      </ul>
-      <button class="button-elevated js-darkmode" title="change theme" style="max-width:280px;">
-        <figure class="button-elevated-avatar"><span class="material-symbols-outlined">nights_stay</span></figure>
-        <span class="button-elevated-label">어둡게 보기</span>
-        <span class="switch" style="margin-left:auto;">
-          <input type="checkbox" id="temp55" name="" role="switch" />
-          <label for="temp55" style="padding-left:48px;"></label>
-        </span>
-      </button>
 
-      <h4 class="article-subhead">Surfaces<br />shadow/radius</h4>
+        <button class="button-elevated js-darkmode" title="change theme" style="max-width:280px;margin:.75rem 0 .25rem;">
+          <figure class="button-elevated-avatar"><span class="material-symbols-outlined">nights_stay</span></figure>
+          <span class="button-elevated-label">어둡게 보기</span>
+          <span class="switch" style="margin-left:auto;">
+            <input type="checkbox" id="temp55" name="" role="switch" />
+            <label for="temp55" style="padding-left:48px;"></label>
+          </span>
+        </button>
+      </blockquote>
+
+      <h4 class="article-subhead">Surfaces</h4>
       <div class="token-group">
         <article class="token-item is-gray000">
           <figure class="token-item-avatar" style="border:4px solid var(--color-text-light);border-bottom-right-radius:0;border-bottom-left-radius:0;border-top-right-radius:0;border-right:var(--border);border-bottom:var(--border);">
             <!-- <em style="width:1rem;height:1rem;border-radius:var(--radius);background:var(--color-background-strong);display:block;position:absolute;left:-1px;top:-1px;border-top-right-radius:0;border-bottom-right-radius:0;border-bottom-left-radius:0;"></em> -->
           </figure>
-          <b>--radius: <del>4px</del>6px</b>
+          <b>--radius: 6px</b>
+          <!-- <span>4px => 6px 로 변경. tiny size에서는 4px</span> -->
         </article>
         <!-- <article class="token-item is-gray000">
           <figure class="token-item-avatar" style="width:var(--size-large);border:4px solid var(--color-text-light);border-bottom-right-radius:0;border-bottom-left-radius:0;border-top-right-radius:0;border-right:var(--border);border-bottom:var(--border);border-radius:50%;">
@@ -176,23 +178,12 @@
 
     <article class="article typography js-scrollspy-section">
       <h1 class="article-title">Typography</h1>
-      <p class="article-description">활자의 위계와 배치.</p>
-
-      <ul>
-        <li>내용은 texts pattern 페이지로 옮기기.</li>
-        <li>단어나 구문을 underline, <del>bold</del>, primary color로 강조하지 않습니다. underline과 pirmary colored text는 링크의 기표입니다.</li>
-        <li>태그라인은 작은 화면에서도 임팩트를 줄 있도록 작성 단계에서 행갈이를 고려하세요. (글자와 단어의 수를 제한하고 개행 조건을 정의)</li>
-        <li>bottom navigation의 label은 예외적으로 10px입니다. 컴포넌트 스코프에서 정의하는 것이 좋다.</li>
-        <li>폰트마다 기준선이 다르기 때문에 섞어짤 때 또는 폰트를 변경할 때 주변 요소와 부모 요소에 맞춰 시각보정이 필요할 수 있습니다.</li>
-        <!-- <li>kicker/overline</li> -->
-        <li>long-form content의 truncate-multiple는 항상 일정하게 2줄로 자릅니다.</li>
-          <!-- <p>프로모션 페이지의 헤드라인으로 제한적으로 사용합니다.</p> -->
-      </ul>
+      <p class="article-description">활자의 위계와 배치. link to texts pattern</p>
       <button class="user-logout tile-elevated-small js-default-font" style="width:50%;max-width:240px;">
         <span class="user-logout-label">시스템 폰트로 보기</span>
       </button>
       <h4 class="article-subhead">Typefaces <sup>2</sup></h4>
-      <!-- <p>history 아리타 산스 잘 안 쓰는 폰트를 조합해보고 싶었는데, 윈도우즈 환경에서 bold 표현이 약해서 바꿔 봄.</p> -->
+      <!-- <p>history 아리타 산스 윈도우즈 환경에서 bold 표현이 약해서 바꿔 봄.</p> -->
       <div class="design-typograph-group">
         <div class="statistic-item" style="width:50%;">
           <span class="statistic-label">한글</span>

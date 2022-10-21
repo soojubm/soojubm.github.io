@@ -367,7 +367,6 @@ arrow_drop_down
           필요가 없도록 합니다. (이 시스템에는 정의하지 않지만 세로 정렬되는 버튼 그룹에서 text button이 아래에 배치되는 패턴을 고려하여 버튼의 아래
           가이드 텍스트를 배치하지 않습니다.)
         </li>
-        <li>naming. 'link' | 'subtle' | 'primary' / 'solid' | 'outline' | 'plain' |'text'</li>
         <li>memo: secondary style과 large size의 사용 빈도 낮음. 현재 large 버튼은 프로모션 페이지의 call to action으로 제한적으로 사용합니다.</li>
       </ul>
       <!-- <li>작업 / 액션 / 실행</li> -->
@@ -1113,16 +1112,27 @@ arrow_drop_down
           </div>
         </div>
         <div class="tile-flat">
+          <!-- numberfield -->
           <div class="quantity js-quantity" style="max-width:8rem;">
-            <input class="quantity-input js-quantity-input js-number-input" name="quantity1" type="number" value="0" min="5" max="20" />
             <!-- <input type="text" inputmode="numeric" pattern="[0-9]*"> -->
-            <button class="quantity-decrement js-quantity-decrement">
+            <button class="quantity-decrement js-quantity-decrement" aria-label="" aria-controls="numberfield" tabindex="-1">
               <span class="material-symbols-outlined">
                 remove
               </span>
             </button>
-            <button class="quantity-increment js-quantity-increment"><span class="material-symbols-outlined">add</span></button>
+            <input
+              class="quantity-input js-quantity-input js-number-input"
+              id="numberfield"
+              name="quantity1"
+              type="number"
+              value="0"
+              min="5"
+              max="20"
+            />
+
+            <button class="quantity-increment js-quantity-increment" tabindex="-1"><span class="material-symbols-outlined">add</span></button>
           </div>
+          <p>221021: - + 버튼에 포커스를 줄 필요가 없다.</p>
         </div>
       </section>
 
@@ -1516,6 +1526,7 @@ arrow_drop_down
       <ul>
         <li>todo 바텀 네비게이션과 햄버거 메뉴를 같이 사용할 수 있는 패턴을 정의.</li>
         <li>커머스 도매인에서 카테고리를 나타내는 햄버거는 주로 왼쪽에 배치.</li>
+        <li>bottom navigation의 label은 예외적으로 10px입니다. 예외 케이스는 어디에서 정의해야 하는가. => 컴포넌트 스코프 + 관련 패턴 페이지</li>
         <!-- <li>memo active 상태를 위해 filled 아이콘을 사용하는 것은 리소스 더 든다.</li> -->
       </ul>
       <!-- // iOS isTranslucent: Bool -->
@@ -2023,18 +2034,14 @@ arrow_drop_down
       <p>toast=>snackbar(withAction) - 정리하기, single line / multiple lines (head,body 텍스트)</p>
     </ul> -->
 
-      <ul>
+      <blockquote>
         <li>브라우저가 role="alert" 속성이 있는 요소를 발견하면 즉시 사용자에게 경고 내용을 읽습니다.</li>
-        <li>
-          모든 액션에 피드백할 필요는 없습니다. (ex bad case: 인스타그램 앱에서 로그인되었다는 toast. 홈으로 이동과 피드 노출만으로 로그인 상태를
-          인지할 수 있다.)
-        </li>
-        <li>닫기 또는 되돌리기 등 액션을 포함하지 마세요. 인터렉션이 필요하다면 주목도가 높은 모달 형태로 제공하세요.</li>
+      </blockquote>
+
+      <ul>
+        <li>닫기 또는 되돌리기 등 액션을 포함하지 마세요. 인터렉션이 필요하다면 주목도가 높은 모달로 제공하세요.</li>
         <li>사용자의 귀책이 아닌 경우, 단순 "오류" 대신 "시스템 오류"와 같은 용어를 사용하여 사용자가 잘못한 것처럼 느끼지 않도록 하세요.</li>
-        <li>토스트. Don't show more than one at a time.</li>
-        <li>최대 2문장의 텍스트 작성 규칙. 사라지는 시간을 정의.</li>
-        <!-- <p role="alert">Inform (todo) 느낌표 아이콘 + 디스크립션 형태</p> -->
-        <li>memo. { content: 'text label', url: 'https://www.xxx.com', }</li>
+        <!-- <li>최대 2문장의 텍스트 작성 규칙.</li> -->
       </ul>
 
       <h4 class="article-subhead">Props</h4>
@@ -2043,8 +2050,10 @@ arrow_drop_down
         <dd>string</dd>
         <dt>description</dt>
         <dd>string</dd>
-        <dt>primaryAction</dt>
-        <dd>() => void</dd>
+        <dt>href</dt>
+        <dd>string</dd>
+        <!-- <dt>primaryAction</dt>
+        <dd>() => void</dd> -->
       </dl>
 
       <h4 class="article-subhead">with Toast</h4>

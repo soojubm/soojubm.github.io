@@ -1,26 +1,38 @@
 <main class="tokens">
   <section class="tokens-body">
     <article class="article js-scrollspy-section">
-      <h1 class="article-title">Texts 🔥</h1>
-      <p class="article-description">텍스트.</p>
+      <h1 class="article-title">Texts</h1>
+      <p class="article-description">작성 중.</p>
 
-      <p>1줄 최소 24px</p>
+      <ul>
+        <li>단어나 구문을 underline, <del>bold</del>, primary color로 강조하지 않습니다. underline과 pirmary colored text는 링크의 기표입니다.</li>
+        <li>태그라인은 작은 화면에서도 임팩트를 줄 있도록 작성 단계에서 행갈이를 고려하세요. (글자와 단어의 수를 제한하고 개행 조건을 정의)</li>
+        <li>폰트마다 기준선이 다르기 때문에 섞어짤 때 또는 폰트를 변경할 때 주변 요소와 부모 요소에 맞춰 시각보정이 필요할 수 있습니다.</li>
+        <!-- <li>kicker/overline</li> -->
+        <li>long-form content의 truncate-multiple는 항상 일정하게 2줄로 자릅니다.</li>
+        <p>섹션은 항상 제목을 갖는다. 시각적으로 숨겨지지 않은 명시적인 텍스트 노드. 따라서 제목을 포함하는 유틸성 섹션 컴포넌트를 만들 수 있다.</p>
+        <!-- <p>프로모션 페이지의 헤드라인으로 제한적으로 사용합니다.</p> -->
+        <li>todo 한 줄은 최소 24px의 line-height를 갖는 것이 좋은가?</li>
+      </ul>
+
+      <p></p>
 
       <h4 class="article-subhead">용어의 정의</h4>
-      <p>제목</p>
-      <p>본문</p>
+      <p>제목 heading - title / subhead / caption</p>
+      <p>본문 body</p>
 
-      <h4 class="article-subhead">용법?</h4>
-      <p>섹션은 항상 제목을 갖는다. 시각적으로 숨겨지지 않은 명시적인 텍스트 노드. 따라서 제목을 포함하는 유틸성 섹션 컴포넌트를 만들 수 있다.</p>
-      <p>블로그, 뉴스 기사 등 긴 글의 텍스트 콘텐츠는 기본값(root element의)보다 크다.</p>
-      <p>텍스트는 주변의 엘리먼트에 강하게 영향을 받는다. 주변 요소에 맞는 간격 변수.</p>
+      <h4 class="article-subhead">메모</h4>
+      <ul>
+        <li>블로그, 뉴스 기사 등 긴 글의 텍스트 페이지의 폰트 크기는 기본값(?)보다 큰 것이 좋다.</li>
+        <li>텍스트는 주변의 엘리먼트에 강하게 영향을 받는다. 주변 요소에 맞는 간격 변수를 지정하자.</li>
+      </ul>
 
       <h4 class="article-subhead">텍스트의 강조</h4>
       <div style="display:flex;">
         <dl style="flex:auto;">
           <dt style="width:100%;">
             <span class="icon-button is-positive" data-size="small">
-              <span class="material-symbols-outlined">circle</span>
+              <span class="material-symbols-outlined">check</span>
             </span>
           </dt>
           <dd style="width:100%;">tag</dd>
