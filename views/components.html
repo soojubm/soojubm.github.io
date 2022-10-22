@@ -99,7 +99,7 @@ arrow_drop_down
 
   <nav class="component-navigation" role="menubar">
     <div class="component-navigation-background"></div>
-    <div class="component-navigation-scroll" role="group" data-align="bleed">
+    <div class="component-navigation-scroll chip-group" role="group" data-align="bleed">
       <a class="chip is-active js-scrollspy-trigger" href="#"><span class="chip-label">Avatars</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Buttons</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Chips</span></a>
@@ -314,12 +314,12 @@ arrow_drop_down
     </article>
 
     <article class="article js-observer js-scrollspy-section">
-      <h1 class="article-title">Button</h1>
+      <h1 class="article-title">Buttons</h1>
       <p class="article-description">과업 수행을 위한 페이지 이동, 데이터 제출 등 사용자 여정의 핵심적인 액션입니다.</p>
 
       <section class="component-example">
         <div class="tile-flat">
-          <div role="group" data-align="bleed">
+          <div class="chip-group" role="group" data-align="bleed" style="margin-right:-.75rem;">
             <button class="button-primary">Primary</button>
             <button class="button-secondary">Secondary</button>
             <button class="button-tertiary">Tertiary</button>
@@ -341,7 +341,7 @@ arrow_drop_down
           </div>
         </div>
         <div class="tile-flat">
-          <div role="group" data-align="bleed">
+          <div class="chip-group" role="group" data-align="bleed" style="margin-right:-.75rem;">
             <button class="button-tertiary is-hover" style="margin-right:.5rem;">Hover</button>
             <button class="button-tertiary is-focus">Focus</button>
             <button class="button-tertiary" disabled>Disabled</button>
@@ -363,9 +363,9 @@ arrow_drop_down
         </li>
         <!-- <p><b>text.</b> 버튼은 버튼 처럼 보이지 않을 수 있기 때문에 특정 패턴에서만 사용하세요.</li> -->
         <li>
-          형태와 레이블 만으로 버튼의 역할을 할 수 있어야 합니다. 툴팁으로 행동을 유도하거나, 보조 텍스트로 실행을 유도하거나 실행 결과를 가이드할
-          필요가 없도록 합니다. (이 시스템에는 정의하지 않지만 세로 정렬되는 버튼 그룹에서 text button이 아래에 배치되는 패턴을 고려하여 버튼의 아래
-          가이드 텍스트를 배치하지 않습니다.)
+          형태와 레이블로 버튼으로 기능해야 합니다. 툴팁으로 행동을 유도하거나, 보조 텍스트로 실행을 유도하거나 실행 결과를 가이드할 필요가 없도록
+          합니다. (이 시스템에는 정의하지 않지만 세로 정렬되는 버튼 그룹에서 text button이 아래에 배치되는 패턴을 고려하여 버튼의 아래 가이드 텍스트를
+          배치하지 않습니다.)
         </li>
         <li>memo: secondary style과 large size의 사용 빈도 낮음. 현재 large 버튼은 프로모션 페이지의 call to action으로 제한적으로 사용합니다.</li>
       </ul>
@@ -489,7 +489,7 @@ arrow_drop_down
         </div>
         <!-- <h4 class="article-subhead">Removable</h4> -->
         <div class="tile-flat">
-          <div class="chip-group" role="group" data-align="bleed">
+          <div class="chip-group" role="group" data-align="bleed" style="margin-right:-.75rem;">
             <button class="chip style-removable">
               <span class="chip-label">removable</span>
               <figure class="chip-remove"><span class="material-symbols-outlined">close</span></figure>
@@ -513,7 +513,7 @@ arrow_drop_down
           </div>
         </div>
         <div class="tile-flat">
-          <div role="group">
+          <div class="chip-group" role="group">
             <button class="icon-button" data-size="medium">
               <span class="material-symbols-outlined">close</span>
             </button>
@@ -1133,6 +1133,7 @@ arrow_drop_down
             <button class="quantity-increment js-quantity-increment" tabindex="-1"><span class="material-symbols-outlined">add</span></button>
           </div>
           <p>221021: - + 버튼에 포커스를 줄 필요가 없다.</p>
+          <p>최소값와 최대값. 입력 제한 피드백으로 disabled 상태 제공. 앞자리0제거.숫자만입력.3자리마다콤마</p>
         </div>
       </section>
 
@@ -1143,7 +1144,6 @@ arrow_drop_down
         <li>검색 필드는 일반 텍스트필드와 구별할 수 있도록 검색 아이콘 등 시각적인 단서를 제공하세요.</li>
         <li>레이블을 텍스트필드 왼쪽에 배치하지 마세요.</li>
         <!-- <li>required indicator / optional indicator / validations / masked / validation feedback</li> -->
-        <li>todo numberfield 최소값와 최대값. 입력 제한 피드백에 disabled 상태 제공. 앞자리0제거.숫자만입력.3자리마다콤마</li>
         <li>todo: helper(help message)와 feedback message를 구별</li>
         <li>
           searchfield / commentfield: 아이콘 레이블로 대체하는 경우 텍스트 레이블을 생략할 수 있습니다. Input with hidden label. helper text도
@@ -1334,7 +1334,7 @@ arrow_drop_down
 
     <article class="article js-observer js-scrollspy-section js-tab">
       <h1 class="article-title">Tab</h1>
-      <p class="article-description">맥락이 같은 콘텐츠를 주제별로 분류합니다.</p>
+      <p class="article-description">같은 맥락의 콘텐츠를 주제별로 분류합니다.</p>
       <p></p>
 
       <section class="component-example">
@@ -1850,7 +1850,6 @@ arrow_drop_down
       <ul>
         <li>사용자가 반드시 숙지해야 하는 정보를 아코디언으로 요약해서 보여주지 마세요. (참고. Tooltip)</li>
         <li>heading은 한 문장으로 간결하게 작성하세요.</li>
-        <li>memo. icon with subhead는 small size.</li>
         <li>role="region"</li>
       </ul>
 

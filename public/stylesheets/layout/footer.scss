@@ -14,7 +14,7 @@
 .sitemap-item-link:hover {@include hover-text;}
 
 .footer {display:block;padding:2rem var(--grid-margin);overflow:hidden;position:relative;z-index:var(--zindex-default);}
-.footer-background {@include bleeding;}
+.footer-background {@include bleeding;border-top:var(--border);}
 .footer-address {}
 .footer-address-logo {display:block;font-size:var(--font-size-subhead);filter:grayscale(100%);opacity:.5;}
 .footer-address-slogan {@include text-subhead;margin:2rem 0 var(--space-4) 0;}

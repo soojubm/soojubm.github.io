@@ -170,8 +170,8 @@
     </div>
 
     <h3 class="article-subhead">
-      Select payment method<br />payment method는 token을 활용한 기존에 없던 형태. 판매자가 선택할 수 있는 결제 방법과 구매자가 선택할 수 있는 결제
-      방법. todo. radio 힌트트
+      Select payment method<br />token은 활용했지만 컴포넌트에 정의하지 않은 형태. 판매자가 선택할 수 있는 결제 방법과 구매자가 선택할 수 있는 결제
+      방법의 차이. todo: radio hint
     </h3>
 
     <div class="payment-method-list temp8" style="margin:var(--space-after-subhead) 0 0 0;">
@@ -212,7 +212,7 @@
 
     <hr />
 
-    <div class="meter" style="max-width:800px;">
+    <div class="meter" style="max-width:640px;">
       <h1 class="meter-title">200 GB 중 187.23 GB 사용됨</h1>
       <div class="meter-graph">
         <div class="meter-graph-bar" style="width:40%;background:crimson;height:var(--size-tiny);border-radius:var(--radius);"></div>
@@ -292,26 +292,19 @@
 
     <br />
 
-    <span class="tag" style="display:inline-flex;align-items:center;"
-      ><span class="material-symbols-outlined" style="margin-right:.25rem;font-size:16px;color:var(--color-text-light);"> business_center </span
-      >Full-Time</span
-    >
-
-    <br />
-
-    <div class="textfield-group" style="display:flex;align-items:flex-end;width:480px;">
+    <div class="textfield-group" style="display:flex;align-items:flex-end;max-width:480px;">
       <div class="textfield">
         <label class="textfield-label" for="search">Length</label>
-        <input class="textfield-input" type="number" id="search" placeholder="cm surfix" />
+        <input class="textfield-input" type="number" id="search" placeholder="cm unit" />
       </div>
-      <span class="material-symbols-outlined" style="padding:0 var(--space-2);color:var(--color-text-light);line-height:48px;">
+      <span class="material-symbols-outlined" style="padding:0 var(--space-1);color:var(--color-text-light);line-height:48px;">
         close
       </span>
       <div class="textfield">
         <label class="textfield-label" for="search">Width</label>
-        <input class="textfield-input " type="search" id="search" placeholder="x is removable" />
+        <input class="textfield-input " type="search" id="search" placeholder="x means" />
       </div>
-      <span class="material-symbols-outlined" style="padding:0 var(--space-2);color:var(--color-text-light);line-height:48px;">
+      <span class="material-symbols-outlined" style="padding:0 var(--space-1);color:var(--color-text-light);line-height:48px;">
         close
       </span>
       <div class="textfield">
@@ -851,7 +844,7 @@
     <article class="share" style="max-width:400px;padding:1rem;">
       <h2 class="share-title">가족이나 친구와<br />함께 보세요!</h2>
       <hr />
-      <button class="share-back"><span class="material-symbols-outlined">close</span></button>
+      <close-button class="share-back"></close-button>
       <button class="share-facebook">
         <figure class="share-facebook-icon"></figure>
         <span class="share-facebook-label">facebook으로 공유하기</span>

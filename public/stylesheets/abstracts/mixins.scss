@@ -95,13 +95,12 @@
   > * {margin:var(--space-1);}
 }
 @mixin chip-group {@include group;}
-[role=group] {@include group;}
 
 
+.textfield-group {}
 .tag-group {@include tag-group;}
 .chip-group {@include group;}
-.chip-group[data-align=bleed], 
-[role=group][data-align=bleed] {@include group-bleeding;}
+.chip-group[data-align=bleed]  {@include group-bleeding;}
 
 .button-group {@include group;}
 .button-group > * {flex:auto;}

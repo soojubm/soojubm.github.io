@@ -304,22 +304,36 @@
   </section>
 
   <header class="design-head">
-    <h1 class="" title="making things better" style="line-height:var(--font-line-height);">수줍이 디자인 시스템</h1>
+    <h1 class="" title="making things better">수줍이<br />디자인 시스템</h1>
     <!-- title="overall consistency and design and development efficiency" -->
     <p class="hero-description" style="font-size:var(--font-size-subhead);">
       라이브 중인 서비스의 디자인 시스템이 아니기 때문에
       <span class="linebreak-desktop">보편적이고 효율적인 인터페이스를 위한 메타 문제를 함께 다루고 있습니다.</span>
     </p>
+    <div class="tag-group" style="margin:0 0 1rem 0;">
+      <!-- <span class="tag" data-style="primary">사용기술</span> -->
+      <span class="tag">SCSS</span>
+      <span class="tag">vanilla javascript</span>
+      <span class="tag">typescript</span>
+      <span class="tag">webpack</span>
+      <span class="tag">custom element</span>
+    </div>
+    <!-- platform convention problem보다 meta problem에 초점 -->
 
-    <p>사용기술. scss, vanilla javascript, typescript, webpack, and custom element</p>
+    <div class="circle-group" style="position:absolute;right:3vw;top:0;">
+      <div class="circle" style="width:20rem;height:20rem;background:red;border-radius:50%;"></div>
+      <div class="circle" style="width:4rem;height:4rem;background:green;border-radius:50%;position:absolute;right:17.5rem;top:4rem;z-index:2;"></div>
+      <div class="circle" style="width:6rem;height:6rem;background:blue;border-radius:50%;position:absolute;right:18rem;top:6rem;"></div>
+      <div class="circle" style="width:2rem;height:2rem;background:gold;border-radius:50%;position:absolute;right:25rem;top:14rem;"></div>
+    </div>
 
-    <section class="" style="display:flex;margin:2rem 0 8rem;padding:0;position:relative;z-index:1;">
-      <div class="design-guide-item feature-item" style="margin-right:2rem;">
-        <figure class="feature-item-avatar">🐏 <span class="tag">principle 1. in progress</span></figure>
+    <section class="design-principle feature">
+      <div class="design-guide-item feature-item tile-flat">
+        <figure class="feature-item-avatar">🐏 <span class="tag">in progress</span></figure>
         <h3 class="feature-item-title">progressive enhancement</h3>
         <p class="feature-item-description">코드 환경에서 유효한. 제품으로서의 디자인 시스템 문서. minimum viable experience</p>
       </div>
-      <div class="design-guide-item feature-item">
+      <div class="design-guide-item feature-item tile-flat">
         <figure class="feature-item-avatar">🐏 <span class="tag">in progress</span></figure>
         <h3 class="feature-item-title">visual cue? clearness?</h3>
         <p class="feature-item-description">예측 가능하고 일관된 사용자 경험. ux 부채 기술 부채 최소화</p>
@@ -331,27 +345,24 @@
     <!-- <span>functional vs decorative</span>
     <span>문자열의 형식으로 날짜를 표현할 수 있다면 장식을 위한 아이콘은 불필요</span>
     <span>아이콘과 일러스트레이션을 구분</span>
-    <span>1px의 선은 특정 화면에서 잘 보이지 않을 수 있음. 마찬가지로 적당한 속공간 배분.. (1x에서 주로 발생)</span>
+    <span>1px의 선은 특정 화면에서 잘 보이지 않을 수 있음. 마찬가지로 적당한 속공간 배분.</span>
     <span>on/off. on 상태를 위해 filled 아이콘을 사용하는 것은 리소스 낭비라는 생각. 배경색이나 indicator를..</span>
     <span>switch에서도 on/off 상태를 나타내는 아이콘을 추가하는 게 접근성에 좋을 수 잇다.</span>
-    <span>pressed / processing state</span>
-    <span>포괄적이고 윤리적인 아이콘.. 성중립/다중성별</span>
-    <span>다양한 리액션. 부정적 ㅇ리액션을 유도하지 않도록. (유투브 싫어요 숫자 숨겨진 것 등..)</span> -->
+    -->
 
     <!-- <p>https://w3c.github.io/wcag/understanding/target-size-minimum.html / 24px 이상 desktop</p> -->
 
     <!-- <p>아이콘을 텍스트 레이블과 함께 사용할 경우 alt 속성으로 레이블이 두 번 읽히지 않도록</p>
     <a href="/" aria-label="labelll">
-    <!-- <p>Using the same icon for the same concept and only for this one concept is important as well.</p> -->
 
-    <!-- <p>적록색맹을 위해 색상만으로 성공/실패 등의 상태를 표현하지 맙시다.</p>
+    <p>Using the same icon for the same concept and only for this one concept is important as well.</p>
+
+    <p>적록색맹을 위해 색상만으로 성공/실패 등의 상태를 표현하지 맙시다. + 아이콘 Showing state with icons</p>
     
     <p>Use background shapes, changing shapes or indicators like dots to show active state.</p>
-    
-    <p>Showing state with icons</p>
     <p>
-      Custom states like “downloaded” or “playing” can be indicated by adding icons. Icons can even include an alt text that makes states accessible
-      for screen readers.
+      Custom states like “downloaded” or “playing” can be indicated by adding icons.
+      Icons can even include an alt text that makes states accessible for screen readers.
     </p> -->
 
     <!-- Don’t rely on color alone to convey any meaning or function
@@ -362,14 +373,94 @@
     Try to follow UI conventions for colors -->
     <!-- Specify Words You Like -->
 
-    <!-- <p>디자인 시스템이 비즈니스 로직, 도메인별 스타일 또는 기타 복잡한 UI 요소를 배포하기 위한 것이 아니기 때문에
-      필요한 정보를 찾지 못할 수 있다.문의-></p> -->
-    <!-- <p>모든 플랫폼에서 일관된 브랜드 이미지를 유지하려면 모든 팀(디자인, 마케팅 및 개발)이 스타일 가이드를 잘 알고 있어야 합니다. </p> -->
+    <!-- 
+      <p>디자인 시스템이 비즈니스 로직, 도메인별 스타일 또는 기타 복잡한 UI 요소를 배포하기 위한 것이 아니기 때문에
+      필요한 정보를 찾지 못할 수 있다. 문의
+    </p>
+    <p>모든 플랫폼에서 일관된 브랜드 이미지를 유지하려면
+    모든 팀(디자인, 마케팅 및 개발)이 스타일 가이드를 잘 알고 있어야 합니다. </p> -->
     <!-- 사용자 그룹tow user groups : 팀team / 제품 사용자product users -->
     <!-- save time / build more consistent products -->
 
     <!-- <p>single source of truth는 디자인 툴이 아닌.</p> -->
-    <!-- 
+  </header>
+
+  <section class="design-bookmarks" style="margin:4rem 0;">
+    <h2 class="design-guide-title" style="padding:0;font-size:var(--font-size-subhead);">Bookmarks</h2>
+    <a href="https://developer.apple.com/documentation/technologies" target="_blank">Apple technologies</a>
+    <a href="https://developer.android.com/reference" target="_blank">Android API reference</a>
+    <a href="https://cube.fyi/" target="_blank">CUBE CSS</a>
+    <a href="https://www.digitala11y.com/" target="_blank">Digital A11Y</a>
+  </section>
+
+  <section class="design-guide">
+    <h2 class="design-guide-title">가이드 작성을 위한 가이드</h2>
+    <ul>
+      <li><b>내용의 간결.</b> 목록을 열거하거나 가짓수를 보충하는 등의 단순한 정보를 반복하지 마세요.</li>
+      <li><b>타겟의 명료.</b> 기본적인 내용을 서술하지 마세요. 이 문서를 읽는 사람은 체크박스와 라디오의 차이를 이해하고 있습니다.</li>
+      <li><b>용도의 분명.</b> 경우에따라.상황에따라.목적에맞게 와 같은 용도를 특정할 수 없는 용어를 사용하지 마세요.</li>
+      <li><b>정보의 당위.</b> 일어날 법 하지 않는 don't 케이스를 작성하지 마세요.</li>
+    </ul>
+    <!-- <p>복잡한 추상화를 피하기.</p> -->
+  </section>
+
+  <!-- <section class="arrow-test" style="margin:4rem 0 0 0;">
+    <a
+      href="#tokens"
+      style="display:flex;align-items:center;justify-content:space-between;padding:1rem var(--grid-margin);border-top:var(--border);color:var(--color-text);"
+    >
+      <h2 style="font-size: var(--font-size-subhead);line-height: 24px;">
+        Tokens
+      </h2>
+      <span class="icon-button material-symbols-outlined" data-size="small" style="margin-left:.5rem;">arrow_right_alt</span>
+    </a>
+  </section> -->
+
+  <!-- <section>
+    <div style="height:4rem;position:sticky;top:calc(var(--navbar-height));background:coral;">1111111111</div>
+    <div style="padding:8rem 0;">내용내용내용내용내용내용내용내용 폴더. 제목 클릭시 열기</div>
+    <div style="height:4rem;position:sticky;top:calc(var(--navbar-height) + 4rem);background:darkolivegreen;">2222222222</div>
+    <div style="height:2000px;">내용내용내용내용내용내용내용내용</div>
+  </section> -->
+
+  <close-button>custom element test</close-button>
+
+  <section class="post-relation" style="padding:0 var(--grid-margin);">
+    <h2 class="post-relation-title" title="이 콘텐츠를 본 사람들은">인터페이스 이야기</h2>
+    <p class="post-relation-description">글쓰기를 위한<br />주제 선정.</p>
+    <a class="postitem" href="https://github.com/soojubm/ui-chip" target="_blank">
+      <figure class="postitem-cover"></figure>
+      <h3 class="postitem-name">크로스 플랫폼 시대에 디자인하기 (가제)</h3>
+      <p class="postitem-description">모바일 시대에 맞는 정보 형태, 그리고 콘텐츠 시대의 탐색 경험.</p>
+    </a>
+
+    <a class="postitem" href="https://github.com/soojubm/ui-chip" target="_blank">
+      <figure class="postitem-cover"></figure>
+      <h3 class="postitem-name">윤리적으로 디자인하기 (가제)</h3>
+      <ul class="postitem-description">
+        <li>광고 표기를 '광고'로 명확히 하기. 'AD' 로 표기하지 말고 눈에 띄게 표현하고 배치하세요.</li>
+        <li>포괄적이고 윤리적인 아이콘을 사용하기 성중립 또는 다중성별</li>
+        <li>다양한 리액션. 부정적인 리액션을 유도하지 않도록. (유튜브 싫어요 수치 숨겨진 것 참고)</li>
+        <li>불필요한 영어 표현 사용하지 않기.</li>
+      </ul>
+    </a>
+    <!-- <a class="postitem" href="/" onclick="javascript:alert('샘플 유아이입니다.')">
+      <figure class="postitem-cover"></figure>
+      <h3 class="postitem-name">rem과 8pt grid</h3>
+      <p class="postitem-description">단위의 통일. 디자인 시스템, 컴포넌트 개발 트랜드에서 rem의 효용.</p>
+    </a> -->
+  </section>
+</main>
+
+<!-- <ul>
+    <li>responsiveness</li>
+    <li>ux부채/기술부채를 어떻게 트래킹할 것인가?</li>
+    <li>실제 서비스에서 동작하지 않는 스타일 가이드, 디자이너 개인의 영달을 위한 포트폴리오로 작용하지 않아야 함..!</li>
+    <li>디자인 시스템 문서는 린. 커뮤니케이션 도구.(모든 구성원을 위한 문서)</li>
+    <li>지나치게 최소화하거나 엄격한 규칙 지양. 디테일이 부족해지고 너무 많은 요소가 강조됨.</li>
+    <li>Selection control ecosystem flow chart stylistic 유사성. </li>
+
+    
     <p>
       팀에 합류하여 처음으로 디자인 시스템을 경험하는 사람은 시작 하는 과정에서 무엇이 빠져 있는지 이해할 수 있는 훌륭한 리소스 입니다. 당신의 디자인
       시스템을 새로운 결합자에게 제시하고 디자인 시스템의 무언가를 사용하는 것과 관련된 작업을 제공하고 막혔을 때 겪었던 모든 문제를 기록하도록
@@ -393,77 +484,5 @@
       것을 기분 좋게 만듭니다. 기여에 대한 인센티브를 제공하는 수단이 있다는 것은 좋은 일이며 기여자가 인정받고 있다는 느낌을 갖게 합니다. 이를
       달성하는 다른 방법이 있지만 기여를 인정하고 축하하여 사람들이 기꺼이 더 많이 기여하고 더 많은 피드백을 제공할 수 있도록 하는 것이 중요합니다.
       사람들이 당신의 디자인 시스템에 기여하도록 격려하고 그들에게 쿠키 🍪(가상 시스템일지라도)를 주십시오.
-    </p> -->
-    <!-- 라이브되는 서비스의 가이드가 아니기 때문에 platform convention problem보다 meta problem에 초점 -->
-  </header>
-
-  <section class="design-guide">
-    <h2 class="design-guide-title">가이드 작성을 위한 가이드</h2>
-    <ul>
-      <li><b>내용의 간결.</b> 목록을 열거하거나 가짓수를 보충하는 등의 단순한 정보를 반복하지 마세요.</li>
-      <li><b>타겟의 명료.</b> 기본적인 내용을 서술하지 마세요. 이 문서를 읽는 사람은 체크박스와 라디오의 차이를 이해하고 있습니다.</li>
-      <li><b>용도의 분명.</b> 경우에따라.상황에따라.목적에맞게 와 같은 용도를 특정할 수 없는 용어를 사용하지 마세요.</li>
-      <li><b>정보의 당위.</b> 일어날 법 하지 않는 don't 케이스를 작성하지 마세요.</li>
-    </ul>
-    <!-- <p>복잡한 추상화를 피하기.</p> -->
-  </section>
-
-  <section class="design-bookmarks">
-    <!-- <h2 class="design-guide-title" style="padding:0 0 .5rem;">Bookmarks</h2> -->
-    <a href="https://developer.apple.com/documentation/technologies" target="_blank">Apple technologies</a>
-    <a href="https://developer.android.com/reference" target="_blank">Android API reference</a>
-    <a href="https://cube.fyi/" target="_blank">CUBE CSS</a>
-    <a href="https://www.digitala11y.com/" target="_blank">Digital A11Y</a>
-  </section>
-
-  <!-- <section class="arrow-test" style="margin:4rem 0 0 0;">
-    <a
-      href="#tokens"
-      style="display:flex;align-items:center;justify-content:space-between;padding:1rem var(--grid-margin);border-top:var(--border);color:var(--color-text);"
-    >
-      <h2 style="font-size: var(--font-size-subhead);line-height: 24px;">
-        Tokens
-      </h2>
-      <span class="icon-button material-symbols-outlined" data-size="small" style="margin-left:.5rem;">
-        arrow_right_alt
-      </span>
-    </a>
-  </section> -->
-
-  <!-- <section>
-    <div style="height:4rem;position:sticky;top:calc(var(--navbar-height));background:coral;">1111111111</div>
-    <div style="padding:8rem 0;">내용내용내용내용내용내용내용내용 폴더. 제목 클릭시 열기</div>
-    <div style="height:4rem;position:sticky;top:calc(var(--navbar-height) + 4rem);background:darkolivegreen;">2222222222</div>
-    <div style="height:2000px;">내용내용내용내용내용내용내용내용</div>
-  </section> -->
-
-  <close-button>custom element test</close-button>
-
-  <!-- <ul>
-    <li>responsiveness</li>
-    <li>ux부채/기술부채를 어떻게 트래킹할 것인가?</li>
-    <li>실제 서비스에서 동작하지 않는 스타일 가이드, 디자이너 개인의 영달을 위한 포트폴리오로 작용하지 않아야 함..!</li>
-    <li>디자인 시스템 문서는 린. 커뮤니케이션 도구.(모든 구성원을 위한 문서)</li>
-    <li>지나치게 최소화하거나 엄격한 규칙 지양. 디테일이 부족해지고 너무 많은 요소가 강조됨.</li>
-    <li>Selection control ecosystem flow chart stylistic 유사성. </li>
+    </p>
   </ul> -->
-
-  <section class="post-relation" style="padding:0 var(--grid-margin);">
-    <h2 class="post-relation-title" title="이 콘텐츠를 본 사람들은">유아이 이야기</h2>
-    <p class="post-relation-description">글쓰기를 위한<br />주제 선정.</p>
-    <a class="postitem" href="https://github.com/soojubm/ui-chip" target="_blank">
-      <figure class="postitem-cover"></figure>
-      <h3 class="postitem-name">크로스 플랫폼 시대에 디자인하기 (가제)</h3>
-      <p class="postitem-description">모바일 시대에 맞는 정보 형태, 그리고 콘텐츠 시대의 탐색 경험.</p>
-      <ul>
-        <li>android. tabs. backdrop.</li>
-        <li>Segmented Controls과 Tabs. Human Interface Guidelines에는 전통적인 형태의 Tab 컴포넌트가 없다?</li>
-      </ul>
-    </a>
-    <!-- <a class="postitem" href="/" onclick="javascript:alert('샘플 유아이입니다.')">
-      <figure class="postitem-cover"></figure>
-      <h3 class="postitem-name">rem과 8pt grid</h3>
-      <p class="postitem-description">단위의 통일. 디자인 시스템, 컴포넌트 개발 트랜드에서 rem의 효용.</p>
-    </a> -->
-  </section>
-</main>
