@@ -175,18 +175,15 @@
     </h3>
 
     <div class="payment-method-list temp8" style="margin:var(--space-after-subhead) 0 0 0;">
-      <div class="payment-method-item status-is-active" style="margin:0 .75rem 0 0;">
-        <i class="tag" data-style="primary" style="width:16px;height:16px;padding:0;position:absolute;z-index:5;top:.25rem;left:.25rem;"
-          ><i class="material-symbols-outlined" style="font-size:20px;position:absolute;left:-3px;top:-3px;">check</i></i
-        >
+      <div class="payment-method-item status-is-active" style="margin:0 var(--space-after-item) 0 0;">
         <figure style="height:var(--size-large);padding-bottom:.5rem;background:aliceblue;">💳</figure>
         <span style="display:block;text-align:center;font-size:var(--font-size-body);">신용카드</span>
       </div>
-      <div class="payment-method-item" style="margin:0 .75rem 0 0;">
+      <div class="payment-method-item" style="margin:0 var(--space-after-item) 0 0;">
         <figure style="height:var(--size-large);padding-bottom:.25rem;background:#defade;">💵</figure>
         <span style="display:block;text-align:center;font-size:var(--font-size-body);">현금</span>
       </div>
-      <div class="payment-method-item" style="margin:0 .75rem 0 0;">
+      <div class="payment-method-item" style="margin:0 var(--space-after-item) 0 0;">
         <figure style="height:var(--size-large);padding-top:.25rem;background:antiquewhite;font-size:1.8rem;">🫓</figure>
         <span style="display:block;text-align:center;font-size:var(--font-size-body);">무통장입금</span>
       </div>
@@ -244,7 +241,10 @@
         <option value="">최근 3개월</option>
       </select>
     </div>
-    <p>최근 3개월 내 주문 내역이 없습니다. <a href="">2022년 주문 내역 보기</a></p>
+    <section class="empty">
+      <p class="empty-description">최근 3개월 내 주문 내역이 없습니다.</p>
+      <button class="empty-action">2022년 주문 내역 보기</button>
+    </section>
     <div class="list">
       <h2>Your Payments / Wallet</h2>
       <p>memo. name on card / expiration date. billing address (따로 관리 됨).</p>
@@ -266,13 +266,12 @@
       <button class="">Add a payment method</button>
     </div>
 
-    <p>TeeVee</p>
+    <!-- <p>TeeVee</p>
     <p>icon-button size=small === icon-indicator (textfield-check/select indicator) - inline or float: right</p>
     <p>
       Note: Make sure the role of the element that serves as the container for the popup content is a menu, listbox, tree, grid or dialog and that the
       value of aria-haspopup matches the role of the popup container.
-    </p>
-    <p>Elements with role combobox have an implicit aria-haspopup value of listbox.</p>
+    </p> -->
     <br />
 
     <div class="sorting" style="position:relative;display:flex;">

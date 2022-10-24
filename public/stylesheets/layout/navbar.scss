@@ -114,7 +114,7 @@
 
 .navbar-menu {display:block;max-width:var(--menu-width);margin-left:0;background:var(--color-background);border-right:var(--border);position:fixed;left:0px;right:0;top:calc(var(--navbar-height) + 2px);bottom:0px;transition:transform var(--duration-slowly) cubic-bezier(.165,.84,.44,1);transform:translateX(-100%);}
 .navbar-menu-item {display:block;padding:var(--space-2) 2rem var(--space-2) var(--grid-margin);font-size:var(--font-size-subhead);}
-.navbar-menu-item menu {flex-wrap:wrap;background:var(--color-background);position:static;left:auto;right:auto;top:auto;transition:none;}
+.navbar-menu-item menu {flex-wrap:wrap;position:static;left:auto;right:auto;top:auto;transition:none;}
 // .navbar-menu-item:hover menu {display:block;}
 .navbar-menu-item menu a {width:100%;height:var(--size-medium);font-size:var(--font-size-subhead);font-weight:var(--font-weight-bold);opacity:1;}
 

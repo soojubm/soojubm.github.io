@@ -118,11 +118,15 @@
   --space-3-minus: calc(var(--space-3) * -1);
   --space-4: 1rem;
 
+  --color-temp1: aliceblue;
+  --color-temp2: #defade;
+  --color-temp3: antiquewhite;
+
   --space-leading-title: -.25rem;
   --space-leading-subhead: -.125rem;
   --space-leading-body: -.125rem;
 
-  --space-after-title: 1.25rem;
+  --space-after-title: 1rem;
   --space-after-subhead: var(--space-3);
   --space-after-description: 2rem;
   --space-after-button: var(--space-2);

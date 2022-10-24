@@ -1,21 +1,19 @@
 
 .design {}
-.design-head {padding:0 var(--grid-margin);background:var(--color-background);position:relative;}
+.design-head {padding:4rem var(--grid-margin);background:var(--color-background);position:relative;}
 .design-head h1 {@include text-title;}
 .design-guide {margin:4rem 0 0;overflow:hidden;}
 .design-guide-title {padding:var(--space-3) var(--grid-margin);@include text-label;}
-.design-guide ul {padding-left:0;border-top:var(--border);list-style:none;}
-.design-guide ul li {margin:0;padding:1rem var(--grid-margin) .9rem;border-bottom:var(--border);font-size:var(--font-size-subhead);line-height:var(--font-line-height-small);}
+.design-guide ul {padding-left:0;list-style:none;}
+.design-guide ul li {margin:0;padding:1rem var(--grid-margin);color:var(--color-text-light);}
+.design-guide ul li b {display:block;color:var(--color-text);}
 
-.design-guide-item {max-width:50%;margin-right:.75rem;z-index:1;}
+// .design-principle .feature-item {max-width:calc(50% - 1rem);flex:auto;}
 
+// @media (--small) {
+//   .design-principle .feature-item {max-width:100%;}
 
-.design-principle {flex-wrap:unset;justify-content:flex-start;padding:0;}
-
-@media (--small) {
-  .design-principle {display:block !important;padding:0 !important;}
-  .design-guide-item {margin:.75rem 0 !important;}
-}
+// }
 
 .article {padding:4rem var(--grid-margin);overflow:hidden;position:relative;}
 .article + .article {padding-top:6rem;}
@@ -161,7 +159,7 @@
 .design-categories {margin:4rem var(--grid-margin);}
 .design-categories h2 {@include text-title;}
 
-.design-bookmarks {display:flex;flex-wrap:wrap;justify-content:center;margin:4rem var(--grid-margin);padding:2rem;background:var(--color-accent);font-size:var(--font-size-large);}
+.design-bookmarks {display:flex;flex-wrap:wrap;justify-content:center;margin:8rem var(--grid-margin);padding:2rem 1rem;border-radius:var(--radius);background:var(--color-background-weak);font-size:var(--font-size-large);}
 .design-bookmarks h2 {margin:0 var(--space-2) 0 0;color:var(--color-text);}
 .design-bookmarks a {display:block;margin:0 var(--space-2);@include link-outside;font-weight:var(--font-weight-bold);}
 
