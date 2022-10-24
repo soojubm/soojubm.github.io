@@ -159,9 +159,9 @@
 .design-categories {margin:4rem var(--grid-margin);}
 .design-categories h2 {@include text-title;}
 
-.design-bookmarks {display:flex;flex-wrap:wrap;justify-content:center;margin:8rem var(--grid-margin);padding:2rem 1rem;border-radius:var(--radius);background:var(--color-background-weak);font-size:var(--font-size-large);}
+.design-bookmarks {display:flex;flex-wrap:wrap;margin:8rem var(--grid-margin);padding:2rem;border-radius:var(--radius);background:linear-gradient(180deg,#155799,#159957);font-size:var(--font-size-large);}
 .design-bookmarks h2 {margin:0 var(--space-2) 0 0;color:var(--color-text);}
-.design-bookmarks a {display:block;margin:0 var(--space-2);@include link-outside;font-weight:var(--font-weight-bold);}
+.design-bookmarks a {display:block;margin:0 var(--space-2);@include link-outside;font-weight:var(--font-weight-bold);color:#fff;}
 
 .uxsitemap {position:relative;}
 .uxsitemap .map {margin-left:1rem;}

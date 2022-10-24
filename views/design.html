@@ -17,16 +17,17 @@
   </div> -->
 
   <header class="design-head">
-    <div class="obbbb" style="width:var(--size-huge);background:crimson;height:var(--size-huge);margin-bottom:2rem;border-radius:var(--radius);">
+    <div class="obbbb" style="width:var(--size-small);background:crimson;height:var(--size-small);margin-bottom:1rem;border-radius:var(--radius);">
       <img src="" alt="" />
     </div>
-    <h1 class="" title="overall consistency and design and development efficiency">Less is more clear<i style="font-style:italic;">!</i></h1>
+    <!-- <span class="tag">디자인 시스템</span> -->
+    <h1 class="" title="overall consistency and design and development efficiency">To simplify is to clarify<i style="font-style:italic;">.</i></h1>
     <p class="hero-description" style="font-size:var(--font-size-subhead);">
       라이브 중인 서비스의 디자인 시스템이 아니기 때문에
       <span class="linebreak-desktop">보편적이고 효율적인 인터페이스를 위한 메타 문제를 함께 다루고 있습니다.</span>
     </p>
 
-    <div class="tag-group" style="margin-bottom:1rem;">
+    <div class="tag-group">
       <!-- <span class="tag" data-style="primary">사용기술</span> -->
       <span class="tag">SCSS</span>
       <span class="tag">vanilla javascript</span>
@@ -42,27 +43,6 @@
       <div class="circle" style="width:6rem;height:6rem;background:blue;border-radius:50%;position:absolute;right:18rem;top:6rem;"></div>
       <div class="circle" style="width:2rem;height:2rem;background:gold;border-radius:50%;position:absolute;right:25rem;top:14rem;"></div>
     </div> -->
-
-    <hr style="margin:2rem 0;" />
-
-    <section class="feature" style="margin:-1rem;padding:2rem 0 0;margin-top:-3rem;">
-      <!-- <header class="feature-head" style="text-align:center;">
-        <h1 class="feature-head-title">디자인 시스템 원칙</h1>
-        <p class="feature-head-description">Get involved in our community. Everyone is welcome!</p>
-      </header> -->
-      <div class="design-guide-item feature-item" style="width:calc(50% - 2rem);max-width:1000px;margin:1rem;">
-        <figure class="feature-item-avatar">🐏</figure>
-        <h3 class="feature-item-title" data-temp=" minimum viable experience">Progressive enhancement</h3>
-        <p class="feature-item-description">
-          시각 언어를 확장해가며 디자인 디테일을 높이고 코드 환경에서 유효한 최적의 컴포넌트 사례를 만듭니다. 제품으로서의 디자인 시스템 문서.
-        </p>
-      </div>
-      <div class="design-guide-item feature-item" style="width:calc(50% - 2rem);max-width:1000px;margin:1rem;">
-        <figure class="feature-item-avatar">🐏</figure>
-        <h3 class="feature-item-title">Visual cue</h3>
-        <p class="feature-item-description">예측 가능하고 일관된 기표로 행동을 유도하여 UX 부채와 기술 부채를 최소화합니다.</p>
-      </div>
-    </section>
 
     <!-- <section class="design-principle feature" style="padding:0;">
       <header class="feature-head"></header>
@@ -126,8 +106,30 @@
     <!-- <p>single source of truth는 디자인 툴이 아닌.</p> -->
   </header>
 
+  <hr style="margin:2rem 0;" />
+
+  <section class="feature" style="justify-content:left;margin:-1rem;padding:2rem var(--grid-margin) 0;margin-top:-3rem;">
+    <!-- <header class="feature-head" style="text-align:center;">
+      <h1 class="feature-head-title">디자인 시스템 원칙</h1>
+      <p class="feature-head-description">Get involved in our community. Everyone is welcome!</p>
+    </header> -->
+    <div class="design-guide-item feature-item" style="margin:1rem;">
+      <figure class="feature-item-avatar">🐏</figure>
+      <h3 class="feature-item-title" data-temp=" minimum viable experience">Progressive enhancement</h3>
+      <p class="feature-item-description">
+        시각 언어를 확장해가며 디자인 디테일을 높이고 코드 환경에서 유효한 최적의 컴포넌트 사례를 만듭니다. 제품으로서의 디자인 시스템 문서.
+      </p>
+    </div>
+    <div class="design-guide-item feature-item" style="margin:1rem;">
+      <figure class="feature-item-avatar">🐏</figure>
+      <h3 class="feature-item-title">Visual cue</h3>
+      <p class="feature-item-description">예측 가능하고 일관된 기표로 행동을 유도하여 UX 부채와 기술 부채를 최소화합니다.</p>
+    </div>
+  </section>
+
   <section class="design-guide" style="margin:8rem var(--grid-margin);">
     <h2 class="post-relation-title">가이드 작성을 위한 가이드</h2>
+    <p class="post-relation-description" style="margin-bottom:3rem;">글쓰기를 위한<br />주제 선정.</p>
     <div style="display:flex;margin:0 -.375rem;">
       <div class="tile-elevated" style="width:240px;margin:0 .375rem;padding:1rem;box-shadow:none;border:0;background:var(--green100);">
         <b style="display:block;margin:0 0 .25rem 0;line-height:var(--font-line-height-small);">내용의 간결</b>
@@ -160,7 +162,32 @@
   <section class="post-relation" style="padding:0 var(--grid-margin);">
     <h2 class="post-relation-title" title="이 콘텐츠를 본 사람들은">인터페이스 이야기</h2>
     <p class="post-relation-description">글쓰기를 위한<br />주제 선정.</p>
-    <a
+
+    <section class="profile-tabpanel list" role="tabpanel" aria-hidden="false" data-index="1" style="margin-top:3rem;">
+      <a class="card js-modal" href="#newneek" data-modal="newneek" style="width:40% !important;">
+        <figure class="card-thumbnail"><img src="" alt="" /></figure>
+        <em class="card-category">정리중</em>
+        <h3 class="card-title">크로스 플랫폼 시대의 인터페이스 디자인</h3>
+        <div class="card-tags" role="group">
+          <span class="card-tags-item">일정산정/스펙정의</span>
+          <span class="card-tags-item">디자인</span>
+          <span class="card-tags-item">프론트엔드개발</span>
+        </div>
+      </a>
+
+      <a class="card js-modal" href="#newneek" data-modal="etc-works" style="width:40% !important;">
+        <figure class="card-thumbnail"><img src="/public/images/work-studium.jpg" alt="" /></figure>
+        <em class="card-category">정리중</em>
+        <h3 class="card-title">Selected Works</h3>
+        <!-- <time class="card-date">September 12, 2017</time> -->
+        <div class="card-tags" role="group">
+          <span class="card-tags-item">프리랜서</span>
+          <span class="card-tags-item">디자인</span>
+          <span class="card-tags-item">워드프레스</span>
+        </div>
+      </a>
+    </section>
+    <!-- <a
       class="postitem"
       href="https://www.notion.so/soojubm/UI-Designer-9c18f4dd39eb4181b9f9c2ee76896618?p=6001fc6829374c1e8395d815a0c7770a&pm=s"
       target="_blank"
@@ -169,7 +196,6 @@
       <h3 class="postitem-name">크로스 플랫폼 시대의 인터페이스 디자인 (초안)</h3>
       <p class="postitem-description">플랫폼에 종속되지 않는 정보 형태, 그리고 콘텐츠 시대의 탐색 경험.</p>
     </a>
-
     <span class="postitem" style="cursor:not-allowed;">
       <figure class="postitem-cover"></figure>
       <h3 class="postitem-name">윤리적으로 디자인하기 (주제선정단계)</h3>
@@ -179,7 +205,7 @@
         <li>다양한 리액션. 부정적인 리액션을 유도하지 않도록. (유튜브 싫어요 수치 숨겨진 것 참고)</li>
         <li>불필요한 영어 표현 최소화.</li>
       </ul>
-    </span>
+    </span> -->
     <!-- <a class="postitem" href="/" onclick="javascript:alert('샘플 유아이입니다.')">
       <figure class="postitem-cover"></figure>
       <h3 class="postitem-name">rem과 8pt grid</h3>
@@ -187,22 +213,63 @@
     </a> -->
   </section>
 
-  <section class="design-bookmarks">
-    <h2
+  <section class="design-bookmarks" style="margin-bottom:2rem;">
+    <!-- <h2
       class="design-guide-title"
       style="width: 100%;
     text-align: center;
     font-weight: bold;padding:0 0 .25rem 0;font-size:var(--font-size-subhead);"
     >
       Bookmarks
-    </h2>
+    </h2> -->
     <a href="https://developer.apple.com/documentation/technologies" target="_blank">Apple technologies</a>
     <a href="https://developer.android.com/reference" target="_blank">Android API reference</a>
     <a href="https://cube.fyi/" target="_blank">CUBE CSS</a>
     <a href="https://www.digitala11y.com/" target="_blank">Digital A11Y</a>
   </section>
 
-  <section class="design-ticker">
+  <!-- <section class="faq" style="max-width:800px;margin:0 auto;padding:0 var(--grid-margin);">
+    <abbr title="Frequently asked questions" hidden="">FAQ</abbr>
+    <header style="padding-bottom:2rem;text-align:center;">
+      <small>Find Your Answers</small>
+      <h2 style="font-size:var(--font-size-title);" title="FAQs">궁금한 점이 있으신가요?</h2>
+    </header>
+    <article class="accordion js-accordion" aria-expanded="false">
+      <h3 class="accordion-title" role="button">
+        탈퇴하고 싶어요.
+        <figure class="accordion-title-icon">
+          <span class="material-symbols-outlined">expand_more</span>
+        </figure>
+      </h3>
+      <div class="accordion-panel">
+        <p>모든 국민은 건강하고 쾌적한 환경에서 생활할 권리를 가지며, 국가와 국민은 환경보전을 위하여 노력하여야 한다.</p>
+        <p>
+          제1항의 지시를 받은 당해 행정기관은 이에 응하여야 한다. 국회의원은 법률이 정하는 직을 겸할 수 없다. 대통령의 임기연장 또는 중임변경을 위한
+          헌법개정은 그 헌법개정 제안 당시의 대통령에 대하여는 효력이 없다.
+        </p>
+      </div>
+    </article>
+    <article class="accordion js-accordion" aria-expanded="false">
+      <h3 class="accordion-title" role="button">
+        주문을 취소하고 싶어요.
+        <figure class="accordion-title-icon">
+          <span class="material-symbols-outlined">expand_more</span>
+        </figure>
+      </h3>
+      <div class="accordion-panel">
+        <p>모든 국민은 건강하고 쾌적한 환경에서 생활할 권리를 가지며, 국가와 국민은 환경보전을 위하여 노력하여야 한다.</p>
+        <p>
+          제1항의 지시를 받은 당해 행정기관은 이에 응하여야 한다. 국회의원은 법률이 정하는 직을 겸할 수 없다. 대통령의 임기연장 또는 중임변경을 위한
+          헌법개정은 그 헌법개정 제안 당시의 대통령에 대하여는 효력이 없다.
+        </p>
+      </div>
+    </article>
+    <footer>
+      <p style="margin:var(--space-4) 0 0 0;">궁금증이 해결되지 않는다면? <a href="#">Get in touch with us.</a></p>
+    </footer>
+  </section> -->
+
+  <!-- <section class="design-ticker">
     <div class="marquee-box">
       <article class="design-ticker-item tile-elevated">
         <div class="item" data-size="large" role="listitem">
@@ -485,7 +552,7 @@
       </article>
     </div>
     <div class="design-ticker-overay"></div>
-  </section>
+  </section> -->
 </main>
 
 <!-- <ul>
@@ -496,7 +563,6 @@
     <li>지나치게 최소화하거나 엄격한 규칙 지양. 디테일이 부족해지고 너무 많은 요소가 강조됨.</li>
     <li>Selection control ecosystem flow chart stylistic 유사성. </li>
 
-    
     <p>
       팀에 합류하여 처음으로 디자인 시스템을 경험하는 사람은 시작 하는 과정에서 무엇이 빠져 있는지 이해할 수 있는 훌륭한 리소스 입니다. 당신의 디자인
       시스템을 새로운 결합자에게 제시하고 디자인 시스템의 무언가를 사용하는 것과 관련된 작업을 제공하고 막혔을 때 겪었던 모든 문제를 기록하도록
