@@ -119,7 +119,7 @@
 
 @media (hover) and (pointer: fine) {
   .card:hover:not(.has-clickable) {@include hover-item;}
-  .card:hover .card-more {display:block;}
+  .card:hover .card-more {display:flex;}
 }
 
 .list .card {float:none;width:100% !important;margin-bottom: var(--space-3);}

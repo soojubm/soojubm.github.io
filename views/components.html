@@ -334,7 +334,7 @@ arrow_drop_down
           </button>
         </div>
         <div class="tile-flat">
-          <div role="group">
+          <div class="chip-group" role="group">
             <button class="button-tertiary" style="height:64px;font-size:var(--font-size-subhead);vertical-align:bottom;">Large</button>
             <button class="button-tertiary" style="vertical-align:bottom;">Medium</button>
             <!-- <button class="button-tertiary-small">Small</button> -->
@@ -1807,10 +1807,10 @@ arrow_drop_down
         </div>
         <section class="faq tile-flat">
           <abbr title="Frequently asked questions" hidden>FAQ</abbr>
-          <!-- <header style="padding-bottom:2rem;text-align:center;">
-          <small>Find Your Answers</small>
-          <h2 style="font-size:var(--font-size-title);" title="FAQs">궁금한 점이 있으신가요?</h2>
-        </header> -->
+          <header style="padding-bottom:1.5rem;text-align:center;">
+            <small>Find Your Answers</small>
+            <h2 style="font-size:var(--font-size-title);" title="FAQs">궁금한 점이 있으신가요?</h2>
+          </header>
           <article class="accordion js-accordion is-active" aria-expanded="false">
             <h3 class="accordion-title" role="button">
               탈퇴하고 싶어요.
@@ -1841,9 +1841,9 @@ arrow_drop_down
               </p>
             </div>
           </article>
-          <footer>
+          <!-- <footer>
             <p style="margin:var(--space-4) 0 0 0;">궁금증이 해결되지 않는다면? <a href="#">Get in touch with us.</a></p>
-          </footer>
+          </footer> -->
         </section>
       </section>
 
@@ -1897,8 +1897,7 @@ arrow_drop_down
         <li>
           왼쪽 정렬의 기본적인 텍스트 모듈과 달리 가운데 정렬로 대비를 높입니다. 콘텐츠 모듈로 콘텐츠의 맥락을 구분하는 것이 foundation 중 하나.
         </li>
-        <li>페이지 레벨이나 섹션 레벨의 empty, error, complete 상태에서 사용합니다.</li>
-        <li>React ErrorBoundary</li>
+        <li>페이지 레벨 또는 섹션 레벨의 empty, error, complete 상태에서 사용합니다.</li>
       </ul>
 
       <h4 class="article-subhead">Props</h4>
@@ -1917,7 +1916,7 @@ arrow_drop_down
         <dd>string</dd>
       </dl>
 
-      <h4 class="article-subhead">ErrorFallback</h4>
+      <h4 class="article-subhead">ErrorFallback - React ErrorBoundary</h4>
     </article>
 
     <article class="article js-observer js-scrollspy-section">

@@ -10,7 +10,7 @@
 
 input:focus-visible {outline: 0;}
 
-select {-webkit-appearance:none;padding-right:1.5rem;} // for appearance on safari
+select {-webkit-appearance:none;background:none;border:none;font:inherit;color:var(--color-text);} // for appearance on safari
 select::-ms-expand {display:none;}
 
 textarea {}

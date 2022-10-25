@@ -131,7 +131,6 @@
   @include tile-elevated-small;
   margin-right: var(--space-3);
   font-size:var(--font-size-caption);
-  position: relative;
 }
 .temp8 > *:hover{@include hover-item;}
 .temp8 > * figure {
@@ -146,9 +145,23 @@
   line-height: var(--font-line-height-small);
 }
 
-.accordion {@include tile-elevated;}
+.payment-method-list {display:flex;margin:var(--space-1) 0 0 0;position:relative;}
+.payment-method-item {
+  @include tile-elevated-small;
+  margin:0 var(--space-after-item) 0 0;
+  padding-bottom:.5rem;
+  font-size:var(--font-size-caption);
+  figure {
+    @include avatar-huge;
+    height:var(--size-large);
+    font-size:var(--font-size-huge);
+  }
+  span {display:block;margin:.125rem 0 -.125rem;text-align:center;font-size:var(--font-size-body);}
+}
+
+.accordion {@include tile-elevated;padding:var(--space-4);}
 .accordion:hover {@include hover-item;}
-.accordion-title {display:flex;align-items:center;justify-content:space-between;@include text-body-large;}
+.accordion-title {display:flex;align-items:center;justify-content:space-between;@include text-subhead;line-height:24px;}
 .accordion-title-icon {@include icon-button-small;}
 .accordion-panel {display:none;cursor:default;}
 .accordion-panel p + p {margin:var(--space-4) 0 0 0;}

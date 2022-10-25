@@ -43,43 +43,46 @@
   <input id="startTime" type="text" aria-errormessage="msgID" aria-invalid="true" value="11:30 PM" />
   <span id="msgID" aria-live="assertive" style="visibility:visible"> Invalid time: the time must be between 9:00 AM and 5:00 PM" </span> -->
 
+  <article class="item" data-size="huge" style="height:var(--size-huge);margin:2rem var(--grid-margin);">
+    <figure class="item-avatar" style="border:var(--border);background:none;font-size:var(--font-size-title);font-weight:var(--font-weight-bold);color:var(--green800);background:var(--green100);border:none;">
+      #
+    </figure>
+    <h3 class="item-name" style="padding-top:.75rem;">windows-emoji</h3>
+    <p class="item-description">tag page head</p>
+    <button class="item-action"><span class="item-action-label">Follow</span></button>
+  </article>
+
   <section class="hero" role="banner">
     <div class="hero-background"></div>
-    <h1 class="hero-title" style="display:flex;align-items:center;color:var(--color-text-light);">
-      Dummies
-      <span class="icon-button" data-size="small" role="img" style="margin-left:.5rem;"
-        ><span class="material-symbols-outlined">arrow_drop_down</span></span
-      >
-    </h1>
-    <h1 class="hero-title">Hero Component의 description은 <span class="linebreak-desktop">최대 두 줄로 작성하세요.</span></h1>
+    <h1 class="hero-title">Hero Component의 Heading은 <span class="linebreak-desktop">최대 두 줄로 작성합니다.</span></h1>
     <p class="hero-description">히어로 섹션의 샘플. e.detail.originalEvent</p>
     <footer>
       <button class="button-primary">샘플 버튼</button>
     </footer>
   </section>
 
-  <section class="component-body" style="padding:2rem var(--grid-margin);">
-    <article class="item" data-size="large">
-      <figure class="item-avatar" style="background:aliceblue;">
-        <span class="material-symbols-outlined" style="color:blue;">
-          trending_up
-        </span>
-      </figure>
-      <h3 class="item-name">Entity large</h3>
-      <p class="item-description">description area.</p>
-      <span style="color:blue;">35%</span>
-    </article>
+  <section class="component-body" style="padding:2rem var(--grid-margin);position:relative;z-index:1;">
+    <p>.item-list .item / .item / --space-outer-item: var(--space-3);</p>
+    <hr />
+    <div class="chip-group item-list" role="group">
+      <article class="item tile-elevated-small" data-size="large" style="width:200px;z-index:auto;">
+        <figure class="item-avatar" style="background:aliceblue;">
+          <span class="material-symbols-outlined" style="color:blue;">trending_up</span>
+        </figure>
+        <h3 class="item-name">상해종합주가지수</h3>
+        <p class="item-description">2999.55 <em style="color:blue;">+ 25</em> <span style="color:blue;">35%</span></p>
+      </article>
 
-    <article class="item" data-size="large">
-      <figure class="item-avatar" style="background:var(--red100);">
-        <span class="material-symbols-outlined" style="color:var(--red800);">
-          trending_down
-        </span>
-      </figure>
-      <h3 class="item-name">Entity large</h3>
-      <p class="item-description">description area.</p>
-      <span style="color:var(--red800);">35%</span>
-    </article>
+      <article class="item tile-elevated-small" data-size="large" style="width:200px;z-index:auto;">
+        <figure class="item-avatar" style="background:var(--red100);">
+          <span class="material-symbols-outlined" style="color:var(--red800);">trending_down</span>
+        </figure>
+        <h3 class="item-name">Entity large</h3>
+        <span style="color:var(--red800);">35%</span>
+      </article>
+    </div>
+
+    <hr />
 
     <section>
       <p>foundations: tokens / signifier / layout / level /</p>
@@ -169,23 +172,22 @@
       <span>5</span>
     </div>
 
-    <h3 class="article-subhead">
-      Select payment method<br />token은 활용했지만 컴포넌트에 정의하지 않은 형태. 판매자가 선택할 수 있는 결제 방법과 구매자가 선택할 수 있는 결제
-      방법의 차이. todo: radio hint
+    <h3 class="article-subhead" data-temp="판매자가 선택할 수 있는 결제 방법과 구매자가 선택할 수 있는 결제 방법의 차이.">
+      Select payment method<br />
     </h3>
 
-    <div class="payment-method-list temp8" style="margin:var(--space-after-subhead) 0 0 0;">
-      <div class="payment-method-item status-is-active" style="margin:0 var(--space-after-item) 0 0;">
-        <figure style="height:var(--size-large);padding-bottom:.5rem;background:aliceblue;">💳</figure>
-        <span style="display:block;text-align:center;font-size:var(--font-size-body);">신용카드</span>
+    <div class="payment-method-list">
+      <div class="payment-method-item status-is-active">
+        <figure style="background:aliceblue;">💳</figure>
+        <span>신용카드</span>
       </div>
-      <div class="payment-method-item" style="margin:0 var(--space-after-item) 0 0;">
-        <figure style="height:var(--size-large);padding-bottom:.25rem;background:#defade;">💵</figure>
-        <span style="display:block;text-align:center;font-size:var(--font-size-body);">현금</span>
+      <div class="payment-method-item">
+        <figure style="background:#defade;">💵</figure>
+        <span>현금</span>
       </div>
-      <div class="payment-method-item" style="margin:0 var(--space-after-item) 0 0;">
-        <figure style="height:var(--size-large);padding-top:.25rem;background:antiquewhite;font-size:1.8rem;">🫓</figure>
-        <span style="display:block;text-align:center;font-size:var(--font-size-body);">무통장입금</span>
+      <div class="payment-method-item">
+        <figure style="background:antiquewhite;font-size:1.8rem;">🫓</figure>
+        <span>무통장입금</span>
       </div>
     </div>
 
@@ -235,19 +237,53 @@
       </div>
     </div>
 
-    <div class="" style="display:flex;align-items:center;flex-direction:row-reverse;">
-      <label for="">주문 내역 총 <b>3</b>건</label>
-      <select class="chip" name="" id="">
-        <option value="">최근 3개월</option>
+    <hr />
+
+    <!-- <button class="title-button"></button> -->
+    <h1 class="hero-title" style="display:flex;align-items:center;">
+      Dummies
+      <span class="icon-indicator material-symbols-outlined" data-size="small" role="img">arrow_drop_down</span>
+    </h1>
+    <hr />
+    <div class="sorting" style="position:relative;display:flex;line-height:24px;"">
+      <label class="" for="select2" style="margin:0 var(--space-2) 0 0;">Sort by</label>
+      <select class="" id="select2">
+        <option class="select-option" value="select-option1">최신순</option>
       </select>
+      <span class="icon-indicator material-symbols-outlined" role="img">arrow_drop_down</span>
     </div>
+    <hr />
+    <button style="display:flex;align-items:center;line-height:24px;">
+      See more trending developers
+      <span class="icon-indicator material-symbols-outlined">arrow_right_alt</span>
+    </button>
+
+    <hr />
+
+    <div class="keywords-group" role="group">
+      <button class="keywords-group-keyword is-active">
+        <span class="chip-label">오늘</span>
+      </button>
+      <button class="keywords-group-keyword">
+        <span class="chip-label">최근 3개월</span>
+      </button>
+      <button class="keywords-group-keyword">
+        <span class="chip-label">최근 1년</span>
+      </button>
+      <button class="keywords-group-keyword">
+        <span class="chip-label">최근 3년</span>
+      </button>
+    </div>
+    <p style="margin:.75rem 0;" role="status">주문 내역 총 <b>3</b>건</ㅔ>
+
+
+
     <section class="empty">
-      <p class="empty-description">최근 3개월 내 주문 내역이 없습니다.</p>
+      <p class="empty-title">최근 3개월 내 주문 내역이 없습니다.</p>
       <button class="empty-action">2022년 주문 내역 보기</button>
     </section>
     <div class="list">
-      <h2>Your Payments / Wallet</h2>
-      <p>memo. name on card / expiration date. billing address (따로 관리 됨).</p>
+      <h2 class="article-subhead">Your Payments / Wallet<br />name on card / expiration date. billing address (따로 관리 됨).</h2>
       <a class="card js-modal" href="#newneek" data-modal="newneek" style="display:block;overflow:hidden;">
         <figure class="card-thumbnail">
           <img src="https://images-fe.ssl-images-amazon.com/images/G/0…rtal/r1/credit-card-image-blank._CB647740938_.png" alt="" />
@@ -263,7 +299,12 @@
           </span>
         </button>
       </a>
-      <button class="">Add a payment method</button>
+      <button class="button-elevated" style="max-width:240px;margin-bottom:0;">
+        <figure class="button-elevated-avatar">
+          <span class="material-symbols-outlined">add</span>
+        </figure>
+        <span class="button-elevated-label">Add a payment method</span>
+      </button>
     </div>
 
     <!-- <p>TeeVee</p>
@@ -272,23 +313,6 @@
       Note: Make sure the role of the element that serves as the container for the popup content is a menu, listbox, tree, grid or dialog and that the
       value of aria-haspopup matches the role of the popup container.
     </p> -->
-    <br />
-
-    <div class="sorting" style="position:relative;display:flex;">
-      <label class="" for="select2" style="margin:0 var(--space-2) 0 0;">Sort by</label>
-      <select class="" id="select2" style="background:none;border:none;padding:0 var(--space-2) 0 0;font:inherit;color:var(--color-text);">
-        <option class="select-option" value="select-option1">최신순</option>
-      </select>
-      <span class="icon-button" data-size="small" role="img"><i class="material-symbols-outlined">arrow_drop_down</i></span>
-    </div>
-    <br />
-    <button style="display:flex;align-items:center;">
-      Learn more
-      <span class="icon-button material-symbols-outlined" data-size="small" style="margin-left:.5rem;">
-        arrow_right_alt
-      </span>
-    </button>
-
     <br />
 
     <div class="textfield-group" style="display:flex;align-items:flex-end;max-width:480px;">
@@ -314,14 +338,6 @@
 
     <br />
     <section style="max-width:480px;">
-      <div class="textfield">
-        <button class="textfield-prefix searchfield-prefix">
-          <span class="material-symbols-outlined">mail </span>
-        </button>
-        <!-- <label class="textfield-label" for="search">검색(시각적으로숨겨야함)</label> -->
-        <input class="textfield-input" type="text" id="search" placeholder="you@gamil.com" />
-        <button class="textfield-clear" hidden><span class="material-symbols-outlined">close</span></button>
-      </div>
       <div class="textfield" style="margin:var(--space-2) 0;">
         <button class="textfield-prefix searchfield-prefix">
           <span class="material-symbols-outlined">mail </span>
@@ -330,11 +346,11 @@
         <input class="textfield-input" type="text" id="search" placeholder="you@gamil.com" />
         <button class="textfield-clear" hidden><span class="material-symbols-outlined">close</span></button>
       </div>
-      <button class="button-elevated" style="max-width:240px;margin-bottom:0;">
+      <button class="button-elevated" style="max-width:200px;margin-bottom:0;">
         <figure class="button-elevated-avatar">
           <span class="material-symbols-outlined">add</span>
         </figure>
-        <span class="button-elevated-label">add</span>
+        <span class="button-elevated-label">Add the member</span>
       </button>
     </section>
 
