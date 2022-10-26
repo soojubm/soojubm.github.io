@@ -58,7 +58,7 @@
     left:var(--hover-outline);right:var(--hover-outline);top:var(--hover-outline);bottom:var(--hover-outline);
     z-index:-1;
   }
-  // figure {background-color:var(--color-background);}
+  figure {background-color:var(--color-background) !important;box-shadow:var(--shadow);}
 }
 .is-hoverable {@include hover-item;}
 

@@ -44,15 +44,18 @@
   <span id="msgID" aria-live="assertive" style="visibility:visible"> Invalid time: the time must be between 9:00 AM and 5:00 PM" </span> -->
 
   <article class="item" data-size="huge" style="height:var(--size-huge);margin:2rem var(--grid-margin);">
-    <figure class="item-avatar" style="border:var(--border);background:none;font-size:var(--font-size-title);font-weight:var(--font-weight-bold);color:var(--green800);background:var(--green100);border:none;">
+    <figure
+      class="item-avatar"
+      style="font-size:var(--font-size-title);font-weight:var(--font-weight-bold);background-image:none;"
+    >
       #
     </figure>
     <h3 class="item-name" style="padding-top:.75rem;">windows-emoji</h3>
     <p class="item-description">tag page head</p>
-    <button class="item-action"><span class="item-action-label">Follow</span></button>
+    <button class="item-action"><span class="item-action-label">팔로우</span></button>
   </article>
 
-  <section class="hero" role="banner">
+  <section class="hero" role="banner" style="padding-top:0;">
     <div class="hero-background"></div>
     <h1 class="hero-title">Hero Component의 Heading은 <span class="linebreak-desktop">최대 두 줄로 작성합니다.</span></h1>
     <p class="hero-description">히어로 섹션의 샘플. e.detail.originalEvent</p>
@@ -62,7 +65,136 @@
   </section>
 
   <section class="component-body" style="padding:2rem var(--grid-margin);position:relative;z-index:1;">
-    <p>.item-list .item / .item / --space-outer-item: var(--space-3);</p>
+    <menu class="access tile-elevated" style="max-width:480px;">
+      <button class="titlebar-back">
+        <figure class="chip"><span class="material-symbols-outlined">close</span></figure>
+      </button>
+      <header class="titlebar" style="padding:0;margin:1rem 0;">
+        <h1 class="titlebar-title" style="font-weight:var(--font-weight-bold);line-height:32px;position:relative;left:auto;transform:translateX(0);">
+          공개 대상 선택
+        </h1>
+      </header>
+      <div class="access-entity item" data-size="large">
+        <figure class="item-avatar" style="background-image:none;">
+          <span class="material-symbols-outlined">public</span>
+        </figure>
+        <h3 class="item-name" style="padding-top:.25rem;">전체 공개</h3>
+        <p class="item-description">Facebook 안팎의 모든 사람</p>
+      </div>
+      <div class="item is-active is-hoverable" data-size="large" style="margin-top:.75rem;margin-bottom:.75rem;">
+        <figure class="item-avatar" style="background-image:none;">
+          <span class="material-symbols-outlined">group</span>
+        </figure>
+        <h3 class="item-name" style="padding-top:.25rem;">친구만</h3>
+        <p class="item-description">회원님의 Facebook 친구</p>
+        <span class="material-symbols-outlined" style="position:absolute;right:0;top:50%;transform:translateY(-50%);color:var(--green800);">
+          radio_button_checked
+        </span>
+      </div>
+      <div class="item" data-size="large" role="menuitem">
+        <figure class="item-avatar" style="background-image:none;">
+          <span class="material-symbols-outlined">
+            lock
+          </span>
+        </figure>
+        <h3 class="item-name">나만 보기</h3>
+        <!-- <p class="item-description">부끄러우니까</p> -->
+      </div>
+    </menu>
+
+    <hr />
+
+    <div class="profile-display" style="display:flex;flex-wrap:wrap;">
+      <p class="profile-display-status" role="status" style="width:100%;margin-bottom:.75rem;">Viewing 1,000 Projects</p>
+      <button class="profile-display-button js-test-toggle is-selected" name="grid">
+        <figure class="chip-icon"><span class="material-symbols-outlined">view_module</span></figure>
+        <span class="chip-label" aria-hidden="true" aria-lable="grid">격자</span>
+      </button>
+      <button class="profile-display-button js-test-toggle" name="list" style="margin-left:.5rem;border:var(--border);">
+        <figure class="chip-icon" style="background:none;"><span class="material-symbols-outlined">view_list</span></figure>
+        <span class="chip-label" aria-hidden="true">List</span>
+      </button>
+    </div>
+
+    <hr />
+    <div style="display:flex;">
+      <form class="tile-elevated" action="" style="width:100%;max-width:400px;margin-right:.75rem;">
+        <header class="titlebar" style="padding:0;">
+          <h1 class="titlebar-title" style="line-height:32px;position:relative;left:auto;transform:translateX(0);">"파일 제목.pdf" 공유</h1>
+          <button class="chip" style="margin-left:auto;"><span class="material-symbols-outlined">settings</span></button>
+        </header>
+        <!-- <div class="textfield" style="margin:1rem 0 0;">
+          <label class="textfield-label" for="" aria-hidden="true">댓글</label>
+          <input class="textfield-input" type="text" rows="4" name="comment" placeholder="사용자 및 그룹 추가"></input>
+        </div> -->
+        <button class="button-elevated">
+          <figure class="button-elevated-avatar">
+            <span class="material-symbols-outlined">add</span>
+          </figure>
+          <span class="button-elevated-label" style="line-height:var(--font-line-height-small);">사용자 및 그룹 추가</span>
+        </button>
+        <!-- <p style="margin:1rem 0 .25rem;font-size:var(--font-size-body);">액세스 권한이 있는 사용자</p> -->
+        <div class="item" data-size="medium" style="display:flex;align-items:center;margin-top:0;margin-bottom:.75rem;">
+          <figure class="item-avatar"></figure>
+          <h3 class="item-name" style="font-weight:var(--font-weight-normal);">수줍이 (나)</h3>
+          <span class="tag" style="margin-left:auto;">소유자</span>
+        </div>
+        <div class="item" data-size="medium" role="menuitem">
+          <figure class="item-avatar" style="background:purple;"></figure>
+          <h3 class="item-name" style="font-weight:var(--font-weight-normal);">뾱뾱이</h3>
+          <button class="tag" style="margin-left:auto;background:var(--red100);border:0;color:var(--red800);">
+            <span class="tag-label">제한됨</span>
+          </button>
+          <figure class="icon-indicator"><span class="material-symbols-outlined">arrow_drop_down</span></figure>
+        </div>
+        <footer style="display:flex;justify-content:right;margin:2rem 0 0;">
+          <button class="button-tertiary" type="button" style="margin-right:auto;">머시깽이</button>
+          <button class="button-primary" type="submit">완료</button>
+        </footer>
+      </form>
+      <form class="tile-elevated" action="" style="width:100%;max-width:400px;">
+        <header class="titlebar" style="padding:0;margin-bottom:2rem;">
+          <h1 class="titlebar-title">공유 설정</h1>
+          <button class="titlebar-back" aria-label="이전 페이지로">
+            <span class="material-symbols-outlined">arrow_back</span>
+          </button>
+        </header>
+
+        <div class="checkbox">
+          <input type="checkbox" />
+          <label for="">편집자가 권한을 변경하고 공유할 수 있습니다.</label>
+        </div>
+
+        <div class="checkbox">
+          <input type="checkbox" />
+          <label for="">뷰어 및 댓글 작성자에게 다운로드, 인쇄, 복사 옵션 표시.</label>
+        </div>
+        <p>일반 액세스 (기본 액세스라는 의미인 듯)</p>
+        <button class="chip">
+          <!-- <figure class="chip-icon">
+            <span class="material-symbols-outlined">lock</span>
+          </figure> -->
+          <span class="chip-label">제한됨</span>
+          <figure class="chip-icon">
+            <span class="material-symbols-outlined">arrow_drop_down</span>
+          </figure>
+        </button>
+        <div style="margin:.75rem 0;">
+          <p>액세스 권한이 있는 사용자만 링크로 열 수 있습니다.</p>
+        </div>
+      </form>
+    </div>
+
+    <p>개선한 부분</p>
+    <ul>
+      <li>일반 액세스는 설정에서 제공한다</li>
+      <li>소제목 제거. 액세스 권한이 있는 사용자.</li>
+      <li>multiple selectbox 인터페이스를 정의하지 않기 위해 버튼을 사용. => 디자인 시스템에 정의하지 않은 요소.</em>
+      <li
+        >한 번에 여러 명과 공유 / 긴 파일 이름 / chip 앞 뒤 아이콘 / 추가 버튼이 리스트의 최상단과 최하단애 배치되는 맥락 정의 / 문제: 배경색이 들어간
+        요소가 너무 많음.</li
+      >
+    </ul>
     <hr />
     <div class="chip-group item-list" role="group">
       <article class="item tile-elevated-small" data-size="large" style="width:200px;z-index:auto;">
@@ -70,7 +202,8 @@
           <span class="material-symbols-outlined" style="color:blue;">trending_up</span>
         </figure>
         <h3 class="item-name">상해종합주가지수</h3>
-        <p class="item-description">2999.55 <em style="color:blue;">+ 25</em> <span style="color:blue;">35%</span></p>
+        <p class="item-description">2999.55p</p>
+        <span class="tag" style="color:blue;">35% / <em style="color:blue;"> 25p</em></span>
       </article>
 
       <article class="item tile-elevated-small" data-size="large" style="width:200px;z-index:auto;">
@@ -78,19 +211,17 @@
           <span class="material-symbols-outlined" style="color:var(--red800);">trending_down</span>
         </figure>
         <h3 class="item-name">Entity large</h3>
-        <span style="color:var(--red800);">35%</span>
+        <span class="tag" style="color:var(--red800);">35%</span>
       </article>
     </div>
 
     <hr />
 
     <section>
-      <p>foundations: tokens / signifier / layout / level /</p>
       <p>
         changelog: 221022: before, after 선택자로 checkbox와 switch를 스타일링 하지 않고, 컴포넌트로 정의해서 다양한 인터페이스에 활용할 수 있도록.
         예를 들면 checkable tile에서, setting item에서.
       </p>
-
       <article class="tile-elevated">
         <h2 style="margin-top:var(--space-leading-subhead);font-size:var(--font-siez-subhead);">test</h2>
         <p>TODO hover state와 active state를 표현. 클릭 범위와 체크 아이콘의 위치 지정.</p>
@@ -245,7 +376,7 @@
       <span class="icon-indicator material-symbols-outlined" data-size="small" role="img">arrow_drop_down</span>
     </h1>
     <hr />
-    <div class="sorting" style="position:relative;display:flex;line-height:24px;"">
+    <div class="sorting" style="position:relative;display:flex;line-height:24px;">
       <label class="" for="select2" style="margin:0 var(--space-2) 0 0;">Sort by</label>
       <select class="" id="select2">
         <option class="select-option" value="select-option1">최신순</option>
@@ -260,28 +391,29 @@
 
     <hr />
 
-    <div class="keywords-group" role="group">
-      <button class="keywords-group-keyword is-active">
-        <span class="chip-label">오늘</span>
-      </button>
-      <button class="keywords-group-keyword">
-        <span class="chip-label">최근 3개월</span>
-      </button>
-      <button class="keywords-group-keyword">
-        <span class="chip-label">최근 1년</span>
-      </button>
-      <button class="keywords-group-keyword">
-        <span class="chip-label">최근 3년</span>
-      </button>
-    </div>
-    <p style="margin:.75rem 0;" role="status">주문 내역 총 <b>3</b>건</ㅔ>
+    <section style="max-width:640px;">
+      <div class="keywords-group" role="group">
+        <button class="keywords-group-keyword is-active">
+          <span class="chip-label">오늘</span>
+        </button>
+        <button class="keywords-group-keyword">
+          <span class="chip-label">최근 3개월</span>
+        </button>
+        <button class="keywords-group-keyword">
+          <span class="chip-label">최근 1년</span>
+        </button>
+        <button class="keywords-group-keyword">
+          <span class="chip-label">최근 3년</span>
+        </button>
+      </div>
+      <p style="margin:.75rem 0;" role="status">주문 내역 총 <b>3</b>건. Statusbox</p>
 
-
-
-    <section class="empty">
-      <p class="empty-title">최근 3개월 내 주문 내역이 없습니다.</p>
-      <button class="empty-action">2022년 주문 내역 보기</button>
+      <section class="empty">
+        <p class="empty-title">최근 3개월 내 주문 내역이 없습니다.</p>
+        <button class="empty-action">2022년 주문 내역 보기</button>
+      </section>
     </section>
+
     <div class="list">
       <h2 class="article-subhead">Your Payments / Wallet<br />name on card / expiration date. billing address (따로 관리 됨).</h2>
       <a class="card js-modal" href="#newneek" data-modal="newneek" style="display:block;overflow:hidden;">
@@ -453,7 +585,7 @@
           <span class="material-symbols-outlined">arrow_back</span>
         </button>
       </header>
-      <div class="item tile" data-size="medium" style="margin:var(--space-4) 0 0;">
+      <div class="item" data-size="medium" style="margin:var(--space-4) 0 0;">
         <figure class="item-avatar"></figure>
         <h3 class="item-name" style="font-weight:var(--font-weight-normal);">수줍이</h3>
       </div>
@@ -461,7 +593,7 @@
         <!-- <label class="textfield-label" for="" aria-hidden="true">댓글</label> -->
         <textarea
           class="textfield-input"
-          rows="4"
+          rows="3"
           name="comment"
           placeholder="무슨 생각을 하고 계신가요? feed와 comment에서 사용. textarea 컴포넌트 정의. 취소 버튼의 위치. toolbar."
           style="height:auto;"
@@ -921,7 +1053,6 @@
         <div class="checkbox">
           <input class="" type="checkbox" id="playlist" value="" aira-checked="mixed" aria-controls="1 2" />
           <label for="playlist" title="play list">재생 목록 1,</label>
-          <!-- <small>나만 보기</small> -->
         </div>
         <div class="checkbox">
           <input class="" type="checkbox" id="playlist2" value="" aira-checked="mixed" aria-controls="1 2" />

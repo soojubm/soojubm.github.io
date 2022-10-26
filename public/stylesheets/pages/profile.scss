@@ -86,7 +86,7 @@
 
 .profile-display {display:flex;margin:var(--space-3) 0;}
 .profile-display-title {margin:0 0 var(--space-1) 0;font-size:var(--font-size-caption);}
-.profile-display-button {@include avatar-medium;background:none;color:var(--color-text);}
+.profile-display-button {@include chip;background:none;}
 // .profile-display-button:hover {@include hover-item;}
 .profile-display-button.is-selected {background:var(--color-background-weak);}
 .profile-display-button i {vertical-align:middle;}
