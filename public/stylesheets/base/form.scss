@@ -86,7 +86,7 @@ input[type=checkbox]:checked + label + * {display:block;}
   &.menutype {
     border:0;box-shadow:none;padding:0;
     margin:var(--space-3) 0;
-    label {justify-content:flex-start;padding-left:0;}
+    label {justify-content:left;padding-left:0;}
     label:before {
       left:auto;right:0;
       width: var(--size-small);

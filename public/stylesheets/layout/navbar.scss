@@ -9,7 +9,7 @@
 .navbar-menu-item > span {display:block;margin-top:-.5rem;color:inherit;@include text-label;}
 .navbar-menu-item:before {display:none;}
 .navbar-menu-item i {display:none;margin-left:8px;}
-.navbar-menu-item menu {display:flex;justify-content:center;justify-content:flex-start;position:fixed;left:0;right:0;top:-240px;z-index:var(--zindex-menu);transition:var(--transition-base);}
+.navbar-menu-item menu {display:flex;justify-content:center;justify-content:left;position:fixed;left:0;right:0;top:-240px;z-index:var(--zindex-menu);transition:var(--transition-base);}
 .navbar-menu-item menu a {display:flex;align-items:center;margin:var(--space-2) 0;color:var(--color-text);opacity:0;position:relative;z-index:var(--zindex-default);}
 .navbar-menu-item menu a:hover {@include hover-item;}
 .navbar-menu-item menu a.is-current {@include hover-item;}
@@ -78,13 +78,13 @@
 .navbar-user-card {max-width:400px;height:0;@include tile-elevated;position:absolute;top:32px;right:0;z-index:var(--zindex-popover);transform:scale(0);}
 .is-active + .navbar-user-card {height:auto;transform:scale(1);}
 
-.user {display:block;color:var(--color-text);position:relative;@include clearfix;text-align:center;}
+.user {display:block;color:var(--color-text);position:relative;@include clearfix;}
 // .user:hover {@include hover-item;}
-.user-avatar {@include avatar-huge;float:none;margin:0 auto var(--space-2);background:url('/public/images/springsteen.jpg') no-repeat center;}
+.user-avatar {@include avatar-huge;float:none;margin:0 0 var(--space-2);background:url('/public/images/springsteen.jpg') no-repeat center;}
 .user-avatar-change {width:32px;height:32px;border-radius:var(--radius);position:absolute;right:-8px;bottom:-8px;}
-.user-name {margin:var(--space-leading-subhead) 0 0 0;@include text-subhead;text-align:center;}
-.user-id {margin:-.125rem 0 0 0;text-align:center;}
-.user-job {margin:var(--space-1) 0 0 0;text-align:center;color:var(--color-text-light);}
+.user-name {margin:var(--space-leading-subhead) 0 0 0;@include text-subhead;}
+.user-id {margin:-.125rem 0 0 0;}
+.user-job {margin:var(--space-1) 0 0 0;color:var(--color-text-light);}
 .user-email {line-height:var(--font-line-height-small);}
 
 .user-logout {display:flex;align-items:center;width:100%;margin:var(--space-after-item) 0;position:relative;}
@@ -112,15 +112,16 @@
 .is-sticky-navbar {padding-top:64px;}
 .is-sticky-navbar .navbar {background:var(--color-background);position:fixed;top:0;left:0;right:0;}
 
-.navbar-menu {display:block;max-width:var(--menu-width);margin-left:0;background:var(--color-background);border-right:var(--border);position:fixed;left:0px;right:0;top:calc(var(--navbar-height) + 2px);bottom:0px;transition:transform var(--duration-slowly) cubic-bezier(.165,.84,.44,1);transform:translateX(-100%);}
+.navbar-menu {display:block;max-width:var(--menu-width);margin-left:0;background:var(--color-background);position:fixed;left:0px;right:0;top:calc(var(--navbar-height) + 2px);bottom:0px;transition:transform var(--duration-slowly) cubic-bezier(.165,.84,.44,1);transform:translateX(-100%);}
 .navbar-menu-item {display:block;padding:var(--space-2) 2rem var(--space-2) var(--grid-margin);font-size:var(--font-size-subhead);}
 .navbar-menu-item menu {flex-wrap:wrap;position:static;left:auto;right:auto;top:auto;transition:none;}
 // .navbar-menu-item:hover menu {display:block;}
 .navbar-menu-item menu a {width:100%;height:var(--size-medium);font-size:var(--font-size-subhead);font-weight:var(--font-weight-bold);opacity:1;}
 
-.navbar-menu::-webkit-scrollbar {width:.5rem;height:auto;padding:.125rem;}
+.navbar-menu::-webkit-scrollbar {display:none;width:.5rem;height:auto;padding:.125rem;}
+.navbar-menu:hover::-webkit-scrollbar {display:block;}
 .navbar-menu::-webkit-scrollbar-track {background:inherit;}
-.navbar-menu::-webkit-scrollbar-thumb {margin:.125rem;background:var(--color-background-weak);border-radius:var(--radius);}
+.navbar-menu::-webkit-scrollbar-thumb {margin:.125rem;background:var(--color-background-strong);border-radius:var(--radius);}
 .navbar-menu::-webkit-scrollbar-button {display:none;background-color:inherit;}
 .navbar-menu::-webkit-scrollbar-corner {background-color:inherit;}
 

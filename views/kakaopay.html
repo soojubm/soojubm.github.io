@@ -96,10 +96,6 @@
 
     <section style="margin:3rem 0;position:relative;">
       <h2 class="text-subhead" style="margin:0 0 1.25rem 0;">혜택 유형</h2>
-      <!-- <div class="chip-group tile-elevated-small" role="group" style="justify-content:space-between;padding:.125rem;">
-            <div class="chip is-active" style="display:inline-flex;width:48.5%;"><span class="chip-label">온라인</span></div>
-            <div class="chip is-active" style="display:inline-flex;width:48.5%;"><span class="chip-label">오프라인</span></div>
-          </div> -->
       <div class="chip-group" role="group" data-align="bleed" style="margin-right:-1rem;">
         <button class="chip is-active"><span class="chip-label">전체</span></button>
         <button class="chip"><span class="chip-label">금융</span></button>
@@ -130,11 +126,11 @@
           </figure>
         </button>
         <button class="chip is-active">
-          <figure class="chip-icon"><span class="material-symbols-outlined">check</span></figure>
+          <figure class="chip-icon" style="background-color:inherit;"><span class="material-symbols-outlined">check</span></figure>
           <span class="chip-label" style="padding-left:0;">온라인</span>
         </button>
         <button class="chip is-active">
-          <figure class="chip-icon"><span class="material-symbols-outlined">check</span></figure>
+          <figure class="chip-icon" style="background-color:inherit;"><span class="material-symbols-outlined">check</span></figure>
           <span class="chip-label" style="padding-left:0;">오프라인</span>
         </button>
       </div>
@@ -211,31 +207,8 @@
         </figure>
       </div>
 
-      <div class="js-tab" style="display:flex;justify-content:space-between;align-items:center;margin:4rem 0 var(--space-3);">
-        <h2>전체</h2>
-        <nav class="" style="display:flex;">
-          <button style="display:flex;align-items:center;font-size:var(--font-size-caption);">
-            <figure style="margin:0 var(--space-2) 0 0;opacity:.5;"><span class="material-symbols-outlined">check</span></figure>
-            온라인
-          </button>
-          <button style="display:flex;align-items:center;margin:0 0 0 var(--space-4);font-size:var(--font-size-caption);">
-            <figure style="margin:0 var(--space-2) 0 0;opacity:.5;"><span class="material-symbols-outlined">check</span></figure>
-            오프라인
-          </button>
-          <!-- <i class="profile-tablist-indicator" style="width:50%;"></i> -->
-        </nav>
-      </div>
-
       <br />
 
-      <header class="titlebar js-titlebar" role="navigation" style="height:var(--navbar-height);padding:0;">
-        <div class="titlebar-background"></div>
-        <h1 class="titlebar-title" title="page title" style="font-weight:var(--font-weight-bold);font-size:16px;">테스트</h1>
-        <button class="titlebar-back" onclick="javascript:window.location.href='/';">
-          <figure class="titlebar-back-icon material-symbols-outlined">close</figure>
-          <!-- <span class="titlebar-back-label">뒤로</span> -->
-        </button>
-      </header>
       <div class="js-tab">
         <nav class="profile-tablist type-t" role="tablist" aria-label="sample tabs">
           <button
@@ -274,11 +247,6 @@
           <i class="profile-tablist-indicator" style="width:44px;border-color:var(--color-backgound-strong);"></i>
         </nav>
       </div>
-      <div class="chip-group" role="group" style="margin-top:var(--space-3);">
-        <button class="chip is-active"><span class="chip-label">전체</span></button>
-        <button class="chip"><span class="chip-label">금융</span></button>
-        <button class="chip"><span class="chip-label">쇼핑</span></button>
-      </div>
     </section>
 
     <section style="display:flex;margin:1rem -.5rem;">
@@ -294,37 +262,8 @@
         ></figure>
         <span class="person-name">name</span>
       </a>
-      <a class="" href="#" style="margin:0 .5rem;text-align:center;">
-        <figure
-          style="width:var(--size-large);height:var(--size-large);border-radius:var(--radius);border:var(--border);box-sizing:border-box;overflow:hidden;"
-        ></figure>
-        <span class="person-name">name</span>
-      </a>
-      <a class="" href="#" style="margin:0 .5rem;text-align:center;">
-        <figure
-          style="width:var(--size-large);height:var(--size-large);border-radius:var(--radius);border:var(--border);box-sizing:border-box;overflow:hidden;"
-        ></figure>
-        <span class="person-name">name</span>
-      </a>
     </section>
 
-    <div class="js-tab">
-      <nav class="profile-tablist type-sc" role="tablist" aria-label="sample tabs" style="max-width:11rem;margin:.5rem auto;">
-        <button class="profile-tablist-tab" role="tab" aria-selected="true" aria-controls="panel-1" id="tab-1" tabindex="0">
-          1회예약
-        </button>
-        <button class="profile-tablist-tab" role="tab" aria-selected="false" aria-controls="panel-2" id="tab-2" tabindex="-1">반복예약</button>
-        <i class="profile-tablist-indicator" style="width:50%;"></i>
-      </nav>
-    </div>
-    <button class="" title="" style="display:flex;align-items:center;margin-left:auto;">
-      <span class="button-elevated-label" style="margin-right:.5rem;">반복 예약</span>
-      <span class="switch" style="margin-left:auto;">
-        <input type="checkbox" id="temp123456" name="" role="switch" />
-        <label for="temp123456" style="padding-left:48px;"></label>
-      </span>
-    </button>
-
-    <!-- <p>예약송금 -> 복합명사가 어려움. 송금 예약(하기)</p> -->
+    <p>예약송금 -> 복합명사가 어려움... 예약을 송금하는 것이 아님. 송금예약(하기)</p>
   </div>
 </main>

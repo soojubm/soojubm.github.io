@@ -115,6 +115,7 @@ async function domEvents() {
   document.title = `이경수 ${hash}`
 
   const temps = [
+    'home',
     '',
     'messaging',
     'search',
@@ -132,16 +133,18 @@ async function domEvents() {
   if (!temps.includes(hash)) {
     initializeNavbar()
   }
-  // if (isHome) initializeNavbar()
+  const isHomePage = !hash
 
   navItemElements?.forEach(element => {
     element.classList.remove('is-current')
 
     const isCurrentPage = element.getAttribute('href')?.includes(hash)
-    const isHomePage = !hash
     if (!isCurrentPage || isHomePage) return
     element.classList.add('is-current')
   })
+
+  if (isHomePage) navItemElements[0].classList.add('is-current')
+
   // todo
   const mediaSize760 = window.matchMedia('(max-width: 1080px)')
   const changeMedia = function(e) {

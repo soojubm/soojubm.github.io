@@ -81,7 +81,7 @@
 }
 @mixin group-bleeding {
   display:flex; // 중복
-  flex-wrap: unset; // todo..
+  flex-wrap: nowrap;
   white-space:nowrap;
   overflow:auto;
   // margin: var(--space-1-minus) var(--space-3-minus);

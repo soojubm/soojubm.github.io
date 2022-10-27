@@ -17,10 +17,12 @@
   </div> -->
 
   <header class="design-head">
-    <div class="obbbb" style="width:var(--size-small);background:crimson;height:var(--size-small);margin-bottom:1rem;border-radius:var(--radius);">
+    <div
+      class="obbbb"
+      style="width:var(--size-small);background:var(--color-primary);height:var(--size-small);margin-bottom:1rem;border-radius:var(--radius);"
+    >
       <img src="" alt="" />
     </div>
-    <!-- <span class="tag">디자인 시스템</span> -->
     <h1 class="" title="overall consistency and design and development efficiency">To simplify is to clarify<i style="font-style:italic;">.</i></h1>
     <p class="hero-description" style="font-size:var(--font-size-subhead);">
       라이브 중인 서비스의 디자인 시스템이 아니기 때문에
@@ -44,42 +46,21 @@
       <div class="circle" style="width:2rem;height:2rem;background:gold;border-radius:50%;position:absolute;right:25rem;top:14rem;"></div>
     </div> -->
 
-    <!-- <section class="design-principle feature" style="padding:0;">
-      <header class="feature-head"></header>
-      <div class="design-guide-item feature-item">
-        <figure class="feature-item-avatar">🐏</figure>
-        <h3 class="feature-item-title" data-temp=" minimum viable experience">Progressive enhancement</h3>
-        <p class="feature-item-description">
-          시각 언어를 확장해가며 디자인 디테일을 높이고 코드 환경에서 유효한 개발 효율을 높이는 최적의 사례를 찾고 있습니다.제품으로서의 디자인 시스템
-          문서.
-        </p>
-      </div>
-      <div class="design-guide-item feature-item">
-        <figure class="feature-item-avatar">🐏</figure>
-        <h3 class="feature-item-title">Clear visual cue</h3>
-        <p class="feature-item-description">예측 가능하고 일관된 사용자 경험. ux 부채 기술 부채 최소화</p>
-      </div>
-    </section> -->
-
     <!-- Feature project collaborators to build your community. -->
     <!-- https://www.w3.org/WAI/standards-guidelines/wcag/ -->
     <!-- <span>functional vs decorative</span>
+
     <span>문자열의 형식으로 날짜를 표현할 수 있다면 장식을 위한 아이콘은 불필요</span>
     <span>아이콘과 일러스트레이션을 구분</span>
     <span>1px의 선은 특정 화면에서 잘 보이지 않을 수 있음. 마찬가지로 적당한 속공간 배분.</span>
-    <span>on/off. on 상태를 위해 filled 아이콘을 사용하는 것은 리소스 낭비라는 생각. 배경색이나 indicator를..</span>
-    <span>switch에서도 on/off 상태를 나타내는 아이콘을 추가하는 게 접근성에 좋을 수 잇다.</span>
+    <span>on/off. on 상태를 위해 filled 아이콘을 사용하는 것은 리소스 낭비라는 생각. 배경색이나 indicator를.. + svg 색상 변경이 쉬워짐.</span>
+    <span>switch에서도 on/off 상태를 나타내는 힌트.</span>
     -->
 
     <!-- <p>https://w3c.github.io/wcag/understanding/target-size-minimum.html / 24px 이상 desktop</p> -->
 
     <!-- <p>아이콘을 텍스트 레이블과 함께 사용할 경우 alt 속성으로 레이블이 두 번 읽히지 않도록</p>
-    <a href="/" aria-label="labelll">
-
     <p>Using the same icon for the same concept and only for this one concept is important as well.</p>
-
-    <p>적록색맹을 위해 색상만으로 성공/실패 등의 상태를 표현하지 맙시다. + 아이콘 Showing state with icons</p>
-    
     <p>Use background shapes, changing shapes or indicators like dots to show active state.</p>
     <p>
       Custom states like “downloaded” or “playing” can be indicated by adding icons.
@@ -94,19 +75,13 @@
     Try to follow UI conventions for colors -->
     <!-- Specify Words You Like -->
 
-    <!-- 
-      <p>디자인 시스템이 비즈니스 로직, 도메인별 스타일 또는 기타 복잡한 UI 요소를 배포하기 위한 것이 아니기 때문에
-      필요한 정보를 찾지 못할 수 있다. 문의
-    </p>
-    <p>모든 플랫폼에서 일관된 브랜드 이미지를 유지하려면
-    모든 팀(디자인, 마케팅 및 개발)이 스타일 가이드를 잘 알고 있어야 합니다. </p> -->
-    <!-- 사용자 그룹tow user groups : 팀team / 제품 사용자product users -->
-    <!-- save time / build more consistent products -->
-
-    <!-- <p>single source of truth는 디자인 툴이 아닌.</p> -->
+    <!--
+      모든 플랫폼에서 일관된 브랜드 이미지를 유지하려면 모든 팀(디자인, 마케팅 및 개발)이 스타일 가이드를 잘 알고 있어야 합니다.
+      디자인 시스템이 비즈니스 로직, 도메인별 스타일 또는 기타 복잡한 UI 요소를 배포하기 위한 것이 아니기 때문에 필요한 정보를 찾지 못할 수 있다. 문의
+      사용자 그룹tow user groups : 팀team / 제품 사용자product users
+      save time / build more consistent products
+     -->
   </header>
-
-  <hr style="margin:2rem 0;" />
 
   <section class="feature" style="justify-content:left;margin:-1rem;padding:2rem var(--grid-margin) 0;margin-top:-3rem;">
     <!-- <header class="feature-head" style="text-align:center;">
@@ -122,14 +97,23 @@
     </div>
     <div class="design-guide-item feature-item" style="margin:1rem;">
       <figure class="feature-item-avatar">🐏</figure>
+      <h3 class="feature-item-title">Single source of truth</h3>
+      <p class="feature-item-description">디자인 툴이 SSOT가 되어서는 안 됩니다. (작성 중)</p>
+    </div>
+    <div class="design-guide-item feature-item" style="margin:1rem;">
+      <figure class="feature-item-avatar">🐏</figure>
       <h3 class="feature-item-title">Visual cue</h3>
       <p class="feature-item-description">예측 가능하고 일관된 기표로 행동을 유도하여 UX 부채와 기술 부채를 최소화합니다.</p>
     </div>
   </section>
 
   <section class="design-guide" style="margin:8rem var(--grid-margin);">
+    <div
+      class="obbbb"
+      style="width:var(--size-tiny);background:var(--color-primary);height:var(--size-tiny);margin-bottom:1rem;border-radius:var(--radius);"
+    ></div>
     <h2 class="post-relation-title">가이드 작성을 위한 가이드</h2>
-    <p class="post-relation-description" style="margin-bottom:3rem;">디자인 시스템 문서<br />작성</p>
+    <p class="post-relation-description" style="margin-bottom:3rem;">디자인 시스템 문서 작성</p>
     <div style="display:flex;margin:0 -.375rem;">
       <div class="tile-elevated" style="width:240px;margin:0 .375rem;padding:1rem;box-shadow:none;border:0;background:var(--green100);">
         <b style="display:block;margin:0 0 .25rem 0;line-height:var(--font-line-height-small);">내용의 간결</b>
@@ -160,6 +144,10 @@
   </section> -->
 
   <section class="post-relation" style="padding:0 var(--grid-margin);">
+    <div
+      class="obbbb"
+      style="width:var(--size-tiny);background:var(--color-primary);height:var(--size-tiny);margin-bottom:1rem;border-radius:var(--radius);"
+    ></div>
     <h2 class="post-relation-title" title="이 콘텐츠를 본 사람들은">인터페이스 이야기</h2>
     <p class="post-relation-description">글쓰기를 위한<br />주제 선정.</p>
 
@@ -202,6 +190,7 @@
         <li>포괄적이고 윤리적인 아이콘을 사용하기. 성중립 또는 다중성별</li>
         <li>다양한 리액션. 부정적인 리액션을 유도하지 않도록. (유튜브 싫어요 수치 숨겨진 것 참고)</li>
         <li>불필요한 영어 표현 최소화.</li>
+        <li>성공/실패 등의 상태 정보를 색상만으로 표현하지 마세요.</li>
       </ul>
     </span>
     <!-- <a class="postitem" href="/" onclick="javascript:alert('샘플 유아이입니다.')">

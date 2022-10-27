@@ -20,10 +20,17 @@
   margin: var(--space-2) 0;
   padding: var(--space-2);
 }
+@mixin tile-flat-tiny {
+  @include tile;
+  // margin: var(--space-1) 0;
+  padding: var(--space-1);
+}
 @mixin tile-elevated {@include tile-flat;box-shadow:var(--shadow);}
 @mixin tile-elevated-small {@include tile-flat-small;box-shadow:var(--shadow);}
+@mixin tile-elevated-tiny {@include tile-flat-tiny;box-shadow:var(--shadow);}
 
 .tile-flat {@include tile-flat;}
 .tile-flat-small {@include tile-flat-small;}
 .tile-elevated {@include tile-elevated;}
 .tile-elevated-small {@include tile-elevated-small;}
+.tile-elevated-tiny {@include tile-elevated-tiny;}

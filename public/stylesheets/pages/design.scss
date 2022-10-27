@@ -148,7 +148,7 @@
 .payment-method-list {display:flex;margin:var(--space-1) 0 0 0;position:relative;}
 .payment-method-item {
   @include tile-elevated-small;
-  margin:0 var(--space-after-item) 0 0;
+  margin:0 .5rem 0 0;
   padding-bottom:.5rem;
   font-size:var(--font-size-caption);
   figure {
@@ -172,7 +172,7 @@
 .design-categories {margin:4rem var(--grid-margin);}
 .design-categories h2 {@include text-title;}
 
-.design-bookmarks {display:flex;flex-wrap:wrap;margin:8rem var(--grid-margin);padding:2rem;border-radius:var(--radius);background:linear-gradient(180deg,#155799,#159957);font-size:var(--font-size-large);}
+.design-bookmarks {display:flex;flex-wrap:wrap;margin:8rem var(--grid-margin);padding:var(--space-4);border-radius:var(--radius);background:linear-gradient(180deg,#155799,#159957);font-size:var(--font-size-large);}
 .design-bookmarks h2 {margin:0 var(--space-2) 0 0;color:var(--color-text);}
 .design-bookmarks a {display:block;margin:0 var(--space-2);@include link-outside;font-weight:var(--font-weight-bold);color:#fff;}
 

@@ -7,7 +7,7 @@
 .profile-user-avatar {float:right;@include avatar-huge;background-image:url('/public/images/springsteen.jpg');background-size:contain;}
 .profile-user-name {@include text-subhead;}
 .profile-user-id {display:block;line-height:var(--font-line-height-small);}
-.profile-user-job {display:block;margin:var(--space-1) 0 0;color:var(--color-text-light);}
+.profile-user-job {display:block;color:var(--color-text-light);}
 
 .profile-user-description {max-height:5.4em;margin:1.25rem 0;white-space:normal;overflow:hidden;text-overflow:ellipsis;word-wrap:break-word;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;position:relative;}
 .profile-user-description-more {margin:0 var(--space-2);@include link-outside;}
@@ -53,11 +53,11 @@
 // 아이템의 크기에 따라 텍스트 갯수와 스타일이 달라짐.
 
 // todo...
-.profile-foot-follow {@include button-primary;width:50%;margin:0 auto;display:block;}
+.profile-foot-follow {@include button-primary;width:50%;}
 .profile-body {margin:-1.5rem 0 0 0;padding:0 0 64px calc(320px + var(--size-large));box-sizing:border-box;position:relative;}
 
-[role=tablist] {@include tile-elevated-small;margin-top:0;display:flex;padding:.25rem !important;}
-.profile-tablist {}
+[role=tablist] {@include tile-elevated-tiny;}
+.profile-tablist {display:flex;border-bottom:0;border-bottom-left-radius:0;border-bottom-right-radius:0;}
 .profile-tablist-tab {display:flex;align-items:center;justify-content:center;flex:auto;height:var(--size-medium);padding:1px var(--space-4) var(--adjust-label-line);color:var(--color-text-light);position:relative;z-index:var(--zindex-default);}
 .profile-tablist-tab[aria-selected=true] {color:var(--color-text-weak);}
 // .profile-tablist-tab[aria-selected=true]:before {content:'✓';margin:0 var(--space-2) 0 0;}
@@ -65,6 +65,14 @@
 .profile-tablist-tab-badge {margin:0 0 0 var(--space-2);}
 .profile-tablist-indicator {display:block;height:calc(100% - .5rem);background:var(--color-background-strong);border-color:var(--color-background-strong);border-radius:var(--radius);position:absolute;transition:all var(--duration);}
 // .profile-tablist-tab:nth-child(1)[aria-selected=true] ~ .profile-tablist-indicator {transform: translateX(clac(70px * 1))}
+
+
+.profile-display {display:flex;@include tile-elevated-tiny;margin:0 0 var(--space-3) 0;border-top:0;border-top-left-radius:0;border-top-right-radius:0;}
+.profile-display-title {margin:0 0 var(--space-1) 0;font-size:var(--font-size-caption);}
+.profile-display-button {@include chip;background:none;}
+// .profile-display-button:hover {@include hover-item;}
+.profile-display-button.is-selected {background:var(--color-background-weak);}
+.profile-display-button i {vertical-align:middle;}
 
 .follow-tablist {margin-bottom:var(--space-3);z-index:7;}
 
@@ -83,13 +91,6 @@
 // todo margin var(--space-3)
 .profile-tabpanel .card {width:calc(33.3333% - .75rem);margin:0 calc(.75rem / 2) .75rem;}
 
-
-.profile-display {display:flex;margin:var(--space-3) 0;}
-.profile-display-title {margin:0 0 var(--space-1) 0;font-size:var(--font-size-caption);}
-.profile-display-button {@include chip;background:none;}
-// .profile-display-button:hover {@include hover-item;}
-.profile-display-button.is-selected {background:var(--color-background-weak);}
-.profile-display-button i {vertical-align:middle;}
 
 
 .card {
