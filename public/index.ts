@@ -116,6 +116,7 @@ async function domEvents() {
 
   const temps = [
     'home',
+    'entity',
     '',
     'messaging',
     'search',

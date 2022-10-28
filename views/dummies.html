@@ -43,19 +43,7 @@
   <input id="startTime" type="text" aria-errormessage="msgID" aria-invalid="true" value="11:30 PM" />
   <span id="msgID" aria-live="assertive" style="visibility:visible"> Invalid time: the time must be between 9:00 AM and 5:00 PM" </span> -->
 
-  <article class="item" data-size="huge" style="height:var(--size-huge);margin:2rem var(--grid-margin);">
-    <figure
-      class="item-avatar"
-      style="font-size:var(--font-size-title);font-weight:var(--font-weight-bold);background:none;border:var(--border);"
-    >
-      #
-    </figure>
-    <h3 class="item-name" style="padding-top:.75rem;">windows-emoji</h3>
-    <p class="item-description">tag page head</p>
-    <!-- <button class="item-action"><span class="item-action-label">팔로우</span></button> -->
-  </article>
-
-  <section class="hero" role="banner" style="padding-top:0;">
+  <section class="hero" role="banner">
     <div class="hero-background"></div>
     <h1 class="hero-title">Hero Component의 Heading은 <span class="linebreak-desktop">최대 두 줄로 작성합니다.</span></h1>
     <p class="hero-description">히어로 섹션의 샘플. e.detail.originalEvent</p>
@@ -155,7 +143,7 @@
           <span class="button-elevated-label">사용자 및 그룹 추가</span>
         </button>
         <!-- <p style="margin:1rem 0 .25rem;font-size:var(--font-size-body);">액세스 권한이 있는 사용자</p> -->
-        <div class="item" data-size="medium" style="display:flex;align-items:center;margin-top:0;margin-bottom:.75rem;">
+        <div class="item" data-size="medium" role="menuitem">
           <figure class="item-avatar"></figure>
           <h3 class="item-name" style="font-weight:var(--font-weight-normal);">수줍이 (나)</h3>
           <span class="tag" style="margin-left:auto;">소유자</span>
@@ -262,15 +250,12 @@
         </div>
       </article>
 
-      <div class="setting-item tt" style="width:200px;border:0;">
-        <div class="item" data-size="small" role="menuitem">
-          <!-- <div class="item-avatar"></div> -->
-          <span style="display:block;padding-top:1px;line-height:24px;">레이블</span>
-          <input type="checkbox" id="abcde" style="opacity: 0;" />
-          <label class="switch-bar" for="abcde" style="margin-left:auto;">
-            <div class="switch-thumb"></div>
-          </label>
-        </div>
+      <div class="item" data-size="small" role="menuitem" style="width:200px;border:0;">
+        <span style="display:block;padding-top:1px;line-height:24px;">레이블</span>
+        <input type="checkbox" id="abcde" style="opacity: 0;" />
+        <label class="switch-bar" for="abcde" style="margin-left:auto;">
+          <div class="switch-thumb"></div>
+        </label>
       </div>
 
       <style>
