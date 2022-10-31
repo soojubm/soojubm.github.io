@@ -541,3 +541,13 @@
     transform: translate(0, 60vh);
   }
 }
+
+
+.guide-wrap {display:flex;margin:-.375rem;}
+.guide-box {width:240px;margin:.375rem;padding:1rem;border-radius:var(--radius);}
+.guide-title {display:block;margin:0 0 .25rem 0;line-height:var(--font-line-height-small);}
+
+@media (--small) {
+  .guide-wrap {display:block;}
+  .guide-box {width:auto;}
+}

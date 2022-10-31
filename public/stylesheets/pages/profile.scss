@@ -57,8 +57,8 @@
 .profile-foot-follow {@include button-primary;width:50%;}
 .profile-body {margin:-1.5rem 0 0 0;padding:0 0 64px calc(320px + var(--size-large));box-sizing:border-box;position:relative;}
 
-[role=tablist] {@include tile-elevated-tiny;}
-.profile-tablist {display:flex;border-bottom:0;border-bottom-left-radius:0;border-bottom-right-radius:0;}
+[role=tablist] {@include tile-elevated-tiny;display:flex;}
+.profile-tablist {border-bottom:0;border-bottom-left-radius:0;border-bottom-right-radius:0;}
 .profile-tablist-tab {display:flex;align-items:center;justify-content:center;flex:auto;height:var(--size-medium);padding:1px var(--space-4) var(--adjust-label-line);color:var(--color-text-light);position:relative;z-index:var(--zindex-default);}
 .profile-tablist-tab[aria-selected=true] {color:var(--color-text-weak);}
 // .profile-tablist-tab[aria-selected=true]:before {content:'✓';margin:0 var(--space-2) 0 0;}

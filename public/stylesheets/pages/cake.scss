@@ -41,12 +41,12 @@
 .person:hover {@include hover-item;}
 .person figure {@include avatar-huge;}
 .person figure img {height: 100%;object-fit: cover;}
-.person-name {display:block;margin:.5rem 0 0 0;color:var(--color-text);line-height:var(--font-line-height-small);}
+.person-name {display:block;margin:.375rem 0 0 0;color:var(--color-text);line-height:var(--font-line-height-small);}
 .person-test {
   @include tag-primary;
   position: absolute;
-  left: .5rem;
-  top: .5rem;
+  left: .25rem;
+  top: .25rem;
   z-index: 1;
 }
 .person-viewall {min-width:100px;padding-top:2.5rem;display:flex;flex-wrap:wrap;justify-content:center;position:relative;}
