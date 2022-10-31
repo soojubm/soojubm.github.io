@@ -115,6 +115,7 @@ async function domEvents() {
   document.title = `이경수 ${hash}`
 
   const temps = [
+    'dictionary',
     'home',
     'entity',
     '',

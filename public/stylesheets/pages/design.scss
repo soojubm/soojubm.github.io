@@ -224,7 +224,7 @@
 .postitem:hover {@include hover-item;}
 .postitem-cover {display:none;width:8rem;height:1rem;margin:0 0 var(--space-2) 0;background:var(--color-newneek);border-radius:var(--radius);}
 .postitem-name {@include text-title;}
-.postitem-description {margin:var(--space-2) 0 1rem 0;}
+.postitem-description {margin:var(--space-3) 0 1rem 0;}
 
 
 
