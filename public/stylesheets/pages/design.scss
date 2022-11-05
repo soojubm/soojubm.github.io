@@ -126,26 +126,7 @@
 .avatargroup figure + figure {margin-left:-.5rem;}
 .avatargroup-label {margin:0 0 0 var(--space-2);line-height:var(--size-small);}
 
-.temp8 {display:flex;margin:var(--space-1) 0 0 0;position:relative;}
-.temp8 > * {
-  @include tile-elevated-small;
-  margin-right: var(--space-3);
-  font-size:var(--font-size-caption);
-}
-.temp8 > *:hover{@include hover-item;}
-.temp8 > * figure {
-  @include avatar-huge;
-  margin: 0 0 .25rem 0;
-  background:indianred;
-  font-size:var(--font-size-huge);
-}
-.temp8 > * span {
-  display: block;
-  color:var(--color-text);
-  line-height: var(--font-line-height-small);
-}
-
-.payment-method-list {display:flex;margin:var(--space-1) 0 0 0;position:relative;}
+.payment-method-list {display:flex;position:relative;}
 .payment-method-item {
   @include tile-elevated-small;
   margin:0 .5rem 0 0;
@@ -159,10 +140,10 @@
   span {display:block;margin:.125rem 0 -.125rem;text-align:center;font-size:var(--font-size-body);}
 }
 
-.accordion {@include tile-elevated;padding:var(--space-4);}
+.accordion {@include tile-elevated;padding:1rem var(--space-4);}
 .accordion:hover {@include hover-item;}
-.accordion-title {display:flex;align-items:center;justify-content:space-between;@include text-subhead;line-height:24px;}
-.accordion-title-icon {@include icon-button-small;}
+.accordion-title {display:flex;align-items:center;justify-content:space-between;@include text-body;font-weight:var(--font-weight-bold);line-height:24px;}
+.accordion-title-icon {@include icon-indicator;margin:1px 0 0 0;}
 .accordion-panel {display:none;cursor:default;}
 .accordion-panel p + p {margin:var(--space-4) 0 0 0;}
 .is-active .accordion-panel {display:block;padding:var(--space-3) 0;}
@@ -370,7 +351,7 @@
 
 
 .event-header {
-  padding: 8rem 5% 10rem;
+  padding: 6rem var(--grid-margin) 8rem;
   overflow: hidden;
   background: var(--color-accent);
   text-align: center;
@@ -485,12 +466,10 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  padding: 1rem;
-  border-radius: var(--radius);
+  @include button-primary;
+  height: 56px;
   box-shadow: var(--shadow);
-  background: var(--color-primary);
   font-size: var(--font-size-subhead);
-  color: #fff;
 }
 
 @keyframes falling {
@@ -544,10 +523,18 @@
 
 
 .guide-wrap {display:flex;margin:-.375rem;}
-.guide-box {width:240px;margin:.375rem;padding:1rem;border-radius:var(--radius);}
-.guide-title {display:block;margin:0 0 .25rem 0;line-height:var(--font-line-height-small);}
+.guide-box {width:240px;margin:.375rem;padding:1rem;border-radius:var(--radius);color:var(--gray800);}
+.guide-title {display:block;margin:0 0 .25rem 0;line-height:var(--font-line-height-small);color:inherit;}
+.guide-box p {color:inherit;}
 
 @media (--small) {
   .guide-wrap {display:block;}
   .guide-box {width:auto;}
 }
+
+.design-foundations {padding:0 var(--grid-margin);}
+.foundation-item {@include tile-elevated;max-width:300px;}
+.foundation-item h2 {@include text-subhead;text-align:center;}
+.foundation-item figure {@include tile-flat-small;background:crimson;height:200px;}
+.foundation-item span {font-size:var(--font-size-caption);text-transform:capitalize;}
+.foundation-item time {float:right;font-size:var(--font-size-caption);}

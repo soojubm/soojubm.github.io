@@ -79,15 +79,17 @@ button {@include reset-button;}
 @mixin icon-button {@include avatar-medium;}
 @mixin icon-button-small {
   @include avatar-small;
+  
   span {font-size:20px;}
 }
+@mixin icon-indicator {@include icon-button-small;margin:0 0 0 var(--space-2);}
 
 .icon-button[data-size=medium] {@include icon-button;}
 .icon-button[data-size=small] {@include icon-button-small;}
 .icon-button.is-positive {background:var(--green100);color:var(--green800);}
 .icon-button.is-negative {background:var(--red100);color:var(--red800);}
 
-.icon-indicator {@include icon-button-small;margin:0 0 0 var(--space-2);}
+.icon-indicator {@include icon-indicator;}
 
 // ! backButton closeButton :: back close 아이콘은 어차피 단독으로 쓰이지 않는다!
 // ! 모바일에서 100%로 되는 컴포넌트가 있고 아닌 컴포넌트가 있다.

@@ -34,19 +34,6 @@ function validateForm(inputProps) {
 
   return verifyInputName[inputName](inputProps)
 }
-
-// function manipulateValidationMsg(validationData) {
-//   const { inputProps, action } = validationData;
-//   const elementValidationMsg = inputProps.nextElementSibling;
-//   const validationMsgClasses = elementValidationMsg.classList;
-//   const removeClass = () =>
-//       validationMsgClasses.remove('hide')
-
-//   const addClass = () =>
-//       validationMsgClasses.add('hide')
-
-//   return action === 'hide' ? addClass() : removeClass();
-
 /**
  * Create an intersection observer
  * @param  {Node}     elem     The element to observe
@@ -133,18 +120,6 @@ class scrollbox {
     return this.scrollBarWidth
   }
 }
-
-let scrollbox = new TempScrollBox()
-console.log(scrollbox.width) //-> 17 (Windows, Chrome)
-
-// var scrollDiv = document.createElement("div");
-// scrollDiv.className = "scrollbar-measure";
-// document.body.appendChild(scrollDiv);
-
-// var scrollbarWidth = scrollDiv.offsetWidth - scrollDiv.clientWidth;
-// console.warn(scrollbarWidth); // Mac:  15
-
-// document.body.removeChild(scrollDiv);
 
 // function insertCallback(parent, funcname, callback, ...args) {
 //   let oldFunc = parent[funcname] ? parent[funcname] : function() { }

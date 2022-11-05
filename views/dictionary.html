@@ -15,6 +15,16 @@
     <b>선택</b>
     <span>choice VS select</span>
   </div>
+
+  <div class="dictoinary-item">
+    <span>cancel과 delete, remove를 구분</span>
+  </div>
+  <div class="dictoinary-item">
+    <span><i></i></span> leading/tailing vs prefix/surfix
+  </div>
+  <p>
+    <span><i></i></span>
+  </p>
   <div class="dictoinary-item">
     <b>목록</b>
     <span>List</span>
@@ -24,6 +34,9 @@
   </div>
   <div class="dictoinary-item">
     <b>더보기 -- 간단히보기</b>
+  </div>
+  <div class="dictoinary-item">
+    저장 vs 등록
   </div>
   <hr />
   <div class="dictoinary-item"><b>큰 화면은 주로(주로라는 것은 모호한 용어라서 수정하기),</b> <b>PC 또는 태블릿</b></div>
@@ -49,54 +62,39 @@
 
   <hr />
 
-    <article class="article js-scrollspy-section">
-      <h1 class="article-title">Naming</h1>
-      <div class="article-description">
-        <p>
-          <span><i></i></span> 역할에 근거합니다. 역할 기반의 네이밍. 여러 개의 tag를 감싸는 부모 태그는 tag group이 tags보다 좋고, tag list보다
-          좋습니다.
-        </p>
-        <p>
-          <span><i></i></span> leading/tailing vs prefix/surfix
-        </p>
-        <p>
-          <span><i></i></span> cancel vs delete
-        </p>
-        <p>
-          <span><i></i></span> 저장 vs 등록
-        </p>
-        <p>
-          <span><i></i></span> 모달, 토스트는 컴포넌트가 아님. 기능에 가까움. alert toast, dialog modal
-        </p>
+  <article class="article js-scrollspy-section">
+    <p>
+      역할에 근거합니다. 역할 기반의 네이밍. 여러 개의 tag를 감싸는 부모 태그는 tag group이 tags보다 좋고, tag list보다 좋습니다.
+    </p>
+    <p>
+      <span><i></i></span> 모달, 토스트는 컴포넌트가 아님. 기능에 가까움. alert toast, dialog modal
+    </p>
+    <p>
+      <span><i></i></span> 컴포넌트, 클래스 네이밍에 방향(left, right)을 사용하지 마세요. 레이아웃은 변경되기 쉽습니다.
+    </p>
+    <p>21-07-28 chip-label 엘리먼트 항상 사용. space-chip-inset 레이블에 패딩을 주면 아이콘 컨트롤이 쉬워짐.</p>
+  </article>
 
-        <p>
-          <span><i></i></span> 컴포넌트, 클래스 네이밍에 방향(left, right)을 사용하지 마세요. 레이아웃은 변동 가능성이 큽니다.
-        </p>
+  <article class="article js-scrollspy-section">
+    <h1 class="article-title">Javascript</h1>
+    <div class="article-description">
+      <p>
+        <span><i></i></span> early return. 네스팅 최소화
+      </p>
+      <p>
+        <span><i></i></span> isTrue. boolean.
+      </p>
+    </div>
+  </article>
 
-        <p>21-07-28 chip-label 엘리먼트 항상 사용. space-chip-inset 레이블에 패딩을 주면 아이콘 컨트롤이 쉬워짐.</p>
-      </div>
-    </article>
-
-    <article class="article js-scrollspy-section">
-      <h1 class="article-title">Javascript</h1>
-      <div class="article-description">
-        <p>
-          <span><i></i></span> early return. 네스팅 최소화
-        </p>
-        <p>
-          <span><i></i></span> isTrue. boolean.
-        </p>
-      </div>
-    </article>
-
-    <article class="article js-scrollspy-section">
-      <h1 class="article-title">React</h1>
-      <div class="article-description">
-        <p>
-          <span><i></i></span> event handler naming
-        </p>
-      </div>
-    </article>
+  <article class="article js-scrollspy-section">
+    <h1 class="article-title">React</h1>
+    <div class="article-description">
+      <p>
+        <span><i></i></span> event handler naming
+      </p>
+    </div>
+  </article>
 
   <!-- <div class="dictoinary-item">
     <p>naming: appearance | theme => style (andriod 코드, iOS 가이드 참고)</p>
@@ -126,4 +124,16 @@
       <span class="chip"><spanc class="chip-label">#네비게이션</spanc></span>
     </div>
   </section> -->
+
+  <p>
+    The goal isn't "all or nothing"; every improvement you can make will help the cause of accessibility. Using clear language The language you use
+    can also affect accessibility. In general, you should use clear language that is not overly complex and doesn't use unnecessary jargon or slang
+    terms. This not only benefits people with cognitive or other disabilities; it benefits readers for whom the text is not written in their first
+    language, younger people…, everyone, in fact! Apart from this, you should try to avoid using language and characters that don't get read out
+    clearly by the screen reader. For example: Don't use dashes if you can avoid it. Instead of writing 5–7, write 5 to 7. Expand abbreviations —
+    instead of writing Jan, write January. Expand acronyms, at least once or twice, then use the tag to describe them.
+  </p>
+  <img src="dinosaur.png" aria-labelledby="dino-label" />
+
+  <p id="dino-label">The Mozilla red Tyrannosaurus…</p>
 </main>

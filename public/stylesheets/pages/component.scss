@@ -9,7 +9,7 @@
 .component-example > .tile-elevated,
 .component-example > .tile-flat-small {width:100%;max-width:640px;border:none;}
 
-.component-navigation {background:var(--color-background);overflow:hidden;position:sticky;top:calc(var(--titlebar-height));z-index:7;}
+.component-navigation {background:var(--color-background);overflow:hidden;position:sticky;top:calc(var(--navbar-height));z-index:7;}
 .component-navigation-scroll {margin:-.25rem;padding:var(--space-3) var(--grid-margin) !important;}
 
 

@@ -6,14 +6,28 @@ type Parameter = {
 // useSelection
 // useForm
 
+class Checkbox {
+  checkAllElement: HTMLInputElement | null
+  constructor() {
+    this.checkAllElement = null
+  }
+
+  get isCheckedAll() {
+    return false
+  }
+  get isCheckedSome() {
+    return false
+  }
+}
+
 function checkbox({ checkAllSelector, checkSelector }: Parameter) {
   const checkAllElement = document.querySelector<HTMLInputElement>(checkAllSelector)
   const checkElements = document.querySelectorAll<HTMLInputElement>(checkSelector)
   if (!checkAllElement || !checkElements) return
 
   checkAllElement.addEventListener('change', () => checkAll(checkElements, checkAllElement))
-  checkElements.forEach(checkItem => {
-    checkItem.addEventListener('change', () => checkTarget(checkElements, checkAllElement))
+  checkElements.forEach(checkElement => {
+    checkElement.addEventListener('change', () => checkTarget(checkElements, checkAllElement))
   })
 }
 

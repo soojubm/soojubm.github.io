@@ -24,8 +24,8 @@
   }
 
 	.landing-hero {max-width:1080px;margin:0 auto;background:antiquewhite;padding-top:5em;padding-bottom:8rem;text-align:left;}
-	.landing-hero-object1 {width:300px;height:400px;top:75%;}
-	.landing-hero-object2 {right:260px;top:80%;}
+	.landing-hero-object1 {display:none;width:300px;height:400px;top:75%;}
+	.landing-hero-object2 {display:none;right:260px;top:80%;}
 
   .landing-2-figure {float:none;max-width:100%;margin:0 0 2rem 0;}
 }

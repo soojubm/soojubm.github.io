@@ -11,6 +11,8 @@ type Parameters = {
   isPassed: boolean
 }
 
+// ! targetElement, position, bodyclassName을 받는 게 맞음...
+
 const positionSticky = ({ selector, addClass, isPassed }: Parameters) => {
   const element = document.querySelector<HTMLElement>(selector)
   if (!element) return

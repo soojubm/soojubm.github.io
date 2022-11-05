@@ -9,7 +9,8 @@ iframe,img,video {width:100%;display:block;} /*img {vertical-align:middle;}*/
 strong,b,th,legend {font-weight:var(--font-weight-bold);}
 cite,i,address,em,dfn {font-style:normal;} em {color:var(--color-primary);}
 small {font-size:var(--font-size-caption);} abbr,ins {text-decoration:none;} del {color:var(--color-text-light);}
-a {text-decoration:none;text-decoration-skip-ink:auto;color:var(--color-primary);} a:link,a:visited {} a:hover,a:focus {} a:active {}
+a {text-decoration:none;text-decoration-skip-ink:auto;color:var(--color-primary);}
+a:link,a:visited {} a:hover,a:focus {} a:active {}
 mark {color:inherit;} mark::before {content: " [강조 시작] ";opacity:0;position:absolute;} mark::after {content: " [강조 끝] ";opacity:0;position:absolute;}
 // thin solid
 hr {margin:var(--space-4) 0;border-top:1px solid var(--gray200);position:relative;}
@@ -45,6 +46,28 @@ table tbody tr:hover {}
 table .right {text-align:right;}
 table tbody[role=rowgroup] tr th {width:25%;}
 table tbody[role=rowgroup] tr th + th {width:auto;} // todo
+
+
+
+// table {
+//   border-collapse: collapse;
+// }
+// th,
+// td {
+//   padding: 10px;
+// }
+
+// th[scope='col'] {
+//   background: #ccc;
+// }
+
+// tr:nth-child(even) {
+//   background: #eee;
+// }
+
+// tr:nth-child(odd) {
+//   background: #ddd;
+// }
 
 // table.is-borderless tbody tr {border:0;}
 ul {padding-left:var(--space-4);}

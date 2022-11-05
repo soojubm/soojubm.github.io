@@ -65,13 +65,6 @@ export function validatePassword(value: string) {
   return ''
 }
 
-
-
-
-
-
-
-
 // 일단 함수로만.
 // 자릿수가 안 맞을 때 리턴하는 값이 다르고, 특수문자가 포함되었을 때 리턴하는 값이 다름.
 export function isValidEmail(value: string) {
@@ -150,24 +143,6 @@ document.querySelectorAll('input').forEach(input => {
 //   console.log(input.validity)
 // })
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // 오류 메시지 사전을 만든다
 // const validityMessage = {
 //   badInput: "[커스텀 메시지] 잘못된 입력입니다.",
@@ -213,3 +188,50 @@ document.querySelectorAll('input').forEach(input => {
 //   // 브라우져 툴팁 숨김
 //   e.preventDefault()
 // })
+
+const inputs = document.querySelectorAll('input')
+const labels = document.querySelectorAll('label')
+const form = document.querySelector('form')
+
+let formItems = []
+
+const errorField = document.querySelector('.errors')
+const errorList = document.querySelector('.errors ul')
+
+for (let i = 0; i < inputs.length - 1; i++) {
+  let obj = {}
+  obj.label = labels[i]
+  obj.input = inputs[i]
+  formItems.push(obj)
+}
+
+errorField.style.left = '-100%'
+
+form.onsubmit = validate
+
+function validate(e) {
+  errorList.innerHTML = ''
+  for (let i = 0; i < formItems.length; i++) {
+    let testItem = formItems[i]
+    if (testItem.input.value === '') {
+      errorField.style.left = '360px'
+      createLink(testItem)
+    }
+  }
+
+  if (errorList.innerHTML !== '') {
+    e.preventDefault()
+  }
+}
+
+function createLink(testItem) {
+  const listItem = document.createElement('li')
+  const anchor = document.createElement('a')
+  anchor.textContent = testItem.input.name + ' field is empty: fill in your ' + testItem.input.name + '.'
+  anchor.href = '#' + testItem.input.name
+  anchor.onclick = function() {
+    testItem.input.focus()
+  }
+  listItem.appendChild(anchor)
+  errorList.appendChild(listItem)
+}

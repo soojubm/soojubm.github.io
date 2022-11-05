@@ -566,12 +566,26 @@ function mouseenterElement(event) {
   }
 }
 
-interface IUser {
-  name: string
-  age: number
-  isAdult?: boolean
-  readonly test: string
+class Body {
+  bodyElement: HTMLBodyElement | null
+
+  constructor(selector) {
+    this.bodyElement = document.querySelector(selector)
+  }
+
+  getElement() {
+    console.log(this.bodyElement)
+  }
+
+  toggleClass(classNames) {
+    this.bodyElement?.classList.toggle(classNames)
+  }
 }
+
+const test1 = new Body('body')
+console.log('@@@@@', test1.getElement())
+
+test1.toggleClass('fuck')
 
 class CloseButton extends HTMLElement {
   constructor() {
@@ -596,14 +610,14 @@ class CloseButton extends HTMLElement {
 // customElements.define('hello-button', HelloButton, { extends: 'button' })
 
 // function updateStyle(elem) {
-//   // const shadow = elem.shadowRoot
-//   // shadow.querySelector('style').textContent = `
-//   //   div {
-//   //     width: ${elem.getAttribute('l')}px;
-//   //     height: ${elem.getAttribute('l')}px;
-//   //     background-color: ${elem.getAttribute('c')};
-//   //   }
-//   // `
+// const shadow = elem.shadowRoot
+// shadow.querySelector('style').textContent = `
+//   div {
+//     width: ${elem.getAttribute('l')}px;
+//     height: ${elem.getAttribute('l')}px;
+//     background-color: ${elem.getAttribute('c')};
+//   }
+// `
 // }
 // class Entity extends HTMLElement {
 //   constructor() {

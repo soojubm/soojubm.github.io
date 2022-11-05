@@ -63,5 +63,3 @@ export default scrollspy
 // const absoulteTop = getAbsoluteTop(element);
 // ​
 // const relativeTop = absoluteTop - parentAbsoluteTop;
-
-// 출처: https://mommoo.tistory.com/85 [개발자로 홀로 서기]

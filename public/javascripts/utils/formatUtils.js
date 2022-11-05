@@ -42,15 +42,6 @@ var getElementHeight = function(element) {
 }
 // frameHeight = frameWidth * 9 / 16;
 
-class Calculator {
-  add(x, y) {
-    return x + y
-  }
-  subtract(x, y) {
-    return x - y
-  }
-}
-
 // elements.filter((value, index, array) => array.indexOf(value) === index) // uniqs
 const fullNumber = '2034399002125581'
 const last4Digits = fullNumber.slice(-4)
