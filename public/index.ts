@@ -129,7 +129,7 @@ async function domEvents() {
     'changelog',
     'dummies',
     'texts',
-    'signifier',
+    'signifier_why',
     'presentations',
   ]
 
