@@ -130,7 +130,7 @@ async function domEvents() {
     'dummies',
     'texts',
     'signifier_why',
-    'presentations',
+    'presentations_why',
   ]
 
   if (!temps.includes(hash)) {
