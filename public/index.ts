@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
 window.addEventListener('load', detectLoad)
 
 document.addEventListener('DOMContentLoaded', domEvents)
+window.removeEventListener('hashchange', domEvents)
 window.addEventListener('hashchange', domEvents)
 
 document.addEventListener('click', toggleTheme)

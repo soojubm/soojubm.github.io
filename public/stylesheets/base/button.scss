@@ -80,7 +80,7 @@ button {@include reset-button;}
 @mixin icon-button-small {
   @include avatar-small;
   
-  span {font-size:20px;}
+  // span {font-size:20px;}
 }
 @mixin icon-indicator {@include icon-button-small;margin:0 0 0 var(--space-2);}
 

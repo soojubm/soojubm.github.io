@@ -1,5 +1,5 @@
 .timeline {position:relative;}
-.timeline-item {padding:1rem 0 0 calc(var(--size-medium) + var(--space-after-avatar-medium));position:relative;}
+.timeline-item {padding:1rem 0 0 calc(var(--size-medium) + var(--space-after-avatar-medium));line-height:var(--font-line-height-small);position:relative;}
 .timeline-item:before {content:'';display:block;position:absolute;left:15px;top:0;bottom:0;width:1px;background:var(--gray200);}
 .timeline-item-icon {@include avatar-medium;position:absolute;left:0;top:1rem;}
 .timeline-item-title {display:block;}
