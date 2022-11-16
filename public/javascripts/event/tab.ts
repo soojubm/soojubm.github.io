@@ -1,7 +1,6 @@
 import { throttle } from '../utils/optimizationUtils'
 import { getElementWidth } from '../utils/elementUtils'
 
-// const parents = Array.from(grandparent.children)
 // 탭에서만 사용하기 때문에 initializeTabIndicator 함수의 파라미터를 제거하고 이벤트 제거를 쉽게 만들었다.
 
 function tab() {

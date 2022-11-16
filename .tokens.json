@@ -68,27 +68,6 @@
   }
 }
 
-{
-  "font-weight-default": {
-    "$value": 350,
-    "$type": "fontWeight"
-  },
-  "font-weight-thick": {
-    "$value": "extra-bold",
-    "$type": "fontWeight"
-  }
-}
-
-{
-  "Duration-100": {
-    "$value": "100ms",
-    "$type": "duration"
-  },
-  "Duration-200": {
-    "$value": "200ms",
-    "$type": "duration"
-  }
-}
 
 {
   "Accelerate": {

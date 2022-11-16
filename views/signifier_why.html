@@ -1,7 +1,7 @@
-<main class="pattern">
+<main class="tokens">
   <article class="article js-scrollspy-section">
     <h1 class="article-title" title="visual cue">Signifier <span hidden>Interaction States (MD)</span></h1>
-    <p class="article-description">사용자는 다음에 일어날 일을 예측할 수 있습니다. 신뢰.</p>
+    <p class="article-description">사용자는 다음에 일어날 일을 예측할 수 있습니다. 서비스와 사용자 사이의 신뢰.</p>
 
     <!-- <p style="color:var(--red800);">safari에서 outline이 radius를 못 가져옴. box-shadow는 컨테이너의 padding이 없으면 잘림. + ::before {border:0;radius} 수도 선택자의 장점. 역할(상태)를 확실히 분리할 수 있다ㅏ.</p> -->
     <!-- <li>aria-haspopup vs aria-expanded</li> -->
@@ -22,6 +22,7 @@
       <li>
         <a href="https://developer.apple.com/design/human-interface-guidelines/components/layout-and-organization/disclosure-controls" target="_blank">disclosure-controls</a>
       </li>
+      <!-- <a href="https://m3.material.io/foundations/interaction-states"></a> -->
       <li><a href="https://developer.apple.com/kr/design/tips/" target="_blank">UI 디자인 기본 원칙</a></li>
     </ul>
 
@@ -194,14 +195,18 @@
 
     <h4 class="article-subhead">Disabled state</h4>
     <p>clickable이 아닌 모든 요소는 non-clickable입니다만 disabled은 명시적인 접근 불가 표현입니다.</p>
-    <div class="tile-flat" style="opacity:.5;cursor:not-allowed;">
-      <p>opacity 50% / cursor not-allowed / removed elevated style</p>
-      <p style="margin:var(--space-2) 0 0 0;"><button class="button-primary">주문</button></p>
+    <ul style="margin-bottom:1rem;">
+      <li>opacity 50% (using token)</li>
+      <li>cursor not-allowed</li>
+      <li>removed elevated style</li>
+    </ul>
+    <div class="token-item" style="cursor:not-allowed;">
+      <button class="button-primary" style="pointer-events:none;opacity:.5;">주문</button>
     </div>
 
     <h4 class="article-subhead">Active state using ripple</h4>
-    <h4 class="article-subhead">Pressed state</h4>
-    <h4 class="article-subhead">Progressing state</h4>
+    <!-- <h4 class="article-subhead">Pressed state</h4> -->
+    <!-- <h4 class="article-subhead">Progressing state</h4> -->
 
     <h4 class="article-subhead">Feedbacks</h4>
     <p>inline / toast / modal / refresh</p>
@@ -210,12 +215,14 @@
     <div class="token-group">
       <div class="token-item">
         <b>globally</b>
-        <p>인터넷연결오류: toast + callout</p>
-        <p>인터넷연결시도 이벤트 알아보기</p>
+        <div>
+          <p>인터넷연결오류: toast + callout</p>
+          <!-- <p>인터넷연결시도 이벤트 알아보기 => online / offline을 다시 요청?</p> -->
+        </div>
       </div>
       <div class="token-item">
         <b>locally</b>
-        <p>데이터패칭, 랜더링: result 컴포넌트</p>
+        <div><p>데이터패칭, 랜더링: result 컴포넌트</p></div>
       </div>
     </div>
   </article>

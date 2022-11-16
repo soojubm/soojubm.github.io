@@ -1,4 +1,3 @@
-export const removeClassname = (element, classname) => element.classList.remove(classname)
 export const addClassname = (element, classname) => element.classList.add(classname)
 
 export function getElementOffsetTop(element) {
@@ -14,9 +13,7 @@ export function getWindowScrollTop() {
 }
 
 export function getElementWidth(element) {
-  // return element.getBoundingClientRect().width
   return getComputedStyle(element).width
-  // return `${element.offsetWidth}px`
 }
 
 // Hide the menu when clicking outside of it

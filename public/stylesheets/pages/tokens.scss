@@ -50,7 +50,6 @@
 .token-item .color-item {@include tile-flat-small;width:100%;}
 .token-item .color-item + .color-item {margin:var(--space-2) 0 0 0;}
 
-
 @media (--large) {
   .tokens {
     --item-width: 33.3333%;

@@ -9,8 +9,15 @@ import routePage from './javascripts/router'
 import { stopAnimation, throttle } from './javascripts/utils/optimizationUtils'
 
 import { detectLoad, lockBodyElement, unlockBodyElement } from './javascripts/load'
+
 import carousel from './javascripts/event/carousel'
-import event from './javascripts/event/index'
+import toggleElement from './javascripts/event/toggleElement'
+import tab from './javascripts/event/tab'
+import modal from './javascripts/event/modal'
+import parallax from './javascripts/event/parallax'
+import scrollspy from './javascripts/event/scrollspy'
+import scrollAnimation from './javascripts/event/scrollAnimation'
+
 import input from './javascripts/input/index'
 
 import detectTheme from './javascripts/theme/dectectTheme'
@@ -40,6 +47,16 @@ document.addEventListener('click', toggleTheme)
 document.addEventListener('click', toggleNavbarMenu)
 
 // ! 여기까지 리팩토링 1차로 해 봄..
+
+document.addEventListener('click', toggleTest)
+
+function toggleTest(event) {
+  if (!event.target.closest('.js-toggle')) return
+
+  // 개별 칩 그룹에 이벤트를 걸고, 다른 컴포넌트를 클릭할 때 제거하는 방법.
+  // 부모에 클래스를 주고 형제를 제거.
+  event.target.classList.toggle('is-active')
+}
 
 document.addEventListener('DOMContentLoaded', () => {
   stopAnimation()
@@ -199,18 +216,17 @@ async function domEvents() {
   // input.textarea()
   input.quantity()
 
-  event.toggleElement({ selector: '.js-toggle' })
+  // toggleElement({ selector: '.js-toggle' })
 
-  event.tab()
-  event.modal({ selector: '.js-modal' })
+  tab()
+  modal({ selector: '.js-modal' })
 
-  event.positionSticky({ selector: '.js-post-head', addClass: 'is-sticky-post-head', isPassed: true })
+  // positionSticky({ selector: '.js-post-head', addClass: 'is-sticky-post-head', isPassed: true })
 
-  event.scrollAnimation({ selector: '.js-observer' })
+  scrollAnimation({ selector: '.js-observer' })
+  scrollspy({ menusSelector: '.js-scrollspy-trigger', sectionsSelector: '.js-scrollspy-section' })
 
-  event.scrollspy({ menusSelector: '.js-scrollspy-trigger', sectionsSelector: '.js-scrollspy-section' })
-
-  event.parallax('.js-parallax')
+  parallax('.js-parallax')
 
   // var lastScrollTop = 0
   // const heroElement = document.querySelector('.hero')
