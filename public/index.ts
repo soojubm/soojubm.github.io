@@ -612,7 +612,7 @@ class CloseButton extends HTMLElement {
         <span class="material-symbols-outlined">close</span>
       </butt>
     `
-    this.addEventListener('click', () => console.log('test'))
+    this.addEventListener('click', () => alert('customElements sample'))
   }
 
   connectedCallback() {

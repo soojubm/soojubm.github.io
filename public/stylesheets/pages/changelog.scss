@@ -6,7 +6,7 @@
 .changelog-filter-chip-label {@include chip-label;}
 
 .changelog-item {position:relative;}
-// .changelog-item  ul li {font-size:var(--font-size-caption) !important;}
+// .changelog-item  ul li {font-size:var(--font-size-small) !important;}
 // .changelog-item  ul li:before {top:6px;}
 .changelog-item + .changelog-item {margin:6rem 0 0;}
 .changelog-item-date {display:block;margin:0 0 var(--space-after-subhead);@include text-title;}

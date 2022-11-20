@@ -53,13 +53,13 @@
 .cart-item-more i {margin:0 0 0 var(--space-2);}
 .cart-item-remove {float:right;margin:var(--space-3) 0 var(--space-2);color:var(--color-primary);}
 .cart-item-addition {width:calc(100% - 20% - var(--space-4));margin:0 0 0 calc(20% + var(--space-4));padding:var(--space-2) 0 var(--space-3);border-top:var(--border);box-sizing:border-box;position:relative;}
-.cart-item-addition-description {font-size:var(--font-size-caption);line-height:var(--font-line-height-small);color:var(--color-text-light);}
+.cart-item-addition-description {font-size:var(--font-size-small);line-height:var(--font-line-height-small);color:var(--color-text-light);}
 .cart-item-addition p {width:80%;}
 .cart-item-addition-price {float:right;position:absolute;right:0;top:.5rem;}
 .cart-item-ship {width:calc(100% - 20% - var(--space-4));margin:0 0 0 calc(20% + var(--space-4));padding:var(--space-2) 0 0;border-top:var(--border);position:relative;}
 .cart-item-ship p {}
 // .cart-item-ship p + p {margin:var(--space-05) 0 var(--space-1);}
-.cart-item-ship-description {font-size:var(--font-size-caption);line-height:var(--font-line-height-small);color:var(--color-text-light);}
+.cart-item-ship-description {font-size:var(--font-size-small);line-height:var(--font-line-height-small);color:var(--color-text-light);}
 .cart-item-ship span {float:right;position:absolute;right:0;top:.5rem;}
 .cart-item-coupon {margin-left:calc(20% + 2rem);padding:.5rem var(--space-4);border:var(--border);box-sizing:border-box;color:var(--color-text-light);}
 

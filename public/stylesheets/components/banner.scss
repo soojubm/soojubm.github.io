@@ -2,7 +2,7 @@
 .banner {padding:var(--space-4);border-radius:var(--radius);background:var(--color-background-weak);position:relative;}
 .banner-background {@include bleeding;}
 .banner-eyebrow {@include tag;margin:0 0 .5rem 0;}
-.banner-title {font-size:var(--font-size-body);font-weight:var(--font-weight-bold);}
+.banner-title {font-size:var(--font-size-medium);font-weight:var(--font-weight-bold);}
 .banner-description {margin:var(--space-1) 0 0;line-height:var(--font-line-height-small);}
 .banner-button {margin:0 0 var(--space-after-description) 0;@include button-text;}
 // 버튼이 생략될 수 있다.

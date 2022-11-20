@@ -15,7 +15,7 @@
 .delay-third {animation-delay:var(--animation-delay-third);}
 
 .tokens-hero {position:relative;}
-.tokens-hero-head {padding:4rem var(--grid-margin);border-radius:var(--radius);box-sizing:border-box;font-size:var(--font-size-subhead);position:relative;}
+.tokens-hero-head {padding:4rem var(--grid-margin);border-radius:var(--radius);box-sizing:border-box;font-size:var(--font-size-large);position:relative;}
 
 .token-navigation {}
 .token-navigation a {display:block;align-items:center;padding:var(--space-4);color:var(--color-text);}
@@ -25,7 +25,7 @@
 .token-item-avatar {@include avatar-large;width:100%;margin:0 0 var(--space-3);}
 .token-item b {display:block;margin:var(--space-1-minus) 0;font-weight:var(--font-weight-bold);line-height:var(--font-line-height-small);}
 .token-item div {margin:var(--space-2) 0 0 0;}
-.token-item div p {font-size:var(--font-size-caption);}
+.token-item div p {font-size:var(--font-size-small);}
 
 .token-item.is-gray000 figure {border:var(--border);background:var(--color-background);}
 .token-item.is-gray100 figure {background:var(--gray100);}

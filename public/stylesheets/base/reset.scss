@@ -1,43 +1,38 @@
-// all: unset
-
-
-
 body,dl,dd,figure,blockquote,h1,h2,h3,h4,h5,h6,p,input[type=radio] {margin:0;}
 ul,ol,menu,fieldset,legend {margin:0;padding:0;}
 fieldset,iframe,img,hr {border:none}
 main, picture {display:block;}
 iframe,img,video {width:100%;display:block;} /*img {vertical-align:middle;}*/
-// ol,ul,menu {list-style:none}
-// h1,h2,h3,h4,h5,h6 {line-height:var(--font-line-height-small);font-weight:var(--font-weight-bold);color:var(--color-text);word-break:keep-all;}
 strong,b,th,legend {font-weight:var(--font-weight-bold);}
 cite,i,address,em,dfn {font-style:normal;} em {color:var(--color-primary);}
-small {font-size:var(--font-size-caption);} abbr,ins {text-decoration:none;} del {color:var(--color-text-light);}
+small {font-size:var(--font-size-small);} abbr,ins {text-decoration:none;} del {color:var(--color-text-light);}
 a {text-decoration:none;text-decoration-skip-ink:auto;color:var(--color-primary);}
 a:link,a:visited {} a:hover,a:focus {} a:active {}
 mark {color:inherit;} mark::before {content: " [강조 시작] ";opacity:0;position:absolute;} mark::after {content: " [강조 끝] ";opacity:0;position:absolute;}
+hr {margin:var(--space-4) 0;border-top:var(--border);position:relative;}
+code {display:block;background:var(--color-background-weak);border-radius:var(--radius);font-family:var(--font-family-code);font-size:var(--font-size-small);letter-spacing:.0125rem;}
+svg {color:var(--gray800);} // for icon
+// duplicated
 // thin solid
-hr {margin:var(--space-4) 0;border-top:1px solid var(--gray200);position:relative;}
+// ol,ul,menu {list-style:none}
+// h1,h2,h3,h4,h5,h6 {line-height:var(--font-line-height-small);font-weight:var(--font-weight-bold);color:var(--color-text);word-break:keep-all;}
 u {text-decoration:none;position:relative;}
 u:after {content:'';height:.4em;border-radius:2px;background:var(--green100);position:absolute;left:-.125rem;right:-.125rem;bottom:0;z-index:-1;}
-code {display:block;background:var(--color-background-weak);border-radius:var(--radius);font-family:var(--fontstack-code);font-size:var(--font-size-caption);letter-spacing:.0125rem;}
 
-html {min-width:320px;height:100%;overflow-x:hidden;font:16px/1.8 var(--fontstack);-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overscroll-behavior:contain;}
+html {min-width:320px;height:100%;overflow-x:hidden;font:16px/(var(--font-line-height)) var(--font-family);-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overscroll-behavior:contain;}
 body {background:var(--color-background);color:var(--color-text);font-size:.875rem;}
 
 // fixed blink 테마변경 
 p, li {color:var(--color-text);}
 
 blockquote {
-  
-  
   margin:2rem -.5rem;padding:var(--space-4);background:var(--color-background-weak);border-left:4px solid var(--gray200);border-radius:4px 0 0 0;
-
 }
 table {
   width:100%;border-collapse:collapse;border-spacing:0;border-left-style:hidden;border-right-style:hidden;
   --table-lineheight: 1.6;
 }
-table caption {padding:.5rem 0;font-size:var(--font-size-caption);text-align:left;}
+table caption {padding:.5rem 0;font-size:var(--font-size-small);text-align:left;}
 table thead {}
 table thead tr {}
 table thead tr th {padding:var(--space-3) 0;font-weight:normal;line-height:var(--table-lineheight);color:var(--color-text-light);text-align:left;}
@@ -49,7 +44,6 @@ table tbody tr:hover {}
 table .right {text-align:right;}
 table tbody[role=rowgroup] tr th {width:25%;}
 table tbody[role=rowgroup] tr th + th {width:auto;} // todo
-
 
 
 // table {
@@ -90,14 +84,12 @@ dl {display:flex;flex-wrap:wrap;}
 dl dt {margin:0 var(--space-2) 0 0;@include text-label;}
 dl dd {margin:0 var(--space-4) 0 0;}
 
-svg {color:var(--gray800);}
+
 
 ::selection {background:var(--gray800);color:var(--gray0);}
 ::placeholder {color:var(--color-text-light);}
 
-// [hidden] {display:none !important;}
-
-//backface-visibility:hidden
+// backface-visibility:hidden
 // writing-mode: horizontal-tb / vertical-rl / vertical-lr;
 
 // ::-webkit-scrollbar {width:auto;height:auto;}
@@ -106,8 +98,6 @@ svg {color:var(--gray800);}
 // ::-webkit-scrollbar-button {display:none;background-color:inherit;}
 // ::-webkit-scrollbar-corner {background-color:inherit;}
 
-// 고정폭 숫자 폰트 아카이빙
-// @import url('https://fonts.googleapis.com/css?family=Nunito+Sans');
 
 // [aria-live="polite | assertive | off"] {} 
 [aria-haspopup=true] {} // dialog . menu, grid, listbox, tree
@@ -115,70 +105,20 @@ svg {color:var(--gray800);}
 [aria-modal=true] {}
 [aria-label=close] {}
 
-.visually-hidden {width:1px;height:1px;clip:rect(1px 1px 1px 1px);overflow:hidden;position:absolute;user-select:none;} // if(true) 리더기가 무시. // speak: never;
-// [aria-hidden=false] {width:1px;height:1px;clip:rect(1px 1px 1px 1px);overflow:hidden;position:absolute;user-select:none;}
 
 @media print {
   /* For links in content, visually display the link */ 
-  article a::after { 
-    content: " (" attr(href) ")";
+  a::after { 
+    content: "(" attr(href) ")";
   }
 }
 
-
-// @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css");
-
-// html { font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard Variable", Pretendard, Roboto, "Noto Sans KR", "Segoe UI", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-//   ;}
-
-.browser {text-align:center;padding:2rem;background:var(--red800);background:var(--color-background);position:fixed;left:0;right:0;bottom:0;z-index:var(--zindex-modal);}
-
-.cta-arrow {
-  width:25%;
-  max-width: 500px;
-  // flex-grow: 1;
-  // margin-left: 11px;
-  // margin-right: 3px;
-  padding: 17px 0;
-  position: relative;
-  transition: all .4s;
-  .line {
-    width: 100%;
-    height: 2px;
-    background: var(--gray800);
-    position: relative;
-    &:before {
-      background: inherit;
-      position: absolute;
-      width: 17px;
-      height: 2px;
-      content: '';
-      right: 0;
-      transform: rotate(-50deg);
-      transform-origin: top right;
-    }
-    &:after {
-      background: inherit;
-      position: absolute;
-      width: 17px;
-      height: 2px;
-      content: '';
-      right: 0;
-      transform: rotate(50deg);
-      transform-origin: bottom right;
-    }
-  }
-}
-
-
-.font-default {font-family:san-serif;}
-
-// .resize-animation-stopper * {
-//   animation: none !important;
-//   transition: none !important;
-// }
-
+// ! utilities
+// all: unset
+// [hidden] {display:none !important;}
+// .visually-hidden {width:1px;height:1px;clip:rect(1px 1px 1px 1px);overflow:hidden;position:absolute;user-select:none;} // if(true) 리더기가 무시. // speak: never;
+// .resize-animation-stopper * {animation: none !important;transition: none !important;}
 // accessibility-text(visually-hidden)
 // @media (--small) {
-//   html {font-size:14px;}
+//   html {font-size:12px;}
 // }

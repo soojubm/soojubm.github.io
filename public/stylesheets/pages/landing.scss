@@ -4,7 +4,7 @@
 }
 
 @mixin landing-section-title {
-	font-size: var(--font-size-subhead);
+	font-size: var(--font-size-large);
 }
 
 .landing-2 {@include layout-large;padding: var(--section-inset) var(--grid-margin);}

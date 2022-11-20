@@ -53,6 +53,31 @@
   </section>
 
   <section class="component-body" style="padding:2rem var(--grid-margin);position:relative;z-index:1;">
+    <fieldset class="" role="radiogroup" style="display:flex;">
+      <legend hidden>radiogroup</legend>
+      <div class="tile-elevated-small" style="width:240px;margin-right:.5rem;">
+        <figure style="padding:1rem;background:var(--color-background-weak);border-radius:var(--radius);">
+          <p>기존 라디오 컴포넌트의 형태를 유지할 수 있는 디자인. 여전히 라디오아이콘과 체크박스아이콘을 컴포넌트로만들 이유 하나. menuitem에서 우측에 radio 기표를 표시할 때</p>
+        </figure>
+        <div class="radio">
+          <input type="radio" id="raidio5" name="gender" value="" />
+          <label for="raidio5" title="">tile style</label>
+        </div>
+      </div>
+      <div class="tile-elevated-small" style="width:240px;margin-right:.5rem;">
+        <figure style="padding:1rem;background:var(--color-background-weak);border-radius:var(--radius);">
+          <p>use cases: 기본 주소록, 주로 설정에서 이미지 가이드가 필요한 선택 목록 등</p>
+          <p>todo. 네모 형태의 선택 목록을 위한 세로값 토큰이 필요함.</p>
+          <p>todo. background-weak + radius tile 정의</p>
+        </figure>
+        <div class="radio">
+          <input type="radio" id="raidio5" name="gender" value="" />
+          <label for="raidio5" title="">tile style</label>
+        </div>
+      </div>
+    </fieldset>
+    
+    
     <menu class="access tile-elevated" style="max-width:480px;">
       <button class="titlebar-back">
         <figure class="chip"><span class="material-symbols-outlined">close</span></figure>
@@ -142,7 +167,7 @@
           </figure>
           <span class="button-elevated-label">사용자 및 그룹 추가</span>
         </button>
-        <!-- <p style="margin:1rem 0 .25rem;font-size:var(--font-size-body);">액세스 권한이 있는 사용자</p> -->
+        <!-- <p style="margin:1rem 0 .25rem;font-size:var(--font-size-medium);">액세스 권한이 있는 사용자</p> -->
         <div class="item" data-size="medium" role="menuitem">
           <figure class="item-avatar"></figure>
           <h3 class="item-name" style="font-weight:var(--font-weight-normal);">수줍이 (나)</h3>
@@ -309,7 +334,7 @@
 
     <div style="display:flex;align-items:center;line-height:var(--font-line-height-small);">
       <span style="line-height:24px;">떡볶이</span>
-      <span class="material-symbols-outlined" style="font-size:var(--font-size-subhead);color:var(--color-text-light);line-height:24px;">
+      <span class="material-symbols-outlined" style="font-size:var(--font-size-large);color:var(--color-text-light);line-height:24px;">
         close
       </span>
       <span>5</span>
@@ -599,7 +624,7 @@
     </form>
 
     <article class="tile-elevated" style="max-width:400px;z-index:1;">
-      <h3 style="text-align:center;font-size:var(--font-size-subhead);">Ratings</h3>
+      <h3 style="text-align:center;font-size:var(--font-size-large);">Ratings</h3>
       <div class="statistic-item tile-flat" aria-label="별점 5개 만점에 3.9개를 받았습니다." style="margin-top:.5rem;text-align:center;z-index:auto;">
         <i class="statistic-label">리뷰 116만개</i>
         <span class="statistic-value" style="margin-left:-.5rem;">⭐ 4.8</span>
@@ -633,7 +658,7 @@
     </article>
     <br />
     <div class="tile-elevated" style="max-width:400px;position:relative;">
-      <h3 style="text-align:center;font-size:var(--font-size-subhead);">See this post in</h3>
+      <h3 style="text-align:center;font-size:var(--font-size-large);">See this post in</h3>
       <button class="" style="margin:.5rem;position:absolute;right:0;top:0rem;">
         <figure class="chip"><span class="material-symbols-outlined">close</span></figure>
       </button>
@@ -670,7 +695,7 @@
         <img src="/public/images/springsteen.jpg" alt="" style="max-height:fit-content;" />
       </figure>
       <h3 class="card-title" style="font-weight: bold;padding:var(--space-3) 0 .25rem 0;">Welcome to...</h3>
-      <p class="card-text" style="width:90%;margin:0 auto;font-size:var(--font-size-body);line-height:var(--font-line-height-small);">
+      <p class="card-text" style="width:90%;margin:0 auto;font-size:var(--font-size-medium);line-height:var(--font-line-height-small);">
         Onboarding card. 디스크립션. PrevButton 이라면 secondary vs tertiary
       </p>
       <footer class="onboarding-control">
@@ -950,7 +975,7 @@
         <li>회원을 위한 추가 혜택</li>
       </ul>
       <span class="pricing-item-price">
-        <span class="pricing-item-price-per" style="font-size:var(--font-size-body);font-weight:normal;">한 달에 한 번</span>
+        <span class="pricing-item-price-per" style="font-size:var(--font-size-medium);font-weight:normal;">한 달에 한 번</span>
         <span class="pricing-item-price-unit">₩</span>
         <span>6,800</span>
         <!-- <i class="icon-bullet"></i> -->

@@ -2,18 +2,37 @@
 @custom-media --small (max-width: 1080px);
 // $p-breakpoints-lg-only: '(min-width: 65em) and (max-width: 89.9975em)';
 
+@media (prefers-color-scheme: light) {}
+@media (prefers-color-scheme: dark) {}
+
+// based on ROLE but weight 등을 포함한 extend여야 함.
 
 :root {
   color-scheme: light dark;
 
-  --adjust-label-line: 0px;
-
-  --fontstack: 'Quattrocento Sans', 'Gothic A1', sans-serif;
-  // --fontstack: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Apple SD Gothic Neo", san-serif;
-  --font-family: null;
+  --font-family: 'Quattrocento Sans', 'Gothic A1', sans-serif;
+  // --font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Apple SD Gothic Neo", san-serif;
   --font-family-heading: null;
   --font-family-body: null;
   --font-family-caption: null;
+  --font-family-code: null;
+
+  --font-size-huge: 2rem;
+  --font-size-large: 1.125rem;
+  --font-size-medium: .875rem;
+  --font-size-small: .75rem; // helper / caption
+
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: null;
+
+  // !
+  --font-line-height: 1.8;
+  --font-line-height-small: 1.5;
+  --font-line-height-heading: null;
+  --font-line-height-heading: body;
+
+  --adjust-label-line: 0px;
 
   --navbar-height: calc(32px + 1.5rem);
   --titlebar-height: calc(32px + 1.5rem);
@@ -29,30 +48,8 @@
 
   --width-huge: 1440px;
   --width-small: 480px;
-
-  --menu-width: 320px;
+  --width-menu: 320px;
   --width-dropdown: 240px;
-
-  --font-size-huge: 2rem;
-  --font-size-large: 1.125rem;
-  --font-size-medium: .875rem;
-  --font-size-small: .75rem;
-
-  // mixin
-  --font-size-title: var(--font-size-huge);
-  --font-size-subhead: var(--font-size-large);
-  --font-size-body: var(--font-size-medium);
-  --font-size-body-large: var(--font-size-large);
-  --font-size-helper: var(--font-size-small);
-  --font-size-caption: var(--font-size-small);
-
-  --font-weight-normal: 400;
-  --font-weight-bold: 700;
-  --font-weight-extrabold: null;
-
-  --font-line-height: 1.8;
-  --font-line-height-small: 1.5;
-  --font-line-height-heading: null;
 
   --gray0: #fff;
   --gray100: #f1f4f1;
@@ -81,8 +78,7 @@
   --color-github: #000;
   --color-instagram: #333;
 
-  // ! what-target-option(thiness/states), 타크테마에도 바뀌지 않는.
-  // ! gray is... non semantic
+  // ! what-target-option(thiness/states), gray is... non semantic
   --color-background: var(--gray0);
   --color-background-weak: var(--gray100);
   --color-background-strong: var(--gray800);
@@ -92,9 +88,8 @@
   // 
   --color-text: var(--gray800);
   --color-text-weak: var(--gray0);
-  --color-text-light: var(--gray400);
+  --color-text-light: var(--gray400); // 
   --color-text-strong: var(--gray0);
-  --color-text-link: var(--color-primary);
   
   --icon-background: var(--gray800);
   --icon-border-color: var(--gray800);
@@ -109,15 +104,6 @@
   --size-small: 1.5rem;
   --size-tiny: 1rem;
 
-  --space-05: .125rem;
-  --space-1: .25rem;
-  --space-1-minus: calc(var(--space-1) * -1);
-  --space-2: .5rem;
-  --space-2-minus: calc(var(--space-2) * -1);
-  --space-3: .75rem;
-  --space-3-minus: calc(var(--space-3) * -1);
-  --space-4: 1rem;
-
   --color-temp1: cadetblue;
   --color-temp2: darkseagreen;
   --color-temp3: lightsalmon;
@@ -128,6 +114,16 @@
   --color-temp3: antiquewhite;
   --color-temp4: #f6edf6;
 
+  --space-05: .125rem;
+  --space-1: .25rem;
+  --space-1-minus: calc(var(--space-1) * -1);
+  --space-2: .5rem;
+  --space-2-minus: calc(var(--space-2) * -1);
+  --space-3: .75rem;
+  --space-3-minus: calc(var(--space-3) * -1);
+  --space-4: 1rem;
+
+  // ! 시각보정용
   --space-leading-title: -.25rem;
   --space-leading-subhead: -.125rem;
   --space-leading-body: -.125rem;
@@ -155,6 +151,8 @@
   --space-inset-section: 4rem;
 
   --border: 1px solid var(--color-border);
+  --border-thin: null;
+  --border-thick: null;
   --border-active: 1px solid var(--color-primary);
 
   --radius: 6px;
@@ -198,7 +196,6 @@
   --zindex-loader: 10;
   --zindex-sheet: 7;
 
-
   --safearea-inset-bottom1: constant(safe-area-inset-bottom);
   --safearea-inset-bottom2: env(safe-area-inset-bottom);
 
@@ -230,10 +227,6 @@
     --border: 1px solid var(--color-border);
     --state-focus: 0 0 0 2px var(--color-border-hover);
     --state-hover: 0 0 0 2px rgba(255,255,255,.25);
-
-    // todo gray800
-    --icon-background: #d1d2d3;
-    --icon-border-color: #d1d2d3;
 
     --shadow: 0px 0px 2rem rgba(0, 0, 0, 0.25);
 

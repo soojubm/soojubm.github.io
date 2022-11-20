@@ -22,10 +22,10 @@
 .textfield-input:disabled {border-color:var(--gray200);background:var(--gray200);color:var(--gray100);cursor:not-allowed;}
 .textfield-input:read-only {color:var(--color-text-light);cursor:default;}
 .textfield-input:read-only:focus {}
-.textfield-reveal {position:absolute;right:1rem;bottom:calc(1rem - 2px);z-index:var(--zindex-default);font-size:var(--font-size-caption);color:var(--color-text-light);}
+.textfield-reveal {position:absolute;right:1rem;bottom:calc(1rem - 2px);z-index:var(--zindex-default);font-size:var(--font-size-small);color:var(--color-text-light);}
 .textfield-helper {margin-top:.25rem;color:var(--red800);}
 .textfield-button {border-top-left-radius:0;border-bottom-left-radius:0;position:absolute;right:0;top:0;}
-.textfield-link {@include link-outside;font-size:var(--font-size-caption);position:absolute;right:0;top:0;}
+.textfield-link {@include link-outside;font-size:var(--font-size-small);position:absolute;right:0;top:0;}
 .textfield-unit {}
 
 .textfield-check {@include textfield-surfix;}

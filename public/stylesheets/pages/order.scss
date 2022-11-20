@@ -7,7 +7,7 @@
 .order-item {@include tile-elevated;}
 .order-item-head {}
 .order-item-head-date {display:block;width:100%;}
-.order-item-head-date-label {display:block;font-size:var(--font-size-caption);}
+.order-item-head-date-label {display:block;font-size:var(--font-size-small);}
 .order-item-head-date-value {}
 .order-item-head-status {@include tag;}
 .order-item-head-method {@include tag;}

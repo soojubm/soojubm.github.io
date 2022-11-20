@@ -46,10 +46,19 @@
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Z-index</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Opacity</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Animation</span></a>
+      <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Optical Adjustment</span></a>
     </div>
   </nav>
 
   <section class="tokens-body">
+    <article class="article">
+      <div>1~2번 사용하는 예외케이스를 토큰으로 정의할 필요가 있을까.</div>
+      <div>layout - wide / narrow</div>
+      <div>small-scale layout (polaris 참고) 아바타 유무</div>
+      <div>layout in a card</div>
+    </article>
+
+
     <article class="article js-scrollspy-section">
       <h1 class="article-title">Palette</h1>
       <p class="article-description">color와 surface.</p>
@@ -207,54 +216,54 @@
       </div>
       <div class="token-group">
         <div class="token-item" style="max-width:100%;">
-          <p><b>--fontstack: 'Quattrocento Sans', 'Gothic A1', sans-serif;</b></p>
+          <b>--font-family: 'Quattrocento Sans', 'Gothic A1', sans-serif;</b>
         </div>
       </div>
       <p style="margin:var(--space-1) 0 0 0;"><em style="color:var(--red800);">! 변경한 폰트의 baseline이 안 맞아서 세로 가격이 조금씩 틀어짐. 이러한 케이스를 폰트를 변경하지 않고 대응할 수 있는 솔루션은? 텍스트노드의 상단 패딩에 변수값을 하나 넣어주면.</em></p>
 
-      <h4 class="article-subhead">Sizes <sup>5</sup></h4>
+      <h4 class="article-subhead">Sizes <sup>5? 3?</sup></h4>
       <div class="token-group">
         <div class="token-item">
-          <p><b>--font-size-huge: 3rem</b></p>
+          <b>--font-size-huge: 2rem</b>
         </div>
         <div class="token-item">
-          <p><b>--font-size-large: 2rem</b></p>
+          <b>--font-size-large: 1.125rem</b>
         </div>
         <div class="token-item">
-          <p><b>--font-size-medium: 1.125rem</b></p>
+          <b>--font-size-medium: .875rem</b>
         </div>
         <div class="token-item">
-          <p><b>--font-size-small: .875rem</b></p>
+          <del><b>--font-size-?: 3rem</b></del>
         </div>
         <div class="token-item">
-          <p><b>--font-size-tiny: .75rem</b></p>
+          <del><b>--font-size-?: .75rem</b></del>
         </div>
       </div>
 
       <h4 class="article-subhead">Weights <sup>2</sup></h4>
       <div class="token-group">
         <div class="token-item">
-          <p><b>--font-weight-normal: 400</b></p>
+          <b>--font-weight-normal: 400</b>
         </div>
         <div class="token-item">
-          <p><b>--font-weight-bold: 800</b></p>
+          <b>--font-weight-bold: 800</b>
         </div>
       </div>
 
       <h4 class="article-subhead">Line heights <sup>2</sup></h4>
       <div class="token-group">
         <div class="token-item">
-          <p><b>--font-line-height: 1.8</b></p>
+          <b>--font-line-height: 1.8</b>
         </div>
         <div class="token-item">
-          <p><b>--font-line-height-small: 1.4</b></p>
+          <b>--font-line-height-small: 1.4</b>
         </div>
       </div>
 
       <h4 class="article-subhead">Compositions 🔥</h4>
       <div class="token-group">
         <div class="token-item">
-          <p><b>@mixin text-title</b></p>
+          <b>@mixin text-title</b>
           <div>
             <p>--font-size-large</p>
             <p>--font-weight-bold</p>
@@ -264,42 +273,42 @@
           </div>
         </div>
         <div class="token-item">
-          <p><b>@mixin text-subhead</b></p>
+          <b>@mixin text-subhead</b>
           <div>
             <p>--font-size-medium</p>
             <p>--font-weight-bold</p>
           </div>
         </div>
         <div class="token-item">
-          <p><b>@mixin text-body</b></p>
+          <b>@mixin text-body</b>
           <div>
             <p>--font-size-small</p>
           </div>
         </div>
         <div class="token-item">
-          <p><b>@mixin text-body-large</b></p>
+          <b>@mixin text-body-large</b>
           <div>
             <p>--font-size-medium</p>
           </div>
         </div>
         <div class="token-item">
-          <p><b>@mixin text-label</b></p>
+          <b>@mixin text-label</b>
           <div>
             <p>--font-size-small</p>
             <p>--color-text-weak</p>
           </div>
         </div>
         <div class="token-item">
-          <p><b>@mixin text-body-caption</b></p>
+          <b>@mixin text-body-caption</b>
           <div>
             <p>--font-size-tiny</p>
           </div>
         </div>
         <div class="token-item">
-          <p><b>@mixin truncate</b></p>
+          <b>@mixin truncate</b>
         </div>
         <div class="token-item">
-          <p><b>@mixin truncate-multiple</b></p>
+          <b>@mixin truncate-multiple</b>
         </div>
       </div>
     </article>
@@ -313,6 +322,7 @@
           <p>--navbar-height: <del>var(--size-huge)</del>5rem</p>
           <p>--sidenav-width: null;</p>
         </li>
+        <li>예외 케이스. switch height: 20px</li>
       </ul>
 
       <div class="token-group">
@@ -418,7 +428,7 @@
       </div>
 
       <h4 class="article-subhead">Outdated</h4>
-      <div class="" style="display:flex;align-items:center;width:100%;height:10rem;text-align:center;font-size:var(--font-size-caption);padding:0;position:relative;">
+      <div class="" style="display:flex;align-items:center;width:100%;height:10rem;text-align:center;font-size:var(--font-size-small);padding:0;position:relative;">
         <div class="space" style="width:5%;margin:0;writing-mode: vertical-rl;color:var(--color-text);"><span class="">var(--grid-margin)</span></div>
         <div style="display:flex;align-items:center;justify-content:center;width:calc(50% - 5% - .5rem);height:100%;color:var(--color-text);">column<br />var(--grid-column)</div>
         <div class="space" style="width:1rem;writing-mode: vertical-rl;color:var(--color-text);"><span class="">var(--grid-gutter)</span></div>
@@ -430,7 +440,7 @@
         <div class="space" style="height:var(--space-inset-tile);position:absolute;left:0;right:0;bottom:-1px;z-index:0;"><span class="">var(--space-inset-tile)</span></div>
         <div class="space" style="width:var(--space-inset-tile);height:100%;writing-mode:vertical-lr;position:absolute;left:0;top:0;bottom:0;z-index:0;"><span class="">var(--space-inset-tile)</span></div>
         <div class="space" style="width:var(--space-inset-tile);height:100%;writing-mode:vertical-lr;position:absolute;right:0;top:0;bottom:0;z-index:0;"><span class="">var(--space-inset-tile)</span></div>
-        <h4 style="font-size:var(--font-size-subhead);line-height:var(--font-line-height-small);">선약이 있어서 ✋ <span style="display:block;">자아실현은 못할 것 같아요.</span></h4>
+        <h4 style="font-size:var(--font-size-large);line-height:var(--font-line-height-small);">선약이 있어서 ✋ <span style="display:block;">자아실현은 못할 것 같아요.</span></h4>
         <div class="space" style="height:var(--space-after-subhead);"><span class="">var(--space-after-subhead)</span></div>
         <p class="typography-paragraph">서브헤드와 디스크립션 혹은 패러그라프는 이렇게 작성하세요. 타이틀의 행간이 조정되었기 때문에 시각보정이 필요할 수도 있어요. line-height 조절이 필요할 수도 있습니다.</p>
         <div class="space" style="height:var(--space-after-description);"><span class="">var(--space-after-description)</span></div>
@@ -612,7 +622,7 @@
       </ul>
       <div class="token-group">
         <div class="token-item">
-          <p><b>--bazier: cubic-bezier(0.455, 0.03, 0.515, 0.955)</b></p>
+          <b>--bazier: cubic-bezier(0.455, 0.03, 0.515, 0.955)</b>
         </div>
         <div class="token-item">
           <div class="" style="display:flex;">
@@ -661,6 +671,19 @@
         </div>
       </div>
     </article>
+
+    <h4 class="article-subhead">Optical Adjustment</h4>
+    <ul>
+      <li>tile(또는 배경색을 박스) 안에서의 상하 간격을 위한 보정</li>
+      <li>폰트의 line-height 별 차이를 위한 보정. tile 안에서 발생?</li>
+      <li>폰트의 종류 별 기준선의 차이를 위한 보정</li>
+      <li>버튼 등에서 padding-top보다 큰 값의 padding-bottom을 위한 보정. 1, 3과 조금씩 비슷한.</li>
+      <li>섹션 사이의 간격을 위한 보정. 상보다 큰 하</li>
+      <li>페이지의 최상단 섹션과 최하단 섹션의 간격 보정. 이것은 시각보정은 아닌 듯.</li>
+    </ul>
+    <div class="token-group">
+    </div>
+  </article>
   </section>
 
 

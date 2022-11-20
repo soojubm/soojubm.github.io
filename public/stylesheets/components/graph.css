@@ -2,5 +2,5 @@
 .graph-title {padding:16px 5%;}
 .graph-item {display:inline-block;width:48px;height:100px;margin:0 .5rem;border-radius:var(--radius);background:var(--color-background-weak);position:relative;}
 .graph-item-bar {height:30px;border-radius:0 0 var(--radius) var(--radius);background:var(--red800);position:absolute;left:0;right:0;bottom:0;}
-.graph-item-value {font-size:var(--font-size-caption);text-align:center;color:var(--color-text);position:absolute;left:0;right:0;bottom:32px;}
-.graph-item-label {display:block;font-size:var(--font-size-caption);text-align:center;position:absolute;left:0;right:0;bottom:-1.75rem;}
+.graph-item-value {font-size:var(--font-size-small);text-align:center;color:var(--color-text);position:absolute;left:0;right:0;bottom:32px;}
+.graph-item-label {display:block;font-size:var(--font-size-small);text-align:center;position:absolute;left:0;right:0;bottom:-1.75rem;}
