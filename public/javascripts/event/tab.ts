@@ -29,7 +29,9 @@ function tab() {
     tabs.forEach(tab => tab.setAttribute('aria-selected', 'false'))
     selectedTab.setAttribute('aria-selected', 'true')
 
-    panels.forEach(panel => panel.setAttribute('aria-hidden', String(event.target.dataset.index !== (panel as HTMLElement).dataset.index)))
+    // todo aria or class !
+    // tabPanels.forEach(panel => panel.classList.toggle('is-active', selectedTab.name === panel.dataset.name))
+    panels.forEach(panel => panel.setAttribute('aria-hidden', String(selectedTab.dataset.index !== (panel as HTMLElement).dataset.index)))
   }
 
   function initializeIndicator() {

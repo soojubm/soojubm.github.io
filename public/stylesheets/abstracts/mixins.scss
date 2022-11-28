@@ -29,6 +29,7 @@
 .link-outside {@include link-outside;}
 
 @mixin image-centered {width:auto;height:auto;max-width:150%;max-height:150%;margin:auto;position:absolute;left:0;right:0;top:0;bottom:0;}
+
 @mixin bleeding {
 	margin: 0 -50vw;
 	position: absolute;
@@ -38,8 +39,6 @@
 	bottom: 0;
 	z-index: -1;
 }
-
-
 
 @mixin clearfix {
   &:after {content:'';display:block;clear:both;}
@@ -74,11 +73,8 @@
 @mixin layout-medium {@include layout(var(--layout-width-small));}
 @mixin layout-small {@include layout(var(--layout-width-tiny));}
 
+
 // todo flex일 대 min-width가 필수가 된다..
-@mixin group {
-  display:flex;flex-wrap:wrap;margin:var(--space-groupitem-minus);
-  > * {margin:var(--space-groupitem)}
-}
 @mixin group-bleeding {
   display:flex; // 중복
   flex-wrap: nowrap;
@@ -89,33 +85,30 @@
   > * {min-width:auto;}
   &::-webkit-scrollbar {display:none;}
 }
+// @mixin tag-group {@include group(var(--space-groupitem))}
+// @mixin chip-group {@include group(var(--space-groupitem))}
 
 @mixin tag-group {
   display:flex;flex-wrap:wrap;margin:var(--space-1-minus);
   > * {margin:var(--space-1);}
 }
-@mixin chip-group {@include group;}
-
-
-.textfield-group {}
-.tag-group {@include tag-group;}
-.chip-group {@include group;}
-.chip-group[data-align=bleed]  {@include group-bleeding;}
-
-.button-group {@include group;}
+@mixin chip-group { display:flex;flex-wrap:wrap;margin:var(--space-groupitem-minus);
+  > * {margin:var(--space-groupitem)}}
+.button-group {display:flex;}
 .button-group > * {flex:auto;}
 
+// 랜딩 페이지와 제품의 클래스 방법론을 달라져야 함. 결국, 제품에는 유틸성... => 유틸성이란 결국 컴포넌트. 가이드 문서이기 때문에 유틸성 클래스가 필요함.
 
+// group /style='button''chip''tag' vs ButtonGroup ChipGroup
 
-.linebreak-always {}
-.linebreak-desktop {
-  display:block;
-  @media (--small) {display:inline;}
-}
-.linebreak-mobile {
-  display:inline;
-  @media (--small) {display:block;}
-}
+// chip-group / chip-group-bleeding
+.textfield-group {}
+.button-group {} // align= left ' right ' isFluid(space-between + column width)
+.tag-group {@include tag-group;}
+.chip-group {@include chip-group;}
+.chip-group[data-align=bleed]  {@include group-bleeding;}
+.group-bleeding {}
+
 
 @mixin position-left-top {position:absolute;left:var(--space-1);top:var(--space-1);}
 @mixin position-right-top {position:absolute;right:var(--space-2);top:var(--space-2);}
@@ -150,8 +143,6 @@
   color: var(--color-text-light);
   &:before {content:'#';}
 }
-
-
 
 // @media (prefers-color-scheme: dark) {
 //   :root {

@@ -8,16 +8,17 @@ const TerserPlugin = require('terser-webpack-plugin')
 
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const SpeedMeasurePlugin = require('speed-measure-webpack-plugin')
+// const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
 
-const CopyPlugin = require('copy-webpack-plugin')
+// const CopyPlugin = require('copy-webpack-plugin')
+// const CompressionPlugin = require('compression-webpack-plugin')
+// const StylelintPlugin = require('stylelint-webpack-plugin')
+// [name].css => main.css / chunkFilename: '[id].css' 
 
-const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
-
-const CompressionPlugin = require('compression-webpack-plugin')
-
-const StylelintPlugin = require('stylelint-webpack-plugin')
 
 const path = require('path')
+
+// const devMode = process.env.NODE_ENV !== "production";
 
 module.exports = new SpeedMeasurePlugin().wrap({
   mode: 'none', // development, production, none
@@ -32,40 +33,33 @@ module.exports = new SpeedMeasurePlugin().wrap({
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
   },
   watch: true,
+  target: ['web', 'es5'],
+
+  plugins: [
+    new CleanWebpackPlugin(),
+    new MiniCssExtractPlugin({ filename: 'style.css' }),
+
+    new HtmlWebpackPlugin({ template: './index.html', filename: 'index.html' }),
+
+    new BundleAnalyzerPlugin(),
+    // new FriendlyErrorsWebpackPlugin(),
+  ],
+
   module: {
     rules: [
       { test: /\.ts$/, use: 'ts-loader' },
       {
-        test: /\.(sa|sc|c)ss$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'],
+        test: /\.(sc|c)ss$/,
+        use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
       },
       {
         test: /\.m?js$/,
         exclude: /node_modules/,
-        use: ['babel-loader', 'eslint-loader'],
+        use: ['babel-loader'],
       },
     ],
   },
 
-  plugins: [
-    new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin({ template: './index.html', filename: 'index.html' }),
-    new MiniCssExtractPlugin({ filename: 'style.css', chunkFilename: '[id].css' }), // [name].css => main.css
-    // new CompressionPlugin({
-    //   compressionOptions: {
-    //     numiterations: 15,
-    //   },
-    //   algorithm(input, compressionOptions, callback) {
-    //     return zopfli.gzip(input, compressionOptions, callback)
-    //   },
-    // }),
-    // new CopyPlugin([{ from: 'public', to: 'public' }]),
-
-    // new StylelintPlugin(),
-
-    new BundleAnalyzerPlugin(),
-    new FriendlyErrorsWebpackPlugin(),
-  ],
   optimization: {
     minimize: true,
     minimizer: [

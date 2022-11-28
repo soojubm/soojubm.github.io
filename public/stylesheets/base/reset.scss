@@ -19,6 +19,17 @@ svg {color:var(--gray800);} // for icon
 u {text-decoration:none;position:relative;}
 u:after {content:'';height:.4em;border-radius:2px;background:var(--green100);position:absolute;left:-.125rem;right:-.125rem;bottom:0;z-index:-1;}
 
+
+q {position:relative;}
+q:before {
+  content: "“";
+  display: block;
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 48px;
+}
+
+
 html {min-width:320px;height:100%;overflow-x:hidden;font:16px/(var(--font-line-height)) var(--font-family);-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overscroll-behavior:contain;}
 body {background:var(--color-background);color:var(--color-text);font-size:.875rem;}
 
