@@ -25,6 +25,7 @@
 .article ul {margin:var(--space-after-subhead) 0 2rem;}
 
 .article-subhead {margin:3rem 0 var(--space-2);@include text-subhead;}
+.article-subhead + ul {margin-top: 0;}
 .article > .hashtag {margin:0 .25rem 0 0;font-size:var(--font-size-small);}
 
 // .article.is-observed {animation:fadeup .8s forwards;}

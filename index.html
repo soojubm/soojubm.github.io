@@ -3,7 +3,7 @@
   <head>
     <title>이경수</title>
     <meta charset="utf-8" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <!-- <meta http-equiv="x-ua-compatible" content="ie=edge" /> -->
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover"
@@ -55,10 +55,10 @@
     <!-- multiple icons for IE -->
     <meta name="msapplication-square310x310logo" content="icon_largetile.png" />
     <!-- home icon for safari 180px | 192px -->
-    <link rel="apple-touch-icon" href="touch-icon-iphone.png" />
+    <!-- <link rel="apple-touch-icon" href="/images/touchicon-180.png" />
     <link rel="apple-touch-icon" sizes="76x76" href="touch-icon-ipad.png" />
     <link rel="apple-touch-icon" sizes="120x120" href="touch-icon-iphone-retina.png" />
-    <link rel="apple-touch-icon" sizes="152x152" href="touch-icon-ipad-retina.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="touch-icon-ipad-retina.png" /> -->
     <!-- windows phone | internet explorer-->
     <meta name="msapplication-square70x70logo" content="icon_smalltile.png" />
     <meta name="msapplication-square150x150logo" content="icon_mediumtile.png" />
@@ -72,8 +72,6 @@
     <link rel="apple-touch-icon-precomposed" href="/favicon/favicon-180.png" />
     <link rel="shortcut icon" sizes="196x196" href="/favicon/favicon-196.png" />
 
-    <link rel="apple-touch-icon" href="/images/touchicon-180.png" />
-
     <meta name="application-name" content="몰바요" />
 
     <meta name="msapplication-TileColor" content="#FFFFFF" />
@@ -83,6 +81,9 @@
     <meta name="msapplication-config" content="/path/to/ieconfig.xml" /> -->
 
     <link rel="stylesheet" href="./build/style.css" />
+
+    <!-- <link href="default.css" rel="stylesheet" title="Default Style" />
+    <link href="fancy.css" rel="alternate stylesheet" title="Fancy" /> -->
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lucaburgio/iconoir@master/css/iconoir.css" /> -->
 
     <script src="./public/javascripts/polyfill.js" defer></script>
@@ -152,7 +153,7 @@
         </div> -->
         <div class="navbar-menu-item has-submenu">
           <menu>
-            <a href="#"><span class="material-symbols-outlined" style="margin-right:.25rem;" aria-label="홈"> cottage </span></a>
+            <a href="#"><span class="material-symbols-outlined" style="margin-right: 0.25rem" aria-label="홈"> cottage </span></a>
             <a href="#tokens">Tokens</a>
             <a href="#signifier_why">Signifier</a>
             <a href="#components">Components</a>
@@ -162,7 +163,7 @@
             <!-- <a href="#hierarchy">Hierarchy <sup>foundation</sup></a> -->
           </menu>
         </div>
-        <div class="navbar-menu-item has-submenu" style="margin:var(--space-2) 0 0 0;">
+        <div class="navbar-menu-item has-submenu" style="margin: var(--space-2) 0 0 0">
           <span class="menu-label" role="menuitem">Patterns</span>
           <menu>
             <a href="#presentations_why">Presentations</a>
@@ -175,7 +176,7 @@
             <!-- <a href="#terms">Terms & Privacy</a> -->
           </menu>
         </div>
-        <div class="navbar-menu-item has-submenu" style="margin:var(--space-2) 0 0 0;" role="menu">
+        <div class="navbar-menu-item has-submenu" style="margin: var(--space-2) 0 0 0" role="menu">
           <span class="menu-label" role="menuitem">Interfaces</span>
           <menu>
             <a href="#profile">User Profile 🔥</a>
@@ -203,7 +204,7 @@
           </menu>
         </div>
       </div>
-      <a class="navbar-logo" href="/"><span style="margin-top:3px;">🦆</span></a>
+      <a class="navbar-logo" href="/"><span style="margin-top: 3px">🦆</span></a>
 
       <div class="navbar-user">
         <!-- <a class="navbar-search-trigger js-navbar-toggle" href="#"></a> -->
@@ -211,10 +212,10 @@
         <!-- <a class="chip" href="#" style="margin-right:.5rem;"><span class="chip-label">시작하기</span></a> -->
         <button class="switch-wrap js-darkmode" title="change theme">
           <figure class="chip">
-            <span class="day material-symbols-outlined" style="display:flex;">light_mode</span>
-            <span class="night material-symbols-outlined" style="display:flex;">nights_stay</span>
+            <span class="day material-symbols-outlined" style="display: flex">light_mode</span>
+            <span class="night material-symbols-outlined" style="display: flex">nights_stay</span>
           </figure>
-          <span class="switch" style="margin-left:auto;">
+          <span class="switch" style="margin-left: auto">
             <input type="checkbox" id="temp55" name="" role="switch" />
           </span>
         </button>

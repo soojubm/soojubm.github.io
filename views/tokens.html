@@ -52,7 +52,7 @@
 
   <section class="tokens-body">
     <article class="article">
-      <div>1~2번 사용하는 예외케이스를 토큰으로 정의할 필요가 있을까.</div>
+      <div>1~2번 사용하는 예외케이스를 토큰으로 정의하지 마세요. 컴포넌트 스코프에서 예외 케이스로 보충하세요.</div>
       <div>layout - wide / narrow</div>
       <div>small-scale layout (polaris 참고) 아바타 유무</div>
       <div>layout in a card</div>
@@ -65,7 +65,7 @@
 
       <ul>
         <li>hierarchy. 크기와 비례해서 radius와 shadow 베리에이션이 필요하지만 경량화하여 더 중요한 문제에 집중하고 있습니다.</li>
-        <li>radius. pill과 non-pill은 양자택일. 인물 아바타를 특정하기 위해 circle은 허용될 수 있다.</li>
+        <li>radius. pill과 non-pill은 양자택일. 인물 아바타를 특정하기 위해 circle은 허용할 수 있다.</li>
         <li>theme. 인버트 컬러셋을 추가로 정의하지 않습니다. 하나의 컬러셋으로 다크 테마에 대응합니다. (쉽지 않음. 기술 의존이 높은 규칙..)</li>
         <li>MD3 참고. surface는 shadow 뿐 아니라 color도. radius를 shape</li>
         <li>생각.모든 컴포넌트에서 모든 토큰을 정의하기.</li>
@@ -316,14 +316,10 @@
     <article class="article js-scrollspy-section">
       <h1 class="article-title">Sizing</h1>
       <p class="article-description">요소의 너비와 길이.</p>
-      <ul>
-        <li>브라우저의 사이즈가 변경되어도 사이즈 토큰은 불변합니다.</li>
-        <li>사이즈 토큰으로 추상화하지 않는 케이스.
-          <p>--navbar-height: <del>var(--size-huge)</del>5rem</p>
-          <p>--sidenav-width: null;</p>
-        </li>
-        <li>예외 케이스. switch height: 20px</li>
-      </ul>
+
+      <p>브라우저의 사이즈가 변경되어도 사이즈 토큰은 불변합니다.</p>
+
+      <br />
 
       <div class="token-group">
         <div class="token-item">
@@ -370,6 +366,13 @@
           </div>
         </div>
       </div>
+
+      <h4 class="article-subhead">사이즈 토큰으로 추상화하지 않는 케이스</h4>
+      <p>--navbar-height: <del>var(--size-huge)</del>5rem</p>
+      <p>--sidenav-width: null;</p>
+
+      <h4 class="article-subhead">예외 케이스</h4>
+      <p>switch height: 20px</p>
     </article>
 
     <article class="article js-scrollspy-section">
@@ -452,13 +455,19 @@
       <h1 class="article-title">Layouts - Width</h1>
       <p class="article-description">페이지 레벨과 섹션 레벨의 레이아웃.</p>
       <!-- <p>서비스가 출시 환경이 웹온리(웹/태블릿+모바일) vs 웹+모바일앱(웹+태블릿/모바일)</p> -->
+      <!-- <p style="margin-bottom:var(--space-4);color:var(--color-text-light);">tablet보다 작은 폼 팩터. ex) tablet, phone</p> -->
+
+      <h2 class="article-subhead">유연한 그리드 시스템</h2>
+      <p>모바일 퍼스트, 가로 스크롤 트랜드 기조로 12 column grid 등 엄격한 그리드 시스템을 정의하지 않습니다. 최대 4개의 칼럼을 가질 수 있도록 칼럼 시스템을 설계하세요. 칼럼 또는 목록은 가로 스크롤로 변경하기 쉬워야야 합니다.</p>
+
+      <h2 class="article-subhead">페이지 모듈을 통한 맥락 구분</h2>
+      <p>맥락의 전환(페이지의 역할의 구분??)을 표현하기 위해 레이아웃 모듈 또는 배경색의 대비를 활용할 수 있습니다. 1. 컨테이너 너비(비밀번호찾기와 로그인/회원가입) 2. 배경색(설정, 글쓰기, 소개 등)</p>
+
+      <h2 class="article-subhead">가이드라인?</h2>
       <ul>
-        <li>case. form layout</li>
-        <li>섹션, 아티클 그리고 모달, 드롭다운 등의 컴포넌트도 작은 화면에서는 페이지 맥락이 될 수 있음을 고려합니다.</li>
-        <li><b>유연한 그리드 시스템.</b> 모바일 퍼스트, 가로 스크롤 트랜드 기조로 12 column grid 등 엄격한 그리드 시스템을 정의하지 않습니다. 최대 4개의 칼럼을 가질 수 있도록 칼럼 시스템을 설계하세요. 칼럼 또는 목록은 가로 스크롤로 변경하기 쉬워야야 합니다.</p>
-        <li><b>페이지 모듈을 통한 맥락 구분.</b> 맥락의 전환을 표현하기 위해 레이아웃 모듈 또는 배경색의 대비를 활용할 수 있습니다. 1. 컨테이너 너비(비밀번호찾기와 로그인/회원가입) 2. 배경색(설정, 글쓰기, 소개 등)</p>
         <li>breakpoint small에서는 layout-width가 %(퍼센티지)로 변경됩니다.</li>
-        <!-- <p style="margin-bottom:var(--space-4);color:var(--color-text-light);">tablet보다 작은 폼 팩터. ex) tablet, phone</p> -->
+        <li>섹션, 아티클 그리고 모달, 드롭다운 등의 컴포넌트도 작은 화면에서는 페이지 맥락이 될 수 있음을 고려합니다.</li>
+        <li>case. form layout</li>
       </ul>
 
       <h4 class="article-subhead">Media queries</h4>
@@ -616,10 +625,14 @@
       <h1 class="article-title">Animation</h1>
       <p class="article-description">작성 중.</p>
       <!-- <h4 class="article-subhead">Timing / Duration / Delay</h4> -->
+
+      <h2 class="article-subhead">Best practices</h2>
+      <p>뷰에서 최대 3개의 요소로 delay를 제한합니다. 너무 많은 애니메이션은 사용자가 콘텐츠보다 애니메이션에 집중시킬 수 있습니다.</p>
+
       <ul>
         <li>inactive로 전환 시(닫기 등) instant</li>
-        <li>뷰에서 최대 3개의 요소로 delay를 제한합니다. 너무 많은 애니메이션은 사용자가 콘텐츠보다 애니메이션에 집중시킬 수 있습니다.</li>
       </ul>
+      
       <div class="token-group">
         <div class="token-item">
           <b>--bazier: cubic-bezier(0.455, 0.03, 0.515, 0.955)</b>
