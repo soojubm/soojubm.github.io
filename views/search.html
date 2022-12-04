@@ -43,7 +43,7 @@
       </div>
       <div class="tile-flat">
         <div class="textfield searchfield is-focused">
-          <button class="textfield-prefix searchfield-prefix" style="left:0;">
+          <button class="textfield-prefix searchfield-prefix" style="left: 0; top: 0; width: 48px; height: 48px">
             <span class="titlebar-back-icon material-symbols-outlined">arrow_back</span>
           </button>
           <!-- <label class="textfield-label" for="search">검색(시각적으로숨겨야함)</label> -->
@@ -52,9 +52,33 @@
             type="search"
             id="search"
             placeholder="android pattern"
-            style="width:calc(100% - var(--size-medium));margin-left:auto;padding-left:.75rem;"
+            style="width: calc(100% - var(--size-large) - 0.25rem); margin-left: auto; padding-left: 0.75rem"
           />
-          <button class="textfield-clear searchfield-clear" hidden style="right:.75rem;"><span class="material-symbols-outlined">close</span></button>
+          <button class="textfield-clear searchfield-clear" hidden style="right: 0.75rem">
+            <span class="material-symbols-outlined">close</span>
+          </button>
+        </div>
+      </div>
+      <div class="tile-flat">
+        <header class="titlebar" style="padding: 0 0 var(--space-2) 0">
+          <h1 class="titlebar-title">?????</h1>
+          <button class="titlebar-back" aria-label="이전 페이지로">
+            <span class="material-symbols-outlined">arrow_back</span>
+          </button>
+        </header>
+        <div class="textfield searchfield is-focused">
+          <!-- <label class="textfield-label" for="search">검색(시각적으로숨겨야함)</label> -->
+          <button class="textfield-prefix searchfield-prefix" style="background: none"><span class="material-symbols-outlined">search</span></button>
+          <input
+            class="textfield-input searchfield-input js-input-test"
+            type="search"
+            id="search"
+            placeholder="수줍이 패턴 (with titlebar)"
+            style="width: 100%; background: none; border: var(--border); box-shadow: var(--shadow)"
+          />
+          <button class="textfield-clear searchfield-clear" hidden style="right: 0.75rem">
+            <span class="material-symbols-outlined">close</span>
+          </button>
         </div>
       </div>
     </section>
@@ -71,25 +95,27 @@
         <section class="search-recent">
           <h2 class="search-recent-title">최근 검색</h2>
           <!-- <button class="search-recommend-modify">수정</button> -->
-          <div class="search-suggestion-item item" data-size="medium" style="display:flex;align-items:center;">
+          <div class="search-suggestion-item item" data-size="medium" style="display: flex; align-items: center">
             <figure class="search-suggestion-item-avatar item-avatar"><i></i></figure>
             <p class="item-name">개구리</p>
-            <button class="search-suggestion-item-delete item-delete icon-button" data-size="small" style="margin-left:auto;min-width:24px;">
+            <button class="search-suggestion-item-delete item-delete icon-button" data-size="small" style="margin-left: auto; min-width: 24px">
               <span class="material-symbols-outlined">close</span>
             </button>
           </div>
           <div class="search-suggestion-item item" data-size="medium">
             <figure class="search-suggestion-item-avatar item-avatar"><i></i></figure>
             <p class="item-name">올챙이</p>
-            <button class="search-suggestion-item-delete item-delete" style="border:none;background:none;color:var(--color-text-light);">삭제</button>
+            <button class="search-suggestion-item-delete item-delete" style="border: none; background: none; color: var(--color-text-light)">
+              삭제
+            </button>
           </div>
         </section>
       </div>
 
       <div class="tile-flat">
-        <section class="" style="text-align:center;">
+        <section class="" style="text-align: center">
           <p class="" role="status">최근 검색 내역이 없습니다.</p>
-          <div class="search-recent-group" role="group" style="margin:.25rem 0 0;">
+          <div class="search-recent-group" role="group" style="margin: 0.25rem 0 0">
             <a class="search-recent-group-item" href="#"><span class="chip-label">개구리</span></a>
             <a class="search-recent-group-item" href="#"><span class="chip-label">달팽이</span></a>
             <a class="search-recent-group-item" href="#"><span class="chip-label">매미</span></a>
@@ -111,9 +137,9 @@
             <figure class="search-suggestion-item-avatar item-avatar"></figure>
             <p class="item-name">자동완성유아이</p>
           </div>
-          <div class="search-suggestion-item button-elevated" style="margin-bottom:0;z-index:auto;">
+          <div class="search-suggestion-item button-elevated" style="margin-bottom: 0; z-index: auto">
             <figure class="search-suggestion-item-avatar"><span class="material-symbols-outlined">search</span></figure>
-            <p style="color:var(--color-primary);"><span>자동완</span>(으)로 검색</p>
+            <p style="color: var(--color-primary)"><span>자동완</span>(으)로 검색</p>
           </div>
         </section>
       </div>
@@ -142,9 +168,9 @@
       <li>결과 페이지의 공유를 허용할 것인가?</li>
     </ul>
     <section class="component-example">
-      <section class="result tile-flat" style="padding-top:2rem;padding-bottom:2.5rem;">
-        <p role="status" style="text-align:center;">수줍이와(과)<br />일치하는 검색결과가 없습니다.</p>
-        <div style="display:flex;justify-content:center;margin-top:1rem;margin-left:-.25rem;">
+      <section class="result tile-flat" style="padding-top: 2rem; padding-bottom: 2.5rem">
+        <p role="status" style="text-align: center">수줍이와(과)<br />일치하는 검색결과가 없습니다.</p>
+        <div style="display: flex; justify-content: center; margin-top: 1rem; margin-left: -0.25rem">
           <a href="" class="search-similar-item">
             <figure>🦔</figure>
             <span>검색어 제공</span>

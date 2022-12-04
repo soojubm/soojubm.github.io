@@ -149,6 +149,14 @@
       </div>
       <!-- <p>복잡한 추상화를 피하기.</p> -->
     </div>
+
+    <blockquote style="margin: 1rem 0">
+      <ul>
+        <li>Dos, Don'ts 케이스는 텍스트로 작성하세요. 이미지는 불필요한 관리 리소스.</li>
+        <li>best practices: ...</li>
+        <li>other cases: for meta problems</li>
+      </ul>
+    </blockquote>
   </section>
 
   <!-- <section>
@@ -164,7 +172,7 @@
       style="width: var(--size-tiny); background: var(--color-primary); height: var(--size-tiny); margin-bottom: 1rem; border-radius: var(--radius)"
     ></div>
     <h2 class="post-relation-title" title="이 콘텐츠를 본 사람들은">인터페이스 이야기</h2>
-    <p class="post-relation-description">글쓰기를 위한<br />주제 선정.</p>
+    <p class="post-relation-description" style="margin-bottom: 3rem">글쓰기를 위한<br />주제 선정.</p>
 
     <!-- <section class="profile-tabpanel list" role="tabpanel" aria-hidden="false" data-index="1" style="margin-top:3rem;">
       <a class="card js-modal" href="#newneek" data-modal="newneek" style="width:40% !important;">
@@ -189,16 +197,32 @@
       </a>
     </section> -->
     <a
-      class="postitem"
+      class="postitem tile-elevated"
       href="https://www.notion.so/soojubm/UI-Designer-9c18f4dd39eb4181b9f9c2ee76896618?p=6001fc6829374c1e8395d815a0c7770a&pm=s"
       target="_blank"
     >
+      <div class="tag-group">
+        <span class="tag">Product</span>
+        <span class="tag">UI</span>
+      </div>
       <figure class="postitem-cover"></figure>
       <h3 class="postitem-name">크로스 플랫폼 시대의 인터페이스 디자인 (초안)</h3>
       <p class="postitem-description">플랫폼에 종속되지 않는 정보 형태, 그리고 콘텐츠 시대의 탐색 경험.</p>
+
+      <figure class="avatar"></figure>
+      <div style="display: flex; align-items: center">
+        Show more
+        <figure class="icon-button" data-size="small">
+          <span class="material-symbols-outlined">call_made</span>
+        </figure>
+      </div>
     </a>
-    <span class="postitem" style="cursor: not-allowed">
+    <span class="postitem tile-elevated" style="cursor: not-allowed">
       <figure class="postitem-cover"></figure>
+      <div class="tag-group">
+        <span class="tag">Design</span>
+        <span class="tag"></span>
+      </div>
       <h3 class="postitem-name">윤리적으로 디자인하기 (주제선정단계)</h3>
       <ul class="postitem-description">
         <li>광고 표기를 '광고'로 명확히 하기. 'AD' 금지. 눈에 띄게 표현하고 배치하세요.</li>
@@ -236,10 +260,16 @@
       style="width: var(--size-tiny); background: var(--color-primary); height: var(--size-tiny); margin-bottom: 1rem; border-radius: var(--radius)"
     ></div>
 
-    <h2 class="post-relation-title">Changelog (or Last Updated)</h2>
+    <h2 class="post-relation-title">Changelog (or Last updated)</h2>
     <p class="post-relation-description">변경 사유를 블라블라</p>
     <br /><br />
-    <time class="tag">2022. 11. 20.</time>
+    <!-- <time class="tag">2022. 12. 02.</time>
+    <div class="timeline-item" style="padding-top: 0.5rem; padding-bottom: 1rem">
+      <span class="timeline-item-icon" style="top: 0.5rem">✍️</span>
+      <span class="timeline-item-title">네이밍 컨벤션</span>
+      <p class="timeline-description" style="color: var(--color-text-light)">중요도(p, s)가 아닌 스타일로 명명(solid, outlined)</p>
+    </div> -->
+    <time class="timeline-date">2022. 11. 20.</time>
     <div class="timeline-item" style="padding-top: 0.5rem">
       <span class="timeline-item-icon" style="top: 0.5rem">✍️</span>
       <span class="timeline-item-title">변수 추상화</span>
@@ -250,7 +280,7 @@
       <span class="timeline-item-title">예외 케이스를 토큰에서 제외</span>
       <p class="timeline-description" style="color: var(--color-text-light)">font sizes 2종</p>
     </div>
-    <time class="tag">2022. 11. 4.</time>
+    <time class="timeline-date">2022. 11. 4.</time>
     <div class="timeline-item" style="padding-top: 0.5rem; padding-bottom: 1rem">
       <span class="timeline-item-icon" style="top: 0.5rem">✍️</span>
       <span class="timeline-item-title">체크박스</span>
@@ -258,7 +288,7 @@
         label:before / after 선택자에서 input background를 사용. 체크아이콘 컴포넌트를 다양한 컴포넌트에 재활용하기 위해.
       </p>
     </div>
-    <time class="tag">2022. 8. 4.</time>
+    <time class="timeline-date">2022. 8. 4.</time>
     <div class="timeline-item" style="padding-top: 0.5rem; padding-bottom: 1rem">
       <span class="timeline-item-icon" style="top: 0.5rem">✍️</span>
       <span class="timeline-item-title">아이콘</span>
@@ -288,46 +318,7 @@
     <a href="https://www.digitala11y.com/" target="_blank">Digital A11Y</a>
   </section>
 
-  <!-- <section class="faq" style="max-width:800px;margin:0 auto;padding:0 var(--grid-margin);">
-    <abbr title="Frequently asked questions" hidden="">FAQ</abbr>
-    <header style="padding-bottom:2rem;text-align:center;">
-      <small>Find Your Answers</small>
-      <h2 style="font-size:var(--font-size-huge);" title="FAQs">궁금한 점이 있으신가요?</h2>
-    </header>
-    <article class="accordion js-accordion" aria-expanded="false">
-      <h3 class="accordion-title" role="button">
-        탈퇴하고 싶어요.
-        <figure class="accordion-title-icon">
-          <span class="material-symbols-outlined">expand_more</span>
-        </figure>
-      </h3>
-      <div class="accordion-panel">
-        <p>모든 국민은 건강하고 쾌적한 환경에서 생활할 권리를 가지며, 국가와 국민은 환경보전을 위하여 노력하여야 한다.</p>
-        <p>
-          제1항의 지시를 받은 당해 행정기관은 이에 응하여야 한다. 국회의원은 법률이 정하는 직을 겸할 수 없다. 대통령의 임기연장 또는 중임변경을 위한
-          헌법개정은 그 헌법개정 제안 당시의 대통령에 대하여는 효력이 없다.
-        </p>
-      </div>
-    </article>
-    <article class="accordion js-accordion" aria-expanded="false">
-      <h3 class="accordion-title" role="button">
-        주문을 취소하고 싶어요.
-        <figure class="accordion-title-icon">
-          <span class="material-symbols-outlined">expand_more</span>
-        </figure>
-      </h3>
-      <div class="accordion-panel">
-        <p>모든 국민은 건강하고 쾌적한 환경에서 생활할 권리를 가지며, 국가와 국민은 환경보전을 위하여 노력하여야 한다.</p>
-        <p>
-          제1항의 지시를 받은 당해 행정기관은 이에 응하여야 한다. 국회의원은 법률이 정하는 직을 겸할 수 없다. 대통령의 임기연장 또는 중임변경을 위한
-          헌법개정은 그 헌법개정 제안 당시의 대통령에 대하여는 효력이 없다.
-        </p>
-      </div>
-    </article>
-    <footer>
-      <p style="margin:var(--space-4) 0 0 0;">궁금증이 해결되지 않는다면? <a href="#">Get in touch with us.</a></p>
-    </footer>
-  </section> -->
+  <!-- custom element:::: morning star-->
 
   <!-- <section class="design-ticker">
     <div class="marquee-box">

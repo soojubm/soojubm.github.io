@@ -15,8 +15,8 @@
   <br />
 
   <!-- todo item width 100%;  -->
-  <div class="item tile-elevated-small" data-size="large" role="listitem" style="width:auto;z-index:auto;">
-    <figure class="item-avatar" style="background-image:none;">
+  <div class="item tile-elevated-small" data-size="large" role="listitem" style="width: auto; z-index: auto">
+    <figure class="item-avatar" style="background-image: none">
       <span class="material-symbols-outlined">badge</span>
     </figure>
     <span class="item-label">사용자 정보</span>
@@ -29,8 +29,8 @@
     <span class="setting-item-icon material-symbols-outlined">arrow_forward</span>
   </div>
 
-  <div class="item" data-size="medium" role="menuitem" style="width:auto;">
-    <figure class="item-avatar" style="background-image:none;">
+  <div class="item" data-size="medium" role="menuitem" style="width: auto">
+    <figure class="item-avatar" style="background-image: none">
       <span class="material-symbols-outlined">mail</span>
     </figure>
     <span class="item-label">이메일</span>
@@ -39,25 +39,33 @@
   <div class="item" data-size="medium" role="menuitem">
     <figure class="item-avatar"></figure>
     <span class="item-label">비밀번호 변경</span>
-    <span class="chip" style="margin-left:auto;">
+    <span class="chip" style="margin-left: auto">
       <span class="chip-label">변경</span>
     </span>
     <span class="setting-item-icon"> <b hidden>변경하기</b> </span>
   </div>
 
-  <div class="item tile-elevated-small" data-size="large" role="listitem" style="margin-left:-.5rem;margin-right:-.5rem;z-index:auto;">
-    <figure class="item-avatar" style="background-image:none;">
-      <span class="material-symbols-outlined">
-        campaign
-      </span>
+  <div class="item tile-elevated-small" data-size="large" role="listitem" style="margin-left: -0.5rem; margin-right: -0.5rem; z-index: auto">
+    <figure class="item-avatar" style="background-image: none">
+      <span class="material-symbols-outlined"> campaign </span>
     </figure>
     <span class="item-label">알림</span>
     <p class="item-description">앱 및 시스템의 할인</p>
   </div>
-  <div class="item" data-size="medium" role="menuitem" style="margin-left:.5rem;">
+  <div class="item" data-size="medium" role="menuitem" style="margin-left: 0.5rem">
     <figure class="item-avatar"></figure>
     <span class="item-label">알알림</span>
     <!-- <span class="item-icon"> <b hidden>변경하기</b> <span class="material-symbols-outlined">arrow_forward</span> </span> -->
+  </div>
+  <div class="tile-flat-small">
+    <button class="item js-darkmode" role="menuitem" data-size="medium" title="change theme" style="width: 100%">
+      <figure class="item-avatar" style="background-image: none"><span class="material-symbols-outlined">nights_stay</span></figure>
+      <span class="item-label">어둡게 보기</span>
+      <span class="switch" style="margin-left: auto">
+        <input type="checkbox" id="temp55" name="" role="switch" />
+        <label for="temp55" style="padding-left: 48px"></label>
+      </span>
+    </button>
   </div>
 
   <br /><br />
@@ -65,13 +73,10 @@
   <h3 class="setting-subhead">프로필 사진</h3>
   <div class="setting-item">
     <figure class="profile-user-avatar"></figure>
-    <div class="" role="group" style="margin-top:.5rem;margin-bottom:.5rem;">
-      <button class="chip"><span class="chip-label">프로필 사진 추가</span></button>
-      <button class="chip"><span class="chip-label">프로필 사진 업데이트</span></button>
+    <div class="chip-group" role="group" style="margin-top: 0.5rem; margin-bottom: 0.5rem">
+      <button class="chip"><span class="chip-label">프로필 사진 추가 / 업데이트</span></button>
       <button class="chip">
-        <span class="material-symbols-outlined">
-          delete
-        </span>
+        <span class="material-symbols-outlined"> delete </span>
       </button>
     </div>
     <p>10MB 이내의 JPEG, PNG, GIF 형식이어야 합니다.</p>
@@ -89,26 +94,7 @@
   <div class="setting-item">
     <h2 class="setting-item-label">이메일</h2>
     <div class="setting-item-value">soojubm@gmail.com</div>
-    <span class="setting-item-icon material-symbols-outlined">
-      arrow_forward
-    </span>
-  </div>
-  <div style="display:flex;">
-    <div class="tile-flat" style="width:calc(50% - .375rem);margin-top:0;margin-right:.75rem;">
-      <div class="radio">
-        <input type="radio" id="gender-etc" name="gender" value="" checked />
-        <label for="gender-etc" title="Video Killed the Radio Button">집</label>
-      </div>
-      <b></b>
-      <p class="setting-item-value-username">이경수</p>
-      <p class="setting-item-value-address">[07655]</p>
-      <p class="setting-item-value-address">서울특별시 강서구 까치산로 182</p>
-      <p class="setting-item-value-phone">010-3121-7045</p>
-
-      <footer>
-        <button class="chip">삭제</button>
-      </footer>
-    </div>
+    <span class="setting-item-icon material-symbols-outlined"> arrow_forward </span>
   </div>
 
   <br />
@@ -121,7 +107,7 @@
     <div class="setting-item-value">수줍이</div>
     <span class="setting-item-icon material-symbols-outlined">arrow_forward</span>
   </div>
-  <small style="display:block;margin:-.25rem 0 var(--space-4) 0;line-height:var(--font-line-height-small);">
+  <small style="display: block; margin: -0.25rem 0 var(--space-4) 0; line-height: var(--font-line-height-small)">
     soojubm 닉네임을 만드세요! 60일 동안 변경할 수 없습니다 — 취소할 수 없습니다! Twitch 이용규약을 위반한 닉네임은 계정이 영구정지될 수 있으니
     주의하세요.
   </small>
@@ -135,7 +121,7 @@
     <div class="setting-item-value">문화/예술, 인권, 환경</div>
     <span class="setting-item-icon material-symbols-outlined">arrow_forward</span>
   </div>
-  <small style="display:block;margin:-.25rem 0 var(--space-4) 0;line-height:var(--font-line-height-small);">
+  <small style="display: block; margin: -0.25rem 0 var(--space-4) 0; line-height: var(--font-line-height-small)">
     관심있는 분야의 콘텐츠를 추천 받으세요.
   </small>
   <p></p>
@@ -149,7 +135,7 @@
     <div class="setting-item-value">강력한 비밀번호로 보안을 강화하세요.</div>
     <span class="setting-item-icon material-symbols-outlined">arrow_forward</span>
   </div>
-  <small style="display:block;margin:-.25rem 0 var(--space-3) 0;line-height:var(--font-line-height-small);">
+  <small style="display: block; margin: -0.25rem 0 var(--space-3) 0; line-height: var(--font-line-height-small)">
     비밀번호 변경 관련 안내를 해주어도 좋겠다. 비밀번호는 설정, 분실 시 이메일 모두 동일할 수 있을까.
   </small>
 
@@ -157,18 +143,27 @@
   <br />
 
   <h2 class="setting-subhead">뉴스레터</h2>
-  <div class="setting-item">
+  <!-- <div class="setting-item">
     <h2 class="setting-item-label">시사 뉴스레터</h2>
     <span class="setting-item-value switch">
       <input type="checkbox" id="switch1" name="" role="switch" value="on" checked />
       <label for="switch1" title="Receive weekly newsletter">시사 뉴스레터</label>
     </span>
+  </div> -->
+  <div class="tile-flat-small">
+    <button class="item js-darkmode" role="menuitem" data-size="medium" title="change theme" style="width: 100%">
+      <figure class="item-avatar" style="background-image: none"><span class="material-symbols-outlined">email</span></figure>
+      <span class="item-label">시사 뉴스레터</span>
+      <span class="switch" style="margin-left: auto">
+        <input type="checkbox" id="temp55" name="" role="switch" />
+        <label for="temp55" style="padding-left: 48px"></label>
+      </span>
+    </button>
   </div>
-  <small style="display:block;margin:-.25rem 0 var(--space-3) 0;line-height:var(--font-line-height-small);">
+  <small style="display: block; margin: 0 0 var(--space-3) 0; line-height: var(--font-line-height-small)">
     매 주 월요일, 수요일, 금요일 아침에 받아볼 수 있어요. 스위치만 클릭 또는 타일을 클릭.
   </small>
 
-  <br />
   <br />
 
   <h2 class="setting-subhead">계정삭제 vs 계정비활성화</h2>
@@ -180,25 +175,26 @@
 
   <span class="button-tertiary">로그아웃</span>
 
+  <br /><br /><br />
   <div>
-    <header class="titlebar js-titlebar" role="navigation" style="padding:0;">
+    <header class="titlebar js-titlebar" role="navigation" style="padding: 0">
       <div class="titlebar-background"></div>
       <h1 class="titlebar-title js-page-title" title="page title">이름 바꾸기</h1>
       <button class="titlebar-back" onclick="javascript:window.location.href='/';">
         <figure class="titlebar-back-icon material-symbols-outlined" title="이전 페이지로">arrow_back</figure>
         <!-- <span class="titlebar-back-label">뒤로</span> -->
       </button>
-      <button class="titlebar-action" style="color:var(--color-primary);">
+      <button class="titlebar-action" style="color: var(--color-primary)">
         <figure class="titlebar-action-icon" hidden></figure>
         <span class="titlebar-action-label">저장</span>
       </button>
     </header>
-    <div class="is-opened" role="button" style="flex-wrap:wrap;box-shadow:none;border:none;padding:1rem 0;">
+    <div class="is-opened" role="button" style="flex-wrap: wrap; box-shadow: none; border: none; padding: 1rem 0">
       <!-- <div>설정 - 프로필 - 이름</div> -->
 
-      <form class="setting-item-form" style="padding:0;">
-        <h1 style="line-height:var(--font-line-height-small);">개인 및 계정 정보</h1>
-        <p style="margin:var(--space-after-subhead) 0 0 0;">
+      <form class="setting-item-form" style="padding: 0">
+        <h1 style="line-height: var(--font-line-height-small)">개인 및 계정 정보</h1>
+        <p style="margin: var(--space-after-subhead) 0 0 0">
           잠시 Twitch를 쉬고 싶으세요? 이미 준비되어 있습니다! 계정을 비활성화하면 프로필과 콘텐츠가 임시로 비활성화되며 유저 정보는 삭제되지
           않습니다. 나중에 마음이 바뀌면 계정에 다시 로그인하여 프로필을 다시 활성화할 수 있습니다.
         </p>
@@ -221,9 +217,9 @@
         </div>
       </fieldset>
 
-      <form class="setting-item-form" style="padding:0;">
-        <h1 style="line-height:var(--font-line-height-small);">어떻게<br />불러드릴까요?</h1>
-        <p style="margin:var(--space-after-subhead) 0 0 0;">
+      <form class="setting-item-form" style="padding: 0">
+        <h1 style="line-height: var(--font-line-height-small)">어떻게<br />불러드릴까요?</h1>
+        <p style="margin: var(--space-after-subhead) 0 0 0">
           성별 정보는 Google이 사용자를 지칭하는 방식을 포함해 Google 서비스에서 맞춤설정된 환경을 제공하는 데 사용될 수 있습니다.
           <a href="">더 알아보기</a>
         </p>

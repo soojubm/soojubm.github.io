@@ -126,6 +126,8 @@ arrow_drop_down
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Switch</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Checkboxes</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Radioes</span></a>
+
+      <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Selectbox</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Textfields</span></a>
 
       <!-- <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Badges</span></a> -->
@@ -220,33 +222,41 @@ arrow_drop_down
             <figure class="item-avatar">
               <span class="avatar-badge"></span>
             </figure>
-            <h3 class="item-name">Entity huge</h3>
+            <h3 class="item-name">EntityHuge</h3>
             <p class="item-description">description area.</p>
             <span>description area2.</span>
           </article>
           <article class="item" data-size="large">
             <figure class="item-avatar"></figure>
-            <h3 class="item-name">Entity large</h3>
+            <h3 class="item-name">EntityLarge</h3>
             <p class="item-description">description area.</p>
           </article>
           <article class="item" data-size="medium" style="display: flex; align-items: center">
             <figure class="item-avatar"></figure>
-            <h3 class="item-name" style="font-weight: var(--font-weight-normal)">Entity medium</h3>
+            <h3 class="item-name" style="font-weight: var(--font-weight-normal)">EntityMedium</h3>
             <time style="margin: 0 0 0 var(--space-2); color: var(--color-text-light)">36.4만</time>
             <button class="item-delete icon-button" data-size="small" style="margin-left: auto; min-width: 24px">
               <span class="material-symbols-outlined">close</span>
             </button>
           </article>
+          <article class="item" data-size="medium" style="display: flex; align-items: center">
+            <figure class="item-avatar"></figure>
+            <h3 class="item-name" style="font-weight: var(--font-weight-normal)">medium</h3>
+            <time class="item-date" style="margin: 0 0 0 var(--space-2); color: var(--color-text-light)">2022. 12. 04.</time>
+            <button class="item-delete icon-button" data-size="small" style="margin-left: auto; min-width: 24px">
+              <span class="material-symbols-outlined">close</span>
+            </button>
+          </article>
+
           <article class="item" data-size="small">
             <figure class="item-avatar"></figure>
-            <h3 class="item-name" style="font-weight: var(--font-weight-normal)">Entity small</h3>
+            <h3 class="item-name" style="font-weight: var(--font-weight-normal)">EntitySmall</h3>
           </article>
         </div>
       </div>
       <ul>
         <li>인접한 정보 더미 중 최상위 위계의 시각 정보입니다.</li>
         <li>이미지, 텍스트, 아이콘, 이모지를 포함할 수 있습니다.</li>
-        <li>clickable. fallback?</li>
         <!-- <li>현재 entity가 card vertica 형태</li> -->
         <!-- <li>memeo. medium. 이하의 크기에 항상 align-items:center. 텍스트 더미가 두 줄로 제공되지 않는다.</li> -->
         <!-- <li>pagination item은 chip과 같은 size token을 사용하지만 chip도 avatar도 아닙니다.</li> -->
@@ -265,6 +275,8 @@ arrow_drop_down
       </dl>
 
       <!-- <p><b>mui.</b> 아이콘 아바타를 사용. 아이콘 아바타와 아이콘 버튼의 차이.</p> -->
+
+      <h2 class="article-subhead">Fallback</h2>
 
       <h2 class="article-subhead">non-clickable<br />avatar는 장식 요소로 오른쪽에 배치</h2>
       <article class="user tile-flat" style="margin: var(--space-2) 0 var(--space-4); text-align: left">
@@ -290,6 +302,7 @@ arrow_drop_down
         </figure>
         <span class="avatargroup-label">Followed by 수줍이 외 4명</span>
       </article>
+      <small class="mutiual" style="display: block; margin: var(--space-2) 0 0 0">내가 팔로우하는 사용자 중에는 팔로워가 없습니다. (twitter)</small>
 
       <h2 class="article-subhead">hoverable<br />요약된 사용자 정보와 프로필 페이지 링크</h2>
       <article class="tile-elevated" style="margin: var(--space-2) 0 0">
@@ -540,19 +553,19 @@ arrow_drop_down
         </div>
       </section>
 
+      <h2 class="article-subhead">Best practices</h2>
+      <p>맥락이 다른 chip을 그룹으로 제공할 수 있습니다. 이 때 단일선택, 다중선택, 삭제여부, 펼침메뉴 등의 기표를 충분히 제공하세요.</p>
+
       <ul>
-        <li>맥락이 다른 chip을 그룹으로 제공할 수 있습니다. 이 때 단일선택, 다중선택, 삭제여부, 펼침메뉴 등의 기표를 충분히 제공하세요.</li>
-        <li>
-          콘텐츠 정렬sorting에서 옵션 목록을 chip group으로 제공하지 마세요. dropdown으로 현재 정렬 상태만 요약 표기하세요. (bad case: 2022.04 구글
-          지도 바뀐 것)
-        </li>
-        <li>콘텐츠 필터링을 위한 칩 그룹에서, 액티브 상태에 브랜드 컬러를 쓰지 않는 경향. 콘텐츠 탐색이 cta. 눈에 띄지 않는 무채색 활용이 높아짐.</li>
         <li>
           changelog. icon button은 clickable이기 때문에 아바타가 아니라 칩을 mixin. 2개의 사이즈로 확장. small은 용법을 제한하여 textfield에서
           사용하거나 일반 텍스트 우측에.
         </li>
         <!-- <li>trigger / menulist를 구별.</li> -->
       </ul>
+
+
+      <p>memo. dropdown을 칩과 분리. 이 디자인 시스템에서는 같은 형태를 사용하지만 배경색을 뺀 형태로 사용. </p>
 
       <h4 class="article-subhead">Props</h4>
       <dl>
@@ -586,6 +599,12 @@ arrow_drop_down
         <li>Filter with check icon</li>
         <li>Action with icon</li>
       </ul> -->
+
+
+      <h4 class="article-subhead">Sorting<br />콘텐츠 정렬</h4>
+      <p>옵션 목록을 chip group으로 제공하지 마세요. dropdown으로 현재 정렬 상태만 요약 표기하세요. (bad case: 2022.04 구글 지도 바뀐 것)</p>
+      
+
       <h4 class="article-subhead">Keywords<br />action & search</h4>
       <div class="tile-flat" style="margin: var(--space-2) 0 var(--space-4)">
         <div class="keywords-group" role="group">
@@ -604,6 +623,7 @@ arrow_drop_down
         </div>
       </div>
       <h4 class="article-subhead">Contents filtering<br />single selection</h4>
+      <p>콘텐츠 필터링을 위한 칩 그룹에서, 액티브 상태에 브랜드 컬러를 쓰지 않는 경향. 콘텐츠 탐색이 cta. 눈에 띄지 않는 무채색 활용이 높아짐.</p>
       <div class="tile-flat" style="margin: var(--space-2) 0 var(--space-4)">
         <div class="chip-group" role="group" data-align="bleed">
           <button class="chip js-toggle is-active">
@@ -885,7 +905,7 @@ arrow_drop_down
     </article>
 
     <article class="article js-observer js-scrollspy-section">
-      <h1 class="article-title" title="or Box">Checkboxes (체크아이콘 수정중)</h1>
+      <h1 class="article-title" title="or Box">Checkboxes</h1>
       <p class="article-description">옵션 목록에서 하나 이상의 옵션을 선택합니다.</p>
       <div class="component-example">
         <fieldset class="tile-flat" role="checkgroup">
@@ -932,8 +952,6 @@ arrow_drop_down
       <p>선택되지 않은 상태로 제공하세요.</p>
 
       <ul>
-        <li>약관 동의 등 유즈 캐이스를 따로 정의하기.</li>
-        <li>case. on/off switch로 하나의 체크박스를 제공할 수 있다. '포토리뷰만 보기' / don't ask again</li>
         <li>
           memo. 선택을 위해 가능한 스타일(체크박스, 라디오, 셀렉트박스, 스위치, 칩 등)을 어떻게 하면 데이터(또는 상태) 와 분리할 수 있을까.
           체크박스그룹, 라디오그룹이 언제든 칩그룹이 될 수 있어야 한다.
@@ -985,7 +1003,9 @@ arrow_drop_down
         <dd>React.ChangeEventHandler<> / @types/react</dd>
       </dl>
 
-      <h4 class="article-subhead">Terms and conditions</h4>
+      <h4 class="article-subhead">Terms and conditions<br />약관 동의</h4>
+      <h4 class="article-subhead">포토리뷰만 보기</h4>
+      <h4 class="article-subhead">don't ask again<br />다시 묻지 않기</h4>
     </article>
 
     <article class="article js-observer js-scrollspy-section">
@@ -1015,7 +1035,7 @@ arrow_drop_down
         </fieldset>
       </section>
 
-      <h3 class="article-subhead">Best Practices</h3>
+      <h3 class="article-subhead">Best practices</h3>
       <ul>
         <li>옵션 목록이 5개 이하일 때만 라디오그룹을 제공합니다. 5개 이상의 옵션 목록은 selectbox나 chip group으로 제공하세요.</li>
       </ul>
@@ -1047,6 +1067,38 @@ arrow_drop_down
         <dd>() => void</dd>
       </dl>
       <!-- (리액트에서 id  이슈 input in label.) -->
+    </article>
+
+    <article class="article js-observer js-scrollspy-section">
+      <h1 class="article-title">Selectbox</h1>
+      <p class="article-description">셀렉트박스. 텍스트필드와 같은 형태.</p>
+      <!-- <aside class="article-aka">
+        <span class="tag">a.k.a.</span>
+        <span class="hashtag" title=""></span>
+      </aside> -->
+      <section class="component-example">
+        <div class="tile-flat">
+          <div class="textfield">
+            <label class="textfield-label" for="select1">셀렉트박스</label>
+            <select class="textfield-input" id="select1">
+              <option class="select-option" value="select-option1">Choose an option</option>
+            </select>
+            <span class="selectbox-indicator" role="img"><span class="material-symbols-outlined"> arrow_drop_down </span></span>
+          </div>
+        </div>
+      </section>
+
+      <h2 class="article-subhead">Best practices</h2>
+        <p>다중 선택을 셀렉트박스로 제공하지 마세요. chip group으로 선택 옵션을 풀어서 제공하세요.</p>
+
+      <h4 class="article-subhead">Props</h4>
+      <!-- <dl>
+        <dt>type</dt>
+        <dd>HTMLInputTypeAttribute? | "search" | "text" | "number" | "tel" | "textarea"</dd>
+      </dl> -->
+      <!-- var selected = Array.from(dnd.options).filter((option) => {
+      return option.selected;
+    }).map((option) => option.value); -->
     </article>
 
     <article class="article js-observer js-scrollspy-section">
@@ -1114,15 +1166,6 @@ arrow_drop_down
         </div>
 
         <div class="tile-flat">
-          <div class="textfield">
-            <label class="textfield-label" for="select1">셀렉트박스</label>
-            <select class="textfield-input" id="select1">
-              <option class="select-option" value="select-option1">Choose an option</option>
-            </select>
-            <span class="selectbox-indicator" role="img"><span class="material-symbols-outlined"> arrow_drop_down </span></span>
-          </div>
-        </div>
-        <div class="tile-flat">
           <!-- numberfield -->
           <div class="quantity js-quantity" style="max-width: 8rem">
             <!-- <input type="text" inputmode="numeric" pattern="[0-9]*"> -->
@@ -1141,8 +1184,13 @@ arrow_drop_down
 
             <button class="quantity-increment js-quantity-increment" tabindex="-1"><span class="material-symbols-outlined">add</span></button>
           </div>
-          <p>221021: - + 버튼에 포커스를 줄 필요가 없다.</p>
-          <p>최소값와 최대값. 입력 제한 피드백으로 disabled 상태 제공. 앞자리0제거.숫자만입력.3자리마다콤마</p>
+          <blockquote style="margin:1rem 0 0 0;">
+            <p>221021: - + 버튼에 포커스를 줄 필요가 없다.</p>
+            <p>- 버튼없이 +버튼만제공해도 재미있겠다</p>
+            <p>지금. 가이드에 없는 textfield 사이즈(토큰은 있음). 버튼의 형태임.</p>
+            <p>수량(3자리 정도), 숫자(1개), 금액(long - 기본형태로 대응가능) 대략 3가지 패턴을 따로 정의할 필요.</p>
+            <p>최소값와 최대값. 입력 제한 피드백으로 disabled 상태 제공. 앞자리0제거.숫자만입력.3자리마다콤마</p>
+          </blockquote>
         </div>
       </section>
 
@@ -1163,7 +1211,6 @@ arrow_drop_down
 
       <ul>
         <!-- <p><span><i></i></span> 벨리데이션 실행 조건: <b>제출(구현이 쉬움)</b> / 키보드 입력 쉬움 / 블러(구현이 복잡함. 흐름이 끊어짐)</b></p> -->
-        <li>다중 선택을 셀렉트박스로 제공하지 마세요. chip group으로 선택 옵션을 풀어서 제공하세요.</li>
         <li>검색 필드는 일반 텍스트필드와 구별할 수 있도록 검색 아이콘 등 시각적인 단서를 제공하세요.</li>
         <!-- <li>required indicator / optional indicator / validations / masked / validation feedback</li> -->
         <li>todo: helper(help message)와 feedback message를 구별</li>
@@ -1203,10 +1250,6 @@ arrow_drop_down
 
       <h4 class="article-subhead">References</h4>
       <a href="https://developer.apple.com/documentation/uikit/uisearchbar">HIG searchbar</a>
-
-      <!-- var selected = Array.from(dnd.options).filter((option) => {
-      return option.selected;
-    }).map((option) => option.value); -->
     </article>
 
     <article class="article js-observer js-scrollspy-section">
@@ -1246,22 +1289,23 @@ arrow_drop_down
         </div>
       </section>
 
+      <h2 class="article-subhead">Best practices</h2>
+      <p>
+        '클릭할 수 있음'의 기표로 elevated 스타일을 사용합니다. 타일 전체가 클릭 영역일 수도, 타일 내부에 클릭 가능한 요소를 포함할 수도 있습니다.
+      </p>
+
       <h2 class="article-subhead">Optical adjustment</h2>
       <ul>
         <li>타일 내부 leading, tailing 엘리먼트의 시각보정이 필요할 수 있습니다.</li>
         <li>tile의 내부에 subhead text가 포함되어 있다면 large size의 tile을 사용하세요.</li>
       </ul>
 
-      <ul>
-        <li>todo 선택 상태의 타일 디자인.</li>
-        <li>
-          '클릭할 수 있음'의 기표로 elevated 스타일을 사용합니다. 타일 전체가 클릭 영역일 수도, 타일 내부에 클릭 가능한 요소를 포함할 수도 있습니다.
-        </li>
-        <li>아티클 레벨에 사용합니다. 페이지 레벨의 타이틀과 디스크립션을 타일로 만들지 마세요.</li>
-      </ul>
+      <!-- <li>todo 선택 상태의 타일 디자인.</li> -->
+      <li>아티클 레벨에 사용합니다.</li>
+      <li>페이지 레벨의 타이틀과 디스크립션을 타일로 만들지 마세요.</li>
 
-      <h4 class="article-subhead">Media</h4>
-      <p>카드 썸네일은 2:1. 블리딩 시 높이를 고정해야 한다.</p>
+      <!-- <h4 class="article-subhead">todo Media</h4>
+      <p>카드 썸네일은 2:1. 블리딩 시 높이를 고정해야 한다.</p> -->
     </article>
 
     <article class="article js-observer js-scrollspy-section">
@@ -1281,6 +1325,11 @@ arrow_drop_down
     <article class="article js-observer js-scrollspy-section" style="overflow: visible">
       <h1 class="article-title">Tooltip</h1>
       <p class="article-description">용어를 설명하거나 정보의 근거를 보충합니다.</p>
+
+      <aside class="article-aka">
+        <span class="tag">a.k.a.</span>
+        <span class="hashtag" title="">Popover</span>
+      </aside>
 
       <section class="component-example">
         <div class="tile-flat">
@@ -1304,16 +1353,21 @@ arrow_drop_down
         <!-- <span class="tooltip" data-tooltip="Just like this one.">Any element</span> -->
       </section>
 
+      <h2 class="article-subhead">Best practices</h2>
+      <p>사용자가 반드시 숙지해야 하는 중요한 정보를 툴팁으로 제공하지 마세요. button이나 text link 등 충분히 강조된 형태로 명시하세요.</p>
+
+      <h2 class="article-subhead">Don'ts</h2>
       <ul>
         <li>행동을 유도하는 가이드로 사용하지 마세요.</li>
         <li>툴팁의 물음표 아이콘을 페이지 링크로 사용하지 마세요.</li>
-        <li>사용자가 반드시 숙지해야 하는 중요한 정보를 툴팁으로 제공하지 마세요. button이나 text link 등 충분히 강조된 형태로 명시하세요.</li>
-        <li>
-          페이지 로딩 시점에 열려 있는 경우 doorhanger/pointing arrow 필요. 하지만 그것은 툴팁이 아닌 새로운 컴포넌트로 정의할 필요가 있겠다. 하지만
-          이것을 필요 없도록 인터페이스를 설계하는 것이 가장 훌륭한 UX.
-        </li>
         <li>A tooltip is not considered to be a popup in this context, as it is not interactive.</li>
       </ul>
+
+      <h2 class="article-subhead">Todolist</h2>
+      <p>
+        페이지 로딩 시점에 열려 있는 경우 doorhanger/pointing arrow 필요. 하지만 그것은 툴팁이 아닌 새로운 컴포넌트로 정의할 필요가 있겠다. 하지만
+        이것을 필요 없도록 인터페이스를 설계하는 것이 best.
+      </p>
     </article>
 
     <article class="article js-observer js-scrollspy-section">
@@ -1389,7 +1443,7 @@ arrow_drop_down
       <ul>
         <!-- <li>페이지 레벨, 섹션 레벨에서 사용합니다.</li> -->
         <li>탭을 중첩하여 플로우를 설계하지 마세요.</li>
-        <li>콘텐츠 정렬, 콘텐츠 필터로 사용하지 마세요.</li>
+        <li>콘텐츠 정렬 또는 콘텐츠 필터로 사용하지 마세요.</li>
         <li>스크롤스파이로 사용하지 마세요. 스크롤스파이는 콘텐츠 필터링의 맥락입니다. ( + 필터링과 스위칭으로 정의하기?)</li>
         <li>글로벌 탐색 패턴으로 햄버거 메뉴와 탭(바텀네비게이션, 탭바)을 함께 사용하지 마세요. (todo: tab과 tab bar(app bar)를 구분)</li>
         <li><del>페이지 링크로 사용하지 마세요.</del> SPA에서 페이지 링크의 개념이 모호하지만 탭을 클릭 후의 뷰에서 탭 바는 유지되어야 합니다.</li>
@@ -1402,13 +1456,10 @@ arrow_drop_down
         <dd>TabType[]</dd>
         <dt>tabPanel</dt>
         <dd>React.Node</dd>
+        <dt>indicator (active bar)</dt>
+        <dd></dd>
+        <dt>badge / quantity / unread</dt>
       </dl>
-
-      <h4 class="article-subhead">Anatomy</h4>
-      <ul>
-        <li>Indicator (acitive bar)</li>
-        <li>badge / quantity / unread</li>
-      </ul>
 
       <h4 class="article-subhead">Accessibility</h4>
       <p>방향키</p>
@@ -1557,8 +1608,8 @@ arrow_drop_down
             </span>
           </button>
           <small>Google 포토에 최대 해상도로 백업</small>
-          <hr />
-          <button class="item js-darkmode" role="menuitem" data-size="medium" title="change theme">
+
+          <button class="item button-elevated js-darkmode" role="menuitem" data-size="medium" title="change theme" style="margin-bottom:0;">
             <figure class="item-avatar" style="background-image: none"><span class="material-symbols-outlined">nights_stay</span></figure>
             <span class="item-label">어둡게 보기</span>
             <span class="switch" style="margin-left: auto">
@@ -1566,14 +1617,16 @@ arrow_drop_down
               <label for="temp55" style="padding-left: 48px"></label>
             </span>
           </button>
-          <hr />
+        </div>
+        <div class="tile-flat">
           <div class="item" data-size="medium" role="menuitem">
             <figure class="item-avatar">🏹</figure>
             <span class="item-label">entity와 구별</span>
             <span class="item-tag" data-style="primary">새소식</span>
           </div>
-          <hr />
-          <div class="checkbox menutype" data-size="medium">
+        </div>
+        <div class="tile-flat">
+          <div class="checkbox menutype" data-size="medium" style="margin: 0;">
             <input type="checkbox" id="menutype1" name="gender" value="" checked />
             <label for="menutype1" title="">
               <figure class="item-avatar"></figure>
@@ -1584,7 +1637,7 @@ arrow_drop_down
         <div class="tile-flat">
           <div class="item" data-size="large" role="menuitem">
             <figure class="item-avatar"></figure>
-            <b class="item-label">모바일 공간 부족</b>
+            <b class="item-label">windows 패턴 with quick action. not acition. 모바일에 비적합.</b>
             <button class="chip" style="margin-left: auto; margin-right: var(--space-2)">
               <span class="chip-label">휴대폰과 연결 열기</span>
             </button>
@@ -1604,27 +1657,27 @@ arrow_drop_down
 
       <ul>
         <li>
-          메뉴 아이템의 우측에 'new' 등 태그 컴포넌트를 배치하지 마세요. 액션 또는 액션 인티케이터만 위치할 수 있습니다. (bad case 토스. 우측 new)
+          메뉴 아이템의 우측에 'new' 등 태그 컴포넌트를 배치하지 마세요. 액션 또는 액션 인티케이터만 위치할 수 있습니다. (case 토스. 우측 new)
         </li>
-        <li>windows에서는 버튼의 형태로 link가 아닌닌 quick action으로 사용됨. 모바일에서 공간 부족.</li>
-        <li>Menu -> MenuButton / MenuList -> MenuItem. MenuLink</li>
         <li><b>presentations:</b> modal, dropdown, sheet, sidebar. dropdown</li>
-        <li>todo. check icon을 컴포넌트로 만들고 checkbox의 구조를 변경하기. check icon을 svg로 변경.</li>
+        <!-- <li>todo. check icon을 컴포넌트로 만들고 checkbox의 구조를 변경하기. check icon을 svg로 변경.</li> -->
       </ul>
 
       <h4 class="article-subhead">menuitem vs listitem</h4>
       <p>menuitem. - title(truncated) + action(chip - togglable)/link(chevron?)/선택(checkbox/switch) / aligns: vertical. large/medium</p>
+      <p>Menu -> MenuButton / MenuList -> MenuItem. MenuLink</p>
 
-      <h4 class="article-subhead">Props</h4>
 
-      <h4 class="article-subhead">Related components</h4>
+      <!-- <h4 class="article-subhead">Props</h4> -->
+
+      <!-- <h4 class="article-subhead">Related components</h4>
       <a href="">entity</a>
       <span class="icon-bullet"></span>
       <a href="">avatar</a>
       <span class="icon-bullet"></span>
       <a href="">checkbox</a>
       <span class="icon-bullet"></span>
-      <a href="">radio</a>
+      <a href="">radio</a> -->
     </article>
 
     <article class="article js-observer js-scrollspy-section">
@@ -1662,12 +1715,12 @@ arrow_drop_down
           </nav>
         </div>
       </section>
-      <ul>
-        <li>
-          첫 페이지와 마지막 페이지에 더블 화살표 아이콘을 사용하지 않습니다. 최초와 최종 페이지 넘버로 사용자가 대략적인 콘텐츠의 수량을 파악할 수
-          있도록 도와주세요.
-        </li>
-      </ul>
+
+      <h4 class="article-subhead">Best practices</h4>
+      <p>
+        첫 페이지와 마지막 페이지에 더블 화살표 아이콘을 사용하지 않습니다. 최초와 최종 페이지 넘버로 사용자가 대략적인 콘텐츠의 수량을 파악할 수
+        있도록 도와주세요.
+      </p>
 
       <h4 class="article-subhead">Cases</h4>
       <ul>
@@ -1851,9 +1904,7 @@ arrow_drop_down
           <article class="accordion js-accordion is-active" aria-expanded="false">
             <h3 class="accordion-title" role="button">
               탈퇴하고 싶어요.
-              <figure class="accordion-title-icon">
-                <span class="material-symbols-outlined">expand_more</span>
-              </figure>
+              <figure class="accordion-title-icon material-symbols-outlined">arrow_right</figure>
             </h3>
             <div class="accordion-panel">
               <p>모든 국민은 건강하고 쾌적한 환경에서 생활할 권리를 가지며, 국가와 국민은 환경보전을 위하여 노력하여야 한다.</p>
@@ -1884,19 +1935,25 @@ arrow_drop_down
         </section>
       </section>
 
+      <h2 class="article-subhead">Best practices</h2>
+      <p>사용자가 반드시 숙지해야 하는 정보를 아코디언으로 요약해서 보여주지 마세요. (참고. Tooltip과 같은 맥락)</p>
+
+      <h2 class="article-subhead">Writing guidelines</h2>
+      <p>heading은 한 문장으로 간결하게 작성하세요.</p>
+
       <ul>
-        <li>사용자가 반드시 숙지해야 하는 정보를 아코디언으로 요약해서 보여주지 마세요. (참고. Tooltip)</li>
-        <li>heading은 한 문장으로 간결하게 작성하세요.</li>
+        <li></li>
         <li>role="region"</li>
+        <li>
+          클릭 영역의 정의. 제목/제목+본문. 단, 아코디언이 활성화 상태일 때 본문을 클릭하여 닫을 수 있게 되면, 본문에 페이지 링크를 사용할 수 없음.
+        </li>
       </ul>
 
+      <h2 class="article-subhead">FAQ<br />자주묻는질문</h2>
       <blockquote>
         <p>
-          자주묻는질문(FAQ) 정도 외에는 잘 쓰지 않음. 교육 도매인에서 커리큘럼 정도에서 보임. 간단한 콘텐츠 확장에는 모바일 친화적인 모달이나 시트를
+          자주묻는질문(FAQ) 정도 외에는 잘 쓰지 않음. 교육 도매인의 커리큘럼 정도에서 보임. 간단한 콘텐츠 확장에는 모바일 친화적인 모달이나 시트를
           사용함.
-        </p>
-        <p>
-          클릭 영역의 정의. 제목/제목+본문. 단, 아코디언이 활성화 상태일 때 본문을 클릭하여 닫을 수 있게 되면, 본문에 페이지 링크를 사용할 수 없음.
         </p>
       </blockquote>
 
@@ -2020,9 +2077,6 @@ arrow_drop_down
         <dt>onSubmit</dt>
         <dd>function()</dd>
       </dl>
-
-      <h4 class="article-subhead">Modal과 Dialog</h4>
-      <p>모달은 presentation.</p>
 
       <h4 class="article-subhead">Accessibility</h4>
       <ul>

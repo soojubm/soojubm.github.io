@@ -1,7 +1,7 @@
 
 .design {}
 .design-head {padding:4rem var(--grid-margin);background:var(--color-background);position:relative;}
-.design-head h1 {@include text-title;}
+.design-head > h1 {@include text-title;}
 .design-guide {margin:4rem 0 0;overflow:hidden;}
 .design-guide-title {padding:var(--space-3) var(--grid-margin);@include text-label;}
 .design-guide ul {padding-left:0;list-style:none;}
@@ -24,8 +24,13 @@
 .article-description {margin:0 0 2rem;@include text-title;}
 .article ul {margin:var(--space-after-subhead) 0 2rem;}
 
+
+.article p, ul {
+  max-width: 640px;
+}
+
 .article-subhead {margin:3rem 0 var(--space-2);@include text-subhead;}
-.article-subhead + ul {margin-top: 0;}
+// .article-subhead + ul {margin-top: 0;}
 .article > .hashtag {margin:0 .25rem 0 0;font-size:var(--font-size-small);}
 
 // .article.is-observed {animation:fadeup .8s forwards;}
@@ -69,19 +74,15 @@
 .stamp .circle span:nth-of-type(5) {transform: rotate(16deg);}
 
 
-.number {display:flex;justify-content:center;}
-.number-card {display:flex;justify-content:center;align-items:center;width:48px;height:64px;background:var(--color-background-weak);border-radius:var(--radius);font-size:var(--font-size-huge);font-weight:var(--font-weight-bold);margin:0 .25rem;}
-
 .userlist {@include tile-elevated;max-width:400px;}
-.userlist h1 {@include text-subhead;}
 .userlist .profile-user:hover {@include hover-item;}
 .userlist-cta {@include button-tertiary;}
 
-.jobitem {@include tile-elevated;}
+.jobitem {@include tile-elevated;display:flex;flex-direction:column;align-items: center;}
 .jobitem-name {margin:var(--space-leading-subhead) 0 var(--space-2) 0;@include text-subhead;}
 .jobitem-tags {@include tag-group;}
 .jobitem-tags .tag {}
-.jobitem-view {@include chip;position:absolute;right:var(--space-3);top:50%;transform:translateY(-50%);}
+.jobitem-view {@include chip;margin:var(--space-4) 0 0 0;}
 
 .textbox {}
 .textbox-toolbar {@include tile-elevated-small;display:flex;}
@@ -104,7 +105,7 @@
 .greeting-title {@include text-subhead;}
 .greeting-description {@include text-body;margin:0 0 0;line-height:var(--font-line-height-small);color:var(--color-text-light);}
 
-.onboarding-control {@include group-button;}
+.onboarding-control {@include group-button;margin:var(--space-4) 0 0 0;}
 .onboarding-control-next {@include button-primary;width:var(--grid-column);}
 .onboarding-control-skip {@include button-tertiary;width:var(--grid-column);}
 
@@ -141,9 +142,9 @@
   span {display:block;margin:.125rem 0 -.125rem;text-align:center;font-size:var(--font-size-medium);}
 }
 
-.accordion {@include tile-elevated;padding:1rem var(--space-4);}
+.accordion {margin:1rem 0;}
 .accordion:hover {@include hover-item;}
-.accordion-title {display:flex;align-items:center;justify-content:space-between;@include text-body;font-weight:var(--font-weight-bold);line-height:24px;}
+.accordion-title {display:flex;align-items:center;justify-content:space-between;@include text-subhead;}
 .accordion-title-icon {@include icon-indicator;margin:1px 0 0 0;}
 .accordion-panel {display:none;cursor:default;}
 .accordion-panel p + p {margin:var(--space-4) 0 0 0;}
@@ -202,10 +203,10 @@
 }
 
 
-.postitem {display:block;width:100%;margin:3rem 0;position:relative;}
+.postitem {display:block;width:100%;padding:1rem;position:relative;}
 .postitem:hover {@include hover-item;}
 .postitem-cover {display:none;width:8rem;height:1rem;margin:0 0 var(--space-2) 0;background:var(--color-newneek);border-radius:var(--radius);}
-.postitem-name {@include text-title;}
+.postitem-name {@include text-subhead;margin:var(--space-3) 0 0 0;color:var(--color-primary);}
 .postitem-description {margin:var(--space-3) 0 1rem 0;}
 
 

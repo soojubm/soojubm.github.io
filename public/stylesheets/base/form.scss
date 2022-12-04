@@ -46,31 +46,36 @@ input[type=search]::-webkit-search-results-decoration {display:none;}
 // nextjs + css module에서 type selector 이슈 .checkbox-input / .checkbox-label
 // ! :focus
 
-.checkbox,.radio {display:block;margin: 0.25rem 0;line-height:var(--size-small);position:relative;@include clearfix;}
+// .checkbox input {
+//   float: left;
+//   width: var(--size-tiny);
+//   height: var(--size-tiny);
+//   margin: 0; // for reset
+//   border-radius: 4px;
+//   border: var(--border);
+//   box-sizing: border-box;
+//   appearance: none; // reset  border color
+//   transform: translateY(3px); // for align vertical
+// }
+// .checkbox input:checked {
+//   float:left;
+//   border-color: var(--color-primary);
+//   background: var(--color-primary);
+// }
+// .checkbox label {margin:0 0 0 var(--space-after-avatar-small);line-height:inherit;}
 
-.checkbox input {
-  float: left;
-  width: var(--size-tiny);
-  height: var(--size-tiny);
-  margin: 0; // for reset
-  border-radius: 4px;
-  border: var(--border);
-  box-sizing: border-box;
-  appearance: none; // reset  border color
-  transform: translateY(3px); // for align vertical
-}
-.checkbox input:checked {
-  float:left;
-  border-color: var(--color-primary);
-  background: var(--color-primary);
-}
-.checkbox label {margin:0 0 0 var(--space-after-avatar-small);line-height:inherit;}
-// input[type=checkbox] {opacity:0;position:absolute;}
-// input[type=checkbox] ~ label {display:block;padding:var(--space-1) 0;padding-left:calc(var(--size-tiny) + var(--space-2));line-height:var(--font-line-height-small);}
-// input[type=checkbox] ~ label:before {content:'';display:block;width:var(--size-tiny);height:var(--size-tiny);border-radius:4px;border:var(--border);box-sizing:border-box;position:absolute;left:0;}
-// input[type=checkbox] ~ label:after {content:'';display:none;width:6px;height:2px;border-left:2px solid;border-bottom:2px solid;border-color:var(--gray200);position:absolute;left:4px;top:9px;transform:rotate(-45deg);}
-// input[type=checkbox]:checked ~ label:before {border-color:var(--color-primary);animation:ripple2 0.2s linear forwards;}
-// input[type=checkbox]:checked ~ label:after {display:block;border-color:var(--color-primary);}
+.checkbox,.radio {display:block;
+  min-height: var(--size-medium);
+  line-height:var(--size-small);position:relative;
+  @include clearfix;}
+
+
+input[type=checkbox] {opacity:0;position:absolute;}
+input[type=checkbox] ~ label {display:block;padding:var(--space-1) 0;padding-left:calc(var(--size-tiny) + var(--space-2));line-height:var(--font-line-height-small);}
+input[type=checkbox] ~ label:before {content:'';display:block;width:var(--size-tiny);height:var(--size-tiny);border-radius:4px;border:var(--border);box-sizing:border-box;position:absolute;left:0;top:5px;}
+input[type=checkbox] ~ label:after {content:'';display:none;width:6px;height:2px;border-left:2px solid;border-bottom:2px solid;border-color:var(--gray200);position:absolute;left:4px;top:10px;transform:rotate(-45deg);}
+input[type=checkbox]:checked ~ label:before {border-color:var(--color-primary);animation:ripple2 0.2s linear forwards;}
+input[type=checkbox]:checked ~ label:after {display:block;border-color:var(--color-primary);}
 
 input[type=checkbox][indeterminate=true] ~ label:before,
 input[type=checkbox][data-indeterminate=true] ~ label:before {border-color:var(--green800);background:var(--green100);}
@@ -80,7 +85,7 @@ input[type=checkbox][data-indeterminate=true] ~ label:after {display:block;width
 input[type=checkbox]:disabled {background-color:chocolate;}
 input[type=checkbox]:disabled ~ label {color:var(--gray200);cursor:not-allowed;}
 input[type=checkbox]:disabled ~ label:before {background:var(--gray200);border-color:var(--gray200);}
-input[type=checkbox]:disabled ~ label:after {border-color:var(--gray0);}
+input[type=checkbox]:disabled ~ label:after {border-color:var(--color-text-weak);}
 
 
 input[type=radio] {width:0;height:0;opacity:0;position:absolute;}

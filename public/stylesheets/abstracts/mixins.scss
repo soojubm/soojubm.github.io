@@ -92,8 +92,12 @@
   display:flex;flex-wrap:wrap;margin:var(--space-1-minus);
   > * {margin:var(--space-1);}
 }
-@mixin chip-group { display:flex;flex-wrap:wrap;margin:var(--space-groupitem-minus);
-  > * {margin:var(--space-groupitem)}}
+
+@mixin chip-group {
+  display:flex;flex-wrap:wrap;margin:var(--space-groupitem-minus);
+  > * {margin:var(--space-groupitem)}
+}
+
 .button-group {display:flex;}
 .button-group > * {flex:auto;}
 

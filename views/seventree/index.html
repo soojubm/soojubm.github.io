@@ -552,36 +552,36 @@
 	</style>
 
 		<style>
-	.post-comment {margin:4rem 0;}
+	.comment {margin:4rem 0;}
 
 .comment-head {width:100%;padding:10px 0;border-top:1px solid #c6c6c6;overflow:hidden;}
 .comment-head .title {float:left;margin-right:15px;padding:7px 19px;background:#363636;color:var(--gray0);font-size:12px;}
 .comment-head .count {float:left;color:#679ce6;line-height: 26px;font-size:14px;}
-.post-comment-title {display:flex;align-items:center;margin:0 0 1rem 0;}
-.post-comment-title i {margin-right:1rem;}
-.post-comment-list {border-bottom:1px solid #ddd;}
-.post-comment-list.is-visible {height:auto;}
-.post-comment-list.is-active i {background:var(--gray400);}
-.post-comment-list-item {padding:20px 0 20px 135px;border-bottom:2px dotted #ddd;font-size:14px;position:relative;}
-.post-comment-list-item-author {width:135px;text-align:center;position:absolute;left:0;top:35px;}
-.post-comment-list-item-date {display:block;margin:0 0 0 15px;color:var(--color-text-light);}
-.post-comment-list-item-text {margin:15px 0 0 15px;}
-.post-comment-list-item-more {padding:8px;border:0;position:absolute;right:0;top:0;}
-.post-comment-list-item-menu {display:none;}
-.post-comment-list-item-reply {margin:.5rem 0 0 0;text-decoration:underline;}
+.comment-title {display:flex;align-items:center;margin:0 0 1rem 0;}
+.comment-title i {margin-right:1rem;}
+.comment-list {border-bottom:1px solid #ddd;}
+.comment-list.is-visible {height:auto;}
+.comment-list.is-active i {background:var(--gray400);}
+.comment-list-item {padding:20px 0 20px 135px;border-bottom:2px dotted #ddd;font-size:14px;position:relative;}
+.comment-list-item-author {width:135px;text-align:center;position:absolute;left:0;top:35px;}
+.comment-list-item-date {display:block;margin:0 0 0 15px;color:var(--color-text-light);}
+.comment-list-item-text {margin:15px 0 0 15px;}
+.comment-list-item-more {padding:8px;border:0;position:absolute;right:0;top:0;}
+.comment-list-item-menu {display:none;}
+.comment-list-item-reply {margin:.5rem 0 0 0;text-decoration:underline;}
 
 
 .reply {width:100%;overflow:hidden;}
 .reply-more {float:right;margin:10px 0 0;background:#363636;color:var(--gray0);}
 .reply .comment-write {border-top:0;border-bottom:0;}
 .reply ul {margin-top:40px;margin-left:10px;}
-.reply .post-comment-list-item {padding:10px 0 15px 110px;background:#f6f6f6}
-.reply .post-comment-list-item-author {width:110px;padding:10px;text-align:left;position:absolute;left:0;top:0;}
-.reply .post-comment-list-item-date {display:block;margin:0 0 0 15px;color:var(--color-text-light);}
-.reply .post-comment-list-item-text {margin:15px 0 0 15px;}
-.reply .post-comment-list-item-more {position:absolute;right:0;top:0;}
-.reply .post-comment-list-item-menu {display:none;}
-.reply .post-comment-list-item-reply {margin:.5rem 0 0 0;text-decoration:underline;}
+.reply .comment-list-item {padding:10px 0 15px 110px;background:#f6f6f6}
+.reply .comment-list-item-author {width:110px;padding:10px;text-align:left;position:absolute;left:0;top:0;}
+.reply .comment-list-item-date {display:block;margin:0 0 0 15px;color:var(--color-text-light);}
+.reply .comment-list-item-text {margin:15px 0 0 15px;}
+.reply .comment-list-item-more {position:absolute;right:0;top:0;}
+.reply .comment-list-item-menu {display:none;}
+.reply .comment-list-item-reply {margin:.5rem 0 0 0;text-decoration:underline;}
 
 
 .icon-more {display:block;width:3px;height:3px;margin:4px auto;background:#338ecf;border-radius:50%;position:relative;}
@@ -590,10 +590,10 @@
 .icon-more::after {content:'';display:block;width:3px;height:3px;background:inherit;border-radius:50%;position: absolute;top:5px;left:50%;margin-left:-1.5px;}
 
 
-/* .post-comment-list-item:hover .post-comment-list-item-morevert {display:block;}
-.post-comment-list-item-menu.is-visible {display:block;width:80px;background:var(--color-background);box-shadow:var(--shadow);padding:8px 0;position:absolute;right:40px;top:0;z-index:var(--zindex-default);}
-.post-comment-list-item-menu.is-visible button {display:block;width:100%;padding:.25rem 1rem;font-size:$caption;text-align:left;}
-.post-comment-list-item-menu.is-visible button:hover {background:#f7f7f5;} */
+/* .comment-list-item:hover .comment-list-item-morevert {display:block;}
+.comment-list-item-menu.is-visible {display:block;width:80px;background:var(--color-background);box-shadow:var(--shadow);padding:8px 0;position:absolute;right:40px;top:0;z-index:var(--zindex-default);}
+.comment-list-item-menu.is-visible button {display:block;width:100%;padding:.25rem 1rem;font-size:$caption;text-align:left;}
+.comment-list-item-menu.is-visible button:hover {background:#f7f7f5;} */
 
 .comment-write {width:100%;overflow:hidden;border-top:1px solid #ddd;border-bottom:1px solid #ddd;font-size:14px;}
 .comment-write label {float:left;width:135px;height:60px;background:#f6f6f6;font-size:14px;line-height:60px;text-align:center;}
@@ -698,7 +698,7 @@ arrow_drop_down
 
 
 	
-	<section class="post-comment">
+	<section class="comment">
 		<header class="comment-head">
 			<h4 class="title">의견</h4>
 			<em class="count">4</em>
@@ -708,13 +708,13 @@ arrow_drop_down
 			<textarea rows="1" name="comment" placeholder="의견을 입력하세요."></textarea>
 			<button class="comment-write-submit" type="submit">의견등록</button>
 		</form>
-	<ul class="post-comment-list">
-		<li class="post-comment-list-item">
-			<a class="post-comment-list-item-author" href="#">홍길동</a>
-			<time class="post-comment-list-item-date" datetime="2016">2020.08.06 16:17</time>
-			<p class="post-comment-list-item-text">우와 처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요. 우와 처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요.</p>
-			<button class="post-comment-list-item-more js-toggle"><i class="icon-more"></i></button>
-			<div class="post-comment-list-item-menu">
+	<ul class="comment-list">
+		<li class="comment-list-item">
+			<a class="comment-list-item-author" href="#">홍길동</a>
+			<time class="comment-list-item-date" datetime="2016">2020.08.06 16:17</time>
+			<p class="comment-list-item-text">우와 처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요. 우와 처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요.</p>
+			<button class="comment-list-item-more js-toggle"><i class="icon-more"></i></button>
+			<div class="comment-list-item-menu">
 			<button class="">수정</button>
 			<button class="">삭제</button>
 			</div>
@@ -722,12 +722,12 @@ arrow_drop_down
 			<div class="reply">
 				<button class="reply-more button-small">답글(1)</button>
 				<ul class="reply-list">
-					<li class="post-comment-list-item">
-					<a class="post-comment-list-item-author" href="#">길동이</a>
-					<time class="post-comment-list-item-date" datetime="2016">2020.08.06 16:17</time>
-					<p class="post-comment-list-item-text">우와 처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요. 우와 처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요.</p>
-					<button class="post-comment-list-item-more js-toggle"><i class="icon-more"></i></button>
-					<div class="post-comment-list-item-menu">
+					<li class="comment-list-item">
+					<a class="comment-list-item-author" href="#">길동이</a>
+					<time class="comment-list-item-date" datetime="2016">2020.08.06 16:17</time>
+					<p class="comment-list-item-text">우와 처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요. 우와 처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요.</p>
+					<button class="comment-list-item-more js-toggle"><i class="icon-more"></i></button>
+					<div class="comment-list-item-menu">
 						<button class="">수정</button>
 						<button class="">삭제</button>
 					</div>
@@ -1338,36 +1338,36 @@ arrow_drop_down
 
 
     <style>
-.post-comment {margin:4rem 0;}
+.comment {margin:4rem 0;}
 
 .comment-head {width:100%;padding:10px 0;border-top:1px solid #c6c6c6;overflow:hidden;}
 .comment-head .title {float:left;margin-right:15px;padding:7px 19px;background:#363636;color:var(--gray0);font-size:12px;}
 .comment-head .count {float:left;color:#679ce6;line-height: 26px;font-size:14px;}
-.post-comment-title {display:flex;align-items:center;margin:0 0 1rem 0;}
-.post-comment-title i {margin-right:1rem;}
-.post-comment-list {border-bottom:1px solid #ddd;}
-.post-comment-list.is-visible {height:auto;}
-.post-comment-list.is-active i {background:var(--gray400);}
-.post-comment-list-item {padding:20px 0 20px 135px;border-bottom:2px dotted #ddd;font-size:14px;position:relative;}
-.post-comment-list-item-author {width:135px;text-align:center;position:absolute;left:0;top:35px;}
-.post-comment-list-item-date {display:block;margin:0 0 0 15px;color:var(--color-text-light);}
-.post-comment-list-item-text {margin:15px 0 0 15px;}
-.post-comment-list-item-more {padding:8px;background:var(--color-background);border:0;position:absolute;right:0;top:0;}
-.post-comment-list-item-menu {display:none;}
-.post-comment-list-item-reply {margin:.5rem 0 0 0;text-decoration:underline;}
+.comment-title {display:flex;align-items:center;margin:0 0 1rem 0;}
+.comment-title i {margin-right:1rem;}
+.comment-list {border-bottom:1px solid #ddd;}
+.comment-list.is-visible {height:auto;}
+.comment-list.is-active i {background:var(--gray400);}
+.comment-list-item {padding:20px 0 20px 135px;border-bottom:2px dotted #ddd;font-size:14px;position:relative;}
+.comment-list-item-author {width:135px;text-align:center;position:absolute;left:0;top:35px;}
+.comment-list-item-date {display:block;margin:0 0 0 15px;color:var(--color-text-light);}
+.comment-list-item-text {margin:15px 0 0 15px;}
+.comment-list-item-more {padding:8px;background:var(--color-background);border:0;position:absolute;right:0;top:0;}
+.comment-list-item-menu {display:none;}
+.comment-list-item-reply {margin:.5rem 0 0 0;text-decoration:underline;}
 
 
 .reply {width:100%;overflow:hidden;}
 .reply button {float:right;margin:10px 0 0;background:#363636;color:var(--gray0);}
 .reply .comment-write {border-top:0;border-bottom:0;}
 .reply ul {margin-top:40px;margin-left:10px;}
-.reply .post-comment-list-item {padding:10px 0 15px 110px;background:#f6f6f6}
-.reply .post-comment-list-item-author {width:110px;padding:10px;text-align:left;position:absolute;left:0;top:0;}
-.reply .post-comment-list-item-date {display:block;margin:0 0 0 15px;color:var(--color-text-light);}
-.reply .post-comment-list-item-text {margin:15px 0 0 15px;}
-.reply .post-comment-list-item-more {position:absolute;right:0;top:0;}
-.reply .post-comment-list-item-menu {display:none;}
-.reply .post-comment-list-item-reply {margin:.5rem 0 0 0;text-decoration:underline;}
+.reply .comment-list-item {padding:10px 0 15px 110px;background:#f6f6f6}
+.reply .comment-list-item-author {width:110px;padding:10px;text-align:left;position:absolute;left:0;top:0;}
+.reply .comment-list-item-date {display:block;margin:0 0 0 15px;color:var(--color-text-light);}
+.reply .comment-list-item-text {margin:15px 0 0 15px;}
+.reply .comment-list-item-more {position:absolute;right:0;top:0;}
+.reply .comment-list-item-menu {display:none;}
+.reply .comment-list-item-reply {margin:.5rem 0 0 0;text-decoration:underline;}
 
 
 .icon-more {display:block;width:3px;height:3px;margin:4px auto;background:#338ecf;border-radius:50%;position:relative;}
@@ -1376,10 +1376,10 @@ arrow_drop_down
 .icon-more::after {content:'';display:block;width:3px;height:3px;background:inherit;border-radius:50%;position: absolute;top:5px;left:50%;margin-left:-1.5px;}
 
 
-/* .post-comment-list-item:hover .post-comment-list-item-morevert {display:block;}
-.post-comment-list-item-menu.is-visible {display:block;width:80px;background:var(--color-background);box-shadow:var(--shadow);padding:8px 0;position:absolute;right:40px;top:0;z-index:var(--zindex-default);}
-.post-comment-list-item-menu.is-visible button {display:block;width:100%;padding:.25rem 1rem;font-size:$caption;text-align:left;}
-.post-comment-list-item-menu.is-visible button:hover {background:#f7f7f5;} */
+/* .comment-list-item:hover .comment-list-item-morevert {display:block;}
+.comment-list-item-menu.is-visible {display:block;width:80px;background:var(--color-background);box-shadow:var(--shadow);padding:8px 0;position:absolute;right:40px;top:0;z-index:var(--zindex-default);}
+.comment-list-item-menu.is-visible button {display:block;width:100%;padding:.25rem 1rem;font-size:$caption;text-align:left;}
+.comment-list-item-menu.is-visible button:hover {background:#f7f7f5;} */
 
 .comment-write {width:100%;overflow:hidden;border-top:1px solid #ddd;border-bottom:1px solid #ddd;}
 .comment-write {}
@@ -1390,7 +1390,7 @@ arrow_drop_down
 .comment-foot {padding:10px 0;text-align:right;}    
 .comment-foot button {}    
     </style>
-    <section class="post-comment">
+    <section class="comment">
       <header class="comment-head">
         <h4 class="title">의견</h4>
         <em class="count">4</em>
@@ -1400,13 +1400,13 @@ arrow_drop_down
         <textarea rows="1" name="comment" placeholder="내용을 입력하세요."></textarea>
         <button class="comment-write-submit" type="submit">의견등록</button>
       </form>
-      <ul class="post-comment-list">
-        <li class="post-comment-list-item">
-          <a class="post-comment-list-item-author" href="#">soojubm</a>
-          <time class="post-comment-list-item-date" datetime="2016">2020.08.06 16:17</time>
-          <p class="post-comment-list-item-text">우와 처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요. 우와 처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요.</p>
-          <button class="post-comment-list-item-more js-toggle"><i class="icon-more"></i></button>
-          <div class="post-comment-list-item-menu">
+      <ul class="comment-list">
+        <li class="comment-list-item">
+          <a class="comment-list-item-author" href="#">soojubm</a>
+          <time class="comment-list-item-date" datetime="2016">2020.08.06 16:17</time>
+          <p class="comment-list-item-text">우와 처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요. 우와 처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요.</p>
+          <button class="comment-list-item-more js-toggle"><i class="icon-more"></i></button>
+          <div class="comment-list-item-menu">
             <button class="">수정</button>
             <button class="">삭제</button>
           </div>
@@ -1415,12 +1415,12 @@ arrow_drop_down
             <button class="reply-button">답글(1)</button>
 
             <ul class="reply-list">
-              <li class="post-comment-list-item">
-                <a class="post-comment-list-item-author" href="#">soojubm</a>
-                <time class="post-comment-list-item-date" datetime="2016">2020.08.06 16:17</time>
-                <p class="post-comment-list-item-text">우와 처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요. 우와 처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요.</p>
-                <button class="post-comment-list-item-more js-toggle"><i class="icon-more"></i></button>
-                <div class="post-comment-list-item-menu">
+              <li class="comment-list-item">
+                <a class="comment-list-item-author" href="#">soojubm</a>
+                <time class="comment-list-item-date" datetime="2016">2020.08.06 16:17</time>
+                <p class="comment-list-item-text">우와 처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요. 우와 처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요.</p>
+                <button class="comment-list-item-more js-toggle"><i class="icon-more"></i></button>
+                <div class="comment-list-item-menu">
                   <button class="">수정</button>
                   <button class="">삭제</button>
                 </div>

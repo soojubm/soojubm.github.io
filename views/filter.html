@@ -1,21 +1,17 @@
 <main class="pattern">
   <div class="article">
     <h1 class="article-title">Filtering</h1>
-    <p class="article-description">
-      Single filter와 Multiple filters 패턴으로 구분하기?
-    </p>
+    <p class="article-description">Single filter와 Multiple filters 패턴으로 구분하기?</p>
 
     <div class="chip-group">
       <div class="dropdown">
         <button class="dropdown-trigger js-toggle" aria-expanded="true">
           <span class="dropdown-trigger-label" title="일행 당 인원 수">예약옵션</span>
           <figure class="dropdown-trigger-icon">
-            <span class="material-symbols-outlined">
-              arrow_drop_down
-            </span>
+            <span class="material-symbols-outlined"> arrow_drop_down </span>
           </figure>
         </button>
-        <menu class="dropdown-menu" role="menu" style="padding:var(--space-3);">
+        <menu class="dropdown-menu" role="menu" style="padding: var(--space-3)">
           <fieldset role="radiogroup">
             <!-- <legend class="article-anatomy-title" style="margin-bottom:0;">radiogroup</legend> -->
             <div class="radio">
@@ -27,9 +23,9 @@
               <label for="gogo2" title="">3명 이상</label>
             </div>
           </fieldset>
-          <footer style="margin:var(--space-2) 0 0 0;">
+          <footer style="margin: var(--space-2) 0 0 0">
             <!-- <button>옵션 초기화</button> -->
-            <button class="chip" style="width:100%;"><span class="chip-label">적용 / 24개 상품 보기 (airbnb)</span></button>
+            <button class="chip" style="width: 100%"><span class="chip-label">적용 / 24개 상품 보기 (airbnb)</span></button>
           </footer>
         </menu>
       </div>
@@ -37,9 +33,7 @@
         <button class="dropdown-trigger js-toggle" aria-expanded="true">
           <span class="dropdown-trigger-label">예산</span>
           <figure class="dropdown-trigger-icon">
-            <span class="material-symbols-outlined">
-              arrow_drop_down
-            </span>
+            <span class="material-symbols-outlined"> arrow_drop_down </span>
           </figure>
         </button>
       </div>
@@ -47,9 +41,7 @@
         <button class="dropdown-trigger js-toggle is-active" aria-expanded="true">
           <span class="dropdown-trigger-label">10평 미만</span>
           <figure class="dropdown-trigger-icon">
-            <span class="material-symbols-outlined">
-              arrow_drop_down
-            </span>
+            <span class="material-symbols-outlined"> arrow_drop_down </span>
           </figure>
         </button>
       </div>
@@ -57,28 +49,24 @@
         <button class="dropdown-trigger js-toggle" aria-expanded="true">
           <span class="dropdown-trigger-label">접근성 편의</span>
           <figure class="dropdown-trigger-icon">
-            <span class="material-symbols-outlined">
-              arrow_drop_down
-            </span>
+            <span class="material-symbols-outlined"> arrow_drop_down </span>
           </figure>
         </button>
       </div>
     </div>
 
-    <hr style="margin:2rem 0;" />
+    <hr />
 
-    <button class="chip" style="margin-bottom:var(--space-3);">
-      <span class="material-symbols-outlined">
-        filter_alt
-      </span>
-      <em class="badge" style="background:var(--color-accent);font-size:10px;color:var(--gray800);position:absolute;right:-.25rem;top:-.25rem;">2</em>
+    <button class="chip" style="margin-bottom: var(--space-3)">
+      <span class="material-symbols-outlined"> filter_alt </span>
+      <em
+        class="badge"
+        style="background: var(--color-accent); font-size: 10px; color: var(--gray800); position: absolute; right: -0.25rem; top: -0.25rem"
+        >2</em
+      >
     </button>
-    <form
-      class="filter tile-elevated"
-      style="max-width:640px;padding:1rem;overflow: hidden;
-    margin:0;"
-    >
-      <header class="titlebar js-titlebar" role="navigation" style="padding:0;">
+    <form class="filter tile-elevated" style="max-width: 640px; padding: 1rem; overflow: hidden; margin: 0">
+      <header class="titlebar js-titlebar" role="navigation" style="padding: 0">
         <div class="titlebar-background"></div>
         <h1 class="titlebar-title js-page-title" title="page title">필터</h1>
         <button class="titlebar-back" onclick="javascript:window.location.href='/';">
@@ -93,17 +81,16 @@
       </header> -->
       <fieldset class="filter-fieldset" role="radiogroup">
         <legend class="filter-fieldset-legend">예약옵션</legend>
-        <button class="button-elevated" title="" style="border:none;box-shadow:none;padding:0;margin-top:0;margin-bottom:.25rem;">
-          <!-- <figure class="button-elevated-avatar">🦊</figure> -->
+        <button class="button-elevated" title="" style="margin-top: 0; margin-bottom: 0.125rem">
+          <figure class="button-elevated-avatar">🦊</figure>
           <span class="button-elevated-label">즉시 예약</span>
-          <span class="switch" style="margin-left:auto;">
+          <span class="switch" style="margin-left: auto">
             <input type="checkbox" id="temp123456" name="" role="switch" />
-            <label for="temp123456" style="padding-left:48px;"></label>
+            <label for="temp123456" style="padding-left: 48px"></label>
           </span>
         </button>
-        <small style="display:block;margin:0 0 var(--space-2) 0;color:var(--color-text-light);"
-          >호스트 승인을 기다릴 필요 없이 예약할 수 있는 숙소
-        </small>
+        <small>호스트 승인을 기다릴 필요 없이 예약할 수 있는 숙소</small>
+        <small style="display: block; margin: 0 0 var(--space-2) 0; color: var(--color-text-light)"> </small>
       </fieldset>
 
       <hr />
@@ -126,7 +113,7 @@
       <hr />
       <fieldset class="filter-fieldset" role="radiogroup">
         <legend class="filter-fieldset-legend">평수</legend>
-        <div class="chip-group" style="margin-bottom:.25rem;">
+        <div class="chip-group" style="margin-bottom: 0.25rem">
           <button class="chip"><span class="chip-label">10평 미만</span></button>
           <button class="chip"><span class="chip-label">20평</span></button>
           <button class="chip"><span class="chip-label">30평</span></button>
@@ -151,20 +138,20 @@
       </fieldset>
       <footer class="filter-foot">
         <button class="filter-foot-confirm">적용/숙소 25개 표시 (todo fixed)</button>
-        <button class="filter-foot-reset" title="clear filters" style="color:var(--color-text);">전체 해제</button>
+        <button class="filter-foot-reset" title="clear filters" style="color: var(--color-text)">전체 해제</button>
       </footer>
     </form>
     <br />
 
-    <!-- <h2 class="article-subhead">Presentation</h2> -->
+    <h2 class="article-subhead">Presentation</h2>
+    <p>
+      presentation 컴포넌트가 필터의 상태나 적용 방법에 많은 영향을 준다. 필터 옵션의 presentation 컴포넌트는 환경에 최적화된 경험을 위해 변경하기
+      쉬워야 한다.
+    </p>
     <ul>
-      <li>
-        presentation 컴포넌트가 필터의 상태나 적용 방법에 많은 영향을 준다. 필터 옵션의 presentation 컴포넌트는 환경에 최적화된 경험을 위해 변경하기
-        쉬워야 한다.
-      </li>
-      <li>Dropdown with chip group: desktop에서 상. moblie에서 중. desktop과 mobile에 동일한 경험과 낮은 개발 비용. 막연한 탐색.</li>
-      <li>Sheet: desktop에서 하. mobile에서 상.</li>
-      <li>Modal: desktop과 mobile에서 중. desktop과 mobile에 동일한 경험과 낮은 개발 비용.</li>
+      <li>Dropdown with chip group: desktop에서 상. moblie에서 중. desktop과 mobile에 동일한 경험과 낮은 개발 비용. 막연한 탐색에 좋다.</li>
+      <li>Sheet: desktop에서 하. mobile에서 상. ???? 왜 넣었었지.</li>
+      <li>Modal: desktop과 mobile에서 중. desktop과 mobile에 동일한 경험과 낮은 개발 비용. 상세한 탐색.</li>
     </ul>
 
     <h2 class="article-subhead">필터의 적용</h2>
@@ -190,9 +177,7 @@
     </ul>
 
     <h2 class="article-subhead">필터링와 소팅의 위계</h2>
-    <p>
-      소팅은 필터링의 하위 위계임을 시각적으로(위치 등) 명시하라.
-    </p>
+    <p>소팅은 필터링의 하위 위계임을 시각적으로(위치 등) 명시하라.</p>
 
     <h2 class="article-subhead">궁굼이 & 생각</h2>
     <ul>
@@ -203,7 +188,7 @@
         radio 등의 혼합 => 디자인과 개발 비용이 증가하는 만큼 사용자 경험이 월등한가? (case. airbnb) 아니면 다른 의도?
       </li>
       <li>필터를 적용하고 초기화하는 버튼 그룹의 정렬은 dialog에서 버튼 그룹과 달라질 수 있다. hero 컴포넌트와는 동일하다.</li>
-      <li>범위를 직접 입력하는 필드를 제공한다면 range UI를 추가로 제공하는 것이 얼마나 효율적일까</li>
+      <li>range UI는 얼마나 사용자 친화적인가</li>
       <li>모든 필터 옵션을 세로 목록형 가로 스크롤로 나열할 수도 있다. 큰 화면에서 유용하다. (case. bilibili)</li>
     </ul>
   </div>

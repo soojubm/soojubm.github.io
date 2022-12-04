@@ -1,5 +1,5 @@
 .component {}
-.component-example {margin:3rem -5vw;padding:2rem var(--grid-margin);background-color:var(--color-primary);border-top-left-radius:var(--radius);border-bottom-left-radius:var(--radius);position:sticky;top:0;
+.component-example {margin:3rem -5vw 3.5rem;padding:2rem var(--grid-margin);background-color:var(--color-primary);border-top-left-radius:var(--radius);border-bottom-left-radius:var(--radius);position:sticky;top:0;
   background: #159957;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to bottom, #155799, #159957);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to bottom, #155799, #159957); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -13,6 +13,8 @@
 .component-navigation-scroll {margin:-.25rem;padding:var(--space-3) var(--grid-margin) !important;}
 
 
-@media (--small), (max-height: 800px) {
-  .component-example {margin-top:2rem;margin-bottom:2rem;}
+// @media (--small), (max-height: 800px) {
+@media (--small) {
+  .component-example {margin-top:2rem;margin-bottom:2rem;padding-top:1rem;padding-bottom:1rem;border-radius:0;}
+  // .component-example > *:first-child {margin-top:-1.75rem;}
 }
