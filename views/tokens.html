@@ -51,11 +51,12 @@
   </nav>
 
   <section class="tokens-body">
+    <h3>32px + .5rem + .5rem = 50px why. border가 있는 elevated button. hegiht 값을 넣어준다? => large 가 됨.</h3>
+    <h3></h3>
     <article class="article">
       <div>1~2번 사용하는 예외케이스를 토큰으로 정의하지 마세요. 컴포넌트 스코프에서 예외 케이스로 보충하세요.</div>
-      <div>layout - wide / narrow</div>
-      <div>small-scale layout (polaris 참고) 아바타 유무</div>
-      <div>layout in a card</div>
+      <li>MD3 참고. surface는 shadow 뿐 아니라 color도. radius를 shape</li>
+      <li>radius. pill과 non-pill은 양자택일. 인물 아바타를 특정하기 위해 circle은 허용할 수 있다. +++ 유투브 업데이트에서 용도 별로 pill + radius 2가지 형태의 필터링 칩을 제공.</li>
     </article>
 
 
@@ -65,10 +66,7 @@
 
       <ul>
         <li>hierarchy. 크기와 비례해서 radius와 shadow 베리에이션이 필요하지만 경량화하여 더 중요한 문제에 집중하고 있습니다.</li>
-        <li>radius. pill과 non-pill은 양자택일. 인물 아바타를 특정하기 위해 circle은 허용할 수 있다.</li>
         <li>theme. 인버트 컬러셋을 추가로 정의하지 않습니다. 하나의 컬러셋으로 다크 테마에 대응합니다. (쉽지 않음. 기술 의존이 높은 규칙..)</li>
-        <li>MD3 참고. surface는 shadow 뿐 아니라 color도. radius를 shape</li>
-        <li>생각.모든 컴포넌트에서 모든 토큰을 정의하기.</li>
       </ul>
       
       <button class="button-elevated js-darkmode" title="change theme" style="max-width:280px;margin:.75rem 0 .25rem;">
@@ -458,7 +456,7 @@
       <!-- <p style="margin-bottom:var(--space-4);color:var(--color-text-light);">tablet보다 작은 폼 팩터. ex) tablet, phone</p> -->
 
       <h2 class="article-subhead">유연한 그리드 시스템</h2>
-      <p>모바일 퍼스트, 가로 스크롤 트랜드 기조로 12 column grid 등 엄격한 그리드 시스템을 정의하지 않습니다. 최대 4개의 칼럼을 가질 수 있도록 칼럼 시스템을 설계하세요. 칼럼 또는 목록은 가로 스크롤로 변경하기 쉬워야야 합니다.</p>
+      <p>모바일 퍼스트(가로 스크롤 트랜드) 기조로m 12 column grid 등 엄격한 그리드 시스템을 정의하지 마세요. 12 칼럼 그리드는 온라인 프로덕트에 어울리지 않으며 모바일 퍼스트 시대에도 어울리지 않습니다. 목록은 언제나 가로 스크롤로 변경하기 쉬워야 합니다. 2개, 3개, 4개의 칼럼을 위한 칼럼 시스템을 설계하세요.</p>
 
       <h2 class="article-subhead">페이지 모듈을 통한 맥락 구분</h2>
       <p>맥락의 전환(페이지의 역할의 구분??)을 표현하기 위해 레이아웃 모듈 또는 배경색의 대비를 활용할 수 있습니다. 1. 컨테이너 너비(비밀번호찾기와 로그인/회원가입) 2. 배경색(설정, 글쓰기, 소개 등)</p>
@@ -467,7 +465,8 @@
       <ul>
         <li>breakpoint small에서는 layout-width가 %(퍼센티지)로 변경됩니다.</li>
         <li>섹션, 아티클 그리고 모달, 드롭다운 등의 컴포넌트도 작은 화면에서는 페이지 맥락이 될 수 있음을 고려합니다.</li>
-        <li>case. form layout</li>
+        <li>wide / narrow, card layout, form layout</li>
+        <li>small-scale layout (polaris 참고) 아바타 유무</li>
       </ul>
 
       <h4 class="article-subhead">Media queries</h4>
@@ -548,7 +547,7 @@
       <h1 class="article-title">Positioning</h1>
       <p class="article-description">위치잡기.</p>
       <ul>
-        <li>reset. 주로 mobile화면으로 전환될 때 사용하며 z-index 보전을 위해 static이 아닌 relative로 초기화하세요.</li>
+        <li>reset은 작은 화면에 대응하기 위해사용합니다. z-index 보전을 위해 static이 아닌 relative로 초기화하세요.</li>
       </ul>
 
       <div class="token-group">
@@ -627,12 +626,12 @@
       <!-- <h4 class="article-subhead">Timing / Duration / Delay</h4> -->
 
       <h2 class="article-subhead">Best practices</h2>
-      <p>뷰에서 최대 3개의 요소로 delay를 제한합니다. 너무 많은 애니메이션은 사용자가 콘텐츠보다 애니메이션에 집중시킬 수 있습니다.</p>
+      <p>뷰포트 내에서 최대 3개의 요소로 delay를 제한합니다. 애니메이션 보다 콘텐츠에 집중할 수 있도록.</p>
 
       <ul>
         <li>inactive로 전환 시(닫기 등) instant</li>
       </ul>
-      
+
       <div class="token-group">
         <div class="token-item">
           <b>--bazier: cubic-bezier(0.455, 0.03, 0.515, 0.955)</b>
@@ -688,6 +687,7 @@
     <article class="article js-scroll-section">
       <h4 class="article-title">Optical Adjustment</h4>
       <ul>
+        <li>subehad + radio/checkbox group에서 1번째 radio/check 상단 간격. size-medium의 min-height로 야기.</li>
         <li>tile(또는 배경색을 박스) 안에서의 상하 간격을 위한 보정</li>
         <li>폰트의 line-height 별 차이를 위한 보정. tile 안에서 발생?</li>
         <li>폰트의 종류 별 기준선의 차이를 위한 보정</li>

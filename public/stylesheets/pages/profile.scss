@@ -1,15 +1,15 @@
-.profile {@include layout-large;}
+.profile {@include layout-large;max-width:1480px;}
 .profile::after {content:'';display:block;clear:both;}
 
 .profile-head {height:200px;margin-top:calc((2rem + var(--navbar-height)) * -1);margin-left:-100vw;margin-right:-100vw;background:darkseagreen;}
 
-.profile-user {float:left;width:320px;margin:-4rem 0 0 0;position:relative;z-index:var(--zindex-default);}
+.profile-user {float:left;width:320px;position:relative;z-index:var(--zindex-default);}
 .profile-user-avatar {@include avatar-huge;margin:0 0 var(--space-3) 0;background-image:url('/public/images/springsteen.jpg');background-size:contain;}
-.profile-user-name {@include text-subhead;margin:0 0 var(--space-1)}
+.profile-user-name {@include text-subhead;}
 .profile-user-id {display:block;line-height:var(--font-line-height-small);}
-.profile-user-job {display:block;color:var(--color-text-light);}
+.profile-user-job {display:block;color:var(--color-text-light);line-height:var(--font-line-height-small);}
 
-.profile-user-description {max-height:5.4em;margin:1.25rem 0;white-space:normal;overflow:hidden;text-overflow:ellipsis;word-wrap:break-word;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;position:relative;}
+.profile-user-description {max-height:5.4em;margin:var(--space-4) 0;white-space:normal;overflow:hidden;text-overflow:ellipsis;word-wrap:break-word;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;position:relative;}
 .profile-user-description-more {margin:0 var(--space-2);@include link-outside;}
 .profile-user-toggle {width:100%;margin:var(--space-4) 0;text-align:center;color:var(--color-text);position:relative;}
 .profile-user-toggle-icon {@include avatar-small;}
@@ -55,7 +55,7 @@
 
 // todo...
 .profile-foot-follow {@include button-primary;width:50%;}
-.profile-body {margin:-1.5rem 0 0 0;padding:0 0 64px calc(320px + var(--size-large));box-sizing:border-box;position:relative;}
+.profile-body {padding:0 0 64px calc(320px + var(--size-large));box-sizing:border-box;position:relative;}
 
 [role=tablist] {@include tile-elevated-tiny;display:flex;}
 .profile-tablist {border-bottom:0;border-bottom-left-radius:0;border-bottom-right-radius:0;}
@@ -108,10 +108,10 @@
 .card-byline-avatar {@include avatar-small;margin:0 var(--space-after-avatar-small) 0 0;}
 .card-byline-name {color:var(--color-text);line-height:var(--size-small);}
 
-.card-title {padding:var(--space-3) 0 0;font-size:var(--font-size-medium);font-weight:var(--font-weight-normal);color:var(--color-text);line-height:var(--font-line-height-small);}
+.card-title {padding:var(--space-4) 0 0;font-size:var(--font-size-medium);font-weight:var(--font-weight-normal);color:var(--color-text);line-height:var(--font-line-height-small);}
 .card-text {@include truncate-multi;margin:var(--space-2) 0;}
 .card-category {@include tag-primary;position:absolute;left:var(--space-2);top:var(--space-2);}
-.card-date {color:var(--color-text-light);}
+.card-date {margin:0 0 0 .5rem;color:var(--color-text-light);}
 
 .card-tags {@include tag-group;padding:var(--space-2) 0;}
 .card-tags-item {@include hashtag;margin-top:0;margin-bottom:0;font-size:var(--font-size-small);}
@@ -133,7 +133,7 @@
 .list .card-byline {margin-top:.5rem;margin-bottom:.5rem;}
 
 @media (max-width: 1320px) {
-  .profile {max-width:var(--layout-width-small);}
+  .profile {max-width:400px;}
   .profile-user {float:none;width:100%;box-sizing:border-box;}
   .profile-user-description {margin:1rem 0 2rem;}
   .profile-user-toggle {display:flex;align-items:center;justify-content:space-between;}

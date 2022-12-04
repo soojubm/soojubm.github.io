@@ -6,7 +6,7 @@
   </header> -->
   <!-- // invoice랑 구분 -->
 
-  <section class="checkout-step step" style="margin:0 0 2rem 0;">
+  <section class="checkout-step step" style="margin: 0 0 2rem 0">
     <div class="step-item is-active">
       <span class="step-item-icon">1</span>
       <h3 class="step-item-title">장바구니</h3>
@@ -40,7 +40,7 @@
 
   <fieldset class="checkout-shipping">
     <h2 class="checkout-shipping-title">배송정보</h2>
-    <div class="setting-item" style="width:100%;margin:0;">
+    <div class="setting-item" style="width: 100%; margin: 0">
       <h2 class="setting-item-label">배송지</h2>
       <div class="setting-item-value">
         <p class="setting-item-value-username">이경수</p>
@@ -49,26 +49,30 @@
         <p class="setting-item-value-phone">010-3121-7045</p>
       </div>
     </div>
-    <div class="tile-elevated" style="width:100%;">
-      <div class="textfield-group">
-        <div class="checkout-shipping-name textfield">
-          <label class="checkout-shipping-name-label textfield-label">받는 사람</label>
-          <input class="checkout-shipping-name-value textfield-input" type="text" name="email" id="login-email" placeholder="수줍이" />
-        </div>
-        <div class="checkout-shipping-phone textfield">
-          <label class="checkout-shipping-phone-label textfield-label">연락처</label>
-          <input class="checkout-shipping-phone-value textfield-input" type="text" name="email" id="login-email" placeholder="01012345678" />
-        </div>
+
+    <hr />
+
+    <div class="textfield-group">
+      <div class="checkout-shipping-name textfield">
+        <label class="checkout-shipping-name-label textfield-label">받는 사람</label>
+        <input class="checkout-shipping-name-value textfield-input" type="text" name="email" id="login-email" placeholder="수줍이" />
       </div>
-      <div class="checkout-shipping-address textfield">
-        <label class="checkout-shipping-address-label textfield-label" for="address">주소</label>
-        <input class="checkout-shipping-address-value textfield-input" type="text" name="email" id="address" placeholder="클릭하여 우편번호 찾기" />
-      </div>
-      <div class="checkbox" style="margin-right: auto;margin-top: var(--space-2);">
-        <input class="js-checkall" type="checkbox" id="line00" value="" aira-checked="mixed" aria-controls="1 2" indeterminate />
-        <label for="line00" title="Check All"><em>기본 배송지로 설정합니다</em></label>
+      <div class="checkout-shipping-phone textfield">
+        <label class="checkout-shipping-phone-label textfield-label">연락처</label>
+        <input class="checkout-shipping-phone-value textfield-input" type="text" name="email" id="login-email" placeholder="01012345678" />
       </div>
     </div>
+    <div class="checkout-shipping-address textfield">
+      <label class="checkout-shipping-address-label textfield-label" for="address">주소</label>
+      <input class="checkout-shipping-address-value textfield-input" type="text" name="email" id="address" placeholder="클릭하여 우편번호 찾기" />
+    </div>
+    <div class="checkbox" style="margin-right: auto; margin-top: var(--space-2)">
+      <input class="js-checkall" type="checkbox" id="line00" value="" aira-checked="mixed" aria-controls="1 2" indeterminate />
+      <label for="line00" title="Check All"><em>기본 배송지로 설정합니다</em></label>
+    </div>
+
+    <hr />
+
     <div class="order-address-address2 textfield">
       <label class="textfield-label" for="login-email">상세주소</label>
       <input class="textfield-input" type="text" name="email" id="login-email" placeholder="" />
@@ -86,35 +90,35 @@
     <fieldset>
       <div class="payment-method-list">
         <div class="payment-method-item status-is-active">
-          <figure style="background:aliceblue;">💳</figure>
+          <figure style="background: aliceblue">💳</figure>
           <span>신용카드</span>
         </div>
         <div class="payment-method-item">
-          <figure style="background:#defade;">💵</figure>
+          <figure style="background: #defade">💵</figure>
           <span>현금</span>
         </div>
         <div class="payment-method-item">
-          <figure style="background:antiquewhite;font-size:1.8rem;">🫓</figure>
+          <figure style="background: antiquewhite; font-size: 1.8rem">🫓</figure>
           <span>무통장입금</span>
         </div>
       </div>
-      <div class="radio tile-elevated" style="margin-top:0;border-bottom:var(--border);">
+      <div class="radio tile-elevated" style="margin-top: 0; border-bottom: var(--border)">
         <input type="radio" id="raidio5" name="gender" value="" checked />
         <label for="raidio5" title="">신용/체크카드</label>
       </div>
       <div class="radio tile-elevated">
         <input type="radio" id="raidio5" name="gender" value="" disabled />
         <label for="raidio5"
-          >무통장입금 <small style="color:var(--color-text);">COMING SOON<i style="font-style:italic">!</i></small></label
+          >무통장입금 <small style="color: var(--color-text)">COMING SOON<i style="font-style: italic">!</i></small></label
         >
       </div>
     </fieldset>
-    <footer style="margin:2rem 0;">
-      <span style="color:var(--color-text-light);">결제 안내</span>
+    <footer style="margin: 2rem 0">
+      <span style="color: var(--color-text-light)">결제 안내</span>
       <p>신용카드 결제만 가능합니다.</p>
       <p>해외에서 발행된 카드는 이용할 수 없습니다.</p>
       <br />
-      <span style="color:var(--color-text-light);">주문취소 및 환불 안내</span>
+      <span style="color: var(--color-text-light)">주문취소 및 환불 안내</span>
       <p>주문취소 또는 환불은 <a href="#">고객센터</a>로 문의해 주세요.</p>
     </footer>
   </section>
@@ -127,11 +131,7 @@
       <select class="textfield-input" id="select1">
         <option class="select-option" value="select-option1">사용 가능 쿠폰 1장</option>
       </select>
-      <span class="selectbox-indicator" role="img"
-        ><span class="material-symbols-outlined">
-          arrow_drop_down
-        </span></span
-      >
+      <span class="selectbox-indicator" role="img"><span class="material-symbols-outlined"> arrow_drop_down </span></span>
     </div>
   </fieldset>
 
@@ -139,15 +139,15 @@
 
   <fieldset class="checkout-coupon">
     <h2 class="checkout-shipping-title">마일리지</h2>
-    <p>보유 마일리지 1,186p <button>모두사용</button></p>
     <div class="checkout-shipping-name textfield">
-      <label class="checkout-shipping-name-label textfield-label">받는 사람</label>
+      <label class="checkout-shipping-name-label textfield-label">사용 마일리지</label>
       <input class="checkout-shipping-name-value textfield-input" type="text" name="email" id="login-email" placeholder="수줍이" />
     </div>
+    <button class="chip"><span class="chip-label">보유 마일리지 1,186p 모두사용</span></button>
   </fieldset>
 
   <hr />
-  <footer class="cart-summary" style="max-width:100%;">
+  <footer class="cart-summary" style="max-width: 100%">
     <div class="cart-summary-subtotal">
       <span class="cart-summary-label">총 상품금액</span>
       <span class="cart-summary-value">₩ 30,000</span>
