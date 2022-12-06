@@ -10,7 +10,8 @@
 :root {
   color-scheme: light dark;
 
-  --font-family: 'Quattrocento Sans', 'Gothic A1', sans-serif;
+  // -apple-system === san-serif / system-ui === BlinkMacSystemFont
+  --font-family: 'Quattrocento Sans', 'Gothic A1', system-ui, sans-serif;
   // --font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Apple SD Gothic Neo", san-serif;
   --font-family-heading: null;
   --font-family-body: null;
