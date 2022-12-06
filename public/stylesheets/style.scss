@@ -229,43 +229,35 @@
   font-size: var(--font-size-medium);
 }
 
-.carousel {
-  position: relative;
-}
+.carousel {position: relative;}
 
-.carousel-viewer {
-  @include group-bleeding;
-  display: block;
-  margin: -1rem;
-  padding: 1rem;
+.carousel-viewer {@include group-bleeding;
+  margin: 0 -.75rem;padding:0 .75rem;
+  scroll-behavior: smooth;
+  // margin-right: -50vw; padding-right: -50vw
 }
-
 .carousel-viewer-slide {
   @include tile-elevated-small;
-  display: inline-block;
-  width: 10rem;
-  margin-right: var(--space-after-item);
+  display: block;
+  min-width: 10rem;
+  margin-right: .75rem;
 }
 
-.carousel-viewer-slide:hover {
-  @include hover-item;
-}
+.carousel-viewer-slide:hover {@include hover-item;}
 
 .carousel-viewer-slide-media {
-  display: block;
   @include avatar-medium;
   margin: 0 0 2rem;
 }
 
-.carousel-viewer-slide-name {
-  color: var(--color-text);
-}
+.carousel-viewer-slide-name {}
 
 .carousel-dots {
+  display: flex;
+  align-items: center;
   width: 100px;
   height: 10px;
   margin-left: -36px;
-  text-align: center;
   position: absolute;
   left: 50%;
   bottom: -25px;
@@ -273,7 +265,6 @@
 }
 
 .carousel-dots-dot {
-  float: left;
   width: 10px;
   height: 10px;
   margin: 0px 4px;
@@ -282,41 +273,40 @@
   cursor: pointer;
 }
 
-.carousel-dots-dot:hover {
-  width: 30px;
-  border-radius: 5px;
-  opacity: .5;
-}
+.carousel-dots-dot:hover {opacity: .5;}
 
 .carousel-arrows {}
-
 .carousel-arrows-prev {
   @include avatar-medium;
-  box-shadow: var(--shadow);
   position: absolute;
-  left: calc(100% - 16px);
+  left: 0;
   top: 50%;
   z-index: var(--zindex-default);
   transform: translateY(-50%);
 }
+
+.carousel-arrows-prev:after,
+.carousel-arrows-next:after {
+  content: '';
+  display: block;
+
+  position: absolute;
+  background:linear-gradient( to right,#fff,#20264100);
+}
+
 
 .carousel-arrows-prev:hover {}
 
 .carousel-arrows-next {
   @include avatar-medium;
-  box-shadow: var(--shadow);
   position: absolute;
-  right: -16px;
+  right: 0;
   top: 50%;
   z-index: var(--zindex-default);
   transform: translateY(-50%);
 }
-
 .carousel-arrows-next:hover {}
-
-.carousel-arrows button.is-disabled {
-  opacity: .2;
-}
+.carousel-arrows button.is-disabled {opacity: .2;}
 
 .quote {
   max-width: 400px;

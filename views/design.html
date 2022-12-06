@@ -25,10 +25,7 @@
   </popup-info> -->
 
   <header class="design-head">
-    <div
-      class="obbbb"
-      style="width: var(--size-small); background: var(--color-primary); height: var(--size-small); margin-bottom: 1rem; border-radius: var(--radius)"
-    >
+    <div class="obbbb">
       <img src="" alt="" />
     </div>
     <h1 class="" title="overall consistency and design and development efficiency">To simplify is to clarify<i style="font-style: italic">.</i></h1>
@@ -61,7 +58,7 @@
     <span>문자열의 형식으로 날짜를 표현할 수 있다면 장식을 위한 아이콘은 불필요</span>
     <span>아이콘과 일러스트레이션을 구분</span>
     <span>1px의 선은 특정 화면에서 잘 보이지 않을 수 있음. 마찬가지로 적당한 속공간 배분.</span>
-    <span>on/off. on 상태를 위해 filled 아이콘을 사용하는 것은 리소스 낭비라는 생각. 배경색이나 indicator를.. + svg 색상 변경이 쉬워짐.</span>
+    <span>svg 색상 변경이 쉬워짐.</span>
     <span>switch에서도 on/off 상태를 나타내는 힌트.</span>
     -->
 
@@ -85,8 +82,11 @@
 
     <!--
       모든 플랫폼에서 일관된 브랜드 이미지를 유지하려면 모든 팀(디자인, 마케팅 및 개발)이 스타일 가이드를 잘 알고 있어야 합니다.
-      디자인 시스템이 비즈니스 로직, 도메인별 스타일 또는 기타 복잡한 UI 요소를 배포하기 위한 것이 아니기 때문에 필요한 정보를 찾지 못할 수 있다. 문의
+      디자인 시스템이 비즈니스 로직, 도메인별 스타일 또는 기타 복잡한 UI 요소를 배포하기 위한 것이 아니기 때문에 필요한 정보를 찾지 못할 수 있다.
+      문의
       사용자 그룹tow user groups : 팀team / 제품 사용자product users
+
+
       save time / build more consistent products
      -->
   </header>
@@ -174,28 +174,6 @@
     <h2 class="post-relation-title" title="이 콘텐츠를 본 사람들은">인터페이스 이야기</h2>
     <p class="post-relation-description" style="margin-bottom: 3rem">글쓰기를 위한<br />주제 선정.</p>
 
-    <!-- <section class="profile-tabpanel list" role="tabpanel" aria-hidden="false" data-index="1" style="margin-top:3rem;">
-      <a class="card js-modal" href="#newneek" data-modal="newneek" style="width:40% !important;">
-        <figure class="card-thumbnail"><img src="" alt="" /></figure>
-        <em class="card-category">정리중</em>
-        <h3 class="card-title">크로스 플랫폼 시대의 인터페이스 디자인</h3>
-        <div class="card-tags" role="group">
-          <span class="card-tags-item">일정산정/스펙정의</span>
-          <span class="card-tags-item">디자인</span>
-          <span class="card-tags-item">프론트엔드개발</span>
-        </div>
-      </a>
-      <a class="card js-modal" href="#newneek" data-modal="etc-works" style="width:40% !important;">
-        <figure class="card-thumbnail"><img src="/public/images/work-studium.jpg" alt="" /></figure>
-        <em class="card-category">정리중</em>
-        <h3 class="card-title">Selected Works</h3>
-        <div class="card-tags" role="group">
-          <span class="card-tags-item">프리랜서</span>
-          <span class="card-tags-item">디자인</span>
-          <span class="card-tags-item">워드프레스</span>
-        </div>
-      </a>
-    </section> -->
     <a
       class="postitem tile-elevated"
       href="https://www.notion.so/soojubm/UI-Designer-9c18f4dd39eb4181b9f9c2ee76896618?p=6001fc6829374c1e8395d815a0c7770a&pm=s"
@@ -232,11 +210,19 @@
         <li>성공/실패 등의 상태 정보를 색상만으로 표현하지 마세요.</li>
       </ul>
     </span>
-    <!-- <a class="postitem" href="/" onclick="javascript:alert('샘플 유아이입니다.')">
+    <span class="postitem tile-elevated" onclick="javascript:alert('샘플 유아이입니다.')" style="cursor: not-allowed">
+      <div class="tag-group">
+        <span class="tag">Design System</span>
+        <span class="tag">UX</span>
+      </div>
       <figure class="postitem-cover"></figure>
-      <h3 class="postitem-name">rem과 8pt grid</h3>
-      <p class="postitem-description">단위의 통일. 디자인 시스템, 컴포넌트 개발 트랜드에서 rem의 효용.</p>
-    </a> -->
+      <h3 class="postitem-name">8pt grid를 위한 rem.</h3>
+      <ul>
+        <li>root font size 16px에서 극대화할 수 있는 8pt grid.</li>
+        <li>단위의 통일. 디자인 시스템, 컴포넌트 개발 트랜드에서 rem의 효용.</li>
+        <li>size + space = larger size.</li>
+      </ul>
+    </span>
   </section>
 
   <!-- <section class="design-foundations" style="display:flex;flex-wrap:wrap;">
@@ -254,11 +240,18 @@
     </div>
   </section> -->
 
+  <style>
+    .obbbb {
+      width: var(--size-tiny);
+      background: var(--color-primary);
+      height: var(--size-tiny);
+      margin-bottom: 1rem;
+      border-radius: var(--radius);
+    }
+  </style>
+
   <section class="timeline" style="margin: 4rem var(--grid-margin) 0">
-    <div
-      class="obbbb"
-      style="width: var(--size-tiny); background: var(--color-primary); height: var(--size-tiny); margin-bottom: 1rem; border-radius: var(--radius)"
-    ></div>
+    <div class="obbbb"></div>
 
     <h2 class="post-relation-title">Changelog (or Last updated)</h2>
     <p class="post-relation-description">변경 사유를 블라블라</p>

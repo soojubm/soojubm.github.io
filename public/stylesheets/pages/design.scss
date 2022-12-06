@@ -8,13 +8,6 @@
 .design-guide ul li {margin:0;padding:1rem var(--grid-margin);color:var(--color-text-light);}
 .design-guide ul li b {display:block;color:var(--color-text);}
 
-// .design-principle .feature-item {max-width:calc(50% - 1rem);flex:auto;}
-
-// @media (--small) {
-//   .design-principle .feature-item {max-width:100%;}
-
-// }
-
 .article {padding:4rem var(--grid-margin);overflow:hidden;position:relative;}
 .article + .article {padding-top:6rem;}
 .article-aka {@include tag-group;margin:var(--space-4) 0;}
@@ -24,10 +17,7 @@
 .article-description {margin:0 0 2rem;@include text-title;}
 .article ul {margin:var(--space-after-subhead) 0 2rem;}
 
-
-.article p, ul {
-  max-width: 640px;
-}
+.article p, ul {max-width: 640px;}
 
 .article-subhead {margin:3rem 0 var(--space-2);@include text-subhead;}
 // .article-subhead + ul {margin-top: 0;}
@@ -72,7 +62,6 @@
 .stamp .circle span:nth-of-type(3) {transform: rotate(45deg);}
 .stamp .circle span:nth-of-type(4) {transform: rotate(50deg);}
 .stamp .circle span:nth-of-type(5) {transform: rotate(16deg);}
-
 
 .userlist {@include tile-elevated;max-width:400px;}
 .userlist .profile-user:hover {@include hover-item;}
@@ -236,26 +225,22 @@
 
 .marquee {
   overflow: hidden;
-  width: calc((50px + 1rem) * 8);
+  // width: calc((50px + 1rem) * 8);
   height: 50px;
-  margin: 1rem auto;
-  border: var(--border);
   position: relative;
 
   .marquee--inner {
+    display: flex;
     width: 200%;
     position: absolute;
     animation: marquee 20s linear infinite;
     span {
-      float: left;
       width: 50%;
     }
   }
-  
   .marquee--inner:hover {
     animation-play-state: paused;
   }
-
 }
 
 

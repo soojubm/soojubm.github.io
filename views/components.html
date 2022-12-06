@@ -115,9 +115,9 @@ arrow_drop_down
     <i class="profile-tablist-indicator" style="left: 4px; width: 211.056px;"></i>
   </nav> -->
 
-  <nav class="component-navigation" role="menubar">
+  <nav class="component-navigation js-carousel" role="menubar">
     <div class="component-navigation-background"></div>
-    <div class="component-navigation-scroll chip-group" role="group" data-align="bleed">
+    <div class="component-navigation-scroll js-carousel-viewer chip-group" role="group" data-align="bleed">
       <a class="chip is-active js-scrollspy-trigger" href="#"><span class="chip-label">Avatars</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Buttons</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Chips</span></a>
@@ -151,13 +151,18 @@ arrow_drop_down
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Dialog</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Callout</span></a>
     </div>
+
+    <!-- <nav class="carousel-arrows">
+      <button class="carousel-arrows-prev js-carousel-prev" title="이전"><span class="material-symbols-outlined">chevron_left</span></button>
+      <button class="carousel-arrows-next js-carousel-next" title="다음"><span class="material-symbols-outlined">chevron_right</span></button>
+    </nav> -->
   </nav>
 
   <section class="component-body">
     <!-- <div>
       <div>Presentation style="modal | toast | sheet" ... 이렇게 되면 윈도우 사이즈가 변경될 때 props를 변경해주어야 함.</div>
       <div>Group style="button | chip | tag | textfield | avatar" isHorizantalScroll(isBleeding)...</div>
-      <div>React migration classNames 라이브러리를 활용하기 위해서 data- 속성으로 스타일을 주지 않는 것이 좋다.</div>
+      <div>React migration classNames 라이브러리를 활용하기 위해서 aria- 또는 data- 속성으로 스타일링 하지 않는 것이 좋다.</div>
       <div>roles (for designers): filter sort select</div>
     </div> -->
 
@@ -173,7 +178,7 @@ arrow_drop_down
       <p>Actions: remove, select, check/uncheck, add, link, action? toggle?, submit</p></ul>
     </article> -->
 
-    <!-- <div class="js-tab">
+    <div class="js-tab">
       <nav class="profile-tablist type-sc" role="tablist" aria-label="sample tabs" style="max-width:11rem;margin:.5rem auto;">
         <button class="profile-tablist-tab" role="tab" aria-selected="true" aria-controls="panel-1" id="tab-1" tabindex="0" style="padding-top:3px">
           Style
@@ -186,13 +191,12 @@ arrow_drop_down
           id="tab-2"
           tabindex="-1"
           style="padding-top:3px"
-          onclick="javascript:alert('샘플유아이');"
         >
           Role
         </button>
         <i class="profile-tablist-indicator" style="width:50%;"></i>
       </nav>
-    </div> -->
+    </div>
 
     <article class="article js-observer js-scrollspy-section">
       <h1 class="article-title">Avatars</h1>
@@ -214,7 +218,7 @@ arrow_drop_down
             title="small avatar"
             style="width: var(--size-small); height: var(--size-small); background-image: none"
           >
-            <span class="material-symbols-outlined" style="transform: scale(75%)">close</span>
+            <span class="material-symbols-outlined" style="transform:scale(75%)">close</span>
           </figure>
         </article>
         <div class="tile-flat">
@@ -243,9 +247,6 @@ arrow_drop_down
             <figure class="item-avatar"></figure>
             <h3 class="item-name" style="font-weight: var(--font-weight-normal)">medium</h3>
             <time class="item-date" style="margin: 0 0 0 var(--space-2); color: var(--color-text-light)">2022. 12. 04.</time>
-            <button class="item-delete icon-button" data-size="small" style="margin-left: auto; min-width: 24px">
-              <span class="material-symbols-outlined">close</span>
-            </button>
           </article>
 
           <article class="item" data-size="small">
@@ -1207,7 +1208,7 @@ arrow_drop_down
       <p>
         searchfield / commentfield: 아이콘 레이블로 대체하는 경우 텍스트 레이블을 생략할 수 있습니다. Input with hidden label. helper text도 필요없다.
         그리고 둘 다 벨리데이션을 하지 않는 텍스트필드.
-      </ㅔ>
+      </p>
 
       <ul>
         <!-- <p><span><i></i></span> 벨리데이션 실행 조건: <b>제출(구현이 쉬움)</b> / 키보드 입력 쉬움 / 블러(구현이 복잡함. 흐름이 끊어짐)</b></p> -->
@@ -1609,31 +1610,34 @@ arrow_drop_down
           </button>
           <small>Google 포토에 최대 해상도로 백업</small>
 
-          <button class="item button-elevated js-darkmode" role="menuitem" data-size="medium" title="change theme" style="margin-bottom:0;">
-            <figure class="item-avatar" style="background-image: none"><span class="material-symbols-outlined">nights_stay</span></figure>
-            <span class="item-label">어둡게 보기</span>
-            <span class="switch" style="margin-left: auto">
-              <input type="checkbox" id="temp55" name="" role="switch" />
-              <label for="temp55" style="padding-left: 48px"></label>
-            </span>
-          </button>
-        </div>
-        <div class="tile-flat">
-          <div class="item" data-size="medium" role="menuitem">
-            <figure class="item-avatar">🏹</figure>
-            <span class="item-label">entity와 구별</span>
-            <span class="item-tag" data-style="primary">새소식</span>
-          </div>
-        </div>
-        <div class="tile-flat">
-          <div class="checkbox menutype" data-size="medium" style="margin: 0;">
-            <input type="checkbox" id="menutype1" name="gender" value="" checked />
-            <label for="menutype1" title="">
+          <hr />
+
+          <menu>
+            <button class="item js-darkmode" role="menuitem" data-size="medium" title="change theme" style="width:100%;">
+              <figure class="item-avatar" style="background-image: none"><span class="material-symbols-outlined">nights_stay</span></figure>
+              <span class="item-label">어둡게 보기</span>
+              <span class="switch" style="margin-left:auto;">
+                <input type="checkbox" id="temp55" name="" role="switch" />
+                <label for="temp55" style="padding-left: 48px"></label>
+              </span>
+            </button>
+            <div class="item" role="menuitem" data-size="medium" style="width:100%;">
+              <figure class="item-avatar">🏹</figure>
+              <span class="item-label">entity와 구별</span>
+              <span class="item-tag" data-style="primary">새소식</span>
+            </div>
+            <div class="item" role="menuitem" data-size="medium" style="width:100%;">
               <figure class="item-avatar"></figure>
-              카카오뱅크
-            </label>
-          </div>
+              <span class="item-label">카카오뱅크</span>
+              <span class="checkbox" style="margin-left:auto;">
+                <input type="checkbox" id="tttttest" name="tttttest" value="" checked />
+                <label for="tttttest" title=""></label>
+              </span>
+            </div>
+          </menu>
+
         </div>
+
         <div class="tile-flat">
           <div class="item" data-size="large" role="menuitem">
             <figure class="item-avatar"></figure>
@@ -1644,6 +1648,7 @@ arrow_drop_down
             <span class="material-symbols-outlined">chevron_right</span>
           </div>
         </div>
+
         <div class="tile-flat">
           <div class="navbar-menu-item has-submenu" style="margin: var(--space-2) 0 0 0; padding: 0">
             <span role="menuitem">subheading</span>
@@ -1655,7 +1660,21 @@ arrow_drop_down
         </div>
       </section>
 
+      <h2 class="article-subhead">Best practices</h2>
+      <p>토글 또는 액션에 한정하여 오른쪽에 배치합니다. 태그를 오른쪽에 정렬하지 마세요.</p>
+
+      <h2 class="article-subhead"></h2>
+
+      <p>anatomy: item-action은 컨테이너 </p>
+
       <ul>
+        <li>item-label의 line-heigh를 지정해야 아바타가 없을 떄 대응가능</li>
+        <li>button-elevated와 차이</li>
+        <li>meta problem: 모든 menuitem이 clickable은 아니다. => no 액션 버튼이 따로 존재할 수도 있어야 한다. 이 정보가 중요한 이유 hover 상태 표현을 위해.</li>
+        <li>확장:: setting item에서 tile 형태 + helper</li>
+        <li>menuitem. - title(truncated) + action(chip - togglable)/link(chevron?)/선택(checkbox/switch) / aligns: vertical. large/medium</ㅣ>
+
+
         <li>
           메뉴 아이템의 우측에 'new' 등 태그 컴포넌트를 배치하지 마세요. 액션 또는 액션 인티케이터만 위치할 수 있습니다. (case 토스. 우측 new)
         </li>
@@ -1663,10 +1682,8 @@ arrow_drop_down
         <!-- <li>todo. check icon을 컴포넌트로 만들고 checkbox의 구조를 변경하기. check icon을 svg로 변경.</li> -->
       </ul>
 
-      <h4 class="article-subhead">menuitem vs listitem</h4>
-      <p>menuitem. - title(truncated) + action(chip - togglable)/link(chevron?)/선택(checkbox/switch) / aligns: vertical. large/medium</p>
-      <p>Menu -> MenuButton / MenuList -> MenuItem. MenuLink</p>
-
+      <!-- <p>listitem은 li라서 제거함</p> -->
+      <!-- <p>Menu -> MenuButton / MenuList -> MenuItem. MenuLink</p> -->
 
       <!-- <h4 class="article-subhead">Props</h4> -->
 
@@ -1759,10 +1776,13 @@ arrow_drop_down
       <h1 class="article-title">Carousel</h1>
       <p class="article-description">작성 중.</p>
       <p>https://web.dev/carousel-best-practices/</p>
+      <p><b>block</b> -> inline / font-size: 0</p>
+      <p><b>flex</b> -> block + min-width</p>
+      <p>scroll-behavior: smooth</p>
       <section class="component-example">
         <div class="tile-flat">
-          <section class="carousel" style="max-width: auto">
-            <div class="carousel-viewer" style="margin-right: -50%; padding-right: 200px">
+          <section class="carousel js-carousel" style="max-width: auto">
+            <div class="carousel-viewer">
               <a class="carousel-viewer-slide" href="#profile">
                 <span class="carousel-viewer-slide-media">🧑‍🦱</span>
                 <p class="carousel-viewer-slide-name">사용자 프로필</p>
@@ -1788,12 +1808,14 @@ arrow_drop_down
                 <p class="carousel-viewer-slide-name">상품</p>
               </a>
             </div>
-            <!-- <nav class="carousel-dots">
-            <button class="carousel-dots-dot">1</button>
-          </nav> -->
+            <nav class="carousel-dots">
+              <button class="carousel-dots-dot">1</button>
+              <button class="carousel-dots-dot">1</button>
+              <button class="carousel-dots-dot">1</button>
+            </nav>
             <nav class="carousel-arrows">
-              <button class="carousel-arrows-prev" title="이전"><span class="material-symbols-outlined">chevron_left</span></button>
-              <button class="carousel-arrows-next" title="다음"><span class="material-symbols-outlined">chevron_right</span></button>
+              <button class="carousel-arrows-prev js-carousel-prev" title="이전"><span class="material-symbols-outlined">chevron_left</span></button>
+              <button class="carousel-arrows-next js-carousel-next" title="다음"><span class="material-symbols-outlined">chevron_right</span></button>
             </nav>
           </section>
         </div>
@@ -2162,6 +2184,70 @@ arrow_drop_down
         <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus.
       </p>
     </aside> -->
+    </article>
+
+
+    <article class="article js-observer js-scrollspy-section">
+      <h1 class="article-title">Workflow</h1>
+      <p class="article-description">내용 없음.</p>
+
+      <aside class="article-aka">
+        <span class="tag">a.k.a.</span>
+        <span class="hashtag" title="">Timeline</span>
+        <span class="hashtag" title="">Stepper</span>
+      </aside>
+
+      <section class="component-example">
+        <div class="tile-flat">
+          <section class="step is-vertical">
+            <div class="step-item is-active">
+              <span class="step-item-icon">1</span>
+              <h3 class="step-item-label">장바구니</h3>
+            </div>
+            <div class="step-item">
+              <span class="step-item-icon">2</span>
+              <h3 class="step-item-label">결제</h3>
+            </div>
+            <div class="step-item">
+              <span class="step-item-icon">3</span>
+              <h3 class="step-item-label">주문완료</h3>
+            </div>
+          </section>
+        </div>  
+        <div class="tile-flat">
+          <section class="step">
+            <div class="step-item is-active">
+              <span class="step-item-icon">1</span>
+              <h3 class="step-item-label">장바구니</h3>
+              <p class="step-item-description">
+                대통령은 국가의 원수이며, 외국에 대하여 국가를 대표한다. 국가원로자문회의의 조직·직무범위 기타 필요한 사항은 법률로 정한다. 국가는
+                대외무역을 육성하며, 이를 규제·조정할 수 있다.
+              </p>
+            </div>
+            <div class="step-item">
+              <span class="step-item-icon">2</span>
+              <h3 class="step-item-label">결제</h3>
+            </div>
+            <!-- <div class="step-space">
+              <span class="step-space-dot"></span>
+              <span class="step-space-dot"></span>
+              <span class="step-space-dot"></span>
+            </div> -->
+            <div class="step-item">
+              <span class="step-item-icon">3</span>
+              <h3 class="step-item-label">주문완료</h3>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <ul>
+       <li>타임라인과 구분. 타임라인은 히스토리 맥락으로 스텝의 역순. 확장, 링크, indentation</li>
+      </ul>
+
+      <h2 class="article-subhead">Changelog</h2>
+      <p>클릭하고 싶지 않은 형태로 변경 2021.10</p>
+
     </article>
 
     <!-- <article class="article js-observer js-scrollspy-section">

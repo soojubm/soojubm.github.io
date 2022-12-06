@@ -1,10 +1,8 @@
 // description 수치(날짜/금액/수량) 이륾보다 더 강조될 수도 있음.
 // => avatar medium, avatar large (우측정렬, 버튼 아래)
-// 모든 item은 clickable? => no 액션 버튼이 존재할 수도 있음.
 
 // todo entry / message / created
 
-// ! avatar-medium과 chip
 // ! width inherit ::::: for button element
 @mixin item {@include clearfix;width:inherit;position:relative;z-index:1;}
 @mixin item-avatar-huge {@include avatar-huge;float:left;margin-right:var(--space-after-avatar-huge);background:url('/public/images/springsteen.jpg') no-repeat center var(--color-background-weak);}

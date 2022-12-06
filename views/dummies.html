@@ -53,38 +53,68 @@
     </footer>
   </section>
 
-  <form class="verify" style="width: 656px; margin: 0 auto">
-    <header class="password-head">
-      <h1 class="password-title" title="Reset Your Password">Please check your email!</h1>
-      <p class="password-description" titl="We get it, stuff happens! What's your email address?">
-        We have emailed a 6-digit confirmation code to acb@domain, please enter the code in below box to verify your email.
-      </p>
-    </header>
-    <div>
-      <div class="textfield" style="display: flex">
-        <input aria-invalid="false" name="code1" placeholder="-" type="number" maxlength="1" class="textfield-input" value="" />
-        <input aria-invalid="false" name="code1" placeholder="-" type="number" maxlength="1" class="textfield-input" value="" />
-        <input aria-invalid="false" name="code1" placeholder="-" type="number" maxlength="1" class="textfield-input" value="" />
-        <input aria-invalid="false" name="code1" placeholder="-" type="number" maxlength="1" class="textfield-input" value="" />
-        <input aria-invalid="false" name="code1" placeholder="-" type="number" maxlength="1" class="textfield-input" value="" />
-        <input aria-invalid="false" name="code1" placeholder="-" type="number" maxlength="1" class="textfield-input" value="" />
-      </div>
-    </div>
-    <footer class="password-foot">
-      <button type="submit" class="password-foot-submit">재설정 메일 받기</button>
-      <!-- <span class="password-foot-back password-link" title="Remember your password after all?">이메일이 기억 안 나세요? <a href="signin.html">가입하기</a></span> -->
-    </footer>
-  </form>
-
   <section class="component-body" style="padding: 2rem var(--grid-margin); position: relative; z-index: 1">
+    <div class="tile-elevated" style="max-width: 400px">
+      <header style="display: flex; align-items: center; line-height: 24px">
+        <span class="tag" style="width: var(--size-large); justify-content: center">포장</span>
+        <time style="margin-left: var(--space-2); color: var(--color-text-light); font-size: var(--font-size-small)">2022. 12. 05. 15:32</time>
+        <b class="status" style="margin-left: auto">배달완료</b>
+      </header>
+
+      <article class="item" data-size="large" style="margin: var(--space-3) 0 1rem">
+        <figure class="item-avatar">
+          <span class="avatar-badge"></span>
+        </figure>
+        <h3 class="item-name">쩜순이네닭강정 <small>요기요st UI</small></h3>
+        <!-- <p class="item-description">description area.</p> -->
+        <div style="display: flex; align-items: center; line-height: var(--font-line-height-small); color: var(--color-text-light)">
+          <span style="line-height: 24px">떡볶이</span>
+          <span
+            class="material-symbols-outlined"
+            style="font-size: var(--font-size-small); color: var(--color-text-light); line-height: 24px; margin-top: -1px"
+          >
+            close
+          </span>
+          <span style="line-height: inherit">5</span>
+          <!-- <span style="line-height: inherit"> 외 1건</span> -->
+        </div>
+      </article>
+
+      <section class="step is-vertical">
+        <div class="step-item is-active">
+          <span class="step-item-icon">1</span>
+          <h3 class="step-item-label" style="font-size: var(--font-size-small)">주문확인</h3>
+        </div>
+        <div class="step-item">
+          <span class="step-item-icon">2</span>
+          <h3 class="step-item-label" style="font-size: var(--font-size-small)">조리중</h3>
+        </div>
+        <div class="step-item">
+          <span class="step-item-icon">3</span>
+          <h3 class="step-item-label" style="font-size: var(--font-size-small)">배달중</h3>
+        </div>
+        <div class="step-item">
+          <span class="step-item-icon">3</span>
+          <h3 class="step-item-label" style="font-size: var(--font-size-small)">배달완료</h3>
+        </div>
+      </section>
+      <div class="chip-group" style="margin-top: 0.75rem">
+        <button class="chip"><span class="chip-label">리뷰쓰기</span></button>
+        <button class="chip"><span class="chip-label">재주문</span></button>
+      </div>
+      <small>네이버는 왜 주문 내역을 삭제(숨김인가)할 수 있도록?</small>
+    </div>
+
     <fieldset class="" role="radiogroup" style="display: flex">
       <legend hidden>radiogroup</legend>
       <div class="tile-elevated-small" style="width: 240px; margin-right: 0.5rem">
-        <figure style="padding: 1rem; background: var(--color-background-weak); border-radius: var(--radius)">
-          <p>
+        <figure
+          style="padding: 1rem; background: var(--color-background-weak); border-radius: var(--radius); line-height: var(--font-line-height-small)"
+        >
+          <small>
             기존 라디오 컴포넌트의 형태를 유지할 수 있는 디자인. 여전히 라디오아이콘과 체크박스아이콘을 컴포넌트로만들 이유 하나. menuitem에서 우측에
             radio 기표를 표시할 때
-          </p>
+          </small>
         </figure>
         <div class="radio">
           <input type="radio" id="raidio5" name="gender" value="" />
@@ -92,10 +122,14 @@
         </div>
       </div>
       <div class="tile-elevated" style="width: 240px; margin-right: 0.5rem">
-        <figure style="padding: 1rem; background: var(--color-background-weak); border-radius: var(--radius)">
-          <p>use cases: 기본 주소록, 주로 설정에서 이미지 가이드가 필요한 선택 목록 등</p>
-          <p>todo. 네모 형태의 선택 목록을 위한 세로값 토큰이 필요함.</p>
-          <p>todo. background-weak + radius tile 정의</p>
+        <figure
+          style="padding: 1rem; background: var(--color-background-weak); border-radius: var(--radius); line-height: var(--font-line-height-small)"
+        >
+          <small>
+            <p>use cases: 기본 주소록, 선택 목록 with 이미지 가이드 등</p>
+            <p>todo. 세로값 토큰.</p>
+            <p>todo. background-weak + radius tile</p>
+          </small>
         </figure>
         <div class="radio">
           <input type="radio" id="raidio5" name="gender" value="" />
@@ -465,14 +499,6 @@
     </section>
 
     <hr />
-
-    <div style="display: flex; align-items: center; line-height: var(--font-line-height-small)">
-      <span style="line-height: 24px">떡볶이</span>
-      <span class="material-symbols-outlined" style="font-size: var(--font-size-large); color: var(--color-text-light); line-height: 24px">
-        close
-      </span>
-      <span>5</span>
-    </div>
 
     <h3 class="article-subhead" data-temp="판매자가 선택할 수 있는 결제 방법과 구매자가 선택할 수 있는 결제 방법의 차이.">
       Select payment method<br />
@@ -1177,47 +1203,5 @@
       최근 3개월간 네이버플러스 멤버십으로<br />
       <em>15,799원 추가 적립 혜택</em>이 생겼어요!
     </div>
-
-    <p>워크플로우입니다. changelog: 클릭하고 싶지 않은 형태로 변경 2021.10</p>
-    <p>타임라인 구분. 타임라인은 히스토리 맥락으로 스텝의 역순. 확장, 링크, indentation</p>
-
-    <section class="step">
-      <div class="step-item is-active">
-        <span class="step-item-icon">1</span>
-        <h3 class="step-item-title">장바구니</h3>
-        <p class="step-item-description">
-          대통령은 국가의 원수이며, 외국에 대하여 국가를 대표한다. 국가원로자문회의의 조직·직무범위 기타 필요한 사항은 법률로 정한다. 국가는
-          대외무역을 육성하며, 이를 규제·조정할 수 있다.
-        </p>
-      </div>
-      <div class="step-item">
-        <span class="step-item-icon">2</span>
-        <h3 class="step-item-title">결제</h3>
-      </div>
-      <!-- <div class="step-space">
-        <span class="step-space-dot"></span>
-        <span class="step-space-dot"></span>
-        <span class="step-space-dot"></span>
-      </div> -->
-      <div class="step-item">
-        <span class="step-item-icon">3</span>
-        <h3 class="step-item-title">주문완료</h3>
-      </div>
-    </section>
-
-    <section class="step is-vertical">
-      <div class="step-item is-active">
-        <span class="step-item-icon">1</span>
-        <h3 class="step-item-title">장바구니</h3>
-      </div>
-      <div class="step-item">
-        <span class="step-item-icon">2</span>
-        <h3 class="step-item-title">결제</h3>
-      </div>
-      <div class="step-item">
-        <span class="step-item-icon">3</span>
-        <h3 class="step-item-title">주문완료</h3>
-      </div>
-    </section>
   </section>
 </main>

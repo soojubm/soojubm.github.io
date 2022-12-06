@@ -10,7 +10,10 @@
 .component-example > .tile-flat-small {width:100%;max-width:640px;border:none;}
 
 .component-navigation {background:var(--color-background);overflow:hidden;position:sticky;top:calc(var(--navbar-height));z-index:7;}
-.component-navigation-scroll {margin:-.25rem;padding:var(--space-3) var(--grid-margin) !important;}
+.component-navigation-scroll {margin:-.25rem;padding:var(--space-3) var(--grid-margin) !important;
+
+  scroll-behavior: smooth;
+}
 
 
 // @media (--small), (max-height: 800px) {
