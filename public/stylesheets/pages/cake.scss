@@ -20,7 +20,7 @@
 .cake-info footer {margin-top:var(--space-4);}
 .cake-info footer a {@include link-outside;}
 
-.cake .profile-tablist {margin-top:6rem;}
+.cake .tablist {margin-top:6rem;}
 
 
 @media (--small) {
@@ -33,19 +33,14 @@
 
 
 .person-list {display: flex;}
-.person {
-  @include tile-elevated;
-  margin: 0 var(--space-3) 0 0;
-}
+.person {@include tile-elevated;margin: 0 var(--space-3) 0 0;}
 .person:hover {@include hover-item;}
-.person figure {@include avatar-huge;}
-.person figure img {height: 100%;object-fit: cover;}
-.person-name {display:block;margin:.375rem 0 0 0;color:var(--color-text);line-height:var(--font-line-height-small);}
+.person-name {display:block;margin:.375rem 0 0 0;color:var(--color-text);}
 .person-test {
   @include tag-primary;
   position: absolute;
-  left: .25rem;
-  top: .25rem;
+  left: .5rem;
+  top: .5rem;
   z-index: 1;
 }
 .person-viewall {min-width:100px;padding-top:2.5rem;display:flex;flex-wrap:wrap;justify-content:center;position:relative;}

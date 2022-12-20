@@ -53,7 +53,35 @@
     </footer>
   </section>
 
-  <section class="component-body" style="padding: 2rem var(--grid-margin); position: relative; z-index: 1">
+  <section class="component-body">
+
+  <div class="album-track">
+    <div class="album-track-label" role="row">
+      <span class="album-track-label-item" role="columnheader">#</span>
+      <span class="album-track-label-item">제목</span>
+      <span class="album-track-label-item">Gengre</span>
+      <span class="album-track-label-item">Progress</span>
+      <span class="album-track-label-item">Status</span>
+      <span class="album-track-label-item">러닝타임</span>
+      <span class="album-track-label-item" title=" date added(sort)">Date</span>
+    </div>
+    <div class="album-track-row" role="row">
+      <span class="album-track-row-column">1</span>
+      <span class="album-track-row-column">
+        <div class="item">
+          <figure class="item-avatar"></figure>
+          <b class="item-name">Dancing in the Dark</b>
+          <small class="item-description">Bruce Springsteen</small>
+        </div>
+      </span>
+      <span class="album-track-row-column tag-group"><span class="tag">hiphop</span><span class="tag">rap</span></span>
+      <span class="album-track-row-column">In Review --</span>
+      <span class="album-track-row-column"
+        ><em class="badge" style="height: auto; margin-right: 0.5rem; background: gold; padding: 3px"></em> Error</span
+      >
+      <span class="album-track-row-column">7 : 02</span>
+    </div>
+
     <div class="tile-elevated" style="max-width: 400px">
       <header style="display: flex; align-items: center; line-height: 24px">
         <span class="tag" style="width: var(--size-large); justify-content: center">포장</span>
@@ -65,9 +93,9 @@
         <figure class="item-avatar">
           <span class="avatar-badge"></span>
         </figure>
-        <h3 class="item-name">쩜순이네닭강정 <small>요기요st UI</small></h3>
+        <b class="item-name">쩜순이네닭강정 <small>요기요st UI</small></b>
         <!-- <p class="item-description">description area.</p> -->
-        <div style="display: flex; align-items: center; line-height: var(--font-line-height-small); color: var(--color-text-light)">
+        <div style="display: flex; align-items: center; color: var(--color-text-light)">
           <span style="line-height: 24px">떡볶이</span>
           <span
             class="material-symbols-outlined"
@@ -107,10 +135,8 @@
 
     <fieldset class="" role="radiogroup" style="display: flex">
       <legend hidden>radiogroup</legend>
-      <div class="tile-elevated-small" style="width: 240px; margin-right: 0.5rem">
-        <figure
-          style="padding: 1rem; background: var(--color-background-weak); border-radius: var(--radius); line-height: var(--font-line-height-small)"
-        >
+      <div class="tile-elevated-small" style="width: 240px; margin-right: 0.75rem">
+        <figure style="height: 120px; padding: 0.5rem 1rem; background: var(--color-background-weak); border-radius: var(--radius)">
           <small>
             기존 라디오 컴포넌트의 형태를 유지할 수 있는 디자인. 여전히 라디오아이콘과 체크박스아이콘을 컴포넌트로만들 이유 하나. menuitem에서 우측에
             radio 기표를 표시할 때
@@ -121,15 +147,9 @@
           <label for="raidio5" title="">tile style</label>
         </div>
       </div>
-      <div class="tile-elevated" style="width: 240px; margin-right: 0.5rem">
-        <figure
-          style="padding: 1rem; background: var(--color-background-weak); border-radius: var(--radius); line-height: var(--font-line-height-small)"
-        >
-          <small>
-            <p>use cases: 기본 주소록, 선택 목록 with 이미지 가이드 등</p>
-            <p>todo. 세로값 토큰.</p>
-            <p>todo. background-weak + radius tile</p>
-          </small>
+      <div class="tile-elevated-small" style="width: 240px; margin-right: 0.5rem">
+        <figure style="height: 120px; padding: 0.5rem 1rem; background: var(--color-background-weak); border-radius: var(--radius)">
+          <small> use cases: 기본 주소록, 선택 목록 with 이미지 가이드 등 todo. 세로값 토큰. todo. background-weak + radius tile </small>
         </figure>
         <div class="radio">
           <input type="radio" id="raidio5" name="gender" value="" />
@@ -146,9 +166,10 @@
           <span class="material-symbols-outlined">close</span>
         </button>
       </header>
-      <div class="item" data-size="medium" style="margin: var(--space-4) 0 0">
+      <br />
+      <div class="item" data-size="medium">
         <figure class="item-avatar"></figure>
-        <h3 class="item-name" style="font-weight: var(--font-weight-normal)">수줍이</h3>
+        <span class="item-name">수줍이</span>
       </div>
       <div class="textfield comment-write-text" style="margin: var(--space-3) 0">
         <!-- <label class="textfield-label" for="" aria-hidden="true">댓글</label> -->
@@ -173,7 +194,6 @@
           <span class="material-symbols-outlined">arrow_back</span>
         </button>
       </header>
-      <!-- <h1>팔로워</h1> -->
       <!-- <a class="link-outside" href="#">모두 보기 (todo 위치)</a> -->
       <div class="share-group" role="group" style="margin-top: var(--space-3); margin-bottom: 0.5rem">
         <button class="chip is-active"><span class="chip-label">필터링 1</span></button>
@@ -191,26 +211,26 @@
         <span class="item-description">유아이 디자이너</span>
         <button class="item-action"><span class="item-action-label">팔로우</span></button>
       </div>
-      <button class="button-elevated" style="margin-bottom: 0">
-        <figure class="button-elevated-avatar"></figure>
-        <span class="button-elevated-label">더 많은 친구를 찾아보세요!</span>
+      <button class="menu-item" data-tile="elevated" style="margin-bottom: 0">
+        <figure class="menu-item-avatar"></figure>
+        <span class="menu-item-label">더 많은 친구를 찾아보세요!</span>
       </button>
     </article>
 
     <article class="tile-elevated" style="width: 100%; max-width: 400px; position: relative">
-      <h3 style="text-align: center; font-size: var(--font-size-large)">See this post in</h3>
-      <button class="" style="margin: 0.5rem; position: absolute; right: 0; top: 0rem">
-        <figure class="chip"><span class="material-symbols-outlined">close</span></figure>
+      <h3 style="font-size: var(--font-size-large); font-weight:var(--font-weight-normal);">See this post in</h3>
+      <button class="" style="position: absolute; right: .5rem; top: .5rem">
+        <figure class="chip material-symbols-outlined">close</figure>
       </button>
       <hr />
-      <div class="item" role="listitem" data-size="large">
+      <div class="item">
         <figure class="item-avatar"></figure>
-        <h2 class="item-name" style="line-height: 48px">수줍이 앱</h2>
+        <h2 class="item-name">수줍이 앱</h2>
         <button class="item-action"><span class="item-action-label">열기</span></button>
       </div>
-      <div class="item" data-size="large">
+      <div class="item">
         <figure class="item-avatar"></figure>
-        <h2 class="item-name" style="line-height: 48px">사파리 브라우저</h2>
+        <h2 class="item-name">사파리 브라우저</h2>
         <button class="item-action is-active"><span class="item-action-label">계속</span></button>
       </div>
     </article>
@@ -256,45 +276,38 @@
         <div class="graph-bar"><b style="width: 6%"></b></div>
         <span class="graph-value">6%</span>
       </div>
-      <blockquote style="margin: 0.75rem 0 0 0; line-height: var(--font-line-height-small)">
+      <blockquote style="margin: 0.75rem 0 0 0; line-height: var(--font-line-height)">
         <small>별 다섯개에서 점수만큼 채우는 유아이는 요즘 잘 안 보임. 구현하기 은근 까다로움.</small>
       </blockquote>
     </article>
 
-    <menu class="access tile-elevated" style="width: 100%; max-width: 400px">
-      <button class="titlebar-back">
-        <figure class="chip"><span class="material-symbols-outlined">close</span></figure>
-      </button>
-      <header class="titlebar" style="padding: 0; margin: 1rem 0">
+    <menu class="access tile-elevated" style="width: 100%; max-width: 400px;">
+      <header class="titlebar" style="display:block;padding: 0;">
+        <button class="titlebar-back">
+          <figure class="chip material-symbols-outlined">close</figure>
+        </button>
         <h1
           class="titlebar-title"
-          style="font-weight: var(--font-weight-bold); line-height: 32px; position: relative; left: auto; transform: translateX(0)"
+          style="margin:1rem 0;position: relative; left: auto; transform: translateX(0)"
         >
           공개 대상 선택
         </h1>
       </header>
-      <div class="access-entity item" data-size="large">
-        <figure class="item-avatar" style="background-image: none">
-          <span class="material-symbols-outlined">public</span>
-        </figure>
-        <h3 class="item-name" style="padding-top: 0.25rem">전체 공개</h3>
-        <p class="item-description">Facebook 안팎의 모든 사람</p>
+      <div class="menu-item" data-size="large">
+        <figure class="menu-item-avatar material-symbols-outlined">public</figure>
+        <span class="menu-item-label">전체 공개</span>
+        <p class="menu-item-description">Facebook 안팎의 모든 사람</p>
       </div>
-      <div class="item is-active is-hoverable" data-size="large" style="margin-top: 0.75rem; margin-bottom: 0.75rem">
-        <figure class="item-avatar" style="background-image: none">
-          <span class="material-symbols-outlined">group</span>
-        </figure>
-        <h3 class="item-name" style="padding-top: 0.25rem">친구만</h3>
-        <p class="item-description">회원님의 Facebook 친구</p>
-        <span class="material-symbols-outlined" style="position: absolute; right: 0; top: 50%; transform: translateY(-50%); color: var(--green800)">
-          radio_button_checked
+      <div class="menu-item is-active is-hoverable" data-size="large">
+        <figure class="menu-item-avatar material-symbols-outlined">group</figure>
+        <span class="menu-item-label">친구만</span>
+        <p class="menu-item-description">회원님의 Facebook 친구</p>
+        <div class="menu-item-action material-symbols-outlined" style=" color: var(--green800)">radio_button_checked</div>
         </span>
       </div>
-      <div class="item" data-size="large" role="menuitem">
-        <figure class="item-avatar" style="background-image: none">
-          <span class="material-symbols-outlined"> lock </span>
-        </figure>
-        <h3 class="item-name">나만 보기</h3>
+      <div class="menu-item" data-size="large" role="menuitem">
+        <figure class="menu-item-avatar material-symbols-outlined">lock</figure>
+        <span class="menu-item-label" style="line-height:var(--size-large);">나만 보기</span>
         <!-- <p class="item-description">부끄러우니까</p> -->
       </div>
     </menu>
@@ -302,7 +315,9 @@
     <hr />
 
     <div class="" style="display: flex; flex-wrap: wrap; max-width: 640px">
-      <p class="profile-display-status" role="status" style="width: 100%">Viewing 1,000 Projects</p>
+      <p class="profile-display-status" role="status" style="width: 100%">
+        Viewing 1,000 Projects toolbar is not chip.. 만약 칩이 커지면 이것도 커진다.
+      </p>
       <div class="tile-elevated-small" style="width: 100%; display: flex">
         <button class="profile-display-button js-test-toggle is-selected" name="grid">
           <figure class="chip-icon"><span class="material-symbols-outlined">grid_on</span></figure>
@@ -346,11 +361,11 @@
           <label class="textfield-label" for="" aria-hidden="true">댓글</label>
           <input class="textfield-input" type="text" rows="4" name="comment" placeholder="사용자 및 그룹 추가"></input>
         </div> -->
-      <button class="button-elevated">
-        <figure class="button-elevated-avatar">
+      <button class="menu-item" data-tile="elevated">
+        <figure class="menu-item-avatar">
           <span class="material-symbols-outlined">add</span>
         </figure>
-        <span class="button-elevated-label">사용자 및 그룹 추가</span>
+        <span class="menu-item-label">사용자 및 그룹 추가</span>
       </button>
       <!-- <p style="margin:1rem 0 .25rem;font-size:var(--font-size-medium);">액세스 권한이 있는 사용자</p> -->
       <div class="item" data-size="medium" role="menuitem">
@@ -405,7 +420,7 @@
     <p>개선한 부분</p>
     <ul>
       <li>일반 액세스는 설정에서 제공. 소제목 제거. 액세스 권한이 있는 사용자.</li>
-      <li>multiple selectbox 인터페이스를 정의하지 않기 위해 버튼을 사용. => 디자인 시스템에 정의하지 않은 요소.</li>
+      <li>multiple select 인터페이스를 정의하지 않기 위해 버튼을 사용. => 디자인 시스템에 정의하지 않은 요소.</li>
       <li>한 번에 여러 명과 공유 / 긴 파일 이름 / 추가 버튼이 리스트의 최상단과 최하단애 배치되는 맥락 정의 /</li>
     </ul>
     <hr />
@@ -420,7 +435,7 @@
           >4.33% 상승</span
         >
 
-        <div style="margin-top: 0.5rem; color: var(--color-text-light); line-height: var(--font-line-height-small)">
+        <div style="margin-top: 0.5rem; color: var(--color-text-light); line-height: var(--font-line-height)">
           <small>10분 지연. live</small>
           <br />
           <small>현지 시간 기준 10.27. 01:27</small>
@@ -519,19 +534,6 @@
       </div>
     </div>
 
-    <hr />
-
-    <div class="payment-method-list">
-      <div class="payment-method-item status-is-active" style="padding: var(--space-3); margin: var(--space-3)">
-        <figure style="background: aliceblue">💳</figure>
-        <span>신용카드</span>
-      </div>
-      <div class="payment-method-item" style="padding: var(--space-3); margin: var(--space-3)">
-        <figure style="background: #defade">💵</figure>
-        <span>현금</span>
-      </div>
-    </div>
-
     <div class="meter" style="max-width: 640px">
       <h1 class="meter-title">200 GB 중 187.23 GB 사용됨</h1>
       <div class="meter-graph">
@@ -563,41 +565,15 @@
 
     <hr />
 
-    <button class="title-button">
-      <h1 class="hero-title" style="display: flex; align-items: center">
-        Dummies
-        <span class="icon-indicator material-symbols-outlined" data-size="small" role="img">arrow_drop_down</span>
-      </h1>
-    </button>
-    <hr />
-    <div class="sorting" style="position: relative; display: flex; line-height: 24px">
-      <label class="" for="select2" style="margin: 0 var(--space-2) 0 0">Sort by</label>
-      <select class="" id="select2">
-        <option class="select-option" value="select-option1">최신순</option>
-      </select>
-      <span class="icon-indicator material-symbols-outlined" role="img">arrow_drop_down</span>
-    </div>
-    <hr />
-    <button style="display: flex; align-items: center; line-height: 24px">
-      See more trending developers
-      <span class="icon-indicator material-symbols-outlined">arrow_right_alt</span>
-    </button>
-    <button class="" style="display: flex; align-items: center; line-height: 24px; position: relative">
-      Show more
-      <span class="icon-indicator material-symbols-outlined">chevron_left</span>
-    </button>
-
-    <hr />
-
     <section style="max-width: 640px">
       <div style="display: flex; margin: 0 -0.375rem 0.75rem">
         <div class="tile-elevated" style="width: 240px; margin: 0 0.375rem; padding: 1rem">
-          <h2 style="line-height: var(--font-line-height-small)">Designers</h2>
+          <h2 style="line-height: var(--font-line-height)">Designers</h2>
           <p>50 People</p>
           <!-- <i class="material-symbols-outlined" style="font-size:20px;position:absolute;left:-3px;top:-3px;">arrow-right</i> -->
         </div>
         <div class="tile-elevated" style="width: 240px; margin: 0 0.375rem; padding: 1rem">
-          <h2 style="line-height: var(--font-line-height-small)">Engineers</h2>
+          <h2 style="line-height: var(--font-line-height)">Engineers</h2>
           <p>50 People</p>
         </div>
       </div>
@@ -638,16 +614,16 @@
           <span class="material-symbols-outlined"> more_vert </span>
         </button>
       </a>
-      <button class="button-elevated" style="max-width: 240px; margin-bottom: 0">
-        <figure class="button-elevated-avatar">
+      <button class="menu-item" style="max-width: 240px; margin-bottom: 0">
+        <figure class="menu-item-avatar">
           <span class="material-symbols-outlined">add</span>
         </figure>
-        <span class="button-elevated-label">Add a payment method</span>
+        <span class="menu-item-label">Add a payment method</span>
       </button>
     </div>
 
     <!-- <p>TeeVee</p>
-    <p>icon-button size=small === icon-indicator (textfield-check/select indicator) - inline or float: right</p>
+    <p>icon-indicator (textfield-check/select indicator) - inline or float: right</p>
     <p>
       Note: Make sure the role of the element that serves as the container for the popup content is a menu, listbox, tree, grid or dialog and that the
       value of aria-haspopup matches the role of the popup container.
@@ -681,11 +657,11 @@
         <input class="textfield-input" type="text" id="search" placeholder="you@gamil.com" />
         <button class="textfield-clear" hidden><span class="material-symbols-outlined">close</span></button>
       </div>
-      <button class="button-elevated" style="max-width: 200px; margin-bottom: 0">
-        <figure class="button-elevated-avatar">
+      <button class="menu-item" data-tile="elevated" style="max-width: 200px;">
+        <figure class="menu-item-avatar">
           <span class="material-symbols-outlined">add</span>
         </figure>
-        <span class="button-elevated-label">Add the member</span>
+        <span class="menu-item-label">Add the member</span>
       </button>
     </section>
 
@@ -787,7 +763,7 @@
         <img src="/public/images/springsteen.jpg" alt="" style="max-height: fit-content" />
       </figure>
       <h3 class="card-title" style="font-weight: bold; padding: var(--space-3) 0 0.25rem 0">Welcome to...</h3>
-      <p class="card-text" style="width: 90%; margin: 0 auto; font-size: var(--font-size-medium); line-height: var(--font-line-height-small)">
+      <p class="card-text" style="width: 90%; margin: 0 auto; font-size: var(--font-size-medium); line-height: var(--font-line-height)">
         Onboarding card. 디스크립션. PrevButton 이라면 secondary vs tertiary
       </p>
       <footer class="onboarding-control">
@@ -805,7 +781,9 @@
         <span class="tag">대한민국</span>
         <span class="tag">자전거</span>
       </footer>
-      <!-- <p class="user-description" style="margin:var(--space-2) 0 0 0;">TBreaking news alerts and updates from the BBC. For news, features, analysis follow </p> -->
+      <p class="user-description" style="margin: var(--space-2) 0 0 0">
+        TBreaking news alerts and updates from the BBC. For news, features, analysis follow
+      </p>
 
       <footer class="user-foot" style="margin: var(--space-3) 0">
         <button class="profile-foot-follow"><span class="item-action-label">팔로우 버튼이 작은 것이 트랜드</span></button>
@@ -848,26 +826,24 @@
         <div class="user-myinfo">내 프로필 관리</div>
       </a>
       <hr role="separator" style="margin-left: -1rem; margin-right: -1rem" />
-      <button class="item js-darkmode" data-size="medium" title="change theme" role="menuitem">
-        <figure class="item-avatar" style="background-image: none"><span class="material-symbols-outlined">nights_stay</span></figure>
-        <span class="item-label">어둡게 보기</span>
-        <span class="switch" style="margin-left: auto">
-          <input type="checkbox" id="temp55" name="" role="switch" />
-          <label for="temp55" style="padding-left: 48px"></label>
-        </span>
+      <button class="menu-item js-darkmode" role="menuitem" title="change theme">
+        <figure class="menu-item-avatar material-symbols-outlined">nights_stay</figure>
+        <span class="menu-item-label">어둡게 보기</span>
+        <div class="menu-item-action">
+          <span class="switch">
+            <input type="checkbox" id="temp55" name="" role="switch" />
+            <label for="temp55" style="padding-left: 48px"></label>
+          </span>
+        </div>
       </button>
-      <button class="item" data-size="medium" title="sign out" role="menuitem">
-        <figure class="item-avatar" style="background-image: none">
-          <span class="material-symbols-outlined"> logout </span>
-        </figure>
-        <span class="item-label">고객센터 및 도움말</span>
+      <button class="menu-item" title="sign out" role="menuitem">
+        <figure class="menu-item-avatar material-symbols-outlined">logout</figure>
+        <span class="menu-item-label">고객센터 및 도움말</span>
       </button>
       <hr role="separator" style="margin-left: -1rem; margin-right: -1rem" />
-      <button class="item" data-size="medium" title="sign out" role="menuitem">
-        <figure class="item-avatar" style="background-image: none">
-          <span class="material-symbols-outlined"> logout </span>
-        </figure>
-        <span class="item-label">로그아웃</span>
+      <button class="menu-item" title="sign out" role="menuitem">
+        <figure class="menu-item-avatar material-symbols-outlined">logout</figure>
+        <span class="menu-item-label">로그아웃</span>
       </button>
       <hr role="separator" style="margin-left: -1rem; margin-right: -1rem" />
       <footer class="user-footer" style="margin: -0.25rem 0 0 0">
@@ -881,12 +857,12 @@
       <thead>
         <tr>
           <td style="padding: var(--space-2) 0">
-            <span class="icon-button is-positive" data-size="small">
+            <span class="icon-indicator is-positive" data-size="small">
               <span class="material-symbols-outlined" style="color: var(--color-primary)">check</span>
             </span>
           </td>
           <td style="padding: var(--space-2) 0">
-            <span class="icon-button is-negative" data-size="small"><span class="material-symbols-outlined">close</span></span>
+            <span class="icon-indicator is-negative" data-size="small"><span class="material-symbols-outlined">close</span></span>
           </td>
         </tr>
       </thead>
@@ -930,11 +906,11 @@
       </div>
       <span class="card-category">카테고리</span>
       <hr />
-      <div class="item" data-size="large">
-        <figure class="item-avatar" style="background-image: none">🍊</figure>
-        <h4 class="item-name">퓨어 오렌지 주스</h4>
-        <div class="item-price"><del>₩19,000</del> ₩16,000 <em>할인율 20%</em></div>
-      </div>
+      <button class="menu-item" data-size="large">
+        <figure class="menu-item-avatar" style="background-image: none">🍊</figure>
+        <h4 class="menu-item-name">퓨어 오렌지 주스</h4>
+        <div class="menu-item-description"><del>₩19,000</del> ₩16,000 <em>할인율 20%</em></div>
+      </button>
       <div class="card-note">마일리지 적립 200P</div>
       <button class="card-more" hidden>
         <span class="material-symbols-outlined"> more_vert </span>
@@ -983,11 +959,11 @@
         <a class="keywords-group-keyword" href="#"><span class="keywords-group-keyword-label">차별금지법</span></a>
         <a class="keywords-group-keyword" href="#"><span class="keywords-group-keyword-label">추미매법무부장관</span></a>
       </div>
-      <button class="button-elevated" style="margin-bottom: 0">
-        <figure class="button-elevated-avatar">
+      <button class="menu-item" data-tile="elevated" style="margin-bottom: 0">
+        <figure class="menu-item-avatar">
           <span class="material-symbols-outlined">search</span>
         </figure>
-        <span class="button-elevated-label">직접 검색</span>
+        <span class="menu-item-label">직접 검색</span>
       </button>
     </article>
 
@@ -1036,18 +1012,18 @@
 
     <article class="share" style="max-width: 400px; padding: 1rem">
       <h2 class="share-title">가족이나 친구와<br />함께 보세요!</h2>
-      <close-button class="share-back"></close-button>
-      <button class="share-facebook">
-        <figure class="share-facebook-icon"></figure>
-        <span class="share-facebook-label">facebook으로 공유하기</span>
+      <close-button></close-button>
+      <button class="share-item share-facebook">
+        <figure class="share-item-icon share-facebook-icon"></figure>
+        <span class="share-item-label share-facebook-label">facebook으로 공유하기</span>
       </button>
-      <button class="share-twitter">
-        <figure class="share-twitter-icon"></figure>
-        <span class="share-facebook-label">twitter로 공유하기</span>
+      <button class="share-item share-twitter">
+        <figure class="share-item-icon share-twitter-icon"></figure>
+        <span class="share-item-label share-facebook-label">twitter로 공유하기</span>
       </button>
-      <button class="share-kakao">
-        <figure class="share-kakao-icon"></figure>
-        <span class="share-facebook-label">kakao로 공유하기</span>
+      <button class="share-item share-kakao">
+        <figure class="share-item-icon share-kakao-icon"></figure>
+        <span class="share-item-label share-facebook-label">kakao로 공유하기</span>
       </button>
       <hr />
       <div class="share-copy textfield">
@@ -1064,29 +1040,30 @@
         <h2 class="item-name">Gyeongsoo I</h2>
         <button class="item-action"><span class="item-action-label">팔로우</span></button>
       </div>
-      <div class="person-list" style="margin: var(--space-3) 0">
+      <br />
+      <div class="person-list">
         <div class="person">
-          <figure style="font-size: 2rem">🧀</figure>
+          <figure class="avatar" data-size="large" style="font-size: 2rem">🧀</figure>
           <span class="person-name">Typography</span>
         </div>
         <div class="person">
-          <figure style="background: cadetblue; font-size: 2rem">🌭</figure>
+          <figure class="avatar" data-size="large" style="background: cadetblue; font-size: 2rem">🌭</figure>
           <span class="person-name">Cinema</span>
         </div>
         <div class="person">
-          <figure style="background: darkseagreen; font-size: 2rem">🌮</figure>
+          <figure class="avatar" data-size="large" style="background: darkseagreen; font-size: 2rem">🌮</figure>
           <span class="person-name">Design System</span>
         </div>
         <div class="person">
-          <figure style="background: lightsalmon; font-size: 2rem">🍿</figure>
+          <figure class="avatar" data-size="large" style="background: lightsalmon; font-size: 2rem">🍿</figure>
           <span class="person-name">Startup</span>
         </div>
       </div>
 
-      <button class="button-elevated" style="margin: 0.25rem 0 0 0">
-        <figure class="button-elevated-avatar">🦄</figure>
-        <span class="button-elevated-label">샘플 유아이</span>
-        <i class="button-elevated-helper"><span class="material-symbols-outlined">arrow_forward</span></i>
+      <button class="menu-item" data-tile="elevated">
+        <figure class="menu-item-avatar material-symbols-outlined">🦄</figure>
+        <span class="menu-item-label">샘플 유아이</span>
+        <i class="menu-item-helper"><span class="material-symbols-outlined">arrow_forward</span></i>
       </button>
     </article>
 
@@ -1104,11 +1081,11 @@
           <label for="playlist2" title="play list2">재생 목록 2</label>
         </div>
       </fieldset>
-      <button class="button-elevated">
-        <figure class="button-elevated-avatar">
+      <button class="menu-item" data-tile="elevated">
+        <figure class="menu-item-avatar">
           <span class="material-symbols-outlined">add</span>
         </figure>
-        <span class="button-elevated-label">새 컬렉션 만들기</span>
+        <span class="menu-item-label">새 컬렉션 만들기</span>
       </button>
       <br />
       <div class="textfield">
@@ -1128,10 +1105,10 @@
           코멘트는 노출 순서와 정렬 기능 여부 갯수, 답글 스타일, 최초 노출형태, 신고/수정/삭제/아바타는 우선순위를 낮게 설정하고, 리뷰와 코멘트는
           비슷한 구조이지만 별도의 컴포넌트로 관리되어야 한다. 또 있을까? <button style="color: var(--color-primary)">자세히보기</button>
         </p>
-        <button class="button-elevated">
-          <figure class="button-elevated-avatar">🦄</figure>
-          <span class="button-elevated-label">샘플 유아이</span>
-          <i class="button-elevated-helper"><span class="material-symbols-outlined">arrow_forward</span></i>
+        <button class="menu-item" data-tile="elevated">
+          <figure class="menu-item-avatar material-symbols-outlined">🦄</figure>
+          <span class="menu-item-label">샘플 유아이</span>
+          <i class="menu-item-helper material-symbols-outlined">arrow_forward</i>
         </button>
 
         <button class="comment-list-item-reply">답글 <small>7</small></button>

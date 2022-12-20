@@ -1,8 +1,9 @@
 .tag {@include tag;}
-.tag-icon {margin:0 var(--space-1) 0 0;}
-.tag[data-style=primary] {@include tag-primary;border-color:var(--color-accent);}
-.tag[data-style=secondary] {@include tag;border-color:var(--green100);background-color:var(--green100);color:var(--green800);}
+.tag[data-style=primary] {border-color:var(--color-accent);background-color:var(--color-accent);}
+.tag[data-style=secondary] {border-color:var(--green100);background-color:var(--green100);color:var(--green800);}
+.tag[data-status=loading] {}
 
+.tag-icon {margin:0 var(--space-1) 0 0;}
 
 .hashtag {@include hashtag;}
 

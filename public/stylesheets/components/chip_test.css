@@ -1,0 +1,38 @@
+/* @mixin chip {
+
+  @media (hover) and (pointer: fine) {
+    &:hover {box-shadow:var(--state-hover);}
+  }
+  &:disabled {border-color:transparent;}
+  
+  &.is-active {
+    border-color: var(--color-background-strong);
+    background: var(--color-background-strong);
+    color: var(--color-text-weak);
+  }
+
+} */
+
+/* @mixin chip-icon {@include avatar-medium;pointer-events:none;} */
+
+button {
+  padding: 0;
+  border: 0;
+}
+
+.chip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--size-medium);
+  height: var(--size-medium);
+  border-radius: var(--radius);
+  background: var(--color-background-weak);
+  color: var(--color-text);
+  position: relative;}
+
+.chip-label {padding:1px var(--space-3) var(--adjust-label-line);}
+/* .chip-icon {@include chip-icon;}
+
+.chip-remove {@include chip-icon;cursor:pointer;}
+.chip-remove:hover {box-shadow:var(--state-hover);} */

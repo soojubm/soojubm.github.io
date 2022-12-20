@@ -1,7 +1,18 @@
-.quantity {display:flex;max-width:8rem;height:var(--size-medium);text-align:center;position:relative;}
-.quantity-input {width:calc(100% - 64px);height:100%;padding-bottom:2px;background:var(--color-background-weak);border:var(--border);box-sizing:border-box;font-family:inherit;font-size:var(--font-size-medium);color:var(--color-text);text-align:center;border-radius:0;} // br = iOS
-.quantity-decrement {display:flex;align-items:center;justify-content:center;width:var(--size-medium);height:var(--size-medium);border:var(--border);border-radius:var(--radius) 0 0 var(--radius);}
-.quantity-increment {display:flex;align-items:center;justify-content:center;width:var(--size-medium);height:var(--size-medium);border:var(--border);border-radius:0 var(--radius) var(--radius) 0;}
+// font-size:var(--font-size-medium);color:var(--color-text)
+input[type=number] {font-family:inherit;border:0;border-radius:0;color:inherit;}
+
+.quantity-input {}
+.price-input {}
+.number-input {}
+
+.quantity {display:flex;height:var(--size-medium);position:relative;}
+.quantity-input {width:100%;margin:0 var(--space-2);padding-bottom:2px;background:var(--color-background-weak);border-radius:var(--radius);text-align:center;
+}
+// radius = iOS
+
+.quantity-decrement {@include chip;}
+.quantity-increment {@include chip;}
+// .quantity-increment {display:flex;align-items:center;justify-content:center;width:var(--size-medium);height:var(--size-medium);border:var(--border);border-radius:0 var(--radius) var(--radius) 0;}
 .quantity-decrement:disabled {opacity:.5;cursor:not-allowed;}
 .quantity-increment:disabled {opacity:.5;cursor:not-allowed;}
 

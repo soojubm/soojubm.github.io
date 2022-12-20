@@ -1,10 +1,8 @@
 .setting {@include layout-medium;}
-.setting-background {@include bleeding;background-color:var(--color-background-weak);}
-.setting-subhead {margin:0 0 var(--space-3) 0;@include text-subhead;}
 
 .setting-item {@include tile-elevated;box-shadow:none;}
-.setting-item-label {@include text-label;line-height:var(--font-line-height-small);}
-.setting-item-value {line-height:var(--font-line-height-small);}
+.setting-item-label {@include text-label;}
+.setting-item-value {}
 .setting-item-value-username {width:100%;}
 .setting-item-value-address {width:100%;}
 .setting-item-value-phone {width:100%;}
@@ -14,7 +12,6 @@
 .setting-item-foot-confirm {@include button-primary;}
 .setting-item-foot-cancel {@include button-text;margin:0 0 0 var(--space-after-button);}
 .setting-item:hover {@include hover-item;}
-
 
 @media (--small) {
 }

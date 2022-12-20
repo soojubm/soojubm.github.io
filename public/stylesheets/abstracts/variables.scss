@@ -5,14 +5,11 @@
 @media (prefers-color-scheme: light) {}
 @media (prefers-color-scheme: dark) {}
 
-// based on ROLE but weight 등을 포함한 extend여야 함.
-
 :root {
   color-scheme: light dark;
 
   // -apple-system === san-serif / system-ui === BlinkMacSystemFont
   --font-family: 'Quattrocento Sans', 'Gothic A1', system-ui, sans-serif;
-  // --font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Apple SD Gothic Neo", san-serif;
   --font-family-heading: null;
   --font-family-body: null;
   --font-family-caption: null;
@@ -21,17 +18,16 @@
   --font-size-huge: 2rem;
   --font-size-large: 1.125rem;
   --font-size-medium: .875rem;
-  --font-size-small: .75rem; // helper / caption
+  --font-size-small: .75rem;
+  
 
   --font-weight-normal: 400;
   --font-weight-bold: 700;
   --font-weight-extrabold: null;
 
-  // !
-  --font-line-height: 1.8;
-  --font-line-height-small: 1.5;
-  --font-line-height-heading: null;
-  --font-line-height-heading: body;
+  --font-line-height-large: 1.8;
+  --font-line-height: 1.5;
+  --font-line-height-large-heading: null;
 
   --adjust-label-line: 0px;
 
@@ -54,10 +50,11 @@
 
   --gray0: #fff;
   --gray100: #f1f4f1;
-  --gray200: #e0e5e3; // F8F7F5
+  --gray200: #e0e5e3;
   --gray400: #979d9a;
   --gray800: #343c38;
-  --green100: rgba(10, 160, 80, 0.1); // #ddf5e9;
+
+  --green100: rgba(10, 160, 80, 0.1);
   --green800: #1b995c;
   --red100: rgba(243, 68, 97, .06);
   --red800: #f02849;
@@ -82,23 +79,21 @@
   --color-github: #000;
   --color-instagram: #333;
 
-  // ! what-target-option(thiness/states), gray is... non semantic
   --color-background: var(--gray0);
   --color-background-weak: var(--gray100);
   --color-background-strong: var(--gray800);
-  // --color-background-darkest: null;
+  --color-background-darkest: null;
   --color-border: var(--gray200);
   --color-border-hover: var(--gray800);
-  // 
   --color-text: var(--gray800);
   --color-text-weak: var(--gray0);
-  --color-text-light: var(--gray400); // 
+  --color-text-light: var(--gray400);
   --color-text-strong: var(--gray0);
   
   --icon-background: var(--gray800);
   --icon-border-color: var(--gray800);
 
-  // --gradient: linear-gradient(to bottom, var(--gray1000), rgba(37,45,41,.75), var(--gray800));
+  --gradient-unused: linear-gradient(to bottom, var(--gray1000), rgba(37,45,41,.75), var(--gray800));
   --gradient: linear-gradient(to bottom, var(--gray100), var(--gray800));
 
   // size => square
@@ -107,6 +102,10 @@
   --size-medium: 2rem;
   --size-small: 1.5rem;
   --size-tiny: 1rem;
+
+
+  --size-menuitem: null;
+  --size-menuitem-small: null;
 
   --color-temp1: cadetblue;
   --color-temp2: darkseagreen;
@@ -127,7 +126,6 @@
   --space-3-minus: calc(var(--space-3) * -1);
   --space-4: 1rem;
 
-  // ! 시각보정용
   --space-leading-title: -.25rem;
   --space-leading-subhead: -.125rem;
   --space-leading-body: -.125rem;
@@ -148,7 +146,7 @@
 
   --space-after-item: var(--space-3);
 
-  --space-groupitem: var(--space-1); // listitem
+  --space-groupitem: var(--space-1);
   --space-groupitem-minus: calc(var(--space-groupitem) * -1);
   
   --space-inset-tile: .75rem;
@@ -170,7 +168,6 @@
   --state-focus: 0 0 0 3px var(--color-border-hover);
   --state-hover: 0 0 0 3px rgba(0,0,0,.1);
 
-  // ! animation
   --duration: .4s;
   --duration-quickly: .2s;
   --duration-slowly: .6s;
@@ -180,21 +177,20 @@
   --animation-duration: .4s;
   --animation-delay-second: .2s;
   --animation-delay-third: .4s;
-  // --animation-timing-function-ease: null;
+  --animation-timing-function-ease: null;
 
 
-  // ! z-index :: padding 중첩되면 같은 역할이라도. 마이너스 마진.
   --zindex-default: 1;
-  --zindex-popover: 5; // !
+  --zindex-popover: 5;
   --zindex-tooltip: 2;
   --zindex-menu: 2;
   --zindex-dropdown: 2;
   --zindex-sticky: 4;
   --zindex-fixed: 4;
-  --zindex-modal-dim: 8; // !
-  --zindex-modal: 9; // !
+  --zindex-modal-overay: 8;
+  --zindex-modal: 9;
   --zindex-floating: null;
-  --zindex-toast: 9; // !
+  --zindex-toast: 9;
   --zindex-menu: 8;
   --zindex-bottombar: 8;
   --zindex-loader: 10;
@@ -211,7 +207,6 @@
     //   mix-blend-mode: multiply;
     // }
     
-    // todo
     --gray200: #252d29; // divider border
 
     // todo d1d2d3는 팔렛트에 없어요

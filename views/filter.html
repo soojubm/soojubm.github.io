@@ -5,13 +5,11 @@
 
     <div class="chip-group">
       <div class="dropdown">
-        <button class="dropdown-trigger js-toggle" aria-expanded="true">
-          <span class="dropdown-trigger-label" title="일행 당 인원 수">예약옵션</span>
-          <figure class="dropdown-trigger-icon">
-            <span class="material-symbols-outlined"> arrow_drop_down </span>
-          </figure>
+        <button class="chip js-toggle" aria-expanded="true">
+          <span class="chip-label" title="일행 당 인원 수">예약옵션</span>
+          <figure class="chip-icon material-symbols-outlined">arrow_drop_down</figure>
         </button>
-        <menu class="dropdown-menu" role="menu" style="padding: var(--space-3)">
+        <menu class="dropdown-menu" role="menu">
           <fieldset role="radiogroup">
             <!-- <legend class="article-anatomy-title" style="margin-bottom:0;">radiogroup</legend> -->
             <div class="radio">
@@ -30,27 +28,21 @@
         </menu>
       </div>
       <div class="dropdown">
-        <button class="dropdown-trigger js-toggle" aria-expanded="true">
-          <span class="dropdown-trigger-label">예산</span>
-          <figure class="dropdown-trigger-icon">
-            <span class="material-symbols-outlined"> arrow_drop_down </span>
-          </figure>
+        <button class="chip js-toggle" aria-expanded="true">
+          <span class="chip-label">예산</span>
+          <figure class="chip-icon material-symbols-outlined">arrow_drop_down</figure>
         </button>
       </div>
       <div class="dropdown">
-        <button class="dropdown-trigger js-toggle is-active" aria-expanded="true">
-          <span class="dropdown-trigger-label">10평 미만</span>
-          <figure class="dropdown-trigger-icon">
-            <span class="material-symbols-outlined"> arrow_drop_down </span>
-          </figure>
+        <button class="chip js-toggle is-active" aria-expanded="true">
+          <span class="chip-label">10평 미만</span>
+          <figure class="chip-icon material-symbols-outlined">arrow_drop_down</figure>
         </button>
       </div>
       <div class="dropdown">
-        <button class="dropdown-trigger js-toggle" aria-expanded="true">
-          <span class="dropdown-trigger-label">접근성 편의</span>
-          <figure class="dropdown-trigger-icon">
-            <span class="material-symbols-outlined"> arrow_drop_down </span>
-          </figure>
+        <button class="chip js-toggle" aria-expanded="true">
+          <span class="chip-label">접근성 편의</span>
+          <figure class="chip-icon material-symbols-outlined">arrow_drop_down</figure>
         </button>
       </div>
     </div>
@@ -81,16 +73,16 @@
       </header> -->
       <fieldset class="filter-fieldset" role="radiogroup">
         <legend class="filter-fieldset-legend">예약옵션</legend>
-        <button class="button-elevated" title="" style="margin-top: 0; margin-bottom: 0.125rem">
-          <figure class="button-elevated-avatar">🦊</figure>
-          <span class="button-elevated-label">즉시 예약</span>
+
+        <button class="menu-item" title="" style="margin-top: 0; margin-bottom: 0.125rem">
+          <figure class="menu-item-avatar">🦊</figure>
+          <span class="menu-item-label">즉시 예약</span>
           <span class="switch" style="margin-left: auto">
             <input type="checkbox" id="temp123456" name="" role="switch" />
             <label for="temp123456" style="padding-left: 48px"></label>
           </span>
         </button>
         <small>호스트 승인을 기다릴 필요 없이 예약할 수 있는 숙소</small>
-        <small style="display: block; margin: 0 0 var(--space-2) 0; color: var(--color-text-light)"> </small>
       </fieldset>
 
       <hr />
@@ -109,9 +101,10 @@
           <input type="radio" id="gender-etc" name="gender" value="" checked />
           <label for="gender-etc" title="Video Killed the Radio Button">150,000원 미만</label>
         </div>
-        <small style="display: block; margin: 0.75rem 0 0 0">예를 들어 다음과 같습니다.</small>
-        <div class="item tile-flat-small">
-          <figure class="item-avatar"></figure>
+        <br />
+        <small>예를 들어 다음과 같습니다.</small>
+        <div class="tile-flat-small">
+          <figure class="avatar"></figure>
         </div>
       </fieldset>
       <hr />
@@ -150,7 +143,7 @@
           <select name="" id="" class="textfield-input">
             <option value=""></option>
           </select>
-          <span class="selectbox-indicator">
+          <span class="select-indicator">
             <!-- <span class=""></span> -->
           </span>
         </div>

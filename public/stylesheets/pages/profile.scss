@@ -4,29 +4,16 @@
 .profile-head {height:200px;margin-top:calc((2rem + var(--navbar-height)) * -1);margin-left:-100vw;margin-right:-100vw;background:darkseagreen;}
 
 .profile-user {float:left;width:320px;position:relative;z-index:var(--zindex-default);}
-.profile-user-avatar {@include avatar-huge;margin:0 0 var(--space-3) 0;background-image:url('/public/images/springsteen.jpg');background-size:contain;}
-.profile-user-name {@include text-subhead;}
-.profile-user-id {display:block;line-height:var(--font-line-height-small);}
-.profile-user-job {display:block;color:var(--color-text-light);line-height:var(--font-line-height-small);}
-
 .profile-user-description {max-height:5.4em;margin:var(--space-4) 0;white-space:normal;overflow:hidden;text-overflow:ellipsis;word-wrap:break-word;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;position:relative;}
 .profile-user-description-more {margin:0 var(--space-2);@include link-outside;}
+
 .profile-user-toggle {width:100%;margin:var(--space-4) 0;text-align:center;color:var(--color-text);position:relative;}
 .profile-user-toggle-icon {@include avatar-small;}
 .profile-user-toggle:hover {@include hover-item;}
-.profile-user-category {padding:4px 16px;background:coral;font-size:var(--font-size-small);color:var(--color-text);border-radius:50px;}
-.profile-user-address {}
-.profile-user-address div {}
-.profile-user-address div b {margin:0 var(--space-2) 0 0;font-weight:normal;color:var(--color-text-light);}
-// .profile-user-address div img {width:1rem;margin-right:.5rem;opacity:.4;}
-.profile-user-address i {margin:0 var(--space-2) 0 0;font-size:14px;color:var(--color-text-light);vertical-align:middle;}
+
 .profile-user-hashtags {@include tag-group;}
 
 .profile-user-statistic {}
-.profile-user-socials {}
-.profile-user-socials-title {margin:var(--space-2) 0;@include text-label;}
-.profile-user-socials-link {}
-.profile-user-socials-link:hover {color:var(--color-primary);}
 
 .profile-user-controls {display:flex;margin:2rem 0 1rem;}
 .profile-user-controls-follow {@include button-primary;width:calc(70% - var(--space-after-button));}
@@ -34,10 +21,10 @@
 
 // todo
 .social {}
-.social-link {display:flex;align-items:center;@include item;}
+.social-link {display:flex;align-items:center;position:relative;}
 .social-link + .social-link {margin-top:var(--space-3);}
 .social-link-icon {@include item-avatar-medium;}
-.social-link-label {@include item-label;margin-left:0;}
+.social-link-label {color:var(--color-text);}
 .social-link:hover {@include hover-item;}
 .social-facebook figure {background-color:var(--color-facebook);}
 .social-pinterest figure {background-color:var(--color-pinterest);}
@@ -57,39 +44,40 @@
 .profile-foot-follow {@include button-primary;width:50%;}
 .profile-body {padding:0 0 64px calc(320px + var(--size-large));box-sizing:border-box;position:relative;}
 
-[role=tablist] {@include tile-elevated-tiny;display:flex;}
-.profile-tablist {border-bottom:0;border-bottom-left-radius:0;border-bottom-right-radius:0;}
-.profile-tablist-tab {display:flex;align-items:center;justify-content:center;flex:auto;height:var(--size-medium);padding:1px var(--space-4) var(--adjust-label-line);color:var(--color-text-light);position:relative;z-index:var(--zindex-default);}
-.profile-tablist-tab[aria-selected=true] {color:var(--color-text-weak);}
-// .profile-tablist-tab[aria-selected=true]:before {content:'✓';margin:0 var(--space-2) 0 0;}
-.profile-tablist-tab-label {padding:0 0 var(--adjust-label-line) 0;}
-.profile-tablist-tab-badge {margin:0 0 0 var(--space-2);}
-.profile-tablist-indicator {display:block;height:calc(100% - .5rem);background:var(--color-background-strong);border-color:var(--color-background-strong);border-radius:var(--radius);position:absolute;transition:all var(--duration);}
-// .profile-tablist-tab:nth-child(1)[aria-selected=true] ~ .profile-tablist-indicator {transform: translateX(clac(70px * 1))}
+[role=tablist] {}
+
+.tablist {@include tile-elevated-tiny;display:flex;border-bottom:0;border-bottom-left-radius:0;border-bottom-right-radius:0;}
+.tablist-tab {display:flex;align-items:center;justify-content:center;flex:auto;height:var(--size-medium);padding:1px var(--space-4) var(--adjust-label-line);color:var(--color-text-light);position:relative;z-index:var(--zindex-default);}
+.tablist-tab[aria-selected=true] {color:var(--color-text-weak);}
+// .tablist-tab[aria-selected=true]:before {content:'✓';margin:0 var(--space-2) 0 0;}
+.tablist-tab-label {padding:0 0 var(--adjust-label-line) 0;}
+.tablist-tab-badge {margin:0 0 0 var(--space-2);}
+.tablist-indicator {display:block;
+  height:calc(100% - .5rem);
+  background:var(--color-background-strong);
+  border-color:var(--color-background-strong);border-radius:var(--radius);position:absolute;transition:all var(--duration);}
+  // .tablist-tab:nth-child(1)[aria-selected=true] ~ .tablist-indicator {transform: translateX(clac(70px * 1))}
 
 
 .profile-display {display:flex;@include tile-elevated-tiny;margin:0 0 var(--space-3) 0;border-top:0;border-top-left-radius:0;border-top-right-radius:0;}
 .profile-display-title {margin:0 0 var(--space-1) 0;font-size:var(--font-size-small);}
-.profile-display-button {@include chip;background:none;}
-// .profile-display-button:hover {@include hover-item;}
+.profile-display-button {height:var(--size-medium);border-radius:var(--radius);}
 .profile-display-button.is-selected {background:var(--color-background-weak);}
-.profile-display-button i {vertical-align:middle;}
 
-.follow-tablist {margin-bottom:var(--space-3);z-index:7;}
 
 .type-t[role=tablist] {padding:0 !important;border:none;border-bottom:var(--border);border-radius:0;box-shadow:none;}
-.type-t .profile-tablist-indicator {background:none;border-radius:0;border:0;border-bottom:.125rem solid var(--color-primary);bottom:-1px;}
+.type-t .tablist-indicator {background:none;border-radius:0;border:0;border-bottom:.125rem solid var(--color-primary);bottom:-1px;}
 .type-t [role=tab] {height:48px;font-weight:bold;color:var(--color-text-light);}
 .type-t [role=tab][aria-selected=true] {color:var(--color-text);}
 
 .type-sc[role=tablist] {padding:.125rem !important;border:none;box-shadow:none;background:var(--color-background-weak);}
 .type-sc [role=tab] {width:50%;color:var(--color-text);height:var(--size-small);font-size:var(--font-size-small);}
-.type-sc .profile-tablist-indicator {width:33.3333%;height:var(--size-small);box-shadow:var(--shadow);background:var(--color-background);border-color:transparent !important;}
+.type-sc .tablist-indicator {width:33.3333%;height:var(--size-small);box-shadow:var(--shadow);background:var(--color-background);border-color:transparent !important;}
 
 
-.profile-tabpanel {display:flex;flex-wrap:wrap;margin:0 -.375rem;}
-.profile-tabpanel[aria-hidden=true] {display:none;}
-.profile-tabpanel .card {width:calc(33.3333% - .75rem);margin:0 calc(.75rem / 2) .75rem;}
+.panel {display:flex;flex-wrap:wrap;margin:0 -.375rem;}
+.panel[aria-hidden=true] {display:none;}
+.panel .card {width:calc(33.3333% - .75rem);margin:0 calc(.75rem / 2) .75rem;}
 
 
 
@@ -108,7 +96,7 @@
 .card-byline-avatar {@include avatar-small;margin:0 var(--space-after-avatar-small) 0 0;}
 .card-byline-name {color:var(--color-text);line-height:var(--size-small);}
 
-.card-title {padding:var(--space-4) 0 0;font-size:var(--font-size-medium);font-weight:var(--font-weight-normal);color:var(--color-text);line-height:var(--font-line-height-small);}
+.card-title {padding:var(--space-4) 0 0;font-size:var(--font-size-medium);font-weight:var(--font-weight-normal);color:var(--color-text);}
 .card-text {@include truncate-multi;margin:var(--space-2) 0;}
 .card-category {@include tag-primary;position:absolute;left:var(--space-2);top:var(--space-2);}
 .card-date {margin:0 0 0 .5rem;color:var(--color-text-light);}
@@ -137,13 +125,14 @@
   .profile-user {float:none;width:100%;box-sizing:border-box;}
   .profile-user-description {margin:1rem 0 2rem;}
   .profile-user-toggle {display:flex;align-items:center;justify-content:space-between;}
-  .profile-user-info {display:none;}
+  .profile-user-socials {display:none;}
   
-  .profile-body {margin:2rem 0 auto;padding-left:0;}
-  .profile-tabpanel .card {width: 100%;}
+  .profile-body {padding-left:0;}
+
+  .tabpanel .card {width: 100%;}
 
   .is-active  + .profile-user-toggle-icon {transform:rotate(180deg);}
-  .is-active  + .profile-user-info {display:block;margin-bottom:4rem;}
+  .is-active  + .profile-user-socials {display:block;margin-bottom:4rem;}
 }
 
 

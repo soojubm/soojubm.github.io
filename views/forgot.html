@@ -27,7 +27,7 @@
 			</aside>
 		</form>
 
-		<form class="verify" style="width: 656px; margin: 0 auto">
+		<form class="verify" style="width: 656px; margin: 0 auto; text-align: center;">
 			<header class="password-head">
 			  <h1 class="password-title" title="Reset Your Password">Please check your email!</h1>
 			  <p class="password-description" titl="We get it, stuff happens! What's your email address?">
@@ -35,19 +35,23 @@
 			  </p>
 			</header>
 			<div>
-			  <div class="textfield" style="display: flex">
-				<input aria-invalid="false" name="code1" placeholder="-" type="number" maxlength="1" class="textfield-input" value="" />
-				<input aria-invalid="false" name="code1" placeholder="-" type="number" maxlength="1" class="textfield-input" value="" />
-				<input aria-invalid="false" name="code1" placeholder="-" type="number" maxlength="1" class="textfield-input" value="" />
-				<input aria-invalid="false" name="code1" placeholder="-" type="number" maxlength="1" class="textfield-input" value="" />
-				<input aria-invalid="false" name="code1" placeholder="-" type="number" maxlength="1" class="textfield-input" value="" />
-				<input aria-invalid="false" name="code1" placeholder="-" type="number" maxlength="1" class="textfield-input" value="" />
+			  <div class="textfield" style="display: flex; justify-content: center;">
+				<!-- aria-invalid="false"  -->
+				<input name="code1" type="number" maxlength="1" class="textfield-input" style="width:var(--size-large);margin:0 .25rem" />
+				<input name="code1" type="number" maxlength="1" class="textfield-input" style="width:var(--size-large);margin:0 .25rem" />
+				<input name="code1" type="number" maxlength="1" class="textfield-input" style="width:var(--size-large);margin:0 .25rem" />
+				<input name="code1" type="number" maxlength="1" class="textfield-input" style="width:var(--size-large);margin:0 .25rem" />
+				<input name="code1" type="number" maxlength="1" class="textfield-input" style="width:var(--size-large);margin:0 .25rem" />
+				<input name="code1" type="number" maxlength="1" class="textfield-input" style="width:var(--size-large);margin:0 .25rem" />
 			  </div>
 			</div>
 			<footer class="password-foot">
-			  <button type="submit" class="password-foot-submit">재설정 메일 받기</button>
-			  <!-- <span class="password-foot-back password-link" title="Remember your password after all?">이메일이 기억 안 나세요? <a href="signin.html">가입하기</a></span> -->
+			  <button type="submit" class="password-foot-submit" style="max-width: 200px;margin: 2rem auto;">재설정 메일 받기</button>
 			</footer>
+			<span class="password-foot-back password-link" title=""><a href="signin.html">인증번호 재전송</a></span>
+
+			<p>!!!!! cta bottom fixed를 고려한 추가 링크 버튼 위치를 결정해야 함.</p>
+			<p>이전 인증번호는 유효하지 않기 때문에 최신 인증번호를 알려줄 수 있으면 살짝 좋겠지만 중요하진 않은 듯...</p>
 		  </form>
 
 		<!-- <form class="password" action="">

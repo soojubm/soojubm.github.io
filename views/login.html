@@ -2,20 +2,20 @@
   <form class="login" name="login" action="" method="" novalidat="true">
     <header class="login-head">
       <span class="login-head-logo">🐤</span>
-      <h1 class="login-title">Hello<i style="font-style:italic;">!</i></h1>
+      <h1 class="login-title">Hello<i style="font-style: italic">!</i></h1>
       <!-- <p class="login-description">부끄러우니까 로그인 하지 마요.</p> -->
     </header>
     <div class="login-social">
       <button class="login-social-facebook">페이스북으로 시작 <small hidden>Sing in with Facebook</small></button>
     </div>
     <div class="login-separator" role="separator">또는</div>
-    <div class="login-email textfield" style="margin-top:-.5rem;">
+    <div class="login-email textfield" style="margin-top: -0.5rem">
       <label class="textfield-label" for="login-email">이메일</label>
       <input
         class="textfield-input js-input-email"
         type="text"
-        name="email"
         id="login-email"
+        name="email"
         placeholder="soojubm@gmail.com"
         autofocus
         aria-describedby="name-hint"
@@ -27,32 +27,28 @@
       <input
         class="textfield-input js-input-password"
         type="password"
-        title="비밀번호"
-        name="password"
         id="loginin-password"
-        placeholder="8자리 이상"
+        name="password"
+        placeholder="Enter a password. 8자리 이상."
       />
-      <small class="textfield-helper" role="alert">비밀번호를 입력하세요.<span hidden>Enter a password.</span></small>
       <a class="textfield-link" href="forgot.html">비밀번호를 잊으셨나요? <small hidden>Forgot your password?</small></a>
     </div>
     <div class="login-remember checkbox">
       <input type="checkbox" id="remember-id" />
       <label for="remember-id">로그인 상태 유지<small hidden>Remember my email address</small></label>
     </div>
-    <!-- <p>가입하지 않은 이메일이거나??</p> -->
     <p class="login-fail" role="alert" aria-live="assertive">
-      <span class="material-symbols-outlined">
-        error
-      </span>
+      <span class="material-symbols-outlined"> error </span>
+      <span hidden>가입하지 않은 이메일이거나??</span>
       잘못된 비밀번호입니다.
     </p>
-    <footer class="login-foot">
+    <menu class="login-foot">
       <button class="login-foot-submit" type="submit">로그인</button>
       <p class="login-option">
         아직 계정이 없으신가요?<small hidden>Need an account?</small>
         <a class="login-option-link" href="signup.html">지금 가입하기<small hidden>Join Soojubm for free</small></a>
       </p>
-    </footer>
+    </menu>
   </form>
 </main>
 

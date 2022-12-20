@@ -1,15 +1,17 @@
-// flex, inline-flex인 경우 a, button 차이 발생..
-// 다음에 hr 태그가 오면 그룹 내부 간격이 안맞음
+// flex, inline-flex인 경우 a, button 차이 발생.. min-width for... bleeding?
+// avatar-medium vs component tokens
+
 @mixin chip {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: var(--size-medium); // for... bleeding?
+  min-width: var(--size-medium);
   height: var(--size-medium);
   border-radius: var(--radius);
   background: var(--color-background-weak);
   color: var(--color-text);
   position: relative;
+
   @media (hover) and (pointer: fine) {
     &:hover {box-shadow:var(--state-hover);}
   }
@@ -20,24 +22,32 @@
     background: var(--color-background-strong);
     color: var(--color-text-weak);
   }
-
-  // todo has-clickable | card
-  .style-removable {
-    > * {pointer-events:auto;}
-    &:hover {box-shadow:none;outline:none;cursor:default;}
-  }
 }
 
-@mixin chip-icon {@include avatar-medium;}
-@mixin chip-label {padding:1px var(--space-3) var(--adjust-label-line);}
+
+@mixin chip-icon {@include chip;width:var(--size-medium);}
+@mixin chip-label {padding:1px var(--space-3) var(--adjust-label-line);pointer-events:none;}
 
 .chip {@include chip}
-.chip-label {@include chip-label;padding-top:1px;}
+
+.chip-label {@include chip-label;}
 .chip-icon {@include chip-icon;}
+
 .chip-remove {@include chip-icon;cursor:pointer;}
 .chip-remove:hover {box-shadow:var(--state-hover);}
-.chip-add {}
 .chip-checked {} // chip-avatar
 
+.dropdown {position:relative;}
 
-button[is=fancy-button] {background-color: crimson;}
+.dropdown-menu {@include tile-elevated;min-width:var(--width-dropdown);margin-top:.25rem;position:absolute;transform:scale(0);transform-origin:left top;}
+.dropdown-menu-title {}
+.dropdown-menu-item {display:block;margin:0 -.25rem;padding:0 .25rem;line-height:var(--size-medium);color:var(--color-text);position:relative;z-index:var(--zindex-default);}
+.dropdown-menu-item:hover {border-radius:var(--radius);background:var(--color-background-weak);}
+
+.dropdown-footer {@include chip-group;align-items:centetr;margin:var(--space-4) 0 -.25rem;padding:var(--space-2) 0 0;border-top:var(--border);}
+.dropdown-footer-question {margin-right:auto;}
+
+
+// 드롭다운이 항상 칩은 아니다.
+.is-active .chip-icon {background:inherit;color:inherit;}
+.is-active + .dropdown-menu {transform:scale(1);top:calc(var(--size-medium));z-index:var(--zindex-popover);}

@@ -1,5 +1,4 @@
-@mixin dim {
-  // memo overay / dim optional
+@mixin overay {
   overflow:auto;
   background:rgba(0,0,0,.6);
   position:fixed;left:0;top:0;right:0;bottom:0;
@@ -38,13 +37,13 @@
   bottom: var(--space-4);
 }
 
-.presentation {@include dim;}
+.presentation {@include overay;}
 .presentation [data-presentation=sheet] {@include sheet;}
 .presentation [data-presentation=modal] {@include modal-dialog;}
 .presentation [data-presentation=toast] {@include toast;}
 
 
-.sheet-dim {@include dim;z-index:6;}
+.sheet-overay {@include overay;z-index:6;}
 .sheet {@include sheet;transform:translateY(50vh);transition:all 1s;}
 .sheet.is-visible {transform:translateY(0);}
 .sheet-title {margin:0 0 var(--space-3);@include text-subhead;}
@@ -111,15 +110,16 @@
 
 @mixin dialog {}
 
-.modal {@include dim;} /* pointer-events:none */
-.modal-dim {display:none;@include dim;}
+.modal {@include overay;} /* pointer-events:none */
+.modal-overay {display:none;@include overay;}
 .modal-dialog {@include modal-dialog;}
-.modal-head {    display: flex;
+.modal-head {
+  display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: row-reverse;
   padding:var(--space-2) 0;background:var(--color-background);position:sticky;top:0;}
-.modal-close {@include avatar-medium;}
+.modal-close {}
 .modal-head-title {margin:0 0 var(--space-after-title) 0;@include text-title;}
 
 .modal-body {}

@@ -5,8 +5,9 @@
       <a class="chip is-active js-scrollspy-trigger" href="#"><span class="chip-label">Page</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Modal</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Post</span></a>
-      <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Shhet</span></a>
+      <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Sheet</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Popover</span></a>
+      <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Drawer(todo)</span></a>
     </div>
   </nav>
 
@@ -14,13 +15,16 @@
     <h1 class="hero-title">Presentations</h1>
     <h1 class="hero-title">사용자가 콘텐츠를 소비하는 환경에 적합한 그릇(?)을 제공합니다. 1. 그릇은 유연하고 2. 콘텐는 독립적으로.</h1>
 
+    <!-- const hide = () => drawer.remove()
+    const show = () => layout.appendChild(drawer) -->
+
     <!-- <ul>
       <li>독립적인 컨테이너로서 동작해야 한다.</li>
       <li>큰 맥락에서 presentation 컴포넌트는 레이아웃(또는 컨테이너)의 역할.</li>
       <li>루트 엘리먼트가 상태 클래스를 가져야 한다. = 글로벌 상태. (특히 토스트)</li>
       <li>@mixin modal / sheet / toast / drawer</li>
       <li>컨테이너가 fixed 되어야 현재 뷰포트에서 노출할 수 있다.</li>
-      <li>dim을 별도의 엘리먼트로 만들면 리액트에서 콘텐츠 외부를 클릭해서 닫는 기능 구현이 쉬움.</li>
+      <li>overay을 별도의 엘리먼트로 만들면 리액트에서 콘텐츠 외부를 클릭해서 닫는 기능 구현이 쉬움.</li>
     </ul> -->
     <!-- <p>layout :: fixed layout / fluid layout</p> -->
 
@@ -77,9 +81,9 @@
       <li>Modal (desktop)</li>
     </ul>
     <p style="margin:.5rem 0 1.5rem;">
-      사용자 인터렉션을 요구할 때 dim으로 주의를 집중 시킵니다. toast는 단순 피드백으로, 뷰를 변경하지 않습니다.
+      사용자 인터렉션을 요구할 때 overay으로 주의를 집중 시킵니다. toast는 단순 피드백으로, 뷰를 변경하지 않습니다.
     </p>
-    <p>dim을 열고 body 엘리먼트의 스크롤을 막을 것인가. 스크롤의 크기만큼 좌우의 위치를 보정할 것인가. 비효율적인 작업량.</p> -->
+    <p>overay을 열고 body 엘리먼트의 스크롤을 막을 것인가. 스크롤의 크기만큼 좌우의 위치를 보정할 것인가. 비효율적인 작업량.</p> -->
 
     <div class="tile-flat">
       <b>memo</b>
@@ -128,12 +132,12 @@
         <thead>
           <tr>
             <td style="padding: var(--space-2) 0">
-              <span class="icon-button is-positive" data-size="small">
+              <span class="icon-indicator is-positive" data-size="small">
                 <span class="material-symbols-outlined">check</span>
               </span>
             </td>
             <td style="padding: var(--space-2) 0">
-              <span class="icon-button is-negative" data-size="small"><span class="material-symbols-outlined">close</span></span>
+              <span class="icon-indicator is-negative" data-size="small"><span class="material-symbols-outlined">close</span></span>
             </td>
           </tr>
         </thead>
@@ -278,7 +282,7 @@
           <span class="item-label">바텀 시트 옵션</span>
         </button>
       </article>
-      <!-- <aside class="sheet-dim"></aside> -->
+      <!-- <aside class="sheet-overay"></aside> -->
 
       <section class="component-example">
         <h2>iOS action sheet sample (modal view)</h2>
@@ -318,14 +322,7 @@
               <span class="material-symbols-outlined">close</span>
             </button>
           </header>
-          <section style="margin: var(--space-4) 0 0 0">
-            <div class="item" role="listitem" data-size="large">
-              <figure class="item-avatar"></figure>
-              <h2 class="item-name">Gyeongsoo I</h2>
-              <span class="item-description">유아이 디자이너</span>
-              <button class="item-action is-active"><span class="item-action-label">팔로잉</span></button>
-            </div>
-          </section>
+          <section></section>
         </div>
       </footer>
 

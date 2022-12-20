@@ -18,7 +18,7 @@
 .login-social-kakao {float:left;width:49%;color:var(--gray0);margin-right:2%;background:#f9df34;}
 .login-option {margin:2rem 0;text-align:center;}
 .login-option-link {margin:0 var(--space-1);@include link-outside;}
-.login-fail {display:block;margin:var(--space-4) 0;color:var(--red800);}
+.login-fail {display:flex;align-items:center;margin:var(--space-4) 0;color:var(--red800);}
 
 .signup {@include layout-small;}
 .signup-head {padding:0 0 2rem 0;}

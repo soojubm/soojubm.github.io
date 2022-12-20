@@ -1,7 +1,7 @@
 // nextjs cssmodule composes
 // ! text-heading-medium / text-heading-small
-@mixin text-title {font-size:var(--font-size-huge);line-height:var(--font-line-height-small);font-weight:var(--font-weight-bold);color:var(--color-text);letter-spacing:-.0125rem;text-indent:-1px;}
-@mixin text-subhead {font-size:var(--font-size-large);line-height:var(--font-line-height-small);font-weight:var(--font-weight-bold);color:var(--color-text);}
+@mixin text-title {font-size:var(--font-size-huge);font-weight:var(--font-weight-bold);line-height:var(--font-line-height);color:var(--color-text);letter-spacing:-.0125rem;text-indent:-1px;}
+@mixin text-subhead {font-size:var(--font-size-large);font-weight:var(--font-weight-bold);color:var(--color-text);}
 
 @mixin text-body {font-size:.875rem;font-weight:var(--font-weight-normal);}
 @mixin text-body-large {font-size:var(--font-size-large);font-weight:var(--font-weight-normal);}
@@ -85,11 +85,10 @@
   > * {min-width:auto;}
   &::-webkit-scrollbar {display:none;}
 }
-// @mixin tag-group {@include group(var(--space-groupitem))}
 // @mixin chip-group {@include group(var(--space-groupitem))}
 
 @mixin tag-group {
-  display:flex;flex-wrap:wrap;margin:var(--space-1-minus);
+  display:flex;flex-wrap:wrap;align-items:center;margin:var(--space-1-minus);
   > * {margin:var(--space-1);}
 }
 
@@ -131,6 +130,7 @@
 
 @mixin tag {
   display: inline-flex;
+  align-items: center;
   height: var(--size-small);
   padding: 0 var(--space-2);
   border-radius: var(--radius);
@@ -138,7 +138,6 @@
   box-sizing: border-box;
   background: var(--color-background);
   font-size: var(--font-size-small);
-  line-height: var(--size-small);
   color: var(--color-text);
 }
 @mixin tag-primary {@include tag;border-color:var(--color-accent);background-color:var(--color-accent);color:var(--gray800);}

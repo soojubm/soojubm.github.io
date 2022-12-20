@@ -7,41 +7,49 @@
   color: var(--color-text); // for safari #fff
 }
 
-@mixin textfield-prefix {@include icon-button-small;position:absolute;left:var(--space-3);top:36px;}
-@mixin textfield-surfix {@include icon-button-small;position:absolute;right:var(--space-3);top:37px;}
+// input:-internal-autofill-selected {}
+
+@mixin textfield-prefix {@include icon-indicator;position:absolute;left:var(--space-3);top:36px;}
+@mixin textfield-surfix {@include icon-indicator;position:absolute;right:var(--space-3);top:33px;}
 
 .textfield-group {display:flex;justify-content:space-between;}
 .textfield-group .textfield {width:calc(50% - var(--space-1))}
 
 .textfield {position:relative;}
+
 .textfield-label {display:block;}
-.textfield-label small {margin:0 0 0 .25rem;color:var(--color-text-light);}
-// padding top bottom은 textarea를 위해서
-.textfield-input {display:block;width:100%;height:var(--size-large);padding:11px var(--space-4);@include reset-textinput;}
-.textfield-input:focus {background:var(--color-background);outline:0;box-shadow:var(--state-hover);} // todo outline -> shadow
+.textfield-label small {margin:0 0 0 var(--space-1);color:var(--color-text-light);}
+
+.textfield-input {@include reset-textinput;display:block;width:100%;height:var(--size-large);padding:var(--space-2) var(--space-4);}
+.textfield-input:focus {outline:0;background:var(--color-background);box-shadow:var(--state-hover);}
 .textfield-input:disabled {border-color:var(--gray200);background:var(--gray200);color:var(--gray100);cursor:not-allowed;}
 .textfield-input:read-only {color:var(--color-text-light);cursor:default;}
-.textfield-input:read-only:focus {}
-.textfield-reveal {position:absolute;right:1rem;bottom:calc(1rem - 2px);z-index:var(--zindex-default);font-size:var(--font-size-small);color:var(--color-text-light);}
-.textfield-helper {margin-top:.25rem;color:var(--red800);}
-.textfield-button {border-top-left-radius:0;border-bottom-left-radius:0;position:absolute;right:0;top:0;}
-.textfield-link {@include link-outside;font-size:var(--font-size-small);position:absolute;right:0;top:0;}
-.textfield-unit {}
 
+
+.textfield-link {@include link-outside;font-size:var(--font-size-small);position:absolute;right:0;top:0;}
+.textfield-helper {margin-top:.25rem;color:var(--red800);}
+
+.textfield-reveal {@include textfield-surfix;width:auto;font-size:var(--font-size-small);color:var(--color-text-light);}
 .textfield-check {@include textfield-surfix;}
-.textfield-check {@include textfield-surfix;}
+.textfield-clear {@include textfield-surfix;}
+
+.textfield-unit {}
 
 .textfield-prefix {@include textfield-prefix;}
 .textfield-prefix ~ .textfield-input {padding-left:calc(var(--size-medium) + var(--space-after-avatar-medium));}
-.selectbox-indicator {@include textfield-surfix;pointer-events:none;}
-
-.textfield-clear {@include icon-button-small;@include textfield-surfix;top:11px;display:none;}
 .textfield-input:focus + .textfield-clear {display:flex;}
+
+
+.searchfield-clear {@include textfield-surfix;top:11px;display:none;}
+
+.select-indicator {@include textfield-surfix;pointer-events:none;}
+
 
 .searchfield {}
 .searchfield-prefix {top:11px;}
 .searchfield-clear {right:calc(var(--size-medium) + var(--space-after-avatar-medium) + var(--space-3));}
 .searchfield-cancel {@include button-text;min-width:auto;width:var(--size-medium);position:absolute;right:0;top:0;padding:0;}
+
 .is-focused .searchfield-input {display:block;width:calc(100% - var(--size-medium) - var(--space-after-avatar-medium));}
 .is-focused .searchfield-cancel {right:0;}
 

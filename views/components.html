@@ -11,7 +11,7 @@
         <select class="" id="select2" style="background:none;border:none;padding:0 var(--space-4) 0 0;font:inherit;color:var(--color-text);">
           <option class="select-option" value="select-option1">나눔고딕</option>
         </select>
-        <span class="selectbox-indicator" role="img"><span class="material-symbols-outlined">
+        <span class="select-indicator" role="img"><span class="material-symbols-outlined">
 arrow_drop_down
 </span></span>
       </div>
@@ -96,29 +96,30 @@ arrow_drop_down
     '-때', '경우', '사용' 최소화.
     하세요, 할 수 있습니다. 보다 합니다. 입니다
   </section> -->
-  <!-- <nav class="profile-tablist" role="tablist" style="border-bottom:var(--border);margin:.75rem 0 0 var(--grid-margin);">
-    <button class="profile-tablist-tab" role="tab" name="project" aria-selected="true" data-index="1">
-      <span class="profile-tablist-tab-label">Action</span>
+  <!-- <nav class="tablist" role="tablist" style="border-bottom: var(--border); margin: 0.75rem 0 0 var(--grid-margin)">
+    <button class="tablist-tab" role="tab" name="project" aria-selected="true" data-index="1">
+      <span class="tablist-tab-label">Action</span>
     </button>
-    <button class="profile-tablist-tab" role="tab" name="case-study" aria-selected="false" data-index="2">
-      <span class="profile-tablist-tab-label">Visual Information</span>
+    <button class="tablist-tab" role="tab" name="case-study" aria-selected="false" data-index="2">
+      <span class="tablist-tab-label">Visual Information</span>
     </button>
-    <button class="profile-tablist-tab" role="tab" name="blank" aria-selected="false" data-index="3">
-      <span class="profile-tablist-tab-label">Container</span>
+    <button class="tablist-tab" role="tab" name="blank" aria-selected="false" data-index="3">
+      <span class="tablist-tab-label">Container</span>
     </button>
-    <button class="profile-tablist-tab" role="tab" name="blank" aria-selected="false" data-index="3">
-      <span class="profile-tablist-tab-label">Navigation</span>
+    <button class="tablist-tab" role="tab" name="blank" aria-selected="false" data-index="3">
+      <span class="tablist-tab-label">Navigation</span>
     </button>
-    <button class="profile-tablist-tab" role="tab" name="blank" aria-selected="false" data-index="3">
-      <span class="profile-tablist-tab-label">Text</span>
+    <button class="tablist-tab" role="tab" name="blank" aria-selected="false" data-index="3">
+      <span class="tablist-tab-label">Text</span>
     </button>
-    <i class="profile-tablist-indicator" style="left: 4px; width: 211.056px;"></i>
+    <i class="tablist-indicator" style="left: 4px; width: 211.056px"></i>
   </nav> -->
 
   <nav class="component-navigation js-carousel" role="menubar">
     <div class="component-navigation-background"></div>
     <div class="component-navigation-scroll js-carousel-viewer chip-group" role="group" data-align="bleed">
       <a class="chip is-active js-scrollspy-trigger" href="#"><span class="chip-label">Avatars</span></a>
+      <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Menus</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Buttons</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Chips</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Links</span></a>
@@ -127,7 +128,7 @@ arrow_drop_down
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Checkboxes</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Radioes</span></a>
 
-      <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Selectbox</span></a>
+      <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Select</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Textfields</span></a>
 
       <!-- <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Badges</span></a> -->
@@ -140,7 +141,6 @@ arrow_drop_down
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Tab</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Title Bar</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Bottom Navigation</span></a>
-      <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Menu</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Paginations</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">File Uploader</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Carousel</span></a>
@@ -166,62 +166,44 @@ arrow_drop_down
       <div>roles (for designers): filter sort select</div>
     </div> -->
 
-    <!-- <chip>test</chip>
-    <button is="fancy-button" class="test-class">Fancy button!</button>
-    <sjb-entity value="large" size="large"></sjb-entity>
-    <howto-checkbox label="checkbox">checkbox</howto-checkbox> -->
-    <!-- <button is="hello-button">Click me</button>
-    <button button is="hello-button">Disabled</button> -->
-    <!-- 
-    <article class="article">
+    <!-- <article class="article">
       <p>사용하다 -> 제공하다 / 사용자 관점으로. 도큐멘터이션의 사용자가 아닌 서비스의 사용자.</p>
       <p>Actions: remove, select, check/uncheck, add, link, action? toggle?, submit</p></ul>
     </article> -->
 
-    <div class="js-tab">
-      <nav class="profile-tablist type-sc" role="tablist" aria-label="sample tabs" style="max-width:11rem;margin:.5rem auto;">
-        <button class="profile-tablist-tab" role="tab" aria-selected="true" aria-controls="panel-1" id="tab-1" tabindex="0" style="padding-top:3px">
+    <!-- <div class="js-tab">
+      <nav class="tablist type-sc" role="tablist" aria-label="sample tabs" style="max-width: 11rem; margin: 0.5rem auto">
+        <button class="tablist-tab" role="tab" aria-selected="true" aria-controls="panel-1" id="tab-1" tabindex="0" style="padding-top: 3px">
           Style
         </button>
-        <button
-          class="profile-tablist-tab"
-          role="tab"
-          aria-selected="false"
-          aria-controls="panel-2"
-          id="tab-2"
-          tabindex="-1"
-          style="padding-top:3px"
-        >
+        <button class="tablist-tab" role="tab" aria-selected="false" aria-controls="panel-2" id="tab-2" tabindex="-1" style="padding-top: 3px">
           Role
         </button>
-        <i class="profile-tablist-indicator" style="width:50%;"></i>
+        <i class="tablist-indicator" style="width: 50%"></i>
       </nav>
-    </div>
+    </div> -->
+
+    <!-- <p>button small 형태를 액션으로. chip.</p>
+    <p>해보기. action container, textfield container, tag container. 어디에서 인사이트? css modules</p>
+    <p>클래스 여러개 대신 속성이나 data attr 사용하는 것이 좋을지도.</p> -->
 
     <article class="article js-observer js-scrollspy-section">
       <h1 class="article-title">Avatars</h1>
       <p class="article-description">개체(유저, 회사, 프로젝트 등)를 대표하는 시각 정보입니다.</p>
       <div class="component-example">
-        <article class="tile-flat" style="display: flex">
-          <figure class="item-avatar" data-size="huge" title="huge avatar" style="width: var(--size-huge); height: var(--size-huge); border: none">
+        <article class="tile-flat" style="display: flex; gap: 0.5rem">
+          <figure class="avatar" data-size="huge">
             <span class="avatar-badge"></span>
           </figure>
-          <figure class="item-avatar" data-size="large" title="large avatar">
+          <figure class="avatar" data-size="large">
             <span class="avatar-badge"></span>
           </figure>
-          <figure class="item-avatar" data-size="medium" style="width: var(--size-medium); height: var(--size-medium); background-image: none">
-            수
-          </figure>
-          <figure
-            class="item-avatar"
-            data-size="small"
-            title="small avatar"
-            style="width: var(--size-small); height: var(--size-small); background-image: none"
-          >
-            <span class="material-symbols-outlined" style="transform:scale(75%)">close</span>
+          <figure class="avatar" data-size="medium" style="background-image: none">수</figure>
+          <figure class="avatar" data-size="small" style="background-image: none">
+            <span class="material-symbols-outlined" style="transform: scale(75%)">close</span>
           </figure>
         </article>
-        <div class="tile-flat">
+        <!-- <div class="tile-flat">
           <article class="item" data-size="huge">
             <figure class="item-avatar">
               <span class="avatar-badge"></span>
@@ -239,7 +221,7 @@ arrow_drop_down
             <figure class="item-avatar"></figure>
             <h3 class="item-name" style="font-weight: var(--font-weight-normal)">EntityMedium</h3>
             <time style="margin: 0 0 0 var(--space-2); color: var(--color-text-light)">36.4만</time>
-            <button class="item-delete icon-button" data-size="small" style="margin-left: auto; min-width: 24px">
+            <button class="item-delete icon-indicator" style="margin-left: auto; min-width: 24px">
               <span class="material-symbols-outlined">close</span>
             </button>
           </article>
@@ -253,10 +235,13 @@ arrow_drop_down
             <figure class="item-avatar"></figure>
             <h3 class="item-name" style="font-weight: var(--font-weight-normal)">EntitySmall</h3>
           </article>
-        </div>
+        </div> -->
       </div>
+
+      <h2 class="article-subhead">Best practices</h2>
+      <p>정보 주체를 표현하는 시각 정보로, 인접한 정보 더미 중 최상위 위계를 갖습니다.</p>
       <ul>
-        <li>인접한 정보 더미 중 최상위 위계의 시각 정보입니다.</li>
+        <li>icon button, icon indicator, entity avatar, menu item avatar(icon)</li>
         <li>이미지, 텍스트, 아이콘, 이모지를 포함할 수 있습니다.</li>
         <!-- <li>현재 entity가 card vertica 형태</li> -->
         <!-- <li>memeo. medium. 이하의 크기에 항상 align-items:center. 텍스트 더미가 두 줄로 제공되지 않는다.</li> -->
@@ -279,12 +264,12 @@ arrow_drop_down
 
       <h2 class="article-subhead">Fallback</h2>
 
-      <h2 class="article-subhead">non-clickable<br />avatar는 장식 요소로 오른쪽에 배치</h2>
+      <h2 class="article-subhead">non-clickable<br />avatar는 장식 요소로 오른쪽에 배치 (outdated)</h2>
       <article class="user tile-flat" style="margin: var(--space-2) 0 var(--space-4); text-align: left">
-        <figure class="profile-user-avatar" role="img"></figure>
-        <h3 class="profile-user-name">수줍이</h3>
-        <span class="profile-user-id">soojubm@gmail.com</span>
-        <span class="profile-user-job">Youtube subscriber</span>
+        <figure class="user-avatar" role="img"></figure>
+        <h3 class="user-name">수줍이</h3>
+        <span class="user-id">soojubm@gmail.com</span>
+        <span class="user-job">Youtube subscriber</span>
       </article>
 
       <h2 class="article-subhead">groupable<br />avatar의 목록</h2>
@@ -327,6 +312,108 @@ arrow_drop_down
     </article>
 
     <article class="article js-observer js-scrollspy-section">
+      <h1 class="article-title">Menus</h1>
+      <p class="article-description">사용자가 수행할 수 있는 행동 목록.</p>
+
+      <aside class="article-aka">
+        <span class="tag">a.k.a.</span>
+        <span class="hashtag" title="shopify 22 12">Action list</span>
+      </aside>
+
+      <section class="component-example">
+        <div class="tile-flat">
+          <button class="menu-item" data-tile="elevated" style="margin-top: 0; margin-bottom: 0.125rem">
+            <figure class="menu-item-avatar">🦊</figure>
+            <span class="menu-item-label">사진 및 동영상 백업</span>
+            <span class="switch" style="margin-left: auto">
+              <input type="checkbox" id="temp123456" name="" role="switch" />
+              <label for="temp123456" style="padding-left: 48px"></label>
+            </span>
+          </button>
+          <small>Google 포토에 최대 해상도로 백업</small>
+
+          <hr />
+
+          <button class="menu-item js-darkmode" role="menuitem" data-size="medium" title="change theme">
+            <figure class="item-avatar" style="background-image: none"><span class="material-symbols-outlined">nights_stay</span></figure>
+            <span class="item-label">어둡게 보기</span>
+            <span class="switch" style="margin-left: auto">
+              <input type="checkbox" id="temp55" name="" role="switch" />
+              <label for="temp55" style="padding-left: 48px"></label>
+            </span>
+          </button>
+          <div class="menu-item" role="menuitem" data-size="medium" style="width: 100%">
+            <figure class="item-avatar">🏹</figure>
+            <span class="item-label">entity와 구별</span>
+            <span class="item-tag" data-style="primary">새소식</span>
+          </div>
+          <div class="menu-item" role="menuitemcheckbox" data-size="medium">
+            <figure class="item-avatar"></figure>
+            <span class="item-label">카카오뱅크</span>
+            <div class="checkbox menutype" style="position: absolute; right: 0; top: 0">
+              <input type="checkbox" id="c1" name="c1" value="" />
+              <label for="c1" title=""></label>
+            </div>
+          </div>
+        </div>
+
+        <div class="tile-flat">
+          <div class="item" data-size="large" role="menuitem">
+            <figure class="item-avatar"></figure>
+            <b class="item-label">windows 패턴 with quick action. not acition. 모바일에 비적합.</b>
+            <button class="chip" style="margin-left: auto; margin-right: var(--space-2)">
+              <span class="chip-label">휴대폰과 연결 열기</span>
+            </button>
+            <span class="material-symbols-outlined">chevron_right</span>
+          </div>
+        </div>
+
+        <div class="tile-flat">
+          <menu class="menu">
+            <span class="menu-heading" role="heading">menu heading</span>
+            <a class="menu-link" href="#design">Only Text</a>
+            <a class="menu-link" href="#design">Only Text Menu</a>
+          </menu>
+        </div>
+      </section>
+
+      <h2 class="article-subhead">Best practices</h2>
+      <p>메뉴 아이템의 우측에 'new' 등 태그 컴포넌트를 배치하지 마세요. 액션 또는 액션 인티케이터만 위치할 수 있습니다. (case 토스. 우측 new)</p>
+
+      <ul>
+        <li>item-label의 line-heigh를 지정해야 아바타가 없을 떄 대응</li>
+        <li>menu-item와 차이. 확장:: setting item에서 tile 형태 + helper</li>
+        <li>
+          meta problem: 모든 menuitem container가 clickable은 아니다. => 액션 버튼이 따로 존재할 수도 있어야 한다. 이 정보가 중요한 이유 hover 상태
+          표현을 위해.
+        </li>
+      </ul>
+
+      <!-- <p>listitem은 li라서 제거함</p> -->
+
+      <h2 class="article-subhead">Anatomy</h2>
+      <p>Menu -> MenuButton(Trigger) / MenuList - MenuItem, MenuLink</p>
+      <ul>
+        <li>MenuItem. sizes: large | medium. tile: 'elevated' | 'none'</li>
+        <li>MenuItemAvatar. sizes: large | medium</li>
+        <li>MenuHeading</li>
+        <li>MenuHelper. role: setting-item. filter-item.</li>
+        <li>MenuLink. sizes: medium | small(dropdown)</li>
+        ]
+      </ul>
+
+      <h2 class="article-subhead">Props</h2>
+      <dl>
+        <dt>options</dt>
+        <dd>OptionType[] | OptionType ??</dd>
+        <dt>tagLabel<attr>?</attr></dt>
+        <dd>string</dd>
+        <dt>action</dt>
+        <dd>'checkbox' | 'chip' | 'switch" | 'radio'</dd>
+      </dl>
+    </article>
+
+    <article class="article js-observer js-scrollspy-section">
       <h1 class="article-title">Buttons</h1>
       <p class="article-description">과업 수행을 위한 페이지 이동, 데이터 제출 등 사용자 여정의 핵심적인 액션입니다.</p>
 
@@ -339,12 +426,6 @@ arrow_drop_down
             <button class="danger-button" aria-label="danger">Destructive</button>
             <button class="button-text">Text</button>
           </div>
-        </div>
-        <div class="tile-flat" style="z-index: 1">
-          <button class="button-elevated" style="width: 100%; margin-top: 0; margin-bottom: 0">
-            <figure class="button-elevated-avatar"></figure>
-            <span class="button-elevated-label">Elevated</span>
-          </button>
         </div>
         <div class="tile-flat">
           <div class="chip-group" role="group">
@@ -382,9 +463,7 @@ arrow_drop_down
       <div style="padding: 1rem; background: var(--red100)">123</div>
 
       <ul>
-        <li>
-          레이블은 사용자가 다음에 일어날 일을 예측할 수 있도록 작성하세요. 
-        </li>
+        <li>레이블은 사용자가 다음에 일어날 일을 예측할 수 있도록 작성하세요.</li>
         <li>전환을 위한 CTA을 위해 툴팁으로 행동을 유도하거나, 보조 텍스트로 실행을 유도하거나 실행 결과를 가이드하지 마세요.</li>
         <li>large 버튼은 프로모션 페이지의 call to action으로 용법을 제한</li>
       </ul>
@@ -427,14 +506,15 @@ arrow_drop_down
         <dd>string</dd>
         <dt>label</dt>
         <dd>string</dd>
-        <dt>isDisabled</dt>
+        <dt>isDisabled?</dt>
         <dd>boolean</dd>
         <dt>isFullwidth</dt>
         <dd>boolean</dd>
         <dt>href<attr>?</attr></dt>
         <dd>string</dd>
         <dt>onClick<attr>?</attr></dt>
-        <dd>(event: React.MouseEvent[HTMLButtonElement]) => void</dd>
+        <dd>(event: React.MouseEvent[HTMLButtonElement]) =] void</dd>
+        <dd>optional for onSumit</dd>
         <dt>aria-pressed<attr>?</attr></dt>
         <dd>null</dd>
         <dt>aria-expanded<attr>?</attr></dt>
@@ -452,7 +532,7 @@ arrow_drop_down
       <div class="tile-flat">
         <button class="button-tertiary">
           Show more
-          <figure class="icon-button" data-size="small">
+          <figure class="icon-indicator" data-size="small">
             <span class="material-symbols-outlined">expand_more</span>
           </figure>
         </button>
@@ -515,13 +595,12 @@ arrow_drop_down
         <!-- <h4 class="article-subhead">Removable</h4> -->
         <div class="tile-flat">
           <div class="chip-group" role="group" data-align="bleed" style="margin-right: -0.75rem">
-            <button class="reaction-item">
-              <figure class="reaction-item-avatar">❤️</figure>
-              <span class="reaction-item-label">좋아요</span>
-              <span class="reaction-item-count">117</span>
+            <button class="chip">
+              <figure class="chip-icon">❤️</figure>
+              <span class="chip-label">좋아요 117</span>
             </button>
-            <button class="chip style-removable">
-              <span class="chip-label">removable</span>
+            <button class="chip">
+              <span class="chip-label">removable? deselectable?</span>
               <figure class="chip-remove"><span class="material-symbols-outlined">close</span></figure>
             </button>
             <button class="chip">
@@ -534,20 +613,18 @@ arrow_drop_down
               </figure>
               <span class="chip-label" style="padding-left: 0">checkable</span>
             </button>
-            <button class="dropdown-trigger js-toggle" aria-expanded="true">
-              <span class="dropdown-trigger-label">expandable</span>
-              <figure class="dropdown-trigger-icon">
-                <span class="material-symbols-outlined">arrow_drop_down</span>
-              </figure>
+            <button class="chip js-toggle" aria-expanded="true">
+              <span class="chip-label">expandable</span>
+              <figure class="chip-icon material-symbols-outlined">arrow_drop_down</figure>
             </button>
           </div>
         </div>
         <div class="tile-flat">
           <div class="chip-group" role="group">
-            <button class="icon-button" data-size="medium">
+            <button class="chip" data-size="medium">
               <span class="material-symbols-outlined">close</span>
             </button>
-            <button class="icon-button" data-size="small">
+            <button class="icon-indicator">
               <span class="material-symbols-outlined">close</span>
             </button>
           </div>
@@ -558,15 +635,13 @@ arrow_drop_down
       <p>맥락이 다른 chip을 그룹으로 제공할 수 있습니다. 이 때 단일선택, 다중선택, 삭제여부, 펼침메뉴 등의 기표를 충분히 제공하세요.</p>
 
       <ul>
+        <li>changelog. dropdown을 칩과 분리. 이 디자인 시스템에서는 같은 형태를 사용하지만 배경색을 뺀 형태 케이스 고려해보기.</li>
         <li>
           changelog. icon button은 clickable이기 때문에 아바타가 아니라 칩을 mixin. 2개의 사이즈로 확장. small은 용법을 제한하여 textfield에서
           사용하거나 일반 텍스트 우측에.
         </li>
         <!-- <li>trigger / menulist를 구별.</li> -->
       </ul>
-
-
-      <p>memo. dropdown을 칩과 분리. 이 디자인 시스템에서는 같은 형태를 사용하지만 배경색을 뺀 형태로 사용. </p>
 
       <h4 class="article-subhead">Props</h4>
       <dl>
@@ -601,10 +676,8 @@ arrow_drop_down
         <li>Action with icon</li>
       </ul> -->
 
-
       <h4 class="article-subhead">Sorting<br />콘텐츠 정렬</h4>
       <p>옵션 목록을 chip group으로 제공하지 마세요. dropdown으로 현재 정렬 상태만 요약 표기하세요. (bad case: 2022.04 구글 지도 바뀐 것)</p>
-      
 
       <h4 class="article-subhead">Keywords<br />action & search</h4>
       <div class="tile-flat" style="margin: var(--space-2) 0 var(--space-4)">
@@ -655,75 +728,69 @@ arrow_drop_down
           </button>
         </div>
       </div>
+
       <h4 class="article-subhead">Dropdown (overflow/pulldown)</h4>
+      <p>aria-expanded 속성</p>
       <div class="tile-flat" style="margin: var(--space-2) 0 var(--space-4)">
         <div class="chip-group">
           <div class="dropdown">
-            <button class="dropdown-trigger js-toggle" aria-expanded="true">
-              <span class="dropdown-trigger-label" title="일행 당 인원 수">필터</span>
-              <figure class="dropdown-trigger-icon">
-                <span class="material-symbols-outlined"> arrow_drop_down </span>
-              </figure>
+            <button class="chip js-toggle" aria-expanded="true">
+              <span class="chip-label" title="일행 당 인원 수">필터</span>
+              <figure class="chip-icon material-symbols-outlined">arrow_drop_down</figure>
             </button>
-            <menu class="dropdown-menu" role="menu" style="padding: var(--space-3)">
-              <fieldset role="radiogroup">
-                <!-- <legend class="article-anatomy-title" style="margin-bottom:0;">radiogroup</legend> -->
-                <div class="radio">
-                  <input type="radio" id="gogo1" name="gogo" value="" />
-                  <label for="gogo1" title="">1~3명</label>
-                </div>
-                <div class="radio">
-                  <input type="radio" id="gogo2" name="gogo" value="" checked />
-                  <label for="gogo2" title="">3명 이상</label>
-                </div>
-              </fieldset>
+            <menu class="dropdown-menu" role="menu">
+              <div class="radio">
+                <input type="radio" id="gogo1" name="gogo" value="" />
+                <label for="gogo1" title="">1~3명</label>
+              </div>
+              <div class="radio">
+                <input type="radio" id="gogo2" name="gogo" value="" checked />
+                <label for="gogo2" title="">3명 이상</label>
+              </div>
               <footer style="margin: var(--space-2) 0 0 0">
-                <!-- <button>옵션 초기화</button> -->
-                <button class="chip" style="width: 100%"><span class="chip-label">적용 / 24개 상품 보기 (airbnb)</span></button>
+                <button class="chip"><span class="chip-label">적용</span></button>
               </footer>
             </menu>
           </div>
+
           <div class="dropdown">
-            <button class="dropdown-trigger js-toggle" aria-expanded="true">
-              <span class="dropdown-trigger-label">정렬</span>
-              <figure class="dropdown-trigger-icon">
-                <span class="material-symbols-outlined"> arrow_drop_down </span>
-              </figure>
+            <button class="chip js-toggle" aria-expanded="true">
+              <span class="chip-label">정렬</span>
+              <figure class="chip-icon material-symbols-outlined">arrow_drop_down</figure>
             </button>
             <menu class="dropdown-menu" role="menu">
               <h6 class="dropdown-menu-title" hidden>Dropdown header</h6>
-              <a class="dropdown-menu-link" href="#" disabled style="display: flex; justify-content: space-between; align-items: center">
+              <a class="dropdown-menu-item" href="#" disabled style="display: flex; justify-content: space-between; align-items: center">
                 최신순
                 <span class="material-symbols-outlined">check</span>
               </a>
-              <a class="dropdown-menu-link" href="#" disabled>최신순</a>
+              <a class="dropdown-menu-item" href="#">최신순</a>
             </menu>
           </div>
           <div class="dropdown">
-            <button class="dropdown-trigger js-toggle" aria-label="" aria-haspopup="menu" aria-expanded="false">
+            <button class="chip js-toggle" aria-label="" aria-haspopup="menu" aria-expanded="false">
               <span class="material-symbols-outlined">more_vert</span>
             </button>
             <menu class="dropdown-menu">
-              <a class="dropdown-menu-link" href="#componets">수정</a>
-              <!-- <hr class="dropdown-menu-divider" /> -->
-              <a class="dropdown-menu-link" href="#componets">삭제</a>
+              <a class="dropdown-menu-item" href="#componets">신고</a>
+              <hr class="dropdown-menu-divider" style="margin: 0.5rem 0" />
+              <a class="dropdown-menu-item" href="#componets">수정</a>
+              <a class="dropdown-menu-item" href="#componets">삭제</a>
+
+              <footer class="dropdown-footer">
+                <p class="dropdown-footer-question">Going?</p>
+                <button class="dropdown-footer-action chip">
+                  <span class="chip-label">Yes</span>
+                  <figure class="chip-icon">arrow_drop_down</figure>
+                </button>
+                <button class="dropdown-footer-action chip">
+                  <span class="chip-label">No</span>
+                </button>
+                <button class="dropdown-footer-action chip">
+                  <span class="chip-label">Maybe</span>
+                </button>
+              </footer>
             </menu>
-            <!-- <footer class="dropdown-footer">
-              <p class="dropdown-footer-question">Going?</p>
-              <button class="dropdown-footer-action chip">
-                <span class="chip-label">Yes</span>
-                <figure class="dropdown-trigger-icon"><span class="material-symbols-outlined">
-arrow_drop_down
-</span></figure>
-              </button>
-              <button class="dropdown-footer-action chip">
-                <span class="chip-label">No</span>
-              </button>
-              <button class="dropdown-footer-action chip">
-                <span class="chip-label">Maybe</span>
-              </button>
-            </footer> -->
-            <!-- CloseButton aria-label="" / -->
           </div>
         </div>
       </div>
@@ -772,10 +839,14 @@ arrow_drop_down
         </div>
       </section>
 
-      <ul>
-        <li>항상 텍스트 단락과 함께 사용합니다. 단락 내부와 외부에서의 형태를 구분합니다. 단락 내부에서는 본문 텍스트와 대비를 높이기 위해 언더라인을 표시합니다.</li>
-        <li>'여기', '클릭', '확장' 등 시각에 의존한 단어로 작성하지 마세요. 접근성.</li>
-      </ul>
+      <h4 class="article-subhead">Best practices</h4>
+      <p>
+        항상 텍스트 단락과 함께 사용합니다. 단락 내부와 외부에서의 형태를 구분합니다. 단락 내부에서는 본문 텍스트와 대비를 높이기 위해 언더라인을
+        표시합니다.
+      </p>
+
+      <h4 class="article-subhead">Accessibility</h4>
+      <p>'여기', '클릭', '확장' 등 시각에 의존한 단어로 작성하지 마세요. 접근성.</p>
 
       <h4 class="article-subhead">Props</h4>
       <dl>
@@ -827,8 +898,12 @@ arrow_drop_down
 
       <ul>
         <li>non-clickable<span hidden>triggering interaction</span></li>
-        <li>하나의 콘텐츠를 부연하기 위해 Primary style을 2개 이상 사용하지 마세요.</li>
       </ul>
+
+      <div class="article-dont">
+        <span class="icon-indicator is-negative" data-size="small"><span class="material-symbols-outlined">close</span></span>
+        <li>하나의 콘텐츠를 부연하기 위해 2개 이상의 Primary style을 사용하지 마세요.</li>
+      </div>
 
       <h2 class="article-subhead">Tag group</h2>
       <p>
@@ -877,7 +952,7 @@ arrow_drop_down
       </section>
 
       <h2 class="article-subhead">Best practices</h2>
-      <p>변경한 상태는 즉시 실행되어 서버에 요청. 버튼으로 최종 저장이 필요치 않음.</p>
+      <p>변경한 상태는 즉시 실행되어 서버에 요청. 최종 저장 버튼이 필요치 않음.</p>
 
       <ul>
         <li>스위치의 왼쪽과 오른쪽에 각각 레이블을 배치하여 콘텐츠 스위칭으로 사용하지 마세요.</li>
@@ -896,7 +971,7 @@ arrow_drop_down
         <dd>string</dd>
         <dt>value</dt>
         <dd>string</dd>
-        <dt>label</dt>
+        <dt>label? - labelHidden</dt>
         <dd>string</dd>
         <dt>isChecked</dt>
         <dd>boolean</dd>
@@ -924,27 +999,21 @@ arrow_drop_down
             <label for="other">기타</label>
             <input type="text" name="other-more" class="textfield-input" placeholder="기타로 오토바이를 타자." hidden />
           </div>
-          <hr />
-          <div class="checkbox menutype" data-size="medium">
-            <input type="checkbox" id="menutype1" name="gender" checked />
-            <label for="menutype1" title="">
-              <figure class="item-avatar"></figure>
-              카카오뱅크
-            </label>
-          </div>
-          <div class="checkbox menutype" data-size="medium">
-            <input type="checkbox" id="menutype2" name="gender" />
-            <label for="menutype2" title="">
-              <figure class="item-avatar"></figure>
-              신한은행
-            </label>
-          </div>
         </fieldset>
         <div class="tile-flat">
           <div class="checkbox">
             <input class="js-check" type="checkbox" id="setting-item" name="setting-item" />
             <label for="setting-item">setting option with description</label>
             <p class="checkbox-description">주로 세팅 페이지에서 사용되는 디스크립션 영역.</p>
+          </div>
+          <hr />
+          <div class="checkbox">
+            <input type="checkbox" id="menutype1" name="gender" checked />
+            <label for="menutype1" title=""></label>
+          </div>
+          <div class="checkbox size-large">
+            <input type="checkbox" id="menutype1" name="gender" checked />
+            <label for="menutype1" title=""></label>
           </div>
         </div>
       </div>
@@ -993,15 +1062,13 @@ arrow_drop_down
         <dd>string</dd>
         <dt>label</dt>
         <dd>string</dd>
-        <dt>value</dt>
-        <dd>string</dd>
         <dt>isChecked</dt>
         <dd>boolean</dd>
         <dt>isDisabled<attr>?</attr></dt>
         <dd>boolean</dd>
         <dt>onChange</dt>
-        <dd>event => (React.FormEvent[HTMLInputElement]): void</dd>
-        <dd>React.ChangeEventHandler<> / @types/react</dd>
+        <dd>(event: React.FormEvent[HTMLInputElement]) =] void</dd>
+        <dd>React.ChangeEventHandler[] / @types/react</dd>
       </dl>
 
       <h4 class="article-subhead">Terms and conditions<br />약관 동의</h4>
@@ -1038,7 +1105,7 @@ arrow_drop_down
 
       <h3 class="article-subhead">Best practices</h3>
       <ul>
-        <li>옵션 목록이 5개 이하일 때만 라디오그룹을 제공합니다. 5개 이상의 옵션 목록은 selectbox나 chip group으로 제공하세요.</li>
+        <li>옵션 목록이 5개 이하일 때만 라디오그룹을 제공합니다. 5개 이상의 옵션 목록은 select나 chip group으로 제공하세요.</li>
       </ul>
 
       <h3 class="article-subhead">Default Value</h3>
@@ -1058,25 +1125,27 @@ arrow_drop_down
         <dd>string</dd>
         <dt>name</dt>
         <dd>string</dd>
-        <dt>value</dt>
-        <dd>string</dd>
         <dt>label</dt>
         <dd>string</dd>
         <dt>isChecked</dt>
         <dd>boolean</dd>
+        <dt>isDisabled</dt>
+        <dd>boolean</dd>
         <dt>onChange</dt>
-        <dd>() => void</dd>
+        <dd>(event: React.FormEvent[HTMLInputElement]) =] void</dd>
       </dl>
       <!-- (리액트에서 id  이슈 input in label.) -->
     </article>
 
     <article class="article js-observer js-scrollspy-section">
-      <h1 class="article-title">Selectbox</h1>
-      <p class="article-description">셀렉트박스. 텍스트필드와 같은 형태.</p>
-      <!-- <aside class="article-aka">
+      <h1 class="article-title">Select</h1>
+      <p class="article-description">작성 중. 텍스트필드와 같은 형태.</p>
+      <aside class="article-aka">
         <span class="tag">a.k.a.</span>
-        <span class="hashtag" title=""></span>
-      </aside> -->
+        <span class="hashtag" title="">dropdown</span>
+        <span class="hashtag" title="shopify">Choice list</span>
+        <span class="hashtag" title="shopify">Action list</span>
+      </aside>
       <section class="component-example">
         <div class="tile-flat">
           <div class="textfield">
@@ -1084,19 +1153,34 @@ arrow_drop_down
             <select class="textfield-input" id="select1">
               <option class="select-option" value="select-option1">Choose an option</option>
             </select>
-            <span class="selectbox-indicator" role="img"><span class="material-symbols-outlined"> arrow_drop_down </span></span>
+            <span class="select-indicator" role="img"><span class="material-symbols-outlined"> arrow_drop_down </span></span>
           </div>
         </div>
       </section>
 
       <h2 class="article-subhead">Best practices</h2>
-        <p>다중 선택을 셀렉트박스로 제공하지 마세요. chip group으로 선택 옵션을 풀어서 제공하세요.</p>
+      <p>다중 선택을 셀렉트박스로 제공하지 마세요. chip group으로 선택 옵션을 풀어서 제공하세요.</p>
+
+      <ul>
+        <li>레이블 클릭해도 셀렉트박스 안 열림. id prop 필요없음.</li>
+        <li>셀렉트 옵션에 따라 박스의 너비가 자동 조절된다. indicator를 position으로 넣고 옵션에 말줄임표를 넣어야.</li>
+      </ul>
 
       <h4 class="article-subhead">Props</h4>
-      <!-- <dl>
-        <dt>type</dt>
-        <dd>HTMLInputTypeAttribute? | "search" | "text" | "number" | "tel" | "textarea"</dd>
-      </dl> -->
+      <dl>
+        <!-- <dt>name / value</dt>
+        <dd>string</dd> -->
+        <dt>options (width name / value)</dt>
+        <dd>Option[] ??</dd>
+
+        <dt>label - option label과 혼동될 수도</dt>
+        <dd>string</dd>
+        <dt>selectedValue / selected</dt>
+        <dd>string / optionType.name</dd>
+
+        <dt>onChange - handleSelectChange</dt>
+        <dd>(event: React.FormEvent[HTMLSelectElement]) => void</dd>
+      </dl>
       <!-- var selected = Array.from(dnd.options).filter((option) => {
       return option.selected;
     }).map((option) => option.value); -->
@@ -1115,11 +1199,9 @@ arrow_drop_down
           <!-- <p>unit, choose/enter</p> -->
           <!-- <abbr title="필수입력">*</abbr> -->
           <div class="textfield is-invalid">
-            <label class="textfield-label" for="abc123" style="margin-top: var(--space-leading-subhead)"
-              >레이블 <small class="textfield-hint" aria-label="optional">선택입력</small></label
-            >
+            <label class="textfield-label" for="abc123">레이블 <small class="textfield-hint" aria-label="optional">선택입력</small></label>
             <input
-              class="textfield-input js-input-test"
+              class="textfield-input"
               type="text"
               id="abc123"
               placeholder="Textarea Placeholder..."
@@ -1161,14 +1243,14 @@ arrow_drop_down
               <span class="material-symbols-outlined">search</span>
             </button>
             <!-- <label class="textfield-label" for="search">검색(시각적으로숨겨야함)</label> -->
-            <input class="textfield-input searchfield-input js-input-test" type="search" id="search" placeholder="궁금한 인물이나 이슈가 있나요?" />
-            <button class="textfield-clear" aria-label="clear keywords" hidden><span class="material-symbols-outlined">close</span></button>
+            <input class="textfield-input searchfield-input" type="search" id="search" placeholder="궁금한 인물이나 이슈가 있나요?" />
+            <button class="searchfield-clear" aria-label="clear keywords" hidden><span class="material-symbols-outlined">close</span></button>
           </div>
         </div>
 
         <div class="tile-flat">
           <!-- numberfield -->
-          <div class="quantity js-quantity" style="max-width: 8rem">
+          <div class="quantity js-quantity">
             <!-- <input type="text" inputmode="numeric" pattern="[0-9]*"> -->
             <button class="quantity-decrement js-quantity-decrement" aria-label="" aria-controls="numberfield" tabindex="-1">
               <span class="material-symbols-outlined"> remove </span>
@@ -1185,12 +1267,15 @@ arrow_drop_down
 
             <button class="quantity-increment js-quantity-increment" tabindex="-1"><span class="material-symbols-outlined">add</span></button>
           </div>
-          <blockquote style="margin:1rem 0 0 0;">
+          <blockquote style="margin: 1rem 0 0 0">
+            <p>NumberInput type="quantity(3자리 정도) | price | default"</p>
+            <p>역할에 따라 대략 3가지 패턴을 따로 정의할 필요</p>
             <p>221021: - + 버튼에 포커스를 줄 필요가 없다.</p>
-            <p>- 버튼없이 +버튼만제공해도 재미있겠다</p>
-            <p>지금. 가이드에 없는 textfield 사이즈(토큰은 있음). 버튼의 형태임.</p>
-            <p>수량(3자리 정도), 숫자(1개), 금액(long - 기본형태로 대응가능) 대략 3가지 패턴을 따로 정의할 필요.</p>
-            <p>최소값와 최대값. 입력 제한 피드백으로 disabled 상태 제공. 앞자리0제거.숫자만입력.3자리마다콤마</p>
+            <p>minus 버튼을 제외하고 plus 버튼만 제공해도 재미있겠다.</p>
+            <p>quntity: 최소값와 최대값.</p>
+            <p>price: 숫자만입력3자리마다콤마</p>
+            <p>입력 제한 피드백으로 disabled 상태.</p>
+            <p>공통 앞자리0제거/</p>
           </blockquote>
         </div>
       </section>
@@ -1211,7 +1296,7 @@ arrow_drop_down
       </p>
 
       <ul>
-        <!-- <p><span><i></i></span> 벨리데이션 실행 조건: <b>제출(구현이 쉬움)</b> / 키보드 입력 쉬움 / 블러(구현이 복잡함. 흐름이 끊어짐)</b></p> -->
+        <!-- <p><span></span> 벨리데이션 실행 조건: <b>제출(구현이 쉬움)</b> / 키보드 입력 쉬움 / 블러(구현이 복잡함. 흐름이 끊어짐)</b></p> -->
         <li>검색 필드는 일반 텍스트필드와 구별할 수 있도록 검색 아이콘 등 시각적인 단서를 제공하세요.</li>
         <!-- <li>required indicator / optional indicator / validations / masked / validation feedback</li> -->
         <li>todo: helper(help message)와 feedback message를 구별</li>
@@ -1222,6 +1307,10 @@ arrow_drop_down
       <dl>
         <dt>type</dt>
         <dd>HTMLInputTypeAttribute? | "search" | "text" | "number" | "tel" | "textarea"</dd>
+
+        <dt>id</dt>
+        <dd>string</dd>
+
         <dt>placeholder</dt>
         <dd>string</dd>
         <dt>name</dt>
@@ -1261,13 +1350,13 @@ arrow_drop_down
         <span class="tag">a.k.a.</span>
         <span class="hashtag" title="protocol mozilla">EmphasisBox</span>
         <span class="hashtag" title="biings">Box</span>
-        <span class="hashtag" title="">Card</span>
+        <span class="hashtag" title="">Card</span> s
         <span class="hashtag" title="pinterest gestalt">Module</span>
       </aside>
 
       <section class="component-example">
         <div class="tile-elevated" style="padding: 1rem">
-          <h5 style="font-size: var(--font-size-large); line-height: var(--font-line-height-small)">elevated large with subhead</h5>
+          <h5 style="font-size: var(--font-size-large); line-height: var(--font-line-height)">elevated large with subhead</h5>
           <p style="margin: 1rem">
             문제: 크기에 따른 변별력이 없다. inset이 더 커진다면 모바일 등 작은 화면에서 미디어쿼리로 추가적인 inset 조절이 필요하기 때문에 컴포넌트의
             고유성을 잃게 된다. 솔루션: inset이 1rem 초과할 때 콘텐츠 모듈을 가운데 정렬로 제한하여 고유성을 유지할 수 있다.
@@ -1292,7 +1381,8 @@ arrow_drop_down
 
       <h2 class="article-subhead">Best practices</h2>
       <p>
-        '클릭할 수 있음'의 기표로 elevated 스타일을 사용합니다. 타일 전체가 클릭 영역일 수도, 타일 내부에 클릭 가능한 요소를 포함할 수도 있습니다.
+        '클릭할 수 있음'의 기표로 elevated 스타일을 사용합니다. 타일 전체가 클릭 영역일 수도, 타일 내부에 클릭 가능한 요소를 포함할 수도 있습니다. +
+        flat도 clickable로? 2022.12.
       </p>
 
       <h2 class="article-subhead">Optical adjustment</h2>
@@ -1302,9 +1392,18 @@ arrow_drop_down
       </ul>
 
       <!-- <li>todo 선택 상태의 타일 디자인.</li> -->
-      <li>아티클 레벨에 사용합니다.</li>
-      <li>페이지 레벨의 타이틀과 디스크립션을 타일로 만들지 마세요.</li>
-
+      <div style="display: flex">
+        <div style="width: 50%">
+          <span class="icon-indicator is-positive" data-size="small">
+            <span class="material-symbols-outlined" style="color: var(--color-primary)">check</span>
+          </span>
+          <p style="padding: 0.5rem 0; border-bottom: var(--border)">아티클 레벨에 사용합니다.</p>
+        </div>
+        <div style="width: 50%">
+          <span class="icon-indicator is-negative" data-size="small"><span class="material-symbols-outlined">close</span></span>
+          <p style="padding: 0.5rem 0; border-bottom: var(--border)">페이지 레벨의 타이틀과 디스크립션을 타일로 만들지 마세요.</p>
+        </div>
+      </div>
       <!-- <h4 class="article-subhead">todo Media</h4>
       <p>카드 썸네일은 2:1. 블리딩 시 높이를 고정해야 한다.</p> -->
     </article>
@@ -1420,22 +1519,22 @@ arrow_drop_down
 
       <section class="component-example">
         <div class="tile-flat">
-          <nav class="profile-tablist" role="tablist" aria-label="sample tabs" style="margin: 0 0 var(--space-2) 0">
-            <button class="profile-tablist-tab" role="tab" aria-selected="true" aria-controls="panel-1" id="tab-1" tabindex="0">
+          <nav class="tablist" role="tablist" aria-label="sample tabs" style="margin: 0 0 var(--space-2) 0">
+            <button class="tablist-tab" role="tab" aria-selected="true" aria-controls="panel-1" id="tab-1" tabindex="0">
               첫번째 탭
-              <!-- <em class="profile-tablist-tab-badge badge">24</em> -->
+              <!-- <em class="tablist-tab-badge badge">24</em> -->
             </button>
-            <button class="profile-tablist-tab" role="tab" aria-selected="false" aria-controls="panel-2" id="tab-2" tabindex="-1">두번째 탭</button>
-            <button class="profile-tablist-tab" role="tab" aria-selected="false" aria-controls="panel-3" id="tab-3" tabindex="-1">세번째 탭</button>
-            <i class="profile-tablist-indicator"></i>
+            <button class="tablist-tab" role="tab" aria-selected="false" aria-controls="panel-2" id="tab-2" tabindex="-1">두번째 탭</button>
+            <button class="tablist-tab" role="tab" aria-selected="false" aria-controls="panel-3" id="tab-3" tabindex="-1">세번째 탭</button>
+            <i class="tablist-indicator"></i>
           </nav>
-          <div class="profile-tabpanel" id="panel-1" role="tabpanel" tabindex="0" aria-labelledby="tab-1" style="margin: 0">
+          <div class="tabpanel" id="panel-1" role="tabpanel" tabindex="0" aria-labelledby="tab-1" style="margin: 0">
             <p>Content for the first panel. tablist는 tile inset에 .25rem을 쓰는 예외 케이스...</p>
           </div>
-          <div class="profile-tabpanel" id="panel-2" role="tabpanel" tabindex="0" aria-labelledby="tab-2" aria-hidden="true" style="margin: 0">
+          <div class="tabpanel" id="panel-2" role="tabpanel" tabindex="0" aria-labelledby="tab-2" aria-hidden="true" style="margin: 0">
             <p>Content for the second panel</p>
           </div>
-          <div class="profile-tabpanel" id="panel-3" role="tabpanel" tabindex="0" aria-labelledby="tab-3" aria-hidden="true" style="margin: 0">
+          <div class="tabpanel" id="panel-3" role="tabpanel" tabindex="0" aria-labelledby="tab-3" aria-hidden="true" style="margin: 0">
             <p>Content for the third panel</p>
           </div>
         </div>
@@ -1592,109 +1691,6 @@ arrow_drop_down
         <!-- <li>memo active 상태를 위해 filled 아이콘을 사용하는 것은 리소스 더 든다.</li> -->
       </ul>
       <!-- // iOS isTranslucent: Bool -->
-    </article>
-
-    <article class="article js-observer js-scrollspy-section">
-      <h1 class="article-title">Menu</h1>
-      <p class="article-description">사용자가 수행할 수 있는 행동 목록.</p>
-
-      <section class="component-example">
-        <div class="tile-flat">
-          <button class="button-elevated" title="" style="margin-top: 0; margin-bottom: 0.125rem">
-            <figure class="button-elevated-avatar">🦊</figure>
-            <span class="button-elevated-label">사진 및 동영상 백업</span>
-            <span class="switch" style="margin-left: auto">
-              <input type="checkbox" id="temp123456" name="" role="switch" />
-              <label for="temp123456" style="padding-left: 48px"></label>
-            </span>
-          </button>
-          <small>Google 포토에 최대 해상도로 백업</small>
-
-          <hr />
-
-          <menu>
-            <button class="item js-darkmode" role="menuitem" data-size="medium" title="change theme" style="width:100%;">
-              <figure class="item-avatar" style="background-image: none"><span class="material-symbols-outlined">nights_stay</span></figure>
-              <span class="item-label">어둡게 보기</span>
-              <span class="switch" style="margin-left:auto;">
-                <input type="checkbox" id="temp55" name="" role="switch" />
-                <label for="temp55" style="padding-left: 48px"></label>
-              </span>
-            </button>
-            <div class="item" role="menuitem" data-size="medium" style="width:100%;">
-              <figure class="item-avatar">🏹</figure>
-              <span class="item-label">entity와 구별</span>
-              <span class="item-tag" data-style="primary">새소식</span>
-            </div>
-            <div class="item" role="menuitem" data-size="medium" style="width:100%;">
-              <figure class="item-avatar"></figure>
-              <span class="item-label">카카오뱅크</span>
-              <span class="checkbox" style="margin-left:auto;">
-                <input type="checkbox" id="tttttest" name="tttttest" value="" checked />
-                <label for="tttttest" title=""></label>
-              </span>
-            </div>
-          </menu>
-
-        </div>
-
-        <div class="tile-flat">
-          <div class="item" data-size="large" role="menuitem">
-            <figure class="item-avatar"></figure>
-            <b class="item-label">windows 패턴 with quick action. not acition. 모바일에 비적합.</b>
-            <button class="chip" style="margin-left: auto; margin-right: var(--space-2)">
-              <span class="chip-label">휴대폰과 연결 열기</span>
-            </button>
-            <span class="material-symbols-outlined">chevron_right</span>
-          </div>
-        </div>
-
-        <div class="tile-flat">
-          <div class="navbar-menu-item has-submenu" style="margin: var(--space-2) 0 0 0; padding: 0">
-            <span role="menuitem">subheading</span>
-            <menu>
-              <a href="#design">Only Text</a>
-              <a href="#design">Only Text Menu</a>
-            </menu>
-          </div>
-        </div>
-      </section>
-
-      <h2 class="article-subhead">Best practices</h2>
-      <p>토글 또는 액션에 한정하여 오른쪽에 배치합니다. 태그를 오른쪽에 정렬하지 마세요.</p>
-
-      <h2 class="article-subhead"></h2>
-
-      <p>anatomy: item-action은 컨테이너 </p>
-
-      <ul>
-        <li>item-label의 line-heigh를 지정해야 아바타가 없을 떄 대응가능</li>
-        <li>button-elevated와 차이</li>
-        <li>meta problem: 모든 menuitem이 clickable은 아니다. => no 액션 버튼이 따로 존재할 수도 있어야 한다. 이 정보가 중요한 이유 hover 상태 표현을 위해.</li>
-        <li>확장:: setting item에서 tile 형태 + helper</li>
-        <li>menuitem. - title(truncated) + action(chip - togglable)/link(chevron?)/선택(checkbox/switch) / aligns: vertical. large/medium</ㅣ>
-
-
-        <li>
-          메뉴 아이템의 우측에 'new' 등 태그 컴포넌트를 배치하지 마세요. 액션 또는 액션 인티케이터만 위치할 수 있습니다. (case 토스. 우측 new)
-        </li>
-        <li><b>presentations:</b> modal, dropdown, sheet, sidebar. dropdown</li>
-        <!-- <li>todo. check icon을 컴포넌트로 만들고 checkbox의 구조를 변경하기. check icon을 svg로 변경.</li> -->
-      </ul>
-
-      <!-- <p>listitem은 li라서 제거함</p> -->
-      <!-- <p>Menu -> MenuButton / MenuList -> MenuItem. MenuLink</p> -->
-
-      <!-- <h4 class="article-subhead">Props</h4> -->
-
-      <!-- <h4 class="article-subhead">Related components</h4>
-      <a href="">entity</a>
-      <span class="icon-bullet"></span>
-      <a href="">avatar</a>
-      <span class="icon-bullet"></span>
-      <a href="">checkbox</a>
-      <span class="icon-bullet"></span>
-      <a href="">radio</a> -->
     </article>
 
     <article class="article js-observer js-scrollspy-section">
@@ -1925,8 +1921,8 @@ arrow_drop_down
           </header>
           <article class="accordion js-accordion is-active" aria-expanded="false">
             <h3 class="accordion-title" role="button">
-              탈퇴하고 싶어요.
               <figure class="accordion-title-icon material-symbols-outlined">arrow_right</figure>
+              탈퇴하고 싶어요.
             </h3>
             <div class="accordion-panel">
               <p>모든 국민은 건강하고 쾌적한 환경에서 생활할 권리를 가지며, 국가와 국민은 환경보전을 위하여 노력하여야 한다.</p>
@@ -2073,7 +2069,7 @@ arrow_drop_down
             <button class="dialog-footer-confirm">안 볼래요</button>
             <button class="dialog-footer-cancel">볼래요</button>
           </footer>
-          <button class="dialog-close js-close" aria-label="닫기"><span class="material-symbols-outlined">close</span></button>
+          <close-button></close-button>
         </aside>
       </section>
 
@@ -2081,7 +2077,7 @@ arrow_drop_down
         <!-- <li>레이어를 2개 이상 쌓지 마세요. 모달의 가이드</li> -->
         <li>버튼의 레이블은 다이얼로그 제목의 동사와 페어링합니다.</li>
         <li>memo: modal의 구조: header/body/footer. 단순 다이얼로그는 복잡한 구조가 필요 없다.</li>
-        <li>memo: dim엘리먼트 클릭 시 모달을 닫으면 리액트에서 구현이 쉬움. 이 dim은 sheet에서 재사용할 수 있다.</li>
+        <li>memo: overay엘리먼트 클릭 시 모달을 닫으면 리액트에서 구현이 쉬움. 이 overay은 sheet에서 재사용할 수 있다.</li>
         <li>buttonGroup type="unary(confirm) | binary(cancel/confirm)</li>
       </ul>
 
@@ -2163,8 +2159,6 @@ arrow_drop_down
         <dd>string</dd>
         <dt>href</dt>
         <dd>string</dd>
-        <!-- <dt>primaryAction</dt>
-        <dd>() => void</dd> -->
       </dl>
 
       <h4 class="article-subhead">with Toast</h4>
@@ -2185,7 +2179,6 @@ arrow_drop_down
       </p>
     </aside> -->
     </article>
-
 
     <article class="article js-observer js-scrollspy-section">
       <h1 class="article-title">Workflow</h1>
@@ -2213,7 +2206,7 @@ arrow_drop_down
               <h3 class="step-item-label">주문완료</h3>
             </div>
           </section>
-        </div>  
+        </div>
         <div class="tile-flat">
           <section class="step">
             <div class="step-item is-active">
@@ -2242,12 +2235,11 @@ arrow_drop_down
       </section>
 
       <ul>
-       <li>타임라인과 구분. 타임라인은 히스토리 맥락으로 스텝의 역순. 확장, 링크, indentation</li>
+        <li>타임라인과 구분. 타임라인은 히스토리 맥락으로 스텝의 역순. 확장, 링크, indentation</li>
       </ul>
 
       <h2 class="article-subhead">Changelog</h2>
       <p>클릭하고 싶지 않은 형태로 변경 2021.10</p>
-
     </article>
 
     <!-- <article class="article js-observer js-scrollspy-section">
@@ -2366,7 +2358,7 @@ arrow_drop_down
 
     <article class="article js-observer js-scrollspy-section">
       <h1 class="article-title">Suggestion</h1>
-      <p class="article-description">샘플.</p>
+      <p class="article-description">작성중</p>
 
       <section class="component-example">
         <div class="product-info-price tile-flat" role="suggestion" style="margin: 0">
@@ -2457,14 +2449,13 @@ arrow_drop_down
 </main>
 <!-- <article class="article">
       <h1 class="article-title">Range</h1>
-      <p class="article-description">샘플.</p>
+      <p class="article-description"></p>
       <div class="range">
         <label for="">숙박 인원</label>
         <input type="range" min="1" max="10" value="2" step="any" list="tickmarks" id="myRange">
         <datalist id="tickmarks">
           <option value="0" label="0"></option>
           <option value="5" label="5"></option>
-          <option value="10" label="10"></option>
         </datalist>
       </div>
     </article> -->

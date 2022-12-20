@@ -25,9 +25,7 @@
   </popup-info> -->
 
   <header class="design-head">
-    <div class="obbbb">
-      <img src="" alt="" />
-    </div>
+    <div class="obbbb" style="width: var(--size-small); height: var(--size-small)"></div>
     <h1 class="" title="overall consistency and design and development efficiency">To simplify is to clarify<i style="font-style: italic">.</i></h1>
     <p class="hero-description" style="font-size: var(--font-size-large)">
       라이브 중인 서비스의 디자인 시스템이 아니기 때문에
@@ -115,11 +113,6 @@
       <h3 class="feature-item-title">Trustworthy <span hidden>Visual</span> cue?</h3>
       <p class="feature-item-description">? 예측 가능하고 일관된 기표로 UX 부채와 기술 부채를 최소화. 친숙한 경험과 신뢰.</p>
     </div>
-    <!-- <div class="design-guide-item feature-item" style="margin:1rem;">
-      <figure class="feature-item-avatar">🦘</figure>
-      <h3 class="feature-item-title">Universal...</h3>
-      <p class="feature-item-description">학습을 줄이고, 디자인 줄이고, 빠느고 쾌적한 경험</p>
-    </div> -->
   </section>
 
   <section class="design-guide" style="margin: 8rem var(--grid-margin)">
@@ -149,14 +142,13 @@
       </div>
       <!-- <p>복잡한 추상화를 피하기.</p> -->
     </div>
-
-    <blockquote style="margin: 1rem 0">
+    <!-- <blockquote style="margin: 1rem 0">
       <ul>
-        <li>Dos, Don'ts 케이스는 텍스트로 작성하세요. 이미지는 불필요한 관리 리소스.</li>
-        <li>best practices: ...</li>
-        <li>other cases: for meta problems</li>
+        <li style="padding: 0">Dos, Don'ts 케이스는 텍스트로 작성하세요. 이미지는 불필요한 관리 리소스.</li>
+        <li style="padding: 0">best practices: ...</li>
+        <li style="padding: 0">other cases: for meta problems</li>
       </ul>
-    </blockquote>
+    </blockquote> -->
   </section>
 
   <!-- <section>
@@ -188,18 +180,11 @@
       <p class="postitem-description">플랫폼에 종속되지 않는 정보 형태, 그리고 콘텐츠 시대의 탐색 경험.</p>
 
       <figure class="avatar"></figure>
-      <div style="display: flex; align-items: center">
-        Show more
-        <figure class="icon-button" data-size="small">
-          <span class="material-symbols-outlined">call_made</span>
-        </figure>
-      </div>
     </a>
-    <span class="postitem tile-elevated" style="cursor: not-allowed">
+    <span class="postitem tile-elevated" style="opacity: 0.5; cursor: not-allowed">
       <figure class="postitem-cover"></figure>
       <div class="tag-group">
         <span class="tag">Design</span>
-        <span class="tag"></span>
       </div>
       <h3 class="postitem-name">윤리적으로 디자인하기 (주제선정단계)</h3>
       <ul class="postitem-description">
@@ -210,14 +195,14 @@
         <li>성공/실패 등의 상태 정보를 색상만으로 표현하지 마세요.</li>
       </ul>
     </span>
-    <span class="postitem tile-elevated" onclick="javascript:alert('샘플 유아이입니다.')" style="cursor: not-allowed">
+    <span class="postitem tile-elevated" style="opacity: 0.5; cursor: not-allowed">
       <div class="tag-group">
         <span class="tag">Design System</span>
         <span class="tag">UX</span>
       </div>
       <figure class="postitem-cover"></figure>
       <h3 class="postitem-name">8pt grid를 위한 rem.</h3>
-      <ul>
+      <ul class="postitem-description">
         <li>root font size 16px에서 극대화할 수 있는 8pt grid.</li>
         <li>단위의 통일. 디자인 시스템, 컴포넌트 개발 트랜드에서 rem의 효용.</li>
         <li>size + space = larger size.</li>
@@ -225,14 +210,8 @@
     </span>
   </section>
 
-  <!-- <section class="design-foundations" style="display:flex;flex-wrap:wrap;">
-    <article class="item" data-size="large" style="height:var(--size-large);width:100%;">
-      <figure class="item-avatar" style="background:crimson;"></figure>
-      <h3 class="item-name">Foundations</h3>
-      <p class="item-description">descriptionggggg</p>
-      <button class="item-action"><span class="item-action-label">팔로우</span></button>
-    </article>
-    <div class="foundation-item" style="width:320px;margin-right:1rem;">
+  <!-- <section class="design-foundations" style="display: flex; flex-wrap: wrap">
+    <div class="foundation-item" style="width: 320px; margin-right: 1rem">
       <h2>Layout</h2>
       <figure></figure>
       <span>foundation 1</span>
@@ -254,7 +233,7 @@
     <div class="obbbb"></div>
 
     <h2 class="post-relation-title">Changelog (or Last updated)</h2>
-    <p class="post-relation-description">변경 사유를 블라블라</p>
+    <p class="post-relation-description">내용. 컴포넌트 스코프에서 컴포넌트의 히스토리를 관리.</p>
     <br /><br />
     <!-- <time class="tag">2022. 12. 02.</time>
     <div class="timeline-item" style="padding-top: 0.5rem; padding-bottom: 1rem">
@@ -262,6 +241,14 @@
       <span class="timeline-item-title">네이밍 컨벤션</span>
       <p class="timeline-description" style="color: var(--color-text-light)">중요도(p, s)가 아닌 스타일로 명명(solid, outlined)</p>
     </div> -->
+    <time class="timeline-date">2022. 12. 17.</time>
+    <div class="timeline-item" style="padding-top: 0.5rem">
+      <span class="timeline-item-icon" style="top: 0.5rem">✍️</span>
+      <span class="timeline-item-title">line-height 기본값 역전</span>
+      <p class="timeline-description" style="color: var(--color-text-light)">
+        단락을 제외하면 모든 케이스에서 line-height-small을 선언해야 하기 때문에 defalt / small을 defalt / large로 변경.
+      </p>
+    </div>
     <time class="timeline-date">2022. 11. 20.</time>
     <div class="timeline-item" style="padding-top: 0.5rem">
       <span class="timeline-item-icon" style="top: 0.5rem">✍️</span>
@@ -278,7 +265,7 @@
       <span class="timeline-item-icon" style="top: 0.5rem">✍️</span>
       <span class="timeline-item-title">체크박스</span>
       <p class="timeline-description" style="color: var(--color-text-light)">
-        label:before / after 선택자에서 input background를 사용. 체크아이콘 컴포넌트를 다양한 컴포넌트에 재활용하기 위해.
+        label:before / after 선택자에서 input background를 사용. 체크아이콘 컴포넌트를 다양한 컴포넌트에 재활용.
       </p>
     </div>
     <time class="timeline-date">2022. 8. 4.</time>
@@ -289,7 +276,7 @@
     </div>
 
     <footer>
-      <span onclick="javascript:alert('준비중')" style="display: flex; align-items: center; line-height: 24px"
+      <span onclick="javascript:alert('준비중')" style="display: flex; align-items: center; margin: 1rem 0 0 0; line-height: 24px"
         >더알아보기
         <span class="icon-indicator material-symbols-outlined">arrow_right_alt</span>
       </span>
@@ -309,294 +296,11 @@
     <a href="https://developer.android.com/reference" target="_blank">Android API reference</a>
     <a href="https://cube.fyi/" target="_blank">CUBE CSS</a>
     <a href="https://www.digitala11y.com/" target="_blank">Digital A11Y</a>
+
+    <!-- https://www.sitemaps.org/protocol.html -->
   </section>
 
   <!-- custom element:::: morning star-->
-
-  <!-- <section class="design-ticker">
-    <div class="marquee-box">
-      <article class="design-ticker-item tile-elevated">
-        <div class="item" data-size="large" role="listitem">
-          <figure class="item-avatar"></figure>
-          <span class="item-description">관심사가 비슷한 사용자</span>
-          <h2 class="item-name">Gyeongsoo I</h2>
-          <button class="item-action"><span class="item-action-label">팔로우</span></button>
-        </div>
-        <div class="temp8">
-          <div>
-            <figure>🧀</figure>
-            <span>Typography</span>
-          </div>
-          <div>
-            <figure style="background:cadetblue;">🌭</figure>
-            <span>Cinema</span>
-          </div>
-          <div>
-            <figure style="background:darkseagreen;">🌮</figure>
-            <span>Design System</span>
-          </div>
-          <div>
-            <figure style="background:lightsalmon;">🍿</figure>
-            <span>Startup</span>
-          </div>
-        </div>
-      </article>
-      <div class="share design-ticker-item">
-        <h2 class="share-title">가족이나 친구와<br />함께 보세요!</h2>
-        <hr />
-        <button class="share-back"><span class="material-symbols-outlined">close</span></button>
-        <button class="share-facebook">
-          <span class="share-facebook-icon"></span>
-          facebook으로 공유하기
-        </button>
-        <button class="share-twitter">
-          <span class="share-twitter-icon"></span>
-          twitter로 공유하기
-        </button>
-        <button class="share-kakao">
-          <span class="share-kakao-icon"></span>
-          kakao로 공유하기
-        </button>
-        <hr />
-        <div class="share-copy textfield">
-          <input class="share-copy-url textfield-input" type="text" value="https://newneek.co/post/jadebabo" readonly />
-          <button class="share-copy-button js-copy" type="button" tabindex="0" style="border:none;background:var(--color-background);">
-            주소 복사
-          </button>
-        </div>
-      </div>
-      <div class="card has-clickable design-ticker-item" role="listitem">
-        <figure class="card-thumbnail"><img src="/public/images/springsteen.jpg" alt="" loading="lazy" /></figure>
-        <h3 class="card-title">카드 유아이</h3>
-        <p class="card-text">
-          따봉은 상세페이지에서 제공하세요. 뉴스피드 유아이에서는 밖에서 제공할 수 있어요.북마크는 밖에 두어도 좋은가? 상세페이지에서 제공하는 것이
-          좋음. 기능이 많아짐. 신선식품 장바구니는 밖에 인정. 보조 텍스트는 최대 두 줄이다.
-        </p>
-        <time class="card-date">2017. 12. 21.</time>
-        <div class="card-tags" role="group">
-          <span class="card-tags-item">기획</span>
-          <span class="card-tags-item">UI</span>
-          <span class="card-tags-item">React</span>
-        </div>
-        <span class="card-category">카테고리</span>
-        <hr />
-        <div class="item" data-size="large">
-          <figure class="item-avatar">🍊</figure>
-          <h4 class="item-name">퓨어 오렌지 주스</h4>
-          <div class="item-price"><del>₩19,000</del> ₩16,000 <em>할인율 20%</em></div>
-        </div>
-        <div class="card-note">마일리지 적립 200P</div>
-        <button class="card-more" hidden>
-          <span class="material-symbols-outlined">
-            more_vert
-          </span>
-        </button>
-      </div>
-      <article class="tile-elevated design-ticker-item">
-        <h3 style="text-align:center;">Ratings</h3>
-        <div
-          class="statistic-item tile-flat"
-          aria-label="별점 5개 만점에 3.9개를 받았습니다."
-          style="margin-top:.5rem;text-align:center;z-index:auto;"
-        >
-          <i class="statistic-label">리뷰 116만개</i>
-          <span class="statistic-value" style="margin-left:-.5rem;">⭐ 4.8</span>
-        </div>
-        <div class="graph2">
-          <b class="graph-label">5 Stars</b>
-          <div class="graph-bar"><b style="width:68%;"></b></div>
-          <span class="graph-value">68%</span>
-        </div>
-        <div class="graph2">
-          <b class="graph-label">4 Stars</b>
-          <div class="graph-bar"><b style="width:24%;"></b></div>
-          <span class="graph-value">24%</span>
-        </div>
-        <div class="graph2">
-          <b class="graph-label">3 Stars</b>
-          <div class="graph-bar"><b style="width:0;"></b></div>
-          <span class="graph-value">0%</span>
-        </div>
-        <div class="graph2">
-          <b class="graph-label">2 Stars</b>
-          <div class="graph-bar"><b style="width:2%;"></b></div>
-          <span class="graph-value">2%</span>
-        </div>
-        <div class="graph2">
-          <b class="graph-label">1 Star</b>
-          <div class="graph-bar"><b style="width:6%;"></b></div>
-          <span class="graph-value">6%</span>
-        </div>
-        <small>별 다섯개에서 점수만큼 채우는 유아이는 요즘 잘 안 보임.</small>
-      </article>
-      <div class="tile-elevated design-ticker-item">
-        <a class="user" href="#settings">
-          <figure class="user-avatar">
-            <div class="user-avatar-change"></div>
-          </figure>
-          <h2 class="user-name">soojubm</h2>
-          <div class="user-email">soojubm@gamil.com</div>
-          <div class="user-myinfo">내 프로필 관리</div>
-        </a>
-        <hr role="separator" />
-        <button class="user-logout" title="change theme">
-          <figure class="button-elevated-avatar"><span class="material-symbols-outlined">nights_stay</span></figure>
-          <span class="button-elevated-label">어둡게 보기</span>
-          <span class="switch" style="margin-left:auto;">
-            <input type="checkbox" id="temp55" name="" role="switch" />
-            <label for="temp55" style="padding-left:48px;"></label>
-          </span>
-        </button>
-        <button class="user-logout" title="sign out">
-          <figure class="user-logout-icon">
-            <span class="material-symbols-outlined">
-              logout
-            </span>
-          </figure>
-          <span class="user-logout-label">고객센터 및 도움말</span>
-        </button>
-        <hr />
-        <button class="user-logout" title="sign out">
-          <figure class="user-logout-icon">
-            <span class="material-symbols-outlined">
-              logout
-            </span>
-          </figure>
-          <span class="user-logout-label">로그아웃</span>
-        </button>
-        <hr role="separator" />
-        <footer class="user-footer" style="margin:-.5rem 0 0 0;">
-          <small>샘플 유아이 컴포넌트입니다.</small>
-        </footer>
-      </div>
-    </div>
-
-    <div class="marquee-box">
-      <article class="design-ticker-item tile-elevated">
-        <div class="item" data-size="large" role="listitem">
-          <figure class="item-avatar"></figure>
-          <span class="item-description">관심사가 비슷한 사용자</span>
-          <h2 class="item-name">Gyeongsoo I</h2>
-          <button class="item-action"><span class="item-action-label">팔로우</span></button>
-        </div>
-        <div class="temp8">
-          <div>
-            <figure>🧀</figure>
-            <span>Typography</span>
-          </div>
-          <div>
-            <figure style="background:cadetblue;">🌭</figure>
-            <span>Cinema</span>
-          </div>
-          <div>
-            <figure style="background:darkseagreen;">🌮</figure>
-            <span>Design System</span>
-          </div>
-          <div>
-            <figure style="background:lightsalmon;">🍿</figure>
-            <span>Startup</span>
-          </div>
-        </div>
-      </article>
-      <div class="share design-ticker-item">
-        <h2 class="share-title">가족이나 친구와<br />함께 보세요!</h2>
-        <hr />
-        <button class="share-back"><span class="material-symbols-outlined">close</span></button>
-        <button class="share-facebook">
-          <span class="share-facebook-icon"></span>
-          facebook으로 공유하기
-        </button>
-        <button class="share-twitter">
-          <span class="share-twitter-icon"></span>
-          twitter로 공유하기
-        </button>
-        <button class="share-kakao">
-          <span class="share-kakao-icon"></span>
-          kakao로 공유하기
-        </button>
-        <hr />
-        <div class="share-copy textfield">
-          <input class="share-copy-url textfield-input" type="text" value="https://newneek.co/post/jadebabo" readonly />
-          <button class="share-copy-button js-copy" type="button" tabindex="0" style="border:none;background:var(--color-background);">
-            주소 복사
-          </button>
-        </div>
-      </div>
-      <div class="card has-clickable design-ticker-item" role="listitem">
-        <figure class="card-thumbnail"><img src="/public/images/springsteen.jpg" alt="" loading="lazy" /></figure>
-        <h3 class="card-title">카드 유아이</h3>
-        <p class="card-text">
-          따봉은 상세페이지에서 제공하세요. 뉴스피드 유아이에서는 밖에서 제공할 수 있어요.북마크는 밖에 두어도 좋은가? 상세페이지에서 제공하는 것이
-          좋음. 기능이 많아짐. 신선식품 장바구니는 밖에 인정. 보조 텍스트는 최대 두 줄이다.
-        </p>
-        <time class="card-date">2017. 12. 21.</time>
-        <div class="card-tags" role="group">
-          <span class="card-tags-item">기획</span>
-          <span class="card-tags-item">UI</span>
-          <span class="card-tags-item">React</span>
-        </div>
-        <span class="card-category">카테고리</span>
-        <hr />
-        <div class="item" data-size="large">
-          <figure class="item-avatar">🍊</figure>
-          <h4 class="item-name">퓨어 오렌지 주스</h4>
-          <div class="item-price"><del>₩19,000</del> ₩16,000 <em>할인율 20%</em></div>
-        </div>
-        <div class="card-note">마일리지 적립 200P</div>
-        <button class="card-more" hidden>
-          <span class="material-symbols-outlined">more_vert</span>
-        </button>
-      </div>
-      <div class="quote design-ticker-item">
-        <div class="quote-avatar">🥫</div>
-        <h3 class="quote-title">Quote</h3>
-        <p class="quote-body" style="white-space:unset;">Don't you know that God is Pooh bear? Don't you know that God is Pooh bear?</p>
-        <div class="quote-byline">
-          <div class="quote-byline-name">Jack Kerouac</div>
-          <div class="quote-byline-job">Poet / Novelist</div>
-        </div>
-        <button class="quote-action">자세히 알아보기</button>
-      </div>
-      <article class="tile-elevated design-ticker-item">
-        <h3 style="text-align:center;">Ratings</h3>
-        <div
-          class="statistic-item tile-flat"
-          aria-label="별점 5개 만점에 3.9개를 받았습니다."
-          style="margin-top:.5rem;text-align:center;z-index:auto;"
-        >
-          <i class="statistic-label">리뷰 116만개</i>
-          <span class="statistic-value" style="margin-left:-.5rem;">⭐ 4.8</span>
-        </div>
-        <div class="graph2">
-          <b class="graph-label">5 Stars</b>
-          <div class="graph-bar"><b style="width:68%;"></b></div>
-          <span class="graph-value">68%</span>
-        </div>
-        <div class="graph2">
-          <b class="graph-label">4 Stars</b>
-          <div class="graph-bar"><b style="width:24%;"></b></div>
-          <span class="graph-value">24%</span>
-        </div>
-        <div class="graph2">
-          <b class="graph-label">3 Stars</b>
-          <div class="graph-bar"><b style="width:0;"></b></div>
-          <span class="graph-value">0%</span>
-        </div>
-        <div class="graph2">
-          <b class="graph-label">2 Stars</b>
-          <div class="graph-bar"><b style="width:2%;"></b></div>
-          <span class="graph-value">2%</span>
-        </div>
-        <div class="graph2">
-          <b class="graph-label">1 Star</b>
-          <div class="graph-bar"><b style="width:6%;"></b></div>
-          <span class="graph-value">6%</span>
-        </div>
-        <small>별 다섯개에서 점수만큼 채우는 유아이는 요즘 잘 안 보임.</small>
-      </article>
-    </div>
-    <div class="design-ticker-overay"></div>
-  </section> -->
 </main>
 
 <!-- <ul>

@@ -3,6 +3,9 @@
     <h1 class="hero-title">Tokens</h1>
   </section> -->
 
+
+  <!-- // ! what-target-option(thiness/states), gray is... non semantic -->
+
   
   <!-- <h1 class="hero-title">일관된 시각 경험. 크로스 플랫폼. 확장과 유지 보수.</h1> -->
   <!-- <ul>
@@ -51,14 +54,12 @@
   </nav>
 
   <section class="tokens-body">
-    <h3></h3>
-    <article class="article">
+    <!-- <article class="article">
       <div>1~2번 사용하는 예외케이스를 토큰으로 정의하지 마세요. 컴포넌트 스코프에서 예외 케이스로 보충하세요.</div>
       <li>MD3 참고. surface는 shadow 뿐 아니라 color도. radius를 shape</li>
       <li>radius. pill과 non-pill은 양자택일. 인물 아바타를 특정하기 위해 circle은 허용할 수 있다. +++ 유투브 업데이트에서 용도 별로 pill + radius 2가지 형태의 필터링 칩을 제공.</li>
       <li>32px + .5rem + .5rem = 50px why. border가 있는 elevated button. hegiht 값을 넣어준다? => large 가 됨.</li>
-    </article>
-
+    </article> -->
 
     <article class="article js-scrollspy-section">
       <h1 class="article-title">Palette</h1>
@@ -69,14 +70,16 @@
         <li>theme. 인버트 컬러셋을 추가로 정의하지 않습니다. 하나의 컬러셋으로 다크 테마에 대응합니다. (쉽지 않음. 기술 의존이 높은 규칙..)</li>
       </ul>
       
-      <button class="button-elevated js-darkmode" title="change theme" style="max-width:280px;margin:.75rem 0 .25rem;">
-        <figure class="button-elevated-avatar"><span class="material-symbols-outlined">nights_stay</span></figure>
-        <span class="button-elevated-label">어둡게 보기</span>
-        <span class="switch" style="margin-left:auto;">
-          <input type="checkbox" id="temp55" name="" role="switch" />
-          <label for="temp55" style="padding-left:48px;"></label>
-        </span>
-      </button>
+      <div class="tile-elevated-small" style="max-width:280px;margin:.75rem 0 .25rem;">
+        <button class="menu-item js-darkmode" title="change theme">
+          <figure class="menu-item-avatar"><span class="material-symbols-outlined">nights_stay</span></figure>
+          <span class="menu-item-label">어둡게 보기</span>
+          <span class="switch" style="margin-left:auto;">
+            <input type="checkbox" id="temp55" name="" role="switch" />
+            <label for="temp55" style="padding-left:48px;"></label>
+          </span>
+        </button>
+      </div>
 
       <h4 class="article-subhead">Surfaces</h4>
       <div class="token-group">
@@ -107,7 +110,7 @@
           <div>
             <p>--color-background</p>
           </div>
-          <button class="icon-button" data-size="small" style="position:absolute;right:.5rem;top:.5rem;"><span class="material-symbols-outlined">content_copy</span></button>
+          <button class="icon-indicator" style="position:absolute;right:.5rem;top:.5rem;"><span class="material-symbols-outlined">content_copy</span></button>
         </article>
         <article class="token-item is-gray100">
           <figure class="token-item-avatar"></figure>
@@ -251,10 +254,10 @@
       <h4 class="article-subhead">Line heights <sup>2</sup></h4>
       <div class="token-group">
         <div class="token-item">
-          <b>--font-line-height: 1.8</b>
+          <b>--font-line-height-large: 1.8</b>
         </div>
         <div class="token-item">
-          <b>--font-line-height-small: 1.4</b>
+          <b>--font-line-height: 1.4</b>
         </div>
       </div>
 
@@ -441,7 +444,7 @@
         <div class="space" style="height:var(--space-inset-tile);position:absolute;left:0;right:0;bottom:-1px;z-index:0;"><span class="">var(--space-inset-tile)</span></div>
         <div class="space" style="width:var(--space-inset-tile);height:100%;writing-mode:vertical-lr;position:absolute;left:0;top:0;bottom:0;z-index:0;"><span class="">var(--space-inset-tile)</span></div>
         <div class="space" style="width:var(--space-inset-tile);height:100%;writing-mode:vertical-lr;position:absolute;right:0;top:0;bottom:0;z-index:0;"><span class="">var(--space-inset-tile)</span></div>
-        <h4 style="font-size:var(--font-size-large);line-height:var(--font-line-height-small);">선약이 있어서 ✋ <span style="display:block;">자아실현은 못할 것 같아요.</span></h4>
+        <h4 style="font-size:var(--font-size-large);">선약이 있어서 ✋ <span style="display:block;">자아실현은 못할 것 같아요.</span></h4>
         <div class="space" style="height:var(--space-after-subhead);"><span class="">var(--space-after-subhead)</span></div>
         <p class="typography-paragraph">서브헤드와 디스크립션 혹은 패러그라프는 이렇게 작성하세요. 타이틀의 행간이 조정되었기 때문에 시각보정이 필요할 수도 있어요. line-height 조절이 필요할 수도 있습니다.</p>
         <div class="space" style="height:var(--space-after-description);"><span class="">var(--space-after-description)</span></div>
@@ -546,9 +549,9 @@
     <article class="article js-scrollspy-section">
       <h1 class="article-title">Positioning</h1>
       <p class="article-description">위치잡기.</p>
-      <ul>
+      <!-- <ul>
         <li>reset은 작은 화면에 대응하기 위해사용합니다. z-index 보전을 위해 static이 아닌 relative로 초기화하세요.</li>
-      </ul>
+      </ul> -->
 
       <div class="token-group">
         <div class="token-item">
@@ -580,6 +583,7 @@
         <div class="token-item">
           <b style="margin:0;">--z-index-popover: 6</b>
           <!-- <div>
+  // ! z-index :: padding 중첩되면 같은 역할이라도. 마이너스 마진.
             <p>--zindex-dropdown: 6</p>
             <p>--zindex-tooltip: 6</p>
             <p>팝오버는 메뉴에서 열릴 수 있다.</p>
@@ -654,7 +658,7 @@
           <p>--duration: .4s</p>
         </div>
         <div class="token-item">
-          <p>--duration-quick: .2s</p>
+          <p>--duration-quick: .2s. todo quickly</p>
         </div>
         <div class="token-item">
           <p>--duration-slow: .8s</p>

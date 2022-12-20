@@ -1,10 +1,3 @@
-@mixin reset-button {
-  padding:0;border:none;background:none;font:inherit;color:inherit;cursor:pointer;
-  > * {pointer-events:none;} // for 이벤트 캡쳐
-}
-
-button {@include reset-button;}
-
 @mixin button {
   --button-text: null;
   --button-font-weight: var(--font-weight-bold);
@@ -15,21 +8,21 @@ button {@include reset-button;}
   justify-content: center;
   min-width: 6rem;
   height: var(--size-large);
-  padding: 1px var(--space-4) 0; // for quaannnn font
+  padding: 1px var(--space-4) 0;
   border-radius: var(--radius);
-  box-sizing:border-box;
+  box-sizing: border-box;
   font-weight: var(--font-weight-bold);
   position: relative;
+
   @content;
   &:hover:not(:disabled), &.is-hover:not(:disabled) {
-    // box-shadow: inset 0px 0px 2px rgba(0,0,0,.4);
     box-shadow: var(--state-hover);
   }
   &:focus, &.is-focus {
     outline: 0;
     box-shadow: var(--state-focus); // hover override
   }
-  &:active {}
+  // &:active {outline:0;animation:ripple2 0.2s linear forwards;}
   &:visited {}
   &:disabled {opacity:.5;cursor:not-allowed;}
 }
@@ -37,7 +30,6 @@ button {@include reset-button;}
 // ! role=button => spacebar X
 // button:not(:active),
 // button:not(:focus) {outline:0;}
-// button:active {outline:0;animation:ripple2 0.2s linear forwards;}
 // button:before {content:'';display:block;width:8px;height:8px;background:rgba(0,0,0,.2);position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);opacity:0;}
 // button:active:before {width:100%;height:100%;animation:ripple .6s;}
 
@@ -45,8 +37,8 @@ button {@include reset-button;}
 // &[aria-pressed=false] {}
 // &[aria-current] {}
 // &[aria-current=page] {}
-// &.is-submitting {opacity: .75;}
-// &:hover:not(:disabled), &.is-hover:not(:disabled) {// border-color:darken($green800, 2.5%);background:darken($green800, 2.5%);}
+
+// 믹스인은 버튼-프라이머리를 가져다 쓰기 위해서인데, css 정책을 완전 바꿔야 할 것 같다. utility => componenet.
 @mixin button-primary {
   @include button {
     background: var(--color-primary);
@@ -78,27 +70,10 @@ button {@include reset-button;}
 .button-tertiary {@include button-tertiary;}
 .button-text {@include button-text;}
 
-@mixin icon-button {@include avatar-medium;}
-@mixin icon-button-small {
-  @include avatar-small;
-  
-  // span {font-size:20px;}
-}
-@mixin icon-indicator {@include icon-button-small;margin:0 0 0 var(--space-2);}
+// 이거 이름 바꿨을 때 의존서이 너무 큼. mixin
 
-.icon-button[data-size=medium] {@include icon-button;}
-.icon-button[data-size=small] {@include icon-button-small;}
-.icon-button.is-positive {background:var(--green100);color:var(--green800);}
-.icon-button.is-negative {background:var(--red100);color:var(--red800);}
-
+@mixin icon-indicator {@include avatar-small;background-image:none;}
 .icon-indicator {@include icon-indicator;}
-
-// ! backButton closeButton :: back close 아이콘은 어차피 단독으로 쓰이지 않는다!
-// ! 모바일에서 100%로 되는 컴포넌트가 있고 아닌 컴포넌트가 있다.
-.button-elevated {@include tile-elevated-small;margin:var(--space-3) 0;display:flex;align-items:center;width:100%;}
-.button-elevated:hover {@include hover-item;}
-.button-elevated-avatar {@include avatar-medium;margin:0 var(--space-after-avatar-medium) 0 0;}
-.button-elevated-label {padding:0 0 var(--adjust-label-line) 0;line-height:var(--size-medium);}
-.button-elevated-helper {@include icon-button-small;margin-left:auto;}
+  // span {font-size:20px;}
 
 .danger-button {@include button;background:var(--red800);border:1px solid var(--red800);color:var(--gray0);}

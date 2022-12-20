@@ -95,7 +95,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,300,0,0" />
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4K1SS8B5C"></script>
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4K1SS8B5C"></script>
     <script>
       window.dataLayer = window.dataLayer || []
       function gtag() {
@@ -112,7 +112,7 @@
           page_path: location.pathname + location.hash,
         })
       })
-    </script>
+    </script> -->
   <script defer src="bundle.js"></script></head>
   <body class="is-opened-menu is-loading">
     <noscript>This website requires JavaScript.</noscript>
@@ -140,20 +140,12 @@
       <a class="skip-link" href="#footer">하단정보 바로가기</a>
     </nav>
 
+    <!-- // menu 태그 안에 heading을 포함하는 경우, 반응형을 위한 메뉴 구조는 안 된다. -->
     <nav class="navbar js-navbar" role="navigation">
-      <!--  aria-controls="menu" haspopup / expanded -->
       <button class="navbar-burger js-navbar-toggle" aria-label="전체메뉴" aria-haspopup="true" aria-expanded="false">
         <span class="material-symbols-outlined">lunch_dining</span>
       </button>
       <div class="navbar-menu">
-        <!-- <div class="navbar-menu-item has-submenu">
-          <menu>
-            <a class="" href="https://soojubm.notion.site/UI-Designer-9c18f4dd39eb4181b9f9c2ee76896618" target="_blank">
-              About
-              <span class="icon-button" data-size="small" style="margin-left:.5rem;"><span class="material-symbols-outlined">call_made</span></span>
-            </a>
-          </menu>
-        </div> -->
         <div class="navbar-menu-item has-submenu">
           <menu>
             <a href="#"><span class="material-symbols-outlined" style="margin-right: 0.25rem" aria-label="홈"> cottage </span></a>
@@ -162,14 +154,15 @@
             <a href="#components">Components</a>
             <a href="#dummies">Dummies</a>
             <!-- <a href="#utility">Utility 🚧</a> -->
-            <a href="#dictionary">Dictionary 🚧</a>
+            <a href="#dictionary">Memo 🚧</a>
             <!-- <a href="#hierarchy">Hierarchy <sup>foundation</sup></a> -->
           </menu>
         </div>
         <div class="navbar-menu-item has-submenu" style="margin: var(--space-2) 0 0 0">
-          <span class="menu-label" role="menuitem">Patterns</span>
           <menu>
+            <span class="menu-heading" role="heading">Patterns</span>
             <a href="#presentations_why">Presentations</a>
+            <a href="#menus">Menus</a>
             <a href="#filter">Filtering</a>
             <a href="#search">Searching</a>
             <a href="#texts">Texts</a>
@@ -181,8 +174,9 @@
           </menu>
         </div>
         <div class="navbar-menu-item has-submenu" style="margin: var(--space-2) 0 0 0" role="menu">
-          <span class="menu-label" role="menuitem">Interfaces</span>
+          <!-- <span class="menu-label" role="menuitem">Interfaces</span> -->
           <menu>
+            <span class="menu-heading" role="heading">Interfaces</span>
             <a href="#profile">User Profile 🔥</a>
             <a href="#kakaopay">Kakaopay</a>
             <a href="#login">Sign In</a>
@@ -208,6 +202,7 @@
           </menu>
         </div>
       </div>
+
       <a class="navbar-logo" href="/"><span style="margin-top: 3px">🦆</span></a>
 
       <div class="navbar-user">
@@ -239,7 +234,6 @@
         renderComponent('footer')
       })
 
-      // todp
       // const hash = window.location.hash
       // const navbarItem = document.querySelector(`[href="${hash}"]`)
       // navbarItem?.classList.add('is-active')
@@ -287,55 +281,6 @@
 
         offlineElement.hidden = !isOnline
       }
-    </script>
-
-    <script defer>
-      class PopUpInfo extends HTMLElement {
-        constructor() {
-          super()
-
-          const shadow = this.attachShadow({ mode: 'open' })
-
-          // ! 단점 react에서 활용하기 어려움. 구조를 생성하는 방식이 다르기 때문에.
-
-          // Create spans
-          const wrapper = document.createElement('span')
-          wrapper.setAttribute('class', 'wrapper')
-
-          const icon = document.createElement('span')
-          icon.setAttribute('class', 'icon')
-          icon.setAttribute('tabindex', '0')
-
-          const info = document.createElement('span')
-          info.setAttribute('class', 'info')
-
-          // Take attribute content and put it inside the info span
-          const text = this.getAttribute('data-text')
-          info.textContent = text
-
-          // Insert icon
-          let imgUrl = this.hasAttribute('img') ? this.getAttribute('img') : 'public/images/springsteen.jpg'
-
-          const img = document.createElement('img')
-          img.src = imgUrl
-          icon.appendChild(img)
-
-          // Apply external styles to the shadow dom
-          // const linkElem = document.createElement('link')
-          // linkElem.setAttribute('rel', 'stylesheet')
-          // linkElem.setAttribute('href', '/public/stylesheets/custom.scss')
-
-          // ! webpack css
-
-          // Attach the created elements to the shadow dom
-          // shadow.appendChild(linkElem)
-          shadow.appendChild(wrapper)
-          wrapper.appendChild(icon)
-          wrapper.appendChild(info)
-        }
-      }
-
-      customElements.define('popup-info', PopUpInfo)
     </script>
   </body>
 </html>

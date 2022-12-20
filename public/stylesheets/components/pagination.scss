@@ -1,13 +1,13 @@
 .pagination {display:flex;justify-content:center;position:relative;}
-.pagination-previous {@include avatar-medium;background-color:transparent;position:absolute;left:0;}
-.pagination-next {@include avatar-medium;background-color:transparent;position:absolute;right:0;}
-.pagination-link {@include avatar-medium;border:none;background-color:transparent;}
 
-.pagination-previous:hover,
-.pagination-next:hover,
-.pagination-link:hover {}
+.pagination > * {@include avatar-medium;border:none;background-color:transparent;}
+.pagination-previous {position:absolute;left:0;}
+.pagination-next {position:absolute;right:0;}
+.pagination-link {}
+
 .pagination-link.is-current {background-color:var(--color-primary);color:var(--gray0);}
-.pagination-ellipsis {@include avatar-medium;border:none;background-color:transparent;color:var(--color-text-light);letter-spacing:1px;}
+.pagination-ellipsis {color:var(--color-text-light);letter-spacing:1px;}
+
 // .pagination-last:before {content:'...';display:block;width:32px;height:32px;cursor:default;}
 
 .pagination2 {display:flex;justify-content:center;}

@@ -6,16 +6,16 @@
   </header> -->
   <section class="profile-user">
     <article class="user" style="text-align: left">
-      <figure class="profile-user-avatar" role="img"></figure>
-      <h2 class="profile-user-name">수줍이</h2>
+      <figure class="user-avatar" role="img"></figure>
+      <h2 class="user-name">수줍이</h2>
       <!-- <span class="profile-user-id">soojubm@gmail.com</span> -->
-      <span class="profile-user-job">UI Designer</span>
+      <span class="user-job">UI Designer</span>
     </article>
     <p class="profile-user-description">
       유아이를 그립니다. 배경을 넣어보았다. 모바일에서 팔로우 버튼을 상단으로 조정해야 한다. 업로드 버튼과 설정 버튼.
       <a class="profile-user-description-more" href="javascript:alert('유아이 패턴 샘플입니다.');">더 보기</a>
     </p>
-    <div class="profile-user-hashtags" role="group">
+    <div class="user-hashtags" role="group">
       <span class="tag">HTML5</span>
       <span class="tag">SASS</span>
       <span class="tag">VanillaJS</span>
@@ -27,10 +27,10 @@
       <span class="tag">GoogleOptimize</span>
       <span class="tag">Figma</span>
     </div>
-    <div class="profile-user-controls">
+    <menu class="profile-user-controls">
       <button class="profile-user-controls-follow">팔로우</button>
       <button class="profile-user-controls-message">메시지</button>
-    </div>
+    </menu>
 
     <button class="profile-user-toggle js-toggle" hidden>
       수줍이님이 더 궁금하신가요?
@@ -68,45 +68,22 @@
           <span class="avatargroup-label">Followed by 수줍이 외 4명</span>
         </article>
       </div>
-      <!-- <hr role="separator" />
-			<div class="profile-user-address">
-				<div><b>Tel</b> <span>+82 10 3121 7045</span></div>
-				<div><b>Email</b> <span>soojubm@gmail.com</span></div>
-				<div><img hidden aria-hidden="false" src="/public/icons/map-pin.svg" alt="map" /><b>Location</b>
-					<span>서울시 강서구 화곡동</span></div>
-			</div> -->
       <hr role="separator" />
       <div class="profile-user-socials social">
         <h2 class="profile-user-socials-title social-title" hidden>소셜 미디어</h2>
-        <a class="profile-user-socials-link social-link social-github" href="https://github.com/soojubm" target="_blank" rel="noopener noreferrer">
+        <a class="social-link social-github" href="https://github.com/soojubm" target="_blank" rel="noopener noreferrer">
           <figure class="social-link-icon"></figure>
           <span class="social-link-label">github</span>
-          <!-- <span class="material-symbols-outlined">call_made</span> -->
         </a>
-        <a
-          class="profile-user-socials-link social-link social-pinterest"
-          href="https://www.pinterest.co.kr/soojubm/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a class="social-link social-pinterest" href="https://www.pinterest.co.kr/soojubm/" target="_blank" rel="noopener noreferrer">
           <figure class="social-link-icon"></figure>
           <span class="social-link-label">pinterest</span>
         </a>
-        <a
-          class="profile-user-socials-link social-link social-facebook"
-          href="https://www.facebook.com/soojubm/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a class="social-link social-facebook" href="https://www.facebook.com/soojubm/" target="_blank" rel="noopener noreferrer">
           <figure class="social-link-icon"></figure>
           <span class="social-link-label">facebook</span>
         </a>
-        <a
-          class="profile-user-socials-link social-link social-instagram"
-          href="https://www.instagram.com/soojubm/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a class="social-link social-instagram" href="https://www.instagram.com/soojubm/" target="_blank" rel="noopener noreferrer">
           <figure class="social-link-icon"></figure>
           <span class="social-link-label">instagram</span>
         </a>
@@ -115,17 +92,17 @@
   </section>
 
   <section class="profile-body js-tab">
-    <nav class="profile-tablist" role="tablist">
-      <button class="profile-tablist-tab" role="tab" name="project" aria-selected="true" data-index="1">
-        <span class="profile-tablist-tab-label">프로젝트</span>
+    <nav class="tablist" role="tablist">
+      <button class="tablist-tab" role="tab" name="project" aria-selected="true" data-index="1">
+        <span class="tablist-tab-label">프로젝트</span>
       </button>
-      <button class="profile-tablist-tab" role="tab" name="case-study" aria-selected="false" data-index="2">
-        <span class="profile-tablist-tab-label">두 번째 탭</span>
+      <button class="tablist-tab" role="tab" name="case-study" aria-selected="false" data-index="2">
+        <span class="tablist-tab-label">두 번째 탭</span>
       </button>
-      <button class="profile-tablist-tab" role="tab" name="blank" aria-selected="false" data-index="3">
-        <span class="profile-tablist-tab-label">빈 상태</span>
+      <button class="tablist-tab" role="tab" name="blank" aria-selected="false" data-index="3">
+        <span class="tablist-tab-label">빈 상태</span>
       </button>
-      <i class="profile-tablist-indicator"></i>
+      <i class="tablist-indicator"></i>
     </nav>
 
     <!-- todo day night toggle과 동일한 패턴 -->
@@ -140,24 +117,10 @@
         <b aria-hidden="true" hidden>List</b>
       </button>
 
-      <!-- <div class="profile-sorting dropdown" style="margin-left:auto;">
-        <button class="dropdown-trigger js-toggle" aria-expanded="true">
-          <span class="dropdown-trigger-label">최신순</span>
-          <figure class="dropdown-trigger-icon">
-            <span class="material-symbols-outlined">
-              arrow_drop_down
-            </span>
-          </figure>
-        </button>
-        <menu class="dropdown-menu" role="menu" style="right:0;">
-          <h6 class="dropdown-menu-title" hidden>sorting options</h6>
-          <span class="dropdown-menu-link" onclick="javascript:alert('샘플이에요');">인기순</span>
-          <span class="dropdown-menu-link" onclick="javascript:alert('샘플이에요');">최신순</span>
-        </menu>
-      </div> -->
+      <!-- <div class="profile-sorting" style="margin-left:auto;"></div> -->
     </div>
 
-    <section class="profile-tabpanel" role="tabpanel" aria-hidden="false" data-index="1">
+    <section class="tabpanel" role="tabpanel" aria-hidden="false" data-index="1">
       <a class="card js-modal" href="#newneek" data-modal="newneek">
         <figure class="card-thumbnail">
           <img src="/public/images/newneek/gosum-spinner.png" style="margin-top: var(--space-3)" alt="" />
@@ -172,12 +135,12 @@
           <span class="card-tags-item">디자인</span>
           <span class="card-tags-item">프론트엔드개발</span>
         </div>
-        <div class="card-byline">
+        <!-- <div class="card-byline">
           <figure class="card-byline-avatar"><img src="/public/images/springsteen.jpg" alt="" /></figure>
           <span class="card-byline-name">수줍이</span>
-        </div>
+        </div> -->
         <button class="card-more" hidden>
-          <span class="material-symbols-outlined"> more_vert </span>
+          <span class="material-symbols-outlined">more_vert</span>
         </button>
       </a>
 
@@ -207,7 +170,7 @@
       </a>
     </section>
 
-    <section class="profile-tabpanel" hidden role="tabpanel" aria-hidden="true" data-index="2">
+    <section class="tabpanel" hidden role="tabpanel" aria-hidden="true" data-index="2">
       <a class="card js-modal" href="#" data-modal="flat_sitemap">
         <figure class="card-thumbnail"></figure>
         <h3 class="card-title">Flat Sitemap</h3>
@@ -217,7 +180,7 @@
       </a>
     </section>
 
-    <section class="profile-tabpanel" hidden role="tabpanel" aria-hidden="true" data-index="3">
+    <section class="tabpanel" hidden role="tabpanel" aria-hidden="true" data-index="3">
       <div class="empty">
         <i class="empty-icon">🧟</i>
         <h1 class="empty-title">아직 새 글이 없어요.</h1>

@@ -1,36 +1,32 @@
 <main class="feeds" role="feed" aria-busy="false">
-  <article class="tile-elevated" style="padding:1rem;z-index:1;">
-    <h2 style="margin-bottom:.5rem;line-height:var(--font-line-height-small);">Heading</h2>
-    <p style="margin-bottom:.5rem;">
-      Uniquely procrastinate open-source infomediaries vis-a-vis high-quality potentialities. Globally engineer.
-    </p>
-    <p style="margin-bottom:1rem;">
+  <article class="tile-elevated" style="padding: 1rem; z-index: 1">
+    <h2 style="margin-bottom: 0.5rem; line-height: var(--font-line-height)">Heading</h2>
+    <p style="margin-bottom: 0.5rem">Uniquely procrastinate open-source infomediaries vis-a-vis high-quality potentialities. Globally engineer.</p>
+    <p style="margin-bottom: 1rem">
       다이얼로그나 아티클에서만 1rem의 inset을 갖는 tile을 쓸 수 있다. 기본 tile은 기존 1rem에서 .75rem으로 변경한다. 이 패턴의 heading은 1.25rem이다.
       feed entity와 같은 콘테이너. footer는 toolbar이다.
     </p>
-    <time style="color:var(--color-text-light);">3월 14일 수정됨</time>
-    <div class="item" data-size="large" style="margin-top:.75rem;">
-      <figure class="item-avatar" style="overflow:hidden;"><img src="/public/images/springsteen.jpg" style="height:100%;" alt="" /></figure>
-      <h3 class="item-name">Kakao (bigger than)</h3>
-      <p class="item-description">https://www.kakaocorp.com</p>
-    </div>
-    <div class="item" data-size="large">
-      <figure class="item-avatar" style="overflow:hidden;"><img src="/public/images/springsteen.jpg" style="height:100%;" alt="" /></figure>
-      <h3 class="item-name">Naver</h3>
-      <p class="item-description">https://www.naver.com</p>
-    </div>
+    <time class="tag">3월 14일 수정됨</time>
+    <button class="menu-item" data-size="large">
+      <figure class="menu-item-avatar"><img src="/public/images/springsteen.jpg" alt="" /></figure>
+      <h3 class="menu-item-name">Kakao</h3>
+      <p class="menu-item-description">https://www.kakaocorp.com</p>
+    </button>
+    <button class="menu-item" data-size="large">
+      <figure class="menu-item-avatar"><img src="/public/images/springsteen.jpg" alt="" /></figure>
+      <h3 class="menu-item-name">Naver</h3>
+      <p class="menu-item-description">https://www.naver.com</p>
+    </button>
   </article>
 
   <article class="feed" aria-setsize="3" aria-posinset="1">
-    <article class="feed-user item" data-size="medium" role="menuitem">
-      <figure class="item-avatar"></figure>
-      <h3 class="item-name">수줍이</h3>
-      <time class="item-time" style="margin:0 0 0 .5rem;color:var(--color-text-light);">2 hour</time>
-    </article>
+    <button class="menu-item">
+      <figure class="menu-item-avatar"></figure>
+      <h3 class="menu-item-label">수줍이</h3>
+      <time class="menu-item-description">2 hour</time>
+    </button>
     <div class="feed-content tile-elevated">
-      <p class="feed-content-paragraph">
-        에러 처리 https://www.rinae.dev/posts/how-to-handle-errors-1
-      </p>
+      <p class="feed-content-paragraph">에러 처리 https://www.rinae.dev/posts/how-to-handle-errors-1</p>
       <p>
         컴포넌트 최적화
         https://blog.naver.com/PostView.naver?blogId=pjt3591oo&logNo=222281569378&parentCategoryNo=&categoryNo=103&viewDate=&isShowPopularPosts=false&from=postView
@@ -59,7 +55,7 @@
     <article class="feed-user item" data-size="medium" role="menuitem">
       <figure class="item-avatar"></figure>
       <h3 class="item-name">Elon Musk</h3>
-      <time style="margin:0 0 0 .5rem;color:var(--color-text-light);">2 hour</time>
+      <time style="margin: 0 0 0 0.5rem; color: var(--color-text-light)">2 hour</time>
     </article>
     <div class="feed-content tile-elevated">
       <figure class="feed-content-media">
@@ -70,22 +66,16 @@
         catalysts for change. Authoritatively restore ubiquitous partnerships vis-a-vis <a href="#feed">synergistic models</a>.
       </p>
 
-      <div class="feed-tag tag-group" style="margin:0 0 var(--space-4) 0;">
+      <div class="feed-tag tag-group" style="margin: 0 0 var(--space-4) 0">
         <span class="tag">Google</span>
       </div>
 
-      <ul style="margin:0 0 1.5rem 0;">
-        <li>
-          피드의 상세 페이지에서 전체 댓글 목록과 액션을 제공할 수 있다.
-        </li>
+      <ul style="margin: 0 0 1.5rem 0">
+        <li>피드의 상세 페이지에서 전체 댓글 목록과 액션을 제공할 수 있다.</li>
         <li>원활한 피드 탐색 경험을 위해 피드의 콘텐츠를 일부 생략해서 보여줄 수 있다.</li>
-        <li>
-          리액션 버튼과 리액션 수치를 각각 제공할 수 있고 따로 제공할 수 있다. 리액션한 사용자 목록을 어떻게 보여줄 것인가에 의존성이 있다.
-        </li>
+        <li>리액션 버튼과 리액션 수치를 각각 제공할 수 있고 따로 제공할 수 있다. 리액션한 사용자 목록을 어떻게 보여줄 것인가에 의존성이 있다.</li>
         <li>리액션에서 한 번 정리했던 것인데, 중복 리액션과 횟수 등 정의. restful - put과 함께 공부해보기</li>
-        <li>
-          피드가 노출되는 이유를 알려줄 수 있다. 마찬가지로 사용자는 보고 싶은 피드와 보고 싶지 않은 피드를 결정할 수 있다.
-        </li>
+        <li>피드가 노출되는 이유를 알려줄 수 있다. 마찬가지로 사용자는 보고 싶은 피드와 보고 싶지 않은 피드를 결정할 수 있다.</li>
         <li>시의성이 강조되는 서비스이거나 현안을 다루는 서비스라면 스텟을 실시간으로 갱신할 필요가 있다.</li>
         <li>피드 작성 폼의 양식 인터페이스를 제공할 필요가 있다.</li>
         <li>하나 이상의 이미지를 포함할 수 있다면, 하나 이상의 이미지를 볼 수 있는 인터페이스가 필요하다.</li>
@@ -106,7 +96,7 @@
     <article class="feed-user item" data-size="medium" role="menuitem">
       <figure class="item-avatar"></figure>
       <h3 class="item-name">Bruce Springsteen</h3>
-      <time style="margin:0 0 0 .5rem;color:var(--color-text-light);">22. 05. 02.</time>
+      <time style="margin: 0 0 0 0.5rem; color: var(--color-text-light)">22. 05. 02.</time>
     </article>
     <div class="feed-content tile-elevated">
       <p class="feed-content-paragraph">

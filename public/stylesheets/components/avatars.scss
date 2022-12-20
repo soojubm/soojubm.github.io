@@ -9,13 +9,13 @@
   // border-color: transparent;
   border-radius: var(--radius);
   box-sizing: border-box;
-  background: var(--color-background-weak);
-  background-size: cover !important;
-  // overflow:hidden; // for badge
+  background:url('/public/images/springsteen.jpg') no-repeat center var(--color-background-weak);
+  background-size: cover;
   position: relative;
   img {
     height: inherit;
     border-radius: var(--radius);
+    object-fit: cover;
   }
 }
 
@@ -24,3 +24,12 @@
 @mixin avatar-medium {@include avatar;}
 @mixin avatar-small {@include avatar(var(--size-small));}
 @mixin avatar-tiny {@include avatar(var(--size-tiny));}
+
+.avatar {
+  @include avatar;
+}
+
+.avatar[data-size=huge] {width:var(--size-huge);height:var(--size-huge);}
+.avatar[data-size=large] {width:var(--size-large);height:var(--size-large);}
+.avatar[data-size=medium] {width:var(--size-medium);height:var(--size-medium);}
+.avatar[data-size=small] {width:var(--size-small);height:var(--size-small);}

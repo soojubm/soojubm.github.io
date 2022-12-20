@@ -37,7 +37,7 @@ function tab() {
   function initializeIndicator() {
     if (!tabElement) return
 
-    const indicatorElement = tabElement.querySelector<HTMLElement>('.profile-tablist-indicator')
+    const indicatorElement = tabElement.querySelector<HTMLElement>('.tablist-indicator')
     if (!indicatorElement) return
 
     indicatorElement.style.left = `${selectedTab.offsetLeft}px`
