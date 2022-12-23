@@ -183,9 +183,16 @@ arrow_drop_down
       </nav>
     </div> -->
 
-    <!-- <p>button small 형태를 액션으로. chip.</p>
-    <p>해보기. action container, textfield container, tag container. 어디에서 인사이트? css modules</p>
-    <p>클래스 여러개 대신 속성이나 data attr 사용하는 것이 좋을지도.</p> -->
+    <!-- <p>button small 형태를 액션으로. chip.</p> -->
+    <div>nextjs와 css moduel에서 인사이트. 컴포넌트 컨테이너의 개념 만들어보기.</div>
+    <p>예를 들어, action container, textfield container, tag container, avatar container.</p>
+    <p>
+      avatar container의 use cases. icon-button, pagination link 등의 컴포넌트가 있기 때문이다. avatar 컴포넌트는 결국, avatar-container를 가지며,
+      avatar-fallback 등의 세부 내용을 적용.
+    </p>
+    <p>chip 컴포넌트와 button 컴포넌트는 action(가칭) container를 가지고, 이 컨테이는 다른 사이즈를 갖는다.</p>
+    <p>다중 클래스보다 여러개 대신 속성이나 data attr 사용하는 것이 스타일링에 좋을지도.</p>
+    <p>문제. 컨테이너의 surface는 clickable/non-clickable 에 따라 일정한 형태를 갖게 됨.</p>
 
     <article class="article js-observer js-scrollspy-section">
       <h1 class="article-title">Avatars</h1>
@@ -323,7 +330,7 @@ arrow_drop_down
       <section class="component-example">
         <div class="tile-flat">
           <button class="menu-item" data-tile="elevated" style="margin-top: 0; margin-bottom: 0.125rem">
-            <figure class="menu-item-avatar">🦊</figure>
+            <figure class="menu-item-avatar" style="background-image: none">🦊</figure>
             <span class="menu-item-label">사진 및 동영상 백업</span>
             <span class="switch" style="margin-left: auto">
               <input type="checkbox" id="temp123456" name="" role="switch" />
@@ -730,7 +737,7 @@ arrow_drop_down
       </div>
 
       <h4 class="article-subhead">Dropdown (overflow/pulldown)</h4>
-      <p>aria-expanded 속성</p>
+      <p>aria-expanded 속성. 글자수 제한을 하는 것이 좋다.</p>
       <div class="tile-flat" style="margin: var(--space-2) 0 var(--space-4)">
         <div class="chip-group">
           <div class="dropdown">
