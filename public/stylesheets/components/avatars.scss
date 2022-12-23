@@ -29,6 +29,11 @@
   @include avatar;
 }
 
+
+@mixin avatar-container {@include avatar;background-image:none;}
+@mixin avatar-container-tiny {@include avatar(var(--size-tiny));background-image:none;}
+@mixin avatar-fallback {background:url('/public/images/springsteen.jpg') no-repeat center var(--color-background-weak);}
+
 .avatar[data-size=huge] {width:var(--size-huge);height:var(--size-huge);}
 .avatar[data-size=large] {width:var(--size-large);height:var(--size-large);}
 .avatar[data-size=medium] {width:var(--size-medium);height:var(--size-medium);}

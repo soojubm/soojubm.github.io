@@ -6,8 +6,7 @@ input[type=number] {font-family:inherit;border:0;border-radius:0;color:inherit;}
 .number-input {}
 
 .quantity {display:flex;height:var(--size-medium);position:relative;}
-.quantity-input {width:100%;margin:0 var(--space-2);padding-bottom:2px;background:var(--color-background-weak);border-radius:var(--radius);text-align:center;
-}
+.quantity-input {width:100%;margin:0 var(--space-2);padding-bottom:2px;background:var(--color-background-weak);border-radius:var(--radius) !important;text-align:center;}
 // radius = iOS
 
 .quantity-decrement {@include chip;}

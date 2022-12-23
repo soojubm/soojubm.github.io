@@ -31,9 +31,13 @@ function getValidationMessage(valueType, pattern) {
 
     return null
   })
+
+  return result
 }
 
-export function validateUsername(value: string) {
+function getValidationMessageUsername() {}
+
+export function getValidationUsername(value: string) {
   const isTooShort = value.length < 4
   const isTooLong = value.length > 16
   const isSpecialCharacter = /[^가-힣ㄱ-ㅎㅏ-ㅣa-zA-Z0-9]/gi.test(value)
@@ -44,8 +48,6 @@ export function validateUsername(value: string) {
   if (isSpecialCharacter) return '닉네임 특수문자 포함 불가능.'
 
   return ''
-  // getValidationMessage return null
-  // username helperText는 항상 동일하기 때문에 모아둘 필요가 있을까?
 }
 
 export function validateEmail(value: string) {
@@ -65,16 +67,17 @@ export function validatePassword(value: string) {
   return ''
 }
 
-// 일단 함수로만.
 // 자릿수가 안 맞을 때 리턴하는 값이 다르고, 특수문자가 포함되었을 때 리턴하는 값이 다름.
 export function isValidEmail(value: string) {
   const regex = /^[가-힣a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[가-힣A-Z0-9.-]+\.[A-Z]{2,}$/i
 
   return regex.test(value.toLowerCase())
 }
+
 export function isValidPassword(value: string) {
   return value.length >= 8
 }
+
 export function isValidUsername(value: string) {
   // 특수문자 제외, 스페이스 허용 /^[a-zA-Zㄱ-힣0-9|s]*$/;
   const regex = /^[a-zA-Zㄱ-힣0-9]*$/
@@ -115,55 +118,40 @@ function validateForm(inputProps) {
   return verifyInputName[inputName](inputProps)
 }
 
-document.querySelectorAll('input').forEach(input => {
-  input.addEventListener('invalid', () => {
-    document.forms[0].classList.add('was-validated')
-  })
-  // form.was-validated input:invalid {
-  //   border-color: red;
-  // }
-})
+// var form = username.form;
+// var elements = form.elements;
 
-// input.addEventListener("invalid", () => {
-//   /**
-//    * ValidityState {
-//    *   badInput: false,  // 잘못된 입력
-//    *   customError: false, // 커스텀 오류
-//    *   patternMismatch: false, // 패턴 오류
-//    *   rangeOverflow: false, // 범위 초과 오류
-//    *   rangeUnderflow: false, // 범위 미달 오류
-//    *   stepMismatch: false, // 간격 오류
-//    *   tooLong: false, // 길이 오류
-//    *   tooShort: false, // 길이 오류
-//    *   typeMismatch: false, // 타입 오류
-//    *   valid: false, // 검증 결과
-//    *   valueMissing: true // 필수값 오류
-//    * }
-//    */
-//   console.log(input.validity)
-// })
+const validityState = {
+  badInput: false, // 잘못된 입력
+  customError: false, // 커스텀 오류
+  patternMismatch: false, // 패턴 오류
+  rangeOverflow: false, // 범위 초과 오류
+  rangeUnderflow: false, // 범위 미달 오류
+  stepMismatch: false, // 간격 오류
+  tooLong: false, // 길이 오류
+  tooShort: false, // 길이 오류
+  typeMismatch: false, // 타입 오류
+  // valid: false, // 검증 결과
+  valueMissing: true, // 필수값 오류
+}
 
-// 오류 메시지 사전을 만든다
-// const validityMessage = {
-//   badInput: "[커스텀 메시지] 잘못된 입력입니다.",
-//   patternMismatch: "[커스텀 메시지] 패턴에 맞게 입력하세요",
-//   rangeOverflow: "[커스텀 메시지] 범위를 초과하였습니다",
-//   rangeUnderflow: "[커스텀 메시지] 범위에 미달하였습니다",
-//   stepMismatch: "[커스텀 메시지] 간격에 맞게 입력하세요",
-//   tooLong: "[커스텀 메시지] 최대 글자 미만으로 입력하세요",
-//   tooShort: "[커스텀 메시지] 최소 글자 미만으로 입력하세요",
-//   typeMismatch: "[커스텀 메시지] 형식에 맞게 입력하세요",
-//   valueMissing: "[커스텀 메시지] 이 필드를 반드시 입력하세요",
-// }
+const validityMessage = {
+  badInput: '잘못된 입력입니다.',
+  patternMismatch: '패턴에 맞게 입력하세요',
+  rangeOverflow: '범위를 초과하였습니다',
+  rangeUnderflow: '범위에 미달하였습니다',
+  stepMismatch: '간격에 맞게 입력하세요',
+  tooLong: '최대 글자 미만으로 입력하세요',
+  tooShort: '최소 글자 미만으로 입력하세요',
+  typeMismatch: '형식에 맞게 입력하세요',
+  valueMissing: '이 필드를 반드시 입력하세요',
+}
 
-// // validity 객체를 받아 메시지 맵에서 오류 메시지를 찾는다
-// function getMessage(validity) {
-//   for (const key in validityMessage) {
-//     if (validity[key]) {
-//       return validityMessage[key]
-//     }
-//   }
-// }
+function getMessage(validity) {
+  for (const key in validityMessage) {
+    if (validity[key]) return validityMessage[key]
+  }
+}
 
 // function showError(input) {
 //   /**
@@ -178,15 +166,6 @@ document.querySelectorAll('input').forEach(input => {
 // input.addEventListener('invalid', () => {
 //   // 커스텀 에러메시지 설정
 //   showError(input)
-// })
-
-// function showError(input) {
-//   // 커스텀 오류 메시지 UI
-//   document.querySelector("#error").textContent = getMessage(input.validity)
-// }
-// input.addEventListener('invalid', e => {
-//   // 브라우져 툴팁 숨김
-//   e.preventDefault()
 // })
 
 const inputs = document.querySelectorAll('input')
@@ -205,22 +184,19 @@ for (let i = 0; i < inputs.length - 1; i++) {
   formItems.push(obj)
 }
 
-errorField.style.left = '-100%'
-
 form.onsubmit = validate
 
 function validate(e) {
   errorList.innerHTML = ''
+
+  if (errorList.innerHTML !== '') e.preventDefault()
+
   for (let i = 0; i < formItems.length; i++) {
     let testItem = formItems[i]
     if (testItem.input.value === '') {
       errorField.style.left = '360px'
       createLink(testItem)
     }
-  }
-
-  if (errorList.innerHTML !== '') {
-    e.preventDefault()
   }
 }
 
@@ -229,9 +205,8 @@ function createLink(testItem) {
   const anchor = document.createElement('a')
   anchor.textContent = testItem.input.name + ' field is empty: fill in your ' + testItem.input.name + '.'
   anchor.href = '#' + testItem.input.name
-  anchor.onclick = function() {
-    testItem.input.focus()
-  }
+  anchor.onclick = () => testItem.input.focus()
+
   listItem.appendChild(anchor)
   errorList.appendChild(listItem)
 }

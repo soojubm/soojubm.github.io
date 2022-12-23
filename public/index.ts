@@ -1,6 +1,5 @@
 'use strict'
 
-// import { validity } from './javascripts/utils/validations'
 // import { copyClipboard } from './javascripts/utils/formatUtils.js'
 
 import './stylesheets/style.scss'
@@ -62,36 +61,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // 여러 개 묶여 있음.
   // event.positionSticky({ selector: '.js-titlebar', addClass: 'is-sticky-titlebar', isPassed: false })
 })
-
-const debounce = (callback, delay) => {
-  let timerId
-  return event => {
-    // delay가 경과하기 이전에 이벤트가 발생하면 이전 타이머를 취소하고 새로운 타이머를 재설정
-    // delay보다 짧은 간격으로 이벤트가 발생하면 callback은 호출되지 않는다.
-    if (timerId) clearTimeout(timerId)
-    timerId = setTimeout(callback, delay, event)
-  }
-}
-
-// ! scroll rAF
-const throttle2 = (callback, delay) => {
-  let timerId
-  return event => {
-    // delay가 경과하기 전에 이벤트가 발생하면 아무동작도 하지 않는다.
-    // delay가 경과했을 때 이벤트가 발생하면서 새로운 타이머를 재설정한다.
-    // 따라서 delay 간격으로 callback이 호출된다.
-    if (timerId) return
-    timerId = setTimeout(
-      () => {
-        callback(event)
-        timerId = null
-      },
-      delay,
-      event,
-    )
-  }
-}
-// window.addEventListener('scroll', throttle2(scrollProgress, 50), true)
 
 function scrollProgress() {
   const containerElement = document.querySelector<HTMLElement>('.post')
@@ -226,26 +195,8 @@ async function domEvents() {
 
   parallax('.js-parallax')
 
-  // var lastScrollTop = 0
-  // const heroElement = document.querySelector('.hero')
   // element should be replaced with the actual target element on which you have applied scroll, use window in case of no target element.
   // document.addEventListener('scroll', throttle(test))
-
-  // // todo
-  // function test() {
-  //   if (!heroElement) return
-
-  //   var st = window.pageYOffset || document.documentElement.scrollTop
-  //   if (st > lastScrollTop && window.scrollY > 100) {
-  //     heroElement?.classList.add('is-fixed')
-  //     document.body.style.paddingTop = '140px'
-  //   } else {
-  //     heroElement?.classList.remove('is-fixed')
-  //     document.body.style.paddingTop = '0'
-  //   }
-
-  //   lastScrollTop = st <= 0 ? 0 : st // For Mobile or negative scrolling
-  // }
 
   carousel()
   focusComment()
@@ -308,7 +259,6 @@ function focusComment() {
 // helpers.forEach(helper => helper.style.display = 'none');
 // let loginData = {email: '', password: ''};
 
-//  const isEmail = event.target === email;
 // 	const isPassword = event.target === password;
 
 // 	const handleValidate = ({ target: any, validate: void, message: any }) => {
@@ -337,28 +287,6 @@ function focusComment() {
 // });
 
 // event.target.reset();
-
-// var form = username.form;
-// var elements = form.elements;
-
-// var hasError = function(field) {
-// 	if (field.disabled || field.type === 'file' || field.type === 'reset' || field.type === 'submit' || field.type === 'button') return;
-
-// 	var validity = field.validity;
-// 	if (validity.valid) return;
-
-// 	if (validity.valueMissing) return 'Please fill out this field.';
-// 	if (validity.typeMismatch) return 'Please use the correct input type.';
-// 	if (validity.tooShort) return 'Please lengthen this text.';
-// 	if (validity.tooLong) return 'Please shorten this text.';
-// 	if (validity.badInput) return 'Please enter a number.';
-// 	if (validity.stepMismatch) return 'Please select a valid value.';
-// 	if (validity.rangeOverflow) return 'Please select a smaller value.';
-// 	if (validity.rangeUnderflow) return 'Please select a larger value.';
-// 	if (validity.patternMismatch) return 'Please match the requested format.';
-
-// 	return 'The value you entered for this field is invalid.';
-// };
 
 // const ttt = item.tags.map(i => `<span class="tag">${i}</span>`).join('')
 
