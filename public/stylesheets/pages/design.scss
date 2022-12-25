@@ -10,11 +10,13 @@
 
 .article {padding:4rem var(--grid-margin);overflow:hidden;position:relative;}
 .article + .article {padding-top:6rem;}
+
 .article-aka {@include tag-group;margin:var(--space-4) 0;}
 .article-aka .hashtag:before {content:'';}
 .article-aka .tag {margin-right:var(--space-3);}
+
 .article-title {@include text-title;}
-.article-description {margin:0 0 2rem;@include text-title;}
+.article-description {margin:0 0 2rem;@include text-title;font-weight:var(--font-weight-normal);}
 // .article ul {margin:var(--space-after-subhead) 0 2rem;}
 
 .article p, ul {max-width: 800px;}
@@ -22,6 +24,7 @@
 .article-dont {padding:1rem;border-radius:var(--radius);background:var(--red100);}
 
 .article-subhead {margin:3rem 0 var(--space-2);@include text-subhead;}
+.article-subhead {margin:3rem 0 var(--space-after-subhead)}
 // .article-subhead + ul {margin-top: 0;}
 .article > .hashtag {margin:0 .25rem 0 0;font-size:var(--font-size-small);}
 
@@ -91,7 +94,7 @@
 }
 
 .greeting {}
-.greeting-avatar {@include avatar-large;float:right;margin:0 0 0 var(--space-4);position:relative;}
+.greeting-avatar {@include avatar-container-large;float:right;margin:0 0 0 var(--space-4);position:relative;}
 .greeting-avatar:hover {@include hover-item;cursor:pointer;background:var(--color-background);}
 .greeting-title {@include text-subhead;}
 .greeting-description {@include text-body;margin:0 0 0;color:var(--color-text-light);}
@@ -122,7 +125,6 @@
 .payment-method-list {display:flex;position:relative;}
 .payment-method-item {
   @include tile-elevated-small;
-  margin:0 .5rem 0 0;
   figure {
     @include avatar-huge;
     height:var(--size-large);
@@ -310,11 +312,11 @@
 .chat-date {margin:1rem var(--grid-margin);text-align:center;}
 
 .chat {margin:1.5rem 0;padding:0 0 0 calc(var(--size-medium) + var(--space-after-avatar-medium));position:relative;}
-.chat-avatar {@include avatar-medium;border:none;overflow:hidden;position:absolute;left:0;top:0;}
+.chat-avatar {@include avatar-container;border:none;overflow:hidden;position:absolute;left:0;top:0;}
 .chat-avatar img {height:100%;}
-.chat-username {font-size:var(--font-size-small);}
+.chat-username {display:block;margin:0 0 var(--space-1) 0;font-size:var(--font-size-small);}
 .chat-time {margin:0 0 0 var(--space-1);color:var(--color-text-light);font-size:var(--font-size-small);color:var(--color-text-light);position:absolute;bottom:-1.5rem;}
-.chat-bubble {width:fit-content;max-width:calc(90% - var(--size-medium));padding:var(--space-3) 1rem;background:var(--color-background-weak);  border-radius:1.5rem;border-top-left-radius:0;}
+.chat-bubble {width:fit-content;max-width:calc(90% - var(--size-medium));padding:var(--space-3) var(--space-4);background:var(--color-background-weak);  border-radius:1.5rem;border-top-left-radius:0;}
 .chat-bubble p {}
 .chat-bubble figure {width:90%;height:200px;border-radius:1.25rem;overflow:hidden;}
 .chat-bubble.has-image {padding:0;background:none;}

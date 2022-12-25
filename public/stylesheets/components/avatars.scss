@@ -7,10 +7,12 @@
   height: $size;
   // border: var(--border);
   // border-color: transparent;
+
+  background:url('/public/images/springsteen.jpg') no-repeat center;
+  background-size: cover;
+  background-color: var(--color-background-weak);
   border-radius: var(--radius);
   box-sizing: border-box;
-  background:url('/public/images/springsteen.jpg') no-repeat center var(--color-background-weak);
-  background-size: cover;
   position: relative;
   img {
     height: inherit;
@@ -29,10 +31,14 @@
   @include avatar;
 }
 
-
+@mixin avatar-container-large {@include avatar(var(--size-large));background-image:none;}
 @mixin avatar-container {@include avatar;background-image:none;}
+@mixin avatar-container-small {@include avatar(var(--size-small));background-image:none;}
 @mixin avatar-container-tiny {@include avatar(var(--size-tiny));background-image:none;}
-@mixin avatar-fallback {background:url('/public/images/springsteen.jpg') no-repeat center var(--color-background-weak);}
+@mixin avatar-fallback {
+  background:url('/public/images/springsteen.jpg') no-repeat center;
+  background-size: cover;}
+
 
 .avatar[data-size=huge] {width:var(--size-huge);height:var(--size-huge);}
 .avatar[data-size=large] {width:var(--size-large);height:var(--size-large);}

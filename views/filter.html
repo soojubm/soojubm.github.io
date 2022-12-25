@@ -27,24 +27,18 @@
           </footer>
         </menu>
       </div>
-      <div class="dropdown">
-        <button class="chip js-toggle" aria-expanded="true">
-          <span class="chip-label">예산</span>
-          <figure class="chip-icon material-symbols-outlined">arrow_drop_down</figure>
-        </button>
-      </div>
-      <div class="dropdown">
-        <button class="chip js-toggle is-active" aria-expanded="true">
-          <span class="chip-label">10평 미만</span>
-          <figure class="chip-icon material-symbols-outlined">arrow_drop_down</figure>
-        </button>
-      </div>
-      <div class="dropdown">
-        <button class="chip js-toggle" aria-expanded="true">
-          <span class="chip-label">접근성 편의</span>
-          <figure class="chip-icon material-symbols-outlined">arrow_drop_down</figure>
-        </button>
-      </div>
+      <button class="chip js-toggle" aria-expanded="true">
+        <span class="chip-label">예산</span>
+        <figure class="chip-icon material-symbols-outlined">arrow_drop_down</figure>
+      </button>
+      <button class="chip js-toggle is-active" aria-expanded="true">
+        <span class="chip-label">10평 미만</span>
+        <figure class="chip-icon material-symbols-outlined">arrow_drop_down</figure>
+      </button>
+      <button class="chip js-toggle" aria-expanded="true">
+        <span class="chip-label">접근성 편의</span>
+        <figure class="chip-icon material-symbols-outlined">arrow_drop_down</figure>
+      </button>
     </div>
 
     <hr />
@@ -74,7 +68,7 @@
       <fieldset class="filter-fieldset" role="radiogroup">
         <legend class="filter-fieldset-legend">예약옵션</legend>
 
-        <button class="menu-item" title="" style="margin-top: 0; margin-bottom: 0.125rem">
+        <button class="menu-item" data-tile="elevated" style="margin-top: 0; margin-bottom: 0.125rem">
           <figure class="menu-item-avatar">🦊</figure>
           <span class="menu-item-label">즉시 예약</span>
           <span class="switch" style="margin-left: auto">
@@ -82,7 +76,7 @@
             <label for="temp123456" style="padding-left: 48px"></label>
           </span>
         </button>
-        <small>호스트 승인을 기다릴 필요 없이 예약할 수 있는 숙소</small>
+        <small class="setting-item-helper">호스트 승인을 기다릴 필요 없이 예약할 수 있는 숙소</small>
       </fieldset>
 
       <hr />

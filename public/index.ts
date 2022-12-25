@@ -90,9 +90,9 @@ document.addEventListener('mouseover', mouseenterElement)
 
 // common 요소는 1번 이벤트..
 // ! hashchange 마다 cn 생성하는 것이 문제.
-document.addEventListener('DOMContentLoaded', () => {
-  carousel()
-})
+// document.addEventListener('DOMContentLoaded', () => {
+//   carousel()
+// })
 async function domEvents() {
   const navItemElements = document.querySelectorAll('.navbar-menu a')
   const hash = window.location.hash.substring(1)

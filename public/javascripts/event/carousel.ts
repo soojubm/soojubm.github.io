@@ -11,6 +11,8 @@ const carousel = () => {
 
   if (!viewer || !listItems || !prevButton || !nextButton) return
 
+  console.log('prevButton', prevButton)
+
   document.addEventListener('DOMContentLoaded', initialize)
 
   nextButton.addEventListener('click', toNext)
@@ -29,7 +31,7 @@ const carousel = () => {
     displayPrevButton('none')
   }
   function scroll() {
-    console.log(viewer?.scrollLeft)
+    // console.log(viewer?.scrollLeft)
     const { scrollLeft } = viewer as HTMLElement
 
     // scrollLeft 는 left 가 변경이 되는 것인지.

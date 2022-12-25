@@ -55,6 +55,37 @@
 
   <section class="component-body" style="margin: 0 var(--grid-margin);">
 
+      <div class="tile-flat" style="max-width:calc(360px + 1.5rem);margin-left:-.75rem;margin-right:-.75rem;position: relative;">
+        <b>Personal License</b>
+        <b class="item-price" style="position:absolute;right:var(--space-3);top:var(--space-3);">18,800 KRW</b>
+        <small style="display:block;color:var(--color-text-light);">1 user</small>
+      </div>
+
+      <article class="item" data-size="large" style="max-width:360px;">
+        <figure class="item-avatar" style="background-image:none;font-size:var(--font-size-large);">🎅🏻</figure>
+        <b class="item-name">Widgefy iOS Widgets</b>
+        <!-- <p class="item-description">description area.</p> -->
+        <div style="display: flex; align-items: center; color: var(--color-text-light)">
+          <small style="line-height: 24px">떡볶이</small>
+        </div>
+        <b class="item-price" style="position:absolute;right:0;top:0;">18,800 KRW</b>
+        <small style="color:var(--color-text-light);position:absolute;right:0;top:22px;">6410</small>
+      </article>
+
+      <article class="item" data-size="large" style="max-width:360px;">
+        <figure class="item-avatar" style="background-image:none;font-size:var(--font-size-large);">🎅🏾</figure>
+        <b class="item-name">BetaCRM Web UI Kit</b>
+        <!-- <p class="item-description">description area.</p> -->
+        <div style="display: flex; align-items: center; color: var(--color-text-light)">
+          <small style="line-height: 24px">떡볶이</small>
+        </div>
+        <b class="item-price" style="position:absolute;right:0;top:0;">500 KRW</b>
+        <small style="color:var(--color-text-light);position:absolute;right:0;top:22px;">6839</small>
+      </article>
+
+      <footer style="margin:1rem 0;"><button class="button-primary" style="width:100%;max-width:360px;font-size:15px;">Buy now</button></footer>
+    </div>
+
   <div class="album-track">
     <div class="album-track-label" role="row">
       <span class="album-track-label-item" role="columnheader">#</span>
@@ -218,19 +249,21 @@
     </article>
 
     <article class="tile-elevated" style="width: 100%; max-width: 400px; position: relative">
-      <h3 style="font-size: var(--font-size-large); font-weight:var(--font-weight-normal);">See this post in</h3>
-      <button class="" style="position: absolute; right: .5rem; top: .5rem">
-        <figure class="chip material-symbols-outlined">close</figure>
-      </button>
-      <hr />
-      <div class="item">
+      <header class="titlebar" style="padding: 0">
+        <h1 class="titlebar-title">See this post in</h1>
+        <button class="titlebar-back" aria-label="이전 페이지로">
+          <figure class="chip material-symbols-outlined">close</figure>
+        </button>
+      </header>
+      <br />
+      <div class="menu-item">
         <figure class="item-avatar"></figure>
-        <h2 class="item-name">수줍이 앱</h2>
+        <span class="menu-item-label">수줍이 앱</span>
         <button class="item-action"><span class="item-action-label">열기</span></button>
       </div>
-      <div class="item">
+      <div class="menu-item">
         <figure class="item-avatar"></figure>
-        <h2 class="item-name">사파리 브라우저</h2>
+        <span class="menu-item-label">사파리 브라우저</span>
         <button class="item-action is-active"><span class="item-action-label">계속</span></button>
       </div>
     </article>
@@ -296,12 +329,12 @@
       <div class="menu-item" data-size="large">
         <figure class="menu-item-avatar material-symbols-outlined">public</figure>
         <span class="menu-item-label">전체 공개</span>
-        <p class="menu-item-description">Facebook 안팎의 모든 사람</p>
+        <span class="menu-item-description">Facebook 안팎의 모든 사람</span>
       </div>
       <div class="menu-item is-active is-hoverable" data-size="large">
         <figure class="menu-item-avatar material-symbols-outlined">group</figure>
         <span class="menu-item-label">친구만</span>
-        <p class="menu-item-description">회원님의 Facebook 친구</p>
+        <span class="menu-item-description">회원님의 Facebook 친구</span>
         <div class="menu-item-action material-symbols-outlined" style=" color: var(--green800)">radio_button_checked</div>
         </span>
       </div>
@@ -928,7 +961,7 @@
 
     <hr />
 
-    <div class="jobitem" role="listitem" style="max-width: 400px; margin: 0 0 var(--space-4) 0">
+    <div class="jobitem" role="listitem" style="max-width: 400px;">
       <h2 class="jobitem-name">Senior Front-end Developer</h2>
       <div class="jobitem-tags">
         <span class="tag">Full-Time</span>

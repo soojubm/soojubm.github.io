@@ -9,7 +9,7 @@
     <menu class="textbox-toolbar">
       <div class="chip" style="margin:0 var(--space-2) 0 0;">
         <select class="" id="select2" style="background:none;border:none;padding:0 var(--space-4) 0 0;font:inherit;color:var(--color-text);">
-          <option class="select-option" value="select-option1">나눔고딕</option>
+          <option value="select-option1">나눔고딕</option>
         </select>
         <span class="select-indicator" role="img"><span class="material-symbols-outlined">
 arrow_drop_down
@@ -115,9 +115,9 @@ arrow_drop_down
     <i class="tablist-indicator" style="left: 4px; width: 211.056px"></i>
   </nav> -->
 
-  <nav class="component-navigation js-carousel" role="menubar">
+  <nav class="component-navigation" role="menubar">
     <div class="component-navigation-background"></div>
-    <div class="component-navigation-scroll js-carousel-viewer chip-group" role="group" data-align="bleed">
+    <div class="component-navigation-scroll chip-group" role="group" data-align="bleed">
       <a class="chip is-active js-scrollspy-trigger" href="#"><span class="chip-label">Avatars</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Menus</span></a>
       <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Buttons</span></a>
@@ -184,15 +184,6 @@ arrow_drop_down
     </div> -->
 
     <!-- <p>button small 형태를 액션으로. chip.</p> -->
-    <div>nextjs와 css moduel에서 인사이트. 컴포넌트 컨테이너의 개념 만들어보기.</div>
-    <p>예를 들어, action container, textfield container, tag container, avatar container.</p>
-    <p>
-      avatar container의 use cases. icon-button, pagination link 등의 컴포넌트가 있기 때문이다. avatar 컴포넌트는 결국, avatar-container를 가지며,
-      avatar-fallback 등의 세부 내용을 적용.
-    </p>
-    <p>chip 컴포넌트와 button 컴포넌트는 action(가칭) container를 가지고, 이 컨테이는 다른 사이즈를 갖는다.</p>
-    <p>다중 클래스보다 여러개 대신 속성이나 data attr 사용하는 것이 스타일링에 좋을지도.</p>
-    <p>문제. 컨테이너의 surface는 clickable/non-clickable 에 따라 일정한 형태를 갖게 됨.</p>
 
     <article class="article js-observer js-scrollspy-section">
       <h1 class="article-title">Avatars</h1>
@@ -328,7 +319,7 @@ arrow_drop_down
       </aside>
 
       <section class="component-example">
-        <div class="tile-flat">
+        <div class="tile-flat" style="z-index: 1">
           <button class="menu-item" data-tile="elevated" style="margin-top: 0; margin-bottom: 0.125rem">
             <figure class="menu-item-avatar" style="background-image: none">🦊</figure>
             <span class="menu-item-label">사진 및 동영상 백업</span>
@@ -367,12 +358,21 @@ arrow_drop_down
         <div class="tile-flat">
           <div class="item" data-size="large" role="menuitem">
             <figure class="item-avatar"></figure>
-            <b class="item-label">windows 패턴 with quick action. not acition. 모바일에 비적합.</b>
+            <b class="item-label">windows 패턴 with quick action</b>
             <button class="chip" style="margin-left: auto; margin-right: var(--space-2)">
               <span class="chip-label">휴대폰과 연결 열기</span>
             </button>
             <span class="material-symbols-outlined">chevron_right</span>
           </div>
+
+          <!-- <div class="menu-item" data-size="large" role="menuitem">
+            <figure class="menu-item-avatar"></figure>
+            <b class="menu-item-label">windows 패턴 with quick action. not acition. 모바일에 비적합.</b>
+            <button class="chip" style="margin-left: auto; margin-right: var(--space-2)">
+              <span class="chip-label">휴대폰과 연결 열기</span>
+            </button>
+            <span class="material-symbols-outlined">chevron_right</span>
+          </div> -->
         </div>
 
         <div class="tile-flat">
@@ -388,8 +388,8 @@ arrow_drop_down
       <p>메뉴 아이템의 우측에 'new' 등 태그 컴포넌트를 배치하지 마세요. 액션 또는 액션 인티케이터만 위치할 수 있습니다. (case 토스. 우측 new)</p>
 
       <ul>
-        <li>item-label의 line-heigh를 지정해야 아바타가 없을 떄 대응</li>
-        <li>menu-item와 차이. 확장:: setting item에서 tile 형태 + helper</li>
+        <li>optional avatar: item-label의 line-height. / optional description</li>
+        <li>singleLine prop?</li>
         <li>
           meta problem: 모든 menuitem container가 clickable은 아니다. => 액션 버튼이 따로 존재할 수도 있어야 한다. 이 정보가 중요한 이유 hover 상태
           표현을 위해.
@@ -406,7 +406,6 @@ arrow_drop_down
         <li>MenuHeading</li>
         <li>MenuHelper. role: setting-item. filter-item.</li>
         <li>MenuLink. sizes: medium | small(dropdown)</li>
-        ]
       </ul>
 
       <h2 class="article-subhead">Props</h2>
@@ -607,7 +606,7 @@ arrow_drop_down
               <span class="chip-label">좋아요 117</span>
             </button>
             <button class="chip">
-              <span class="chip-label">removable? deselectable?</span>
+              <span class="chip-label">removable? (todo)</span>
               <figure class="chip-remove"><span class="material-symbols-outlined">close</span></figure>
             </button>
             <button class="chip">
@@ -686,7 +685,7 @@ arrow_drop_down
       <h4 class="article-subhead">Sorting<br />콘텐츠 정렬</h4>
       <p>옵션 목록을 chip group으로 제공하지 마세요. dropdown으로 현재 정렬 상태만 요약 표기하세요. (bad case: 2022.04 구글 지도 바뀐 것)</p>
 
-      <h4 class="article-subhead">Keywords<br />action & search</h4>
+      <h4 class="article-subhead">actionable chip<br />Keywords search</h4>
       <div class="tile-flat" style="margin: var(--space-2) 0 var(--space-4)">
         <div class="keywords-group" role="group">
           <button class="keywords-group-keyword">
@@ -703,7 +702,7 @@ arrow_drop_down
           </button>
         </div>
       </div>
-      <h4 class="article-subhead">Contents filtering<br />single selection</h4>
+      <h4 class="article-subhead">single selection chip<br />Contents filtering</h4>
       <p>콘텐츠 필터링을 위한 칩 그룹에서, 액티브 상태에 브랜드 컬러를 쓰지 않는 경향. 콘텐츠 탐색이 cta. 눈에 띄지 않는 무채색 활용이 높아짐.</p>
       <div class="tile-flat" style="margin: var(--space-2) 0 var(--space-4)">
         <div class="chip-group" role="group" data-align="bleed">
@@ -715,7 +714,7 @@ arrow_drop_down
           </button>
         </div>
       </div>
-      <h4 class="article-subhead">Choice<br />multiple selections with check</h4>
+      <h4 class="article-subhead">multiple selections with check</h4>
       <div class="tile-flat" style="margin: var(--space-2) 0 var(--space-4)">
         <div class="chip-group" role="group" aria-multiselectable="true" data-align="bleed">
           <button class="chip is-active" aria-selected="true" style="background-color: var(--green100)">
@@ -736,8 +735,11 @@ arrow_drop_down
         </div>
       </div>
 
-      <h4 class="article-subhead">Dropdown (overflow/pulldown)</h4>
-      <p>aria-expanded 속성. 글자수 제한을 하는 것이 좋다.</p>
+      <h4 class="article-subhead">
+        Expandable chip<br />Dropdown (overflow/pulldown)<br />
+        sorting contents
+      </h4>
+      <p>aria-expanded 속성. 글자수 제한을 하는 것이 좋다. 모달로 열수도 있어서, 드롭다운이라는 이름보다 expanable chipㅇ</p>
       <div class="tile-flat" style="margin: var(--space-2) 0 var(--space-4)">
         <div class="chip-group">
           <div class="dropdown">
@@ -783,20 +785,6 @@ arrow_drop_down
               <hr class="dropdown-menu-divider" style="margin: 0.5rem 0" />
               <a class="dropdown-menu-item" href="#componets">수정</a>
               <a class="dropdown-menu-item" href="#componets">삭제</a>
-
-              <footer class="dropdown-footer">
-                <p class="dropdown-footer-question">Going?</p>
-                <button class="dropdown-footer-action chip">
-                  <span class="chip-label">Yes</span>
-                  <figure class="chip-icon">arrow_drop_down</figure>
-                </button>
-                <button class="dropdown-footer-action chip">
-                  <span class="chip-label">No</span>
-                </button>
-                <button class="dropdown-footer-action chip">
-                  <span class="chip-label">Maybe</span>
-                </button>
-              </footer>
             </menu>
           </div>
         </div>
@@ -905,12 +893,8 @@ arrow_drop_down
 
       <ul>
         <li>non-clickable<span hidden>triggering interaction</span></li>
+        <li>하나의 콘텐츠를 부연하기 위해 하나의 Primary style을 사용하세요.</li>
       </ul>
-
-      <div class="article-dont">
-        <span class="icon-indicator is-negative" data-size="small"><span class="material-symbols-outlined">close</span></span>
-        <li>하나의 콘텐츠를 부연하기 위해 2개 이상의 Primary style을 사용하지 마세요.</li>
-      </div>
 
       <h2 class="article-subhead">Tag group</h2>
       <p>
@@ -1099,11 +1083,11 @@ arrow_drop_down
             <input type="radio" id="gender-etc" name="gender" value="" checked disabled />
             <label for="gender-etc" title="Video Killed the Radio Button">Video Killed the Radio Button</label>
           </div>
-          <div class="radio tile-elevated-small" style="margin: var(--space-4) 0 0 0">
+          <div class="radio tile-elevated">
             <input type="radio" id="raidio5" name="gender" value="" />
             <label for="raidio5" title="">
               tile style
-              <b>₩ 2,000</b>
+              <b style="margin-left: auto">₩ 2,000</b>
             </label>
             <div>test</div>
           </div>
@@ -1113,6 +1097,7 @@ arrow_drop_down
       <h3 class="article-subhead">Best practices</h3>
       <ul>
         <li>옵션 목록이 5개 이하일 때만 라디오그룹을 제공합니다. 5개 이상의 옵션 목록은 select나 chip group으로 제공하세요.</li>
+        <li>! 항상 그룹으로 사용됨.</li>
       </ul>
 
       <h3 class="article-subhead">Default Value</h3>
@@ -1121,10 +1106,10 @@ arrow_drop_down
       <h3 class="article-subhead">Alignment</h3>
       <p>항상 세로 정렬합니다.</p>
 
-      <h3 class="article-subhead">Use cases</h3>
+      <!-- <h3 class="article-subhead">Use cases</h3>
       <ul>
         <li>기본 배송지 선택</li>
-      </ul>
+      </ul> -->
 
       <h4 class="article-subhead">Props</h4>
       <dl>
@@ -1146,7 +1131,7 @@ arrow_drop_down
 
     <article class="article js-observer js-scrollspy-section">
       <h1 class="article-title">Select</h1>
-      <p class="article-description">작성 중. 텍스트필드와 같은 형태.</p>
+      <p class="article-description">작성 중.</p>
       <aside class="article-aka">
         <span class="tag">a.k.a.</span>
         <span class="hashtag" title="">dropdown</span>
@@ -1158,9 +1143,21 @@ arrow_drop_down
           <div class="textfield">
             <label class="textfield-label" for="select1">셀렉트박스</label>
             <select class="textfield-input" id="select1">
-              <option class="select-option" value="select-option1">Choose an option</option>
+              <option value="select-option1">Choose an option</option>
             </select>
-            <span class="select-indicator" role="img"><span class="material-symbols-outlined"> arrow_drop_down </span></span>
+            <span class="select-indicator material-symbols-outlined" role="img">arrow_drop_down</span>
+          </div>
+        </div>
+        <div class="tile-flat">
+          <div class="chip-group">
+            <span class="chip">
+              <!-- <label class="chip-label" for="select2">셀렉트박스</label> -->
+              <select class="" id="select2">
+                <option value="select2-option1">Choose an option</option>
+                <option value="select2-option2">Choose an option</option>
+              </select>
+              <span class="icon-indicator material-symbols-outlined" role="img">arrow_drop_down</span>
+            </span>
           </div>
         </div>
       </section>
@@ -1289,8 +1286,8 @@ arrow_drop_down
 
       <h2 class="article-subhead">Best practices</h2>
       <p>
-        필수 입력을 전제합니다. 사용자 여정에 허들이 될 수 있는 불필요한 텍스트 입력 필드는 최소화합니다. 선택 입력 필드는 '선택입력' 텍스트로
-        가이드합니다.
+        필수 입력을 전제합니다. 사용자 여정에 허들이 될 수 있는 불필요한 텍스트 입력 필드는 최소화합니다. 사용자 정보를 제공하여 얻을 수 있는 이점이
+        명확한 경우에만. 선택 입력 필드는 '선택입력' 텍스트로 가이드합니다.
       </p>
 
       <h2 class="article-subhead">Alignment</h2>
@@ -1357,7 +1354,7 @@ arrow_drop_down
         <span class="tag">a.k.a.</span>
         <span class="hashtag" title="protocol mozilla">EmphasisBox</span>
         <span class="hashtag" title="biings">Box</span>
-        <span class="hashtag" title="">Card</span> s
+        <span class="hashtag" title="">Card</span>
         <span class="hashtag" title="pinterest gestalt">Module</span>
       </aside>
 
@@ -1391,6 +1388,9 @@ arrow_drop_down
         '클릭할 수 있음'의 기표로 elevated 스타일을 사용합니다. 타일 전체가 클릭 영역일 수도, 타일 내부에 클릭 가능한 요소를 포함할 수도 있습니다. +
         flat도 clickable로? 2022.12.
       </p>
+      <ul>
+        <li>모든 contentbox를 tile로 묶어두는 방법이 필요할지도.</li>
+      </ul>
 
       <h2 class="article-subhead">Optical adjustment</h2>
       <ul>
@@ -1473,7 +1473,7 @@ arrow_drop_down
       <h2 class="article-subhead">Todolist</h2>
       <p>
         페이지 로딩 시점에 열려 있는 경우 doorhanger/pointing arrow 필요. 하지만 그것은 툴팁이 아닌 새로운 컴포넌트로 정의할 필요가 있겠다. 하지만
-        이것을 필요 없도록 인터페이스를 설계하는 것이 best.
+        이것이 필요 없도록 인터페이스를 설계하는 것이 best.
       </p>
     </article>
 
@@ -1724,29 +1724,33 @@ arrow_drop_down
           </aside>
         </div>
 
-        <div class="tile-flat">
-          <nav class="pagination2">
-            <a href="#" class="pagination2-prev" title="앞 페이지로 이동">이전</a>
-            <b class="pagination2-current">1</b>
-            <span class="pagination2-divider"> / </span>
-            <span class="pagination2-all">44</span>
-            <!-- <span>page 2 of 22</span> -->
-            <a href="#" class="pagination2-next" title="뒷 페이지로 이동">다음</a>
-          </nav>
-        </div>
+        <!-- <b class="pagination-current">1</b>
+        <span class="pagination-divider"> / </span>
+        <span class="pagination-all">44</span> -->
+        <!-- <span>page 2 of 22</span> -->
       </section>
 
       <h4 class="article-subhead">Best practices</h4>
       <p>
-        첫 페이지와 마지막 페이지에 더블 화살표 아이콘을 사용하지 않습니다. 최초와 최종 페이지 넘버로 사용자가 대략적인 콘텐츠의 수량을 파악할 수
-        있도록 도와주세요.
+        첫 페이지와 마지막 페이지에 더블 화살표 아이콘을 사용하지 않습니다. 최초와 최종 페이지 넘버로 사용자가 대략적인 콘텐츠 수량을 파악할 수 있도록
+        도와주세요.
       </p>
+
+      <h4 class="article-subhead">Props</h4>
+      <p>
+        서비스를 위한 디자인시스템에서는 프롭스가 없어도 됨. 페이지의 갯수를 항상 일정하게 유지하는 것이 더 중요하기 때문에. 데이터를 요청하기 위한
+        현재 페이지 프롭스
+      </p>
+      <dl>
+        <dt>offset</dt>
+        <dd>number</dd>
+      </dl>
 
       <h4 class="article-subhead">Cases</h4>
       <ul>
         <li>
-          약간 레거시 유아이. 느린 탐색 경험이 필요할 때. 게시판이나 상품 목록의 탐색에서 이전에 탐색한 상품의 위치를 찾기 편리함. 최근 본 목록이나
-          섬네일에서 북마크를 제공한다면?
+          느린 탐색 경험이 필요할 때. 게시판이나 상품 목록의 탐색에서 이전에 탐색한 상품의 위치를 찾기 편리함. 최근 본 목록이나 섬네일에서 북마크를
+          제공한다면?
         </li>
       </ul>
 
@@ -1785,7 +1789,7 @@ arrow_drop_down
       <section class="component-example">
         <div class="tile-flat">
           <section class="carousel js-carousel" style="max-width: auto">
-            <div class="carousel-viewer">
+            <div class="carousel-viewer js-carousel-viewer">
               <a class="carousel-viewer-slide" href="#profile">
                 <span class="carousel-viewer-slide-media">🧑‍🦱</span>
                 <p class="carousel-viewer-slide-name">사용자 프로필</p>
@@ -1811,11 +1815,11 @@ arrow_drop_down
                 <p class="carousel-viewer-slide-name">상품</p>
               </a>
             </div>
-            <nav class="carousel-dots">
+            <!-- <nav class="carousel-dots">
               <button class="carousel-dots-dot">1</button>
               <button class="carousel-dots-dot">1</button>
               <button class="carousel-dots-dot">1</button>
-            </nav>
+            </nav> -->
             <nav class="carousel-arrows">
               <button class="carousel-arrows-prev js-carousel-prev" title="이전"><span class="material-symbols-outlined">chevron_left</span></button>
               <button class="carousel-arrows-next js-carousel-next" title="다음"><span class="material-symbols-outlined">chevron_right</span></button>
@@ -1967,7 +1971,6 @@ arrow_drop_down
       <p>heading은 한 문장으로 간결하게 작성하세요.</p>
 
       <ul>
-        <li></li>
         <li>role="region"</li>
         <li>
           클릭 영역의 정의. 제목/제목+본문. 단, 아코디언이 활성화 상태일 때 본문을 클릭하여 닫을 수 있게 되면, 본문에 페이지 링크를 사용할 수 없음.
@@ -2004,9 +2007,17 @@ arrow_drop_down
             헌법재판소 재판관의 임기는 6년으로 하며, 법률이 정하는 바에 의하여 연임할 수 있다. 대통령은 법률안의 일부에 대하여 또는 법률안을 수정하여
             재의를 요구할 수 없다.
           </p>
-          <div class="empty-list">
-            <div class="empty-list-item"><b>주문시간(summary item)</b><span>2019-08-10</span></div>
-            <div class="empty-list-item"><b>결제금액</b><span>₩ 54,000</span></div>
+          <hr style="margin-top: 2rem" />
+
+          <div class="summary">
+            <div class="summary-item">
+              <b class="summary-item-label">주문시간</b>
+              <span class="summary-item-value">2019-08-10</span>
+            </div>
+            <div class="summary-item">
+              <b class="summary-item-label">결제금액</b>
+              <span class="summary-item-value">₩ 54,000</span>
+            </div>
           </div>
           <a class="empty-action" href="#">주문내역 보기</a>
         </div>
@@ -2148,15 +2159,14 @@ arrow_drop_down
       <p>toast=>snackbar(withAction) - 정리하기, single line / multiple lines (head,body 텍스트)</p>
     </ul> -->
 
+      <h4 class="article-subhead">Best practices</h4>
+      <ul>
+        <li>닫기 또는 되돌리기 등 액션을 포함하지 마세요. 피드백에서 사용자 인터렉션이 필요하면 주목도가 높은 모달로 제공하세요.</li>
+        <li>사용자의 귀책이 아닌 경우, 단순 "오류" 대신 "시스템 오류"와 같은 용어를 사용하여 사용자가 잘못한 것처럼 느끼지 않도록 하세요.</li>
+      </ul>
       <blockquote>
         <li>브라우저가 role="alert" 속성이 있는 요소를 발견하면 즉시 사용자에게 경고 내용을 읽습니다.</li>
       </blockquote>
-
-      <ul>
-        <li>닫기 또는 되돌리기 등 액션을 포함하지 마세요. 인터렉션이 필요하다면 주목도가 높은 모달로 제공하세요.</li>
-        <li>사용자의 귀책이 아닌 경우, 단순 "오류" 대신 "시스템 오류"와 같은 용어를 사용하여 사용자가 잘못한 것처럼 느끼지 않도록 하세요.</li>
-        <!-- <li>최대 2문장의 텍스트 작성 규칙.</li> -->
-      </ul>
 
       <h4 class="article-subhead">Props</h4>
       <dl>
@@ -2368,7 +2378,7 @@ arrow_drop_down
       <p class="article-description">작성중</p>
 
       <section class="component-example">
-        <div class="product-info-price tile-flat" role="suggestion" style="margin: 0">
+        <div class="product-info-price tile-flat" role="suggestion">
           <del class="product-info-price-deletion" role="deletion">₩ 30,000</del>
           <b class="product-info-price-insertion" role="insertion">₩ 20,000</b>
           <em class="product-info-price-percentage">(30%)</em>
@@ -2378,6 +2388,25 @@ arrow_drop_down
       <ul>
         <li>formatCurrency()</li>
         <li>role=suggestion/deletion/insertion]</li>
+      </ul>
+    </article>
+
+    <article class="article js-observer js-scrollspy-section">
+      <h1 class="article-title">Pagehead</h1>
+      <p class="article-description">패턴 분석...</p>
+
+      <aside class="article-aka">
+        <span class="tag">a.k.a.</span>
+        <span class="hashtag" title="">Page Header</span>
+      </aside>
+
+      <section class="component-example"></section>
+
+      <h4 class="article-subhead">Anatomy</h4>
+      <ul>
+        <li>breadcrumb</li>
+        <li>titlebar</li>
+        <li>hero with padding</li>
       </ul>
     </article>
 

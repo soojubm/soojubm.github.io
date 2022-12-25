@@ -8,7 +8,7 @@
 .profile-user-description-more {margin:0 var(--space-2);@include link-outside;}
 
 .profile-user-toggle {width:100%;margin:var(--space-4) 0;text-align:center;color:var(--color-text);position:relative;}
-.profile-user-toggle-icon {@include avatar-small;}
+.profile-user-toggle-icon {@include avatar-container-small;}
 .profile-user-toggle:hover {@include hover-item;}
 
 .profile-user-hashtags {@include tag-group;}
@@ -125,14 +125,15 @@
   .profile-user {float:none;width:100%;box-sizing:border-box;}
   .profile-user-description {margin:1rem 0 2rem;}
   .profile-user-toggle {display:flex;align-items:center;justify-content:space-between;}
-  .profile-user-socials {display:none;}
   
   .profile-body {padding-left:0;}
 
   .tabpanel .card {width: 100%;}
 
+  .profile-user-info {display: none;}
+
   .is-active  + .profile-user-toggle-icon {transform:rotate(180deg);}
-  .is-active  + .profile-user-socials {display:block;margin-bottom:4rem;}
+  .is-active  + .profile-user-info {display:block;margin-bottom:4rem;}
 }
 
 

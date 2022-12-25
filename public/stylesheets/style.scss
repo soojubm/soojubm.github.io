@@ -69,7 +69,6 @@
 @import 'base/quantity.scss';
 
 
-// bottom:calc(constant(safe-area-inset-bottom) + 1rem);bottom:calc(env(safe-area-inset-bottom) + 1rem);
 .bottombar {
   display: flex;
   justify-content: space-around;
@@ -247,8 +246,7 @@
 .carousel-viewer-slide:hover {@include hover-item;}
 
 .carousel-viewer-slide-media {
-  @include avatar-medium;
-  margin: 0 0 2rem;
+  @include avatar-container;
 }
 
 .carousel-viewer-slide-name {}
@@ -278,7 +276,7 @@
 
 .carousel-arrows {}
 .carousel-arrows-prev {
-  @include avatar-medium;
+  @include avatar-container;
   position: absolute;
   left: 0;
   top: 50%;
@@ -295,11 +293,10 @@
   background:linear-gradient( to right,#fff,#20264100);
 }
 
-
 .carousel-arrows-prev:hover {}
 
 .carousel-arrows-next {
-  @include avatar-medium;
+  @include avatar-container;
   position: absolute;
   right: 0;
   top: 50%;
@@ -308,6 +305,8 @@
 }
 .carousel-arrows-next:hover {}
 .carousel-arrows button.is-disabled {opacity: .2;}
+
+
 
 .quote {
   max-width: 400px;

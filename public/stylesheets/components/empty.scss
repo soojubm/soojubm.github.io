@@ -2,10 +2,8 @@
 .empty-icon {@include avatar-huge;border:var(--border);background:none;margin:0 auto 1.5rem;font-size:40px;}
 .empty-title {@include text-subhead;}
 .empty-description {margin:var(--space-after-subhead) 0 0;}
-.empty-list {margin:2rem auto;padding:1rem 0 0 0;border-top:var(--border);}
-.empty-list-item {display:flex;justify-content:space-between;margin:.25rem 0;}
-.empty-list-item b {font-weight:normal;}
-.empty-list-item span {}
+
+
 .empty-action {@include button-secondary;width:100%;margin:2rem 0 0 0;}
 
 

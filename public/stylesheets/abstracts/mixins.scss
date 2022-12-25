@@ -1,6 +1,8 @@
 // nextjs cssmodule composes
 // ! text-heading-medium / text-heading-small
-@mixin text-title {font-size:var(--font-size-huge);font-weight:var(--font-weight-bold);line-height:var(--font-line-height);color:var(--color-text);letter-spacing:-.0125rem;text-indent:-1px;}
+
+// p tag. text-title 중복될 때 line-height 필요.
+@mixin text-title {font-size:var(--font-size-huge);font-weight:var(--font-weight-bold);line-height:var(--font-line-height);color:var(--color-text);letter-spacing:-.0125rem;}
 @mixin text-subhead {font-size:var(--font-size-large);font-weight:var(--font-weight-bold);color:var(--color-text);}
 
 @mixin text-body {font-size:.875rem;font-weight:var(--font-weight-normal);}
@@ -57,7 +59,7 @@
     left:var(--hover-outline);right:var(--hover-outline);top:var(--hover-outline);bottom:var(--hover-outline);
     z-index:-1;
   }
-  figure {background-color:var(--color-background) !important;box-shadow:var(--shadow);}
+  figure {background-color:var(--color-background) !important;}
 }
 .is-hoverable {@include hover-item;}
 
@@ -65,7 +67,7 @@
 @mixin layout($size: 800px) {
   max-width: $size;
   margin: 0 auto;
-  padding: 2rem var(--grid-margin) 8rem;
+  padding: 2rem var(--grid-margin) 8rem; // todo padding-top
   position: relative;
 }
 

@@ -1,6 +1,8 @@
 
 [role=tablist] {@include tile-elevated-tiny;display:flex;}
-.tablist {border-bottom:0;border-bottom-left-radius:0;border-bottom-right-radius:0;}
+
+.tablist {}
+
 .tablist-tab {display:flex;align-items:center;justify-content:center;flex:auto;height:var(--size-medium);padding:1px var(--space-4) var(--adjust-label-line);color:var(--color-text-light);position:relative;z-index:var(--zindex-default);}
 .tablist-tab[aria-selected=true] {color:var(--color-text-weak);}
 // .tablist-tab[aria-selected=true]:before {content:'✓';margin:0 var(--space-2) 0 0;}

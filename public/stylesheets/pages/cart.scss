@@ -52,7 +52,7 @@
 .cart-item-more {margin:var(--space-3) 0 var(--space-2);padding:0 var(--space-4);box-sizing:border-box;text-align:left;color:var(--color-primary);}
 .cart-item-more i {margin:0 0 0 var(--space-2);}
 .cart-item-remove {float:right;margin:var(--space-3) 0 var(--space-2);color:var(--color-primary);}
-.cart-item-addition {width:calc(100% - 20% - var(--space-4));margin:0 0 0 calc(20% + var(--space-4));padding:var(--space-2) 0 var(--space-3);border-top:var(--border);box-sizing:border-box;position:relative;}
+.cart-item-addition {width:calc(100% - 20% - var(--space-4));margin:0 0 0 calc(20% + var(--space-4));padding:var(--space-2) 0;border-top:var(--border);box-sizing:border-box;position:relative;}
 .cart-item-addition-description {font-size:var(--font-size-small);color:var(--color-text-light);}
 .cart-item-addition p {width:80%;}
 .cart-item-addition-price {float:right;position:absolute;right:0;top:.5rem;}

@@ -64,22 +64,15 @@
     <article class="article js-scrollspy-section">
       <h1 class="article-title">Palette</h1>
       <p class="article-description">color와 surface.</p>
-
-      <ul>
-        <li>hierarchy. 크기와 비례해서 radius와 shadow 베리에이션이 필요하지만 경량화하여 더 중요한 문제에 집중하고 있습니다.</li>
-        <li>theme. 인버트 컬러셋을 추가로 정의하지 않습니다. 하나의 컬러셋으로 다크 테마에 대응합니다. (쉽지 않음. 기술 의존이 높은 규칙..)</li>
-      </ul>
       
-      <div class="tile-elevated-small" style="max-width:280px;margin:.75rem 0 .25rem;">
-        <button class="menu-item js-darkmode" title="change theme">
-          <figure class="menu-item-avatar"><span class="material-symbols-outlined">nights_stay</span></figure>
-          <span class="menu-item-label">어둡게 보기</span>
-          <span class="switch" style="margin-left:auto;">
-            <input type="checkbox" id="temp55" name="" role="switch" />
-            <label for="temp55" style="padding-left:48px;"></label>
-          </span>
-        </button>
-      </div>
+      <button class="menu-item js-darkmode" data-tile="elevated" title="change theme"  style="max-width:280px;margin:.75rem 0 .25rem;">
+        <figure class="menu-item-avatar"><span class="material-symbols-outlined">nights_stay</span></figure>
+        <span class="menu-item-label">어둡게 보기</span>
+        <span class="switch" style="margin-left:auto;">
+          <input type="checkbox" id="temp55" name="" role="switch" />
+          <label for="temp55" style="padding-left:48px;"></label>
+        </span>
+      </button>
 
       <h4 class="article-subhead">Surfaces</h4>
       <div class="token-group">
@@ -114,7 +107,7 @@
         </article>
         <article class="token-item is-gray100">
           <figure class="token-item-avatar"></figure>
-          <b>--gray100: #f1f4f1</b>
+          <b>--gray100: #f5f8f5</b>
           <div>
             <p>--color-background-weak</p>
             <!-- <p>--button-border-color</p> -->
@@ -185,6 +178,12 @@
           <b>Skeleton sample</b>
         </article>
       </div>
+
+      <h3 class="article-subhead">Best practices</h3>
+      <ul>
+        <li>hierarchy. 크기와 비례해서 radius와 shadow 베리에이션이 필요하지만 경량화하여 더 중요한 문제에 집중하고 있습니다.</li>
+        <li>theme. 인버트 컬러셋을 추가로 정의하지 않습니다. 하나의 컬러셋으로 다크 테마에 대응합니다. (쉽지 않음. 기술 의존이 높은 규칙.. 유아이 테이밍 트랜드를 위해 제거하는 것이 좋을지도 모르겠다)</li>
+      </ul>
     </article>
 
 
@@ -318,10 +317,6 @@
       <h1 class="article-title">Sizing</h1>
       <p class="article-description">요소의 너비와 길이.</p>
 
-      <p>브라우저의 사이즈가 변경되어도 사이즈 토큰은 불변합니다.</p>
-
-      <br />
-
       <div class="token-group">
         <div class="token-item">
           <!-- <figure class="token-item-avatar"></figure> -->
@@ -367,6 +362,9 @@
           </div>
         </div>
       </div>
+
+      <h2 class="article-subhead">Best practices</h2>
+      <p>브라우저의 사이즈가 변경되어도 사이즈 토큰은 불변합니다.</p>
 
       <h4 class="article-subhead">사이즈 토큰으로 추상화하지 않는 케이스</h4>
       <p>--navbar-height: <del>var(--size-huge)</del>5rem</p>
@@ -515,6 +513,7 @@
       </div>
 
       <h4 class="article-subhead">Groups</h4>
+      <p>gap이 편한데.</p>
       <div class="token-group">
         <div class="token-item">
           <b>@mixin group-avatar</b>
@@ -629,9 +628,6 @@
       <p class="article-description">작성 중.</p>
       <!-- <h4 class="article-subhead">Timing / Duration / Delay</h4> -->
 
-      <h2 class="article-subhead">Best practices</h2>
-      <p>콘텐츠보다 액션이 더 강조되지 않도록 뷰포트 내에서 최대 3개의 요소로 delay를 제한합니다. inactive로 전환 시(닫기 등) instantly 실행합니다.</p>
-
       <div class="token-group">
         <div class="token-item">
           <b>--bazier: cubic-bezier(0.455, 0.03, 0.515, 0.955)</b>
@@ -682,10 +678,15 @@
           <p>@keyframes modal</p>
         </div>
       </div>
+
+      <h2 class="article-subhead">Best practices</h2>
+      <p>콘텐츠보다 액션이 더 강조되지 않도록 뷰포트 내에서 최대 3개의 요소로 delay를 제한합니다. inactive로 전환 시(닫기 등) instantly 실행합니다.</p>
     </article>
 
     <article class="article js-scroll-section">
-      <h4 class="article-title">Optical Adjustment</h4>
+      <h2 class="article-title">Optical Adjustment</h2>
+
+      <h3 class="article-subhead">Memo</h3>
       <ul>
         <li>subehad + radio/checkbox group에서 1번째 radio/check 상단 간격. size-medium의 min-height로 야기.</li>
         <li>tile(또는 배경색을 박스) 안에서의 상하 간격을 위한 보정</li>
