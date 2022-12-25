@@ -39,6 +39,11 @@
 // &[aria-current=page] {}
 
 // 믹스인은 버튼-프라이머리를 가져다 쓰기 위해서인데, css 정책을 완전 바꿔야 할 것 같다. utility => componenet.
+
+@minxin button-container {
+  
+}
+
 @mixin button-primary {
   @include button {
     background: var(--color-primary);
