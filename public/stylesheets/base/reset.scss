@@ -105,8 +105,8 @@ dl {display:flex;flex-wrap:wrap;}
 dl dt {margin:0 var(--space-2) 0 0;@include text-label;}
 dl dd {margin:0 var(--space-4) 0 0;}
 
-dl dt:after {content:':';}
-dl dd:after {content:';';}
+// dl dt:after {content:':';}
+// dl dd:after {content:';';}
 
 ::selection {background:var(--gray800);color:var(--gray0);}
 ::placeholder {color:var(--color-text-light);}
