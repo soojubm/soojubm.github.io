@@ -28,19 +28,3 @@
   .cake-meta ul {margin-left:0;margin-right:0;padding-left:0;padding-right:0;}
   .cake-meta-summary {padding-right:0;}
 }
-
-
-
-.person-list {display: flex;}
-.person {@include tile-elevated;margin: 0 var(--space-3) 0 0;}
-.person:hover {@include hover-item;}
-.person-name {display:block;margin:.375rem 0 0 0;color:var(--color-text);}
-.person-test {
-  @include tag-primary;
-  position: absolute;
-  left: .5rem;
-  top: .5rem;
-  z-index: 1;
-}
-.person-viewall {min-width:100px;padding-top:2.5rem;display:flex;flex-wrap:wrap;justify-content:center;position:relative;}
-.person-viewall:hover {@include hover-item;}

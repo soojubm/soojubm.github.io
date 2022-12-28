@@ -231,10 +231,10 @@
 
 .carousel {position: relative;}
 
-.carousel-viewer {@include group-bleeding;
-  margin: 0 -.75rem;padding:0 .75rem;
+.carousel-viewer {@include stack-vertical-scroll;
+  margin: 0 -.75rem;
+  padding:0 .75rem;
   scroll-behavior: smooth;
-  // margin-right: -50vw; padding-right: -50vw
 }
 .carousel-viewer-slide {
   @include tile-elevated-small;
@@ -969,7 +969,7 @@ main,
 .user-id {margin:-.125rem 0 0 0;}
 .user-job {display:block;color:var(--color-text-light);}
 .user-email {}
-.user-hashtags {@include tag-group;}
+.user-tags {@include stack;}
 
 
 .user-logout {display:flex;align-items:center;width:100%;margin:var(--space-after-item) 0;position:relative;}
@@ -1004,7 +1004,7 @@ main,
 
 .search-recent {}
 .search-recent-title {margin:0 0 var(--space-2) 0;@include text-label;}
-.search-recent-group {@include chip-group;}
+.search-recent-group {@include stack;}
 .search-recent-group-item {@include chip;}
 
 .search-suggestion {}

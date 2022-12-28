@@ -1,7 +1,7 @@
 .changelog {@include layout-large;margin:0 var(--grid-margin);padding-left:0;padding-right:0;}
 .changelog-head {padding:2rem 0;}
 
-.changelog-filter {@include chip-group;}
+.changelog-filter {@include stack;}
 .changelog-filter-chip {@include chip;}
 .changelog-filter-chip-label {@include chip-label;}
 

@@ -44,10 +44,6 @@
 .dropdown-menu-item {display:block;margin:0 -.25rem;padding:0 .25rem;line-height:var(--size-medium);color:var(--color-text);position:relative;z-index:var(--zindex-default);}
 .dropdown-menu-item:hover {border-radius:var(--radius);background:var(--color-background-weak);}
 
-.dropdown-footer {@include chip-group;align-items:centetr;margin:var(--space-4) 0 -.25rem;padding:var(--space-2) 0 0;border-top:var(--border);}
-.dropdown-footer-question {margin-right:auto;}
-
-
 // 드롭다운이 항상 칩은 아니다.
 .is-active .chip-icon {background:inherit;color:inherit;}
 .is-active + .dropdown-menu {transform:scale(1);top:calc(var(--size-medium));z-index:var(--zindex-popover);}

@@ -1,5 +1,5 @@
 <main class="component" style="overflow: hidden">
-  <!-- <section style="padding:4rem 5vw;">
+  <section style="padding:4rem 5vw;">
     <div class="pill" style="border:none;background:gold;transform:rotate(-5deg);">안녕안녕</div>
     <div class="pill" style="margin-left:2rem;background:var(--color-background);">
       테스트 <span style="position:absolute;right:1rem;top:-2.5rem;">🚧</span>
@@ -8,7 +8,8 @@
   <style>
     .pill {
       display: inline-flex;
-      padding: 0.5rem 5rem;
+      align-items: center;
+      padding: 0.5rem 5rem .1rem;
       border-radius: 200px;
       border: 1px solid;
       font-size: 3rem;
@@ -16,32 +17,32 @@
       box-sizing: border-box;
       position: relative;
     }
-  </style> -->
+  </style>
 
-  <!-- <button aria-haspopup="true" aria-expanded="false">
+  <button aria-haspopup="true" aria-expanded="false">
     Difficulty
     <span aria-hidden="true">&#x25be;</span>
   </button>
   <div role="menu">
     <button role="menuitemradio" tabindex="-1">Easy</button>
     <button role="menuitemradio" aria-checked="true" tabindex="-1">Medium</button>
-  </div> -->
+  </div>
 
-  <!-- <p>Naming Conventions</p>
+  <p>Naming Conventions</p>
   <p>
     Styling hooks follows a specific naming convention to promote predictability and consistency. All SLDS styling hooks adhere to the following
     convention.
   </p>
   <p>
     --[namespace]-[scope]-[component]-[element]-[category]-[property]-[attribute]-[state]
-  </p> -->
-  <!-- <li>global :  --[name]-[componentName]-[role]-[?state]</li> -->
+  </p>
+  <li>global :  --[name]-[componentName]-[role]-[?state]</li>
 
-  <!-- <h4>Accessibility</h4>
+  <h4>Accessibility</h4>
   <p>role=checkbox aria-checked=false</p>
   <p>menuitemradio, menuitemcheck aria-checked</p>
   <input id="startTime" type="text" aria-errormessage="msgID" aria-invalid="true" value="11:30 PM" />
-  <span id="msgID" aria-live="assertive" style="visibility:visible"> Invalid time: the time must be between 9:00 AM and 5:00 PM" </span> -->
+  <span id="msgID" aria-live="assertive" style="visibility:visible"> Invalid time: the time must be between 9:00 AM and 5:00 PM" </span>
 
   <section class="hero" role="banner">
     <div class="hero-background"></div>
@@ -54,37 +55,126 @@
   </section>
 
   <section class="component-body" style="margin: 0 var(--grid-margin);">
+    <div class="stack">
+      <div class="menu-item" role="menuitem" data-size="large" data-align="vertical">
+        <figure class="menu-item-avatar">🏹</figure>
+        <span class="menu-item-label">전체</span>
+      </div>
+    </div>
 
-      <div class="tile-flat" style="max-width:calc(360px + 1.5rem);margin-left:-.75rem;margin-right:-.75rem;position: relative;">
-        <b>Personal License</b>
-        <b class="item-price" style="position:absolute;right:var(--space-3);top:var(--space-3);">18,800 KRW</b>
-        <small style="display:block;color:var(--color-text-light);">1 user</small>
+    <hr />
+
+
+    <article class="tile-elevated" style="max-width: 400px; padding: 1rem; z-index: 1">
+      <figure class="user-avatar"></figure>
+      <h2 class="user-name">Gyeongsoo I</h2>
+      <div class="user-id">@soojubm</div>
+      <div class="user-job">Youtube Subscriber</div>
+      <p class="user-description" style="margin: var(--space-2) 0 0 0">
+        TBreaking news alerts and updates from the BBC. For news, features, analysis follow
+      </p>
+
+      <div class="user-tags" style="margin-top:.75rem;">
+        <span class="tag">대한민국</span>
+        <span class="tag">자전거</span>
       </div>
 
-      <article class="item" data-size="large" style="max-width:360px;">
-        <figure class="item-avatar" style="background-image:none;font-size:var(--font-size-large);">🎅🏻</figure>
-        <b class="item-name">Widgefy iOS Widgets</b>
-        <!-- <p class="item-description">description area.</p> -->
-        <div style="display: flex; align-items: center; color: var(--color-text-light)">
-          <small style="line-height: 24px">떡볶이</small>
+      <footer class="user-foot" style="margin: var(--space-3) 0">
+        <button class="profile-foot-follow"><span class="item-action-label">팔로우 버튼이 작은 것이 트랜드</span></button>
+      </footer>
+      <div class="statistic" data-size="small" style="justify-content: left; margin: 1rem 0 1rem">
+        <div class="statistic-item" onclick="javascript:alert('샘플 유아이에요!')">
+          <i class="statistic-label">팔로워</i>
+          <span class="statistic-value">62</span>
         </div>
-        <b class="item-price" style="position:absolute;right:0;top:0;">18,800 KRW</b>
-        <small style="color:var(--color-text-light);position:absolute;right:0;top:22px;">6410</small>
-      </article>
-
-      <article class="item" data-size="large" style="max-width:360px;">
-        <figure class="item-avatar" style="background-image:none;font-size:var(--font-size-large);">🎅🏾</figure>
-        <b class="item-name">BetaCRM Web UI Kit</b>
-        <!-- <p class="item-description">description area.</p> -->
-        <div style="display: flex; align-items: center; color: var(--color-text-light)">
-          <small style="line-height: 24px">떡볶이</small>
+        <i class="icon-bullet"></i>
+        <div class="statistic-item" onclick="javascript:alert('샘플 유아이에요!')">
+          <i class="statistic-label">팔로잉</i>
+          <span class="statistic-value">8</span>
         </div>
-        <b class="item-price" style="position:absolute;right:0;top:0;">500 KRW</b>
-        <small style="color:var(--color-text-light);position:absolute;right:0;top:22px;">6839</small>
+      </div>
+      <article class="avatargroup" style="margin-bottom: 0">
+        <figure>
+          <img src="/public/images/springsteen.jpg" alt="" />
+        </figure>
+        <figure>
+          <img src="/public/images/springsteen.jpg" alt="" />
+        </figure>
+        <figure>
+          <img src="/public/images/springsteen.jpg" alt="" />
+        </figure>
+        <figure>
+          <img src="/public/images/springsteen.jpg" alt="" />
+        </figure>
+        <span class="avatargroup-label">Followed by 수줍이 외 4명</span>
       </article>
+    </article>
 
-      <footer style="margin:1rem 0;"><button class="button-primary" style="width:100%;max-width:360px;font-size:15px;">Buy now</button></footer>
-    </div>
+    <article class="card has-clickable" role="listitem" style="max-width: 400px" data-align="vertical">
+      <figure class="card-thumbnail"><img src="/public/images/springsteen.jpg" alt="" /></figure>
+      <figure class="card-avatar">🍊</figure>
+      <h3 class="card-title">카드 유아이</h3>
+      <p class="card-text">
+        텍스트는 최대 두 줄이다. 따봉은 상세페이지에서 제공하세요. 뉴스피드 유아이에서는 밖에서 제공할 수 있어요.북마크는 밖에 두어도 좋은가?
+        상세페이지에서 제공하는 것이 좋음. 기능이 많아짐. 신선식품 장바구니는 밖에 인정.
+      </p>
+      <div class="card-tags" role="group">
+        <span class="card-tags-item">기획</span>
+        <span class="card-tags-item">UI</span>
+        <span class="card-tags-item">React</span>
+      </div>
+      <div class="card-byline">
+        <figure class="card-byline-avatar"><img src="/public/images/springsteen.jpg" alt="" /></figure>
+        <span class="card-byline-name">수줍이</span>
+        <time class="card-date">2017. 12. 21.</time>
+      </div>
+      <span class="card-category">카테고리</span>
+      <hr />
+      <button class="menu-item" data-size="large">
+        <figure class="menu-item-avatar" style="background-image: none">🍊</figure>
+        <span class="menu-item-name">퓨어 오렌지 주스</span>
+        <div class="menu-item-description"><del>₩19,000</del> ₩16,000 <em>할인율 20%</em></div>
+      </button>
+      <div class="card-note">마일리지 적립 200P</div>
+      <button class="card-more" hidden>
+        <span class="material-symbols-outlined"> more_vert </span>
+      </button>
+    </article>
+
+
+      <div  style="max-width:calc(400px);position: relative;">
+        <div class="tile-flat" style="margin-left:-.75rem;margin-right:-.75rem;">
+          <b>Personal License</b>
+          <b class="item-price" style="position:absolute;right:var(--space-3);top:var(--space-3);">18,800 KRW</b>
+          <small style="display:block;color:var(--color-text-light);">1 user</small>
+        </div>
+  
+        <div class="item" data-size="large">
+          <figure class="item-avatar" style="background-image:none;font-size:var(--font-size-large);">🎅🏻</figure>
+          <b class="item-name">Widgefy iOS Widgets</b>
+          <!-- <p class="item-description">description area.</p> -->
+          <div style="display: flex; align-items: center; color: var(--color-text-light)">
+            <small style="line-height: 24px">떡볶이</small>
+          </div>
+          <b class="item-price" style="position:absolute;right:0;top:0;">18,800 KRW</b>
+          <small style="color:var(--color-text-light);position:absolute;right:0;top:22px;">6410</small>
+        </div>
+  
+        <div class="item" data-size="large">
+          <figure class="item-avatar" style="background-image:none;font-size:var(--font-size-large);">🎅🏾</figure>
+          <b class="item-name">BetaCRM Web UI Kit</b>
+          <!-- <p class="item-description">description area.</p> -->
+          <div style="display: flex; align-items: center; color: var(--color-text-light)">
+            <small style="line-height: 24px">떡볶이</small>
+          </div>
+          <b class="item-price" style="position:absolute;right:0;top:0;">500 KRW</b>
+          <small style="color:var(--color-text-light);position:absolute;right:0;top:22px;">6839</small>
+        </div>
+  
+        <footer style="margin:1rem 0;">
+          <button class="button-primary" style="width:100%;font-size:15px;">Buy now</button>
+        </footer>
+      </div>
 
   <div class="album-track">
     <div class="album-track-label" role="row">
@@ -105,13 +195,15 @@
           <small class="item-description">Bruce Springsteen</small>
         </div>
       </span>
-      <span class="album-track-row-column tag-group"><span class="tag">hiphop</span><span class="tag">rap</span></span>
+      <span class="album-track-row-column stack"><span class="tag">hiphop</span><span class="tag">rap</span></span>
       <span class="album-track-row-column">In Review --</span>
       <span class="album-track-row-column"
         ><em class="badge" style="height: auto; margin-right: 0.5rem; background: gold; padding: 3px"></em> Error</span
       >
       <span class="album-track-row-column">7 : 02</span>
     </div>
+  </div>
+
 
     <div class="tile-elevated" style="max-width: 400px">
       <header style="display: flex; align-items: center; line-height: 24px">
@@ -157,11 +249,11 @@
           <h3 class="step-item-label" style="font-size: var(--font-size-small)">배달완료</h3>
         </div>
       </section>
-      <div class="chip-group" style="margin-top: 0.75rem">
+      <div class="stack" style="margin-top: 0.75rem">
         <button class="chip"><span class="chip-label">리뷰쓰기</span></button>
         <button class="chip"><span class="chip-label">재주문</span></button>
       </div>
-      <small>네이버는 왜 주문 내역을 삭제(숨김인가)할 수 있도록?</small>
+      <small>네이버는 왜 주문 내역을 삭제(숨김?) 기능을?</small>
     </div>
 
     <fieldset class="" role="radiogroup" style="display: flex">
@@ -226,7 +318,7 @@
         </button>
       </header>
       <!-- <a class="link-outside" href="#">모두 보기 (todo 위치)</a> -->
-      <div class="share-group" role="group" style="margin-top: var(--space-3); margin-bottom: 0.5rem">
+      <div class="stack" role="group" style="margin-top: var(--space-3); margin-bottom: 0.5rem">
         <button class="chip is-active"><span class="chip-label">필터링 1</span></button>
         <button class="chip"><span class="chip-label">필터링 2</span></button>
       </div>
@@ -242,7 +334,7 @@
         <span class="item-description">유아이 디자이너</span>
         <button class="item-action"><span class="item-action-label">팔로우</span></button>
       </div>
-      <button class="menu-item" data-tile="elevated" style="margin-bottom: 0">
+      <button class="menu-item" data-tile="elevated" style="margin-top:.75rem;margin-bottom: 0">
         <figure class="menu-item-avatar"></figure>
         <span class="menu-item-label">더 많은 친구를 찾아보세요!</span>
       </button>
@@ -279,7 +371,7 @@
       <div
         class="statistic-item tile-flat"
         aria-label="별점 5개 만점에 3.9개를 받았습니다."
-        style="margin-top: 0.5rem; text-align: center; z-index: auto"
+        style="\text-align: center; z-index: auto"
       >
         <i class="statistic-label">리뷰 116만개</i>
         <span class="statistic-value" style="margin-left: -0.5rem">⭐ 4.8</span>
@@ -805,50 +897,6 @@
       </footer>
     </article>
 
-    <article class="tile-elevated" style="max-width: 400px; padding: 1rem; z-index: 1">
-      <figure class="user-avatar"></figure>
-      <h2 class="user-name">Gyeongsoo I</h2>
-      <div class="user-id">@soojubm</div>
-      <div class="user-job">Youtube Subscriber</div>
-      <footer class="tag-group">
-        <span class="tag">대한민국</span>
-        <span class="tag">자전거</span>
-      </footer>
-      <p class="user-description" style="margin: var(--space-2) 0 0 0">
-        TBreaking news alerts and updates from the BBC. For news, features, analysis follow
-      </p>
-
-      <footer class="user-foot" style="margin: var(--space-3) 0">
-        <button class="profile-foot-follow"><span class="item-action-label">팔로우 버튼이 작은 것이 트랜드</span></button>
-      </footer>
-      <div class="statistic" data-size="small" style="justify-content: left; margin: 1rem 0 1rem">
-        <div class="statistic-item" onclick="javascript:alert('샘플 유아이에요!')">
-          <i class="statistic-label">팔로워</i>
-          <span class="statistic-value">62</span>
-        </div>
-        <i class="icon-bullet"></i>
-        <div class="statistic-item" onclick="javascript:alert('샘플 유아이에요!')">
-          <i class="statistic-label">팔로잉</i>
-          <span class="statistic-value">8</span>
-        </div>
-      </div>
-      <article class="avatargroup" style="margin-bottom: 0">
-        <figure>
-          <img src="/public/images/springsteen.jpg" alt="" />
-        </figure>
-        <figure>
-          <img src="/public/images/springsteen.jpg" alt="" />
-        </figure>
-        <figure>
-          <img src="/public/images/springsteen.jpg" alt="" />
-        </figure>
-        <figure>
-          <img src="/public/images/springsteen.jpg" alt="" />
-        </figure>
-        <span class="avatargroup-label">Followed by 수줍이 외 4명</span>
-      </article>
-    </article>
-
     <div class="tile-elevated" style="max-width: 400px; width: 100%">
       <a class="user" href="#settings">
         <figure class="user-avatar">
@@ -918,37 +966,6 @@
         </tr>
       </tbody>
     </table>
-
-    <article class="card has-clickable" role="listitem" style="max-width: 400px" data-align="vertical">
-      <figure class="card-thumbnail"><img src="/public/images/springsteen.jpg" alt="" /></figure>
-      <figure class="card-avatar">🍊</figure>
-      <h3 class="card-title">카드 유아이</h3>
-      <p class="card-text">
-        텍스트는 최대 두 줄이다. 따봉은 상세페이지에서 제공하세요. 뉴스피드 유아이에서는 밖에서 제공할 수 있어요.북마크는 밖에 두어도 좋은가?
-        상세페이지에서 제공하는 것이 좋음. 기능이 많아짐. 신선식품 장바구니는 밖에 인정.
-      </p>
-      <div class="card-tags" role="group">
-        <span class="card-tags-item">기획</span>
-        <span class="card-tags-item">UI</span>
-        <span class="card-tags-item">React</span>
-      </div>
-      <div class="card-byline">
-        <figure class="card-byline-avatar"><img src="/public/images/springsteen.jpg" alt="" /></figure>
-        <span class="card-byline-name">수줍이</span>
-        <time class="card-date">2017. 12. 21.</time>
-      </div>
-      <span class="card-category">카테고리</span>
-      <hr />
-      <button class="menu-item" data-size="large">
-        <figure class="menu-item-avatar" style="background-image: none">🍊</figure>
-        <h4 class="menu-item-name">퓨어 오렌지 주스</h4>
-        <div class="menu-item-description"><del>₩19,000</del> ₩16,000 <em>할인율 20%</em></div>
-      </button>
-      <div class="card-note">마일리지 적립 200P</div>
-      <button class="card-more" hidden>
-        <span class="material-symbols-outlined"> more_vert </span>
-      </button>
-    </article>
 
     <div class="" role="group" style="display: flex"></div>
 

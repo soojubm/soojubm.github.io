@@ -34,7 +34,7 @@
 .post-body-code {display:block;margin: 0 0 2rem 0;}
 .post-body pre {margin:0;padding:0;}
 
-.post-hashtag {@include chip-group;}
+.post-hashtag {@include stack;}
 .post-hashtag-item {@include chip;}
 
 .post-share {margin:2rem 0;}

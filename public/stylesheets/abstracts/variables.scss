@@ -146,8 +146,8 @@
 
   --space-after-item: var(--space-3);
 
-  --space-groupitem: var(--space-1);
-  --space-groupitem-minus: calc(var(--space-groupitem) * -1);
+  --space-stack: var(--space-1);
+  --space-stack-minus: calc(var(--space-stack) * -1);
   
   --space-inset-tile: .75rem;
   --space-inset-section: 4rem;

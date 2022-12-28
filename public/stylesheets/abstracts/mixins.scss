@@ -13,7 +13,6 @@
 
 .text-subhead {@include text-subhead;}
 
-
 // overline
 @mixin truncate {white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 @mixin truncate-multi {@include truncate;height:3rem;white-space:normal;word-wrap:break-word;display: -webkit-box;-webkit-line-clamp:2;-webkit-box-orient: vertical;}
@@ -42,26 +41,37 @@
 	z-index: -1;
 }
 
+
+
 @mixin clearfix {
   &:after {content:'';display:block;clear:both;}
 }
 
 @mixin hover-text {text-decoration:underline;}
 @mixin hover-item {
+  --hover-outline: calc(var(--space-3) / 2 * -1);
+
+  background: var(--color-background-weak) !important;
+  box-shadow: 0 0 0 6px var(--color-background-weak) !important;
+
   // item in card component // active
-  // 부모태그에 position: relative;zindex:1;
   cursor: pointer;
   &:before {
-    --hover-outline: calc(var(--space-3) / 2 * -1);
-    content:'';
-    display:block;background:var(--color-background-weak);border-radius:var(--radius);
-    position:absolute;
-    left:var(--hover-outline);right:var(--hover-outline);top:var(--hover-outline);bottom:var(--hover-outline);
-    z-index:-1;
+
+    // z-idnex 이슈
+    // content:'';
+    // display:block;
+    // background:var(--color-background-weak);border-radius:var(--radius);
+    // position:absolute;
+    // left:var(--hover-outline);right:var(--hover-outline);top:var(--hover-outline);bottom:var(--hover-outline);
+    // z-index: -1;
+
+
   }
   figure {background-color:var(--color-background) !important;}
 }
 .is-hoverable {@include hover-item;}
+
 
 // mobile padding 패딩은 page-head에서 주는 게 좋음. -margin 주는 게 좋을 듯.
 @mixin layout($size: 800px) {
@@ -76,8 +86,16 @@
 @mixin layout-small {@include layout(var(--layout-width-tiny));}
 
 
+
+@mixin stack {
+  display:flex;flex-wrap:wrap;align-items:center;margin:var(--space-1-minus);
+  > * {
+    margin:var(--space-1);
+  }
+}
+
 // todo flex일 대 min-width가 필수가 된다..
-@mixin group-bleeding {
+@mixin stack-vertical-scroll {
   display:flex; // 중복
   flex-wrap: nowrap;
   white-space:nowrap;
@@ -87,17 +105,16 @@
   > * {min-width:auto;}
   &::-webkit-scrollbar {display:none;}
 }
-// @mixin chip-group {@include group(var(--space-groupitem))}
 
-@mixin tag-group {
-  display:flex;flex-wrap:wrap;align-items:center;margin:var(--space-1-minus);
-  > * {margin:var(--space-1);}
-}
 
-@mixin chip-group {
-  display:flex;flex-wrap:wrap;margin:var(--space-groupitem-minus);
-  > * {margin:var(--space-groupitem)}
-}
+.stack {display:flex;flex-wrap:wrap;align-items:center;margin:var(--space-1-minus)}
+.stack > * {margin:var(--space-1);}
+.stack[data-size=small] {}
+.stack[data-size=large] {}
+.stack[data-scroll=vertical] {@include stack-vertical-scroll();}
+
+
+.button-group {} // align= left ' right ' isFluid(space-between + column width)
 
 .button-group {display:flex;}
 .button-group > * {flex:auto;}
@@ -106,13 +123,7 @@
 
 // group /style='button''chip''tag' vs ButtonGroup ChipGroup
 
-// chip-group / chip-group-bleeding
-.textfield-group {}
-.button-group {} // align= left ' right ' isFluid(space-between + column width)
-.tag-group {@include tag-group;}
-.chip-group {@include chip-group;}
-.chip-group[data-align=bleed]  {@include group-bleeding;}
-.group-bleeding {}
+
 
 
 @mixin position-left-top {position:absolute;left:var(--space-1);top:var(--space-1);}
