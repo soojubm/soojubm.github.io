@@ -1,39 +1,4 @@
 <main class="tokens">
-  <!-- <section class="hero">
-    <h1 class="hero-title">Tokens</h1>
-  </section> -->
-
-  <!-- // ! what-target-option(thiness/states), gray is... non semantic -->
-
-  <!-- <h1 class="hero-title">일관된 시각 경험. 크로스 플랫폼. 확장과 유지 보수.</h1> -->
-  <!-- <ul>
-    <li>프로덕션이 아니기 때문에 namespace를 생략.</li>
-    <p>core: give a name to a raw value to enable theming and make improve maintainability / semantic / component</p>
-    <p>20 - 20px. tailwind의 단점. 디자인 토큰에서 얻을 수 있는 추상화 및 기타 이점이 무효화. 값을 조정하기 쉽도록 추상화.</p>
-
-    <li>컴포넌트 토큰은 상대적으로 변경 가능성이 높고 범용성이 낮기 때문에 컴포넌트 스코프에서 정의합니다.</li>
-  </ul> -->
-
-  <!-- <li>Figma usage</li> -->
-  <!-- <li>prefix. 라이브러리와 충돌을 방지합니다.</li> -->
-  <!-- <li>모든 세부사항을 정의할 필요는 없습니다. 예를 들면, border width와 같은 한정된 용법은 약속을 하지 않는 편이 좋다. 변경이 어렵지 않기 때문이다. 볼륨이 커질 때 약속을 해도 충분하다. 문제 해결을 위한 도구가 복잡해지지 않도록 유지하는 것도 중요.</li> -->
-  <!-- <li>값을 직접적으로 이름에 포함하지 마세요. 추상화를 통한 장점의 유실.</li> -->
-  <!-- <li>SCSS/LESS: kebab-case</li>
-  <li>JS: PascalCase</li>
-  <li>Android: snake_case</li>
-  <li>iOS: PascalCase</li> -->
-  <!-- <ul>
-    <li>중요도: Primary, Secondary, Tertiary,</li>
-    <li>강도: none, low, normal, medium, high,max</li>
-    <li>강도: Weak, Moderate, Strong, Extreme</li>
-    <li>속도: instant, immediate, quick / fast, moderate, slow, deliberate</li>
-    li  Informational.
-    tone / shade / tint / subtle
-    intense또는 vibrant더 강렬하고 다채로운
-    bold더 강하게, 더 강렬하게, 더 크게
-    prominent또는 pronounced더 눈에 띄는
-  </ul> -->
-  <!-- system: error / success / warning / info / update (new) -->
 
   <nav class="component-navigation stack" role="group" data-scroll="vertical">
     <div class="component-navigation-background"></div>
@@ -49,13 +14,93 @@
     <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Optical Adjustment</span></a>
   </nav>
 
+  <!-- <ul>
+    <p>core: give a name to a raw value to enable theming and make improve maintainability / semantic / component</p>
+    <p>20 - 20px. tailwind의 단점. 디자인 토큰에서 얻을 수 있는 추상화 및 기타 이점이 무효화. 값을 조정하기 쉽도록 추상화.</p>
+  </ul> -->
+
+  <!-- <li>Figma usage</li> -->
+
+  <!--
+    <li>SCSS/LESS: kebab-case</li>
+    <li>JS: PascalCase</li>
+    <li>Android: snake_case</li>
+    <li>iOS: PascalCase</li>
+    <li>강도: none, low, normal, medium, high,max</li>
+
+      tone / shade / tint / subtle
+    intense또는 vibrant더 강렬하고 다채로운
+    bold / prominent - pronounced 더 눈에 띄는 -->
+
   <section class="tokens-body">
-    <!-- <article class="article">
-      <div>1~2번 사용하는 예외케이스를 토큰으로 정의하지 마세요. 컴포넌트 스코프에서 예외 케이스로 보충하세요.</div>
-      <li>MD3 참고. surface는 shadow 뿐 아니라 color도. radius를 shape</li>
-      <li>radius. pill과 non-pill은 양자택일. 인물 아바타를 특정하기 위해 circle은 허용할 수 있다. +++ 유투브 업데이트에서 용도 별로 pill + radius 2가지 형태의 필터링 칩을 제공.</li>
-      <li>32px + .5rem + .5rem = 50px why. border가 있는 elevated button. hegiht 값을 넣어준다? => large 가 됨.</li>
-    </article> -->
+    <article class="article">
+      <div class="obbbb" style="width: var(--size-small); height: var(--size-small);background-color: var(--green100);"></div>
+      <h1 class="article-title">Token Conventions</h1>
+      <p class="article-description">일관된 시각 경험. 크로스 플랫폼. 확장과 유지 보수.</p>
+
+      <h4 class="article-subhead">Best practices</h4>
+      <p>모든 세부사항을 정의할 필요는 없습니다. 예를 들면, border width는 border 스코프에서 디펜던시가 높고 변경이 어렵지 않기 때문에 약속을 하지 않는 편이 좋습니다. 볼륨이 커질 때 약속을 해도 충분하다. 문제 해결을 위한 도구의 복잡도를 관리하세요.</p>
+
+      <h4 class="article-subhead">Namespace</h4>
+      <p>라이브러리와 충돌을 방지하기 위해 사용합니다. 프로덕션이 아니기 때문에 여기에서는 namespace를 생략합니다.</p>
+
+      <h4 class="article-subhead">Component Tokens</h4>
+      <p>컴포넌트 토큰은 상대적으로 변경 가능성이 높고 범용성이 낮기 때문에 컴포넌트 스코프에서 정의합니다.</p>
+
+      <h4 class="article-subhead">About exception cases</h4>
+      <p>1~2번 사용하는 예외케이스를 토큰으로 정의하지 않습니다. 컴포넌트 스코프에서 보충합니다.</p>
+
+      <h4 class="article-subhead">Naming guideline</h4>
+      <p>
+        --[namespace]-[component / category]-[attribute]-[status]
+      </p>
+      <p>값을 직접적으로 이름에 포함하지 마세요. 추상화를 통한 장점의 유실.</p>
+
+      <div class="stack">
+        <span class="tag" data-style="primary">중요도</span>
+        <span class="tag">Primary</span>
+        <span class="tag">Secondary</span>
+        <span class="tag">Tertiary</span>
+      </div>
+      <hr />
+      <div class="stack">
+        <span class="tag" data-style="primary">강도</span>
+        <span class="tag">weak</span>
+        <span class="tag">moderate</span>
+        <span class="tag">strong</span>
+        <span class="tag">extreme</span>
+      </div>
+      <hr />
+      <div class="stack">
+        <span class="tag">instant / immediate</span>
+        <span class="tag">quickly</span>
+        <span class="tag">slowly</span>
+        <span class="tag">deliberate</span>
+      </div>
+      <hr />
+      <div class="stack">
+        <span class="tag" data-style="primary">system status</span>
+        <span class="tag">error</span>
+        <span class="tag">success</span>
+        <span class="tag">warning</span>
+        <span class="tag">info</span>
+        <span class="tag">updated (new)</span>
+        <span class="tag">loading / fetching ?</span>
+      </div>
+
+      <li>radius. pill과 non-pill은 양자택일. 인물 아바타를 특정하기 위해 circle은 허용할 수 있다. </li>
+        
+      <p>
+        Styling hooks follows a specific naming convention to promote predictability and consistency.
+      </p>
+
+
+      <blockquote>
+        <p>! problem: size + space = large siz가 되려면 border가 아니라 box-shadow로 보더를 줘야 한다.</p>
+        <p>MD3 참고. surface는 shadow 뿐 아니라 color도. radius를 shape</ㅔ>
+      </blockquote>
+    </article>
+
 
     <article class="article js-scrollspy-section">
       <h1 class="article-title">Palette</h1>
@@ -101,7 +146,7 @@
         </article>
       </div>
 
-      <h4 class="article-subhead">Colours<br />background/border/text/state</h4>
+      <h4 class="article-subhead">Colours<br />background/border/text/status</h4>
       <div class="token-group">
         <article class="token-item is-gray000">
           <figure class="token-item-avatar"></figure>
@@ -202,9 +247,9 @@
       <p class="article-description">활자의 위계와 배치.</p>
 
       <!-- <a href="">link to texts pattern</a> -->
-      <button class="user-logout tile-elevated-small js-default-font" style="width: 50%; max-width: 240px">
-        <figure><span class="material-symbols-outlined"> disabled_by_default </span></figure>
-        <span class="user-logout-label">시스템 폰트로 보기</span>
+      <button class="menu-item js-default-font" data-tile="elevated" style="width: 50%; max-width: 240px">
+        <figure class="menu-item-avatar"><span class="material-symbols-outlined"> disabled_by_default </span></figure>
+        <span class="menu-item-label">시스템 폰트로 보기</span>
       </button>
       <h4 class="article-subhead">Typefaces <sup>2</sup></h4>
       <!-- <p>history 아리타 산스 윈도우즈 환경에서 bold 표현이 약해서 바꿔 봄.</p> -->

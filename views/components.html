@@ -338,14 +338,14 @@ arrow_drop_down
             </span>
           </button>
           <div class="menu-item" role="menuitem" data-size="medium" style="width: 100%">
-            <figure class="item-avatar">🏹</figure>
-            <span class="item-label">entity와 구별</span>
-            <span class="item-tag" data-style="primary">새소식</span>
+            <figure class="menu-item-avatar">🏹</figure>
+            <span class="menu-item-label">기본 메뉴아이템</span>
+            <span class="tag" style="margin: 0 0 0 var(--space-2)">새소식</span>
           </div>
           <div class="menu-item" role="menuitemcheckbox" data-size="medium">
-            <figure class="item-avatar"></figure>
-            <span class="item-label">카카오뱅크</span>
-            <div class="checkbox menutype" style="position: absolute; right: 0; top: 0">
+            <figure class="menu-item-avatar"></figure>
+            <span class="menu-item-label">메뉴아이템 체크박스 샘플</span>
+            <div class="checkbox" style="position: absolute; right: 0; top: 0">
               <input type="checkbox" id="c1" name="c1" value="" />
               <label for="c1" title=""></label>
             </div>
@@ -354,10 +354,10 @@ arrow_drop_down
 
         <div class="tile-flat">
           <div class="item" data-size="large" role="menuitem">
-            <figure class="item-avatar"></figure>
-            <b class="item-label">windows 패턴 with quick action</b>
+            <figure class="item-avatar">🏹</figure>
+            <b class="item-label">windows 패턴</b>
             <button class="chip" style="margin-left: auto; margin-right: var(--space-2)">
-              <span class="chip-label">휴대폰과 연결 열기</span>
+              <span class="chip-label"> with quick action</span>
             </button>
             <span class="material-symbols-outlined">chevron_right</span>
           </div>
@@ -378,6 +378,9 @@ arrow_drop_down
             <a class="menu-link" href="#design">Only Text</a>
             <a class="menu-link" href="#design">Only Text Menu</a>
           </menu>
+        </div>
+        <div class="tile-flat">
+          <p>todo dropdown용 메뉴</p>
         </div>
       </section>
 
@@ -466,13 +469,14 @@ arrow_drop_down
       <div style="padding: 1rem; background: var(--red100)">123</div>
 
       <ul>
-        <li>레이블은 사용자가 다음에 일어날 일을 예측할 수 있도록 작성하세요.</li>
-        <li>전환을 위한 CTA을 위해 툴팁으로 행동을 유도하거나, 보조 텍스트로 실행을 유도하거나 실행 결과를 가이드하지 마세요.</li>
+        <li>
+          전환을 위한 CTA의 레이블은 사용자가 다음에 일어날 일을 예측할 수 있도록 작성하세요. 툴팁으로 부연하거나, 보조 텍스트로 실행 유도나 실행
+          결과를 가이드할 필요가 없어야 합니다.
+        </li>
         <li>large 버튼은 프로모션 페이지의 call to action으로 용법을 제한</li>
       </ul>
       <!-- <li>memo: secondary style과 large size의 사용 빈도 낮음.</li> -->
       <!-- <p><b>text.</b> 버튼은 버튼 처럼 보이지 않을 수 있기 때문에 특정 패턴에서만 사용하세요.</li> -->
-      <!-- <li>작업 / 액션 / 실행</li> -->
       <!-- <p>
         이 시스템에는 정의하지 않지만 세로 정렬되는 버튼 그룹에서 text button이 아래에 배치되는 패턴을 고려하여 버튼의 아래 가이드 텍스트를 배치하지
         않습니다.)
@@ -530,7 +534,7 @@ arrow_drop_down
 
       <h4 class="article-subhead">ShowMoreButton<span hidden>Image Button, CheckoutButton</span></h4>
       <ul style="margin-bottom: 0.5rem">
-        <li>fullWidth로 사용하지 마세요. 단일 콘텐츠 또는 콘텐츠 목록보다 너비가 좁더라도 대비는 더 크다.</li>
+        <li>fullWidth로 사용하지 마세요. 단일 콘텐츠 또는 콘텐츠 목록보다 너비를 좁게 하여 대비를 높입니다.</li>
       </ul>
       <div class="tile-flat">
         <button class="button-tertiary">
@@ -603,7 +607,7 @@ arrow_drop_down
               <span class="chip-label">좋아요 117</span>
             </button>
             <button class="chip">
-              <span class="chip-label">removable? (todo)</span>
+              <span class="chip-label">removable</span>
               <figure class="chip-remove"><span class="material-symbols-outlined">close</span></figure>
             </button>
             <button class="chip">
@@ -838,7 +842,7 @@ arrow_drop_down
       </p>
 
       <h4 class="article-subhead">Accessibility</h4>
-      <p>'여기', '클릭', '확장' 등 시각에 의존한 단어로 작성하지 마세요. 접근성.</p>
+      <p>'여기', '클릭', '확장' 등 시각에 의존한 단어로 작성하지 마세요.</p>
 
       <h4 class="article-subhead">Props</h4>
       <dl>
@@ -888,9 +892,10 @@ arrow_drop_down
         </div>
       </section>
 
+      <h2 class="article-subhead">Best practices</h2>
       <ul>
         <li>non-clickable<span hidden>triggering interaction</span></li>
-        <li>하나의 콘텐츠를 부연하기 위해 하나의 Primary style을 사용하세요.</li>
+        <li>Primary style은 하나의 그룹에 최대 하나.</li>
       </ul>
 
       <h2 class="article-subhead">Tag group</h2>
@@ -940,7 +945,7 @@ arrow_drop_down
       </section>
 
       <h2 class="article-subhead">Best practices</h2>
-      <p>변경한 상태는 즉시 실행되어 서버에 요청. 최종 저장 버튼이 필요치 않음.</p>
+      <p>변경한 상태는 즉시 실행되어 서버에 요청되거나 클라이언트에 저장되어야 합니다. 최종적인 저장 버튼이 필요하지 않습니다.</p>
 
       <ul>
         <li>스위치의 왼쪽과 오른쪽에 각각 레이블을 배치하여 콘텐츠 스위칭으로 사용하지 마세요.</li>
@@ -1093,8 +1098,7 @@ arrow_drop_down
 
       <h3 class="article-subhead">Best practices</h3>
       <ul>
-        <li>옵션 목록이 5개 이하일 때만 라디오그룹을 제공합니다. 5개 이상의 옵션 목록은 select나 chip group으로 제공하세요.</li>
-        <li>! 항상 그룹으로 사용됨.</li>
+        <li>옵션 목록이 5개 이하일 때만 라디오그룹(항상 그룹으로 사용)을 제공합니다. 5개 이상의 옵션 목록은 select나 chip group으로 제공하세요.</li>
       </ul>
 
       <h3 class="article-subhead">Default Value</h3>
@@ -1153,7 +1157,7 @@ arrow_drop_down
                 <option value="select2-option1">Choose an option</option>
                 <option value="select2-option2">Choose an option</option>
               </select>
-              <span class="icon-indicator material-symbols-outlined" role="img">arrow_drop_down</span>
+              <span class="chip-icon material-symbols-outlined" role="img">arrow_drop_down</span>
             </span>
           </div>
         </div>
@@ -1192,8 +1196,8 @@ arrow_drop_down
       <p class="article-description">텍스트 정보를 입력합니다.</p>
       <aside class="article-aka">
         <span class="tag">a.k.a.</span>
-        <span class="hashtag" title="">TextInput</span>
-        <span class="hashtag" title="">Input</span>
+        <span class="hashtag">TextInput</span>
+        <span class="hashtag">Input</span>
       </aside>
       <section class="component-example">
         <div class="tile-flat">
@@ -1208,9 +1212,10 @@ arrow_drop_down
               placeholder="Textarea Placeholder..."
               value="soojubm@gmail.com"
               aria-describedby="error"
+              aria-errormessage="msgID"
               aria-invalid="true"
             />
-            <small class="textfield-helper is-error">이미 등록된 이메일입니다.</small>
+            <small id="msgID" class="textfield-helper is-error" aria-live="assertive">이미 등록된 이메일입니다.</small>
           </div>
         </div>
         <div class="textfield-group tile-flat">
@@ -1234,7 +1239,7 @@ arrow_drop_down
           <div class="textfield">
             <label class="textfield-label" for="search1">레이블</label>
             <small class="textfield-byte"><b>0 KB</b> / 100 KB</small>
-            <textarea class="textfield-input" rows="2" placeholder="Textarea Placeholder..." style="height: auto"></textarea>
+            <textarea class="textfield-input" rows="3" placeholder="Textarea Placeholder..." style="height: auto"></textarea>
           </div>
         </div>
 
@@ -1606,6 +1611,14 @@ arrow_drop_down
             <button class="titlebar-action" style="color: var(--color-primary)">
               <figure class="titlebar-action-icon" hidden></figure>
               <span class="titlebar-action-label">공유</span>
+            </button>
+          </header>
+        </div>
+        <div class="tile-flat" style="overflow: hidden">
+          <header class="titlebar js-titlebar" role="navigation" style="padding: 0">
+            <button class="titlebar-back" onclick="javascript:window.location.href='/';">
+              <span class="titlebar-back-icon chip material-symbols-outlined">arrow_back</span>
+              <span class="titlebar-back-label chip-label">Back to Blahblah Page</span>
             </button>
           </header>
         </div>
@@ -2134,10 +2147,12 @@ arrow_drop_down
       </aside>
 
       <section class="component-example">
-        <div class="tile-flat">
+        <div class="tile-elevated">
           <div class="banner" role="banner" data-size="small">
             <h2 class="banner-title">모바일 친화적인 배너.</h2>
             <p class="banner-description">배너는 두 종류. 히어로와 그냥 배너.</p>
+            <!-- <button class="button-action chip" style="margin-top: 0.75rem"><span class="chip-label">콜아웃 액션 버튼 필요한가</span></button> -->
+            <!-- <figure style="position: absolute; right: -1rem; top: 20%; font-size: 4rem">🐒</figure> -->
           </div>
         </div>
         <div class="tile-flat">
@@ -2174,6 +2189,8 @@ arrow_drop_down
         <dd>string</dd>
         <dt>href</dt>
         <dd>string</dd>
+        <dt>onClick</dt>
+        <dd>() =] void</dd>
       </dl>
 
       <h4 class="article-subhead">with Toast</h4>
@@ -2471,10 +2488,10 @@ arrow_drop_down
       <p>ID <span id="output-element"></span></p>
       <p>텍스트 <span id="output-text"></span></p>
       <form>
-        <textarea id="ta-example-one" rows="7" cols="40">
+        <textarea id="ta-example-one" rows="3" cols="40">
 텍스트 영역 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt, lorem a porttitor molestie, odio nibh iaculis libero, et accumsan nunc orci eu dui.</textarea
         >
-        <textarea id="ta-example-two" rows="7" cols="40">
+        <textarea id="ta-example-two" rows="3" cols="40">
 텍스트 영역 2. Fusce ullamcorper, nisl ac porttitor adipiscing, urna orci egestas libero, ut accumsan orci lacus laoreet diam. Morbi sed euismod diam.</textarea
         >
       </form>

@@ -1002,7 +1002,7 @@ main,
 .search-similar-item figure {@include avatar-medium;margin:0 var(--space-after-avatar-medium) 0 0;}
 .search-similar-item span {display:block;padding:0 0 var(--adjust-label-line) 0;color:var(--color-text);}
 
-.search-recent {}
+.search-recent {position:relative;z-index:1;}
 .search-recent-title {margin:0 0 var(--space-2) 0;@include text-label;}
 .search-recent-group {@include stack;}
 .search-recent-group-item {@include chip;}
@@ -1013,3 +1013,13 @@ main,
 .sorting-group {display:flex;align-items:center;position:relative;}
 .sorting-title {margin:0 var(--space-2) 0 0;}
 .sorting-item {display:flex;align-items:center;}
+
+
+
+.obbbb {
+  width: var(--size-tiny);
+  background: var(--color-primary);
+  height: var(--size-tiny);
+  margin-bottom: 1rem;
+  border-radius: var(--radius);
+}

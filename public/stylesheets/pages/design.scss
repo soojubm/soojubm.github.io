@@ -109,7 +109,7 @@
 .summary-item-value {}
 .summary-total {display:flex;justify-content:space-between;padding:.5rem 0 0;@include text-subhead;}
 
-.keywords {@include tile-elevated;max-width:400px;}
+.keywords {@include tile-elevated;max-width:400px;z-index:1;}
 .keywords-title {@include text-subhead;margin:var(--space-leading-subhead) 0 var(--space-3) 0;}
 .keywords-group {@include stack;}
 .keywords-group-keyword {@include chip;}
@@ -133,17 +133,19 @@
 }
 
 
-.person-list {@include stack;}
+.person-list {display:flex;flex-wrap:wrap;}
 .person {
-  // @include tile-elevated-small;
+  display: block;
+  @include tile-elevated-small;
+  margin-right: var(--space-3);
 }
 .person:hover {@include hover-item;}
-.person-name {display:block;margin:.375rem 0 0 0;}
+.person-name {display:block;width:var(--size-huge);margin:var(--space-2) 0 0 0;color:var(--color-text);@include truncate-multi;}
 .person-test {
   @include tag-primary;
   position: absolute;
-  left: .5rem;
-  top: .5rem;
+  left: .25rem;
+  top: .25rem;
   z-index: 1;
 }
 

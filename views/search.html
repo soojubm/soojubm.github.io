@@ -28,7 +28,7 @@
     <ul>
       <li>tabIndex: back - input</li>
       <li><b>onBlur. (default)</b> 인기 콘텐츠 또는 추천 콘텐츠 등 개인화 콘텐츠 탐색할 수 있다.</li>
-      <li><b>onFocus.</b> 검색내역을 표시하고 검색 키워드를 입력할 수 있다. 취소 버튼으로 onBlur.</li>
+      <li><b>onFocus.</b> 검색내역을 표시하고 검색 키워드를 입력할 수 있다. iOS는 취소 버튼으로 onBlur.</li>
     </ul>
 
     <section class="component-example">
@@ -52,7 +52,7 @@
             type="search"
             id="search"
             placeholder="android pattern"
-            style="width: calc(100% - var(--size-large) - 0.25rem); margin-left: auto; padding-left: 0.75rem"
+            style="width: calc(100% - var(--size-large) - 0.5rem); margin-left: auto; padding-left: 0.75rem"
           />
           <button class="searchfield-clear" hidden style="right: 0.75rem">
             <span class="material-symbols-outlined">close</span>
@@ -61,7 +61,7 @@
       </div>
       <div class="tile-flat">
         <header class="titlebar" style="padding: 0 0 var(--space-2) 0">
-          <h1 class="titlebar-title">?????</h1>
+          <h1 class="titlebar-title" hidden>?????</h1>
           <button class="titlebar-back" aria-label="이전 페이지로">
             <span class="material-symbols-outlined">arrow_back</span>
           </button>
@@ -80,7 +80,7 @@
             <span class="material-symbols-outlined">close</span>
           </button>
         </div>
-        <div class="keywords-group" role="group" style="margin: 0.5rem 0 0">
+        <div class="keywords-group" role="group" style="margin-top: 0.5rem">
           <button class="keywords-group-keyword">
             <span class="chip-label">로얄테넌바움</span>
           </button>
@@ -109,9 +109,9 @@
         <section class="search-recent">
           <h2 class="search-recent-title">최근 검색</h2>
           <!-- <button class="search-recommend-modify">수정</button> -->
-          <div class="item" data-size="medium">
-            <figure class="item-avatar"></figure>
-            <p>개구리</p>
+          <div class="menu-item" data-size="medium">
+            <figure class="menu-item-avatar"></figure>
+            <span class="menu-item-label">개구리</span>
             <button class="item-delete material-symbols-outlined" data-size="small">close</button>
             <button class="item-delete">삭제</button>
           </div>
@@ -119,15 +119,17 @@
       </div>
 
       <div class="tile-flat">
-        <section class="" style="text-align: center">
-          <p class="" role="status">최근 검색 내역이 없습니다.</p>
-          <div class="search-recent-group" role="group" style="margin: 0.25rem 0 0">
+        <div class="empty" style="max-width: 100%; margin: 0; padding: 2rem 0" role="status">
+          <!-- <i class="empty-icon">🧟</i> -->
+          <!-- <h1 class="empty-title">주문을 확인해주세요.</h1> -->
+          <p class="empty-description" style="margin-top: 0">최근 검색 내역이 없습니다.</p>
+          <br />
+          <div class="search-recent-group search-recommend" role="group" style="justify-content: center">
             <a class="search-recent-group-item" href="#"><span class="chip-label">개구리</span></a>
             <a class="search-recent-group-item" href="#"><span class="chip-label">달팽이</span></a>
             <a class="search-recent-group-item" href="#"><span class="chip-label">매미</span></a>
           </div>
-        </section>
-        <!-- <section class="search-recommend"></section> -->
+        </div>
       </div>
     </section>
 
@@ -143,11 +145,9 @@
             <figure class="search-suggestion-item-avatar item-avatar"></figure>
             <p class="item-name">자동완성유아이</p>
           </div>
-          <div class="tile-elevated-small">
-            <div class="search-suggestion-item menu-item" style="margin-bottom: 0; z-index: auto">
-              <figure class="search-suggestion-item-avatar menu-item-avatar"><span class="material-symbols-outlined">search</span></figure>
-              <p class="menu-item-label" style="color: var(--color-primary)"><span>자동완</span>(으)로 검색</p>
-            </div>
+          <div class="search-suggestion-item menu-item" data-tile="elevated" style="margin-bottom: 0; z-index: auto">
+            <figure class="search-suggestion-item-avatar menu-item-avatar"><span class="material-symbols-outlined">search</span></figure>
+            <p class="menu-item-label" style="color: var(--color-primary)"><span>자동완</span>(으)로 검색</p>
           </div>
         </section>
       </div>
@@ -176,19 +176,24 @@
       <li>결과 페이지의 공유를 허용할 것인가?</li>
     </ul>
     <section class="component-example">
-      <section class="result tile-flat" style="padding-top: 2rem; padding-bottom: 2.5rem">
-        <p role="status" style="text-align: center">수줍이와(과)<br />일치하는 검색결과가 없습니다.</p>
-        <div style="display: flex; justify-content: center; margin-top: 1rem; margin-left: -0.25rem">
-          <a href="" class="search-similar-item">
-            <figure>🦔</figure>
-            <span>검색어 제공</span>
-          </a>
-          <a href="" class="search-similar-item">
-            <figure>🐈‍⬛</figure>
-            <span>검색어 제공</span>
-          </a>
+      <div class="tile-elevated">
+        <div class="empty" style="max-width: 100%; margin: 0; padding: 2rem 0" role="status">
+          <!-- <i class="empty-icon">🧟</i> -->
+          <!-- <h1 class="empty-title">주문을 확인해주세요.</h1> -->
+          <p class="empty-description" style="margin-top: 0"><em>수줍이</em>와(과)<br />일치하는 검색결과가 없습니다.</p>
+          <br />
+          <div class="stack" role="group" style="justify-content: center">
+            <a href="" class="search-similar-item">
+              <figure>🦔</figure>
+              <span>검색어 제공</span>
+            </a>
+            <a href="" class="search-similar-item">
+              <figure>🐈‍⬛</figure>
+              <span>검색어 제공</span>
+            </a>
+          </div>
         </div>
-      </section>
+      </div>
     </section>
 
     <h2 class="article-subhead">placeholder의 작성</h2>
@@ -197,11 +202,11 @@
     <ul>
       <li>검색 데이터는 어떻게 수집하는가.</li>
       <li>flowchart.</li>
-      <li>searchfield는 textfield와 다른 컴포넌트로 구성하는 것이 좋다.</li>
+      <li>searchfield는 textfield와 다른 컴포넌트로 구성하는 것이 좋다. validation의 유무. 레이블의 유무. icon indicator의 유무.</li>
       <li>검색 페이지가 탐색을 역할을 겸하는가?</li>
       <li>비회원의 검색 내역을 저장할 것인가?</li>
       <li>전체 검색 내역과 최근 검색 내역. 활동 로그. (facebook. 나만 보기)</li>
-      <li>글로벌 검색 패턴과 로컬 검색 패턴</li>
+      <li>글로벌 검색 패턴과 로컬 검색 패턴의 차이.</li>
     </ul>
 
     <h4 class="article-subhead">References</h4>

@@ -51,24 +51,25 @@
 @mixin hover-item {
   --hover-outline: calc(var(--space-3) / 2 * -1);
 
-  background: var(--color-background-weak) !important;
-  box-shadow: 0 0 0 6px var(--color-background-weak) !important;
+  // background: var(--color-background-weak) !important;
+  // box-shadow: 0 0 0 4px var(--color-background-weak) !important;
 
   // item in card component // active
   cursor: pointer;
   &:before {
 
     // z-idnex 이슈
-    // content:'';
-    // display:block;
-    // background:var(--color-background-weak);border-radius:var(--radius);
-    // position:absolute;
-    // left:var(--hover-outline);right:var(--hover-outline);top:var(--hover-outline);bottom:var(--hover-outline);
-    // z-index: -1;
+    content:'';
+    display:block;
+    background-color:var(--color-background-weak);
+    border-radius:var(--radius);
+    position:absolute;
+    left:var(--hover-outline);right:var(--hover-outline);top:var(--hover-outline);bottom:var(--hover-outline);
+    z-index: -1;
 
 
   }
-  figure {background-color:var(--color-background) !important;}
+  figure {box-shadow:var(--shadow) !important;}
 }
 .is-hoverable {@include hover-item;}
 
@@ -109,6 +110,7 @@
 
 .stack {display:flex;flex-wrap:wrap;align-items:center;margin:var(--space-1-minus)}
 .stack > * {margin:var(--space-1);}
+// imporant is for tile
 .stack[data-size=small] {}
 .stack[data-size=large] {}
 .stack[data-scroll=vertical] {@include stack-vertical-scroll();}
@@ -145,7 +147,7 @@
   display: inline-flex;
   align-items: center;
   height: var(--size-small);
-  padding: 0 var(--space-2);
+  padding: 2px var(--space-2) 0;
   border-radius: var(--radius);
   border: var(--border);
   box-sizing: border-box;

@@ -125,7 +125,9 @@
 
   <fieldset class="checkout-coupon">
     <h2 class="checkout-shipping-title">쿠폰</h2>
-    <p>사용 가능한 쿠폰이 없습니다.</p>
+    <div class="empty">
+      <p class="empty-description">사용 가능한 쿠폰이 없습니다. content 영역의 컨테이너가 필요하겠다. 항상.</p>
+    </div>
     <div class="textfield">
       <label class="textfield-label" for="select1">보너스 쿠폰 </label>
       <select class="textfield-input" id="select1">
@@ -141,9 +143,9 @@
     <h2 class="checkout-shipping-title">마일리지</h2>
     <div class="checkout-shipping-name textfield">
       <label class="checkout-shipping-name-label textfield-label">사용 마일리지</label>
-      <input class="checkout-shipping-name-value textfield-input" type="text" name="email" id="login-email" placeholder="수줍이" />
+      <input class="checkout-shipping-name-value textfield-input" type="text" name="email" id="login-email" placeholder="0 마일리지" />
     </div>
-    <button class="chip"><span class="chip-label">보유 마일리지 1,186p 모두사용</span></button>
+    <button class="chip" style="margin: var(--space-3) 0 0 0"><span class="chip-label">보유 마일리지 1,186p 모두사용</span></button>
   </fieldset>
 
   <hr />

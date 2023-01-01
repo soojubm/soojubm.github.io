@@ -1,5 +1,5 @@
 <main class="component" style="overflow: hidden">
-  <section style="padding:4rem 5vw;">
+  <!-- <section style="padding:4rem 5vw;">
     <div class="pill" style="border:none;background:gold;transform:rotate(-5deg);">안녕안녕</div>
     <div class="pill" style="margin-left:2rem;background:var(--color-background);">
       테스트 <span style="position:absolute;right:1rem;top:-2.5rem;">🚧</span>
@@ -17,9 +17,9 @@
       box-sizing: border-box;
       position: relative;
     }
-  </style>
+  </style> -->
 
-  <button aria-haspopup="true" aria-expanded="false">
+  <!-- <button aria-haspopup="true" aria-expanded="false">
     Difficulty
     <span aria-hidden="true">&#x25be;</span>
   </button>
@@ -27,22 +27,7 @@
     <button role="menuitemradio" tabindex="-1">Easy</button>
     <button role="menuitemradio" aria-checked="true" tabindex="-1">Medium</button>
   </div>
-
-  <p>Naming Conventions</p>
-  <p>
-    Styling hooks follows a specific naming convention to promote predictability and consistency. All SLDS styling hooks adhere to the following
-    convention.
-  </p>
-  <p>
-    --[namespace]-[scope]-[component]-[element]-[category]-[property]-[attribute]-[state]
-  </p>
-  <li>global :  --[name]-[componentName]-[role]-[?state]</li>
-
-  <h4>Accessibility</h4>
-  <p>role=checkbox aria-checked=false</p>
-  <p>menuitemradio, menuitemcheck aria-checked</p>
-  <input id="startTime" type="text" aria-errormessage="msgID" aria-invalid="true" value="11:30 PM" />
-  <span id="msgID" aria-live="assertive" style="visibility:visible"> Invalid time: the time must be between 9:00 AM and 5:00 PM" </span>
+  <p>role=checkbox aria-checked=false</p> -->
 
   <section class="hero" role="banner">
     <div class="hero-background"></div>
@@ -55,6 +40,7 @@
   </section>
 
   <section class="component-body" style="margin: 0 var(--grid-margin);">
+
     <div class="stack">
       <div class="menu-item" role="menuitem" data-size="large" data-align="vertical">
         <figure class="menu-item-avatar">🏹</figure>
@@ -62,8 +48,23 @@
       </div>
     </div>
 
-    <hr />
-
+    <article class="keywords" style="padding: 1rem;">
+      <h3 class="keywords-title">지금 인기있는<br />이슈 키워드</h3>
+      <div class="keywords-group" role="group">
+        <a class="keywords-group-keyword" href="#"><span class="keywords-group-keyword-label">국정감사</span></a>
+        <a class="keywords-group-keyword" href="#"><span class="keywords-group-keyword-label">윤석열검찰총장</span></a>
+        <a class="keywords-group-keyword" href="#"><span class="keywords-group-keyword-label">조국</span></a>
+        <a class="keywords-group-keyword" href="#"><span class="keywords-group-keyword-label">뉴닉</span></a>
+        <a class="keywords-group-keyword" href="#"><span class="keywords-group-keyword-label">차별금지법</span></a>
+        <a class="keywords-group-keyword" href="#"><span class="keywords-group-keyword-label">추미매법무부장관</span></a>
+      </div>
+      <button class="menu-item" data-tile="elevated" style="margin-top:var(--space-3);margin-bottom: 0">
+        <figure class="menu-item-avatar">
+          <span class="material-symbols-outlined">search</span>
+        </figure>
+        <span class="menu-item-label">직접 검색</span>
+      </button>
+    </article>
 
     <article class="tile-elevated" style="max-width: 400px; padding: 1rem; z-index: 1">
       <figure class="user-avatar"></figure>
@@ -80,7 +81,7 @@
       </div>
 
       <footer class="user-foot" style="margin: var(--space-3) 0">
-        <button class="profile-foot-follow"><span class="item-action-label">팔로우 버튼이 작은 것이 트랜드</span></button>
+        <button class="profile-foot-follow"><span class="item-action-label">팔로우 버튼이 작은 것이 트랜드. 칩을 팔로우 버튼으로 쓰려면 아바타가 huge 사이틎가 되어서는 안 된다.</span></button>
       </footer>
       <div class="statistic" data-size="small" style="justify-content: left; margin: 1rem 0 1rem">
         <div class="statistic-item" onclick="javascript:alert('샘플 유아이에요!')">
@@ -110,7 +111,7 @@
       </article>
     </article>
 
-    <article class="card has-clickable" role="listitem" style="max-width: 400px" data-align="vertical">
+    <article class="card has-clickable" role="listitem" style="max-width: 400px;z-index:1;" data-align="vertical">
       <figure class="card-thumbnail"><img src="/public/images/springsteen.jpg" alt="" /></figure>
       <figure class="card-avatar">🍊</figure>
       <h3 class="card-title">카드 유아이</h3>
@@ -123,13 +124,12 @@
         <span class="card-tags-item">UI</span>
         <span class="card-tags-item">React</span>
       </div>
-      <div class="card-byline">
+      <div class="card-byline tile-elevated-small" style="margin:var(--space-3) 0;">
         <figure class="card-byline-avatar"><img src="/public/images/springsteen.jpg" alt="" /></figure>
         <span class="card-byline-name">수줍이</span>
         <time class="card-date">2017. 12. 21.</time>
       </div>
       <span class="card-category">카테고리</span>
-      <hr />
       <button class="menu-item" data-size="large">
         <figure class="menu-item-avatar" style="background-image: none">🍊</figure>
         <span class="menu-item-name">퓨어 오렌지 주스</span>
@@ -249,11 +249,11 @@
           <h3 class="step-item-label" style="font-size: var(--font-size-small)">배달완료</h3>
         </div>
       </section>
-      <div class="stack" style="margin-top: 0.75rem">
+      <div class="stack tile-elevated-tiny" style="margin-top: 1rem">
         <button class="chip"><span class="chip-label">리뷰쓰기</span></button>
         <button class="chip"><span class="chip-label">재주문</span></button>
       </div>
-      <small>네이버는 왜 주문 내역을 삭제(숨김?) 기능을?</small>
+      <blockquote style="margin:.75rem 0 0 0;"><small>네이버는 왜 주문 내역 삭제(숨김?) 기능을?</small></blockquote>
     </div>
 
     <fieldset class="" role="radiogroup" style="display: flex">
@@ -275,8 +275,8 @@
           <small> use cases: 기본 주소록, 선택 목록 with 이미지 가이드 등 todo. 세로값 토큰. todo. background-weak + radius tile </small>
         </figure>
         <div class="radio">
-          <input type="radio" id="raidio5" name="gender" value="" />
-          <label for="raidio5" title="">tile style</label>
+          <input type="radio" id="raidio6" name="gender" value="" />
+          <label for="raidio6" title="">tile style</label>
         </div>
       </div>
     </fieldset>
@@ -340,7 +340,7 @@
       </button>
     </article>
 
-    <article class="tile-elevated" style="width: 100%; max-width: 400px; position: relative">
+    <article class="tile-elevated" style="width: 100%; max-width: 400px;z-index:1;">
       <header class="titlebar" style="padding: 0">
         <h1 class="titlebar-title">See this post in</h1>
         <button class="titlebar-back" aria-label="이전 페이지로">
@@ -406,7 +406,7 @@
       </blockquote>
     </article>
 
-    <menu class="access tile-elevated" style="width: 100%; max-width: 400px;">
+    <menu class="access tile-elevated" style="width: 100%; max-width: 400px;z-index:1;">
       <header class="titlebar" style="display:block;padding: 0;">
         <button class="titlebar-back">
           <figure class="chip material-symbols-outlined">close</figure>
@@ -477,7 +477,7 @@
     <hr />
     <!-- ! flex-wrap: warp일 때 min-width가 fixed -->
     <!-- ! width:100% and max-width doesnt' work-->
-    <form class="tile-elevated" action="" style="max-width: 400px">
+    <form class="tile-elevated" action="" style="max-width: 400px;z-index:1;">
       <header class="titlebar" style="padding: 0">
         <h1 class="titlebar-title" style="line-height: 32px; position: relative; left: auto; transform: translateX(0)">"파일 제목.pdf" 공유</h1>
         <button class="chip" style="margin-left: auto"><span class="material-symbols-outlined">settings</span></button>
@@ -486,7 +486,7 @@
           <label class="textfield-label" for="" aria-hidden="true">댓글</label>
           <input class="textfield-input" type="text" rows="4" name="comment" placeholder="사용자 및 그룹 추가"></input>
         </div> -->
-      <button class="menu-item" data-tile="elevated">
+      <button class="menu-item" data-tile="elevated" style="margin:0 0 var(--space-3) 0;">
         <figure class="menu-item-avatar">
           <span class="material-symbols-outlined">add</span>
         </figure>
@@ -691,15 +691,26 @@
     <hr />
 
     <section style="max-width: 640px">
-      <div style="display: flex; margin: 0 -0.375rem 0.75rem">
+      <!-- <div style="display: flex; margin: 0 -0.375rem 0.75rem">
         <div class="tile-elevated" style="width: 240px; margin: 0 0.375rem; padding: 1rem">
-          <h2 style="line-height: var(--font-line-height)">Designers</h2>
+          <h2 style="font-size:var(--font-size-large);">Designers</h2>
           <p>50 People</p>
+        </div>
+        <div class="tile-elevated" style="width: 240px; margin: 0 0.375rem; padding: 1rem">
+          <h2 style="font-size:var(--font-size-large);">Engineers</h2>
+          <p>50 People</p>
+        </div>
+      </div> -->
+
+      <div style="display: flex; margin: 0 -0.375rem 0.75rem">
+        <div class="tile-elevated is-active" style="width: 240px; margin: 0 0.375rem; padding: 1rem;border-width:2px;border-color:var(--color-primary);">
+          <h2 style="font-size:var(--font-size-large);">송신</h2>
+          <p>12,630 건</p>
           <!-- <i class="material-symbols-outlined" style="font-size:20px;position:absolute;left:-3px;top:-3px;">arrow-right</i> -->
         </div>
         <div class="tile-elevated" style="width: 240px; margin: 0 0.375rem; padding: 1rem">
-          <h2 style="line-height: var(--font-line-height)">Engineers</h2>
-          <p>50 People</p>
+          <h2 style="font-size:var(--font-size-large);">수신</h2>
+          <p>1,508 건</p>
         </div>
       </div>
 
@@ -999,23 +1010,6 @@
       <time class="bookitem-publishedyear">${item.publishedDate || '정보가 없습니다'}</time>
     </article>
 
-    <article class="keywords" style="padding: 1rem; z-index: 1">
-      <h3 class="keywords-title">지금 인기있는 이슈 키워드</h3>
-      <div class="keywords-group" role="group">
-        <a class="keywords-group-keyword" href="#"><span class="keywords-group-keyword-label">국정감사</span></a>
-        <a class="keywords-group-keyword" href="#"><span class="keywords-group-keyword-label">윤석열검찰총장</span></a>
-        <a class="keywords-group-keyword" href="#"><span class="keywords-group-keyword-label">조국</span></a>
-        <a class="keywords-group-keyword" href="#"><span class="keywords-group-keyword-label">뉴닉</span></a>
-        <a class="keywords-group-keyword" href="#"><span class="keywords-group-keyword-label">차별금지법</span></a>
-        <a class="keywords-group-keyword" href="#"><span class="keywords-group-keyword-label">추미매법무부장관</span></a>
-      </div>
-      <button class="menu-item" data-tile="elevated" style="margin-bottom: 0">
-        <figure class="menu-item-avatar">
-          <span class="material-symbols-outlined">search</span>
-        </figure>
-        <span class="menu-item-label">직접 검색</span>
-      </button>
-    </article>
 
     <div class="quote" style="padding: 1rem">
       <figure class="quote-avatar">🥫</figure>
@@ -1138,6 +1132,11 @@
         <span class="menu-item-label">새 컬렉션 만들기</span>
       </button>
       <br />
+
+      <header style="display:flex;justify-content:space-between;margin:0 0 var(--space-4) 0">
+        <h1 class="share-title" style="margin-bottom:0;">컬</h1>
+        <button class="button-text" style="min-width:auto;height:auto;padding:0;">완료</button>
+      </header>
       <div class="textfield">
         <label class="textfield-label" for="">컬렉션 이름</label>
         <input class="textfield-input" type="text" placeholder="컬렉션 이름" />

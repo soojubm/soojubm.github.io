@@ -9,7 +9,7 @@
 
 .hero {@include hero;}
 .hero-background {@include bleeding;background:inherit;}
-.hero-eyebrow {display:block;@include tag;margin:0 0 var(--space-2) 0;}
+.hero-eyebrow {display:block;margin:0 0 var(--space-2) 0;font-weight:var(--font-weight-bold);color:var(--color-primary);}
 .hero-title {@include text-title;}
 .hero-description {@include hero-description;}
 .hero-action {display:flex;}

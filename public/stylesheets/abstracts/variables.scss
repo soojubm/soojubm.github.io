@@ -163,6 +163,11 @@
   --radius-soft: null;
 
   --shadow: 0 0 .25rem rgb(0 0 0 / 7.5%);
+  --shadow: 0 0.0625rem 0.125rem rgba(0,0,0,.15);
+  --shadow-tile: 0 0 0 1px rgb(0 0 0/5%),0 2px 2px rgb(0 0 0/4%);
+  --shadow-tile: 0 0 0.3125rem rgba(23,24,24,.05),0 0.0625rem 0.125rem rgba(0,0,0,.15);
+
+
   --shadow-active: null;
 
   --state-focus: 0 0 0 3px var(--color-border-hover);
@@ -225,6 +230,7 @@
     --state-hover: 0 0 0 2px rgba(255,255,255,.25);
 
     --shadow: 0px 0px 2rem rgba(0, 0, 0, 0.25);
+    --shadow-tile: 0 0 0 1px #343c38,0 1px 6px rgba(0, 0, 0, 0.4);
 
     --gradient: linear-gradient(to bottom, var(--gray400), var(--gray800));
 

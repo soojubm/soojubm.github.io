@@ -21,11 +21,12 @@
 .token-navigation a {display:block;align-items:center;padding:var(--space-4);color:var(--color-text);}
 
 .token-item {@include tile-flat;width:100%;max-width:calc(var(--item-width) - var(--space-3));margin:calc(var(--space-3) / 2);overflow:hidden;}
-.token-item figure {margin:0 0 var(--space-3) 0;}
-.token-item-avatar {@include avatar-large;width:100%;margin:0 0 var(--space-3);}
-.token-item b {display:block;margin:var(--space-1-minus) 0;font-weight:var(--font-weight-bold);}
-.token-item div {margin:var(--space-2) 0 0 0;}
-.token-item div p {font-size:var(--font-size-small);}
+.token-item figure {margin:0 0 var(--space-2) 0;}
+.token-item-avatar {@include avatar-large;width:100%;}
+.token-item b {display:block;font-weight:var(--font-weight-bold);}
+.token-item div {margin:var(--space-1) 0 0 0;}
+.token-item div p {font-size:var(--font-size-small);line-height:var(--font-line-height);}
+.token-item div p + p {margin:var(--space-1) 0 0 0;}
 
 .token-item.is-gray000 figure {border:var(--border);background:var(--color-background);}
 .token-item.is-gray100 figure {background:var(--gray100);}

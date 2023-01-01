@@ -28,7 +28,7 @@
 
 .menu-item[data-tile=elevated] {@include tile-elevated-small;}
 
-.menu-item[data-size=large] {display:block;overflow:hidden;} // align for button element
+.menu-item[data-size=large] {display:block;@include clearfix;} // align for button element
 .menu-item[data-size=large] .menu-item-avatar {float:left;width:var(--size-large);height:var(--size-large);}
 .menu-item[data-size=large] .menu-item-label {line-height:var(--font-line-height);}
 .menu-item[data-size=large] .menu-item-description {display:block;line-height:var(--font-line-height);}
@@ -70,7 +70,10 @@
 .item-delete {@include chip;position:absolute;right:0;top:0;}
 .item-delete:hover {}
 
+
 [data-size=huge] .item-avatar {@include item-avatar-huge;}
+[data-size=huge] .item-name {font-size:var(--font-size-large);}
+
 [data-size=large] .item-avatar {@include item-avatar-large;}
 [data-size=large] .item-name {font-weight:var(--font-weight-normal);}
 [data-size=medium] .item-avatar {@include item-avatar-medium;}

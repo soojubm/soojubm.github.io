@@ -1,5 +1,5 @@
 .tag {@include tag;}
-.tag[data-style=primary] {border-color:var(--color-accent);background-color:var(--color-accent);}
+.tag[data-style=primary] {border-color:var(--color-accent);background-color:var(--color-accent);color:var(--gray800);}
 .tag[data-style=secondary] {border-color:var(--green100);background-color:var(--green100);color:var(--green800);}
 .tag[data-status=loading] {}
 
