@@ -127,7 +127,7 @@
   figure {
     @include avatar-huge;
     height:var(--size-large);
-    font-size:var(--font-size-huge);
+  font-size:var(--font-size-huge);
   }
   span {display:block;margin:var(--space-1) 0 0;text-align:center;font-size:var(--font-size-medium);}
 }
@@ -137,7 +137,7 @@
 .person {
   display: block;
   @include tile-elevated-small;
-  margin-right: var(--space-3);
+  margin: var(--space-1) 0.375rem;
 }
 .person:hover {@include hover-item;}
 .person-name {display:block;width:var(--size-huge);margin:var(--space-2) 0 0 0;color:var(--color-text);@include truncate-multi;}
