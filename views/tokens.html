@@ -1,5 +1,4 @@
 <main class="tokens">
-
   <nav class="component-navigation stack" role="group" data-scroll="vertical">
     <div class="component-navigation-background"></div>
     <a class="chip is-active js-scrollspy-trigger" href="#"><span class="chip-label">Palette</span></a>
@@ -19,8 +18,6 @@
     <p>20 - 20px. tailwind의 단점. 디자인 토큰에서 얻을 수 있는 추상화 및 기타 이점이 무효화. 값을 조정하기 쉽도록 추상화.</p>
   </ul> -->
 
-  <!-- <li>Figma usage</li> -->
-
   <!--
     <li>SCSS/LESS: kebab-case</li>
     <li>JS: PascalCase</li>
@@ -34,12 +31,15 @@
 
   <section class="tokens-body">
     <article class="article">
-      <div class="obbbb" style="width: var(--size-small); height: var(--size-small);background-color: var(--green100);"></div>
-      <h1 class="article-title">Token Conventions</h1>
+      <div class="obbbb" style="width: var(--size-small); height: var(--size-small); background-color: var(--green100)"></div>
+      <h1 class="article-title">Tokens</h1>
       <p class="article-description">일관된 시각 경험. 크로스 플랫폼. 확장과 유지 보수.</p>
 
       <h4 class="article-subhead">Best practices</h4>
-      <p>모든 세부사항을 정의할 필요는 없습니다. 예를 들면, border width는 border 스코프에서 디펜던시가 높고 변경이 어렵지 않기 때문에 약속을 하지 않는 편이 좋습니다. 볼륨이 커질 때 약속을 해도 충분하다. 문제 해결을 위한 도구의 복잡도를 관리하세요.</p>
+      <p>
+        모든 세부사항을 정의할 필요는 없습니다. 예를 들면, border width는 border 스코프에서 디펜던시가 있고, 변경이 어렵지 않기 때문에 약속을 하지
+        않는 편이 좋습니다. 볼륨이 커질 때 약속을 해도 충분하다. 문제 해결을 위한 도구의 복잡도를 관리하세요.
+      </p>
 
       <h4 class="article-subhead">Namespace</h4>
       <p>라이브러리와 충돌을 방지하기 위해 사용합니다. 프로덕션이 아니기 때문에 여기에서는 namespace를 생략합니다.</p>
@@ -47,16 +47,16 @@
       <h4 class="article-subhead">Component Tokens</h4>
       <p>컴포넌트 토큰은 상대적으로 변경 가능성이 높고 범용성이 낮기 때문에 컴포넌트 스코프에서 정의합니다.</p>
 
-      <h4 class="article-subhead">About exception cases</h4>
+      <h4 class="article-subhead">Exceptional cases</h4>
       <p>1~2번 사용하는 예외케이스를 토큰으로 정의하지 않습니다. 컴포넌트 스코프에서 보충합니다.</p>
 
-      <h4 class="article-subhead">Naming guideline</h4>
+      <!-- <h4 class="article-subhead">Naming guideline</h4>
       <p>
         --[namespace]-[component / category]-[attribute]-[status]
-      </p>
-      <p>값을 직접적으로 이름에 포함하지 마세요. 추상화를 통한 장점의 유실.</p>
+      </p> -->
+      <!-- <p>값을 직접적으로 이름에 포함하지 마세요. 추상화를 통한 장점의 유실.</p> -->
 
-      <div class="stack">
+      <!-- <div class="stack">
         <span class="tag" data-style="primary">중요도</span>
         <span class="tag">Primary</span>
         <span class="tag">Secondary</span>
@@ -86,11 +86,11 @@
         <span class="tag">info</span>
         <span class="tag">updated (new)</span>
         <span class="tag">loading / fetching ?</span>
-      </div>
+      </div> -->
 
-      <li>radius. pill과 non-pill은 양자택일. 인물 아바타를 특정하기 위해 circle은 허용할 수 있다. </li>
-        
-      <p>
+      <!-- <li>radius. pill과 non-pill은 양자택일. 인물 아바타를 특정하기 위해 circle은 허용할 수 있다. </li> -->
+
+      <!-- <p>
         Styling hooks follows a specific naming convention to promote predictability and consistency.
       </p>
 
@@ -98,9 +98,8 @@
       <blockquote>
         <p>! problem: size + space = large siz가 되려면 border가 아니라 box-shadow로 보더를 줘야 한다.</p>
         <p>MD3 참고. surface는 shadow 뿐 아니라 color도. radius를 shape</ㅔ>
-      </blockquote>
+      </blockquote> -->
     </article>
-
 
     <article class="article js-scrollspy-section">
       <h1 class="article-title">Palette</h1>
@@ -230,6 +229,10 @@
           <figure class="token-item-avatar color-skeleton"></figure>
           <b>Skeleton sample</b>
         </article>
+        <article class="token-item">
+          <figure class="token-item-avatar"></figure>
+          <b>todo Transparent gradient</b>
+        </article>
       </div>
 
       <h3 class="article-subhead">Best practices</h3>
@@ -272,7 +275,7 @@
           <b>--font-family: 'Quattrocento Sans', 'Gothic A1', sans-serif;</b>
         </div>
       </div>
-      <p style="margin: var(--space-1) 0 0 0">
+      <p style="margin: var(--space-2) 0 0 0">
         <em style="color: var(--red800)"
           >! 변경한 폰트의 baseline이 안 맞아서 세로 가격이 조금씩 틀어짐. 이러한 케이스를 폰트를 변경하지 않고 대응할 수 있는 솔루션은? 텍스트노드의
           상단 패딩에 변수값을 하나 넣어주면.</em
@@ -791,8 +794,7 @@
     </article>
 
     <article class="article js-scroll-section">
-      <h2 class="article-title"
-      ptical Adjustment</h2>
+      <h2 class="article-title">Optical Adjustment</h2>
 
       <h3 class="article-subhead">Memo</h3>
       <ul>

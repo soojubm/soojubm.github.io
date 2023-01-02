@@ -206,9 +206,8 @@
 
   html[date-theme=dark] {}
   .theme-dark {
-    // img {
-    //   filter: invert(100%) hue-rotate(180deg);mix-blend-mode: screen;mix-blend-mode: multiply;
-    // }
+    // img {filter: invert(100%) hue-rotate(180deg);mix-blend-mode: screen;mix-blend-mode: multiply;}
+    // 변수가 같더라도 재할당이 필요하다.
 
     --gray200: #252d29; // divider border
 
@@ -224,7 +223,6 @@
     --color-border: var(--gray800);
     --color-border-hover: var(--gray0);
 
-    // 변수가 같더라도 재할당이 필요하다.
     --border: 1px solid var(--color-border);
     --state-focus: 0 0 0 2px var(--color-border-hover);
     --state-hover: 0 0 0 2px rgba(255,255,255,.25);
