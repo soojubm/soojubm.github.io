@@ -1,5 +1,5 @@
 .product {@include layout-large;padding-top:0;}
-.product-image {width:460px;background:var(--color-background-weak);border-radius:var(--radius);@include position-center;}
+.product-image {width:460px;background:var(--color-background-weak);border-radius:var(--radius);position:absolute;left:50%;transform:translateX(-50%);}
 .product-image:after {content:'';display:block;padding-bottom:100%;}
 
 // 안에서

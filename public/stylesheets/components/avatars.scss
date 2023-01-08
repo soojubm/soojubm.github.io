@@ -44,3 +44,14 @@
 .avatar[data-size=large] {width:var(--size-large);height:var(--size-large);}
 .avatar[data-size=medium] {width:var(--size-medium);height:var(--size-medium);}
 .avatar[data-size=small] {width:var(--size-small);height:var(--size-small);}
+
+
+.avatar-badge {
+  @include avatar-tiny;
+  border: 2px solid var(--color-background);
+  background: var(--color-accent);
+  position: absolute;
+  left: -.25rem;
+  top: -.25rem;
+  z-index: 1;
+}

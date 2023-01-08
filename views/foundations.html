@@ -6,41 +6,27 @@
   </section>
 
   <header class="hero">
-
     <h1 class="hero-title">
       우리가 해결하려는 문제는 사용자 인터페이스가 아니다. 콘텐츠와 진짜 문제에 집중할 수 있는 시스템.
     </h1>
-
     <ul>
-      <li>코드 친화적인 컴포넌트 설계</li>
       <li>디바이스나 브라우저의 크기에 종속되지 않는 패턴 설계</li>
-      <li>기표의 형태를 통일</li>
-      <li>토큰 변경 만으로 다양한 테마에 대응 => 토큰 변경만으로 디자인 수정 가능</li>
+      <li>토큰 변경 만으로 다양한 테마에 대응/li>
       <li>변경 사항 기록과 누적 (새로운 동료의 온보딩과 제품 개선 히스토리)</li>
       <li>사용자(동료) 피드백 (디자인 시스템에 기여/크래딧을 통한 동기부여)</li>
     </ul>
   </header>
 
-    <div class="tile-elevated" data-size="huge" style="padding:1rem;">
-      <figure class="avatar" style="float:right;"></figure>
-      <h3>Michael Jackson</h3>
-      <span>New York City, USA</span>
-      <p>
-        Compellingly revolutionize customized collaboration and idea-sharing rather than corporate testing procedures. Holisticly drive technically
-        sound e-business before cross functional technologies.
-      </p>
+    <div class="foundation-unit-box">
+      <h3>getFormattedDate(20220610) / getFormattedCurrency(30000)</h3>
+      <p>30,000원 / 30,000 won / ₩ 30,000</p>
     </div>
 
-  <div class="foundation-unit-box">
-    <h3>getFormattedDate(20220610) / getFormattedCurrency(30000)</h3>
-    <p>30,000원 / 30,000 won / ₩ 30,000</p>
-  </div>
-
-  <figure style="color:var(--gray400);">
-    <div style="background:var(--green100);border-radius:var(--radius);">(local) header / navigation</div>
-    <div style="height:160px;margin:.5rem 0;background:var(--green100);border-radius:var(--radius);">main - sections</div>
-    <div style="background:var(--green100);border-radius:var(--radius);">(local) footer</div>
-  </figure>
+    <figure>
+      <div style="background:var(--green100);border-radius:var(--radius);">(local) header / navigation</div>
+      <div style="height:160px;margin:.5rem 0;background:var(--green100);border-radius:var(--radius);">main - sections</div>
+      <div style="background:var(--green100);border-radius:var(--radius);">(local) footer</div>
+    </figure>
 
     <h2 class="foundation-unit-title">컨테이너의 레벨에 따라<br />자식 컴포넌트 결정.</h2>
     <h3 class="article-subhead">Page Level</h3>
@@ -62,17 +48,15 @@
 
   <!-- 2018년 Spotify는 계속해서 빠르게 성장했습니다. 200명의 디자이너가 있었습니다. 2000 엔지니어.  45개의 다양한 플랫폼. 
   모바일과 데스크탑을 위한 디자인의 시대는 지나갔다. 이제 우리는 자동차, 스마트워치, 스피커, 심지어 스마트 냉장고까지 디자인하고 있었습니다. 이는 부분적으로 새로운 회사 전략인 편재성 때문이었습니다. 청취자가 어디서나 Spotify에 액세스할 수 있도록 하고 싶었습니다. -->
-    <p class="article-description"><b>section.</b> 섹션은 제목과 디스크립션. 그리고 item list 또는 article 레벨의 콘텐츠를 포함합니다.</p>
+  <p class="article-description"><b>section.</b> 섹션은 제목과 디스크립션. 그리고 item list 또는 article 레벨의 콘텐츠를 포함합니다.</p>
 
   <article class="article js-scrollspy-section">
     <h1 class="article-title">Layout</h1>
-
     <h4 class="article-subhead">사용자의 화면 크기를 한정하지 마세요.</h4>
     <p>
       새로운 플랫폼이나 새로운 디바이스가 출시되더라도 쉽고 빠르게 대응할 수 있어야 합니다. 특정 크기가 아니라 환경에 구애받지 않는 경험과
       인터페이스를 설계한다는 태도가 필요합니다.
     </p>
-
     <p>
       pain: 많은 디자이너들이 작업판의 사이즈를 정의하지 못 함.. => 375px 등의 고정된 가로 크기는 전혀 중요한 것이 아님.. 편의상 정의한 하나의 시안,
       즉 대시보드의 크기를 관점으로 접근하는 것이 아니라(이렇게 되면 실제 사용자의 문제를 해결하거나 사용자의 화면을 아름답고 편리하게 만드는 게
@@ -80,37 +64,17 @@
       말줄임표가 레이블의 의미를 전달하지 못 하기 때문에 또 다른 솔루션의 필요해짐. 엄격한 ux writing 가이드 만드는 일이 유아이 툴의 자동화보다 중요한
       일이 되어야 함. +
     </p>
-
     <ul>
       <li>모든 환경이 고려된, 모든 환경이 고려되었다는 것은 작은 화면을 기준한다는 것.</li>
       <li>데스크탑 환경에서나 유효한 hover 형태를 디자인하는 데에 많은 시간을 들일 필요가 없습니다. 시각 장애를 이ㅜ한 형태. 크기, 깊이, 테두리.</li>
     </ul>
-
     <h4 class="article-subhead">그리드 시스템.</h4>
     <p>12칼럼 그리드를 쓰는 이유가 무엇. 큰 장점이 없음. 2~4개의 칼럼을 가지는 레이아웃 케이스와 간격 시스템을 정의하고 가로 스크롤을 활용.</p>
     <p>디자인 이론에 근거한 그리드 시스템, 예를 들면 12칼럼 그리드는 코드 환경에서 사용자의 다종다양한 화면 크기에 대응하기 적합하지 않습니다.
       그리드 시스템을 다양한 화면 크기에 적용하기 위해서는 굉장히 많은 경우의 수를 고려해야 함. 그것이 디자이너에게만 유효한 시스템으로 동작.
-      <br />
-      
     </p>
-  </article>
-  <p>Truncated text / Formatted text(number/currency/datetime)</p>
 
-  <section
-    class="foundation-c1 foundation-tile"
-    style="background:var(--color-background-weak);
-      margin:2rem 0;
-      padding: 2rem var(--grid-margin) 2.5rem;
-      border: 2px solid;
-      border-radius: var(--radius);"
-  >
-    <h3 style="margin:0 0 var(--space-2) 0;font-size:24px;" title="Design Creativity">
-      <mark>Breaking the rules</mark>
-    </h3>
-    <p style="max-width:50%;font-size:16px;">
-      회사소개, 서비스소개, 블로그, 프로모션 페이지는 디자인 시스템에서 비교적 자유롭습니다. 디자이너의 창의력을 마음껏 발휘하세요!
-    </p>
-  </section>
+
 
   <table>
     <thead>
@@ -153,4 +117,13 @@
       </tr>
     </tbody>
   </table>
+  </article>
+
+
+  <section>
+    <h3 title="Design Creativity">
+      <mark>Breaking the rules</mark>
+    </h3>
+    <p>회사소개, 서비스소개, 블로그, 프로모션 페이지는 디자인 시스템에서 비교적 자유롭습니다. 디자이너의 창의력을 마음껏 발휘하세요!</p>
+  </section>
 </main>

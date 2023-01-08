@@ -1,12 +1,12 @@
 <main class="checkout">
-  <!-- <header class="checkout-head">
+  <header class="checkout-head">
     <div class="checkout-head-background"></div>
-    <h1 class="checkout-head-title">주문정보를<br />확인하세요<i style="font-style:italic;">!</i></h1>
+    <h1 class="checkout-head-title">주문정보를 확인하세요<i style="font-style: italic">!</i></h1>
     <p class="checkout-head-description"></p>
-  </header> -->
+  </header>
   <!-- // invoice랑 구분 -->
-
-  <section class="checkout-step step" style="margin: 0 0 2rem 0">
+  <br />
+  <section class="checkout-step step">
     <div class="step-item is-active">
       <span class="step-item-icon">1</span>
       <h3 class="step-item-label">장바구니</h3>
@@ -28,7 +28,10 @@
     </div>
   </section>
 
-  <h2 class="checkout-product-title" title="summary">상품정보</h2>
+  <br />
+  <br />
+
+  <h2 class="checkout-product-title" aria-label="summary">상품정보</h2>
   <section class="checkout-product">
     <div class="checkout-product-item">
       <div class="checkout-product-item-media"></div>
@@ -43,10 +46,10 @@
     <div class="setting-item" style="width: 100%; margin: 0">
       <h2 class="setting-item-label">배송지</h2>
       <div class="setting-item-value">
-        <p class="setting-item-value-username">이경수</p>
-        <p class="setting-item-value-address">[07655]</p>
-        <p class="setting-item-value-address" title="address-level / address-line">서울특별시 강서구 까치산로 182 1202호</p>
-        <p class="setting-item-value-phone">010-3121-7045</p>
+        <div class="setting-item-value-username">이경수</div>
+        <div class="setting-item-value-address">[07655]</div>
+        <div class="setting-item-value-address" title="address-level / address-line">서울특별시 강서구 까치산로 182 1202호</div>
+        <div class="setting-item-value-phone">010-3121-7045</div>
       </div>
     </div>
 
@@ -73,23 +76,25 @@
 
     <hr />
 
-    <div class="order-address-address2 textfield">
-      <label class="textfield-label" for="login-email">상세주소</label>
-      <input class="textfield-input" type="text" name="email" id="login-email" placeholder="" />
+    <div class="stack">
+      <div class="order-address-address2 textfield">
+        <label class="textfield-label" for="login-email">상세주소</label>
+        <input class="textfield-input" type="text" name="email" id="login-email" placeholder="" />
+      </div>
+      <div class="order-address-zipcode textfield">
+        <label class="textfield-label" for="login-email">First name, Last Name, Country / Region, State, Zipcode</label>
+        <input class="textfield-input" type="text" name="email" id="login-email" placeholder="soojubm@gmail.com" autofocus />
+      </div>
     </div>
-    <div class="order-address-zipcode textfield">
-      <label class="textfield-label" for="login-email">First name, Last Name, Country / Region, State, Zipcode</label>
-      <input class="textfield-input" type="text" name="email" id="login-email" placeholder="soojubm@gmail.com" autofocus />
-    </div>
-    <button>우편번호 찾기</button>
   </fieldset>
+  <footer><button>우편번호 찾기</button></footer>
 
   <section class="checkout-payment">
     <h2 class="checkout-payment-title">결제수단</h2>
     <!-- <p class="checkout-payment-description">현재 신용카드 결제만 가능합니다.</p> -->
     <fieldset>
       <div class="payment-method-list">
-        <div class="payment-method-item status-is-active">
+        <div class="payment-method-item is-active">
           <figure style="background: aliceblue">💳</figure>
           <span>신용카드</span>
         </div>
@@ -125,15 +130,16 @@
 
   <fieldset class="checkout-coupon">
     <h2 class="checkout-shipping-title">쿠폰</h2>
-    <div class="empty">
-      <p class="empty-description">사용 가능한 쿠폰이 없습니다. content 영역의 컨테이너가 필요하겠다. 항상.</p>
-    </div>
     <div class="textfield">
       <label class="textfield-label" for="select1">보너스 쿠폰 </label>
       <select class="textfield-input" id="select1">
         <option value="select-option1">사용 가능 쿠폰 1장</option>
       </select>
       <span class="select-indicator" role="img"><span class="material-symbols-outlined"> arrow_drop_down </span></span>
+    </div>
+
+    <div class="empty">
+      <p class="empty-description">사용 가능한 쿠폰이 없습니다. content 영역의 컨테이너가 필요하겠다. 항상.</p>
     </div>
   </fieldset>
 
@@ -148,7 +154,9 @@
     <button class="chip" style="margin: var(--space-3) 0 0 0"><span class="chip-label">보유 마일리지 1,186p 모두사용</span></button>
   </fieldset>
 
+  <br />
   <hr />
+
   <footer class="cart-summary" style="max-width: 100%">
     <div class="cart-summary-subtotal">
       <span class="cart-summary-label">총 상품금액</span>

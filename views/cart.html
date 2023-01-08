@@ -2,22 +2,22 @@
   <header class="cart-head">
     <p class="cart-description">Free delivery and free returns.</p>
     <h1 class="cart-title">Here's what's in your bag.</h1>
-    <!-- <ul>
-				<li style="text-decoration:underline;margin:2rem 0 .25rem 0;"><b><small>UX checklist.</small></b></li>
-				<li>개별 삭제기능 기능만 제공.</li>
-				<li>주문페이지에서 주문자, 주소, 쿠폰적용, 적립금사용 반영?</li>
-				<li>쿠폰이 적용되었을 때 마이너스(-) 금액을 표시.</li>
-				<li>Remove 버튼에 보조 아이콘 제공하는 것이 좋을까?</li>
-				<li>수량, 색상 등의 옵션을 변경할 수 있도록 할 것. AND 셀렉트박스로 충분. AND 서비스 초기에 필수 기능이 아닐 수 있음.</li>
-			</ul> -->
-    <time>4 items in your cart</time>
+    <time class="cart-status" role="status">4 items in your cart</time>
+
+    <ul>
+      <li>오픈 마켓은 특수한 케이스기 때문에 제외해보자. 판매자 배송.</li>
+      <li>개별 삭제만 제공.</li>
+      <li>쿠폰이 적용되었을 때 마이너스(-) 금액을 표시.</li>
+      <li>주문페이지에서 주문정보 입력, 쿠폰/적립금 사용</li>
+    </ul>
   </header>
+  <br />
   <figure class="cart-item">
     <button class="cart-item-delete"><span class="material-symbols-outlined">close</span></button>
     <a href="#" class="cart-item-thumbnail"><img src="/public/images/product_sample.png" alt="" /></a>
     <div class="cart-item-name">
       <span class="cart-item-name-label">product</span>
-      <b class="cart-item-name-value">폰타나 베네치아 로스티드 쉬림프 크림</b>
+      <b class="cart-item-name-value">폰타나 베네치아 로스티드 쉬림프 크림 (수정해보는 중...)</b>
     </div>
     <div class="cart-item-color">
       <span class="cart-item-color-label">color</span>
@@ -31,13 +31,15 @@
       <span class="cart-item-price-label">price</span>
       <b class="cart-item-price-value">₩ 22,500</b>
     </div>
-    <button class="cart-item-more">Show product details<span class="material-symbols-outlined"> arrow_drop_down </span></button>
-    <button class="cart-item-remove"><span hidden>Remove Options</span>수량/옵션 변경</button>
+
+    <button class="cart-item-remove chip">
+      <span class="chip-label">수량/옵션 변경</span>
+    </button>
+
     <div class="cart-item-addition">
       <b class="cart-item-addition-title">AppleCare+ for Macbook/MacBook Air</b>
       <p class="cart-item-addition-description">Automatically registered width your Apple hardware.</p>
       <span class="cart-item-addition-price">₩ 20,000</span>
-      <span></span>
     </div>
     <div class="cart-item-ship">
       <p class="cart-item-ship-title">배송비</p>
@@ -45,16 +47,13 @@
       <span class="cart-item-ship-price">₩ 2,500</span>
     </div>
   </figure>
-  <!-- <div class="cart-item-coupon">
-			할인쿠폰 적용하기
-		</div> -->
   <footer class="cart-summary">
     <div class="cart-summary-subtotal">
       <span class="cart-summary-label">Subtotal</span>
       <span class="cart-summary-value">₩ 30,000</span>
     </div>
     <div class="cart-summary-shipping">
-      <span class="cart-summary-label">Shipping</span>
+      <span class="cart-summary-label">배송비</span>
       <span class="cart-summary-value">₩ 3,000</span>
     </div>
     <div class="cart-summary-discount">

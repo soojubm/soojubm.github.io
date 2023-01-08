@@ -7,7 +7,7 @@
 
 .component-example > .tile-flat,
 .component-example > .tile-elevated,
-.component-example > .tile-flat-small {width:100%;max-width:640px;border:none;}
+.component-example > .tile-flat-small {width:100%;max-width:800px;border:none;}
 
 .component-navigation {
   width:100%;box-sizing: border-box;
@@ -19,8 +19,6 @@
   display: none;
 }
 
-
-// @media (--small), (max-height: 800px) {
 @media (--small) {
   .component-example {margin-top:2rem;margin-bottom:2rem;padding-top:1rem;padding-bottom:1rem;border-radius:0;}
   // .component-example > *:first-child {margin-top:-1.75rem;}

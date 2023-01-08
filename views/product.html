@@ -20,7 +20,6 @@
       <hr />
       <ul class="product-info-delivery" data-align="horizontal">
         <li>배송비 2,500원</li>
-        <li>30,000원 이상 무료배송</li>
         <li>제주, 도서, 산간지역 추가 배송비 3,000원</li>
       </ul>
       <div class="product-info-benefit">뷰티포인트 460P 적립 <i class="icon-bullet"></i> 현대카드 5% 청구할인</div>
@@ -106,7 +105,14 @@
   </nav> -->
 
   <section class="product-detail">
-    <br /><br /><br /><br />
+    <section class="product-detail-intro" style="margin: 8rem 0">
+      <figure class="product-detail-intro-image">
+        <img src="" alt="" />
+      </figure>
+      <figure class="product-detail-intro-image">
+        <img src="" alt="" />
+      </figure>
+    </section>
 
     <h1 class="product-detail-headline">
       <span class="linebreak-desktop">우리의 입맛에 맞는 파스타를 엄선하여</span>
@@ -133,19 +139,26 @@
         <dt>문의전화</dt>
         <dd>02-000-2000</dd>
       </dl>
-      <h3 class="product-detail-summary-title">사이즈 정보</h3>
-    </section>
 
-    <section class="product-detail-intro" style="margin: 4rem 0">
-      <figure class="product-detail-intro-image">
-        <img src="" alt="" />
-      </figure>
-      <figure class="product-detail-intro-image">
-        <img src="" alt="" />
-      </figure>
+      <h4 class="article-subhead">메모</h4>
+      <ul>
+        <li>상품 구성(옵션)을 우선적으로 정의해야 함. 하나의 상품이 여러 개의 옵션(상품)을 가질 수 있고, 색상 또는 사이즈 옵션을 가질 수 있다.</li>
+        <li>3칼럼 레이아웃은 스크롤 고정 영역을 고려해야 한다. 상품 이미지를 가운데 배치하면 상세 정보와 주문을 분리하기 어렵다.</li>
+        <li>옵션은, 특히 수량은 장바구니에서만 선택할 수도 있다.</li>
+        <li>단건 구매 위주의 주문이 이루어지는 경우 장바구니를 생략할 수 있다. 초기 검증(실험) 단계.</li>
+        <li>장바구니를 페이지 이동 없이 drawer view로 제공. 쇼피파이?</li>
+        <li>최근 모바일에서 하단 고정된 CTA(구매하기/장바구니) 클릭 후 옵션을 선택.</li>
+        <li>리뷰 또는 별점이 구매 결정에 주는 영향에 따라 리뷰나 별점의 강조 수준을 결정.</li>
+        <li>
+          신선식품 커머스. 유통기한, 원산지, 포장(친환경) 등이 현명한(?) 소비자의 구매 결정에 영향을 주는 요인으로 작용하여 최상단으로 상품 정보가
+          올라오는 경향. 법적으로 강제되었으나 상세페이지의 이미지에 포함되거나 하단에 눈에 띄지 않게 고지하는 경향이었음. 베네핏, 포인트, 배송 안내에
+          더하여 전략 배치할 수 있다.
+        </li>
+        <li>K 커머스특징: 길쭉한 ㄴ상세페이지를 감추고 상품정보를 보여준다. 상품 오버뷰를 우측에 고정 또는 하단에서 퀵바로 제공.</li>
+        <li>todo 쿠폰 / 카드 할인</li>
+        <li>무료 배송 조건은 상품이 아니라 상점 또는 장바구니 스코프에서 제공하는 게 적합하다.</li>
+      </ul>
     </section>
-
-    <button class="product-detail-more">상품정보 더 보기</button>
 
     <!-- <section class="product-detail-gallary">
       <figure><img src="/public/images/springsteen.jpg" alt="" /></figure>
@@ -158,8 +171,8 @@
 
     <section class="product-policy">
       <h3 class="product-policy-title" data-english="Shipping Information">배송 정책</h3>
-      <h3 class="product-policy-title" data-english="Returns &Exchanges">환불 및 교환 정책 - 교환/취소(반품?환불?) 섹션 분리하기</h3>
-
+      <h3 class="product-policy-title" data-english="Returns &Exchanges">환불 정책</h3>
+      <h3 class="product-policy-title" data-english="Returns &Exchanges">교환 또는 반품(취소) 정책</h3>
       <!-- <dl>
         <dt>배송가능지역</dt>
         <dd>전국</dd>
@@ -184,9 +197,7 @@
       </ul>
 
       <div> -->
-      <!-- <dl>
-          <dt>교환배송비</dt>
-          <dd>6,000원</dd>
+      <!-- <dl>ㅌ
           <dt>반품배송비</dt>
           <dd>3,000원 (부분 반품인 경우)/dd></dd>
 
@@ -220,7 +231,6 @@
           <p>단순변심</p>
         </dl>
 
-        <hr />
         <h4>교환/반품이 불가능한 경우가 있나요?</h4>
         <ul>
           <li>고객에게 책임이 있는 사유로 상품이 멸실되거나 훼손된 경우 (상품내용을 확인하기 위하여 포장 등을 훼손한 경우는 제외)</li>
@@ -259,7 +269,6 @@
             지연배상금을 판매자에게 청구할 수 있습니다.
           </td>
         </tr>
-        <br /><br />
         <h3 class="product-policy-title">미성년자 계약취소에 대한 안내</h3>
         <p>
           통신판매업자는 미성년자와 재화등의 거래에 관한 계약을 체결할 때에는 법정대리인이 그 계약에 동의하지 아니하면 미성년자 본인 또는 법정대리인이
@@ -277,7 +286,6 @@
         불가능합니다.
       </div> -->
     </section>
-
     <section class="product-review">
       <header>
         <h3 class="product-review-eyebrow">리뷰</h3>
@@ -349,24 +357,6 @@
     </section>
   </section>
 </main>
-
-<h4 class="article-subhead">메모</h4>
-<ul style="margin: 0 0 4rem 0">
-  <li>상품 구성(옵션)을 우선적으로 정의해야 함. 하나의 상품이 여러 개의 옵션(상품)을 가질 수 있고, 색상 또는 사이즈 옵션을 가질 수 있는데,</li>
-  <li>상품 오버뷰를 우측에 고정 또는 하단에서 퀵바로 제공.</li>
-  <li>3칼럼 레이아웃은 스크롤 고정 영역을 고려해야 한다. 상품 이미지를 가운데 배치하면 상세 정보와 주문을 분리하기 어렵다.</li>
-  <li>수량은 주로 상품상세 페이지와 장바구니 페이지에서 설정 또는 변경할 수 있지만 장바구니에서만 설정할 수도 있다.</li>
-  <li>장바구니 페이지는 없어도 될까? 단건 구매 위주의 주문이 이루어지는 경우. 초기 검증(실험) 단계 (+ 옵션을 셀렉트박스로 제공).</li>
-  <li>해외 사이트에서 페이지 이동 없이 장바구니를 drawer view로 제공한다. 쇼피파이?</li>
-  <li>최근 모바일에서 하단 고정된 CTA(구매하기/장바구니) 클릭 후 옵션을 선택하는 경험.</li>
-  <li>리뷰 또는 별점이 구매 결정에 주는 영향에 따라 리뷰나 별점의 강조 수준을 결정.</li>
-  <li>
-    신선식품 커머스. 유통기한, 원산지, 포장(친환경) 등이 현명한(?) 소비자의 구매 결정에 영향을 주는 요인으로 작용하여 최상단으로 상품 정보가 올라오는
-    경향. 법적으로 강제되었으나 상세페이지의 이미지에 포함되거나 하단에 눈에 띄지 않게 고지하는 경향이었음. 베네핏, 포인트, 배송 안내에 더하여 전략
-    배치할 수 있다.
-  </li>
-  <li>todo 쿠폰 / 카드 할인</li>
-</ul>
 
 <section class="products">
   <div class="products-item">

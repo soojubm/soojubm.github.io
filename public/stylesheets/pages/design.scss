@@ -123,7 +123,7 @@
 
 .payment-method-list {@include stack;}
 .payment-method-item {
-  // @include tile-elevated-small;
+  @include tile-elevated-small;
   figure {
     @include avatar-huge;
     height:var(--size-large);

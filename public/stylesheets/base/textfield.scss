@@ -9,8 +9,10 @@
 
 // input:-internal-autofill-selected {}
 
-@mixin textfield-prefix {@include icon-indicator;position:absolute;left:var(--space-3);top:36px;}
-@mixin textfield-surfix {@include icon-indicator;position:absolute;right:var(--space-3);top:33px;}
+// todo indicator
+@mixin textfield-prefix {@include avatar-medium;background-image:none;
+  position:absolute;left:var(--space-2);top:29px;}
+@mixin textfield-surfix {@include icon-indicator;position:absolute;right:var(--space-2);top:33px;}
 
 .textfield-group {display:flex;justify-content:space-between;}
 .textfield-group .textfield {width:calc(50% - var(--space-1))}
@@ -36,17 +38,18 @@
 .textfield-unit {}
 
 .textfield-prefix {@include textfield-prefix;}
-.textfield-prefix ~ .textfield-input {padding-left:calc(var(--size-medium) + var(--space-after-avatar-medium));}
+
+.searchfield-prefix ~ .searchfield-input,
+.textfield-prefix ~ .textfield-input {padding-left:calc(var(--size-medium) + var(--space-after-avatar-medium) + .5rem);}
 .textfield-input:focus + .textfield-clear {display:flex;}
 
-
-.searchfield-clear {@include textfield-surfix;top:11px;display:none;}
 
 .select-indicator {@include textfield-surfix;pointer-events:none;}
 
 
-.searchfield {}
-.searchfield-prefix {top:11px;}
+.searchfield {position:relative;}
+.searchfield-prefix {@include textfield-prefix;top:7px;}
+.searchfield-clear {@include textfield-surfix;top:7px;display:none;}
 .searchfield-clear {right:calc(var(--size-medium) + var(--space-after-avatar-medium) + var(--space-3));}
 .searchfield-cancel {@include button-text;min-width:auto;width:var(--size-medium);position:absolute;right:0;top:0;padding:0;}
 

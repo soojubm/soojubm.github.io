@@ -77,10 +77,12 @@
 
 // 이거 이름 바꿨을 때 의존서이 너무 큼. mixin
 
-@mixin icon-indicator {@include avatar-small;background-image:none;
-.material-symbols-outlined {
-  font-size: 1rem;
-}}
+@mixin icon-indicator {
+  @include avatar-small;background-image:none;
+  .material-symbols-outlined {
+    font-size: 1rem;
+  }
+}
 .icon-indicator {@include icon-indicator;}
   // span {font-size:20px;}
 
