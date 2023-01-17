@@ -19,7 +19,7 @@
 .article-description {margin:0 0 2rem;@include text-title;font-weight:var(--font-weight-normal);}
 // .article ul {margin:var(--space-after-subhead) 0 2rem;}
 
-.article p, ul {max-width: 800px;}
+.article p, ul {max-width: 720px;}
 
 .article-dont {padding:1rem;border-radius:var(--radius);background:var(--red100);}
 
@@ -319,7 +319,12 @@
 .chat-date {margin:1rem var(--grid-margin);text-align:center;}
 
 .chat {margin:1.5rem 0;padding:0 0 0 calc(var(--size-medium) + var(--space-after-avatar-medium));position:relative;}
-.chat-avatar {@include avatar-container;border:none;overflow:hidden;position:absolute;left:0;top:0;}
+.chat-avatar {@include avatar-container;
+  border-radius: 50%;
+  border-top-left-radius: var(--radius);
+  background-color: var(--color-background-strong);
+  
+  border:none;overflow:hidden;position:absolute;left:0;top:0;}
 .chat-avatar img {height:100%;}
 .chat-username {display:block;margin:0 0 var(--space-1) 0;font-size:var(--font-size-small);}
 .chat-time {margin:0 0 0 var(--space-1);color:var(--color-text-light);font-size:var(--font-size-small);color:var(--color-text-light);position:absolute;bottom:-1.5rem;}

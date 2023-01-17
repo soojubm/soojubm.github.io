@@ -204,7 +204,7 @@
 .pricing-item-title {@include text-subhead;}
 .pricing-item-price {display: block;margin: 1.5rem 0 1rem 0;@include text-title;}
 .pricing-item-price-unit {}
-.pricing-item-price-per {display: block;color: var(--color-text-light);}
+.pricing-item-price-per {display: block;font-size:var(--font-size-medium);font-weight:var(--font-weight-normal);color: var(--color-text-light);}
 .pricing-item-description {margin: var(--space-4) 0;}
 .pricing-item ul {margin: var(--space-4) 0 1rem 0;}
 .pricing-item ul li {}
@@ -409,7 +409,7 @@ main,
 .is-opened-menu .tokens,
 .is-opened-menu .pattern,
 .is-opened-menu .foundation {
-  padding-left: calc(var(--width-menu));
+  padding-left: calc(var(--width-sidemenu) + var(--grid-margin));
 }
 
 .is-opened-menu .navbar-logo {
@@ -417,7 +417,6 @@ main,
 }
 
 @media (--small) {
-
   .is-opened-menu .design,
   .is-opened-menu .component,
   .is-opened-menu .tokens,
@@ -509,23 +508,26 @@ main,
   z-index: -1;
 }
 
-.meter-graph-bar {}
+.meter-graph-bar {
+  height: var(--size-tiny);
+  margin: 0 0.25rem;
+  border-radius: var(--radius);
+}
 
-.meter-detail {
-  width: 90%;
-  max-width: var(--layout-width-small);
+.meter-legend {
+  max-width: 400px;
   margin: 1rem auto 0;
 }
 
-.meter-detail-item {
+.meter-legend-item {
   display: flex;
   align-items: center;
   margin: var(--space-2) 0;
   position: relative;
 }
 
-// .meter-detail-item:before {content:'';display:block;width:100%;border-bottom:1px dotted #ccc;position:absolute;z-index:-1;}
-.meter-detail-item-color {
+// .meter-legend-item:before {content:'';display:block;width:100%;border-bottom:1px dotted #ccc;position:absolute;z-index:-1;}
+.meter-legend-item-color {
   display: block;
   width: var(--size-tiny);
   height: var(--size-tiny);
@@ -533,30 +535,30 @@ main,
   margin: 0 var(--space-2) 0 0;
 }
 
-.meter-detail-item-title {
+.meter-legend-item-title {
   @include text-subhead;
   font-size: var(--font-size-medium);
   background: var(--color-background);
   position: relative;
 }
 
-.meter-detail-item-value {
+.meter-legend-item-value {
   margin: 0 0 0 auto;
   background: var(--color-background);
   @include text-subhead;
   font-size: var(--font-size-medium);
 }
 
-.meter-detail-item:nth-of-type(1) .meter-detail-item-color,
+.meter-legend-item:nth-of-type(1) .meter-legend-item-color,
 .meter-graph-bar:nth-of-type(1) {
   background: crimson;
 }
 
-.meter-detail-item:nth-of-type(2) .meter-detail-item-color {
+.meter-legend-item:nth-of-type(2) .meter-legend-item-color {
   background: blue;
 }
 
-.meter-detail-item:nth-of-type(3) .meter-detail-item-color {
+.meter-legend-item:nth-of-type(3) .meter-legend-item-color {
   background: green;
 }
 

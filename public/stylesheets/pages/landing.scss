@@ -14,9 +14,6 @@
 .landing-2-button {@include link-outside;display:block;margin-left:var(--left);margin-top:var(--space-after-description);}
 .landing-2-figure {float:left;width:100%;max-width:47.5%;height:220px;border-radius:var(--radius);background:crimson;}
 
-.landing-footer {padding:var(--section-inset);background:#000;}
-
-
 @media (--small) {
   .landing {
     // --section-inset: 4rem;

@@ -48,10 +48,12 @@
 
 
 .searchfield {position:relative;}
-.searchfield-prefix {@include textfield-prefix;top:7px;}
+.searchfield-prefix {@include textfield-prefix;background:none;top:7px;}
 .searchfield-clear {@include textfield-surfix;top:7px;display:none;}
 .searchfield-clear {right:calc(var(--size-medium) + var(--space-after-avatar-medium) + var(--space-3));}
 .searchfield-cancel {@include button-text;min-width:auto;width:var(--size-medium);position:absolute;right:0;top:0;padding:0;}
+
+[data-size=small] .textfield-prefix {left:var(--space-1);top:0;}
 
 .is-focused .searchfield-input {display:block;width:calc(100% - var(--size-medium) - var(--space-after-avatar-medium));}
 .is-focused .searchfield-cancel {right:0;}

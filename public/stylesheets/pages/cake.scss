@@ -23,7 +23,7 @@
 
 
 @media (--small) {
-  .cake-poster {height:auto;margin:0 0 var(--space-4) 0;@include reset-position;}
+  .cake-poster {height:auto;margin:0 0 2rem 0;@include reset-position;}
   .cake-meta {padding-left:0;padding-right:0;}
   .cake-meta ul {margin-left:0;margin-right:0;padding-left:0;padding-right:0;}
   .cake-meta-summary {padding-right:0;}

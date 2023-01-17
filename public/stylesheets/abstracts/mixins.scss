@@ -6,8 +6,11 @@
 @mixin text-label {font-size:var(--font-size-medium);font-weight:var(--font-weight-normal);color:var(--color-text-light);}
 @mixin text-caption {font-size:var(--font-size-small);font-weight:var(--font-weight-bold);}
 
+
 @mixin truncate {white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 @mixin truncate-multi {@include truncate;height:3rem;white-space:normal;word-wrap:break-word;display: -webkit-box;-webkit-line-clamp:2;-webkit-box-orient: vertical;}
+
+
 
 @mixin link-inner {
   color:var(--color-primary);
@@ -22,6 +25,10 @@
 .text-subhead {@include text-subhead;}
 .link-inner {@include link-inner;}
 .link-outside {@include link-outside;}
+
+
+
+
 
 @mixin image-centered {width:auto;height:auto;max-width:150%;max-height:150%;margin:auto;position:absolute;left:0;right:0;top:0;bottom:0;}
 @mixin bleeding {
@@ -38,6 +45,9 @@
 @mixin clearfix {
   &:after {content:'';display:block;clear:both;}
 }
+
+
+
 
 @mixin hover-text {text-decoration:underline;}
 @mixin hover-item {
@@ -63,6 +73,8 @@
 .is-hoverable {@include hover-item;}
 
 
+
+
 // mobile padding 패딩은 page-head에서 주는 게 좋음. -margin 주는 게 좋을 듯.
 @mixin layout($size: 800px) {
   max-width: $size;
@@ -74,6 +86,9 @@
 @mixin layout-large {@include layout(var(--layout-width-large));}
 @mixin layout-medium {@include layout(var(--layout-width-small));}
 @mixin layout-small {@include layout(var(--layout-width-tiny));}
+
+
+
 
 // todo 자식이 elevated일 때...
 @mixin stack {

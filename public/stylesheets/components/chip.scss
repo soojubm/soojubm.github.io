@@ -8,6 +8,7 @@
   min-width: var(--size-medium);
   height: var(--size-medium);
   border-radius: var(--radius);
+  box-sizing: border-box;
   background: var(--color-background-weak);
   color: var(--color-text);
   position: relative;
@@ -37,13 +38,4 @@
 .chip-remove:hover {box-shadow:var(--state-hover);}
 .chip-checked {} // chip-avatar
 
-.dropdown {position:relative;}
-
-.dropdown-menu {@include tile-elevated;min-width:var(--width-dropdown);margin-top:.25rem;position:absolute;transform:scale(0);transform-origin:left top;}
-.dropdown-menu-title {}
-.dropdown-menu-item {display:block;margin:0 -.25rem;padding:0 .25rem;line-height:var(--size-medium);color:var(--color-text);position:relative;z-index:var(--zindex-default);}
-.dropdown-menu-item:hover {border-radius:var(--radius);background:var(--color-background-weak);}
-
-// 드롭다운이 항상 칩은 아니다.
 .is-active .chip-icon {background:inherit;color:inherit;}
-.is-active + .dropdown-menu {transform:scale(1);top:calc(var(--size-medium));z-index:var(--zindex-popover);}

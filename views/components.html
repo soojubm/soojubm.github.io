@@ -234,7 +234,7 @@ arrow_drop_down
       </div>
 
       <h2 class="article-subhead">Best practices</h2>
-      <p>정보 주체를 표현하는 시각 정보로, 인접한 정보 더미 중 최상위 위계를 갖습니다.</p>
+      <p>정보 주체를 표현하는 시각 정보로, 인접한 정보 더미 중 최상위 위계.</p>
       <ul>
         <li>icon button, icon indicator, entity avatar, menu item avatar(icon)</li>
         <li>이미지, 텍스트, 아이콘, 이모지를 포함할 수 있습니다.</li>
@@ -360,15 +360,6 @@ arrow_drop_down
             </button>
             <span class="material-symbols-outlined">chevron_right</span>
           </div>
-
-          <!-- <div class="menu-item" data-size="large" role="menuitem">
-            <figure class="menu-item-avatar"></figure>
-            <b class="menu-item-label">windows 패턴 with quick action. not acition. 모바일에 비적합.</b>
-            <button class="chip" style="margin-left: auto; margin-right: var(--space-2)">
-              <span class="chip-label">휴대폰과 연결 열기</span>
-            </button>
-            <span class="material-symbols-outlined">chevron_right</span>
-          </div> -->
         </div>
 
         <div class="tile-flat">
@@ -379,16 +370,19 @@ arrow_drop_down
           </menu>
         </div>
         <div class="tile-flat">
-          <p>todo small type (popover/dropdown 용)</p>
+          <menu class="">
+            <a class="dropdown-menu-item" data-size="small" href="#design">Text menu small</a>
+            <a class="dropdown-menu-item" data-size="small" href="#design">with popover</a>
+          </menu>
         </div>
       </section>
 
       <h2 class="article-subhead">Best practices</h2>
-      <p>메뉴 아이템의 우측에 'new' 등 태그 컴포넌트를 배치하지 마세요. 액션 또는 액션 인티케이터만 위치할 수 있습니다. (case 토스. 우측 new)</p>
+      <p>메뉴 아이템의 우측는 액션 또는 액션 인티케이터만 위치할 수 있습니다. 'new' 등 태그 컴포넌트를 배치하지 마세요. (case 토스. 우측 new)</p>
 
       <ul>
-        <li>optional avatar: item-label의 line-height. / optional description</li>
-        <li>singleLine prop?</li>
+        <li>optional avatar / description. item-label의 line-height</li>
+        <li>singleLineHeading</li>
         <li>
           meta problem: 모든 menuitem container가 clickable은 아니다. => 액션 버튼이 따로 존재할 수도 있어야 한다. 이 정보가 중요한 이유 hover 상태
           표현을 위해.
@@ -400,9 +394,7 @@ arrow_drop_down
       <h2 class="article-subhead">Anatomy</h2>
       <p>Menu -> MenuButton(Trigger) / MenuList - MenuItem, MenuLink</p>
       <ul>
-        <li>MenuItem. sizes: large | medium. tile: 'elevated' | 'none'</li>
         <li>MenuItemAvatar. sizes: large | medium</li>
-        <li>MenuHeading</li>
         <li>MenuHelper. role: setting-item. filter-item.</li>
         <li>MenuLink. sizes: medium | small(dropdown)</li>
       </ul>
@@ -411,6 +403,14 @@ arrow_drop_down
       <dl>
         <dt>options</dt>
         <dd>OptionType[]</dd>
+        <dt>tile</dt>
+        <dd>elevated | none</dd>
+        <dt>size</dt>
+        <dd>'large' | 'medium'</dd>
+
+        <dt>heading</dt>
+        <dd>string</dd>
+
         <dt>tagLabel<attr>?</attr></dt>
         <dd>string</dd>
         <dt>action</dt>
@@ -530,21 +530,6 @@ arrow_drop_down
       </dl>
 
       <!-- <p>사용자에게 단추를 한 번에 한 개 또는 두 개만 표시합니다(예: 수락 및 취소). 사용자에게 더 많은 작업을 표시해야 하는 경우 사용자가 하나의 명령 단추로 작업을 선택하여 트리거할 수 있도록 확인란 또는 라디오 단추를 사용하는 것이 좋습니다.</p> -->
-
-      <h4 class="article-subhead">Groupable<br />binary choices.</h4>
-      <ul>
-        <li>버튼 그룹은 2개의 버튼을 가집니다. primary style과 충분한 대비를 위해 primary + tertiary 조합.</li>
-        <li>primary action에 먼저 포커스할 수 있어야 합니다. tab index보다 마크업 순서로 권장.</li>
-        <li>버튼 그룹에서의 용법을 위해 fullWidth보다 fluid라는 명칭이 더 유용하다. tablist도 fluid 가능하다.</li>
-        <!-- <li>toolbar 컴포넌트와 구분하기.</li> -->
-        <li>reverse. cases. PrevButton & NextButton / CancelButton & ConfirmButton / SkipButton & NextButton</li>
-      </ul>
-      <div class="tile-flat">
-        <div class="stack" style="max-width: var(--layout-width-tiny)">
-          <button class="button-tertiary">취소</button>
-          <button class="button-primary">저장</button>
-        </div>
-      </div>
 
       <h4 class="article-subhead">Other cases</h4>
       <ul>
@@ -992,7 +977,7 @@ arrow_drop_down
             <input type="checkbox" id="menutype1" name="gender" checked />
             <label for="menutype1" title=""></label>
           </div>
-          <div class="checkbox size-large">
+          <div class="checkbox" data-size="large">
             <input type="checkbox" id="menutype1" name="gender" checked />
             <label for="menutype1" title=""></label>
           </div>
@@ -1163,6 +1148,10 @@ arrow_drop_down
         <li>input container와 chip container로 확장할 수 있도록 하기?</li>
         <li>레이블 클릭해도 셀렉트박스 안 열림. id prop 필요없음.</li>
         <li>셀렉트 옵션에 따라 박스의 너비가 자동 조절된다. indicator를 position으로 넣고 옵션에 말줄임표를 넣어야.</li>
+        <li>
+          memo. 레이블을 추가 요청이 있는 경우. select 엘리먼트가 아니라 부모 엘리먼트에 컨테이너 스타일링이 필요하고, 클릭 영역까지 지정해야 했다.
+          그런 경우 드롭다운으로 구현해야 한다.
+        </li>
       </ul>
 
       <h4 class="article-subhead">Props</h4>
