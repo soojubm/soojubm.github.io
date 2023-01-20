@@ -76,7 +76,7 @@
 
 .item .checkbox {display:flex;justify-content:flex-end;position:absolute;left:0;right:0;top:0;bottom:0;}
 .item .checkbox label {width:100%;}
-.item .checkbox label:before {left:auto;right:0;top:4px;}
+.item .checkbox label:before {display:none;left:auto;right:0;top:4px;}
 .item .checkbox label:after {left:auto;right:7px;top:12px;}
 
 // chip-togglable

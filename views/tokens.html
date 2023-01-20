@@ -24,7 +24,7 @@
       <div style="display: flex; margin-top: -1rem">
         <div class="tile-elevated" style="max-width: 640px; padding: 2rem 2rem 2.5rem">
           <h1 class="article-subhead" style="margin-top: 0">Guideline scope</h1>
-          <p>description.</p>
+          <p>규모의 약속.</p>
           <div class="chat" style="max-width: 300px; margin: 2rem auto 0">
             <figure class="chat-avatar">
               <img src="/public/images/springsteen.jpg" alt="" />
@@ -38,11 +38,11 @@
             </div>
 
             <div class="chat-bubble">
-              <p>컴포넌트 토큰은 상대적으로 변경 가능성이 높고 범용성이 낮기 때문에 컴포넌트 스코프에서 정의합니다.</p>
+              <p>컴포넌트 토큰은 상대적으로 변경 가능성이 높고 범용성이 낮기 때문에 컴포넌트 스코프에서 정의합니다. 당면한 문제는 아닙니다.</p>
             </div>
 
             <div class="chat-bubble">
-              <p>예외 케이스Exceptional cases. 1~2번 사용하는 예외케이스를 토큰으로 정의하지 않습니다. 컴포넌트 스코프에서 보충합니다.</p>
+              <p>1~2번 사용하는 예외케이스는 토큰으로 정의하지 않습니다. 컴포넌트 스코프에서 보충합니다.</p>
             </div>
             <!-- <div class="chat-bubble">
               <p>memo: dashboard 등 회색 배경이 들어간 페이지에서는 border 등 조절되어야 한다...</p>
@@ -146,18 +146,16 @@
       </button>
 
       <div class="chat" style="margin: 2rem 0 0">
-        <figure class="chat-avatar">
-          <img src="/public/images/springsteen.jpg" alt="" />
-        </figure>
+        <figure class="chat-avatar">🦆</figure>
 
         <div class="chat-bubble">
-          <p>hierarchy. 크기와 비례해서 radius와 shadow 베리에이션이 필요하지만 경량화하여 더 중요한 문제에 집중하고 있습니다.</p>
+          <p>hierarchy. 크기와 비례해서 radius와 shadow 베리에이션이 필요하지만 경량화하여 단일 규칙을 적용하고 있습니다.</p>
         </div>
 
         <div class="chat-bubble">
           <p>
             theme. 인버트 컬러셋을 추가로 정의하지 않습니다. 하나의 컬러셋으로 다크 테마에 대응합니다. (쉽지 않음. 기술 의존이 높은 규칙.. 유아이
-            테이밍 트랜드를 위해 제거하는 것이 좋을지도 모르겠다)
+            테이밍을 위해 추상화를 더 해주는 것이 좋겠다.)
           </p>
         </div>
       </div>
@@ -294,13 +292,11 @@
       </button>
 
       <div class="chat" style="margin: 2rem 0">
-        <figure class="chat-avatar">
-          <img src="/public/images/springsteen.jpg" alt="" />
-        </figure>
+        <figure class="chat-avatar">🦆</figure>
         <div class="chat-bubble">
           <p>
-            ! 변경한 폰트의 baseline이 안 맞아서 세로 가격이 조금씩 틀어짐. 이러한 케이스를 폰트를 변경하지 않고 대응할 수 있는 솔루션은? 텍스트노드의
-            상단 패딩에 변수값을 하나 넣어주면.
+            ! 폰트 변경 시 폰트 별 baseline 문제로 내부 텍스트의 간격이 틀어질 수 있다. 이러한 케이스를 폰트를 변경하지 않고 대응할 수 있는 솔루션은?
+            텍스트노드의 상단 패딩에 변수를 하나 넣어둔다.
           </p>
         </div>
       </div>
@@ -425,9 +421,7 @@
       <p class="article-description">요소의 너비와 길이.</p>
 
       <div class="chat" style="margin: 2rem 0">
-        <figure class="chat-avatar">
-          <img src="/public/images/springsteen.jpg" alt="" />
-        </figure>
+        <figure class="chat-avatar">🦆</figure>
         <div class="chat-bubble">
           <p>브라우저 크기가 변경되어도 사이즈 토큰은 변하지 않아야 합니다.</p>
         </div>
@@ -792,9 +786,7 @@
       <p class="article-description">작성 중.</p>
 
       <div class="chat" style="margin: 2rem 0">
-        <figure class="chat-avatar">
-          <img src="/public/images/springsteen.jpg" alt="" />
-        </figure>
+        <figure class="chat-avatar">🦆</figure>
         <div class="chat-bubble">
           <p>
             콘텐츠보다 액션이 더 강조되지 않도록 뷰포트 내에서 최대 3개의 요소로 delay를 제한합니다. inactive로 전환 시(닫기 등) instantly 실행합니다.
