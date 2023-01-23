@@ -328,7 +328,7 @@
 .chat-avatar img {height:100%;}
 .chat-username {display:block;margin:0 0 var(--space-1) 0;font-size:var(--font-size-small);}
 .chat-time {margin:0 0 0 var(--space-1);color:var(--color-text-light);font-size:var(--font-size-small);color:var(--color-text-light);position:absolute;bottom:-1.5rem;}
-.chat-bubble {width:fit-content;max-width:calc(90% - var(--size-medium));padding:var(--space-3) var(--space-4);background:var(--color-background-weak);  border-radius:1.5rem;border-top-left-radius:0;}
+.chat-bubble {width:fit-content;max-width:calc(90% - var(--size-medium));padding:var(--space-3) var(--space-4);border:var(--border);border-radius:1.5rem;border-top-left-radius:var(--radius);background-color:var(--color-background);}
 .chat-bubble p {}
 .chat-bubble figure {width:90%;height:200px;border-radius:1.25rem;overflow:hidden;}
 .chat-bubble.has-image {padding:0;background:none;}

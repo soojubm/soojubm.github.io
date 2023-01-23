@@ -1,11 +1,11 @@
 <main class="tokens">
-  <article class="article js-scrollspy-section">
-    <h1 class="article-title" title="visual cue">Signifier <span hidden>Interaction States (MD)</span></h1>
-    <p class="article-description">서비스와 사용자 사이의 신뢰. 사용자는 실행의 결과를 예측할 수 있어야 합니다.</p>
-
-    <div class="chat" style="margin: 2rem 0 0">
+  <header class="" role="banner" style="padding: 0 var(--grid-margin);margin-left:-38px;">
+    <div class="chat" style="max-width: 720px; margin: 2rem 0 var(--space-3)">
       <figure class="chat-avatar">🦆</figure>
-
+      <div class="chat-bubble" style="background-color:var(--color-primary);">
+        <h3 class="item-name" style="color:var(--color-text-weak);">Signifier <span hidden>Interaction States (MD)</span></h3>
+        <p class="item-description" style="color:var(--color-text-weak);">서비스와 사용자 사이의 신뢰. 사용자는 실행의 결과를 예측할 수 있어야 합니다.</p>
+      </div>
       <div class="chat-bubble">
         <p>
           상태를 표현하는 시각 언어는 일부 컴포넌트에 종속되지 않고 제품 전체에 일관됩니다.
@@ -15,23 +15,27 @@
         <p>색각 이상자를 위해 색상 외의 시각 언어로 상태 정보를
           표현하세요.</p>
       </div>
-    </div>
-    <!-- <li>addable을 expandable를 혼동하지 마세요.</li>
-    <li>bold text를 clickability로 제공하지 마세요. (다른 서비스에서 단락 더 보기 등에서는 허용되는 패턴)</li> -->
-    <!-- <p style="color:var(--red800);">safari에서 outline이 radius를 못 가져옴. box-shadow는 컨테이너의 padding이 없으면 잘림. + ::before {border:0;radius} 수도 선택자의 장점. 역할(상태)를 확실히 분리할 수 있다ㅏ.</p> -->
-    <!-- <li>aria-haspopup vs aria-expanded</li> -->
-    <!-- <li> uncheckable을 명확히 정의. + done</li> -->
-
-    <h4 class="article-subhead">References</h4>
-    <ul>
-      <li>
+      <div class="chat-bubble">
+        <p>addable과 expandable을 혼동하지 마세요.</p>
+      </div>
+      <div class="chat-bubble">
+        <p>bold text를 clickable로 제공하지 마세요. (단락 더 보기 등에서는 사용되는 패턴)</p>
+      </div>
+      <div class="chat-bubble">
         <a href="https://developer.apple.com/design/human-interface-guidelines/components/layout-and-organization/disclosure-controls" target="_blank">disclosure-controls</a>
-      </li>
-      <!-- <a href="https://m3.material.io/foundations/interaction-states"></a> -->
-      <li><a href="https://developer.apple.com/kr/design/tips/" target="_blank">UI 디자인 기본 원칙</a></li>
-    </ul>
+      </div>
+      <div class="chat-bubble">
+        <a href="https://developer.apple.com/kr/design/tips/" target="_blank">UI 디자인 기본 원칙</a>
+      </div>
+      <div class="chat-bubble">
+      <a href="https://m3.material.io/foundations/interaction-states">MD interaction-states</a>
+      </div>
+    </div>
+  </header>
 
-    <h4 class="article-subhead">Clickable<br />interactive elements</h4>
+  <article class="article">
+    <h4 class="article-title">Clickable</h4>
+    <p class="article-description">interactive elements</p>
     <div class="token-group">
       <div class="tile-elevated token-item">
         <p>elevated 오브젝트는 클릭할 수 있다. 또는 오브젝트 내부에 클릭할 수 있는 요소가 존재한다.</p>
@@ -46,17 +50,41 @@
         <p>❤️ 아이콘(또는 이모지)과 이미지는 클릭할 수 있다.</p>
       </div>
     </div>
+  </article>
 
-    <h4 class="article-subhead">Icons</h4>
-    <!-- <p>mdn 등에서 아이콘을 불러오는 것 보다 정확한 기표를 위한 아이콘과 네이밍을 적용한다면 로컬에서 아이콘을 불러오는 것이 좋다. 각각의 아이콘을 컴포넌트로 만들 수 있다면 컴포넌트가 되어도. 변경되는 아이콘의 반영이 쉬워진다.</p> -->
-    <p>텍스트 레이블 없이 아이콘 버튼으로 사용할 수 있는 메타포여야 한다. medium size는 action. small size는 indicator.</p>
-    <br />
+  <article class="article">
+    <h4 class="article-title">Icons</h4>
+    <p class="article-description">is Action indicator</p>
+    <ul>
+      <li>아이콘 사이즈 토큰을 정의해야 한다. 라이브러리에 따라 font-size, width/height로 정의될 수 있다.</li>
+      <li>텍스트 레이블 없이 아이콘 버튼으로 사용할 수 있는 메타포여야 한다. medium size는 action. small size는 indicator.</li>
+      <li>mdn 등에서 아이콘을 불러오는 것 보다 정확한 기표를 위한 아이콘과 네이밍을 적용한다면 로컬에서 아이콘을 불러오는 것이 좋다. 각각의 아이콘을 컴포넌트로 만들 수 있다면 컴포넌트가 되어도. 변경되는 아이콘의 반영이 쉬워진다.</li>
+    </ul>
+
+    <h4 class="article-subhead">Indicator Icons<br />with small size token</h4>
+    <section class="token-group">
+      <div class="token-item" >
+        <figure class="icon-indicator is-positive" data-size="small">
+          <span class="material-symbols-outlined">check</span>
+        </figure>
+        <b>Valid</b>
+        <b>done / check / positive</b>
+      </div>
+      <div class="token-item" data-size="small">
+        <figure class="icon-indicator is-negative">
+          <span class="material-symbols-outlined">close</span>
+        </figure>
+        <b>InValid</b>
+      </div>
+    </section>
+
+    <h4 class="article-subhead">Action Icons (or Icon Button)<br />with medium size token</h4>
     <section class="token-group">
       <div class="token-item">
         <figure class="chip-icon">
           <span class="material-symbols-outlined">arrow_back</span>
         </figure>
-        <b>뒤로가기</b>
+        <b>to back</b>
         <!-- <small>iOS에서 뒤로가기(이전 페이지)는 chevron.</small> -->
       </div>
       <div class="token-item">
@@ -106,19 +134,6 @@
           <span class="material-symbols-outlined">add</span>
         </figure>
         <b>Addable</b>
-      </div>
-      <div class="token-item">
-        <figure class="chip-icon is-positive">
-          <span class="material-symbols-outlined">check</span>
-        </figure>
-        <b>Valid</b>
-        <b>done / check / positive</b>
-      </div>
-      <div class="token-item">
-        <figure class="chip-icon is-negative">
-          <span class="material-symbols-outlined">close</span>
-        </figure>
-        <b>InValid</b>
       </div>
       <div class="token-item">
         <figure class="chip-icon">
@@ -191,6 +206,13 @@
       </div>
       
     </section>
+  </article>
+
+  <article class="article">
+    <h4 class="article-title">States</h4>
+    <p class="article-description">상태 상태 상태.</p>
+
+    <p>clickable이 아닌 모든 요소는 non-clickable입니다만 disabled은 명시적인 접근 불가 표현입니다. opacity 50% (using token) / not-allowed cursor / removed elevated style</p>
 
     <h4 class="article-subhead">Hover states</h4>
     <div class="token-group">
@@ -213,18 +235,34 @@
     </div>
 
     <h4 class="article-subhead">Disabled state</h4>
-    <p>clickable이 아닌 모든 요소는 non-clickable입니다만 disabled은 명시적인 접근 불가 표현입니다. opacity 50% (using token) / not-allowed cursor / removed elevated style</p>
     
     <div class="token-item" style="cursor:not-allowed;">
       <button class="button-primary" style="pointer-events:none;opacity:.5;">주문</button>
     </div>
 
     <h4 class="article-subhead">Active state using ripple</h4>
-    <!-- <h4 class="article-subhead">Pressed state</h4> -->
-    <!-- <h4 class="article-subhead">Progressing state</h4> -->
+    <h4 class="article-subhead">Pressed state</h4> 
+    <h4 class="article-subhead">Progressing state</h4>
+  </article>
 
-    <h4 class="article-subhead">Feedbacks</h4>
-    <p>inline / toast / modal / refresh</p>
+  <article class="article js-scrollspy-section">
+    <h4 class="article-title">Feedbacks</h4>
+    <p class="article-description">role=status</p>
+
+    <!-- <p style="color:var(--red800);">safari에서 outline이 radius를 못 가져옴. box-shadow는 컨테이너의 padding이 없으면 잘림. + ::before {border:0;radius} 수도 선택자의 장점. 역할(상태)를 확실히 분리할 수 있다ㅏ.</p> -->
+    <!-- <li>aria-haspopup vs aria-expanded</li> -->
+    <!-- <li> uncheckable을 명확히 정의.</li> -->
+
+    <p>toast / modal / refresh</p>
+
+    <div class="token-group">
+      <div class="token-item">
+        <b>inline</b>
+        <div>
+          <p>인터넷연결오류: toast + callout</p>
+        </div>
+      </div>
+    </div>
 
     <h4 class="article-subhead">Errors</h4>
     <div class="token-group">

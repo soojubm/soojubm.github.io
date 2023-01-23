@@ -115,6 +115,7 @@ async function domEvents() {
     'texts',
     'signifier_why',
     'presentations_why',
+    'actions',
   ]
 
   if (!temps.includes(hash)) {

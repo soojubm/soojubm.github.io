@@ -1,13 +1,55 @@
 <main class="setting">
-  <!-- <aside class="setting-background"></aside> -->
-  <p class="setting-head-title"></p>
+  <br /><br />
+  <header style="display: flex; flex-direction: column; align-items: center">
+    <figure class="user-avatar"></figure>
+    <h2 class="subhead" style="margin: 0.75rem 0 0 0">수줍이님, 어서와요<i>!</i></h2>
+  </header>
+
+  <h3 class="article-subhead">개인정보</h3>
+  <button class="setting-item">
+    <h2 class="setting-item-label">이메일</h2>
+    <div class="setting-item-value">soojubm@gmail.com</div>
+    <span class="setting-item-icon material-symbols-outlined"> arrow_forward </span>
+  </button>
+  <button class="setting-item">
+    <h2 class="setting-item-label">배송지</h2>
+    <div class="setting-item-value">배송지를 관리하고 기본 배송지를 설정하세요.</div>
+    <span class="setting-item-icon material-symbols-outlined">arrow_forward</span>
+  </button>
+
+  <h2 class="article-subhead">뉴스레터</h2>
+  <button class="menu-item js-darkmode" role="menuitem" data-tile="elevated" data-size="medium" title="change theme">
+    <figure class="menu-item-avatar"><span class="material-symbols-outlined">email</span></figure>
+    <span class="item-label">시사 뉴스레터</span>
+    <span class="switch" style="margin-left: auto">
+      <input type="checkbox" id="temp55" name="" role="switch" />
+      <label for="temp55" style="padding-left: 48px"></label>
+    </span>
+  </button>
+  <p class="setting-item-helper">매 주 월요일, 수요일, 금요일 아침에 받아볼 수 있어요.</p>
+
+  <h2 class="article-subhead">보안</h2>
+  <div class="setting-item">
+    <h2 class="setting-item-label">비밀번호 변경</h2>
+    <div class="setting-item-value">강력한 비밀번호로 보안을 강화하세요.</div>
+    <span class="setting-item-icon material-symbols-outlined">arrow_forward</span>
+  </div>
+  <p class="setting-item-helper">비밀번호 변경 관련 안내를 해주어도 좋겠다. 비밀번호는 설정, 분실 시 이메일 모두 동일할 수 있을까.</p>
+  <div class="setting-item">
+    <h2 class="setting-item-label">계정 비활성화</h2>
+    <div class="setting-item-value"><a href="">비활성화 페이지</a>에서 할 수 있습니다.</div>
+    <span class="setting-item-icon material-symbols-outlined">arrow_forward</span>
+  </div>
+
+  <footer style="margin: 2rem 0 0 0; text-align: center"><span class="button-tertiary">로그아웃</span></footer>
 
   <h2 class="article-subhead">Best practices</h2>
   <ul>
     <li>개인정보와 프로필 정보를 구분한다.</li>
-    <li>프로필 수정은 프로필 페이지에서 진입할 수 있어야 한다.</li>
-    <li>사이드메뉴 or 탭 vs 깊은 댑스 (최상위댑스가 사이드메뉴가 되는)</li>
-    <li>계정 삭제 페이지와 비밀번호 찾기 페이지는 별도의 링크로 url이 존재하는 것는 좋다.</li>
+    <li>프로필 수정은 프로필 페이지에서 진입할 수 있다.</li>
+    <li>사이드메뉴 또는 탭 vs 깊은 페이지</li>
+    <li>계정삭제 vs 계정비활성화</li>
+    <li>계정 삭제 페이지와 비밀번호 찾기 페이지는 라우팅이 필요하다.</li>
     <!-- <p>Your name appears on your Profile page, as your byline, and in your responses. It is a required field.</p> -->
   </ul>
 
@@ -76,18 +118,6 @@
   <h3 class="article-subhead">Service sign-in / Integration</h3>
   <p>페이스북 연동</p>
 
-  <h3 class="article-subhead">개인정보</h3>
-  <div class="setting-item" style="margin-left: -0.5rem; margin-right: -0.5rem">
-    <h2 class="setting-item-label">이메일</h2>
-    <div class="setting-item-value">soojubm@gmail.com</div>
-    <span class="setting-item-icon material-symbols-outlined"> arrow_forward </span>
-  </div>
-  <div class="setting-item" style="margin-left: -0.5rem; margin-right: -0.5rem">
-    <h2 class="setting-item-label">배송지</h2>
-    <div class="setting-item-value">배송지를 관리하고 기본 배송지를 설정하세요.</div>
-    <span class="setting-item-icon material-symbols-outlined">arrow_forward</span>
-  </div>
-
   <h2 class="article-subhead">프로필</h2>
   <!-- <p class="setting-description">뉴니커 정보를 입력하고 뽐내보세요.</p> -->
   <div class="setting-item">
@@ -95,10 +125,10 @@
     <div class="setting-item-value">수줍이</div>
     <span class="setting-item-icon material-symbols-outlined">arrow_forward</span>
   </div>
-  <small style="display: block; margin: -0.25rem 0 var(--space-4) 0; line-height: var(--font-line-height)">
+  <p class="setting-item-helper">
     soojubm 닉네임을 만드세요! 60일 동안 변경할 수 없습니다 — 취소할 수 없습니다! Twitch 이용규약을 위반한 닉네임은 계정이 영구정지될 수 있으니
     주의하세요.
-  </small>
+  </p>
   <div class="setting-item">
     <h2 class="setting-item-label">이모지</h2>
     <div class="setting-item-value">🐻</div>
@@ -109,44 +139,7 @@
     <div class="setting-item-value">문화/예술, 인권, 환경</div>
     <span class="setting-item-icon material-symbols-outlined">arrow_forward</span>
   </div>
-  <small style="display: block; margin: -0.25rem 0 var(--space-4) 0; line-height: var(--font-line-height)">
-    관심있는 분야의 콘텐츠를 추천 받으세요.
-  </small>
-
-  <h2 class="article-subhead">보안</h2>
-  <div class="setting-item">
-    <h2 class="setting-item-label">비밀번호 변경</h2>
-    <div class="setting-item-value">강력한 비밀번호로 보안을 강화하세요.</div>
-    <span class="setting-item-icon material-symbols-outlined">arrow_forward</span>
-  </div>
-  <small style="display: block; margin: -0.25rem 0 var(--space-3) 0; line-height: var(--font-line-height)">
-    비밀번호 변경 관련 안내를 해주어도 좋겠다. 비밀번호는 설정, 분실 시 이메일 모두 동일할 수 있을까.
-  </small>
-
-  <h2 class="article-subhead">뉴스레터</h2>
-  <button class="menu-item js-darkmode" role="menuitem" data-tile="elevated" data-size="medium" title="change theme">
-    <figure class="menu-item-avatar"><span class="material-symbols-outlined">email</span></figure>
-    <span class="item-label">시사 뉴스레터</span>
-    <span class="switch" style="margin-left: auto">
-      <input type="checkbox" id="temp55" name="" role="switch" />
-      <label for="temp55" style="padding-left: 48px"></label>
-    </span>
-  </button>
-  <small style="display: block; margin: 0 0 var(--space-3) 0; line-height: var(--font-line-height)">
-    매 주 월요일, 수요일, 금요일 아침에 받아볼 수 있어요. 스위치만 클릭 또는 타일을 클릭.
-  </small>
-
-  <br /><br />
-
-  <h2 class="article-subhead">계정삭제 vs 계정비활성화</h2>
-  <div class="setting-item">
-    <h2 class="setting-item-label">계정 비활성화</h2>
-    <div class="setting-item-value"><a href="">비활성화 페이지</a>에서 할 수 있습니다.</div>
-    <span class="setting-item-icon material-symbols-outlined">arrow_forward</span>
-  </div>
-
-  <footer style="margin: 2rem 0 0 0; text-align: center"><span class="button-tertiary">로그아웃</span></footer>
-
+  <p class="setting-item-helper">관심있는 분야의 콘텐츠를 추천 받으세요.</p>
   <br /><br /><br />
   <div>
     <header class="titlebar js-titlebar" role="navigation" style="padding: 0">
@@ -165,8 +158,8 @@
       <!-- <div>설정 - 프로필 - 이름</div> -->
 
       <form class="setting-item-form" style="padding: 0">
-        <h1 class="article-subhead">개인 및 계정 정보</h1>
-        <p style="margin: var(--space-after-subhead) 0 0 0">
+        <h1 class="article-subhead">어떻게<br />불러드릴까요?</h1>
+        <p>
           잠시 Twitch를 쉬고 싶으세요? 이미 준비되어 있습니다! 계정을 비활성화하면 프로필과 콘텐츠가 임시로 비활성화되며 유저 정보는 삭제되지
           않습니다. 나중에 마음이 바뀌면 계정에 다시 로그인하여 프로필을 다시 활성화할 수 있습니다.
         </p>
@@ -190,7 +183,6 @@
       </fieldset>
 
       <form class="setting-item-form" style="padding: 0">
-        <h1 class="article-subhead">어떻게<br />불러드릴까요?</h1>
         <p style="margin: var(--space-after-subhead) 0 0 0">
           성별 정보는 Google이 사용자를 지칭하는 방식을 포함해 Google 서비스에서 맞춤설정된 환경을 제공하는 데 사용될 수 있습니다.
           <a href="">더 알아보기</a>

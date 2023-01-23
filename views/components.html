@@ -183,8 +183,11 @@ arrow_drop_down
     <!-- <p>button small 형태를 액션으로. chip.</p> -->
 
     <article class="article js-observer js-scrollspy-section">
-      <h1 class="article-title">Avatars</h1>
-      <p class="article-description">개체(유저, 회사, 프로젝트 등)를 대표하는 시각 정보입니다.</p>
+      <header style="position: relative">
+        <!-- <span class="avatar" style="background: var(--color-background-weak); position: absolute; left: 0; top: 0">🐰</span> -->
+        <h1 class="article-title">Avatars</h1>
+        <p class="article-description">개체(유저, 회사, 프로젝트 등)를 대표하는 시각 정보입니다.</p>
+      </header>
       <div class="component-example">
         <article class="tile-flat" style="display: flex; gap: 0.5rem">
           <figure class="avatar" data-size="huge">
@@ -381,7 +384,6 @@ arrow_drop_down
       <p>메뉴 아이템의 우측는 액션 또는 액션 인티케이터만 위치할 수 있습니다. 'new' 등 태그 컴포넌트를 배치하지 마세요. (case 토스. 우측 new)</p>
 
       <ul>
-        <li>optional avatar / description. item-label의 line-height</li>
         <li>singleLineHeading</li>
         <li>
           meta problem: 모든 menuitem container가 clickable은 아니다. => 액션 버튼이 따로 존재할 수도 있어야 한다. 이 정보가 중요한 이유 hover 상태
@@ -401,6 +403,10 @@ arrow_drop_down
 
       <h2 class="article-subhead">Props</h2>
       <dl>
+        <dt>avatar?</dt>
+        <dd>React.ReactNode</dd>
+        <dt>description?</dt>
+        <dd>string</dd>
         <dt>options</dt>
         <dd>OptionType[]</dd>
         <dt>tile</dt>
@@ -415,6 +421,9 @@ arrow_drop_down
         <dd>string</dd>
         <dt>action</dt>
         <dd>'checkbox' | 'chip' | 'switch" | 'radio'</dd>
+
+        <dt>lineHeight??</dt>
+        <dd>null</dd>
       </dl>
     </article>
 

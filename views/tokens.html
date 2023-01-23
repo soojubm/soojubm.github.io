@@ -3,51 +3,51 @@
     <p>core: give a name to a raw value to enable theming and make improve maintainability / semantic / component</p>
     <p>20 - 20px. tailwind의 단점. 디자인 토큰에서 얻을 수 있는 추상화 및 기타 이점이 무효화. 값을 조정하기 쉽도록 추상화.</p>
   </ul> -->
-  <!--
-    <li>SCSS/LESS: kebab-case</li>
-    <li>JS: PascalCase</li>
-    <li>Android: snake_case</li>
-    <li>iOS: PascalCase</li>
-    <li>강도: none, low, normal, medium, high,max</li>
-
-      tone / shade / tint / subtle
-    intense또는 vibrant더 강렬하고 다채로운
-    bold / prominent - pronounced 더 눈에 띄는 -->
 
   <section class="tokens-body">
-    <section class="hero" role="banner" style="padding-bottom: 0">
-      <!-- <div class="obbbb" style="width: var(--size-small); height: var(--size-small); margin-bottom: 2rem; background-color: var(--green100)"></div>
-      <div class="hero-background"></div> -->
-      <!-- <span class="hero-eyebrow">토큰</span> -->
-      <!-- <h1 class="hero-title" style="margin-left: -2px">일관된 시각 경험. 크로스 플랫폼. 서비스 확장과 유지 보수.</h1> -->
+    <section class="" role="banner" style="padding: 0 var(--grid-margin); margin-left: -38px">
+      <!-- <article class="item" data-size="huge" style="height: var(--size-huge)">
+        <figure class="item-avatar" style="background: var(--color-background); font-size: var(--font-size-huge); border: var(--border)">📌</figure>
+        <h3 class="item-name" style="padding-top: 0.75rem">Tokens</h3>
+        <p class="item-description">일관된 시각 경험. 크로스 플랫폼. 서비스 확장과 유지 보수.</p>
+      </article> -->
 
-      <div style="display: flex; margin-top: -1rem">
+      <div class="chat" style="max-width: 720px; margin: 2rem 0 var(--space-3)">
+        <figure class="chat-avatar">
+          <img src="/public/images/springsteen.jpg" alt="" />
+        </figure>
+        <!-- <b>Guideline scope.</b> -->
+        <div class="chat-bubble" style="background: var(--color-primary)">
+          <p style="color: var(--color-text-weak)"><b>Tokens.</b></p>
+        </div>
+        <div class="chat-bubble">
+          <p>
+            <b>규모의 약속.</b>
+            모든 세부사항을 정의할 필요는 없습니다. 예를 들면, border width는 border 스코프에서 디펜던시가 있고, 변경이 어렵지 않기 때문에 약속을 하지
+            않는 편이 좋습니다. 문제 해결을 위한 도구의 복잡도를 관리하는 일은 약속보다 중요합니다.
+          </p>
+        </div>
+
+        <div class="chat-bubble">
+          <p>컴포넌트 토큰은 상대적으로 변경 가능성이 높고 범용성이 낮기 때문에 컴포넌트 스코프에서 정의합니다. 당면한 문제는 아닙니다.</p>
+        </div>
+
+        <div class="chat-bubble">
+          <p>1~2번 사용하는 예외케이스는 토큰으로 정의하지 않습니다. 컴포넌트 스코프에서 보충합니다.</p>
+        </div>
+        <div class="chat-bubble">
+          <!-- <b>naming scope.</b> -->
+          <p>
+            <b>이름짓기.</b> namespace는 서드 파티 라이브러리와 충돌을 방지하기 위해 사용합니다. 프로덕션이 아니기 때문에 여기에서는 namespace를
+            생략했습니다.
+          </p>
+        </div>
+      </div>
+
+      <!-- <div style="display: flex; margin-top: -1rem">
         <div class="tile-elevated" style="max-width: 640px; padding: 2rem 2rem 2.5rem">
           <h1 class="article-subhead" style="margin-top: 0">Guideline scope</h1>
-          <p>규모의 약속.</p>
-          <div class="chat" style="max-width: 300px; margin: 2rem auto 0">
-            <figure class="chat-avatar">
-              <img src="/public/images/springsteen.jpg" alt="" />
-            </figure>
-            <div class="chat-bubble">
-              <!-- <b>Guideline scope.</b> -->
-              <p>
-                모든 세부사항을 정의할 필요는 없습니다. 예를 들면, border width는 border 스코프에서 디펜던시가 있고, 변경이 어렵지 않기 때문에 약속을
-                하지 않는 편이 좋습니다. 문제 해결을 위한 도구의 복잡도를 관리하는 일은 약속 만큼 중요합니다. ?
-              </p>
-            </div>
-
-            <div class="chat-bubble">
-              <p>컴포넌트 토큰은 상대적으로 변경 가능성이 높고 범용성이 낮기 때문에 컴포넌트 스코프에서 정의합니다. 당면한 문제는 아닙니다.</p>
-            </div>
-
-            <div class="chat-bubble">
-              <p>1~2번 사용하는 예외케이스는 토큰으로 정의하지 않습니다. 컴포넌트 스코프에서 보충합니다.</p>
-            </div>
-            <!-- <div class="chat-bubble">
-              <p>memo: dashboard 등 회색 배경이 들어간 페이지에서는 border 등 조절되어야 한다...</p>
-            </div> -->
-          </div>
+          <div class="chat" style="max-width: 300px; margin: 2rem auto 0"></div>
         </div>
 
         <div class="tile-elevated" style="max-width: 640px; padding: 2rem 2rem 2.5rem">
@@ -58,15 +58,12 @@
               <img src="/public/images/springsteen.jpg" alt="" />
             </figure>
             <div class="chat-bubble">
-              <!-- <b>Guideline scope.</b> -->
               <p>namespace는 서드 파티 라이브러리와 충돌을 방지하기 위해 사용합니다. 프로덕션이 아니기 때문에 여기에서는 namespace를 생략했습니다.</p>
-            </div>
-            <!--
               <p>memo: dashboard 등 회색 배경이 들어간 페이지에서는 border 등 조절되어야 한다...</p>
-             -->
+            </div>
           </div>
         </div>
-      </div>
+      </div> -->
       <!-- <h4 class="article-subhead">Naming guideline</h4>
       <p>
         --[namespace]-[component / category]-[attribute]-[status]
@@ -136,7 +133,7 @@
       <h1 class="article-title">Palette</h1>
       <p class="article-description">color와 surface.</p>
 
-      <button class="menu-item js-darkmode" data-tile="elevated" title="change theme" style="max-width: 800px; margin: 0 -0.5rem">
+      <button class="menu-item js-darkmode" data-tile="elevated" title="change theme" style="max-width: 800px">
         <figure class="menu-item-avatar"><span class="material-symbols-outlined">nights_stay</span></figure>
         <span class="menu-item-label">어둡게 보기</span>
         <span class="switch" style="margin-left: auto">
@@ -147,11 +144,9 @@
 
       <div class="chat" style="margin: 2rem 0 0">
         <figure class="chat-avatar">🦆</figure>
-
         <div class="chat-bubble">
           <p>hierarchy. 크기와 비례해서 radius와 shadow 베리에이션이 필요하지만 경량화하여 단일 규칙을 적용하고 있습니다.</p>
         </div>
-
         <div class="chat-bubble">
           <p>
             theme. 인버트 컬러셋을 추가로 정의하지 않습니다. 하나의 컬러셋으로 다크 테마에 대응합니다. (쉽지 않음. 기술 의존이 높은 규칙.. 유아이
@@ -286,11 +281,6 @@
       <h1 class="article-title">Typography</h1>
       <p class="article-description">활자의 위계와 배치.</p>
 
-      <button class="menu-item js-default-font" data-tile="elevated" style="max-width: 800px; margin: 0 -0.5rem">
-        <figure class="menu-item-avatar"><span class="material-symbols-outlined"> disabled_by_default </span></figure>
-        <span class="menu-item-label">시스템 폰트로 보기</span>
-      </button>
-
       <div class="chat" style="margin: 2rem 0">
         <figure class="chat-avatar">🦆</figure>
         <div class="chat-bubble">
@@ -323,6 +313,11 @@
           <b>--font-family: 'Quattrocento Sans', 'Gothic A1', sans-serif;</b>
         </div>
       </div>
+
+      <button class="menu-item js-default-font" data-tile="elevated" style="max-width: 560px; margin-top: 0.75rem">
+        <figure class="menu-item-avatar">✨</figure>
+        <span class="menu-item-label">시스템 폰트로 보기</span>
+      </button>
 
       <h4 class="article-subhead">Sizes <sup>5? 3?</sup></h4>
       <div class="token-group">
@@ -609,16 +604,16 @@
         <figure class="chat-avatar">🦆</figure>
         <div class="chat-bubble">
           <p>
-            <b>유연한 그리드 시스템. </b>모바일 퍼스트(가로 스크롤 트랜드) 기조로m 12 column grid 등 엄격한 그리드 시스템을 정의하지 마세요. 12 칼럼
-            그리드는 온라인 프로덕트에 어울리지 않으며 모바일 퍼스트 시대에도 어울리지 않습니다. 목록은 언제나 가로 스크롤로 변경하기 쉬워야 합니다.
-            2개, 3개, 4개의 칼럼을 위한 칼럼 시스템을 설계하세요.
+            <b>유연한 그리드 시스템. </b>모바일 퍼스트(가로 스크롤 트랜드) 기조로 합니다. 12 column grid 등 엄격한 그리드 시스템을 정의하지 마세요. 12
+            column grid는 온라인 프로덕트에 맞지 않습니다. 그리드 시스템 대신 2개, 3개, 4개의 칼럼을 위한 칼럼 시스템을 설계하세요. 그리고 목록은
+            스크롤로 변경을 염두하세요.
           </p>
         </div>
         <div class="chat-bubble">
           <p>
             <b>페이지 모듈을 통한 맥락 구분. </b>
-            맥락의 전환(페이지의 역할의 구분??)을 표현하기 위해 레이아웃 모듈 또는 배경색의 대비를 활용할 수 있습니다. 1. 컨테이너 너비(비밀번호찾기와
-            로그인/회원가입) 2. 배경색(설정, 글쓰기, 소개 등)
+            맥락의 전환(페이지의 역할의 구분??)을 표현하기 위해 레이아웃 모듈이나 배경색의 대비를 활용할 수 있습니다. 컨테이너 너비(비밀번호찾기와
+            로그인/회원가입). 배경색(설정, 글쓰기, 소개 등).
           </p>
         </div>
         <div class="chat-bubble">
