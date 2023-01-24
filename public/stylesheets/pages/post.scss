@@ -25,7 +25,7 @@
 
 .post-body {position:relative;} /* graident 때문에 아래요소에서 마진값주기 */
 .post-body-kicker {margin:2rem 0 2.5rem 0;font-size:var(--font-size-large);position:relative;}
-.post-body-image {height:240px;overflow:hidden;margin:3rem -10rem 3.5rem;border-radius:var(--radius);}
+.post-body-image {height:240px;overflow:hidden;margin:3rem -20rem 3.5rem;border-radius:var(--radius);}
 .post-body-subhead {margin:4rem 0 var(--space-after-subhead) 0px;@include text-subhead;}
 .post-body-paragraph {margin:1rem 0px;line-height:1.9;}
 .post-body-paragraph:first-line {}
@@ -79,9 +79,7 @@
 .is-focused .comment-write-name {display:block;}
 .is-focused .comment-write-password {display:block;}
 
-.post-pagination {display:flex;justify-content:space-between;padding:2rem var(--grid-margin);
-	border-top:var(--border);border-bottom:var(--border);
-}
+.post-pagination {display:flex;justify-content:space-between;padding:2rem var(--grid-margin);}
 .post-pagination-previous {width:var(--grid-column);text-align:left;color:var(--color-text);position:relative;}
 .post-pagination-previous:hover {@include hover-item;}
 .post-pagination-previous-media {@include avatar-container;margin-bottom:1rem;}

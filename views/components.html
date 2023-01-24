@@ -5,25 +5,23 @@
 <!-- todo top hat -->
 
 <main class="component">
-  <!-- <section class="textbox" style="margin:4rem var(--grid-margin);">
+  <!-- <section class="textbox" style="margin: 4rem var(--grid-margin)">
     <menu class="textbox-toolbar">
-      <div class="chip" style="margin:0 var(--space-2) 0 0;">
-        <select class="" id="select2" style="background:none;border:none;padding:0 var(--space-4) 0 0;font:inherit;color:var(--color-text);">
+      <div class="chip" style="margin: 0 var(--space-2) 0 0">
+        <select class="" id="select2" style="background: none; border: none; padding: 0 var(--space-4) 0 0; font: inherit; color: var(--color-text)">
           <option value="select-option1">나눔고딕</option>
         </select>
-        <span class="select-indicator" role="img"><span class="material-symbols-outlined">
-arrow_drop_down
-</span></span>
+        <span class="select-indicator" role="img"><span class="material-symbols-outlined"> arrow_drop_down </span></span>
       </div>
-      <button class="textbox-toolbar-bold" style="font-weight:var(--font-weight-bold);">B</button>
-      <button class="textbox-toolbar-italic" style="font-style:italic;">I</button>
+      <button class="textbox-toolbar-bold" style="font-weight: var(--font-weight-bold)">B</button>
+      <button class="textbox-toolbar-italic" style="font-style: italic">I</button>
     </menu>
     <div class="textbox-view" role="textbox" contenteditable="true" aria-placeholder="" aria-labelledby="">
-    <h1 class="textbox-view-heading" style="margin:0 0 var(--space-4) 0;color:var(--color-text-light);">제목</h1>
-    <div class="textbox-view-bdoy" style="color:var(--color-text-light);">제목 / 내용 선택 영역에 is-selected</div>
+      <h1 class="textbox-view-heading" style="margin: 0 0 var(--space-4) 0; color: var(--color-text-light)">제목</h1>
+      <div class="textbox-view-bdoy" style="color: var(--color-text-light)">제목 / 내용 선택 영역에 is-selected</div>
     </div>
     <footer class="textbox-footer">
-      <button class="textbox-footer-publish" style="width:50%;">게시</button>
+      <button class="textbox-footer-publish" style="width: 50%">게시</button>
     </footer>
   </section> -->
   <!--
@@ -46,14 +44,7 @@ arrow_drop_down
     긴급한 메시지이거나, 적어도 적절한 타이밍의 내용이어야 한다.
     똑같은 텍스트가 각각의 컴포넌트에 쓰였을 때
     어떤 맥락으로 유저에게 닿을 수 있는지를.
-  </p>
-  <p>inline error / detour derror / blocking error</p> -->
-  <!--
-    시스템 디자이너로서 제품을 소비할 때 디자이너와 개발자의 경험을 대규모로 최적화하는 것은 우리의 의무입니다.
-    시스템 자체. 스타일 프리미티브 구성이 우선순위가 지정되지 않으면
-    디자이너와 개발자 사이에 많은 마찰이 있을 뿐만 아니라
-    토큰 아키텍처를 통해 피할 수 있는 많은 스타일 불일치가 있을 것입니다.
-  -->
+  </p> -->
   <!-- https://story.pxd.co.kr/1451 -->
 
   <!-- <section class="hero" role="banner">
@@ -65,14 +56,7 @@ arrow_drop_down
     <div class="hero-obj2"></div>
     <div class="hero-obj3"></div>
 
-    <ul>
-      <li>역할에 기반한 컴포넌트. 예를 들면 스포티파이의 encore에서 track row 컴포넌트. 도메인 특수성.</li>
-      <li>1~2 가지 케이스는 예외 케이스로 정의한다.</li>
-      <li>모든 시각정보는 non-clickable. 모든 인터렉션은 clickable.</li>
-      <li>dos / don'ts 케이스는 이미지를 사용하지 않고 간결하게 서술합니다. => 컴포넌트는 계속 변경되기 때문에 유지보수 비용 증가. </li>
-    </ul>
     <p>loading state/dfn/abbr</p>
-    <p>1. article-title의 textnode를 뽑아서 chip group navigation이라도 그려주자.</p>
     https://material.io/design/interaction/states.html
     <code>
       {
@@ -87,7 +71,6 @@ arrow_drop_down
         useCases: [],
       }
     </code>
-    <h4 class="article-subhead">selection</h4>
     <h4 class="article-subhead">목록의 나머지를 더 보여줄 때는 [모두보기], 미리보기 형식의 텍스트를 더 보여줄 때는 [전체보기].click - tag 컴포넌트/화살표/아이콘 아이템 전체가 클릭 영역</h4>
     <dt>모두보기</dt><dd>see all(15)(internal, arrow-right)</dd>
     <dt>더보기</dt><dd>더보기vs더불러오기(more, arrow-down), 자세히보기, learn more 등(external, arrow-right-top)</dd>
@@ -96,24 +79,32 @@ arrow_drop_down
     '-때', '경우', '사용' 최소화.
     하세요, 할 수 있습니다. 보다 합니다. 입니다
   </section> -->
-  <!-- <nav class="tablist" role="tablist" style="border-bottom: var(--border); margin: 0.75rem 0 0 var(--grid-margin)">
-    <button class="tablist-tab" role="tab" name="project" aria-selected="true" data-index="1">
-      <span class="tablist-tab-label">Action</span>
-    </button>
-    <button class="tablist-tab" role="tab" name="case-study" aria-selected="false" data-index="2">
-      <span class="tablist-tab-label">Visual Information</span>
-    </button>
-    <button class="tablist-tab" role="tab" name="blank" aria-selected="false" data-index="3">
-      <span class="tablist-tab-label">Container</span>
-    </button>
-    <button class="tablist-tab" role="tab" name="blank" aria-selected="false" data-index="3">
-      <span class="tablist-tab-label">Navigation</span>
-    </button>
-    <button class="tablist-tab" role="tab" name="blank" aria-selected="false" data-index="3">
-      <span class="tablist-tab-label">Text</span>
-    </button>
-    <i class="tablist-indicator" style="left: 4px; width: 211.056px"></i>
-  </nav> -->
+
+  <!-- Visual Information / Container / Navigation -->
+
+  <header class="" role="banner" style="padding: 0 var(--grid-margin); margin-left: -40px">
+    <div class="chat" style="max-width: 720px; margin: 2rem 0 var(--space-3)">
+      <figure class="chat-avatar">📌</figure>
+      <div class="chat-bubble is-primary">
+        <b>Components</b>
+        <p>모요.</p>
+      </div>
+
+      <div class="chat-bubble">
+        <p>역할에 기반한 컴포넌트. 예를 들면 스포티파이의 encore에서 track row 컴포넌트. 도메인 특수성.</p>
+        <p>1~2 가지 케이스는 예외 케이스로 정의한다.</p>
+        <p>모든 시각정보는 non-clickable. 모든 인터렉션은 clickable.</p>
+        <p>dos / don'ts 케이스는 이미지를 사용하지 않고 간결하게 서술합니다. => 컴포넌트는 계속 변경되기 때문에 유지보수 비용 증가.</p>
+      </div>
+      <div class="chat-bubble">
+        <p>
+          시스템 디자이너로서 제품을 소비할 때 디자이너와 개발자의 경험을 대규모로 최적화하는 것은 우리의 의무입니다. 시스템 자체. 스타일 프리미티브
+          구성이 우선순위가 지정되지 않으면 디자이너와 개발자 사이에 많은 마찰이 있을 뿐만 아니라 토큰 아키텍처를 통해 피할 수 있는 많은 스타일
+          불일치가 있을 것입니다.
+        </p>
+      </div>
+    </div>
+  </header>
 
   <nav class="component-navigation stack" data-scroll="vertical" role="menubar">
     <div class="component-navigation-background"></div>
@@ -2351,7 +2342,7 @@ arrow_drop_down
 
     <article class="article js-observer js-scrollspy-section">
       <h1 class="article-title">Summary</h1>
-      <p class="article-description">금액 요약. cart / order / checkout / result /</p>
+      <p class="article-description">정보 요약. cart / order / checkout / result /</p>
 
       <section class="component-example">
         <section class="summary tile-flat">

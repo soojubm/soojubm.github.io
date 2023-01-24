@@ -13,53 +13,35 @@
       <ul>
         <li>폰트마다 기준선이 다르기 때문에 섞어짤 때 또는 폰트를 변경할 때 주변 요소와 부모 요소에 맞춰 시각보정이 필요할 수 있습니다.</li>
         <li>한 줄은 24px(small size token)의 line-height를 갖는 것이 좋은가?</li>
-        <li>블로그, 뉴스 기사 등 긴 글의 텍스트 페이지의 폰트 크기는 기본값(?)보다 크게 가져간다.</li>
-        <li>텍스트는 주변의 엘리먼트에 강하게 영향을 받기 때문에 주변 요소와 연동해서 추상화 변수를 활용하자.</li>
+        <li>블로그, 뉴스 기사 등 긴 글의 텍스트 페이지의 폰트 크기는 기본값(?)보다 크다.</li>
+        <li>텍스트는 주변의 엘리먼트에 강하게 영향을 받기 때문에 주변 요소와 연동해서 추상화 변수를 활용합니다.</li>
+
+        <li>todo. x-height가 낮은 영문 폰트와 섞어짤 때.</li>
       </ul>
 
       <h4 class="article-subhead">Best practices</h4>
       <ul>
-        <li>태그라인은 작은 화면에서도 임팩트를 줄 있도록 작성 단계에서 행갈이를 고려하세요. 글자와 단어의 수를 제한하고 개행 조건을 정의하세요.</li>
+        <li>태그라인은 작은 화면에서도 임팩트를 줄 있도록 작성 단계에서 행갈이를 고려하세요. 글자의 수와 단어의 수를 제한하고 개행 조건을 정의하세요.</li>
         <li>long-form content에서 truncate-multiple은 항상 2줄로 자릅니다.</li>
-        <li>truncated heading</li>
-        <li>섹션은 항상 제목을 갖는다. 시각적으로 숨겨지지 않은 명시적인 텍스트 노드. 따라서 제목을 포함하는 유틸성 섹션 컴포넌트를 만들 수 있다.</li>
-        <!-- <p>프로모션 페이지의 헤드라인으로 제한적으로 사용합니다.</p> -->
+        <li>truncated heading. 제목을 자르는 것을 허용할 것인가? 허용하지 않을 것인가?</li>
+        <li>섹션은 항상 제목을 가져야 한다. 시각적으로 숨겨지지 않은 명시적인 텍스트 노드를. 제목을 포함하는 섹션 컴포넌트를 활용할 수 있다.</li>
+        <!-- <li>프로모션 페이지의 헤드라인으로 제한적으로 사용합니다.</li> -->
       </ul>
 
       <h4 class="article-subhead">Stat과 Summary의 차이</h4>
 
       <p class="article-subhead">텍스트 모듈</p>
-      <p>본문은 왼끝 맞추기(오른끝 흘리기). 가운데 정렬은 상태 맥락.</ㅔ>
+      <p>본문은 왼끝 맞추기(오른끝 흘리기). 가운데 정렬은 상태 또는 결과 맥락.</ㅔ>
 
       <h4 class="article-subhead">들여쓰기</h4>
-      <p>작은 화면에서 공간의 활용도를 높이기 위해 왼쪽을 들여쓰지 않습니다. 단락의 상하 간격을 활용합니다.</p>
+      <p>작은 화면에서 공간의 활용도를 높이기 위해 단락의 왼쪽에서 들여쓰지 않습니다. 단락의 상하 간격을 충분히 활용합니다.</p>
 
       <h4 class="article-subhead">텍스트의 강조</h4>
       <ul>
         <li>
-          단락에 포함된 단어 또는 구문을 underline, <del>bold</del>, primary color로 강조하지 않습니다. underline과 pirmary colored text는 링크의
-          기표입니다.
+          단락에 포함된 단어 또는 구문을 underline, <del>bold</del>, primary color로 강조하지 않습니다. underline과 pirmary colored text는 <mark>클릭할 수 있는</mark> 기표입니다.
         </li>
       </ul>
-      <div style="display:flex;">
-        <dl style="flex:auto;">
-          <dt style="width:100%;">
-            <span class="icon-indicator is-positive">
-              <span class="material-symbols-outlined">check</span>
-            </span>
-          </dt>
-          <dd style="width:100%;">tag</dd>
-          <dd style="width:100%;">light color</dd>
-        </dl>
-        <dl style="flex:auto;">
-          <dt style="width:100%;">
-            <span class="icon-indicator is-negative"><span class="material-symbols-outlined">close</span></span>
-          </dt>
-          <dd style="width:100%;">primary color</dd>
-          <dd style="width:100%;">bold</dd>
-          <dd style="width:100%;">underline</dd>
-        </dl>
-      </div>
     </article>
   </section>
 </main>

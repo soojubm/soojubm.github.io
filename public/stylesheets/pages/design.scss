@@ -318,11 +318,11 @@
 
 .chat-date {margin:1rem var(--grid-margin);text-align:center;}
 
-.chat {margin:1.5rem 0;padding:0 0 0 calc(var(--size-medium) + var(--space-after-avatar-medium));position:relative;}
+.chat {margin:1.5rem auto;padding:0 0 0 calc(var(--size-medium) + var(--space-after-avatar-medium));box-sizing:border-box;position:relative;}
 .chat-avatar {@include avatar-container;
   border-radius: 50%;
   border-top-left-radius: var(--radius);
-  background-color: var(--color-background-strong);
+  // background-color: var(--color-background-strong);
   
   border:none;overflow:hidden;position:absolute;left:0;top:0;}
 .chat-avatar img {height:100%;}
@@ -338,10 +338,27 @@
 .is-mine .chat-avatar {display:none;}
 .is-mine .chat-time {text-align:right;right:0;}
 .is-mine div {text-align:right;display:flex;align-items:center;flex-direction: row-reverse;} // todo
-.is-mine .chat-bubble {margin-left:auto;border-radius:1.5rem;border-top-right-radius:0;background:var(--color-primary);}
+.is-mine .chat-bubble {margin-left:auto;border-radius:1.5rem;border-top-right-radius:var(--radius)}
+
+
+.chat-bubble.is-primary,
+.is-mine .chat-bubble {border:none;;background:var(--color-primary);}
+
+
+.chat-bubble.is-primary p,
+.chat-bubble.is-primary b,
 .is-mine .chat-bubble p {color:var(--gray0);}
 
 
+@media (--small) {
+  .pattern .chat-avatar,
+  .tokens .chat-avatar,
+  .component .chat-avatar {
+    @include reset-position;
+    margin: 0 0 var(--space-2) 0;
+  }
+  
+}
 
 .event-header {
   padding: 6rem var(--grid-margin) 8rem;

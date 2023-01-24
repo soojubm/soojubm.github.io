@@ -527,9 +527,8 @@ class Body {
 }
 
 const test1 = new Body('body')
-console.log('@@@@@', test1.getElement())
-
-test1.toggleClass('fuck')
+// console.log('@@@@@', test1.getElement())
+// test1.toggleClass('fuck')
 
 class SDSChip extends HTMLElement {
   constructor() {

@@ -29,17 +29,74 @@
   </div>
   <p>role=checkbox aria-checked=false</p> -->
 
+
+  <div class="person-list" style="padding:1rem 0 0 var(--grid-margin);">
+    <div style="width:108px;">
+      <a class="person" href="#">
+        <figure class="avatar" data-size="huge" style="background-image: none;">
+          <span class="material-symbols-outlined" style="font-size:3rem;color:var(--color-text);">add_circle</span>
+        </figure>
+      </a>
+      <span class="person-name" style="display:block;width:100%;height:auto;text-align: center;">추가</span>
+    </div>
+
+    <div style="width:108px;">
+      <a class="person" href="#">
+        <figure class="avatar" data-size="huge" style="border:3px solid var(--color-primary);overflow: auto;">
+          <img src="/public/images/springsteen.jpg" alt="">
+        </figure>
+      </a>
+      <span class="person-name" style="display:block;width:100%;height:auto;text-align: center;color:var(--color-primary);">huge + small elevated tile</span>
+    </div>
+
+    <div style="width:108px;">
+      <a class="person" href="#">
+        <figure class="avatar" data-size="huge">
+          <img src="/public/images/springsteen.jpg" alt="">
+        </figure>
+      </a>
+      <span class="person-name util-truncate" style="display:block;width:100%;height:auto;text-align: center;">두 줄로 표기할 필요가 있을 때</span>
+    </div>
+
+  </div>
+
   <section class="hero" role="banner">
     <div class="hero-background"></div>
     <span class="hero-eyebrow">아이브로</span>
     <h1 class="hero-title" style="margin-left:-2px;">히어로 컴포넌트의 헤딩은 <span class="linebreak-desktop">최대 두 줄로 작성합니다.</span></h1>
-    <p class="hero-description">히어로 섹션의 샘플. e.detail.originalEvent</p>
+    <p class="hero-description">디스크립션 텍스트. e.detail.originalEvent</p>
     <footer>
-      <button class="button-primary">샘플 버튼</button>
+      <button class="button-primary">샘플 버튼 huge?</button>
     </footer>
   </section>
 
   <section class="component-body" style="margin: 0 var(--grid-margin);">
+
+  <form class="subscribe" style="max-width: var(--layout-width-small)">
+    <h2 class="subscribe-title">수줍이 뉴스레터</h2>
+    <p class="subscribe-description">섭스크라이브 유아이 콤포넌트 입니다. <br />두 줄 단락을 위해 쓰고 있습니다.</p>
+    <div class="subscribe-field textfield">
+      <label for="" class="textfield-label">이메일 주소</label>
+      <input class="textfield-input" type="text" placeholder="Enter Your Email.." />
+    </div>
+    <!-- <div class="subscribe-field textfield" style="margin:var(--space-4) 0;">
+      <label for="" class="textfield-label">닉네임</label>
+      <input class="textfield-input" type="text" placeholder="뭐라고 불러 드릴까요?" />
+    </div> -->
+    <p class="subscribe-helper setting-item-helper">
+      샘플 텍스트. 걱정하지 마세요. 스팸은 없습니다! 귀하의 정보는 web.dev 및 Chrome 관련 업데이트에만 사용되며 당사에서 보내는 이메일은 일반적으로 한
+      달에 1-2회를 넘지 않습니다. 언제든지 구독을 취소할 수 있습니다.
+    </p>
+    <div class="checkbox" style="margin: var(--space-4) 0">
+      <input class="checkbox-input" type="checkbox" />
+      <label for="" class="checkbox-label"
+        >본인은 Google의 <a href="" rel="noopener" target="_blank">이용 약관</a>에 동의하며 본인의 정보가 Google의
+        <a href="" rel="noopener" target="_blank">개인정보보호 정책</a>에 따라 이용된다는 것을 인정합니다.</label
+      >
+    </div>
+
+    <button class="subscribe-submit" type="submit">뉴스레터 구독</button>
+  </form>
 
 
     <section class="dashboard-">
@@ -292,7 +349,7 @@
       </div>
 
   <div class="album-track">
-    <div class="album-track-label" role="row">
+    <header class="album-track-label" role="row">
       <span class="album-track-label-item" role="columnheader">#</span>
       <span class="album-track-label-item">제목</span>
       <span class="album-track-label-item">Gengre</span>
@@ -300,11 +357,11 @@
       <span class="album-track-label-item">Status</span>
       <span class="album-track-label-item">러닝타임</span>
       <span class="album-track-label-item" title=" date added(sort)">Date</span>
-    </div>
+    </header>
     <div class="album-track-row" role="row">
-      <span class="album-track-row-column">1</span>
+      <span class="album-track-row-column" data-cell="number">1</span>
       <span class="album-track-row-column">
-        <div class="item">
+        <div class="item" style="width:100%;">
           <figure class="item-avatar"></figure>
           <b class="item-name">Dancing in the Dark</b>
           <small class="item-description">Bruce Springsteen</small>

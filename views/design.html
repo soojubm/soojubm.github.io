@@ -1,5 +1,5 @@
 <main class="design" id="maincontent" style="overflow: hidden">
-  <!-- <div class="stamp" style="position:absolute;right:10%;top:12rem;">
+  <!-- <div class="stamp" style="position: absolute; right: 10%; top: 12rem">
     <div class="circle">
       <p id="circle-content">
         <span class="char1">U</span>
@@ -10,52 +10,57 @@
     </div>
   </div> -->
 
-  <!-- <div style="position:fixed;top:6rem;left:50%;transform:translateX(-50%);z-index:8">
-    <button style="padding:.5rem 1rem;border-radius:50px;box-shadow:var(--shadow);background:var(--color-primary);color:var(--color-text-weak);">
-      새 트윗 보기
+  <div style="position: fixed; top: 6rem; left: calc(50% + var(--width-sidemenu) - var(--grid-margin)); transform: translateX(-50%); z-index: 8">
+    <button
+      style="padding: 0.5rem 1rem; border-radius: 50px; box-shadow: var(--shadow); background: var(--color-primary); color: var(--color-text-weak)"
+      onclick="javascript:alert('샘플 유아이')"
+    >
+      1월 1일 변경된 내용 보기
     </button>
-  </div> -->
+  </div>
 
   <!-- <popup-info
     img="img/alt.png"
-    data-text="Your card validation code (CVC)
-  is an extra security feature — it is the last 3 or 4 numbers on the
-  back of your card."
-  >
+    data-text="Your card validation code (CVC) is an extra security feature — it is the last 3 or 4 numbers on the back of your card.">
   </popup-info> -->
+  <!-- platform convention problem보다 meta problem에 초점 -->
+
+  <!-- <div class="stack" style="margin: 0 0 1rem 0; margin-left: -0.25rem">
+    <span class="tag" data-style="primary">사용기술</span>
+    <span class="tag">SCSS</span>
+    <span class="tag">vanilla javascript</span>
+    <span class="tag">typescript</span>
+    <span class="tag">webpack</span>
+    <span class="tag">custom element</span>
+  </div> -->
 
   <header class="design-head">
     <div class="obbbb" style="width: var(--size-small); height: var(--size-small)"></div>
+
     <h1 class="ellipsis" title="overall consistency and design and development efficiency">
       To simplify is to clarify<i style="font-style: italic">.</i>
     </h1>
-    <p class="hero-description" style="font-size: var(--font-size-large)">
+    <p class="hero-description">
       라이브 중인 서비스의 디자인 시스템이 아니기 때문에
       <span class="linebreak-desktop">보편적인 인터페이스를 위한 메타 문제를 함께 다룹니다.</span>
     </p>
 
-    <!-- <div class="stack">
-      <span class="tag" data-style="primary">사용기술</span>
-      <span class="tag">SCSS</span>
-      <span class="tag">vanilla javascript</span>
-      <span class="tag">typescript</span>
-      <span class="tag">webpack</span>
-      <span class="tag">custom element</span>
-    </div> -->
-    <!-- platform convention problem보다 meta problem에 초점 -->
-
-    <!-- <div class="circle-group" style="position:absolute;right:3vw;top:2rem;">
-      <div class="circle" style="width:20rem;height:20rem;background:red;border-radius:50%;"></div>
-      <div class="circle" style="width:4rem;height:4rem;background:green;border-radius:50%;position:absolute;right:17.5rem;top:4rem;z-index:2;"></div>
-      <div class="circle" style="width:6rem;height:6rem;background:blue;border-radius:50%;position:absolute;right:18rem;top:6rem;"></div>
-      <div class="circle" style="width:2rem;height:2rem;background:gold;border-radius:50%;position:absolute;right:25rem;top:14rem;"></div>
+    <!-- <div class="circle-group" style="position: absolute; right: 3vw; top: 2rem">
+      <div class="circle" style="width: 20rem; height: 20rem; background: red; border-radius: 50%"></div>
+      <div
+        class="circle"
+        style="width: 4rem; height: 4rem; background: green; border-radius: 50%; position: absolute; right: 17.5rem; top: 4rem; z-index: 2"
+      ></div>
+      <div class="circle" style="width: 6rem; height: 6rem; background: blue; border-radius: 50%; position: absolute; right: 18rem; top: 6rem"></div>
+      <div class="circle" style="width: 2rem; height: 2rem; background: gold; border-radius: 50%; position: absolute; right: 25rem; top: 14rem"></div>
     </div> -->
 
     <!-- Feature project collaborators to build your community. -->
     <!-- https://www.w3.org/WAI/standards-guidelines/wcag/ -->
+
     <!-- <span>functional vs decorative</span>
 
-    <span>문자열의 형식으로 날짜를 표현할 수 있다면 장식을 위한 아이콘은 불필요</span>
+    <span>문자열의 형식으로 날짜를 표현할 수 있다면 장식을 위한 아이콘은 필요없을지도.</span>
     <span>아이콘과 일러스트레이션을 구분</span>
     <span>1px의 선은 특정 화면에서 잘 보이지 않을 수 있음. 마찬가지로 적당한 속공간 배분.</span>
     <span>svg 색상 변경이 쉬워짐.</span>
@@ -86,16 +91,11 @@
       문의
       사용자 그룹tow user groups : 팀team / 제품 사용자product users
 
-
       save time / build more consistent products
      -->
   </header>
 
   <section class="feature" style="justify-content: left; margin: -1rem; margin-top: -3rem; padding: 0 var(--grid-margin) 0">
-    <!-- <header class="feature-head" style="text-align:center;">
-      <h1 class="feature-head-title">디자인 시스템 원칙</h1>
-      <p class="feature-head-description">Get involved in our community. Everyone is welcome!</p>
-    </header> -->
     <div class="design-guide-item feature-item" style="margin: 1rem">
       <figure class="feature-item-avatar">🐐</figure>
       <h3 class="feature-item-title" data-temp=" minimum viable experience">Progressive enhancement</h3>
@@ -144,21 +144,7 @@
       </div>
       <!-- <p>복잡한 추상화를 피하기.</p> -->
     </div>
-    <!-- <blockquote style="margin: 1rem 0">
-      <ul>
-        <li style="padding: 0">Dos, Don'ts 케이스는 텍스트로 작성하세요. 이미지는 불필요한 관리 리소스.</li>
-        <li style="padding: 0">best practices: ...</li>
-        <li style="padding: 0">other cases: for meta problems</li>
-      </ul>
-    </blockquote> -->
   </section>
-
-  <!-- <section>
-    <div style="height:4rem;position:sticky;top:calc(var(--navbar-height));background:coral;">1111111111</div>
-    <div style="padding:8rem 0;">내용내용내용내용내용내용내용내용 폴더. 제목 클릭시 열기</div>
-    <div style="height:4rem;position:sticky;top:calc(var(--navbar-height) + 4rem);background:darkolivegreen;">2222222222</div>
-    <div style="height:2000px;">내용내용내용내용내용내용내용내용</div>
-  </section> -->
 
   <!-- <section class="post-relation" style="padding: 0 var(--grid-margin)">
     <div
@@ -225,7 +211,7 @@
   <section class="timeline" style="margin: 4rem var(--grid-margin) 0">
     <div class="obbbb"></div>
 
-    <h2 class="post-relation-title" aria-label="last updated">Changelog</h2>
+    <h2 class="post-relation-title" aria-label="last updated">체인지로그</h2>
     <p class="post-relation-description">메모. 컴포넌트 스코프에서 컴포넌트의 히스토리를 별도로 관리해야 한다.</p>
     <br /><br />
     <!-- <time class="tag">2022. 12. 02.</time>
@@ -235,41 +221,41 @@
       <p class="timeline-description" style="color: var(--color-text-light)">중요도(p, s)가 아닌 스타일로 명명(solid, outlined)</p>
     </div> -->
     <time class="timeline-date">2022. 12. 28.</time>
-    <div class="timeline-item" style="padding-top: 0.5rem">
-      <span class="timeline-item-icon" style="top: 0.5rem">✍️</span>
+    <div class="timeline-item">
+      <span class="timeline-item-icon">✍️</span>
       <span class="timeline-item-title">add stack component</span>
       <p class="timeline-description" style="color: var(--color-text-light)">chip-group과 tag-group 제거하고 stack으로 통합. textfield, button.은?</p>
     </div>
     <time class="timeline-date">2022. 12. 17.</time>
-    <div class="timeline-item" style="padding-top: 0.5rem">
-      <span class="timeline-item-icon" style="top: 0.5rem">✍️</span>
+    <div class="timeline-item">
+      <span class="timeline-item-icon">✍️</span>
       <span class="timeline-item-title">line-height 기본값 역전</span>
       <p class="timeline-description" style="color: var(--color-text-light)">
         단락을 제외하면 모든 케이스에서 line-height-small을 선언해야 하기 때문에 defalt / small을 defalt / large로 변경.
       </p>
     </div>
     <time class="timeline-date">2022. 11. 20.</time>
-    <div class="timeline-item" style="padding-top: 0.5rem">
-      <span class="timeline-item-icon" style="top: 0.5rem">✍️</span>
+    <div class="timeline-item">
+      <span class="timeline-item-icon">✍️</span>
       <span class="timeline-item-title">변수 추상화</span>
       <p class="timeline-description" style="color: var(--color-text-light)">subhead / 등 제거</p>
     </div>
-    <div class="timeline-item" style="padding-top: 0.5rem; padding-bottom: 1rem">
-      <span class="timeline-item-icon" style="top: 0.5rem">✍️</span>
+    <div class="timeline-item">
+      <span class="timeline-item-icon">✍️</span>
       <span class="timeline-item-title">예외 케이스를 토큰에서 제외</span>
       <p class="timeline-description" style="color: var(--color-text-light)">font sizes 2종</p>
     </div>
     <time class="timeline-date">2022. 11. 4.</time>
-    <div class="timeline-item" style="padding-top: 0.5rem; padding-bottom: 1rem">
-      <span class="timeline-item-icon" style="top: 0.5rem">✍️</span>
+    <div class="timeline-item">
+      <span class="timeline-item-icon">✍️</span>
       <span class="timeline-item-title">체크박스</span>
       <p class="timeline-description" style="color: var(--color-text-light)">
         label:before / after 선택자에서 input background를 사용. 체크아이콘 컴포넌트를 다양한 컴포넌트에 재활용.
       </p>
     </div>
     <time class="timeline-date">2022. 8. 4.</time>
-    <div class="timeline-item" style="padding-top: 0.5rem; padding-bottom: 1rem">
-      <span class="timeline-item-icon" style="top: 0.5rem">✍️</span>
+    <div class="timeline-item">
+      <span class="timeline-item-icon">✍️</span>
       <span class="timeline-item-title">아이콘</span>
       <p class="timeline-description" style="color: var(--color-text-light)">CSS icons을 Material Icons으로 변경</p>
     </div>
@@ -287,27 +273,24 @@
   #컨테이너</spanc>
   #프레젠테이션</spanc
   #네비게이션</spanc -->
-
   <!-- <span class="tag">#clickable</span>
   <span class="tag">#non-clickable</span>
   <span class="tag">#groupable</span>
   <span class="tag">#removable</span>
   <span class="tag">#selectable</span>
   <span class="tag">#checkable</span>
-  <span class="tag">#hovable</spa -->
+  <span class="tag">#hovable</span> -->
 
   <!-- <div class="marquee" style="margin: 4rem var(--grid-margin) 0; text-align: center">
     <h2 class="text-subhead">핵심 키워드</h2>
-    <br />
-
     <div class="marquee--inner">
-      <span>
+      <span class="stack">
         <div class="chip">역할과 형태</div>
         <div class="chip">컨테이너 컴포넌트</div>
         <div class="chip">모바일 퍼스트</div>
         <div class="chip">플랫 사이트맵</div>
       </span>
-      <span>
+      <span class="stack">
         <div class="chip">역할과 형태</div>
         <div class="chip">컨테이너 컴포넌트</div>
         <div class="chip">모바일 퍼스트</div>
@@ -315,12 +298,12 @@
       </span>
     </div>
     <div class="marquee--inner">
-      <span>
+      <span class="stack">
         <div class="chip">역할과 형태</div>
         <div class="chip">컨테이너 컴포넌트</div>
         <div class="chip">모바일 퍼스트</div>
       </span>
-      <span>
+      <span class="stack">
         <div class="chip">역할과 형태</div>
         <div class="chip">컨테이너 컴포넌트</div>
         <div class="chip">모바일 퍼스트</div>
@@ -329,24 +312,14 @@
   </div> -->
 
   <section class="design-bookmarks" style="margin-bottom: 2rem">
-    <!-- <h2
-      class="design-guide-title"
-      style="width: 100%;
-    text-align: center;
-    font-weight: bold;padding:0 0 .25rem 0;font-size:var(--font-size-large);"
-    >
-      Bookmarks
-    </h2> -->
     <a href="https://developer.apple.com/documentation/technologies" target="_blank">Apple technologies</a>
     <a href="https://developer.android.com/reference" target="_blank">Android API reference</a>
     <a href="https://cube.fyi/" target="_blank">CUBE CSS</a>
     <a href="https://www.digitala11y.com/" target="_blank">Digital A11Y</a>
-
     <!-- https://www.sitemaps.org/protocol.html -->
   </section>
-
-  <!-- custom element:::: morning star-->
 </main>
+<!-- custom element:::: morning star-->
 
 <!-- <ul>
     <li>responsiveness</li>

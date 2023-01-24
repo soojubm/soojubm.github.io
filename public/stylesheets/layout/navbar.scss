@@ -46,7 +46,7 @@
 // .is-darktheme .navbar-menu-item {color:var(--gray0);}
 
 // sidemenu
-.navbar-menu {display:block;max-width:var(--width-sidemenu);margin:0 0 0 calc(var(--grid-margin) - var(--space-4));padding:0 var(--space-4);
+.navbar-menu {display:block;max-width:var(--width-sidemenu);margin:0;padding:0 1rem 0 calc(var(--grid-margin));
     background:var(--color-background);position:fixed;left:0px;top:calc(var(--navbar-height) + 2px);bottom:0px;transition:transform var(--duration-slowly) cubic-bezier(.165,.84,.44,1);
     transform:translateX(-120%);}
 .navbar-menu-item {padding:var(--space-2) 2rem var(--space-2) 0;font-size:var(--font-size-large);}

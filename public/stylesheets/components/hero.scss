@@ -2,7 +2,7 @@
 
 @mixin hero {padding:4rem var(--grid-margin) 6rem;position:relative;z-index:var(--zindex-default);}
 @mixin hero-title {@include text-title;}
-@mixin hero-description {margin:var(--space-after-title) 0 var(--space-after-description) 0;@include text-body;}
+@mixin hero-description {margin:var(--space-after-title) 0 var(--space-after-description) 0;@include text-body-large;}
 @mixin hero-actions-primary {@include button-primary;margin-right:.25rem;}
 @mixin hero-actions-secondary {@include button-secondary;}
 

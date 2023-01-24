@@ -1,10 +1,10 @@
 <main class="tokens">
-  <header class="" role="banner" style="padding: 0 var(--grid-margin);margin-left:-38px;">
+  <header class="" role="banner" style="padding: 0 var(--grid-margin);margin-left:-40px;">
     <div class="chat" style="max-width: 720px; margin: 2rem 0 var(--space-3)">
-      <figure class="chat-avatar">🦆</figure>
-      <div class="chat-bubble" style="background-color:var(--color-primary);">
-        <h3 class="item-name" style="color:var(--color-text-weak);">Signifier <span hidden>Interaction States (MD)</span></h3>
-        <p class="item-description" style="color:var(--color-text-weak);">서비스와 사용자 사이의 신뢰. 사용자는 실행의 결과를 예측할 수 있어야 합니다.</p>
+      <figure class="chat-avatar">📌</figure>
+      <div class="chat-bubble is-primary">
+        <b>Signifier</b>
+        <p>서비스와 사용자 사이의 신뢰. 사용자는 실행의 결과를 예측할 수 있어야 합니다.</p>
       </div>
       <div class="chat-bubble">
         <p>
@@ -23,12 +23,10 @@
       </div>
       <div class="chat-bubble">
         <a href="https://developer.apple.com/design/human-interface-guidelines/components/layout-and-organization/disclosure-controls" target="_blank">disclosure-controls</a>
-      </div>
-      <div class="chat-bubble">
+        <span class="icon-bullet"></span>
         <a href="https://developer.apple.com/kr/design/tips/" target="_blank">UI 디자인 기본 원칙</a>
-      </div>
-      <div class="chat-bubble">
-      <a href="https://m3.material.io/foundations/interaction-states">MD interaction-states</a>
+        <span class="icon-bullet"></span>
+        <a href="https://m3.material.io/foundations/interaction-states">MD interaction-states</a>
       </div>
     </div>
   </header>
@@ -253,11 +251,20 @@
     <!-- <li>aria-haspopup vs aria-expanded</li> -->
     <!-- <li> uncheckable을 명확히 정의.</li> -->
 
-    <p>toast / modal / refresh</p>
+    <p>toast / modal / refresh - redirect</p>
+
+  <p>inline error / detour derror / blocking error</p> 
 
     <div class="token-group">
       <div class="token-item">
         <b>inline</b>
+        
+        <p>
+          <span class="icon-indicator material-symbols-outlined"> error </span>
+          <span hidden="">가입하지 않은 이메일이거나??</span>
+          잘못된 비밀번호입니다.
+        </p>
+    
         <div>
           <p>인터넷연결오류: toast + callout</p>
         </div>

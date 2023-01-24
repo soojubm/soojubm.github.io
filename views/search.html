@@ -1,34 +1,51 @@
 <main class="search pattern js-tab" role="" aria-label="site">
-  <div class="article">
-    <h1 class="article-title">Searching</h1>
-    <p class="article-description">검색의 일반적인 패턴을 정리한다.</p>
-
-    <h4 class="article-subhead">검색의 인지</h4>
+  <header class="" role="banner" style="padding: 0 var(--grid-margin); margin-left: -40px">
+    <div class="chat" style="max-width: 720px; margin: 2rem 0 var(--space-3)">
+      <figure class="chat-avatar">📌</figure>
+      <!-- <b>Guideline scope.</b> -->
+      <div class="chat-bubble is-primary">
+        <b><b>Searching.</b></b>
+        <p>글로벌 검색의 일반적인 패턴을 사용자 플로 기반으로 정리한다.</p>
+      </div>
+      <div class="chat-bubble">
+        <p>todo 로컬 검색. searchfield small. right alignment.</p>
+      </div>
+      <div class="chat-bubble">
+        <a href="https://material.io/design/navigation/search.html">MD search</a>
+        <i class="icon-bullet"></i>
+        <a href="https://developer.android.com/reference/android/widget/SearchView">android searchview</a>
+      </div>
+    </div>
+  </header>
+  <article class="article">
+    <h4 class="article-title">검색의 인지</h4>
+    <p class="article-description">돋보기 인디케이터와 해시태그, 칩(사용자는 검색으로 인지하지 못하지만)</p>
     <ul>
-      <li>키워드 입력</li>
       <li>해시태그나 카테고리 등 서비스가 제공하는 인기/추천 키워드의 클릭을 통한 검색. (액션/button)</li>
       <li>검색필드가 focusable이 아닌 clickable 액션인 케이스. (readonly) 검색탭으로 이동하여 콘텐츠 탐색과 검색.</li>
     </ul>
 
-    <section class="component-example">
-      <div class="tile-flat">
-        <figure class="chip-icon"><span class="material-symbols-outlined">search</span></figure>
-      </div>
-      <div class="tile-flat">
-        <button class="keywords-group-keyword">
-          <span class="chip-label">키워드</span>
-        </button>
-      </div>
-      <div class="tile-flat">
-        <span class="hashtag">해시태그</span>
-      </div>
-    </section>
-
-    <h4 class="article-subhead">검색의 시작<br />onFocus - 키워드 입력 대기</h4>
+    <!-- <section class="component-example"> -->
+    <div class="tile-flat">
+      <figure class="chip-icon"><span class="material-symbols-outlined">search</span></figure>
+    </div>
+    <div class="tile-flat">
+      <button class="keywords-group-keyword">
+        <span class="chip-label">키워드</span>
+      </button>
+    </div>
+    <div class="tile-flat">
+      <span class="hashtag">해시태그</span>
+    </div>
+    <!-- </section> -->
+  </article>
+  <article class="article">
+    <h4 class="article-title">검색의 준비</h4>
+    <p class="article-description">onBlur - 키워드 입력 대기</p>
     <ul>
-      <li>tabIndex: back - input</li>
       <li><b>onBlur. (default)</b> 인기 콘텐츠 또는 추천 콘텐츠 등 개인화 콘텐츠 탐색할 수 있다.</li>
-      <li><b>onFocus.</b> 검색내역을 표시하고 검색 키워드를 입력할 수 있다. iOS는 취소 버튼으로 onBlur.</li>
+      <li>iOS는 focus 상태에서 취소 버튼으로 onBlur.</li>
+      <!-- <li>tabIndex: back -> input</li> -->
     </ul>
 
     <section class="component-example">
@@ -96,13 +113,17 @@
         </div>
       </div>
     </section>
-
-    <h2 class="article-subhead">검색의 시작, 최근 검색 내역<br />onFocus - value.length === 0</h2>
+  </article>
+  <article class="article">
+    <h2 class="article-title">검색의 준비</h2>
+    <p class="article-description">최근 검색 내역<br />onFocus - value.length === 0</p>
     <ul>
       <li>개별 내역의 삭제. 휘발되어도 치명적이지 않은 정보라 편집 모듈 없이 삭제 버튼으로 제공한다.</li>
       <li>
         전체 내역의 삭제. 사용자에게 유용할 수도 있지만 리스크를 고려. 서비스의 특성에 맞게 제공. 검색 내역의 삭제가 개인화 콘텐츠에 영향을 미치는가.
       </li>
+      <li>검색 내역을 삭제하는 것과 검색 히스토리를 삭제하는 것은 구분해야 한다.</li>
+      <li>검색 내역을 로컬에 저장할 것인가?</li>
     </ul>
     <section class="component-example">
       <div class="tile-flat">
@@ -122,18 +143,29 @@
         <div class="empty" style="max-width: 100%; margin: 0; padding: 2rem 0" role="status">
           <!-- <i class="empty-icon">🧟</i> -->
           <!-- <h1 class="empty-title">주문을 확인해주세요.</h1> -->
-          <p class="empty-description" style="margin-top: 0">최근 검색 내역이 없습니다.</p>
-          <br />
-          <div class="search-recent-group search-recommend" role="group" style="justify-content: center">
+          <p class="empty-description" style="margin-top: 0; max-width: 100%">최근 검색 내역이 없습니다.</p>
+          <!-- <div class="search-recent-group search-recommend" role="group" style="justify-content: center">
             <a class="search-recent-group-item" href="#"><span class="chip-label">개구리</span></a>
             <a class="search-recent-group-item" href="#"><span class="chip-label">달팽이</span></a>
             <a class="search-recent-group-item" href="#"><span class="chip-label">매미</span></a>
-          </div>
+          </div> -->
         </div>
       </div>
     </section>
+  </article>
 
-    <h2 class="article-subhead">검색의 시작, 검색어 자동완성<br />onFocus - value.length > 0</h2>
+  <article class="article">
+    <h2 class="article-title">검색의 실행</h2>
+    <p class="article-description">검색어 추천 및 자동완성.<br />onFocus - value.length > 0 / onChange - 키보드를 입력할 때 마다</p>
+    <ul>
+      <li>
+        결과 없음(상태)을 표시하지 않습니다. 일치하는 결과가 없더라도 유사 콘텐츠 또는 추천 콘텐츠로 대체하여 하나 이상의 결과를 항상 보여주어야
+        합니다. 큐레이션이 강화된 콘텐츠 플랫폼에서 이탈 방지를 위해 활용할 수 있지만 사용자가 명확한 결과를 기대하는 경우 좋지 않은 경험이 될 수
+        있다.
+      </li>
+      <li>debouncing.</li>
+      <li>검색어의 자동완성하고 검색의 결과를 키워드를 입력할 때마다 갱신한다.</li>
+    </ul>
     <section class="component-example">
       <div class="tile-flat">
         <section class="search-suggestion">
@@ -152,35 +184,24 @@
         </section>
       </div>
     </section>
+  </article>
 
-    <h2 class="article-subhead">검색의 실행<br />onChange - 키보드를 입력할 때 마다</h2>
+  <article class="article">
+    <h2 class="article-title">검색의 실행</h2>
+    <p class="article-description">onSubmit - 검색 버튼을 클릭 또는 enter key</p>
     <ul>
-      <li>debouncing.</li>
-      <li>검색어의 자동완성 또는 검색의 기대 결과를 미리 보여준다.</li>
       <li>
-        결과 없음(상태)을 표시하기 보담 일치하는 결과가 없더라도 유사 콘텐츠 또는 추천 콘텐츠로 대체하여 하나 이상의 결과를 항상 보여줍니다.
-        큐레이션이 강화된 콘텐츠 플랫폼에서 이탈 방지를 위해 활용할 수 있지만 명확한 결과를 기대할 때 오히려 좋지 않은 경험이 될 수 있다.
+        결과 없음(상태)을 표시한다. 하나 또는 하나 이상의 명확한 결과를 요구하는 경우. 체류시간을 확보해야 하는 콘텐츠 플랫폼에는 적합하지 않다.
       </li>
+      <li>개발 리소스 적기 때문에 MVP 단계에서 유용하다.</li>
     </ul>
 
-    <h2 class="article-subhead">검색의 실행<br />onSubmit - 검색 버튼을 클릭 또는 enter key</h2>
-    <ul>
-      <li>결과 없음(상태)을 표시할 수 있다.</li>
-      <li>하나 또는 하나 이상의 명확한 결과가 필요한 경우.</li>
-      <li>개발 리소스 적다.</li>
-    </ul>
-
-    <h2 class="article-subhead">검색의 결과</h2>
-    <ul>
-      <li>목록. 필터링 또는 소팅. 모바일 키보드의 높이가 고려된 쿼리의 갯수</li>
-      <li>결과 페이지의 공유를 허용할 것인가?</li>
-    </ul>
     <section class="component-example">
       <div class="tile-elevated">
         <div class="empty" style="max-width: 100%; margin: 0; padding: 2rem 0" role="status">
           <!-- <i class="empty-icon">🧟</i> -->
           <!-- <h1 class="empty-title">주문을 확인해주세요.</h1> -->
-          <p class="empty-description" style="margin-top: 0"><em>수줍이</em>와(과)<br />일치하는 검색결과가 없습니다.</p>
+          <p class="empty-description" style="margin-top: 0; max-width: 100%"><em>수줍이</em>와(과)<br />일치하는 내용이 없습니다.</p>
           <br />
           <div class="stack" role="group" style="justify-content: center">
             <a href="" class="search-similar-item">
@@ -195,7 +216,16 @@
         </div>
       </div>
     </section>
+  </article>
 
+  <article class="article">
+    <h2 class="article-title">기타</h2>
+    <p class="article-description">play gthe guitar.</p>
+    <ul>
+      <li>목록. 필터링과 소팅.</li>
+      <li>모바일 키보드의 높이가 고려된 쿼리의 갯수</li>
+      <li>결과 페이지의 공유를 허용할 것인가?</li>
+    </ul>
     <h2 class="article-subhead">placeholder의 작성</h2>
 
     <h2 class="article-subhead">궁금이 & 생각</h2>
@@ -208,16 +238,10 @@
       <li>전체 검색 내역과 최근 검색 내역. 활동 로그. (facebook. 나만 보기)</li>
       <li>글로벌 검색 패턴과 로컬 검색 패턴의 차이.</li>
     </ul>
-
-    <h4 class="article-subhead">References</h4>
-    <a href="https://material.io/design/navigation/search.html">MD search</a>
-    <i class="icon-bullet"></i>
-    <a href="https://developer.android.com/reference/android/widget/SearchView">android searchview</a>
-
-    <!-- <div class="">
+  </article>
+  <!-- <div class="">
       <h1>#ThisIsTagPage</h1>
       <p>조회수(틱톡)/이카테고리에글쓰기(미디엄)/카테고리팔로우(개인화)</p>
-      <input type="text" inputmode="numeric" pattern="[0-9]*">
+      <input type="text" inputmode="numeric" pattern="[0-9]*" />
     </div> -->
-  </div>
 </main>

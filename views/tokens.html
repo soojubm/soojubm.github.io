@@ -5,20 +5,13 @@
   </ul> -->
 
   <section class="tokens-body">
-    <section class="" role="banner" style="padding: 0 var(--grid-margin); margin-left: -38px">
-      <!-- <article class="item" data-size="huge" style="height: var(--size-huge)">
-        <figure class="item-avatar" style="background: var(--color-background); font-size: var(--font-size-huge); border: var(--border)">📌</figure>
-        <h3 class="item-name" style="padding-top: 0.75rem">Tokens</h3>
-        <p class="item-description">일관된 시각 경험. 크로스 플랫폼. 서비스 확장과 유지 보수.</p>
-      </article> -->
-
+    <header class="" role="banner" style="padding: 0 var(--grid-margin); margin-left: -40px">
       <div class="chat" style="max-width: 720px; margin: 2rem 0 var(--space-3)">
-        <figure class="chat-avatar">
-          <img src="/public/images/springsteen.jpg" alt="" />
-        </figure>
+        <figure class="chat-avatar">📌</figure>
         <!-- <b>Guideline scope.</b> -->
-        <div class="chat-bubble" style="background: var(--color-primary)">
-          <p style="color: var(--color-text-weak)"><b>Tokens.</b></p>
+        <div class="chat-bubble is-primary">
+          <b><b>Tokens.</b></b>
+          <p>일관된 시각 경험. 크로스 플랫폼. 서비스 확장과 유지 보수.</p>
         </div>
         <div class="chat-bubble">
           <p>
@@ -41,6 +34,9 @@
             <b>이름짓기.</b> namespace는 서드 파티 라이브러리와 충돌을 방지하기 위해 사용합니다. 프로덕션이 아니기 때문에 여기에서는 namespace를
             생략했습니다.
           </p>
+        </div>
+        <div class="chat-bubble">
+          <p>값을 직접적으로 이름에 포함하지 마세요. 추상화를 통한 장점의 유실. case. tailwind css.</p>
         </div>
       </div>
 
@@ -68,7 +64,6 @@
       <p>
         --[namespace]-[component / category]-[attribute]-[status]
       </p> -->
-      <!-- <p>값을 직접적으로 이름에 포함하지 마세요. 추상화를 통한 장점의 유실.</p> -->
 
       <!-- <div class="stack">
         <span class="tag" data-style="primary">중요도</span>
@@ -113,7 +108,7 @@
         <p>! problem: size + space = large siz가 되려면 border가 아니라 box-shadow로 보더를 줘야 한다.</p>
         <p>MD3 참고. surface는 shadow 뿐 아니라 color도. radius를 shape</ㅔ>
       </blockquote> -->
-    </section>
+    </header>
 
     <nav class="component-navigation stack" role="group" data-scroll="vertical">
       <div class="component-navigation-background"></div>
@@ -133,7 +128,12 @@
       <h1 class="article-title">Palette</h1>
       <p class="article-description">color와 surface.</p>
 
-      <button class="menu-item js-darkmode" data-tile="elevated" title="change theme" style="max-width: 800px">
+      <button
+        class="menu-item js-darkmode"
+        data-tile="elevated"
+        title="change theme"
+        style="max-width: var(--layout-width-small); margin-left: -0.5rem"
+      >
         <figure class="menu-item-avatar"><span class="material-symbols-outlined">nights_stay</span></figure>
         <span class="menu-item-label">어둡게 보기</span>
         <span class="switch" style="margin-left: auto">
@@ -142,7 +142,7 @@
         </span>
       </button>
 
-      <div class="chat" style="margin: 2rem 0 0">
+      <div class="chat" style="margin: 1rem 0 0">
         <figure class="chat-avatar">🦆</figure>
         <div class="chat-bubble">
           <p>hierarchy. 크기와 비례해서 radius와 shadow 베리에이션이 필요하지만 경량화하여 단일 규칙을 적용하고 있습니다.</p>

@@ -1,8 +1,21 @@
 <main class="pattern">
+  <header class="" role="banner" style="padding: 0 var(--grid-margin); margin-left: -40px">
+    <div class="chat" style="max-width: 720px; margin: 2rem 0 var(--space-3)">
+      <figure class="chat-avatar">📌</figure>
+      <!-- <b>Guideline scope.</b> -->
+      <div class="chat-bubble is-primary">
+        <b><b>Filtering.</b></b>
+        <p>Single filter와 Multiple filters 패턴으로 구분하기? Settings과 비슷.</p>
+      </div>
+      <div class="chat-bubble">
+        <p>Single filter list</p>
+      </div>
+      <div class="chat-bubble">
+        <p>Multiple filters</p>
+      </div>
+    </div>
+  </header>
   <div class="article">
-    <h1 class="article-title">Filtering</h1>
-    <p class="article-description">Single filter와 Multiple filters 패턴으로 구분하기? Settings과 비슷.</p>
-
     <div class="stack">
       <div class="dropdown">
         <button class="chip js-toggle" aria-expanded="true">
@@ -31,10 +44,6 @@
         <span class="chip-label">예산</span>
         <figure class="chip-icon material-symbols-outlined">arrow_drop_down</figure>
       </button>
-      <button class="chip js-toggle is-active" aria-expanded="true">
-        <span class="chip-label">10평 미만</span>
-        <figure class="chip-icon material-symbols-outlined">arrow_drop_down</figure>
-      </button>
       <button class="chip js-toggle" aria-expanded="true">
         <span class="chip-label">접근성 편의</span>
         <figure class="chip-icon material-symbols-outlined">arrow_drop_down</figure>
@@ -51,7 +60,7 @@
         >2</em
       >
     </button>
-    <form class="filter tile-elevated" style="max-width: 640px; padding: 1rem; overflow: hidden; margin: 0">
+    <form class="filter tile-elevated" style="max-width: 640px; padding: 1rem; overflow: hidden; margin: 0 -5vw">
       <header class="titlebar js-titlebar" role="navigation" style="padding: 0">
         <div class="titlebar-background"></div>
         <h1 class="titlebar-title js-page-title" title="page title">필터</h1>
@@ -177,7 +186,7 @@
     </form>
     <br />
 
-    <h2 class="article-subhead">Presentation</h2>
+    <h2 class="article-subhead">프레젠테이션</h2>
     <p>
       presentation 컴포넌트가 필터의 상태나 적용 방법에 많은 영향을 준다. 필터 옵션의 presentation 컴포넌트는 환경에 최적화된 경험을 위해 변경하기
       쉬워야 한다.
