@@ -87,22 +87,23 @@
       <figure class="chat-avatar">📌</figure>
       <div class="chat-bubble is-primary">
         <b>Components</b>
-        <p>모요.</p>
+        <p>.</p>
       </div>
 
       <div class="chat-bubble">
-        <p>역할에 기반한 컴포넌트. 예를 들면 스포티파이의 encore에서 track row 컴포넌트. 도메인 특수성.</p>
-        <p>1~2 가지 케이스는 예외 케이스로 정의한다.</p>
+        <!-- <p>역할에 기반한 컴포넌트.</p> -->
+        <!-- <p>도메인 특수성이 있는 컴포넌는 예를 들면 스포티파이의 encore에서 track row 컴포넌트.</p> -->
+        <!-- <p>1~2 가지 케이스는 예외 케이스로 정의한다.</p>
         <p>모든 시각정보는 non-clickable. 모든 인터렉션은 clickable.</p>
-        <p>dos / don'ts 케이스는 이미지를 사용하지 않고 간결하게 서술합니다. => 컴포넌트는 계속 변경되기 때문에 유지보수 비용 증가.</p>
+        <p>dos / don'ts 케이스는 이미지를 사용하지 않고 간결하게 서술합니다. => 컴포넌트는 계속 변경되기 때문에 유지보수 비용 증가.</p> -->
       </div>
-      <div class="chat-bubble">
+      <!-- <div class="chat-bubble">
         <p>
           시스템 디자이너로서 제품을 소비할 때 디자이너와 개발자의 경험을 대규모로 최적화하는 것은 우리의 의무입니다. 시스템 자체. 스타일 프리미티브
           구성이 우선순위가 지정되지 않으면 디자이너와 개발자 사이에 많은 마찰이 있을 뿐만 아니라 토큰 아키텍처를 통해 피할 수 있는 많은 스타일
           불일치가 있을 것입니다.
         </p>
-      </div>
+      </div> -->
     </div>
   </header>
 
@@ -140,11 +141,6 @@
     <!-- <p class="hero-description">keywords: attention / feedback / confirm</p> -->
     <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Dialog</span></a>
     <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Callout</span></a>
-
-    <!-- <nav class="carousel-arrows">
-      <button class="carousel-arrows-prev js-carousel-prev" title="이전"><span class="material-symbols-outlined">chevron_left</span></button>
-      <button class="carousel-arrows-next js-carousel-next" title="다음"><span class="material-symbols-outlined">chevron_right</span></button>
-    </nav> -->
   </nav>
 
   <section class="component-body">
@@ -375,7 +371,6 @@
       <p>메뉴 아이템의 우측는 액션 또는 액션 인티케이터만 위치할 수 있습니다. 'new' 등 태그 컴포넌트를 배치하지 마세요. (case 토스. 우측 new)</p>
 
       <ul>
-        <li>singleLineHeading</li>
         <li>
           meta problem: 모든 menuitem container가 clickable은 아니다. => 액션 버튼이 따로 존재할 수도 있어야 한다. 이 정보가 중요한 이유 hover 상태
           표현을 위해.
@@ -389,7 +384,7 @@
       <ul>
         <li>MenuItemAvatar. sizes: large | medium</li>
         <li>MenuHelper. role: setting-item. filter-item.</li>
-        <li>MenuLink. sizes: medium | small(dropdown)</li>
+        <li>MenuLink.</li>
       </ul>
 
       <h2 class="article-subhead">Props</h2>
@@ -465,7 +460,6 @@
       </ul>
 
       <h2 class="article-subhead">Don'ts (in progressing)</h2>
-      <div style="padding: 1rem; background: var(--red100)">123</div>
 
       <ul>
         <li>
@@ -612,14 +606,8 @@
       <h2 class="article-subhead">Best practices</h2>
       <p>맥락이 다른 chip을 그룹으로 제공할 수 있습니다. 이 때 단일선택, 다중선택, 삭제여부, 펼침메뉴 등의 기표를 충분히 제공하세요.</p>
 
-      <ul>
-        <li>changelog. dropdown을 칩과 분리. 이 디자인 시스템에서는 같은 형태를 사용하지만 배경색을 뺀 형태 케이스 고려해보기.</li>
-        <li>
-          changelog. icon button은 clickable이기 때문에 아바타가 아니라 칩을 mixin. 2개의 사이즈로 확장. small은 용법을 제한하여 textfield에서
-          사용하거나 일반 텍스트 우측에.
-        </li>
-        <!-- <li>trigger / menulist를 구별.</li> -->
-      </ul>
+      <!-- <li>changelog. dropdown을 칩과 분리. 이 디자인 시스템에서는 같은 형태를 사용하지만 배경색을 뺀 형태 케이스 고려해보기.</li> -->
+      <!-- <li>changelog. icon button은 clickable이기 때문에 아바타가 아니라 칩을 mixin. 2개의 사이즈로 확장. => chip container style</li> -->
 
       <h4 class="article-subhead">Props</h4>
       <dl>
@@ -868,7 +856,7 @@
       <h2 class="article-subhead">Best practices</h2>
       <ul>
         <li>non-clickable<span hidden>triggering interaction</span></li>
-        <li>Primary style 하나만.</li>
+        <!-- <li>Primary style 하나만.</li> -->
       </ul>
 
       <h2 class="article-subhead">Tag group</h2>
@@ -1248,18 +1236,16 @@
               min="5"
               max="20"
             />
-
             <button class="quantity-increment js-quantity-increment" tabindex="-1"><span class="material-symbols-outlined">add</span></button>
           </div>
           <blockquote style="margin: 1rem 0 0 0">
             <p>NumberInput type="quantity(3자리 정도) | price | default"</p>
-            <p>역할에 따라 대략 3가지 패턴을 따로 정의할 필요</p>
-            <p>221021: - + 버튼에 포커스를 줄 필요가 없다.</p>
+            <p>221021: - + 버튼에 포커스는 필요가 없다.</p>
             <p>minus 버튼을 제외하고 plus 버튼만 제공해도 재미있겠다.</p>
             <p>quntity: 최소값와 최대값.</p>
             <p>price: 숫자만입력3자리마다콤마</p>
             <p>입력 제한 피드백으로 disabled 상태.</p>
-            <p>공통 앞자리0제거/</p>
+            <p>공통 앞자리 0 제거</p>
           </blockquote>
         </div>
       </section>
@@ -1319,7 +1305,6 @@
         <dt>onKeyDown</dt>
         <dd>(event: KeyboardEvent[HTMLButtonElement]) => void</dd>
       </dl>
-
       <h4 class="article-subhead">Groupable<br />textfield group</h4>
 
       <h4 class="article-subhead">References</h4>
@@ -1366,8 +1351,7 @@
 
       <h2 class="article-subhead">Best practices</h2>
       <p>
-        '클릭할 수 있음'의 기표로 elevated 스타일을 사용합니다. 타일 전체가 클릭 영역일 수도, 타일 내부에 클릭 가능한 요소를 포함할 수도 있습니다. +
-        flat도 clickable로? 2022.12.
+        '클릭할 수 있음'의 기표로 elevated 스타일을 사용합니다. 타일 전체가 클릭 영역일 수도, 타일 내부에 클릭 가능한 요소를 포함할 수도 있습니다.
       </p>
       <ul>
         <li>모든 contentbox를 tile로 묶어두는 방법이 필요할지도.</li>
