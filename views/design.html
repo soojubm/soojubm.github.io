@@ -40,7 +40,8 @@
     <h1 class="ellipsis" title="overall consistency and design and development efficiency">
       To simplify is to clarify<i style="font-style: italic">.</i>
     </h1>
-    <p class="hero-description">
+    <!-- <p class="hero-description" style="margin-bottom: 0">일관된 인터페이스 경험은 명료한 규칙에서 나옵니다.</p> -->
+    <p class="hero-description" style="margin: var(--space-2) 0 0 0">
       라이브 중인 서비스의 디자인 시스템이 아니기 때문에
       <span class="linebreak-desktop">보편적인 인터페이스를 위한 메타 문제를 함께 다룹니다.</span>
     </p>
@@ -95,20 +96,20 @@
      -->
   </header>
 
-  <section class="feature" style="justify-content: left; margin: -1rem; margin-top: -3rem; padding: 0 var(--grid-margin) 0">
-    <div class="design-guide-item feature-item" style="margin: 1rem">
+  <section class="feature" style="justify-content: left; margin: -1rem; margin-top: -2rem; padding: 0 var(--grid-margin) 0">
+    <div class="design-guide-item feature-item" style="max-width: 400px; margin: 1rem">
       <figure class="feature-item-avatar">🐐</figure>
       <h3 class="feature-item-title" data-temp=" minimum viable experience">Progressive enhancement</h3>
       <p class="feature-item-description">
         시각 언어를 확장해가며 디자인 디테일을 높이고 코드 환경에서 유효한 최적의 컴포넌트 사례를 만듭니다. 제품으로서의 디자인 시스템 문서.
       </p>
     </div>
-    <div class="design-guide-item feature-item" style="margin: 1rem">
+    <div class="design-guide-item feature-item" style="max-width: 400px; margin: 1rem">
       <figure class="feature-item-avatar">🐏</figure>
       <h3 class="feature-item-title">Single source of truth</h3>
-      <p class="feature-item-description">디자인 툴이 SSOT가 되어서는 안 됨. 왜 사람들은 스타일가이드를 디자인시스템이라 부르나. (작성 중)</p>
+      <p class="feature-item-description">디자인 툴이 SSOT가 되어서는 안 됨. 스타일가이드와 디자인시스템을 구분하기. (작성 중)</p>
     </div>
-    <div class="design-guide-item feature-item" style="margin: 1rem">
+    <div class="design-guide-item feature-item" style="max-width: 400px; margin: 1rem">
       <figure class="feature-item-avatar">🦘</figure>
       <h3 class="feature-item-title">Trustworthy <span hidden>Visual</span> cue</h3>
       <p class="feature-item-description">
@@ -123,7 +124,7 @@
       style="width: var(--size-tiny); background: var(--color-primary); height: var(--size-tiny); margin-bottom: 1rem; border-radius: var(--radius)"
     ></div>
     <h2 class="post-relation-title">가이드 작성을 위한 가이드</h2>
-    <p class="post-relation-description" style="margin-bottom: 3rem">디자인 시스템 문서 작성</p>
+    <p class="post-relation-description" style="margin-bottom: 3rem">가이드 문서에도 가이드가 필요하다.</p>
     <div class="guide-wrap">
       <div class="guide-box" style="background: var(--color-temp1)">
         <b class="guide-title">내용의 간결</b>
@@ -212,7 +213,7 @@
     <div class="obbbb"></div>
 
     <h2 class="post-relation-title" aria-label="last updated">체인지로그</h2>
-    <p class="post-relation-description">메모. 컴포넌트 스코프에서 컴포넌트의 히스토리를 별도로 관리해야 한다.</p>
+    <p class="post-relation-description">히스토리를 관리를 위한 샘플 섹션. 컴포넌트 스코프에서도 컴포넌트의 히스토리를 별도로 관리해야 한다.</p>
     <br /><br />
     <!-- <time class="tag">2022. 12. 02.</time>
     <div class="timeline-item" style="padding-top: 0.5rem; padding-bottom: 1rem">
@@ -224,7 +225,7 @@
     <div class="timeline-item">
       <span class="timeline-item-icon">✍️</span>
       <span class="timeline-item-title">add stack component</span>
-      <p class="timeline-description" style="color: var(--color-text-light)">chip-group과 tag-group 제거하고 stack으로 통합. textfield, button.은?</p>
+      <p class="timeline-description" style="color: var(--color-text-light)">chip-group과 tag-group 제거하고 stack으로 통합.</p>
     </div>
     <time class="timeline-date">2022. 12. 17.</time>
     <div class="timeline-item">
@@ -250,7 +251,7 @@
       <span class="timeline-item-icon">✍️</span>
       <span class="timeline-item-title">체크박스</span>
       <p class="timeline-description" style="color: var(--color-text-light)">
-        label:before / after 선택자에서 input background를 사용. 체크아이콘 컴포넌트를 다양한 컴포넌트에 재활용.
+        label:before / after 선택자에서 input background를 사용. 체크아이콘 컴포넌트를 다양한 컴포넌트에 재활용할 필요.
       </p>
     </div>
     <time class="timeline-date">2022. 8. 4.</time>
@@ -263,7 +264,7 @@
     <footer>
       <span onclick="javascript:alert('준비중')" style="display: flex; align-items: center; margin: 1rem 0 0 0; line-height: 24px"
         >더알아보기
-        <span class="icon-indicator material-symbols-outlined">arrow_right_alt</span>
+        <span class="icon-indicator material-symbols-outlined" style="margin-left: 0.5rem">arrow_right_alt</span>
       </span>
     </footer>
   </section>
