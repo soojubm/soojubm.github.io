@@ -2,6 +2,8 @@
 
 // import { copyClipboard } from './javascripts/utils/formatUtils.js'
 
+// import './images/springsteen.jpg'
+
 import './stylesheets/style.scss'
 
 import routePage from './javascripts/router'

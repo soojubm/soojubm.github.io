@@ -13,15 +13,15 @@
 - OptimizeCssAssetsPlugin: css 파일을 압축한다 with cssnano. mini-css-extract-plugin로 css 파일을 분리해야 사용할 수 있다.
 - css-minimizer-webpack-plugin: above webpack 5
 
-TerserPlugin > UglifyJsPlugin: 번들링 속도가 빠르고 유지보수 중단. mode값을 production
+TerserPlugin > uglifyjs-webpack-plugin: 번들링 속도가 빠르다. 유지보수 중단. mode값을 production
+=> terserplugin + UglifyJs
+-> 안 돼서 obfuscator
 
 - MiniCssExtractPlugin: style-loader(head에 style태그 삽입) 대체. css 파일로 만들어줌.
 
 * CopyPlugin: 정적 파일을 가져온다.
 * styleLoader, cssLoader: 서버사이드랜더링 지원 하지 않는다, 임포느한 스타일 파일을 style 태그로 변환한다.
   - postcss-loader is used standalone (without css-loader), style!css
-
--
 
 - webpack-jarvis 업데이트가 안 되고 있고 사용량도 webpackBundleAnalyzer보다 적다.
 
@@ -55,5 +55,6 @@ eslint-config-prettier is a config that disables rules that conflict with Pretti
 "editor.formatOnSave": true,
 
 ### 22-11
+
 - friendly-errors-webpack-plugin@1.7.0 제거
 - file-loader 제거 https://webpack.js.org/guides/asset-modules/

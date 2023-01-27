@@ -6,7 +6,7 @@
     <!-- <meta http-equiv="x-ua-compatible" content="ie=edge" /> -->
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover"
+      content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover"
     />
     <meta name="format-detection" content="telephone=no, email=no, address=no" />
     <meta name="robots" content="noindex" />
@@ -165,7 +165,8 @@
         </div>
         <div class="navbar-menu-item has-submenu" style="margin: var(--space-2) 0 0 0">
           <menu>
-            <span class="menu-heading" role="heading">Patterns</span>
+            <!-- // role="heading" -->
+            <span class="menu-heading">Patterns</span>
             <a href="#presentations_why">Presentations</a>
             <a href="#filter">Filtering</a>
             <a href="#search">Searching</a>
@@ -179,10 +180,10 @@
             <!-- <a href="#terms">Terms & Privacy</a> -->
           </menu>
         </div>
-        <div class="navbar-menu-item has-submenu" style="margin: var(--space-2) 0 0 0" role="menu">
+        <div class="navbar-menu-item has-submenu" style="margin: var(--space-2) 0 0 0">
           <!-- <span class="menu-label" role="menuitem">Interfaces</span> -->
           <menu>
-            <span class="menu-heading" role="heading">Interfaces</span>
+            <span class="menu-heading">Interfaces</span>
             <a href="#profile">User Profile 🔥</a>
             <a href="#kakaopay">Kakaopay</a>
             <a href="#login">Sign In</a>
@@ -220,7 +221,8 @@
             <span class="night material-symbols-outlined" style="display: flex">nights_stay</span>
           </figure>
           <span class="switch" style="margin-left: auto">
-            <input type="checkbox" id="temp55" name="" role="switch" />
+            <label for="temp51" aria-label="스위치"></label>
+            <input type="checkbox" role="switch" id="temp51" name="" />
           </span>
         </button>
       </div>
