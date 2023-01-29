@@ -4,7 +4,7 @@
 .share-back:hover {}
 .share-title {margin:var(--space-leading-subhead) 0 var(--space-after-subhead) 0;@include text-subhead;}
 
-.share-item {display:flex;align-items:center;width:100%;margin:var(--space-4) 0;position:relative;z-index:var(--zindex-default);}
+.share-item {display:flex;align-items:center;width:100%;margin:var(--space-3) 0;position:relative;z-index:var(--zindex-default);}
 .share-item:hover {@include hover-item;}
 .share-item-icon {@include avatar-medium;margin-right:var(--space-after-avatar-medium);}
 .share-facebook-icon {background-color:var(--color-facebook) !important;}

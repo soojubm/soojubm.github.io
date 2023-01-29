@@ -83,20 +83,7 @@ module.exports = new SpeedMeasurePlugin().wrap({
       { test: /\.ts$/, use: 'ts-loader' },
       {
         test: /\.(sc|c)ss$/,
-        use: [
-          'style-loader',
-          'css-loader',
-          {
-            loader: 'postcss-loader',
-            options: {
-              postcssOptions: {
-                plugins: [postcssPresetEnv(/* pluginOptions */)],
-              },
-            },
-          },
-          ,
-          'sass-loader',
-        ], // 뒤부터
+        use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'], // 뒤부터
       },
 
       // {
