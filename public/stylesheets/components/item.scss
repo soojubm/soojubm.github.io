@@ -1,16 +1,7 @@
-// description 수치(날짜/금액/수량) 이륾보다 더 강조될 수도 있음.
-// => avatar medium, avatar large (우측정렬, 버튼 아래)
-
-// todo entry / message / created
-
 // ! width inherit ::::: for button element
-
 // 비효율 position:relative;z-index:1;
 
-
-
 .dropdown {position:relative;}
-
 .dropdown-menu {@include tile-elevated;min-width:var(--width-menu);margin-top:.25rem;position:absolute;transform:scale(0);transform-origin:left top;}
 .dropdown-menu-title {}
 .dropdown-menu-item {display:block;margin:0 -.25rem;padding:0 .25rem;line-height:var(--size-medium);color:var(--color-text);position:relative;z-index:var(--zindex-default);}
@@ -20,12 +11,9 @@
 .is-active + .dropdown-menu {transform:scale(1);top:calc(var(--size-medium));z-index:var(--zindex-popover);}
 
 .menu {position:relative;z-index:1;}
-
 .menu-heading {@include text-label;}
-
 .menu-link {display:flex;align-items:center;height:var(--size-medium);margin:var(--space-2) 0;@include text-subhead;position:relative;}
 .menu-link:hover {@include hover-item;}
-
 .menu-link[data-size=small] {}
 
 .menu-item {display:flex;align-items:center;width:100%;position:relative;}
@@ -34,7 +22,6 @@
 .menu-item-label {padding:0 0 var(--adjust-label-line) 0;line-height:var(--size-medium);}
 .menu-item-description {color:var(--color-text-light);}
 .menu-item-helper {@include icon-indicator;margin-left:auto;}
-
 .menu-item-action {margin-left:auto;} // container...
 
 .menu-item + .menu-item {margin:var(--space-3) 0 0 0;}
@@ -47,15 +34,8 @@
 .menu-item[data-size=large] .menu-item-description {display:block;line-height:var(--font-line-height);}
 .menu-item[data-size=large] .menu-item-action {@include position-right-top;}
 
-.menu-item[data-align=vertical] {
-    // display: flex;
-    // width: 5rem;
-    display: block;
-}
-.menu-item[data-align=vertical] .menu-item-label {
-    display: block;
-    margin: var(--space-after-avatar-large) 0 0 0;
-}
+.menu-item[data-align=vertical] {display: block;}
+.menu-item[data-align=vertical] .menu-item-label {display: block;margin: var(--space-after-avatar-large) 0 0 0;}
 
 .menu-item-avatar.material-symbols-outlined {background-image:none;}
 

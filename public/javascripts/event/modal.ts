@@ -19,7 +19,6 @@ type modalId = 'newneek' | 'woolf' | 'lettering' | 'etc-works' | any
 // TODO 어떤 버튼을 클릭해도 닫아야 함. (확인/취소)
 // TODO 모달 밖의 컨텐츠에 aria-hidden 모달의 위치는 바디 안에?
 // TODO 다이얼로그 안에서만 탭이 돌아야
-// TODO
 // TODO 지금 라우팅에서 history를 저장할 때의 문제.
 // ! spa에서 모달은 결
 

@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server --open",
-    "build": "webpack --config webpack.config.js",
-    "ts": "",
+    "start": "webpack serve --open --mode=development",
+    "build": "webpack --mode=production",
     "remove": "rm -r node_modules",
     "webhint": "hint -- http://localhost:8080"
   },
@@ -39,9 +39,7 @@
     "file-loader": "^6.2.0",
     "hint": "^7.1.3",
     "html-webpack-plugin": "^5.5.0",
-    "htmllint": "^0.8.0",
     "javascript-obfuscator": "^4.0.0",
-    "lint-staged": "^13.0.3",
     "mini-css-extract-plugin": "^2.7.0",
     "postcss": "^8.4.19",
     "postcss-custom-media": "^9.0.1",
@@ -50,6 +48,7 @@
     "postcss-import": "^15.0.0",
     "postcss-loader": "^7.0.1",
     "postcss-mixins": "^9.0.4",
+    "postcss-modules": "^6.0.0",
     "postcss-nested": "^6.0.0",
     "postcss-preset-env": "^7.8.3",
     "postcss-simple-vars": "^7.0.1",
@@ -71,18 +70,6 @@
   "dependencies": {
     "@babel/polyfill": "^7.6.0",
     "sass": "^1.56.1",
-    "typescript": "^4.9.3",
-    "uglify-js": "^3.17.4"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.js": [
-      "prettier --write",
-      "git add"
-    ]
+    "typescript": "^4.9.3"
   }
 }

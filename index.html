@@ -95,12 +95,13 @@
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lucaburgio/iconoir@master/css/iconoir.css" /> -->
 
     <script src="./public/javascripts/polyfill.js" defer></script>
-    <script src="./build/bundle.js" defer></script>
+
+    <!-- <script src="./build/bundle.js" defer></script> -->
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,300,0,0" />
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4K1SS8B5C"></script>
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4K1SS8B5C"></script>
     <script>
       window.dataLayer = window.dataLayer || []
       function gtag() {
@@ -117,15 +118,15 @@
           page_path: location.pathname + location.hash,
         })
       })
-    </script>
+    </script> -->
   </head>
   <body class="is-opened-menu is-loading">
     <noscript>This website requires JavaScript.</noscript>
 
-    <aside class="browser js-browser" role="complementary">
+    <!-- <aside class="browser js-browser" role="complementary">
       <p>이 사이트는 크롬 브라우저에 최적화되어 있습니다.</p>
       <a href="https://www.google.co.kr/chrome/index.html" class="button">크롬 브라우저 다운로드</a>
-    </aside>
+    </aside> -->
 
     <aside class="offline js-offline">
       <p>인터넷 연결을 다시 확인해주세요.</p>
@@ -212,9 +213,9 @@
       <a class="navbar-logo" href="/" style="background-image: none"><span style="margin-top: 3px">🦆</span></a>
 
       <div class="navbar-user">
-        <!-- <a class="navbar-search-trigger js-navbar-toggle" href="#"></a> -->
-        <!-- <button class="navbar-user-trigger" aria-haspopup="menu" aria-expanded="false"></button> -->
-        <!-- <a class="chip" href="#" style="margin-right:.5rem;"><span class="chip-label">시작하기</span></a> -->
+        <!-- <a class="navbar-search-trigger js-navbar-toggle" href="#"></a>
+        <button class="navbar-user-trigger" aria-haspopup="menu" aria-expanded="false"></button>
+        <a class="chip" href="#" style="margin-right: 0.5rem"><span class="chip-label">시작하기</span></a> -->
         <button class="switch-wrap js-darkmode" title="change theme">
           <figure class="chip">
             <span class="day material-symbols-outlined" style="display: flex">light_mode</span>
@@ -231,56 +232,73 @@
 
     <div id="view"></div>
 
-    <div id="footer"></div>
-    <aside id="modal"></aside>
+    <footer class="footer" role="contentinfo">
+      <div class="footer-background"></div>
+      <!-- <figure class="footer-logo"></figure> -->
+      <article class="user" style="margin-top: -4rem; z-index: 5">
+        <figure
+          class="user-avatar"
+          style="
+            background: var(--color-background);
+            border: var(--border);
+            outline: 8px solid var(--color-background);
+            font-size: var(--font-size-huge);
+          "
+        >
+          🦆
+        </figure>
+        <h2 class="user-name">수줍이</h2>
+        <span class="user-id">soojubm@gmail.com</span>
+        <div class="user-id">82 10 3121 7045</div>
+        <span class="user-job">UI Designer</span>
+      </article>
 
+      <nav class="footer-temp">
+        <a href="https://soojubm.notion.site/UI-Designer-9c18f4dd39eb4181b9f9c2ee76896618" target="_blank">
+          About
+          <figure class="icon-indicator" role="img"><span class="material-symbols-outlined">call_made</span></figure>
+        </a>
+        <a href="https://github.com/soojubm" target="_blank">
+          Github
+          <figure class="icon-indicator" role="img"><span class="material-symbols-outlined">call_made</span></figure>
+        </a>
+      </nav>
+
+      <!-- <dl class="footer-address-info">
+        <dt>사업자등록번호</dt>
+        <dd>888-88-88888</dd>
+        <dt>대표자</dt>
+        <dd>수줍이</dd>
+        <dt>주소</dt>
+        <dd>서울시 강서구 까치산로 182, 1028호</dd>
+        <dt>대표전화</dt>
+        <dd>02-1234-5678</dd>
+        <dt>통신판매업신고번호</dt>
+        <dd>2018-서울강서구-1234</dd>
+        <abbr title="phone"></abbr>
+      </dl> -->
+      <small class="footer-copyright">© 2019 soojubm. All rights reserved.</small>
+      <address class="footer-address">
+        <p class="footer-address-slogan" style="font-size: var(--font-size-medium)">Making things better.</p>
+      </address>
+
+      <aside class="footer-scroll" style="margin: 1.5rem 0 0 0">
+        <p class="footer-scroll-indicator" aria-hidden="true" hidden>스크롤</p>
+        <!-- <button class="footer-scroll-bottom js-to-bottom">아래로</button> -->
+        <button class="footer-scroll-top js-to-top" aria-label="맨 위로">
+          <span class="material-symbols-outlined"> arrow_upward </span>
+          <b hidden aria-hidden="true">맨위로</b>
+        </button>
+      </aside>
+    </footer>
+
+    <aside id="modal"></aside>
     <!-- <div class="footer">infinite scroll test</div> -->
 
     <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        renderComponent('footer')
-      })
-
-      // const hash = window.location.hash
-      // const navbarItem = document.querySelector(`[href="${hash}"]`)
-      // navbarItem?.classList.add('is-active')
-
-      async function renderComponent(componentName) {
-        const selector = `#${componentName}`
-        const endpoint = `/views/components/${componentName}.html`
-        const parentElement = document.querySelector(selector)
-
-        try {
-          const response = await fetch(endpoint)
-          if (!response.ok) throw 'Something went wrong.'
-
-          const responseText = await response.text()
-
-          parentElement.innerHTML = responseText
-        } catch (error) {
-          console.log(error)
-        }
-      }
-    </script>
-
-    <script>
+      window.addEventListener('DOMContentLoaded', detectOnline)
       window.addEventListener('online', detectOnline)
       window.addEventListener('offline', detectOnline)
-      window.addEventListener('DOMContentLoaded', detectOnline)
-      window.addEventListener('DOMContentLoaded', detectBrowser)
-
-      // todo isOnline isEBBrowser 등 모두 유틸성,
-      function detectBrowser() {
-        const BrowserElement = document.querySelector('.js-browser')
-
-        const userAgent = navigator.userAgent.toLowerCase()
-        const isIEBrowser = userAgent.includes('msie') || userAgent.includes('trident')
-        // const isChromeBrowser = userAgent.indexOf('chrome') !== -1
-        // const isMacBrowser = /Mac|iPod|iPhone|iPad/.test(navigator.platform);
-
-        BrowserElement.hidden = !isIEBrowser
-        // todo return browser
-      }
 
       function detectOnline() {
         const offlineElement = document.querySelector('.js-offline')

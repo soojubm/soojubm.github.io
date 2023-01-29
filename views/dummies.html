@@ -42,7 +42,7 @@
 
     <div style="width:108px;">
       <a class="person" href="#">
-        <figure class="avatar" data-size="huge" style="border:3px solid var(--color-primary);overflow: auto;">
+        <figure class="avatar" data-size="huge">
           <img src="/public/images/springsteen.jpg" alt="">
         </figure>
       </a>
@@ -433,7 +433,7 @@
           <span class="material-symbols-outlined">arrow_back</span>
         </button>
       </header>
-      <!-- <a class="link-outside" href="#">모두 보기 (todo 위치)</a> -->
+      <!-- <a class="link-outside" href="#">모두 보기</a> -->
       <div class="stack" role="group" style="margin-top: var(--space-3); margin-bottom: 0.5rem">
         <button class="chip is-active"><span class="chip-label">필터링 1</span></button>
         <button class="chip"><span class="chip-label">필터링 2</span></button>
@@ -610,15 +610,15 @@
       <!-- <p style="margin:1rem 0 .25rem;font-size:var(--font-size-medium);">액세스 권한이 있는 사용자</p> -->
       <div class="item" data-size="medium" role="menuitem">
         <figure class="item-avatar"></figure>
-        <b class="item-name" style="font-weight: var(--font-weight-normal)">수줍이 (나)</h3>
+        <b class="item-name">수줍이 (나)</b>
         <span class="tag" style="margin-left: auto">소유자</span>
       </div>
       <div class="item" data-size="medium" role="menuitem">
         <figure class="item-avatar" style="background: purple"></figure>
-        <b class="item-name" style="font-weight: var(--font-weight-normal)">뾱뾱이</h3>
-        <button class="tag" style="margin-left: auto; background: var(--red100); border: 0; color: var(--red800)">
+        <b class="item-name">뾱뾱이</b>
+        <span class="tag" data-status="danger" style="margin-left: auto;">
           <span class="tag-label">제한됨</span>
-        </button>
+        </span>
         <figure class="icon-indicator" style="margin-left: var(--space-1)"><span class="material-symbols-outlined">arrow_drop_down</span></figure>
       </div>
       <footer style="display: flex; justify-content: right; margin: 2rem 0 0">
@@ -669,7 +669,7 @@
         <!-- <figure class="item-avatar" style="background:aliceblue;">
           <span class="material-symbols-outlined" style="color:blue;">trending_up</span>
         </figure> -->
-        <b class="item-name" style="font-size: 16px">상해종합주가지수</h3>
+        <b class="item-name" style="font-size: 16px">상해종합주가지수</b>
         <p class="item-description" style="color: var(--color-text)">2999.55p</p>
         <span class="tag" style="color: #fff; text-align: center; justify-content: center; background: blue; border: 0; margin-top: 0.5rem"
           >4.33% 상승</span
@@ -687,7 +687,7 @@
           <span class="material-symbols-outlined" style="color: var(--red800)">trending_down</span>
         </figure>
         <h3 class="item-name">Entity large</h3>
-        <span class="" style="color: var(--red800)">35%</span>
+        <span style="color: var(--red800)">35%</span>
       </article>
     </div>
 
@@ -755,10 +755,7 @@
 
     <hr />
 
-    <h3 class="article-subhead" data-temp="판매자가 선택할 수 있는 결제 방법과 구매자가 선택할 수 있는 결제 방법의 차이.">
-      Select payment method<br />
-    </h3>
-
+    <h3 class="article-subhead" data-temp="매장과 구매자 차이.">Select payment method</h3>
     <div class="payment-method-list">
       <div class="payment-method-item status-is-active">
         <figure style="background: aliceblue">💳</figure>

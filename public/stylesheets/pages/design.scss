@@ -154,7 +154,6 @@
 
 
 .accordion {margin:1rem 0;}
-.accordion:hover {@include hover-item;}
 .accordion-title {display:flex;align-items:center;justify-content:space-between;@include text-subhead;}
 .accordion-title-icon {@include icon-indicator;margin:1px 0 0 0;}
 .accordion-panel {display:none;cursor:default;}
@@ -334,10 +333,9 @@
 .chat-bubble.has-image {padding:0;background:none;}
 .chat-bubble + .chat-bubble {margin-top:var(--space-2);}
 
-.chat.is-mine {padding-right:0;}
+.chat.is-mine {text-align:right;}
 .is-mine .chat-avatar {display:none;}
-.is-mine .chat-time {text-align:right;right:0;}
-.is-mine div {text-align:right;display:flex;align-items:center;flex-direction: row-reverse;} // todo
+.is-mine .chat-time {right:0;}
 .is-mine .chat-bubble {margin-left:auto;border-radius:1.5rem;border-top-right-radius:var(--radius)}
 
 

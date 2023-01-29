@@ -4,27 +4,27 @@
 
 // import './images/springsteen.jpg'
 
-import './stylesheets/style.scss'
+import './public/stylesheets/style.scss'
 
-import routePage from './javascripts/router'
-import { stopAnimation, throttle } from './javascripts/utils/optimizationUtils'
+import routePage from './public/javascripts/router'
+import { stopAnimation, throttle } from './public/javascripts/utils/optimizationUtils'
 
-import { detectLoad, lockBodyElement, unlockBodyElement } from './javascripts/load'
+import { detectLoad, lockBodyElement, unlockBodyElement } from './public/javascripts/load'
 
-import carousel from './javascripts/event/carousel'
-import toggleElement from './javascripts/event/toggleElement'
-import tab from './javascripts/event/tab'
-import modal from './javascripts/event/modal'
-import parallax from './javascripts/event/parallax'
-import scrollspy from './javascripts/event/scrollspy'
-import scrollAnimation from './javascripts/event/scrollAnimation'
+import carousel from './public/javascripts/event/carousel'
+import toggleElement from './public/javascripts/event/toggleElement'
+import tab from './public/javascripts/event/tab'
+import modal from './public/javascripts/event/modal'
+import parallax from './public/javascripts/event/parallax'
+import scrollspy from './public/javascripts/event/scrollspy'
+import scrollAnimation from './public/javascripts/event/scrollAnimation'
 
-import input from './javascripts/input/index'
+import input from './public/javascripts/input/index'
 
-import detectTheme from './javascripts/theme/dectectTheme'
-import toggleTheme from './javascripts/theme/toggleTheme'
+import detectTheme from './public/javascripts/theme/dectectTheme'
+import toggleTheme from './public/javascripts/theme/toggleTheme'
 
-import { toggleNavbarMenu, initializeNavbar } from './javascripts/common/navbar'
+import { toggleNavbarMenu, initializeNavbar } from './public/javascripts/common/navbar'
 
 document.addEventListener('DOMContentLoaded', lockBodyElement)
 document.addEventListener('DOMContentLoaded', () => {

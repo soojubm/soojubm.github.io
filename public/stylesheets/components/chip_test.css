@@ -32,7 +32,4 @@ button {
   position: relative;}
 
 .chip-label {padding:1px var(--space-3) var(--adjust-label-line);}
-/* .chip-icon {@include chip-icon;}
-
-.chip-remove {@include chip-icon;cursor:pointer;}
-.chip-remove:hover {box-shadow:var(--state-hover);} */
+.chip-remove:hover {box-shadow:var(--state-hover);}

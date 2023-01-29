@@ -18,7 +18,6 @@ const ACTIVE_CLASS = 'is-active'
 // const chip = document.querySelector('.js-chip')
 // const chips = chip?.querySelectorAll('button')
 
-// // todo selector
 //   chips.forEach(element => element.addEventListener('click', () => active(element))
 
 // function active(eTemp) {

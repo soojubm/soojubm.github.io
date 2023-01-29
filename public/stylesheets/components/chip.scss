@@ -1,6 +1,3 @@
-// flex, inline-flex인 경우 a, button 차이 발생.. min-width for... bleeding?
-// avatar-medium vs component tokens
-
 @mixin chip {
   display: flex;
   align-items: center;
@@ -17,7 +14,6 @@
     &:hover {box-shadow:var(--state-hover);}
   }
   &:disabled {border-color:transparent;}
-  
   &.is-active {
     border-color: var(--color-background-strong);
     background: var(--color-background-strong);
@@ -25,16 +21,12 @@
   }
 }
 
-
-@mixin chip-icon {@include avatar-medium;background-image:none;}
 @mixin chip-label {padding:1px var(--space-3) var(--adjust-label-line);pointer-events:none;}
 
 .chip {@include chip}
-
+.chip-icon {@include avatar-container;}
 .chip-label {@include chip-label;}
-.chip-icon {@include chip-icon;}
-
-.chip-remove {@include chip-icon;cursor:pointer;}
+.chip-remove {@include avatar-container;cursor:pointer;}
 .chip-remove:hover {box-shadow:var(--state-hover);}
 .chip-checked {} // chip-avatar
 

@@ -1,9 +1,11 @@
 .tag {@include tag;}
+.tag-icon {margin:0 var(--space-1) 0 0;}
+
 .tag[data-style=primary] {border-color:var(--color-accent);background-color:var(--color-accent);color:var(--gray800);}
 .tag[data-style=secondary] {border-color:var(--green100);background-color:var(--green100);color:var(--green800);}
 .tag[data-status=loading] {}
+.tag[data-status=danger] { border: 0;background: var(--red100);color: var(--red800)}
 
-.tag-icon {margin:0 var(--space-1) 0 0;}
 
 .hashtag {@include hashtag;}
 

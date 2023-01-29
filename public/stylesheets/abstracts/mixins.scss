@@ -144,6 +144,8 @@
   font-size: var(--font-size-small);
   color: var(--color-text);
 }
+
+
 @mixin tag-primary {@include tag;border-color:var(--color-accent);background-color:var(--color-accent);color:var(--gray800);}
 
 @mixin hashtag {

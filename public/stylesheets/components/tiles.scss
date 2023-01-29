@@ -8,9 +8,6 @@
   background: var(--color-background);
   position: relative;
 
-  // z-index: 1; // for item hover. tile 안에 tile z-index 중복.
-  // @media (--small) {}
-
   &:hover {
     background-color: none !important;
   }
@@ -27,10 +24,9 @@
 }
 @mixin tile-flat-tiny {
   @include tile;
-  // margin: var(--space-1) 0;
   padding: var(--space-1);
 }
-//todo border shadow
+
 @mixin tile-elevated {@include tile-flat;border:0;box-shadow:var(--shadow-tile);}
 @mixin tile-elevated-small {@include tile-flat-small;border:0;box-shadow:var(--shadow-tile);}
 @mixin tile-elevated-tiny {@include tile-flat-tiny;border:0;box-shadow:var(--shadow-tile);}

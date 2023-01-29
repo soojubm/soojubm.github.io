@@ -1,3 +1,8 @@
+const userAgent = navigator.userAgent.toLowerCase()
+export const isIEBrowser = userAgent.includes('msie') || userAgent.includes('trident')
+export const isChromeBrowser = userAgent.indexOf('chrome') !== -1
+export const isMacBrowser = /Mac|iPod|iPhone|iPad/.test(navigator.platform)
+
 export function backHistory() {}
 
 export const isScrollEnd = () => window.innerHeight + window.pageYOffset >= document.body.offsetHeight

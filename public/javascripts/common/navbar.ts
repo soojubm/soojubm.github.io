@@ -3,11 +3,11 @@ const isOpendNavbarMenu = () => document.body.classList.contains(OPENED_MENU_CLA
 
 export function initializeNavbar() {
   const navigationTrigger = document.querySelector<HTMLElement>('.js-navbar-toggle')
+  if (!document.body.classList.contains(OPENED_MENU_CLASSNAME)) return
 
+  // toso aria
   navigationTrigger?.classList.remove('is-active')
   document.body.classList.remove(OPENED_MENU_CLASSNAME)
-
-  // todo 처음에 열려 있는지 닫혀있는지 체크.
 }
 
 export function toggleNavbarMenu(event) {

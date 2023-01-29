@@ -58,3 +58,5 @@ eslint-config-prettier is a config that disables rules that conflict with Pretti
 
 - friendly-errors-webpack-plugin@1.7.0 제거
 - file-loader 제거 https://webpack.js.org/guides/asset-modules/
+
+https://velog.io/@nemo/webpack-setting

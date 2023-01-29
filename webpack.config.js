@@ -1,3 +1,7 @@
+const path = require('path')
+
+const postcssPresetEnv = require('postcss-preset-env')
+
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
@@ -17,18 +21,16 @@ const CompressionPlugin = require('compression-webpack-plugin')
 
 var WebpackObfuscator = require('webpack-obfuscator')
 
-const path = require('path')
-
 // const devMode = process.env.NODE_ENV !== "production";
 
 module.exports = new SpeedMeasurePlugin().wrap({
-  mode: 'production', // development, production, none
+  // mode: 'production', // development, production, none
   devtool: 'inline-source-map',
-  entry: './public/index.ts',
+  entry: './index.ts',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, './build'),
-    // publicPath: '/test',
+    // publicPath: './',
   },
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
@@ -43,7 +45,17 @@ module.exports = new SpeedMeasurePlugin().wrap({
   target: ['web', 'es5'],
 
   plugins: [
-    new CleanWebpackPlugin(),
+    // new CleanWebpackPlugin(),
+
+    new HtmlWebpackPlugin({
+      template: './index.html',
+      filename: 'index.html',
+      minify: {
+        collapseWhitespace: true,
+        removeComments: true,
+      },
+    }),
+
     new MiniCssExtractPlugin({ filename: 'style.css' }),
 
     new WebpackObfuscator({ rotateStringArray: true }, ['excluded_bundle_name.js']),
@@ -62,16 +74,6 @@ module.exports = new SpeedMeasurePlugin().wrap({
     //   template: 'src/assets/test.html'
     // })
 
-    // todo 빌드
-    new HtmlWebpackPlugin({
-      template: './index.html',
-      filename: 'index.html',
-      minify: {
-        collapseWhitespace: true,
-        removeComments: true,
-      },
-    }),
-
     new BundleAnalyzerPlugin(),
     // new FriendlyErrorsWebpackPlugin(),
   ],
@@ -81,12 +83,25 @@ module.exports = new SpeedMeasurePlugin().wrap({
       { test: /\.ts$/, use: 'ts-loader' },
       {
         test: /\.(sc|c)ss$/,
-        use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
+        use: [
+          'style-loader',
+          'css-loader',
+          {
+            loader: 'postcss-loader',
+            options: {
+              postcssOptions: {
+                plugins: [postcssPresetEnv(/* pluginOptions */)],
+              },
+            },
+          },
+          ,
+          'sass-loader',
+        ], // 뒤부터
       },
 
       // {
-      //   test: /\.jpg$/,
-      //   use: 'file-loader',
+      //   test: /\.(png|jpe?g|gif|svg|webp)$/i,
+      //   use: ['file-loader'],
       // },
 
       {
@@ -110,8 +125,12 @@ module.exports = new SpeedMeasurePlugin().wrap({
     ],
     concatenateModules: true,
   },
+
   devServer: {
-    contentBase: path.join(__dirname, './'),
+    // contentBase: path.join(__dirname, './'),
+    static: {
+      directory: path.resolve(__dirname, './'),
+    },
     compress: true,
     host: 'localhost',
     port: 9000,

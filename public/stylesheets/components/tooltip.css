@@ -1,8 +1,7 @@
 .tooltip {position:relative;}
 .tooltip-trigger {display:flex;align-items:center;height:var(--size-small);}
 .tooltip-content {max-width:320px;padding:.5rem var(--space-3);border-radius:var(--radius);background:var(--color-background-strong);box-shadow:var(--shadow);color:var(--color-text-weak);position:absolute;left:0;top:var(--size-medium);z-index:6;}
-.tooltip-content:before {
-  content:'';display:block;position:absolute;left:0;right:50%;top:-8px;bottom:0;
+.tooltip-content:before {content:'';display:block;position:absolute;left:0;right:50%;top:-8px;bottom:0;
 }
 
 .is-icon .tooltip-content {white-space:pre;font-size:var(--font-size-small);left:50%;transform:translateX(-50%);}

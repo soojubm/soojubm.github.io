@@ -16,7 +16,7 @@ const posts = await getPosts()
   .get(e => e.showAlert())
 
 function attachKeyUpEvent() {
-  loginForm.addEventListener('keyup', function(event) {
+  loginForm.addEventListener('keyup', function (event) {
     const nodeName = event.target.nodeName
     const inputProps = event.target
 
@@ -237,14 +237,14 @@ spanElem.addEventListener('keydown', navigateLink)
 //     ...
 // });
 
-textboxEle.addEventListener('keydown', function(e) {
+textboxEle.addEventListener('keydown', function (e) {
   const isCapsLockOn = e.getModifierState('CapsLock')
 
   messageEle.innerHTML = isCapsLockOn ? 'Caps lock is ON' : ''
   messageEle.style.display = isCapsLockOn ? 'block' : 'none'
 })
 
-textboxEle.addEventListener('keypress', function(e) {
+textboxEle.addEventListener('keypress', function (e) {
   const isMac = /Mac/.test(navigator.platform)
   const keyCode = e.keyCode || e.which
 
@@ -319,7 +319,7 @@ textboxEle.addEventListener('keypress', function(e) {
 //   </div>
 // </div>
 
-var renderTime = function() {
+var renderTime = function () {
   var time = new Date()
   document.querySelector('.clock')?.textContent = time.toLocaleString(navigator.language || 'en-US', {
     year: 'numeric',
@@ -499,3 +499,24 @@ function getStar(value) {
 }
 
 Star('#star', 5, getStar)
+
+// const hash = window.location.hash
+// const navbarItem = document.querySelector(`[href="${hash}"]`)
+// navbarItem?.classList.add('is-active')
+
+async function renderComponent(componentName) {
+  const selector = `#${componentName}`
+  const endpoint = `/views/components/${componentName}.html`
+  const parentElement = document.querySelector(selector)
+
+  try {
+    const response = await fetch(endpoint)
+    if (!response.ok) throw 'Something went wrong.'
+
+    const responseText = await response.text()
+
+    parentElement.innerHTML = responseText
+  } catch (error) {
+    console.log(error)
+  }
+}

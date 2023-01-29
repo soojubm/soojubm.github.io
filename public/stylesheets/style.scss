@@ -717,22 +717,14 @@ main,
   z-index: var(--zindex-modal);
 }
 
-
-
 .user {display:block;color:var(--color-text);position:relative;@include clearfix;}
 .user-avatar {@include avatar-huge;}
 .user-avatar-change {width:32px;height:32px;border-radius:var(--radius);position:absolute;right:-8px;bottom:-8px;}
-.user-name {@include text-subhead;margin:var(--space-2) 0 0 0;}
+.user-name {display:block;@include text-subhead;margin:var(--space-2) 0 0 0;}
 .user-id {margin:-.125rem 0 0 0;}
 .user-job {display:block;color:var(--color-text-light);}
 .user-email {}
 .user-tags {@include stack;}
-
-
-.user-logout {display:flex;align-items:center;width:100%;margin:var(--space-after-item) 0;position:relative;}
-.user-logout-icon {@include chip;}
-.user-logout-label {@include chip-label;}
-.user-logout:hover {@include hover-item;}
 
 .user-myinfo {@include link-outside;margin:.25rem 0 0;}
 .user-footer {}
@@ -740,7 +732,7 @@ main,
 
 .notifications {@include layout-medium;}
 .notification {}
-.notification-item {@include item;}
+.notification-item {}
 .notification-item:hover {@include hover-item;}
 .notification-item-avatar {@include avatar-large;position:absolute;left:0;top:0;}
 .notification-item-avatar + p {margin-bottom:var(--space-05);}
