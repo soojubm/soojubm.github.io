@@ -8,10 +8,14 @@
   <!-- <section class="textbox" style="margin: 4rem var(--grid-margin)">
     <menu class="textbox-toolbar">
       <div class="chip" style="margin: 0 var(--space-2) 0 0">
-        <select class="" id="select2" style="background: none; border: none; padding: 0 var(--space-4) 0 0; font: inherit; color: var(--color-text)">
+        <select
+          class="chip-label"
+          id="select2"
+          style="background: none; border: none; padding: 0 var(--space-4) 0 0; font: inherit; color: var(--color-text)"
+        >
           <option value="select-option1">나눔고딕</option>
         </select>
-        <span class="select-indicator" role="img"><span class="material-symbols-outlined"> arrow_drop_down </span></span>
+        <span class="chip-indicator" role="img"><span class="material-symbols-outlined"> arrow_drop_down </span></span>
       </div>
       <button class="textbox-toolbar-bold" style="font-weight: var(--font-weight-bold)">B</button>
       <button class="textbox-toolbar-italic" style="font-style: italic">I</button>
@@ -21,9 +25,9 @@
       <div class="textbox-view-bdoy" style="color: var(--color-text-light)">제목 / 내용 선택 영역에 is-selected</div>
     </div>
     <footer class="textbox-footer">
-      <button class="textbox-footer-publish" style="width: 50%">게시</button>
-    </footer>
-  </section> -->
+      <button class="textbox-footer-publish">게시</button>
+    </footer> -->
+  </section>
   <!--
     <p>
     유저는 대부분 디스크립션을 자세히 읽기를 원하지 않으므로,
@@ -63,7 +67,7 @@
         useCases: [],
       }
     </code>
-    <h2 class="article-subhead">목록의 나머지를 더 보여줄 때는 [모두보기], 미리보기 형식의 텍스트를 더 보여줄 때는 [전체보기].click - tag 컴포넌트/화살표/아이콘 아이템 전체가 클릭 영역</h2>
+    <h2 class="article-subhead">목록의 나머지를 더 보여줄 때는 [모두보기], 미리보기 형식의 텍스트를 더 보여줄 때는 [전체보기]</h2>
     <dt>모두보기</dt><dd>see all(15)(internal, arrow-right)</dd>
     <dt>더보기</dt><dd>더보기vs더불러오기(more, arrow-down), 자세히보기, learn more 등(external, arrow-right-top)</dd>
     variants
@@ -72,8 +76,6 @@
     하세요, 할 수 있습니다. 보다 합니다. 입니다
   </section> -->
 
-  <!-- Visual Information / Container / Navigation -->
-
   <header class="" role="banner" style="padding: 0 var(--grid-margin); margin-left: -40px">
     <div class="chat" style="max-width: 720px; margin: 2rem 0 var(--space-3)">
       <figure class="chat-avatar">📌</figure>
@@ -81,15 +83,19 @@
         <b>Components</b>
       </div>
       <div class="chat-bubble">
-        <p>MVP의 검증을 위한 최소한의 컴포넌트 라이브러리로 시작했습니다. 이후 시각 언어를 추가하며 다양한 도메인에 활용할 수 있도록 구성해봅니다.</p>
-        <!-- <p>역할에 기반한 컴포넌트.</p> -->
-        <!-- <p>도메인 특수성이 있는 컴포넌는 예를 들면 스포티파이의 encore에서 track row 컴포넌트.</p> -->
-        <!-- <p>1~2 가지 케이스는 예외 케이스로 정의한다.</p>
+        <p>
+          MVP의 검증을 위한 최소한의 컴포넌트 라이브러리로 시작했습니다. 이후 시각 언어를 추가하며 다양한 도메인에 활용할 수 있도록 구성하고 있습니다.
+        </p>
+        <!-- <p>도메인 특수성이 있는 컴포넌트들을 구분한다. 예를 들면 스포티파이의 encore에서 track row 컴포넌트.</p> -->
+        <!-- <p>1~2가지 케이스는 예외 케이스로 정의한다.</p>
         <p>모든 시각정보는 non-clickable. 모든 인터렉션은 clickable.</p>
         <p>dos / don'ts 케이스는 이미지를 사용하지 않고 간결하게 서술합니다. => 컴포넌트는 계속 변경되기 때문에 유지보수 비용 증가.</p> -->
       </div>
       <div class="chat-bubble">
         <p>sequentially-descending order</p>
+      </div>
+      <div class="chat-bubble">
+        <p>TODO: button과 chip을 통합.</p>
       </div>
       <!-- <div class="chat-bubble">
         <p>
@@ -250,7 +256,6 @@
         <span class="user-id">soojubm@gmail.com</span>
         <span class="user-job">Youtube subscriber</span>
       </article>
-
 
       <h2 class="article-subhead">groupable<br />avatar의 목록</h2>
       <article class="avatargroup">
@@ -720,7 +725,13 @@
             </button>
             <menu class="dropdown-menu" role="menu">
               <h6 class="dropdown-menu-title" hidden>Dropdown header</h6>
-              <a class="dropdown-menu-item" role="menuitem" href="#" disabled style="display: flex; justify-content: space-between; align-items: center">
+              <a
+                class="dropdown-menu-item"
+                role="menuitem"
+                href="#"
+                disabled
+                style="display: flex; justify-content: space-between; align-items: center"
+              >
                 최신순
                 <span class="material-symbols-outlined">check</span>
               </a>
@@ -922,10 +933,8 @@
         <dd>() => void</dd>
       </dl>
     </article>
-
   </section>
   <section class="component-body">
-
     <article class="article js-observer js-scrollspy-section">
       <h1 class="article-title" title="or Box">Checkboxes</h1>
       <p class="article-description">옵션 목록에서 하나 이상의 옵션을 선택합니다.</p>
@@ -2178,7 +2187,7 @@
           <section class="step is-vertical">
             <div class="step-item is-active">
               <span class="step-item-icon">1</span>
-              <b class="step-item-label">장바구니</ㅠ>
+              <b class="step-item-label">장바구니</b>
             </div>
             <div class="step-item">
               <span class="step-item-icon">2</span>
@@ -2352,7 +2361,7 @@
       </section>
 
       <ul>
-        <li>formatCurrency()</li>
+        <li>getFormattedCurrency()</li>
         <li>role=suggestion/deletion/insertion]</li>
       </ul>
     </article>

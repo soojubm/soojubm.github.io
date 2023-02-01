@@ -6,7 +6,6 @@
   font: inherit;
   color: var(--color-text); // for safari #fff
 }
-
 // input:-internal-autofill-selected {}
 
 // todo indicator
@@ -18,7 +17,6 @@
 .textfield-group .textfield {width:calc(50% - var(--space-1))}
 
 .textfield {position:relative;}
-
 .textfield-label {display:block;}
 .textfield-label small {margin:0 0 0 var(--space-1);color:var(--color-text-light);}
 
@@ -54,13 +52,13 @@
 .searchfield-cancel {@include button-text;min-width:auto;width:var(--size-medium);position:absolute;right:0;top:0;padding:0;}
 
 [data-size=small] .textfield-prefix {left:var(--space-1);top:0;}
+[data-size=small] .textfield-input {height:var(--size-medium);padding-left:2.25rem;}
 
 .is-focused .searchfield-input {display:block;width:calc(100% - var(--size-medium) - var(--space-after-avatar-medium));}
 .is-focused .searchfield-cancel {right:0;}
 
 // 검색필드는 레이블이 없다. label ~로 하면 되긴 함.
 // input container
-
 .is-invalid .textfield-label {}
 .is-invalid .textfield-input {border-color:var(--red800);color:var(--red800);}
 .is-invalid .textfield-byte {color:var(--red800);}

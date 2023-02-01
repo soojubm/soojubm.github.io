@@ -21,7 +21,7 @@
 .social {}
 .social-link {display:flex;align-items:center;position:relative;}
 .social-link + .social-link {margin-top:var(--space-3);}
-.social-link-icon {@include item-avatar-medium;}
+.social-link-icon {@include item-avatar-medium;background-image:none;} // TODO: background-image를 재설정할 필요 없도록.
 .social-link-label {color:var(--color-text);}
 .social-link:hover {@include hover-item;}
 .social-facebook figure {background-color:var(--color-facebook);}
@@ -49,14 +49,6 @@
 .profile-display-button.is-selected {background:var(--color-background-weak);}
 
 
-.type-t[role=tablist] {padding:0 !important;border:none;border-bottom:var(--border);border-radius:0;box-shadow:none;}
-.type-t .tablist-indicator {background:none;border-radius:0;border:0;border-bottom:.125rem solid var(--color-primary);bottom:-1px;}
-.type-t [role=tab] {height:48px;font-weight:bold;color:var(--color-text-light);}
-.type-t [role=tab][aria-selected=true] {color:var(--color-text);}
-
-.type-sc[role=tablist] {padding:.125rem !important;border:none;box-shadow:none;background:var(--color-background-weak);}
-.type-sc [role=tab] {width:50%;color:var(--color-text);height:var(--size-small);font-size:var(--font-size-small);}
-.type-sc .tablist-indicator {width:33.3333%;height:var(--size-small);box-shadow:var(--shadow);background:var(--color-background);border-color:transparent !important;}
 
 
 .panel {display:flex;flex-wrap:wrap;margin:0 -.375rem;}

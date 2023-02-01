@@ -8,7 +8,10 @@
 
 
 @mixin truncate {white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-@mixin truncate-multi {@include truncate;height:3rem;white-space:normal;word-wrap:break-word;display: -webkit-box;-webkit-line-clamp:2;-webkit-box-orient: vertical;}
+@mixin truncate-multi {
+  // height:3rem;
+  // white-space:normal;word-wrap:break-word;
+  overflow:hidden;text-overflow:ellipsis;display: -webkit-box;-webkit-line-clamp:2;-webkit-box-orient: vertical;}
 
 
 .util-truncate {@include truncate;}

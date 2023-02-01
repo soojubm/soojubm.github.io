@@ -22,15 +22,10 @@
     </ul>
   </div>
 
-  <ul>
-    <li>SCSS/LESS: kebab-case</li>
-    <li>JS: PascalCase</li>
-    <li>Android: snake_case</li>
-    <li>iOS: PascalCase</li>
-    <li>강도: none, low, normal, medium, high,max</li>
-    <li>tone / shade / tint / subtle intense또는 vibrant더 강렬하고 다채로운 bold / prominent - pronounced 더 눈에 띄는</li>
-  </ul>
-
+  <div class="dictoinary-item">
+    <b>label vs text</b>
+    <span>button, checkbox - label (iOS) / text (andriod)</span>
+  </div>
   <div class="dictoinary-item">
     <b>행동</b>
     <span>action</span>
@@ -46,7 +41,7 @@
   <div class="dictoinary-item">
     <span>cancel, delete, remove</span>
   </div>
-  <div class="dictoinary-item"><span></span> leading/tailing vs prefix/surfix</div>
+  <div class="dictoinary-item"><span>leading/tailing vs prefix/surfix</span></div>
   <div class="dictoinary-item">
     <b>목록</b>
     <span>List</span>
@@ -73,19 +68,10 @@
 
   <hr />
 
-  <div class="dictoinary-item">모든 요소에 position: relative; 넣는 것은 어떤가.</div>
-
-  <article class="article js-scrollspy-section">
-    <p>역할에 근거합니다. 역할 기반의 네이밍. 여러 개의 tag를 감싸는 부모 태그는 tag group이 tags보다 좋고, tag list보다 좋습니다.</p>
-    <p><span></span> 모달, 토스트는 컴포넌트가 아님. 기능에 가까움. alert toast, dialog modal</p>
-    <p><span></span> 컴포넌트, 클래스 네이밍에 방향(left, right)을 사용하지 마세요. 레이아웃은 변경되기 쉽습니다.</p>
-    <p>21-07-28 chip-label 엘리먼트 항상 사용. space-chip-inset 레이블에 패딩을 주면 아이콘 컨트롤이 쉬워짐.</p>
-  </article>
-
   <article class="article js-scrollspy-section">
     <h1 class="article-title">Javascript</h1>
     <div class="article-description">
-      <p><span></span> early return. 네스팅 최소화</p>
+      <p><span></span> early return.</p>
       <p><span></span> isTrue. boolean.</p>
     </div>
   </article>
@@ -98,34 +84,39 @@
   </article>
 
   <article class="article js-scrollspy-section">
-    <div>nextjs와 css moduel에서 인사이트. 컴포넌트 컨테이너의 개념 만들어보기.</div>
-    <p>예를 들어, action container, textfield container, tag container, avatar container.</p>
+    <div class="dictoinary-item">모든 요소에 position: relative; 넣는 것은 어떤가. 과하다. => 컨테이너 요소를 정의하면 해결.</div>
+
+    <ul>
+      <li>SCSS/LESS: kebab-case</li>
+      <li>JS: PascalCase</li>
+      <li>Android: snake_case</li>
+      <li>iOS: PascalCase</li>
+      <li>강도: none, low, normal, medium, high,max</li>
+      <li>tone / shade / tint / subtle intense또는 vibrant더 강렬하고 다채로운 bold / prominent - pronounced 더 눈에 띄는</li>
+    </ul>
     <p>
-      avatar container의 use cases. icon-button, pagination link 등의 컴포넌트가 있기 때문이다. avatar 컴포넌트는 결국, avatar-container를 가지며,
-      avatar-fallback 등의 세부 내용을 적용.
+      역할에 근거합니다. 역할 기반의 네이밍. 여러 개의 tag를 감싸는 부모 태그는 tag group이 tags보다 좋고, tag list보다 좋습니다. 컴포넌트, 클래스
+      네이밍에 방향(left, right)을 사용하지 마세요. 레이아웃은 변경 가능성이 크기 때문.
     </p>
-    <p>chip 컴포넌트와 button 컴포넌트는 action(가칭) container를 가지고, 이 컨테이는 다른 사이즈를 갖는다.</p>
-    <p>다중 클래스보다 여러개 대신 속성이나 data attr 사용하는 것이 스타일링에 좋을지도.</p>
-    <p>문제. 컨테이너의 surface는 clickable/non-clickable 에 따라 일정한 형태를 갖게 됨.</p>
+    <p>21-07-28 chip-label 엘리먼트 항상 사용. space-chip-inset 레이블에 패딩을 주면 아이콘 컨트롤이 쉬워짐.</p>
+
+    <div class="dictoinary-item">
+      <p>naming: appearance | theme => style (andriod 코드, iOS 가이드 참고)</p>
+      <p>Style prop value must be an objecteslintreact/style-prop-object</p>
+      <p>iOS button role action label</p>
+      <p>token - utility class</p>
+    </div>
+
+    <p>
+      The goal isn't "all or nothing"; every improvement you can make will help the cause of accessibility. Using clear language The language you use
+      can also affect accessibility. In general, you should use clear language that is not overly complex and doesn't use unnecessary jargon or slang
+      terms. This not only benefits people with cognitive or other disabilities; it benefits readers for whom the text is not written in their first
+      language, younger people…, everyone, in fact! Apart from this, you should try to avoid using language and characters that don't get read out
+      clearly by the screen reader. For example: Don't use dashes if you can avoid it. Instead of writing 5–7, write 5 to 7. Expand abbreviations —
+      instead of writing Jan, write January. Expand acronyms, at least once or twice, then use the tag to describe them.
+    </p>
+    <img src="dinosaur.png" aria-labelledby="dino-label" />
+
+    <p id="dino-label">The Mozilla red Tyrannosaurus…</p>
   </article>
-
-  <div class="dictoinary-item">
-    <p>naming: appearance | theme => style (andriod 코드, iOS 가이드 참고)</p>
-    <p>Style prop value must be an objecteslintreact/style-prop-object</p>
-    <p>button, checkbox - label (iOS) / text (andriod)</p>
-    <p>iOS button role action label</p>
-    <p>token - utility class</p>
-  </div>
-
-  <p>
-    The goal isn't "all or nothing"; every improvement you can make will help the cause of accessibility. Using clear language The language you use
-    can also affect accessibility. In general, you should use clear language that is not overly complex and doesn't use unnecessary jargon or slang
-    terms. This not only benefits people with cognitive or other disabilities; it benefits readers for whom the text is not written in their first
-    language, younger people…, everyone, in fact! Apart from this, you should try to avoid using language and characters that don't get read out
-    clearly by the screen reader. For example: Don't use dashes if you can avoid it. Instead of writing 5–7, write 5 to 7. Expand abbreviations —
-    instead of writing Jan, write January. Expand acronyms, at least once or twice, then use the tag to describe them.
-  </p>
-  <img src="dinosaur.png" aria-labelledby="dino-label" />
-
-  <p id="dino-label">The Mozilla red Tyrannosaurus…</p>
 </main>

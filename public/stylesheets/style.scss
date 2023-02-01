@@ -737,7 +737,7 @@ main,
 .notification-item-avatar {@include avatar-large;position:absolute;left:0;top:0;}
 .notification-item-avatar + p {margin-bottom:var(--space-05);}
 .notification-item-user {font-size:var(--font-size-medium);}
-.notification-item-content {display:block;}
+.notification-item-content {@include truncate-multi;}
 .notification-item-content b {font-weight:var(--font-weight-normal);}
 .notification-item-date {margin:0 0 0 var(--space-1);font-size:var(--font-size-small);color:var(--color-text-light);}
 

@@ -13,7 +13,7 @@
 
 
 .type-t[role=tablist] {padding:0 !important;border:none;border-bottom:var(--border);border-radius:0;box-shadow:none;}
-.type-t .tablist-indicator {background:none;border-radius:0;border:0;border-bottom:.125rem solid var(--color-primary);bottom:-1px;}
+.type-t .tablist-indicator {background:none;border-radius:0;border:0;border-bottom:3px solid var(--color-primary);bottom:-1px;}
 .type-t [role=tab] {height:48px;font-weight:bold;color:var(--color-text-light);}
 .type-t [role=tab][aria-selected=true] {color:var(--color-text);}
 
