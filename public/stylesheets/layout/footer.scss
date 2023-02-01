@@ -39,6 +39,8 @@
 	.sitemap {flex-direction: column;}
 	.sitemap-item {width:100%;margin:0 0 2rem 0;}
 	.sitemap-item:nth-last-child(1) {margin-bottom:0;}
+
+	.is-opened-menu .footer {margin-left:0;}
 }
 
 
@@ -48,7 +50,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		max-width: 240px;
+		max-width: var(--width-tiny);
 		margin: var(--space-2) 0;
 		position: relative;
 		@include text-subhead;

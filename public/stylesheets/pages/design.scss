@@ -328,15 +328,14 @@
 .chat-username {display:block;margin:0 0 var(--space-1) 0;font-size:var(--font-size-small);}
 .chat-time {margin:0 0 0 var(--space-1);color:var(--color-text-light);font-size:var(--font-size-small);color:var(--color-text-light);position:absolute;bottom:-1.5rem;}
 .chat-bubble {width:fit-content;max-width:calc(90% - var(--size-medium));padding:var(--space-3) var(--space-4);border:var(--border);border-radius:1.5rem;border-top-left-radius:var(--radius);background-color:var(--color-background);}
-.chat-bubble p {}
-.chat-bubble figure {width:90%;height:200px;border-radius:1.25rem;overflow:hidden;}
-.chat-bubble.has-image {padding:0;background:none;}
+.chat-bubble.has-image {width:85%;padding:0;background:none;overflow:hidden;}
+.chat-bubble figure {}
 .chat-bubble + .chat-bubble {margin-top:var(--space-2);}
 
 .chat.is-mine {text-align:right;}
 .is-mine .chat-avatar {display:none;}
 .is-mine .chat-time {right:0;}
-.is-mine .chat-bubble {margin-left:auto;border-radius:1.5rem;border-top-right-radius:var(--radius)}
+.is-mine .chat-bubble {margin-left:auto;border-radius:1.5rem;border-top-right-radius:var(--radius);text-align:left;}
 
 
 .chat-bubble.is-primary,
@@ -530,7 +529,7 @@
 
 
 .guide-wrap {display:flex;margin:-.375rem;}
-.guide-box {width:240px;margin:.375rem;padding:1rem;border-radius:var(--radius);color:var(--gray800);}
+.guide-box {width:var(--width-tiny);margin:.375rem;padding:1rem;border-radius:var(--radius);color:var(--gray800);}
 .guide-title {display:block;margin:0 0 .25rem 0;color:inherit;}
 .guide-box p {color:inherit;}
 

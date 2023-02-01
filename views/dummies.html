@@ -68,11 +68,11 @@
     <h1 class="hero-title" style="margin-left: -2px">히어로 컴포넌트의 헤딩은 <span class="linebreak-desktop">최대 두 줄로 작성합니다.</span></h1>
     <p class="hero-description">디스크립션 텍스트. e.detail.originalEvent</p>
 
-    <div class="hero-obj">
+    <!-- <div class="hero-obj">
       <div class="hero-obj1"></div>
       <div class="hero-obj2"></div>
       <div class="hero-obj3"></div>
-    </div>
+    </div> -->
 
     <footer>
       <button class="button-primary">샘플 버튼 huge?</button>
@@ -103,7 +103,7 @@
   </form> -->
 
     <section class="dashboard-">
-      <div class="dashboard-item tile-elevated" style="width: 240px; padding: 1rem">
+      <div class="dashboard-item tile-elevated" style="width: var(--width-tiny); padding: 1rem">
         <div class="dashboard-item-label" style="font-size: var(--font-size-medium)">수신</div>
         <span class="dashboard-item-tag tag" style="position: absolute; right: 1rem; top: 0.875rem">태그</span>
         <b class="dashboard-item-value" style="font-size: var(--font-size-huge)">
@@ -225,9 +225,9 @@
         <button class="chip" style="flex: auto"><span class="chip-label">재주문</span></button>
         <button class="chip" style="flex: auto"><span class="chip-label">리뷰쓰기</span></button>
       </div>
-    </div>
 
-    <blockquote style="margin: 0.75rem 0 0 0"><small>네이버는 왜 주문 내역 삭제(숨김?) 기능을?</small></blockquote>
+      <blockquote style="margin: 0.75rem 0 0 0"><small>네이버는 왜 주문 내역 삭제(숨김?</small></blockquote>
+    </div>
 
     <article class="tile-elevated" style="max-width: 400px; padding: 1rem; z-index: 1">
       <figure class="user-avatar"></figure>
@@ -377,7 +377,7 @@
 
     <fieldset class="" role="radiogroup" style="display: flex">
       <legend hidden>radiogroup</legend>
-      <div class="tile-elevated-small" style="width: 240px; margin-right: 0.75rem">
+      <div class="tile-elevated-small" style="width: var(--width-tiny); margin-right: 0.75rem">
         <figure style="height: 120px; padding: 0.5rem 1rem; background: var(--color-background-weak); border-radius: var(--radius)">
           <small>
             기존 라디오 컴포넌트의 형태를 유지할 수 있는 디자인. 여전히 라디오아이콘과 체크박스아이콘을 컴포넌트로만들 이유 하나. menuitem에서 우측에
@@ -389,7 +389,7 @@
           <label for="raidio5" title="">tile style</label>
         </div>
       </div>
-      <div class="tile-elevated-small" style="width: 240px; margin-right: 0.5rem">
+      <div class="tile-elevated-small" style="width: var(--width-tiny); margin-right: 0.5rem">
         <figure style="height: 120px; padding: 0.5rem 1rem; background: var(--color-background-weak); border-radius: var(--radius)">
           <small> use cases: 기본 주소록, 선택 목록 with 이미지 가이드 등 todo. 세로값 토큰. todo. background-weak + radius tile </small>
         </figure>
@@ -793,11 +793,11 @@
 
     <section style="max-width: 640px">
       <!-- <div style="display: flex; margin: 0 -0.375rem 0.75rem">
-        <div class="tile-elevated" style="width: 240px; margin: 0 0.375rem; padding: 1rem">
+        <div class="tile-elevated" style="width: var(--width-tiny); margin: 0 0.375rem; padding: 1rem">
           <h2 style="font-size:var(--font-size-large);">Designers</h2>
           <p>50 People</p>
         </div>
-        <div class="tile-elevated" style="width: 240px; margin: 0 0.375rem; padding: 1rem">
+        <div class="tile-elevated" style="width: var(--width-tiny); margin: 0 0.375rem; padding: 1rem">
           <h2 style="font-size:var(--font-size-large);">Engineers</h2>
           <p>50 People</p>
         </div>
@@ -806,13 +806,20 @@
       <div style="display: flex; margin: 0 -0.375rem 0.75rem">
         <div
           class="tile-elevated is-active"
-          style="width: 240px; margin: 0 0.375rem; padding: 1rem; border-width: 3px; border-style: solid; border-color: var(--color-primary)"
+          style="
+            width: var(--width-tiny);
+            margin: 0 0.375rem;
+            padding: 1rem;
+            border-width: 3px;
+            border-style: solid;
+            border-color: var(--color-primary);
+          "
         >
           <h2 style="font-size: var(--font-size-large)">송신</h2>
           <p>12,630 건</p>
           <!-- <i class="material-symbols-outlined" style="font-size:20px;position:absolute;left:-3px;top:-3px;">arrow-right</i> -->
         </div>
-        <div class="tile-elevated" style="width: 240px; margin: 0 0.375rem; padding: 1rem">
+        <div class="tile-elevated" style="width: var(--width-tiny); margin: 0 0.375rem; padding: 1rem">
           <h2 style="font-size: var(--font-size-large)">수신</h2>
           <p>1,508 건</p>
         </div>
@@ -854,7 +861,7 @@
           <span class="material-symbols-outlined"> more_vert </span>
         </button>
       </div>
-      <button class="menu-item" style="max-width: 240px; margin-bottom: 0">
+      <button class="menu-item" style="max-width: var(--width-tiny); margin-bottom: 0">
         <figure class="menu-item-avatar">
           <span class="material-symbols-outlined">add</span>
         </figure>

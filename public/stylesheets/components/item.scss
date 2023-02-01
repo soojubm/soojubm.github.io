@@ -2,7 +2,7 @@
 // 비효율 position:relative;z-index:1;
 
 .dropdown {position:relative;}
-.dropdown-menu {@include tile-elevated;min-width:var(--width-menu);margin-top:.25rem;position:absolute;transform:scale(0);transform-origin:left top;}
+.dropdown-menu {@include tile-elevated;min-width:var(--width-tiny);position:absolute;transform:scale(0);transform-origin:left top;}
 .dropdown-menu-title {}
 .dropdown-menu-item {display:block;margin:0 -.25rem;padding:0 .25rem;line-height:var(--size-medium);color:var(--color-text);position:relative;z-index:var(--zindex-default);}
 .dropdown-menu-item:hover {border-radius:var(--radius);background:var(--color-background-weak);}
