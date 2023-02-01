@@ -11,11 +11,11 @@
 .tablist-indicator {display:block;height:calc(100% - .5rem);background:var(--color-background-strong);border-color:var(--color-background-strong);border-radius:var(--radius);position:absolute;transition:all var(--duration);}
 // .tablist-tab:nth-child(1)[aria-selected=true] ~ .tablist-indicator {transform: translateX(clac(70px * 1))}
 
-
-.type-t[role=tablist] {padding:0 !important;border:none;border-bottom:var(--border);border-radius:0;box-shadow:none;}
-.type-t .tablist-indicator {background:none;border-radius:0;border:0;border-bottom:3px solid var(--color-primary);bottom:-1px;}
-.type-t [role=tab] {height:48px;font-weight:bold;color:var(--color-text-light);}
-.type-t [role=tab][aria-selected=true] {color:var(--color-text);}
+// TODO: .type-t => tablist
+.tablist {margin:0 0 var(--space-3) 0;padding:0 !important;border:none;border-bottom:var(--border);border-radius:0;box-shadow:none;}
+.tablist .tablist-indicator {background:none;border-radius:0;border:0;border-bottom:3px solid var(--color-primary);bottom:-1px;}
+.tablist [role=tab] {height:48px;font-weight:bold;color:var(--color-text-light);}
+.tablist [role=tab][aria-selected=true] {color:var(--color-text);}
 
 .type-sc[role=tablist] {padding:.125rem !important;border:none;box-shadow:none;background:var(--color-background-weak);}
 .type-sc [role=tab] {width:50%;color:var(--color-text);height:var(--size-small);font-size:var(--font-size-small);}
@@ -26,10 +26,11 @@
 .tabpanel .card {width:calc(33.3333% - .75rem);margin:0 calc(.75rem / 2) .75rem;}
 
 
-.profile-display {display:flex;@include tile-elevated-tiny;margin:0 0 var(--space-3) 0;border-top:0;border-top-left-radius:0;border-top-right-radius:0;}
+.profile-display {display:flex;@include tile-elevated-small;margin:0 0 var(--space-3) 0;}
 .profile-display-title {margin:0 0 var(--space-1) 0;font-size:var(--font-size-small);}
 .profile-display-button {@include chip;background:none;}
 // .profile-display-button:hover {@include hover-item;}
 .profile-display-button.is-selected {background:var(--color-background-weak);}
 .profile-display-button i {vertical-align:middle;}
+
 

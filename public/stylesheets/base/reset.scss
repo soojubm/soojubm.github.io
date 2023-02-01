@@ -23,6 +23,7 @@ p, li, dt, dd {line-height:var(--font-line-height-large);}
 
 
 select {-webkit-appearance:none;background:none;border:none;font:inherit;color:var(--color-text);} // for appearance on safari
+select:focus-visible {outline:none;}
 select::-ms-expand {display:none;}
 
 // 버튼이 많아졌기 때문에 text-aligncenter를 기본값으로 사용하지 않는 것이 좋겠다.
