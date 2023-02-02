@@ -69,7 +69,7 @@
 .feature-head-title {@include text-title;word-break:keep-all;}
 .feature-head-description {margin:var(--space-after-title) 0 0 0;font-size:var(--font-size-large);}
 .feature-title {width:100%;margin:0 0 var(--space-after-title) 0;@include text-subhead;}
-.feature-item {width:45%;max-width:var(--width-small);margin:2rem 0;position:relative;z-index:1;}
+.feature-item {width:100%;margin:2rem 0;position:relative;z-index:1;}
 .feature-item-avatar {display:block;margin:0 0 var(--space-1) 0;font-size:2rem;position:relative;}
 .feature-item-avatar:before {content:'';display:block;@include avatar-small;background-image:none;position:absolute;left:0rem;top:0rem;z-index:-1;}
 .feature-item-title {@include text-subhead;}
