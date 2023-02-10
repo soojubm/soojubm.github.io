@@ -7,7 +7,7 @@
   <section class="tokens-body">
     <header class="" role="banner" style="padding: 0 var(--grid-margin); margin-left: -40px">
       <div class="chat" style="max-width: 720px; margin: 2rem 0 var(--space-3)">
-        <figure class="chat-avatar">📌</figure>
+        <figure class="chat-avatar"></figure>
         <!-- <b>Guideline scope.</b> -->
         <div class="chat-bubble is-primary">
           <b><b>Tokens.</b></b>
@@ -22,11 +22,11 @@
         </div>
 
         <div class="chat-bubble">
-          <p>컴포넌트 토큰은 상대적으로 변경 가능성이 높고 범용성이 낮기 때문에 컴포넌트 스코프에서 정의합니다. 당면한 문제는 아닙니다.</p>
-        </div>
-
-        <div class="chat-bubble">
-          <p>1~2번 사용하는 예외케이스는 토큰으로 정의하지 않습니다. 컴포넌트 스코프에서 보충합니다.</p>
+          <ul>
+            <li>1~2번 사용하는 예외케이스는 토큰으로 정의하지 않습니다. 컴포넌트 스코프에서 보충합니다.</li>
+            <li>값을 직접적으로 이름에 포함하지 마세요. 추상화를 통한 장점의 유실. case. tailwind css.</li>
+            <li>컴포넌트 토큰은 상대적으로 변경 가능성이 높고 범용성이 낮기 때문에 컴포넌트 스코프에서 정의합니다. 당면한 문제는 아닙니다.</ㅣ>
+          </ul>
         </div>
         <div class="chat-bubble">
           <!-- <b>naming scope.</b> -->
@@ -34,9 +34,6 @@
             <b>이름짓기.</b> namespace는 서드 파티 라이브러리와 충돌을 방지하기 위해 사용합니다. 프로덕션이 아니기 때문에 여기에서는 namespace를
             생략했습니다.
           </p>
-        </div>
-        <div class="chat-bubble">
-          <p>값을 직접적으로 이름에 포함하지 마세요. 추상화를 통한 장점의 유실. case. tailwind css.</p>
         </div>
       </div>
 
@@ -51,7 +48,6 @@
           <p>description.</p>
           <div class="chat" style="max-width: 300px; margin: 2rem auto 0">
             <figure class="chat-avatar">
-              <img src="/public/images/springsteen.jpg" alt="" />
             </figure>
             <div class="chat-bubble">
               <p>namespace는 서드 파티 라이브러리와 충돌을 방지하기 위해 사용합니다. 프로덕션이 아니기 때문에 여기에서는 namespace를 생략했습니다.</p>
@@ -142,8 +138,8 @@
         </span>
       </button>
 
-      <div class="chat" style="margin: 1rem 0 0">
-        <figure class="chat-avatar">🦆</figure>
+      <div class="chat" style="margin: 2rem 0">
+        <figure class="chat-avatar"></figure>
         <div class="chat-bubble">
           <p>hierarchy. 크기와 비례해서 radius와 shadow 베리에이션이 필요하지만 경량화하여 단일 규칙을 적용하고 있습니다.</p>
         </div>
@@ -282,7 +278,7 @@
       <p class="article-description">활자의 위계와 배치.</p>
 
       <div class="chat" style="margin: 2rem 0">
-        <figure class="chat-avatar">🦆</figure>
+        <figure class="chat-avatar"></figure>
         <div class="chat-bubble">
           <p>
             ! 폰트 변경 시 폰트 별 baseline 문제로 내부 텍스트의 간격이 틀어질 수 있다. 이러한 케이스를 폰트를 변경하지 않고 대응할 수 있는 솔루션은?
@@ -416,7 +412,7 @@
       <p class="article-description">요소의 너비와 길이.</p>
 
       <div class="chat" style="margin: 2rem 0">
-        <figure class="chat-avatar">🦆</figure>
+        <figure class="chat-avatar"></figure>
         <div class="chat-bubble">
           <p>브라우저 크기가 변경되어도 사이즈 토큰은 변하지 않아야 합니다.</p>
         </div>
@@ -601,7 +597,7 @@
       <!-- <p style="margin-bottom:var(--space-4);color:var(--color-text-light);">tablet보다 작은 폼 팩터. ex) tablet, phone</p> -->
 
       <div class="chat" style="margin: 2rem 0">
-        <figure class="chat-avatar">🦆</figure>
+        <figure class="chat-avatar"></figure>
         <div class="chat-bubble">
           <p>
             <b>유연한 그리드 시스템. </b>모바일 퍼스트(가로 스크롤 트랜드) 기조로 합니다. 12 column grid 등 엄격한 그리드 시스템을 정의하지 마세요. 12
@@ -792,7 +788,7 @@
       <p class="article-description">작성 중.</p>
 
       <div class="chat" style="margin: 2rem 0">
-        <figure class="chat-avatar">🦆</figure>
+        <figure class="chat-avatar"></figure>
         <div class="chat-bubble">
           <p>
             콘텐츠보다 액션이 더 강조되지 않도록 뷰포트 내에서 최대 3개의 요소로 delay를 제한합니다. inactive로 전환 시(닫기 등) instantly 실행합니다.

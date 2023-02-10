@@ -1,6 +1,6 @@
 .pagination {display:flex;justify-content:center;position:relative;}
 
-.pagination > * {@include avatar-container;border:none;background-color:transparent;}
+.pagination > * {@include avatar-container;width:auto;min-width:var(--size-medium);padding:0 var(--space-1);border:none;background-color:transparent;}
 .pagination-previous {position:absolute;left:0;}
 .pagination-next {position:absolute;right:0;}
 .pagination-link {}

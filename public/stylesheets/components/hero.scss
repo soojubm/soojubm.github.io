@@ -2,7 +2,8 @@
 
 @mixin hero {padding:4rem var(--grid-margin) 6rem;position:relative;z-index:var(--zindex-default);}
 @mixin hero-title {@include text-title;}
-@mixin hero-description {margin:var(--space-after-title) 0 var(--space-after-description) 0;@include text-body-large;}
+@mixin hero-description {margin:var(--space-after-title) 0 0 0;@include text-body-large;}
+@mixin hero-actions {margin:var(--space-after-description) 0 0 0;}
 @mixin hero-actions-primary {@include button-primary;margin-right:.25rem;}
 @mixin hero-actions-secondary {@include button-secondary;}
 
@@ -11,6 +12,7 @@
 .hero-eyebrow {display:block;margin:0 0 var(--space-2) 0;font-weight:var(--font-weight-bold);color:var(--color-primary);}
 .hero-title {@include text-title;}
 .hero-description {@include hero-description;}
+.hero-actions {@include hero-actions;}
 .hero-action {display:flex;}
 .hero-action-primary {@include hero-actions-primary;}
 .hero-action-secondary {@include hero-actions-secondary;}

@@ -26,7 +26,7 @@
 .tabpanel .card {width:calc(33.3333% - .75rem);margin:0 calc(.75rem / 2) .75rem;}
 
 
-.profile-display {display:flex;@include tile-elevated-small;margin:0 0 var(--space-3) 0;}
+.profile-display {display:flex;margin:0 0 var(--space-3) 0;}
 .profile-display-title {margin:0 0 var(--space-1) 0;font-size:var(--font-size-small);}
 .profile-display-button {@include chip;background:none;}
 // .profile-display-button:hover {@include hover-item;}

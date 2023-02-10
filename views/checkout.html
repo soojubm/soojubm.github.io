@@ -89,7 +89,8 @@
   <footer><button>우편번호 찾기</button></footer>
 
   <section class="checkout-payment">
-    <h2 class="checkout-payment-title">결제수단</h2>
+    <!-- <h2 class="checkout-payment-title">결제수단</h2> -->
+    <h3 class="article-subhead" data-temp="매장과 구매자 차이.">Select payment method</h3>
     <!-- <p class="checkout-payment-description">현재 신용카드 결제만 가능합니다.</p> -->
     <fieldset>
       <div class="payment-method-list">
@@ -126,6 +127,27 @@
       <p>주문취소 또는 환불은 <a href="#">고객센터</a>로 문의해 주세요.</p>
     </footer>
   </section>
+
+  <div class="list">
+    <h2 class="article-subhead">Your Payments / Wallet<br />name on card / expiration date. billing address (따로 관리 됨).</h2>
+    <div class="tile-elevated" style="max-width: 400px; overflow: hidden">
+      <figure class="card-thumbnail"></figure>
+      <h3 class="card-title" style="padding-bottom: 0">VISA 1988 XXXX 1111</h3>
+      <time class="card-date" style="margin-left: 0">Expires on 10/23</time>
+      <!-- <p class="card-description"></p> -->
+      <div class="card-category">기본</div>
+      <em style="display: block; margin-top: 0.25rem">Edit</em>
+      <button class="card-more" hidden="">
+        <span class="material-symbols-outlined"> more_vert </span>
+      </button>
+    </div>
+    <button class="menu-item" style="max-width: var(--width-tiny); margin-bottom: 0">
+      <figure class="menu-item-avatar">
+        <span class="material-symbols-outlined">add</span>
+      </figure>
+      <span class="menu-item-label">Add a payment method</span>
+    </button>
+  </div>
 
   <fieldset class="checkout-coupon">
     <h2 class="checkout-shipping-title">쿠폰</h2>

@@ -116,7 +116,7 @@
 
 
 .post-relation {margin:8rem auto;padding:0 var(--grid-margin);}
-.post-relation-title {width:100%;margin:0 0 var(--space-after-title) 0;@include text-subhead;}
+.post-relation-title {@include text-subhead;}
 .post-relation-description {font-size:var(--font-size-large);color:var(--color-text-light)}
 
 

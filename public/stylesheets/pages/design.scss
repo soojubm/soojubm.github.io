@@ -67,11 +67,11 @@
 .stamp .circle span:nth-of-type(4) {transform: rotate(50deg);}
 .stamp .circle span:nth-of-type(5) {transform: rotate(16deg);}
 
-.userlist {@include tile-elevated;max-width:400px;}
+.userlist {@include tile-elevated;}
 .userlist .profile-user:hover {@include hover-item;}
 .userlist-cta {@include button-tertiary;}
 
-.jobitem {@include tile-elevated;display:flex;flex-direction:column;align-items: center;}
+.jobitem {@include tile-elevated;}
 .jobitem-name {margin:var(--space-leading-subhead) 0 var(--space-2) 0;@include text-subhead;}
 .jobitem-tags {@include stack;}
 .jobitem-tags .tag {}
@@ -96,7 +96,7 @@
 .greeting-avatar {@include avatar-container-large;float:right;margin:0 0 0 var(--space-4);position:relative;}
 .greeting-avatar:hover {@include hover-item;cursor:pointer;background:var(--color-background);}
 .greeting-title {@include text-subhead;}
-.greeting-description {@include text-body;margin:0 0 0;color:var(--color-text-light);}
+.greeting-description {@include text-body;margin:0 0 0;color:var(--color-text-light);line-height:var(--font-line-height-small)}
 
 .onboarding-control {@include group-button;margin:var(--space-4) 0 0 0;}
 .onboarding-control-next {@include button-primary;width:var(--grid-column);}
@@ -109,7 +109,7 @@
 .summary-item-value {}
 .summary-total {display:flex;justify-content:space-between;padding:.5rem 0 0;@include text-subhead;}
 
-.keywords {@include tile-elevated;max-width:400px;z-index:1;}
+.keywords {@include tile-elevated;z-index:1;}
 .keywords-title {@include text-subhead;margin:var(--space-leading-subhead) 0 var(--space-3) 0;}
 .keywords-group {@include stack;}
 .keywords-group-keyword {@include chip;}
@@ -320,12 +320,12 @@
 .chat-date {margin:1rem var(--grid-margin);text-align:center;}
 
 .chat {margin:1.5rem auto;padding:0 0 0 calc(var(--size-medium) + var(--space-after-avatar-medium));box-sizing:border-box;position:relative;}
-.chat-avatar {@include avatar-container;
+.chat-avatar {
+  // @include avatar-container;
+  @include avatar-medium;
   border-radius: 50%;
   border-top-left-radius: var(--radius);
-  // background-color: var(--color-background-strong);
-  
-  border:none;overflow:hidden;position:absolute;left:0;top:0;}
+  overflow:hidden;position:absolute;left:0;top:0;}
 .chat-avatar img {height:100%;}
 .chat-username {display:block;margin:0 0 var(--space-1) 0;font-size:var(--font-size-small);}
 .chat-time {margin:0 0 0 var(--space-1);color:var(--color-text-light);font-size:var(--font-size-small);color:var(--color-text-light);position:absolute;bottom:-1.5rem;}
@@ -349,15 +349,20 @@
 .is-mine .chat-bubble p {color:var(--gray0);}
 
 
-@media (--small) {
-  .pattern .chat-avatar,
-  .tokens .chat-avatar,
-  .component .chat-avatar {
-    @include reset-position;
-    margin: 0 0 var(--space-2) 0;
-  }
-  
+.article .chat {
+  padding-left: 0;
 }
+
+.pattern .chat-avatar,
+.tokens .chat-avatar,
+.component .chat-avatar {
+  @include reset-position;
+  margin: 0 0 var(--space-2) 0;
+}
+
+
+// @media (--small) {
+// }
 
 .event-header {
   padding: 6rem var(--grid-margin) 8rem;
@@ -543,6 +548,25 @@
 .design-foundations {padding:0 var(--grid-margin);}
 .foundation-item {@include tile-elevated;max-width:300px;}
 .foundation-item h2 {@include text-subhead;text-align:center;}
-.foundation-item figure {@include tile-flat-small;background:crimson;height:200px;}
+.foundation-item figure {@include tile-flat-small;background:var(--color-accent);height:200px;}
 .foundation-item span {font-size:var(--font-size-small);text-transform:capitalize;}
 .foundation-item time {float:right;font-size:var(--font-size-small);}
+
+
+
+.sample-container {
+  display: flex;
+  justify-content: center;
+  margin: 0 var(--grid-margin);
+  padding: 4rem 0;
+  background: var(--color-accent);
+  border-radius: var(--radius);
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+}
+
+
+.sample-container > * > * {
+  margin: 2rem 1rem !important;
+}

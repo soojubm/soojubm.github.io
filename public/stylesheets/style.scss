@@ -491,6 +491,7 @@ main,
 
 .meter-graph {
   display: flex;
+  gap: .25rem;
   position: relative;
 }
 
@@ -510,7 +511,7 @@ main,
 
 .meter-graph-bar {
   height: var(--size-tiny);
-  margin: 0 0.25rem;
+  // margin: 0 0.25rem;
   border-radius: var(--radius);
 }
 
