@@ -50,6 +50,9 @@
 .item:hover {@include hover-item;}
 .item + .item {margin:var(--space-after-item) 0 0 0;}
 .item-avatar {@include item-avatar-large;}
+// todo is-secondary
+.avatar.is-secondary, 
+.item-avatar.is-secondary {border: var(--border); background-color: var(--color-background);}
 .item-name {font-size:var(--font-size-medium);color:var(--color-text);}
 .item-description {display:block;color:var(--color-text-light);line-height:var(--font-line-height);}
 .item-description + .item-name {margin-top:-.125rem;}

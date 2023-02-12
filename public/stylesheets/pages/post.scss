@@ -54,7 +54,7 @@
 .comment-list-item-avatar img {}
 .comment-list-item-author {font-weight:var(--font-weight-bold);color:var(--color-text);}
 .comment-list-item-date {display:block;margin-top:-.25rem;color:var(--color-text-light);font-size:var(--font-size-small);}
-.comment-list-item-text {margin:var(--space-2) 0 0;}
+.comment-list-item-text {margin:var(--space-3) 0;}
 .comment-list-item-morevert {@include avatar-medium;position:absolute;right:0;top:0;}
 .comment-list-item-morevert:hover {}
 .comment-list-item-menu {display:none;@include tile-elevated-small;width:var(--width-tiny);margin:0;padding:0;position:absolute;right:40px;top:0;z-index:var(--zindex-default);}

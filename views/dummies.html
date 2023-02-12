@@ -52,53 +52,6 @@
     <button class="subscribe-submit" type="submit">뉴스레터 구독</button>
   </form> -->
 
-    <section class="dashboard-">
-      <div class="dashboard-item tile-elevated" style="width: var(--width-tiny); padding: 1rem">
-        <div class="dashboard-item-label" style="font-size: var(--font-size-medium)">수신</div>
-        <span class="dashboard-item-tag tag" style="position: absolute; right: 1rem; top: 0.875rem">태그</span>
-        <b class="dashboard-item-value" style="font-size: var(--font-size-huge)">
-          1,508<small style="margin: 0 0 0 0.25rem; font-size: var(--font-size-medium); vertical-align: super">90%</small>
-          <!-- <i>icon</i> -->
-        </b>
-        <div class="dashboard-item-graph graph-bar" style="margin: var(--space-4) 0 0 0"><b style="width: 68%"></b></div>
-      </div>
-    </section>
-
-    <article class="tile-elevated" style="max-width: 400px">
-      <header class="titlebar" style="padding: 0; margin-bottom: var(--space-3)">
-        <h1 class="titlebar-title">VASP 선택</h1>
-        <button class="titlebar-back" aria-label="이전 페이지로">
-          <figure class="chip material-symbols-outlined">arrow_back</figure>
-        </button>
-      </header>
-      <div class="textfield" data-size="small">
-        <button class="textfield-prefix searchfield-prefix">
-          <span class="material-symbols-outlined" style="font-size: 20px">search</span>
-        </button>
-        <input class="textfield-input" type="text" id="search" placeholder="VASP명 / 심볼" autocomplete="off" />
-        <!-- <button class="textfield-clear" hidden><span class="material-symbols-outlined">close</span></button> -->
-      </div>
-
-      <hr />
-
-      <div class="item" data-size="medium" role="menuitem">
-        <figure class="item-avatar" style="background-image: none"></figure>
-        <b class="item-name" style="font-weight: var(--font-weight-normal)">빗썸</b>
-        <div class="checkbox" data-size="large" style="margin-left: auto">
-          <input type="checkbox" id="menutype1" name="gender" checked="" />
-          <label for="menutype1" title=""></label>
-        </div>
-      </div>
-      <div class="item" data-size="medium" role="menuitem">
-        <figure class="item-avatar" style="background-image: none"></figure>
-        <b class="item-name" style="font-weight: var(--font-weight-normal)">코인원</b>
-        <div class="checkbox" data-size="large" style="margin-left: auto">
-          <input type="checkbox" id="menutype2" name="gender" checked="" />
-          <label for="menutype2" title=""></label>
-        </div>
-      </div>
-    </article>
-
     <!-- <div class="tile-elevated" data-size="huge" style="max-width:480px;">
       <figure class="avatar" data-size="huge" style="float:right;"></figure>
       <h3>Michael Jackson</h3>
@@ -271,33 +224,6 @@
         </div>
       </div>
     </fieldset>
-
-    <menu class="access tile-elevated" style="z-index: 1">
-      <header class="titlebar" style="display: block; padding: 0">
-        <button class="titlebar-back">
-          <figure class="chip material-symbols-outlined">close</figure>
-        </button>
-        <h1 class="titlebar-title" style="margin: 1rem 0; position: relative; left: auto; transform: translateX(0)">공개 대상 선택</h1>
-      </header>
-      <div class="menu-item" data-size="large">
-        <figure class="menu-item-avatar material-symbols-outlined">public</figure>
-        <span class="menu-item-label">전체 공개</span>
-        <span class="menu-item-description">Facebook 안팎의 모든 사람</span>
-      </div>
-      <div class="menu-item is-active is-hoverable" data-size="large">
-        <figure class="menu-item-avatar material-symbols-outlined">group</figure>
-        <span class="menu-item-label">친구만</span>
-        <span class="menu-item-description">회원님의 Facebook 친구</span>
-        <div class="menu-item-action material-symbols-outlined" style="color: var(--green800)">radio_button_checked</div>
-      </div>
-      <div class="menu-item" data-size="large" role="menuitem">
-        <figure class="menu-item-avatar material-symbols-outlined">lock</figure>
-        <span class="menu-item-label" style="line-height: var(--size-large)">나만 보기</span>
-        <!-- <p class="item-description">부끄러우니까</p> -->
-      </div>
-    </menu>
-
-    <hr />
 
     <div class="" style="display: flex; flex-wrap: wrap; max-width: 640px">
       <p class="profile-display-status" role="status" style="width: 100%">
@@ -503,16 +429,17 @@
     <hr />
 
     <section style="max-width: 640px">
-      <!-- <div style="display: flex; margin: 0 -0.375rem 0.75rem">
-        <div class="tile-elevated" style="width: var(--width-tiny); margin: 0 0.375rem; padding: 1rem">
-          <h2 style="font-size:var(--font-size-large);">Designers</h2>
-          <p>50 People</p>
+      <section class="dashboard-">
+        <div class="dashboard-item tile-elevated" style="width: var(--width-tiny); padding: 1rem">
+          <div class="dashboard-item-label" style="font-size: var(--font-size-medium)">수신</div>
+          <span class="dashboard-item-tag tag" style="position: absolute; right: 1rem; top: 0.875rem">태그</span>
+          <b class="dashboard-item-value" style="font-size: var(--font-size-huge)">
+            1,508<small style="margin: 0 0 0 0.25rem; font-size: var(--font-size-medium); vertical-align: super">90%</small>
+            <!-- <i>icon</i> -->
+          </b>
+          <div class="dashboard-item-graph graph-bar" style="margin: var(--space-4) 0 0 0"><b style="width: 68%"></b></div>
         </div>
-        <div class="tile-elevated" style="width: var(--width-tiny); margin: 0 0.375rem; padding: 1rem">
-          <h2 style="font-size:var(--font-size-large);">Engineers</h2>
-          <p>50 People</p>
-        </div>
-      </div> -->
+      </section>
 
       <div style="display: flex; margin: 0 -0.375rem 0.75rem">
         <div
@@ -765,8 +692,8 @@
       <h3 class="quote-title" style="color: #fff">Quote</h3>
       <p class="quote-body" style="color: #fff">Don't you know that God is Pooh bear? Don't you know that God is Pooh bear?</p>
       <cite class="quote-byline">
-        <div class="quote-byline-name" style="color: #fff">Jack Kerouac</div>
-        <div class="quote-byline-job">Poet / Novelist</div>
+        <div class="quote-byline-name" style="color: #fff">Bruce Springsteen</div>
+        <div class="quote-byline-job">Musician</div>
       </cite>
     </div>
 

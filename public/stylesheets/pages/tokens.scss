@@ -25,8 +25,7 @@
 .token-item-avatar {@include avatar-large;width:100%;}
 .token-item b {display:block;font-weight:var(--font-weight-bold);}
 .token-item div {margin:var(--space-1) 0 0 0;}
-.token-item div p {font-size:var(--font-size-small);line-height:var(--font-line-height);}
-.token-item div p + p {margin:var(--space-1) 0 0 0;}
+.token-item div p {font-size:var(--font-size-small);line-height:var(--font-line-height-large);}
 
 .token-item.is-gray000 figure {border:var(--border);background:var(--color-background);}
 .token-item.is-gray100 figure {background:var(--gray100);}
