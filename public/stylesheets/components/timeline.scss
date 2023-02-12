@@ -9,7 +9,7 @@
 .timeline-item:before {content:'';display:block;position:absolute;left:15px;top:0;bottom:0;width:1px;background:var(--gray200);}
 .timeline-item-icon {@include avatar-medium;background-image:none;position:absolute;left:0;top:var(--space-3);}
 .timeline-item-title {display:block;}
-.timeline-item-description {margin:1rem 0 0 0;}
+.timeline-item-description {font-size:var(--font-size-small)}
 .timeline-item-panel {margin:1rem 0 0 0;padding:1.5rem;border:var(--border);border-radius:var(--radius);background:var(--color-background);position:relative;}
 .timeline-item-panel.is-expanded {height:auto;overflow:auto;}
 .timeline-item-panel-title {margin:.5rem 0;font-size:var(--font-size-medium);font-weight:var(--font-weight-bold);}

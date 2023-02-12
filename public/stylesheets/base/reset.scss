@@ -57,10 +57,10 @@ table {
 table caption {padding:.5rem 0;font-size:var(--font-size-small);text-align:left;}
 table thead {}
 table thead tr {}
-table thead tr th {padding:var(--space-3) 0;font-weight:normal;line-height:var(--table-lineheight);color:var(--color-text-light);text-align:left;}
+table thead tr th {padding:var(--space-3) 0;line-height:var(--table-lineheight);color:var(--color-text-light);text-align:left;}
 table tbody {}
 table tbody tr {border:var(--border);line-height:var(--table-lineheight);position:relative;}
-table tbody tr th {width:6rem;padding:var(--space-3) 0;font-weight:normal;text-align:left;color:var(--color-text-light);vertical-align:baseline;}
+table tbody tr th {width:6rem;padding:var(--space-3) 0;text-align:left;color:var(--color-text-light);vertical-align:baseline;}
 table tbody tr td {padding:var(--space-3) 0;}
 table tbody tr:hover {}
 table .right {text-align:right;}

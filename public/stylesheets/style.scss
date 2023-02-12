@@ -63,7 +63,6 @@
 @import 'pages/tokens';
 @import 'pages/order';
 @import 'pages/changelog';
-@import 'pages/landing';
 @import 'pages/filter';
 
 @import 'base/quantity.scss';
@@ -519,7 +518,7 @@ main,
 }
 
 .meter-legend-item-title {
-  @include text-subhead;
+  font-weight: var(--font-weight-normal);
   font-size: var(--font-size-medium);
   background: var(--color-background);
   position: relative;
@@ -542,9 +541,6 @@ main,
   background: var(--color-pinterest);
 }
 
-.bookitem {
-  @include tile-elevated;
-}
 
 .bookitem-cover {
   padding-top: 50%;
@@ -565,40 +561,6 @@ main,
   right: 0;
   bottom: -.5rem;
   transition: all .4s;
-}
-
-.bookitem-name {
-  margin: 1rem 0 0;
-  font-size: var(--font-size-medium);
-  white-space: normal;
-}
-
-.bookitem-description {
-  display: block;
-  color: var(--color-text-light);
-}
-
-.bookitem-byline {}
-
-.bookitem-publishedyear {
-  color: var(--color-text-light);
-}
-
-.ticker-headline {
-  cursor: default;
-  display: flex;
-  text-align: center;
-  user-select: none;
-}
-
-.ticker-headline h1 {
-  animation: marquee 12s linear infinite;
-  white-space: nowrap;
-  padding: 0 1em;
-}
-
-.ticker-headline:hover h1 {
-  animation-play-state: paused;
 }
 
 

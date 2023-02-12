@@ -349,10 +349,12 @@
 .is-mine .chat-bubble p {color:var(--gray0);}
 
 
+
+
+@media (--small) {
 .article .chat {
   padding-left: 0;
 }
-
 .pattern .chat-avatar,
 .tokens .chat-avatar,
 .component .chat-avatar {
@@ -360,9 +362,7 @@
   margin: 0 0 var(--space-2) 0;
 }
 
-
-// @media (--small) {
-// }
+}
 
 .event-header {
   padding: 6rem var(--grid-margin) 8rem;
@@ -566,7 +566,7 @@
   z-index: 1;
 }
 
-.sample-container > * {
+.sample-container .column {
   width: 50%; max-width: 400px;
 }
 .sample-container .column + .column {
@@ -574,21 +574,21 @@
 }
 
 
-.sample-container > * > * {
+.sample-container .column > * {
   margin: 2rem 0 !important;
 }
 
 @media (--small) {
-  .sample-container > * {
+  .sample-container .column{
     width: 100%;
   }
 
-  .sample-container .column + .column {
-    margin-left: 0;
-  }
 }
 
 @media (--tiny) {
+  .sample-container .column + .column {
+    margin-left: 0;
+  }
 }
 
 

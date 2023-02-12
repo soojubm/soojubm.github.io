@@ -1,55 +1,51 @@
 
 
-@mixin hero {padding:4rem var(--grid-margin) 6rem;position:relative;z-index:var(--zindex-default);}
-@mixin hero-title {@include text-title;}
-@mixin hero-description {margin:var(--space-after-title) 0 0 0;@include text-body-large;}
 @mixin hero-actions {margin:var(--space-after-description) 0 0 0;}
 @mixin hero-actions-primary {@include button-primary;margin-right:.25rem;}
 @mixin hero-actions-secondary {@include button-secondary;}
 
-.hero {@include hero;}
+.hero {padding:4rem var(--grid-margin) 8rem;position:relative;z-index:var(--zindex-default);}
 .hero-background {@include bleeding;background:inherit;}
 .hero-eyebrow {display:block;margin:0 0 var(--space-2) 0;font-weight:var(--font-weight-bold);color:var(--color-primary);}
 .hero-title {@include text-title;}
-.hero-description {@include hero-description;}
+.hero-description {margin:var(--space-after-title) 0 0 0;@include text-body-large;}
 .hero-actions {@include hero-actions;}
 .hero-action {display:flex;}
 .hero-action-primary {@include hero-actions-primary;}
 .hero-action-secondary {@include hero-actions-secondary;}
 
-.landing-hero {@include hero;}
-.landing-hero-background {@include bleeding;background:var(--color-background-weak);}
-.landing-hero-title {@include hero-title;}
-.landing-hero-description {@include hero-description;}
-.landing-hero-actions-primary {@include hero-actions-primary;}
-.landing-hero-actions-secondary {@include hero-actions-secondary;}
-.landing-hero-object1 {width:320px;height:400px;background:url('/public/images/springsteen.jpg') center;background-size:cover;border-radius:var(--radius);position:absolute;right:5vw;top:2rem;}
-.landing-hero-object2 {max-width:320px;padding:1rem;z-index:1;position:absolute;right:260px;top:3rem;pointer-events:none;}
+.hero-object1 {width:320px;height:320px;overflow: hidden;
+  background:url('/public/images/springsteen.jpg') center;background-size:cover;
+  border-radius:var(--radius);position:absolute;right:5vw;top:2rem;
+}
+.hero-object2 {width:100%;max-width:360px;z-index:1;position:absolute;right:200px;top:3rem;pointer-events:none;}
 
+.is-observed .hero-eyebrow {animation:fadeup var(--animation-duration) .1s backwards;}
+.is-observed .hero-title {animation:fadeup var(--animation-duration) var(--animation-delay-first) backwards;}
+.is-observed .hero-description {animation:fadeup var(--animation-duration) var(--animation-delay-second) backwards;}
+.is-observed .hero-actions {animation:fadeup var(--animation-duration) var(--animation-delay-third) backwards;}
+.is-observed .hero-object1 {animation:bounceY 2s ease infinite alternate;}
+.is-observed .hero-object2 {animation:bounceY 4s ease infinite alternate;}
 
-.is-observed .landing-hero-background {}
-.is-observed .landing-hero-title {animation:fadeup .4s .4s backwards;}
-.is-observed .landing-hero-description {animation:fadeup .4s .8s backwards;}
-.is-observed .landing-hero-actions-primary {animation:fadeup .4s 1.2s backwards;}
-.is-observed .landing-hero-actions-secondary {animation:fadeup .4s 1.4s backwards;}
-.is-observed .landing-hero-object1 {animation:bounceY 2s ease infinite alternate;}
-.is-observed .landing-hero-object2 {animation:bounceY 4s ease infinite alternate;}
-
-
-.hero-obj1 {position:absolute;right:-1rem;top:1rem;width:40px;height:40px;background:var(--color-accent);border-radius:50%;}
-.hero-obj2 {position:absolute;right:480px;bottom:-2rem;width:80px;height:80px;background:var(--color-accent);border-radius:50%;}
-.hero-obj3 {position:absolute;right:420px;top:24px;width:16px;height:16px;background:#0057ff;border-radius:50%;}
-.hero-obj4 {position:absolute;right:0;top:-9rem;width:32rem;transform:scale(0);}
-
-.is-observed .hero-title {height:auto;animation:fadeup .4s ease .8s both;}
-.is-observed .hero-description {height:auto;animation:fadeup .4s ease .8s both;}
-.is-observed .hero-background {bottom: 0;transition: bottom .2s var(--bazier) .6s;}
-.is-observed .hero-obj1 {animation:scaleout .4s ease .8s both;}
-.is-observed .hero-obj2 {animation:scaleout .4s ease 1.4s both;}
-.is-observed .hero-obj3 {animation:scaleout .4s ease 1.2s both;}
-.is-observed .hero-obj4 {animation:scaleout .4s ease 1s both;}
+// .hero-obj1 {position:absolute;right:-1rem;top:1rem;width:40px;height:40px;background:var(--color-accent);border-radius:50%;}
+// .hero-obj2 {position:absolute;right:480px;bottom:-2rem;width:80px;height:80px;background:var(--color-accent);border-radius:50%;}
+// .hero-obj3 {position:absolute;right:420px;top:24px;width:16px;height:16px;background:#0057ff;border-radius:50%;}
+// .hero-obj4 {position:absolute;right:0;top:-9rem;width:32rem;transform:scale(0);}
+// .is-observed .hero-obj1 {animation:scaleout .4s ease .8s both;}
+// .is-observed .hero-obj2 {animation:scaleout .4s ease 1.4s both;}
+// .is-observed .hero-obj3 {animation:scaleout .4s ease 1.2s both;}
+// .is-observed .hero-obj4 {animation:scaleout .4s ease 1s both;}
 
 @media (--small) {
   .hero-obj1, .hero-obj2, .hero-obj3, .hero-obj4 {display:none;}
   .hero-obj4 {top:-18rem;right:-2rem;}
 }
+
+
+
+@media (--small) {
+	.hero {max-width:1080px;margin:0 auto;}
+	.hero-object1 {display:none;}
+	.hero-object2 {display:none;}
+}
+

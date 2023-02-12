@@ -170,8 +170,10 @@
   --bazier: cubic-bezier(0.455, 0.03, 0.515, 0.955);
   --transition-base: all 0.4s var(--bazier);
   --animation-duration: .4s;
-  --animation-delay-second: .2s;
-  --animation-delay-third: .4s;
+
+  --animation-delay-first: .2s;
+  --animation-delay-second: .4s;
+  --animation-delay-third: .6s;
   --animation-timing-function-ease: null;
 
   --zindex-default: 1;

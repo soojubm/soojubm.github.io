@@ -16,17 +16,8 @@
         <div class="chat-bubble">
           <p>
             <b>규모의 약속.</b>
-            모든 세부사항을 정의할 필요는 없습니다. 예를 들면, border width는 border 스코프에서 디펜던시가 있고, 변경이 어렵지 않기 때문에 약속을 하지
-            않는 편이 좋습니다. 문제 해결을 위한 도구의 복잡도를 관리하는 일은 약속보다 중요합니다.
+            모든 세부사항을 정의할 필요는 없습니다. 예를 들면, border width는 border 스코프에서 디펜던시가 있고, 일괄 변경이 어렵지 않기 때문에 규칙을 만들지 않는 편이 좋습니다. 규칙을 만드는 일보다 문제 해결을 위한 도구의 복잡도를 관리하는 일이 중요합니다.
           </p>
-        </div>
-
-        <div class="chat-bubble">
-          <ul>
-            <li>1~2번 사용하는 예외케이스는 토큰으로 정의하지 않습니다. 컴포넌트 스코프에서 보충합니다.</li>
-            <li>값을 직접적으로 이름에 포함하지 마세요. 추상화를 통한 장점의 유실. case. tailwind css.</li>
-            <li>컴포넌트 토큰은 상대적으로 변경 가능성이 높고 범용성이 낮기 때문에 컴포넌트 스코프에서 정의합니다. 당면한 문제는 아닙니다.</ㅣ>
-          </ul>
         </div>
         <div class="chat-bubble">
           <!-- <b>naming scope.</b> -->
@@ -35,63 +26,14 @@
             생략했습니다.
           </p>
         </div>
-      </div>
-
-      <!-- <div style="display: flex; margin-top: -1rem">
-        <div class="tile-elevated" style="max-width: 640px; padding: 2rem 2rem 2.5rem">
-          <h1 class="article-subhead" style="margin-top: 0">Guideline scope</h1>
-          <div class="chat" style="max-width: 300px; margin: 2rem auto 0"></div>
+        <div class="chat-bubble">
+          <ul>
+            <li>1~2번 사용하는 예외케이스는 토큰으로 정의하지 않습니다. 컴포넌트 스코프에서 보충합니다.</li>
+            <li>값을 직접적으로 이름에 포함하지 마세요. 추상화를 통한 장점의 유실. case. tailwind css.</li>
+            <li>컴포넌트 토큰은 상대적으로 변경 가능성이 높고 범용성이 낮기 때문에 컴포넌트 스코프에서 정의합니다. 당면한 문제는 아닙니다.</ㅣ>
+          </ul>
         </div>
-
-        <div class="tile-elevated" style="max-width: 640px; padding: 2rem 2rem 2.5rem">
-          <h1 class="article-subhead" style="margin-top: 0">Naming guidelines</h1>
-          <p>description.</p>
-          <div class="chat" style="max-width: 300px; margin: 2rem auto 0">
-            <figure class="chat-avatar">
-            </figure>
-            <div class="chat-bubble">
-              <p>namespace는 서드 파티 라이브러리와 충돌을 방지하기 위해 사용합니다. 프로덕션이 아니기 때문에 여기에서는 namespace를 생략했습니다.</p>
-              <p>memo: dashboard 등 회색 배경이 들어간 페이지에서는 border 등 조절되어야 한다...</p>
-            </div>
-          </div>
-        </div>
-      </div> -->
-      <!-- <h4 class="article-subhead">Naming guideline</h4>
-      <p>
-        --[namespace]-[component / category]-[attribute]-[status]
-      </p> -->
-
-      <!-- <div class="stack">
-        <span class="tag" data-style="primary">중요도</span>
-        <span class="tag">Primary</span>
-        <span class="tag">Secondary</span>
-        <span class="tag">Tertiary</span>
       </div>
-      <hr />
-      <div class="stack">
-        <span class="tag" data-style="primary">강도</span>
-        <span class="tag">weak</span>
-        <span class="tag">moderate</span>
-        <span class="tag">strong</span>
-        <span class="tag">extreme</span>
-      </div>
-      <hr />
-      <div class="stack">
-        <span class="tag">instant / immediate</span>
-        <span class="tag">quickly</span>
-        <span class="tag">slowly</span>
-        <span class="tag">deliberate</span>
-      </div>
-      <hr />
-      <div class="stack">
-        <span class="tag" data-style="primary">system status</span>
-        <span class="tag">error</span>
-        <span class="tag">success</span>
-        <span class="tag">warning</span>
-        <span class="tag">info</span>
-        <span class="tag">updated (new)</span>
-        <span class="tag">loading / fetching ?</span>
-      </div> -->
 
       <!-- <li>radius. pill과 non-pill은 양자택일. 인물 아바타를 특정하기 위해 circle은 허용할 수 있다. </li> -->
 
@@ -281,8 +223,7 @@
         <figure class="chat-avatar"></figure>
         <div class="chat-bubble">
           <p>
-            ! 폰트 변경 시 폰트 별 baseline 문제로 내부 텍스트의 간격이 틀어질 수 있다. 이러한 케이스를 폰트를 변경하지 않고 대응할 수 있는 솔루션은?
-            텍스트노드의 상단 패딩에 변수를 하나 넣어둔다.
+            ! 폰트 변경 시 폰트 별 baseline 문제로 내부 텍스트의 간격이 틀어질 수 있다. 폰트를 변경하지 않고 대응하려면? 텍스트노드의 상단 패딩에 변수를 하나 넣어둔다.
           </p>
         </div>
       </div>
