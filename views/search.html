@@ -40,183 +40,169 @@
     <!-- </section> -->
   </article>
   <article class="article">
-    <h4 class="article-title">검색의 준비</h4>
-    <p class="article-description">onBlur - 키워드 입력 대기</p>
+    <h4 class="article-title">검색 대기</h4>
+
+    <h3 class="article-subhead">onBlur - 키워드 입력</h3>
     <ul>
-      <li>검색 탭 진입</li>
-      <li><b>onBlur. (default)</b> 인기 콘텐츠 또는 추천 콘텐츠 등 개인화 콘텐츠 탐색할 수 있다.</li>
-      <li>iOS는 focus 상태에서 취소 버튼으로 onBlur.</li>
+      <li>인기 콘텐츠 또는 추천 콘텐츠 등 개인화 콘텐츠 탐색할 수 있다.</li>
+      <li>iOS:: focus 시 취소 버튼 노출. 취소 버튼으로 blur.</li>
       <!-- <li>tabIndex: back -> input</li> -->
     </ul>
+    <div class="tile-flat">
+      <div class="textfield searchfield is-focused">
+        <button class="textfield-prefix searchfield-prefix"><span class="material-symbols-outlined">search</span></button>
+        <!-- <label class="textfield-label" for="search">검색(시각적으로숨겨야함)</label> -->
+        <input class="textfield-input searchfield-input" type="search" id="search" placeholder="iOS pattern" />
+        <button class="searchfield-clear" hidden><span class="material-symbols-outlined">close</span></button>
+        <button class="searchfield-cancel">취소</button>
+      </div>
+    </div>
+    <div class="tile-flat">
+      <div class="textfield searchfield is-focused">
+        <button class="textfield-prefix searchfield-prefix" style="left: 0; top: 0; width: 48px; height: 48px">
+          <span class="titlebar-back-icon material-symbols-outlined">arrow_back</span>
+        </button>
+        <!-- <label class="textfield-label" for="search">검색(시각적으로숨겨야함)</label> -->
+        <input
+          class="textfield-input searchfield-input"
+          type="search"
+          id="search"
+          placeholder="android pattern"
+          style="width: calc(100% - var(--size-large) - 0.5rem); margin-left: auto; padding-left: 0.75rem"
+        />
+        <button class="searchfield-clear" hidden style="right: 0.75rem">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+    </div>
+    <div class="tile-flat">
+      <header class="titlebar" style="padding: 0 0 var(--space-2) 0">
+        <h1 class="titlebar-title" hidden>?????</h1>
+        <button class="titlebar-back" aria-label="이전 페이지로">
+          <span class="material-symbols-outlined">arrow_back</span>
+        </button>
+      </header>
+      <div class="textfield searchfield is-focused">
+        <!-- <label class="textfield-label" for="search">검색(시각적으로숨겨야함)</label> -->
+        <button class="textfield-prefix searchfield-prefix" style="background: none"><span class="material-symbols-outlined">search</span></button>
+        <input
+          class="textfield-input searchfield-input"
+          type="search"
+          id="search"
+          placeholder="수줍이 패턴 (with titlebar)"
+          style="width: 100%; background: none; border: var(--border); box-shadow: var(--shadow)"
+        />
+        <button class="searchfield-clear" hidden style="right: 0.75rem">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+      <div class="keywords-group" role="group" style="margin-top: 0.5rem">
+        <button class="keywords-group-keyword">
+          <span class="chip-label">로얄테넌바움</span>
+        </button>
+        <button class="keywords-group-keyword">
+          <span class="chip-label">소매치기</span>
+        </button>
+        <button class="keywords-group-keyword">
+          <span class="chip-label">이탈리아여행</span>
+        </button>
+        <button class="keywords-group-keyword">
+          <span class="chip-label">아파트열쇠를빌려드립니다</span>
+        </button>
+      </div>
+    </div>
 
-    <section class="component-example">
-      <div class="tile-flat">
-        <div class="textfield searchfield is-focused">
-          <button class="textfield-prefix searchfield-prefix"><span class="material-symbols-outlined">search</span></button>
-          <!-- <label class="textfield-label" for="search">검색(시각적으로숨겨야함)</label> -->
-          <input class="textfield-input searchfield-input" type="search" id="search" placeholder="iOS pattern" />
-          <button class="searchfield-clear" hidden><span class="material-symbols-outlined">close</span></button>
-          <button class="searchfield-cancel">취소</button>
-        </div>
-      </div>
-      <div class="tile-flat">
-        <div class="textfield searchfield is-focused">
-          <button class="textfield-prefix searchfield-prefix" style="left: 0; top: 0; width: 48px; height: 48px">
-            <span class="titlebar-back-icon material-symbols-outlined">arrow_back</span>
-          </button>
-          <!-- <label class="textfield-label" for="search">검색(시각적으로숨겨야함)</label> -->
-          <input
-            class="textfield-input searchfield-input"
-            type="search"
-            id="search"
-            placeholder="android pattern"
-            style="width: calc(100% - var(--size-large) - 0.5rem); margin-left: auto; padding-left: 0.75rem"
-          />
-          <button class="searchfield-clear" hidden style="right: 0.75rem">
-            <span class="material-symbols-outlined">close</span>
-          </button>
-        </div>
-      </div>
-      <div class="tile-flat">
-        <header class="titlebar" style="padding: 0 0 var(--space-2) 0">
-          <h1 class="titlebar-title" hidden>?????</h1>
-          <button class="titlebar-back" aria-label="이전 페이지로">
-            <span class="material-symbols-outlined">arrow_back</span>
-          </button>
-        </header>
-        <div class="textfield searchfield is-focused">
-          <!-- <label class="textfield-label" for="search">검색(시각적으로숨겨야함)</label> -->
-          <button class="textfield-prefix searchfield-prefix" style="background: none"><span class="material-symbols-outlined">search</span></button>
-          <input
-            class="textfield-input searchfield-input"
-            type="search"
-            id="search"
-            placeholder="수줍이 패턴 (with titlebar)"
-            style="width: 100%; background: none; border: var(--border); box-shadow: var(--shadow)"
-          />
-          <button class="searchfield-clear" hidden style="right: 0.75rem">
-            <span class="material-symbols-outlined">close</span>
-          </button>
-        </div>
-        <div class="keywords-group" role="group" style="margin-top: 0.5rem">
-          <button class="keywords-group-keyword">
-            <span class="chip-label">로얄테넌바움</span>
-          </button>
-          <button class="keywords-group-keyword">
-            <span class="chip-label">소매치기</span>
-          </button>
-          <button class="keywords-group-keyword">
-            <span class="chip-label">이탈리아여행</span>
-          </button>
-          <button class="keywords-group-keyword">
-            <span class="chip-label">아파트열쇠를빌려드립니다</span>
-          </button>
-        </div>
-      </div>
-    </section>
-  </article>
-  <article class="article">
-    <h2 class="article-title">검색의 준비</h2>
-    <p class="article-description">최근 검색 내역<br />onFocus - value.length === 0</p>
+    <h3 class="article-subhead">최근 검색 내역 / onFocus - value.length === 0</h3>
     <ul>
       <li>개별 내역의 삭제. 휘발성이 높은 정보라 편집 모듈 없이 삭제 버튼으로 제공한다.</li>
       <li>
         전체 내역의 삭제. 사용자에게 유용할 수도 있지만 리스크 고려하여 서비스의 특성에 맞게 제공. 검색 내역의 삭제가 개인화 콘텐츠에 영향을 미치는가.
       </li>
       <li>검색 내역 삭제와 검색 히스토리 삭제를 구분.</li>
-      <li>검색 내역을 로컬에 저장할 것인가?</li>
+      <li>검색 내역의 저장 위치(로컬?)</li>
     </ul>
-    <section class="component-example">
-      <div class="tile-flat">
-        <section class="search-recent">
-          <h2 class="search-recent-title">최근 검색</h2>
-          <!-- <button class="search-recommend-modify">수정</button> -->
-          <div class="menu-item" data-size="medium">
-            <figure class="menu-item-avatar"></figure>
-            <span class="menu-item-label">개구리</span>
-            <button class="item-delete material-symbols-outlined" data-size="small">close</button>
-            <button class="item-delete">삭제</button>
-          </div>
-        </section>
-      </div>
+    <div class="tile-flat">
+      <section class="search-recent">
+        <h2 class="search-recent-title">최근 검색</h2>
+        <!-- <button class="search-recommend-modify">수정</button> -->
+        <div class="menu-item" data-size="medium">
+          <figure class="menu-item-avatar"></figure>
+          <span class="menu-item-label">개구리</span>
+          <button class="item-delete material-symbols-outlined" data-size="small">close</button>
+          <button class="item-delete">삭제</button>
+        </div>
+      </section>
+    </div>
 
-      <div class="tile-flat">
-        <div class="empty" style="max-width: 100%; margin: 0; padding: 2rem 0" role="status">
-          <!-- <i class="empty-icon">🧟</i> -->
-          <!-- <h1 class="empty-title">주문을 확인해주세요.</h1> -->
-          <p class="empty-description" style="margin-top: 0; max-width: 100%">최근 검색 내역이 없습니다.</p>
-          <!-- <div class="search-recent-group search-recommend" role="group" style="justify-content: center">
+    <div class="tile-flat">
+      <div class="empty" style="max-width: 100%; margin: 0; padding: 2rem 0" role="status">
+        <!-- <i class="empty-icon">🧟</i> -->
+        <!-- <h1 class="empty-title">주문을 확인해주세요.</h1> -->
+        <p class="empty-description" style="margin-top: 0; max-width: 100%">최근 검색 내역이 없습니다.</p>
+        <!-- <div class="search-recent-group search-recommend" role="group" style="justify-content: center">
             <a class="search-recent-group-item" href="#"><span class="chip-label">개구리</span></a>
             <a class="search-recent-group-item" href="#"><span class="chip-label">달팽이</span></a>
             <a class="search-recent-group-item" href="#"><span class="chip-label">매미</span></a>
           </div> -->
-        </div>
       </div>
-    </section>
+    </div>
   </article>
 
   <article class="article">
-    <h2 class="article-title">검색의 실행</h2>
-    <p class="article-description">onChange - 키보드를 입력할 때 마다<br />onFocus - value.length > 0</p>
+    <h2 class="article-title">검색 결과</h2>
+    <p class="article-description"></p>
+
+    <h3 class="article-subhead">키워드를 입력할 때 마다 검색 (onChange)</h3>
     <ul>
-      <li>검색어 추천 및 자동완성.</li>
+      <li>검색어 자동완성.</li>
       <li>
-        결과 없음(상태)을 표시하지 않습니다. 일치하는 결과가 없더라도 유사 콘텐츠 또는 추천 콘텐츠로 대체하여 하나 이상의 결과를 항상 보여주어야
+        결과 없음(role=status)가 필요하지 않다. 일치하는 결과가 없더라도 유사 콘텐츠 또는 추천 콘텐츠로 대체하여 하나 이상의 결과를 항상 보여주어야
         합니다. 큐레이션이 강화된 콘텐츠 플랫폼에서 이탈 방지를 위해 활용할 수 있지만 사용자가 명확한 결과를 기대한다면 좋지 않은 경험.
       </li>
       <li>debouncing.</li>
-      <li>검색어를 자동완성하고 검색의 결과를 키워드를 입력할 때마다 갱신한다.</li>
     </ul>
-    <section class="component-example">
-      <div class="tile-flat">
-        <section class="search-suggestion">
-          <div class="search-suggestion-item item" data-size="medium">
-            <figure class="search-suggestion-item-avatar item-avatar"></figure>
-            <p class="item-name">자동완성</p>
-          </div>
-          <div class="search-suggestion-item item" data-size="medium">
-            <figure class="search-suggestion-item-avatar item-avatar"></figure>
-            <p class="item-name">자동완성유아이</p>
-          </div>
-          <div class="search-suggestion-item menu-item" data-tile="elevated" style="margin-bottom: 0; z-index: auto">
-            <figure class="search-suggestion-item-avatar menu-item-avatar"><span class="material-symbols-outlined">search</span></figure>
-            <p class="menu-item-label" style="color: var(--color-primary)"><span>자동완</span>(으)로 검색</p>
-          </div>
-        </section>
-      </div>
-    </section>
-  </article>
+    <div class="tile-flat">
+      <section class="search-suggestion">
+        <div class="search-suggestion-item item" data-size="medium">
+          <figure class="search-suggestion-item-avatar item-avatar"></figure>
+          <p class="item-name">자동완성</p>
+        </div>
+        <div class="search-suggestion-item item" data-size="medium">
+          <figure class="search-suggestion-item-avatar item-avatar"></figure>
+          <p class="item-name">자동완성유아이</p>
+        </div>
+        <div class="search-suggestion-item menu-item" data-tile="elevated" style="margin-bottom: 0; z-index: auto">
+          <figure class="search-suggestion-item-avatar menu-item-avatar"><span class="material-symbols-outlined">search</span></figure>
+          <p class="menu-item-label" style="color: var(--color-primary)"><span>자동완</span>(으)로 검색</p>
+        </div>
+      </section>
+    </div>
 
-  <article class="article">
-    <h2 class="article-title">검색의 실행</h2>
-    <p class="article-description">onSubmit - 검색 버튼을 클릭 또는 enter key</p>
+    <h3 class="article-subhead">검색 버튼을 클릭 또는 enter key로 검색 (onSubmit)</h3>
     <ul>
       <li>
-        결과 없음(상태)을 표시한다. 하나 또는 하나 이상의 명확한 결과를 요구하는 경우. 체류시간을 확보해야 하는 콘텐츠 플랫폼에는 적합하지 않다.
+        결과 없음(상태)가 필요하다. 하나 또는 하나 이상의 명확한 결과를 요구하는 경우. 체류시간을 확보해야 하는 콘텐츠 플랫폼에는 적합하지 않다.
       </li>
       <li>개발 리소스 적기 때문에 MVP 단계에서 유용하다.</li>
     </ul>
-
-    <section class="component-example">
-      <div class="tile-elevated">
-        <div class="empty" style="max-width: 100%; margin: 0; padding: 2rem 0" role="status">
-          <!-- <i class="empty-icon">🧟</i> -->
-          <!-- <h1 class="empty-title">주문을 확인해주세요.</h1> -->
-          <p class="empty-description" style="margin-top: 0; max-width: 100%"><em>수줍이</em>와(과)<br />일치하는 내용이 없습니다.</p>
-          <br />
-          <div class="stack" role="group" style="justify-content: center">
-            <a href="" class="search-similar-item">
-              <figure style="background: none">🦔</figure>
-              <span>검색어 제공</span>
-            </a>
-            <a href="" class="search-similar-item">
-              <figure style="background: none">🐈‍⬛</figure>
-              <span>검색어 제공</span>
-            </a>
-          </div>
+    <div class="tile-elevated">
+      <div class="empty" style="max-width: 100%; margin: 0; padding: 2rem 0" role="status">
+        <!-- <i class="empty-icon">🧟</i> -->
+        <!-- <h1 class="empty-title">주문을 확인해주세요.</h1> -->
+        <p class="empty-description" style="margin-top: 0; max-width: 100%"><em>수줍이</em>와(과)<br />일치하는 내용이 없습니다.</p>
+        <br />
+        <div class="stack" role="group" style="justify-content: center">
+          <a href="" class="search-similar-item">
+            <figure style="background: none">🦔</figure>
+            <span>검색어 제공</span>
+          </a>
+          <a href="" class="search-similar-item">
+            <figure style="background: none">🐈‍⬛</figure>
+            <span>검색어 제공</span>
+          </a>
         </div>
       </div>
-    </section>
+    </div>
   </article>
 
   <article class="article">
