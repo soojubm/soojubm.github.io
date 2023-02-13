@@ -19,10 +19,10 @@
   </header>
   <article class="article">
     <h4 class="article-title">검색의 인지</h4>
-    <p class="article-description">돋보기 인디케이터와 해시태그, 칩(사용자는 검색으로 인지하지 못하지만)</p>
+    <p class="article-description">돋보기 인디케이터와 키워드 목록</p>
     <ul>
-      <li>해시태그나 카테고리 등 서비스가 제공하는 인기/추천 키워드의 클릭을 통한 검색. (액션/button)</li>
-      <li>검색필드가 focusable이 아닌 clickable 액션인 케이스. (readonly) 검색탭으로 이동하여 콘텐츠 탐색과 검색.</li>
+      <li>해시태그나 카테고리 등 서비스가 제공하는 인기/추천 키워드 클릭을 통한 검색. (액션/button)</li>
+      <li>검색필드가 focusable이 아닌 clickable 액션인 케이스. (readonly input) 이후 검색 탭(또는 페이지)으로 이동하여 콘텐츠 탐색 및 검색.</li>
     </ul>
 
     <!-- <section class="component-example"> -->
@@ -43,6 +43,7 @@
     <h4 class="article-title">검색의 준비</h4>
     <p class="article-description">onBlur - 키워드 입력 대기</p>
     <ul>
+      <li>검색 탭 진입</li>
       <li><b>onBlur. (default)</b> 인기 콘텐츠 또는 추천 콘텐츠 등 개인화 콘텐츠 탐색할 수 있다.</li>
       <li>iOS는 focus 상태에서 취소 버튼으로 onBlur.</li>
       <!-- <li>tabIndex: back -> input</li> -->
@@ -118,11 +119,11 @@
     <h2 class="article-title">검색의 준비</h2>
     <p class="article-description">최근 검색 내역<br />onFocus - value.length === 0</p>
     <ul>
-      <li>개별 내역의 삭제. 휘발되어도 치명적이지 않은 정보라 편집 모듈 없이 삭제 버튼으로 제공한다.</li>
+      <li>개별 내역의 삭제. 휘발성이 높은 정보라 편집 모듈 없이 삭제 버튼으로 제공한다.</li>
       <li>
-        전체 내역의 삭제. 사용자에게 유용할 수도 있지만 리스크를 고려. 서비스의 특성에 맞게 제공. 검색 내역의 삭제가 개인화 콘텐츠에 영향을 미치는가.
+        전체 내역의 삭제. 사용자에게 유용할 수도 있지만 리스크 고려하여 서비스의 특성에 맞게 제공. 검색 내역의 삭제가 개인화 콘텐츠에 영향을 미치는가.
       </li>
-      <li>검색 내역을 삭제하는 것과 검색 히스토리를 삭제하는 것은 구분해야 한다.</li>
+      <li>검색 내역 삭제와 검색 히스토리 삭제를 구분.</li>
       <li>검색 내역을 로컬에 저장할 것인가?</li>
     </ul>
     <section class="component-example">
@@ -156,15 +157,15 @@
 
   <article class="article">
     <h2 class="article-title">검색의 실행</h2>
-    <p class="article-description">검색어 추천 및 자동완성.<br />onFocus - value.length > 0 / onChange - 키보드를 입력할 때 마다</p>
+    <p class="article-description">onChange - 키보드를 입력할 때 마다<br />onFocus - value.length > 0</p>
     <ul>
+      <li>검색어 추천 및 자동완성.</li>
       <li>
         결과 없음(상태)을 표시하지 않습니다. 일치하는 결과가 없더라도 유사 콘텐츠 또는 추천 콘텐츠로 대체하여 하나 이상의 결과를 항상 보여주어야
-        합니다. 큐레이션이 강화된 콘텐츠 플랫폼에서 이탈 방지를 위해 활용할 수 있지만 사용자가 명확한 결과를 기대하는 경우 좋지 않은 경험이 될 수
-        있다.
+        합니다. 큐레이션이 강화된 콘텐츠 플랫폼에서 이탈 방지를 위해 활용할 수 있지만 사용자가 명확한 결과를 기대한다면 좋지 않은 경험.
       </li>
       <li>debouncing.</li>
-      <li>검색어의 자동완성하고 검색의 결과를 키워드를 입력할 때마다 갱신한다.</li>
+      <li>검색어를 자동완성하고 검색의 결과를 키워드를 입력할 때마다 갱신한다.</li>
     </ul>
     <section class="component-example">
       <div class="tile-flat">
@@ -220,19 +221,17 @@
 
   <article class="article">
     <h2 class="article-title">기타</h2>
-    <p class="article-description">play gthe guitar.</p>
-    <ul>
-      <li>목록. 필터링과 소팅.</li>
-      <li>모바일 키보드의 높이가 고려된 쿼리의 갯수</li>
-      <li>결과 페이지의 공유를 허용할 것인가?</li>
-    </ul>
+    <p class="article-description">-</p>
     <h2 class="article-subhead">placeholder의 작성</h2>
 
     <h2 class="article-subhead">궁금이 & 생각</h2>
     <ul>
+      <li>목록. 필터링과 소팅.</li>
+      <li>모바일 키보드의 높이를 고려한 쿼리의 적정 갯수 정의.</li>
+      <li>결과 페이지의 공유를 허용할 것인가?</li>
       <li>검색 데이터는 어떻게 수집하는가.</li>
       <li>flowchart.</li>
-      <li>searchfield는 textfield와 다른 컴포넌트로 구성하는 것이 좋다. validation의 유무. 레이블의 유무. icon indicator의 유무.</li>
+      <li>searchfield는 textfield와 구분되어야 한다. validation의 유무. 레이블의 유무. icon indicator의 유무.</li>
       <li>검색 페이지가 탐색을 역할을 겸하는가?</li>
       <li>비회원의 검색 내역을 저장할 것인가?</li>
       <li>전체 검색 내역과 최근 검색 내역. 활동 로그. (facebook. 나만 보기)</li>

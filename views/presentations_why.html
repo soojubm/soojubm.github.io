@@ -6,18 +6,18 @@
         <b style="color: var(--color-text-weak)">Presentations</b>
         <p style="color: var(--color-text-weak)">프레젠테이션은 유연하고 콘텐츠는 독립적으로. 1. 콘텐츠 소비, 2. 행동</p>
       </div>
-      <div class="chat-bubble">
-        <p>루트 엘리먼트가 상태 클래스를 가져야 한다. = 글로벌 상태. (특히 토스트)</p>
-      </div>
+      <!-- <div class="chat-bubble">
+        <p>루트 엘리먼트가 상태 클래스를 가져야 한다. = 글로벌 상태. (특히 토스트). React Portal</p>
+      </div> -->
       <div class="chat-bubble">
         <p>
-          <b>사용자 워크플로 중심으로 용법을 정의.</b> 거대 맥락을 소거하면 디자인 시스템에서 어떻게 정의하느냐에 따라 용법이 달라질 수 밖에 없다.
-          토스트 식빵처럼 튀어 나오는 것을 toast로 정의할 것인지, 특정 위치(왼쪽 아래)에 위치하는 맥락으로 toast를 정의할 것인지. 너무 많은 콘텐츠를
-          모달에 표시하지 않도록 제한할 것인지, dribble, pinterest와 같이 모달 뷰를 일종의 상세페이지로도 허용할 것인지.
+          <b>사용자 워크플로 중심으로 용법을 정의.</b> 디자인 시스템에서 어떻게 정의하느냐에 따라 용법이 달라질 수 밖에 없다. 토스트 식빵처럼 튀어
+          나오는 것을 toast로 정의할 것인지, 특정 위치(왼쪽 아래)에 위치하는 맥락으로 toast를 정의할 것인지. 너무 많은 콘텐츠를 모달에 표시하지 않도록
+          제한할 것인지, dribble, pinterest와 같이 모달 뷰를 일종의 상세페이지로도 허용할 것인지.
         </p>
       </div>
       <div class="chat-bubble">
-        <p>한 번에 하나의 presentation만 열 수 있다. 하지만 모달 안의 드롭다운 패턴은 허용할 것인가? 분명한 사실은 시트는 모달보다 위에 있다.</p>
+        <p>한 번에 하나의 presentation만 열 수 있다면? 모달 안의 드롭다운 패턴은 허용할 것인가? 분명한 사실은 시트는 항상 모달보다 위에 있다.</p>
       </div>
       <div class="chat-bubble">
         <p>모달, 토스트는 컴포넌트가 아님. 기능에 가까움. alert toast, dialog modal</p>
@@ -89,12 +89,12 @@
     </p>
     <p>overay을 열고 body 엘리먼트의 스크롤을 막을 것인가. 스크롤의 크기만큼 좌우의 위치를 보정할 것인가. 비효율적인 작업량.</p> -->
 
-    <div class="tile-flat">
+    <!-- <div class="tile-flat">
       <b>memo</b>
       <p>md. When adapting for larger screens, a bottom sheet can become a context menu.</p>
       <p>md. Swap the bottom sheet for a side sheet in landscape layouts.</p>
       <p>md. sheet. modal bottom sheet. expanding bottom sheet.</p>
-    </div>
+    </div> -->
   </section>
 
   <section class="component-body">
@@ -122,10 +122,7 @@
         <li>이전 페이지와 맥락을 유지하는 콘텐츠 정보를 표시</li>
         <li>x button / arrow button, left / right</li>
         <!-- <li>All Modals have a max-width of 100%.</li> -->
-        <li>
-          중요도를 명확히 설정하는 것이 중요함. 정말로 중요한 입력이 요구되는 경우, 모달의 바깥을 클릭해서 닫을 수 없는 게 더 맞는 맥락. 또한 반드시
-          모달이어야 하는가.
-        </li>
+        <li>중요도 정의하기. 정말로 중요한 입력이 요구되는 경우, 모달의 바깥을 클릭해서 닫을 수 없는 게 맞는 맥락. 또한 반드시 모달이어야 하는가.</li>
         <!-- <li>
           팝업을 띄우면서 스크롤을 막으려면 스크롤바를 없애줘야 하는데, 이게 생각보다 복잡하다. 크롬에서는 html에 overflow:hidden를 잘 주면 끝인데,
           익스플로러에선 스크롤 제어하려면 body에 먹여야 한다. html에 overflow:hidden;을주고 모달에 overflow-y를 주면(조건:모달이 윈도우창보다
@@ -186,14 +183,10 @@
           </header>
           <section style="padding: 2rem 0 0">
             <ul>
-              <li>
-                <b>with title bar component.</b> 모달 보기의 작업 이름을 지정하는 제목 또는 작업을 설명하거나 지침을 제공하는 추가 텍스트를 제공하면
-                사람들이 앱에서 자신의 위치를​​유지하도록 도울 수 있습니다.
-              </li>
-              <li>sticky title bar.</li>
+              <li><b>with title bar. (sticky)</b> 사용자에게 위치를 알려줄 수 있다.</li>
+              <li>모바일에서 페이지처럼 보인다.</li>
               <li>use case. user profile의 portfolio에서 사용.</li>
               <li>with button group.</li>
-              <li>모바일에서 페이지처럼 보인다.</li>
             </ul>
           </section>
         </article>
@@ -218,8 +211,9 @@
 
       <h4 class="article-subhead">모달의 기능</h4>
       <ul>
-        <li>모달에 브라우저 히스토리를 저장해서 url을 통한 접근을 허용할 것인가.</li>
-        <li>body element의 스크롤을 허용할 것인가.</li>
+        <li>모달에 브라우저 히스토리를 저장.</li>
+        <li>url을 통한 접근 허용.</li>
+        <li>body element의 스크롤 여부.</li>
       </ul>
 
       <h4 class="article-subhead">Other cases</h4>
@@ -246,20 +240,18 @@
 
       <h4 class="article-subhead">Best practices</h4>
       <ul>
-        <li>
-          포지셔닝에 left bottom 좌표보다 margin을 쓰는 게 좋다. 미디어쿼리 재할당 속성이 적어지기 때문. left:1rem/right:1rem 이면 항상 block width를
-          가짐.
-        </li>
+        <li>포지셔닝에 left bottom 좌표보다 margin을 쓰는 게 좋다. left:1rem/right:1rem 이면 항상 block width를 가짐.</li>
       </ul>
 
       <h4 class="article-subhead">토스트가 될 수 있는 컴포넌트</h4>
       <ul>
         <li>callout</li>
+        <li>dialog</li>
       </ul>
 
       <h4 class="article-subhead">toast VS snackbar</h4>
       <ul>
-        <li>action 유/무. MD 버전업과 함께 용어와 기능이 변경된.</li>
+        <li>action 유/무. MD 버전업과 함께 재정의 됨.</li>
       </ul>
 
       <h4 class="article-subhead">Cases</h4>

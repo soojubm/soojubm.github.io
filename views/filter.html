@@ -5,7 +5,9 @@
       <!-- <b>Guideline scope.</b> -->
       <div class="chat-bubble is-primary">
         <b><b>Filtering.</b></b>
-        <p>Single filter와 Multiple filters 패턴으로 구분합니다. Settings 페이지의 세팅 아이템은 필터 아이템과 패턴이 비슷합니다.</p>
+      </div>
+      <div class="chat-bubble">
+        <p>Single filter와 Multiple filters. setting item과 filter item은 비슷한 패턴.</p>
       </div>
     </div>
   </header>
@@ -182,29 +184,25 @@
 
     <h2 class="article-subhead">프레젠테이션</h2>
     <p>
-      presentation 컴포넌트가 필터의 상태나 적용 방법에 많은 영향을 준다. 필터 옵션의 presentation 컴포넌트는 환경에 최적화된 경험을 위해 변경하기
-      쉬워야 한다.
+      presentation 컴포넌트가 필터의 상태나 적용 방법에 많은 영향을 준다. presentation 컴포넌트는 환경에 최적화된 경험을 위해 변경하기 쉬워야 한다.
     </p>
     <ul>
-      <li>Dropdown with chip group: desktop에서 상. moblie에서 중. desktop과 mobile에 동일한 경험과 낮은 개발 비용. 막연한 탐색에 좋다.</li>
+      <li>dropdown(chip) group: desktop에서 상. moblie에서 중. desktop과 mobile에 동일한 경험과 낮은 개발 비용. 막연한 탐색.</li>
       <li>Sheet: desktop에서 하. mobile에서 상. ???? 왜 넣었었지.</li>
-      <li>Modal: desktop과 mobile에서 중. desktop과 mobile에 동일한 경험과 낮은 개발 비용. 상세한 탐색.</li>
+      <li>Modal: desktop과 mobile에서 중. desktop과 mobile에 동일한 경험. 낮은 개발 비용. 상세한 탐색.</li>
     </ul>
 
     <h2 class="article-subhead">필터의 적용</h2>
     <ul>
-      <li>Instant updates. 각각의 필터를 즉시 적용 (onChange) - 더 좋은 사용자 경험 but 서버 요청, 데이터</li>
+      <li>Instant updates. 각각의 필터를 즉시 적용 (onChange) - 더 좋은 사용자 경험 but 서버 요청</li>
       <li>Batch updates. 적용 버튼을 클릭할 때 적용 (onSubmit) - 주로 multiple filters. single filter에서도 사용하는 케이스도 있지만.</li>
     </ul>
 
     <h2 class="article-subhead">적용된 필터의 상태</h2>
     <ul>
-      <li>
-        Multiple filters: 필터 트리거 버튼에 적용된 필터의 갯수 표시. 전환에 필수불가결한 옵션이 존재하는 경우(다소막연한데 세부적인 검색ㅇ ㅣ필요할
-        때.).
-      </li>
+      <li>Multiple filters: 필터 트리거에 적용된 필터의 갯수 표시. 전환을 위한 중요한 옵션이 존재하는 경우(다소막연한데 세부적인 검색)</li>
       <li>Single filter: 액티브 스타일과 레이블을 변경. (todo multiple)</li>
-      <li>적용된 필터 상태를 removable chips로 추가 제공(case. 오늘의집, 네이버카페) => 과연 효용이 있는 인터페이스인가?</li>
+      <li>적용된 필터 상태를 removable chips로 추가 제공(case. 오늘의집, 네이버카페) => 효용이 있는 인터페이스인가?</li>
     </ul>
 
     <h2 class="article-subhead">적용된 필터의 해제Reset</h2>
@@ -214,7 +212,7 @@
     </ul>
 
     <h2 class="article-subhead">필터링와 소팅의 위계</h2>
-    <p>소팅은 필터링의 하위 위계임을 시각적으로(위치 등) 명시하라.</p>
+    <p>소팅은 필터링의 하위 위계임을 시각적으로(위치 등) 명시.</p>
 
     <h2 class="article-subhead">궁굼이 & 생각</h2>
     <ul>
