@@ -14,12 +14,11 @@
 .hero-action-primary {@include hero-actions-primary;}
 .hero-action-secondary {@include hero-actions-secondary;}
 
-.hero-object1 {width:320px;height:320px;overflow: hidden;
-  background:url('/public/images/springsteen.jpg') center;background-size:cover;
-  border-radius:var(--radius);position:absolute;right:5vw;top:2rem;
+.hero-object1 {width:320px;height:320px;overflow:hidden;
+  background:url('/public/images/me-min_800x.png') center;background-size:cover;
+  border-radius:var(--radius);position:absolute;right:var(--grid-margin);top:1rem;
 }
-.hero-object2 {width:100%;max-width:360px;z-index:1;position:absolute;right:200px;top:3rem;pointer-events:none;}
-
+.hero-object2 {width:100%;max-width:360px;z-index:1;position:absolute;right:calc(var(--grid-margin) + 5rem);top:3rem;pointer-events:none;}
 .is-observed .hero-eyebrow {animation:fadeup var(--animation-duration) .1s backwards;}
 .is-observed .hero-title {animation:fadeup var(--animation-duration) var(--animation-delay-first) backwards;}
 .is-observed .hero-description {animation:fadeup var(--animation-duration) var(--animation-delay-second) backwards;}
@@ -44,7 +43,7 @@
 
 
 @media (--small) {
-	.hero {max-width:1080px;margin:0 auto;}
+	// .hero {max-width:1080px;margin:0 auto;}
 	.hero-object1 {display:none;}
 	.hero-object2 {display:none;}
 }
