@@ -16,21 +16,19 @@
         <div class="chat-bubble">
           <p>
             <b>규모의 약속.</b>
-            모든 세부사항을 정의할 필요는 없습니다. 예를 들면, border width는 border 스코프에서 디펜던시가 있고, 일괄 변경이 어렵지 않기 때문에 규칙을 만들지 않는 편이 좋습니다. 규칙을 만드는 일보다 문제 해결을 위한 도구의 복잡도를 관리하는 일이 중요합니다.
+            모든 세부사항을 정의하지 마세요. 예를 들면, border width는 border 스코프에서 디펜던시가 있고, 일괄 변경하기 쉽기 때문에 규칙을 만들지 않는
+            것이 좋습니다. 문제 해결을 위한 도구의 복잡도를 관리하세요.
           </p>
         </div>
         <div class="chat-bubble">
           <!-- <b>naming scope.</b> -->
-          <p>
-            <b>이름짓기.</b> namespace는 서드 파티 라이브러리와 충돌을 방지하기 위해 사용합니다. 프로덕션이 아니기 때문에 여기에서는 namespace를
-            생략했습니다.
-          </p>
+          <p>namespace는 서드 파티 라이브러리와 충돌을 방지하기 위해 사용합니다. 프로덕션이 아니기 때문에 여기에서는 namespace를 생략했습니다.</p>
         </div>
         <div class="chat-bubble">
           <ul>
             <li>1~2번 사용하는 예외케이스는 토큰으로 정의하지 않습니다. 컴포넌트 스코프에서 보충합니다.</li>
-            <li>값을 직접적으로 이름에 포함하지 마세요. 추상화를 통한 장점의 유실. case. tailwind css.</li>
-            <li>컴포넌트 토큰은 상대적으로 변경 가능성이 높고 범용성이 낮기 때문에 컴포넌트 스코프에서 정의합니다. 당면한 문제는 아닙니다.</ㅣ>
+            <li>값을 직접적으로 이름에 포함하지 마세요. 추상화 활용.</li>
+            <li>컴포넌트 토큰은 상대적으로 변경 가능성이 높고 범용성이 낮기 때문에 컴포넌트 스코프에서 정의합니다.</li>
           </ul>
         </div>
       </div>
@@ -83,12 +81,12 @@
       <div class="chat" style="margin: 2rem 0">
         <figure class="chat-avatar"></figure>
         <div class="chat-bubble">
-          <p>hierarchy. 크기와 비례해서 radius와 shadow 베리에이션이 필요하지만 경량화하여 단일 규칙을 적용하고 있습니다.</p>
+          <p>hierarchy. 크기와 비례해서 radius와 shadow 조정이 필요하지만 규칙을 최소화하고 있습니다.</p>
         </div>
         <div class="chat-bubble">
           <p>
             theme. 인버트 컬러셋을 추가로 정의하지 않습니다. 하나의 컬러셋으로 다크 테마에 대응합니다. (쉽지 않음. 기술 의존이 높은 규칙.. 유아이
-            테이밍을 위해 추상화를 더 해주는 것이 좋겠다.)
+            테이밍을 위해 추상화가 더 필요하겠다.)
           </p>
         </div>
       </div>
@@ -223,7 +221,8 @@
         <figure class="chat-avatar"></figure>
         <div class="chat-bubble">
           <p>
-            ! 폰트 변경 시 폰트 별 baseline 문제로 내부 텍스트의 간격이 틀어질 수 있다. 폰트를 변경하지 않고 대응하려면? 텍스트노드의 상단 패딩에 변수를 하나 넣어둔다.
+            ! 폰트 변경 시 폰트 별 baseline 차이로 내부 텍스트의 상하 안 맞을 수 있다. 폰트를 변경하지 않고 대응하려면? 텍스트노드(레이블 역할)의 상단
+            패딩에 변수를 하나 추가해둔다.
           </p>
         </div>
       </div>
@@ -541,9 +540,8 @@
         <figure class="chat-avatar"></figure>
         <div class="chat-bubble">
           <p>
-            <b>유연한 그리드 시스템. </b>모바일 퍼스트(가로 스크롤 트랜드) 기조로 합니다. 12 column grid 등 엄격한 그리드 시스템을 정의하지 마세요. 12
-            column grid는 온라인 프로덕트에 맞지 않습니다. 그리드 시스템 대신 2개, 3개, 4개의 칼럼을 위한 칼럼 시스템을 설계하세요. 그리고 목록은
-            스크롤로 변경을 염두하세요.
+            <b>유연한 그리드 시스템. </b>모바일 퍼스트(와 가로 스크롤). 12 column grid 등 엄격한 그리드 시스템을 정의하지 마세요. 디지털 환경의 다양한
+            화면 크기에 대처하기 어렵습니다. 칼럼 시스템을 설계하세요. 목록은 가로 스크롤로 변경하기 쉬워야 합니다.
           </p>
         </div>
         <div class="chat-bubble">
@@ -731,9 +729,7 @@
       <div class="chat" style="margin: 2rem 0">
         <figure class="chat-avatar"></figure>
         <div class="chat-bubble">
-          <p>
-            콘텐츠보다 액션이 더 강조되지 않도록 뷰포트 내에서 최대 3개의 요소로 delay를 제한합니다. inactive로 전환 시(닫기 등) instantly 실행합니다.
-          </p>
+          <p>콘텐츠보다 액션이 강조되지 않도록 뷰포트 내에서 delay를 최대 3개로 제한합니다. inactive로 전환 시(닫기 등) instantly.</p>
         </div>
       </div>
 
