@@ -7,46 +7,27 @@
         <b><b>Filtering.</b></b>
       </div>
       <div class="chat-bubble">
-        <p>Single filter와 Multiple filters. setting item과 filter item은 비슷한 패턴.</p>
+        <p>menuitem 컴포넌트의 조합. setting item과 filter item은 비슷한 패턴.</p>
       </div>
     </div>
   </header>
+
   <div class="article">
+    <p class="article-title">Anatomy</p>
+    <h3 class="article-subhead">Filter trigger</h3>
+    <h3 class="article-subhead">Filter container - presentations</h3>
+    <h3 class="article-subhead">Filter item - menuitem</h3>
+    <h3 class="article-subhead">Filter item heading</h3>
+    <h3 class="article-subhead">Filter item description</h3>
+  </div>
+
+  <div class="article">
+    <p class="article-title">Multiple filters</p>
+    <p class="article-description">세부적이고 명확한 검색 - 전환 유도(개인적인)</p>
+    <br />
+
+    <p>2단어 이하의 옵션 레이블, 5개 이하의 옵션 갯수일 때 칩그룹을 사용한다.</p>
     <section class="component-example">
-      <div class="stack">
-        <div class="dropdown">
-          <button class="chip js-toggle" aria-expanded="true">
-            <span class="chip-label" title="일행 당 인원 수">예약옵션</span>
-            <figure class="chip-icon material-symbols-outlined">arrow_drop_down</figure>
-          </button>
-          <menu class="dropdown-menu" role="menu">
-            <fieldset role="radiogroup">
-              <!-- <legend class="article-anatomy-title" style="margin-bottom:0;">radiogroup</legend> -->
-              <div class="radio">
-                <input type="radio" id="gogo1" name="gogo" value="" />
-                <label for="gogo1" title="">1~3명</label>
-              </div>
-              <div class="radio">
-                <input type="radio" id="gogo2" name="gogo" value="" checked />
-                <label for="gogo2" title="">3명 이상</label>
-              </div>
-            </fieldset>
-            <footer style="margin: var(--space-2) 0 0 0">
-              <!-- <button>옵션 초기화</button> -->
-              <button class="chip" style="width: 100%"><span class="chip-label">적용 / 24개 상품 보기 (airbnb)</span></button>
-            </footer>
-          </menu>
-        </div>
-        <button class="chip js-toggle" aria-expanded="true">
-          <span class="chip-label">예산</span>
-          <figure class="chip-icon material-symbols-outlined">arrow_drop_down</figure>
-        </button>
-        <button class="chip js-toggle" aria-expanded="true">
-          <span class="chip-label">접근성 편의</span>
-          <figure class="chip-icon material-symbols-outlined">arrow_drop_down</figure>
-        </button>
-      </div>
-      <hr />
       <button class="chip" style="margin-bottom: var(--space-3)">
         <span class="material-symbols-outlined"> filter_alt </span>
         <em
@@ -181,51 +162,115 @@
       </form>
     </section>
 
+    <h3 class="article-subhead" data-temp="Batch updates">필터의 적용</h3>
+    <p>onSubmit: 적용 버튼 클릭</p>
+    <h3 class="article-subhead">적용된 필터의 상태</h3>
+    <p>필터 트리거에 적용된 필터의 갯수 표시.</p>
+  </div>
+  <div class="article">
     <br />
-
-    <h2 class="article-subhead">프레젠테이션</h2>
-    <p>
-      presentation 컴포넌트가 필터의 상태나 적용 방법에 많은 영향을 준다. presentation 컴포넌트는 환경에 최적화된 경험을 위해 변경하기 쉬워야 한다.
-    </p>
-    <ul>
-      <li>dropdown(chip) group: desktop에서 상. moblie에서 중. desktop과 mobile에 동일한 경험과 낮은 개발 비용. 막연한 탐색.</li>
-      <li>Sheet: desktop에서 하. mobile에서 상. ???? 왜 넣었었지.</li>
-      <li>Modal: desktop과 mobile에서 중. desktop과 mobile에 동일한 경험. 낮은 개발 비용. 상세한 탐색.</li>
-    </ul>
+    <p class="article-title">Single filter</p>
+    <p class="article-description">막연한 검색</p>
+    <section class="component-example">
+      <div class="tile-elevated">
+        <div class="stack">
+          <div class="dropdown">
+            <button class="chip js-toggle" aria-expanded="true">
+              <span class="chip-label" title="일행 당 인원 수">예약옵션</span>
+              <figure class="chip-icon material-symbols-outlined">arrow_drop_down</figure>
+            </button>
+            <menu class="dropdown-menu" role="menu">
+              <fieldset role="radiogroup">
+                <!-- <legend class="article-anatomy-title" style="margin-bottom:0;">radiogroup</legend> -->
+                <div class="radio">
+                  <input type="radio" id="gogo1" name="gogo" value="" />
+                  <label for="gogo1" title="">1~3명</label>
+                </div>
+                <div class="radio">
+                  <input type="radio" id="gogo2" name="gogo" value="" checked />
+                  <label for="gogo2" title="">3명 이상</label>
+                </div>
+              </fieldset>
+              <footer style="margin: var(--space-2) 0 0 0">
+                <!-- <button>옵션 초기화</button> -->
+                <button class="chip" style="width: 100%"><span class="chip-label">적용 / 24개 상품 보기 (airbnb)</span></button>
+              </footer>
+            </menu>
+          </div>
+          <button class="chip js-toggle" aria-expanded="true">
+            <span class="chip-label">예산</span>
+            <figure class="chip-icon material-symbols-outlined">arrow_drop_down</figure>
+          </button>
+          <button class="chip js-toggle" aria-expanded="true">
+            <span class="chip-label">접근성 편의</span>
+            <figure class="chip-icon material-symbols-outlined">arrow_drop_down</figure>
+          </button>
+        </div>
+      </div>
+    </section>
+    <table>
+      <caption>
+        화면 크기에 따른 변경을 고려하지 않았을 때
+      </caption>
+      <tbody>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">Dropdown (chip group)</th>
+          <th scope="col">Sheet</th>
+          <th scope="col">Modal</th>
+        </tr>
+        <tr>
+          <th scope="row">데스크탑 사용성</th>
+          <td>상</td>
+          <td>하</td>
+          <td>중</td>
+        </tr>
+        <tr>
+          <th scope="row">모바일 사용성</th>
+          <td>하</td>
+          <td>상</td>
+          <td>중</td>
+        </tr>
+        <tr>
+          <th scope="row">참고</th>
+          <td>막연한 탐색.</td>
+          <td>모바일에서 빠른 접근성.</td>
+          <td>상세한 탐색.</td>
+        </tr>
+      </tbody>
+    </table>
 
     <h2 class="article-subhead">필터의 적용</h2>
-    <ul>
-      <li>Instant updates. 각각의 필터를 즉시 적용 (onChange) - 더 좋은 사용자 경험 but 서버 요청</li>
-      <li>Batch updates. 적용 버튼을 클릭할 때 적용 (onSubmit) - 주로 multiple filters. single filter에서도 사용하는 케이스도 있지만.</li>
-    </ul>
+    <p>onChange: 옵션 선택 시 적용. 서버 부담.</ㅇ>
 
     <h2 class="article-subhead">적용된 필터의 상태</h2>
-    <ul>
-      <li>Multiple filters: 필터 트리거에 적용된 필터의 갯수 표시. 전환을 위한 중요한 옵션이 존재하는 경우(다소막연한데 세부적인 검색)</li>
-      <li>Single filter: 액티브 스타일과 레이블을 변경. (todo multiple)</li>
-      <li>적용된 필터 상태를 removable chips로 추가 제공(case. 오늘의집, 네이버카페) => 효용이 있는 인터페이스인가?</li>
-    </ul>
+    <p>액티브 스타일과 레이블을 변경. (todo multiple)</p>
 
-    <h2 class="article-subhead">적용된 필터의 해제Reset</h2>
-    <ul>
-      <li>부분 해제</li>
-      <li>전체 해제</li>
-    </ul>
+    <h2 class="article-subhead">생각</h2>
+    <p>적용된 필터 상태를 removable chips로 추가 제공(case. 오늘의집, 네이버카페)하는 것은 효용이 있을까?</p>
+  </div>
+
+  <div class="article">
+    <h1 class="article-title">기타</h1>
+
+
 
     <h2 class="article-subhead">필터링와 소팅의 위계</h2>
-    <p>소팅은 필터링의 하위 위계임을 시각적으로(위치 등) 명시.</p>
+    <p>소팅은 필터링의 하위 위계임을 시각적으로(위치 등) 명시. 또는 '정렬' 텍스트 레이블링으로 구분</p>
 
     <h2 class="article-subhead">궁굼이 & 생각</h2>
     <ul>
       <li>사용자는 적용된 필터 옵션을 초기화하기 위해 새로고침을 할까?</li>
-      <li>multiple filters에서 각각 목록은 설정(setting)에서 사용하는 패턴과 같음.</li>
+      <li>filter item과 setting item이 유사</li>
+      <li>presentation 컴포넌트가 필터의 상태나 적용 방법에 영향을 준다.</li>
+
       <li>
         하나의 화면에서 모든 옵션 목록을 나열할 때 옵션 별로 다른 컴포넌트로 제공하여 옵션 하나 하나에 주의를 집중중시킬 수 있다. dropdown, chip,
         radio 등의 혼합 => 디자인과 개발 비용이 증가하는 만큼 사용자 경험이 월등한가? (case. airbnb) 아니면 다른 의도?
       </li>
       <li>필터를 적용하고 초기화하는 버튼 그룹의 정렬은 dialog에서 버튼 그룹과 달라질 수 있다. hero 컴포넌트와는 동일하다.</li>
       <li>range UI는 얼마나 사용자 친화적인가</li>
-      <li>모든 필터 옵션을 세로 목록형 가로 스크롤로 나열할 수도 있다. 큰 화면에서 유용하다. (case. bilibili)</li>
+      <li>모든 필터 옵션을 세로 목록형 가로 스크롤로 나열할 수도 있다. 큰 화면에서 유용하다. (case. bilibili, 관리자용)</li>
     </ul>
   </div>
 </main>
