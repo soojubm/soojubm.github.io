@@ -155,13 +155,14 @@
 .person-viewall:hover {@include hover-item;}
 
 
+// todo icon -> indicator
 .accordion {margin:1rem 0;}
 .accordion-title {display:flex;align-items:center;justify-content:space-between;@include text-subhead;}
-.accordion-title-icon {@include icon-indicator;margin:1px 0 0 0;}
+.accordion-title-icon {@include icon-indicator;}
 .accordion-panel {display:none;cursor:default;}
 .accordion-panel p + p {margin:var(--space-4) 0 0 0;}
 .is-active .accordion-panel {display:block;padding:var(--space-3) 0;}
-.is-active .accordion-title-icon {transform:rotate(180deg)}
+.is-active .accordion-title-icon {transform:rotate(90deg)}
 // [aria-expanded=true] + .accordion-panel {}
 
 .design-categories {margin:4rem var(--grid-margin);}

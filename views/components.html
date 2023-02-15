@@ -113,6 +113,9 @@
     <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Buttons</span></a>
     <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Chips</span></a>
     <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Links</span></a>
+
+    <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Badges</span></a>
+
     <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Tags</span></a>
     <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Switch</span></a>
     <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Checkboxes</span></a>
@@ -121,7 +124,6 @@
     <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Select</span></a>
     <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Textfields</span></a>
 
-    <!-- <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Badges</span></a> -->
     <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Tiles</span></a>
     <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Seporator</span></a>
     <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Tooltip</span></a>
@@ -139,7 +141,7 @@
     <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Result</span></a>
     <!-- <p class="hero-description">keywords: attention / feedback / confirm</p> -->
     <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Dialog</span></a>
-    <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Callout</span></a>
+    <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Callouts</span></a>
   </nav>
 
   <section class="component-body">
@@ -820,12 +822,16 @@
     </article>
 
     <!-- <p>Badges show the count of some adjacent data. A dot badge notifies the user that something is new or updated without showing a count.</p> -->
-    <!-- <article class="article" >
+    <article class="article js-observer js-scrollspy-section">
       <h1 class="article-title">Badges</h1>
-      <p class="article-description">수치</p>
+      <p class="article-description">샘플</p>
       <em class="badge" data-variant="primary">24</em>
       <em class="badge" data-variant="secondary">16</em>
-    </article> -->
+      <span class="tag">
+        <em style="display:inline-flex;width:6px;height:6px;margin-right:var(--space-2);background:crimson;border-radius:50%;"></em>
+        live
+      </span>
+    </article>
 
     <article class="article js-observer js-scrollspy-section">
       <h1 class="article-title">Tags <span hidden>(or badge/label)</span></h1>
@@ -1321,13 +1327,16 @@
       <h1 class="article-title" title="or Box">Tiles</h1>
       <p class="article-description">연관 정보를 묶어 시각적으로 강조하는 컨테이너입니다.</p>
 
+      <p>TODO: section componenet : hero / , column container 2, 3</p>
+
       <aside class="article-aka">
         <span class="tag">a.k.a.</span>
         <span class="hashtag" title="protocol mozilla">EmphasisBox</span>
         <span class="hashtag" title="biings">Box</span>
         <span class="hashtag" title="">Card</span>
         <span class="hashtag" title="pinterest gestalt">Module</span>
-        <span class="hashtag" title="shopify 2212">Alpha card</span>
+        <span class="hashtag" title="radix">section</span>
+        <span class="hashtag" title="radix">container</span>
       </aside>
 
       <section class="component-example">
@@ -1908,14 +1917,14 @@
           </details>
         </div>
         <section class="faq tile-flat">
-          <abbr title="Frequently asked questions" hidden>FAQ</abbr>
-          <header style="padding-bottom: 1.5rem; text-align: center">
+          <!-- <header style="padding-bottom: 1.5rem; text-align: center">
+            <abbr title="Frequently asked questions" hidden>FAQ</abbr>
             <small>Find Your Answers</small>
             <h2 style="font-size: var(--font-size-huge)" title="FAQs">궁금한 점이 있으신가요?</h2>
-          </header>
+          </header> -->
           <article class="accordion js-accordion is-active" aria-expanded="false">
-            <b class="accordion-title" role="button">
-              <figure class="accordion-title-icon material-symbols-outlined">arrow_right</figure>
+            <b class="accordion-title" role="button" style="justify-content:left;">
+              <figure class="accordion-title-icon material-symbols-outlined" style="margin-right:.5rem;">arrow_right</figure>
               탈퇴하고 싶어요.
             </b>
             <div class="accordion-panel">
@@ -1926,12 +1935,10 @@
               </p>
             </div>
           </article>
-          <article class="accordion js-accordion" aria-expanded="false">
-            <b class="accordion-title" role="button">
-              주문을 취소하고 싶어요.
-              <figure class="accordion-title-icon">
-                <span class="material-symbols-outlined">expand_more</span>
-              </figure>
+          <article class="accordion js-accordion is-active" aria-expanded="false">
+            <b class="accordion-title" role="button" style="justify-content:left;">
+              <figure class="accordion-title-icon material-symbols-outlined" style="margin-right:.5rem;">arrow_right</figure>
+              탈퇴하고 싶어요.
             </b>
             <div class="accordion-panel">
               <p>모든 국민은 건강하고 쾌적한 환경에서 생활할 권리를 가지며, 국가와 국민은 환경보전을 위하여 노력하여야 한다.</p>
@@ -2135,6 +2142,14 @@
           </aside>
           <aside class="alert" data-temp="danger">
             <p class="alert-text" style="color: var(--gray0)">인터넷에 연결되어 있지 않습니다.</p>
+            <!-- <button class="alert-close" aria-label="close alert"><span class="material-symbols-outlined">close</span></button> -->
+          </aside>
+          <aside class="alert" data-temp="danger" style="border:1px solid var(--red800);background:var(--red100);">
+            <p class="alert-text" style="color: var(--red800)">샘플 테스트</p>
+            <!-- <button class="alert-close" aria-label="close alert"><span class="material-symbols-outlined">close</span></button> -->
+          </aside>
+          <aside class="alert" data-temp="danger" style="border:1px solid var(--green800);background:var(--green100);">
+            <p class="alert-text" style="color: var(--green800)">바시니의 작품은 페라라 부르주아사회의 유대인 박해라는 깊은 상처에 기인한다는 점에서 정치적이다.</p>
             <!-- <button class="alert-close" aria-label="close alert"><span class="material-symbols-outlined">close</span></button> -->
           </aside>
         </div>
