@@ -3,38 +3,36 @@
     <p>core: give a name to a raw value to enable theming and make improve maintainability / semantic / component</p>
     <p>20 - 20px. tailwind의 단점. 디자인 토큰에서 얻을 수 있는 추상화 및 기타 이점이 무효화. 값을 조정하기 쉽도록 추상화.</p>
   </ul> -->
-
   <section class="tokens-body">
-    <header class="" role="banner" style="padding: 0 var(--grid-margin); margin-left: -40px">
-      <div class="chat" style="max-width: 720px; margin: 2rem 0 var(--space-3)">
-        <figure class="chat-avatar"></figure>
-        <!-- <b>Guideline scope.</b> -->
-        <div class="chat-bubble is-primary">
-          <b><b>Tokens.</b></b>
-          <p>일관된 시각 경험. 크로스 플랫폼. 서비스 확장과 유지 보수.</p>
-        </div>
-        <div class="chat-bubble">
-          <p>
-            <b>규모의 약속.</b>
-            모든 세부사항을 정의하지 마세요. 예를 들면, border width는 border 스코프에서 디펜던시가 있고, 일괄 변경이 쉽기 때문에 토큰을 정의하지 않는
-            것이 좋습니다. 규칙을 정의하는 일 만큼 문제 해결을 위한 도구의 복잡도를 관리도 중요합니다.
-          </p>
-        </div>
-        <!-- <div class="chat-bubble">
+    <div class="chat" style="max-width: 720px; margin: 2rem var(--grid-margin) var(--space-3)">
+      <figure class="chat-avatar"></figure>
+      <!-- <b>Guideline scope.</b> -->
+      <div class="chat-bubble is-primary">
+        <b><b>Tokens.</b></b>
+        <p>일관된 시각 경험. 크로스 플랫폼. 서비스 확장과 유지 보수.</p>
+      </div>
+      <div class="chat-bubble">
+        <p>
+          <b>규모의 약속.</b>
+          모든 세부사항을 정의하지 마세요. 예를 들면, border width는 border 스코프에서 디펜던시가 있고, 일괄 변경이 쉽기 때문에 토큰을 정의하지 않는
+          것이 좋습니다. 규칙을 정의하는 일 만큼 문제 해결을 위한 도구의 복잡도를 관리도 중요합니다.
+        </p>
+      </div>
+      <!-- <div class="chat-bubble">
           <p>namespace는 서드 파티 라이브러리와 충돌을 방지하기 위해 사용합니다. 프로덕션이 아니기 때문에 여기에서는 namespace를 생략했습니다.</p>
         </div> -->
-        <div class="chat-bubble">
-          <ul>
-            <li>1~2번 사용하는 예외케이스는 토큰으로 정의하지 않습니다. 컴포넌트 스코프에서 보충합니다.</li>
-            <li>컴포넌트 토큰은 상대적으로 변경 가능성이 높고 범용성이 낮기 때문에 컴포넌트 스코프에서 정의합니다.</li>
-            <li>값을 직접적으로 이름에 포함하지 마세요.</li>
-          </ul>
-        </div>
+      <div class="chat-bubble">
+        <ul>
+          <li>1~2번 사용하는 예외케이스는 토큰으로 정의하지 않습니다. 컴포넌트 스코프에서 보충합니다.</li>
+          <li>컴포넌트 토큰은 상대적으로 변경 가능성이 높고 범용성이 낮기 때문에 컴포넌트 스코프에서 정의합니다.</li>
+          <li>값을 직접적으로 이름에 포함하지 마세요.</li>
+        </ul>
       </div>
+    </div>
 
-      <!-- <li>radius. pill과 non-pill은 양자택일. 인물 아바타를 특정하기 위해 circle은 허용할 수 있다. </li> -->
+    <!-- <li>radius. pill과 non-pill은 양자택일. 인물 아바타를 특정하기 위해 circle은 허용할 수 있다. </li> -->
 
-      <!-- <p>
+    <!-- <p>
         Styling hooks follows a specific naming convention to promote predictability and consistency.
       </p>
 
@@ -43,7 +41,6 @@
         <p>! problem: size + space = large siz가 되려면 border가 아니라 box-shadow로 보더를 줘야 한다.</p>
         <p>MD3 참고. surface는 shadow 뿐 아니라 color도. radius를 shape</ㅔ>
       </blockquote> -->
-    </header>
 
     <nav class="component-navigation stack" role="group" data-scroll="vertical">
       <div class="component-navigation-background"></div>
@@ -63,12 +60,7 @@
       <h1 class="article-title">Palette</h1>
       <p class="article-description">color와 surface.</p>
 
-      <button
-        class="menu-item js-darkmode"
-        data-tile="elevated"
-        title="change theme"
-        style="max-width: var(--layout-width-small); margin-left: -0.5rem"
-      >
+      <button class="menu-item js-darkmode" data-tile="elevated" title="change theme" style="max-width: var(--layout-width-small)">
         <figure class="menu-item-avatar"><span class="material-symbols-outlined">nights_stay</span></figure>
         <span class="menu-item-label">어둡게 보기</span>
         <span class="switch" style="margin-left: auto">

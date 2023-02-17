@@ -333,6 +333,10 @@
 .chat-bubble {width:fit-content;max-width:calc(90% - var(--size-medium));padding:var(--space-3) var(--space-4);border:var(--border);border-radius:1.5rem;border-top-left-radius:var(--radius);background-color:var(--color-background);}
 .chat-bubble.has-image {width:85%;padding:0;background:none;overflow:hidden;}
 .chat-bubble figure {}
+
+.chat-bubble p, .chat-bubble li {
+  line-height: var(--font-line-height);
+}
 .chat-bubble + .chat-bubble {margin-top:var(--space-2);}
 
 .chat.is-mine {text-align:right;}

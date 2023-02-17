@@ -1,5 +1,6 @@
 @custom-media --large (max-width: 1560px);
 @custom-media --small (max-width: 1080px);
+@custom-media --tiny (max-width: 720px);
 // $p-breakpoints-lg-only: '(min-width: 65em) and (max-width: 89.9975em)';
 
 @media (prefers-color-scheme: light) {}
@@ -50,7 +51,7 @@
 
   --gray0: #fff;
   --gray100: #f5f8f5;
-  --gray200: #e0e5e3;
+  --gray200: #e4eae8;
   --gray400: #979d9a;
   --gray800: #343c38;
 
