@@ -64,7 +64,7 @@
 .product-detail-summary {}
 .product-detail-summary-title {margin:4rem 0 1rem 0;@include text-subhead;}
 
-.feature {display:flex;flex-wrap:wrap;justify-content:space-between;max-width:800px;padding:6rem var(--grid-margin) 7rem;}
+.feature {display:flex;flex-wrap:wrap;justify-content:space-between;padding:6rem var(--grid-margin) 8rem;}
 .feature-head {width:100%;margin:0 auto 2rem;}
 .feature-head-title {@include text-title;word-break:keep-all;}
 .feature-head-description {margin:var(--space-after-title) 0 0 0;font-size:var(--font-size-large);}

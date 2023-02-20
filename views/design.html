@@ -690,7 +690,6 @@
       <div class="chat" style="max-width: 80%; margin: 2rem auto 0">
         <figure class="chat-avatar"></figure>
         <div class="chat-bubble">
-          <p>namespace는 서드 파티 라이브러리와 충돌을 방지하기 위해 사용합니다. 프로덕션이 아니기 때문에 여기에서는 namespace를 생략했습니다.</p>
           <p>memo: dashboard 등 회색 배경이 들어간 페이지에서는 border 등 조절되어야 한다...</p>
           <p>--[namespace]-[component / category]-[attribute]-[status]</p>
         </div>
@@ -730,22 +729,47 @@
         <span class="tag">loading / fetching ?</span>
       </div> -->
 
-  <!-- <section class="feature" style="max-width: 720px; margin: 4rem 0">
+  <!-- <section class="feature" style="max-width: var(--layout-width-small); margin: 4rem 0">
     <header class="feature-head">
-      <h1 class="feature-head-title">Why go Premium?<br />Get involved in our community.<br />Everyone is welcome!</h1>
-      <p class="feature-head-description">Get involved in our community. Everyone is welcome!</p>
+      <h1 class="feature-head-title">어떤 문제를 해결합니까?<br />사용자 인터페이스 너머의 문제,<br />진짜 문제에 집중할 수 있는 시스템.</h1>
+      <p class="feature-head-description">
+        기술과 환경의 한계를 인정합니다. 디바이스나 브라우저의 크기에 종속되지 않는 패턴 설계. 미래의 사용자는 자동차, 냉장고에서 (도메인 특수성이
+        있지만). 모든 환경이 고려된, 모든 환경이 고려되었다는 것은 작은 화면을 기준한다는 것.
+      </p>
     </header>
-    <div class="feature-item">
-      <span class="feature-item-avatar" role="img">💃</span>
-      <h3 class="feature-item-title">무료로 숙소 등록하기</h3>
-      <p class="feature-item-description">남는 방 하나부터 별장까지, 다양한 형태의 공간을 무료로 등록하고 공유하세요.</p>
+    <div class="design-guide-item feature-item">
+      <figure class="feature-item-avatar">🐄</figure>
+      <h3 class="feature-item-title" data-temp=" minimum viable experience">Web standards</h3>
+      <p class="feature-item-description">모두를 위한 서비스, 접속 환경 등의 제약없이 서비스를 사용할 수 있어야 한다.</p>
+    </div>
+    <div class="design-guide-item feature-item">
+      <figure class="feature-item-avatar">🐐</figure>
+      <h3 class="feature-item-title" data-temp=" minimum viable experience">Progressive enhancement</h3>
+      <p class="feature-item-description">
+        시각 언어를 확장해가며 디자인 디테일을 높이고 코드 환경에서 유효한 최적의 컴포넌트 사례를 만듭니다. 제품으로서의 디자인 시스템 문서.
+      </p>
+    </div>
+    <div class="design-guide-item feature-item">
+      <figure class="feature-item-avatar">🐏</figure>
+      <h3 class="feature-item-title">Single source of truth</h3>
+      <p class="feature-item-description">디자인 툴이 SSOT가 되어서는 안 됨. 스타일가이드와 디자인시스템을 구분하기. (작성 중)</p>
+    </div>
+    <div class="design-guide-item feature-item">
+      <figure class="feature-item-avatar">🦘</figure>
+      <h3 class="feature-item-title">Trustworthy <span hidden>Visual</span> cue</h3>
+      <p class="feature-item-description">
+        친숙하고 신뢰할 수 있는 서비스 경험을 위해 예측 가능하고 일관되게 기표를 사용합니다. UX 부채를 최소화하세요.
+      </p>
       <a class="feature-item-link" href="#">숙소 등록</a>
     </div>
-    <div class="feature-item">
-      <span class="feature-item-avatar" role="img">💃</span>
-      <h3 class="feature-item-title">무료로 숙소 등록하기</h3>
-      <p class="feature-item-description">남는 방 하나부터 별장까지, 다양한 형태의 공간을 무료로 등록하고 공유하세요.</p>
-    </div>
+
+    <footer>
+      <ul>
+        <li>토큰 변경 만으로 다양한 테마에 대응</li>
+        <li>변경 사항 기록과 누적 (새로운 동료의 온보딩과 제품 개선 히스토리)</li>
+        <li>사용자(동료) 피드백 (디자인 시스템에 기여/크래딧을 통한 동기부여)</li>
+      </ul>
+    </footer>
   </section> -->
 
   <section class="design-guide" style="margin: 8rem var(--grid-margin)">
@@ -806,9 +830,9 @@
   </section> -->
 
   <!-- <section class="design-foundations" style="display: flex; flex-wrap: wrap">
-    <div class="foundation-item" style="width: 320px; margin-right: 1rem">
+    <div class="foundation-item" style="width: 360px; margin-right: 1rem">
       <h2>Layout</h2>
-      <figure></figure>
+      <figure style="height: 120px"></figure>
       <span>foundation 1</span>
       <time>last updated yesterday</time>
     </div>
@@ -864,12 +888,18 @@
         <p class="timeline-item-description" style="color: var(--color-text-light)">font sizes 2종</p>
       </div>
     </div>
-    <br />
+
     <footer>
       <span onclick="javascript:alert('준비중')" style="display: flex; align-items: center; margin: 1rem 0 0 0; line-height: 24px"
         >더알아보기
         <span class="icon-indicator material-symbols-outlined" style="margin-left: 0.5rem">arrow_right_alt</span>
       </span>
+      <!-- <button class="menu-item" data-tile="elevated" style="max-width: 320px">
+        <figure class="menu-item-avatar">
+          <span class="material-symbols-outlined">search</span>
+        </figure>
+        <span class="menu-item-label">더알아보기</span>
+      </button> -->
     </footer>
     <!-- <time class="timeline-date">2022. 11. 4.</time>
     <div class="timeline-item">
@@ -992,7 +1022,6 @@
   </footer> -->
 </main>
 <!-- custom element:::: morning star-->
-
 <!-- <ul>
     <li>responsiveness</li>
     <li>ux부채/기술부채를 어떻게 트래킹할 것인가?</li>

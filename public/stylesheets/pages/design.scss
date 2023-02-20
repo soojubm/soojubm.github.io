@@ -11,6 +11,7 @@
 .article {padding:4rem var(--grid-margin);overflow:hidden;position:relative;}
 .article + .article {padding-top:6rem;}
 
+
 .article-aka {@include stack;margin:var(--space-4) 0;}
 .article-aka .hashtag:before {content:'';}
 .article-aka .tag {margin-right:var(--space-3);}
@@ -24,7 +25,6 @@
 .article-dont {padding:1rem;border-radius:var(--radius);background:var(--red100);}
 
 .article-subhead {margin:3rem 0 var(--space-after-subhead);@include text-subhead;}
-.article-subhead + ul {margin-top: var(--space-1-minus);}
 .article > .hashtag {margin:0 .25rem 0 0;font-size:var(--font-size-small);}
 
 // .article.is-observed {animation:fadeup .8s forwards;}
@@ -587,6 +587,7 @@
   .sample-container .column{
     width: 100%;
   }
+  // .article .tile-flat {margin-left:-5vw;margin-right:-5vw;padding-left:5vw;border-left:0;border-right:0;border-radius: 0;}
 
 }
 

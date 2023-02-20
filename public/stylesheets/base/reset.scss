@@ -90,7 +90,8 @@ table tbody[role=rowgroup] tr th + th {width:auto;} // todo
 
 // table.is-borderless tbody tr {border:0;}
 ul {padding-left:var(--space-4);}
-ul li {margin:var(--space-1) 0;} // for font-size.
+// ul li {margin:var(--space-1) 0;} // for font-size.
+ul li + li {margin:var(--space-1) 0 0 0;}
 [data-align=horizontal] {display:flex;flex-wrap:wrap;}
 [data-align=horizontal] li {margin:0 2rem 0 0;}
 

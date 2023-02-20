@@ -5,6 +5,28 @@
 <!-- todo top hat -->
 
 
+<!-- https://ustyle.guide/pattern-library/javascript.html -->
+<!-- https://ui.shadcn.com/ -->
+
+<!-- https://tecoble.techcourse.co.kr/ -->
+
+<!-- https://career.programmers.co.kr/pr/beolsae 이력서 -->
+
+<!-- https://f-lab.kr/ -->
+
+<!-- https://tailwindui.com/components/#product-application-ui -->
+
+<!-- https://www.zigae.com/react-query-key/ 다시읽고지우기 -->
+<!-- https://www.zigae.com/avoid-conditions/ -->
+
+<!-- https://dev.to/dayvster/use-react-context-for-auth-288g -->
+
+<!-- https://www.albertgao.xyz/2019/09/07/reuse-react-router-routes-constants-with-hooks-when-navigating/ -->
+
+<!-- https://yceffort.kr/2021/12/nextjs-lesson-and-learn -->
+
+<!-- https://moon-ga.github.io/next.js/5-using-env/ -->
+
 <!-- <h3>getFormattedDate(20220610) / getFormattedCurrency(30000)</h3>
 <p>30,000원 / 30,000 won / ₩ 30,000</p> -->
 
@@ -174,9 +196,8 @@
       <header style="position: relative">
         <!-- <span class="avatar" style="background: var(--color-background-weak); position: absolute; left: 0; top: 0">🐰</span> -->
         <h1 class="article-title">Avatars</h1>
-        <p class="article-description">개체(유저, 회사, 프로젝트 등)를 대표하는 시각 정보입니다.</p>
-
-        <p>TODO: 아바타가 클릭 가능한 요소일 때, 클릭을 보조하는 시각 정보일 떄의 형태를 구분하기.</p>
+      <p class="article-description">개체(유저, 회사, 프로젝트 등)를 대표하는 시각 정보입니다. 인접한 정보 더미 중 최상위 위계로서 정보의 주체.</p>
+      <p>TODO: 아바타가 클릭 가능한 요소일 때, 클릭을 보조하는 시각 정보일 떄의 형태를 구분하기.</p>
       </header>
       <div class="component-example">
         <article class="tile-flat" style="display: flex; gap: 0.5rem">
@@ -230,7 +251,6 @@
       </div>
 
       <h2 class="article-subhead">Best practices</h2>
-      <p>정보 주체를 표현하는 시각 정보로, 인접한 정보 더미 중 최상위 위계.</p>
       <ul>
         <li>icon button, icon indicator, entity avatar, menu item avatar(icon)</li>
         <li>이미지, 텍스트, 아이콘, 이모지를 포함할 수 있습니다.</li>
@@ -341,7 +361,7 @@
 
         <div class="tile-flat" role="menu">
           <div class="item" data-size="large" role="menuitem">
-            <figure class="item-avatar">🏹</figure>
+            <figure class="item-avatar"></figure>
             <b class="item-label">windows 패턴</b>
             <button class="chip" style="margin-left: auto; margin-right: var(--space-2)">
               <span class="chip-label"> with quick action</span>
@@ -456,7 +476,7 @@
       <h2 class="article-subhead">Icon guidelines</h2>
       <ul>
         <li>텍스트 레이블을 생략하는 경우 관습적인 메타포의 아이콘(북마크/하트/카트 등)을 사용하고 대체 텍스트와 툴팁을 제공하세요.</li>
-        <li>기표로 정의하지 않은 아이콘을 장식적인 용도로 사용하지 마세요.</li>
+        <li>기표로 정의하지 않은 아이콘을 레이블과 함께 장식적인 용도로 사용하지 마세요.</li>
       </ul>
 
       <h2 class="article-subhead">Don'ts (in progressing)</h2>
@@ -647,7 +667,7 @@
       </p>
 
       <h2 class="article-subhead">actionable chip<br />Keywords search</h2>
-      <div class="tile-flat" style="margin: var(--space-2) 0 var(--space-4)">
+      <div class="tile-flat">
         <div class="keywords-group" role="group">
           <button class="keywords-group-keyword">
             <span class="chip-label">로얄테넌바움</span>
@@ -668,7 +688,7 @@
         단일 칩으로 존재하지 않는다. 콘텐츠 필터링을 위한 칩 그룹에서, 액티브 상태에 브랜드 컬러를 쓰지 않는 경향. 콘텐츠 탐색이 cta. 눈에 띄지 않는
         무채색 활용이 높아짐.
       </p>
-      <div class="tile-flat" style="margin: var(--space-2) 0 var(--space-4)">
+      <div class="tile-flat">
         <div class="stack" role="group" data-scroll="vertical">
           <button class="chip js-toggle is-active">
             <span class="chip-label">전체</span>
@@ -679,7 +699,7 @@
         </div>
       </div>
       <h2 class="article-subhead">multiple selections with check</h2>
-      <div class="tile-flat" style="margin: var(--space-2) 0 var(--space-4)">
+      <div class="tile-flat">
         <div class="stack" data-scroll="vertical" aria-multiselectable="true">
           <button class="chip is-active" aria-selected="true" style="background-color: var(--green100)">
             <figure class="chip-icon" style="background: none !important">
@@ -701,7 +721,7 @@
 
       <h2 class="article-subhead">Expandable chip<br /></h2>
       <p>글자수 제한. 모달로 열릴 수 있어서, 드롭다운은 제거함. dropdown/overflow/pulldown. sorting contents</p>
-      <div class="tile-flat" style="margin: var(--space-2) 0 var(--space-4)">
+      <div class="tile-flat">
         <div class="stack">
           <div class="dropdown">
             <button class="chip js-toggle" aria-expanded="true">
@@ -808,7 +828,7 @@
       </p>
 
       <h2 class="article-subhead">Accessibility</h2>
-      <p>'여기', '클릭', '확장' 등 시각에 의존한 단어로 작성하지 마세요.</p>
+      <p>'여기', '클릭', '확장' 등 시각에 의존한 어휘로 작성하지 마세요.</p>
 
       <h2 class="article-subhead">Props</h2>
       <dl>
@@ -1141,7 +1161,7 @@
       </section>
 
       <h2 class="article-subhead">Best practices</h2>
-      <p>다중 선택을 셀렉트박스로 제공하지 마세요. chip group으로 선택 옵션을 풀어서 제공하세요.</p>
+      <p>다중 선택을 셀렉트로 제공하지 마세요. chip group으로 선택 옵션을 풀어서 제공하세요.</p>
 
       <ul>
         <li>input container와 chip container로 확장할 수 있도록 하기?</li>
@@ -1234,7 +1254,7 @@
         <div class="tile-flat">
           <!-- numberfield -->
           <div class="quantity js-quantity">
-            <label for="numberfield">레이블 라이트하우스용</label>
+            <label for="numberfield" style="position:absolute;opacity:0;">레이블 라이트하우스용</label>
             <!-- <input type="text" inputmode="numeric" pattern="[0-9]*"> -->
             <button class="quantity-decrement js-quantity-decrement" aria-label="" aria-controls="numberfield" tabindex="-1">
               <span class="material-symbols-outlined"> remove </span>
@@ -1267,23 +1287,24 @@
         필수 입력을 전제합니다. 사용자 여정에 허들이 될 수 있는 불필요한 텍스트 입력 필드는 최소화합니다. 사용자 정보를 제공하여 얻을 수 있는 이점이
         명확한 경우에만. 선택 입력 필드는 '선택입력' 텍스트로 가이드합니다.
       </p>
+      <p>아이콘 레이블로 대체하는 경우 텍스트 레이블을 생략할 수 있습니다.</p>
+      <p>검색 필드는 일반 텍스트필드와 구별할 수 있도록 검색 아이콘 등 시각적인 단서를 제공하세요.</p>
 
       <h2 class="article-subhead">Alignment</h2>
       <p>레이블을 텍스트필드 왼쪽에 배치하지 마세요.</p>
 
-      <h2 class="article-subhead">withot label</h2>
+      <h2 class="article-subhead">withot label 1<br />Searchfield</h2>
       <p>
-        searchfield / commentfield: 아이콘 레이블로 대체하는 경우 텍스트 레이블을 생략할 수 있습니다. Input with hidden label. helper text도 필요없다.
-        그리고 둘 다 벨리데이션을 하지 않는 텍스트필드.
+        label, validation, helper 미포함. 새로운 컴포넌트로 만들어야 함.
       </p>
+      <h2 class="article-subhead">withot label 2<br />Commentfield</h2>
+      <h2 class="article-subhead">Groupable<br />textfield group</h2>
 
-      <ul>
-        <!-- <p><span></span> 벨리데이션 실행 조건: <b>제출(구현이 쉬움)</b> / 키보드 입력 쉬움 / 블러(구현이 복잡함. 흐름이 끊어짐)</b></p> -->
-        <li>검색 필드는 일반 텍스트필드와 구별할 수 있도록 검색 아이콘 등 시각적인 단서를 제공하세요.</li>
-        <!-- <li>required indicator / optional indicator / validations / masked / validation feedback</li> -->
-        <li>todo: helper(help message)와 feedback message를 구별</li>
-        <!-- <li>url 등록 시 www 및 https:// 기본 입력</li> -->
-      </ul>
+
+      <!-- <ul>
+        <li>todo: helper(help message)와 feedback message를 구별. required indicator / optional indicator / validations / masked / validation feedback</li>
+        <li>url 등록 시 www 및 https:// 기본 입력</li>
+      </ul> -->
 
       <h2 class="article-subhead">Props</h2>
       <dl>
@@ -1316,8 +1337,10 @@
         <dd>function()</dd>
         <dt>onKeyDown</dt>
         <dd>(event: KeyboardEvent[HTMLButtonElement]) => void</dd>
+
+        <dt>isHiddenLabel</dt>
+        <dd>boolean</dd>
       </dl>
-      <h2 class="article-subhead">Groupable<br />textfield group</h2>
 
       <h2 class="article-subhead">References</h2>
       <a href="https://developer.apple.com/documentation/uikit/uisearchbar">HIG searchbar</a>
@@ -1328,6 +1351,7 @@
       <p class="article-description">연관 정보를 묶어 시각적으로 강조하는 컨테이너입니다.</p>
 
       <p>TODO: section componenet : hero / , column container 2, 3</p>
+      <p>TODO: 모든 contentbox를 tile로 묶어두는 방법이 필요할지도.</p>
 
       <aside class="article-aka">
         <span class="tag">a.k.a.</span>
@@ -1367,9 +1391,6 @@
       <p>
         '클릭할 수 있음'의 기표로 elevated 스타일을 사용합니다. 타일 전체가 클릭 영역일 수도, 타일 내부에 클릭 가능한 요소를 포함할 수도 있습니다.
       </p>
-      <ul>
-        <li>모든 contentbox를 tile로 묶어두는 방법이 필요할지도.</li>
-      </ul>
 
       <h2 class="article-subhead">Optical adjustment</h2>
       <ul>
@@ -1458,7 +1479,7 @@
         <li>A tooltip is not considered to be a popup in this context, as it is not interactive.</li>
       </ul>
 
-      <h2 class="article-subhead">Todolist</h2>
+      <h2 class="article-subhead">Memo</h2>
       <p>
         페이지 로딩 시점에 열려 있는 경우 doorhanger/pointing arrow 필요. 하지만 그것은 툴팁이 아닌 새로운 컴포넌트로 정의할 필요가 있겠다. 하지만
         이것이 필요 없도록 인터페이스를 설계하는 것이 best.
