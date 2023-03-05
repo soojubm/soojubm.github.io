@@ -21,10 +21,10 @@
 @media (--small) {
   .component-example {margin-top:2rem;margin-bottom:2rem;padding-top:1rem;padding-bottom:1rem;border-radius:0;
   }
-  .component-example > *,
-  .article .tile-elevated,
-  .article .tile-flat {
-  margin-left:-5vw;margin-right:-5vw;padding-left:5vw;padding-right:5vw;border-radius:0;
-  }
+  // .component-example > *,
+  // .article .tile-elevated,
+  // .article .tile-flat {
+  // margin-left:-5vw;margin-right:-5vw;padding-left:5vw;padding-right:5vw;border-radius:0;
+  // }
   // .component-example > *:first-child {margin-top:-1.75rem;}
 }
