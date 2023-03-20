@@ -15,7 +15,7 @@ const scrollspy = ({ menusSelector: menusClass, sectionsSelector: sectionsClass 
     item.addEventListener('click', event => {
       event.preventDefault()
 
-      const targetOffsetY = sections[index].offsetTop - 16 * 4
+      const targetOffsetY = sections[index].offsetTop - 32 * 2
       // const targetOffsetY = sections[index].offsetTop + sections[index].clientHeight
       window.scrollTo(0, targetOffsetY)
       // const targetOffsetY = document.querySelector(element.getAttribute('href')).getBoundingClientRect().top
@@ -28,22 +28,22 @@ const scrollspy = ({ menusSelector: menusClass, sectionsSelector: sectionsClass 
     let activeOffsetLeft
 
     sections.forEach((section, index) => {
+      // todo intersectionObser
       const isObserved = section.offsetTop <= window.pageYOffset + 100
       if (!isObserved) return
 
-      const targetMenu = menus[index] as any
-      if (!targetMenu) return
+      const targetItem = menus[index] as any
+      if (!targetItem) return
 
       menus.forEach(menu => menu.classList.remove('is-active'))
-      targetMenu.classList.add('is-active')
+      targetItem.classList.add('is-active')
 
-      activeOffsetLeft = targetMenu.offsetLeft + targetMenu.clientWidth / 2
+      activeOffsetLeft = targetItem.offsetLeft + targetItem.clientWidth / 2
     })
 
     const buttonContainer = menus[0]?.parentElement as HTMLElement
-    if (!buttonContainer) return
     // if(buttonContainer.scrollLeft < document.body.offsetWidth / 2) return
-    buttonContainer.scroll({
+    buttonContainer?.scroll({
       left: activeOffsetLeft - buttonContainer.offsetWidth / 2,
       top: 0,
       behavior: 'smooth',

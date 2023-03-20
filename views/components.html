@@ -103,7 +103,7 @@
   </section> -->
 
   <header class="" role="banner" style="padding: 0 var(--grid-margin); margin-left: -40px">
-    <div class="chat" style="max-width: 720px; margin: 2rem 0 var(--space-3)">
+    <div class="chat" style="margin: 2rem 0 var(--space-3)">
       <figure class="chat-avatar"></figure>
       <div class="chat-bubble is-primary">
         <b>Components</b>
@@ -197,7 +197,6 @@
         <!-- <span class="avatar" style="background: var(--color-background-weak); position: absolute; left: 0; top: 0">🐰</span> -->
         <h1 class="article-title">Avatars</h1>
       <p class="article-description">개체(유저, 회사, 프로젝트 등)를 대표하는 시각 정보입니다. 인접한 정보 더미 중 최상위 위계로서 정보의 주체.</p>
-      <p>TODO: 아바타가 클릭 가능한 요소일 때, 클릭을 보조하는 시각 정보일 떄의 형태를 구분하기.</p>
       </header>
       <div class="component-example">
         <article class="tile-flat" style="display: flex; gap: 0.5rem">
@@ -254,6 +253,8 @@
       <ul>
         <li>icon button, icon indicator, entity avatar, menu item avatar(icon)</li>
         <li>이미지, 텍스트, 아이콘, 이모지를 포함할 수 있습니다.</li>
+        <li>TODO: 아바타가 클릭 가능한 요소일 때, 클릭을 보조하는 시각 정보일 떄의 형태를 구분하기.</li>
+
         <!-- <li>현재 entity가 card vertica 형태</li> -->
         <!-- <li>memeo. medium. 이하의 크기에 항상 align-items:center. 텍스트 더미가 두 줄로 제공되지 않는다.</li> -->
         <!-- <li>pagination item은 chip과 같은 size token을 사용하지만 chip도 avatar도 아닙니다.</li> -->
@@ -385,25 +386,52 @@
         </div>
       </section>
 
-      <h2 class="article-subhead">Best practices</h2>
-      <p>메뉴 아이템의 우측는 액션 또는 액션 인티케이터만 위치할 수 있습니다. 'new' 등 태그 컴포넌트를 배치하지 마세요. (case 토스. 우측 new)</p>
+       <!-- <section style="display: flex; gap: 1rem; justify-content: center;">
+    <div class="tile-flat" style="width: 50%; padding: 2rem 2rem 4rem; border: 0; background-color: var(--color-naver)">
+      <h1 class="article-subhead" style="margin-top: 0">Guideline scope</h1>
+      <p>description.</p>
+      <div class="chat" style="max-width: 80%; margin: 2rem auto 0">
+        <figure class="chat-avatar"></figure>
+        <div class="chat-bubble">
+          <p>namespace는 서드 파티 라이브러리와 충돌을 방지하기 위해 사용합니다. 프로덕션이 아니기 때문에 여기에서는 namespace를 생략했습니다.</p>
+          <p>memo: dashboard 등 회색 배경이 들어간 페이지에서는 border 등 조절되어야 한다...</p>
+          <p>--[namespace]-[component / category]-[attribute]-[status]</p>
+        </div>
+      </div>
+    </div>
+    <div class="tile-flat" style="width: 50%; padding: 2rem 2rem 4rem; border: 0; background-color: var(--color-twitter)">
+      <h1 class="article-subhead" style="margin-top: 0">Naming guidelines</h1>
+      <p>description.</p>
+      <div class="chat" style="max-width: 80%; margin: 2rem auto 0">
+        <figure class="chat-avatar"></figure>
+        <div class="chat-bubble">
+          <p>memo: dashboard 등 회색 배경이 들어간 페이지에서는 border 등 조절되어야 한다...</p>
+          <p>--[namespace]-[component / category]-[attribute]-[status]</p>
+        </div>
+      </div>
+    </div>
+  </section> -->
 
-      <ul>
+
+      <!-- <h2 class="article-subhead">Best practices</h2> -->
+      <p class="article-kicker">메뉴 아이템의 우측는 액션 또는 액션 인티케이터만 위치할 수 있습니다. 'new' 등 태그 컴포넌트를 배치하지 마세요. (case 토스. 우측 new)</p>
+
+      <!-- <ul>
         <li>
           모든 menuitem container가 clickable은 아니다. => 액션 버튼이 따로 존재할 수도 있어야 한다. 이 정보가 중요한 이유 hover 상태
           표현을 위해.
         </li>
-      </ul>
+      </ul> -->
 
       <!-- <p>listitem은 li라서 제거함</p> -->
 
-      <h2 class="article-subhead">Anatomy</h2>
+      <!-- <h2 class="article-subhead">Anatomy</h2>
       <p>Menu -> MenuButton(Trigger) / MenuList - MenuItem, MenuLink</p>
       <ul>
         <li>MenuItemAvatar. sizes: large | medium</li>
         <li>MenuHelper. role: setting-item. filter-item.</li>
         <li>MenuLink.</li>
-      </ul>
+      </ul> -->
 
       <h2 class="article-subhead">Props</h2>
       <dl>
@@ -434,7 +462,6 @@
     <article class="article js-observer js-scrollspy-section">
       <h1 class="article-title">Buttons</h1>
       <p class="article-description">과업 수행을 위한 페이지 이동, 데이터 제출 등 사용자 여정의 핵심적인 액션입니다.</p>
-      <p>TODO: utton과 chip을 통합.</p>
 
       <section class="component-example">
         <div class="tile-flat" role="menu">
@@ -464,14 +491,24 @@
         </div>
       </section>
 
-      <h2 class="article-subhead">Best practices</h2>
-      <p>버튼은 페이지 내에서 여러 번 반복될 수 없는 최종적인 인터렉션입니다. 단, 전송이 실패하는 경우에는 여러 번 반복해서 실행할 수 있습니다.</p>
 
-      <h2 class="article-subhead">Feedback needed</h2>
-      <p>
-        실행 후 피드백합니다. 물리적인 인터페이스의 출현 뿐 아니라 예측할 수 있는 페이지 이동이나 페이지 새로고침, 정보 구조의 변화도 피드백으로
-        취급될 수 있습니다. (bad case. 인스타그램의 로그인 성공 toast)
+      <p class="article-kicker">
+        <b>feedback needed</b>
+          실행 후 피드백합니다. 물리적인 인터페이스의 출현 뿐 아니라 예측할 수 있는 페이지 이동이나 페이지 새로고침, 정보 구조의 변화도 피드백으로
+          취급될 수 있습니다. (bad case. 인스타그램의 로그인 성공 toast)
       </p>
+      <p class="article-kicker" style="margin-top:var(--space-2);">
+        <b>expectable</b>
+        CTA의 레이블은 사용자가 다음에 일어날 일을 예측 가능하도록 작성하세요. 툴팁으로 부연하거나, 보조 텍스트로 실행 유도나 실행 결과를 가이드할 필요가 없어야 합니다.
+      </p>
+
+      <h2 class="article-subhead">Best practices</h2>
+      <ul>
+        <li>TODO: utton과 chip을 통합.</li>
+        <li>버튼은 페이지 내에서 여러 번 반복될 수 없는 최종적인 인터렉션입니다. 단, 전송이 실패하는 경우에는 여러 번 반복해서 실행할 수 있습니다.</li>
+
+        <li>large 버튼은 프로모션 페이지의 call to action으로 용법을 제한</li>
+      </ul>
 
       <h2 class="article-subhead">Icon guidelines</h2>
       <ul>
@@ -479,14 +516,7 @@
         <li>기표로 정의하지 않은 아이콘을 레이블과 함께 장식적인 용도로 사용하지 마세요.</li>
       </ul>
 
-      <h2 class="article-subhead">Don'ts (in progressing)</h2>
-
-      <ul>
-        <li>
-          CTA의 레이블은 사용자가 다음에 일어날 일을 예측 가능하도록 작성하세요. 툴팁으로 부연하거나, 보조 텍스트로 실행 유도나 실행 결과를 가이드할 필요가 없어야 합니다.
-        </li>
-        <li>large 버튼은 프로모션 페이지의 call to action으로 용법을 제한</li>
-      </ul>
+      <!-- <h2 class="article-subhead">Don'ts (in progressing)</h2> -->
       <!-- <li>memo: secondary style과 large size의 사용 빈도 낮음.</li> -->
       <!-- <p><b>text.</b> 버튼은 버튼 처럼 보이지 않을 수 있기 때문에 특정 패턴에서만 사용하세요.</li> -->
       <!-- <p>
@@ -498,11 +528,11 @@
       <ul data-align="horizontal">
         <li>최소 2자, 최대 8자의 한글</li>
         <li>사용자 시점 (ex 보내기 => 받기)</li>
-        <li>레이블 생략(truncated) 불가</li>
+        <li>레이블 줄임?(truncated) 불가</li>
         <li>동사 포함</li>
       </ul>
 
-      <h2 class="article-subhead">Component tokens</h2>
+      <!-- <h2 class="article-subhead">Component tokens</h2>
       <div class="stack">
         <small class="tag">--button-color-background</small>
         <small class="tag">--button-color-border</small>
@@ -513,7 +543,7 @@
         <small class="tag">--button-size-min-width</small>
         <small class="tag">--button-font-size</small>
         <small class="tag">--button-font-weight</small>
-      </div>
+      </div> -->
 
       <h2 class="article-subhead">Props</h2>
       <dl>
@@ -622,8 +652,10 @@
         </div>
       </section>
 
-      <h2 class="article-subhead">Best practices</h2>
-      <p>맥락이 다른 chip을 그룹으로 제공할 수 있습니다. 이 때 단일선택, 다중선택, 삭제여부, 펼침메뉴 등의 기표를 충분히 제공하세요.</p>
+      <!-- <h2 class="article-subhead">Best practices</h2> -->
+      <p class="article-kicker">
+        <b>groupable</b>
+        맥락이 다른 chip을 그룹으로 제공할 수 있습니다. 이 때 단일선택, 다중선택, 삭제여부, 펼침메뉴 등의 기표를 충분히 제공하세요.</p>
 
       <!-- <li>changelog. dropdown을 칩과 분리. 이 디자인 시스템에서는 같은 형태를 사용하지만 배경색을 뺀 형태 케이스 고려해보기.</li> -->
       <!-- <li>changelog. icon button은 clickable이기 때문에 아바타가 아니라 칩을 mixin. 2개의 사이즈로 확장. => chip container style</li> -->
@@ -661,13 +693,8 @@
         <li>Action with icon</li>
       </ul> -->
 
-      <h2 class="article-subhead">Sorting<br />콘텐츠 정렬</h2>
-      <p>
-        정렬을 위한 옵션 목록을 chip group으로 제공하지 마세요. expandable로 현재 정렬 상태만 요약 표기하세요. (bad case: 2022.04 구글 지도 바뀐 것)
-      </p>
-
-      <h2 class="article-subhead">actionable chip<br />Keywords search</h2>
       <div class="tile-flat">
+        <h2 class="article-subhead" style="margin-top:0;">actionable chip<br />Keywords search</h2>
         <div class="keywords-group" role="group">
           <button class="keywords-group-keyword">
             <span class="chip-label">로얄테넌바움</span>
@@ -683,12 +710,12 @@
           </button>
         </div>
       </div>
-      <h2 class="article-subhead">checkable chip<br />single selection - Contents filtering</h2>
-      <p>
+      <!-- <p>
         단일 칩으로 존재하지 않는다. 콘텐츠 필터링을 위한 칩 그룹에서, 액티브 상태에 브랜드 컬러를 쓰지 않는 경향. 콘텐츠 탐색이 cta. 눈에 띄지 않는
         무채색 활용이 높아짐.
-      </p>
+      </p> -->
       <div class="tile-flat">
+        <h2 class="article-subhead" style="margin-top:0;">checkable chip<br />single selection - Contents filtering</h2>
         <div class="stack" role="group" data-scroll="vertical">
           <button class="chip js-toggle is-active">
             <span class="chip-label">전체</span>
@@ -698,8 +725,8 @@
           </button>
         </div>
       </div>
-      <h2 class="article-subhead">multiple selections with check</h2>
       <div class="tile-flat">
+        <h2 class="article-subhead" style="margin-top:0">multiple selections with check</h2>
         <div class="stack" data-scroll="vertical" aria-multiselectable="true">
           <button class="chip is-active" aria-selected="true" style="background-color: var(--green100)">
             <figure class="chip-icon" style="background: none !important">
@@ -719,9 +746,9 @@
         </div>
       </div>
 
-      <h2 class="article-subhead">Expandable chip<br /></h2>
-      <p>글자수 제한. 모달로 열릴 수 있어서, 드롭다운은 제거함. dropdown/overflow/pulldown. sorting contents</p>
+      <!-- <p>글자수 제한. 모달로 열릴 수 있어서, 드롭다운은 제거함. dropdown/overflow/pulldown. sorting contents</p> -->
       <div class="tile-flat">
+      <h2 class="article-subhead" style="margin-top:0;">Expandable chip<br /></h2>
         <div class="stack">
           <div class="dropdown">
             <button class="chip js-toggle" aria-expanded="true">
@@ -827,9 +854,6 @@
         표시합니다.
       </p>
 
-      <h2 class="article-subhead">Accessibility</h2>
-      <p>'여기', '클릭', '확장' 등 시각에 의존한 어휘로 작성하지 마세요.</p>
-
       <h2 class="article-subhead">Props</h2>
       <dl>
         <dt>style</dt>
@@ -882,23 +906,27 @@
         </div>
       </section>
 
-      <h2 class="article-subhead">Best practices</h2>
-      <ul>
-        <li>non-clickable<span hidden>triggering interaction</span></li>
-        <!-- <li>Primary style 하나만.</li> -->
-      </ul>
 
-      <h2 class="article-subhead">Tag group</h2>
-      <p>
-        태그 그룹은 4개 이상의 태그를 포함하지 마세요. 태그는 <mark>핵심 키워드를 요약</mark>하여 사용자의 콘텐츠 탐색과 선택을 돕는 역할입니다. 너무
+      <p class="article-kicker">
+        <b>groupable</b>4개 이상의 태그로 태그 그룹을 구성하지 마세요. 태그는 <mark>핵심 키워드를 요약</mark>하여 사용자의 콘텐츠 탐색과 선택을 돕는 역할입니다. 너무
         많은 태그 목록을 노출하는 것은 콘텐츠 탐색을 어렵게 할 수 있습니다.
       </p>
+      <p class="article-kicker">2단어 이하의 형용사 또는 명사</p>
 
-      <h2 class="article-subhead">Editing checklist</h2>
+
+      <!-- <li>Primary style 하나만.</li> -->
+
+      <!-- <h2 class="article-subhead">Best practices</h2>
+      <ul>
+        <li>non-clickable<span hidden>triggering interaction</span></li>
+        <li>Groupable</li>
+      </ul> -->
+
+      <!-- <h2 class="article-subhead">Editing checklist</h2>
       <ul data-align="horizontal">
-        <li>형용사 또는 명사</li>
+        <li></li>
         <li>최대 2단어</li>
-      </ul>
+      </ul> -->
 
       <h2 class="article-subhead">Props</h2>
       <dl>
@@ -907,8 +935,6 @@
         <dt>label</dt>
         <dd>string</dd>
       </dl>
-
-      <h2 class="article-subhead">Hashtags</h2>
     </article>
 
     <article class="article js-observer js-scrollspy-section">
@@ -935,7 +961,7 @@
       </section>
 
       <h2 class="article-subhead">Best practices</h2>
-      <p>변경한 상태는 즉시 실행되어 서버에 요청되거나 클라이언트에 저장되어야 합니다. 최종적인 저장 버튼이 필요하지 않습니다.</p>
+      <p>저장 버튼 없이 즉시 실행합니다.</p>
 
       <ul>
         <li>스위치의 왼쪽과 오른쪽에 각각 레이블을 배치하여 콘텐츠 스위칭으로 사용하지 마세요.</li>
@@ -1094,16 +1120,20 @@
         </fieldset>
       </section>
 
-      <h2 class="article-subhead">Best practices</h2>
-      <ul>
-        <li>옵션 목록이 5개 이하일 때만 라디오그룹(항상 그룹으로 사용)을 제공합니다. 5개 이상의 옵션 목록은 select나 chip group으로 제공하세요.</li>
-      </ul>
+      <!-- TODO 단락의 구조도 컨테이너가 있어야 변경이 쉽다. -->
+      <p class="article-kicker">
+        <b>groupable</b>
+        옵션 목록이 5개 이하일 때만 라디오그룹(항상 그룹으로 사용)을 제공합니다. 5개 이상의 옵션 목록은 select나 chip group으로 제공하세요.
+      </p>
+      <p class="article-kicker">
+        <b>Default Value</b>
+        최상단의 옵션을 기본 선택으로 제공합니다. 설정 등에서 사용자가 직접 선택한 이력이 있는 경우.
+      </p>
+      <p class="article-kicker">
+        <b>Alignment</b>
+        항상 세로 정렬합니다.
+      </p>
 
-      <h2 class="article-subhead">Default Value</h2>
-      <p>최상단의 옵션을 기본 선택으로 제공합니다. 설정 등에서 사용자가 직접 선택한 이력이 있는 경우.</p>
-
-      <h2 class="article-subhead">Alignment</h2>
-      <p>항상 세로 정렬합니다.</p>
 
       <!-- <h2 class="article-subhead">Use cases</h2>
       <ul>
@@ -1399,8 +1429,7 @@
       </ul>
 
       <!-- <li>todo 선택 상태의 타일 디자인.</li> -->
-      <br /><br />
-      <div style="display: flex">
+      <!-- <div style="display: flex">
         <div style="width: 50%">
           <span class="icon-indicator is-positive" data-size="small">
             <span class="material-symbols-outlined" style="color: var(--color-primary)">check</span>
@@ -1419,7 +1448,7 @@
             <li>페이지 레벨의 타이틀과 디스크립션을 타일로 만들지 마세요.</li>
           </ul>
         </div>
-      </div>
+      </div> -->
       <!-- <h2 class="article-subhead">todo Media</h2>
       <p>카드 썸네일은 2:1. 블리딩 시 높이를 고정해야 한다.</p> -->
     </article>

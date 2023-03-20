@@ -17,10 +17,13 @@
 .article-aka .tag {margin-right:var(--space-3);}
 
 .article-title {@include text-title;}
-.article-description {margin:0 0 2rem;@include text-title;font-weight:var(--font-weight-normal);}
+.article-description {max-width:100% !important;margin:0 0 2rem;@include text-title;font-weight:var(--font-weight-normal);}
 // .article ul {margin:var(--space-after-subhead) 0 2rem;}
 
-.article p, ul {max-width: 720px;}
+.article p, .article ul, .article dl {max-width: 640px;}
+
+.article-kicker {max-width: 800px !important;font-size:var(--font-size-large);color:var(--color-text);line-height:var(--font-line-height-large);}
+.article-kicker b {margin-right:var(--space-4);font-weight: var(--font-weight-bold);color:var(--color-primary);}
 
 .article-dont {padding:1rem;border-radius:var(--radius);background:var(--red100);}
 
@@ -335,7 +338,8 @@
 .chat-bubble figure {}
 
 .chat-bubble p, .chat-bubble li {
-  line-height: var(--font-line-height);
+  // line-height: var(--font-line-height);
+  line-height: 1.6; // 예외 케이스
 }
 .chat-bubble + .chat-bubble {margin-top:var(--space-2);}
 
@@ -564,7 +568,7 @@
   flex-wrap: wrap;
   margin: 3rem -5vw 3.5rem;
   padding: 4rem var(--grid-margin);
-  background: var(--color-accent);
+  background: var(--color-background-weak);
   border-radius: var(--radius);
   box-sizing: border-box;
   position: relative;
@@ -588,7 +592,6 @@
     width: 100%;
   }
   // .article .tile-flat {margin-left:-5vw;margin-right:-5vw;padding-left:5vw;border-left:0;border-right:0;border-radius: 0;}
-
 }
 
 @media (--tiny) {

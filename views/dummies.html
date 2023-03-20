@@ -1,23 +1,12 @@
 <main class="component" style="overflow: hidden">
-  <!-- <section style="padding:4rem 5vw;">
-    <div class="pill" style="border:none;background:gold;transform:rotate(-5deg);">안녕안녕</div>
-    <div class="pill" style="margin-left:2rem;background:var(--color-background);">
-      테스트 <span style="position:absolute;right:1rem;top:-2.5rem;">🚧</span>
-    </div>
-  </section>
-  <style>
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      padding: 0.5rem 5rem .1rem;
-      border-radius: 200px;
-      border: 1px solid;
-      font-size: 3rem;
-      font-weight: var(--font-weight-bold);
-      box-sizing: border-box;
-      position: relative;
-    }
-  </style> -->
+  <aside style="position: fixed; top: 6rem; left: calc(50% + var(--width-sidemenu) - var(--grid-margin)); transform: translateX(-50%); z-index: 8">
+    <button
+      style="padding: 0.5rem 1rem; border-radius: 50px; box-shadow: var(--shadow); background: var(--color-primary); color: var(--color-text-weak)"
+      onclick="javascript:alert('샘플 유아이')"
+    >
+      1월 1일 변경된 내용 보기
+    </button>
+  </aside>
 
   <!-- <button aria-haspopup="true" aria-expanded="false">
     Difficulty
@@ -52,15 +41,15 @@
     <button class="subscribe-submit" type="submit">뉴스레터 구독</button>
   </form> -->
 
-    <!-- <div class="tile-elevated" data-size="huge" style="max-width:480px;">
-      <figure class="avatar" data-size="huge" style="float:right;"></figure>
+    <div class="tile-elevated" data-size="huge" style="max-width: 480px">
+      <figure class="avatar" data-size="huge" style="float: right"></figure>
       <h3>Michael Jackson</h3>
       <small>New York City, USA</small>
-      <p style="line-height:var(--font-line-height);">
+      <p style="line-height: var(--font-line-height)">
         Compellingly revolutionize customized collaboration and idea-sharing rather than corporate testing procedures. Holisticly drive technically
         sound e-business before cross functional technologies.
       </p>
-    </div> -->
+    </div>
 
     <article class="card has-clickable" role="listitem" style="max-width: 400px; z-index: 1" data-align="vertical">
       <figure class="card-thumbnail"><img src="/public/images/springsteen.jpg" alt="" /></figure>
@@ -75,17 +64,13 @@
         <span class="card-tags-item">UI</span>
         <span class="card-tags-item">React</span>
       </div>
-
-      <!-- <div class="card-byline" style="margin:var(--space-3) 0;">
+      <div class="card-byline" style="margin: var(--space-3) 0">
         <figure class="card-byline-avatar"><img src="/public/images/springsteen.jpg" alt="" /></figure>
         <span class="card-byline-name">수줍이</span>
         <time class="card-date">2017. 12. 21.</time>
-      </div> -->
-
+      </div>
       <span class="card-category">카테고리</span>
-
       <hr />
-
       <button class="menu-item" data-size="large" style="margin: var(--space-3) 0 0 0">
         <figure class="menu-item-avatar" style="background-image: none">🍊</figure>
         <span class="menu-item-name">퓨어 오렌지 주스</span>
@@ -366,14 +351,14 @@
 
     <section style="max-width: 640px">
       <section class="dashboard-">
-        <div class="dashboard-item tile-elevated" style="width: var(--width-tiny); padding: 1rem">
+        <div class="dashboard-item overview-item tile-elevated" style="width: var(--width-tiny); padding: 1rem">
           <div class="dashboard-item-label" style="font-size: var(--font-size-medium)">수신</div>
           <span class="dashboard-item-tag tag" style="position: absolute; right: 1rem; top: 0.875rem">태그</span>
           <b class="dashboard-item-value" style="font-size: var(--font-size-huge)">
             1,508<small style="margin: 0 0 0 0.25rem; font-size: var(--font-size-medium); vertical-align: super">90%</small>
             <!-- <i>icon</i> -->
           </b>
-          <div class="dashboard-item-graph graph-bar" style="margin: var(--space-4) 0 0 0"><b style="width: 68%"></b></div>
+          <div class="dashboard-item-graph graph-bar" style="margin: var(--space-3) 0 0 0"><b style="width: 68%"></b></div>
         </div>
       </section>
 
@@ -585,7 +570,7 @@
           코멘트는 노출 순서와 정렬 기능 여부 갯수, 답글 스타일, 최초 노출형태, 신고/수정/삭제/아바타는 우선순위를 낮게 설정하고, 리뷰와 코멘트는
           비슷한 구조이지만 별도의 컴포넌트로 관리되어야 한다. 또 있을까? <button style="color: var(--color-primary)">자세히보기</button>
         </p>
-        <button class="menu-item" data-tile="elevated" style="display: flex; align-items: center">
+        <button class="menu-item" data-tile="elevated">
           <figure class="menu-item-avatar material-symbols-outlined">🦄</figure>
           <span class="menu-item-label">샘플 유아이</span>
           <i class="menu-item-helper material-symbols-outlined">arrow_forward</i>

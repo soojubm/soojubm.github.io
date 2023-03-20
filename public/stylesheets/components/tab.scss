@@ -1,21 +1,20 @@
 
-[role=tablist] {@include tile-elevated-tiny;display:flex;}
+[role=tablist] {@include tile-elevated-tiny;box-shadow:none;background:var(--color-background-weak);display:flex;}
 
-.tablist {}
+.tablist {margin:0 0 var(--space-3) 0;}
 
-.tablist-tab {display:flex;align-items:center;justify-content:center;height:var(--size-medium);padding:1px var(--space-4) var(--adjust-label-line);color:var(--color-text-light);position:relative;z-index:var(--zindex-default);}
-.tablist-tab[aria-selected=true] {color:var(--color-text-weak);}
-// .tablist-tab[aria-selected=true]:before {content:'✓';margin:0 var(--space-2) 0 0;}
+.tablist-tab {display:flex;align-items:center;justify-content:center;flex:auto;height:var(--size-medium);color:var(--color-text-light);font-weight:var(--font-weight-bold);position:relative;z-index:var(--zindex-default);}
+.tablist-tab[aria-selected=true] {color:var(--color-text);}
 .tablist-tab-label {padding:0 0 var(--adjust-label-line) 0;}
 .tablist-tab-badge {}
-.tablist-indicator {display:block;height:calc(100% - .5rem);background:var(--color-background-strong);border-color:var(--color-background-strong);border-radius:var(--radius);position:absolute;transition:all var(--duration);}
+.tablist-indicator {display:block;height:calc(100% - .5rem);background:var(--color-background);box-shadow:var(--shadow);border-color:var(--color-background-strong);border-radius:var(--radius);position:absolute;transition:all var(--duration);}
 // .tablist-tab:nth-child(1)[aria-selected=true] ~ .tablist-indicator {transform: translateX(clac(70px * 1))}
 
-// TODO: .type-t => tablist
-.tablist {margin:0 0 var(--space-3) 0;padding:0 !important;border:none;border-bottom:var(--border);border-radius:0;box-shadow:none;}
-.tablist .tablist-indicator {background:none;border-radius:0;border:0;border-bottom:3px solid var(--color-primary);bottom:-1px;}
-.tablist [role=tab] {height:48px;font-weight:bold;color:var(--color-text-light);}
-.tablist [role=tab][aria-selected=true] {color:var(--color-text);}
+// TODO: .type-t
+// .tablist {margin:0 0 var(--space-3) 0;padding:0 !important;border:none;border-bottom:var(--border);border-radius:0;box-shadow:none;}
+// .tablist .tablist-indicator {background:none;border-radius:0;border:0;border-bottom:3px solid var(--color-primary);bottom:-1px;}
+// .tablist [role=tab] {height:48px;font-weight:bold;color:var(--color-text-light);}
+// .tablist [role=tab][aria-selected=true] {color:var(--color-text);}
 
 .type-sc[role=tablist] {padding:.125rem !important;border:none;box-shadow:none;background:var(--color-background-weak);}
 .type-sc [role=tab] {width:50%;color:var(--color-text);height:var(--size-small);font-size:var(--font-size-small);}
