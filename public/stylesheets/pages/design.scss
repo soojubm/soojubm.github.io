@@ -17,13 +17,14 @@
 .article-aka .tag {margin-right:var(--space-3);}
 
 .article-title {@include text-title;}
-.article-description {max-width:100% !important;margin:0 0 2rem;@include text-title;font-weight:var(--font-weight-normal);}
+.article-description {margin:0 0 2rem;@include text-title;font-weight:var(--font-weight-normal);}
 // .article ul {margin:var(--space-after-subhead) 0 2rem;}
 
-.article p, .article ul, .article dl {max-width: 640px;}
+.article p, .article ul, .article dl {max-width: 800px;}
 
 .article-kicker {max-width: 800px !important;font-size:var(--font-size-large);color:var(--color-text);line-height:var(--font-line-height-large);}
 .article-kicker b {margin-right:var(--space-4);font-weight: var(--font-weight-bold);color:var(--color-primary);}
+.article-kicker + .article-kicker {margin: var(--space-1) 0 0 0;}
 
 .article-dont {padding:1rem;border-radius:var(--radius);background:var(--red100);}
 
@@ -200,7 +201,7 @@
   margin: 0 50px 0 0;
 
   color: var(--color-text-light);
-  font-size: 5rem;
+  font-size: var(--font-size-huge);
   font-weight: var(--font-weight-bold);
 }
 

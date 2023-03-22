@@ -73,7 +73,7 @@
 // line-height 때무네 space로 간격을 주지 않고 1rem을 줌.
 .comment-write-name {display:none;width:var(--grid-column);margin:0 0 1rem 0;}
 .comment-write-password {display:none;width:var(--grid-column);margin:0 0 1rem 0;}
-.comment-write-submit {@include button-secondary;}
+.comment-write-submit {@include button-primary;}
 .comment-write-cancel {@include button-text;margin:0 auto 0 var(--space-after-button);}
 
 .is-focused .comment-write-name {display:block;}
