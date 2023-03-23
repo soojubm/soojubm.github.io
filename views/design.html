@@ -84,39 +84,16 @@
     </div>
   </section> -->
 
-  <article class="person-list" style="margin: 1rem var(--grid-margin)">
-    <a class="story" href="#">
-      <figure class="avatar" data-size="huge" style="background-image: none">
-        <span class="material-symbols-outlined" style="font-size: 3rem; color: var(--color-text)">add_circle</span>
-      </figure>
-      <span class="story-name">추가</span>
-    </a>
-    <a class="story" href="#">
-      <figure class="avatar" data-size="huge">
-        <img src="/public/images/springsteen.jpg" alt="" />
-      </figure>
-      <span class="story-name">카테고리 1</span>
-    </a>
-    <a class="story" href="#">
-      <figure class="avatar" data-size="huge">
-        <img src="/public/images/springsteen.jpg" alt="" />
-      </figure>
-      <span class="story-name">카테고리 2</span>
-    </a>
-  </article>
-
   <!-- To simplify is to clarify -->
   <header class="hero js-observer" role="banner">
     <div class="hero-background"></div>
-    <div class="hero-eyebrow">디자인 시스템 연습</div>
-    <h1 class="hero-title ellipsis" title="overall consistency and design and development efficiency">
-      코드 환경에서 유효한 <span class="linebreak-desktop">최적의 인터페이스 구조를 만듭니다.</span>
-    </h1>
+    <!-- <div class="hero-eyebrow" style="margin-bottom: 0.75rem">디자인 시스템 연습</div> -->
+    <h1 class="hero-title ellipsis" title="overall consistency and design and development efficiency">디자인 시스템 연습</h1>
 
-    <p class="article-kicker" style="margin-top: 1.5rem">
+    <p class="article-kicker" style="margin-top: 1.75rem">
       <b>Meaningful and Trustworthy</b>
       Compellingly procrastinate focused services rather than B2C markets. Proactively incubate future-proof outsourcing before cross-platform
-      interfaces. Phosfluorescently engineer granular systems before backward-compatible functionalities. Intrinsicly maintain functionalized. Design
+      interfaces.
       <!-- should reinforce the meaning of content, not distract from it. We prioritize worthwhile communication over decoration. If an aspect of the
       design doesn’t enhance the content, we should remove it. -->
     </p>
@@ -127,11 +104,10 @@
     <p class="article-kicker">
       <b>Accessible</b>
       Compellingly procrastinate focused services rather than B2C markets. Proactively incubate future-proof outsourcing before cross-platform
-      interfaces. Phosfluorescently engineer granular systems before backward-compatible functionalities. Intrinsicly maintain functionalized.
+      interfaces.
       <!-- We create sites to welcome the widest possible audience, free of obstacles. Be mindful of the broad range of human abilities and disabilities,
       as well as the variety of devices, browsers, and networks people use to access our sites. -->
     </p>
-    <p style="margin: 1rem 0">design priciples. 디자인 시스템의 원칙과 브랜드 원칙을 잘 구분하고 있는가.</p>
     <!-- <section>
       <h3 title="Design Creativity">
         <mark>Breaking the rules</mark>
@@ -159,36 +135,319 @@
       <div class="hero-obj3"></div>
     </div> -->
   </header>
+  <!-- <p style="margin: 1rem 0">design priciples. 디자인 시스템의 원칙과 브랜드 원칙을 잘 구분하고 있는가.</p>
+  <p>naming: data-index 보다 name name을 숫자로 주면 됨. 수정을 위해. 롤에 스타일을 주지 않기. aria로 상태 표현은 좋다.</p> -->
+
+  <div class="js-tab">
+    <style>
+      .story[aria-selected='true'] figure {
+        border: 2px solid var(--green800);
+        background-color: var(--green100);
+      }
+      .story[aria-selected='true'] span {
+        color: var(--color-primary);
+      }
+
+      .design-tabpanel {
+        padding: 4rem var(--grid-margin);
+        background: var(--color-background-weak);
+      }
+    </style>
+    <article
+      class="person-list stack"
+      role="tablist"
+      data-scroll="vertical"
+      style="margin: 0rem -5vw 2rem; padding: 0 10vw; background-color: var(--color-background)"
+    >
+      <!-- <button class="story" role="tab" aria-selected="true" data-index="1">
+        <figure class="avatar" data-size="huge" style="background-image: none">
+          <span class="material-symbols-outlined" style="font-size: 3rem; color: var(--color-text)">add_circle</span>
+        </figure>
+        <span class="story-name">추가</span>
+      </button> -->
+      <button class="story" role="tab" aria-selected="true" data-index="1">
+        <figure class="avatar" data-size="huge" style="background-image: none; font-size: 2.5rem; padding-top: 0.25rem">🌏</figure>
+        <span class="story-name">공유하기</span>
+      </button>
+      <button class="story" role="tab" aria-selected="false" data-index="2">
+        <figure class="avatar" data-size="huge" style="background-image: none; font-size: 2.5rem; padding-top: 0.25rem">💀</figure>
+        <span class="story-name">키워드 목록</span>
+      </button>
+      <button class="story" role="tab" aria-selected="false" data-index="3">
+        <figure class="avatar" data-size="huge" style="background-image: none; font-size: 2.5rem; padding-top: 0.25rem">🍔</figure>
+        <span class="story-name">주문 아이템</span>
+      </button>
+      <button class="story" role="tab" aria-selected="false" data-index="pricing">
+        <figure class="avatar" data-size="huge" style="background-image: none; font-size: 2.5rem; padding-top: 0.25rem">💰</figure>
+        <span class="story-name">프라이싱?</span>
+      </button>
+      <button class="story" role="tab" aria-selected="false" data-index="rating">
+        <figure class="avatar" data-size="huge" style="background-image: none; font-size: 2.5rem; padding-top: 0.25rem">⭐</figure>
+        <span class="story-name">별점 요약?</span>
+      </button>
+      <button class="story" role="tab" aria-selected="false" data-index="public">
+        <figure class="avatar" data-size="huge" style="background-image: none; font-size: 2.5rem; padding-top: 0.25rem">⭐</figure>
+        <span class="story-name">정보 공개</span>
+      </button>
+      <button class="story" role="tab" aria-selected="false" data-index="user">
+        <figure class="avatar" data-size="huge" style="background-image: none; font-size: 2.5rem; padding-top: 0.25rem">⭐</figure>
+        <span class="story-name">유저 카드(다카드)</span>
+      </button>
+      <button class="story" role="tab" aria-selected="false" data-index="usermenu">
+        <figure class="avatar" data-size="huge" style="background-image: none; font-size: 2.5rem; padding-top: 0.25rem">⭐</figure>
+        <span class="story-name">유저 메뉴</span>
+      </button>
+    </article>
+
+    <section class="design-tabpanel" role="tabpanel" aria-hidden="false" data-index="2">
+      <article class="keywords" style="padding: 1rem">
+        <h3 class="keywords-title">지금 인기있는<br />이슈 키워드</h3>
+        <div class="keywords-group" role="group">
+          <a class="keywords-group-keyword" href="#"><span class="keywords-group-keyword-label">국정감사</span></a>
+          <a class="keywords-group-keyword" href="#"><span class="keywords-group-keyword-label">윤석열검찰총장</span></a>
+          <a class="keywords-group-keyword" href="#"><span class="keywords-group-keyword-label">조국</span></a>
+          <a class="keywords-group-keyword" href="#"><span class="keywords-group-keyword-label">뉴닉</span></a>
+          <a class="keywords-group-keyword" href="#"><span class="keywords-group-keyword-label">차별금지법</span></a>
+          <a class="keywords-group-keyword" href="#"><span class="keywords-group-keyword-label">추미매법무부장관</span></a>
+        </div>
+        <button class="menu-item" data-tile="elevated" style="margin-top: var(--space-3); margin-bottom: 0">
+          <figure class="menu-item-avatar">
+            <span class="material-symbols-outlined">search</span>
+          </figure>
+          <span class="menu-item-label">직접 검색</span>
+        </button>
+      </article>
+    </section>
+    <section class="design-tabpanel" role="tabpanel" aria-hidden="true" data-index="1">
+      <article class="share" style="width: 100%; max-width: 800px; padding: 1rem">
+        <h2 class="share-title">가족이나 친구와<br />함께 보세요!</h2>
+        <!-- <close-button></close-button> -->
+        <button class="share-item share-facebook">
+          <figure class="share-item-icon share-facebook-icon"></figure>
+          <span class="share-item-label share-facebook-label">facebook으로 공유</span>
+        </button>
+        <button class="share-item share-twitter">
+          <figure class="share-item-icon share-twitter-icon"></figure>
+          <span class="share-item-label share-facebook-label">twitter로 공유</span>
+        </button>
+        <button class="share-item share-kakao">
+          <figure class="share-item-icon share-kakao-icon"></figure>
+          <span class="share-item-label share-facebook-label">kakao talk으로 공유</span>
+        </button>
+        <hr />
+        <div class="share-copy textfield">
+          <input class="share-copy-url textfield-input" type="text" value="https://newneek.co/post/jadebabo" readonly />
+          <button class="share-copy-button js-copy" type="button" tabindex="0">복사</button>
+        </div>
+      </article>
+    </section>
+    <section class="design-tabpanel" role="tabpanel" aria-hidden="true" data-index="3">
+      <div class="order-item" style="width: 100%; max-width: 800px">
+        <header class="order-item-head">
+          <span class="tag order-item-head-type">포장</span>
+          <time class="order-item-head-time">2022. 12. 05. 15:32</time>
+          <b class="order-item-head-status">배달완료</b>
+        </header>
+        <div class="item" data-size="large" style="margin: var(--space-3) 0 var(--space-4)">
+          <figure class="item-avatar">
+            <span class="avatar-badge"></span>
+          </figure>
+          <b class="item-name">쩜순이네닭강정</b>
+          <p class="item-description" style="display: flex; align-items: center">
+            <span>떡볶이</span>
+            <span class="material-symbols-outlined" style="font-size: var(--font-size-small); margin-top: -1px"> close </span>
+            <span>5</span>
+            <!-- <span> 외 1건</span> -->
+          </p>
+        </div>
+        <section class="step is-vertical">
+          <div class="step-item is-active">
+            <span class="step-item-icon">1</span>
+            <h3 class="step-item-label">주문확인</h3>
+          </div>
+          <div class="step-item">
+            <span class="step-item-icon">2</span>
+            <h3 class="step-item-label">조리중</h3>
+          </div>
+          <div class="step-item">
+            <span class="step-item-icon">3</span>
+            <h3 class="step-item-label">배달중</h3>
+          </div>
+          <div class="step-item">
+            <span class="step-item-icon">4</span>
+            <h3 class="step-item-label">배달완료</h3>
+          </div>
+        </section>
+        <div class="stack order-item-foot">
+          <button class="chip"><span class="chip-label">재주문</span></button>
+          <button class="chip"><span class="chip-label">후기작성</span></button>
+        </div>
+        <small>네이버는 왜 주문 내역 삭제을 숨길 수 있게 했나?</small>
+      </div>
+    </section>
+
+    <section class="design-tabpanel" role="tabpanel" aria-hidden="true" data-index="rating">
+      <article class="tile-elevated" style="z-index: 1">
+        <header class="titlebar" style="padding: 0; margin-bottom: var(--space-4)">
+          <h1 class="titlebar-title">Ratings</h1>
+          <button class="titlebar-back" aria-label="이전 페이지로">
+            <span class="material-symbols-outlined">arrow_back</span>
+          </button>
+        </header>
+        <div class="statistic-item tile-flat" aria-label="별점 5개 만점에 3.9개를 받았습니다." style="text-align: center; z-index: auto">
+          <i class="statistic-label">리뷰 116만개</i>
+          <span class="statistic-value" style="margin-left: -0.5rem">⭐ 4.8</span>
+        </div>
+        <div class="graph2">
+          <b class="graph-label">5 Stars</b>
+          <div class="graph-bar"><b style="width: 68%"></b></div>
+          <span class="graph-value">68%</span>
+        </div>
+        <div class="graph2">
+          <b class="graph-label">4 Stars</b>
+          <div class="graph-bar"><b style="width: 24%"></b></div>
+          <span class="graph-value">24%</span>
+        </div>
+        <div class="graph2">
+          <b class="graph-label">3 Stars</b>
+          <div class="graph-bar"><b style="width: 0"></b></div>
+          <span class="graph-value">0%</span>
+        </div>
+        <div class="graph2">
+          <b class="graph-label">2 Stars</b>
+          <div class="graph-bar"><b style="width: 2%"></b></div>
+          <span class="graph-value">2%</span>
+        </div>
+        <div class="graph2">
+          <b class="graph-label">1 Star</b>
+          <div class="graph-bar"><b style="width: 6%"></b></div>
+          <span class="graph-value">6%</span>
+        </div>
+        <small>별 다섯개에서 점수만큼 채우는 유아이는 최근 잘 보이지 않는다.</small>
+      </article>
+    </section>
+
+    <section class="design-tabpanel" role="tabpanel" aria-hidden="true" data-index="pricing">
+      <article class="pricing-item" style="padding: 1rem">
+        <span class="tag" style="position: absolute; left: -0.5rem; top: var(--space-3)">
+          <figure class="tag-icon" role="img">🔥</figure>
+          <small class="tag-label">Most Popular</small>
+        </span>
+        <b class="pricing-item-title" style="display: block; margin: 2rem var(--space-after-subhead) 0 0">Standard</b>
+        <p class="pricing-item-description">전직대통령의 신분과 예우에 관하여는 법률로 정한다. 대법원장은 국회의 동의를 얻어 대통령이 임명한다.</p>
+        <ul>
+          <li>스토리지 2TB</li>
+          <li>Google 전문가와의 상담</li>
+          <li>회원을 위한 추가 혜택</li>
+        </ul>
+        <span class="pricing-item-price">
+          <span class="pricing-item-price-per">한 달에 한 번</span>
+          <span class="pricing-item-price-unit">₩ 6,800</span>
+          <!-- <i class="icon-bullet"></i> -->
+        </span>
+        <button class="pricing-item-upgrade">업그레이드</button>
+        <button class="pricing-item-more">And More...</button>
+      </article>
+    </section>
+
+    <section class="design-tabpanel" role="tabpanel" aria-hidden="true" data-index="public">
+      <article class="access tile-elevated" style="z-index: 1">
+        <header class="titlebar" style="display: block; padding: 0">
+          <button class="titlebar-back">
+            <figure class="chip material-symbols-outlined">close</figure>
+          </button>
+          <h1 class="titlebar-title" style="margin: 1rem 0; position: relative; left: auto; transform: translateX(0)">공개 대상 선택</h1>
+        </header>
+        <div class="menu-item" data-size="large">
+          <figure class="menu-item-avatar material-symbols-outlined">public</figure>
+          <span class="menu-item-label">전체 공개</span>
+          <span class="menu-item-description">Facebook 안팎의 모든 사람</span>
+        </div>
+        <div class="menu-item is-active is-hoverable" data-size="large">
+          <figure class="menu-item-avatar material-symbols-outlined">group</figure>
+          <span class="menu-item-label">친구만</span>
+          <span class="menu-item-description">회원님의 Facebook 친구</span>
+          <div class="menu-item-action material-symbols-outlined" style="color: var(--green800)">radio_button_checked</div>
+        </div>
+        <div class="menu-item" data-size="large" role="menuitem">
+          <figure class="menu-item-avatar material-symbols-outlined">lock</figure>
+          <span class="menu-item-label" style="line-height: var(--size-large)">나만 보기</span>
+          <!-- <p class="item-description">부끄러우니까</p> -->
+        </div>
+      </article>
+    </section>
+
+    <section class="design-tabpanel" role="tabpanel" aria-hidden="true" data-index="user">
+      <article class="tile-elevated">
+        <figure class="user-avatar" style="width: var(--size-large); height: var(--size-large)"></figure>
+        <h2 class="user-name">이경수</h2>
+        <div class="user-id">soojubm@gmail.com</div>
+        <div class="user-id">010 3121 7045</div>
+        <div class="user-job">UI Designer</div>
+        <button class="chip" style="position: absolute; right: 1rem; top: 1rem">
+          <span class="chip-label">구직 중</span>
+        </button>
+        <div class="statistic" data-size="small" style="justify-content: left; margin-left: 0">
+          <div class="statistic-item" onclick="javascript:alert('샘플 유아이에요!')">
+            <i class="statistic-label">팔로워</i>
+            <span class="statistic-value">0</span>
+          </div>
+          <i class="icon-bullet"></i>
+          <div class="statistic-item" onclick="javascript:alert('샘플 유아이에요!')">
+            <i class="statistic-label">팔로잉</i>
+            <span class="statistic-value">88</span>
+          </div>
+        </div>
+        <article class="" style="display: flex; align-items: center; margin-bottom: 0">
+          <figure>🥺</figure>
+          <span class="avatargroup-label">이경수님을 팔로우하고 있는 친구가 없습니다.</span>
+        </article>
+      </article>
+    </section>
+
+    <section class="design-tabpanel" role="tabpanel" aria-hidden="true" data-index="usermenu">
+      <article class="tile-elevated" style="z-index: 1">
+        <a class="user" href="#settings">
+          <figure class="user-avatar">
+            <em class="user-avatar-change"></em>
+          </figure>
+          <h2 class="user-name">soojubm</h2>
+          <div class="user-email">soojubm@gamil.com</div>
+          <div class="user-myinfo">내 프로필 관리 - profile menu</div>
+        </a>
+        <hr role="separator" style="margin-left: -0.75rem; margin-right: -0.75rem" />
+        <button class="menu-item js-darkmode" role="menuitem" title="change theme">
+          <figure class="menu-item-avatar material-symbols-outlined">nights_stay</figure>
+          <span class="menu-item-label">어둡게 보기</span>
+          <div class="menu-item-action">
+            <span class="switch">
+              <input type="checkbox" id="dark2" name="" role="switch" />
+              <label for="dark2" style="padding-left: 48px"></label>
+            </span>
+          </div>
+        </button>
+        <button class="menu-item" title="sign out" role="menuitem">
+          <figure class="menu-item-avatar material-symbols-outlined">logout</figure>
+          <span class="menu-item-label">고객센터 및 도움말</span>
+        </button>
+        <hr role="separator" style="margin-left: -0.75rem; margin-right: -0.75rem" />
+        <button class="menu-item" title="sign out" role="menuitem">
+          <figure class="menu-item-avatar material-symbols-outlined">logout</figure>
+          <span class="menu-item-label">로그아웃</span>
+        </button>
+        <hr role="separator" style="margin-left: -0.75rem; margin-right: -0.75rem" />
+        <footer class="user-footer" style="margin: -0.25rem 0 0 0">
+          <a href="#">개인정보처리방침</a>
+          <i class="icon-bullet"></i>
+          <a href="#">서비스 약관</a>
+        </footer>
+      </article>
+    </section>
+  </div>
 
   <div style="padding: 0 var(--grid-margin)">
     <section class="sample-container" style="margin-top: 0">
       <div class="column">
-        <article class="tile-elevated">
-          <figure class="user-avatar" style="width: var(--size-large); height: var(--size-large)"></figure>
-          <h2 class="user-name">이경수</h2>
-          <div class="user-id">soojubm@gmail.com</div>
-          <div class="user-id">010 3121 7045</div>
-          <div class="user-job">UI Designer</div>
-          <button class="chip" style="position: absolute; right: 1rem; top: 1rem">
-            <span class="chip-label">구직 중</span>
-          </button>
-          <div class="statistic" data-size="small" style="justify-content: left; margin-left: 0">
-            <div class="statistic-item" onclick="javascript:alert('샘플 유아이에요!')">
-              <i class="statistic-label">팔로워</i>
-              <span class="statistic-value">0</span>
-            </div>
-            <i class="icon-bullet"></i>
-            <div class="statistic-item" onclick="javascript:alert('샘플 유아이에요!')">
-              <i class="statistic-label">팔로잉</i>
-              <span class="statistic-value">88</span>
-            </div>
-          </div>
-          <article class="" style="display: flex; align-items: center; margin-bottom: 0">
-            <figure>🥺</figure>
-            <span class="avatargroup-label">이경수님을 팔로우하고 있는 친구가 없습니다.</span>
-          </article>
-        </article>
-
         <header class="greeting" data-temp="이 패턴에서 아바타는 시각 정보가 아니라 링크로 사용">
           <figure class="greeting-avatar" style="font-size: 1.5rem">🐶</figure>
           <h1 class="greeting-title">Hello, Stranger<i style="font-style: italic">!</i></h1>
@@ -247,43 +506,6 @@
           </div>
         </article>
 
-        <article class="tile-elevated" style="z-index: 1">
-          <a class="user" href="#settings">
-            <figure class="user-avatar">
-              <em class="user-avatar-change"></em>
-            </figure>
-            <h2 class="user-name">soojubm</h2>
-            <div class="user-email">soojubm@gamil.com</div>
-            <div class="user-myinfo">내 프로필 관리 - profile menu</div>
-          </a>
-          <hr role="separator" style="margin-left: -0.75rem; margin-right: -0.75rem" />
-          <button class="menu-item js-darkmode" role="menuitem" title="change theme">
-            <figure class="menu-item-avatar material-symbols-outlined">nights_stay</figure>
-            <span class="menu-item-label">어둡게 보기</span>
-            <div class="menu-item-action">
-              <span class="switch">
-                <input type="checkbox" id="dark2" name="" role="switch" />
-                <label for="dark2" style="padding-left: 48px"></label>
-              </span>
-            </div>
-          </button>
-          <button class="menu-item" title="sign out" role="menuitem">
-            <figure class="menu-item-avatar material-symbols-outlined">logout</figure>
-            <span class="menu-item-label">고객센터 및 도움말</span>
-          </button>
-          <hr role="separator" style="margin-left: -0.75rem; margin-right: -0.75rem" />
-          <button class="menu-item" title="sign out" role="menuitem">
-            <figure class="menu-item-avatar material-symbols-outlined">logout</figure>
-            <span class="menu-item-label">로그아웃</span>
-          </button>
-          <hr role="separator" style="margin-left: -0.75rem; margin-right: -0.75rem" />
-          <footer class="user-footer" style="margin: -0.25rem 0 0 0">
-            <a href="#">개인정보처리방침</a>
-            <i class="icon-bullet"></i>
-            <a href="#">서비스 약관</a>
-          </footer>
-        </article>
-
         <article class="userlist" style="overflow: hidden; z-index: 1">
           <header class="titlebar" style="padding: 0">
             <h1 class="titlebar-title">팔로우하는 사람</h1>
@@ -331,45 +553,6 @@
             <span class="menu-item-label">사파리 브라우저</span>
             <button class="item-action is-active"><span class="item-action-label">계속</span></button>
           </div>
-        </article>
-
-        <article class="tile-elevated" style="z-index: 1">
-          <header class="titlebar" style="padding: 0; margin-bottom: var(--space-4)">
-            <h1 class="titlebar-title">Ratings</h1>
-            <button class="titlebar-back" aria-label="이전 페이지로">
-              <span class="material-symbols-outlined">arrow_back</span>
-            </button>
-          </header>
-          <div class="statistic-item tile-flat" aria-label="별점 5개 만점에 3.9개를 받았습니다." style="text-align: center; z-index: auto">
-            <i class="statistic-label">리뷰 116만개</i>
-            <span class="statistic-value" style="margin-left: -0.5rem">⭐ 4.8</span>
-          </div>
-          <div class="graph2">
-            <b class="graph-label">5 Stars</b>
-            <div class="graph-bar"><b style="width: 68%"></b></div>
-            <span class="graph-value">68%</span>
-          </div>
-          <div class="graph2">
-            <b class="graph-label">4 Stars</b>
-            <div class="graph-bar"><b style="width: 24%"></b></div>
-            <span class="graph-value">24%</span>
-          </div>
-          <div class="graph2">
-            <b class="graph-label">3 Stars</b>
-            <div class="graph-bar"><b style="width: 0"></b></div>
-            <span class="graph-value">0%</span>
-          </div>
-          <div class="graph2">
-            <b class="graph-label">2 Stars</b>
-            <div class="graph-bar"><b style="width: 2%"></b></div>
-            <span class="graph-value">2%</span>
-          </div>
-          <div class="graph2">
-            <b class="graph-label">1 Star</b>
-            <div class="graph-bar"><b style="width: 6%"></b></div>
-            <span class="graph-value">6%</span>
-          </div>
-          <small>별 다섯개에서 점수만큼 채우는 유아이는 최근 잘 보이지 않는다.</small>
         </article>
 
         <article class="meter tile-elevated" style="padding: 1rem; margin: 0 0 -2rem">
@@ -444,89 +627,6 @@
           </footer>
         </article>
 
-        <article class="keywords" style="padding: 1rem">
-          <h3 class="keywords-title">지금 인기있는<br />이슈 키워드</h3>
-          <div class="keywords-group" role="group">
-            <a class="keywords-group-keyword" href="#"><span class="keywords-group-keyword-label">국정감사</span></a>
-            <a class="keywords-group-keyword" href="#"><span class="keywords-group-keyword-label">윤석열검찰총장</span></a>
-            <a class="keywords-group-keyword" href="#"><span class="keywords-group-keyword-label">조국</span></a>
-            <a class="keywords-group-keyword" href="#"><span class="keywords-group-keyword-label">뉴닉</span></a>
-            <a class="keywords-group-keyword" href="#"><span class="keywords-group-keyword-label">차별금지법</span></a>
-            <a class="keywords-group-keyword" href="#"><span class="keywords-group-keyword-label">추미매법무부장관</span></a>
-          </div>
-          <button class="menu-item" data-tile="elevated" style="margin-top: var(--space-3); margin-bottom: 0">
-            <figure class="menu-item-avatar">
-              <span class="material-symbols-outlined">search</span>
-            </figure>
-            <span class="menu-item-label">직접 검색</span>
-          </button>
-        </article>
-
-        <article class="share" style="padding: 1rem">
-          <h2 class="share-title">가족이나 친구와<br />함께 보세요!</h2>
-          <!-- <close-button></close-button> -->
-          <button class="share-item share-facebook">
-            <figure class="share-item-icon share-facebook-icon"></figure>
-            <span class="share-item-label share-facebook-label">facebook으로 공유</span>
-          </button>
-          <button class="share-item share-twitter">
-            <figure class="share-item-icon share-twitter-icon"></figure>
-            <span class="share-item-label share-facebook-label">twitter로 공유</span>
-          </button>
-          <button class="share-item share-kakao">
-            <figure class="share-item-icon share-kakao-icon"></figure>
-            <span class="share-item-label share-facebook-label">kakao talk으로 공유</span>
-          </button>
-          <hr />
-          <div class="share-copy textfield">
-            <input class="share-copy-url textfield-input" type="text" value="https://newneek.co/post/jadebabo" readonly />
-            <button class="share-copy-button js-copy" type="button" tabindex="0">복사</button>
-          </div>
-        </article>
-
-        <div class="order-item tile-elevated">
-          <header class="order-item-head">
-            <span class="tag order-item-head-type">포장</span>
-            <time class="order-item-head-time">2022. 12. 05. 15:32</time>
-            <b class="order-item-head-status">배달완료</b>
-          </header>
-          <div class="item" data-size="large" style="margin: var(--space-3) 0 var(--space-4)">
-            <figure class="item-avatar">
-              <span class="avatar-badge"></span>
-            </figure>
-            <b class="item-name">쩜순이네닭강정</b>
-            <p class="item-description" style="display: flex; align-items: center">
-              <span>떡볶이</span>
-              <span class="material-symbols-outlined" style="font-size: var(--font-size-small); margin-top: -1px"> close </span>
-              <span>5</span>
-              <!-- <span> 외 1건</span> -->
-            </p>
-          </div>
-          <section class="step is-vertical">
-            <div class="step-item is-active">
-              <span class="step-item-icon">1</span>
-              <h3 class="step-item-label">주문확인</h3>
-            </div>
-            <div class="step-item">
-              <span class="step-item-icon">2</span>
-              <h3 class="step-item-label">조리중</h3>
-            </div>
-            <div class="step-item">
-              <span class="step-item-icon">3</span>
-              <h3 class="step-item-label">배달중</h3>
-            </div>
-            <div class="step-item">
-              <span class="step-item-icon">4</span>
-              <h3 class="step-item-label">배달완료</h3>
-            </div>
-          </section>
-          <div class="stack order-item-foot">
-            <button class="chip"><span class="chip-label">재주문</span></button>
-            <button class="chip"><span class="chip-label">후기작성</span></button>
-          </div>
-          <small>네이버는 왜 주문 내역 삭제을 숨길 수 있게 했나?</small>
-        </div>
-
         <form class="feed-make tile-elevated" action="">
           <header class="titlebar" style="padding: 0; margin-bottom: var(--space-4)">
             <h1 class="titlebar-title">게시물 만들기</h1>
@@ -552,52 +652,6 @@
             <button class="comment-write-submit" type="submit">게시</button>
           </footer>
         </form>
-
-        <article class="pricing-item" style="padding: 1rem">
-          <span class="tag" style="position: absolute; left: -0.5rem; top: var(--space-3)">
-            <figure class="tag-icon" role="img">🔥</figure>
-            <small class="tag-label">Most Popular</small>
-          </span>
-          <b class="pricing-item-title" style="display: block; margin: 2rem var(--space-after-subhead) 0 0">Standard</b>
-          <p class="pricing-item-description">전직대통령의 신분과 예우에 관하여는 법률로 정한다. 대법원장은 국회의 동의를 얻어 대통령이 임명한다.</p>
-          <ul>
-            <li>스토리지 2TB</li>
-            <li>Google 전문가와의 상담</li>
-            <li>회원을 위한 추가 혜택</li>
-          </ul>
-          <span class="pricing-item-price">
-            <span class="pricing-item-price-per">한 달에 한 번</span>
-            <span class="pricing-item-price-unit">₩ 6,800</span>
-            <!-- <i class="icon-bullet"></i> -->
-          </span>
-          <button class="pricing-item-upgrade">업그레이드</button>
-          <button class="pricing-item-more">And More...</button>
-        </article>
-
-        <article class="access tile-elevated" style="z-index: 1">
-          <header class="titlebar" style="display: block; padding: 0">
-            <button class="titlebar-back">
-              <figure class="chip material-symbols-outlined">close</figure>
-            </button>
-            <h1 class="titlebar-title" style="margin: 1rem 0; position: relative; left: auto; transform: translateX(0)">공개 대상 선택</h1>
-          </header>
-          <div class="menu-item" data-size="large">
-            <figure class="menu-item-avatar material-symbols-outlined">public</figure>
-            <span class="menu-item-label">전체 공개</span>
-            <span class="menu-item-description">Facebook 안팎의 모든 사람</span>
-          </div>
-          <div class="menu-item is-active is-hoverable" data-size="large">
-            <figure class="menu-item-avatar material-symbols-outlined">group</figure>
-            <span class="menu-item-label">친구만</span>
-            <span class="menu-item-description">회원님의 Facebook 친구</span>
-            <div class="menu-item-action material-symbols-outlined" style="color: var(--green800)">radio_button_checked</div>
-          </div>
-          <div class="menu-item" data-size="large" role="menuitem">
-            <figure class="menu-item-avatar material-symbols-outlined">lock</figure>
-            <span class="menu-item-label" style="line-height: var(--size-large)">나만 보기</span>
-            <!-- <p class="item-description">부끄러우니까</p> -->
-          </div>
-        </article>
 
         <article class="tile-elevated">
           <header class="titlebar" style="padding: 0; margin-bottom: var(--space-4)">
