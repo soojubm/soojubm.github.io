@@ -7,6 +7,8 @@
 }
 
 .component-example > * {max-width:800px;border:none;}
+.component-props {margin:var(--space-4) 0 0 0;position:relative;}
+.component-props .article-subhead {display:none;}
 
 .component-navigation {
   width:calc(100% + .25rem);

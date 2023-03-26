@@ -102,7 +102,7 @@
   </section> -->
 
   <header class="" role="banner" style="padding: 0 var(--grid-margin); margin-left: -40px">
-    <div class="chat" style="margin: 2rem 0 var(--space-3)">
+    <div class="chat" style="margin: 2rem 0 var(--space-2)">
       <figure class="chat-avatar"></figure>
       <div class="chat-bubble is-primary">
         <b>Components</b>
@@ -115,6 +115,19 @@
         <!-- <p>1~2가지 케이스는 예외 케이스로 정의한다.</p>
         <p>모든 시각정보는 non-clickable. 모든 인터렉션은 clickable.</p>
         <p>dos / don'ts 케이스는 이미지를 사용하지 않고 간결하게 서술합니다. => 컴포넌트는 계속 변경되기 때문에 유지보수 비용 증가.</p> -->
+      </div>
+      <div class="chat-bubble">
+        <p>
+          2023년 3월 말. Props를 디자인 가이드와 묶어서 정리하기. 이렇게 하면 Props 존재 이유를 설명할 필요도 없고, 디자인 패턴을 한 번에 망라할 수
+          있다. 형태를 위한 프롭스와 기능을 위한 프롭스를 나눌 수 있을까? Anatomy와 Props를 통합할 수 있을까? 메타 푸라불럼를 함께 푸롭스에서
+          다뤄보기.
+        </p>
+      </div>
+      <div class="chat-bubble">
+        <p>Option Group 또는 Choice Group ? 컴포넌트는 항상 동일한 OptionType[]을 갖는다. UI는 prop 값을 수정해서 변경할 수 있는.</p>
+      </div>
+      <div class="chat-bubble">
+        <p>TODO. avatar는 패턴 섹션에서 정의할 필요가 있다.</p>
       </div>
       <!-- <div class="chat-bubble">
         <p>
@@ -129,18 +142,18 @@
   <!-- a11y role menubar -->
   <nav class="component-navigation stack" data-scroll="vertical">
     <div class="component-navigation-background"></div>
-    <button class="chip is-active js-scrollspy-trigger"><span class="chip-label">Avatars</span></a>
-    <button class="chip js-scrollspy-trigger"><span class="chip-label">Menus</span></a>
-    <button class="chip js-scrollspy-trigger"><span class="chip-label">Buttons</span></a>
-    <button class="chip js-scrollspy-trigger"><span class="chip-label">Chips</span></a>
-    <button class="chip js-scrollspy-trigger"><span class="chip-label">Links</span></a>
+    <button class="chip is-active js-scrollspy-trigger"><span class="chip-label">Avatars</span></button>
+    <button class="chip js-scrollspy-trigger"><span class="chip-label">Menus</span></button>
+    <button class="chip js-scrollspy-trigger"><span class="chip-label">Buttons</span></button>
+    <button class="chip js-scrollspy-trigger"><span class="chip-label">Chips</span></button>
+    <button class="chip js-scrollspy-trigger"><span class="chip-label">Links</span></button>
 
     <!-- <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Badges</span></a> -->
 
-    <button class="chip js-scrollspy-trigger"><span class="chip-label">Tags</span></a>
-    <button class="chip js-scrollspy-trigger"><span class="chip-label">Switch</span></a>
-    <button class="chip js-scrollspy-trigger"><span class="chip-label">Checkboxes</span></a>
-    <button class="chip js-scrollspy-trigger"><span class="chip-label">Radioes</span></a>
+    <button class="chip js-scrollspy-trigger"><span class="chip-label">Tags</span></button>
+    <button class="chip js-scrollspy-trigger"><span class="chip-label">Switch</span></button>
+    <button class="chip js-scrollspy-trigger"><span class="chip-label">Checkboxes</span></button>
+    <button class="chip js-scrollspy-trigger"><span class="chip-label">Radioes</span></button>
 
     <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Select</span></a>
     <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Textfields</span></a>
@@ -197,7 +210,7 @@
         <h1 class="article-title">Avatars</h1>
         <p class="article-description">개체(유저, 회사, 프로젝트 등)를 대표하는 시각 정보입니다. 인접한 정보 더미 중 최상위 위계로서 정보의 주체.</p>
       </header>
-      <div class="component-example">
+      <section class="component-example">
         <article class="tile-flat" style="display: flex; gap: 0.5rem">
           <figure class="avatar" data-size="huge">
             <span class="avatar-badge"></span>
@@ -213,66 +226,77 @@
             <span class="material-symbols-outlined" style="transform: scale(75%)">close</span>
           </figure>
         </article>
-        <div class="tile-flat">
-          <article class="item" data-size="huge">
-            <figure class="item-avatar">
-              <span class="avatar-badge"></span>
-            </figure>
-            <b class="item-name">EntityHuge</b>
-            <p class="item-description">description area.</p>
-            <span>description area2.</span>
-          </article>
-          <article class="item" data-size="large">
-            <figure class="item-avatar"></figure>
-            <b class="item-name">EntityLarge</b>
-            <p class="item-description">description area.</p>
-          </article>
-          <article class="item" data-size="medium" style="display: flex; align-items: center">
-            <figure class="item-avatar"></figure>
-            <b class="item-name" style="font-weight: var(--font-weight-normal)">EntityMedium</b>
-            <time style="margin: 0 0 0 var(--space-2); color: var(--color-text-light)">36.4만</time>
-            <button class="item-delete icon-indicator" style="margin-left: auto; min-width: 24px; height: 24px">
-              <span class="material-symbols-outlined">close</span>
-            </button>
-          </article>
-          <article class="item" data-size="medium" style="display: flex; align-items: center">
-            <figure class="item-avatar"></figure>
-            <b class="item-name" style="font-weight: var(--font-weight-normal)">medium</b>
-            <time class="item-date" style="margin: 0 0 0 var(--space-2); color: var(--color-text-light)">2022. 12. 04.</time>
-          </article>
+        <div style="margin-top: 1rem">
+          <!-- <h2 class="article-subhead" style="margin-top: 0">Props</h2> -->
+          <dl>
+            <dt>name</dt>
+            <dd>string</dd>
+            <dd class="dd-small">dfafa</dd>
+            <dt>src<abbr>?</abbr></dt>
+            <dd>string</dd>
+            <dd class="dd-small">링크일 수도 링크가 아닐 수도 있다.</dd>
+            <dt>size</dt>
+            <dd>"huge" | "large" | "medium" | "small"</dd>
+            <dd class="dd-small">TODO. 페이지, 섹션, 아티클 각 레벨에서 용법이 제한됨.</dd>
 
-          <article class="item" data-size="small">
-            <figure class="item-avatar"></figure>
-            <b class="item-name" style="font-weight: var(--font-weight-normal)">EntitySmall</b>
-          </article>
+            <dt>badge<abbr>?</abbr></dt>
+            <dd>"unread" | "new" | "live"</dd>
+            <dd class="dd-small">TODO. 합성 컴포넌트에서 상세하게 정의</dd>
+
+            <dt>fallback</dt>
+            <dd>"string" | "image?"</dd>
+            <dd class="dd-small">예시. 유저 닉네임의 첫 알파벳.</dd>
+          </dl>
         </div>
-      </div>
+      </section>
 
       <p class="article-kicker">
         <b>cllickable</b> 아바타 또는 아바타릂 포함하는 상위 요소(클릭을 보조하는 역할)는 항상 클릭할 수 있습니다. 형태로 두 케이스를 구별해보자.
       </p>
       <p class="article-kicker"><b>구성?</b> 이미지, 텍스트, 아이콘, 이모지를 포함할 수 있습니다.</p>
 
+      <br />
+      <div class="tile-flat">
+        <article class="item" data-size="huge">
+          <figure class="item-avatar">
+            <span class="avatar-badge"></span>
+          </figure>
+          <b class="item-name">EntityHuge</b>
+          <p class="item-description">description area.</p>
+          <span>description area2.</span>
+        </article>
+        <article class="item" data-size="large">
+          <figure class="item-avatar"></figure>
+          <b class="item-name">EntityLarge</b>
+          <p class="item-description">description area.</p>
+        </article>
+        <article class="item" data-size="medium" style="display: flex; align-items: center">
+          <figure class="item-avatar"></figure>
+          <b class="item-name" style="font-weight: var(--font-weight-normal)">EntityMedium</b>
+          <time style="margin: 0 0 0 var(--space-2); color: var(--color-text-light)">36.4만</time>
+          <button class="item-delete icon-indicator" style="margin-left: auto; min-width: 24px; height: 24px">
+            <span class="material-symbols-outlined">close</span>
+          </button>
+        </article>
+        <article class="item" data-size="medium" style="display: flex; align-items: center">
+          <figure class="item-avatar"></figure>
+          <b class="item-name" style="font-weight: var(--font-weight-normal)">medium</b>
+          <time class="item-date" style="margin: 0 0 0 var(--space-2); color: var(--color-text-light)">2022. 12. 04.</time>
+        </article>
+
+        <article class="item" data-size="small">
+          <figure class="item-avatar"></figure>
+          <b class="item-name" style="font-weight: var(--font-weight-normal)">EntitySmall</b>
+        </article>
+      </div>
+
       <!-- <li>icon button, icon indicator, entity avatar, menu item avatar(icon)</li> -->
       <!-- <li>현재 entity가 card vertica 형태</li> -->
       <!-- <li>memeo. medium. 이하의 크기에 항상 align-items:center. 텍스트 더미가 두 줄로 제공되지 않는다.</li> -->
       <!-- <li>pagination item은 chip과 같은 size token을 사용하지만 chip도 avatar도 아닙니다.</li> -->
       <!-- <p>아바타만 단독으로 사용하는 케이스가 있을까. 그렇다면 space-after-avatar 항상 필요하지는 않음.</p> -->
-      <h2 class="article-subhead">Props</h2>
-      <dl>
-        <dt>name</dt>
-        <dd>string</dd>
-        <dt>src<abbr>?</abbr></dt>
-        <dd>string</dd>
-        <dt>size</dt>
-        <dd>"huge" | "large" | "medium" | "small"</dd>
-        <dt>badge<abbr>?</abbr></dt>
-        <dd>"unread" | "new" | "live"</dd>
-        <dt>fallback</dt>
-      </dl>
 
       <!-- <p><b>mui.</b> 아이콘 아바타를 사용. 아이콘 아바타와 아이콘 버튼의 차이.</p> -->
-
       <article class="user tile-flat" style="text-align: left">
         <h2 class="article-subhead" style="margin-top: 0">non-clickable<br />avatar는 장식 요소로 오른쪽에 배치 (outdated)</h2>
         <figure class="user-avatar" role="img"></figure>
@@ -295,7 +319,7 @@
 
       <article class="tile-elevated">
         <h2 class="article-subhead" style="margin-top: 0">hoverable<br />요약된 사용자 정보와 프로필 페이지 링크</h2>
-
+        <hr />
         <article class="item" data-size="medium">
           <figure class="item-avatar"></figure>
           <b class="item-name">사용자이름</b>
@@ -491,6 +515,46 @@
             <!-- <button class="button-tertiary">Loading</button> -->
           </div>
         </div>
+
+        <article class="component-props">
+          <!-- <h2 class="article-subhead">Props</h2> -->
+          <dl>
+            <dt>style</dt>
+            <dd>'primary' | 'secondary' | 'tertiary'</dd>
+            <dd>TOOD 가각의 값에 대해 함께 설명이 필요. 설명 영역이 길어져야.</dd>
+            <dt>size<attr>?</attr></dt>
+            <dd>'large' | <b>'medium'</b></dd>
+            <dd>large size는 프로모션 페이지의 call to action로 제한됩니다.</dd>
+            <dt>name</dt>
+            <dd>string</dd>
+            <dd></dd>
+            <dt>label</dt>
+            <dd>string</dd>
+            <dd>동사가 포함된 2자 ~ 8자 한글(!). 레이블 줄임?(truncated) 불가</dd>
+            <dt>isDisabled?</dt>
+            <dd>boolean</dd>
+            <dd></dd>
+            <dt>isFullwidth<attr>?</attr></dt>
+            <dd>boolean</dd>
+            <dd>TODO button 보다 button group의 props로 정의하는 것이 적합. isFluid</dd>
+            <dt>href<attr>?</attr></dt>
+            <dd>string</dd>
+            <dd>TODO 링크 또는 양식 제출로 사용되는 케이스를 정의</dd>
+            <dt>onClick<attr>?</attr></dt>
+            <dd>event: React.MouseEvent[HTMLButtonElement]) =] void</dd>
+            <dd>TODO onClick는 href와 구분. LinkButton 컴포넌트의 필요성.</dd>
+            <dd></dd>
+            <dt>aria-pressed<attr>?</attr></dt>
+            <dd>null</dd>
+            <dd></dd>
+            <dt>aria-haspopup<attr>?</attr></dt>
+            <dd>null</dd>
+            <dd></dd>
+            <dt><del>aria-expanded</del><attr>?</attr></dt>
+            <dd>null</dd>
+            <dd>TODO 버튼을 타겟 확장의 용도로 사용할 수 없기 때문에 제거하기</dd>
+          </dl>
+        </article>
       </section>
 
       <p class="article-kicker">
@@ -510,13 +574,11 @@
 
       <ul>
         <li>TODO: utton과 chip을 통합.</li>
-        <li>large 버튼은 프로모션 페이지의 call to action으로 용법 제한</li>
-        <li>동사가 포함된 2자 ~ 8자 한글(!). 레이블 줄임?(truncated) 불가</li>
         <li>사용자 시점 (ex 보내기 => 받기)</li>
       </ul>
 
       <!-- <h2 class="article-subhead">Icon guidelines</h2> -->
-        <!-- <li>당연한 얘기... 텍스트 레이블을 생략하는 경우 관습적인 메타포의 아이콘(북마크/하트/카트 등)을 사용하고 대체 텍스트와 툴팁을 제공하세요.</li>
+      <!-- <li>당연한 얘기... 텍스트 레이블을 생략하는 경우 관습적인 메타포의 아이콘(북마크/하트/카트 등)을 사용하고 대체 텍스트와 툴팁을 제공하세요.</li>
         <li>기표로 정의하지 않은 아이콘을 레이블과 함께 장식적인 용도로 사용하지 마세요.</li> -->
 
       <!-- <h2 class="article-subhead">Don'ts (in progressing)</h2> -->
@@ -539,33 +601,6 @@
         <small class="tag">--button-font-size</small>
         <small class="tag">--button-font-weight</small>
       </div> -->
-
-      <h2 class="article-subhead">Props</h2>
-      <dl>
-        <dt>style</dt>
-        <dd>"primary" | "secondary" | "tertiary"</dd>
-        <dt>size<attr>?</attr></dt>
-        <dd>"large" | "medium"</dd>
-        <dt>name</dt>
-        <dd>string</dd>
-        <dt>label</dt>
-        <dd>string</dd>
-        <dt>isDisabled?</dt>
-        <dd>boolean</dd>
-        <dt>isFullwidth</dt>
-        <dd>boolean</dd>
-        <dt>href<attr>?</attr></dt>
-        <dd>string</dd>
-        <dt>onClick<attr>?</attr></dt>
-        <dd>(event: React.MouseEvent[HTMLButtonElement]) =] void</dd>
-        <dd>optional for onSumit</dd>
-        <dt>aria-pressed<attr>?</attr></dt>
-        <dd>null</dd>
-        <dt>aria-expanded<attr>?</attr></dt>
-        <dd>null</dd>
-        <dt>aria-haspopup<attr>?</attr></dt>
-        <dd>null</dd>
-      </dl>
 
       <!-- <p>사용자에게 단추를 한 번에 한 개 또는 두 개만 표시합니다(예: 수락 및 취소). 사용자에게 더 많은 작업을 표시해야 하는 경우 사용자가 하나의 명령 단추로 작업을 선택하여 트리거할 수 있도록 확인란 또는 라디오 단추를 사용하는 것이 좋습니다.</p> -->
     </article>
@@ -637,37 +672,47 @@
             </button>
           </div>
         </div>
+        <article class="component-props">
+          <h2 class="article-subhead">Props</h2>
+          <dl>
+            <dt>name</dt>
+            <dd>string</dd>
+            <dd></dd>
+            <dt>label</dt>
+            <dd>string</dd>
+            <dd>하나의 단어 또는 복합명사</dd>
+            <dt>isChecked<attr>?</attr></dt>
+            <dd>boolean</dd>
+            <dd>toggle or single active. 링크로 쓰지 않는다.</dd>
+            <dt>ariaSelected</dt>
+            <dd></dd>
+            <dd>TODO isChecked와 통합할 수 있다.</dd>
+            <dt>onClick</dt>
+            <dd>() => void</dd>
+            <dd>TODO checked 의존</dd>
+            <dt>onRemoveClick<attr>?</attr></dt>
+            <dd>() => void</dd>
+            <dd>TODO 현대 유아이에서 칩의 기능은 복잡해졌기 때문에, 합성 컴포넌트를 만드는 게 좋다.</dd>
+            <!-- <dt>isRemovable<attr>?</attr></dt> -->
+            <!-- <dt>isAddable<attr>?</attr></dt>
+          <dd>boolean</dd> -->
+            <dt>ariaHaspopup</dt>
+            <dd>null</dd>
+            <dd>TODO onRemoveClick와 설명과 같은 맥락</dd>
+          </dl>
+        </article>
       </section>
 
       <!-- <h2 class="article-subhead">Best practices</h2> -->
       <p class="article-kicker">
         <b>groupable</b>
-        맥락이 다른 chip을 그룹으로 제공할 수 있습니다. 이 때 단일선택, 다중선택, 삭제여부, 펼침메뉴 등의 기표를 충분히 제공하세요.
+        TODO. Chip Groupd을 관련 컴포넌트로 링크? 맥락이 다른 chip을 그룹으로 제공할 수 있습니다. 이 때 단일선택, 다중선택, 삭제여부, 펼침메뉴 등의
+        기표를 충분히 제공하세요.
       </p>
 
       <!-- <li>changelog. dropdown을 칩과 분리. 이 디자인 시스템에서는 같은 형태를 사용하지만 배경색을 뺀 형태 케이스 고려해보기.</li> -->
       <!-- <li>changelog. icon button은 clickable이기 때문에 아바타가 아니라 칩을 mixin. 2개의 사이즈로 확장. => chip container style</li> -->
 
-      <h2 class="article-subhead">Props</h2>
-      <dl>
-        <dt>name</dt>
-        <dd>string</dd>
-        <dt>label</dt>
-        <dd>string</dd>
-        <dt>isChecked<attr>?</attr></dt>
-        <dd>boolean</dd>
-        <dt>onClick</dt>
-        <dd>() => void</dd>
-        <dt>onRemoveClick<attr>?</attr></dt>
-        <dd>() => void</dd>
-        <!-- <dt>isRemovable<attr>?</attr></dt> -->
-        <!-- <dt>isAddable<attr>?</attr></dt>
-        <dd>boolean</dd> -->
-        <dt>ariaHaspopup</dt>
-        <dd></dd>
-        <dt>ariaSelected</dt>
-        <dd></dd>
-      </dl>
       <!-- <p>- addable/removable, todo: chip-icon의 hover... 결국 chip과 분리된 컴포넌트가 필요함. 역할이 다르기 때문에 괜찮음.</p> -->
       <!-- Markup(button vs radio,checkbox) -->
       <!-- <p>안드로이드: chipGroup, HorizontalScrollView, singleLine, action/entry/filter(check active)/choice</p> -->
@@ -834,23 +879,28 @@
             <a class="hashtag" href="">해시태그를통한검색</a>
           </div>
         </div>
+        <div class="component-props">
+          <h2 class="article-subhead">Props</h2>
+          <dl>
+            <dt>style</dt>
+            <dd>'inside' | 'outside'</dd>
+            <dd>
+              단락 내부와 외부에서의 형태를 구분합니다. 단락 내부에서는 본문 텍스트와 대비를 높이기 위해 언더라인을 표시합니다. 불필요해보이는 규칙.
+            </dd>
+            <dt>href ? url?</dt>
+            <dd>string</dd>
+            <dd></dd>
+            <dt>isExternal<attr>?</attr></dt>
+            <dd>boolean</dd>
+            <dd>속성들... target=_blank rel=noopener noreferrer</dd>
+          </dl>
+        </div>
       </section>
 
       <p class="article-kicker">
         <b>best practice</b>
-        항상 텍스트 단락과 함께 사용합니다. 단락 내부와 외부에서의 형태를 구분합니다. 단락 내부에서는 본문 텍스트와 대비를 높이기 위해 언더라인을
-        표시합니다.
+        항상 텍스트 단락과 함께 사용합니다.
       </p>
-
-      <h2 class="article-subhead">Props</h2>
-      <dl>
-        <dt>style</dt>
-        <dd>'inside' | 'outside'</dd>
-        <dt>url</dt>
-        <dd>string</dd>
-        <dt title="a target=_blank rel=noopener noreferrer">isExternal<attr>?</attr></dt>
-        <dd>boolean</dd>
-      </dl>
     </article>
 
     <!-- <p>Badges show the count of some adjacent data. A dot badge notifies the user that something is new or updated without showing a count.</p> -->
@@ -883,7 +933,7 @@
         <div class="tile-flat" role="list">
           <div class="stack" role="group">
             <span class="tag" role="listitem" data-style="primary">Primary</span>
-            <span class="tag" role="listitem" data-style="secondary">Secondary</span>
+            <!-- <span class="tag" role="listitem" data-style="secondary">Secondary</span> -->
             <span class="tag" role="listitem">Tertiary</span>
             <span class="tag" role="listitem" style="background: var(--red100); border-color: var(--red100); color: var(--red800)">15</span>
             <span class="tag" role="listitem">
@@ -892,28 +942,29 @@
             </span>
           </div>
         </div>
+        <article class="component-props">
+          <h2 class="article-subhead">Props</h2>
+          <dl>
+            <dt>appearance</dt>
+            <dd>'primary' | <del>'secondary'</del> | 'tertiary<sup>default value</sup>'</dd>
+            <dd>하나의 컨테이너에 primary는 하나만 존재한다.</dd>
+            <dt>label</dt>
+            <dd>string</dd>
+            <dd>2단어 이하의 형용사 또는 명사</dd>
+          </dl>
+        </article>
       </section>
 
       <p class="article-kicker">
         <b>groupable</b>4개 이상의 태그로 태그 그룹을 구성하지 마세요. 태그는 <mark>핵심 키워드를 요약</mark>하여 사용자의 콘텐츠 탐색과 선택을 돕는
         역할입니다. 너무 많은 태그 목록을 노출하는 것은 콘텐츠 탐색을 어렵게 할 수 있습니다.
       </p>
-      <p class="article-kicker">2단어 이하의 형용사 또는 명사</p>
-
       <!-- <li>Primary style 하나만.</li> -->
       <!-- <h2 class="article-subhead">Best practices</h2>
         <li>non-clickable<span hidden>triggering interaction</span></li>
         <li>Groupable</li>
       </ul> -->
       <!-- <li>최대 2단어</li> -->
-
-      <h2 class="article-subhead">Props</h2>
-      <dl>
-        <dt>style</dt>
-        <dd>'primary' | 'secondary' | 'tertiary'</dd>
-        <dt>label</dt>
-        <dd>string</dd>
-      </dl>
     </article>
 
     <article class="article js-observer js-scrollspy-section">
@@ -1546,6 +1597,21 @@
             <p>Content for the third panel</p>
           </div>
         </div>
+        <article class="component-props">
+          <h2 class="article-subhead">Props</h2>
+          <dl>
+            <dt>tablist</dt>
+            <dd><del>OptionType[]</del>TabType[]</dd>
+            <dd>TODO SPA에서 탭은 라우팅 또는 브라우저 히스토리를 관리가 필요하다.</dd>
+            <dt>tabPanel</dt>
+            <dd>React.Node</dd>
+            <dd></dd>
+            <!-- <dt>indicator (active bar)</dt> -->
+            <dt>badge? quantity? isUnread?</dt>
+            <dd></dd>
+            <dd></dd>
+          </dl>
+        </article>
       </section>
 
       <p class="article-kicker">
@@ -1561,17 +1627,6 @@
         <li><del>페이지 링크로 사용하지 마세요.</del> SPA에서 페이지 링크의 개념이 모호하지만 탭을 클릭 후의 뷰에서 탭 바는 유지되어야 합니다.</li>
         <li>todo 탭 갯수의 제한과 가로 스크롤. 브라우저 히스토리 저장. (?tab=projects)</li>
       </ul>
-
-      <h2 class="article-subhead">Props</h2>
-      <dl>
-        <dt>tablist</dt>
-        <dd>TabType[]</dd>
-        <dt>tabPanel</dt>
-        <dd>React.Node</dd>
-        <dt>indicator (active bar)</dt>
-        <dd></dd>
-        <dt>badge / quantity / unread</dt>
-      </dl>
 
       <h2 class="article-subhead">Accessibility</h2>
       <p>방향키</p>
@@ -1679,29 +1734,27 @@
       </aside>
 
       <section class="component-example">
-        <div class="tile-flat">
-          <nav class="bottombar">
-            <a href="#" class="bottombar-item is-active">
-              <figure class="bottombar-item-icon">
-                <span class="material-symbols-outlined"> account_circle </span>
-              </figure>
-              <span class="bottombar-item-label">홈</span>
-              <em></em>
-            </a>
-            <a href="#" class="bottombar-item">
-              <figure class="bottombar-item-icon">
-                <span class="material-symbols-outlined"> account_circle </span>
-              </figure>
-              <span class="bottombar-item-label">카테고리</span>
-            </a>
-            <a href="#" class="bottombar-item">
-              <figure class="bottombar-item-icon">
-                <span class="material-symbols-outlined"> account_circle </span>
-              </figure>
-              <span class="bottombar-item-label">설정</span>
-            </a>
-          </nav>
-        </div>
+        <nav class="bottombar">
+          <a href="#" class="bottombar-item is-active">
+            <figure class="bottombar-item-icon">
+              <span class="material-symbols-outlined"> account_circle </span>
+            </figure>
+            <span class="bottombar-item-label">홈</span>
+            <em></em>
+          </a>
+          <a href="#" class="bottombar-item">
+            <figure class="bottombar-item-icon">
+              <span class="material-symbols-outlined"> account_circle </span>
+            </figure>
+            <span class="bottombar-item-label">카테고리</span>
+          </a>
+          <a href="#" class="bottombar-item">
+            <figure class="bottombar-item-icon">
+              <span class="material-symbols-outlined"> account_circle </span>
+            </figure>
+            <span class="bottombar-item-label">설정</span>
+          </a>
+        </nav>
       </section>
 
       <ul>

@@ -105,7 +105,10 @@ ol li {margin:var(--space-1) 0;}
 
 dl {display:flex;flex-wrap:wrap;}
 dl dt {margin:0 var(--space-2) 0 0;@include text-label;}
+dl dt attr {}
 dl dd {margin:0 var(--space-4) 0 0;}
+dl dd + dd,
+.dd-small {width:100%;margin:.125rem 0 var(--space-2) 0;font-size:var(--font-size-small);line-height:var(--font-line-height);}
 
 // dl dt:after {content:':';}
 // dl dd:after {content:';';}

@@ -149,7 +149,7 @@
       }
 
       .design-tabpanel {
-        padding: 4rem var(--grid-margin);
+        padding: 2rem var(--grid-margin);
         background: var(--color-background-weak);
       }
     </style>
@@ -157,7 +157,7 @@
       class="person-list stack"
       role="tablist"
       data-scroll="vertical"
-      style="margin: 0rem -5vw 2rem; padding: 0 10vw; background-color: var(--color-background)"
+      style="margin: 0rem -5vw; padding: 2rem 10vw; background-color: var(--color-background)"
     >
       <!-- <button class="story" role="tab" aria-selected="true" data-index="1">
         <figure class="avatar" data-size="huge" style="background-image: none">
@@ -165,11 +165,11 @@
         </figure>
         <span class="story-name">추가</span>
       </button> -->
-      <button class="story" role="tab" aria-selected="true" data-index="1">
+      <button class="story" role="tab" aria-selected="true" data-index="share">
         <figure class="avatar" data-size="huge" style="background-image: none; font-size: 2.5rem; padding-top: 0.25rem">🌏</figure>
         <span class="story-name">공유하기</span>
       </button>
-      <button class="story" role="tab" aria-selected="false" data-index="2">
+      <button class="story" role="tab" aria-selected="false" data-index="keyword">
         <figure class="avatar" data-size="huge" style="background-image: none; font-size: 2.5rem; padding-top: 0.25rem">💀</figure>
         <span class="story-name">키워드 목록</span>
       </button>
@@ -199,8 +199,8 @@
       </button>
     </article>
 
-    <section class="design-tabpanel" role="tabpanel" aria-hidden="false" data-index="2">
-      <article class="keywords" style="padding: 1rem">
+    <section class="design-tabpanel" role="tabpanel" aria-hidden="true" data-index="keyword">
+      <article class="keywords" style="max-width: 400px; padding: 1rem">
         <h3 class="keywords-title">지금 인기있는<br />이슈 키워드</h3>
         <div class="keywords-group" role="group">
           <a class="keywords-group-keyword" href="#"><span class="keywords-group-keyword-label">국정감사</span></a>
@@ -218,8 +218,8 @@
         </button>
       </article>
     </section>
-    <section class="design-tabpanel" role="tabpanel" aria-hidden="true" data-index="1">
-      <article class="share" style="width: 100%; max-width: 800px; padding: 1rem">
+    <section class="design-tabpanel" role="tabpanel" aria-hidden="false" data-index="share">
+      <article class="share" style="width: 100%; max-width: 400px; padding: 1rem">
         <h2 class="share-title">가족이나 친구와<br />함께 보세요!</h2>
         <!-- <close-button></close-button> -->
         <button class="share-item share-facebook">
@@ -242,7 +242,7 @@
       </article>
     </section>
     <section class="design-tabpanel" role="tabpanel" aria-hidden="true" data-index="3">
-      <div class="order-item" style="width: 100%; max-width: 800px">
+      <div class="order-item" style="width: 100%; max-width: 400px">
         <header class="order-item-head">
           <span class="tag order-item-head-type">포장</span>
           <time class="order-item-head-time">2022. 12. 05. 15:32</time>
@@ -287,7 +287,7 @@
     </section>
 
     <section class="design-tabpanel" role="tabpanel" aria-hidden="true" data-index="rating">
-      <article class="tile-elevated" style="z-index: 1">
+      <article class="tile-elevated" style="max-width: 400px; z-index: 1">
         <header class="titlebar" style="padding: 0; margin-bottom: var(--space-4)">
           <h1 class="titlebar-title">Ratings</h1>
           <button class="titlebar-back" aria-label="이전 페이지로">
@@ -328,7 +328,7 @@
     </section>
 
     <section class="design-tabpanel" role="tabpanel" aria-hidden="true" data-index="pricing">
-      <article class="pricing-item" style="padding: 1rem">
+      <article class="pricing-item" style="max-width: 400px; padding: 1rem">
         <span class="tag" style="position: absolute; left: -0.5rem; top: var(--space-3)">
           <figure class="tag-icon" role="img">🔥</figure>
           <small class="tag-label">Most Popular</small>
@@ -351,7 +351,7 @@
     </section>
 
     <section class="design-tabpanel" role="tabpanel" aria-hidden="true" data-index="public">
-      <article class="access tile-elevated" style="z-index: 1">
+      <article class="access tile-elevated" style="max-width: 400px; z-index: 1">
         <header class="titlebar" style="display: block; padding: 0">
           <button class="titlebar-back">
             <figure class="chip material-symbols-outlined">close</figure>
@@ -378,7 +378,7 @@
     </section>
 
     <section class="design-tabpanel" role="tabpanel" aria-hidden="true" data-index="user">
-      <article class="tile-elevated">
+      <article class="tile-elevated" style="max-width: 400px; z-index: 1">
         <figure class="user-avatar" style="width: var(--size-large); height: var(--size-large)"></figure>
         <h2 class="user-name">이경수</h2>
         <div class="user-id">soojubm@gmail.com</div>
@@ -406,7 +406,7 @@
     </section>
 
     <section class="design-tabpanel" role="tabpanel" aria-hidden="true" data-index="usermenu">
-      <article class="tile-elevated" style="z-index: 1">
+      <article class="tile-elevated" style="max-width: 400px; z-index: 1">
         <a class="user" href="#settings">
           <figure class="user-avatar">
             <em class="user-avatar-change"></em>
@@ -442,252 +442,6 @@
           <a href="#">서비스 약관</a>
         </footer>
       </article>
-    </section>
-  </div>
-
-  <div style="padding: 0 var(--grid-margin)">
-    <section class="sample-container" style="margin-top: 0">
-      <div class="column">
-        <header class="greeting" data-temp="이 패턴에서 아바타는 시각 정보가 아니라 링크로 사용">
-          <figure class="greeting-avatar" style="font-size: 1.5rem">🐶</figure>
-          <h1 class="greeting-title">Hello, Stranger<i style="font-style: italic">!</i></h1>
-          <p class="greeting-description">Tender is the night.</p>
-        </header>
-
-        <section class="">
-          <header style="display: flex; align-items: center; justify-content: space-between; max-width: 400px; margin: 0 auto var(--space-3)">
-            <h2>내 요금제</h2>
-            <button style="color: var(--color-primary); font-weight: bold; text-decoration: underline">요금제 변경하기</button>
-          </header>
-          <article class="purchase" style="border: var(--border); max-width: 400px; margin: 0 auto">
-            <header class="purchase-head">
-              <h3>Premium 베이직</h3>
-              <small>Premium 베이직 계정 1개 </small>
-            </header>
-            <div class="purchase-body">
-              <dl>
-                <dt style="width: 50%; margin: 0; font-weight: var(--font-weight-bold)">오늘부터 시작</dt>
-                <dd style="width: 50%; margin: 0; font-weight: var(--font-weight-bold); text-align: right">월 8,690 KRW</dd>
-                <dt style="width: 50%; margin: 0; font-weight: var(--font-weight-bold)">다음 결제일</dt>
-                <dd style="width: 50%; margin: 0; font-weight: var(--font-weight-bold); text-align: right">2023. 3. 10.</dd>
-              </dl>
-              <ul style="margin: var(--space-4) 0 0 0">
-                <li>다음 청구일은 2023. 3. 10.입니다.</li>
-                <li>언제든 해지 가능합니다. 혜택 약관이 적용됩니다.</li>
-              </ul>
-            </div>
-          </article>
-        </section>
-
-        <article class="tile-elevated">
-          <div class="item" role="listitem" data-size="large" style="margin-bottom: var(--space-3)">
-            <figure class="item-avatar"></figure>
-            <span class="item-description">관심사가 비슷한 사용자</span>
-            <h2 class="item-name">Gyeongsoo I</h2>
-            <!-- <button class="item-action"><span class="item-action-label">팔로우</span></button> -->
-          </div>
-          <div class="stack" data-scroll="vertical" style="margin-right: -0.75rem">
-            <div class="person">
-              <figure class="avatar" data-size="large" style="background: var(--color-temp1)">🧀</figure>
-              <span class="person-name">Typography</span>
-            </div>
-            <div class="person">
-              <figure class="avatar" data-size="large" style="background: cadetblue">🌭</figure>
-              <span class="person-name">Cinema</span>
-            </div>
-            <div class="person">
-              <figure class="avatar" data-size="large" style="background: darkseagreen">🌮</figure>
-              <span class="person-name">Design System</span>
-            </div>
-            <div class="person">
-              <figure class="avatar" data-size="large" style="background: lightsalmon">🍿</figure>
-              <span class="person-name">Startup</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="userlist" style="overflow: hidden; z-index: 1">
-          <header class="titlebar" style="padding: 0">
-            <h1 class="titlebar-title">팔로우하는 사람</h1>
-            <button class="titlebar-back" aria-label="이전 페이지로">
-              <span class="material-symbols-outlined">arrow_back</span>
-            </button>
-          </header>
-          <!-- <a class="link-outside" href="#">모두 보기</a> -->
-          <div class="stack" role="group" style="margin-top: var(--space-3); margin-bottom: 0.5rem">
-            <button class="chip is-active"><span class="chip-label">필터링 1</span></button>
-            <button class="chip"><span class="chip-label">필터링 2</span></button>
-          </div>
-          <div class="item" role="listitem">
-            <figure class="item-avatar is-secondary"></figure>
-            <h2 class="item-name">Gyeongsoo I</h2>
-            <span class="item-description">유아이 디자이너</span>
-            <button class="item-action is-active"><span class="item-action-label">팔로잉</span></button>
-          </div>
-          <div class="item" role="listitem">
-            <figure class="item-avatar is-secondary"></figure>
-            <h2 class="item-name">Gyeongsoo I</h2>
-            <span class="item-description">유투브 구독자</span>
-            <button class="item-action"><span class="item-action-label">팔로우</span></button>
-          </div>
-          <button class="menu-item" data-tile="elevated" style="margin-top: 0.75rem; margin-bottom: 0">
-            <figure class="menu-item-avatar"></figure>
-            <span class="menu-item-label">더 많은 친구를 찾아보세요!</span>
-          </button>
-        </article>
-
-        <article class="tile-elevated" style="z-index: 1">
-          <header class="titlebar" style="padding: 0; margin-bottom: var(--space-4)">
-            <h1 class="titlebar-title">See this post in</h1>
-            <button class="titlebar-back" aria-label="이전 페이지로">
-              <figure class="chip material-symbols-outlined">close</figure>
-            </button>
-          </header>
-          <div class="menu-item">
-            <figure class="item-avatar is-secondary"></figure>
-            <span class="menu-item-label">수줍이 앱</span>
-            <button class="item-action"><span class="item-action-label">열기</span></button>
-          </div>
-          <div class="menu-item">
-            <figure class="item-avatar is-secondary"></figure>
-            <span class="menu-item-label">사파리 브라우저</span>
-            <button class="item-action is-active"><span class="item-action-label">계속</span></button>
-          </div>
-        </article>
-
-        <article class="meter tile-elevated" style="padding: 1rem; margin: 0 0 -2rem">
-          <h1 class="meter-title">200 GB 중 187.23 GB 사용됨</h1>
-          <div class="meter-graph">
-            <div class="meter-graph-bar" data-type="facebook" style="width: 40%"></div>
-            <div class="meter-graph-bar" data-type="twitter" style="width: 30%"></div>
-            <div class="meter-graph-bar" data-type="instagram" style="width: 7%"></div>
-          </div>
-          <div class="meter-legend">
-            <div class="meter-legend-item">
-              <i class="meter-legend-item-color" data-type="facebook"></i>
-              <h3 class="meter-legend-item-title">페이스북</h3>
-              <span class="meter-legend-item-value">800,000원</span>
-            </div>
-            <div class="meter-legend-item">
-              <i class="meter-legend-item-color" data-type="twitter"></i>
-              <h3 class="meter-legend-item-title">트위터</h3>
-              <span class="meter-legend-item-value">800,000원</span>
-            </div>
-            <div class="meter-legend-item">
-              <i class="meter-legend-item-color" data-type="instagram"></i>
-              <h3 class="meter-legend-item-title">핀터레스트</h3>
-              <span class="meter-legend-item-value">800,000원</span>
-            </div>
-          </div>
-        </article>
-
-        <div class="jobitem" role="listitem">
-          <h2 class="jobitem-name">Senior Front-end Developer</h2>
-          <div class="jobitem-tags">
-            <span class="tag">Full-Time</span>
-            <span class="tag">Korea</span>
-            <span class="tag">Remote friendly</span>
-          </div>
-          <button class="jobitem-view"><span class="chip-label">View Job</span></button>
-        </div>
-      </div>
-
-      <div class="column">
-        <article style="position: relative">
-          <div class="tile-flat" style="border: none; margin-left: -0.75rem; margin-right: -0.75rem">
-            <b>Personal License</b>
-            <b class="item-price" style="position: absolute; right: var(--space-3); top: var(--space-3)">18,800 KRW</b>
-            <small style="display: block; color: var(--color-text-light)">1 user</small>
-          </div>
-
-          <div class="item" data-size="large">
-            <figure class="item-avatar" style="background-image: none; font-size: var(--font-size-large)">🎅🏻</figure>
-            <b class="item-name">Widgefy iOS Widgets</b>
-            <!-- <p class="item-description">description area.</p> -->
-            <div style="display: flex; align-items: center; color: var(--color-text-light)">
-              <small style="line-height: 24px">떡볶이</small>
-            </div>
-            <b class="item-price" style="position: absolute; right: 0; top: 0">18,800 KRW</b>
-            <small style="color: var(--color-text-light); position: absolute; right: 0; top: 22px">6410</small>
-          </div>
-
-          <div class="item" data-size="large">
-            <figure class="item-avatar" style="background-image: none; font-size: var(--font-size-large)">🎅🏾</figure>
-            <b class="item-name">BetaCRM Web UI Kit</b>
-            <!-- <p class="item-description">description area.</p> -->
-            <div style="display: flex; align-items: center; color: var(--color-text-light)">
-              <small style="line-height: 24px">떡볶이</small>
-            </div>
-            <b class="item-price" style="position: absolute; right: 0; top: 0">500 KRW</b>
-            <small style="color: var(--color-text-light); position: absolute; right: 0; top: 22px">6839</small>
-          </div>
-
-          <footer style="margin: 1rem 0">
-            <button class="button-primary" style="width: 100%; font-size: 15px">Buy now</button>
-          </footer>
-        </article>
-
-        <form class="feed-make tile-elevated" action="">
-          <header class="titlebar" style="padding: 0; margin-bottom: var(--space-4)">
-            <h1 class="titlebar-title">게시물 만들기</h1>
-            <button class="titlebar-back" aria-label="이전 페이지로">
-              <span class="material-symbols-outlined">close</span>
-            </button>
-          </header>
-          <div class="item" data-size="medium">
-            <figure class="item-avatar"></figure>
-            <span class="item-name">수줍이</span>
-          </div>
-          <div class="textfield comment-write-text" style="margin: var(--space-3) 0">
-            <!-- <label class="textfield-label" for="" aria-hidden="true">댓글</label> -->
-            <textarea
-              class="textfield-input"
-              rows="3"
-              name="comment"
-              placeholder="무슨 생각을 하고 계신가요? feed와 comment에서 사용. textarea 컴포넌트 정의. 취소 버튼의 위치. toolbar."
-              style="height: auto"
-            ></textarea>
-          </div>
-          <footer>
-            <button class="comment-write-submit" type="submit">게시</button>
-          </footer>
-        </form>
-
-        <article class="tile-elevated">
-          <header class="titlebar" style="padding: 0; margin-bottom: var(--space-4)">
-            <h1 class="titlebar-title">VASP 선택</h1>
-            <button class="titlebar-back" aria-label="이전 페이지로">
-              <figure class="chip material-symbols-outlined">arrow_back</figure>
-            </button>
-          </header>
-          <div class="textfield" data-size="small">
-            <button class="textfield-prefix searchfield-prefix">
-              <span class="material-symbols-outlined" style="font-size: 20px">search</span>
-            </button>
-            <input class="textfield-input" type="text" id="search" placeholder="VASP명 / 심볼" autocomplete="off" />
-            <!-- <button class="textfield-clear" hidden><span class="material-symbols-outlined">close</span></button> -->
-          </div>
-
-          <hr />
-
-          <div class="item" data-size="medium" role="menuitem">
-            <figure class="item-avatar"></figure>
-            <b class="item-name" style="font-weight: var(--font-weight-normal)">빗썸</b>
-            <div class="checkbox" data-size="large" style="margin-left: auto">
-              <input type="checkbox" id="menutype1" name="gender" checked="" />
-              <label for="menutype1" title=""></label>
-            </div>
-          </div>
-          <div class="item" data-size="medium" role="menuitem">
-            <figure class="item-avatar"></figure>
-            <b class="item-name" style="font-weight: var(--font-weight-normal)">코인원</b>
-            <div class="checkbox" data-size="large" style="margin-left: auto">
-              <input type="checkbox" id="menutype2" name="gender" checked="" />
-              <label for="menutype2" title=""></label>
-            </div>
-          </div>
-        </article>
-      </div>
     </section>
   </div>
 
