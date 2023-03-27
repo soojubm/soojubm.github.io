@@ -10,6 +10,24 @@
 .component-props {margin:var(--space-4) 0 0 0;position:relative;}
 .component-props .article-subhead {display:none;}
 
+.component-references {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1rem 0 0;
+  padding: 1rem;
+  background: var(--color-background-weak);
+  border-radius: var(--radius);
+}
+.component-references .article-subhead {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: var(--space-4);
+}
+.component-references a {
+  font-size: var(--font-size-large);
+  font-weight: var(--font-weight-bold);
+}
+
 .component-navigation {
   width:calc(100% + .25rem);
   box-sizing: border-box;

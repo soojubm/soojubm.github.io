@@ -23,7 +23,7 @@
 .article p, .article ul, .article dl {max-width: 800px;}
 
 .article-kicker {max-width: 800px !important;font-size:var(--font-size-large);color:var(--color-text);line-height:var(--font-line-height-large);}
-.article-kicker b {margin-right:var(--space-4);font-weight: var(--font-weight-bold);color:var(--color-primary);}
+.article-kicker b {margin-right:var(--space-4);font-weight: var(--font-weight-bold);}
 .article-kicker + .article-kicker {margin: var(--space-1) 0 0 0;}
 
 .article-dont {padding:1rem;border-radius:var(--radius);background:var(--red100);}

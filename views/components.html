@@ -299,6 +299,7 @@
       <!-- <p><b>mui.</b> 아이콘 아바타를 사용. 아이콘 아바타와 아이콘 버튼의 차이.</p> -->
       <article class="user tile-flat" style="text-align: left">
         <h2 class="article-subhead" style="margin-top: 0">non-clickable<br />avatar는 장식 요소로 오른쪽에 배치 (outdated)</h2>
+        <hr />
         <figure class="user-avatar" role="img"></figure>
         <b class="user-name">수줍이</b>
         <span class="user-id">soojubm@gmail.com</span>
@@ -307,6 +308,7 @@
 
       <div class="tile-flat">
         <h2 class="article-subhead" style="margin-top: 0">groupable<br />avatar의 목록</h2>
+        <hr />
         <article class="avatargroup">
           <figure></figure>
           <figure></figure>
@@ -519,18 +521,20 @@
         <article class="component-props">
           <!-- <h2 class="article-subhead">Props</h2> -->
           <dl>
-            <dt>style</dt>
-            <dd>'primary' | 'secondary' | 'tertiary'</dd>
-            <dd>TOOD 가각의 값에 대해 함께 설명이 필요. 설명 영역이 길어져야.</dd>
-            <dt>size<attr>?</attr></dt>
-            <dd>'large' | <b>'medium'</b></dd>
-            <dd>large size는 프로모션 페이지의 call to action로 제한됩니다.</dd>
             <dt>name</dt>
             <dd>string</dd>
             <dd></dd>
             <dt>label</dt>
             <dd>string</dd>
             <dd>동사가 포함된 2자 ~ 8자 한글(!). 레이블 줄임?(truncated) 불가</dd>
+            <dd style="margin-top:-.25rem;">사용자 시점 (ex 보내기 => 받기).</dd>
+            <dt>appearance</dt>
+            <dd>'primary' | 'secondary' | 'tertiary'</dd>
+            <dd>TOOD 가각의 값에 대해 함께 설명이 필요. 설명 영역이 길어져야.</dd>
+            <dt>size<attr>?</attr></dt>
+            <dd>'large' | <b>'medium'</b></dd>
+            <dd>large size는 프로모션 페이지의 call to action로 제한됩니다.</dd>
+            <dd></dd>
             <dt>isDisabled?</dt>
             <dd>boolean</dd>
             <dd></dd>
@@ -543,16 +547,12 @@
             <dt>onClick<attr>?</attr></dt>
             <dd>event: React.MouseEvent[HTMLButtonElement]) =] void</dd>
             <dd>TODO onClick는 href와 구분. LinkButton 컴포넌트의 필요성.</dd>
-            <dd></dd>
-            <dt>aria-pressed<attr>?</attr></dt>
+            <dt>ariaHaspopup<attr>?</attr></dt>
             <dd>null</dd>
-            <dd></dd>
-            <dt>aria-haspopup<attr>?</attr></dt>
+            <dd>TODO</dd>
+            <!-- <dt><del>aria-expanded</del><attr>?</attr></dt>
             <dd>null</dd>
-            <dd></dd>
-            <dt><del>aria-expanded</del><attr>?</attr></dt>
-            <dd>null</dd>
-            <dd>TODO 버튼을 타겟 확장의 용도로 사용할 수 없기 때문에 제거하기</dd>
+            <dd>TODO 버튼을 타겟 확장의 용도로 사용할 수 없기 때문에 제거하기</dd> -->
           </dl>
         </article>
       </section>
@@ -572,10 +572,8 @@
         버튼은 페이지 내에서 여러 번 반복될 수 없는 최종적인 인터렉션입니다. 단, 전송이 실패하는 경우에는 여러 번 반복해서 실행할 수 있습니다.
       </p>
 
-      <ul>
-        <li>TODO: utton과 chip을 통합.</li>
-        <li>사용자 시점 (ex 보내기 => 받기)</li>
-      </ul>
+        <!-- <li>TODO: utton과 chip을 통합.</li> -->
+
 
       <!-- <h2 class="article-subhead">Icon guidelines</h2> -->
       <!-- <li>당연한 얘기... 텍스트 레이블을 생략하는 경우 관습적인 메타포의 아이콘(북마크/하트/카트 등)을 사용하고 대체 텍스트와 툴팁을 제공하세요.</li>
@@ -683,21 +681,15 @@
             <dd>하나의 단어 또는 복합명사</dd>
             <dt>isChecked<attr>?</attr></dt>
             <dd>boolean</dd>
-            <dd>toggle or single active. 링크로 쓰지 않는다.</dd>
-            <dt>ariaSelected</dt>
-            <dd></dd>
-            <dd>TODO isChecked와 통합할 수 있다.</dd>
+            <dd>with ariaSelected. toggle or single active. 링크로 쓰지 않는다.</dd>
             <dt>onClick</dt>
             <dd>() => void</dd>
             <dd>TODO checked 의존</dd>
             <dt>onRemoveClick<attr>?</attr></dt>
             <dd>() => void</dd>
-            <dd>TODO 현대 유아이에서 칩의 기능은 복잡해졌기 때문에, 합성 컴포넌트를 만드는 게 좋다.</dd>
-            <!-- <dt>isRemovable<attr>?</attr></dt> -->
-            <!-- <dt>isAddable<attr>?</attr></dt>
-          <dd>boolean</dd> -->
-            <dt>ariaHaspopup</dt>
-            <dd>null</dd>
+            <dd>TODO 합성 컴포넌트를 만드는 게 좋다. isRemovable과 통합</dd>
+            <dt>aria???</dt>
+            <dd>'checked' | 'expanded' | 'selected' | 'pressed'</dd>
             <dd>TODO onRemoveClick와 설명과 같은 맥락</dd>
           </dl>
         </article>
@@ -837,8 +829,8 @@
         </div>
       </div>
 
-      <h2 class="article-subhead">References</h2>
-      <div class="" style="display: flex; flex-wrap: wrap">
+      <div class="component-references">
+        <h2 class="article-subhead">References</h2>
         <a href="https://material.io/components/menus" target="_blank" style="display: block">MD menu</a>
         <span class="icon-bullet"></span>
         <a href="https://developer.apple.com/design/human-interface-guidelines/components/menus-and-actions/pull-down-buttons">pull down button</a>
@@ -887,9 +879,9 @@
             <dd>
               단락 내부와 외부에서의 형태를 구분합니다. 단락 내부에서는 본문 텍스트와 대비를 높이기 위해 언더라인을 표시합니다. 불필요해보이는 규칙.
             </dd>
-            <dt>href ? url?</dt>
+            <dt>href?</dt>
             <dd>string</dd>
-            <dd></dd>
+            <dd>NNNNN</dd>
             <dt>isExternal<attr>?</attr></dt>
             <dd>boolean</dd>
             <dd>속성들... target=_blank rel=noopener noreferrer</dd>
@@ -945,12 +937,12 @@
         <article class="component-props">
           <h2 class="article-subhead">Props</h2>
           <dl>
-            <dt>appearance</dt>
-            <dd>'primary' | <del>'secondary'</del> | 'tertiary<sup>default value</sup>'</dd>
-            <dd>하나의 컨테이너에 primary는 하나만 존재한다.</dd>
             <dt>label</dt>
             <dd>string</dd>
             <dd>2단어 이하의 형용사 또는 명사</dd>
+            <dt>appearance</dt>
+            <dd>'primary' | <del>'secondary'</del> | 'tertiary<sup>default value</sup>'</dd>
+            <dd>하나의 컨테이너에 primary는 하나만 존재한다.</dd>
           </dl>
         </article>
       </section>
@@ -988,36 +980,40 @@
             <label for="switch2" title="Receive weekly newsletter">뉴스레터 받아보기</label>
           </span>
         </div>
+        <article class="component-props">
+          <h2 class="article-subhead">Props</h2>
+          <dl>
+            <dt>name</dt>
+            <dd>string</dd>
+            <dd>id={props.name}</dd>
+            <dt>label? - isHiddenLabel</dt>
+            <dd>string</dd>
+            <dd>동사를 포함합니다. choice보다 action에 가깝다.</dd>
+            <dt>value</dt>
+            <dd>string</dd>
+            <dt>isChecked<attr>?</attr></dt>
+            <dd>boolean</dd>
+            <dd>TODO checked?</dd>
+            <dt>isDisabled<attr>?</attr></dt>
+            <dd>boolean</dd>
+            <dd></dd>
+            <dt>onChange</dt>
+            <dd>(event: React.FormEvent[HTMLInputElement]) =] void</dd>
+          </dl>
+        </article>
       </section>
 
       <ul>
         <li>추가적인 액션 없이 즉시 실행합니다.</li>
         <li>스위치의 왼쪽과 오른쪽에 각각 레이블을 배치하여 콘텐츠 스위칭으로 사용하지 마세요.</li>
-        <li>동사 포함</li>
       </ul>
-
-      <h2 class="article-subhead">Props</h2>
-      <dl>
-        <dt>id</dt>
-        <dd>string</dd>
-        <dt>name</dt>
-        <dd>string</dd>
-        <dt>value</dt>
-        <dd>string</dd>
-        <dt>label? - labelHidden</dt>
-        <dd>string</dd>
-        <dt>isChecked</dt>
-        <dd>boolean</dd>
-        <dt>onChange</dt>
-        <dd>() => void</dd>
-      </dl>
     </article>
   </section>
   <section class="component-body">
     <article class="article js-observer js-scrollspy-section">
       <h1 class="article-title" title="or Box">Checkboxes</h1>
       <p class="article-description">옵션 목록에서 하나 이상의 옵션을 선택합니다.</p>
-      <div class="component-example">
+      <section class="component-example">
         <!-- a11y checkgroup not valid -->
         <fieldset class="tile-flat">
           <!-- <legend">checkgroup</legend> -->
@@ -1051,7 +1047,32 @@
             <label for="menutype2" aria-label="체크박스 라지"></label>
           </div>
         </div>
-      </div>
+
+        <article class="component-props">
+          <h2 class="article-subhead">Props</h2>
+          <dl>
+            <dt>name</dt>
+            <dd>string</dd>
+            <dd>id={props.name}</dd>
+            <dt>label? - labelHidden</dt>
+            <dd>string</dd>
+            <dd>동사를 포함합니다. choice보다 action에 가깝다.</dd>
+            <dt>value</dt>
+            <dd>string</dd>
+            <dt>isChecked<attr>?</attr></dt>
+            <dd>boolean</dd>
+            <dt>isDisabled<attr>?</attr></dt>
+            <dd>boolean</dd>
+            <dd></dd>
+            <dt>isIndeterminated<attr>?</attr></dt>
+            <dd>boolean</dd>
+            <dd>TODO checkbox group에서 checkboxAll에 종속되는 옵션</dd>
+            <dt>onChange</dt>
+            <dd>(event: React.FormEvent[HTMLInputElement]) =] void</dd>
+            <dd>React.ChangeEventHandler[] / @types/react</dd>
+          </dl>
+        </article>
+      </section>
 
       <p class="article-kicker">
         <b>default value</b>
@@ -1083,21 +1104,6 @@
       <input class="js-check" type="checkbox" id="other" name="interest" value="other" />
       <label for="other">기타</label>
     </div> -->
-
-      <h2 class="article-subhead">Props</h2>
-      <dl>
-        <dt>name</dt>
-        <dd>string</dd>
-        <dt>label</dt>
-        <dd>string</dd>
-        <dt>isChecked</dt>
-        <dd>boolean</dd>
-        <dt>isDisabled<attr>?</attr></dt>
-        <dd>boolean</dd>
-        <dt>onChange</dt>
-        <dd>(event: React.FormEvent[HTMLInputElement]) =] void</dd>
-        <dd>React.ChangeEventHandler[] / @types/react</dd>
-      </dl>
 
       <div class="tile-flat">
         <h2 class="article-subhead" style="margin-top: 0">Terms and conditions<br />약관 동의</h2>
@@ -1159,22 +1165,6 @@
       <ul>
         <li>기본 배송지 선택</li>
       </ul> -->
-
-      <h2 class="article-subhead">Props</h2>
-      <dl>
-        <dt>id</dt>
-        <dd>string</dd>
-        <dt>name</dt>
-        <dd>string</dd>
-        <dt>label</dt>
-        <dd>string</dd>
-        <dt>isChecked</dt>
-        <dd>boolean</dd>
-        <dt>isDisabled</dt>
-        <dd>boolean</dd>
-        <dt>onChange</dt>
-        <dd>(event: React.FormEvent[HTMLInputElement]) =] void</dd>
-      </dl>
       <!-- (리액트에서 id  이슈 input in label.) -->
     </article>
 
@@ -1266,6 +1256,17 @@
             <small id="msgID" class="textfield-helper is-error" aria-live="assertive">이미 등록된 이메일입니다.</small>
           </div>
         </div>
+
+        <div class="tile-flat">
+          <div class="searchfield">
+            <button class="searchfield-prefix">
+              <span class="material-symbols-outlined">search</span>
+            </button>
+            <input class="textfield-input searchfield-input" type="search" id="search" placeholder="궁금한 인물이나 이슈가 있나요?" />
+            <button class="searchfield-clear" aria-label="clear keywords" hidden><span class="material-symbols-outlined">close</span></button>
+          </div>
+        </div>
+
         <div class="textfield-group tile-flat">
           <div class="textfield">
             <label class="textfield-label" for="date-start"><i class="">체크인</i></label>
@@ -1292,16 +1293,6 @@
         </div>
 
         <div class="tile-flat">
-          <div class="searchfield">
-            <button class="searchfield-prefix">
-              <span class="material-symbols-outlined">search</span>
-            </button>
-            <input class="textfield-input searchfield-input" type="search" id="search" placeholder="궁금한 인물이나 이슈가 있나요?" />
-            <button class="searchfield-clear" aria-label="clear keywords" hidden><span class="material-symbols-outlined">close</span></button>
-          </div>
-        </div>
-
-        <div class="tile-flat">
           <!-- numberfield -->
           <div class="quantity js-quantity">
             <label for="numberfield" style="position: absolute; opacity: 0">레이블 라이트하우스용</label>
@@ -1320,78 +1311,72 @@
             />
             <button class="quantity-increment js-quantity-increment" tabindex="-1"><span class="material-symbols-outlined">add</span></button>
           </div>
-          <blockquote style="margin: 1rem 0 0 0">
-            <p>NumberInput type="quantity(3자리 정도) | price | default"</p>
-            <p>221021: - + 버튼에 포커스는 필요가 없다.</p>
-            <p>minus 버튼을 제외하고 plus 버튼만 제공해도 재미있겠다.</p>
-            <p>quntity: 최소값와 최대값.</p>
-            <p>price: 숫자만입력3자리마다콤마</p>
-            <p>입력 제한 피드백으로 disabled 상태.</p>
-            <p>공통 앞자리 0 제거</p>
-          </blockquote>
+          <div style="margin: 1rem 0 0 0">
+            <p></p>
+            <p>221021: - + 버튼에 포커스는 필요가 없다. 최소값와 최대값. 입력 제한 피드백으로 disabled 상태.</p>
+            <!-- <p>minus 버튼 없이 plus 버튼만 제공해도 재미있겠다.</p> -->
+            <p>price를 위한 numberField. 앞자리 0 제거. 숫자만입력3자리마다콤마</p>
+          </div>
         </div>
+
+        <article class="component-props">
+          <h2 class="article-subhead">Props</h2>
+          <dl>
+            <dt>type</dt>
+            <dd>HTMLInputTypeAttribute? | 'search' | "text" | "number" | "tel" | "textarea"</dd>
+            <dd>TODO Searchfield / Commentfield / QuantityField / PriceField... label, validation, helper를 포함하지 않는 케이스와 구분해보기</dd>
+            <dt>name</dt>
+            <dd>string</dd>
+            <dd>id={props.name}</dd>
+            <dt>label</dt>
+            <dd>string</dd>
+            <dd>레이블을 쓰지 않으면 hiddenLabel 스타일.</dd>
+            <dt>value</dt>
+            <dd>string</dd>
+            <dt>placeholder</dt>
+            <dd>string</dd>
+            <dt>helper</dt>
+            <dd>string</dd>
+            <dd>isInvalid = helper.length === 0</dd>
+            <dt>state</dt>
+            <dd>'disabled' | 'readonly' | 'focused' | 'invalid'</dd>
+            <dd></dd>
+            <dt>isAutoFocus<attr>?</attr></dt>
+            <dd>boolean</dd>
+            <dd></dd>
+            <dt>onChange</dt>
+            <dd>(event: React.ChangeEvent[HTMLInputElement]) => void</dd>
+            <dd></dd>
+            <dt>onKeyDown</dt>
+            <dd>(event: KeyboardEvent[HTMLButtonElement]) => void</dd>
+          </dl>
+        </article>
       </section>
 
       <p class="article-kicker">
+        <b>Required? 명료?</b>
+        필수 입력을 전제합니다. 불필요한 정보 입력이나 행동을 유도하지 않는다는 대원칙. 사용자 여정에 허들이 될 수 있는 불필요한 텍스트 입력 필드는
+        최소화합니다. 사용자 정보를 제공하여 얻을 수 있는 이점이 명확한 경우에만. 선택 입력 필드는 '선택입력' 텍스트로 가이드합니다.
+      </p>
+      <p class="article-kicker">
         <b>groupable</b>
       </p>
-      <h2 class="article-subhead">Best practices</h2>
-      <p>
-        필수 입력을 전제합니다. 사용자 여정에 허들이 될 수 있는 불필요한 텍스트 입력 필드는 최소화합니다. 사용자 정보를 제공하여 얻을 수 있는 이점이
-        명확한 경우에만. 선택 입력 필드는 '선택입력' 텍스트로 가이드합니다.
+      <p class="article-kicker">
+        <b>Layout?</b>
+        레이블을 텍스트필드 왼쪽에 배치하지 마세요.
       </p>
-      <p>아이콘 레이블로 대체하는 경우 텍스트 레이블을 생략할 수 있습니다.</p>
+      <p>아이콘 레이블로 대체하는 경우 텍스트 레이블을 생략할 수 있습니다. 서치필드 외에도 반복되는 이메일 입력.</p>
       <!-- <p>너무 당연한 이야기검색 필드는 일반 텍스트필드와 구별할 수 있도록 검색 아이콘 등 시각적인 단서를 제공하세요.</p> -->
-
-      <h2 class="article-subhead">Alignment</h2>
-      <p>레이블을 텍스트필드 왼쪽에 배치하지 마세요.</p>
-
-      <h2 class="article-subhead">withot label 1<br />Searchfield / Commentfield</h2>
-      <p>label, validation, helper 미포함. 새로운 컴포넌트로 정의.</p>
 
       <!-- <ul>
         <li>todo: helper(help message)와 feedback message를 구별. required indicator / optional indicator / validations / masked / validation feedback</li>
         <li>url 등록 시 www 및 https:// 기본 입력</li>
       </ul> -->
 
-      <h2 class="article-subhead">Props</h2>
-      <dl>
-        <dt>type</dt>
-        <dd>HTMLInputTypeAttribute? | "search" | "text" | "number" | "tel" | "textarea"</dd>
-
-        <dt>id</dt>
-        <dd>string</dd>
-
-        <dt>placeholder</dt>
-        <dd>string</dd>
-        <dt>name</dt>
-        <dd>string</dd>
-        <dt>label</dt>
-        <dd>string</dd>
-        <dt>value</dt>
-        <dd>string</dd>
-        <dt>helper</dt>
-        <dd>
-          string
-          <!-- <p>isUnvalid = helper.length <= 0</p> -->
-        </dd>
-        <dt>states</dt>
-        <dd>"disabled" | "readonly"</dd>
-        <dt>isFocused<attr>?</attr></dt>
-        <dd>boolean</dd>
-        <dt>isAutoFocus<attr>?</attr></dt>
-        <dd>boolean</dd>
-        <dt>onChange</dt>
-        <dd>function()</dd>
-        <dt>onKeyDown</dt>
-        <dd>(event: KeyboardEvent[HTMLButtonElement]) => void</dd>
-
-        <dt>isHiddenLabel</dt>
-        <dd>boolean</dd>
-      </dl>
-
-      <h2 class="article-subhead">References</h2>
-      <a href="https://developer.apple.com/documentation/uikit/uisearchbar">HIG searchbar</a>
+      <div class="component-references">
+        <h2 class="article-subhead">References</h2>
+        <a href="https://developer.apple.com/documentation/uikit/uisearchbar">HIG searchbar</a>
+      </di >
     </article>
 
     <article class="article js-observer js-scrollspy-section">
@@ -1422,17 +1407,30 @@
         </div>
         <div class="tile-elevated">
           <b>elevated</b>
-          <p>TODO flat 형태와 구별이 잘 안 됨. 어떤 배경에서는 눈에 띄지 않음.</p>
+          <p>flat 형태와 구별이 잘 안 되어 쉐도우를 변경함.</p>
         </div>
-        <!-- <div class="tile-flat">
-          <figure class="media card-thumbnail">
+        <div class="tile-flat">
+          <!-- <figure class="media card-thumbnail">
             <figcaption></figcaption>
-          </figure>
+          </figure> -->
           <b>flat with media</b>
-        </div> -->
+        </div>
         <div class="tile-flat-small">
           <b>flat small</b>
         </div>
+
+        <article class="component-props">
+          <dl>
+            <dt>appearance</dt>
+            <dd>'flat' | 'elevated'</dd>
+            <dd></dd>
+            <dt>size</dt>
+            <dd>'large' | 'medium' | 'small'</dd>
+            <dd>TODO tiny size for tablist</dd>
+            <dt>children</dt>
+            <dd>React.Node</dd>
+          </dl>
+        </article>
       </section>
 
       <p class="article-kicker">
@@ -1443,7 +1441,6 @@
       <h2 class="article-subhead">Optical adjustment</h2>
       <ul>
         <li>타일 내부 leading, tailing 엘리먼트의 시각보정이 필요할 수 있습니다.</li>
-        <li>tile의 내부에 subhead text가 포함되어 있다면 large size의 tile을 사용하세요.</li>
       </ul>
 
       <!-- <li>todo 선택 상태의 타일 디자인.</li> -->
@@ -1522,8 +1519,7 @@
 
       <h2 class="article-subhead">ggg</h2>
       <ul>
-        <li>행동을 유도하는 가이드로 사용하지 마세요.</li>
-        <li>툴팁의 물음표 아이콘을 페이지 링크로 사용하지 마세요.</li>
+        <li>보충의 맥락이기 때문에 행동을 유도하는 가이드로 사용하지 마세요. 툴팁의 트리거를 페이지 링크로 사용하지 마세요.</li>
         <li>A tooltip is not considered to be a popup in this context, as it is not interactive.</li>
         <li>
           페이지 로딩 시점에 열려 있는 경우 doorhanger/pointing arrow 필요. 하지만 그것은 툴팁이 아닌 새로운 컴포넌트로 정의할 필요가 있겠다. 하지만
@@ -1546,28 +1542,26 @@
             <span class="breadcrumb-item breadcrumb-last" href="#">페이지 이름</span>
           </nav>
         </div>
+        <article class="component-props">
+          <h2 class="article-subhead">Props</h2>
+          <dl>
+            <dt>currentPage</dt>
+            <dd>string</dd>
+            <dd>구조를 어떻게?</dd>
+          </dl>
+        </article>
       </section>
-
-      <h2 class="article-subhead">Best practices</h2>
-      <p>페이지 뎁스 3 이상에서 사용합니다.</p>
-
-      <h2 class="article-subhead">Don'ts</h2>
-      <p>모바일 환경에서 네비게이션 바(탑 바/타이틀 바/바텀 네비게이션 등)와 함께 사용하지 마세요.</p>
-
-      <!-- <li>푸터에서 사이트맵과 함께 사용할 수 있습니다.</li>
-      <li>프로모션용 랜딩 페이지에서 사용자 여정을 돕기 위해 사용할 수 있습니다.</li> -->
-
-      <!-- <p>flat sitemap 트렌드에서 사용 빈도가 높지 않아요. 주로 도움말, 상품 등 카테고리 구조에서 활용하며, pg 심사 시 제품군 정보가 요구될 수 있어요. (토스페이-구엘지페이먼츠시절)</p> -->
-
-      <h2 class="article-subhead">Props</h2>
-      <dl>
-        <dt>currentPage</dt>
-        <dd>string</dd>
-      </dl>
-
-      <h2 class="article-subhead">Other cases</h2>
+      <h2 class="article-subhead">Memo</h2>
       <ul>
+        <li>3개 이상의 페이지 댑스에서 사용합니다.</li>
         <li>상위 댑스의 페이지 타이틀을 truncated</li>
+        <li>모바일의 네비게이션 바(탑 바/타이틀 바/바텀 네비게이션 등)와 함께 사용하지 마세요.</li>
+        <li>푸터에서 사이트맵과 함께 사용할 수 있습니다.</li>
+        <li>프로모션용 랜딩 페이지에서 사용자 여정을 돕기 위해 사용할 수 있습니다.</li>
+        <li>
+          flat sitemap 트렌드에서 사용 빈도가 높지 않아요. 주로 도움말, 상품 등 카테고리 구조에서 활용하며, pg 심사 시 제품군 정보가 요구.
+          (토스페이-구엘지페이먼츠시절)
+        </li>
       </ul>
     </article>
 
@@ -1605,7 +1599,7 @@
             <dd>TODO SPA에서 탭은 라우팅 또는 브라우저 히스토리를 관리가 필요하다.</dd>
             <dt>tabPanel</dt>
             <dd>React.Node</dd>
-            <dd></dd>
+            <dd>TODO SPA에서 Tablist를 따로 정의해야 한다.</dd>
             <!-- <dt>indicator (active bar)</dt> -->
             <dt>badge? quantity? isUnread?</dt>
             <dd></dd>
@@ -1626,21 +1620,21 @@
         <li>글로벌 탐색 패턴으로 햄버거 메뉴와 탭(바텀네비게이션, 탭바)을 함께 사용하지 마세요. (todo: tab과 tab bar(app bar)를 구분)</li>
         <li><del>페이지 링크로 사용하지 마세요.</del> SPA에서 페이지 링크의 개념이 모호하지만 탭을 클릭 후의 뷰에서 탭 바는 유지되어야 합니다.</li>
         <li>todo 탭 갯수의 제한과 가로 스크롤. 브라우저 히스토리 저장. (?tab=projects)</li>
+        <li>키보드 접근성. 방향키.</li>
       </ul>
 
-      <h2 class="article-subhead">Accessibility</h2>
-      <p>방향키</p>
-
-      <h2 class="article-subhead">References</h2>
-      <a href="https://developer.apple.com/design/human-interface-guidelines/components/layout-and-organization/tab-views" target="_blank"
-        >HIG tab views</a
-      >
-      <i class="icon-bullet"></i>
-      <a href="https://developer.apple.com/design/human-interface-guidelines/components/selection-and-input/segmented-controls/"
-        >HIG Segmented controls</a
-      >
-      <i class="icon-bullet"></i>
-      <a href="https://material.io/components/tabs">MD Tabs</a>
+      <div class="component-references">
+        <h2 class="article-subhead">References</h2>
+        <a href="https://developer.apple.com/design/human-interface-guidelines/components/layout-and-organization/tab-views" target="_blank"
+          >HIG tab views</a
+        >
+        <i class="icon-bullet"></i>
+        <a href="https://developer.apple.com/design/human-interface-guidelines/components/selection-and-input/segmented-controls/"
+          >HIG Segmented controls</a
+        >
+        <i class="icon-bullet"></i>
+        <a href="https://material.io/components/tabs">MD Tabs</a>
+      </div>
     </article>
 
     <article class="article js-observer js-scrollspy-section">
@@ -1693,35 +1687,35 @@
           </header>
         </div>
         <!-- <div class="titlebar-backdrop js-header"></div> -->
+        <article class="component-props">
+          <h2 class="article-subhead">Props</h2>
+          <dl>
+            <dt>title<attr>?</attr></dt>
+            <dd>string</dd>
+            <dd>
+              최대 8자로 제한합니다. 타이틀이 말줄임표로 표시되지 않아야. 하지만 화면 크기는 점점 작아지니(접힌 상태의 폴더블폰) 대안이 필요하다.
+            </dd>
+            <dt>backType????<attr>?</attr></dt>
+            <dd>'close' | 'back'</dd>
+            <dd>TODO 패턴 정의. 탭 바로 접근하는 경우 등. close에서는 우측 액션을 제한해야 할 지도.</dd>
+            <dt>actions</dt>
+            <dd>React.Node</dd>
+            <dd>todo 우측 actions. 갯수 제한. md에서 최대 3개. hamberger case.</dd>
+            <!-- <dt>hasNext<attr>?</attr></th>
+            <dd>
+              boolean / 함수만 넘겨줘서 next 액션을 랜더링하는 방법이 나을 지도.
+            </dd> -->
+            <dt>onComplete(?) / onCancel<attr>?</attr></dt>
+            <dd>() => void</dd>
+          </dl>
+        </article>
       </section>
+      <!-- <li>현재 페이지와 관련된 액션을 제공합니다.</li> -->
 
-      <ul>
-        <!-- <li>현재 페이지와 관련된 액션을 제공합니다.</li> -->
-        <li>페이지 타이틀은 최대 8자로 제한합니다. 타이틀이 말줄임표로 표시되지 않도록.</li>
-        <li>todo 뒤로가기/닫기 패턴 정의하기. 탭 바로 접근하는 경우 등. 여러 개의 컴포넌트?</li>
-        <li>todo 우측 actions. 갯수 제한. md에서 최대 3개. hamberger case.</li>
-      </ul>
-
-      <h2 class="article-subhead">Props</h2>
-      <dl>
-        <dt>title<attr>?</attr></dt>
-        <dd>string</dd>
-        <dt>backType<attr>?</attr></dt>
-        <dd>'close' | 'arrow'</dd>
-        <dt>actions</dt>
-        <dd>React.Node</dd>
-        <!-- <dt>hasNext<attr>?</attr></th>
-      <dd>
-        boolean / 함수만 넘겨줘서 next 액션을 랜더링하는 방법이 나을 지도.
-      </dd> -->
-        <dt>onComplete(?) / onCancel<attr>?</attr></dt>
-        <dd>() => void</dd>
-      </dl>
-
-      <h2 class="article-subhead">References</h2>
-      <ul>
-        <li><a href="https://m3.material.io/components/top-app-bar/overview" target="_blank">MD3 top app bar</a></li>
-      </ul>
+      <div class="component-references">
+        <h2 class="article-subhead">References</h2>
+        <a href="https://m3.material.io/components/top-app-bar/overview" target="_blank">MD3 top app bar</a>
+      </div>
     </article>
 
     <article class="article js-observer js-scrollspy-section">
@@ -1789,34 +1783,32 @@
           </aside>
         </div>
 
+        <article class="component-props">
+          <h2 class="article-subhead">Props</h2>
+          <dl>
+            <!-- <dt>offset</dt>
+            <dd>number</dd> -->
+            <dt>initialPageNumber? selecedPageNumber?</dt>
+            <dd>number</dd>
+            <dt>lastPageNumber</dt>
+            <dd>number</dd>
+            <dd>서버에서 받는다.</dd>
+          </dl>
+        </article>
+
         <!-- <b class="pagination-current">1</b>
         <span class="pagination-divider"> / </span>
         <span class="pagination-all">44</span> -->
         <!-- <span>page 2 of 22</span> -->
       </section>
 
-      <h2 class="article-subhead">Best practices</h2>
       <p>
         첫 페이지와 마지막 페이지에 더블 화살표 아이콘을 사용하지 않습니다. 최초와 최종 페이지 넘버로 사용자가 대략적인 콘텐츠 수량을 파악할 수 있도록
         도와주세요.
       </p>
-
-      <h2 class="article-subhead">Props</h2>
-      <dl>
-        <dt>offset</dt>
-        <dd>number</dd>
-        <dt>pageCount</dt>
-        <dd>number</dd>
-      </dl>
-
-      <h2 class="article-subhead">pagination vs more load vs infinite scroll</h2>
-      <!-- <h2 class="article-subhead">Cases</h2>
-      <ul>
-        <li>
-          느린 탐색 경험이 필요할 때. 게시판이나 상품 목록의 탐색에서 이전에 탐색한 상품의 위치를 찾기 편리함. 최근 본 목록이나 섬네일에서 북마크를
-          제공한다면?
-        </li>
-      </ul> -->
+      <p>서버에서 offset을 0으로 줄 수도 있고 1로 줄 수도 있다.</p>
+      <!-- <p>pagination vs more load vs infinite scroll. 느린 탐색 경험이 필요할 때. 게시판이나 상품 목록의 탐색에서 이전에 탐색한 상품의 위치를 찾기 편리함. 최근 본 목록이나 섬네일에서 북마크를
+          제공한다면?</p> -->
     </article>
 
     <article class="article js-observer js-scrollspy-section">
