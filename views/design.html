@@ -90,10 +90,10 @@
     <!-- <div class="hero-eyebrow" style="margin-bottom: 0.75rem">디자인 시스템 연습</div> -->
     <h1 class="hero-title ellipsis" title="overall consistency and design and development efficiency">디자인 시스템 연습</h1>
 
+    <!-- <p>유아이 라이브러리와 스타일 가이드를 디자인 시스템이라 부르지 말기를...</p> -->
     <p class="article-kicker" style="margin-top: 1.75rem">
       <b>Meaningful and Trustworthy</b>
-      Compellingly procrastinate focused services rather than B2C markets. Proactively incubate future-proof outsourcing before cross-platform
-      interfaces.
+      디자인 시스템을 활용한 제품의 사용자 뿐 아니라, 디자인 시스템을 사용하는 사용자인 동료에도 해당.
       <!-- should reinforce the meaning of content, not distract from it. We prioritize worthwhile communication over decoration. If an aspect of the
       design doesn’t enhance the content, we should remove it. -->
     </p>
@@ -134,7 +134,46 @@
       <div class="hero-obj2"></div>
       <div class="hero-obj3"></div>
     </div> -->
+
+    <hr />
+
+    <h3>React</h3>
+    <ul>
+      <li>useOutsideClick의 ref 의존성을 presentation 컴포넌트에서 분리하기 위해 닫기 역할을 갖는 overlay/dim 컴포넌트를 활용</li>
+      <li>background 컴포넌트. lazy load 기능을 포함하는.</li>
+    </ul>
   </header>
+
+  <section style="display: flex; justify-content: center; margin: 0 1rem 4rem">
+    <div class="tile-flat" style="width: 50%; margin: 0; padding: 2rem var(--grid-margin) 4rem; border: 0; background-color: var(--color-naver)">
+      <h1 class="article-subhead" style="margin-top: 0">형태</h1>
+      <p>합성 가능한 컴포넌트.?</p>
+      <div class="chat" style="max-width: 80%; margin: 2rem 0 0">
+        <figure class="chat-avatar"></figure>
+        <div class="chat-bubble">
+          컴포넌틀가 갖는 역할 정보는 변경되지 않고 형태만 변경이 된다.
+          <!-- <p>namespace는 서드 파티 라이브러리와 충돌을 방지하기 위해 사용합니다. 프로덕션이 아니기 때문에 여기에서는 namespace를 생략했습니다.</p>
+          <p>memo: dashboard 등 회색 배경이 들어간 페이지에서는 border 등 조절되어야 한다...</p>
+          <p>--[namespace]-[component / category]-[attribute]-[status]</p> -->
+        </div>
+      </div>
+    </div>
+    <div
+      class="tile-flat"
+      style="width: 50%; margin: 0 1rem; padding: 2rem var(--grid-margin) 4rem; border: 0; background-color: var(--color-twitter)"
+    >
+      <h1 class="article-subhead" style="margin-top: 0">역할</h1>
+      <p>역할 컴포넌트는 형태 컴포넌트 또는 믹스인을 갖습니다.</p>
+      <div class="chat" style="max-width: 80%; margin: 2rem 0 0">
+        <figure class="chat-avatar"></figure>
+        <div class="chat-bubble">
+          컴포넌틀가 갖는 역할 정보는 변경되지 않고 형태만 변경이 된다.
+          <!-- <p>memo: dashboard 등 회색 배경이 들어간 페이지에서는 border 등 조절되어야 한다...</p>
+          <p>--[namespace]-[component / category]-[attribute]-[status]</p> -->
+        </div>
+      </div>
+    </div>
+  </section>
   <!-- <p style="margin: 1rem 0">design priciples. 디자인 시스템의 원칙과 브랜드 원칙을 잘 구분하고 있는가.</p>
   <p>naming: data-index 보다 name name을 숫자로 주면 됨. 수정을 위해. 롤에 스타일을 주지 않기. aria로 상태 표현은 좋다.</p> -->
 
@@ -282,7 +321,7 @@
           <button class="chip"><span class="chip-label">재주문</span></button>
           <button class="chip"><span class="chip-label">후기작성</span></button>
         </div>
-        <small>네이버는 왜 주문 내역 삭제을 숨길 수 있게 했나?</small>
+        <small>네이버 쇼핑은 왜 주문 내역을 숨길 수 있나?</small>
       </div>
     </section>
 
@@ -487,7 +526,7 @@
   </section> -->
 
   <section class="design-guide" style="margin: 8rem var(--grid-margin)">
-    <h2 class="article-subhead" style="margin-bottom: 2rem">가이드 작성을 위한 가이드</h2>
+    <h2 class="article-subhead" style="margin-top: 0; margin-bottom: 2rem">가이드 작성을 위한 가이드</h2>
     <!-- <p class="post-relation-description" style="margin-top: 1rem; margin-bottom: 3rem">가이드 문서에도 가이드가 필요하다.</p> -->
     <div class="guide-wrap">
       <div class="guide-box" style="background: var(--color-temp1)">

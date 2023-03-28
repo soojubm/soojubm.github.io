@@ -145,8 +145,8 @@
 .statistic[data-size=small] .statistic-value {margin: 0 0 0 var(--space-1);font-size: var(--font-size-medium);}
 
 .carousel {position: relative;}
-.carousel-viewer {@include stack-vertical-scroll;margin: 0 -.75rem;padding:0 .75rem;}
-.carousel-viewer-slide {@include tile-elevated-small;min-width: 10rem;}
+.carousel-viewer {@include stack-vertical-scroll;margin:-.75rem;padding:.75rem;}
+.carousel-viewer-slide {@include tile-elevated-small;min-width: 10rem;margin:0 var(--space-3) 0 0;}
 .carousel-viewer-slide:hover {@include hover-item;}
 .carousel-viewer-slide-media {@include avatar-container;}
 .carousel-viewer-slide-name {}
@@ -154,9 +154,9 @@
 .carousel-dots-dot {width: 10px;height: 10px;margin: 0px 4px;border-radius: 50%;background: rgba(0, 0, 0, 1);cursor: pointer;}
 .carousel-dots-dot:hover {opacity: .5;}
 .carousel-arrows {}
-.carousel-arrows-prev {@include avatar-container;position: absolute;left: 0;top: 50%;z-index: var(--zindex-default);transform:translateY(-50%);}
+.carousel-arrows-prev {@include avatar-container;box-shadow:var(--shadow);position: absolute;left:-.5rem;top: 50%;z-index: var(--zindex-default);transform:translateY(-50%);}
 .carousel-arrows-prev:hover {}
-.carousel-arrows-next {@include avatar-container;position: absolute;right: 0;top: 50%;z-index: var(--zindex-default);transform:translateY(-50%);}
+.carousel-arrows-next {@include avatar-container;box-shadow:var(--shadow);position: absolute;right:-.5rem;top: 50%;z-index: var(--zindex-default);transform:translateY(-50%);}
 .carousel-arrows-next:hover {}
 .carousel-arrows button.is-disabled {opacity: .2;}
 

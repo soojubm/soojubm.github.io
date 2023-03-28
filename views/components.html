@@ -226,7 +226,7 @@
             <span class="material-symbols-outlined" style="transform: scale(75%)">close</span>
           </figure>
         </article>
-        <div style="margin-top: 1rem">
+        <div class="component-props">
           <!-- <h2 class="article-subhead" style="margin-top: 0">Props</h2> -->
           <dl>
             <dt>name</dt>
@@ -256,7 +256,7 @@
       <p class="article-kicker"><b>구성?</b> 이미지, 텍스트, 아이콘, 이모지를 포함할 수 있습니다.</p>
 
       <br />
-      <div class="tile-flat">
+      <div class="tile-flat" style="max-width: 800px">
         <article class="item" data-size="huge">
           <figure class="item-avatar">
             <span class="avatar-badge"></span>
@@ -297,7 +297,7 @@
       <!-- <p>아바타만 단독으로 사용하는 케이스가 있을까. 그렇다면 space-after-avatar 항상 필요하지는 않음.</p> -->
 
       <!-- <p><b>mui.</b> 아이콘 아바타를 사용. 아이콘 아바타와 아이콘 버튼의 차이.</p> -->
-      <article class="user tile-flat" style="text-align: left">
+      <article class="user tile-flat" style="max-width: 800px">
         <h2 class="article-subhead" style="margin-top: 0">non-clickable<br />avatar는 장식 요소로 오른쪽에 배치 (outdated)</h2>
         <hr />
         <figure class="user-avatar" role="img"></figure>
@@ -306,7 +306,7 @@
         <span class="user-job">Youtube subscriber</span>
       </article>
 
-      <div class="tile-flat">
+      <div class="tile-flat" style="max-width: 800px">
         <h2 class="article-subhead" style="margin-top: 0">groupable<br />avatar의 목록</h2>
         <hr />
         <article class="avatargroup">
@@ -319,7 +319,7 @@
         <small class="mutiual" style="display: block; margin: var(--space-2) 0 0 0">내가 팔로우하는 사용자 중에는 팔로워가 없습니다. (twitter)</small>
       </div>
 
-      <article class="tile-elevated">
+      <article class="tile-elevated" style="max-width: 800px">
         <h2 class="article-subhead" style="margin-top: 0">hoverable<br />요약된 사용자 정보와 프로필 페이지 링크</h2>
         <hr />
         <article class="item" data-size="medium">
@@ -343,7 +343,7 @@
 
     <article class="article js-observer js-scrollspy-section">
       <h1 class="article-title">Menus🚧</h1>
-      <p class="article-description">사용자가 수행할 수 있는 행동 목록.</p>
+      <p class="article-description">사용자가 수행할 수 있는 행동 목록. menuitemcheckbox, menuitemradio, text - medium/small, avatar, with avatar</p>
 
       <aside class="article-aka">
         <span class="tag">a.k.a.</span>
@@ -413,32 +413,6 @@
         </div>
       </section>
 
-      <!-- <section style="display: flex; gap: 1rem; justify-content: center;">
-    <div class="tile-flat" style="width: 50%; padding: 2rem 2rem 4rem; border: 0; background-color: var(--color-naver)">
-      <h1 class="article-subhead" style="margin-top: 0">Guideline scope</h1>
-      <p>description.</p>
-      <div class="chat" style="max-width: 80%; margin: 2rem auto 0">
-        <figure class="chat-avatar"></figure>
-        <div class="chat-bubble">
-          <p>namespace는 서드 파티 라이브러리와 충돌을 방지하기 위해 사용합니다. 프로덕션이 아니기 때문에 여기에서는 namespace를 생략했습니다.</p>
-          <p>memo: dashboard 등 회색 배경이 들어간 페이지에서는 border 등 조절되어야 한다...</p>
-          <p>--[namespace]-[component / category]-[attribute]-[status]</p>
-        </div>
-      </div>
-    </div>
-    <div class="tile-flat" style="width: 50%; padding: 2rem 2rem 4rem; border: 0; background-color: var(--color-twitter)">
-      <h1 class="article-subhead" style="margin-top: 0">Naming guidelines</h1>
-      <p>description.</p>
-      <div class="chat" style="max-width: 80%; margin: 2rem auto 0">
-        <figure class="chat-avatar"></figure>
-        <div class="chat-bubble">
-          <p>memo: dashboard 등 회색 배경이 들어간 페이지에서는 border 등 조절되어야 한다...</p>
-          <p>--[namespace]-[component / category]-[attribute]-[status]</p>
-        </div>
-      </div>
-    </div>
-  </section> -->
-
       <!-- <h2 class="article-subhead">Best practices</h2> -->
       <p class="article-kicker">
         메뉴 아이템의 우측는 액션 또는 액션 인티케이터만 위치할 수 있습니다. 'new' 등 태그 컴포넌트를 배치하지 마세요. (case 토스. 우측 new)
@@ -489,7 +463,7 @@
 
     <article class="article js-observer js-scrollspy-section">
       <h1 class="article-title">Buttons</h1>
-      <p class="article-description">페이지 이동이나 양식 제출 등 사용자 여정의 핵심과업을 수행하는 액션입니다.</p>
+      <p class="article-description">페이지 이동이나 양식 제출 등 사용자 여정의 핵심과업을 위한 액션입니다.</p>
 
       <section class="component-example">
         <div class="tile-flat" role="menu">
@@ -527,7 +501,7 @@
             <dt>label</dt>
             <dd>string</dd>
             <dd>동사가 포함된 2자 ~ 8자 한글(!). 레이블 줄임?(truncated) 불가</dd>
-            <dd style="margin-top:-.25rem;">사용자 시점 (ex 보내기 => 받기).</dd>
+            <dd style="margin-top: -0.25rem">사용자 시점 (ex 보내기 => 받기).</dd>
             <dt>appearance</dt>
             <dd>'primary' | 'secondary' | 'tertiary'</dd>
             <dd>TOOD 가각의 값에 대해 함께 설명이 필요. 설명 영역이 길어져야.</dd>
@@ -558,22 +532,21 @@
       </section>
 
       <p class="article-kicker">
-        <b>feedback needed</b>
-        실행 후 피드백합니다. 물리적인 인터페이스의 출현 뿐 아니라 예측할 수 있는 페이지 이동이나 페이지 새로고침, 정보 구조의 변화도 피드백으로
-        취급될 수 있습니다. (bad case. 인스타그램의 로그인 성공 toast)
+        <b>실행 후 피드백합니다. feedback needed</b>
+        물리적인 인터페이스의 출현 뿐 아니라 예측할 수 있는 페이지 이동이나 페이지 새로고침, 정보 구조의 변화도 피드백으로 취급될 수 있습니다. (bad
+        case. 인스타그램의 로그인 성공 toast)
       </p>
       <p class="article-kicker">
-        <b>expectable</b>
+        <b>예측 가능해야 합니다. ?expectable</b>
         CTA의 레이블은 사용자가 다음에 일어날 일을 예측 가능하도록 작성하세요. 툴팁으로 부연하거나, 보조 텍스트로 실행 유도나 실행 결과를 가이드할
         필요가 없어야 합니다.
       </p>
       <p class="article-kicker">
-        <b>todotodo?</b>
+        <b>버튼은 최종 액션</b>
         버튼은 페이지 내에서 여러 번 반복될 수 없는 최종적인 인터렉션입니다. 단, 전송이 실패하는 경우에는 여러 번 반복해서 실행할 수 있습니다.
       </p>
 
-        <!-- <li>TODO: utton과 chip을 통합.</li> -->
-
+      <!-- <li>TODO: utton과 chip을 통합.</li> -->
 
       <!-- <h2 class="article-subhead">Icon guidelines</h2> -->
       <!-- <li>당연한 얘기... 텍스트 레이블을 생략하는 경우 관습적인 메타포의 아이콘(북마크/하트/카트 등)을 사용하고 대체 텍스트와 툴팁을 제공하세요.</li>
@@ -638,7 +611,7 @@
           <div class="stack" role="group" data-scroll="vertical" style="margin-right: -0.75rem">
             <button class="chip">
               <figure class="chip-icon">❤️</figure>
-              <span class="chip-label">좋아요 117</span>
+              <span class="chip-label">좋아요 <em style="font-weight: var(--font-weight-bold)">117</em></span>
             </button>
             <button class="chip">
               <span class="chip-label">removable</span>
@@ -697,9 +670,7 @@
 
       <!-- <h2 class="article-subhead">Best practices</h2> -->
       <p class="article-kicker">
-        <b>groupable</b>
-        TODO. Chip Groupd을 관련 컴포넌트로 링크? 맥락이 다른 chip을 그룹으로 제공할 수 있습니다. 이 때 단일선택, 다중선택, 삭제여부, 펼침메뉴 등의
-        기표를 충분히 제공하세요.
+        <b>groupable</b> 맥락이 다른 chip을 그룹으로 제공할 수 있습니다. 이 때 단일선택, 다중선택, 삭제여부, 펼침메뉴 등의 기표를 충분히 제공하세요.
       </p>
 
       <!-- <li>changelog. dropdown을 칩과 분리. 이 디자인 시스템에서는 같은 형태를 사용하지만 배경색을 뺀 형태 케이스 고려해보기.</li> -->
@@ -720,6 +691,7 @@
 
       <div class="tile-flat">
         <h2 class="article-subhead" style="margin-top: 0">actionable chip<br />Keywords search</h2>
+        <hr />
         <div class="keywords-group" role="group">
           <button class="keywords-group-keyword">
             <span class="chip-label">로얄테넌바움</span>
@@ -741,6 +713,7 @@
       </p> -->
       <div class="tile-flat">
         <h2 class="article-subhead" style="margin-top: 0">checkable chip<br />single selection - Contents filtering</h2>
+        <hr />
         <div class="stack" role="group" data-scroll="vertical">
           <button class="chip js-toggle is-active">
             <span class="chip-label">전체</span>
@@ -752,6 +725,7 @@
       </div>
       <div class="tile-flat">
         <h2 class="article-subhead" style="margin-top: 0">multiple selections with check</h2>
+        <hr />
         <div class="stack" data-scroll="vertical" aria-multiselectable="true">
           <button class="chip is-active" aria-selected="true" style="background-color: var(--green100)">
             <figure class="chip-icon" style="background: none !important">
@@ -774,6 +748,7 @@
       <!-- <p>글자수 제한. 모달로 열릴 수 있어서, 드롭다운은 제거함. dropdown/overflow/pulldown. sorting contents</p> -->
       <div class="tile-flat">
         <h2 class="article-subhead" style="margin-top: 0">Expandable chip<br /></h2>
+        <hr />
         <div class="stack">
           <div class="dropdown">
             <button class="chip js-toggle" aria-expanded="true">
@@ -889,10 +864,7 @@
         </div>
       </section>
 
-      <p class="article-kicker">
-        <b>best practice</b>
-        항상 텍스트 단락과 함께 사용합니다.
-      </p>
+      <p class="article-kicker"><b>항상 텍스트 단락과 함께 사용합니다.</b> TODO text button과의 차이</p>
     </article>
 
     <!-- <p>Badges show the count of some adjacent data. A dot badge notifies the user that something is new or updated without showing a count.</p> -->
@@ -927,11 +899,11 @@
             <span class="tag" role="listitem" data-style="primary">Primary</span>
             <!-- <span class="tag" role="listitem" data-style="secondary">Secondary</span> -->
             <span class="tag" role="listitem">Tertiary</span>
-            <span class="tag" role="listitem" style="background: var(--red100); border-color: var(--red100); color: var(--red800)">15</span>
             <span class="tag" role="listitem">
               <figure class="tag-icon" role="img">🔥</figure>
-              <small class="tag-label">Tertiary with icon</small>
+              <small class="tag-label">with icon</small>
             </span>
+            <span class="tag" role="listitem" style="background: var(--red100); border-color: var(--red100); color: var(--red800)">15</span>
           </div>
         </div>
         <article class="component-props">
@@ -1003,10 +975,14 @@
         </article>
       </section>
 
-      <ul>
-        <li>추가적인 액션 없이 즉시 실행합니다.</li>
-        <li>스위치의 왼쪽과 오른쪽에 각각 레이블을 배치하여 콘텐츠 스위칭으로 사용하지 마세요.</li>
-      </ul>
+      <p class="article-kicker">
+        <b>즉시 실행</b>
+        저장 버튼 없이 즉시 실행 또는 반영합니다.
+      </p>
+      <p class="article-kicker">
+        <b>on & off</b>
+        스위치의 왼쪽과 오른쪽에 각각 레이블을 배치하여 콘텐츠 스위칭으로 사용하지 마세요.
+      </p>
     </article>
   </section>
   <section class="component-body">
@@ -1056,7 +1032,7 @@
             <dd>id={props.name}</dd>
             <dt>label? - labelHidden</dt>
             <dd>string</dd>
-            <dd>동사를 포함합니다. choice보다 action에 가깝다.</dd>
+            <dd>동사를 포함하는 최대 2단어. choice보다 action에 가깝다.</dd>
             <dt>value</dt>
             <dd>string</dd>
             <dt>isChecked<attr>?</attr></dt>
@@ -1077,10 +1053,6 @@
       <p class="article-kicker">
         <b>default value</b>
         선택되지 않은 상태로 제공하여 사용자가 옵션을... todo
-      </p>
-      <p class="article-kicker">
-        <b>label?</b>
-        동사를 포함하는 2단어 이하
       </p>
 
       <!-- <div class="checkbox tile-flat-small" data-size="large">
@@ -1106,17 +1078,19 @@
     </div> -->
 
       <div class="tile-flat">
-        <h2 class="article-subhead" style="margin-top: 0">Terms and conditions<br />약관 동의</h2>
+        <h2 class="article-subhead" style="margin-top: 0">CheckboxGroup<br />약관동의Terms and conditions</h2>
       </div>
       <div class="tile-flat">
-        <h2 class="article-subhead" style="margin-top: 0">포토리뷰만 보기</h2>
+        <h2 class="article-subhead" style="margin-top: 0">SingleCheckbox<br />포토리뷰만 보기</h2>
+        <hr />
         <div class="checkbox">
           <input type="checkbox" id="only-photo" name="only-photo" value="only-photo" />
           <label for="only-photo">포토리뷰만 보기</label>
         </div>
       </div>
       <div class="tile-flat">
-        <h2 class="article-subhead" style="margin-top: 0">don't ask again<br />다시 묻지 않기</h2>
+        <h2 class="article-subhead" style="margin-top: 0">SingleCheckbox<br />다시 묻지 않기 / 일주일 동안 보지 않기don't ask again</h2>
+        <hr />
       </div>
     </article>
 
@@ -1153,11 +1127,11 @@
         옵션 목록이 5개 이하일 때만 라디오그룹(항상 그룹으로 사용)을 제공합니다. 5개 이상의 옵션 목록은 select나 chip group으로 제공하세요.
       </p>
       <p class="article-kicker">
-        <b>Default Value</b>
+        <b>default value</b>
         최상단의 옵션을 기본 선택으로 제공합니다. 설정 등에서 사용자가 직접 선택한 이력이 있는 경우.
       </p>
       <p class="article-kicker">
-        <b>Alignment</b>
+        <b>alignment</b>
         항상 세로 정렬합니다.
       </p>
 
@@ -1170,7 +1144,7 @@
 
     <article class="article js-observer js-scrollspy-section">
       <h1 class="article-title">Select</h1>
-      <p class="article-description">작성 중.</p>
+      <p class="article-description">input shape와 chip shape</p>
       <aside class="article-aka">
         <span class="tag">a.k.a.</span>
         <span class="hashtag" title="">dropdown</span>
@@ -1201,10 +1175,9 @@
       </section>
 
       <h2 class="article-subhead">Best practices</h2>
-      <p>다중 선택을 셀렉트로 제공하지 마세요. chip group으로 선택 옵션을 풀어서 제공하세요.</p>
 
       <ul>
-        <li>input container와 chip container로 확장할 수 있도록 하기?</li>
+        <li>다중 선택(combobox)을 셀렉트로 제공하지 마세요. chip group으로 선택 옵션을 풀어서 제공하세요.</li>
         <li>레이블 클릭해도 셀렉트박스 안 열림. id prop 필요없음.</li>
         <li>셀렉트 옵션에 따라 박스의 너비가 자동 조절된다. indicator를 position으로 넣고 옵션에 말줄임표를 넣어야.</li>
         <li>
@@ -1359,7 +1332,7 @@
         최소화합니다. 사용자 정보를 제공하여 얻을 수 있는 이점이 명확한 경우에만. 선택 입력 필드는 '선택입력' 텍스트로 가이드합니다.
       </p>
       <p class="article-kicker">
-        <b>groupable</b>
+        <b>groupable</b> 선택 입력 필드를 최대 2개 그루핑할 수 있습니다. 시작일 종료일과 같은 일반적인 데이트 레인지를 그룹핑할 수 있다. ?
       </p>
       <p class="article-kicker">
         <b>Layout?</b>
@@ -1376,15 +1349,12 @@
       <div class="component-references">
         <h2 class="article-subhead">References</h2>
         <a href="https://developer.apple.com/documentation/uikit/uisearchbar">HIG searchbar</a>
-      </di >
+      </div>
     </article>
 
     <article class="article js-observer js-scrollspy-section">
       <h1 class="article-title" title="or Box">Tiles</h1>
       <p class="article-description">연관 정보를 묶어 시각적으로 강조하는 컨테이너입니다.</p>
-
-      <p>TODO: section componenet : hero / , column container 2, 3</p>
-      <p>TODO: 모든 contentbox를 tile로 묶어두는 방법이 필요할지도.</p>
 
       <aside class="article-aka">
         <span class="tag">a.k.a.</span>
@@ -1438,9 +1408,12 @@
         '클릭할 수 있음'의 기표로 elevated 스타일을 사용합니다. 타일 전체가 클릭 영역일 수도, 타일 내부에 클릭 가능한 요소를 포함할 수도 있습니다.
       </p>
 
-      <h2 class="article-subhead">Optical adjustment</h2>
+      <h2 class="article-subhead">Memo</h2>
       <ul>
         <li>타일 내부 leading, tailing 엘리먼트의 시각보정이 필요할 수 있습니다.</li>
+        <li>이것은 레이아웃 컴포넌트인가 컨테이너 컴포넌트인가.</li>
+        <li>TODO: section componenet : hero / , column container 2, 3</li>
+        <li>TODO: 모든 contentbox를 tile로 묶어두는 방법이 필요할지도.</li>
       </ul>
 
       <!-- <li>todo 선택 상태의 타일 디자인.</li> -->
@@ -1514,12 +1487,12 @@
       </section>
 
       <p class="article-kicker">
-        <b>cognitive?</b>사용자가 반드시 숙지해야 하는 중요한 정보를 툴팁으로 제공하지 마세요. button이나 text link 등으로 충분히 강조하세요.
+        <b>정보를 보충하는</b> 보충의 맥락이기 때문에 행동을 유도하는 가이드로 사용하지 마세요. 툴팁의 트리거를 페이지 링크로 사용하지 마세요.사용자가
+        반드시 숙지해야 하는 중요한 정보를 툴팁으로 제공하지 마세요. cognitive? button이나 text link 등으로 충분히 강조하세요.
       </p>
 
       <h2 class="article-subhead">ggg</h2>
       <ul>
-        <li>보충의 맥락이기 때문에 행동을 유도하는 가이드로 사용하지 마세요. 툴팁의 트리거를 페이지 링크로 사용하지 마세요.</li>
         <li>A tooltip is not considered to be a popup in this context, as it is not interactive.</li>
         <li>
           페이지 로딩 시점에 열려 있는 경우 doorhanger/pointing arrow 필요. 하지만 그것은 툴팁이 아닌 새로운 컴포넌트로 정의할 필요가 있겠다. 하지만
@@ -1559,7 +1532,7 @@
         <li>푸터에서 사이트맵과 함께 사용할 수 있습니다.</li>
         <li>프로모션용 랜딩 페이지에서 사용자 여정을 돕기 위해 사용할 수 있습니다.</li>
         <li>
-          flat sitemap 트렌드에서 사용 빈도가 높지 않아요. 주로 도움말, 상품 등 카테고리 구조에서 활용하며, pg 심사 시 제품군 정보가 요구.
+          flat sitemap 트렌드에서 사용 빈도가 높지 않다. 주로 도움말, 상품 등 카테고리 구조에서 활용하며, pg 심사 시 제품군 정보가 요구.
           (토스페이-구엘지페이먼츠시절)
         </li>
       </ul>
@@ -1615,12 +1588,15 @@
         <b>콘텐츠 스위칭</b>
         콘텐츠 정렬 또는 콘텐츠 필터로 사용할 수 없습니다. 구조적으로 콘텐츠 필터의 맥락인 탭투스크롤로 사용할 수 없습니다.
       </p>
+      <p class="article-kicker">
+        <b>키보드 접근성</b>
+        방향키
+      </p>
 
       <ul>
-        <li>글로벌 탐색 패턴으로 햄버거 메뉴와 탭(바텀네비게이션, 탭바)을 함께 사용하지 마세요. (todo: tab과 tab bar(app bar)를 구분)</li>
+        <li>글로벌 네비게이션 패턴인 햄버거 메뉴와 탭(바텀네비게이션, 탭바)을 함께 사용하지 마세요. (todo: tab과 tab bar(app bar)를 구분)</li>
         <li><del>페이지 링크로 사용하지 마세요.</del> SPA에서 페이지 링크의 개념이 모호하지만 탭을 클릭 후의 뷰에서 탭 바는 유지되어야 합니다.</li>
         <li>todo 탭 갯수의 제한과 가로 스크롤. 브라우저 히스토리 저장. (?tab=projects)</li>
-        <li>키보드 접근성. 방향키.</li>
       </ul>
 
       <div class="component-references">
@@ -1752,10 +1728,21 @@
       </section>
 
       <ul>
-        <li>todo 바텀 네비게이션과 햄버거 메뉴를 혼용할 수 있는 패턴을 정의.</li>
-        <li>커머스 도매인에서 카테고리를 나타내는 햄버거는 주로 왼쪽에 배치.</li>
+        <li>TODO 바텀 네비게이션과 햄버거 메뉴를 혼용할 수 있는 패턴을 정의.</li>
+        <li>바텀 네비게이션의 메뉴로 햄버거 아이콘을 사용하는 케이스: 커머스 도매인에서 카테고리 메뉴. 주로 왼쪽에 배치.</li>
         <li>bottom navigation의 label은 예외적으로 10px입니다. 예외 케이스는 어디에서 정의해야 하는가. => 컴포넌트 스코프 + 관련 패턴 페이지</li>
       </ul>
+
+      <div class="component-references">
+        <h2 class="article-subhead">References</h2>
+        <a href="https://m2.material.io/components/bottom-navigation" target="_blank">M2 Bottom Navigation</a>
+        <i class="icon-bullet"></i>
+        <a href="https://m3.material.io/components/navigation-bar/overview" target="_blank">M3 Navigation Bar</a>
+        <i class="icon-bullet"></i>
+        <a href="https://developer.apple.com/design/human-interface-guidelines/components/navigation-and-search/tab-bars" target="_blank"
+          >HIG Tab bars</a
+        >
+      </div>
       <!-- // iOS isTranslucent: Bool -->
     </article>
 
@@ -1841,45 +1828,43 @@
       <p><b>flex</b> -> block + min-width</p>
       <p>scroll-behavior: smooth</p>
       <section class="component-example">
-        <div class="tile-flat">
-          <section class="carousel js-carousel" style="max-width: auto">
-            <div class="carousel-viewer js-carousel-viewer">
-              <a class="carousel-viewer-slide" href="#profile">
-                <span class="carousel-viewer-slide-media">🧑‍🦱</span>
-                <p class="carousel-viewer-slide-name">사용자 프로필</p>
-              </a>
-              <a class="carousel-viewer-slide" href="#signup">
-                <span class="carousel-viewer-slide-media">🗂️</span>
-                <p class="carousel-viewer-slide-name">회원가입</p>
-              </a>
-              <a class="carousel-viewer-slide" href="#login">
-                <span class="carousel-viewer-slide-media">🗂️</span>
-                <p class="carousel-viewer-slide-name">로그인</p>
-              </a>
-              <a class="carousel-viewer-slide" href="#forgot">
-                <span class="carousel-viewer-slide-media">🔑</span>
-                <p class="carousel-viewer-slide-name">비밀번호 찾기</p>
-              </a>
-              <a class="carousel-viewer-slide" href="#post">
-                <span class="carousel-viewer-slide-media">✍️</span>
-                <p class="carousel-viewer-slide-name">포스트</p>
-              </a>
-              <a class="carousel-viewer-slide" href="#product">
-                <span class="carousel-viewer-slide-media">🧴</span>
-                <p class="carousel-viewer-slide-name">상품</p>
-              </a>
-            </div>
-            <!-- <nav class="carousel-dots">
+        <section class="carousel js-carousel" style="max-width: auto">
+          <div class="carousel-viewer js-carousel-viewer">
+            <a class="carousel-viewer-slide" href="#profile">
+              <span class="carousel-viewer-slide-media">🧑‍🦱</span>
+              <p class="carousel-viewer-slide-name">사용자 프로필</p>
+            </a>
+            <a class="carousel-viewer-slide" href="#signup">
+              <span class="carousel-viewer-slide-media">🗂️</span>
+              <p class="carousel-viewer-slide-name">회원가입</p>
+            </a>
+            <a class="carousel-viewer-slide" href="#login">
+              <span class="carousel-viewer-slide-media">🗂️</span>
+              <p class="carousel-viewer-slide-name">로그인</p>
+            </a>
+            <a class="carousel-viewer-slide" href="#forgot">
+              <span class="carousel-viewer-slide-media">🔑</span>
+              <p class="carousel-viewer-slide-name">비밀번호 찾기</p>
+            </a>
+            <a class="carousel-viewer-slide" href="#post">
+              <span class="carousel-viewer-slide-media">✍️</span>
+              <p class="carousel-viewer-slide-name">포스트</p>
+            </a>
+            <a class="carousel-viewer-slide" href="#product">
+              <span class="carousel-viewer-slide-media">🧴</span>
+              <p class="carousel-viewer-slide-name">상품</p>
+            </a>
+          </div>
+          <!-- <nav class="carousel-dots">
               <button class="carousel-dots-dot">1</button>
               <button class="carousel-dots-dot">1</button>
               <button class="carousel-dots-dot">1</button>
             </nav> -->
-            <nav class="carousel-arrows">
-              <button class="carousel-arrows-prev js-carousel-prev" title="이전"><span class="material-symbols-outlined">chevron_left</span></button>
-              <button class="carousel-arrows-next js-carousel-next" title="다음"><span class="material-symbols-outlined">chevron_right</span></button>
-            </nav>
-          </section>
-        </div>
+          <nav class="carousel-arrows">
+            <button class="carousel-arrows-prev js-carousel-prev" title="이전"><span class="material-symbols-outlined">chevron_left</span></button>
+            <button class="carousel-arrows-next js-carousel-next" title="다음"><span class="material-symbols-outlined">chevron_right</span></button>
+          </nav>
+        </section>
       </section>
 
       <ul>
@@ -2028,10 +2013,7 @@
 
       <!-- <h2 class="article-subhead">FAQ<br />자주묻는질문</h2> -->
       <blockquote>
-        <p>
-          자주묻는질문(FAQ) 정도 외에는 잘 쓰지 않음. 교육 도매인의 커리큘럼 정도에서 보임. 간단한 콘텐츠 확장에는 모바일 친화적인 모달이나 시트를
-          사용함.
-        </p>
+        <p>자주묻는질문(FAQ) 정도 외에는 잘 쓰지 않음. 교육 도매인의 커리큘럼 정도에서 보임. 그 외에는 모바일 친화적인 모달이나 시트를 사용.</p>
       </blockquote>
 
       <h2 class="article-subhead">References</h2>
@@ -2224,10 +2206,9 @@
       <ul>
         <li>닫기 또는 되돌리기 등 액션을 포함하지 마세요. 피드백에서 사용자 인터렉션이 필요하면 주목도가 높은 모달로 제공하세요.</li>
         <li>사용자의 귀책이 아닌 경우, 단순 "오류" 대신 "시스템 오류"와 같은 용어를 사용하여 사용자가 잘못한 것처럼 느끼지 않도록 하세요.</li>
+        <li>브라우저가 role="alert" 속성이 있는 요소를 발견하면 즉시 사용자에게 경고 내용을 읽습니다.</li>
       </ul>
-      <blockquote>
-        <p>브라우저가 role="alert" 속성이 있는 요소를 발견하면 즉시 사용자에게 경고 내용을 읽습니다.</p>
-      </blockquote>
+      <blockquote></blockquote>
 
       <h2 class="article-subhead">Props</h2>
       <dl>
