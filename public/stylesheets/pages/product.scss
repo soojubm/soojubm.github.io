@@ -94,7 +94,7 @@
 .product-detail-headline {@include text-title;}
 
 .product-detail-intro {display:flex;justify-content:center;width:100%;margin:0 0 12rem;padding:0 10%;box-sizing:border-box;}
-.product-detail-intro-image {width:35%;margin:4rem 2.5% -4rem;padding-top:60%;box-sizing:border-box;background:url('/public/images/springsteen.jpg') no-repeat center center;background-size:cover;border-radius:var(--radius);}
+.product-detail-intro-image {width:50%;margin:4rem 2.5% -4rem;padding-top:60%;box-sizing:border-box;background:url('/public/images/springsteen.jpg') no-repeat center center;background-size:cover;border-radius:var(--radius);}
 .product-detail-intro-image + figure {margin-top:0;margin-bottom:0;}
 
 // .product-detail-summary dl {width:66.6666%;overflow:hidden;box-sizing:border-box;}

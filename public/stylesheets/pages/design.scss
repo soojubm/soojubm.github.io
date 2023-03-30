@@ -161,7 +161,7 @@
 
 // todo icon -> indicator
 .accordion {margin:1rem 0;}
-.accordion-title {display:flex;align-items:center;justify-content:space-between;@include text-subhead;}
+.accordion-title {display:flex;align-items:center;justify-content:space-between;width:100%;@include text-subhead;}
 .accordion-title-icon {@include icon-indicator;}
 .accordion-panel {display:none;cursor:default;}
 .accordion-panel p + p {margin:var(--space-4) 0 0 0;}
@@ -565,8 +565,6 @@
 
 
 .sample-container {
-  display: flex;
-  flex-wrap: wrap;
   margin: 3rem -5vw 3.5rem;
   padding: 4rem var(--grid-margin);
   background: var(--color-background-weak);
@@ -574,31 +572,6 @@
   box-sizing: border-box;
   position: relative;
   z-index: 1;
-}
-
-.sample-container .column {
-  width: 50%; max-width: 400px;
-}
-.sample-container .column + .column {
-  margin-left: 2rem;
-}
-
-
-.sample-container .column > * {
-  margin: 2rem 0 !important;
-}
-
-@media (--small) {
-  .sample-container .column{
-    width: 100%;
-  }
-  // .article .tile-flat {margin-left:-5vw;margin-right:-5vw;padding-left:5vw;border-left:0;border-right:0;border-radius: 0;}
-}
-
-@media (--tiny) {
-  .sample-container .column + .column {
-    margin-left: 0;
-  }
 }
 
 
