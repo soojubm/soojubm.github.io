@@ -5,9 +5,9 @@
       <span>전체 알림 목록을 볼 수 있는 페이지 필요. 모두보기 링크 버튼 필요. </span>
     </li>
     <li><b>modal: </b> <span>전체 알림 목록을 볼 수 있는 페이지 불필요. 모달에서 infinite scroll이나 more load</span></li>
-    <li>개별 알림에 대한 액션: 읽음처리/삭제/신고 등).</li>
-    <li>전체 알림에 대한 애션: 모두 읽은 상태로 표시</li>
-    <li>22-10 알림 컴포넌트가 간결해지는 추세. 전체가 하나의 클릭 영역으로 정의되고, 콘텐츠와 작성자를 분리하지 않음.</li>
+    <li>개별 알림 액션: 읽음처리/삭제/신고.</li>
+    <li>전체 알림 액션: 모두 읽은 상태로 표시</li>
+    <li>속도를 위해 알림 컴포넌트가 간결하게 만들 수 있다. 전체를 하나의 클릭 영역으로 정의하고, 콘텐츠와 작성자를 분리하지 않고 텍스트 더미로.</li>
   </ul>
   <!-- 
   <button class="navbar-notification-trigger" aria-haspopup="true" aria-expanded="false">
@@ -42,26 +42,25 @@
 
   <div class="notification notification-list" style="margin-left: 0; padding-bottom: 8rem">
     <menu class="notification-menu">
-      <div class="item" data-size="large">
-        <em class="notification-unread avatar-badge"></em>
-        <figure class="item-avatar"></figure>
-        <p class="notification-item-content" style="line-height: 1.4">
-          <b class="item-name" style="font-weight: var(--font-weight-bold)">수랑</b>님이
-          <b style="font-weight: var(--font-weight-bold)">Players- 기획자, 마케터, 디자이너, 개발자 모임</b> 그룹에 게시물을 올렸습니다: "**요구사항
-          정의서 작성하는 방법(+샘플)** 프로젝트의 시작과 동시, 기획자는..."
-        </p>
-        <time class="item-description">5일 전</time>
-      </div>
+      <article class="tile-elevated">
+        <article class="item" data-size="medium">
+          <figure class="item-avatar"></figure>
+          <b class="item-name">응암동 주간 인기글</b>
+          <time class="item-time" style="margin-left: var(--space-2); color: var(--color-text-light)">5일 전</time>
+          <p style="width: 100%; margin: var(--space-2) 0; line-height: var(--line-height)">
+            '송명섭 막걸리 6도 750m...' 외 1개 상품이 오늘 도착예정입니다~
+          </p>
+        </article>
+      </article>
+      <article class="tile-elevated">
+        <article class="item" data-size="medium">
+          <figure class="item-avatar"></figure>
+          <b class="item-name">오늘의 주요 종목 종가</b>
+          <time class="item-time" style="margin-left: var(--space-2); color: var(--color-text-light)">5시간 전</time>
 
-      <div class="item" data-size="large">
-        <em class="notification-unread avatar-badge"></em>
-        <figure class="item-avatar"></figure>
-        <p class="notification-item-content" style="line-height: 1.4">
-          주연 ZUYONI에서 업로드한 동영상: 신형 에어팟프로 2세대! 1세대보다 얼마나 좋아졌을까? 궁금증 해결!🧐 | 구매가이드, 노이즈캔슬링, 통화품질,
-          배터리, 충전, 새로운기능
-        </p>
-        <time class="item-description">5일 전</time>
-      </div>
+          <p style="width: 100%; margin: var(--space-2) 0; line-height: var(--line-height)">HSD 엔진 -2.4%</p>
+        </article>
+      </article>
     </menu>
 
     <footer style="margin: var(--space-4) 0 0 0">

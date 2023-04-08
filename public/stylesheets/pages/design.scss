@@ -23,7 +23,7 @@
 .article p, .article ul, .article dl {max-width: 800px;}
 
 .article-kicker {max-width: 800px !important;margin: 2rem 0;font-size:var(--font-size-large);color:var(--color-text);line-height:var(--font-line-height-large);}
-.article-kicker b {margin-right:var(--space-4);font-weight: var(--font-weight-bold);}
+.article-kicker b {margin-right:var(--space-3);font-weight: var(--font-weight-bold);}
 .article-kicker + .article-kicker {margin-top: -1.5rem;} 
 
 .article-dont {padding:1rem;border-radius:var(--radius);background:var(--red100);}
@@ -162,17 +162,17 @@
 // todo icon -> indicator
 .accordion {margin:1rem 0;}
 .accordion-title {display:flex;align-items:center;justify-content:space-between;width:100%;@include text-subhead;}
-.accordion-title-icon {@include icon-indicator;}
+.accordion-title-icon {@include icon-indicator;transform:rotate(90deg)}
 .accordion-panel {display:none;cursor:default;}
 .accordion-panel p + p {margin:var(--space-4) 0 0 0;}
 .is-active .accordion-panel {display:block;padding:var(--space-3) 0;}
-.is-active .accordion-title-icon {transform:rotate(90deg)}
+.is-active .accordion-title-icon {transform:rotate(0)}
 // [aria-expanded=true] + .accordion-panel {}
 
 .design-categories {margin:4rem var(--grid-margin);}
 .design-categories h2 {@include text-title;}
 
-.design-bookmarks {display:flex;flex-wrap:wrap;margin:8rem var(--grid-margin);padding:var(--space-4);border-radius:var(--radius);background:linear-gradient(180deg,#155799,#159957);font-size:var(--font-size-large);}
+.design-bookmarks {display:flex;flex-wrap:wrap;margin:2rem var(--grid-margin);padding:var(--space-4);border-radius:var(--radius);background:linear-gradient(180deg,#155799,#159957);font-size:var(--font-size-large);}
 .design-bookmarks h2 {margin:0 var(--space-2) 0 0;color:var(--color-text);}
 .design-bookmarks a {display:block;margin:0 var(--space-2);@include link-outside;font-weight:var(--font-weight-bold);color:#fff;}
 
@@ -545,8 +545,8 @@
 }
 
 
-.guide-wrap {display:flex;margin:-.375rem;}
-.guide-box {width:var(--width-tiny);margin:.375rem;padding:1rem;border-radius:var(--radius);color:var(--gray800);}
+.guide-wrap {display:flex;flex-wrap:wrap;margin:-.375rem;}
+.guide-box {width:var(--width-tiny);width:calc(50% - 2.75rem);margin:.375rem;padding:1rem;border-radius:var(--radius);color:var(--gray800);}
 .guide-title {display:block;margin:0 0 .25rem 0;color:inherit;}
 .guide-box p {color:inherit;}
 
