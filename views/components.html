@@ -126,6 +126,9 @@
       <div class="chat-bubble">
         <p>background 컴포넌트. lazy load 기능을 포함하는.</p>
       </div>
+      <div class="chat-bubble">
+        <p>역할과 형태 구분. 형태는 textfield, action와 2개의 사이즈? 예시. select는 textfield / chip 2가지</p>
+      </div>
       <!-- <div class="chat-bubble">
         <p>
           시스템 디자이너로서 제품을 소비할 때 디자이너와 개발자의 경험을 대규모로 최적화하는 것은 우리의 의무입니다. 시스템 자체. 스타일 프리미티브
@@ -242,7 +245,8 @@
 
             <dt>fallback</dt>
             <dd>"string" | "image?"</dd>
-            <dd class="dd-small">예시. 유저 닉네임의 첫 알파벳.</dd>
+            <dd class="dd-small">예시. 유저 닉네임의 첫 알파벳. 도메인 또는 서비스에서 정의하기에 달려 있음.</dd>
+            <dd></dd>
           </dl>
         </div>
       </section>
@@ -341,7 +345,8 @@
 
     <article class="article js-observer js-scrollspy-section">
       <h1 class="article-title">Menus🚧</h1>
-      <p class="article-description">사용자가 수행할 수 있는 행동 목록. menuitemcheckbox, menuitemradio, text - medium/small, avatar, with avatar</p>
+      <p class="article-description">사용자가 수행할 수 있는 행동 목록. avatarSlot</p>
+      <p>is summary</p>
 
       <aside class="article-aka">
         <span class="tag">a.k.a.</span>
@@ -350,6 +355,45 @@
 
       <section class="component-example">
         <div class="tile-flat" role="menu" style="z-index: 1">
+          <div class="item" data-size="large" role="menuitem" style="margin-bottom: var(--space-3)">
+            <figure class="item-avatar"></figure>
+            <span class="item-label">windows 패턴</span>
+            <button class="chip" style="margin-left: auto; margin-right: var(--space-2)">
+              <span class="chip-label"> with quick action</span>
+            </button>
+            <span class="material-symbols-outlined">chevron_right</span>
+          </div>
+          <div class="menu-item" role="menuitem" data-size="medium" style="width: 100%">
+            <figure class="menu-item-avatar">🏹</figure>
+            <span class="menu-item-label">메뉴아이템 링크</span>
+            <span class="tag" style="margin: 0 0 0 var(--space-2)">새소식</span>
+          </div>
+          <button class="menu-item js-darkmode" role="menuitem" data-size="medium">
+            <figure class="item-avatar" style="background-image: none"><span class="material-symbols-outlined">nights_stay</span></figure>
+            <span class="item-label">메뉴아이템 스위치</span>
+            <span class="switch" style="margin-left: auto">
+              <input type="checkbox" id="dark1" name="" role="switch" />
+              <label for="dark1" style="padding-left: 48px" aria-label="어둡게 보기"></label>
+            </span>
+          </button>
+          <div class="menu-item" role="menuitemcheckbox" data-size="medium">
+            <figure class="menu-item-avatar"></figure>
+            <span class="menu-item-label">메뉴아이템 체크박스 todo</span>
+            <div class="checkbox" style="position: absolute; right: 0; top: 0">
+              <input type="checkbox" id="c1" name="c1" value="" />
+              <label for="c1" title="" aria-label="샘플"></label>
+            </div>
+          </div>
+          <div class="menu-item" role="menuitemradio" data-size="medium">
+            <figure class="menu-item-avatar"></figure>
+            <span class="menu-item-label">메뉴아이템 라디오 todo</span>
+            <div class="checkbox" style="position: absolute; right: 0; top: 0">
+              <input type="checkbox" id="c1" name="c1" value="" />
+              <label for="c1" title="" aria-label="샘플"></label>
+            </div>
+          </div>
+          <hr />
+
           <button class="menu-item" data-tile="elevated" style="margin-top: 0; margin-bottom: 0.125rem">
             <figure class="menu-item-avatar" style="background-image: none">🦊</figure>
             <span class="menu-item-label">사진 및 동영상 백업</span>
@@ -359,55 +403,39 @@
             </span>
           </button>
           <small>Google 포토에 최대 해상도로 백업</small>
-
-          <hr />
-
-          <button class="menu-item js-darkmode" role="menuitem" data-size="medium">
-            <figure class="item-avatar" style="background-image: none"><span class="material-symbols-outlined">nights_stay</span></figure>
-            <span class="item-label">어둡게 보기</span>
-            <span class="switch" style="margin-left: auto">
-              <input type="checkbox" id="dark1" name="" role="switch" />
-              <label for="dark1" style="padding-left: 48px" aria-label="어둡게 보기"></label>
-            </span>
-          </button>
-          <div class="menu-item" role="menuitem" data-size="medium" style="width: 100%">
-            <figure class="menu-item-avatar">🏹</figure>
-            <span class="menu-item-label">기본 메뉴아이템</span>
-            <span class="tag" style="margin: 0 0 0 var(--space-2)">새소식</span>
-          </div>
-          <div class="menu-item" role="menuitemcheckbox" data-size="medium">
-            <figure class="menu-item-avatar"></figure>
-            <span class="menu-item-label">메뉴아이템 체크박스 샘플</span>
-            <div class="checkbox" style="position: absolute; right: 0; top: 0">
-              <input type="checkbox" id="c1" name="c1" value="" />
-              <label for="c1" title="" aria-label="샘플"></label>
-            </div>
-          </div>
-        </div>
-
-        <div class="tile-flat" role="menu">
-          <div class="item" data-size="large" role="menuitem">
-            <figure class="item-avatar"></figure>
-            <b class="item-label">windows 패턴</b>
-            <button class="chip" style="margin-left: auto; margin-right: var(--space-2)">
-              <span class="chip-label"> with quick action</span>
-            </button>
-            <span class="material-symbols-outlined">chevron_right</span>
-          </div>
         </div>
 
         <div class="tile-flat">
           <menu class="menu">
             <span class="menu-heading">menu heading</span>
             <a class="menu-link" href="#design">Only Text</a>
-            <a class="menu-link" href="#design">Only Text Menu</a>
-          </menu>
-        </div>
-        <div class="tile-flat">
-          <menu class="">
+            <a class="menu-link" href="#design">Only Text Large</a>
             <a class="dropdown-menu-item" data-size="small" href="#design">Text menu small</a>
             <a class="dropdown-menu-item" data-size="small" href="#design">with popover</a>
           </menu>
+        </div>
+
+        <div class="component-props">
+          <h2 class="article-subhead">Props</h2>
+          <dl>
+            <dt>name</dt>
+            <dd>string</dd>
+            <dd></dd>
+            <dt>size</dt>
+            <dd>'large' | 'medium'</dd>
+            <dd>text 크기의 차이. large는 without avatar</dd>
+            <dt>action</dt>
+            <dd>'checkbox' | 'radio' | 'switch' | 'link (default)'</dd>
+            <dd></dd>
+            <dt>avatar?</dt>
+            <dd>React.ReactNode</dd>
+            <dd>small & large</dd>
+            <dt>tag<attr>?</attr></dt>
+            <dd>React.ReactNode</dd>
+            <dd></dd>
+            <dt>tile ???</dt>
+            <dd>elevated | none</dd>
+          </dl>
         </div>
       </section>
 
@@ -415,8 +443,10 @@
       <p class="article-kicker">
         메뉴 아이템의 우측는 액션 또는 액션 인티케이터만 위치할 수 있습니다. 'new' 등 태그 컴포넌트를 배치하지 마세요. (case 토스. 우측 new)
       </p>
-
-      <p>리스트로 싸용하는 친구와 단일로 사용하는 친구를 잘 모아두어야..</p>
+      <p class="article-kicker">
+        <b>메뉴 아이템은 리스트로 사용합니다.</b> elevated menu item은 강조를 위해 하나만 사용할 수 있습니다. ?? 하지만 이런 케이스는 별도의
+        컴포넌트로 만드는 것이 좋음.
+      </p>
 
       <!-- <ul>
         <li>
@@ -434,31 +464,6 @@
         <li>MenuHelper. role: setting-item. filter-item.</li>
         <li>MenuLink.</li>
       </ul> -->
-
-      <h2 class="article-subhead">Props</h2>
-      <dl>
-        <dt>avatar?</dt>
-        <dd>React.ReactNode</dd>
-        <dt>description?</dt>
-        <dd>string</dd>
-        <dt>options</dt>
-        <dd>OptionType[]</dd>
-        <dt>tile</dt>
-        <dd>elevated | none</dd>
-        <dt>size</dt>
-        <dd>'large' | 'medium'</dd>
-
-        <dt>heading</dt>
-        <dd>string</dd>
-
-        <dt>tagLabel<attr>?</attr></dt>
-        <dd>string</dd>
-        <dt>action</dt>
-        <dd>'checkbox' | 'chip' | 'switch" | 'radio'</dd>
-
-        <dt>lineHeight??</dt>
-        <dd>null</dd>
-      </dl>
     </article>
 
     <article class="article js-observer js-scrollspy-section">
@@ -532,17 +537,17 @@
       </section>
 
       <p class="article-kicker">
-        <b>실행 후 피드백합니다. feedback needed</b>
+        <b aria-label="feedback needed">실행 후 피드백합니다. </b>
         물리적인 인터페이스의 출현 뿐 아니라 예측할 수 있는 페이지 이동이나 페이지 새로고침, 정보 구조의 변화도 피드백으로 취급될 수 있습니다. (bad
         case. 인스타그램의 로그인 성공 toast)
       </p>
       <p class="article-kicker">
-        <b>예측 가능해야 합니다. ?expectable</b>
+        <b aria-labe=" ?expectable">예측 가능해야 합니다.</b>
         CTA의 레이블은 사용자가 다음에 일어날 일을 예측 가능하도록 작성하세요. 툴팁으로 부연하거나, 보조 텍스트로 실행 유도나 실행 결과를 가이드할
         필요가 없어야 합니다.
       </p>
       <p class="article-kicker">
-        <b>버튼은 최종 액션</b>
+        <b>버튼은 플로우의(?) 최종 액션입니다.</b>
         버튼은 페이지 내에서 여러 번 반복될 수 없는 최종적인 인터렉션입니다. 단, 전송이 실패하는 경우에는 여러 번 반복해서 실행할 수 있습니다.
       </p>
 
@@ -673,6 +678,9 @@
         <b>groupable</b> 맥락이 다른 chip을 그룹으로 제공할 수 있습니다. 이 때 단일선택, 다중선택, 삭제여부, 펼침메뉴 등의 기표를 충분히 제공하세요.
       </p>
 
+      <p class="article-kicker">
+        정렬을 위한 옵션 목록을 chip group으로 제공하지 마세요. expandable로 현재 정렬 상태만 요약 표기하세요. (bad case: 2022.04 구글 지도 바뀐 것)
+      </p>
       <!-- <li>changelog. dropdown을 칩과 분리. 이 디자인 시스템에서는 같은 형태를 사용하지만 배경색을 뺀 형태 케이스 고려해보기.</li> -->
       <!-- <li>changelog. icon button은 clickable이기 때문에 아바타가 아니라 칩을 mixin. 2개의 사이즈로 확장. => chip container style</li> -->
 
@@ -822,7 +830,9 @@
 
     <article class="article js-observer js-scrollspy-section">
       <h1 class="article-title">Links</h1>
-      <p class="article-description">사용자 더 많은 정보 탐색. 페이지를 이동하거나 요약된 콘텐츠를 확장합니다. destination that can be bookmarked</p>
+      <p class="article-description">
+        사용자는 더 자세한 정보 탐색하기 위해. 페이지를 이동하거나 요약된 콘텐츠를 확장합니다. destination that can be bookmarked
+      </p>
 
       <aside class="article-aka">
         <span class="tag">a.k.a.</span>
@@ -920,9 +930,11 @@
       </section>
 
       <p class="article-kicker">
-        <b>groupable</b>4개 이상의 태그로 태그 그룹을 구성하지 마세요. 태그는 <mark>핵심 키워드를 요약</mark>하여 사용자의 콘텐츠 탐색과 선택을 돕는
-        역할입니다. 너무 많은 태그 목록을 노출하는 것은 콘텐츠 탐색을 어렵게 할 수 있습니다.
+        <b>4개 이상의 태그로 태그 그룹을 구성하지 마세요. </b>태그는 <mark>핵심 키워드를 요약</mark>하여 사용자의 콘텐츠 탐색과 선택을 돕는
+        역할입니다. 너무 많은 태그 목록을 노출하는 것은 되려 콘텐츠 탐색을 어렵게 할 수 있습니다.
       </p>
+
+      <p>groupable</p>
       <!-- <li>Primary style 하나만.</li> -->
       <!-- <h2 class="article-subhead">Best practices</h2>
         <li>non-clickable<span hidden>triggering interaction</span></li>
@@ -1128,7 +1140,7 @@
       </p>
       <p class="article-kicker">
         <b>default value</b>
-        최상단의 옵션을 기본 선택으로 제공합니다. 설정 등에서 사용자가 직접 선택한 이력이 있는 경우.
+        최상단의 옵션을 기본 선택으로 제공합니다. 설정 등에서 사용자가 직접 선택한 이력이 있는 경우를 제외하고.
       </p>
       <p class="article-kicker">
         <b>alignment</b>
@@ -1177,12 +1189,12 @@
       <h2 class="article-subhead">Best practices</h2>
 
       <ul>
-        <li>다중 선택(combobox)을 셀렉트로 제공하지 마세요. chip group으로 선택 옵션을 풀어서 제공하세요.</li>
+        <li>다중 선택(combobox)을 셀렉트로 제공하지 마세요. chip group으로 선택 옵션을 풀어서 제공하세요. 선택 목록이 많지 않다는 가정 하.</li>
         <li>레이블 클릭해도 셀렉트박스 안 열림. id prop 필요없음.</li>
         <li>셀렉트 옵션에 따라 박스의 너비가 자동 조절된다. indicator를 position으로 넣고 옵션에 말줄임표를 넣어야.</li>
         <li>
-          memo. 레이블을 추가 요청이 있는 경우. select 엘리먼트가 아니라 부모 엘리먼트에 컨테이너 스타일링이 필요하고, 클릭 영역까지 지정해야 했다.
-          그런 경우 드롭다운으로 구현해야 한다.
+          memo. 레이블을 포함하는 형태. select 엘리먼트가 아니라 부모 엘리먼트에 컨테이너 스타일링이 필요하고, 클릭 영역까지 지정해야 했다. 그리고
+          드롭다운으로 구현해야 한다.
         </li>
       </ul>
 
@@ -1204,7 +1216,10 @@
 
     <article class="article js-observer js-scrollspy-section">
       <h1 class="article-title">Textfields</h1>
-      <p class="article-description">텍스트 정보를 입력합니다.</p>
+      <p class="article-description">
+        텍스트 정보를 입력합니다. Inputfields 로 변경하기. 넘버필드는 작은 사이즈인데 결국 두 개의 사이즈로? 수량 뿐 아니라 숫자만 입력할 수 있는
+        필드. 링크 위치. 눈알 아이콘. 헬퍼 텍스트(위/아래). 클리어버튼.
+      </p>
       <aside class="article-aka">
         <span class="tag">a.k.a.</span>
         <span class="hashtag">TextInput</span>
@@ -1227,6 +1242,24 @@
               aria-invalid="true"
             />
             <small id="msgID" class="textfield-helper is-error" aria-live="assertive">이미 등록된 이메일입니다.</small>
+          </div>
+        </div>
+
+        <div class="tile-flat">
+          <div class="textfield">
+            <label class="textfield-label" for="salary">넘버필드 - 가격?</label>
+            <input
+              class="textfield-input"
+              type="number"
+              id="salary"
+              name="salary"
+              placeholder="numbering..."
+              oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+            />
+            <small id="" class="textfield-helper" aria-live="assertive">
+              <p>price를 위한 numberField. 앞자리 0 제거. 숫자만입력3자리마다콤마. 소숫점 컨트롤.</p>
+            </small>
+            <small id="" class="textfield-helper" aria-live="assertive">pattern="[0-9]+"</small>
           </div>
         </div>
 
@@ -1274,7 +1307,7 @@
               <span class="material-symbols-outlined"> remove </span>
             </button>
             <input
-              class="quantity-input js-quantity-input js-number-input"
+              class="quantity-input textfield-input js-quantity-input js-number-input"
               id="numberfield"
               name="quantity1"
               type="number"
@@ -1288,7 +1321,6 @@
             <p></p>
             <p>221021: - + 버튼에 포커스는 필요가 없다. 최소값와 최대값. 입력 제한 피드백으로 disabled 상태.</p>
             <!-- <p>minus 버튼 없이 plus 버튼만 제공해도 재미있겠다.</p> -->
-            <p>price를 위한 numberField. 앞자리 0 제거. 숫자만입력3자리마다콤마</p>
           </div>
         </div>
 
@@ -1301,7 +1333,7 @@
             <dt>name</dt>
             <dd>string</dd>
             <dd>id={props.name}</dd>
-            <dt>label</dt>
+            <dt>label<attr>?</attr></dt>
             <dd>string</dd>
             <dd>레이블을 쓰지 않으면 hiddenLabel 스타일.</dd>
             <dt>value</dt>
@@ -1328,17 +1360,18 @@
 
       <p class="article-kicker">
         <b>Required? 명료?</b>
-        필수 입력을 전제합니다. 불필요한 정보 입력이나 행동을 유도하지 않는다는 대원칙. 사용자 여정에 허들이 될 수 있는 불필요한 텍스트 입력 필드는
-        최소화합니다. 사용자 정보를 제공하여 얻을 수 있는 이점이 명확한 경우에만. 선택 입력 필드는 '선택입력' 텍스트로 가이드합니다.
+        필수 입력을 전제합니다. 불필요한 정보 입력이나 행동을 유도하지 않는다는 대원칙. 사용자 여정에 허들이 될 수 있는 불필요한 입력 필드는 최소화.
+        사용자 정보를 제공하여 사용자 또는 비즈니스 맥락의 이점이 명확한 경우에만. 선택 입력 필드는 '선택입력' 텍스트로 가이드합니다.
       </p>
       <p class="article-kicker">
         <b>groupable</b> 선택 입력 필드를 최대 2개 그루핑할 수 있습니다. 시작일 종료일과 같은 일반적인 데이트 레인지를 그룹핑할 수 있다. ?
       </p>
       <p class="article-kicker">
         <b>Layout?</b>
-        레이블을 텍스트필드 왼쪽에 배치하지 마세요.
+        레이블을 텍스트필드 왼쪽에 배치하지 마세요. 아이콘 레이블로 대체하는 경우 텍스트 레이블을 생략할 수 있습니다. 서치필드 외에도 반복되는 이메일
+        입력. 동일한 타입의 입력을 반복할 때 레이블을 아이콘으로 대체.
       </p>
-      <p>아이콘 레이블로 대체하는 경우 텍스트 레이블을 생략할 수 있습니다. 서치필드 외에도 반복되는 이메일 입력.</p>
+      <p></p>
       <!-- <p>너무 당연한 이야기검색 필드는 일반 텍스트필드와 구별할 수 있도록 검색 아이콘 등 시각적인 단서를 제공하세요.</p> -->
 
       <!-- <ul>
@@ -1364,6 +1397,7 @@
         <span class="hashtag" title="pinterest gestalt">Module</span>
         <span class="hashtag" title="radix">section</span>
         <span class="hashtag" title="radix">container</span>
+        <span class="hashtag" title="mui">Paper</span>
       </aside>
 
       <section class="component-example">
@@ -1615,7 +1649,7 @@
 
     <article class="article js-observer js-scrollspy-section">
       <h1 class="article-title">Title Bar</h1>
-      <p class="article-description">모바일 친화적인 페이지</p>
+      <p class="article-description">작성 중. 모바일</p>
 
       <section class="component-example">
         <div class="tile-flat" style="overflow: hidden">

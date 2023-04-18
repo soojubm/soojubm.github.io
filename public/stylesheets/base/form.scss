@@ -17,10 +17,29 @@ input::-ms-clear {display:none;}
 
 input[type=text] {-webkit-appearance:none;} // for inner shadow on safari
 
+// 침체. 이차전지 엔터. 
 // 5보다 큰 값을 선택하세요 min / firefox
 input[type=number] {-webkit-appearance:none;-moz-appearance:textfield;}  // for inner shadow on safari, // 파이어폭스에서 토글 없애긔
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {-webkit-appearance:none;-moz-appearance:none;}
+
+input[type=number] {font-family:inherit;border:0;border-radius:0;color:inherit;}
+
+.quantity-input {}
+.price-input {}
+.number-input {}
+
+.quantity {display:flex;height:var(--size-medium);position:relative;}
+.quantity-input {width:100%;margin:0 var(--space-2);background:var(--color-background-weak);border-radius:var(--radius);text-align:center;}
+// radius = iOS
+.quantity-decrement {@include chip;}
+.quantity-increment {@include chip;border-radius:0 var(--radius) var(--radius) 0;}
+.quantity-decrement:disabled {opacity:.5;cursor:not-allowed;}
+.quantity-increment:disabled {opacity:.5;cursor:not-allowed;}
+
+
+// firefox decrement/increment 버튼 정렬
+
 
 input[type=date] {-webkit-appearance:none;} // for appearance on safari
 input[type=date] {display:block;max-height:48px;}  // 패딩으로 설정한 세로값 크롬에서(only?) 다른 텍스트 필드와 달라짐. iOS displayblock
@@ -118,8 +137,8 @@ input[type=checkbox]:checked + label + * {display:block;}
       // top: 8px
     }
     label:after {
-      width:9px;
-      height:3px;
+      width:10px;
+      height:4px;
 
       left: 6px;
       top:15px;

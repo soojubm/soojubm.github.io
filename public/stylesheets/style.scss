@@ -11,11 +11,13 @@
 @import 'abstracts/keyframes';
 @import 'abstracts/utilites';
 
-@import 'base/reset';
-@import 'base/form';
 
 
 @import 'components/chip';
+
+@import 'base/reset';
+@import 'base/form';
+
 @import 'components/breadcrumb.css';
 @import 'components/graph.css';
 // @import 'components/modal';
@@ -64,9 +66,6 @@
 @import 'pages/order';
 @import 'pages/changelog';
 @import 'pages/filter';
-
-@import 'base/quantity.scss';
-
 
 .bottombar {
   display: flex;

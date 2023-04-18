@@ -21,6 +21,11 @@ const inputNumber = () => {
   // });
 
   // 방향키로 조절할 때 min max 조건에 걸린다.
+
+  const MAXIMUM_VALUE = 300
+  const MINIMUN_VALUE = 0
+  const isFirstPlacedZero = value => /(^0+)/.test(value)
+
   document.addEventListener('keydown', event => {
     const { target }: any = event
     const isNumberInput = target.closest('.js-number-input')
@@ -28,19 +33,21 @@ const inputNumber = () => {
 
     document.addEventListener('keyup', setLimitNumber)
 
-    function setLimitNumber() {
-      const MAXIMUM = 300
-      const MINIMUN = 0
-      const isFirstPlacedZero = /(^0+)/.test(target.value)
-      const isMaximum = Number(target.value) >= MAXIMUM
-      const isLength = target.value.length > MINIMUN
+    // function limitMaximunValue() {
+    //   const isMaximum = Number(value) >= MAXIMUM_VALUE
+    //   if (!isMaximum) return
 
-      if (isFirstPlacedZero) target.value = MINIMUN
-      if (isLength) target.value = target.value.slice(0, 3)
-      if (isMaximum) target.value = MAXIMUM
+    //   target.value = MAXIMUM_VALUE
+    // }
+
+    function setLimitNumber() {
+      const { value } = target
+      const isMaximum = Number(value) >= MAXIMUM_VALUE
+
+      if (isFirstPlacedZero(value)) target.value = MINIMUN_VALUE
+      if (isMaximum) target.value = MAXIMUM_VALUE
     }
     // setInputOnlyNumbers()
-
     // function setInputOnlyNumbers() {
     //   const { keyCode } = event
     //   const keyCodes = [69, 189, 187, 190]

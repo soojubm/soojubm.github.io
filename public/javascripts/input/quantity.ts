@@ -60,7 +60,6 @@ const quantity = () => {
   // parseInt vs Number => 숫자로 시작하면 숫자를 저장 아니면 NaN
 
   document.addEventListener('click', event => {
-    alert()
     const { target }: any = event
 
     // todo ..... bubbling으로 변경 후 엉망이 됨.
@@ -91,10 +90,6 @@ const quantity = () => {
   })
 
   // function setStringBytes() {}
-
-  // export const input = {
-  // 	textarea: inputTextarea(),
-  // 	number: inputNumber()
 }
 
 export default quantity
