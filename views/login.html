@@ -1,9 +1,16 @@
 <main>
-  <form class="login" name="login" action="" method="" novalidat="true">
+  <form
+    class="login"
+    name="login"
+    action=""
+    method=""
+    novalidat="true"
+    style="display: flex; flex-direction: column; justify-content: center; min-height: calc(100vh - 100px)"
+  >
     <header class="login-head">
-      <!-- <span class="login-head-logo" style="margin: 0 0 1rem">🐤</span> -->
-      <h1 class="login-title">수줍이 로그인<i style="font-style: italic">!</i></h1>
-      <p class="login-description">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+      <span class="login-head-logo" style="margin: 0 0 1rem">🐤</span>
+      <h1 class="login-title">로그인</h1>
+      <p class="login-description">Lorem Ipsum is simply dummy text.</p>
     </header>
 
     <div class="login-social">
@@ -43,6 +50,7 @@
       <span hidden>가입하지 않은 이메일이거나??</span>
       잘못된 비밀번호입니다.
     </p>
+    <!-- // todo foot -->
     <menu class="login-foot">
       <button class="login-foot-submit" type="submit">로그인</button>
       <p class="login-option">
@@ -50,6 +58,10 @@
         <a class="login-option-link" href="signup.html">지금 가입하기<small hidden>Join Soojubm for free</small></a>
       </p>
     </menu>
+
+    <footer style="margin-top: auto">
+      <small>By continuing, you agree to Supabase's Terms of Service and Privacy Policy, and to receive periodic emails with updates.</small>
+    </footer>
   </form>
 </main>
 
