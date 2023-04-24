@@ -22,6 +22,9 @@
             <li>값을 직접적으로 이름에 포함하지 마세요.</li>
           </ul>
         </div>
+        <div class="chat-bubble">
+          <p>x(기본) - xx - xxx - xxxx - xxxxx 같은 방식으로 해보기. 또는 [4, 8, 12, 16, 20, 24]</p>
+        </div>
       </div>
     </header>
 
@@ -369,7 +372,7 @@
         </div>
         <div class="token-item">
           <figure class="token-item-avatar size-large"></figure>
-          <b>--size-large: 3rem</b>
+          <b>--size-large: 3rem / 48px</b>
           <div>
             <p>--avatar-large</p>
             <p>--button-height</p>
@@ -378,7 +381,7 @@
         </div>
         <div class="token-item">
           <figure class="token-item-avatar size-medium"></figure>
-          <b>--size-medium: 2rem</b>
+          <b>--size-medium: 2rem / 32px</b>
           <div>
             <p>--avatar-medium</p>
             <p>--chip-height</p>
@@ -536,6 +539,7 @@
       <!-- <p>서비스가 출시 환경이 웹온리(웹/태블릿+모바일) vs 웹+모바일앱(웹+태블릿/모바일)</p> -->
       <!-- <p style="margin-bottom:var(--space-4);color:var(--color-text-light);">tablet보다 작은 폼 팩터. ex) tablet, phone</p> -->
 
+      <p>content container / main | sidebar</p>
       <div class="chat" style="margin: 2rem 0">
         <figure class="chat-avatar"></figure>
         <div class="chat-bubble">
@@ -583,10 +587,12 @@
       </div>
 
       <h4 class="article-subhead">Layouts (page / section - form...)</h4>
-      <!-- <ul>
-        <li>모든 container는 --small부터 max-width를 100%.</li>
-        <li>pagehead의 상하 간격은 페이지마다 또는 pagehead 마다 달라질 수 있다.</li>
-      </ul> -->
+      <ul>
+        <li>모든 container는 media query --small부터 max-width를 100%.</li>
+        <li>page container는 padding을 갖지 않기? pagehead의 상하 간격은 페이지마다 또는 pagehead 마다 달라질 수 있다.</li>
+        <li>content container / list container (grid)</li>
+      </ul>
+      <br />
       <div class="token-group">
         <div class="token-item">
           <b>--layout-width-wide: 1200px</b>
@@ -602,6 +608,14 @@
           <div>
             <p>signup, login</p>
           </div>
+        </div>
+      </div>
+
+      <h4 class="article-subhead">Columns</h4>
+      <div class="token-group">
+        <div class="token-item">
+          <b>2 / 3 / 4</b>
+          <div></div>
         </div>
       </div>
 
