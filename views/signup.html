@@ -23,7 +23,14 @@
       </div>
       <div class="textfield">
         <label class="textfield-label" for="signup-password">비밀번호<abbr title="required" aria-hidden="true" hidden>*</abbr></label>
-        <input class="textfield-input" type="password" name="password" id="signup-password" placeholder="6자리 이상" autocomplete="new-password" />
+        <input
+          class="textfield-input js-password-test"
+          type="password"
+          name="password"
+          id="signup-password"
+          placeholder="6자리 이상"
+          autocomplete="new-password"
+        />
         <button class="textfield-reveal js-view-password" type="button">비밀번호 보기</button>
         <!-- <input class="textfield-input" type="password" id="signup-password-confirm" placeholder="비밀번호 확인 (6자리 이상)" /> -->
       </div>
@@ -32,7 +39,8 @@
         <input class="textfield-input" type="password" id="signup-password-confirm" placeholder="6자리 이상" />
         <button class="textfield-reveal js-view-password" type="button">비밀번호 보기</button>
       </div>
-      <!-- <div style="margin:-1rem 0 2rem;font-size:var(--font-size-small);">
+
+      <!-- <div style="margin: -1rem 0 2rem; font-size: var(--font-size-small)">
         <p>비밀번호 확인 필드가 없는 경우에 써보기.</p>
         <p>One lowercase character</p>
         <p>One special character</p>
@@ -40,6 +48,65 @@
         <p>One special character</p>
         <p>8 characters minimum</p>
       </div> -->
+
+      <style>
+        .is-valid1 .validation1 {
+          color: red;
+        }
+        .is-valid2 .validation2 {
+          color: red;
+        }
+        .is-valid3 .validation3 {
+          color: red;
+        }
+        .is-valid4 .validation4 {
+          color: red;
+        }
+        .is-valid5 .validation5 {
+          color: red;
+        }
+      </style>
+      <div class="text-sm">
+        <div class="validation1" style="display: flex; align-items: center">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" class="w-4 h-4">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"></path>
+          </svg>
+          <span class="text-sm">Uppercase letter</span>
+        </div>
+        <div class="validation2" style="display: flex; align-items: center">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" class="w-4 h-4">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"></path>
+          </svg>
+          <span class="text-sm">Lowercase letter</span>
+        </div>
+        <div class="validation3" style="display: flex; align-items: center">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-4 h-4">
+            <path
+              d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+          <span class="text-sm">Number</span>
+        </div>
+        <div class="validation4" style="display: flex; align-items: center">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" class="w-4 h-4">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"></path>
+          </svg>
+          <span class="text-sm">Special character (e.g. !?&lt;&gt;@#$%)</span>
+        </div>
+        <div class="validation5" style="display: flex; align-items: center">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" class="w-4 h-4">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"></path>
+          </svg>
+          <span class="text-sm">&gt; 7 characters</span>
+        </div>
+      </div>
+      <style>
+        .w-4 {
+          width: 1rem;
+        }
+      </style>
     </fieldset>
     <fieldset class="signup-optional">
       <legend hidden>선택입력</legend>

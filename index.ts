@@ -180,6 +180,24 @@ async function domEvents() {
   // function format(command, value) {
   //   document.execCommand(command, false, value);
   // }
+  const passwordTest = document.querySelector('.js-password-test')
+  passwordTest?.addEventListener('keyup', validatePasswordTest)
+
+  const tempElement = document.body
+  const validations = {
+    length: false,
+  }
+
+  function validatePasswordTest(event) {
+    const { value } = event.target
+
+    tempElement.classList.toggle('is-valid1', value.length > 12 && value.length < 18)
+    // 영문소문자/영문대문자/숫자포함
+    tempElement.classList.toggle('is-valid2', /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])/.test(value))
+    tempElement.classList.toggle('is-valid3', /[!?@#$%^&*():;+-=~{}<>\_\[\]\|\\\"\'\,\.\/\`\₩]/g.test(value))
+    // 동일한 문자 6개 연속
+    tempElement.classList.toggle('is-valid4', /([A-Za-z0-9`~!@#\$%\^&\*\(\)\{\}\[\]\-_=\+\\|;:'"<>,\./\?])\1{5,}/g.test(value))
+  }
 
   input.checkbox({ checkAllSelector: '.js-checkall', checkSelector: '.js-check' })
   input.file()
