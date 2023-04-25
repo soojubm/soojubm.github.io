@@ -6,13 +6,11 @@
 @mixin text-label {font-size:var(--font-size-medium);font-weight:var(--font-weight-normal);color:var(--color-text-light);}
 @mixin text-caption {font-size:var(--font-size-small);font-weight:var(--font-weight-bold);}
 
-
 @mixin truncate {white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 @mixin truncate-multi {
   // height:3rem;
   // white-space:normal;word-wrap:break-word;
   overflow:hidden;text-overflow:ellipsis;display: -webkit-box;-webkit-line-clamp:2;-webkit-box-orient: vertical;}
-
 
 .util-truncate {@include truncate;}
 
@@ -30,10 +28,6 @@
 .link-inner {@include link-inner;}
 .link-outside {@include link-outside;}
 
-
-
-
-
 @mixin image-centered {width:auto;height:auto;max-width:150%;max-height:150%;margin:auto;position:absolute;left:0;right:0;top:0;bottom:0;}
 @mixin bleeding {
 	margin: 0 -50vw;
@@ -45,13 +39,9 @@
 	z-index: -1;
 }
 
-
 @mixin clearfix {
   &:after {content:'';display:block;clear:both;}
 }
-
-
-
 
 @mixin hover-text {text-decoration:underline;}
 @mixin hover-item {
@@ -62,7 +52,6 @@
   // item in card component // active
   cursor: pointer;
   &:before {
-
     // z-idnex 이슈
     content:'';
     display:block;
@@ -75,9 +64,6 @@
   figure {box-shadow:var(--shadow) !important;}
 }
 .is-hoverable {@include hover-item;}
-
-
-
 
 // mobile padding 패딩은 page-head에서 주는 게 좋음. -margin 주는 게 좋을 듯.
 @mixin layout($size: 800px) {

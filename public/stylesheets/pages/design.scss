@@ -334,7 +334,14 @@
 .chat-avatar img {height:100%;}
 .chat-username {display:block;margin:0 0 var(--space-1) 0;font-size:var(--font-size-small);}
 .chat-time {margin:0 0 0 var(--space-1);color:var(--color-text-light);font-size:var(--font-size-small);color:var(--color-text-light);position:absolute;bottom:-1.5rem;}
-.chat-bubble {width:fit-content;max-width:calc(90% - var(--size-medium));padding:var(--space-3) var(--space-4);border:var(--border);border-radius:1.5rem;border-top-left-radius:var(--radius);background-color:var(--color-background);}
+.chat-bubble {
+  width:fit-content;
+  max-width:calc(90% - var(--size-medium));
+  max-width:560px;
+  padding:var(--space-3) var(--space-4);
+  // border:var(--border);
+  border-radius:1.5rem;border-top-left-radius:var(--radius);
+  background-color:var(--color-background-weak);}
 .chat-bubble.has-image {width:85%;padding:0;background:none;overflow:hidden;}
 .chat-bubble figure {}
 
@@ -342,7 +349,7 @@
   // line-height: var(--font-line-height);
   line-height: 1.6; // 예외 케이스
 }
-.chat-bubble + .chat-bubble {margin-top:var(--space-2);}
+.chat-bubble + .chat-bubble {margin-top:var(--space-3);}
 
 .chat.is-mine {text-align:right;}
 .is-mine .chat-avatar {display:none;}
@@ -545,8 +552,8 @@
 }
 
 
-.guide-wrap {display:flex;flex-wrap:wrap;justify-content:space-between;margin:-.375rem;}
-.guide-box {@include tile-flat;width:calc(50% - .75rem);padding:2rem;}
+// .guide-wrap {display:flex;flex-wrap:wrap;justify-content:space-between;}
+.guide-box {width:calc(50% - .75rem);margin:0 0 2rem 0;}
 .guide-title {display:block;margin:0 0 .25rem 0;color:inherit;}
 .guide-box p {color:inherit;}
 

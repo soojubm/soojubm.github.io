@@ -109,12 +109,12 @@
       </div>
       <div class="chat-bubble">
         <p>
-          MVP의 검증을 위한 최소한의 컴포넌트 라이브러리로 시작했습니다. 이후 시각 언어를 추가하며 다양한 도메인에 활용할 수 있도록 구성하고 있습니다.
+          MVP 검증을 위한 최소한의 컴포넌트 라이브러리로 시작했습니다. 이후 시각 언어를 추가하며 다양한 도메인에 활용할 수 있도록 구성하고 있습니다.
         </p>
-        <!-- <p>도메인 특수성이 있는 컴포넌트들을 구분한다. 예를 들면 스포티파이의 encore에서 track row 컴포넌트.</p> -->
+        <!-- <p>도메인 특수성이 있는 컴포넌트. 예를 들면 스포티파이의 encore에서 track row 컴포넌트.</p> -->
         <!-- <p>1~2가지 케이스는 예외 케이스로 정의한다.</p>
         <p>모든 시각정보는 non-clickable. 모든 인터렉션은 clickable.</p>
-        <p>dos / don'ts 케이스는 이미지를 사용하지 않고 간결하게 서술합니다. => 컴포넌트는 계속 변경되기 때문에 유지보수 비용 증가.</p> -->
+        <p>dos / don'ts 케이스는 이미지를 사용하지 않고 간결하게 서술합니다. 컴포넌트는 계속 변경되기 때문에 유지보수 비용 증가.</p> -->
       </div>
       <div class="chat-bubble">
         <p>
@@ -127,7 +127,7 @@
         <p>background 컴포넌트. lazy load 기능을 포함하는.</p>
       </div>
       <div class="chat-bubble">
-        <p>역할과 형태 구분. 형태는 textfield, action와 2개의 사이즈? 예시. select는 textfield / chip 2가지</p>
+        <p>역할과 형태 구분. 형태는 textfield, action와 2개의 사이즈? 예시. select는 textfield / chip 2가지. 아니다. 토큰으로 충분하다.</p>
       </div>
       <!-- <div class="chat-bubble">
         <p>
@@ -679,7 +679,8 @@
       </p>
 
       <p class="article-kicker">
-        정렬을 위한 옵션 목록을 chip group으로 제공하지 마세요. expandable로 현재 정렬 상태만 요약 표기하세요. (bad case: 2022.04 구글 지도 바뀐 것)
+        데이터 목록의 재정렬 기능에 옵션 목록을 group으로 제공하지 마세요. 현재 정렬 상태만 요약 표기하고 확장가능한 메뉴로 정렬 목록을 제공하세요.
+        (bad case: 2022.04 구글 지도 바뀐 것)
       </p>
       <!-- <li>changelog. dropdown을 칩과 분리. 이 디자인 시스템에서는 같은 형태를 사용하지만 배경색을 뺀 형태 케이스 고려해보기.</li> -->
       <!-- <li>changelog. icon button은 clickable이기 때문에 아바타가 아니라 칩을 mixin. 2개의 사이즈로 확장. => chip container style</li> -->

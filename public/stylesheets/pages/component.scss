@@ -39,6 +39,14 @@
   display: none;
 }
 
+.component-navigation .chip {
+  border: 1px solid var(--color-background-strong);
+  background-color: var(--color-background);
+}
+.component-navigation .chip.is-active {
+  background-color: var(--color-background-strong);
+}
+
 @media (--small) {
   .component-example {margin-top:2rem;margin-bottom:2rem;padding-top:1rem;padding-bottom:1rem;border-radius:0;
   }
