@@ -30,7 +30,7 @@
             <span class="material-symbols-outlined">arrow_back</span>
           </button>
         </header>
-        <div class="textfield searchfield is-focused">
+        <div class="textfield searchfield">
           <!-- <label class="textfield-label" for="search">검색(시각적으로숨겨야함)</label> -->
           <button class="textfield-prefix searchfield-prefix" style="background: none"><span class="material-symbols-outlined">search</span></button>
           <input
@@ -127,7 +127,7 @@
       </div>
     </div>
     <div class="tile-flat" style="max-width: 800px">
-      <div class="textfield searchfield is-focused">
+      <div class="textfield searchfield">
         <button class="textfield-prefix searchfield-prefix" style="left: 0; top: 0; width: 48px; height: 48px">
           <span class="titlebar-back-icon material-symbols-outlined">arrow_back</span>
         </button>
@@ -170,9 +170,9 @@
       <section class="search-recent">
         <h2 class="search-recent-title">최근 검색</h2>
         <!-- <button class="search-recommend-modify">수정</button> -->
-        <div class="menu-item" data-size="medium">
-          <figure class="menu-item-avatar"></figure>
-          <span class="menu-item-label">개구리</span>
+        <div class="item" role="menuitme" data-size="medium">
+          <figure class="item-avatar"></figure>
+          <span class="item-label">개구리</span>
           <button
             class="item-delete material-symbols-outlined"
             style="min-width: var(--size-small); height: var(--size-small); font-size: var(--size-tiny); top: 50%; transform: translateY(-50%)"
@@ -208,9 +208,9 @@
           <figure class="search-suggestion-item-avatar item-avatar"></figure>
           <p class="item-name">자동완성유아이</p>
         </div>
-        <div class="search-suggestion-item menu-item" data-tile="elevated" style="margin-bottom: 0; z-index: auto">
-          <figure class="search-suggestion-item-avatar menu-item-avatar"><span class="material-symbols-outlined">search</span></figure>
-          <p class="menu-item-label" style="color: var(--color-primary)"><span>자동완</span>(으)로 검색</p>
+        <div class="search-suggestion-item item" data-tile="elevated" data-size="medium" style="margin-bottom: 0; z-index: auto">
+          <figure class="search-suggestion-item-avatar item-avatar"><span class="material-symbols-outlined">search</span></figure>
+          <p class="item-label" style="color: var(--color-primary)"><span>자동완</span>(으)로 검색</p>
         </div>
       </section>
     </div>

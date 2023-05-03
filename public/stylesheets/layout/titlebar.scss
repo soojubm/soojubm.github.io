@@ -3,7 +3,7 @@
 
 .titlebar-title {font-size:var(--font-size-large);font-weight:var(--font-weight-normal);position:absolute;left:50%;transform:translateX(-50%);}
 .titlebar-back {@include chip;}
-.titlebar-action {margin-left:auto;}
+.titlebar-action {margin-left:auto;color:var(--color-primary);}
 .titlebar-action-icon {}
 .titlebar-action-label {color:var(--color-primary);}
 .titlebar-backdrop {height:32px;padding:var(--space-4) 0;background:var(--color-background);}

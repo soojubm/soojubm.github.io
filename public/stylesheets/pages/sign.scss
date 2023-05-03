@@ -13,8 +13,8 @@
 .login-email {margin:var(--space-after-textfield) 0;}
 .login-password {}
 .login-remember {margin:var(--space-2) 0;}
-.login-separator {margin:var(--space-4) auto;text-align:center;position:relative;z-index:var(--zindex-default);}
-.login-separator:before {content:'';display:block;width:100%;height:1px;background:var(--color-background-weak);position:absolute;top:50%;transform:translateY(-1px);}
+.login-separator {width:100%;margin:var(--space-4) auto;text-align:center;position:relative;z-index:var(--zindex-default);}
+.login-separator:before {content:'';display:block;width:100%;height:1px;background:var(--color-border);position:absolute;top:50%;transform:translateY(-1px);}
 .login-separator:after {content:'또는';width:4rem;line-height:24px;background:var(--color-background);font-size:var(--font-size-small);color:var(--color-text-light);position:absolute;left:50%;top:0;transform:translateX(-50%);}
 .login-foot-submit {@include button-primary;width:100%;}
 .login-social {}

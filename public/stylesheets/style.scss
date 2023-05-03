@@ -82,6 +82,9 @@
   color: var(--color-text);
   position: relative;
 }
+.bottombar-item:hover {
+  @include hover-item;
+}
 
 .bottombar-item-icon {
   @include avatar-medium;

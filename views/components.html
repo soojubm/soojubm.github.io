@@ -270,22 +270,20 @@
         <article class="item" data-size="large">
           <figure class="item-avatar"></figure>
           <b class="item-name">EntityLarge</b>
-          <p class="item-description">description area.</p>
+          <p class="item-description">individual, user.</p>
         </article>
         <article class="item" data-size="medium" style="display: flex; align-items: center">
           <figure class="item-avatar"></figure>
           <b class="item-name" style="font-weight: var(--font-weight-normal)">EntityMedium</b>
           <time style="margin: 0 0 0 var(--space-2); color: var(--color-text-light)">36.4만</time>
-          <button class="item-delete icon-indicator" style="margin-left: auto; min-width: 24px; height: 24px">
+          <!-- // 항상 같은 위치에 둘 수 있나. -->
+          <button
+            class="item-delete icon-indicator"
+            style="margin-left: auto; min-width: 24px; height: 24px; position: relative; right: auto; top: auto"
+          >
             <span class="material-symbols-outlined">close</span>
           </button>
         </article>
-        <article class="item" data-size="medium" style="display: flex; align-items: center">
-          <figure class="item-avatar"></figure>
-          <b class="item-name" style="font-weight: var(--font-weight-normal)">medium</b>
-          <time class="item-date" style="margin: 0 0 0 var(--space-2); color: var(--color-text-light)">2022. 12. 04.</time>
-        </article>
-
         <article class="item" data-size="small">
           <figure class="item-avatar"></figure>
           <b class="item-name" style="font-weight: var(--font-weight-normal)">EntitySmall</b>
@@ -293,16 +291,15 @@
       </div>
 
       <!-- <li>icon button, icon indicator, entity avatar, menu item avatar(icon)</li> -->
-      <!-- <li>현재 entity가 card vertica 형태</li> -->
-      <!-- <li>memeo. medium. 이하의 크기에 항상 align-items:center. 텍스트 더미가 두 줄로 제공되지 않는다.</li> -->
+      <!-- <li>memeo. medium. 이하의 크기는 디스크립션을 제공하지 않는다. 항상 align-items:center.</li> -->
       <!-- <li>pagination item은 chip과 같은 size token을 사용하지만 chip도 avatar도 아닙니다.</li> -->
-      <!-- <p>아바타만 단독으로 사용하는 케이스가 있을까. 그렇다면 space-after-avatar 항상 필요하지는 않음.</p> -->
-
-      <!-- <p><b>mui.</b> 아이콘 아바타를 사용. 아이콘 아바타와 아이콘 버튼의 차이.</p> -->
+      <!-- <p>아바타만 단독으로 사용하는 케이스. space-after-avatar가 필요하지 않음.</p> -->
       <article class="user tile-flat" style="max-width: 800px">
-        <h2 class="article-subhead" style="margin-top: 0">non-clickable<br />avatar는 장식 요소로 오른쪽에 배치 (outdated)</h2>
+        <h2 class="article-subhead" style="margin-top: 0">
+          <del>non-clickable</del><br />avatar는 장식 요소로 오른쪽에 배치 (outdated) => 목록이 아닌 페이지 레벨의 대표 개체로 사용.
+        </h2>
         <hr />
-        <figure class="user-avatar" role="img"></figure>
+        <figure class="user-avatar" role="img" style="border: var(--border); background-color: var(--color-background)"></figure>
         <b class="user-name">수줍이</b>
         <span class="user-id">soojubm@gmail.com</span>
         <span class="user-job">Youtube subscriber</span>
@@ -322,7 +319,7 @@
       </div>
 
       <article class="tile-elevated" style="max-width: 800px">
-        <h2 class="article-subhead" style="margin-top: 0">hoverable<br />요약된 사용자 정보와 프로필 페이지 링크</h2>
+        <h2 class="article-subhead" style="margin-top: 0">hoverable<br />요약된 사용자 정보. 사용자 프로필 페이지로 링크.</h2>
         <hr />
         <article class="item" data-size="medium">
           <figure class="item-avatar"></figure>
@@ -363,12 +360,12 @@
             </button>
             <span class="material-symbols-outlined">chevron_right</span>
           </div>
-          <div class="menu-item" role="menuitem" data-size="medium" style="width: 100%">
-            <figure class="menu-item-avatar">🏹</figure>
-            <span class="menu-item-label">메뉴아이템 링크</span>
-            <span class="tag" style="margin: 0 0 0 var(--space-2)">새소식</span>
+          <div class="item" role="menuitem" data-size="medium" style="width: 100%">
+            <figure class="item-avatar">🏹</figure>
+            <span class="item-label">메뉴아이템 링크</span>
+            <span class="item-tag tag">새소식</span>
           </div>
-          <button class="menu-item js-darkmode" role="menuitem" data-size="medium">
+          <button class="item js-darkmode" role="menuitem" data-size="medium">
             <figure class="item-avatar" style="background-image: none"><span class="material-symbols-outlined">nights_stay</span></figure>
             <span class="item-label">메뉴아이템 스위치</span>
             <span class="switch" style="margin-left: auto">
@@ -376,17 +373,17 @@
               <label for="dark1" style="padding-left: 48px" aria-label="어둡게 보기"></label>
             </span>
           </button>
-          <div class="menu-item" role="menuitemcheckbox" data-size="medium">
-            <figure class="menu-item-avatar"></figure>
-            <span class="menu-item-label">메뉴아이템 체크박스 todo</span>
+          <div class="item" role="menuitemcheckbox" data-size="medium">
+            <figure class="item-avatar"></figure>
+            <span class="item-label">메뉴아이템 체크박스 todo</span>
             <div class="checkbox" style="position: absolute; right: 0; top: 0">
               <input type="checkbox" id="c1" name="c1" value="" />
               <label for="c1" title="" aria-label="샘플"></label>
             </div>
           </div>
-          <div class="menu-item" role="menuitemradio" data-size="medium">
-            <figure class="menu-item-avatar"></figure>
-            <span class="menu-item-label">메뉴아이템 라디오 todo</span>
+          <div class="item" role="menuitemradio" data-size="medium">
+            <figure class="item-avatar"></figure>
+            <span class="item-label">메뉴아이템 라디오 todo</span>
             <div class="checkbox" style="position: absolute; right: 0; top: 0">
               <input type="checkbox" id="c1" name="c1" value="" />
               <label for="c1" title="" aria-label="샘플"></label>
@@ -394,9 +391,9 @@
           </div>
           <hr />
 
-          <button class="menu-item" data-tile="elevated" style="margin-top: 0; margin-bottom: 0.125rem">
-            <figure class="menu-item-avatar" style="background-image: none">🦊</figure>
-            <span class="menu-item-label">사진 및 동영상 백업</span>
+          <button class="item" role="menuitemcheckbox" data-tile="elevated" data-size="medium" style="margin-top: 0; margin-bottom: 0.125rem">
+            <figure class="item-avatar" style="background-image: none">🦊</figure>
+            <span class="item-label">사진 및 동영상 백업</span>
             <span class="switch" style="margin-left: auto">
               <input type="checkbox" id="temp123456" name="" role="switch" />
               <label for="temp123456" style="padding-left: 48px" aria-label="사진 및 동영상 백업"></label>
@@ -410,8 +407,8 @@
             <span class="menu-heading">menu heading</span>
             <a class="menu-link" href="#design">Only Text</a>
             <a class="menu-link" href="#design">Only Text Large</a>
-            <a class="dropdown-menu-item" data-size="small" href="#design">Text menu small</a>
-            <a class="dropdown-menu-item" data-size="small" href="#design">with popover</a>
+            <a class="dropdown-item" data-size="small" href="#design">Text menu small</a>
+            <a class="dropdown-item" data-size="small" href="#design">with popover</a>
           </menu>
         </div>
 
@@ -786,17 +783,11 @@
             </button>
             <menu class="dropdown-menu" role="menu">
               <h6 class="dropdown-menu-title" hidden>Dropdown header</h6>
-              <a
-                class="dropdown-menu-item"
-                role="menuitem"
-                href="#"
-                disabled
-                style="display: flex; justify-content: space-between; align-items: center"
-              >
+              <a class="dropdown-item" role="menuitem" href="#" disabled style="display: flex; justify-content: space-between; align-items: center">
                 최신순
                 <span class="material-symbols-outlined">check</span>
               </a>
-              <a class="dropdown-menu-item" role="menuitem" href="#">최신순</a>
+              <a class="dropdown-item" role="menuitem" href="#">최신순</a>
             </menu>
           </div>
           <div class="dropdown">
@@ -804,10 +795,10 @@
               <span class="material-symbols-outlined">more_vert</span>
             </button>
             <menu class="dropdown-menu">
-              <a class="dropdown-menu-item" href="#componets">신고</a>
+              <a class="dropdown-item" href="#componets">신고</a>
               <hr class="dropdown-menu-divider" style="margin: 0.5rem 0" />
-              <a class="dropdown-menu-item" href="#componets">수정</a>
-              <a class="dropdown-menu-item" href="#componets">삭제</a>
+              <a class="dropdown-item" href="#componets">수정</a>
+              <a class="dropdown-item" href="#componets">삭제</a>
             </menu>
           </div>
         </div>
@@ -1132,6 +1123,30 @@
             <div>test</div>
           </div>
         </fieldset>
+
+        <fieldset class="tile-flat" role="radiogroup" style="display: flex">
+          <legend hidden>radiogroup</legend>
+          <div class="tile-elevated-small" style="width: 400px; margin-right: 0.75rem">
+            <figure style="padding: 0.75rem; background: var(--color-background-weak); border-radius: var(--radius)">
+              <small> 기존 라디오 컴포넌트의 형태를 유지할 수 있는 디자인. </small>
+              <small> use cases: 기본 주소록, 선택 목록 with 이미지 가이드 등</small>
+            </figure>
+            <div class="radio">
+              <input type="radio" id="raidio5" name="gender" value="" checked />
+              <label for="raidio5" title="">tile style</label>
+            </div>
+          </div>
+          <div class="tile-elevated-small" style="width: 400px; margin-right: 0.75rem">
+            <div class="radio">
+              <input type="radio" id="raidio6" name="gender" value="" checked />
+              <label for="raidio6" title="">개인</label>
+              <figure style="display: block">
+                <p>1개월 무료 후 14,900원/개월</p>
+                <small>현재 구독하고 있는 서비스는 체험할 수 없습니다.</small>
+              </figure>
+            </div>
+          </div>
+        </fieldset>
       </section>
 
       <!-- TODO 단락의 구조도 컨테이너가 있어야 변경이 쉽다. -->
@@ -1171,7 +1186,7 @@
             <select class="textfield-input" id="select1">
               <option value="select-option1">Choose an option</option>
             </select>
-            <span class="select-indicator material-symbols-outlined" role="img">arrow_drop_down</span>
+            <span class="textfield-indicator material-symbols-outlined" role="img">arrow_drop_down</span>
           </div>
         </div>
         <div class="tile-flat">
@@ -1219,7 +1234,7 @@
       <h1 class="article-title">Textfields</h1>
       <p class="article-description">
         텍스트 정보를 입력합니다. Inputfields 로 변경하기. 넘버필드는 작은 사이즈인데 결국 두 개의 사이즈로? 수량 뿐 아니라 숫자만 입력할 수 있는
-        필드. 링크 위치. 눈알 아이콘. 헬퍼 텍스트(위/아래). 클리어버튼.
+        필드. 헬퍼 텍스트(위/아래). label :: line-height: 24px
       </p>
       <aside class="article-aka">
         <span class="tag">a.k.a.</span>
