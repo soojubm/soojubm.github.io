@@ -28,6 +28,20 @@
 .chip-label {@include chip-label;}
 .chip-remove {@include avatar-container;cursor:pointer;}
 .chip-remove:hover {box-shadow:var(--state-hover);}
-.chip-checked {} // chip-avatar
 
 .is-active .chip-icon {background:inherit;color:inherit;}
+
+.chip[aria-expanded] {}
+.chip[aria-selected] {}
+.chip[aria-checked] {}
+.chip[aria-pressed] {}
+.chip[aria-haspopup] {}
+
+
+// .chip[aria-expanded=true] {
+//   background-image: url(
+//     'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48"><path d="M480 696 280 497h400L480 696Z"/></svg>');
+//   background-repeat: no-repeat;
+//   background-size: 14px;
+//   background-position: 90% 50%;
+// }

@@ -28,6 +28,11 @@ const ACTIVE_CLASS = 'is-active'
 function toggleElement({ selector: trigger }: Parameter) {
   const triggers = document.querySelectorAll(trigger)
 
+  console.log(triggers[0].getBoundingClientRect().left)
+
+  // const {left, top } = getElementPosition(element)
+  // Menu.style.left = left, Menu.style.top = top
+
   triggers.forEach(element =>
     element.addEventListener('click', event => {
       event.preventDefault()
@@ -39,12 +44,15 @@ function toggleElement({ selector: trigger }: Parameter) {
         if (target === trigger) return
         removeClassname(trigger)
       })
+
       toggleClassname(element)
     }),
   )
 
-  // clickOutbound() {}
-  document.addEventListener('click', () => triggers.forEach(trigger => removeClassname(trigger)))
+  function clickOutbound() {
+    triggers.forEach(trigger => removeClassname(trigger))
+  }
+  document.addEventListener('click', clickOutbound)
 
   // if (target.classList.contains(ACTIVE_CLASS)) {}
   // const hasElementSibling = target.nodeName === target.nextElementSibling

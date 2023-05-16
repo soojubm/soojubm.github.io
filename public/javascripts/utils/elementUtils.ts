@@ -8,6 +8,8 @@ export function getElementOffsetTop(element) {
   return offsetTop
 }
 
+//todo getElement
+
 export function getWindowScrollTop() {
   return window.scrollY || window.pageYOffset
 }

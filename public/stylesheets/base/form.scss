@@ -2,8 +2,6 @@
 @import 'checkbox';
 @import 'textfield';
 
-
-
 // rem 으로 모듈화하기 어렵다. ex 1.5rem => top:0.125rem
 // line-heght로 리셋스타일에 종속되지 않도록 함. + block
 // height 테이블 내에서 세로 정렬에 필요
@@ -29,17 +27,17 @@
 // }
 // .checkbox label {margin:0 0 0 var(--space-after-avatar-small);line-height:inherit;}
 
-.quantity-input {}
+.counter-input {}
 .price-input {}
 .number-input {}
 
-.quantity {display:flex;height:var(--size-medium);position:relative;}
-.quantity-input {width:100%;margin:0 var(--space-2);background:var(--color-background-weak);border-radius:var(--radius);text-align:center;}
+.counter {display:flex;position:relative;}
+.counter-input {width:100%;margin:0 var(--space-2);background:var(--color-background-weak);border-radius:var(--radius);text-align:center;}
 // radius = iOS
-.quantity-decrement {@include chip;}
-.quantity-increment {@include chip;border-radius:0 var(--radius) var(--radius) 0;}
-.quantity-decrement:disabled {opacity:.5;cursor:not-allowed;}
-.quantity-increment:disabled {opacity:.5;cursor:not-allowed;}
+.counter-decrement {@include chip;}
+.counter-increment {@include chip;border-radius:0 var(--radius) var(--radius) 0;}
+.counter-decrement[aria-disabled=true] {opacity:.5;cursor:not-allowed;}
+.counter-increment[aria-disabled=true] {opacity:.5;cursor:not-allowed;}
 
 .checkbox,.radio {display:block;
   min-height: var(--size-medium);

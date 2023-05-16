@@ -116,7 +116,7 @@
       <h1 class="article-title">Modal</h1>
       <p class="article-description">something that requires the user’s attention.</p>
       <footer>
-        <button class="button-secondary js-modal" data-modal="woolf">모달 열기</button>
+        <button class="button js-modal" data-variation="secondary" data-modal="woolf">모달 열기</button>
       </footer>
       <hr />
       <ul>
@@ -129,6 +129,8 @@
         <li>x button / arrow button, left / right</li>
         <!-- <li>All Modals have a max-width of 100%.</li> -->
         <li>중요도 정의하기. 정말로 중요한 입력이 요구되는 경우, 모달의 바깥을 클릭해서 닫을 수 없는 게 맞는 맥락. 또한 반드시 모달이어야 하는가.</li>
+        <li>todo dialogs = diakog-layer.</li>
+
         <!-- <li>
           팝업을 띄우면서 스크롤을 막으려면 스크롤바를 없애줘야 하는데, 이게 생각보다 복잡하다. 크롬에서는 html에 overflow:hidden를 잘 주면 끝인데,
           익스플로러에선 스크롤 제어하려면 body에 먹여야 한다. html에 overflow:hidden;을주고 모달에 overflow-y를 주면(조건:모달이 윈도우창보다
@@ -215,7 +217,7 @@
         <li>keydown. escKey. enterKey. spaceBar</li>
       </ul>
 
-      <h4 class="article-subhead">모달의 기능</h4>
+      <h4 class="article-subhead">확장 기능</h4>
       <ul>
         <li>모달에 브라우저 히스토리를 저장.</li>
         <li>url을 통한 접근 허용.</li>
@@ -241,7 +243,7 @@
       <h1 class="article-title">Toast</h1>
       <p class="article-description" title="temporary feedback on an interaction">일시적인 피드백. 현재 사용하지 않음.</p>
 
-      <button class="button-secondary js-toggle">토스트 열기</button>
+      <button class="button js-toggle" data-variation="secondary">토스트 열기</button>
       <aside class="toast" role="alert">toast test. 사라지는 시간을 정의.</aside>
 
       <h4 class="article-subhead">Best practices</h4>
@@ -274,7 +276,7 @@
       <h1 class="article-title">Sheet</h1>
       <p class="article-description">사용하지 않음. 모바일용. 참고용.</p>
       <!-- <p>To allow users to view optional information or complete sub-tasks in a workflow while keeping the context of the current page, use Sheet.</p> -->
-      <button class="button-secondary js-toggle">시트 열기</button>
+      <button class="button js-toggle" data-variation="secondary">시트 열기</button>
 
       <article class="sheet js-sheet" role="presentation">
         <button class="sheet-toggle"></button>
@@ -322,7 +324,7 @@
       <h1 class="article-title">Popover</h1>
       <p class="article-description">floating tiles</p>
       <footer style="position: relative">
-        <button class="button-secondary js-toggle">팝오버 열기</button>
+        <button class="button js-toggle" data-variation="secondary">팝오버 열기</button>
         <div class="popover tile-elevated">
           <header class="titlebar" style="padding: 0">
             <h1 class="titlebar-title">프로필</h1>

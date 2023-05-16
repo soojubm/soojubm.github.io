@@ -1,0 +1,18 @@
+.button {
+  /* --button-text: null;
+  --button-font-weight: var(--font-weight-bold);
+  --button-radius: var(--radius); */
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 6rem;
+  height: var(--size-large);
+  padding: 1px var(--space-4) 0;
+  border-radius: var(--radius);
+  box-sizing: border-box;
+  font-weight: var(--font-weight-bold);
+  position: relative;
+}
+
+.button[data-variation=primary] {background-color:var(--color-primary);}

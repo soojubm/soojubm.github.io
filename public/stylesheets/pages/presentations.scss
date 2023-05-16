@@ -70,15 +70,15 @@
 .is-active + .popover {display:block;position:absolute;left:0;top:calc(var(--size-large));}
 
 
-.dialog {max-width:400px;@include tile-elevated;padding:1rem;}
+.dialog {max-width:400px;border:var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:1rem;box-sizing:border-box;}
 .dialog-head {display:flex;justify-content:space-between;}
 .dialog-head-title {margin:0 auto;@include text-subhead;}
 .dialog-title {@include text-subhead;}
 .dialog-description {margin:.5rem 0 1.5rem;}
-.dialog-footer {display:flex;flex-direction:row-reverse;justify-content:space-between;margin:2rem 0 0;}
+.dialog-footer {display:flex;justify-content:space-between;flex-direction:row-reverse;margin:2rem 0 0;}
 // todo buttongroup column과 그냥 column 달르다.
-.dialog-footer-confirm {@include button-primary;width:var(--grid-column);width:calc(50% - .25rem);}
-.dialog-footer-cancel {@include button-tertiary;width:calc(50% - .25rem);}
+.dialog-footer-confirm {@include button-primary;width:var(--grid-column);}
+.dialog-footer-cancel {@include button-tertiary;width:var(--grid-column);}
 .dialog-close {@include chip;position:absolute;right:.5rem;top:.5rem;}
 
 .sheet-close {@include chip;position:absolute;right:.5rem;top:.5rem;}

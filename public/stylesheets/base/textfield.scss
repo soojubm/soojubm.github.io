@@ -81,7 +81,7 @@ input[type=search]::-webkit-search-results-decoration {display:none;}
 
 // 검색필드는 레이블이 없다. label ~로 하면 되긴 함.
 .searchfield {position:relative;}
-.searchfield-prefix {@include textfield-prefix;background:none;top:7px;}
+.searchfield-prefix {@include textfield-prefix;top:7px;}
 .searchfield-clear {@include textfield-surfix;top:7px;display:none;}
 .searchfield-clear {right:calc(var(--size-medium) + var(--space-after-avatar-medium) + var(--space-3));}
 .searchfield-cancel {@include button-text;min-width:auto;width:var(--size-medium);position:absolute;right:0;top:0;padding:0;}

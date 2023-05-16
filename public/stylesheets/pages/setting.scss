@@ -1,6 +1,6 @@
 .setting {@include layout-medium;}
 
-.setting-item {@include tile-flat;width:100%;margin:0;}
+.setting-item {@include tile-flat;width:100%;}
 .setting-item + .setting-item {margin:var(--space-3) 0 0 0;}
 .setting-item-label {@include text-label;}
 .setting-item-value {}

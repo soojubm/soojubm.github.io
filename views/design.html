@@ -94,6 +94,12 @@
       <span>₩1,100/월 </span>
     </div> -->
     <!-- <p>유아이 라이브러리와 스타일 가이드를 디자인 시스템이라 부르지 말기를...</p> -->
+    <p class="article-kicker">
+      라이브하는 제품의 효율을 위한 디자인 시스템이 아니라 학습을 목적으로 하다보니 하나의 제품을 위한 규칙이 아니라 보편적인 모든 케이스를 망라하게
+      된다. 이 과정에서 시스템이 필요 이상으로 커지고 사용 케이스의 효율을 측정하기 어려워졌다. 원칙에 어긋나는 규칙이 만들어지기 시작했는데 이러한
+      케이스를 구분하여 정의하도록 한다. 원칙을 명확하게 해보자.
+    </p>
+
     <p class="article-kicker hero-description" style="margin-top: 1.75rem">
       <b>Meaningful and Trustworthy</b>
       디자인 시스템과 디자인 시스템 문서의 타겟
@@ -125,8 +131,8 @@
       장기적인 목표는 Mozilla의 누구나 브랜드 웹사이트를 구축하는 데 사용할 수 있는 강력하고 통합된 디자인 시스템을 제공하는 것입니다.
     </ul> -->
     <!-- <footer class="hero-actions">
-      <a class="button-primary" href="#components">컴포넌트</a>
-      <button class="button-text" style="margin-left: 0.5rem">더 알아보기</button>
+      <a class="button" data-variation="primary" href="#components">컴포넌트</a>
+      <button class="button" data-variation="text" style="margin-left: 0.5rem">더 알아보기</button>
     </footer> -->
     <!-- <p class="hero-description" data-temp="platform convention problem보다 meta problem에 초점">
       오브젝트를 감싸는 컴포넌트가 있는 것이 좋음. e.detail.originalEvent
@@ -549,8 +555,56 @@
       <a class="feature-item-link" href="#">숙소 등록</a>
     </div>
   </section> -->
+  <section class="design-guide" style="margin: 8rem auto; padding: 0 var(--grid-margin)">
+    <p>overriding style / composing component</p>
 
-  <p>overriding style / composing component</p>
+    <h1>aria 스타일링하기</h1>
+    <ul>
+      <li>유아이의 이름을 정하지 않아도 된다.</li>
+      <li>표준에 가깝다. 접근성 규칙을 따른다.</li>
+      <li>모든 사람이 동일한 방식을 따르면.</li>
+    </ul>
+    <h2 class="article-subhead" style="margin-top: 0; margin-bottom: 2rem">Selectable</h2>
+    <p>aria-multiselectable - role=option / aria-selected=true</p>
+
+    <h3>ui samplers - 형태로 구분</h3>
+    radio / checkbox / select / chip group / designed
+    <h3>ui samplers - 역할로 구분</h3>
+    filter, sort, setting, something for choice
+
+    <p>menu button - dropdown trigger , listbox - allows a user to select one or more of them</p>
+
+    <p>aria-haspopup : menu(true) / listbox / tree / grid / dialog</p>
+    <p>aria-current: page / step / location / date / time / true / false(default)</p>
+
+    <p>
+      shopify - actions / layout and structure / selection and input / images and icons / feedback indicators / typography / tables / list /
+      navigatoin / overlays / utilities
+    </p>
+
+    <p>var aria = aria || {};</p>
+    <p>
+      aria.KeyCode = { BACKSPACE: 8, TAB: 9, RETURN: 13, SHIFT: 16, ESC: 27, SPACE: 32, PAGE_UP: 33, PAGE_DOWN: 34, END: 35, HOME: 36, LEFT: 37, UP:
+      38, RIGHT: 39, DOWN: 40, DELETE: 46, };
+    </p>
+    <p>dialog 는 alertdialog를 포함하는 느낌</p>
+
+    <p>20223.04 select indicator를 unfolded 로 교체.</p>
+    <!-- Instead of aria-selected="true", include the checked attribute.  -->
+
+    <p>https://www.w3.org/TR/2017/NOTE-wai-aria-practices-1.1-20171214/examples/listbox/listbox-collapsible.html</p>
+    <label for="flagcolors"> Choose the colors for your flag. </label>
+    <br />
+    <select multiple id="flagcolors">
+      <option value="red">Red</option>
+      <option value="orange">Orange</option>
+      <option value="yellow">Yellow</option>
+      <option value="magenta">Hot pink</option>
+      <option value="lightpink" selected>Light pink</option>
+      <option value="white" selected>White</option>
+      <option value="lightblue" selected>Light blue</option>
+    </select>
+  </section>
 
   <section class="design-guide" style="margin: 8rem auto; padding: 0 var(--grid-margin)">
     <h2 class="article-subhead" style="margin-top: 0; margin-bottom: 2rem">가이드 작성을 위한 가이드</h2>
@@ -745,6 +799,7 @@
     <a href="https://developer.android.com/reference" target="_blank">Android API reference</a>
     <a href="https://cube.fyi/" target="_blank">CUBE CSS</a>
     <a href="https://www.digitala11y.com/" target="_blank">Digital A11Y</a>
+    <a href="https://www.w3.org/WAI/ARIA/apg/" target="_blank"> ARIA Authoring Practices Guide</a>
     <a href="https://en.wikipedia.org/wiki/Universal_design" target="_blank">Universal design</a>
     <!-- https://www.sitemaps.org/protocol.html -->
   </section>
@@ -774,6 +829,6 @@
   >
     <h1 style="margin: 0 0 1.5rem 0; color: var(--gray0)">blah blah?<br />Everyone is welcome!</h1>
     <p>최근 기여자 🦆오리</p>
-    <button class="button-tertiary">피드백으로 기여하기 🌵</button>
+    <button class="button" data-variation="tertiary">피드백으로 기여하기 🌵</button>
   </footer> -->
 </main>

@@ -70,10 +70,13 @@
   }
 }
 
-.button-primary {@include button-primary;}
-.button-secondary {@include button-secondary;}
-.button-tertiary {@include button-tertiary;}
-.button-text {@include button-text;}
+.button {}
+.button[data-variation=primary] {@include button-primary;}
+.button[data-variation=secondary] {@include button-secondary;}
+.button[data-variation=tertiary] {@include button-tertiary;}
+.button[data-variation=text] {@include button-text;}
+.button[data-variation=danger] {@include button;background:var(--red800);border:1px solid var(--red800);color:var(--gray0);}
+
 
 // 이거 이름 바꿨을 때 의존서이 너무 큼. mixin
 
@@ -84,9 +87,6 @@
   }
 }
 .icon-indicator {@include icon-indicator;}
-  // span {font-size:20px;}
-
-.danger-button {@include button;background:var(--red800);border:1px solid var(--red800);color:var(--gray0);}
 
 
 close-button {position:absolute;right:var(--space-2);top:var(--sopace-2);}

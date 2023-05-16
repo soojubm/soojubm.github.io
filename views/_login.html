@@ -1,0 +1,77 @@
+<main>
+  <form
+    class="authentication login"
+    name="login"
+    action=""
+    method=""
+    novalidat="true"
+    style="display: flex; flex-direction: column; justify-content: center; min-height: calc(100vh - 100px)"
+  >
+    <header class="authentication-head">
+      <span class="authentication-head-logo" style="margin: 0 0 1rem">🐤</span>
+      <h1 class="authentication-head-title">로그인</h1>
+      <p class="authentication-head-description">Lorem Ipsum is simply dummy text.</p>
+    </header>
+
+    <fieldset class="authentication-fieldset">
+      <div class="login-social oauth">
+        <button class="login-social-facebook">페이스북으로 시작 <small hidden>Sing in with Facebook</small></button>
+      </div>
+      <div class="login-separator" role="separator">또는</div>
+      <div class="login-email textfield" style="margin-top: -0.5rem">
+        <label class="textfield-label" for="login-email">이메일</label>
+        <input
+          class="textfield-input js-input-email"
+          type="email"
+          id="login-email"
+          name="email"
+          placeholder="soojubm@gmail.com"
+          autofocus
+          aria-describedby="name-hint"
+        />
+        <small class="textfield-helper" id="name-hint" role="alert" data-english="Enter an email address.">이메일을 입력하세요. </small>
+      </div>
+      <div class="login-password textfield">
+        <label class="textfield-label" for="loginin-password">비밀번호</label>
+        <input
+          class="textfield-input js-input-password"
+          type="password"
+          id="loginin-password"
+          name="password"
+          placeholder="Enter a password. 8자리 이상."
+        />
+        <a class="textfield-link" href="forgot.html">비밀번호를 잊으셨나요? <small hidden>Forgot your password?</small></a>
+      </div>
+      <div class="login-remember checkbox">
+        <input type="checkbox" id="remember-id" />
+        <label for="remember-id">로그인 상태 유지<small hidden>Remember my email address</small></label>
+      </div>
+    </fieldset>
+
+    <section class="authentication-feedback" role="alert" aria-live="assertive">
+      <p class="alert">
+        <span class="material-symbols-outlined" style="margin: 0 var(--space-1) 0 0"> error </span>
+        <span hidden>가입하지 않은 이메일이거나??</span> 잘못된 비밀번호입니다.
+      </p>
+    </section>
+
+    <menu class="authentication-foot">
+      <button class="authentication-foot-submit" type="submit">로그인</button>
+
+      <p class="login-option">
+        계정이 없으신가요?<small hidden>Need an account?</small>
+        <a class="login-option-link" href="signup.html">지금 가입하기<small hidden>Join Soojubm for free</small></a>
+      </p>
+    </menu>
+
+    <footer style="margin-top: auto">
+      <p class="text-xs text-scale-900 sm:mx-auto sm:max-w-sm">
+        By continuing, you agree to Supabase's<!-- -->
+        <a class="underline hover:text-scale-1100" href="https://supabase.com/terms">Terms of Service</a>
+        <!-- -->and<!-- -->
+        <a class="underline hover:text-scale-1100" href="https://supabase.com/privacy">Privacy Policy</a>, and to receive periodic emails with
+        updates.
+      </p>
+    </footer>
+  </form>
+</main>

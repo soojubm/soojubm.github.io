@@ -28,9 +28,9 @@ import { toggleNavbarMenu, initializeNavbar } from './public/javascripts/common/
 
 document.addEventListener('DOMContentLoaded', lockBodyElement)
 document.addEventListener('DOMContentLoaded', () => {
-  // Define the new web component
   if ('customElements' in window) {
-    window.customElements.define('sds-chip', SDSChip)
+    window.customElements.define('test-button', Button)
+    window.customElements.define('test-chip', Chip)
     window.customElements.define('close-button', CloseButton)
     // customElements.define('sjb-entity', Entity)
   }
@@ -202,7 +202,7 @@ async function domEvents() {
   input.checkbox({ checkAllSelector: '.js-checkall', checkSelector: '.js-check' })
   input.file()
   // input.textarea()
-  input.quantity()
+  input.counter()
 
   toggleElement({ selector: '.js-toggle' })
 
@@ -550,15 +550,15 @@ const test1 = new Body('body')
 // console.log('@@@@@', test1.getElement())
 // test1.toggleClass('fuck')
 
-class SDSChip extends HTMLElement {
+class Chip extends HTMLElement {
   constructor() {
     super()
     // this.innerHTML = `<button class="chip"></button>`
     const shadow = this.attachShadow({ mode: 'open' })
 
     const container = document.createElement('button')
-    // container.classList.add('chip')
-    container.setAttribute('class', 'chip')
+    container.classList.add('chip-test')
+    // container.setAttribute('class', 'chip')
 
     const label = document.createElement('span')
     label.setAttribute('class', 'chip-label')
@@ -571,11 +571,11 @@ class SDSChip extends HTMLElement {
     const linkElem = document.createElement('link')
     linkElem.setAttribute('rel', 'stylesheet')
     linkElem.setAttribute('href', '/public/stylesheets/components/chip_test.css')
+    shadow.appendChild(linkElem)
 
     // ! webpack css
 
     // Attach the created elements to the shadow dom
-    shadow.appendChild(linkElem)
     container.appendChild(label)
 
     label.textContent = this.label
@@ -605,6 +605,49 @@ class SDSChip extends HTMLElement {
   }
   connectedCallback() {
     // this.textContent = this.label
+  }
+
+  disconnectedCallback() {
+    console.log('disconnected', this)
+  }
+}
+
+function createStylesheet(name) {
+  const linkElem = document.createElement('link')
+  linkElem.setAttribute('rel', 'stylesheet')
+  linkElem.setAttribute('href', `/public/stylesheets/base/${name}.css`)
+
+  return linkElem
+}
+
+class Button extends HTMLElement {
+  constructor() {
+    super()
+    const shadow = this.attachShadow({ mode: 'open' })
+
+    const container = document.createElement('button')
+    container.classList.add('button')
+
+    container.textContent = this.label
+    container.setAttribute('data-variation', this.variation || '')
+
+    // this.addEventListener('click', () => alert('custom element'))
+
+    shadow.appendChild(container)
+    shadow.appendChild(createStylesheet('button'))
+  }
+
+  get variation() {
+    return this.getAttribute('variation')
+  }
+
+  get label() {
+    return this.getAttribute('label')
+  }
+
+  connectedCallback() {
+    // this.textContent = this.label
+    console.log(this.variation)
   }
 
   disconnectedCallback() {

@@ -30,6 +30,7 @@
 <p>30,000원 / 30,000 won / ₩ 30,000</p> -->
 
 <main class="component">
+  <chip>test</chip>
   <!-- <section class="textbox" style="margin: 4rem var(--grid-margin)">
     <menu class="textbox-toolbar">
       <div class="chip" style="margin: 0 var(--space-2) 0 0">
@@ -405,10 +406,10 @@
         <div class="tile-flat">
           <menu class="menu">
             <span class="menu-heading">menu heading</span>
-            <a class="menu-link" href="#design">Only Text</a>
-            <a class="menu-link" href="#design">Only Text Large</a>
-            <a class="dropdown-item" data-size="small" href="#design">Text menu small</a>
-            <a class="dropdown-item" data-size="small" href="#design">with popover</a>
+            <a class="menu-item" role="menuitem" href="#design">Only Text</a>
+            <a class="menu-item" role="menuitem" href="#design">menu item 은 메뉴에서 드롭다운에서</a>
+            <a class="dropdown-menu-item" href="#design">Text menu small</a>
+            <a class="dropdown-menu-item" href="#design">with popover</a>
           </menu>
         </div>
 
@@ -471,26 +472,27 @@
         <div class="tile-flat" role="menu">
           <!-- a11ym menu - group - menuitem -->
           <div class="stack" role="group" data-scroll="vertical" style="margin-right: -0.75rem">
-            <button class="button-primary" role="menuitem">Primary</button>
-            <button class="button-secondary" role="menuitem">Secondary</button>
-            <button class="button-tertiary" role="menuitem">Tertiary</button>
-            <button class="danger-button" role="menuitem" aria-label="danger">Destructive</button>
-            <button class="button-text" role="menuitem">Text</button>
+            <button class="button" data-variation="primary">Primary</button>
+            <button class="button" data-variation="secondary">Secondary</button>
+            <button class="button" data-variation="tertiary">Tertiary</button>
+            <button class="button" data-variation="danger" aria-label="danger">Destructive</button>
+            <button class="button" data-variation="text">Text</button>
           </div>
         </div>
         <div class="tile-flat">
           <div class="stack" role="group" style="align-items: flex-start">
-            <button class="button-tertiary" style="height: 64px; font-size: var(--font-size-large); vertical-align: bottom">Large</button>
-            <button class="button-tertiary" style="vertical-align: bottom">Medium</button>
-            <!-- <button class="button-tertiary-small">Small</button> -->
+            <button class="button" data-variation="tertiary" style="height: 64px; font-size: var(--font-size-large); vertical-align: bottom">
+              Large
+            </button>
+            <button class="button" data-variation="tertiary" style="vertical-align: bottom">Medium</button>
           </div>
         </div>
         <div class="tile-flat">
           <div class="stack" role="group" data-scroll="vertical" style="margin-right: -0.75rem">
-            <button class="button-tertiary is-hover" style="margin-right: 0.5rem">Hover</button>
-            <button class="button-tertiary is-focus">Focus</button>
-            <button class="button-tertiary" disabled>Disabled</button>
-            <!-- <button class="button-tertiary">Loading</button> -->
+            <button class="button is-hover" data-variation="tertiary" style="margin-right: 0.5rem">Hover</button>
+            <button class="button is-focus" data-variation="tertiary">Focus</button>
+            <button class="button" data-variation="tertiary" disabled>Disabled</button>
+            <!-- <button class="button" data-variation="tertiary">Loading</button> -->
           </div>
         </div>
 
@@ -581,6 +583,8 @@
     <article class="article js-observer js-scrollspy-section">
       <h1 class="article-title">Chips 🔥</h1>
       <p class="article-description">사용자 여정을 보조하는 액션입니다. 실행 페이지 내에서 사용자는 즉각적인 결과를 기대할 수 있습니다.</p>
+
+      <p>todo aria-expanded :: dropdown with icon</p>
 
       <aside class="article-aka" style="margin: 0">
         <span class="tag">a.k.a.</span>
@@ -676,7 +680,7 @@
       </p>
 
       <p class="article-kicker">
-        데이터 목록의 재정렬 기능에 옵션 목록을 group으로 제공하지 마세요. 현재 정렬 상태만 요약 표기하고 확장가능한 메뉴로 정렬 목록을 제공하세요.
+        데이터 목록의 재정렬을 위한 옵션 목록을 group으로 제공하지 마세요. 현재 정렬 상태만 요약 표기하고 확장가능한 메뉴로 정렬 목록을 제공하세요.
         (bad case: 2022.04 구글 지도 바뀐 것)
       </p>
       <!-- <li>changelog. dropdown을 칩과 분리. 이 디자인 시스템에서는 같은 형태를 사용하지만 배경색을 뺀 형태 케이스 고려해보기.</li> -->
@@ -733,19 +737,19 @@
         <h2 class="article-subhead" style="margin-top: 0">multiple selections with check</h2>
         <hr />
         <div class="stack" data-scroll="vertical" aria-multiselectable="true">
-          <button class="chip is-active" aria-selected="true" style="background-color: var(--green100)">
-            <figure class="chip-icon" style="background: none !important">
-              <span class="material-symbols-outlined" style="color: var(--color-primary)">check</span>
+          <button class="chip is-active" role="option" aria-selected="true">
+            <figure class="chip-icon">
+              <span class="material-symbols-outlined">check</span>
             </figure>
-            <span class="chip-label" style="padding-left: 0; color: var(--green800)">소설</span>
+            <span class="chip-label">소설</span>
           </button>
-          <button class="chip is-active" aria-selected="false" style="background-color: var(--green100)">
-            <figure class="chip-icon" style="background: none !important">
-              <span class="material-symbols-outlined" style="color: var(--color-primary)">check</span>
+          <button class="chip is-active" role="option" aria-selected="false">
+            <figure class="chip-icon">
+              <span class="material-symbols-outlined">check</span>
             </figure>
-            <span class="chip-label" style="padding-left: 0; color: var(--green800)">영화</span>
+            <span class="chip-label">영화</span>
           </button>
-          <button class="chip" aria-selected="false">
+          <button class="chip" role="option" aria-selected="false">
             <span class="chip-label">타이포그래피</span>
           </button>
         </div>
@@ -753,8 +757,17 @@
 
       <!-- <p>글자수 제한. 모달로 열릴 수 있어서, 드롭다운은 제거함. dropdown/overflow/pulldown. sorting contents</p> -->
       <div class="tile-flat">
-        <h2 class="article-subhead" style="margin-top: 0">Expandable chip<br /></h2>
+        <h2 class="article-subhead" style="margin-top: 0">Expandable chip<br />Filtering / Sorting / More<br />position setting</h2>
         <hr />
+
+        <div class="stack" style="margin: var(--space-3) 0; gap: 0.5rem">
+          <span class="stack" style="margin-left: -0.25rem">
+            <span class="material-symbols-outlined"> do_not_disturb_on </span>
+            1개 선택됨
+          </span>
+          <span class="material-symbols-outlined"> download </span>
+          <span class="material-symbols-outlined"> delete </span>
+        </div>
         <div class="stack">
           <div class="dropdown">
             <button class="chip js-toggle" aria-expanded="true">
@@ -775,7 +788,6 @@
               </footer>
             </menu>
           </div>
-
           <div class="dropdown">
             <button class="chip js-toggle" aria-expanded="true">
               <span class="chip-label">정렬</span>
@@ -783,11 +795,17 @@
             </button>
             <menu class="dropdown-menu" role="menu">
               <h6 class="dropdown-menu-title" hidden>Dropdown header</h6>
-              <a class="dropdown-item" role="menuitem" href="#" disabled style="display: flex; justify-content: space-between; align-items: center">
+              <a
+                class="dropdown-menu-item"
+                role="menuitem"
+                href="#"
+                disabled
+                style="display: flex; justify-content: space-between; align-items: center"
+              >
                 최신순
                 <span class="material-symbols-outlined">check</span>
               </a>
-              <a class="dropdown-item" role="menuitem" href="#">최신순</a>
+              <a class="dropdown-menu-item" role="menuitem" href="#">최신순</a>
             </menu>
           </div>
           <div class="dropdown">
@@ -795,12 +813,40 @@
               <span class="material-symbols-outlined">more_vert</span>
             </button>
             <menu class="dropdown-menu">
-              <a class="dropdown-item" href="#componets">신고</a>
+              <a class="dropdown-menu-item" href="#componets">신고</a>
               <hr class="dropdown-menu-divider" style="margin: 0.5rem 0" />
-              <a class="dropdown-item" href="#componets">수정</a>
-              <a class="dropdown-item" href="#componets">삭제</a>
+              <a class="dropdown-menu-item" href="#componets">수정</a>
+              <a class="dropdown-menu-item" href="#componets">삭제</a>
             </menu>
           </div>
+        </div>
+        <style>
+          [role='cell'] {
+            width: 25%;
+            padding: var(--space-3);
+          }
+        </style>
+        <div
+          class=""
+          role="row"
+          style="
+            display: flex;
+            margin: var(--space-3) 0 0 0;
+            font-size: var(--font-size-small);
+            font-weight: var(--font-weight-bold);
+            color: var(--color-text-light);
+          "
+        >
+          <span role="cell" style="flex: auto">이름</span>
+          <span role="cell" style="flex: auto">소유자</span>
+          <span role="cell" style="flex: auto">마지막으로 수정한 날짜</span>
+          <span role="cell" style="flex: auto">파일 크기</span>
+        </div>
+        <div class="" role="row" style="display: flex; border-top: var(--border)">
+          <span role="cell" style="flex: auto">이름</span>
+          <span role="cell" style="flex: auto">소유자</span>
+          <span role="cell" style="flex: auto">2023. 05. 05</span>
+          <span role="cell" style="flex: auto">2KB</span>
         </div>
       </div>
 
@@ -922,8 +968,8 @@
       </section>
 
       <p class="article-kicker">
-        <b>4개 이상의 태그로 태그 그룹을 구성하지 마세요. </b>태그는 <mark>핵심 키워드를 요약</mark>하여 사용자의 콘텐츠 탐색과 선택을 돕는
-        역할입니다. 너무 많은 태그 목록을 노출하는 것은 되려 콘텐츠 탐색을 어렵게 할 수 있습니다.
+        <b>4개 이상의 태그를 그룹화하지 마세요. </b>태그는 <mark>핵심 키워드를 요약</mark>하여 사용자의 콘텐츠 탐색과 선택을 돕는 역할입니다. 너무
+        많은 태그 목록을 노출하는 것은 되려 콘텐츠 탐색을 어렵게 할 수 있습니다.
       </p>
 
       <p>groupable</p>
@@ -1085,16 +1131,16 @@
         <h2 class="article-subhead" style="margin-top: 0">CheckboxGroup<br />약관동의Terms and conditions</h2>
       </div>
       <div class="tile-flat">
-        <h2 class="article-subhead" style="margin-top: 0">SingleCheckbox<br />포토리뷰만 보기</h2>
+        <h2 class="article-subhead" style="margin-top: 0">SingleCheckbox</h2>
         <hr />
         <div class="checkbox">
           <input type="checkbox" id="only-photo" name="only-photo" value="only-photo" />
           <label for="only-photo">포토리뷰만 보기</label>
         </div>
-      </div>
-      <div class="tile-flat">
-        <h2 class="article-subhead" style="margin-top: 0">SingleCheckbox<br />다시 묻지 않기 / 일주일 동안 보지 않기don't ask again</h2>
-        <hr />
+        <div class="checkbox">
+          <input type="checkbox" id="only-photo" name="only-photo" value="only-photo" />
+          <label for="only-photo">다시 묻지 않기 / 일주일 동안 보지 않기don't ask again</label>
+        </div>
       </div>
     </article>
 
@@ -1186,26 +1232,42 @@
             <select class="textfield-input" id="select1">
               <option value="select-option1">Choose an option</option>
             </select>
-            <span class="textfield-indicator material-symbols-outlined" role="img">arrow_drop_down</span>
+            <span class="textfield-indicator material-symbols-outlined" role="img">unfold_more</span>
           </div>
         </div>
         <div class="tile-flat">
-          <div class="stack">
-            <span class="chip">
-              <select class="chip-label" id="select2" style="pointer-events: auto">
-                <option value="select2-option1">Choose an option</option>
-                <option value="select2-option2">Choose an option</option>
-              </select>
-              <span class="chip-icon material-symbols-outlined" role="img">arrow_drop_down</span>
-            </span>
-          </div>
+          <span class="chip" style="width: 200px">
+            <select class="chip-label" id="select2" style="pointer-events: auto">
+              <option value="select2-option1">Choose an option long long texts</option>
+              <option value="select2-option2">option2</option>
+            </select>
+            <span class="chip-icon material-symbols-outlined" role="img" style="font-size: 16px">unfold_more</span>
+          </span>
         </div>
+        <article class="component-props">
+          <dl>
+            <dt>options</dt>
+            <dd>Option[]</dd>
+            <dd></dd>
+            <dt>label - option label과 혼동될 수도</dt>
+            <dd>string</dd>
+            <dd></dd>
+            <dt>selectedValue</dt>
+            <dd>Option.value</dd>
+            <dd></dd>
+            <dt>onChange - handleSelectChange</dt>
+            <dd>(event: React.FormEvent[HTMLSelectElement]) => void</dd>
+            <dd></dd>
+          </dl>
+        </article>
       </section>
 
+      <p class="article-kicker">
+        todo 사실 native select와 dropdown을 함께 정의할 필요가 있나. native 모바일 장점. naming select / width / input bar(google font)
+      </p>
       <h2 class="article-subhead">Best practices</h2>
-
       <ul>
-        <li>다중 선택(combobox)을 셀렉트로 제공하지 마세요. chip group으로 선택 옵션을 풀어서 제공하세요. 선택 목록이 많지 않다는 가정 하.</li>
+        <!-- <li>다중 선택(combobox)을 셀렉트로 제공하지 마세요. chip group으로 선택 옵션을 풀어서 제공하세요. 선택 목록이 많지 않다는 가정 하.</li> -->
         <li>레이블 클릭해도 셀렉트박스 안 열림. id prop 필요없음.</li>
         <li>셀렉트 옵션에 따라 박스의 너비가 자동 조절된다. indicator를 position으로 넣고 옵션에 말줄임표를 넣어야.</li>
         <li>
@@ -1213,18 +1275,6 @@
           드롭다운으로 구현해야 한다.
         </li>
       </ul>
-
-      <h2 class="article-subhead">Props</h2>
-      <dl>
-        <dt>options</dt>
-        <dd>Option[]</dd>
-        <dt>label - option label과 혼동될 수도</dt>
-        <dd>string</dd>
-        <dt>selectedValue</dt>
-        <dd>Option.value</dd>
-        <dt>onChange - handleSelectChange</dt>
-        <dd>(event: React.FormEvent[HTMLSelectElement]) => void</dd>
-      </dl>
       <!-- var selected = Array.from(dnd.options).filter((option) => {
       return option.selected;
     }).map((option) => option.value); -->
@@ -1315,29 +1365,30 @@
         </div>
 
         <div class="tile-flat">
-          <!-- numberfield -->
-          <div class="quantity js-quantity">
+          <div class="textfield" style="margin: 0 0 var(--space-3) 0">
+            <label class="textfield-label">숫자 가격</label>
+            <input class="textfield-input" type="number" value="20000" style="text-align: right" />
+          </div>
+
+          <!-- <input type="text" inputmode="numeric" pattern="[0-9]*"> -->
+          <div class="counter js-counter">
             <label for="numberfield" style="position: absolute; opacity: 0">레이블 라이트하우스용</label>
-            <!-- <input type="text" inputmode="numeric" pattern="[0-9]*"> -->
-            <button class="quantity-decrement js-quantity-decrement" aria-label="" aria-controls="numberfield" tabindex="-1">
-              <span class="material-symbols-outlined"> remove </span>
-            </button>
+            <button class="counter-decrement js-counter-decrement material-symbols-outlined" aria-controls="numberfield" tabindex="-1">remove</button>
             <input
-              class="quantity-input textfield-input js-quantity-input js-number-input"
-              id="numberfield"
-              name="quantity1"
+              class="counter-input textfield-input js-counter-input js-number-input"
               type="number"
-              value="0"
+              name="counter1"
+              id="numberfield"
               min="5"
               max="20"
+              value="0"
             />
-            <button class="quantity-increment js-quantity-increment" tabindex="-1"><span class="material-symbols-outlined">add</span></button>
+            <!-- //value=0 있으면 안 됨. -->
+            <button class="counter-increment js-counter-increment material-symbols-outlined" tabindex="-1">add</button>
           </div>
-          <div style="margin: 1rem 0 0 0">
-            <p></p>
-            <p>221021: - + 버튼에 포커스는 필요가 없다. 최소값와 최대값. 입력 제한 피드백으로 disabled 상태.</p>
-            <!-- <p>minus 버튼 없이 plus 버튼만 제공해도 재미있겠다.</p> -->
-          </div>
+          <p>props: minValue, maxValue, value, onDecreseClick, onIncreseClick</p>
+          <p>221021: - + 버튼에 포커스는 필요가 없다. 최소값와 최대값. 입력 제한 피드백으로 disabled 상태.</p>
+          <p>minus 버튼 없이 plus 버튼만 제공해도 재미있겠다.. counter 는 퍼센티지를 못 담음</p>
         </div>
 
         <article class="component-props">
@@ -1345,7 +1396,7 @@
           <dl>
             <dt>type</dt>
             <dd>HTMLInputTypeAttribute? | 'search' | "text" | "number" | "tel" | "textarea"</dd>
-            <dd>TODO Searchfield / Commentfield / QuantityField / PriceField... label, validation, helper를 포함하지 않는 케이스와 구분해보기</dd>
+            <dd>TODO Searchfield / Commentfield / counterField / PriceField... label, validation, helper를 포함하지 않는 케이스와 구분해보기</dd>
             <dt>name</dt>
             <dd>string</dd>
             <dd>id={props.name}</dd>
@@ -1375,13 +1426,12 @@
       </section>
 
       <p class="article-kicker">
-        <b>Required? 명료?</b>
-        필수 입력을 전제합니다. 불필요한 정보 입력이나 행동을 유도하지 않는다는 대원칙. 사용자 여정에 허들이 될 수 있는 불필요한 입력 필드는 최소화.
-        사용자 정보를 제공하여 사용자 또는 비즈니스 맥락의 이점이 명확한 경우에만. 선택 입력 필드는 '선택입력' 텍스트로 가이드합니다.
+        <b>불필요한 정보 입력을 유도하지 마세요.</b> 사용자 여정에 허들이 될 수 있는 불필요한 입력 필드는 최소화. 다시말해 모든 텍스트 필드는 필수
+        입력입니다. 사용자 정보를 제공하여 사용자 또는 비즈니스 맥락의 이점이 명확한 경우에만. 선택 입력 필드는 '선택입력' 텍스트로 가이드합니다.
       </p>
-      <p class="article-kicker">
+      <!-- <p class="article-kicker">
         <b>groupable</b> 선택 입력 필드를 최대 2개 그루핑할 수 있습니다. 시작일 종료일과 같은 일반적인 데이트 레인지를 그룹핑할 수 있다. ?
-      </p>
+      </p> -->
       <p class="article-kicker">
         <b>Layout?</b>
         레이블을 텍스트필드 왼쪽에 배치하지 마세요. 아이콘 레이블로 대체하는 경우 텍스트 레이블을 생략할 수 있습니다. 서치필드 외에도 반복되는 이메일
@@ -1562,7 +1612,7 @@
             <i class="breadcrumb-divider">/</i>
             <a class="breadcrumb-item" href="#">페이지 이름</a>
             <i class="breadcrumb-divider">/</i>
-            <span class="breadcrumb-item breadcrumb-last" href="#">페이지 이름</span>
+            <span class="breadcrumb-item" aria-current="page">페이지 이름</span>
           </nav>
         </div>
         <article class="component-props">
@@ -1570,22 +1620,21 @@
           <dl>
             <dt>currentPage</dt>
             <dd>string</dd>
-            <dd>구조를 어떻게?</dd>
+            <dd>aria-current="page"</dd>
           </dl>
         </article>
       </section>
       <h2 class="article-subhead">Memo</h2>
       <ul>
-        <li>3개 이상의 페이지 댑스에서 사용합니다.</li>
-        <li>상위 댑스의 페이지 타이틀을 truncated</li>
         <li>모바일의 네비게이션 바(탑 바/타이틀 바/바텀 네비게이션 등)와 함께 사용하지 마세요.</li>
         <li>푸터에서 사이트맵과 함께 사용할 수 있습니다.</li>
         <li>프로모션용 랜딩 페이지에서 사용자 여정을 돕기 위해 사용할 수 있습니다.</li>
-        <li>
-          flat sitemap 트렌드에서 사용 빈도가 높지 않다. 주로 도움말, 상품 등 카테고리 구조에서 활용하며, pg 심사 시 제품군 정보가 요구.
-          (토스페이-구엘지페이먼츠시절)
-        </li>
       </ul>
+      <p class="article-kicker">
+        <b>3개 이상의 페이지 댑스에서 사용합니다.</b> flat sitemap 트렌드에서 사용 빈도가 높지 않습니다. 주로 도움말, 상품 등 카테고리 구조에서
+        제한적으로 활용하며, pg 심사 시 요구될 수 있습니다. (토스페이-구엘지페이먼츠시절)
+      </p>
+      <p class="article-kicker"><b>활용</b> 상위 댑스의 페이지 타이틀이 길어지면 truncated할 수 있다.</p>
     </article>
 
     <article class="article js-observer js-scrollspy-section js-tab">
@@ -1624,7 +1673,7 @@
             <dd>React.Node</dd>
             <dd>TODO SPA에서 Tablist를 따로 정의해야 한다.</dd>
             <!-- <dt>indicator (active bar)</dt> -->
-            <dt>badge? quantity? isUnread?</dt>
+            <dt>badge? counter? isUnread?</dt>
             <dd></dd>
             <dd></dd>
           </dl>

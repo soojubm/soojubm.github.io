@@ -195,9 +195,9 @@
             <span class="menu-heading">Interfaces</span>
             <a href="#profile">User Profile 🔥</a>
             <a href="#kakaopay">Kakaopay (outdated)</a>
-            <a href="#login">Sign In</a>
-            <a href="#signup">Sign Up</a>
-            <a href="#forgot">Forgot Password</a>
+            <a href="#_login">Sign In</a>
+            <a href="#_signup">Sign Up</a>
+            <a href="#_forgot">Forgot Password</a>
             <a href="#settings">Settings</a>
             <a href="#post">Post</a>
             <a href="#product">Product</a>
@@ -236,6 +236,20 @@
       </div>
     </nav>
     <div class="navbar-backdrop"></div>
+
+    <section style="padding: 2rem var(--grid-margin)">
+      <test-button variation="primary" label="custom element"></test-button>
+      <test-chip label="chip"></test-chip>
+      <test-chip label="custom"></test-chip>
+
+      <article class="test-data" data-test="data content"></article>
+
+      <style>
+        .test-data::before {
+          content: attr(data-test);
+        }
+      </style>
+    </section>
 
     <div id="view"></div>
 
