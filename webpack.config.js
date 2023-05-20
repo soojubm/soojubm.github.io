@@ -4,7 +4,6 @@ const postcssPresetEnv = require('postcss-preset-env')
 
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 
@@ -21,13 +20,32 @@ const CompressionPlugin = require('compression-webpack-plugin')
 
 var WebpackObfuscator = require('webpack-obfuscator')
 
+// const isDevMode = process.env.NODE_ENV.includes('dev')
 // const devMode = process.env.NODE_ENV !== "production";
+
+// const header = fs.readFileSync(__dirname + '/header.html')
+const HTML_TEMPLATE = './index.html'
+
+// new webpack.EnvironmentPlugin(['NODE_ENV', 'DEBUG'])
 
 module.exports = new SpeedMeasurePlugin().wrap({
   // mode: 'production', // development, production, none
   devtool: 'inline-source-map',
-  entry: './index.ts',
+  entry: {
+    index: {
+      import: './index.ts',
+      // dependOn: 'shared',
+    },
+    // another: {
+    //   import: './public/javascripts/another.ts',
+    //   dependOn: 'shared',
+    // },
+    // shared: 'lodash',
+    // index: './index.ts',
+    // another: './public/javascripts/another-module.ts',
+  },
   output: {
+    // filename: '[name].bundle.js',
     filename: 'bundle.js',
     path: path.resolve(__dirname, './build'),
     // publicPath: './',
@@ -35,67 +53,57 @@ module.exports = new SpeedMeasurePlugin().wrap({
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
   },
-
-  // cache: {
-  //   type: 'filesystem',
-  //   compression: 'gzip',
-  // },
-
   watch: true,
   target: ['web', 'es5'],
 
   plugins: [
-    // new CleanWebpackPlugin(),
-
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: './index.html',
+      template: HTML_TEMPLATE,
       filename: 'index.html',
+      main: '<b>this is main</b>',
+    }),
+    new HtmlWebpackPlugin({
+      template: HTML_TEMPLATE,
+      filename: 'subTest.html',
+      chunks: ['another'],
+      main: 'subTest.html',
+      inject: true,
       minify: {
         collapseWhitespace: true,
         removeComments: true,
       },
+      // minify: true,
     }),
-
-    new MiniCssExtractPlugin({ filename: 'style.css' }),
-
+    new MiniCssExtractPlugin({
+      filename: 'style.css',
+      // chunkFilename: '[id].[contenthash].css',
+    }),
     new WebpackObfuscator({ rotateStringArray: true }, ['excluded_bundle_name.js']),
-
-    // new CompressionPlugin({
-    //   filename: '[path][base].gz',
-    //   algorithm: 'gzip',
-    //   test: /\.js$|\.css$|\.html$/,
-    //   threshold: 10240,
-    //   minRatio: 0.8,
-    // }),
-
-    // new HtmlWebpackPlugin(), // Generates default index.html
-    // new HtmlWebpackPlugin({  // Also generate a test.html
-    //   filename: 'test.html',
-    //   template: 'src/assets/test.html'
-    // })
-
     new BundleAnalyzerPlugin(),
+    // new CompressionPlugin({}),
     // new FriendlyErrorsWebpackPlugin(),
   ],
 
   module: {
     rules: [
-      { test: /\.ts$/, use: 'ts-loader' },
-      {
-        test: /\.(sc|c)ss$/,
-        use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'], // 뒤부터
-      },
-
-      // {
-      //   test: /\.(png|jpe?g|gif|svg|webp)$/i,
-      //   use: ['file-loader'],
-      // },
-
       {
         test: /\.m?js$/,
         exclude: /node_modules/,
         use: ['babel-loader'],
+        // options: {
+        //   presets: ['@babel/preset-env'],
+        // },
       },
+      { test: /\.ts$/, use: 'ts-loader' },
+      {
+        test: /\.(sc|c)ss$/,
+        use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'], // 뒤부터. style-loader 대신 mini
+      },
+      // {
+      //   test: /\.(png|jpe?g|gif|svg|webp)$/i,
+      //   use: ['file-loader'],
+      // },
     ],
   },
 
@@ -114,7 +122,6 @@ module.exports = new SpeedMeasurePlugin().wrap({
   },
 
   devServer: {
-    // contentBase: path.join(__dirname, './'),
     static: {
       directory: path.resolve(__dirname, './'),
     },
@@ -123,3 +130,8 @@ module.exports = new SpeedMeasurePlugin().wrap({
     port: 9000,
   },
 })
+
+// cache: {
+//   type: 'filesystem',
+//   compression: 'gzip',
+// },

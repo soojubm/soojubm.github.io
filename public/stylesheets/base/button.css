@@ -1,8 +1,4 @@
 .button {
-  /* --button-text: null;
-  --button-font-weight: var(--font-weight-bold);
-  --button-radius: var(--radius); */
-
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -15,4 +11,17 @@
   position: relative;
 }
 
-.button[data-variation=primary] {background-color:var(--color-primary);}
+.button[data-variation=primary] {
+  background: var(--color-primary);
+  border:1px solid var(--color-primary);
+  color: #fff;
+}
+.button[data-variation=secondary] {
+  border:1px solid transparent;
+  background:var(--green100);color:var(--color-primary);
+}
+.button[data-variation=tertiary] {
+  border: 1px solid var(--color-background-weak);
+  background:var(--color-background-weak);
+  color:var(--color-text);
+}

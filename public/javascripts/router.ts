@@ -50,7 +50,7 @@ const routePage = async () => {
   }
 }
 
-async function fetchPage(uri) {
+export async function fetchPage(uri) {
   const response = await fetch(uri)
   if (!response.ok) throw 'Something went wrong.'
 

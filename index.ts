@@ -26,6 +26,8 @@ import toggleTheme from './public/javascripts/theme/toggleTheme'
 
 import { toggleNavbarMenu, initializeNavbar } from './public/javascripts/common/navbar'
 
+// import { fetchPage } from './public/javascripts/router'
+
 document.addEventListener('DOMContentLoaded', lockBodyElement)
 document.addEventListener('DOMContentLoaded', () => {
   if ('customElements' in window) {
@@ -205,7 +207,6 @@ async function domEvents() {
   input.counter()
 
   toggleElement({ selector: '.js-toggle' })
-
   tab()
   modal({ selector: '.js-modal' })
 

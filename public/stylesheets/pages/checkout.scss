@@ -1,7 +1,7 @@
 .checkout {@include layout-medium;}
 .checkout-step {}
 .checkout-head {position:relative;}
-// .checkout-head-background {display:none;background:var(--color-background-weak);position:absolute;left:-200%;right:-200%;top:0;bottom:0;z-index:-1;}
+.checkout-head-background {display:none;background:var(--color-background-weak);position:absolute;left:-200%;right:-200%;top:0;bottom:0;z-index:-1;}
 .checkout-head-eyebrow {}
 .checkout-head-title {}
 .checkout-head-description {}
@@ -27,9 +27,6 @@
 .checkout-payment-button-emoji {display:block;margin-bottom:-.5rem;font-size:var(--font-size-huge);}
 .checkout-payment-button-check {position:absolute;right:16px;top:42%;}
 
-.checkout-foot {}
-.checkout-foot-helper {margin:0 0 1rem 0;}
-.checkout-foot-pay {@include button-primary;width:50%;max-width:20rem;}
 
 @media (--large) {
   // .checkout-foot {

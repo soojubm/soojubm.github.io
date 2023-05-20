@@ -75,8 +75,9 @@
 .dialog-head-title {margin:0 auto;@include text-subhead;}
 .dialog-title {@include text-subhead;}
 .dialog-description {margin:.5rem 0 1.5rem;}
-.dialog-footer {display:flex;justify-content:space-between;flex-direction:row-reverse;margin:2rem 0 0;}
+
 // todo buttongroup column과 그냥 column 달르다.
+.dialog-footer {display:flex;justify-content:space-between;flex-direction:row-reverse;margin:2rem 0 0;}
 .dialog-footer-confirm {@include button-primary;width:var(--grid-column);}
 .dialog-footer-cancel {@include button-tertiary;width:var(--grid-column);}
 .dialog-close {@include chip;position:absolute;right:.5rem;top:.5rem;}

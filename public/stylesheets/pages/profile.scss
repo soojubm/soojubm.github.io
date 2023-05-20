@@ -10,12 +10,9 @@
 .profile-user-toggle {width:100%;margin:var(--space-4) 0;text-align:center;color:var(--color-text);position:relative;}
 .profile-user-toggle-icon {@include avatar-container-small;}
 .profile-user-toggle:hover {@include hover-item;}
-
 .profile-user-statistic {}
-
 .profile-user-controls {display:flex;margin:2rem 0 0;}
-.profile-user-controls-follow {@include button-primary;width:calc(70% - var(--space-after-button));}
-.profile-user-controls-message {@include button-tertiary;min-width:auto;width:30%;margin-left:auto;}
+
 
 // todo
 .social {}
@@ -39,9 +36,7 @@
 // 아이템의 크기에 따라 텍스트 갯수와 스타일이 달라짐.
 
 // todo...
-.profile-foot-follow {@include button-primary;width:50%;}
 .profile-body {padding:0 0 64px calc(320px + var(--size-large));box-sizing:border-box;position:relative;}
-
 
 .panel {display:flex;flex-wrap:wrap;margin:0 -.375rem;}
 .panel[aria-hidden=true] {display:none;}
