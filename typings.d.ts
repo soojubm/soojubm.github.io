@@ -1,6 +1,6 @@
 declare module '*.mdx'
 
-// todo html-loader
+// html-loader
 declare module '*.html' {
   const value: any
   export default value
