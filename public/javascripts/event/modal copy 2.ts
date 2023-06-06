@@ -1,6 +1,5 @@
 //TODO: 모달 밖의 컨텐츠에 aria-hidden 모달의 위치는 바디 안에?
 //var abc = window.innerWidth - document.body.clientWidth;
-// require('./modal.scss');
 
 import { pushBrowserHistory, backHistory } from '../utils/browserUtils'
 

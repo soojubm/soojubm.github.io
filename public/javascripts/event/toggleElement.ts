@@ -28,7 +28,7 @@ const ACTIVE_CLASS = 'is-active'
 function toggleElement({ selector: trigger }: Parameter) {
   const triggers = document.querySelectorAll(trigger)
 
-  console.log(triggers[0].getBoundingClientRect().left)
+  // console.log(triggers[0].getBoundingClientRect().left)
 
   // const {left, top } = getElementPosition(element)
   // Menu.style.left = left, Menu.style.top = top

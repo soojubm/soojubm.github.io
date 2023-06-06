@@ -1,0 +1,160 @@
+/* // ! text-heading-medium / text-heading-small */
+@define-mixin text-title {font-size:var(--font-size-huge);font-weight:var(--font-weight-bold);line-height:var(--font-line-height);color:var(--color-text);}
+@define-mixin text-subhead {font-size:var(--font-size-large);font-weight:var(--font-weight-bold);color:var(--color-text);}
+@define-mixin text-body {font-size:.875rem;font-weight:var(--font-weight-normal);}
+@define-mixin text-body-large {font-size:var(--font-size-large);font-weight:var(--font-weight-normal);}
+@define-mixin text-label {font-size:var(--font-size-medium);font-weight:var(--font-weight-normal);color:var(--color-text-light);}
+@define-mixin text-caption {font-size:var(--font-size-small);font-weight:var(--font-weight-bold);}
+
+/* // utilities */
+@define-mixin truncate {white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+@define-mixin truncate-multi {
+  /* // height:3rem;
+  // white-space:normal;word-wrap:break-word; */
+  /* overflow:hidden;text-overflow:ellipsis;display: -webkit-box;-webkit-line-clamp:2;-webkit-box-orient: vertical; */
+}
+
+
+h1, .text-title, [data-text=title] {font-size:var(--font-size-huge);font-weight:var(--font-weight-bold);line-height:var(--font-line-height);color:var(--color-text);}
+h2, .text-subhead, [data-text=subhead] {
+  margin: 0 0 var(--space-after-subhead) 0;
+  font-size:var(--font-size-large);font-weight:var(--font-weight-bold);color:var(--color-text);}
+  .text-label {font-size:var(--font-size-medium);font-weight:var(--font-weight-normal);color:var(--color-text-light);}
+
+.util-truncate {@mixin truncate;}
+
+@define-mixin link-inner {
+  color:var(--color-primary);
+  text-decoration:underline;
+  &:hover {text-decoration:none;
+  }
+}
+@define-mixin link-outside {
+  color:var(--color-primary);
+  &:hover {text-decoration:underline;
+  }
+}
+
+.link-inner {@mixin link-inner;}
+.link-outside {@mixin link-outside;}
+
+@define-mixin image-centered {width:auto;height:auto;max-width:150%;max-height:150%;margin:auto;position:absolute;left:0;right:0;top:0;bottom:0;}
+@define-mixin bleeding {
+	margin: 0 -50vw;
+	position: absolute;
+	left: 50%;
+	right: 50%;
+	top: 0;
+	bottom: 0;
+	z-index: -1;
+}
+
+@define-mixin clearfix {
+  &:after {content:'';display:block;clear:both;}
+}
+
+/* // item in card component // active */
+@define-mixin hover-text {text-decoration:underline;}
+@define-mixin hover-item {
+  --hover-outline: calc(var(--space-3) / 2 * -1);
+  cursor: pointer;
+
+  &:before {
+    /* // z-idnex 이슈 */
+    content:'';
+    display:block;
+    background-color:var(--color-background-weak);
+    border-radius:var(--radius);
+    position:absolute;
+    left:var(--hover-outline);right:var(--hover-outline);top:var(--hover-outline);bottom:var(--hover-outline);
+    z-index: -1;
+  }
+  figure {box-shadow:var(--shadow) !important;}
+}
+
+/* // hover-item */
+.is-hoverable {
+  --hover-outline: calc(var(--space-3) / 2 * -1);
+  cursor: pointer;
+}
+.is-hoverable::before {
+  content:'';
+  display:block;
+  background-color:var(--color-background-weak);
+  border-radius:var(--radius);
+  position:absolute;
+  left:var(--hover-outline);right:var(--hover-outline);top:var(--hover-outline);bottom:var(--hover-outline);
+  z-index: -1;
+}
+
+/* @define-mixin position-left-top {position:absolute;left:var(--space-1);top:var(--space-1);}
+@define-mixin position-right-top {position:absolute;right:var(--space-2);top:var(--space-2);}
+@define-mixin position-bottom {position:fixed;left:0;right:0;bottom:0;z-index:var(--zindex-menu);}
+@define-mixin reset-position {
+  position: relative;
+  left: auto;
+  right: auto;
+  top: auto;
+  bottom: auto;
+  transform: none;
+} */
+
+/* 
+@define-mixin tag {
+  display: inline-flex;
+  align-items: center;
+  height: var(--size-small);
+  padding: 1px var(--space-2) 0;
+  border-radius: var(--radius);
+  border: var(--border);
+  box-sizing: border-box;
+  background: var(--color-background);
+  font-size: var(--font-size-small);
+  color: var(--color-text);
+}
+
+
+@define-mixin tag-primary {@mixin tag;border-color:var(--color-accent);background-color:var(--color-accent);color:var(--gray800);}
+
+@define-mixin hashtag {
+  color: var(--color-text-light);
+  &:before {content:'#';}
+} */
+
+/* // @media (prefers-color-scheme: dark) {
+//   :root {
+//     // --title-color: #EFEFEF;
+//     // --desc-color: peachpuff; 
+//   }
+//   // img {filter: brightness(.8) contrast(1.2);}
+// } */
+
+
+/* // todo 자식이 elevated일 때...
+@mixin stack {
+  display:flex;flex-wrap:wrap;align-items:center;margin:var(--space-1-minus);
+  > * {
+    margin:var(--space-1);
+  }
+}
+
+// todo flex일 대 min-width가 필수가 된다.. margin/padding은 container에 의존
+@mixin stack-vertical-scroll {
+  display:flex; // 중복
+  flex-wrap: nowrap;
+  white-space:nowrap;
+  overflow:auto;
+
+  scroll-behavior: smooth;
+  > * {min-width:auto;}
+  &::-webkit-scrollbar {display:none;}
+} */
+
+
+/* // stack과 grid */
+.stack {display:flex;flex-wrap:wrap;align-items:center;margin:var(--space-1-minus)}
+.stack > * {margin:var(--space-1);}
+/* .stack[data-scroll=vertical] {@include stack-vertical-scroll;} */
+.stack[data-align=left] {}
+.stack[data-align=right] {}
+/* // space-between + column width */

@@ -1,0 +1,46 @@
+.component {}
+.component-example {margin:3rem -5vw;padding:2rem var(--grid-margin);background-color:var(--color-primary);border-top-left-radius:var(--radius);border-bottom-left-radius:var(--radius);position:sticky;top:0;
+  /* // background: #159957;
+  // fallback for old browsers
+  // background: -webkit-linear-gradient(to bottom, #155799, #159957);
+  Chrome 10-25, Safari 5.1-6
+  // background: linear-gradient(to bottom, #155799, #159957);
+  W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: var(--color-background-weak);
+}
+
+.component-example > * {max-width:800px;border:none;}
+.component-props {
+  /* @mixin tile-flat; */
+  border:none;margin:var(--space-3) 0 0 0;position:relative;}
+.component-props .article-subhead {display:none;}
+
+.component-references {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1rem 0 0;
+  padding: 1rem;
+  background: var(--color-background-weak);
+  border-radius: var(--radius);
+}
+.component-references .article-subhead {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: var(--space-4);
+}
+.component-references a {
+  font-size: var(--font-size-large);
+  font-weight: var(--font-weight-bold);
+}
+
+
+@media (--small) {
+  .component-example {margin-top:2rem;margin-bottom:2rem;padding-top:1rem;padding-bottom:1rem;border-radius:0;
+  }
+  /* // .component-example > *,
+  // .article .tile-elevated,
+  // .article .tile-flat {
+  // margin-left:-5vw;margin-right:-5vw;padding-left:5vw;padding-right:5vw;border-radius:0;
+  // }
+  // .component-example > *:first-child {margin-top:-1.75rem;} */
+}

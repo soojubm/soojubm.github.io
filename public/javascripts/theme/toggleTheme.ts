@@ -1,8 +1,7 @@
 import { DARKTHEME_SELECTOR, DARK_THEME_CLASS, LIGHT_THEME_CLASS, isDarkTheme } from './const'
-import detectTheme from './dectectTheme'
 
 // todo removeLocalStorage
-export function toggleDarkTheme(event) {
+function toggleDarkTheme(event) {
   if (!event.target.closest(DARKTHEME_SELECTOR)) return
 
   document.body.classList.toggle(DARK_THEME_CLASS)

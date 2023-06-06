@@ -6,7 +6,7 @@ module.exports = {
     'at-rule-name-case': 'lower',
     // "at-rule-name-newline-after": "always-multi-line",
     'at-rule-name-space-after': 'always-single-line',
-    // "at-rule-no-unknown": true, // @mixin
+    // "at-rule-no-unknown": true, // @define-mixin
     'at-rule-no-vendor-prefix': true,
     'at-rule-property-requirelist': {},
     // "at-rule-semicolon-newline-after": "always",

@@ -1,0 +1,30 @@
+.cake {@mixin layout-large;max-width:1000px;}
+
+.cake-head {position:relative;}
+.cake-background {@mixin bleeding;height:380px;background:url('/public/images/newman.jpg') no-repeat 0 -200px fixed;}
+.cake-head-title {@mixin text-title;}
+.cake-head-engtitle {margin:0 0 1.5rem 0;@mixin text-subhead;}
+.cake-head-description {margin:1rem 0 0 0;}
+
+.cake-poster {width:50%;max-width:272px;border:var(--border);border-radius:var(--radius);overflow:hidden;position:absolute;right:0;z-index:var(--zindex-default);}
+.cake-poster img {display:block;}
+
+.cake-meta {}
+.cake-meta dl {}
+.cake-meta-summary {max-width:640px;}
+
+.cake-info {padding:2rem 0 2.25rem;position:relative;}
+.cake-info h2 {margin:0 0 var(--space-after-subhead);@mixin text-subhead;}
+.cake-info p {}
+.cake-info footer {margin-top:var(--space-4);}
+.cake-info footer a {@mixin link-outside;}
+
+.cake .tablist {margin-top:6rem;}
+
+
+@media (--small) {
+  .cake-poster {height:auto;margin:0 0 2rem 0;@mixin reset-position;}
+  .cake-meta {padding-left:0;padding-right:0;}
+  .cake-meta ul {margin-left:0;margin-right:0;padding-left:0;padding-right:0;}
+  .cake-meta-summary {padding-right:0;}
+}

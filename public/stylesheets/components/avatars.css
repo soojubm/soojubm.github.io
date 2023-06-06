@@ -1,0 +1,80 @@
+/* // ! avatar-medium의 display:flex가 hidden 속성과 충돌 */
+/* @define-mixin avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--size-medium);
+  height: var(--size-medium);
+  background: url('/public/images/soojubm.png') no-repeat 64% 55%;
+  background-size: 80%;
+  background-color: var(--color-background-weak);
+  border-radius: var(--radius);
+  box-sizing: border-box;
+  position: relative;
+  img {
+    height: inherit;
+    border-radius: var(--radius);
+    object-fit: cover;
+  }
+}
+
+@define-mixin avatar-huge {@mixin avatar;}
+@define-mixin avatar-large {@mixin avatar;}
+@define-mixin avatar-medium {@mixin avatar;}
+@define-mixin avatar-small {@mixin avatar;}
+@define-mixin avatar-tiny {@mixin avatar;}
+
+@define-mixin avatar-container-large {@mixin avatar-large;background-image:none;}
+@define-mixin avatar-container {@mixin avatar;background-image:none;}
+@define-mixin avatar-container-small {@mixin avatar-small;background-image:none;}
+@define-mixin avatar-container-tiny {@mixin avatar-tiny;background-image:none;} */
+
+/* .avatar-fallback {
+  background:url('/public/images/springsteen.jpg') no-repeat center;
+  background-size: cover;
+} */
+
+/* //todo reset */
+/* figure {margin:0;} */
+
+.avatar {
+  margin: 0 !important;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--size-medium);
+  height: var(--size-medium);
+
+  /* // border: var(--border); */
+  /* // border-color: transparent; */
+
+  background:url('/public/images/soojubm.png') no-repeat 64% 55%;
+  background-size: 80%;
+  background-color: var(--color-background-weak);
+  border-radius: var(--radius);
+  box-sizing: border-box;
+  position: relative;
+}
+.avatar img {
+    height: inherit;
+    border-radius: var(--radius);
+    object-fit: cover;
+}
+
+.avatar[data-size=huge] {width:var(--size-huge);height:var(--size-huge);}
+.avatar[data-size=large] {width:var(--size-large);height:var(--size-large);}
+.avatar[data-size=medium] {width:var(--size-medium);height:var(--size-medium);}
+.avatar[data-size=small] {width:var(--size-small);height:var(--size-small);}
+
+.avatar-badge {
+  width: var(--size-tiny);
+  height: var(--size-tiny);
+  border: 2px solid var(--color-background);
+  border-radius: var(--radius);
+  background: var(--color-accent);
+  position: absolute;
+  left: -.25rem;
+  top: -.25rem;
+  z-index: 1;
+}

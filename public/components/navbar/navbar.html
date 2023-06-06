@@ -1,0 +1,94 @@
+<!-- // menu 태그 안에 heading을 포함하는 경우, 반응형을 위한 메뉴 구조는 안 된다. -->
+<nav class="navbar js-navbar" role="navigation">
+  <button
+    class="navbar-burger avatar js-navbar-toggle"
+    style="background-image: none"
+    aria-label="전체메뉴"
+    aria-haspopup="true"
+    aria-expanded="false"
+  >
+    <span class="material-symbols-outlined">lunch_dining</span>
+  </button>
+  <div class="navbar-menu">
+    <div class="navbar-menu-item has-submenu">
+      <menu>
+        <a href="#"><span class="material-symbols-outlined" style="margin-right: 0.25rem" aria-label="홈"> cottage </span></a>
+        <a href="tokens.html">Tokens</a>
+        <a href="components.html"> Components</a>
+        <a href="#signifier_why">
+          <!-- <span class="material-symbols-outlined"> category </span> -->
+          Signifier</a
+        >
+        <hr />
+        <a href="#dummies"> Dummies</a>
+        <hr />
+        <a href="#utilities"> Utilities</a>
+        <a href="#foundations"> Foundations</a>
+        <!-- <a href="#dictionary">Memo 🚧</a> -->
+        <!-- <a href="#hierarchy">Hierarchy <sup>foundation</sup></a> -->
+      </menu>
+    </div>
+    <div class="navbar-menu-item has-submenu" style="margin: var(--space-2) 0 0 0">
+      <menu>
+        <!-- // role="heading" -->
+        <span class="text-label">Patterns</span>
+        <a href="#presentations_why">Presentations</a>
+        <a href="#search">Searching</a>
+        <a href="#filter">Filtering</a>
+        <a href="#actions">Actions</a>
+        <a href="#texts">Texts</a>
+        <!-- <a href="#entity">Entity 🚧</a> -->
+        <!-- <a href="#menus">Menus </a> -->
+        <!-- <a href="#scrolling">Vertical Scrolling</a> -->
+        <!-- <a href="#indicators">Indicators</a> -->
+        <!-- <a href="#messaging">Messaging</a> -->
+        <!-- <a href="#terms">Terms & Privacy</a> -->
+      </menu>
+    </div>
+    <div class="navbar-menu-item has-submenu" style="margin: var(--space-2) 0 0 0">
+      <!-- <span class="menu-label" role="menuitem">Interfaces</span> -->
+      <menu>
+        <span class="text-label">Interfaces</span>
+        <a href="#profile">User Profile 🔥</a>
+        <a href="#kakaopay">Kakaopay (outdated)</a>
+        <a href="#_login">Sign In</a>
+        <a href="#_signup">Sign Up</a>
+        <a href="#_forgot">Forgot Password</a>
+        <a href="#settings">Settings</a>
+        <a href="#post">Post</a>
+        <a href="#product">Product</a>
+        <a href="#cart">Cart</a>
+        <a href="#checkout">Checkout</a>
+        <!-- <a href="#orders">Orders</a> -->
+        <a href="#cake">Product 2</a>
+        <a href="#notifications">Notifications</a>
+        <a href="#feed">Feed</a>
+        <a href="#chat">Chat</a>
+        <!-- <a href="#contact">Contact</a>
+              <a href="#help">Help</a> -->
+        <a href="#class">Product 3 - class</a>
+        <!-- <a href="#event">Event</a> -->
+        <!-- <a href="#terms">Terms..</a> -->
+      </menu>
+    </div>
+  </div>
+
+  <a class="navbar-logo" href="/"></a>
+
+  <div class="navbar-user">
+    <!-- <a class="navbar-search-trigger js-navbar-toggle" href="#"></a>
+          <button class="navbar-user-trigger" aria-haspopup="menu" aria-expanded="false"></button>
+          <a class="chip" href="#" style="margin-right: 0.5rem"><span class="chip-label">시작하기</span></a> -->
+    <button class="switch-wrap js-darkmode" title="change theme">
+      <figure class="chip">
+        <span class="day material-symbols-outlined" style="display: flex">light_mode</span>
+        <span class="night material-symbols-outlined" style="display: flex">nights_stay</span>
+      </figure>
+      <span class="switch" style="margin-left: auto">
+        <label for="temp51" aria-label="스위치"></label>
+        <input type="checkbox" role="switch" id="temp51" name="" />
+      </span>
+    </button>
+  </div>
+</nav>
+<!-- <div class="navbar-backdrop"></div> -->

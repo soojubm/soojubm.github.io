@@ -1,0 +1,88 @@
+@define-mixin chip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--size-medium);
+  height: var(--size-medium);
+  border-radius: var(--radius);
+  box-sizing: border-box;
+  background: var(--color-background-weak);
+  color: var(--color-text);
+  position: relative;
+
+  @media (hover) and (pointer: fine) {
+    &:hover {box-shadow:var(--state-hover);}
+  }
+  &:disabled {border-color:transparent;}
+  &.is-active {
+    border-color: var(--color-background-strong);
+    background: var(--color-background-strong);
+    color: var(--color-text-weak);
+  }
+}
+
+
+button {
+  padding: 0;
+  border: 0;
+}
+
+.chip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--size-medium);
+  height: var(--size-medium);
+  border-radius: var(--radius);
+  background: var(--color-background-weak);
+  color: var(--color-text);
+  position: relative;}
+
+.chip-remove:hover {box-shadow:var(--state-hover);}
+
+.chip-label {padding:1px var(--space-3) var(--adjust-label-line);font-size:var(--font-size-tiny);font-weight:var(--font-weight-bold);color:inherit;}
+
+
+/* .chip {@mixin chip}
+.chip-icon {@mixin avatar-container;}
+.chip-label {@mixin chip-label;}
+.chip-remove {@mixin avatar-container;cursor:pointer;} */
+.chip-remove:hover {box-shadow:var(--state-hover);}
+.is-active .chip-icon {background:inherit;color:inherit;}
+
+.chip[aria-expanded] {}
+.chip[aria-selected] {
+  background: var(--color-background-strong);
+  color: var(--color-text-strong);
+}
+.chip[aria-checked=true] {
+  background: var(--color-background-strong);
+}
+.chip[aria-pressed] {}
+.chip[aria-haspopup] {}
+
+// .chip[aria-expanded=true] {
+//   background-image: url(
+//     'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48"><path d="M480 696 280 497h400L480 696Z"/></svg>');
+//   background-repeat: no-repeat;
+//   background-size: 14px;
+//   background-position: 90% 50%;
+// }
+
+
+/* @define-mixin chip {
+
+  @media (hover) and (pointer: fine) {
+    &:hover {box-shadow:var(--state-hover);}
+  }
+  &:disabled {border-color:transparent;}
+  
+  &.is-active {
+    border-color: var(--color-background-strong);
+    background: var(--color-background-strong);
+    color: var(--color-text-weak);
+  }
+
+} */
+
+/* @define-mixin chip-icon {@mixin avatar-medium;pointer-events:none;} */

@@ -1,5 +1,4 @@
 //var abc = window.innerWidth - document.body.clientWidth;
-// require('./modal.scss');
 
 import { pushBrowserHistory, backHistory } from '../utils/browserUtils'
 
@@ -53,6 +52,7 @@ function modal({ selector: trigger }: Parameter) {
     try {
       const endpoint = `/views/${modalId}.html`
       const response = await fetch(endpoint)
+
       if (!response.ok) throw 'Something went wrong.'
 
       const html = await response.text()

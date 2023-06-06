@@ -1,0 +1,167 @@
+body,dl,dd,figure,blockquote,h1,h2,h3,h4,h5,h6,p,input[type=radio] {margin:0;}
+ul,ol,menu,fieldset,legend {margin:0;padding:0;}
+fieldset,iframe,img,hr {border:none}
+main, picture {display:block;}
+iframe,img,video {width:100%;display:block;} /*img {vertical-align:middle;}*/
+strong,b,th,legend {font-weight:var(--font-weight-bold);}
+cite,i,address,em,dfn {font-style:normal;} em {color:var(--color-primary);}
+small {font-size:var(--font-size-small);} abbr,ins {text-decoration:none;} del {color:var(--color-text-light);}
+a {text-decoration:none;text-decoration-skip-ink:auto;color:var(--color-primary);}
+a:link,a:visited {} a:hover,a:focus {} a:active {}
+mark {color:inherit;} mark::before {content: " [강조 시작] ";opacity:0;position:absolute;} mark::after {content: " [강조 끝] ";opacity:0;position:absolute;}
+hr {margin:var(--space-4) 0;border-top:var(--border);position:relative;}
+code {display:block;background:var(--color-background-weak);border-radius:var(--radius);font-family:var(--font-family-code);font-size:var(--font-size-small);letter-spacing:.0125rem;}
+svg {color:var(--gray800);}
+/* // duplicated
+// thin solid
+// ol,ul,menu {list-style:none}
+// h1,h2,h3,h4,h5,h6 {font-weight:var(--font-weight-bold);color:var(--color-text);word-break:keep-all;} */
+u {text-decoration:none;position:relative;}
+u:after {content:'';height:.4em;border-radius:2px;background:var(--green100);position:absolute;left:-.125rem;right:-.125rem;bottom:0;z-index:-1;}
+
+p, li, dt, dd {line-height:var(--font-line-height-large);}
+
+
+/* // for appearance on safari */
+select {-webkit-appearance:none;background:none;border:none;font:inherit;color:var(--color-text);}
+select:focus-visible {outline:none;}
+select::-ms-expand {display:none;}
+
+/* // 버튼이 많아졌기 때문에 text-aligncenter를 기본값으로 사용하지 않는 것이 좋겠다. */
+button {
+  padding:0;border:none;background:none;text-align:left;font:inherit;color:inherit;cursor:pointer;
+  /* > * {pointer-events:none;} // for 이벤트 캡쳐} */
+}
+
+q {position:relative;}
+q:before {
+  content: "“";
+  display: block;
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 48px;
+}
+
+html {min-width:320px;height:100%;overflow-x:hidden;font-size:16px;line-height:var(--font-line-height);font-family: var(--font-family);-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overscroll-behavior:contain;}
+body {background:var(--color-background);color:var(--color-text);font-size:.875rem;}
+
+/* // fixed blink 테마변경  */
+p, li {color:var(--color-text);}
+
+blockquote {
+  margin:2rem 0;padding:var(--space-4);background:var(--color-background-weak);border-left:4px solid var(--gray200);border-radius:var(--radius) 0 0 0;
+}
+table {
+  width:100%;border-collapse:collapse;border-spacing:0;border-left-style:hidden;border-right-style:hidden;
+  --table-lineheight: 1.6;
+}
+table caption {padding:.5rem 0;font-size:var(--font-size-small);text-align:left;}
+table thead {}
+table thead tr {}
+table thead tr th {padding:var(--space-3) 0;line-height:var(--table-lineheight);color:var(--color-text-light);text-align:left;}
+table tbody {}
+table tbody tr {border:var(--border);line-height:var(--table-lineheight);position:relative;}
+table tbody tr th {width:6rem;padding:var(--space-3) 0;text-align:left;color:var(--color-text-light);vertical-align:baseline;}
+table tbody tr td {padding:var(--space-3) 0;}
+table tbody tr:hover {}
+table .right {text-align:right;}
+table tbody[role=rowgroup] tr th {width:25%;}
+table tbody[role=rowgroup] tr th + th {width:auto;}
+
+
+/* // table {
+//   border-collapse: collapse;
+// }
+// th,
+// td {
+//   padding: 10px;
+// }
+
+// th[scope='col'] {
+//   background: #ccc;
+// }
+
+// tr:nth-child(even) {
+//   background: #eee;
+// }
+
+// tr:nth-child(odd) {
+//   background: #ddd;
+// } */
+
+/* // table.is-borderless tbody tr {border:0;} */
+ul {padding-left:var(--space-4);}
+/* // ul li {margin:var(--space-1) 0;} // for font-size. */
+ul li + li {margin:var(--space-1) 0 0 0;}
+[data-align=horizontal] {display:flex;flex-wrap:wrap;}
+[data-align=horizontal] li {margin:0 2rem 0 0;}
+
+li::marker {
+  color: var(--color-text-light);
+}
+
+ol {padding-left:var(--space-4)}
+/* ol li {margin:var(--space-1) 0;}
+// ol li {margin:var(--space-1) 0;padding:0 0 0 1rem;position:relative;counter-increment:listitem;}
+// ol li:before {content: counter(listitem) '.';position:absolute;left:0;}
+// ol li ol {margin:0 0 .5rem 0;}
+// ol li ol li {counter-increment:sub-list-item;}
+// ol li ol li:before {content: counter(sub-list-item,lower-alpha) '.';} */
+
+dl {display:flex;flex-wrap:wrap;}
+dl dt {margin:0 var(--space-2) 0 0;
+  /* @mixin text-label; */
+}
+dl dt attr {}
+dl dd {margin:0 var(--space-4) 0 0;}
+dl dd + dd,
+.dd-small {width:100%;margin:.125rem 0 var(--space-2) 0;font-size:var(--font-size-small);line-height:var(--font-line-height);}
+
+/* // dl dt:after {content:':';}
+// dl dd:after {content:';';} */
+
+::selection {background:var(--gray800);color:var(--gray0);}
+::placeholder {color:var(--color-text-light);}
+
+/* // backface-visibility:hidden
+// writing-mode: horizontal-tb / vertical-rl / vertical-lr;
+
+// ::-webkit-scrollbar {width:auto;height:auto;}
+// ::-webkit-scrollbar-track {background:inherit;}
+// ::-webkit-scrollbar-thumb {background:inherit;}
+// ::-webkit-scrollbar-button {display:none;background-color:inherit;}
+// ::-webkit-scrollbar-corner {background-color:inherit;}
+
+
+// [aria-live="polite | assertive | off"] {}  */
+/* [aria-haspopup=true] {} // dialog . menu, grid, listbox, tree
+[aria-pressed=true] {} // 음소거 등
+[aria-modal=true] {}
+[aria-label=close] {} */
+
+
+@media print {
+  /* For links in content, visually display the link */ 
+  a::after { 
+    content: "(" attr(href) ")";
+  }
+}
+
+/* // ! utilities
+// all: unset
+// [hidden] {display:none !important;}
+// .visually-hidden {width:1px;height:1px;clip:rect(1px 1px 1px 1px);overflow:hidden;position:absolute;user-select:none;} // if(true) 리더기가 무시. // speak: never;
+// .resize-animation-stopper * {animation: none !important;transition: none !important;}
+// accessibility-text(visually-hidden)
+// @media (--small) {
+//   html {font-size:12px;}
+// } */
+
+/* @custom-selector :--heading h1, h2, h3, h4, h5, h6; */
+/* float-clear-logical-values */
+/* span:first-child {
+  float: inline-start;
+} */
+/* a:has(> img) {
+  display: block;
+} */

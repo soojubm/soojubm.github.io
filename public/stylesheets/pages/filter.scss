@@ -1,8 +1,0 @@
-.filter {}
-.filter-title {margin:0 0 var(--space-after-title) 0;@include text-title;}
-.filter-fieldset {margin:1rem 0;padding:2.25rem 0 0;position:relative;}
-.filter-fieldset-legend {@include text-subhead;position:absolute;top:0;}
-.filter-fieldset-description {margin:-.125rem 0 var(--space-3) 0;color:var(--color-text-light);}
-.filter-foot {display:flex;margin:2rem 0 0 0;}
-.filter-foot-confirm {@include button-secondary;margin:0 var(--space-after-button) 0 0;}
-.filter-foot-reset {@include button-text;}

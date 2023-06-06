@@ -24,6 +24,17 @@ const scrollspy = ({ menusSelector: menusClass, sectionsSelector: sectionsClass 
 
   window.addEventListener('scroll', throttle(detectSection), false)
 
+  // <test-chip><chip></chip></test-chip>
+  function activeItem(item) {
+    item.classList.add('is-active')
+    item.setAttribute('aria-selected', 'true')
+  }
+
+  function deactiveItem(item) {
+    item.classList.remove('is-active')
+    item.setAttribute('aria-selected', 'false')
+  }
+
   function detectSection() {
     let activeOffsetLeft
 
@@ -35,8 +46,8 @@ const scrollspy = ({ menusSelector: menusClass, sectionsSelector: sectionsClass 
       const targetItem = menus[index] as any
       if (!targetItem) return
 
-      menus.forEach(menu => menu.classList.remove('is-active'))
-      targetItem.classList.add('is-active')
+      menus.forEach(item => deactiveItem(item))
+      activeItem(targetItem)
 
       activeOffsetLeft = targetItem.offsetLeft + targetItem.clientWidth / 2
     })

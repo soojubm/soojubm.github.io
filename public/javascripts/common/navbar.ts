@@ -1,3 +1,6 @@
+import detectTheme from '../theme/dectectTheme'
+import toggleDarkTheme from '../theme/toggleTheme'
+
 const OPENED_MENU_CLASSNAME = 'is-opened-menu'
 const isOpendNavbarMenu = () => document.body.classList.contains(OPENED_MENU_CLASSNAME)
 
@@ -5,7 +8,7 @@ export function initializeNavbar() {
   const navigationTrigger = document.querySelector<HTMLElement>('.js-navbar-toggle')
   if (!document.body.classList.contains(OPENED_MENU_CLASSNAME)) return
 
-  // toso aria
+  // todo aria
   navigationTrigger?.classList.remove('is-active')
   document.body.classList.remove(OPENED_MENU_CLASSNAME)
 }
@@ -35,3 +38,22 @@ export function toggleNavbarMenu(event) {
   // })
   // navbarMenu?.addEventListener('click', event => event.stopPropagation())
 }
+console.log(toggleDarkTheme)
+
+// todo refactoring
+document.addEventListener('click', event => {
+  toggleDarkTheme(event)
+})
+
+document.addEventListener('click', toggleNavbarMenu)
+
+document.addEventListener('DOMContentLoaded', () => {
+  detectTheme()
+
+  const pathname = window.location.pathname
+
+  document.querySelectorAll('.navbar-menu a').forEach(item => {
+    console.log(item.getAttribute('href'), pathname)
+    if (pathname.includes(item.getAttribute('href') || '')) item.setAttribute('aria-current', 'page')
+  })
+})

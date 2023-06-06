@@ -1,0 +1,59 @@
+
+.chat-date {margin:1rem var(--grid-margin);text-align:center;}
+
+.chat {margin:1.5rem auto;padding:0 0 0 calc(var(--size-medium) + var(--space-after-avatar-medium));box-sizing:border-box;position:relative;}
+.chat-avatar {
+  // @mixin avatar-container;
+  /* @mixin avatar-medium; */
+  border-radius: 50%;
+  border-top-left-radius: var(--radius);
+  overflow:hidden;position:absolute;left:0;top:0;}
+.chat-avatar img {height:100%;}
+.chat-username {display:block;margin:0 0 var(--space-1) 0;font-size:var(--font-size-small);}
+.chat-time {margin:0 0 0 var(--space-1);color:var(--color-text-light);font-size:var(--font-size-small);color:var(--color-text-light);position:absolute;bottom:-1.5rem;}
+.chat-bubble {
+  width:fit-content;
+  max-width:calc(90% - var(--size-medium));
+  max-width:560px;
+  padding:var(--space-3) var(--space-4);
+  border:var(--border);
+  border-radius:1.5rem;border-top-left-radius:var(--radius);
+}
+.chat-bubble.has-image {width:85%;padding:0;background:none;overflow:hidden;}
+.chat-bubble figure {}
+
+.chat-bubble p, .chat-bubble li {
+  // line-height: var(--font-line-height);
+  line-height: 1.6; // 예외 케이스
+}
+.chat-bubble + .chat-bubble {margin-top:var(--space-3);}
+
+.chat.is-mine {text-align:right;}
+.is-mine .chat-avatar {display:none;}
+.is-mine .chat-time {right:0;}
+.is-mine .chat-bubble {margin-left:auto;border-radius:1.5rem;border-top-right-radius:var(--radius);text-align:left;}
+
+
+.chat-bubble.is-primary,
+.is-mine .chat-bubble {border:none;;background:var(--color-primary);}
+
+
+.chat-bubble.is-primary p,
+.chat-bubble.is-primary b,
+.is-mine .chat-bubble p {color:var(--gray0);}
+
+
+
+
+@media (--small) {
+  .article .chat {
+    padding-left: 0;
+  }
+  .pattern .chat-avatar,
+  .tokens .chat-avatar,
+  .component .chat-avatar {
+    /* @mixin reset-position; */
+    margin: 0 0 var(--space-2) 0;
+  }
+
+}

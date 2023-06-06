@@ -49,9 +49,9 @@
     <link rel="canonical" href="https://soojubm.github.io/" />
 
     <!-- icon in the highest resolution we need it for 48px -->
-    <link rel="icon" sizes="192x192" href="icon.png" />
+    <!-- <link rel="icon" sizes="192x192" href="icon.png" /> -->
     <!-- reuse same icon for Safari -->
-    <link rel="apple-touch-icon" href="ios-icon.png" />
+    <!-- <link rel="apple-touch-icon" href="ios-icon.png" /> -->
 
     <!-- home icon for safari 180px | 192px -->
     <!-- <link rel="apple-touch-icon" href="/images/touchicon-180.png" />
@@ -63,9 +63,9 @@
     <meta name="msapplication-square310x310logo" content="icon_largetile.png" />
 
     <!-- windows phone | internet explorer-->
-    <meta name="msapplication-square70x70logo" content="icon_smalltile.png" />
+    <!-- <meta name="msapplication-square70x70logo" content="icon_smalltile.png" />
     <meta name="msapplication-square150x150logo" content="icon_mediumtile.png" />
-    <meta name="msapplication-wide310x150logo" content="icon_widetile.png" />
+    <meta name="msapplication-wide310x150logo" content="icon_widetile.png" /> -->
 
     <!-- <meta name="msapplication-TileColor" content="#FF0000" />
     <meta name="msapplication-TileImage" content="/path/to/favicon-144.png" />
@@ -73,33 +73,34 @@
     <meta name="msapplication-config" content="/path/to/ieconfig.xml" /> -->
 
     <!-- 기본적으로 Safari는 로딩시간에 빈 화면을 보여주고 여러 페이지 로딩 후에는 앱의 이전 상태 스크린샷을 보여줍니다. rel=apple-touch-startup-image를 가진 link 태그를 추가하여 명시적인 시작 이미지를 보여주도록 Safari에게 전해 이를 막을 수 있습니다. 예: -->
-    <link rel="apple-touch-startup-image" href="icon.png" />
+    <!-- <link rel="apple-touch-startup-image" href="icon.png" /> -->
     <!-- <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"> -->
 
-    <link rel="icon" sizes="32x32" href="/favicon/favicon-32.png" />
+    <!-- <link rel="icon" sizes="32x32" href="/favicon/favicon-32.png" />
     <link rel="apple-touch-icon-precomposed" href="/favicon/favicon-180.png" />
-    <link rel="shortcut icon" sizes="196x196" href="/favicon/favicon-196.png" />
+    <link rel="shortcut icon" sizes="196x196" href="/favicon/favicon-196.png" /> -->
 
     <meta name="application-name" content="몰바요" />
 
-    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <!-- <meta name="msapplication-TileColor" content="#FFFFFF" />
     <meta name="msapplication-TileImage" content="/path/to/favicon-144.png" />
-    <meta name="msapplication-tooltip" content="몰바" />
+    <meta name="msapplication-tooltip" content="몰바" /> -->
     <!-- 
     <meta name="msapplication-config" content="/path/to/ieconfig.xml" /> -->
 
-    <link rel="stylesheet" href="./build/style.css" />
+    <!-- // type error -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,300,0,0" />
+    <link rel="stylesheet" type="text/html" href="./build/style.css" />
 
     <!-- <link href="default.css" rel="stylesheet" title="Default Style" />
     <link href="fancy.css" rel="alternate stylesheet" title="Fancy" /> -->
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lucaburgio/iconoir@master/css/iconoir.css" /> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lucaburgio/iconoir@master/css/iconoir.css" />
 
-    <script src="./public/javascripts/polyfill.js" defer></script>
+    <!-- // babe이 해주는 듯? -->
+    <!-- <script src="./public/javascripts/polyfill.js" defer></script> -->
 
     <!-- 웹팩 번들링 후 라우팅 오류. 그냥 넣어서 배포..  -->
-    <script src="./build/bundle.js" defer></script>
-
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,300,0,0" />
+    <!-- <script src="./build/index.bundle.js" defer></script> -->
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4K1SS8B5C"></script>
@@ -138,7 +139,7 @@
         <div class="double-bounce1"></div>
         <div class="double-bounce2"></div>
       </div>
-      <!-- <div class="loader-spinner"></div> -->
+      <div class="loader-spinner" hidden></div>
     </aside>
 
     <nav class="skip" role="navigation">
@@ -147,166 +148,8 @@
       <a class="skip-link" href="#footer">하단정보 바로가기</a>
     </nav>
 
-    <!-- // menu 태그 안에 heading을 포함하는 경우, 반응형을 위한 메뉴 구조는 안 된다. -->
-    <nav class="navbar js-navbar" role="navigation">
-      <button class="navbar-burger js-navbar-toggle" aria-label="전체메뉴" aria-haspopup="true" aria-expanded="false">
-        <span class="material-symbols-outlined">lunch_dining</span>
-      </button>
-      <div class="navbar-menu">
-        <div class="navbar-menu-item has-submenu">
-          <menu>
-            <a href="#"><span class="material-symbols-outlined" style="margin-right: 0.25rem" aria-label="홈"> cottage </span></a>
-            <a href="#tokens">Tokens</a>
-
-            <a href="#signifier_why">
-              <!-- <span class="material-symbols-outlined"> category </span> -->
-              Signifier</a
-            >
-            <hr />
-            <a href="#components"> Components</a>
-            <a href="#dummies"> Dummies</a>
-            <hr />
-            <a href="#utilities"> Utilities</a>
-            <a href="#foundations"> Foundations</a>
-            <!-- <a href="#dictionary">Memo 🚧</a> -->
-            <!-- <a href="#hierarchy">Hierarchy <sup>foundation</sup></a> -->
-          </menu>
-        </div>
-        <div class="navbar-menu-item has-submenu" style="margin: var(--space-2) 0 0 0">
-          <menu>
-            <!-- // role="heading" -->
-            <span class="menu-heading">Patterns</span>
-            <a href="#presentations_why">Presentations</a>
-            <a href="#search">Searching</a>
-            <a href="#filter">Filtering</a>
-            <a href="#actions">Actions</a>
-            <a href="#texts">Texts</a>
-            <!-- <a href="#entity">Entity 🚧</a> -->
-            <!-- <a href="#menus">Menus </a> -->
-            <!-- <a href="#scrolling">Vertical Scrolling</a> -->
-            <!-- <a href="#indicators">Indicators</a> -->
-            <!-- <a href="#messaging">Messaging</a> -->
-            <!-- <a href="#terms">Terms & Privacy</a> -->
-          </menu>
-        </div>
-        <div class="navbar-menu-item has-submenu" style="margin: var(--space-2) 0 0 0">
-          <!-- <span class="menu-label" role="menuitem">Interfaces</span> -->
-          <menu>
-            <span class="menu-heading">Interfaces</span>
-            <a href="#profile">User Profile 🔥</a>
-            <a href="#kakaopay">Kakaopay (outdated)</a>
-            <a href="#_login">Sign In</a>
-            <a href="#_signup">Sign Up</a>
-            <a href="#_forgot">Forgot Password</a>
-            <a href="#settings">Settings</a>
-            <a href="#post">Post</a>
-            <a href="#product">Product</a>
-            <a href="#cart">Cart</a>
-            <a href="#checkout">Checkout</a>
-            <!-- <a href="#orders">Orders</a> -->
-            <a href="#cake">Product 2</a>
-            <a href="#notifications">Notifications</a>
-            <a href="#feed">Feed</a>
-            <a href="#chat">Chat</a>
-            <!-- <a href="#contact">Contact</a>
-            <a href="#help">Help</a> -->
-            <a href="#class">Product 3 - class</a>
-            <!-- <a href="#event">Event</a> -->
-            <!-- <a href="#terms">Terms..</a> -->
-          </menu>
-        </div>
-      </div>
-
-      <a class="navbar-logo" href="/"></a>
-
-      <div class="navbar-user">
-        <!-- <a class="navbar-search-trigger js-navbar-toggle" href="#"></a>
-        <button class="navbar-user-trigger" aria-haspopup="menu" aria-expanded="false"></button>
-        <a class="chip" href="#" style="margin-right: 0.5rem"><span class="chip-label">시작하기</span></a> -->
-        <button class="switch-wrap js-darkmode" title="change theme">
-          <figure class="chip">
-            <span class="day material-symbols-outlined" style="display: flex">light_mode</span>
-            <span class="night material-symbols-outlined" style="display: flex">nights_stay</span>
-          </figure>
-          <span class="switch" style="margin-left: auto">
-            <label for="temp51" aria-label="스위치"></label>
-            <input type="checkbox" role="switch" id="temp51" name="" />
-          </span>
-        </button>
-      </div>
-    </nav>
-    <div class="navbar-backdrop"></div>
-
-    <section style="padding: 2rem var(--grid-margin)">
-      <test-button variation="primary" label="primary"></test-button>
-      <test-button variation="secondary" label="secondary"></test-button>
-      <test-button variation="tertiary" label="tertiary"></test-button>
-
-      <test-chip label="chip"></test-chip>
-      <test-chip label="custom"></test-chip>
-
-      <article class="test-data" data-test="data content"></article>
-
-      <style>
-        .test-data::before {
-          content: attr(data-test);
-        }
-      </style>
-    </section>
-
-    <div id="view"></div>
-
-    <footer class="footer" role="contentinfo">
-      <div class="footer-background"></div>
-      <!-- <figure class="footer-logo"></figure> -->
-      <article class="user" style="margin-top: -4rem; z-index: 5">
-        <figure class="user-avatar" style="outline: 6px solid var(--color-background)"></figure>
-        <h2 class="user-name">수줍이</h2>
-        <span class="user-id">soojubm@gmail.com</span>
-        <div class="user-id">82 10 3121 7045</div>
-        <span class="user-job">UI Designer</span>
-      </article>
-
-      <nav class="footer-temp">
-        <a href="https://soojubm.notion.site/UI-Designer-9c18f4dd39eb4181b9f9c2ee76896618" target="_blank">
-          About
-          <figure class="icon-indicator" role="img"><span class="material-symbols-outlined">call_made</span></figure>
-        </a>
-        <a href="https://github.com/soojubm" target="_blank">
-          Github
-          <figure class="icon-indicator" role="img"><span class="material-symbols-outlined">call_made</span></figure>
-        </a>
-      </nav>
-
-      <!-- <dl class="footer-address-info">
-        <dt>사업자등록번호</dt>
-        <dd>888-88-88888</dd>
-        <dt>대표자</dt>
-        <dd>수줍이</dd>
-        <dt>주소</dt>
-        <dd>서울시 강서구 까치산로 182, 1028호</dd>
-        <dt>대표전화</dt>
-        <dd>02-1234-5678</dd>
-        <dt>통신판매업신고번호</dt>
-        <dd>2018-서울강서구-1234</dd>
-        <abbr title="phone"></abbr>
-      </dl> -->
-      <small class="footer-copyright">© 2019 soojubm. All rights reserved.</small>
-      <address class="footer-address">
-        <p class="footer-address-slogan" style="font-size: var(--font-size-medium)">Making things better.</p>
-      </address>
-
-      <aside class="footer-scroll" style="margin: 1.5rem 0 0 0">
-        <p class="footer-scroll-indicator" aria-hidden="true" hidden>스크롤</p>
-        <!-- <button class="footer-scroll-bottom js-to-bottom">아래로</button> -->
-        <button class="footer-scroll-top js-to-top" aria-label="맨 위로">
-          <span class="material-symbols-outlined"> arrow_upward </span>
-          <b hidden aria-hidden="true">맨위로</b>
-        </button>
-      </aside>
-    </footer>
+    <main></main>
 
     <aside id="modal"></aside>
-    <!-- <div class="footer">infinite scroll test</div> -->
   </body>
 </html>

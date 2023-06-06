@@ -1,83 +1,76 @@
-const path = require('path')
-
-const postcssPresetEnv = require('postcss-preset-env')
-
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 
-const TerserPlugin = require('terser-webpack-plugin')
-
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
-const SpeedMeasurePlugin = require('speed-measure-webpack-plugin')
+// speedMeasurePlugin miniCssExtractPlugin 충돌
+// const SpeedMeasurePlugin = require('speed-measure-webpack-plugin')
 // const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
 
 // const CopyPlugin = require('copy-webpack-plugin')
-const CompressionPlugin = require('compression-webpack-plugin')
 // const StylelintPlugin = require('stylelint-webpack-plugin')
 // [name].css => main.css / chunkFilename: '[id].css'
 
+const TerserPlugin = require('terser-webpack-plugin')
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 var WebpackObfuscator = require('webpack-obfuscator')
+const CompressionPlugin = require('compression-webpack-plugin')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
-// const isDevMode = process.env.NODE_ENV.includes('dev')
-// const devMode = process.env.NODE_ENV !== "production";
+const postcssPresetEnv = require('postcss-preset-env')
+
+const path = require('path')
 
 // const header = fs.readFileSync(__dirname + '/header.html')
 const HTML_TEMPLATE = './index.html'
 
-// new webpack.EnvironmentPlugin(['NODE_ENV', 'DEBUG'])
-
-module.exports = new SpeedMeasurePlugin().wrap({
-  // mode: 'production', // development, production, none
+module.exports = {
+  mode: 'development', // development, production, none
+  watch: true,
+  target: ['web', 'es5'],
   devtool: 'inline-source-map',
   entry: {
-    index: {
-      import: './index.ts',
-      // dependOn: 'shared',
-    },
-    // another: {
-    //   import: './public/javascripts/another.ts',
-    //   dependOn: 'shared',
-    // },
-    // shared: 'lodash',
-    // index: './index.ts',
-    // another: './public/javascripts/another-module.ts',
+    index: ['./index.ts', './public/javascripts/common/navbar.ts'],
+    tokens: ['./pages/tokens/tokens.ts', './public/javascripts/common/navbar.ts'],
+    components: ['./pages/components/components.ts', './public/javascripts/common/navbar.ts', './index.ts'],
   },
   output: {
-    // filename: '[name].bundle.js',
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, './build'),
+    path: path.resolve(__dirname, './build'), // 기본값은 dist
+    filename: '[name].bundle.js',
+    // xhtml: 'pages/tokens.html',
+    chunkFilename: '[name].js',
     // publicPath: './',
   },
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
   },
-  watch: true,
-  target: ['web', 'es5'],
 
   plugins: [
-    new CleanWebpackPlugin(),
+    new CleanWebpackPlugin(), // output path 정의되어야 한다.
+    new MiniCssExtractPlugin({
+      linkType: false,
+      filename: '[name].css',
+      chunkFilename: '[id].[contenthash].css',
+    }),
     new HtmlWebpackPlugin({
       template: HTML_TEMPLATE,
       filename: 'index.html',
-      main: '<b>this is main</b>',
+      chunks: ['index'],
     }),
     new HtmlWebpackPlugin({
       template: HTML_TEMPLATE,
-      filename: 'subTest.html',
-      chunks: ['another'],
-      main: 'subTest.html',
-      inject: true,
-      minify: {
-        collapseWhitespace: true,
-        removeComments: true,
-      },
-      // minify: true,
+      filename: 'tokens.html',
+      chunks: ['tokens'],
     }),
-    new MiniCssExtractPlugin({
-      filename: 'style.css',
-      // chunkFilename: '[id].[contenthash].css',
+    new HtmlWebpackPlugin({
+      template: HTML_TEMPLATE,
+      filename: 'components.html',
+      chunks: ['components'],
+      // main: './pages/tokens.html',
+      // inject: true,
+      // minify: {
+      //   collapseWhitespace: true,
+      //   removeComments: true,
+      // },
     }),
     new WebpackObfuscator({ rotateStringArray: true }, ['excluded_bundle_name.js']),
     new BundleAnalyzerPlugin(),
@@ -87,18 +80,36 @@ module.exports = new SpeedMeasurePlugin().wrap({
 
   module: {
     rules: [
+      // { test: /\.handlebars$/, loader: "handlebars-loader" },
+      {
+        test: /\.html$/i,
+        loader: 'html-loader',
+        options: {
+          sources: false,
+        },
+      },
+      // {
+      //   test: /\.(png|jpg|gif)$/i,
+      //   dependency: { not: ['url'] },
+      //   use: [
+      //     {
+      //       loader: 'url-loader',
+      //       options: {
+      //         limit: 8192,
+      //       },
+      //     },
+      //   ],
+      // },
+      { test: /\.ts$/, use: 'ts-loader' },
       {
         test: /\.m?js$/,
         exclude: /node_modules/,
         use: ['babel-loader'],
-        // options: {
-        //   presets: ['@babel/preset-env'],
-        // },
       },
-      { test: /\.ts$/, use: 'ts-loader' },
       {
-        test: /\.(sc|c)ss$/,
-        use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'], // 뒤부터. style-loader 대신 mini
+        test: /\.css$/,
+        // test: /\.(sc|c)ss$/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'], // 뒤부터.
       },
       // {
       //   test: /\.(png|jpe?g|gif|svg|webp)$/i,
@@ -107,19 +118,23 @@ module.exports = new SpeedMeasurePlugin().wrap({
     ],
   },
 
-  optimization: {
-    minimize: true,
-    minimizer: [
-      new TerserPlugin({
-        // minify: TerserPlugin.uglifyJsMinify,
-        terserOptions: {
-          compress: { drop_console: false },
-        },
-      }),
-      new CssMinimizerPlugin(),
-    ],
-    concatenateModules: true,
-  },
+  // optimization: {
+
+  //   splitChunks: {
+  //     chunks: 'all',
+  //   },
+  //   minimize: true,
+  //   minimizer: [
+  //     new TerserPlugin({
+  //       // minify: TerserPlugin.uglifyJsMinify,
+  //       terserOptions: {
+  //         compress: { drop_console: false },
+  //       },
+  //     }),
+  //     new CssMinimizerPlugin(),
+  //   ],
+  //   concatenateModules: true,
+  // },
 
   devServer: {
     static: {
@@ -129,7 +144,7 @@ module.exports = new SpeedMeasurePlugin().wrap({
     host: 'localhost',
     port: 9000,
   },
-})
+}
 
 // cache: {
 //   type: 'filesystem',

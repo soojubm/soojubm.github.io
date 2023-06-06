@@ -1,0 +1,14 @@
+.tag {@mixin tag;}
+.tag-icon {margin:0 var(--space-1) 0 0;}
+
+.tag[data-style=primary] {border-color:var(--color-accent);background-color:var(--color-accent);color:var(--gray800);}
+.tag[data-style=secondary] {border-color:var(--green100);background-color:var(--green100);color:var(--green800);}
+.tag[data-status=loading] {}
+.tag[data-status=danger] { border: 0;background: var(--red100);color: var(--red800)}
+
+
+.hashtag {@mixin hashtag;}
+
+.badge {display:inline-flex;align-items:center;justify-content:center;height:var(--size-tiny);padding:0 var(--space-2);border-radius:var(--radius);font-size:var(--font-size-small);line-height:1;}
+.badge[data-variant=primary] {background:var(--color-accent);color: var(--gray800);}
+.badge[data-variant=secondary] {background:var(--green100);}

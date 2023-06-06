@@ -1,0 +1,11 @@
+.pagination {display:flex;justify-content:center;position:relative;}
+
+.pagination > * {@mixin avatar-container;width:auto;min-width:var(--size-medium);padding:0 var(--space-1);border:none;background-color:transparent;}
+.pagination-previous {position:absolute;left:0;}
+.pagination-next {position:absolute;right:0;}
+.pagination-link {}
+
+.pagination-link.is-current {background-color:var(--color-primary);color:var(--gray0);}
+.pagination-ellipsis {color:var(--color-text-light);letter-spacing:1px;}
+
+// .pagination-last:before {content:'...';display:block;width:32px;height:32px;cursor:default;}
