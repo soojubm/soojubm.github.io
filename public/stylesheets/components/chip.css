@@ -27,6 +27,11 @@ button {
   border: 0;
 }
 
+em {
+  font-style:normal;
+  font-weight: var(--font-weight-bold);
+}
+
 .chip {
   display: flex;
   align-items: center;
@@ -36,20 +41,34 @@ button {
   border-radius: var(--radius);
   background: var(--color-background-weak);
   color: var(--color-text);
-  position: relative;}
+  position: relative;
 
+  /* reset */
+  font-family: var(--font-family);
+}
+
+.chip-icon {width:var(--size-medium);
+  /* @mixin avatar-container; */
+  width: 24px;
+  height: 24px;
+  margin: 0 0 0 var(--space-1);
+  background-color: var(--color-background);
+  border-radius: var(--radius);
+  font-size: 14px;
+}
 .chip-remove:hover {box-shadow:var(--state-hover);}
+.chip-label {
+  padding:1px var(--space-3) var(--adjust-label-line);
+  font-weight:var(--font-weight-normal);
+  color:inherit;}
+.chip-value {color:var(--color-primary);}
 
-.chip-label {padding:1px var(--space-3) var(--adjust-label-line);font-size:var(--font-size-tiny);font-weight:var(--font-weight-bold);color:inherit;}
-
-
-/* .chip {@mixin chip}
-.chip-icon {@mixin avatar-container;}
-.chip-label {@mixin chip-label;}
+/*
 .chip-remove {@mixin avatar-container;cursor:pointer;} */
 .chip-remove:hover {box-shadow:var(--state-hover);}
 .is-active .chip-icon {background:inherit;color:inherit;}
 
+.chip:disabled {opacity:.5;cursor:not-allowed;}
 .chip[aria-expanded] {}
 .chip[aria-selected] {
   background: var(--color-background-strong);
@@ -75,7 +94,6 @@ button {
   @media (hover) and (pointer: fine) {
     &:hover {box-shadow:var(--state-hover);}
   }
-  &:disabled {border-color:transparent;}
   
   &.is-active {
     border-color: var(--color-background-strong);

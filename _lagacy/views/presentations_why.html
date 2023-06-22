@@ -65,7 +65,7 @@
       <li>React portal의 개념을 가져와서 모든 Presentations를 루트 엘리먼트(body) 안에 위치시킬 수 있다. root -> page/modal/toast/sheet</li>
     </ul> -->
 
-    <h4 class="article-subhead">Related Components</h4>
+    <test-text variant="subhead">Related Components</h4>
     <ul>
       <li>Title bar</li>
       <li>Button group</li>
@@ -73,14 +73,14 @@
       <li>Elevated tile</li>
       <li>CloseIcon / BackIcon</li>
     </ul>
-    <h4 class="article-subhead">Triggers</h4>
+    <test-text variant="subhead">Triggers</h4>
     <ul>
       <li>window.load</li>
       <li>action button</li>
       <li>window.resize</li>
     </ul>
 
-    <!-- <h4 class="article-subhead">인터렉션</h4>
+    <!-- <test-text variant="subhead">인터렉션</h4>
     <ul>
       <li>Sheet (mobile)</li>
       <li>Modal (desktop)</li>
@@ -90,22 +90,22 @@
     </p>
     <p>overay을 열고 body 엘리먼트의 스크롤을 막을 것인가. 스크롤의 크기만큼 좌우의 위치를 보정할 것인가. 비효율적인 작업량.</p> -->
 
-    <!-- <div class="tile-flat">
+    <!-- <test-tile>
       <b>memo</b>
       <p>md. When adapting for larger screens, a bottom sheet can become a context menu.</p>
       <p>md. Swap the bottom sheet for a side sheet in landscape layouts.</p>
       <p>md. sheet. modal bottom sheet. expanding bottom sheet.</p>
-    </div> -->
+    </test-tile> -->
   </section>
 
   <section class="component-body">
     <article class="article js-observer js-scrollspy-section">
-      <h1 class="article-title">Dim</h1>
+      <test-text variant="title">Dim</h1>
       <p class="article-description">useOutsideClick의 ref 의존성을 presentation 컴포넌트에서 분리하기 위해 닫기 역할.</p>
     </article>
 
     <article class="article js-observer js-scrollspy-section">
-      <h1 class="article-title">Page</h1>
+      <test-text variant="title">Page</h1>
       <p class="article-description">기본적인 콘텐츠 뷰</p>
       <ul>
         <li>검색 : 글로벌 / 로컬 패턴 정리 , Progressing. Loader의 레벨</li>
@@ -113,10 +113,10 @@
     </article>
 
     <article class="article js-observer js-scrollspy-section">
-      <h1 class="article-title">Modal</h1>
+      <test-text variant="title">Modal</h1>
       <p class="article-description">something that requires the user’s attention.</p>
       <footer>
-        <button class="button js-modal" data-variation="secondary" data-modal="woolf">모달 열기</button>
+        <button class="button js-modal" data-variant="secondary" data-modal="woolf">모달 열기</button>
       </footer>
       <hr />
       <ul>
@@ -166,7 +166,7 @@
         </tbody>
       </table>
 
-      <h4 class="article-subhead">모달이 될 수 있는 컴포넌트</h4>
+      <test-text variant="subhead">모달이 될 수 있는 컴포넌트</h4>
       <ul>
         <li>Page - portfolio work</li>
         <li>Dialog</li>
@@ -174,7 +174,7 @@
         <li>Dropdown menu</li>
       </ul>
 
-      <h4 class="article-subhead">with Page <sup>800px</sup></h4>
+      <test-text variant="subhead">with Page <sup>800px</sup></h4>
       <aside
         class="modal tile-elevated"
         role="dialog"
@@ -200,7 +200,7 @@
         </article>
       </aside>
 
-      <h4 class="article-subhead">with Dialog <sup>400px</sup></h4>
+      <test-text variant="subhead">with Dialog <sup>400px</sup></h4>
       <aside class="dialog" role="alertdialog" aria-modal="true" aria-labelledby="dialog-title" aria-describedby="dialog-description">
         <h1 class="dialog-title" id="dialog-title">페이지를 나가시겠어요?</h1>
         <p class="dialog-description" id="dialog-description">아직 게시물을 공유하지 않았습니다. 게시하지 않고 나가시겠어요?</p>
@@ -211,20 +211,20 @@
         <button class="dialog-close js-close" aria-label="닫기"><span class="material-symbols-outlined">close</span></button>
       </aside>
 
-      <h4 class="article-subhead">모달의 종료</h4>
+      <test-text variant="subhead">모달의 종료</h4>
       <ul>
         <li>click. Dim / CloseButton / ConfirmButton / CancelButton</li>
         <li>keydown. escKey. enterKey. spaceBar</li>
       </ul>
 
-      <h4 class="article-subhead">확장 기능</h4>
+      <test-text variant="subhead">확장 기능</h4>
       <ul>
         <li>모달에 브라우저 히스토리를 저장.</li>
         <li>url을 통한 접근 허용.</li>
         <li>body element의 스크롤 여부.</li>
       </ul>
 
-      <h4 class="article-subhead">Other cases</h4>
+      <test-text variant="subhead">Other cases</h4>
       <ul>
         <li>
           <b>ibm.</b> Don’t use to display complex or large amounts of data. Don’t recreate a full app or page in a dialog. 이 디자인 시스템에서는
@@ -235,18 +235,18 @@
         <li><b>pinterest.</b> onDismiss / Preventing close on outside click / layer component</li>
       </ul>
 
-      <h4 class="article-subhead">References</h4>
+      <test-text variant="subhead">References</h4>
       <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alertdialog_role">alertdialog role</a>
     </article>
 
     <article class="article js-observer js-scrollspy-section">
-      <h1 class="article-title">Toast</h1>
+      <test-text variant="title">Toast</h1>
       <p class="article-description" title="temporary feedback on an interaction">일시적인 피드백. 현재 사용하지 않음.</p>
 
-      <button class="button js-toggle" data-variation="secondary">토스트 열기</button>
+      <button class="button js-toggle" data-variant="secondary">토스트 열기</button>
       <aside class="toast" role="alert">toast test. 사라지는 시간을 정의.</aside>
 
-      <h4 class="article-subhead">Best practices</h4>
+      <test-text variant="subhead">Best practices</h4>
       <ul>
         <li>
           포지셔닝에 left bottom 좌표보다 margin을 쓰는 게 좋다. 포지셔닝을 위한 믹스인을 보존할 수 있고, 컴포넌트의 가로 사이즈도 보존할 수 있기
@@ -254,18 +254,18 @@
         </li>
       </ul>
 
-      <h4 class="article-subhead">토스트가 될 수 있는 컴포넌트</h4>
+      <test-text variant="subhead">토스트가 될 수 있는 컴포넌트</h4>
       <ul>
         <li>callout</li>
         <li>dialog</li>
       </ul>
 
-      <h4 class="article-subhead">toast VS snackbar</h4>
+      <test-text variant="subhead">toast VS snackbar</h4>
       <ul>
         <li>action 유/무. MD 버전업과 함께 재정의 됨.</li>
       </ul>
 
-      <h4 class="article-subhead">Cases</h4>
+      <test-text variant="subhead">Cases</h4>
       <ul>
         <li>삭제 후 되돌리기. 휴지통이 있다면 대체할 수 있는 기능.</li>
         <li>HIG에 정의되지 않음. iOS spotify 앱에서 '라이브러리에 추가되었습니다'.</li>
@@ -273,10 +273,10 @@
     </article>
 
     <article class="article js-observer js-scrollspy-section">
-      <h1 class="article-title">Sheet</h1>
+      <test-text variant="title">Sheet</h1>
       <p class="article-description">사용하지 않음. 모바일용. 참고용.</p>
       <!-- <p>To allow users to view optional information or complete sub-tasks in a workflow while keeping the context of the current page, use Sheet.</p> -->
-      <button class="button js-toggle" data-variation="secondary">시트 열기</button>
+      <button class="button js-toggle" data-variant="secondary">시트 열기</button>
 
       <article class="sheet js-sheet" role="presentation">
         <button class="sheet-toggle"></button>
@@ -304,7 +304,7 @@
         </div>
       </section>
 
-      <h4 class="article-subhead">시트가 될 수 있는 컴포넌트</h4>
+      <test-text variant="subhead">시트가 될 수 있는 컴포넌트</h4>
       <ul>
         <li>dialog</li>
         <li>기능(역할) 단위 컴포넌트. 공유하기 등.</li>
@@ -314,17 +314,17 @@
         <li>데스크탑에서는 시트보다 모달의 사용성이 더 좋다. 모달이 충분히 대체할 수는 있다.</li>
         <li>토스트. Don't show more than one at a time.</li>
       </ul>
-      <!-- <h4 class="article-subhead">Cases</h4>
+      <!-- <test-text variant="subhead">Cases</h4>
       <ul>
         <li>액션시트. 네이버쇼핑과 왓챠에서 본 것 같음.</li>
       </ul> -->
     </article>
 
     <article class="article js-observer js-scrollspy-section">
-      <h1 class="article-title">Popover</h1>
+      <test-text variant="title">Popover</h1>
       <p class="article-description">floating tiles</p>
       <footer style="position: relative">
-        <button class="button js-toggle" data-variation="secondary">팝오버 열기</button>
+        <button class="button js-toggle" data-variant="secondary">팝오버 열기</button>
         <div class="popover tile-elevated">
           <header class="titlebar" style="padding: 0">
             <h1 class="titlebar-title">프로필</h1>
@@ -336,13 +336,13 @@
         </div>
       </footer>
 
-      <h4 class="article-subhead">trigger</h4>
+      <test-text variant="subhead">trigger</h4>
       <ul>
         <li>expandable chip</li>
         <li>icon button - morevert</li>
       </ul>
 
-      <h4 class="article-subhead">gg</h4>
+      <test-text variant="subhead">gg</h4>
       <ul>
         <li>overflow menu</li>
         <li>tooltip</li>

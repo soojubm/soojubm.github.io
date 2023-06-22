@@ -1,10 +1,6 @@
 @custom-media --large (max-width: 1560px);
 @custom-media --small (max-width: 1080px);
 @custom-media --tiny (max-width: 880px);
-/* // $p-breakpoints-lg-only: '(min-width: 65em) and (max-width: 89.9975em)'; */
-
-@media (prefers-color-scheme: light) {}
-@media (prefers-color-scheme: dark) {}
 
 :root {
   color-scheme: light dark;
@@ -137,14 +133,13 @@
 
   --space-after-item: var(--space-3);
 
+  /* // gap으로 대체할 수 있다. */
   --space-stack: var(--space-1);
   --space-stack-minus: calc(var(--space-stack) * -1);
 
   --space-leading-title: -.25rem;
   --space-leading-subhead: -.125rem;
   --space-leading-body: -.125rem;
-  
-  /* // --space-inset-tile: .75rem; */
 
   --border: 1px solid var(--color-border);
   --border-active: 1px solid var(--color-primary);
@@ -156,11 +151,12 @@
   --radius-sharp: null;
   --radius-soft: null;
 
-  --shadow: 0 0 .25rem rgb(0 0 0 / 7.5%);
   --shadow: 0 0.0625rem 0.125rem rgba(0,0,0,.15);
-  --shadow-tile: 0 0 0 1px rgb(0 0 0/5%),0 2px 2px rgb(0 0 0/4%);
   --shadow-tile: 0 0 0.3125rem rgba(23,24,24,.05),0 0.0625rem 0.125rem rgba(0,0,0,.15);
   --shadow-active: null;
+
+  /* --shadow: 0 0 .25rem rgb(0 0 0 / 7.5%); */
+  /* --shadow-tile: 0 0 0 1px rgb(0 0 0/5%),0 2px 2px rgb(0 0 0/4%); */
 
   --state-focus: 0 0 0 3px var(--color-border-hover);
   --state-hover: 0 0 0 3px rgba(0,0,0,.1);
@@ -195,7 +191,6 @@
 
   --safearea-inset-bottom1: constant(safe-area-inset-bottom);
   --safearea-inset-bottom2: env(safe-area-inset-bottom);
-
 }
 
 html[date-theme=dark] {}
@@ -203,8 +198,7 @@ html[date-theme=dark] {}
 :root 
 .theme-dark {
   /* // img {filter: invert(100%) hue-rotate(180deg);mix-blend-mode: screen;mix-blend-mode: multiply;} */
-  /* // 변수가 같더라도 재할당이 필요하다. */
-
+  /* // 같은 변수도 재할당이 필요하다. */
   --gray200: #252d29;
 
   --color-text: #d3d4d5;
@@ -236,6 +230,8 @@ html[date-theme=dark] {}
   }
 }
 
-@media (--small) {
-  body {display: none !important;}
-}
+
+/* // $p-breakpoints-lg-only: '(min-width: 65em) and (max-width: 89.9975em)'; */
+
+@media (prefers-color-scheme: light) {}
+@media (prefers-color-scheme: dark) {}

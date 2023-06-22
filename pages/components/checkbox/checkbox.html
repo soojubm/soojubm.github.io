@@ -1,0 +1,91 @@
+<main class="component">
+  <article class="article js-observer js-scrollspy-section">
+    <test-text variant="title" title="or Box">Checkboxes</test-text>
+    <p class="article-description">옵션 목록에서 하나 이상의 옵션을 선택합니다.</p>
+    <section class="component-example">
+      <!-- a11y checkgroup not valid -->
+      <test-tile>
+        <!-- <legend">checkgroup</legend> -->
+        <test-checkbox name="checkbox" checked>비활성 체크박스에요</test-checkbox>
+        <test-checkbox
+          name="checkbox"
+          label="이용약관에 동의합니다."
+          helper="주로 세팅 페이지에서 사용되는 디스크립션 영역."
+          disabled
+        ></test-checkbox>
+        <test-checkbox class="js-check" type="checkbox" id="terms" name="terms">
+          <a href="" style="text-decoration: underline">이용약관</a>에 동의합니다.
+        </test-checkbox>
+        <test-checkbox class="js-check" type="checkbox" id="other" name="interest">
+          기타
+          <input type="text" name="other-more" class="textfield-input" placeholder="기타로 오토바이를 타자." hidden />
+        </test-checkbox>
+      </test-tile>
+      <test-tile>
+        <test-checkbox></test-checkbox>
+        <test-checkbox size="large"></test-checkbox>
+      </test-tile>
+
+      <article class="component-props">
+        <test-text variant="subhead">Props</test-text>
+        <dl>
+          <dt>name</dt>
+          <dd>string</dd>
+          <dd>id={props.name}</dd>
+          <dt>label? - labelHidden</dt>
+          <dd>string</dd>
+          <dd>동사를 포함하는 최대 2단어. choice보다 action에 가깝다.</dd>
+          <dt>value</dt>
+          <dd>string</dd>
+          <dt>isChecked<attr>?</attr></dt>
+          <dd>boolean</dd>
+          <dt>isDisabled<attr>?</attr></dt>
+          <dd>boolean</dd>
+          <dd></dd>
+          <dt>isIndeterminated<attr>?</attr></dt>
+          <dd>boolean</dd>
+          <dd>TODO checkbox group에서 checkboxAll에 종속되는 옵션</dd>
+          <dt>onChange</dt>
+          <dd>(event: React.FormEvent[HTMLInputElement]) =] void</dd>
+          <dd>React.ChangeEventHandler[] / @types/react</dd>
+        </dl>
+      </article>
+    </section>
+
+    <test-text variant="body-large" class="article-kicker">
+      <b>default value</b>
+      선택되지 않은 상태로 제공하여 사용자가 옵션을... todo
+    </test-text>
+
+    <!-- <div class="checkbox tile-flat-small" data-size="large">
+      <input
+        class="js-checkall"
+        type="checkbox"
+        id="line00"
+        value=""
+        aira-checked="mixed"
+        aria-controls="1 2"
+        data-indeterminate="true"
+        indeterminate
+      />
+      <label for="line00" title="Check All"><em>모두 동의합니다</em></label>
+    </div>
+    <div class="checkbox">
+      <input class="js-check" type="checkbox" id="other" name="interest" value="other" />
+      <label for="other">기타</label>
+    </div>
+    <div class="checkbox">
+      <input class="js-check" type="checkbox" id="other" name="interest" value="other" />
+      <label for="other">기타</label>
+    </div> -->
+
+    <test-tile>
+      <test-text variant="subhead" style="margin-top: 0">CheckboxGroup<br />약관동의Terms and conditions</test-text>
+    </test-tile>
+    <test-tile>
+      <test-text variant="subhead" style="margin-top: 0">SingleCheckbox</test-text>
+      <test-checkbox label="포토리뷰만 보기"></test-checkbox>
+      <test-checkbox label="다시 묻지 않기 / 일주일 동안 보지 않기don't ask again"></test-checkbox>
+    </test-tile>
+  </article>
+</main>

@@ -167,7 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
   article.forEach(item => {
     const articleSample = `
       <article class="article js-scrollspy-section">
-        <h1 class="article-title">${item.title}</h1>
+        <test-text variant="title">${item.title}</test-text>
         <p class="article-description">
         ${item.kicker}
         </p>

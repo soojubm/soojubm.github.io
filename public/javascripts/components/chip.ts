@@ -1,35 +1,84 @@
+import { makeStyleSheet } from './utils'
+
 class Chip extends HTMLElement {
   constructor() {
     super()
-    // this.innerHTML = `<button class="chip"></button>`
-    const shadow = this.attachShadow({ mode: 'open' })
 
-    const container = document.createElement('button')
-    container.classList.add('chip')
-    // container.setAttribute('class', 'chip')
+    const sheet = new CSSStyleSheet()
+    // replace all styles synchronously:
+    // sheet.replaceSync('@import url("/public/stylesheets/components/chip.css"); button { color: red; }')
+    // document.adoptedStyleSheets = [...document.adoptedStyleSheets, sheet]
 
+    // replace all styles:
+    // sheet
+    //   .replace('@import url("/public/stylesheets/components/chip.css"); button { color: blue; }')
+    //   .then(() => {
+    //     console.log('Styles replaced', sheet)
+    //   })
+    //   .catch(err => {
+    //     console.error('Failed to replace styles:', err)
+    //   })
+
+    // Any @import rules are ignored.
+    // Both of these still apply the a{} style:
+    // sheet.replaceSync('@import url("styles.css"); a { color: red; }')
+    // sheet.replace('@import url("styles.css"); a { color: red; }')
+    // Console warning: "@import rules are not allowed here..."
+
+    // link rel=- dom 생성 안 됨
+
+    const host = document.createElement('button')
     const label = document.createElement('span')
-    label.setAttribute('class', 'chip-label')
+    const icon = document.createElement('span')
+    const value = document.createElement('em')
 
-    // this.addEventListener('click', () => alert('custom element'))
+    const shadow = this.attachShadow({ mode: 'open' })
+    shadow.appendChild(host)
 
-    shadow.appendChild(container)
+    // shadow.adoptedStyleSheets = [sheet]
 
-    // Apply external styles to the shadow dom
-    const linkElem = document.createElement('link')
-    linkElem.setAttribute('rel', 'stylesheet')
-    linkElem.setAttribute('href', '/public/stylesheets/components/chip.css')
-    shadow.appendChild(linkElem)
+    // console.log('@@@@@@', host, this, sheet)
+    // console.log('!!!!!', document.adoptedStyleSheets)
 
-    // ! webpack css
+    // host.shadowRoot?.adoptedStyleSheets = [sheet]
+    host.classList.add('chip')
+    label.classList.add('chip-label')
+    icon.classList.add('chip-icon')
+    // createElement('em') => reset em
+    value.classList.add('chip-value')
+
+    // host.setAttribute('class', 'chip')
+
+    // this.addEventListener('click', e => {
+    //   // Don't toggle the drawer if it's disabled.
+    //   if (this.disabled) {
+    //     return
+    //   }
+    //   this.toggleDrawer()
+    // })
+
+    shadow.appendChild(makeStyleSheet('chip'))
 
     // Attach the created elements to the shadow dom
-    container.appendChild(label)
+    if (this.icon) host.appendChild(icon)
+    host.appendChild(label)
 
-    label.textContent = this.label
+    label.innerHTML = this.content || this.label || ''
 
-    if (this.type === 'primary') container.classList.add('is-primary')
-    if (this.status === 'active') container.setAttribute('aria-selected', 'true')
+    if (this.icon) {
+      icon.innerHTML = this.icon
+    }
+    if (this.value) {
+      value.textContent = this.value || ''
+      label.appendChild(value)
+    }
+    if (this.type === 'primary') host.classList.add('is-primary')
+    if (this.status === 'active') host.setAttribute('aria-selected', 'true')
+    if (this.status === 'disabled') host.setAttribute('disabled', 'true')
+  }
+
+  get content() {
+    return this.innerHTML
   }
 
   get size() {
@@ -46,11 +95,19 @@ class Chip extends HTMLElement {
     if (value) this.setAttribute('status', value)
   }
 
+  get icon() {
+    return this.getAttribute('icon')
+  }
+
   get type() {
     return this.getAttribute('type')
   }
   set type(value) {
     if (value) this.setAttribute('type', value)
+  }
+
+  get value() {
+    return this.getAttribute('value')
   }
 
   get label() {
@@ -59,15 +116,23 @@ class Chip extends HTMLElement {
   set label(value) {
     if (value) this.setAttribute('label', value)
   }
+
   connectedCallback() {
-    // this.textContent = this.label
-
-    console.log('ihnnerhtml', this.innerHTML)
+    console.log('@@@222')
   }
+  disconnectedCallback() {}
 
-  disconnectedCallback() {
-    console.log('disconnected', this)
-  }
+  // attributeChangedCallback(name, oldValue, newValue) {
+  //   // When the drawer is disabled, update keyboard/screen reader behavior.
+  //   if (this.disabled) {
+  //     this.setAttribute('tabindex', '-1')
+  //     this.setAttribute('aria-disabled', 'true')
+  //   } else {
+  //     this.setAttribute('tabindex', '0')
+  //     this.setAttribute('aria-disabled', 'false')
+  //   }
+  //   // TODO: also react to the open attribute changing.
+  // }
 }
 
 export default Chip

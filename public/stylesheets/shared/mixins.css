@@ -1,27 +1,4 @@
-/* // ! text-heading-medium / text-heading-small */
-@define-mixin text-title {font-size:var(--font-size-huge);font-weight:var(--font-weight-bold);line-height:var(--font-line-height);color:var(--color-text);}
-@define-mixin text-subhead {font-size:var(--font-size-large);font-weight:var(--font-weight-bold);color:var(--color-text);}
-@define-mixin text-body {font-size:.875rem;font-weight:var(--font-weight-normal);}
-@define-mixin text-body-large {font-size:var(--font-size-large);font-weight:var(--font-weight-normal);}
-@define-mixin text-label {font-size:var(--font-size-medium);font-weight:var(--font-weight-normal);color:var(--color-text-light);}
-@define-mixin text-caption {font-size:var(--font-size-small);font-weight:var(--font-weight-bold);}
 
-/* // utilities */
-@define-mixin truncate {white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-@define-mixin truncate-multi {
-  /* // height:3rem;
-  // white-space:normal;word-wrap:break-word; */
-  /* overflow:hidden;text-overflow:ellipsis;display: -webkit-box;-webkit-line-clamp:2;-webkit-box-orient: vertical; */
-}
-
-
-h1, .text-title, [data-text=title] {font-size:var(--font-size-huge);font-weight:var(--font-weight-bold);line-height:var(--font-line-height);color:var(--color-text);}
-h2, .text-subhead, [data-text=subhead] {
-  margin: 0 0 var(--space-after-subhead) 0;
-  font-size:var(--font-size-large);font-weight:var(--font-weight-bold);color:var(--color-text);}
-  .text-label {font-size:var(--font-size-medium);font-weight:var(--font-weight-normal);color:var(--color-text-light);}
-
-.util-truncate {@mixin truncate;}
 
 @define-mixin link-inner {
   color:var(--color-primary);
@@ -99,28 +76,6 @@ h2, .text-subhead, [data-text=subhead] {
   transform: none;
 } */
 
-/* 
-@define-mixin tag {
-  display: inline-flex;
-  align-items: center;
-  height: var(--size-small);
-  padding: 1px var(--space-2) 0;
-  border-radius: var(--radius);
-  border: var(--border);
-  box-sizing: border-box;
-  background: var(--color-background);
-  font-size: var(--font-size-small);
-  color: var(--color-text);
-}
-
-
-@define-mixin tag-primary {@mixin tag;border-color:var(--color-accent);background-color:var(--color-accent);color:var(--gray800);}
-
-@define-mixin hashtag {
-  color: var(--color-text-light);
-  &:before {content:'#';}
-} */
-
 /* // @media (prefers-color-scheme: dark) {
 //   :root {
 //     // --title-color: #EFEFEF;
@@ -149,12 +104,3 @@ h2, .text-subhead, [data-text=subhead] {
   > * {min-width:auto;}
   &::-webkit-scrollbar {display:none;}
 } */
-
-
-/* // stack과 grid */
-.stack {display:flex;flex-wrap:wrap;align-items:center;margin:var(--space-1-minus)}
-.stack > * {margin:var(--space-1);}
-/* .stack[data-scroll=vertical] {@include stack-vertical-scroll;} */
-.stack[data-align=left] {}
-.stack[data-align=right] {}
-/* // space-between + column width */

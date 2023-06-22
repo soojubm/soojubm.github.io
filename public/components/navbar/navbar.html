@@ -1,18 +1,15 @@
 <!-- // menu 태그 안에 heading을 포함하는 경우, 반응형을 위한 메뉴 구조는 안 된다. -->
 <nav class="navbar js-navbar" role="navigation">
-  <button
-    class="navbar-burger avatar js-navbar-toggle"
-    style="background-image: none"
-    aria-label="전체메뉴"
-    aria-haspopup="true"
-    aria-expanded="false"
-  >
+  <test-chip class="navbar-burger js-navbar-toggle" aria-label="전체메뉴" aria-haspopup="true" aria-expanded="false">
     <span class="material-symbols-outlined">lunch_dining</span>
-  </button>
+  </test-chip>
+
   <div class="navbar-menu">
     <div class="navbar-menu-item has-submenu">
       <menu>
-        <a href="#"><span class="material-symbols-outlined" style="margin-right: 0.25rem" aria-label="홈"> cottage </span></a>
+        <a href="#">
+          <span class="material-symbols-outlined" style="margin-right: 0.25rem" aria-label="홈"> cottage </span>
+        </a>
         <a href="tokens.html">Tokens</a>
         <a href="components.html"> Components</a>
         <a href="#signifier_why">
@@ -31,11 +28,26 @@
     <div class="navbar-menu-item has-submenu" style="margin: var(--space-2) 0 0 0">
       <menu>
         <!-- // role="heading" -->
-        <span class="text-label">Patterns</span>
+        <p style="line-height: var(--size-medium)"><test-text variant="label">component</test-text></p>
+        <a href="./avatar.html">
+          avatar
+          <test-badge>진행중</test-badge>
+        </a>
+        <a href="./button.html">button</a>
+        <a href="./chip.html">chip</a>
+        <a href="./checkbox.html">checkbox</a>
+        <a href="./radio.html">radio</a>
+        <a href="./textfield.html">textfield</a>
+      </menu>
+    </div>
+    <div class="navbar-menu-item has-submenu" style="margin: var(--space-2) 0 0 0">
+      <menu>
+        <!-- // role="heading" -->
+        <p style="line-height: var(--size-medium)"><test-text variant="label">Patterns</test-text></p>
+        <a href="./searching.html">searching</a>
+        <a href="./result.html">Result</a>
         <a href="#presentations_why">Presentations</a>
-        <a href="#search">Searching</a>
         <a href="#filter">Filtering</a>
-        <a href="#actions">Actions</a>
         <a href="#texts">Texts</a>
         <!-- <a href="#entity">Entity 🚧</a> -->
         <!-- <a href="#menus">Menus </a> -->
@@ -48,7 +60,8 @@
     <div class="navbar-menu-item has-submenu" style="margin: var(--space-2) 0 0 0">
       <!-- <span class="menu-label" role="menuitem">Interfaces</span> -->
       <menu>
-        <span class="text-label">Interfaces</span>
+        <p style="line-height: var(--size-medium)"><test-text variant="label">Patterns</test-text></p>
+
         <a href="#profile">User Profile 🔥</a>
         <a href="#kakaopay">Kakaopay (outdated)</a>
         <a href="#_login">Sign In</a>
@@ -73,17 +86,17 @@
     </div>
   </div>
 
-  <a class="navbar-logo" href="/"></a>
+  <test-chip class="navbar-logo" href="/"></test-chip>
+
+  <div style="display: flex; align-items: center; gap: 0.5rem">Theme: <b>Brutal</b> <i class="iconoir-down-round-arrow"></i></div>
 
   <div class="navbar-user">
-    <!-- <a class="navbar-search-trigger js-navbar-toggle" href="#"></a>
-          <button class="navbar-user-trigger" aria-haspopup="menu" aria-expanded="false"></button>
-          <a class="chip" href="#" style="margin-right: 0.5rem"><span class="chip-label">시작하기</span></a> -->
+    <test-chip href="#" style="margin-right: 0.5rem">시작하기</test-chip>
+    <a class="navbar-search-trigger js-navbar-toggle" href="#"></a>
+    <button class="navbar-user-trigger" aria-haspopup="menu" aria-expanded="false"></button>
     <button class="switch-wrap js-darkmode" title="change theme">
-      <figure class="chip">
-        <span class="day material-symbols-outlined" style="display: flex">light_mode</span>
-        <span class="night material-symbols-outlined" style="display: flex">nights_stay</span>
-      </figure>
+      <span class="day"><i class="iconoir-sun-light"></i></span>
+      <span class="night"><i class="iconoir-half-moon"></i></span>
       <span class="switch" style="margin-left: auto">
         <label for="temp51" aria-label="스위치"></label>
         <input type="checkbox" role="switch" id="temp51" name="" />

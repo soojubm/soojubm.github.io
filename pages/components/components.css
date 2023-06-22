@@ -18,6 +18,7 @@
 .component-references {
   display: flex;
   flex-wrap: wrap;
+  gap: var(--space-2);
   margin: 1rem 0 0;
   padding: 1rem;
   background: var(--color-background-weak);
@@ -31,6 +32,9 @@
 .component-references a {
   font-size: var(--font-size-large);
   font-weight: var(--font-weight-bold);
+}
+.component-references a:hover {
+  text-decoration: underline;
 }
 
 

@@ -18,6 +18,7 @@
   </nav>
 
   <section class="tokens-body">
+    <p>결국 그리드를 써야 자식 컴포넌트가 독립적으로 존재할 수 있음</p>
     <!-- <header class="header" style="margin-left: -40px">
       <div class="chat" style="margin: 2rem var(--grid-margin) var(--space-2)">
         <figure class="chat-avatar"></figure>
@@ -61,7 +62,7 @@
   </article> -->
 
     <article class="article typography js-scrollspy-section">
-      <h1 class="article-title">Typography</h1>
+      <test-text variant="title">Typography</test-text>
       <p class="article-description">활자의 위계와 배치.</p>
 
       <div class="chat" style="margin: 2rem 0">
@@ -75,9 +76,9 @@
       </div>
 
       <!-- <a href="">link to texts pattern</a> -->
-      <h4 class="article-subhead text-subhead">Typefaces <sup>2</sup></h4>
+      <test-text variant="subhead">Typefaces <sup>2</sup></test-text>
       <!-- <p>history 아리타 산스 윈도우즈 환경에서 bold 표현이 약해서 바꿔 봄.</p> -->
-      <test-tile style="display: flex">
+      <test-tile>
         <div class="statistic-item" style="width: 50%">
           <span class="statistic-label">한글</span>
           <b class="statistic-value">고딕 에이원Gothic A1</b>
@@ -85,16 +86,17 @@
         <div class="statistic-item" style="width: 50%">
           <span class="statistic-label">영문</span>
           <b class="statistic-value"><del>Karla</del> Quattrocento Sans</b>
-          <!-- <div class="stack" role="group" style="margin-top:var(--space-after-subhead);">
+          <div class="stack" role="group" style="margin-top: var(--space-after-subhead)">
             <span class="token-item tile-flat-tag">normal</span>
             <span class="token-item tile-flat-tag">bold</span>
-          </div> -->
+          </div>
         </div>
       </test-tile>
       <div class="token-group">
-        <div class="token-item tile-flat" style="max-width: 100%">
+        <test-tile>
           <b>--font-family: 'Quattrocento Sans', 'Gothic A1', sans-serif;</b>
-        </div>
+        </test-tile>
+        <!-- <test-tile style="max-width: 100%"></test-tile> -->
       </div>
 
       <button class="item js-default-font" data-tile="elevated" style="max-width: 560px; margin-top: 0.75rem">
@@ -102,51 +104,51 @@
         <span class="item-label">시스템 폰트로 보기</span>
       </button>
 
-      <h4 class="article-subhead text-subhead">Sizes <sup>5? 3?</sup></h4>
+      <test-text variant="subhead">Sizes <sup>5? 3?</sup></test-text>
       <div class="token-group">
-        <div class="token-item tile-flat">
+        <test-tile>
           <!-- <figure class="token-item-avatar" style="background-image: none; font-size: var(--font-size-huge)">수줍</figure> -->
           <b>--font-size-huge: 2rem</b>
-        </div>
-        <div class="token-item tile-flat">
+        </test-tile>
+        <test-tile>
           <!-- <figure class="token-item-avatar" style="background-image: none; font-size: var(--font-size-large)">수줍</figure> -->
           <b>--font-size-large: 1.125rem</b>
-        </div>
-        <div class="token-item tile-flat">
+        </test-tile>
+        <test-tile>
           <!-- <figure class="token-item-avatar" style="background-image: none; font-size: var(--font-size-medium)">수줍</figure> -->
           <b>--font-size-medium: .875rem</b>
-        </div>
-        <div class="token-item tile-flat">
+        </test-tile>
+        <test-tile>
           <del><b>--font-size-?: 3rem</b></del>
-        </div>
-        <div class="token-item tile-flat">
+        </test-tile>
+        <test-tile>
           <del><b>--font-size-?: .75rem</b></del>
-        </div>
+        </test-tile>
       </div>
 
-      <h4 class="article-subhead text-subhead">Weights <sup>2</sup></h4>
+      <test-text variant="subhead">Weights <sup>2</sup></test-text>
       <div class="token-group">
-        <div class="token-item tile-flat">
+        <test-tile>
           <b>--font-weight-normal: 400</b>
-        </div>
-        <div class="token-item tile-flat">
+        </test-tile>
+        <test-tile>
           <b>--font-weight-bold: 800</b>
-        </div>
+        </test-tile>
       </div>
 
-      <h4 class="article-subhead text-subhead">Line heights <sup>2</sup></h4>
+      <test-text variant="subhead">Line heights <sup>2</sup></test-text>
       <div class="token-group">
-        <div class="token-item tile-flat">
+        <test-tile>
           <b>--font-line-height-large: 1.8</b>
-        </div>
-        <div class="token-item tile-flat">
+        </test-tile>
+        <test-tile>
           <b>--font-line-height: 1.4</b>
-        </div>
+        </test-tile>
       </div>
 
-      <h4 class="article-subhead text-subhead">Compositions 🔥</h4>
+      <test-text variant="subhead">Compositions 🔥</test-text>
       <div class="token-group">
-        <div class="token-item tile-flat">
+        <test-tile>
           <b>@mixin text-title</b>
           <div>
             <p>--font-size-large</p>
@@ -155,59 +157,58 @@
           <div>
             <p>@media (--small) {1.5rem}</p>
           </div>
-        </div>
-        <div class="token-item tile-flat">
+        </test-tile>
+        <test-tile>
           <b>@mixin text-subhead</b>
           <div>
             <p>--font-size-medium</p>
             <p>--font-weight-bold</p>
           </div>
-        </div>
-        <div class="token-item tile-flat">
+        </test-tile>
+        <test-tile>
           <b>@mixin text-body</b>
           <div>
             <p>--font-size-small</p>
           </div>
-        </div>
-        <div class="token-item tile-flat">
+        </test-tile>
+        <test-tile>
           <b>@mixin text-body-large</b>
           <div>
             <p>--font-size-medium</p>
           </div>
-        </div>
-        <div class="token-item tile-flat">
+        </test-tile>
+        <test-tile>
           <b>@mixin text-label</b>
           <div>
             <p>--font-size-small</p>
             <p>--color-text-weak</p>
           </div>
-        </div>
-        <div class="token-item tile-flat">
+        </test-tile>
+        <test-tile>
           <b>@mixin text-body-caption</b>
           <div>
             <p>--font-size-tiny</p>
           </div>
-        </div>
-        <div class="token-item tile-flat">
+        </test-tile>
+        <test-tile>
           <b>@mixin truncate</b>
-        </div>
-        <div class="token-item tile-flat">
+        </test-tile>
+        <test-tile>
           <b>@mixin truncate-multiple</b>
-        </div>
+        </test-tile>
       </div>
     </article>
 
     <article class="article js-scrollspy-section">
       <div class="token-group">
-        <div class="token-item tile-flat">
-          <!-- <figure class="token-item-avatar"></figure> -->
+        <test-tile>
           <figure class="token-item-avatar size-huge"></figure>
           <b>--size-huge: 5rem</b>
           <div>
             <p>--avatar-huge</p>
           </div>
-        </div>
-        <div class="token-item tile-flat">
+        </test-tile>
+        <test-tile>
           <figure class="token-item-avatar size-large"></figure>
           <b>--size-large: 3rem / 48px</b>
           <div>
@@ -215,16 +216,16 @@
             <p>--button-height</p>
             <p>--textfield-height</p>
           </div>
-        </div>
-        <div class="token-item tile-flat">
+        </test-tile>
+        <test-tile>
           <figure class="token-item-avatar size-medium"></figure>
           <b>--size-medium: 2rem / 32px</b>
           <div>
             <p>--avatar-medium</p>
             <p>--chip-height</p>
           </div>
-        </div>
-        <div class="token-item tile-flat">
+        </test-tile>
+        <test-tile>
           <figure class="token-item-avatar size-small"></figure>
           <b>--size-small: 1.5rem</b>
           <div>
@@ -232,8 +233,8 @@
             <p>--tag-height</p>
             <p>--indicator-height</p>
           </div>
-        </div>
-        <div class="token-item tile-flat">
+        </test-tile>
+        <test-tile>
           <figure class="token-item-avatar size-tiny"></figure>
           <b>--size-tiny: 1rem</b>
           <div>
@@ -241,7 +242,7 @@
             <p>--radio-height</p>
             <p>--switch-height</p>
           </div>
-        </div>
+        </test-tile>
       </div>
     </article>
 
@@ -250,26 +251,26 @@
       <!-- <li>memo. squish inset/stretch inset</li> -->
       <!-- <li>changelog. 1 unit을 .25rem으로 정의하여 네이밍.</li> -->
       <div class="token-group">
-        <div class="token-item tile-flat">
+        <test-tile>
           <b>--space-05: .125rem</b>
           <small>주로 시각보정에 사용.</small>
-        </div>
-        <div class="token-item tile-flat">
+        </test-tile>
+        <test-tile>
           <b>--space-1: .25rem</b>
           <div>
             <p>--space-outer-item</p>
           </div>
-        </div>
-        <div class="token-item tile-flat">
+        </test-tile>
+        <test-tile>
           <b>--space-2: .5rem</b>
           <div>
             <p>--space-inset-small</p>
           </div>
-        </div>
-        <div class="token-item tile-flat">
+        </test-tile>
+        <test-tile>
           <b>--space-3: .75rem</b>
-        </div>
-        <div class="token-item tile-flat">
+        </test-tile>
+        <test-tile>
           <b>--space-4: 1rem</b>
           <div>
             <p>--space-after-subhead</p>
@@ -277,10 +278,10 @@
             <p>--space-inset</p>
             <p>--grid-gutter</p>
           </div>
-        </div>
+        </test-tile>
       </div>
     </article>
-    <!-- <h4 class="article-subhead text-subhead">Outdated</h4>
+    <!-- <test-text variant="subhead">Outdated</test-text>
       <div
         class=""
         style="
@@ -342,7 +343,7 @@
       </div> -->
 
     <article class="article js-scrollspy-section">
-      <h1 class="article-title">Layouts - Width</h1>
+      <test-text variant="title">Layouts - Width</test-text>
       <p class="article-description">페이지 레벨과 섹션 레벨의 레이아웃.</p>
       <!-- <p>서비스가 출시 환경이 웹온리(웹/태블릿+모바일) vs 웹+모바일앱(웹+태블릿/모바일)</p> -->
       <!-- <p style="margin-bottom:var(--space-4);color:var(--color-text-light);">tablet보다 작은 폼 팩터. ex) tablet, phone</p> -->
@@ -374,27 +375,27 @@
       <!-- <li>small-scale layout (polaris 참고) 아바타 유무</li>
         <li>gap?????</li> -->
 
-      <h4 class="article-subhead text-subhead">Media queries</h4>
+      <test-text variant="subhead">Media queries</test-text>
       <div class="token-group">
-        <div class="token-item tile-flat">
+        <test-tile>
           <b>@custom-media --large (max-width: 1560px)</b>
           <div>
             <p>@media (--large)</p>
           </div>
-        </div>
-        <div class="token-item tile-flat">
+        </test-tile>
+        <test-tile>
           <b>@custom-media --small (max-width: 1080px)</b>
           <div>
             <p>@media (--small)</p>
           </div>
           <small>layout-width가 %(퍼센티지)로 변경됩니다.</small>
-        </div>
-        <div class="token-item tile-flat">
+        </test-tile>
+        <test-tile>
           <del><b>--media-query-tiny: only screen and (max-width: 760px)</b></del>
-        </div>
+        </test-tile>
       </div>
 
-      <h4 class="article-subhead text-subhead">Layouts (page / section - form...)</h4>
+      <test-text variant="subhead">Layouts (page / section - form...)</test-text>
       <ul>
         <li>모든 container는 media query --small부터 max-width를 100%.</li>
         <li>page container는 padding을 갖지 않기? pagehead의 상하 간격은 페이지마다 또는 pagehead 마다 달라질 수 있다.</li>
@@ -402,101 +403,101 @@
       </ul>
       <br />
       <div class="token-group">
-        <div class="token-item tile-flat">
+        <test-tile>
           <b>--layout-width-wide: 1200px</b>
-        </div>
-        <div class="token-item tile-flat">
+        </test-tile>
+        <test-tile>
           <b>--layout-width-small??: 640px</b>
           <div>
             <p>post, password, setting</p>
           </div>
-        </div>
-        <div class="token-item tile-flat">
+        </test-tile>
+        <test-tile>
           <b>--layout-width-narrow: 480px</b>
           <div>
             <p>signup, login</p>
           </div>
-        </div>
+        </test-tile>
       </div>
 
-      <h4 class="article-subhead text-subhead">Columns</h4>
+      <test-text variant="subhead">Columns</test-text>
       <div class="token-group">
-        <div class="token-item tile-flat">
+        <test-tile>
           <b>2 / 3 / 4</b>
           <div></div>
-        </div>
+        </test-tile>
       </div>
 
-      <h4 class="article-subhead text-subhead">Groups</h4>
+      <test-text variant="subhead">Groups</test-text>
       <div class="token-group">
-        <div class="token-item tile-flat">
+        <test-tile>
           <b>@mixin group-avatar</b>
-        </div>
-        <div class="token-item tile-flat">
+        </test-tile>
+        <test-tile>
           <b>@mixin group-tag</b>
           <div>
             <p>최대 ?개의 태그. 가로스크롤 제한.</p>
           </div>
-        </div>
-        <div class="token-item tile-flat">
+        </test-tile>
+        <test-tile>
           <b>@mixin group-chip</b>
           <div>
             <p>툴바</p>
           </div>
-        </div>
-        <div class="token-item tile-flat">
+        </test-tile>
+        <test-tile>
           <b>@mixin group-button</b>
           <div>
             <p>최대 2개의 버튼. 아니오/예, 이전/다음</p>
           </div>
-        </div>
-        <div class="token-item tile-flat">
+        </test-tile>
+        <test-tile>
           <b>@mixin group-textfield</b>
           <div>
             <p>시작일/종료일, 해외주소(3개), 이름/성별</p>
           </div>
-        </div>
-        <div class="token-item tile-flat">
+        </test-tile>
+        <test-tile>
           <b>@mixin group-bleeding</b>
           <div>
             <p>vertical scrolling. 다른 것과 이름으로 구별되게.</p>
           </div>
-        </div>
+        </test-tile>
       </div>
 
-      <h4 class="article-subhead text-subhead">Width</h4>
+      <test-text variant="subhead">Width</test-text>
       <p>layout과 통합?</p>
       <div class="token-group">
-        <div class="token-item tile-flat">
+        <test-tile>
           <b>--width-tiny: null</b>
           <div>
             <p>dropdown menu</p>
           </div>
-        </div>
+        </test-tile>
       </div>
     </article>
 
     <!-- <article class="article js-scrollspy-section">
-      <h1 class="article-title">Positioning</h1>
+      <test-text variant="title">Positioning</test-text>
       <p class="article-description">
         같은 역할을 하는 친구들은 같은 위치에 있어야 한다. 그래서 right top 같은 이름보다 역할 기반 이름을 달아 줄 필요. reset은 작은 화면에 대응하기
         위해사용합니다. z-index 보전을 위해 static이 아닌 relative로 초기화하세요.
       </p>
 
       <div class="token-group">
-        <div class="token-item tile-flat">
+        <test-tile>
           <b>@mixin position-reset</b>
-        </div>
-        <div class="token-item tile-flat">
+        </test-tile>
+        <test-tile>
           <b>@mixin position-outside/inside-right-top/</b>
           <div>
             <p>tag in tile</p>
             <p>close button in dialog</p>
           </div>
-        </div>
-        <div class="token-item tile-flat">
+        </test-tile>
+        <test-tile>
           <b>@mixin position-root-bottom</b>
-        </div>
+        </test-tile>
       </div>
     </article> -->
 
@@ -514,27 +515,27 @@
           <figure class="item-avatar animation-fadeup delay-third" style="float: none"></figure> -->
     <!-- 
     <div class="token-group">
-      <div class="token-item tile-flat">
+      <test-tile>
         <figure class="item-avatar animation-fadeup" style="float: none"></figure>
         <p>@keyframes fadeup</p>
-      </div>
-      <div class="token-item tile-flat">
+      </test-tile>
+      <test-tile>
         <figure class="item-avatar animation-rotation" style="float: none"></figure>
         <p>@keyframes rotation</p>
-      </div>
-      <div class="token-item tile-flat">
+      </test-tile>
+      <test-tile>
         <figure class="item-avatar animation-marquee" style="float: none"></figure>
         <p>@keyframes marquee</p>
-      </div>
-      <div class="token-item tile-flat">
+      </test-tile>
+      <test-tile>
         <p>@keyframes modal</p>
-      </div>
+      </test-tile>
     </div> -->
 
     <article class="article js-scroll-section">
-      <h2 class="article-title">Optical Adjustment</h2>
+      <test-text variant="title">Optical Adjustment</test-text>
 
-      <h3 class="article-subhead text-subhead">Memo</h3>
+      <test-text variant="subhead">Memo</test-text>
       <ul>
         <li>subehad + radio/checkbox group에서 1번째 radio/check 상단 간격. size-medium의 min-height로 야기.</li>
         <li>tile(또는 배경색을 박스) 안에서의 상하 간격을 위한 보정</li>

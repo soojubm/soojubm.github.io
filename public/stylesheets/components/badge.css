@@ -1,0 +1,20 @@
+
+:host() {
+  --badge-height: var(--size-tiny);
+}
+
+.badge {
+  /* reset */
+  font-style: normal;
+
+  display:inline-flex;align-items:center;justify-content:center;
+  height:var(--size-tiny);
+  padding:0 var(--space-2);
+  border-radius: var(--radius);
+  background-color: var(--gray400);
+  font-size:var(--font-size-small);
+  color:#fff;
+  line-height: 1;
+}
+.badge[data-variant=primary] {background:var(--color-accent);color: var(--gray800);}
+.badge[data-variant=secondary] {background:var(--green100);color:var(--color-primary);}

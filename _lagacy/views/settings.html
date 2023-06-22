@@ -1,10 +1,10 @@
 <main class="setting">
   <header style="display: flex; flex-direction: column; align-items: center; padding: 2rem 0 0 0">
-    <figure class="user-avatar"></figure>
-    <h2 class="subhead" style="margin: 0.75rem 0 0 0">수줍이님, 어서와요<i>!</i></h2>
+    <test-avatar size="huge"></test-avatar>
+    <test-text variant="subhead" style="margin: 0.75rem 0 0 0">수줍이님, 어서와요<i>!</i></test-text>
   </header>
 
-  <h3 class="article-subhead">개인정보</h3>
+  <test-text variant="subhead">개인정보</h3>
   <button class="setting-item">
     <h2 class="setting-item-label">이메일</h2>
     <div class="setting-item-value">soojubm@gmail.com</div>
@@ -17,14 +17,14 @@
     <span class="setting-item-icon material-symbols-outlined">arrow_forward</span>
   </button>
 
-  <h3 class="article-subhead">프로필 사진</h3>
+  <test-text variant="subhead">프로필 사진</h3>
   <div class="setting-item">
     <figure class="user-avatar"></figure>
     <div class="stack" role="group" style="margin-top: 0.5rem; margin-bottom: 0.5rem">
-      <button class="chip"><span class="chip-label">프로필 사진 추가 / 업데이트</span></button>
-      <button class="chip">
+      <test-chip>프로필 사진 추가 / 업데이</test-chip>
+      <test-chip>
         <span class="material-symbols-outlined"> delete </span>
-      </button>
+      </test-chip>
     </div>
     <p>10MB 이내의 JPEG, PNG, GIF 형식이어야 합니다.</p>
     <button>Go to your persnal profile</button>
@@ -34,7 +34,7 @@
     </aside> -->
   </div>
 
-  <h2 class="article-subhead">프로필 정보</h2>
+  <test-text variant="subhead">프로필 정보</test-text>
   <!-- <p class="setting-description">뉴니커 정보를 입력하고 뽐내보세요.</p> -->
   <div class="setting-item">
     <h2 class="setting-item-label">닉네임</h2>
@@ -57,17 +57,11 @@
   </div>
   <p class="setting-item-helper">관심있는 분야의 콘텐츠를 추천 받으세요.</p>
   <div class="stack" role="group" data-scroll="vertical" style="margin-right: -0.75rem">
-    <button class="chip">
-      <figure class="chip-icon">🦔</figure>
-      <span class="chip-label">다운로드</span>
-    </button>
-    <button class="chip">
-      <figure class="chip-icon">🦔</figure>
-      <span class="chip-label">고객센터</span>
-    </button>
+    <test-chip icon="🦔" label="다운로드"></test-chip>
+    <test-chip icon="🦔" label="고객센터"></test-chip>
   </div>
 
-  <h2 class="article-subhead">뉴스레터</h2>
+  <test-text variant="subhead">뉴스레터</test-text>
   <button class="item js-darkmode" role="menuitem" data-tile="elevated" data-size="medium">
     <figure class="item-avatar"><span class="material-symbols-outlined">email</span></figure>
     <span class="item-label">시사 뉴스레터</span>
@@ -78,7 +72,7 @@
   </button>
   <p class="setting-item-helper">매 주 월요일, 수요일, 금요일 아침에 받아볼 수 있어요.</p>
 
-  <h2 class="article-subhead">멤버십 가입 정보</h2>
+  <test-text variant="subhead">멤버십 가입 정보</test-text>
   <div class="setting-item">
     <dl>
       <dt>다음 결제 예정일</dt>
@@ -89,7 +83,7 @@
       <dd>현대카드 ****-****-****-7922</dd>
     </dl>
     <footer style="margin: 1rem 0 0 0; position: relative">
-      <button class="button" data-variation="tertiary">
+      <button class="button" data-variant="tertiary">
         결제수단변경
         <span class="material-symbols-outlined">arrow_forward</span>
       </button>
@@ -111,7 +105,7 @@
     </style>
   </div>
 
-  <h2 class="article-subhead">보안</h2>
+  <test-text variant="subhead">보안</test-text>
   <div class="setting-item">
     <h2 class="setting-item-label">비밀번호 변경</h2>
     <div class="setting-item-value">강력한 비밀번호로 보안을 강화하세요.</div>
@@ -124,9 +118,9 @@
     <span class="setting-item-icon material-symbols-outlined">arrow_forward</span>
   </div>
 
-  <footer style="margin: 2rem 0 0 0; text-align: center"><span class="button" data-variation="tertiary">로그아웃</span></footer>
+  <footer style="margin: 2rem 0 0 0; text-align: center"><span class="button" data-variant="tertiary">로그아웃</span></footer>
 
-  <h2 class="article-subhead">Best practices</h2>
+  <test-text variant="subhead">Best practices</test-text>
   <ul>
     <li>개인정보와 프로필 정보를 구분한다.</li>
     <li>프로필 수정은 프로필 페이지에서 진입할 수 있다.</li>
@@ -136,9 +130,8 @@
     <!-- <p>Your name appears on your Profile page, as your byline, and in your responses. It is a required field.</p> -->
   </ul>
 
-  <h3 class="article-subhead">Service sign-in / Integration</h3>
+  <test-text variant="subhead">Service sign-in / Integration</h3>
   <p>페이스북 연동</p>
-
   <br />
 
   <div class="item" data-tile="elevated" data-size="large">
@@ -148,16 +141,14 @@
     <span class="item-label">사용자 정보</span>
     <span class="item-description">전자 메일, 일정, 연락처에서 사용하는 계정</span>
   </div>
-  <button class="item" role="menuitem" data-size="medium">
+  <test-menu-item label="이메일">
     <figure class="item-avatar" style="background-image: none">
       <span class="material-symbols-outlined">mail</span>
     </figure>
-    <span class="item-label">이메일</span>
     <!-- <span class="setting-item-icon"> <b hidden>변경하기</b>  </span> -->
-  </button>
-  <button class="item" role="menuitem" data-size="medium">
+  </test-menu-item>
+  <test-menu-item label="비밀번호 변경">
     <figure class="item-avatar"></figure>
-    <span class="item-label">비밀번호 변경</span>
     <div class="item-action">
       <div class="chip"><span class="chip-label">변경</span></div>
     </div>
@@ -191,7 +182,7 @@
       <!-- <div>설정 - 프로필 - 이름</div> -->
 
       <form class="setting-item-form" style="padding: 0">
-        <h1 class="article-subhead">어떻게<br />불러드릴까요?</h1>
+        <test-text variant="subhead">어떻게<br />불러드릴까요?</test-text>
         <p>
           잠시 Twitch를 쉬고 싶으세요? 이미 준비되어 있습니다! 계정을 비활성화하면 프로필과 콘텐츠가 임시로 비활성화되며 유저 정보는 삭제되지
           않습니다. 나중에 마음이 바뀌면 계정에 다시 로그인하여 프로필을 다시 활성화할 수 있습니다.

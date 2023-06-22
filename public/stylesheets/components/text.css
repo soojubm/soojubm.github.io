@@ -1,0 +1,56 @@
+/* // ! text-heading-medium / text-heading-small */
+@define-mixin text-title {font-size:var(--font-size-huge);font-weight:var(--font-weight-bold);line-height:var(--font-line-height);color:var(--color-text);}
+@define-mixin text-subhead {font-size:var(--font-size-large);font-weight:var(--font-weight-bold);color:var(--color-text);}
+@define-mixin text-body {font-size:.875rem;font-weight:var(--font-weight-normal);}
+@define-mixin text-body-large {font-size:var(--font-size-large);font-weight:var(--font-weight-normal);}
+@define-mixin text-label {font-size:var(--font-size-medium);font-weight:var(--font-weight-normal);color:var(--color-text-light);}
+@define-mixin text-caption {font-size:var(--font-size-small);font-weight:var(--font-weight-bold);}
+
+/* // utilities */
+@define-mixin truncate {white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+@define-mixin truncate-multi {
+  /* // height:3rem;
+  // white-space:normal;word-wrap:break-word; */
+  /* overflow:hidden;text-overflow:ellipsis;display: -webkit-box;-webkit-line-clamp:2;-webkit-box-orient: vertical; */
+}
+
+/* reset */
+
+h1, h2, h3, p {
+  margin: 0;
+  line-height: var(--font-line-height-large);
+}
+
+h1, h2, h3, h4, h5, h6 {
+}
+
+p {
+
+}
+[data-variant=display] {
+  font-size: 64px;
+  line-height: 1;
+  font-weight: var(--font-weight-bold);
+}
+
+h1, .text-title, [data-variant=title] {
+  line-height: var(--line-height);
+  
+  font-size:var(--font-size-huge);font-weight:var(--font-weight-bold);line-height:var(--font-line-height);color:var(--color-text);}
+h2, .text-subhead, [data-variant=subhead] {
+  /* margin: 0 0 var(--space-after-subhead) 0; */
+
+  line-height: var(--line-height);
+  font-size:var(--font-size-large);
+  font-weight:var(--font-weight-bold);
+  color:var(--color-text);
+}
+.text-label {font-size:var(--font-size-medium);font-weight:var(--font-weight-normal);color:var(--color-text-light);}
+
+.util-truncate {@mixin truncate;}
+
+[data-variant=label] {
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-size:var(--font-size-medium);font-weight:var(--font-weight-normal);color:var(--color-text-light);
+}

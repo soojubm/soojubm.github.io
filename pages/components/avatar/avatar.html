@@ -1,0 +1,133 @@
+<main class="component">
+  <article class="article js-observer js-scrollspy-section">
+    <header style="position: relative">
+      <!-- <span class="avatar" style="background: var(--color-background-weak); position: absolute; left: 0; top: 0">🐰</span> -->
+      <test-text variant="title">Avatars</test-text>
+      <p class="article-description">
+        <test-text variant="title">개체(유저, 회사, 프로젝트 등)를 대표하는 시각 정보입니다. 정보 더미의 주체로서 인접한 정보 더미 중 최상위 위계를 갖습니다.</test-text variant="title">
+      </p>
+    </header>
+    <section class="component-example">
+      <test-tile>
+        <test-row>
+          <test-avatar size="huge"></test-avatar>
+          <test-avatar size="huge">odo secondary outlined</test-avatar>
+          <test-avatar size="large"></test-avatar>
+          <test-avatar size="medium">수</test-avatar>
+          <test-avatar size="small">
+            <span class="material-symbols-outlined" style="transform: scale(75%)">close</span>
+          </test-avatar>
+        </test-row>
+      </test-tile>
+      <div class="component-props">
+        <!-- <test-text variant="body-large" style="margin-top: 0">Props</test-text> -->
+        <dl>
+          <dt>name</dt>
+          <dd>string</dd>
+          <dd class="dd-small">dfafa</dd>
+          <dt>src<abbr>?</abbr></dt>
+          <dd>string</dd>
+          <dd class="dd-small">링크일 수도 링크가 아닐 수도 있다.</dd>
+          <dt>size</dt>
+          <dd>"huge" | "large" | "medium" | "small"</dd>
+          <dd class="dd-small">TODO. 페이지, 섹션, 아티클 각 레벨에서 용법이 제한됨.</dd>
+
+          <dt>badge<abbr>?</abbr></dt>
+          <dd>"unread" | "new" | "live"</dd>
+          <dd class="dd-small">TODO. 합성 컴포넌트에서 상세하게 정의</dd>
+
+          <dt>fallback</dt>
+          <dd>"string" | "image?"</dd>
+          <dd class="dd-small">예시. 유저 닉네임의 첫 알파벳. 도메인 또는 서비스에서 정의하기에 달려 있음.</dd>
+          <dd></dd>
+        </dl>
+      </div>
+    </section>
+
+    <!-- <p>TODO. avatar는 패턴 섹션에서 정의할 필요가 있다.</p> -->
+    <test-text variant="body-large" class="article-kicker">
+      <b>cllickable</b> 아바타 또는 아바타릂 포함하는 상위 요소(클릭을 보조하는 역할)는 항상 클릭할 수 있습니다. 형태로 두 케이스를 구별해보자.
+    </test-text>
+    <test-text variant="body-large" class="article-kicker"><b>구성?</b> 이미지, 텍스트, 아이콘, 이모지를 포함할 수 있습니다.</test-text>
+
+    <br />
+    <test-tile>
+      <article class="item" data-size="huge">
+        <test-avatar size="huge"></test-avatar>
+        <b class="item-name">EntityHuge</b>
+        <p class="item-description">description area.</p>
+        <span>description area2.</span>
+      </article>
+      <article class="item" data-size="large">
+        <test-avatar size="large"></test-avatar>
+        <b class="item-name">EntityLarge</b>
+        <p class="item-description">individual, user.</p>
+      </article>
+      <article class="item" data-size="medium" style="display: flex; align-items: center">
+        <figure class="item-avatar"></figure>
+        <b class="item-name" style="font-weight: var(--font-weight-normal)">EntityMedium</b>
+        <time style="margin: 0 0 0 var(--space-2); color: var(--color-text-light)">36.4만</time>
+        <!-- // 항상 같은 위치에 둘 수 있나. -->
+        <button
+          class="item-delete icon-indicator"
+          style="margin-left: auto; min-width: 24px; height: 24px; position: relative; right: auto; top: auto"
+        >
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </article>
+      <article class="item" data-size="small">
+        <figure class="item-avatar"></figure>
+        <b class="item-name" style="font-weight: var(--font-weight-normal)">EntitySmall</b>
+      </article>
+    </test-tile>
+
+    <!-- <li>icon button, icon indicator, entity avatar, menu item avatar(icon)</li> -->
+    <!-- <li>memeo. medium. 이하의 크기는 디스크립션을 제공하지 않는다. 항상 align-items:center.</li> -->
+    <!-- <li>pagination item은 chip과 같은 size token을 사용하지만 chip도 avatar도 아닙니다.</li> -->
+    <!-- <p>아바타만 단독으로 사용하는 케이스. space-after-avatar가 필요하지 않음.</p> -->
+    <article class="user tile-flat" style="max-width: 800px">
+      <test-text variant="body-large" style="margin-top: 0">
+        <del>non-clickable</del><br />avatar는 장식 요소로 오른쪽에 배치 (outdated) => 목록이 아닌 페이지 레벨의 대표 개체로 사용.
+      </test-text>
+      <hr />
+      <test-avatar size="medium" style="border: var(--border); background-color: var(--color-background)"></test-avatar>
+      <b class="user-name">수줍이</b>
+      <span class="user-id">soojubm@gmail.com</span>
+      <span class="user-job">Youtube subscriber</span>
+    </article>
+
+    <test-tile style="max-width: 800px">
+      <test-text variant="body-large" style="margin-top: 0">groupable<br />avatar의 목록</test-text>
+      <hr />
+      <article class="avatargroup">
+        <test-avatar size="small"></test-avatar>
+        <test-avatar size="small"></test-avatar>
+        <test-avatar size="small"></test-avatar>
+        <test-avatar size="small"></test-avatar>
+        <span class="avatargroup-label">Followed by 수줍이 외 4명</span>
+      </article>
+      <small class="mutiual" style="display: block; margin: var(--space-2) 0 0 0">내가 팔로우하는 사용자 중에는 팔로워가 없습니다. (twitter)</small>
+    </test-tile>
+
+    <test-tile variant="elevated" style="max-width: 800px">
+      <test-text variant="body-large" style="margin-top: 0">hoverable<br />요약된 사용자 정보. 사용자 프로필 페이지로 링크.</test-text>
+      <hr />
+      <article class="item" data-size="medium">
+        <test-avatar size="medium"></test-avatar>
+        <b class="item-name">사용자이름</b>
+      </article>
+      <p class="user-description" style="margin: var(--space-1) 0">Youtube subscriber</p>
+      <div class="statistic" data-size="small" style="justify-content: left; margin: var(--space-2) 0 0 0">
+        <div class="statistic-item" onclick="javascript:alert('샘플 유아이에요!')">
+          <i class="statistic-label">팔로워</i>
+          <span class="statistic-value">62</span>
+        </div>
+        <i class="icon-bullet"></i>
+        <div class="statistic-item" onclick="javascript:alert('샘플 유아이에요!')">
+          <i class="statistic-label">팔로잉</i>
+          <span class="statistic-value">8</span>
+        </div>
+      </div>
+    </test-tile>
+  </article>
+</main>

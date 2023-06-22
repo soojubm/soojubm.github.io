@@ -35,7 +35,6 @@
 .post-body pre {margin:0;padding:0;}
 
 .post-hashtag {@mixin stack;}
-.post-hashtag-item {@mixin chip;}
 
 .post-share {margin:2rem 0;}
 .post-share-title {}
@@ -113,11 +112,6 @@
 .post-attract-description {}
 .post-attract-signup {@mixin button-primary;margin:var(--space-after-description) 0;}
 
-
-
-.post-relation {margin:8rem auto;padding:0 var(--grid-margin);}
-.post-relation-title {@mixin text-subhead;}
-.post-relation-description {font-size:var(--font-size-large);color:var(--color-text-light)}
 
 
 

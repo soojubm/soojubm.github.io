@@ -1,3 +1,5 @@
+import { makeStyleSheet } from './utils'
+
 class Tile extends HTMLElement {
   constructor() {
     super()
@@ -5,23 +7,36 @@ class Tile extends HTMLElement {
 
     const container = document.createElement('div')
     container.classList.add('tile')
-    // container.setAttribute('class', 'chip')
 
     shadow.appendChild(container)
+    shadow.appendChild(makeStyleSheet('tiles'))
 
-    // Apply external styles to the shadow dom
-    const linkElem = document.createElement('link')
-    linkElem.setAttribute('rel', 'stylesheet')
-    linkElem.setAttribute('href', '/public/stylesheets/components/tile.css')
-    shadow.appendChild(linkElem)
+    // console.log('content', this.content)
+    // console.log('parentNode', this.parentNode)
+    // console.log('parentElement', this.parentElement)
+    if (this.variant) container.setAttribute('data-variant', this.variant)
+    container.innerHTML = this.content
   }
 
-  get size() {
-    return this.getAttribute('size')
+  // tile 안에 클래스 적용 안 됨.
+  // get size() {
+  //   return this.getAttribute('size')
+  // }
+  // set size(value) {
+  //   if (value) this.setAttribute('size', value)
+  // }
+
+  get variant() {
+    return this.getAttribute('variant')
   }
-  set size(value) {
-    if (value) this.setAttribute('size', value)
+
+  get content() {
+    return this.innerHTML
   }
+
+  // set content(value) {
+  //   return (container = value)
+  // }
 
   connectedCallback() {
     // this.textContent = this.label

@@ -21,7 +21,26 @@ const postcssPresetEnv = require('postcss-preset-env')
 const path = require('path')
 
 // const header = fs.readFileSync(__dirname + '/header.html')
+
+// entry key랑 맞아야 함. key는 무엇
 const HTML_TEMPLATE = './index.html'
+
+const patterns = ['result', 'searching', 'presentation', 'filter', 'text']
+const components = ['avatar', 'button', 'chip', 'checkbox', 'radio', 'textfield']
+
+// let t = {}
+// const temp = components.forEach(item => {
+//   t = [item] = [`./pages/components/${item}/${item}.ts`, './public/javascripts/common/navbar.ts', './index.ts']
+// })
+
+const setPages = data =>
+  data.map(item => {
+    return new HtmlWebpackPlugin({
+      template: HTML_TEMPLATE,
+      filename: `${item}.html`,
+      chunks: [`${item}`],
+    })
+  })
 
 module.exports = {
   mode: 'development', // development, production, none
@@ -29,9 +48,19 @@ module.exports = {
   target: ['web', 'es5'],
   devtool: 'inline-source-map',
   entry: {
-    index: ['./index.ts', './public/javascripts/common/navbar.ts'],
-    tokens: ['./pages/tokens/tokens.ts', './public/javascripts/common/navbar.ts'],
+    index: ['./pages/home/home.ts', './public/javascripts/common/navbar.ts', './index.ts'],
+    tokens: ['./pages/tokens/tokens.ts', './public/javascripts/common/navbar.ts', './index.ts'],
     components: ['./pages/components/components.ts', './public/javascripts/common/navbar.ts', './index.ts'],
+
+    searching: ['./pages/searching/searching.ts', './public/javascripts/common/navbar.ts', './index.ts'],
+    result: ['./pages/result/result.ts', './public/javascripts/common/navbar.ts', './index.ts'],
+
+    button: ['./pages/components/button/button.ts', './public/javascripts/common/navbar.ts', './index.ts'],
+    avatar: ['./pages/components/avatar/avatar.ts', './public/javascripts/common/navbar.ts', './index.ts'],
+    textfield: ['./pages/components/textfield/textfield.ts', './public/javascripts/common/navbar.ts', './index.ts'],
+    chip: ['./pages/components/chip/chip.ts', './public/javascripts/common/navbar.ts', './index.ts'],
+    checkbox: ['./pages/components/checkbox/checkbox.ts', './public/javascripts/common/navbar.ts', './index.ts'],
+    radio: ['./pages/components/radio/radio.ts', './public/javascripts/common/navbar.ts', './index.ts'],
   },
   output: {
     path: path.resolve(__dirname, './build'), // 기본값은 dist
@@ -46,6 +75,7 @@ module.exports = {
 
   plugins: [
     new CleanWebpackPlugin(), // output path 정의되어야 한다.
+
     new MiniCssExtractPlugin({
       linkType: false,
       filename: '[name].css',
@@ -61,6 +91,13 @@ module.exports = {
       filename: 'tokens.html',
       chunks: ['tokens'],
     }),
+
+    new HtmlWebpackPlugin({
+      template: HTML_TEMPLATE,
+      filename: 'searching.html',
+      chunks: ['searching'],
+    }),
+
     new HtmlWebpackPlugin({
       template: HTML_TEMPLATE,
       filename: 'components.html',
@@ -72,6 +109,10 @@ module.exports = {
       //   removeComments: true,
       // },
     }),
+
+    ...setPages(patterns),
+    ...setPages(components),
+
     new WebpackObfuscator({ rotateStringArray: true }, ['excluded_bundle_name.js']),
     new BundleAnalyzerPlugin(),
     // new CompressionPlugin({}),

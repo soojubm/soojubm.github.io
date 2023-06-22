@@ -48,7 +48,7 @@
         <!-- <button class="item-action"><span class="item-action-label">팔로우</span></button> -->
       </div>
 
-      <article class="tile-elevated" style="z-index: 1">
+      <test-tile variant="elevated">
         <header class="titlebar" style="padding: 0; margin-bottom: var(--space-4)">
           <h1 class="titlebar-title">See this post in</h1>
           <button class="titlebar-back" aria-label="이전 페이지로">
@@ -65,19 +65,19 @@
           <span class="item-label">사파리 브라우저</span>
           <button class="item-action is-active"><span class="item-action-label">계속</span></button>
         </div>
-      </article>
+      </test-tile>
 
       <div class="jobitem" role="listitem">
         <h2 class="jobitem-name">Senior Front-end Developer</h2>
         <div class="jobitem-tags">
-          <span class="tag">Full-Time</span>
-          <span class="tag">Korea</span>
-          <span class="tag">Remote friendly</span>
+          <test-tag>Full-Time</test-tag>
+          <test-tag>Korea</test-tag>
+          <test-tag>Remote friendly</test-tag>
         </div>
         <button class="jobitem-view"><span class="chip-label">View Job</span></button>
       </div>
 
-      <div class="tile-elevated" style="max-width: 400px">
+      <test-tile variant="elevated" style="max-width: 400px">
         <article class="item" data-size="huge">
           <figure class="item-avatar">
             <span class="avatar-badge"></span>
@@ -98,11 +98,11 @@
       </div>
 
       <article style="position: relative">
-        <div class="tile-flat" style="border: none; margin-left: -0.75rem; margin-right: -0.75rem">
+        <test-tile style="border: none; margin-left: -0.75rem; margin-right: -0.75rem">
           <b>Personal License</b>
           <b class="item-price" style="position: absolute; right: var(--space-3); top: var(--space-3)">18,800 KRW</b>
           <small style="display: block; color: var(--color-text-light)">1 user</small>
-        </div>
+        </test-tile>
 
         <div class="item" data-size="large">
           <figure class="item-avatar" style="background-image: none; font-size: var(--font-size-large)">🎅🏻</figure>
@@ -116,7 +116,7 @@
         </div>
 
         <footer style="margin: 1rem 0">
-          <button class="button" data-variation="primary" style="width: 100%; font-size: 15px">Buy now</button>
+          <button class="button" data-variant="primary" style="width: 100%; font-size: 15px">Buy now</button>
         </footer>
       </article>
 
@@ -142,11 +142,11 @@
           ></textarea>
         </div>
         <footer class="comment-write-footer">
-          <button class="button" data-variation="primary">게시</button>
+          <button class="button" data-variant="primary">게시</button>
         </footer>
       </form>
 
-      <article class="tile-elevated">
+      <test-tile variant="elevated">
         <header class="titlebar" style="padding: 0; margin-bottom: var(--space-4)">
           <h1 class="titlebar-title">VASP 선택</h1>
           <button class="titlebar-back" aria-label="이전 페이지로">
@@ -179,7 +179,7 @@
             <label for="menutype2" title=""></label>
           </div>
         </div>
-      </article>
+      </test-tile>
     </section>
   </div>
   <aside style="position: fixed; top: 6rem; left: calc(50% + var(--width-sidemenu) - var(--grid-margin)); transform: translateX(-50%); z-index: 8">
@@ -276,7 +276,7 @@
             <small class="item-description">Bruce Springsteen</small>
           </div>
         </span>
-        <span class="album-track-row-column stack"><span class="tag">hiphop</span><span class="tag">rap</span></span>
+        <span class="album-track-row-column stack"><test-tag>hiphop</test-tag><test-tag>rap</test-tag></span>
         <span class="album-track-row-column">In Review --</span>
         <span class="album-track-row-column"
           ><em class="badge" style="height: auto; margin-right: 0.5rem; background: gold; padding: 3px"></em> Error</span
@@ -323,7 +323,7 @@
     <hr />
     <!-- ! flex-wrap: warp일 때 min-width가 fixed -->
     <!-- ! width:100% and max-width doesnt' work-->
-    <form class="tile-elevated" action="" style="max-width: 400px; z-index: 1">
+    <test-tile variant="elevated" action="" style="max-width: 400px; z-index: 1">
       <header class="titlebar" style="padding: 0; margin-bottom: var(--space-3)">
         <h1 class="titlebar-title" style="line-height: 32px; position: relative; left: auto; transform: translateX(0)">"파일 제목.pdf" 공유</h1>
         <button class="chip" style="margin-left: auto"><span class="material-symbols-outlined">settings</span></button>
@@ -343,18 +343,18 @@
       <div class="item" data-size="medium" role="menuitem">
         <figure class="item-avatar"></figure>
         <b class="item-name">수줍이 (나)</b>
-        <span class="tag" style="margin-left: auto">소유자</span>
+        <test-tag style="margin-left: auto">소유자</test-tag>
       </div>
       <div class="item" data-size="medium" role="menuitem">
         <figure class="item-avatar" style="background: purple"></figure>
         <b class="item-name">뾱뾱이</b>
-        <span class="tag" data-status="danger" style="margin-left: auto">
+        <test-tag data-status="danger" style="margin-left: auto">
           <span class="tag-label">제한됨</span>
-        </span>
+        </test-tag>
         <figure class="icon-indicator" style="margin-left: var(--space-1)"><span class="material-symbols-outlined">arrow_drop_down</span></figure>
       </div>
       <footer style="display: flex; justify-content: right; margin: 2rem 0 0">
-        <button class="button" data-variation="primary" type="submit">완료</button>
+        <button class="button" data-variant="primary" type="submit">완료</button>
       </footer>
 
       <hr />
@@ -396,7 +396,7 @@
         <li>multiple select 인터페이스를 정의하지 않기 위해 버튼을 사용. => 디자인 시스템에 정의하지 않은 요소.</li>
         <li>한 번에 여러 명과 공유 / 긴 파일 이름 / 추가 버튼이 리스트의 최상단과 최하단애 배치되는 맥락 정의 /</li>
       </ul>
-    </form>
+    </test-tile>
 
     <section>
       <div class="textfield">
@@ -421,8 +421,8 @@
         </figure> -->
         <b class="item-name" style="font-size: 16px">상해종합주가지수</b>
         <p class="item-description" style="color: var(--color-text)">2999.55p</p>
-        <span class="tag" style="color: #fff; text-align: center; justify-content: center; background: blue; border: 0; margin-top: 0.5rem"
-          >4.33% 상승</span
+        <test-tag style="color: #fff; text-align: center; justify-content: center; background: blue; border: 0; margin-top: 0.5rem"
+          >4.33% 상승</test-tag
         >
 
         <div style="margin-top: 0.5rem; color: var(--color-text-light); line-height: var(--font-line-height)">
@@ -515,8 +515,8 @@
         Onboarding card. 디스크립션. PrevButton 이라면 secondary vs tertiary
       </p>
       <footer class="onboarding-control">
-        <button class="onboarding-control-next button" data-variation="primary">Next</button>
-        <button class="onboarding-control-skip button" data-variation="tertiary">Skip</button>
+        <button class="onboarding-control-next button" data-variant="primary">Next</button>
+        <button class="onboarding-control-skip button" data-variant="tertiary">Skip</button>
       </footer>
     </article>
 
@@ -583,7 +583,7 @@
       </cite>
     </div>
 
-    <article class="tile-elevated" style="max-width: 400px; z-index: 1">
+    <test-tile variant="elevated" style="max-width: 400px; z-index: 1">
       <header class="titlebar" style="padding: 0; margin-bottom: var(--space-4)">
         <button class="titlebar-back" aria-label="이전 페이지로">
           <span class="material-symbols-outlined">close</span>
@@ -618,7 +618,7 @@
         <label class="textfield-label" for="">컬렉션 이름</label>
         <input class="textfield-input" type="text" placeholder="컬렉션 이름" />
       </div>
-    </article>
+    </test-tile>
 
     <section class="comment-list" style="max-width: 400px">
       <article class="comment-list-item" role="comment">
@@ -671,13 +671,13 @@
 
     <br />
 
-    <figure class="tile-flat">
+    <test-tile>
       <q
         >I'm impressed by how GitHub Copilot seems to know exactly what I want to type next. GitHub Copilot is particularly helpful when working on
         React components, where it makes eerily accurate predictions. GitHub Copilot has become an indispensable part of my programmer toolbelt.</q
       >
       <figcaption style="margin: var(--space-3) 0 0 0; color: var(--color-text-light)">Byline</figcaption>
-    </figure>
+    </test-tile>
 
     <div class="graph" style="border: var(--border); border-radius: var(--radius)">
       <div class="graph-title">1월 26일 <em>컴퓨터통신 분야</em>에서는<br /><em>7백명의 지식iN</em>들이 답변하셨습니다.</div>
@@ -729,9 +729,9 @@
       </div>
     </article>
 
-    <div class="tile-flat" style="text-align: center">
+    <test-tile style="text-align: center">
       최근 3개월간 네이버플러스 멤버십으로<br />
       <em>15,799원 추가 적립 혜택</em>이 생겼어요!
-    </div>
+    </test-tile>
   </section>
 </main>

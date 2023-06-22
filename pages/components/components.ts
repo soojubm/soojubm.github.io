@@ -1,7 +1,8 @@
 import footer from '/public/components/footer/footer.html'
 import navbar from '/public/components/navbar/navbar.html'
 
-import components from './components.html'
+import main from './components.html'
+import './components.css'
 
 // import '/public/stylesheets/shared.css'
 import '/public/stylesheets/shared/webfonts.css'
@@ -13,10 +14,8 @@ import '/public/components/navbar/navbar.css'
 
 import '/public/stylesheets/components/avatars.css'
 
-import './components.css'
-
 document.addEventListener('DOMContentLoaded', () => {
-  document.querySelector('main')!.innerHTML = navbar + components + footer
+  document.querySelector('main')!.innerHTML = navbar + main + footer
 })
 
 // {

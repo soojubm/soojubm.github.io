@@ -1,110 +1,6 @@
 @import 'textfield';
 
 
-// rem 으로 모듈화하기 어렵다. ex 1.5rem => top:0.125rem
-// line-heght로 리셋스타일에 종속되지 않도록 함. + block
-// height 테이블 내에서 세로 정렬에 필요
-// 2줄 이상 대비
-// nextjs + css module에서 type selector 이슈 .checkbox-input / .checkbox-label
-// ! :focus
-
-// .checkbox input {
-//   float: left;
-//   width: var(--size-tiny);
-//   height: var(--size-tiny);
-//   margin: 0; // for reset
-//   border-radius: 4px;
-//   border: var(--border);
-//   box-sizing: border-box;
-//   appearance: none; // reset  border color
-//   transform: translateY(3px); // for align vertical
-// }
-// .checkbox input:checked {
-//   float:left;
-//   border-color: var(--color-primary);
-//   background: var(--color-primary);
-// }
-// .checkbox label {margin:0 0 0 var(--space-after-avatar-small);line-height:inherit;}
-
-.counter-input {}
-.price-input {}
-.number-input {}
-
-.counter {display:flex;position:relative;}
-.counter-input {width:100%;margin:0 var(--space-2);background:var(--color-background-weak);border-radius:var(--radius);text-align:center;}
-// radius = iOS
-.counter-decrement {@mixin chip;}
-.counter-increment {@mixin chip;border-radius:0 var(--radius) var(--radius) 0;}
-.counter-decrement[aria-disabled=true] {opacity:.5;cursor:not-allowed;}
-.counter-increment[aria-disabled=true] {opacity:.5;cursor:not-allowed;}
-
-.checkbox,.radio {
-  display:block;
-  min-height: var(--size-medium);
-  line-height:var(--size-small);
-  position:relative;
-  @mixin clearfix;
-}
-
-
-input[type=checkbox] {opacity:0;position:absolute;}
-input[type=checkbox] ~ label {display:block;padding:var(--space-1) 0;padding-left:calc(var(--size-tiny) + var(--space-2));}
-input[type=checkbox] ~ label:before {content:'';display:block;width:var(--size-tiny);height:var(--size-tiny);border-radius:4px;border:var(--border);box-sizing:border-box;position:absolute;left:0;top:7px;}
-input[type=checkbox] ~ label:after {content:'';display:none;width:6px;height:2px;border-left:2px solid;border-bottom:2px solid;border-color:var(--gray200);position:absolute;left:4px;top:12px;transform:rotate(-45deg);}
-input[type=checkbox]:checked ~ label:before {border-color:var(--color-primary);animation:ripple2 0.2s linear forwards;}
-input[type=checkbox]:checked ~ label:after {display:block;border-color:var(--color-primary);}
-
-input[type=checkbox][indeterminate=true] ~ label:before,
-input[type=checkbox][data-indeterminate=true] ~ label:before {border-color:var(--green800);background:var(--green100);}
-input[type=checkbox][indeterminate=true] ~ label:after,
-input[type=checkbox][data-indeterminate=true] ~ label:after {display:block;width:8px;background:var(--color-primary);border:none;left:4px;top:48%;transform:rotate(0deg);}
-
-input[type=checkbox]:disabled {background-color:chocolate;}
-input[type=checkbox]:disabled ~ label {color:var(--gray200);cursor:not-allowed;}
-input[type=checkbox]:disabled ~ label:before {background:var(--gray200);border-color:var(--gray200);}
-input[type=checkbox]:disabled ~ label:after {border-color:var(--color-text-weak);}
-
-
-input[type=radio] {width:0;height:0;opacity:0;position:absolute;}
-input[type=radio] + label {display:flex;align-items:center;height:var(--size-medium);padding-left:calc(var(--size-tiny) + var(--space-2));line-height:1rem;position:relative;}
-input[type=radio] + label:before {content:'';display:block;width:var(--size-tiny);height:var(--size-tiny);border-radius:50%;border:var(--border);box-sizing:border-box;position:absolute;left:0;}
-input[type=radio] + label:after {content:'';width:6px;height:6px;border-radius:50%;background:var(--gray200);position:absolute;left:5px;transition:background-color 0.2s;transform:scale(0);}
-input[type=radio]:checked + label:before {border-color:var(--color-primary);animation:ripple2 0.2s linear forwards;}
-input[type=radio]:checked + label:after {display:block;background:var(--color-primary);transform:scale(1);}
-input[type=radio]:disabled + label {color:var(--gray200);cursor:not-allowed;}
-input[type=radio]:disabled + label:before {background:var(--gray200);border-color:var(--gray200);}
-input[type=radio]:disabled + label:after {background:var(--color-background);}
-
-// .checkbox-helper,.radio-helper {padding:0.5rem 0 1.5rem 28px;}
-// hidden attribute
-input[type=radio] + label + *,
-input[type=checkbox] + label + * {display:none;}
-input[type=radio]:checked + label + *,
-input[type=checkbox]:checked + label + * {display:block;}
-
-
-.checkbox,
-.radio {
-  &[data-size=large] {
-    label {
-      // position: absolute;right: 0;
-    }
-    label:before {
-      width: var(--size-small);
-      height: var(--size-small);
-
-      // right: 0;
-      // top: 8px
-    }
-    label:after {
-      width:10px;
-      height:4px;
-
-      left: 6px;
-      top:15px;
-    }
-  }
-}
 
 .range {}
 .range input[type=range] {width:100%;height:4px;background:var(--color-background-weak);appearance:none;-webkit-appearance:none;}
@@ -112,16 +8,6 @@ input[type=checkbox]:checked + label + * {display:block;}
 .range input[type=range]:focus::-webkit-slider-thumb {transform:scale(1.25);box-shadow:0 0 0 0.25rem rgba(0,153,255,0.3), 0 var(--space-05) 0.5rem rgba(0,0,0,0.1);}
 
 
-.switch {display:block;height:20px;position:relative;}
-input[type=checkbox][role=switch] {}
-input[type=checkbox][role=switch] + label {display:block;padding:0;padding-left:calc(48px + var(--space-3));cursor:pointer;}
-input[type=checkbox][role=switch] + label:before {content:'';display:block;width:48px;height:20px;border:none;border-radius:var(--radius);box-sizing:border-box;background:var(--gray200);position:absolute;left:0;top:0;transition:background-color .2s;}
-input[type=checkbox][role=switch] + label:after {content:'';display:block;/*18px*/width:16px;height:16px;border:none;border-radius:var(--radius);background:#fff;box-shadow:var(--shadow);position:absolute;left:2px;top:2px;transition:left .2s;transform:rotate(0deg);}
-input[type=checkbox][role=switch]:checked + label {}
-input[type=checkbox][role=switch]:checked + label:before {background:var(--color-primary);}
-input[type=checkbox][role=switch]:checked + label:after {left:calc(48px - 16px - 2px);}
-input[type=checkbox][role=switch]:disabled {}
-input[type=checkbox][role=switch]:disabled + label {cursor:not-allowed;opacity:.5;}
 
 .checkbox-description {display:block !important;padding-left:calc(var(--size-tiny) + var(--space-2));color:var(--color-text-light);}
 

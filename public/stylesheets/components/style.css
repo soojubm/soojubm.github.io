@@ -166,15 +166,6 @@
 .carousel-arrows-next:hover {}
 .carousel-arrows button.is-disabled {opacity: .2;}
 
-.quote {max-width: 400px;@mixin tile-elevated;}
-.quote-avatar {@mixin avatar-medium;}
-.quote-title {margin: var(--space-4) 0 .5rem;@mixin text-subhead;}
-.quote-body {}
-.quote-byline {display: block;margin: 1rem 0 0 0;}
-.quote-byline div {color: var(--color-text);}
-.quote-action {@mixin button-primary;width: 50%;margin: 2rem 0 0 0;} */
-
-
 .offline {
   display: none;
   max-width: 400px;
@@ -648,34 +639,6 @@ main,
 .user-myinfo {@mixin link-outside;margin:.25rem 0 0;}
 .user-footer {}
 .user-footer a {font-size:var(--font-size-small);color:var(--color-text-light);}
-
-.notifications {@mixin layout-medium;}
-.notification {}
-.notification-item {}
-.notification-item:hover {@mixin hover-item;}
-.notification-item-avatar {@mixin avatar-large;position:absolute;left:0;top:0;}
-.notification-item-avatar + p {margin-bottom:var(--space-05);}
-.notification-item-user {font-size:var(--font-size-medium);}
-.notification-item-content {@mixin truncate-multi;}
-.notification-item-content b {font-weight:var(--font-weight-normal);}
-.notification-item-date {margin:0 0 0 var(--space-1);font-size:var(--font-size-small);color:var(--color-text-light);}
-
-
-.search {}
-.search-form {}
-.search-form-close {@mixin avatar-medium;position:absolute;left:1rem;top:14px;transform:rotate(180deg);}
-.search-form-title {margin:0 auto 1rem;font-size:var(--font-size-large);}
-
-.search-similar-item {@mixin tile-elevated-small;display:flex;align-items:center;margin:.25rem;padding:.25rem .5rem .25rem .25rem;}
-.search-similar-item figure {@mixin avatar-medium;margin:0 var(--space-after-avatar-medium) 0 0;}
-.search-similar-item span {display:block;padding:0 0 var(--adjust-label-line) 0;color:var(--color-text);}
-
-.search-recent {position:relative;z-index:1;}
-.search-recent-title {margin:0 0 var(--space-2) 0;@mixin text-label;}
-.search-recent-group {@mixin stack;}
-.search-recent-group-item {@mixin chip;}
-
-.search-suggestion {}
 
 
 .sorting-group {display:flex;align-items:center;position:relative;}

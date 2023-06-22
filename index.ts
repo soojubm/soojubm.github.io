@@ -26,9 +26,7 @@ import toggleTheme from './public/javascripts/theme/toggleTheme'
 
 import { initializeNavbar } from './public/javascripts/common/navbar'
 
-import Chip from './public/javascripts/components/chip'
-import Avatar from './public/javascripts/components/avatar'
-import Tile from './public/javascripts/components/tile'
+import { defineCustomElement } from './public/javascripts/components'
 
 // import('./public/javascripts/event/modal').then(module => {
 //   console.log(module)
@@ -36,20 +34,45 @@ import Tile from './public/javascripts/components/tile'
 
 // import { fetchPage } from './public/javascripts/router'
 
-document.addEventListener('DOMContentLoaded', lockBodyElement)
-document.addEventListener('DOMContentLoaded', () => {
-  if ('customElements' in window) {
-    window.customElements.define('test-tile', Tile)
-    window.customElements.define('test-button', Button)
-    window.customElements.define('test-chip', Chip)
-    window.customElements.define('test-avatar', Avatar)
-    window.customElements.define('close-button', CloseButton)
-    // customElements.define('sjb-entity', Entity)
-  }
+// Create a class for the element
+class WordCount extends HTMLParagraphElement {
+  constructor() {
+    // Always call super first in constructor
+    super()
 
-  // document.body.appendChild(navbar)
-  // document.body.appendChild(footer)
-})
+    // count words in element's parent element
+    const wcParent = this.parentNode
+
+    function countWords(node) {
+      const text = node.innerText || node.textContent
+      return text
+        .trim()
+        .split(/\s+/g)
+        .filter(a => a.trim().length > 0).length
+    }
+
+    const count = `Words: ${countWords(wcParent)}`
+
+    // Create a shadow root
+    const shadow = this.attachShadow({ mode: 'open' })
+
+    // Create text node and add word count to it
+    const text = document.createElement('span')
+    text.textContent = count
+
+    // Append it to the shadow root
+    shadow.appendChild(text)
+
+    // Update count when element content changes
+    setInterval(function () {
+      const count = `Words: ${countWords(wcParent)}`
+      text.textContent = count
+    }, 200)
+  }
+}
+
+document.addEventListener('DOMContentLoaded', lockBodyElement)
+document.addEventListener('DOMContentLoaded', defineCustomElement)
 
 window.addEventListener('load', detectLoad)
 
@@ -464,49 +487,6 @@ function closeParentElement(event) {
 //     }
 //   }))
 // }
-
-function createStylesheet(name) {
-  const linkElem = document.createElement('link')
-  linkElem.setAttribute('rel', 'stylesheet')
-  linkElem.setAttribute('href', `/public/stylesheets/components/${name}.css`)
-
-  return linkElem
-}
-
-class Button extends HTMLElement {
-  constructor() {
-    super()
-    const shadow = this.attachShadow({ mode: 'open' })
-
-    const container = document.createElement('button')
-    container.classList.add('button')
-    container.setAttribute('data-variation', this.variation || '')
-
-    container.textContent = this.label
-
-    // this.addEventListener('click', () => alert('custom element'))
-
-    shadow.appendChild(container)
-    shadow.appendChild(createStylesheet('button'))
-  }
-
-  get variation() {
-    return this.getAttribute('variation')
-  }
-  set variation(value) {
-    if (value) this.setAttribute('data-variation', value)
-  }
-
-  get label() {
-    return this.getAttribute('label')
-  }
-
-  connectedCallback() {}
-
-  disconnectedCallback() {
-    console.log('disconnected', this)
-  }
-}
 
 class CloseButton extends HTMLElement {
   constructor() {

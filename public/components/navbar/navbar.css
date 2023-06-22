@@ -94,7 +94,6 @@
   }
 }
 
-
 .menu {position:relative;z-index:1;}
 .menu-heading {}
 .menu-link {display:flex;align-items:center;height:var(--size-medium);margin:var(--space-2) 0;@mixin text-subhead;position:relative;}
@@ -114,132 +113,32 @@
 }
 
 
-.chip {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-width: var(--size-medium);
-    height: var(--size-medium);
-    border-radius: var(--radius);
-    box-sizing: border-box;
-    background: var(--color-background-weak);
-    color: var(--color-text);
-    position: relative;
-}
-.chip-label {
-    padding:1px var(--space-3) var(--adjust-label-line);pointer-events:none;
-}
-
-
-/* //구 design */
-.design {}
-.design-head {padding:4rem var(--grid-margin);background:var(--color-background);position:relative;}
-/* .design-head > h1 {@mixin text-title;} */
-.design-guide {margin:4rem 0 0;overflow:hidden;}
-/* .design-guide-title {padding:var(--space-3) var(--grid-margin);@mixin text-label;} */
-.design-guide ul {padding-left:0;list-style:none;}
-.design-guide ul li {margin:0;padding:1rem var(--grid-margin);color:var(--color-text-light);}
-.design-guide ul li b {display:block;color:var(--color-text);}
 
 .article {padding:4rem var(--grid-margin);overflow:hidden;position:relative;}
 .article + .article {padding-top:6rem;}
 
-/* .article-aka {@mixin stack;} */
 .article-aka .hashtag:before {content:'';}
 .article-aka .tag {margin-right:var(--space-3);}
 
-/* .article-title {@mixin text-title;} */
 .article-title {font-size:var(--font-size-huge);font-weight:var(--font-weight-bold);line-height:var(--font-line-height);color:var(--color-text);}
-.article-description {margin:0 0 2rem;font-size:var(--font-size-huge);line-height:var(--font-line-height);color:var(--color-text);}
+.article-description {margin:0 0 2rem;font-size:var(--font-size-huge);line-height:var(--font-line-height);color:var(--color-text);letter-spacing:-.0375rem;}
 .article ul {margin:var(--space-after-subhead) 0 2rem;}
 
 .article p, .article ul, .article dl {max-width: 800px;}
 
-.article-kicker {max-width: 800px !important;margin: 2rem 0;font-size:var(--font-size-large);color:var(--color-text);line-height:var(--font-line-height-large);}
+.article-kicker {
+  display: block;
+  margin: 2rem 0;font-size:var(--font-size-large);color:var(--color-text);line-height:var(--font-line-height-large);}
 .article-kicker b {margin-right:var(--space-3);font-weight: var(--font-weight-bold);}
 .article-kicker + .article-kicker {margin-top: -1.5rem;} 
 
 .article-dont {padding:1rem;border-radius:var(--radius);background:var(--red100);}
 
-.article-subhead {margin:3rem 0 var(--space-after-subhead);}
 .article > .hashtag {margin:0 .25rem 0 0;font-size:var(--font-size-small);}
 
 .spacing-card {padding:var(--space-inset-tile);overflow:hidden;position:relative;}
 .space {display:flex;align-items:center;justify-content:center;height:100%;background:var(--green100);position:relative;}
 .space span {font-size:10px;}
-
-
-/* // tile */
-
-
-.tile {
-    padding: var(--space-3);
-    border: var(--border);
-    border-radius: var(--radius);
-    box-sizing: border-box;
-    background: var(--color-background);
-    position: relative;
-}
-
-.tile-flat {
-    padding: var(--space-3);
-    border: var(--border);
-    border-radius: var(--radius);
-    box-sizing: border-box;
-    background: var(--color-background);
-    position: relative;
-}
-  
-.tile-elevated {
-    padding: var(--space-3);
-    border: var(--border);
-    border-radius: var(--radius);
-    box-sizing: border-box;
-    background: var(--color-background);
-    position: relative;box-shadow:var(--shadow-tile);
-}
-  /* // 텍스트가 올 때 시각보정. 아이콘이 오면 아이콘에서 margin-top:.5rem?
-  // hoverable. 전체가 클릭 영역일 수도 있지만 내부에 버튼이 있을 수도.
-  // flat / raised / elevated / floating / lifted
-  
-  @define-mixin tile {
-    border: var(--border);
-    border-radius: var(--radius);
-    box-sizing: border-box;
-    background: var(--color-background);
-    position: relative;
-  
-    &:hover {
-      background-color: none !important;
-    }
-  }
-  @define-mixin tile-flat {
-    @mixin tile;
-    margin: var(--space-3) 0;
-    padding: var(--space-3);
-  }
-  @define-mixin tile-flat-small {
-    @mixin tile;
-    margin: var(--space-2) 0;
-    padding: var(--space-2);
-  }
-  @define-mixin tile-flat-tiny {
-    @mixin tile;
-    padding: var(--space-1);
-  }
-  
-  @define-mixin tile-elevated {@mixin tile-flat;border:0;box-shadow:var(--shadow-tile);}
-  @define-mixin tile-elevated-small {@mixin tile-flat-small;border:0;box-shadow:var(--shadow-tile);}
-  @define-mixin tile-elevated-tiny {@mixin tile-flat-tiny;border:0;box-shadow:var(--shadow-tile);}
-  
-    
-  
-  .tile-flat {@mixin tile-flat;}
-  .tile-flat-small {@mixin tile-flat-small;}
-  .tile-elevated {@mixin tile-elevated;}
-  .tile-elevated-small {@mixin tile-elevated-small;}
-  .tile-elevated-tiny {@mixin tile-elevated-tiny;} */
-
 
 
 .switch-wrap {display:inline-block;width:var(--size-medium);height:var(--size-medium);overflow:hidden;}
