@@ -13,8 +13,6 @@ import '/public/stylesheets/shared/mixins.css'
 
 import '/public/components/navbar/navbar.css'
 
-import '/public/stylesheets/components/avatars.css'
-
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelector('main')!.innerHTML = navbar + main + footer
 })

@@ -11,7 +11,6 @@ import '/public/stylesheets/shared/reset.css'
 
 import '/public/stylesheets/shared/mixins.css'
 // import '/public/stylesheets/components/tiles.css'
-import '/public/stylesheets/components/avatars.css'
 
 import '/public/components/navbar/navbar.css'
 import '/public/components/footer/footer.css'

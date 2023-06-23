@@ -10,12 +10,17 @@ class MenuItem extends HTMLElement {
     const action = document.createElement('slot')
     const label = document.createElement('span')
 
+    const description = document.createElement(this.description === 'description' ? 'span' : 'time')
+
     container.classList.add('item')
     label.classList.add('item-label')
+    description.classList.add('item-description')
     // action.classList.add('item-action')
 
     avatar.name = 'avatar'
     action.name = 'action'
+
+    description.innerText = this.description || ''
 
     label.innerText = this.label || ''
 
@@ -25,8 +30,7 @@ class MenuItem extends HTMLElement {
     // shadow.appendChild(button)
 
     shadow.appendChild(container)
-    container.append(avatar, label, action)
-    container.appendChild(makeStyleSheet('menuitem'))
+    container.append(avatar, label, description, action, makeStyleSheet('menuitem'))
 
     // const template = this.getTemplate()
     // shadow.innerHTML = template
@@ -48,6 +52,10 @@ class MenuItem extends HTMLElement {
     //     }
     //   })
     // }
+  }
+
+  get description() {
+    return this.getAttribute('description' || 'time')
   }
 
   get label() {

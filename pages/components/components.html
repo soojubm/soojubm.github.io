@@ -117,14 +117,11 @@
     <test-row>
       <test-chip class="js-scrollspy-trigger" label="Links"></test-chip>
       <test-chip class="js-scrollspy-trigger" label="Badges">Badges</test-chip>
-      <test-chip class="js-scrollspy-trigger" label="Tags"></test-chip>
       <test-chip class="js-scrollspy-trigger" label="Switch"></test-chip>
 
       <test-chip class="js-scrollspy-trigger" label="Select"></test-chip>
-      <test-chip class="js-scrollspy-trigger" label="Tiles"></test-chip>
       <test-chip class="js-scrollspy-trigger" label="Seporator"></test-chip>
 
-      <test-chip class="js-scrollspy-trigger" label="Tooltip"></test-chip>
       <test-chip class="js-scrollspy-trigger" label="Breadcrumb"></test-chip>
       <test-chip class="js-scrollspy-trigger" label="Title Bar">Title Bar</test-chip>
       <test-chip class="js-scrollspy-trigger" label="Bottom Navigation">Bottom Navigation</test-chip>
@@ -236,59 +233,6 @@
           </test-row>
         </test-tile>
       </section>
-    </article>
-
-    <article class="article js-observer js-scrollspy-section">
-      <test-text variant="title">Tags <span hidden>(or badge/label)</span></test-text>
-      <p class="article-description">
-        인접 요소나 부모 요소를 부연하는 시각 정보입니다. 상태, 카테고리, 키워드로 강조된 시각 정보는 사용자가 복잡한 정보 더미에서 중요한 정보를
-        우선적으로 파악하도록 돕습니다.
-      </p>
-
-      <aside class="article-aka">
-        <test-tag>a.k.a.</test-tag>
-        <span class="hashtag" title="">Badge</span>
-        <span class="hashtag" title="">Label</span>
-        <span class="hashtag" title="">Keyword</span>
-      </aside>
-
-      <section class="component-example">
-        <test-tile>
-          <test-row>
-            <!--  role="listitem" -->
-            <test-tag variant="primary" label="primary"></test-tag>
-            <test-tag variant="secondary" label="secondary"></test-tag>
-            <test-tag variant="tertiary" label="tertiary"></test-tag>
-            <test-tag variant="tertiary" label="🔥 with icon"></test-tag>
-            <test-tag role="listitem" style="background: var(--red100); border-color: var(--red100); color: var(--red800)">15</test-tag>
-            <!-- <figure class="tag-icon" role="img">🔥</figure> -->
-          </test-row>
-        </test-tile>
-        <article class="component-props">
-          <test-text variant="subhead">Props</test-text>
-          <dl>
-            <dt>label</dt>
-            <dd>string</dd>
-            <dd>2단어 이하의 형용사 또는 명사</dd>
-            <dt>appearance</dt>
-            <dd>'primary' | <del>'secondary'</del> | 'tertiary<sup>default value</sup>'</dd>
-            <dd>하나의 컨테이너에 primary는 하나만 존재한다.</dd>
-          </dl>
-        </article>
-      </section>
-
-      <test-text variant="body-large" class="article-kicker">
-        <b>4개 이상의 태그를 그룹화하지 마세요. </b>태그는 <mark>핵심 키워드를 요약</mark>하여 사용자의 콘텐츠 탐색과 선택을 돕는 역할입니다. 너무
-        많은 태그 목록을 노출하는 것은 되려 콘텐츠 탐색을 어렵게 할 수 있습니다.
-      </test-text>
-
-      <p>groupable</p>
-      <!-- <li>Primary style 하나만.</li> -->
-      <!-- <test-text variant="subhead">Best practices</test-text>
-          <li>non-clickable<span hidden>triggering interaction</span></li>
-          <li>Groupable</li>
-        </ul> -->
-      <!-- <li>최대 2단어</li> -->
     </article>
 
     <article class="article js-observer js-scrollspy-section">
@@ -418,96 +362,6 @@
     </article>
 
     <article class="article js-observer js-scrollspy-section">
-      <test-text variant="title" title="or Box">Tiles</test-text>
-      <p class="article-description">연관 정보를 묶어 시각적으로 강조하는 컨테이너입니다.</p>
-
-      <aside class="article-aka">
-        <test-tag>a.k.a.</test-tag>
-        <span class="hashtag" title="protocol mozilla">EmphasisBox</span>
-        <span class="hashtag" title="biings">Box</span>
-        <span class="hashtag" title="">Card</span>
-        <span class="hashtag" title="pinterest gestalt">Module</span>
-        <span class="hashtag" title="radix">section</span>
-        <span class="hashtag" title="radix">container</span>
-        <span class="hashtag" title="mui">Paper</span>
-      </aside>
-
-      <section class="component-example">
-        <test-tile variant="elevated" style="padding: 1rem">
-          <b style="font-size: var(--font-size-large); line-height: var(--font-line-height)">elevated large with subhead</b>
-          <p style="margin: 1rem">
-            문제: 크기에 따른 변별력이 없다. inset이 더 커진다면 모바일 등 작은 화면에서 미디어쿼리로 추가적인 inset 조절이 필요하기 때문에 컴포넌트의
-            고유성을 잃게 된다. 솔루션: inset이 1rem 초과할 때 콘텐츠 모듈을 가운데 정렬로 제한하여 고유성을 유지할 수 있다.
-          </p>
-          <p style="margin-top: var(--space-3)">이 tile은 페이지 레벨의 컴포넌트가 될 수 있다.</p>
-        </test-tile>
-        <test-tile variant="elevated">
-          <b>elevated</b>
-          <p>flat 형태와 구별이 잘 안 되어 쉐도우를 변경함.</p>
-        </test-tile>
-        <test-tile>
-          <!-- <figure class="media card-thumbnail">
-              <figcaption></figcaption>
-            </figure> -->
-          <b>flat with media</b>
-        </test-tile>
-        <test-tile>
-          <b>flat small</b>
-        </test-tile>
-
-        <article class="component-props">
-          <dl>
-            <dt>appearance</dt>
-            <dd>'flat' | 'elevated'</dd>
-            <dd></dd>
-            <dt>size</dt>
-            <dd>'large' | 'medium' | 'small'</dd>
-            <dd>TODO tiny size for tablist</dd>
-            <dt>children</dt>
-            <dd>React.Node</dd>
-          </dl>
-        </article>
-      </section>
-
-      <test-text variant="body-large" class="article-kicker">
-        <b>clickable</b>
-        '클릭할 수 있음'의 기표로 elevated 스타일을 사용합니다. 타일 전체가 클릭 영역일 수도, 타일 내부에 클릭 가능한 요소를 포함할 수도 있습니다.
-      </test-text>
-
-      <test-text variant="body-large">Memo</test-text>
-      <ul>
-        <li>타일 내부 leading, tailing 엘리먼트의 시각보정이 필요할 수 있습니다.</li>
-        <li>이것은 레이아웃 컴포넌트인가 컨테이너 컴포넌트인가.</li>
-        <li>TODO: section componenet : hero / , column container 2, 3</li>
-        <li>TODO: 모든 contentbox를 tile로 묶어두는 방법이 필요할지도.</li>
-      </ul>
-
-      <!-- <li>todo 선택 상태의 타일 디자인.</li> -->
-      <!-- <div style="display: flex">
-          <div style="width: 50%">
-            <span class="icon-indicator is-positive" data-size="small">
-              <span class="material-symbols-outlined" style="color: var(--color-primary)">check</span>
-            </span>
-            <ul style="padding: 0.5rem 0;">
-              <li>아티클 레벨에 사용합니다.</li>
-              <li>아티클 레벨에 사용합니다.</li>
-              <li>아티클 레벨에 사용합니다.</li>
-            </ul>
-          </div>
-          <div style="width: 50%">
-            <span class="icon-indicator is-negative" data-size="small"><span class="material-symbols-outlined">close</span></span>
-            <ul style="padding: 0.5rem 0;">
-              <li>페이지 레벨의 타이틀과 디스크립션을 타일로 만들지 마세요.</li>
-              <li>페이지 레벨의 타이틀과 디스크립션을 타일로 만들지 마세요.</li>
-              <li>페이지 레벨의 타이틀과 디스크립션을 타일로 만들지 마세요.</li>
-            </ul>
-          </div>
-        </div> -->
-      <!-- <test-text variant="body-large">todo Media</test-text>
-        <p>카드 썸네일은 2:1. 블리딩 시 높이를 고정해야 한다.</p> -->
-    </article>
-
-    <article class="article js-observer js-scrollspy-section">
       <test-text variant="title">Seperator</test-text>
       <p class="article-description">선으로 콘텐츠를 구획합니다. 반복과 대비가 구획되었다는 인상을 주기 때문에 남용하지 않습니다.</p>
       <hr role="separator" />
@@ -517,52 +371,6 @@
         <li>
           border 속성으로 스타일링하지 않습니다. hr 태그를 사용하면 의미론적으로 주제를 분리할 수 있고 컴포넌트의 고유성을 유지할 수 있습니다. + 선의
           굵기 버그.
-        </li>
-      </ul>
-    </article>
-
-    <article class="article js-observer js-scrollspy-section" style="overflow: visible">
-      <test-text variant="title">Tooltip</test-text>
-      <p class="article-description">용어를 설명하거나 정보의 근거를 보충합니다.</p>
-
-      <aside class="article-aka">
-        <test-tag>a.k.a.</test-tag>
-        <span class="hashtag" title="">Popover</span>
-      </aside>
-
-      <section class="component-example">
-        <test-tile>
-          <aside class="tooltip">
-            <span class="tooltip-trigger" aria-describedby="tooltip1">
-              <span class="material-symbols-outlined">contact_support</span>
-            </span>
-            <p class="tooltip-content" role="tooltip" id="tooltip1" hidden>
-              제1항의 해임건의는 국회재적의원 3분의 1 이상의 발의에 의하여 국회재적의원 과반수의 찬성이 있어야 한다.
-            </p>
-          </aside>
-        </test-tile>
-        <test-tile style="display: flex; align-items: center">
-          <aside class="tooltip is-icon">
-            <span class="tooltip-trigger" aria-describedby="tooltip1">
-              <span class="material-symbols-outlined"> account_circle </span>
-            </span>
-            <p class="tooltip-content" role="tooltip" id="tooltip2" hidden>로그인</p>
-          </aside>
-        </test-tile>
-        <!-- <span class="tooltip" data-tooltip="Just like this one.">Any element</span> -->
-      </section>
-
-      <test-text variant="body-large" class="article-kicker">
-        <b>정보를 보충하는</b> 보충의 맥락이기 때문에 행동을 유도하는 가이드로 사용하지 마세요. 툴팁의 트리거를 페이지 링크로 사용하지 마세요.사용자가
-        반드시 숙지해야 하는 중요한 정보를 툴팁으로 제공하지 마세요. cognitive? button이나 text link 등으로 충분히 강조하세요.
-      </test-text>
-
-      <test-text variant="usbhead">ggg</test-text>
-      <ul>
-        <li>A tooltip is not considered to be a popup in this context, as it is not interactive.</li>
-        <li>
-          페이지 로딩 시점에 열려 있는 경우 doorhanger/pointing arrow 필요. 하지만 그것은 툴팁이 아닌 새로운 컴포넌트로 정의할 필요가 있겠다. 하지만
-          이것이 필요 없도록 인터페이스를 설계하는 것이 best.
         </li>
       </ul>
     </article>
@@ -1158,90 +966,6 @@
         <li>다이얼로그(또는 모달)를 닫은 후 열기 전으로 포커스.</li>
         <li>다이얼로그를 닫기 전까지 기본 콘텐츠로 포커스할 수 없다.</li>
       </ul>
-    </article>
-
-    <article class="article js-observer js-scrollspy-section">
-      <test-text variant="title">Callouts</test-text>
-      <p class="article-description">시스템이나 브라우저의 상태 이상, 사용자의 행동에 피드백합니다.</p>
-
-      <aside class="article-aka">
-        <test-tag>a.k.a.</test-tag>
-        <span class="hashtag" title="">Alert</span>
-        <span class="hashtag" title="">Message</span>
-        <span class="hashtag" title="">Callout</span>
-        <span class="hashtag" title="">Banner</span>
-        <span class="hashtag" title="">Information</span>
-        <span class="hashtag" title="">Feedback</span>
-      </aside>
-
-      <section class="component-example">
-        <test-tile variant="elevated">
-          <div class="banner" role="banner" data-size="small">
-            <h2 class="banner-title">모바일 친화적인 배너.</h2>
-            <p class="banner-description">배너는 두 종류. 히어로와 그냥 배너.</p>
-            <!-- <button class="button-action chip" style="margin-top: 0.75rem"><span class="chip-label">콜아웃 액션 버튼 필요한가</span></button> -->
-            <!-- <figure style="position: absolute; right: -1rem; top: 20%; font-size: 4rem">🐒</figure> -->
-          </div>
-        </test-tile>
-        <test-tile>
-          <p role="alert" style="color: var(--red800)">비밀번호가 일치하지 않습니다.</p>
-          <test-callout icon="🧡"> 좋아요 표시한 동영상에 추가됨 </test-callout>
-          <test-callout variant="danger"> 인터넷에 연결되어 있지 않습니다. </test-callout>
-          <test-callout variant="danger">
-            샘플 테스트
-            <button class="alert-close" aria-label="close alert">
-              <span class="material-symbols-outlined">close</span>
-            </button>
-          </test-callout>
-          <test-callout variant="danger">
-            <p class="alert-text" style="color: var(--green800)">
-              바시니의 작품은 페라라 부르주아사회의 유대인 박해라는 깊은 상처에 기인한다는 점에서 정치적이다.
-            </p>
-          </test-callout>
-        </test-tile>
-      </section>
-      <!-- <ul>
-        <li>( + 게임에서 파티 탈퇴와 같이 직접 실행하지 않은, 시간을 특정하기 힘든 연속적인... 경우 여러 개가 필요하구나.)</li>
-        <p>toast=>snackbar(withAction) - 정리하기, single line / multiple lines (head,body 텍스트)</p>
-      </ul> -->
-
-      <test-text variant="subhead">Best practices</test-text>
-      <ul>
-        <li>닫기 또는 되돌리기 등 액션을 포함하지 마세요. 피드백에서 사용자 인터렉션이 필요하면 주목도가 높은 모달로 제공하세요.</li>
-        <li>사용자의 귀책이 아닌 경우, 단순 "오류" 대신 "시스템 오류"와 같은 용어를 사용하여 사용자가 잘못한 것처럼 느끼지 않도록 하세요.</li>
-        <li>브라우저가 role="alert" 속성이 있는 요소를 발견하면 즉시 사용자에게 경고 내용을 읽습니다.</li>
-      </ul>
-      <blockquote></blockquote>
-
-      <test-text variant="subhead">Props</test-text>
-      <dl>
-        <dt>title</dt>
-        <dd>string</dd>
-        <dt>description</dt>
-        <dd>string</dd>
-        <dt>href</dt>
-        <dd>string</dd>
-        <dt>onClick</dt>
-        <dd>() =] void</dd>
-      </dl>
-
-      <test-text variant="body-large">with Toast</test-text>
-      <!-- Icon: Informs users of the kind of notification at a glance.
-      Title: Gives users a quick overview of the notification.
-      Message (1optional): Provides additional detail and actionable steps for the user to take.
-      Inline notification action (1optional): Ghost button that allows users to address the notification or navigates them to a page with further details.
-      Close button (1optional): Closes the notification.
-      Time stamp (1optional): Shows the time the toast notification was sent. -->
-
-      <!-- <aside class="alert">
-        <button class="alert-close" aria-label="close"></button>
-        <p class="alert-head">
-          This includes the <a href="#">global HTML attributes</a>.
-        </p>
-        <p class="alert-body">
-          <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus.
-        </p>
-      </aside> -->
     </article>
 
     <article class="article js-observer js-scrollspy-section">

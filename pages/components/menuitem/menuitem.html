@@ -12,8 +12,8 @@
     <section class="component-example">
       <test-tile role="menu" style="z-index: 1">
         
-        <test-menu-item label="menuitem" role="menuitem">
-          <test-avatar slot="avatar"></test-avatar>
+        <test-menu-item label="menu item link" role="menuitem">
+          <test-avatar slot="avatar">🏹</test-avatar>
           <test-chip variant="primary" slot="action">action</test-chip>
         </test-menu-item>
 
@@ -23,12 +23,6 @@
           <test-chip label=" with quick action" style="margin-left: auto; margin-right: var(--space-2)"> </test-chip>
           <span class="material-symbols-outlined">chevron_right</span>
         </test-menu-item>
-
-        <test-menu-item label="링크">
-          <test-avatar slot="avatar">🏹</test-avatar>
-          <test-badge>새소식</test-badge>
-        </test-menu-item>
-
 
         <test-menu-item label="체크박스" role="menuitemradio">
           <test-avatar slot="avatar"></test-avatar>
@@ -49,7 +43,7 @@
         </test-menu-item>
 
         <test-menu-item class="js-darkmode" label="메뉴아이템" role="menuitem">
-          <test-avatar slot="avatar"><span class="material-symbols-outlined">nights_stay</span></test-avatar>
+          <test-avatar slot="avatar"><i class="iconoir-half-moon"></i></test-avatar>
         </test-menu-item>
 
         <test-tile variant="elevated" role="menuitemcheckbox" data-size="medium" style="margin-top: 0; margin-bottom: 0.125rem">

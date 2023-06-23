@@ -66,6 +66,7 @@
 .avatar[data-size=large] {width:var(--size-large);height:var(--size-large);}
 .avatar[data-size=medium] {width:var(--size-medium);height:var(--size-medium);}
 .avatar[data-size=small] {width:var(--size-small);height:var(--size-small);}
+.avatar[data-variant=secondary] {border:var(--border);background-color:var(--color-background);}
 
 .avatar-badge {
   width: var(--size-tiny);

@@ -4,15 +4,17 @@
       <!-- <span class="avatar" style="background: var(--color-background-weak); position: absolute; left: 0; top: 0">🐰</span> -->
       <test-text variant="title">Avatars</test-text>
       <p class="article-description">
-        <test-text variant="title">개체(유저, 회사, 프로젝트 등)를 대표하는 시각 정보입니다. 정보 더미의 주체로서 인접한 정보 더미 중 최상위 위계를 갖습니다.</test-text variant="title">
+        <test-text variant="title"
+          >개체(유저, 회사, 프로젝트 등)를 대표하는 시각 정보입니다. 정보 더미의 주체로서 인접한 정보 더미 중 최상위 위계를 갖습니다.</test-text
+        >
       </p>
     </header>
     <section class="component-example">
       <test-tile>
         <test-row>
-          <test-avatar size="huge"></test-avatar>
-          <test-avatar size="huge">odo secondary outlined</test-avatar>
-          <test-avatar size="large"></test-avatar>
+          <test-avatar size="huge" badge=""></test-avatar>
+          <test-avatar variant="secondary" size="huge" badge=""></test-avatar>
+          <test-avatar size="large" badge=""></test-avatar>
           <test-avatar size="medium">수</test-avatar>
           <test-avatar size="small">
             <span class="material-symbols-outlined" style="transform: scale(75%)">close</span>
@@ -52,71 +54,55 @@
 
     <br />
     <test-tile>
-      <article class="item" data-size="huge">
-        <test-avatar size="huge"></test-avatar>
-        <b class="item-name">EntityHuge</b>
-        <p class="item-description">description area.</p>
-        <span>description area2.</span>
-      </article>
-      <article class="item" data-size="large">
-        <test-avatar size="large"></test-avatar>
-        <b class="item-name">EntityLarge</b>
-        <p class="item-description">individual, user.</p>
-      </article>
-      <article class="item" data-size="medium" style="display: flex; align-items: center">
-        <figure class="item-avatar"></figure>
-        <b class="item-name" style="font-weight: var(--font-weight-normal)">EntityMedium</b>
-        <time style="margin: 0 0 0 var(--space-2); color: var(--color-text-light)">36.4만</time>
-        <!-- // 항상 같은 위치에 둘 수 있나. -->
-        <button
-          class="item-delete icon-indicator"
-          style="margin-left: auto; min-width: 24px; height: 24px; position: relative; right: auto; top: auto"
-        >
-          <span class="material-symbols-outlined">close</span>
-        </button>
-      </article>
-      <article class="item" data-size="small">
-        <figure class="item-avatar"></figure>
-        <b class="item-name" style="font-weight: var(--font-weight-normal)">EntitySmall</b>
-      </article>
+      <test-menu-item size="huge" label="EntityHuge" description="description area" description2="description area2.">
+        <test-avatar slot="avatar" size="huge"></test-avatar>
+      </test-menu-item>
+      <test-menu-item size="large" label="EntityLarge" description="individual, user">
+        <test-avatar slot="avatar" size="large"></test-avatar>
+      </test-menu-item>
+      <test-menu-item label="EntityMedium" time="36.4만">
+        <test-avatar slot="avatar"></test-avatar>
+        <test-chip slot="action" class="item-delete"></test-chip>
+      </test-menu-item>
+      <test-menu-item size="small" label="EntitySmall">
+        <test-avatar slot="avatar" size="small"></test-avatar>
+      </test-menu-item>
     </test-tile>
 
     <!-- <li>icon button, icon indicator, entity avatar, menu item avatar(icon)</li> -->
     <!-- <li>memeo. medium. 이하의 크기는 디스크립션을 제공하지 않는다. 항상 align-items:center.</li> -->
     <!-- <li>pagination item은 chip과 같은 size token을 사용하지만 chip도 avatar도 아닙니다.</li> -->
     <!-- <p>아바타만 단독으로 사용하는 케이스. space-after-avatar가 필요하지 않음.</p> -->
-    <article class="user tile-flat" style="max-width: 800px">
-      <test-text variant="body-large" style="margin-top: 0">
+
+    <test-tile>
+      <test-text variant="subhead">
         <del>non-clickable</del><br />avatar는 장식 요소로 오른쪽에 배치 (outdated) => 목록이 아닌 페이지 레벨의 대표 개체로 사용.
       </test-text>
-      <hr />
-      <test-avatar size="medium" style="border: var(--border); background-color: var(--color-background)"></test-avatar>
+      <test-avatar size="medium"></test-avatar>
       <b class="user-name">수줍이</b>
       <span class="user-id">soojubm@gmail.com</span>
       <span class="user-job">Youtube subscriber</span>
-    </article>
-
-    <test-tile style="max-width: 800px">
-      <test-text variant="body-large" style="margin-top: 0">groupable<br />avatar의 목록</test-text>
-      <hr />
-      <article class="avatargroup">
-        <test-avatar size="small"></test-avatar>
-        <test-avatar size="small"></test-avatar>
-        <test-avatar size="small"></test-avatar>
-        <test-avatar size="small"></test-avatar>
-        <span class="avatargroup-label">Followed by 수줍이 외 4명</span>
-      </article>
-      <small class="mutiual" style="display: block; margin: var(--space-2) 0 0 0">내가 팔로우하는 사용자 중에는 팔로워가 없습니다. (twitter)</small>
     </test-tile>
 
-    <test-tile variant="elevated" style="max-width: 800px">
-      <test-text variant="body-large" style="margin-top: 0">hoverable<br />요약된 사용자 정보. 사용자 프로필 페이지로 링크.</test-text>
-      <hr />
-      <article class="item" data-size="medium">
-        <test-avatar size="medium"></test-avatar>
-        <b class="item-name">사용자이름</b>
-      </article>
-      <p class="user-description" style="margin: var(--space-1) 0">Youtube subscriber</p>
+    <test-tile>
+      <test-text variant="subhead">groupable<br />avatar의 목록</test-text>
+      <test-tile variant="elevated">
+        <test-row class="avatargroup">
+          <test-avatar size="small"></test-avatar>
+          <test-avatar size="small"></test-avatar>
+          <test-avatar size="small"></test-avatar>
+          <test-avatar size="small"></test-avatar>
+          <span class="avatargroup-label">Followed by 수줍이 외 4명</span>
+        </test-row>
+      </test-tile>
+      <small class="mutiual">내가 팔로우하는 사용자 중에는 팔로워가 없습니다. (twitter)</small>
+    </test-tile>
+
+    <test-tile variant="elevated">
+      <test-text variant="subhead">hoverable<br />요약된 사용자 정보. 사용자 프로필 페이지로 링크.</test-text>
+      <test-menu-item label="메뉴아이템이 아닌 유저 컴포넌트" description="Youtube subscriber">
+        <test-avatar slot="avatar"></test-avatar>
+      </test-menu-item>
       <div class="statistic" data-size="small" style="justify-content: left; margin: var(--space-2) 0 0 0">
         <div class="statistic-item" onclick="javascript:alert('샘플 유아이에요!')">
           <i class="statistic-label">팔로워</i>

@@ -1,0 +1,47 @@
+<main class="component">
+  <article class="article js-observer js-scrollspy-section" style="overflow: visible">
+    <test-text variant="title">Tooltip</test-text>
+    <p class="article-description">용어를 설명하거나 정보의 근거를 보충합니다.</p>
+
+    <aside class="article-aka">
+      <test-tag>a.k.a.</test-tag>
+      <span class="hashtag" title="">Popover</span>
+    </aside>
+
+    <section class="component-example">
+      <test-tile>
+        <aside class="tooltip">
+          <span class="tooltip-trigger" aria-describedby="tooltip1">
+            <span class="material-symbols-outlined">contact_support</span>
+          </span>
+          <p class="tooltip-content" role="tooltip" id="tooltip1" hidden>
+            제1항의 해임건의는 국회재적의원 3분의 1 이상의 발의에 의하여 국회재적의원 과반수의 찬성이 있어야 한다.
+          </p>
+        </aside>
+      </test-tile>
+      <test-tile style="display: flex; align-items: center">
+        <aside class="tooltip is-icon">
+          <span class="tooltip-trigger" aria-describedby="tooltip1">
+            <span class="material-symbols-outlined"> account_circle </span>
+          </span>
+          <p class="tooltip-content" role="tooltip" id="tooltip2" hidden>로그인</p>
+        </aside>
+      </test-tile>
+      <!-- <span class="tooltip" data-tooltip="Just like this one.">Any element</span> -->
+    </section>
+
+    <test-text variant="body-large" class="article-kicker">
+      <b>정보를 보충하는</b> 보충의 맥락이기 때문에 행동을 유도하는 가이드로 사용하지 마세요. 툴팁의 트리거를 페이지 링크로 사용하지 마세요.사용자가
+      반드시 숙지해야 하는 중요한 정보를 툴팁으로 제공하지 마세요. cognitive? button이나 text link 등으로 충분히 강조하세요.
+    </test-text>
+
+    <test-text variant="usbhead">ggg</test-text>
+    <ul>
+      <li>A tooltip is not considered to be a popup in this context, as it is not interactive.</li>
+      <li>
+        페이지 로딩 시점에 열려 있는 경우 doorhanger/pointing arrow 필요. 하지만 그것은 툴팁이 아닌 새로운 컴포넌트로 정의할 필요가 있겠다. 하지만
+        이것이 필요 없도록 인터페이스를 설계하는 것이 best.
+      </li>
+    </ul>
+  </article>
+</main>

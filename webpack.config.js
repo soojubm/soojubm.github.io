@@ -26,7 +26,7 @@ const path = require('path')
 const HTML_TEMPLATE = './index.html'
 
 const patterns = ['result', 'searching', 'presentation', 'filter', 'text']
-const components = ['avatar', 'button', 'chip', 'checkbox', 'radio', 'textfield', 'menuitem']
+const components = ['avatar', 'button', 'chip', 'tag', 'checkbox', 'radio', 'textfield', 'tile', 'menuitem', 'switch', 'tooltip', 'callout']
 
 // let t = {}
 // const temp = components.forEach(item => {

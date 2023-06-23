@@ -19,6 +19,7 @@
 .footer-address-logo {display:block;font-size:var(--font-size-large);filter:grayscale(100%);opacity:.5;}
 .footer-address-slogan {margin:var(--space-4) 0;@mixin text-body-large;letter-spacing:.5px;}
 .footer-address-info {}
+.footer-address-info dt {color:var(--color-text-label)}
 .footer-copyright {display:block;}
 
 .footer-terms {}
@@ -27,7 +28,6 @@
 .footer-scroll {}
 .footer-scroll-indicator {}
 .footer-scroll-indicator i {width:2px;height:8px;background:var(--gray800);margin:8px auto 0;animation:bounce 0.5s infinite alternate;transform:rotate(90deg);}
-.footer-scroll-top {@mixin chip;}
 .footer-scroll-bottom {display:none;}
 
 

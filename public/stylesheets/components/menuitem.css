@@ -4,9 +4,14 @@
   align-items: center;
   width: 100%;
   gap: var(--space-2);
-  position:relative;z-index:1;
+  position:relative;
+  z-index:1;
 }
 .item-label {font-size:var(--font-size-medium);color:var(--color-text);}
+
+.item-description {
+  color: var(--color-text-light);
+}
 
 ::slotted([slot=action]) {margin:0 0 0 auto !important;}
 

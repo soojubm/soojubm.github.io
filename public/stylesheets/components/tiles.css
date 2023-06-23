@@ -22,7 +22,6 @@
   position: relative;
 }
 
-.tile-elevated,
 .tile[data-variant=elevated] {
   padding: var(--space-3);
   border: var(--border);
@@ -33,7 +32,6 @@
 }
 
 .tile[data-size=small] {
-
 }
 
 /* // 텍스트가 올 때 시각보정. 아이콘이 오면 아이콘에서 margin-top:.5rem?

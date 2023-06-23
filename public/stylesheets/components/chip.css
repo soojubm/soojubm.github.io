@@ -38,7 +38,7 @@ em {
   justify-content: center;
   min-width: var(--size-medium);
   height: var(--size-medium);
-  border: var(--border);
+  /* border: var(--border); */
   border-radius: var(--radius);
   background: var(--color-background-weak);
   color: var(--color-text);
