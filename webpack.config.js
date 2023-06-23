@@ -26,7 +26,7 @@ const path = require('path')
 const HTML_TEMPLATE = './index.html'
 
 const patterns = ['result', 'searching', 'presentation', 'filter', 'text']
-const components = ['avatar', 'button', 'chip', 'checkbox', 'radio', 'textfield']
+const components = ['avatar', 'button', 'chip', 'checkbox', 'radio', 'textfield', 'menuitem']
 
 // let t = {}
 // const temp = components.forEach(item => {
@@ -42,6 +42,14 @@ const setPages = data =>
     })
   })
 
+let test = {}
+components.forEach(item => {
+  test = {
+    ...test,
+    [item]: [`./pages/components/${item}/${item}.ts`, './public/javascripts/common/navbar.ts', './index.ts'],
+  }
+})
+
 module.exports = {
   mode: 'development', // development, production, none
   watch: true,
@@ -55,12 +63,14 @@ module.exports = {
     searching: ['./pages/searching/searching.ts', './public/javascripts/common/navbar.ts', './index.ts'],
     result: ['./pages/result/result.ts', './public/javascripts/common/navbar.ts', './index.ts'],
 
-    button: ['./pages/components/button/button.ts', './public/javascripts/common/navbar.ts', './index.ts'],
-    avatar: ['./pages/components/avatar/avatar.ts', './public/javascripts/common/navbar.ts', './index.ts'],
-    textfield: ['./pages/components/textfield/textfield.ts', './public/javascripts/common/navbar.ts', './index.ts'],
-    chip: ['./pages/components/chip/chip.ts', './public/javascripts/common/navbar.ts', './index.ts'],
-    checkbox: ['./pages/components/checkbox/checkbox.ts', './public/javascripts/common/navbar.ts', './index.ts'],
-    radio: ['./pages/components/radio/radio.ts', './public/javascripts/common/navbar.ts', './index.ts'],
+    ...test,
+    // button: ['./pages/components/button/button.ts', './public/javascripts/common/navbar.ts', './index.ts'],
+    // avatar: ['./pages/components/avatar/avatar.ts', './public/javascripts/common/navbar.ts', './index.ts'],
+    // textfield: ['./pages/components/textfield/textfield.ts', './public/javascripts/common/navbar.ts', './index.ts'],
+    // chip: ['./pages/components/chip/chip.ts', './public/javascripts/common/navbar.ts', './index.ts'],
+    // checkbox: ['./pages/components/checkbox/checkbox.ts', './public/javascripts/common/navbar.ts', './index.ts'],
+    // radio: ['./pages/components/radio/radio.ts', './public/javascripts/common/navbar.ts', './index.ts'],
+    // menuitem: ['./pages/components/menuitem/menuitem.ts', './public/javascripts/common/navbar.ts', './index.ts'],
   },
   output: {
     path: path.resolve(__dirname, './build'), // 기본값은 dist

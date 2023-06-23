@@ -110,6 +110,8 @@
     </div>
   </header>
 
+  <test-dialog></test-dialog>
+
   <nav class="component-navigation" role="menubar">
     <div class="component-navigation-background"></div>
     <test-row>
@@ -163,129 +165,6 @@
       </div> -->
 
     <!-- <p>button small 형태를 액션으로. chip.</p> -->
-
-    <article class="article js-observer js-scrollspy-section">
-      <test-text variant="title">Menus🚧</test-text>
-      <p class="article-description">사용자가 수행할 수 있는 행동 목록. avatarSlot</p>
-      <p>is summary</p>
-
-      <aside class="article-aka">
-        <test-tag>a.k.a.</test-tag>
-        <span class="hashtag" title="shopify 22 12">Action list</span>
-      </aside>
-
-      <section class="component-example">
-        <test-tile role="menu" style="z-index: 1">
-          
-          <test-menu-item label="menuitem" role="menuitem">
-            <test-avatar slot="avatar"></test-avatar>
-            <test-chip variant="primary" slot="action">action</test-chip>
-          </test-menu-item>
-
-          <test-menu-item label="windows 패턴">
-            <test-avatar slot="avatar"></test-avatar>
-            <span class="item-label"></span>
-            <test-chip label=" with quick action" style="margin-left: auto; margin-right: var(--space-2)"> </test-chip>
-            <span class="material-symbols-outlined">chevron_right</span>
-          </test-menu-item>
-
-          <test-menu-item label="링크">
-            <test-avatar slot="avatar">🏹</test-avatar>
-            <test-badge>새소식</test-badge>
-          </test-menu-item>
-
-
-          <test-menu-item label="체크박스" role="menuitemradio">
-            <test-avatar slot="avatar"></test-avatar>
-            <test-checkbox id="c1" name="c1" value="" slot="action">샘플</test-checkbox>
-          </test-menu-item>
-
-          <test-menu-item label="메뉴아이템 라디오 todo" role="menuitemradio">
-            <test-avatar slot="avatar"></test-avatar>
-            <test-radio id="c1" name="c1" value="" slot="action">샘플</test-rad>
-          </test-menu-item>
-
-          <test-menu-item role="menuitemradio" label="메뉴아이템 스위치 todo">
-            <test-avatar slot="avatar"></test-avatar>
-            <span class="switch" slot="action">
-              <input type="checkbox" id="dark1" name="" role="switch" />
-              <label for="dark1" style="padding-left: 48px" aria-label="어둡게 보기"></label>
-            </span>
-          </test-menu-item>
-
-          <test-menu-item class="js-darkmode" label="메뉴아이템" role="menuitem">
-            <test-avatar slot="avatar"><span class="material-symbols-outlined">nights_stay</span></test-avatar>
-          </test-menu-item>
-
-          <test-tile variant="elevated" role="menuitemcheckbox" data-size="medium" style="margin-top: 0; margin-bottom: 0.125rem">
-            <test-menu-item label="사진 및 동영상 백업">
-              <test-avatar slot="avatar">🦊</test-avatar>
-              <test-checkbox slot="action" role="switch" label="" style="margin-left: auto"></test-checkbox>
-            </test-menu-item>
-            <small>Google 포토에 최대 해상도로 백업</small>
-          </test-tile>
-        </test-tile>
-
-        <test-tile>
-          <menu class="menu">
-            <span class="menu-heading">menu heading</span>
-            <a class="menu-item" role="menuitem" href="#design">Only Text</a>
-            <a class="menu-item" role="menuitem" href="#design">menu item 은 메뉴에서 드롭다운에서</a>
-            <a class="dropdown-menu-item" href="#design">Text menu small</a>
-            <a class="dropdown-menu-item" href="#design">with popover</a>
-          </menu>
-        </test-tile>
-
-        <div class="component-props">
-          <test-text variant="subhead">Props</test-text>
-          <dl>
-            <dt>name</dt>
-            <dd>string</dd>
-            <dd></dd>
-            <dt>size</dt>
-            <dd>'large' | 'medium'</dd>
-            <dd>text 크기의 차이. large는 without avatar</dd>
-            <dt>action</dt>
-            <dd>'checkbox' | 'radio' | 'switch' | 'link (default)'</dd>
-            <dd></dd>
-            <dt>avatar?</dt>
-            <dd>React.ReactNode</dd>
-            <dd>small & large</dd>
-            <dt>tag<attr>?</attr></dt>
-            <dd>React.ReactNode</dd>
-            <dd></dd>
-            <dt>tile ???</dt>
-            <dd>elevated | none</dd>
-          </dl>
-        </div>
-      </section>
-
-      <!-- <test-text variant="subhead">Best practices</test-text> -->
-      <test-text variant="body-large" class="article-kicker">
-        메뉴 아이템의 우측는 액션 또는 액션 인티케이터만 위치할 수 있습니다. 'new' 등 태그 컴포넌트를 배치하지 마세요. (case 토스. 우측 new)
-      </test-text>
-      <test-text variant="body-large" class="article-kicker">
-        <b>메뉴 아이템은 리스트로 사용합니다.</b> elevated menu item은 강조를 위해 하나만 사용할 수 있습니다. ?? 하지만 이런 케이스는 별도의
-        컴포넌트로 만드는 것이 좋음.
-      </test-text>
-
-      <!-- <ul>
-          <li>
-            모든 menuitem container가 clickable은 아니다. => 액션 버튼이 따로 존재할 수도 있어야 한다. 이 정보가 중요한 이유 hover 상태
-            표현을 위해.
-          </li>
-        </ul> -->
-
-      <!-- <p>listitem은 li라서 제거함</p> -->
-
-      <!-- <test-text variant="body-large">Anatomy</test-text>
-        <p>Menu -> MenuButton(Trigger) / MenuList - MenuItem, MenuLink</p>
-        <ul>
-          <li>MenuItemAvatar. sizes: large | medium</li>
-          <li>MenuHelper. role: setting-item. filter-item.</li>
-          <li>MenuLink.</li>
-        </ul> -->
-    </article>
 
     <!-- <p class="article-description"><em>post 페이지에서 태그와 컴포넌트에서의 태그. hashtag는 tag 컴포넌트와 역할이 다르기 때문에 별도의 컴포넌트로 만들어주어야 한다. 현재 hashtag(keyword)는 chip으로 대체. todo. 댑스가 2이상 인 케이스.</em></p> -->
 

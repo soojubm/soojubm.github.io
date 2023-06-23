@@ -78,7 +78,7 @@
   --color-background-weak: var(--gray100);
   --color-background-strong: var(--gray800);
   --color-background-darkest: null;
-  --color-border: var(--gray200);
+  --color-border: var(--gray800);
   --color-border-hover: var(--gray800);
   --color-text: var(--gray800);
   --color-text-light: var(--gray400);

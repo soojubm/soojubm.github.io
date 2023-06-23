@@ -37,7 +37,6 @@ class Chip extends HTMLElement {
 
     // shadow.adoptedStyleSheets = [sheet]
 
-    // console.log('@@@@@@', host, this, sheet)
     // console.log('!!!!!', document.adoptedStyleSheets)
 
     // host.shadowRoot?.adoptedStyleSheets = [sheet]
@@ -63,7 +62,7 @@ class Chip extends HTMLElement {
     if (this.icon) host.appendChild(icon)
     host.appendChild(label)
 
-    label.innerHTML = this.content || this.label || ''
+    label.innerHTML = this.innerHTML || this.label || ''
 
     if (this.icon) {
       icon.innerHTML = this.icon
@@ -77,9 +76,13 @@ class Chip extends HTMLElement {
     if (this.status === 'disabled') host.setAttribute('disabled', 'true')
   }
 
-  get content() {
-    return this.innerHTML
-  }
+  // static get observedAttributes() {
+  //   return ['size', 'status', 'icon', 'type', 'value', 'label']
+  // }
+
+  // get content() {
+  //   return this.innerHTML
+  // }
 
   get size() {
     return this.getAttribute('size')

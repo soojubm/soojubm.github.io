@@ -36,6 +36,18 @@ class MenuItem extends HTMLElement {
     // shadow.appendChild(host)
 
     // host.classList.add('chip')
+
+    // const b = this.querySelector('[slot="trigger"]')
+
+    // if (b) {
+    //   b.addEventListener('click', () => {
+    //     if (p.style.display === 'none') {
+    //       p.style.display = 'block'
+    //     } else {
+    //       p.style.display = 'none'
+    //     }
+    //   })
+    // }
   }
 
   get label() {

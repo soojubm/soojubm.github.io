@@ -19,6 +19,8 @@ import Callout from './callout'
 
 import MenuItem from './menuitem'
 
+import Dialog from './dialog'
+
 export function defineCustomElement() {
   if ('customElements' in window) {
     customElements.define('test-button', Button)
@@ -43,11 +45,11 @@ export function defineCustomElement() {
 
     customElements.define('test-menu-item', MenuItem)
 
+    customElements.define('test-dialog', Dialog)
+
     // customElements.define('close-button', CloseButton)
 
     // Define the new element
     // customElements.define('word-count', WordCount, { extends: 'p' })
   }
 }
-
-// export { Chip, Tag, Avatar, Tile, Textfield, Checkbox, Row }
