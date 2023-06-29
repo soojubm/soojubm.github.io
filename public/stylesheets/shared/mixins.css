@@ -17,13 +17,13 @@
 
 @define-mixin image-centered {width:auto;height:auto;max-width:150%;max-height:150%;margin:auto;position:absolute;left:0;right:0;top:0;bottom:0;}
 @define-mixin bleeding {
-	margin: 0 -50vw;
-	position: absolute;
-	left: 50%;
-	right: 50%;
-	top: 0;
-	bottom: 0;
-	z-index: -1;
+  margin: 0 -50vw;
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
 }
 
 @define-mixin clearfix {
