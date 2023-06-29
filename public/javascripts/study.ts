@@ -376,10 +376,6 @@ function calculateReadTime() {
   readTimeElement.innerText = result
 }
 
-var pretty = document.createElement('script')
-pretty.src = 'https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js'
-document.body.appendChild(pretty)
-
 // !
 // How long you want the animation to take, in ms
 const animationDuration = 2000

@@ -23,35 +23,37 @@
     <p class="article-description">
       <test-text variant="title">페이지 이동이나 양식 제출 등 사용자 여정의 핵심과업을 수행하기 위한 액션입니다.</test-text>
     </p>
-    <test-tile>
+    <test-row>
       <test-tag>Button</test-tag>
-      button - text / icon(avatar)</test-tile
-    >
+      button - text / icon(avatar)
+    </test-row>
     <!-- a11ym menu - group - menuitem -->
     <section class="component-example">
-      <test-tile>
-        <test-row>
-          <test-button variant="primary" label="primary"></test-button>
-          <test-button variant="secondary" label="primary"></test-button>
-          <test-button variant="tertiary" label="primary"></test-button>
-          <test-button variant="danger" aria-label="danger" label="Destructive"></test-button>
-          <test-button variant="text" label="Text"></test-button>
-        </test-row>
-      </test-tile>
-      <test-tile>
-        <test-row>
-          <test-button variant="tertiary" size="large" label="Large"></test-button>
-          <test-button variant="tertiary" label="Medium">vertical-align: bottom"</test-button>
-        </test-row>
-      </test-tile>
-      <test-tile>
-        <test-row>
-          <test-button variant="tertiary" status="hover" label="Hover"> is-hover</test-button>
-          <test-button variant="tertiary" status="focus" label="Focus"> is-focus</test-button>
-          <test-button variant="tertiary" status="disabled" label="Disabled" disabled> is-hover</test-button>
-          <test-button variant="tertiary" label="Loading/Fetching"></test-button>
-        </test-row>
-      </test-tile>
+      <test-row direction="column">
+        <test-tile>
+          <test-row>
+            <test-button variant="primary" label="primary"></test-button>
+            <test-button variant="secondary" label="primary"></test-button>
+            <test-button variant="tertiary" label="primary"></test-button>
+            <test-button variant="danger" aria-label="danger" label="Destructive"></test-button>
+            <test-button variant="text" label="Text"></test-button>
+          </test-row>
+        </test-tile>
+        <test-tile>
+          <test-row>
+            <test-button variant="tertiary" size="large" label="Large"></test-button>
+            <test-button variant="tertiary" label="Medium">vertical-align: bottom"</test-button>
+          </test-row>
+        </test-tile>
+        <test-tile>
+          <test-row>
+            <test-button variant="tertiary" status="hover" label="Hover"> is-hover</test-button>
+            <test-button variant="tertiary" status="focus" label="Focus"> is-focus</test-button>
+            <test-button variant="tertiary" status="disabled" label="Disabled" disabled> is-hover</test-button>
+            <test-button variant="tertiary" label="Loading/Fetching"></test-button>
+          </test-row>
+        </test-tile>
+      </test-row>
 
       <article class="component-props">
         <!-- <test-text variant="subhead">Props</test-text> -->
@@ -98,6 +100,11 @@
         물리적인 인터페이스의 출현 뿐 아니라 예측할 수 있는 페이지 이동이나 페이지 새로고침, 정보 구조의 변화도 피드백으로 취급될 수 있습니다. (bad
         case. 인스타그램의 로그인 성공 toast)
       </test-text>
+
+      <test-text variant="body-large">
+        모든 액션에 피드백할 필요는 없습니다. (ex bad case: 인스타그램 앱에서 로그인되었다는 toast. 홈으로 이동과 피드 노출만으로 로그인 상태를 인지할
+        수 있다.)
+      </test-text>
       <test-text variant="body-large" class="article-kicker">
         <b aria-labe=" ?expectable">예측 가능해야 합니다.</b>
         CTA의 레이블은 사용자가 다음에 일어날 일을 예측 가능하도록 작성하세요. 툴팁으로 부연하거나, 보조 텍스트로 실행 유도나 실행 결과를 가이드할
@@ -110,11 +117,6 @@
     </section>
 
     <test-text variant="subhead">ShowMoreButton<span hidden>Image Button, CheckoutButton</span></test-text>
-    <ul style="margin-bottom: 0.5rem">
-      <li>fullWidth로 사용하지 마세요. 단일 콘텐츠 또는 콘텐츠 목록보다 너비를 좁게 하여 대비를 높입니다.</li>
-      <li>!!!!! 이건 최종 액션이 아님</li>
-    </ul>
-
     <test-tile>
       <test-button variant="tertiary">
         Show more button in avatar
@@ -123,23 +125,27 @@
         </test-avatar>
       </test-button>
     </test-tile>
+    <ul>
+      <li>fullWidth로 사용하지 마세요. 단일 콘텐츠 또는 콘텐츠 목록보다 너비를 좁게 하여 대비를 높입니다.</li>
+      <li>!!!!! 이건 최종 액션이 아님</li>
+    </ul>
 
     <br /><br />
 
     <test-text variant="subhead">Button group</test-text>
-    <ul>
-      <li>binary choices. 최대 2개의 버튼. + 왼쪽 정렬된 옵션 버튼 케이스.</li>
-      <li>primary action에 먼저 포커스할 수 있어야 합니다. tab index보다 마크업 순서를.</li>
-      <li>fullWidth보다 fluid라는 명칭이 더 유용하다. tablist도 fluid 가능하다.</li>
-      <li>onCancelClick / onConfirmClick</li>
-      <!-- <li>toolbar 컴포넌트와 구분하기.</li> -->
-    </ul>
     <test-tile>
       <test-row>
         <test-button variant="tertiary">취소</test-button>
         <test-button variant="primary">저장(confirm)</test-button>
       </test-row>
     </test-tile>
+    <ul>
+      <li>binary choices. 최대 2개의 버튼. + 왼쪽 정렬된 옵션 버튼 케이스.</li>
+      <li>primary action에 먼저 포커스할 수 있어야 합니다. tab index보다 마크업 순서를.</li>
+      <li>fullWidth보다 fluid라는 명칭이 더 유용하다. tablist도 fluid 가능하다.</li>
+      <li>onCancelClick / onConfirmClick</li>
+      <li>toolbar 컴포넌트와 구분하기.</li>
+    </ul>
 
     <test-tile>
       <test-row>
@@ -155,7 +161,7 @@
       </test-row>
     </test-tile>
 
-    <!-- <li>TODO: utton과 chip을 통합.</li> -->
+    <li>TODO: utton과 chip을 통합.</li>
 
     <!-- <test-text variant="body-large">Icon guidelines</test-text> -->
     <!-- <li>당연한 얘기... 텍스트 레이블을 생략하는 경우 관습적인 메타포의 아이콘(북마크/하트/카트 등)을 사용하고 대체 텍스트와 툴팁을 제공하세요.</li>
@@ -169,6 +175,59 @@
         않습니다.)
       </p> -->
 
-    <!-- <p>사용자에게 단추를 한 번에 한 개 또는 두 개만 표시합니다(예: 수락 및 취소). 사용자에게 더 많은 작업을 표시해야 하는 경우 사용자가 하나의 명령 단추로 작업을 선택하여 트리거할 수 있도록 확인란 또는 라디오 단추를 사용하는 것이 좋습니다.</p> -->
+    <p>
+      사용자에게 단추를 한 번에 한 개 또는 두 개만 표시합니다(예: 수락 및 취소). 사용자에게 더 많은 작업을 표시해야 하는 경우 사용자가 하나의 명령
+      단추로 작업을 선택하여 트리거할 수 있도록 확인란 또는 라디오 단추를 사용하는 것이 좋습니다.
+    </p>
+  </article>
+
+  <article class="article js-observer js-scrollspy-section">
+    <test-text variant="title">Links</test-text>
+    <p class="article-description">사용자 여정 목적지. 페이지 이동. destination that can be bookmarked. 정보 확장 기능은 따로 정의해야 함.</p>
+
+    <test-row class="article-aka">
+      <test-tag>a.k.a.</test-tag>
+      <span class="hashtag" title="">Anchor</span>
+    </test-row>
+
+    <section class="component-example">
+      <test-tile>
+        <p>
+          형무소 안에서는 소장의 말이 곧 법이었으며 죄수들의 잘못과 실수는 결코 용납되지 않는다. 어머니의 사망 소식을 듣고 인해 2번이나 탈옥을
+          시도했다가 체포된 <a class="link-inner" href="#">루크</a>의 발에 쇠통이 채워지며 루크는…<a
+            class="more link-outside"
+            href="#"
+            style="margin-left: 0.25rem"
+            >더 보기</a
+          >
+        </p>
+        <div style="margin-top: var(--space-3)">
+          <a class="hashtag" href="">이것은헤시태그</a>
+          <a class="hashtag" href="">해시태그는클릭할수있다?</a>
+          <a class="hashtag" href="">해시태그를통한검색</a>
+        </div>
+      </test-tile>
+      <div class="component-props">
+        <test-text variant="subhead">Props</test-text>
+        <dl>
+          <dt>style</dt>
+          <dd>'inside' | 'outside'</dd>
+          <dd>
+            단락 내부와 외부에서의 형태를 구분합니다. 단락 내부에서는 본문 텍스트와 대비를 높이기 위해 언더라인을 표시합니다. 불필요해보이는 규칙.
+          </dd>
+          <dt>href?</dt>
+          <dd>string</dd>
+          <dd>NNNNN</dd>
+          <dt>isExternal<attr>?</attr></dt>
+          <dd>boolean</dd>
+          <dd>속성들... target=_blank rel=noopener noreferrer</dd>
+        </dl>
+      </div>
+    </section>
+
+    <ul>
+      <li>Link 안에 button이 들어가면 링크 역할과 버튼의 형태를 분리할 수 있다.</li>
+    </ul>
+    <test-text variant="body-large" class="article-kicker"><b>항상 텍스트 단락과 함께 사용합니다.</b> TODO text button과의 차이</test-text>
   </article>
 </main>

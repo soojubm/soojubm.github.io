@@ -310,7 +310,7 @@ async function domEvents() {
 
 // event.target.reset();
 
-// const ttt = item.tags.map(i => `<span class="tag">${i}</span>`).join('')
+// const ttt = item.tags.map(i => `<test-tag>${i}</span>`).join('')
 
 // var i = 0;
 // var images = ['cover1.jpg','cover2.jpg'];

@@ -33,24 +33,40 @@ p {
   font-weight: var(--font-weight-bold);
 }
 
-h1, .text-title, [data-variant=title] {
+.text-title, [data-variant=title] {
   line-height: var(--line-height);
   
   font-size:var(--font-size-huge);font-weight:var(--font-weight-bold);line-height:var(--font-line-height);color:var(--color-text);}
-h2, .text-subhead, [data-variant=subhead] {
-  /* margin: 0 0 var(--space-after-subhead) 0; */
-
+.text-subhead, [data-variant=subhead] {
+  /* // 단독으로 쓰이지 않음 */
+  margin: 0 0 var(--space-after-subhead) 0;
   line-height: var(--line-height);
   font-size:var(--font-size-large);
   font-weight:var(--font-weight-bold);
-  color:var(--color-text);
+  color: var(--color-text);
 }
-.text-label {font-size:var(--font-size-medium);font-weight:var(--font-weight-normal);color:var(--color-text-light);}
+[data-variant=body] {
+  line-height: 24px;
+}
 
-.util-truncate {@mixin truncate;}
+[data-variant=body-bold] {
+  line-height: 24px;
+  font-weight: var(--font-weight-bold);
+}
+
+
+[data-variant=body-large] {
+  font-size:var(--font-size-large);
+}
 
 [data-variant=label] {
   text-transform: uppercase;
   letter-spacing: .5px;
-  font-size:var(--font-size-medium);font-weight:var(--font-weight-normal);color:var(--color-text-light);
+  font-size:var(--font-size-medium);
+  font-weight:var(--font-weight-normal)
+  s;color:var(--color-text-light);
 }
+
+.text-label {font-size:var(--font-size-medium);font-weight:var(--font-weight-normal);color:var(--color-text-light);}
+
+.util-truncate {@mixin truncate;}

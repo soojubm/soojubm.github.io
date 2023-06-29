@@ -7,34 +7,45 @@
   position:relative;
   z-index:1;
 }
-.item-label {font-size:var(--font-size-medium);color:var(--color-text);}
-
+.item-label {
+  font-size:var(--font-size-medium);
+  color:var(--color-text);
+}
 .item-description {
   color: var(--color-text-light);
 }
 
+/* reset */
+menu {margin:0;padding:0;}
+
+::slotted([slot=avatar]) {
+  display:flex;
+  align-items:center;
+}
 ::slotted([slot=action]) {margin:0 0 0 auto !important;}
+::slotted([slot=text]) {}
 
 
-.item:hover {@mixin hover-item;}
+[data-size=large] {}
+[data-size=large] .item-label {}
+[data-size=large] .item-description {}
 
-
-.item + .item {margin:var(--space-after-item) 0 0 0;}
 
 .item-description {display:block;color:var(--color-text-light);line-height:var(--font-line-height);}
 .item-description + .item-name {margin-top:-.125rem;}
 .item-tag {margin-left:var(--space-2);}
+
+.item:hover {@mixin hover-item;}
+
 
 /* .item .checkbox {display:flex;justify-content:flex-end;position:absolute;left:0;right:0;top:0;bottom:0;}
 .item .checkbox label {width:100%;}
 .item .checkbox label:before {display:none;left:auto;right:0;top:4px;}
 .item .checkbox label:after {left:auto;right:7px;top:12px;} */
 
-// chip-togglable
+/* // chip-togglable
+// 이건 필요 없다. 팔로우 팔로잉. 외에는 switch */
 .item-action.is-active {border-color:transparent;background:var(--color-background-weak);color:var(--color-text);}
-.item-follow {}
-.item-delete {}
-.item-delete:hover {}
 
 [role=menuitem] {display:flex;align-items:center;width:100%;}
 [role=menuitemcheckbox] {display:flex;align-items:center;}

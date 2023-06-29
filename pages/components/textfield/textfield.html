@@ -20,15 +20,12 @@
       input
     </div>
     <test-text variant="title">Textfields</test-text>
-    <p class="article-description">
-      텍스트 정보를 입력합니다. Inputfields 로 변경하기. 넘버필드는 작은 사이즈인데 결국 두 개의 사이즈로? 수량 뿐 아니라 숫자만 입력할 수 있는 필드.
-      헬퍼 텍스트(위/아래). label :: line-height: 24px
-    </p>
-    <aside class="article-aka">
+    <p class="article-description">텍스트 정보를 입력합니다.</p>
+    <test-row class="article-aka">
       <test-tag>a.k.a.</test-tag>
       <span class="hashtag">TextInput</span>
       <span class="hashtag">Input</span>
-    </aside>
+    </test-row>
     <section class="component-example">
       <test-tile>
         <!-- <p>unit, choose/enter</p> -->
@@ -38,13 +35,12 @@
           type="email"
           label="레이블"
           placeholder="Textarea Placeholder..."
-          helper="helper text"
+          helper="이미 등록된 이메일입니다."
           isOptional
           aria-describedby="error"
           aria-errormessage="msgID"
           aria-invalid="true"
         ></test-textfield>
-        <small id="msgID" class="textfield-helper is-error" aria-live="assertive">이미 등록된 이메일입니다.</small>
       </test-tile>
 
       <test-tile>
@@ -52,13 +48,10 @@
           type="number"
           label="넘버필드 가격"
           placeholder="Textarea Placeholder..."
-          helper="helper text"
+          helper="price를 위한 numberField. 앞자리 0 제거. 숫자만입력3자리마다콤마. 소숫점 컨트롤."
           oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
         ></test-textfield>
-        <small id="" class="textfield-helper" aria-live="assertive">
-          <p>price를 위한 numberField. 앞자리 0 제거. 숫자만입력3자리마다콤마. 소숫점 컨트롤.</p>
-        </small>
-        <small id="" class="textfield-helper" aria-live="assertive">pattern="[0-9]+"</small>
+        <!-- <small id="" class="textfield-helper" aria-live="assertive">pattern="[0-9]+"</small> -->
       </test-tile>
 
       <test-tile>
@@ -72,20 +65,18 @@
       </test-tile>
 
       <test-tile class="textfield-group">
-        <div class="textfield">
-          <label class="textfield-label" for="date-start"><i class="">체크인</i></label>
-          <figure class="textfield-prefix" for="date-start">
-            <span class="material-symbols-outlined">today</span>
-          </figure>
-          <input class="textfield-input" type="date" id="date-start" placeholder="날짜를 설정해주세요." />
-        </div>
-        <div class="textfield">
-          <label class="textfield-label" for="date-end"><i class="">체크아웃</i></label>
-          <figure class="textfield-prefix" for="date-end">
-            <span class="material-symbols-outlined">event</span>
-          </figure>
-          <input class="textfield-input" type="date" id="date-end" placeholder="날짜를 설정해주세요." />
-        </div>
+        <test-row>
+          <test-textfield type="date" name="date-start" label="체크인" placeholder="날짜를 설정해주세요.">
+            <figure slot="icon" class="textfield-prefix" for="date-start">
+              <span class="material-symbols-outlined">today</span>
+            </figure>
+          </test-textfield>
+          <test-textfield type="date" name="date-end" label="체크아웃" placeholder="날짜를 설정해주세요.">
+            <figure class="textfield-prefix" for="date-end">
+              <span class="material-symbols-outlined">event</span>
+            </figure>
+          </test-textfield>
+        </test-row>
       </test-tile>
 
       <test-tile>
@@ -156,6 +147,10 @@
         </dl>
       </article>
     </section>
+
+    <p>
+      넘버필드는 작은 사이즈인데 결국 두 개의 사이즈로? 수량 뿐 아니라 숫자만 입력할 수 있는 필드. 헬퍼 텍스트(위/아래). label :: line-height: 24px
+    </p>
 
     <test-text variant="body-large" class="article-kicker">
       <b>불필요한 정보 입력을 유도하지 마세요.</b> 사용자 여정에 허들이 될 수 있는 불필요한 입력 필드는 최소화. 다시말해 모든 텍스트 필드는 필수

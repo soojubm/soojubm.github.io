@@ -5,3 +5,9 @@ export function makeStyleSheet(name) {
 
   return link
 }
+
+export function importScript(url) {
+  var pretty = document.createElement('link')
+  pretty.href = url
+  document.body.appendChild(pretty)
+}

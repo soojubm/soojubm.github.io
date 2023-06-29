@@ -25,16 +25,20 @@ class Checkbox extends HTMLElement {
     container.appendChild(input)
     container.appendChild(label)
 
-    label.textContent = this.label
     label.setAttribute('for', this.name || '')
     input.setAttribute('id', this.name || '')
     input.setAttribute('name', this.name || '')
+
+    if (this.label) {
+      label.textContent = this.label
+    } else {
+      label.append(...this.childNodes)
+    }
 
     if (this.checked) input.setAttribute('checked', 'true')
     if (this.disabled) input.setAttribute('disabled', 'true')
 
     if (this.size) container.setAttribute('data-size', this.size)
-
     if (this.helper) {
       const helper = document.createElement('p')
       helper.textContent = this.helper
@@ -59,9 +63,6 @@ class Checkbox extends HTMLElement {
 
   get label() {
     return this.getAttribute('label')
-  }
-  set label(value) {
-    if (value) this.setAttribute('label', value)
   }
 
   get checked() {

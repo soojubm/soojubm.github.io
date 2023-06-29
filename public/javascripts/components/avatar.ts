@@ -1,5 +1,10 @@
 import { makeStyleSheet } from './utils'
 
+export function inheritStyle(shadow, container) {
+  const style = shadow.getAttribute('style')
+  container.setAttribute('style', style || '')
+}
+
 class Avatar extends HTMLElement {
   constructor() {
     super()
@@ -16,10 +21,11 @@ class Avatar extends HTMLElement {
     container.setAttribute('data-size', this.size || '')
     container.setAttribute('data-variant', this.variant || '')
 
-    container.innerHTML = this.innerHTML
-
     shadow.appendChild(container)
-    shadow.appendChild(makeStyleSheet('avatar'))
+    container.append(...this.childNodes, makeStyleSheet('avatar'))
+
+    const style = this.getAttribute('style')
+    container.setAttribute('style', style || '')
 
     if (this.badge === '') {
       container.appendChild(badge)
@@ -47,10 +53,7 @@ class Avatar extends HTMLElement {
     return this.getAttribute('badge')
   }
 
-  connectedCallback() {
-    // this.textContent = this.label
-  }
-
+  connectedCallback() {}
   disconnectedCallback() {
     console.log('disconnected', this)
   }

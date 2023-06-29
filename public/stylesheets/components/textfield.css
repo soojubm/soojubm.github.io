@@ -1,3 +1,7 @@
+p {
+  margin: 0;
+}
+
 .reset-input {
   background: var(--color-background-weak);
   border: 1px solid transparent;

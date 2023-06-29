@@ -6,54 +6,34 @@ class Tooltip extends HTMLElement {
 
     const shadow = this.attachShadow({ mode: 'open' })
 
-    const container = document.createElement('figure')
-    const badge = document.createElement('span')
+    // 결국 2개 다 슬롯이어야 하는 듯. slot-trigger / slot-content
+    const container = document.createElement('div')
+    const trigger = document.createElement('span')
+    const content = document.createElement('div')
 
-    container.classList.add('avatar')
-    badge.classList.add('avatar-badge')
+    container.classList.add('tooltip')
+    trigger.classList.add('tooltip-trigger')
+    trigger.classList.add('iconoir-help-center')
+    content.classList.add('tooltip-content')
 
-    container.setAttribute('role', 'img')
-    container.setAttribute('data-size', this.size || '')
-    container.setAttribute('data-variant', this.variant || '')
-
-    container.innerHTML = this.innerHTML
+    content.role = 'tooltip'
 
     shadow.appendChild(container)
-    shadow.appendChild(makeStyleSheet('avatar'))
+    shadow.appendChild(makeStyleSheet('tooltip'))
 
-    if (this.badge === '') {
-      container.appendChild(badge)
-    }
-    // Attach the created elements to the shadow dom
-    // <span class="avatar-badge"></span>
-    // container.appendChild(label)
-    // label.textContent = this.label
+    container.appendChild(trigger)
+    container.appendChild(content)
 
-    // if (this.type === 'primary') container.classList.add('is-primary')
+    trigger.innerHTML = this.innerHTML
+    content.innerText = this.content || ''
   }
 
-  get variant() {
-    return this.getAttribute('variant')
+  get content() {
+    return this.getAttribute('content')
   }
 
-  get size() {
-    return this.getAttribute('size')
-  }
-  set size(value) {
-    if (value) this.setAttribute('size', value)
-  }
-
-  get badge() {
-    return this.getAttribute('badge')
-  }
-
-  connectedCallback() {
-    // this.textContent = this.label
-  }
-
-  disconnectedCallback() {
-    console.log('disconnected', this)
-  }
+  connectedCallback() {}
+  disconnectedCallback() {}
 }
 
 export default Tooltip

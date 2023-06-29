@@ -11,6 +11,7 @@ class Button extends HTMLElement {
     container.dataset.size = this.size || ''
     container.dataset.status = this.status || ''
 
+    // Button.append(...this.childNodes)
     container.textContent = this.textContent || this.label
 
     shadow.appendChild(container)
@@ -39,7 +40,10 @@ class Button extends HTMLElement {
     return this.getAttribute('status')
   }
 
-  connectedCallback() {}
+  connectedCallback() {
+    // this.attachShadow({ mode: 'open' });
+    // this.shadowRoot.append(b);
+  }
   disconnectedCallback() {}
 }
 

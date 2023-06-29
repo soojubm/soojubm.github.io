@@ -52,21 +52,17 @@
 .card-thumbnail {padding-top:50%;overflow:hidden;background:var(--color-background-weak);border-radius:var(--radius);box-sizing:border-box;position:relative;}
 .card-thumbnail img {display:block;width:auto;height:auto;max-width:100%;max-height:130%;margin:auto;position:absolute;left:-1px;right:-1px;top:-1px;bottom:-1px;}
 
-.card-avatar {@mixin avatar-large;position:absolute;right:1.5rem;top:172px;}
+.card-avatar {position:absolute;right:1.5rem;top:172px;}
 
 .card-byline {display:flex;align-items:center;margin:var(--space-2) 0 0 0;position:relative;z-index:1;}
 .card-byline:hover {@mixin hover-item;}
-.card-byline-avatar {@mixin avatar-small;margin:0 var(--space-after-avatar-small) 0 0;}
 .card-byline-name {color:var(--color-text);line-height:var(--size-small);}
 
 .card-title {padding:var(--space-3) 0 0;font-size:var(--font-size-medium);font-weight:var(--font-weight-bold);color:var(--color-text);}
 .card-text {@mixin truncate-multi;margin:var(--space-1) 0;}
-.card-category {@mixin tag-primary;position:absolute;left:var(--space-2);top:var(--space-2);}
-.card-date {margin:0 0 0 .5rem;color:var(--color-text-light);}
 
-// list view에서 간격.
-.card-tags {@mixin stack;display:inline-flex;margin-top:var(--space-3);}
-.card-tags-item {@mixin tag;}
+.card-category {position:absolute;left:var(--space-2);top:var(--space-2);}
+.card-date {margin:0 0 0 .5rem;color:var(--color-text-light);}
 
 .card-note {@mixin tag;justify-content:center;width:100%;margin:var(--space-3) 0 0 0;}
 

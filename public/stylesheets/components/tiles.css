@@ -10,7 +10,7 @@
 
 
   /* // 임시 */
-  margin: var(--space-3) 0;
+  /* margin: var(--space-3) 0; */
 }
 
 .tile-flat {
@@ -20,6 +20,12 @@
   box-sizing: border-box;
   background: var(--color-background);
   position: relative;
+}
+
+.tile[data-variant=nuded] {
+  padding: 0;
+  border: 0;
+  background: none;
 }
 
 .tile[data-variant=elevated] {
@@ -32,6 +38,25 @@
 }
 
 .tile[data-size=small] {
+  padding: var(--space-2);
+}
+
+/* reset  */
+figure {
+  margin: 0;
+}
+p {margin: 0;}
+img {display:block;width:100%;}
+
+
+::slotted([slot=actions]) {
+  position: absolute;
+  right: var(--space-1);
+  top: var(--space-1);
+  z-index: 1;
+}
+::slotted([slot=tags]) {
+  margin: var(--space-2) 0;
 }
 
 /* // 텍스트가 올 때 시각보정. 아이콘이 오면 아이콘에서 margin-top:.5rem?

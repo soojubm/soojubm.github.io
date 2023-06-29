@@ -8,6 +8,7 @@ import Tile from './tile'
 import Textfield from './input'
 
 import Checkbox from './checkbox'
+import Switch from './switch'
 import Radio from './Radio'
 
 import Button from './button'
@@ -21,6 +22,8 @@ import MenuItem from './menuitem'
 
 import Dialog from './dialog'
 
+import Tooltip from './tooltip'
+
 export function defineCustomElement() {
   if ('customElements' in window) {
     customElements.define('test-button', Button)
@@ -33,6 +36,7 @@ export function defineCustomElement() {
     customElements.define('test-textfield', Textfield)
 
     customElements.define('test-checkbox', Checkbox)
+    customElements.define('test-switch', Switch)
     customElements.define('test-radio', Radio)
 
     customElements.define('test-tile', Tile)
@@ -47,9 +51,56 @@ export function defineCustomElement() {
 
     customElements.define('test-dialog', Dialog)
 
-    // customElements.define('close-button', CloseButton)
+    customElements.define('test-tooltip', Tooltip)
 
-    // Define the new element
-    // customElements.define('word-count', WordCount, { extends: 'p' })
+    // customElements.define('close-button', CloseButton)
   }
 }
+
+// <script>
+// const text = document.createTextNode(`${Math.random()}`);
+// document.querySelector('x-component').appendChild(text);
+
+// setInterval(() => {
+//   // update text node (no slotchange update)
+//   text.data = `${Math.random()}`;
+
+//   // update text content (triggers slotchange update)
+//   document.querySelector('x-component').textContent = `${Math.random()}`;
+
+//   // change the DOM structure (triggers slotchange update)
+//   document.querySelector('x-component').innerHTML = `<span>${Math.random()}</span>`;
+// }, 1000);
+// </script>
+
+// <script>
+// setInterval(() => {
+//   // update text content
+//   document.querySelector('x-component').textContent = `${Math.random()}`;
+
+//   // change the DOM structure
+//   document.querySelector('x-component').innerHTML = `<span>${Math.random()}</span>`;
+// }, 1000);
+
+// 이벤트가 발생하지 않음
+// const text = document.createTextNode(`${Math.random()}`);
+// document.querySelector('x-component').appendChild(text);
+// </script>
+
+// const template = document.createElement('template')
+// template.innerHTML = `
+// <div class="inner-template">
+//   <slot></slot>
+// </div>`
+
+// class XComponent extends HTMLElement {
+//   constructor() {
+//     super()
+//     this.attachShadow({ mode: 'open' })
+//     this.shadowRoot.appendChild(template.content.cloneNode(true))
+
+//     this.shadowRoot.addEventListener('slotchange', event => console.log(event))
+//   }
+// }
+
+// customElements.define('x-component', XComponent)

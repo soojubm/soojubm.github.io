@@ -12,6 +12,7 @@
   padding:0 var(--space-2);
   border-radius: var(--radius);
   background-color: var(--gray400);
+  font-weight: var(--font-weight-normal);
   font-size:var(--font-size-small);
   color:#fff;
   line-height: 1;

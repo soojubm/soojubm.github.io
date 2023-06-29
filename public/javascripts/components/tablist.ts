@@ -34,16 +34,16 @@ class Tablist extends HTMLElement {
     shadow.appendChild(container)
     shadow.appendChild(makeStyleSheet('tablist'))
 
-    container.innerHTML = this.content
+    container.append(...this.childNodes)
 
-    const parsedData = JSON.parse(`${this.data}`)
-    container.appendChild(
-      parsedData.map(item => {
-        return `
-        <div>${item.label}</div>
-      `
-      }),
-    )
+    // const parsedData = JSON.parse(`${this.data}`)
+    // container.appendChild(
+    //   parsedData.map(item => {
+    //     return `
+    //     <div>${item.label}</div>
+    //   `
+    //   }),
+    // )
     // console.log(JSON.parse(`${this.data}`), 'tabs')
   }
 
@@ -54,10 +54,6 @@ class Tablist extends HTMLElement {
   // selected
   get value() {
     return this.getAttribute('value')
-  }
-
-  get content() {
-    return this.innerHTML
   }
 
   connectedCallback() {}

@@ -4,21 +4,22 @@
     <p class="article-description">켜거나 끌 수 있는 옵션입니다. 설정. 필터.</p>
     <p hidden>A switch is a visual toggle between two mutually exclusive states — on and off.</p>
 
-    <aside class="article-aka">
+    <test-row class="article-aka">
       <test-tag>a.k.a.</test-tag>
       <span class="hashtag" title="protocol mozilla">Toggle</span>
-    </aside>
+    </test-row>
 
     <section class="component-example">
       <test-tile>
-        <span class="switch">
-          <input type="checkbox" id="switch1" name="" role="switch" value="on" checked />
-          <label for="switch1" title="Receive weekly newsletter">뉴스레터 받아보기</label>
-        </span>
-        <span class="switch" style="margin-top: var(--space-3)">
+        <test-switch name="newsletter" label="뉴스레터 받아보기"> </test-switch>
+        <test-switch name="newsletter" label="뉴스레터 받아보기" disabled> </test-switch>
+
+        <!-- <input type="checkbox" id="switch1" name="" role="switch" value="on" checked />
+        <label for="switch1" title="Receive weekly newsletter"></label> -->
+        <!-- <span class="switch" style="margin-top: var(--space-3)">
           <input type="checkbox" id="switch2" name="" role="switch" value="off" disabled />
           <label for="switch2" title="Receive weekly newsletter">뉴스레터 받아보기</label>
-        </span>
+        </span> -->
       </test-tile>
       <article class="component-props">
         <test-text variant="subhead">Props</test-text>
@@ -42,6 +43,12 @@
         </dl>
       </article>
     </section>
+
+    <test-text variant="subhead">anatomy</test-text>
+    <ul>
+      <li>Switch</li>
+      <li>SwitchLabel</li>
+    </ul>
 
     <test-text variant="body-large" class="article-kicker">
       <b>즉시 실행</b>

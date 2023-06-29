@@ -21,6 +21,25 @@
   }
 }
 
+:host {
+  --chip-color-background: 0;
+  --chip-color-border: 0;
+  --chip-color-text: 0;
+}
+
+:host([status=info]) {
+  --chip-color-background: 0;
+  --chip-color-border: 0;
+}
+
+:host([size=compact]) {
+  --padding: 8px 12px;
+  --font-size: 14px;
+}
+/* ui-alert[status=promotion] {
+  --background: purple;
+  --color: gray;
+} */
 
 button {
   padding: 0;

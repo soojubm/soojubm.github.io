@@ -12,13 +12,18 @@ class Input extends HTMLElement {
     label.classList.add('textfield-label')
 
     const input = document.createElement('input')
+
     input.classList.add('reset-input')
     input.classList.add('textfield-input')
     input.setAttribute('type', 'text')
 
+    const iconSlot = document.createElement('slot')
+    iconSlot.name = 'icon'
+
     shadow.appendChild(container)
     container.appendChild(label)
     container.appendChild(input)
+    container.appendChild(iconSlot)
 
     // Apply external styles to the shadow dom
     const linkElem = document.createElement('link')

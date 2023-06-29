@@ -14,10 +14,29 @@
 .navbar-menu span {line-height: var(--size-medium);}
 
 .navbar-menu-item:before {display:none;}
-.navbar-menu-item i {display:none;margin-left:8px;}
 .navbar-menu-item menu {display:flex;justify-content:center;justify-content:left;position:fixed;left:0;right:0;top:-240px;z-index:var(--zindex-menu);transition:var(--transition-base);}
 .navbar-menu-item menu a {display:flex;align-items:center;gap:.5rem;margin:var(--space-1) 0;color:var(--color-text);opacity:0;position:relative;z-index:var(--zindex-default);}
-.navbar-menu-item menu a[aria-current=page] {background:var(--color-background-weak);}
+
+
+/* using hover-item */
+.navbar-menu-item menu a[aria-current=page] {
+  --hover-outline: calc(var(--space-2) / 2 * -1);
+  cursor: pointer;
+}
+
+.navbar-menu-item menu a[aria-current=page]:before {
+  /* // z-idnex 이슈 */
+  content:'';
+  display:block;
+  background-color:var(--green100);
+  border-radius:var(--radius);
+  position:absolute;
+  left: 0; right: 0;
+  top: 0; bottom: 0;
+  margin: var(--space-1-minus) var(--space-2-minus);
+  /* left:var(--hover-outline);right:var(--hover-outline);top:var(--hover-outline);bottom:var(--hover-outline); */
+  z-index: -1;
+}
 
 /* .navbar-menu-item menu a:hover {@mixin hover-item;}
 

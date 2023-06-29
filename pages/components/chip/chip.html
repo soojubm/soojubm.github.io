@@ -1,48 +1,48 @@
 <main class="component">
   <article class="article js-observer js-scrollspy-section">
     <test-text variant="title">Chips</test-text>
-    <test-text variant="title">사용자 여정을 보조하는 액션입니다. 실행 페이지 내에서 사용자는 즉각적인 결과를 기대할 수 있습니다.</test-text>
+    <p class="article-description">사용자 여정을 보조하는 액션입니다. 실행 페이지 내에서 사용자는 즉각적인 결과를 기대할 수 있습니다.</p>
 
-    <p>todo aria-expanded :: dropdown with icon</p>
-
-    <aside class="article-aka" style="margin: 0">
+    <test-row class="article-aka" style="margin: 0">
       <test-tag>a.k.a.</test-tag>
       <span class="hashtag" title="">Tag</span>
       <span class="hashtag" title="">Pill</span>
       <span class="hashtag" title="">Badge</span>
       <span class="hashtag" title="gitlab">Token</span>
       <span class="hashtag" title="">Label</span>
-    </aside>
+    </test-row>
 
     <section class="component-example">
-      <test-tile>
-        <test-row>
-          <test-chip label="default"></test-chip>
-          <test-chip label="active" status="active"></test-chip>
-          <test-chip label="disabled" status="disabled"> style="opacity: 0.5; cursor: not-allowed" disabled</test-chip>
-          <test-chip label="destructive"> background: var(--red100) / color: var(--red800)</test-chip>
-        </test-row>
-      </test-tile>
-      <test-tile>
-        <test-row>
-          <test-chip icon="❤️" label="좋아요" value="117"></test-chip>
-          <test-chip label="removable"></test-chip>
-          <test-chip icon="🦔" label="with icon"></test-chip>
-          <test-chip icon="✓" label="checkable" status="active"></test-chip>
-          <test-chip label="expandable" aria-expanded="true"></test-chip>
-        </test-row>
-      </test-tile>
-      <test-tile>
-        <test-row>
-          <!-- 아이콘버튼은 아바타가 아니라 칩/버튼 액션이다. -->
-          <test-chip>
-            <span class="material-symbols-outlined">close</span>
-          </test-chip>
-          <test-chip>
-            <span class="material-symbols-outlined">close</span>
-          </test-chip>
-        </test-row>
-      </test-tile>
+      <test-row>
+        <test-tile>
+          <test-row>
+            <test-chip label="default"></test-chip>
+            <test-chip label="active" status="active"></test-chip>
+            <test-chip label="disabled" status="disabled"> style="opacity: 0.5; cursor: not-allowed" disabled</test-chip>
+            <test-chip label="destructive"> background: var(--red100) / color: var(--red800)</test-chip>
+          </test-row>
+        </test-tile>
+        <test-tile>
+          <test-row>
+            <test-chip icon="❤️" label="좋아요" value="117"></test-chip>
+            <test-chip label="removable"></test-chip>
+            <test-chip icon="🦔" label="with icon"></test-chip>
+            <test-chip icon="✓" label="checkable" status="active"></test-chip>
+            <test-chip label="expandable" aria-expanded="true"></test-chip>
+          </test-row>
+        </test-tile>
+        <test-tile>
+          <test-row>
+            <!-- 아이콘버튼은 아바타가 아니라 칩/버튼 액션이다. -->
+            <test-chip>
+              <span class="material-symbols-outlined">close</span>
+            </test-chip>
+            <test-chip>
+              <span class="material-symbols-outlined">close</span>
+            </test-chip>
+          </test-row>
+        </test-tile>
+      </test-row>
       <article class="component-props">
         <test-text variant="subhead">Props</test-text>
         <dl>
@@ -229,5 +229,7 @@
       <span class="icon-bullet"></span>
       <a href="https://developer.android.com/reference/com/google/android/material/chip/ChipGroup" target="_blank"> MD chip group </a>
     </div>
+
+    <p>todo aria-expanded :: dropdown with icon</p>
   </article>
 </main>

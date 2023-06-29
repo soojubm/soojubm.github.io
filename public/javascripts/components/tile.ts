@@ -8,14 +8,27 @@ class Tile extends HTMLElement {
     const container = document.createElement('div')
     container.classList.add('tile')
 
-    shadow.appendChild(container)
-    shadow.appendChild(makeStyleSheet('tiles'))
+    const slotActions = document.createElement('slot')
+    const slotTags = document.createElement('slot')
+    slotActions.name = 'actions'
+    slotTags.name = 'tags'
 
-    // console.log('content', this.content)
-    // console.log('parentNode', this.parentNode)
-    // console.log('parentElement', this.parentElement)
+    const style = this.getAttribute('style')
+    container.setAttribute('style', style || '')
+
+    shadow.appendChild(container)
+
+    // console.log(...this.childNodes, ...this.children, 'this.childNodes')
+    // => #text, #text / #text
+
+    let temp
+    for (const node of this.childNodes) {
+      // temp = [,...rest]
+    }
+    container.append(slotActions, slotTags, ...this.children, makeStyleSheet('tiles'))
+
     if (this.variant) container.setAttribute('data-variant', this.variant)
-    container.innerHTML = this.content
+    container.setAttribute('data-size', this.size || '')
   }
 
   // tile 안에 클래스 적용 안 됨.
@@ -30,18 +43,11 @@ class Tile extends HTMLElement {
     return this.getAttribute('variant')
   }
 
-  get content() {
-    return this.innerHTML
+  get size() {
+    return this.getAttribute('size')
   }
 
-  // set content(value) {
-  //   return (container = value)
-  // }
-
-  connectedCallback() {
-    // this.textContent = this.label
-  }
-
+  connectedCallback() {}
   disconnectedCallback() {
     console.log('disconnected', this)
   }

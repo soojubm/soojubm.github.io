@@ -118,7 +118,7 @@
   --space-4: 1rem;
 
   --space-after-title: 1rem;
-  --space-after-subhead: var(--space-2);
+  --space-after-subhead: var(--space-3);
   --space-after-description: 2rem;
   --space-after-button: var(--space-2);
   --space-after-textfield: var(--space-4);

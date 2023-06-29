@@ -6,12 +6,12 @@
       우선적으로 파악하도록 돕습니다.
     </p>
 
-    <aside class="article-aka">
+    <test-row class="article-aka">
       <test-tag>a.k.a.</test-tag>
       <span class="hashtag" title="">Badge</span>
       <span class="hashtag" title="">Label</span>
       <span class="hashtag" title="">Keyword</span>
-    </aside>
+    </test-row>
 
     <section class="component-example">
       <test-tile>
@@ -50,5 +50,28 @@
         <li>Groupable</li>
       </ul> -->
     <!-- <li>최대 2단어</li> -->
+  </article>
+
+  <!-- <p>Badges show the count of some adjacent data. A dot badge notifies the user that something is new or updated without showing a count.</p> -->
+  <article class="article js-observer js-scrollspy-section">
+    <test-text variant="title">Badges</test-text>
+    <p class="article-description">수량, 상태.</p>
+
+    <section class="component-example">
+      <test-tile>
+        <test-row>
+          <!-- <test-badge variant="primary">24</test-badge> -->
+          <test-badge variant="secondary">16</test-badge>
+          <test-chip>
+            <span style="display: inline-block; line-height: 16px">메뉴 &nbsp;</span>
+            <test-badge>16</test-badge>
+          </test-chip>
+          <test-tag>
+            <em style="display: inline-flex; width: 6px; height: 6px; margin-right: var(--space-2); background: crimson; border-radius: 50%"></em>
+            live
+          </test-tag>
+        </test-row>
+      </test-tile>
+    </section>
   </article>
 </main>

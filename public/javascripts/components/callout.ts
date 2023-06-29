@@ -7,24 +7,23 @@ class Callout extends HTMLElement {
 
     const container = document.createElement('div')
     const icon = document.createElement('figure')
+    const heading = document.createElement('h3')
     const text = document.createElement('p')
 
-    container.appendChild(icon)
-    container.appendChild(text)
-
-    text.innerText = this.content || ''
+    heading.innerText = this.heading || ''
+    text.innerText = this.text || this.content || ''
     icon.innerText = this.icon || ''
-
-    container.classList.add('callout')
-    icon.classList.add('callout-icon')
-    text.classList.add('callout-text')
-
-    shadow.appendChild(container)
-    shadow.appendChild(makeStyleSheet('callout'))
 
     container.dataset.variant = this.variant || ''
 
-    text.innerHTML = this.content
+    container.classList.add('callout')
+    icon.classList.add('callout-icon')
+    heading.classList.add('callout-title')
+    text.classList.add('callout-text')
+
+    shadow.appendChild(container)
+    container.append(icon, heading, text)
+    shadow.appendChild(makeStyleSheet('callout'))
   }
 
   // tile 안에 클래스 적용 안 됨.
@@ -39,8 +38,13 @@ class Callout extends HTMLElement {
     return this.getAttribute('icon')
   }
 
+  // TODO title / HTMLElement
+  get heading() {
+    return this.getAttribute('heading')
+  }
+
   get text() {
-    return this.textContent
+    return this.getAttribute('text')
   }
 
   get variant() {
@@ -55,13 +59,8 @@ class Callout extends HTMLElement {
   //   return (container = value)
   // }
 
-  connectedCallback() {
-    // this.textContent = this.label
-  }
-
-  disconnectedCallback() {
-    console.log('disconnected', this)
-  }
+  connectedCallback() {}
+  disconnectedCallback() {}
 }
 
 export default Callout

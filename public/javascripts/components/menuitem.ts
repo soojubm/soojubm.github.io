@@ -6,19 +6,25 @@ class MenuItem extends HTMLElement {
   constructor() {
     super()
     const container = document.createElement('div')
+    const temp = document.createElement('slot')
     const avatar = document.createElement('slot')
     const action = document.createElement('slot')
+    const text = document.createElement('slot')
     const label = document.createElement('span')
 
     const description = document.createElement(this.description === 'description' ? 'span' : 'time')
+
+    container.role = 'menuitem'
 
     container.classList.add('item')
     label.classList.add('item-label')
     description.classList.add('item-description')
     // action.classList.add('item-action')
 
+    temp.name = 'check'
     avatar.name = 'avatar'
     action.name = 'action'
+    text.name = 'text'
 
     description.innerText = this.description || ''
 
@@ -30,7 +36,7 @@ class MenuItem extends HTMLElement {
     // shadow.appendChild(button)
 
     shadow.appendChild(container)
-    container.append(avatar, label, description, action, makeStyleSheet('menuitem'))
+    container.append(temp, avatar, text, label, description, action, makeStyleSheet('menuitem'))
 
     // const template = this.getTemplate()
     // shadow.innerHTML = template

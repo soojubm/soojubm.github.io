@@ -1,88 +1,111 @@
 <!-- // menu 태그 안에 heading을 포함하는 경우, 반응형을 위한 메뉴 구조는 안 된다. -->
 <nav class="navbar js-navbar" role="navigation">
   <test-chip class="navbar-burger js-navbar-toggle" aria-label="전체메뉴" aria-haspopup="true" aria-expanded="false">
-    <span class="material-symbols-outlined">lunch_dining</span>
+    <i class="iconoir-menu-scale"></i>
   </test-chip>
 
   <div class="navbar-menu">
     <div class="navbar-menu-item has-submenu">
       <menu>
-        <a href="home.html">
-          <i class="iconoir-home" style="margin-right: 0.25rem" aria-label="홈"></i>
+        <a href="index.html">
+          <i class="iconoir-home-simple-door" aria-label="홈"></i>
         </a>
-        <a href="tokens.html">Tokens</a>
+        <a href="tokens.html">
+          <i class="iconoir-palette"></i>
+          Tokens</a
+        >
+        <a href="signifier.html">Signifier</a>
+      </menu>
+    </div>
+    <div class="navbar-menu-item has-submenu" style="margin: var(--space-2) 0 0 0">
+      <menu>
+        <p style="line-height: var(--size-medium)" role="heading"><test-text variant="label">component</test-text></p>
+        <a href="avatar.html">
+          <i class="iconoir-user"></i>
+          avatar
+          <test-badge>테스트</test-badge>
+        </a>
+        <a href="entity.html"> <i class="iconoir-user-square"></i> entity</a>
+        <!-- <test-menu-item label="button" href="button.html"> <i slot="avatar" class="iconoir-shortcut"></i> button</test-menu-item> -->
+        <a href="button.html"> <i class="iconoir-shortcut"></i> button</a>
+        <a href="chip.html"> <i class="iconoir-shortcut"></i> chip</a>
+
+        <a href="menuitem.html"> <i class="iconoir-shortcut"></i> menu item</a>
+
+        <a href="checkbox.html"> <i class="iconoir-list-select"></i> checkbox</a>
+        <a href="radio.html"><i class="iconoir-list-select"></i> radio</a>
+        <a href="switch.html">
+          <i class="iconoir-switch-off"></i>
+          switch
+        </a>
+        <a href="textfield.html">
+          <i class="iconoir-input-field"></i>
+          textfield</a
+        >
+        <a href="tag.html">
+          <i class="iconoir-label"></i>
+          tag</a
+        >
+        <a href="tile.html">
+          <i class="iconoir-box"></i>
+          tile</a
+        >
+        <a href="tooltip.html">
+          <i class="iconoir-help-square"> </i>
+          tooltip
+        </a>
+        <a href="callout.html">
+          <i class="iconoir-megaphone"></i>
+          callout</a
+        >
+        <a href="text.html">text</a>
         <a href="components.html"> Components</a>
-        <a href="#signifier_why">
-          <!-- <span class="material-symbols-outlined"> category </span> -->
-          Signifier</a
+      </menu>
+    </div>
+    <div class="navbar-menu-item has-submenu" style="margin: var(--space-2) 0 0 0">
+      <menu>
+        <!-- // role="heading" -->
+        <p style="line-height: var(--size-medium)">
+          <test-text variant="label">Patterns</test-text>
+        </p>
+        <a href="setting.html">
+          <i class="iconoir-settings"></i>
+          setting</a
+        >
+        <a href="post.html">
+          <i class="iconoir-open-book"></i>
+          post</a
+        >
+        <a href="chat.html">
+          <i class="iconoir-chat-bubble"></i>
+          chat</a
         >
         <hr />
-        <a href="#dummies"> Dummies</a>
-        <hr />
-        <a href="#utilities"> Utilities</a>
-        <a href="#foundations"> Foundations</a>
-        <!-- <a href="#dictionary">Memo 🚧</a> -->
-        <!-- <a href="#hierarchy">Hierarchy <sup>foundation</sup></a> -->
-      </menu>
-    </div>
-    <div class="navbar-menu-item has-submenu" style="margin: var(--space-2) 0 0 0">
-      <menu>
-        <!-- // role="heading" -->
-        <p style="line-height: var(--size-medium)"><test-text variant="label">component</test-text></p>
-        <a href="./avatar.html">
-          avatar
-          <test-badge>진행중</test-badge>
-        </a>
-        <a href="./button.html">button</a>
-        <a href="./chip.html">chip</a>
-        <a href="./checkbox.html">checkbox</a>
-        <a href="./radio.html">radio</a>
-        <a href="./switch.html">switch</a>
-        <a href="./textfield.html">textfield</a>
-        <a href="./menuitem.html">menu item</a>
-        <a href="./tag.html">tag</a>
-        <a href="./tile.html">tile</a>
-        <a href="./tooltip.html">tooltip</a>
-        <a href="./callout.html">callout</a>
-      </menu>
-    </div>
-    <div class="navbar-menu-item has-submenu" style="margin: var(--space-2) 0 0 0">
-      <menu>
-        <!-- // role="heading" -->
-        <p style="line-height: var(--size-medium)"><test-text variant="label">Patterns</test-text></p>
-        <a href="./searching.html">searching</a>
-        <a href="./result.html">Result</a>
-        <a href="#presentations_why">Presentations</a>
-        <a href="#filter">Filtering</a>
-        <a href="#texts">Texts</a>
-        <!-- <a href="#entity">Entity 🚧</a> -->
-        <!-- <a href="#menus">Menus </a> -->
-        <!-- <a href="#scrolling">Vertical Scrolling</a> -->
-        <!-- <a href="#indicators">Indicators</a> -->
-        <!-- <a href="#messaging">Messaging</a> -->
+        <a href="accordion.html">accordion</a>
+        <a href="searching.html">searching</a>
+        <a href="filtering.html">filtering</a>
+        <a href="result.html">result</a>
+        <a href="presentation.html">presentations</a>
+        <!-- <a href="#messaging">messaging / feedback </a> -->
         <!-- <a href="#terms">Terms & Privacy</a> -->
       </menu>
     </div>
     <div class="navbar-menu-item has-submenu" style="margin: var(--space-2) 0 0 0">
-      <!-- <span class="menu-label" role="menuitem">Interfaces</span> -->
+      <!-- <span class="menu-label" role="menuitem"></span> -->
       <menu>
-        <p style="line-height: var(--size-medium)"><test-text variant="label">Patterns</test-text></p>
-
+        <p style="line-height: var(--size-medium)"><test-text variant="label">Interfaces</test-text></p>
         <a href="#profile">User Profile 🔥</a>
         <a href="#kakaopay">Kakaopay (outdated)</a>
         <a href="#_login">Sign In</a>
         <a href="#_signup">Sign Up</a>
         <a href="#_forgot">Forgot Password</a>
-        <a href="#settings">Settings</a>
-        <a href="#post">Post</a>
         <a href="#product">Product</a>
-        <a href="#cart">Cart</a>
+        <a href="#cart">Cart</a>å
         <a href="#checkout">Checkout</a>
         <!-- <a href="#orders">Orders</a> -->
         <a href="#cake">Product 2</a>
         <a href="#notifications">Notifications</a>
         <a href="#feed">Feed</a>
-        <a href="#chat">Chat</a>
         <!-- <a href="#contact">Contact</a>
               <a href="#help">Help</a> -->
         <a href="#class">Product 3 - class</a>

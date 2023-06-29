@@ -1,0 +1,208 @@
+<main class="layout-setting component">
+  <header style="display: flex; flex-direction: column; align-items: center; padding: 2rem 0 0 0">
+    <test-avatar size="huge"></test-avatar>
+    <test-text variant="subhead" style="margin: 0.75rem 0 0 0">수줍이님, 어서와요<i>!</i></test-text>
+  </header>
+
+  <test-text variant="subhead">개인정보</test-text>
+  <test-tile class="setting-item">
+    <span class="setting-item-label">이메일</span>
+    <div class="setting-item-value">soojubm@gmail.com</div>
+    <span class="setting-item-icon material-symbols-outlined"> arrow_forward </span>
+  </test-tile>
+  <test-tile class="setting-item">
+    <em class="avatar-badge"></em>
+    <span class="setting-item-label">배송지</span>
+    <div class="setting-item-value">배송지를 관리하고 기본 배송지를 설정하세요.</div>
+    <span class="setting-item-icon material-symbols-outlined">arrow_forward</span>
+  </test-tile>
+
+  <test-text variant="subhead">프로필 사진</test-text>
+  <test-tile class="setting-item">
+    <test-avatar size="huge"></test-avatar>
+    <test-row>
+      <test-chip>프로필 사진 추가 / 업데이</test-chip>
+      <test-chip>delete</test-chip>
+    </test-row>
+    <p>10MB 이내의 JPEG, PNG, GIF 형식이어야 합니다.</p>
+    <test-chip>Go to your persnal profile</test-chip>
+    <test-callout variant="success"> 프로필 사진을 업데이트했습니다. 멋져 보이네요, soojubm님! </test-callout>
+    <test-callout variant="danger"> 프로필 사진을 삭제했습니다. </test-callout>
+  </test-tile>
+
+  <test-text variant="subhead">프로필 정보</test-text>
+  <!-- <p class="setting-description">뉴니커 정보를 입력하고 뽐내보세요.</p> -->
+  <div class="setting-item">
+    <span class="setting-item-label">닉네임</span>
+    <div class="setting-item-value">수줍이</div>
+    <span class="setting-item-icon material-symbols-outlined">arrow_forward</span>
+  </div>
+  <p class="setting-item-helper">
+    soojubm 닉네임을 만드세요! 60일 동안 변경할 수 없습니다 — 취소할 수 없습니다! Twitch 이용규약을 위반한 닉네임은 계정이 영구정지될 수 있으니
+    주의하세요.
+  </p>
+  <div class="setting-item">
+    <span class="setting-item-label">이모지</span>
+    <div class="setting-item-value">🐻</div>
+    <span class="setting-item-icon material-symbols-outlined">arrow_forward</span>
+  </div>
+  <div class="setting-item">
+    <span class="setting-item-label">관심분야</span>
+    <div class="setting-item-value">문화/예술, 인권, 환경</div>
+    <span class="setting-item-icon material-symbols-outlined">arrow_forward</span>
+  </div>
+  <p class="setting-item-helper">관심있는 분야의 콘텐츠를 추천 받으세요.</p>
+  <test-row>
+    <test-chip icon="🦔" label="다운로드"></test-chip>
+    <test-chip icon="🦔" label="고객센터"></test-chip>
+  </test-row>
+
+  <test-text variant="subhead">뉴스레터</test-text>
+  <button class="item js-darkmode" role="menuitem" data-tile="elevated" data-size="medium">
+    <test-avatar><span class="material-symbols-outlined">email</span></test-avatar>
+    <span class="item-label">시사 뉴스레터</span>
+    <test-switch label=""></test-switch>
+  </button>
+  <p class="setting-item-helper">매 주 월요일, 수요일, 금요일 아침에 받아볼 수 있어요.</p>
+
+  <test-text variant="subhead">멤버십 가입 정보</test-text>
+  <test-tile>
+    <dl>
+      <dt>다음 결제 예정일</dt>
+      <dd>2024.04.02.</dd>
+      <dt>결제금액</dt>
+      <dd>46,800원</dd>
+      <dt>결제수단</dt>
+      <dd>현대카드 ****-****-****-7922</dd>
+    </dl>
+    <footer style="margin: 1rem 0 0 0; position: relative">
+      <test-button variant="tertiary">
+        결제수단변경
+        <span class="material-symbols-outlined">arrow_forward</span>
+      </test-button>
+    </footer>
+    <style>
+      .layout-setting {
+        max-width: 800px;
+        margin:0 auto;
+      }
+      dl {
+        display: flex;
+        flex-wrap: wrap;
+
+        /* TODO reset */
+        margin: 0;
+      }
+      dl dt {
+        width: 40%;
+        margin: 0.25rem 0;
+      }
+      dl dd {
+        width: 60%;
+        margin: 0.25rem 0;
+        text-align: right;
+      }
+    </style>
+  </test-tile>
+
+  <test-text variant="subhead">보안</test-text>
+  <test-tile class="setting-item">
+    <span class="setting-item-label">비밀번호 변경</span>
+    <div class="setting-item-value">강력한 비밀번호로 보안을 강화하세요.</div>
+    <span class="setting-item-icon material-symbols-outlined">arrow_forward</span>
+  </test-tile>
+  <p class="setting-item-helper">비밀번호 변경 관련 안내를 해주어도 좋겠다. 비밀번호는 설정, 분실 시 이메일 모두 동일할 수 있을까.</p>
+
+  <test-tile class="setting-item">
+    <span class="setting-item-label">계정 비활성화</span>
+    <div class="setting-item-value"><a href="">비활성화 페이지</a>에서 할 수 있습니다.</div>
+    <span class="setting-item-icon material-symbols-outlined">arrow_forward</span>
+  </test-tile>
+
+  <footer style="margin: 2rem 0 0 0; text-align: center">
+    <test-button variant="tertiary">로그아웃</test-button>
+  </footer>
+
+  <test-text variant="subhead">Best practices</test-text>
+  <ul>
+    <li>개인정보와 프로필 정보를 구분한다.</li>
+    <li>프로필 수정은 프로필 페이지에서 진입할 수 있다.</li>
+    <li>사이드메뉴 또는 탭 vs 깊은 페이지</li>
+    <li>계정삭제 vs 계정비활성화</li>
+    <li>계정 삭제 페이지와 비밀번호 찾기 페이지는 라우팅이 필요하다.</li>
+    <!-- <p>Your name appears on your Profile page, as your byline, and in your responses. It is a required field.</p> -->
+  </ul>
+
+  <test-text variant="subhead">Service sign-in / Integration</test-text>
+  <p>페이스북 연동</p>
+  <br />
+
+  <test-tile variant="elevated" data-size="large">
+    <test-avatar>
+      <span class="material-symbols-outlined">badge</span>
+    </test-avatar>
+    <span class="item-label">사용자 정보</span>
+    <span class="item-description">전자 메일, 일정, 연락처에서 사용하는 계정</span>
+  </test-tile>
+  <test-menu-item label="이메일">
+    <test-avatar style="background-image: none">
+      <span class="material-symbols-outlined">mail</span>
+    </test-avatar>
+    <!-- <span class="setting-item-icon"> <b hidden>변경하기</b>  </span> -->
+  </test-menu-item>
+  <test-menu-item label="비밀번호 변경">
+    <test-avatar></test-avatar>
+    <div class="item-action">
+      <div class="chip"><span class="chip-label">변경</span></div>
+    </div>
+    <span class="setting-item-icon"> <b hidden>변경하기</b> </span>
+  </test-menu-item>
+  <hr />
+  <test-tile variant="elevated">
+    <figure class="item-avatar" style="background-image: none">
+      <span class="material-symbols-outlined"> campaign </span>
+    </figure>
+    <span class="item-label">알림</span>
+    <p class="item-description">앱 및 시스템의 할인</p>
+  </test-tile>
+
+  <div>
+    <header class="titlebar js-titlebar" role="navigation" style="padding: 0">
+      <div class="titlebar-background"></div>
+      <h1 class="titlebar-title js-page-title" title="page title">이름 바꾸기</h1>
+      <button class="titlebar-back" onclick="javascript:window.location.href='/';">
+        <figure class="titlebar-back-icon material-symbols-outlined" title="이전 페이지로">arrow_back</figure>
+        <!-- <span class="titlebar-back-label">뒤로</span> -->
+      </button>
+      <button class="titlebar-action" style="color: var(--color-primary)">
+        <figure class="titlebar-action-icon" hidden></figure>
+        <span class="titlebar-action-label">저장</span>
+      </button>
+    </header>
+    <div class="is-opened" role="button" style="flex-wrap: wrap; box-shadow: none; border: none; padding: 1rem 0">
+      <!-- <div>설정 - 프로필 - 이름</div> -->
+      <form class="setting-item-form" style="padding: 0">
+        <test-text variant="subhead">어떻게<br />불러드릴까요?</test-text>
+        <p>
+          잠시 Twitch를 쉬고 싶으세요? 이미 준비되어 있습니다! 계정을 비활성화하면 프로필과 콘텐츠가 임시로 비활성화되며 유저 정보는 삭제되지
+          않습니다. 나중에 마음이 바뀌면 계정에 다시 로그인하여 프로필을 다시 활성화할 수 있습니다.
+        </p>
+      </form>
+      <hr />
+      <fieldset role="radiogroup">
+        <legend hidden>radiogroup</legend>
+        <test-radio name="gender" value="" label="기타"> </test-radio>
+        <test-radio name="gender" value="" label="여성"> </test-radio>
+        <test-radio name="gender" value="" label="남성"> </test-radio>
+      </fieldset>
+
+      <form class="setting-item-form" style="padding: 0">
+        <p style="margin: var(--space-after-subhead) 0 0 0">
+          성별 정보는 Google이 사용자를 지칭하는 방식을 포함해 Google 서비스에서 맞춤설정된 환경을 제공하는 데 사용될 수 있습니다.
+          <a href="">더 알아보기</a>
+        </p>
+        <test-textfield label="닉네임" placeholder="이름이요.">
+      </form>
+    </div>
+  </div>
+</main>

@@ -204,7 +204,28 @@ mark {color:inherit;} mark::before {content: " [강조 시작] ";opacity:0;posit
 .summary-item-value {}
 .summary-total {display:flex;justify-content:space-between;padding:.5rem 0 0;
   @mixin text-subhead;
+  font-size: var(--font-size-large);
+  font-weight: var(--font-weight-bold);
 }
+
+.statistic {display: flex;gap:2rem;
+  /* justify-content: space-evenly; */
+}
+.statistic-item {position: relative;}
+.statistic-item:hover {@mixin hover-item;}
+.statistic-label {display: block;color: var(--color-text-light);line-height:24px;}
+.statistic-value {display: block;@mixin text-subhead;
+  font-size:var(--font-size-large);font-weight:var(--font-weight-bold);
+}
+
+.statistic[data-size=small] {
+  align-items: center;
+  justify-content: center;
+  margin: var(--space-3);
+}
+.statistic[data-size=small] .statistic-item {display: flex;align-items: center;}
+.statistic[data-size=small] .statistic-item+.statistic-item {margin-left: var(--space-2);}
+.statistic[data-size=small] .statistic-value {margin: 0 0 0 var(--space-1);font-size: var(--font-size-medium);}
 
 
 
@@ -215,9 +236,11 @@ mark {color:inherit;} mark::before {content: " [강조 시작] ";opacity:0;posit
 .dialog-head-title {margin:0 auto;@mixin text-subhead;}
 .dialog-title {@mixin text-subhead;}
 .dialog-description {margin:.5rem 0 1.5rem;}
-.dialog-footer {display:flex;justify-content:space-between;flex-direction:row-reverse;margin:2rem 0 0;}
-.dialog-footer-confirm {@mixin button-primary;width:var(--grid-column);}
-.dialog-footer-cancel {@mixin button-tertiary;width:var(--grid-column);}
+.dialog-footer {
+  display:flex;
+  /* justify-content:space-between;flex-direction:row-reverse; */
+  margin:2rem 0 0;}
+
 .dialog-close {@mixin chip;position:absolute;right:.5rem;top:.5rem;}
 
 
@@ -367,3 +390,103 @@ mark {color:inherit;} mark::before {content: " [강조 시작] ";opacity:0;posit
 .foundation-item figure {@mixin tile-flat-small;background:var(--color-accent);height:200px;}
 .foundation-item span {font-size:var(--font-size-small);text-transform:capitalize;}
 .foundation-item time {float:right;font-size:var(--font-size-small);}
+
+
+/* // ! width inherit ::::: for button element
+// 비효율 position:relative;z-index:1; */
+.dropdown {position:relative;}
+.dropdown-trigger {}
+/* .dropdown-menu {@mixin tile-elevated;min-width:var(--width-tiny);position:absolute;transform:scale(0);transform-origin:left top;} */
+.dropdown-menu-title {}
+.dropdown-menu-item {display:block;margin:0 -.25rem;padding:0 .25rem;line-height:var(--size-medium);color:var(--color-text);position:relative;z-index:var(--zindex-default);}
+.dropdown-menu-item:hover {border-radius:var(--radius);background:var(--color-background-weak);}
+
+
+/* // 드롭다운이 항상 칩은 아니다. */
+.is-active + .dropdown-menu {transform:scale(1);top:calc(var(--size-medium));z-index:var(--zindex-popover);}
+
+
+
+
+.meter {
+  margin: 4rem 0;
+}
+
+/* .meter-title {
+  margin: 0 0 var(--space-1) 0;
+  @mixin text-subhead;
+}
+
+.meter-status {
+  @mixin text-title;
+} */
+
+.meter-graph {
+  display: flex;
+  gap: .25rem;
+  position: relative;
+}
+
+.meter-graph:before {
+  content: '';
+  display: block;
+  padding: var(--space-1);
+  border-radius: var(--radius);
+  background: var(--color-background-weak);
+  position: absolute;
+  left: var(--space-1-minus);
+  right: var(--space-1-minus);
+  top: var(--space-1-minus);
+  bottom: var(--space-1-minus);
+  z-index: -1;
+}
+
+.meter-graph-bar {
+  height: var(--size-tiny);
+  border-radius: var(--radius);
+}
+
+.meter-legend {
+  max-width: 400px;
+  margin: 1rem auto 0;
+}
+
+.meter-legend-item {
+  display: flex;
+  align-items: center;
+  margin: var(--space-2) 0;
+  position: relative;
+}
+
+.meter-legend-item:before {content:'';display:block;width:100%;border-bottom:1px dotted #ccc;position:absolute;z-index:-1;}
+.meter-legend-item-color {
+  display: block;
+  width: var(--size-tiny);
+  height: var(--size-tiny);
+  border-radius: var(--radius);
+  margin: 0 var(--space-2) 0 0;
+}
+
+.meter-legend-item-title {
+  font-weight: var(--font-weight-normal);
+  font-size: var(--font-size-medium);
+  background: var(--color-background);
+  position: relative;
+}
+
+.meter-legend-item-value {
+  margin: 0 0 0 auto;
+  background: var(--color-background);
+  @mixin text-subhead;
+  font-size: var(--font-size-medium);
+}
+
+.meter [data-type=facebook] {
+  background: var(--color-facebook);
+}
+.meter [data-type=twitter] {
+  background: var(--color-twitter);
+}
+.meter [data-type=instagram] {
+  background: var(--color-pinterest);
+}

@@ -83,25 +83,30 @@
       <figure class="chat-avatar"></figure>
       <div class="chat-bubble is-primary">
         <b>Components</b>
-        <word-count>test</word-count>
       </div>
+      <ul>
+        <li>
+          MVP 검증을 위한 최소한의 컴포넌트 라이브러리로 시작했습니다. 이후 시각 언어를 추가하며 다양한 도메인에 활용할 수 있도록 구성하고 있습니다.
+        </li>
+        <li>1~2가지 케이스는 예외 케이스로 정의한다.</li>
+        <li>background 컴포넌트. lazy load 기능을 포함하는.</li>
+        <li>dos / don'ts 케이스는 이미지를 사용하지 않고 간결하게 서술합니다. 컴포넌트는 계속 변경되기 때문에 유지보수 비용 증가.</li>
+        <li>모든 시각정보는 non-clickable. 모든 인터렉션은 clickable.</li>
+      <p>역할과 형태 구분. 형태는 textfield, action와 2개의 사이즈? 예시. select는 textfield / chip 2가지. 아니다. 토큰으로 충분하다.</p>
+      <li>
+          역할에 근거합니다. 역할 기반의 네이밍. 여러 개의 tag를 감싸는 부모 태그는 tag group이 tags보다 좋고, tag list보다 좋습니다. 컴포넌트, 클래스
+          네이밍에 방향(left, right)을 사용하지 마세요. 레이아웃은 변경 가능성이 크기 때문.
+      </li>
+      </ul>
       <div class="chat-bubble">
         <p>할 수 있다 -> 하세요/합니다</p>
-        <p>
-          MVP 검증을 위한 최소한의 컴포넌트 라이브러리로 시작했습니다. 이후 시각 언어를 추가하며 다양한 도메인에 활용할 수 있도록 구성하고 있습니다.
-        </p>
         <p>도메인 특수성이 있는 컴포넌트. 예를 들면 스포티파이의 encore에서 track row 컴포넌트.</p>
-        <p>1~2가지 케이스는 예외 케이스로 정의한다.</p>
-        <p>모든 시각정보는 non-clickable. 모든 인터렉션은 clickable.</p>
-        <p>dos / don'ts 케이스는 이미지를 사용하지 않고 간결하게 서술합니다. 컴포넌트는 계속 변경되기 때문에 유지보수 비용 증가.</p>
         <p>
           2023년 3월 말. Props를 디자인 가이드와 묶어서 정리하기. 이렇게 하면 Props 존재 이유를 설명할 필요도 없고, 디자인 패턴을 한 번에 망라할 수
           있다. 형태를 위한 프롭스와 기능을 위한 프롭스를 나눌 수 있을까? Anatomy와 Props를 통합할 수 있을까? 메타 푸라불럼를 함께 푸롭스에서
           다뤄보기.
         </p>
       </div>
-      <p>background 컴포넌트. lazy load 기능을 포함하는.</p>
-      <p>역할과 형태 구분. 형태는 textfield, action와 2개의 사이즈? 예시. select는 textfield / chip 2가지. 아니다. 토큰으로 충분하다.</p>
       <p>
         시스템 디자이너로서 제품을 소비할 때 디자이너와 개발자의 경험을 대규모로 최적화하는 것은 우리의 의무입니다. 시스템 자체. 스타일 프리미티브
         구성이 우선순위가 지정되지 않으면 디자이너와 개발자 사이에 많은 마찰이 있을 뿐만 아니라 토큰 아키텍처를 통해 피할 수 있는 많은 스타일 불일치가
@@ -115,11 +120,6 @@
   <nav class="component-navigation" role="menubar">
     <div class="component-navigation-background"></div>
     <test-row>
-      <test-chip class="js-scrollspy-trigger" label="Links"></test-chip>
-      <test-chip class="js-scrollspy-trigger" label="Badges">Badges</test-chip>
-      <test-chip class="js-scrollspy-trigger" label="Switch"></test-chip>
-
-      <test-chip class="js-scrollspy-trigger" label="Select"></test-chip>
       <test-chip class="js-scrollspy-trigger" label="Seporator"></test-chip>
 
       <test-chip class="js-scrollspy-trigger" label="Breadcrumb"></test-chip>
@@ -136,7 +136,6 @@
     </test-row>
   </nav>
 
-  <section class="component-body">
     <!-- <p class="hero-description">keywords: attention / feedback / confirm</p> -->
     <!-- <div>
         <div>Presentation style="modal | toast | sheet" ... 이렇게 되면 윈도우 사이즈가 변경될 때 props를 변경해주어야 함.</div>
@@ -165,201 +164,8 @@
 
     <!-- <p class="article-description"><em>post 페이지에서 태그와 컴포넌트에서의 태그. hashtag는 tag 컴포넌트와 역할이 다르기 때문에 별도의 컴포넌트로 만들어주어야 한다. 현재 hashtag(keyword)는 chip으로 대체. todo. 댑스가 2이상 인 케이스.</em></p> -->
 
-    <article class="article js-observer js-scrollspy-section">
-      <test-text variant="title">Links</test-text>
-      <p class="article-description">사용자 여정 목적지. 페이지 이동. destination that can be bookmarked. 정보 확장 기능은 따로 정의해야 함.</p>
 
-      <aside class="article-aka">
-        <test-tag>a.k.a.</test-tag>
-        <span class="hashtag" title="">Anchor</span>
-      </aside>
 
-      <section class="component-example">
-        <test-tile>
-          <p>
-            형무소 안에서는 소장의 말이 곧 법이었으며 죄수들의 잘못과 실수는 결코 용납되지 않는다. 어머니의 사망 소식을 듣고 인해 2번이나 탈옥을
-            시도했다가 체포된 <a class="link-inner" href="#">루크</a>의 발에 쇠통이 채워지며 루크는…<a
-              class="more link-outside"
-              href="#"
-              style="margin-left: 0.25rem"
-              >더 보기</a
-            >
-          </p>
-          <div style="margin-top: var(--space-3)">
-            <a class="hashtag" href="">이것은헤시태그</a>
-            <a class="hashtag" href="">해시태그는클릭할수있다?</a>
-            <a class="hashtag" href="">해시태그를통한검색</a>
-          </div>
-        </test-tile>
-        <div class="component-props">
-          <test-text variant="subhead">Props</test-text>
-          <dl>
-            <dt>style</dt>
-            <dd>'inside' | 'outside'</dd>
-            <dd>
-              단락 내부와 외부에서의 형태를 구분합니다. 단락 내부에서는 본문 텍스트와 대비를 높이기 위해 언더라인을 표시합니다. 불필요해보이는 규칙.
-            </dd>
-            <dt>href?</dt>
-            <dd>string</dd>
-            <dd>NNNNN</dd>
-            <dt>isExternal<attr>?</attr></dt>
-            <dd>boolean</dd>
-            <dd>속성들... target=_blank rel=noopener noreferrer</dd>
-          </dl>
-        </div>
-      </section>
-
-      <test-text variant="body-large" class="article-kicker"><b>항상 텍스트 단락과 함께 사용합니다.</b> TODO text button과의 차이</test-text>
-    </article>
-
-    <!-- <p>Badges show the count of some adjacent data. A dot badge notifies the user that something is new or updated without showing a count.</p> -->
-    <article class="article js-observer js-scrollspy-section">
-      <test-text variant="title">Badges</test-text>
-      <p class="article-description">수량, 상태.</p>
-
-      <section class="component-example">
-        <test-tile>
-          <test-row>
-            <!-- <test-badge variant="primary">24</test-badge> -->
-            <test-badge variant="secondary">16</test-badge>
-            <test-chip>
-              <span style="display: inline-block; line-height: 16px">메뉴 &nbsp;</span>
-              <test-badge>16</test-badge>
-            </test-chip>
-            <test-tag>
-              <em style="display: inline-flex; width: 6px; height: 6px; margin-right: var(--space-2); background: crimson; border-radius: 50%"></em>
-              live
-            </test-tag>
-          </test-row>
-        </test-tile>
-      </section>
-    </article>
-
-    <article class="article js-observer js-scrollspy-section">
-      <test-text variant="title" title="or Box">Switch</test-text>
-      <p class="article-description">켜거나 끌 수 있는 옵션입니다. 설정. 필터.</p>
-      <p hidden>A switch is a visual toggle between two mutually exclusive states — on and off.</p>
-
-      <aside class="article-aka">
-        <test-tag>a.k.a.</test-tag>
-        <span class="hashtag" title="protocol mozilla">Toggle</span>
-      </aside>
-
-      <section class="component-example">
-        <test-tile>
-          <span class="switch">
-            <input type="checkbox" id="switch1" name="" role="switch" value="on" checked />
-            <label for="switch1" title="Receive weekly newsletter">뉴스레터 받아보기</label>
-          </span>
-          <span class="switch" style="margin-top: var(--space-3)">
-            <input type="checkbox" id="switch2" name="" role="switch" value="off" disabled />
-            <label for="switch2" title="Receive weekly newsletter">뉴스레터 받아보기</label>
-          </span>
-        </test-tile>
-        <article class="component-props">
-          <test-text variant="subhead">Props</test-text>
-          <dl>
-            <dt>name</dt>
-            <dd>string</dd>
-            <dd>id={props.name}</dd>
-            <dt>label? - isHiddenLabel</dt>
-            <dd>string</dd>
-            <dd>동사를 포함합니다. choice보다 action에 가깝다.</dd>
-            <dt>value</dt>
-            <dd>string</dd>
-            <dt>isChecked<attr>?</attr></dt>
-            <dd>boolean</dd>
-            <dd>TODO checked?</dd>
-            <dt>isDisabled<attr>?</attr></dt>
-            <dd>boolean</dd>
-            <dd></dd>
-            <dt>onChange</dt>
-            <dd>(event: React.FormEvent[HTMLInputElement]) =] void</dd>
-          </dl>
-        </article>
-      </section>
-
-      <test-text variant="body-large" class="article-kicker">
-        <b>즉시 실행</b>
-        단일 옵션을 즉시 실행하고 결과를 반영합니다. 다중 옵션 중 하나의 옵션으로 저장 버튼과 함께 사용하지 않습니다.
-      </test-text>
-      <test-text variant="body-large" class="article-kicker">
-        <b>on & off context</b>
-        스위치의 왼쪽과 오른쪽에 각각 레이블을 배치하여 콘텐츠 스위칭으로 사용하지 마세요.
-      </test-text>
-    </article>
-
-    <article class="article js-observer js-scrollspy-section">
-      <test-text variant="title">Select</test-text>
-      <p class="article-description">input shape와 chip shape</p>
-      <aside class="article-aka">
-        <test-tag>a.k.a.</test-tag>
-        <span class="hashtag" title="">dropdown</span>
-        <span class="hashtag" title="shopify">Choice list</span>
-        <span class="hashtag" title="shopify">Action list</span>
-      </aside>
-      <section class="component-example">
-        <test-tile>
-          <div class="textfield">
-            <label class="textfield-label" for="select1">셀렉트박스</label>
-            <select class="textfield-input" id="select1">
-              <option value="select-option1">Choose an option</option>
-            </select>
-            <span class="textfield-indicator material-symbols-outlined" role="img">unfold_more</span>
-          </div>
-        </test-tile>
-        <test-tile>
-          <span class="chip" style="width: 200px">
-            <select class="chip-label" id="select2" style="pointer-events: auto">
-              <option value="select2-option1">Choose an option long long texts</option>
-              <option value="select2-option2">option2</option>
-            </select>
-            <span class="chip-icon material-symbols-outlined" role="img" style="font-size: 16px">unfold_more</span>
-          </span>
-        </test-tile>
-        <article class="component-props">
-          <dl>
-            <dt>options</dt>
-            <dd>Option[]</dd>
-            <dd></dd>
-            <dt>label - option label과 혼동될 수도</dt>
-            <dd>string</dd>
-            <dd></dd>
-            <dt>selectedValue</dt>
-            <dd>Option.value</dd>
-            <dd></dd>
-            <dt>onChange - handleSelectChange</dt>
-            <dd>(event: React.FormEvent[HTMLSelectElement]) => void</dd>
-            <dd></dd>
-          </dl>
-        </article>
-      </section>
-
-      <test-callout icon="📌">
-        <test-text variant="body-large" class="article-kicker">
-          native select와 dropdown을 함께 가져갈 필요가 있나. native select는 모바일 사용성에 장점이 있고, 초기 구축이 쉽다는 장점이 있다. 하지만 제품
-          또는 제품 개발 과정이 궤도에 올라왔을 때는 일정 수준의 컴포넌트가 확보되어 있을 것이기 때문. naming select / width / input bar(google font)
-        </test-text>
-      </test-callout>
-
-      <test-text variant="subhead">Native</test-text>
-      <ul>
-        <li>레이블 클릭해도 셀렉트박스 안 열림. id prop 필요없음.</li>
-        <li>셀렉트 옵션에 따라 박스의 너비가 자동 조절된다. indicator를 position으로 넣고 옵션에 말줄임표를 넣어야.</li>
-      </ul>
-
-      <test-text variant="subhead">Best practices</test-text>
-      <ul>
-        <!-- <li>다중 선택(combobox)을 셀렉트로 제공하지 마세요. chip group으로 선택 옵션을 풀어서 제공하세요. 선택 목록이 많지 않다는 가정 하.</li> -->
-        <li>
-          memo. 레이블을 포함하는 형태. select 엘리먼트가 아니라 부모 엘리먼트에 컨테이너 스타일링이 필요하고, 클릭 영역까지 지정해야 했다. 그리고
-          드롭다운으로 구현해야 한다.
-        </li>
-      </ul>
-      <!-- var selected = Array.from(dnd.options).filter((option) => {
-        return option.selected;
-      }).map((option) => option.value); -->
-    </article>
 
     <article class="article js-observer js-scrollspy-section">
       <test-text variant="title">Seperator</test-text>
@@ -425,15 +231,14 @@
             aria-label="sample tabs"
             style="margin: 0 0 var(--space-2) 0"
           >
+            <button class="tablist-tab" role="tab" aria-selected="true" aria-controls="panel-1" id="tab-1" tabindex="0">
+              첫번째 탭
+              <em class="tablist-tab-badge badge">24</em>
+            </button>
+            <button class="tablist-tab" role="tab" aria-selected="false" aria-controls="panel-2" id="tab-2" tabindex="-1">두번째 탭</button>
+            <button class="tablist-tab" role="tab" aria-selected="false" aria-controls="panel-3" id="tab-3" tabindex="-1">세번째 탭</button>
+            <i class="tablist-indicator"></i>
           </test-tablist>
-
-          <!-- <button class="tablist-tab" role="tab" aria-selected="true" aria-controls="panel-1" id="tab-1" tabindex="0">
-            첫번째 탭
-            <em class="tablist-tab-badge badge">24</em>
-          </button>
-          <button class="tablist-tab" role="tab" aria-selected="false" aria-controls="panel-2" id="tab-2" tabindex="-1">두번째 탭</button>
-          <button class="tablist-tab" role="tab" aria-selected="false" aria-controls="panel-3" id="tab-3" tabindex="-1">세번째 탭</button>
-          <i class="tablist-indicator"></i> -->
 
           <div class="tabpanel" id="panel-1" role="tabpanel" tabindex="0" aria-labelledby="tab-1" style="margin: 0">
             <p>Content for the first panel. tablist는 tile inset에 .25rem을 쓰는 예외 케이스...</p>
@@ -518,7 +323,9 @@
         </test-tile>
         <test-tile style="overflow: hidden">
           <header class="titlebar js-titlebar" role="navigation" style="padding: 0">
-            <test-chip class="titlebar-back" onclick="javascript:window.location.href='/';"> Back to Blahblah Page </test-chip>
+            <test-chip class="titlebar-back" onclick="javascript:window.location.href='/';">
+              <i slot="icon" class="iconior-arrow-back"></i>
+              Back to Blahblah Page </test-chip>
           </header>
         </test-tile>
         <test-tile style="overflow: hidden">
@@ -567,10 +374,10 @@
       <test-text variant="title">Bottom Navigation / Navigation Bar ??</test-text>
       <p class="article-description">모바일 환경의 글로벌 네비게이션.</p>
 
-      <aside class="article-aka">
+      <test-row class="article-aka">
         <test-tag>a.k.a.</test-tag>
         <span class="hashtag" title="google">Navigation Bar</span>
-      </aside>
+      </test-row>
 
       <section class="component-example">
         <test-tile>
@@ -705,27 +512,27 @@
           <section class="carousel js-carousel" style="max-width: auto">
             <div class="carousel-viewer js-carousel-viewer">
               <a class="carousel-viewer-slide" href="#profile">
-                <span class="carousel-viewer-slide-media">🧑‍🦱</span>
+                <test-avatar>🧑‍🦱</test-avatar>
                 <p class="carousel-viewer-slide-name">사용자 프로필</p>
               </a>
               <a class="carousel-viewer-slide" href="#signup">
-                <span class="carousel-viewer-slide-media">🗂️</span>
+                <test-avatar>🗂️</test-avatar>
                 <p class="carousel-viewer-slide-name">회원가입</p>
               </a>
               <a class="carousel-viewer-slide" href="#login">
-                <span class="carousel-viewer-slide-media">🗂️</span>
+                <test-avatar>🗂️</test-avatar>
                 <p class="carousel-viewer-slide-name">로그인</p>
               </a>
               <a class="carousel-viewer-slide" href="#forgot">
-                <span class="carousel-viewer-slide-media">🔑</span>
+                <test-avatar>🔑</test-avatar>
                 <p class="carousel-viewer-slide-name">비밀번호 찾기</p>
               </a>
               <a class="carousel-viewer-slide" href="#post">
-                <span class="carousel-viewer-slide-media">✍️</span>
+                <test-avatar>✍️</test-avatar>
                 <p class="carousel-viewer-slide-name">포스트</p>
               </a>
               <a class="carousel-viewer-slide" href="#product">
-                <span class="carousel-viewer-slide-media">🧴</span>
+                <test-avatar>🧴</test-avatar>
                 <p class="carousel-viewer-slide-name">상품</p>
               </a>
             </div>
@@ -870,9 +677,6 @@
               </p>
             </div>
           </article>
-          <!-- <footer>
-              <p style="margin:var(--space-4) 0 0 0;">궁금증이 해결되지 않는다면? <a href="#">Get in touch with us.</a></p>
-            </footer> -->
         </section>
       </section>
 
@@ -902,11 +706,11 @@
         사용자의 정보나 재산의 변경 또는 삭제 확인. 사용자는 모달 형태의 집중된 환경에서(?) 리스크를 관리할 수 있습니다.
       </p>
 
-      <aside class="article-aka" style="margin: 0">
+      <test-row class="article-aka" style="margin: 0">
         <test-tag>a.k.a.</test-tag>
         <span class="hashtag" title="">Alert</span>
         <span class="hashtag" title="">Modal</span>
-      </aside>
+      </test-row>
 
       <section class="component-example">
         <aside class="dialog" role="alertdialog" aria-modal="true" aria-labelledby="dialog-title1" aria-describedby="dialog-description2">
@@ -918,7 +722,7 @@
           <test-text variant="subhead" class="dialog-title" id="dialog-title1">부끄러우니까 보지마요!</test-text>
           <p class="dialog-description" id="dialog-description1">다이얼로그 디스크립션입니다.</p>
           <footer class="dialog-footer">
-            <test-button variant="primary" class="dialog-footer-cancel" style="flex: auto">확인</test-button>
+            <test-button variant="primary">확인</test-button>
           </footer>
         </aside>
 
@@ -931,15 +735,15 @@
           <test-text variant="subhead" class="dialog-title" id="dialog-title2">부끄러우니까 보지마요!</test-text>
           <p class="dialog-description" id="dialog-description2">다이얼로그 디스크립션입니다.</p>
           <footer class="dialog-footer">
-            <test-button variant="tertiary" class="dialog-footer-confirm">안 볼래요</test-button>
-            <test-button variant="primary" class="dialog-footer-cancel">볼래요</test-button>
+            <test-button variant="tertiary">안 볼래요</test-button>
+            <test-button variant="primary">볼래요</test-button>
           </footer>
           <close-button></close-button>
         </aside>
       </section>
 
       <ul>
-        <!-- <li>레이어를 2개 이상 쌓지 마세요. 모달의 가이드</li> -->
+        <li>레이어를 2개 이상 쌓지 마세요. 모달의 가이드</li>
         <li>버튼의 레이블은 다이얼로그 제목의 동사와 페어링합니다.</li>
         <li>memo: modal의 구조: header/body/footer. 단순 다이얼로그는 복잡한 구조가 필요 없다.</li>
         <li>memo: overay엘리먼트 클릭 시 모달을 닫으면 리액트에서 구현이 쉬움. 이 overay은 sheet에서 재사용할 수 있다.</li>
@@ -972,11 +776,11 @@
       <test-text variant="title">Workflow</test-text>
       <p class="article-description">내용 없음.</p>
 
-      <aside class="article-aka">
+      <test-row class="article-aka">
         <test-tag>a.k.a.</test-tag>
         <span class="hashtag" title="">Timeline</span>
         <span class="hashtag" title="">Stepper</span>
-      </aside>
+      </test-row>
 
       <section class="component-example">
         <test-tile>
@@ -1030,135 +834,12 @@
       <p>클릭하고 싶지 않은 형태로 변경 2021.10</p>
     </article>
 
-    <!-- <article class="article js-observer js-scrollspy-section">
-        <test-text variant="title">Bullet</test-text>
-        <p class="article-description">작성 중.</p>
-        <ul>
-          <li>불릿, 콤마, 콜론, 슬래시, 따옴표, 괄호 등을 사용하는 맥락에서 bullet 컴포넌트를 사용합니다.</li>
-          <li>클립보드 복사를 위해 텍스트 더미를 드래그앤드롭으로 선택할 때에 불릿은 선택되지 않아야 합니다.</li>
-        </ul>
-      </article> -->
-
     <article class="article js-observer js-scrollspy-section">
-      <test-text variant="title">List</test-text>
+      <test-text variant="title">Bullet</test-text>
       <p class="article-description">작성 중.</p>
-
-      <section class="component-example">
-        <test-tile>
-          <ul style="margin: 0">
-            <li>순서가 없는 리스트</li>
-            <li>순서가 없는 리스트</li>
-          </ul>
-          <ol style="margin: var(--space-3) 0">
-            <li>순서가 있는 리스트</li>
-            <li>순서가 있는 리스트</li>
-          </ol>
-          <!-- <ul data-align="horizontal" style="margin: 0">
-            <li title="unordered list, level 1">순서가 없는 리스트</li>
-            <li style="margin: 0 2rem 0 1rem">가로로 정렬할 수 있어요</li>
-            <li>조건이 있어요</li>
-          </ul> -->
-        </test-tile>
-        <test-tile>
-          <dl>
-            <dt>Metadata</dt>
-            <dd>description list</dd>
-            <dt>Metadata</dt>
-            <dd>description list</dd>
-          </dl>
-        </test-tile>
-      </section>
       <ul>
-        <li>텍스트 목록만 리스트 태그(ul, ol, dl)로 마크업하세요. role=listbox/listitem</li>
-        <li>
-          텍스트 목록을 2 댑스(nested)로 제공하지 마세요. 중첩된 목록은 콘텐츠를 읽기 어렵게 하고 작은 화면에서의 들여쓰기는 불필요한 공간을
-          차지합니다.
-        </li>
-        <li>todo. checklist.</li>
-      </ul>
-    </article>
-
-    <article class="article js-observer js-scrollspy-section">
-      <test-text variant="title">Statistic</test-text>
-      <p class="article-description">수치 데이터.</p>
-      <section class="component-example">
-        <test-tile style="position: relative; z-index: 1">
-          <div class="statistic">
-            <div class="statistic-item">
-              <i class="statistic-label">팔로워</i>
-              <span class="statistic-value">21,682</span>
-            </div>
-            <div class="statistic-item" style="margin: 0 1rem">
-              <i class="statistic-label">Repository</i>
-              <span class="statistic-value">100만 이상</span>
-            </div>
-            <div class="statistic-item">
-              <i class="statistic-label">Size</i>
-              <span class="statistic-value">Small</span>
-            </div>
-          </div>
-        </test-tile>
-        <test-tile style="position: relative; z-index: 1">
-          <div class="statistic" data-size="small">
-            <div class="statistic-item">
-              <i class="statistic-label">팔로워</i>
-              <span class="statistic-value">21,682</span>
-            </div>
-            <div class="statistic-item">
-              <i class="statistic-label">Repository</i>
-              <span class="statistic-value">100만 이상</span>
-            </div>
-            <div class="statistic-item">
-              <i class="statistic-label">Size</i>
-              <span class="statistic-value">Small</span>
-            </div>
-          </div>
-        </test-tile>
-      </section>
-
-      <ul>
-        <li>todo countup</li>
-        <li>todo clickable. non-clickable.</li>
-      </ul>
-    </article>
-
-    <article class="article js-observer js-scrollspy-section">
-      <test-text variant="title">Summary</test-text>
-      <p class="article-description">정보 요약. cart / order / checkout / result /</p>
-
-      <section class="component-example">
-        <section class="summary tile-flat">
-          <div class="summary-item">
-            <div class="summary-item-label">상품 금액</div>
-            <div class="summary-item-value">₩ 160,000</div>
-          </div>
-          <div class="summary-item">
-            <div class="summary-item-label">서비스 수수료</div>
-            <div class="summary-item-value">₩ 3,000</div>
-          </div>
-          <div class="summary-total">
-            <div class="summary-total-label">총 합계 (KRW)</div>
-            <div class="summary-total-value">₩ 163,000</div>
-          </div>
-        </section>
-      </section>
-    </article>
-
-    <article class="article js-observer js-scrollspy-section">
-      <test-text variant="title">Suggestion</test-text>
-      <p class="article-description">작성중</p>
-
-      <section class="component-example">
-        <div class="product-info-price tile-flat" role="suggestion">
-          <del class="product-info-price-deletion" role="deletion">₩ 30,000</del>
-          <b class="product-info-price-insertion" role="insertion">₩ 20,000</b>
-          <em class="product-info-price-percentage">(30%)</em>
-        </div>
-      </section>
-
-      <ul>
-        <li>getFormattedCurrency()</li>
-        <li>role=suggestion/deletion/insertion]</li>
+        <li>불릿, 콤마, 콜론, 슬래시, 따옴표, 괄호 등을 사용하는 맥락에서 bullet 컴포넌트를 사용합니다.</li>
+        <li>클립보드 복사를 위해 텍스트 더미를 드래그앤드롭으로 선택할 때에 불릿은 선택되지 않아야 합니다.</li>
       </ul>
     </article>
 
@@ -1166,10 +847,10 @@
       <test-text variant="title">Pagehead</test-text>
       <p class="article-description">패턴 분석...</p>
 
-      <aside class="article-aka">
+      <test-row class="article-aka">
         <test-tag>a.k.a.</test-tag>
         <span class="hashtag" title="">Page Header</span>
-      </aside>
+      </test-row>
 
       <section class="component-example"></section>
 
@@ -1180,6 +861,20 @@
         <li>hero with padding</li>
       </ul>
     </article>
+
+
+<article class="article">
+  <test-text variant="title">Range</h1>
+  <p class="article-description"></p>
+  <div class="range">
+    <label for="">숙박 인원</label>
+    <input type="range" min="1" max="10" value="2" step="any" list="tickmarks" id="myRange">
+    <datalist id="tickmarks">
+      <option value="0" label="0"></option>
+      <option value="5" label="5"></option>
+    </datalist>
+  </div>
+</article>
 
     <article class="article">
       <test-text variant="title">Calendar</test-text>
@@ -1258,15 +953,690 @@
     </article>
   </section>
 </main>
-<!-- <article class="article">
-        <test-text variant="title">Range</h1>
-        <p class="article-description"></p>
-        <div class="range">
-          <label for="">숙박 인원</label>
-          <input type="range" min="1" max="10" value="2" step="any" list="tickmarks" id="myRange">
-          <datalist id="tickmarks">
-            <option value="0" label="0"></option>
-            <option value="5" label="5"></option>
-          </datalist>
+
+
+
+<main class="component" style="overflow: hidden">
+  <div style="padding: 0 var(--grid-margin)">
+    <section class="sample-container" style="margin-top: 0">
+      <header class="greeting" data-temp="이 패턴에서 아바타는 시각 정보가 아니라 링크로 사용">
+        <figure class="greeting-avatar" style="font-size: 1.5rem">🐶</figure>
+        <h1 class="greeting-title">Hello, Stranger<i style="font-style: italic">!</i></h1>
+        <p class="greeting-description">Tender is the night.</p>
+      </header>
+
+      <section class="">
+        <header style="display: flex; align-items: center; justify-content: space-between; max-width: 400px; margin: 0 auto var(--space-3)">
+          <h2>내 요금제</h2>
+          <button style="color: var(--color-primary); font-weight: bold; text-decoration: underline">요금제 변경하기</button>
+        </header>
+        <article class="purchase" style="border: var(--border); max-width: 400px; margin: 0 auto">
+          <header class="purchase-head">
+            <h3>Premium 베이직</h3>
+            <small>Premium 베이직 계정 1개 / 클라우드 330GB (월 5,500원)</small>
+          </header>
+          <div class="add_money_area" style="padding: 1rem">
+            <div class="add_inner">
+              <p class="use_time">이용기간 23.04.09. ~ 23.05.02.</p>
+              <div class="add_money">
+                이번 달 결제금액 <em class="accent"><span id="sale_price">4,258</span>원</em>
+                <em class="num">(<span id="remainDays">24</span>일 이용요금)</em>
+              </div>
+            </div>
+          </div>
+          <div class="purchase-body">
+            <dl>
+              <dt style="width: 50%; margin: 0">오늘부터 시작</dt>
+              <dd style="width: 50%; margin: 0; text-align: right">월 8,690 KRW</dd>
+              <dt style="width: 50%; margin: 0">다음 결제일</dt>
+              <dd style="width: 50%; margin: 0; text-align: right">2023. 3. 10.</dd>
+            </dl>
+            <ul style="margin: var(--space-4) 0 0 0">
+              <li>다음 청구일은 2023. 3. 10.입니다.</li>
+              <li>언제든 해지 가능합니다. 혜택 약관이 적용됩니다.</li>
+            </ul>
+          </div>
+        </article>
+      </section>
+
+      <div class="item" role="listitem" data-size="large" style="margin-bottom: var(--space-3)">
+        <figure class="item-avatar"></figure>
+        <span class="item-description">관심사가 비슷한 사용자</span>
+        <h2 class="item-name">Gyeongsoo I</h2>
+        <!-- <button class="item-action"><span class="item-action-label">팔로우</span></button> -->
+      </div>
+
+      <test-tile variant="elevated">
+        <header class="titlebar" style="padding: 0; margin-bottom: var(--space-4)">
+          <test-text variant="subhead" class="titlebar-title">See this post in</test-text>
+          <test-chip class="titlebar-back" aria-label="이전 페이지로">
+            <figure class="chip material-symbols-outlined">close</figure>
+          </test-chip>
+        </header>
+        <test-menu-item label="수줍이 앱">
+          <test-avatar slot="avatar" secondary></test-avatar>
+          <test-chip slot="action" label="열기"></test-chip>
+        </test-menu-item>
+        <test-menu-item label="사파리 브라우저">
+          <test-avatar slot="avatar"></test-avatar>
+          <test-chip slot="action" slot="계속" status="active"></test-chip>
+        </test-menu-item>
+      </test-tile>
+
+      <div class="jobitem" role="listitem">
+        <h2 class="jobitem-name">Senior Front-end Developer</h2>
+        <div class="jobitem-tags">
+          <test-tag>Full-Time</test-tag>
+          <test-tag>Korea</test-tag>
+          <test-tag>Remote friendly</test-tag>
         </div>
-      </article> -->
+        <button class="jobitem-view"><span class="chip-label">View Job</span></button>
+      </div>
+
+      <test-tile variant="elevated" style="max-width: 400px">
+        <article class="item" data-size="huge">
+          <figure class="item-avatar">
+            <span class="avatar-badge"></span>
+          </figure>
+          <b class="item-name">개인</b>
+          <p class="item-description">Apple One</p>
+          <span>가족 구독</span>
+        </article>
+        <hr />
+        <h3>1개월 무료 체험</h3>
+        <small>오늘부터</small>
+        <test-text variant="text-subhead">14,900원/개월</test-text>
+        <small>2023년 05월 22일부터</small>
+        <hr />
+        <p>약정 기간이 없습니다. 갱신일 최소 하루 전까지 설정 > Apple ID에서 언제든지 취소할 수 있습니다. 취소할 때까지 요금제가 자동 갱신됩니다.</p>
+        <hr />
+        <p style="color: var(--color-text-light)">계정: soojubm@gmail.com</p>
+      </div>
+
+      <article style="position: relative">
+        <test-tile style="border: none; margin-left: -0.75rem; margin-right: -0.75rem">
+          <b>Personal License</b>
+          <b class="item-price" style="position: absolute; right: var(--space-3); top: var(--space-3)">18,800 KRW</b>
+          <small style="display: block; color: var(--color-text-light)">1 user</small>
+        </test-tile>
+
+        <div class="item" data-size="large">
+          <figure class="item-avatar" style="background-image: none; font-size: var(--font-size-large)">🎅🏻</figure>
+          <b class="item-name">Widgefy iOS Widgets</b>
+          <!-- <p class="item-description">description area.</p> -->
+          <div style="display: flex; align-items: center; color: var(--color-text-light)">
+            <small style="line-height: 24px">떡볶이</small>
+          </div>
+          <b class="item-price" style="position: absolute; right: 0; top: 0">18,800 KRW</b>
+          <small style="color: var(--color-text-light); position: absolute; right: 0; top: 22px">6410</small>
+        </div>
+
+        <footer style="margin: 1rem 0">
+          <button class="button" data-variant="primary" style="width: 100%; font-size: 15px">Buy now</button>
+        </footer>
+      </article>
+
+      <form class="feed-make tile-elevated" action="">
+        <header class="titlebar" style="padding: 0; margin-bottom: var(--space-4)">
+          <h1 class="titlebar-title">게시물 만들기</h1>
+          <button class="titlebar-back" aria-label="이전 페이지로">
+            <span class="material-symbols-outlined">close</span>
+          </button>
+        </header>
+        <div class="item" data-size="medium">
+          <figure class="item-avatar"></figure>
+          <span class="item-name">수줍이</span>
+        </div>
+        <div class="textfield comment-write-text" style="margin: var(--space-3) 0">
+          <!-- <label class="textfield-label" for="" aria-hidden="true">댓글</label> -->
+          <textarea
+            class="textfield-input"
+            rows="3"
+            name="comment"
+            placeholder="무슨 생각을 하고 계신가요? feed와 comment에서 사용. textarea 컴포넌트 정의. 취소 버튼의 위치. toolbar."
+            style="height: auto"
+          ></textarea>
+        </div>
+        <footer class="comment-write-footer">
+          <button class="button" data-variant="primary">게시</button>
+        </footer>
+      </form>
+
+      <test-tile variant="elevated">
+        <header class="titlebar" style="padding: 0; margin-bottom: var(--space-4)">
+          <test-text variant="subhead" class="titlebar-title">VASP 선택</test-text>
+          <test-chip class="titlebar-back" aria-label="이전 페이지로"></test-chip>
+        </header>
+        <div class="textfield" data-size="small">
+          <button class="textfield-prefix searchfield-prefix">
+            <span class="material-symbols-outlined" style="font-size: 20px">search</span>
+          </button>
+          <input class="textfield-input" type="text" id="search" placeholder="VASP명 / 심볼" autocomplete="off" />
+          <!-- <button class="textfield-clear" hidden><span class="material-symbols-outlined">close</span></button> -->
+        </div>
+
+        <hr />
+
+        <test-menu-item>
+          <figure class="item-avatar"></figure>
+          <b class="item-name" style="font-weight: var(--font-weight-normal)">빗썸</b>
+          <div class="checkbox" data-size="large" style="margin-left: auto">
+            <input type="checkbox" id="menutype1" name="gender" checked="" />
+            <label for="menutype1" title=""></label>
+          </div>
+        </test-menu-item>
+        <test-menu-item>
+          <figure class="item-avatar"></figure>
+          <b class="item-name" style="font-weight: var(--font-weight-normal)">코인원</b>
+          <div class="checkbox" data-size="large" style="margin-left: auto">
+            <input type="checkbox" id="menutype2" name="gender" checked="" />
+            <label for="menutype2" title=""></label>
+          </div>
+        </test-menu-item>
+      </test-tile>
+    </section>
+  </div>
+  <aside style="position: fixed; top: 6rem; left: calc(50% + var(--width-sidemenu) - var(--grid-margin)); transform: translateX(-50%); z-index: 8">
+    <button
+      style="padding: 0.5rem 1rem; border-radius: 50px; box-shadow: var(--shadow); background: var(--color-primary); color: var(--color-text-weak)"
+      onclick="javascript:alert('샘플 유아이')"
+    >
+      1월 1일 변경된 내용 보기
+    </button>
+  </aside>
+
+  <!-- <button aria-haspopup="true" aria-expanded="false">
+    Difficulty
+    <span aria-hidden="true">&#x25be;</span>
+  </button>
+  <div role="menu">
+    <button role="menuitemradio" tabindex="-1">Easy</button>
+    <button role="menuitemradio" aria-checked="true" tabindex="-1">Medium</button>
+  </div>
+  <p>role=checkbox aria-checked=false</p> -->
+
+    <!-- <form class="subscribe" style="max-width: var(--layout-width-small)">
+    <h2 class="subscribe-title">수줍이 뉴스레터</h2>
+    <p class="subscribe-description">섭스크라이브 유아이 콤포넌트 입니다. <br />두 줄 단락을 위해 쓰고 있습니다.</p>
+    <div class="subscribe-field textfield">
+      <label for="" class="textfield-label">이메일 주소</label>
+      <input class="textfield-input" type="text" placeholder="Enter Your Email.." />
+    </div>
+    <p class="subscribe-helper setting-item-helper">
+      샘플 텍스트. 걱정하지 마세요. 스팸은 없습니다! 귀하의 정보는 web.dev 및 Chrome 관련 업데이트에만 사용되며 당사에서 보내는 이메일은 일반적으로 한
+      달에 1-2회를 넘지 않습니다. 언제든지 구독을 취소할 수 있습니다.
+    </p>
+    <div class="checkbox" style="margin: var(--space-4) 0">
+      <input class="checkbox-input" type="checkbox" />
+      <label for="" class="checkbox-label"
+        >본인은 Google의 <a href="" rel="noopener" target="_blank">이용 약관</a>에 동의하며 본인의 정보가 Google의
+        <a href="" rel="noopener" target="_blank">개인정보보호 정책</a>에 따라 이용된다는 것을 인정합니다.</label
+      >
+    </div>
+
+    <button class="subscribe-submit" type="submit">뉴스레터 구독</button>
+  </form> -->
+
+
+    <!-- <div class="album-track">
+      <header class="album-track-label" role="row">
+        <span class="album-track-label-item" role="columnheader">#</span>
+        <span class="album-track-label-item">제목</span>
+        <span class="album-track-label-item">Gengre</span>
+        <span class="album-track-label-item">Progress</span>
+        <span class="album-track-label-item">Status</span>
+        <span class="album-track-label-item">러닝타임</span>
+        <span class="album-track-label-item" title=" date added(sort)">Date</span>
+      </header>
+      <div class="album-track-row" role="row">
+        <span class="album-track-row-column" data-cell="number">1</span>
+        <span class="album-track-row-column">
+          <div class="item" style="width: 100%">
+            <figure class="item-avatar"></figure>
+            <b class="item-name">Dancing in the Dark</b>
+            <small class="item-description">Bruce Springsteen</small>
+          </div>
+        </span>
+        <span class="album-track-row-column stack"><test-tag>hiphop</test-tag><test-tag>rap</test-tag></span>
+        <span class="album-track-row-column">In Review --</span>
+        <span class="album-track-row-column"
+          ><em class="badge" style="height: auto; margin-right: 0.5rem; background: gold; padding: 3px"></em> Error</span
+        >
+        <span class="album-track-row-column">7 : 02</span>
+      </div>
+    </div> -->
+    <section class="">
+      toolbar is not chip.. 단지 지금 chip의 컨테이너를 가지고 있는 것.
+      <p class="profile-display-status" role="status">Viewing 1,000 Projects</p>
+      <div class="tile-elevated-small">
+        <div style="width: 100%; display: flex">
+          <button class="profile-display-button js-test-toggle is-selected" name="grid">
+            <figure class="chip-icon"><span class="material-symbols-outlined">grid_on</span></figure>
+            <span class="chip-label" aria-hidden="true" aria-lable="grid" style="line-height: 24px">격자</span>
+          </button>
+          <button class="profile-display-button js-test-toggle" name="list" style="margin-left: 0.5rem">
+            <figure class="chip-icon" style="background: none">
+              <span class="material-symbols-outlined"><span class="material-symbols-outlined"> view_agenda </span></span>
+            </figure>
+            <span class="chip-label" aria-hidden="true" style="line-height: 24px">List</span>
+          </button>
+        </div>
+        <div style="width: 100%; display: flex; margin-top: 0.75rem">
+          <button class="profile-display-button js-test-toggle is-selected" name="grid">
+            <figure class="chip-icon"><span class="material-symbols-outlined">format_bold</span></figure>
+            <span class="chip-label" aria-hidden="true" aria-lable="grid" hidden>격자</span>
+          </button>
+          <button class="profile-display-button js-test-toggle" name="list" style="margin-left: 0.25rem">
+            <figure class="chip-icon" style="background: none"><span class="material-symbols-outlined">format_italic</span></figure>
+            <span class="chip-label" aria-hidden="true" hidden>List</span>
+          </button>
+          <button class="profile-display-button js-test-toggle" name="list" style="margin-left: 0.25rem">
+            <figure class="chip-icon" style="background: none"><span class="material-symbols-outlined">format_align_center</span></figure>
+            <figure class="icon-indicator" style="margin-left: -0.5rem; background: none">
+              <span class="material-symbols-outlined">arrow_drop_down</span>
+            </figure>
+            <span class="chip-label" aria-hidden="true" hidden>List</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <hr />
+    <!-- ! flex-wrap: warp일 때 min-width가 fixed -->
+    <!-- ! width:100% and max-width doesnt' work-->
+    <test-tile variant="elevated" action="" style="max-width: 400px; z-index: 1">
+      <header class="titlebar" style="padding: 0; margin-bottom: var(--space-3)">
+        <test-text variant="subhead" class="titlebar-title" style="line-height: 32px; position: relative; left: auto; transform: translateX(0)">"파일 제목.pdf" 공유</test-text>
+        <test-chip><span class="material-symbols-outlined">settings</span></test-chip>
+      </header>
+      <!-- <div class="textfield" style="margin:1rem 0 0;">
+          <label class="textfield-label" for="" aria-hidden="true">댓글</label>
+          <input class="textfield-input" type="text" rows="4" name="comment" placeholder="사용자 및 그룹 추가"></input>
+        </div> -->
+      <button class="item" role="menuitem" data-tile="elevated" data-size="medium" style="margin-bottom: var(--space-3)">
+        <test-avatar>
+          <span class="material-symbols-outlined">add</span>
+        </test-avatar>
+        <span class="item-label">사용자 및 그룹 추가</span>
+      </button>
+
+      <p style="margin: 1rem 0 0.25rem; font-size: var(--font-size-medium)">액세스 권한이 있는 사용자</p>
+      <test-menu-item label="수줍이 (나)" role="menuitem">
+        <test-avatar slot="avatar"></test-avatar>
+        <test-tag style="margin-left: auto">소유자</test-tag>
+      </test-menu-item>
+      <test-menu-item label="뾱뾱이" role="menuitem">
+        <figure class="item-avatar" style="background: purple"></figure>
+        <test-tag data-status="danger" style="margin-left: auto">
+          <span class="tag-label">제한됨</span>
+        </test-tag>
+        <figure class="icon-indicator" style="margin-left: var(--space-1)"><span class="material-symbols-outlined">arrow_drop_down</span></figure>
+      </test-menu-item>
+
+      <footer style="display: flex; justify-content: right; margin: 2rem 0 0">
+        <button class="button" data-variant="primary" type="submit">완료</button>
+      </footer>
+
+      <hr />
+
+      <header class="titlebar" style="padding: 0; margin-bottom: 1rem">
+        <h1 class="titlebar-title">공유 설정</h1>
+        <button class="titlebar-back" aria-label="이전 페이지로">
+          <span class="material-symbols-outlined">arrow_back</span>
+        </button>
+      </header>
+      <div class="checkbox">
+        <input type="checkbox" />
+        <label for="">편집자가 권한을 변경하고 공유할 수 있습니다.</label>
+      </div>
+      <div class="checkbox">
+        <input type="checkbox" />
+        <label for="">뷰어 및 댓글 작성자에게 다운로드, 인쇄, 복사 옵션 표시.</label>
+      </div>
+      <hr />
+      <p>일반 액세스 (기본 액세스라는 의미인 듯)</p>
+      <test-chip label="제한됨">
+        <figure class="chip-icon">
+          <span class="material-symbols-outlined">arrow_drop_down</span>
+        </figure>
+      </test-chip>
+      <div style="margin: 0.75rem 0">
+        <p>액세스 권한이 있는 사용자만 링크로 열 수 있습니다.</p>
+      </div>
+
+      <hr />
+
+      <p>개선한 부분</p>
+      <ul>
+        <li>일반 액세스는 설정에서 제공. 소제목 제거. 액세스 권한이 있는 사용자.</li>
+        <li>multiple select 인터페이스를 정의하지 않기 위해 버튼을 사용. => 디자인 시스템에 정의하지 않은 요소.</li>
+        <li>한 번에 여러 명과 공유 / 긴 파일 이름 / 추가 버튼이 리스트의 최상단과 최하단애 배치되는 맥락 정의 /</li>
+      </ul>
+    </test-tile>
+
+    <section>
+      <div class="textfield">
+        <button class="textfield-prefix searchfield-prefix">
+          <span class="material-symbols-outlined">mail </span>
+        </button>
+        <input class="textfield-input" type="text" id="search" placeholder="you@gamil.com" />
+      </div>
+      <button class="item" role="menuitem" data-tile="elevated" data-size="medium" style="max-width: 50%">
+        <figure class="item-avatar" style="background-image: none">
+          <span class="material-symbols-outlined">add</span>
+        </figure>
+        <span class="item-label">Add the member</span>
+      </button>
+    </section>
+
+    <hr />
+    <div>
+       <!-- <figure class="item-avatar" style="background:aliceblue;">
+          <span class="material-symbols-outlined" style="color:blue;">trending_up</span>
+        </figure> -->
+      <article class="item tile-elevated-small" data-size="large" style="width: 200px; margin: 0; z-index: auto">
+        <b class="item-name" style="font-size: 16px">상해종합주가지수</b>
+        <p class="item-description" style="color: var(--color-text)">2999.55p</p>
+        <test-tag style="color: #fff; text-align: center; justify-content: center; background: blue; border: 0; margin-top: 0.5rem"
+          >4.33% 상승</test-tag
+        >
+
+        <div style="margin-top: 0.5rem; color: var(--color-text-light); line-height: var(--font-line-height)">
+          <small>10분 지연. live</small>
+          <br />
+          <small>현지 시간 기준 10.27. 01:27</small>
+        </div>
+      </article>
+
+      <article class="item tile-elevated-small" data-size="large" style="width: 200px; margin: 0; z-index: auto">
+        <figure class="item-avatar" style="background: var(--red100)">
+          <span class="material-symbols-outlined" style="color: var(--red800)">trending_down</span>
+        </figure>
+        <h3 class="item-name">Entity large</h3>
+        <span style="color: var(--red800)">35%</span>
+      </article>
+    </div>
+
+    <hr />
+
+    <section style="max-width: 640px">
+      <section class="dashboard-">
+        <div class="dashboard-item overview-item tile-elevated" style="width: var(--width-tiny); padding: 1rem">
+          <div class="dashboard-item-label" style="font-size: var(--font-size-medium)">수신</div>
+          <span class="dashboard-item-tag tag" style="position: absolute; right: 1rem; top: 0.875rem">태그</span>
+          <b class="dashboard-item-value" style="font-size: var(--font-size-huge)">
+            1,508<small style="margin: 0 0 0 0.25rem; font-size: var(--font-size-medium); vertical-align: super">90%</small>
+            <!-- <i>icon</i> -->
+          </b>
+          <div class="dashboard-item-graph graph-bar" style="margin: var(--space-3) 0 0 0"><b style="width: 68%"></b></div>
+        </div>
+      </section>
+
+      <test-row>
+        <test-chip label="오늘" status="active"> </test-chip>
+        <test-chip label="최근 3개월"></test-chip>
+        <test-chip label="최근 1년"></test-chip>
+        <test-chip label="최근 3년"> </test-chip>
+      </test-row>
+      <p style="margin: 0.75rem 0" role="status">주문 내역 총 <b>3</b>건. Statusbox</p>
+
+      <section class="empty">
+        <figure class="empty-icon" style="background: none; border: var(--border)">🙀</figure>
+        <h2 class="empty-title">최근 3개월 내 <br />주문 내역이 없습니다.</h2>
+        <button class="empty-action">2022년 주문 내역 보기</button>
+      </section>
+    </section>
+
+    <!-- <p>TeeVee</p>
+    <p>icon-indicator (textfield-check/select indicator) - inline or float: right</p>
+    <p>
+      Note: Make sure the role of the element that serves as the container for the popup content is a menu, listbox, tree, grid or dialog and that the
+      value of aria-haspopup matches the role of the popup container.
+    </p> -->
+    <br />
+
+    <div class="textfield-group" style="display: flex; align-items: flex-end; max-width: 480px">
+      <div class="textfield">
+        <label class="textfield-label" for="search">Length</label>
+        <input class="textfield-input" type="number" id="search" placeholder="cm unit" />
+      </div>
+      <span class="material-symbols-outlined" style="padding: 0 var(--space-1); color: var(--color-text-light); line-height: 48px"> close </span>
+      <div class="textfield">
+        <label class="textfield-label" for="search">Width</label>
+        <input class="textfield-input" type="search" id="search" placeholder="x means" />
+      </div>
+      <span class="material-symbols-outlined" style="padding: 0 var(--space-1); color: var(--color-text-light); line-height: 48px"> close </span>
+      <div class="textfield">
+        <label class="textfield-label" for="search">Height</label>
+        <input class="textfield-input" type="search" id="search" placeholder="cm" />
+      </div>
+    </div>
+
+    <hr />
+
+    <article class="card onboarding" role="listitem" style="max-width: 400px; text-align: center">
+      <figure class="card-thumbnail" style="object-fit: cover">
+        <img src="/public/images/springsteen.jpg" alt="" style="max-height: fit-content" />
+      </figure>
+      <h3 class="card-title" style="font-weight: bold; padding: var(--space-3) 0 0.25rem 0">Welcome to...</h3>
+      <p class="card-text" style="width: 90%; margin: 0 auto; font-size: var(--font-size-medium); line-height: var(--font-line-height)">
+        Onboarding card. 디스크립션. PrevButton 이라면 secondary vs tertiary
+      </p>
+      <footer class="onboarding-control">
+        <button class="onboarding-control-next button" data-variant="primary">Next</button>
+        <button class="onboarding-control-skip button" data-variant="tertiary">Skip</button>
+      </footer>
+    </article>
+
+    <table>
+      <thead>
+        <tr>
+          <td style="padding: var(--space-2) 0">
+            <span class="icon-indicator is-positive" data-size="small">
+              <span class="material-symbols-outlined" style="color: var(--color-primary)">check</span>
+            </span>
+          </td>
+          <td style="padding: var(--space-2) 0">
+            <span class="icon-indicator is-negative" data-size="small"><span class="material-symbols-outlined">close</span></span>
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <b>Alerte de Retour</b>
+            <br />
+            cette notification expire dans 5 jours
+          </td>
+          <td>
+            <b>Alerte de Retour</b>
+            <br />
+            cette notification expire dans 5 jours
+          </td>
+        </tr>
+        <tr>
+          <td style="border: none">cette notification expire dans 5 jours</td>
+          <td style="border: none">cette notification expire dans 5 jours</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="" role="group" style="display: flex"></div>
+
+    <div class="file-attachment-item" style="max-width: 400px">
+      <figure class="file-attachment-item-image"><img src="/public/images/springsteen.jpg" alt="${file.name}" /></figure>
+      <b class="file-attachment-item-name">${file.name}</b>
+      <small class="file-attachment-item-size">${returnFileSize(file.size)}</small>
+      <button class="file-attachment-item-delete js-remove-this"><span class="material-symbols-outlined">close</span></button>
+    </div>
+
+    <div class="quote" style="padding: 1rem">
+      <figure class="quote-avatar">🥫</figure>
+      <h3 class="quote-title">Quote</h3>
+      <p class="quote-body">Don't you know that God is Pooh bear?</p>
+      <cite class="quote-byline">
+        <div class="quote-byline-name">Jack Kerouac</div>
+        <div class="quote-byline-job">Poet / Novelist</div>
+      </cite>
+      <button class="quote-action">더 알아보기</button>
+      <!-- <button class="quote-later">지금은 괜찮아요</button> -->
+    </div>
+
+    <div class="quote" style="background-image: url('../public/images/springsteen.jpg'); background-size: cover; padding: 8rem 1rem 1rem">
+      <h3 class="quote-title" style="color: #fff">Quote</h3>
+      <p class="quote-body" style="color: #fff">Don't you know that God is Pooh bear?</p>
+      <cite class="quote-byline">
+        <div class="quote-byline-name" style="color: #fff">Bruce Springsteen</div>
+        <div class="quote-byline-job">Musician</div>
+      </cite>
+    </div>
+
+    <test-tile variant="elevated" style="max-width: 400px; z-index: 1">
+      <header class="titlebar" style="padding: 0; margin-bottom: var(--space-4)">
+        <button class="titlebar-back" aria-label="이전 페이지로">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+        <h1 class="titlebar-title">컬렉션에 추가</h1>
+      </header>
+      <fieldset>
+        <div class="checkbox">
+          <input class="" type="checkbox" id="playlist" value="" aira-checked="mixed" aria-controls="1 2" />
+          <label for="playlist" title="play list">재생 목록 1,</label>
+        </div>
+        <div class="checkbox">
+          <input class="" type="checkbox" id="playlist2" value="" aira-checked="mixed" aria-controls="1 2" />
+          <label for="playlist2" title="play list2">재생 목록 2</label>
+        </div>
+      </fieldset>
+      <button class="item" role="menuitem" data-tile="elevated" data-size="medium">
+        <figure class="item-avatar" style="background-image: none">
+          <span class="material-symbols-outlined">add</span>
+        </figure>
+        <span class="item-label">새 컬렉션 만들기</span>
+      </button>
+      <hr />
+      <header class="titlebar" style="padding: 0; margin-bottom: var(--space-4)">
+        <test-chip class="titlebar-back" aria-label="이전 페이지로">
+          <span class="material-symbols-outlined">arrow_back</span>
+        </test-chip>
+        <test-text variant="subhead" class="titlebar-title">컬렉션 만들기</test-text>
+        <button class="titlebar-action">만들기</button>
+      </header>
+      <test-textfield label="컬렉션 이름" placeholder="컬렉션 이름"></test-textfield>
+    </test-tile>
+
+    <section class="comment-list" style="max-width: 400px">
+      <article class="comment-list-item" role="comment">
+        <article class="item" data-size="medium" style="display: flex; align-items: center">
+          <figure class="item-avatar"></figure>
+          <b class="item-name">Entity large</b>
+          <time class="item-description" style="margin-left: 0.5rem">5 days ago</time>
+        </article>
+        <p class="comment-list-item-text">
+          코멘트는 노출 순서와 정렬 기능 여부 갯수, 답글 스타일, 최초 노출형태, 신고/수정/삭제/아바타는 우선순위를 낮게 설정하고, 리뷰와 코멘트는
+          비슷한 구조이지만 별도의 컴포넌트로 관리되어야 한다. 또 있을까? <button style="color: var(--color-primary)">자세히보기</button>
+        </p>
+        <button class="item" role="menuitem" data-tile="elevated" data-size="medium">
+          <figure class="item-avatar"></figure>
+          <span class="item-label">샘플 유아이</span>
+          <i class="item-helper material-symbols-outlined" style="margin-left: auto">arrow_forward</i>
+        </button>
+
+        <button class="comment-list-item-reply">답글 <small>7</small></button>
+        <button class="comment-list-item-morevert js-toggle">
+          <span class="material-symbols-outlined"> more_vert </span>
+        </button>
+        <menu class="comment-list-item-menu">
+          <button class="">수정</button>
+          <button class="">삭제</button>
+        </menu>
+        <!-- 대댓글 샘플 -->
+        <div class="comment-list-item" role="comment">
+          <article class="item" data-size="medium">
+            <figure class="item-avatar"></figure>
+            <b class="item-name">Entity large</b>
+            <time class="item-description" style="margin-left: 0.5rem">description area.</time>
+          </article>
+          <p class="comment-list-item-text">
+            우와 처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요. 우와 처음으로 댓글 남겨요! 댓글이 길어지면 어떻게
+            보일까요? 두 줄로 세 줄로 안녕하세요.
+          </p>
+        </div>
+      </article>
+    </section>
+
+    <aside class="help-feedback tile-elevated">
+      <p class="help-feedback-title">이 문서가 도움이 되었나요?</p>
+      <small class="help-feedback-status" title="17 out of 439 found this helpful">417명 중 349명이 도움을 받았어요.</small>
+      <footer style="display: flex">
+        <button class="help-feedback-button"><span class="chip-label">도움이 됐어요</span></button>
+        <button class="help-feedback-button"><span class="chip-label">부족해요</span></button>
+      </footer>
+    </aside>
+
+    <br />
+
+    <test-tile>
+      <q
+        >I'm impressed by how GitHub Copilot seems to know exactly what I want to type next. GitHub Copilot is particularly helpful when working on
+        React components, where it makes eerily accurate predictions. GitHub Copilot has become an indispensable part of my programmer toolbelt.</q
+      >
+      <figcaption style="margin: var(--space-3) 0 0 0; color: var(--color-text-light)">Byline</figcaption>
+    </test-tile>
+
+    <div class="graph" style="border: var(--border); border-radius: var(--radius)">
+      <div class="graph-title">1월 26일 <em>컴퓨터통신 분야</em>에서는<br /><em>7백명의 지식iN</em>들이 답변하셨습니다.</div>
+      <div class="graph-item">
+        <span class="graph-item-value">40%</span>
+        <div class="graph-item-bar"></div>
+        <span class="graph-item-label">10대</span>
+      </div>
+      <div class="graph-item">
+        <span class="graph-item-value">30%</span>
+        <div class="graph-item-bar"></div>
+        <span class="graph-item-label">20대</span>
+      </div>
+      <div class="graph-item">
+        <span class="graph-item-value">20%</span>
+        <div class="graph-item-bar"></div>
+        <span class="graph-item-label">30대</span>
+      </div>
+      <div class="graph-item">
+        <span class="graph-item-value">10%</span>
+        <div class="graph-item-bar"></div>
+        <span class="graph-item-label">40대</span>
+      </div>
+    </div>
+
+    <article class="meter tile-elevated" style="padding: 1rem">
+      <h1 class="meter-title">200 GB 중 187.23 GB 사용됨</h1>
+      <div class="meter-graph">
+        <div class="meter-graph-bar" data-type="facebook" style="width: 40%"></div>
+        <div class="meter-graph-bar" data-type="twitter" style="width: 30%"></div>
+        <div class="meter-graph-bar" data-type="instagram" style="width: 7%"></div>
+      </div>
+      <div class="meter-legend">
+        <div class="meter-legend-item">
+          <i class="meter-legend-item-color" data-type="facebook"></i>
+          <h3 class="meter-legend-item-title">페이스북</h3>
+          <span class="meter-legend-item-value">800,000원</span>
+        </div>
+        <div class="meter-legend-item">
+          <i class="meter-legend-item-color" data-type="twitter"></i>
+          <h3 class="meter-legend-item-title">트위터</h3>
+          <span class="meter-legend-item-value">800,000원</span>
+        </div>
+        <div class="meter-legend-item">
+          <i class="meter-legend-item-color" data-type="instagram"></i>
+          <h3 class="meter-legend-item-title">핀터레스트</h3>
+          <span class="meter-legend-item-value">800,000원</span>
+        </div>
+      </div>
+    </article>
+
+    <test-tile style="text-align: center">
+      최근 3개월간 네이버플러스 멤버십으로<br />
+      <em>15,799원 추가 적립 혜택</em>이 생겼어요!
+    </test-tile>
+  </section>
+</main>

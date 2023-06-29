@@ -37,6 +37,10 @@
 /* //todo reset */
 /* figure {margin:0;} */
 
+img {
+  width: 100%;
+}
+
 .avatar {
   margin: 0 !important;
 
@@ -79,3 +83,12 @@
   top: -.25rem;
   z-index: 1;
 }
+
+.avatar + .avatar {margin-left:-.5rem;}
+
+
+/*
+.avatargroup figure {@mixin avatar-small;
+  // box-shadow:var(--color-background) 0px 0px 0px 2px;
+}
+.avatargroup-label {margin:0 0 0 var(--space-2);line-height:var(--size-small);} */

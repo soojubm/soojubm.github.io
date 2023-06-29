@@ -25,8 +25,27 @@ const path = require('path')
 // entry key랑 맞아야 함. key는 무엇
 const HTML_TEMPLATE = './index.html'
 
-const patterns = ['result', 'searching', 'presentation', 'filter', 'text']
-const components = ['avatar', 'button', 'chip', 'tag', 'checkbox', 'radio', 'textfield', 'tile', 'menuitem', 'switch', 'tooltip', 'callout']
+const patterns = ['result', 'searching', 'presentation', 'filtering', 'chat', 'setting', 'post', 'accordion']
+const components = [
+  'signifier',
+
+  'avatar',
+
+  'entity',
+
+  'button',
+  'chip',
+  'tag',
+  'checkbox',
+  'radio',
+  'textfield',
+  'tile',
+  'menuitem',
+  'switch',
+  'tooltip',
+  'callout',
+  'text',
+]
 
 // let t = {}
 // const temp = components.forEach(item => {
@@ -50,6 +69,14 @@ components.forEach(item => {
   }
 })
 
+let test2 = {}
+patterns.forEach(item => {
+  test2 = {
+    ...test2,
+    [item]: [`./pages/patterns/${item}/${item}.ts`, './public/javascripts/common/navbar.ts', './index.ts'],
+  }
+})
+
 module.exports = {
   mode: 'development', // development, production, none
   watch: true,
@@ -60,10 +87,8 @@ module.exports = {
     tokens: ['./pages/tokens/tokens.ts', './public/javascripts/common/navbar.ts', './index.ts'],
     components: ['./pages/components/components.ts', './public/javascripts/common/navbar.ts', './index.ts'],
 
-    searching: ['./pages/searching/searching.ts', './public/javascripts/common/navbar.ts', './index.ts'],
-    result: ['./pages/result/result.ts', './public/javascripts/common/navbar.ts', './index.ts'],
-
     ...test,
+    ...test2,
     // button: ['./pages/components/button/button.ts', './public/javascripts/common/navbar.ts', './index.ts'],
     // avatar: ['./pages/components/avatar/avatar.ts', './public/javascripts/common/navbar.ts', './index.ts'],
     // textfield: ['./pages/components/textfield/textfield.ts', './public/javascripts/common/navbar.ts', './index.ts'],
@@ -101,13 +126,6 @@ module.exports = {
       filename: 'tokens.html',
       chunks: ['tokens'],
     }),
-
-    new HtmlWebpackPlugin({
-      template: HTML_TEMPLATE,
-      filename: 'searching.html',
-      chunks: ['searching'],
-    }),
-
     new HtmlWebpackPlugin({
       template: HTML_TEMPLATE,
       filename: 'components.html',

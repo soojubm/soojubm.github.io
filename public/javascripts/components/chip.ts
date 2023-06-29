@@ -1,9 +1,12 @@
-import { makeStyleSheet } from './utils'
+import { importScript, makeStyleSheet } from './utils'
 
 class Chip extends HTMLElement {
+  #internals = this.attachInternals() as any
+
   constructor() {
     super()
 
+    console.log('#internals', this.#internals)
     const sheet = new CSSStyleSheet()
     // replace all styles synchronously:
     // sheet.replaceSync('@import url("/public/stylesheets/components/chip.css"); button { color: red; }')
@@ -32,6 +35,10 @@ class Chip extends HTMLElement {
     const icon = document.createElement('span')
     const value = document.createElement('em')
 
+    const iconSlot = document.createElement('slot')
+    iconSlot.name = 'icon'
+    iconSlot.classList.add('chip-icon')
+
     const shadow = this.attachShadow({ mode: 'open' })
     shadow.appendChild(host)
 
@@ -46,8 +53,6 @@ class Chip extends HTMLElement {
     // createElement('em') => reset em
     value.classList.add('chip-value')
 
-    // host.setAttribute('class', 'chip')
-
     // this.addEventListener('click', e => {
     //   // Don't toggle the drawer if it's disabled.
     //   if (this.disabled) {
@@ -56,11 +61,17 @@ class Chip extends HTMLElement {
     //   this.toggleDrawer()
     // })
 
+    // b.append(...this.childNodes)
+
     shadow.appendChild(makeStyleSheet('chip'))
+
+    var pretty = document.createElement('link')
+    pretty.href = 'https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css'
 
     // Attach the created elements to the shadow dom
     if (this.icon) host.appendChild(icon)
     host.appendChild(label)
+    host.append(iconSlot, pretty)
 
     label.innerHTML = this.innerHTML || this.label || ''
 
@@ -71,7 +82,6 @@ class Chip extends HTMLElement {
       value.textContent = this.value || ''
       label.appendChild(value)
     }
-    if (this.type === 'primary') host.classList.add('is-primary')
     if (this.status === 'active') host.setAttribute('aria-selected', 'true')
     if (this.status === 'disabled') host.setAttribute('disabled', 'true')
   }
@@ -87,35 +97,34 @@ class Chip extends HTMLElement {
   get size() {
     return this.getAttribute('size')
   }
+  get status() {
+    return this.getAttribute('status')
+  }
+  get icon() {
+    return this.getAttribute('icon')
+  }
+  get type() {
+    return this.getAttribute('type')
+  }
+  get value() {
+    return this.getAttribute('value')
+  }
+  get label() {
+    return this.getAttribute('label')
+  }
+
   set size(value) {
     if (value) this.setAttribute('size', value)
   }
 
-  get status() {
-    return this.getAttribute('status')
-  }
   set status(value) {
     if (value) this.setAttribute('status', value)
   }
 
-  get icon() {
-    return this.getAttribute('icon')
-  }
-
-  get type() {
-    return this.getAttribute('type')
-  }
   set type(value) {
     if (value) this.setAttribute('type', value)
   }
 
-  get value() {
-    return this.getAttribute('value')
-  }
-
-  get label() {
-    return this.getAttribute('label')
-  }
   set label(value) {
     if (value) this.setAttribute('label', value)
   }

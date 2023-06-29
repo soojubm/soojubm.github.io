@@ -70,9 +70,9 @@ input[type=checkbox][indeterminate=true] ~ label:after,
 input[type=checkbox][data-indeterminate=true] ~ label:after {display:block;width:8px;background:var(--color-primary);border:none;left:4px;top:48%;transform:rotate(0deg);}
 
 input[type=checkbox]:disabled {background-color:chocolate;}
-input[type=checkbox]:disabled ~ label {color:var(--gray200);cursor:not-allowed;}
-input[type=checkbox]:disabled ~ label:before {background:var(--gray200);border-color:var(--gray200);}
-input[type=checkbox]:disabled ~ label:after {border-color:var(--color-text-weak);}
+input[type=checkbox]:disabled ~ label {opacity:.5;cursor:not-allowed;}
+/* input[type=checkbox]:disabled ~ label:before {background:var(--gray200);border-color:var(--gray200);}
+input[type=checkbox]:disabled ~ label:after {border-color:var(--color-text-weak);} */
 
 
 

@@ -9,32 +9,21 @@ class Row extends HTMLElement {
     container.classList.add('row')
     container.role = 'group'
 
-    shadow.appendChild(container)
-
-    shadow.appendChild(makeStyleSheet('row'))
+    const direction = this.getAttribute('direction')
+    container.dataset.direction = direction || ''
 
     // if (this.variant) container.setAttribute('data-variant', this.variant)
 
-    container.innerHTML = this.content
-
-    console.log(this, 'this')
-  }
-
-  get content() {
-    return this.innerHTML
+    shadow.appendChild(container)
+    container.append(...this.childNodes, makeStyleSheet('row'))
   }
 
   // set content(value) {
   //   return (container = value)
   // }
 
-  connectedCallback() {
-    // this.textContent = this.label
-  }
-
-  disconnectedCallback() {
-    console.log('disconnected', this)
-  }
+  connectedCallback() {}
+  disconnectedCallback() {}
 }
 
 export default Row
