@@ -12,6 +12,7 @@ import Switch from './switch'
 import Radio from './Radio'
 
 import Button from './button'
+import Link from './link'
 import Row from './row'
 import Text from './text'
 
@@ -23,10 +24,12 @@ import MenuItem from './menuitem'
 import Dialog from './dialog'
 
 import Tooltip from './tooltip'
+import TitleBar from './titlebar'
 
 export function defineCustomElement() {
   if ('customElements' in window) {
     customElements.define('test-button', Button)
+    customElements.define('test-link', Link)
     customElements.define('test-chip', Chip)
 
     customElements.define('test-tag', Tag)
@@ -40,6 +43,7 @@ export function defineCustomElement() {
     customElements.define('test-radio', Radio)
 
     customElements.define('test-tile', Tile)
+    customElements.define('test-titlebar', TitleBar)
     customElements.define('test-row', Row)
     customElements.define('test-text', Text)
 

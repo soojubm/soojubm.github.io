@@ -1,45 +1,39 @@
-<main class="feeds" role="feed" aria-busy="false">
-  <test-tile variant="elevated" style="padding: 1rem; z-index: 1">
-    <h2 style="margin-bottom: 0.5rem; line-height: var(--font-line-height)">Heading</h2>
+<main class="component feeds" role="feed" aria-busy="false" style="max-width:640px;">
+  <test-tile variant="elevated">
+    <test-text variant="subhead">Heading</test-text>
     <p style="margin-bottom: 0.5rem">Uniquely procrastinate open-source infomediaries vis-a-vis high-quality potentialities. Globally engineer.</p>
     <p style="margin-bottom: 1rem">
       다이얼로그나 아티클에서만 1rem의 inset을 갖는 tile을 쓸 수 있다. 기본 tile은 기존 1rem에서 .75rem으로 변경한다. 이 패턴의 heading은 1.25rem이다.
       feed entity와 같은 콘테이너. footer는 toolbar이다.
     </p>
-    <time class="tag">3월 14일 수정됨</time>
-    <button class="item" data-size="large" style="margin-top: 0.75rem">
-      <figure class="item-avatar"><img src="/public/images/springsteen.jpg" alt="" /></figure>
-      <h3 class="item-name">Kakao</h3>
-      <p class="item-description">https://www.kakaocorp.com</p>
-    </button>
-    <button class="item" data-size="large">
-      <figure class="item-avatar"><img src="/public/images/springsteen.jpg" alt="" /></figure>
-      <h3 class="item-name">Naver</h3>
-      <p class="item-description">https://www.naver.com</p>
-    </button>
+    <test-row direction="column">
+      <test-tag>3월 14일 수정됨</test-tag>
+      <test-menu-item label="Kakao" description="https://www.kakaocorp.com" size="large">
+        <test-avatar slot="avatar"><img src="/public/images/springsteen.jpg" alt="" /></test-avatar>
+      </test-menu-item>
+      <test-menu-item label="Naver" description="https://www.naver.com" size="large">
+        <test-avatar slot="avatar"><img src="/public/images/springsteen.jpg" alt="" /></test-avatar>
+      </test-menu-item>
+    </test-row>
   </test-tile>
 
   <article class="feed" aria-setsize="3" aria-posinset="1">
     <test-tag> 🔥 Most Popular </test-tag>
-    <article class="feed-user item" data-size="medium" role="menuitem">
-      <figure class="item-avatar"></figure>
-      <h3 class="item-name">Elon Musk</h3>
-      <time style="margin: 0 0 0 0.5rem; color: var(--color-text-light)">2 hour</time>
-    </article>
-    <div class="feed-content tile-elevated">
-      <figure class="feed-content-media">
+    <test-menu-item label="Elon Musk" description="2 hour" class="feed-user">
+      <test-avatar slot="avatar"></test-avatar>
+    </test-menu-item>
+    <test-tile variant="elevated" size="small" class="feed-content">
+      <test-avatar size="huge" class="feed-content-media">
         <img src="/public/images/springsteen.jpg" alt="" />
-      </figure>
+      </test-avatar>
       <p class="feed-content-paragraph">
         Monotonectally productivate progressive human capital without user friendly portals. Globally benchmark top-line ideas with distributed
         catalysts for change. Authoritatively restore ubiquitous partnerships vis-a-vis <a href="#feed">synergistic models</a>.
       </p>
-
-      <div class="feed-tag stack" style="margin: 0 0 var(--space-4) 0">
-        <test-tag>Google</span>
-      </div>
-
-      <ul style="margin: 0 0 1.5rem 0">
+      <test-row>
+        <test-tag>Google</test-tag>
+      </test-row>
+      <ul>
         <li>피드의 상세 페이지에서 전체 댓글 목록과 액션을 제공할 수 있다.</li>
         <li>원활한 피드 탐색 경험을 위해 피드의 콘텐츠를 일부 생략해서 보여줄 수 있다.</li>
         <li>리액션 버튼과 리액션 수치를 각각 제공할 수 있고 따로 제공할 수 있다. 리액션한 사용자 목록을 어떻게 보여줄 것인가에 의존성이 있다.</li>
@@ -52,12 +46,11 @@
         <li>글줄의 길이는 상대적으로 좁게 짜는 경향이 있다.</li>
       </ul>
 
-      <div class="feed-reaction">
-        <div class="post-reaction-like">
-          <figure class="post-reaction-like-icon">💕</figure>
-          <span class="post-reaction-like-count">119</span>
-        </div>
-      </div>
+      <test-row class="feed-reaction">
+        <test-chip icon="💕" label="119"></test-chip>
+          <!-- <figure class="post-reaction-like-icon"></figure>
+          <span class="post-reaction-like-count">119</span> -->
+      </test-row>
     </div>
   </article>
 </main>

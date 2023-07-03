@@ -1,4 +1,4 @@
-<main class="notifications js-tab">
+<main class="component notifications js-tab">
   <ul>
     <li>
       <b>popover: </b>
@@ -29,44 +29,37 @@
     </button>
   </header>
 
-  <nav class="tablist type-t" role="tablist" aria-label="sample tabs" style="margin-bottom: var(--space-3); z-index: 7">
+  <test-tablist class="tablist type-t" role="tablist" aria-label="sample tabs" style="margin-bottom: var(--space-3); z-index: 7">
     <button class="tablist-tab" role="tab" aria-selected="true" aria-controls="panel-2" id="tab-2" tabindex="-1">좋아요</button>
     <button class="tablist-tab" role="tab" aria-selected="false" aria-controls="panel-3" id="tab-3" tabindex="-1">코멘트</button>
     <i class="tablist-indicator"></i>
-  </nav>
+  </test-tablist>
 
-  <div class="notification-filter stack" style="margin-bottom: var(--space-3)">
-    <button class="chip is-active"><span class="chip-label">모두</span></button>
-    <button class="chip"><span class="chip-label">읽지않음</span></button>
-  </div>
+  <test-row class="notification-filter">
+    <test-chip class="is-active"><span class="chip-label">모두</span></test-chip>
+    <test-chip><span class="chip-label">읽지않음</span></test-chip>
+  </test-row>
 
-  <div class="notification notification-list" style="margin-left: 0; padding-bottom: 8rem">
-    <menu class="notification-menu">
-      <test-tile variant="elevated">
-        <article class="item" data-size="medium">
-          <figure class="item-avatar"></figure>
-          <b class="item-name">응암동 주간 인기글</b>
-          <time class="item-time" style="margin-left: var(--space-2); color: var(--color-text-light)">5일 전</time>
-          <p style="width: 100%; margin: var(--space-2) 0; line-height: var(--line-height)">
-            '송명섭 막걸리 6도 750m...' 외 1개 상품이 오늘 도착예정입니다~
-          </p>
-        </article>
-      </test-tile>
-      <test-tile variant="elevated">
-        <article class="item" data-size="medium">
-          <figure class="item-avatar"></figure>
-          <b class="item-name">오늘의 주요 종목 종가</b>
-          <time class="item-time" style="margin-left: var(--space-2); color: var(--color-text-light)">5시간 전</time>
-
-          <p style="width: 100%; margin: var(--space-2) 0; line-height: var(--line-height)">HSD 엔진 -2.4%</p>
-        </article>
-      </test-tile>
-    </menu>
+  <!-- TODO list는 결국 row/ stack이다. -->
+  <test-row direction="column">
+    <test-tile variant="elevated" size="small">
+      <test-menu-item label="응암동 주간 인기글" description="5일 전">
+        <test-avatar slot="avatar"></test-avatar>
+        <p style="width: 100%; margin: var(--space-2) 0; line-height: var(--line-height)">
+          '송명섭 막걸리 6도 750m...' 외 1개 상품이 오늘 도착예정입니다~
+        </p>
+      </test-menu-item>
+    </test-tile>
+    <test-tile variant="elevated" size="small">
+      <test-menu-item label="오늘의 주요 종목 종가">
+        <test-avatar slot="avatar"></test-avatar>
+        <p style="width: 100%; margin: var(--space-2) 0; line-height: var(--line-height)">HSD 엔진 -2.4%</p>
+      </test-menu-item>
+    </test-tile>
+  </test-row>
 
     <footer style="margin: var(--space-4) 0 0 0">
-      <button class="link-outside">
-        <span class="">더 보기</span>
-      </button>
+      <test-link>더 보기</test-link>
     </footer>
 
     <section class="empty" role="status">

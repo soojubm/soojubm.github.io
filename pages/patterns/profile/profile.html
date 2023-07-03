@@ -1,4 +1,4 @@
-<main class="profile">
+<main class="component">
   <!-- <header class="profile-head">
     <div class="profile-head-background"></div>
     <h1 class="profile-head-headline"></h1>
@@ -6,16 +6,16 @@
   </header> -->
   <section class="profile-user">
     <article class="user">
-      <figure class="user-avatar" role="img"></figure>
+      <test-avatar size="huge" role="img"></test-avatar>
       <h2 class="user-name">수줍이</h2>
       <span class="user-id">soojubm@gmail.com</span>
       <span class="user-job">UI Designer</span>
     </article>
     <p class="profile-user-description">
       유아이를 그립니다. 배경을 넣어보았다. 모바일에서 팔로우 버튼을 상단으로 조정해야 한다. 업로드 버튼과 설정 버튼.
-      <a class="profile-user-description-more" href="javascript:alert('유아이 패턴 샘플입니다.');">더 보기</a>
+      <test-link class="profile-user-description-more" href="javascript:alert('유아이 패턴 샘플입니다.');">더 보기</test-link>
     </p>
-    <div class="user-tags" role="group">
+    <test-row class="user-tags">
       <test-tag>HTML5</test-tag>
       <test-tag>SASS</test-tag>
       <test-tag>VanillaJS</test-tag>
@@ -26,10 +26,10 @@
       <test-tag>GoogleAnalytics</test-tag>
       <test-tag>GoogleOptimize</test-tag>
       <test-tag>Figma</test-tag>
-    </div>
+    </test-row>
     <menu class="profile-user-controls">
-      <button class="button" data-variant="primary">팔로우</button>
-      <button class="button" data-variant="tertiary">메시지</button>
+      <test-butotn variant="primary">팔로우</test-butotn>
+      <test-butotn variant="tertiary">메시지</test-butotn>
     </menu>
 
     <button class="profile-user-toggle js-toggle" hidden>
@@ -50,39 +50,47 @@
             <span class="statistic-value">8</span>
           </div>
         </div>
-        <article class="avatargroup" style="margin: var(--space-4) 0 0 0">
-          <figure></figure>
-          <figure></figure>
-          <figure></figure>
-          <figure></figure>
+        <test-row class="avatargroup" style="margin: var(--space-4) 0 0 0">
+          <test-avatar></test-avatar>
+          <test-avatar></test-avatar>
+          <test-avatar></test-avatar>
+          <test-avatar></test-avatar>
           <span class="avatargroup-label">Followed by 수줍이 외 4명</span>
-        </article>
+        </test-row>
       </div>
       <hr role="separator" />
-      <div class="profile-user-socials social">
+      <test-row direction="column">
         <h2 class="profile-user-socials-title social-title" hidden>소셜 미디어</h2>
-        <a class="social-link social-github" href="https://github.com/soojubm" target="_blank" rel="noopener noreferrer">
-          <figure class="social-link-icon"></figure>
-          <span class="social-link-label">github</span>
-        </a>
-        <a class="social-link social-pinterest" href="https://www.pinterest.co.kr/soojubm/" target="_blank" rel="noopener noreferrer">
-          <figure class="social-link-icon"></figure>
-          <span class="social-link-label">pinterest</span>
-        </a>
-        <a class="social-link social-facebook" href="https://www.facebook.com/soojubm/" target="_blank" rel="noopener noreferrer">
-          <figure class="social-link-icon"></figure>
-          <span class="social-link-label">facebook</span>
-        </a>
-        <a class="social-link social-instagram" href="https://www.instagram.com/soojubm/" target="_blank" rel="noopener noreferrer">
-          <figure class="social-link-icon"></figure>
-          <span class="social-link-label">instagram</span>
-        </a>
-      </div>
+        <test-menu-item class="social-github" label="github" href="https://github.com/soojubm" target="_blank" rel="noopener noreferrer">
+          <test-avatar slot="avatar"></test-avatar>
+        </test-menu-item>
+        <test-menu-item
+          class="social-pinterest"
+          label="pinterest"
+          href="https://www.pinterest.co.kr/soojubm/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <test-avatar slot="avatar"></test-avatar>
+        </test-menu-item>
+        <test-menu-item class="social-facebook" label="facebook" href="https://www.facebook.com/soojubm/" target="_blank" rel="noopener noreferrer">
+          <test-avatar slot="avatar"></test-avatar>
+        </test-menu-item>
+        <test-menu-item
+          class="social-instagram"
+          label="instagram"
+          href="https://www.instagram.com/soojubm/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <test-avatar slot="avatar"></test-avatar>
+        </test-menu-item>
+      </test-row>
     </section>
   </section>
 
   <section class="profile-body js-tab">
-    <nav class="tablist" role="tablist">
+    <test-tablist class="tablist">
       <button class="tablist-tab" role="tab" name="project" aria-selected="true" data-index="1">
         <span class="tablist-tab-label">프로젝트</span>
       </button>
@@ -96,7 +104,7 @@
         <span class="tablist-tab-label">네번쨰 탭</span>
       </button>
       <i class="tablist-indicator"></i>
-    </nav>
+    </test-tablist>
 
     <!-- todo day night toggle과 동일한 패턴 -->
     <div class="profile-display">
@@ -113,20 +121,20 @@
     </div>
 
     <section class="tabpanel" role="tabpanel" aria-hidden="false" data-index="1">
-      <a class="card js-modal" href="#newneek" data-modal="newneek">
+      <test-tile variant="elevated" class="js-modal" href="#newneek" data-modal="newneek">
         <figure class="card-thumbnail">
           <img src="/public/images/newneek/gosum-spinner.png" style="margin-top: var(--space-3)" alt="" />
         </figure>
-        <h3 class="card-title">뉴닉</h3>
+        <test-text variant="subhead" class="card-title">뉴닉</test-text>
         <p class="card-description">description.....</p>
         <!-- <time class="card-date">2017-12-18</time> -->
         <div class="card-category">정리중</div>
 
-        <div class="card-tags" role="group">
-          <span class="card-tags-item">프로젝트관리</span>
-          <span class="card-tags-item">디자인</span>
-          <span class="card-tags-item">프론트엔드개발</span>
-        </div>
+        <test-row>
+          <test-tag>프로젝트관리</test-tag>
+          <test-tag>디자인</test-tag>
+          <test-tag>프론트엔드개발</test-tag>
+        </test-row>
         <!-- <div class="card-byline">
           <figure class="card-byline-avatar"><img src="/public/images/springsteen.jpg" alt="" /></figure>
           <span class="card-byline-name">수줍이</span>
@@ -134,42 +142,42 @@
         <button class="card-more" hidden>
           <span class="material-symbols-outlined">more_vert</span>
         </button>
-      </a>
+      </test-tile>
 
-      <a class="card js-modal" href="#newneek" data-modal="etc-works">
+      <test-tile variant="elevated" class="js-modal" href="#newneek" data-modal="etc-works">
         <figure class="card-thumbnail"><img src="/public/images/work-studium.jpg" alt="" /></figure>
         <h3 class="card-title">프리랜서</h3>
         <!-- <time class="card-date">September 12, 2017</time> -->
         <button class="card-more" hidden>
           <span class="material-symbols-outlined"> more_vert </span>
         </button>
-        <div class="card-tags" role="group">
-          <span class="card-tags-item">프리랜서</span>
-          <span class="card-tags-item">디자인</span>
-          <span class="card-tags-item">워드프레스</span>
-        </div>
-      </a>
+        <test-row>
+          <test-tag>프리랜서</test-tag>
+          <test-tag>디자인</test-tag>
+          <test-tag>워드프레스</test-tag>
+        </test-row>
+      </test-tile>
 
-      <a class="card js-modal" href="#newneek" data-modal="lettering">
+      <test-tile variant="elevated" class="js-modal" href="#newneek" data-modal="lettering">
         <figure class="card-thumbnail"><img src="/public/images/budha.png" alt="" /></figure>
         <h3 class="card-title">레터링</h3>
         <button class="card-more" hidden>
           <span class="material-symbols-outlined"> more_vert </span>
         </button>
-        <div class="card-tags" role="group">
-          <span class="card-tags-item">레터링</span>
-        </div>
-      </a>
+        <test-row>
+          <test-tag>레터링</test-tag>
+        </test-row>
+      </test-tile>
     </section>
 
     <section class="tabpanel" role="tabpanel" aria-hidden="true" data-index="2">
-      <a class="card js-modal" href="#" data-modal="flat_sitemap">
+      <test-tile variant="elevated" class="js-modal" href="#" data-modal="flat_sitemap">
         <figure class="card-thumbnail"></figure>
         <h3 class="card-title">Flat Sitemap</h3>
         <button class="card-more" hidden>
           <span class="material-symbols-outlined"> more_vert </span>
         </button>
-      </a>
+      </test-tile>
     </section>
 
     <section class="tabpanel" role="tabpanel" aria-hidden="true" data-index="3">

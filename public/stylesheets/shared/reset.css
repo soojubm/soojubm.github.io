@@ -9,7 +9,9 @@ em {color:var(--color-primary);}
 small {font-size:var(--font-size-small);}
 abbr,ins {text-decoration:none;}
 del {color:var(--color-text-light);}
-a {text-decoration:none;text-decoration-skip-ink:auto;color:var(--color-primary);}
+a {text-decoration:none;
+  /* text-decoration-skip-ink:auto;color:var(--color-primary); */
+}
 a:link,a:visited {} a:hover,a:focus {} a:active {}
 
 hr {margin:var(--space-4) 0;border-top:var(--border);position:relative;}

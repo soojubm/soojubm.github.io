@@ -16,8 +16,6 @@
 .profile-display-button i {vertical-align:middle;}
 
 
-
-
 .tablist {}
 .tablist-tab {display:flex;align-items:center;justify-content:center;flex:auto;height:var(--size-medium);color:var(--color-text-light);font-weight:var(--font-weight-bold);position:relative;z-index:var(--zindex-default);}
 .tablist-tab[aria-selected=true] {color:var(--color-text);}

@@ -165,7 +165,9 @@
     <!-- <p class="article-description"><em>post 페이지에서 태그와 컴포넌트에서의 태그. hashtag는 tag 컴포넌트와 역할이 다르기 때문에 별도의 컴포넌트로 만들어주어야 한다. 현재 hashtag(keyword)는 chip으로 대체. todo. 댑스가 2이상 인 케이스.</em></p> -->
 
 
-
+    <article class="article js-observer js-scrollspy-section">
+      <test-text variant="title">Media / Exhibit (morning star)</test-text>
+    </article>
 
     <article class="article js-observer js-scrollspy-section">
       <test-text variant="title">Seperator</test-text>
@@ -305,38 +307,38 @@
 
       <section class="component-example">
         <test-tile>
-          <header class="titlebar js-titlebar" role="navigation" style="padding: 0">
-            <div class="titlebar-background"></div>
-            <h1 class="titlebar-title js-page-title" title="page title">쇼핑 탭</h1>
-            <test-chip class="titlebar-action"> 장바구니 </test-chip>
-          </header>
+          <test-titlebar heading="쇼핑 탭" class="js-titlebar" role="navigation">
+            <!-- <div class="titlebar-background"></div> -->
+            <test-chip slot="action" label="장바구니"></test-chip>
+          </test-titlebar>
         </test-tile>
         <test-tile>
-          <header class="titlebar js-titlebar" role="navigation" style="padding: 0">
+          <test-titlebar heading="페이지 타이틀">
             <div class="titlebar-background"></div>
-            <h1 class="titlebar-title js-page-title" title="page title">페이지 타이틀</h1>
-            <test-chip class="titlebar-back" onclick="javascript:window.location.href='/';">
-              <span class="titlebar-back-icon material-symbols-outlined">arrow_back</span>
-            </test-chip>
-            <test-chip class="titlebar-action" style="color: var(--color-primary)"> 공유 </test-chip>
-          </header>
+            <test-row slot="action">
+              <test-chip class="titlebar-back"></test-chip>
+              <test-chip class="titlebar-action" style="color: var(--color-primary)"> 공유 </test-chip>
+            </test-row>
+          </test-titlebar>
         </test-tile>
-        <test-tile style="overflow: hidden">
-          <header class="titlebar js-titlebar" role="navigation" style="padding: 0">
-            <test-chip class="titlebar-back" onclick="javascript:window.location.href='/';">
+        <test-tile>
+          <test-titlebar class="js-titlebar">
+            <test-chip slot="back" class="titlebar-back">
               <i slot="icon" class="iconior-arrow-back"></i>
-              Back to Blahblah Page </test-chip>
-          </header>
-        </test-tile>
-        <test-tile style="overflow: hidden">
-          <header class="titlebar js-titlebar" role="navigation" data-size="large" style="padding: 0">
-            <div class="titlebar-background"></div>
-            <h1 class="titlebar-title js-page-title" title="page title">Large Case</h1>
-            <test-chip class="titlebar-back" onclick="javascript:window.location.href='/';">
-              <span class="material-symbols-outlined">close</span>
+              Back to Blahblah Page
             </test-chip>
-            <test-chip style="color: var(--color-primary)">저장</test-chip>
-          </header>
+          </test-titlebar>
+        </test-tile>
+        <test-tile>
+          <test-titlebar class="titlebar js-titlebar" role="navigation" data-size="large" style="padding: 0">
+            <h1 class="titlebar-title js-page-title" title="page title">Large Case</h1>
+            <test-row slot="action">
+              <test-chip class="titlebar-back" onclick="javascript:window.location.href='/';">
+                <span class="material-symbols-outlined">close</span>
+              </test-chip>
+              <test-chip style="color: var(--color-primary)">저장</test-chip>
+            </test-row>
+          </test-titlebar>
         </test-tile>
         <!-- <div class="titlebar-backdrop js-header"></div> -->
         <article class="component-props">
@@ -634,71 +636,6 @@
       </section>
     </article>
 
-    <article class="article js-observer js-scrollspy-section">
-      <test-text variant="title">Accordions</test-text>
-      <p class="article-description">사용자의 필요에 따라 취사선택할 수 있도록 정보 목록을 요약합니다.</p>
-
-      <section class="component-example">
-        <test-tile>
-          <details class="details">
-            <summary class="details-summary">native details / summary tags</summary>
-            <p>안녕</p>
-          </details>
-        </test-tile>
-        <section class="faq tile-flat">
-          <!-- <header style="padding-bottom: 1.5rem; text-align: center">
-              <abbr title="Frequently asked questions" hidden>FAQ</abbr>
-              <small>Find Your Answers</small>
-              <h2 style="font-size: var(--font-size-huge)" title="FAQs">궁금한 점이 있으신가요?</h2>
-            </header> -->
-          <article class="accordion js-accordion is-active">
-            <button class="accordion-title" role="heading" aria-label="3" aria-expanded="false" aria-controls="1" aria-disable="true">
-              탈퇴하고 싶어요.
-              <figure class="accordion-title-icon material-symbols-outlined">arrow_right</figure>
-            </button>
-            <div class="accordion-panel">
-              <p>모든 국민은 건강하고 쾌적한 환경에서 생활할 권리를 가지며, 국가와 국민은 환경보전을 위하여 노력하여야 한다.</p>
-              <p>
-                제1항의 지시를 받은 당해 행정기관은 이에 응하여야 한다. 국회의원은 법률이 정하는 직을 겸할 수 없다. 대통령의 임기연장 또는 중임변경을
-                위한 헌법개정은 그 헌법개정 제안 당시의 대통령에 대하여는 효력이 없다.
-              </p>
-            </div>
-          </article>
-          <article class="accordion js-accordion is-active">
-            <button class="accordion-title" role="heading" aria-expanded="false">
-              탈퇴하고 싶어요.
-              <figure class="accordion-title-icon material-symbols-outlined">arrow_right</figure>
-            </button>
-            <div class="accordion-panel">
-              <p>모든 국민은 건강하고 쾌적한 환경에서 생활할 권리를 가지며, 국가와 국민은 환경보전을 위하여 노력하여야 한다.</p>
-              <p>
-                제1항의 지시를 받은 당해 행정기관은 이에 응하여야 한다. 국회의원은 법률이 정하는 직을 겸할 수 없다. 대통령의 임기연장 또는 중임변경을
-                위한 헌법개정은 그 헌법개정 제안 당시의 대통령에 대하여는 효력이 없다.
-              </p>
-            </div>
-          </article>
-        </section>
-      </section>
-
-      <test-text variant="subhead">Best practices</test-text>
-      <p>사용자가 반드시 숙지해야 하는 정보를 아코디언으로 요약해서 보여주지 마세요. (참고. Tooltip과 같은 맥락)</p>
-
-      <!-- <test-text variant="body-large">Writing guidelines</test-text> -->
-
-      <ul>
-        <li>role button - space keycode를 추가하여 스페이스 키 또한 확장/축소할 수 있는 키로 인식되도록 합니다. a 엔터키로만동작</li>
-        <li>heading은 한 문장으로 간결하게 작성하세요.</li>
-        <li>클릭 영역의 정의. 본문을 클릭하여 닫을 수 있게 되면, 본문에 페이지 링크를 제공할 수 없음.</li>
-      </ul>
-
-      <!-- <test-text variant="body-large">FAQ<br />자주묻는질문</test-text> -->
-      <blockquote>
-        <p>자주묻는질문(FAQ) 정도 외에는 잘 쓰지 않음. 교육 도매인의 커리큘럼 정도에서 보임. 그 외에는 모바일 친화적인 모달이나 시트를 사용.</p>
-      </blockquote>
-
-      <test-text variant="subhead">References</test-text>
-      <a href="https://nuli.navercorp.com/community/article/1132889">nuli</a>
-    </article>
 
     <article class="article js-observer js-scrollspy-section">
       <test-text variant="title">Dialog</test-text>
@@ -734,10 +671,10 @@
           <div class="dialog-body"></div> -->
           <test-text variant="subhead" class="dialog-title" id="dialog-title2">부끄러우니까 보지마요!</test-text>
           <p class="dialog-description" id="dialog-description2">다이얼로그 디스크립션입니다.</p>
-          <footer class="dialog-footer">
+          <test-row class="dialog-footer">
             <test-button variant="tertiary">안 볼래요</test-button>
             <test-button variant="primary">볼래요</test-button>
-          </footer>
+          </test-row>
           <close-button></close-button>
         </aside>
       </section>
@@ -1072,21 +1009,19 @@
         </div>
 
         <footer style="margin: 1rem 0">
-          <button class="button" data-variant="primary" style="width: 100%; font-size: 15px">Buy now</button>
+          <test-button variant="primary" style="width: 100%; font-size: 15px">Buy now</test-button>
         </footer>
       </article>
 
       <form class="feed-make tile-elevated" action="">
-        <header class="titlebar" style="padding: 0; margin-bottom: var(--space-4)">
-          <h1 class="titlebar-title">게시물 만들기</h1>
-          <button class="titlebar-back" aria-label="이전 페이지로">
+        <test-titlebar heading="게시물 만들기" style="margin-bottom: var(--space-4)">
+          <test-chip slot="back" aria-label="이전 페이지로">
             <span class="material-symbols-outlined">close</span>
-          </button>
-        </header>
-        <div class="item" data-size="medium">
-          <figure class="item-avatar"></figure>
-          <span class="item-name">수줍이</span>
-        </div>
+          </test-chip>
+        </test-titlebar>
+        <test-menu-item label="수줍이" size="medium">
+          <test-avatar slot="avatar"></test-avatar>
+        </test-menu-item>
         <div class="textfield comment-write-text" style="margin: var(--space-3) 0">
           <!-- <label class="textfield-label" for="" aria-hidden="true">댓글</label> -->
           <textarea
@@ -1098,40 +1033,32 @@
           ></textarea>
         </div>
         <footer class="comment-write-footer">
-          <button class="button" data-variant="primary">게시</button>
+          <test-button variant="primary">게시</test-button>
         </footer>
       </form>
 
       <test-tile variant="elevated">
-        <header class="titlebar" style="padding: 0; margin-bottom: var(--space-4)">
+        <test-titlebar style="padding: 0; margin-bottom: var(--space-4)">
           <test-text variant="subhead" class="titlebar-title">VASP 선택</test-text>
           <test-chip class="titlebar-back" aria-label="이전 페이지로"></test-chip>
-        </header>
-        <div class="textfield" data-size="small">
+        </test-titlebar>
+        <test-textfield type="search" label="VASP명 / 심볼" placeholder="" data-size="small">
           <button class="textfield-prefix searchfield-prefix">
             <span class="material-symbols-outlined" style="font-size: 20px">search</span>
           </button>
-          <input class="textfield-input" type="text" id="search" placeholder="VASP명 / 심볼" autocomplete="off" />
           <!-- <button class="textfield-clear" hidden><span class="material-symbols-outlined">close</span></button> -->
-        </div>
-
+        </test-textfield>
         <hr />
-
-        <test-menu-item>
-          <figure class="item-avatar"></figure>
-          <b class="item-name" style="font-weight: var(--font-weight-normal)">빗썸</b>
-          <div class="checkbox" data-size="large" style="margin-left: auto">
+        <test-menu-item label="빗썸">
+          <test-avatar slot="avatar"></test-avatar>
+          <test-checkbox slot="action" label="" size="large">
             <input type="checkbox" id="menutype1" name="gender" checked="" />
             <label for="menutype1" title=""></label>
-          </div>
+          </test-checkbox>
         </test-menu-item>
-        <test-menu-item>
-          <figure class="item-avatar"></figure>
-          <b class="item-name" style="font-weight: var(--font-weight-normal)">코인원</b>
-          <div class="checkbox" data-size="large" style="margin-left: auto">
-            <input type="checkbox" id="menutype2" name="gender" checked="" />
-            <label for="menutype2" title=""></label>
-          </div>
+        <test-menu-item label="코인원">
+          <test-avatar slot="avatar"></test-avatar>
+          <test-checkbox slot="action" size="large"></test-checkbox>
         </test-menu-item>
       </test-tile>
     </section>
@@ -1279,33 +1206,22 @@
 
       <hr />
 
-      <header class="titlebar" style="padding: 0; margin-bottom: 1rem">
-        <h1 class="titlebar-title">공유 설정</h1>
-        <button class="titlebar-back" aria-label="이전 페이지로">
+      <test-titlebar heading="공유 설정">
+        <test-chip slot="back" aria-label="이전 페이지로">
           <span class="material-symbols-outlined">arrow_back</span>
-        </button>
-      </header>
-      <div class="checkbox">
-        <input type="checkbox" />
-        <label for="">편집자가 권한을 변경하고 공유할 수 있습니다.</label>
-      </div>
-      <div class="checkbox">
-        <input type="checkbox" />
-        <label for="">뷰어 및 댓글 작성자에게 다운로드, 인쇄, 복사 옵션 표시.</label>
-      </div>
+        </test-chip>
+      </test-titlebar>
+      <test-checkbox label="편집자가 권한을 변경하고 공유할 수 있습니다."></test-checkbox>
+      <test-checkbox label="뷰어 및 댓글 작성자에게 다운로드, 인쇄, 복사 옵션 표시."></test-checkbox>
       <hr />
       <p>일반 액세스 (기본 액세스라는 의미인 듯)</p>
       <test-chip label="제한됨">
-        <figure class="chip-icon">
-          <span class="material-symbols-outlined">arrow_drop_down</span>
-        </figure>
+        <span class="material-symbols-outlined">arrow_drop_down</span>
       </test-chip>
       <div style="margin: 0.75rem 0">
         <p>액세스 권한이 있는 사용자만 링크로 열 수 있습니다.</p>
       </div>
-
       <hr />
-
       <p>개선한 부분</p>
       <ul>
         <li>일반 액세스는 설정에서 제공. 소제목 제거. 액세스 권한이 있는 사용자.</li>
@@ -1492,11 +1408,10 @@
     </div>
 
     <test-tile variant="elevated" style="max-width: 400px; z-index: 1">
-      <header class="titlebar" style="padding: 0; margin-bottom: var(--space-4)">
-        <button class="titlebar-back" aria-label="이전 페이지로">
+      <test-titlebar label="컬렉션에 추가" style="padding: 0; margin-bottom: var(--space-4)">
+        <test-chip slot="back" class="titlebar-back" aria-label="이전 페이지로">
           <span class="material-symbols-outlined">close</span>
-        </button>
-        <h1 class="titlebar-title">컬렉션에 추가</h1>
+        </test-chip>
       </header>
       <fieldset>
         <div class="checkbox">

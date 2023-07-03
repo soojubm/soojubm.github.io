@@ -15,5 +15,9 @@
 .is-sticky-titlebar .titlebar-background {box-shadow:var(--shadow);}
 
 
+::slotted([slot=action]) {
+  margin:0 0 0 auto;
+}
+
 @media (--small) {
 }

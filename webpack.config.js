@@ -25,7 +25,20 @@ const path = require('path')
 // entry key랑 맞아야 함. key는 무엇
 const HTML_TEMPLATE = './index.html'
 
-const patterns = ['result', 'searching', 'presentation', 'filtering', 'chat', 'setting', 'post', 'accordion']
+const patterns = [
+  'result',
+  'searching',
+  'presentation',
+  'filtering',
+  'chat',
+  'setting',
+  'post',
+  'accordion',
+  'profile',
+  'feed',
+  'notification',
+  'auth',
+]
 const components = [
   'signifier',
 

@@ -1,20 +1,4 @@
 
-
-@define-mixin link-inner {
-  color:var(--color-primary);
-  text-decoration:underline;
-  &:hover {text-decoration:none;
-  }
-}
-@define-mixin link-outside {
-  color:var(--color-primary);
-  &:hover {text-decoration:underline;
-  }
-}
-
-.link-inner {@mixin link-inner;}
-.link-outside {@mixin link-outside;}
-
 @define-mixin image-centered {width:auto;height:auto;max-width:150%;max-height:150%;margin:auto;position:absolute;left:0;right:0;top:0;bottom:0;}
 @define-mixin bleeding {
   margin: 0 -50vw;

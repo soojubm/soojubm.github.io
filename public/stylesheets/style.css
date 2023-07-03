@@ -697,48 +697,6 @@ main,
 .purchase-head {padding:var(--space-4);background-color: var(--color-temp1);}
 .purchase-body {padding:var(--space-4);background:var(--color-background);}
 
-
-/* .feeds {
-  @mixin layout-medium;
-} */
-
-.feed {
-  margin: 3rem 0;
-}
-
-.feed-content {
-  padding: 1rem;
-}
-
-.feed-content-media {
-  height: 200px;
-  margin: 0 0 var(--space-3) 0;
-  overflow: hidden;
-  object-fit: cover;
-  border-radius: var(--radius);
-}
-
-.feed-content-paragraph {
-  margin: 0 0 var(--space-3) 0;
-  line-height: 1.6;
-}
-
-.feed-reaction {
-  margin: var(--space-4) 0 0 0;
-  position: relative;
-  z-index: 1;
-}
-
-.feed-reaction-icon {
-  width: 24px;
-  height: 24px;
-  font-size: var(--font-size-small);
-}
-
-.feed-user {
-  margin: var(--space-3) 0;
-}
-
 .browser {
   text-align: center;
   padding: 2rem;
