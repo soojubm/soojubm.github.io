@@ -1,4 +1,4 @@
-body,dl,dd,figure,blockquote,h1,h2,h3,h4,h5,h6,p,input[type=radio] {margin:0;}
+body,dl,dd,figure,blockquote,h1,h2,h3,h4,h5,h6,p,input[type=radio],input[type=checkbox] {margin:0;}
 ul,ol,menu,fieldset,legend {margin:0;padding:0;}
 fieldset,iframe,img,hr {border:none}
 main,picture {display:block;}
@@ -82,7 +82,7 @@ ul {padding-left:var(--space-4);}
 ul li + li {margin:var(--space-1) 0 0 0;}
 li::marker {color: var(--color-text-light);}
 
-li {list-style: none;margin-left:0;padding-left: var(--space-2);position: relative;}
+/* li {list-style: none;margin-left:0;padding-left: var(--space-2);position: relative;}
 li:before {
   content: '✔️';
   display: flex;
@@ -97,7 +97,7 @@ li:before {
   position: absolute;
   left: -16px;
   top: 4px;
-}
+} */
 
 ol {padding-left:var(--space-4)}
 
@@ -492,3 +492,4 @@ mark {color:inherit;} mark::before {content: " [강조 시작] ";opacity:0;posit
 .meter [data-type=instagram] {
   background: var(--color-pinterest);
 }
+
