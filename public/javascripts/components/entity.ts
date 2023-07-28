@@ -1,64 +1,70 @@
 import { makeStyleSheet } from './utils'
 
-export function inheritStyle(shadow, container) {
-  const style = shadow.getAttribute('style')
-  container.setAttribute('style', style || '')
+function splitString(stringToSplit, separator) {
+  var arrayOfStrings = stringToSplit.split(separator)
+
+  console.log('The original string is: "' + stringToSplit + '"')
+  console.log('The separator is: "' + separator + '"')
+  console.log('The array has ' + arrayOfStrings.length + ' elements: ' + arrayOfStrings.join(' / '))
 }
 
-class Avatar extends HTMLElement {
+var space = ' '
+var comma = ','
+
+class Entity extends HTMLElement {
   constructor() {
     super()
 
     const shadow = this.attachShadow({ mode: 'open' })
 
-    const container = document.createElement('figure')
-    const badge = document.createElement('span')
+    const container = document.createElement('div')
+    const avatarSlot = document.createElement('slot')
+    const tagSlot = document.createElement('slot')
+    // const avatar = document.createElement('test-avatar')
+    const label = document.createElement('test-text')
+    const description = document.createElement('test-text')
+    const description2 = document.createElement('test-text')
+    const description3 = document.createElement('test-text')
 
-    container.classList.add('avatar')
-    badge.classList.add('avatar-badge')
+    container.classList.add('entity')
+    avatarSlot.name = 'avatar'
+    tagSlot.name = 'tag'
 
-    container.setAttribute('role', 'img')
-    container.setAttribute('data-size', this.size || '')
-    container.setAttribute('data-variant', this.variant || '')
+    label.classList.add('entity-label')
+    description.classList.add('entity-description')
+    description2.classList.add('entity-description')
+    description3.classList.add('entity-description')
 
-    container.innerHTML = this.innerHTML
+    label.innerText = this.label
+    label.setAttribute('variant', 'subhead')
+    description.innerText = this.getAttribute('description') || ''
+    description2.innerText = this.getAttribute('description2') || ''
+    description3.innerText = this.getAttribute('description3') || ''
+
+    const test = this.getAttribute('description')!.split('|', 3)
+
+    // console.log(splitString(monthString, comma), 'ppd')
+    const test2 = test.map(item => {
+      return `<div>${item}</div>`
+    })
 
     shadow.appendChild(container)
-    container.append(makeStyleSheet('avatar'))
+    // description.appendChild(JSON.parse(test2.join()))
 
-    const style = this.getAttribute('style')
-    container.setAttribute('style', style || '')
-
-    if (this.badge === '') {
-      container.appendChild(badge)
-    }
-    // Attach the created elements to the shadow dom
-    // <span class="avatar-badge"></span>
-    // container.appendChild(label)
-    // label.textContent = this.label
-
-    // if (this.type === 'primary') container.classList.add('is-primary')
+    container.append(avatarSlot, tagSlot, label, description, description2, description3, makeStyleSheet('avatar'))
   }
-
-  get variant() {
-    return this.getAttribute('variant')
-  }
-
   get size() {
     return this.getAttribute('size')
+  }
+  set label(value) {
+    this.setAttribute('label', value || '')
   }
   set size(value) {
     if (value) this.setAttribute('size', value)
   }
 
-  get badge() {
-    return this.getAttribute('badge')
-  }
-
   connectedCallback() {}
-  disconnectedCallback() {
-    console.log('disconnected', this)
-  }
+  disconnectedCallback() {}
 }
 
-export default Avatar
+export default Entity

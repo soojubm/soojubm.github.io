@@ -1,96 +1,105 @@
 <main class="component">
   <article class="article js-observer js-scrollspy-section">
     <test-text variant="title">Buttons</test-text>
-    <p class="article-description">
-      <test-text variant="title">페이지 이동이나 양식 제출 등 사용자 여정의 핵심과업을 수행하기 위한 액션입니다.</test-text>
-    </p>
-    <test-row>
-      <test-tag>Button</test-tag>
-      button - text / icon(avatar)
-    </test-row>
+    <p class="article-description">페이지 이동이나 양식 제출 등 사용자 여정의 핵심과업을 수행하기 위한 액션입니다.</p>
+    <dl class="article-aka">
+      <dt>a.k.a</dt>
+      <dd>button</dd>
+      <dd>text - icon(avatar)</dd>
+    </dl>
     <!-- a11ym menu - group - menuitem -->
     <section class="component-example">
       <test-row direction="column">
-        <test-tile>
-          <test-row>
-            <test-button variant="primary" label="primary"></test-button>
-            <test-button variant="secondary" label="primary"></test-button>
-            <test-button variant="tertiary" label="primary"></test-button>
-            <test-button variant="danger" aria-label="danger" label="Destructive"></test-button>
-            <test-button variant="text" label="Text"></test-button>
-          </test-row>
-        </test-tile>
-        <test-tile>
-          <test-row>
-            <test-button variant="tertiary" size="large" label="Large"></test-button>
-            <test-button variant="tertiary" label="Medium">vertical-align: bottom"</test-button>
-          </test-row>
-        </test-tile>
-        <test-tile>
-          <test-row>
-            <test-button variant="tertiary" status="hover" label="Hover"> is-hover</test-button>
-            <test-button variant="tertiary" status="focus" label="Focus"> is-focus</test-button>
-            <test-button variant="tertiary" status="disabled" label="Disabled" disabled> is-hover</test-button>
-            <test-button variant="tertiary" label="Loading/Fetching"></test-button>
-          </test-row>
-        </test-tile>
+        <test-row>
+          <test-button variant="primary">primary</test-button>
+          <test-button variant="secondary">secondary (생각보다 잘 안 씀)</test-button>
+          <test-button variant="tertiary">tertiary</test-button>
+          <test-button variant="destructive" aria-label="danger">destructive</test-button>
+          <test-button variant="text">텍스트 버튼</test-button>
+        </test-row>
+        <test-separator></test-separator>
+        <test-row>
+          <test-button variant="primary" size="large">large</test-button>
+          <test-button variant="tertiary">medium</test-button>
+        </test-row>
+        <test-separator></test-separator>
+        <test-row>
+          <test-button variant="tertiary" status="hover">hovered</test-button>
+          <test-button variant="tertiary" status="focus">focused</test-button>
+          <test-button variant="tertiary" status="disabled" disabled>disabled</test-button>
+          <test-button variant="tertiary">loading/fetching</test-button>
+        </test-row>
+        <test-separator></test-separator>
+        <test-row direction="column" style="width:400px;">
+          <test-tile variant="elevated">
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:0 .5rem;">
+              <test-text variant="subhead">Elevated Button</test-text>
+              <span style="display:block;margin-top:-.5rem;font-size:2.5rem;line-height:2.5rem;">🦔</span>
+            </div>
+          </test-tile>
+          <test-button variant="text" isfullwidth="true">다음에 하기</test-button>
+        </test-row>
       </test-row>
-
-      <article class="component-props">
-        <!-- <test-text variant="subhead">Props</test-text> -->
-        <dl>
-          <dt>name</dt>
-          <dd>string</dd>
-          <dd></dd>
-          <dt>label</dt>
-          <dd>string</dd>
-          <dd>동사가 포함된 2자 ~ 8자 한글(!). 레이블 줄임?(truncated) 불가</dd>
-          <dd style="margin-top: -0.25rem">사용자 시점 (ex 보내기 => 받기).</dd>
-          <dt>appearance</dt>
-          <dd>'primary' | 'secondary' | 'tertiary'</dd>
-          <dd>TOOD 가각의 값에 대해 함께 설명이 필요. 설명 영역이 길어져야.</dd>
-          <dt>size<attr>?</attr></dt>
-          <dd>'large' | <b>'medium'</b></dd>
-          <dd>large size는 프로모션 페이지의 call to action로 제한됩니다.</dd>
-          <dd></dd>
-          <dt>isDisabled?</dt>
-          <dd>boolean</dd>
-          <dd></dd>
-          <dt>isFullwidth<attr>?</attr></dt>
-          <dd>boolean</dd>
-          <dd>TODO button 보다 button group의 props로 정의하는 것이 적합. isFluid</dd>
-          <dt>href<attr>?</attr></dt>
-          <dd>string</dd>
-          <dd>TODO 링크 또는 양식 제출로 사용되는 케이스를 정의</dd>
-          <dt>onClick<attr>?</attr></dt>
-          <dd>event: React.MouseEvent[HTMLButtonElement]) =] void</dd>
-          <dd>TODO onClick는 href와 구분. LinkButton 컴포넌트의 필요성.</dd>
-          <dt>ariaHaspopup<attr>?</attr></dt>
-          <dd>null</dd>
-          <dd>TODO</dd>
-          <!-- <dt><del>aria-expanded</del><attr>?</attr></dt>
-            <dd>null</dd>
-            <dd>TODO 버튼을 타겟 확장의 용도로 사용할 수 없기 때문에 제거하기</dd> -->
-        </dl>
-      </article>
     </section>
 
-    <section style="display: flex; flex-direction: column; gap: 0.5rem">
-      <test-text variant="body-large" class="article-kicker">
+    <article class="component-props">
+      <!-- <test-text variant="subhead">Props</test-text> -->
+      <dl>
+        <dt>variant</dt>
+        <dd>'primary' | 'secondary' | 'tertiary'</dd>
+        <dd>TOOD 가각의 값에 대해 함께 설명이 필요. 설명 영역이 길어져야.</dd>
+        <dt>name</dt>
+        <dd>string</dd>
+        <dd></dd>
+        <dt>label</dt>
+        <dd>string</dd>
+        <dd>동사가 포함된 2자 ~ 8자 한글(!). 레이블 줄임?(truncated) 불가</dd>
+        <dd style="margin-top: -0.25rem">사용자 시점 (ex 보내기 => 받기).</dd>
+        <dt>size<attr>?</attr></dt>
+        <dd>'large' | <b>'medium'</b></dd>
+        <dd>large size는 프로모션 페이지의 call to action로 제한됩니다.</dd>
+        <dd></dd>
+        <dt>isDisabled?</dt>
+        <dd>boolean</dd>
+        <dd></dd>
+        <dt>isFullwidth<attr>?</attr></dt>
+        <dd>boolean</dd>
+        <dd>TODO button 보다 button group의 props로 정의하는 것이 적합. isFluid</dd>
+        <dt>href<attr>?</attr></dt>
+        <dd>string</dd>
+        <dd>TODO 링크 또는 양식 제출로 사용되는 케이스를 정의</dd>
+        <dt>onClick<attr>?</attr></dt>
+        <dd>event: React.MouseEvent[HTMLButtonElement]) =] void</dd>
+        <dd>TODO onClick는 href와 구분. LinkButton 컴포넌트의 필요성.</dd>
+        <dt>ariaHaspopup<attr>?</attr></dt>
+        <dd>null</dd>
+        <dd>TODO</dd>
+        <dt>autoFocus</dt>
+        <dd>null</dd>
+        <dd>TODO</dd>
+        <!-- <dt><del>aria-expanded</del><attr>?</attr></dt>
+          <dd>null</dd>
+          <dd>TODO 버튼을 타겟 확장의 용도로 사용할 수 없기 때문에 제거하기</dd> -->
+      </dl>
+    </article>
+
+    <section class="component-guide">
+      <test-text variant="subhead" aria-label="예측 가능해야 합니다.">feedback needed</test-text>
+      <test-text variant="body" class="article-p">
         <b aria-label="feedback needed">실행 후 피드백합니다. </b>
         물리적인 인터페이스의 출현 뿐 아니라 예측할 수 있는 페이지 이동이나 페이지 새로고침, 정보 구조의 변화도 피드백으로 취급될 수 있습니다. (bad
         case. 인스타그램의 로그인 성공 toast)
       </test-text>
-      <test-text variant="body-large">
+      <test-text variant="body" class="article-p">
         모든 액션에 피드백할 필요는 없습니다. (ex bad case: 인스타그램 앱에서 로그인되었다는 toast. 홈으로 이동과 피드 노출만으로 로그인 상태를 인지할
         수 있다.)
       </test-text>
-      <test-text variant="body-large" class="article-kicker">
-        <b aria-labe=" ?expectable">예측 가능해야 합니다.</b>
+      <test-text variant="subhead" aria-label="예측 가능해야 합니다.">expectable label</test-text>
+      <test-text variant="body" class="article-p">
         CTA의 레이블은 사용자가 다음에 일어날 일을 예측 가능하도록 작성하세요. 툴팁으로 부연하거나, 보조 텍스트로 실행 유도나 실행 결과를 가이드할
         필요가 없어야 합니다.
       </test-text>
-      <test-text variant="body-large" class="article-kicker">
+      <test-text variant="body" class="article-p">
         <b>버튼은 플로우의(?) 최종 액션입니다.</b>
         버튼은 페이지 내에서 여러 번 반복될 수 없는 최종적인 인터렉션입니다. 단, 전송이 실패하는 경우에는 여러 번 반복해서 실행할 수 있습니다.
       </test-text>
@@ -100,39 +109,38 @@
     <test-tile>
       <test-button variant="tertiary">
         Show more button in avatar
-        <test-avatar>
-          <span class="material-symbols-outlined">expand_more</span>
-        </test-avatar>
+        <test-icon slot="icon"></test-icon>
       </test-button>
     </test-tile>
     <ul>
       <li>fullWidth로 사용하지 마세요. 단일 콘텐츠 또는 콘텐츠 목록보다 너비를 좁게 하여 대비를 높입니다.</li>
-      <li>!!!!! 이건 최종 액션이 아님</li>
+      <li>!!!!! 이건 최종 액션이 아님. 칩이 되는 게 나을 수도.</li>
     </ul>
 
-    <br /><br />
-
-    <test-text variant="subhead">Button group</test-text>
-    <test-tile>
-      <test-row>
-        <test-button variant="tertiary">취소</test-button>
-        <test-button variant="primary">저장(confirm)</test-button>
-      </test-row>
-    </test-tile>
-    <test-tile>
-      <test-row>
-        <test-button variant="tertiary">이전</test-button>
-        <test-button variant="secondary">다음</test-button>
-      </test-row>
-    </test-tile>
-    <test-tile>
-      <test-row>
-        <test-button variant="text">건너뛰기</test-button>
-        <test-button variant="secondary">다음</test-button>
-      </test-row>
-    </test-tile>
-
+    <test-text variant="subhead">Groupable - Button Group</test-text>
+    <test-row direction="column">
+      <test-tile>
+        <test-row>
+          <test-button variant="tertiary">취소</test-button>
+          <test-button variant="primary">저장(confirm)</test-button>
+        </test-row>
+      </test-tile>
+      <test-tile>
+        <test-row>
+          <test-button variant="tertiary">이전</test-button>
+          <test-button variant="secondary">다음</test-button>
+        </test-row>
+      </test-tile>
+      <test-tile>
+        <test-row>
+          <test-button variant="text">건너뛰기</test-button>
+          <test-button variant="secondary">다음</test-button>
+        </test-row>
+      </test-tile>
+    </test-row>
+ 
     <ul>
+      <li>버튼 네이밍. 'link' | 'subtle' | 'primary' / 'solid' | 'outline' | 'plain' |'text'</li>
       <li>
         binary choices. 최대 2개의 버튼. + 왼쪽 정렬된 옵션 버튼 케이스. 사용자에게 더 많은 작업을 표시해야 하는 경우 사용자가 하나의 명령 단추로
         작업을 선택하여 트리거할 수 있도록 확인란 또는 라디오 단추를 사용하는 것이 좋습니다.
@@ -143,27 +151,27 @@
       <li>toolbar 컴포넌트와 구분하기.</li>
     </ul>
 
-    <!-- <test-text variant="body-large">Icon guidelines</test-text> -->
-    <!-- <li>당연한 얘기... 텍스트 레이블을 생략하는 경우 관습적인 메타포의 아이콘(북마크/하트/카트 등)을 사용하고 대체 텍스트와 툴팁을 제공하세요.</li>
-        <li>기표로 정의하지 않은 아이콘을 레이블과 함께 장식적인 용도로 사용하지 마세요.</li> -->
+    <test-text variant="subhead">Icon guidelines</test-text>
+    <li>당연한 얘기... 텍스트 레이블을 생략하는 경우 관습적인 메타포의 아이콘(북마크/하트/카트 등)을 사용하고 대체 텍스트와 툴팁을 제공하세요.</li>
+    <li>기표로 정의하지 않은 아이콘을 레이블과 함께 장식적인 용도로 사용하지 마세요.</li>
 
-    <!-- <test-text variant="body-large">Don'ts (in progressing)</test-text> -->
-    <!-- <li>memo: secondary style과 large size의 사용 빈도 낮음.</li> -->
-    <!-- <p><b>text.</b> 버튼은 버튼 처럼 보이지 않을 수 있기 때문에 특정 패턴에서만 사용하세요.</li> -->
-    <!-- <p>
+    <test-text variant="body-large">Don'ts (in progressing)</test-text>
+    <li>memo: secondary style과 large size의 사용 빈도 낮음.</li>
+    <p><b>text.</b> 버튼은 버튼 처럼 보이지 않을 수 있기 때문에 특정 패턴에서만 사용하세요.</li>
+    <p>
         이 시스템에는 정의하지 않지만 세로 정렬되는 버튼 그룹에서 text button이 아래에 배치되는 패턴을 고려하여 버튼의 아래 가이드 텍스트를 배치하지
-        않습니다.)
-      </p> -->
+        않습니다.
+      </p>
   </article>
 
   <article class="article js-observer js-scrollspy-section">
     <test-text variant="title">Links</test-text>
     <p class="article-description">사용자 여정 목적지. 페이지 이동. destination that can be bookmarked. 정보 확장 기능은 따로 정의해야 함.</p>
 
-    <test-row class="article-aka">
-      <test-tag>a.k.a.</test-tag>
-      <span class="hashtag" title="">Anchor</span>
-    </test-row>
+    <dl class="article-aka">
+      <dt>a.k.a.</dt>
+      <dd class="hashtag" title="">Anchor</dd>
+    </dl>
 
     <section class="component-example">
       <test-tile>
@@ -198,6 +206,6 @@
     <ul>
       <li>Link 안에 button이 들어가면 링크 역할과 버튼의 형태를 분리할 수 있다.</li>
     </ul>
-    <test-text variant="body-large" class="article-kicker"><b>항상 텍스트 단락과 함께 사용합니다.</b> TODO text button과의 차이</test-text>
+    <test-text variant="body" class="article-p"><b>항상 텍스트 단락과 함께 사용합니다.</b> TODO text button과의 차이</test-text>
   </article>
 </main>

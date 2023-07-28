@@ -11,25 +11,36 @@ class Avatar extends HTMLElement {
 
     const shadow = this.attachShadow({ mode: 'open' })
 
-    const container = document.createElement('figure')
+    const avatar = document.createElement('figure')
     const badge = document.createElement('span')
 
-    container.classList.add('avatar')
+    avatar.classList.add('avatar')
     badge.classList.add('avatar-badge')
 
-    container.setAttribute('role', 'img')
-    container.setAttribute('data-size', this.size || '')
-    container.setAttribute('data-variant', this.variant || '')
+    avatar.setAttribute('role', 'img')
+    avatar.setAttribute('data-size', this.size || '')
+    avatar.setAttribute('data-variant', this.variant || '')
+    avatar.setAttribute('data-fallback', this.variant || '')
 
-    shadow.appendChild(container)
-    container.append(...this.childNodes, makeStyleSheet('avatar'))
+    // TODO
+    if (this.fallback) {
+      avatar.classList.add('no')
+      avatar.innerText = this.fallback
+    }
+
+    shadow.appendChild(avatar)
+    avatar.append(...this.childNodes, makeStyleSheet('avatar'))
+
+    if (this.badge) {
+      avatar.appendChild(badge)
+    }
 
     const style = this.getAttribute('style')
-    container.setAttribute('style', style || '')
+    avatar.setAttribute('style', style || '')
 
-    if (this.badge === '') {
-      container.appendChild(badge)
-    }
+    // if (this.badge === '') {
+    //   container.appendChild(badge)
+    // }
     // Attach the created elements to the shadow dom
     // <span class="avatar-badge"></span>
     // container.appendChild(label)
@@ -38,6 +49,13 @@ class Avatar extends HTMLElement {
     // if (this.type === 'primary') container.classList.add('is-primary')
   }
 
+  // static get observedAttributes() {
+  //   return ['variant', 'size', 'badge']
+  // }
+  // attributeChangedCallback(attrName, oldVal, newVal) {
+  //   this[attrName] = newVal
+  // }
+
   get variant() {
     return this.getAttribute('variant')
   }
@@ -45,18 +63,18 @@ class Avatar extends HTMLElement {
   get size() {
     return this.getAttribute('size')
   }
-  set size(value) {
-    if (value) this.setAttribute('size', value)
-  }
 
   get badge() {
     return this.getAttribute('badge')
   }
 
-  connectedCallback() {}
-  disconnectedCallback() {
-    console.log('disconnected', this)
+  // TODO fallback은 아님
+  get fallback() {
+    return this.getAttribute('fallback')
   }
+
+  connectedCallback() {}
+  disconnectedCallback() {}
 }
 
 export default Avatar

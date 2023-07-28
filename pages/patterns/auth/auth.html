@@ -1,67 +1,448 @@
-<main class="component" role="" aria-label="site">
-  <article class="article js-observer js-scrollspy-section">
-    <test-text variant="title">Accordions</test-text>
-    <p class="article-description">사용자의 필요에 따라 취사선택할 수 있도록 정보 목록을 요약합니다.</p>
+<main class="component">
+  <form
+    class="authentication login"
+    name="login"
+    action=""
+    method=""
+    novalidat="true"
+    style="display: flex; flex-direction: column; justify-content: center; min-height: calc(100vh - 100px)"
+  >
+    <header class="authentication-head">
+      <span class="authentication-head-logo" style="margin: 0 0 1rem">🐤</span>
+      <h1 class="authentication-head-title">로그인</h1>
+      <p class="authentication-head-description">Lorem Ipsum is simply dummy text.</p>
+    </header>
 
-    <section class="component-example">
-      <test-tile>
-        <details class="details">
-          <summary class="details-summary">native details / summary tags</summary>
-          <p>안녕</p>
-        </details>
-      </test-tile>
-      <section class="faq tile-flat">
-        <!-- <header style="padding-bottom: 1.5rem; text-align: center">
-            <abbr title="Frequently asked questions" hidden>FAQ</abbr>
-            <small>Find Your Answers</small>
-            <h2 style="font-size: var(--font-size-huge)" title="FAQs">궁금한 점이 있으신가요?</h2>
-          </header> -->
-        <article class="accordion js-accordion is-active">
-          <button class="accordion-title" role="heading" aria-label="3" aria-expanded="false" aria-controls="1" aria-disable="true">
-            탈퇴하고 싶어요.
-            <figure class="accordion-title-icon material-symbols-outlined">arrow_right</figure>
-          </button>
-          <div class="accordion-panel">
-            <p>모든 국민은 건강하고 쾌적한 환경에서 생활할 권리를 가지며, 국가와 국민은 환경보전을 위하여 노력하여야 한다.</p>
-            <p>
-              제1항의 지시를 받은 당해 행정기관은 이에 응하여야 한다. 국회의원은 법률이 정하는 직을 겸할 수 없다. 대통령의 임기연장 또는 중임변경을
-              위한 헌법개정은 그 헌법개정 제안 당시의 대통령에 대하여는 효력이 없다.
-            </p>
-          </div>
-        </article>
-        <article class="accordion js-accordion is-active">
-          <button class="accordion-title" role="heading" aria-expanded="false">
-            탈퇴하고 싶어요.
-            <figure class="accordion-title-icon material-symbols-outlined">arrow_right</figure>
-          </button>
-          <div class="accordion-panel">
-            <p>모든 국민은 건강하고 쾌적한 환경에서 생활할 권리를 가지며, 국가와 국민은 환경보전을 위하여 노력하여야 한다.</p>
-            <p>
-              제1항의 지시를 받은 당해 행정기관은 이에 응하여야 한다. 국회의원은 법률이 정하는 직을 겸할 수 없다. 대통령의 임기연장 또는 중임변경을
-              위한 헌법개정은 그 헌법개정 제안 당시의 대통령에 대하여는 효력이 없다.
-            </p>
-          </div>
-        </article>
-      </section>
+    <fieldset class="authentication-fieldset">
+      <div class="login-social oauth">
+        <button class="login-social-facebook">페이스북으로 시작 <small hidden>Sing in with Facebook</small></button>
+      </div>
+      <div class="login-separator" role="separator">또는</div>
+      <div class="login-email textfield" style="margin-top: -0.5rem">
+        <label class="textfield-label" for="login-email">이메일</label>
+        <input
+          class="textfield-input js-input-email"
+          type="email"
+          id="login-email"
+          name="email"
+          placeholder="soojubm@gmail.com"
+          autofocus
+          aria-describedby="name-hint"
+        />
+        <small class="textfield-helper" id="name-hint" role="alert" data-english="Enter an email address.">이메일을 입력하세요. </small>
+      </div>
+      <div class="login-password textfield">
+        <label class="textfield-label" for="loginin-password">비밀번호</label>
+        <input
+          class="textfield-input js-input-password"
+          type="password"
+          id="loginin-password"
+          name="password"
+          placeholder="Enter a password. 8자리 이상."
+        />
+        <a class="textfield-link" href="forgot.html">비밀번호를 잊으셨나요? <small hidden>Forgot your password?</small></a>
+      </div>
+      <div class="login-remember checkbox">
+        <input type="checkbox" id="remember-id" />
+        <label for="remember-id">로그인 상태 유지<small hidden>Remember my email address</small></label>
+      </div>
+    </fieldset>
+
+    <section class="authentication-feedback" role="alert" aria-live="assertive">
+      <p class="alert">
+        <span class="material-symbols-outlined" style="margin: 0 var(--space-1) 0 0"> error </span>
+        <span hidden>가입하지 않은 이메일이거나??</span> 잘못된 비밀번호입니다.
+      </p>
     </section>
 
-    <test-text variant="subhead">Best practices</test-text>
-    <p>사용자가 반드시 숙지해야 하는 정보를 아코디언으로 요약해서 보여주지 마세요. (참고. Tooltip과 같은 맥락)</p>
+    <menu class="authentication-foot">
+      <button class="authentication-foot-submit" type="submit">로그인</button>
 
-    <!-- <test-text variant="body-large">Writing guidelines</test-text> -->
+      <p class="login-option">
+        계정이 없으신가요?<small hidden>Need an account?</small>
+        <a class="login-option-link" href="signup.html">지금 가입하기<small hidden>Join Soojubm for free</small></a>
+      </p>
+    </menu>
 
-    <ul>
-      <li>role button - space keycode를 추가하여 스페이스 키 또한 확장/축소할 수 있는 키로 인식되도록 합니다. a 엔터키로만동작</li>
-      <li>heading은 한 문장으로 간결하게 작성하세요.</li>
-      <li>클릭 영역의 정의. 본문을 클릭하여 닫을 수 있게 되면, 본문에 페이지 링크를 제공할 수 없음.</li>
-    </ul>
+    <!-- <footer style="margin-top: auto">
+      <p class="text-xs text-scale-900 sm:mx-auto sm:max-w-sm">
+        By continuing, you agree to Supabase's
+        <a class="underline hover:text-scale-1100" href="https://supabase.com/terms">Terms of Service</a>
+        and
+        <a class="underline hover:text-scale-1100" href="https://supabase.com/privacy">Privacy Policy</a>, and to receive periodic emails with
+        updates.
+      </p>
+    </footer> -->
+  </form>
 
-    <!-- <test-text variant="body-large">FAQ<br />자주묻는질문</test-text> -->
-    <blockquote>
-      <p>자주묻는질문(FAQ) 정도 외에는 잘 쓰지 않음. 교육 도매인의 커리큘럼 정도에서 보임. 그 외에는 모바일 친화적인 모달이나 시트를 사용.</p>
-    </blockquote>
+  <form class="authentication signup" name="signup-foot-submit" action="" method="">
+    <header class="authentication-head">
+      <h3 class="authentication-head-title">Welcome<i style="font-style: italic">!</i></h3>
+      <p class="authentication-head-description">
+        Find your people. Engage your customers. Build your brand. Do it all with Mailchimp’s Marketing Platform. Already have an account?
+        <a href="#">Log in</a>
+      </p>
+    </header>
+    <fieldset class="authentication-fieldset required">
+      <legend hidden>필수입력</legend>
+      <div class="login-social">
+        <button class="login-social-facebook">페이스북으로 시작 <small hidden>Sing in with Facebook</small></button>
+      </div>
+      <div class="login-separator" role="separator">또는</div>
+      <div class="textfield is-valid">
+        <label class="textfield-label" for="email">이메일</label>
+        <input class="textfield-input" type="text" name="email" placeholder="soojubm@gmail.com" value="soojubm@gmail.com" id="email" />
+        <small class="textfield-helper" role="alert">이메일을 입력하시와아요.</small>
+        <button class="textfield-clear">
+          <span class="material-symbols-outlined" style="font-size: 1rem">clear</span>
+        </button>
+      </div>
+      <div class="textfield">
+        <label class="textfield-label" for="signup-password">비밀번호<abbr title="required" aria-hidden="true" hidden>*</abbr></label>
+        <input
+          class="textfield-input js-password-test"
+          type="password"
+          name="password"
+          id="signup-password"
+          placeholder="6자리 이상"
+          autocomplete="new-password"
+        />
+        <button class="textfield-reveal js-view-password" type="button">비밀번호 보기</button>
+        <!-- <input class="textfield-input" type="password" id="signup-password-confirm" placeholder="비밀번호 확인 (6자리 이상)" /> -->
+      </div>
+      <div class="textfield">
+        <label class="textfield-label" for="signup-password-confirm" hidden>비밀번호 확인</label>
+        <input class="textfield-input" type="password" id="signup-password-confirm" placeholder="6자리 이상" />
+        <button class="textfield-reveal js-view-password" type="button">비밀번호 보기</button>
+      </div>
+      <div style="margin: -1rem 0 2rem; font-size: var(--font-size-small)">
+        <p>비밀번호 확인 필드가 없는 경우에 써보기.</p>
+        <p>One lowercase character</p>
+        <p>One special character</p>
+        <p>One number</p>
+        <p>One special character</p>
+        <p>8 characters minimum</p>
+      </div>
+      <style>
+        .is-valid1 .validation1 {
+          color: red;
+        }
+        .is-valid2 .validation2 {
+          color: red;
+        }
+        .is-valid3 .validation3 {
+          color: red;
+        }
+        .is-valid4 .validation4 {
+          color: red;
+        }
+        .is-valid5 .validation5 {
+          color: red;
+        }
+      </style>
+    </fieldset>
+    <fieldset class="authentication-fieldset optional">
+      <legend hidden>선택입력</legend>
+      <div class="textfield">
+        <label class="textfield-label" for="username">닉네임 <small>선택입력</small></label>
+        <input class="textfield-input" type="text" placeholder="수줍이" id="username" />
+      </div>
+      <!-- <div class="textfield-group" style="margin-top: calc(var(--space-after-textfield) * -1)"> -->
+      <div class="textfield-group">
+        <div class="textfield">
+          <label class="textfield-label" for="signup-birthyear">출생년도 <small>선택입력</small></label>
+          <input class="textfield-input" type="password" id="signup-birthyear" placeholder="출생년도" />
+        </div>
+        <div class="textfield">
+          <label class="textfield-label" for="signup-gender">성별 <small>선택입력</small></label>
+          <select class="textfield-input" id="signup-gender">
+            <option value="other">기타</option>
+            <option value="women">여성</option>
+            <option value="man">남성</option>
+          </select>
+          <span class="textfield-indicator material-symbols-outlined">arrow_drop_down</span>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset class="authentication-fieldset signup-terms">
+      <legend class="signup-terms-title" hidden>약관 동의</legend>
+      <strong>회원가입 시 <a href="#">이용약관</a>과 <a href="#">개인정보처리방침</a>에 동의하는 것으로 간주합니다.</strong>
+      <test-checkbox>
+        <input type="checkbox" class="js-checkall" id="check-all" />
+        <label for="check-all"><em>모두 동의합니다.</em></label>
+      </test-checkbox>
+      <test-checkbox>
+        <input type="checkbox" class="js-check js-required" id="agree-terms" />
+        <label for="agree-terms">이용약관 동의</label>
+        <div class="signup-terms-content">
+          <p>
+            - 개인정보를 제공받는 자: 엔에이치엔페이코(주)<br />
+            - 제공항목: 광고ID, 이용자 단말기 내 설치된 어플리케이션 정보(앱 설치·실행시각 포함)<br />
+            - 제공받는 자의 개인정보 이용목적: 이용자 관심 등에 기반한 맞춤형 서비스 제공<br />
+            - 제공받는자의 개인정보 보유이용기간: 수집일로부터 2년
+          </p>
+        </div>
+      </test-checkbox>
+      <test-checkbox>
+        <input type="checkbox" class="js-check js-required" id="agree-terms" />
+        <label for="agree-terms"><a href="#">서비스이용약관</a>과&nbsp;<a href="#">개인정보수집</a>에 동의</label>
+        <div class="signup-terms-content">
+          <p>
+            - 내용1<br />
+            - 내용2<br />
+            - 내용3<br />
+            - 내용4
+          </p>
+        </div>
+      </test-checkbox>
 
-    <test-text variant="subhead">References</test-text>
-    <a href="https://nuli.navercorp.com/community/article/1132889">nuli</a>
-  </article>
+      <test-checkbox>
+        <input type="checkbox" class="js-check" id="check-three" />
+        <label for="check-three">광고성 정보 수신 동의<small style="margin-left: 0.5rem; color: var(--color-text-light)">선택</small></label>
+      </test-checkbox>
+
+      <test-checkbox>
+        <input type="checkbox" id="user-agree" />
+        <label for="user-agree"><strong>[웹사이트] <a href="#">이용약관</a>과 <a href="#">개인정보처리방침</a>에 동의합니다.</strong></label>
+      </test-checkbox>
+    </fieldset>
+    <footer class="authentication-foot">
+      <button class="authentication-foot-submit" type="submit" disabled>이메일 주소로 가입</button>
+    </footer>
+    <footer>
+      <p>©2001–2021 All Rights Reserved. Mailchimp® is a registered trademark of The Rocket Science Group. Cookie Preferences, Privacy, and Terms.</p>
+    </footer>
+  </form>
+
+  <div class="text-sm" style="display:none;">
+        <div class="validation1" style="display: flex; align-items: center">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" class="w-4 h-4">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"></path>
+          </svg>
+          <span class="text-sm">Uppercase letter</span>
+        </div>
+        <div class="validation2" style="display: flex; align-items: center">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" class="w-4 h-4">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"></path>
+          </svg>
+          <span class="text-sm">Lowercase letter</span>
+        </div>
+        <div class="validation3" style="display: flex; align-items: center">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-4 h-4">
+            <path
+              d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+          <span class="text-sm">Number</span>
+        </div>
+        <div class="validation4" style="display: flex; align-items: center">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" class="w-4 h-4">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"></path>
+          </svg>
+          <span class="text-sm">Special character (e.g. !?&lt;&gt;@#$%)</span>
+        </div>
+        <div class="validation5" style="display: flex; align-items: center">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" class="w-4 h-4">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"></path>
+          </svg>
+          <span class="text-sm">&gt; 7 characters</span>
+        </div>
+      </div>
+<script defer>
+  const passwordTest = document.querySelector('.js-password-test')
+  passwordTest?.addEventListener('keyup', validatePasswordTest)
+
+  function validatePasswordTest(event) {
+    const { value } = event.target
+
+    tempElement.classList.toggle('is-valid1', value.length > 12 && value.length < 18)
+    // 영문소문자/영문대문자/숫자포함
+    tempElement.classList.toggle('is-valid2', /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])/.test(value))
+    tempElement.classList.toggle('is-valid3', /[!?@#$%^&*():;+-=~{}<>\_\[\]\|\\\"\'\,\.\/\`\₩]/g.test(value))
+    // 동일한 문자 6개 연속
+    tempElement.classList.toggle('is-valid4', /([A-Za-z0-9`~!@#\$%\^&\*\(\)\{\}\[\]\-_=\+\\|;:'"<>,\./\?])\1{5,}/g.test(value))
+  }
+
+  const tempElement = document.body
+  const validations = {
+    length: false,
+  }
+  // document.addEventListener('click', revealPassword)
+
+  // function revealPassword(event) {
+  //   const targetElement = event.target.closest('.js-view-password') as any
+  //   if (!targetElement) return
+
+  //   const inputElement = targetElement.parentNode.querySelector('input')
+  //   const isPasswordType = inputElement.getAttribute('type') === 'password'
+
+  //   inputElement.setAttribute('type', isPasswordType ? 'text' : 'password')
+  // }
+
+  function onChangePhoneNumberFormat(num) {
+    let update = ''
+    for (var i = 0; i < num.length; i++) {
+      var changed = num.charAt(i).replace('-', '')
+      update += changed
+    }
+    return update
+  }
+  document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener(
+      'blur',
+      event => {
+        if (event.target.matches('.email-input')) {
+          if (event.target.value == '') {
+          }
+        }
+      },
+      true,
+    )
+    document.addEventListener(
+      'keyup',
+      event => {
+        if (event.target.matches('.email-input')) {
+          if (event.target.value.length < 6) {
+            alert('너무 짧아요')
+          }
+        }
+      },
+      true,
+    )
+  })
+</script>
+
+<script>
+    function createCustomer() {
+      let billingEmail = document.querySelector('#email').value;
+      return fetch('/create-customer', {
+        method: 'post',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: billingEmail,
+        }),
+      }).then((response) => {
+          return response.json()
+      }).then((result) => {
+        // result.customer.id is used to map back to the customer object
+        // result.setupIntent.client_secret is used to create the payment method
+        return result
+      });
+    }
+  ​
+    let signupForm = document.getElementById('signup-form');
+  ​
+    signupForm.addEventListener('submit', function (evt) {
+      evt.preventDefault();
+      // Create Stripe customer
+      createCustomer().then((result) => {
+        customer = result.customer;
+      });
+    });
+
+
+    function showCardError(event) {
+      let displayError = document.getElementById('card-errors');
+      if (event.error) {
+        displayError.textContent = event.error.message;
+      } else {
+        displayError.textContent = '';
+      }
+    }
+</script>
+
+  <form class="authentication" action="" method="">
+    <header class="authentication-head">
+      <h1 class="authentication-head-title" title="Reset Your Password">Reset Your Password</h1>
+      <p class="authentication-head-description" titl="We get it, stuff happens! What's your email address?">
+        비밀번호가 기억이 안 나세요? 걱정 말아요<i style="font-style:italic;">!</i>
+        <br />
+        임시 비밀번호를 이메일로 보내드릴게요.</i>
+      </p>
+      <p>비밀번호를 재설정할 수 있는 링크를 이메일로 보내드릴게요.</p>
+      <span style="font-size:3rem;position:absolute;right:0;top:0;">🖐️</span>
+    </header>
+
+    <section class="">
+      <div class="textfield">
+        <label class="textfield-label" for="find-email" title="Email Address">이메일 주소</label>
+        <input class="textfield-input" type="text" id="find-email" class="required" placeholder="soojubm@gmail.com" autofocus />
+        <p role="alert" class="textfield-helper" hidden>이메일 형식이 아니에요.</p>
+      </div>
+      <footer class="authentication-foot">
+        <button type="submit" class="authentication-foot-submit">재설정 메일 받기</button>
+        <!-- <span class="password-foot-back password-link" title="Remember your password after all?">이메일이 기억 안 나세요? <a href="signin.html">가입하기</a></span> -->
+      </footer>
+    </section>
+
+    <aside class="" style="margin-top:2rem;">
+      <p>이메일을 받지 못하셨나요? <a href="">알아보기</a></p>
+    </aside>
+  </form>
+
+  <form class="verify" style="max-width: var(--width-small); margin: 0 auto; text-align: center;">
+    <header class="password-head">
+      <h1 class="password-title" title="Reset Your Password">Please check your email!</h1>
+      <p class="password-description" titl="We get it, stuff happens! What's your email address?">
+      We have emailed a 6-digit confirmation code to acb@domain, please enter the code in below box to verify your email.
+      </p>
+    </header>
+    <div>
+      <div class="textfield" style="display: flex; justify-content: center;">
+      <!-- aria-invalid="false"  -->
+      <input name="code1" type="number" maxlength="1" class="textfield-input" style="width:var(--size-large);margin:0 .25rem" />
+      <input name="code1" type="number" maxlength="1" class="textfield-input" style="width:var(--size-large);margin:0 .25rem" />
+      <input name="code1" type="number" maxlength="1" class="textfield-input" style="width:var(--size-large);margin:0 .25rem" />
+      <input name="code1" type="number" maxlength="1" class="textfield-input" style="width:var(--size-large);margin:0 .25rem" />
+      <input name="code1" type="number" maxlength="1" class="textfield-input" style="width:var(--size-large);margin:0 .25rem" />
+      <input name="code1" type="number" maxlength="1" class="textfield-input" style="width:var(--size-large);margin:0 .25rem" />
+      </div>
+    </div>
+    <footer class="authentication-foot">
+      <button type="submit" class="authentication-foot-submit">재설정 메일 받기</button>
+    </footer>
+    <span class="password-foot-back password-link" title=""><a href="signin.html">인증번호 재전송</a></span>
+
+    <p>!!!!! cta bottom fixed를 고려한 추가 링크 버튼 위치를 결정해야 함.</p>
+    <p>이전 인증번호는 유효하지 않기 때문에 최신 인증번호를 알려줄 수 있으면 살짝 좋겠지만 중요하진 않은 듯...</p>
+    </form>
+
+  <form class="password" action="">
+    <p>안전한 비밀번호를 만들고 같은 비밀번호를 다른 계정에 사용하지 마세요.</p>
+    <p>8자 이상 입력하세요. 다른 사이트에서 쓰는 비밀번호나 애완동물의 이름처럼 추측하기 쉬운 이름은 사용하지 마세요.</p>
+    <p>비밀번호를 변경하면 기기에서 로그아웃되지만, 일부 예외가 있습니다.</p>
+    <br />
+    <section class="">
+      <div class="textfield">
+        <label class="textfield-label" for="find-email" title="Email Address">새 비밀번호</label>
+        <input class="textfield-input" type="text" id="find-email" class="required" placeholder="soojubm@gmail.com" autofocus />
+        <p role="alert" class="textfield-helper" hidden>이메일 형식이 아니에요.</p>
+      </div>
+      <div class="textfield" style="margin-top:var(--space-after-textfield);">
+        <label class="textfield-label" for="find-email" title="Email Address">새 비밀번호 확인</label>
+        <input class="textfield-input" type="text" id="find-email" class="required" placeholder="soojubm@gmail.com" autofocus />
+        <p role="alert" class="textfield-helper" hidden>이메일 형식이 아니에요.</p>
+      </div>
+      <footer class="password-foot">
+        <button type="submit" class="password-foot-submit">비밀번호 변경</button>
+      </footer>
+    </section>
+  </form>
+
+  <section class="password-result" hidden>
+    <h2 class="password-result-title">메일함을 확인하세요.</h2>
+    <p>
+      faf@faf.co으로
+      <br />
+      비밀번호 재설정 링크를 발송했습니다.
+    </p>
+    <p>이메일 재전송 버튼</p>
+    <a class="password-result-login" href="#">로그인하기</a>
+  </section>
+
+  https://support.google.com/accounts/answer/32040?visit_id=637702064644854938-965259796&p=pw_dont_reuse&hl=ko&rd=1
 </main>

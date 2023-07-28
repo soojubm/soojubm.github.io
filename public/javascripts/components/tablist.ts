@@ -31,10 +31,20 @@ class Tablist extends HTMLElement {
     container.classList.add('tablist')
     container.role = 'tablist'
 
+    const tabIndicator = document.createElement('slot')
+    tabIndicator.name = 'indicator'
+
     shadow.appendChild(container)
     shadow.appendChild(makeStyleSheet('tablist'))
 
-    container.append(...this.childNodes)
+    container.append(tabIndicator, ...this.childNodes)
+
+    // console.log('tabs', document.querySelector('test-tablist').shadowRoot.querySelector('button'))
+    this.querySelectorAll('[role=tab]').forEach(tab => {
+      tab.addEventListener('click', event => {
+        alert(event.target)
+      })
+    })
 
     // const parsedData = JSON.parse(`${this.data}`)
     // container.appendChild(

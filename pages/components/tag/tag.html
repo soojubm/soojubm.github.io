@@ -1,77 +1,131 @@
 <main class="component">
   <article class="article js-observer js-scrollspy-section">
-    <test-text variant="title">Tags <span hidden>(or badge/label)</span></test-text>
+    <test-text variant="title">Tags</test-text>
     <p class="article-description">
       인접 요소나 부모 요소를 부연하는 시각 정보입니다. 상태, 카테고리, 키워드로 강조된 시각 정보는 사용자가 복잡한 정보 더미에서 중요한 정보를
       우선적으로 파악하도록 돕습니다.
     </p>
 
-    <test-row class="article-aka">
-      <test-tag>a.k.a.</test-tag>
-      <span class="hashtag" title="">Badge</span>
-      <span class="hashtag" title="">Label</span>
-      <span class="hashtag" title="">Keyword</span>
-    </test-row>
+    <!-- <p class="article-description">
+      post 페이지에서 태그와 컴포넌트에서의 태그. hashtag는 tag 컴포넌트와 역할이 다르기 때문에 별도의 컴포넌트로 만들어주어야 한다. 현재
+      hashtag(keyword)는 chip으로 대체. todo. 댑스가 2이상 인 케이스.
+    </p> -->
+
+    <dl class="article-aka">
+      <dt>a.k.a.</dt>
+      <dd>Badge</dd>
+      <dd>Label</dd>
+      <dd>Keyword</dd>
+      <dd>Flag</dd>
+    </dl>
 
     <section class="component-example">
-      <test-tile>
-        <test-row>
-          <!--  role="listitem" -->
-          <test-tag variant="primary" label="primary"></test-tag>
-          <test-tag variant="secondary" label="secondary"></test-tag>
-          <test-tag variant="tertiary" label="tertiary"></test-tag>
-          <test-tag variant="tertiary" label="🔥 with icon"></test-tag>
-          <test-tag role="listitem" style="background: var(--red100); border-color: var(--red100); color: var(--red800)">15</test-tag>
-          <!-- <figure class="tag-icon" role="img">🔥</figure> -->
-        </test-row>
-      </test-tile>
-      <article class="component-props">
-        <test-text variant="subhead">Props</test-text>
-        <dl>
-          <dt>label</dt>
-          <dd>string</dd>
-          <dd>2단어 이하의 형용사 또는 명사</dd>
-          <dt>appearance</dt>
-          <dd>'primary' | <del>'secondary'</del> | 'tertiary<sup>default value</sup>'</dd>
-          <dd>하나의 컨테이너에 primary는 하나만 존재한다.</dd>
-        </dl>
-      </article>
+      <test-row>
+        <!--  role="listitem" -->
+        <test-tag variant="primary" label="primary"></test-tag>
+        <test-tag variant="secondary" label="secondary"></test-tag>
+        <test-tag variant="tertiary" label="tertiary"></test-tag>
+        <test-tag variant="tertiary" label="🔥 with icon"></test-tag>
+        <test-tag variant="destructive" role="listitem">15</test-tag>
+        <test-tag variant="indicator" role="listitem">
+          <test-icon slot="icon" name="nav-arrow-down"></test-icon>
+        </test-tag>
+        <!-- <figure class="tag-icon" role="img">🔥</figure> -->
+      </test-row>
     </section>
 
-    <test-text variant="body-large" class="article-kicker">
-      <b>4개 이상의 태그를 그룹화하지 마세요. </b>태그는 <mark>핵심 키워드를 요약</mark>하여 사용자의 콘텐츠 탐색과 선택을 돕는 역할입니다. 너무 많은
-      태그 목록을 노출하는 것은 되려 콘텐츠 탐색을 어렵게 할 수 있습니다.
-    </test-text>
+    <article class="component-props">
+      <test-text variant="subhead" hidden>Props</test-text>
+      <dl>
+        <dt>variant</dt>
+        <dd>'primary' | <del>'secondary'</del> | 'tertiary<sup>default value</sup>'</dd>
+        <dd>하나의 컨테이너에 primary는 하나만 존재한다.</dd>
+        <dt>label</dt>
+        <dd>string</dd>
+        <dd>2단어 이하의 형용사 또는 명사</dd>
+      </dl>
+    </article>
 
-    <p>groupable</p>
-    <!-- <li>Primary style 하나만.</li> -->
-    <!-- <test-text variant="subhead">Best practices</test-text>
-        <li>non-clickable<span hidden>triggering interaction</span></li>
-        <li>Groupable</li>
-      </ul> -->
-    <!-- <li>최대 2단어</li> -->
+    <test-tile>
+      <test-row>
+        <test-tag variant="secondary" label="tertiary">
+          <test-icon slot="icon" name="graph-up"></test-icon>
+          16%
+        </test-tag>
+        <test-tag variant="destructive" label="tertiary">
+          <test-icon slot="icon" name="graph-down"></test-icon>
+          16%
+        </test-tag>
+        <span class="icon-bullet"></span>
+        <test-tag variant="feature1">유저리서치</test-tag>
+        <test-tag variant="feature2">유저플로우</test-tag>
+        <test-tag variant="feature3">유저스트</test-tag>
+        <test-tag variant="feature4">A/B테스팅</test-tag>
+      </test-row>
+    </test-tile>
+
+    <section class="component-guide">
+      <test-text variant="subhead">non-clickable</test-text>
+      <test-text variant="body" class="article-p">정보를 강조하거나 요약하여 나열하는 시각 정보. 액션을 할 수 없는.</test-text>
+
+      <test-text variant="subhead">role :: action signifier</test-text>
+      <test-text variant="body" class="article-p">액션이 기표로 사용할 수 있다. 인접 요소 또는 부모 요소가 클릭 가능하다는 정보 요소.</test-text>
+
+      <test-text variant="subhead">groupable</test-text>
+      <test-text variant="body" class="article-p">
+        <b>groupable 4개 이상의 태그를 그룹화하지 마세요. </b>태그는 <mark>핵심 키워드를 요약</mark>하여 사용자의 콘텐츠 탐색과 선택을 돕는
+        역할입니다. 너무 많은 태그 목록을 노출하는 것은 되려 콘텐츠 탐색을 어렵게 할 수 있습니다.
+      </test-text>
+      <test-text variant="body" class="article-p">
+        <b>예외 케이스</b> 페이지 전체를 관통하는 경우 4개 이상이 허용된다. ex: user profile page
+      </test-text>
+      <test-text variant="body" class="article-p"> 오직 tertiary만 그룹이 될 수 있다. </test-text>
+
+      <test-text variant="subhead">Easy scanning</test-text>
+      <test-text variant="body" class="article-p">
+        <b>Use short labels for easy scanning.</b> 중요한 정보를 빠르게 파악할 수 있는 짧은 단어의 조합. 최대 2단어.
+      </test-text>
+    </section>
+
+    <!-- <li><span hidden>triggering interaction</span></li> -->
   </article>
 
-  <!-- <p>Badges show the count of some adjacent data. A dot badge notifies the user that something is new or updated without showing a count.</p> -->
+  <!--
+    <p>Badges show the count of some adjacent data.
+    A dot badge notifies the user that something is new or updated without showing a count.</p>
+  -->
   <article class="article js-observer js-scrollspy-section">
     <test-text variant="title">Badges</test-text>
     <p class="article-description">수량, 상태.</p>
+    <p class="article-description">dot badge. counter / activity bar counter (vs code)</p>
+
+    dot badge count badge 두 가지로 구분하거나 height를 고정하지 않고 padding을 조정하여 숫자를 입력하지 않게 할 수 있다. 이때는 badge로 통칭. 빨강을
+    new로 쓰다보니 red badge라고 부르는 곳도 있다.
+
+    <p>notification / status / informational</p>
 
     <section class="component-example">
-      <test-tile>
-        <test-row>
-          <!-- <test-badge variant="primary">24</test-badge> -->
-          <test-badge variant="secondary">16</test-badge>
-          <test-chip>
-            <span style="display: inline-block; line-height: 16px">메뉴 &nbsp;</span>
-            <test-badge>16</test-badge>
-          </test-chip>
-          <test-tag>
-            <em style="display: inline-flex; width: 6px; height: 6px; margin-right: var(--space-2); background: crimson; border-radius: 50%"></em>
-            live
-          </test-tag>
-        </test-row>
-      </test-tile>
+      <test-row>
+        <em class="dot-badge"></em>
+        <test-badge variant="primary"></test-badge>
+        <style>
+          .dot-badge {
+            display: inline-flex;
+            width: 0.5rem;
+            height: 0.5rem;
+            /* padding: var(--space-1); */
+            margin-right: var(--space-2);
+            background: crimson;
+            border-radius: 50%;
+          }
+        </style>
+        <test-separator></test-separator>
+        <test-badge variant="primary">24</test-badge>
+        <test-badge variant="secondary">16</test-badge>
+        <test-chip label="메뉴">
+          <test-badge slot="badge">16</test-badge>
+        </test-chip>
+      </test-row>
     </section>
   </article>
 </main>

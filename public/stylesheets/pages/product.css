@@ -172,10 +172,3 @@
 .review-item-byline:after {content:'';display:inline-block;width:1px;height:7px;margin:0 6px 0 10px;vertical-align:middle;background:#ddd;}
 .review-item-time {font-size:var(--font-size-small);}
 
-
-
-
-.story {margin:0 1.25rem 0 0;text-align:center;position:relative;}
-.story:hover {@mixin hover-item;}
-.story figure {}
-.story-name {display:block;width:var(--size-huge);margin:var(--space-2) 0 0 0;color:var(--color-text);@mixin truncate;}

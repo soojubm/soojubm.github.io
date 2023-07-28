@@ -1,7 +1,6 @@
 .setting {@mixin layout-medium;}
 
-.setting-item {@mixin tile-flat;}
-.setting-item + .setting-item {margin:var(--space-3) 0 0 0;}
+.setting-item {margin:0 0 1.5rem 0;}
 .setting-item-label {@mixin text-label;}
 .setting-item-value {}
 .setting-item-value-username {width:100%;}

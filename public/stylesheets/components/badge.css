@@ -11,11 +11,19 @@
   height:var(--size-tiny);
   padding:0 var(--space-2);
   border-radius: var(--radius);
-  background-color: var(--gray400);
+  box-sizing: border-box;
+  /* background-color: var(--gray400); */
+  background:var(--green100);
+  color:var(--color-primary);
   font-weight: var(--font-weight-normal);
   font-size:var(--font-size-small);
-  color:#fff;
   line-height: 1;
+
+
+  background-color: #fff;
+  border: var(--border);
+  font-size: 10px;
+  color: var(--color-text);
 }
 .badge[data-variant=primary] {background:var(--color-accent);color: var(--gray800);}
 .badge[data-variant=secondary] {background:var(--green100);color:var(--color-primary);}

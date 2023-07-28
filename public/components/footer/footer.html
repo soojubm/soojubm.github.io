@@ -2,25 +2,30 @@
   <div class="footer-background"></div>
   <figure class="footer-logo" hidden></figure>
 
-  <div class="user" style="margin-top: -4rem; z-index: 5">
-    <test-avatar size="huge" style="outline: 6px solid var(--color-background)"></test-avatar>
-    <h2 class="user-name">수줍이</h2>
-    <span class="user-id">soojubm@gmail.com</span>
-    <div class="user-id">82 10 3121 7045</div>
-    <span class="user-job">UI Designer</span>
-    <button class="chip" style="margin: 0.5rem 0 0 0"><span class="chip-label">팔로우</span></button>
+  <div style="margin-top: -4rem; z-index: 5">
+    <!-- description="soojubm@gmail.com | 82 10 3121 7045 | UI Designer" -->
+    <test-entity label="수줍이" description="soojubm@gmail.com" description2="82 10 3121 7045" description3="UI Designer">
+      <test-avatar slot="avatar" size="huge" variant="secondary" style="outline: 6px solid var(--color-background)"></test-avatar>
+      <test-chip>팔로우</test-chip>
+    </test-entity>
   </div>
 
-  <nav class="footer-temp">
-    <a href="https://soojubm.notion.site/UI-Designer-9c18f4dd39eb4181b9f9c2ee76896618" target="_blank">
-      About
-      <figure class="icon-indicator" role="img"><span class="material-symbols-outlined">call_made</span></figure>
-    </a>
-    <a href="https://github.com/soojubm" target="_blank">
-      Github
-      <figure class="icon-indicator" role="img"><span class="material-symbols-outlined">call_made</span></figure>
-    </a>
-  </nav>
+  <div style="max-width: 240px; margin: 0.75rem 0 1.5rem">
+    <test-menu-group class="footer-temp">
+      <test-menuitem label="About" href="https://soojubm.notion.site/UI-Designer-9c18f4dd39eb4181b9f9c2ee76896618" target="_blank">
+        <test-avatar slot="avatar" size="medium" fallback=" ">
+          <test-icon slot="icon" name="people-tag"></test-icon>
+        </test-avatar>
+        <test-icon slot="action" name="arrow-tr"></test-icon>
+      </test-menuitem>
+      <test-menuitem label="Github" href="https://github.com/soojubm" target="_blank">
+        <test-avatar slot="avatar" size="medium" fallback=" ">
+          <test-icon slot="icon" name="github"></test-icon>
+        </test-avatar>
+        <test-icon slot="action" name="arrow-tr"></test-icon>
+      </test-menuitem>
+    </test-menu-group>
+  </div>
 
   <dl class="footer-address-info">
     <dt>사업자등록번호</dt>
@@ -36,8 +41,8 @@
     <abbr title="phone"></abbr>
   </dl>
   <small class="footer-copyright">© 2019 soojubm. All rights reserved.</small>
-  <address class="footer-address">
-    <p class="footer-address-slogan" style="font-size: var(--font-size-medium)">Making things better.</p>
+  <address class="footer-address" style="margin: 0.5rem 0 0 0">
+    <p class="footer-address-slogan">Making things better.</p>
   </address>
 
   <aside class="footer-scroll" style="margin: 1.5rem 0 0 0">

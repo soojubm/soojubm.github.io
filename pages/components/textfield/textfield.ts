@@ -4,6 +4,8 @@ import navbar from '/public/components/navbar/navbar.html'
 import main from './textfield.html'
 import '/pages/components/components.css'
 
+import '/public/stylesheets/components/textfield.css'
+
 // import '/public/stylesheets/shared.css'
 import '/public/stylesheets/shared/webfonts.css'
 import '/public/stylesheets/shared/variables.css'

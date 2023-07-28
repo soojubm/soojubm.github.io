@@ -3,116 +3,117 @@
     <test-text variant="title" title="or Box">Tiles</test-text>
     <p class="article-description">연관 정보를 묶어 시각적으로 강조하는 컨테이너입니다.</p>
 
-    <test-row class="article-aka">
-      <test-tag>a.k.a.</test-tag>
-      <span class="hashtag" title="protocol mozilla">EmphasisBox</span>
-      <span class="hashtag" title="biings">Box</span>
-      <span class="hashtag" title="">Card</span>
-      <span class="hashtag" title="pinterest gestalt">Module</span>
-      <span class="hashtag" title="radix">section</span>
-      <span class="hashtag" title="radix">container</span>
-      <span class="hashtag" title="mui">Paper</span>
-    </test-row>
+    <dl class="article-aka">
+      <dt>a.k.a.</dt>
+      <dd class="hashtag" title="protocol mozilla">EmphasisBox</dd>
+      <dd class="hashtag" title="biings">Box</dd>
+      <dd class="hashtag" title="">Card</dd>
+      <dd class="hashtag" title="pinterest gestalt">Module</dd>
+      <dd class="hashtag" title="radix">section</dd>
+      <dd class="hashtag" title="radix">container</dd>
+      <dd class="hashtag" title="mui">Paper</dd>
+    </dl>
 
     <section class="component-example">
-      <test-tile variant="elevated">
-        <test-text variant="subhead">elevated large with subhead</test-text>
-        <p style="margin: 1rem">
-          문제: 크기에 따른 변별력이 없다. inset이 더 커진다면 모바일 등 작은 화면에서 미디어쿼리로 추가적인 inset 조절이 필요하기 때문에 컴포넌트의
-          고유성을 잃게 된다. 솔루션: inset이 1rem 초과할 때 콘텐츠 모듈을 가운데 정렬로 제한하여 고유성을 유지할 수 있다.
-        </p>
-        <p style="margin-top: var(--space-3)">이 tile은 페이지 레벨의 컴포넌트가 될 수 있다.</p>
-      </test-tile>
-      <test-tile variant="elevated">
-        <b>elevated</b>
-        <p>flat 형태와 구별이 잘 안 되어 쉐도우를 변경함.</p>
-      </test-tile>
-      <test-tile>
-        <figure>
-          <img
-            src="/public/images/AlbumArt_{B5020207-474E-4720-B8A7-C6073790C400}_Large.jpg"
-            alt=""
-            style="width: 100%; margin: 0; border-radius: var(--radius)"
-          />
-          <figcaption></figcaption>
-        </figure>
-        <b>flat with media</b>
-      </test-tile>
-      <test-tile>
-        <b>flat small</b>
-      </test-tile>
-      <test-tile>
-        <b>selectable - carbon design system</b>
-      </test-tile>
-
-      <article class="component-props">
-        <dl>
-          <dt>appearance</dt>
-          <dd>'flat' | 'elevated'</dd>
-          <dd></dd>
-          <dt>size</dt>
-          <dd>'large' | 'medium' | 'small'</dd>
-          <dd>TODO tiny size for tablist</dd>
-          <dt>children</dt>
-          <dd>React.Node</dd>
-        </dl>
-      </article>
+      <test-row direction="column">
+        <test-tile variant="elevated">
+          <test-text variant="subhead">elevated large with subhead</test-text>
+          <p style="margin: 1rem">
+            문제: 크기에 따른 변별력이 없다. inset이 더 커진다면 모바일 등 작은 화면에서 미디어쿼리로 추가적인 inset 조절이 필요하기 때문에 컴포넌트의
+            고유성을 잃게 된다. 솔루션: inset이 1rem 초과할 때 콘텐츠 모듈을 가운데 정렬로 제한하여 고유성을 유지할 수 있다.
+          </p>
+          <p style="margin-top: var(--space-3)">이 tile은 페이지 레벨의 컴포넌트가 될 수 있다.</p>
+        </test-tile>
+        <test-tile variant="elevated">
+          <b>elevated</b>
+          <p>flat 형태와 구별이 잘 안 되어 쉐도우를 변경함.</p>
+        </test-tile>
+        <test-tile>
+          <figure>
+            <img
+              src="/public/images/AlbumArt_{B5020207-474E-4720-B8A7-C6073790C400}_Large.jpg"
+              alt=""
+              style="width: 100%; margin: 0; border-radius: var(--radius)"
+            />
+            <figcaption></figcaption>
+          </figure>
+          <b>flat with media</b>
+        </test-tile>
+        <test-tile>
+          <b>flat small</b>
+        </test-tile>
+        <test-tile>
+          <b>selectable - carbon design system</b>
+        </test-tile>
+      </test-row>
     </section>
 
-    <!-- <x-card>
-      <x-img
-        alt="A photo of a yellow lemon"
-        height="200px"
-        src=""
-      />
-      <x-card-title>List of my favorite lemons</x-card-title>
-      <x-card-subtitle>Number 5 will surprise you!</x-card-subtitle>
-      <x-card-actions>
-        <x-btn>Read More</x-btn>
-      </x-card-actions>
-    </x-card> -->
-    <test-tile variant="nuded" class="card has-clickable" role="listitem" style="max-width: 400px; z-index: 1">
-      <figure class="card-thumbnail"><img src="/public/images/springsteen.jpg" alt="" /></figure>
-      <test-tag variant="primary">카테고리</test-tag>
-      <!-- <figure class="card-avatar">🍊</figure> -->
-      <test-text variant="subhead" class="card-title">카드 유아이</test-text>
-      <p class="card-text">
-        텍스트는 최대 두 줄이다. 따봉은 상세페이지에서 제공하세요. 뉴스피드 유아이에서는 밖에서 제공할 수 있어요.북마크는 밖에 두어도 좋은가?
-        상세페이지에서 제공하는 것이 좋음. 기능이 많아짐. 신선식품 장바구니는 밖에 인정.
-      </p>
-      <test-chip slot="actions"> ... </test-chip>
-      <test-row slot="tags">
-        <test-tag>기획</test-tag>
-        <test-tag>UI</test-tag>
-        <test-tag>React</test-tag>
-      </test-row>
-      <test-menu-item label="수줍이" description="2017. 12. 21.">
-        <test-avatar slot="avatar" size="small"><img src="/public/images/springsteen.jpg" alt="" /></test-avatar>
-      </test-menu-item>
-      <hr />
-      <test-menu-item size="large" label="퓨어 오렌지 주스" description="">
-        <test-avatar slot="avatar" size="large">🍊</test-avatar>
-        <div class="item-description"><del>₩19,000</del> ₩16,000 <em>할인율 20%</em></div>
-      </test-menu-item>
+    <section class="component-props">
+      <dl>
+        <dt>variant</dt>
+        <dd>'flat' | 'elevated'</dd>
+        <dd></dd>
+        <dt>size</dt>
+        <dd>'large' | 'medium' | 'small'</dd>
+        <dd>TODO tiny size for tablist</dd>
+        <dt>children</dt>
+        <dd>React.Node</dd>
+      </dl>
+    </section>
 
-      <test-tag class="card-note">마일리지 적립 200P</test-tag>
-    </test-tile>
+    <section class="component-guide">
+      <test-text variant="subhead">clickable</test-text>
+      <test-text variant="body" class="article-p">
+        '클릭할 수 있음'의 기표로 elevated 스타일을 사용합니다. 타일 전체가 하나의 클릭 가능한 요소일 수 있지만 타일 내부에 클릭 가능한 요소를 포함할
+        수도 있습니다.
+      </test-text>
 
-    <test-text variant="body-large" class="article-kicker">
-      <b>clickable</b>
-      '클릭할 수 있음'의 기표로 elevated 스타일을 사용합니다. 타일 전체가 클릭 영역일 수도, 타일 내부에 클릭 가능한 요소를 포함할 수도 있습니다.
-    </test-text>
+      <test-text variant="subhead">Todo 선택된 상태의 타일</test-text>
+      <test-text variant="body" class="article-p">
+        '클릭할 수 있음'의 기표로 elevated 스타일을 사용합니다. 타일 전체가 하나의 클릭 가능한 요소일 수 있지만 타일 내부에 클릭 가능한 요소를 포함할
+        수도 있습니다.
+      </test-text>
 
-    <test-text variant="subhead">Memo</test-text>
-    <ul>
-      <li>타일 내부 leading, tailing 엘리먼트의 시각보정이 필요할 수 있습니다.</li>
-      <li>이것은 레이아웃 컴포넌트인가 컨테이너 컴포넌트인가.</li>
-      <li>TODO: section componenet : hero / , column container 2, 3</li>
-      <li>TODO: 모든 contentbox를 tile로 묶어두는 방법이 필요할지도.</li>
-      <li>todo 선택 상태의 타일 디자인.</li>
-    </ul>
+      <test-text variant="subhead">TODO: 모든 contentbox가 tile 이어야 하는가.</test-text>
+      <test-text variant="body" class="article-p"> </test-text>
 
-    <test-text variant="subhead">todo Media</test-text>
-    <p>카드 썸네일은 2:1. 블리딩 시 높이를 고정해야 한다.</p>
+      <test-text variant="subhead">Card anatomy</test-text>
+      <test-text variant="body" class="article-p">2:1. 블리딩 시 높이를 고정해야 한다. ??</test-text>
+
+      <test-tile variant="nuded" class="card has-clickable" role="listitem" style="max-width: 400px; z-index: 1">
+        <figure class="card-thumbnail"><img src="/public/images/springsteen.jpg" alt="" /></figure>
+        <test-tag variant="primary">카테고리</test-tag>
+        <!-- <figure class="card-avatar">🍊</figure> -->
+        <test-text variant="subhead">카드 유아이</test-text>
+        <p class="card-text">
+          텍스트는 최대 두 줄이다. 따봉은 상세페이지에서 제공하세요. 뉴스피드 유아이에서는 밖에서 제공할 수 있어요.북마크는 밖에 두어도 좋은가?
+          상세페이지에서 제공하는 것이 좋음. 기능이 많아짐. 신선식품 장바구니는 밖에 인정.
+        </p>
+        <test-chip slot="actions">
+          <test-icon slot="icon" name="more-vert"></test-icon>
+        </test-chip>
+        <test-row>
+          <test-tag>기획</test-tag>
+          <test-tag>UI</test-tag>
+          <test-tag>React</test-tag>
+        </test-row>
+        <test-menuitem label="수줍이" description="2017. 12. 21.">
+          <!-- <test-avatar slot="avatar" size="small"><img src="/public/images/springsteen.jpg" alt="" /></test-avatar> -->
+          <test-avatar slot="avatar" size="small"></test-avatar>
+        </test-menuitem>
+        <test-separator></test-separator>
+        <test-menuitem size="large" label="퓨어 오렌지 주스" description="">
+          <test-avatar slot="avatar" size="large">🍊</test-avatar>
+          <div class="item-description"><del>₩19,000</del> ₩16,000 <em>할인율 20%</em></div>
+        </test-menuitem>
+        <test-tag class="card-note">마일리지 적립 200P</test-tag>
+      </test-tile>
+
+      <test-text variant="subhead">Memo</test-text>
+      <ul>
+        <li>타일 내부 leading, tailing 엘리먼트의 시각보정이 필요할 수 있습니다.</li>
+        <li><del>레이아웃 컴포넌트</del>컨테이너 컴포넌트</li>
+      </ul>
+    </section>
   </article>
 </main>

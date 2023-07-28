@@ -1,131 +1,62 @@
 <!-- // menu 태그 안에 heading을 포함하는 경우, 반응형을 위한 메뉴 구조는 안 된다. -->
 <nav class="navbar js-navbar" role="navigation">
   <test-chip class="navbar-burger js-navbar-toggle" aria-label="전체메뉴" aria-haspopup="true" aria-expanded="false">
-    <i class="iconoir-menu-scale"></i>
+    <i slot="icon" class="iconoir-menu-scale"></i>
   </test-chip>
 
-  <div class="navbar-menu">
-    <div class="navbar-menu-item has-submenu">
-      <menu>
-        <a href="index.html">
-          <i class="iconoir-home-simple-door" aria-label="홈"></i>
-        </a>
-        <a href="tokens.html">
-          <i class="iconoir-palette"></i>
-          Tokens</a
-        >
-        <a href="signifier.html">Signifier</a>
-      </menu>
-    </div>
-    <div class="navbar-menu-item has-submenu" style="margin: var(--space-2) 0 0 0">
-      <menu>
-        <p style="line-height: var(--size-medium)" role="heading"><test-text variant="label">component</test-text></p>
-        <a href="avatar.html">
-          <i class="iconoir-user"></i>
-          avatar
-          <test-badge>테스트</test-badge>
-        </a>
-        <a href="entity.html"> <i class="iconoir-user-square"></i> entity</a>
-        <!-- <test-menu-item label="button" href="button.html"> <i slot="avatar" class="iconoir-shortcut"></i> button</test-menu-item> -->
-        <a href="button.html"> <i class="iconoir-shortcut"></i> button</a>
-        <a href="chip.html"> <i class="iconoir-shortcut"></i> chip</a>
+  <a class="navbar-logo" href="/"></a>
+  <!-- <div class="navbar-brand-logo-and-title"></div> -->
 
-        <a href="menuitem.html"> <i class="iconoir-shortcut"></i> menu item</a>
-
-        <a href="checkbox.html"> <i class="iconoir-list-select"></i> checkbox</a>
-        <a href="radio.html"><i class="iconoir-list-select"></i> radio</a>
-        <a href="switch.html">
-          <i class="iconoir-switch-off"></i>
-          switch
-        </a>
-        <a href="textfield.html">
-          <i class="iconoir-input-field"></i>
-          textfield</a
-        >
-        <a href="tag.html">
-          <i class="iconoir-label"></i>
-          tag</a
-        >
-        <a href="tile.html">
-          <i class="iconoir-box"></i>
-          tile</a
-        >
-        <a href="tooltip.html">
-          <i class="iconoir-help-square"> </i>
-          tooltip
-        </a>
-        <a href="callout.html">
-          <i class="iconoir-megaphone"></i>
-          callout</a
-        >
-        <a href="text.html">text</a>
-        <a href="components.html"> Components</a>
-      </menu>
-    </div>
-    <div class="navbar-menu-item has-submenu" style="margin: var(--space-2) 0 0 0">
-      <menu>
-        <!-- // role="heading" -->
-        <p style="line-height: var(--size-medium)">
-          <test-text variant="label">Patterns</test-text>
-        </p>
-        <a href="setting.html">
-          <i class="iconoir-settings"></i>
-          setting</a
-        >
-        <a href="post.html">
-          <i class="iconoir-open-book"></i>
-          post</a
-        >
-        <a href="chat.html">
-          <i class="iconoir-chat-bubble"></i>
-          chat</a
-        >
-        <hr />
-        <a href="accordion.html">accordion</a>
-        <a href="searching.html">searching</a>
-        <a href="filtering.html">filtering</a>
-        <a href="result.html">result</a>
-        <a href="presentation.html">presentations</a>
-        <a href="profile.html">profile</a>
-        <a href="feed.html">feed</a>
-        <a href="notification.html">notifications</a>
-
-        <!-- <a href="#messaging">messaging / feedback </a> -->
-        <!-- <a href="#terms">Terms & Privacy</a> -->
-      </menu>
-    </div>
-    <div class="navbar-menu-item has-submenu" style="margin: var(--space-2) 0 0 0">
-      <!-- <span class="menu-label" role="menuitem"></span> -->
-      <menu>
-        <p style="line-height: var(--size-medium)"><test-text variant="label">Interfaces</test-text></p>
-        <a href="#profile">User Profile 🔥</a>
-        <a href="#kakaopay">Kakaopay (outdated)</a>
-        <a href="#_login">Sign In</a>
-        <a href="#_signup">Sign Up</a>
-        <a href="#_forgot">Forgot Password</a>
-        <a href="#product">Product</a>
-        <a href="#cart">Cart</a>å
-        <a href="#checkout">Checkout</a>
-        <!-- <a href="#orders">Orders</a> -->
-        <a href="#cake">Product 2</a>
-        <a href="#feed">Feed</a>
-        <!-- <a href="#contact">Contact</a>
-              <a href="#help">Help</a> -->
-        <a href="#class">Product 3 - class</a>
-        <!-- <a href="#event">Event</a> -->
-        <!-- <a href="#terms">Terms..</a> -->
-      </menu>
-    </div>
+  <div class="navbar-menulist">
+    <a href="index.html">
+      Home
+      <test-icon name="" class="iconoir-down-round-arrow"></test-icon>
+    </a>
+    <menu>
+      <a href="index.html">
+        <i class="iconoir-home-simple-door" aria-label="홈"></i>
+      </a>
+      <a href="tokens.html">
+        <test-icon name="palette"></test-icon>
+        Tokens
+      </a>
+      <a href="signifier.html">Signifier</a>
+    </menu>
+    <a href="tokens.html"> Tokens </a>
+    <menu>
+      <a href="index.html">
+        <i class="iconoir-home-simple-door" aria-label="홈"></i>
+      </a>
+      <a href="tokens.html">
+        <i class="iconoir-palette"></i>
+        Tokens
+      </a>
+      <a href="signifier.html">Signifier</a>
+    </menu>
+    <a href="signifier.html">Signifier</a>
+    <menu>
+      <a href="index.html">
+        <i class="iconoir-home-simple-door" aria-label="홈"></i>
+      </a>
+      <a href="tokens.html">
+        <i class="iconoir-palette"></i>
+        3
+      </a>
+      <a href="signifier.html">3</a>
+    </menu>
   </div>
 
-  <test-chip class="navbar-logo" href="/"></test-chip>
-
-  <div style="display: flex; align-items: center; gap: 0.5rem">Theme: <b>Brutal</b> <i class="iconoir-down-round-arrow"></i></div>
+  <div style="margin-left: auto">
+    <test-chip> Theme: <b>Brutal</b> <i class="iconoir-down-round-arrow"></i> </test-chip>
+  </div>
 
   <div class="navbar-user">
-    <test-chip href="#" style="margin-right: 0.5rem">시작하기</test-chip>
-    <a class="navbar-search-trigger js-navbar-toggle" href="#"></a>
-    <button class="navbar-user-trigger" aria-haspopup="menu" aria-expanded="false"></button>
+    <!-- <test-chip href="#" style="margin-right: 0.5rem">시작하기</test-chip> -->
+    <!-- <test-chip class="navbar-search-trigger js-navbar-toggle">
+      <test-icon slot="icon" name="bell"></test-icon>
+    </test-chip> -->
+    <!-- <button class="navbar-user-trigger" aria-haspopup="menu" aria-expanded="false"></button> -->
+
     <button class="switch-wrap js-darkmode" title="change theme">
       <span class="day"><i class="iconoir-sun-light"></i></span>
       <span class="night"><i class="iconoir-half-moon"></i></span>
@@ -134,6 +65,153 @@
         <input type="checkbox" role="switch" id="temp51" name="" />
       </span>
     </button>
+  </div>
+  <div class="sidebar-menu" style="padding-right: 1rem">
+    <br />
+    <test-menu-group>
+      <test-menuitem label="" href="index.html">
+        <test-avatar slot="avatar" fallback=" ">
+          <test-icon slot="icon" name="home-simple-door" aria-label="홈"></test-icon>
+        </test-avatar>
+      </test-menuitem>
+      <test-menuitem label="Tokens" href="tokens.html">
+        <test-avatar slot="avatar" size="medium" fallback=" ">
+          <test-icon slot="icon" name="palette"></test-icon>
+        </test-avatar>
+      </test-menuitem>
+      <test-menuitem label="Signifier" href="signifier.html">
+        <test-avatar slot="avatar" size="medium" fallback=" ">
+          <test-icon slot="icon" name="design-pencil"></test-icon>
+        </test-avatar>
+      </test-menuitem>
+    </test-menu-group>
+    <menu>
+      <test-menuitem label="Components">
+        <test-avatar slot="avatar" size="medium" fallback=" ">
+          <test-icon slot="icon" name="building"></test-icon>
+        </test-avatar>
+        <test-icon slot="action" name="plus"></test-icon>
+      </test-menuitem>
+      <a label="avatar" href="avatar.html">
+        <!-- <test-avatar slot="avatar" fallback=" ">
+          <test-icon slot="icon" name="user"></test-icon>
+        </test-avatar> -->
+        avatar
+      </a>
+      <a href="breadcrumb.html">
+        <!-- <i class="iconoir-user"></i> -->
+        breadcrumb
+      </a>
+      <a href="entity.html">
+        <!-- <i class="iconoir-user-square"></i> -->
+        entity</a
+      >
+      <!-- <test-menuitem label="button" href="button.html"> <i slot="avatar" class="iconoir-shortcut"></i> button</test-menuitem> -->
+      <a href="button.html">
+        <!-- <i class="iconoir-shortcut"></i> -->
+        button</a
+      >
+      <a href="chip.html">
+        <!-- <i class="iconoir-shortcut"></i> -->
+        chip</a
+      >
+
+      <a href="menuitem.html"> <i class="iconoir-shortcut"></i> menu item</a>
+
+      <a href="checkbox.html"> <i class="iconoir-list-select"></i> checkbox</a>
+      <a href="radio.html"><i class="iconoir-list-select"></i> radio</a>
+      <a href="switch.html">
+        <i class="iconoir-switch-off"></i>
+        switch
+      </a>
+      <a href="textfield.html">
+        <i class="iconoir-input-field"></i>
+        textfield
+      </a>
+      <a href="tag.html">
+        <i class="iconoir-label"></i>
+        tag
+      </a>
+      <a href="tile.html">
+        <i class="iconoir-box"></i>
+        tile
+      </a>
+      <a href="tooltip.html">
+        <i class="iconoir-help-square"> </i>
+        tooltip
+      </a>
+      <a href="callout.html">
+        <i class="iconoir-megaphone"></i>
+        callout
+      </a>
+      <a href="text.html">
+        <i class="iconoir-text"></i>
+        text
+      </a>
+      <a href="bar.html">bar</a>
+      <a href="components.html"> components</a>
+    </menu>
+    <menu>
+      <!-- // role="heading" -->
+      <test-menuitem label="Patterns">
+        <test-avatar slot="avatar" fallback=" ">
+          <test-icon slot="icon" name="city"></test-icon>
+        </test-avatar>
+        <test-icon slot="icon" name="plus"></test-icon>
+      </test-menuitem>
+      <a href="setting.html">
+        <i class="iconoir-settings"></i>
+        setting
+      </a>
+      <a href="post.html">
+        <i class="iconoir-open-book"></i>
+        post
+      </a>
+      <a href="chat.html">
+        <i class="iconoir-chat-bubble"></i>
+        chat
+      </a>
+      <a href="searching.html">
+        <test-icon name="input-search"></test-icon>
+        searching
+      </a>
+      <a href="filtering.html">
+        <test-icon name="filter"></test-icon>
+        filtering
+      </a>
+      <test-separator></test-separator>
+      <a href="dialog.html">collapsed/expanded</a>
+      <a href="dialog.html">haspopup</a>
+
+      <a href="dialog.html">dialog</a>
+      <a href="accordion.html">accordion</a>
+      <a href="result.html">result</a>
+      <a href="presentation.html">presentations</a>
+      <a href="profile.html">user profile 🔥</a>
+      <a href="feed.html">feed</a>
+      <a href="notification.html">notifications</a>
+      <!-- <a href="#messaging">messaging / feedback </a> -->
+      <!-- <a href="#terms">Terms & Privacy</a> -->
+    </menu>
+    <!-- <span class="menu-label" role="menuitem"></span> -->
+    <menu>
+      <p style="line-height: var(--size-medium)"><test-text variant="label">Interfaces</test-text></p>
+      <a href="#kakaopay">Kakaopay (outdated)</a>
+      <a href="#_login">Sign In</a>
+      <a href="#_signup">Sign Up</a>
+      <a href="#_forgot">Forgot Password</a>
+      <a href="#product">Product</a>
+      <a href="#cart">Cart</a>å
+      <a href="#checkout">Checkout</a>
+      <!-- <a href="#orders">Orders</a> -->
+      <a href="#cake">Product 2</a>
+      <a href="#feed">Feed</a>
+      <!-- <a href="#contact">Contact</a>
+            <a href="#help">Help</a> -->
+      <a href="#class">Product 3 - class</a>
+      <!-- <a href="#event">Event</a> -->
+      <!-- <a href="#terms">Terms..</a> -->
+    </menu>
   </div>
 </nav>
 <!-- <div class="navbar-backdrop"></div> -->

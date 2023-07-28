@@ -1,560 +1,847 @@
-<!-- <ul>
-    <p>core: give a name to a raw value to enable theming and make improve maintainability / semantic / component</p>
-    <p>20 - 20px. tailwind의 단점. 디자인 토큰에서 얻을 수 있는 추상화 및 기타 이점이 무효화. 값을 조정하기 쉽도록 추상화.</p>
+<main class="tokens">
+  <!-- https://www.delldesignsystem.com/foundations/elevation/ -->
+
+  <!-- <ul class="ggggg" style="margin: 2rem 0">
+    <p>일관된 시각 경험. 크로스 플랫폼. 서비스 확장과 유지 보수.</p>
+    <li>1~2회 사용하는 케이스는 토큰으로 정의하지 않습니다. 예외 케이스로 정의하거나 컴포넌트 스코프에서 보충합니다.</li>
+    <li>컴포넌트 토큰은 상대적으로 변경 가능성이 높고 범용성이 낮기 때문에 컴포넌트 스코프에서 정의합니다.</li>
+    <li>토큰에 설명이 필요하다는 것은 시멘틱한 명명이 되지 않았다는 반증.</li>
+    <li>https://atlassian.design/components/tokens/all-tokens</li>
   </ul> -->
-<main class="component">
-  <nav class="component-navigation stack" role="group" data-scroll="vertical">
-    <div class="component-navigation-background"></div>
-    <a class="chip is-active js-scrollspy-trigger" href="#"><span class="chip-label">Palette</span></a>
-    <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Typography</span></a>
-    <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Sizing</span></a>
-    <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Spacing</span></a>
-    <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Layouts</span></a>
-    <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Positioning</span></a>
-    <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Z-index</span></a>
-    <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Opacity</span></a>
-    <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Animation</span></a>
-    <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Optical Adjustment</span></a>
-  </nav>
 
-  <article class="article">
-    <p>결국 그리드를 써야 자식 컴포넌트가 독립적으로 존재할 수 있음</p>
-    <!-- <header class="header" style="margin-left: -40px">
-      <div class="chat" style="margin: 2rem var(--grid-margin) var(--space-2)">
-        <figure class="chat-avatar"></figure>
-        <b>Guideline scope.</b>
-        <div class="chat-bubble is-primary">
-          <b><b>Tokens.</b></b>
-          <p>일관된 시각 경험. 크로스 플랫폼. 서비스 확장과 유지 보수.</p>
-        </div>
-        <div class="chat-bubble">
-          <p>namespace는 서드 파티 라이브러리와 충돌을 방지하기 위해 사용합니다. 프로덕션이 아니기 때문에 여기에서는 namespace를 생략했습니다.</p>
-        </div>
-        <div class="chat-bubble">
-          <ul>
-            <li>1~2번 사용하는 예외케이스는 토큰으로 정의하지 않습니다. 컴포넌트 스코프에서 보충합니다.</li>
-            <li>컴포넌트 토큰은 상대적으로 변경 가능성이 높고 범용성이 낮기 때문에 컴포넌트 스코프에서 정의합니다.</li>
-            <li>값을 직접적으로 이름에 포함하지 마세요.</li>
-          </ul>
-        </div>
-        <div class="chat-bubble">
-          <p>x(기본) - xx - xxx - xxxx - xxxxx 같은 방식으로 해보기. 또는 [4, 8, 12, 16, 20, 24]</p>
-        </div>
-      </div>
-    </header> -->
+  <!-- https://www.wedesignx.com/knowledge/design-system -->
+  <!-- https://medium.com/eightshapes-llc/size-in-design-systems-64f234aec519 -->
 
-    <!-- <li>radius. pill과 non-pill은 양자택일. 인물 아바타를 특정하기 위해 circle은 허용할 수 있다. </li> -->
+  <!-- <section>
+    <p>seleect, role="listbox" aria-orientation="vertical" ul/li role="option"</p>
+    <p>role="group" 목록 컨텍스트에서는 자식이 role="listitem" / figure role="group"</p>
+  </section> -->
 
-    <!-- <p>
-      Styling hooks follows a specific naming convention to promote predictability and consistency.
-    </p>
-    <blockquote>
-      <p>! problem: size + space = large siz가 되려면 border가 아니라 box-shadow로 보더를 줘야 한다.</p>
-      <p>MD3 참고. surface는 shadow 뿐 아니라 color도. radius를 shape</ㅔ>
-    </blockquote> -->
+  <!-- <ul>
+    <p>namespace는 서드 파티 라이브러리와 충돌을 방지하기 위해 사용합니다. 프로덕션이 아니기 때문에 여기에서는 namespace를 생략했습니다.</p>
+    <li>값을 직접적으로 이름에 포함하지 마세요.</li>
+    <li>>x(기본) - xx - xxx - xxxx - xxxxx 같은 방식으로 해보기. 또는 [4, 8, 12, 16, 20, 24]</li>
+    <li>core: give a name to a raw value to enable theming and make improve maintainability / semantic / component</li>
+    <li>20 - 20px. tailwind의 단점. 디자인 토큰에서 얻을 수 있는 추상화 및 기타 이점이 무효화. 값을 조정하기 쉽도록 추상화.</li>
+    <li>changelog size 48px -> 40px</li>
+  </ul>
+  <li>radius. pill과 non-pill은 양자택일. 인물 아바타를 특정하기 위해 circle은 허용할 수 있다.</li>
+  <p>Styling hooks follows a specific naming convention to promote predictability and consistency.</p>
+  <blockquote>
+    <p>! problem: size + space = large siz가 되려면 border가 아니라 box-shadow로 보더를 줘야 한다.</p>
+    <p>size를 동일하게 주고 border로 크기를 조절할 수 있다.</p>
+    <p>MD3 참고. surface는 shadow 뿐 아니라 color도. radius를 shape</p>
+  </blockquote>
+   -->
+  <style>
+    .ggggg li {
+      list-style: none;
+      padding: 0.5rem var(--grid-margin);
+      font-size: var(--font-size-huge);
+      line-height: 1.2;
+      border-bottom: 1px solid;
+    }
+  </style>
 
-    <!-- <em style="width:1rem;height:1rem;border-radius:var(--radius);background:var(--color-background-strong);display:block;position:absolute;left:-1px;top:-1px;border-top-right-radius:0;border-bottom-right-radius:0;border-bottom-left-radius:0;"></em> -->
-    <!-- <span>4px => 6px 로 변경. tiny size에서는 4px</span> -->
-    <!-- <article class="token-item tile-flat is-gray000">
-    <figure class="token-item-avatar" style="width:var(--size-large);border:4px solid var(--color-text-light);border-bottom-right-radius:0;border-bottom-left-radius:0;border-top-right-radius:0;border-right:var(--border);border-bottom:var(--border);border-radius:50%;">
-    </figure>
-    <b>--radius-circle: 50%</b>
-  </article> -->
+  <section class="tokens-body">
+    <test-row>
+      <test-chip status="active" label="Palette" class="js-scrollspy-trigger"></test-chip>
+      <test-chip class="js-scrollspy-trigger" label="Typography"></test-chip>
+      <test-chip class="js-scrollspy-trigger" label="Sizing"></test-chip>
+      <test-chip class="js-scrollspy-trigger" label="Spacing"></test-chip>
+      <test-chip class="js-scrollspy-trigger" label="Layouts"></test-chip>
+      <test-chip class="js-scrollspy-trigger" label="Positioning"></test-chip>
+      <test-chip class="js-scrollspy-trigger" label="Z-index"></test-chip>
+      <test-chip class="js-scrollspy-trigger" label="Opacity"></test-chip>
+      <test-chip class="js-scrollspy-trigger" label="Animation"></test-chip>
+      <test-chip class="js-scrollspy-trigger" label="Optical Adjustment"></test-chip>
+    </test-row>
+
+    <p>8pt grid => 4px grid / 2 column grid / 3 / 4</p>
+
+    <article class="article js-scrollspy-section">
+      <h1 class="article-title">Color</h1>
+      <p class="article-description">
+        The use of color in an experience helps define communication, meaning, brand, and roles, making it easier for users to interact, search, and
+        differentiate elements. background/border/text/status
+      </p>
+
+      <p>
+        The primary blue swatches reinforce Dell’s brand while unifying touchpoints and interactions. Blue 600 is the baseline UI color for most
+        primary interactions. This palette also includes colors for hover, focus, select, and active states. For additional guidance, refer to the
+        component-specific guidelines.
+      </p>
+      <!-- <div class="chat" style="margin: 2rem 0">
+        <p>hierarchy. 크기와 비례해서 radius와 shadow 조정이 필요하지만 규칙을 최소화.</p>
+        <p>theme. 인버트 컬러셋을 추가로 정의하지 않습니다. 하나의 컬러셋으로 다크 테마에 대응합니다. (쉽지 않음... )</p>
+      </div> -->
+
+      <!-- <test-text variant="subhead">background/border/text/status</test-text> -->
+      <section class="component-example">
+        <div class="token-group">
+          <article class="token-item is-gray000">
+            <figure class="token-item-avatar"></figure>
+            <b>--gray0: #fff</b>
+            <div>
+              <p>--color-background</p>
+            </div>
+          </article>
+          <article class="token-item is-gray100">
+            <figure class="token-item-avatar"></figure>
+            <b>--gray100: #f5f8f5</b>
+            <div>
+              <p>--color-background-weak</p>
+              <!-- <p>--button-border-color</p> -->
+              <!-- <p>--textfield-background-color</p> -->
+            </div>
+          </article>
+          <article class="token-item is-gray200">
+            <figure class="token-item-avatar"></figure>
+            <b>--gray200: #e0e2e1</b>
+            <div>
+              <p>--color-border</p>
+              <!-- <p>--color-hover-background: var(--gray200)</p> -->
+            </div>
+          </article>
+          <article class="token-item is-gray400">
+            <figure class="token-item-avatar"></figure>
+            <b>--gray400: #979d9a</b>
+            <div>
+              <p>--color-text-light</p>
+              <!-- <p>--color-text-disabled</p> -->
+            </div>
+          </article>
+          <article class="token-item is-gray800">
+            <figure class="token-item-avatar"></figure>
+            <b>--gray800: #343c38</b>
+            <div>
+              <p>--color-text</p>
+              <p>--color-backgound-strong</p>
+            </div>
+          </article>
+          <article class="token-item is-primary100">
+            <figure class="token-item-avatar"></figure>
+            <b>--green100: rgba(10, 160, 80, 0.1)</b>
+            <div>
+              <p>--color-primary-light</p>
+            </div>
+          </article>
+          <article class="token-item is-primary200">
+            <figure class="token-item-avatar"></figure>
+            <b>--green800: #1b995c</b>
+            <div>
+              <p>--color-primary</p>
+            </div>
+          </article>
+          <article class="token-item is-red800">
+            <figure class="token-item-avatar" style="background: rgba(243, 68, 97, 0.06)"></figure>
+            <b>--red100: rgba(243, 68, 97, .06)</b>
+            <div>
+              <p>--color-danger-light</p>
+            </div>
+          </article>
+          <article class="token-item is-red800">
+            <figure class="token-item-avatar"></figure>
+            <b>--red800: #f02849</b>
+            <div>
+              <p>--color-danger</p>
+            </div>
+          </article>
+          <article class="token-item">
+            <figure class="token-item-avatar" style="background: var(--color-accent)"></figure>
+            <b>--yellow800: gold</b>
+            <div>
+              <p>--color-accent</p>
+            </div>
+          </article>
+          <article class="token-item">
+            <figure class="token-item-avatar color-skeleton"></figure>
+            <b>Skeleton sample</b>
+          </article>
+          <article class="token-item">
+            <figure class="token-item-avatar"></figure>
+            <b>todo Transparent gradient</b>
+          </article>
+        </div>
+      </section>
+    </article>
+
+    <article class="article js-scrollspy-section">
+      <h1 class="article-title">Radius & Elevations</h1>
+      <p class="article-description">
+        그림자를 이용한 시각적 상승 효과elevated는 주변 요소 대비 강조. 사용자는 시각적 단어로 우선순위를 인식하고 인터렉션. 시각적 우선순위는
+        그림자로만 줄 수 있는 것은 아님. 시각적 우선순위와 맥락의 구분. tooltip / popover. 더 높은 우선순위를 위한 높은 고도. 하지만 overay등으로
+        우선순위를 설정할 수도 있음. 인터렉션이 없는 요소에 그림자를 사용하는 것을 조심. 예를 들면 hover.
+      </p>
+
+      <section class="component-example">
+        <div class="token-group">
+          <article class="token-item is-gray000">
+            <figure
+              class="token-item-avatar"
+              style="
+                border: 4px solid var(--color-text-light);
+                border-bottom-right-radius: 0;
+                border-bottom-left-radius: 0;
+                border-top-right-radius: 0;
+                border-right: var(--border);
+                border-bottom: var(--border);
+              "
+            >
+              <!-- <em
+              style="
+                width: 1rem;
+                height: 1rem;
+                border-radius: var(--radius);
+                background: var(--color-background-strong);
+                display: block;
+                position: absolute;
+                left: -1px;
+                top: -1px;
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+                border-bottom-left-radius: 0;
+              "
+            ></em> -->
+            </figure>
+            <b>--radius: 6px</b>
+            <span>4px => 6px 로 변경. tiny size에서는 4px</span>
+          </article>
+          <article class="token-item is-gray000">
+            <figure
+              class="token-item-avatar"
+              style="
+                width: var(--size-large);
+                border: 4px solid var(--color-text-light);
+                border-bottom-right-radius: 0;
+                border-bottom-left-radius: 0;
+                border-top-right-radius: 0;
+                border-right: var(--border);
+                border-bottom: var(--border);
+                border-radius: 50%;
+              "
+            ></figure>
+            <b>--radius-circle: 50%</b>
+          </article>
+        </div>
+
+        <div class="token-group">
+          <article class="token-item is-elevation" title="Surface or Elevation">
+            <figure class="token-item-avatar"></figure>
+            <b>--shadow: 0 0 .5rem rgb(0 0 0 / 7.5%)</b>
+          </article>
+        </div>
+      </section>
+    </article>
 
     <article class="article typography js-scrollspy-section">
-      <test-text variant="title">Typography</test-text>
-      <p class="article-description">활자의 위계와 배치.</p>
+      <h1 class="article-title">Typography</h1>
+      <p class="article-description">활자의 위계와 배치. 정보 계층.</p>
 
       <div class="chat" style="margin: 2rem 0">
-        <figure class="chat-avatar"></figure>
         <div class="chat-bubble">
           <p>
-            폰트마다 baseline이 다르기 때문에 폰트 변경 시 내부 텍스트의 상하 간격이 안 맞을 수 있다. 폰트를 변경하지 않고 대응하려면?
-            텍스트노드(레이블 역할)의 상단 패딩에 변수를 하나 추가해둔다.
+            <b>폰트 변경 가능성을 고려.</b> 폰트마다 baseline이 다르기 때문에 폰트 변경 시 내부 텍스트의 상하 간격이 안 맞을 수 있다. 폰트를 변경하지
+            않고 대응하려면? 텍스트노드(레이블 역할)의 상단 패딩에 변수를 하나 추가해둔다.
           </p>
         </div>
       </div>
 
-      <!-- <a href="">link to texts pattern</a> -->
-      <test-text variant="subhead">Typefaces <sup>2</sup></test-text>
-      <!-- <p>history 아리타 산스 윈도우즈 환경에서 bold 표현이 약해서 바꿔 봄.</p> -->
-      <test-tile>
-        <div class="statistic-item" style="width: 50%">
-          <span class="statistic-label">한글</span>
-          <b class="statistic-value">고딕 에이원Gothic A1</b>
-        </div>
-        <div class="statistic-item" style="width: 50%">
-          <span class="statistic-label">영문</span>
-          <b class="statistic-value"><del>Karla</del> Quattrocento Sans</b>
-          <div class="stack" role="group" style="margin-top: var(--space-after-subhead)">
-            <span class="token-item tile-flat-tag">normal</span>
-            <span class="token-item tile-flat-tag">bold</span>
+      <section class="component-example">
+        <!-- <a href="">link to texts pattern</a> -->
+        <test-text variant="subhead">Typefaces <sup>2</sup></test-text>
+        <div class="token-group">
+          <div class="token-item" style="max-width: 100%">
+            <b>--font-family: 'Quattrocento Sans', 'Gothic A1', sans-serif;</b>
           </div>
         </div>
-      </test-tile>
-      <div class="token-group">
-        <test-tile>
-          <b>--font-family: 'Quattrocento Sans', 'Gothic A1', sans-serif;</b>
+        <div style="display: flex; justify-content: space-between; margin: -1rem 0 0.75rem">
+          <dl>
+            <dt>한글</dt>
+            <dd>고딕 에이원Gothic A1</dd>
+          </dl>
+          <dl style="width: 50%">
+            <dt>영문</dt>
+            <dd><del>Karla</del> Quattrocento Sans</dd>
+          </dl>
+        </div>
+        <test-tile variant="elevated" size="small" style="margin: 0 -0.5rem 2.5rem">
+          <test-menuitem label="시스템 폰트로 보기" class="js-default-font">
+            <test-avatar slot="avatar">✨</test-avatar>
+          </test-menuitem>
         </test-tile>
-        <!-- <test-tile style="max-width: 100%"></test-tile> -->
-      </div>
 
-      <button class="item js-default-font" data-tile="elevated" style="max-width: 560px; margin-top: 0.75rem">
-        <figure class="item-avatar">✨</figure>
-        <span class="item-label">시스템 폰트로 보기</span>
-      </button>
+        <test-text variant="subhead"
+          >Sizes <sup><del>5</del> 3</sup></test-text
+        >
+        <div class="token-group">
+          <div class="token-item">
+            <!-- <figure class="token-item-avatar" style="background-image: none; font-size: var(--font-size-huge)">수줍</figure> -->
+            <b>--font-size-huge: 2rem</b>
+          </div>
+          <div class="token-item">
+            <!-- <figure class="token-item-avatar" style="background-image: none; font-size: var(--font-size-large)">수줍</figure> -->
+            <b>--font-size-large: 1.125rem</b>
+          </div>
+          <div class="token-item">
+            <!-- <figure class="token-item-avatar" style="background-image: none; font-size: var(--font-size-medium)">수줍</figure> -->
+            <b>--font-size-medium: .875rem</b>
+          </div>
+          <div class="token-item">
+            <del><b>--font-size-?: 3rem</b></del>
+          </div>
+          <div class="token-item">
+            <del><b>--font-size-?: .75rem</b></del>
+          </div>
+        </div>
 
-      <test-text variant="subhead">Sizes <sup>5? 3?</sup></test-text>
-      <div class="token-group">
-        <test-tile>
-          <!-- <figure class="token-item-avatar" style="background-image: none; font-size: var(--font-size-huge)">수줍</figure> -->
-          <b>--font-size-huge: 2rem</b>
-        </test-tile>
-        <test-tile>
-          <!-- <figure class="token-item-avatar" style="background-image: none; font-size: var(--font-size-large)">수줍</figure> -->
-          <b>--font-size-large: 1.125rem</b>
-        </test-tile>
-        <test-tile>
-          <!-- <figure class="token-item-avatar" style="background-image: none; font-size: var(--font-size-medium)">수줍</figure> -->
-          <b>--font-size-medium: .875rem</b>
-        </test-tile>
-        <test-tile>
-          <del><b>--font-size-?: 3rem</b></del>
-        </test-tile>
-        <test-tile>
-          <del><b>--font-size-?: .75rem</b></del>
-        </test-tile>
-      </div>
+        <test-text variant="subhead">Weights <sup>2</sup></test-text>
+        <div class="token-group">
+          <div class="token-item">
+            <b>--font-weight-normal: 400</b>
+          </div>
+          <div class="token-item">
+            <b>--font-weight-bold: 800</b>
+          </div>
+        </div>
 
-      <test-text variant="subhead">Weights <sup>2</sup></test-text>
-      <div class="token-group">
-        <test-tile>
-          <b>--font-weight-normal: 400</b>
-        </test-tile>
-        <test-tile>
-          <b>--font-weight-bold: 800</b>
-        </test-tile>
-      </div>
+        <test-text variant="subhead">Line heights <sup>2</sup></test-text>
+        <div class="token-group">
+          <div class="token-item">
+            <b>--font-line-height-large: 1.8</b>
+          </div>
+          <div class="token-item">
+            <b>--font-line-height: 1.4</b>
+          </div>
+        </div>
 
-      <test-text variant="subhead">Line heights <sup>2</sup></test-text>
-      <div class="token-group">
-        <test-tile>
-          <b>--font-line-height-large: 1.8</b>
-        </test-tile>
-        <test-tile>
-          <b>--font-line-height: 1.4</b>
-        </test-tile>
-      </div>
+        <test-text variant="subhead">Compositions 🔥</test-text>
+        <div class="token-group">
+          <div class="token-item">
+            <b>@mixin text-title</b>
+            <div>
+              <p>--font-size-large</p>
+              <p>--font-weight-bold</p>
+            </div>
+            <div>
+              <p>@media (--small) {1.5rem}</p>
+            </div>
+          </div>
+          <div class="token-item">
+            <b>@mixin text-subhead</b>
+            <div>
+              <p>--font-size-medium</p>
+              <p>--font-weight-bold</p>
+            </div>
+          </div>
+          <div class="token-item">
+            <b>@mixin text-body</b>
+            <div>
+              <p>--font-size-small</p>
+            </div>
+          </div>
+          <div class="token-item">
+            <b>@mixin text-body-large</b>
+            <div>
+              <p>--font-size-medium</p>
+            </div>
+          </div>
+          <div class="token-item">
+            <b>@mixin text-label</b>
+            <div>
+              <p>--font-size-small</p>
+              <p>--color-text-weak</p>
+            </div>
+          </div>
+          <div class="token-item">
+            <b>@mixin text-body-caption</b>
+            <div>
+              <p>--font-size-tiny</p>
+            </div>
+          </div>
+          <div class="token-item">
+            <b>@mixin truncate</b>
+          </div>
+          <div class="token-item">
+            <b>@mixin truncate-multiple</b>
+          </div>
+        </div>
 
-      <test-text variant="subhead">Compositions 🔥</test-text>
-      <div class="token-group">
-        <test-tile>
-          <b>@mixin text-title</b>
-          <div>
-            <p>--font-size-large</p>
-            <p>--font-weight-bold</p>
-          </div>
-          <div>
-            <p>@media (--small) {1.5rem}</p>
-          </div>
-        </test-tile>
-        <test-tile>
-          <b>@mixin text-subhead</b>
-          <div>
-            <p>--font-size-medium</p>
-            <p>--font-weight-bold</p>
-          </div>
-        </test-tile>
-        <test-tile>
-          <b>@mixin text-body</b>
-          <div>
-            <p>--font-size-small</p>
-          </div>
-        </test-tile>
-        <test-tile>
-          <b>@mixin text-body-large</b>
-          <div>
-            <p>--font-size-medium</p>
-          </div>
-        </test-tile>
-        <test-tile>
-          <b>@mixin text-label</b>
-          <div>
-            <p>--font-size-small</p>
-            <p>--color-text-weak</p>
-          </div>
-        </test-tile>
-        <test-tile>
-          <b>@mixin text-body-caption</b>
-          <div>
-            <p>--font-size-tiny</p>
-          </div>
-        </test-tile>
-        <test-tile>
-          <b>@mixin truncate</b>
-        </test-tile>
-        <test-tile>
-          <b>@mixin truncate-multiple</b>
-        </test-tile>
-      </div>
+        <div style="margin: 0 -1rem">
+          <test-text variant="title">Title</test-text>
+          <div class="space" style="height: var(--space-after-title)"><span>space-after-title</span></div>
+          <test-text variant="body-large">kicker</test-text>
+          <test-separator></test-separator>
+          <test-text variant="subhead">subhead</test-text>
+          <div class="space" style="height: var(--space-after-subhead)"><span>space-after-subhead</span></div>
+          <test-text variant="body">body</test-text>
+        </div>
+      </section>
+
+      <p><a href="">Link to text components</a></p>
     </article>
 
     <article class="article js-scrollspy-section">
-      <div class="token-group">
-        <test-tile>
-          <figure class="token-item-avatar size-huge"></figure>
-          <b>--size-huge: 5rem</b>
-          <div>
-            <p>--avatar-huge</p>
+      <h1 class="article-title">Sizing</h1>
+      <p class="article-description">요소의 너비와 높이. 브라우저 크기가 변경되어도 사이즈 토큰은 변하지 않아야 합니다.</p>
+
+      <section class="component-example">
+        <div class="token-group">
+          <div class="token-item">
+            <figure class="token-item-avatar size-huge"></figure>
+            <b>--size-huge: 5rem</b>
+            <div>
+              <p>--avatar-huge: var(--size-large)</p>
+            </div>
           </div>
-        </test-tile>
-        <test-tile>
-          <figure class="token-item-avatar size-large"></figure>
-          <b>--size-large: 3rem / 48px</b>
-          <div>
-            <p>--avatar-large</p>
-            <p>--button-height</p>
-            <p>--textfield-height</p>
+          <div class="token-item">
+            <figure class="token-item-avatar size-large"></figure>
+            <b>--size-large: 3rem / 48px</b>
+            <div>
+              <p>--avatar-large</p>
+              <p>--button-height</p>
+              <p>--textfield-height</p>
+            </div>
           </div>
-        </test-tile>
-        <test-tile>
-          <figure class="token-item-avatar size-medium"></figure>
-          <b>--size-medium: 2rem / 32px</b>
-          <div>
-            <p>--avatar-medium</p>
-            <p>--chip-height</p>
+          <div class="token-item">
+            <figure class="token-item-avatar size-medium"></figure>
+            <b>--size-medium: 2rem / 32px</b>
+            <div>
+              <p>--avatar-medium</p>
+              <p>--chip-height</p>
+            </div>
           </div>
-        </test-tile>
-        <test-tile>
-          <figure class="token-item-avatar size-small"></figure>
-          <b>--size-small: 1.5rem</b>
-          <div>
-            <p>--avatar-small</p>
-            <p>--tag-height</p>
-            <p>--indicator-height</p>
+          <div class="token-item">
+            <figure class="token-item-avatar size-small"></figure>
+            <b>--size-small: 1.5rem</b>
+            <div>
+              <p>--avatar-small</p>
+              <p>--tag-height</p>
+              <p>--indicator-height</p>
+            </div>
           </div>
-        </test-tile>
-        <test-tile>
-          <figure class="token-item-avatar size-tiny"></figure>
-          <b>--size-tiny: 1rem</b>
-          <div>
-            <p>--checkbox-height</p>
-            <p>--radio-height</p>
-            <p>--switch-height</p>
+          <div class="token-item">
+            <figure class="token-item-avatar size-tiny"></figure>
+            <b>--size-tiny: 1rem</b>
+            <div>
+              <p>--checkbox-height</p>
+              <p>--radio-height</p>
+              <p>--switch-height</p>
+            </div>
           </div>
-        </test-tile>
-      </div>
+        </div>
+      </section>
+      <!-- <test-text variant="subhead">사이즈 토큰으로 추상화하지 않는 케이스</test-text>
+      <p>--navbar-height: <del>var(--size-huge)</del>5rem</p>
+      <p>--sidenav-width: null;</p> -->
+      <!-- <test-text variant="subhead">예외 케이스</test-text>
+      <p>switch height: 20px</p> -->
     </article>
 
     <article class="article js-scrollspy-section">
-      <!-- <li>버튼의 height를 padding에 spacing으로 정의하지 않고 height를 size token으로 정의합니다. 단, 버튼 레이블을 두 줄을 넘기지 않는다는 전제입니다.</li> -->
-      <!-- <li>memo. squish inset/stretch inset</li> -->
-      <!-- <li>changelog. 1 unit을 .25rem으로 정의하여 네이밍.</li> -->
-      <div class="token-group">
-        <test-tile>
-          <b>--space-05: .125rem</b>
-          <small>주로 시각보정에 사용.</small>
-        </test-tile>
-        <test-tile>
-          <b>--space-1: .25rem</b>
-          <div>
-            <p>--space-outer-item</p>
+      <h1 class="article-title">Spacing</h1>
+      <p class="article-description">요소 사이의 간격. outset과 inset.</p>
+      <li>
+        버튼의 height를 padding에 spacing으로 정의하지 않고 height를 size token으로 정의합니다. 단, 버튼 레이블을 두 줄을 넘기지 않는다 전제합니다.
+      </li>
+      <li>memo. squish inset/stretch inset</li>
+      <li>changelog. 1 unit을 .25rem으로 정의하여 네이밍.</li>
+
+      <li>vertical spacing</li>
+      Element height / Space between elements / Text line height
+
+      <section class="component-example">
+        <div class="token-group">
+          <div class="token-item">
+            <b>--space-05: .125rem</b>
+            <!-- <small>주로 시각보정에 사용.</small> -->
           </div>
-        </test-tile>
-        <test-tile>
-          <b>--space-2: .5rem</b>
-          <div>
-            <p>--space-inset-small</p>
+          <div class="token-item">
+            <b>--space-1: .25rem</b>
+            <div>
+              <p>--space-outer-item</p>
+            </div>
           </div>
-        </test-tile>
-        <test-tile>
-          <b>--space-3: .75rem</b>
-        </test-tile>
-        <test-tile>
-          <b>--space-4: 1rem</b>
-          <div>
-            <p>--space-after-subhead</p>
-            <!-- <p>--space-after-description</p> -->
-            <p>--space-inset</p>
-            <p>--grid-gutter</p>
+          <div class="token-item">
+            <b>--space-2: .5rem</b>
+            <div>
+              <p>--space-inset-small</p>
+            </div>
           </div>
-        </test-tile>
+          <div class="token-item">
+            <b>--space-3: .75rem</b>
+          </div>
+          <div class="token-item">
+            <b>--space-4: 1rem</b>
+            <div>
+              <p>--space-after-subhead</p>
+              <p>--space-after-description</p>
+              <p>--space-inset</p>
+              <p>--grid-gutter</p>
+            </div>
+          </div>
+          <div class="token-item">
+            <b>--space-large: 4rem</b>
+            <div>
+              <p>--space-inner-section</p>
+            </div>
+          </div>
+        </div>
+
+        <test-text variant="subhead">Grid</test-text>
+        <div class="token-group">
+          <div class="token-item">
+            <b>--grid-margin: 5vw</b>
+          </div>
+          <div class="token-item">
+            <b>--grid-column: null</b>
+          </div>
+          <div class="token-item">
+            <b>--grid-gutter: null</b>
+          </div>
+        </div>
+
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: 10rem;
+            text-align: center;
+            font-size: var(--font-size-small);
+            padding: 0;
+            position: relative;
+          "
+        >
+          <div class="space" style="width: 5%; margin: 0; writing-mode: vertical-rl; color: var(--color-text)">
+            <span class="">var(--grid-margin)</span>
+          </div>
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: calc(50% - 5% - 0.5rem);
+              height: 100%;
+              color: var(--color-text);
+            "
+          >
+            column<br />var(--grid-column)
+          </div>
+          <div class="space" style="width: 1rem; writing-mode: vertical-rl; color: var(--color-text)"><span class="">var(--grid-gutter)</span></div>
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: calc(50% - 5% - 0.5rem);
+              height: 100%;
+              color: var(--color-text);
+            "
+          >
+            colum<br />var(--grid-column)
+          </div>
+          <div class="space" style="width: 5%; margin: 0; writing-mode: vertical-rl; color: var(--color-text)">
+            <span class="">var(--grid-margin)</span>
+          </div>
+        </div>
+        <div class="spacing-card" style="margin: var(--space-3) 0 0 0">
+          <!-- <div class="space" style="height: var(--space-inset-tile); position: absolute; left: 0; right: 0; top: -1px">
+        <span class="">var(--space-inset-tile)</span>
       </div>
-    </article>
-    <!-- <test-text variant="subhead">Outdated</test-text>
+      <div class="space" style="height: var(--space-inset-tile); position: absolute; left: 0; right: 0; bottom: -1px; z-index: 0">
+        <span class="">var(--space-inset-tile)</span>
+      </div>
       <div
-        class=""
-        style="
-          display: flex;
-          align-items: center;
-          width: 100%;
-          height: 10rem;
-          text-align: center;
-          font-size: var(--font-size-small);
-          padding: 0;
-          position: relative;
-        "
+        class="space"
+        style="width: var(--space-inset-tile); height: 100%; writing-mode: vertical-lr; position: absolute; left: 0; top: 0; bottom: 0; z-index: 0"
       >
-        <div class="space" style="width: 5%; margin: 0; writing-mode: vertical-rl; color: var(--color-text)">
-          <span class="">var(--grid-margin)</span>
-        </div>
-        <div
-          style="display: flex; align-items: center; justify-content: center; width: calc(50% - 5% - 0.5rem); height: 100%; color: var(--color-text)"
-        >
-          column<br />var(--grid-column)
-        </div>
-        <div class="space" style="width: 1rem; writing-mode: vertical-rl; color: var(--color-text)"><span class="">var(--grid-gutter)</span></div>
-        <div
-          style="display: flex; align-items: center; justify-content: center; width: calc(50% - 5% - 0.5rem); height: 100%; color: var(--color-text)"
-        >
-          colum<br />var(--grid-column)
-        </div>
-        <div class="space" style="width: 5%; margin: 0; writing-mode: vertical-rl; color: var(--color-text)">
-          <span class="">var(--grid-margin)</span>
-        </div>
+        <span class="">var(--space-inset-tile)</span>
       </div>
-      <div class="spacing-card" style="margin: var(--space-3) 0 0 0">
-        <div class="space" style="height: var(--space-inset-tile); position: absolute; left: 0; right: 0; top: -1px">
-          <span class="">var(--space-inset-tile)</span>
-        </div>
-        <div class="space" style="height: var(--space-inset-tile); position: absolute; left: 0; right: 0; bottom: -1px; z-index: 0">
-          <span class="">var(--space-inset-tile)</span>
-        </div>
-        <div
-          class="space"
-          style="width: var(--space-inset-tile); height: 100%; writing-mode: vertical-lr; position: absolute; left: 0; top: 0; bottom: 0; z-index: 0"
-        >
-          <span class="">var(--space-inset-tile)</span>
-        </div>
-        <div
-          class="space"
-          style="width: var(--space-inset-tile); height: 100%; writing-mode: vertical-lr; position: absolute; right: 0; top: 0; bottom: 0; z-index: 0"
-        >
-          <span class="">var(--space-inset-tile)</span>
-        </div>
-        <h4 style="font-size: var(--font-size-large)">선약이 있어서 ✋ <span style="display: block">자아실현은 못할 것 같아요.</span></h4>
-        <div class="space" style="height: var(--space-after-subhead)"><span class="">var(--space-after-subhead)</span></div>
-        <p class="typography-paragraph">
-          서브헤드와 디스크립션 혹은 패러그라프는 이렇게 작성하세요. 타이틀의 행간이 조정되었기 때문에 시각보정이 필요할 수도 있어요. line-height
-          조절이 필요할 수도 있습니다.
-        </p>
-        <div class="space" style="height: var(--space-after-description)"><span class="">var(--space-after-description)</span></div>
-        <time class="typography-caption">10 January, 2020 (버튼 그룹이 올 수 있습니다.)</time>
+      <div
+        class="space"
+        style="width: var(--space-inset-tile); height: 100%; writing-mode: vertical-lr; position: absolute; right: 0; top: 0; bottom: 0; z-index: 0"
+      >
+        <span class="">var(--space-inset-tile)</span>
       </div> -->
+          <test-avatar size="huge"></test-avatar>
+          <div class="space" style="height: var(--space-after-avatar)"><span class="">var(--space-after-avatar)</span></div>
+          <h4 style="font-size: var(--font-size-large)">선약이 있어서 ✋ <span style="display: block">자아실현은 못할 것 같아요.</span></h4>
+          <div class="space" style="height: var(--space-after-subhead)"><span class="">var(--space-after-subhead)</span></div>
+          <p class="typography-paragraph">
+            서브헤드와 디스크립션 혹은 패러그라프는 이렇게 작성하세요. 타이틀의 행간이 조정되었기 때문에 시각보정이 필요할 수도 있어요. 또는
+            line-height 조절이 필요할 수 있어요.
+          </p>
+          <div class="space" style="height: var(--space-after-description)"><span class="">var(--space-after-description)</span></div>
+          <time class="typography-caption">10 January, 2020 (버튼 그룹이 올 수 있습니다.)</time>
+        </div>
+      </section>
+    </article>
 
     <article class="article js-scrollspy-section">
-      <test-text variant="title">Layouts - Width</test-text>
-      <p class="article-description">페이지 레벨과 섹션 레벨의 레이아웃.</p>
-      <!-- <p>서비스가 출시 환경이 웹온리(웹/태블릿+모바일) vs 웹+모바일앱(웹+태블릿/모바일)</p> -->
-      <!-- <p style="margin-bottom:var(--space-4);color:var(--color-text-light);">tablet보다 작은 폼 팩터. ex) tablet, phone</p> -->
+      <h1 class="article-title">Layouts - Width</h1>
+      <p class="article-description">콘텐츠 컨테이너의 가로 크기.</p>
+      <p>meta problem 1 : 서비스가 출시 환경이 웹온리(웹/태블릿+모바일) vs 웹+모바일앱(웹+태블릿/모바일)</p>
+      <p style="margin-bottom: var(--space-4); color: var(--color-text-light)">tablet보다 작은 폼 팩터. ex) tablet, phone</p>
 
-      <p>content container / main | sidebar</p>
       <div class="chat" style="margin: 2rem 0">
         <figure class="chat-avatar"></figure>
         <div class="chat-bubble">
           <p>
             <b>유연한 그리드 시스템. </b>모바일 퍼스트. 12 column grid 등 그리드 시스템을 엄격하게 정의하지 마세요. 디지털 환경의 다양한 화면에 맞지
-            않는 시스템. => 칼럼 시스템과 가로 스크롤을 활용합니다.
+            않는 시스템. => 칼럼의 최대 갯수를 정의하고 가로 스크롤을 활용합니다.
           </p>
         </div>
         <div class="chat-bubble">
           <p>
             <b>페이지 모듈.</b>
             맥락의 전환(페이지의 역할의 구분??)을 위해 레이아웃 모듈이나 배경색의 대비를 활용할 수 있습니다. 컨테이너 너비(비밀번호찾기와
-            로그인/회원가입). 배경색(설정, 글쓰기, 소개 등).
+            로그인/회원가입)와 배경색(설정, 글쓰기, 소개 등)의 대비.
           </p>
         </div>
         <div class="chat-bubble">
           <p>
             <b>프레젠테이션 패턴. </b>섹션, 아티클 그리고 모달, 드롭다운 등의 컴포넌트도 작은 화면에서는 페이지 맥락이 될 수 있음을 고려합니다. =>
-            결국 모바일 퍼스트와 연결되는.
+            결국 모바일 퍼스트 맥락.
           </p>
         </div>
       </div>
 
-      <!-- <li>small-scale layout (polaris 참고) 아바타 유무</li>
-        <li>gap?????</li> -->
-
-      <test-text variant="subhead">Media queries</test-text>
-      <div class="token-group">
-        <test-tile>
-          <b>@custom-media --large (max-width: 1560px)</b>
-          <div>
-            <p>@media (--large)</p>
-          </div>
-        </test-tile>
-        <test-tile>
-          <b>@custom-media --small (max-width: 1080px)</b>
-          <div>
-            <p>@media (--small)</p>
-          </div>
-          <small>layout-width가 %(퍼센티지)로 변경됩니다.</small>
-        </test-tile>
-        <test-tile>
-          <del><b>--media-query-tiny: only screen and (max-width: 760px)</b></del>
-        </test-tile>
-      </div>
-
-      <test-text variant="subhead">Layouts (page / section - form...)</test-text>
       <ul>
-        <li>모든 container는 media query --small부터 max-width를 100%.</li>
+        <li>모든 container는 --small부터 max-width를 100%.</li>
         <li>page container는 padding을 갖지 않기? pagehead의 상하 간격은 페이지마다 또는 pagehead 마다 달라질 수 있다.</li>
-        <li>content container / list container (grid)</li>
+        <li>content container / list container (grid) / main | sidebar</li>
+        <li>textfield의 max-width를 정의하는 게 좋을지도 모르겠댜</li>
+        <li>custom media의 max-width를 layout + @로 정의해보자.</li>
+        <li>small-scale layout (polaris 참고) 아바타 유무</li>
       </ul>
-      <br />
-      <div class="token-group">
-        <test-tile>
-          <b>--layout-width-wide: 1200px</b>
-        </test-tile>
-        <test-tile>
-          <b>--layout-width-small??: 640px</b>
-          <div>
-            <p>post, password, setting</p>
-          </div>
-        </test-tile>
-        <test-tile>
-          <b>--layout-width-narrow: 480px</b>
-          <div>
-            <p>signup, login</p>
-          </div>
-        </test-tile>
-      </div>
 
-      <test-text variant="subhead">Columns</test-text>
-      <div class="token-group">
-        <test-tile>
-          <b>2 / 3 / 4</b>
-          <div></div>
-        </test-tile>
-      </div>
+      <section class="component-example">
+        <test-text variant="subhead">Media queries</test-text>
+        <div class="token-group">
+          <div class="token-item">
+            <test-avatar></test-avatar>
+            <b>@custom-media --large (max-width: 1560px)</b>
+            <div>
+              <p>@media (--large)</p>
+            </div>
+          </div>
+          <div class="token-item">
+            <test-avatar></test-avatar>
+            <b>@custom-media --small (max-width: 1080px)</b>
+            <div>
+              <p>@media (--small)</p>
+            </div>
+          </div>
+          <div class="token-item">
+            <test-avatar></test-avatar>
+            <del><b>--media-query-tiny: only screen and (max-width: 760px)</b></del>
+          </div>
+        </div>
 
-      <test-text variant="subhead">Groups</test-text>
-      <div class="token-group">
-        <test-tile>
-          <b>@mixin group-avatar</b>
-        </test-tile>
-        <test-tile>
-          <b>@mixin group-tag</b>
-          <div>
-            <p>최대 ?개의 태그. 가로스크롤 제한.</p>
+        <test-text variant="subhead">Width</test-text>
+        <div class="token-group">
+          <div class="token-item">
+            <test-avatar></test-avatar>
+            <b>--layout-width-narrow: 480px</b>
+            <div>
+              <p>signup, login</p>
+            </div>
           </div>
-        </test-tile>
-        <test-tile>
-          <b>@mixin group-chip</b>
-          <div>
-            <p>툴바</p>
+          <div class="token-item">
+            <test-avatar></test-avatar>
+            <b>--layout-width-medium: 640px</b>
+            <div>
+              <p>post, password, setting</p>
+            </div>
           </div>
-        </test-tile>
-        <test-tile>
-          <b>@mixin group-button</b>
-          <div>
-            <p>최대 2개의 버튼. 아니오/예, 이전/다음</p>
+          <div class="token-item">
+            <test-avatar></test-avatar>
+            <b>--layout-width-wide: 1200px</b>
           </div>
-        </test-tile>
-        <test-tile>
-          <b>@mixin group-textfield</b>
-          <div>
-            <p>시작일/종료일, 해외주소(3개), 이름/성별</p>
+        </div>
+
+        <!-- <test-text variant="subhead">Columns</test-text>
+        <div class="token-group">
+          <div class="token-item">
+            <b>2 / 3 / 4</b>
           </div>
-        </test-tile>
-        <test-tile>
+        </div> -->
+
+        <!-- <test-text variant="subhead">Groups(containers)<br />child의 최대 수량과 가로스크롤 여부를 정의.</test-text>
+        <div class="token-item">
+          <b>@mixin textfield-group</b>
+          <p>시작일/종료일, 해외주소(3개), 이름/성별</p>
+        </div>
+        <div class="token-item" style="background-color: var(--color-background-weak)">
+          <test-avatar></test-avatar>
           <b>@mixin group-bleeding</b>
-          <div>
-            <p>vertical scrolling. 다른 것과 이름으로 구별되게.</p>
-          </div>
-        </test-tile>
-      </div>
-
-      <test-text variant="subhead">Width</test-text>
-      <p>layout과 통합?</p>
-      <div class="token-group">
-        <test-tile>
-          <b>--width-tiny: null</b>
-          <div>
-            <p>dropdown menu</p>
-          </div>
-        </test-tile>
-      </div>
+          <p>vertical scrolling. 다른 것과 이름으로 구별되게.</p>
+        </div> -->
+      </section>
     </article>
 
-    <!-- <article class="article js-scrollspy-section">
-      <test-text variant="title">Positioning</test-text>
+    <article class="article js-scrollspy-section">
+      <h1 class="article-title">Positioning</h1>
       <p class="article-description">
-        같은 역할을 하는 친구들은 같은 위치에 있어야 한다. 그래서 right top 같은 이름보다 역할 기반 이름을 달아 줄 필요. reset은 작은 화면에 대응하기
-        위해사용합니다. z-index 보전을 위해 static이 아닌 relative로 초기화하세요.
+        동일 역할을 동일 위치 원칙이 있다. 도메인이나 서비스 특수성이 있을 수 있지만 상당 보편적인 경험에 기반한다. 그래서 right top 같은 이름보다
+        역할 기반 이름을 달아 줄 필요. 아니면 그냥 컴포넌트 토큰?
       </p>
+      <ul>
+        <li>reset은 작은 화면으로 전환될 때 유틸리티. z-index 보전을 위해 static이 아닌 relative로 초기화하세요.</li>
+      </ul>
 
       <div class="token-group">
-        <test-tile>
+        <div class="token-item">
+          <test-avatar></test-avatar>
           <b>@mixin position-reset</b>
-        </test-tile>
-        <test-tile>
+        </div>
+        <div class="token-item">
+          <test-avatar></test-avatar>
           <b>@mixin position-outside/inside-right-top/</b>
           <div>
             <p>tag in tile</p>
             <p>close button in dialog</p>
           </div>
-        </test-tile>
-        <test-tile>
+        </div>
+        <div class="token-item">
+          <test-avatar></test-avatar>
           <b>@mixin position-root-bottom</b>
-        </test-tile>
+        </div>
+      </div>
+    </article>
+
+    <article class="article js-scrollspy-section">
+      <h1 class="article-title">Z-index</h1>
+      <p class="article-description">엘리먼트는 어떻게 쌓이는가.</p>
+      // ! z-index :: padding 중첩되면 같은 역할이라도. 마이너스 마진.
+      <p>--zindex-dropdown: 6</p>
+      <p>--zindex-tooltip: 6</p>
+      <p>팝오버는 메뉴에서 열릴 수 있다. pop오버는 부모보다 높은 맥락</p>
+      <section class="component-example">
+        <div class="token-group">
+          <div class="token-item">
+            <test-avatar></test-avatar>
+            <b style="margin: 0">--zindex-deepdive: -1</b>
+          </div>
+          <div class="token-item">
+            <test-avatar></test-avatar>
+            <b style="margin: 0">--zindex-default: 1</b>
+          </div>
+          <div class="token-item">
+            <test-avatar></test-avatar>
+            <b style="margin: 0">--z-index-popover: 6</b>
+          </div>
+          <div class="token-item">
+            <test-avatar></test-avatar>
+            <b style="margin: 0">--zindex-sticky: 7</b>
+          </div>
+          <div class="token-item">
+            <test-avatar></test-avatar>
+            <b style="margin: 0">--zindex-navigation: 7</b>
+          </div>
+          <div class="token-item">
+            <test-avatar></test-avatar>
+            <b>--zindex-modal: 8</b>
+            <div>
+              <p>--zindex-modal-backdrop: 7</p>
+            </div>
+          </div>
+          <div class="token-item">
+            <test-avatar></test-avatar>
+            <b style="margin: 0" b>--zindex-toast: 9</b>
+          </div>
+          <div class="token-item">
+            <test-avatar></test-avatar>
+            <b style="margin: 0">--zindex-skipmenu: 10</b>
+            <small>최고 존엄</small>
+          </div>
+        </div>
+      </section>
+    </article>
+
+    <!-- <article class="article js-scrollspy-section">
+      <h1 class="article-title">Opacity</h1>
+      <p class="article-description">요소의 투명도.</p>
+      <div class="token-group">
+        <div class="token-item"><test-avatar></test-avatar><b>disabled state</b></div>
+        <div class="token-item"><test-avatar></test-avatar><b>overay / underlay</b></div>
       </div>
     </article> -->
 
-    <!-- <div>
-  // ! z-index :: padding 중첩되면 같은 역할이라도. 마이너스 마진.
-            <p>--zindex-dropdown: 6</p>
-            <p>--zindex-tooltip: 6</p>
-            <p>팝오버는 메뉴에서 열릴 수 있다.</p>
-            <p>툴팁은 햄버거 메뉴에서 열릴 수 있다.</p>
-            // pop오버는 부모보다 높은 맥락
-          </div> -->
+    <article class="article js-scrollspy-section">
+      <h1 class="article-title">Animation</h1>
+      <p class="article-description">작성 중. 유틸리티 성격.</p>
 
-    <!-- <figure class="item-avatar animation-fadeup" style="float: none"></figure>
-          <figure class="item-avatar animation-fadeup delay-second" style="float: none; margin: 0 0.5rem"></figure>
-          <figure class="item-avatar animation-fadeup delay-third" style="float: none"></figure> -->
-    <!-- 
-    <div class="token-group">
-      <test-tile>
-        <figure class="item-avatar animation-fadeup" style="float: none"></figure>
-        <p>@keyframes fadeup</p>
-      </test-tile>
-      <test-tile>
-        <figure class="item-avatar animation-rotation" style="float: none"></figure>
-        <p>@keyframes rotation</p>
-      </test-tile>
-      <test-tile>
-        <figure class="item-avatar animation-marquee" style="float: none"></figure>
-        <p>@keyframes marquee</p>
-      </test-tile>
-      <test-tile>
-        <p>@keyframes modal</p>
-      </test-tile>
-    </div> -->
+      <p>콘텐츠보다 액션이 강조되지 않도록 뷰포트 내에서 delay를 최대 3개로 제한합니다. inactive로 변경될 때(닫기 등) 즉시(instantly) 실행 합니다.</p>
+
+      <section class="component-example">
+        <test-text variant="subhead">Style / Delay ??</test-text>
+        <div class="token-group">
+          <div class="token-item">
+            <b>--bazier: cubic-bezier(0.455, 0.03, 0.515, 0.955)</b>
+          </div>
+          <div class="token-item">
+            <test-row>
+              <test-avatar class="animation-fadeup"></test-avatar>
+              <test-avatar class="animation-fadeup delay-second"></test-avatar>
+              <test-avatar class="animation-fadeup delay-third"></test-avatar>
+            </test-row>
+            <p>--animation-delay-first: 0s</p>
+            <p>--animation-delay-second: .2s</p>
+            <p>--animation-delay-third: .4s</p>
+          </div>
+        </div>
+
+        <test-text variant="subhead">Durations</test-text>
+        <div class="token-group">
+          <div class="token-item" style="overflow: auto">
+            <p>--duration: .4s</p>
+          </div>
+          <div class="token-item">
+            <p>--duration-quick: .2s. todo quickly</p>
+          </div>
+          <div class="token-item">
+            <p>--duration-slow: .8s</p>
+          </div>
+          <div class="token-item">
+            <p>--duration-instant: 0s</p>
+          </div>
+        </div>
+
+        <test-text variant="subhead">Keyframes</test-text>
+        <div class="token-group">
+          <div class="token-item">
+            <test-avatar class="animation-fadeup"></test-avatar>
+            <p>@keyframes fadeup</p>
+          </div>
+          <div class="token-item">
+            <test-avatar class="animation-rotation" style="float: none"></test-avatar>
+            <p>@keyframes rotation</p>
+          </div>
+          <div class="token-item">
+            <test-avatar class="animation-marquee" style="float: none"></test-avatar>
+            <p>@keyframes marquee</p>
+          </div>
+          <div class="token-item">
+            <p>@keyframes modal</p>
+          </div>
+        </div>
+      </section>
+    </article>
 
     <article class="article js-scroll-section">
-      <test-text variant="title">Optical Adjustment</test-text>
+      <h2 class="article-title">Optical Adjustment</h2>
 
-      <test-text variant="subhead">Memo</test-text>
+      <h3 class="article-subhead">Memo</h3>
       <ul>
-        <li>subehad + radio/checkbox group에서 1번째 radio/check 상단 간격. size-medium의 min-height로 야기.</li>
         <li>tile(또는 배경색을 박스) 안에서의 상하 간격을 위한 보정</li>
-        <li>폰트의 line-height 별 차이를 위한 보정. tile 안에서 발생?</li>
+        <li>폰트의 line-height 별 차이를 위한 보정. tile, button 등에서 text label.</li>
         <li>폰트의 종류 별 기준선의 차이를 위한 보정</li>
-        <li>버튼 등에서 padding-top보다 큰 값의 padding-bottom을 위한 보정. 1, 3과 조금씩 비슷한.</li>
         <li>섹션 사이의 간격을 위한 보정. 상보다 큰 하</li>
         <li>페이지의 최상단 섹션과 최하단 섹션의 간격 보정. 이것은 시각보정은 아닌 듯.</li>
       </ul>
       <div class="token-group"></div>
     </article>
-  </article>
+  </section>
 </main>
-
-<!-- https://www.wedesignx.com/knowledge/design-system -->
-<!-- https://medium.com/eightshapes-llc/size-in-design-systems-64f234aec519 -->
-
-<!-- 
-<section>
-  <p>seleect,  role="listbox" aria-orientation="vertical" ul/li role="option"</p>
-  <p>role="group" 목록 컨텍스트에서는 자식이 role="listitem" / figure role="group"</p>
-</section> -->

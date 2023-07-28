@@ -1,250 +1,380 @@
-<main class="search pattern js-tab" role="" aria-label="site">
+<main class="component">
   <header class="" role="banner" style="padding: 0 var(--grid-margin); margin-left: -40px">
     <div class="chat" style="margin: 2rem 0 var(--space-2)">
       <figure class="chat-avatar"></figure>
-      <!-- <b>Guideline scope.</b> -->
-      <div class="chat-bubble is-primary">
-        <b><b>Searching.</b></b>
-        <p>검색 패턴을 정리하고 있습니다. 서비스 스코프가 아닌 일반적인 검색의 패턴을 정리하고 있습니다.</p>
+      <div class="chat-bubble is-primary" style="border: none; background-color: var(--color-primary)">
+        <b>Presentations</b>
+        <p>프레젠테이션은 유연하고 콘텐츠는 독립적으로. 1. 콘텐츠 소비, 2. 행동</p>
       </div>
       <!-- <div class="chat-bubble">
-          <p>검색의 범위? 규모?를 우선 정의해야 한다.</p>
-        </div>
-        <div class="chat-bubble">
-          <p>검색 인지 (또는 탐색 중 검색) -> 검색어 입력 대기 -> 검색어 입력 중(검색 결과) -> 검색 요청 -> 검색 결과</p>
-        </div> -->
+        <p>루트 엘리먼트가 상태 클래스를 가져야 한다. = 글로벌 상태. (특히 토스트). React Portal</p>
+      </div> -->
       <div class="chat-bubble">
-        <a href="https://material.io/design/navigation/search.html">MD search</a>
-        <i class="icon-bullet"></i>
-        <a href="https://developer.android.com/reference/android/widget/SearchView">android searchview</a>
+        <p>
+          <b>사용자 워크플로 중심으로 용법을 정의.</b> 디자인 시스템에서 어떻게 정의하느냐에 따라 용법이 달라질 수 밖에 없다. 토스트 식빵처럼 튀어
+          나오는 것을 toast로 정의할 것인지, 특정 위치(왼쪽 아래)에 위치하는 맥락으로 toast를 정의할 것인지. 너무 많은 콘텐츠를 모달에 표시하지 않도록
+          제한할 것인지, dribble, pinterest와 같이 모달 뷰를 일종의 상세페이지로도 허용할 것인지.
+        </p>
+      </div>
+      <div class="chat-bubble">
+        <p>한 번에 하나의 presentation만 열 수 있다면? 모달 안의 드롭다운 패턴은 허용할 것인가? 분명한 사실은 시트는 항상 모달보다 위에 있다.</p>
+      </div>
+      <div class="chat-bubble">
+        <p>모달, 토스트는 컴포넌트가 아님. 기능에 가까움. alert toast, dialog modal</p>
+      </div>
+      <div class="chat-bubble">
+        <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/presentation_role" target="_blank">ARIA: presentation role </a>
+        <span class="icon-bullet"></span>
+        <a href="https://developer.apple.com/design/human-interface-guidelines/components/presentation/action-sheets" target="_blank"
+          >HIG action-sheets</a
+        >
       </div>
     </div>
   </header>
 
-  <article class="article">
-    <section class="component-example">
-      <test-tile variant="elevated">
-        <header class="titlebar" style="padding: 0 0 var(--space-3) 0">
-          <h1 class="titlebar-title" hidden>?????</h1>
-          <test-chip class="titlebar-back" aria-label="이전 페이지로">
-            <span class="material-symbols-outlined">arrow_back</span>
-          </test-chip>
-        </header>
-        <div class="textfield searchfield">
-          <!-- <label class="textfield-label" for="search">검색(시각적으로숨겨야함)</label> -->
-          <button class="textfield-prefix searchfield-prefix" style="background: none">
-            <span class="material-symbols-outlined">search</span>
-          </button>
-          <input
-            class="textfield-input searchfield-input"
-            type="search"
-            id="search"
-            placeholder="수줍이 패턴 (with titlebar)"
-            style="width: 100%; background: var(--color-background); box-shadow: var(--shadow)"
-          />
-          <button class="searchfield-clear" hidden style="right: 0.75rem">
-            <span class="material-symbols-outlined">close</span>
-          </button>
-        </div>
-        <test-row>
-          <test-chip>로얄테넌바움</test-chip>
-          <test-chip>소매치기</test-chip>
-          <test-chip>이탈리아여행</test-chip>
-          <test-chip>아파트열쇠를빌려드립니다</test-chip>
-        </test-row>
+  <nav class="component-navigation stack" role="group" data-scroll="vertical" role="menubar">
+    <div class="component-navigation-background"></div>
+    <a class="chip is-active js-scrollspy-trigger" href="#"><span class="chip-label">Dim</span></a>
+    <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Page</span></a>
+    <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Modal</span></a>
+    <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Toast</span></a>
+    <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Sheet</span></a>
+    <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Popover</span></a>
+    <a class="chip js-scrollspy-trigger" href="#"><span class="chip-label">Drawer(todo)</span></a>
+  </nav>
 
-        <div>
-          <test-text variant="label">People</test-text>
-          <test-menu-item label="수줍이" time="Yesterday">
-            <test-avatar slot="avatar"></test-avatar>
-          </test-menu-item>
-          <test-menu-item label="W. G. 제발트" time="April 4, 2022">
-            <test-avatar slot="avatar"></test-avatar>
-          </test-menu-item>
-        </div>
+  <section class="hero" role="banner">
+    <!-- const hide = () => drawer.remove()
+    const show = () => layout.appendChild(drawer) -->
+    <!-- <ul>
+      <li>독립적인 컨테이너로서 동작해야 한다.</li>
+      <li>큰 맥락에서 presentation 컴포넌트는 레이아웃(또는 컨테이너)의 역할로 봐도 무방하다.</li>
+      <li>컨테이너가 fixed 되어야 현재 뷰포트에서 노출할 수 있다.</li>
+      <li>overay을 별도의 엘리먼트로 만들면 리액트에서 콘텐츠 외부를 클릭해서 닫는 기능 구현이 쉬움.</li>
+    </ul> -->
+    <!-- <p>layout :: fixed layout / fluid layout</p> -->
 
-        <hr />
-        <div>
-          <test-text variant="label">Channels</test-text>
-          <test-menu-item label="Design Thinking" description="12 Members">
-            <test-avatar slot="avatar" style="background-image: none; background-color: var(--green100); color: var(--green800)">#</test-avatar>
-          </test-menu-item>
-          <test-menu-item  label="Frontend Group" description="24 Members">
-            <test-avatar slot="avatar" style="background-image: none; background-color: var(--green100); color: var(--green800)">#</test-avatar>
-          </test-menu-item>
-        </div>
-      </test-tile>
-    </section>
-  </article>
+    <!-- <p class="hero-description">
+      정리. 크로스 플랫폼을 위한 디자인에서 iOS에만 있거나 android에만 있는 요소를 혼합해서 사용하게 되면 작은 화면에서 sheet가 toast나 floating
+      action button 등과 위치나 용법이 중복되기 때문에 생각할 지점이 많아진다. 사용자들에게 눈에 띄게 큰 효용을 주는 것이 아니라면, 대체 가능한 패턴을
+      활용하면 관리 비용을 줄이는 동시에 일관된 경험을 줄 수 있다. material design이나 human interface guideline은 하나의 거대한 운영체제 하에서
+      다양한 케이스를 망라하는 가이드이다. 이 모든 규칙을 엄격하게 수용하고 반영하려는 시도는 우리 제품의 당면한 문제인가?
+    </p>
 
-  <article class="article">
-    <test-text variant="title">개요</test-text>
-    <test-text variant="subhead">페이지 탐색 중 검색 결과로 이동</test-text>
     <ul>
-      <li>해시태그 또는 카테고리 등 인기/추천 키워드로 결과 페이지로 이동</li>
-      <li>searchfield를 클릭하여 검색 탭(또는 페이지)으로 이동</li>
-    </ul>
-    <test-text variant="subhead">검색 탭에서 검색</test-text>
+      <li>React portal의 개념을 가져와서 모든 Presentations를 루트 엘리먼트(body) 안에 위치시킬 수 있다. root -> page/modal/toast/sheet</li>
+    </ul> -->
+
+    <test-text variant="subhead">Related Components</h4>
     <ul>
-      <li>추천 또는 자동완성 등 키워드로 즉시 실행 또는 키워드 입력</li>
+      <li>Title bar</li>
+      <li>Button group</li>
+      <li>Dim/Overay</li>
+      <li>Elevated tile</li>
+      <li>CloseIcon / BackIcon</li>
     </ul>
-    <test-text variant="subhead">검색 기표</test-text>
-    <div style="display: flex; max-width: 800px; margin-top: -0.75rem; gap: 0.75rem">
-      <test-tile style="flex: auto">
-        <test-chip>
-          <span class="material-symbols-outlined">search</span>
-        </test-chip>
-      </test-tile>
-      <test-tile>
-        <test-chip>키워드</test-chip>
-      </test-tile>
-      <test-tile style="display: flex; flex: auto; align-items: center">
-        <span class="hashtag">해시태그</span>
-      </test-tile>
-    </div>
-    <test-text variant="subhead">iOS / Android 패턴</test-text>
-      <!-- <label class="textfield-label" for="search">검색(시각적으로숨겨야함)</label> -->
-    <test-tile style="max-width: 800px">
-      <div class="textfield searchfield is-focused">
-        <button class="textfield-prefix searchfield-prefix"><span class="material-symbols-outlined">search</span></button>
-        <input class="textfield-input searchfield-input" type="search" id="search" placeholder="iOS pattern : focus에서 취소 노출. 취소로 blur" />
-        <test-chip class="searchfield-clear"><span class="material-symbols-outlined">close</span></test-chip>
-        <test-button variant="text" class="searchfield-cancel">취소</test-button>
-      </div>
-    </test-tile>
-    <test-tile style="max-width: 800px">
-      <div class="textfield searchfield">
-        <test-chip class="textfield-prefix searchfield-prefix" style="left: 0; top: 0; width: 48px; height: 48px">
-          <span class="titlebar-back-icon material-symbols-outlined">arrow_back</span>
-        </test-chip>
-        <input
-          class="textfield-input searchfield-input"
-          type="search"
-          id="search"
-          placeholder="android pattern"
-          style="width: calc(100% - var(--size-large) - 0.5rem); margin-left: auto; padding-left: 0.75rem"
-        />
-        <test-chip class="searchfield-clear" style="right: 0.75rem">
+    <test-text variant="subhead">Triggers</h4>
+    <ul>
+      <li>window.load</li>
+      <li>action button</li>
+      <li>window.resize</li>
+    </ul>
+
+    <!-- <test-text variant="subhead">인터렉션</h4>
+    <ul>
+      <li>Sheet (mobile)</li>
+      <li>Modal (desktop)</li>
+    </ul>
+    <p style="margin:.5rem 0 1.5rem;">
+      사용자 인터렉션을 요구할 때 overay으로 주의를 집중 시킵니다. toast는 단순 피드백으로, 뷰를 변경하지 않습니다.
+    </p>
+    <p>overay을 열고 body 엘리먼트의 스크롤을 막을 것인가. 스크롤의 크기만큼 좌우의 위치를 보정할 것인가. 비효율적인 작업량.</p> -->
+
+    <!-- <test-tile>
+      <b>memo</b>
+      <p>md. When adapting for larger screens, a bottom sheet can become a context menu.</p>
+      <p>md. Swap the bottom sheet for a side sheet in landscape layouts.</p>
+      <p>md. sheet. modal bottom sheet. expanding bottom sheet.</p>
+    </test-tile> -->
+  </section>
+
+  <section>
+    <article class="article js-observer js-scrollspy-section">
+      <test-text variant="title">Dim</test-text>
+      <p class="article-description">useOutsideClick의 ref 의존성을 presentation 컴포넌트에서 분리하기 위해 닫기 역할.</p>
+    </article>
+
+    <article class="article js-observer js-scrollspy-section">
+      <test-text variant="title">Page</test-text>
+      <p class="article-description">기본적인 콘텐츠 뷰</p>
+      <ul>
+        <li>검색 : 글로벌 / 로컬 패턴 정리 , Progressing. Loader의 레벨</li>
+      </ul>
+    </article>
+
+    <article class="article js-observer js-scrollspy-section">
+      <test-text variant="title">Modal</test-text>
+      <p class="article-description">something that requires the user’s attention.</p>
+      <footer>
+        <button class="button js-modal" data-variant="secondary" data-modal="woolf">모달 열기</button>
+      </footer>
+      <test-separator></test-separator>
+      <ul>
+        <li>
+          <b>사용자의 인터렉션.</b> 사용자가 모달을 해제할 때까지 이전 워크플로로 돌아갈 수 없습니다. 사용자의 워크플로를 완료하는 데 필요한 입력을
+          요청. 편집 또는 관리와 같은 짧고 낮은 빈도.
+        </li>
+        <li>사용자가 모달을 직접 열 수 있는 트리거를 제공하세요. 현재 모달을 암시하는 기표는 없음. 사용자의 학습이 필요.</li>
+        <li>이전 페이지와 맥락을 유지하는 콘텐츠 정보를 표시</li>
+        <li>x button / arrow button, left / right</li>
+        <!-- <li>All Modals have a max-width of 100%.</li> -->
+        <li>중요도 정의하기. 정말로 중요한 입력이 요구되는 경우, 모달의 바깥을 클릭해서 닫을 수 없는 게 맞는 맥락. 또한 반드시 모달이어야 하는가.</li>
+        <li>todo dialogs = diakog-layer.</li>
+
+        <!-- <li>
+          팝업을 띄우면서 스크롤을 막으려면 스크롤바를 없애줘야 하는데, 이게 생각보다 복잡하다. 크롬에서는 html에 overflow:hidden를 잘 주면 끝인데,
+          익스플로러에선 스크롤 제어하려면 body에 먹여야 한다. html에 overflow:hidden;을주고 모달에 overflow-y를 주면(조건:모달이 윈도우창보다
+          작아질때)
+        </li> -->
+      </ul>
+      <table>
+        <thead>
+          <tr>
+            <td style="padding: var(--space-2) 0">
+              <span class="icon-indicator is-positive" data-size="small">
+                <span class="material-symbols-outlined">check</span>
+              </span>
+            </td>
+            <td style="padding: var(--space-2) 0">
+              <span class="icon-indicator is-negative" data-size="small"><span class="material-symbols-outlined">close</span></span>
+            </td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <b>Close on outside click</b>
+              <br />
+              내용 없음
+            </td>
+            <td>
+              <b>Non-modal dialog</b>
+              <br />
+              다이얼로그는 항상 모달로 사용합니다.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <test-text variant="subhead">모달이 될 수 있는 컴포넌트</h4>
+      <ul>
+        <li>Page - portfolio work</li>
+        <li>Dialog</li>
+        <li>Multiple filters</li>
+        <li>Dropdown menu</li>
+      </ul>
+
+      <test-text variant="subhead">with Page <sup>800px</sup></h4>
+      <aside
+        class="modal tile-elevated"
+        role="dialog"
+        style="margin-left: -5vw; margin-right: -5vw; border-radius: 0; position: relative; z-index: 1"
+      >
+        <article class="modal-dialog" style="margin: 0">
+          <!-- <header class="dialog-head"></header>
+          <div class="dialog-body"></div> -->
+          <header class="titlebar" style="padding: 0">
+            <h1 class="titlebar-title">모달 제목</h1>
+            <button class="titlebar-back" aria-label="이전 페이지로">
+              <span class="material-symbols-outlined">arrow_back</span>
+            </button>
+          </header>
+          <section style="padding: 2rem 0 0">
+            <ul>
+              <li><b>with title bar. (sticky)</b> 사용자에게 위치를 알려줄 수 있다.</li>
+              <li>모바일에서 페이지처럼 보인다.</li>
+              <li>use case. user profile의 portfolio에서 사용.</li>
+              <li>with button group.</li>
+            </ul>
+          </section>
+        </article>
+      </aside>
+
+      <test-text variant="subhead">with Dialog <sup>400px</sup></test-text>
+      <aside class="dialog" role="alertdialog" aria-modal="true" aria-labelledby="dialog-title" aria-describedby="dialog-description">
+        <h1 class="dialog-title" id="dialog-title">페이지를 나가시겠어요?</h1>
+        <p class="dialog-description" id="dialog-description">아직 게시물을 공유하지 않았습니다. 게시하지 않고 나가시겠어요?</p>
+        <footer class="dialog-footer">
+          <button>나가기</button>
+          <button>계속 작성</button>
+        </footer>
+        <button class="dialog-close js-close" aria-label="닫기"><span class="material-symbols-outlined">close</span></button>
+      </aside>
+
+      <test-text variant="subhead">모달의 종료</test-text>
+      <ul>
+        <li>click. Dim / CloseButton / ConfirmButton / CancelButton</li>
+        <li>keydown. escKey. enterKey. spaceBar</li>
+      </ul>
+
+      <test-text variant="subhead">확장 기능</test-text>
+      <ul>
+        <li>모달에 브라우저 히스토리를 저장.</li>
+        <li>url을 통한 접근 허용.</li>
+        <li>body element의 스크롤 여부.</li>
+      </ul>
+
+      <test-text variant="subhead">Other cases</test-text>
+      <ul>
+        <li>
+          <b>ibm.</b> Don’t use to display complex or large amounts of data. Don’t recreate a full app or page in a dialog. 이 디자인 시스템에서는
+          모달은 페이지가 될 수 있는 맥락이어야.
+        </li>
+        <li><b>ibm.</b> non-modal.</li>
+        <li><b>airbnb.</b> 큰 화면에서 x 버튼. 모바일에서 페이지처럼 변하면서 arrow 버튼으로 변경됨</li>
+        <li><b>pinterest.</b> onDismiss / Preventing close on outside click / layer component</li>
+      </ul>
+
+      <test-text variant="subhead">References</test-text>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alertdialog_role">alertdialog role</a>
+    </article>
+
+    <article class="article js-observer js-scrollspy-section">
+      <test-text variant="title">Toast</test-text>
+      <p class="article-description" title="temporary feedback on an interaction">일시적인 피드백. 현재 사용하지 않음.</p>
+
+      <button class="button js-toggle" data-variant="secondary">토스트 열기</button>
+      <aside class="toast" role="alert">toast test. 사라지는 시간을 정의.</aside>
+
+      <test-text variant="subhead">Best practices</test-text>
+      <ul>
+        <li>
+          포지셔닝에 left bottom 좌표보다 margin을 쓰는 게 좋다. 포지셔닝을 위한 믹스인을 보존할 수 있고, 컴포넌트의 가로 사이즈도 보존할 수 있기
+          때문? left:1rem/right:1rem 이면 항상 block width를 가짐.
+        </li>
+      </ul>
+
+      <test-text variant="subhead">토스트가 될 수 있는 컴포넌트</test-text>
+      <ul>
+        <li>callout</li>
+        <li>dialog</li>
+      </ul>
+
+      <test-text variant="subhead">toast VS snackbar</test-text>
+      <ul>
+        <li>action 유/무. MD 버전업과 함께 재정의 됨.</li>
+      </ul>
+
+      <test-text variant="subhead">Cases</test-text>
+      <ul>
+        <li>삭제 후 되돌리기. 휴지통이 있다면 대체할 수 있는 기능.</li>
+        <li>HIG에 정의되지 않음. iOS spotify 앱에서 '라이브러리에 추가되었습니다'.</li>
+      </ul>
+    </article>
+
+    <article class="article js-observer js-scrollspy-section">
+      <test-text variant="title">Sheet</test-text>
+      <p class="article-description">사용하지 않음. 모바일용. 참고용.</p>
+      <!-- <p>To allow users to view optional information or complete sub-tasks in a workflow while keeping the context of the current page, use Sheet.</p> -->
+      <button class="button js-toggle" data-variant="secondary">시트 열기</button>
+
+      <article class="sheet js-sheet" role="presentation">
+        <button class="sheet-toggle"></button>
+        <h2 class="sheet-title">Presentation - sheet</h2>
+        <button class="sheet-close js-sheet-close" aria-label="close sheet">
           <span class="material-symbols-outlined">close</span>
-        </test-chip>
-      </div>
-    </test-tile>
-    <test-text variant="subhead">onBlur</test-text>
-    <p>준비중</p>
-  </article>
+        </button>
+        <button class="item" data-size="medium" role="menuitem">
+          <figure class="item-avatar"></figure>
+          <span class="item-label">iOS 액션 시트 참고</span>
+        </button>
+        <button class="item" data-size="medium" role="menuitem">
+          <figure class="item-avatar"></figure>
+          <span class="item-label">바텀 시트 옵션</span>
+        </button>
+      </article>
+      <!-- <aside class="sheet-overay"></aside> -->
 
-  <article class="article">
-    <test-text variant="title">검색 대기</test-text>
-
-    <test-text variant="subhead">대기 트리거</test-text>
-    <!-- <li>tabIndex: back -> input</li> -->
-    <p>onFocus - keyword.length === 0 .</p>
-
-    <test-text variant="subhead">최근 검색 내역</test-text>
-    <ul>
-      <li>개별 내역의 삭제. 휘발성이 높은 정보라 편집 모듈 없이 삭제 버튼으로 제공한다.</li>
-      <li>
-        전체 내역의 삭제. 사용자 편의와 리스크가 공존한다. 서비스의 특성에 맞게(? 모호한 표현쓰지 않기). 검색 내역의 삭제가 개인화 콘텐츠에 영향을
-        주는가?
-      </li>
-      <li>최근 검색 내역이 없으면 아무 것도 보여주지 않는다. 내역이 없다는 상태 컴포넌트도 필요 없다.</li>
-    </ul>
-    <test-tile>
-      <section class="search-recent">
-        <test-text variant="subhead">최근 검색</test-text>
-        <!-- <button class="search-recommend-modify">수정</button> -->
-        <test-menu-item label="개구리">
-          <test-avatar slot="avatar"></test-avatar>
-          <test-chip slot="action" class="material-symbols-outlined">
-            close
-          </test-chip>
-        </test-menu-item>
+      <section class="component-example">
+        <h2>iOS action sheet sample (modal view)</h2>
+        <div class="tile-flat actionsheet">
+          <button>action 1</button>
+          <button style="margin: var(--space-05) 0">action 2</button>
+          <button style="margin: var(--space-2) 0 0 0; font-weight: var(--font-weight-bold)">닫기</button>
+        </div>
       </section>
-    </test-tile>
-    <test-text variant="subhead">추천, 인기, 개인화 콘텐츠</test-text>
-    <p>준비중</p>
-  </article>
 
-  <article class="article" date-temp="검색 결과">
-    <test-text variant="title">검색 실행 1</test-text>
-    <p class="article-description">키워드를 입력할 때 마다</p>
-    <ul>
-      <li>
-        결과 없음 상태를 사용하지 않는다. 일치하는 결과가 없더라도 유사 콘텐츠 또는 추천 콘텐츠로 대체하여 하나 이상의 결과를 항상 보여주어야 합니다.
-        큐레이션이 강화된 콘텐츠 플랫폼에서 이탈 방지를 위해 활용할 수 있지만 사용자는 명확한 결과를 기대하기 어렵습니다.
-      </li>
-    </ul>
-    <test-text variant="subhead">검색 트리거</test-text>
-    <p>onChange event (with debouncing)</p>
-    <test-text variant="subhead">검색어 자동완성</test-text>
-    <test-tile style="max-width: 800px; z-index: 1">
-      <section class="search-suggestion">
-        <test-menu-item label="자동완성" class="search-suggestion-item">
-          <test-avatar slot="avatar"></figure>
-          <p class="item-name"></p>
-        </test-menu-item>
-        <test-menu-item label="자동완성유아이" class="search-suggestion-item">
-          <test-avatar slot="avatar"></test-avatar>
-        </test-menu-item>
-        <test-tile variant="elevated">
-          <test-menu-item label="자동완(으)로 검색">
-            <test-avatar slot="avatar"><span class="material-symbols-outlined">search</span></test-avatar>
-          </test-menu-item>
-        </test-tile>
-      </section>
-    </test-tile>
-  </article>
+      <test-text variant="subhead">시트가 될 수 있는 컴포넌트</h4>
+      <ul>
+        <li>dialog</li>
+        <li>기능(역할) 단위 컴포넌트. 공유하기 등.</li>
+      </ul>
 
-  <article class="article">
-    <test-text variant="title">검색 실행 2</test-text>
-    <p class="article-description">검색 버튼 클릭 또는 enter key</p>
-    <ul>
-      <li>일치하는 결과만 표시하고 새로운 검색을 유도.</li>
-      <li>
-        하나 또는 하나 이상의 명확한 결과를 요구하는 경우 사용한다. 체류시간을 확보해야 하는 콘텐츠 플랫폼에는 적합하지 않다. 상대적으로 개발 리소스가
-        적게 들기 때문에 MVP 단계에서 유용하다.
-      </li>
-    </ul>
+      <ul>
+        <li>데스크탑에서는 시트보다 모달의 사용성이 더 좋다. 모달이 충분히 대체할 수는 있다.</li>
+        <li>토스트. Don't show more than one at a time.</li>
+      </ul>
+      <!-- <test-text variant="subhead">Cases</h4>
+      <ul>
+        <li>액션시트. 네이버쇼핑과 왓챠에서 본 것 같음.</li>
+      </ul> -->
+    </article>
 
-    <test-text variant="subhead">검색 트리거</test-text>
-    <p>onSubmit event</p>
-    <test-text variant="subhead">검색 결과 없음</test-text>
-    <test-tile variant="elevated" style="max-width: 800px">
-      <div class="empty" style="max-width: 100%; margin: 0; padding: 2rem 0" role="status">
-        <!-- <i class="empty-icon">🧟</i> -->
-        <!-- <h1 class="empty-title">주문을 확인해주세요.</h1> -->
-        <p class="empty-description" style="margin-top: 0; max-width: 100%"><em>수줍이</em>와(과)<br />일치하는 내용이 없습니다.</p>
-        <br />
-        <test-row style="justify-content: center" class="search-similars">
-          <test-chip icon="🦔" label="검색어 제공"></test-chip>
-          <test-chip icon="🐈‍⬛" label="야옹이"></test-chip>
-        </test-row>
-      </div>
-    </test-tile>
-  </article>
+    <article class="article js-observer js-scrollspy-section">
+      <test-text variant="title">Popover</h1>
+      <p class="article-description">floating tiles</p>
+      <footer style="position: relative">
+        <button class="button js-toggle" data-variant="secondary">팝오버 열기</button>
+        <div class="popover tile-elevated">
+          <header class="titlebar" style="padding: 0">
+            <h1 class="titlebar-title">프로필</h1>
+            <button class="titlebar-back" aria-label="이전 페이지로">
+              <span class="material-symbols-outlined">close</span>
+            </button>
+          </header>
+          <section></section>
+        </div>
+      </footer>
 
-  <article class="article">
-    <test-text variant="title">기타</test-text>
-    <p class="article-description">-</p>
-    <test-text variant="subhead">placeholder의 작성</test-text>
+      <test-text variant="subhead">trigger</h4>
+      <ul>
+        <li>expandable chip</li>
+        <li>icon button - morevert</li>
+      </ul>
 
-    <test-text variant="subhead">궁금이 & 생각</test-text>
-    <ul>
-      <li>모바일 키보드의 높이를 고려한 쿼리의 적정 갯수는?</li>
-      <li>결과 페이지의 공유를 허용할 것인가?</li>
-      <li>검색 페이지가 탐색을 역할을 겸하는가?</li>
+      <test-text variant="subhead">gg</h4>
+      <ul>
+        <li>overflow menu</li>
+        <li>tooltip</li>
+      </ul>
 
-      <li>검색 데이터는 어떻게 수집하는가.</li>
-      <li>비회원의 검색 내역을 저장할 것인가? (로컬에 저장)</li>
-      <li>검색 내역 삭제와 검색 히스토리 삭제를 구분.</li>
-      <li>전체 검색 내역과 최근 검색 내역. 활동 로그. (facebook. 나만 보기)</li>
-
-      <li>searchfield와 textfield는 validation의 유무. 레이블의 유무. icon indicator의 유무로 구분된다</li>
-      <li>글로벌 검색 패턴과 로컬 검색(검색 필터를 포함) 패턴의 차이. searchfield small. right alignment.</li>
-    </ul>
-  </article>
-  <!-- <div class="">
-      <h1>#ThisIsTagPage</h1>
-      <p>조회수(틱톡)/이카테고리에글쓰기(미디엄)/카테고리팔로우(개인화)</p>
-    </div> -->
+      <ul>
+        <li>큰화면에 어울리는 인터페이스. 작은 화면에서 모달이나 시트가 될 수 있어야 한다.</li>
+        <li>한 번에 하나 이상을 열 수 없다.</li>
+        <li>팝오버 컨테이너의 외부를 클릭했을 때 닫는다.</li>
+        <li>aria-haspopup</li>
+        <li>aka. drawer</li>
+        <li>caret tip / tab t ip - carbon design system</li>
+        <li>alignment, placement - left / right</li>
+      </ul>
+    </article>
+  </section>
 </main>
+
+
+
+
+<article class="article js-scrollspy-section">
+  <test-text variant="title">Vertical Scrolling</test-text>
+  <p class="article-description">작성 중.</p>
+
+  <p>aka. carousel, slider,</p>
+  <p>cases. chip group, item group. item의 갯수가 많지 않을 때는 스크롤을 통한 탐색이 더 유용할 수 있다.</p>
+
+  <blockquote>
+    <p>
+      -webkit-appearance: slider-vertical slider<br />CSS 속성에서 사용하기 때문에 slider보다 carousel로 명명하는 것이 더 좋음. input type="range"
+      형태를 slider 또는 stepper로 명명하는 경우를 고려.
+    </p>
+  </blockquote>
+</article>

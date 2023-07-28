@@ -1,35 +1,51 @@
+import { makeStyleSheet } from './utils'
+
 class Input extends HTMLElement {
   constructor() {
     super()
+    // size = "large";
+
+    // constructor() {
+    //   super();
+    //   this.value = "";
+    // }
+
+    // static get observedAttributes() {
+    //   return ["placeholder"];
+    // }
     // this.innerHTML = `<button class="chip"></button>`
     const shadow = this.attachShadow({ mode: 'open' })
 
     const container = document.createElement('div')
     container.classList.add('textfield')
-    // container.setAttribute('class', 'chip')
+    container.dataset.size = this.size || ''
 
     const label = document.createElement('label')
     label.classList.add('textfield-label')
 
     const input = document.createElement('input')
-
     input.classList.add('reset-input')
     input.classList.add('textfield-input')
     input.setAttribute('type', 'text')
+    input.setAttribute('placeholder', this.placeholder || '')
+
+    if (this.disabled) {
+      input.setAttribute('disabled', String(this.disabled))
+    }
 
     const iconSlot = document.createElement('slot')
     iconSlot.name = 'icon'
 
+    const leadingIconSlot = document.createElement('slot')
+    leadingIconSlot.name = 'leading'
+
     shadow.appendChild(container)
     container.appendChild(label)
     container.appendChild(input)
+    container.appendChild(leadingIconSlot)
     container.appendChild(iconSlot)
 
-    // Apply external styles to the shadow dom
-    const linkElem = document.createElement('link')
-    linkElem.setAttribute('rel', 'stylesheet')
-    linkElem.setAttribute('href', '/public/stylesheets/components/textfield.css')
-    shadow.appendChild(linkElem)
+    shadow.appendChild(makeStyleSheet('textfield'))
 
     label.textContent = this.label
     // input.setAttribute('placeholder', this.placeholder || '')
@@ -42,6 +58,7 @@ class Input extends HTMLElement {
 
     if (this.helper && this.helper.length > 0) {
       const p = document.createElement('p')
+      p.classList.add('textfield-helper')
       p.textContent = this.helper
       container.appendChild(p)
     }
@@ -63,9 +80,6 @@ class Input extends HTMLElement {
 
   get name() {
     return this.getAttribute('name')
-  }
-  set name(value) {
-    if (value) this.setAttribute('name', value)
   }
 
   get placeholder() {
@@ -90,14 +104,15 @@ class Input extends HTMLElement {
     return this.hasAttribute('isOptional')
   }
 
-  connectedCallback() {
-    // this.textContent = this.label
-
-    console.log('helper', this.helper)
-
-    console.log('ihnnerhtml', this.innerHTML)
+  get disabled() {
+    return this.hasAttribute('disabled')
   }
 
+  connectedCallback() {
+    console.log('helper', this.helper)
+
+    console.log('textarea', this)
+  }
   disconnectedCallback() {
     console.log('disconnected', this)
   }

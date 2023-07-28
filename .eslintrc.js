@@ -24,6 +24,9 @@ module.exports = {
     // indent: ['warn', 'tab'],  // tab or 2
     'no-empty': 'warn', // { "allowEmptyCatch": true }
 
+    'block-spacing': ['error', 'never'],
+    'brace-style': ['error', 'stroustrup', { allowSingleLine: true }],
+
     'linebreak-style': ['warn', 'unix'],
     'no-useless-return': 'error',
     'no-unused-vars': ['error', { vars: 'all', args: 'after-used', ignoreRestSiblings: false }],

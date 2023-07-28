@@ -1,12 +1,13 @@
 .callout {
   display:flex;flex-wrap:wrap;align-items:center;
-  margin:var(--space-3) 0;
   padding:var(--space-3) var(--space-3) calc(var(--space-3) + var(--adjust-label-line));
   border: var(--border);
   border-radius:var(--radius);
   position:relative;
 }
-
+.callout-title {
+  width: 100%;
+}
 .callout-icon {}
 .callout-text {}
 .callout[data-variant=success] {border:none;background:var(--green100);}
@@ -42,4 +43,3 @@ h3, p {margin: 0;}
 }
 
 .is-closed-topbanner .header {background:var(--color-background);margin-top:-225px;transition:margin .2s, background-color .4s;}
-.is-closed-topbanner .topbanner {z-index:-1;}

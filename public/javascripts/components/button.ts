@@ -1,8 +1,33 @@
 import { makeStyleSheet } from './utils'
 
 class Button extends HTMLElement {
+  // static observedAttributes = ['disabled']
   constructor() {
     super()
+    // this._internals = this.attachInternals()
+    // this._internals.role = 'button'
+
+    // this.addEventListener('keydown', e => {
+    //   if (e.code === 'Enter' || e.code === 'space') {
+    //     this.dispatchEvent(
+    //       new PointerEvent('click', {
+    //         bubbles: true,
+    //         cancelable: true,
+    //       }),
+    //     )
+    //   }
+    // })
+
+    // this.addEventListener('click', e => {
+    //   if (this.disabled) {
+    //     e.preventDefault()
+    //     e.stopImmediatePropagation()
+    //   }
+    // })
+
+    // this._observer = new MutationObserver(() => {
+    //   this._internals.ariaLabel = this.textContent
+    // })
     const shadow = this.attachShadow({ mode: 'open' })
 
     const container = document.createElement('button')
@@ -10,7 +35,11 @@ class Button extends HTMLElement {
     container.dataset.variant = this.variant || ''
     container.dataset.size = this.size || ''
     container.dataset.status = this.status || ''
+    if (this.isfullwidth) {
+      container.dataset.isfullwidth = 'true'
+    }
 
+    console.log(this.isfullwidth, 'isfullwidth')
     // Button.append(...this.childNodes)
     container.textContent = this.textContent || this.label
 
@@ -40,10 +69,27 @@ class Button extends HTMLElement {
     return this.getAttribute('status')
   }
 
-  connectedCallback() {
-    // this.attachShadow({ mode: 'open' });
-    // this.shadowRoot.append(b);
+  get isfullwidth() {
+    return this.getAttribute('isfullwidth')
   }
+
+  get disabled() {
+    return this.hasAttribute('disabled')
+  }
+  // set disabled(flag) {
+  //   this.toggleAttribute('disabled', Boolean(flag))
+  // }
+
+  // attributeChangedCallback(name, oldValue, newValue) {
+  //   if(this.disabled) {
+  //     this.removeAttribute('tabindex')
+  //     this._internals.ariaDisabled = true
+  //   } else {
+
+  //   }
+  // }
+
+  connectedCallback() {}
   disconnectedCallback() {}
 }
 

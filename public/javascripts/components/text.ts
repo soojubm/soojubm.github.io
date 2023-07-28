@@ -13,6 +13,9 @@ class Text extends HTMLElement {
 
     if (this.variant) container.setAttribute('data-variant', this.variant)
     container.innerHTML = this.content
+
+    // const style = this.getAttribute('style')
+    // container.setAttribute('style', style || '')
   }
 
   get variant() {

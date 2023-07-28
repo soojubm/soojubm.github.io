@@ -1,4 +1,4 @@
-.post {@mixin layout-medium;padding:40px var(--grid-margin);}
+.post {@mixin layout-medium;max-width:640px;margin:0 auto;padding:40px var(--grid-margin);}
 /* // img - margin */
 .post-head {position:relative;}
 .post-head-category {display:flex;align-items:center;@mixin link-outside;position:relative;}

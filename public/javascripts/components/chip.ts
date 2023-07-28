@@ -1,13 +1,13 @@
 import { importScript, makeStyleSheet } from './utils'
 
 class Chip extends HTMLElement {
-  #internals = this.attachInternals() as any
+  // #internals = this.attachInternals() as any
 
   constructor() {
     super()
+    // console.log('#internals', this.#internals)
+    // const sheet = new CSSStyleSheet()
 
-    console.log('#internals', this.#internals)
-    const sheet = new CSSStyleSheet()
     // replace all styles synchronously:
     // sheet.replaceSync('@import url("/public/stylesheets/components/chip.css"); button { color: red; }')
     // document.adoptedStyleSheets = [...document.adoptedStyleSheets, sheet]
@@ -28,30 +28,40 @@ class Chip extends HTMLElement {
     // sheet.replace('@import url("styles.css"); a { color: red; }')
     // Console warning: "@import rules are not allowed here..."
 
-    // link rel=- dom 생성 안 됨
-
     const host = document.createElement('button')
     const label = document.createElement('span')
-    const icon = document.createElement('span')
-    const value = document.createElement('em')
+    const name = document.createElement('b')
 
     const iconSlot = document.createElement('slot')
+    const badgeSlot = document.createElement('slot')
     iconSlot.name = 'icon'
-    iconSlot.classList.add('chip-icon')
+    badgeSlot.name = 'badge'
+
+    // iconSlot.classList.add('chip-icon')
 
     const shadow = this.attachShadow({ mode: 'open' })
-    shadow.appendChild(host)
 
     // shadow.adoptedStyleSheets = [sheet]
-
-    // console.log('!!!!!', document.adoptedStyleSheets)
-
     // host.shadowRoot?.adoptedStyleSheets = [sheet]
+
     host.classList.add('chip')
+    name.classList.add('chip-name')
     label.classList.add('chip-label')
-    icon.classList.add('chip-icon')
     // createElement('em') => reset em
-    value.classList.add('chip-value')
+
+    host.appendChild(iconSlot)
+    if (this.name) {
+      name.innerText = this.name || ''
+      host.appendChild(name)
+    }
+    if (this.label) {
+      label.innerText = this.label || ''
+      host.appendChild(label)
+    }
+
+    shadow.appendChild(host)
+    shadow.appendChild(makeStyleSheet('chip'))
+    host.appendChild(badgeSlot)
 
     // this.addEventListener('click', e => {
     //   // Don't toggle the drawer if it's disabled.
@@ -63,36 +73,24 @@ class Chip extends HTMLElement {
 
     // b.append(...this.childNodes)
 
-    shadow.appendChild(makeStyleSheet('chip'))
-
-    var pretty = document.createElement('link')
-    pretty.href = 'https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css'
-
     // Attach the created elements to the shadow dom
-    if (this.icon) host.appendChild(icon)
-    host.appendChild(label)
-    host.append(iconSlot, pretty)
 
-    label.innerHTML = this.innerHTML || this.label || ''
-
-    if (this.icon) {
-      icon.innerHTML = this.icon
-    }
-    if (this.value) {
-      value.textContent = this.value || ''
-      label.appendChild(value)
-    }
+    // if (this.value) {
+    //   value.textContent = this.value || ''
+    //   label.appendChild(value)
+    // }
     if (this.status === 'active') host.setAttribute('aria-selected', 'true')
     if (this.status === 'disabled') host.setAttribute('disabled', 'true')
+    if (this.status === 'destructive') host.dataset.variant = 'destructive'
   }
 
   // static get observedAttributes() {
   //   return ['size', 'status', 'icon', 'type', 'value', 'label']
   // }
 
-  // get content() {
-  //   return this.innerHTML
-  // }
+  get content() {
+    return this.innerHTML
+  }
 
   get size() {
     return this.getAttribute('size')
@@ -100,40 +98,21 @@ class Chip extends HTMLElement {
   get status() {
     return this.getAttribute('status')
   }
-  get icon() {
-    return this.getAttribute('icon')
-  }
   get type() {
     return this.getAttribute('type')
   }
   get value() {
     return this.getAttribute('value')
   }
+  get name() {
+    return this.getAttribute('name')
+  }
   get label() {
     return this.getAttribute('label')
   }
 
-  set size(value) {
-    if (value) this.setAttribute('size', value)
-  }
-
-  set status(value) {
-    if (value) this.setAttribute('status', value)
-  }
-
-  set type(value) {
-    if (value) this.setAttribute('type', value)
-  }
-
-  set label(value) {
-    if (value) this.setAttribute('label', value)
-  }
-
-  connectedCallback() {
-    console.log('@@@222')
-  }
+  connectedCallback() {}
   disconnectedCallback() {}
-
   // attributeChangedCallback(name, oldValue, newValue) {
   //   // When the drawer is disabled, update keyboard/screen reader behavior.
   //   if (this.disabled) {

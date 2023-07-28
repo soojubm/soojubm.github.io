@@ -1,6 +1,7 @@
 {
   "typescript.tsdk": "node_modules/typescript/lib",
   "liveServer.settings.port": 5501,
+  "eslint.validate": [{ "language": "javascript" }, { "language": "html" }]
   //   // Set the default
   // "editor.formatOnSave": false,
   // // Enable per-language

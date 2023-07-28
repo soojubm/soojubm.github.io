@@ -39,7 +39,7 @@ p {
   font-size:var(--font-size-huge);font-weight:var(--font-weight-bold);line-height:var(--font-line-height);color:var(--color-text);}
 .text-subhead, [data-variant=subhead] {
   /* // 단독으로 쓰이지 않음 */
-  margin: 0 0 var(--space-after-subhead) 0;
+  /* margin: 0 0 var(--space-after-subhead) 0; */
   line-height: var(--line-height);
   font-size:var(--font-size-large);
   font-weight:var(--font-weight-bold);
@@ -60,13 +60,16 @@ p {
 }
 
 [data-variant=label] {
-  text-transform: uppercase;
-  letter-spacing: .5px;
+  /* text-transform: uppercase;
+  letter-spacing: .5px; */
   font-size:var(--font-size-medium);
   font-weight:var(--font-weight-normal)
   s;color:var(--color-text-light);
 }
 
 .text-label {font-size:var(--font-size-medium);font-weight:var(--font-weight-normal);color:var(--color-text-light);}
-
-.util-truncate {@mixin truncate;}
+.util-truncate {
+    height:3rem;
+  white-space:normal;word-wrap:break-word;
+  overflow:hidden;text-overflow:ellipsis;display: -webkit-box;-webkit-line-clamp:2;-webkit-box-orient: vertical;
+}

@@ -19,13 +19,13 @@ class Tile extends HTMLElement {
     shadow.appendChild(container)
 
     // console.log(...this.childNodes, ...this.children, 'this.childNodes')
-    // => #text, #text / #text
 
-    let temp
-    for (const node of this.childNodes) {
-      // temp = [,...rest]
-    }
-    container.append(slotActions, slotTags, ...this.children, makeStyleSheet('tiles'))
+    console.log(...this.childNodes, ...this.children, 'this.childNodes')
+
+    container.innerHTML = this.innerHTML || ''
+    container.appendChild(makeStyleSheet('tiles'))
+    container.appendChild(slotActions)
+    container.appendChild(slotTags)
 
     if (this.variant) container.setAttribute('data-variant', this.variant)
     container.setAttribute('data-size', this.size || '')

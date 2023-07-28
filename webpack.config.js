@@ -26,6 +26,7 @@ const path = require('path')
 const HTML_TEMPLATE = './index.html'
 
 const patterns = [
+  'dialog',
   'result',
   'searching',
   'presentation',
@@ -40,6 +41,7 @@ const patterns = [
   'auth',
 ]
 const components = [
+  'breadcrumb',
   'signifier',
 
   'avatar',
@@ -58,6 +60,7 @@ const components = [
   'tooltip',
   'callout',
   'text',
+  'bar',
 ]
 
 // let t = {}

@@ -1,8 +1,13 @@
 import { makeStyleSheet } from './utils'
 
 class Checkbox extends HTMLElement {
+  static formAssociated = true
+  static observedAttributes = ['checked']
+
   constructor() {
     super()
+
+    // this._internals = this.attachInternals()
     // this.innerHTML = `<button class="chip"></button>`
     const shadow = this.attachShadow({ mode: 'open' })
 
@@ -15,13 +20,10 @@ class Checkbox extends HTMLElement {
     input.addEventListener('change', () => {
       // 타겟이 check all 일 때
       if (this.disabled) return
-      alert('test')
     })
-
     input.setAttribute('type', 'checkbox')
 
     shadow.appendChild(container)
-
     container.appendChild(input)
     container.appendChild(label)
 
@@ -65,8 +67,12 @@ class Checkbox extends HTMLElement {
     return this.getAttribute('label')
   }
 
+  get value() {
+    return this.getAttribute('value')
+  }
+
   get checked() {
-    return this.getAttribute('checked')
+    return this.hasAttribute('checked')
   }
 
   get disabled() {

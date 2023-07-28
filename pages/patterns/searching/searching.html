@@ -1,12 +1,6 @@
 <main class="search pattern js-tab" role="" aria-label="site">
   <header class="" role="banner" style="padding: 0 var(--grid-margin); margin-left: -40px">
-    <div class="chat" style="margin: 2rem 0 var(--space-2)">
-      <figure class="chat-avatar"></figure>
       <!-- <b>Guideline scope.</b> -->
-      <div class="chat-bubble is-primary">
-        <b><b>Searching.</b></b>
-        <p>검색 패턴을 정리하고 있습니다. 서비스 스코프가 아닌 일반적인 검색의 패턴을 정리하고 있습니다.</p>
-      </div>
       <!-- <div class="chat-bubble">
           <p>검색의 범위? 규모?를 우선 정의해야 한다.</p>
         </div>
@@ -22,63 +16,89 @@
   </header>
 
   <article class="article">
+    <test-text variant="title">Searching</test-text>
+    <p class="article-description">서비스 스코프가 아닌 일반적인 검색의 패턴을 정리해보자.</p>
     <section class="component-example">
-      <test-tile variant="elevated">
-        <header class="titlebar" style="padding: 0 0 var(--space-3) 0">
-          <h1 class="titlebar-title" hidden>?????</h1>
-          <test-chip class="titlebar-back" aria-label="이전 페이지로">
-            <span class="material-symbols-outlined">arrow_back</span>
+        <test-titlebar heading="">
+          <test-chip slot="back" aria-label="이전 페이지로">
+            <test-icon slot="icon" name="arrow-left"></test-icon>
           </test-chip>
-        </header>
-        <div class="textfield searchfield">
-          <!-- <label class="textfield-label" for="search">검색(시각적으로숨겨야함)</label> -->
-          <button class="textfield-prefix searchfield-prefix" style="background: none">
-            <span class="material-symbols-outlined">search</span>
-          </button>
-          <input
-            class="textfield-input searchfield-input"
-            type="search"
-            id="search"
-            placeholder="수줍이 패턴 (with titlebar)"
-            style="width: 100%; background: var(--color-background); box-shadow: var(--shadow)"
-          />
-          <button class="searchfield-clear" hidden style="right: 0.75rem">
-            <span class="material-symbols-outlined">close</span>
-          </button>
-        </div>
-        <test-row>
-          <test-chip>로얄테넌바움</test-chip>
-          <test-chip>소매치기</test-chip>
-          <test-chip>이탈리아여행</test-chip>
-          <test-chip>아파트열쇠를빌려드립니다</test-chip>
+        </test-titlebar>
+        <test-textfield placeholder="수줍이 패턴 (with titlebar)"></test-textfield>
+        <test-row style="margin:var(--space-3) 0 1.5rem;">
+          <test-chip label="로얄테넌바움"></test-chip>
+          <test-chip label="소매치기"></test-chip>
+          <test-chip label="이탈리아여행"></test-chip>
+          <test-chip label="아파트열쇠를빌려드립니다"></test-chip>
         </test-row>
 
-        <div>
-          <test-text variant="label">People</test-text>
-          <test-menu-item label="수줍이" time="Yesterday">
+        <test-menu-group>
+          <div style="display:flex;align-items: center;gap:.5rem;">
+            <test-text variant="label">People</test-text>
+            <test-badge>2</test-badge>
+          </div>
+          <test-menuitem label="수줍이" time="Yesterday">
             <test-avatar slot="avatar"></test-avatar>
-          </test-menu-item>
-          <test-menu-item label="W. G. 제발트" time="April 4, 2022">
+          </test-menuitem>
+          <test-menuitem label="W. G. 제발트" time="April 4, 2022">
             <test-avatar slot="avatar"></test-avatar>
-          </test-menu-item>
-        </div>
-
-        <hr />
-        <div>
+          </test-menuitem>
+        </test-menu-group>
+        <test-separator></test-separator>
+        <test-menu-group>
           <test-text variant="label">Channels</test-text>
-          <test-menu-item label="Design Thinking" description="12 Members">
+          <test-menuitem label="Design Thinking" description="12 Members">
             <test-avatar slot="avatar" style="background-image: none; background-color: var(--green100); color: var(--green800)">#</test-avatar>
-          </test-menu-item>
-          <test-menu-item  label="Frontend Group" description="24 Members">
+          </test-menuitem>
+          <test-menuitem label="Frontend Group" description="24 Members">
             <test-avatar slot="avatar" style="background-image: none; background-color: var(--green100); color: var(--green800)">#</test-avatar>
-          </test-menu-item>
-        </div>
-      </test-tile>
+          </test-menuitem>
+        </test-menu-group>
     </section>
   </article>
 
+
+
+  <test-text variant="subhead">검색 기표</test-text>
+  <test-row>
+    <test-chip>
+      <test-icon slot="icon" name="search"></test-icon>
+    </test-chip>
+    <test-chip>키워드</test-chip>
+    <span class="hashtag">해시태그</span>
+  </test-row>
+
+  <test-text variant="subhead">iOS / Android 패턴</test-text>
+  <!-- <label class="textfield-label" for="search">검색(시각적으로숨겨야함)</label> -->
+<test-tile style="max-width: 800px">
+  <div class="textfield searchfield is-focused">
+    <button class="textfield-prefix searchfield-prefix"><span class="material-symbols-outlined">search</span></button>
+    <input class="textfield-input searchfield-input" type="search" id="search" placeholder="iOS pattern : focus에서 취소 노출. 취소로 blur" />
+    <test-chip class="searchfield-clear"><span class="material-symbols-outlined">close</span></test-chip>
+    <test-button variant="text" class="searchfield-cancel">취소</test-button>
+  </div>
+</test-tile>
+<test-tile style="max-width: 800px">
+  <div class="textfield searchfield">
+    <test-chip class="textfield-prefix searchfield-prefix" style="left: 0; top: 0; width: 48px; height: 48px">
+      <span class="titlebar-back-icon material-symbols-outlined">arrow_back</span>
+    </test-chip>
+    <input
+      class="textfield-input searchfield-input"
+      type="search"
+      id="search"
+      placeholder="android pattern"
+      style="width: calc(100% - var(--size-large) - 0.5rem); margin-left: auto; padding-left: 0.75rem"
+    />
+    <test-chip class="searchfield-clear" style="right: 0.75rem">
+      <span class="material-symbols-outlined">close</span>
+    </test-chip>
+  </div>
+</test-tile>
+<test-text variant="subhead">onBlur</test-text>
+<p>준비중</p>
+
   <article class="article">
-    <test-text variant="title">개요</test-text>
     <test-text variant="subhead">페이지 탐색 중 검색 결과로 이동</test-text>
     <ul>
       <li>해시태그 또는 카테고리 등 인기/추천 키워드로 결과 페이지로 이동</li>
@@ -88,54 +108,11 @@
     <ul>
       <li>추천 또는 자동완성 등 키워드로 즉시 실행 또는 키워드 입력</li>
     </ul>
-    <test-text variant="subhead">검색 기표</test-text>
-    <div style="display: flex; max-width: 800px; margin-top: -0.75rem; gap: 0.75rem">
-      <test-tile style="flex: auto">
-        <test-chip>
-          <span class="material-symbols-outlined">search</span>
-        </test-chip>
-      </test-tile>
-      <test-tile>
-        <test-chip>키워드</test-chip>
-      </test-tile>
-      <test-tile style="display: flex; flex: auto; align-items: center">
-        <span class="hashtag">해시태그</span>
-      </test-tile>
-    </div>
-    <test-text variant="subhead">iOS / Android 패턴</test-text>
-      <!-- <label class="textfield-label" for="search">검색(시각적으로숨겨야함)</label> -->
-    <test-tile style="max-width: 800px">
-      <div class="textfield searchfield is-focused">
-        <button class="textfield-prefix searchfield-prefix"><span class="material-symbols-outlined">search</span></button>
-        <input class="textfield-input searchfield-input" type="search" id="search" placeholder="iOS pattern : focus에서 취소 노출. 취소로 blur" />
-        <test-chip class="searchfield-clear"><span class="material-symbols-outlined">close</span></test-chip>
-        <test-button variant="text" class="searchfield-cancel">취소</test-button>
-      </div>
-    </test-tile>
-    <test-tile style="max-width: 800px">
-      <div class="textfield searchfield">
-        <test-chip class="textfield-prefix searchfield-prefix" style="left: 0; top: 0; width: 48px; height: 48px">
-          <span class="titlebar-back-icon material-symbols-outlined">arrow_back</span>
-        </test-chip>
-        <input
-          class="textfield-input searchfield-input"
-          type="search"
-          id="search"
-          placeholder="android pattern"
-          style="width: calc(100% - var(--size-large) - 0.5rem); margin-left: auto; padding-left: 0.75rem"
-        />
-        <test-chip class="searchfield-clear" style="right: 0.75rem">
-          <span class="material-symbols-outlined">close</span>
-        </test-chip>
-      </div>
-    </test-tile>
-    <test-text variant="subhead">onBlur</test-text>
-    <p>준비중</p>
+
   </article>
 
   <article class="article">
     <test-text variant="title">검색 대기</test-text>
-
     <test-text variant="subhead">대기 트리거</test-text>
     <!-- <li>tabIndex: back -> input</li> -->
     <p>onFocus - keyword.length === 0 .</p>
@@ -152,22 +129,20 @@
     <test-tile>
       <section class="search-recent">
         <test-text variant="subhead">최근 검색</test-text>
-        <!-- <button class="search-recommend-modify">수정</button> -->
-        <test-menu-item label="개구리">
+        <button class="search-recommend-modify">수정</button>
+        <test-menuitem label="개구리">
           <test-avatar slot="avatar"></test-avatar>
           <test-chip slot="action" class="material-symbols-outlined">
             close
           </test-chip>
-        </test-menu-item>
+        </test-menuitem>
       </section>
     </test-tile>
     <test-text variant="subhead">추천, 인기, 개인화 콘텐츠</test-text>
     <p>준비중</p>
-  </article>
 
-  <article class="article" date-temp="검색 결과">
-    <test-text variant="title">검색 실행 1</test-text>
-    <p class="article-description">키워드를 입력할 때 마다</p>
+    <test-text variant="subhead">키워드를 입력할 때 마다 검색 실행 1</test-text>
+    <p class="article-description"></p>
     <ul>
       <li>
         결과 없음 상태를 사용하지 않는다. 일치하는 결과가 없더라도 유사 콘텐츠 또는 추천 콘텐츠로 대체하여 하나 이상의 결과를 항상 보여주어야 합니다.
@@ -178,26 +153,24 @@
     <p>onChange event (with debouncing)</p>
     <test-text variant="subhead">검색어 자동완성</test-text>
     <test-tile style="max-width: 800px; z-index: 1">
-      <section class="search-suggestion">
-        <test-menu-item label="자동완성" class="search-suggestion-item">
+      <test-menu-group class="search-suggestion">
+        <test-menuitem label="자동완성" class="search-suggestion-item">
           <test-avatar slot="avatar"></figure>
           <p class="item-name"></p>
-        </test-menu-item>
-        <test-menu-item label="자동완성유아이" class="search-suggestion-item">
+        </test-menuitem>
+        <test-menuitem label="자동완성유아이" class="search-suggestion-item">
           <test-avatar slot="avatar"></test-avatar>
-        </test-menu-item>
-        <test-tile variant="elevated">
-          <test-menu-item label="자동완(으)로 검색">
+        </test-menuitem>
+        <test-tile variant="elevated" size="small">
+          <test-menuitem label="자동완(으)로 검색">
             <test-avatar slot="avatar"><span class="material-symbols-outlined">search</span></test-avatar>
-          </test-menu-item>
+          </test-menuitem>
         </test-tile>
       </section>
     </test-tile>
-  </article>
 
-  <article class="article">
-    <test-text variant="title">검색 실행 2</test-text>
-    <p class="article-description">검색 버튼 클릭 또는 enter key</p>
+    <test-text variant="subhead"> 검색 버튼 클릭 또는 enter key 검색 실행 2</test-text>
+    <p class="article-description"></p>
     <ul>
       <li>일치하는 결과만 표시하고 새로운 검색을 유도.</li>
       <li>

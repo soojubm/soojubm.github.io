@@ -4,37 +4,31 @@
     <p class="article-description">작성 중.</p>
 
     <p>message, text, description,</p>
+    <p>helper의 자식이 p ul 둘 다 될 수 있다.ㄴ</p>
 
     <section class="component-example">
-      <test-tile>
-        <test-text variant="title">heading1, title</test-text>
-        <test-text variant="subhead"><p style="margin-bottom: -0.5rem">heading2, subhead</p></test-text>
-        <test-text variant="label">heading3, label</test-text>
-        <test-text variant="body-large">body1 (large) - post</test-text>
-        <test-text variant="body">body2</test-text>
-        <test-text variant="body-bold">body bold - button & meta</test-text>
-      </test-tile>
+      <test-text variant="title">heading1, title</test-text>
+      <test-text variant="subhead"><p style="margin-bottom: -0.5rem">heading2, subhead</p></test-text>
+      <test-text variant="label">heading3, label</test-text>
+      <test-text variant="body-large">body1 (large) - post</test-text>
+      <test-text variant="body">body2</test-text>
+      <test-text variant="body-bold">body bold - button & meta</test-text>
 
       <footer style="display: flex; flex-direction: column; gap: var(--space-2); margin: 1.5rem 0 0 0">
         <div style="display: flex; align-items: center; gap: var(--space-1)">
           <i class="iconoir-pipe-3d"></i>
           궁금증이 해결되지 않는다면?
-          <a href="#" style="text-decoration: underline">Get in touch with us.</a>
-        </div>
-        <div style="display: flex; align-items: center; gap: var(--space-1)">
-          <i class="iconoir-pipe-3d"></i>
-          궁금증이 해결되지 않는다면?
-          <a href="#" style="text-decoration: underline">지금 문의하기</a>
+          <test-link>지금 문의하기</test-link>
         </div>
         <div style="display: flex; align-items: center; gap: var(--space-1)">
           <i class="iconoir-pipe-3d"></i>
           Something's not right?
-          <a href="#" style="text-decoration: underline">Get in touch with us.</a>
+          <test-link>Get in touch with us.</test-link>
         </div>
       </footer>
 
       <br />
-      <hr />
+      <test-separator></test-separator>
 
       <section class="summary">
         <div class="summary-item">
@@ -51,7 +45,7 @@
         </div>
       </section>
 
-      <hr />
+      <test-separator></test-separator>
       <div class="tile-flat">
         <div class="summary-item">
           <div class="summary-item-label" style="font-weight: var(--font-weight-bold)">서비스 수수료</div>
@@ -108,9 +102,21 @@
           <span class="statistic-value">한글로 시작</span>
         </div>
       </div>
+
+      <br />
+      <p class="util-truncate">
+        이런 생각을 한 건 다들 식탁에 앉은 후였고, 나는 재미있는 고래잡이 이야기를 들을 기대에 부풀었다. 그런데 이거 참 놀랍게도 거의 모두가 깊은
+        침묵에 잠겼다. 그것도 모자라 다들 난감해하는 눈치였다. 아니, 폭풍우가 몰아치는 가운데 엄청나게 큰 고래, 그것도 생전 처음 보는 고래를 수줍은
+        기색 없이 잡아 올리고 눈도 깜빡하지 않은 채 사투를 벌여서 죽이는 용맹한 바닷사람들이 직업도 똑같고 취향까지 비슷한 사람들이 모여 앉은 아침
+        식탁에서는 그린 산맥의 목장을 한 번도 떠나 본 적 없는 양 떼마냥 부끄러워하며 서로를 힐끔거릴 뿐이었다. 이 얼마나 희한한 광경인가! 숫기 없는
+        곰, 소심한 전사 같은 고래잡이들이라니! <button style="font-weight: var(--font-weight-bold)">더 보기</button>
+      </p>
     </section>
 
     <p>sequentially-descending order</p>
+
+    <test-text variant="subhead">Truncated</test-text>
+    <p>2 lines</p>
 
     <test-text variant="subhead">용어 정의 및 분류</test-text>
     <ul>
@@ -133,8 +139,8 @@
       <li>
         태그라인은 작은 화면에서도 임팩트를 줄 있도록 작성 단계에서 행갈이를 고려하세요. 글자의 수와 단어의 수를 제한하고 개행 조건을 정의하세요.
       </li>
-      <li>long-form content에서 truncate-multiple은 항상 2줄로 자릅니다.</li>
-      <li>truncated heading. 제목을 자르는 것을 허용할 것인가? 허용하지 않을 것인가?</li>
+      <li>long-form content. truncate-multiple은 항상 2줄.</li>
+      <li>제목을 자르는 것을 허용할 것인가? 허용하지 않을 것인가?</li>
       <li>섹션은 항상 제목을 가져야 한다. 시각적으로 숨겨지지 않은 명시적인 텍스트 노드를. 제목을 포함하는 섹션 컴포넌트를 활용할 수 있다.</li>
       <!-- <li>프로모션 페이지의 헤드라인으로 제한적으로 사용합니다.</li> -->
     </ul>
@@ -148,7 +154,7 @@
     <p>본문은 왼끝 맞추기(오른끝 흘리기). 가운데 정렬은 상태 또는 결과 맥락에 사용하여 사용자의 주목을 높입니다.</p>
 
     <test-text variant="subhead">들여쓰기</test-text>
-    <p>작은 화면에서 공간의 활용도를 높이기 위해 단락의 왼쪽에서 들여쓰지 않습니다. 단락의 위 아래 간격을 활용합니다.</p>
+    <p>작은 화면에서 공간 활용을 위해 왼쪽에서 들여쓰지 않습니다. 단락의 위 아래 간격을 활용합니다.</p>
 
     <test-text variant="subhead">텍스트의 강조</test-text>
     <ul>
@@ -167,21 +173,19 @@
     <test-text variant="body-large">작성 중.</test-text>
 
     <section class="component-example">
-      <test-tile>
-        <ul style="margin: 0">
-          <li>순서가 없는 리스트</li>
-          <li>순서가 없는 리스트</li>
-        </ul>
-        <ol style="margin: var(--space-3) 0">
-          <li>순서가 있는 리스트</li>
-          <li>순서가 있는 리스트</li>
-        </ol>
-        <!-- <ul data-align="horizontal" style="margin: 0">
+      <ul style="margin: 0">
+        <li>순서가 없는 리스트</li>
+        <li>순서가 없는 리스트</li>
+      </ul>
+      <ol style="margin: var(--space-3) 0">
+        <li>순서가 있는 리스트</li>
+        <li>순서가 있는 리스트</li>
+      </ol>
+      <!-- <ul data-align="horizontal" style="margin: 0">
             <li title="unordered list, level 1">순서가 없는 리스트</li>
             <li style="margin: 0 2rem 0 1rem">가로로 정렬할 수 있어요</li>
             <li>조건이 있어요</li>
           </ul> -->
-      </test-tile>
     </section>
     <ul>
       <li>텍스트 목록만 리스트 태그(ul, ol, dl)로 마크업하세요. role=listbox/listitem</li>

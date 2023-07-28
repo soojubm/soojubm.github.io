@@ -2,6 +2,7 @@ import footer from '/public/components/footer/footer.html'
 import navbar from '/public/components/navbar/navbar.html'
 
 import main from './auth.html'
+import '/public/stylesheets/pages/authentication.css'
 
 // import '/public/stylesheets/shared.css'
 import '/public/stylesheets/shared/webfonts.css'

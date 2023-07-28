@@ -516,3 +516,92 @@ async function renderComponent(componentName) {
     console.log(error)
   }
 }
+
+// data-soojubm-width
+// setDataPrefix
+
+function authMiddleware(req, res, next) {
+  const authToken = req.headers.authorization
+
+  if (!authToken) {
+    return res.status(401).json({ error: 'Unauthorized' })
+  }
+
+  if (authToken !== 'secret-token') {
+    return res.status(401).json({ error: 'Invalid token' })
+  }
+
+  if (req.query.admin === 'true') {
+    req.isAdmin = true
+  }
+
+  next()
+}
+
+// ------
+
+function authMiddleware(req, res, next) {
+  checkAuthValidTokenAdmin(req, res, next)
+}
+
+function checkAuthValidTokenAdmin(req, res, next) {
+  const authToken = req.headers.authorization
+
+  if (!authToken) {
+    return res.status(401).json({ error: 'Unauthorized' })
+  }
+
+  checkValidTokenAdmin(req, res, next)
+}
+
+function checkValidTokenAdmin(req, res, next) {
+  const authToken = req.headers.authorization
+
+  if (authToken !== 'secret-token') {
+    return res.status(401).json({ error: 'Invalid token' })
+  }
+
+  checkAdmin(req, res, next)
+}
+
+function checkAdmin(req, res, next) {
+  if (req.query.admin === 'true') {
+    req.isAdmin = true
+  }
+
+  next()
+}
+
+// mapping
+const removeAllChildren = e => {
+  while (e.firstElementChild) {
+    e.removeChild(e.firstElementChild)
+  }
+}
+
+const renderArticles = (e, articles) => {
+  // Always clean up the element so you can reuse the function
+  removeAllChildren(e)
+  e.append(
+    ...articles.map(({ description, title }) => {
+      const a = document.createElement('article')
+      const t = document.createElement('h2')
+      const p = document.createElement('p')
+      t.textContent = title
+      p.textContent = description
+      a.append(t, p)
+      return a
+    }),
+  )
+}
+
+renderArticles(document.querySelector('#articles'), [
+  {
+    title: 'List of my favorite lemons',
+    description: 'Number 5 will surprise you!',
+  },
+  {
+    title: 'What I think about cantaloupes',
+    description: "That's a very silly name, is it even a real thing?",
+  },
+])

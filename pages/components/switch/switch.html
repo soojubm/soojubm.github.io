@@ -4,59 +4,57 @@
     <p class="article-description">켜거나 끌 수 있는 옵션입니다. 설정. 필터.</p>
     <p hidden>A switch is a visual toggle between two mutually exclusive states — on and off.</p>
 
-    <test-row class="article-aka">
-      <test-tag>a.k.a.</test-tag>
-      <span class="hashtag" title="protocol mozilla">Toggle</span>
-    </test-row>
+    <dl>
+      <dt>a.k.a.</dt>
+      <dd>Toggle</dd>
+    </dl>
 
     <section class="component-example">
-      <test-tile>
+      <test-row direction="column">
+        <!-- Receive weekly newsletter -->
         <test-switch name="newsletter" label="뉴스레터 받아보기"> </test-switch>
         <test-switch name="newsletter" label="뉴스레터 받아보기" disabled> </test-switch>
-
-        <!-- <input type="checkbox" id="switch1" name="" role="switch" value="on" checked />
-        <label for="switch1" title="Receive weekly newsletter"></label> -->
-        <!-- <span class="switch" style="margin-top: var(--space-3)">
-          <input type="checkbox" id="switch2" name="" role="switch" value="off" disabled />
-          <label for="switch2" title="Receive weekly newsletter">뉴스레터 받아보기</label>
-        </span> -->
-      </test-tile>
-      <article class="component-props">
-        <test-text variant="subhead">Props</test-text>
-        <dl>
-          <dt>name</dt>
-          <dd>string</dd>
-          <dd>id={props.name}</dd>
-          <dt>label? - isHiddenLabel</dt>
-          <dd>string</dd>
-          <dd>동사를 포함합니다. choice보다 action에 가깝다.</dd>
-          <dt>value</dt>
-          <dd>string</dd>
-          <dt>isChecked<attr>?</attr></dt>
-          <dd>boolean</dd>
-          <dd>TODO checked?</dd>
-          <dt>isDisabled<attr>?</attr></dt>
-          <dd>boolean</dd>
-          <dd></dd>
-          <dt>onChange</dt>
-          <dd>(event: React.FormEvent[HTMLInputElement]) =] void</dd>
-        </dl>
-      </article>
+      </test-row>
     </section>
 
-    <test-text variant="subhead">anatomy</test-text>
+    <article class="component-props">
+      <!-- <test-text variant="subhead">Props</test-text> -->
+      <dl>
+        <dt>name</dt>
+        <dd>string</dd>
+        <dd>id={props.name}</dd>
+        <dt>label? - isHiddenLabel</dt>
+        <dd>string</dd>
+        <dd>동사를 포함합니다. choice보다 action에 가깝다.</dd>
+        <dt>value</dt>
+        <dd>boolean ? on || off</dd>
+        <dd>TODO</dd>
+        <dt>isChecked<attr>?</attr></dt>
+        <dd>boolean</dd>
+        <dd>TODO checked?</dd>
+        <dt>isDisabled<attr>?</attr></dt>
+        <dd>boolean</dd>
+        <dd></dd>
+        <dt>onChange</dt>
+        <dd>(event: React.FormEvent[HTMLInputElement]) =] void</dd>
+      </dl>
+    </article>
+
+    <!-- <test-text variant="subhead">anatomy</test-text>
     <ul>
       <li>Switch</li>
       <li>SwitchLabel</li>
-    </ul>
+    </ul> -->
 
-    <test-text variant="body-large" class="article-kicker">
-      <b>즉시 실행</b>
-      단일 옵션을 즉시 실행하고 결과를 반영합니다. 다중 옵션 중 하나의 옵션으로 저장 버튼과 함께 사용하지 않습니다.
-    </test-text>
-    <test-text variant="body-large" class="article-kicker">
-      <b>on & off context</b>
-      스위치의 왼쪽과 오른쪽에 각각 레이블을 배치하여 콘텐츠 스위칭으로 사용하지 마세요.
-    </test-text>
+    <section class="component-guide">
+      <test-text variant="subhead">즉시 실행</test-text>
+      <test-text variant="body" class="article-p">
+        단일 옵션을 즉시 실행하고 결과를 반영합니다. 다중 옵션 중 하나의 옵션으로 저장 버튼과 함께 사용하지 않습니다.
+      </test-text>
+      <test-text variant="body" class="article-p">
+        <b>on & off context</b>
+        스위치의 왼쪽과 오른쪽에 각각 레이블을 배치하여 콘텐츠 스위칭으로 사용하지 마세요.
+      </test-text>
+    </section>
   </article>
 </main>

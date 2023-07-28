@@ -1,0 +1,129 @@
+<main class="component">
+  <article class="article js-observer js-scrollspy-section">
+    <test-titlebar class="js-titlebar" heading="Back to Blahblah Page">
+      <test-chip slot="back">
+        <test-icon slot="icon" name="arrow-left"></test-icon>
+      </test-chip>
+    </test-titlebar>
+
+    <test-text variant="title">Title Bar</test-text>
+    <p class="article-description">작성 중. 모바일. TitleBarBackButton :: chip || closeButton ==> TitleBar component의 자식으로 항상 함께 사용되기 때문에 titlebarBackbutton으로 추상화할 필요는 없다.</p>
+
+    <section class="component-example">
+        <div style="max-width:400px;">
+          <test-titlebar heading="쇼핑 탭" class="js-titlebar" role="navigation">
+            <!-- <div class="titlebar-background"></div> -->
+            <test-chip slot="action" label="장바구니"></test-chip>
+          </test-titlebar>
+          <test-separator></test-separator>
+          <test-titlebar heading="페이지 타이틀">
+            <div class="titlebar-background"></div>
+            <test-chip slot="action">
+              <test-icon slot="icon" name="settings"></test-icon>
+            </test-chip>
+          </test-titlebar>
+          
+          <test-separator></test-separator>
+          <test-titlebar class="js-titlebar" heading="Back to Blahblah Page">
+            <test-chip slot="back">
+              <test-icon slot="icon" name="arrow-left"></test-icon>
+            </test-chip>
+          </test-titlebar>
+        
+          <test-tile>
+            <test-titlebar class="titlebar js-titlebar" role="navigation" data-size="large" style="padding: 0">
+              <h1 class="titlebar-title js-page-title" title="page title">Large Case</h1>
+              <test-row slot="action">
+                <test-chip class="titlebar-back" onclick="javascript:window.location.href='/';">
+                  <span class="material-symbols-outlined">close</span>
+                </test-chip>
+                <test-chip style="color: var(--color-primary)">저장</test-chip>
+              </test-row>
+            </test-titlebar>
+          </test-tile>
+        <!-- <div class="titlebar-backdrop js-header"></div> -->
+        </얖>
+
+    </section>
+    <article class="component-props">
+      <test-text variant="subhead">Props</test-text>
+      <dl>
+        <dt>title<attr>?</attr></dt>
+        <dd>string</dd>
+        <dd>
+          최대 8자로 제한합니다. 타이틀이 말줄임표로 표시되지 않아야. 하지만 화면 크기는 점점 작아지니(접힌 상태의 폴더블폰) 대안이 필요하다.
+        </dd>
+        <dt>backType????<attr>?</attr></dt>
+        <dd>'close' | 'back'</dd>
+        <dd>TODO 패턴 정의. 탭 바로 접근하는 경우 등. close에서는 우측 액션을 제한해야 할 지도.</dd>
+        <dt>actions</dt>
+        <dd>React.Node</dd>
+        <dd>todo 우측 actions. 갯수 제한. md에서 최대 3개. hamberger case.</dd>
+        <!-- <dt>hasNext<attr>?</attr></th>
+          <dd>
+            boolean / 함수만 넘겨줘서 next 액션을 랜더링하는 방법이 나을 지도.
+          </dd> -->
+        <dt>onComplete(?) / onCancel<attr>?</attr></dt>
+        <dd>() => void</dd>
+      </dl>
+    </article>
+
+    <div class="component-references">
+      <test-text variant="subhead">References</test-text>
+      <a href="https://m3.material.io/components/top-app-bar/overview" target="_blank">MD3 top app bar</a>
+    </div>
+  </article>
+
+  <article class="article js-observer js-scrollspy-section">
+    <test-text variant="title">Bottom Navigation / Navigation Bar ??</test-text>
+    <p class="article-description">모바일 환경의 글로벌 네비게이션.</p>
+
+    <test-row class="article-aka">
+      <test-tag>a.k.a.</test-tag>
+      <span class="hashtag" title="google">Navigation Bar</span>
+    </test-row>
+
+    <section class="component-example">
+      <nav class="bottombar">
+        <a href="#" class="bottombar-item is-active">
+          <test-avatar fallback=" ">
+            <test-icon slot="icon" name="air-conditioner"></test-icon>
+          </test-avatar>
+          <span class="bottombar-item-label">홈</span>
+          <em></em>
+        </a>
+        <a href="#" class="bottombar-item">
+          <test-avatar fallback=" ">
+            <test-icon slot="icon" name="air-conditioner"></test-icon>
+          </test-avatar>
+          <span class="bottombar-item-label">카테고리</span>
+        </a>
+        <a href="#" class="bottombar-item">
+          <test-avatar fallback=" ">
+            <test-icon slot="icon" name="air-conditioner"></test-icon>
+          </test-avatar>
+          <span class="bottombar-item-label">설정</span>
+        </a>
+      </nav>
+    </section>
+
+    <ul>
+      <li>TODO 바텀 네비게이션과 햄버거 메뉴를 혼용할 수 있는 패턴을 정의.</li>
+      <li>바텀 네비게이션의 메뉴로 햄버거 아이콘을 사용하는 케이스: 커머스 도매인에서 카테고리 메뉴. 주로 왼쪽에 배치.</li>
+      <li>bottom navigation의 label은 예외적으로 10px입니다. 예외 케이스는 어디에서 정의해야 하는가. => 컴포넌트 스코프 + 관련 패턴 페이지</li>
+    </ul>
+
+    <div class="component-references">
+      <test-text variant="subhead">References</test-text>
+      <a href="https://m2.material.io/components/bottom-navigation" target="_blank">M2 Bottom Navigation</a>
+      <i class="icon-bullet"></i>
+      <a href="https://m3.material.io/components/navigation-bar/overview" target="_blank">M3 Navigation Bar</a>
+      <i class="icon-bullet"></i>
+      <a href="https://developer.apple.com/design/human-interface-guidelines/components/navigation-and-search/tab-bars" target="_blank"
+        >HIG Tab bars</a
+      >
+    </div>
+    <!-- // iOS isTranslucent: Bool -->
+  </article>
+
+</main>

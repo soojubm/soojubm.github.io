@@ -1,4 +1,6 @@
 
+.menu-group {display:flex;flex-direction:column;gap:var(--space-2);}
+
 .item {
   display: flex;
   align-items: center;
@@ -10,6 +12,7 @@
 .item-label {
   font-size:var(--font-size-medium);
   color:var(--color-text);
+
 }
 .item-description {
   color: var(--color-text-light);
@@ -17,11 +20,23 @@
 
 /* reset */
 menu {margin:0;padding:0;}
+a {
+  text-decoration: none;
+  color: var(--color-text);
+}
 
 ::slotted([slot=avatar]) {
   display:flex;
   align-items:center;
+
+  background-image: none;
 }
+::slotted([slot=check]) {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  width:var(--size-medium);
+  font-size:12px;}
 ::slotted([slot=action]) {margin:0 0 0 auto !important;}
 ::slotted([slot=text]) {}
 
@@ -35,7 +50,22 @@ menu {margin:0;padding:0;}
 .item-description + .item-name {margin-top:-.125rem;}
 .item-tag {margin-left:var(--space-2);}
 
-.item:hover {@mixin hover-item;}
+.item:hover {
+  --hover-outline: calc(var(--space-3) / 2 * -1);
+  cursor: pointer;
+  &:before {
+    /* // z-idnex 이슈 */
+    content:'';
+    display:block;
+    background-color:var(--color-background-weak);
+    border-radius:var(--radius);
+    position:absolute;
+    left:var(--hover-outline);right:var(--hover-outline);top:var(--hover-outline);bottom:var(--hover-outline);
+    z-index: -1;
+  }
+}
+
+
 
 
 /* .item .checkbox {display:flex;justify-content:flex-end;position:absolute;left:0;right:0;top:0;bottom:0;}
@@ -47,6 +77,6 @@ menu {margin:0;padding:0;}
 // 이건 필요 없다. 팔로우 팔로잉. 외에는 switch */
 .item-action.is-active {border-color:transparent;background:var(--color-background-weak);color:var(--color-text);}
 
-[role=menuitem] {display:flex;align-items:center;width:100%;}
-[role=menuitemcheckbox] {display:flex;align-items:center;}
-[role=menuitemradio] {display:flex;align-items:center;}
+/* [role=menuitem] {display:flex;align-items:center;width:100%;}
+[role=menuitemcheckbox] {}
+[role=menuitemradio] {} */

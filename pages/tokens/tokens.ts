@@ -12,9 +12,9 @@ import '/public/stylesheets/shared/reset.css'
 import '/public/stylesheets/shared/mixins.css'
 // import '/public/stylesheets/components/tiles.css'
 
-import '/public/components/navbar/navbar.css'
 import '/public/components/footer/footer.css'
 
+import '../components/components.css'
 import './tokens.css'
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -160,52 +160,51 @@ const article = [
   { title: 'test', description: 'test test', tokens: [...colorTokens] },
 ]
 
-console.log(article)
+// document.addEventListener('DOMContentLoaded', () => {
+//   article.forEach(item => {
+//     const articleSample = `
+//       <article class="article js-scrollspy-section">
+//         <test-text variant="title">${item.title}</test-text>
+//         <p class="article-description">
+//         ${item.kicker}
+//         </p>
+//         <p style="margin:2rem 0">${item.description}</p>
+//         <div class="token-group">
+//           ${item.tokens.map(item => {
+//             return `<article class="token-item tile-flat ${item.name}">
+//               <figure class="token-item-avatar"></figure>
+//               <b>${item.name}</b>
+//               <div>
+//                 <p>--color-background</p>
+//               </div>
+//               <button class="icon-indicator" style="position: absolute; right: 0.5rem; top: 0.5rem">
+//                 <span class="material-symbols-outlined">content_copy</span>
+//               </button>
+//             </article>`
+//           })}
+//         </div>
+//       </article>
+//     `
 
-document.addEventListener('DOMContentLoaded', () => {
-  article.forEach(item => {
-    const articleSample = `
-      <article class="article js-scrollspy-section">
-        <test-text variant="title">${item.title}</test-text>
-        <p class="article-description">
-        ${item.kicker}
-        </p>
-        <p style="margin:2rem 0">${item.description}</p>
-        <div class="token-group">
-          ${item.tokens.map(item => {
-            return `<article class="token-item tile-flat ${item.name}">
-              <figure class="token-item-avatar"></figure>
-              <b>${item.name}</b>
-              <div>
-                <p>--color-background</p>
-              </div>
-              <button class="icon-indicator" style="position: absolute; right: 0.5rem; top: 0.5rem">
-                <span class="material-symbols-outlined">content_copy</span>
-              </button>
-            </article>`
-          })}
-        </div>
-      </article>
-    `
+//     document.querySelector('.tokens-body')!.innerHTML += articleSample
+//   })
 
-    document.querySelector('.tokens-body')!.innerHTML += articleSample
-  })
+// })
 
-  // const temp = colorTokens.forEach(token => {
-  //   const tokenItem = `
-  //   <article class="token-item tile-flat is-gray000">
-  //     <figure class="token-item-avatar"></figure>
-  //     <b>${token.name}</b>
-  //     <div>
-  //       <p>--color-background</p>
-  //     </div>
-  //     <button class="icon-indicator" style="position: absolute; right: 0.5rem; top: 0.5rem">
-  //       <span class="material-symbols-outlined">content_copy</span>
-  //     </button>
-  //   </article>
-  //   `
-  //   document.querySelector('.tokens-body')!.innerHTML += tokenItem
-  // })
-})
+// const temp = colorTokens.forEach(token => {
+//   const tokenItem = `
+//   <article class="token-item tile-flat is-gray000">
+//     <figure class="token-item-avatar"></figure>
+//     <b>${token.name}</b>
+//     <div>
+//       <p>--color-background</p>
+//     </div>
+//     <button class="icon-indicator" style="position: absolute; right: 0.5rem; top: 0.5rem">
+//       <span class="material-symbols-outlined">content_copy</span>
+//     </button>
+//   </article>
+//   `
+//   document.querySelector('.tokens-body')!.innerHTML += tokenItem
+// })
 
 function renderComponent() {}

@@ -1,178 +1,101 @@
 <!-- https://simplicable.com/new/visual-information -->
 <!-- https://nuli.navercorp.com/community/article -->
 <!-- todo top hat -->
-
 <!-- https://ustyle.guide/pattern-library/javascript.html -->
-
 <!-- https://career.programmers.co.kr/pr/beolsae 이력서 -->
-
 <!-- https://tailwindui.com/components/#product-application-ui -->
-
 <!-- https://www.albertgao.xyz/2019/09/07/reuse-react-router-routes-constants-with-hooks-when-navigating/ -->
 
 <!-- <h3>getFormattedDate(20220610) / getFormattedCurrency(30000)</h3>
 <p>30,000원 / 30,000 won / ₩ 30,000</p> -->
-
-<!-- // article-title 이 의미가 있을까. test-text variant="title" -->
+<style>
+  .tile {
+    max-width: 800px;
+  }
+</style>
+// article-title 이 의미가 있을까. test-text variant="title"
 <main class="component">
-  <style>
-    .tile {
-      max-width: 800px;
-    }
-  </style>
-  <!-- <section class="textbox" style="margin: 4rem var(--grid-margin)">
-      <menu class="textbox-toolbar">
-        <div class="chip" style="margin: 0 var(--space-2) 0 0">
-          <select
-            class="chip-label"
-            id="select2"
-            style="background: none; border: none; padding: 0 var(--space-4) 0 0; font: inherit; color: var(--color-text)"
-          >
-            <option value="select-option1">나눔고딕</option>
-          </select>
-          <span class="chip-indicator" role="img"><span class="material-symbols-outlined"> arrow_drop_down </span></span>
+      <section class="textbox" style="margin: 4rem var(--grid-margin)">
+        <menu class="textbox-toolbar">
+          <div class="chip" style="margin: 0 var(--space-2) 0 0">
+            <select
+              class="chip-label"
+              id="select2"
+              style="background: none; border: none; padding: 0 var(--space-4) 0 0; font: inherit; color: var(--color-text)"
+            >
+              <option value="select-option1">나눔고딕</option>
+            </select>
+            <span class="chip-indicator" role="img"><span class="material-symbols-outlined"> arrow_drop_down </span></span>
+          </div>
+          <button class="textbox-toolbar-bold" style="font-weight: var(--font-weight-bold)">B</button>
+          <button class="textbox-toolbar-italic" style="font-style: italic">I</button>
+        </menu>
+        <div class="textbox-view" role="textbox" contenteditable="true" aria-placeholder="" aria-labelledby="">
+          <h1 class="textbox-view-heading" style="margin: 0 0 var(--space-4) 0; color: var(--color-text-light)">제목</h1>
+          <div class="textbox-view-bdoy" style="color: var(--color-text-light)">제목 / 내용 선택 영역에 is-selected</div>
         </div>
-        <button class="textbox-toolbar-bold" style="font-weight: var(--font-weight-bold)">B</button>
-        <button class="textbox-toolbar-italic" style="font-style: italic">I</button>
-      </menu>
-      <div class="textbox-view" role="textbox" contenteditable="true" aria-placeholder="" aria-labelledby="">
-        <h1 class="textbox-view-heading" style="margin: 0 0 var(--space-4) 0; color: var(--color-text-light)">제목</h1>
-        <div class="textbox-view-bdoy" style="color: var(--color-text-light)">제목 / 내용 선택 영역에 is-selected</div>
-      </div>
-      <footer class="textbox-footer">
-        <button class="textbox-footer-publish">게시</button>
-      </footer> -->
-  <!-- </section> -->
-  <!--
-      <p>
-      유저는 대부분 디스크립션을 자세히 읽기를 원하지 않으므로,
-      필요한 내용을 빠르게 캐치할 수 있도록 간결하게 쓰는 게 좋다.
-      한 줄에 50자, 세 줄 이하로 쓸 것을 권장하고 있다. 텍스트를 간결하게 유지하고
-      전달할 내용을 스캐너블한 덩어리로 나누는 것은,
-      유저들이 그들의 이해도와 이 서비스를 활용하는 능력에 대해 신뢰를 갖게 만든다.
-    </p>
-    <p>
-      유저가 중요한 액션을 수행했을 경우,
-      완료 메시지를 전달하기 위해 한 화면 전체를 사용하는 경우가 있다.
-      이때는 유저가 집중할 수 있는 정보가 하나뿐이어서 맥락이 복잡하지 않으므로,
-      \"이미지가 담긴 포스팅이 완료되었습니다.\" 등의 문장형으로 길게 설명할 필요 없이,
-      \"제출 완료!\"같은 단일 단어로 대체할 수 있다.
-    </p>
-    <p>
-      알림은 언제나 유저에게 베네핏을 주거나,
-      긴급한 메시지이거나, 적어도 적절한 타이밍의 내용이어야 한다.
-      똑같은 텍스트가 각각의 컴포넌트에 쓰였을 때
-      어떤 맥락으로 유저에게 닿을 수 있는지를.
-    </p> -->
-  <!-- https://story.pxd.co.kr/1451 -->
-
-  <!-- 
+        <footer class="textbox-footer">
+          <button class="textbox-footer-publish">게시</button>
+        </footer>
+      </section>
+  
+      <!-- https://story.pxd.co.kr/1451 -->
       <p>loading state/dfn/abbr</p>
       https://material.io/design/interaction/states.html
       <test-text variant="body-large">목록의 나머지를 더 보여줄 때는 [모두보기], 미리보기 형식의 텍스트를 더 보여줄 때는 [전체보기]</test-text>
       <dt>모두보기</dt><dd>see all(15)(internal, arrow-right)</dd>
       <dt>더보기</dt><dd>더보기vs더불러오기(more, arrow-down), 자세히보기, learn more 등(external, arrow-right-top)</dd>
-      variants
       부정어/긍정어/명령어 / 한자 지양 / -적
       '-때', '경우', '사용' 최소화.
       하세요, 할 수 있습니다. 보다 합니다. 입니다
-    </section> -->
-
-  <header class="" role="banner" style="padding: 0 var(--grid-margin); margin-left: -40px">
-    <div class="chat" style="margin: 2rem 0 var(--space-2)">
-      <figure class="chat-avatar"></figure>
-      <div class="chat-bubble is-primary">
-        <b>Components</b>
-      </div>
-      <ul>
-        <li>
-          MVP 검증을 위한 최소한의 컴포넌트 라이브러리로 시작했습니다. 이후 시각 언어를 추가하며 다양한 도메인에 활용할 수 있도록 구성하고 있습니다.
-        </li>
-        <li>1~2가지 케이스는 예외 케이스로 정의한다.</li>
-        <li>background 컴포넌트. lazy load 기능을 포함하는.</li>
-        <li>dos / don'ts 케이스는 이미지를 사용하지 않고 간결하게 서술합니다. 컴포넌트는 계속 변경되기 때문에 유지보수 비용 증가.</li>
-        <li>모든 시각정보는 non-clickable. 모든 인터렉션은 clickable.</li>
-      <p>역할과 형태 구분. 형태는 textfield, action와 2개의 사이즈? 예시. select는 textfield / chip 2가지. 아니다. 토큰으로 충분하다.</p>
       <li>
-          역할에 근거합니다. 역할 기반의 네이밍. 여러 개의 tag를 감싸는 부모 태그는 tag group이 tags보다 좋고, tag list보다 좋습니다. 컴포넌트, 클래스
-          네이밍에 방향(left, right)을 사용하지 마세요. 레이아웃은 변경 가능성이 크기 때문.
+        MVP 검증을 위한 최소한의 컴포넌트 라이브러리로 시작했습니다. 이후 시각 언어를 추가하며 다양한 도메인에 활용할 수 있도록 구성하고 있습니다.
       </li>
-      </ul>
-      <div class="chat-bubble">
-        <p>할 수 있다 -> 하세요/합니다</p>
-        <p>도메인 특수성이 있는 컴포넌트. 예를 들면 스포티파이의 encore에서 track row 컴포넌트.</p>
-        <p>
-          2023년 3월 말. Props를 디자인 가이드와 묶어서 정리하기. 이렇게 하면 Props 존재 이유를 설명할 필요도 없고, 디자인 패턴을 한 번에 망라할 수
-          있다. 형태를 위한 프롭스와 기능을 위한 프롭스를 나눌 수 있을까? Anatomy와 Props를 통합할 수 있을까? 메타 푸라불럼를 함께 푸롭스에서
-          다뤄보기.
-        </p>
-      </div>
-      <p>
-        시스템 디자이너로서 제품을 소비할 때 디자이너와 개발자의 경험을 대규모로 최적화하는 것은 우리의 의무입니다. 시스템 자체. 스타일 프리미티브
-        구성이 우선순위가 지정되지 않으면 디자이너와 개발자 사이에 많은 마찰이 있을 뿐만 아니라 토큰 아키텍처를 통해 피할 수 있는 많은 스타일 불일치가
-        있을 것입니다.
-      </p>
-    </div>
+      <li>1~2가지 케이스는 예외 케이스로 정의한다.</li>
+      <li>dos / don'ts 케이스는 이미지를 사용하지 않고 간결하게 서술합니다. 컴포넌트는 계속 변경되기 때문에 유지보수 비용 증가.</li>
+      <li>모든 시각정보는 non-clickable. 모든 인터렉션은 clickable.</li>
+      역할과 형태 구분. 형태는 textfield, action와 2개의 사이즈? 예시. select는 textfield / chip 2가지. 아니다. 토큰으로 충분하다.</p>
+      역할에 근거합니다. 역할 기반의 네이밍. ?? 여러 개의 tag를 감싸는 부모 태그는 tag group이 tags보다 좋고, tag list보다 좋습니다. 컴포넌트, 클래스
+      네이밍에 방향(left, right)을 사용하지 마세요. 레이아웃은 변경 가능성이 크기 때문.
+      할 수 있다 -> 하세요/합니다
+      2023년 3월 말. Props를 디자인 가이드와 묶어서 정리하기. 이렇게 하면 Props 존재 이유를 설명할 필요도 없고, 디자인 패턴을 한 번에 망라할 수
+      있다. 형태를 위한 프롭스와 기능을 위한 프롭스를 나눌 수 있을까? Anatomy와 Props를 통합할 수 있을까? 메타 푸라불럼를 함께 푸롭스에서
+      다뤄보기.
+      시스템 디자이너로서 제품을 소비할 때 디자이너와 개발자의 경험을 대규모로 최적화하는 것은 우리의 의무입니다. 시스템 자체. 스타일 프리미티브
+      구성이 우선순위가 지정되지 않으면 디자이너와 개발자 사이에 많은 마찰이 있을 뿐만 아니라 토큰 아키텍처를 통해 피할 수 있는 많은 스타일 불일치가
+      있을 것입니다.
+      Presentation style="modal | toast | sheet" ... 이렇게 되면 윈도우 사이즈가 변경될 때 props를 변경해주어야 함.
+      사용하다 -> 제공하다 / 사용자 관점으로. 도큐멘터이션의 사용자가 아닌 서비스의 사용자.
+      Actions: remove, select, check/uncheck, add, link, action? toggle?, submit
   </header>
-
-  <test-dialog></test-dialog>
 
   <nav class="component-navigation" role="menubar">
     <div class="component-navigation-background"></div>
     <test-row>
       <test-chip class="js-scrollspy-trigger" label="Seporator"></test-chip>
-
-      <test-chip class="js-scrollspy-trigger" label="Breadcrumb"></test-chip>
-      <test-chip class="js-scrollspy-trigger" label="Title Bar">Title Bar</test-chip>
-      <test-chip class="js-scrollspy-trigger" label="Bottom Navigation">Bottom Navigation</test-chip>
       <test-chip class="js-scrollspy-trigger" label="Paginations"></test-chip>
-
-      <!-- // navigations -->
       <test-chip class="js-scrollspy-trigger">File Uploader</test-chip>
       <test-chip class="js-scrollspy-trigger">Carousel></test-chip>
       <test-chip class="js-scrollspy-trigger">Table</test-chip>
-      <test-chip class="js-scrollspy-trigger">Accordions</test-chip>
-      <test-chip class="js-scrollspy-trigger">Dialog</test-chip>
     </test-row>
   </nav>
 
-    <!-- <p class="hero-description">keywords: attention / feedback / confirm</p> -->
-    <!-- <div>
-        <div>Presentation style="modal | toast | sheet" ... 이렇게 되면 윈도우 사이즈가 변경될 때 props를 변경해주어야 함.</div>
-        <div>React migration classNames 라이브러리를 활용하기 위해서 aria- 또는 data- 속성으로 스타일링 하지 않는 것이 좋다.</div>
-        <div>roles (for designers): filter sort select</div>
-      </div> -->
-
-    <!-- <article class="article">
-        <p>사용하다 -> 제공하다 / 사용자 관점으로. 도큐멘터이션의 사용자가 아닌 서비스의 사용자.</p>
-        <p>Actions: remove, select, check/uncheck, add, link, action? toggle?, submit</p></ul>
-      </article> -->
-
-    <!-- <div class="js-tab">
-        <nav class="tablist type-sc" role="tablist" aria-label="sample tabs" style="max-width: 11rem; margin: 0.5rem auto">
-          <button class="tablist-tab" role="tab" aria-selected="true" aria-controls="panel-1" id="tab-1" tabindex="0" style="padding-top: 3px">
-            Style
-          </button>
-          <button class="tablist-tab" role="tab" aria-selected="false" aria-controls="panel-2" id="tab-2" tabindex="-1" style="padding-top: 3px">
-            Role
-          </button>
-          <i class="tablist-indicator" style="width: 50%"></i>
-        </nav>
-      </div> -->
-
-    <!-- <p>button small 형태를 액션으로. chip.</p> -->
-
-    <!-- <p class="article-description"><em>post 페이지에서 태그와 컴포넌트에서의 태그. hashtag는 tag 컴포넌트와 역할이 다르기 때문에 별도의 컴포넌트로 만들어주어야 한다. 현재 hashtag(keyword)는 chip으로 대체. todo. 댑스가 2이상 인 케이스.</em></p> -->
-
-
-    <article class="article js-observer js-scrollspy-section">
-      <test-text variant="title">Media / Exhibit (morning star)</test-text>
-    </article>
+    <div class="js-tab">
+      <nav class="tablist type-sc" role="tablist" aria-label="sample tabs" style="max-width: 11rem; margin: 0.5rem auto">
+        <button class="tablist-tab" role="tab" aria-selected="true" aria-controls="panel-1" id="tab-1" tabindex="0" style="padding-top: 3px">
+          Style
+        </button>
+        <button class="tablist-tab" role="tab" aria-selected="false" aria-controls="panel-2" id="tab-2" tabindex="-1" style="padding-top: 3px">
+          Role
+        </button>
+        <i class="tablist-indicator" style="width: 50%"></i>
+      </nav>
+    </div>
 
     <article class="article js-observer js-scrollspy-section">
       <test-text variant="title">Seperator</test-text>
       <p class="article-description">선으로 콘텐츠를 구획합니다. 반복과 대비가 구획되었다는 인상을 주기 때문에 남용하지 않습니다.</p>
-      <hr role="separator" />
+      <test-separator></test-separator>
       <br />
       <ul>
         <li>아티클 레벨에서 사용합니다. 섹션 레벨과 페이지 레벨에서는 충분한 여백으로 콘텐츠를 구획합니다.</li>
@@ -183,109 +106,68 @@
       </ul>
     </article>
 
-    <article class="article js-observer js-scrollspy-section">
-      <test-text variant="title">Breadcrumb</test-text>
-      <p class="article-description">사용자의 현재 위치를 계층 구조로 보여줍니다.</p>
-
-      <section class="component-example">
-        <test-tile>
-          <nav class="breadcrumb" aria-label="breadcrumb">
-            <a class="breadcrumb-item breadcrumb-home" href="/">홈</a>
-            <i class="breadcrumb-divider">/</i>
-            <a class="breadcrumb-item" href="#">페이지 이름</a>
-            <i class="breadcrumb-divider">/</i>
-            <span class="breadcrumb-item" aria-current="page">페이지 이름</span>
-          </nav>
-        </test-tile>
-        <article class="component-props">
-          <test-text variant="subhead">Props</test-text>
-          <dl>
-            <dt>currentPage</dt>
-            <dd>string</dd>
-            <dd>aria-current="page"</dd>
-          </dl>
-        </article>
-      </section>
-      <test-text variant="subhead">Memo</test-text>
-      <ul>
-        <li>모바일의 네비게이션 바(탑 바/타이틀 바/바텀 네비게이션 등)와 함께 사용하지 마세요.</li>
-        <li>푸터에서 사이트맵과 함께 사용할 수 있습니다.</li>
-        <li>프로모션용 랜딩 페이지에서 사용자 여정을 돕기 위해 사용할 수 있습니다.</li>
-      </ul>
-      <test-text variant="body-large" class="article-kicker">
-        <b>3개 이상의 페이지 댑스에서 사용합니다.</b> flat sitemap 트렌드에서 사용 빈도가 높지 않습니다. 주로 도움말, 상품 등 카테고리 구조에서
-        제한적으로 활용하며, pg 심사 시 요구될 수 있습니다. (토스페이-구엘지페이먼츠시절)
-      </test-text>
-      <test-text variant="body-large" class="article-kicker"><b>활용</b> 상위 댑스의 페이지 타이틀이 길어지면 truncated할 수 있다.</test-text>
-    </article>
 
     <article class="article js-observer js-scrollspy-section js-tab">
       <test-text variant="title">Tab</test-text>
       <p class="article-description">같은 맥락의 콘텐츠를 주제별로 분류합니다.</p>
-      <p></p>
 
       <section class="component-example">
-        <test-tile>
-          <test-tablist
-            data-tabs='{"name": "Chris Coyier", "job": "Web Person"}'
-            class="tablist"
-            role="tablist"
-            aria-label="sample tabs"
-            style="margin: 0 0 var(--space-2) 0"
-          >
-            <button class="tablist-tab" role="tab" aria-selected="true" aria-controls="panel-1" id="tab-1" tabindex="0">
-              첫번째 탭
-              <em class="tablist-tab-badge badge">24</em>
-            </button>
-            <button class="tablist-tab" role="tab" aria-selected="false" aria-controls="panel-2" id="tab-2" tabindex="-1">두번째 탭</button>
-            <button class="tablist-tab" role="tab" aria-selected="false" aria-controls="panel-3" id="tab-3" tabindex="-1">세번째 탭</button>
-            <i class="tablist-indicator"></i>
-          </test-tablist>
-
-          <div class="tabpanel" id="panel-1" role="tabpanel" tabindex="0" aria-labelledby="tab-1" style="margin: 0">
-            <p>Content for the first panel. tablist는 tile inset에 .25rem을 쓰는 예외 케이스...</p>
-          </div>
-          <div class="tabpanel" id="panel-2" role="tabpanel" tabindex="0" aria-labelledby="tab-2" aria-hidden="true" style="margin: 0">
-            <p>Content for the second panel</p>
-          </div>
-          <div class="tabpanel" id="panel-3" role="tabpanel" tabindex="0" aria-labelledby="tab-3" aria-hidden="true" style="margin: 0">
-            <p>Content for the third panel</p>
-          </div>
-        </test-tile>
-        <article class="component-props">
-          <test-text variant="subhead">Props</test-text>
-          <dl>
-            <dt>tablist</dt>
-            <dd><del>OptionType[]</del>TabType[]</dd>
-            <dd>TODO SPA에서 탭은 라우팅 또는 브라우저 히스토리를 관리가 필요하다.</dd>
-            <dt>tabPanel</dt>
-            <dd>React.Node</dd>
-            <dd>TODO SPA에서 Tablist를 따로 정의해야 한다.</dd>
-            <!-- <dt>indicator (active bar)</dt> -->
-            <dt>badge? counter? isUnread?</dt>
-            <dd></dd>
-            <dd></dd>
-          </dl>
-        </article>
+        <!-- data-tabs='{"name": "Chris Coyier", "job": "Web Person"}' -->
+        <test-tablist>
+          <test-tab aria-selected="true" aria-controls="panel-1" id="tab-1" tabindex="0">
+            첫번째 탭
+            <em class="tablist-tab-badge badge">24</em>
+          </test-tab>
+          <test-tab aria-selected="false" aria-controls="panel-2" id="tab-2" tabindex="-1">두번째 탭</test-tab>
+          <test-tab aria-selected="false" aria-controls="panel-3" id="tab-3" tabindex="-1">세번째 탭</test-tab>
+          <i slot="indicator" class="tablist-indicator"></i>
+        </test-tablist>
+        <div class="tabpanel" role="tabpanel" tabindex="0" aria-labelledby="tab-1" style="margin: 0">
+          <p>Content for the first panel. tablist는 tile inset에 .25rem을 쓰는 예외 케이스...</p>
+        </div>
+        <div class="tabpanel" role="tabpanel" tabindex="0" aria-labelledby="tab-2" aria-hidden="true" style="margin: 0">
+          <p>Content for the second panel</p>
+        </div>
+        <div class="tabpanel" role="tabpanel" tabindex="0" aria-labelledby="tab-3" aria-hidden="true" style="margin: 0">
+          <p>Content for the third panel</p>
+        </div>
       </section>
 
-      <test-text variant="body-large" class="article-kicker">
-        <b>탭을 중첩하여 플로우를 설계하지 마세요.</b>
-      </test-text>
-      <test-text variant="body-large" class="article-kicker">
-        <b>콘텐츠 스위칭</b>
-        콘텐츠 정렬 또는 콘텐츠 필터로 사용할 수 없습니다. 구조적으로 콘텐츠 필터의 맥락인 탭투스크롤로 사용할 수 없습니다.
-      </test-text>
-      <test-text variant="body-large" class="article-kicker">
-        <b>키보드 접근성</b>
-        방향키
-      </test-text>
+      <section class="component-props">
+        <test-text variant="subhead">Props</test-text>
+        <dl>
+          <dt>tablist</dt>
+          <dd><del>OptionType[]</del>TabType[]</dd>
+          <dd>TODO SPA에서 탭은 라우팅 또는 브라우저 히스토리를 관리가 필요하다.</dd>
+          <dt>tabPanel</dt>
+          <dd>React.Node</dd>
+          <dd>TODO SPA에서 Tablist를 따로 정의해야 한다.</dd>
+          <!-- <dt>indicator (active bar)</dt> -->
+          <dt>badge? counter? isUnread?</dt>
+          <dd></dd>
+          <dd></dd>
+        </dl>
+      </section>
 
-      <ul>
-        <li>글로벌 네비게이션 패턴인 햄버거 메뉴와 탭(바텀네비게이션, 탭바)을 함께 사용하지 마세요. (todo: tab과 tab bar(app bar)를 구분)</li>
-        <li><del>페이지 링크로 사용하지 마세요.</del> SPA에서 페이지 링크의 개념이 모호하지만 탭을 클릭 후의 뷰에서 탭 바는 유지되어야 합니다.</li>
-        <li>todo 탭 갯수의 제한과 가로 스크롤. 브라우저 히스토리 저장. (?tab=projects)</li>
-      </ul>
+      <section class="component-guide">
+        <test-text variant="body" class="article-p">
+          <b>탭을 중첩하여 플로우를 설계하지 마세요.</b>
+        </test-text>
+        <test-text variant="body" class="article-p">
+          <b>콘텐츠 스위칭</b>
+          콘텐츠 정렬 또는 콘텐츠 필터로 사용할 수 없습니다. 구조적으로 콘텐츠 필터의 맥락인 탭투스크롤로 사용할 수 없습니다.
+        </test-text>
+        <test-text variant="body" class="article-p">
+          <b>키보드 접근성</b>
+          방향키
+        </test-text>
+        <test-text>글로벌 네비게이션 패턴인 햄버거 메뉴와 탭(바텀네비게이션, 탭바)을 함께 사용하지 마세요. (todo: tab과 tab bar(app bar)를 구분)</test-text>
+  
+        <ul>
+          <li><del>페이지 링크로 사용하지 마세요.</del> SPA에서 페이지 링크의 개념이 모호하지만 탭을 클릭 후의 뷰에서 탭 바는 유지되어야 합니다.</li>
+          <li>todo 탭 갯수의 제한과 가로 스크롤. 브라우저 히스토리 저장. (?tab=projects)</li>
+        </ul>
+      </section>
 
       <div class="component-references">
         <test-text variant="subhead">References</test-text>
@@ -302,171 +184,44 @@
     </article>
 
     <article class="article js-observer js-scrollspy-section">
-      <test-text variant="title">Title Bar</test-text>
-      <p class="article-description">작성 중. 모바일</p>
-
-      <section class="component-example">
-        <test-tile>
-          <test-titlebar heading="쇼핑 탭" class="js-titlebar" role="navigation">
-            <!-- <div class="titlebar-background"></div> -->
-            <test-chip slot="action" label="장바구니"></test-chip>
-          </test-titlebar>
-        </test-tile>
-        <test-tile>
-          <test-titlebar heading="페이지 타이틀">
-            <div class="titlebar-background"></div>
-            <test-row slot="action">
-              <test-chip class="titlebar-back"></test-chip>
-              <test-chip class="titlebar-action" style="color: var(--color-primary)"> 공유 </test-chip>
-            </test-row>
-          </test-titlebar>
-        </test-tile>
-        <test-tile>
-          <test-titlebar class="js-titlebar">
-            <test-chip slot="back" class="titlebar-back">
-              <i slot="icon" class="iconior-arrow-back"></i>
-              Back to Blahblah Page
-            </test-chip>
-          </test-titlebar>
-        </test-tile>
-        <test-tile>
-          <test-titlebar class="titlebar js-titlebar" role="navigation" data-size="large" style="padding: 0">
-            <h1 class="titlebar-title js-page-title" title="page title">Large Case</h1>
-            <test-row slot="action">
-              <test-chip class="titlebar-back" onclick="javascript:window.location.href='/';">
-                <span class="material-symbols-outlined">close</span>
-              </test-chip>
-              <test-chip style="color: var(--color-primary)">저장</test-chip>
-            </test-row>
-          </test-titlebar>
-        </test-tile>
-        <!-- <div class="titlebar-backdrop js-header"></div> -->
-        <article class="component-props">
-          <test-text variant="subhead">Props</test-text>
-          <dl>
-            <dt>title<attr>?</attr></dt>
-            <dd>string</dd>
-            <dd>
-              최대 8자로 제한합니다. 타이틀이 말줄임표로 표시되지 않아야. 하지만 화면 크기는 점점 작아지니(접힌 상태의 폴더블폰) 대안이 필요하다.
-            </dd>
-            <dt>backType????<attr>?</attr></dt>
-            <dd>'close' | 'back'</dd>
-            <dd>TODO 패턴 정의. 탭 바로 접근하는 경우 등. close에서는 우측 액션을 제한해야 할 지도.</dd>
-            <dt>actions</dt>
-            <dd>React.Node</dd>
-            <dd>todo 우측 actions. 갯수 제한. md에서 최대 3개. hamberger case.</dd>
-            <!-- <dt>hasNext<attr>?</attr></th>
-              <dd>
-                boolean / 함수만 넘겨줘서 next 액션을 랜더링하는 방법이 나을 지도.
-              </dd> -->
-            <dt>onComplete(?) / onCancel<attr>?</attr></dt>
-            <dd>() => void</dd>
-          </dl>
-        </article>
-      </section>
-      <!-- <li>현재 페이지와 관련된 액션을 제공합니다.</li> -->
-
-      <div class="component-references">
-        <test-text variant="subhead">References</test-text>
-        <a href="https://m3.material.io/components/top-app-bar/overview" target="_blank">MD3 top app bar</a>
-      </div>
-    </article>
-
-    <article class="article js-observer js-scrollspy-section">
-      <test-text variant="title">Bottom Navigation / Navigation Bar ??</test-text>
-      <p class="article-description">모바일 환경의 글로벌 네비게이션.</p>
-
-      <test-row class="article-aka">
-        <test-tag>a.k.a.</test-tag>
-        <span class="hashtag" title="google">Navigation Bar</span>
-      </test-row>
-
-      <section class="component-example">
-        <test-tile>
-          <nav class="bottombar">
-            <a href="#" class="bottombar-item is-active">
-              <figure class="bottombar-item-icon">
-                <span class="material-symbols-outlined"> account_circle </span>
-              </figure>
-              <span class="bottombar-item-label">홈</span>
-              <em></em>
-            </a>
-            <a href="#" class="bottombar-item">
-              <figure class="bottombar-item-icon">
-                <span class="material-symbols-outlined"> account_circle </span>
-              </figure>
-              <span class="bottombar-item-label">카테고리</span>
-            </a>
-            <a href="#" class="bottombar-item">
-              <figure class="bottombar-item-icon">
-                <span class="material-symbols-outlined"> account_circle </span>
-              </figure>
-              <span class="bottombar-item-label">설정</span>
-            </a>
-          </nav>
-        </test-tile>
-      </section>
-
-      <ul>
-        <li>TODO 바텀 네비게이션과 햄버거 메뉴를 혼용할 수 있는 패턴을 정의.</li>
-        <li>바텀 네비게이션의 메뉴로 햄버거 아이콘을 사용하는 케이스: 커머스 도매인에서 카테고리 메뉴. 주로 왼쪽에 배치.</li>
-        <li>bottom navigation의 label은 예외적으로 10px입니다. 예외 케이스는 어디에서 정의해야 하는가. => 컴포넌트 스코프 + 관련 패턴 페이지</li>
-      </ul>
-
-      <div class="component-references">
-        <test-text variant="subhead">References</test-text>
-        <a href="https://m2.material.io/components/bottom-navigation" target="_blank">M2 Bottom Navigation</a>
-        <i class="icon-bullet"></i>
-        <a href="https://m3.material.io/components/navigation-bar/overview" target="_blank">M3 Navigation Bar</a>
-        <i class="icon-bullet"></i>
-        <a href="https://developer.apple.com/design/human-interface-guidelines/components/navigation-and-search/tab-bars" target="_blank"
-          >HIG Tab bars</a
-        >
-      </div>
-      <!-- // iOS isTranslucent: Bool -->
-    </article>
-
-    <article class="article js-observer js-scrollspy-section">
       <test-text variant="title">Paginations</test-text>
       <p class="article-description">작성 중.</p>
 
       <section class="component-example">
-        <test-tile>
-          <nav class="pagination" role="navigation" aria-label="pagination">
-            <a class="pagination-previous" href="#" title="앞 페이지로 이동" aria-label="">이전</a>
-            <a class="pagination-next" href="#" title="뒷 페이지로 이동">다음</a>
-            <a class="pagination-link" href="#" title="맨 앞 페이지로 이동">1</a>
-            <i class="pagination-ellipsis" title="맨 앞 페이지로 이동">...</i>
-            <a class="pagination-link" href="#" title="1 페이지로 이동">5</a>
-            <a class="pagination-link" href="#" title="1 페이지로 이동">6</a>
-            <a class="pagination-link is-current" href="#" title="1 페이지로 이동" aria-current="true">7</a>
-            <a class="pagination-link" href="#" title="1 페이지로 이동">8</a>
-            <a class="pagination-link" href="#" title="1 페이지로 이동">9</a>
-            <i class="pagination-ellipsis" title="맨 앞 페이지로 이동">...</i>
-            <a class="pagination-link" href="#" title="맨 뒤 페이지로 이동">50</a>
-          </nav>
-          <aside>
-            <small role="" style="display: block; margin: var(--space-4) 0 0; text-align: center">숙소 300개 이상 중 281 – 300 (airbnb)</small>
-          </aside>
-        </test-tile>
+        <nav class="pagination" role="navigation" aria-label="pagination">
+          <a class="pagination-previous" href="#" title="앞 페이지로 이동" aria-label="">이전</a>
+          <a class="pagination-next" href="#" title="뒷 페이지로 이동">다음</a>
+          <a class="pagination-link" href="#" title="맨 앞 페이지로 이동">1</a>
+          <i class="pagination-ellipsis" title="맨 앞 페이지로 이동">...</i>
+          <a class="pagination-link" href="#" title="1 페이지로 이동">5</a>
+          <a class="pagination-link" href="#" title="1 페이지로 이동">6</a>
+          <a class="pagination-link is-current" href="#" title="1 페이지로 이동" aria-current="true">7</a>
+          <a class="pagination-link" href="#" title="1 페이지로 이동">8</a>
+          <a class="pagination-link" href="#" title="1 페이지로 이동">9</a>
+          <i class="pagination-ellipsis" title="맨 앞 페이지로 이동">...</i>
+          <a class="pagination-link" href="#" title="맨 뒤 페이지로 이동">50</a>
+        </nav>
+        <aside>
+          <small role="" style="display: block; margin: var(--space-4) 0 0; text-align: center">숙소 300개 이상 중 281 – 300 (airbnb)</small>
+        </aside>
 
-        <article class="component-props">
-          <test-text variant="subhead">Props</test-text>
-          <dl>
-            <!-- <dt>offset</dt>
-              <dd>number</dd> -->
-            <dt>initialPageNumber? selecedPageNumber?</dt>
-            <dd>number</dd>
-            <dt>lastPageNumber</dt>
-            <dd>number</dd>
-            <dd>서버에서 받는다.</dd>
-          </dl>
-        </article>
-
-        <!-- <b class="pagination-current">1</b>
+        <b class="pagination-current">1</b>
           <span class="pagination-divider"> / </span>
-          <span class="pagination-all">44</span> -->
-        <!-- <span>page 2 of 22</span> -->
+          <span class="pagination-all">44</span>
+        <span>page 2 of 22</span>
+      </section>
+
+      <section class="component-props">
+        <test-text variant="subhead">Props</test-text>
+        <dl>
+          <!-- <dt>offset</dt>
+            <dd>number</dd> -->
+          <dt>initialPageNumber? selecedPageNumber?</dt>
+          <dd>number</dd>
+          <dt>lastPageNumber</dt>
+          <dd>number</dd>
+          <dd>서버에서 받는다.</dd>
+        </dl>
       </section>
 
       <p>
@@ -567,19 +322,19 @@
             <caption>
               히라가나 오십음도
             </caption>
-            <!-- <colgroup>
+            <colgroup>
               <col>
               <col span="2" class="batman">
               <col span="2" class="flash">
-            </colgroup> -->
+            </colgroup>
             <thead role="rowgroup">
               <tr role="row">
-                <!-- <th role="columnheader" aria-sort="none" class="table-checkbox">
+                <th role="columnheader" aria-sort="none" class="table-checkbox">
                   <div>
                     <input type="checkbox" id="temp1">
                     <label for="temp1"></label>
                   </div>
-                </th> -->
+                </th>
                 <th scope="col">あ단</th>
                 <th scope="col">い단</th>
                 <th scope="col">う단</th>
@@ -638,78 +393,6 @@
 
 
     <article class="article js-observer js-scrollspy-section">
-      <test-text variant="title">Dialog</test-text>
-      <p class="article-description">
-        사용자의 정보나 재산의 변경 또는 삭제 확인. 사용자는 모달 형태의 집중된 환경에서(?) 리스크를 관리할 수 있습니다.
-      </p>
-
-      <test-row class="article-aka" style="margin: 0">
-        <test-tag>a.k.a.</test-tag>
-        <span class="hashtag" title="">Alert</span>
-        <span class="hashtag" title="">Modal</span>
-      </test-row>
-
-      <section class="component-example">
-        <aside class="dialog" role="alertdialog" aria-modal="true" aria-labelledby="dialog-title1" aria-describedby="dialog-description2">
-          <header class="dialog-head">
-            <h2 class="dialog-head-title"></h2>
-            <button class="dialog-close js-close" aria-label="delete"></button>
-          </header>
-          <div class="dialog-body"></div>
-          <test-text variant="subhead" class="dialog-title" id="dialog-title1">부끄러우니까 보지마요!</test-text>
-          <p class="dialog-description" id="dialog-description1">다이얼로그 디스크립션입니다.</p>
-          <footer class="dialog-footer">
-            <test-button variant="primary">확인</test-button>
-          </footer>
-        </aside>
-
-        <aside class="dialog" role="alertdialog" aria-modal="true" aria-labelledby="dialog-title2" aria-describedby="dialog-description2">
-          <!-- <header class="dialog-head">
-            <h2 class="dialog-head-title"></h2>
-            <button class="dialog-close js-close" aria-label="delete"></button>
-          </header>
-          <div class="dialog-body"></div> -->
-          <test-text variant="subhead" class="dialog-title" id="dialog-title2">부끄러우니까 보지마요!</test-text>
-          <p class="dialog-description" id="dialog-description2">다이얼로그 디스크립션입니다.</p>
-          <test-row class="dialog-footer">
-            <test-button variant="tertiary">안 볼래요</test-button>
-            <test-button variant="primary">볼래요</test-button>
-          </test-row>
-          <close-button></close-button>
-        </aside>
-      </section>
-
-      <ul>
-        <li>레이어를 2개 이상 쌓지 마세요. 모달의 가이드</li>
-        <li>버튼의 레이블은 다이얼로그 제목의 동사와 페어링합니다.</li>
-        <li>memo: modal의 구조: header/body/footer. 단순 다이얼로그는 복잡한 구조가 필요 없다.</li>
-        <li>memo: overay엘리먼트 클릭 시 모달을 닫으면 리액트에서 구현이 쉬움. 이 overay은 sheet에서 재사용할 수 있다.</li>
-        <li>buttonGroup type="unary(confirm) | binary(cancel/confirm)</li>
-      </ul>
-
-      <test-text variant="subhead">Props</test-text>
-      <dl>
-        <dt>title</dt>
-        <dd>string</dd>
-        <dt>description<abbr>?</abbr></dt>
-        <dd>string</dd>
-        <dt>React.Node - ButtonGroup 또는 label</dt>
-        <dt>primaryActionLabel<abbr>?</abbr></dt>
-        <dd>string</dd>
-        <dt>secondaryActionLabel<abbr>?</abbr></dt>
-        <dd>string | '취소?'</dd>
-        <dt>onSubmit</dt>
-        <dd>function()</dd>
-      </dl>
-
-      <test-text variant="body-large">Accessibility</test-text>
-      <ul>
-        <li>다이얼로그(또는 모달)를 닫은 후 열기 전으로 포커스.</li>
-        <li>다이얼로그를 닫기 전까지 기본 콘텐츠로 포커스할 수 없다.</li>
-      </ul>
-    </article>
-
-    <article class="article js-observer js-scrollspy-section">
       <test-text variant="title">Workflow</test-text>
       <p class="article-description">내용 없음.</p>
 
@@ -750,11 +433,11 @@
               <span class="step-item-icon">2</span>
               <b class="step-item-label">결제</b>
             </div>
-            <!-- <div class="step-space">
+            <div class="step-space">
                 <span class="step-space-dot"></span>
                 <span class="step-space-dot"></span>
                 <span class="step-space-dot"></span>
-              </div> -->
+              </div>
             <div class="step-item">
               <span class="step-item-icon">3</span>
               <b class="step-item-label">주문완료</b>
@@ -799,19 +482,18 @@
       </ul>
     </article>
 
-
-<article class="article">
-  <test-text variant="title">Range</h1>
-  <p class="article-description"></p>
-  <div class="range">
-    <label for="">숙박 인원</label>
-    <input type="range" min="1" max="10" value="2" step="any" list="tickmarks" id="myRange">
-    <datalist id="tickmarks">
-      <option value="0" label="0"></option>
-      <option value="5" label="5"></option>
-    </datalist>
-  </div>
-</article>
+    <article class="article">
+      <test-text variant="title">Range</test-text>
+      <p class="article-description"></p>
+      <div class="range">
+        <label for="">숙박 인원</label>
+        <input type="range" min="1" max="10" value="2" step="any" list="tickmarks" id="myRange">
+        <datalist id="tickmarks">
+          <option value="0" label="0"></option>
+          <option value="5" label="5"></option>
+        </datalist>
+      </div>
+    </article>
 
     <article class="article">
       <test-text variant="title">Calendar</test-text>
@@ -888,12 +570,7 @@
         >
       </form>
     </article>
-  </section>
-</main>
 
-
-
-<main class="component" style="overflow: hidden">
   <div style="padding: 0 var(--grid-margin)">
     <section class="sample-container" style="margin-top: 0">
       <header class="greeting" data-temp="이 패턴에서 아바타는 시각 정보가 아니라 링크로 사용">
@@ -936,57 +613,40 @@
         </article>
       </section>
 
-      <div class="item" role="listitem" data-size="large" style="margin-bottom: var(--space-3)">
-        <figure class="item-avatar"></figure>
+      <test-menuitem data-size="large" style="margin-bottom: var(--space-3)">
+        <test-avatar></test-avatar>
         <span class="item-description">관심사가 비슷한 사용자</span>
         <h2 class="item-name">Gyeongsoo I</h2>
         <!-- <button class="item-action"><span class="item-action-label">팔로우</span></button> -->
-      </div>
+      </test-menuitem>
 
-      <test-tile variant="elevated">
-        <header class="titlebar" style="padding: 0; margin-bottom: var(--space-4)">
-          <test-text variant="subhead" class="titlebar-title">See this post in</test-text>
-          <test-chip class="titlebar-back" aria-label="이전 페이지로">
-            <figure class="chip material-symbols-outlined">close</figure>
-          </test-chip>
-        </header>
-        <test-menu-item label="수줍이 앱">
-          <test-avatar slot="avatar" secondary></test-avatar>
-          <test-chip slot="action" label="열기"></test-chip>
-        </test-menu-item>
-        <test-menu-item label="사파리 브라우저">
-          <test-avatar slot="avatar"></test-avatar>
-          <test-chip slot="action" slot="계속" status="active"></test-chip>
-        </test-menu-item>
-      </test-tile>
-
-      <div class="jobitem" role="listitem">
-        <h2 class="jobitem-name">Senior Front-end Developer</h2>
-        <div class="jobitem-tags">
+      <test-tile>
+        <test-text variant="subhead">Senior Front-end Developer</test-text>
+        <test-row>
           <test-tag>Full-Time</test-tag>
           <test-tag>Korea</test-tag>
           <test-tag>Remote friendly</test-tag>
-        </div>
-        <button class="jobitem-view"><span class="chip-label">View Job</span></button>
-      </div>
+        </test-row>
+        <test-chip label="View Job"></button>
+      </test-tile>
 
       <test-tile variant="elevated" style="max-width: 400px">
         <article class="item" data-size="huge">
-          <figure class="item-avatar">
+          <test-avatar>
             <span class="avatar-badge"></span>
-          </figure>
+          </test-avatar>
           <b class="item-name">개인</b>
           <p class="item-description">Apple One</p>
           <span>가족 구독</span>
         </article>
-        <hr />
+        <test-separator></test-separator>
         <h3>1개월 무료 체험</h3>
         <small>오늘부터</small>
         <test-text variant="text-subhead">14,900원/개월</test-text>
         <small>2023년 05월 22일부터</small>
-        <hr />
+        <test-separator></test-separator>
         <p>약정 기간이 없습니다. 갱신일 최소 하루 전까지 설정 > Apple ID에서 언제든지 취소할 수 있습니다. 취소할 때까지 요금제가 자동 갱신됩니다.</p>
-        <hr />
+        <test-separator></test-separator>
         <p style="color: var(--color-text-light)">계정: soojubm@gmail.com</p>
       </div>
 
@@ -998,7 +658,7 @@
         </test-tile>
 
         <div class="item" data-size="large">
-          <figure class="item-avatar" style="background-image: none; font-size: var(--font-size-large)">🎅🏻</figure>
+          <test-avatar style="background-image: none; font-size: var(--font-size-large)">🎅🏻</test-avatar>
           <b class="item-name">Widgefy iOS Widgets</b>
           <!-- <p class="item-description">description area.</p> -->
           <div style="display: flex; align-items: center; color: var(--color-text-light)">
@@ -1013,15 +673,15 @@
         </footer>
       </article>
 
-      <form class="feed-make tile-elevated" action="">
+      <test-tile variany="elevated" class="feed-make" action="">
         <test-titlebar heading="게시물 만들기" style="margin-bottom: var(--space-4)">
           <test-chip slot="back" aria-label="이전 페이지로">
             <span class="material-symbols-outlined">close</span>
           </test-chip>
         </test-titlebar>
-        <test-menu-item label="수줍이" size="medium">
+        <test-menuitem label="수줍이" size="medium">
           <test-avatar slot="avatar"></test-avatar>
-        </test-menu-item>
+        </test-menuitem>
         <div class="textfield comment-write-text" style="margin: var(--space-3) 0">
           <!-- <label class="textfield-label" for="" aria-hidden="true">댓글</label> -->
           <textarea
@@ -1035,7 +695,7 @@
         <footer class="comment-write-footer">
           <test-button variant="primary">게시</test-button>
         </footer>
-      </form>
+      </test-tile>
 
       <test-tile variant="elevated">
         <test-titlebar style="padding: 0; margin-bottom: var(--space-4)">
@@ -1048,18 +708,20 @@
           </button>
           <!-- <button class="textfield-clear" hidden><span class="material-symbols-outlined">close</span></button> -->
         </test-textfield>
-        <hr />
-        <test-menu-item label="빗썸">
-          <test-avatar slot="avatar"></test-avatar>
-          <test-checkbox slot="action" label="" size="large">
-            <input type="checkbox" id="menutype1" name="gender" checked="" />
-            <label for="menutype1" title=""></label>
-          </test-checkbox>
-        </test-menu-item>
-        <test-menu-item label="코인원">
-          <test-avatar slot="avatar"></test-avatar>
-          <test-checkbox slot="action" size="large"></test-checkbox>
-        </test-menu-item>
+        <test-separator></test-separator>
+        <test-menu-group>
+          <test-menuitem label="빗썸">
+            <test-avatar slot="avatar"></test-avatar>
+            <test-checkbox slot="action" label="" size="large">
+              <input type="checkbox" id="menutype1" name="gender" checked="" />
+              <label for="menutype1" title=""></label>
+            </test-checkbox>
+          </test-menuitem>
+          <test-menuitem label="코인원">
+            <test-avatar slot="avatar"></test-avatar>
+            <test-checkbox slot="action" size="large"></test-checkbox>
+          </test-menuitem>
+        </test-menu-group>
       </test-tile>
     </section>
   </div>
@@ -1072,7 +734,7 @@
     </button>
   </aside>
 
-  <!-- <button aria-haspopup="true" aria-expanded="false">
+  <button aria-haspopup="true" aria-expanded="false">
     Difficulty
     <span aria-hidden="true">&#x25be;</span>
   </button>
@@ -1080,32 +742,28 @@
     <button role="menuitemradio" tabindex="-1">Easy</button>
     <button role="menuitemradio" aria-checked="true" tabindex="-1">Medium</button>
   </div>
-  <p>role=checkbox aria-checked=false</p> -->
+  <p>role=checkbox aria-checked=false</p>
 
-    <!-- <form class="subscribe" style="max-width: var(--layout-width-small)">
+    <form class="subscribe" style="max-width: var(--layout-width-small)">
     <h2 class="subscribe-title">수줍이 뉴스레터</h2>
     <p class="subscribe-description">섭스크라이브 유아이 콤포넌트 입니다. <br />두 줄 단락을 위해 쓰고 있습니다.</p>
-    <div class="subscribe-field textfield">
-      <label for="" class="textfield-label">이메일 주소</label>
-      <input class="textfield-input" type="text" placeholder="Enter Your Email.." />
-    </div>
+    <test-textfield placeholder="Enter Your Email.." class="subscribe-field">
+      <test-icon slot="leading" name="mail"></test-icon>
+    </test-textfield>
     <p class="subscribe-helper setting-item-helper">
       샘플 텍스트. 걱정하지 마세요. 스팸은 없습니다! 귀하의 정보는 web.dev 및 Chrome 관련 업데이트에만 사용되며 당사에서 보내는 이메일은 일반적으로 한
       달에 1-2회를 넘지 않습니다. 언제든지 구독을 취소할 수 있습니다.
     </p>
-    <div class="checkbox" style="margin: var(--space-4) 0">
-      <input class="checkbox-input" type="checkbox" />
-      <label for="" class="checkbox-label"
-        >본인은 Google의 <a href="" rel="noopener" target="_blank">이용 약관</a>에 동의하며 본인의 정보가 Google의
-        <a href="" rel="noopener" target="_blank">개인정보보호 정책</a>에 따라 이용된다는 것을 인정합니다.</label
-      >
-    </div>
+    <test-checkbox>
+      본인은 Google의 <a href="" rel="noopener" target="_blank">이용 약관</a>에 동의하며 본인의 정보가 Google의
+        <a href="" rel="noopener" target="_blank">개인정보보호 정책</a>에 따라 이용된다는 것을 인정합니다.
+    </test-checkbox>
 
     <button class="subscribe-submit" type="submit">뉴스레터 구독</button>
-  </form> -->
+  </form>
 
 
-    <!-- <div class="album-track">
+    <div class="album-track">
       <header class="album-track-label" role="row">
         <span class="album-track-label-item" role="columnheader">#</span>
         <span class="album-track-label-item">제목</span>
@@ -1119,7 +777,7 @@
         <span class="album-track-row-column" data-cell="number">1</span>
         <span class="album-track-row-column">
           <div class="item" style="width: 100%">
-            <figure class="item-avatar"></figure>
+            <test-avatar></test-avatar>
             <b class="item-name">Dancing in the Dark</b>
             <small class="item-description">Bruce Springsteen</small>
           </div>
@@ -1131,7 +789,7 @@
         >
         <span class="album-track-row-column">7 : 02</span>
       </div>
-    </div> -->
+    </div>
     <section class="">
       toolbar is not chip.. 단지 지금 chip의 컨테이너를 가지고 있는 것.
       <p class="profile-display-status" role="status">Viewing 1,000 Projects</p>
@@ -1168,52 +826,49 @@
       </div>
     </section>
 
-    <hr />
+    <test-separator></test-separator>
     <!-- ! flex-wrap: warp일 때 min-width가 fixed -->
     <!-- ! width:100% and max-width doesnt' work-->
     <test-tile variant="elevated" action="" style="max-width: 400px; z-index: 1">
-      <header class="titlebar" style="padding: 0; margin-bottom: var(--space-3)">
-        <test-text variant="subhead" class="titlebar-title" style="line-height: 32px; position: relative; left: auto; transform: translateX(0)">"파일 제목.pdf" 공유</test-text>
-        <test-chip><span class="material-symbols-outlined">settings</span></test-chip>
-      </header>
-      <!-- <div class="textfield" style="margin:1rem 0 0;">
-          <label class="textfield-label" for="" aria-hidden="true">댓글</label>
-          <input class="textfield-input" type="text" rows="4" name="comment" placeholder="사용자 및 그룹 추가"></input>
-        </div> -->
-      <button class="item" role="menuitem" data-tile="elevated" data-size="medium" style="margin-bottom: var(--space-3)">
-        <test-avatar>
-          <span class="material-symbols-outlined">add</span>
-        </test-avatar>
-        <span class="item-label">사용자 및 그룹 추가</span>
-      </button>
+      <test-titlebar heading="[파일 제목.pdf] 공유">
+        <test-chip slot="action">
+          <test-icon slot="icon" name="settings"></test-icon>
+        </test-chip>
+      </test-titlebar>
+      <test-textfield label="댓글" placeholder="사용자 및 그룹 추가" style="margin:1rem 0 0;">
+      </test-textfield>
+      <test-tile variant="elevated" size="small">
+        <test-menuitem label="사용자 및 그룹 추가">
+          <test-avatar slot="avatar">+</test-avatar>
+        </test-menuitem>
+      </test-tile>
 
       <p style="margin: 1rem 0 0.25rem; font-size: var(--font-size-medium)">액세스 권한이 있는 사용자</p>
-      <test-menu-item label="수줍이 (나)" role="menuitem">
+      <test-menuitem label="수줍이 (나)">
         <test-avatar slot="avatar"></test-avatar>
         <test-tag style="margin-left: auto">소유자</test-tag>
-      </test-menu-item>
-      <test-menu-item label="뾱뾱이" role="menuitem">
-        <figure class="item-avatar" style="background: purple"></figure>
+      </test-menuitem>
+      <test-menuitem label="뾱뾱이">
+        <test-avatar style="background: purple"></test-avatar>
         <test-tag data-status="danger" style="margin-left: auto">
           <span class="tag-label">제한됨</span>
         </test-tag>
         <figure class="icon-indicator" style="margin-left: var(--space-1)"><span class="material-symbols-outlined">arrow_drop_down</span></figure>
-      </test-menu-item>
-
-      <footer style="display: flex; justify-content: right; margin: 2rem 0 0">
-        <button class="button" data-variant="primary" type="submit">완료</button>
+      </test-menuitem>
+      <footer>
+        <test-button variant="primary" type="submit">완료</test-button>
       </footer>
-
-      <hr />
-
+      <test-separator></test-separator>
       <test-titlebar heading="공유 설정">
         <test-chip slot="back" aria-label="이전 페이지로">
-          <span class="material-symbols-outlined">arrow_back</span>
+          <test-icon slot="icon" name="arrow-left"></test-icon>
         </test-chip>
       </test-titlebar>
-      <test-checkbox label="편집자가 권한을 변경하고 공유할 수 있습니다."></test-checkbox>
-      <test-checkbox label="뷰어 및 댓글 작성자에게 다운로드, 인쇄, 복사 옵션 표시."></test-checkbox>
-      <hr />
+      <test-row direction="column">
+        <test-checkbox label="편집자가 권한을 변경하고 공유할 수 있습니다."></test-checkbox>
+        <test-checkbox label="뷰어 및 댓글 작성자에게 다운로드, 인쇄, 복사 옵션 표시."></test-checkbox>
+      </test-row>
+      <test-separator></test-separator>
       <p>일반 액세스 (기본 액세스라는 의미인 듯)</p>
       <test-chip label="제한됨">
         <span class="material-symbols-outlined">arrow_drop_down</span>
@@ -1221,7 +876,7 @@
       <div style="margin: 0.75rem 0">
         <p>액세스 권한이 있는 사용자만 링크로 열 수 있습니다.</p>
       </div>
-      <hr />
+      <test-separator></test-separator>
       <p>개선한 부분</p>
       <ul>
         <li>일반 액세스는 설정에서 제공. 소제목 제거. 액세스 권한이 있는 사용자.</li>
@@ -1238,18 +893,18 @@
         <input class="textfield-input" type="text" id="search" placeholder="you@gamil.com" />
       </div>
       <button class="item" role="menuitem" data-tile="elevated" data-size="medium" style="max-width: 50%">
-        <figure class="item-avatar" style="background-image: none">
+        <test-avatar style="background-image: none">
           <span class="material-symbols-outlined">add</span>
-        </figure>
+        </test-avatar>
         <span class="item-label">Add the member</span>
       </button>
     </section>
 
-    <hr />
+    <test-separator></test-separator>
     <div>
-       <!-- <figure class="item-avatar" style="background:aliceblue;">
+       <test-avatar style="background:aliceblue;">
           <span class="material-symbols-outlined" style="color:blue;">trending_up</span>
-        </figure> -->
+        </test-avatar>
       <article class="item tile-elevated-small" data-size="large" style="width: 200px; margin: 0; z-index: auto">
         <b class="item-name" style="font-size: 16px">상해종합주가지수</b>
         <p class="item-description" style="color: var(--color-text)">2999.55p</p>
@@ -1265,15 +920,15 @@
       </article>
 
       <article class="item tile-elevated-small" data-size="large" style="width: 200px; margin: 0; z-index: auto">
-        <figure class="item-avatar" style="background: var(--red100)">
+        <test-avatar style="background: var(--red100)">
           <span class="material-symbols-outlined" style="color: var(--red800)">trending_down</span>
-        </figure>
+        </test-avatar>
         <h3 class="item-name">Entity large</h3>
         <span style="color: var(--red800)">35%</span>
       </article>
     </div>
 
-    <hr />
+    <test-separator></test-separator>
 
     <section style="max-width: 640px">
       <section class="dashboard-">
@@ -1282,9 +937,13 @@
           <span class="dashboard-item-tag tag" style="position: absolute; right: 1rem; top: 0.875rem">태그</span>
           <b class="dashboard-item-value" style="font-size: var(--font-size-huge)">
             1,508<small style="margin: 0 0 0 0.25rem; font-size: var(--font-size-medium); vertical-align: super">90%</small>
-            <!-- <i>icon</i> -->
           </b>
-          <div class="dashboard-item-graph graph-bar" style="margin: var(--space-3) 0 0 0"><b style="width: 68%"></b></div>
+          <div class="meter">
+            <div class="meter-track">
+              <b class="meter-thumb" style="width: 68%"></b>
+            </div>
+            <span class="meter-text">200GB 중 115.72GB 사용</span>
+</div>
         </div>
       </section>
 
@@ -1303,32 +962,23 @@
       </section>
     </section>
 
-    <!-- <p>TeeVee</p>
+    <p>TeeVee</p>
     <p>icon-indicator (textfield-check/select indicator) - inline or float: right</p>
     <p>
       Note: Make sure the role of the element that serves as the container for the popup content is a menu, listbox, tree, grid or dialog and that the
       value of aria-haspopup matches the role of the popup container.
-    </p> -->
+    </p>
     <br />
 
     <div class="textfield-group" style="display: flex; align-items: flex-end; max-width: 480px">
-      <div class="textfield">
-        <label class="textfield-label" for="search">Length</label>
-        <input class="textfield-input" type="number" id="search" placeholder="cm unit" />
-      </div>
+      <test-textfield label="Length" placeholder="cm unit"></test-textfield>
       <span class="material-symbols-outlined" style="padding: 0 var(--space-1); color: var(--color-text-light); line-height: 48px"> close </span>
-      <div class="textfield">
-        <label class="textfield-label" for="search">Width</label>
-        <input class="textfield-input" type="search" id="search" placeholder="x means" />
-      </div>
+      <test-textfield label="Width" placeholder="x means"></test-textfield>
       <span class="material-symbols-outlined" style="padding: 0 var(--space-1); color: var(--color-text-light); line-height: 48px"> close </span>
-      <div class="textfield">
-        <label class="textfield-label" for="search">Height</label>
-        <input class="textfield-input" type="search" id="search" placeholder="cm" />
-      </div>
+      <test-textfield label="Height" placeholder="cm"></test-textfield>
     </div>
 
-    <hr />
+    <test-separator></test-separator>
 
     <article class="card onboarding" role="listitem" style="max-width: 400px; text-align: center">
       <figure class="card-thumbnail" style="object-fit: cover">
@@ -1408,28 +1058,20 @@
     </div>
 
     <test-tile variant="elevated" style="max-width: 400px; z-index: 1">
-      <test-titlebar label="컬렉션에 추가" style="padding: 0; margin-bottom: var(--space-4)">
+      <test-titlebar heading="컬렉션에 추가" style="padding: 0; margin-bottom: var(--space-4)">
         <test-chip slot="back" class="titlebar-back" aria-label="이전 페이지로">
           <span class="material-symbols-outlined">close</span>
         </test-chip>
-      </header>
+      </test-titlebar>
       <fieldset>
-        <div class="checkbox">
-          <input class="" type="checkbox" id="playlist" value="" aira-checked="mixed" aria-controls="1 2" />
-          <label for="playlist" title="play list">재생 목록 1,</label>
-        </div>
-        <div class="checkbox">
-          <input class="" type="checkbox" id="playlist2" value="" aira-checked="mixed" aria-controls="1 2" />
-          <label for="playlist2" title="play list2">재생 목록 2</label>
-        </div>
+        <!-- aira-checked="mixed" aria-controls="1 2" -->
+        <test-checkbox label="재생 목록 1"></test-checkbox>
+        <test-checkbox label="재생 목록 2"></test-checkbox>
       </fieldset>
-      <button class="item" role="menuitem" data-tile="elevated" data-size="medium">
-        <figure class="item-avatar" style="background-image: none">
-          <span class="material-symbols-outlined">add</span>
-        </figure>
-        <span class="item-label">새 컬렉션 만들기</span>
-      </button>
-      <hr />
+      <test-item data-tile="elevated" label="새 컬렉션 만들기">
+        <test-avatar slot="avatar">+</test-avatar>
+      </test-item>
+      <test-separator></test-separator>
       <header class="titlebar" style="padding: 0; margin-bottom: var(--space-4)">
         <test-chip class="titlebar-back" aria-label="이전 페이지로">
           <span class="material-symbols-outlined">arrow_back</span>
@@ -1442,17 +1084,18 @@
 
     <section class="comment-list" style="max-width: 400px">
       <article class="comment-list-item" role="comment">
-        <article class="item" data-size="medium" style="display: flex; align-items: center">
-          <figure class="item-avatar"></figure>
-          <b class="item-name">Entity large</b>
-          <time class="item-description" style="margin-left: 0.5rem">5 days ago</time>
-        </article>
+        <test-menuitem label="수줍이" description="5 days ago">
+          <test-avatar slot="avatar"></test-avatar>
+          <test-chip slot="action">
+            <test-icon slot="icon" name="more-vert"></test-icon>
+          </test-chip>
+        </test-menuitem>
         <p class="comment-list-item-text">
           코멘트는 노출 순서와 정렬 기능 여부 갯수, 답글 스타일, 최초 노출형태, 신고/수정/삭제/아바타는 우선순위를 낮게 설정하고, 리뷰와 코멘트는
           비슷한 구조이지만 별도의 컴포넌트로 관리되어야 한다. 또 있을까? <button style="color: var(--color-primary)">자세히보기</button>
         </p>
         <button class="item" role="menuitem" data-tile="elevated" data-size="medium">
-          <figure class="item-avatar"></figure>
+          <test-avatar></test-avatar>
           <span class="item-label">샘플 유아이</span>
           <i class="item-helper material-symbols-outlined" style="margin-left: auto">arrow_forward</i>
         </button>
@@ -1468,7 +1111,7 @@
         <!-- 대댓글 샘플 -->
         <div class="comment-list-item" role="comment">
           <article class="item" data-size="medium">
-            <figure class="item-avatar"></figure>
+            <test-avatar></test-avatar>
             <b class="item-name">Entity large</b>
             <time class="item-description" style="margin-left: 0.5rem">description area.</time>
           </article>
@@ -1523,12 +1166,12 @@
       </div>
     </div>
 
-    <article class="meter tile-elevated" style="padding: 1rem">
+    <article class="meter">
       <h1 class="meter-title">200 GB 중 187.23 GB 사용됨</h1>
       <div class="meter-graph">
-        <div class="meter-graph-bar" data-type="facebook" style="width: 40%"></div>
-        <div class="meter-graph-bar" data-type="twitter" style="width: 30%"></div>
-        <div class="meter-graph-bar" data-type="instagram" style="width: 7%"></div>
+        <div class="meter-graph-item" data-type="facebook" style="width: 40%"></div>
+        <div class="meter-graph-item" data-type="twitter" style="width: 30%"></div>
+        <div class="meter-graph-item" data-type="instagram" style="width: 7%"></div>
       </div>
       <div class="meter-legend">
         <div class="meter-legend-item">

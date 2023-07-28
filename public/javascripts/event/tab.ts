@@ -7,8 +7,9 @@ function tab() {
   const tabElement = document.querySelector<HTMLElement>('.js-tab')
   if (!tabElement) return
 
-  const tabs = tabElement.querySelectorAll('[role=tab]')
-  const panels = tabElement.querySelectorAll('[role=tabpanel]')
+  // document.querySelector('test-tablist').shadowRoot.querySelector('button')
+  const tabs = tabElement!.shadowRoot!.querySelectorAll('[role=tab]')
+  const panels = tabElement!.shadowRoot!.querySelectorAll('[role=tabpanel]')
 
   let selectedTabIndex = 0
   let selectedTab = tabs[selectedTabIndex] as HTMLElement

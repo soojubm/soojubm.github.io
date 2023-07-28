@@ -57,28 +57,30 @@
         <fieldset class="filter-fieldset" role="radiogroup">
           <legend class="filter-fieldset-legend">예약옵션</legend>
           <test-tile variant="elevated" size="small">
-            <test-menu-item labe="즉시 예약">
+            <test-menuitem labe="즉시 예약">
               <test-avatar slot="avatar">🦊</test-avatar>
               <test-switch slot="action"></test-switch>
-            </test-menu-item>
+            </test-menuitem>
           </test-tile>
           <small class="setting-item-helper">호스트 승인을 기다릴 필요 없이 예약할 수 있는 숙소</small>
         </fieldset>
 
-        <hr />
+        <test-separator></test-separator>
 
         <fieldset class="filter-fieldset" role="radiogroup">
           <legend class="filter-fieldset-legend">예산</legend>
-          <test-radio id="gender-man" name="gender" value="" label="50,000원 미만"> </test-radio>
-          <test-radio label="100,000원 미만"> </test-radio>
-          <test-radio label="150,000원 미만"> </test-radio>
+          <test-row direction="column">
+            <test-radio id="gender-man" name="gender" value="" label="50,000원 미만"> </test-radio>
+            <test-radio label="100,000원 미만"> </test-radio>
+            <test-radio label="150,000원 미만"> </test-radio>
+          </test-row>
           <br />
           <small>예를 들어 다음과 같습니다.</small>
           <test-tile size="small">
             <test-avatar></test-avatar>
           </test-tile>
         </fieldset>
-        <hr />
+        <test-separator></test-separator>
         <fieldset class="filter-fieldset" role="radiogroup">
           <legend class="filter-fieldset-legend">평수</legend>
           <test-row>
@@ -87,16 +89,18 @@
             <test-chip>30평</test-chip>
           </test-row>
         </fieldset>
-        <hr />
+        <test-separator></test-separator>
         <fieldset class="filter-fieldset" role="radiogroup">
           <legend class="filter-fieldset-legend">접근성 편의</legend>
           <p class="filter-fieldset-description">호스트가 제공하고 에어비앤비에서 검토한 정보입니다.</p>
-          <test-checkbox id="line03" value="" label="게스트 출입구에 계단이나 문턱 없음"> </test-checkbox>
-          <test-checkbox value="other" label="너비 81cm 이상의 게스트 출입구"> </test-checkbox>
-          <test-checkbox name="interest" value="other" label="휠체어 접근 가능 주차 공간"> </test-checkbox>
+          <test-row direction="column">
+            <test-checkbox id="line03" value="" label="게스트 출입구에 계단이나 문턱 없음"> </test-checkbox>
+            <test-checkbox value="other" label="너비 81cm 이상의 게스트 출입구"> </test-checkbox>
+            <test-checkbox name="interest" value="other" label="휠체어 접근 가능 주차 공간"> </test-checkbox>
+          </test-row>
         </fieldset>
 
-        <hr />
+        <test-separator></test-separator>
 
         <fieldset class="filter-fieldset" role="radiogroup">
           <legend class="filter-fieldset-legend">릴리스 채널</legend>
@@ -112,7 +116,7 @@
           </p>
         </fieldset>
 
-        <hr />
+        <test-separator></test-separator>
 
         <fieldset class="filter-fieldset" role="radiogroup">
           <legend class="filter-fieldset-legend">데스크톱에서 활성 상태가 아닌 경우...</legend>
@@ -144,39 +148,30 @@
     <p class="article-description">막연한 검색</p>
     <section class="component-example">
       <test-tile variant="elevated">
-        <div class="stack">
+        <test-row>
           <div class="dropdown">
-            <button class="chip js-toggle" aria-expanded="true">
-              <span class="chip-label" title="일행 당 인원 수">예약옵션</span>
-              <figure class="chip-icon material-symbols-outlined">arrow_drop_down</figure>
-            </button>
+            <test-chip lable="예약옵션" class="js-toggle" aria-expanded="true">
+              <figure slot="icon" class="chip-icon material-symbols-outlined">arrow_drop_down</figure>
+            </test-chip>
             <menu class="dropdown-menu" role="menu">
               <fieldset role="radiogroup">
                 <!-- <legend class="article-anatomy-title" style="margin-bottom:0;">radiogroup</legend> -->
-                <div class="radio">
-                  <input type="radio" id="gogo1" name="gogo" value="" />
-                  <label for="gogo1" title="">1~3명</label>
-                </div>
-                <div class="radio">
-                  <input type="radio" id="gogo2" name="gogo" value="" checked />
-                  <label for="gogo2" title="">3명 이상</label>
-                </div>
+                <test-radio label="1~3명"> </test-radio>
+                <test-radio label="3명 이상"> </test-radio>
               </fieldset>
               <footer style="margin: var(--space-2) 0 0 0">
                 <!-- <button>옵션 초기화</button> -->
-                <button class="chip" style="width: 100%"><span class="chip-label">적용 / 24개 상품 보기 (airbnb)</span></button>
+                <test-chip style="width: 100%">적용 / 24개 상품 보기 (airbnb)</test-chip>
               </footer>
             </menu>
           </div>
-          <button class="chip js-toggle" aria-expanded="true">
-            <span class="chip-label">예산</span>
-            <figure class="chip-icon material-symbols-outlined">arrow_drop_down</figure>
-          </button>
-          <button class="chip js-toggle" aria-expanded="true">
-            <span class="chip-label">접근성 편의</span>
-            <figure class="chip-icon material-symbols-outlined">arrow_drop_down</figure>
-          </button>
-        </div>
+          <test-chip label="예산" class="js-toggle" aria-expanded="true">
+            <figure slot="icon" class="material-symbols-outlined">arrow_drop_down</figure>
+          </test-chip>
+          <test-chip label="접근성 편의" class="js-toggle" aria-expanded="true">
+            <figure slot="icon" class="material-symbols-outlined">arrow_drop_down</figure>
+          </test-chip>
+        </test-row>
       </test-tile>
     </section>
 

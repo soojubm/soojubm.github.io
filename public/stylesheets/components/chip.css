@@ -1,3 +1,12 @@
+.chip-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+}
+/* 롤 그룹으로 대체? */
+[role="group"] {}
+
 @define-mixin chip {
   display: flex;
   align-items: center;
@@ -11,7 +20,7 @@
   position: relative;
 
   @media (hover) and (pointer: fine) {
-    &:hover {box-shadow:var(--state-hover);}
+    &:hover {box-shadow:var(--status-hover);}
   }
   &:disabled {border-color:transparent;}
   &.is-active {
@@ -65,6 +74,15 @@ em {
 
   /* reset */
   font-family: var(--font-family);
+
+  --chip-height: 0;
+  --chip-inset: null;
+  --chip-radius: 0;
+
+}
+.chip:hover {
+  box-shadow:var(--status-hover);
+  cursor: pointer;
 }
 
 .chip-icon {width:var(--size-medium);
@@ -76,15 +94,14 @@ em {
   border-radius: var(--radius);
   font-size: 14px;
 }
-.chip-remove:hover {box-shadow:var(--state-hover);}
+.chip-remove:hover {box-shadow:var(--status-hover);}
 .chip-label {
-  padding:1px var(--space-3) var(--adjust-label-line);
+  padding:0 var(--space-3) var(--adjust-label-line);
   color:inherit;}
-.chip-value {color:var(--color-primary);}
 
-/*
-.chip-remove {@mixin avatar-container;cursor:pointer;} */
-.chip-remove:hover {box-shadow:var(--state-hover);}
+.chip-name {margin:0 0 0 var(--space-3);font-weight:var(--font-weight-normal);color:var(--color-text-light);}
+.chip-name:after {content:': ';}
+.chip-remove:hover {box-shadow:var(--status-hover);}
 .is-active .chip-icon {background:inherit;color:inherit;}
 
 .chip:disabled {opacity:.5;cursor:not-allowed;}
@@ -99,6 +116,26 @@ em {
 .chip[aria-pressed] {}
 .chip[aria-haspopup] {}
 
+.chip[data-variant=destructive] {
+  background-color: var(--red100);
+  color: var(--red800);
+}
+
+::slotted([slot=icon]) {
+  display:flex !important;
+  align-items: center;
+  justify-content: center;
+  width:var(--size-medium);
+  background-image: none;
+
+  /* margin-right: -.5rem; */
+}
+
+::slotted([slot=badge]) {
+  display: flex;
+  margin: 0 .75rem 0 -.25rem;
+}
+
 // .chip[aria-expanded=true] {
 //   background-image: url(
 //     'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48"><path d="M480 696 280 497h400L480 696Z"/></svg>');
@@ -111,7 +148,7 @@ em {
 /* @define-mixin chip {
 
   @media (hover) and (pointer: fine) {
-    &:hover {box-shadow:var(--state-hover);}
+    &:hover {box-shadow:var(--status-hover);}
   }
   
   &.is-active {

@@ -24,7 +24,7 @@
   position: relative;
 
   &:hover:not(:disabled), &.is-hover:not(:disabled) {
-    box-shadow: var(--state-hover);
+    box-shadow: var(--status-hover);
   }
   &:focus, &.is-focus {
     outline: 0;
@@ -62,7 +62,7 @@
   box-sizing: border-box;
   font-weight: var(--button-font-weight);
 
-  text-transform: uppercase;
+  text-transform: capitalize;
   /* position: relative; */
 
   /* // reset */
@@ -90,7 +90,7 @@
   border:1px solid transparent;
   color:var(--color-primary);
 }
-.button[data-variant=danger] {
+.button[data-variant=destructive] {
   background:var(--red800);
   border:1px solid var(--red800);
   color:var(--gray0);
@@ -99,10 +99,13 @@
   height: 64px;
   font-size: var(--font-size-large);
 }
+.button[data-isfullwidth] {
+  width: 100%;
+}
 
 
 .button:hover, .button[data-status=hover] {
-  box-shadow: var(--state-hover);
+  box-shadow: var(--status-hover);
 }
 .button:focus, .button[data-status=focus] {
   outline: 0;

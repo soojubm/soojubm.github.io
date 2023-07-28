@@ -1,82 +1,200 @@
 <main class="component">
+  <!-- 아이콘버튼은 아바타가 아니라 칩/버튼 액션이다. -->
+
   <article class="article js-observer js-scrollspy-section">
     <test-text variant="title">Chips</test-text>
     <p class="article-description">사용자 여정을 보조하는 액션입니다. 실행 페이지 내에서 사용자는 즉각적인 결과를 기대할 수 있습니다.</p>
-
-    <test-row class="article-aka" style="margin: 0">
-      <test-tag>a.k.a.</test-tag>
-      <span class="hashtag" title="">Tag</span>
-      <span class="hashtag" title="">Pill</span>
-      <span class="hashtag" title="">Badge</span>
-      <span class="hashtag" title="gitlab">Token</span>
-      <span class="hashtag" title="">Label</span>
-    </test-row>
+    <dl class="article-aka" style="margin: 0">
+      <dt>a.k.a.</dt>
+      <dd>Tag</dd>
+      <dd>Pill</dd>
+      <dd>Badge</dd>
+      <dd>Token</dd>
+      <dd>Label</dd>
+    </dl>
 
     <section class="component-example">
-      <test-row>
-        <test-tile>
-          <test-row>
-            <test-chip label="default"></test-chip>
-            <test-chip label="active" status="active"></test-chip>
-            <test-chip label="disabled" status="disabled"> style="opacity: 0.5; cursor: not-allowed" disabled</test-chip>
-            <test-chip label="destructive"> background: var(--red100) / color: var(--red800)</test-chip>
-          </test-row>
-        </test-tile>
-        <test-tile>
-          <test-row>
-            <test-chip icon="❤️" label="좋아요" value="117"></test-chip>
-            <test-chip label="removable"></test-chip>
-            <test-chip icon="🦔" label="with icon"></test-chip>
-            <test-chip icon="✓" label="checkable" status="active"></test-chip>
-            <test-chip label="expandable" aria-expanded="true"></test-chip>
-          </test-row>
-        </test-tile>
-        <test-tile>
-          <test-row>
-            <!-- 아이콘버튼은 아바타가 아니라 칩/버튼 액션이다. -->
-            <test-chip>
-              <span class="material-symbols-outlined">close</span>
-            </test-chip>
-            <test-chip>
-              <span class="material-symbols-outlined">close</span>
-            </test-chip>
-          </test-row>
-        </test-tile>
-      </test-row>
-      <article class="component-props">
-        <test-text variant="subhead">Props</test-text>
-        <dl>
-          <dt>name</dt>
-          <dd>string</dd>
-          <dd></dd>
-          <dt>label</dt>
-          <dd>string</dd>
-          <dd>하나의 단어 또는 복합명사</dd>
-          <dt>isChecked<attr>?</attr></dt>
-          <dd>boolean</dd>
-          <dd>with ariaSelected. toggle or single active. 링크로 쓰지 않는다.</dd>
-          <dt>onClick</dt>
-          <dd>() => void</dd>
-          <dd>TODO checked 의존</dd>
-          <dt>onRemoveClick<attr>?</attr></dt>
-          <dd>() => void</dd>
-          <dd>TODO 합성 컴포넌트를 만드는 게 좋다. isRemovable과 통합</dd>
-          <dt>aria???</dt>
-          <dd>'checked' | 'expanded' | 'selected' | 'pressed'</dd>
-          <dd>TODO onRemoveClick와 설명과 같은 맥락</dd>
-        </dl>
-      </article>
+      <test-chip-group>
+        <test-chip label="default"></test-chip>
+        <test-chip label="active" status="active"></test-chip>
+        <test-chip label="disabled" status="disabled"> style="opacity: 0.5; cursor: not-allowed" disabled</test-chip>
+        <test-chip label="destructive" status="destructive"> background: var(--red100) / color: var(--red800)</test-chip>
+      </test-chip-group>
+      <br />
+      <test-chip-group>
+        <test-chip label="with icon">
+          <i slot="icon">🦔</i>
+        </test-chip>
+        <test-chip icon="" label="좋아요" value="117">
+          <i slot="icon">❤️</i>
+          <test-badge slot="badge">11</test-badge>
+        </test-chip>
+        <test-chip label="checkable" size="small" status="active">
+          <test-icon slot="icon" name="check"></test-icon>
+        </test-chip>
+        <test-chip label="removable">
+          <test-icon slot="badge" name="remove-square"></test-icon>
+        </test-chip>
+        <test-chip label="expandable" aria-expanded="true">
+          <test-icon slot="badge" name="nav-arrow-down"></test-icon>
+        </test-chip>
+      </test-chip-group>
+      <br />
+      <!-- <test-chip-group>
+        <test-chip>
+        </test-chip>
+        <test-chip>
+        </test-chip>
+      </test-chip-group>
+      <br /> -->
+      <test-chip-group>
+        <test-chip name="Filter" label="Created by anyone">
+          <test-icon slot="badge" name="nav-arrow-down"></test-icon>
+        </test-chip>
+        <!-- <test-chip name="Sort" label="Last modified">
+          <test-badge slot="badge">
+            <test-icon slot="icon" name="nav-arrow-down"></test-icon>
+          </test-badge>
+        </test-chip> -->
+      </test-chip-group>
+      <br />
+      <test-tile variant="elevated">
+        <test-chip-group>
+          <test-checkbox>28 selected</test-checkbox>
+          <test-chip style="margin-left: auto">
+            <test-icon slot="icon" name="bonfire"></test-icon>
+          </test-chip>
+          <test-chip>
+            <test-icon slot="icon" name="more-horiz"></test-icon>
+          </test-chip>
+        </test-chip-group>
+      </test-tile>
     </section>
 
-    <!-- <test-text variant="subhead">Best practices</test-text> -->
-    <test-text variant="body-large" class="article-kicker">
-      <b>groupable</b> 맥락이 다른 chip을 그룹으로 제공할 수 있습니다. 이 때 단일선택, 다중선택, 삭제여부, 펼침메뉴 등의 기표를 충분히 제공하세요.
-    </test-text>
+    <article class="component-props">
+      <test-text variant="subhead">Props</test-text>
+      <dl>
+        <dt>name</dt>
+        <dd>string</dd>
+        <dd></dd>
+        <dt>label</dt>
+        <dd>string</dd>
+        <dd>하나의 단어 또는 복합명사</dd>
+        <dt>isChecked<attr>?</attr></dt>
+        <dd>boolean</dd>
+        <dd>with ariaSelected. toggle or single active. 링크로 쓰지 않는다.</dd>
+        <dt>onClick</dt>
+        <dd>() => void</dd>
+        <dd>TODO checked 의존</dd>
+        <dt>onRemoveClick<attr>?</attr></dt>
+        <dd>() => void</dd>
+        <dd>TODO 합성 컴포넌트를 만드는 게 좋다. isRemovable과 통합</dd>
+        <dt>aria???</dt>
+        <dd>'checked' | 'expanded' | 'selected' | 'pressed'</dd>
+        <dd>TODO onRemoveClick와 설명과 같은 맥락</dd>
+      </dl>
+    </article>
 
-    <test-text variant="body-large" class="article-kicker">
-      데이터 목록의 재정렬을 위한 옵션 목록을 group으로 제공하지 마세요. 현재 정렬 상태만 요약 표기하고 확장가능한 메뉴로 정렬 목록을 제공하세요. (bad
-      case: 2022.04 구글 지도 바뀐 것)
-    </test-text>
+    <!-- <test-text variant="subhead">Best practices</test-text> -->
+    <section class="component-guide">
+      <test-text variant="subhead">Groupable</test-text>
+      <test-text variant="body" class="article-p">
+        맥락이 다른 chip을 그룹으로 제공할 수 있습니다. 이 때 단일선택, 다중선택, 삭제여부, 펼침메뉴 등의 기표를 충분히 제공하세요.
+      </test-text>
+      <p>
+        데이터 목록의 재정렬을 위한 옵션 목록을 group으로 제공하지 마세요. 현재 정렬 상태만 요약 표기하고 확장가능한 메뉴로 정렬 목록을 제공하세요.
+        (bad case: 2022.04 구글 지도 바뀐 것)
+      </p>
+      <br />
+      <test-text variant="body">action - keyword search</test-text>
+      <test-tile>
+        <test-row class="keywords-group">
+          <test-chip label="로얄테넌바움"></test-chip>
+          <test-chip label="소매치기"></test-chip>
+          <test-chip label="이탈리아여행"></test-chip>
+          <test-chip label="아파트열쇠를빌려드립니다"></test-chip>
+        </test-row>
+      </test-tile>
+      <br />
+      <test-text variant="body">single selection - Contents filtering</test-text>
+      <test-tile>
+        <test-row>
+          <test-chip label="전체" status="active" class="js-toggle is-active"></test-chip>
+          <test-chip label="결제완료" class="js-toggle"></test-chip>
+        </test-row>
+      </test-tile>
+      <br />
+      <test-text variant="body">multiple selections with check / hip group selected=[], chip value=""</test-text>
+      <test-tile>
+        <test-row aria-multiselectable="true">
+          <test-chip role="option" aria-selected="true" label="소설">
+            <span slot="icon" class="material-symbols-outlined"></span>
+          </test-chip>
+          <test-chip role="option" aria-selected="false" label="영화">
+            <span slot="icon" class="material-symbols-outlined"></span>
+          </test-chip>
+          <test-chip label="타이포그래피" role="option" aria-selected="false"></test-chip>
+        </test-row>
+      </test-tile>
+
+      <br /><br />
+      <test-text variant="subhead">Expandable / aria-expanded :: dropdown with icon</test-text>
+      <test-tile>
+        <test-row>
+          <div class="dropdown">
+            <test-chip label="필터" class="js-toggle" aria-expanded="true">
+              <figure class="material-symbols-outlined">arrow_drop_down</figure>
+            </test-chip>
+            <test-tile variant="elevated" size="small">
+              <test-menu-group class="dropdown-menu">
+                <test-radio name="gogo" value="">1~3명</test-radio>
+                <test-radio name="gogo" value="">1~3명</test-radio>
+                <test-chip label="적용"></test-chip>
+              </test-menu-group>
+            </test-tile>
+          </div>
+          <div class="dropdown">
+            <test-chip aria-expanded="true">
+              <span class="chip-label">정렬</span>
+              <figure class="chip-icon material-symbols-outlined">arrow_drop_down</figure>
+            </test-chip>
+            <test-tile variant="elevated">
+              <test-menu-group class="dropdown-menu">
+                <h6 class="dropdown-menu-title" hidden>Dropdown header</h6>
+                <test-menuitem label="최신순" disabled>
+                  <test-icon icon="" name=""></test-icon>
+                </test-menuitem>
+                <test-menuitem label="인기순">
+                  <test-icon icon="" name=""></test-icon>
+                </test-menuitem>
+              </test-menu-group>
+            </test-tile>
+          </div>
+          <div class="dropdown">
+            <test-chip aria-label="more_vert" aria-haspopup="menu" aria-expanded="false">
+              <span class="material-symbols-outlined">more_vert</span>
+            </test-chip>
+            <test-tile variant="elevated">
+              <test-menu-group class="dropdown-menu">
+                <test-menuitem label="신고"></test-menuitem>
+                <test-separator></test-separator>
+                <!-- TODO <hr class="dropdown-menu-divider" style="margin: 0.5rem 0" /> -->
+                <test-menuitem label="수정"></test-menuitem>
+                <test-menuitem label="삭제"></test-menuitem>
+              </test-menu-group>
+            </test-tile>
+          </div>
+        </test-row>
+      </test-tile>
+      <test-text variant="body" class="article-p"
+        >Filtering / Sorting / More. position setting. 글자수 제한. 모달로 열릴 수 있어서, 드롭다운은 제거함. dropdown/overflow/pulldown. sorting
+        contents</test-text
+      >
+
+      <br /><br />
+      <test-text variant="subhead">Removable</test-text>
+      <test-text variant="body" class="article-p"> 이거 필요한가? 칩 말고 다른 형태로 하고 싶다. </test-text>
+    </section>
     <!-- <li>changelog. dropdown을 칩과 분리. 이 디자인 시스템에서는 같은 형태를 사용하지만 배경색을 뺀 형태 케이스 고려해보기.</li> -->
     <!-- <li>changelog. icon button은 clickable이기 때문에 아바타가 아니라 칩을 mixin. 2개의 사이즈로 확장. => chip container style</li> -->
 
@@ -84,144 +202,55 @@
     <!-- Markup(button vs radio,checkbox) -->
     <!-- <p>안드로이드: chipGroup, HorizontalScrollView, singleLine, action/entry/filter(check active)/choice</p> -->
 
-    <!-- 
-      <p>MD 기준.</p>
-      <ul>
-        <li>Input - removable</li>
-        <li>Choice</li>
-        <li>Filter with check icon</li>
-        <li>Action with icon</li>
-      </ul> -->
+    <p>MD 기준.</p>
+    <ul>
+      <li>Input - removable</li>
+      <li>Choice</li>
+      <li>Filter with check icon</li>
+      <li>Action with icon</li>
+    </ul>
 
-    <test-tile>
-      <test-text variant="subhead">actionable chip<br />Keywords search</test-text>
-      <test-row class="keywords-group">
-        <test-chip label="로얄테넌바움"></test-chip>
-        <test-chip label="소매치기"></test-chip>
-        <test-chip label="이탈리아여행"></test-chip>
-        <test-chip label="아파트열쇠를빌려드립니다"></test-chip>
-      </test-row>
-    </test-tile>
-    <!-- <p>
-        단일 칩으로 존재하지 않는다. 콘텐츠 필터링을 위한 칩 그룹에서, 액티브 상태에 브랜드 컬러를 쓰지 않는 경향. 콘텐츠 탐색이 cta. 눈에 띄지 않는
-        무채색 활용이 높아짐.
-      </p> -->
-    <test-tile>
-      <test-text variant="subhead" style="margin-top: 0">checkable chip<br />single selection - Contents filtering</test-text>
-      <test-row>
-        <test-chip label="전체" class="js-toggle is-active"></test-chip>
-        <test-chip label="결제완료" class="js-toggle"></test-chip>
-      </test-row>
-    </test-tile>
-    <test-tile>
-      <test-text variant="subhead" style="margin-top: 0">multiple selections with check</test-text>
-      <test-row aria-multiselectable="true">
-        <test-chip role="option" aria-selected="true" label="소설">
-          <figure class="chip-icon">
-            <span class="material-symbols-outlined">check</span>
-          </figure>
-        </test-chip>
-        <test-chip role="option" aria-selected="false" label="영화">
-          <figure class="chip-icon">
-            <span class="material-symbols-outlined">check</span>
-          </figure>
-        </test-chip>
-        <test-chip label="타이포그래피" role="option" aria-selected="false"></test-chip>
-      </test-row>
-    </test-tile>
-
-    <!-- <p>글자수 제한. 모달로 열릴 수 있어서, 드롭다운은 제거함. dropdown/overflow/pulldown. sorting contents</p> -->
-    <test-tile>
-      <test-text variant="subhead" style="margin-top: 0">Expandable chip<br />Filtering / Sorting / More<br />position setting</test-text>
-      <test-row>
-        <div class="dropdown">
-          <test-chip class="chip js-toggle" aria-expanded="true">
-            <span class="chip-label" title="일행 당 인원 수">필터</span>
-            <figure class="chip-icon material-symbols-outlined">arrow_drop_down</figure>
-          </test-chip>
-          <menu class="dropdown-menu" role="menu">
-            <!-- role="menuitem" -->
-            <test-radio id="gogo1" name="gogo" value="">1~3명</test-radio>
-            <test-radio id="gogo1" name="gogo" value="">1~3명</test-radio>
-            <footer style="margin: var(--space-2) 0 0 0">
-              <button class="chip"><span class="chip-label">적용</span></button>
-            </footer>
-          </menu>
-        </div>
-        <div class="dropdown">
-          <test-chip aria-expanded="true">
-            <span class="chip-label">정렬</span>
-            <figure class="chip-icon material-symbols-outlined">arrow_drop_down</figure>
-          </test-chip>
-          <menu class="dropdown-menu" role="menu">
-            <h6 class="dropdown-menu-title" hidden>Dropdown header</h6>
-            <a
-              class="dropdown-menu-item"
-              role="menuitem"
-              href="#"
-              disabled
-              style="display: flex; justify-content: space-between; align-items: center"
-            >
-              최신순
-              <span class="material-symbols-outlined">check</span>
-            </a>
-            <a class="dropdown-menu-item" role="menuitem" href="#">최신순</a>
-          </menu>
-        </div>
-        <div class="dropdown">
-          <test-chip aria-label="" aria-haspopup="menu" aria-expanded="false">
-            <span class="material-symbols-outlined">more_vert</span>
-          </test-chip>
-          <menu class="dropdown-menu">
-            <a class="dropdown-menu-item" href="#componets">신고</a>
-            <hr class="dropdown-menu-divider" style="margin: 0.5rem 0" />
-            <a class="dropdown-menu-item" href="#componets">수정</a>
-            <a class="dropdown-menu-item" href="#componets">삭제</a>
-          </menu>
-        </div>
-      </test-row>
-      <style>
-        [role='cell'] {
-          width: 25%;
-          padding: var(--space-3);
-        }
-      </style>
-      <div
-        role="row"
-        style="
-          display: flex;
-          margin: var(--space-3) 0 0 0;
-          font-size: var(--font-size-small);
-          font-weight: var(--font-weight-bold);
-          color: var(--color-text-light);
-        "
-      >
-        <span role="cell" style="flex: auto">이름</span>
-        <span role="cell" style="flex: auto">소유자</span>
-        <span role="cell" style="flex: auto">마지막으로 수정한 날짜</span>
-        <span role="cell" style="flex: auto">파일 크기</span>
-      </div>
-      <div class="" role="row" style="display: flex; border-top: var(--border)">
-        <span role="cell" style="flex: auto">이름</span>
-        <span role="cell" style="flex: auto">소유자</span>
-        <span role="cell" style="flex: auto">2023. 05. 05</span>
-        <span role="cell" style="flex: auto">2KB</span>
-      </div>
-    </test-tile>
-
-    <div class="component-references">
-      <test-text variant="subhead">References</test-text>
-      <a href="https://material.io/components/menus" target="_blank" style="display: block">MD menu</a>
-      <span class="icon-bullet"></span>
-      <a href="https://developer.apple.com/design/human-interface-guidelines/components/menus-and-actions/pull-down-buttons">pull down button</a>
-      <span class="icon-bullet"></span>
-      <a href="https://developer.apple.com/design/human-interface-guidelines/ios/controls/pull-down-menus/" target="_blank" style="display: block"
-        >HIG pull down menu</a
-      >
-      <span class="icon-bullet"></span>
-      <a href="https://developer.android.com/reference/com/google/android/material/chip/ChipGroup" target="_blank"> MD chip group </a>
+    <style>
+      [role='cell'] {
+        width: 25%;
+        padding: var(--space-3);
+      }
+    </style>
+    <div
+      role="row"
+      style="
+        display: flex;
+        margin: var(--space-3) 0 0 0;
+        font-size: var(--font-size-small);
+        font-weight: var(--font-weight-bold);
+        color: var(--color-text-light);
+      "
+    >
+      <span role="cell" style="flex: auto">이름</span>
+      <span role="cell" style="flex: auto">소유자</span>
+      <span role="cell" style="flex: auto">마지막으로 수정한 날짜</span>
+      <span role="cell" style="flex: auto">파일 크기</span>
+    </div>
+    <div class="" role="row" style="display: flex; border-top: var(--border)">
+      <span role="cell" style="flex: auto">이름</span>
+      <span role="cell" style="flex: auto">소유자</span>
+      <span role="cell" style="flex: auto">2023. 05. 05</span>
+      <span role="cell" style="flex: auto">2KB</span>
     </div>
 
-    <p>todo aria-expanded :: dropdown with icon</p>
+    <test-row class="component-references">
+      <test-text variant="label">References</test-text>
+      <test-link href="https://material.io/components/menus" target="_blank" style="display: block">MD menu</test-link>
+      <!-- <span class="icon-bullet"></span> -->
+      <test-link href="https://developer.apple.com/design/human-interface-guidelines/components/menus-and-actions/pull-down-buttons">
+        pull down button</test-link
+      >
+      <!-- <span class="icon-bullet"></span> -->
+      <test-link href="https://developer.apple.com/design/human-interface-guidelines/ios/controls/pull-down-menus/" target="_blank">
+        HIG pull down menu
+      </test-link>
+      <!-- <span class="icon-bullet"></span> -->
+      <test-link href="https://developer.android.com/reference/com/google/android/material/chip/ChipGroup" target="_blank"> MD chip group </test-link>
+    </test-row>
   </article>
 </main>

@@ -4,88 +4,198 @@
     <p class="article-description">옵션 목록에서 하나 이상의 옵션을 선택합니다.</p>
     <section class="component-example">
       <!-- a11y checkgroup not valid -->
-      <test-tile>
-        <!-- <legend">checkgroup</legend> -->
-        <test-checkbox name="checkbox" checked>비활성 체크박스에요</test-checkbox>
+      <!-- <legend">checkgroup</legend> -->
+      <!-- TODO test-checkbox-group -->
+      <test-row>
+        <test-checkbox size="large" checked></test-checkbox>
+        <test-checkbox checked></test-checkbox>
+      </test-row>
+      <test-separator></test-separator>
+      <test-row direction="column">
+        <test-checkbox name="checkbox" value="value" checked>체크박스</test-checkbox>
         <test-checkbox
           name="checkbox"
           label="이용약관에 동의합니다."
           helper="주로 세팅 페이지에서 사용되는 디스크립션 영역."
           disabled
         ></test-checkbox>
-        <test-checkbox class="js-check" type="checkbox" id="terms" name="terms">
-          <a href="" style="text-decoration: underline">이용약관</a>에 동의합니다.
-        </test-checkbox>
+        <test-checkbox class="js-check" type="checkbox" id="terms" name="terms"> <a href="">이용약관</a>에 동의합니다. </test-checkbox>
         <test-checkbox class="js-check" type="checkbox" id="other" name="interest">
           기타
           <input type="text" name="other-more" class="textfield-input" placeholder="기타로 오토바이를 타자." hidden />
         </test-checkbox>
-      </test-tile>
-      <test-tile>
-        <test-checkbox></test-checkbox>
-        <test-checkbox size="large"></test-checkbox>
-      </test-tile>
+      </test-row>
 
-      <article class="component-props">
-        <test-text variant="subhead">Props</test-text>
-        <dl>
-          <dt>name</dt>
-          <dd>string</dd>
-          <dd>id={props.name}</dd>
-          <dt>label? - labelHidden</dt>
-          <dd>string</dd>
-          <dd>동사를 포함하는 최대 2단어. choice보다 action에 가깝다.</dd>
-          <dt>value</dt>
-          <dd>string</dd>
-          <dt>isChecked<attr>?</attr></dt>
-          <dd>boolean</dd>
-          <dt>isDisabled<attr>?</attr></dt>
-          <dd>boolean</dd>
-          <dd></dd>
-          <dt>isIndeterminated<attr>?</attr></dt>
-          <dd>boolean</dd>
-          <dd>TODO checkbox group에서 checkboxAll에 종속되는 옵션</dd>
-          <dt>onChange</dt>
-          <dd>(event: React.FormEvent[HTMLInputElement]) =] void</dd>
-          <dd>React.ChangeEventHandler[] / @types/react</dd>
-        </dl>
-      </article>
+      <div class="checkbox-new">
+        <input type="checkbox" />
+        <span></span>
+        <label for="">Web component</label>
+      </div>
     </section>
 
-    <test-text variant="body-large" class="article-kicker">
-      <b>default value</b>
-      선택되지 않은 상태로 제공하여 사용자가 옵션을... todo
-    </test-text>
+    <style>
+      .checkbox-new {
+        display: flex;
+        align-items: center;
+        position: relative;
 
-    <!-- <div class="checkbox tile-flat-small" data-size="large">
-      <input
-        class="js-checkall"
-        type="checkbox"
-        id="line00"
-        value=""
-        aira-checked="mixed"
-        aria-controls="1 2"
-        data-indeterminate="true"
-        indeterminate
-      />
-      <label for="line00" title="Check All"><em>모두 동의합니다</em></label>
-    </div>
-    <div class="checkbox">
-      <input class="js-check" type="checkbox" id="other" name="interest" value="other" />
-      <label for="other">기타</label>
-    </div>
-    <div class="checkbox">
-      <input class="js-check" type="checkbox" id="other" name="interest" value="other" />
-      <label for="other">기타</label>
-    </div> -->
+        --spectrum-checkbox-content-color-default: var(--spectrum-neutral-content-color-default);
+        --spectrum-checkbox-content-color-hover: var(--spectrum-neutral-content-color-hover);
+        --spectrum-checkbox-content-color-down: var(--spectrum-neutral-content-color-down);
+        --spectrum-checkbox-content-color-focus: var(--spectrum-neutral-content-color-key-focus);
+        --spectrum-checkbox-focus-indicator-color: var(--spectrum-focus-indicator-color);
+        --spectrum-checkbox-content-color-disabled: var(--spectrum-disabled-content-color);
+        --spectrum-checkbox-control-color-disabled: var(--spectrum-gray-400);
+        --spectrum-checkbox-checkmark-color: var(--spectrum-gray-75);
+        --spectrum-checkbox-invalid-color-default: var(--spectrum-negative-color-900);
+        --spectrum-checkbox-invalid-color-hover: var(--spectrum-negative-color-1000);
+        --spectrum-checkbox-invalid-color-down: var(--spectrum-negative-color-1100);
+        --spectrum-checkbox-invalid-color-focus: var(--spectrum-negative-color-1000);
+        --spectrum-checkbox-emphasized-color-default: var(--spectrum-accent-color-900);
+        --spectrum-checkbox-emphasized-color-hover: var(--spectrum-accent-color-1000);
+        --spectrum-checkbox-emphasized-color-down: var(--spectrum-accent-color-1100);
+        --spectrum-checkbox-emphasized-color-focus: var(--spectrum-accent-color-1000);
+        --spectrum-checkbox-font-size: var(--spectrum-font-size-100);
+        --spectrum-checkbox-line-height: var(--spectrum-line-height-100);
+        --spectrum-checkbox-line-height-cjk: var(--spectrum-cjk-line-height-100);
+        --spectrum-checkbox-height: var(--spectrum-component-height-100);
+        --spectrum-checkbox-control-size: var(--spectrum-checkbox-control-size-medium);
+        --spectrum-checkbox-control-corner-radius: var(--spectrum-corner-radius-75);
+        --spectrum-checkbox-focus-indicator-gap: var(--spectrum-focus-indicator-gap);
+        --spectrum-checkbox-focus-indicator-thickness: var(--spectrum-focus-indicator-thickness);
+        --spectrum-checkbox-border-width: var(--spectrum-border-width-200);
+        --spectrum-checkbox-selected-border-width: calc(var(--spectrum-checkbox-control-size) / 2);
+        --spectrum-checkbox-top-to-text: var(--spectrum-component-top-to-text-100);
+        --spectrum-checkbox-text-to-control: var(--spectrum-text-to-control-100);
+        --spectrum-checkbox-animation-duration: var(--spectrum-animation-duration-100);
 
-    <test-tile>
-      <test-text variant="subhead" style="margin-top: 0">CheckboxGroup<br />약관동의Terms and conditions</test-text>
-    </test-tile>
-    <test-tile>
-      <test-text variant="subhead" style="margin-top: 0">SingleCheckbox</test-text>
+        --spectrum-checkbox-control-color-default: var(--system-spectrum-checkbox-control-color-default);
+        --spectrum-checkbox-control-color-hover: var(--system-spectrum-checkbox-control-color-hover);
+        --spectrum-checkbox-control-color-down: var(--system-spectrum-checkbox-control-color-down);
+        --spectrum-checkbox-control-color-focus: var(--system-spectrum-checkbox-control-color-focus);
+        --spectrum-checkbox-control-selected-color-default: var(--system-spectrum-checkbox-control-selected-color-default);
+        --spectrum-checkbox-control-selected-color-hover: var(--system-spectrum-checkbox-control-selected-color-hover);
+        --spectrum-checkbox-control-selected-color-down: var(--system-spectrum-checkbox-control-selected-color-down);
+      }
+      .checkbox-new input {
+        block-size: 100%;
+        box-sizing: border-box;
+        color: var(--mod-checkbox-control-color-default, var(--spectrum-checkbox-control-color-default));
+        cursor: pointer;
+        font-family: inherit;
+        font-size: 100%;
+        inline-size: 100%;
+        line-height: 1.15;
+        margin: 0px;
+        opacity: 0.0001;
+        overflow: visible;
+        padding: 0px;
+        position: absolute;
+        z-index: 1;
+      }
+      .checkbox-new span {
+        --spectrum-checkbox-spacing: calc(
+          var(--mod-checkbox-height, var(--spectrum-checkbox-height)) - var(--mod-checkbox-control-size, var(--spectrum-checkbox-control-size))
+        );
+        align-items: center;
+        block-size: var(--mod-checkbox-control-size, var(--spectrum-checkbox-control-size));
+        box-sizing: border-box;
+        display: flex;
+        flex-grow: 0;
+        flex-shrink: 0;
+        inline-size: var(--mod-checkbox-control-size, var(--spectrum-checkbox-control-size));
+        justify-content: center;
+        margin: calc(var(--mod-checkbox-spacing, var(--spectrum-checkbox-spacing)) / 2) 0;
+        position: relative;
+
+        /*  */
+        width: 16px;
+        height: 16px;
+        margin: 0;
+      }
+      .checkbox-new span:before {
+        border-color: var(
+          --highcontrast-checkbox-color-default,
+          var(--mod-checkbox-control-color-default, var(--spectrum-checkbox-control-color-default))
+        );
+        border-radius: var(--mod-checkbox-control-corner-radius, var(--spectrum-checkbox-control-corner-radius));
+        border-style: solid;
+        border-width: var(--mod-checkbox-border-width, var(--spectrum-checkbox-border-width));
+        box-sizing: border-box;
+
+        content: '';
+        display: block;
+        forced-color-adjust: none;
+        position: absolute;
+        transition: border var(--mod-checkbox-animation-duration, var(--spectrum-checkbox-animation-duration)) ease-in-out,
+          box-shadow var(--mod-checkbox-animation-duration, var(--spectrum-checkbox-animation-duration)) ease-in-out;
+        width: var(--mod-checkbox-control-size, var(--spectrum-checkbox-control-size));
+        height: var(--mod-checkbox-control-size, var(--spectrum-checkbox-control-size));
+        z-index: 0;
+
+        /*  */
+        width: 16px;
+        height: 16px;
+      }
+      .checkbox-new label {
+        font-size: var(--mod-checkbox-font-size, var(--spectrum-checkbox-font-size));
+        line-height: var(--mod-checkbox-line-height, var(--spectrum-checkbox-line-height));
+        margin-block-start: var(--mod-checkbox-top-to-text, var(--spectrum-checkbox-top-to-text));
+        margin-inline-start: var(--mod-checkbox-text-to-control, var(--spectrum-checkbox-text-to-control));
+        text-align: start;
+        transition: color var(--mod-checkbox-animation-duration, var(--spectrum-checkbox-animation-duration)) ease-in-out;
+
+        /*  */
+        margin-left: 0.5rem;
+        line-height: 16px;
+      }
+    </style>
+
+    <article class="component-props">
+      <!-- <test-text variant="subhead" hidden>Props</test-text> -->
+      <dl>
+        <dt>name</dt>
+        <dd>string</dd>
+        <dd>id={props.name}</dd>
+        <dt>label? - labelHidden</dt>
+        <dd>string</dd>
+        <dd>동사를 포함하는 최대 2단어. choice보다 action에 가깝다.</dd>
+        <dt>value</dt>
+        <dd>string</dd>
+        <dd></dd>
+        <dt>isChecked<attr>?</attr></dt>
+        <dd>boolean</dd>
+        <dd></dd>
+        <dt>isDisabled<attr>?</attr></dt>
+        <dd>boolean</dd>
+        <dd></dd>
+        <dt>isIndeterminated<attr>?</attr></dt>
+        <dd>boolean</dd>
+        <dd>TODO checkbox group에서 checkboxAll에 종속되는 옵션</dd>
+        <dt>onChange</dt>
+        <dd>(event: React.FormEvent[HTMLInputElement]) =] void</dd>
+        <dd>React.ChangeEventHandler[] / @types/react</dd>
+      </dl>
+    </article>
+
+    <section class="component-guide">
+      <test-text variant="subhead">default value</test-text>
+      <test-text variant="body" class="article-p"> 선택되지 않은 상태로 제공하여 사용자가 옵션을... todo </test-text>
+    </section>
+
+    <test-row direction="column">
+      <test-text variant="subhead" style="margin-top: 0">Use cases - multiple checkboxes</test-text>
+      <test-tile variant="elevated">
+        <test-checkbox size="large" class="js-checkall" aira-checked="mixed" aria-controls="1 2" data-indeterminate="true" indeterminate>
+          <em style="font-style: normal; color: var(--color-primary); font-weight: var(--font-weight-bold)"> 모두 동의합니다</em>
+        </test-checkbox>
+      </test-tile>
+      <test-checkbox name="interest" value="other"> 기타 </test-checkbox>
+      <test-checkbox name="interest" value="other"> 기타 </test-checkbox>
+      <br />
+      <test-text variant="subhead" style="margin-top: 0">Use cases - single checkbox</test-text>
       <test-checkbox label="포토리뷰만 보기"></test-checkbox>
       <test-checkbox label="다시 묻지 않기 / 일주일 동안 보지 않기don't ask again"></test-checkbox>
-    </test-tile>
+    </test-row>
   </article>
 </main>

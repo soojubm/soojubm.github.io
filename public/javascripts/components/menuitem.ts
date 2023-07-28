@@ -5,8 +5,9 @@ const HOST_CLASS_NAME = null
 class MenuItem extends HTMLElement {
   constructor() {
     super()
-    const container = document.createElement('div')
-    const temp = document.createElement('slot')
+    // TODO a
+    const container = document.createElement('a')
+    const check = document.createElement('slot')
     const avatar = document.createElement('slot')
     const action = document.createElement('slot')
     const text = document.createElement('slot')
@@ -19,12 +20,15 @@ class MenuItem extends HTMLElement {
     container.classList.add('item')
     label.classList.add('item-label')
     description.classList.add('item-description')
+    check.classList.add('item-check')
     // action.classList.add('item-action')
 
-    temp.name = 'check'
+    check.name = 'check'
     avatar.name = 'avatar'
     action.name = 'action'
     text.name = 'text'
+
+    container.setAttribute('href', this.href || '#')
 
     description.innerText = this.description || ''
 
@@ -35,8 +39,8 @@ class MenuItem extends HTMLElement {
     // shadow.appendChild(avatar)
     // shadow.appendChild(button)
 
-    shadow.appendChild(container)
-    container.append(temp, avatar, text, label, description, action, makeStyleSheet('menuitem'))
+    shadow.append(container, makeStyleSheet('menuitem'))
+    container.append(check, avatar, text, label, description, action)
 
     // const template = this.getTemplate()
     // shadow.innerHTML = template
@@ -58,6 +62,10 @@ class MenuItem extends HTMLElement {
     //     }
     //   })
     // }
+  }
+
+  get href() {
+    return this.getAttribute('href')
   }
 
   get description() {

@@ -6,8 +6,7 @@
   color-scheme: light dark;
 
   /* // -apple-system === san-serif / system-ui === BlinkMacSystemFont */
-  --font-family: 'Quattrocento Sans', 'Gothic A1', system-ui, sans-serif;
-  /* // --font-family: 'Pretendard', system-ui, sans-serif; */
+  --font-family: 'Asap', 'IBM Plex Sans', 'Gothic A1', system-ui, sans-serif;
   --font-family-heading: null;
   --font-family-body: null;
   --font-family-caption: null;
@@ -19,7 +18,7 @@
   --font-size-small: .75rem;
 
   --font-weight-normal: 400;
-  --font-weight-bold: 700;
+  --font-weight-bold: 600;
   --font-weight-extrabold: null;
 
   --font-line-height-large: 1.8;
@@ -34,17 +33,16 @@
   --layout-width-small: 640px;
   --layout-width-tiny: 480px;
 
-  --grid-column: calc(50% - var(--space-1));
-  --grid-gutter: null;
-
-  --grid-margin: 5vw;
-  --grid-margin-minus: calc(var(--grid-margin) * -1);
-
   --width-huge: 1440px;
   --width-small: 480px;
   --width-tiny: 240px;
   --width-sidemenu: 14rem;
   --width-dropdown: 240px;
+
+  --grid-column: calc(50% - var(--space-1));
+  --grid-gutter: null;
+  --grid-margin: 5vw;
+  --grid-margin-minus: calc(var(--grid-margin) * -1);
 
   --gray0: #fff;
   --gray100: #f5f8f5;
@@ -81,11 +79,11 @@
   --color-border: var(--gray200);
   --color-border-hover: var(--gray800);
   --color-text: var(--gray800);
+  /* --color-text: #687076; */
   --color-text-light: var(--gray400);
 
   --color-text-weak: var(--gray0);
   --color-text-strong: var(--gray0);
-  /* // --icon-color: var(--gray800); */
 
   --color-temp1: cadetblue;
   --color-temp2: darkseagreen;
@@ -110,12 +108,13 @@
 
   --space-05: .125rem;
   --space-1: .25rem;
-  --space-1-minus: calc(var(--space-1) * -1);
   --space-2: .5rem;
-  --space-2-minus: calc(var(--space-2) * -1);
   --space-3: .75rem;
-  --space-3-minus: calc(var(--space-3) * -1);
   --space-4: 1rem;
+
+  --space-1-minus: calc(var(--space-1) * -1);
+  --space-2-minus: calc(var(--space-2) * -1);
+  --space-3-minus: calc(var(--space-3) * -1);
 
   --space-after-title: 1rem;
   --space-after-subhead: var(--space-3);
@@ -133,15 +132,13 @@
 
   --space-after-item: var(--space-3);
 
-  /* // gap으로 대체할 수 있다. */
-  --space-stack: var(--space-1);
-  --space-stack-minus: calc(var(--space-stack) * -1);
-
   --space-leading-title: -.25rem;
   --space-leading-subhead: -.125rem;
   --space-leading-body: -.125rem;
 
-  --border: 1px solid var(--color-border);
+  --border-width: 1px;
+
+  --border: var(--border-width) solid var(--color-border);
   --border-active: 1px solid var(--color-primary);
   --border-thin: null;
   --border-thick: null;
@@ -152,14 +149,14 @@
   --radius-soft: null;
 
   --shadow: 0 0.0625rem 0.125rem rgba(0,0,0,.15);
-  --shadow-tile: 0 0 0.3125rem rgba(23,24,24,.05),0 0.0625rem 0.125rem rgba(0,0,0,.15);
+  --shadow-tile: 0 2px 0.3125rem rgba(23,24,24,.05),0 0.0625rem 0.125rem rgba(0,0,0,.15);
   --shadow-active: null;
 
   /* --shadow: 0 0 .25rem rgb(0 0 0 / 7.5%); */
   /* --shadow-tile: 0 0 0 1px rgb(0 0 0/5%),0 2px 2px rgb(0 0 0/4%); */
 
   --state-focus: 0 0 0 3px var(--color-border-hover);
-  --state-hover: 0 0 0 3px rgba(0,0,0,.1);
+  --status-hover: 0 0 0 3px rgba(0,0,0,.1);
 
   --duration: .4s;
   --duration-quickly: .2s;
@@ -215,10 +212,10 @@ html[date-theme=dark] {}
 
   --border: 1px solid var(--color-border);
   --state-focus: 0 0 0 2px var(--color-border-hover);
-  --state-hover: 0 0 0 2px rgba(255,255,255,.25);
+  --status-hover: 0 0 0 2px rgba(255,255,255,.25);
 
   --shadow: 0px 0px 2rem rgba(0, 0, 0, 0.25);
-  --shadow-tile: 0 0 0 1px #343c38,0 1px 6px rgba(0, 0, 0, 0.4);
+  --shadow-tile: 0 2px 0 1px #343c38,0 1px 6px rgba(0, 0, 0, 0.4);
 
   --gradient: linear-gradient(to bottom, var(--gray400), var(--gray800));
 }

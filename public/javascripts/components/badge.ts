@@ -12,15 +12,11 @@ class Badge extends HTMLElement {
     shadow.appendChild(container)
     shadow.appendChild(makeStyleSheet('badge'))
 
-    container.innerHTML = this.content
+    container.append(...this.childNodes)
   }
 
   get variant() {
     return this.getAttribute('variant')
-  }
-
-  get content() {
-    return this.innerHTML
   }
 
   connectedCallback() {}

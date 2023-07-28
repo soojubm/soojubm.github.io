@@ -1,4 +1,4 @@
-<main class="component notifications js-tab">
+<main class="component notifications js-tab" style="max-width:640px;">
   <ul>
     <li>
       <b>popover: </b>
@@ -15,19 +15,29 @@
     <em>new</em>
   </button> -->
 
-  <header class="titlebar js-titlebar" role="navigation" style="padding-left: 0; padding-right: 0">
+  <br />
+  <br />
+  <header class="titlebar js-titlebar" role="navigation" style="padding-left: 0; padding-right: 0"a>
     <div class="titlebar-background"></div>
-    <h1 class="titlebar-title js-page-title" title="page title">알림</h1>
-    <button class="titlebar-back" onclick="javascript:window.location.href='/';">
-      <figure class="titlebar-back-icon material-symbols-outlined" title="이전 페이지로">arrow_back</figure>
-      <!-- <figure class="titlebar-back-icon material-symbols-outlined">close</figure> -->
-      <!-- <span class="titlebar-back-label">뒤로</span> -->
-    </button>
-    <button class="titlebar-action" style="color: var(--color-primary)">
+    <header style="display:flex;align-items:center;gap:.75rem;">
+      <test-text variant="subhead" class="js-page-title">
+        알림
+      </test-text>
+      <test-tag variant="indicator">
+        <test-icon name="nav-arrow-down"></test-icon>
+      </test-tag>
+    </header>
+    <!-- <button class="titlebar-back" onclick="javascript:window.location.href='/';">
+      <figure class="titlebar-back-icon" title="이전 페이지로"></figure>
+      <figure class="titlebar-back-icon material-symbols-outlined">close</figure>
+      <span class="titlebar-back-label">뒤로</span>
+    </button> -->
+    <!-- <button class="titlebar-action" style="color: var(--color-primary)">
       <figure class="titlebar-action-icon" hidden></figure>
       <span class="titlebar-action-label">편집</span>
-    </button>
+    </button> -->
   </header>
+  <br />
 
   <test-tablist class="tablist type-t" role="tablist" aria-label="sample tabs" style="margin-bottom: var(--space-3); z-index: 7">
     <button class="tablist-tab" role="tab" aria-selected="true" aria-controls="panel-2" id="tab-2" tabindex="-1">좋아요</button>
@@ -35,26 +45,28 @@
     <i class="tablist-indicator"></i>
   </test-tablist>
 
-  <test-row class="notification-filter">
-    <test-chip class="is-active"><span class="chip-label">모두</span></test-chip>
-    <test-chip><span class="chip-label">읽지않음</span></test-chip>
-  </test-row>
+  <div style="margin:0 0 1rem;">
+    <test-row class="notification-filter">
+      <test-chip label="모두" class="is-active"></test-chip>
+      <test-chip label="읽지않음"></test-chip>
+    </test-row>
+  </div>
 
   <!-- TODO list는 결국 row/ stack이다. -->
   <test-row direction="column">
     <test-tile variant="elevated" size="small">
-      <test-menu-item label="응암동 주간 인기글" description="5일 전">
+      <test-menuitem label="응암동 주간 인기글" description="5일 전">
         <test-avatar slot="avatar"></test-avatar>
         <p style="width: 100%; margin: var(--space-2) 0; line-height: var(--line-height)">
           '송명섭 막걸리 6도 750m...' 외 1개 상품이 오늘 도착예정입니다~
         </p>
-      </test-menu-item>
+      </test-menuitem>
     </test-tile>
     <test-tile variant="elevated" size="small">
-      <test-menu-item label="오늘의 주요 종목 종가">
+      <test-menuitem label="오늘의 주요 종목 종가">
         <test-avatar slot="avatar"></test-avatar>
         <p style="width: 100%; margin: var(--space-2) 0; line-height: var(--line-height)">HSD 엔진 -2.4%</p>
-      </test-menu-item>
+      </test-menuitem>
     </test-tile>
   </test-row>
 

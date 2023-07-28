@@ -9,18 +9,20 @@ class Row extends HTMLElement {
     container.classList.add('row')
     container.role = 'group'
 
+    // const align = 'vertical' || 'horizontal'
     const direction = this.getAttribute('direction')
     container.dataset.direction = direction || ''
 
+    container.dataset.temp = this.temp || ''
     // if (this.variant) container.setAttribute('data-variant', this.variant)
 
     shadow.appendChild(container)
     container.append(...this.childNodes, makeStyleSheet('row'))
   }
 
-  // set content(value) {
-  //   return (container = value)
-  // }
+  get temp() {
+    return this.getAttribute('temp')
+  }
 
   connectedCallback() {}
   disconnectedCallback() {}

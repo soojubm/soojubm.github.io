@@ -6,23 +6,38 @@ color: var(--color-text-light);
 
 
 .tag {
-    display: inline-flex;
-    align-items: center;
-    height: var(--size-small);
-    padding: 1px var(--space-2) 0;
-    border-radius: var(--radius);
-    border: var(--border);
-    box-sizing: border-box;
-    background: var(--color-background);
-    font-size: var(--font-size-small);
-    color: var(--color-text);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  height: var(--size-small);
+  padding: 0 var(--space-2) 0;
+  border-radius: var(--radius);
+  /* border-radius: 50px; */
+  border: var(--border);
+  box-sizing: border-box;
+  background: var(--color-background);
+  font-size: var(--font-size-small);
+  color: var(--color-text);
 }
-.tag-icon {margin:0 var(--space-1) 0 0;}
 
 .tag[data-variant=primary] {border-color:var(--color-accent);background-color:var(--color-accent);color:var(--gray800);}
 .tag[data-variant=secondary] {border-color:transparent;background-color:var(--green100);color:var(--green800);}
+.tag[data-variant=destructive] {
+  border-color: transparent;
+  background: var(--red100);  color: var(--red800);
+}
+.tag[data-variant=indicator] {
+  border-color: transparent;
+  background: var(--color-background-weak);
+}
+
+
+.tag[data-variant=feature1] {border-color: transparent;background: var(--color-temp1);}
+.tag[data-variant=feature2] {border-color: transparent;background: var(--color-temp2);}
+.tag[data-variant=feature3] {border-color: transparent;background: var(--color-temp3);}
+.tag[data-variant=feature4] {border-color: transparent;background: var(--color-temp4);}
+
 .tag[data-status=loading] {}
-.tag[data-status=danger] { border: 0;background: var(--red100);color: var(--red800)}
 
 
 /* .hashtag {@mixin hashtag;} */

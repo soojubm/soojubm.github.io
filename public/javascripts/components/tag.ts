@@ -15,10 +15,13 @@ class Tag extends HTMLElement {
     container.classList.add('tag')
     container.setAttribute('data-variant', this.variant || '')
 
-    shadow.appendChild(container)
+    const iconSlot = document.createElement('slot')
+    iconSlot.name = 'icon'
 
+    shadow.appendChild(container)
     shadow.appendChild(makeStyleSheet('tag'))
 
+    container.appendChild(iconSlot)
     container.innerHTML = this.innerHTML || this.label || ''
   }
 

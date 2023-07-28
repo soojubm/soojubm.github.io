@@ -24,43 +24,52 @@
 // }
 // .checkbox label {margin:0 0 0 var(--space-after-avatar-small);line-height:inherit;}
 
-.counter-input {}
-.price-input {}
-.number-input {}
-
-.counter {display:flex;position:relative;}
-.counter-input {width:100%;margin:0 var(--space-2);background:var(--color-background-weak);border-radius:var(--radius);text-align:center;}
-// radius = iOS
-.counter-decrement {@mixin chip;}
-.counter-increment {@mixin chip;border-radius:0 var(--radius) var(--radius) 0;}
-.counter-decrement[aria-disabled=true] {opacity:.5;cursor:not-allowed;}
-.counter-increment[aria-disabled=true] {opacity:.5;cursor:not-allowed;}
 
 .checkbox {
-  display:block;
-  min-height: var(--size-medium);
-  line-height:var(--size-small);
   position:relative;
-  /* @mixin clearfix; */
+  --checkbox-size: var(--size-tiny);
 }
 
-.switch {display:block;height:20px;position:relative;}
-input[type=checkbox][role=switch] {}
-input[type=checkbox][role=switch] + label {display:block;padding:0;padding-left:calc(48px + var(--space-3));cursor:pointer;}
-input[type=checkbox][role=switch] + label:before {content:'';display:block;width:48px;height:20px;border:none;border-radius:var(--radius);box-sizing:border-box;background:var(--gray200);position:absolute;left:0;top:0;transition:background-color .2s;}
-input[type=checkbox][role=switch] + label:after {content:'';display:block;/*18px*/width:16px;height:16px;border:none;border-radius:var(--radius);background:#fff;box-shadow:var(--shadow);position:absolute;left:2px;top:2px;transition:left .2s;transform:rotate(0deg);}
-input[type=checkbox][role=switch]:checked + label {}
-input[type=checkbox][role=switch]:checked + label:before {background:var(--color-primary);}
-input[type=checkbox][role=switch]:checked + label:after {left:calc(48px - 16px - 2px);}
-input[type=checkbox][role=switch]:disabled {}
-input[type=checkbox][role=switch]:disabled + label {cursor:not-allowed;opacity:.5;}
+.switch {
+  --switch-width: var(--size-large);
+  --switch-height: var(--size-tiny);
+  display:block;
+  height: var(--switch-height);
+  position:relative;
+}
+
+.switch [role=switch] {}
+.switch [role=switch] + label {display:block;padding-left:calc(var(--switch-width) + var(--space-3));line-height:var(--size-tiny);cursor:pointer;}
+.switch [role=switch] + label:before {content:'';display:block;width:var(--switch-width);height:var(--switch-height);border:none;border-radius:var(--radius);box-sizing:border-box;background:var(--gray200);position:absolute;left:0;top:0;transition:background-color .2s;}
+.switch [role=switch] + label:after {content:'';display:block;/*18px*/width:var(--switch-height);height:var(--switch-height);border:var(--border);box-sizing:border-box;border-radius:var(--radius);background:#fff;box-shadow:var(--shadow);position:absolute;left:0;top:0;transition:left .2s;transform:rotate(0deg);}
+.switch [role=switch]:checked + label {}
+.switch [role=switch]:checked + label:before {background:var(--color-primary);}
+.switch [role=switch]:checked + label:after {left:calc(var(--switch-width) - 16px);}
+.switch [role=switch]:disabled {}
+.switch [role=switch]:disabled + label {cursor:not-allowed;opacity:.5;}
 
 
 /* todo checki */
-input[type=checkbox] {opacity:0;position:absolute;}
-input[type=checkbox] ~ label {display:block;padding:var(--space-1) 0;padding-left:calc(var(--size-tiny) + var(--space-2));}
-input[type=checkbox] ~ label:before {content:'';display:block;width:var(--size-tiny);height:var(--size-tiny);border-radius:4px;border:var(--border);box-sizing:border-box;position:absolute;left:0;top:7px;}
-input[type=checkbox] ~ label:after {content:'';display:none;width:7px;height:2px;border-left:1.5px solid;border-bottom:1.5px solid;border-color:var(--gray200);position:absolute;left:4px;top:12px;transform:rotate(-45deg);}
+input[type=checkbox] {
+  opacity:0;position:absolute;
+}
+
+input[type=checkbox] ~ label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  line-height: var(--checkbox-size);
+  /* padding:var(--space-1) 0;padding-left:calc(var(--size-tiny) + var(--space-2)); */
+}
+input[type=checkbox] ~ label:before {content:'';display:block;
+  width:var(--checkbox-size);height:var(--checkbox-size);
+  border-radius:4px;
+  border:var(--border);
+  /* border-color:var(--color-background-strong); */
+  box-sizing:border-box;
+  /* position:absolute;left:0;top:7px; */
+}
+input[type=checkbox] ~ label:after {content:'';display:none;width:6px;height:2px;border-left:2px solid;border-bottom:2px solid;border-color:var(--gray200);position:absolute;left:4px;top:5px;transform:rotate(-45deg);}
 input[type=checkbox]:checked ~ label:before {border-color:var(--color-primary);animation:ripple2 0.2s linear forwards;}
 input[type=checkbox]:checked ~ label:after {display:block;border-color:var(--color-primary);}
 
@@ -89,8 +98,26 @@ input[type=checkbox]:checked + label + * {display:block;}
 .checkbox[data-size=large] label:before {
   width: var(--size-small);
   height: var(--size-small);
+
 }
 .checkbox[data-size=large] label:after {
   width:10px;
   height:4px;
+  left: 6px;
+  top: 8px;
 }
+
+
+
+
+.counter-input {}
+.price-input {}
+.number-input {}
+
+.counter {display:flex;position:relative;}
+.counter-input {width:100%;margin:0 var(--space-2);background:var(--color-background-weak);border-radius:var(--radius);text-align:center;}
+// radius = iOS
+.counter-decrement {@mixin chip;}
+.counter-increment {@mixin chip;border-radius:0 var(--radius) var(--radius) 0;}
+.counter-decrement[aria-disabled=true] {opacity:.5;cursor:not-allowed;}
+.counter-increment[aria-disabled=true] {opacity:.5;cursor:not-allowed;}
