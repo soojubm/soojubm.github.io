@@ -1,37 +1,40 @@
 <main class="component">
   <article class="article js-observer js-scrollspy-section">
     <test-text variant="title">Callouts</test-text>
-    <p class="article-description">시스템이나 브라우저의 상태 이상, 사용자의 행동에 피드백합니다.</p>
+    <test-text variant="body-large">시스템이나 브라우저의 상태 이상, 사용자의 행동에 피드백합니다.</test-text>
 
-    <test-row class="article-aka">
-      <test-tag>a.k.a.</test-tag>
-      <span class="hashtag" title="">Alert</span>
-      <span class="hashtag" title="">Message</span>
-      <span class="hashtag" title="">Callout</span>
-      <span class="hashtag" title="">Banner</span>
-      <span class="hashtag" title="">Information</span>
-      <span class="hashtag" title="">Feedback</span>
-      <span class="hashtag" title="">Notice</span>
-      <span class="hashtag" title="">Inline Message</span>
-    </test-row>
+    <dl class="article-aka">
+      <dt>a.k.a.</dt>
+      <dd title="">Alert</dd>
+      <dd title="">Message</dd>
+      <dd title="">Callout</dd>
+      <dd title="">Banner</dd>
+      <dd title="">Information</dd>
+      <dd title="">Feedback</dd>
+      <dd title="">Notice</dd>
+      <dd title="">Inline Message</dd>
+    </dl>
 
     <section class="component-example">
-      <test-callout heading="모바일 친화적인 배너." text="배너는 두 종류. 히어로와 그냥 배너."> 좋아요 표시한 동영상에 추가됨 </test-callout>
-      <div class="banner" role="banner" data-size="small">
+      <test-callout heading="모바일 친화적인 배너." text="배너는 두 종류. 히어로와 그냥 배너. 콜아웃 액션 버튼 필요한가"> </test-callout>
+      <test-callout class="banner" role="banner" data-size="small">
         <h2 class="banner-title"></h2>
         <p class="banner-description"></p>
-        <test-chip>콜아웃 액션 버튼 필요한가</test-chip>
-        <button class="alert-close" aria-label="close alert">
-          <span class="material-symbols-outlined">close</span>
-        </button>
-      </div>
-      <br />
+        <test-chip></test-chip>
+        <test-chip class="alert-close" aria-label="close alert">
+          <test-icon slot="icon" name="lock"></test-icon>
+        </test-chip>
+      </test-callout>
+      <test-separator></test-separator>
       <p role="alert" style="color: var(--red800)">비밀번호가 일치하지 않습니다.</p>
-      <test-callout variant="success" icon="🧡"> 좋아요 표시한 동영상에 추가됨 </test-callout>
-      <test-callout
-        variant="danger"
-        text="인터넷에 연결되어 있지 않습니다. 바시니의 작품은 페라라 부르주아사회의 유대인 박해라는 깊은 상처에 기인한다는 점에서 정치적이다."
-      ></test-callout>
+      <test-separator></test-separator>
+      <test-row direction="column">
+        <test-callout variant="success" icon="🧡"> 좋아요 표시한 동영상에 추가됨 </test-callout>
+        <test-callout
+          variant="danger"
+          text="인터넷에 연결되어 있지 않습니다. 바시니의 작품은 페라라 부르주아사회의 유대인 박해라는 깊은 상처에 기인한다는 점에서 정치적이다."
+        ></test-callout>
+      </test-row>
     </section>
 
     <section class="component-props">
@@ -53,45 +56,39 @@
     </section>
 
     <section class="component-guide">
-      <test-text variant="subhead">Easy scanning</test-text>
-      <test-text variant="body" class="article-p">
-        사용자는 디스크립션을 자세히 읽기를 원하지 않으므로, 필요한 내용을 빠르게 캐치할 수 있도록 간결하게 쓰는 게 좋다. 한 줄에 50자, 세 줄 이하로
-        쓸 것을 권장하고 있다. 텍스트를 간결하게 유지하고 전달할 내용을 스캐너블한 덩어리로 나누는 것은, 유저들이 그들의 이해도와 이 서비스를 활용하는
-        능력에 대해 신뢰를 갖게 만든다.
-      </test-text>
-
-      <test-text variant="subhead">Not interactive</test-text>
-      <test-text variant="body" class="article-p">
+      <test-text variant="subhead">Behavior</test-text>
+      <test-text variant="body">
         사용자 행동의 단순 피드백의 역할입니다. 닫기 또는 되돌리기 등 액션을 포함하지 마세요. 사용자 인터렉션이 요구된다면 주목도가 높은 모달로
         제공하세요.
       </test-text>
 
-      <test-text variant="subhead">명확한 문장? writing? Clear sentence</test-text>
-      <test-text variant="body" class="article-p">
+      <test-text variant="subhead">Editorial</test-text>
+      <test-text variant="body">
+        알림은 언제나 유저에게 베네핏을 주거나, 긴급한 메시지이거나, 적어도 적절한 타이밍의 내용이어야 한다. 똑같은 텍스트가 각각의 컴포넌트에 쓰였을
+        때 어떤 맥락으로 유저에게 닿을 수 있는지를.
+      </test-text>
+      <test-text variant="body">
         사용자의 귀책이 아닌 경우, 단순 "오류" 대신 "시스템 오류"와 같은 용어를 사용하여 사용자가 잘못한 것처럼 느끼지 않도록 하세요.
       </test-text>
-      <ul>
-        <li>
-          유저가 중요한 액션을 수행했을 경우, 완료 메시지를 전달하기 위해 한 화면 전체를 사용하는 경우가 있다. 이때는 유저가 집중할 수 있는 정보가
-          하나뿐이어서 맥락이 복잡하지 않으므로, \"이미지가 담긴 포스팅이 완료되었습니다.\" 등의 문장형으로 길게 설명할 필요 없이, \"제출 완료!\"같은
-          단일 단어로 대체할 수 있다.
-        </li>
-        <li>
-          알림은 언제나 유저에게 베네핏을 주거나, 긴급한 메시지이거나, 적어도 적절한 타이밍의 내용이어야 한다. 똑같은 텍스트가 각각의 컴포넌트에
-          쓰였을 때 어떤 맥락으로 유저에게 닿을 수 있는지를.
-        </li>
-        <li>( + 게임에서 파티 탈퇴와 같이 직접 실행하지 않은, 시간을 특정하기 힘든 연속적인... 경우 여러 개가 필요하구나.)</li>
-        <li>아이콘으로 callout의 역할을 구분할 수 있다. 따라서 아이콘이 없는 info 형태의 callout은 공허한 컴포넌트다. title / message</li>
-        <p>toast=>snackbar(withAction) - 정리하기, single line / multiple lines (head,body 텍스트)</p>
-      </ul>
+      <test-text variant="body">
+        유저가 중요한 액션을 수행했을 경우, 완료 메시지를 전달하기 위해 한 화면 전체를 사용하는 경우가 있다. 이때는 유저가 집중할 수 있는 정보가
+        하나뿐이어서 맥락이 복잡하지 않으므로, \"이미지가 담긴 포스팅이 완료되었습니다.\" 등의 문장형으로 길게 설명할 필요 없이, \"제출 완료!\"같은
+        단일 단어로 대체할 수 있다.
+      </test-text>
 
-      <ul>
-        <li>역할로 구분하면 input feedback은 callout과 분리해야 한다.</li>
-        <li>브라우저가 role="alert" 속성이 있는 요소를 발견하면 즉시 사용자에게 경고 내용을 읽습니다.</li>
-      </ul>
+      <test-text variant="subhead">Best practices</test-text>
+      <test-text variant="body"
+        >( + 게임에서 파티 탈퇴와 같이 직접 실행하지 않은, 시간을 특정하기 힘든 연속적인... 경우 여러 개가 필요하구나.)</test-text
+      >
+      <test-text variant="body">toast=>snackbar(withAction) - 정리하기, single line / multiple lines (head,body 텍스트)</test-text>
+      <test-text variant="body"
+        >아이콘으로 callout의 역할을 구분할 수 있다. 따라서 아이콘이 없는 info 형태의 callout은 공허한 컴포넌트다. title / message</test-text
+      >
+      <test-text variant="body">역할로 구분하면 input feedback은 callout과 분리해야 한다.</test-text>
+      <test-text variant="body">브라우저가 role="alert" 속성이 있는 요소를 발견하면 즉시 사용자에게 경고 내용을 읽습니다.</test-text>
     </section>
 
-    <test-text variant="body-large">with Toast</test-text>
+    <test-text variant="subhead">with Toast</test-text>
     <!-- Icon: Informs users of the kind of notification at a glance.
     Title: Gives users a quick overview of the notification.
     Message (1optional): Provides additional detail and actionable steps for the user to take.

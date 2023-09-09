@@ -27,49 +27,13 @@ import toggleTheme from './public/javascripts/theme/toggleTheme'
 import { initializeNavbar } from './public/javascripts/common/navbar'
 
 import { defineCustomElement } from './public/javascripts/components'
+import modal from './public/javascripts/event/modal'
 
 // import('./public/javascripts/event/modal').then(module => {
 //   console.log(module)
 // })
 
 // import { fetchPage } from './public/javascripts/router'
-
-// Create a class for the element
-class WordCount extends HTMLParagraphElement {
-  constructor() {
-    // Always call super first in constructor
-    super()
-
-    // count words in element's parent element
-    const wcParent = this.parentNode
-
-    function countWords(node) {
-      const text = node.innerText || node.textContent
-      return text
-        .trim()
-        .split(/\s+/g)
-        .filter(a => a.trim().length > 0).length
-    }
-
-    const count = `Words: ${countWords(wcParent)}`
-
-    // Create a shadow root
-    const shadow = this.attachShadow({ mode: 'open' })
-
-    // Create text node and add word count to it
-    const text = document.createElement('span')
-    text.textContent = count
-
-    // Append it to the shadow root
-    shadow.appendChild(text)
-
-    // Update count when element content changes
-    setInterval(function () {
-      const count = `Words: ${countWords(wcParent)}`
-      text.textContent = count
-    }, 200)
-  }
-}
 
 document.addEventListener('DOMContentLoaded', lockBodyElement)
 document.addEventListener('DOMContentLoaded', defineCustomElement)
@@ -85,6 +49,7 @@ document.addEventListener('click', toggleTheme)
 // ! 여기까지 리팩토링 완료...
 
 // document.addEventListener('click', toggleTest)
+
 function toggleTest(event) {
   if (!event.target.closest('.js-toggle')) return
   // 개별 칩 그룹에 이벤트를 걸고, 다른 컴포넌트를 클릭할 때 제거하는 방법.
@@ -117,11 +82,16 @@ document.addEventListener('click', closeParentElement)
 // document.addEventListener('DOMContentLoaded', () => {
 //   carousel()
 // })
+
+const setDocumentTitle = title => (document.title = `이경수 ${title}`)
+
 async function domEvents() {
+  modal({ selector: '.js-modal' })
+  tab()
+
   const navItemElements = document.querySelectorAll('.navbar-menu a')
   const hash = window.location.hash.substring(1)
-
-  document.title = `이경수 ${hash}`
+  setDocumentTitle(hash)
 
   const temps = [
     'dictionary',
@@ -142,9 +112,19 @@ async function domEvents() {
     'actions',
   ]
 
-  // if (!temps.includes(hash)) {
-  //   initializeNavbar()
-  // }
+  // todo
+  const mediaSize760 = window.matchMedia('(max-width: 1080px)')
+  const changeMedia = function (event) {
+    const isMobile = event.matches
+
+    if (isMobile) initializeNavbar()
+  }
+  mediaSize760.addListener(changeMedia)
+  changeMedia(mediaSize760)
+
+  // initializeNavbar()
+
+  // if (!temps.includes(hash)) {}
   const isHomePage = !hash
 
   navItemElements?.forEach(element => {
@@ -157,16 +137,6 @@ async function domEvents() {
 
   if (isHomePage) navItemElements[0].classList.add('is-current')
 
-  // todo
-  const mediaSize760 = window.matchMedia('(max-width: 1080px)')
-  const changeMedia = function (e) {
-    const isMobile = e.matches
-
-    if (isMobile) initializeNavbar()
-  }
-  mediaSize760.addListener(changeMedia)
-  changeMedia(mediaSize760)
-
   lazyLoading()
   // await routePage()
 
@@ -175,14 +145,6 @@ async function domEvents() {
   // pageTitleElement?.textContent = page?.name || '페이지타이틀'
 
   // loadLazyImages()
-
-  // const textarea1 = document.querySelector('#ta-example-one')
-  // const textarea2 = document.querySelector('#ta-example-two')
-
-  // if (textarea1 && textarea2) {
-  //   textarea1.addEventListener('mouseup', onMouseUp, false)
-  //   textarea2.addEventListener('mouseup', onMouseUp, false)
-  // }
 
   // // ! 디자인시스템에 추가한 거 임시
   document.querySelector('.js-default-font')?.addEventListener('click', () => document.body.classList.toggle('font-default'))
@@ -208,9 +170,6 @@ async function domEvents() {
   // input.counter()
 
   toggleElement({ selector: '.js-toggle' })
-
-  tab()
-  // modal({ selector: '.js-modal' })
 
   // positionSticky({ selector: '.js-post-head', addClass: 'is-sticky-post-head', isPassed: true })
 
@@ -382,17 +341,15 @@ function toggleDetails(event) {
   if (!event.target.closest('.js-accordion')) return
 
   const targetElement = event.target.closest('.js-accordion')
+  const panelElement = targetElement.querySelector('.accordion-panel')
 
-  targetElement.querySelector('.accordion-panel')?.addEventListener('click', event => event.stopPropagation())
+  panelElement?.addEventListener('click', event => event.stopPropagation())
 
-  let isExpanded = Boolean(targetElement.getAttribute('aria-expanded'))
-  targetElement.setAttribute('aria-expanded', String(!isExpanded))
-  targetElement.classList.toggle('is-active')
+  const expanded = targetElement.getAttribute('aria-expanded') === 'true' ? 'false' : 'true'
 
-  // 1. 클릭한 패널을 토글한다.
-  // 2. 다른 accordion-item을 클릭했을 때 닫을 것인지?
-  // 3. 도큐먼트를 클릭하면 닫을 것인지?
-  // 4. panel을 클릭하면 닫을 것인지?
+  console.log(targetElement, targetElement.getAttribute('aria-expanded'), targetElement.getAttribute('aria-expanded') === 'true')
+  targetElement.setAttribute('aria-expanded', expanded)
+  // targetElement.classList.toggle('is-active')
 }
 
 function lazyLoading() {
@@ -414,6 +371,9 @@ function lazyLoading() {
   lazyBackgrounds.forEach(element => observer.observe(element))
 
   function callback(entries, observer) {
+    // for (let entry of entries) {
+    //   console.log(entry.boundingClientRect);
+    // }
     entries.forEach(entry => {
       if (!entry.isIntersecting) return
 
@@ -446,6 +406,14 @@ function lazyLoading() {
   }
 }
 
+const textarea1 = document.querySelector('#ta-example-one')
+const textarea2 = document.querySelector('#ta-example-two')
+
+if (textarea1 && textarea2) {
+  textarea1.addEventListener('mouseup', onMouseUp, false)
+  textarea2.addEventListener('mouseup', onMouseUp, false)
+}
+
 function onMouseUp(e) {
   const activeTextarea = document.activeElement as HTMLTextAreaElement
 
@@ -457,7 +425,6 @@ function onMouseUp(e) {
 
   outputElement.innerHTML = id
   outputText.innerHTML = selection
-  console.log(activeTextarea.tabIndex)
 }
 
 function closeParentElement(event) {
@@ -486,37 +453,6 @@ function closeParentElement(event) {
 //       tt.style.opacity = String((rate2 / 100).toFixed(1))
 //     }
 //   }))
-// }
-
-class CloseButton extends HTMLElement {
-  constructor() {
-    super()
-    this.innerHTML = `
-      <button class="chip">
-        <span class="material-symbols-outlined">close</span>
-      </button>
-    `
-    this.addEventListener('click', () => alert('customElements sample'))
-  }
-
-  connectedCallback() {
-    console.log('connected!', this)
-  }
-
-  disconnectedCallback() {
-    console.log('disconnected', this)
-  }
-}
-
-// function updateStyle(elem) {
-// const shadow = elem.shadowRoot
-// shadow.querySelector('style').textContent = `
-//   div {
-//     width: ${elem.getAttribute('l')}px;
-//     height: ${elem.getAttribute('l')}px;
-//     background-color: ${elem.getAttribute('c')};
-//   }
-// `
 // }
 
 // ! lazy
@@ -600,3 +536,24 @@ class CloseButton extends HTMLElement {
 //     window.addEventListener('orientationChange', lazyload)
 //   }
 // })
+
+class WordCount extends HTMLParagraphElement {
+  constructor() {
+    super()
+    const wcParent = this.parentNode
+
+    function countWords(node) {
+      const text = node.innerText || node.textContent
+      return text
+        .trim()
+        .split(/\s+/g)
+        .filter(a => a.trim().length > 0).length
+    }
+    const count = `Words: ${countWords(wcParent)}`
+
+    setInterval(function () {
+      const count = `Words: ${countWords(wcParent)}`
+      // text.textContent = count
+    }, 200)
+  }
+}

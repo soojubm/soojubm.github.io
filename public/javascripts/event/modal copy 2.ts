@@ -69,8 +69,6 @@ function modal({ selector: trigger }: Parameter) {
 
     restoreScroll()
 
-    alert()
-
     // const scrollRestoration = history.scrollRestoration
     // if (scrollRestoration === 'manual') {
     //   console.log('The location on the page is not restored, user will need to scroll manually.')

@@ -1,23 +1,24 @@
 <main class="component">
-  <article class="article js-observer js-scrollspy-section">
+  <article class="article">
+    <test-callout variant="danger">
+      Custom Element(Result) 내부 custom element(text) 클래스를 줄 수 없나? text에서 this로 class받아서 다시 넣어줘야? 아니면 결국 slot??
+      <ul>
+        <li>custom element display block</li>
+      </ul>
+    </test-callout>
+    <br />
     <test-text variant="title">Result</test-text>
-    <p class="article-description">실행 결과. 완료Complete. 오류. 내용 없음. 비공개.</p>
+    <test-text variant="body-large">실행 결과. 완료Complete. 오류. 내용 없음. 비공개.</test-text>
 
-    <test-row class="article-aka">
-      <test-tag>a.k.a.</test-tag>
-      <span class="hashtag" title="">EmptyState</span>
-      <span class="hashtag" title="github">Blankslate</span>
-    </aside>
+    <dl class="article-aka">
+      <dt>a.k.a.</dt>
+      <dd title="">EmptyState</dd>
+      <dd title="github">Blankslate</dd>
+    </dl>
 
     <section class="component-example">
-      <test-tile>
-        <div class="empty">
-          <test-avatar size="huge" class="empty-icon">🧟</test-avatar>
-          <test-text variant="subhead" class="empty-title">주문을 확인해주세요.</test-text>
-          <p class="empty-description">
-            헌법재판소 재판관의 임기는 6년으로 하며, 법률이 정하는 바에 의하여 연임할 수 있다. 대통령은 법률안의 일부에 대하여 또는 법률안을 수정하여
-            재의를 요구할 수 없다.
-          </p>
+      <test-result label="주문을 확인해주세요." description="헌법재판소 재판관의 임기는 6년으로 하며, 법률이 정하는 바에 의하여 연임할 수 있다. 대통령은 법률안의 일부에 대하여 또는 법률안을 수정하여 재의를 요구할 수 없다.">
+        <div slot="list">
           <test-separator></test-separator>
           <div class="summary">
             <div class="summary-item" style="display: flex; justify-content: space-between">
@@ -29,32 +30,42 @@
               <b class="summary-item-value">₩ 54,000</b>
             </div>
           </div>
-          <test-button variant="primary" label="주문내역 보기" class="empty-action"></test-button>
         </div>
-      </test-tile>
+        <test-button slot="action" variant="primary" label="주문내역 보기"></test-button>
+      </test-result>
     </section>
 
-    <ul>
-      <li>왼쪽 정렬의 기본적인 텍스트 모듈과 달리 가운데 정렬로 대비를 높입니다. 콘텐츠 모듈로 콘텐츠의 맥락을 구분하는 것이 foundation 중 하나.</li>
-      <li>페이지 레벨 또는 섹션 레벨의 empty, error, complete 상태에서 사용합니다.</li>
-    </ul>
+    <section class="component-props">
+      <test-text variant="subhead">Props</test-text>
+      <dl>
+        <dt>src<abbr>?</abbr></dt>
+        <dd>string</dd>
+        <dd></dd>
+        <dt>title<abbr>?</abbr></dt>
+        <dd>string</dd>
+        <dd></dd>
+        <dt>description<abbr>?</abbr></dt>
+        <dd>string</dd>
+        <dd></dd>
+        <dt>primaryActionLabel<abbr>?</abbr></dt>
+        <dd>string</dd>
+        <dd></dd>
+        <dt>primaryActionHref<abbr>?</abbr></dt>
+        <dd>string</dd>
+        <dd></dd>
+        <dt>secondaryActionLabel<abbr>?</abbr></dt>
+        <dd>string</dd>
+        <dd></dd>
+      </dl>
+    </section>
 
-    <test-text variant="subhead">Props</h2>
-    <dl>
-      <dt>src<abbr>?</abbr></dt>
-      <dd>string</dd>
-      <dt>title<abbr>?</abbr></dt>
-      <dd>string</dd>
-      <dt>description<abbr>?</abbr></dt>
-      <dd>string</dd>
-      <dt>primaryActionLabel<abbr>?</abbr></dt>
-      <dd>string</dd>
-      <dt>primaryActionHref<abbr>?</abbr></dt>
-      <dd>string</dd>
-      <dt>secondaryActionLabel<abbr>?</abbr></dt>
-      <dd>string</dd>
-    </dl>
+    <section class="component-guide">
+      <test-text variant="subhead">페이지 레벨 또는 섹션 레벨의 empty, error, complete 상태에서 사용합니다.</test-text>
+      <test-text variant="body">용법.</test-text>
 
-    <test-text variant="subhead">ErrorFallback - React ErrorBoundary</h2>
+      <test-text variant="subhead">텍스트 모듈</test-text>
+      <test-text variant="body">왼쪽 정렬의 기본적인 텍스트 모듈과 달리 가운데 정렬로 대비를 높입니다. 콘텐츠 모듈로 콘텐츠 간의 맥락 전환을 시각화하는 것이 foundation 중 하나.</test-text>
+      <test-text variant="subhead">ErrorFallback - React ErrorBoundary</h2>
+    </section>
   </article>
 </main>

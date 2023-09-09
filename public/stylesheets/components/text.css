@@ -38,24 +38,28 @@ p {
   
   font-size:var(--font-size-huge);font-weight:var(--font-weight-bold);line-height:var(--font-line-height);color:var(--color-text);}
 .text-subhead, [data-variant=subhead] {
+  /* TODO maxWidth */
   /* // 단독으로 쓰이지 않음 */
-  /* margin: 0 0 var(--space-after-subhead) 0; */
   line-height: var(--line-height);
   font-size:var(--font-size-large);
   font-weight:var(--font-weight-bold);
   color: var(--color-text);
 }
+
 [data-variant=body] {
-  line-height: 24px;
+  max-width: 640px;
+  /* line-height: 24px; */
 }
 
 [data-variant=body-bold] {
-  line-height: 24px;
+  /* line-height: 24px; */
   font-weight: var(--font-weight-bold);
 }
 
 
 [data-variant=body-large] {
+  display: block;
+  max-width: 800px;
   font-size:var(--font-size-large);
 }
 
@@ -73,3 +77,10 @@ p {
   white-space:normal;word-wrap:break-word;
   overflow:hidden;text-overflow:ellipsis;display: -webkit-box;-webkit-line-clamp:2;-webkit-box-orient: vertical;
 }
+
+
+
+/* TODO 임시... 테마 */
+/* [data-variant=title], [data-variant=subhead] {
+  color: #000;
+} */

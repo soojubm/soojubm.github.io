@@ -4,7 +4,7 @@
       <test-tag>2022년 5월 17일</span>
     </div>
     <div class="chat">
-      <test-avatar></test-avatar>
+      <test-avatar class="chat-avatar"></test-avatar>
       <div>
         <h5 class="chat-username">수좁이</h5>
         <!-- <time class="chat-time">12:00 am</time> -->
@@ -34,12 +34,16 @@
       <test-avatar class="chat-avatar" hidden>
         <img src="/public/images/springsteen.jpg" alt="" />
       </test-avatar>
-      <div>
-        <h5 class="chat-username">수줍이</h5>
-      </div>
+        <!-- <h5 class="chat-username">수줍이</h5> -->
       <div class="chat-bubble">
         <p>감사합니다! 아바타와 닉네임 없어도 됨.</p>
+        <p>전송 순서가 중요하기 때문에 각각의 버블의 전송 상태가 아니라 순서대로 전송이 되는 것이 중요.</p>
         <small class="chat-time chat-bubble-status" role="status">전송됨</small>
+      </div>
+      <div class="chat-inputing animation-chatting">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
     </div>
   </main>

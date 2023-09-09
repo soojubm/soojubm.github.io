@@ -1,20 +1,21 @@
 <main class="component">
   <article class="article js-observer js-scrollspy-section">
     <test-text variant="title">Textfields</test-text>
-    <p class="article-description">사용자가 데이터를 입력할 수 있는 인러렉티브한? 필드입니다. form patterns</p>
+    <test-text variant="body-large">
+      사용자가 데이터를 입력할 수 있는 인러렉티브한? 필드입니다. form patterns. FormField label / TextInput 으로 나누는 방안. 그러면 searchField 등의
+      대안이 될 수 있나?
+    </test-text>
     <dl class="article-aka">
       <dt>a.k.a.</dt>
       <dd>TextInput</dd>
       <dd>Input</dd>
     </dl>
     <section class="component-example">
-      <!-- <p>unit, choose/enter</p> -->
-      <!-- <abbr title="필수입력">*</abbr> -->
       <div style="max-width: 400px">
         <test-textfield
           type="email"
           label="레이블"
-          placeholder="Textarea Placeholder..."
+          placeholder="Placeholder..."
           helper="이미 등록된 이메일입니다. helper와 feedback을 구분하기. assertive 속성의 차이도 존재하기 때문."
           isOptional
           aria-describedby="error"
@@ -23,36 +24,17 @@
         >
           <test-icon slot="icon" name="verified-badge"></test-icon>
         </test-textfield>
-        <br />
-        <form class="searchfield">
-          <label class="searchfield-prefix">
-            <test-icon name="search"></test-icon>
-          </label>
-          <input class="searchfield-input" type="search" placeholder="궁금한 인물이나 이슈가 있나요?" />
-          <button class="searchfield-clear" aria-label="clear keyword">
-            <span class="material-symbols-outlined">close</span>
-          </button>
-          <button class="searchfield-cancel" aria-label="clear keyword">
-            <span class="material-symbols-outlined">취소</span>
-          </button>
-        </form>
-        <!-- <br />
-        <div class="textfield">
-          <label class="searchfield-prefix">
-            <test-icon name="search"></test-icon>
-          </label>
-          <input class="textfield-input" type="password" placeholder="궁금한 인물이나 이슈가 있나요?" />
-          <button class="searchfield-cancel" aria-label="clear keyword">
-            <span class="material-symbols-outlined">취소</span>
-          </button>
-        </div> -->
-        <!-- <test-textfield size="small" placeholder="Textarea small Placeholder...">
+        <!-- <p>unit, choose/enter</p> -->
+        <!-- <abbr title="필수입력">*</abbr> -->
+        <test-separator></test-separator>
+
+        <test-textfield size="small" placeholder="Textarea small Placeholder...">
           <test-icon slot="icon" name="verified-badge"></test-icon>
-        </test-textfield> -->
+        </test-textfield>
       </div>
     </section>
 
-    <article class="component-props">
+    <section class="component-props">
       <test-text variant="subhead">Props</test-text>
       <dl>
         <dt>type</dt>
@@ -85,38 +67,92 @@
         <dt>onKeyDown</dt>
         <dd>(event: KeyboardEvent[HTMLButtonElement]) => void</dd>
       </dl>
-    </article>
+    </section>
 
     <section class="component-guide">
-      <test-tile>
-        <test-textfield
-          type="number"
-          label="넘버필드 가격"
-          value="20000"
-          placeholder="Textarea Placeholder..."
-          helper="앞자리 0 제거. 숫자만입력3자리마다콤마. 소숫점 컨트롤."
-          oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
-        ></test-textfield>
-      </test-tile>
+      <test-text variant="subhead">Visual Style</test-text>
+      <test-text variant="body">
+        레이블을 텍스트필드 왼쪽에 배치하지 마세요. 텍스트 레이블을 아이콘 레이블로 대체할 수 없나요. 서치필드 외에도 반복되는 이메일 입력. 동일한
+        타입의 입력을 반복할 때 레이블을 아이콘으로 대체.
+      </test-text>
+      <test-text variant="body">이중 레이블링하지 마세요. leading icon과 text label 모두 제공할 필욕 없다. 하나만^*^.</test-text>
+      <test-text variant="body">
+        불필요한 정보 입력을 유도하지 마세요. 사용자 여정에 허들이 될 수 있는 불필요한 입력 필드 최소화. 다시말해 모든 텍스트 필드는 필수 입력이어야
+        한다. 사용자 정보를 제공하여 사용자 또는 비즈니스 이점이 명확한 경우 선택 필드를 제안할 수 있습니다. 선택 입력 필드는 '선택입력' 텍스트로
+        가이드합니다.
+      </test-text>
+      <br />
 
-      <test-tile>
-        <div class="textfield-group">
-          <test-textfield type="date" name="date-start" label="체크인" placeholder="날짜를 설정해주세요.">
-            <test-icon slot="icon" name="calendar" for="date-start"></test-icon>
-          </test-textfield>
-          <test-textfield type="date" name="date-end" label="체크아웃" placeholder="날짜를 설정해주세요.">
-            <test-icon slot="icon" name="calendar" for="date-end"></test-icon>
-          </test-textfield>
-        </div>
-      </test-tile>
+      <test-text variant="subhead">Best practices</test-text>
+      <test-text variant="body">
+        넘버필드는 작은 사이즈인데 결국 두 개의 사이즈로? 수량 뿐 아니라 숫자만 입력할 수 있는 필드. 헬퍼 텍스트(위/아래). label :: line-height: 24px
+      </test-text>
+      <test-text variant="body">
+        기본 Textfield를 확장하여 NumberField, DateField, DateRangeField, SearchField, EmailField, PasswordField??
+      </test-text>
+      <test-text variant="body">
+        url field. www 및 https://<br />
+        todo: helper(help message)와 feedback message를 구별. required indicator / optional indicator / validations / masked / validation feedback
+        기본 입력 일반 텍스트필드와 특수한? 텍스트필드 구별을 위한 시각적인 단서를 제공하세요. 검색 아이콘 등
+      </test-text>
+      <!-- <test-text variant="subhead">Clearness? 이거 결국 기표임.</test-text>
+      <test-text variant="body"> 일반 텍스트필드와 특수한? 텍스트필드 구별을 위한 시각적인 단서를 제공하세요. 검색 아이콘 등 </test-text> -->
+    </section>
 
-      <test-tile>
-        <!-- <small id="" class="textfield-helper" aria-live="assertive">pattern="[0-9]+"</small> -->
-      </test-tile>
-      <test-tile>
-        <!-- <input type="text" inputmode="numeric" pattern="[0-9]*"> -->
-        <!-- //value=0 있으면 안 됨. -->
-        <test-row class="counter js-counter">
+    <test-text variant="subhead">Groupable (patterns)</test-text>
+    <test-text variant="body"> 시작/종료 등고 같은 같은 맥락이 아닌 필수 입력 필드를 그룹핑 하지 마세요. </test-text>
+    <section class="component-case">
+      <div class="textfield-group" style="width: 100%; max-width: 400px">
+        <test-textfield label="Length" placeholder="cm unit"></test-textfield>
+        <test-icon name="delete-circle" style="padding: 0 var(--space-1); color: var(--color-text-light); line-height: 48px"> close </test-icon>
+        <test-textfield label="Width" placeholder="x means"></test-textfield>
+        <test-icon name="delete-circle" style="padding: 0 var(--space-1); color: var(--color-text-light); line-height: 48px"> close </test-icon>
+        <test-textfield label="Height" placeholder="cm"></test-textfield>
+      </div>
+    </section>
+
+    <test-text variant="subhead">Searchfield</test-text>
+    <section class="component-case">
+      <form class="searchfield" style="max-width: 400px">
+        <label class="searchfield-prefix">
+          <test-icon name="search"></test-icon>
+        </label>
+        <input class="searchfield-input" type="search" placeholder="궁금한 인물이나 이슈가 있나요?" />
+        <button class="searchfield-clear" aria-label="clear keyword">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+        <button class="searchfield-cancel" aria-label="clear keyword">
+          <span class="material-symbols-outlined">취소</span>
+        </button>
+      </form>
+    </section>
+
+    <test-text variant="subhead">Numberfield</test-text>
+    <section class="component-case">
+      <test-textfield
+        type="number"
+        label="넘버필드 가격"
+        value="20000"
+        placeholder="Textarea Placeholder..."
+        helper="앞자리 0 제거. 숫자만입력3자리마다콤마. 소숫점 컨트롤."
+        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+      ></test-textfield>
+    </section>
+    <test-text variant="subhead">DateRangeField</test-text>
+    <section class="component-case">
+      <div class="textfield-group" style="width: 100%; max-width: 400px">
+        <test-textfield type="date" name="date-start" label="체크인" placeholder="날짜를 설정해주세요.">
+          <test-icon slot="icon" name="calendar" for="date-start"></test-icon>
+        </test-textfield>
+        <test-textfield type="date" name="date-end" label="체크아웃" placeholder="날짜를 설정해주세요.">
+          <test-icon slot="icon" name="calendar" for="date-end"></test-icon>
+        </test-textfield>
+      </div>
+    </section>
+    <test-text variant="subhead">Counter</test-text>
+    <section class="component-case">
+      <div style="max-width: 400px">
+        <div class="counter js-counter" style="display: flex; gap: 0.5rem">
           <label for="numberfield" style="position: absolute; opacity: 0">레이블 라이트하우스용</label>
           <test-chip class="counter-decrement js-counter-decrement" aria-controls="numberfield" tabindex="-1">
             <test-icon slot="icon" name="minus"></test-icon>
@@ -129,56 +165,47 @@
             min="5"
             max="20"
             value="0"
+            style="text-align: center"
           />
           <test-chip class="counter-increment js-counter-increment" tabindex="-1">
             <test-icon slot="icon" name="plus"></test-icon>
           </test-chip>
-        </test-row>
-
-        <p>props: minValue, maxValue, value, onDecreseClick, onIncreseClick</p>
-        <p>221021: - + 버튼에 포커스는 필요가 없다. 최소값와 최대값. 입력 제한 피드백으로 disabled 상태.</p>
-        <p>minus 버튼 없이 plus 버튼만 제공해도 재미있겠다.. counter 는 퍼센티지를 못 담음</p>
-      </test-tile>
-      <test-tile>
-        <div class="textfield">
-          <label class="textfield-label" for="search1">레이블</label>
-          <small class="textfield-byte"><b>0 KB</b> / 100 KB</small>
-          <textarea class="textfield-input" rows="3" placeholder="Textarea Placeholder..." style="height: auto"></textarea>
         </div>
-      </test-tile>
-
-      <test-text variant="body" class="article-p">
-        넘버필드는 작은 사이즈인데 결국 두 개의 사이즈로? 수량 뿐 아니라 숫자만 입력할 수 있는 필드. 헬퍼 텍스트(위/아래). label :: line-height: 24px
-      </test-text>
-
-      <test-text variant="subhead">이중 레이블링하지 마세요.</test-text>
-      <test-text variant="body" class="article-p">leading icon과 text label 모두 제공할 필욕 없다. 하나만^*^. </test-text>
-
-      <test-text variant="subhead">불필요한 정보 입력을 유도하지 마세요.</test-text>
-      <test-text variant="body" class="article-p">
-        사용자 여정에 허들이 될 수 있는 불필요한 입력 필드 최소화. 다시말해 모든 텍스트 필드는 필수 입력이어야 한다. 사용자 정보를 제공하여 사용자
-        또는 비즈니스 이점이 명확한 경우 선택 필드를 제안할 수 있습니다. 선택 입력 필드는 '선택입력' 텍스트로 가이드합니다.
-      </test-text>
-      <!-- <test-text variant="body" class="article-p">
-          <b>groupable</b> 선택 입력 필드를 최대 2개 그루핑할 수 있습니다. 시작일 종료일과 같은 일반적인 데이트 레인지를 그룹핑할 수 있다. ?
-        </test-text> -->
-      <test-text variant="subhead">Layout?</test-text>
-      <test-text variant="body" class="article-p">
-        레이블을 텍스트필드 왼쪽에 배치하지 마세요. 아이콘 레이블로 대체하는 경우 텍스트 레이블을 생략할 수 있습니다. 서치필드 외에도 반복되는 이메일
-        입력. 동일한 타입의 입력을 반복할 때 레이블을 아이콘으로 대체.
-      </test-text>
-
-      <test-text variant="subhead">명료Clearness</test-text>
-      <test-text variant="body" class="article-p">
-        너무 당연한 이야기검색 필드는 일반 텍스트필드와 구별할 수 있도록 검색 아이콘 등 시각적인 단서를 제공하세요.
-      </test-text>
+        <test-separator></test-separator>
+        <test-row style="align-items: center">
+          <div>
+            <p style="margin: 0"><b>1 sandbox</b></p>
+            <small style="display: block; color: var(--color-text-light)">$100.00 / addl sandbox</small>
+          </div>
+          <test-row style="width: max-content; margin-left: auto">
+            <test-chip class="counter-decrement js-counter-decrement" aria-controls="numberfield" tabindex="-1">
+              <test-icon slot="icon" name="minus"></test-icon>
+            </test-chip>
+            <test-chip class="counter-increment js-counter-increment" tabindex="-1">
+              <test-icon slot="icon" name="plus"></test-icon>
+            </test-chip>
+          </test-row>
+        </test-row>
+      </div>
     </section>
-    <p></p>
 
-    <!-- <ul>
-        <li>todo: helper(help message)와 feedback message를 구별. required indicator / optional indicator / validations / masked / validation feedback</li>
-        <li>url 등록 시 www 및 https:// 기본 입력</li>
-      </ul> -->
+    <div style="margin-bottom: 3rem">
+      <!-- <input type="text" inputmode="numeric" pattern="[0-9]*"> -->
+      <!-- <small id="" class="textfield-helper" aria-live="assertive">pattern="[0-9]+"</small> -->
+      <!-- //value=0 있으면 안 됨. -->
+      <p>props: minValue, maxValue, value, onDecreseClick, onIncreseClick</p>
+      <p>221021: - + 버튼에 포커스는 필요가 없다. 최소값와 최대값. 입력 제한 피드백으로 disabled 상태.</p>
+      <p>minus 버튼 없이 plus 버튼만 제공해도 재미있겠다.. counter 는 퍼센티지를 못 담음</p>
+    </div>
+
+    <test-text variant="subhead">Textarea</test-text>
+    <section class="component-case">
+      <div class="textfield">
+        <label class="textfield-label" for="search1">레이블</label>
+        <small class="textfield-byte"><b>0 KB</b> / 100 KB</small>
+        <textarea class="textfield-input" rows="3" placeholder="Textarea Placeholder..." style="height: auto"></textarea>
+      </div>
+    </section>
 
     <div class="component-references">
       <test-text variant="subhead">References</test-text>

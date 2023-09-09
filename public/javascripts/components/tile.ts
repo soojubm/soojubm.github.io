@@ -8,30 +8,29 @@ class Tile extends HTMLElement {
     const container = document.createElement('div')
     container.classList.add('tile')
 
-    const slotActions = document.createElement('slot')
+    const slotAction = document.createElement('slot')
     const slotTags = document.createElement('slot')
-    slotActions.name = 'actions'
+    const slotCategory = document.createElement('slot')
+    slotAction.name = 'action'
     slotTags.name = 'tags'
+    slotCategory.name = 'category'
 
     const style = this.getAttribute('style')
     container.setAttribute('style', style || '')
 
     shadow.appendChild(container)
-
     // console.log(...this.childNodes, ...this.children, 'this.childNodes')
-
-    console.log(...this.childNodes, ...this.children, 'this.childNodes')
 
     container.innerHTML = this.innerHTML || ''
     container.appendChild(makeStyleSheet('tiles'))
-    container.appendChild(slotActions)
+    container.appendChild(slotAction)
     container.appendChild(slotTags)
+    container.appendChild(slotCategory)
 
     if (this.variant) container.setAttribute('data-variant', this.variant)
     container.setAttribute('data-size', this.size || '')
   }
 
-  // tile 안에 클래스 적용 안 됨.
   // get size() {
   //   return this.getAttribute('size')
   // }
@@ -48,9 +47,7 @@ class Tile extends HTMLElement {
   }
 
   connectedCallback() {}
-  disconnectedCallback() {
-    console.log('disconnected', this)
-  }
+  disconnectedCallback() {}
 }
 
 export default Tile

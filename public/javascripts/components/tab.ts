@@ -7,23 +7,20 @@ class Tab extends HTMLElement {
 
     const container = document.createElement('button')
     const label = document.createElement('span')
-    container.classList.add('tablist-tab')
+    container.classList.add('tab')
     container.role = 'tab'
     this.role = 'tab'
     // TODO role 어디에
 
-    label.classList.add('tablist-tab-label')
+    label.classList.add('tab-label')
 
     shadow.appendChild(container)
     shadow.appendChild(makeStyleSheet('tablist'))
 
     container.append(...this.childNodes)
+    container.setAttribute('aria-selected', this.selected || 'false')
 
-    console.log('tab this', this)
-
-    this.querySelector('button')!.addEventListener('click', () => {
-      alert()
-    })
+    this.querySelector('button')!.addEventListener('click', () => {})
 
     // const b = this.querySelector('[slot="trigger"]');
 
@@ -60,6 +57,9 @@ class Tab extends HTMLElement {
     return this.getAttribute('value')
   }
 
+  get selected() {
+    return this.getAttribute('selected')
+  }
   connectedCallback() {}
   disconnectedCallback() {}
 }

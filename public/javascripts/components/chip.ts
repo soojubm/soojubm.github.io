@@ -79,8 +79,14 @@ class Chip extends HTMLElement {
     //   value.textContent = this.value || ''
     //   label.appendChild(value)
     // }
+    // todo
+
+    // TODO info naked
+    if (this.status === 'info') host.dataset.status = 'info'
+
     if (this.status === 'active') host.setAttribute('aria-selected', 'true')
     if (this.status === 'disabled') host.setAttribute('disabled', 'true')
+    if (this.status === 'checked') host.setAttribute('aria-checked', 'true')
     if (this.status === 'destructive') host.dataset.variant = 'destructive'
   }
 

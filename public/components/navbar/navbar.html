@@ -7,47 +7,10 @@
   <a class="navbar-logo" href="/"></a>
   <!-- <div class="navbar-brand-logo-and-title"></div> -->
 
-  <div class="navbar-menulist">
-    <a href="index.html">
-      Home
-      <test-icon name="" class="iconoir-down-round-arrow"></test-icon>
-    </a>
-    <menu>
-      <a href="index.html">
-        <i class="iconoir-home-simple-door" aria-label="홈"></i>
-      </a>
-      <a href="tokens.html">
-        <test-icon name="palette"></test-icon>
-        Tokens
-      </a>
-      <a href="signifier.html">Signifier</a>
-    </menu>
-    <a href="tokens.html"> Tokens </a>
-    <menu>
-      <a href="index.html">
-        <i class="iconoir-home-simple-door" aria-label="홈"></i>
-      </a>
-      <a href="tokens.html">
-        <i class="iconoir-palette"></i>
-        Tokens
-      </a>
-      <a href="signifier.html">Signifier</a>
-    </menu>
-    <a href="signifier.html">Signifier</a>
-    <menu>
-      <a href="index.html">
-        <i class="iconoir-home-simple-door" aria-label="홈"></i>
-      </a>
-      <a href="tokens.html">
-        <i class="iconoir-palette"></i>
-        3
-      </a>
-      <a href="signifier.html">3</a>
-    </menu>
-  </div>
-
   <div style="margin-left: auto">
-    <test-chip> Theme: <b>Brutal</b> <i class="iconoir-down-round-arrow"></i> </test-chip>
+    <test-chip name="Theme" label="Brutal">
+      <test-icon slot="badge" name="nav-arrow-down"></test-icon>
+    </test-chip>
   </div>
 
   <div class="navbar-user">
@@ -136,6 +99,9 @@
         <i class="iconoir-box"></i>
         tile
       </a>
+      <a href="tab.html"> tab </a>
+      <a href="separator.html"> separator </a>
+
       <a href="tooltip.html">
         <i class="iconoir-help-square"> </i>
         tooltip
@@ -148,7 +114,8 @@
         <i class="iconoir-text"></i>
         text
       </a>
-      <a href="bar.html">bar</a>
+      <a href="bar.html">bars?</a>
+      <a href="step.html">step</a>
       <a href="components.html"> components</a>
     </menu>
     <menu>
@@ -159,18 +126,18 @@
         </test-avatar>
         <test-icon slot="icon" name="plus"></test-icon>
       </test-menuitem>
-      <a href="setting.html">
-        <i class="iconoir-settings"></i>
-        setting
-      </a>
-      <a href="post.html">
-        <i class="iconoir-open-book"></i>
-        post
-      </a>
-      <a href="chat.html">
-        <i class="iconoir-chat-bubble"></i>
-        chat
-      </a>
+      <!-- <a href="setting.html"> pagehead </a> -->
+      <a href="dialog.html">dialog</a>
+      <a href="accordion.html">accordion</a>
+      <a href="result.html">result</a>
+      <test-separator></test-separator>
+      <a href="feed.html">feed</a>
+      <a href="notification.html">notifications</a>
+      <a href="chat.html"> chat </a>
+      <a href="auth.html">auth</a>
+      <test-separator></test-separator>
+      <!-- <a href="dialog.html">collapsed/expanded</a>
+      <a href="dialog.html">haspopup</a> -->
       <a href="searching.html">
         <test-icon name="input-search"></test-icon>
         searching
@@ -178,39 +145,18 @@
       <a href="filtering.html">
         <test-icon name="filter"></test-icon>
         filtering
-      </a>
-      <test-separator></test-separator>
-      <a href="dialog.html">collapsed/expanded</a>
-      <a href="dialog.html">haspopup</a>
-
-      <a href="dialog.html">dialog</a>
-      <a href="accordion.html">accordion</a>
-      <a href="result.html">result</a>
       <a href="presentation.html">presentations</a>
+      <test-separator></test-separator>
       <a href="profile.html">user profile 🔥</a>
-      <a href="feed.html">feed</a>
-      <a href="notification.html">notifications</a>
+      <a href="setting.html">setting</a>
+      <a href="post.html">post</a>
+      <a href="product.html">Product</a>
+      <a href="cake.html">Product 2</a>
+      <a href="class.html">Product 3 - class</a>
       <!-- <a href="#messaging">messaging / feedback </a> -->
       <!-- <a href="#terms">Terms & Privacy</a> -->
-    </menu>
-    <!-- <span class="menu-label" role="menuitem"></span> -->
-    <menu>
-      <p style="line-height: var(--size-medium)"><test-text variant="label">Interfaces</test-text></p>
-      <a href="#kakaopay">Kakaopay (outdated)</a>
-      <a href="#_login">Sign In</a>
-      <a href="#_signup">Sign Up</a>
-      <a href="#_forgot">Forgot Password</a>
-      <a href="#product">Product</a>
-      <a href="#cart">Cart</a>å
-      <a href="#checkout">Checkout</a>
       <!-- <a href="#orders">Orders</a> -->
-      <a href="#cake">Product 2</a>
-      <a href="#feed">Feed</a>
-      <!-- <a href="#contact">Contact</a>
-            <a href="#help">Help</a> -->
-      <a href="#class">Product 3 - class</a>
       <!-- <a href="#event">Event</a> -->
-      <!-- <a href="#terms">Terms..</a> -->
     </menu>
   </div>
 </nav>

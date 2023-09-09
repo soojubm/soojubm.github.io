@@ -4,23 +4,30 @@
       <figure class="chat-avatar"></figure>
       <div class="chat-bubble is-primary" style="border: none; background-color: var(--color-primary)">
         <b>Presentations</b>
-        <p>프레젠테이션은 유연하고 콘텐츠는 독립적으로. 1. 콘텐츠 소비, 2. 행동</p>
+        <p>독립적이고. 유연하고.</p>
       </div>
-      <!-- <div class="chat-bubble">
+      <div class="chat-bubble">
         <p>루트 엘리먼트가 상태 클래스를 가져야 한다. = 글로벌 상태. (특히 토스트). React Portal</p>
-      </div> -->
+      </div>
       <div class="chat-bubble">
         <p>
           <b>사용자 워크플로 중심으로 용법을 정의.</b> 디자인 시스템에서 어떻게 정의하느냐에 따라 용법이 달라질 수 밖에 없다. 토스트 식빵처럼 튀어
-          나오는 것을 toast로 정의할 것인지, 특정 위치(왼쪽 아래)에 위치하는 맥락으로 toast를 정의할 것인지. 너무 많은 콘텐츠를 모달에 표시하지 않도록
-          제한할 것인지, dribble, pinterest와 같이 모달 뷰를 일종의 상세페이지로도 허용할 것인지.
+          나오는 것을 toast로 정의, 특정 위치(왼쪽 아래)에 위치하는 맥락으로 toast를 정의. 너무 많은 콘텐츠를 모달에 표시하지 않도록
+          제한할 것인지, dribble, pinterest와 같이 풀페이지 모달 뷰를 허용하여 페이지 맥락으로 접근을 허용할 것인지.
         </p>
       </div>
       <div class="chat-bubble">
         <p>한 번에 하나의 presentation만 열 수 있다면? 모달 안의 드롭다운 패턴은 허용할 것인가? 분명한 사실은 시트는 항상 모달보다 위에 있다.</p>
       </div>
       <div class="chat-bubble">
-        <p>모달, 토스트는 컴포넌트가 아님. 기능에 가까움. alert toast, dialog modal</p>
+        <p>레이어의 위계: 딤(오버레이) - 팝오버 - 모달 - 팝오버 - 토스트 - 시트</p>
+        <p>한 번에 최대 하나의 프레젠테이션을 동작한다는 규칙을 정의했었는데 결국 dim은 독립적으로 구성하면 모달 위에 팝오버를 깔 수도 있다.</p>
+      </div>
+      <div class="chat-bubble">
+        <p>alert toast, dialog modal</p>
+      </div>
+      <div class="chat-bubble">
+      <li>React portal Presentations를 루트 엘리먼트(body) 안의 main tag의 형제 엘리먼트로 위치시킨다. root -> main - page/modal/toast/sheet</li>
       </div>
       <div class="chat-bubble">
         <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/presentation_role" target="_blank">ARIA: presentation role </a>
@@ -46,26 +53,16 @@
   <section class="hero" role="banner">
     <!-- const hide = () => drawer.remove()
     const show = () => layout.appendChild(drawer) -->
-    <!-- <ul>
-      <li>독립적인 컨테이너로서 동작해야 한다.</li>
-      <li>큰 맥락에서 presentation 컴포넌트는 레이아웃(또는 컨테이너)의 역할로 봐도 무방하다.</li>
-      <li>컨테이너가 fixed 되어야 현재 뷰포트에서 노출할 수 있다.</li>
-      <li>overay을 별도의 엘리먼트로 만들면 리액트에서 콘텐츠 외부를 클릭해서 닫는 기능 구현이 쉬움.</li>
-    </ul> -->
-    <!-- <p>layout :: fixed layout / fluid layout</p> -->
+    <p>layout :: fixed layout / fluid layout</p>
 
-    <!-- <p class="hero-description">
+    <p class="hero-description">
       정리. 크로스 플랫폼을 위한 디자인에서 iOS에만 있거나 android에만 있는 요소를 혼합해서 사용하게 되면 작은 화면에서 sheet가 toast나 floating
       action button 등과 위치나 용법이 중복되기 때문에 생각할 지점이 많아진다. 사용자들에게 눈에 띄게 큰 효용을 주는 것이 아니라면, 대체 가능한 패턴을
       활용하면 관리 비용을 줄이는 동시에 일관된 경험을 줄 수 있다. material design이나 human interface guideline은 하나의 거대한 운영체제 하에서
       다양한 케이스를 망라하는 가이드이다. 이 모든 규칙을 엄격하게 수용하고 반영하려는 시도는 우리 제품의 당면한 문제인가?
     </p>
 
-    <ul>
-      <li>React portal의 개념을 가져와서 모든 Presentations를 루트 엘리먼트(body) 안에 위치시킬 수 있다. root -> page/modal/toast/sheet</li>
-    </ul> -->
-
-    <test-text variant="subhead">Related Components</h4>
+    <test-text variant="subhead">Related Components</test-text>
     <ul>
       <li>Title bar</li>
       <li>Button group</li>
@@ -73,40 +70,40 @@
       <li>Elevated tile</li>
       <li>CloseIcon / BackIcon</li>
     </ul>
-    <test-text variant="subhead">Triggers</h4>
+    <test-text variant="subhead">Triggers</test-text>
     <ul>
       <li>window.load</li>
       <li>action button</li>
       <li>window.resize</li>
     </ul>
 
-    <!-- <test-text variant="subhead">인터렉션</h4>
+    <test-text variant="subhead">Needed interactions</test-text>
     <ul>
-      <li>Sheet (mobile)</li>
-      <li>Modal (desktop)</li>
+      <li>Sheet</li>
+      <li>Dialog modal</li>
+      <li>Toast (optional)</li>
     </ul>
-    <p style="margin:.5rem 0 1.5rem;">
+    <p style="margin: 0.5rem 0 1.5rem">
       사용자 인터렉션을 요구할 때 overay으로 주의를 집중 시킵니다. toast는 단순 피드백으로, 뷰를 변경하지 않습니다.
     </p>
-    <p>overay을 열고 body 엘리먼트의 스크롤을 막을 것인가. 스크롤의 크기만큼 좌우의 위치를 보정할 것인가. 비효율적인 작업량.</p> -->
-
-    <!-- <test-tile>
+    <test-tile>
       <b>memo</b>
       <p>md. When adapting for larger screens, a bottom sheet can become a context menu.</p>
       <p>md. Swap the bottom sheet for a side sheet in landscape layouts.</p>
       <p>md. sheet. modal bottom sheet. expanding bottom sheet.</p>
-    </test-tile> -->
+    </test-tile>
   </section>
 
   <section>
     <article class="article js-observer js-scrollspy-section">
       <test-text variant="title">Dim</test-text>
-      <p class="article-description">useOutsideClick의 ref 의존성을 presentation 컴포넌트에서 분리하기 위해 닫기 역할.</p>
+      <test-text variant="body-large">useOutsideClick의 ref 의존성을 presentation 컴포넌트에서 분리하기 위해 닫기 버튼의 기능을 갖는다.</p>
+      <p>transparent / dark</p>
     </article>
 
     <article class="article js-observer js-scrollspy-section">
       <test-text variant="title">Page</test-text>
-      <p class="article-description">기본적인 콘텐츠 뷰</p>
+      <test-text variant="body-large">기본적인 콘텐츠 뷰</test-text>
       <ul>
         <li>검색 : 글로벌 / 로컬 패턴 정리 , Progressing. Loader의 레벨</li>
       </ul>
@@ -114,85 +111,39 @@
 
     <article class="article js-observer js-scrollspy-section">
       <test-text variant="title">Modal</test-text>
-      <p class="article-description">something that requires the user’s attention.</p>
+      <test-text variant="body-large">something that requires the user’s attention.</test-text>
       <footer>
-        <button class="button js-modal" data-variant="secondary" data-modal="woolf">모달 열기</button>
+        <test-button variant="secondary" class="js-modal" data-modal="woolf">모달 열기</test->
       </footer>
       <test-separator></test-separator>
+
       <ul>
+        <li>non-modal dialog를 허용하지 않는다. 사용자의 집중도? 낮음. 그럴거면 다이얼로그말고 다른 걸 사용해야.</li>
         <li>
           <b>사용자의 인터렉션.</b> 사용자가 모달을 해제할 때까지 이전 워크플로로 돌아갈 수 없습니다. 사용자의 워크플로를 완료하는 데 필요한 입력을
           요청. 편집 또는 관리와 같은 짧고 낮은 빈도.
         </li>
-        <li>사용자가 모달을 직접 열 수 있는 트리거를 제공하세요. 현재 모달을 암시하는 기표는 없음. 사용자의 학습이 필요.</li>
+        <li>사용자가 모달을 직접 열 수 있는 트리거를 제공하세요. 현재 이 디자인 시스템에 모달을 암시하는 기표는 없음. 사용자의 학습 또는 학습이 불필요.</li>
         <li>이전 페이지와 맥락을 유지하는 콘텐츠 정보를 표시</li>
-        <li>x button / arrow button, left / right</li>
-        <!-- <li>All Modals have a max-width of 100%.</li> -->
+        <li>All Modals have a max-width of 100%.</li>
         <li>중요도 정의하기. 정말로 중요한 입력이 요구되는 경우, 모달의 바깥을 클릭해서 닫을 수 없는 게 맞는 맥락. 또한 반드시 모달이어야 하는가.</li>
-        <li>todo dialogs = diakog-layer.</li>
-
-        <!-- <li>
-          팝업을 띄우면서 스크롤을 막으려면 스크롤바를 없애줘야 하는데, 이게 생각보다 복잡하다. 크롬에서는 html에 overflow:hidden를 잘 주면 끝인데,
-          익스플로러에선 스크롤 제어하려면 body에 먹여야 한다. html에 overflow:hidden;을주고 모달에 overflow-y를 주면(조건:모달이 윈도우창보다
-          작아질때)
-        </li> -->
-      </ul>
-      <table>
-        <thead>
-          <tr>
-            <td style="padding: var(--space-2) 0">
-              <span class="icon-indicator is-positive" data-size="small">
-                <span class="material-symbols-outlined">check</span>
-              </span>
-            </td>
-            <td style="padding: var(--space-2) 0">
-              <span class="icon-indicator is-negative" data-size="small"><span class="material-symbols-outlined">close</span></span>
-            </td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              <b>Close on outside click</b>
-              <br />
-              내용 없음
-            </td>
-            <td>
-              <b>Non-modal dialog</b>
-              <br />
-              다이얼로그는 항상 모달로 사용합니다.
-            </td>
-          </tr>
-        </tbody>
-      </table>
-
-      <test-text variant="subhead">모달이 될 수 있는 컴포넌트</h4>
-      <ul>
-        <li>Page - portfolio work</li>
-        <li>Dialog</li>
-        <li>Multiple filters</li>
-        <li>Dropdown menu</li>
       </ul>
 
-      <test-text variant="subhead">with Page <sup>800px</sup></h4>
+      <test-text variant="subhead">with Page <sup>800px</sup></test-text>
       <aside
         class="modal tile-elevated"
         role="dialog"
         style="margin-left: -5vw; margin-right: -5vw; border-radius: 0; position: relative; z-index: 1"
       >
         <article class="modal-dialog" style="margin: 0">
-          <!-- <header class="dialog-head"></header>
-          <div class="dialog-body"></div> -->
-          <header class="titlebar" style="padding: 0">
-            <h1 class="titlebar-title">모달 제목</h1>
-            <button class="titlebar-back" aria-label="이전 페이지로">
-              <span class="material-symbols-outlined">arrow_back</span>
-            </button>
-          </header>
+          <test-titlebar heading="모달 제목">
+            <test-chip slot="back">
+              <test-icon slot="icon" name="back-left"></test-icon>
+            </test-chip>
+          </test-titlebar>
           <section style="padding: 2rem 0 0">
             <ul>
-              <li><b>with title bar. (sticky)</b> 사용자에게 위치를 알려줄 수 있다.</li>
-              <li>모바일에서 페이지처럼 보인다.</li>
+              <li><b>풀사이즈 모달. with title bar. (sticky)</b>모바일에서 페이지처럼 보인다.</li>
               <li>use case. user profile의 portfolio에서 사용.</li>
               <li>with button group.</li>
             </ul>
@@ -211,17 +162,31 @@
         <button class="dialog-close js-close" aria-label="닫기"><span class="material-symbols-outlined">close</span></button>
       </aside>
 
+      <test-text variant="subhead">모달이 될 수 있는 컴포넌트</test-text>
+      <ul>
+        <li>Page - portfolio work</li>
+        <li>Dialog</li>
+        <li>Multiple filters</li>
+        <li>Dropdown menu</li>
+      </ul>
+
       <test-text variant="subhead">모달의 종료</test-text>
       <ul>
         <li>click. Dim / CloseButton / ConfirmButton / CancelButton</li>
         <li>keydown. escKey. enterKey. spaceBar</li>
+        <li>닫기 버튼의 위치</li>
       </ul>
 
-      <test-text variant="subhead">확장 기능</test-text>
+      <test-text variant="subhead">확장된 기능</test-text>
       <ul>
-        <li>모달에 브라우저 히스토리를 저장.</li>
-        <li>url을 통한 접근 허용.</li>
-        <li>body element의 스크롤 여부.</li>
+        <li>url을 통한 접근.</li>
+        <li>브라우저 히스토리.</li>
+        <li>body element의 스크롤. 스크롤의 크기 보정. (작업량 대비 본질적인? 기능은 아님.)</li>
+              <!-- <li>
+                크롬에서는 html에 overflow:hidden를 잘 주면 끝인데,
+                익스플로러에선 스크롤 제어하려면 body에 먹여야 한? html에 overflow:hidden;을주고 모달에 overflow-y를 주면(조건:모달이 윈도우창보다
+                작아질때)
+              </li> -->
       </ul>
 
       <test-text variant="subhead">Other cases</test-text>
@@ -241,9 +206,9 @@
 
     <article class="article js-observer js-scrollspy-section">
       <test-text variant="title">Toast</test-text>
-      <p class="article-description" title="temporary feedback on an interaction">일시적인 피드백. 현재 사용하지 않음.</p>
+      <test-text variant="body-large" title="temporary feedback on an interaction">일시적인 피드백. 현재 사용하지 않음.</test-text>
 
-      <button class="button js-toggle" data-variant="secondary">토스트 열기</button>
+      <test-button variant="secondary" class="js-toggle">토스트 열기</test-button>
       <aside class="toast" role="alert">toast test. 사라지는 시간을 정의.</aside>
 
       <test-text variant="subhead">Best practices</test-text>
@@ -269,15 +234,15 @@
       <ul>
         <li>삭제 후 되돌리기. 휴지통이 있다면 대체할 수 있는 기능.</li>
         <li>HIG에 정의되지 않음. iOS spotify 앱에서 '라이브러리에 추가되었습니다'.</li>
+        <li>온라인 오프라인</li>
       </ul>
     </article>
 
     <article class="article js-observer js-scrollspy-section">
       <test-text variant="title">Sheet</test-text>
-      <p class="article-description">사용하지 않음. 모바일용. 참고용.</p>
+      <test-text variant="body-large">사용하지 않음. 모바일용. 참고용.</test-text>
       <!-- <p>To allow users to view optional information or complete sub-tasks in a workflow while keeping the context of the current page, use Sheet.</p> -->
-      <button class="button js-toggle" data-variant="secondary">시트 열기</button>
-
+      <test-button variant="secondary" class="js-toggle">시트 열기</test-button>
       <article class="sheet js-sheet" role="presentation">
         <button class="sheet-toggle"></button>
         <h2 class="sheet-title">Presentation - sheet</h2>
@@ -304,7 +269,7 @@
         </div>
       </section>
 
-      <test-text variant="subhead">시트가 될 수 있는 컴포넌트</h4>
+      <test-text variant="subhead">시트가 될 수 있는 컴포넌트</test-text>
       <ul>
         <li>dialog</li>
         <li>기능(역할) 단위 컴포넌트. 공유하기 등.</li>
@@ -314,17 +279,17 @@
         <li>데스크탑에서는 시트보다 모달의 사용성이 더 좋다. 모달이 충분히 대체할 수는 있다.</li>
         <li>토스트. Don't show more than one at a time.</li>
       </ul>
-      <!-- <test-text variant="subhead">Cases</h4>
+      <!-- <test-text variant="subhead">Cases</test-text>
       <ul>
         <li>액션시트. 네이버쇼핑과 왓챠에서 본 것 같음.</li>
       </ul> -->
     </article>
 
     <article class="article js-observer js-scrollspy-section">
-      <test-text variant="title">Popover</h1>
-      <p class="article-description">floating tiles</p>
+      <test-text variant="title">Popover</test-text>
+      <test-text variant="body-large">floating tiles</test-text>
       <footer style="position: relative">
-        <button class="button js-toggle" data-variant="secondary">팝오버 열기</button>
+        <test-button variant="secondary" class="js-toggle" >팝오버 열기</test-button>
         <div class="popover tile-elevated">
           <header class="titlebar" style="padding: 0">
             <h1 class="titlebar-title">프로필</h1>
@@ -336,45 +301,36 @@
         </div>
       </footer>
 
-      <test-text variant="subhead">trigger</h4>
+      <test-text variant="subhead">trigger</test-text>
       <ul>
-        <li>expandable chip</li>
-        <li>icon button - morevert</li>
-      </ul>
-
-      <test-text variant="subhead">gg</h4>
-      <ul>
-        <li>overflow menu</li>
+        <li>overflow menu : expandable chip / icon button - morevert</li>
         <li>tooltip</li>
       </ul>
 
       <ul>
-        <li>큰화면에 어울리는 인터페이스. 작은 화면에서 모달이나 시트가 될 수 있어야 한다.</li>
+        <li>큰화면에 어울리는 인터페이스. 작은 화면에서 모달이나 시트로 변경이 되면 좋다.</li>
         <li>한 번에 하나 이상을 열 수 없다.</li>
-        <li>팝오버 컨테이너의 외부를 클릭했을 때 닫는다.</li>
         <li>aria-haspopup</li>
-        <li>aka. drawer</li>
         <li>caret tip / tab t ip - carbon design system</li>
         <li>alignment, placement - left / right</li>
       </ul>
+    </article>
+
+    <article class="article js-scrollspy-section">
+      <test-text variant="title">Vertical Scrolling</test-text>
+      <test-text variant="body-large">작성 중.</test-text>
+    
+      <p>aka. carousel, slider,</p>
+      <p>cases. chip group, item group. item의 갯수가 많지 않을 때는 스크롤을 통한 탐색이 더 유용할 수 있다.</p>
+    
+      <blockquote>
+        <p>
+          -webkit-appearance: slider-vertical slider<br />CSS 속성에서 사용하기 때문에 slider보다 carousel로 명명하는 것이 더 좋음. input type="range"
+          형태를 slider 또는 stepper로 명명하는 경우를 고려.
+        </p>
+      </blockquote>
     </article>
   </section>
 </main>
 
 
-
-
-<article class="article js-scrollspy-section">
-  <test-text variant="title">Vertical Scrolling</test-text>
-  <p class="article-description">작성 중.</p>
-
-  <p>aka. carousel, slider,</p>
-  <p>cases. chip group, item group. item의 갯수가 많지 않을 때는 스크롤을 통한 탐색이 더 유용할 수 있다.</p>
-
-  <blockquote>
-    <p>
-      -webkit-appearance: slider-vertical slider<br />CSS 속성에서 사용하기 때문에 slider보다 carousel로 명명하는 것이 더 좋음. input type="range"
-      형태를 slider 또는 stepper로 명명하는 경우를 고려.
-    </p>
-  </blockquote>
-</article>

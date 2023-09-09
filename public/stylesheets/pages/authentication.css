@@ -31,11 +31,8 @@
 .delete-action-confirm {@mixin button-primary;}
 .delete-action-back {@mixin button-text;}
 
-
 .password-foot {display:flex;align-items:center;justify-content:space-between;margin:var(--space-3) 0 0 0;}
 
-.login-email {margin:var(--space-after-textfield) 0;}
-.login-password {}
 
 .login-remember {margin:var(--space-2) 0;}
 

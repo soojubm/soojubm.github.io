@@ -1,7 +1,7 @@
 <main class="tokens">
   <article class="article js-scrollspy-section">
     <test-text variant="title">Texts</test-text>
-    <p class="article-description">작성 중.</p>
+    <test-text variant="body-large">작성 중.</test-text>
 
     <p>message, text, description,</p>
     <p>helper의 자식이 p ul 둘 다 될 수 있다.ㄴ</p>
@@ -10,8 +10,8 @@
       <test-text variant="title">heading1, title</test-text>
       <test-text variant="subhead"><p style="margin-bottom: -0.5rem">heading2, subhead</p></test-text>
       <test-text variant="label">heading3, label</test-text>
-      <test-text variant="body-large">body1 (large) - post</test-text>
-      <test-text variant="body">body2</test-text>
+      <test-text variant="body-large">body1 (large) - post/ max-width 정의</test-text>
+      <test-text variant="body">body2 / max-width 정의</test-text>
       <test-text variant="body-bold">body bold - button & meta</test-text>
 
       <footer style="display: flex; flex-direction: column; gap: var(--space-2); margin: 1.5rem 0 0 0">
@@ -111,6 +111,29 @@
         식탁에서는 그린 산맥의 목장을 한 번도 떠나 본 적 없는 양 떼마냥 부끄러워하며 서로를 힐끔거릴 뿐이었다. 이 얼마나 희한한 광경인가! 숫기 없는
         곰, 소심한 전사 같은 고래잡이들이라니! <button style="font-weight: var(--font-weight-bold)">더 보기</button>
       </p>
+
+      <br />
+
+      <p>
+        <button style="display: flex; align-items: center; gap: 0.5rem; color: var(--color-primary)">
+          View More <test-icon name="nav-arrow-down"></test-icon>
+        </button>
+        <button style="display: flex; align-items: center; gap: 0.5rem; color: var(--color-primary)">
+          View Less <test-icon name="nav-arrow-up"></test-icon>
+        </button>
+      </p>
+
+      <div class="hero">
+        <test-text variant="title">Page heading</test-text>
+        <test-text variant="body-large" class="article-description">
+          이런 생각을 한 건 다들 식탁에 앉은 후였고, 나는 재미있는 고래잡이 이야기를 들을 기대에 부풀었다. 그런데 이거 참 놀랍게도 거의 모두가 깊은
+          침묵에 잠겼다.
+        </test-text>
+        <footer class="hero-actions" style="margin: 1.5rem 0 0">
+          <test-button variant="primary" href="#components">Call to action</test-button>
+          <test-button variant="text">더 알아보기</test-button>
+        </footer>
+      </div>
     </section>
 
     <p>sequentially-descending order</p>
@@ -214,4 +237,70 @@
       <li>role=suggestion/deletion/insertion]</li>
     </ul>
   </article>
+
+  <section class="section-example">
+    <div class="dashboard-item overview-item tile-elevated" style="width: var(--width-tiny); padding: 1rem">
+      <div class="dashboard-item-label" style="font-size: var(--font-size-medium)">수신</div>
+      <span class="dashboard-item-tag tag" style="position: absolute; right: 1rem; top: 0.875rem">태그</span>
+      <b class="dashboard-item-value" style="font-size: var(--font-size-huge)">
+        1,508<small style="margin: 0 0 0 0.25rem; font-size: var(--font-size-medium); vertical-align: super">90%</small>
+      </b>
+      <div class="meter">
+        <div class="meter-track">
+          <b class="meter-thumb" style="width: 68%"></b>
+        </div>
+        <span class="meter-text">200GB 중 115.72GB 사용</span>
+      </div>
+    </div>
+
+    <div class="graph" style="border: var(--border); border-radius: var(--radius)">
+      <div class="graph-title">1월 26일 <em>컴퓨터통신 분야</em>에서는<br /><em>7백명의 지식iN</em>들이 답변하셨습니다.</div>
+      <div class="graph-item">
+        <span class="graph-item-value">40%</span>
+        <div class="graph-item-bar"></div>
+        <span class="graph-item-label">10대</span>
+      </div>
+      <div class="graph-item">
+        <span class="graph-item-value">30%</span>
+        <div class="graph-item-bar"></div>
+        <span class="graph-item-label">20대</span>
+      </div>
+      <div class="graph-item">
+        <span class="graph-item-value">20%</span>
+        <div class="graph-item-bar"></div>
+        <span class="graph-item-label">30대</span>
+      </div>
+      <div class="graph-item">
+        <span class="graph-item-value">10%</span>
+        <div class="graph-item-bar"></div>
+        <span class="graph-item-label">40대</span>
+      </div>
+    </div>
+
+    <article class="meter">
+      <h1 class="meter-title">200 GB 중 187.23 GB 사용됨</h1>
+      <div class="meter-graph">
+        <div class="meter-graph-item" data-type="facebook" style="width: 40%"></div>
+        <div class="meter-graph-item" data-type="twitter" style="width: 30%"></div>
+        <div class="meter-graph-item" data-type="instagram" style="width: 7%"></div>
+      </div>
+      <div class="meter-legend">
+        <div class="meter-legend-item">
+          <i class="meter-legend-item-color" data-type="facebook"></i>
+          <h3 class="meter-legend-item-title">페이스북</h3>
+          <span class="meter-legend-item-value">800,000원</span>
+        </div>
+        <div class="meter-legend-item">
+          <i class="meter-legend-item-color" data-type="twitter"></i>
+          <h3 class="meter-legend-item-title">트위터</h3>
+          <span class="meter-legend-item-value">800,000원</span>
+        </div>
+        <div class="meter-legend-item">
+          <i class="meter-legend-item-color" data-type="instagram"></i>
+          <h3 class="meter-legend-item-title">핀터레스트</h3>
+          <span class="meter-legend-item-value">800,000원</span>
+        </div>
+      </div>
+    </article>
+  </section>
 </main>

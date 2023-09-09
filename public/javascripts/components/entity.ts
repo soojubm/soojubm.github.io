@@ -21,7 +21,7 @@ class Entity extends HTMLElement {
     const avatarSlot = document.createElement('slot')
     const tagSlot = document.createElement('slot')
     // const avatar = document.createElement('test-avatar')
-    const label = document.createElement('test-text')
+    const labelElement = document.createElement('test-text')
     const description = document.createElement('test-text')
     const description2 = document.createElement('test-text')
     const description3 = document.createElement('test-text')
@@ -30,32 +30,54 @@ class Entity extends HTMLElement {
     avatarSlot.name = 'avatar'
     tagSlot.name = 'tag'
 
-    label.classList.add('entity-label')
+    labelElement.classList.add('entity-label')
     description.classList.add('entity-description')
     description2.classList.add('entity-description')
     description3.classList.add('entity-description')
 
-    label.innerText = this.label
-    label.setAttribute('variant', 'subhead')
-    description.innerText = this.getAttribute('description') || ''
-    description2.innerText = this.getAttribute('description2') || ''
-    description3.innerText = this.getAttribute('description3') || ''
+    description.setAttribute('variant', 'body')
+    description2.setAttribute('variant', 'body')
+    description3.setAttribute('variant', 'body')
+
+    labelElement.innerText = this.label || ''
+    labelElement.setAttribute('variant', 'subhead')
+
+    description.innerText = this.description || ''
+    description2.innerText = this.description2 || ''
+    description3.innerText = this.description3 || ''
 
     const test = this.getAttribute('description')!.split('|', 3)
 
-    // console.log(splitString(monthString, comma), 'ppd')
     const test2 = test.map(item => {
       return `<div>${item}</div>`
     })
 
     shadow.appendChild(container)
     // description.appendChild(JSON.parse(test2.join()))
+    container.append(avatarSlot, tagSlot, makeStyleSheet('avatar'))
 
-    container.append(avatarSlot, tagSlot, label, description, description2, description3, makeStyleSheet('avatar'))
+    if (this.label) container.appendChild(labelElement)
+    if (this.description) container.appendChild(description)
+    if (this.description2) container.appendChild(description2)
+    if (this.description3) container.appendChild(description3)
   }
   get size() {
     return this.getAttribute('size')
   }
+
+  get label() {
+    return this.getAttribute('label')
+  }
+  get description() {
+    return this.getAttribute('description')
+  }
+  get description2() {
+    return this.getAttribute('description2')
+  }
+  get description3() {
+    return this.getAttribute('description3')
+  }
+
   set label(value) {
     this.setAttribute('label', value || '')
   }

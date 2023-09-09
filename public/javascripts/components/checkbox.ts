@@ -48,6 +48,9 @@ class Checkbox extends HTMLElement {
       container.appendChild(helper)
     }
 
+    // 임시
+    // container.append(...this.childNodes)
+
     shadow.appendChild(makeStyleSheet('checkbox'))
   }
 

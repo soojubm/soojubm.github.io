@@ -11,6 +11,7 @@ import '/public/stylesheets/shared/reset.css'
 import '/public/stylesheets/shared/mixins.css'
 
 import '/public/components/footer/footer.css'
+import '/public/stylesheets/components/textfield.css'
 import '/pages/components/components.css'
 
 document.addEventListener('DOMContentLoaded', () => {

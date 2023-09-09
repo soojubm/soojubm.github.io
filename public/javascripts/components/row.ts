@@ -13,6 +13,11 @@ class Row extends HTMLElement {
     const direction = this.getAttribute('direction')
     container.dataset.direction = direction || ''
 
+    const style = this.getAttribute('style')
+    container.setAttribute('style', style || '')
+
+    if (this.bleeding) this.dataset.bleeding = 'true'
+
     container.dataset.temp = this.temp || ''
     // if (this.variant) container.setAttribute('data-variant', this.variant)
 
@@ -22,6 +27,10 @@ class Row extends HTMLElement {
 
   get temp() {
     return this.getAttribute('temp')
+  }
+
+  get bleeding() {
+    return this.getAttribute('bleeding')
   }
 
   connectedCallback() {}

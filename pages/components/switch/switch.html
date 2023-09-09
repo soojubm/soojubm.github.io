@@ -1,7 +1,7 @@
 <main class="component">
   <article class="article js-observer js-scrollspy-section">
     <test-text variant="title" title="or Box">Switch</test-text>
-    <p class="article-description">켜거나 끌 수 있는 옵션입니다. 설정. 필터.</p>
+    <test-text variant="body-large">켜거나 끌 수 있는 옵션입니다. 설정. 필터.</test-text>
     <p hidden>A switch is a visual toggle between two mutually exclusive states — on and off.</p>
 
     <dl>
@@ -17,28 +17,25 @@
       </test-row>
     </section>
 
-    <article class="component-props">
+    <section class="component-props">
       <!-- <test-text variant="subhead">Props</test-text> -->
       <dl>
         <dt>name</dt>
         <dd>string</dd>
-        <dd>id={props.name}</dd>
-        <dt>label? - isHiddenLabel</dt>
+        <dd>id={props.name} props 필요 object/type 불필요</dd>
+        <dt>label?</dt>
         <dd>string</dd>
-        <dd>동사를 포함합니다. choice보다 action에 가깝다.</dd>
+        <dd>isHiddenLabel. 동사를 포함합니다. choice보다 action에 가깝다.</dd>
         <dt>value</dt>
         <dd>boolean ? on || off</dd>
         <dd>TODO</dd>
-        <dt>isChecked<attr>?</attr></dt>
-        <dd>boolean</dd>
-        <dd>TODO checked?</dd>
         <dt>isDisabled<attr>?</attr></dt>
         <dd>boolean</dd>
         <dd></dd>
         <dt>onChange</dt>
-        <dd>(event: React.FormEvent[HTMLInputElement]) =] void</dd>
+        <dd>(event: React.FormEvent[HTMLInputElement>) => void</dd>
       </dl>
-    </article>
+    </section>
 
     <!-- <test-text variant="subhead">anatomy</test-text>
     <ul>
@@ -47,14 +44,16 @@
     </ul> -->
 
     <section class="component-guide">
-      <test-text variant="subhead">즉시 실행</test-text>
-      <test-text variant="body" class="article-p">
-        단일 옵션을 즉시 실행하고 결과를 반영합니다. 다중 옵션 중 하나의 옵션으로 저장 버튼과 함께 사용하지 않습니다.
+      <test-text variant="subhead">Behavior</test-text>
+      <test-text variant="body">
+        instantly즉시 실행 - not batch ??. 단일 옵션을 즉시 실행하고 결과를 반영합니다. 다중 옵션 중 하나의 옵션으로 저장 버튼과 함께 사용하지
+        않습니다.
       </test-text>
-      <test-text variant="body" class="article-p">
-        <b>on & off context</b>
-        스위치의 왼쪽과 오른쪽에 각각 레이블을 배치하여 콘텐츠 스위칭으로 사용하지 마세요.
-      </test-text>
+      <test-text variant="subhead">Visual style</test-text>
+      <test-text variant="body"> on & off context. 스위치의 왼쪽과 오른쪽에 각각 레이블을 배치하여 콘텐츠 스위칭으로 사용하지 마세요. </test-text>
+
+      <test-text variant="subhead">A11y</test-text>
+      <test-text variant="body-bold">on & off label</test-text>
     </section>
   </article>
 </main>

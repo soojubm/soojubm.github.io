@@ -1,7 +1,7 @@
-.cake {@mixin layout-large;max-width:1000px;}
+.cake {@mixin layout-large;padding:0 var(--grid-margin);}
 
-.cake-head {position:relative;}
-.cake-background {@mixin bleeding;height:380px;background:url('/public/images/newman.jpg') no-repeat 0 -200px fixed;}
+.cake-head {padding:4rem 0;position:relative;}
+.cake-background {@mixin bleeding;height:100%;background:url('/public/images/springsteen.jpg') no-repeat 0 -200px fixed;filter:grayscale(100%);}
 .cake-head-title {@mixin text-title;}
 .cake-head-engtitle {margin:0 0 1.5rem 0;@mixin text-subhead;}
 .cake-head-description {margin:1rem 0 0 0;}

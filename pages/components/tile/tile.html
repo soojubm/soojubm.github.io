@@ -1,7 +1,7 @@
 <main class="component">
   <article class="article js-observer js-scrollspy-section">
     <test-text variant="title" title="or Box">Tiles</test-text>
-    <p class="article-description">연관 정보를 묶어 시각적으로 강조하는 컨테이너입니다.</p>
+    <test-text variant="body-large">연관 정보를 묶어 시각적으로 강조하는 컨테이너입니다.</test-text>
 
     <dl class="article-aka">
       <dt>a.k.a.</dt>
@@ -42,9 +42,6 @@
         <test-tile>
           <b>flat small</b>
         </test-tile>
-        <test-tile>
-          <b>selectable - carbon design system</b>
-        </test-tile>
       </test-row>
     </section>
 
@@ -62,58 +59,34 @@
     </section>
 
     <section class="component-guide">
-      <test-text variant="subhead">clickable</test-text>
-      <test-text variant="body" class="article-p">
+      <test-text variant="subhead">Behavior</test-text>
+      <test-text variant="body">
         '클릭할 수 있음'의 기표로 elevated 스타일을 사용합니다. 타일 전체가 하나의 클릭 가능한 요소일 수 있지만 타일 내부에 클릭 가능한 요소를 포함할
         수도 있습니다.
       </test-text>
 
-      <test-text variant="subhead">Todo 선택된 상태의 타일</test-text>
-      <test-text variant="body" class="article-p">
-        '클릭할 수 있음'의 기표로 elevated 스타일을 사용합니다. 타일 전체가 하나의 클릭 가능한 요소일 수 있지만 타일 내부에 클릭 가능한 요소를 포함할
-        수도 있습니다.
-      </test-text>
-
-      <test-text variant="subhead">TODO: 모든 contentbox가 tile 이어야 하는가.</test-text>
-      <test-text variant="body" class="article-p"> </test-text>
-
-      <test-text variant="subhead">Card anatomy</test-text>
-      <test-text variant="body" class="article-p">2:1. 블리딩 시 높이를 고정해야 한다. ??</test-text>
-
-      <test-tile variant="nuded" class="card has-clickable" role="listitem" style="max-width: 400px; z-index: 1">
-        <figure class="card-thumbnail"><img src="/public/images/springsteen.jpg" alt="" /></figure>
-        <test-tag variant="primary">카테고리</test-tag>
-        <!-- <figure class="card-avatar">🍊</figure> -->
-        <test-text variant="subhead">카드 유아이</test-text>
-        <p class="card-text">
-          텍스트는 최대 두 줄이다. 따봉은 상세페이지에서 제공하세요. 뉴스피드 유아이에서는 밖에서 제공할 수 있어요.북마크는 밖에 두어도 좋은가?
-          상세페이지에서 제공하는 것이 좋음. 기능이 많아짐. 신선식품 장바구니는 밖에 인정.
-        </p>
-        <test-chip slot="actions">
-          <test-icon slot="icon" name="more-vert"></test-icon>
-        </test-chip>
-        <test-row>
-          <test-tag>기획</test-tag>
-          <test-tag>UI</test-tag>
-          <test-tag>React</test-tag>
-        </test-row>
-        <test-menuitem label="수줍이" description="2017. 12. 21.">
-          <!-- <test-avatar slot="avatar" size="small"><img src="/public/images/springsteen.jpg" alt="" /></test-avatar> -->
-          <test-avatar slot="avatar" size="small"></test-avatar>
-        </test-menuitem>
-        <test-separator></test-separator>
-        <test-menuitem size="large" label="퓨어 오렌지 주스" description="">
-          <test-avatar slot="avatar" size="large">🍊</test-avatar>
-          <div class="item-description"><del>₩19,000</del> ₩16,000 <em>할인율 20%</em></div>
-        </test-menuitem>
-        <test-tag class="card-note">마일리지 적립 200P</test-tag>
-      </test-tile>
+      <test-text variant="subhead">Visual style</test-text>
+      <test-text variant="body"> 타일이 선택할 수 있는 것인지 선택할 수 있는 것들이 타일이 될 수 있는 것인지. </test-text>
 
       <test-text variant="subhead">Memo</test-text>
       <ul>
+        <li>2:1. 블리딩 시 높이를 고정해야 한다. ??</li>
         <li>타일 내부 leading, tailing 엘리먼트의 시각보정이 필요할 수 있습니다.</li>
         <li><del>레이아웃 컴포넌트</del>컨테이너 컴포넌트</li>
+        <li>TODO: 모든 contentbox가 tile 이어야 하는가.</li>
       </ul>
     </section>
+
+    <test-tile class="quote" style="padding: 1rem">
+      <figure class="quote-avatar">🥫</figure>
+      <h3 class="quote-title">Quote</h3>
+      <p class="quote-body">Don't you know that God is Pooh bear?</p>
+      <cite class="quote-byline">
+        <div class="quote-byline-name">Jack Kerouac</div>
+        <div class="quote-byline-job">Poet / Novelist</div>
+      </cite>
+      <button class="quote-action">더 알아보기</button>
+      <!-- <button class="quote-later">지금은 괜찮아요</button> -->
+    </test-tile>
   </article>
 </main>

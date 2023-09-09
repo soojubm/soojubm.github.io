@@ -6,6 +6,15 @@ export function makeStyleSheet(name) {
   return link
 }
 
+export function setSlotElement(container, name: string) {
+  const slotElement = document.createElement('slot')
+  slotElement.name = name
+
+  container.appendChild(slotElement)
+}
+
+// TODO 8.23 여기까지 사용 중.
+
 export function importScript(url) {
   var pretty = document.createElement('link')
   pretty.href = url

@@ -7,12 +7,12 @@
       <!-- <test-avatar fallback=" " size="large">
         <test-icon slot="icon" name="user"></test-icon>
       </test-avatar> -->
-      <div style="height: 0.75rem"></div>
       <test-text variant="title">Avatars</test-text>
-      <p class="article-description">
-        개체(유저, 회사, 프로젝트 등)를 대표하는 시각 정보입니다. 정보 더미의 주체로서 인접한 정보 더미 중 최상위 위계를 갖습니다. TODO 시각적인
-        위계를 말하는 것이 아님..
-      </p>
+      <test-text variant="body-large">
+        개체(유저, 회사, 프로젝트 등)를 대표하는 시각 정보입니다. 정보 더미의 주체로서 인접한 정보 더미 중 최상위 위계<span hidden
+          >(시각적인 위계가 아님)</span
+        >를 갖습니다.
+      </test-text>
     </header>
     <section class="component-example">
       <test-row temp="vertical">
@@ -54,41 +54,118 @@
       </table>
     </div> -->
 
-    <div class="component-props">
+    <section class="component-props">
       <!-- <test-text variant="body-large" style="margin-top: 0">Props</test-text> -->
       <dl>
         <dt>name</dt>
         <dd>string</dd>
-        <dd class="dd-small">dfafa</dd>
+        <dd>avatar name? label?</dd>
         <dt>src<abbr>?</abbr></dt>
         <dd>string</dd>
-        <dd class="dd-small">링크일 수도 링크가 아닐 수도 있다.</dd>
+        <dd>링크일 수도 링크가 아닐 수도 있다. variant 대체 가능?</dd>
         <dt>size</dt>
         <dd>"huge" | "large" | "medium" | "small"</dd>
-        <dd class="dd-small">TODO. 페이지, 섹션, 아티클 각 레벨에서 용법이 제한됨.</dd>
+        <dd>TODO. 페이지, 섹션, 아티클 각 레벨에서 용법이 제한됨.</dd>
 
         <dt>badge<abbr>?</abbr></dt>
         <dd>"unread" | "new" | "live"</dd>
-        <dd class="dd-small">TODO. 합성 컴포넌트에서 상세하게 정의</dd>
+        <dd>TODO. 합성 컴포넌트에서 상세하게 정의 ?? badgeSlot?</dd>
 
-        <dt>fallback</dt>
+        <dt>fallback?</dt>
         <dd>"string" | "image?"</dd>
-        <dd class="dd-small">예시. 유저 닉네임의 첫 알파벳. 도메인 또는 서비스에서 정의하기에 달려 있음.</dd>
+        <dd>예시. 유저 닉네임의 첫 알파벳. 달걀 이미지. 기본값을 정의.</dd>
         <dd></dd>
       </dl>
-    </div>
+    </section>
+
+    <!-- <section class="token-group" style="margin-top: -2rem">
+      <article class="token-item">
+        <b>avatar container</b>
+        <div>size tokens</div>
+        <div>border token</div>
+        <div>background token</div>
+      </article>
+      <article class="token-item">
+        <b>avatar badge</b>
+        <div><test-link>badge component</test-link></div>
+      </article>
+    </section> -->
 
     <!-- <p>TODO. avatar는 패턴 섹션에서 정의할 필요가 있다.</p> -->
     <section class="component-guide">
-      <test-text variant="subhead"> cllickable </test-text>
-      <test-text variant="body" class="article-p">
+      <test-text variant="subhead">Behavior</test-text>
+      <test-text variant="body" data-temp="clickable">
         아바타 또는 아바타릂 포함하는 상위 요소(클릭을 보조하는 역할)는 항상 클릭할 수 있습니다. +++ 아웃라인 형태를 클릭할 수 없는 아바타로 정의
         추가.
       </test-text>
 
-      <test-text variant="subhead"> groupable </test-text>
-      <test-tile variant="elevated" size="small" style="width: 400px">
-        <test-row>
+      <test-text variant="subhead">Visual style</test-text>
+      <br /><br />
+      <table>
+        <thead>
+          <tr>
+            <td style="padding: var(--space-2) 0">
+              <test-icon name="double-check"></test-icon>
+            </td>
+            <td style="padding: var(--space-2) 0">
+              <test-icon name="double-check"></test-icon>
+            </td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <b>Clickable</b>
+              <br />
+              cette notification expire dans 5 jours
+            </td>
+            <td>
+              <b>Alerte de Retour</b>
+              <br />
+              cette notification expire dans 5 jours
+            </td>
+          </tr>
+          <tr>
+            <td style="border: none">cette notification expire dans 5 jours</td>
+            <td style="border: none">cette notification expire dans 5 jours</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <style>
+        [role='cell'] {
+          width: 25%;
+          padding: var(--space-3);
+        }
+      </style>
+      <div
+        role="row"
+        style="
+          display: flex;
+          margin: var(--space-3) 0 0 0;
+          font-size: var(--font-size-small);
+          font-weight: var(--font-weight-bold);
+          color: var(--color-text-light);
+        "
+      >
+        <span role="cell" style="flex: auto">이름</span>
+        <span role="cell" style="flex: auto">소유자</span>
+        <span role="cell" style="flex: auto">마지막으로 수정한 날짜</span>
+        <span role="cell" style="flex: auto">파일 크기</span>
+      </div>
+      <div class="" role="row" style="display: flex; border-top: var(--border)">
+        <span role="cell" style="flex: auto">이름</span>
+        <span role="cell" style="flex: auto">소유자</span>
+        <span role="cell" style="flex: auto">2023. 05. 05</span>
+        <span role="cell" style="flex: auto">2KB</span>
+      </div>
+    </section>
+
+    <!-- <test-tag>groupable</test-tag> -->
+    <test-text variant="subhead">아바타 그룹</test-text>
+    <section class="component-case">
+      <test-tile variant="elevated" size="small" style="max-width: 400px">
+        <test-row style="align-items: center">
           <test-avatar-group>
             <test-avatar size="small"></test-avatar>
             <test-avatar size="small"></test-avatar>
@@ -101,57 +178,64 @@
       <small class="mutiual" style="display: block; margin: var(--space-2) 0 0 0">내가 팔로우하는 사용자 중에는 팔로워가 없습니다. (twitter)</small>
     </section>
 
-    <br />
+    <br /><br />
+    <!-- <test-tag>hoverable</test-tag> -->
+    <test-text variant="subhead">요약된 사용자 정보</test-text>
+    <section class="component-case">
+      <test-card variant="elevated" style="max-width: 400px">
+        <div slot="entire">
+          <test-menuitem label="수줍이" description="Youtube subscriber">
+            <test-avatar slot="avatar"></test-avatar>
+          </test-menuitem>
+          <div class="statistic" data-size="small" style="justify-content: left; margin: var(--space-2) 0 0 0">
+            <div class="statistic-item" onclick="javascript:alert('샘플 유아이에요!')">
+              <i class="statistic-label">팔로워</i>
+              <span class="statistic-value">62</span>
+            </div>
+            <i class="icon-bullet"></i>
+            <div class="statistic-item" onclick="javascript:alert('샘플 유아이에요!')">
+              <i class="statistic-label">팔로잉</i>
+              <span class="statistic-value">8</span>
+            </div>
+          </div>
+          <article class="" style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0">
+            <figure>🥺</figure>
+            <span class="avatargroup-label">이경수님을 팔로우하고 있는 친구가 없습니다.</span>
+          </article>
+        </div>
+      </test-card>
+      <test-card variant="elevated" style="width: 400px; margin: 1rem 0 0">
+        <div slot="entire">
+          <div style="display: flex; gap: 1rem">
+            <test-avatar size="huge" variant="secondary"></test-avatar>
+            <div class="statistic" style="gap: var(--space-2); flex-direction: column; justify-content: left">
+              <div class="statistic-item" onclick="javascript:alert('샘플 유아이에요!')">
+                <i class="statistic-label">Top User</i>
+                <span class="statistic-value">Bruce Springsteen</span>
+              </div>
+              <div class="statistic-item" onclick="javascript:alert('샘플 유아이에요!')">
+                <i class="statistic-label">Daily Purchase</i>
+                <span class="statistic-value">10 Items</span>
+              </div>
+            </div>
+          </div>
+          <test-separator></test-separator>
+          <test-row style="align-items: center; width: 400px">
+            <test-avatar-group>
+              <test-avatar size="small"></test-avatar>
+              <test-avatar size="small"></test-avatar>
+              <test-avatar size="small"></test-avatar>
+              <test-avatar size="small"></test-avatar>
+            </test-avatar-group>
+            <span class="avatargroup-label">Followed by 수줍이 외 4명</span>
+          </test-row>
+        </div>
+      </test-card>
+    </section>
 
     <!-- <li>icon button, icon indicator, entity avatar, menu item avatar(icon)</li> -->
     <!-- <li>memeo. medium. 이하의 크기는 디스크립션을 제공하지 않는다. 항상 align-items:center.</li> -->
     <!-- <li>pagination item은 chip과 같은 size token을 사용하지만 chip도 avatar도 아닙니다.</li> -->
     <!-- <p>아바타만 단독으로 사용하는 케이스. space-after-avatar가 필요하지 않음.</p> -->
-
-    <test-text variant="subhead">hoverable<br />요약된 사용자 정보. 사용자 프로필 페이지로 링크.</test-text>
-    <test-tile variant="elevated" style="width: 400px">
-      <test-menuitem label="수줍이" description="Youtube subscriber">
-        <test-avatar slot="avatar"></test-avatar>
-      </test-menuitem>
-      <div class="statistic" data-size="small" style="justify-content: left; margin: var(--space-2) 0 0 0">
-        <div class="statistic-item" onclick="javascript:alert('샘플 유아이에요!')">
-          <i class="statistic-label">팔로워</i>
-          <span class="statistic-value">62</span>
-        </div>
-        <i class="icon-bullet"></i>
-        <div class="statistic-item" onclick="javascript:alert('샘플 유아이에요!')">
-          <i class="statistic-label">팔로잉</i>
-          <span class="statistic-value">8</span>
-        </div>
-      </div>
-    </test-tile>
-
-    <div style="width: 400px">
-      <div variant="elevated" style="display: flex; gap: 1rem; margin: 2rem 0">
-        <test-avatar size="huge" variant="secondary"></test-avatar>
-        <div class="statistic" style="gap: var(--space-3); flex-direction: column; justify-content: left">
-          <div class="statistic-item" onclick="javascript:alert('샘플 유아이에요!')">
-            <i class="statistic-label">Top User</i>
-            <span class="statistic-value">Bruce Springsteen</span>
-          </div>
-          <div class="statistic-item" onclick="javascript:alert('샘플 유아이에요!')">
-            <i class="statistic-label">Daily Purchase</i>
-            <span class="statistic-value">10 Items</span>
-          </div>
-        </div>
-      </div>
-      <test-separator></test-separator>
-      <test-tile variant="elevated" size="small" style="width: 400px">
-        <test-row>
-          <test-avatar-group>
-            <test-avatar size="small"></test-avatar>
-            <test-avatar size="small"></test-avatar>
-            <test-avatar size="small"></test-avatar>
-            <test-avatar size="small"></test-avatar>
-          </test-avatar-group>
-          <span class="avatargroup-label">Followed by 수줍이 외 4명</span>
-        </test-row>
-      </test-tile>
-    </div>
   </article>
 </main>

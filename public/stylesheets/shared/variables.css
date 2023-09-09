@@ -2,6 +2,9 @@
 @custom-media --small (max-width: 1080px);
 @custom-media --tiny (max-width: 880px);
 
+/* custom-media 이거 그냥 값만 변수로 하고 postcss 안 쓰는 게 좋겠다. */
+/* 모든 surface는 border를 갖는다. */
+
 :root {
   color-scheme: light dark;
 
@@ -68,6 +71,7 @@
   --color-naver: #03cf5d;
   --color-kakao: #ffdf00;
   --color-newneek: #fb7800;
+  --color-newneek-gray: #ebebeb;
   --color-pinterest: #e60023;
   --color-github: #000;
   --color-instagram: #333;
@@ -111,6 +115,12 @@
   --space-2: .5rem;
   --space-3: .75rem;
   --space-4: 1rem;
+
+  --space-8: 2rem;
+
+  --space-inline: var(--space-2);
+  --space-inset: 0;
+  --space-stack-small: 0;
 
   --space-1-minus: calc(var(--space-1) * -1);
   --space-2-minus: calc(var(--space-2) * -1);
@@ -188,6 +198,10 @@
 
   --safearea-inset-bottom1: constant(safe-area-inset-bottom);
   --safearea-inset-bottom2: env(safe-area-inset-bottom);
+
+
+  /* brutal theme */
+  /* --border: 1px solid var(--gray800); */
 }
 
 html[date-theme=dark] {}
@@ -211,6 +225,7 @@ html[date-theme=dark] {}
   --color-border-hover: var(--gray0);
 
   --border: 1px solid var(--color-border);
+
   --state-focus: 0 0 0 2px var(--color-border-hover);
   --status-hover: 0 0 0 2px rgba(255,255,255,.25);
 
@@ -219,7 +234,6 @@ html[date-theme=dark] {}
 
   --gradient: linear-gradient(to bottom, var(--gray400), var(--gray800));
 }
-
 
 @media (--small) {
   :root {

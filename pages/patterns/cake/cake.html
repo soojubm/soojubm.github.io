@@ -1,15 +1,15 @@
-<main class="cake js-tab">
+<main class="component cake js-tab" role="" aria-label="site">
   <header class="cake-head">
     <figure class="cake-poster"><img src="/public/images/coolhandluke.jpg" alt="" /></figure>
-
-    <div class="stack" style="margin-bottom: var(--space-2)">
+    <div class="cake-background" data-temp="bleeding"></div>
+    <test-row>
       <test-tag variant="primary">개봉예정 D-12</test-tag>
       <test-tag>액션</test-tag>
       <test-tag>모험</test-tag>
       <test-tag>범죄</test-tag>
-    </div>
-
-    <h1 class="cake-head-title">쿨 핸드 루크</h1>
+    </test-row>
+    <div style="height: 1rem"></div>
+    <test-text variant="title">쿨 핸드 루크</test-text>
     <span class="cake-head-engtitle" style="display: block">Cool Hand Luke</span>
 
     <section class="cake-meta">
@@ -53,47 +53,43 @@
       </div>
     </section>
 
-    <!-- <div class="cake-head-review">⭐ 4.32 (126명)</div> -->
+    <footer style="margin: 4rem auto 6rem">
+      <test-button variant="primary"><span class="material-symbols-outlined">add</span> 더 보기</test-button>
+    </footer>
   </header>
 
   <br />
 
-  <nav class="tablist" role="tablist" style="margin-bottom: 0">
-    <button class="tablist-tab" role="tab" aria-selected="true">주요정보</button>
-    <button class="tablist-tab" role="tab" aria-selected="false">안주요정보</button>
-    <button class="tablist-tab" role="tab" aria-selected="false">평가</button>
+  <test-tablist>
+    <test-tab aria-selected="true">주요정보</test-tab>
+    <test-tab aria-selected="false">안주요정보</test-tab>
+    <test-tab aria-selected="false">평가</test-tab>
     <i class="tablist-indicator"></i>
-  </nav>
+  </test-tablist>
 
-  <section class="cake-info cake-crew" role="tabpanel" aria-hidden="false" data-index="1">
-    <h2>출연진</h2>
-    <div class="person-list">
-      <a class="person" href="#">
-        <figure class="avatar" data-size="huge">
-          <img src="/public/images/springsteen.jpg" alt="" />
-        </figure>
-        <span class="person-name">스튜어트 로젠버그</span>
-        <span class="person-test">Director</span>
-      </a>
-      <a class="person" href="#">
-        <figure class="avatar" data-size="huge">
-          <img src="/public/images/springsteen.jpg" alt="" />
-        </figure>
-        <span class="person-name">폴 뉴먼</span>
-      </a>
-      <a class="person" href="#">
-        <figure class="avatar" data-size="huge">
-          <img src="/public/images/springsteen.jpg" alt="" />
-        </figure>
-        <span class="person-name">폴 뉴먼</span>
-      </a>
-    </div>
+  <section class="cake-info cake-crew" role="" aria-hidden="false" data-index="1">
+    <test-text variant="subhead">출연진</test-text>
+    <test-row>
+      <test-entity label="이경수" description="soojubm@gmail.com" description2="010 3121 7045" description="UI Designer">
+        <test-avatar slot="avatar" variant="secondary" size="huge"></test-avatar>
+      </test-entity>
+      <test-entity size="huge" label="스튜어트 로젠버그" description="주연">
+        <test-avatar slot="avatar" size="huge" variant="secondary" src="/public/images/springsteen.jpg"></test-avatar>
+        <test-tag slot="badge">Director</test-tag>
+      </test-entity>
+      <test-entity size="huge" label="폴 뉴먼" description="주연">
+        <test-avatar slot="avatar" size="huge" src="/public/images/springsteen.jpg"></test-avatar>
+      </test-entity>
+      <test-entity size="huge" label="폴 뉴먼" description="주연">
+        <test-avatar slot="avatar" size="huge" src="/public/images/springsteen.jpg"></test-avatar>
+      </test-entity>
+    </test-row>
     <!-- <footer>
-      <button>모두보기</button>
-    </footer> -->
+        <button>모두보기</button>
+      </footer> -->
   </section>
   <section class="cake-info cake-prize">
-    <h2>수상내역</h2>
+    <test-text variant="subhead">수상내역</test-text>
     <div>
       <span style="display: block; margin: 0 0 var(--space-1) 0; color: var(--color-text-light)">Academy Awards</span>
       <p>Best Actor</p>
@@ -109,7 +105,7 @@
     </div>
   </section>
   <section class="cake-info cake-review">
-    <h2>리뷰</h2>
+    <test-text variant="subhead">리뷰</test-text>
     <p>
       이 호텔에는 레스토랑, 사우나, 셀프 주차(요금 별도) 등이 마련되어 있습니다. 공용 장소에서의 WiFi의 경우 무료입니다. 이 밖에 24시간 운영 프런트
       데스크 및 프런트 데스크의 귀중품 보관함도 시설 내에 마련되어 있습니다.
@@ -118,8 +114,4 @@
       <a href="#">Read More Reviews</a>
     </footer>
   </section>
-
-  <!-- <footer style="max-width:1080px;margin:4rem auto 8rem;">
-    <button class="button-more tertiary-button is-fullwidth"><span class="material-symbols-outlined">add</span> 더 보기</button>
-  </footer> -->
 </main>

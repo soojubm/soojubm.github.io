@@ -1,0 +1,19 @@
+
+:host, 
+.result {
+  /* component-example */
+  width:100%;max-width:var(--width-small) !important;padding:4rem var(--grid-margin);box-sizing:border-box;
+  /* text-align:center; */
+}
+.result-title {display:block;margin:var(--space-4) 0 0 0;}
+.result-description {
+  display:block;
+  margin:var(--space-after-subhead) 0 0;
+}
+::slotted([slot=avatar]) {}
+::slotted([slot=title]) {}
+::slotted([slot=description]) {}
+::slotted([slot=list]) {margin:var(--space-4) 0;}
+::slotted([slot=action]) {margin:2rem 0 0 0;}
+
+test-avatar {width:var(--size-huge);height:var(--size-huge);}

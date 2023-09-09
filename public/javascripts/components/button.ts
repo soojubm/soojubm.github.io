@@ -35,11 +35,8 @@ class Button extends HTMLElement {
     container.dataset.variant = this.variant || ''
     container.dataset.size = this.size || ''
     container.dataset.status = this.status || ''
-    if (this.isfullwidth) {
-      container.dataset.isfullwidth = 'true'
-    }
+    if (this.isfullwidth) container.dataset.isfullwidth = 'true'
 
-    console.log(this.isfullwidth, 'isfullwidth')
     // Button.append(...this.childNodes)
     container.textContent = this.textContent || this.label
 
@@ -50,9 +47,6 @@ class Button extends HTMLElement {
   get variant() {
     return this.getAttribute('variant')
   }
-  // set variant(value) {
-  //   if (value) this.setAttribute('data-variant', value)
-  // }
 
   get size() {
     return this.getAttribute('size')

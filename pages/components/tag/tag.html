@@ -1,12 +1,12 @@
 <main class="component">
   <article class="article js-observer js-scrollspy-section">
     <test-text variant="title">Tags</test-text>
-    <p class="article-description">
+    <test-text variant="body-large">
       인접 요소나 부모 요소를 부연하는 시각 정보입니다. 상태, 카테고리, 키워드로 강조된 시각 정보는 사용자가 복잡한 정보 더미에서 중요한 정보를
       우선적으로 파악하도록 돕습니다.
-    </p>
+    </test-text>
 
-    <!-- <p class="article-description">
+    <!-- <test-text variant="body-large">
       post 페이지에서 태그와 컴포넌트에서의 태그. hashtag는 tag 컴포넌트와 역할이 다르기 때문에 별도의 컴포넌트로 만들어주어야 한다. 현재
       hashtag(keyword)는 chip으로 대체. todo. 댑스가 2이상 인 케이스.
     </p> -->
@@ -34,7 +34,7 @@
       </test-row>
     </section>
 
-    <article class="component-props">
+    <section class="component-props">
       <test-text variant="subhead" hidden>Props</test-text>
       <dl>
         <dt>variant</dt>
@@ -44,7 +44,7 @@
         <dd>string</dd>
         <dd>2단어 이하의 형용사 또는 명사</dd>
       </dl>
-    </article>
+    </section>
 
     <test-tile>
       <test-row>
@@ -65,24 +65,22 @@
     </test-tile>
 
     <section class="component-guide">
-      <test-text variant="subhead">non-clickable</test-text>
-      <test-text variant="body" class="article-p">정보를 강조하거나 요약하여 나열하는 시각 정보. 액션을 할 수 없는.</test-text>
 
-      <test-text variant="subhead">role :: action signifier</test-text>
-      <test-text variant="body" class="article-p">액션이 기표로 사용할 수 있다. 인접 요소 또는 부모 요소가 클릭 가능하다는 정보 요소.</test-text>
+      <test-text variant="subhead">Visual Style</test-text>
+      <test-text variant="body">
+        하나의 태그 그룹은 최대 4개의 태그를 표시합니다. 태그는 <mark>핵심 키워드를 요약</mark>하여 사용자의 콘텐츠 탐색과 선택을 돕는 역할이기 때문에 너무
+        많은 태그 목록을 표시하는 것은 되려 콘텐츠 탐색을 방해할 수 있습니다. (groupable)
+      </test-text>
+      <test-text variant="body">
+        <b>예외 케이스</b> 페이지 전체를 관통하는 경우는 탐색을 보조하는 역할이 아니라 정보를 보충하는 역할이기 때문에? 4개 이상이 허용된다. ex: user
+        profile page
+      </test-text>
+      <test-text variant="body">non-clickable. 정보를 강조하거나 요약하여 나열하는 시각 정보. action signifier (role). 액션의 기표로 사용할 수 있다. 인접 요소 또는 부모 요소가 클릭할 수 있음을 보조..</test-text>
 
-      <test-text variant="subhead">groupable</test-text>
-      <test-text variant="body" class="article-p">
-        <b>groupable 4개 이상의 태그를 그룹화하지 마세요. </b>태그는 <mark>핵심 키워드를 요약</mark>하여 사용자의 콘텐츠 탐색과 선택을 돕는
-        역할입니다. 너무 많은 태그 목록을 노출하는 것은 되려 콘텐츠 탐색을 어렵게 할 수 있습니다.
-      </test-text>
-      <test-text variant="body" class="article-p">
-        <b>예외 케이스</b> 페이지 전체를 관통하는 경우 4개 이상이 허용된다. ex: user profile page
-      </test-text>
-      <test-text variant="body" class="article-p"> 오직 tertiary만 그룹이 될 수 있다. </test-text>
+      <!-- <test-text variant="body"> 오직 tertiary만 그룹이 될 수 있다. </test-text> -->
 
       <test-text variant="subhead">Easy scanning</test-text>
-      <test-text variant="body" class="article-p">
+      <test-text variant="body">
         <b>Use short labels for easy scanning.</b> 중요한 정보를 빠르게 파악할 수 있는 짧은 단어의 조합. 최대 2단어.
       </test-text>
     </section>
@@ -90,19 +88,15 @@
     <!-- <li><span hidden>triggering interaction</span></li> -->
   </article>
 
+  <!-- TODO subhead + body 를 항상 묶을 수는 없나. -->
   <!--
     <p>Badges show the count of some adjacent data.
     A dot badge notifies the user that something is new or updated without showing a count.</p>
   -->
   <article class="article js-observer js-scrollspy-section">
     <test-text variant="title">Badges</test-text>
-    <p class="article-description">수량, 상태.</p>
-    <p class="article-description">dot badge. counter / activity bar counter (vs code)</p>
-
-    dot badge count badge 두 가지로 구분하거나 height를 고정하지 않고 padding을 조정하여 숫자를 입력하지 않게 할 수 있다. 이때는 badge로 통칭. 빨강을
-    new로 쓰다보니 red badge라고 부르는 곳도 있다.
-
-    <p>notification / status / informational</p>
+    <test-text variant="body-large">사실 뱃지로 퉁치기 어려운 사용 케이스들임. 아바타와 바텀 네비게이션 등 특정 컴포넌트 의존.</p>
+    <test-text variant="body-large">dot badge. counter / activity bar counter (vs code)</p>
 
     <section class="component-example">
       <test-row>
@@ -119,13 +113,27 @@
             border-radius: 50%;
           }
         </style>
-        <test-separator></test-separator>
-        <test-badge variant="primary">24</test-badge>
-        <test-badge variant="secondary">16</test-badge>
+        <!-- <test-badge variant="primary">24</test-badge>
+        <test-badge variant="secondary">16</test-badge> -->
         <test-chip label="메뉴">
           <test-badge slot="badge">16</test-badge>
         </test-chip>
       </test-row>
+    </section>
+
+    <section class="component-guide">
+      <test-text variant="subhead">단독으로 쓰지 않는</test-text>
+      <test-text variant="subhead">New badge (status)</test-text>
+      <test-text variant="subhead">Live badge (status)</test-text>
+      <test-text variant="body">with avatar</test-text>
+      <test-text variant="subhead">Unread badge (status)</test-text>
+      <test-text variant="subhead">Counter badge (quantity)</test-text>
+      <test-text variant="subhead"></test-text>
+      <p>notification / status / informational</p>
+      <p>
+        dot badge count badge 두 가지로 구분하거나 height를 고정하지 않고 padding을 조정하여 숫자를 입력하지 않게 할 수 있다. 이때는 badge로 통칭.
+        빨강을 new로 쓰다보니 red badge라고 부르는 곳도 있다.
+      </p>
     </section>
   </article>
 </main>

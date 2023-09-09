@@ -12,7 +12,6 @@ class MenuItem extends HTMLElement {
     const action = document.createElement('slot')
     const text = document.createElement('slot')
     const label = document.createElement('span')
-
     const description = document.createElement(this.description === 'description' ? 'span' : 'time')
 
     container.role = 'menuitem'

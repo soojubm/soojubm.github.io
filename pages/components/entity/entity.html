@@ -1,13 +1,11 @@
 <main class="component">
-  <test-titlebar label="Back to Home"></test-titlebar>
   <article class="article">
     <test-text variant="title">Entity</test-text>
-    <p class="article-description">개체. menu item과 구별이 되나? 크기 별로 특정 컨테이너의 주체가 나뉜다. 예를 들면 huge는 페이지 레벨의 정보 주체가 될 수 있음.</p>
-
+    <test-text variant="body-large">개체. menu item과 구별이 되나? 크기 별로 특정 컨테이너의 주체가 나뉜다. 예를 들면 huge는 페이지 레벨의 정보 주체가 될 수 있음.</test-text>
 
     <section class="component-example">
       <test-row direction="column">
-        <test-entity size="huge" label="EntityHuge" description="description area" description2="description area2.">
+        <test-entity size="huge" label="이거 subhead는 형태이고 name은 역할인데." description="list로 사용할 때 maxWidth" description2="description area2.">
           <test-avatar slot="avatar" size="huge" variant="secondary"></test-avatar>
         </test-entity>
         <test-menuitem size="large" label="EntityLarge" description="individual, user">
@@ -38,11 +36,11 @@
      
     <test-text variant="subhead">User</test-text>
     <test-text variant="body">
-      <mark>페이지 레벨</mark> 정보의 주체. 단독으로 사용. 클릭할 수 있는 요소가 아니라 페이지를 대표하는 요소, 시각 정보로만 동작한다.
+      <mark>페이지 레벨</mark> 정보의 주체. 단독으로 사용. 클릭할 수 있는 요소가 아니라 페이지를 대표하는 요소, 시각 정보로만 동작한다. 왜냐하면 이미 해당 페이지의 타이틀 롤이기 때문.
     </test-text>
-    <test-tile>
-      <test-entity variant="secondary" label="windows-emoji" description="tag page head">
-        <test-avatar slot="avatar" size="huge">#</test-avatar>
+    <test-tile style="margin:1rem 0 0 0">
+      <test-entity label="windows-emoji" description="tag page head">
+        <test-avatar slot="avatar" variant="secondary" size="huge">#</test-avatar>
       </test-entity>
     </test-tile>
 
@@ -50,7 +48,7 @@
 
     <test-text variant="subhead">User item</test-text>
     <test-text variant="body">다수의 유저 목록을 표현. 또는 <mark>아티클 레벨</mark> 정보의 주체.</test-text>
-    <test-tile size="small">
+    <test-tile size="small"  style="margin:1rem 0 0 0">
       <test-menuitem label="github">
         <test-avatar slot="avatar">
           <i class="iconoir-github-circle"></i>
@@ -58,18 +56,10 @@
         <test-chip slot="action" label="팔로우"></test-chip>
       </test-menuitem>
     </test-tile>
-
     <br /><br />
 
     <test-text variant="subhead">Share item</test-text>
     <test-text variant="body">페이지 공유. 소셜 미디어 링크.</test-text>
-    <test-tile size="small">
-      <test-menuitem label="github">
-        <test-avatar slot="avatar">
-          <i class="iconoir-github-circle"></i>
-        </test-avatar>
-      </test-menuitem>
-    </test-tile>
     <!-- class="social-link social-github"
     role="menuitem"
     href="https://github.com/soojubm"

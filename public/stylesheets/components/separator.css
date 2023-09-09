@@ -1,4 +1,7 @@
 .separator {
-  margin:var(--space-3) 0;border-top:var(--border);position:relative;
+  margin:var(--space-3) 0;
+  border: 0;
+  border-top: var(--border);
+  position:relative;
 }
 hr[role=separator] {}

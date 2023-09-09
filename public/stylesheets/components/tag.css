@@ -22,6 +22,7 @@ color: var(--color-text-light);
 
 .tag[data-variant=primary] {border-color:var(--color-accent);background-color:var(--color-accent);color:var(--gray800);}
 .tag[data-variant=secondary] {border-color:transparent;background-color:var(--green100);color:var(--green800);}
+
 .tag[data-variant=destructive] {
   border-color: transparent;
   background: var(--red100);  color: var(--red800);
@@ -32,10 +33,19 @@ color: var(--color-text-light);
 }
 
 
-.tag[data-variant=feature1] {border-color: transparent;background: var(--color-temp1);}
-.tag[data-variant=feature2] {border-color: transparent;background: var(--color-temp2);}
-.tag[data-variant=feature3] {border-color: transparent;background: var(--color-temp3);}
-.tag[data-variant=feature4] {border-color: transparent;background: var(--color-temp4);}
+.tag[data-variant=up] {
+  border-color: transparent;
+  background: var(--red100);  color: var(--red800);
+}
+.tag[data-variant=down] {
+  border-color: transparent;background: var(--color-temp1);color:blue;
+}
+
+
+.tag[data-variant=feature1] {border-color: transparent;background: var(--color-temp1);color:var(--gray800);}
+.tag[data-variant=feature2] {border-color: transparent;background: var(--color-temp2);color:var(--gray800);}
+.tag[data-variant=feature3] {border-color: transparent;background: var(--color-temp3);color:var(--gray800);}
+.tag[data-variant=feature4] {border-color: transparent;background: var(--color-temp4);color:var(--gray800);}
 
 .tag[data-status=loading] {}
 

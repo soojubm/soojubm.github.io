@@ -7,58 +7,45 @@
 /* 롤 그룹으로 대체? */
 [role="group"] {}
 
-@define-mixin chip {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: var(--size-medium);
-  height: var(--size-medium);
-  border-radius: var(--radius);
-  box-sizing: border-box;
-  background: var(--color-background-weak);
-  color: var(--color-text);
-  position: relative;
-
-  @media (hover) and (pointer: fine) {
-    &:hover {box-shadow:var(--status-hover);}
-  }
-  &:disabled {border-color:transparent;}
-  &.is-active {
-    border-color: var(--color-background-strong);
-    background: var(--color-background-strong);
-    color: var(--color-text-weak);
-  }
+i {
+  font-style: normal;
+}
+/* reset */
+button {
+  padding: 0;
+  border: 0;
+  font-family: var(--font-family);
+}
+em {
+  font-style:normal;
+  font-weight: var(--font-weight-bold);
 }
 
 :host {
   --chip-color-background: 0;
   --chip-color-border: 0;
   --chip-color-text: 0;
-}
 
+  --chip-color-background: var(--color-background-weak);
+  --chip-color-text: var(--color-text);
+}
+/* TODO 요거 */
 :host([status=info]) {
-  --chip-color-background: 0;
+  --chip-color-background: none;
   --chip-color-border: 0;
 }
 
-:host([size=compact]) {
-  --padding: 8px 12px;
-  --font-size: 14px;
+
+
+/* @media (hover) and (pointer: fine) {
+  &:hover {box-shadow:var(--status-hover);}
 }
-/* ui-alert[status=promotion] {
-  --background: purple;
-  --color: gray;
+&:disabled {border-color:transparent;}
+&.is-active {
+  border-color: var(--color-background-strong);
+  background: var(--color-background-strong);
+  color: var(--color-text-weak);
 } */
-
-button {
-  padding: 0;
-  border: 0;
-}
-
-em {
-  font-style:normal;
-  font-weight: var(--font-weight-bold);
-}
 
 .chip {
   display: flex;
@@ -68,50 +55,48 @@ em {
   height: var(--size-medium);
   /* border: var(--border); */
   border-radius: var(--radius);
-  background: var(--color-background-weak);
-  color: var(--color-text);
+  background: var(--chip-color-background);
+  color: var(--chip-color-text);
   position: relative;
 
-  /* reset */
-  font-family: var(--font-family);
-
+  /* TODO for chip in avatar */
+  /* TODO donesnt using ? for chip in textfield  */
+  /* outline: 2px solid var(--color-background); */
   --chip-height: 0;
   --chip-inset: null;
   --chip-radius: 0;
-
 }
 .chip:hover {
   box-shadow:var(--status-hover);
   cursor: pointer;
 }
 
-.chip-icon {width:var(--size-medium);
-  /* @mixin avatar-container; */
-  width: 24px;
-  height: 24px;
+.chip-icon {
+  width: var(--size-medium);
+  height: var(--size-medium);
   margin: 0 0 0 var(--space-1);
   background-color: var(--color-background);
   border-radius: var(--radius);
   font-size: 14px;
 }
 .chip-remove:hover {box-shadow:var(--status-hover);}
-.chip-label {
-  padding:0 var(--space-3) var(--adjust-label-line);
-  color:inherit;}
-
 .chip-name {margin:0 0 0 var(--space-3);font-weight:var(--font-weight-normal);color:var(--color-text-light);}
 .chip-name:after {content:': ';}
-.chip-remove:hover {box-shadow:var(--status-hover);}
-.is-active .chip-icon {background:inherit;color:inherit;}
-
+.chip-label {
+  padding:0 var(--space-3) var(--adjust-label-line);
+  color:inherit;
+}
 .chip:disabled {opacity:.5;cursor:not-allowed;}
+
 .chip[aria-expanded] {}
 .chip[aria-selected] {
   background: var(--color-background-strong);
   color: var(--color-text-strong);
 }
 .chip[aria-checked=true] {
-  background: var(--color-background-strong);
+  border: 1px solid var(--color-background-strong);
+  /* background: var(--green100); */
+  /* color: var(--green800); */
 }
 .chip[aria-pressed] {}
 .chip[aria-haspopup] {}
@@ -127,13 +112,17 @@ em {
   justify-content: center;
   width:var(--size-medium);
   background-image: none;
-
   /* margin-right: -.5rem; */
 }
 
 ::slotted([slot=badge]) {
   display: flex;
-  margin: 0 .75rem 0 -.25rem;
+  margin: 0 var(--space-2);
+  /* margin: 0 .75rem 0 -.25rem; */
+}
+.chip-name ~ ::slotted([slot=badge]) {
+  margin-left: -.25rem;
+  margin-right: .5rem;
 }
 
 // .chip[aria-expanded=true] {
@@ -143,20 +132,3 @@ em {
 //   background-size: 14px;
 //   background-position: 90% 50%;
 // }
-
-
-/* @define-mixin chip {
-
-  @media (hover) and (pointer: fine) {
-    &:hover {box-shadow:var(--status-hover);}
-  }
-  
-  &.is-active {
-    border-color: var(--color-background-strong);
-    background: var(--color-background-strong);
-    color: var(--color-text-weak);
-  }
-
-} */
-
-/* @define-mixin chip-icon {@mixin avatar-medium;pointer-events:none;} */

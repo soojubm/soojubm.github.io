@@ -3,6 +3,8 @@ import navbar from '/public/components/navbar/navbar.html'
 
 import main from './searching.html'
 
+import '/public/stylesheets/components/textfield.css'
+
 // import '/public/stylesheets/shared.css'
 import '/public/stylesheets/shared/webfonts.css'
 import '/public/stylesheets/shared/variables.css'

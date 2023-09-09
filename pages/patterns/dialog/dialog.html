@@ -1,42 +1,43 @@
 <main class="component" role="" aria-label="site">
   <article class="article js-observer js-scrollspy-section">
     <test-text variant="title">Dialog</test-text>
-    <p class="article-description">
+    <test-text variant="body-large">
       사용자의 정보나 재산의 변경 또는 삭제 확인. 사용자는 모달 형태의 집중된 환경에서(?) 리스크를 관리할 수 있습니다.
-    </p>
+    </test-text>
 
-    <test-row class="article-aka" style="margin: 0">
-      <test-tag>a.k.a.</test-tag>
-      <span class="hashtag" title="">Alert</span>
-      <span class="hashtag" title="">Modal</span>
-    </test-row>
+    <dl class="article-aka">
+      <dt>a.k.a.</dt>
+      <dd title="">Alert</dd>
+      <dd title="">Modal</dd>
+    </dl>
 
     <section class="component-example">
       <div>
-        <test-text variant="subhead">AlertDialg, ConfirmDialog</test-text>
-        <test-dialog></test-dialog>
+        <!-- <test-dialog></test-dialog> -->
         <aside class="dialog" role="alertdialog" aria-modal="true" aria-labelledby="dialog-title1" aria-describedby="dialog-description2">
-          <test-text variant="subhead" class="dialog-head-title">부끄러우니까 보지마요!</test-text>
-          <!-- <test-text variant="subhead" class="dialog-title" id="dialog-title1"></test-text> -->
-          <p class="dialog-description" id="dialog-description1">다이얼로그 디스크립션입니다.</p>
-          <button class="dialog-close js-close" aria-label="delete"></button>
-          <footer class="dialog-foot">
-            <test-button variant="primary">확인</test-button>
-          </footer>
+          <div role="document" tabindex="0">
+            <test-text variant="subhead" class="dialog-head-title">AlertDialg</test-text>
+            <!-- <test-text variant="subhead" class="dialog-title" id="dialog-title1"></test-text> -->
+            <p class="dialog-description" id="dialog-description1" style="margin: var(--space-after-subhead) 0 0 0">부끄러우니까 보지마요!</p>
+            <button class="dialog-close js-close" aria-label="delete"></button>
+            <footer class="dialog-foot">
+              <test-button variant="primary">확인</test-button>
+            </footer>
+          </div>
         </aside>
-
+        <br />
         <aside class="dialog" role="alertdialog" aria-modal="true" aria-labelledby="dialog-title2" aria-describedby="dialog-description2">
           <header class="dialog-head">
-            <test-text variant="subhead" class="dialog-title">부끄러우니까 보지마요!</test-text>
+            <test-text variant="subhead" class="dialog-title">ConfirmDialog</test-text>
             <button class="dialog-close js-close" aria-label="delete"></button>
           </header>
           <div class="dialog-body">
+            <p class="dialog-description" id="dialog-description2">부끄러우니까 보지마요!</p>
             <!-- <test-text variant="subhead" class="dialog-title" id="dialog-title2"></test-text> -->
-            <p class="dialog-description" id="dialog-description2">다이얼로그 디스크립션입니다.</p>
           </div>
           <test-row class="dialog-foot">
-            <test-button variant="tertiary">안 볼래요</test-button>
-            <test-button variant="primary">볼래요</test-button>
+            <test-button variant="tertiary">볼래요</test-button>
+            <test-button variant="primary">안 볼래요</test-button>
           </test-row>
         </aside>
       </div>
@@ -47,15 +48,21 @@
       <dl>
         <dt>title</dt>
         <dd>string</dd>
+        <dd></dd>
         <dt>description<abbr>?</abbr></dt>
         <dd>string</dd>
+        <dd></dd>
         <dt>React.Node - ButtonGroup 또는 label</dt>
         <dt>primaryActionLabel<abbr>?</abbr></dt>
         <dd>string</dd>
+        <dd></dd>
         <dt>secondaryActionLabel<abbr>?</abbr></dt>
         <dd>string | '취소?'</dd>
+        <dd></dd>
         <dt>onSubmit</dt>
         <dd>function()</dd>
+        <dd></dd>
+        <dt>onCancelClick / onConfirmClick</dt>
       </dl>
     </section>
 
@@ -67,18 +74,24 @@
     </ul>
 
     <section class="component-guide">
+      <test-text variant="subhead">다이얼로그의 구조</test-text>
+      <test-text variant="body"> modal 또는 일반적인 컨텐츠의 구조인 head/body/foot. 단순 다이얼로그는 이런 복잡한 구조가 필요없다. </test-text>
+      <li>레이어를 2개 이상 쌓지 마세요. 모달의 가이드</li>
+
+      <test-text variant="subhead">Overay Component(dim)</test-text>
+      <test-text variant="body">
+        memo: overay 엘리먼트 클릭 시 모달을 닫으면 리액트에서 구현이 쉬움. 이 overay은 sheet 등에서 재사용할 수 있다. outSideClick 맥락.
+      </test-text>
+
       <ul>
-        <li>레이어를 2개 이상 쌓지 마세요. 모달의 가이드</li>
-        <li>버튼의 레이블은 다이얼로그 제목의 동사와 페어링합니다.</li>
-        <li>memo: modal의 구조: header/body/footer. 단순 다이얼로그는 복잡한 구조가 필요 없다.</li>
-        <li>memo: overay엘리먼트 클릭 시 모달을 닫으면 리액트에서 구현이 쉬움. 이 overay은 sheet에서 재사용할 수 있다.</li>
-        <li>buttonGroup type="unary(confirm) | binary(cancel/confirm)</li>
+        <li>버튼의 레이블은 다이얼로그 제목의 동사와 페어링.</li>
+        <li>buttonGroup type="unary(confirm) | binary(cancel/confirm). 이게 필요없음. 그저 자식 컴포넌트의 구조를 만들어야.</li>
       </ul>
 
       <test-text variant="subhead">A11y</test-text>
       <ul>
         <li>다이얼로그(또는 모달)를 닫은 후 열기 전으로 포커스.</li>
-        <li>다이얼로그를 닫기 전까지 기본 콘텐츠로 포커스할 수 없다.</li>
+        <li>다이얼로그를 닫기 전에는 이전 콘텐츠로 포커스 불가능.</li>
       </ul>
     </section>
   </article>

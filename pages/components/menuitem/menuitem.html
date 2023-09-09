@@ -1,16 +1,21 @@
 <main class="component">
   <article class="article js-observer js-scrollspy-section">
-    <test-text variant="title">Menus? MenuItem / Action</test-text>
-    <p class="article-description">
-      사용자가 수행할 수 있는 행동 목록. 메뉴가 아닌 단독으로 쓰일 수 있다. 하나의 메뉴에 두 가지 액션을 포함할 수 없다. (링크 + 토글) avatarSlot.
-      결국 어떤 아바타랑 사용하느냐. 32px/text14px / 24px + 8px/text14px
-    </p>
+    <test-text variant="title">MenuItem</test-text>
+    <test-text variant="body-large"> 사용자가 수행할 수 있는 행동 목록. 목록이 아닌 단독으로 쓰일 수 있다. </test-text>
 
-    <test-row class="article-aka">
-      <test-tag>a.k.a.</test-tag>
-      <span class="hashtag" title="shopify 22 12">Action list</span>
-      <span class="hashtag" title="shopify 22 12">Menu group</span>
-    </test-row>
+    <blockquote>
+      <p>모든 링크는 그냥 칠드런으로 링크 컴포넌트를 사용하는 것이 어떨까</p>
+      <p>변경 가능성을 고려할 때는 받는 데이터를 따라갈 수도 있겠다.</p>
+      <p>전체 액션 props, 내부 액션 slot props</p>
+      <p>leading/following/tailing -column align</p>
+    </blockquote>
+
+    <dl class="article-aka">
+      <dt>a.k.a.</dt>
+      <dd title="shopify 22 12">Action list</dd>
+      <dd title="shopify 22 12">Menu group</dd>
+      <dd>action menu</dd>
+    </dl>
 
     <section class="component-example">
       <test-menuitem size="large" style="margin: 0 0 var(--space-2)">
@@ -23,8 +28,20 @@
       </test-menuitem>
 
       <test-menu-group>
-        <test-menuitem label="메뉴아이템 link" role="menuitem">
+        <test-menuitem label="메뉴아이템 링크" role="menuitem">
           <test-avatar slot="avatar"></test-avatar>
+        </test-menuitem>
+        <test-menuitem label="메뉴아이템 체크박스" role="menuitemcheckbox">
+          <test-avatar slot="avatar"></test-avatar>
+          <test-checkbox slot="check" id="c1" name="c1" value=""></test-checkbox>
+        </test-menuitem>
+        <test-menuitem label="메뉴아이템 라디오" role="menuitemradio">
+          <test-avatar slot="avatar"></test-avatar>
+          <test-radio slot="check" id="c1" name="c1" value="">샘플</test-radio>
+        </test-menuitem>
+        <test-menuitem role="menuitemradio" label="메뉴아이템 스위치">
+          <test-avatar slot="avatar"></test-avatar>
+          <test-switch slot="action" label=""> </test-switch>
         </test-menuitem>
         <test-menuitem label="windows 패턴">
           <test-avatar slot="avatar"></test-avatar>
@@ -33,28 +50,12 @@
             <test-avatar fallback=" "><test-icon name="arrow-right"></test-icon></test-avatar>
           </test-row>
         </test-menuitem>
-
-        <test-menuitem label="체크박스" role="menuitemradio">
-          <test-avatar slot="avatar"></test-avatar>
-          <test-checkbox slot="check" id="c1" name="c1" value=""></test-checkbox>
-        </test-menuitem>
-
-        <test-menuitem label="메뉴아이템 라디오 todo" role="menuitemradio">
-          <test-avatar slot="avatar"></test-avatar>
-          <test-radio slot="check" id="c1" name="c1" value="">샘플</test-radio>
-        </test-menuitem>
-
-        <test-menuitem role="menuitemradio" label="메뉴아이템 스위치 todo">
-          <test-avatar slot="avatar"></test-avatar>
-          <test-switch slot="action" label=""> </test-switch>
-        </test-menuitem>
-
         <test-tile variant="elevated" size="small" role="menuitemcheckbox">
-          <test-menuitem label="사진 및 동영상 백업" description="Google 포토에 최대 해상도로 백업">
-            <test-avatar slot="avatar">🦊</test-avatar>
+          <test-menuitem label="강조된 메뉴아이템" description="리스트가 될 수 없어">
+            <test-avatar slot="avatar" style="font-size: var(--font-size-large)">🦊</test-avatar>
             <test-switch slot="action" role="switch" label=""></test-switch>
           </test-menuitem>
-          <small>Google 포토에 최대 해상도로 백업</small>
+          <small style="display: block; margin: var(--space-2) 0 0">Google 포토에 최대 해상도로 백업</small>
         </test-tile>
       </test-menu-group>
       <br />
@@ -66,15 +67,15 @@
             <span slot="check">✔️</span>
             <span slot="text">Only Text</span>
           </test-menuitem>
-          <test-menuitem role="menuitem" href="#design">
+          <test-menuitem role="menuitem">
             <span slot="check"></span>
-            <span slot="text">menu item 은 메뉴에서 드롭다운에서</span>
+            <span slot="text">on popover</span>
           </test-menuitem>
-          <test-menuitem class="dropdown-menu-item" href="#design">
+          <test-menuitem class="dropdown-menu-item">
             <span slot="check"></span>
-            <span slot="text">Text menu small</span>
+            <span slot="text">with dropdown/pulldown</span>
           </test-menuitem>
-          <test-menuitem class="dropdown-menu-item" href="#design">
+          <test-menuitem class="dropdown-menu-item">
             <span slot="check"></span>
             <span slot="text">with popover</span>
           </test-menuitem>
@@ -111,16 +112,16 @@
     </section>
 
     <section class="component-guide">
-      <test-text variant="body" class="article-p">
+      <test-text variant="body">
         <b>모든 menuitem container가 clickable은 아니다.</b> 액션 버튼이 따로 존재할 수도 있어야 한다. 하지만 이 케이스는 팔로우 팔로잉. 또는 전체
         영역이 팔로우. 이 정보가 중요한 이유 hover 상태 표현을 위해.
       </test-text>
-      <test-text variant="body" class="article-p"> <b>맥락.</b> 스위치는 설정 메뉴, 체크박스는 선택 메뉴. </test-text>
-      <test-text variant="body" class="article-p">
+      <test-text variant="body"> <b>맥락.</b> 스위치는 설정 메뉴, 체크박스는 선택 메뉴. </test-text>
+      <test-text variant="body">
         <b>메뉴 아이템의 우측(action) 슬롯에는 액션 또는 액션 인티케이터가 위치합니다.</b> 정보를 보충하는 맥락의 태그 컴포넌트('new' 등)를 배치하지
         마세요. (case 토스. 우측 new)
       </test-text>
-      <test-text variant="body" class="article-p"> <b>목록.</b> elevated menu item은 강조를 위해 하나만 사용할 수 있습니다. </test-text>
+      <test-text variant="body"> <b>목록.</b> elevated menu item은 강조를 위해 하나만 사용할 수 있습니다. </test-text>
     </section>
 
     <test-text variant="subhead">Anatomy</test-text>
@@ -128,19 +129,17 @@
       <li>* MenuBar</li>
       <li>Menu -> MenuButton(Trigger) / MenuList - MenuItem, MenuLink</li>
       <li>MenuItemAvatar. sizes: large | medium</li>
-      <li>MenuHelper. role: setting-item. filter-item.</li>
-      <li>MenuItemAction. toggle | more | delete</li>
-      <li>MenuLink.</li>
       <li>MenuItemLabel - title(truncated)</li>
+      <li>MenuItemAction. toggle | more | delete</li>
+      <li>MenuHelper. role: setting-item. filter-item.</li>
       <li>
         Menus appear when users interact with a button, action, or other control.
         <br />
         They can be opened from a variety of elements, most commonly icon buttons, buttons, and text fields.
       </li>
-      <li>
-        MenuItem. 셀렉트, 칩그룹, 라디오 등으로 변경하기 쉬워야 한다. 즉, 동일한 데이터 타입을 받는다. 가능한가. 아바타(아이콘)이 포함되는 버튼의
-        경우.
-      </li>
+      <li>렉트, 칩그룹, 라디오 등으로 변경하려면. 즉, 동일한 데이터 타입을 받는다. 가능한가. 아바타(아이콘)이 포함되는 버튼의 경우.</li>
+      <li>하나의 메뉴에 두 가지 액션을 포함할 수 없다. (링크 + 토글)</li>
+      <li>avatarSlot. text14px. 32px size = 24px size + 8px space</li>
     </ul>
 
     <h1>MenuList with presentations</h1>
@@ -150,16 +149,17 @@
     <test-text variant="subhead">Modal menu</test-text>
     <test-text variant="subhead">Sidebar menu</test-text>
     <test-text variant="subhead">Navigation? menu</test-text>
-
+  </article>
+  <article class="article">
     <test-text variant="title">Select</test-text>
-    <p class="article-description">input shape와 chip shape</p>
-    <test-row class="article-aka">
-      <test-tag>a.k.a.</test-tag>
-      <span class="hashtag" title="">dropdown</span>
-      <span class="hashtag" tit le="">picker//////////</span>
-      <span class="hashtag" title="shopify">Choice list</span>
-      <span class="hashtag" title="shopify">Action list</span>
-    </test-row>
+    <test-text variant="body-large">input shape와 chip shape</test-text>
+    <dl class="article-aka">
+      <dt>a.k.a.</dt>
+      <dd title="">dropdown</dd>
+      <dd title="">picker//////////</dd>
+      <dd title="shopify">Choice list</dd>
+      <dd title="shopify">Action list</dd>
+    </dl>
 
     <section class="component-example">
       <test-tile>
@@ -199,8 +199,8 @@
     </section>
 
     <test-menuitem size="large">
-      <test-avatar slot="avatar" size="large" fallback=" ">🦊</test-avatar>
-      <div slot="text">
+      <test-avatar slot="avatar" size="large"></test-avatar>
+      <div slot="text" style="margin-top: -0.25rem">
         <test-text variant="body">사진 및 동영상 백업</test-text>
         <test-avatar-group>
           <test-avatar size="small"></test-avatar>
@@ -216,7 +216,7 @@
     <br />
 
     <test-callout icon="📌">
-      <test-text variant="body" class="article-p">
+      <test-text variant="body">
         native select와 dropdown을 함께 가져갈 필요가 있나. native select는 모바일 사용성에 장점이 있고, 초기 구축이 쉽다는 장점이 있다. 하지만 제품
         또는 제품 개발 과정이 궤도에 올라왔을 때는 일정 수준의 컴포넌트가 확보되어 있을 것이기 때문. naming select / width / input bar(google font)
       </test-text>

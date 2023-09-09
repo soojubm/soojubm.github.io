@@ -1,24 +1,23 @@
 <main class="component" role="" aria-label="site">
   <article class="article js-observer js-scrollspy-section">
-    <test-text variant="title">Accordions</test-text>
-    <p class="article-description">Collapsed / Expanded 사용자의 필요에 따라 취사선택할 수 있도록 정보 목록을 요약합니다.</p>
+    <test-text variant="title">Accordions (Collapsed-Expanded</test-text>
+    <test-text variant="body-large">
+      Collapsed / Expanded 사용자의 필요에 따라 취사선택할 수 있도록 정보 목록을 요약합니다. They help reduce scrolling and shorten pages.
+    </test-text>
 
     <section class="component-example">
-      <test-tile>
-        <details class="details">
-          <summary class="details-summary">native details / summary tags</summary>
-          <p>안녕</p>
-        </details>
-      </test-tile>
+      <details class="details">
+        <summary class="details-summary">native details - summary</summary>
+        <p>안녕</p>
+      </details>
       <section class="faq tile-flat">
         <header style="padding-bottom: 1.5rem; text-align: center">
           <abbr title="Frequently asked questions" hidden>FAQ</abbr>
-          <h2>패턴. hooks 느낌. 서브메뉴. collapse</h2>
         </header>
         <article class="accordion js-accordion is-active">
           <button class="accordion-title" role="heading" aria-label="3" aria-expanded="false" aria-controls="1" aria-disable="true">
             탈퇴하고 싶어요.
-            <i class="iconoir-up-round-arrow"></i>
+            <test-icon name="plus"></test-icon>
           </button>
           <div class="accordion-panel">
             <p>모든 국민은 건강하고 쾌적한 환경에서 생활할 권리를 가지며, 국가와 국민은 환경보전을 위하여 노력하여야 한다.</p>
@@ -30,8 +29,8 @@
         </article>
         <article class="accordion js-accordion is-active" role="region" aria-labelledby="region-heading">
           <button class="accordion-title" role="heading" id="region-heading" aria-expanded="false">
-            <i class="iconoir-nav-arrow-right"></i>
             탈퇴하고 싶어요.
+            <test-icon name="plus"></test-icon>
           </button>
           <div class="accordion-panel">
             <p>모든 국민은 건강하고 쾌적한 환경에서 생활할 권리를 가지며, 국가와 국민은 환경보전을 위하여 노력하여야 한다.</p>
@@ -45,7 +44,7 @@
     </section>
 
     <test-text variant="subhead">Best practices</test-text>
-    <p>사용자가 반드시 숙지해야 하는 정보를 아코디언으로 요약해서 보여주지 마세요. (참고. Tooltip과 같은 맥락)</p>
+    <test-text variant="body">사용자가 반드시 숙지해야 하는 정보를 아코디언으로 요약해서 보여주지 마세요. (참고. Tooltip과 같은 맥락)</test-text>
 
     <!-- <test-text variant="body-large">Writing guidelines</test-text> -->
 
@@ -68,6 +67,8 @@
     <test-text variant="subhead">Rows</test-text>
 
     <ul>
+      // 1. 클릭한 패널을 토글한다. // 2. 다른 accordion-item을 클릭했을 때 닫을 것인지? // 3. 도큐먼트를 클릭하면 닫을 것인지? // 4. panel을 클릭하면
+      닫을 것인지?
       <li>role button - space keycode를 추가하여 스페이스 키 또한 확장/축소할 수 있는 키로 인식되도록 합니다. a 엔터키로만동작</li>
       <li>heading은 한 문장으로 간결하게 작성하세요.</li>
       <li>클릭 영역의 정의. 본문을 클릭하여 닫을 수 있게 되면, 본문에 페이지 링크를 제공할 수 없음.</li>
@@ -75,7 +76,10 @@
 
     <!-- <test-text variant="body-large">FAQ<br />자주묻는질문</test-text> -->
     <blockquote>
-      <p>자주묻는질문(FAQ) 정도 외에는 잘 쓰지 않음. 교육 도매인의 커리큘럼 정도에서 보임. 그 외에는 모바일 친화적인 모달이나 시트를 사용.</p>
+      <p>
+        자주묻는질문(FAQ) 정도 외에는 잘 쓰지 않음. 교육 도매인의 커리큘럼 정도에서 보임. collapsed->expanded로 전환될 때 모바일 친화적인 모달 형태가
+        사용됨.
+      </p>
     </blockquote>
 
     <test-text variant="subhead">References</test-text>

@@ -10,7 +10,6 @@ class Tag extends HTMLElement {
     // role=itemlist
 
     // tag-icon role=image
-
     const container = document.createElement('span')
     container.classList.add('tag')
     container.setAttribute('data-variant', this.variant || '')
@@ -44,10 +43,7 @@ class Tag extends HTMLElement {
   }
 
   connectedCallback() {}
-
-  disconnectedCallback() {
-    console.log('disconnected', this)
-  }
+  disconnectedCallback() {}
 }
 
 export default Tag

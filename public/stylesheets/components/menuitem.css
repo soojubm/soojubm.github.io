@@ -11,10 +11,11 @@
 }
 .item-label {
   font-size:var(--font-size-medium);
+  line-height: 24px;
   color:var(--color-text);
-
 }
 .item-description {
+  line-height: 24px;
   color: var(--color-text-light);
 }
 
@@ -26,10 +27,8 @@ a {
 }
 
 ::slotted([slot=avatar]) {
-  display:flex;
-  align-items:center;
-
-  background-image: none;
+  /* display:flex; */
+  /* align-items:center; */
 }
 ::slotted([slot=check]) {
   display:flex;
@@ -39,7 +38,7 @@ a {
   font-size:12px;}
 ::slotted([slot=action]) {margin:0 0 0 auto !important;}
 ::slotted([slot=text]) {}
-
+::slotted([slot=text]) p {line-height:24px;}
 
 [data-size=large] {}
 [data-size=large] .item-label {}
@@ -64,9 +63,6 @@ a {
     z-index: -1;
   }
 }
-
-
-
 
 /* .item .checkbox {display:flex;justify-content:flex-end;position:absolute;left:0;right:0;top:0;bottom:0;}
 .item .checkbox label {width:100%;}

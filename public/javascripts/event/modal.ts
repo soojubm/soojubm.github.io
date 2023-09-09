@@ -23,6 +23,9 @@ type modalId = 'newneek' | 'woolf' | 'lettering' | 'etc-works' | any
 
 function modal({ selector: trigger }: Parameter) {
   const modalTriggers = document.querySelectorAll<HTMLElement>(trigger)
+
+  console.log(modalTriggers, '@@@@')
+
   const modalContainer = document.querySelector<HTMLElement>('#modal')
   // const modalDialog = modalContainer.querySelector('.modal-dialog')
   // const closeElement = modalContainer.querySelector('.js-modal-close')
@@ -43,20 +46,18 @@ function modal({ selector: trigger }: Parameter) {
 
       // window.addEventListener('popstate', closeModal)
       document.addEventListener('keydown', checkCloseDialog)
-
       modalContainer!.addEventListener('click', closeModalTemp)
     }),
   )
 
   async function fetchData(modalId: modalId) {
     try {
-      const endpoint = `/views/${modalId}.html`
+      const endpoint = `../_lagacy/views/${modalId}.html`
       const response = await fetch(endpoint)
 
       if (!response.ok) throw 'Something went wrong.'
 
       const html = await response.text()
-
       modalContainer!.innerHTML = html
 
       // pushBrowserHistory({}, '', `/#profile/modal/${modalId}`)
@@ -74,10 +75,11 @@ function modal({ selector: trigger }: Parameter) {
   }
 
   function openModal() {
-    previousPageYOffset = window.pageYOffset
+    previousPageYOffset = window.pageYOffset || window.scrollY
     document.body.classList.add('is-modal-visible', 'lock-scroll')
     document.body.style.top = `-${previousPageYOffset}px`
   }
+
   function closeModal() {
     document.body.classList.remove('is-modal-visible', 'lock-scroll')
 

@@ -34,15 +34,18 @@ class Tablist extends HTMLElement {
     const tabIndicator = document.createElement('slot')
     tabIndicator.name = 'indicator'
 
+    const tabSlot = document.createElement('slot')
+    tabSlot.name = 'tab'
+
     shadow.appendChild(container)
     shadow.appendChild(makeStyleSheet('tablist'))
 
-    container.append(tabIndicator, ...this.childNodes)
+    container.append(tabSlot, tabIndicator)
 
     // console.log('tabs', document.querySelector('test-tablist').shadowRoot.querySelector('button'))
-    this.querySelectorAll('[role=tab]').forEach(tab => {
+    this.querySelectorAll('[slot=tab]').forEach(tab => {
       tab.addEventListener('click', event => {
-        alert(event.target)
+        this.changeTab(event)
       })
     })
 
@@ -54,20 +57,38 @@ class Tablist extends HTMLElement {
     //   `
     //   }),
     // )
-    // console.log(JSON.parse(`${this.data}`), 'tabs')
   }
 
-  get data() {
-    return this.dataset.tabs
-  }
+  changeTab(event) {
+    const eventTarget = event.target
+    //   const parent = target.parentNode
+    //   const grandparent = parent.parentNode
+    // initializeIndicator()
 
+    // TODO
+    // this.querySelectorAll('[slot=tab]').forEach(tab => tab.setAttribute('aria-selected', 'false'))
+    // eventTarget.setAttribute('aria-selected', 'true')
+
+    // this.querySelectorAll('[slot=tab]').forEach(tab => {
+    //   tab.shadowRoot!.querySelector('button')!.setAttribute('aria-selected', 'false')
+    // })
+    // eventTarget.shadowRoot!.querySelector('button')!.setAttribute('aria-selected', 'true')
+
+    // tabPanels.forEach(panel => panel.classList.toggle('is-active', selectedTab.name === panel.dataset.name))
+    // panels.forEach(panel => panel.setAttribute('aria-hidden', String(selectedTab.dataset.index !== (panel as HTMLElement).dataset.index)))
+  }
   // selected
   get value() {
     return this.getAttribute('value')
   }
-
+  static get observedAttributes() {
+    return ['aria-selected']
+  }
   connectedCallback() {}
   disconnectedCallback() {}
+  attributeChangedCallback(name, oldValue, newValue) {
+    console.log('@@@@@', name, oldValue, newValue)
+  }
 }
 
 export default Tablist

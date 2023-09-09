@@ -1,12 +1,13 @@
-<main class="search pattern js-tab" role="" aria-label="site">
-  <header class="" role="banner" style="padding: 0 var(--grid-margin); margin-left: -40px">
-      <!-- <b>Guideline scope.</b> -->
-      <!-- <div class="chat-bubble">
+<main class="pattern js-tab" role="" aria-label="site">
+
+  <article class="article">
+    <header class="" role="banner" style="padding: 0 var(--grid-margin); margin-left: -40px">
+      <div class="chat-bubble">
           <p>검색의 범위? 규모?를 우선 정의해야 한다.</p>
         </div>
         <div class="chat-bubble">
           <p>검색 인지 (또는 탐색 중 검색) -> 검색어 입력 대기 -> 검색어 입력 중(검색 결과) -> 검색 요청 -> 검색 결과</p>
-        </div> -->
+        </div>
       <div class="chat-bubble">
         <a href="https://material.io/design/navigation/search.html">MD search</a>
         <i class="icon-bullet"></i>
@@ -15,16 +16,29 @@
     </div>
   </header>
 
-  <article class="article">
     <test-text variant="title">Searching</test-text>
-    <p class="article-description">서비스 스코프가 아닌 일반적인 검색의 패턴을 정리해보자.</p>
+    <test-text variant="body-large">현재 일반적인 검색 패턴 위주로 정리.</test-text>
     <section class="component-example">
+      <div style="max-width:600px;">
         <test-titlebar heading="">
           <test-chip slot="back" aria-label="이전 페이지로">
             <test-icon slot="icon" name="arrow-left"></test-icon>
           </test-chip>
         </test-titlebar>
-        <test-textfield placeholder="수줍이 패턴 (with titlebar)"></test-textfield>
+        <div style="height:var(--space-after-subhead)"></div>
+        <form class="searchfield">
+          <label class="searchfield-prefix">
+            <test-icon name="search"></test-icon>
+          </label>
+          <input class="searchfield-input" type="search" placeholder="궁금한 인물이나 이슈가 있나요?" style="width:400px;box-shadow:var(--shadow);background:var(--color-background);border:var(--border);" />
+          <!-- <button class="searchfield-clear" aria-label="clear keyword">
+            <span class="material-symbols-outlined">close</span>
+          </button>
+          <button class="searchfield-cancel" aria-label="clear keyword">
+            <span class="material-symbols-outlined">취소</span>
+          </button> -->
+        </form>
+
         <test-row style="margin:var(--space-3) 0 1.5rem;">
           <test-chip label="로얄테넌바움"></test-chip>
           <test-chip label="소매치기"></test-chip>
@@ -35,7 +49,7 @@
         <test-menu-group>
           <div style="display:flex;align-items: center;gap:.5rem;">
             <test-text variant="label">People</test-text>
-            <test-badge>2</test-badge>
+            <!-- <test-badge>2</test-badge> -->
           </div>
           <test-menuitem label="수줍이" time="Yesterday">
             <test-avatar slot="avatar"></test-avatar>
@@ -44,19 +58,96 @@
             <test-avatar slot="avatar"></test-avatar>
           </test-menuitem>
         </test-menu-group>
-        <test-separator></test-separator>
+        <div style="margin:.5rem 0 0 0"><test-separator></test-separator></div>
         <test-menu-group>
           <test-text variant="label">Channels</test-text>
           <test-menuitem label="Design Thinking" description="12 Members">
-            <test-avatar slot="avatar" style="background-image: none; background-color: var(--green100); color: var(--green800)">#</test-avatar>
+            <test-avatar slot="avatar" fallback="#"></test-avatar>
           </test-menuitem>
           <test-menuitem label="Frontend Group" description="24 Members">
-            <test-avatar slot="avatar" style="background-image: none; background-color: var(--green100); color: var(--green800)">#</test-avatar>
+            <test-avatar slot="avatar" fallback="#"></test-avatar>
           </test-menuitem>
         </test-menu-group>
+      </div>
     </section>
-  </article>
 
+
+  <test-text variant="title">최근 검색 내역</test-text>
+  <section class="component-example">
+    <section class="search-recent" style="max-width:400px;">
+      <test-row style="align-items:center;justify-content:space-between;">
+        <test-text variant="body-bold">최근 검색</test-text>
+        <test-link label="">모두보기</test-link>
+      </test-row>
+      <div style="height:var(--space-after-subhead);"></div>
+      <test-menu-group>
+        <test-menuitem label="고슴이">
+          <test-avatar slot="avatar" fallback="🦔"  style="background:beige"></test-avatar>
+          <!-- <test-chip slot=""> -->
+            <test-icon slot="action" name="cancel"></test-icon>
+          <!-- </test-chip> -->
+        </test-menuitem>
+        <test-menuitem label="개구리">
+          <test-avatar slot="avatar" fallback="🐸" style="background:var(--green100)"></test-avatar>
+          <!-- <test-chip slot=""> -->
+            <test-icon slot="action" name="cancel"></test-icon>
+          <!-- </test-chip> -->
+        </test-menuitem>
+      </test-menu-group>
+    </section>
+  </section>
+  <ul>
+    <li>개별 내역의 삭제. 휘발성이 높은 정보라 편집 모듈 없이 삭제 버튼으로 제공한다.</li>
+    <li>
+      전체 내역의 삭제. 사용자 편의와 리스크가 공존한다. 서비스의 특성에 맞게(? 모호한 표현쓰지 않기). 검색 내역의 삭제가 개인화 콘텐츠에 영향을
+      주는가?
+    </li>
+    <li>최근 검색 내역이 없으면 아무 것도 보여주지 않는다. 내역이 없다는 상태 컴포넌트도 필요 없다.</li>
+  </ul>
+
+  <test-text variant="subhead">검색어 자동완성</test-text>
+  <test-text variant="body-large">enter key로 검색할 때 한정. 입력할 때 마다 검색을 요청할 때는 항상 하나 이상의 결과</test-text>
+  <section class="component-example">
+    <test-tile variant="nuded" style="max-width:400px;">
+      <test-menu-group class="search-suggestion">
+        <test-menuitem label="자동완성">
+          <test-avatar slot="avatar"></figure>
+          <p class="item-name"></p>
+        </test-menuitem>
+        <test-menuitem label="자동완성유아이">
+          <test-avatar slot="avatar"></test-avatar>
+        </test-menuitem>
+        <test-tile variant="elevated" size="small">
+          <test-menuitem label="자동완(으)로 검색">
+            <test-avatar slot="avatar" fallback=" ">
+              <test-icon slot="icon" name="search"></test-icon>
+            </test-avatar>
+          </test-menuitem>
+        </test-tile>
+      </test-menu-group>
+    </test-tile>
+  </section>
+
+  <test-text variant="subhead">검색 결과</test-text>
+  <section class="component-example">
+    메롱
+  </section>
+
+  <test-text variant="subhead">검색 결과 없음</test-text>
+  <section class="component-example">
+    <test-tile variant="nuded" style="max-width: 800px">
+      <test-result label="<b>수줍이</b>와(과) 일치하는 내용이 없습니다.">
+        <test-row slot="list" class="search-similars" style="justify-content:center;">
+          <test-chip label="검색어 제공">
+            <test-avatar slot="icon" fallback="🦔"></test-avatar>
+          </test-chip>
+          <test-chip label="애옹">
+            <test-avatar slot="icon" fallback="🐈‍⬛"></test-avatar>
+          </test-chip>
+        </test-row>
+      </test-result>
+    </test-tile>
+  </section>
 
 
   <test-text variant="subhead">검색 기표</test-text>
@@ -67,157 +158,135 @@
     <test-chip>키워드</test-chip>
     <span class="hashtag">해시태그</span>
   </test-row>
+  <test-text variant="subhead">페이지 탐색 중 검색 결과로 이동</test-text>
+  <ul>
+    <li>해시태그 또는 카테고리 등 인기/추천 키워드로 결과 페이지로 이동</li>
+    <li>searchfield를 클릭하여 검색 탭(또는 페이지)으로 이동</li>
+  </ul>
+  <test-text variant="subhead">검색 탭에서 검색</test-text>
+  <ul>
+    <li>추천 또는 자동완성 등 키워드로 즉시 실행 또는 키워드 입력</li>
+  </ul>
 
-  <test-text variant="subhead">iOS / Android 패턴</test-text>
+
+<test-text variant="subhead">iOS / Android 패턴</test-text>
+<section class="component-example">
   <!-- <label class="textfield-label" for="search">검색(시각적으로숨겨야함)</label> -->
-<test-tile style="max-width: 800px">
-  <div class="textfield searchfield is-focused">
+  <!-- <div class="textfield searchfield is-focused">
     <button class="textfield-prefix searchfield-prefix"><span class="material-symbols-outlined">search</span></button>
     <input class="textfield-input searchfield-input" type="search" id="search" placeholder="iOS pattern : focus에서 취소 노출. 취소로 blur" />
     <test-chip class="searchfield-clear"><span class="material-symbols-outlined">close</span></test-chip>
     <test-button variant="text" class="searchfield-cancel">취소</test-button>
-  </div>
-</test-tile>
-<test-tile style="max-width: 800px">
-  <div class="textfield searchfield">
-    <test-chip class="textfield-prefix searchfield-prefix" style="left: 0; top: 0; width: 48px; height: 48px">
-      <span class="titlebar-back-icon material-symbols-outlined">arrow_back</span>
-    </test-chip>
+  </div> -->
+  <form class="searchfield" style="max-width:400px;">
+    <label class="searchfield-prefix">
+      <test-icon name="search"></test-icon>
+    </label>
+    <input class="searchfield-input" type="search" placeholder="궁금한 인물이나 이슈가 있나요?" />
+    <button class="searchfield-clear" aria-label="clear keyword">
+      <test-icon slot="icon" name="cancel"></test-icon>
+    </button>
+    <button class="searchfield-cancel" aria-label="clear keyword">
+      <span class="material-symbols-outlined">취소</span>
+    </button>
+  </form>
+  <br />
+  <form class="searchfield" style="max-width:400px;">
+    <div style="position: absolute;left: 0;">
+      <test-chip class="searchfield-prefix">
+        <test-icon slot="icon" name="arrow-left"></test-icon>
+      </test-chip>
+    </div>
     <input
-      class="textfield-input searchfield-input"
+    class="searchfield-input"
       type="search"
-      id="search"
-      placeholder="android pattern"
-      style="width: calc(100% - var(--size-large) - 0.5rem); margin-left: auto; padding-left: 0.75rem"
-    />
-    <test-chip class="searchfield-clear" style="right: 0.75rem">
-      <span class="material-symbols-outlined">close</span>
-    </test-chip>
-  </div>
-</test-tile>
-<test-text variant="subhead">onBlur</test-text>
-<p>준비중</p>
+      placeholder="Android pattern"
+      style="padding-left: 3rem"
+    >
+    </input>
+    <div style="position:absolute;right:var(--space-2);top:var(--space-2);z-index: 1;">
+      <test-chip style="background:var(--color-background);border-radius:50%;">
+        <test-icon slot="icon" name="cancel">
+      </test-chip>
+    </div>
+  </form>
+  </section>
 
-  <article class="article">
-    <test-text variant="subhead">페이지 탐색 중 검색 결과로 이동</test-text>
-    <ul>
-      <li>해시태그 또는 카테고리 등 인기/추천 키워드로 결과 페이지로 이동</li>
-      <li>searchfield를 클릭하여 검색 탭(또는 페이지)으로 이동</li>
-    </ul>
-    <test-text variant="subhead">검색 탭에서 검색</test-text>
-    <ul>
-      <li>추천 또는 자동완성 등 키워드로 즉시 실행 또는 키워드 입력</li>
-    </ul>
+  <!-- <li>tabIndex: back -> input</li> -->
+  <test-text variant="subhead">추천, 인기, 개인화 콘텐츠</test-text>
 
-  </article>
+  <test-text variant="subhead">검색 트리거</test-text>
+  <ul class="checklist">
+    <li>onFocus - keyword.length === 0. 대기</li>
+    <li>onChange event (with debouncing)</li>
+    <li>onSubmit event</li>
+  </ul>
 
-  <article class="article">
-    <test-text variant="title">검색 대기</test-text>
-    <test-text variant="subhead">대기 트리거</test-text>
-    <!-- <li>tabIndex: back -> input</li> -->
-    <p>onFocus - keyword.length === 0 .</p>
+  <table>
+    <thead>
+      <tr>
+        <th style="width:10rem;">-</th>
+        <th>키워드를 입력할 때 마다 검색</th>
+        <th>검색 버튼 클릭 또는 enter key 검색</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>결과없음 상태</th>
+        <td>x</td>
+        <td>o</td>
+      </tr>
+      <tr>
+        <th>검색어 자동완성</th>
+        <td>x</td>
+        <td>o</td>
+      </tr>
+      <tr>
+        <th>검색어 자동완성</th>
+        <td>x</td>
+        <td>o</td>
+      </tr>
+    </tbody>
+  </table>
 
-    <test-text variant="subhead">최근 검색 내역</test-text>
-    <ul>
-      <li>개별 내역의 삭제. 휘발성이 높은 정보라 편집 모듈 없이 삭제 버튼으로 제공한다.</li>
-      <li>
-        전체 내역의 삭제. 사용자 편의와 리스크가 공존한다. 서비스의 특성에 맞게(? 모호한 표현쓰지 않기). 검색 내역의 삭제가 개인화 콘텐츠에 영향을
-        주는가?
-      </li>
-      <li>최근 검색 내역이 없으면 아무 것도 보여주지 않는다. 내역이 없다는 상태 컴포넌트도 필요 없다.</li>
-    </ul>
-    <test-tile>
-      <section class="search-recent">
-        <test-text variant="subhead">최근 검색</test-text>
-        <button class="search-recommend-modify">수정</button>
-        <test-menuitem label="개구리">
-          <test-avatar slot="avatar"></test-avatar>
-          <test-chip slot="action" class="material-symbols-outlined">
-            close
-          </test-chip>
-        </test-menuitem>
-      </section>
-    </test-tile>
-    <test-text variant="subhead">추천, 인기, 개인화 콘텐츠</test-text>
-    <p>준비중</p>
+  <test-text variant="subhead">검색 실행 1 - 키워드를 입력할 때 마다</test-text>
+  <test-text variant="body-large"></p>
+  <ul>
+    <li>
+      결과 없음 상태를 사용하지 않는다. 일치하는 결과가 없더라도 유사 콘텐츠 또는 추천 콘텐츠로 대체하여 하나 이상의 결과를 항상 보여주어야 합니다.
+      큐레이션이 강화된 콘텐츠 플랫폼에서 이탈 방지를 위해 활용할 수 있지만 사용자는 명확한 결과를 기대하기 어렵습니다.
+    </li>
+  </ul>
 
-    <test-text variant="subhead">키워드를 입력할 때 마다 검색 실행 1</test-text>
-    <p class="article-description"></p>
-    <ul>
-      <li>
-        결과 없음 상태를 사용하지 않는다. 일치하는 결과가 없더라도 유사 콘텐츠 또는 추천 콘텐츠로 대체하여 하나 이상의 결과를 항상 보여주어야 합니다.
-        큐레이션이 강화된 콘텐츠 플랫폼에서 이탈 방지를 위해 활용할 수 있지만 사용자는 명확한 결과를 기대하기 어렵습니다.
-      </li>
-    </ul>
-    <test-text variant="subhead">검색 트리거</test-text>
-    <p>onChange event (with debouncing)</p>
-    <test-text variant="subhead">검색어 자동완성</test-text>
-    <test-tile style="max-width: 800px; z-index: 1">
-      <test-menu-group class="search-suggestion">
-        <test-menuitem label="자동완성" class="search-suggestion-item">
-          <test-avatar slot="avatar"></figure>
-          <p class="item-name"></p>
-        </test-menuitem>
-        <test-menuitem label="자동완성유아이" class="search-suggestion-item">
-          <test-avatar slot="avatar"></test-avatar>
-        </test-menuitem>
-        <test-tile variant="elevated" size="small">
-          <test-menuitem label="자동완(으)로 검색">
-            <test-avatar slot="avatar"><span class="material-symbols-outlined">search</span></test-avatar>
-          </test-menuitem>
-        </test-tile>
-      </section>
-    </test-tile>
+  <test-text variant="subhead">검색 실행 2 - 검색 버튼 클릭 또는 enter key </test-text>
+  <test-text variant="body-large"></p>
+  <ul>
+    <li>일치하는 결과만 표시하고 새로운 검색을 유도.</li>
+    <li>
+      하나 또는 하나 이상의 명확한 결과를 요구하는 경우 사용한다. 체류시간을 확보해야 하는 콘텐츠 플랫폼에는 적합하지 않다. 상대적으로 개발 리소스가
+      적게 들기 때문에 MVP 단계에서 유용하다.
+    </li>
+  </ul>
 
-    <test-text variant="subhead"> 검색 버튼 클릭 또는 enter key 검색 실행 2</test-text>
-    <p class="article-description"></p>
-    <ul>
-      <li>일치하는 결과만 표시하고 새로운 검색을 유도.</li>
-      <li>
-        하나 또는 하나 이상의 명확한 결과를 요구하는 경우 사용한다. 체류시간을 확보해야 하는 콘텐츠 플랫폼에는 적합하지 않다. 상대적으로 개발 리소스가
-        적게 들기 때문에 MVP 단계에서 유용하다.
-      </li>
-    </ul>
+  <test-text variant="subhead">placeholder의 작성</test-text>
 
-    <test-text variant="subhead">검색 트리거</test-text>
-    <p>onSubmit event</p>
-    <test-text variant="subhead">검색 결과 없음</test-text>
-    <test-tile variant="elevated" style="max-width: 800px">
-      <div class="empty" style="max-width: 100%; margin: 0; padding: 2rem 0" role="status">
-        <!-- <i class="empty-icon">🧟</i> -->
-        <!-- <h1 class="empty-title">주문을 확인해주세요.</h1> -->
-        <p class="empty-description" style="margin-top: 0; max-width: 100%"><em>수줍이</em>와(과)<br />일치하는 내용이 없습니다.</p>
-        <br />
-        <test-row style="justify-content: center" class="search-similars">
-          <test-chip icon="🦔" label="검색어 제공"></test-chip>
-          <test-chip icon="🐈‍⬛" label="야옹이"></test-chip>
-        </test-row>
-      </div>
-    </test-tile>
-  </article>
+  <test-text variant="subhead">궁금이 & 생각</test-text>
+  <ul>
+    <li>모바일 키보드의 높이를 고려한 쿼리의 적정 갯수는?</li>
+    <li>결과 페이지의 공유를 허용할 것인가?</li>
+    <li>검색 페이지가 탐색을 역할을 겸하는가?</li>
 
-  <article class="article">
-    <test-text variant="title">기타</test-text>
-    <p class="article-description">-</p>
-    <test-text variant="subhead">placeholder의 작성</test-text>
+    <li>검색 데이터는 어떻게 수집하는가.</li>
+    <li>비회원의 검색 내역을 저장할 것인가? (로컬에 저장)</li>
+    <li>검색 내역 삭제와 검색 히스토리 삭제를 구분.</li>
+    <li>전체 검색 내역과 최근 검색 내역. 활동 로그. (facebook. 나만 보기)</li>
 
-    <test-text variant="subhead">궁금이 & 생각</test-text>
-    <ul>
-      <li>모바일 키보드의 높이를 고려한 쿼리의 적정 갯수는?</li>
-      <li>결과 페이지의 공유를 허용할 것인가?</li>
-      <li>검색 페이지가 탐색을 역할을 겸하는가?</li>
-
-      <li>검색 데이터는 어떻게 수집하는가.</li>
-      <li>비회원의 검색 내역을 저장할 것인가? (로컬에 저장)</li>
-      <li>검색 내역 삭제와 검색 히스토리 삭제를 구분.</li>
-      <li>전체 검색 내역과 최근 검색 내역. 활동 로그. (facebook. 나만 보기)</li>
-
-      <li>searchfield와 textfield는 validation의 유무. 레이블의 유무. icon indicator의 유무로 구분된다</li>
-      <li>글로벌 검색 패턴과 로컬 검색(검색 필터를 포함) 패턴의 차이. searchfield small. right alignment.</li>
-    </ul>
-  </article>
-  <!-- <div class="">
+    <li>searchfield와 textfield는 validation의 유무. 레이블의 유무. icon indicator의 유무로 구분된다</li>
+    <li>글로벌 검색 패턴과 로컬 검색(검색 필터를 포함) 패턴의 차이. searchfield small. right alignment.</li>
+  </ul>
+  <div class="">
       <h1>#ThisIsTagPage</h1>
       <p>조회수(틱톡)/이카테고리에글쓰기(미디엄)/카테고리팔로우(개인화)</p>
-    </div> -->
+    </div>
+  </article>
 </main>

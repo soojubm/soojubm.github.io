@@ -39,6 +39,10 @@ const patterns = [
   'feed',
   'notification',
   'auth',
+  'pagehead',
+  'product',
+  'cake',
+  'class',
 ]
 const components = [
   'breadcrumb',
@@ -54,13 +58,19 @@ const components = [
   'checkbox',
   'radio',
   'textfield',
+
+  'tab',
+  'bar',
+
   'tile',
   'menuitem',
   'switch',
   'tooltip',
   'callout',
   'text',
-  'bar',
+  'separator',
+
+  'step',
 ]
 
 // let t = {}

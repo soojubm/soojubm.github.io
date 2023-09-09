@@ -4,10 +4,15 @@
 
   <div style="margin-top: -4rem; z-index: 5">
     <!-- description="soojubm@gmail.com | 82 10 3121 7045 | UI Designer" -->
-    <test-entity label="수줍이" description="soojubm@gmail.com" description2="82 10 3121 7045" description3="UI Designer">
+    <test-entity label="수줍이" description="soojubm@gmail.com" description2="82 10 3121 7045">
       <test-avatar slot="avatar" size="huge" variant="secondary" style="outline: 6px solid var(--color-background)"></test-avatar>
       <test-chip>팔로우</test-chip>
     </test-entity>
+    <!-- <p>
+      UI를 그립니다. 스타트업의 환경이나 태도에 관심이 많았습니다만 여전히 스물의 목적잃은 표본인 양 갈피를 못 잡고 프리랜서로 혼자서 일하다보니 부쩍,
+      동료들과 함께 시너지를 발휘하여 문제를 해결하고 싶다는 데, 우리의 프로덕트를 함께 만들어 가고 싶다는 데 마음이 동했습니다. 나이 서른이 넘어도
+      세상을, 자신을 잘 모르겠지만 그러한 마음 만은 알 것도 같습니다.
+    </p> -->
   </div>
 
   <div style="max-width: 240px; margin: 0.75rem 0 1.5rem">
@@ -40,7 +45,7 @@
     <dd>2018-서울강서구-1234</dd>
     <abbr title="phone"></abbr>
   </dl>
-  <small class="footer-copyright">© 2019 soojubm. All rights reserved.</small>
+  <small class="footer-copyright" style="display: block; margin: var(--space-3) 0 0 0">© 2019 soojubm. All rights reserved.</small>
   <address class="footer-address" style="margin: 0.5rem 0 0 0">
     <p class="footer-address-slogan">Making things better.</p>
   </address>
@@ -48,10 +53,9 @@
   <aside class="footer-scroll" style="margin: 1.5rem 0 0 0">
     <p class="footer-scroll-indicator" aria-hidden="true" hidden>스크롤</p>
     <button class="footer-scroll-bottom js-to-bottom" hidden>아래로</button>
-    <button class="footer-scroll-top js-to-top" aria-label="맨 위로">
-      <span class="material-symbols-outlined"> arrow_upward </span>
-      <b hidden aria-hidden="true">맨위로</b>
-    </button>
+    <test-chip class="footer-scroll-top js-to-top" aria-label="맨 위로">
+      <test-icon slot="icon" name="arrow-up"></test-icon>
+    </test-chip>
   </aside>
 
   <div class="footer" hidden>infinite scroll test</div>

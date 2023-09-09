@@ -17,9 +17,11 @@
 
 .row[data-temp=vertical] {
   /* display:flex; */
+  
   flex-wrap: nowrap;
   white-space:nowrap;
-  overflow:auto;
+
+  /* overflow:auto; */
 
   margin: var(--space-3-minus);
   padding: var(--space-3);
@@ -27,4 +29,8 @@
   scroll-behavior: smooth;
   > * {min-width:auto;}
   &::-webkit-scrollbar {display:none;}
+}
+
+.row[data-bleeding=true] {
+
 }

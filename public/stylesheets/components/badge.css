@@ -1,5 +1,5 @@
 
-:host() {
+:host {
   --badge-height: var(--size-tiny);
 }
 
@@ -21,7 +21,7 @@
 
 
   background-color: #fff;
-  border: var(--border);
+  /* border: var(--border); */
   font-size: 10px;
   color: var(--color-text);
 }

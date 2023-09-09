@@ -1,9 +1,12 @@
 .component {
+  transition: all .4s;
 }
 .component-example {margin:3rem -5vw;padding:2rem var(--grid-margin) 3rem;
   border: var(--border);
   border-right: none;
-  border-top-left-radius:var(--radius);border-bottom-left-radius:var(--radius);position:sticky;top:0;
+  border-top-left-radius:var(--radius);
+  border-bottom-left-radius:var(--radius);
+  /* position:sticky;top:0; */
   /* // background: #159957;
   // fallback for old browsers
   // background: -webkit-linear-gradient(to bottom, #155799, #159957);
@@ -14,12 +17,29 @@
 
 .component-example > * {
   display: block;
-  max-width: 800px;
+  width: 100%;
+  /* variables */
+  max-width: 400px;
+}
+.component-case {
+  /* margin: 1rem -5vw 0; */
+  padding: 1rem;
+  border: var(--border);
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-radius: var(--radius);
+  /* background: var(--color-background-weak); */
+}
+/* TODO */
+.component-case + test-text[variant=subhead] {
+  display: block;
+  margin-top: var(--space-8);
 }
 
 .component-props {
   border:none;margin:-4rem -1rem 3rem;padding:var(--space-4);
   background: var(--color-background-strong);
+  background: var(--gray800);
   border-radius: var(--radius);
   font-size: 12px;
   font-family:'revert';position:relative;
@@ -35,22 +55,21 @@
 */
 .component-props [variant=subhead] {display:none;}
 .component-guide {
-  margin:3rem 0;
+  margin:3.5rem 0 4rem;
 }
+.component-guide [variant=subhead] {display:block;margin:0 0 var(--space-after-subhead);}
+.component-guide [variant=body] + [variant=body-bold] {display:block;margin:var(--space-3) 0 0;}
+/* 일반적인 규칙임 */
+.component-guide [variant=body] + [variant=body] {display:block;margin:var(--space-3) 0 0;}
 
 .component-references {
-  margin: 1rem 0 0;
-  padding: 1rem;
-  background: var(--color-background-weak);
-  border-radius: var(--radius);
-}
-.component-references .article-subhead {
-  margin-top: 0;
-  margin-right: var(--space-4);
+  display: flex;
+  gap: var(--space-4);
 }
 .component-references a {
   font-size: var(--font-size-large);
   font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
 }
 .component-references a:hover {
   text-decoration: underline;
@@ -91,20 +110,11 @@ p + [variant="subhead"],
 .article-aka .hashtag:before {content:'';}
 
 .article-title {font-size:var(--font-size-huge);font-weight:var(--font-weight-bold);line-height:var(--font-line-height);color:var(--color-text);}
-.article-description {margin:var(--space-after-title) 0 2rem;font-size:var(--font-size-large);line-height:var(--font-line-height);color:var(--color-text);}
+/* .article-description {font-size:var(--font-size-large);line-height:var(--font-line-height);color:var(--color-text);} */
 .article ul {margin:var(--space-after-subhead) 0 2rem;}
 
-.article p, .article ul, .article dl {max-width: 720px;}
+.article ul, .article dl {max-width: 720px;}
 
-
-.article-p {
-  display: block;
-  max-width: 720px;
-  margin:1rem 0;
-}
-.article-p b {
-  display: block;
-}
 .article-kicker {
 display: block;
 max-width: 720px;
@@ -131,3 +141,6 @@ margin: 2rem 0;font-size:var(--font-size-large);color:var(--color-text);line-hei
   // }
   // .component-example > *:first-child {margin-top:-1.75rem;} */
 }
+
+
+

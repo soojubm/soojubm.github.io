@@ -1,23 +1,13 @@
 .tile {
-  padding: var(--space-3);
+  display: block;
+  padding: var(--space-4);
   border: var(--border);
   border-radius: var(--radius);
   box-sizing: border-box;
   background: var(--color-background);
   position: relative;
-
-
   /* // 임시 */
   /* margin: var(--space-3) 0; */
-}
-
-.tile-flat {
-  padding: var(--space-3);
-  border: var(--border);
-  border-radius: var(--radius);
-  box-sizing: border-box;
-  background: var(--color-background);
-  position: relative;
 }
 
 .tile[data-variant=nuded] {
@@ -27,12 +17,8 @@
 }
 
 .tile[data-variant=elevated] {
-  padding: var(--space-3);
-  border: var(--border);
-  border-radius: var(--radius);
-  box-sizing: border-box;
-  background: var(--color-background);
-  position: relative;box-shadow:var(--shadow-tile);
+  /* box-shadow:var(--shadow-tile); */
+  box-shadow:var(--shadow);
 }
 
 .tile[data-size=small] {
@@ -47,14 +33,21 @@ p {margin: 0;}
 img {display:block;width:100%;}
 
 
-::slotted([slot=actions]) {
+::slotted([slot=action]) {
   position: absolute;
-  right: var(--space-1);
-  top: var(--space-1);
+  right: var(--space-2);
+  top: var(--space-2);
   z-index: 1;
 }
 ::slotted([slot=tags]) {
   margin: var(--space-2) 0;
+}
+
+::slotted([slot=category]) {
+  position: absolute;
+  left: var(--space-2);
+  top: var(--space-2);
+  z-index: 1;
 }
 
 /* // 텍스트가 올 때 시각보정. 아이콘이 오면 아이콘에서 margin-top:.5rem?
@@ -100,14 +93,35 @@ img {display:block;width:100%;}
 .tile-elevated-tiny {@mixin tile-elevated-tiny;} */
 
 
-
-
+::slotted([slot=thumbnail]) {
+  max-height: 200px;
+  border: var(--border);
+  border-radius: var(--radius);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+::slotted([slot=heading]) {
+  display: block;
+  margin: var(--space-3) 0 0 0 !important;
+}
+::slotted([slot=tags]) {
+  display: block;
+  margin: var(--space-3) 0 0 0 !important;
+}
 
 
 .card {
-  width: 30%;
+  position: relative;
+  cursor: pointer;
+  /* width: 100%;
+  max-width: 400px; */
+}
+
+.card[data-size=medium] {
+  width: 100%;
   max-width: 400px;
 }
+
 .card-thumbnail {padding-top:50%;overflow:hidden;background:var(--color-background-weak);border-radius:var(--radius);box-sizing:border-box;position:relative;}
 .card-thumbnail img {display:block;width:auto;height:auto;max-width:100%;max-height:130%;margin:auto;position:absolute;left:-1px;right:-1px;top:-1px;bottom:-1px;}
 .card-avatar {position:absolute;right:1.5rem;top:172px;}

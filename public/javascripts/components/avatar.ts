@@ -8,53 +8,40 @@ export function inheritStyle(shadow, container) {
 class Avatar extends HTMLElement {
   constructor() {
     super()
-
     const shadow = this.attachShadow({ mode: 'open' })
 
-    const avatar = document.createElement('figure')
+    const container = document.createElement('figure')
     const badge = document.createElement('span')
 
-    avatar.classList.add('avatar')
-    badge.classList.add('avatar-badge')
+    // container.role = 'img'
+    container.classList.add('avatar')
+    if (this.size) container.dataset.size = this.size
+    if (this.variant) container.dataset.variant = this.variant
+    // container.innerHTML = this.content
 
-    avatar.setAttribute('role', 'img')
-    avatar.setAttribute('data-size', this.size || '')
-    avatar.setAttribute('data-variant', this.variant || '')
-    avatar.setAttribute('data-fallback', this.variant || '')
+    badge.classList.add('avatar-badge')
 
     // TODO
     if (this.fallback) {
-      avatar.classList.add('no')
-      avatar.innerText = this.fallback
-    }
-
-    shadow.appendChild(avatar)
-    avatar.append(...this.childNodes, makeStyleSheet('avatar'))
-
-    if (this.badge) {
-      avatar.appendChild(badge)
+      container.classList.add('no')
+      container.innerText = this.fallback
     }
 
     const style = this.getAttribute('style')
-    avatar.setAttribute('style', style || '')
+    if (style) container.setAttribute('style', style)
 
-    // if (this.badge === '') {
-    //   container.appendChild(badge)
-    // }
-    // Attach the created elements to the shadow dom
-    // <span class="avatar-badge"></span>
-    // container.appendChild(label)
-    // label.textContent = this.label
+    if (this.src) {
+      const image = document.createElement('image')
+      image.setAttribute('src', this.src)
+      container.appendChild(image)
+    }
 
-    // if (this.type === 'primary') container.classList.add('is-primary')
+    shadow.appendChild(container)
+    shadow.appendChild(makeStyleSheet('avatar'))
+    // TODO childNodes => iconSlot
+    container.append(...this.childNodes)
+    if (this.badge) container.appendChild(badge)
   }
-
-  // static get observedAttributes() {
-  //   return ['variant', 'size', 'badge']
-  // }
-  // attributeChangedCallback(attrName, oldVal, newVal) {
-  //   this[attrName] = newVal
-  // }
 
   get variant() {
     return this.getAttribute('variant')
@@ -72,9 +59,30 @@ class Avatar extends HTMLElement {
   get fallback() {
     return this.getAttribute('fallback')
   }
+  get content() {
+    return this.innerHTML
+  }
+
+  get src() {
+    return this.getAttribute('src')
+  }
 
   connectedCallback() {}
   disconnectedCallback() {}
 }
 
 export default Avatar
+
+// static get observedAttributes() {
+//   return ['variant', 'size', 'badge']
+// }
+// attributeChangedCallback(attrName, oldVal, newVal) {
+//   this[attrName] = newVal
+// }
+
+// Attach the created elements to the shadow dom
+// <span class="avatar-badge"></span>
+// container.appendChild(label)
+// label.textContent = this.label
+
+// if (this.type === 'primary') container.classList.add('is-primary')

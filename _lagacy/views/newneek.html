@@ -1,4 +1,239 @@
+<style>
+
+body {
+  --chat-bubble-border: 1px solid #000;
+}
+.subscribe-gosum {
+  position: absolute;
+  top: 5rem;
+  left: 50%;
+  width: 100%;
+  max-width: 480px;
+  margin-left: 60px;
+}
+
+.intro-head {
+  overflow: hidden;
+  position: relative
+}
+
+.intro-head-title {
+  padding: 1rem 0;
+  border-bottom: 1px solid #000;
+  font-size: 3rem;
+}
+
+.intro-head-subhead {
+  display: block;
+  font-size: var(--font-size-large);
+  position: relative;
+  z-index: 1
+}
+
+.intro-head-subhead b {
+  font-weight: var(--font-weight-bold);
+}
+
+.intro-head-description {
+  padding: 2rem 0 3rem;
+  background: #fb7800;
+  box-sizing: border-box
+}
+
+.intro-head-description p {
+  max-width: 560px;
+  font-size: var(--font-size-large);
+}
+
+.intro-head-description .textfield-input {
+  margin: 0 0 .5rem 0;
+  border-radius: 0;
+  border-color: #000;
+  background: #fff;
+}
+
+.intro-footer {
+  padding: 2rem 0;
+  background: #ebebeb;
+  position: relative
+}
+
+.intro-subscribe {
+  max-width: 400px;
+  margin: 1.5rem 0 0;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+}
+
+.subscribe-field-cta {
+  display: inline-block;
+  min-width: 104px;
+  background: #fb7800;
+  padding: 10px 1.5rem 11px;
+  border-radius: 0;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  background: #161616;
+  border: 1px solid #161616;
+  color: #fff;
+  background: #161616;
+  margin: 1rem 0 0;
+  padding-right: 1.75rem;
+}
+
+@media (max-width:1080px) {
+  .intro-head-title {
+    background: #ebebeb;
+    border-top: 1px solid #161616;
+    margin-top: -10rem;
+    font-size: var(--font-size-huge);
+    text-align: center;
+    position: relative;
+    z-index: 6
+  }
+
+  .subscribe-gosum {
+    width: 75%;
+    left: auto;
+    top: auto;
+    margin: -2rem auto auto;
+    position: relative;
+    z-index: 6
+  }
+
+  .intro-head-description {
+    position: relative;
+    z-index: 7
+  }
+
+  .intro-footer {
+    padding: 2rem 0 2.5rem
+  }
+}
+
+/* // :root {
+//   --zigzag-size: 1rem;
+// }
+// .zigzag {background:var(--color-newneek);position:relative;}
+// .zigzag:before {
+//   content: "";
+//   width: 100%;
+//   height: var(--zigzag-size);
+//   position: absolute;
+//   left: 0;
+//   top: calc(var(--zigzag-size) * -1);
+//   background-image:
+//     linear-gradient(-45deg, transparent var(--zigzag-size), var(--color-newneek) 0),
+//     linear-gradient(45deg, transparent var(--zigzag-size), var(--color-newneek) 0);
+//   background-size: var(--zigzag-size) var(--zigzag-size);
+//   background-repeat: repeat-x;
+//   background-position: -3px 0;
+//   transform: rotateX(180deg);
+// } */
+
+
+
+.home-mangrove {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: 2px solid #000;
+  background: var(--color-newneek);
+  position: relative;
+
+  .mangrove1 {
+    display: block;
+    max-width: 240px;
+    margin-top: -140px;
+    margin-bottom: 110px;
+    transition: all 0.4s;
+  }
+
+  .mangrove2 {
+    display: block;
+    max-width: 230px;
+    margin-left: 2rem;
+    position: absolute;
+    bottom: 2rem;
+    transition: all 0.4s ease 0.05s;
+  }
+
+  .mangrove-foot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: .5rem 0;
+    border-top: 1px solid #000;
+    border-bottom: 2px solid #000;
+    background: #fff;
+    position: relative;
+    z-index: 1;
+
+    span {
+      font-size: 16px;
+      color: #000;
+    }
+  }
+
+  &:hover {
+    .mangrove1 {
+      transform: translateY(-1.5rem);
+    }
+
+    .mangrove2 {
+      transform: translateY(-1.05rem);
+    }
+  }
+}
+
+
+
+.today-poll {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 4rem auto;
+  }
+.today-poll h2 {
+    width: 100%;
+    margin: 0 0 2rem 0;
+    text-align: center;
+  }
+  .today-poll  div {
+    margin: 0 0.5rem;
+    background: var(--color-background);
+    text-align: center;
+
+    }
+
+    .today-poll div figure {
+      border: 2px solid #000;
+      border-bottom-width: 1px;
+      span {
+        display: block;
+        margin-top: -3rem;
+        padding: 1.5rem 1.5rem 0.5rem;
+        font-size: 3.5rem;
+        line-height: 1.2;
+      }
+
+      .today-poll .label {
+      display: block;
+      padding: 0.25rem 0;
+      border: 2px solid #000;
+      border-top: 0;
+      background: var(--gray100);
+      font-size: var(--font-size-large);
+      font-weight: bold;
+    }
+</style>
+
+
 <aside class="modal newneek" role="presentation">
+
   <article class="modal-dialog" role="dialog">
     <header class="titlebar" style="padding:0;">
       <h1 class="titlebar-title">뉴닉</h1>
@@ -9,6 +244,8 @@
 
     <section class="modal-body">
       <section style="max-width:480px;margin:0 auto;">
+
+        
         <div class="chat">
           <figure class="chat-avatar">
             🧔
@@ -121,7 +358,7 @@
         </section>
       </div>
 
-      <!-- <div class="subscribe-gosum">
+      <div class="subscribe-gosum">
         <img src="https://newneek.co/static/media/gosum-home.7b7f5b6b.png" alt=""></div>
         <h1 class="intro-head-title">
           특보! <span role="img" aria-label="">🗞️</span> 우리가 시간이 없지, <span class="mobile-block">세상이 안 궁금하냐!</span>
@@ -145,9 +382,7 @@
             개인정보 수집·이용</a>에 동의합니다</label>
           </div>
           <button class="subscribe-field-cta">뉴스레터 무료로 구독하기</button>
-        </div> -->
-      
-
+        </div>
 
       <section style="max-width:480px;margin:4rem auto;">
         <div class="chat is-mine">
@@ -213,7 +448,6 @@
 
       <p style="text-align:left;">2. 콘텐츠 말미 관련 콘텐츠를 추천하며 웹사이트로 랜딩. 콘텐츠 내부의 주황 링크보다 콘텐츠의 마지막에 관련 콘텐츠를 추천함으로써 콘텐츠를 읽는 흐름을 유지할 수 있었고, 본문에 포함된 링크보다 클릭율이 상대적으로 높다.</p>
       <p>너무 많은 링크(하나의 콘텐츠에 10개..)의 문제. 콘텐츠 작성 리소스 과다. 외부로 트래픽 전송.  쉽게 풀어준다는 브랜드 가치와 상충.</p>
-      
 
       <div style="max-width:800px;margin:4rem 0;">
         <img src="/public/images/newneek-book.png" alt="">
@@ -230,8 +464,6 @@
       <p class="timeline-item-panel-description">마이페이지에서 특정 이슈를 타임라인으로 정리한 콘텐츠 중 아직 읽지 않은 최신 콘텐츠를 하나 큐레이션하자.</p>
       <li>홈페이지에서 뉴닉팀이 큐레이션하는 뉴스 콘텐츠의 클릭율이 낮다. 웹사이트 독점 콘텐츠가 부족.</li>
           
-
-      
       <p class="timeline-item-panel-description">없는 것 같아. 뉴스를 읽을 시간이 없어서 우리가 정리해준다는 및 브랜드 가치와도 상충. 링크를 달고 테스트하는 데 콘텐츠를 생산 비용. 뉴스레터에서 외부로 이탈할 수 있는 경로가 너무 많고 링크와 뉴스레터 간의 스위칭이 필요한데 그들이 다시 돌아와서 뉴스레터를 읽을까? </p>
       <p>외부 언론사 링크를 통해 자세히 알 수 있어서 좋다는 피드백은 있기는 했으나 뉴스 콘텐츠의 분량이 적은 편이기 때문에 흐름... 그렇다면 많은 경우 하나의 단락에 5개가 넘는 링크를 1~2개로 줄여보자.</p>
       <p class="timeline-item-panel-description">후원, 펀딩, 이벤트(돌잔치) 등에 참여한 사용자에게 고슴이 뱃지 그래픽을 제공.</p>
@@ -261,6 +493,21 @@
           <span class="label">남성</span>
         </div>
       </section>
+
+      <article class="bookcard">
+        <header class="bookcard-head">
+          <figure class="bookcard-head-media">
+            <img src="https://newneek-image.s3.ap-northeast-2.amazonaws.com/image/gosumbook/살리는일" alt="살리는 일">
+          </figure>
+          <h3 class="bookcard-head-title">
+            <span role="img" aria-label="">📙</span> 살리는 일</h3>
+            <p class="bookcard-head-description">박소영 / 무제</p></header><div class="bookcard-body"><h3 class="bookcard-body-title"><span role="img" aria-label="">🦔고슴이</span>: 더 많은 동물 친구들이 안전하고 자유롭기를!</h3><p class="bookcard-body-description">
+        지난 2019년, 고양이를 잔혹하게 살해한 학대범에게 6개월의 징역형이 선고됐어요. 동물보호법이 제정된 지 28년 만에 처음으로 실형이 내려진건데요. 하지만 동물보호법은 여전히 제자리에서...
+        <span hidden>‘멈춤’ 상태. 게다가 동물이라고 해서 다 같은 상황에 있는 게 아니라는 문제도 있어요. 호화로운 돌봄 서비스를 받는 동물이 있는 반면, 추위에 떨며 길을 누비는 동물도 있으니까요. 작가는 10여 곳의 길고양이 급식소를 운영하며, 밤새 어둠 속에 몸을 숨긴 동물들에게 화해의 손길을 내밀고 있어요. ‘반려동물’과 ‘동물보호법 안의 동물’은 같은 생명의 무게를 가질까요? 작가는 책을 통해 조금은 서글픈 질문을 정면으로 마주봐요. 그리고 우리에겐 모종의 의무가 있다는 결론에 다가서요. 동물권이라는 단어가 아직 조금은 낯설고 어려워도 우리에겐 이를 지켜내야 하는 의무가 있다고요. 인간 역시 함께 살아가는, 같은 ‘동물’이니까요.</span>
+      </p><div>
+          <h4 class="bookcard-body-temp"><span role="img" aria-label="">🗞️</span> 함께 읽으면 좋은 뉴닉 콘텐츠</h4><a class="bookcard-body-link" href="/post/fDigGI">전 세계 조별과제 잔혹사: 생물다양성 영역 🌏</a></div></div><footer class="bookcard-foot"><button class="bookcard-foot-apply cta-button" disabled="">이 책은 마감되었어요</button></footer></article>
+
+
   </article>
 </aside>
       <!-- <p>뉴스레터 내 광고(브랜디드 컨텐츠)의 비중을 줄여갈 예정이었으나 더 스킴이나 모닝브루 등의 해외 뉴스레터 서비스는 이메일 광고 BM을 유지하고 있었으나, </p> -->
@@ -277,7 +524,6 @@
 
         문제: 뉴스레터에서 소비했던 콘텐츠를 웹사이트에서 재소비하는 목적으로는 웹사이트 방문 근거가 부족.
         솔루션: 검색 경험 유도하고 적극적으로 가입 유도하지 않음. 내부에서 가입을 유도하기 위한 기능 위주의 커뮤니케이션 발생하고 일정 및 리소스 대비 큰 목표.
-
       -->
 
       <!--

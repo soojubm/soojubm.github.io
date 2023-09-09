@@ -3,7 +3,9 @@ import navbar from '/public/components/navbar/navbar.html'
 
 import result from './result.html'
 import './result.css'
+import '/pages/components/components.css'
 
+import '/public/components/navbar/navbar.css'
 import '/public/components/footer/footer.css'
 
 // import '/public/stylesheets/shared.css'

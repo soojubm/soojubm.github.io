@@ -35,6 +35,7 @@ import RadioGroup from './radioGroup'
 import Icon from './icon'
 import Separator from './separator'
 import Card from './card'
+import Result from './result'
 
 // class extends HTMLElement {
 //   static get observedAttributes() {
@@ -54,6 +55,8 @@ export function defineCustomElement() {
 
     customElements.define('test-avatar', Avatar)
     customElements.define('test-entity', Entity)
+
+    customElements.define('test-result', Result)
 
     customElements.define('test-textfield', Textfield)
 

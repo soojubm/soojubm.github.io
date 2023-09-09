@@ -165,7 +165,7 @@ const article = [
 //     const articleSample = `
 //       <article class="article js-scrollspy-section">
 //         <test-text variant="title">${item.title}</test-text>
-//         <p class="article-description">
+//         <test-text variant="body-large">
 //         ${item.kicker}
 //         </p>
 //         <p style="margin:2rem 0">${item.description}</p>

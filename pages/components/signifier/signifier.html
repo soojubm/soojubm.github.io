@@ -1,312 +1,354 @@
 <main class="component">
-  <header class="" role="banner" style="margin-left:-40px;">
-    <div class="chat" style="margin: 2rem var(--grid-margin) var(--space-2)">
-      <figure class="chat-avatar"></figure>
-      <div class="chat-bubble is-primary">
-        <b>Signifier</b>
-        <p>서비스와 사용자 사이의 신뢰. 예측 가능한 사용자 인터렉션. 종류 - click / </p>
-      </div>
-      <div class="chat-bubble">
-        <a href="https://developer.apple.com/design/human-interface-guidelines/components/layout-and-organization/disclosure-controls" target="_blank">disclosure-controls</a>
-        <span class="icon-bullet"></span>
-        <a href="https://developer.apple.com/kr/design/tips/" target="_blank">UI 디자인 기본 원칙</a>
-        <span class="icon-bullet"></span>
-        <a href="https://m3.material.io/foundations/interaction-states" target="_blank">MD interaction-states</a>
-      </div>
-    </div>
-  </header>
-
   <article class="article">
-    <!-- <test-text variant="title"></h4> -->
+    <p>Use only universally recognized icons to represent actions or options.</p>
+    <header class="" role="banner" style="margin-left: -40px">
+      <div class="chat" style="margin: 2rem var(--grid-margin) var(--space-2)">
+        <figure class="chat-avatar"></figure>
+        <div class="chat-bubble is-primary">
+          <b>Signifier</b>
+          <p>서비스와 사용자 사이의 신뢰. 예측 가능한 사용자 인터렉션. 종류 - click /</p>
+        </div>
+        <div class="chat-bubble">
+          <a
+            href="https://developer.apple.com/design/human-interface-guidelines/components/layout-and-organization/disclosure-controls"
+            target="_blank"
+            >disclosure-controls</a
+          >
+          <span class="icon-bullet"></span>
+          <a href="https://developer.apple.com/kr/design/tips/" target="_blank">UI 디자인 기본 원칙</a>
+          <span class="icon-bullet"></span>
+          <a href="https://m3.material.io/foundations/interaction-states" target="_blank">MD interaction-states</a>
+        </div>
+      </div>
+    </header>
+
+    <ul>
       <li>addable과 expandable을 구분하세요.</li>
       <li>bold text를 clickable로 사용하지 마세요. (단락 더 보기 등에서 사용되는 패턴)</li>
       <li>done / check / positive 차이</li>
+      <li>기표로 정의하지 않은 아이콘을 단순 장식적인 용도로 사용하지 마세요.</li>
+      <li>서드파티 라이브러리에 따라 아이콘 사이즈는 font-size로 결정되기도 하고 width/height로 결정되기도 한다.</li>
+      <li>정확한 기표를 사용하고 재사용성이나 변경 가능성을 고려하여 각각의 아이콘을 컴포넌트로/</li>
+      <!-- <li>medium size는 action. small size는 indicator.</li> -->
+      <li>clickable이 아닌 모든 요소는 non-clickable이지만 disabled은 실행 불가의 명시적인 표현.</li>
     </ul>
-
-    <li>아이콘 사이즈는 font-size 또는 width/height로 결정된다.</li>
-    <li>정확한 기표를 사용하고 재사용성이나 변경 가능성을 고려하여 각각의 아이콘을 컴포넌트로/</li>
-    <li>medium size는 action. small size는 indicator.</li>
-    <li>clickable이 아닌 모든 요소는 non-clickable이지만 disabled은 실행 불가의 명시적인 표현.</li>
-   
     <test-text variant="subhead">Clickable</test-text>
-    <div class="token-group">
-      <test-tile style="box-shadow:var(--shadow);">
+    <section class="component-example">
+      <div class="token-item" style="box-shadow: var(--shadow)">
         <p>elevated 오브젝트는 클릭할 수 있다. 또는 오브젝트 내부에 클릭할 수 있는 요소가 존재한다.</p>
-      </test-tile>
-      <test-tile style="border:none;background:var(--color-background-weak);">
-        <p>연한 회색의 오브젝트는 클릭할 수 있다.</p>
-      </test-tile>
-      <test-tile>
-        <em>브랜드 컬러 텍스트</em>는 클릭할 수 있다.</p>
       </div>
-      <test-tile>
+      <div class="token-item" style="border: none; background: var(--color-background-weak)">
+        <p>연한 회색의 오브젝트는 클릭할 수 있다.</p>
+      </div>
+      <div class="token-item">
+        <p><em>브랜드 컬러 텍스트</em>는 클릭할 수 있다.</p>
+      </div>
+      <div class="token-item">
         <p>❤️ 아이콘(또는 이모지)과 이미지는 클릭할 수 있다.</p>
-      </test-tile>
-    </div>
+      </div>
+    </section>
 
-    <!-- <p class="article-description">Action indicator</p> -->
+    <test-text variant="subhead">close / clear</test-text>
 
+    <!-- <test-text variant="body-large">Action indicator</p> -->
     <test-text variant="subhead">Indicator Icons</test-text>
-    <section class="token-group">
-      <test-tile>
-        <figure class="icon-indicator is-positive" data-size="small">
+    <!-- <section class="token-group">
+      <div class="token-item">
+        <figure class="icon-indicator is-positive">
           <span class="material-symbols-outlined">check</span>
         </figure>
         <b>Valid</b>
-      </test-tile>
-      <test-tile data-size="small">
+      </div>
+      <div class="token-item">
         <figure class="icon-indicator is-negative">
           <span class="material-symbols-outlined">close</span>
         </figure>
         <b>InValid</b>
-      </test-tile>
-    </section>
+      <div>
+    </section> -->
 
     <test-text variant="subhead">Action Icons</test-text>
     <section class="token-group">
-      <test-tile>
+      <div class="token-item">
         <test-chip>
           <span class="material-symbols-outlined">arrow_back</span>
         </test-chip>
         <b>to back</b>
         <!-- <small>iOS에서 뒤로가기(이전 페이지)는 chevron.</small> -->
-      </test-tile>
-      <test-tile>
+      </div>
+      <div class="token-item">
         <test-chip>
           <span class="material-symbols-outlined">call_made</span>
         </test-chip>
         <b>External Link</b>
-      </test-tile>
-      <test-tile>
+      </div>
+      <div class="token-item">
         <test-chip>
-          <span class="material-symbols-outlined">
-            arrow_right_alt
-            </span>
+          <span class="material-symbols-outlined"> arrow_right_alt </span>
         </test-chip>
         <b>Internal Link (ex: view all)</b>
-      </test-tile>
-      <test-tile>
+      </div>
+      <div class="token-item">
         <test-chip>
           <span class="material-symbols-outlined">chevron_right</span>
         </test-chip>
         <b>Expandable & Collapsible (vertical)</b>
-      </test-tile>
-      <test-tile>
+      </div>
+      <div class="token-item">
         <test-chip>
           <span class="material-symbols-outlined">expand_more</span>
         </test-chip>
         <b>Expandable & Collapsible (horizental)</b>
-      </test-tile>
-      <test-tile>
+      </div>
+      <div class="token-item">
         <test-chip><span class="material-symbols-outlined">search</span></test-chip>
         <b>Searchable</b>
-      </test-tile>
-      <test-tile>
+      </div>
+      <div class="token-item">
         <test-chip>
-          <i class="icon-caret" style="display:inline-block;"></i>
+          <i class="icon-caret" style="display: inline-block"></i>
         </test-chip>
         <b>Popover</b>
-      </test-tile>
-      <test-tile>
+      </div>
+      <div class="token-item">
         <test-chip>
           <span class="material-symbols-outlined">close</span>
         </test-chip>
         <b>Removable</b>
-      </test-tile>
-      <test-tile>
+      </div>
+      <div class="token-item">
         <test-chip>
           <span class="material-symbols-outlined">add</span>
         </test-chip>
         <b>Addable</b>
-      </test-tile>
-      <test-tile>
+      </div>
+      <div class="token-item">
         <test-chip>
-          <span class="material-symbols-outlined">
-            content_copy
-          </span>
+          <span class="material-symbols-outlined"> content_copy </span>
         </test-chip>
         <b>copy</b>
-      </test-tile>
-      <test-tile>
+      </div>
+      <div class="token-item">
         <test-chip>
-          <span class="material-symbols-outlined">
-            cached
-            </span>
+          <span class="material-symbols-outlined"> cached </span>
         </test-chip>
         <b>refresh</b>
-      </test-tile>
-      <test-tile>
+      </div>
+      <div class="token-item">
         <test-chip>
-          <span class="material-symbols-outlined">
-            logout
-            </span>
+          <span class="material-symbols-outlined"> logout </span>
         </test-chip>
         <b>logout</b>
-      </test-tile>
-      <test-tile>
+      </div>
+      <div class="token-item">
         <test-chip>
           <span class="material-symbols-outlined">light_mode</span>
         </test-chip>
         <b>day</b>
-      </test-tile>
-      <test-tile>
+      </div>
+      <div class="token-item">
         <test-chip>
           <span class="material-symbols-outlined">nights_stay</span>
         </test-chip>
         <b>night</b>
-      </test-tile>
-      <test-tile>
+      </div>
+      <div class="token-item">
         <test-chip>
-          <span class="material-symbols-outlined">
-            more_vert
-            </span>
+          <span class="material-symbols-outlined"> more_vert </span>
         </test-chip>
         <b>more_vert</b>
-      </test-tile>
-
-      <test-tile>
+      </div>
+      <div class="token-item">
         <test-chip>
           <span class="material-symbols-outlined">public</span>
         </test-chip>
         <b>public</b>
-      </test-tile>
-      <test-tile>
+      </div>
+      <div class="token-item">
         <test-chip>
           <span class="material-symbols-outlined">group</span>
         </test-chip>
         <b>group</b>
-      </test-tile>
-      <test-tile>
+      </div>
+      <div class="token-item">
         <test-chip>
           <span class="material-symbols-outlined">lock</span>
         </test-chip>
         <b>lock</b>
-      </test-tile>
+      </div>
 
-      <test-tile>
+      <div class="token-item">
         <test-chip>
           <span class="material-symbols-outlined">settings</span>
         </test-chip>
         <b>setting</b>
-      </test-tile>
+      </div>
     </section>
 
     <test-text variant="subhead">Hover states</test-text>
     <div class="token-group">
-      <test-tile>
-        <b style="margin-bottom:.125rem;">@define-mixin hover-text</b>
-        <a href="#" style="text-decoration:underline;">Text</a>
-      </test-tile>
-      <test-tile style="z-index:1;">
-        <b style="margin-bottom:.5rem;">@define-mixin hover-item</b>
+      <div class="token-item">
+        <b style="margin-bottom: 0.125rem">@define-mixin hover-text</b>
+        <a href="#" style="text-decoration: underline">Text</a>
+      </div>
+      <div class="token-item" style="z-index: 1">
+        <b style="margin-bottom: 0.5rem">@define-mixin hover-item</b>
         <div class="item is-hoverable" data-size="medium">
-          <test-avatar style="margin-bottom:0;">
-          </figure>
+          <test-avatar style="margin-bottom: 0"></test-avatar>
           <span class="item-name">Item</span>
         </div>
-      </test-tile>
-      <test-tile>
-        <b style="margin-bottom:.125rem;">@define-mixin hover-button</b>
-        <button class="chip" style="box-shadow:var(--status-hover);"><span class="chip-label">button & chip</span></button>
-      </test-tile>
+      </div>
+      <div class="token-item">
+        <b style="margin-bottom: 0.125rem">@define-mixin hover-button</b>
+        <button class="chip" style="box-shadow: var(--status-hover)"><span class="chip-label">button & chip</span></button>
+      </div>
     </div>
 
-    <test-text variant="subhead" style="margin:0;">Disabled state</h4>
+    <test-text variant="subhead" style="margin: 0">Disabled state</test-text>
     <p>opacity 50% (using token) / not-allowed cursor / removed elevated style</p>
 
-    <test-tile style="cursor:not-allowed;">
-      <button class="button" data-variant="primary" style="pointer-events:none;opacity:.5;">주문</button>
-    </test-tile>
-    <test-text variant="subhead" style="margin:0;">Active state using ripple</h4>
-    <test-text variant="subhead" style="margin:0;">Pressed state</h4> 
-    <test-text variant="subhead" style="margin:0;">Progressing state</h4>
+    <div class="token-item" style="cursor: not-allowed">
+      <button class="button" data-variant="primary" style="pointer-events: none; opacity: 0.5">주문</button>
+    </div>
+    <test-text variant="subhead" style="margin: 0">Active state using ripple</test-text>
+    <test-text variant="subhead" style="margin: 0">Pressed state</test-text>
+    <test-text variant="subhead" style="margin: 0">Progressing state</test-text>
+
+    <p style="color: var(--red800)">
+      safari에서 outline이 radius를 못 가져옴. box-shadow는 컨테이너의 padding이 없으면 잘림. + ::before {border:0;radius} 수도 선택자의 장점.
+      역할(상태)를 확실히 분리할 수 있다ㅏ.
+    </p>
+    <li>aria-haspopup vs aria-expanded</li>
+    <li>uncheckable을 명확히 정의.</li>
   </article>
 
-    <p style="color:var(--red800);">safari에서 outline이 radius를 못 가져옴. box-shadow는 컨테이너의 padding이 없으면 잘림. + ::before {border:0;radius} 수도 선택자의 장점. 역할(상태)를 확실히 분리할 수 있다ㅏ.</p>
-    <li>aria-haspopup vs aria-expanded</li>
-    <li> uncheckable을 명확히 정의.</li>
   <article class="article js-scrollspy-section">
     <test-text variant="title">Feedbacks</test-text>
-    <p class="article-description">작성 중.</p>
+    <test-text variant="body-large">작성 중.</test-text>
 
     <p>toast / modal / refresh - redirect</p>
 
-    <p>inline error / detour derror / blocking error</p> 
+    <p>inline error / detour derror / blocking error</p>
 
     <div class="token-group">
-      <test-tile>
+      <div class="token-item">
         <b>inline</b>
-        
         <p>
           <span class="icon-indicator material-symbols-outlined"> error </span>
           <span hidden="">가입하지 않은 이메일이거나??</span>
           잘못된 비밀번호입니다.
         </p>
-    
         <div>
           <p>인터넷연결오류: toast + callout</p>
         </div>
-      </test-tile>
+      </div>
     </div>
 
     <test-text variant="subhead">Errors</test-text>
     <div class="token-group">
-      <test-tile>
+      <div class="token-item">
         <b>globally</b>
         <div>
           <p>인터넷연결오류: toast + callout</p>
           <p>인터넷연결시도 이벤트 알아보기 => online / offline을 다시 요청?</p>
         </div>
-      </test-tile>
-      <test-tile>
+      </div>
+      <div class="token-item">
         <b>locally</b>
         <div><p>데이터패칭, 랜더링: result 컴포넌트</p></div>
-      </test-tile>
+      </div>
     </div>
 
     <test-text variant="title">Indicators / Signifier와</test-text>
-      <section class="component-example">
-        <test-tile>
-          <figure class="chip-icon"><span class="material-symbols-outlined">search</span></figure>
-        </test-tile>
-        <test-tile>
-          <menu class="sorting-group">
-            <span class="sorting-title">Sort by</span>
-            <div class="sorting-item">
-              <select class="" id="">
-                <option value="select-option1">최신순</option>
-              </select>
-              <span class="icon-indicator material-symbols-outlined" role="img">arrow_drop_down</span>
-            </div>
-          </menu>
-          <button class="title-button">
-            <h1 class="hero-title" style="display: flex; align-items: center">
-              Dummies
-              <span class="icon-indicator material-symbols-outlined" data-size="small" role="img">arrow_drop_down</span>
-            </h1>
-          </button>
-          <button style="display: flex; align-items: center; line-height: 24px">
-            See more trending developers
-            <span class="icon-indicator material-symbols-outlined">arrow_right_alt</span>
-          </button>
-          <button class="" style="display: flex; align-items: center; line-height: 24px; position: relative">
-            Show more
-            <span class="icon-indicator material-symbols-outlined">expand_more</span>
-          </button>
-        </test-tile>
-      </section>
-  
-      <test-text variant="subhead">검색의 시작<br />onFocus - 키워드 입력 대기</test-text>
-      <ul>
-        <li><b>onBlur. (default)</b> 인기 콘텐츠 또는 추천 콘텐츠 등 개인화 콘텐츠 탐색할 수 있다.</li>
-      </ul>
+    <section class="component-example">
+      <div class="token-item">
+        <figure class="chip-icon"><span class="material-symbols-outlined">search</span></figure>
+      </div>
+      <div class="token-item">
+        <menu class="sorting-group">
+          <span class="sorting-title">Sort by</span>
+          <div class="sorting-item">
+            <select class="" id="">
+              <option value="select-option1">최신순</option>
+            </select>
+            <span class="icon-indicator material-symbols-outlined" role="img">arrow_drop_down</span>
+          </div>
+        </menu>
+        <button class="title-button">
+          <h1 class="hero-title" style="display: flex; align-items: center">
+            Dummies
+            <span class="icon-indicator material-symbols-outlined" data-size="small" role="img">arrow_drop_down</span>
+          </h1>
+        </button>
+        <button style="display: flex; align-items: center; line-height: 24px">
+          See more trending developers
+          <span class="icon-indicator material-symbols-outlined">arrow_right_alt</span>
+        </button>
+        <button class="" style="display: flex; align-items: center; line-height: 24px; position: relative">
+          Show more
+          <span class="icon-indicator material-symbols-outlined">expand_more</span>
+        </button>
+      </div>
+    </section>
   </article>
 </main>
 
-
-
-<!-- <p class="article-description">형식으로는 inline, toast, modal로 표현할 수 있고,</p>
+<!-- <test-text variant="body-large">형식으로는 inline, toast, modal로 표현할 수 있고,</test-text>
 <test-text variant="subhead">Helper</h2>
 <p>inline / box</p>
-<test-text variant="subhead">Attention required</h2>
-</article> -->
+<test-text variant="subhead">Attention required</h2>-->
+
+<section style="display: flex; justify-content: center; gap: 2rem; margin: 0 var(--grid-margin)">
+  <div
+    class=""
+    style="
+      width: 20rem;
+      height: 20rem;
+      border-radius: 50%;
+      background-image: url('../../../public/images/springsteen.jpg');
+      background-size: cover;
+      position: relative;
+    "
+  >
+    <h3 class="quote-title" style="color: #fff; background: #000; display: inline-block; color: #fff; position: relative; z-index: 1">
+      Cool Hand Luke
+    </h3>
+    <br />
+    <cite class="quote-byline" style="color: #fff; background: #000; display: inline-block; margin-top: 0; position: relative; z-index: 1">
+      <div class="quote-byline-name" style="color: #fff; position: relative">Bruce Springsteen</div>
+      <time class="quote-byline-job" style="color: #fff; position: relative">1967</time>
+    </cite>
+    <div
+      style="
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5), rgb(0, 0, 0.75));
+        height: 128px;
+        z-index: 0;
+        border-radius: var(--radius);
+      "
+    ></div>
+  </div>
+
+  <div
+    style="
+      width: 20rem;
+      height: 20rem;
+      border-radius: 50%;
+      background-image: url('../public/images/prometheus.jpg');
+      background-size: cover;
+      position: relative;
+    "
+  >
+    <h3 class="quote-title" style="color: #fff; background: #000; display: inline-block; color: #fff; position: relative; z-index: 1">
+      프로메테우스
+    </h3>
+    <br />
+    <cite class="quote-byline" style="color: #fff; background: #000; display: inline-block; margin-top: 0; position: relative; z-index: 1">
+      <div class="quote-byline-name" style="color: #fff; position: relative">리들리 스콧</div>
+      <time class="quote-byline-job" style="color: #fff; position: relative">2012, 미국</time>
+    </cite>
+  </div>
+</section>
