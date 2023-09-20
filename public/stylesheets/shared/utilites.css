@@ -26,3 +26,18 @@
 .visually-hidden {width:1px;height:1px;clip:rect(1px 1px 1px 1px);overflow:hidden;position:absolute;user-select:none;} // if(true) 리더기가 무시. // speak: never;
 .resize-animation-stopper * {animation: none !important;transition: none !important;}
 // accessibility-text(visually-hidden)
+
+
+.util_hidden {
+  display: none !important;
+}
+
+.util_hiddenVisually {
+  position: absolute !important;
+  overflow: hidden !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  border: 0 !important;
+}

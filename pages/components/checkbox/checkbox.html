@@ -16,12 +16,14 @@
         <test-checkbox
           name="checkbox"
           label="비활성 상태"
-          helper="주로 세팅 페이지에서 사용되는 디스크립션 영역. 하지만 항상 텍스트 더미인 것은 아님."
+          helper="주로 세팅 페이지에서 사용되는 디스크립션 영역. 항상 텍스트 더미인 것은 아님. 하지만 그렇다면 expanded/collapsed 맥락이 아닐까?"
           disabled
         ></test-checkbox>
         <input type="text" name="other-more" class="textfield-input" placeholder="기타로 오토바이를 타자." hidden />
 
-        <test-checkbox class="js-check" type="checkbox" id="terms" name="terms"> 이용약관에 동의합니다. 이용약관 바로가기</test-checkbox>
+        <test-checkbox class="js-check" type="checkbox" id="terms" name="terms">
+          이용약관에 동의합니다. <a href="#">이용약관 바로가기</a></test-checkbox
+        >
       </test-row>
     </section>
 

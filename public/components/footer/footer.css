@@ -43,7 +43,7 @@
 .footer-scroll-bottom {display:none;}
 
 
-.is-opened-menu .footer {margin-left:calc(var(--width-sidemenu) + 5vw);}
+.is-opened-menu .footer {margin-left:calc(var(--width-sidemenu) + 5vw + 1rem);}
 
 @media (--small) {
 	.subscribe-field {width:100%;}

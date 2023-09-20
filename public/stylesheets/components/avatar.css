@@ -68,11 +68,15 @@ img {
 .avatar[data-variant=secondary] {border:var(--border);background-color:var(--color-background);}
 
 .avatar-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: var(--size-tiny);
   height: var(--size-tiny);
   border: 2px solid var(--color-background);
   border-radius: var(--radius);
   background: var(--color-accent);
+  font-size: 10px;
   position: absolute;
   left: -.25rem;
   top: -.25rem;

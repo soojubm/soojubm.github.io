@@ -84,7 +84,7 @@
     </section>
 
     <section class="component-props">
-      <test-text variant="subhead">Props</test-text>
+      <!-- <test-text variant="subhead">Props</test-text> -->
       <dl>
         <dt>name</dt>
         <dd>string</dd>
@@ -94,29 +94,32 @@
         <dd>text 크기의 차이. large는 without avatar</dd>
         <dt>action</dt>
         <dd>'checkbox' | 'radio' | 'switch' | 'link (default)'</dd>
-        <dd></dd>
+        <dd>actionSlot :: checkbox / radio / switch</dd>
         <dt>avatar?</dt>
         <dd>React.ReactNode</dd>
+        <dd>avatarSlot => leadingSlot (leadingVisual)</dd>
         <dt>tag<attr>?</attr></dt>
         <dd>React.ReactNode</dd>
+        <dd></dd>
         <dd></dd>
         <dt>tile ???</dt>
         <dd>elevated | none</dd>
       </dl>
-
-      <ul class="checklist">
-        <li>avatarSlot => leadingSlot (leadingVisual)</li>
-        <li>actionSlot :: checkbox / radio / switch</li>
-        <li>labelSlot / textSlot / contentSlot :: 사이즈에 따라 두 줄이 될 수 있는데, 세부적인 정의를 실무자가 암기할 필요 없어야. 캡슐화</li>
-      </ul>
     </section>
 
     <section class="component-guide">
+      <ul class="checklist">
+        <li>labelSlot / textSlot / contentSlot :: 사이즈에 따라 두 줄이 될 수 있는데, 세부적인 정의를 실무자가 암기할 필요 없어야. 캡슐화</li>
+      </ul>
+
+      <test-text variant="subhead">Behavior</test-text>
       <test-text variant="body">
-        <b>모든 menuitem container가 clickable은 아니다.</b> 액션 버튼이 따로 존재할 수도 있어야 한다. 하지만 이 케이스는 팔로우 팔로잉. 또는 전체
-        영역이 팔로우. 이 정보가 중요한 이유 hover 상태 표현을 위해.
+        모든 menuitem container가 clickable은 아니다. 액션 버튼이 따로 존재할 수도 있어야 한다. 하지만 이 케이스는 팔로우 팔로잉. 또는 전체 영역이
+        팔로우. 이 정보가 중요한 이유 hover 상태 표현을 위해.
       </test-text>
       <test-text variant="body"> <b>맥락.</b> 스위치는 설정 메뉴, 체크박스는 선택 메뉴. </test-text>
+
+      <test-text variant="subhead">Visual style</test-text>
       <test-text variant="body">
         <b>메뉴 아이템의 우측(action) 슬롯에는 액션 또는 액션 인티케이터가 위치합니다.</b> 정보를 보충하는 맥락의 태그 컴포넌트('new' 등)를 배치하지
         마세요. (case 토스. 우측 new)

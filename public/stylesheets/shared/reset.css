@@ -1183,7 +1183,7 @@ test-text[variant=subhead] + * {
   border-radius: var(--radius);
 }
 .token-item figure {
-  margin:0 0 var(--space-2) 0;width:var(--size-large);height:var(--size-large);
+  margin:0 0 var(--space-2) 0;width:var(--size-medium);height:var(--size-medium);
   border-radius:var(--radius);
 }
 /* .token-item-avatar {@mixin avatar-large;width:100%;} */

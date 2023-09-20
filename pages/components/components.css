@@ -89,7 +89,7 @@
 }
 
   
-  .article {padding:4rem var(--grid-margin) 8rem;overflow:hidden;position:relative;}
+  .article {padding:2rem var(--grid-margin) 8rem;overflow:hidden;position:relative;}
 .article + .article {padding-top:6rem;}
 
 

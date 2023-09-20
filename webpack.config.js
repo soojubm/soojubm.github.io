@@ -47,6 +47,7 @@ const patterns = [
 const components = [
   'breadcrumb',
   'signifier',
+  'utilites',
 
   'avatar',
 

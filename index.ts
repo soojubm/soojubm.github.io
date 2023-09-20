@@ -48,7 +48,7 @@ document.addEventListener('click', toggleTheme)
 
 // ! 여기까지 리팩토링 완료...
 
-// document.addEventListener('click', toggleTest)
+document.addEventListener('click', toggleTest)
 
 function toggleTest(event) {
   if (!event.target.closest('.js-toggle')) return
@@ -171,6 +171,29 @@ async function domEvents() {
 
   toggleElement({ selector: '.js-toggle' })
 
+  document.querySelectorAll('.js-test-toggle').forEach(item => {
+    item.addEventListener('click', event => {
+      const target = event.target as any
+      console.log(target)
+    })
+  })
+
+  document.addEventListener('click', event => {
+    console.log(event.target)
+    const target = event.target as any
+    if (!target.closest('.js-test-toggle')) return
+
+    alert()
+
+    const containerElement = target.closest('.profile-body')
+    const siblingElements = [...target.parentElement.children]
+
+    containerElement.classList.toggle('list', target.dataset.name === 'list')
+
+    siblingElements.forEach(siblingElement => siblingElement.classList.remove('is-selected'))
+    target.classList.add('is-selected')
+  })
+
   // positionSticky({ selector: '.js-post-head', addClass: 'is-sticky-post-head', isPassed: true })
 
   scrollAnimation({ selector: '.js-observer' })
@@ -182,19 +205,6 @@ async function domEvents() {
   carousel()
   // focusComment()
   // countDownClock(20, 'days')
-
-  document.addEventListener('click', event => {
-    const target = event.target as any
-    if (!target.closest('.js-test-toggle')) return
-
-    const containerElement = target.closest('.profile-body')
-    const siblingElements = [...target.parentElement.children]
-
-    containerElement.classList.toggle('list', target.name === 'list')
-
-    siblingElements.forEach(siblingElement => siblingElement.classList.remove('is-selected'))
-    target.classList.add('is-selected')
-  })
 }
 
 // function focusComment() {
