@@ -19,7 +19,7 @@
   display: block;
   width: 100%;
   /* variables */
-  max-width: 400px;
+  max-width: 800px;
 }
 .component-case {
   /* margin: 1rem -5vw 0; */
@@ -53,21 +53,23 @@
 .component-props dl dd + dd:before {content:'*'}
 .component-props dl dd + dd:after {content:'*}
 */
+
+/* TODO text.css 참고 */
+[variant=subhead] + [variant=body]{display:block;margin:var(--space-after-subhead) 0 0;}
+
+
+.component-case {margin:var(--space-after-subhead) 0 0 0;}
 .component-props [variant=subhead] {display:none;}
 .component-guide {
   margin:3.5rem 0 4rem;
 }
-.component-guide [variant=subhead] {display:block;margin:0 0 var(--space-after-subhead);}
 .component-guide [variant=body] + [variant=body-bold] {display:block;margin:var(--space-3) 0 0;}
 /* 일반적인 규칙임 */
 .component-guide [variant=body] + [variant=body] {display:block;margin:var(--space-3) 0 0;}
 
 .component-references {
-  display: flex;
-  gap: var(--space-4);
 }
 .component-references a {
-  font-size: var(--font-size-large);
   font-weight: var(--font-weight-bold);
   color: var(--color-primary);
 }

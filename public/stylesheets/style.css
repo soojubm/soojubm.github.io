@@ -151,6 +151,11 @@ main,
 } */
 
 
+.iconoir-nav-arrow-down {
+  margin-top: -1px;
+}
+
+
 .bookitem-cover {
   padding-top: 50%;
   background: var(--gray100);
