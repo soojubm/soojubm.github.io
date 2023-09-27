@@ -20,9 +20,10 @@
       <div class="login-separator" role="separator">또는</div>
       <test-textfield type="email" label="이메일" placeholder="soojubm@gmail.com"></test-textfield>
       <small class="textfield-helper" id="name-hint" role="alert" data-english="Enter an email address.">이메일을 입력하세요.</small>
-
-      <test-textfield type="password" label="비밀번호" placeholder="Enter a password. 8자리 이상."></test-textfield>
-      <a class="textfield-link" href="forgot.html">비밀번호를 잊으셨나요? <small hidden>Forgot your password?</small></a>
+ 
+      <test-textfield type="password" label="비밀번호" placeholder="Enter a password. 8자리 이상.">
+        <test-link slot="link" class="textfield-link" href="forgot.html">비밀번호를 잊으셨나요? <small hidden>Forgot your password?</small></test-link>
+      </test-textfield>
       <test-checkbox label="로그인 상태 유지" class="login-remember" data-temp="Remember my email address"></test-checkbox>
     </fieldset>
 

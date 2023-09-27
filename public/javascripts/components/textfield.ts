@@ -1,19 +1,20 @@
 import { makeStyleSheet } from './utils'
 
+// size = "large";
+
+// constructor() {
+//   super();
+//   this.value = "";
+// }
+
+// static get observedAttributes() {
+//   return ["placeholder"];
+// }
+// this.innerHTML = `<button class="chip"></button>`
+
 class Input extends HTMLElement {
   constructor() {
     super()
-    // size = "large";
-
-    // constructor() {
-    //   super();
-    //   this.value = "";
-    // }
-
-    // static get observedAttributes() {
-    //   return ["placeholder"];
-    // }
-    // this.innerHTML = `<button class="chip"></button>`
     const shadow = this.attachShadow({ mode: 'open' })
 
     const container = document.createElement('div')
@@ -22,12 +23,14 @@ class Input extends HTMLElement {
 
     const label = document.createElement('label')
     label.classList.add('textfield-label')
+    label.textContent = this.label
 
     const input = document.createElement('input')
-    input.classList.add('reset-input')
-    input.classList.add('textfield-input')
+    input.classList.add('reset-input', 'textfield-input')
     input.setAttribute('type', 'text')
     input.setAttribute('placeholder', this.placeholder || '')
+
+    // input.setAttribute('placeholder', this.placeholder || '')
 
     if (this.disabled) {
       input.setAttribute('disabled', String(this.disabled))
@@ -39,16 +42,11 @@ class Input extends HTMLElement {
     const leadingIconSlot = document.createElement('slot')
     leadingIconSlot.name = 'leading'
 
+    const linkSlot = document.createElement('slot')
+    linkSlot.name = 'link'
+
     shadow.appendChild(container)
-    container.appendChild(label)
-    container.appendChild(input)
-    container.appendChild(leadingIconSlot)
-    container.appendChild(iconSlot)
-
-    shadow.appendChild(makeStyleSheet('textfield'))
-
-    label.textContent = this.label
-    // input.setAttribute('placeholder', this.placeholder || '')
+    container.append(label, input, leadingIconSlot, iconSlot, linkSlot, makeStyleSheet('textfield'))
 
     if (this.isOptional) {
       const small = document.createElement('small')
@@ -110,7 +108,6 @@ class Input extends HTMLElement {
 
   connectedCallback() {
     console.log('helper', this.helper)
-
     console.log('textarea', this)
   }
   disconnectedCallback() {

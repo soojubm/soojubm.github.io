@@ -28,6 +28,7 @@
   /* // reset */
   border: 1px solid transparent;
   background: none;
+  font-family: inherit;
 }
 .tab[aria-selected=true] {
   border: var(--border);
