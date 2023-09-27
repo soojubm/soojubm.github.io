@@ -93,49 +93,17 @@ async function domEvents() {
   const hash = window.location.hash.substring(1)
   setDocumentTitle(hash)
 
-  const temps = [
-    'dictionary',
-    'home',
-    'entity',
-    '',
-    'messaging',
-    'search',
-    'filter',
-    'tokens',
-    'subscribe',
-    'components',
-    'changelog',
-    'dummies',
-    'texts',
-    'signifier_why',
-    'presentations_why',
-    'actions',
-  ]
+  const temps = ['profile']
 
   // todo
-  const mediaSize760 = window.matchMedia('(max-width: 1080px)')
+  const mediaSizeSmall = window.matchMedia('(max-width: 1080px)')
   const changeMedia = function (event) {
     const isMobile = event.matches
 
     if (isMobile) initializeNavbar()
   }
-  mediaSize760.addListener(changeMedia)
-  changeMedia(mediaSize760)
-
-  // initializeNavbar()
-
-  // if (!temps.includes(hash)) {}
-  const isHomePage = !hash
-
-  navItemElements?.forEach(element => {
-    element.classList.remove('is-current')
-
-    const isCurrentPage = element.getAttribute('href')?.includes(hash)
-    if (!isCurrentPage || isHomePage) return
-    element.classList.add('is-current')
-  })
-
-  if (isHomePage) navItemElements[0].classList.add('is-current')
+  mediaSizeSmall.addListener(changeMedia)
+  changeMedia(mediaSizeSmall)
 
   lazyLoading()
   // await routePage()
