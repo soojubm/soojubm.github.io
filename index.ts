@@ -89,11 +89,8 @@ async function domEvents() {
   modal({ selector: '.js-modal' })
   tab()
 
-  const navItemElements = document.querySelectorAll('.navbar-menu a')
   const hash = window.location.hash.substring(1)
   setDocumentTitle(hash)
-
-  const temps = ['profile']
 
   // todo
   const mediaSizeSmall = window.matchMedia('(max-width: 1080px)')
@@ -139,15 +136,19 @@ async function domEvents() {
 
   toggleElement({ selector: '.js-toggle' })
 
+  // get toggle trigger name  dataset.toggle
+  // set toggle classname on body trigger name
+  // styling
+
   document.querySelectorAll('.js-test-toggle').forEach(item => {
     item.addEventListener('click', event => {
       const target = event.target as any
-      console.log(target)
+      console.log('ll', target)
     })
   })
 
   document.addEventListener('click', event => {
-    console.log(event.target)
+    // console.log(event.target)
     const target = event.target as any
     if (!target.closest('.js-test-toggle')) return
 

@@ -17,18 +17,6 @@
         <test-button variant="destructive" aria-label="danger">destructive</test-button>
         <test-button variant="text">Flat</test-button>
       </test-row>
-      <test-separator></test-separator>
-      <test-row>
-        <test-button variant="primary" size="large">large</test-button>
-        <test-button variant="tertiary">medium</test-button>
-      </test-row>
-      <test-separator></test-separator>
-      <test-row temp="vertical">
-        <test-button variant="tertiary" status="hover">hovered</test-button>
-        <test-button variant="tertiary" status="focus">focused</test-button>
-        <test-button variant="tertiary" status="disabled" disabled>disabled</test-button>
-        <test-button variant="tertiary">loading/fetching</test-button>
-      </test-row>
     </section>
 
     <section class="component-props">
@@ -82,6 +70,25 @@
     </test-row> -->
 
     <!-- 참고: 버튼 네이밍. 'link' | 'subtle' | 'primary' / 'solid' | 'outline' | 'plain' |'text' -->
+
+    <test-text variant="subhead" aria-label="예측 가능해야 합니다.">크기Sizes</test-text>
+    <section class="component-case">
+      <test-row>
+        <test-button variant="primary" size="large">large</test-button>
+        <test-button variant="tertiary">medium</test-button>
+      </test-row>
+    </section>
+
+    <br /><br />
+    <test-text variant="subhead" aria-label="예측 가능해야 합니다.">상태States</test-text>
+    <section class="component-case">
+      <test-row temp="vertical">
+        <test-button variant="tertiary" status="hover">hovered</test-button>
+        <test-button variant="tertiary" status="focus">focused</test-button>
+        <test-button variant="tertiary" status="disabled" disabled>disabled</test-button>
+        <test-button variant="tertiary">loading/fetching</test-button>
+      </test-row>
+    </section>
 
     <section class="component-guide">
       <test-text variant="subhead" aria-label="예측 가능해야 합니다.">Behavior</test-text>

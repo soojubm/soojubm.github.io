@@ -37,18 +37,22 @@
 }
 
 .component-props {
-  border:none;margin:-4rem -1rem 3rem;padding:var(--space-4);
-  background: var(--color-background-strong);
-  background: var(--gray800);
+  margin:-4rem -1rem 3rem;padding:var(--space-4);
+  /* background: var(--color-background-strong); */
+  /* background: var(--gray800); */
+  background-color: var(--color-background);
+  border: var(--border);
   border-radius: var(--radius);
   font-size: 12px;
   font-family:'revert';position:relative;
 }
 .component-props dl {}
-.component-props dl dt {color:gold;}
+.component-props dl dt {
+  /* color:gold; */
+}
 .component-props dl dt:after {content:':';}
-.component-props dl dd {color:greenyellow;}
-.component-props dl dd + dd {width:100%;margin:0 0 var(--space-1);color:#ddd;}
+.component-props dl dd {color:var(--color-primary);}
+.component-props dl dd + dd {width:100%;margin:0 0 var(--space-1);color:var(--color-text);}
 /* 
 .component-props dl dd + dd:before {content:'*'}
 .component-props dl dd + dd:after {content:'*}

@@ -9,7 +9,7 @@
   color-scheme: light dark;
 
   /* // -apple-system === san-serif / system-ui === BlinkMacSystemFont */
-  --font-family: 'Asap', 'IBM Plex Sans', 'Gothic A1', system-ui, sans-serif;
+  --font-family: 'Pretendard', 'IBM Plex Sans', 'Asap', 'Gothic A1', system-ui, sans-serif;
   --font-family-heading: null;
   --font-family-body: null;
   --font-family-caption: null;
@@ -21,7 +21,7 @@
   --font-size-small: .75rem;
 
   --font-weight-normal: 400;
-  --font-weight-bold: 600;
+  --font-weight-bold: 700;
   --font-weight-extrabold: null;
 
   --font-line-height-large: 1.8;
@@ -146,7 +146,7 @@
   --space-leading-body: -.125rem;
 
   --border-width: 1px;
-
+  
   --border: var(--border-width) solid var(--color-border);
   --border-active: 1px solid var(--color-primary);
   --border-thin: null;
