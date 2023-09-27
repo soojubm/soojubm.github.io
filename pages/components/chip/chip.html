@@ -27,17 +27,16 @@
         </test-chip>
         <test-chip icon="" label="좋아요" value="117">
           <i slot="icon">❤️</i>
-          <div slot="badge" style="margin-left: -0.5rem"><test-badge>11</test-badge></div>
+          <!-- <div slot="badge" style="margin-left: -0.5rem"><test-badge>11</test-badge></div> -->
         </test-chip>
         <test-chip label="checkable" status="checked">
           <test-icon slot="icon" name="check"></test-icon>
         </test-chip>
-        <test-chip label="removable / clearable" status="checked"><test-icon slot="badge" name="cancel"></test-icon> </test-chip>
+        <test-chip label="removable / clearable" status="checked">
+          <test-icon slot="badge" name="cancel"></test-icon>
+        </test-chip>
         <test-chip label="expandable" aria-expanded="true">
           <test-icon slot="badge" name="nav-arrow-down"></test-icon>
-        </test-chip>
-        <test-chip label="removable" aria-expanded="true">
-          <test-icon slot="badge" name="cancel"></test-icon>
         </test-chip>
       </test-chip-group>
       <test-separator></test-separator>
