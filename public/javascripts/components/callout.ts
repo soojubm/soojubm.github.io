@@ -6,22 +6,25 @@ class Callout extends HTMLElement {
     const shadow = this.attachShadow({ mode: 'open' })
 
     const container = document.createElement('div')
-    const icon = document.createElement('test-icon')
     const heading = document.createElement('h3')
     const text = document.createElement('p')
 
     container.dataset.variant = this.variant || ''
-    icon.setAttribute('name', 'warning-triangle')
+
+    // const icon = document.createElement('test-icon')
+    // icon.setAttribute('name', 'warning-triangle')
+    // icon.classList.add('callout-icon')
+
     heading.innerText = this.heading || ''
     text.innerText = this.text || this.content || ''
 
     container.classList.add('callout')
-    icon.classList.add('callout-icon')
+
     heading.classList.add('callout-title')
     text.classList.add('callout-text')
 
     shadow.appendChild(container)
-    container.append(icon, heading, text, makeStyleSheet('callout'))
+    container.append(heading, text, makeStyleSheet('callout'))
   }
 
   // tile 안에 클래스 적용 안 됨.

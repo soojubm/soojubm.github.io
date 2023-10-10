@@ -1,10 +1,12 @@
-p {
-  margin: 0;
-}
+p {margin: 0;}
 
-:root {
+/* form:invalid button {}
+fieldset:invalid ~ fieldset { display: none; }
+input:valid {}
+input:invalid {} */
 
-}
+.textfield-group {display:flex;justify-content:space-between;}
+.textfield-group > * {width:calc(50% - var(--space-1))}
 
 .reset-input {
   background: var(--color-background-weak);
@@ -19,23 +21,18 @@ p {
 /* // todo 사파리에서 버튼 클릭 효과 제가
 // 년도 월 일 순서로 포커싱 됨 */
 
-
 textarea {}
 textarea:focus {-webkit-appearance:none;}
 /* // on safari */
-
-input:valid {}
-input:invalid {}
-input:focus-visible {outline: 0;}
+input:focus-visible {outline:0;}
 input:-internal-autofill-selected {}
 input:-ms-clear {display:none;}
 
  /* // for inner shadow on safari */
 input[type=text] {-webkit-appearance:none;}
-/* // firefox decrement/increment 버튼 정렬
-// 5보다 큰 값을 선택하세요 min / firefox */
+/* // firefox decrement/increment 버튼 정렬 / 5보다 큰 값을 선택하세요 min / firefox */
 
-/* // for inner shadow on safari, // 파이어폭스에서 토글 없애긔 */
+/* // for inner shadow on safari, // 파이어폭스에서 토글 */
 input[type=number] {-webkit-appearance:none;-moz-appearance:textfield;} 
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {-webkit-appearance:none;-moz-appearance:none;}
@@ -45,7 +42,7 @@ input[type=number]::-webkit-outer-spin-button {-webkit-appearance:none;-moz-appe
 /* // for appearance on safari */
 input[type=date] {-webkit-appearance:none;}
 input[type=date] {display:block;max-height:var(--size-large);} 
-/* // 패딩으로 설정한 세로값 크롬에서(only?) 다른 텍스트 필드와 달라짐. iOS displayblock */
+/* // 패딩으로 설정한 세로값 크롬에서 다른 텍스트 필드와 괴리. iOS displayblock */
 input[type=date]::-webkit-calendar-picker-indicator {width:100%;opacity:0;position:absolute;left:0;bottom:0;}
 input[type=date]::-webkit-inner-spin-button {display:none;}
 
@@ -59,39 +56,64 @@ input[type=search]::-webkit-search-cancel-button,
 input[type=search]::-webkit-search-results-button,
 input[type=search]::-webkit-search-results-decoration {display:none;}
 
-.textfield-group {display:flex;justify-content:space-between;}
-.textfield-group > * {width:calc(50% - var(--space-1))}
-
 .textfield {
   max-width: 400px;
   position:relative;
 
   --textfield-height: var(--size-large);
+  --textfield-background-color: 0;
+  --textfield-border: var(--border);
+  --textfield-radius: var(--radius);
+  --textfield-text-color: 0;
 }
-.textfield-label {display:block;margin-bottom:var(--space-1);}
+.textfield-label {display:block;line-height:var(--size-small);}
 .textfield-label small {margin:0 0 0 var(--space-1);color:var(--color-text-light);}
 .textfield-input {
-  display:block;width:100%;height:var(--textfield-height);padding:var(--space-2) var(--space-4);
-  border:0;border-radius:var(--radius);background:var(--color-background-weak);
+  display:block;
+  width:100%;
+  height:var(--textfield-height);
+  padding:var(--space-2) var(--space-4);
+  border-radius:var(--radius);
+  background:var(--color-background-weak);
   color: var(--color-text);
 }
-.textfield-input:focus {outline:0;background:var(--color-background);box-shadow:var(--status-hover);}
+.textfield-input:focus {box-shadow:var(--status-hover);}
 .textfield-input:read-only {color:var(--color-text-light);cursor:default;}
-.textfield-input:disabled {
-  opacity: .5;
-  cursor:not-allowed;
-}
-.textfield-helper {margin-top:.25rem;color:var(--red800);}
+.textfield-input:disabled {opacity:.5;cursor:not-allowed;}
+.textfield-helper {margin:var(--space-1) 0 0;color:var(--red800);}
 
-/* // 오른쪽에 2개의 액션이 있을 수도 있다. 리빌 + 클리어. 그런데, 클리어가 있는데 리빌이 필요한가. 필요없다. */
-.textfield-reveal {@mixin textfield-surfix;width:auto;padding:0 .5rem;background:var(--color-background);font-size:var(--font-size-small);color:var(--color-text-light);}
-.textfield-check {@mixin textfield-surfix;}
+/* .inputfield[data-type=search] {} */
+/* // 오른쪽에 2개의 액션이 있는 ui가 있었음. 좋은 ui는 아님. 리빌 + 클리어. 클리어가 있는데 리빌이 필요하지 않음 */
+.textfield-reveal {font-size:var(--font-size-small);color:var(--color-text-light);}
+.textfield-check {}
 .textfield-unit {}
-.textfield-prefix {@mixin textfield-prefix;}
-.textfield-indicator {@mixin textfield-surfix;pointer-events:none;}
-.textfield-link {@mixin link-outside;font-size:var(--font-size-small);position:absolute;right:0;top:0;}
 
-.searchfield-prefix ~ .searchfield-input {padding-left:calc(var(--size-medium) + var(--space-after-avatar-medium) + .5rem);}
+
+/* // .textfield-suffix {} */
+::slotted([slot=icon]) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--size-large);
+  height: var(--textfield-height);
+  /* color:var(--color-primary); */
+  position:absolute;top:var(--size-small);right:0;
+}
+
+/* // .textfield-prefix / iconLabel */
+::slotted([slot=leading]) {
+  display: flex;
+  align-items: center;
+  height: var(--textfield-height);
+  position:absolute;top:var(--size-small);left:var(--space-4);
+}
+
+
+/* // .textfield-link {} */
+::slotted([slot=link]) {
+  font-size:var(--font-size-small);position:absolute;right:0;top:0;
+}
+
 
 /* // 검색필드는 레이블이 없다. label ~로 하면 되긴 함. */
 .searchfield {position:relative;}
@@ -112,44 +134,24 @@ input[type=search]::-webkit-search-results-decoration {display:none;}
   width: 90%;
 }
 .searchfield-input:focus ~ .searchfield-cancel {right: 0;}
-.searchfield-prefix {display:flex;align-items:center;justify-content:center;width:var(--size-large);height:var(--size-large);
+.searchfield-prefix {
+  display:flex;align-items:center;justify-content:center;width:var(--size-large);height:var(--size-large);
   height:46px;
   position:absolute;left:0;top:0;z-index:2;}
+.searchfield-prefix ~ .searchfield-input {padding-left:calc(var(--size-medium) + var(--space-after-avatar-medium) + .5rem);}
 .searchfield-clear {width:var(--size-large);height:var(--size-large);position:absolute;right:0;top:0;display:none;}
 .searchfield-cancel {right:calc(var(--size-medium) + var(--space-after-avatar-medium) + var(--space-3));height:var(--size-large);position:absolute;right:var(--size-large);top:0;transition:all .2s ease;}
-
-
 
 /* // android pattern */
 .is-focused .searchfield-input {display:block;width:calc(100% - var(--size-medium) - var(--space-after-avatar-medium));}
 .is-focused .searchfield-cancel {right:0;}
+
 .is-invalid .textfield-label {}
 .is-invalid .textfield-input {border-color:var(--red800);color:var(--red800);}
 .is-invalid .textfield-byte {color:var(--red800);}
 
-
-
-
 /* sizes */
 [data-size=small] .textfield-prefix {left:var(--space-1);top:0;}
-[data-size=small] .textfield-input {height:var(--size-medium);padding-left:2.25rem;}
-
-
-::slotted([slot=icon]) {
-  display: flex;
-  align-items: center;
-  height: var(--textfield-height);
-  /* color:var(--color-primary); */
-  position:absolute;top:var(--size-small);right:var(--space-4);
-}
-
-::slotted([slot=leading]) {
-  display: flex;
-  align-items: center;
-  height: var(--textfield-height);
-  position:absolute;top:var(--size-small);left:var(--space-4);
-}
-
-::slotted([slot=link]) {
-  font-size:var(--font-size-small);position:absolute;right:0;top:0;
+[data-size=small] .textfield-input {height:var(--size-medium);
+  /* padding-left:2.25rem; */
 }

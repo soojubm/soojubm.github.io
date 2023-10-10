@@ -1,4 +1,3 @@
-
 // rem 으로 모듈화하기 어렵다. ex 1.5rem => top:0.125rem
 // line-heght로 리셋스타일에 종속되지 않도록 함. + block
 // height 테이블 내에서 세로 정렬에 필요
@@ -6,91 +5,49 @@
 // nextjs + css module에서 type selector 이슈 .checkbox-input / .checkbox-label
 // ! :focus
 
-// .checkbox input {
-//   float: left;
-//   width: var(--size-tiny);
-//   height: var(--size-tiny);
-//   margin: 0; // for reset
-//   border-radius: 4px;
-//   border: var(--border);
-//   box-sizing: border-box;
-//   appearance: none; // reset  border color
-//   transform: translateY(3px); // for align vertical
-// }
-// .checkbox input:checked {
-//   float:left;
-//   border-color: var(--color-primary);
-//   background: var(--color-primary);
-// }
-// .checkbox label {margin:0 0 0 var(--space-after-avatar-small);line-height:inherit;}
 
+.checkbox-description {display:block !important;padding-left:calc(var(--size-tiny) + var(--space-2));color:var(--color-text-light);}
 
 .checkbox {
   position:relative;
   --checkbox-size: var(--size-tiny);
 }
 
-.switch {
-  --switch-width: var(--size-large);
-  --switch-height: var(--size-tiny);
-  display:block;
-  height: var(--switch-height);
-  position:relative;
-}
-
-.switch [role=switch] {
-  inline-size: 100%;
-}
-.switch [role=switch] + label {display:flex;gap:var(--space-3);line-height:var(--size-tiny);cursor:pointer;}
-.switch [role=switch] + label:before {content:'off';display:block;width:var(--switch-width);height:var(--switch-height);border:none;border-radius:var(--radius);box-sizing:border-box;background:var(--gray200);transition:background-color .2s;}
-.switch [role=switch] + label:after {content:'';display:block;/*18px*/width:var(--switch-height);height:var(--switch-height);border:var(--border);box-sizing:border-box;border-radius:var(--radius);background:#fff;box-shadow:var(--shadow);position:absolute;left:0;top:0;transition:left .2s;transform:rotate(0deg);}
-.switch [role=switch]:checked + label {}
-.switch [role=switch]:checked + label:before {content:'on';background:var(--color-primary);}
-.switch [role=switch]:checked + label:after {left:calc(var(--switch-width) - 16px);}
-.switch [role=switch]:disabled {}
-.switch [role=switch]:disabled + label {cursor:not-allowed;opacity:.5;}
-
-
-/* todo checki */
 input[type=checkbox] {
-  opacity:0;position:absolute;
-
+  opacity: 0;
+  position: absolute;
   inline-size: 100%;
 }
 
 input[type=checkbox] ~ label {
   display: flex;
   align-items: center;
-  gap: var(--space-2);
-  line-height: var(--checkbox-size);
-  /* padding:var(--space-1) 0;padding-left:calc(var(--size-tiny) + var(--space-2)); */
+  gap: var(--space-2);line-height: var(--checkbox-size);
+  position: relative;
 }
-input[type=checkbox] ~ label:before {content:'';display:block;
-  width:var(--checkbox-size);height:var(--checkbox-size);
-  border-radius:4px;
+
+input[type=checkbox] ~ label:before {
+  content:'';display:block;width:var(--checkbox-size);height:var(--checkbox-size);
   border:var(--border);
+  border-radius:4px;
   background: var(--color-background);
-  /* border-color:var(--color-background-strong); */
   box-sizing:border-box;
-  /* position:absolute;left:0;top:7px; */
 }
 input[type=checkbox] ~ label:after {content:'';display:none;width:7px;height:2px;border-left:1px solid;border-bottom:1px solid;border-color:var(--gray200);position:absolute;left:4px;top:6px;transform:rotate(-50deg);}
+
 input[type=checkbox]:checked ~ label:before {border-color:var(--color-primary);animation:ripple2 0.2s linear forwards;}
 input[type=checkbox]:checked ~ label:after {display:block;border-color:var(--color-primary);}
+input[type=checkbox]:disabled ~ label {opacity:.5;cursor:not-allowed;}
+input[type=checkbox]:disabled ~ label:before {border-color:var(--gray200);}
+input[type=checkbox]:disabled ~ label:after {border-color:var(--gray200);}
 
 input[type=checkbox][indeterminate=true] ~ label:before,
 input[type=checkbox][data-indeterminate=true] ~ label:before {border-color:var(--green800);background:var(--green100);}
 input[type=checkbox][indeterminate=true] ~ label:after,
 input[type=checkbox][data-indeterminate=true] ~ label:after {display:block;width:8px;background:var(--color-primary);border:none;left:4px;top:48%;transform:rotate(0deg);}
 
-input[type=checkbox]:disabled {background-color:chocolate;}
-input[type=checkbox]:disabled ~ label {opacity:.5;cursor:not-allowed;}
-/* input[type=checkbox]:disabled ~ label:before {background:var(--gray200);border-color:var(--gray200);}
-input[type=checkbox]:disabled ~ label:after {border-color:var(--color-text-weak);} */
 
 
-
-// .checkbox-helper,.radio-helper {padding:0.5rem 0 1.5rem 28px;}
 // hidden attribute
 input[type=radio] + label + *,
 input[type=checkbox] + label + * {display:none;}
@@ -98,31 +55,35 @@ input[type=radio]:checked + label + *,
 input[type=checkbox]:checked + label + * {display:block;}
 
 
-.checkbox[data-size=large] {}
-.checkbox[data-size=large] label {}
 .checkbox[data-size=large] label:before {
   width: var(--size-small);
   height: var(--size-small);
-
 }
 .checkbox[data-size=large] label:after {
-  width:10px;
-  height:3px;
+  width: 10px;
+  height: 3px;
   left: 7px;
   top: 9px;
 }
 
+.switch {
+  --switch-width: 40px;
+  --switch-height: var(--size-tiny);
 
-
-
-.counter-input {}
-.price-input {}
-.number-input {}
-
-.counter {display:flex;position:relative;}
-.counter-input {width:100%;margin:0 var(--space-2);background:var(--color-background-weak);border-radius:var(--radius);text-align:center;}
-// radius = iOS
-.counter-decrement {@mixin chip;}
-.counter-increment {@mixin chip;border-radius:0 var(--radius) var(--radius) 0;}
-.counter-decrement[aria-disabled=true] {opacity:.5;cursor:not-allowed;}
-.counter-increment[aria-disabled=true] {opacity:.5;cursor:not-allowed;}
+  display:block;
+  height: var(--switch-height);
+  position:relative;
+}
+.switch [role=switch] {
+  inline-size: 100%;
+}
+.switch [role=switch] + label {display:flex;gap:var(--space-2);line-height:var(--size-tiny);cursor:pointer;}
+.switch [role=switch] + label:before {content:'off';display:block;width:var(--switch-width);height:var(--switch-height);
+  padding-left: 1.2rem;font-size: 10px;color:var(--color-text-light);text-transform:uppercase;font-weight:var(--font-weight-bold);
+  border:none;border-radius:var(--radius);box-sizing:border-box;background:var(--gray200);transition:background-color .2s;transition:all .4s;}
+.switch [role=switch] + label:after {content:'';display:block;width:var(--switch-height);height:var(--switch-height);border:var(--border);box-sizing:border-box;border-radius:var(--radius);background:#fff;box-shadow:var(--shadow);position:absolute;left:0;top:0;transition:left .2s;transform:rotate(0deg);}
+.switch [role=switch]:checked + label {}
+.switch [role=switch]:checked + label:before {content:'on';padding:0 0 0 .4rem;background:var(--color-primary);color:var(--gray0);}
+.switch [role=switch]:checked + label:after {left:calc(var(--switch-width) - 16px);}
+.switch [role=switch]:disabled {}
+.switch [role=switch]:disabled + label {cursor:not-allowed;opacity:.5;}

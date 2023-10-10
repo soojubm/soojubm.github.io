@@ -16,6 +16,8 @@ import '/pages/components/components.css'
 
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelector('main')!.innerHTML = navbar + main + footer
+
+  document.body.classList.remove('is-opened-menu')
 })
 
 // {

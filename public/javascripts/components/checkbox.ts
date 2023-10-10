@@ -6,7 +6,6 @@ class Checkbox extends HTMLElement {
 
   constructor() {
     super()
-
     // this._internals = this.attachInternals()
     // this.innerHTML = `<button class="chip"></button>`
     const shadow = this.attachShadow({ mode: 'open' })
@@ -18,6 +17,7 @@ class Checkbox extends HTMLElement {
     const input = document.createElement('input')
 
     input.addEventListener('change', () => {
+      alert()
       // 타겟이 check all 일 때
       if (this.disabled) return
     })
@@ -47,10 +47,8 @@ class Checkbox extends HTMLElement {
 
       container.appendChild(helper)
     }
-
     // 임시
     // container.append(...this.childNodes)
-
     shadow.appendChild(makeStyleSheet('checkbox'))
   }
 

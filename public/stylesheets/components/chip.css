@@ -15,6 +15,7 @@ button {
   padding: 0;
   border: 0;
   font-family: var(--font-family);
+  font-size: inherit;
 }
 em {
   font-style:normal;
@@ -34,8 +35,6 @@ em {
   --chip-color-background: none;
   --chip-color-border: 0;
 }
-
-
 
 /* @media (hover) and (pointer: fine) {
   &:hover {box-shadow:var(--status-hover);}

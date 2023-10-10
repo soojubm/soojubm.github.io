@@ -90,25 +90,23 @@
     </test-tablist>
 
     <!-- todo day night toggle과 동일한 패턴 -->
-    <div style="margin: 1.25rem 0 0.75rem 0">
-      <test-chip-group class="profile-display" role="menubar">
-        <h5 class="profile-display-status" role="status" hidden>Viewing 1,000 Projects</h5>
-        <test-chip class="js-test-toggle" status="active" data-name="grid">
-          <test-icon slot="icon" name="view-columns-3" aria-label=""></test-icon>
+    <div class="profile-display" role="menubar" style="display:flex;margin:var(--space-3) 0;" title="항목을 아이콘, 목록, 계층 또는 갤러리로 보여줍니다.">
+      <h5 class="profile-display-status" role="status" hidden>Viewing 1,000 Projects</h5>
+      <test-chip class="js-test-toggle" status="active" data-name="grid">
+        <test-icon slot="icon" name="view-columns-3" aria-label=""></test-icon>
+      </test-chip>
+      <test-chip status="info" class="js-test-toggle" data-name="list">
+        <test-icon slot="icon" name="view-grid"></test-icon>
+      </test-chip>
+      <div class="profile-sorting" style="margin-left: auto">
+        <test-chip status="info" class="js-test-toggle" name="정렬" label="최신순">
+          <test-icon slot="badge" name="nav-arrow-down"></test-icon>
         </test-chip>
-        <test-chip status="info" class="js-test-toggle" data-name="list">
-          <test-icon slot="icon" name="view-grid"></test-icon>
-        </test-chip>
-        <div class="profile-sorting" style="margin-left: auto">
-          <test-chip status="info" class="js-test-toggle" name="정렬" label="최신순">
-            <test-icon slot="badge" name="nav-arrow-down"></test-icon>
-          </test-chip>
-        </div>
-      </test-chip-group>
+      </div>
     </div>
 
     <section class="tabpanel" role="tabpanel" aria-hidden="false" data-index="1">
-      <test-card variant="elevated" class="js-modal" data-modal="newneek">
+      <test-card variant="tile" class="js-modal" data-modal="newneek">
         <figure slot="thumbnail">
           <img src="/public/images/newneek/gosum-spinner.png" alt="" />
         </figure>
@@ -129,7 +127,7 @@
           <span class="material-symbols-outlined">more_vert</span>
         </button>
       </test-card>
-      <test-card variant="elevated" class="js-modal" data-modal="etc-works">
+      <test-card variant="tile" class="js-modal" data-modal="etc-works">
         <figure slot="thumbnail">
           <img src="/public/images/work-studium.jpg" alt="" />
         </figure>
@@ -144,7 +142,7 @@
           <test-tag>워드프레스</test-tag>
         </test-row>
       </test-card>
-      <test-card variant="elevated" class="js-modal" data-modal="lettering">
+      <test-card variant="tile" class="js-modal" data-modal="lettering">
         <figure slot="thumbnail" class="card-thumbnail">
           <img src="/public/images/budha.png" alt="" />
         </figure>

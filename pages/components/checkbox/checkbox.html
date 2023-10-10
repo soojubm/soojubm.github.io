@@ -12,19 +12,23 @@
       </test-row>
       <test-separator></test-separator>
       <test-row direction="column">
-        <test-checkbox name="checkbox" value="value" checked>체크박스</test-checkbox>
         <test-checkbox
           name="checkbox"
-          label="비활성 상태"
+          value="value"
           helper="주로 세팅 페이지에서 사용되는 디스크립션 영역. 항상 텍스트 더미인 것은 아님. 하지만 그렇다면 expanded/collapsed 맥락이 아닐까?"
-          disabled
-        ></test-checkbox>
+          checked
+          >체크박스</test-checkbox
+        >
         <input type="text" name="other-more" class="textfield-input" placeholder="기타로 오토바이를 타자." hidden />
 
         <test-checkbox class="js-check" type="checkbox" id="terms" name="terms">
           이용약관에 동의합니다. <a href="#">이용약관 바로가기</a></test-checkbox
         >
       </test-row>
+    </section>
+    <section class="component-case">
+      <test-checkbox name="checkbox" label="비활성 상태" checked disabled></test-checkbox>
+      <test-checkbox name="checkbox" label="비활성 상태" disabled></test-checkbox>
     </section>
 
     <section class="component-props">
@@ -49,7 +53,7 @@
         <dd>boolean</dd>
         <dd>TODO checkbox group에서 checkboxAll에 종속되는 옵션</dd>
         <dt>onChange</dt>
-        <dd>(event: React.FormEvent[HTMLInputElement]) >] void</dd>
+        <dd>(event: React.ChangeEvent[HTMLInputElement]) >] void</dd>
         <dd>React.ChangeEventHandler[] / @types/react</dd>
         <dd>checkbox group이 가지는 추세.</dd>
       </dl>
@@ -90,17 +94,9 @@
     </section>
 
     <test-text variant="subhead">쿠키관련</test-text>
-    <article class="accordion js-accordion is-active">
-      <!-- <button class="accordion-title" role="heading" aria-label="3" aria-expanded="false" aria-controls="1" aria-disable="true">
-        <test-icon name="plus"></test-icon>
-        case. 
-      </button> -->
-      <div class="accordion-panel component-case">
-        <!-- <test-text variant="body">쿠키 관련 util</test-text> -->
-        <test-checkbox label="다시 묻지 않기 / 일주일 동안 보지 않기don't ask again"></test-checkbox>
-      </div>
-    </article>
-    <!-- <test-text variant="subhead">Case. 쿠키 관련</test-text>
-    <section class="component-case"></section> -->
+    <!-- <test-text variant="body">쿠키 관련 util</test-text> -->
+    <section class="component-case">
+      <test-checkbox label="다시 묻지 않기 / 일주일 동안 보지 않기don't ask again"></test-checkbox>
+    </section>
   </article>
 </main>

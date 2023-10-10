@@ -72,6 +72,8 @@ const components = [
   'separator',
 
   'step',
+
+  'films',
 ]
 
 // let t = {}

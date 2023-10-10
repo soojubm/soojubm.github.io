@@ -46,28 +46,30 @@
           <test-chip label="아파트열쇠를빌려드립니다"></test-chip>
         </test-row>
 
-        <test-menu-group>
-          <div style="display:flex;align-items: center;gap:.5rem;">
-            <test-text variant="label">People</test-text>
-            <!-- <test-badge>2</test-badge> -->
-          </div>
-          <test-menuitem label="수줍이" time="Yesterday">
-            <test-avatar slot="avatar"></test-avatar>
-          </test-menuitem>
-          <test-menuitem label="W. G. 제발트" time="April 4, 2022">
-            <test-avatar slot="avatar"></test-avatar>
-          </test-menuitem>
-        </test-menu-group>
-        <div style="margin:.5rem 0 0 0"><test-separator></test-separator></div>
-        <test-menu-group>
-          <test-text variant="label">Channels</test-text>
-          <test-menuitem label="Design Thinking" description="12 Members">
-            <test-avatar slot="avatar" fallback="#"></test-avatar>
-          </test-menuitem>
-          <test-menuitem label="Frontend Group" description="24 Members">
-            <test-avatar slot="avatar" fallback="#"></test-avatar>
-          </test-menuitem>
-        </test-menu-group>
+        <div style="max-width:400px;">
+          <test-menu-group>
+            <div style="display:flex;align-items: center;gap:.5rem;">
+              <test-text variant="label">People</test-text>
+              <!-- <test-badge>2</test-badge> -->
+            </div>
+            <test-menuitem label="수줍이" time="Yesterday">
+              <test-avatar slot="avatar"></test-avatar>
+            </test-menuitem>
+            <test-menuitem label="W. G. 제발트" time="April 4, 2022">
+              <test-avatar slot="avatar"></test-avatar>
+            </test-menuitem>
+          </test-menu-group>
+          <div style="margin:.5rem 0 0 0"><test-separator></test-separator></div>
+          <test-menu-group>
+            <test-text variant="label">Channels</test-text>
+            <test-menuitem label="Design Thinking" description="12 Members">
+              <test-avatar slot="avatar" fallback="#"></test-avatar>
+            </test-menuitem>
+            <test-menuitem label="Frontend Group" description="24 Members">
+              <test-avatar slot="avatar" fallback="#"></test-avatar>
+            </test-menuitem>
+          </test-menu-group>
+        </div>
       </div>
     </section>
 

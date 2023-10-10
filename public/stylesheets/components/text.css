@@ -15,18 +15,14 @@
 }
 
 /* reset */
-
 h1, h2, h3, p {
   margin: 0;
   line-height: var(--font-line-height-large);
 }
 
-h1, h2, h3, h4, h5, h6 {
-}
+h1, h2, h3, h4, h5, h6 {}
+p {}
 
-p {
-
-}
 [data-variant=display] {
   font-size: 64px;
   line-height: 1;
@@ -38,7 +34,6 @@ p {
   
   font-size:var(--font-size-huge);font-weight:var(--font-weight-bold);line-height:var(--font-line-height);color:var(--color-text);}
 .text-subhead, [data-variant=subhead] {
-  /* TODO maxWidth */
   /* // 단독으로 쓰이지 않음 */
   line-height: var(--line-height);
   font-size:var(--font-size-large);

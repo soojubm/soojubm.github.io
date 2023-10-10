@@ -1,4 +1,4 @@
-.profile {max-width:1480px;margin:0 auto;padding:2rem var(--grid-margin);}
+.profile {max-width:1480px;margin:0 auto;padding:2rem var(--grid-margin) 8rem;}
 .profile::after {content:'';display:block;clear:both;}
 
 .profile-head {height:200px;margin-top:calc((2rem + var(--navbar-height)) * -1);margin-left:-100vw;margin-right:-100vw;margin-bottom:-1rem;background:darkseagreen;}

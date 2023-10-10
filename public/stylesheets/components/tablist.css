@@ -22,7 +22,7 @@
   /* width - tabSlot */
   height:var(--size-medium);
   color:var(--color-text-light);
-  font-weight:var(--font-weight-bold);
+  /* font-weight:var(--font-weight-bold); */
   position:relative;z-index:var(--zindex-default);
 
   /* // reset */
@@ -36,6 +36,7 @@
   background:var(--color-background);
   box-shadow: var(--shadow);
   box-sizing: border-box;
+  font-weight: var(--font-weight-bold);
   color:var(--color-text);
 }
 

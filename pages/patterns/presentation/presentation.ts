@@ -14,6 +14,17 @@ import '/pages/components/components.css'
 
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelector('main')!.innerHTML = navbar + main + footer
+
+  // todo
+  const sheetElement = document.querySelector('.js-sheet')
+  const sheetCloseElement = sheetElement?.querySelector('.js-sheet-close')
+
+  window.addEventListener('load', () => {
+    sheetElement?.classList.add('is-visible')
+  })
+  sheetCloseElement?.addEventListener('click', () => {
+    sheetCloseElement.parentElement?.classList.remove('is-visible')
+  })
 })
 
 // {

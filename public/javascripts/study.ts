@@ -500,23 +500,6 @@ Star('#star', 5, getStar)
 // const navbarItem = document.querySelector(`[href="${hash}"]`)
 // navbarItem?.classList.add('is-active')
 
-async function renderComponent(componentName) {
-  const selector = `#${componentName}`
-  const endpoint = `/views/components/${componentName}.html`
-  const parentElement = document.querySelector(selector)
-
-  try {
-    const response = await fetch(endpoint)
-    if (!response.ok) throw 'Something went wrong.'
-
-    const responseText = await response.text()
-
-    parentElement.innerHTML = responseText
-  } catch (error) {
-    console.log(error)
-  }
-}
-
 // data-soojubm-width
 // setDataPrefix
 

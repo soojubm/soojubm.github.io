@@ -1,7 +1,7 @@
 <main class="component">
   <article class="article js-observer js-scrollspy-section">
     <test-text variant="title">Tooltip</test-text>
-    <test-text variant="body-large">용어를 설명하거나 정보의 근거를 보충합니다.</test-text>
+    <test-text variant="body-large">용어를 설명하거나 정보의 근거를 보충합니다. 클릭할 수 없는 버튼은 툴팁이 필요 없다.</test-text>
 
     <dl class="article-aka">
       <dt>a.k.a.</dt>
@@ -16,7 +16,9 @@
           <test-icon slot="trigger" name="help-circle"></test-icon>
         </test-tooltip>
         <test-tooltip content="로그인" class="is-icon">
-          <test-icon slot="trigger" name="user"></test-icon>
+          <test-chip slot="trigger">
+            <test-icon slot="icon" name="user"></test-icon>
+          </test-chip>
         </test-tooltip>
       </test-row>
       <!-- <span class="tooltip" data-tooltip="Just like this one.">Any element</span> -->

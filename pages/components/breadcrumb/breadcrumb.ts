@@ -3,6 +3,7 @@ import navbar from '/public/components/navbar/navbar.html'
 
 import main from './breadcrumb.html'
 import '/pages/components/components.css'
+import '/public/stylesheets/components/breadcrumb.css'
 
 // import '/public/stylesheets/shared.css'
 import '/public/stylesheets/shared/webfonts.css'

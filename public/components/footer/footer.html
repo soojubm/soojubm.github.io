@@ -60,3 +60,13 @@
 
   <div class="footer" hidden>infinite scroll test</div>
 </footer>
+
+<script>
+  document.addEventListener('click', scrollToTop)
+  function scrollToTop(event) {
+    if (!event.target.closest('.js-to-top')) return
+
+    event.preventDefault()
+    window.scrollTo(0, 0)
+  }
+</script>

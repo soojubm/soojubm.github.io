@@ -50,7 +50,7 @@ a {
 .item-tag {margin-left:var(--space-2);}
 
 .item:hover {
-  --hover-outline: calc(var(--space-3) / 2 * -1);
+  --hover-outline: calc(var(--space-2) / 2 * -1);
   cursor: pointer;
   &:before {
     /* // z-idnex 이슈 */

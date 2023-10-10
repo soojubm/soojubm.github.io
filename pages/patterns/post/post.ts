@@ -16,6 +16,23 @@ import '/pages/components/components.css'
 
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelector('main')!.innerHTML = navbar + main + footer
+
+  function scrollProgress() {
+    const containerElement = document.querySelector<HTMLElement>('.post')
+    const progressBar = document.querySelector<HTMLElement>('.post-head-progress')
+    if (!containerElement || !progressBar) return
+
+    const scrollPercent = `${(window.pageYOffset / (containerElement.scrollHeight - window.innerHeight)) * 100}%`
+    progressBar.style.width = scrollPercent
+  }
+
+  function focusComment() {
+    const commentWrite = document.querySelector<HTMLElement>('.js-comment-write')
+    const commentTextfield = document.querySelectorAll<HTMLElement>('.js-comment-textfield')
+    if (!commentWrite || !commentTextfield) return
+
+    commentTextfield.forEach(element => element.addEventListener('focus', () => commentWrite.classList.add('is-focused')))
+  }
 })
 
 // {

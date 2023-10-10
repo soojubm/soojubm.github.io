@@ -1,4 +1,92 @@
 <main class="component">
+  <article class="article js-scrollspy-section">
+    <test-text variant="title">Naming Conventions</test-text>
+    <ul>
+      <li>특정 스타일로 클래스 네이밍하지 마세요. 스타일(gui)는 언제나 변경될 수 있습니다.</li>
+      <li>naming: -s vs - list</li>
+      <li>영어나 어려운 문장 최소화. 가이드는 모든 사람이 읽을 수 있어야 한다.</li>
+      <li>
+        아이템이 3개 이하일 때 제목 우측에 모두보기 버튼을 위치할 수 있지만, 아이템이 4개 이상이라면 아이템의 아래에 모두보기 버튼이 위치. 가로
+        스크롤인 경우 스크롤 최 우측.
+      </li>
+      <li>이상 혹은 이하를 표기할 때 >를 사용하지 않습니다. 액션 인디케이터와 혼동이 될 수 있어서. 이상, 이하 한글로 명확하게 전달하ㄱ시오!</li>
+      <li>coding - common : 스타일을 처음 선언할 때 margin:0 0 0 0 풀어서 사용하고, 재선언할 때 margin-left로 재할당을 암시.</li>
+      <li>반응형 이미지 정리 요약</li>
+      <li>safe area 변수화</li>
+      <li>맥북 13인치 1680x1050 / x1나노 2160x1350 / 1440은 애매한 브레이크포인트</li>
+      <li>position 속성을 제거할 때 static 대신 relative를 사용하기. z-index 값을 보전할 수 있기 때문.</li>
+      <li>coding: -action(choice에서 안 어울림) vs -control</li>
+      <li><del>두개</del> 2개</li>
+      <li>결제가 완료되었습니다 => 상품이 결제되었습니다 ? 주문 목록에서 f깅할 때 결제완료, 결제대기가 익숙함. 하기 / 취소 / 다음에</li>
+    </ul>
+
+    <picture>
+      <source srcset="photo-light.png" media="(prefers-color-scheme: light) or (prefers-color-scheme: no-preference)" />
+      <source srcset="photo-dark.png" media="(prefers-color-scheme: dark)" />
+      <source type="image/svg+xml" srcset="pyramid.svg" />
+      <source type="image/webp" srcset="pyramid.webp" />
+      <source media="(max-width: 799px)" srcset="elva-480w-close-portrait.jpg" />
+      <source media="(min-width: 800px)" srcset="elva-800w.jpg" />
+      <img src="elva-800w.jpg" alt="딸 엘바를 안고 서 있는 크리스" />
+    </picture>
+    <img
+      srcset="elva-fairy-320w.jpg 320w, elva-fairy-480w.jpg 480w, elva-fairy-640w.jpg 2x, elva-fairy-800w.jpg 800w"
+      sizes="(max-width: 320px) 280px, (max-width: 480px) 440px, 800px"
+      src="elva-fairy-800w.jpg"
+      alt="요정 옷을 입은 엘바"
+    />
+
+    <article class="principle-item">
+      <figure class="principle-item-avatar">🍐</figure>
+      <h2 class="principle-item-title">명료성?보편성?commonality</h2>
+      <p class="principle-item-kicker">우리가 궁극적으로 해결하려는 문제는<br />유저 인터페이스가 아니에요.</p>
+      <p class="principle-item-description">
+        UI는 사용자의 추가적인 학습을 최소화할 정도로 보편타당해야 합니다.
+        <!-- Apple은 탄소 중립을 실천합니다. 그리고 같은 기준을 2030년까지 모든 제품에 대해서도 적용할
+        예정입니다. 모든 Apple 제품과 포장재에 100% 재활용 및 재생 가능 소재만이 사용되는 그날을 위해 헌신적인 노력을 기울이고 있습니다. 또한, 모든
+        제품을 탄소 발자국을 남기지 않고 청정 에너지로 생산할 예정이죠. -->
+      </p>
+    </article>
+    <article class="principle-item">
+      <figure class="principle-item-avatar">🍐</figure>
+      <h2 class="principle-item-title">단순성simplicity</h2>
+      <p class="principle-item-kicker">디자인 시스템은 유아이 라이브러리가 아닙니다.</p>
+      <p class="principle-item-description">
+        가능한 모든 경우의 수를 나열하지 마세요. 우리의 제품에 이렇게 많은 컬러 쉐이드가 필요한가요?<br />
+        다이얼로그에서 버튼을 두 가지 방향으로 정렬할 필요가 있나요?
+        <!-- 모바일 퍼스트(또는 모바일 온리)로 시작하여, 확장 -->
+      </p>
+    </article>
+    <article class="principle-item">
+      <figure class="principle-item-avatar">🍐</figure>
+      <h2 class="principle-item-title">유연성flexibility - 지속 가능성</h2>
+      <p class="principle-item-kicker">제품은 미완성. 초기 구축 비용이 조금 더 발생한다고 하더라도 변경하기 쉽도록 구조화하세요.</p>
+    </article>
+  </article>
+
+  <!-- <form action="">
+    <input type="checkbox" />
+    <input type="radio" />
+    <test-separator></test-separator>
+    <select name="" id="">
+      <option value=""></option>
+    </select>
+    <input type="text" placeholder="text" />
+    <input type="email" placeholder="email" />
+    <input type="password" placeholder="password" />
+    <input type="url" placeholder="url" />
+    <input type="tel" placeholder="tel" />
+    <input type="date" placeholder="date" />
+    <input type="time" placeholder="time" />
+    <textarea name="" id=""></textarea>
+    <input id="myURL" name="myURL" type="url" list="defaultURLs" />
+    <datalist id="defaultURLs">
+      <option value="https://developer.mozilla.org/"></option>
+      <option value="http://www.google.com/"></option>
+    </datalist>
+    <button type="submit">제출</button>
+  </form> -->
+
   <article class="article js-observer js-scrollspy-section">
     <test-text variant="title">Textfields</test-text>
     <test-text variant="body-large">
@@ -27,10 +115,7 @@
         <!-- <p>unit, choose/enter</p> -->
         <!-- <abbr title="필수입력">*</abbr> -->
         <test-separator></test-separator>
-
-        <test-textfield size="small" placeholder="Textarea small Placeholder...">
-          <test-icon slot="icon" name="verified-badge"></test-icon>
-        </test-textfield>
+        <test-textfield size="small" label="Smaller label" placeholder="Textarea small Placeholder..."></test-textfield>
       </div>
     </section>
 
@@ -100,7 +185,7 @@
     </section>
 
     <test-text variant="subhead">Groupable (patterns)</test-text>
-    <test-text variant="body"> 시작/종료 등고 같은 같은 맥락이 아닌 필수 입력 필드를 그룹핑 하지 마세요. </test-text>
+    <test-text variant="body"> 필수 입력 필드 그루핑 지양. 같은 맥락. </test-text>
     <section class="component-case">
       <div class="textfield-group" style="width: 100%; max-width: 400px">
         <test-textfield label="Length" placeholder="cm unit"></test-textfield>

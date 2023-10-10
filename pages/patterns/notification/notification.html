@@ -22,20 +22,13 @@
       </test-chip>
     </test-titlebar>
 
-    <!-- <header style="display:flex;align-items:center;margin:0 0 var(--space-3) 0;gap:var(--space-2);line-height:24px;">
-      <test-text variant="subhead" class="js-page-title">알림</test-text>
-      <test-tag variant="indicator">
-        <test-icon name="nav-arrow-down"></test-icon>
-      </test-tag>
-    </header> -->
-
     <test-tablist class="tablist type-t" role="tablist" aria-label="sample tabs" style="margin-bottom: var(--space-3); z-index: 7">
       <button class="tablist-tab" role="tab" aria-selected="true" aria-controls="panel-2" id="tab-2" tabindex="-1">좋아요</button>
       <button class="tablist-tab" role="tab" aria-selected="false" aria-controls="panel-3" id="tab-3" tabindex="-1">코멘트</button>
       <i class="tablist-indicator"></i>
     </test-tablist>
 
-    <test-row class="notification-filter" style="margin: 0 0 1rem">
+    <test-row class="notification-filter" style="margin: var(--space-3) 0">
       <test-chip label="모두" status="active"></test-chip>
       <test-chip label="읽지않음"></test-chip>
     </test-row>

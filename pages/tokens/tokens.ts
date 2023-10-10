@@ -20,6 +20,9 @@ import './tokens.css'
 document.addEventListener('DOMContentLoaded', () => {
   // document.querySelector('body')!.insertBefore(navbar, );
   document.querySelector('main')!.innerHTML = navbar + tokens + footer
+
+  // // ! 디자인시스템에 추가한 거 임시
+  document.querySelector('.js-default-font')?.addEventListener('click', () => document.body.classList.toggle('font-default'))
 })
 
 const colorTokens = [

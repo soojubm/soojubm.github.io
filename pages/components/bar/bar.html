@@ -3,16 +3,14 @@
     <test-text variant="title">role=menubar</test-text>
     <test-text variant="body-large"> toolbar / chip group </test-text>
     <section class="component-example">
-      <menu role="menubar">
-        <test-chip-group>
-          <test-checkbox>28 selected</test-checkbox>
-          <test-chip style="margin-left: auto">
-            <test-icon slot="icon" name="bonfire"></test-icon>
-          </test-chip>
-          <test-chip style="background: none">
-            <test-icon slot="icon" name="more-vert"></test-icon>
-          </test-chip>
-        </test-chip-group>
+      <menu role="menubar" style="display: flex; align-items: center">
+        <test-checkbox label="28 selected"></test-checkbox>
+        <test-chip style="margin-left: auto">
+          <test-icon slot="icon" name="bonfire"></test-icon>
+        </test-chip>
+        <test-chip variant="" status="info">
+          <test-icon slot="icon" name="more-vert"></test-icon>
+        </test-chip>
       </menu>
     </section>
   </article>
@@ -63,34 +61,9 @@
     <test-text variant="body-large"> - </test-text>
 
     <section class="component-example">
-      <div style="max-width: 400px">
+      <div>
         <test-titlebar heading="쇼핑 탭" class="js-titlebar" role="navigation">
-          <!-- <div class="titlebar-background"></div> -->
           <test-chip slot="action" label="장바구니"></test-chip>
-        </test-titlebar>
-        <test-separator></test-separator>
-        <test-titlebar heading="페이지 타이틀">
-          <div class="titlebar-background"></div>
-          <test-chip slot="action">
-            <test-icon slot="icon" name="settings"></test-icon>
-          </test-chip>
-        </test-titlebar>
-
-        <test-separator></test-separator>
-        <test-titlebar class="js-titlebar" heading="Back to Blahblah Page">
-          <test-chip slot="back">
-            <test-icon slot="icon" name="arrow-left"></test-icon>
-          </test-chip>
-        </test-titlebar>
-        <test-separator></test-separator>
-        <test-titlebar class="titlebar js-titlebar" role="navigation" data-size="large" style="padding: 0">
-          <h1 class="titlebar-title js-page-title" title="page title">Large Case</h1>
-          <test-row slot="action">
-            <test-chip label="저장"></test-chip>
-            <test-chip class="titlebar-back" onclick="javascript:window.location.href='/';">
-              <test-icon slot="icon" name="more-vert"></test-icon>
-            </test-chip>
-          </test-row>
         </test-titlebar>
         <!-- <div class="titlebar-backdrop js-header"></div> -->
       </div>
@@ -118,6 +91,32 @@
         <dd>() => void</dd>
       </dl>
     </section>
+    <section class="component-case">
+      <test-titlebar heading="페이지 타이틀">
+        <div class="titlebar-background"></div>
+        <test-chip slot="action">
+          <test-icon slot="icon" name="settings"></test-icon>
+        </test-chip>
+      </test-titlebar>
+    </section>
+    <section class="component-case">
+      <test-titlebar class="js-titlebar" heading="Back to Blahblah Page">
+        <test-chip slot="back">
+          <test-icon slot="icon" name="arrow-left"></test-icon>
+        </test-chip>
+      </test-titlebar>
+    </section>
+    <section class="component-case">
+      <test-titlebar class="titlebar js-titlebar" role="navigation" data-size="large" style="padding: 0">
+        <h1 class="titlebar-title js-page-title" title="page title">Large Case</h1>
+        <test-row slot="action">
+          <test-chip label="저장"></test-chip>
+          <test-chip class="titlebar-back" onclick="javascript:window.location.href='/';">
+            <test-icon slot="icon" name="more-vert"></test-icon>
+          </test-chip>
+        </test-row>
+      </test-titlebar>
+    </section>
 
     <div class="component-references">
       <test-text variant="subhead">References</test-text>
@@ -126,7 +125,7 @@
   </article>
 
   <article class="article js-observer js-scrollspy-section">
-    <test-text variant="title">Bottom Navigation</test-text>
+    <test-text variant="title">Bottom Bar / Bottom Navigation</test-text>
     <test-text variant="body-large">모바일 환경의 글로벌 네비게이션.</test-text>
 
     <dl class="article-aka">

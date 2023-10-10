@@ -2,6 +2,17 @@
   <header class="cake-head">
     <figure class="cake-poster"><img src="/public/images/coolhandluke.jpg" alt="" /></figure>
     <div class="cake-background" data-temp="bleeding"></div>
+    <div
+      style="
+        position: absolute;
+        left: -5vw;
+        right: -5vw;
+        top: 0;
+        bottom: 0;
+        z-index: -1;
+        background: linear-gradient(to top, rgb(32, 33, 36) 0, rgba(0, 0, 0, 0) 56%);
+      "
+    ></div>
     <test-row>
       <test-tag variant="primary">개봉예정 D-12</test-tag>
       <test-tag>액션</test-tag>
@@ -53,9 +64,16 @@
       </div>
     </section>
 
-    <footer style="margin: 4rem auto 6rem">
-      <test-button variant="primary"><span class="material-symbols-outlined">add</span> 더 보기</test-button>
+    <footer style="display: flex; gap: 0.5rem; margin: 4rem auto">
+      <test-button variant="primary">에피소드 1 보기</test-button>
+      <test-icon name="heart"></test-icon>
     </footer>
+
+    <div style="background-color: #202124">
+      <p>- 텍스트 영역 샘플 회색 배경</p>
+      <p>- 텍스트 영역 샘플 회색 배경</p>
+      <p>- 텍스트 영역 샘플 회색 배경</p>
+    </div>
   </header>
 
   <br />
@@ -70,7 +88,7 @@
   <section class="cake-info cake-crew" role="" aria-hidden="false" data-index="1">
     <test-text variant="subhead">출연진</test-text>
     <test-row>
-      <test-entity label="이경수" description="soojubm@gmail.com" description2="010 3121 7045" description="UI Designer">
+      <test-entity label="이경수" description="감독">
         <test-avatar slot="avatar" variant="secondary" size="huge"></test-avatar>
       </test-entity>
       <test-entity size="huge" label="스튜어트 로젠버그" description="주연">

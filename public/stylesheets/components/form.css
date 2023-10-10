@@ -8,12 +8,6 @@
 .range input[type=range]:focus::-webkit-slider-thumb {transform:scale(1.25);box-shadow:0 0 0 0.25rem rgba(0,153,255,0.3), 0 var(--space-05) 0.5rem rgba(0,0,0,0.1);}
 
 
-
-.checkbox-description {display:block !important;padding-left:calc(var(--size-tiny) + var(--space-2));color:var(--color-text-light);}
-
-
-
-
 progress[value] {
   border: 0;
   background-color: #bbb;
@@ -127,3 +121,19 @@ input:blank {}
 //   outline-color: Highlight;
 //   outline-color: -webkit-focus-ring-color;
 // }
+
+
+
+
+
+.counter-input {}
+.price-input {}
+.number-input {}
+
+.counter {display:flex;position:relative;}
+.counter-input {width:100%;margin:0 var(--space-2);background:var(--color-background-weak);border-radius:var(--radius);text-align:center;}
+// radius = iOS
+.counter-decrement {@mixin chip;}
+.counter-increment {@mixin chip;border-radius:0 var(--radius) var(--radius) 0;}
+.counter-decrement[aria-disabled=true] {opacity:.5;cursor:not-allowed;}
+.counter-increment[aria-disabled=true] {opacity:.5;cursor:not-allowed;}

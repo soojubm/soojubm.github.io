@@ -40,10 +40,11 @@
 /* button:active:before {width:100%;height:100%;animation:ripple .6s;}  */
 
 /* // ! 커스텀엘리먼트를 쓰는 경우 클래스이름으로 독자적인 */
+/* host에서 정의하면 커스텀 엘리먼트가 아닐 .class로 사용할 때 못 가져온다.  */
+
 
 .button[aria-pressed=true] {}
 
-/* host에서 정의하면 커스텀 엘리먼트가 아닐 .class로 사용할 때 못 가져온다.  */
 .button,
 :host {
   --button-min-width: 5rem;
@@ -55,6 +56,8 @@
   --button-color: 0;
 
   --button-font-weight: var(--font-weight-bold);
+
+  --button-background-color: null;
 }
 
 .button {
@@ -67,21 +70,19 @@
   border: var(--button-border);
   border-radius: var(--button-radius);
   box-sizing: border-box;
-  
-  font-weight: var(--button-font-weight);
 
+  font-weight: var(--button-font-weight);
   text-transform: capitalize;
-  /* position: relative; */
 
   /* // reset */
   font-family: inherit;
   font-family: var(--font-family);
+  font-size: inherit;
 }
 .button[data-variant=primary] {
   --button-border: 1px solid var(--color-primary);
   background: var(--color-primary);
   color: #fff;
-  /* // 다크테마와 동일한 스타일 */
 }
 .button[data-variant=secondary] {
   border:1px solid transparent;
@@ -111,14 +112,14 @@
   width: 100%;
 }
 
-
-.button:hover, .button[data-status=hover] {
+.button:hover,
+.button[data-status=hover] {
   box-shadow: var(--status-hover);
 }
-.button:focus, .button[data-status=focus] {
+.button:focus,
+.button[data-status=focus] {
   outline: 0;
   box-shadow: var(--state-focus);
 }
-.button:disabled, .button[data-status=disabled] {opacity:.5;cursor:not-allowed;}
-
-/* close-button {position:absolute;right:var(--space-2);top:var(--sopace-2);} */
+.button:disabled,
+.button[data-status=disabled] {opacity:.5;cursor:not-allowed;}

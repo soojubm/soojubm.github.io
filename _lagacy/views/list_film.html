@@ -1,3 +1,46 @@
+<script>
+  // document.querySelector('li') = 'none'
+  document.addEventListener('DOMContentLoaded', () => {
+    let test = []
+    document.querySelectorAll('li').forEach(item => {
+      console.log(item.childNodes)
+      // console.log(item)
+      // test.push({
+      //   releasedate: item.querySelector('time')?.textContent || '',
+      //   titlekorean: item.querySelector('cite')?.textContent || '',
+      //   titleenglish: item.querySelector('cite')?.querySelector('small')?.textContent || '',
+      //   director: item.childNodes[4]?.textContent || '',
+      //   country: '임시미국' || '',
+      //   etc: '',
+      // })
+      test = [
+        ...test,
+        {
+          releasedate: item.querySelector('time')?.textContent || '',
+          titlekorean: item.childNodes[3].firstChild?.textContent || '',
+          titleenglish: item.querySelector('cite')?.querySelector('small')?.textContent || '',
+          director: item.childNodes[4]?.textContent || '',
+          country: '임시미국' || '',
+          etc: '',
+        },
+      ]
+      // test = [
+      //   ...test,
+      //   {
+      //     releasedate: item.querySelector('time').textContent || '',
+      //     titlekorean: item.querySelector('cite').textContent || '',
+      //     titleenglish: item.querySelector('cite small').textContent || '',
+      //     director: item.childNodes[4].textContent || '',
+      //     country: '임시미국' || '',
+      //     etc: '',
+      //   },
+      // ]
+    })
+
+    console.log(test)
+  })
+</script>
+
 <li>
   <time>1981</time> <cite>피츠카랄도<small>Hell Night</small></cite
   >조셉 L. 맨키위즈

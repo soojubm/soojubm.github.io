@@ -9,14 +9,15 @@
   color-scheme: light dark;
 
   /* // -apple-system === san-serif / system-ui === BlinkMacSystemFont */
-  --font-family: 'Pretendard', 'IBM Plex Sans', 'Asap', 'Gothic A1', system-ui, sans-serif;
+  /* --font-family: 'Pretendard', 'IBM Plex Sans', 'Asap', 'Gothic A1', system-ui, sans-serif; */
+  --font-family: 'Asap', 'Gothic A1', system-ui, sans-serif;
   --font-family-heading: null;
   --font-family-body: null;
   --font-family-caption: null;
   --font-family-code: null;
 
   --font-size-huge: 2rem;
-  --font-size-large: 1.125rem;
+  --font-size-large: 1.125rem; 
   --font-size-medium: .875rem;
   --font-size-small: .75rem;
 
@@ -109,6 +110,12 @@
   --size-medium: 2rem;
   --size-small: 1.5rem;
   --size-tiny: 1rem;
+
+  /* --size-4: 1rem;
+  --size-6: 1.5rem;
+  --size-8: 2rem;
+  --size-12: 3rem;
+  --size-20: 5rem; */
 
   --space-05: .125rem;
   --space-1: .25rem;
