@@ -5,13 +5,22 @@ class Separator extends HTMLElement {
     super()
     const shadow = this.attachShadow({ mode: 'open' })
 
-    const container = document.createElement('hr')
+    // ! hr 태그는 innerText 안 됨.
+    const container = document.createElement('div')
     container.role = 'separator'
     container.classList.add('separator')
+    container.innerHTML = this.innerHTML
+    // container.querySelector(':after')!.innerHTML = this.innerHTML
 
-    shadow.appendChild(container)
-    shadow.appendChild(makeStyleSheet('separator'))
+    // getter와 무슨 차이?
+    console.log(this.innerHTML, this.innerText)
+
+    shadow.append(container, makeStyleSheet('separator'))
   }
+
+  // get content() {
+  //   return this.innerText
+  // }
 
   connectedCallback() {}
   disconnectedCallback() {}

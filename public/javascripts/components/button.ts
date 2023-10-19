@@ -35,17 +35,23 @@ class Button extends HTMLElement {
     container.dataset.variant = this.variant || ''
     container.dataset.size = this.size || ''
     container.dataset.status = this.status || ''
+
+    // ! boolean타입이면 속성의 값이 있는지 없는지를 체크해야함.
     if (this.isfullwidth) container.dataset.isfullwidth = 'true'
 
     // Button.append(...this.childNodes)
     container.textContent = this.textContent || this.label
 
-    shadow.appendChild(container)
-    shadow.appendChild(makeStyleSheet('button'))
+    shadow.append(container, makeStyleSheet('button'))
+    // shadow.appendChild()
   }
 
   get variant() {
     return this.getAttribute('variant')
+  }
+
+  get isfullwidth() {
+    return this.getAttribute('isfullwidth')
   }
 
   get size() {
@@ -63,13 +69,11 @@ class Button extends HTMLElement {
     return this.getAttribute('status')
   }
 
-  get isfullwidth() {
-    return this.getAttribute('isfullwidth')
-  }
-
   get disabled() {
     return this.hasAttribute('disabled')
   }
+
+  // get type() {}
   // set disabled(flag) {
   //   this.toggleAttribute('disabled', Boolean(flag))
   // }

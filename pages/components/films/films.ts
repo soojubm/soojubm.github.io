@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelector('main')!.innerHTML = navbar + main + footer
 
   renderComponent()
+
   async function renderComponent() {
     const endpoint = `/pages/components/films/films.json`
 
@@ -38,6 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .join(' ')
 
       document.querySelector('.group')!.innerHTML = test
+      document.querySelector('.length')!.innerHTML = responseText.length
     } catch (error) {
       console.log(error)
     }

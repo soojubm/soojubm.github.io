@@ -51,6 +51,10 @@ class Checkbox extends HTMLElement {
     if (value) this.setAttribute('label', value)
   }
 
+  get value() {
+    return this.getAttribute('value')
+  }
+
   get checked() {
     return this.getAttribute('checked')
   }

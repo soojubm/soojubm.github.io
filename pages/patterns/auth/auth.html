@@ -1,110 +1,278 @@
 <main class="component">
+  <!--
+    function initStickyHero(hero) {
+      var observer = new IntersectionObserver(stickyCallback.bind(hero),
+      {threshold: [0, 0.1, 1]});
+      observer.observe(hero.content);
+    };
+
+    function stickyCallback(entries) {
+      var bool = entries[0].intersectionRatio > 0; Util.toggleClass(this.element,
+      'sticky-hero--media-is-fixed', bool);
+    }; -->
+
+  <p>!!!!! cta bottom fixed 키패드 이슈</p>
+  <p>
+    이전 인증번호는 유효하지 않기 때문에 최신 인증번호를 알려줄 수 있으면 살짝 좋겠지만 중요하진
+    않은 듯...
+  </p>
+  <div class="textfield">
+    <label class="textfield-label" for="signup-password-confirm">비밀번호 확인</label>
+    <input
+      class="textfield-input js-password-test"
+      type="password"
+      id="signup-password-confirm"
+      placeholder="6자리 이상"
+    />
+    <!-- reveal button / password field 한정? 또는 icon button의 확장 -->
+    <button class="textfield-reveal js-view-password" type="button">비밀번호 보기</button>
+  </div>
+
+  <div class="text-sm">
+    <div class="validation1" style="height: 20px; display: flex; align-items: center">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        viewBox="0 0 24 24"
+        style="width: 20px; height: 20px"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"
+        ></path>
+      </svg>
+      <span class="text-sm">Uppercase letter</span>
+    </div>
+    <div class="validation2" style="height: 20px; display: flex; align-items: center">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        viewBox="0 0 24 24"
+        style="width: 20px; height: 20px"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"
+        ></path>
+      </svg>
+      <span class="text-sm">Lowercase letter</span>
+    </div>
+    <div class="validation3" style="height: 20px; display: flex; align-items: center">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="currentColor"
+        viewBox="0 0 24 24"
+        style="width: 20px; height: 20px"
+      >
+        <path
+          d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+        ></path>
+      </svg>
+      <span class="text-sm">Number</span>
+    </div>
+    <div class="validation4" style="height: 20px; display: flex; align-items: center">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        viewBox="0 0 24 24"
+        style="width: 20px; height: 20px"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"
+        ></path>
+      </svg>
+      <span class="text-sm">Special character (e.g. !?&lt;&gt;@#$%)</span>
+    </div>
+    <div class="validation5" style="height: 20px; display: flex; align-items: center">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        viewBox="0 0 24 24"
+        style="width: 20px; height: 20px"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"
+        ></path>
+      </svg>
+      <span class="text-sm">&gt; 7 characters</span>
+    </div>
+  </div>
+
+  <div style="margin: -1rem 0 2rem; font-size: var(--font-size-small)">
+    <p>비밀번호 확인 필드가 없는 경우에 써보기.</p>
+    <p>One lowercase character</p>
+    <p>One special character</p>
+    <p>One number</p>
+    <p>One special character</p>
+    <p>8 characters minimum</p>
+  </div>
+
+  <style>
+    .is-valid1 .validation1 {
+      color: red;
+    }
+    .is-valid2 .validation2 {
+      color: red;
+    }
+    .is-valid3 .validation3 {
+      color: red;
+    }
+    .is-valid4 .validation4 {
+      color: red;
+    }
+    .is-valid5 .validation5 {
+      color: red;
+    }
+  </style>
+
   <form
     class="authentication login"
     name="login"
     action=""
     method=""
     novalidat="true"
-    style="display: flex; flex-direction: column; justify-content: center; min-height: calc(100vh - 100px)"
+    style="
+      /* display: flex;
+      flex-direction: column; */
+      width: 100%;
+      max-width: 400px;
+      min-height: calc(100vh - 100px);
+      margin: auto;
+    "
   >
+    <!-- 제목 중간보다 큰 폰트가 필요해서 별도 컴포넌트 -->
     <header class="authentication-head">
-      <span class="authentication-head-logo" style="margin: 0 0 1rem">🐤</span>
-      <test-text variant="title" class="authentication-head-title">로그인</test-text>
-      <test-text variant="body" class="authentication-head-description">Lorem Ipsum is simply dummy text.</test-text>
+      <span class="authentication-head-logo">
+        <test-avatar size="medium"></test-avatar>
+      </span>
+      <h2 class="authentication-head-title">로그인</h2>
+      <!-- <test-text variant="title" class="authentication-head-title">로그인</test-text> -->
+      <test-text variant="body" class="authentication-head-description"
+        >Lorem Ipsum is simply dummy text.</test-text
+      >
     </header>
 
     <fieldset class="authentication-fieldset">
       <div class="login-social oauth">
-        <button class="login-social-facebook">페이스북으로 시작 <small hidden>Sing in with Facebook</small></button>
+        <test-button isfullwidth="true" class="login-social-facebook">
+          페이스북으로 시작
+        </test-button>
       </div>
-      <div class="login-separator" role="separator">또는</div>
+      <test-separator style="margin: 0">또는</test-separator>
       <test-textfield type="email" label="이메일" placeholder="soojubm@gmail.com"></test-textfield>
-      <small class="textfield-helper" id="name-hint" role="alert" data-english="Enter an email address.">이메일을 입력하세요.</small>
- 
+      <!-- <small class="textfield-helper" id="name-hint" role="alert" data-english="Enter an email address.">이메일을 입력하세요.</small> -->
+
       <test-textfield type="password" label="비밀번호" placeholder="Enter a password. 8자리 이상.">
-        <test-link slot="link" class="textfield-link" href="forgot.html">비밀번호를 잊으셨나요? <small hidden>Forgot your password?</small></test-link>
+        <test-link slot="link" class="textfield-link" href="forgot.html"
+          >비밀번호를 잊으셨나요? <small hidden>Forgot your password?</small></test-link
+        >
       </test-textfield>
-      <test-checkbox label="로그인 상태 유지" class="login-remember" data-temp="Remember my email address"></test-checkbox>
+      <div style="margin: 0.25rem 0">
+        <test-checkbox
+          label="로그인 상태 유지"
+          class="login-remember"
+          data-temp="Remember my email address"
+        ></test-checkbox>
+      </div>
     </fieldset>
 
     <section class="authentication-feedback" role="alert" aria-live="assertive">
-      <test-callout variant="danger">가입하지 않은 이메일이거나?? 잘못된 비밀번호입니다.</test-callout>
+      <p style="margin:1rem 0;color:var(--red800)">가입하지 않은 이메일이거나?? 잘못된 비밀번호입니다.</test-callout>
+      <!-- <test-callout variant="danger">가입하지 않은 이메일이거나?? 잘못된 비밀번호입니다.</test-callout> -->
     </section>
 
     <menu class="authentication-foot">
-      <test-button variant="primary" class="authentication-foot-submit" type="submit">로그인</test-button>
+      <test-button
+        variant="primary"
+        isfullwidth="true"
+        class="authentication-foot-submit"
+        type="submit"
+        >로그인</test-button
+      >
       <p class="login-option" data-temp="Need an account?">
         계정이 없으신가요?
-        <a class="login-option-link" href="signup.html">지금 가입하기<small hidden>Join Soojubm for free</small></a>
+        <a class="login-option-link" href="signup.html"
+          >지금 가입하기<small hidden>Join Soojubm for free</small></a
+        >
       </p>
     </menu>
 
-    <!-- <footer style="margin-top: auto">
+    <footer style="margin-top: auto">
       <p class="text-xs text-scale-900 sm:mx-auto sm:max-w-sm">
-        By continuing, you agree to Supabase's
-        <a class="underline hover:text-scale-1100" href="https://supabase.com/terms">Terms of Service</a>
+        By continuing, you agree to XXXXXXXX's
+        <a class="underline hover:text-scale-1100" href="https://supabase.com/terms"
+          >Terms of Service</a
+        >
         and
-        <a class="underline hover:text-scale-1100" href="https://supabase.com/privacy">Privacy Policy</a>, and to receive periodic emails with
-        updates.
+        <a class="underline hover:text-scale-1100" href="https://supabase.com/privacy"
+          >Privacy Policy</a
+        >, and to receive periodic emails with updates.
       </p>
-    </footer> -->
+    </footer>
   </form>
 
-  <form class="authentication signup" name="signup-foot-submit" action="" method="">
+  <form
+    class="authentication signup"
+    name="signup-foot-submit"
+    style="
+      /* display: flex;
+      flex-direction: column; */
+      width: 100%;
+      max-width: 400px;
+      min-height: calc(100vh - 100px);
+      margin: auto;
+    "
+  >
     <header class="authentication-head">
-      <test-text variant="title" class="authentication-head-title">Welcome<i style="font-style: italic">!</i></test-text>
-      <p class="authentication-head-description">
-        Find your people. Engage your customers. Build your brand. Do it all with Mailchimp’s Marketing Platform. Already have an account?
+      <h2 class="authentication-head-title">Welcome<i style="font-style: italic">!</i></h2>
+      <test-text variant="body" class="authentication-head-description">
+        Find your people. Engage your customers. Build your brand. Do it all with Mailchimp’s
+        Marketing Platform. Already have an account?
         <a href="#">Log in</a>
-      </p>
+      </test-text>
     </header>
+
     <fieldset class="authentication-fieldset required">
       <legend hidden>필수입력</legend>
       <div class="login-social">
-        <button class="login-social-facebook">페이스북으로 시작 <small hidden>Sing in with Facebook</small></button>
+        <test-button
+          class="login-social-facebook"
+          isfullwidth="true"
+          data-english="Sign in with Facebook"
+        >
+          페이스북으로 시작
+        </test-button>
       </div>
-      <div class="login-separator" role="separator">또는</div>
+      <test-separator>또는</test-separator>
       <test-textfield type="email" label="이메일" placeholder="soojubm@gmail.com"></test-textfield>
-      <test-textfield type="password" label="비밀번호" placeholder="Enter a password. 8자리 이상."></test-textfield>
-
-      <div class="textfield">
-        <label class="textfield-label" for="signup-password-confirm" hidden>비밀번호 확인</label>
-        <input class="textfield-input" type="password" id="signup-password-confirm" placeholder="6자리 이상" />
-        <button class="textfield-reveal js-view-password" type="button">비밀번호 보기</button>
-      </div>
-      <div style="margin: -1rem 0 2rem; font-size: var(--font-size-small)">
-        <p>비밀번호 확인 필드가 없는 경우에 써보기.</p>
-        <p>One lowercase character</p>
-        <p>One special character</p>
-        <p>One number</p>
-        <p>One special character</p>
-        <p>8 characters minimum</p>
-      </div>
-      <style>
-        .is-valid1 .validation1 {
-          color: red;
-        }
-        .is-valid2 .validation2 {
-          color: red;
-        }
-        .is-valid3 .validation3 {
-          color: red;
-        }
-        .is-valid4 .validation4 {
-          color: red;
-        }
-        .is-valid5 .validation5 {
-          color: red;
-        }
-      </style>
+      <test-textfield
+        type="password"
+        label="비밀번호"
+        placeholder="Enter a password. 8자리 이상."
+      ></test-textfield>
     </fieldset>
-    <fieldset class="authentication-fieldset optional">
+
+    <fieldset class="authentication-fieldset optional" style="margin:1rem 0 0 0;">
       <legend hidden>선택입력</legend>
       <test-textfield label="닉네임" placeholder="수줍이" isOptional></test-textfield>
-      <!-- <div class="textfield-group" style="margin-top: calc(var(--space-after-textfield) * -1)"> -->
       <div class="textfield-group">
         <test-textfield label="출생년도" placeholder="출생년도" isOptional></test-textfield>
- 
         <div class="textfield">
           <label class="textfield-label" for="signup-gender">성별 <small>선택입력</small></label>
           <select class="textfield-input" id="signup-gender">
@@ -116,9 +284,13 @@
         </div>
       </div>
     </fieldset>
+
     <fieldset class="authentication-fieldset signup-terms">
       <legend class="signup-terms-title" hidden>약관 동의</legend>
-      <strong>회원가입 시 <a href="#">이용약관</a>과 <a href="#">개인정보처리방침</a>에 동의하는 것으로 간주합니다.</strong>
+      <strong>
+        회원가입 시 <a href="#">이용약관</a>과 <a href="#">개인정보처리방침</a>에 동의하는 것으로
+        간주합니다.
+      </strong>
       <test-checkbox label="모두 동의합니다." class="js-checkall"></test-checkbox>
       <test-checkbox label="이용약관 동의"></test-checkbox>
       <div class="signup-terms-content">
@@ -133,220 +305,143 @@
       <test-checkbox label="[선택] 광고성 정보 수신 동의"></test-checkbox>
       <test-checkbox label="strong 이용약관과 개인정보처리방침에 동의합니다."></test-checkbox>
     </fieldset>
+
     <footer class="authentication-foot">
-      <test-button variant="primary" class="authentication-foot-submit" type="submit" disabled>이메일 주소로 가입</test-button>
+      <test-button variant="primary" class="authentication-foot-submit" type="submit" disabled>
+        이메일 주소로 가입
+      </test-button>
     </footer>
     <footer>
-      <p>©2001–2021 All Rights Reserved. Mailchimp® is a registered trademark of The Rocket Science Group. Cookie Preferences, Privacy, and Terms.</p>
+      <p>
+        ©2001–2021 All Rights Reserved. Mailchimp® is a registered trademark of The Rocket Science
+        Group. Cookie Preferences, Privacy, and Terms.
+      </p>
     </footer>
   </form>
 
-  <div class="text-sm" style="display:none;">
-        <div class="validation1" style="display: flex; align-items: center">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" class="w-4 h-4">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"></path>
-          </svg>
-          <span class="text-sm">Uppercase letter</span>
-        </div>
-        <div class="validation2" style="display: flex; align-items: center">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" class="w-4 h-4">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"></path>
-          </svg>
-          <span class="text-sm">Lowercase letter</span>
-        </div>
-        <div class="validation3" style="display: flex; align-items: center">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-4 h-4">
-            <path
-              d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-          <span class="text-sm">Number</span>
-        </div>
-        <div class="validation4" style="display: flex; align-items: center">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" class="w-4 h-4">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"></path>
-          </svg>
-          <span class="text-sm">Special character (e.g. !?&lt;&gt;@#$%)</span>
-        </div>
-        <div class="validation5" style="display: flex; align-items: center">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" class="w-4 h-4">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"></path>
-          </svg>
-          <span class="text-sm">&gt; 7 characters</span>
-        </div>
-      </div>
-<script defer>
-  const passwordTest = document.querySelector('.js-password-test')
-  passwordTest?.addEventListener('keyup', validatePasswordTest)
-
-  function validatePasswordTest(event) {
-    const { value } = event.target
-
-    tempElement.classList.toggle('is-valid1', value.length > 12 && value.length < 18)
-    // 영문소문자/영문대문자/숫자포함
-    tempElement.classList.toggle('is-valid2', /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])/.test(value))
-    tempElement.classList.toggle('is-valid3', /[!?@#$%^&*():;+-=~{}<>\_\[\]\|\\\"\'\,\.\/\`\₩]/g.test(value))
-    // 동일한 문자 6개 연속
-    tempElement.classList.toggle('is-valid4', /([A-Za-z0-9`~!@#\$%\^&\*\(\)\{\}\[\]\-_=\+\\|;:'"<>,\./\?])\1{5,}/g.test(value))
-  }
-
-  const tempElement = document.body
-  const validations = {
-    length: false,
-  }
-  // document.addEventListener('click', revealPassword)
-
-  // function revealPassword(event) {
-  //   const targetElement = event.target.closest('.js-view-password') as any
-  //   if (!targetElement) return
-
-  //   const inputElement = targetElement.parentNode.querySelector('input')
-  //   const isPasswordType = inputElement.getAttribute('type') === 'password'
-
-  //   inputElement.setAttribute('type', isPasswordType ? 'text' : 'password')
-  // }
-
-  function onChangePhoneNumberFormat(num) {
-    let update = ''
-    for (var i = 0; i < num.length; i++) {
-      var changed = num.charAt(i).replace('-', '')
-      update += changed
-    }
-    return update
-  }
-  document.addEventListener('DOMContentLoaded', () => {
-    document.addEventListener(
-      'blur',
-      event => {
-        if (event.target.matches('.email-input')) {
-          if (event.target.value == '') {
-          }
-        }
-      },
-      true,
-    )
-    document.addEventListener(
-      'keyup',
-      event => {
-        if (event.target.matches('.email-input')) {
-          if (event.target.value.length < 6) {
-            alert('너무 짧아요')
-          }
-        }
-      },
-      true,
-    )
-  })
-</script>
-
-<script>
-    function createCustomer() {
-      let billingEmail = document.querySelector('#email').value;
-      return fetch('/create-customer', {
-        method: 'post',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          email: billingEmail,
-        }),
-      }).then((response) => {
-          return response.json()
-      }).then((result) => {
-        // result.customer.id is used to map back to the customer object
-        // result.setupIntent.client_secret is used to create the payment method
-        return result
-      });
-    }
-  ​
-    let signupForm = document.getElementById('signup-form');
-  ​
-    signupForm.addEventListener('submit', function (evt) {
-      evt.preventDefault();
-      // Create Stripe customer
-      createCustomer().then((result) => {
-        customer = result.customer;
-      });
-    });
-
-
-    function showCardError(event) {
-      let displayError = document.getElementById('card-errors');
-      if (event.error) {
-        displayError.textContent = event.error.message;
-      } else {
-        displayError.textContent = '';
-      }
-    }
-</script>
-
-  <form class="authentication" action="" method="">
+  <form
+    class="authentication"
+    style="
+      /* display: flex;
+  flex-direction: column; */
+      width: 100%;
+      max-width: 560px;
+      min-height: calc(100vh - 100px);
+      margin: auto;
+    "
+    action=""
+    method=""
+  >
     <header class="authentication-head">
-      <test-text variant="title" class="authentication-head-title" title="Reset Your Password">Reset Your Password</test-text>
-      <p class="authentication-head-description" titl="We get it, stuff happens! What's your email address?">
-        비밀번호가 기억이 안 나세요? 걱정 말아요<i style="font-style:italic;">!</i>
+      <h2 class="authentication-head-title" title="Reset Your Password">Reset Your Password</h2>
+      <p
+        class="authentication-head-description"
+        title="We get it, stuff happens! What's your email address?"
+      >
+        비밀번호가 기억이 안 나세요? 걱정 말아요<i style="font-style: italic">!</i>
         <br />
-        임시 비밀번호를 이메일로 보내드릴게요.</i>
+        임시 비밀번호를 이메일로 보내드릴게요.
       </p>
       <p>비밀번호를 재설정할 수 있는 링크를 이메일로 보내드릴게요.</p>
-      <span style="font-size:3rem;position:absolute;right:0;top:0;">🖐️</span>
+      <span style="font-size: 3rem; position: absolute; right: 0; top: 0">🖐️</span>
     </header>
 
-    <fieldset>
+    <fieldset class="authentication-fieldset">
       <test-textfield label="이메일 주소" placeholder="soojubm@gmail.com"></test-textfield>
-      <footer class="authentication-foot">
-        <test-button variant="primary" type="submit" class="authentication-foot-submit">재설정 메일 받기</test-button>
-        <!-- <span class="password-foot-back password-link" title="Remember your password after all?">이메일이 기억 안 나세요? <a href="signin.html">가입하기</a></span> -->
-      </footer>
     </fieldset>
-
-    <aside class="" style="margin-top:2rem;">
+    <footer class="authentication-foot">
+      <test-button variant="primary" type="submit" class="authentication-foot-submit"
+        >재설정 메일 받기</test-button
+      >
+      <!-- <span class="password-foot-back password-link" title="Remember your password after all?">이메일이 기억 안 나세요? <a href="signin.html">가입하기</a></span> -->
+    </footer>
+    <aside class="" style="margin-top: 2rem">
       <p>이메일을 받지 못하셨나요? <a href="">알아보기</a></p>
     </aside>
   </form>
 
-  <form class="verify" style="max-width: var(--width-small); margin: 0 auto; text-align: center;">
-    <header class="password-head">
-      <h1 class="password-title" title="Reset Your Password">Please check your email!</h1>
-      <p class="password-description" titl="We get it, stuff happens! What's your email address?">
-      We have emailed a 6-digit confirmation code to acb@domain, please enter the code in below box to verify your email.
+  <form class="verify" style="max-width: 560px; margin: 0 auto; text-align: center">
+    <header class="authentication-head">
+      <h1 class="authentication-head-title" title="Reset Your Password">
+        Please check your email!
+      </h1>
+      <p
+        class="authentication-head-description"
+        titl="We get it, stuff happens! What's your email address?"
+      >
+        We have emailed a 6-digit confirmation code to acb@domain, please enter the code in below
+        box to verify your email.
       </p>
     </header>
-    <div>
-      <div class="textfield" style="display: flex; justify-content: center;">
-      <!-- aria-invalid="false"  -->
-      <input name="code1" type="number" maxlength="1" class="textfield-input" style="width:var(--size-large);margin:0 .25rem" />
-      <input name="code1" type="number" maxlength="1" class="textfield-input" style="width:var(--size-large);margin:0 .25rem" />
-      <input name="code1" type="number" maxlength="1" class="textfield-input" style="width:var(--size-large);margin:0 .25rem" />
-      <input name="code1" type="number" maxlength="1" class="textfield-input" style="width:var(--size-large);margin:0 .25rem" />
-      <input name="code1" type="number" maxlength="1" class="textfield-input" style="width:var(--size-large);margin:0 .25rem" />
-      <input name="code1" type="number" maxlength="1" class="textfield-input" style="width:var(--size-large);margin:0 .25rem" />
+    <fieldset class="authentication-fieldset">
+      <div class="textfield-group">
+        <!-- aria-invalid="false"  -->
+        <test-textfield
+          name="code1"
+          type="number"
+          maxlength="1"
+          style="width: var(--size-large)"
+        ></test-textfield>
+        <test-textfield
+          name="code2"
+          type="number"
+          maxlength="1"
+          style="width: var(--size-large)"
+        ></test-textfield>
+        <test-textfield
+          name="code3"
+          type="number"
+          maxlength="1"
+          style="width: var(--size-large)"
+        ></test-textfield>
+        <test-textfield
+          name="code4"
+          type="number"
+          maxlength="1"
+          style="width: var(--size-large)"
+        ></test-textfield>
+        <test-textfield
+          name="code5"
+          type="number"
+          maxlength="1"
+          style="width: var(--size-large)"
+        ></test-textfield>
       </div>
-    </div>
+    </fieldset>
     <footer class="authentication-foot">
-      <test-button variant="primary" type="submit" class="authentication-foot-submit">재설정 메일 받기</test-button>
+      <test-button variant="primary" type="submit" class="authentication-foot-submit">
+        재설정 메일 받기
+      </test-button>
     </footer>
-    <span class="password-foot-back password-link" title=""><a href="signin.html">인증번호 재전송</a></span>
+    <span class="password-foot-back password-link" title="">
+      <a href="signin.html">인증번호 재전송</a>
+    </span>
+  </form>
 
-    <p>!!!!! cta bottom fixed를 고려한 추가 링크 버튼 위치를 결정해야 함.</p>
-    <p>이전 인증번호는 유효하지 않기 때문에 최신 인증번호를 알려줄 수 있으면 살짝 좋겠지만 중요하진 않은 듯...</p>
-    </form>
-
-  <form class="password" action="">
-    <p>안전한 비밀번호를 만들고 같은 비밀번호를 다른 계정에 사용하지 마세요.</p>
-    <p>8자 이상 입력하세요. 다른 사이트에서 쓰는 비밀번호나 애완동물의 이름처럼 추측하기 쉬운 이름은 사용하지 마세요.</p>
-    <p>비밀번호를 변경하면 기기에서 로그아웃되지만, 일부 예외가 있습니다.</p>
-    <br />
-    <fieldset>
-      <test-textfield label="새 비밀번호" placeholder="soojubm@gmail.com" autofocus></test-textfield>
+  <form class="authentication" style="max-width: 560px; margin: 0 auto" action="">
+    <header class="authentication-head">
+      <h1 class="authentication-head-title">비밀번호 재설정</h1>
+      <p class="authentication-head-description">
+        안전한 비밀번호를 만들고 같은 비밀번호를 다른 계정에 사용하지 마세요.
+      </p>
+      <p>
+        8자 이상 입력하세요. 다른 사이트에서 쓰는 비밀번호나 애완동물의 이름처럼 추측하기 쉬운
+        이름은 사용하지 마세요.
+      </p>
+      <p>비밀번호를 변경하면 기기에서 로그아웃되지만, 일부 예외가 있습니다.</p>
+    </header>
+    <fieldset class="authentication-fieldset">
+      <test-textfield
+        label="새 비밀번호"
+        placeholder="soojubm@gmail.com"
+        autofocus
+      ></test-textfield>
       <p role="alert" class="textfield-helper" hidden>이메일 형식이 아니에요.</p>
       <test-textfield label="새 비밀번호 확인" placeholder="soojubm@gmail.com"></test-textfield>
-      <footer class="password-foot">
-        <test-button type="submit" class="password-foot-submit">비밀번호 변경</test-button>
-      </footer>
     </fieldset>
+    <footer class="authentication-foot">
+      <test-button type="submit">비밀번호 변경</test-button>
+    </footer>
   </form>
 
   <section class="password-result" hidden>
@@ -358,6 +453,47 @@
     </p>
     <p>이메일 재전송 버튼</p>
     <a class="password-result-login" href="#">로그인하기</a>
+  </section>
+
+  <section style="max-width: 800px; margin: 4rem auto">
+    <header class="authentication-head">
+      <h2 class="authentication-head-title">Tell us about yourself</h2>
+      <test-text variant="body-large" class="authentication-head-description">
+        Now that you're all signed up, let's personalize your experience.
+      </test-text>
+    </header>
+
+    <section class="step" data-align="vertical">
+      <div class="step-item is-active">
+        <span class="step-item-icon" style="color:var(--color-priamry)">1</span>
+        <h3 class="step-item-label">I'm an engineer</h3>
+      </div>
+      <div class="step-item is-active">
+        <span class="step-item-icon" style="color:var(--color-priamry)">2</span>
+        <h3 class="step-item-label">I wnat to design from scratch</h3>
+        <!-- <p class="step-item-description">
+          1칼럼(모바일)에서 결제 버튼을 누르기 전 최종 금액을 확인할 수 있는 구조가 되려면 2칼럼에서 우측을 결제를 위한 칼럼을 배치할
+          때(체크아웃페이지의 일반적인 레이아웃) 상품&서머리&결제버튼이 같은 컨테이너로 포함되어야.
+        </p>
+        <p class="step-item-description">결제정보 - 결제방법/주문상태/주문접수일시/주문완료일시/배송비/쿠폰사용금액/결제금액</p>
+        <p class="step-item-description">주문 정보를 로컬에 저장.</p> -->
+      </div>
+      <div class="step-item">
+        <span class="step-item-icon">3</span>
+        <h3 class="step-item-label" style="color:var(--color-text);">
+          One last thing ㅡ how will you use your prototpe?
+        </h3>
+        <small>(You can pick more than one)</small>
+        <test-chip-group>
+          <test-chip label="Share for feedback"></test-chip>
+          <test-chip label="Present live"></test-chip>
+          <test-chip label="Test with users"></test-chip>
+          <test-chip label="Collaborate in real time"></test-chip>
+          <test-chip label="Hand off to developers"></test-chip>
+        </test-chip-group>
+      </div>
+    </section>
+    <test-butto variant="primary">Start creating</test-butto>
   </section>
 
   https://support.google.com/accounts/answer/32040?visit_id=637702064644854938-965259796&p=pw_dont_reuse&hl=ko&rd=1

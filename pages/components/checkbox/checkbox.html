@@ -2,6 +2,9 @@
   <article class="article js-observer js-scrollspy-section">
     <test-text variant="title" title="or Box">Checkboxes</test-text>
     <test-text variant="body-large">옵션 목록에서 하나 이상의 옵션을 선택합니다.</test-text>
+
+    <p>expansion panel.조건/상태. 트리거는 다양</p>
+
     <section class="component-example">
       <!-- a11y checkgroup not valid -->
       <!-- <legend">checkgroup</legend> -->
@@ -19,7 +22,13 @@
           checked
           >체크박스</test-checkbox
         >
-        <input type="text" name="other-more" class="textfield-input" placeholder="기타로 오토바이를 타자." hidden />
+        <input
+          type="text"
+          name="other-more"
+          class="textfield-input"
+          placeholder="기타로 오토바이를 타자."
+          hidden
+        />
 
         <test-checkbox class="js-check" type="checkbox" id="terms" name="terms">
           이용약관에 동의합니다. <a href="#">이용약관 바로가기</a></test-checkbox
@@ -61,13 +70,22 @@
 
     <section class="component-guide">
       <test-text variant="subhead">Visual style</test-text>
-      <test-text variant="body">선택되지 않은 상태로 제공하여 사용자의 직접적인? 능동적인? 행동 .. todo </test-text>
+      <test-text variant="body"
+        >선택되지 않은 상태로 제공하여 사용자의 직접적인? 능동적인? 행동 .. todo
+      </test-text>
     </section>
 
     <test-text variant="subhead">사례:약관동의</test-text>
     <section class="component-case">
       <test-row slot="entire" direction="column" style="max-width: 400px">
-        <test-checkbox size="medium" class="js-checkall" aira-checked="mixed" aria-controls="1 2" data-indeterminate="true" indeterminate>
+        <test-checkbox
+          size="medium"
+          class="js-checkall"
+          aira-checked="mixed"
+          aria-controls="1 2"
+          data-indeterminate="true"
+          indeterminate
+        >
           <em style="font-style: normal; font-weight: var(--font-weight-bold)"> 모두 동의합니다</em>
         </test-checkbox>
         <test-checkbox name="interest" value="other"> 기타 </test-checkbox>

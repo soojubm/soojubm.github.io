@@ -296,12 +296,6 @@ main,
 .principle-head {padding:4rem 0;}
 .principle-head-title {}
 .principle-head-description {margin:var(--space-after-subhead) 0 0 0;}
-.principle-item {@mixin tile-flat;width:calc(50% - 2rem);margin:var(--space-4);}
-.principle-item-avatar {display:block;position:relative;}
-.principle-item-avatar:before {content:'';display:block;@mixin avatar-medium;position:absolute;left:0;top:0rem;z-index:-1;}
-.principle-item-title {}
-.principle-item-kicker {margin:.5rem 0;}
-.principle-item-description {margin:var(--space-after-subhead) 0;}
 
 /* .theme-dark .design-ticker-item {
   filter: grayscale(0);

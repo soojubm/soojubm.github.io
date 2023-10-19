@@ -10,6 +10,7 @@ class Icon extends HTMLElement {
     const container = document.createElement('i')
     container.classList.add('icon')
     container.classList.add(iconClassName)
+    container.role = 'img'
 
     const pretty = document.createElement('link')
     pretty.href = 'https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css'

@@ -266,6 +266,12 @@ test-text[variant=subhead] + * {
 .step-item.is-active .step-item-icon {background:var(--color-background-strong);}
 .step-item.is-active .step-item-label {color:var(--color-text);}
 
+.step[data-align=vertical] {flex-direction: column; align-items: start;gap:var(--space-3);}
+.step[data-align=vertical] .step-item {display:flex;flex-wrap:wrap;align-items:center;gap:var(--space-2);text-align:left;}
+.step[data-align=vertical] .step-item-label {margin:0;}
+.step[data-align=vertical] .step-item:before {display: none;}
+.step[data-align=vertical] .step-item-icon {margin: 0;}
+
 
 
 .post-relation {margin:8rem auto;padding:0 var(--grid-margin);}
@@ -1171,4 +1177,56 @@ test-text[variant=subhead] + * {
 @media (max-width: 800px) {
   .token-group {display:block;margin:0;}
   .token-item {max-width:100%;margin:var(--space-3) 0;}
+}
+
+
+
+
+
+
+/* textfield 중복 / for select */
+.textfield {
+  max-width: 400px;
+  position:relative;
+
+  --textfield-height: var(--size-large);
+  --textfield-background-color: 0;
+  --textfield-border: var(--border);
+  --textfield-radius: var(--radius);
+  --textfield-text-color: 0;
+}
+.textfield-label {display:block;line-height:var(--size-small);}
+.textfield-label small {margin:0 0 0 var(--space-1);color:var(--color-text-light);}
+.textfield-input {
+  display:block;
+  width:100%;
+  height:var(--textfield-height);
+  padding:var(--space-2) var(--space-4);
+  border-radius:var(--radius);
+  background:var(--color-background-weak);
+  color: var(--color-text);
+}
+.textfield-input:focus {box-shadow:var(--status-hover);}
+.textfield-input:read-only {color:var(--color-text-light);cursor:default;}
+.textfield-input:disabled {opacity:.5;cursor:not-allowed;}
+.textfield-helper {margin:var(--space-1) 0 0;color:var(--red800);}
+
+
+.textfield-suffix, 
+::slotted([slot=icon]) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--size-large);
+  height: var(--textfield-height);
+  /* color:var(--color-primary); */
+  position:absolute;top:var(--size-small);right:0;
+}
+
+.textfield-prefix,
+::slotted([slot=leading]) {
+  display: flex;
+  align-items: center;
+  height: var(--textfield-height);
+  position:absolute;top:var(--size-small);left:var(--space-4);
 }

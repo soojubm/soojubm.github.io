@@ -108,7 +108,7 @@
   height: 64px;
   font-size: var(--font-size-large);
 }
-.button[data-isfullwidth] {
+.button[data-isfullwidth=true] {
   width: 100%;
 }
 

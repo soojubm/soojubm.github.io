@@ -36,17 +36,17 @@ class Input extends HTMLElement {
       input.setAttribute('disabled', String(this.disabled))
     }
 
-    const iconSlot = document.createElement('slot')
-    iconSlot.name = 'icon'
+    const prefixSlot = document.createElement('slot')
+    prefixSlot.name = 'prefix'
 
-    const leadingIconSlot = document.createElement('slot')
-    leadingIconSlot.name = 'leading'
+    const suffixSlot = document.createElement('slot')
+    suffixSlot.name = 'suffix'
 
     const linkSlot = document.createElement('slot')
     linkSlot.name = 'link'
 
     shadow.appendChild(container)
-    container.append(label, input, leadingIconSlot, iconSlot, linkSlot, makeStyleSheet('textfield'))
+    container.append(label, input, prefixSlot, suffixSlot, linkSlot, makeStyleSheet('textfield'))
 
     if (this.isOptional) {
       const small = document.createElement('small')
