@@ -73,12 +73,16 @@
       <dl>
         <dt>title<attr>?</attr></dt>
         <dd>string</dd>
-        <dd>최대 8자로 제한합니다. 타이틀이 말줄임표로 표시되지 않아야. 하지만 화면 크기는 점점 작아지니(접힌 상태의 폴더블폰) 대안이 필요하다.</dd>
+        <dd>
+          최대 8자로 제한합니다. 타이틀이 말줄임표로 표시되지 않아야. 하지만 화면 크기는 점점
+          작아지니(접힌 상태의 폴더블폰) 대안이 필요하다.
+        </dd>
         <dt>backType????<attr>?</attr></dt>
         <dd>'close' | 'back',</dd>
         <dd>
-          TODO 패턴 정의. 탭 바로 접근하는 경우 등. close에서는 우측 액션을 제한해야 할 지도. closeButton ==> TitleBar component의 자식으로 항상 함께
-          사용되기 때문에 titlebarBackbutton으로 추상화할 필요는 없다.
+          TODO 패턴 정의. 탭 바로 접근하는 경우 등. close에서는 우측 액션을 제한해야 할 지도.
+          closeButton ==> TitleBar component의 자식으로 항상 함께 사용되기 때문에
+          titlebarBackbutton으로 추상화할 필요는 없다.
         </dd>
         <dt>actions</dt>
         <dd>React.Node</dd>
@@ -107,20 +111,27 @@
       </test-titlebar>
     </section>
     <section class="component-case">
-      <test-titlebar class="titlebar js-titlebar" role="navigation" data-size="large" style="padding: 0">
+      <test-titlebar
+        class="titlebar js-titlebar"
+        role="navigation"
+        data-size="large"
+        style="padding: 0"
+      >
         <h1 class="titlebar-title js-page-title" title="page title">Large Case</h1>
-        <test-row slot="action">
+        <test-group slot="action">
           <test-chip label="저장"></test-chip>
           <test-chip class="titlebar-back" onclick="javascript:window.location.href='/';">
             <test-icon slot="icon" name="more-vert"></test-icon>
           </test-chip>
-        </test-row>
+        </test-group>
       </test-titlebar>
     </section>
 
     <div class="component-references">
       <test-text variant="subhead">References</test-text>
-      <a href="https://m3.material.io/components/top-app-bar/overview" target="_blank">MD3 top app bar</a>
+      <a href="https://m3.material.io/components/top-app-bar/overview" target="_blank"
+        >MD3 top app bar</a
+      >
     </div>
   </article>
 
@@ -159,15 +170,27 @@
 
     <ul>
       <li>TODO 바텀 네비게이션과 햄버거 메뉴를 혼용할 수 있는 패턴을 정의.</li>
-      <li>바텀 네비게이션의 메뉴로 햄버거 아이콘을 사용하는 케이스: 커머스 도매인에서 카테고리 메뉴. 주로 왼쪽에 배치.</li>
-      <li>bottom navigation의 label은 예외적으로 10px입니다. 예외 케이스는 어디에서 정의해야 하는가. => 컴포넌트 스코프 + 관련 패턴 페이지</li>
+      <li>
+        바텀 네비게이션의 메뉴로 햄버거 아이콘을 사용하는 케이스: 커머스 도매인에서 카테고리 메뉴.
+        주로 왼쪽에 배치.
+      </li>
+      <li>
+        bottom navigation의 label은 예외적으로 10px입니다. 예외 케이스는 어디에서 정의해야 하는가.
+        => 컴포넌트 스코프 + 관련 패턴 페이지
+      </li>
     </ul>
 
     <div class="component-references">
       <test-text variant="subhead">References</test-text>
-      <a href="https://m2.material.io/components/bottom-navigation" target="_blank">M2 Bottom Navigation</a>
-      <a href="https://m3.material.io/components/navigation-bar/overview" target="_blank">M3 Navigation Bar</a>
-      <a href="https://developer.apple.com/design/human-interface-guidelines/components/navigation-and-search/tab-bars" target="_blank"
+      <a href="https://m2.material.io/components/bottom-navigation" target="_blank"
+        >M2 Bottom Navigation</a
+      >
+      <a href="https://m3.material.io/components/navigation-bar/overview" target="_blank"
+        >M3 Navigation Bar</a
+      >
+      <a
+        href="https://developer.apple.com/design/human-interface-guidelines/components/navigation-and-search/tab-bars"
+        target="_blank"
         >HIG Tab bars</a
       >
     </div>

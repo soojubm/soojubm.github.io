@@ -24,7 +24,11 @@
 
       <form class="filter" style="max-width: 640px">
         <test-titlebar heading="필터">
-          <test-chip slot="back" onclick="javascript:window.location.href='/';" aria-label="이전 페이지로 이동">
+          <test-chip
+            slot="back"
+            onclick="javascript:window.location.href='/';"
+            aria-label="이전 페이지로 이동"
+          >
             <test-icon slot="icon" name="arrow-left"></test-icon>
           </test-chip>
         </test-titlebar>
@@ -36,18 +40,20 @@
               <test-switch slot="action"></test-switch>
             </test-menuitem>
           </test-tile>
-          <small class="setting-item-helper">호스트 승인을 기다릴 필요 없이 예약할 수 있는 숙소</small>
+          <small class="setting-item-helper"
+            >호스트 승인을 기다릴 필요 없이 예약할 수 있는 숙소</small
+          >
         </fieldset>
 
         <test-separator></test-separator>
 
         <fieldset class="filter-fieldset" role="radiogroup">
           <legend class="filter-fieldset-legend">예산</legend>
-          <test-row direction="column">
+          <test-group alignment="vertical">
             <test-radio id="gender-man" name="gender" value="" label="50,000원 미만"> </test-radio>
             <test-radio label="100,000원 미만"> </test-radio>
             <test-radio label="150,000원 미만"> </test-radio>
-          </test-row>
+          </test-group>
           <br />
           <small>예를 들어 다음과 같습니다.</small>
           <test-tile size="small">
@@ -66,12 +72,16 @@
         <test-separator></test-separator>
         <fieldset class="filter-fieldset" role="radiogroup">
           <legend class="filter-fieldset-legend">접근성 편의</legend>
-          <p class="filter-fieldset-description">호스트가 제공하고 에어비앤비에서 검토한 정보입니다.</p>
-          <test-row direction="column">
-            <test-checkbox id="line03" value="" label="게스트 출입구에 계단이나 문턱 없음"> </test-checkbox>
+          <p class="filter-fieldset-description">
+            호스트가 제공하고 에어비앤비에서 검토한 정보입니다.
+          </p>
+          <test-group alignment="vertical">
+            <test-checkbox id="line03" value="" label="게스트 출입구에 계단이나 문턱 없음">
+            </test-checkbox>
             <test-checkbox value="other" label="너비 81cm 이상의 게스트 출입구"> </test-checkbox>
-            <test-checkbox name="interest" value="other" label="휠체어 접근 가능 주차 공간"> </test-checkbox>
-          </test-row>
+            <test-checkbox name="interest" value="other" label="휠체어 접근 가능 주차 공간">
+            </test-checkbox>
+          </test-group>
         </fieldset>
 
         <test-separator></test-separator>
@@ -84,8 +94,12 @@
               <option value=""></option>
             </select>
           </div>
-          <p class="filter-fieldset-description" style="color: var(--color-text); margin-top: 0.5rem">
-            참고: 이 설정은 이 컴퓨터에만 적용됩니다. 앱 업데이트를 받으려면 Slack을 다시 시작해야 할 수도 있습니다.
+          <p
+            class="filter-fieldset-description"
+            style="color: var(--color-text); margin-top: 0.5rem"
+          >
+            참고: 이 설정은 이 컴퓨터에만 적용됩니다. 앱 업데이트를 받으려면 Slack을 다시 시작해야
+            할 수도 있습니다.
           </p>
         </fieldset>
 
@@ -94,23 +108,28 @@
         <fieldset class="filter-fieldset" role="radiogroup">
           <legend class="filter-fieldset-legend">데스크톱에서 활성 상태가 아닌 경우...</legend>
           <p class="filter-fieldset-description">
-            참고: 이 설정은 이 컴퓨터에만 적용됩니다. 앱 업데이트를 받으려면 Slack을 다시 시작해야 할 수도 있습니다.
+            참고: 이 설정은 이 컴퓨터에만 적용됩니다. 앱 업데이트를 받으려면 Slack을 다시 시작해야
+            할 수도 있습니다.
           </p>
-          <test-row direction="column">
+          <test-group alignment="vertical">
             <test-checkbox label="멘션 및 다이렉트 메시지에 대한 이메일 알림 받기"></test-checkbox>
-            <test-row direction="column">
+            <test-group alignment="vertical">
               <div style="margin-left: 1.5rem">
                 <test-radio checked label="15분 마다 한 번"></test-radio>
                 <test-radio label="한 시간에 한 번"></test-radio>
               </div>
-            </test-row>
-          </test-row>
+            </test-group>
+          </test-group>
         </fieldset>
 
-        <test-row class="filter-foot">
-          <test-button variant="primary" class="filter-foot-confirm">적용/숙소 25개 표시 (todo fixed)</test-button>
-          <test-button variant="text" class="filter-foot-reset" style="color: var(--color-text)">전체 해제</test-button>
-        </test-row>
+        <test-group class="filter-foot">
+          <test-button variant="primary" class="filter-foot-confirm"
+            >적용/숙소 25개 표시 (todo fixed)</test-button
+          >
+          <test-button variant="text" class="filter-foot-reset" style="color: var(--color-text)"
+            >전체 해제</test-button
+          >
+        </test-group>
       </form>
     </section>
   </div>
@@ -119,7 +138,7 @@
     <test-text variant="title">Single filter (group)</test-text>
     <test-text variant="body-large">막연한 검색</test-text>
     <section class="component-example">
-      <test-row>
+      <test-group>
         <!-- <DropdownTrigger></DropdownTrigger> -->
         <test-chip label="예약옵션" class="js-toggle" aria-expanded="true">
           <test-icon slot="badge" name="nav-arrow-down"></test-icon>
@@ -130,41 +149,59 @@
         <test-chip label="접근성 편의" class="js-toggle" aria-expanded="true">
           <test-icon slot="badge" name="nav-arrow-down"></test-icon>
         </test-chip>
-      </test-row>
+      </test-group>
 
       <test-separator></test-separator>
 
-      <test-row>
+      <test-group>
         <test-chip label="오늘" status="active"> </test-chip>
         <test-chip label="최근 3개월"></test-chip>
         <test-chip label="최근 1년"></test-chip>
         <test-chip label="최근 3년"> </test-chip>
-      </test-row>
+      </test-group>
       <p style="margin: 0.75rem 0" role="status">주문 내역 총 <b>3</b>건. Statusbox</p>
     </section>
 
-    <test-result label="최근 3개월 내 주문 내역이 없습니다." description="포트폴리오를 업로드하여 수줍이님을 알려보세요.">
+    <test-result
+      label="최근 3개월 내 주문 내역이 없습니다."
+      description="포트폴리오를 업로드하여 수줍이님을 알려보세요."
+    >
       <test-button slot="action" variant="primary">2022년 주문 내역 보기</test-button>
     </test-result>
 
     <test-text variant="subhead">필터의 적용</test-text>
     <p>onChange: 옵션 선택 시 적용. 서버 부담.</p>
 
-    <test-text variant="subhead">적용된 필터의 상태 액티브 스타일과 레이블을 변경. (todo multiple)</test-text>
+    <test-text variant="subhead"
+      >적용된 필터의 상태 액티브 스타일과 레이블을 변경. (todo multiple)</test-text
+    >
 
     <test-text variant="subhead">궁굼이 & 생각</test-text>
     <ul>
       <li>사용자는 적용된 필터 옵션을 초기화하기 위해 새로고침을 할까?</li>
       <li>presentation 컴포넌트가 필터의 상태나 적용 방법에 영향을 준다.</li>
       <li>
-        하나의 화면에서 모든 옵션 목록을 나열할 때 옵션 별로 다른 컴포넌트로 제공하여 옵션 하나 하나에 주의를 집중중시킬 수 있다. dropdown, chip,
-        radio 등의 혼합 => 디자인과 개발 비용이 증가하는 만큼 사용자 경험이 월등한가? (case. airbnb) 아니면 다른 의도?
+        하나의 화면에서 모든 옵션 목록을 나열할 때 옵션 별로 다른 컴포넌트로 제공하여 옵션 하나
+        하나에 주의를 집중중시킬 수 있다. dropdown, chip, radio 등의 혼합 => 디자인과 개발 비용이
+        증가하는 만큼 사용자 경험이 월등한가? (case. airbnb) 아니면 다른 의도?
       </li>
-      <li>필터를 적용하고 초기화하는 버튼 그룹의 정렬은 dialog에서 버튼 그룹과 달라질 수 있다. hero 컴포넌트와는 동일하다.</li>
+      <li>
+        필터를 적용하고 초기화하는 버튼 그룹의 정렬은 dialog에서 버튼 그룹과 달라질 수 있다. hero
+        컴포넌트와는 동일하다.
+      </li>
       <li>range UI는 얼마나 사용자 친화적인가</li>
-      <li>모든 필터 옵션을 세로 목록형 가로 스크롤로 나열할 수도 있다. 큰 화면에서 유용하다. (case. bilibili, 관리자용)</li>
-      <li>적용된 필터 상태를 removable chips로 추가 제공(case. 오늘의집, 네이버카페)하는 것은 효용이 있을까? => 없다로 결론.</li>
-      <li>필터링와 소팅의 위계. 소팅은 필터링의 하위 위계임을 시각적으로(위치 등) 명시. 또는 '정렬' 텍스트 레이블링으로 구분</li>
+      <li>
+        모든 필터 옵션을 세로 목록형 가로 스크롤로 나열할 수도 있다. 큰 화면에서 유용하다. (case.
+        bilibili, 관리자용)
+      </li>
+      <li>
+        적용된 필터 상태를 removable chips로 추가 제공(case. 오늘의집, 네이버카페)하는 것은 효용이
+        있을까? => 없다로 결론.
+      </li>
+      <li>
+        필터링와 소팅의 위계. 소팅은 필터링의 하위 위계임을 시각적으로(위치 등) 명시. 또는 '정렬'
+        텍스트 레이블링으로 구분
+      </li>
 
       <test-text variant="subhead">FilterTrigger</test-text>
       <test-text variant="subhead">FilterContainer - dropdown / modal</test-text>

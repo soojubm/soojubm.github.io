@@ -10,11 +10,11 @@
     </dl>
 
     <section class="component-example">
-      <test-row direction="column">
+      <test-group alignment="vertical">
         <!-- Receive weekly newsletter -->
         <test-switch name="newsletter" label="뉴스레터 받아보기"> </test-switch>
         <test-switch name="newsletter" label="뉴스레터 받아보기" disabled> </test-switch>
-      </test-row>
+      </test-group>
     </section>
 
     <section class="component-props">
@@ -46,11 +46,14 @@
     <section class="component-guide">
       <test-text variant="subhead">Behavior</test-text>
       <test-text variant="body">
-        instantly즉시 실행 - not batch ??. 단일 옵션을 즉시 실행하고 결과를 반영합니다. 다중 옵션 중 하나의 옵션으로 저장 버튼과 함께 사용하지
-        않습니다.
+        instantly즉시 실행 - not batch ??. 단일 옵션을 즉시 실행하고 결과를 반영합니다. 다중 옵션 중
+        하나의 옵션으로 저장 버튼과 함께 사용하지 않습니다.
       </test-text>
       <test-text variant="subhead">Visual style</test-text>
-      <test-text variant="body"> on & off context. 스위치의 왼쪽과 오른쪽에 각각 레이블을 배치하여 콘텐츠 스위칭으로 사용하지 마세요. </test-text>
+      <test-text variant="body">
+        on & off context. 스위치의 왼쪽과 오른쪽에 각각 레이블을 배치하여 콘텐츠 스위칭으로 사용하지
+        마세요.
+      </test-text>
 
       <test-text variant="subhead">A11y</test-text>
       <test-text variant="body">on & off label</test-text>

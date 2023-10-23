@@ -1,17 +1,17 @@
 import { makeStyleSheet } from './utils'
 
-class Row extends HTMLElement {
+class Group extends HTMLElement {
   constructor() {
     super()
     const shadow = this.attachShadow({ mode: 'open' })
 
     const container = document.createElement('div')
-    container.classList.add('row')
+    container.classList.add('group')
     container.role = 'group'
 
     // const align = 'vertical' || 'horizontal'
-    const direction = this.getAttribute('direction')
-    container.dataset.direction = direction || ''
+    const alignment = this.getAttribute('alignment')
+    container.dataset.alignment = alignment || ''
 
     const style = this.getAttribute('style')
     container.setAttribute('style', style || '')
@@ -22,7 +22,7 @@ class Row extends HTMLElement {
     // if (this.variant) container.setAttribute('data-variant', this.variant)
 
     shadow.appendChild(container)
-    container.append(...this.childNodes, makeStyleSheet('row'))
+    container.append(...this.childNodes, makeStyleSheet('group'))
   }
 
   get temp() {
@@ -37,4 +37,4 @@ class Row extends HTMLElement {
   disconnectedCallback() {}
 }
 
-export default Row
+export default Group

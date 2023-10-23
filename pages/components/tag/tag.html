@@ -2,8 +2,8 @@
   <article class="article js-observer js-scrollspy-section">
     <test-text variant="title">Tags</test-text>
     <test-text variant="body-large">
-      인접 요소나 부모 요소를 부연하는 시각 정보입니다. 상태, 카테고리, 키워드로 강조된 시각 정보는 사용자가 복잡한 정보 더미에서 중요한 정보를
-      우선적으로 파악하도록 돕습니다.
+      인접 요소나 부모 요소를 부연하는 시각 정보입니다. 상태, 카테고리, 키워드로 강조된 시각 정보는
+      사용자가 복잡한 정보 더미에서 중요한 정보를 우선적으로 파악하도록 돕습니다.
     </test-text>
     <!-- <test-text variant="body-large">
       post 페이지에서 태그와 컴포넌트에서의 태그. hashtag는 tag 컴포넌트와 역할이 다르기 때문에 별도의 컴포넌트로 만들어주어야 한다. 현재
@@ -19,7 +19,7 @@
     </dl>
 
     <section class="component-example">
-      <test-row>
+      <test-group>
         <!--  role="listitem" -->
         <test-tag variant="primary" label="primary"></test-tag>
         <test-tag variant="secondary" label="secondary"></test-tag>
@@ -30,7 +30,7 @@
           <test-icon slot="icon" name="nav-arrow-down"></test-icon>
         </test-tag>
         <!-- <figure class="tag-icon" role="img">🔥</figure> -->
-      </test-row>
+      </test-group>
     </section>
 
     <section class="component-props">
@@ -45,8 +45,8 @@
       </dl>
     </section>
 
-    <test-tile>
-      <test-row>
+    <section class="component-case">
+      <test-group>
         <test-tag variant="secondary" label="tertiary">
           <test-icon slot="icon" name="graph-up"></test-icon>
           16%
@@ -55,37 +55,40 @@
           <test-icon slot="icon" name="graph-down"></test-icon>
           16%
         </test-tag>
-      </test-row>
-    </test-tile>
-    <div style="height:var(--space-4)"></div>
-    <test-tile>
-      <test-row>
+      </test-group>
+    </section>
+    <section class="component-case">
+      <test-group>
         <test-tag variant="feature1">유저리서치</test-tag>
         <test-tag variant="feature2">유저플로우</test-tag>
         <test-tag variant="feature3">유저스트</test-tag>
         <test-tag variant="feature4">A/B테스팅</test-tag>
-      </test-row>
-    </test-tile>
-
+      </test-group>
+    </section>
 
     <section class="component-guide">
       <test-text variant="subhead">Behavior</test-text>
-      <test-text variant="body">no-clickable. 정보를 강조하거나 요약하여 나열하는 시각 정보. action signifier (role). 액션의 기표로 사용할 수 있다. 인접 요소 또는 부모 요소가 클릭할 수 있음을 보조..</test-text>
+      <test-text variant="body"
+        >no-clickable. 정보를 강조하거나 요약하여 나열하는 시각 정보. action signifier (role).
+        액션의 기표로 사용할 수 있다. 인접 요소 또는 부모 요소가 클릭할 수 있음을 보조..</test-text
+      >
 
       <test-text variant="subhead">Visual Style</test-text>
       <test-text variant="body">
-        하나의 태그 그룹은 최대 4개의 태그를 표시합니다. 태그는 <mark>핵심 키워드를 요약</mark>하여 사용자의 콘텐츠 탐색과 선택을 돕는 역할이기 때문에 너무
-        많은 태그 목록을 표시하는 것은 되려 콘텐츠 탐색을 방해할 수 있습니다. (groupable)
+        하나의 태그 그룹은 최대 4개의 태그를 표시합니다. 태그는 <mark>핵심 키워드를 요약</mark>하여
+        사용자의 콘텐츠 탐색과 선택을 돕는 역할이기 때문에 너무 많은 태그 목록을 표시하는 것은 되려
+        콘텐츠 탐색을 방해할 수 있습니다. (groupable)
       </test-text>
       <test-text variant="body">
-        예외 케이스. 페이지 전체를 관통하는 경우는 탐색을 보조하는 역할이 아니라 정보를 보충하는 역할이기 때문에? 4개 이상이 허용된다. ex: user
-        profile page
+        예외 케이스. 페이지 전체를 관통하는 경우는 탐색을 보조하는 역할이 아니라 정보를 보충하는
+        역할이기 때문에? 4개 이상이 허용된다. ex: user profile page
       </test-text>
       <!-- <test-text variant="body"> 오직 tertiary만 그룹이 될 수 있다. </test-text> -->
 
       <test-text variant="subhead">Feature1. Easy scanning</test-text>
       <test-text variant="body">
-        <b>Use short labels for easy scanning.</b> 중요한 정보를 빠르게 파악할 수 있는 짧은 단어의 조합. 최대 2단어.
+        <b>Use short labels for easy scanning.</b> 중요한 정보를 빠르게 파악할 수 있는 짧은 단어의
+        조합. 최대 2단어.
       </test-text>
     </section>
     <!-- <li><span hidden>triggering interaction</span></li> -->
@@ -98,11 +101,13 @@
   -->
   <article class="article js-observer js-scrollspy-section">
     <test-text variant="title">Badges</test-text>
-    <test-text variant="body-large">사실 뱃지로 퉁치기 어려운 사용 케이스들임. 아바타와 바텀 네비게이션 등 특정 컴포넌트 의존도가 높다.</p>
-    <test-text variant="body-large">dot badge. count badge / activity bar counter (vs code)</p>
+    <test-text variant="body-large">
+      사실 뱃지로 퉁치기 어려운 사용 케이스들임. 아바타와 바텀 네비게이션 등 특정 컴포넌트 의존도가
+      높다.
+    </test-text>
 
     <section class="component-example">
-      <test-row>
+      <test-group>
         <em class="dot-badge"></em>
         <test-badge variant="primary"></test-badge>
         <style>
@@ -121,10 +126,13 @@
         <test-chip label="메뉴">
           <test-badge slot="badge">16</test-badge>
         </test-chip>
-      </test-row>
+      </test-group>
     </section>
 
     <section class="component-guide">
+      <test-text variant="body-large">
+        dot badge. count badge / activity bar counter (vs code)
+      </test-text>
       <test-text variant="subhead">New badge (status)</test-text>
       <test-text variant="subhead">Live badge (status)</test-text>
       <test-text variant="subhead">Unread badge (status)</test-text>

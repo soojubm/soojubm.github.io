@@ -1,6 +1,12 @@
 import { makeStyleSheet } from './utils'
 
-class Checkbox extends HTMLElement {
+class CustomHTMLElement extends HTMLElement {
+  constructor() {
+    super()
+  }
+}
+
+class Checkbox extends CustomHTMLElement {
   static formAssociated = true
   static observedAttributes = ['checked']
 
@@ -14,22 +20,22 @@ class Checkbox extends HTMLElement {
     container.classList.add('checkbox')
 
     const label = document.createElement('label')
+    label.setAttribute('for', this.name || '')
+
     const input = document.createElement('input')
+    input.setAttribute('type', 'checkbox')
+    input.setAttribute('id', this.name || '')
+    input.setAttribute('name', this.name || '')
 
     input.addEventListener('change', () => {
       alert()
       // 타겟이 check all 일 때
       if (this.disabled) return
     })
-    input.setAttribute('type', 'checkbox')
 
     shadow.appendChild(container)
     container.appendChild(input)
     container.appendChild(label)
-
-    label.setAttribute('for', this.name || '')
-    input.setAttribute('id', this.name || '')
-    input.setAttribute('name', this.name || '')
 
     if (this.label) {
       label.textContent = this.label

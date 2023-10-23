@@ -83,7 +83,7 @@
 .post-pagination-previous-label {margin:0 0 .25rem 0;font-size:var(--font-size-medium);font-weight:normal;color:var(--color-text-light);}
 .post-pagination-previous-postname {@mixin text-subhead;}
 .post-pagination-next {
-	display:flex;flex-direction:column;align-items:end;width:var(--grid-column);text-align:right;color:var(--color-text);position:relative;}
+	display:flex;flex-direction:column;align-items:flex-end;width:var(--grid-column);text-align:right;color:var(--color-text);position:relative;}
 .post-pagination-next:hover {@mixin hover-item;}
 .post-pagination-next-media {@mixin avatar-container;margin-bottom:1rem;margin-left:auto;}
 .post-pagination-next-label {margin:0 0 .25rem 0;font-size:var(--font-size-medium);font-weight:normal;color:var(--color-text-light);}

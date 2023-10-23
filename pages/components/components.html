@@ -28,7 +28,7 @@
   </p>
 
       <section class="textbox" style="margin: 4rem var(--grid-margin);position: relative;">
-        <test-row data-e="menu" class="textbox-toolbar" style="width:max-content;position:absolute;top:var(--space-1);left:var(--space-1);">
+        <test-group data-e="menu" class="textbox-toolbar" style="width:max-content;position:absolute;top:var(--space-1);left:var(--space-1);">
           <!-- <div class="chip" style="margin: 0 var(--space-2) 0 0">
             <select
               class="chip-label"
@@ -45,7 +45,7 @@
           <test-chip class="textbox-toolbar-italic">
             <test-icon slot="icon" name="italic"></test-icon>
           </test-chip>
-        </test-row>
+        </test-group>
         <div class="textbox-view" role="textbox" contenteditable="true" aria-placeholder="" aria-labelledby="" style="padding:48px var(--space-2) var(--space-1);">
           <h1 class="textbox-view-heading" style="margin: 0 0 var(--space-4) 0; color: var(--color-text-light)">제목</h1>
           <div class="textbox-view-bdoy" style="color: var(--color-text-light)">제목 / 내용 선택 영역에 is-selected</div>
@@ -58,39 +58,6 @@
       <!-- https://story.pxd.co.kr/1451 -->
       <p>loading state/dfn/abbr</p>
       https://material.io/design/interaction/states.html
-
-
-      <test-text variant="subhead">Writings</test-text>
-      사용하다 -> 제공하다 / 사용자 관점으로. 도큐멘터이션의 사용자가 아닌 서비스의 사용자 관점의 문서 작성
-      <test-text variant="body-large">목록의 나머지를 더 보여줄 때는 [모두보기], 미리보기 형식의 텍스트를 더 보여줄 때는 [전체보기]</test-text>
-      <dt>모두보기</dt><dd>see all(15)(internal, arrow-right)</dd>
-      <dt>더보기</dt><dd>더보기vs더불러오기(more, arrow-down), 자세히보기, learn more 등(external, arrow-right-top)</dd>
-
-
-      부정어/긍정어/명령어 / 한자 지양 / -적
-      '-때', '경우', '사용' 최소화.
-      하세요, 할 수 있습니다. 보다 합니다. 입니다
-      <li>
-        MVP 검증을 위한 최소한의 컴포넌트 라이브러리로 시작했습니다. 이후 시각 언어를 추가하며 다양한 도메인에 활용할 수 있도록 구성하고 있습니다.
-      </li>
-      <li>1~2가지 케이스는 예외 케이스로 정의한다.</li>
-      <li>dos / don'ts 케이스는 이미지를 사용하지 않고 간결하게 서술합니다. 컴포넌트는 계속 변경되기 때문에 유지보수 비용 증가.</li>
-      <li>모든 시각정보는 non-clickable. 모든 인터렉션은 clickable.</li>
-      역할과 형태 구분. 형태는 textfield, action와 2개의 사이즈? 예시. select는 textfield / chip 2가지. 아니다. 토큰으로 충분하다.
-      역할에 근거합니다. 역할 기반의 네이밍. ?? 여러 개의 tag를 감싸는 부모 태그는 tag group이 tags보다 좋고, tag list보다 좋습니다. 컴포넌트, 클래스
-      네이밍에 방향(left, right)을 사용하지 마세요. 레이아웃은 변경 가능성이 크기 때문.
-      할 수 있다 -> 하세요/합니다
-
-      2023년 3월 말. Props를 디자인 가이드와 묶어서 정리하기.
-      이렇게 하면 Props 존재 이유를 설명할 필요도 없고, 디자인 패턴을 한 번에 망라할 수
-      있다. 형태를 위한 프롭스와 기능을 위한 프롭스를 나눌 수 있을까?
-      Anatomy와 Props를 통합할 수 있을까? 메타 푸라불럼를 함께 푸롭스에서다뤄보기.
-
-      시스템 디자이너로서 제품을 소비할 때 디자이너와 개발자의 경험을 대규모로 최적화하는 것은 우리의 의무입니다. 시스템 자체. 스타일 프리미티브
-      구성이 우선순위가 지정되지 않으면 디자이너와 개발자 사이에 많은 마찰이 있을 뿐만 아니라 토큰 아키텍처를 통해 피할 수 있는 많은 스타일 불일치가
-      있을 것입니다.
-      Presentation style="modal | toast | sheet" ... 이렇게 되면 윈도우 사이즈가 변경될 때 props를 변경해주어야 함.
-      Actions: remove, select, check/uncheck, add, link, action? toggle?, submit
   </header>
 
     <div class="js-tab">
@@ -507,11 +474,11 @@
 
       <test-tile>
         <test-text variant="subhead">Senior Front-end Developer</test-text>
-        <test-row>
+        <test-group>
           <test-tag>Full-Time</test-tag>
           <test-tag>Korea</test-tag>
           <test-tag>Remote friendly</test-tag>
-        </test-row>
+        </test-group>
         <test-chip label="View Job"></button>
       </test-tile>
 
@@ -664,7 +631,7 @@
       </test-tile>
 
       <p style="margin: 1rem 0 0.25rem; font-size: var(--font-size-medium)">액세스 권한이 있는 사용자</p>
-      <test-row direction="column">
+      <test-group alignment="vertical">
         <test-menuitem label="수줍이 (나)">
           <test-avatar slot="avatar"></test-avatar>
           <test-tag style="margin-left: auto">소유자</test-tag>
@@ -676,7 +643,7 @@
           </test-tag>
           <figure class="icon-indicator" style="margin-left: var(--space-1)"><span class="material-symbols-outlined">arrow_drop_down</span></figure>
         </test-menuitem>
-      </test-row>
+      </test-group>
       <footer>
         <test-button variant="primary" type="submit">완료</test-button>
       </footer>
@@ -686,10 +653,10 @@
           <test-icon slot="icon" name="arrow-left"></test-icon>
         </test-chip>
       </test-titlebar>
-      <test-row direction="column">
+      <test-group alignment="vertical">
         <test-checkbox label="편집자가 권한을 변경하고 공유할 수 있습니다."></test-checkbox>
         <test-checkbox label="뷰어 및 댓글 작성자에게 다운로드, 인쇄, 복사 옵션 표시."></test-checkbox>
-      </test-row>
+      </test-group>
       <test-separator></test-separator>
       <p>일반 액세스 (기본 액세스라는 의미인 듯)</p>
       <test-chip label="제한됨">
@@ -745,11 +712,11 @@
           <test-icon slot="icon" name="arrow-left"></test-icon>
         </test-chip>
       </test-titlebar>
-      <test-row direction="column">
+      <test-group alignment="vertical">
         <!-- aira-checked="mixed" aria-controls="1 2" -->
         <test-checkbox label="재생 목록 1"></test-checkbox>
         <test-checkbox label="재생 목록 2"></test-checkbox>
-      </test-row>
+      </test-group>
       <test-tile variant="elevated" size="small">
         <test-menuitem label="새 컬렉션 만들기">
           <test-avatar slot="avatar">+</test-avatar>

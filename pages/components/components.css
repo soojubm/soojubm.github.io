@@ -1,5 +1,7 @@
 .component {
   transition: all .4s;
+
+  --container-width: 640px;
 }
 .component-example {margin:3rem -5vw;padding:2rem var(--grid-margin) 3rem;
   border: var(--border);
@@ -19,9 +21,11 @@
   display: block;
   width: 100%;
   /* variables */
-  max-width: 800px;
+  max-width: var(--container-width);
 }
 .component-case {
+  max-width: var(--container-width);
+  margin:var(--space-after-subhead) 0 0 0;
   /* margin: 1rem -5vw 0; */
   padding: 1rem;
   border: var(--border);
@@ -37,7 +41,10 @@
 }
 
 .component-props {
-  margin:-4rem 0 1rem;padding:var(--space-4);
+  max-width: var(--container-width);
+  margin:-4rem 0 1rem;
+  padding:var(--space-4);
+  box-sizing: border-box;
   /* background: var(--color-background-strong); */
   /* background: var(--gray800); */
   background-color: var(--color-background);
@@ -63,8 +70,6 @@
 /* TODO text.css 참고 */
 [variant=subhead] + [variant=body]{display:block;margin:var(--space-after-subhead) 0 0;}
 
-
-.component-case {margin:var(--space-after-subhead) 0 0 0;}
 .component-props [variant=subhead] {display:none;}
 .component-guide {
   margin:3.5rem 0 4rem;
@@ -74,6 +79,7 @@
 .component-guide [variant=body] + [variant=body] {display:block;margin:var(--space-3) 0 0;}
 
 .component-references {
+  max-width: var(--container-width);
   display: flex;
   align-items: center;
   gap: var(--space-2);
@@ -114,7 +120,7 @@ p + [variant="subhead"],
 [variant=body] + [variant="subhead"] {display:block;margin-top: 2.5rem;}
 [variant="subhead"] + p {margin: 0 0 var(--space-after-subhead) 0;}
 
-[variant="subhead"] + test-row,
+[variant="subhead"] + test-group,
 [variant="subhead"] + test-tile {
   display: block;
   margin: var(--space-after-subhead) 0 0 0;

@@ -8,13 +8,17 @@
 
     <section class="component-example">
       <test-text variant="title">heading1, title</test-text>
-      <test-text variant="subhead"><p style="margin-bottom: -0.5rem">heading2, subhead</p></test-text>
+      <test-text variant="subhead"
+        ><p style="margin-bottom: -0.5rem">heading2, subhead</p></test-text
+      >
       <test-text variant="label">heading3, label</test-text>
       <test-text variant="body-large">body1 (large) - post/ max-width 정의</test-text>
       <test-text variant="body">body2 / max-width 정의</test-text>
       <test-text variant="body-bold">body bold - button & meta</test-text>
 
-      <footer style="display: flex; flex-direction: column; gap: var(--space-2); margin: 1.5rem 0 0 0">
+      <footer
+        style="display: flex; flex-direction: column; gap: var(--space-2); margin: 1.5rem 0 0 0"
+      >
         <div style="display: flex; align-items: center; gap: var(--space-1)">
           <i class="iconoir-pipe-3d"></i>
           궁금증이 해결되지 않는다면?
@@ -48,14 +52,28 @@
       <test-separator></test-separator>
       <div class="tile-flat">
         <div class="summary-item">
-          <div class="summary-item-label" style="font-weight: var(--font-weight-bold)">서비스 수수료</div>
+          <div class="summary-item-label" style="font-weight: var(--font-weight-bold)">
+            서비스 수수료
+          </div>
           <div class="summary-item-value" style="font-weight: var(--font-weight-bold)">3,000원</div>
         </div>
         <div class="summary-item">
-          <div class="summary-item-label" style="font-weight: var(--font-weight-bold); color: var(--color-primary)">서비스 수수료</div>
-          <div class="summary-item-value" style="font-weight: var(--font-weight-bold); color: var(--color-primary)">₩ 3,000</div>
+          <div
+            class="summary-item-label"
+            style="font-weight: var(--font-weight-bold); color: var(--color-primary)"
+          >
+            서비스 수수료
+          </div>
+          <div
+            class="summary-item-value"
+            style="font-weight: var(--font-weight-bold); color: var(--color-primary)"
+          >
+            ₩ 3,000
+          </div>
         </div>
-        <div style="margin: 1rem 0 0 0"><test-button variant="primary" label="구매 확정하고 -"></test-button></div>
+        <div style="margin: 1rem 0 0 0">
+          <test-button variant="primary" label="구매 확정하고 -"></test-button>
+        </div>
       </div>
 
       <br />
@@ -105,29 +123,36 @@
 
       <br />
       <p class="util-truncate">
-        이런 생각을 한 건 다들 식탁에 앉은 후였고, 나는 재미있는 고래잡이 이야기를 들을 기대에 부풀었다. 그런데 이거 참 놀랍게도 거의 모두가 깊은
-        침묵에 잠겼다. 그것도 모자라 다들 난감해하는 눈치였다. 아니, 폭풍우가 몰아치는 가운데 엄청나게 큰 고래, 그것도 생전 처음 보는 고래를 수줍은
-        기색 없이 잡아 올리고 눈도 깜빡하지 않은 채 사투를 벌여서 죽이는 용맹한 바닷사람들이 직업도 똑같고 취향까지 비슷한 사람들이 모여 앉은 아침
-        식탁에서는 그린 산맥의 목장을 한 번도 떠나 본 적 없는 양 떼마냥 부끄러워하며 서로를 힐끔거릴 뿐이었다. 이 얼마나 희한한 광경인가! 숫기 없는
-        곰, 소심한 전사 같은 고래잡이들이라니! <button style="font-weight: var(--font-weight-bold)">더 보기</button>
+        이런 생각을 한 건 다들 식탁에 앉은 후였고, 나는 재미있는 고래잡이 이야기를 들을 기대에
+        부풀었다. 그런데 이거 참 놀랍게도 거의 모두가 깊은 침묵에 잠겼다. 그것도 모자라 다들
+        난감해하는 눈치였다. 아니, 폭풍우가 몰아치는 가운데 엄청나게 큰 고래, 그것도 생전 처음 보는
+        고래를 수줍은 기색 없이 잡아 올리고 눈도 깜빡하지 않은 채 사투를 벌여서 죽이는 용맹한
+        바닷사람들이 직업도 똑같고 취향까지 비슷한 사람들이 모여 앉은 아침 식탁에서는 그린 산맥의
+        목장을 한 번도 떠나 본 적 없는 양 떼마냥 부끄러워하며 서로를 힐끔거릴 뿐이었다. 이 얼마나
+        희한한 광경인가! 숫기 없는 곰, 소심한 전사 같은 고래잡이들이라니!
+        <button style="font-weight: var(--font-weight-bold)">더 보기</button>
       </p>
 
       <br />
 
       <p>
-        <button style="display: flex; align-items: center; gap: 0.5rem; color: var(--color-primary)">
+        <button
+          style="display: flex; align-items: center; gap: 0.5rem; color: var(--color-primary)"
+        >
           View More <test-icon name="nav-arrow-down"></test-icon>
         </button>
-        <button style="display: flex; align-items: center; gap: 0.5rem; color: var(--color-primary)">
+        <button
+          style="display: flex; align-items: center; gap: 0.5rem; color: var(--color-primary)"
+        >
           View Less <test-icon name="nav-arrow-up"></test-icon>
         </button>
       </p>
 
-      <div class="hero">
-        <test-text variant="title">Page heading</test-text>
+      <div class="hero" style="max-width: 560px">
+        <test-text variant="title">Hero heading</test-text>
         <test-text variant="body-large" class="article-description">
-          이런 생각을 한 건 다들 식탁에 앉은 후였고, 나는 재미있는 고래잡이 이야기를 들을 기대에 부풀었다. 그런데 이거 참 놀랍게도 거의 모두가 깊은
-          침묵에 잠겼다.
+          이런 생각을 한 건 다들 식탁에 앉은 후였고, 나는 재미있는 고래잡이 이야기를 들을 기대에
+          부풀었다. 그런데 이거 참 놀랍게도 거의 모두가 깊은 침묵에 잠겼다.
         </test-text>
         <footer class="hero-actions" style="margin: 1.5rem 0 0">
           <test-button variant="primary" href="#components">Call to action</test-button>
@@ -150,21 +175,31 @@
 
     <test-text variant="subhead">디지털 환경의<br />타이포그래피 일반</test-text>
     <ul>
-      <li>폰트마다 기준선이 다르기 때문에 섞어짤 때 또는 폰트를 변경할 때 주변 요소와 부모 요소에 맞춰 시각보정이 필요할 수 있습니다.</li>
+      <li>
+        폰트마다 기준선이 다르기 때문에 섞어짤 때 또는 폰트를 변경할 때 주변 요소와 부모 요소에 맞춰
+        시각보정이 필요할 수 있습니다.
+      </li>
       <li>한 줄은 24px(small size token)의 line-height를 갖는 것이 좋은가?</li>
       <li>블로그, 뉴스 기사 등 긴 글의 텍스트 페이지의 폰트 크기는 기본값(?)보다 크다.</li>
-      <li>텍스트는 주변의 엘리먼트에 강하게 영향을 받기 때문에 주변 요소와 연동해서 추상화 변수를 활용합니다.</li>
+      <li>
+        텍스트는 주변의 엘리먼트에 강하게 영향을 받기 때문에 주변 요소와 연동해서 추상화 변수를
+        활용합니다.
+      </li>
       <li>todo. x-height가 낮은 영문 폰트와 섞어짤 때.</li>
     </ul>
 
     <test-text variant="subhead">Best practices</test-text>
     <ul>
       <li>
-        태그라인은 작은 화면에서도 임팩트를 줄 있도록 작성 단계에서 행갈이를 고려하세요. 글자의 수와 단어의 수를 제한하고 개행 조건을 정의하세요.
+        태그라인은 작은 화면에서도 임팩트를 줄 있도록 작성 단계에서 행갈이를 고려하세요. 글자의 수와
+        단어의 수를 제한하고 개행 조건을 정의하세요.
       </li>
       <li>long-form content. truncate-multiple은 항상 2줄.</li>
       <li>제목을 자르는 것을 허용할 것인가? 허용하지 않을 것인가?</li>
-      <li>섹션은 항상 제목을 가져야 한다. 시각적으로 숨겨지지 않은 명시적인 텍스트 노드를. 제목을 포함하는 섹션 컴포넌트를 활용할 수 있다.</li>
+      <li>
+        섹션은 항상 제목을 가져야 한다. 시각적으로 숨겨지지 않은 명시적인 텍스트 노드를. 제목을
+        포함하는 섹션 컴포넌트를 활용할 수 있다.
+      </li>
       <!-- <li>프로모션 페이지의 헤드라인으로 제한적으로 사용합니다.</li> -->
     </ul>
 
@@ -174,21 +209,27 @@
     </ul>
 
     <test-text variant="subhead">텍스트 모듈</test-text>
-    <p>본문은 왼끝 맞추기(오른끝 흘리기). 가운데 정렬은 상태 또는 결과 맥락에 사용하여 사용자의 주목을 높입니다.</p>
+    <p>
+      본문은 왼끝 맞추기(오른끝 흘리기). 가운데 정렬은 상태 또는 결과 맥락에 사용하여 사용자의
+      주목을 높입니다.
+    </p>
 
     <test-text variant="subhead">들여쓰기</test-text>
-    <p>작은 화면에서 공간 활용을 위해 왼쪽에서 들여쓰지 않습니다. 단락의 위 아래 간격을 활용합니다.</p>
+    <p>
+      작은 화면에서 공간 활용을 위해 왼쪽에서 들여쓰지 않습니다. 단락의 위 아래 간격을 활용합니다.
+    </p>
 
     <test-text variant="subhead">텍스트의 강조</test-text>
     <ul>
       <li>
-        strong 태그는 의미론적 강조에만 사용합니다. mark, u, em, b, strong. 문장 안에서 텍스트를 두 가지 방법으로 강조할 수 있습니다.
+        strong 태그는 의미론적 강조에만 사용합니다. mark, u, em, b, strong. 문장 안에서 텍스트를 두
+        가지 방법으로 강조할 수 있습니다.
         <mark>이렇게</mark>와
         <u>이렇게</u>
       </li>
       <li>
-        단락에 포함된 단어나 구문을 underline, <del>bold</del>, primary color로 강조하지 않습니다. underline과 pirmary colored text는
-        <mark>클릭할 수 있는clickable</mark> 기표입니다.
+        단락에 포함된 단어나 구문을 underline, <del>bold</del>, primary color로 강조하지 않습니다.
+        underline과 pirmary colored text는 <mark>클릭할 수 있는clickable</mark> 기표입니다.
       </li>
     </ul>
 
@@ -213,7 +254,8 @@
     <ul>
       <li>텍스트 목록만 리스트 태그(ul, ol, dl)로 마크업하세요. role=listbox/listitem</li>
       <li>
-        텍스트 목록을 2 댑스(nested)로 제공하지 마세요. 중첩된 목록은 콘텐츠를 읽기 어렵게 하고 작은 화면에서의 들여쓰기는 불필요한 공간을 차지합니다.
+        텍스트 목록을 2 댑스(nested)로 제공하지 마세요. 중첩된 목록은 콘텐츠를 읽기 어렵게 하고 작은
+        화면에서의 들여쓰기는 불필요한 공간을 차지합니다.
       </li>
       <li>todo. checklist.</li>
     </ul>
@@ -239,11 +281,19 @@
   </article>
 
   <section class="section-example">
-    <div class="dashboard-item overview-item tile-elevated" style="width: var(--width-tiny); padding: 1rem">
+    <div
+      class="dashboard-item overview-item tile-elevated"
+      style="width: var(--width-tiny); padding: 1rem"
+    >
       <div class="dashboard-item-label" style="font-size: var(--font-size-medium)">수신</div>
-      <span class="dashboard-item-tag tag" style="position: absolute; right: 1rem; top: 0.875rem">태그</span>
+      <span class="dashboard-item-tag tag" style="position: absolute; right: 1rem; top: 0.875rem"
+        >태그</span
+      >
       <b class="dashboard-item-value" style="font-size: var(--font-size-huge)">
-        1,508<small style="margin: 0 0 0 0.25rem; font-size: var(--font-size-medium); vertical-align: super">90%</small>
+        1,508<small
+          style="margin: 0 0 0 0.25rem; font-size: var(--font-size-medium); vertical-align: super"
+          >90%</small
+        >
       </b>
       <div class="meter">
         <div class="meter-track">
@@ -254,7 +304,9 @@
     </div>
 
     <div class="graph" style="border: var(--border); border-radius: var(--radius)">
-      <div class="graph-title">1월 26일 <em>컴퓨터통신 분야</em>에서는<br /><em>7백명의 지식iN</em>들이 답변하셨습니다.</div>
+      <div class="graph-title">
+        1월 26일 <em>컴퓨터통신 분야</em>에서는<br /><em>7백명의 지식iN</em>들이 답변하셨습니다.
+      </div>
       <div class="graph-item">
         <span class="graph-item-value">40%</span>
         <div class="graph-item-bar"></div>

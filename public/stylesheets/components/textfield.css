@@ -94,7 +94,7 @@ input[type=search]::-webkit-search-results-decoration {display:none;}
 
 
 .textfield-suffix, 
-::slotted([slot=icon]) {
+::slotted([slot=suffix]) {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -105,7 +105,7 @@ input[type=search]::-webkit-search-results-decoration {display:none;}
 }
 
 .textfield-prefix,
-::slotted([slot=leading]) {
+::slotted([slot=prefix]) {
   display: flex;
   align-items: center;
   height: var(--textfield-height);

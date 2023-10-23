@@ -3,18 +3,16 @@
     <test-text variant="title" title="or Box">Checkboxes</test-text>
     <test-text variant="body-large">옵션 목록에서 하나 이상의 옵션을 선택합니다.</test-text>
 
-    <p>expansion panel.조건/상태. 트리거는 다양</p>
-
     <section class="component-example">
       <!-- a11y checkgroup not valid -->
       <!-- <legend">checkgroup</legend> -->
       <!-- TODO test-checkbox-group -->
-      <test-row>
+      <test-group>
         <test-checkbox size="large" checked></test-checkbox>
         <test-checkbox checked></test-checkbox>
-      </test-row>
+      </test-group>
       <test-separator></test-separator>
-      <test-row direction="column">
+      <test-group alignment="vertical">
         <test-checkbox
           name="checkbox"
           value="value"
@@ -33,11 +31,7 @@
         <test-checkbox class="js-check" type="checkbox" id="terms" name="terms">
           이용약관에 동의합니다. <a href="#">이용약관 바로가기</a></test-checkbox
         >
-      </test-row>
-    </section>
-    <section class="component-case">
-      <test-checkbox name="checkbox" label="비활성 상태" checked disabled></test-checkbox>
-      <test-checkbox name="checkbox" label="비활성 상태" disabled></test-checkbox>
+      </test-group>
     </section>
 
     <section class="component-props">
@@ -63,9 +57,26 @@
         <dd>TODO checkbox group에서 checkboxAll에 종속되는 옵션</dd>
         <dt>onChange</dt>
         <dd>(event: React.ChangeEvent[HTMLInputElement]) >] void</dd>
-        <dd>React.ChangeEventHandler[] / @types/react</dd>
-        <dd>checkbox group이 가지는 추세.</dd>
+        <dd>React.ChangeEventHandler[]</dd>
+        <dd>checkbox group의 prop</dd>
       </dl>
+    </section>
+
+    <section class="component-case">
+      <test-group alignment="vertical">
+        <test-checkbox name="checkbox" label="비활성 상태" checked disabled></test-checkbox>
+        <test-checkbox name="checkbox" label="비활성 상태" disabled></test-checkbox>
+      </test-group>
+    </section>
+
+    <section class="component-case">
+      <test-tile>
+        <test-checkbox
+          name="checkbox"
+          label="모바일 클릭 영역을 위한 박스 형태. 체크박스를 크게 할 수도 있지만."
+          checked
+        ></test-checkbox>
+      </test-tile>
     </section>
 
     <section class="component-guide">
@@ -75,9 +86,9 @@
       </test-text>
     </section>
 
-    <test-text variant="subhead">사례:약관동의</test-text>
+    <test-text variant="subhead">Use cases</test-text>
     <section class="component-case">
-      <test-row slot="entire" direction="column" style="max-width: 400px">
+      <test-group slot="entire" alignment="vertical" style="max-width: 400px">
         <test-checkbox
           size="medium"
           class="js-checkall"
@@ -86,32 +97,28 @@
           data-indeterminate="true"
           indeterminate
         >
-          <em style="font-style: normal; font-weight: var(--font-weight-bold)"> 모두 동의합니다</em>
+          <em style="font-style: normal; font-weight: var(--font-weight-bold)">
+            모두 동의합니다
+          </em>
         </test-checkbox>
         <test-checkbox name="interest" value="other"> 기타 </test-checkbox>
         <test-checkbox name="interest" value="other"> 기타 </test-checkbox>
-      </test-row>
+      </test-group>
     </section>
-
-    <test-text variant="subhead">필터링 필드셋</test-text>
     <section class="component-case">
-      <test-row slot="entire" direction="column" style="max-width: 400px">
-        <test-text variant="body-bold">샘플 소제목</test-text>
+      <test-group slot="entire" alignment="vertical" style="max-width: 400px">
+        <test-text variant="body-bold">콘텐츠 필터링</test-text>
         <test-checkbox name="interest" value="other"> 옵션 하나 </test-checkbox>
         <test-checkbox name="interest" value="other"> 옵션 둘 </test-checkbox>
         <test-checkbox name="interest" value="other"> 옵션 셋 </test-checkbox>
         <test-checkbox name="interest" value="other"> 옵셧 넷 </test-checkbox>
         <div style="height: var(--space-1)"></div>
         <test-button variant="secondary" label="적용"></test-button>
-      </test-row>
+      </test-group>
     </section>
-
-    <test-text variant="subhead">콘텐츠 필터링</test-text>
     <section class="component-case">
       <test-checkbox slot="entire" label="포토리뷰만 보기"></test-checkbox>
     </section>
-
-    <test-text variant="subhead">쿠키관련</test-text>
     <!-- <test-text variant="body">쿠키 관련 util</test-text> -->
     <section class="component-case">
       <test-checkbox label="다시 묻지 않기 / 일주일 동안 보지 않기don't ask again"></test-checkbox>

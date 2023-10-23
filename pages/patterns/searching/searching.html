@@ -39,12 +39,12 @@
           </button> -->
         </form>
 
-        <test-row style="margin:var(--space-3) 0 1.5rem;">
+        <test-group style="margin:var(--space-3) 0 1.5rem;">
           <test-chip label="로얄테넌바움"></test-chip>
           <test-chip label="소매치기"></test-chip>
           <test-chip label="이탈리아여행"></test-chip>
           <test-chip label="아파트열쇠를빌려드립니다"></test-chip>
-        </test-row>
+        </test-group>
 
         <div style="max-width:400px;">
           <test-menu-group>
@@ -77,10 +77,10 @@
   <test-text variant="title">최근 검색 내역</test-text>
   <section class="component-example">
     <section class="search-recent" style="max-width:400px;">
-      <test-row style="align-items:center;justify-content:space-between;">
+      <test-group style="align-items:center;justify-content:space-between;">
         <test-text variant="body-bold">최근 검색</test-text>
         <test-link label="">모두보기</test-link>
-      </test-row>
+      </test-group>
       <div style="height:var(--space-after-subhead);"></div>
       <test-menu-group>
         <test-menuitem label="고슴이">
@@ -139,27 +139,27 @@
   <section class="component-example">
     <test-tile variant="nuded" style="max-width: 800px">
       <test-result label="<b>수줍이</b>와(과) 일치하는 내용이 없습니다.">
-        <test-row slot="list" class="search-similars" style="justify-content:center;">
+        <test-group slot="list" class="search-similars" style="justify-content:center;">
           <test-chip label="검색어 제공">
             <test-avatar slot="icon" fallback="🦔"></test-avatar>
           </test-chip>
           <test-chip label="애옹">
             <test-avatar slot="icon" fallback="🐈‍⬛"></test-avatar>
           </test-chip>
-        </test-row>
+        </test-group>
       </test-result>
     </test-tile>
   </section>
 
 
   <test-text variant="subhead">검색 기표</test-text>
-  <test-row>
+  <test-group>
     <test-chip>
       <test-icon slot="icon" name="search"></test-icon>
     </test-chip>
     <test-chip>키워드</test-chip>
     <span class="hashtag">해시태그</span>
-  </test-row>
+  </test-group>
   <test-text variant="subhead">페이지 탐색 중 검색 결과로 이동</test-text>
   <ul>
     <li>해시태그 또는 카테고리 등 인기/추천 키워드로 결과 페이지로 이동</li>

@@ -5,9 +5,17 @@
         <b>popover: </b>
         <span>전체 알림 목록을 볼 수 있는 페이지 필요. 모두보기 링크 버튼 필요. </span>
       </li>
-      <li><b>modal: </b> <span>전체 알림 목록을 볼 수 있는 페이지 불필요. 모달에서 infinite scroll이나 more load</span></li>
+      <li>
+        <b>modal: </b>
+        <span
+          >전체 알림 목록을 볼 수 있는 페이지 불필요. 모달에서 infinite scroll이나 more load</span
+        >
+      </li>
       <li>개별 알림 액션: 읽음-링크/삭제</li>
-      <li>MVP를 위한 팁: 전체를 하나의 클릭 영역으로 정의하고, 콘텐츠와 작성자를 분리하지 않고 하나의 텍스트 더미.</li>
+      <li>
+        MVP를 위한 팁: 전체를 하나의 클릭 영역으로 정의하고, 콘텐츠와 작성자를 분리하지 않고 하나의
+        텍스트 더미.
+      </li>
       <li>알림의 설정</li>
     </ul>
     <!-- 
@@ -22,25 +30,50 @@
       </test-chip>
     </test-titlebar>
 
-    <test-tablist class="tablist type-t" role="tablist" aria-label="sample tabs" style="margin-bottom: var(--space-3); z-index: 7">
-      <button class="tablist-tab" role="tab" aria-selected="true" aria-controls="panel-2" id="tab-2" tabindex="-1">좋아요</button>
-      <button class="tablist-tab" role="tab" aria-selected="false" aria-controls="panel-3" id="tab-3" tabindex="-1">코멘트</button>
+    <test-tablist
+      class="tablist type-t"
+      role="tablist"
+      aria-label="sample tabs"
+      style="margin-bottom: var(--space-3); z-index: 7"
+    >
+      <button
+        class="tablist-tab"
+        role="tab"
+        aria-selected="true"
+        aria-controls="panel-2"
+        id="tab-2"
+        tabindex="-1"
+      >
+        좋아요
+      </button>
+      <button
+        class="tablist-tab"
+        role="tab"
+        aria-selected="false"
+        aria-controls="panel-3"
+        id="tab-3"
+        tabindex="-1"
+      >
+        코멘트
+      </button>
       <i class="tablist-indicator"></i>
     </test-tablist>
 
-    <test-row class="notification-filter" style="margin: var(--space-3) 0">
+    <test-group class="notification-filter" style="margin: var(--space-3) 0">
       <test-chip label="모두" status="active"></test-chip>
       <test-chip label="읽지않음"></test-chip>
-    </test-row>
+    </test-group>
 
     <!-- TODO list는 결국 row/ stack이다. -->
-    <test-row direction="column">
+    <test-group alignment="vertical">
       <test-tile variant="elevated" size="small">
         <test-menuitem label="" description="">
           <test-avatar slot="avatar"></test-avatar>
           <div slot="text">
             <b>응암동 주간 인기글</b>
-            <p style="width: 100%; line-height: var(--line-height)">'송명섭 막걸리 6도 750m...' 외 1개 상품이 오늘 도착예정입니다~</p>
+            <p style="width: 100%; line-height: var(--line-height)">
+              '송명섭 막걸리 6도 750m...' 외 1개 상품이 오늘 도착예정입니다~
+            </p>
             <time>5일 전</time>
           </div>
         </test-menuitem>
@@ -48,10 +81,15 @@
       <test-tile variant="elevated" size="small">
         <test-menuitem label="오늘의 주요 종목 종가">
           <test-avatar slot="avatar"></test-avatar>
-          <p slot="text" style="width: 100%; margin: var(--space-2) 0; line-height: var(--line-height)">HSD 엔진 -2.4%</p>
+          <p
+            slot="text"
+            style="width: 100%; margin: var(--space-2) 0; line-height: var(--line-height)"
+          >
+            HSD 엔진 -2.4%
+          </p>
         </test-menuitem>
       </test-tile>
-    </test-row>
+    </test-group>
 
     <footer style="margin: var(--space-4) 0 0 0">
       <test-link>더 보기</test-link>

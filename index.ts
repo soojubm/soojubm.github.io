@@ -32,7 +32,7 @@ import { getWindowScrollTop, getElementOffsetTop } from './public/javascripts/ut
 
 // import { fetchPage } from './public/javascripts/router'
 
-document.addEventListener('DOMContentLoaded', lockBodyElement)
+// document.addEventListener('DOMContentLoaded', lockBodyElement)
 document.addEventListener('DOMContentLoaded', defineCustomElement)
 
 window.addEventListener('load', detectLoad)

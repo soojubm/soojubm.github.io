@@ -9,19 +9,18 @@
       </test-avatar> -->
       <test-text variant="title">Avatars</test-text>
       <test-text variant="body-large">
-        개체(유저, 회사, 프로젝트 등)를 대표하는 시각 정보입니다. 정보 더미의 주체로서 인접한 정보 더미 중 최상위 위계<span hidden
-          >(시각적인 위계가 아님)</span
-        >를 갖습니다.
+        개체(유저, 회사, 프로젝트 등)를 대표하는 시각 정보입니다. 정보 더미의 주체로서 인접한 정보
+        더미 중 최상위 위계<span hidden>(시각적인 위계가 아님)</span>를 갖습니다.
       </test-text>
     </header>
     <section class="component-example">
-      <test-row temp="vertical">
+      <test-group temp="vertical">
         <test-avatar size="huge" badge="true"></test-avatar>
         <test-avatar variant="secondary" size="huge" badge="true"></test-avatar>
         <test-avatar size="large" badge="true"></test-avatar>
         <test-avatar size="medium" fallback="수"></test-avatar>
         <test-avatar size="small"> </test-avatar>
-      </test-row>
+      </test-group>
     </section>
 
     <!-- <div style="margin-top: 0; margin-bottom: 2rem; display: flex; gap: var(--space-3); font-size: 12px; color: var(--color-primary)">
@@ -79,15 +78,17 @@
     </section>
 
     <blockquote>
-      <p>TODO :: hasBadge가 아니라 badge를 slot으로 넣는 것이 좋을까? badge에 숫자가 포함될 수도.</p>
+      <p>
+        TODO :: hasBadge가 아니라 badge를 slot으로 넣는 것이 좋을까? badge에 숫자가 포함될 수도.
+      </p>
       <p>TODO :: avatar는 패턴을 정리할 필요도 있다.</p>
     </blockquote>
 
     <section class="component-guide">
       <test-text variant="subhead">Behavior</test-text>
       <test-text variant="body" data-temp="clickable">
-        아바타 또는 아바타릂 포함하는 상위 요소(클릭을 보조하는 역할)는 항상 클릭할 수 있습니다. +++ 아웃라인 형태를 클릭할 수 없는 아바타로 정의
-        추가.
+        아바타 또는 아바타릂 포함하는 상위 요소(클릭을 보조하는 역할)는 항상 클릭할 수 있습니다. +++
+        아웃라인 형태를 클릭할 수 없는 아바타로 정의 추가.
       </test-text>
 
       <test-text variant="subhead">Visual style</test-text>
@@ -153,10 +154,11 @@
     </section>
 
     <!-- <test-tag>groupable</test-tag> -->
-    <test-text variant="subhead">아바타 그룹</test-text>
+    <!-- <test-text variant="subhead">아바타 그룹</test-text> -->
+    <test-text variant="subhead">Use cases</test-text>
     <section class="component-case">
       <test-tile variant="elevated" size="small" style="max-width: 400px">
-        <test-row style="align-items: center">
+        <test-group style="align-items: center">
           <test-avatar-group>
             <test-avatar size="small"></test-avatar>
             <test-avatar size="small"></test-avatar>
@@ -164,21 +166,23 @@
             <test-avatar size="small"></test-avatar>
           </test-avatar-group>
           <span class="avatargroup-label">Followed by 수줍이 외 4명</span>
-        </test-row>
+        </test-group>
       </test-tile>
-      <small class="mutiual" style="display: block; margin: var(--space-2) 0 0 0">내가 팔로우하는 사용자 중에는 팔로워가 없습니다. (twitter)</small>
+      <small class="mutiual" style="display: block; margin: var(--space-2) 0 0 0"
+        >내가 팔로우하는 사용자 중에는 팔로워가 없습니다. (twitter)</small
+      >
     </section>
-
-    <br /><br />
-    <!-- <test-tag>hoverable</test-tag> -->
-    <test-text variant="subhead">요약된 사용자 정보</test-text>
     <section class="component-case">
       <test-card variant="elevated" style="max-width: 400px">
         <div slot="entire">
           <test-menuitem label="수줍이" description="Youtube subscriber">
             <test-avatar slot="avatar"></test-avatar>
           </test-menuitem>
-          <div class="statistic" data-size="small" style="justify-content: left; margin: var(--space-2) 0 0 0">
+          <div
+            class="statistic"
+            data-size="small"
+            style="justify-content: left; margin: var(--space-2) 0 0 0"
+          >
             <div class="statistic-item" onclick="javascript:alert('샘플 유아이에요!')">
               <i class="statistic-label">팔로워</i>
               <span class="statistic-value">62</span>
@@ -189,17 +193,20 @@
               <span class="statistic-value">8</span>
             </div>
           </div>
-          <article class="" style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0">
+          <div style="margin: var(--space-2) 0 0">
             <figure>🥺</figure>
             <span class="avatargroup-label">이경수님을 팔로우하고 있는 친구가 없습니다.</span>
-          </article>
+          </div>
         </div>
       </test-card>
       <test-card variant="elevated" style="width: 400px; margin: 1rem 0 0">
         <div slot="entire">
           <div style="display: flex; gap: 1rem">
             <test-avatar size="huge" variant="secondary"></test-avatar>
-            <div class="statistic" style="gap: var(--space-2); flex-direction: column; justify-content: left">
+            <div
+              class="statistic"
+              style="gap: var(--space-2); flex-direction: column; justify-content: left"
+            >
               <div class="statistic-item" onclick="javascript:alert('샘플 유아이에요!')">
                 <i class="statistic-label">Top User</i>
                 <span class="statistic-value">Bruce Springsteen</span>
@@ -211,7 +218,7 @@
             </div>
           </div>
           <test-separator></test-separator>
-          <test-row style="align-items: center; width: 400px">
+          <test-group style="align-items: center; width: 400px">
             <test-avatar-group>
               <test-avatar size="small"></test-avatar>
               <test-avatar size="small"></test-avatar>
@@ -219,7 +226,7 @@
               <test-avatar size="small"></test-avatar>
             </test-avatar-group>
             <span class="avatargroup-label">Followed by 수줍이 외 4명</span>
-          </test-row>
+          </test-group>
         </div>
       </test-card>
     </section>

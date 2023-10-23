@@ -9,6 +9,7 @@ import AvatarGroup from './avatarGroup'
 
 import Tile from './tile'
 import Textfield from './textfield'
+import Searchfield from './searchfield'
 
 import Checkbox from './checkbox'
 import Switch from './switch'
@@ -16,7 +17,7 @@ import Radio from './Radio'
 
 import Button from './button'
 import Link from './link'
-import Row from './row'
+import Row from './group'
 import Text from './text'
 
 import Tablist from './tablist'
@@ -59,6 +60,7 @@ export function defineCustomElement() {
     customElements.define('test-result', Result)
 
     customElements.define('test-textfield', Textfield)
+    customElements.define('test-searchfield', Searchfield)
 
     customElements.define('test-checkbox', Checkbox)
     customElements.define('test-switch', Switch)
@@ -67,7 +69,7 @@ export function defineCustomElement() {
     customElements.define('test-tile', Tile)
     customElements.define('test-card', Card)
     customElements.define('test-titlebar', TitleBar)
-    customElements.define('test-row', Row)
+    customElements.define('test-group', Row)
     customElements.define('test-text', Text)
 
     customElements.define('test-tablist', Tablist)

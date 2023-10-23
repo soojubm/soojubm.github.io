@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     try {
       const response = await fetch(endpoint)
+      // const response2 = await fetch(`/pages/components/films/films_old.json`)
       if (!response.ok) throw 'Something went wrong.'
 
       const responseText = await response.json()

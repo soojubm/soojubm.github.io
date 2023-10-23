@@ -1,4 +1,9 @@
-<main class="component feeds" role="feed" aria-busy="false" style="max-width: 640px; margin: 0 auto">
+<main
+  class="component feeds"
+  role="feed"
+  aria-busy="false"
+  style="max-width: 640px; margin: 0 auto"
+>
   <article class="feed" aria-setsize="3" aria-posinset="1">
     <test-tag> 🔥 Most Popular </test-tag>
     <div style="height: 0.75rem"></div>
@@ -10,43 +15,67 @@
         <img src="/public/images/springsteen.jpg" alt="" />
       </figure>
       <test-text variant="body" class="feed-content-paragraph">
-        Monotonectally productivate progressive human capital without user friendly portals. Globally benchmark top-line ideas with distributed
-        catalysts for change. Authoritatively restore ubiquitous partnerships vis-a-vis <a href="#feed">synergistic models</a>.
+        Monotonectally productivate progressive human capital without user friendly portals.
+        Globally benchmark top-line ideas with distributed catalysts for change. Authoritatively
+        restore ubiquitous partnerships vis-a-vis <a href="#feed">synergistic models</a>.
       </test-text>
       <div style="height: 0.75rem"></div>
-      <test-row>
+      <test-group>
         <test-tag>Google</test-tag>
-      </test-row>
-      <div style="margin: 1rem 0; padding: 1rem; background: var(--color-background-weak); border-radius: var(--radius)">
-        <test-row direction="column">
+      </test-group>
+      <div
+        style="
+          margin: 1rem 0;
+          padding: 1rem;
+          background: var(--color-background-weak);
+          border-radius: var(--radius);
+        "
+      >
+        <test-group alignment="vertical">
           <test-tag>3월 14일 수정됨</test-tag>
           <test-menuitem label="Kakao" description="https://www.kakaocorp.com" size="large">
-            <test-avatar slot="avatar"><img src="/public/images/springsteen.jpg" alt="" /></test-avatar>
+            <test-avatar slot="avatar"
+              ><img src="/public/images/springsteen.jpg" alt=""
+            /></test-avatar>
           </test-menuitem>
           <test-menuitem label="Naver" description="https://www.naver.com" size="large">
-            <test-avatar slot="avatar"><img src="/public/images/springsteen.jpg" alt="" /></test-avatar>
+            <test-avatar slot="avatar"
+              ><img src="/public/images/springsteen.jpg" alt=""
+            /></test-avatar>
           </test-menuitem>
-        </test-row>
+        </test-group>
       </div>
-      <test-row class="feed-reaction">
+      <test-group class="feed-reaction">
         <test-chip label="119">
           <i slot="icon">💕</i>
         </test-chip>
         <!-- <figure class="post-reaction-like-icon"></figure>
           <span class="post-reaction-like-count">119</span> -->
-      </test-row>
+      </test-group>
     </div>
   </article>
 
   <ul style="margin: 4rem 0">
     <li>피드의 상세 페이지에서 전체 댓글 목록과 액션을 제공할 수 있다.</li>
     <li>원활한 피드 탐색 경험을 위해 피드의 콘텐츠를 일부 생략해서 보여줄 수 있다.</li>
-    <li>리액션 버튼과 리액션 수치를 각각 제공할 수 있고 따로 제공할 수 있다. 리액션한 사용자 목록을 어떻게 보여줄 것인가에 의존성이 있다.</li>
-    <li>리액션에서 한 번 정리했던 것인데, 중복 리액션과 횟수 등 정의. restful - put과 함께 공부해보기</li>
-    <li>피드가 노출되는 이유를 알려줄 수 있다. 마찬가지로 사용자는 보고 싶은 피드와 보고 싶지 않은 피드를 결정할 수 있다.</li>
-    <li>시의성이 강조되는 서비스이거나 현안을 다루는 서비스라면 스텟을 실시간으로 갱신할 필요가 있다.</li>
+    <li>
+      리액션 버튼과 리액션 수치를 각각 제공할 수 있고 따로 제공할 수 있다. 리액션한 사용자 목록을
+      어떻게 보여줄 것인가에 의존성이 있다.
+    </li>
+    <li>
+      리액션에서 한 번 정리했던 것인데, 중복 리액션과 횟수 등 정의. restful - put과 함께 공부해보기
+    </li>
+    <li>
+      피드가 노출되는 이유를 알려줄 수 있다. 마찬가지로 사용자는 보고 싶은 피드와 보고 싶지 않은
+      피드를 결정할 수 있다.
+    </li>
+    <li>
+      시의성이 강조되는 서비스이거나 현안을 다루는 서비스라면 스텟을 실시간으로 갱신할 필요가 있다.
+    </li>
     <li>피드 작성 폼의 양식 인터페이스를 제공할 필요가 있다.</li>
-    <li>하나 이상의 이미지를 포함할 수 있다면, 하나 이상의 이미지를 볼 수 있는 인터페이스가 필요하다.</li>
+    <li>
+      하나 이상의 이미지를 포함할 수 있다면, 하나 이상의 이미지를 볼 수 있는 인터페이스가 필요하다.
+    </li>
     <li>리액션 => 알림</li>
     <li>글줄의 길이는 상대적으로 좁게 짜는 경향이 있다.</li>
   </ul>
@@ -56,25 +85,50 @@
   <header class="help-head">
     <h1 class="help-head-title">고객센터</h1>
     <h1 class="help-head-title">무엇을 도와드릴까요?</h1>
-    <p class="help-head-description">Whether you’re starting an open source project or choosing new tools for your team, we’ve got you covered.</p>
+    <p class="help-head-description">
+      Whether you’re starting an open source project or choosing new tools for your team, we’ve got
+      you covered.
+    </p>
   </header>
 
-  <section class="help-topics" style="display: flex; justify-content: center; flex-direction: column"></section>
+  <section
+    class="help-topics"
+    style="display: flex; justify-content: center; flex-direction: column"
+  ></section>
 
   <section class="help-faq">
     <div class="faq-item">
-      <h2 class="faq-item-question js-toggle" role="button" aria-expanded="false" aria-disabled="false">
+      <h2
+        class="faq-item-question js-toggle"
+        role="button"
+        aria-expanded="false"
+        aria-disabled="false"
+      >
         <i>✔</i>뉴닉, 뉴스레터 보려면 돈 내야 해요?
       </h2>
-      <div class="faq-item-answer">놀랍게도 아직은 무료! 누구에게나 열려 있으니 어서 오세요! 기다리고 있을게요. 😉</div>
+      <div class="faq-item-answer">
+        놀랍게도 아직은 무료! 누구에게나 열려 있으니 어서 오세요! 기다리고 있을게요. 😉
+      </div>
       <footer class="faq-reaction">
         <p class="faq-reaction-title reaction-prompt">이 답변이 도움이 되었나요?</p>
-        <test-chip label="옹옹" data-reaction-text="disappointed" aria-label="Disappointed Reaction">
-          <span class="faq-reaction-button-emoji" data-emoji="disappointed" title="Disappointed">😃</span>
+        <test-chip
+          label="옹옹"
+          data-reaction-text="disappointed"
+          aria-label="Disappointed Reaction"
+        >
+          <span class="faq-reaction-button-emoji" data-emoji="disappointed" title="Disappointed"
+            >😃</span
+          >
           <test-badge slot="badge">2</test-badge>
         </test-chip>
-        <test-chip class="faq-reaction-button" data-reaction-text="neutral_face" aria-label="Neutral face Reaction">
-          <span class="faq-reaction-button-emoji" data-emoji="neutral_face" title="Neutral face">😞</span>
+        <test-chip
+          class="faq-reaction-button"
+          data-reaction-text="neutral_face"
+          aria-label="Neutral face Reaction"
+        >
+          <span class="faq-reaction-button-emoji" data-emoji="neutral_face" title="Neutral face"
+            >😞</span
+          >
           <b>앙앙. <span class="faq-reaction-button-count">2</span></b>
         </test-chip>
         <!-- <button class="faq-reaction-button" data-reaction-text="smiley" tabindex="0" aria-label="Smiley Reaction">
@@ -86,7 +140,9 @@
   </section>
 
   <section class="faq-contact">
-    <h2 class="faq-contact-title" style="color: var(--color-text-light)">해결이 안 된 문제가 있나요?</h2>
+    <h2 class="faq-contact-title" style="color: var(--color-text-light)">
+      해결이 안 된 문제가 있나요?
+    </h2>
     <h2 class="faq-contact-title">영업일 기준 2일 내에<br />이메일로 답변 드려요!</h2>
     <form class="faq-contact-form">
       <test-textfield label="분류"></test-textfield>
@@ -101,8 +157,9 @@
       <section class="faq-contact-privacy">
         <h3 class="faq-contact-privacy-title">개인정보 수집·이용에 대한 안내</h3>
         <p class="faq-contact-privacy-description">
-          문의를 접수하고 회신하기 위해 최소한의 개인정보(이메일과 문의내용)를 수집하며 후속조치를 위해 1년간 보관합니다. 개인정보 수집·이용을 거부할
-          수 있으며, 이 경우 답변이 제한됩니다. 더 자세한 내용에 대해서는 개인정보처리방침을 참고하시기 바랍니다.
+          문의를 접수하고 회신하기 위해 최소한의 개인정보(이메일과 문의내용)를 수집하며 후속조치를
+          위해 1년간 보관합니다. 개인정보 수집·이용을 거부할 수 있으며, 이 경우 답변이 제한됩니다.
+          더 자세한 내용에 대해서는 개인정보처리방침을 참고하시기 바랍니다.
         </p>
         <ul>
           <li>목적 : 고객문의 및 상담요청에 대한 회신 / 상담을 위한 서비스 이용기록 조회</li>
@@ -125,14 +182,45 @@
     </test-titlebar>
     <br />
     <fieldset>
-      <test-row direction="column">
-        <test-textfield label="받는 사람" stype="text" name="email" id="login-email" placeholder="수줍이"></test-textfield>
-        <test-textfield label="연락처" type="text" name="email" id="login-email" placeholder="01012345678"></test-textfield>
-        <test-textfield label="주소" type="text" name="email" id="address" placeholder="클릭하여 우편번호 찾기"></test-textfield>
-        <test-textfield label="상세주소" type="text" name="email" id="address" placeholder="클릭하여 우편번호 찾기"></test-textfield>
+      <test-group alignment="vertical">
+        <test-textfield
+          label="받는 사람"
+          stype="text"
+          name="email"
+          id="login-email"
+          placeholder="수줍이"
+        ></test-textfield>
+        <test-textfield
+          label="연락처"
+          type="text"
+          name="email"
+          id="login-email"
+          placeholder="01012345678"
+        ></test-textfield>
+        <test-textfield
+          label="주소"
+          type="text"
+          name="email"
+          id="address"
+          placeholder="클릭하여 우편번호 찾기"
+        ></test-textfield>
+        <test-textfield
+          label="상세주소"
+          type="text"
+          name="email"
+          id="address"
+          placeholder="클릭하여 우편번호 찾기"
+        ></test-textfield>
         <!-- First name, Last Name, Country / Region, State, Zipcode" -->
         <!-- <test-textfield label="공동현관 출입번호" type="text" isOptional name="email" id="login-email" placeholder=""></test-textfield> -->
-        <test-textfield label="배송 메시지" type="text" isOptional name="email" id="login-email" placeholder="직접 입력"></test-textfield>
+        <test-textfield
+          label="배송 메시지"
+          type="text"
+          isOptional
+          name="email"
+          id="login-email"
+          placeholder="직접 입력"
+        ></test-textfield>
         <test-checkbox label="개인정보 수집 및 이용 동의(수취인정보?)"></test-checkbox>
         <test-separator></test-separator>
         <test-button variant="primary" label="배송지 등록"></test-button>
@@ -146,7 +234,9 @@
           <test-tag label="기본배송지"></test-tag>
           <div class="setting-item-value">
             <div class="address-username">수줍이 집</div>
-            <div class="address-address" title="address-level / address-line">[07655] 서울특별시 강서구 까치산로 182 1202호</div>
+            <div class="address-address" title="address-level / address-line">
+              [07655] 서울특별시 강서구 까치산로 182 1202호
+            </div>
             <div class="address-phone">010-3121-7045</div>
           </div>
           <test-chip-group>
@@ -164,7 +254,7 @@
             </test-avatar>
           </test-menuitem>
         </test-tile>
-      </test-row>
+      </test-group>
     </fieldset>
   </section>
 
@@ -227,10 +317,10 @@
           <!-- <test-avatar slot="avatar" size="large" style="background: aliceblue; font-size: 1.5rem">💳</test-avatar> -->
           <test-radio slot="check" id="c1" name="c1" value="" checked>샘플</test-radio>
           <div slot="text">
-            <test-row>
+            <test-group>
               <test-text variant="body-bold">수줍이 집</test-text>
               <test-tag>기본배송지</test-tag>
-            </test-row>
+            </test-group>
             <div style="height: var(--space-1)"></div>
             <test-text variant="body">[07655] 서울특별시 강서구 까치산로 182 1202호</test-text>
             <test-text variant="label">010-3121-7045</test-text>
@@ -253,7 +343,8 @@
   <section class="checkout-discount">
     <test-text variant="subhead">쿠폰 마일리지 할인</test-text>
     <div style="height: var(--space-after-subhead)"></div>
-    <test-textfield label="보너스 쿠폰" placeholder="사용 가능한 쿠폰이 없습니다." disabled> </test-textfield>
+    <test-textfield label="보너스 쿠폰" placeholder="사용 가능한 쿠폰이 없습니다." disabled>
+    </test-textfield>
     <div style="height: var(--space-4)"></div>
     <test-textfield label="사용 마일리지" placeholder="0 마일리지"></test-textfield>
     <div style="height: var(--space-3)"></div>
@@ -265,22 +356,37 @@
   <section class="checkout-payment">
     <test-text variant="subhead" data-temp="매장과 구매자 차이.">Select payment method</test-text>
     <div style="margin: var(--space-after-subhead) -0.5rem 0">
-      <test-row direction="column">
+      <test-group alignment="vertical">
         <test-tile size="small">
           <test-menuitem label="신용카드">
-            <test-avatar slot="avatar" size="large" fallback="💳" style="background: aliceblue; font-size: 1.5rem"></test-avatar>
+            <test-avatar
+              slot="avatar"
+              size="large"
+              fallback="💳"
+              style="background: aliceblue; font-size: 1.5rem"
+            ></test-avatar>
             <test-radio slot="check" id="c1" name="c1" value="">샘플</test-radio>
           </test-menuitem>
         </test-tile>
         <test-tile size="small">
           <test-menuitem label="현금">
-            <test-avatar slot="avatar" size="large" fallback="💵" style="background: #defade; font-size: 1.5rem"></test-avatar>
+            <test-avatar
+              slot="avatar"
+              size="large"
+              fallback="💵"
+              style="background: #defade; font-size: 1.5rem"
+            ></test-avatar>
             <test-radio slot="check" id="c1" name="c1" value="">샘플</test-radio>
           </test-menuitem>
         </test-tile>
         <test-tile size="small">
           <test-menuitem label="무통장입금">
-            <test-avatar slot="avatar" size="large" fallback="🫓" style="background: antiquewhite; font-size: 1.5rem"></test-avatar>
+            <test-avatar
+              slot="avatar"
+              size="large"
+              fallback="🫓"
+              style="background: antiquewhite; font-size: 1.5rem"
+            ></test-avatar>
             <test-radio slot="check" id="c1" name="c1" value="">샘플</test-radio>
           </test-menuitem>
         </test-tile>
@@ -290,7 +396,7 @@
             <small style="color: var(--color-text)">COMING SOON<i style="font-style: italic">!</i></small>
           </test-radio>
         </test-tile> -->
-      </test-row>
+      </test-group>
     </div>
     <div style="height: var(--space-after-subhead)"></div>
     <dl>
@@ -307,7 +413,10 @@
   <div style="height: 2rem"></div>
 
   <section class="checkout-">
-    <test-text variant="subhead">Your Payments / Wallet<br />name on card / expiration date. billing address (따로 관리 됨).</test-text>
+    <test-text variant="subhead"
+      >Your Payments / Wallet<br />name on card / expiration date. billing address (따로 관리
+      됨).</test-text
+    >
     <div style="height: var(--space-after-subhead)"></div>
     <test-menuitem>
       <test-avatar slot="avatar" size="huge">
@@ -356,7 +465,9 @@
   form.addEventListener('submit', ev => {
     ev.preventDefault()
     // If a previous payment was attempted, get the latest invoice
-    const latestInvoicePaymentIntentStatus = localStorage.getItem('latestInvoicePaymentIntentStatus')
+    const latestInvoicePaymentIntentStatus = localStorage.getItem(
+      'latestInvoicePaymentIntentStatus',
+    )
 
     if (latestInvoicePaymentIntentStatus === 'requires_payment_method') {
       const invoiceId = localStorage.getItem('latestInvoiceId')
@@ -399,7 +510,9 @@
 
     <div class="cart-item-addition">
       <b class="cart-item-addition-title">AppleCare+ for Macbook/MacBook Air</b>
-      <p class="cart-item-addition-description">Automatically registered width your Apple hardware.</p>
+      <p class="cart-item-addition-description">
+        Automatically registered width your Apple hardware.
+      </p>
       <span class="cart-item-addition-price">₩ 20,000</span>
     </div>
     <div class="cart-item-ship">
@@ -433,7 +546,11 @@
 
   <aside class="product-quick is-visible">
     <figure class="product-quick-head">
-      <img class="product-quick-head-image" src="/static/media/economy-thumbnail.0e2ed4c5.png" alt="" />
+      <img
+        class="product-quick-head-image"
+        src="/static/media/economy-thumbnail.0e2ed4c5.png"
+        alt=""
+      />
       <figcaption>
         <h3 class="product-quick-head-title">고슴이 생존기(경제 기본기편)</h3>
         <div class="product-quick-head-description">10개 에피소드, 평생 열람가능</div>
@@ -445,7 +562,9 @@
       </span>
     </section>
     <footer class="product-quick-controls">
-      <test-button variant="primary" class="product-quick-controls-purchase">모두 주문하기</test-button>
+      <test-button variant="primary" class="product-quick-controls-purchase"
+        >모두 주문하기</test-button
+      >
     </footer>
   </aside>
 
@@ -454,7 +573,10 @@
       <div class="contact-head-background"></div>
       <h1 class="contact-head-title">이곳으로 오십시오.</h1>
       <div style="width: 100%; overflow: hidden">
-        <p class="contact-head-description">저희가 하는 일이나 저희 팀에 궁금한 점이 있으면 언제든 연락주세요. 부끄러우니까 연락하지마요.</p>
+        <p class="contact-head-description">
+          저희가 하는 일이나 저희 팀에 궁금한 점이 있으면 언제든 연락주세요. 부끄러우니까
+          연락하지마요.
+        </p>
         <div class="contact-head-phone">
           대구광역시 달서구<br />
           죽전동 268-8<br />
@@ -469,7 +591,7 @@
 
       <br />
 
-      <test-row direction="column">
+      <test-group alignment="vertical">
         <test-menuitem label="Email" description="hello@mantine.dev">
           <test-avatar slot="avatar" variant="secondary" size="large"></test-avatar>
         </test-menuitem>
@@ -482,7 +604,7 @@
         <test-menuitem label="Working hours" description="8 a.m. – 11 p.m.">
           <test-avatar slot="avatar" variant="secondary" size="large"></test-avatar>
         </test-menuitem>
-      </test-row>
+      </test-group>
     </header>
 
     <section class="contact-map">
@@ -494,17 +616,21 @@
 
     <form class="subscribe" style="max-width: var(--layout-width-small)">
       <h2 class="subscribe-title">수줍이 뉴스레터</h2>
-      <p class="subscribe-description">섭스크라이브 유아이 콤포넌트 입니다. <br />두 줄 단락을 위해 쓰고 있습니다.</p>
+      <p class="subscribe-description">
+        섭스크라이브 유아이 콤포넌트 입니다. <br />두 줄 단락을 위해 쓰고 있습니다.
+      </p>
       <test-textfield placeholder="Enter Your Email.." class="subscribe-field">
         <test-icon slot="leading" name="mail"></test-icon>
       </test-textfield>
       <p class="subscribe-helper setting-item-helper">
-        샘플 텍스트. 걱정하지 마세요. 스팸은 없습니다! 귀하의 정보는 web.dev 및 Chrome 관련 업데이트에만 사용되며 당사에서 보내는 이메일은 일반적으로
-        한 달에 1-2회를 넘지 않습니다. 언제든지 구독을 취소할 수 있습니다.
+        샘플 텍스트. 걱정하지 마세요. 스팸은 없습니다! 귀하의 정보는 web.dev 및 Chrome 관련
+        업데이트에만 사용되며 당사에서 보내는 이메일은 일반적으로 한 달에 1-2회를 넘지 않습니다.
+        언제든지 구독을 취소할 수 있습니다.
       </p>
       <test-checkbox>
-        본인은 Google의 <a href="" rel="noopener" target="_blank">이용 약관</a>에 동의하며 본인의 정보가 Google의
-        <a href="" rel="noopener" target="_blank">개인정보보호 정책</a>에 따라 이용된다는 것을 인정합니다.
+        본인은 Google의 <a href="" rel="noopener" target="_blank">이용 약관</a>에 동의하며 본인의
+        정보가 Google의 <a href="" rel="noopener" target="_blank">개인정보보호 정책</a>에 따라
+        이용된다는 것을 인정합니다.
       </test-checkbox>
 
       <button class="subscribe-submit" type="submit">뉴스레터 구독</button>

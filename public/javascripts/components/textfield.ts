@@ -30,8 +30,6 @@ class Input extends HTMLElement {
     input.setAttribute('type', 'text')
     input.setAttribute('placeholder', this.placeholder || '')
 
-    // input.setAttribute('placeholder', this.placeholder || '')
-
     if (this.disabled) {
       input.setAttribute('disabled', String(this.disabled))
     }

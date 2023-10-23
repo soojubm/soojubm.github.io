@@ -64,6 +64,7 @@ const components = [
   'bar',
 
   'tile',
+  'panel',
   'menuitem',
   'switch',
   'tooltip',
@@ -94,7 +95,11 @@ let test = {}
 components.forEach(item => {
   test = {
     ...test,
-    [item]: [`./pages/components/${item}/${item}.ts`, './public/javascripts/common/navbar.ts', './index.ts'],
+    [item]: [
+      `./pages/components/${item}/${item}.ts`,
+      './public/javascripts/common/navbar.ts',
+      './index.ts',
+    ],
   }
 })
 
@@ -102,7 +107,11 @@ let test2 = {}
 patterns.forEach(item => {
   test2 = {
     ...test2,
-    [item]: [`./pages/patterns/${item}/${item}.ts`, './public/javascripts/common/navbar.ts', './index.ts'],
+    [item]: [
+      `./pages/patterns/${item}/${item}.ts`,
+      './public/javascripts/common/navbar.ts',
+      './index.ts',
+    ],
   }
 })
 
@@ -114,7 +123,11 @@ module.exports = {
   entry: {
     index: ['./pages/home/home.ts', './public/javascripts/common/navbar.ts', './index.ts'],
     tokens: ['./pages/tokens/tokens.ts', './public/javascripts/common/navbar.ts', './index.ts'],
-    components: ['./pages/components/components.ts', './public/javascripts/common/navbar.ts', './index.ts'],
+    components: [
+      './pages/components/components.ts',
+      './public/javascripts/common/navbar.ts',
+      './index.ts',
+    ],
 
     ...test,
     ...test2,
