@@ -15,9 +15,6 @@ class Switch extends HTMLElement {
     input.setAttribute('type', 'checkbox')
     input.role = 'switch'
 
-    shadow.appendChild(container)
-    container.append(input, label)
-
     label.textContent = this.label
     label.setAttribute('for', this.name || '')
     input.setAttribute('id', this.name || '')
@@ -26,7 +23,10 @@ class Switch extends HTMLElement {
     if (this.checked) input.setAttribute('checked', 'true')
     if (this.disabled) input.setAttribute('disabled', 'true')
 
-    shadow.appendChild(makeStyleSheet('checkbox'))
+    // TODO 순서. shadow와 container? host?
+    // shadow.appendChild()
+    shadow.appendChild(container)
+    container.append(input, label, makeStyleSheet('switch'))
   }
 
   get name() {
@@ -39,9 +39,6 @@ class Switch extends HTMLElement {
 
   get label() {
     return this.getAttribute('label')
-  }
-  set label(value) {
-    if (value) this.setAttribute('label', value)
   }
 
   get checked() {

@@ -50,9 +50,9 @@ class Checkbox extends CustomHTMLElement {
     if (this.helper) {
       const helper = document.createElement('p')
       helper.textContent = this.helper
-
       container.appendChild(helper)
     }
+
     // 임시
     // container.append(...this.childNodes)
     shadow.appendChild(makeStyleSheet('checkbox'))

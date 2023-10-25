@@ -29,7 +29,12 @@
     </test-text>
 
     <ul>
-      <li>form 컴포넌트는 간격에 대한 구조 컴포넌트</li>
+      <li>유틸함수 만들기. 앞자리 0 제거. 숫자만입력3자리마다콤마. 소숫점 컨트롤.</li>
+      <!-- <input type="text" inputmode="numeric" pattern="[0-9]*" />
+      <small id="" class="textfield-helper" aria-live="assertive">pattern="[0-9]+"</small> -->
+      <li>value=0 있으면 안 li됨</li>
+      <li>props: minValue, maxValue, value, onDecreseClick, onIncreseClick</li>
+      <li>221021: - + 버튼에 포커스는 필요가 없다. input 키보드 위 아래로?</li>
       <li>
         url field. www 및 https://<br />
         todo: helper(help message)와 feedback message를 구별. required indicator / optional
@@ -37,8 +42,9 @@
         텍스트필드 구별을 위한 시각적인 단서를 제공하세요. 검색 아이콘 등
       </li>
       <li>
-        form patterns. FormField label / TextInput 으로 나누는 방안. 그러면 searchField 등의 대안이
-        될 수 있나?
+        form 컴포넌트는 간격에 대한 구조 컴포넌트. form patterns. FormField label / TextInput 으로
+        나누는 방안. 그러면 searchField 등의 대안이 될 수 있나? checkbox-label와 input-label을
+        또같이.
       </li>
       <li>
         기본 Textfield를 확장하여 NumberField, DateField, DateRangeField, SearchField, EmailField,
@@ -47,6 +53,7 @@
       <li>field label : fieldset legend, label - input/textarea</li>
       <li>fieldset feedback - checkbox group, login</li>
       <li>textarea, select, combo</li>
+      <li>helper와 feedback을 구분하기. assertive 속성의 차이도 존재하기 때문.</li>
     </ul>
     <dl class="article-aka">
       <dt>a.k.a.</dt>
@@ -55,18 +62,20 @@
     </dl>
     <section class="component-example">
       <div style="max-width: 400px">
+        <test-textfield type="email" label="Default" placeholder="Placeholder..." isOptional>
+          <test-icon slot="suffix" name="verified-badge"></test-icon>
+        </test-textfield>
+        <hr />
         <test-textfield
           type="email"
-          label="Default"
+          label="Invalid"
+          value="soojubm@gmail.com"
           placeholder="Placeholder..."
-          helper="이미 등록된 이메일입니다. helper와 feedback을 구분하기. assertive 속성의 차이도 존재하기 때문."
-          isOptional
+          aria-invalid="true"
           aria-describedby="error"
           aria-errormessage="msgID"
-          aria-invalid="true"
-        >
-          <test-icon slot="icon" name="verified-badge"></test-icon>
-        </test-textfield>
+          helper="이미 등록된 이메일입니다."
+        ></test-textfield>
         <hr />
         <test-textfield type="email" label="Disabled" placeholder="Placeholder..." disabled />
 
@@ -102,7 +111,7 @@
         <dt>placeholder</dt>
         <dd>string</dd>
         <dd></dd>
-        <dt>helper</dt>
+        <dt>helper<attr>?</attr></dt>
         <dd>string</dd>
         <dd>isInvalid = helper.length === 0</dd>
         <dt>state</dt>
@@ -123,7 +132,7 @@
       <test-text variant="subhead">Visual Style</test-text>
       <test-text variant="body"> 레이블을 텍스트필드 왼쪽에 배치하지 마세요. </test-text>
       <test-text variant="body">
-        prefix icon은 레이블링 역할을 합니다. 이중 레이블링하지 마세요. 추가하는 맥락에서 아이콘
+        이중 레이블링하지 마세요. prefix icon은 텍싀트 레이블을 대체합니다. 추가하는 맥락에서 아이콘
         레이블 사용. (예시 이메일로 사용자 추가).
       </test-text>
       <test-text variant="body">
@@ -143,7 +152,7 @@
     </section>
 
     <test-text variant="subhead">Groupable (patterns)</test-text>
-    <test-text variant="body"> 필수 입력 필드 그루핑 하지마요마요. ?? </test-text>
+    <test-text variant="body">서비스 이용에 필수적인 필드는 그루핑 하지마요마요. ?? </test-text>
     <section class="component-case">
       <div class="textfield-group" style="width: 100%; max-width: 400px">
         <test-textfield label="Length" placeholder="cm unit"></test-textfield>
@@ -166,7 +175,9 @@
 
     <test-text variant="subhead">PasswordField</test-text>
     <section class="component-case">
-      <test-textfield type="password" label="비밀번호" />
+      <test-textfield type="password" label="비밀번호">
+        <test-icon slot="suffix" name="eye-empty"></test-icon>
+      </test-textfield>
     </section>
 
     <test-text variant="subhead">SearchField</test-text>
@@ -195,10 +206,9 @@
     <section class="component-case">
       <test-textfield
         type="number"
-        label="넘버필드 가격"
+        label="금액"
         value="20000"
         placeholder="Textarea Placeholder..."
-        helper="앞자리 0 제거. 숫자만입력3자리마다콤마. 소숫점 컨트롤."
         oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
       ></test-textfield>
     </section>
@@ -215,11 +225,6 @@
     </section>
     <test-text variant="subhead">Counter</test-text>
     <section class="component-case">
-      <!-- <input type="text" inputmode="numeric" pattern="[0-9]*"> -->
-      <!-- <small id="" class="textfield-helper" aria-live="assertive">pattern="[0-9]+"</small> -->
-      <!-- //value=0 있으면 안 됨. -->
-      <p>props: minValue, maxValue, value, onDecreseClick, onIncreseClick</p>
-      <p>221021: - + 버튼에 포커스는 필요가 없다. input 키보드 위 아래로?</p>
       <div class="counter js-counter" style="max-width: 240px; display: flex; gap: 0.5rem">
         <label for="numberfield" style="position: absolute; opacity: 0">
           레이블 라이트하우스용

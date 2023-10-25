@@ -1,18 +1,17 @@
-// rem 으로 모듈화하기 어렵다. ex 1.5rem => top:0.125rem
+/* // rem 으로 모듈화하기 어렵다. ex 1.5rem => top:0.125rem
 // line-heght로 리셋스타일에 종속되지 않도록 함. + block
-// height 테이블 내에서 세로 정렬에 필요
-// 2줄 이상 대비
-// nextjs + css module에서 type selector 이슈 .checkbox-input / .checkbox-label
-// ! :focus
+// height 테이블 내에서 세로 정렬에 필요. 2줄 이상 레이블
+// nextjs + css module에서 type selector 이슈 */
 
-.checkbox-description {display:block !important;padding-left:calc(var(--size-tiny) + var(--space-2));color:var(--color-text-light);}
-
+:host,
 .checkbox {
-  position:relative;
   --checkbox-size: var(--size-tiny);
+  --checkbox-radius: 4px;
+
+  position: relative;
 }
 
-input[type=checkbox] {
+.checkbox input {
   opacity: 0;
   inline-size: 100%;
   position: absolute;
@@ -22,45 +21,70 @@ input[type=checkbox] {
   bottom: -.5rem;
 }
 
-input[type=checkbox] ~ label {
+.checkbox:focus-within label {
+  box-shadow: var(--status-hover);
+}
+
+.checkbox input ~ label {
   display: flex;
   align-items: center;
-  gap: var(--space-2);line-height: var(--checkbox-size);
+  gap: var(--space-2);
+  line-height: var(--checkbox-size);
   position: relative;
 }
 
-input[type=checkbox] ~ label:before {
-  content:'';display:block;width:var(--checkbox-size);height:var(--checkbox-size);
-  border:var(--border);
-  border-radius:4px;
+.checkbox input ~ label:before {
+  content:'';
+  display:block;
+  width: var(--checkbox-size);
+  height: var(--checkbox-size);
+  border: var(--border);
+  border-radius: var(--checkbox-radius);
   background: var(--color-background);
-  box-sizing:border-box;
+  box-sizing: border-box;
 }
-input[type=checkbox] ~ label:after {content:'';display:none;width:7px;height:2px;border-left:1px solid;border-bottom:1px solid;border-color:var(--gray200);position:absolute;left:4px;top:6px;transform:rotate(-50deg);}
+.checkbox input ~ label:after {
+  content:'';
+  width:7px;
+  height:2px;
+  border-left:1px solid;
+  border-bottom:1px solid;
+  border-color:var(--gray200);
+  position:absolute;
+  left:4px;top:6px;
+  transform:rotate(-50deg) scale(0);
+}
 
-input[type=checkbox]:checked ~ label:before {border-color:var(--color-primary);animation:ripple2 0.2s linear forwards;}
-input[type=checkbox]:checked ~ label:after {display:block;border-color:var(--color-primary);}
-input[type=checkbox]:disabled ~ label {opacity:.5;cursor:not-allowed;}
-input[type=checkbox]:disabled ~ label:before {border-color:var(--gray200);}
-input[type=checkbox]:disabled ~ label:after {border-color:var(--gray200);}
+/* checked */
+.checkbox input:checked ~ label:before {
+  border-color:var(--color-primary);
+  animation:ripple2 0.2s linear forwards;
+}
+.checkbox input:checked ~ label:after {
+  border-color:var(--color-primary);
+  transform: rotate(-50deg) scale(1);
+}
 
-input[type=checkbox][indeterminate=true] ~ label:before,
-input[type=checkbox][data-indeterminate=true] ~ label:before {border-color:var(--green800);background:var(--green100);}
-input[type=checkbox][indeterminate=true] ~ label:after,
-input[type=checkbox][data-indeterminate=true] ~ label:after {display:block;width:8px;background:var(--color-primary);border:none;left:4px;top:48%;transform:rotate(0deg);}
+.checkbox input[indeterminate=true] ~ label:before,
+.checkbox input[data-indeterminate=true] ~ label:before {border-color:var(--green800);background:var(--green100);}
+.checkbox input[indeterminate=true] ~ label:after,
+.checkbox input[data-indeterminate=true] ~ label:after {display:block;width:8px;background:var(--color-primary);border:none;left:4px;top:48%;transform:rotate(0deg);}
 
+.checkbox input:disabled ~ label {opacity:.5;cursor:not-allowed;}
+.checkbox input:disabled ~ label:before {border-color:var(--gray200);}
+.checkbox input:disabled ~ label:after {border-color:var(--gray200);}
 
+.checkbox-description {display:block !important;padding-left:calc(var(--size-tiny) + var(--space-2));color:var(--color-text-light);}
 
-// hidden attribute
+/* // hidden attribute */
 input[type=radio] + label + *,
 input[type=checkbox] + label + * {display:none;}
 input[type=radio]:checked + label + *,
 input[type=checkbox]:checked + label + * {display:block;}
 
-
+/* // size */
 .checkbox[data-size=large] label:before {
-  width: var(--size-small);
-  height: var(--size-small);
+  --checkbox-size: var(--size-small);
 }
 .checkbox[data-size=large] label:after {
   width: 10px;
@@ -68,25 +92,3 @@ input[type=checkbox]:checked + label + * {display:block;}
   left: 7px;
   top: 9px;
 }
-
-.switch {
-  --switch-width: 40px;
-  --switch-height: var(--size-tiny);
-
-  display:block;
-  height: var(--switch-height);
-  position:relative;
-}
-.switch [role=switch] {
-  inline-size: 100%;
-}
-.switch [role=switch] + label {display:flex;gap:var(--space-2);line-height:var(--size-tiny);cursor:pointer;}
-.switch [role=switch] + label:before {content:'';display:block;width:var(--switch-width);height:var(--switch-height);
-  padding-left: 1.2rem;font-size: 10px;color:var(--color-text-light);text-transform:uppercase;font-weight:var(--font-weight-bold);
-  border:none;border-radius:var(--radius);box-sizing:border-box;background:var(--gray200);transition:background-color .2s;transition:all .4s;}
-.switch [role=switch] + label:after {content:'';display:block;width:var(--switch-height);height:var(--switch-height);border:var(--border);box-sizing:border-box;border-radius:var(--radius);background:#fff;box-shadow:var(--shadow);position:absolute;left:0;top:0;transition:left .2s;transform:rotate(0deg);}
-.switch [role=switch]:checked + label {}
-.switch [role=switch]:checked + label:before {content:'';padding:0 0 0 .4rem;background:var(--color-primary);color:var(--gray0);}
-.switch [role=switch]:checked + label:after {left:calc(var(--switch-width) - 16px);}
-.switch [role=switch]:disabled {}
-.switch [role=switch]:disabled + label {cursor:not-allowed;opacity:.5;}

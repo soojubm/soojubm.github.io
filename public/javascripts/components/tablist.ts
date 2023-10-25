@@ -28,8 +28,8 @@ class Tablist extends HTMLElement {
     const shadow = this.attachShadow({ mode: 'open' })
 
     const container = document.createElement('nav')
-    container.classList.add('tablist')
     container.role = 'tablist'
+    container.classList.add('tablist')
 
     const tabIndicator = document.createElement('slot')
     tabIndicator.name = 'indicator'
@@ -38,9 +38,8 @@ class Tablist extends HTMLElement {
     tabSlot.name = 'tab'
 
     shadow.appendChild(container)
-    shadow.appendChild(makeStyleSheet('tablist'))
 
-    container.append(tabSlot, tabIndicator)
+    container.append(tabSlot, tabIndicator, makeStyleSheet('tablist'))
 
     // console.log('tabs', document.querySelector('test-tablist').shadowRoot.querySelector('button'))
     this.querySelectorAll('[slot=tab]').forEach(tab => {

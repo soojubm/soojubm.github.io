@@ -27,7 +27,8 @@
   max-width: var(--container-width);
   margin:var(--space-after-subhead) 0 0 0;
   /* margin: 1rem -5vw 0; */
-  padding: 1rem;
+  padding: var(--space-4);
+  box-sizing: border-box;
   border: var(--border);
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;

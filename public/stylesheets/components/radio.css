@@ -1,4 +1,9 @@
-:host {}
+:host {
+  --radio-size: var(--size-tiny);
+  --radio-color: var(--gray200);
+  --radio-border: 1px solid var(--radio-color);
+  --radio-radius: 50%;
+}
 
 .radio-group {
   display: flex;
@@ -7,39 +12,52 @@
 }
 
 .radio {
-  --checkbox-size: var(--size-tiny);
   position:relative;
 }
-
-input[type=radio] {width:0;height:0;opacity:0;position:absolute;}
 
 .radio label {
   display: flex;
   align-items: center;
   gap: var(--space-2);
-  line-height: var(--checkbox-size);
+  line-height: var(--radio-size);
   position:relative;
 }
-.radio label:before {content:'';
-  display:block;width:var(--size-tiny);height:var(--size-tiny);border-radius:50%;border:var(--border);
-  /* border-color:var(--color-background-strong); */
+.radio label:before {
+  content:'';
+  display:block;
+  width:var(--radio-size);
+  height:var(--radio-size);
+  border:var(--radio-border);
+  border-radius: var(--radio-radius);
   box-sizing:border-box;
-  /* position:absolute;left:0; */
+
+  /* animation:ripple2 0.2s linear forwards; */
 }
-.radio label:after {content:'';width:.5rem;height:.5rem;border-radius:50%;background:var(--gray200);
-  position:absolute;left:4px;
+.radio label:after {
+  content:'';
+  display:block;
+  width:.5rem;height:.5rem;
+  border-radius:50%;
+  background:var(--radio-color);
+  position:absolute;
+  left:4px;
   transition:background-color 0.2s;
   transform:scale(0);
 }
-
-input[type=radio]:checked + label:before {
+/* .radio input[type=radio]:checked {
+--radio-color: var(--color-primary);
+} */
+.radio input {
+  width:0;height:0;opacity:0;position:absolute;
+}
+.radio input:checked + label:before {
   border-color:var(--color-primary);
-  animation:ripple2 0.2s linear forwards;}
-input[type=radio]:checked + label:after {
-  display:block;
+}
+.radio input:checked + label:after {
   background:var(--color-primary);
-  transform:scale(1);}
+  transform:scale(1);
+}
 
-input[type=radio]:disabled + label {color:var(--gray200);cursor:not-allowed;}
-input[type=radio]:disabled + label:before {background:var(--gray200);border-color:var(--gray200);}
-input[type=radio]:disabled + label:after {background:var(--color-background);}
+.radio input:disabled + label {color:var(--gray200);cursor:not-allowed;}
+.radio input:disabled + label:before {background:var(--gray200);border-color:var(--gray200);}
+.radio input:disabled + label:after {background:var(--color-background);}

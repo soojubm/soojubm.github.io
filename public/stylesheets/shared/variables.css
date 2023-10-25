@@ -2,15 +2,16 @@
 @custom-media --small (max-width: 1080px);
 @custom-media --tiny (max-width: 880px);
 
-/* custom-media 이거 그냥 값만 변수로 하고 postcss 안 쓰는 게 좋겠다. */
+/* media query variables 안 됨 */
 /* 모든 surface는 border를 갖는다. */
 
 :root {
   color-scheme: light dark;
 
   /* // -apple-system === san-serif / system-ui === BlinkMacSystemFont */
-  /* --font-family: 'Pretendard', 'IBM Plex Sans', 'Asap', 'Gothic A1', system-ui, sans-serif; */
-  --font-family: 'Asap', 'Gothic A1', system-ui, sans-serif;
+  /* 'Pretendard', 'IBM Plex Sans' */
+  --font-family: 'IBM Plex Sans', 'Pretendardm', system-ui, sans-serif;
+  /* --font-family: 'IBM Plex Sans', 'Gothic A1', system-ui, sans-serif; */
   --font-family-heading: null;
   --font-family-body: null;
   --font-family-caption: null;
@@ -36,7 +37,6 @@
   --layout-width-large: 1200px;
   --layout-width-small: 640px;
   --layout-width-tiny: 480px;
-
   --width-huge: 1440px;
   --width-small: 480px;
   --width-tiny: 240px;
@@ -66,6 +66,16 @@
   --color-secondary: var(--yellow800);
   --color-accent: var(--yellow800);
   --color-warning: var(--red800);
+  --color-danger: var(--red800);
+
+  --color-temp1: cadetblue;
+  --color-temp2: darkseagreen;
+  --color-temp3: lightsalmon;
+  --color-temp4: rosybrown;
+  --color-temp1: aliceblue;
+  --color-temp2: #edf8ed;
+  --color-temp3: antiquewhite;
+  --color-temp4: #f6edf6;
 
   --color-google: #fff;
   --color-facebook: hsl(214, 89%, 52%);
@@ -85,20 +95,10 @@
   --color-border: var(--gray200);
   --color-border-hover: var(--gray800);
   --color-text: var(--gray800);
-  /* --color-text: #687076; */
   --color-text-light: var(--gray400);
 
   --color-text-weak: var(--gray0);
   --color-text-strong: var(--gray0);
-
-  --color-temp1: cadetblue;
-  --color-temp2: darkseagreen;
-  --color-temp3: lightsalmon;
-  --color-temp4: rosybrown;
-  --color-temp1: aliceblue;
-  --color-temp2: #edf8ed;
-  --color-temp3: antiquewhite;
-  --color-temp4: #f6edf6;
 
   --color-gradient-from: null;
   --color-gradient-to: null;
@@ -124,37 +124,34 @@
   --space-3: .75rem;
   --space-4: 1rem;
   --space-8: 2rem;
+  --space-1-minus: calc(var(--space-1) * -1);
+  --space-2-minus: calc(var(--space-2) * -1);
+  --space-3-minus: calc(var(--space-3) * -1);
 
   --space-inline: var(--space-2);
   --space-inset: 0;
   --space-stack-small: 0;
-
-  --space-1-minus: calc(var(--space-1) * -1);
-  --space-2-minus: calc(var(--space-2) * -1);
-  --space-3-minus: calc(var(--space-3) * -1);
 
   --space-after-title: 1rem;
   --space-after-subhead: var(--space-3);
   --space-after-description: 2rem;
   --space-after-button: var(--space-2);
   --space-after-textfield: var(--space-4);
-
   --space-after-avatar-huge: var(--space-3);
   --space-after-avatar-large: var(--space-2);
   --space-after-avatar-medium: var(--space-2);
   --space-after-avatar-small: var(--space-2);
-
+  --space-after-item: var(--space-3);
   --space-before-tag: var(--space-05);
   --space-before-tag-minus: calc(var(--space-before-tag) * -1);
 
-  --space-after-item: var(--space-3);
 
   --space-leading-title: -.25rem;
   --space-leading-subhead: -.125rem;
   --space-leading-body: -.125rem;
 
   --border-width: 1px;
-  
+  --color-border: var(--gray200);
   --border: var(--border-width) solid var(--color-border);
   --border-active: 1px solid var(--color-primary);
   --border-thin: null;
@@ -206,10 +203,16 @@
   --safearea-inset-bottom1: constant(safe-area-inset-bottom);
   --safearea-inset-bottom2: env(safe-area-inset-bottom);
 
-
   /* brutal theme */
   /* --border: 1px solid var(--gray800); */
 }
+
+@media (--small) {
+  :root {
+    --font-size-huge: 1.5rem;
+  }
+}
+
 
 html[date-theme=dark] {}
 
@@ -240,12 +243,6 @@ html[date-theme=dark] {}
   --shadow-tile: 0 2px 0 1px #343c38,0 1px 6px rgba(0, 0, 0, 0.4);
 
   --gradient: linear-gradient(to bottom, var(--gray400), var(--gray800));
-}
-
-@media (--small) {
-  :root {
-    --font-size-huge: 1.5rem;
-  }
 }
 
 

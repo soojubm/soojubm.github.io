@@ -211,6 +211,69 @@
       <test-text variant="title">Table</test-text>
       <test-text variant="body-large">표.</test-text>
       <section class="component-example">
+
+        <table>
+          <thead>
+            <tr>
+              <td style="padding: var(--space-2) 0">
+                <test-icon name="xbox-y"></test-icon>
+              </td>
+              <td style="padding: var(--space-2) 0">
+                <test-icon name="xbox-x"></test-icon>
+              </td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <b>Clickable</b>
+                <br />
+                cette notification expire dans 5 jours
+              </td>
+              <td>
+                <b>Alerte de Retour</b>
+                <br />
+                cette notification expire dans 5 jours
+              </td>
+            </tr>
+            <tr>
+              <td style="border: none">cette notification expire dans 5 jours</td>
+              <td style="border: none">cette notification expire dans 5 jours</td>
+            </tr>
+          </tbody>
+        </table>
+  
+        <style>
+          [role='cell'] {
+            width: 25%;
+            padding: var(--space-3);
+          }
+        </style>
+        <div
+          role="row"
+          style="
+            display: flex;
+            margin: var(--space-3) 0 0 0;
+            font-size: var(--font-size-small);
+            font-weight: var(--font-weight-bold);
+            color: var(--color-text-light);
+          "
+        >
+          <span role="cell" style="flex: auto">이름</span>
+          <span role="cell" style="flex: auto">소유자</span>
+          <span role="cell" style="flex: auto">마지막으로 수정한 날짜</span>
+          <span role="cell" style="flex: auto">파일 크기</span>
+        </div>
+        <div class="" role="row" style="display: flex; border-top: var(--border)">
+          <span role="cell" style="flex: auto">이름</span>
+          <span role="cell" style="flex: auto">소유자</span>
+          <span role="cell" style="flex: auto">2023. 05. 05</span>
+          <span role="cell" style="flex: auto">2KB</span>
+        </div>
+
+        <br />
+
+
         <test-tile variant="elevated">
           <table>
             <caption>

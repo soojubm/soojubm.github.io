@@ -27,8 +27,10 @@ class Input extends HTMLElement {
 
     const input = document.createElement('input')
     input.classList.add('reset-input', 'textfield-input')
-    input.setAttribute('type', 'text')
+    input.setAttribute('type', this.type || 'text')
     input.setAttribute('placeholder', this.placeholder || '')
+
+    if (this.value) input.setAttribute('value', this.value)
 
     if (this.disabled) {
       input.setAttribute('disabled', String(this.disabled))
@@ -46,6 +48,9 @@ class Input extends HTMLElement {
     shadow.appendChild(container)
     container.append(label, input, prefixSlot, suffixSlot, linkSlot, makeStyleSheet('textfield'))
 
+    if (this.isInvalid) {
+      container.classList.add('is-invalid')
+    }
     if (this.isOptional) {
       const small = document.createElement('small')
       small.textContent = '선택입력'
@@ -63,8 +68,9 @@ class Input extends HTMLElement {
   get type() {
     return this.getAttribute('type')
   }
-  set type(value) {
-    if (value) this.setAttribute('type', value)
+
+  get value() {
+    return this.getAttribute('value')
   }
 
   get size() {
@@ -104,10 +110,11 @@ class Input extends HTMLElement {
     return this.hasAttribute('disabled')
   }
 
-  connectedCallback() {
-    console.log('helper', this.helper)
-    console.log('textarea', this)
+  get isInvalid() {
+    return this.hasAttribute('aria-invalid')
   }
+
+  connectedCallback() {}
   disconnectedCallback() {
     console.log('disconnected', this)
   }

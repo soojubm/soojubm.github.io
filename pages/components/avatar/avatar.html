@@ -56,6 +56,9 @@
     <section class="component-props">
       <!-- <test-text variant="body-large" style="margin-top: 0">Props</test-text> -->
       <dl>
+        <dt>variant</dt>
+        <dd>'primary' | 'secondary'</dd>
+        <dd></dd>
         <dt>name</dt>
         <dd>string</dd>
         <dd>avatar name? label?</dd>
@@ -68,7 +71,7 @@
 
         <dt>badge<abbr>?</abbr></dt>
         <dd>"unread" | "new" | "live"</dd>
-        <dd>TODO. 합성 컴포넌트에서 상세하게 정의 ?? badgeSlot?</dd>
+        <dd>TODO. 합성 컴포넌트에서 상세하게 정의 ?? badgeSlot ?? badge에 숫자가 포함될 수도.</dd>
 
         <dt>fallback?</dt>
         <dd>"string" | "image?"</dd>
@@ -77,80 +80,13 @@
       </dl>
     </section>
 
-    <blockquote>
-      <p>
-        TODO :: hasBadge가 아니라 badge를 slot으로 넣는 것이 좋을까? badge에 숫자가 포함될 수도.
-      </p>
-      <p>TODO :: avatar는 패턴을 정리할 필요도 있다.</p>
-    </blockquote>
-
     <section class="component-guide">
       <test-text variant="subhead">Behavior</test-text>
       <test-text variant="body" data-temp="clickable">
-        아바타 또는 아바타릂 포함하는 상위 요소(클릭을 보조하는 역할)는 항상 클릭할 수 있습니다. +++
-        아웃라인 형태를 클릭할 수 없는 아바타로 정의 추가.
+        아바타 또는 아바타릂 포함하는 상위 요소(클릭을 보조하는 역할)는 항상 클릭할 수 있습니다.
       </test-text>
-
+      <test-text variant="body">아웃라인 형태를 클릭할 수 없는 아바타로 정의 추가.</test-text>
       <test-text variant="subhead">Visual style</test-text>
-      <br /><br />
-      <table>
-        <thead>
-          <tr>
-            <td style="padding: var(--space-2) 0">
-              <test-icon name="double-check"></test-icon>
-            </td>
-            <td style="padding: var(--space-2) 0">
-              <test-icon name="double-check"></test-icon>
-            </td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              <b>Clickable</b>
-              <br />
-              cette notification expire dans 5 jours
-            </td>
-            <td>
-              <b>Alerte de Retour</b>
-              <br />
-              cette notification expire dans 5 jours
-            </td>
-          </tr>
-          <tr>
-            <td style="border: none">cette notification expire dans 5 jours</td>
-            <td style="border: none">cette notification expire dans 5 jours</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <style>
-        [role='cell'] {
-          width: 25%;
-          padding: var(--space-3);
-        }
-      </style>
-      <div
-        role="row"
-        style="
-          display: flex;
-          margin: var(--space-3) 0 0 0;
-          font-size: var(--font-size-small);
-          font-weight: var(--font-weight-bold);
-          color: var(--color-text-light);
-        "
-      >
-        <span role="cell" style="flex: auto">이름</span>
-        <span role="cell" style="flex: auto">소유자</span>
-        <span role="cell" style="flex: auto">마지막으로 수정한 날짜</span>
-        <span role="cell" style="flex: auto">파일 크기</span>
-      </div>
-      <div class="" role="row" style="display: flex; border-top: var(--border)">
-        <span role="cell" style="flex: auto">이름</span>
-        <span role="cell" style="flex: auto">소유자</span>
-        <span role="cell" style="flex: auto">2023. 05. 05</span>
-        <span role="cell" style="flex: auto">2KB</span>
-      </div>
     </section>
 
     <!-- <test-tag>groupable</test-tag> -->
@@ -194,8 +130,8 @@
             </div>
           </div>
           <div style="margin: var(--space-2) 0 0">
-            <figure>🥺</figure>
-            <span class="avatargroup-label">이경수님을 팔로우하고 있는 친구가 없습니다.</span>
+            <!-- <figure>🥺</figure> -->
+            <span class="avatargroup-label">🥺 수줍이님을 팔로우하고 있는 친구가 없습니다.</span>
           </div>
         </div>
       </test-card>

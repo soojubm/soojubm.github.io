@@ -23,6 +23,8 @@ select {-webkit-appearance:none;background:none;border:none;font:inherit;color:v
 select:focus-visible {outline:none;}
 select::-ms-expand {display:none;}
 
+textarea {border:0 none;font-family:inherit;}
+
 button {
   padding:0;border:none;background:none;text-align:left;font:inherit;color:inherit;cursor:pointer;
   /* > * {pointer-events:none;} // for 이벤트 캡쳐} */

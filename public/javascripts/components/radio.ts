@@ -1,6 +1,6 @@
 import { makeStyleSheet } from './utils'
 
-class Checkbox extends HTMLElement {
+class Radio extends HTMLElement {
   constructor() {
     super()
     const shadow = this.attachShadow({ mode: 'open' })
@@ -9,22 +9,18 @@ class Checkbox extends HTMLElement {
     container.classList.add('radio')
 
     const label = document.createElement('label')
-    const input = document.createElement('input')
-
-    input.setAttribute('type', 'radio')
-
-    shadow.appendChild(container)
-
-    container.appendChild(input)
-    container.appendChild(label)
-
     label.textContent = this.label
-    label.setAttribute('for', this.name || '')
-    input.setAttribute('id', this.name || '')
-    input.setAttribute('name', this.name || '')
+    label.setAttribute('for', this.id_temp || '')
 
+    const input = document.createElement('input')
+    input.setAttribute('type', 'radio')
+    input.setAttribute('id', this.id_temp || '')
+    input.setAttribute('name', this.name || '')
     if (this.checked) input.setAttribute('checked', 'true')
     if (this.disabled) input.setAttribute('disabled', 'true')
+
+    shadow.appendChild(container)
+    container.append(input, label, makeStyleSheet('radio'))
 
     if (this.helper) {
       const helper = document.createElement('p')
@@ -32,8 +28,10 @@ class Checkbox extends HTMLElement {
 
       container.appendChild(helper)
     }
+  }
 
-    shadow.appendChild(makeStyleSheet('radio'))
+  get id_temp() {
+    return this.getAttribute('id')
   }
 
   get name() {
@@ -67,7 +65,7 @@ class Checkbox extends HTMLElement {
   disconnectedCallback() {}
 }
 
-export default Checkbox
+export default Radio
 
 // type Parameter = {
 //   checkAllSelector: string
@@ -121,5 +119,3 @@ export default Checkbox
 //     checkAll.dataset.indeterminate = false
 //   })
 // }
-
-// export default checkbox

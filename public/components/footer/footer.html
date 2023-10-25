@@ -5,7 +5,12 @@
   <div style="margin-top: -4rem; z-index: 5">
     <!-- description="soojubm@gmail.com | 82 10 3121 7045 | UI Designer" -->
     <test-entity label="수줍이" description="soojubm@gmail.com" description2="82 10 3121 7045">
-      <test-avatar slot="avatar" size="huge" variant="secondary" style="outline: 6px solid var(--color-background)"></test-avatar>
+      <test-avatar
+        slot="avatar"
+        size="huge"
+        variant="secondary"
+        style="outline: 6px solid var(--color-background)"
+      ></test-avatar>
       <test-chip>팔로우</test-chip>
     </test-entity>
     <!-- <p>
@@ -17,7 +22,11 @@
 
   <div style="max-width: 240px; margin: 0.75rem 0 1.5rem">
     <test-menu-group class="footer-temp">
-      <test-menuitem label="About" href="https://soojubm.notion.site/UI-Designer-9c18f4dd39eb4181b9f9c2ee76896618" target="_blank">
+      <test-menuitem
+        label="About"
+        href="https://soojubm.notion.site/UI-Designer-9c18f4dd39eb4181b9f9c2ee76896618"
+        target="_blank"
+      >
         <test-avatar slot="avatar" size="medium" fallback=" ">
           <test-icon slot="icon" name="people-tag"></test-icon>
         </test-avatar>
@@ -28,6 +37,16 @@
           <test-icon slot="icon" name="github"></test-icon>
         </test-avatar>
         <test-icon slot="action" name="arrow-tr"></test-icon>
+      </test-menuitem>
+      <test-menuitem label="영화감상 목록" href="./films.html">
+        <test-avatar slot="avatar" size="medium" fallback=" ">
+          <test-icon slot="icon" name="movie"></test-icon>
+        </test-avatar>
+      </test-menuitem>
+      <test-menuitem label="독서 목록" href=".//films.html">
+        <test-avatar slot="avatar" size="medium" fallback=" ">
+          <test-icon slot="icon" name="book"></test-icon>
+        </test-avatar>
       </test-menuitem>
     </test-menu-group>
   </div>
@@ -45,7 +64,9 @@
     <dd>2018-서울강서구-1234</dd>
     <abbr title="phone"></abbr>
   </dl>
-  <small class="footer-copyright" style="display: block; margin: var(--space-3) 0 0 0">© 2019 soojubm. All rights reserved.</small>
+  <small class="footer-copyright" style="display: block; margin: var(--space-3) 0 0 0"
+    >© 2019 soojubm. All rights reserved.</small
+  >
   <address class="footer-address" style="margin: 0.5rem 0 0 0">
     <p class="footer-address-slogan">Making things better.</p>
   </address>
