@@ -6,85 +6,9 @@
 
 @import 'layout/navbar.css';
 
-/* @import 'pages/design.css'; */
 @import 'pages/component.css';
 
-
-/* @import 'shared/mixins.css'; */
-/* 
-
-
-@import 'shared/icon.css';
-@import 'shared/keyframes.css';
-@import 'shared/utilites.css';
-
-@import 'components/chip.css';
-
-@import 'shared/button.css';
-
-@import 'base/form.css';
-
-@import 'components/breadcrumb.css';
-@import 'components/graph.css';
-@import 'components/snackbar.css';
-@import 'components/step.css';
-@import 'components/tooltip.css';
-@import 'components/pagination.css';
-@import 'components/banner.css';
-@import 'components/cursor.css';
-@import 'components/empty.css';
-@import 'components/hero.css';
-@import 'components/loader.css';
-@import 'components/tag.css';
-@import 'components/share.css';
-@import 'components/timeline.css';
-@import 'components/skip.css';
-@import 'components/skeleton.css';
-@import 'components/tab.css';
-
-@import 'components/item.css';
-
-@import 'pages/presentations.css';
-
-@import 'layout/titlebar.css';
-@import 'layout/footer.css'; */
-
-/* @import 'pages/authentication.css'; */
 /*
-@import 'pages/about.css';
-@import 'pages/post.css';
-@import 'pages/cake.css';
-@import 'pages/profile.css';
-@import 'pages/cart.css';
-@import 'pages/product.css';
-@import 'pages/class.css';
-@import 'pages/contact.css';
-@import 'pages/terms.css';
-@import 'pages/help.css';
-@import 'pages/music.css';
-@import 'pages/setting.css';
-@import 'pages/checkout.css';
-@import 'pages/order.css';
-@import 'pages/changelog.css';
-@import 'pages/filter.css'; */
-
-/*
-
-.scroll {position: fixed;bottom: 1rem;right: 1rem;z-index: var(--z-index-default);}
-.scroll-indicator {}
-.scroll-indicator i {
-  width: 2px;
-  height: 8px;
-  background: var(--gray800);
-  margin: 8px auto 0;
-  animation: bounce 0.5s infinite alternate;
-  transform: rotate(90deg);
-}
-
-.scroll-top {
-  @mixin avatar-medium;
-  box-shadow: 1px 1px 1rem rgba(0, 0, 0, .1)
-}
 
 .carousel {position: relative;}
 .carousel-viewer {@mixin stack-vertical-scroll;margin:-.75rem;padding:.75rem;}
@@ -103,6 +27,22 @@
 .carousel-arrows button.is-disabled {opacity: .2;}
 
 
+.scroll {position: fixed;bottom: 1rem;right: 1rem;z-index: var(--z-index-default);}
+.scroll-indicator {}
+.scroll-indicator i {
+  width: 2px;
+  height: 8px;
+  background: var(--gray800);
+  margin: 8px auto 0;
+  animation: bounce 0.5s infinite alternate;
+  transform: rotate(90deg);
+}
+
+.scroll-top {
+  @mixin avatar-medium;
+  box-shadow: 1px 1px 1rem rgba(0, 0, 0, .1)
+}
+
 @media (--small) {
   .scroll {
     display: none
@@ -119,21 +59,6 @@ main,
   transition: all .6s ease;
 }
 
-.foundation {}
-
-.foundation-tile {
-  padding: 4rem var(--grid-margin);
-}
-
-
-.foundation-c2 {
-  display: flex;
-}
-
-.foundation-c2 div {
-  width: 50%;
-  padding: 4rem var(--grid-margin);
-}
 
 /* .dictoinary-item {
   padding: .5rem var(--grid-margin);
@@ -342,10 +267,6 @@ main,
 .user-myinfo {@mixin link-outside;margin:.25rem 0 0;}
 .user-footer a {font-size:var(--font-size-small);color:var(--color-text-light);}
 
-.notifications {@mixin layout-medium;}
-.notification {}
-.notification-item {}
-.notification-item:hover {@mixin hover-item;}
 .notification-item-avatar {@mixin avatar-large;position:absolute;left:0;top:0;}
 .notification-item-avatar + p {margin-bottom:var(--space-05);}
 .notification-item-user {font-size:var(--font-size-medium);}
@@ -353,28 +274,177 @@ main,
 .notification-item-content b {font-weight:var(--font-weight-normal);}
 .notification-item-date {margin:0 0 0 var(--space-1);font-size:var(--font-size-small);color:var(--color-text-light);}
 
-
 .search {}
-.search-form {}
 .search-form-close {@mixin avatar-medium;position:absolute;left:1rem;top:14px;transform:rotate(180deg);}
 .search-form-title {margin:0 auto 1rem;font-size:var(--font-size-large);}
-
 .search-recent {position:relative;z-index:1;}
 .search-suggestion {}
-
 
 .sorting-group {display:flex;align-items:center;position:relative;}
 .sorting-title {margin:0 var(--space-2) 0 0;}
 .sorting-item {display:flex;align-items:center;}
 
+ */
 
 
-.obbbb {
+.checklist li {list-style: none;margin-left:0;padding-left: var(--space-2);position: relative;}
+.checklist li:before {
+  content: '✔️';
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: var(--size-tiny);
-  background: var(--color-primary);
   height: var(--size-tiny);
-  margin-bottom: 1rem;
-  border-radius: var(--radius);
+  border-radius: 50%;
+  background-color: gold;
+  font-size: 10px;
+  color: #fff;
+  position: absolute;
+  left: -16px;
+  top: 4px;
+}
+
+
+@define-mixin image-centered {width:auto;height:auto;max-width:150%;max-height:150%;margin:auto;position:absolute;left:0;right:0;top:0;bottom:0;}
+[data-temp=bleeding] {
+  margin: 0 -50vw;
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+@define-mixin clearfix {
+  &:after {content:'';display:block;clear:both;}
+}
+
+/* // item in card component // active */
+@define-mixin hover-text {text-decoration:underline;}
+@define-mixin hover-item {
+  --hover-outline: calc(var(--space-3) / 2 * -1);
+  cursor: pointer;
+
+  &:before {
+    /* // z-idnex 이슈 */
+    content:'';
+    display:block;
+    background-color:var(--color-background-weak);
+    border-radius:var(--radius);
+    position:absolute;
+    left:var(--hover-outline);right:var(--hover-outline);top:var(--hover-outline);bottom:var(--hover-outline);
+    z-index: -1;
+  }
+  figure {box-shadow:var(--shadow) !important;}
+}
+
+/* // hover-item */
+.is-hoverable {
+  --hover-outline: calc(var(--space-3) / 2 * -1);
+  cursor: pointer;
+}
+.is-hoverable::before {
+  content:'';
+  display:block;
+  background-color:var(--color-background-weak);
+  border-radius:var(--radius);
+  position:absolute;
+  left:var(--hover-outline);right:var(--hover-outline);top:var(--hover-outline);bottom:var(--hover-outline);
+  z-index: -1;
+}
+
+/* @define-mixin position-left-top {position:absolute;left:var(--space-1);top:var(--space-1);}
+@define-mixin position-right-top {position:absolute;right:var(--space-2);top:var(--space-2);}
+@define-mixin position-bottom {position:fixed;left:0;right:0;bottom:0;z-index:var(--zindex-menu);}
+@define-mixin reset-position {
+  position: relative;
+  left: auto;
+  right: auto;
+  top: auto;
+  bottom: auto;
+  transform: none;
+} */
+
+/* // @media (prefers-color-scheme: dark) {
+//   :root {
+//     // --title-color: #EFEFEF;
+//     // --desc-color: peachpuff; 
+//   }
+//   // img {filter: brightness(.8) contrast(1.2);}
+// } */
+
+
+/* // todo 자식이 elevated일 때...
+@mixin stack {
+  display:flex;flex-wrap:wrap;align-items:center;margin:var(--space-1-minus);
+  > * {
+    margin:var(--space-1);
+  }
+}
+
+// todo flex일 대 min-width가 필수가 된다.. margin/padding은 container에 의존
+@mixin stack-vertical-scroll {
+  display:flex; // 중복
+  flex-wrap: nowrap;
+  white-space:nowrap;
+  overflow:auto;
+
+  scroll-behavior: smooth;
+  > * {min-width:auto;}
+  &::-webkit-scrollbar {display:none;}
 } */
 
 
+
+.bookitem-cover {
+  padding-top: 50%;
+  background: var(--gray100);
+  border-radius: var(--radius);
+  position: relative;
+}
+
+.bookitem-cover img {
+  width: auto;
+  height: auto;
+  max-width: 8rem;
+  max-height: 100%;
+  margin: auto;
+  box-shadow: var(--shadow);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -.5rem;
+  transition: all .4s;
+}
+
+
+
+
+
+.browser {
+  text-align: center;
+  padding: 2rem;
+  background: var(--red800);
+  background: var(--color-background);
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: var(--zindex-modal);
+}
+
+.sorting-group {display:flex;align-items:center;position:relative;}
+.sorting-title {margin:0 var(--space-2) 0 0;}
+.sorting-item {display:flex;align-items:center;}
+
+.scroll {position: fixed;bottom: 1rem;right: 1rem;z-index: var(--z-index-default);}
+.scroll-indicator {}
+.scroll-indicator i {
+  width: 2px;
+  height: 8px;
+  background: var(--gray800);
+  margin: 8px auto 0;
+  animation: bounce 0.5s infinite alternate;
+  transform: rotate(90deg);
+}

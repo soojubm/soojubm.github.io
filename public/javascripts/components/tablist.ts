@@ -31,15 +31,17 @@ class Tablist extends HTMLElement {
     container.role = 'tablist'
     container.classList.add('tablist')
 
-    const tabIndicator = document.createElement('slot')
-    tabIndicator.name = 'indicator'
+    const indicatorSlot = document.createElement('slot')
+    indicatorSlot.name = 'indicator'
 
     const tabSlot = document.createElement('slot')
     tabSlot.name = 'tab'
 
     shadow.appendChild(container)
+    shadow.appendChild(makeStyleSheet('tablist'))
+    // container.append(tabSlot, indicatorSlot)
 
-    container.append(tabSlot, tabIndicator, makeStyleSheet('tablist'))
+    container.append(...this.childNodes)
 
     // console.log('tabs', document.querySelector('test-tablist').shadowRoot.querySelector('button'))
     this.querySelectorAll('[slot=tab]').forEach(tab => {

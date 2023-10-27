@@ -1,5 +1,5 @@
 
-[role=tablist] {
+.tablist {
   display:flex;
   /* margin:0 0 var(--space-3) 0; */
   /* padding: var(--space-1); */
@@ -50,13 +50,6 @@
 // .tablist .tablist-indicator {background:none;border-radius:0;border:0;border-bottom:3px solid var(--color-primary);bottom:-1px;}
 // .tablist [role=tab] {height:48px;font-weight:bold;color:var(--color-text-light);}
 // .tablist [role=tab][aria-selected=true] {color:var(--color-text);}
-
-.type-sc[role=tablist] {padding:.125rem !important;border:none;box-shadow:none;background:var(--color-background-weak);}
-.type-sc [role=tab] {width:50%;color:var(--color-text);height:var(--size-small);font-size:var(--font-size-small);}
-.type-sc .tablist-indicator {width:33.3333%;height:var(--size-small);box-shadow:var(--shadow);background:var(--color-background);border-color:transparent !important;}
-
-
-
 
 
 .profile-display {display:flex;margin:0 0 var(--space-3) 0;}

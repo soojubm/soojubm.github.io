@@ -3,10 +3,41 @@
   <span class="error-name">404</span>
   <p class="error-description">
     주소가 변경되었거나 삭제되어 찾을 수 없습니다.
-    <span class="linebreak-desktop">주소를 다시 한 번 확인해주세요. 도움이 필요하시면 <a href="#">고객센터</a>로 문의해주세요.</span>
+    <span class="linebreak-desktop"
+      >주소를 다시 한 번 확인해주세요. 도움이 필요하시면 <a href="#">고객센터</a>로
+      문의해주세요.</span
+    >
   </p>
   <footer class="error-control">
     <!-- <a class="error-control-back" href="javascript:history.back();">이전 페이지로</a> -->
     <a class="error-control-home" href="javascript:history.back();">홈 페이지로</a>
   </footer>
 </main>
+
+<style>
+  .error {
+    padding: 8rem 5%;
+    position: relative;
+  }
+  .error-title {
+    /* @mixin text-title; */
+  }
+  .error-name {
+    font: 300px/1 'Courier New';
+    color: rgba(0, 0, 0, 0.05);
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translate(0, -20%);
+  }
+  .error-description {
+    margin: 1rem 0 4rem 0;
+  }
+  .error-control {
+  }
+  .error-control-back {
+  }
+  .error-control-home {
+    /* @mixin button-secondary; */
+  }
+</style>

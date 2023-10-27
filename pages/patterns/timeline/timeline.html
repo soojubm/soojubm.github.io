@@ -1,1 +1,90 @@
-<main class="component" aria-label="site"></main>
+<main class="component" aria-label="site">
+  <p>
+    21-07-28 chip-label 엘리먼트 항상 사용. space-chip-inset 레이블에 패딩을 주면 아이콘 컨트롤이
+    쉬워짐.
+  </p>
+  <p>20223.04 select indicator를 unfolded 로 교체.</p>
+
+  <section class="timeline" style="margin: 4rem var(--grid-margin) 0">
+    <h2 class="post-relation-title" aria-label="last updated" style="margin-bottom: 2rem">
+      체인지로그
+    </h2>
+    히스토리를 관리를 위한 체인지로그 샘플. 컴포넌트 스코프에서도 별도로 관리해야 하며, 새로운
+    구성원도 맥락을 파악할 수 있도록 작성하기.
+    <p class="post-relation-description" style="margin-top: 1rem"></p>
+    <test-tag class="tag">2022. 12. 02.</test-tag>
+    <div class="timeline-item" style="padding-top: 0.5rem; padding-bottom: 1rem">
+      <test-avatar fallback=" " class="timeline-item-icon" style="top: 0.5rem">✍️</test-avatar>
+      <span class="timeline-item-title">네이밍 컨벤션</span>
+      <p class="timeline-item-description" style="color: var(--color-text-light)">
+        중요도(p, s)가 아닌 스타일로 명명(solid, outlined)
+      </p>
+    </div>
+    <div class="">
+      <test-tag class="timeline-date">2023. 02. 08.</test-tag>
+      <div class="timeline-item">
+        <span class="timeline-item-icon">✍️</span>
+        <span class="timeline-item-title">add secondary avatar</span>
+        <p class="timeline-item-description" style="color: var(--color-text-light)">
+          보조적인 역할의 아바타 형태 추가
+        </p>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-item-icon">✍️</span>
+        <span class="timeline-item-title">remove landing sampler</span>
+        <p class="timeline-item-description" style="color: var(--color-text-light)">
+          시스템의 홈 자체를 랜딩 페이지 샘플러로 활용
+        </p>
+      </div>
+      <test-tag class="timeline-date">2022. 12. 28.</test-tag>
+      <div class="timeline-item">
+        <span class="timeline-item-icon">✍️</span>
+        <span class="timeline-item-title">add stack component</span>
+        <p class="timeline-item-description" style="color: var(--color-text-light)">
+          chip-group과 tag-group 제거하고 stack으로 통합.
+        </p>
+      </div>
+      <test-tag class="timeline-date">2022. 12. 17.</test-tag>
+      <div class="timeline-item">
+        <span class="timeline-item-icon">✍️</span>
+        <span class="timeline-item-title">line-height 기본값 역전</span>
+        <p class="timeline-item-description" style="color: var(--color-text-light)">
+          단락을 제외하면 모든 케이스에서 line-height-small을 선언해야 하기 때문에 defalt / small을
+          defalt / large로 변경.
+        </p>
+      </div>
+      <test-tag class="timeline-date">2022. 11. 20.</test-tag>
+      <div class="timeline-item">
+        <span class="timeline-item-icon">✍️</span>
+        <span class="timeline-item-title">변수 추상화</span>
+        <p class="timeline-item-description" style="color: var(--color-text-light)">
+          subhead / 등 제거
+        </p>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-item-icon">✍️</span>
+        <span class="timeline-item-title">예외 케이스를 토큰에서 제외</span>
+        <p class="timeline-item-description" style="color: var(--color-text-light)">
+          font sizes 2종
+        </p>
+      </div>
+    </div>
+    <test-tag class="timeline-date">2022. 11. 4.</test-tag>
+    <div class="timeline-item">
+      <span class="timeline-item-icon">✍️</span>
+      <span class="timeline-item-title">체크박스</span>
+      <p class="timeline-item-description" style="color: var(--color-text-light)">
+        label:before / after 선택자에서 input background를 사용. 체크아이콘 컴포넌트를 다양한
+        컴포넌트에 재활용할 필요.
+      </p>
+    </div>
+    <test-tag class="timeline-date">2022. 8. 4.</test-tag>
+    <div class="timeline-item">
+      <span class="timeline-item-icon">✍️</span>
+      <span class="timeline-item-title">아이콘</span>
+      <p class="timeline-item-description" style="color: var(--color-text-light)">
+        CSS icons을 Material Icons으로 변경
+      </p>
+    </div>
+  </section>
+</main>

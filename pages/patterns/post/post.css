@@ -43,6 +43,11 @@
 
 .post-reaction {}
 
+
+.post-relation {margin:8rem auto;padding:0 var(--grid-margin);}
+.post-relation-title {@mixin text-subhead;}
+.post-relation-description {font-size:var(--font-size-large);color:var(--color-text-light)}
+
 .comment {position:relative;}
 .comment-list {}
 .comment-list.is-active i {background:var(--gray400);}

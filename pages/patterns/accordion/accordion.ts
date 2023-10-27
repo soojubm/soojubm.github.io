@@ -7,7 +7,8 @@ import main from './accordion.html'
 import '/public/stylesheets/shared/webfonts.css'
 import '/public/stylesheets/shared/variables.css'
 import '/public/stylesheets/shared/reset.css'
-import '/public/stylesheets/shared/mixins.css'
+
+import '/public/stylesheets/components/accordion.css'
 
 import '/public/components/navbar/navbar.css'
 import '/public/components/footer/footer.css'
@@ -28,7 +29,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const expanded = targetElement.getAttribute('aria-expanded') === 'true' ? 'false' : 'true'
 
-    console.log(targetElement, targetElement.getAttribute('aria-expanded'), targetElement.getAttribute('aria-expanded') === 'true')
+    console.log(
+      targetElement,
+      targetElement.getAttribute('aria-expanded'),
+      targetElement.getAttribute('aria-expanded') === 'true',
+    )
     targetElement.setAttribute('aria-expanded', expanded)
     // targetElement.classList.toggle('is-active')
   }

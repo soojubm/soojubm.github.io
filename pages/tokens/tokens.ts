@@ -9,7 +9,6 @@ import '/public/stylesheets/shared/variables.css'
 
 import '/public/stylesheets/shared/reset.css'
 
-import '/public/stylesheets/shared/mixins.css'
 // import '/public/stylesheets/components/tiles.css'
 
 import '/public/components/footer/footer.css'
@@ -22,7 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelector('main')!.innerHTML = navbar + tokens + footer
 
   // // ! 디자인시스템에 추가한 거 임시
-  document.querySelector('.js-default-font')?.addEventListener('click', () => document.body.classList.toggle('font-default'))
+  document
+    .querySelector('.js-default-font')
+    ?.addEventListener('click', () => document.body.classList.toggle('font-default'))
 })
 
 const colorTokens = [
@@ -56,10 +57,22 @@ const typographyTokens = [
 
 const sizeTokens = [
   { name: '--size-huge', value: '5rem', cases: ['--avatar-huge'] },
-  { name: '--size-large', value: '3rem / 48px', cases: ['--avatar-large', '--button-height', '--textfield-height'] },
+  {
+    name: '--size-large',
+    value: '3rem / 48px',
+    cases: ['--avatar-large', '--button-height', '--textfield-height'],
+  },
   { name: '--size-medium', value: '2rem / 32px', cases: ['--avatar-medium', '--chip-height'] },
-  { name: '--size-small', value: '1.5rem', cases: ['--avatar-small', '--tag-height', '--indicator-height'] },
-  { name: '--size-tiny', value: '1rem', cases: ['checkbox-height', '--radio-height', '--switch-height'] },
+  {
+    name: '--size-small',
+    value: '1.5rem',
+    cases: ['--avatar-small', '--tag-height', '--indicator-height'],
+  },
+  {
+    name: '--size-tiny',
+    value: '1rem',
+    cases: ['checkbox-height', '--radio-height', '--switch-height'],
+  },
 ]
 
 const spacingTokens = [

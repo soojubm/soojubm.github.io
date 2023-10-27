@@ -1,0 +1,14 @@
+.accordion {margin:1rem 0;}
+.accordion-title {
+  display:flex;align-items:center;justify-content:space-between;
+  gap: var(--space-2);
+  width:100%;
+  height:var(--size-medium);
+  /* font-size: var(--font-size-large); */
+  font-weight: var(--font-weight-bold);
+}
+.accordion-title-icon {@mixin icon-indicator;transform:rotate(90deg)}
+.accordion-panel {display:none;cursor:default;}
+.accordion-panel p + p {margin:var(--space-2) 0 0 0;}
+[aria-expanded=true] .accordion-panel {display:block;padding:var(--space-3) 0;}
+[aria-expanded=true] .accordion-title-icon {transform:rotate(0)}

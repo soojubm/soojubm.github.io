@@ -8,7 +8,6 @@ import './post.css'
 import '/public/stylesheets/shared/webfonts.css'
 import '/public/stylesheets/shared/variables.css'
 import '/public/stylesheets/shared/reset.css'
-import '/public/stylesheets/shared/mixins.css'
 
 import '/public/components/footer/footer.css'
 import '/public/stylesheets/components/textfield.css'
@@ -22,7 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const progressBar = document.querySelector<HTMLElement>('.post-head-progress')
     if (!containerElement || !progressBar) return
 
-    const scrollPercent = `${(window.pageYOffset / (containerElement.scrollHeight - window.innerHeight)) * 100}%`
+    const scrollPercent = `${
+      (window.pageYOffset / (containerElement.scrollHeight - window.innerHeight)) * 100
+    }%`
     progressBar.style.width = scrollPercent
   }
 
@@ -31,7 +32,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const commentTextfield = document.querySelectorAll<HTMLElement>('.js-comment-textfield')
     if (!commentWrite || !commentTextfield) return
 
-    commentTextfield.forEach(element => element.addEventListener('focus', () => commentWrite.classList.add('is-focused')))
+    commentTextfield.forEach(element =>
+      element.addEventListener('focus', () => commentWrite.classList.add('is-focused')),
+    )
   }
 })
 

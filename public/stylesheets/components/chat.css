@@ -1,0 +1,63 @@
+
+.chat {
+  --chat-bubble-border: var(--border);
+
+  margin:1.5rem auto;padding:0 0 0 calc(var(--size-medium) + var(--space-after-avatar-medium));box-sizing:border-box;position:relative;}
+.chat-avatar {
+  border-radius: 50%;
+  border-top-left-radius: var(--radius);
+  overflow:hidden;position:absolute;left:0;top:0;}
+.chat-avatar img {height:100%;}
+.chat-username {display:block;margin:0 0 var(--space-1) 0;font-size:var(--font-size-small);}
+.chat-time {margin:0 0 0 var(--space-1);color:var(--color-text-light);font-size:var(--font-size-small);color:var(--color-text-light);position:absolute;bottom:-1.5rem;}
+.chat-bubble {
+  width:fit-content;
+  max-width:calc(90% - var(--size-medium));
+  padding:var(--space-3) var(--space-4);
+  border:var(--chat-bubble-border);
+  border-radius:1.5rem;border-top-left-radius:var(--radius);
+  background-color: var(--color-background);
+}
+.chat-bubble.has-image {width:85%;padding:0;background:none;overflow:hidden;}
+.chat-bubble figure {}
+
+.chat-bubble p, .chat-bubble li {
+  line-height: 1.6;
+}
+.chat-bubble + .chat-bubble {margin-top:var(--space-2);}
+
+.chat.is-mine {text-align:right;}
+.is-mine .chat-avatar {display:none;}
+.is-mine .chat-time {right:0;}
+.is-mine .chat-bubble {margin-left:auto;border-radius:1.5rem;border-top-right-radius:var(--radius);text-align:left;}
+.is-mine .chat-inputing  {right:0;}
+
+.chat-bubble.is-primary,
+.is-mine .chat-bubble {border:none;;background:var(--color-primary);}
+
+
+.chat-bubble.is-primary p,
+.chat-bubble.is-primary b,
+.is-mine .chat-bubble p {color:var(--gray0);}
+
+
+.animation-chatting {display:flex;gap:var(--space-1);}
+.animation-chatting span {
+	display:block;
+	width: 4px;
+	height:4px;
+	border-radius: 50%;
+	background: var(--color-background-strong);
+  animation: chatting .6s 0s ease infinite;
+}
+.animation-chatting span:nth-of-type(1) {}
+.animation-chatting span:nth-of-type(2) {animation-delay:var(--animation-delay-first);}
+.animation-chatting span:nth-of-type(3) {animation-delay:var(--animation-delay-second);}
+@keyframes chatting {
+  0% {transform:translateY(0)}
+  50% {transform:translateY(.125rem)}
+  100% {transform:translateY(0)}
+}
+
+
+.chat-date {margin:1rem var(--grid-margin);text-align:center;}

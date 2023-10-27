@@ -115,6 +115,7 @@
   
   .article {padding:2rem var(--grid-margin) 8rem;overflow:hidden;position:relative;}
 .article + .article {padding-top:6rem;}
+.article-props dl dd + dd {width:100%;margin:.125rem 0 var(--space-2) 0;font-size:var(--font-size-small);line-height:var(--font-line-height);}
 
 
 p + [variant="subhead"],
@@ -168,3 +169,10 @@ margin: 2rem 0;font-size:var(--font-size-large);color:var(--color-text);line-hei
 
 
 
+.quote {max-width: 400px;@mixin tile-elevated;}
+.quote-avatar {@mixin avatar-medium;}
+.quote-title {margin: var(--space-4) 0 .5rem;@mixin text-subhead;}
+.quote-body {}
+.quote-byline {display: block;margin: 1rem 0 0 0;}
+.quote-byline div {color: var(--color-text);}
+.quote-action {@mixin button-primary;width: 50%;margin: 2rem 0 0 0;}

@@ -6,19 +6,19 @@ class Tab extends HTMLElement {
     const shadow = this.attachShadow({ mode: 'open' })
 
     const container = document.createElement('button')
-    const label = document.createElement('span')
     container.classList.add('tab')
     container.role = 'tab'
-    this.role = 'tab'
+    // this.role = 'tab'
     // TODO role 어디에
 
+    const label = document.createElement('span')
     label.classList.add('tab-label')
 
     shadow.appendChild(container)
     shadow.appendChild(makeStyleSheet('tablist'))
 
-    container.append(...this.childNodes)
     container.setAttribute('aria-selected', this.selected || 'false')
+    container.append(...this.childNodes)
 
     this.querySelector('button')!.addEventListener('click', () => {})
 

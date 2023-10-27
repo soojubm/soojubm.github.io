@@ -37,6 +37,7 @@ const patterns = [
   'accordion',
   'profile',
   'feed',
+  'timeline',
   'notification',
   'auth',
   'pagehead',

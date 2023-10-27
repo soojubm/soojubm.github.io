@@ -1,99 +1,24 @@
 <main class="component">
   <article class="article js-observer js-scrollspy-section">
-    <test-text variant="title" title="or Box">Tiles</test-text>
+    <test-text variant="title" title="or Box">Panels</test-text>
     <test-text variant="body-large">
-      <blockquote>expansion panel : 체크박스나 버튼 형태의 트리거로 상태</blockquote>
+      expansion panel : 체크박스나 버튼 형태의 트리거로 상태
     </test-text>
 
     <dl class="article-aka">
       <dt>a.k.a.</dt>
-      <dd class="hashtag" title="protocol mozilla">EmphasisBox</dd>
-      <dd class="hashtag" title="biings">Box</dd>
-      <dd class="hashtag" title="">Card</dd>
-      <dd class="hashtag" title="pinterest gestalt">Module</dd>
-      <dd class="hashtag" title="radix">section</dd>
-      <dd class="hashtag" title="radix">container</dd>
-      <dd class="hashtag" title="mui">Paper</dd>
     </dl>
 
-    <section class="component-example">
-      <test-group alignment="vertical">
-        <test-tile variant="elevated">
-          <test-text variant="subhead">elevated large with subhead</test-text>
-          <p style="margin: 1rem">
-            문제: 크기에 따른 변별력이 없다. inset이 더 커진다면 모바일 등 작은 화면에서
-            미디어쿼리로 추가적인 inset 조절이 필요하기 때문에 컴포넌트의 고유성을 잃게 된다.
-            솔루션: inset이 1rem 초과할 때 콘텐츠 모듈을 가운데 정렬로 제한하여 고유성을 유지할 수
-            있다.
-          </p>
-          <p style="margin-top: var(--space-3)">이 tile은 페이지 레벨의 컴포넌트가 될 수 있다.</p>
-        </test-tile>
-        <test-tile variant="elevated">
-          <b>elevated</b>
-          <p>flat 형태와 구별이 잘 안 되어 쉐도우를 변경함.</p>
-        </test-tile>
-        <test-tile>
-          <b>flat small</b>
-        </test-tile>
-      </test-group>
-    </section>
+    <section class="component-example"></section>
 
-    <section class="component-props">
-      <dl>
-        <dt>variant</dt>
-        <dd>'flat' | 'elevated'</dd>
-        <dd></dd>
-        <dt>size</dt>
-        <dd>'large' | 'medium' | 'small'</dd>
-        <dd>TODO tiny size for tablist</dd>
-        <dt>children</dt>
-        <dd>React.Node</dd>
-      </dl>
-    </section>
+    <section class="component-props"></section>
 
     <section class="component-guide">
       <test-text variant="subhead">Behavior</test-text>
-      <test-text variant="body">
-        '클릭할 수 있음'의 기표로 elevated 스타일을 사용합니다. 타일 전체가 하나의 클릭 가능한
-        요소일 수 있지만 타일 내부에 클릭 가능한 요소를 포함할 수도 있습니다.
-      </test-text>
+      <test-text variant="body"> </test-text>
 
       <test-text variant="subhead">Visual style</test-text>
-      <test-text variant="body">
-        타일이 선택할 수 있는 것인지 선택할 수 있는 것들이 타일이 될 수 있는 것인지.
-      </test-text>
-
-      <test-text variant="subhead">Memo</test-text>
-      <ul>
-        <li>2:1. 블리딩 시 높이를 고정해야 한다. ??</li>
-        <li>타일 내부 leading, tailing 엘리먼트의 시각보정이 필요할 수 있습니다.</li>
-        <li><del>레이아웃 컴포넌트</del>컨테이너 컴포넌트</li>
-        <li>TODO: 모든 contentbox가 tile 이어야 하는가.</li>
-      </ul>
+      <test-text variant="body"> </test-text>
     </section>
-
-    <test-tile>
-      <figure>
-        <img
-          src="/public/images/AlbumArt_{B5020207-474E-4720-B8A7-C6073790C400}_Large.jpg"
-          alt=""
-          style="width: 100%; margin: 0; border-radius: var(--radius)"
-        />
-        <figcaption></figcaption>
-      </figure>
-      <b>flat with media</b>
-    </test-tile>
-
-    <test-tile class="quote" style="padding: 1rem">
-      <figure class="quote-avatar">🥫</figure>
-      <h3 class="quote-title">Quote</h3>
-      <p class="quote-body">Don't you know that God is Pooh bear?</p>
-      <cite class="quote-byline">
-        <div class="quote-byline-name">Jack Kerouac</div>
-        <div class="quote-byline-job">Poet / Novelist</div>
-      </cite>
-      <button class="quote-action">더 알아보기</button>
-      <!-- <button class="quote-later">지금은 괜찮아요</button> -->
-    </test-tile>
   </article>
 </main>

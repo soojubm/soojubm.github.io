@@ -150,3 +150,22 @@
 .review-item-byline:after {content:'';display:inline-block;width:1px;height:7px;margin:0 6px 0 10px;vertical-align:middle;background:#ddd;}
 .review-item-time {font-size:var(--font-size-small);}
 
+
+.product-quick {
+  display:flex;align-items:center;
+  height: var(--size-huge);
+  padding: 0 var(--grid-margin);
+  background:var(--color-background);
+  position:fixed;left:0;right:0;bottom:0;z-index:2;
+}
+/* .product-quick:before {content:'';display:block;height:inherit;background:inherit;border-top:var(--border);position:fixed;left:0;right:0;bottom:0;} */
+.product-quick-head {width:35%;position:relative;}
+.product-quick-head-image {float:left;@mixin avatar-large;margin:0 var(--space-after-avatar-large) 0 0;}
+.product-quick-head-title {}
+.product-quick-head-description {}
+.product-quick-total {margin:0 2rem 0 auto;text-align:right;position:relative;}
+.product-quick-total-count {margin-right:24px;vertical-align:middle;}
+.product-quick-total-price {@mixin text-title;vertical-align:middle;}
+.product-quick-controls {position:relative;}
+.product-quick-controls-purchase {@mixin button-primary;width:100%;}
+
