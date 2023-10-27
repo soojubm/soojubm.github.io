@@ -38,15 +38,15 @@ class Tablist extends HTMLElement {
     tabSlot.name = 'tab'
 
     shadow.appendChild(container)
-    shadow.appendChild(makeStyleSheet('tablist'))
+    // shadow.appendChild()
     // container.append(tabSlot, indicatorSlot)
 
-    container.append(...this.childNodes)
+    container.append(...this.childNodes, makeStyleSheet('tablist'))
 
     // console.log('tabs', document.querySelector('test-tablist').shadowRoot.querySelector('button'))
     this.querySelectorAll('[slot=tab]').forEach(tab => {
       tab.addEventListener('click', event => {
-        this.changeTab(event)
+        // this.changeTab(event)
       })
     })
 

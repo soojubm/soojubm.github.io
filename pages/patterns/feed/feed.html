@@ -81,15 +81,6 @@
   </ul>
 </main>
 
-<header class="help-head">
-  <h1 class="help-head-title">고객센터</h1>
-  <h1 class="help-head-title">무엇을 도와드릴까요?</h1>
-  <p class="help-head-description">
-    Whether you’re starting an open source project or choosing new tools for your team, we’ve got
-    you covered.
-  </p>
-</header>
-
 <section class="help-topics"></section>
 
 <section class="help-faq">
@@ -108,9 +99,7 @@
     <footer class="faq-item-reaction">
       <p class="faq-reaction-title reaction-prompt">이 답변이 도움이 되었나요?</p>
       <test-chip label="옹옹" data-reaction-text="disappointed" aria-label="Disappointed Reaction">
-        <span class="faq-reaction-button-emoji" data-emoji="disappointed" title="Disappointed">
-          😃
-        </span>
+        <span class="faq-reaction-button-emoji">😃</span>
         <test-badge slot="badge">2</test-badge>
       </test-chip>
       <test-chip
@@ -118,26 +107,26 @@
         data-reaction-text="neutral_face"
         aria-label="Neutral face Reaction"
       >
-        <span class="faq-reaction-button-emoji" data-emoji="neutral_face" title="Neutral face"
-          >😞</span
-        >
+        <span class="faq-reaction-button-emoji">😞</span>
         <b>앙앙. <span class="faq-reaction-button-count">2</span></b>
       </test-chip>
-      <!-- <button class="faq-reaction-button" data-reaction-text="smiley" tabindex="0" aria-label="Smiley Reaction">
-          <span data-emoji="smiley" title="Smiley">😐</span>
-          별로에요 <b class="faq-reaction-button-count">2</b>
-        </button> -->
+      <button
+        class="faq-reaction-button"
+        data-reaction-text="smiley"
+        tabindex="0"
+        aria-label="Smiley Reaction"
+      >
+        <span data-emoji="smiley" title="Smiley">😐</span>
+        별로에요 <b class="faq-reaction-button-count">2</b>
+      </button>
     </footer>
   </div>
 </section>
 
 <section class="faq-contact">
-  <h2 class="faq-contact-title" style="color: var(--color-text-light)">
-    해결이 안 된 문제가 있나요?
-  </h2>
+  <h2 class="faq-contact-title">해결이 안 된 문제가 있나요?</h2>
   <h2 class="faq-contact-title">영업일 기준 2일 내에<br />이메일로 답변 드려요!</h2>
   <form class="faq-contact-form">
-    <test-textfield label="분류"></test-textfield>
     <select class="textfield-input" name="" id="">
       <option value="feedback">뉴스레터</option>
       <option value="feedback">웹사이트</option>

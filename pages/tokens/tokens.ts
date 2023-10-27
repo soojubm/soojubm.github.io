@@ -3,15 +3,9 @@ import navbar from '/public/components/navbar/navbar.html'
 
 import tokens from './tokens.html'
 
-// import '/public/stylesheets/shared.css'
-import '/public/stylesheets/shared/webfonts.css'
-import '/public/stylesheets/shared/variables.css'
-
-import '/public/stylesheets/shared/reset.css'
+import '/public/stylesheets/shared.css'
 
 // import '/public/stylesheets/components/tiles.css'
-
-import '/public/components/footer/footer.css'
 
 import '../components/components.css'
 import './tokens.css'

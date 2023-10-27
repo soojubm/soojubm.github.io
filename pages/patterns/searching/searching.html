@@ -1,23 +1,18 @@
 <main class="pattern js-tab" role="" aria-label="site">
 
   <article class="article">
-    <header class="" role="banner" style="padding: 0 var(--grid-margin); margin-left: -40px">
-      <div class="chat-bubble">
-          <p>검색의 범위? 규모?를 우선 정의해야 한다.</p>
-        </div>
-        <div class="chat-bubble">
-          <p>검색 인지 (또는 탐색 중 검색) -> 검색어 입력 대기 -> 검색어 입력 중(검색 결과) -> 검색 요청 -> 검색 결과</p>
-        </div>
-      <div class="chat-bubble">
-        <a href="https://material.io/design/navigation/search.html">MD search</a>
-        <i class="icon-bullet"></i>
-        <a href="https://developer.android.com/reference/android/widget/SearchView">android searchview</a>
-      </div>
-    </div>
-  </header>
-
     <test-text variant="title">Searching</test-text>
     <test-text variant="body-large">현재 일반적인 검색 패턴 위주로 정리.</test-text>
+    <div class="chat-bubble">
+      <p>검색의 범위? 규모?를 우선 정의해야 한다.</p>
+      <p>검색 인지 (또는 탐색 중 검색) -> 검색어 입력 대기 -> 검색어 입력 중(검색 결과) -> 검색 요청 -> 검색 결과</p>
+    </div>
+  <div class="chat-bubble">
+    <a href="https://material.io/design/navigation/search.html">MD search</a>
+    <i class="icon-bullet"></i>
+    <a href="https://developer.android.com/reference/android/widget/SearchView">android searchview</a>
+  </div>
+</div>
     <section class="component-example">
       <div style="max-width:600px;">
         <test-titlebar heading="">
@@ -59,7 +54,7 @@
               <test-avatar slot="avatar"></test-avatar>
             </test-menuitem>
           </test-menu-group>
-          <div style="margin:.5rem 0 0 0"><test-separator></test-separator></div>
+          <div style="margin:1.5rem 0 0 0"><test-separator></test-separator></div>
           <test-menu-group>
             <test-text variant="label">Channels</test-text>
             <test-menuitem label="Design Thinking" description="12 Members">
@@ -74,8 +69,8 @@
     </section>
 
 
-  <test-text variant="title">최근 검색 내역</test-text>
-  <section class="component-example">
+  <test-text variant="subhead">최근 검색 내역</test-text>
+  <section class="component-case">
     <section class="search-recent" style="max-width:400px;">
       <test-group style="align-items:center;justify-content:space-between;">
         <test-text variant="body-bold">최근 검색</test-text>
@@ -109,7 +104,7 @@
 
   <test-text variant="subhead">검색어 자동완성</test-text>
   <test-text variant="body-large">enter key로 검색할 때 한정. 입력할 때 마다 검색을 요청할 때는 항상 하나 이상의 결과</test-text>
-  <section class="component-example">
+  <section class="component-case">
     <test-tile variant="nuded" style="max-width:400px;">
       <test-menu-group class="search-suggestion">
         <test-menuitem label="자동완성">
@@ -131,14 +126,14 @@
   </section>
 
   <test-text variant="subhead">검색 결과</test-text>
-  <section class="component-example">
+  <section class="component-case">
     메롱
   </section>
 
   <test-text variant="subhead">검색 결과 없음</test-text>
-  <section class="component-example">
+  <section class="component-case">
     <test-tile variant="nuded" style="max-width: 800px">
-      <test-result label="<b>수줍이</b>와(과) 일치하는 내용이 없습니다.">
+      <test-result label="${수줍이}와(과) 일치하는 내용이 없습니다.">
         <test-group slot="list" class="search-similars" style="justify-content:center;">
           <test-chip label="검색어 제공">
             <test-avatar slot="icon" fallback="🦔"></test-avatar>
@@ -153,13 +148,15 @@
 
 
   <test-text variant="subhead">검색 기표</test-text>
-  <test-group>
-    <test-chip>
-      <test-icon slot="icon" name="search"></test-icon>
-    </test-chip>
-    <test-chip>키워드</test-chip>
-    <span class="hashtag">해시태그</span>
-  </test-group>
+  <section class="component-case">
+    <test-group>
+      <test-chip>
+        <test-icon slot="icon" name="search"></test-icon>
+      </test-chip>
+      <test-chip>키워드</test-chip>
+      <span class="hashtag">해시태그</span>
+    </test-group>
+  </section>
   <test-text variant="subhead">페이지 탐색 중 검색 결과로 이동</test-text>
   <ul>
     <li>해시태그 또는 카테고리 등 인기/추천 키워드로 결과 페이지로 이동</li>
@@ -172,7 +169,7 @@
 
 
 <test-text variant="subhead">iOS / Android 패턴</test-text>
-<section class="component-example">
+<section class="component-case">
   <!-- <label class="textfield-label" for="search">검색(시각적으로숨겨야함)</label> -->
   <!-- <div class="textfield searchfield is-focused">
     <button class="textfield-prefix searchfield-prefix"><span class="material-symbols-outlined">search</span></button>
@@ -286,7 +283,7 @@
     <li>searchfield와 textfield는 validation의 유무. 레이블의 유무. icon indicator의 유무로 구분된다</li>
     <li>글로벌 검색 패턴과 로컬 검색(검색 필터를 포함) 패턴의 차이. searchfield small. right alignment.</li>
   </ul>
-  <div class="">
+    <div class="">
       <h1>#ThisIsTagPage</h1>
       <p>조회수(틱톡)/이카테고리에글쓰기(미디엄)/카테고리팔로우(개인화)</p>
     </div>

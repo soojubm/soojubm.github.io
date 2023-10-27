@@ -7,7 +7,6 @@ type selected = 'childNode value attr'
 class chipGroup extends HTMLElement {
   constructor() {
     super()
-
     const shadow = this.attachShadow({ mode: 'open' })
 
     const container = document.createElement('div')

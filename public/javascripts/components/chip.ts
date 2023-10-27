@@ -5,6 +5,8 @@ class Chip extends HTMLElement {
 
   constructor() {
     super()
+    const shadow = this.attachShadow({ mode: 'open' })
+
     // console.log('#internals', this.#internals)
     // const sheet = new CSSStyleSheet()
 
@@ -38,8 +40,6 @@ class Chip extends HTMLElement {
     badgeSlot.name = 'badge'
 
     // iconSlot.classList.add('chip-icon')
-
-    const shadow = this.attachShadow({ mode: 'open' })
 
     // shadow.adoptedStyleSheets = [sheet]
     // host.shadowRoot?.adoptedStyleSheets = [sheet]

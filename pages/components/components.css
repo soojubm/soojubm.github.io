@@ -1,14 +1,14 @@
 .component {
   transition: all .4s;
-
   --container-width: 640px;
 }
-.component-example {margin:3rem -5vw;padding:2rem var(--grid-margin) 3rem;
+.component-example {
+  margin:3rem -5vw;
+  padding:2rem var(--grid-margin) 3rem;
   border: var(--border);
   border-right: none;
-  border-top-left-radius:var(--radius);
-  border-bottom-left-radius:var(--radius);
-  /* position:sticky;top:0; */
+  border-radius: 0 0 var(--radius) var(--radius);
+
   /* // background: #159957;
   // fallback for old browsers
   // background: -webkit-linear-gradient(to bottom, #155799, #159957);
@@ -166,8 +166,6 @@ margin: 2rem 0;font-size:var(--font-size-large);color:var(--color-text);line-hei
   // }
   // .component-example > *:first-child {margin-top:-1.75rem;} */
 }
-
-
 
 .quote {max-width: 400px;@mixin tile-elevated;}
 .quote-avatar {@mixin avatar-medium;}
