@@ -271,7 +271,7 @@
     <fieldset class="authentication-fieldset optional" style="margin:1rem 0 0 0;">
       <legend hidden>선택입력</legend>
       <test-textfield label="닉네임" placeholder="수줍이" isOptional></test-textfield>
-      <div class="textfield-group">
+      <fieldset class="textfield-group">
         <test-textfield label="출생년도" placeholder="출생년도" isOptional></test-textfield>
         <div class="textfield">
           <label class="textfield-label" for="signup-gender">성별 <small>선택입력</small></label>
@@ -282,7 +282,7 @@
           </select>
           <span class="textfield-suffix material-symbols-outlined">arrow_drop_down</span>
         </div>
-      </div>
+      </fieldset>
     </fieldset>
 
     <fieldset class="authentication-fieldset signup-terms">
@@ -373,40 +373,38 @@
         box to verify your email.
       </p>
     </header>
-    <fieldset class="authentication-fieldset">
-      <div class="textfield-group">
-        <!-- aria-invalid="false"  -->
-        <test-textfield
-          name="code1"
-          type="number"
-          maxlength="1"
-          style="width: var(--size-large)"
-        ></test-textfield>
-        <test-textfield
-          name="code2"
-          type="number"
-          maxlength="1"
-          style="width: var(--size-large)"
-        ></test-textfield>
-        <test-textfield
-          name="code3"
-          type="number"
-          maxlength="1"
-          style="width: var(--size-large)"
-        ></test-textfield>
-        <test-textfield
-          name="code4"
-          type="number"
-          maxlength="1"
-          style="width: var(--size-large)"
-        ></test-textfield>
-        <test-textfield
-          name="code5"
-          type="number"
-          maxlength="1"
-          style="width: var(--size-large)"
-        ></test-textfield>
-      </div>
+    <fieldset class="authentication-fieldset textfield-group">
+      <!-- aria-invalid="false"  -->
+      <test-textfield
+        name="code1"
+        type="number"
+        maxlength="1"
+        style="width: var(--size-large)"
+      ></test-textfield>
+      <test-textfield
+        name="code2"
+        type="number"
+        maxlength="1"
+        style="width: var(--size-large)"
+      ></test-textfield>
+      <test-textfield
+        name="code3"
+        type="number"
+        maxlength="1"
+        style="width: var(--size-large)"
+      ></test-textfield>
+      <test-textfield
+        name="code4"
+        type="number"
+        maxlength="1"
+        style="width: var(--size-large)"
+      ></test-textfield>
+      <test-textfield
+        name="code5"
+        type="number"
+        maxlength="1"
+        style="width: var(--size-large)"
+      ></test-textfield>
     </fieldset>
     <footer class="authentication-foot">
       <test-button variant="primary" type="submit" class="authentication-foot-submit">

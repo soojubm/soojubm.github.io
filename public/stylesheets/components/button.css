@@ -102,3 +102,13 @@ button:not(:focus) {outline:0;} */
 &:disabled {opacity:.5;cursor:not-allowed;} */
 /* button:before {content:'';display:block;width:8px;height:8px;background:rgba(0,0,0,.2);position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);opacity:0;}
 button:active:before {width:100%;height:100%;animation:ripple .6s;}  */
+
+.a-button:active:not(.a-button-disabled) {
+background-color: #EDFDFF;
+box-shadow: 0 0 0 3px #C8F3FA, inset 0 0 0 2px #FFF;
+border-color: #008296;
+}
+.button:active:not(.a-button-disabled) {
+  background: #F0B800;
+  border-color: #008296;
+  box-shadow: 0 0 0 3px #C8F3FA, inset 0 0 0 2px #FFF;}

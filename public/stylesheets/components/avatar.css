@@ -81,6 +81,11 @@ img {
   z-index: 1;
 }
 
+.avatar[data-size=medium] .avatar-badge {
+  width: 8px;
+  height: 8px;
+}
+
 .avatar-group {display:flex;}
 .avatar-group > * + * {margin-left:-.5rem;}
 /* .avatargroup-label {margin:0 0 0 var(--space-2);line-height:var(--size-small);} */ 

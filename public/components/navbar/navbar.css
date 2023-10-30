@@ -160,12 +160,3 @@
 .menu-heading {}
 .menu-link {display:flex;align-items:center;height:var(--size-medium);margin:var(--space-2) 0;@mixin text-subhead;position:relative;}
 /* .menu-link:hover {@mixin hover-item;} */
-
-
-.switch-wrap {display:inline-block;width:var(--size-medium);height:var(--size-medium);overflow:hidden;
-  position: absolute;
-}
-.day {display:flex;align-items:center;justify-content:center;width:100%;height:100%;position:absolute;top:0;transition:top .2s ease .3s;}
-.night {display:flex;align-items:center;justify-content:center;width:100%;height:100%;position:absolute;top:var(--size-medium);transition:top .2s ease 0s;}
-.theme-dark .day {top:var(--size-medium);transition-delay:0s;}
-.theme-dark .night {top:0;transition-delay:.3s;}

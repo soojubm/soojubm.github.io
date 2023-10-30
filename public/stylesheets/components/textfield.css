@@ -140,7 +140,7 @@ input[type=search]::-webkit-search-results-decoration {display:none;}
 .searchfield-input:focus ~ .searchfield-cancel {right: 0;}
 .searchfield-prefix {
   display:flex;align-items:center;justify-content:center;width:var(--size-large);height:var(--size-large);
-  height:46px;
+  /* height:46px; */
   position:absolute;left:0;top:0;z-index:2;}
 .searchfield-prefix ~ .searchfield-input {padding-left:calc(var(--size-medium) + var(--space-after-avatar-medium) + .5rem);}
 .searchfield-clear {width:var(--size-large);height:var(--size-large);position:absolute;right:0;top:0;display:none;}

@@ -10,7 +10,7 @@
 
   /* // -apple-system === san-serif / system-ui === BlinkMacSystemFont */
   /* 'Pretendard', 'IBM Plex Sans' */
-  --font-family: 'IBM Plex Sans', 'Pretendardm', system-ui, sans-serif;
+  --font-family: 'IBM Plex Sans', 'Pretendard', system-ui, sans-serif;
   /* --font-family: 'IBM Plex Sans', 'Gothic A1', system-ui, sans-serif; */
   --font-family-heading: null;
   --font-family-body: null;
@@ -22,7 +22,7 @@
   --font-size-medium: .875rem;
   --font-size-small: .75rem;
 
-  --font-weight-normal: 400;
+  --font-weight-normal: 500;
   --font-weight-bold: 700;
   --font-weight-extrabold: null;
 

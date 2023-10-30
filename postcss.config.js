@@ -3,6 +3,10 @@
 const config = {
   plugins: [
     // require('postcss-import'),
+    // postcssCustomProperties({
+    //   preserve: false,
+    // }),
+    // require('postcss-import'),
     // require('postcss-simple-vars'), // mixin dependency $ 안됨
     // require('postcss-nested'), // mixin dependency / preset-env
     // require('postcss-mixins'),
@@ -21,3 +25,19 @@ const config = {
 module.exports = config
 
 // // autoprefixer preset-env에 포함
+
+// import 위에 와야 함.
+// extends 중단. mixins
+// nested x. nesting o ?
+
+// stylelint
+//   "extends": "stylelint-config-standard",
+//     "plugins": [
+//       "stylelint-use-nesting"
+//     ],
+//     "rules": {
+//     "at-rule-no-unknown": [true,{
+//       "ignoreAtRules": ["extend"]
+//     }],
+//     "csstools/use-nesting": "ignore"
+//   }

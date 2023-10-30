@@ -5,6 +5,15 @@
 // `타이틀 - 작가명` 으로 `title` 필드를 수정해준 다음
 // 만약 에러가 발생한다면 얼럿을 표시해준다
 // 에러가 없다면 그 값을 posts 라는 변수에 할당한다
+
+function slugify(sentence, lowercase) {
+  if (lowercase) {
+    return sentence.replace(/\s/g, '-').toLowerCase()
+  } else {
+    return sentence.replace(/\s/g, '-')
+  }
+}
+
 const posts = await getPosts()
   .map(posts => posts.slice().sort((a, b) => b.createdAt - a.createdAt))
   .map(sortedPosts =>
@@ -254,7 +263,8 @@ textboxEle.addEventListener('keypress', function (e) {
   // Get the pressed character
   const s = String.fromCharCode(keyCode)
   const isCapsLockOn =
-    (s.toUpperCase() === s && s.toLowerCase() !== s && !(shiftKey && isMac)) || (s.toUpperCase() !== s && s.toLowerCase() === s && shiftKey)
+    (s.toUpperCase() === s && s.toLowerCase() !== s && !(shiftKey && isMac)) ||
+    (s.toUpperCase() !== s && s.toLowerCase() === s && shiftKey)
 
   messageEle.innerHTML = isCapsLockOn ? 'Caps lock is ON' : ''
   messageEle.style.display = isCapsLockOn ? 'block' : 'none'
@@ -321,15 +331,18 @@ textboxEle.addEventListener('keypress', function (e) {
 
 var renderTime = function () {
   var time = new Date()
-  document.querySelector('.clock')?.textContent = time.toLocaleString(navigator.language || 'en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-    hour: 'numeric',
-    minute: 'numeric',
-    second: 'numeric',
-    hour12: true,
-  })
+  document.querySelector('.clock')?.textContent = time.toLocaleString(
+    navigator.language || 'en-US',
+    {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      hour: 'numeric',
+      minute: 'numeric',
+      second: 'numeric',
+      hour12: true,
+    },
+  )
   // time.toLocaleString(navigator.language || 'en-US', {year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true});
 }
 renderTime()

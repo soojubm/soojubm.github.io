@@ -13,42 +13,33 @@ function tab() {
   const tabs = tabElement.querySelectorAll('[role=tab]')
   const panels = tabElement.querySelectorAll('[role=tabpanel]')
 
-  console.log(tabs, panels)
-
   let selectedTabIndex = 0
   let selectedTab = tabs[selectedTabIndex] as HTMLElement
 
   initializeIndicator()
 
-  tabs.forEach(tab => tab.addEventListener('click', changeTab))
+  tabs.forEach(tab => tab.addEventListener('click', handleTabClick))
   window.addEventListener('resize', throttle(initializeIndicator), true)
 
   // 파라미터로 인덱스를 받지 않는 방법.
-  function changeTab(event) {
+  function handleTabClick(event) {
     selectedTab = event.target
-    //   const target = e.target
-    //   const parent = target.parentNode
-    //   const grandparent = parent.parentNode
     initializeIndicator()
-
-    console.log(selectedTab)
 
     tabs.forEach(tab => tab.setAttribute('aria-selected', 'false'))
     selectedTab.setAttribute('aria-selected', 'true')
+    // event.currentTarget
 
-    // tabPanels.forEach(panel => panel.classList.toggle('is-active', selectedTab.name === panel.dataset.name))
-    // aria-
+    // const tabPanel = tabs.querySelector(`[aria-labelledby="${event.currentTarget.id}"]`);
 
     panels.forEach(panel => {
-      const isSelected = String(selectedTab.getAttribute('aria-controls') === (panel as HTMLElement).getAttribute('id'))
-      panel.setAttribute('aria-hidden', isSelected === 'true' ? 'false' : 'true')
+      const isSelected = selectedTab.getAttribute('aria-controls') === panel.getAttribute('id')
+      panel.setAttribute('aria-hidden', String(!isSelected))
     })
   }
 
   function initializeIndicator() {
-    if (!tabElement) return
-
-    const indicatorElement = tabElement.querySelector<HTMLElement>('.tablist-indicator')
+    const indicatorElement = tabElement?.querySelector<HTMLElement>('.tablist-indicator')
     if (!indicatorElement) return
 
     indicatorElement.style.left = `${selectedTab.offsetLeft}px`
@@ -62,7 +53,6 @@ export default tab
 
 // const { pathname, hash } = window.location
 // history.pushState({ tabname: 'tester' }, 'name', `${target.name}`)
-
 //   // Enable arrow navigation between tabs in the tab list
 //   let tabFocus = 0
 //   tabList.addEventListener('keydown', e => {
@@ -83,7 +73,6 @@ export default tab
 //           tabFocus = tabs.length - 1
 //         }
 //       }
-
 //       tabs[tabFocus].setAttribute('tabindex', 0)
 //       tabs[tabFocus].focus()
 //     }
@@ -91,15 +80,6 @@ export default tab
 // })
 
 // window.addEventListener("DOMContentLoaded", () => {
-//   const tabs = document.querySelectorAll('[role="tab"]');
-//   const tabList = document.querySelector('[role="tablist"]');
-
-//   // Add a click event handler to each tab
-//   tabs.forEach((tab) => {
-//     tab.addEventListener("click", changeTabs);
-//   });
-
-//   // Enable arrow navigation between tabs in the tab list
 //   let tabFocus = 0;
 
 //   tabList.addEventListener("keydown", (e) => {
@@ -126,27 +106,3 @@ export default tab
 //     }
 //   });
 // });
-
-// function changeTabs(e) {
-//   const target = e.target;
-//   const parent = target.parentNode;
-//   const grandparent = parent.parentNode;
-
-//   // Remove all current selected tabs
-//   parent
-//     .querySelectorAll('[aria-selected="true"]')
-//     .forEach((t) => t.setAttribute("aria-selected", false));
-
-//   // Set this tab as selected
-//   target.setAttribute("aria-selected", true);
-
-//   // Hide all tab panels
-//   grandparent
-//     .querySelectorAll('[role="tabpanel"]')
-//     .forEach((p) => p.setAttribute("hidden", true));
-
-//   // Show the selected panel
-//   grandparent.parentNode
-//     .querySelector(`#${target.getAttribute("aria-controls")}`)
-//     .removeAttribute("hidden");
-// }

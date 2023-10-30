@@ -811,6 +811,54 @@
   <!-- To simplify is to clarify -->
   <!-- overall consistency and design and development efficiency -->
 
+  서버로의 네트워크 왕복 시간 (전파 지연 시간)은 100ms입니다.
+서버 응답 시간은 HTML 문서의 경우 100ms, 기타 모든 파일의 경우 10ms입니다.
+
+HTML 콘텐츠를 사용할 수 있게 되면 브라우저가 바이트를 파싱하여 토큰으로 변환한 후 DOM 트리를 빌드합니다. 
+이미지는 페이지의 초기 렌더링을 차단하지 않지만 가능한 한 빨리 이미지를 그려야 합니다.
+onload 이벤트는 페이지에 필요한 모든 리소스가 다운로드되고 처리된 지점을 표시합니다. 이 시점에서 로딩 스피너가 브라우저에서 회전을 멈출 수 있습니다 (워터폴의 빨간색 세로선).
+
+일반 HTML 예와 달리 CSSOM을 생성하기 위해 CSS 파일을 가져오고 파싱해야 하며, 렌더링 트리를 빌드하기 위해 DOM 및 CSSOM이 모두 필요합니다.
+페이지에는 파서 차단 JavaScript 파일도 포함되어 있으므로 CSS 파일이 다운로드되고 파싱될 때까지 domContentLoaded 이벤트가 차단됩니다. JavaScript가 CSSOM을 쿼리할 수 있으므로 JavaScript를 실행하려면 다운로드될 때까지 CSS 파일을 차단해야 합니다.
+
+브라우저가 스크립트 태그에 도달하는 즉시 차단하고 CSSOM이 생성될 때까지 대기하기 때문입니다. 
+
+첫째, 모든 인라인 스크립트는 파서를 차단하지만 외부 스크립트의 경우 'async' 키워드를 추가하여 파서 차단을 해제할 수 있습니다. 인라인 처리를 취소하고 시도해 보겠습니다.
+
+domContentLoaded 시간은 이전 예와 사실상 동일합니다. JavaScript를 비동기로 표시하는 대신 CSS와 JS를 모두 페이지 자체에 인라인 처리했습니다. 이로 인해 HTML 페이지가 훨씬 커지지만 장점은 페이지가 외부 리소스를 가져오기 위해 기다릴 필요가 없다는 것입니다. 페이지에 모든 것이 바로 있습니다.
+
+CSS와 자바스크립트를 병렬로 전송할 수 있기 때문입니다. 주요 렌더링 경로의 특성을 파악하면 주요 리소스를 식별하고 브라우저가 이에 대한 가져오기를 예약하는 방식을 이해할 수 있습니다. 예시를 계속 살펴보겠습니다.
+사이트 개발자와 채팅한 결과, 페이지에 포함한 JavaScript를 차단할 필요가 없다는 것을 알게 되었습니다. 페이지 렌더링을 차단할 필요가 없는 몇 가지 분석 및 기타 코드가 있습니다. 이렇게 하면 'async' 속성을 스크립트 태그에 추가하여 파서 차단을 해제할 수 있습니다.
+
+
+비동기 스크립트에는 다음과 같은 여러 장점이 있습니다.
+
+스크립트가 더 이상 파서를 차단하지 않으며 주요 렌더링 경로의 일부가 아닙니다.
+다른 중요한 스크립트가 없으므로 CSS에서 domContentLoaded 이벤트를 차단할 필요가 없습니다.
+domContentLoaded 이벤트가 빨리 실행될수록 다른 애플리케이션 로직도 빨리 실행될 수 있습니다.
+
+
+
+<p>ux 부채. 점진적 상환. 시장 출시 속도와 사용자 인식이나 미래의 문제 해결 비용을 대조.</p>
+<p>a/b test의 결과. 일시적이고 의도적이므로 이러한 유형의 불일치는 UX 부채로 간주되어서는 안 됩니다. 디자인 시스템으로 확장.</p>
+<p>제품 경험을 가장 많이 향상시키는 것은 무엇입니까? 새로운 기능입니까, 아니면 기존 기능을 사용할 수 있게 만드는 것입니까? 사람들이 사용할 수 없는 기능은 존재하지 않는 것과 같기 때문에 후자의 선택이 가장 좋은 경우가 많습니다. 따라서 사용자에게 적합하지 않은 것을 수정하는 것은 고객이 실제로 사용하게 되는 측면에서 새로운 기능을 추가하는 것과 동일한 효과를 갖습니다. 따라서 기존 기능의 UX 문제는 새로운 기능보다 더 높은 우선순위를 할당받을 수 있으며 종종 할당되어야 합니다. 더욱이 기능은 일반적으로 기대되는 이점의 순서로 구현되므로 기존 기능만 사용자에게 작동하도록 만들 수 있다면 기존 기능은 새로운 기능보다 본질적으로 더 가치가 있을 가능성이 높습니다.</p>
+<p>사용자 관점에서 문제에 대한 설명(이 문제가 사용자에게 어떤 영향을 미치나요?)
+  경험 중 발생하는 위치(인식, 고려, 전환)
+  발생 빈도(얼마나 자주 발생합니까?)
+  누가 문제를 보고했나요? (사용자, 팀, 이해관계자)
+  문제를 해결하는 데 필요한 UX 및 개발 노력 수준(낮음, 중간 또는 높음)</p>
+  <p>ux부채와 기술부채의 컨트롤. 함께 발생하는 케이스. 스프린트에 의무적으로 한 두개의 스토리를 의무화할 수도 있다. 하루 몰빵하는 치즈 데이를 가질 수도 있다.</p>
+<p>얼리 어답터는 기술 부채의 리스크</p>
+<ul>
+  <li>사용자 인터페이스user</li>
+  <li>인터랙션 디자인</li>
+  <li>카피, 콘텐츠, 메시지coyp, content, messaging</li>
+  <li>정보 아키텍쳐(탐색 구조 및 콘텐츠 분류)</li>
+  <li>접근성 요소(contrast, visual focus indicators, text alternatives, etc.)<li>
+  <li>고객 여정의 일관성customer journey consistency<li>
+  <li>옴니채널 원활성omnichannel seamlessness<li>
+</ul>
+
   <div class="js-tab" style="margin:0 var(--grid-margin);">
     <style>
       .component-example {
@@ -821,12 +869,12 @@
     </style>
     <!-- data-scroll="vertical" -->
     <div style="display:flex;gap:var(--space-4);margin:1.25rem 0 0 0;text-align: center;overflow:hidden;" role="tablist">
-      <!-- <button class="story" role="tab" aria-selected="true" data-index="1">
+      <button class="story" role="tab" aria-selected="true" data-index="1">
         <figure class="avatar" data-size="huge" style="background-image: none">
           <span class="material-symbols-outlined" style="font-size: 3rem; color: var(--color-text)">+</span>
         </figure>
         <span class="story-name">추가</span>
-      </button> -->
+      </button>
       <test-entity description="공유하기" data-index="keyword">
         <test-avatar slot="avatar" size="huge" fallback="🌏"></test-avatar>
       </test-entity>

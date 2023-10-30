@@ -29,6 +29,11 @@
     </test-text>
 
     <ul>
+      <li>fieldset variant=checkbox-group horizontal / flex=1</li>
+      <li>
+        label 은 받아야 함. 왜냐하면 스크린리더. 시각적으로 숨기기 위한 prop이 필요하다.
+        aria-invalid
+      </li>
       <li>유틸함수 만들기. 앞자리 0 제거. 숫자만입력3자리마다콤마. 소숫점 컨트롤.</li>
       <!-- <input type="text" inputmode="numeric" pattern="[0-9]*" />
       <small id="" class="textfield-helper" aria-live="assertive">pattern="[0-9]+"</small> -->
@@ -154,7 +159,7 @@
     <test-text variant="subhead">Groupable (patterns)</test-text>
     <test-text variant="body">서비스 이용에 필수적인 필드는 그루핑 하지마요마요. ?? </test-text>
     <section class="component-case">
-      <div class="textfield-group" style="width: 100%; max-width: 400px">
+      <fieldset class="textfield-group" style="width: 100%; max-width: 400px">
         <test-textfield label="Length" placeholder="cm unit"></test-textfield>
         <test-icon
           name="delete-circle"
@@ -170,7 +175,7 @@
           close
         </test-icon>
         <test-textfield label="Height" placeholder="cm"></test-textfield>
-      </div>
+      </fieldset>
     </section>
 
     <test-text variant="subhead">PasswordField</test-text>
@@ -214,14 +219,14 @@
     </section>
     <test-text variant="subhead">DateRangeField</test-text>
     <section class="component-case">
-      <div class="textfield-group" style="width: 100%; max-width: 400px">
+      <fieldset class="textfield-group" style="width: 100%; max-width: 400px">
         <test-textfield type="date" name="date-start" label="체크인" placeholder="YYYY. MM. DD.">
           <test-icon slot="suffix" name="calendar"></test-icon>
         </test-textfield>
         <test-textfield type="date" name="date-end" label="체크아웃" placeholder="YYYY. MM. DD.">
           <test-icon slot="suffix" name="calendar"></test-icon>
         </test-textfield>
-      </div>
+      </fieldset>
     </section>
     <test-text variant="subhead">Counter</test-text>
     <section class="component-case">
