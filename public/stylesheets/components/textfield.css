@@ -4,6 +4,7 @@ p {margin: 0;}
 fieldset:invalid ~ fieldset { display: none; }
 input:valid {}
 input:invalid {} */
+/* label height 가 있으면 아이콘 포지셔닝에 좋다. */
 
 .textfield-group {display:flex;justify-content:space-between;gap:var(--space-2);}
 .textfield-group > * {flex:auto;}
@@ -57,14 +58,6 @@ input[type=search]::-webkit-search-results-button,
 input[type=search]::-webkit-search-results-decoration {display:none;}
 
 
-
-/* .inputfield[data-type=search] {} */
-/* // 오른쪽에 2개의 액션이 있는 ui가 있었음. 좋은 ui는 아님. 리빌 + 클리어. 클리어가 있는데 리빌이 필요하지 않음 */
-.textfield-reveal {font-size:var(--font-size-small);color:var(--color-text-light);}
-.textfield-check {}
-.textfield-unit {}
-
-
 /* textfield 중복 / for select */
 .textfield {
   max-width: 400px;
@@ -92,6 +85,11 @@ input[type=search]::-webkit-search-results-decoration {display:none;}
 .textfield-input:disabled {opacity:.5;cursor:not-allowed;}
 .textfield-helper {margin:var(--space-1) 0 0;color:var(--red800);}
 
+/* .inputfield[data-type=search] {} */
+/* // 오른쪽에 2개의 액션이 있는 ui가 있었음. 좋은 ui는 아님. 리빌 + 클리어. 클리어가 있는데 리빌이 필요하지 않음 */
+.textfield-reveal {font-size:var(--font-size-small);color:var(--color-text-light);}
+.textfield-check {}
+.textfield-unit {}
 
 .textfield-suffix, 
 ::slotted([slot=suffix]) {
@@ -112,6 +110,7 @@ input[type=search]::-webkit-search-results-decoration {display:none;}
   position:absolute;top:var(--size-small);left:var(--space-4);
 }
 
+.textfield-suffix ~ .textfield-input {padding-right:4rem;}
 
 /* // .textfield-link {} */
 ::slotted([slot=link]) {

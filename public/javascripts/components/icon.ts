@@ -10,7 +10,7 @@ class Icon extends HTMLElement {
     const container = document.createElement('i')
     container.role = 'img'
     container.classList.add('icon', iconClassName)
-    // if (this.size) container.dataset.size = this.size
+    if (this.size) container.dataset.size = this.size
 
     // TODO
     const pretty = document.createElement('link')
@@ -30,11 +30,11 @@ class Icon extends HTMLElement {
   get size() {
     return this.getAttribute('size')
   }
-  set size(value) {
-    // TODO TS2339: Property 'dataset' does not exist on type 'ChildNode'
-    const node = this.shadowRoot!.lastChild as HTMLElement
-    if (value) node.dataset.size = value
-  }
+  // set size(value) {
+  //   // TODO TS2339: Property 'dataset' does not exist on type 'ChildNode'
+  //   const node = this.shadowRoot!.lastChild as HTMLElement
+  //   if (value) node.dataset.size = value
+  // }
 
   connectedCallback() {}
   disconnectedCallback() {}

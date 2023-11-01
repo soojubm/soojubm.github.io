@@ -1,5 +1,3 @@
-@import 'textfield';
-
 
 
 .range {}
@@ -29,18 +27,37 @@ progress:not([value]) {
   /* indeterminate styles */
 }
 
-// custom file
+/* // custom file */
+input:blank {}
 input[type=file] {width:0;height:0;opacity:0;position:absolute;}
 input[type=file] + label {}
 input[type=file] + label:after {display:none;}
 
-input:blank {}
 
 .file {}
 .file-title {}
 .file-helper {margin:.25rem 0 0;}
-.file-input {opacity:0;}
-// .file-label {@mixin button-secondary;cursor:pointer;}
+.file-input {}
+.file-label {
+font-family: inherit;
+font-family: var(--font-family);
+font-size: inherit;
+
+display: inline-flex;
+align-items: center;
+justify-content: center;
+min-width: var(--button-min-width);
+height: var(--button-size);
+padding: 0 var(--space-4) 2px;
+border: var(--button-border);
+border-radius: var(--button-radius);
+box-sizing: border-box;
+
+background: var(--button-color);
+color: var(--button-text-color);
+font-weight: var(--button-font-weight);
+text-transform: capitalize;
+}
 .file-attachment {margin:2rem 0 0;}
 .file-attachment-title {margin:.5rem 0;@mixin text-label;}
 .file-attachment-helper {}
@@ -51,13 +68,9 @@ input:blank {}
 .file-attachment-item-image img {width:xo;height:auto;max-width:auto;min-height:var(--size-huge);max-height:100px;margin:auto;position:absolute;left:0;right:0;top:0;bottom:0;}
 .file-attachment-item-name {display:block;margin:.25rem 0 -.25rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 .file-attachment-item-size {color:var(--color-text-light);}
-.file-attachment-item-delete {
-  /* @mixin avatar-medium; */
-  @mixin position-right-top;right:.5rem;top:.5rem;}
-.file-attachment-item-delete:hover {}
+.file-attachment-item-delete {right:.5rem;top:.5rem;}
 
-
-// date
+/* // date */
 .calendar {
   width: 250px;
   --date-width: 32px;
@@ -102,7 +115,7 @@ input:blank {}
 }
 
 
-// button.visually-hidden:focus,
+/* // button.visually-hidden:focus,
 // input[type=submit].visually-hidden:focus {
 //   position: fixed;
 //   top: 10px;
@@ -120,11 +133,7 @@ input:blank {}
 //   outline-style: auto;
 //   outline-color: Highlight;
 //   outline-color: -webkit-focus-ring-color;
-// }
-
-
-
-
+// } */
 
 .counter-input {}
 .price-input {}
@@ -132,7 +141,7 @@ input:blank {}
 
 .counter {display:flex;position:relative;}
 .counter-input {width:100%;margin:0 var(--space-2);background:var(--color-background-weak);border-radius:var(--radius);text-align:center;}
-// radius = iOS
+/* // radius = iOS */
 .counter-decrement {@mixin chip;}
 .counter-increment {@mixin chip;border-radius:0 var(--radius) var(--radius) 0;}
 .counter-decrement[aria-disabled=true] {opacity:.5;cursor:not-allowed;}

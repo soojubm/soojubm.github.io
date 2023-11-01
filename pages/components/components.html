@@ -131,21 +131,22 @@
       <test-text variant="title">File Uploader</test-text>
       <test-text variant="body-large">프로필 사진 또는 이미지 업로드.</test-text>
       <section class="component-example">
-        <test-tile>
           <form class="file" method="" enctype="multipart/form-data">
-            <b class="file-title" hidden>프로필 사진</b>
+            <b class="file-title">프로필 사진</b>
             <div class="file-upload">
-              <input class="file-input js-file-input" type="file" id="file2" multiple accept=".jpg,.png" capture="camera" />
-              <label class="file-label" for="file2">사진 업로드. 여기로 드래그 하셔도 되어요.</label>
+              <test-button variant="primary">사진 업로드. 여기로 드래그 하셔도 되어요.</test-button>
+              <!-- //  accept=".jpg,.png" capture="camera" -->
+              <input class="file-input js-file-input visually-hidden" type="file" id="file2" multiple />
+              <label class="file-label  visually-hidden" for="file2">사진 업로드. 여기로 드래그 하셔도 되어요.</label>
               <p class="file-helper"><small>Only .jpg and .png files. 500kb max file size.</small></p>
             </div>
             <div class="file-attachment">
               <b class="file-attachment-title">첨부한 파일</b>
               <p class="file-attachment-helper js-file-attachment-helper" role="status">No files currently selected for upload.</p>
-              <section class="file-attachment-list js-file-attachment-list"></section>
+              <section class="file-attachment-list js-file-attachment-list">
+              </section>
             </div>
           </form>
-        </test-tile>
       </section>
     </article>
 
@@ -713,7 +714,7 @@
       <test-separator></test-separator>
       <test-titlebar heading="공유 설정">
         <test-chip slot="back" aria-label="이전 페이지로">
-          <test-icon slot="icon" name="arrow-left"></test-icon>
+          <test-icon slot="icon" size="small" name="arrow-left"></test-icon>
         </test-chip>
       </test-titlebar>
       <test-group alignment="vertical">

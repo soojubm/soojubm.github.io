@@ -98,7 +98,6 @@ async function domEvents() {
   // }
 
   // input.checkbox({ checkAllSelector: '.js-checkall', checkSelector: '.js-check' })
-  // input.file()
   // input.textarea()
   // input.counter()
 
