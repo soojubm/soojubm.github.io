@@ -1,6 +1,5 @@
-
-.tablist {
-  display:flex;
+[role=tablist] {
+  display: flex;
   border-radius: var(--radius);
   background:var(--color-background-weak);
   position: relative;
@@ -48,7 +47,6 @@
 // .tablist .tablist-indicator {background:none;border-radius:0;border:0;border-bottom:3px solid var(--color-primary);bottom:-1px;}
 // .tablist [role=tab] {height:48px;font-weight:bold;color:var(--color-text-light);}
 // .tablist [role=tab][aria-selected=true] {color:var(--color-text);}
-
 
 .profile-display {display:flex;margin:0 0 var(--space-3) 0;}
 .profile-display-title {margin:0 0 var(--space-1) 0;font-size:var(--font-size-small);}

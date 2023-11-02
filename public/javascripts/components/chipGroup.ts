@@ -10,8 +10,7 @@ class chipGroup extends HTMLElement {
     const shadow = this.attachShadow({ mode: 'open' })
 
     const container = document.createElement('div')
-
-    const type = container.setAttribute('role', 'group')
+    container.role = 'group'
     container.classList.add('chip-group')
 
     shadow.appendChild(container)

@@ -38,9 +38,6 @@ class Chip extends HTMLElement {
     const badgeSlot = document.createElement('slot')
     iconSlot.name = 'icon'
     badgeSlot.name = 'badge'
-
-    // iconSlot.classList.add('chip-icon')
-
     // shadow.adoptedStyleSheets = [sheet]
     // host.shadowRoot?.adoptedStyleSheets = [sheet]
 
@@ -58,6 +55,9 @@ class Chip extends HTMLElement {
       label.innerText = this.label || ''
       host.appendChild(label)
     }
+    // else {
+    //   host.innerHTML = host.innerText
+    // }
 
     shadow.appendChild(host)
     shadow.appendChild(makeStyleSheet('chip'))

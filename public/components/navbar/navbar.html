@@ -1,25 +1,35 @@
-<!-- // menu 태그 안에 heading을 포함하는 경우, 반응형을 위한 메뉴 구조는 안 된다. -->
 <nav class="navbar js-navbar" role="navigation">
-  <test-chip class="navbar-burger js-navbar-toggle" aria-label="전체메뉴" aria-haspopup="true" aria-expanded="false">
-    <i slot="icon" class="iconoir-menu-scale"></i>
+  <test-chip
+    class="navbar-burger js-navbar-toggle"
+    aria-label="전체메뉴"
+    aria-haspopup="true"
+    aria-expanded="false"
+  >
+    <test-icon slot="icon" name="menu-scale"></test-icon>
   </test-chip>
-
   <a class="navbar-logo" href="/"></a>
-  <!-- <div class="navbar-brand-logo-and-title"></div> -->
 
-  <div style="margin-left: auto">
-    <test-chip name="Theme" label="Brutal">
-      <test-icon slot="badge" name="nav-arrow-down"></test-icon>
-    </test-chip>
+  <div class="navbar-menu">
+    <a href="index.html"> Home </a>
+    <a href="tokens.html">
+      Tokens
+      <test-icon name="nav-arrow-down"></test-icon>
+    </a>
+    <menu>
+      <a href="index.html"> 홈 </a>
+      <a href="tokens.html"> Tokens </a>
+      <a href="signifier.html">Signifier</a>
+    </menu>
+    <a href="signifier.html">Signifier</a>
   </div>
-
   <div class="navbar-user">
-    <!-- <test-chip href="#" style="margin-right: 0.5rem">시작하기</test-chip> -->
-    <!-- <test-chip class="navbar-search-trigger js-navbar-toggle">
-      <test-icon slot="icon" name="bell"></test-icon>
+    <!-- <test-chip name="Theme" label="Brutal">
+      <test-icon slot="badge" name="nav-arrow-down"></test-icon>
     </test-chip> -->
     <!-- <button class="navbar-user-trigger" aria-haspopup="menu" aria-expanded="false"></button> -->
-
+    <!-- <test-chip>
+      <test-icon slot="icon" name="bell"></test-icon>
+    </test-chip> -->
     <button class="switch-wrap js-darkmode" title="change theme">
       <span class="day"><i class="iconoir-sun-light"></i></span>
       <span class="night"><i class="iconoir-half-moon"></i></span>
@@ -29,145 +39,123 @@
       </span>
     </button>
   </div>
-  <div class="sidebar-menu" style="padding-right: 1rem">
-    <br />
-    <test-menu-group>
-      <test-menuitem label="" href="index.html">
-        <test-avatar slot="avatar" fallback=" ">
-          <test-icon slot="icon" name="home-simple-door" aria-label="홈"></test-icon>
-        </test-avatar>
-      </test-menuitem>
-      <test-menuitem label="Tokens" href="tokens.html">
-        <test-avatar slot="avatar" size="medium" fallback=" ">
-          <test-icon slot="icon" name="palette"></test-icon>
-        </test-avatar>
-      </test-menuitem>
-      <test-menuitem label="Signifier" href="signifier.html">
-        <test-avatar slot="avatar" size="medium" fallback=" ">
-          <test-icon slot="icon" name="design-pencil"></test-icon>
-        </test-avatar>
-      </test-menuitem>
-      <test-menuitem label="Utilities" href="utilites.html">
-        <test-avatar slot="avatar" size="medium" fallback=" ">
-          <test-icon slot="icon" name="flower"></test-icon>
-        </test-avatar>
-      </test-menuitem>
-    </test-menu-group>
-    <menu>
-      <test-menuitem label="Components">
-        <test-avatar slot="avatar" size="medium" fallback=" ">
-          <test-icon slot="icon" name="building"></test-icon>
-        </test-avatar>
-        <!-- <test-icon slot="action" name="plus"></test-icon> -->
-      </test-menuitem>
-      <a label="avatar" href="avatar.html">
-        <!-- <test-avatar slot="avatar" fallback=" ">
-          <test-icon slot="icon" name="user"></test-icon>
-        </test-avatar> -->
-        avatar
-      </a>
-      <a href="breadcrumb.html">
-        <!-- <i class="iconoir-user"></i> -->
-        breadcrumb
-      </a>
-      <a href="entity.html">
-        <!-- <i class="iconoir-user-square"></i> -->
-        entity</a
-      >
-      <!-- <test-menuitem label="button" href="button.html"> <i slot="avatar" class="iconoir-shortcut"></i> button</test-menuitem> -->
-      <a href="button.html">
-        <!-- <i class="iconoir-shortcut"></i> -->
-        button
-      </a>
-      <a href="chip.html">
-        <!-- <i class="iconoir-shortcut"></i> -->
-        chip
-      </a>
-
-      <a href="menuitem.html"> <i class="iconoir-shortcut"></i> menu item</a>
-
-      <a href="checkbox.html"> <i class="iconoir-list-select"></i> checkbox</a>
-      <a href="radio.html"><i class="iconoir-list-select"></i> radio</a>
-      <a href="switch.html">
-        <i class="iconoir-switch-off"></i>
-        switch
-      </a>
-      <a href="textfield.html">
-        <i class="iconoir-input-field"></i>
-        textfield
-      </a>
-      <a href="tag.html">
-        <i class="iconoir-label"></i>
-        tag
-      </a>
-      <a href="tile.html">
-        <i class="iconoir-box"></i>
-        tile
-      </a>
-      <a href="panel.html">
-        <i class="iconoir-box"></i>
-        panel
-      </a>
-      <a href="tab.html"> tab </a>
-      <a href="separator.html"> separator </a>
-
-      <a href="tooltip.html">
-        <i class="iconoir-help-square"> </i>
-        tooltip
-      </a>
-      <a href="callout.html">
-        <i class="iconoir-megaphone"></i>
-        callout
-      </a>
-      <a href="text.html">
-        <i class="iconoir-text"></i>
-        text
-      </a>
-      <a href="bar.html">bars?</a>
-      <a href="step.html">step</a>
-      <a href="components.html"> components</a>
-    </menu>
-    <menu>
-      <!-- // role="heading" -->
-      <test-menuitem label="Patterns">
-        <test-avatar slot="avatar" fallback=" ">
-          <test-icon slot="icon" name="city"></test-icon>
-        </test-avatar>
-        <test-icon slot="icon" name="plus"></test-icon>
-      </test-menuitem>
-      <!-- <a href="setting.html"> pagehead </a> -->
-      <a href="dialog.html">dialog</a>
-      <a href="accordion.html">accordion</a>
-      <a href="result.html">result</a>
-      <test-separator></test-separator>
-      <a href="feed.html">feed</a>
-      <a href="timeline.html">timeline</a>
-      <a href="notification.html">notifications</a>
-      <a href="chat.html"> chat </a>
-      <a href="auth.html">auth</a>
-      <test-separator></test-separator>
-      <!-- <a href="dialog.html">collapsed/expanded</a>
-      <a href="dialog.html">haspopup</a> -->
-      <a href="searching.html">
-        <!-- <test-icon name="input-search"></test-icon> -->
-        searching
-      </a>
-      <a href="filtering.html">
-        <!-- <test-icon name="filter"></test-icon> -->
-        filtering
-      <a href="presentation.html">presentations</a>
-      <test-separator></test-separator>
-      <a href="profile.html">user profile 🔥</a>
-      <a href="setting.html">setting</a>
-      <a href="post.html">post</a>
-      <a href="product.html">Product</a>
-      <a href="cake.html">Product 2</a>
-      <a href="class.html">Product 3 - class</a>
-      <!-- <a href="#messaging">messaging / feedback </a> -->
-      <!-- <a href="#terms">Terms & Privacy</a> -->
-      <!-- <a href="#orders">Orders</a> -->
-      <!-- <a href="#event">Event</a> -->
-    </menu>
-  </div>
 </nav>
 <!-- <div class="navbar-backdrop"></div> -->
+
+
+
+<div class="sidebar-menu" style="padding-top:1rem;padding-right: 1rem">
+  <test-menu-group>
+    <test-menuitem label="" href="index.html">
+      <test-avatar slot="avatar" fallback=" ">
+        <test-icon slot="icon" name="home-simple-door" aria-label="홈"></test-icon>
+      </test-avatar>
+    </test-menuitem>
+    <test-menuitem label="Tokens" href="tokens.html">
+      <test-avatar slot="avatar" size="medium" fallback=" ">
+        <test-icon slot="icon" name="palette"></test-icon>
+      </test-avatar>
+    </test-menuitem>
+    <test-menuitem label="Signifier" href="signifier.html">
+      <test-avatar slot="avatar" size="medium" fallback=" ">
+        <test-icon slot="icon" name="design-pencil"></test-icon>
+      </test-avatar>
+    </test-menuitem>
+    <test-menuitem label="Utilities" href="utilites.html">
+      <test-avatar slot="avatar" size="medium" fallback=" ">
+        <test-icon slot="icon" name="flower"></test-icon>
+      </test-avatar>
+    </test-menuitem>
+  </test-menu-group>
+  <menu>
+    <test-menuitem label="Components">
+      <test-avatar slot="avatar" size="medium" fallback=" ">
+        <test-icon slot="icon" name="building"></test-icon>
+      </test-avatar>
+      <!-- <test-icon slot="action" name="plus"></test-icon> -->
+    </test-menuitem>
+    <a href="avatar.html">avatar
+    </a>
+    <a href="breadcrumb.html">
+      breadcrumb
+    </a>
+    <a href="entity.html">
+      entity</a>
+    <a href="button.html">
+      button
+    </a>
+    <a href="chip.html">
+      chip
+    </a>
+    <a href="menuitem.html">menu item</a>
+    <a href="checkbox.html">checkbox</a>
+    <a href="radio.html">radio</a>
+    <a href="switch.html">
+      switch
+    </a>
+    <a href="textfield.html">
+      textfield
+    </a>
+    <a href="tag.html">
+      tag
+    </a>
+    <a href="tile.html">
+      tile
+    </a>
+    <a href="panel.html">
+      panel
+    </a>
+    <a href="tab.html"> tab </a>
+    <a href="separator.html"> separator </a>
+    <a href="tooltip.html">
+      tooltip
+    </a>
+    <a href="callout.html">
+      callout
+    </a>
+    <a href="text.html">
+      text
+    </a>
+    <a href="bar.html">bars?</a>
+    <a href="step.html">step</a>
+    <a href="components.html"> components</a>
+  </menu>
+  <menu>
+    <test-menuitem label="Patterns" role="heading">
+      <test-avatar slot="avatar" fallback=" ">
+        <test-icon slot="icon" name="city"></test-icon>
+      </test-avatar>
+      <test-icon slot="icon" name="plus"></test-icon>
+    </test-menuitem>
+    <!-- <a href="setting.html"> pagehead </a> -->
+    <a href="dialog.html">dialog</a>
+    <a href="accordion.html">accordion</a>
+    <a href="result.html">result</a>
+    <test-separator></test-separator>
+    <a href="feed.html">feed</a>
+    <a href="timeline.html">timeline</a>
+    <a href="notification.html">notifications</a>
+    <a href="chat.html"> chat </a>
+    <a href="auth.html">auth</a>
+    <test-separator></test-separator>
+    <!-- <a href="dialog.html">collapsed/expanded</a>
+    <a href="dialog.html">haspopup</a> -->
+    <a href="searching.html">
+      searching
+    </a>
+    <a href="filtering.html">
+      filtering
+    <a href="presentation.html">presentations</a>
+    <test-separator></test-separator>
+    <a href="profile.html">user profile 🔥</a>
+    <a href="setting.html">setting</a>
+    <a href="post.html">post</a>
+    <a href="product.html">Product</a>
+    <a href="cake.html">Product 2</a>
+    <a href="class.html">Product 3 - class</a>
+    <!-- <a href="#messaging">messaging / feedback </a> -->
+    <!-- <a href="#terms">Terms & Privacy</a> -->
+    <!-- <a href="#orders">Orders</a> -->
+    <!-- <a href="#event">Event</a> -->
+  </menu>
+</div>

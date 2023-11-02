@@ -1,4 +1,5 @@
-.navbar {display:flex;height:var(--navbar-height);padding:var(--space-3) var(--grid-margin);box-sizing:border-box;background:var(--color-background);
+.navbar {
+  display:flex;align-items: center;height:var(--navbar-height);padding:var(--space-3) var(--grid-margin);box-sizing:border-box;background:var(--color-background);
   position:sticky;top:0;left:0;right:0;z-index:var(--zindex-menu);}
 .navbar-logo {
   width:var(--size-medium);height:var(--size-medium);
@@ -8,57 +9,55 @@
 }
 .navbar-burger {margin:0 var(--space-2) 0 0;z-index:calc(var(--zindex-menu) + 1);}
 
-.navbar-menulist {
-  display:flex;align-items:center;
-  gap:var(--space-4);
-  position:relative;z-index:var(--zindex-menu);}
-.navbar-menulist > a {
+.navbar-menu {
   display: flex;
   align-items: center;
-  font-size: var(--font-size-large);
-  font-weight: var(--font-weight-bold);
-  gap: var(--space-2);
-  padding: 0 var(--space-2);
-  color:var(--color-text);
+  margin: 0 0 0 2rem;
   position:relative;
-  z-index:var(--zindex-default);
 }
-.navbar-menulist > a:hover {
-  color: red;
+.navbar-menu > a {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 0 var(--space-4);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  position:relative;
+  z-index: 1;
 }
-.navbar-menulist menu {
-  width: 100%;
-  height: 100px;
-  background: var(--color-background);
+.navbar-menu a:hover menu {top:var(--navbar-height);}
+.navbar-menu menu {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  height: 60px;
   gap:var(--space-4);
-  position:fixed;left:0;right:0;top:-100px;z-index:var(--zindex-menu);
-  transition:var(--transition-base);}
-.navbar-menulist menu a {display:block;margin:var(--space-1) 0;
-  font-size: var(--font-size-large);
-  font-weight: var(--font-weight-bold);
-  color:var(--color-text);
-  /* opacity:0; */
-  position:relative;z-index:var(--zindex-default);}
-.navbar-menulist:hover menu {top:0;}
+  padding-bottom: 2rem;
+  background: var(--color-background);
+  position:fixed;
+  left:0;right:0;top:-100px;
+  z-index: 0;
+  transition:var(--transition-base);
+}
+.navbar-menu menu a {
+  display:block;
+  position:relative;
+  z-index:var(--zindex-default);
+}
+
 .navbar-backdrop {height:var(--navbar-height);}
 
 .navbar-notification {margin:0 .5rem;position:relative;}
-/* .navbar-notification-trigger {@mixin avatar-medium;} */
-.navbar-notification-trigger em {display:block;width:.5rem;height:.5rem;border-radius:50%;border:2px solid var(--color-background-weak);box-sizing:border-box;background:var(--red800);text-indent:-9999px;position:absolute;right:5px;top:5px;}
-/* .navbar-notification-menu {width:400px;@mixin tile-elevated;} */
-/* // .navbar-notification-menu:before {content:'';display:block;position:absolute;left:50%;right:0;top:-8px;bottom:0;} */
+.navbar-notification-trigger {}
+.navbar-notification-menu {}
+.navbar-notification-menu:before {content:'';display:block;position:absolute;left:50%;right:0;top:-8px;bottom:0;}
 .navbar-notification-menu-title {}
 .navbar-notification-menu-all {position:absolute;top:13px;right:1rem;}
 .is-active + .navbar-notification-menu {height:auto;transform:scale(1);}
 
-
-/* .navbar-user {display:flex;align-items:center;margin:0 0 0 auto;position:relative;} */
-/* .navbar-user-trigger {@mixin avatar-medium;margin:0 0 0 var(--space-2);} */
+.navbar-user {display:flex;align-items:center;margin:0 0 0 auto;position:relative;}
 /* .navbar-user-card {max-width:400px;height:0;@mixin tile-elevated;position:absolute;top:32px;right:0;z-index:var(--zindex-popover);transform:scale(0);} */
-/* .is-active + .navbar-user-card {height:auto;transform:scale(1);} */
 
 /* // .is-active .navbar-logo {z-index:calc(var(--zindex-menu) + 2);z-index:5;}
 // .is-active .navbar-user {z-index:calc(var(--zindex-menu) + 2);z-index:5;}
@@ -85,7 +84,6 @@
 .sidebar-menu menu {display:flex;flex-direction: column;margin:2rem 0;
 }
 .sidebar-menu test-menuitem {margin:0 0 var(--space-1) 0;}
-
 .sidebar-menu menu a {
   display:flex;align-items:center;
   height: var(--size-medium);

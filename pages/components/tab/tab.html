@@ -6,12 +6,12 @@
     <section class="component-example">
       <!-- data-tabs='{"name": "Chris Coyier", "job": "Web Person"}' -->
       <test-tablist>
-        <test-tab selected="true" aria-controls="panel-1" id="tab-1" tabindex="0">
+        <test-tab slot="tab" aria-selected="true" aria-controls="panel-1" id="tab-1" tabindex="0">
           첫번째 탭
           <em class="tablist-tab-badge badge">24</em>
         </test-tab>
-        <test-tab aria-controls="panel-2" id="tab-2" tabindex="-1">두번째 탭</test-tab>
-        <test-tab aria-controls="panel-3" id="tab-3" tabindex="-1">세번째 탭</test-tab>
+        <test-tab slot="tab" aria-controls="panel-2" id="tab-2" tabindex="-1">두번째 탭</test-tab>
+        <test-tab slot="tab" aria-controls="panel-3" id="tab-3" tabindex="-1">세번째 탭</test-tab>
         <i slot="indicator" class="tablist-indicator"></i>
       </test-tablist>
       <div
@@ -68,10 +68,10 @@
       <section class="component-case">
         <div style="max-width: 200px">
           <test-tablist>
-            <test-tab slot="tab" selected="true" aria-controls="panel-1" id="tab-1" tabindex="0">
+            <test-tab selected="true" aria-controls="panel-1" id="tab-1" tabindex="0">
               Monthly
             </test-tab>
-            <test-tab slot="tab" aria-controls="panel-2" id="tab-2" tabindex="-1">Yearly</test-tab>
+            <test-tab aria-controls="panel-2" id="tab-2" tabindex="-1">Yearly</test-tab>
           </test-tablist>
         </div>
       </section>
