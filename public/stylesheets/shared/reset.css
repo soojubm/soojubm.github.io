@@ -198,8 +198,6 @@ test-text[variant=title] + test-text[variant=body-large] {
 }
 
 
-.guide-box {margin:3rem 0;}
-
 .lock-scroll {width:100%;position:fixed;overflow-y:scroll;overflow:hidden;margin-right:17px;}
 .lock-scroll {
   /* // height: 100vh; */

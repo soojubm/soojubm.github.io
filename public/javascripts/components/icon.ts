@@ -1,26 +1,10 @@
-import { importScript, makeStyleSheet } from './utils'
+import { importStyle, makeStyleSheet } from './utils'
+
+// 동적으로 생성할 때, 다른 커스텀 엘리먼트에서.connectedCallback 에 넣으면 됨.
 
 class Icon extends HTMLElement {
   constructor() {
     super()
-    const iconClassName = `iconoir-${this.name}`
-
-    const shadow = this.attachShadow({ mode: 'open' })
-
-    const container = document.createElement('i')
-    container.role = 'img'
-    container.classList.add('icon', iconClassName)
-    if (this.size) container.dataset.size = this.size
-
-    // TODO
-    const pretty = document.createElement('link')
-    pretty.href = 'https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css'
-    pretty.rel = 'stylesheet'
-
-    shadow.append(makeStyleSheet('icon'), pretty, container)
-    container.append()
-
-    console.log('@ size', this.size, this, this.shadowRoot, this.shadowRoot!.lastChild!)
   }
 
   get name() {
@@ -36,7 +20,22 @@ class Icon extends HTMLElement {
   //   if (value) node.dataset.size = value
   // }
 
-  connectedCallback() {}
+  connectedCallback() {
+    const ICON_CLASSNAME = `iconoir-${this.name}`
+
+    const shadow = this.attachShadow({ mode: 'open' })
+
+    const container = document.createElement('i')
+    container.role = 'img'
+    container.classList.add('icon', ICON_CLASSNAME)
+    if (this.size) container.dataset.size = this.size
+
+    const pretty = document.createElement('link')
+    pretty.href = 'https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css'
+    pretty.rel = 'stylesheet'
+
+    shadow.append(makeStyleSheet('icon'), pretty, container)
+  }
   disconnectedCallback() {}
 }
 

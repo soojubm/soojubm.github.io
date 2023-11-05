@@ -74,9 +74,9 @@
   width: 100%;
   max-width: var(--width-sidemenu);
   margin:0;
-  padding:0 0 0 calc(var(--grid-margin));
+  padding:var(--space-4) var(--space-4) 0 calc(var(--grid-margin));
   background:var(--color-background);
-  position:fixed;left:0px;top:calc(var(--navbar-height));bottom:0px;
+  position:fixed;left:0px;top:calc(var(--navbar-height));bottom:0px;z-index:1;
   transition:transform var(--duration-slowly) cubic-bezier(.165,.84,.44,1);
   transform:translateX(-120%);
 }

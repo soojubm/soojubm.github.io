@@ -487,6 +487,66 @@
       </form>
     </article>
 
+
+    <test-tile variant="flat" style="width:100%;max-width: 400px;">
+      <test-text variant="body-bold">Delivery</test-text>
+      <test-group>
+        <test-chip label="Tomorrow"></test-chip>
+        <test-chip label="Within 3 days"></test-chip>
+      </test-group>
+      <test-separator></test-separator>
+      <test-text variant="body-bold">Size</test-text>
+      <test-group>
+        <test-chip label="Tomorrow"></test-chip>
+        <test-chip label="Within 3 days"></test-chip>
+      </test-group>
+      <test-separator></test-separator>
+      <test-text variant="body-bold">Color</test-text>
+      <test-group>
+        <test-chip label="Tomorrow"></test-chip>
+        <test-chip label="Within 3 days"></test-chip>
+      </test-group>
+    </test-tile>
+    
+    <test-card variant="flat" size="medium" class="pricing-item">
+      <div slot="entire">
+        <test-tag style="position: absolute; left: -0.5rem; top: var(--space-3)">
+          🔥 Most Popular
+        </test-tag>
+        <br />
+        <br />
+        <test-text variant="subhead">Standard</test-text>
+        <div style="height:var(--space-after-subhead)"></div>
+        <div class="pricing-item-price">
+          <test-text variant="subhead">6,800원</test-text>
+          <span>한 달에 한 번</span>
+        </div>
+        <div style="height:var(--space-after-subhead)"></div>
+        <test-text variant="body">전직대통령의 신분과 예우에 관하여는 법률로 정한다. 대법원장은 국회의 동의를 얻어 대통령이 임명한다.</test-text>
+        <div style="height:var(--space-after-subhead)"></div>
+        <ul>
+          <li>스토리지 2TB</li>
+          <li>Google 전문가와의 상담</li>
+          <li>회원을 위한 추가 혜택</li>
+        </ul>
+        <div style="height:var(--space-after-subhead)"></div>
+        <div class="pricing-item-price">
+          <span class="pricing-item-price-per">한 달에 한 번</span>
+          <test-text variant="title">₩ 6,800</test-text>
+        </div>
+        <div style="height:var(--space-after-subhead)"></div>
+        <div>
+          <test-text variant="subhead"><em>iCloud+</em> 50GB</test-text>
+          <span>₩1,100/월 </span>
+        </div>
+        <div style="height:2rem"></div>
+        <test-group>
+          <test-button variant="primary">업그레이드</test-button>
+          <test-button variant="text">And More...</test-button>
+        </test-group>
+      </div>
+    </test-card>
+
   <div style="padding: 0 var(--grid-margin)">
     <section class="sample-container" style="margin-top: 0">
       <header class="greeting" data-temp="이 패턴에서 아바타는 시각 정보가 아니라 링크로 사용">
@@ -494,6 +554,15 @@
         <h1 class="greeting-title">Hello, Stranger<i style="font-style: italic">!</i></h1>
         <p class="greeting-description">Tender is the night.</p>
       </header>
+
+      <section class="greeting" style="padding: 0 var(--grid-margin);position:relative;">
+        <test-avatar class="greeting-avatar" style="font-size: 1.5rem">🐶</test-avatar>
+        <h1 class="greeting-title" style="display: flex">
+          Hello, Spring 👋
+          <figure class="icon-indicator material-symbols-outlined" style="margin-left: var(--space-2)">chevron_right</figure>
+        </h1>
+        <b class="greeting-description">Welcome back to soojubm.</b>
+      </section>
 
       <section class="">
         <header style="display: flex; align-items: center; justify-content: space-between; max-width: 400px; margin: 0 auto var(--space-3)">

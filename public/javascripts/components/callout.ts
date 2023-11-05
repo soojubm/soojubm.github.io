@@ -3,43 +3,8 @@ import { makeStyleSheet } from './utils'
 class Callout extends HTMLElement {
   constructor() {
     super()
-    const shadow = this.attachShadow({ mode: 'open' })
-
-    const container = document.createElement('div')
-    const heading = document.createElement('h3')
-    const text = document.createElement('p')
-
-    container.dataset.variant = this.variant || ''
-
-    // const icon = document.createElement('test-icon')
-    // icon.setAttribute('name', 'warning-triangle')
-    // icon.classList.add('callout-icon')
-
-    heading.innerText = this.heading || ''
-    text.innerText = this.text || this.content || ''
-
-    container.classList.add('callout')
-
-    heading.classList.add('callout-title')
-    text.classList.add('callout-text')
-
-    shadow.appendChild(container)
-    container.append(heading, text, makeStyleSheet('callout'))
   }
 
-  // tile 안에 클래스 적용 안 됨.
-  // get size() {
-  //   return this.getAttribute('size')
-  // }
-  // set size(value) {
-  //   if (value) this.setAttribute('size', value)
-  // }
-
-  get icon() {
-    return this.getAttribute('icon')
-  }
-
-  // TODO title / HTMLElement
   get heading() {
     return this.getAttribute('heading')
   }
@@ -52,15 +17,29 @@ class Callout extends HTMLElement {
     return this.getAttribute('variant')
   }
 
-  get content() {
-    return this.innerHTML
+  connectedCallback() {
+    const shadow = this.attachShadow({ mode: 'open' })
+
+    const container = document.createElement('div')
+    const heading = document.createElement('h3')
+    const text = document.createElement('p')
+
+    container.classList.add('callout')
+    container.dataset.variant = this.variant || ''
+
+    heading.classList.add('callout-title')
+    heading.innerText = this.heading || ''
+
+    text.classList.add('callout-text')
+    text.innerText = this.text || this.innerHTML || ''
+
+    const icon = document.createElement('test-icon')
+    icon.setAttribute('name', 'warning-triangle')
+    icon.classList.add('callout-icon')
+
+    shadow.appendChild(container)
+    container.append(icon, heading, text, makeStyleSheet('callout'))
   }
-
-  // set content(value) {
-  //   return (container = value)
-  // }
-
-  connectedCallback() {}
   disconnectedCallback() {}
 }
 
