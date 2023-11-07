@@ -1,13 +1,19 @@
 <main class="component post">
   <header class="post-head js-post-head">
     <a class="post-head-category" href="#post">Murmur</a>
-    <test-text variant="title" class="post-head-headline"
-      >Lorem Ipsum is simply dummy text</test-text
+    <h1
+      class="post-head-headline"
+      style="margin: var(--space-2) 0 var(--space-4); line-height: 1.4"
     >
-    <test-text variant="body-large" class="post-head-kicker">
-      Our collective understanding of work—where it takes place and how it gets done—has been
-      transformed over the last year.
-    </test-text>
+      Pinterest announces industry-first body type technology to increase body representation on
+      platform
+    </h1>
+    <div style="margin: var(--spacde-4) 0">
+      <test-text variant="body-large" class="post-head-kicker">
+        Pinterest announces industry-first body type technology to increase body representation on
+        platform
+      </test-text>
+    </div>
     <test-menuitem label="수줍이" description="Youtube Subscriber">
       <test-avatar slot="avatar" size="medium"></test-avatar>
       <time class="post-head-dateline">2022년 4월 9일</time>
@@ -45,66 +51,28 @@
       <span class="linebreak"></span>
     </p>
 
-    <h3 class="post-body-subhead">Byline</h3>
+    <h3 class="post-body-subhead">
+      An ecosystem of content that celebrates inclusion and diversity
+    </h3>
     <p class="post-body-paragraph">
       콘텐츠가 다른 플랫폼에 공유되는 횟수가 많다면 페이지의 상단에 byline을 보여주는 것이 좋다.
-    </p>
-    <p class="post-body-paragraph">
       byline은 상단 고정되지 않기 때문에 byline에 작성 시간과 리딩 시간 등을 포함하는 것이 좋다.
     </p>
-
-    <h3 class="post-body-subhead">Links</h3>
-
-    <h3 class="post-body-subhead">Reaction</h3>
     <p class="post-body-paragraph">
       무제한(스트리밍) / 1개 무제한(미디엄) / 여러 개 중 1개 (총 1 페이스북) / 여러 개 중 여러 개에
       각 1번 (깃허브)
     </p>
-    <p class="post-body-paragraph">공유하기</p>
-    <p class="post-body-paragraph">작성자 정보 보기 또는 팔로잉</p>
-
-    <section class="post-reaction"></section>
-
-    <h3 class="post-body-subhead">Vertical scroll progressbar</h3>
-    <p class="post-body-paragraph">유행 지난 듯. 전체 윈도우 영영 혹은 본문 영역</p>
-
-    <h3 class="post-body-subhead">소제목이라고 합니다.</h3>
-
     <p class="post-body-paragraph">
-      track, media, supporting text(supporter), elevated (hover), 도어메트 네비게이션, 유틸리티
-      링크(네비게이션)
+      Vertical scroll progressbar 유행 지난 듯. 전체 윈도우 영영 혹은 본문 영역track, media,
+      supporting text(supporter), elevated (hover), 도어메트 네비게이션, 유틸리티 링크(네비게이션)
     </p>
-
-    <h3 class="post-body-subhead">스타일시트</h3>
-    <ul class="post-body-paragraph">
-      <li>들여쓰기는 2칸의 공백을 가지는 탭.</li>
-      <li>아이디 선택자는 재사용과 재정의가 어렵기 때문에 스타일링 목적으로 사용하지 마세요.</li>
-      <li>케밥 케이스kebab-case</li>
-      <li>rem 단위 가이드</li>
-      <li>
-        Input zooming on iOS devices :: iOS devices will slightly zoom into the input when the font
-        size is less than 16px.
-      </li>
-    </ul>
 
     <p class="post-body-paragraph">
       포스트를 수정하고 삭제하기 위한 버튼이 필요하다. 신고를 위한 버튼은 처음부터 필요한 기능은
       아니기 때문에 뺀다. 작성자에게만 필요한 버튼은 콘텐츠 내부가 아닌 브라우저의 구석에 눈에 띄게
-      배치한다.
+      배치한다. Input zooming on iOS devices :: iOS devices will slightly zoom into the input when
+      the font size is less than 16px.
     </p>
-
-    <figure>
-      <img src="" alt="" />
-      <figcaption>iamge caption</figcaption>
-    </figure>
-
-    <h3 class="post-body-subhead">에셋</h3>
-    <ul class="post-body-paragraph">
-      <li>아이콘은 svg, 이미지는 png를 사용하고 png는 추가 압축으로 용량을 줄입니다.</li>
-      <li>영문 소문자와 숫자, 언더스코어로 네이밍합니다.</li>
-      <li>글로벌과 로컬을 prefix로 구분하는데, 글로벌에는 icon_, 로컬에는, parentName_</li>
-      <li>색상과 사이즈를 suffix로 구분하는데,</li>
-    </ul>
 
     <p class="post-body-paragraph" type="1">
       prefix, name, suffix는 언더스코어(_)로 구분합니다. direction / shape / status / color / size
@@ -117,14 +85,26 @@
       가이드를 따르지 않아도 됩니다. 이미 배포되어 적용된 에셋에서 suffix가 추가되는 경우, 기존
       에셋을 변형하지 않고 구별자를 추가합니다.
     </p>
+    <ul class="post-body-paragraph">
+      <li>아이콘은 svg, 이미지는 png를 사용하고 png는 추가 압축으로 용량을 줄입니다.</li>
+      <li>영문 소문자와 숫자, 언더스코어로 네이밍합니다.</li>
+      <li>글로벌과 로컬을 prefix로 구분하는데, 글로벌에는 icon_, 로컬에는, parentName_</li>
+      <li>색상과 사이즈를 suffix로 구분하는데,</li>
+    </ul>
+
+    <figure>
+      <img src="" alt="" />
+      <figcaption>iamge caption</figcaption>
+    </figure>
 
     <code class="post-body-code">
       const { body } = document;
       <br />
       const bodySection = body.querySelector('section');
     </code>
-    <p class="post-body-paragraph">스크립팅 클래스는 js- 접두어를 사용하여 합니다.</p>
   </section>
+
+  <section class="post-reaction"></section>
 
   <section class="post-hashtag">
     <test-chip>#Webpack</test-chip>
