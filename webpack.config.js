@@ -76,6 +76,7 @@ const components = [
   'step',
 
   'films',
+  'books',
 ]
 
 // let t = {}

@@ -50,7 +50,7 @@
   background-color: var(--color-background);
   border: var(--border);
   border-radius: var(--radius);
-  font-size: 12px;
+  /* font-size: 12px; */
   font-family:'revert';position:relative;
   outline: 8px solid var(--color-background);
 }

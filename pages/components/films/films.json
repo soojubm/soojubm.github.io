@@ -1,5 +1,45 @@
 [
   {
+    "releasedate": 1989,
+    "titlekorean": "성스러운 피",
+    "titleenglish": "Holy Blood",
+    "director": "알레한드로 조도로프스키",
+    "country": "멕시코",
+    "etc": ""
+  },
+  {
+    "releasedate": 2002,
+    "titlekorean": "6월의 뱀",
+    "titleenglish": "A Snake of June",
+    "director": "츠카모토 신야",
+    "country": "일본",
+    "etc": ""
+  },
+  {
+    "releasedate": 1994,
+    "titlekorean": "지옥",
+    "titleenglish": "Hell, L'enfer",
+    "director": "끌로드 샤브롤",
+    "country": "프랑스",
+    "etc": ""
+  },
+  {
+    "releasedate": 2020,
+    "titlekorean": "어웨이크",
+    "titleenglish": "AWAKE",
+    "director": "야마다 아츠히로",
+    "country": "일본",
+    "etc": ""
+  },
+  {
+    "releasedate": 1914,
+    "titlekorean": "웃음가스",
+    "titleenglish": "Laughing Gas",
+    "director": "찰리 채플린",
+    "country": "미국",
+    "etc": "단편"
+  },
+  {
     "releasedate": 1969,
     "titlekorean": "온순한 여인",
     "titleenglish": "A Gentle Woman",
@@ -1300,7 +1340,7 @@
     "id": 73,
     "releasedate": 1952,
     "titlekorean": "번개",
-    "titleenglish": "Lightning, 稲妻",
+    "titleenglish": "Lightning, 稲妻Inazuma",
     "director": "나루세 미키오",
     "country": "일본"
   },

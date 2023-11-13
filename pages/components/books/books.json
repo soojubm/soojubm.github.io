@@ -1631,7 +1631,12 @@
     "country": "한국"
   },
   {
-    "releasedate": 0
+    "releasedate": 0,
+    "titlekorean": "모든 열정이 다하고",
+    "titleenglish": 0,
+    "director": "비타 색빌웨스트",
+    "country": "일본",
+    "etc": "여기맞나"
   },
   {
     "releasedate": 0,
@@ -1694,6 +1699,48 @@
     "titlekorean": "핏빛 자오선",
     "titleenglish": "Blood Meridian",
     "director": "코맥 맥카시",
+    "country": "미국"
+  },
+  {
+    "releasedate": 1897,
+    "titlekorean": "어릿광대",
+    "titleenglish": "Der Bajazzo",
+    "director": "토마스 만",
+    "country": "미국"
+  },
+  {
+    "releasedate": 1986,
+    "titlekorean": "태양은 가득히",
+    "titleenglish": "",
+    "director": "가네시로 가즈키",
+    "country": "일본"
+  },
+  {
+    "releasedate": 1830,
+    "titlekorean": "사라진",
+    "titleenglish": "",
+    "director": "오노레 드 발자크",
+    "country": "미국"
+  },
+  {
+    "releasedate": 1881,
+    "titlekorean": "베르가모의 페스트",
+    "titleenglish": "",
+    "director": "옌스 페테르 야콥센",
+    "country": "스칸다나비아"
+  },
+  {
+    "releasedate": 1986,
+    "titlekorean": "골짜기의 백합",
+    "titleenglish": "",
+    "director": "우메오 카즈오 - 만화 단편",
+    "country": "일본"
+  },
+  {
+    "releasedate": 1986,
+    "titlekorean": "점원",
+    "titleenglish": "The Assistant",
+    "director": "버나드 멜리머드",
     "country": "미국"
   }
 ]

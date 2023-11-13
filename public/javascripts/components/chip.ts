@@ -60,8 +60,7 @@ class Chip extends HTMLElement {
     // }
 
     shadow.appendChild(host)
-    shadow.appendChild(makeStyleSheet('chip'))
-    host.appendChild(badgeSlot)
+    host.append(badgeSlot, makeStyleSheet('chip'))
 
     // this.addEventListener('click', e => {
     //   // Don't toggle the drawer if it's disabled.

@@ -14,9 +14,8 @@ button {
   font-family: var(--font-family);
   font-size: inherit;
 }
-em {
-  font-style:normal;
-  font-weight: var(--font-weight-bold);
+em, i  {
+  font-style: normal;
 }
 
 :host {
@@ -27,6 +26,7 @@ em {
   --chip-color-background: var(--color-background-weak);
   --chip-color-text: var(--color-text);
 }
+
 /* TODO 요거 */
 :host([status=info]) {
   --chip-color-background: none;
@@ -36,12 +36,7 @@ em {
 /* @media (hover) and (pointer: fine) {
   &:hover {box-shadow:var(--status-hover);}
 }
-&:disabled {border-color:transparent;}
-&.is-active {
-  border-color: var(--color-background-strong);
-  background: var(--color-background-strong);
-  color: var(--color-text-weak);
-} */
+*/
 
 .chip {
   display: flex;
@@ -49,42 +44,47 @@ em {
   justify-content: center;
   min-width: var(--size-medium);
   height: var(--size-medium);
-  /* border: var(--border); */
+  gap: var(--space-2);
+  padding: 0 var(--space-3) 1px;
   border-radius: var(--radius);
   background: var(--chip-color-background);
   color: var(--chip-color-text);
   position: relative;
 
-  /* TODO for chip in avatar */
   /* TODO donesnt using ? for chip in textfield  */
-  /* outline: 2px solid var(--color-background); */
+  outline: 2px solid var(--color-background);
+  --chip-size: var(--size-small);
   --chip-height: 0;
   --chip-inset: null;
   --chip-radius: 0;
+}
+.chip:disabled {
+  opacity:.5;
+  cursor:not-allowed;
 }
 .chip:hover {
   box-shadow:var(--status-hover);
   cursor: pointer;
 }
-
-.chip-name {margin:0 0 0 var(--space-3);font-weight:var(--font-weight-normal);color:var(--color-text-light);}
-.chip-name:after {content:': ';}
 .chip-label {
-  padding:0 var(--space-3) var(--adjust-label-line);
-  color:inherit;
+  display: block;
+  line-height: var(--chip-size);
+  color: inherit;
 }
-.chip:disabled {opacity:.5;cursor:not-allowed;}
+.chip-name {
+  font-weight:var(--font-weight-normal);
+  color:var(--color-text-light);}
+.chip-name:after {content:': ';}
 
-.chip[aria-expanded] {}
 .chip[aria-selected] {
   background: var(--color-background-strong);
   color: var(--color-text-strong);
 }
 .chip[aria-checked=true] {
   border: 1px solid var(--color-background-strong);
-  /* background: var(--green100); */
-  /* color: var(--green800); */
 }
+
+.chip[aria-expanded] {}
 .chip[aria-pressed] {}
 .chip[aria-haspopup] {}
 
@@ -93,25 +93,10 @@ em {
   color: var(--red800);
 }
 
-::slotted([slot=icon]) {
-  display:flex !important;
-  align-items: center;
-  justify-content: center;
-  width:var(--size-medium);
-  background-image: none;
-  /* margin-right: -.5rem; */
+::slotted([slot=icon]), ::slotted([slot=badge]) {
+  display: block;
+  margin-top: 2px;
 }
-
-::slotted([slot=badge]) {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width:var(--size-medium);
-}
-/* .chip-name ~ ::slotted([slot=badge]) {
-  margin-left: -.25rem;
-  margin-right: .5rem;
-} */
 
 // .chip[aria-expanded=true] {
 //   background-image: url(
@@ -120,12 +105,3 @@ em {
 //   background-size: 14px;
 //   background-position: 90% 50%;
 // }
-/* .chip-icon {
-  width: var(--size-medium);
-  height: var(--size-medium);
-  margin: 0 0 0 var(--space-1);
-  background-color: var(--color-background);
-  border-radius: var(--radius);
-  font-size: 14px;
-} */
-/* .chip-remove:hover {box-shadow:var(--status-hover);} */

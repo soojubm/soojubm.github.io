@@ -54,6 +54,45 @@
           <button class="textbox-footer-publish">게시</button>
         </footer>
       </section>
+
+
+
+      <section class="">
+        toolbar is not chip.. 단지 지금 chip의 컨테이너를 가지고 있는 것.
+        <p class="profile-display-status" role="status">Viewing 1,000 Projects</p>
+        <div class="tile-elevated-small">
+          <div style="width: 100%; display: flex">
+            <button class="profile-display-button js-test-toggle is-selected" name="grid">
+              <figure class="chip-icon"><span class="material-symbols-outlined">grid_on</span></figure>
+              <span class="chip-label" aria-hidden="true" aria-label="grid" style="line-height: 24px">격자</span>
+            </button>
+            <button class="profile-display-button js-test-toggle" name="list" style="margin-left: 0.5rem">
+              <figure class="chip-icon" style="background: none">
+                <span class="material-symbols-outlined"><span class="material-symbols-outlined"> view_agenda </span></span>
+              </figure>
+              <span class="chip-label" aria-hidden="true" style="line-height: 24px">List</span>
+            </button>
+          </div>
+          <div style="width: 100%; display: flex; margin-top: 0.75rem">
+            <button class="profile-display-button js-test-toggle is-selected" name="grid">
+              <figure class="chip-icon"><span class="material-symbols-outlined">format_bold</span></figure>
+              <span class="chip-label" aria-hidden="true" aria-label="grid" hidden>격자</span>
+            </button>
+            <button class="profile-display-button js-test-toggle" name="list" style="margin-left: 0.25rem">
+              <figure class="chip-icon" style="background: none"><span class="material-symbols-outlined">format_italic</span></figure>
+              <span class="chip-label" aria-hidden="true" hidden>List</span>
+            </button>
+            <button class="profile-display-button js-test-toggle" name="list" style="margin-left: 0.25rem">
+              <figure class="chip-icon" style="background: none"><span class="material-symbols-outlined">format_align_center</span></figure>
+              <figure class="icon-indicator" style="margin-left: -0.5rem; background: none">
+                <span class="material-symbols-outlined">arrow_drop_down</span>
+              </figure>
+              <span class="chip-label" aria-hidden="true" hidden>List</span>
+            </button>
+          </div>
+        </div>
+      </section>
+  
   
       <!-- https://story.pxd.co.kr/1451 -->
       <p>loading state/dfn/abbr</p>
@@ -485,91 +524,76 @@
   텍스트 영역 2. Fusce ullamcorper, nisl ac porttitor adipiscing, urna orci egestas libero, ut accumsan orci lacus laoreet diam. Morbi sed euismod diam.</textarea
         >
       </form>
-    </article>
 
 
-    <test-tile variant="flat" style="width:100%;max-width: 400px;">
-      <test-text variant="body-bold">Delivery</test-text>
-      <test-group>
-        <test-chip label="Tomorrow"></test-chip>
-        <test-chip label="Within 3 days"></test-chip>
-      </test-group>
-      <test-separator></test-separator>
-      <test-text variant="body-bold">Size</test-text>
-      <test-group>
-        <test-chip label="Tomorrow"></test-chip>
-        <test-chip label="Within 3 days"></test-chip>
-      </test-group>
-      <test-separator></test-separator>
-      <test-text variant="body-bold">Color</test-text>
-      <test-group>
-        <test-chip label="Tomorrow"></test-chip>
-        <test-chip label="Within 3 days"></test-chip>
-      </test-group>
-    </test-tile>
-    
-    <test-card variant="flat" size="medium" class="pricing-item">
-      <div slot="entire">
-        <test-tag style="position: absolute; left: -0.5rem; top: var(--space-3)">
-          🔥 Most Popular
-        </test-tag>
-        <br />
-        <br />
-        <test-text variant="subhead">Standard</test-text>
-        <div style="height:var(--space-after-subhead)"></div>
-        <div class="pricing-item-price">
-          <test-text variant="subhead">6,800원</test-text>
-          <span>한 달에 한 번</span>
-        </div>
-        <div style="height:var(--space-after-subhead)"></div>
-        <test-text variant="body">전직대통령의 신분과 예우에 관하여는 법률로 정한다. 대법원장은 국회의 동의를 얻어 대통령이 임명한다.</test-text>
-        <div style="height:var(--space-after-subhead)"></div>
-        <ul>
-          <li>스토리지 2TB</li>
-          <li>Google 전문가와의 상담</li>
-          <li>회원을 위한 추가 혜택</li>
-        </ul>
-        <div style="height:var(--space-after-subhead)"></div>
-        <div class="pricing-item-price">
-          <span class="pricing-item-price-per">한 달에 한 번</span>
-          <test-text variant="title">₩ 6,800</test-text>
-        </div>
-        <div style="height:var(--space-after-subhead)"></div>
-        <div>
-          <test-text variant="subhead"><em>iCloud+</em> 50GB</test-text>
-          <span>₩1,100/월 </span>
-        </div>
-        <div style="height:2rem"></div>
+      <test-tile variant="flat" style="width:100%;max-width: 400px;">
+        <test-text variant="body-bold">Delivery</test-text>
         <test-group>
-          <test-button variant="primary">업그레이드</test-button>
-          <test-button variant="text">And More...</test-button>
+          <test-chip label="Tomorrow"></test-chip>
+          <test-chip label="Within 3 days"></test-chip>
         </test-group>
-      </div>
-    </test-card>
+      </test-tile>
+      
+      <test-card variant="flat" size="medium" class="pricing-item">
+        <div slot="entire">
+          <test-tag style="position: absolute; left: -0.5rem; top: var(--space-3)">
+            🔥 Most Popular
+          </test-tag>
+          <br />
+          <br />
+          <test-text variant="subhead">Standard</test-text>
+          <div style="height:var(--space-after-subhead)"></div>
+          <div class="pricing-item-price">
+            <test-text variant="subhead">6,800원</test-text>
+            <span>한 달에 한 번</span>
+          </div>
+          <div style="height:var(--space-after-subhead)"></div>
+          <test-text variant="body">전직대통령의 신분과 예우에 관하여는 법률로 정한다. 대법원장은 국회의 동의를 얻어 대통령이 임명한다.</test-text>
+          <div style="height:var(--space-after-subhead)"></div>
+          <ul>
+            <li>스토리지 2TB</li>
+            <li>Google 전문가와의 상담</li>
+            <li>회원을 위한 추가 혜택</li>
+          </ul>
+          <div style="height:var(--space-after-subhead)"></div>
+          <div class="pricing-item-price">
+            <span class="pricing-item-price-per">한 달에 한 번</span>
+            <test-text variant="title">₩ 6,800</test-text>
+          </div>
+          <div style="height:var(--space-after-subhead)"></div>
+          <div>
+            <test-text variant="subhead"><em>iCloud+</em> 50GB</test-text>
+            <span>₩1,100/월 </span>
+          </div>
+          <div style="height:2rem"></div>
+          <test-group>
+            <test-button variant="primary">업그레이드</test-button>
+            <test-button variant="text">And More...</test-button>
+          </test-group>
+        </div>
+      </test-card>
 
-  <div style="padding: 0 var(--grid-margin)">
-    <section class="sample-container" style="margin-top: 0">
-      <header class="greeting" data-temp="이 패턴에서 아바타는 시각 정보가 아니라 링크로 사용">
-        <figure class="greeting-avatar" style="font-size: 1.5rem">🐶</figure>
-        <h1 class="greeting-title">Hello, Stranger<i style="font-style: italic">!</i></h1>
-        <p class="greeting-description">Tender is the night.</p>
+      <header style="display: flex; align-items: center; justify-content: space-between; max-width: 400px; margin: 0 0 var(--space-3)">
+        <h2>내 요금제</h2>
+        <button style="color: var(--color-primary); font-weight: bold; text-decoration: underline">요금제 변경하기</button>
       </header>
 
-      <section class="greeting" style="padding: 0 var(--grid-margin);position:relative;">
-        <test-avatar class="greeting-avatar" style="font-size: 1.5rem">🐶</test-avatar>
-        <h1 class="greeting-title" style="display: flex">
-          Hello, Spring 👋
-          <figure class="icon-indicator material-symbols-outlined" style="margin-left: var(--space-2)">chevron_right</figure>
-        </h1>
-        <b class="greeting-description">Welcome back to soojubm.</b>
-      </section>
+      <test-tile variant="elevated" style="max-width: 400px">
+        <test-menuitem>
+          <test-avatar slot="avatar" size="huge"></test-avatar>
+          <div slot="text">
+            <test-text variant="subhead">개인</test-text>
+            <test-text variant="body">Apple One</test-text>
+            <test-text variant="label">가족 구독</test-text>
+          </div>
+        </test-menuitem>
+        <test-separator></test-separator>
+        <test-text variant="body-bold">1개월 무료 체험</test-text>
+        <small>오늘(2023년 05월 22일)부터</small>
+        <test-text variant="text-subhead">14,900원/개월</test-text>
+        <test-separator></test-separator>
 
-      <section class="">
-        <header style="display: flex; align-items: center; justify-content: space-between; max-width: 400px; margin: 0 auto var(--space-3)">
-          <h2>내 요금제</h2>
-          <button style="color: var(--color-primary); font-weight: bold; text-decoration: underline">요금제 변경하기</button>
-        </header>
-        <article class="purchase" style="border: var(--border); max-width: 400px; margin: 0 auto">
+        <div class="purchase">
           <header class="purchase-head">
             <h3>Premium 베이직</h3>
             <small>Premium 베이직 계정 1개 / 클라우드 330GB (월 5,500원)</small>
@@ -595,8 +619,25 @@
               <li>언제든 해지 가능합니다. 혜택 약관이 적용됩니다.</li>
             </ul>
           </div>
-        </article>
-      </section>
+        </div>
+        <p>약정 기간이 없습니다. 갱신일 최소 하루 전까지 설정 > Apple ID에서 언제든지 취소할 수 있습니다. 취소할 때까지 요금제가 자동 갱신됩니다.</p>
+        <test-separator></test-separator>
+        <p style="color: var(--color-text-light)">계정: soojubm@gmail.com</p>
+      </test-tile>
+
+    <section class="sample-container" style="margin-top: 0">
+      
+      <header class="greeting" data-temp="이 패턴에서 아바타는 시각 정보가 아니라 링크로 사용">
+        <figure class="greeting-avatar" style="font-size: 1.5rem">🐶</figure>
+        <h1 class="greeting-title" style="display: flex">
+          Hello, Spring 👋
+          <figure class="icon-indicator material-symbols-outlined" style="margin-left: var(--space-2)">chevron_right</figure>
+        </h1>
+        <p class="greeting-description">Tender is the night.</p>
+      </header>
+
+
+
 
       <test-menuitem data-size="large" style="margin-bottom: var(--space-3)">
         <test-avatar></test-avatar>
@@ -615,38 +656,98 @@
         <test-chip label="View Job"></button>
       </test-tile>
 
-      <test-tile variant="elevated" style="max-width: 400px">
-        <test-menuitem>
-          <test-avatar slot="avatar" size="huge"></test-avatar>
-          <div slot="text">
-            <test-text variant="subhead">개인</test-text>
-            <test-text variant="body">Apple One</test-text>
-            <test-text variant="label">가족 구독</test-text>
-          </div>
-        </test-menuitem>
-        <test-separator></test-separator>
-        <test-text variant="body-bold">1개월 무료 체험</test-text>
-        <small>오늘부터</small>
-        <test-text variant="text-subhead">14,900원/개월</test-text>
-        <small>2023년 05월 22일부터</small>
-        <test-separator></test-separator>
-        <p>약정 기간이 없습니다. 갱신일 최소 하루 전까지 설정 > Apple ID에서 언제든지 취소할 수 있습니다. 취소할 때까지 요금제가 자동 갱신됩니다.</p>
-        <test-separator></test-separator>
-        <p style="color: var(--color-text-light)">계정: soojubm@gmail.com</p>
-      </div>
+    </section>
 
-      <test-tile variant="elevated">
-        <test-titlebar style="padding: 0; margin-bottom: var(--space-4)">
-          <test-text variant="subhead" class="titlebar-title">VASP 선택</test-text>
-          <test-chip class="titlebar-back" aria-label="이전 페이지로"></test-chip>
-        </test-titlebar>
-        <test-textfield type="search" label="VASP명 / 심볼" placeholder="" data-size="small">
-          <button class="textfield-prefix searchfield-prefix">
-            <span class="material-symbols-outlined" style="font-size: 20px">search</span>
-          </button>
-          <!-- <button class="textfield-clear" hidden><span class="material-symbols-outlined">close</span></button> -->
+      <div class="album-track">
+        <header class="album-track-label" role="row">
+          <span class="album-track-label-item" role="columnheader">#</span>
+          <span class="album-track-label-item">제목</span>
+          <span class="album-track-label-item">Gengre</span>
+          <span class="album-track-label-item">Progress</span>
+          <span class="album-track-label-item">Status</span>
+          <span class="album-track-label-item">러닝타임</span>
+          <span class="album-track-label-item" title=" date added(sort)">Date</span>
+        </header>
+        <div class="album-track-row" role="row">
+          <span class="album-track-row-column" data-cell="number">1</span>
+          <span class="album-track-row-column">
+            <test-menu-item label="Dancing in the Dark" description="Bruce Springsteen">
+              <test-avatar slot="avatar"></test-avatar>
+            </test-menu-item>
+          </span>
+          <span class="album-track-row-column stack"><test-tag>hiphop</test-tag><test-tag>rap</test-tag></span>
+          <span class="album-track-row-column">In Review --</span>
+          <span class="album-track-row-column"
+            ><em class="badge" style="height: auto; margin-right: 0.5rem; background: gold; padding: 3px"></em> Error</span
+          >
+          <span class="album-track-row-column">7 : 02</span>
+        </div>
+      </div>
+  
+      <section>
+        <test-textfield placeholder="you@gamil.com">
+          <test-icon slot="prefix" name="mail"></test-icon>
         </test-textfield>
+        <test-tile variant="elevated" size="small">
+          <test-menuitem label="Add the member" style="max-width: 50%">
+            <test-avatar slot="avatar">
+              <test-icon slot="icon" name="plus"></test-icon>
+            </test-avatar>
+          </test-menuitem>
+        </test-tile>
+      </section>
+  
+      <test-separator></test-separator>
+  
+      <p>TeeVee</p>
+      <p>icon-indicator (textfield-check/select indicator) - inline or float: right</p>
+      <p>
+        Note: Make sure the role of the element that serves as the container for the popup content is a menu, listbox, tree, grid or dialog and that the
+        value of aria-haspopup matches the role of the popup container.
+      </p>
+  
+  
+      <div class="file-attachment-item" style="max-width: 400px">
+        <figure class="file-attachment-item-image"><img src="/public/images/springsteen.jpg" alt="${file.name}" /></figure>
+        <b class="file-attachment-item-name">${file.name}</b>
+        <small class="file-attachment-item-size">${returnFileSize(file.size)}</small>
+        <button class="file-attachment-item-delete js-remove-this"><span class="material-symbols-outlined">close</span></button>
+      </div>
+  
+      <!-- ! flex-wrap: warp일 때 min-width가 fixed -->
+      <!-- ! width:100% and max-width doesnt' work-->
+      <section style="max-width: 400px; z-index: 1">
+        <test-titlebar heading="컬렉션에 추가">
+          <test-chip slot="back" class="titlebar-back" aria-label="이전 페이지로">
+            <test-icon slot="icon" name="arrow-left"></test-icon>
+          </test-chip>
+        </test-titlebar>
+        <br />
+        <test-group alignment="vertical">
+          <!-- aira-checked="mixed" aria-controls="1 2" -->
+          <test-checkbox label="재생 목록 1"></test-checkbox>
+          <test-checkbox label="재생 목록 2"></test-checkbox>
+        </test-group>
+        <br />
+        <test-tile variant="elevated" size="small">
+          <test-menuitem label="새 컬렉션 만들기">
+            <test-avatar slot="avatar">+</test-avatar>
+          </test-menuitem>
+        </test-tile>
         <test-separator></test-separator>
+        <test-titlebar heading="컬렉션 만들기">
+          <test-chip slot="back" status="info" aria-label="이전 페이지로">
+            <test-icon slot="icon" name="arrow-left"></test-icon>
+          </test-chip>
+          <test-chip slot="action" label="만들기"></test-chip>
+        </test-titlebar>
+        <div style="height:1rem;"></div>
+        <test-textfield label="컬렉션 이름" placeholder="컬렉션 이름"></test-textfield>
+        <test-tile variant="elevated" size="small">
+          <test-menuitem label="사용자 및 그룹 추가">
+            <test-avatar slot="avatar">+</test-avatar>
+          </test-menuitem>
+        </test-tile>
         <test-menu-group>
           <test-menuitem label="빗썸">
             <test-avatar slot="avatar"></test-avatar>
@@ -660,8 +761,38 @@
             <test-checkbox slot="action" size="large"></test-checkbox>
           </test-menuitem>
         </test-menu-group>
+
+        <p style="margin: 1rem 0 0.25rem; font-size: var(--font-size-medium)">액세스 권한이 있는 사용자</p>
+        <test-group alignment="vertical">
+          <test-menuitem label="수줍이 (나)">
+            <test-avatar slot="avatar"></test-avatar>
+            <test-tag style="margin-left: auto">소유자</test-tag>
+          </test-menuitem>
+          <test-menuitem label="뾱뾱이">
+            <test-avatar slot="avatar" style="background: purple"></test-avatar>
+            <test-tag data-status="danger" style="margin-left: auto">
+              <span class="tag-label">제한됨</span>
+            </test-tag>
+            <figure class="icon-indicator" style="margin-left: var(--space-1)"><span class="material-symbols-outlined">arrow_drop_down</span></figure>
+          </test-menuitem>
+        </test-group>
+      </section>
+  
+      <br />
+  
+      <test-tile>
+        <q>I'm impressed by how GitHub Copilot seems to know exactly what I want to type next. GitHub Copilot is particularly helpful when working on
+          React components, where it makes eerily accurate predictions. GitHub Copilot has become an indispensable part of my programmer toolbelt.</q
+        >
+        <figcaption style="margin: var(--space-3) 0 0 0; color: var(--color-text-light)">Byline</figcaption>
       </test-tile>
-    </section>
+  
+      <test-tile style="text-align: center">
+        최근 3개월간 네이버플러스 멤버십으로<br />
+        <em>15,799원 추가 적립 혜택</em>이 생겼어요!
+      </test-tile>
+
+
   </div>
   <aside style="position: fixed; top: 6rem; left: calc(50% + var(--width-sidemenu) - var(--grid-margin)); transform: translateX(-50%); z-index: 8">
     <button
@@ -672,212 +803,6 @@
     </button>
   </aside>
 
-  <button aria-haspopup="true" aria-expanded="false">
-    Difficulty
-    <span aria-hidden="true">&#x25be;</span>
-  </button>
-  <div role="menu">
-    <button role="menuitemradio" tabindex="-1">Easy</button>
-    <button role="menuitemradio" aria-checked="true" tabindex="-1">Medium</button>
-  </div>
-  <p>role=checkbox aria-checked=false</p>
-
-
-
-
-    <div class="album-track">
-      <header class="album-track-label" role="row">
-        <span class="album-track-label-item" role="columnheader">#</span>
-        <span class="album-track-label-item">제목</span>
-        <span class="album-track-label-item">Gengre</span>
-        <span class="album-track-label-item">Progress</span>
-        <span class="album-track-label-item">Status</span>
-        <span class="album-track-label-item">러닝타임</span>
-        <span class="album-track-label-item" title=" date added(sort)">Date</span>
-      </header>
-      <div class="album-track-row" role="row">
-        <span class="album-track-row-column" data-cell="number">1</span>
-        <span class="album-track-row-column">
-          <test-menu-item label="Dancing in the Dark" description="Bruce Springsteen">
-            <test-avatar slot="avatar"></test-avatar>
-          </test-menu-item>
-        </span>
-        <span class="album-track-row-column stack"><test-tag>hiphop</test-tag><test-tag>rap</test-tag></span>
-        <span class="album-track-row-column">In Review --</span>
-        <span class="album-track-row-column"
-          ><em class="badge" style="height: auto; margin-right: 0.5rem; background: gold; padding: 3px"></em> Error</span
-        >
-        <span class="album-track-row-column">7 : 02</span>
-      </div>
-    </div>
-    <section class="">
-      toolbar is not chip.. 단지 지금 chip의 컨테이너를 가지고 있는 것.
-      <p class="profile-display-status" role="status">Viewing 1,000 Projects</p>
-      <div class="tile-elevated-small">
-        <div style="width: 100%; display: flex">
-          <button class="profile-display-button js-test-toggle is-selected" name="grid">
-            <figure class="chip-icon"><span class="material-symbols-outlined">grid_on</span></figure>
-            <span class="chip-label" aria-hidden="true" aria-label="grid" style="line-height: 24px">격자</span>
-          </button>
-          <button class="profile-display-button js-test-toggle" name="list" style="margin-left: 0.5rem">
-            <figure class="chip-icon" style="background: none">
-              <span class="material-symbols-outlined"><span class="material-symbols-outlined"> view_agenda </span></span>
-            </figure>
-            <span class="chip-label" aria-hidden="true" style="line-height: 24px">List</span>
-          </button>
-        </div>
-        <div style="width: 100%; display: flex; margin-top: 0.75rem">
-          <button class="profile-display-button js-test-toggle is-selected" name="grid">
-            <figure class="chip-icon"><span class="material-symbols-outlined">format_bold</span></figure>
-            <span class="chip-label" aria-hidden="true" aria-label="grid" hidden>격자</span>
-          </button>
-          <button class="profile-display-button js-test-toggle" name="list" style="margin-left: 0.25rem">
-            <figure class="chip-icon" style="background: none"><span class="material-symbols-outlined">format_italic</span></figure>
-            <span class="chip-label" aria-hidden="true" hidden>List</span>
-          </button>
-          <button class="profile-display-button js-test-toggle" name="list" style="margin-left: 0.25rem">
-            <figure class="chip-icon" style="background: none"><span class="material-symbols-outlined">format_align_center</span></figure>
-            <figure class="icon-indicator" style="margin-left: -0.5rem; background: none">
-              <span class="material-symbols-outlined">arrow_drop_down</span>
-            </figure>
-            <span class="chip-label" aria-hidden="true" hidden>List</span>
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <test-separator></test-separator>
-    <!-- ! flex-wrap: warp일 때 min-width가 fixed -->
-    <!-- ! width:100% and max-width doesnt' work-->
-    <test-tile variant="elevated" action="" style="max-width: 400px; z-index: 1">
-      <test-titlebar heading="[파일 제목.pdf] 공유">
-        <test-chip slot="action">
-          <test-icon slot="icon" name="settings"></test-icon>
-        </test-chip>
-      </test-titlebar>
-      <test-textfield label="댓글" placeholder="사용자 및 그룹 추가" style="margin:1rem 0 0;">
-      </test-textfield>
-      <test-tile variant="elevated" size="small">
-        <test-menuitem label="사용자 및 그룹 추가">
-          <test-avatar slot="avatar">+</test-avatar>
-        </test-menuitem>
-      </test-tile>
-
-      <p style="margin: 1rem 0 0.25rem; font-size: var(--font-size-medium)">액세스 권한이 있는 사용자</p>
-      <test-group alignment="vertical">
-        <test-menuitem label="수줍이 (나)">
-          <test-avatar slot="avatar"></test-avatar>
-          <test-tag style="margin-left: auto">소유자</test-tag>
-        </test-menuitem>
-        <test-menuitem label="뾱뾱이">
-          <test-avatar slot="avatar" style="background: purple"></test-avatar>
-          <test-tag data-status="danger" style="margin-left: auto">
-            <span class="tag-label">제한됨</span>
-          </test-tag>
-          <figure class="icon-indicator" style="margin-left: var(--space-1)"><span class="material-symbols-outlined">arrow_drop_down</span></figure>
-        </test-menuitem>
-      </test-group>
-      <footer>
-        <test-button variant="primary" type="submit">완료</test-button>
-      </footer>
-      <test-separator></test-separator>
-      <test-titlebar heading="공유 설정">
-        <test-chip slot="back" aria-label="이전 페이지로">
-          <test-icon slot="icon" size="small" name="arrow-left"></test-icon>
-        </test-chip>
-      </test-titlebar>
-      <test-group alignment="vertical">
-        <test-checkbox label="편집자가 권한을 변경하고 공유할 수 있습니다."></test-checkbox>
-        <test-checkbox label="뷰어 및 댓글 작성자에게 다운로드, 인쇄, 복사 옵션 표시."></test-checkbox>
-      </test-group>
-      <test-separator></test-separator>
-      <p>일반 액세스 (기본 액세스라는 의미인 듯)</p>
-      <test-chip label="제한됨">
-        <span class="material-symbols-outlined">arrow_drop_down</span>
-      </test-chip>
-      <div style="margin: 0.75rem 0">
-        <p>액세스 권한이 있는 사용자만 링크로 열 수 있습니다.</p>
-      </div>
-      <test-separator></test-separator>
-      <p>개선한 부분</p>
-      <ul>
-        <li>일반 액세스는 설정에서 제공. 소제목 제거. 액세스 권한이 있는 사용자.</li>
-        <li>multiple select 인터페이스를 정의하지 않기 위해 버튼을 사용. => 디자인 시스템에 정의하지 않은 요소.</li>
-        <li>한 번에 여러 명과 공유 / 긴 파일 이름 / 추가 버튼이 리스트의 최상단과 최하단애 배치되는 맥락 정의 /</li>
-      </ul>
-    </test-tile>
-
-    <section>
-      <test-textfield placeholder="you@gamil.com">
-        <test-icon slot="prefix">
-        </test-icon>
-      </test-textfield>
-      <test-menuitem label="Add the member" style="max-width: 50%">
-        <test-avatar slot="avatar">
-          <test-icon slot="icon" name="plus"></test-icon>
-        </test-avatar>
-      </test-menuitem>
-    </section>
-
-
-    <test-separator></test-separator>
-
-    <p>TeeVee</p>
-    <p>icon-indicator (textfield-check/select indicator) - inline or float: right</p>
-    <p>
-      Note: Make sure the role of the element that serves as the container for the popup content is a menu, listbox, tree, grid or dialog and that the
-      value of aria-haspopup matches the role of the popup container.
-    </p>
-
-    <div class="" role="group" style="display: flex"></div>
-
-    <div class="file-attachment-item" style="max-width: 400px">
-      <figure class="file-attachment-item-image"><img src="/public/images/springsteen.jpg" alt="${file.name}" /></figure>
-      <b class="file-attachment-item-name">${file.name}</b>
-      <small class="file-attachment-item-size">${returnFileSize(file.size)}</small>
-      <button class="file-attachment-item-delete js-remove-this"><span class="material-symbols-outlined">close</span></button>
-    </div>
-
-    
-    <test-tile variant="elevated" style="max-width: 400px; z-index: 1">
-      <test-titlebar heading="컬렉션에 추가" style="padding: 0; margin-bottom: var(--space-4)">
-        <test-chip slot="back" class="titlebar-back" aria-label="이전 페이지로">
-          <test-icon slot="icon" name="arrow-left"></test-icon>
-        </test-chip>
-      </test-titlebar>
-      <test-group alignment="vertical">
-        <!-- aira-checked="mixed" aria-controls="1 2" -->
-        <test-checkbox label="재생 목록 1"></test-checkbox>
-        <test-checkbox label="재생 목록 2"></test-checkbox>
-      </test-group>
-      <test-tile variant="elevated" size="small">
-        <test-menuitem label="새 컬렉션 만들기">
-          <test-avatar slot="avatar">+</test-avatar>
-        </test-menuitem>
-      </test-tile>
-      <test-separator></test-separator>
-      <test-titlebar heading="컬렉션 만들기" style="padding: 0; margin-bottom: var(--space-4)">
-        <test-chip slot="back" aria-label="이전 페이지로">
-          <test-icon slot="icon" name="arrow-left"></test-icon>
-        </test-chip>
-        <test-chip slot="action" label="만들기"></test-chip>
-      </test-titlebar>
-      <test-textfield label="컬렉션 이름" placeholder="컬렉션 이름"></test-textfield>
-    </test-tile>
-
-    <br />
-
-    <test-tile>
-      <q
-        >I'm impressed by how GitHub Copilot seems to know exactly what I want to type next. GitHub Copilot is particularly helpful when working on
-        React components, where it makes eerily accurate predictions. GitHub Copilot has become an indispensable part of my programmer toolbelt.</q
-      >
-      <figcaption style="margin: var(--space-3) 0 0 0; color: var(--color-text-light)">Byline</figcaption>
-    </test-tile>
-
-    <test-tile style="text-align: center">
-      최근 3개월간 네이버플러스 멤버십으로<br />
-      <em>15,799원 추가 적립 혜택</em>이 생겼어요!
-    </test-tile>
+</article>
   </section>
 </main>
