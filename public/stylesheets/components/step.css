@@ -32,7 +32,7 @@
 .step[data-align=vertical] .step-item:before {width:1px;height:calc(100% + 1.5rem);top:-.75rem;left:7px;bottom:-.75rem;}
 .step[data-align=vertical] .step-item-icon {margin:0;}
 .step[data-align=vertical] .step-item-label {margin-top:0;}
-.step[data-align=vertical] .step-item-description {margin:0 0 0 1.5rem;}
+.step[data-align=vertical] .step-item-description {width:100%;margin:0 0 0 1.5rem;}
 
 .step-item.is-active .step-item-icon {background:var(--color-background-strong);}
 .step-item.is-active .step-item-label {color:var(--color-text);}

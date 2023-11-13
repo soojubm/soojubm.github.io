@@ -43,7 +43,7 @@
 .class-why-item {}
 
 .class-feature {display:flex;width:100%;}
-.class-feature-item {margin:2rem 0;}
+.class-feature-item {display:flex;flex-direction:column;gap:.5rem;margin:2rem 0;}
 
 .class-feature > div, .class-who > div {
   width: 50%;
@@ -65,7 +65,7 @@
   padding: 2rem var(--section-padding);
   border-top:var(--border);
 }
-.class-curriculum div figure {float:left;width:200px;height:112px;margin:0 1.25rem 0 0;background:var(--color-newneek);}
+.class-curriculum div figure {float:left;width:200px;height:120px;margin:0 1.25rem 0 0;background:var(--color-newneek);}
 .class-curriculum div h3 {margin:var(--space-2) 0;}
 
 .class-faq {width:100%;border:var(--border);border-top:0;background-color:var(--color-newneek-gray);}
