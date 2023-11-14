@@ -54,45 +54,6 @@
           <button class="textbox-footer-publish">게시</button>
         </footer>
       </section>
-
-
-
-      <section class="">
-        toolbar is not chip.. 단지 지금 chip의 컨테이너를 가지고 있는 것.
-        <p class="profile-display-status" role="status">Viewing 1,000 Projects</p>
-        <div class="tile-elevated-small">
-          <div style="width: 100%; display: flex">
-            <button class="profile-display-button js-test-toggle is-selected" name="grid">
-              <figure class="chip-icon"><span class="material-symbols-outlined">grid_on</span></figure>
-              <span class="chip-label" aria-hidden="true" aria-label="grid" style="line-height: 24px">격자</span>
-            </button>
-            <button class="profile-display-button js-test-toggle" name="list" style="margin-left: 0.5rem">
-              <figure class="chip-icon" style="background: none">
-                <span class="material-symbols-outlined"><span class="material-symbols-outlined"> view_agenda </span></span>
-              </figure>
-              <span class="chip-label" aria-hidden="true" style="line-height: 24px">List</span>
-            </button>
-          </div>
-          <div style="width: 100%; display: flex; margin-top: 0.75rem">
-            <button class="profile-display-button js-test-toggle is-selected" name="grid">
-              <figure class="chip-icon"><span class="material-symbols-outlined">format_bold</span></figure>
-              <span class="chip-label" aria-hidden="true" aria-label="grid" hidden>격자</span>
-            </button>
-            <button class="profile-display-button js-test-toggle" name="list" style="margin-left: 0.25rem">
-              <figure class="chip-icon" style="background: none"><span class="material-symbols-outlined">format_italic</span></figure>
-              <span class="chip-label" aria-hidden="true" hidden>List</span>
-            </button>
-            <button class="profile-display-button js-test-toggle" name="list" style="margin-left: 0.25rem">
-              <figure class="chip-icon" style="background: none"><span class="material-symbols-outlined">format_align_center</span></figure>
-              <figure class="icon-indicator" style="margin-left: -0.5rem; background: none">
-                <span class="material-symbols-outlined">arrow_drop_down</span>
-              </figure>
-              <span class="chip-label" aria-hidden="true" hidden>List</span>
-            </button>
-          </div>
-        </div>
-      </section>
-  
   
       <!-- https://story.pxd.co.kr/1451 -->
       <p>loading state/dfn/abbr</p>
@@ -199,45 +160,38 @@
       <p><b>flex</b> -> block + min-width</p>
       <p>scroll-behavior: smooth</p>
       <section class="component-example">
-        <test-tile>
-          <section class="carousel js-carousel" style="max-width: auto">
-            <div class="carousel-viewer js-carousel-viewer">
-              <a class="carousel-viewer-slide" href="#profile">
-                <test-avatar>🧑‍🦱</test-avatar>
-                <p class="carousel-viewer-slide-name">사용자 프로필</p>
-              </a>
-              <a class="carousel-viewer-slide" href="#signup">
-                <test-avatar>🗂️</test-avatar>
-                <p class="carousel-viewer-slide-name">회원가입</p>
-              </a>
-              <a class="carousel-viewer-slide" href="#login">
-                <test-avatar>🗂️</test-avatar>
-                <p class="carousel-viewer-slide-name">로그인</p>
-              </a>
-              <a class="carousel-viewer-slide" href="#forgot">
-                <test-avatar>🔑</test-avatar>
-                <p class="carousel-viewer-slide-name">비밀번호 찾기</p>
-              </a>
-              <a class="carousel-viewer-slide" href="#post">
-                <test-avatar>✍️</test-avatar>
-                <p class="carousel-viewer-slide-name">포스트</p>
-              </a>
-              <a class="carousel-viewer-slide" href="#product">
-                <test-avatar>🧴</test-avatar>
-                <p class="carousel-viewer-slide-name">상품</p>
-              </a>
-            </div>
-            <!-- <nav class="carousel-dots">
-                  <button class="carousel-dots-dot">1</button>
-                  <button class="carousel-dots-dot">1</button>
-                  <button class="carousel-dots-dot">1</button>
-                </nav> -->
-            <nav class="carousel-arrows">
-              <button class="carousel-arrows-prev js-carousel-prev" title="이전"><span class="material-symbols-outlined">chevron_left</span></button>
-              <button class="carousel-arrows-next js-carousel-next" title="다음"><span class="material-symbols-outlined">chevron_right</span></button>
-            </nav>
-          </section>
-        </test-tile>
+        <section class="carousel js-carousel">
+          <test-group class="carousel-viewer js-carousel-viewer">
+            <test-entity size="huge" label="폴 뉴먼" description="주연">
+              <test-avatar slot="avatar" size="huge" src="/public/images/springsteen.jpg"></test-avatar>
+            </test-entity>
+            <test-entity size="huge" label="폴 뉴먼" description="주연">
+              <test-avatar slot="avatar" size="huge" src="/public/images/springsteen.jpg"></test-avatar>
+            </test-entity>
+            <test-entity size="huge" label="폴 뉴먼" description="주연">
+              <test-avatar slot="avatar" size="huge" src="/public/images/springsteen.jpg"></test-avatar>
+            </test-entity>
+            <test-entity size="huge" label="폴 뉴먼" description="주연">
+              <test-avatar slot="avatar" size="huge" src="/public/images/springsteen.jpg"></test-avatar>
+            </test-entity>
+            <test-entity size="huge" label="폴 뉴먼" description="주연">
+              <test-avatar slot="avatar" size="huge" src="/public/images/springsteen.jpg"></test-avatar>
+            </test-entity>
+          </test-group>
+          <!-- <nav class="carousel-dots">
+                <button class="carousel-dots-dot">1</button>
+                <button class="carousel-dots-dot">1</button>
+                <button class="carousel-dots-dot">1</button>
+              </nav> -->
+          <nav class="carousel-arrows">
+            <test-chip class="carousel-arrows-prev js-carousel-prev" aria-label="이전">
+              <test-icon slot="icon" name="arrow-left"></test-icon>
+            </test-chip>
+            <test-chip class="carousel-arrows-next js-carousel-next" aria-label="다음">
+              <test-icon slot="icon" name="arrow-left"></test-icon>
+            </test-chip>
+          </nav>
+        </section>
       </section>
 
       <ul>
@@ -251,7 +205,6 @@
       <test-text variant="title">Table</test-text>
       <test-text variant="body-large">표.</test-text>
       <section class="component-example">
-
         <table>
           <thead>
             <tr>
@@ -313,8 +266,6 @@
 
         <br />
 
-
-        <test-tile variant="elevated">
           <table>
             <caption>
               히라가나 오십음도
@@ -359,12 +310,7 @@
               </tr>
             </tbody>
           </table>
-        </test-tile>
 
-        <test-tile>
-
-
-  <section style="padding:0 var(--grid-margin);">
     <table>
       <thead>
         <tr>
@@ -406,92 +352,94 @@
         </tr>
       </tbody>
     </table>
-  </section>
-        </test-tile>
 
-        <test-tile variant="elevated">
-          <table>
-            <tr>
-              <th scope="col">Name</th>
-              <th scope="col">Age</th>
-              <th scope="col">Gender</th>
-            </tr>
-            <tr>
-              <th scope="row">Gabriel</th>
-              <td>13</td>
-              <td>Male</td>
-            </tr>
-            <tr>
-              <th scope="row">Elva</th>
-              <td>8</td>
-              <td>Female</td>
-            </tr>
-            <tr>
-              <th scope="row">Freida</th>
-              <td>5</td>
-              <td>Female</td>
-            </tr>
-          </table>
-        </test-tile>
-      </section>
+    
+    <table>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Age</th>
+        <th scope="col">Gender</th>
+      </tr>
+      <tr>
+        <th scope="row">Gabriel</th>
+        <td>13</td>
+        <td>Male</td>
+      </tr>
+      <tr>
+        <th scope="row">Elva</th>
+        <td>8</td>
+        <td>Female</td>
+      </tr>
+      <tr>
+        <th scope="row">Freida</th>
+        <td>5</td>
+        <td>Female</td>
+      </tr>
+    </table>
+  </section>
+
     </article>
 
 
     <article class="article">
       <test-text variant="title">Range</test-text>
       <test-text variant="body-large"></test-text>
-      <div class="range">
-        <label for="">숙박 인원</label>
-        <input type="range" min="1" max="10" value="2" step="any" list="tickmarks" id="myRange">
-        <datalist id="tickmarks">
-          <option value="0" label="0"></option>
-          <option value="5" label="5"></option>
-        </datalist>
-      </div>
+      <section class="component-example">
+        <div class="range">
+          <label for="">숙박 인원</label>
+          <input type="range" min="1" max="10" value="2" step="any" list="tickmarks" id="myRange">
+          <datalist id="tickmarks">
+            <option value="0" label="0"></option>
+            <option value="5" label="5"></option>
+          </datalist>
+        </div>
+      </section>
     </article>
 
     <article class="article">
       <test-text variant="title">Calendar</test-text>
       <test-text variant="body-large"></p>
-      <div class="calendar">
-        <b>2020년 12월</b>
-        <nav class="calendar-navigation">
-          <button class="calendar-navigation-prev" aria-label="앞으로"><i class="icon-caret is-left"></i></button>
-          <button class="calendar-navigation-next" aria-label="뒤로"><i class="icon-caret is-right"></i></button>
-        </nav>
-        <div class="calendar-head">
-          <div>일</div>
-          <div>월</div>
-          <div>화</div>
-          <div>수</div>
-          <div>목</div>
-          <div>금</div>
-          <div>토</div>
+      <section class="component-example">
+        <div class="calendar">
+          <b>2020년 12월</b>
+          <nav class="calendar-navigation">
+            <button class="calendar-navigation-prev" aria-label="앞으로"><i class="icon-caret is-left"></i></button>
+            <button class="calendar-navigation-next" aria-label="뒤로"><i class="icon-caret is-right"></i></button>
+          </nav>
+          <div class="calendar-head">
+            <div>일</div>
+            <div>월</div>
+            <div>화</div>
+            <div>수</div>
+            <div>목</div>
+            <div>금</div>
+            <div>토</div>
+          </div>
+          <div class="calendar-body">
+            <div class="calendar-body-column">1</div>
+            <div class="calendar-body-column">2</div>
+            <div class="calendar-body-column">3</div>
+            <div class="calendar-body-column">4</div>
+            <div class="calendar-body-column">5</div>
+            <div class="calendar-body-column">6</div>
+            <div class="calendar-body-column">7</div>
+            <div class="calendar-body-column">1</div>
+            <div class="calendar-body-column">2</div>
+            <div class="calendar-body-column">3</div>
+            <div class="calendar-body-column">4</div>
+            <div class="calendar-body-column">5</div>
+            <div class="calendar-body-column">6</div>
+            <div class="calendar-body-column">7</div>
+            <div class="calendar-body-column">1</div>
+            <div class="calendar-body-column">2</div>
+            <div class="calendar-body-column">3</div>
+            <div class="calendar-body-column">4</div>
+            <div class="calendar-body-column">5</div>
+            <div class="calendar-body-column">6</div>
+            <div class="calendar-body-column">7</div>
+          </div>
         </div>
-        <div class="calendar-body">
-          <div class="calendar-body-column">1</div>
-          <div class="calendar-body-column">2</div>
-          <div class="calendar-body-column">3</div>
-          <div class="calendar-body-column">4</div>
-          <div class="calendar-body-column">5</div>
-          <div class="calendar-body-column">6</div>
-          <div class="calendar-body-column">7</div>
-          <div class="calendar-body-column">1</div>
-          <div class="calendar-body-column">2</div>
-          <div class="calendar-body-column">3</div>
-          <div class="calendar-body-column">4</div>
-          <div class="calendar-body-column">5</div>
-          <div class="calendar-body-column">6</div>
-          <div class="calendar-body-column">7</div>
-          <div class="calendar-body-column">1</div>
-          <div class="calendar-body-column">2</div>
-          <div class="calendar-body-column">3</div>
-          <div class="calendar-body-column">4</div>
-          <div class="calendar-body-column">5</div>
-          <div class="calendar-body-column">6</div>
-          <div class="calendar-body-column">7</div>
-        </div>
-      </div>
+      </section>
     </article>
 
     <article class="article">
@@ -525,15 +473,6 @@
         >
       </form>
 
-
-      <test-tile variant="flat" style="width:100%;max-width: 400px;">
-        <test-text variant="body-bold">Delivery</test-text>
-        <test-group>
-          <test-chip label="Tomorrow"></test-chip>
-          <test-chip label="Within 3 days"></test-chip>
-        </test-group>
-      </test-tile>
-      
       <test-card variant="flat" size="medium" class="pricing-item">
         <div slot="entire">
           <test-tag style="position: absolute; left: -0.5rem; top: var(--space-3)">
@@ -544,8 +483,13 @@
           <test-text variant="subhead">Standard</test-text>
           <div style="height:var(--space-after-subhead)"></div>
           <div class="pricing-item-price">
-            <test-text variant="subhead">6,800원</test-text>
-            <span>한 달에 한 번</span>
+            <span class="pricing-item-price-per">한 달에 한 번</span>
+            <test-text variant="title">₩ 6,800</test-text>
+          </div>
+          <div style="height:var(--space-after-subhead)"></div>
+          <div>
+            <test-text variant="subhead"><em>iCloud+</em> 50GB</test-text>
+            <span>₩1,100/월 </span>
           </div>
           <div style="height:var(--space-after-subhead)"></div>
           <test-text variant="body">전직대통령의 신분과 예우에 관하여는 법률로 정한다. 대법원장은 국회의 동의를 얻어 대통령이 임명한다.</test-text>
@@ -556,15 +500,7 @@
             <li>회원을 위한 추가 혜택</li>
           </ul>
           <div style="height:var(--space-after-subhead)"></div>
-          <div class="pricing-item-price">
-            <span class="pricing-item-price-per">한 달에 한 번</span>
-            <test-text variant="title">₩ 6,800</test-text>
-          </div>
-          <div style="height:var(--space-after-subhead)"></div>
-          <div>
-            <test-text variant="subhead"><em>iCloud+</em> 50GB</test-text>
-            <span>₩1,100/월 </span>
-          </div>
+   
           <div style="height:2rem"></div>
           <test-group>
             <test-button variant="primary">업그레이드</test-button>
@@ -685,7 +621,7 @@
       </div>
   
       <section>
-        <test-textfield placeholder="you@gamil.com">
+        <test-textfield label="임시" placeholder="you@gamil.com">
           <test-icon slot="prefix" name="mail"></test-icon>
         </test-textfield>
         <test-tile variant="elevated" size="small">
@@ -748,34 +684,6 @@
             <test-avatar slot="avatar">+</test-avatar>
           </test-menuitem>
         </test-tile>
-        <test-menu-group>
-          <test-menuitem label="빗썸">
-            <test-avatar slot="avatar"></test-avatar>
-            <test-checkbox slot="action" label="" size="large">
-              <input type="checkbox" id="menutype1" name="gender" checked="" />
-              <label for="menutype1" title=""></label>
-            </test-checkbox>
-          </test-menuitem>
-          <test-menuitem label="코인원">
-            <test-avatar slot="avatar"></test-avatar>
-            <test-checkbox slot="action" size="large"></test-checkbox>
-          </test-menuitem>
-        </test-menu-group>
-
-        <p style="margin: 1rem 0 0.25rem; font-size: var(--font-size-medium)">액세스 권한이 있는 사용자</p>
-        <test-group alignment="vertical">
-          <test-menuitem label="수줍이 (나)">
-            <test-avatar slot="avatar"></test-avatar>
-            <test-tag style="margin-left: auto">소유자</test-tag>
-          </test-menuitem>
-          <test-menuitem label="뾱뾱이">
-            <test-avatar slot="avatar" style="background: purple"></test-avatar>
-            <test-tag data-status="danger" style="margin-left: auto">
-              <span class="tag-label">제한됨</span>
-            </test-tag>
-            <figure class="icon-indicator" style="margin-left: var(--space-1)"><span class="material-symbols-outlined">arrow_drop_down</span></figure>
-          </test-menuitem>
-        </test-group>
       </section>
   
       <br />
