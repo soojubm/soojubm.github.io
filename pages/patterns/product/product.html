@@ -8,7 +8,7 @@
 
 <main class="product">
   <!-- 헤드가 있어야 할 듯.. -->
-  <header class="product-head" style="display: flex; gap: 1rem; position: relative">
+  <header class="product-head">
     <section class="product-image" role="img" aria-labelledby="제품 이미지">
       <img src="/public/images/product_sample.png" alt="제품 이미지" />
     </section>
@@ -23,7 +23,7 @@
         <li>배송비 2,500원</li>
         <li>제주, 도서, 산간지역 추가 배송비 3,000원</li>
       </ul>
-      <test-tile size="small" class="product-info-benefit">
+      <test-tile size="small">
         뷰티포인트 460P 적립 <i class="icon-bullet"></i> 현대카드 5% 청구할인
       </test-tile>
     </section>
@@ -36,19 +36,6 @@
         </select>
         <!-- <span class="textfield-suffix material-symbols-outlined">arrow_drop_down</span> -->
       </div>
-
-      <test-tile class="product-order-item">
-        <h4 class="product-order-item-title">아이템. 카트의 역할임. 삭제 버튼이 너무 크다.</h4>
-        <p class="product-order-item-price">₩ 23,000</p>
-        <button class="product-order-item-close">
-          <span class="material-symbols-outlined">close</span>
-        </button>
-        <test-group class="quantity js-quantity">
-          <test-chip class="js-quantity-decrement" label="-"> </test-chip>
-          <input class="quantity-input js-quantity-input" type="number" value="1" />
-          <test-chip class="js-quantity-decrement" label="+"> </test-chip>
-        </test-group>
-      </test-tile>
 
       <div class="product-order-option" style="border: 2px solid var(--color-primary)">
         <h3 class="product-order-option-name">Sketching Brushes</h3>
@@ -99,7 +86,7 @@
     </h1>
 
     <section class="product-detail-summary">
-      <h3 class="product-detail-summary-title">상품상세정보 고지</h3>
+      <test-text variant="subhead">상품상세정보 고지</test-text>
       <dl>
         <dt>제품명</dt>
         <dd>노멀 헤어퍼퓸</dd>
@@ -332,13 +319,9 @@
 		<a href="https://easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=25&ccfNo=3&cciNo=1&cnpClsNo=1">인터넷쇼핑몰 사업자의 신원 등 표시 의무 </a>
 		<a href="http://easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=25&ccfNo=3&cciNo=1&cnpClsNo=2">신원 및 거래조건에 관한 정보 제공 의무 </a>
 		 -->
-
+    <test-text variant="subhead">이 상품을 구매한</test-text>
     <section class="product-recommend">
-      <test-text variant="title">이 상품을 구매한</test-text>
-      <article
-        class="card has-clickable"
-        style="width: 100%; max-width: 400px; margin: 0 var(--space-2)"
-      >
+      <article class="card has-clickable">
         <figure class="card-thumbnail">
           <img src="/public/images/product_sample.png" style="width: 50%" alt="" />
         </figure>
@@ -365,9 +348,394 @@
           "
           >애플</a
         >
-        <span class="card-category">인기있는</span>
-        <div class="card-note">무료배송 / 200 포인트 적립</div>
+        <test-tag class="card-category">인기있는</test-tag>
+        <test-tag class="card-note">무료배송 / 200 포인트 적립</test-tag>
       </article>
     </section>
   </section>
 </main>
+
+<test-titlebar heading="배송지 등록">
+  <test-chip slot="back">
+    <test-icon slot="icon" name="arrow-left"></test-icon>
+  </test-chip>
+</test-titlebar>
+<br />
+<fieldset>
+  <test-group alignment="vertical">
+    <test-textfield
+      label="받는 사람"
+      stype="text"
+      name="email"
+      id="login-email"
+      placeholder="수줍이"
+    ></test-textfield>
+    <test-textfield
+      label="연락처"
+      type="text"
+      name="email"
+      id="login-email"
+      placeholder="01012345678"
+    ></test-textfield>
+    <test-textfield
+      label="주소"
+      type="text"
+      name="email"
+      id="address"
+      placeholder="클릭하여 우편번호 찾기"
+    ></test-textfield>
+    <test-textfield
+      label="상세주소"
+      type="text"
+      name="email"
+      id="address"
+      placeholder="클릭하여 우편번호 찾기"
+    ></test-textfield>
+    <!-- First name, Last Name, Country / Region, State, Zipcode" -->
+    <!-- <test-textfield label="공동현관 출입번호" type="text" isOptional name="email" id="login-email" placeholder=""></test-textfield> -->
+    <test-textfield
+      label="배송 메시지"
+      type="text"
+      isOptional
+      name="email"
+      id="login-email"
+      placeholder="직접 입력"
+    ></test-textfield>
+    <test-checkbox label="개인정보 수집 및 이용 동의(수취인정보?)"></test-checkbox>
+    <test-button variant="primary" label="배송지 등록"></test-button>
+  </test-group>
+</fieldset>
+
+<div>
+  <p>상품을 수거해 드릴까요?</p>
+  <p>네. 수거해주세요. 네이버페이를 통해 택배사로 요청합니다.</p>
+  <p>아니오. 이미 판매자에게 발송했습니다. 송장정보를 입력하면 처리 현황을 확인할 수 있습니다.</p>
+  <p>아니오. 나중에 직접 발송할게요. 판매자에게 수거 방법 확인 후 발송해주세요.</p>
+</div>
+
+<main
+  class="checkout"
+  style="max-width: 800px; margin: 0 auto; padding: 8rem var(--grid-margin) 12rem"
+>
+  <header class="checkout-head">
+    <test-text variant="subhead">
+      주문정보를 확인하세요<i style="font-style: italic">!</i>
+    </test-text>
+  </header>
+  <br />
+  <section class="checkout-step step">
+    <div class="step-item is-active">
+      <span class="step-item-icon">1</span>
+      <h3 class="step-item-label">장바구니</h3>
+    </div>
+    <div class="step-item is-active">
+      <span class="step-item-icon">2</span>
+    </div>
+    <div class="step-item">
+      <span class="step-item-icon">3</span>
+      <h3 class="step-item-label">주문완료</h3>
+    </div>
+  </section>
+
+  <div style="height: 2rem"></div>
+
+  <!-- 예전에 이렇게 길었다... checkout-product-item-name -->
+  <!-- <div style="height: var(--space-after-subhead)"></div> -->
+  <section class="checkout-product">
+    <test-text variant="subhead" aria-label="summary">주문상품</test-text>
+    <div style="margin: var(--space-after-subhead) -0.5rem 0">
+      <test-tile size="small">
+        <test-menuitem>
+          <test-avatar slot="avatar" size="huge" fallback=""></test-avatar>
+          <div slot="text" style="margin-left: var(--space-1)">
+            <test-text variant="subhead">뉴닉이 풀어 쓴 경제상식사전</test-text>
+            <test-text variant="body">평생 소장</test-text>
+            <test-text variant="label">₩ 11,900</test-text>
+          </div>
+        </test-menuitem>
+      </test-tile>
+    </div>
+  </section>
+
+  <div style="height: 2rem"></div>
+
+  <section class="checkout-shipping">
+    <test-text variant="subhead">배송지</test-text>
+    <div style="margin: var(--space-after-subhead) -0.5rem 0">
+      <test-tile size="small">
+        <test-menuitem>
+          <!-- <test-avatar slot="avatar" size="large" style="background: aliceblue; font-size: 1.5rem">💳</test-avatar> -->
+          <test-radio slot="check" id="c1" name="c1" value="" checked>샘플</test-radio>
+          <div slot="text">
+            <test-group>
+              <test-text variant="body-bold">수줍이 집</test-text>
+              <test-tag>기본배송지</test-tag>
+            </test-group>
+            <div style="height: var(--space-1)"></div>
+            <test-text variant="body">[07655] 서울특별시 강서구 까치산로 182 1202호</test-text>
+            <test-text variant="label">010-3121-7045</test-text>
+          </div>
+        </test-menuitem>
+      </test-tile>
+      <div style="height: var(--space-after-subhead)"></div>
+      <test-tile variant="elevated" size="small">
+        <test-menuitem label="배송지 변경/추가">
+          <test-avatar slot="avatar" fallback=" ">
+            <test-icon slot="icon" name="coins-swap"></test-icon>
+          </test-avatar>
+        </test-menuitem>
+      </test-tile>
+    </div>
+  </section>
+
+  <div style="height: 2rem"></div>
+
+  <section class="checkout-discount">
+    <test-text variant="subhead">쿠폰 마일리지 할인</test-text>
+    <div style="height: var(--space-after-subhead)"></div>
+    <test-textfield label="보너스 쿠폰" placeholder="사용 가능한 쿠폰이 없습니다." disabled>
+    </test-textfield>
+    <div style="height: var(--space-4)"></div>
+    <test-textfield label="사용 마일리지" placeholder="0 마일리지"></test-textfield>
+    <div style="height: var(--space-3)"></div>
+    <test-chip label="보유 마일리지 1,186p 모두사용"></test-chip>
+  </section>
+
+  <div style="height: 2rem"></div>
+
+  <section class="checkout-payment">
+    <test-text variant="subhead" data-temp="매장과 구매자 차이.">Select payment method</test-text>
+    <div style="margin: var(--space-4) -0.5rem 0">
+      <test-group alignment="vertical">
+        <test-tile size="small">
+          <test-menuitem label="신용카드">
+            <test-avatar
+              slot="avatar"
+              size="large"
+              fallback="💳"
+              style="background: aliceblue; font-size: 1.5rem"
+            ></test-avatar>
+            <test-radio slot="check" id="c1" name="c1" value="" checked="true">샘플</test-radio>
+          </test-menuitem>
+        </test-tile>
+        <test-tile size="small">
+          <test-menuitem label="현금">
+            <test-avatar
+              slot="avatar"
+              size="large"
+              fallback="💵"
+              style="background: #defade; font-size: 1.5rem"
+            ></test-avatar>
+            <test-radio slot="check" id="c1" name="c1" value="">샘플</test-radio>
+          </test-menuitem>
+        </test-tile>
+        <test-tile size="small">
+          <test-menuitem label="무통장입금">
+            <test-avatar
+              slot="avatar"
+              size="large"
+              fallback="🫓"
+              style="background: antiquewhite; font-size: 1.5rem"
+            ></test-avatar>
+            <test-radio slot="check" id="c1" name="c1" value="">샘플</test-radio>
+          </test-menuitem>
+        </test-tile>
+        <!-- <test-tile>
+          <test-radio label="신용/체크카드"></test-radio>
+          <test-radio label="무통장입금" disabled>
+            <small style="color: var(--color-text)">COMING SOON<i style="font-style: italic">!</i></small>
+          </test-radio>
+        </test-tile> -->
+      </test-group>
+    </div>
+    <div style="height: var(--space-after-subhead)"></div>
+    <dl style="flex-direction: column">
+      <dt>결제 안내</dt>
+      <dd>신용카드 결제만 가능합니다.</dd>
+      <dd>해외에서 발행된 카드는 이용할 수 없습니다.</dd>
+      <dt>주문취소 및 환불 안내</dt>
+      <dd>주문취소 또는 환불은 <a href="#">고객센터</a>로 문의해 주세요.</dd>
+    </dl>
+    <div style="height: var(--space-after-subhead)"></div>
+  </section>
+
+  <div style="height: 2rem"></div>
+
+  <section class="checkout-">
+    <test-text variant="subhead">
+      Your Payments / Wallet<br />name on card / Card Number / Expiriation Date / CVV / billing
+      address (따로 관리 됨).
+    </test-text>
+    <div style="height: var(--space-after-subhead)"></div>
+    <test-menuitem>
+      <test-avatar slot="avatar" size="huge">
+        <test-tag slot="category" label="기본"></test-tag>
+      </test-avatar>
+      <div slot="text">
+        <h3 class="card-title">VISA 1988 XXXX 1111</h3>
+        <time class="card-date">Expires on 10/23</time>
+        <em>Edit</em>
+        <button class="card-more">more</button>
+      </div>
+    </test-menuitem>
+    <div style="height: var(--space-after-subhead)"></div>
+    <test-tile variant="elevated" size="small">
+      <test-menuitem label="Add a payment method">
+        <test-avatar slot="avatar" fallback=" ">
+          <test-icon slot="icon" name="plus"></test-icon>
+        </test-avatar>
+      </test-menuitem>
+    </test-tile>
+  </section>
+</main>
+
+<main class="cart" style="padding: 0 var(--grid-margin)">
+  <figure class="cart-item">
+    <test-chip label="x"></test-chip>
+    <a href="#" class="cart-item-thumbnail">
+      <img src="/public/images/product_sample.png" alt="" />
+    </a>
+    <div class="cart-item-name">
+      <span class="cart-item-name-label">product</span>
+      <b class="cart-item-name-value">폰타나 베네치아 로스티드 쉬림프 크림 (수정해보는 중...)</b>
+    </div>
+    <div class="cart-item-color">
+      <span class="cart-item-color-label">color</span>
+      <b class="cart-item-color-value">Brown</b>
+    </div>
+    <div class="cart-item-qty">
+      <span class="cart-item-qty-label">qty</span>
+      <b class="cart-item-qty-value">3</b>
+    </div>
+    <div class="cart-item-price">
+      <span class="cart-item-price-label">price</span>
+      <b class="cart-item-price-value">₩ 22,500</b>
+    </div>
+
+    <test-chip label="수량/옵션 변경"></test-chip>
+
+    <button class="product-order-item-close">close</button>
+    <test-group class="quantity js-quantity">
+      <test-chip class="js-quantity-decrement" label="-"> </test-chip>
+      <input class="quantity-input js-quantity-input" type="number" value="1" />
+      <test-chip class="js-quantity-decrement" label="+"> </test-chip>
+    </test-group>
+
+    <div class="cart-item-addition">
+      <b class="cart-item-addition-title">AppleCare+ for Macbook/MacBook Air</b>
+      <p class="cart-item-addition-description">
+        Automatically registered width your Apple hardware.
+      </p>
+      <span class="cart-item-addition-price">₩ 20,000</span>
+    </div>
+  </figure>
+
+  <footer class="cart-summary">
+    <div class="cart-summary-subtotal">
+      <span class="cart-summary-label">총 상품금액</span>
+      <span class="cart-summary-value">₩ 30,000</span>
+    </div>
+    <div class="cart-summary-shipping">
+      <span class="cart-summary-label">배송료</span>
+      <span class="cart-summary-value">₩ 3,000</span>
+    </div>
+    <div class="cart-summary-shipping">
+      <span class="cart-summary-label">할인</span>
+      <span class="cart-summary-value"><span hidden>(-)</span> ₩ 2,000</span>
+    </div>
+    <div class="cart-summary-total">
+      <span class="cart-summary-label">최종 결제 금액</span>
+      <b class="cart-summary-value">₩ 37,000</b>
+    </div>
+    <div class="cart-summary-controls">
+      <test-button variant="primary">결제</test-button>
+    </div>
+  </footer>
+</main>
+
+<aside class="product-quick is-visible">
+  <figure class="product-quick-head">
+    <img src="/static/media/economy-thumbnail.0e2ed4c5.png" />
+    <figcaption>
+      <h3 class="product-quick-head-title">고슴이 생존기(경제 기본기편)</h3>
+      <div class="product-quick-head-description">10개 에피소드, 평생 열람가능</div>
+    </figcaption>
+  </figure>
+  <section class="product-quick-total">
+    <span class="product-quick-total-price" style="font-size: var(--font-size-large)">
+      <del>₩ 25,000</del> <b>₩ 16,000</b> <em class="rate">(36% 할인)</em>
+    </span>
+  </section>
+  <footer class="product-quick-controls">
+    <test-button variant="primary">모두 주문하기</test-button>
+  </footer>
+</aside>
+
+<!-- <main class="contact">
+    <header class="contact-head">
+      <div class="contact-head-background"></div>
+      <h1 class="contact-head-title">이곳으로 오십시오.</h1>
+      <div style="width: 100%; overflow: hidden">
+        <p class="contact-head-description">
+          저희가 하는 일이나 저희 팀에 궁금한 점이 있으면 언제든 연락주세요. 부끄러우니까
+          연락하지마요.
+        </p>
+        <div class="contact-head-phone">
+          대구광역시 달서구<br />
+          죽전동 268-8<br />
+          강남빌라 500호
+        </div>
+        <div class="contact-head-address">
+          <div>E. soojubm@gmail.com</div>
+          <div>T. +357 22 875996</div>
+          <div>F. +357 22 875996</div>
+        </div>
+      </div>
+
+      <br />
+
+      <test-group alignment="vertical">
+        <test-menuitem label="Email" description="hello@mantine.dev">
+          <test-avatar slot="avatar" variant="secondary" size="large"></test-avatar>
+        </test-menuitem>
+        <test-menuitem label="Phone" description="+49 (800) 335 35 35">
+          <test-avatar slot="avatar" variant="secondary" size="large"></test-avatar>
+        </test-menuitem>
+        <test-menuitem label="Address" description="844 Morris Park avenue">
+          <test-avatar slot="avatar" variant="secondary" size="large"></test-avatar>
+        </test-menuitem>
+        <test-menuitem label="Working hours" description="8 a.m. – 11 p.m.">
+          <test-avatar slot="avatar" variant="secondary" size="large"></test-avatar>
+        </test-menuitem>
+      </test-group>
+    </header>
+
+    <section class="contact-map">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.492719612198!2d121.55932191500658!3d25.051283883964214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442ab94e6c63c77%3A0xb57fea257fc2bff2!2z7LmY7JWE642UIO2OkeumrOyImA!5e0!3m2!1sko!2skr!4v1553940621738!5m2!1sko!2skr"
+        allowfullscreen
+      ></iframe>
+    </section>
+
+    <form class="subscribe" style="max-width: var(--layout-width-small)">
+      <h2 class="subscribe-title">수줍이 뉴스레터</h2>
+      <p class="subscribe-description">
+        섭스크라이브 유아이 콤포넌트 입니다. <br />두 줄 단락을 위해 쓰고 있습니다.
+      </p>
+      <test-textfield placeholder="Enter Your Email.." class="subscribe-field">
+        <test-icon slot="leading" name="mail"></test-icon>
+      </test-textfield>
+      <p class="subscribe-helper setting-item-helper">
+        샘플 텍스트. 걱정하지 마세요. 스팸은 없습니다! 귀하의 정보는 web.dev 및 Chrome 관련
+        업데이트에만 사용되며 당사에서 보내는 이메일은 일반적으로 한 달에 1-2회를 넘지 않습니다.
+        언제든지 구독을 취소할 수 있습니다.
+      </p>
+      <test-checkbox>
+        본인은 Google의 <a href="" rel="noopener" target="_blank">이용 약관</a>에 동의하며 본인의
+        정보가 Google의 <a href="" rel="noopener" target="_blank">개인정보보호 정책</a>에 따라
+        이용된다는 것을 인정합니다.
+      </test-checkbox>
+
+      <button class="subscribe-submit" type="submit">뉴스레터 구독</button>
+    </form>
+  </main> -->

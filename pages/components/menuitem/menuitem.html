@@ -5,13 +5,6 @@
       사용자가 수행할 수 있는 행동 목록. 목록이 아닌 단독으로 쓰일 수 있다.
     </test-text>
 
-    <blockquote>
-      <p>모든 링크는 그냥 칠드런으로 링크 컴포넌트를 사용하는 것이 어떨까</p>
-      <p>변경 가능성을 고려할 때는 받는 데이터를 따라갈 수도 있겠다.</p>
-      <p>전체 액션 props, 내부 액션 slot props</p>
-      <p>leading/following/tailing -column align</p>
-    </blockquote>
-
     <dl class="article-aka">
       <dt>a.k.a.</dt>
       <dd title="shopify 22 12">Action list</dd>
@@ -112,6 +105,12 @@
     </section>
 
     <section class="component-guide">
+      <blockquote>
+        <p>모든 링크는 그냥 칠드런으로 링크 컴포넌트를 사용하는 것이 어떨까</p>
+        <p>변경 가능성을 고려할 때는 받는 데이터를 따라갈 수도 있겠다.</p>
+        <p>전체 액션 props, 내부 액션 slot props</p>
+        <p>leading/following/tailing -column align</p>
+      </blockquote>
       <ul class="checklist">
         <li>
           labelSlot / textSlot / contentSlot :: 사이즈에 따라 두 줄이 될 수 있는데, 세부적인 정의를
@@ -159,13 +158,13 @@
       <li>avatarSlot. text14px. 32px size = 24px size + 8px space</li>
     </ul>
 
-    <h1>MenuList with presentations</h1>
-    <p>MD3에서 Responsive layout에서 정의됨.</p>
+    <test-text variant="subhead">MenuList with presentations</test-text>
     <test-text variant="subhead">Dropdown menu</test-text>
     <test-text variant="subhead">Sheet menu</test-text>
     <test-text variant="subhead">Modal menu</test-text>
     <test-text variant="subhead">Sidebar menu</test-text>
     <test-text variant="subhead">Navigation? menu</test-text>
+    <p>MD3에서 Responsive layout에서 정의됨.</p>
   </article>
   <article class="article">
     <test-text variant="title">Select</test-text>
@@ -264,5 +263,91 @@
     </ul>
     var selected = Array.from(dnd.options).filter((option) => { return option.selected;
     }).map((option) => option.value);
+
+    <article class="article">
+      <test-text variant="title">Entity</test-text>
+      <test-text variant="body-large">개체. menu item과 구별이 되나?</test-text>
+
+      <section class="component-example">
+        <test-group alignment="vertical">
+          <test-entity
+            size="huge"
+            label="이거 subhead는 형태이고 name은 역할인데."
+            description="list로 사용할 때 maxWidth"
+            description2="description area2."
+          >
+            <test-avatar slot="avatar" size="huge" variant="secondary"></test-avatar>
+          </test-entity>
+          <test-menuitem size="large" label="EntityLarge" description="individual, user">
+            <test-avatar slot="avatar" size="large"></test-avatar>
+          </test-menuitem>
+          <test-menuitem label="EntityMedium" time="36.4만">
+            <test-avatar slot="avatar"></test-avatar>
+            <test-chip slot="action" class="item-delete"></test-chip>
+          </test-menuitem>
+          <test-menuitem size="small" label="EntitySmall">
+            <test-avatar slot="avatar" size="small"></test-avatar>
+          </test-menuitem>
+        </test-group>
+      </section>
+
+      <test-text variant="subhead">Best practices</test-text>
+      <ul>
+        <li>
+          크기 별로 특정 컨테이너의 주체가 나뉜다. 예를 들면 huge는 페이지 레벨의 정보 주체가 될 수
+          있음.
+        </li>
+        <li>학습이 필요없는 보편 케이스와 도메인에 종속적인 특수 케이스를 구분하기.</li>
+      </ul>
+
+      <test-text variant="subhead">Related</test-text>
+      <ul>
+        <li>Avatar</li>
+        <li>Action - Chip</li>
+        <li>Text - name / description / description2</li>
+        <li>Utility - Truncated text</li>
+      </ul>
+    </article>
+
+    <section
+      style="
+        margin: 4rem -5vw -8rem;
+        padding: 2rem var(--grid-margin) 4rem;
+        background: var(--color-background-weak);
+      "
+    >
+      <test-text variant="subhead">User</test-text>
+      <test-text variant="body">
+        <mark>페이지 레벨</mark> 정보의 주체. 단독으로 사용. 클릭할 수 있는 요소가 아니라 페이지를
+        대표하는 요소, 시각 정보로만 동작한다. 왜냐하면 이미 해당 페이지의 타이틀 롤이기 때문.
+      </test-text>
+      <test-tile style="margin: 1rem 0 0 0">
+        <test-entity label="windows-emoji" description="tag page head">
+          <test-avatar slot="avatar" variant="secondary" size="huge">#</test-avatar>
+        </test-entity>
+      </test-tile>
+      <br /><br />
+      <test-text variant="subhead">User item</test-text>
+      <test-text variant="body"
+        >다수의 유저 목록을 표현. 또는 <mark>아티클 레벨</mark> 정보의 주체.</test-text
+      >
+      <test-tile size="small" style="margin: 1rem 0 0 0">
+        <test-menuitem label="github">
+          <test-avatar slot="avatar">
+            <i class="iconoir-github-circle"></i>
+          </test-avatar>
+          <test-chip slot="action" label="팔로우"></test-chip>
+        </test-menuitem>
+      </test-tile>
+      <br /><br />
+
+      <test-text variant="subhead">Share item</test-text>
+      <test-text variant="body">페이지 공유. 소셜 미디어 링크.</test-text>
+      <!-- class="social-link social-github"
+    role="menuitem"
+    href="https://github.com/soojubm"
+    target="_blank"
+    rel="noopener noreferrer" -->
+    </section>
   </article>
 </main>

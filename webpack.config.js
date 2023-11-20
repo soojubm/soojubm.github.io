@@ -52,8 +52,6 @@ const components = [
 
   'avatar',
 
-  'entity',
-
   'button',
   'chip',
   'tag',

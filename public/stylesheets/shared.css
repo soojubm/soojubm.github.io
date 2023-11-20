@@ -4,3 +4,24 @@
 
 @import '/public/components/navbar/navbar.css';
 @import '/public/components/footer/footer.css';
+
+
+
+.feature {display:flex;flex-wrap:wrap;justify-content:space-between;padding:6rem var(--grid-margin);}
+.feature-head {width:100%;margin:0 auto 2rem;}
+.feature-head-title {@mixin text-title;word-break:keep-all;}
+.feature-head-description {margin:var(--space-after-title) 0 0 0;font-size:var(--font-size-large);}
+.feature-title {width:100%;margin:0 0 var(--space-after-title) 0;@mixin text-subhead;}
+.feature-item {width:100%;max-width:360px;margin:2rem 0;position:relative;z-index:1;}
+.feature-item-avatar {display:block;margin:0 0 var(--space-1) 0;font-size:2rem;position:relative;}
+.feature-item-avatar:before {content:'';display:block;
+  width: 100%;
+  height: var(--size-tiny);
+  background: var(--color-background-weak);
+  border-radius: var(--radius);
+  position:absolute;left:0rem;top:0;z-index:-1;}
+.feature-item-title {@mixin text-subhead;}
+.feature-item-description {display:block;margin:var(--space-after-subhead) 0 0 0;}
+.feature-item-link {display:block;margin:var(--space-after-description) 0 0 0;}
+.is-observed.feature-head {animation:fadeup .4s 1.6s backwards;}
+.is-observed.feature-item {animation:fadeup .4s 2s backwards;}

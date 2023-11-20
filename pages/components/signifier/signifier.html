@@ -1,9 +1,13 @@
 <main class="component">
   <article class="article">
+    <test-text variant="title">Signifier</test-text>
+    <test-text variant="body-large">
+      예측 가능한 사용자 인터렉션으로 서비스와 사용자 사이의 신뢰 구축.
+    </test-text>
+    <test-text variant="body-large">
+      icons and... 기표로 정의하지 않은 아이콘을 단순 장식적인 용도로 사용하지 마세요.
+    </test-text>
     <p>Use only universally recognized icons to represent actions or options.</p>
-
-    <b>Signifier</b>
-    <p>서비스와 사용자 사이의 신뢰. 예측 가능한 사용자 인터렉션. 종류 - click /</p>
     <div>
       <a
         href="https://developer.apple.com/design/human-interface-guidelines/components/layout-and-organization/disclosure-controls"
@@ -13,45 +17,53 @@
       <span class="icon-bullet"></span>
       <a href="https://developer.apple.com/kr/design/tips/" target="_blank">UI 디자인 기본 원칙</a>
       <span class="icon-bullet"></span>
-      <a href="https://m3.material.io/foundations/interaction-states" target="_blank">MD interaction-states</a>
+      <a href="https://m3.material.io/foundations/interaction-states" target="_blank"
+        >MD interaction-states</a
+      >
     </div>
 
     <ul>
-      <li>close / clear</li>
       <li>addable / expandable.</li>
       <li>done / check / positive</li>
-      <li>bold text를 clickable로 사용할 수 있습니까? (단락 더 보기 등에서 사용되는 패턴)</li>
-      <li>기표로 정의하지 않은 아이콘을 단순 장식적인 용도로 사용하지 마세요.</li>
-      <li>medium size는 action. small size는 indicator. ??</li>
-      <li>clickable이 아닌 모든 요소는 non-clickable이지만 disabled은 실행 불가의 명시적인 표현.</li>
+      <li>bold text를 clickable로 사용? (단락 더 보기 등에서 사용되는 패턴)</li>
+      <li>
+        clickable이 아닌 모든 요소는 non-clickable이지만 disabled은 실행 불가의 명시적인 표현.
+      </li>
     </ul>
 
-    </article>
+    <test-text variant="subhead">Clickable overview</test-text>
+    <section class="token-group">
+      <div class="token-item" style="box-shadow: var(--shadow)">
+        <p>
+          elevated 오브젝트는 클릭할 수 있다. 또는 오브젝트 내부에 클릭할 수 있는 요소가 존재한다.
+        </p>
+      </div>
+      <div class="token-item" style="border: none; background: var(--color-background-weak)">
+        <p>연한 회색의 오브젝트는 클릭할 수 있다.</p>
+      </div>
+      <div class="token-item">
+        <p><em>브랜드 컬러 텍스트</em>는 클릭할 수 있다.</p>
+      </div>
+      <div class="token-item">
+        <p>❤️ 아이콘(또는 이모지)과 이미지는 클릭할 수 있다.</p>
+      </div>
+    </section>
 
-    <article class="article js-scrollspy-section">
-      <test-text variant="title">Icons</test-text>
-      <test-text variant="body-large">Icons</test-text>
-
-      <test-text variant="subhead">Clickable</test-text>
-      <section class="token-group">
-        <div class="token-item" style="box-shadow: var(--shadow)">
-          <p>elevated 오브젝트는 클릭할 수 있다. 또는 오브젝트 내부에 클릭할 수 있는 요소가 존재한다.</p>
-        </div>
-        <div class="token-item" style="border: none; background: var(--color-background-weak)">
-          <p>연한 회색의 오브젝트는 클릭할 수 있다.</p>
-        </div>
-        <div class="token-item">
-          <p><em>브랜드 컬러 텍스트</em>는 클릭할 수 있다.</p>
-        </div>
-        <div class="token-item">
-          <p>❤️ 아이콘(또는 이모지)과 이미지는 클릭할 수 있다.</p>
-        </div>
-      </section>
-
-      <!-- <test-text variant="body-large">Action indicator</p> -->
-      <test-text variant="subhead">Indicator Icons</test-text>
-      <section class="token-group">
-        <div class="token-item">
+    <!-- <test-text variant="body-large">Action indicator</p> -->
+    <test-text variant="subhead">Indicator Icons</test-text>
+    <section class="token-group">
+      <div class="token-item">
+        <test-chip>
+          <span class="material-symbols-outlined">chevron_right</span>
+        </test-chip>
+        <b>Expandable & Collapsible (vertical)</b>
+      </div>
+      <div class="token-item">
+        <test-chip label="Expandable & Collapsible (horizental)">
+          <test-icon slot="icon" name="nav-arrow-down"></test-icon>
+        </test-chip>
+      </div>
+      <!-- <div class="token-item">
           <figure class="icon-indicator is-positive">
             <span class="material-symbols-outlined">check</span>
           </figure>
@@ -62,131 +74,128 @@
             <span class="material-symbols-outlined">close</span>
           </figure>
           <b>InValid</b>
-        <div>
-      </section>
+        <div> -->
+    </section>
 
-      <test-text variant="subhead">Action Icons</test-text>
-      <section class="token-group">
-        <div class="token-item">
-          <test-chip>
-            <span class="material-symbols-outlined">arrow_back</span>
-          </test-chip>
-          <b>to back</b>
-          <!-- <small>iOS에서 뒤로가기(이전 페이지)는 chevron.</small> -->
-        </div>
-        <div class="token-item">
-          <test-chip>
-            <span class="material-symbols-outlined">call_made</span>
-          </test-chip>
-          <b>External Link</b>
-        </div>
-        <div class="token-item">
-          <test-chip>
-            <span class="material-symbols-outlined"> arrow_right_alt </span>
-          </test-chip>
-          <b>Internal Link (ex: view all)</b>
-        </div>
-        <div class="token-item">
-          <test-chip>
-            <span class="material-symbols-outlined">chevron_right</span>
-          </test-chip>
-          <b>Expandable & Collapsible (vertical)</b>
-        </div>
-        <div class="token-item">
-          <test-chip>
-            <span class="material-symbols-outlined">expand_more</span>
-          </test-chip>
-          <b>Expandable & Collapsible (horizental)</b>
-        </div>
-        <div class="token-item">
-          <test-chip><span class="material-symbols-outlined">search</span></test-chip>
-          <b>Searchable</b>
-        </div>
-        <div class="token-item">
-          <test-chip>
-            <i class="icon-caret" style="display: inline-block"></i>
-          </test-chip>
-          <b>Popover</b>
-        </div>
-        <div class="token-item">
-          <test-chip>
-            <span class="material-symbols-outlined">close</span>
-          </test-chip>
-          <b>Removable</b>
-        </div>
-        <div class="token-item">
-          <test-chip>
-            <span class="material-symbols-outlined">add</span>
-          </test-chip>
-          <b>Addable</b>
-        </div>
-        <div class="token-item">
-          <test-chip>
-            <span class="material-symbols-outlined"> content_copy </span>
-          </test-chip>
-          <b>copy</b>
-        </div>
-        <div class="token-item">
-          <test-chip>
-            <span class="material-symbols-outlined"> cached </span>
-          </test-chip>
-          <b>refresh</b>
-        </div>
-        <div class="token-item">
-          <test-chip>
-            <span class="material-symbols-outlined"> logout </span>
-          </test-chip>
-          <b>logout</b>
-        </div>
-        <div class="token-item">
-          <test-chip>
-            <span class="material-symbols-outlined">light_mode</span>
-          </test-chip>
-          <b>day</b>
-        </div>
-        <div class="token-item">
-          <test-chip>
-            <span class="material-symbols-outlined">nights_stay</span>
-          </test-chip>
-          <b>night</b>
-        </div>
-        <div class="token-item">
-          <test-chip>
-            <span class="material-symbols-outlined"> more_vert </span>
-          </test-chip>
-          <b>more_vert</b>
-        </div>
-        <div class="token-item">
-          <test-chip>
-            <span class="material-symbols-outlined">public</span>
-          </test-chip>
-          <b>public</b>
-        </div>
-        <div class="token-item">
-          <test-chip>
-            <span class="material-symbols-outlined">group</span>
-          </test-chip>
-          <b>group</b>
-        </div>
-        <div class="token-item">
-          <test-chip>
-            <span class="material-symbols-outlined">lock</span>
-          </test-chip>
-          <b>lock</b>
-        </div>
+    <test-text variant="subhead">Decorative Icons</test-text>
+    <section class="token-group">
+      <div class="token-item">
+        <test-chip>
+          <span class="material-symbols-outlined">public</span>
+        </test-chip>
+        <b>public</b>
+      </div>
+      <div class="token-item">
+        <test-chip>
+          <span class="material-symbols-outlined">group</span>
+        </test-chip>
+        <b>group</b>
+      </div>
+      <div class="token-item">
+        <test-chip>
+          <span class="material-symbols-outlined">lock / private</span>
+        </test-chip>
+        <b>lock</b>
+      </div>
+    </section>
 
-        <div class="token-item">
-          <test-chip>
-            <span class="material-symbols-outlined">settings</span>
-          </test-chip>
-          <b>setting</b>
-        </div>
-      </section>
-    </article>
+    <test-text variant="subhead">Navigation Icons</test-text>
+    <section class="token-group">
+      <div class="token-item">
+        <test-chip label="to back"><test-icon slot="icon" name="arrow-left"></test-icon></test-chip>
+        <small>iOS에서 뒤로가기(이전 페이지)는 chevron.</small>
+      </div>
+      <div class="token-item">
+        <test-chip label="External Link">
+          <test-icon slot="icon" name="arrow-up-right"></test-icon>
+        </test-chip>
+      </div>
+      <div class="token-item">
+        <test-chip label="Internal Link">
+          <test-icon slot="icon" name="arrow-right"></test-icon>
+        </test-chip>
+        <b>(ex: view all)</b>
+      </div>
+      <!-- <div class="token-item">
+        <test-chip>
+          <i class="icon-caret" style="display: inline-block"></i>
+        </test-chip>
+        <b>Popover</b>
+      </div> -->
+      <div class="token-item">
+        <test-chip>
+          <span class="material-symbols-outlined">light_mode</span>
+        </test-chip>
+        <b>day</b>
+      </div>
+      <div class="token-item">
+        <test-chip>
+          <span class="material-symbols-outlined">nights_stay</span>
+        </test-chip>
+        <b>night</b>
+      </div>
+      <div class="token-item">
+        <test-chip>
+          <span class="material-symbols-outlined"> more_vert </span>
+        </test-chip>
+        <b>more_vert</b>
+      </div>
 
-    <article class="article js-scrollspy-section">
-      <test-text variant="title">States</test-text>
-      <test-text variant="body-large">작성 중.</test-text>
+      <div class="token-item">
+        <test-chip>
+          <span class="material-symbols-outlined">settings</span>
+        </test-chip>
+        <b>setting</b>
+      </div>
+    </section>
+
+    <test-text variant="subhead">Action Icons</test-text>
+    <section class="token-group">
+      <div class="token-item">
+        <test-chip label="Search">
+          <test-icon slot="icon" name="search"></test-icon>
+        </test-chip>
+      </div>
+      <div class="token-item">
+        <test-chip label="Remove / Close / Clear">
+          <test-icon slot="icon" name="xmark"></test-icon>
+        </test-chip>
+      </div>
+      <div class="token-item">
+        <test-chip label="Plus">
+          <test-icon slot="icon" name="plus"></test-icon>
+        </test-chip>
+      </div>
+      <div class="token-item">
+        <test-chip label="Checked / Uncheck">
+          <test-icon slot="icon" name="check"></test-icon>
+        </test-chip>
+      </div>
+
+      <div class="token-item">
+        <test-chip>
+          <span class="material-symbols-outlined"> content_copy </span>
+        </test-chip>
+        <b>copy</b>
+      </div>
+      <div class="token-item">
+        <test-chip>
+          <span class="material-symbols-outlined"> cached </span>
+        </test-chip>
+        <b>refresh</b>
+      </div>
+      <div class="token-item">
+        <test-chip>
+          <span class="material-symbols-outlined"> logout </span>
+        </test-chip>
+        <b>logout</b>
+      </div>
+    </section>
+  </article>
+
+  <article class="article js-scrollspy-section">
+    <test-text variant="title">States</test-text>
+    <test-text variant="body-large">작성 중.</test-text>
 
     <test-text variant="subhead">Hover states</test-text>
     <div class="token-group">
@@ -203,7 +212,9 @@
       </div>
       <div class="token-item">
         <b style="margin-bottom: 0.125rem">@define-mixin hover-button</b>
-        <button class="chip" style="box-shadow: var(--status-hover)"><span class="chip-label">button & chip</span></button>
+        <button class="chip" style="box-shadow: var(--status-hover)">
+          <span class="chip-label">button & chip</span>
+        </button>
       </div>
     </div>
 
@@ -211,17 +222,20 @@
     <p>opacity 50% (using token) / not-allowed cursor / removed elevated style</p>
 
     <div class="token-item" style="cursor: not-allowed">
-      <button class="button" data-variant="primary" style="pointer-events: none; opacity: 0.5">주문</button>
+      <button class="button" data-variant="primary" style="pointer-events: none; opacity: 0.5">
+        주문
+      </button>
     </div>
     <test-text variant="subhead" style="margin: 0">Active state using ripple</test-text>
     <test-text variant="subhead" style="margin: 0">Pressed state</test-text>
     <test-text variant="subhead" style="margin: 0">Progressing state</test-text>
 
-    <p style="color: var(--red800)">
-      safari에서 outline이 radius를 못 가져옴. box-shadow는 컨테이너의 padding이 없으면 잘림. + ::before {border:0;radius} 수도 선택자의 장점.
-      역할(상태)를 확실히 분리할 수 있다ㅏ.
-    </p>
-    <li>uncheckable을 명확히 정의.</li>
+    <blockquote>
+      <p style="color: var(--red800)">
+        safari에서 outline이 radius를 못 가져옴. box-shadow는 컨테이너의 padding이 없으면 잘림. +
+        ::before {border:0;radius} 수도 선택자의 장점. 역할(상태)를 확실히 분리할 수 있다ㅏ.
+      </p>
+    </blockquote>
   </article>
 
   <article class="article js-scrollspy-section">
@@ -260,38 +274,6 @@
         <div><p>데이터패칭, 랜더링: result 컴포넌트</p></div>
       </div>
     </div>
-
-    <test-text variant="title">Indicators / Signifier와</test-text>
-    <section class="component-example">
-      <div class="token-item">
-        <figure class="chip-icon"><span class="material-symbols-outlined">search</span></figure>
-      </div>
-      <div class="token-item">
-        <menu class="sorting-group">
-          <span class="sorting-title">Sort by</span>
-          <div class="sorting-item">
-            <select class="" id="">
-              <option value="select-option1">최신순</option>
-            </select>
-            <span class="icon-indicator material-symbols-outlined" role="img">arrow_drop_down</span>
-          </div>
-        </menu>
-        <button class="title-button">
-          <h1 class="hero-title" style="display: flex; align-items: center">
-            Dummies
-            <span class="icon-indicator material-symbols-outlined" data-size="small" role="img">arrow_drop_down</span>
-          </h1>
-        </button>
-        <button style="display: flex; align-items: center; line-height: 24px">
-          See more trending developers
-          <span class="icon-indicator material-symbols-outlined">arrow_right_alt</span>
-        </button>
-        <button class="" style="display: flex; align-items: center; line-height: 24px; position: relative">
-          Show more
-          <span class="icon-indicator material-symbols-outlined">expand_more</span>
-        </button>
-      </div>
-    </section>
   </article>
 </main>
 
@@ -312,11 +294,31 @@
       position: relative;
     "
   >
-    <h3 class="quote-title" style="color: #fff; background: #000; display: inline-block; color: #fff; position: relative; z-index: 1">
+    <h3
+      class="quote-title"
+      style="
+        color: #fff;
+        background: #000;
+        display: inline-block;
+        color: #fff;
+        position: relative;
+        z-index: 1;
+      "
+    >
       Cool Hand Luke
     </h3>
     <br />
-    <cite class="quote-byline" style="color: #fff; background: #000; display: inline-block; margin-top: 0; position: relative; z-index: 1">
+    <cite
+      class="quote-byline"
+      style="
+        color: #fff;
+        background: #000;
+        display: inline-block;
+        margin-top: 0;
+        position: relative;
+        z-index: 1;
+      "
+    >
       <div class="quote-byline-name" style="color: #fff; position: relative">Bruce Springsteen</div>
       <time class="quote-byline-job" style="color: #fff; position: relative">1967</time>
     </cite>
@@ -326,7 +328,12 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5), rgb(0, 0, 0.75));
+        background: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0),
+          rgba(0, 0, 0, 0.5),
+          rgb(0, 0, 0.75)
+        );
         height: 128px;
         z-index: 0;
         border-radius: var(--radius);
@@ -344,11 +351,31 @@
       position: relative;
     "
   >
-    <h3 class="quote-title" style="color: #fff; background: #000; display: inline-block; color: #fff; position: relative; z-index: 1">
+    <h3
+      class="quote-title"
+      style="
+        color: #fff;
+        background: #000;
+        display: inline-block;
+        color: #fff;
+        position: relative;
+        z-index: 1;
+      "
+    >
       프로메테우스
     </h3>
     <br />
-    <cite class="quote-byline" style="color: #fff; background: #000; display: inline-block; margin-top: 0; position: relative; z-index: 1">
+    <cite
+      class="quote-byline"
+      style="
+        color: #fff;
+        background: #000;
+        display: inline-block;
+        margin-top: 0;
+        position: relative;
+        z-index: 1;
+      "
+    >
       <div class="quote-byline-name" style="color: #fff; position: relative">리들리 스콧</div>
       <time class="quote-byline-job" style="color: #fff; position: relative">2012, 미국</time>
     </cite>

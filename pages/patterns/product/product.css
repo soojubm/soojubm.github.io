@@ -1,7 +1,7 @@
-.product {@mixin layout-large;padding-top:0;}
+.product {}
+.product-head {display:flex;position:relative;}
 .product-image {width:460px;background:var(--color-background-weak);border-radius:var(--radius);position:relative;}
 .product-image img {width:auto;height:auto;max-width:100%;max-height:100%;margin:auto;position:absolute;left:0;right:0;top:0;bottom:0;}
-
 
 /* .product-image-navigation {width:inherit;text-align:center;position:fixed;left:10%;top:520px;}
 .product-image-navigation button {width:8px;height:8px;margin:0 .25rem;border:var(--border);background:var(--color-background-weak);}
@@ -14,22 +14,14 @@
 .product-info-price b {margin:0 .5rem;}
 .product-info-price em {}
 .product-info-description {margin:var(--space-4) 0;}
-.product-info-benefit {@mixin tile-flat;margin:(--space) 0;padding:.5rem 1rem;}
+
 
 .product-order {width:320px;position:relative;}
 .product-order-discount {margin:1rem 0 1rem 0;background:#f9f9f6;border:var(--border);text-align:center;padding:8px 0;}
-
-
-.product-order-item {}
-.product-order-item-title {}
-.product-order-item-close {@mixin chip;@mixin position-right-top;}
-.product-order-item-price {font-weight:var(--font-weight-bold);}
 .product-order-total {display:flex;align-items:center;justify-content:space-between;height:3rem;margin:var(--space-4) 0;}
 .product-order-total-label {color:var(--color-text);text-transform:uppercase;}
 .product-order-total-value {@mixin text-title;text-align:right;}
-.product-order-control {display:flex;justify-content:space-between;position:relative;}
-.product-order-control-cart {@mixin button-tertiary;min-width:auto;width:15%;}
-.product-order-control-purchase {@mixin button-primary;width:calc(85% - var(--space-after-button));}
+.product-order-control {}
 
 .product-order-option {}
 .product-order-option-name {margin:0 0 var(--space-05) 0;font-size:var(--font-size-medium);font-weight:var(--font-weight-normal);}
@@ -46,9 +38,8 @@
 .product-detail-body-description {}
 
 .product-detail-summary {}
-.product-detail-summary-title {margin:4rem 0 1rem 0;@mixin text-subhead;}
 
-.product-detail-headline {@mixin text-title;}
+.product-detail-headline {}
 
 .product-detail-intro {display:flex;justify-content:center;width:100%;margin:0 0 12rem;padding:0 10%;box-sizing:border-box;}
 .product-detail-intro-image {width:50%;margin:4rem 2.5% -4rem;padding-top:60%;box-sizing:border-box;background:url('/public/images/springsteen.jpg') no-repeat center center;background-size:cover;border-radius:var(--radius);}
@@ -65,26 +56,21 @@
 
 
 
-@media (--large) {
-	.product {max-width:100%;}
-	.product-image {@mixin reset-position;width:50%;position:absolute;}
-	.product-info {width:50%;margin-right:0;padding-left:55%;}
-	.product-info-name {width:100%;text-align:left;@mixin reset-position;}
-
-	.product-order {width:50%;margin-top:var(--space-4);padding-left:55%;}
+@media (max-width: 800px) {
+	.product-head {flex-direction:column;padding:0 var(--grid-margin);}
+	.product-image {width:100%;height:320px;}
+	.product-info {width:100%;}
+	.product-info-name {display:block;width:100%;margin:0 0 var(--space-1);text-align:left;position:relative;left:auto;top:auto;}
+	.product-order {width:100%;margin-top:var(--space-4);}
 
 	.product-detail dl {width:100%;}
 }
 
 
 @media (--small) {
-	.product {padding-top:0;}
-	
-	.product-info {width:100%;padding-left:0;}
 	.product-info-price {margin:.5rem 0 0 0;}
 	.product-image {width:100%;height:400px;margin:0 0 1rem 0;position:relative;top:auto;}
 	.product-image:before {content:'';display:block;background:var(--color-background-weak);position:absolute;top:-320px;left:-240px;bottom:240px;z-index:-1;}
-	.product-order {width:100%;margin:0;padding:.5rem calc(var(--grid-margin) * .75) calc(constant(safe-area-inset-bottom) + var(--space-3));padding:var(--space-3) calc(var(--grid-margin) * .75) calc(env(safe-area-inset-bottom) + var(--space-3));box-sizing:border-box;background:var(--color-background);box-shadow:var(--shadow);position:fixed;left:0;bottom:0;z-index:var(--zindex-menu);}
 	
 	.product-order hr,
 	.product-order-variant,
@@ -149,5 +135,52 @@
 .product-quick-total-count {margin-right:24px;vertical-align:middle;}
 .product-quick-total-price {@mixin text-title;vertical-align:middle;}
 .product-quick-controls {position:relative;}
-.product-quick-controls-purchase {@mixin button-primary;width:100%;}
 
+.cart {@mixin layout-large;max-width:800px;margin:0 auto;padding:0 0 120px;}
+
+.cart-item {@mixin tile-elevated;@mixin clearfix;}
+.cart-item-delete {@mixin chip;position:absolute;left:.5rem;top:.5rem;z-index:var(--zindex-default);}
+
+.cart-item-thumbnail {float:left;display:block;width:20%;max-width:160px;margin:0 var(--space-4) 0 0;background:var(--color-background-weak);border-radius:var(--radius);position:relative;}
+.cart-item-thumbnail img {
+  width: auto;
+  height: auto;
+  margin: auto;
+  max-height: 100%;
+  max-width: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  }
+.cart-item-thumbnail:after {content: "";display: block;padding-bottom:100%;}
+
+.cart-item-option-label {display:none;color:var(--color-text-light);}
+.cart-item-option-value {@mixin text-subhead;}
+
+.cart-summary {position:relative;}
+.cart-summary-subtotal {margin:.5rem 0;}
+.cart-summary-discount {margin:.5rem 0;}
+.cart-summary-shipping {margin:.5rem 0;}
+.cart-summary-label {}
+.cart-summary-value {float:right;}
+.cart-summary-total {margin:var(--space-2) 0 var(--space-4);@mixin text-subhead;}
+.cart-summary-total .cart-summary-label {}
+.cart-summary-total .cart-summary-value {}
+.cart-summary-controls {}
+.cart-summary-checkout {@mixin button-primary;width:100%;}
+
+
+@media (--small) {
+  .cart {}
+  .cart-item-thumbnail {float:none;width:100%;margin:0 0 1rem 0;}
+  .cart-item-name {float:none;width:100%;padding:1rem 0 0;}
+  .cart-item-color {width:35%;margin:.5rem 0;padding:0;text-align:left;}
+  .cart-item-qty {width:25%;margin:.5rem 0;padding:0;text-align:left;}
+  .cart-item-price {width:40%;margin:.5rem 0;padding:0;}
+  .cart-item-more {padding:0;}
+  .cart-item-coupon {width:100%;margin:0;}
+
+  .cart-summary {max-width:100%;}
+}

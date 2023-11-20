@@ -3,6 +3,7 @@ import navbar from '/public/components/navbar/navbar.html'
 
 import main from './signifier.html'
 import '/pages/components/components.css'
+import '/pages/tokens/tokens.css'
 
 import '/public/stylesheets/shared.css'
 

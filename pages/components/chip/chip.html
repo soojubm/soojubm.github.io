@@ -34,36 +34,36 @@
         </test-chip>
         <test-chip icon="" label="좋아요" value="117">
           <i slot="icon">❤️</i>
-          <!-- <div slot="badge" style="margin-left: -0.5rem"><test-badge>11</test-badge></div> -->
+          <!-- <div slot="suffix" style="margin-left: -0.5rem"><test-badge>11</test-badge></div> -->
         </test-chip>
         <test-chip label="checkable" status="checked">
           <test-icon slot="icon" name="check"></test-icon>
         </test-chip>
         <test-chip label="removable / clearable" status="checked">
-          <test-icon slot="badge" name="xmark"></test-icon>
+          <test-icon slot="suffix" name="xmark"></test-icon>
         </test-chip>
         <test-chip label="expandable" aria-expanded="true">
-          <test-icon slot="badge" name="nav-arrow-down"></test-icon>
+          <test-icon slot="suffix" name="nav-arrow-down"></test-icon>
         </test-chip>
       </test-chip-group>
       <test-separator></test-separator>
       <test-chip-group>
         <test-chip name="Filter" label="Created by anyone">
-          <test-icon slot="badge" name="nav-arrow-down"></test-icon>
+          <test-icon slot="suffix" name="nav-arrow-down"></test-icon>
         </test-chip>
         <test-chip status="info" name="Sort" label="Last modified">
-          <test-icon slot="badge" name="nav-arrow-down"></test-icon>
+          <test-icon slot="suffix" name="nav-arrow-down"></test-icon>
         </test-chip>
       </test-chip-group>
       <test-separator></test-separator>
       <test-chip-group>
         <test-textfield size="small" placeholder="검색꾸"></test-textfield>
         <test-chip name="Filter" label="오늘">
-          <test-icon slot="badge" name="nav-arrow-down"></test-icon>
+          <test-icon slot="suffix" name="nav-arrow-down"></test-icon>
         </test-chip>
         <div style="margin-left: auto">
           <test-chip status="info" name="Sort" label="최신순">
-            <test-icon slot="badge" name="nav-arrow-down"></test-icon>
+            <test-icon slot="suffix" name="nav-arrow-down"></test-icon>
           </test-chip>
         </div>
       </test-chip-group>
@@ -210,7 +210,7 @@
         </div>
         <div class="dropdown">
           <test-chip label="최신순" aria-expanded="true">
-            <test-icon slot="badge" name="nav-arrow-up"></test-icon>
+            <test-icon slot="suffix" name="nav-arrow-up"></test-icon>
           </test-chip>
           <test-tile variant="elevated" size="small" style="max-width: 300px; position: absolute">
             <test-menu-group class="dropdown-menu">

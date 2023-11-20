@@ -51,7 +51,7 @@ input[type=password] {-webkit-appearance:none;letter-spacing:.5rem;}
 input[type=password]::placeholder {letter-spacing:0;}
 
 /* // for corner rounded on sarafri */
-input[type=search] {-webkit-appearance:none;}
+input[type=search] {font-family:inherit;font-size:inherit;-webkit-appearance:none;}
 input[type=search]::-webkit-search-decoration,
 input[type=search]::-webkit-search-cancel-button,
 input[type=search]::-webkit-search-results-button,

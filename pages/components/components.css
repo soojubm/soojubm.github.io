@@ -61,7 +61,7 @@
 .component-props dl dt:after {content:':';}
 .component-props dl dd {color:#5f9ea0;}
 .component-props dl dt + dd {font-weight: var(--font-weight-bold);}
-.component-props dl dd + dd {width:100%;margin:0 0 var(--space-1);color:var(--color-text);}
+.component-props dl dd + dd {width:100%;margin:0 0 var(--space-2);color:var(--color-text);}
 /* 
 .component-props dl dd + dd:before {content:'*'}
 .component-props dl dd + dd:after {content:'*}

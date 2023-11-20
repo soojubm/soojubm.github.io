@@ -34,8 +34,9 @@ a {
   display:flex;
   align-items: center;
   justify-content: center;
-  width:var(--size-medium);
-  font-size:12px;}
+  width:var(--size-small);
+  font-size:var(--font-size-small);
+}
 ::slotted([slot=action]) {margin:0 0 0 auto !important;}
 ::slotted([slot=text]) {}
 ::slotted([slot=text]) p {line-height:24px;}

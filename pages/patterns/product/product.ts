@@ -5,6 +5,7 @@ import main from './product.html'
 import './product.css'
 
 import '/public/stylesheets/shared.css'
+import '/public/stylesheets/components/step.css'
 import '/pages/components/components.css'
 
 document.addEventListener('DOMContentLoaded', () => {

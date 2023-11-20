@@ -20,7 +20,8 @@
         <test-avatar slot="avatar" fallback=" ">
           <test-icon slot="icon" name="lock"></test-icon>
         </test-avatar>
-        <test-chip slot="action" label="변경"></test-chip>
+        <test-icon slot="action" name="arrow-right" aria-label=""></test-icon>
+        <!-- <test-chip slot="action" label="변경"></test-chip> -->
       </test-menuitem>
     </test-menu-group>
     <test-separator></test-separator>
@@ -36,12 +37,45 @@
       </test-menuitem>
     </test-menu-group>
     <test-separator></test-separator>
-    <test-tile variant="elevated" size="small">
-      <test-menuitem label="알림" description="앱 및 시스템의 할인">
-        <test-avatar slot="avatar"></test-avatar>
-      </test-menuitem>
+    <div style="margin:0 -.5rem;">
+      <test-tile variant="elevated" size="small">
+        <test-menuitem label="Premium 개인" description="월간 구독">
+          <test-avatar slot="avatar" size="large"></test-avatar>
+          <test-icon slot="action" name="arrow-right" aria-label="자세히보기"></test-icon>
+        </test-menuitem>
+      </test-tile>
+    </div>
+    <p style="margin:var(--space-3) 0 0;line-height:1.4;">To delete your account permanently, <a href="#">tap here to visit our support page</a> to close your account yourself.</p>
+
+    <br /><br />
+
+    <test-tile>
+      <div slot="text">
+        <test-text variant="body-bold">iPhone을 백업할 수 없음</test-text>
+        <div style="height:var(--space-2)"> </div>
+        <test-text variant="body">저장 공간이 부족하여 최근 iPhone 백업이 iCloud에 저장되지 않았습니다. 저장 공간을 추가 또는 관리하여 iPhone 백업을 유지하십시오.</test-text>
+        <div style="margin:-.25rem 0;"><test-separator></test-separator></div s>
+        <button style="padding:0;border:0;background:#fff;font-family:inherit;font-size:inherit;color:var(--color-primary)">저장 공간 추가</button>
+        <br />
+        <div style="height:var(--space-2)"></div>
+        <button style="padding:0;border:0;background:#fff;font-family:inherit;font-size:inherit;color:var(--color-primary)">확인</button>
+      </div>
     </test-tile>
   
+    <br /><br />
+  
+    <test-text variant="subhead">프로필 사진</test-text>
+    <test-tile class="setting-item">
+      <test-avatar size="huge"></test-avatar>
+      <div style="height:var(--space-2)"></div>
+      <test-chip-group>
+        <test-chip label="프로필 사진 추가 / 업데이트"></test-chip>
+        <test-chip label="기본 이미지로 변경"></test-chip>
+      </test-chip-group>
+      <div style="height:var(--space-2)"></div>
+      <p>10MB 이내의 JPEG, PNG, GIF 형식이어야 합니다.</p>
+    </test-tile>
+
     <br /><br />
   
     <test-group alignment="vertical">
@@ -50,7 +84,7 @@
         <test-menuitem>
           <div slot="text">
             <em class="avatar-badge"></em>
-            <span>이메일 주소</span>
+            <test-text variant="label">이메일 주소</test-text>
             <div>soojubm@gmail.com</div>
           </div>
           <div></div>
@@ -61,7 +95,7 @@
         <test-menuitem>
           <div slot="text">
             <em class="avatar-badge"></em>
-            <span>배송지</span>
+            <test-text variant="label">배송지</test-text>
             <div>배송지를 관리하고 기본 배송지를 설정하세요.</div>
           </div>
           <test-icon slot="action" name="arrow-right"></test-icon>
@@ -71,25 +105,12 @@
   
     <br /><br />
   
-    <test-text variant="subhead">프로필 사진</test-text>
-    <test-tile class="setting-item">
-      <test-avatar size="huge"></test-avatar>
-      <test-chip-group>
-        <test-chip label="프로필 사진 추가 / 업데이트"></test-chip>
-        <test-chip label="기본 이미지로 변경"></test-chip>
-      </test-chip-group>
-      <p>10MB 이내의 JPEG, PNG, GIF 형식이어야 합니다.</p>
-      <!-- <test-chip label="Go to your persnal profile"></test-chip> -->
-    </test-tile>
-  
-    <br /><br />
-  
     <test-text variant="subhead">프로필 정보</test-text>
     <test-group alignment="vertical">
       <test-tile>
         <test-menuitem>
           <div slot="text">
-            <span class="setting-item-label">닉네임</span>
+            <test-text variant="label">닉네임</test-text>
             <div class="setting-item-value">수줍이</div>
           </div>
           <test-icon slot="action" name="arrow-right"></test-icon>
@@ -102,7 +123,7 @@
       <test-tile>
         <test-menuitem>
           <div slot="text">
-            <span>이모지</span>
+            <test-text variant="label">이모지</test-text>
             <div>🐻</div>
           </div>
           <test-icon slot="action" name="arrow-right"></test-icon>
@@ -111,7 +132,7 @@
       <test-tile>
         <test-menuitem>
           <div slot="text">
-            <span>관심분야</span>
+            <test-text variant="label">관심분야</test-text>
             <div>문화/예술, 인권, 환경</div>
           </div>
           <test-icon slot="action" name="arrow-right"></test-icon>
@@ -173,7 +194,7 @@
       </dl>
       <footer style="margin: 1rem 0 0 0; position: relative">
         <test-chip label="결제수단변경">
-          <test-icon slot="icon" name="arrow-right"></test-icon>
+          <test-icon slot="suffix" name="arrow-right"></test-icon>
         </test-chip>
       </footer>
       <style>
@@ -229,7 +250,7 @@
     </footer> -->
   
     <div style="margin:4rem 0">
-      <test-titlebar heading="설정 내용" role="navigation">
+      <test-titlebar heading="닉네임 변경" role="navigation">
         <div class="titlebar-background"></div>
         <test-chip slot="back">
           <test-icon slot="icon" name="arrow-left"></test-icon>
@@ -240,12 +261,13 @@
       </test-titlebar>
       <div class="is-opened" role="button" style="flex-wrap: wrap; box-shadow: none; border: none; padding: 1rem 0">
         <!-- <div>설정 - 프로필 - 이름</div> -->
-        <form class="setting-item-form" style="padding: 0">
+        <form class="setting-item-form" style="padding: var(--space-3) 0 0 0">
           <test-text variant="subhead">어떻게<br />불러드릴까요?</test-text>
           <p style="margin: var(--space-after-subhead) 0 0 0">
             성별 정보는 Google이 사용자를 지칭하는 방식을 포함해 Google 서비스에서 맞춤설정된 환경을 제공하는 데 사용될 수 있습니다.
             <a href="">더 알아보기</a>
           </p>
+          <br />
           <test-textfield label="닉네임" placeholder="이름이요.">
           <p>
             잠시 Twitch를 쉬고 싶으세요? 이미 준비되어 있습니다! 계정을 비활성화하면 프로필과 콘텐츠가 임시로 비활성화되며 유저 정보는 삭제되지
@@ -262,14 +284,12 @@
       </div>
     </div>
   
-    <test-text variant="subhead">Best practices</test-text>
     <ul>
       <li>개인정보와 프로필 정보를 구분한다.</li>
       <li>프로필 수정은 프로필 페이지에서 진입할 수 있다.</li>
       <li>사이드메뉴 또는 탭 vs 깊은 페이지</li>
-      <li>계정삭제 vs 계정비활성화</li>
       <li>계정 삭제 페이지와 비밀번호 찾기 페이지는 라우팅이 필요하다.</li>
-      <!-- <p>Your name appears on your Profile page, as your byline, and in your responses. It is a required field.</p> -->
+      <p>Your name appears on your Profile page, as your byline, and in your responses. It is a required field.</p>
     </ul>
   </div>
 </main>

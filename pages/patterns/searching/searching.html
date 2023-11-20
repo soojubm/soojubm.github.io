@@ -1,18 +1,19 @@
-<main class="pattern js-tab" role="" aria-label="site">
-
+<main class="pattern" role="" aria-label="site">
   <article class="article">
+    <div class="">
+      <h1>#ThisIsTagPage</h1>
+      <p>조회수(틱톡)/이카테고리에글쓰기(미디엄)/카테고리팔로우(개인화)</p>
+    </div>
     <test-text variant="title">Searching</test-text>
     <test-text variant="body-large">현재 일반적인 검색 패턴 위주로 정리.</test-text>
+    <p>검색의 범위? 규모?를 우선 정의해야 한다.</p>
+    <p>검색 인지 (또는 탐색 중 검색) -> 검색어 입력 대기 -> 검색어 입력 중(검색 결과) -> 검색 요청 -> 검색 결과</p>
     <div class="chat-bubble">
-      <p>검색의 범위? 규모?를 우선 정의해야 한다.</p>
-      <p>검색 인지 (또는 탐색 중 검색) -> 검색어 입력 대기 -> 검색어 입력 중(검색 결과) -> 검색 요청 -> 검색 결과</p>
+      <a href="https://material.io/design/navigation/search.html">MD search</a>
+      <i class="icon-bullet"></i>
+      <a href="https://developer.android.com/reference/android/widget/SearchView">android searchview</a>
     </div>
-  <div class="chat-bubble">
-    <a href="https://material.io/design/navigation/search.html">MD search</a>
-    <i class="icon-bullet"></i>
-    <a href="https://developer.android.com/reference/android/widget/SearchView">android searchview</a>
-  </div>
-</div>
+
     <section class="component-example">
       <div style="max-width:600px;">
         <test-titlebar heading="">
@@ -168,124 +169,114 @@
   </ul>
 
 
-<test-text variant="subhead">iOS / Android 패턴</test-text>
-<section class="component-case">
-  <!-- <label class="textfield-label" for="search">검색(시각적으로숨겨야함)</label> -->
-  <!-- <div class="textfield searchfield is-focused">
-    <button class="textfield-prefix searchfield-prefix"><span class="material-symbols-outlined">search</span></button>
-    <input class="textfield-input searchfield-input" type="search" id="search" placeholder="iOS pattern : focus에서 취소 노출. 취소로 blur" />
-    <test-chip class="searchfield-clear"><span class="material-symbols-outlined">close</span></test-chip>
-    <test-button variant="text" class="searchfield-cancel">취소</test-button>
-  </div> -->
-  <form class="searchfield" style="max-width:400px;">
-    <label class="searchfield-prefix">
-      <test-icon name="search"></test-icon>
-    </label>
-    <input class="searchfield-input" type="search" placeholder="궁금한 인물이나 이슈가 있나요?" />
-    <button class="searchfield-clear" aria-label="clear keyword">
-      <test-icon slot="icon" name="xmark"></test-icon>
-    </button>
-    <button class="searchfield-cancel" aria-label="clear keyword">
-      <span class="material-symbols-outlined">취소</span>
-    </button>
-  </form>
-  <br />
-  <form class="searchfield" style="max-width:400px;">
-    <div style="position: absolute;left: 0;">
-      <test-chip class="searchfield-prefix">
-        <test-icon slot="icon" name="arrow-left"></test-icon>
-      </test-chip>
-    </div>
-    <input
-    class="searchfield-input"
-      type="search"
-      placeholder="Android pattern"
-      style="padding-left: 3rem"
-    >
-    </input>
-    <div style="position:absolute;right:var(--space-2);top:var(--space-2);z-index: 1;">
-      <test-chip style="background:var(--color-background);border-radius:50%;">
-        <test-icon slot="icon" name="xmark">
-      </test-chip>
-    </div>
-  </form>
+  <test-text variant="subhead">iOS / Android 패턴</test-text>
+  <section class="component-case">
+    <!-- <label class="textfield-label" for="search">검색(시각적으로숨겨야함)</label> -->
+    <!-- <div class="textfield searchfield is-focused">
+      <button class="textfield-prefix searchfield-prefix"><span class="material-symbols-outlined">search</span></button>
+      <input class="textfield-input searchfield-input" type="search" id="search" placeholder="iOS pattern : focus에서 취소 노출. 취소로 blur" />
+      <test-chip class="searchfield-clear"><span class="material-symbols-outlined">close</span></test-chip>
+      <test-button variant="text" class="searchfield-cancel">취소</test-button>
+    </div> -->
+    <form class="searchfield" style="max-width:400px;">
+      <label class="searchfield-prefix">
+        <test-icon name="search"></test-icon>
+      </label>
+      <input class="searchfield-input" type="search" placeholder="궁금한 인물이나 이슈가 있나요?" />
+      <button class="searchfield-clear" aria-label="clear keyword">
+        <test-icon slot="icon" name="xmark"></test-icon>
+      </button>
+      <button class="searchfield-cancel" aria-label="clear keyword">
+        <span class="material-symbols-outlined">취소</span>
+      </button>
+    </form>
+    <form class="searchfield" style="max-width:400px;margin:var(--space-3) 0 0">
+      <div style="position: absolute;left: 0;">
+        <test-chip class="searchfield-prefix">
+          <test-icon slot="icon" name="arrow-left"></test-icon>
+        </test-chip>
+      </div>
+      <input
+        class="searchfield-input"
+        type="search"
+        placeholder="Android pattern"
+        style="padding-left: 3rem"
+      >
+      </input>
+      <div style="position:absolute;right:var(--space-2);top:var(--space-2);z-index: 1;">
+        <test-chip style="background:var(--color-background);border-radius:50%;">
+          <test-icon slot="icon" name="xmark">
+        </test-chip>
+      </div>
+    </form>
   </section>
 
-  <!-- <li>tabIndex: back -> input</li> -->
-  <test-text variant="subhead">추천, 인기, 개인화 콘텐츠</test-text>
+    <!-- <li>tabIndex: back -> input</li> -->
+    <test-text variant="subhead">추천, 인기, 개인화 콘텐츠</test-text>
 
-  <test-text variant="subhead">검색 트리거</test-text>
-  <ul class="checklist">
-    <li>onFocus - keyword.length === 0. 대기</li>
-    <li>onChange event (with debouncing)</li>
-    <li>onSubmit event</li>
-  </ul>
+    <test-text variant="subhead">검색 트리거</test-text>
+    <ul class="checklist">
+      <li>onFocus - keyword.length === 0. 대기</li>
+      <li>onChange event (with debouncing)</li>
+      <li>onSubmit event</li>
+    </ul>
 
-  <table>
-    <thead>
-      <tr>
-        <th style="width:10rem;">-</th>
-        <th>키워드를 입력할 때 마다 검색</th>
-        <th>검색 버튼 클릭 또는 enter key 검색</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th>결과없음 상태</th>
-        <td>x</td>
-        <td>o</td>
-      </tr>
-      <tr>
-        <th>검색어 자동완성</th>
-        <td>x</td>
-        <td>o</td>
-      </tr>
-      <tr>
-        <th>검색어 자동완성</th>
-        <td>x</td>
-        <td>o</td>
-      </tr>
-    </tbody>
-  </table>
+    <test-text variant="subhead">검색 실행 1 - 키워드를 입력할 때 마다</test-text>
+    <ul>
+      <li>
+        결과 없음 상태를 사용하지 않는다. 일치하는 결과가 없더라도 유사 콘텐츠 또는 추천 콘텐츠로 대체하여 하나 이상의 결과를 항상 보여주어야 합니다.
+        큐레이션이 강화된 콘텐츠 플랫폼에서 이탈 방지를 위해 활용할 수 있지만 사용자는 명확한 결과를 기대하기 어렵습니다.
+      </li>
+    </ul>
+    <test-text variant="subhead">검색 실행 2 - 검색 버튼 클릭 또는 enter key </test-text>
+    <ul>
+      <li>일치하는 결과만 표시하고 새로운 검색을 유도.</li>
+      <li>
+        하나 또는 하나 이상의 명확한 결과를 요구하는 경우 사용한다. 체류시간을 확보해야 하는 콘텐츠 플랫폼에는 적합하지 않다. 상대적으로 개발 리소스가
+        적게 들기 때문에 MVP 단계에서 유용하다.
+      </li>
+    </ul>
+    <test-text variant="subhead">placeholder의 작성</test-text>
+    <test-text variant="subhead">궁금이 & 생각</test-text>
+    <ul>
+      <li>모바일 키보드의 높이를 고려한 쿼리의 적정 갯수는?</li>
+      <li>결과 페이지의 공유를 허용할 것인가?</li>
+      <li>검색 페이지가 탐색을 역할을 겸하는가?</li>
+      <li>검색 데이터는 어떻게 수집하는가.</li>
+      <li>비회원의 검색 내역을 저장할 것인가? (로컬에 저장)</li>
+      <li>검색 내역 삭제와 검색 히스토리 삭제를 구분.</li>
+      <li>전체 검색 내역과 최근 검색 내역. 활동 로그. (facebook. 나만 보기)</li>
+      <li>searchfield와 textfield는 validation의 유무. 레이블의 유무. icon indicator의 유무로 구분된다</li>
+      <li>글로벌 검색 패턴과 로컬 검색(검색 필터를 포함) 패턴의 차이. searchfield small. right alignment.</li>
+    </ul>
 
-  <test-text variant="subhead">검색 실행 1 - 키워드를 입력할 때 마다</test-text>
-  <test-text variant="body-large"></p>
-  <ul>
-    <li>
-      결과 없음 상태를 사용하지 않는다. 일치하는 결과가 없더라도 유사 콘텐츠 또는 추천 콘텐츠로 대체하여 하나 이상의 결과를 항상 보여주어야 합니다.
-      큐레이션이 강화된 콘텐츠 플랫폼에서 이탈 방지를 위해 활용할 수 있지만 사용자는 명확한 결과를 기대하기 어렵습니다.
-    </li>
-  </ul>
 
-  <test-text variant="subhead">검색 실행 2 - 검색 버튼 클릭 또는 enter key </test-text>
-  <test-text variant="body-large"></p>
-  <ul>
-    <li>일치하는 결과만 표시하고 새로운 검색을 유도.</li>
-    <li>
-      하나 또는 하나 이상의 명확한 결과를 요구하는 경우 사용한다. 체류시간을 확보해야 하는 콘텐츠 플랫폼에는 적합하지 않다. 상대적으로 개발 리소스가
-      적게 들기 때문에 MVP 단계에서 유용하다.
-    </li>
-  </ul>
 
-  <test-text variant="subhead">placeholder의 작성</test-text>
-
-  <test-text variant="subhead">궁금이 & 생각</test-text>
-  <ul>
-    <li>모바일 키보드의 높이를 고려한 쿼리의 적정 갯수는?</li>
-    <li>결과 페이지의 공유를 허용할 것인가?</li>
-    <li>검색 페이지가 탐색을 역할을 겸하는가?</li>
-
-    <li>검색 데이터는 어떻게 수집하는가.</li>
-    <li>비회원의 검색 내역을 저장할 것인가? (로컬에 저장)</li>
-    <li>검색 내역 삭제와 검색 히스토리 삭제를 구분.</li>
-    <li>전체 검색 내역과 최근 검색 내역. 활동 로그. (facebook. 나만 보기)</li>
-
-    <li>searchfield와 textfield는 validation의 유무. 레이블의 유무. icon indicator의 유무로 구분된다</li>
-    <li>글로벌 검색 패턴과 로컬 검색(검색 필터를 포함) 패턴의 차이. searchfield small. right alignment.</li>
-  </ul>
-    <div class="">
-      <h1>#ThisIsTagPage</h1>
-      <p>조회수(틱톡)/이카테고리에글쓰기(미디엄)/카테고리팔로우(개인화)</p>
-    </div>
+    <table>
+      <thead>
+        <tr>
+          <th style="width:10rem;">-</th>
+          <th>키워드를 입력할 때 마다 검색</th>
+          <th>검색 버튼 클릭 또는 enter key 검색</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>결과없음 상태</th>
+          <td>x</td>
+          <td>o</td>
+        </tr>
+        <tr>
+          <th>검색어 자동완성</th>
+          <td>x</td>
+          <td>o</td>
+        </tr>
+        <tr>
+          <th>검색어 자동완성</th>
+          <td>x</td>
+          <td>o</td>
+        </tr>
+      </tbody>
+    </table>
   </article>
 </main>

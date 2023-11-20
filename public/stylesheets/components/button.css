@@ -35,6 +35,7 @@
   min-width: var(--button-min-width);
   height: var(--button-size);
   padding: 0 var(--space-4) 2px;
+  padding-bottom: 0;
   border: var(--button-border);
   border-radius: var(--button-radius);
   box-sizing: border-box;

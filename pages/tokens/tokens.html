@@ -31,6 +31,11 @@
           <b>폰트를 바꿀 때.</b> 폰트마다 baseline이 달라서 텍스트의 상하 간격이 안 맞을 수 있다.
           텍스트노드(레이블 역할)의 상단 패딩에 변수를 하나 추가해둔다. ?? 조금 과하긴 함.
         </li>
+        <li>개별 토큰에 디스크립션이 필요하지 않도록 네이밍하세요.</li>
+        <li>
+          컴포넌트 토큰은 상대적으로 변경 가능성이 높고 범용성이 낮기 때문에 컴포넌트 스코프에서
+          정의합니다.
+        </li>
       </ul>
 
       <test-text variant="subhead">Platform problems</test-text>
@@ -53,21 +58,11 @@
           reset은 작은 화면으로 전환될 때 유틸리티. z-index 보전을 위해 static이 아닌 relative로
           초기화하세요.
         </li>
-
         <li>
           custom media의 max-width를 layout + @로 정의해보자. ? 뭔 말이지? 모든 container는
           --small부터 max-width를 100%.
         </li>
         <li>small-scale layout (polaris 참고) 아바타 유무</li>
-        <li>
-          콘텐츠보다 액션이 강조되지 않도록 뷰포트 내에서 delay를 최대 3개로 제한합니다. inactive로
-          변경될 때(닫기 등) 즉시(instantly) 실행 합니다.
-        </li>
-        <li>
-          컴포넌트 토큰은 상대적으로 변경 가능성이 높고 범용성이 낮기 때문에 컴포넌트 스코프에서
-          정의합니다.
-        </li>
-        <li>개별 토큰에 디스크립션이 필요하지 않도록 네이밍하세요.</li>
         <li>
           3가지 이상 케이스에서 사용될 때 토큰으로 정의합니다. 1회~2회는 예외 케이스로 정의하거나
           컴포넌트 스코프에서 보충합니다.
@@ -798,6 +793,10 @@
         </div>
 
         <test-text variant="subhead">Duration</test-text>
+        <blockquote>
+          콘텐츠보다 액션이 강조되지 않도록 뷰포트 내에서 delay를 최대 3개로 제한합니다. inactive로
+          변경될 때(닫기 등) 즉시(instantly) 실행 합니다.
+        </blockquote>
         <div class="token-group">
           <div class="token-item" style="overflow: auto">
             <p>--duration: .4s</p>

@@ -11,40 +11,36 @@ class Chip extends HTMLElement {
     // const sheet = new CSSStyleSheet()
 
     // replace all styles synchronously:
-    // sheet.replaceSync('@import url("/public/stylesheets/components/chip.css"); button { color: red; }')
     // document.adoptedStyleSheets = [...document.adoptedStyleSheets, sheet]
 
-    // replace all styles:
-    // sheet
-    //   .replace('@import url("/public/stylesheets/components/chip.css"); button { color: blue; }')
-    //   .then(() => {
+    // Any @import rules are ignored.
+    // Both of these still apply the a{} style:
+    // sheet.replaceSync('@import url("styles.css"); a { color: red; }')
+    // sheet.replace('@import url("styles.css"); a { color: red; }').then(() => {
     //     console.log('Styles replaced', sheet)
     //   })
     //   .catch(err => {
     //     console.error('Failed to replace styles:', err)
     //   })
-
-    // Any @import rules are ignored.
-    // Both of these still apply the a{} style:
-    // sheet.replaceSync('@import url("styles.css"); a { color: red; }')
-    // sheet.replace('@import url("styles.css"); a { color: red; }')
     // Console warning: "@import rules are not allowed here..."
 
-    const host = document.createElement('button')
-    const label = document.createElement('span')
-    const name = document.createElement('b')
-
-    const iconSlot = document.createElement('slot')
-    const badgeSlot = document.createElement('slot')
-    iconSlot.name = 'icon'
-    badgeSlot.name = 'badge'
     // shadow.adoptedStyleSheets = [sheet]
     // host.shadowRoot?.adoptedStyleSheets = [sheet]
 
+    const host = document.createElement('button')
     host.classList.add('chip')
-    name.classList.add('chip-name')
+
+    const label = document.createElement('span')
     label.classList.add('chip-label')
-    // createElement('em') => reset em
+
+    const name = document.createElement('b')
+    name.classList.add('chip-name')
+
+    const iconSlot = document.createElement('slot')
+    iconSlot.name = 'icon'
+
+    const suffixSlot = document.createElement('slot')
+    suffixSlot.name = 'suffix'
 
     host.appendChild(iconSlot)
     if (this.name) {
@@ -60,29 +56,17 @@ class Chip extends HTMLElement {
     // }
 
     shadow.appendChild(host)
-    host.append(badgeSlot, makeStyleSheet('chip'))
+    host.append(suffixSlot, makeStyleSheet('chip'))
 
     // this.addEventListener('click', e => {
-    //   // Don't toggle the drawer if it's disabled.
-    //   if (this.disabled) {
-    //     return
-    //   }
+    //   if (this.disabled) return
     //   this.toggleDrawer()
     // })
 
     // b.append(...this.childNodes)
 
-    // Attach the created elements to the shadow dom
-
-    // if (this.value) {
-    //   value.textContent = this.value || ''
-    //   label.appendChild(value)
-    // }
-    // todo
-
     // TODO info naked
     if (this.status === 'info') host.dataset.status = 'info'
-
     if (this.status === 'active') host.setAttribute('aria-selected', 'true')
     if (this.status === 'disabled') host.setAttribute('disabled', 'true')
     if (this.status === 'checked') host.setAttribute('aria-checked', 'true')
