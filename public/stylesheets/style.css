@@ -8,24 +8,25 @@
 
 @import 'pages/component.css';
 
-/*
 
 .carousel {position: relative;}
-.carousel-viewer {@mixin stack-vertical-scroll;margin:-.75rem;padding:.75rem;}
-.carousel-viewer-slide {@mixin tile-elevated-small;min-width: 10rem;margin:0 var(--space-3) 0 0;}
-.carousel-viewer-slide:hover {@mixin hover-item;}
-.carousel-viewer-slide-media {@mixin avatar-container;}
+.carousel-viewer {}
+.carousel-viewer-slide {}
+.carousel-viewer-slide:hover {}
+.carousel-viewer-slide-media {}
 .carousel-viewer-slide-name {}
 .carousel-dots {display: flex;align-items: center;}
 .carousel-dots-dot {width: 10px;height: 10px;margin: 0px 4px;border-radius: 50%;background: rgba(0, 0, 0, 1);cursor: pointer;}
 .carousel-dots-dot:hover {opacity: .5;}
 .carousel-arrows {}
-.carousel-arrows-prev {@mixin avatar-container;box-shadow:var(--shadow);position: absolute;left:-.5rem;top: 50%;z-index: var(--zindex-default);transform:translateY(-50%);}
+.carousel-arrows-prev {box-shadow:var(--shadow);position: absolute;left:-.5rem;top: 50%;z-index: var(--zindex-default);transform:translateY(-50%);}
 .carousel-arrows-prev:hover {}
-.carousel-arrows-next {@mixin avatar-container;box-shadow:var(--shadow);position: absolute;right:-.5rem;top: 50%;z-index: var(--zindex-default);transform:translateY(-50%);}
+.carousel-arrows-next {box-shadow:var(--shadow);position: absolute;right:-.5rem;top: 50%;z-index: var(--zindex-default);transform:translateY(-50%);}
 .carousel-arrows-next:hover {}
 .carousel-arrows button.is-disabled {opacity: .2;}
 
+
+/*
 
 .scroll {position: fixed;bottom: 1rem;right: 1rem;z-index: var(--z-index-default);}
 .scroll-indicator {}
