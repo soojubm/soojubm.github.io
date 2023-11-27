@@ -3,6 +3,11 @@
     <test-text variant="title">Tab</test-text>
     <test-text variant="body-large">같은 맥락의 콘텐츠를 주제별로 분류합니다.</test-text>
 
+    <!-- <test-tablist>
+      <test-tab slot="tab" selected="true" aria-controls="panel-1" id="tab-1" tabindex="0"> Monthly </test-tab>
+      <test-tab slot="tab" aria-controls="panel-2" id="tab-2" tabindex="-1">Yearly</test-tab>
+    </test-tablist> -->
+
     <section class="component-example">
       <!-- data-tabs='{"name": "Chris Coyier", "job": "Web Person"}' -->
       <test-tablist>
@@ -31,7 +36,7 @@
         tabindex="0"
         aria-labelledby="tab-2"
         aria-hidden="true"
-        style="margin: 0"
+        style="margin: 1rem 0 0"
       >
         <p>Content for the second panel</p>
       </div>
@@ -42,7 +47,7 @@
         tabindex="0"
         aria-labelledby="tab-3"
         aria-hidden="true"
-        style="margin: 0"
+        style="margin: 1rem 0 0"
       >
         <p>Content for the third panel</p>
       </div>

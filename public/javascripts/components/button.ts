@@ -36,6 +36,12 @@ class Button extends HTMLElement {
     container.dataset.size = this.size || ''
     container.dataset.status = this.status || ''
 
+    const prefixSlot = document.createElement('slot')
+    prefixSlot.name = 'prefix'
+
+    const suffixSlot = document.createElement('slot')
+    suffixSlot.name = 'suffix'
+
     // ! boolean타입이면 속성의 값이 있는지 없는지를 체크해야함.
     if (this.isfullwidth) container.dataset.isfullwidth = 'true'
 
@@ -43,7 +49,8 @@ class Button extends HTMLElement {
     container.textContent = this.textContent || this.label
 
     shadow.append(container, makeStyleSheet('button'))
-    // shadow.appendChild()
+    container.appendChild(prefixSlot)
+    container.appendChild(suffixSlot)
   }
 
   get variant() {

@@ -69,6 +69,63 @@
     </form>
   </header>
 
+  <test-card variant="flat" size="medium">
+    <div slot="entire">
+      <test-titlebar heading="Ratings">
+        <test-chip slot="back" aria-label="이전 페이지로">
+          <test-icon slot="icon" name="arrow-left"></test-icon>
+        </test-chip>
+      </test-titlebar>
+      <br />
+      <test-card
+        variant="flat"
+        class="statistic-item"
+        aria-label="별점 5개 만점에 3.9개를 받았습니다."
+        style="text-align: center; z-index: auto"
+      >
+        <div slot="entire">
+          <span class="statistic-label">리뷰 116만개</span>
+          <span class="statistic-value" style="margin-left: -0.5rem">⭐ 4.8</span>
+        </div>
+      </test-card>
+      <div
+        style="
+          display: flex;
+          flex-direction: column;
+          gap: var(--space-2);
+          margin: var(--space-3) 0 0;
+        "
+      >
+        <div class="meter">
+          <b class="meter-label">5 Stars</b>
+          <div class="meter-track"><b class="meter-thumb" style="width: 68%"></b></div>
+          <span class="meter-value">68%</span>
+        </div>
+        <div class="meter">
+          <b class="meter-label">4 Stars</b>
+          <div class="meter-track"><b class="meter-thumb" style="width: 24%"></b></div>
+          <span class="meter-value">24%</span>
+        </div>
+        <div class="meter">
+          <b class="meter-label">3 Stars</b>
+          <div class="meter-track"><b class="meter-thumb" style="width: 0"></b></div>
+          <span class="meter-value">0%</span>
+        </div>
+        <div class="meter">
+          <b class="meter-label">2 Stars</b>
+          <div class="meter-track"><b class="meter-thumb" style="width: 2%"></b></div>
+          <span class="meter-value">2%</span>
+        </div>
+        <div class="meter">
+          <b class="meter-label">1 Star</b>
+          <div class="meter-track"><b class="meter-thumb" style="width: 6%"></b></div>
+          <span class="meter-value">6%</span>
+        </div>
+      </div>
+      <!-- <small>별 다섯개에서 점수만큼 채우는 유아이는 최근 잘 보이지 않는다.</small> -->
+    </div>
+  </test-card>
+
   <section class="product-review">
     <header>
       <span class="product-review-eyebrow">리뷰</span>

@@ -86,6 +86,23 @@
       <b>flat with media</b>
     </test-tile>
 
+    <div
+      class="quote"
+      style="
+        background-image: url('../public/images/springsteen.jpg');
+        background-size: cover;
+        padding: 8rem 1rem 1rem;
+        border-radius: var(--radius);
+      "
+    >
+      <h3 class="quote-title" style="color: #fff">Quote</h3>
+      <p class="quote-body" style="color: #fff">Don't you know that God is Pooh bear?</p>
+      <cite class="quote-byline">
+        <div class="quote-byline-name" style="color: #fff">Jack Kerouac</div>
+        <div class="quote-byline-job">Musician</div>
+      </cite>
+    </div>
+
     <test-tile class="quote" style="padding: 1rem">
       <figure class="quote-avatar">🥫</figure>
       <h3 class="quote-title">Quote</h3>
@@ -97,5 +114,63 @@
       <button class="quote-action">더 알아보기</button>
       <!-- <button class="quote-later">지금은 괜찮아요</button> -->
     </test-tile>
+
+    <br />
+
+    <test-card variant="nuded" role="listitem" style="max-width: 400px; z-index: 1">
+      <div slot="entire">
+        <figure slot="thumbnail" style="border-radius: var(--radius)">
+          <img src="/public/images/springsteen.jpg" alt="" />
+        </figure>
+        <test-tag slot="category" variant="primary">카테고리</test-tag>
+        <!-- <figure class="card-avatar">🍊</figure> -->
+        <test-text slot="heading" variant="subhead">카드 유아이</test-text>
+        <p class="card-text">
+          텍스트는 최대 두 줄 무야호 따봉 북마크 장바구니 등의 액션이 있을 수 있고 내부 외부
+          가이드를 만들어야해
+        </p>
+        <test-menuitem slot="byline" label="수줍이" description="2년 전">
+          <!-- <test-avatar slot="avatar" size="small"><img src="/public/images/springsteen.jpg" alt="" /></test-avatar> -->
+          <test-avatar slot="avatar" size="small"></test-avatar>
+        </test-menuitem>
+
+        <test-chip slot="action">
+          <test-icon slot="icon" name="more-vert"></test-icon>
+        </test-chip>
+        <test-group slot="tags">
+          <test-tag>프로젝트관리</test-tag>
+          <test-tag>프로덕트디자인</test-tag>
+          <test-tag>프론트엔드개발</test-tag>
+        </test-group>
+        <test-separator></test-separator>
+        <test-menuitem slot="item" size="large" label="퓨어 오렌지 주스" description="">
+          <test-avatar slot="avatar" size="large" fallback="🍊"></test-avatar>
+          <div class="item-description"><del>₩19,000</del> ₩16,000 <em>할인율 20%</em></div>
+        </test-menuitem>
+        <test-tag class="card-note">마일리지 적립 200P</test-tag>
+      </div>
+    </test-card>
+
+    <br />
+
+    <picture>
+      <source
+        srcset="photo-light.png"
+        media="(prefers-color-scheme: light) or (prefers-color-scheme: no-preference)"
+      />
+      <source srcset="photo-dark.png" media="(prefers-color-scheme: dark)" />
+      <source type="image/svg+xml" srcset="pyramid.svg" />
+      <source type="image/webp" srcset="pyramid.webp" />
+      <source media="(max-width: 799px)" srcset="elva-480w-close-portrait.jpg" />
+      <source media="(min-width: 800px)" srcset="elva-800w.jpg" />
+      <img src="elva-800w.jpg" alt="딸 엘바를 안고 서 있는 크리스" />
+    </picture>
+
+    <img
+      srcset="elva-fairy-320w.jpg 320w, elva-fairy-480w.jpg 480w, elva-fairy-640w.jpg 2x, elva-fairy-800w.jpg 800w"
+      sizes="(max-width: 320px) 280px, (max-width: 480px) 440px, 800px"
+      src="elva-fairy-800w.jpg"
+      alt="요정 옷을 입은 엘바"
+    />
   </article>
 </main>

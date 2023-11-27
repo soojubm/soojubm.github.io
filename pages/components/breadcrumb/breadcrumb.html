@@ -13,6 +13,12 @@
         <i class="breadcrumb-divider" aria-hidden="true">/</i>
         <span class="breadcrumb-item" aria-current="page">현재 페이지</span>
       </nav>
+      <test-separator></test-separator>
+      <test-titlebar heading="이전 페이지 샘플">
+        <test-chip slot="back">
+          <test-icon slot="icon" name="arrow-left"></test-icon>
+        </test-chip>
+      </test-titlebar>
     </section>
 
     <section class="component-props">
@@ -23,15 +29,6 @@
         <dd>aria-current="page"</dd>
       </dl>
     </section>
-
-    <section class="component-case">
-      <test-titlebar heading="이전 페이지 샘플">
-        <test-chip slot="back">
-          <test-icon slot="icon" name="arrow-left"></test-icon>
-        </test-chip>
-      </test-titlebar>
-    </section>
-
     <!-- <section class="token-group" style="margin-top: -2rem">
       <article class="token-item">
         <b>breadcrumb</b>
@@ -73,5 +70,10 @@
         <li><b>상위 규칙. Foundation.</b> flat sitemap. 페이지 댑스가 3이 넘ㅈ ㅣ않도록 유지.</li>
       </ul>
     </section>
+
+    <test-text variant="subhead"> Changelog </test-text>
+    <test-text variant="body">
+      홈 아이콘을 텍스트로 변경. 페이지에서 상대적으로 중요도가 낮은 정보이기 때문에 주목도를 낮춤.
+    </test-text>
   </article>
 </main>

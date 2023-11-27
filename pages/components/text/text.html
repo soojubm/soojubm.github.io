@@ -138,6 +138,30 @@
         <button style="font-weight: var(--font-weight-bold)">더 보기</button>
       </p>
 
+      <test-separator></test-separator>
+
+      <ul style="margin: 0">
+        <li>순서가 없는 리스트</li>
+        <li>순서가 없는 리스트</li>
+      </ul>
+      <ol style="margin: var(--space-3) 0">
+        <li>순서가 있는 리스트</li>
+        <li>순서가 있는 리스트</li>
+      </ol>
+      <!-- <ul data-align="horizontal" style="margin: 0">
+          <li title="unordered list, level 1">순서가 없는 리스트</li>
+          <li style="margin: 0 2rem 0 1rem">가로로 정렬할 수 있어요</li>
+          <li>조건이 있어요</li>
+        </ul> -->
+      <ul>
+        <li>텍스트 목록만 리스트 태그(ul, ol, dl)로 마크업하세요. role=listbox/listitem</li>
+        <li>
+          텍스트 목록을 2 댑스(nested)로 제공하지 마세요. 중첩된 목록은 콘텐츠를 읽기 어렵게 하고
+          작은 화면에서의 들여쓰기는 불필요한 공간을 차지합니다.
+        </li>
+        <li>todo. checklist.</li>
+      </ul>
+
       <br />
 
       <p>
@@ -169,7 +193,7 @@
     <p>sequentially-descending order</p>
 
     <test-text variant="subhead">Truncated</test-text>
-    <p>2 lines</p>
+    <test-text variant="body">long-form content. truncate-multiple은 항상 2줄.</test-text>
 
     <test-text variant="subhead">용어 정의 및 분류</test-text>
     <ul>
@@ -199,7 +223,6 @@
         태그라인은 작은 화면에서도 임팩트를 줄 있도록 작성 단계에서 행갈이를 고려하세요. 글자의 수와
         단어의 수를 제한하고 개행 조건을 정의하세요.
       </li>
-      <li>long-form content. truncate-multiple은 항상 2줄.</li>
       <li>제목을 자르는 것을 허용할 것인가? 허용하지 않을 것인가?</li>
       <li>
         섹션은 항상 제목을 가져야 한다. 시각적으로 숨겨지지 않은 명시적인 텍스트 노드를. 제목을
@@ -214,15 +237,15 @@
     </ul>
 
     <test-text variant="subhead">텍스트 모듈</test-text>
-    <p>
+    <test-text variant="body">
       본문은 왼끝 맞추기(오른끝 흘리기). 가운데 정렬은 상태 또는 결과 맥락에 사용하여 사용자의
       주목을 높입니다.
-    </p>
+    </test-text>
 
     <test-text variant="subhead">들여쓰기</test-text>
-    <p>
+    <test-text variant="body">
       작은 화면에서 공간 활용을 위해 왼쪽에서 들여쓰지 않습니다. 단락의 위 아래 간격을 활용합니다.
-    </p>
+    </test-text>
 
     <test-text variant="subhead">텍스트의 강조</test-text>
     <ul>
@@ -238,59 +261,18 @@
       </li>
     </ul>
 
-    <test-text variant="subhead">List</test-text>
-    <test-text variant="body-large">작성 중.</test-text>
-
-    <section class="component-example">
-      <ul style="margin: 0">
-        <li>순서가 없는 리스트</li>
-        <li>순서가 없는 리스트</li>
-      </ul>
-      <ol style="margin: var(--space-3) 0">
-        <li>순서가 있는 리스트</li>
-        <li>순서가 있는 리스트</li>
-      </ol>
-      <!-- <ul data-align="horizontal" style="margin: 0">
-            <li title="unordered list, level 1">순서가 없는 리스트</li>
-            <li style="margin: 0 2rem 0 1rem">가로로 정렬할 수 있어요</li>
-            <li>조건이 있어요</li>
-          </ul> -->
-    </section>
-    <ul>
-      <li>텍스트 목록만 리스트 태그(ul, ol, dl)로 마크업하세요. role=listbox/listitem</li>
-      <li>
-        텍스트 목록을 2 댑스(nested)로 제공하지 마세요. 중첩된 목록은 콘텐츠를 읽기 어렵게 하고 작은
-        화면에서의 들여쓰기는 불필요한 공간을 차지합니다.
-      </li>
-      <li>todo. checklist.</li>
-    </ul>
-
     <aside class="help-feedback tile-elevated">
       <p class="help-feedback-title">이 문서가 도움이 되었나요?</p>
       <small class="help-feedback-status" title="17 out of 439 found this helpful"
         >417명 중 349명이 도움을 받았어요.</small
       >
       <footer style="display: flex">
-        <button class="help-feedback-button"><span class="chip-label">도움이 됐어요</span></button>
-        <button class="help-feedback-button"><span class="chip-label">부족해요</span></button>
+        <test-chip class="help-feedback-button">도움이 됐어요</test-chip>
+        <test-chip class="help-feedback-button">부족해요</test-chip>
       </footer>
     </aside>
-
-    <test-text variant="subhead">Statistic</test-text>
-    <test-text variant="body-large">수치 데이터.</test-text>
-
     <ul>
       <li>todo countup</li>
-      <li>todo clickable. non-clickable.</li>
-    </ul>
-
-    <test-text variant="subhead">Summary</test-text>
-    <test-text variant="body-large">정보 요약. cart / order / checkout / result /</test-text>
-
-    <test-text variant="subhead">Suggestion</test-text>
-    <test-text variant="body-large">작성중</test-text>
-
-    <ul>
       <li>getFormattedCurrency()</li>
       <li>role=suggestion/deletion/insertion]</li>
     </ul>

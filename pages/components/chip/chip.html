@@ -255,9 +255,9 @@
       </test-group>
     </section>
 
-    <test-text variant="subhead"
-      >addable/removable 이거 필요한가? 칩 말고 다른 형태로 하고 싶다.</test-text
-    >
+    <test-text variant="subhead">
+      addable/removable 이거 필요한가? 칩 말고 다른 형태로 하고 싶다.
+    </test-text>
     <section class="component-case">
       <test-group> </test-group>
     </section>
@@ -290,5 +290,35 @@
         MD chip group
       </test-link>
     </section>
+
+    <test-card variant="flat" style="max-width: 400px">
+      <div slot="entire">
+        <test-text variant="subhead">지금 인기있는<br />이슈 키워드</test-text>
+        <div style="height: var(--space-after-subhead)"></div>
+        <test-chip-group>
+          <test-chip label="국정감사"></test-chip>
+          <test-chip label="윤석열검찰총장"></test-chip>
+          <test-chip label="조국"></test-chip>
+          <test-chip label="뉴닉"></test-chip>
+          <test-chip label="차별금지법"></test-chip>
+          <test-chip label="추미매법무부장관"></test-chip>
+        </test-chip-group>
+        <div style="height: var(--space-after-subhead)"></div>
+        <!-- <test-tile variant="flat" size="small" style="margin:var(--space-3) 0 0;"> -->
+        <test-menuitem label="직접 검색">
+          <test-avatar
+            slot="avatar"
+            fallback=" "
+            style="
+              background-color: var(--color-background-strong);
+              color: var(--color-text-strong);
+            "
+          >
+            <test-icon slot="icon" name="search"></test-icon>
+          </test-avatar>
+        </test-menuitem>
+        <!-- </test-tile> -->
+      </div>
+    </test-card>
   </article>
 </main>

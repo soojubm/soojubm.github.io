@@ -128,16 +128,8 @@ module.exports = {
       './public/javascripts/common/navbar.ts',
       './index.ts',
     ],
-
     ...test,
     ...test2,
-    // button: ['./pages/components/button/button.ts', './public/javascripts/common/navbar.ts', './index.ts'],
-    // avatar: ['./pages/components/avatar/avatar.ts', './public/javascripts/common/navbar.ts', './index.ts'],
-    // textfield: ['./pages/components/textfield/textfield.ts', './public/javascripts/common/navbar.ts', './index.ts'],
-    // chip: ['./pages/components/chip/chip.ts', './public/javascripts/common/navbar.ts', './index.ts'],
-    // checkbox: ['./pages/components/checkbox/checkbox.ts', './public/javascripts/common/navbar.ts', './index.ts'],
-    // radio: ['./pages/components/radio/radio.ts', './public/javascripts/common/navbar.ts', './index.ts'],
-    // menuitem: ['./pages/components/menuitem/menuitem.ts', './public/javascripts/common/navbar.ts', './index.ts'],
   },
   output: {
     path: path.resolve(__dirname, './build'), // 기본값은 dist
