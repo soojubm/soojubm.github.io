@@ -40,7 +40,7 @@
 
 
 @media (max-width: 1320px) {
-  .profile {max-width:400px;}
+  .profile {max-width:1000px;}
   .profile-user {float:none;width:100%;box-sizing:border-box;}
   .profile-user-toggle {display:flex;align-items:center;justify-content:space-between;}
   
@@ -59,6 +59,13 @@
   } */
 }
 
+
+@media (max-width: 800px) {
+  .profile {max-width:400px;}
+  .tabpanel test-card {
+    width:100%;
+  }
+}
 
 /* smartphones, touchscreens */
 @media (hover: none) and (pointer: coarse) {

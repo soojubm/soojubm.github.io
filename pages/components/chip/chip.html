@@ -29,13 +29,6 @@
       </test-chip-group>
       <test-separator></test-separator>
       <test-chip-group>
-        <test-chip label="with icon">
-          <i slot="icon">🦔</i>
-        </test-chip>
-        <test-chip icon="" label="좋아요" value="117">
-          <i slot="icon">❤️</i>
-          <!-- <div slot="suffix" style="margin-left: -0.5rem"><test-badge>11</test-badge></div> -->
-        </test-chip>
         <test-chip label="checkable" status="checked">
           <test-icon slot="icon" name="check"></test-icon>
         </test-chip>
@@ -44,6 +37,13 @@
         </test-chip>
         <test-chip label="expandable" aria-expanded="true">
           <test-icon slot="suffix" name="nav-arrow-down"></test-icon>
+        </test-chip>
+        <test-chip label="with icon">
+          <i slot="icon">🦔</i>
+        </test-chip>
+        <test-chip icon="" label="좋아요" value="117">
+          <i slot="icon">❤️</i>
+          <!-- <div slot="suffix" style="margin-left: -0.5rem"><test-badge>11</test-badge></div> -->
         </test-chip>
       </test-chip-group>
       <test-separator></test-separator>
@@ -57,7 +57,9 @@
       </test-chip-group>
       <test-separator></test-separator>
       <test-chip-group>
-        <test-textfield size="small" placeholder="검색꾸"></test-textfield>
+        <test-searchfield size="small" placeholder="검색꾸">
+          <test-icon slot="prefix" name="search" size="small"></test-icon>
+        </test-searchfield>
         <test-chip name="Filter" label="오늘">
           <test-icon slot="suffix" name="nav-arrow-down"></test-icon>
         </test-chip>
@@ -67,6 +69,18 @@
           </test-chip>
         </div>
       </test-chip-group>
+      <test-separator></test-separator>
+      <div style="display: flex">
+        <test-chip label="">
+          <i slot="icon">🦔</i>
+        </test-chip>
+        <test-chip status="info" label="">
+          <test-icon slot="icon" name="user"></test-icon>
+        </test-chip>
+        <test-chip status="info" label="">
+          <test-icon slot="icon" name="bell"></test-icon>
+        </test-chip>
+      </div>
     </section>
 
     <section class="component-props">

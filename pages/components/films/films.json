@@ -1,5 +1,29 @@
 [
   {
+    "releasedate": 2004,
+    "titlekorean": "폴라로이드 작동법",
+    "titleenglish": "How to Operate a Polaroid Camera",
+    "director": "김종관",
+    "country": "한국",
+    "etc": "단편"
+  },
+  {
+    "releasedate": 1989,
+    "titlekorean": "타이거 맨",
+    "titleenglish": "Wild Search, 伴我闖天涯",
+    "director": "임영동",
+    "country": "홍콩",
+    "etc": ""
+  },
+  {
+    "releasedate": 1936,
+    "titlekorean": "경기병대의 돌격",
+    "titleenglish": "The Charge of the Light Brigade",
+    "director": "마이클 커티즈",
+    "country": "미국",
+    "etc": ""
+  },
+  {
     "releasedate": 1989,
     "titlekorean": "성스러운 피",
     "titleenglish": "Holy Blood",
