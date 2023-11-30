@@ -4,8 +4,6 @@
   align-items: center;
   gap: var(--space-2);
 }
-/* 롤 그룹으로 대체? */
-[role="group"] {}
 
 /* reset */
 button {
@@ -45,7 +43,7 @@ em, i  {
   min-width: var(--size-medium);
   height: var(--size-medium);
   gap: var(--space-2);
-  padding: 0 var(--space-3) 1px;
+  padding: 0 0 1px;
   border-radius: var(--radius);
   background: var(--chip-color-background);
   color: var(--chip-color-text);
@@ -68,6 +66,7 @@ em, i  {
 }
 .chip-label {
   display: block;
+  padding: 0 var(--space-3);
   line-height: var(--chip-size);
   color: inherit;
 }

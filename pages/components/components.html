@@ -1,20 +1,4 @@
-<!-- https://simplicable.com/new/visual-information -->
-<!-- https://nuli.navercorp.com/community/article -->
-<!-- todo top hat -->
-<!-- https://ustyle.guide/pattern-library/javascript.html -->
-<!-- https://career.programmers.co.kr/pr/beolsae 이력서 -->
-<!-- https://tailwindui.com/components/#product-application-ui -->
-<!-- https://www.albertgao.xyz/2019/09/07/reuse-react-router-routes-constants-with-hooks-when-navigating/ -->
-
-<!-- <h3>getFormattedDate(20220610) / getFormattedCurrency(30000)</h3>
-<p>30,000원 / 30,000 won / ₩ 30,000</p> -->
-<style>
-  .tile {
-    max-width: 800px;
-  }
-</style>
 <main class="component">
-
   <div style="display: flex; align-items: center; justify-content: space-between; margin: 2rem 0; padding: 0.5rem 2rem; border: var(--border); border-radius: 50px">
     <figure style="width: 48px; height: 48px; border-radius: 50%; border: var(--border)"></figure>
     <test-text variant="subhead"> You can download this product with the All-Access Pass. </test-text>
@@ -58,7 +42,6 @@
       <!-- https://story.pxd.co.kr/1451 -->
       <p>loading state/dfn/abbr</p>
       https://material.io/design/interaction/states.html
-  </header>
 
     <div class="js-tab">
       <nav class="tablist type-sc" role="tablist" aria-label="sample tabs" style="max-width: 11rem; margin: 0.5rem auto">
@@ -188,10 +171,37 @@
               <test-icon slot="icon" name="arrow-left"></test-icon>
             </test-chip>
             <test-chip class="carousel-arrows-next js-carousel-next" aria-label="다음">
-              <test-icon slot="icon" name="arrow-left"></test-icon>
+              <test-icon slot="icon" name="arrow-right"></test-icon>
             </test-chip>
           </nav>
         </section>
+        <test-separator></test-separator>
+        <!-- data-scroll="vertical" -->
+        <nav
+        style="
+          display: flex;
+          gap: var(--space-4);
+        "
+        role="tablist"
+      >
+        <button class="story" role="tab" aria-selected="true" data-index="1">
+          <figure class="avatar" data-size="huge" style="background-image: none">
+            <span class="material-symbols-outlined" style="font-size: 3rem; color: var(--color-text)"
+              >+</span
+            >
+          </figure>
+          <span class="story-name">추가</span>
+        </button>
+        <test-entity description="공유하기" data-index="keyword">
+          <test-avatar slot="avatar" size="huge" fallback="🌏"></test-avatar>
+        </test-entity>
+        <test-entity description="키워드목록">
+          <test-avatar slot="avatar" size="huge" fallback="💀"></test-avatar>
+        </test-entity>
+        <test-entity description="주문 아이템">
+          <test-avatar slot="avatar" size="huge" fallback="🍔"></test-avatar>
+        </test-entity>
+      </nav>
       </section>
 
       <ul>
@@ -561,19 +571,11 @@
         <p style="color: var(--color-text-light)">계정: soojubm@gmail.com</p>
       </test-tile>
 
-    <section class="sample-container" style="margin-top: 0">
-      
       <header class="greeting" data-temp="이 패턴에서 아바타는 시각 정보가 아니라 링크로 사용">
-        <figure class="greeting-avatar" style="font-size: 1.5rem">🐶</figure>
-        <h1 class="greeting-title" style="display: flex">
-          Hello, Spring 👋
-          <figure class="icon-indicator material-symbols-outlined" style="margin-left: var(--space-2)">chevron_right</figure>
-        </h1>
-        <p class="greeting-description">Tender is the night.</p>
+        <test-avatar variant="" size="huge">🐶</test-avatar>
+        <test-text variant="subhead">Hello, Spring 👋</test-text>
+        <test-text variant="body">Tender is the night.</test-text>
       </header>
-
-
-
 
       <test-menuitem data-size="large" style="margin-bottom: var(--space-3)">
         <test-avatar></test-avatar>
@@ -591,8 +593,6 @@
         </test-group>
         <test-chip label="View Job"></button>
       </test-tile>
-
-    </section>
 
       <div class="album-track">
         <header class="album-track-label" role="row">

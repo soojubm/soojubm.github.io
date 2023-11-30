@@ -21,15 +21,14 @@ class Callout extends HTMLElement {
     const shadow = this.attachShadow({ mode: 'open' })
 
     const container = document.createElement('div')
-    const heading = document.createElement('h3')
-    const text = document.createElement('p')
-
     container.classList.add('callout')
     container.dataset.variant = this.variant || ''
 
+    const heading = document.createElement('h3')
     heading.classList.add('callout-title')
     heading.innerText = this.heading || ''
 
+    const text = document.createElement('p')
     text.classList.add('callout-text')
     text.innerText = this.text || this.innerHTML || ''
 
@@ -37,8 +36,8 @@ class Callout extends HTMLElement {
     icon.setAttribute('name', 'warning-triangle')
     icon.classList.add('callout-icon')
 
-    shadow.appendChild(container)
-    container.append(icon, heading, text, makeStyleSheet('callout'))
+    shadow.append(container, makeStyleSheet('callout'))
+    container.append(icon, heading, text)
   }
   disconnectedCallback() {}
 }

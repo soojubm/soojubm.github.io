@@ -9,22 +9,6 @@
 @import 'pages/component.css';
 
 
-.carousel {position: relative;}
-.carousel-viewer {}
-.carousel-viewer-slide {}
-.carousel-viewer-slide:hover {}
-.carousel-viewer-slide-media {}
-.carousel-viewer-slide-name {}
-.carousel-dots {display: flex;align-items: center;}
-.carousel-dots-dot {width: 10px;height: 10px;margin: 0px 4px;border-radius: 50%;background: rgba(0, 0, 0, 1);cursor: pointer;}
-.carousel-dots-dot:hover {opacity: .5;}
-.carousel-arrows {}
-.carousel-arrows-prev {box-shadow:var(--shadow);position: absolute;left:-.5rem;top: 50%;z-index: var(--zindex-default);transform:translateY(-50%);}
-.carousel-arrows-prev:hover {}
-.carousel-arrows-next {box-shadow:var(--shadow);position: absolute;right:-.5rem;top: 50%;z-index: var(--zindex-default);transform:translateY(-50%);}
-.carousel-arrows-next:hover {}
-.carousel-arrows button.is-disabled {opacity: .2;}
-
 
 /*
 
@@ -44,6 +28,25 @@
   box-shadow: 1px 1px 1rem rgba(0, 0, 0, .1)
 }
 
+
+
+
+
+.carousel {position: relative;}
+.carousel-viewer {}
+.carousel-viewer-slide {}
+.carousel-viewer-slide:hover {}
+.carousel-viewer-slide-media {}
+.carousel-viewer-slide-name {}
+.carousel-dots {display: flex;align-items: center;}
+.carousel-dots-dot {width: 10px;height: 10px;margin: 0px 4px;border-radius: 50%;background: rgba(0, 0, 0, 1);cursor: pointer;}
+.carousel-dots-dot:hover {opacity: .5;}
+.carousel-arrows {}
+.carousel-arrows-prev {box-shadow:var(--shadow);position: absolute;left:-.5rem;top: 50%;z-index: var(--zindex-default);transform:translateY(-50%);}
+.carousel-arrows-prev:hover {}
+.carousel-arrows-next {box-shadow:var(--shadow);position: absolute;right:-.5rem;top: 50%;z-index: var(--zindex-default);transform:translateY(-50%);}
+.carousel-arrows-next:hover {}
+.carousel-arrows button.is-disabled {opacity: .2;}
 @media (--small) {
   .scroll {
     display: none
@@ -167,14 +170,10 @@ main,
 
 .greeting {}
 .greeting-avatar {@mixin avatar-container-large;float:right;margin:0 0 0 var(--space-4);position:relative;}
-.greeting-avatar:hover {@mixin hover-item;cursor:pointer;background:var(--color-background);}
-.greeting-title {@mixin text-subhead;}
-.greeting-description {@mixin text-body;margin:0 0 0;color:var(--color-text-light);line-height:var(--font-line-height-small)}
 
 .onboarding-control {@mixin group-button;margin:var(--space-4) 0 0 0;}
 .onboarding-control-next {@mixin button-primary;width:var(--grid-column);}
 .onboarding-control-skip {@mixin button-tertiary;width:var(--grid-column);} */
-
 /*
 
 .payment-method-list {@mixin stack;}
@@ -230,19 +229,6 @@ main,
 
   }
 } */
-
-
-
-
-.sample-container {
-  margin: 3rem -5vw 3.5rem;
-  padding: 4rem var(--grid-margin);
-  background: var(--color-background-weak);
-  border-radius: var(--radius);
-  box-sizing: border-box;
-  position: relative;
-  z-index: 1;
-}
 
 
 .purchase {border-radius:var(--radius);overflow:hidden;}

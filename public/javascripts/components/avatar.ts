@@ -11,15 +11,15 @@ class Avatar extends HTMLElement {
     const shadow = this.attachShadow({ mode: 'open' })
 
     const container = document.createElement('figure')
-    const badge = document.createElement('span')
-
-    // container.role = 'img'
     container.classList.add('avatar')
+    container.role = 'img'
+
+    const badge = document.createElement('span')
+    badge.classList.add('avatar-badge')
+
     if (this.size) container.dataset.size = this.size
     if (this.variant) container.dataset.variant = this.variant
     // container.innerHTML = this.content
-
-    badge.classList.add('avatar-badge')
 
     // TODO
     if (this.fallback) {

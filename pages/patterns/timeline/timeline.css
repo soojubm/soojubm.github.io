@@ -1,9 +1,8 @@
 .timeline-item-icon
 .timeline {position:relative;}
 .timeline ul {margin: var(--space-2) 0 0;}
-.timeline-date {@mixin tag;}
 
-.timeline-item {padding:.75rem 0 1rem calc(var(--size-medium) + var(--space-after-avatar-medium));position:relative;}
+.timeline-item {padding:var(--space-1) 0 var(--space-3) calc(var(--size-medium) + var(--space-after-avatar-medium));position:relative;}
 
 .timeline-item + .timeline-item  {margin-top:-1.125rem;}
 

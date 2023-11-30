@@ -12,3 +12,10 @@
 .accordion-panel p + p {margin:var(--space-2) 0 0 0;}
 [aria-expanded=true] .accordion-panel {display:block;padding:var(--space-3) 0;}
 [aria-expanded=true] .accordion-title-icon {transform:rotate(0)}
+
+
+
+.faq-item-reaction {}
+.faq-item-reaction-title {margin:0 0 var(--space-2) 0;@mixin text-subhead;}
+.faq-item-reaction-button {margin:0 2rem;color:var(--color-text-light);}
+.faq-item-reaction-button-emoji {display:block;font-size:var(--font-size-huge);}

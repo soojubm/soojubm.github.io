@@ -3,22 +3,25 @@
     <test-text variant="title">Texts</test-text>
     <test-text variant="body-large">작성 중.</test-text>
 
-    <p>message, text, description,</p>
-    <p>helper의 자식이 p ul 둘 다 될 수 있다.ㄴ</p>
+    <test-text>message, description,</test-text>
+    <test-text>helper의 자식이 p ul 둘 다 될 수 있다.ㄴ</test-text>
+    <test-text>
+      dl variant: 'summary' | 'statistic' | 'suggestion', size: 'medium' | 'large' / onClick?
+    </test-text>
 
     <section class="component-example">
       <test-text variant="title">heading1, title</test-text>
-      <test-text variant="subhead"
-        ><p style="margin-bottom: -0.5rem">heading2, subhead</p></test-text
-      >
+      <test-text variant="subhead">
+        <p style="margin-bottom: -0.5rem">heading2, subhead</p>
+      </test-text>
       <test-text variant="label">heading3, label</test-text>
-      <test-text variant="body-large">body1 (large) - post/ max-width 정의</test-text>
-      <test-text variant="body">body2 / max-width 정의</test-text>
+      <test-text variant="body-large">body1 (large)</test-text>
+      <test-text variant="body">body2</test-text>
       <test-text variant="body-bold">body bold - button & meta</test-text>
 
-      <footer
-        style="display: flex; flex-direction: column; gap: var(--space-2); margin: 1.5rem 0 0 0"
-      >
+      <test-separator></test-separator>
+
+      <footer style="display: flex; flex-direction: column; gap: var(--space-2)">
         <div style="display: flex; align-items: center; gap: var(--space-1)">
           <i class="iconoir-pipe-3d"></i>
           궁금증이 해결되지 않는다면?
@@ -50,6 +53,7 @@
       </section>
 
       <test-separator></test-separator>
+
       <section class="summary">
         <div class="summary-item">
           <div class="summary-item-label" style="font-weight: var(--font-weight-bold)">
@@ -126,7 +130,8 @@
         </div>
       </div>
 
-      <br />
+      <test-separator></test-separator>
+
       <p class="util-truncate">
         이런 생각을 한 건 다들 식탁에 앉은 후였고, 나는 재미있는 고래잡이 이야기를 들을 기대에
         부풀었다. 그런데 이거 참 놀랍게도 거의 모두가 깊은 침묵에 잠겼다. 그것도 모자라 다들
@@ -154,10 +159,13 @@
           <li>조건이 있어요</li>
         </ul> -->
       <ul>
-        <li>텍스트 목록만 리스트 태그(ul, ol, dl)로 마크업하세요. role=listbox/listitem</li>
         <li>
-          텍스트 목록을 2 댑스(nested)로 제공하지 마세요. 중첩된 목록은 콘텐츠를 읽기 어렵게 하고
-          작은 화면에서의 들여쓰기는 불필요한 공간을 차지합니다.
+          텍스트 목록만 리스트 태그(ul, ol, dl)로 마크업하세요. 그렇지 않으면 대부분의 컨텐츠가
+          리스트로 취급될 수 있음. role=listbox/listitem
+        </li>
+        <li>
+          텍스트 목록을 2 댑스(nested)로 제공하지 마세요. 중첩된 목록은 콘텐츠를 읽기 어렵게 하며
+          작은 화면에서는 공간을 낭비.
         </li>
         <li>todo. checklist.</li>
       </ul>
@@ -176,6 +184,8 @@
           View Less <test-icon name="nav-arrow-up"></test-icon>
         </button>
       </p>
+
+      <test-separator></test-separator>
 
       <div class="hero" style="max-width: 560px">
         <test-text variant="title">Hero heading</test-text>
@@ -279,20 +289,13 @@
   </article>
 
   <section class="section-example">
-    <div
-      class="dashboard-item overview-item tile-elevated"
-      style="width: var(--width-tiny); padding: 1rem"
-    >
-      <div class="dashboard-item-label" style="font-size: var(--font-size-medium)">수신</div>
-      <span class="dashboard-item-tag tag" style="position: absolute; right: 1rem; top: 0.875rem"
-        >태그</span
-      >
-      <b class="dashboard-item-value" style="font-size: var(--font-size-huge)">
-        1,508<small
-          style="margin: 0 0 0 0.25rem; font-size: var(--font-size-medium); vertical-align: super"
-          >90%</small
-        >
-      </b>
+    <div class="overview-item tile-elevated">
+      <test-text variant="body">수신</test-text>
+      <test-tag style="position: absolute; right: 1rem; top: 0.875rem">태그</test-tag>
+      <test-text variant="title" class="dashboard-item-value">
+        1,508
+        <small style="font-size: var(--font-size-medium); vertical-align: super">90%</small>
+      </test-text>
       <div class="meter">
         <div class="meter-track">
           <b class="meter-thumb" style="width: 68%"></b>
@@ -327,30 +330,32 @@
       </div>
     </div>
 
-    <article class="meter">
-      <h1 class="meter-title">200 GB 중 187.23 GB 사용됨</h1>
-      <div class="meter-graph">
-        <div class="meter-graph-item" data-type="facebook" style="width: 40%"></div>
-        <div class="meter-graph-item" data-type="twitter" style="width: 30%"></div>
-        <div class="meter-graph-item" data-type="instagram" style="width: 7%"></div>
-      </div>
-      <div class="meter-legend">
-        <div class="meter-legend-item">
-          <i class="meter-legend-item-color" data-type="facebook"></i>
-          <h3 class="meter-legend-item-title">페이스북</h3>
-          <span class="meter-legend-item-value">800,000원</span>
+    <test-tile>
+      <article slot="entire" class="meter">
+        <h1 class="meter-title">200 GB 중 187.23 GB 사용됨</h1>
+        <div class="meter-graph">
+          <div class="meter-graph-item" data-type="facebook" style="width: 40%"></div>
+          <div class="meter-graph-item" data-type="twitter" style="width: 30%"></div>
+          <div class="meter-graph-item" data-type="instagram" style="width: 7%"></div>
         </div>
-        <div class="meter-legend-item">
-          <i class="meter-legend-item-color" data-type="twitter"></i>
-          <h3 class="meter-legend-item-title">트위터</h3>
-          <span class="meter-legend-item-value">800,000원</span>
+        <div class="meter-legend">
+          <div class="meter-legend-item">
+            <i class="meter-legend-item-color" data-type="facebook"></i>
+            <h3 class="meter-legend-item-title">페이스북</h3>
+            <span class="meter-legend-item-value">800,000원</span>
+          </div>
+          <div class="meter-legend-item">
+            <i class="meter-legend-item-color" data-type="twitter"></i>
+            <h3 class="meter-legend-item-title">트위터</h3>
+            <span class="meter-legend-item-value">800,000원</span>
+          </div>
+          <div class="meter-legend-item">
+            <i class="meter-legend-item-color" data-type="instagram"></i>
+            <h3 class="meter-legend-item-title">핀터레스트</h3>
+            <span class="meter-legend-item-value">800,000원</span>
+          </div>
         </div>
-        <div class="meter-legend-item">
-          <i class="meter-legend-item-color" data-type="instagram"></i>
-          <h3 class="meter-legend-item-title">핀터레스트</h3>
-          <span class="meter-legend-item-value">800,000원</span>
-        </div>
-      </div>
-    </article>
+      </article>
+    </test-tile>
   </section>
 </main>

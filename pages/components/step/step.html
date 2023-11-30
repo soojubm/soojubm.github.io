@@ -10,52 +10,56 @@
     </dl>
 
     <section class="component-example">
-      <section class="step">
-        <div class="step-item is-active" aria-current="step">
-          <span class="step-item-icon">1</span>
-          <b class="step-item-label">장바구니</b>
-        </div>
-        <div class="step-item">
-          <span class="step-item-icon">2</span>
-          <b class="step-item-label">결제</b>
-        </div>
-        <div class="step-item">
-          <span class="step-item-icon">3</span>
-          <b class="step-item-label">주문완료</b>
-        </div>
-        <!-- <div class="step-space">
-          <span class="step-space-dot"></span>
-          <span class="step-space-dot"></span>
-          <span class="step-space-dot"></span>
-        </div> -->
-      </section>
-      <test-separator></test-separator>
-      <section class="step" data-align="vertical">
-        <div class="step-item is-active" aria-current="step">
-          <span class="step-item-icon">1</span>
-          <b class="step-item-label">장바구니</b>
-          <p class="step-item-description">
-            대통령은 국가의 원수이며, 외국에 대하여 국가를 대표한다. 국가원로자문회의의
-            조직·직무범위 기타 필요한 사항은 법률로 정한다. 국가는 대외무역을 육성하며, 이를
-            규제·조정할 수 있다.
-          </p>
-        </div>
-        <div class="step-item">
-          <span class="step-item-icon">2</span>
-          <b class="step-item-label">결제</b>
-        </div>
+      <test-card>
+        <section slot="entire" class="step">
+          <div class="step-item is-active" aria-current="step">
+            <span class="step-item-icon">1</span>
+            <b class="step-item-label">장바구니</b>
+          </div>
+          <div class="step-item">
+            <span class="step-item-icon">2</span>
+            <b class="step-item-label">결제</b>
+          </div>
+          <div class="step-item">
+            <span class="step-item-icon">3</span>
+            <b class="step-item-label">주문완료</b>
+          </div>
+          <div class="step-space">
+            <span class="step-space-dot"></span>
+            <span class="step-space-dot"></span>
+            <span class="step-space-dot"></span>
+          </div>
+        </section>
+      </test-card>
+      <br />
+      <test-card>
+        <section slot="entire" class="step" data-align="vertical">
+          <div class="step-item is-active" aria-current="step">
+            <span class="step-item-icon">1</span>
+            <b class="step-item-label">장바구니</b>
+            <p class="step-item-description">
+              대통령은 국가의 원수이며, 외국에 대하여 국가를 대표한다. 국가원로자문회의의
+              조직·직무범위 기타 필요한 사항은 법률로 정한다. 국가는 대외무역을 육성하며, 이를
+              규제·조정할 수 있다.
+            </p>
+          </div>
+          <div class="step-item">
+            <span class="step-item-icon">2</span>
+            <b class="step-item-label">결제</b>
+          </div>
 
-        <div class="step-item">
-          <span class="step-item-icon">3</span>
-          <b class="step-item-label">주문완료</b>
-        </div>
-      </section>
+          <div class="step-item">
+            <span class="step-item-icon">3</span>
+            <b class="step-item-label">주문완료</b>
+          </div>
+        </section>
+      </test-card>
     </section>
 
     <section class="component-props">
       <dl>
-        <dt></dt>
-        <dd></dd>
+        <dt>test</dt>
+        <dd>test</dd>
       </dl>
     </section>
 

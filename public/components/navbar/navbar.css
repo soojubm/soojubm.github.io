@@ -156,5 +156,4 @@
 
 .menu {position:relative;z-index:1;}
 .menu-heading {}
-.menu-link {display:flex;align-items:center;height:var(--size-medium);margin:var(--space-2) 0;@mixin text-subhead;position:relative;}
-/* .menu-link:hover {@mixin hover-item;} */
+.menu-link {display:flex;align-items:center;height:var(--size-medium);margin:var(--space-2) 0;}

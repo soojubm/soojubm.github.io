@@ -235,12 +235,11 @@ body {
 <aside class="modal newneek" role="presentation">
 
   <article class="modal-dialog" role="dialog">
-    <header class="titlebar" style="padding:0;">
-      <h1 class="titlebar-title">뉴닉</h1>
-      <button class="titlebar-back" aria-label="이전 페이지로">
-        <span class="material-symbols-outlined">arrow_back</span>
-      </button>
-    </header>
+    <test-titlebar heading="모달 제목">
+      <test-chip slot="back">
+        <test-icon slot="icon" name="arrow-left"></test-icon>
+      </test-chip>
+    </test-titlebar>
 
     <section class="modal-body">
       <section style="max-width:480px;margin:0 auto;">

@@ -10,7 +10,7 @@ class Tag extends HTMLElement {
     // role=itemlist
 
     // tag-icon role=image
-    const container = document.createElement('span')
+    const container = document.createElement(this.datetime ? 'time' : 'span')
     container.classList.add('tag')
     container.setAttribute('data-variant', this.variant || '')
 
@@ -40,6 +40,10 @@ class Tag extends HTMLElement {
   }
   set label(value) {
     if (value) this.setAttribute('label', value)
+  }
+
+  get datetime() {
+    return this.getAttribute('datetime')
   }
 
   connectedCallback() {}

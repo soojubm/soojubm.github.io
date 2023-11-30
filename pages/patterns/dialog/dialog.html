@@ -10,6 +10,7 @@
       <dt>a.k.a.</dt>
       <dd title="">Alert</dd>
       <dd title="">Modal</dd>
+      <dd title="lightning">Prompt</dd>
     </dl>
 
     <section class="component-example">
@@ -62,6 +63,26 @@
             <!-- <test-button variant="tertiary">볼래요</test-button>
             <test-button variant="primary">안 볼래요</test-button> -->
           </test-group>
+        </aside>
+        <test-separator></test-separator>
+        <aside
+          class="dialog"
+          role="alertdialog"
+          aria-modal="true"
+          aria-labelledby="dialog-title"
+          aria-describedby="dialog-description"
+        >
+          <h1 class="dialog-title" id="dialog-title">페이지를 나가시겠어요?</h1>
+          <p class="dialog-description" id="dialog-description">
+            아직 게시물을 공유하지 않았습니다. 게시하지 않고 나가시겠어요?
+          </p>
+          <footer class="dialog-footer">
+            <button>나가기</button>
+            <button>계속 작성</button>
+          </footer>
+          <button class="dialog-close js-close" aria-label="닫기">
+            <span class="material-symbols-outlined">close</span>
+          </button>
         </aside>
       </div>
     </section>

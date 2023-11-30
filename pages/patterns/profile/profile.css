@@ -10,15 +10,10 @@
 .profile-user-toggle {width:100%;margin:var(--space-4) 0;text-align:center;color:var(--color-text);position:relative;}
 .profile-user-toggle-icon {@mixin avatar-container-small;}
 .profile-user-toggle:hover {@mixin hover-item;}
-.profile-user-statistic {}
-
-
 
 .social {}
 .social-link {display:flex;align-items:center;position:relative;}
-.social-link + .social-link {margin-top:var(--space-3);}
 .social-link-icon {@mixin item-avatar-medium;background-image:none;}
-/* // TODO: background-image를 재설정할 필요 없도록. */
 .social-link-label {color:var(--color-text);}
 .social-link:hover {@mixin hover-item;}
 .social-facebook figure {background-color:var(--color-facebook);}
@@ -27,17 +22,14 @@
 .social-github figure {background-color:var(--color-github);}
 
 /* // todo active state
-// 포지션 라이트탑은. 불필요.
 // 텍스트(아바타를 제외한 엘리먼트)에 마진레프트를 주면 아이콘 버튼으로 사용할 ㅜㅅ 잇지만 코드가 많아짐. 어차피 토큰을 사용하면 문제 없음.
 // 여기서 변하는 값은 item height 뿐임.
-// avatar를 floating하면 아이콘 버튼으로 쓰기 어려운가? clearfix
-// 아이템의 크기에 따라 텍스트 갯수와 스타일이 달라짐.
 // todo... */
+
 .profile-body {padding:0 0 64px calc(320px + var(--size-large));box-sizing:border-box;position:relative;}
 
 .tabpanel {display:flex;flex-wrap:wrap;justify-content:space-between;}
 .tabpanel test-card {width:calc(33.3333% - .75rem);}
-
 
 @media (max-width: 1320px) {
   .profile {max-width:1000px;}
