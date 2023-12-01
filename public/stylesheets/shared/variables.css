@@ -148,7 +148,6 @@
   --space-before-tag: var(--space-05);
   --space-before-tag-minus: calc(var(--space-before-tag) * -1);
 
-
   --space-leading-title: -.25rem;
   --space-leading-subhead: -.125rem;
   --space-leading-body: -.125rem;

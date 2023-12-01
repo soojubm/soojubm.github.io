@@ -10,7 +10,7 @@
 .accordion-title-icon {@mixin icon-indicator;transform:rotate(90deg)}
 .accordion-panel {display:none;cursor:default;}
 .accordion-panel p + p {margin:var(--space-2) 0 0 0;}
-[aria-expanded=true] .accordion-panel {display:block;padding:var(--space-3) 0;}
+[aria-expanded=true] .accordion-panel {display:block;padding:var(--space-1) 0;}
 [aria-expanded=true] .accordion-title-icon {transform:rotate(0)}
 
 

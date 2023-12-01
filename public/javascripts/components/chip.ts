@@ -42,6 +42,8 @@ class Chip extends HTMLElement {
     const suffixSlot = document.createElement('slot')
     suffixSlot.name = 'suffix'
 
+    shadow.append(host, makeStyleSheet('chip'))
+
     // append 순서로 slot 순서를 결정할 수 있다.
     host.appendChild(iconSlot)
 
@@ -56,10 +58,7 @@ class Chip extends HTMLElement {
     // else {
     //   host.innerText = host.innerText
     // }
-
     host.appendChild(suffixSlot)
-
-    shadow.append(host, makeStyleSheet('chip'))
 
     // this.addEventListener('click', e => {
     //   if (this.disabled) return

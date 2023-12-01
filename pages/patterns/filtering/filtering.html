@@ -12,111 +12,105 @@
     <p>옵션 레이블 2단어 이하, 옵션 갯수 5개 이하 칩그룹을 사용한다.</p>
     <section class="component-example">
       <test-chip>
-        <test-icon name="filter"></test-icon>
+        <test-icon slot="icon" name="filter"></test-icon>
         <em class="badge">2</em>
       </test-chip>
-      <form class="filter" style="max-width: 640px">
-        <test-titlebar heading="필터">
-          <test-chip
-            slot="back"
-            onclick="javascript:window.location.href='/';"
-            aria-label="이전 페이지로 이동"
-          >
-            <test-icon slot="icon" name="arrow-left"></test-icon>
-          </test-chip>
-        </test-titlebar>
-        <fieldset class="filter-fieldset" role="radiogroup">
-          <legend class="filter-fieldset-legend">예약옵션</legend>
-          <test-tile variant="elevated" size="small">
-            <test-menuitem label="즉시 예약">
-              <test-avatar slot="avatar">🦊</test-avatar>
-              <test-switch slot="action"></test-switch>
-            </test-menuitem>
-          </test-tile>
-          <small class="setting-item-helper"
-            >호스트 승인을 기다릴 필요 없이 예약할 수 있는 숙소</small
-          >
-        </fieldset>
-
-        <test-separator></test-separator>
-
-        <fieldset class="filter-fieldset" role="radiogroup">
-          <legend class="filter-fieldset-legend">예산</legend>
-          <test-group alignment="vertical">
-            <test-radio id="gender-man" name="gender" value="" label="50,000원 미만"> </test-radio>
-            <test-radio label="100,000원 미만"> </test-radio>
-            <test-radio label="150,000원 미만"> </test-radio>
-          </test-group>
-          <br />
-          <small>예를 들어 다음과 같습니다.</small>
-          <test-tile size="small">
-            <test-avatar></test-avatar>
-          </test-tile>
-        </fieldset>
-        <test-separator></test-separator>
-        <fieldset class="filter-fieldset" role="radiogroup">
-          <legend class="filter-fieldset-legend">평수</legend>
-          <test-chip-group>
-            <test-chip label="10평 미만">10평 미만</test-chip>
-            <test-chip label="20평"></test-chip>
-            <test-chip label="30평"></test-chip>
-          </test-chip-group>
-        </fieldset>
-        <test-separator></test-separator>
-        <fieldset class="filter-fieldset" role="radiogroup">
-          <legend class="filter-fieldset-legend">접근성 편의</legend>
-          <p class="filter-fieldset-description">
-            호스트가 제공하고 에어비앤비에서 검토한 정보입니다.
-          </p>
-          <test-group alignment="vertical">
-            <test-checkbox value="" label="게스트 출입구에 계단이나 문턱 없음"> </test-checkbox>
-            <test-checkbox value="other" label="너비 81cm 이상의 게스트 출입구"> </test-checkbox>
-            <test-checkbox value="other" label="휠체어 접근 가능 주차 공간"> </test-checkbox>
-          </test-group>
-        </fieldset>
-
-        <test-separator></test-separator>
-
-        <fieldset class="filter-fieldset" role="radiogroup">
-          <legend class="filter-fieldset-legend">릴리스 채널</legend>
-          <div class="textfield" style="max-width: 300px">
-            <label class="textfield-label" for="">레이블</label>
-            <select name="" id="" class="textfield-input">
-              <option value=""></option>
-            </select>
-          </div>
-          <p
-            class="filter-fieldset-description"
-            style="color: var(--color-text); margin-top: 0.5rem"
-          >
-            참고: 이 설정은 이 컴퓨터에만 적용됩니다. 앱 업데이트를 받으려면 Slack을 다시 시작해야
-            할 수도 있습니다.
-          </p>
-        </fieldset>
-
-        <test-separator></test-separator>
-
-        <fieldset class="filter-fieldset" role="radiogroup">
-          <legend class="filter-fieldset-legend">데스크톱에서 활성 상태가 아닌 경우...</legend>
-          <p class="filter-fieldset-description">
-            참고: 이 설정은 이 컴퓨터에만 적용됩니다. 앱 업데이트를 받으려면 Slack을 다시 시작해야
-            할 수도 있습니다.
-          </p>
-          <test-group alignment="vertical">
-            <test-checkbox label="멘션 및 다이렉트 메시지에 대한 이메일 알림 받기"></test-checkbox>
+      <test-card style="max-width: 640px; margin: var(--space-1) 0 0">
+        <form slot="entire" class="filter">
+          <test-titlebar heading="필터">
+            <test-chip slot="back" aria-label="이전 페이지로 이동">
+              <test-icon slot="icon" name="arrow-left"></test-icon>
+            </test-chip>
+          </test-titlebar>
+          <fieldset class="filter-fieldset" role="radiogroup">
+            <legend class="filter-fieldset-legend">예약옵션</legend>
+            <test-tile variant="elevated" size="small">
+              <test-menuitem label="즉시 예약">
+                <test-avatar slot="avatar">🦊</test-avatar>
+                <test-switch slot="action"></test-switch>
+              </test-menuitem>
+            </test-tile>
+            <small class="setting-item-helper">
+              호스트 승인을 기다릴 필요 없이 예약할 수 있는 숙소
+            </small>
+          </fieldset>
+          <test-separator></test-separator>
+          <fieldset class="filter-fieldset" role="radiogroup">
+            <legend class="filter-fieldset-legend">예산</legend>
             <test-group alignment="vertical">
+              <test-radio id="gender-man" name="gender" value="" label="50,000원 미만">
+              </test-radio>
+              <test-radio label="100,000원 미만"> </test-radio>
+              <test-radio label="150,000원 미만"> </test-radio>
+            </test-group>
+            <br />
+            <small>예를 들어 다음과 같습니다.</small>
+            <test-tile size="small">
+              <test-avatar></test-avatar>
+            </test-tile>
+          </fieldset>
+          <test-separator></test-separator>
+          <fieldset class="filter-fieldset" role="radiogroup">
+            <legend class="filter-fieldset-legend">평수</legend>
+            <test-chip-group>
+              <test-chip label="10평 미만">10평 미만</test-chip>
+              <test-chip label="20평"></test-chip>
+              <test-chip label="30평"></test-chip>
+            </test-chip-group>
+          </fieldset>
+          <test-separator></test-separator>
+          <fieldset class="filter-fieldset" role="radiogroup">
+            <legend class="filter-fieldset-legend">접근성 편의</legend>
+            <p class="filter-fieldset-description">
+              호스트가 제공하고 에어비앤비에서 검토한 정보입니다.
+            </p>
+            <test-group alignment="vertical">
+              <test-checkbox value="" label="게스트 출입구에 계단이나 문턱 없음"> </test-checkbox>
+              <test-checkbox value="other" label="너비 81cm 이상의 게스트 출입구"> </test-checkbox>
+              <test-checkbox value="other" label="휠체어 접근 가능 주차 공간"> </test-checkbox>
+            </test-group>
+          </fieldset>
+          <test-separator></test-separator>
+          <fieldset class="filter-fieldset" role="radiogroup">
+            <legend class="filter-fieldset-legend">릴리스 채널</legend>
+            <div class="textfield" style="max-width: 300px">
+              <label class="textfield-label" for="">레이블</label>
+              <select name="" id="" class="textfield-input">
+                <option value=""></option>
+              </select>
+            </div>
+            <p class="filter-fieldset-description">
+              참고: 이 설정은 이 컴퓨터에만 적용됩니다. 앱 업데이트를 받으려면 Slack을 다시 시작해야
+              할 수도 있습니다.
+            </p>
+          </fieldset>
+
+          <test-separator></test-separator>
+
+          <fieldset class="filter-fieldset" role="radiogroup">
+            <legend class="filter-fieldset-legend">데스크톱에서 활성 상태가 아닌 경우...</legend>
+            <p class="filter-fieldset-description">
+              참고: 이 설정은 이 컴퓨터에만 적용됩니다. 앱 업데이트를 받으려면 Slack을 다시 시작해야
+              할 수도 있습니다.
+            </p>
+            <test-group alignment="vertical">
+              <test-checkbox
+                label="멘션 및 다이렉트 메시지에 대한 이메일 알림 받기"
+              ></test-checkbox>
               <div style="margin-left: 1.5rem">
-                <test-radio checked label="15분 마다 한 번"></test-radio>
-                <test-radio label="한 시간에 한 번"></test-radio>
+                <test-group alignment="vertical">
+                  <test-radio checked label="15분 마다 한 번"></test-radio>
+                  <test-radio label="한 시간에 한 번"></test-radio>
+                </test-group>
               </div>
             </test-group>
+          </fieldset>
+          <test-group>
+            <test-button variant="primary">적용/숙소 25개 표시 (todo fixed) </test-button>
+            <test-button variant="text">전체 해제</test-button>
           </test-group>
-        </fieldset>
-        <test-group class="filter-foot">
-          <test-button variant="primary">적용/숙소 25개 표시 (todo fixed) </test-button>
-          <test-button variant="text">전체 해제</test-button>
-        </test-group>
-      </form>
+        </form>
+      </test-card>
     </section>
   </article>
 
@@ -125,7 +119,6 @@
     <test-text variant="body-large">막연한 검색</test-text>
     <section class="component-example">
       <test-group>
-        <!-- <DropdownTrigger></DropdownTrigger> -->
         <test-chip label="예약옵션" class="js-toggle" aria-expanded="true">
           <test-icon slot="suffix" name="nav-arrow-down"></test-icon>
         </test-chip>
@@ -156,7 +149,7 @@
     </section>
 
     <test-text variant="subhead">필터의 적용</test-text>
-    <p>onChange: 옵션 선택 시 적용. 서버 부담?</p>
+    <p>onChange: 옵션 선택 시 적용.</p>
 
     <test-text variant="subhead">궁굼이 & 생각</test-text>
     <ul>
