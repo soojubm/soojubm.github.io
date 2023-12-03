@@ -17,6 +17,10 @@
   width: 100%;
 }
 
+.group[data-direction=row] {}
+.group[data-direction=column] {}
+.group[data-alignment=right] {}
+
 .group[data-alignment=bleeding-vertical] {
   /* display:flex; */
   flex-wrap: nowrap;

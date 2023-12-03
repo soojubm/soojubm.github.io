@@ -21,7 +21,7 @@
           <test-text variant="body">사진 및 동영상 백업</test-text>
           <test-text variant="label">디스크립션이다</test-text>
         </div>
-        <test-chip slot="action" label="버튼"></test-chip>
+        <test-chip slot="action">버튼</test-chip>
       </test-menuitem>
 
       <test-menu-group>
@@ -30,7 +30,7 @@
         </test-menuitem>
         <test-menuitem role="menuitemradio" label="메뉴아이템 스위치">
           <test-avatar slot="avatar"></test-avatar>
-          <test-switch slot="action" label=""> </test-switch>
+          <test-switch slot="action" label=""></test-switch>
         </test-menuitem>
         <test-menuitem label="메뉴아이템 체크박스" role="menuitemcheckbox">
           <test-avatar slot="avatar"></test-avatar>
@@ -51,8 +51,10 @@
         <test-menuitem label="windows 패턴">
           <test-avatar slot="avatar"></test-avatar>
           <test-group slot="action">
-            <test-chip label="with quick action"></test-chip>
-            <test-avatar fallback=" "><test-icon name="arrow-right"></test-icon></test-avatar>
+            <test-chip>with quick action</test-chip>
+            <test-avatar fallback=" ">
+              <test-icon name="arrow-right"></test-icon>
+            </test-avatar>
           </test-group>
         </test-menuitem>
         <test-tile variant="elevated" size="small" role="menuitemcheckbox">
@@ -213,7 +215,7 @@
     <test-card variant="flat">
       <div slot="entire" class="access">
         <test-titlebar heading="공개 대상 선택">
-          <test-chip slot="back" status="info">
+          <test-chip slot="back" variant="plain">
             <test-icon slot="icon" name="arrow-left"></test-icon>
           </test-chip>
         </test-titlebar>
@@ -357,7 +359,7 @@
           </test-avatar-group>
         </div>
         <test-text slot="description">멤바 45명</test-text>
-        <test-chip slot="action" label="추가"></test-chip>
+        <test-chip slot="action">추가</test-chip>
       </test-menuitem>
   
       <br />
@@ -537,9 +539,7 @@
   >
     <button class="story" role="tab" aria-selected="true" data-index="1">
       <figure class="avatar" data-size="huge" style="background-image: none">
-        <span class="material-symbols-outlined" style="font-size: 3rem; color: var(--color-text)"
-          >+</span
-        >
+        <span class="material-symbols-outlined">+</span>
       </figure>
       <span class="story-name">추가</span>
     </button>

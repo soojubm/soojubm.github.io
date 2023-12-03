@@ -30,14 +30,14 @@ class Input extends HTMLElement {
     input.setAttribute('type', this.type || 'text')
     input.setAttribute('placeholder', this.placeholder || '')
 
+    const prefixSlot = document.createElement('slot')
+    prefixSlot.name = 'prefix'
+
     if (this.value) input.setAttribute('value', this.value)
 
     if (this.disabled) {
       input.setAttribute('disabled', String(this.disabled))
     }
-
-    const prefixSlot = document.createElement('slot')
-    prefixSlot.name = 'prefix'
 
     const suffixSlot = document.createElement('slot')
     suffixSlot.name = 'suffix'
@@ -46,7 +46,7 @@ class Input extends HTMLElement {
     linkSlot.name = 'link'
 
     shadow.appendChild(container)
-    container.append(label, input, prefixSlot, suffixSlot, linkSlot, makeStyleSheet('textfield'))
+    container.append(prefixSlot, label, input, suffixSlot, linkSlot, makeStyleSheet('textfield'))
 
     if (this.isInvalid) {
       container.classList.add('is-invalid')

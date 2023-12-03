@@ -38,7 +38,7 @@ class Checkbox extends CustomHTMLElement {
     container.appendChild(label)
 
     if (this.label) {
-      label.textContent = this.label
+      label.textContent = this.textContent || this.label
     } else {
       label.append(...this.childNodes)
     }

@@ -4,7 +4,7 @@
     <test-text variant="body-large">작성 중.</test-text>
 
     <test-text>message, description,</test-text>
-    <test-text>helper의 자식이 p ul 둘 다 될 수 있다.ㄴ</test-text>
+    <test-text>p와 ul, dl 등은 항상 텍스트.</test-text>
     <test-text>
       dl variant: 'summary' | 'statistic' | 'suggestion', size: 'medium' | 'large' / onClick?
     </test-text>
@@ -80,6 +80,21 @@
         </div>
       </section>
 
+      <br />
+
+      <div class="statistic" data-size="small">
+        <div class="statistic-item">
+          <i class="statistic-label">TODO 없어도? Repository</i>
+          <span class="statistic-value">100만 이상</span>
+        </div>
+        <div class="statistic-item">
+          <i class="statistic-label">Size</i>
+          <span class="statistic-value">Small</span>
+        </div>
+      </div>
+
+      <br />
+
       <dl>
         <dt style="color: var(--color-text-light)">Metadata</dt>
         <dd>description list</dd>
@@ -97,20 +112,9 @@
 
       <br />
 
-      <div class="statistic" data-size="small">
-        <div class="statistic-item">
-          <i class="statistic-label">TODO 없어도? Repository</i>
-          <span class="statistic-value">100만 이상</span>
-        </div>
-        <div class="statistic-item">
-          <i class="statistic-label">Size</i>
-          <span class="statistic-value">Small</span>
-        </div>
-      </div>
-
       <div class="statistic-item">
         <test-text variant="label">Repository</test-text>
-        <test-text variant="body-bold">100만 이상</test-text>
+        <test-text variant="body-bold">100만 이상. TODO with avatar 형태.</test-text>
       </div>
 
       <br />

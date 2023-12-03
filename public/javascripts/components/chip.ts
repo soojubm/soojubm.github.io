@@ -39,25 +39,30 @@ class Chip extends HTMLElement {
     const iconSlot = document.createElement('slot')
     iconSlot.name = 'icon'
 
+    const prefixSlot = document.createElement('slot')
+    prefixSlot.name = 'prefix'
+
     const suffixSlot = document.createElement('slot')
     suffixSlot.name = 'suffix'
 
     shadow.append(host, makeStyleSheet('chip'))
 
-    // append 순서로 slot 순서를 결정할 수 있다.
-    host.appendChild(iconSlot)
-
     if (this.name) {
       name.innerText = this.name || ''
       host.appendChild(name)
     }
-    if (this.label) {
-      label.innerText = this.label || ''
-      host.appendChild(label)
-    }
-    // else {
-    //   host.innerText = host.innerText
-    // }
+    // console.log(this.textContent)
+
+    // append 순서로 slot 순서를 결정할 수 있다.
+    host.appendChild(iconSlot)
+
+    host.appendChild(prefixSlot)
+
+    // TODO label tag
+    // if (this.textContent && this.textContent.length > 0) {}
+    label.innerText = this.textContent || ''
+    host.appendChild(label)
+
     host.appendChild(suffixSlot)
 
     // this.addEventListener('click', e => {
@@ -67,8 +72,8 @@ class Chip extends HTMLElement {
 
     // b.append(...this.childNodes)
 
-    // TODO info naked
-    if (this.status === 'info') host.dataset.status = 'info'
+    if (this.variant === 'plain') host.dataset.status = 'plain'
+
     if (this.status === 'active') host.setAttribute('aria-selected', 'true')
     if (this.status === 'disabled') host.setAttribute('disabled', 'true')
     if (this.status === 'checked') host.setAttribute('aria-checked', 'true')
@@ -79,13 +84,14 @@ class Chip extends HTMLElement {
   //   return ['size', 'status', 'icon', 'type', 'value', 'label']
   // }
 
-  get content() {
-    return this.innerHTML
-  }
-
   get size() {
     return this.getAttribute('size')
   }
+
+  get variant() {
+    return this.getAttribute('variant')
+  }
+
   get status() {
     return this.getAttribute('status')
   }
@@ -97,9 +103,6 @@ class Chip extends HTMLElement {
   }
   get name() {
     return this.getAttribute('name')
-  }
-  get label() {
-    return this.getAttribute('label')
   }
 
   connectedCallback() {}

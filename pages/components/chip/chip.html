@@ -3,10 +3,19 @@
 
   <article class="article js-observer js-scrollspy-section">
     <test-text variant="title">Chips</test-text>
-    <test-text variant="body-large"
-      >사용자 여정을 보조하는 액션입니다. 실행 페이지에서 사용자는 즉각적인 결과를 기대할 수
-      있습니다.</test-text
-    >
+    <test-text variant="body-large">
+      사용자 여정을 보조하는 액션입니다. 실행 페이지에서 사용자는 즉각적인 결과를 기대할 수
+      있습니다.
+    </test-text>
+
+    <blockquote>
+      <p>
+        MEMO: label attribute 사용하지 않기. 컴포넌트의 형태와 분리. 단 slot으로 들어간 이모지를
+        textContent가 가져옴..
+      </p>
+      <p>MEMO: slot icon / avatar의 차이. menuitem은 아바타. 모든 icon이 아바타가 될 수 있나.</p>
+      <p>MEMO: Text only는 plain이 될 수 없다.</p>
+    </blockquote>
     <dl class="article-aka" style="margin: 0">
       <dt>a.k.a.</dt>
       <dd>Tag</dd>
@@ -18,41 +27,35 @@
 
     <section class="component-example">
       <test-chip-group>
-        <test-chip label="default"></test-chip>
-        <test-chip label="active" status="active"></test-chip>
-        <test-chip label="disabled" status="disabled">
-          style="opacity: 0.5; cursor: not-allowed" disabled</test-chip
-        >
-        <test-chip label="destructive" status="destructive">
-          background: var(--red100) / color: var(--red800)</test-chip
-        >
+        <test-chip>default</test-chip>
+        <test-chip status="active">active</test-chip>
+        <test-chip status="disabled" data-temp="opacity: 0.5; cursor: not-allowed">
+          disabled
+        </test-chip>
+        <test-chip status="destructive">TODO variant: destructive</test-chip>
       </test-chip-group>
       <test-separator></test-separator>
       <test-chip-group>
-        <test-chip label="checkable" status="checked">
-          <test-icon slot="icon" name="check"></test-icon>
+        <test-chip status="checked">
+          <test-icon slot="prefix" name="check"></test-icon>
+          checkable
         </test-chip>
-        <test-chip label="removable / clearable" status="checked">
+        <test-chip status="checked">
           <test-icon slot="suffix" name="xmark"></test-icon>
+          removable / clearable
         </test-chip>
-        <test-chip label="expandable" aria-expanded="true">
+        <test-chip aria-expanded="true">
           <test-icon slot="suffix" name="nav-arrow-down"></test-icon>
+          expandable
         </test-chip>
-        <test-chip label="with icon">
-          <i slot="icon">🦔</i>
+        <test-chip>
+          <i slot="prefix">🦔</i>
+          with icon
         </test-chip>
-        <test-chip icon="" label="좋아요" value="117">
-          <i slot="icon">❤️</i>
-          <!-- <div slot="suffix" style="margin-left: -0.5rem"><test-badge>11</test-badge></div> -->
-        </test-chip>
-      </test-chip-group>
-      <test-separator></test-separator>
-      <test-chip-group>
-        <test-chip name="Filter" label="Created by anyone">
-          <test-icon slot="suffix" name="nav-arrow-down"></test-icon>
-        </test-chip>
-        <test-chip status="info" name="Sort" label="Last modified">
-          <test-icon slot="suffix" name="nav-arrow-down"></test-icon>
+        <test-chip icon="" value="117">
+          <i slot="prefix">❤️</i>
+          좋아요
+          <!-- <test-badge>11</test-badge> -->
         </test-chip>
       </test-chip-group>
       <test-separator></test-separator>
@@ -60,27 +63,26 @@
         <test-searchfield size="small" placeholder="검색꾸">
           <test-icon slot="prefix" name="search" size="small"></test-icon>
         </test-searchfield>
-        <test-chip name="Filter" label="오늘">
+        <test-chip name="Filter">
           <test-icon slot="suffix" name="nav-arrow-down"></test-icon>
+          Created by anyone
         </test-chip>
         <div style="margin-left: auto">
-          <test-chip status="info" name="Sort" label="최신순">
+          <test-chip variant="plain" name="Sort">
+            Last modified
             <test-icon slot="suffix" name="nav-arrow-down"></test-icon>
           </test-chip>
         </div>
       </test-chip-group>
       <test-separator></test-separator>
-      <div style="display: flex">
-        <test-chip label="">
-          <i slot="icon">🦔</i>
-        </test-chip>
-        <test-chip status="info" label="">
+      <test-chip-group>
+        <test-chip>
           <test-icon slot="icon" name="user"></test-icon>
         </test-chip>
-        <test-chip status="info" label="">
+        <test-chip variant="plain">
           <test-icon slot="icon" name="bell"></test-icon>
         </test-chip>
-      </div>
+      </test-chip-group>
     </section>
 
     <section class="component-props">
@@ -107,6 +109,8 @@
         <dt>ariaHaspopup<attr>?</attr></dt>
         <dd>null</dd>
         <dd>TODO</dd>
+        <dt>slot</dt>
+        <dd>'icon' | 'prefix' | 'suffix'</dd>
       </dl>
     </section>
 
@@ -158,49 +162,55 @@
     <test-text variant="subhead">Action Button<sup>keyword searching</sup></test-text>
     <section class="component-case">
       <test-group class="keywords-group">
-        <test-chip label="로얄테넌바움"></test-chip>
-        <test-chip label="소매치기"></test-chip>
-        <test-chip label="이탈리아여행"></test-chip>
-        <test-chip label="아파트열쇠를빌려드립니다"></test-chip>
+        <test-chip>로얄테넌바움</test-chip>
+        <test-chip>소매치기</test-chip>
+        <test-chip>이탈리아여행</test-chip>
+        <test-chip>아파트열쇠를빌려드립니다</test-chip>
       </test-group>
     </section>
 
     <test-text variant="subhead">Contents filtering<sup>single selection</sup></test-text>
     <section class="component-case">
       <test-group>
-        <test-chip label="전체" status="active" class="js-toggle is-active"></test-chip>
-        <test-chip label="결제완료" class="js-toggle"></test-chip>
+        <test-chip status="active" class="js-toggle is-active">전체</test-chip>
+        <test-chip class="js-toggle">결제완료</test-chip>
       </test-group>
       <test-separator></test-separator>
       <test-group aria-multiselectable="true">
-        <test-chip role="option" aria-selected="true" status="checked" label="소설">
-          <test-icon slot="icon" name="check"></test-icon>
+        <test-chip role="option" aria-selected="true" status="checked">
+          <test-icon slot="prefix" name="check"></test-icon>
+          소설
         </test-chip>
-        <test-chip role="option" aria-selected="false" status="checked" label="영화">
-          <test-icon slot="icon" name="check"></test-icon>
+        <test-chip role="option" aria-selected="false" status="checked">
+          <test-icon slot="prefix" name="check"></test-icon>
+          영화
         </test-chip>
-        <test-chip label="타이포그래피" role="option" aria-selected="false"></test-chip>
+        <test-chip role="option" aria-selected="false">타이포그래피</test-chip>
       </test-group>
     </section>
 
-    <test-text variant="subhead">Toggle Button / 아니면 아이콘 ? selection</test-text>
+    <test-text variant="subhead"
+      >Toggle Button / 아니면 아이콘 ? selection / menu item, checkbox로 대체?</test-text
+    >
     <section class="component-case">
       <test-chip-group>
-        <test-chip label="팔로우" status="active"></test-chip>
-        <test-chip label="팔로우 중"></test-chip>
+        <test-chip status="active">팔로우</test-chip>
+        <test-chip>팔로우 중</test-chip>
       </test-chip-group>
       <test-separator></test-separator>
       <test-chip-group>
-        <test-chip label="추가하기">
-          <test-icon slot="icon" name="plus"></test-icon>
+        <test-chip>
+          <test-icon slot="prefix" name="plus"></test-icon>
+          추가하기
         </test-chip>
-        <test-chip label="추가됨" status="checked">
-          <test-icon slot="icon" name="check"></test-icon>
+        <test-chip status="checked">
+          <test-icon slot="prefix" name="check"></test-icon>
+          추가됨
         </test-chip>
       </test-chip-group>
       <test-separator></test-separator>
       <test-chip-group>
-        <test-chip label="TODO 좋아요" status="active"></test-chip>
+        <test-chip status="active" TODO 좋아요></test-chip>
       </test-chip-group>
     </section>
 
@@ -211,20 +221,22 @@
     <section class="component-case">
       <test-group>
         <div class="dropdown">
-          <test-chip label="필터" class="js-toggle" aria-expanded="true">
-            <test-icon slot="icon" name="filter"></test-icon>
+          <test-chip class="js-toggle" aria-expanded="true">
+            <test-icon slot="prefix" name="filter"></test-icon>
+            필터
           </test-chip>
           <test-tile variant="elevated" size="small" style="max-width: 300px; position: absolute">
             <test-menu-group class="dropdown-menu">
               <test-radio name="gogo" value="">1~3명</test-radio>
               <test-radio name="gogo" value="">1~3명</test-radio>
-              <test-chip label="적용"></test-chip>
+              <test-chip>적용</test-chip>
             </test-menu-group>
           </test-tile>
         </div>
         <div class="dropdown">
-          <test-chip label="최신순" aria-expanded="true">
+          <test-chip aria-expanded="true">
             <test-icon slot="suffix" name="nav-arrow-up"></test-icon>
+            최신순
           </test-chip>
           <test-tile variant="elevated" size="small" style="max-width: 300px; position: absolute">
             <test-menu-group class="dropdown-menu">
@@ -296,12 +308,12 @@
         <test-text variant="subhead">지금 인기있는<br />이슈 키워드</test-text>
         <div style="height: var(--space-after-subhead)"></div>
         <test-chip-group>
-          <test-chip label="국정감사"></test-chip>
-          <test-chip label="윤석열검찰총장"></test-chip>
-          <test-chip label="조국"></test-chip>
-          <test-chip label="뉴닉"></test-chip>
-          <test-chip label="차별금지법"></test-chip>
-          <test-chip label="추미매법무부장관"></test-chip>
+          <test-chip>뉴닉</test-chip>
+          <test-chip>국정감사</test-chip>
+          <test-chip>윤석열검찰총장</test-chip>
+          <test-chip>조국</test-chip>
+          <test-chip>차별금지법</test-chip>
+          <test-chip>추미매법무부장관</test-chip>
         </test-chip-group>
         <div style="height: var(--space-after-subhead)"></div>
         <!-- <test-tile variant="flat" size="small" style="margin:var(--space-3) 0 0;"> -->
