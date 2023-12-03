@@ -344,22 +344,53 @@
       </dl>
     </section>
 
-    <test-menuitem size="large">
-      <test-avatar slot="avatar" size="large"></test-avatar>
-      <div slot="text" style="margin-top: -0.25rem">
-        <test-text variant="body">사진 및 동영상 백업</test-text>
-        <test-avatar-group>
-          <test-avatar size="small"></test-avatar>
-          <test-avatar size="small"></test-avatar>
-          <test-avatar size="small"></test-avatar>
-          <test-avatar size="small"></test-avatar>
-        </test-avatar-group>
-      </div>
-      <test-text slot="description">멤바 45명</test-text>
-      <test-chip slot="action" label="추가"></test-chip>
-    </test-menuitem>
+    <section class="component-guide">
+      <test-menuitem size="large">
+        <test-avatar slot="avatar" size="large"></test-avatar>
+        <div slot="text" style="margin-top: -0.25rem">
+          <test-text variant="body">사진 및 동영상 백업</test-text>
+          <test-avatar-group>
+            <test-avatar size="small"></test-avatar>
+            <test-avatar size="small"></test-avatar>
+            <test-avatar size="small"></test-avatar>
+            <test-avatar size="small"></test-avatar>
+          </test-avatar-group>
+        </div>
+        <test-text slot="description">멤바 45명</test-text>
+        <test-chip slot="action" label="추가"></test-chip>
+      </test-menuitem>
+  
+      <br />
+  
+      <test-callout icon="📌">
+        제품의 초기 단계에서는 native select와 dropdown을 함께 가져갈 필요가 있나. native select는
+        모바일 사용성이 좋고 초기 구축이 쉽다. 그러나 제품 또는 제품 개발 과정이 궤도에 올라왔을 때는
+        일정 수준의 컴포넌트가 확보되어 있을 것이기 때문. naming select / width / input bar(google
+        font)
+      </test-callout>
+  
+      <test-text variant="subhead">Best practices</test-text>
+      <ul>
+        <li>
+          셀렉트 옵션의 텍스트 길이에 맞춰 너비가 조절된다. indicator를 position으로 넣고 옵션에
+          말줄임표를 넣어야.
+        </li>
+        <li>레이블 클릭해도 셀렉트가 열리지 않기 때문에 id prop 불필요.</li>
+        <li>
+          다중 선택(combobox)을 셀렉트로 제공하지 마세요. 가 아니라 애초에 콤보박스라는 컴포넌트
+          정의가 안 되어 있음. chip group으로 선택 옵션을 풀어서 제공하세요. 너무 많은 선택에서는
+          콤보박스가 필요. 하지만 그냥 모달 등의 새로운 뷰로 대체하는 게 모바일 친화적.
+        </li>
+        <li>
+          memo. 레이블을 포함하는 형태. select 엘리먼트가 아니라 부모 엘리먼트에 컨테이너 스타일링이
+          필요하고, 클릭 영역까지 지정해야 했다. 그리고 드롭다운으로 구현해야 한다.
+        </li>
+        <li>caret indicator</li>
+      </ul>
+      var selected = Array.from(dnd.options).filter((option) => { return option.selected;
+      }).map((option) => option.value);
+    </section>
 
-    <br />
 
     <test-callout icon="📌" heading="잠깜만!">
       제품의 초기 단계에서는 native select와 dropdown을 함께 가져갈 필요가 있나. native select는
@@ -367,30 +398,45 @@
       일정 수준의 컴포넌트가 확보되어 있을 것이기 때문. naming select / width / input bar(google
       font)
     </test-callout>
+  </article>
+
+  <article class="article">
+    <test-text variant="title">Entity</test-text>
+    <test-text variant="body-large">개체. menu item과 구별이 되나?</test-text>
+
+    <section class="component-example">
+      <test-group alignment="vertical">
+        <test-entity
+          size="huge"
+          label="이거 subhead는 형태이고 name은 역할인데."
+          description="list로 사용할 때 maxWidth"
+          description2="description area2."
+        >
+          <test-avatar slot="avatar" size="huge" variant="secondary"></test-avatar>
+        </test-entity>
+        <test-menuitem size="large" label="EntityLarge" description="individual, user">
+          <test-avatar slot="avatar" size="large"></test-avatar>
+        </test-menuitem>
+        <test-menuitem label="EntityMedium" time="36.4만">
+          <test-avatar slot="avatar"></test-avatar>
+          <test-chip slot="action" class="item-delete"></test-chip>
+        </test-menuitem>
+        <test-menuitem size="small" label="EntitySmall">
+          <test-avatar slot="avatar" size="small"></test-avatar>
+        </test-menuitem>
+      </test-group>
+    </section>
 
     <test-text variant="subhead">Best practices</test-text>
     <ul>
       <li>
-        셀렉트 옵션의 텍스트 길이에 맞춰 너비가 조절된다. indicator를 position으로 넣고 옵션에
-        말줄임표를 넣어야.
+        크기 별로 특정 컨테이너의 주체가 나뉜다. 예를 들면 huge는 페이지 레벨의 정보 주체가 될 수
+        있음.
       </li>
-      <li>레이블 클릭해도 셀렉트가 열리지 않기 때문에 id prop 불필요.</li>
-      <li>
-        다중 선택(combobox)을 셀렉트로 제공하지 마세요. 가 아니라 애초에 콤보박스라는 컴포넌트
-        정의가 안 되어 있음. chip group으로 선택 옵션을 풀어서 제공하세요. 너무 많은 선택에서는
-        콤보박스가 필요. 하지만 그냥 모달 등의 새로운 뷰로 대체하는 게 모바일 친화적.
-      </li>
-      <li>
-        memo. 레이블을 포함하는 형태. select 엘리먼트가 아니라 부모 엘리먼트에 컨테이너 스타일링이
-        필요하고, 클릭 영역까지 지정해야 했다. 그리고 드롭다운으로 구현해야 한다.
-      </li>
-      <li>caret indicator</li>
+      <li>학습이 필요없는 보편 케이스와 도메인에 종속적인 특수 케이스를 구분하기.</li>
     </ul>
-    var selected = Array.from(dnd.options).filter((option) => { return option.selected;
-    }).map((option) => option.value);
 
   </article>
-
   
   <article class="article">
     <test-text variant="title">Entity</test-text>
@@ -477,4 +523,34 @@
   target="_blank"
   rel="noopener noreferrer" -->
   </section>
+
+  <!-- data-scroll="vertical" -->
+  <nav
+    style="
+      display: flex;
+      gap: var(--space-4);
+      margin: 1.25rem 0 0 0;
+      text-align: center;
+      overflow: hidden;
+    "
+    role="tablist"
+  >
+    <button class="story" role="tab" aria-selected="true" data-index="1">
+      <figure class="avatar" data-size="huge" style="background-image: none">
+        <span class="material-symbols-outlined" style="font-size: 3rem; color: var(--color-text)"
+          >+</span
+        >
+      </figure>
+      <span class="story-name">추가</span>
+    </button>
+    <test-entity description="공유하기" data-index="keyword">
+      <test-avatar slot="avatar" size="huge" fallback="🌏"></test-avatar>
+    </test-entity>
+    <test-entity description="키워드목록">
+      <test-avatar slot="avatar" size="huge" fallback="💀"></test-avatar>
+    </test-entity>
+    <test-entity description="주문 아이템">
+      <test-avatar slot="avatar" size="huge" fallback="🍔"></test-avatar>
+    </test-entity>
+  </nav>
 </main>
