@@ -143,7 +143,6 @@
 }
 
 
-
 .hero {padding:4rem var(--grid-margin) 6rem;position:relative;z-index:var(--zindex-default);}
 .hero-background {@mixin bleeding;background:inherit;}
 .hero-eyebrow {display:block;margin:0 0 var(--space-2) 0;font-weight:var(--font-weight-bold);color:var(--color-primary);}

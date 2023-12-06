@@ -41,33 +41,37 @@ p {}
   color: var(--color-text);
 }
 
-[data-variant=subhead] + [data-variant=body] {
+.text[data-variant=subhead] + .text[data-variant=body] {
   display:block;
   margin:var(--space-after-subhead) 0 0 0;
 }
 
-[data-variant=body] {
+.text[data-variant=body] {
   max-width: 640px;
-  /* line-height: 24px; */
+  line-height: 1.715;
 }
 
-[data-variant=body-bold] {
+.text[data-variant=body-bold] {
   /* line-height: 24px; */
   font-weight: var(--font-weight-bold);
 }
 
-
-[data-variant=body-large] {
+.text[data-variant=body-large] {
   display: block;
   max-width: 800px;
   font-size:var(--font-size-large);
+  line-height: 32px;
 }
 
-[data-variant=label] {
+.text[data-variant=label] {
   /* text-transform: uppercase;
   letter-spacing: .5px; */
   font-size:var(--font-size-medium);
   font-weight:var(--font-weight-normal);color:var(--color-text-light);
+}
+
+.text[data-variant=caption] {
+  font-size: var(--font-size-small);
 }
 
 .text-label {font-size:var(--font-size-medium);font-weight:var(--font-weight-normal);color:var(--color-text-light);}

@@ -31,16 +31,13 @@ class Entity extends HTMLElement {
     tagSlot.name = 'tag'
 
     labelElement.classList.add('entity-label')
-    description.classList.add('entity-description')
-    description2.classList.add('entity-description')
-    description3.classList.add('entity-description')
 
-    description.setAttribute('variant', 'body')
-    description2.setAttribute('variant', 'body')
-    description3.setAttribute('variant', 'body')
+    description.setAttribute('variant', 'caption')
+    description2.setAttribute('variant', 'caption')
+    description3.setAttribute('variant', 'caption')
 
     labelElement.innerText = this.label || ''
-    labelElement.setAttribute('variant', 'subhead')
+    labelElement.setAttribute('variant', 'body-bold')
 
     description.innerText = this.description || ''
     description2.innerText = this.description2 || ''

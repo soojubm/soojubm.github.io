@@ -43,8 +43,7 @@ img {
   box-sizing: border-box;
   position: relative;
 
-
-  box-shadow: var(--color-background) 0px 0px 0px 2px;
+  /* box-shadow: var(--color-background) 0px 0px 0px 2px; */
   --avatar-size: 0px;
   --avatar-background-color: #fff;
   --avatar-border: var(--border);
@@ -64,6 +63,7 @@ img {
 .avatar[data-size=medium] {width:var(--size-medium);height:var(--size-medium);}
 .avatar[data-size=small] {width:var(--size-small);height:var(--size-small);}
 .avatar[data-variant=secondary] {border:var(--border);background-color:var(--color-background);}
+.avatar[data-variant=tertiary] {border:none;background-color:transparent;}
 
 .avatar-badge {
   display: flex;
