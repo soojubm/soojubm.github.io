@@ -1,28 +1,7 @@
-/* // ! avatar-medium의 display:flex가 hidden 속성과 충돌 */
-/* @define-mixin avatar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: var(--size-medium);
-  height: var(--size-medium);
-  background: url('/public/images/soojubm.png') no-repeat 64% 55%;
-  background-size: 80%;
-  background-color: var(--color-background-weak);
-  border-radius: var(--radius);
-  box-sizing: border-box;
-  position: relative;
-}
-
-@define-mixin avatar-container-large {@mixin avatar-large;background-image:none;}
-@define-mixin avatar-container {@mixin avatar;background-image:none;}
-@define-mixin avatar-container-small {@mixin avatar-small;background-image:none;}
-@define-mixin avatar-container-tiny {@mixin avatar-tiny;background-image:none;} */
-
 /* .avatar-fallback {
   background:url('/public/images/springsteen.jpg') no-repeat center;
   background-size: cover;
 } */
-
 
 img {
   width: 100%;
@@ -30,12 +9,19 @@ img {
 
 .avatar {
   margin: 0 !important;
+  
+  /* box-shadow: var(--color-background) 0px 0px 0px 2px; */
+  --avatar-size: var(--size-medium);
+  --avatar-background-color: #fff;
+  --avatar-border: var(--border);
+
+  --avatar-badge-size: var(--size-tiny);
 
   display: flex;
   align-items: center;
   justify-content: center;
-  width: var(--size-medium);
-  height: var(--size-medium);
+  width: var(--avatar-size);
+  height: var(--avatar-size);
   background: url('/public/images/soojubm.png') no-repeat 64% 55%;
   background-size: 80%;
   background-color: var(--color-background-weak);
@@ -43,10 +29,6 @@ img {
   box-sizing: border-box;
   position: relative;
 
-  /* box-shadow: var(--color-background) 0px 0px 0px 2px; */
-  --avatar-size: 0px;
-  --avatar-background-color: #fff;
-  --avatar-border: var(--border);
 }
 
 .avatar.no {
@@ -58,19 +40,33 @@ img {
     object-fit: cover;
 }
 
-.avatar[data-size=huge] {width:var(--size-huge);height:var(--size-huge);font-size:var(--font-size-huge);}
-.avatar[data-size=large] {width:var(--size-large);height:var(--size-large);}
-.avatar[data-size=medium] {width:var(--size-medium);height:var(--size-medium);}
-.avatar[data-size=small] {width:var(--size-small);height:var(--size-small);}
-.avatar[data-variant=secondary] {border:var(--border);background-color:var(--color-background);}
-.avatar[data-variant=tertiary] {border:none;background-color:transparent;}
+.avatar[data-size=huge] {
+  --avatar-size: var(--size-huge);
+  font-size:var(--font-size-huge);
+}
+.avatar[data-size=large] {
+  --avatar-size: var(--size-large);
+}
+.avatar[data-size=medium] {
+  --avatar-badge-size: 8px;
+}
+.avatar[data-size=small] {
+  --avatar-size:var(--size-small);
+}
+.avatar[data-variant=secondary] {
+  border:var(--border);background-color:var(--color-background);
+}
+.avatar[data-variant=tertiary] {
+  border:none;background-color:transparent;
+}
+
 
 .avatar-badge {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: var(--size-tiny);
-  height: var(--size-tiny);
+  width: var(--avatar-badge-size);
+  height: var(--avatar-badge-size);
   border: 2px solid var(--color-background);
   border-radius: var(--radius);
   background: var(--color-accent);
@@ -81,14 +77,9 @@ img {
   z-index: 1;
 }
 
-.avatar[data-size=medium] .avatar-badge {
-  width: 8px;
-  height: 8px;
-}
 
 .avatar-group {display:flex;}
 .avatar-group > * + * {margin-left:-.5rem;}
-/* .avatargroup-label {margin:0 0 0 var(--space-2);line-height:var(--size-small);} */ 
 
 .entity {position: relative;}
 .entity-label {font-size:var(--font-size-medium);font-weight:var(--font-weight-bold);}

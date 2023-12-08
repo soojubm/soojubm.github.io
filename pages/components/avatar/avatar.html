@@ -89,11 +89,10 @@
       <test-text variant="subhead">Visual style</test-text>
     </section>
 
-    <!-- <test-tag>groupable</test-tag> -->
-    <!-- <test-text variant="subhead">아바타 그룹</test-text> -->
+    <!-- <test-text variant="subhead">groupable아바타 그룹</test-text> -->
     <test-text variant="subhead">Use cases</test-text>
     <section class="component-case">
-      <test-tile variant="elevated" size="small" style="max-width: 400px">
+      <test-tile variant="elevated" size="small">
         <test-group style="align-items: center">
           <test-avatar-group>
             <test-avatar size="small"></test-avatar>
@@ -114,23 +113,18 @@
           <test-menuitem label="수줍이" description="Youtube subscriber">
             <test-avatar slot="avatar"></test-avatar>
           </test-menuitem>
-          <div
-            class="statistic"
-            data-size="small"
-            style="justify-content: left; margin: var(--space-2) 0 0 0"
-          >
-            <div class="statistic-item" onclick="javascript:alert('샘플 유아이에요!')">
-              <i class="statistic-label">팔로워</i>
-              <span class="statistic-value">62</span>
-            </div>
+          <test-group class="statistic" data-size="small">
+            <dl class="statistic-item" onclick="javascript:alert('샘플 유아이에요!')">
+              <dt class="statistic-label">팔로워</dt>
+              <dd class="statistic-value">62</dd>
+            </dl>
             <i class="icon-bullet"></i>
-            <div class="statistic-item" onclick="javascript:alert('샘플 유아이에요!')">
-              <i class="statistic-label">팔로잉</i>
-              <span class="statistic-value">8</span>
-            </div>
-          </div>
+            <dl class="statistic-item" onclick="javascript:alert('샘플 유아이에요!')">
+              <dt class="statistic-label">팔로잉</dt>
+              <dd class="statistic-value">8</dd>
+            </dl>
+          </test-group>
           <div style="margin: var(--space-2) 0 0">
-            <!-- <figure>🥺</figure> -->
             <span class="avatargroup-label">🥺 수줍이님을 팔로우하고 있는 친구가 없습니다.</span>
           </div>
         </div>
@@ -167,7 +161,9 @@
       </test-card>
     </section>
 
-    <!-- <li>icon button, icon indicator, entity avatar, menu item avatar(icon)</li> -->
+    <test-text variant="subhead">Changelog</test-text>
+    <test-text variant="subhead">Checklist</test-text>
+    <!-- <li>icon chip(button), icon tag, menu item avatar</li> -->
     <!-- <li>memeo. medium. 이하의 크기는 디스크립션을 제공하지 않는다. 항상 align-items:center.</li> -->
     <!-- <li>pagination item은 chip과 같은 size token을 사용하지만 chip도 avatar도 아닙니다.</li> -->
     <!-- <p>아바타만 단독으로 사용하는 케이스. space-after-avatar가 필요하지 않음.</p> -->

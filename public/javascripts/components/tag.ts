@@ -17,11 +17,11 @@ class Tag extends HTMLElement {
     const iconSlot = document.createElement('slot')
     iconSlot.name = 'icon'
 
-    shadow.appendChild(container)
-    shadow.appendChild(makeStyleSheet('tag'))
+    container.textContent = this.textContent
 
+    // todo icon prefix
+    shadow.append(container, makeStyleSheet('tag'))
     container.appendChild(iconSlot)
-    container.innerHTML = this.innerHTML || this.label || ''
   }
 
   get variant() {
@@ -37,9 +37,6 @@ class Tag extends HTMLElement {
 
   get label() {
     return this.getAttribute('label')
-  }
-  set label(value) {
-    if (value) this.setAttribute('label', value)
   }
 
   get datetime() {

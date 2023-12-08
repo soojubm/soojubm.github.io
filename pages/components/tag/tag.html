@@ -21,14 +21,34 @@
     <section class="component-example">
       <test-group>
         <!--  role="listitem" -->
-        <test-tag variant="primary" label="primary"></test-tag>
-        <test-tag variant="secondary" label="secondary"></test-tag>
-        <test-tag variant="tertiary" label="tertiary"></test-tag>
-        <test-tag variant="tertiary" label="🔥 with icon"></test-tag>
+        <test-tag variant="primary">primary</test-tag>
+        <test-tag variant="tertiary">tertiary</test-tag>
+        <test-tag variant="tertiary">🔥 with icon</test-tag>
         <test-tag variant="indicator" role="listitem">
           <test-icon slot="icon" name="nav-arrow-down"></test-icon>
         </test-tag>
-        <!-- <figure class="tag-icon" role="img">🔥</figure> -->
+      </test-group>
+      <test-separator></test-separator>
+      <test-group>
+        <test-tag variant="secondary">
+          <test-icon slot="icon" name="graph-up"></test-icon>
+          16%
+        </test-tag>
+        <test-tag variant="destructive">
+          <test-icon slot="icon" name="graph-down"></test-icon>
+          16%
+        </test-tag>
+      </test-group>
+      <test-separator></test-separator>
+      <test-group>
+        <test-tag variant="feature1">유저리서치</test-tag>
+        <test-tag variant="feature2">유저플로우</test-tag>
+        <test-tag variant="feature3">유저스트</test-tag>
+        <test-tag variant="feature4">A/B테스팅</test-tag>
+      </test-group>
+      <test-separator></test-separator>
+      <test-group>
+        <test-tag variant="secondary">depulicated secondary</test-tag>
       </test-group>
     </section>
 
@@ -41,24 +61,10 @@
         <dt>label</dt>
         <dd>string</dd>
         <dd>2단어 이하의 형용사 또는 명사</dd>
+        <dt>color?</dt>
+        <dd>string</dd>
+        <dd>for categories / status</dd>
       </dl>
-    </section>
-
-    <section class="component-case">
-      <test-group>
-        <test-tag variant="secondary" label="tertiary">
-          <test-icon slot="icon" name="graph-up"></test-icon>
-          16%
-        </test-tag>
-        <test-tag variant="destructive" label="tertiary">
-          <test-icon slot="icon" name="graph-down"></test-icon>
-          16%
-        </test-tag>
-        <test-tag variant="feature1">유저리서치</test-tag>
-        <test-tag variant="feature2">유저플로우</test-tag>
-        <test-tag variant="feature3">유저스트</test-tag>
-        <test-tag variant="feature4">A/B테스팅</test-tag>
-      </test-group>
     </section>
 
     <section class="component-guide">
@@ -89,36 +95,35 @@
     </section>
   </article>
 
-  <!--
-    <p>Badges show the count of some adjacent data.
-    A dot badge notifies the user that something is new or updated without showing a count.</p>
-  -->
   <article class="article js-observer js-scrollspy-section">
-    <test-text variant="title">Badges</test-text>
+    <test-text variant="title"></test-text>
     <test-text variant="body-large">
-      사실 뱃지로 퉁치기 어려움. 아바타와 바텀 네비게이션 등 특정 컴포넌트 의존성이 있어 통합된
-      형태가 아니면 뱃지 컴포넌트를 정의하지 않는 것이 좋다.. notification / status / informational
-      (tag 느낌)
+      Badges. 사실 뱃지로 퉁치기 어려움. 아바타와 바텀 네비게이션 등 특정 컴포넌트 의존성이 있어
+      통합된 형태가 아니면 뱃지 컴포넌트를 정의하지 않는 것이 좋다.. notification / status /
+      informational (tag 느낌)
     </test-text>
+    <p>
+      Badges show the count of some adjacent data. A dot badge notifies the user that something is
+      new or updated without showing a count.
+    </p>
+    <section class="component-guide">
+      <test-text variant="subhead"> activity bar counter (vs code) </test-text>
+      <test-text variant="subhead">Dot. New/Red badge (status)</test-text>
+      <test-text variant="subhead">Dot. Live badge (status)</test-text>
+      <test-text variant="subhead">Dot. Unread badge (status)</test-text>
+      <test-text variant="subhead">Counter badge (quantity)</test-text>
+    </section>
 
     <section class="component-example">
       <test-group>
         <em class="dot-badge"></em>
         <test-badge variant="primary"></test-badge>
-        <!-- <test-badge variant="primary">24</test-badge>
-        <test-badge variant="secondary">16</test-badge> -->
+        <test-badge variant="primary">24</test-badge>
+        <test-badge variant="secondary">16</test-badge>
         <test-chip label="메뉴">
           <test-badge slot="suffix">16</test-badge>
         </test-chip>
       </test-group>
-    </section>
-
-    <section class="component-guide">
-      <test-text variant="body-large"> activity bar counter (vs code) </test-text>
-      <test-text variant="subhead">Dot. New/Red badge (status)</test-text>
-      <test-text variant="subhead">Dot. Live badge (status)</test-text>
-      <test-text variant="subhead">Dot. Unread badge (status)</test-text>
-      <test-text variant="subhead">Counter badge (quantity)</test-text>
     </section>
   </article>
 </main>

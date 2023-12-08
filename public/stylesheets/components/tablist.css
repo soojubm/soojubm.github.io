@@ -1,12 +1,29 @@
 [role=tablist] {
+  --tablist-background: var(--color-background-weak);
+
+  --tab-radius: var(--radius);
+  --tab-border: var(--border);
+  --tab-label-color: var(--color-text-light);
+  --tab-label-weight: var(--font-weight-bold);
+  --tab-label-color-actived: var(--color-text)
+  --tab-size: 48px;
+
   display: flex;
   border-radius: var(--radius);
-  background:var(--color-background-weak);
+  background:var(--tablist-background);
   position: relative;
 }
 [role=tab] {}
+
 [role=tabpanel][aria-hidden=false] {display:block;}
 [role=tabpanel][aria-hidden=true] {display:none;}
+
+
+[role=tablist][data-variant=primary] {
+  --tablist-background: transparent;
+  --tab-size: var(--size-large);
+  border-bottom: var(--border);
+}
 
 ::slotted([slot=tab]) {
   flex: auto;
@@ -16,10 +33,8 @@
   display:flex;align-items:center;justify-content:center;
   flex:auto;
   width: 100%;
-  /* width - tabSlot */
   height:var(--size-medium);
   color:var(--color-text-light);
-  /* font-weight:var(--font-weight-bold); */
   position:relative;z-index:var(--zindex-default);
 
   /* // reset */
@@ -41,12 +56,6 @@
 .tablist-tab-badge {}
 .tablist-indicator {display:block;height:calc(100% - .5rem);background:var(--color-background);box-shadow:var(--shadow);border-color:var(--color-background-strong);border-radius:var(--radius);position:absolute;transition:all var(--duration);}
 .tablist-tab:nth-child(1)[aria-selected=true] ~ .tablist-indicator {transform: translateX(clac(70px * 1))}
-
-// TODO: .type-t
-// .tablist {margin:0 0 var(--space-3) 0;padding:0 !important;border:none;border-bottom:var(--border);border-radius:0;box-shadow:none;}
-// .tablist .tablist-indicator {background:none;border-radius:0;border:0;border-bottom:3px solid var(--color-primary);bottom:-1px;}
-// .tablist [role=tab] {height:48px;font-weight:bold;color:var(--color-text-light);}
-// .tablist [role=tab][aria-selected=true] {color:var(--color-text);}
 
 .profile-display {display:flex;margin:0 0 var(--space-3) 0;}
 .profile-display-title {margin:0 0 var(--space-1) 0;font-size:var(--font-size-small);}

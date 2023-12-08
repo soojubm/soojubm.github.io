@@ -119,29 +119,20 @@
 .summary-item {display:flex;justify-content:space-between;}
 .summary-item-label {}
 .summary-item-value {}
-.summary-total {display:flex;justify-content:space-between;font-size: var(--font-size-large);font-weight: var(--font-weight-bold);
-}
+.summary-total {display:flex;justify-content:space-between;font-size: var(--font-size-large);font-weight: var(--font-weight-bold);}
 
 .statistic {display:flex;gap:2rem;}
 .statistic-item {position: relative;}
-.statistic-item:hover {@mixin hover-item;}
+.statistic-item:hover {}
 .statistic-label {display: block;color: var(--color-text-light);line-height:24px;}
-.statistic-value {display: block;@mixin text-subhead;
-  font-size:var(--font-size-large);font-weight:var(--font-weight-bold);
-}
-.statistic[data-size=small] {
-  align-items: center;
-  justify-content: center;
-  margin: var(--space-3);
-}
+.statistic-value {display: block;font-size:var(--font-size-large);font-weight:var(--font-weight-bold);}
+.statistic[data-size=small] {}
 .statistic[data-size=small] .statistic-item {display: flex;align-items: center;}
-.statistic[data-size=small] .statistic-item+.statistic-item {margin-left: var(--space-2);}
 .statistic[data-size=small] .statistic-value {margin: 0 0 0 var(--space-1);font-size: var(--font-size-medium);}
 
 @media (--tiny) {
 	.feature-item {max-width:100%;}
 }
-
 
 .hero {padding:4rem var(--grid-margin) 6rem;position:relative;z-index:var(--zindex-default);}
 .hero-background {@mixin bleeding;background:inherit;}

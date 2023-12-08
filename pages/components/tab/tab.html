@@ -9,6 +9,16 @@
     </test-tablist> -->
 
     <section class="component-example">
+      <test-tablist variant="primary">
+        <test-tab slot="tab" aria-selected="true" aria-controls="panel-1" id="tab-1" tabindex="0">
+          첫번째 탭
+          <em class="tablist-tab-badge badge">24</em>
+        </test-tab>
+        <test-tab slot="tab" aria-controls="panel-2" id="tab-2" tabindex="-1">두번째 탭</test-tab>
+        <test-tab slot="tab" aria-controls="panel-3" id="tab-3" tabindex="-1">세번째 탭</test-tab>
+        <i slot="indicator" class="tablist-indicator"></i>
+      </test-tablist>
+      <test-separator></test-separator>
       <!-- data-tabs='{"name": "Chris Coyier", "job": "Web Person"}' -->
       <test-tablist>
         <test-tab slot="tab" aria-selected="true" aria-controls="panel-1" id="tab-1" tabindex="0">
@@ -118,6 +128,7 @@
         <li>Material 3에서 primary tabs / secondary tabs</li>
       </ul>
     </section>
+
     <!--  segmented control -->
     <!-- Use a segmented control to provide closely related choices that affect an object, state, or view. For example, a segmented control can help people
     switch between views in a toolbar. Avoid using a segmented control to offer actions, such as adding, removing, or editing content. -->
@@ -127,12 +138,14 @@
       <a
         href="https://developer.apple.com/design/human-interface-guidelines/components/layout-and-organization/tab-views"
         target="_blank"
-        >HIG tab views</a
       >
+        HIG tab views
+      </a>
       <a
         href="https://developer.apple.com/design/human-interface-guidelines/components/selection-and-input/segmented-controls/"
-        >HIG Segmented controls</a
       >
+        HIG Segmented controls
+      </a>
       <a href="https://material.io/components/tabs">MD Tabs</a>
     </div>
   </article>

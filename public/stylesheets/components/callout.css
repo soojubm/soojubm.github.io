@@ -1,45 +1,31 @@
 .callout {
+  --callout-text-color: var(--color-text);
+
   display:flex;flex-wrap:wrap;align-items:center;
-  padding:var(--space-3) var(--space-3) calc(var(--space-3) + var(--adjust-label-line));
+  padding:var(--space-3);
   border: var(--border);
   border-radius:var(--radius);
+  color: var(--callout-text-color);
   position:relative;
 }
-.callout-title {
-  width: 100%;
-}
+.callout-title {}
 .callout-icon {}
 .callout-text {}
-.callout[data-variant=success] {border:none;background:var(--green100);}
-.callout[data-variant=success] .callout-text {color:var(--green800);}
-.callout[data-variant=danger] {border:none;background:var(--red100);}
-.callout[data-variant=danger] .callout-text {color:var(--red800);}
+.callout-close {position:absolute;right:.5rem;top:.5rem;}
 
-
-/* .alert-icon {@mixin avatar-small;margin:0 var(--space-2) 0 0;background:none;font-size:var(--font-size-medium);}
-.alert-close {@mixin avatar-medium;position:absolute;right:.5rem;top:.5rem;} */
-
-
+.callout[data-variant=success] {
+  --callout-text-color: var(--green800);
+  border:none;background:var(--green100);
+}
+.callout[data-variant=danger] {
+  --callout-text-color: var(--red800);
+  border:none;background:var(--red100);
+}
 
 figure {margin: 0;padding:0;}
 h3, p {margin: 0;}
 
-
-// for mobile
-.banner {padding:var(--space-4);border-radius:var(--radius);background:var(--color-background-weak);position:relative;}
-.banner-background {@mixin bleeding;}
-.banner-eyebrow {@mixin tag;margin:0 0 .5rem 0;}
-.banner-title {font-size:var(--font-size-medium);font-weight:var(--font-weight-bold);}
-.banner-description {margin:var(--space-1) 0 0;}
-.banner-button {margin:0 0 var(--space-after-description) 0;@mixin button-text;}
-// 버튼이 생략될 수 있다.
-
-.banner[data-style=colored] .banner-title {color:var(--gray0);}
-.banner[data-style=colored] .banner-description {color:var(--gray0);opacity:.75;}
-
 @media (--small) {
-  // .banner {flex-wrap:wrap;}
-  // .banner-title {width:100%;margin:0 0 1rem 0;}
 }
 
 .is-closed-topbanner .header {background:var(--color-background);margin-top:-225px;transition:margin .2s, background-color .4s;}

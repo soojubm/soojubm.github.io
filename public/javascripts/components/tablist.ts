@@ -8,6 +8,7 @@ class Tablist extends HTMLElement {
     const container = document.createElement('nav')
     container.role = 'tablist'
     container.classList.add('tablist')
+    container.dataset.variant = this.variant || ''
 
     const indicatorSlot = document.createElement('slot')
     indicatorSlot.name = 'indicator'
@@ -53,6 +54,9 @@ class Tablist extends HTMLElement {
   // selected
   get value() {
     return this.getAttribute('value')
+  }
+  get variant() {
+    return this.getAttribute('variant')
   }
   static get observedAttributes() {
     return ['aria-selected']
