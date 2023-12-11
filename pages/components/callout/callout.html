@@ -18,17 +18,21 @@
     </dl>
 
     <section class="component-example">
-      <test-callout text="배너. 히어로와 콜아웃. 액션 버튼을 포함하지 않는다."> </test-callout>
+      <test-group alignment="vertical">
+        <test-callout>배너. 히어로와 콜아웃. 액션 버튼을 포함하지 않는다.</test-callout>
+        <test-tile
+          >tile과 callout의 차이. 형태는 간격 빼고 동일함.
+          <a href="">내 활동인증 관리</a></test-tile
+        >
+
+        <test-callout variant="success"> 좋아요 표시한 동영상에 추가됨 </test-callout>
+        <test-callout variant="danger">
+          인터넷에 연결되어 있지 않습니다. 바시니의 작품은 페라라 부르주아사회의 유대인 박해라는
+          깊은 상처에 기인한다는 점에서 정치적이다.
+        </test-callout>
+      </test-group>
       <test-separator></test-separator>
       <p role="alert" style="color: var(--red800)">비밀번호가 일치하지 않습니다.</p>
-      <test-separator></test-separator>
-      <test-group alignment="vertical">
-        <test-callout variant="success" icon="🧡"> 좋아요 표시한 동영상에 추가됨 </test-callout>
-        <test-callout
-          variant="danger"
-          text="인터넷에 연결되어 있지 않습니다. 바시니의 작품은 페라라 부르주아사회의 유대인 박해라는 깊은 상처에 기인한다는 점에서 정치적이다."
-        ></test-callout>
-      </test-group>
     </section>
 
     <section class="component-props">

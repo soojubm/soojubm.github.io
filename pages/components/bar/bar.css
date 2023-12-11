@@ -13,28 +13,18 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  gap: var(--space-2);
+  /* gap: var(--space-2); */
   color: var(--color-text);
   position: relative;
 }
-.bottombar-item:hover {
-  /* @mixin hover-item; */
-}
 
 .bottombar-item-icon {
-  /* @mixin avatar-medium; */
   margin: 0 auto;
   background: none;
 }
 
 .bottombar-item-label {
-  display: block;
-  margin: -.25rem 0 0 0;
-  text-align: center;
   font-size: 10px;
-  text-decoration: none;
-  color: var(--color-text);
 }
 
 .bottombar-item em {

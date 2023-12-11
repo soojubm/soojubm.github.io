@@ -24,9 +24,9 @@ class Callout extends HTMLElement {
     container.classList.add('callout')
     container.dataset.variant = this.variant || ''
 
-    const heading = document.createElement('h3')
-    heading.classList.add('callout-title')
-    heading.innerText = this.heading || ''
+    // const heading = document.createElement('h3')
+    // heading.classList.add('callout-title')
+    // heading.innerText = this.heading || ''
 
     const text = document.createElement('p')
     text.classList.add('callout-text')
@@ -37,7 +37,7 @@ class Callout extends HTMLElement {
     icon.classList.add('callout-icon')
 
     shadow.append(container, makeStyleSheet('callout'))
-    container.append(icon, heading, text)
+    container.append(icon, text)
   }
   disconnectedCallback() {}
 }

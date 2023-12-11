@@ -1,31 +1,31 @@
 import { importScript, makeStyleSheet } from './utils'
 
+// console.log('#internals', this.#internals)
+// const sheet = new CSSStyleSheet()
+
+// replace all styles synchronously:
+// document.adoptedStyleSheets = [...document.adoptedStyleSheets, sheet]
+
+// Any @import rules are ignored.
+// Both of these still apply the a{} style:
+// sheet.replaceSync('@import url("styles.css"); a { color: red; }')
+// sheet.replace('@import url("styles.css"); a { color: red; }').then(() => {
+//     console.log('Styles replaced', sheet)
+//   })
+//   .catch(err => {
+//     console.error('Failed to replace styles:', err)
+//   })
+// Console warning: "@import rules are not allowed here..."
+
+// shadow.adoptedStyleSheets = [sheet]
+// host.shadowRoot?.adoptedStyleSheets = [sheet]
+
 class Chip extends HTMLElement {
   // #internals = this.attachInternals() as any
 
   constructor() {
     super()
     const shadow = this.attachShadow({ mode: 'open' })
-
-    // console.log('#internals', this.#internals)
-    // const sheet = new CSSStyleSheet()
-
-    // replace all styles synchronously:
-    // document.adoptedStyleSheets = [...document.adoptedStyleSheets, sheet]
-
-    // Any @import rules are ignored.
-    // Both of these still apply the a{} style:
-    // sheet.replaceSync('@import url("styles.css"); a { color: red; }')
-    // sheet.replace('@import url("styles.css"); a { color: red; }').then(() => {
-    //     console.log('Styles replaced', sheet)
-    //   })
-    //   .catch(err => {
-    //     console.error('Failed to replace styles:', err)
-    //   })
-    // Console warning: "@import rules are not allowed here..."
-
-    // shadow.adoptedStyleSheets = [sheet]
-    // host.shadowRoot?.adoptedStyleSheets = [sheet]
 
     const host = document.createElement('button')
     host.classList.add('chip')
@@ -51,11 +51,9 @@ class Chip extends HTMLElement {
       name.innerText = this.name || ''
       host.appendChild(name)
     }
-    // console.log(this.textContent)
 
     // append 순서로 slot 순서를 결정할 수 있다.
     host.appendChild(iconSlot)
-
     host.appendChild(prefixSlot)
 
     // TODO label tag

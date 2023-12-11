@@ -2,7 +2,7 @@
   display: flex !important;
   align-items: center;
   justify-content: center;
-  font-size: 1.125rem !important;
+  font-size: 1rem !important;
 }
 
 .icon[data-size=small] {

@@ -15,6 +15,7 @@
       </p>
       <p>MEMO: slot icon / avatar의 차이. menuitem은 아바타. 모든 icon이 아바타가 될 수 있나.</p>
       <p>MEMO: Text only는 plain이 될 수 없다.</p>
+      <p>시각보정: expandable, checkable 각각에 맞춰서 하고. TODO: slot을 따로 넣지 않기.</p>
     </blockquote>
     <dl class="article-aka" style="margin: 0">
       <dt>a.k.a.</dt>
@@ -48,12 +49,8 @@
           <test-icon slot="suffix" name="nav-arrow-down"></test-icon>
           expandable
         </test-chip>
-        <test-chip>
-          <i slot="prefix">🦔</i>
-          with icon
-        </test-chip>
         <test-chip icon="" value="117">
-          <i slot="prefix">❤️</i>
+          <test-icon slot="prefix" name="heart"></test-icon>
           좋아요
           <!-- <test-badge>11</test-badge> -->
         </test-chip>

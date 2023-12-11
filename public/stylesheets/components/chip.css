@@ -17,10 +17,7 @@ em, i  {
 }
 
 :host {
-  --chip-color-background: 0;
   --chip-color-border: 0;
-  --chip-color-text: 0;
-
   --chip-color-background: var(--color-background-weak);
   --chip-color-text: var(--color-text);
 }
@@ -37,25 +34,29 @@ em, i  {
 */
 
 .chip {
+  /* TODO donesnt using ? for chip in textfield  */
+  /* gap 제거. icon only에 label 태그 때문. */
+  /* gap: var(--space-2); */
+  /* 이모지 2개 나옴.. */
+
+  /* outline: 2px solid var(--color-background); */
+  
+  --chip-size: var(--size-medium);
+  --chip-radius: var(--radius);
+  --chip-inset: null;
+
   display: flex;
   align-items: center;
   justify-content: center;
   min-width: var(--size-medium);
-  height: var(--size-medium);
-  gap: var(--space-2);
-  padding: 0 var(--space-3) 1px;
+  height: var(--chip-size);
+  padding: 0 var(--space-3);
 
-  border-radius: var(--radius);
+  border-radius: var(--chip-radius);
   background: var(--chip-color-background);
   color: var(--chip-color-text);
   position: relative;
 
-  /* TODO donesnt using ? for chip in textfield  */
-  outline: 2px solid var(--color-background);
-  --chip-size: var(--size-small);
-  --chip-height: 0;
-  --chip-inset: null;
-  --chip-radius: 0;
 }
 .chip:disabled {
   opacity:.5;
@@ -65,6 +66,7 @@ em, i  {
   box-shadow:var(--status-hover);
   cursor: pointer;
 }
+
 .chip-label {
   display: block;
   line-height: var(--chip-size);
@@ -92,11 +94,9 @@ em, i  {
   color: var(--red800);
 }
 
-::slotted([slot=icon]) {
-
-  margin-left: -0.75rem;
-  margin-right: -0.75rem;
-}
+::slotted([slot=icon]) {margin:0 -.75rem;}
+::slotted([slot=prefix]) {margin-right:var(--space-2);}
+::slotted([slot=suffix]) {margin-left:var(--space-2);}
 
 ::slotted([slot=prefix]), ::slotted([slot=suffix]) {
   /* width: 32px;
@@ -104,7 +104,6 @@ em, i  {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 2px;
 }
 /* .chip-label ~ ::slotted([slot=icon]) {
   margin-left: -0.25rem;

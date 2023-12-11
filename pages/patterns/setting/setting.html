@@ -51,10 +51,14 @@
 
     <test-tile>
       <div slot="text">
-        <test-text variant="body-bold">iPhone을 백업할 수 없음</test-text>
+        <test-text variant="subhead">iPhone을 백업할 수 없음</test-text>
         <div style="height:var(--space-2)"> </div>
         <test-text variant="body">저장 공간이 부족하여 최근 iPhone 백업이 iCloud에 저장되지 않았습니다. 저장 공간을 추가 또는 관리하여 iPhone 백업을 유지하십시오.</test-text>
-        <div style="margin:-.25rem 0;"><test-separator></test-separator></div s>
+        <div style="margin:-.25rem 0;"><test-separator></test-separator></div>
+        <div style="display:flex;justify-content:space-between;">
+          <span>레이블</span>
+          <button style="padding:0;border:0;background:#fff;font-family:inherit;font-size:inherit;color:var(--color-primary)">저장 공간 추가</button>
+        </div>
         <button style="padding:0;border:0;background:#fff;font-family:inherit;font-size:inherit;color:var(--color-primary)">저장 공간 추가</button>
         <br />
         <div style="height:var(--space-2)"></div>

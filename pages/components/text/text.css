@@ -68,7 +68,6 @@
 .meter-legend-item {
   display: flex;
   align-items: center;
-  margin: var(--space-2) 0;
   position: relative;
 }
 /* .meter-legend-item:before {content:'';display:block;width:100%;border-bottom:1px dotted #ccc;position:absolute;z-index:-1;} */

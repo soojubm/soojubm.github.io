@@ -1,5 +1,9 @@
 
-.menu-group {display:flex;flex-direction:column;gap:var(--space-2);}
+.menu-group {
+  display:flex;
+  flex-direction:column;
+  gap:var(--space-2);
+}
 
 .item {
   display: flex;
@@ -52,6 +56,7 @@ a {
 
 .item:hover {
   --hover-outline: calc(var(--space-2) / 2 * -1);
+  --hover-outline: 0;
   cursor: pointer;
   &:before {
     /* // z-idnex 이슈 */

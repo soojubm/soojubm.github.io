@@ -1,93 +1,84 @@
 <main class="tokens">
   <section class="tokens-body">
     <test-group>
-      <test-chip status="active" label="Palette" class="js-scrollspy-trigger"></test-chip>
-      <test-chip class="js-scrollspy-trigger" label="Typography"></test-chip>
-      <test-chip class="js-scrollspy-trigger" label="Sizing"></test-chip>
-      <test-chip class="js-scrollspy-trigger" label="Spacing"></test-chip>
-      <test-chip class="js-scrollspy-trigger" label="Layouts"></test-chip>
-      <test-chip class="js-scrollspy-trigger" label="Positioning"></test-chip>
-      <test-chip class="js-scrollspy-trigger" label="Z-index"></test-chip>
-      <test-chip class="js-scrollspy-trigger" label="Opacity"></test-chip>
-      <test-chip class="js-scrollspy-trigger" label="Animation"></test-chip>
-      <test-chip class="js-scrollspy-trigger" label="Optical Adjustment"></test-chip>
+      <test-chip class="js-scrollspy-trigger" status="active">Palette</test-chip>
+      <test-chip class="js-scrollspy-trigger">Typography</test-chip>
+      <test-chip class="js-scrollspy-trigger">Sizing</test-chip>
+      <test-chip class="js-scrollspy-trigger">Spacing</test-chip>
+      <test-chip class="js-scrollspy-trigger">Layouts</test-chip>
+      <test-chip class="js-scrollspy-trigger">Positioning</test-chip>
+      <test-chip class="js-scrollspy-trigger">Z-index</test-chip>
+      <test-chip class="js-scrollspy-trigger">Opacity</test-chip>
+      <test-chip class="js-scrollspy-trigger">Animation</test-chip>
+      <test-chip class="js-scrollspy-trigger">Optical Adjustment</test-chip>
     </test-group>
 
     <article class="article js-scrollspy-section">
-      <!-- https://www.delldesignsystem.com/foundations/elevation/ -->
+      <blockquote>
+        <test-text variant="subhead">Meta problems</test-text>
+        <ul>
+          <li>컴포넌트 토큰 세팅을 다 해두면, 형태 기반의 컴포넌트를 줄일 수 있다.</li>
+          <li>일관된 시각 경험. 크로스 플랫폼. 서비스 확장과 유지 보수.</li>
+          <li>
+            radius. pill과 non-pill은 양자택일. 인물 아바타를 특정하기 위해 circle은 허용할 수 있다.
+          </li>
+          <li>프로덕션이 아니기 때문에 namespace를 생략. 서드파티 라이브러리와 충돌을 방지용.</li>
+          <li>
+            폰트가 변경되면 폰트마다 baseline이 달라서 텍스트의 상하 간격이 안 맞을 수 있다.
+            텍스트노드(레이블 역할)의 패딩용 변수를 활용.
+          </li>
+          <li>개별 토큰에 디스크립션이 필요하지 않도록 명명.</li>
+          <li>
+            컴포넌트 토큰은 상대적으로 변경 가능성이 높고 범용성이 낮기 때문에 컴포넌트 스코프에서만
+            정의.
+          </li>
+        </ul>
 
-      <test-text variant="subhead">Meta problems</test-text>
-      <ul>
-        <li>컴포넌트 토큰 세팅을 다 해두면, 형태 기반의 컴포넌트를 줄일 수 있다.</li>
-        <li>일관된 시각 경험. 크로스 플랫폼. 서비스 확장과 유지 보수.</li>
-        <li>서비스가 출시 환경이 웹온리(웹/태블릿+모바일) vs 웹+모바일앱(웹+태블릿/모바일)</li>
-        <li>
-          radius. pill과 non-pill은 양자택일. 인물 아바타를 특정하기 위해 circle은 허용할 수 있다.
-        </li>
-        <li>
-          namespace는 서드 파티 라이브러리와 충돌을 방지. (프로덕션이 아니기 때문에 여기에서는
-          namespace를 생략했습니다.)
-        </li>
-        <li>
-          <b>폰트를 바꿀 때.</b> 폰트마다 baseline이 달라서 텍스트의 상하 간격이 안 맞을 수 있다.
-          텍스트노드(레이블 역할)의 상단 패딩에 변수를 하나 추가해둔다. ?? 조금 과하긴 함.
-        </li>
-        <li>개별 토큰에 디스크립션이 필요하지 않도록 명명.</li>
-        <li>
-          컴포넌트 토큰은 상대적으로 변경 가능성이 높고 범용성이 낮기 때문에 컴포넌트 스코프에서
-          정의.
-        </li>
-      </ul>
-
-      <test-text variant="subhead">Platform problems</test-text>
-      <ul>
-        <li>hierarchy. 크기와 비례해서 radius와 shadow 조정이 필요하지만 규칙을 최소화.</li>
-        <li>
-          theme. 인버트 컬러셋을 추가로 정의하지 않습니다. 하나의 컬러셋으로 다크 테마에 대응합니다.
-          (쉽지 않음... )
-        </li>
-      </ul>
-
-      <test-text variant="subhead">ㅎㅎㅎㅎㅎ</test-text>
-      <ul>
-        <li>
-          값을 직접적으로 이름에 포함하지 마세요. 20 - 20px. tailwind의 단점. 디자인 토큰에서 얻을
-          수 있는 추상화 및 기타 이점이 무효화. 값을 조정하기 쉽도록 추상화.. 1 unit을 .25rem으로
-          모두 네이밍 할 수 있나.
-        </li>
-        <li>
-          reset은 작은 화면으로 전환될 때 유틸리티. z-index 보전을 위해 static이 아닌 relative로
-          초기화하세요.
-        </li>
-        <li>
-          custom media의 max-width를 layout + @로 정의해보자. ? 뭔 말이지? 모든 container는
-          --small부터 max-width를 100%.
-        </li>
-        <li>small-scale layout (polaris 참고) 아바타 유무</li>
-        <li>
-          3가지 이상 케이스에서 사용될 때 토큰으로 정의합니다. 1회~2회는 예외 케이스로 정의하거나
-          컴포넌트 스코프에서 보충합니다.
-        </li>
-      </ul>
-
-      <!-- <ul>
-    <li>core: give a name to a raw value to enable theming and make improve maintainability / semantic / component</li>
-    <li></li>
-  </ul>
-  <p>Styling hooks follows a specific naming convention to promote predictability and consistency.</p>
-    <p>! problem: size + space = large siz가 되려면 border가 아니라 box-shadow로 보더를 줘야 한다. ize를 동일하게 주고 border로 크기를 조절할 수 있다.</p>
-
-      <li>memo. squish inset/stretch inset</li>
-      
-      <li>vertical spacing</li>
-      Element height / Space between elements / Text line height
-   -->
-      <!-- <li>https://atlassian.design/components/tokens/all-tokens</li> -->
-      <!-- https://www.wedesignx.com/knowledge/design-system -->
-      <!-- https://medium.com/eightshapes-llc/size-in-design-systems-64f234aec519 -->
-      <!-- <section>
-    <p>role="group" 목록 컨텍스트에서는 자식이 role="listitem" / figure role="group"</p>
-  </section> -->
+        <test-text variant="subhead">Platform problems</test-text>
+        <ul>
+          <li>hierarchy. 크기와 비례해서 radius와 shadow 조정이 필요하지만 규칙을 최소화.</li>
+          <li>
+            theme. 인버트 컬러셋을 추가로 정의하지 않습니다. 하나의 컬러셋으로 다크 테마에
+            대응합니다. 어렵고 또는 불필요한 규칙. 초기 토큰 세팅 허들을 넘으면 테마 대응은 쉬워짐.
+          </li>
+        </ul>
+        <test-text variant="subhead">guidelines</test-text>
+        <ul>
+          <li>
+            값을 직접적으로 이름에 포함하지 마세요. 20 - 20px. tailwind의 단점. 디자인 토큰에서 얻을
+            수 있는 추상화 및 기타 이점이 무효화. 값을 조정하기 쉽도록 추상화.. 1 unit을 .25rem으로
+            모두 네이밍 할 수 있나.
+          </li>
+          <li>
+            reset은 작은 화면으로 전환될 때 유틸리티. z-index 보전을 위해 static이 아닌 relative로
+            초기화하세요.
+          </li>
+          <li>
+            custom media의 max-width를 layout + @로 정의해보자. ? 뭔 말이지? 모든 container는
+            --small부터 max-width를 100%.
+          </li>
+          <li>small-scale layout (polaris 참고) 아바타 유무</li>
+          <li>
+            3가지 이상 케이스에서 사용될 때 토큰으로 정의합니다. 1회~2회는 예외 케이스로 정의하거나
+            컴포넌트 스코프에서 보충합니다.
+          </li>
+          <li>memo. squish inset/stretch inset</li>
+          <li>
+            core: give a name to a raw value to enable theming and make improve maintainability /
+            semantic / component
+          </li>
+          <li>
+            Styling hooks follows a specific naming convention to promote predictability and
+            consistency.
+          </li>
+        </ul>
+        <div class="group">
+          <a href="https://www.delldesignsystem.com/foundations/elevation/">dell elevation</a>
+          <a href="https://atlassian.design/components/tokens/all-tokens">test</a>
+          <a href="https://www.wedesignx.com/knowledge/design-system">test2</a>
+          <a href="https://medium.com/eightshapes-llc/size-in-design-systems-64f234aec519">test3</a>
+        </div>
+      </blockquote>
 
       <test-text variant="title">Color</test-text>
       <test-text variant="body-large">
@@ -266,16 +257,6 @@
       <section class="">
         <!-- <a href="">link to texts pattern</a> -->
         <test-text variant="subhead">Typefaces <sup>2</sup></test-text>
-        <div style="display: flex">
-          <dl>
-            <dt>한글</dt>
-            <dd>고딕 에이원Gothic A1</dd>
-          </dl>
-          <dl style="width: 50%">
-            <dt>영문</dt>
-            <dd><del>Karla</del> Quattrocento Sans</dd>
-          </dl>
-        </div>
         <div class="token-group">
           <div class="token-item">
             <b>--font-family: 'Quattrocento Sans', 'Gothic A1', sans-serif;</b>
@@ -620,22 +601,20 @@
       <test-text variant="title">Layouts - Width</test-text>
       <test-text variant="body-large">콘텐츠 컨테이너의 가로 크기.</test-text>
 
-      <ul>
-        <li>max-width: textfield and text component</li>
-        <li>
-          <b>유연한 그리드 시스템. </b>12 column grid 등 엄격한 그리드 시스템을 정의하지 마세요.
-          디지털 최적화가 어렵다. 칼럼의 너비와 갯수를 정의하고 가로 스크롤을 활용합니다.
-        </li>
-        <li>
-          <b>페이지 모듈.</b>
-          페이지의 맥락을 구분하기 위해 레이아웃 모듈이나 배경색의 대비를 활용할 수 있습니다.
-          컨테이너 너비(비밀번호찾기와 로그인/회원가입)와 배경색(설정, 글쓰기, 소개 등).
-        </li>
-        <li>
-          <b>프레젠테이션 패턴. </b>섹션, 아티클 그리고 모달, 드롭다운 등의 컴포넌트도 작은
-          화면에서는 페이지 맥락이 될 수 있음을 고려합니다. => 결국 모바일 퍼스트 맥락.
-        </li>
-      </ul>
+      <test-text variant="body">TODO :: max-width: textfield and text component</test-text>
+      <test-text variant="body">
+        <b>유연한 그리드 시스템. </b>12 column grid 등 엄격한 그리드 시스템을 정의하지 마세요.
+        디지털 최적화가 어렵다. 칼럼의 너비와 갯수를 정의하고 가로 스크롤을 활용합니다.
+      </test-text>
+      <test-text variant="body">
+        <b>페이지 모듈.</b>
+        페이지의 맥락을 구분하기 위해 레이아웃 모듈이나 배경색의 대비를 활용할 수 있습니다. 컨테이너
+        너비(비밀번호찾기와 로그인/회원가입)와 배경색(설정, 글쓰기, 소개 등).
+      </test-text>
+      <test-text variant="body">
+        <b>프레젠테이션 패턴. </b>섹션, 아티클 그리고 모달, 드롭다운 등의 컴포넌트도 작은 화면에서는
+        페이지 맥락이 될 수 있음을 고려합니다. => 결국 모바일 퍼스트 맥락.
+      </test-text>
 
       <section class="">
         <test-text variant="subhead">Media queries</test-text>
