@@ -7,17 +7,12 @@
       <fieldset role="radiogroup">
         <legend hidden>radiogroup</legend>
         <test-radio-group>
-          <test-radio id="gender-man" name="gender" value="" label="Man"></test-radio>
-          <test-radio id="gender-woman" name="gender" value="" label="Woman"></test-radio>
+          <test-radio id="gender-man" name="gender" value="">Man</test-radio>
+          <test-radio id="gender-woman" name="gender" value="">Woman</test-radio>
           <!-- <p class="radio-helper">선택한 옵션의 보조 텍스트 영역입니다. 좁은 화면에서 충분한 공간 확보를 위해 들여쓰지 않습니다.</p> -->
-          <test-radio
-            id="gender-etc"
-            name="gender"
-            value=""
-            label="Video Killed the Radio Button"
-            checked
-            disabled
-          ></test-radio>
+          <test-radio id="gender-etc" name="gender" value="" checked disabled
+            >Video Killed the Radio Button</test-radio
+          >
         </test-radio-group>
       </fieldset>
     </section>
@@ -65,8 +60,9 @@
 
     <section class="component-case">
       <test-tile variant="elevated">
-        <test-radio label="개인" name="gender" value="" checked>
+        <test-radio name="gender" value="" checked>
           <b style="margin-left: auto">₩ 2,000</b>
+          개인
         </test-radio>
         <div style="margin: var(--space-2) 0 0">
           <test-text variant="body">1개월 무료 후 14,900원 / 개월</test-text>

@@ -6,6 +6,7 @@ import './checkout.css'
 
 import '/public/stylesheets/shared.css'
 import '/pages/components/components.css'
+import '/public/stylesheets/components/step.css'
 
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelector('main')!.innerHTML = navbar + main + footer

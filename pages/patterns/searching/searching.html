@@ -75,7 +75,7 @@
     <section class="search-recent" style="max-width:400px;">
       <test-group style="align-items:center;justify-content:space-between;">
         <test-text variant="body-bold">최근 검색</test-text>
-        <test-link label="">모두보기</test-link>
+        <test-link>모두보기</test-link>
       </test-group>
       <div style="height:var(--space-after-subhead);"></div>
       <test-menu-group>
@@ -136,11 +136,13 @@
     <test-tile variant="nuded" style="max-width: 800px">
       <test-result label="${수줍이}와(과) 일치하는 내용이 없습니다.">
         <test-group slot="list" class="search-similars" style="justify-content:center;">
-          <test-chip label="검색어 제공">
+          <test-chip>
             <test-avatar slot="icon" fallback="🦔"></test-avatar>
+            검색어 제공
           </test-chip>
-          <test-chip label="애옹">
+          <test-chip>
             <test-avatar slot="icon" fallback="🐈‍⬛"></test-avatar>
+            애옹
           </test-chip>
         </test-group>
       </test-result>

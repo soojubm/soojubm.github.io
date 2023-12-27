@@ -6,8 +6,6 @@ import main from './feed.html'
 import '/public/stylesheets/shared.css'
 
 import '/public/stylesheets/components/feed.css'
-import '/public/stylesheets/components/step.css'
-import '/public/stylesheets/pages/checkout.css'
 import '/pages/components/components.css'
 
 document.addEventListener('DOMContentLoaded', () => {

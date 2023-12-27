@@ -30,7 +30,7 @@
         </test-menuitem>
         <test-menuitem role="menuitemradio" label="메뉴아이템 스위치">
           <test-avatar slot="avatar"></test-avatar>
-          <test-switch slot="action" label=""></test-switch>
+          <test-switch slot="action"></test-switch>
         </test-menuitem>
         <test-menuitem label="메뉴아이템 체크박스" role="menuitemcheckbox">
           <test-avatar slot="avatar"></test-avatar>
@@ -60,7 +60,7 @@
         <test-tile variant="elevated" size="small" role="menuitemcheckbox">
           <test-menuitem label="강조된 메뉴아이템" description="리스트가 될 수 없어">
             <test-avatar slot="avatar" style="font-size: var(--font-size-large)">🦊</test-avatar>
-            <test-switch slot="action" role="switch" label=""></test-switch>
+            <test-switch slot="action" role="switch"></test-switch>
           </test-menuitem>
           <small style="display: block; margin: var(--space-2) 0 0"
             >Google 포토에 최대 해상도로 백업. TODO menuitem에 tile이 포함되어야 hover 상태.</small
@@ -310,11 +310,11 @@
       <test-menu-group>
         <test-menuitem label="수줍이 앱">
           <test-avatar slot="avatar" size="large" secondary></test-avatar>
-          <test-chip slot="action" label="열기"></test-chip>
+          <test-chip slot="action">열기</test-chip>
         </test-menuitem>
         <test-menuitem label="사파리 브라우저">
           <test-avatar slot="avatar" size="large"></test-avatar>
-          <test-chip slot="action" label="실행" status="active"></test-chip>
+          <test-chip slot="action" status="active">실행</test-chip>
         </test-menuitem>
       </test-menu-group>
     </div>
@@ -474,7 +474,7 @@
         <test-avatar slot="avatar">
           <i class="iconoir-github-circle"></i>
         </test-avatar>
-        <test-chip slot="action" label="팔로우"></test-chip>
+        <test-chip slot="action">팔로우</test-chip>
       </test-menuitem>
     </test-tile>
     <br /><br />
