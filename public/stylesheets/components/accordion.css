@@ -1,19 +1,21 @@
-.accordion {margin:1rem 0;}
+.accordion {
+  margin: var(--space-1) 0;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius);
+  background:var(--color-background-weak);
+}
 .accordion-title {
-  display:flex;align-items:center;justify-content:space-between;
+  display:flex;
+  align-items:center;
   gap: var(--space-2);
   width:100%;
   height:var(--size-medium);
-  /* font-size: var(--font-size-large); */
   font-weight: var(--font-weight-bold);
 }
-.accordion-title-icon {@mixin icon-indicator;transform:rotate(90deg)}
 .accordion-panel {display:none;cursor:default;}
 .accordion-panel p + p {margin:var(--space-2) 0 0 0;}
+
 [aria-expanded=true] .accordion-panel {display:block;padding:var(--space-1) 0;}
-[aria-expanded=true] .accordion-title-icon {transform:rotate(0)}
-
-
 
 .faq-item-reaction {}
 .faq-item-reaction-title {margin:0 0 var(--space-2) 0;@mixin text-subhead;}

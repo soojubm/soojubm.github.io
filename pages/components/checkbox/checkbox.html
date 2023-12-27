@@ -30,8 +30,16 @@
         />
 
         <test-checkbox class="js-check" id="terms" name="terms">
-          이용약관에 동의합니다. <a href="#">이용약관 바로가기</a></test-checkbox
-        >
+          이용약관에 동의합니다.
+          <a href="#">이용약관 바로가기</a>
+        </test-checkbox>
+
+        <test-separator></test-separator>
+
+        <test-group alignment="vertical">
+          <test-checkbox name="checkbox" checked disabled>비활성 상태</test-checkbox>
+          <test-checkbox name="checkbox" disabled>비활성 상태</test-checkbox>
+        </test-group>
       </test-group>
     </section>
 
@@ -64,18 +72,10 @@
     </section>
 
     <section class="component-case">
-      <test-group alignment="vertical">
-        <test-checkbox name="checkbox" checked disabled>비활성 상태</test-checkbox>
-        <test-checkbox name="checkbox" disabled>비활성 상태</test-checkbox>
-      </test-group>
-    </section>
-
-    <section class="component-case">
-      <test-tile>
-        <test-checkbox name="checkbox" checked>
-          모바일 클릭 영역을 위한 박스 형태. 체크박스를 크게 할 수도 있지만
-        </test-checkbox>
-      </test-tile>
+      <test-checkbox name="checkbox" checked>
+        모바일 클릭 영역을 위한 박스 형태. 체크박스를 크게 할 수도 있지만. Tiled tile 안에서 커스텀
+        체크박스 쓸 때 레이블 안 보임
+      </test-checkbox>
     </section>
 
     <section class="component-guide">
@@ -83,6 +83,7 @@
       <test-text variant="body">
         선택되지 않은 상태로 제공하여 사용자의 직접적인? 능동적인? 행동 .. todo
       </test-text>
+      <test-text variant="body"> 체크박스를 가로로 정렬하지 마세요. </test-text>
     </section>
 
     <test-text variant="subhead">Use cases</test-text>

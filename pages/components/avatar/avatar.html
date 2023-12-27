@@ -23,36 +23,6 @@
       </test-group>
     </section>
 
-    <!-- <div style="margin-top: 0; margin-bottom: 2rem; display: flex; gap: var(--space-3); font-size: 12px; color: var(--color-primary)">
-      <a class="hashtag" label="Size Token">#Size Token</a>
-      <a class="hashtag" label="Icon">#Icon</a>
-      <a class="hashtag" label="Image">#Image</a>
-      <a class="hashtag" label="Radius Token">#Radius Token</a>
-      <a class="hashtag" label="Background Weak">#Background Token</a>
-      <a class="hashtag" label="Badge Component">#Badge Component</a>
-    </div> -->
-
-    <!-- <div>
-      <table style="font-size: 12px">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>container</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>content</td>
-            <td>이미지, 텍스트, 아이콘, 이모지를 포함할 수 있습니다.</td>
-          </tr>
-        </tbody>
-      </table>
-    </div> -->
-
     <section class="component-props">
       <!-- <test-text variant="body-large" style="margin-top: 0">Props</test-text> -->
       <dl>
@@ -80,6 +50,24 @@
       </dl>
     </section>
 
+    <div
+      style="
+        margin-top: 0;
+        margin-bottom: 2rem;
+        display: flex;
+        gap: var(--space-3);
+        font-size: 12px;
+        color: var(--color-primary);
+      "
+    >
+      <a class="hashtag" label="Size Token">#Size Token</a>
+      <a class="hashtag" label="Icon">#Icon</a>
+      <a class="hashtag" label="Image">#Image</a>
+      <a class="hashtag" label="Radius Token">#Radius Token</a>
+      <a class="hashtag" label="Background Weak">#Background Token</a>
+      <a class="hashtag" label="Badge Component">#Badge Component</a>
+    </div>
+
     <section class="component-guide">
       <test-text variant="subhead">Behavior</test-text>
       <test-text variant="body" data-temp="clickable">
@@ -87,11 +75,19 @@
       </test-text>
       <test-text variant="body">아웃라인 형태를 클릭할 수 없는 아바타로 정의 추가.</test-text>
       <test-text variant="subhead">Visual style</test-text>
+      <test-text variant="subhead">Changelog</test-text>
+      <test-text variant="subhead">Checklist</test-text>
     </section>
 
     <!-- <test-text variant="subhead">groupable아바타 그룹</test-text> -->
-    <test-text variant="subhead">Use cases</test-text>
-    <section class="component-case">
+    <!-- <test-text variant="subhead">Use cases</test-text> -->
+    <div
+      style="
+        margin: 0 -5vw -8rem;
+        padding: 2rem var(--grid-margin) 6rem;
+        background: var(--color-background-weak);
+      "
+    >
       <test-tile variant="elevated" size="small">
         <test-group style="align-items: center">
           <test-avatar-group>
@@ -103,49 +99,51 @@
           <span class="avatargroup-label">Followed by 수줍이 외 4명</span>
         </test-group>
       </test-tile>
-      <small class="mutiual" style="display: block; margin: var(--space-2) 0 0 0"
+      <small class="mutiual" style="display: block; margin: var(--space-1) 0 0"
         >내가 팔로우하는 사용자 중에는 팔로워가 없습니다. (twitter)</small
       >
-    </section>
-    <section class="component-case">
-      <test-card variant="elevated" style="max-width: 400px">
+      <test-separator></test-separator>
+      <test-card variant="elevated">
         <div slot="entire">
           <test-menuitem label="수줍이" description="Youtube subscriber">
             <test-avatar slot="avatar"></test-avatar>
           </test-menuitem>
-          <test-group class="statistic" data-size="small">
+          <div style="margin: var(--space-2) 0 0">
+            <test-text variant="body">Sometimes at night, I find myself behind the computer. When I finally blink, a mess of code is drawing random structures on the screen. I spend the rest of the night staring.</test-text>
+            <!-- <span class="avatargroup-label">🥺 수줍이님을 팔로우하고 있는 친구가 없습니다.</span> -->
+          </div>
+          <div
+            class="statistic"
+            data-size="small"
+            style="display: flex; gap: var(--space-2); margin: var(--space-2) 0 0 0"
+          >
             <dl class="statistic-item" onclick="javascript:alert('샘플 유아이에요!')">
               <dt class="statistic-label">팔로워</dt>
-              <dd class="statistic-value">62</dd>
+              <dd class="statistic-value" style="margin:0;">62</dd>
             </dl>
             <i class="icon-bullet"></i>
             <dl class="statistic-item" onclick="javascript:alert('샘플 유아이에요!')">
               <dt class="statistic-label">팔로잉</dt>
-              <dd class="statistic-value">8</dd>
+              <dd class="statistic-value" style="margin:0;">8</dd>
             </dl>
-          </test-group>
-          <div style="margin: var(--space-2) 0 0">
-            <span class="avatargroup-label">🥺 수줍이님을 팔로우하고 있는 친구가 없습니다.</span>
           </div>
         </div>
       </test-card>
-      <test-card variant="elevated" style="width: 400px; margin: 1rem 0 0">
+      <test-separator></test-separator>
+      <test-card variant="elevated">
         <div slot="entire">
           <div style="display: flex; gap: 1rem">
             <test-avatar size="huge" variant="secondary"></test-avatar>
-            <div
-              class="statistic"
-              style="gap: var(--space-2); flex-direction: column; justify-content: left"
-            >
-              <div class="statistic-item" onclick="javascript:alert('샘플 유아이에요!')">
-                <i class="statistic-label">Top User</i>
-                <span class="statistic-value">Bruce Springsteen</span>
+            <test-group style="flex-direction:column;gap:var(--space-2);">
+              <div>
+                <test-text variant="label">Top User</test-text>
+                <test-text variant="subhead">Bruce Springsteen</span>
               </div>
-              <div class="statistic-item" onclick="javascript:alert('샘플 유아이에요!')">
-                <i class="statistic-label">Daily Purchase</i>
-                <span class="statistic-value">10 Items</span>
+              <div>
+                <test-text variant="label">Daily Purchase</test-text>
+                <test-text variant="subhead">10 Items</test-text>
               </div>
-            </div>
+            </test-group>
           </div>
           <test-separator></test-separator>
           <test-group style="align-items: center; width: 400px">
@@ -159,10 +157,49 @@
           </test-group>
         </div>
       </test-card>
-    </section>
+      <test-separator></test-separator>
 
-    <test-text variant="subhead">Changelog</test-text>
-    <test-text variant="subhead">Checklist</test-text>
+  
+  
+      <test-card variant="flat" size="medium" style="width:100%;max-width:400px;">
+        <div slot="entire">
+          <test-entity label="이경수" description="soojubm@gmail.com" description2="010 3121 7045" description="UI Designer">
+            <test-avatar slot="avatar" variant="secondary" size="large"></test-avatar>
+            <!-- <test-tag slot="tag" variant="primary"></test-tag> -->
+          </test-entity>
+          <div style="margin:var(--space-2) 0 0;">
+            <test-chip>내 프로필 관리</test-chip>
+          </div>
+          <div style="position:absolute;right:var(--space-4);top:var(--space-4);">
+            <test-avatar variant="secondary" size="large" fallback=" ">🐸</test-avatar>
+          </div>
+          <test-separator></test-separator>
+          <test-menu-group>
+            <test-menuitem label="어둡게 보기" class="js-darkmode" aria-label="change theme">
+              <test-avatar slot="avatar" fallback=" ">
+                <test-icon slot="icon" name="half-moon"></test-icon>
+              </test-avatar>
+              <test-switch slot="action" label=""></test-switch>
+            </test-menuitem>
+            <test-menuitem label="고객센터 및 도움말">
+              <test-avatar slot="avatar" fallback=" ">
+                <test-icon slot="icon" name="megaphone"></test-icon>
+              </test-avatar>
+            </test-menuitem>
+          </test-menu-group>
+          <test-separator></test-separator>
+          <test-menuitem label="로그아웃">
+            <test-avatar slot="avatar" fallback=" "><test-icon slot="avatar" name="log-out"></test-icon></test-avatar>
+          </test-menuitem>
+          <test-separator></test-separator>
+          <test-group class="user-footer">
+            <a href="#" style="font-size:12px;color:var(--color-text-light);">개인정보처리방침</a>
+            <i class="icon-bullet"></i>
+            <a href="#" style="font-size:12px;color:var(--color-text-light);">서비스 약관</a>
+          </test-group>
+        </div>
+      </test-card>
+    </div>
     <!-- <li>icon chip(button), icon tag, menu item avatar</li> -->
     <!-- <li>memeo. medium. 이하의 크기는 디스크립션을 제공하지 않는다. 항상 align-items:center.</li> -->
     <!-- <li>pagination item은 chip과 같은 size token을 사용하지만 chip도 avatar도 아닙니다.</li> -->

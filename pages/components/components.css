@@ -50,9 +50,8 @@
   background-color: var(--color-background);
   border: var(--border);
   border-radius: var(--radius);
-  /* font-size: 12px; */
-  font-family:'revert';position:relative;
-  outline: 8px solid var(--color-background);
+  position:relative;
+  outline: 6px solid var(--color-background);
 }
 .component-props dl {margin:0 !important;}
 .component-props dl dt {
@@ -61,7 +60,11 @@
 .component-props dl dt:after {content:':';}
 .component-props dl dd {color:#5f9ea0;}
 .component-props dl dt + dd {font-weight: var(--font-weight-bold);}
-.component-props dl dd + dd {width:100%;margin:0 0 var(--space-2);color:var(--color-text);}
+.component-props dl dd + dd {width:100%;margin:0 0 var(--space-2);font-size:var(--font-size-small);line-height:var(--font-line-height);color:var(--color-text);}
+
+.component-props [variant=subhead] {display:none;}
+
+
 /* 
 .component-props dl dd + dd:before {content:'*'}
 .component-props dl dd + dd:after {content:'*}
@@ -70,7 +73,6 @@
 /* TODO text.css 참고 */
 [variant=subhead] + [variant=body]{display:block;margin:var(--space-after-subhead) 0 0;}
 
-.component-props [variant=subhead] {display:none;}
 .component-guide {
   margin:3.5rem 0 4rem;
 }
@@ -79,11 +81,13 @@
 .component-guide [variant=body] + [variant=body] {display:block;margin:var(--space-3) 0 0;}
 
 .component-references {
-}
-.component-references a {
-}
-.component-references a:hover {
-  text-decoration: underline;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem 0;
+  padding: 1rem;
+  background: var(--color-background-weak);
+  border-radius: var(--radius);
 }
 
 .component-navigation {
@@ -101,7 +105,6 @@
   
   .article {padding:2rem var(--grid-margin) 8rem;overflow:hidden;position:relative;}
 .article + .article {padding-top:6rem;}
-.article-props dl dd + dd {width:100%;margin:.125rem 0 var(--space-2) 0;font-size:var(--font-size-small);line-height:var(--font-line-height);}
 
 
 p + [variant="subhead"],
@@ -118,7 +121,7 @@ p + [variant="subhead"],
 .article-aka {gap:var(--space-3)}
 .article-aka dt {margin: 0;}
 .article-aka dd {margin: 0;}
-.article-aka .hashtag:before {content:'';}
+
 
 .article-title {font-size:var(--font-size-huge);font-weight:var(--font-weight-bold);line-height:var(--font-line-height);color:var(--color-text);}
 /* .article-description {font-size:var(--font-size-large);line-height:var(--font-line-height);color:var(--color-text);} */
@@ -135,11 +138,10 @@ margin: 2rem 0;font-size:var(--font-size-large);color:var(--color-text);line-hei
 
 .article-dont {padding:1rem;border-radius:var(--radius);background:var(--red100);}
 
-.article > .hashtag {margin:0 .25rem 0 0;font-size:var(--font-size-small);}
 
 .spacing-card {padding:var(--space-inset-tile);overflow:hidden;position:relative;}
 .space {display:flex;align-items:center;justify-content:center;height:100%;border-radius:var(--radius);background:var(--green100);position:relative;}
-.space span {font-size:10px;font-weight:var(--font-weight-bold);}
+.space span {font-size:10px;}
 
 
 @media (--small) {

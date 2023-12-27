@@ -11,7 +11,7 @@
   /* // -apple-system === san-serif / system-ui === BlinkMacSystemFont */
   --font-family: 'IBM Plex Sans', system-ui, sans-serif;
   /* --font-family: 'IBM Plex Sans', 'Pretendard', system-ui, sans-serif; */
-  /* --font-family: 'IBM Plex Sans', 'Gothic A1', system-ui, sans-serif; */
+  --font-family: 'IBM Plex Sans', 'Gothic A1', system-ui, sans-serif;
   --font-family-heading: null;
   --font-family-body: null;
   --font-family-caption: null;
@@ -41,7 +41,8 @@
   --width-small: 480px;
   --width-tiny: 240px;
   --width-sidemenu: 14rem;
-  --width-dropdown: 240px;
+
+  --popover-width: 200px;
 
   --grid-column: calc(50% - var(--space-1));
   --grid-gutter: null;

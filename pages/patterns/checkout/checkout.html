@@ -1,0 +1,175 @@
+<main
+  class="checkout"
+  style="max-width: 800px; margin: 0 auto; padding: 8rem var(--grid-margin) 12rem"
+>
+  <header class="checkout-head">
+    <test-text variant="subhead">
+      주문정보를 확인하세요<i style="font-style: italic">!</i>
+    </test-text>
+  </header>
+  <br />
+  <section class="checkout-step step">
+    <div class="step-item is-active">
+      <span class="step-item-icon">1</span>
+      <h3 class="step-item-label">장바구니</h3>
+    </div>
+    <div class="step-item is-active">
+      <span class="step-item-icon">2</span>
+    </div>
+    <div class="step-item">
+      <span class="step-item-icon">3</span>
+      <h3 class="step-item-label">주문완료</h3>
+    </div>
+  </section>
+
+  <div style="height: 2rem"></div>
+
+  <!-- 예전에 이렇게 길었다... checkout-product-item-name -->
+  <!-- <div style="height: var(--space-after-subhead)"></div> -->
+  <section class="checkout-product">
+    <test-text variant="subhead" aria-label="summary">주문상품</test-text>
+    <div style="margin: var(--space-after-subhead) -0.5rem 0">
+      <test-tile size="small">
+        <test-menuitem>
+          <test-avatar slot="avatar" size="huge" fallback=""></test-avatar>
+          <div slot="text" style="margin-left: var(--space-1)">
+            <test-text variant="subhead">뉴닉이 풀어 쓴 경제상식사전</test-text>
+            <test-text variant="body">평생 소장</test-text>
+            <test-text variant="label">₩ 11,900</test-text>
+          </div>
+        </test-menuitem>
+      </test-tile>
+    </div>
+  </section>
+
+  <div style="height: 2rem"></div>
+
+  <section class="checkout-shipping">
+    <test-text variant="subhead">배송지</test-text>
+    <div style="margin: var(--space-after-subhead) -0.5rem 0">
+      <test-tile size="small">
+        <test-menuitem>
+          <!-- <test-avatar slot="avatar" size="large" style="background: aliceblue; font-size: 1.5rem">💳</test-avatar> -->
+          <test-radio slot="check" id="c1" name="c1" value="" checked>샘플</test-radio>
+          <div slot="text">
+            <test-group>
+              <test-text variant="body-bold">수줍이 집</test-text>
+              <test-tag>기본배송지</test-tag>
+            </test-group>
+            <div style="height: var(--space-1)"></div>
+            <test-text variant="body">[07655] 서울특별시 강서구 까치산로 182 1202호</test-text>
+            <test-text variant="label">010-3121-7045</test-text>
+          </div>
+        </test-menuitem>
+      </test-tile>
+      <div style="height: var(--space-after-subhead)"></div>
+      <test-tile variant="elevated" size="small">
+        <test-menuitem label="배송지 변경/추가">
+          <test-avatar slot="avatar" fallback=" ">
+            <test-icon slot="icon" name="coins-swap"></test-icon>
+          </test-avatar>
+        </test-menuitem>
+      </test-tile>
+    </div>
+  </section>
+
+  <div style="height: 2rem"></div>
+
+  <section class="checkout-discount">
+    <test-text variant="subhead">쿠폰 마일리지 할인</test-text>
+    <div style="height: var(--space-after-subhead)"></div>
+    <test-textfield label="보너스 쿠폰" placeholder="사용 가능한 쿠폰이 없습니다." disabled>
+    </test-textfield>
+    <div style="height: var(--space-4)"></div>
+    <test-textfield label="사용 마일리지" placeholder="0 마일리지"></test-textfield>
+    <div style="height: var(--space-3)"></div>
+    <test-chip label="보유 마일리지 1,186p 모두사용"></test-chip>
+  </section>
+
+  <div style="height: 2rem"></div>
+
+  <section class="checkout-payment">
+    <test-text variant="subhead" data-temp="매장과 구매자 차이.">Select payment method</test-text>
+    <div style="margin: var(--space-4) -0.5rem 0">
+      <test-group alignment="vertical">
+        <test-tile size="small">
+          <test-menuitem label="신용카드">
+            <test-avatar
+              slot="avatar"
+              size="large"
+              fallback="💳"
+              style="background: aliceblue; font-size: 1.5rem"
+            ></test-avatar>
+            <test-radio slot="check" id="c1" name="c1" value="" checked="true">샘플</test-radio>
+          </test-menuitem>
+        </test-tile>
+        <test-tile size="small">
+          <test-menuitem label="현금">
+            <test-avatar
+              slot="avatar"
+              size="large"
+              fallback="💵"
+              style="background: #defade; font-size: 1.5rem"
+            ></test-avatar>
+            <test-radio slot="check" id="c1" name="c1" value="">샘플</test-radio>
+          </test-menuitem>
+        </test-tile>
+        <test-tile size="small">
+          <test-menuitem label="무통장입금">
+            <test-avatar
+              slot="avatar"
+              size="large"
+              fallback="🫓"
+              style="background: antiquewhite; font-size: 1.5rem"
+            ></test-avatar>
+            <test-radio slot="check" id="c1" name="c1" value="">샘플</test-radio>
+          </test-menuitem>
+        </test-tile>
+        <!-- <test-tile>
+          <test-radio label="신용/체크카드"></test-radio>
+          <test-radio label="무통장입금" disabled>
+            <small style="color: var(--color-text)">COMING SOON<i style="font-style: italic">!</i></small>
+          </test-radio>
+        </test-tile> -->
+      </test-group>
+    </div>
+    <div style="height: var(--space-after-subhead)"></div>
+    <dl style="flex-direction: column">
+      <dt>결제 안내</dt>
+      <dd>신용카드 결제만 가능합니다.</dd>
+      <dd>해외에서 발행된 카드는 이용할 수 없습니다.</dd>
+      <dt>주문취소 및 환불 안내</dt>
+      <dd>주문취소 또는 환불은 <a href="#">고객센터</a>로 문의해 주세요.</dd>
+    </dl>
+    <div style="height: var(--space-after-subhead)"></div>
+  </section>
+
+  <div style="height: 2rem"></div>
+
+  <section class="checkout-">
+    <test-text variant="subhead">
+      Your Payments / Wallet<br />name on card / Card Number / Expiriation Date / CVV / billing
+      address (따로 관리 됨).
+    </test-text>
+    <div style="height: var(--space-after-subhead)"></div>
+    <test-menuitem>
+      <test-avatar slot="avatar" size="huge">
+        <test-tag slot="category" label="기본"></test-tag>
+      </test-avatar>
+      <div slot="text">
+        <h3 class="card-title">VISA 1988 XXXX 1111</h3>
+        <time class="card-date">Expires on 10/23</time>
+        <em>Edit</em>
+        <button class="card-more">more</button>
+      </div>
+    </test-menuitem>
+    <div style="height: var(--space-after-subhead)"></div>
+    <test-tile variant="elevated" size="small">
+      <test-menuitem label="Add a payment method">
+        <test-avatar slot="avatar" fallback=" ">
+          <test-icon slot="icon" name="plus"></test-icon>
+        </test-avatar>
+      </test-menuitem>
+    </test-tile>
+  </section>
+</main>

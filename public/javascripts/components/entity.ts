@@ -37,7 +37,7 @@ class Entity extends HTMLElement {
     description3.setAttribute('variant', 'caption')
 
     labelElement.innerText = this.label || ''
-    labelElement.setAttribute('variant', 'body-bold')
+    labelElement.setAttribute('variant', 'subhead')
 
     description.innerText = this.description || ''
     description2.innerText = this.description2 || ''

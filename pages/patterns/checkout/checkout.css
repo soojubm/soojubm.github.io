@@ -8,10 +8,6 @@
 .checkout-product-item-text {color:var(--color-text-light);}
 .checkout-product-item-price {@mixin text-subhead;}
 
-
-
-
-
 @media (--large) {
   /* // .checkout-foot {
   //   margin: 0;

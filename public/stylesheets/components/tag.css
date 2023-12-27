@@ -25,6 +25,16 @@
   background: var(--color-background-weak);
 }
 
+.tag[data-variant=hashtag] {
+  gap: 0;
+  padding: 0;
+  border: 0;
+  color: var(--color-text-light);
+}
+.tag[data-variant=hashtag]:before {
+  content: '#';
+}
+
 .tag[data-variant=up] {
   border-color: transparent;
   background: var(--red100);  color: var(--red800);

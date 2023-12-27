@@ -4,27 +4,45 @@
     <test-text variant="title">CSS</test-text>
     <test-text variant="body-large">작성 중.</test-text>
 
-    <li>컨테이너 컴포넌트. 리스트 컴포넌트. 형태 정보를 가질 수 있고 아이템의 간격을 갖는다. 그리고 기능적인 부분들.</li>
-      <li>--[namespace]-[component / category]-[attribute]-[status]</li>
-      <li>naming: data-index 보다 name name을 숫자로 주면 됨. 수정을 위해. 롤에 스타일을 주지 않기. aria로 상태 표현은 좋다.</li>
-
-      
+    <li>
+      컨테이너 컴포넌트. 리스트 컴포넌트. 형태 정보를 가질 수 있고 아이템의 간격을 갖는다. 그리고
+      기능적인 부분들.
+    </li>
+    <li>--[namespace]-[component / category]-[attribute]-[status]</li>
+    <li>
+      naming: data-index 보다 name name을 숫자로 주면 됨. 수정을 위해. 롤에 스타일을 주지 않기.
+      aria로 상태 표현은 좋다.
+    </li>
 
     <li>SCSS/LESS: kebab-case</li>
-<li>JS: PascalCase</li>
-<li>Android: snake_case</li>
-<li>iOS: PascalCase</li>
+    <li>JS: PascalCase</li>
+    <li>Android: snake_case</li>
+    <li>iOS: PascalCase</li>
 
-    OptionType = { label: '', value: '' }
-
-    linebreaker-desktop
-    linebreaker-mobile
-    animation-stopper-resize
-    hidden
+    OptionType = { label: '', value: '' } linebreaker-desktop linebreaker-mobile
+    animation-stopper-resize hidden
 
     <p>event handler naming.</p>
-<p>early return.</p>
-<p>isTrue. boolean.</p>
+    <p>early return.</p>
+    <p>isTrue. boolean.</p>
 
+    <test-separator></test-separator>
+
+    <test-text variant="body">
+      querySelector([aria-expanded]).addEventListener('click', (event) => {<br />
+      const controls = event.getAttribute('aria-controls') || target.ariaControls
+      querySelector([aria-controls=controls]).blblblb }) querySelector([aria-haspopup])
+    </test-text>
+    <div>
+      <label for="username">Username</label>
+      <input id="username" name="username" aria-describedby="username-desc" />
+      <button aria-expanded="false" aria-controls="username-desc" aria-label="Help about username">
+        <span aria-hidden="true">?</span>
+        test
+      </button>
+      <p id="username-desc" hidden>
+        Your username is the name that you use to log in to this service.
+      </p>
+    </div>
   </article>
 </main>

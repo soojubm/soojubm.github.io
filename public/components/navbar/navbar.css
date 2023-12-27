@@ -1,6 +1,7 @@
 .navbar {
   display:flex;align-items: center;height:var(--navbar-height);padding:var(--space-3) var(--grid-margin);box-sizing:border-box;background:var(--color-background);
-  position:sticky;top:0;left:0;right:0;z-index:var(--zindex-menu);}
+  position:fixed;top:0;left:0;right:0;z-index:var(--zindex-menu);}
+  /* sticy 위로 스크롤 하면 */
 .navbar-logo {
   width:var(--size-medium);height:var(--size-medium);
   margin: 0 0 0 var(--space-1);
@@ -12,7 +13,7 @@
 .navbar-menu {
   display: flex;
   align-items: center;
-  margin: 0 0 0 2rem;
+  margin: 0 0 0 1.5rem;
   position:relative;
 }
 .navbar-menu > a {

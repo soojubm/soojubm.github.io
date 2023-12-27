@@ -7,9 +7,6 @@
 .profile-user-description {max-height:5.4em;margin:var(--space-4) 0;white-space:normal;overflow:hidden;text-overflow:ellipsis;word-wrap:break-word;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;position:relative;}
 .profile-user-description-more {margin:0 var(--space-2);@mixin link-outside;}
 
-.profile-user-toggle {width:100%;margin:var(--space-4) 0;text-align:center;color:var(--color-text);position:relative;}
-.profile-user-toggle-icon {@mixin avatar-container-small;}
-.profile-user-toggle:hover {@mixin hover-item;}
 
 .social {}
 .social-link {display:flex;align-items:center;position:relative;}
@@ -34,16 +31,10 @@
 @media (max-width: 1320px) {
   .profile {max-width:1000px;}
   .profile-user {float:none;width:100%;box-sizing:border-box;}
-  .profile-user-toggle {display:flex;align-items:center;justify-content:space-between;}
   
   .profile-body {padding-left:0;}
 
   .tabpanel .card {width: 100%;}
-
-  .profile-user-info {display: none;}
-
-  .is-active  + .profile-user-toggle-icon {transform:rotate(180deg);}
-  .is-active  + .profile-user-info {display:block;margin-bottom:4rem;}
 
   /* .tabpanel test-card {
     width: 100%;

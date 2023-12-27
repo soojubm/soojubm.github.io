@@ -6,21 +6,6 @@
   z-index:var(--zindex-modal);
 }
 
-@define-mixin sheet {
-  @mixin tile-elevated;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 1rem;
-  /* // todo include position-sheet */
-  position: fixed;
-  left: var(--space-2);
-  right: var(--space-2);
-  margin-bottom: var(--space-2);
-  /* // todo outset */
-  bottom:calc(constant(safe-area-inset-bottom));bottom:calc(env(safe-area-inset-bottom));
-  z-index: var(--zindex-bottombar);
-}
 
 @define-mixin modal-dialog {
   max-width: 800px;
@@ -45,7 +30,19 @@
 .presentation [data-presentation=toast] {@mixin toast;}
 
 .sheet-overay {@mixin overay;z-index:6;}
-.sheet {@mixin sheet;transform:translateY(50vh);transition:all 1s;}
+.sheet {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem;
+  /* // todo include position-sheet */
+  position: fixed;
+  left: var(--space-2);
+  right: var(--space-2);
+  margin-bottom: var(--space-2);
+  /* // todo outset */
+  bottom:calc(constant(safe-area-inset-bottom));bottom:calc(env(safe-area-inset-bottom));
+  z-index: var(--zindex-bottombar);transform:translateY(50vh);transition:all 1s;}
 .sheet.is-visible {transform:translateY(0);}
 .sheet-title {margin:0 0 var(--space-3);@mixin text-subhead;}
 .sheet-toggle {width:80px;height:.25rem;border-radius:var(--radius);background:var(--color-background-weak);position:absolute;left:50%;top:.5rem;transform:translateX(-50%);}

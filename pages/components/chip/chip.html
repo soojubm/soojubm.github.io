@@ -49,11 +49,6 @@
           <test-icon slot="suffix" name="nav-arrow-down"></test-icon>
           expandable
         </test-chip>
-        <test-chip icon="" value="117">
-          <test-icon slot="prefix" name="heart"></test-icon>
-          좋아요
-          <!-- <test-badge>11</test-badge> -->
-        </test-chip>
       </test-chip-group>
       <test-separator></test-separator>
       <test-chip-group>
@@ -186,9 +181,9 @@
       </test-group>
     </section>
 
-    <test-text variant="subhead"
-      >Toggle Button / 아니면 아이콘 ? selection / menu item, checkbox로 대체?</test-text
-    >
+    <test-text variant="subhead">
+      Toggle Button / 아니면 아이콘 ? selection / menu item, checkbox로 대체?
+    </test-text>
     <section class="component-case">
       <test-chip-group>
         <test-chip status="active">팔로우</test-chip>
@@ -207,7 +202,11 @@
       </test-chip-group>
       <test-separator></test-separator>
       <test-chip-group>
-        <test-chip status="active" TODO 좋아요></test-chip>
+        <test-chip status="active">
+          <test-icon slot="prefix" name="heart"></test-icon>
+          TODO 좋아요
+          <!-- <test-badge>11</test-badge> -->
+        </test-chip>
       </test-chip-group>
     </section>
 
@@ -222,7 +221,11 @@
             <test-icon slot="prefix" name="filter"></test-icon>
             필터
           </test-chip>
-          <test-tile variant="elevated" size="small" style="max-width: 300px; position: absolute">
+          <test-tile
+            variant="elevated"
+            size="small"
+            style="width: var(--popover-width); position: absolute"
+          >
             <test-menu-group class="dropdown-menu">
               <test-radio name="gogo" value="">1~3명</test-radio>
               <test-radio name="gogo" value="">1~3명</test-radio>
@@ -230,12 +233,17 @@
             </test-menu-group>
           </test-tile>
         </div>
+        <test-separator></test-separator>
         <div class="dropdown">
           <test-chip aria-expanded="true">
             <test-icon slot="suffix" name="nav-arrow-up"></test-icon>
             최신순
           </test-chip>
-          <test-tile variant="elevated" size="small" style="max-width: 300px; position: absolute">
+          <test-tile
+            variant="elevated"
+            size="small"
+            style="width: var(--popover-width); position: absolute"
+          >
             <test-menu-group class="dropdown-menu">
               <h6 class="dropdown-menu-title" hidden>Dropdown header</h6>
               <test-menuitem label="최신순" disabled>
@@ -247,11 +255,16 @@
             </test-menu-group>
           </test-tile>
         </div>
+        <test-separator></test-separator>
         <div class="dropdown">
           <test-chip aria-label="more_vert" aria-haspopup="menu" aria-expanded="false">
             <test-icon slot="icon" name="more-vert"></test-icon>
           </test-chip>
-          <test-tile variant="elevated" size="small" style="max-width: 300px; position: absolute">
+          <test-tile
+            variant="elevated"
+            size="small"
+            style="width: var(--popover-width); position: absolute"
+          >
             <test-menu-group class="dropdown-menu">
               <test-menuitem label="신고"></test-menuitem>
               <test-separator></test-separator>
@@ -272,33 +285,6 @@
     </section>
 
     <!-- <li>당연한 얘기... 텍스트 레이블을 생략하는 경우 관습적인 메타포의 아이콘(북마크/하트/카트 등)을 사용하고 대체 텍스트와 툴팁을 제공하세요.</li> -->
-
-    <section class="component-references">
-      <test-text variant="label">References</test-text>
-      <test-link href="https://material.io/components/menus" target="_blank" style="display: block"
-        >MD menu</test-link
-      >
-      <!-- <span class="icon-bullet"></span> -->
-      <test-link
-        href="https://developer.apple.com/design/human-interface-guidelines/components/menus-and-actions/pull-down-buttons"
-      >
-        pull down button</test-link
-      >
-      <!-- <span class="icon-bullet"></span> -->
-      <test-link
-        href="https://developer.apple.com/design/human-interface-guidelines/ios/controls/pull-down-menus/"
-        target="_blank"
-      >
-        HIG pull down menu
-      </test-link>
-      <!-- <span class="icon-bullet"></span> -->
-      <test-link
-        href="https://developer.android.com/reference/com/google/android/material/chip/ChipGroup"
-        target="_blank"
-      >
-        MD chip group
-      </test-link>
-    </section>
 
     <test-card variant="flat" style="max-width: 400px">
       <div slot="entire">
@@ -329,5 +315,35 @@
         <!-- </test-tile> -->
       </div>
     </test-card>
+
+    <address class="component-references">
+      <!-- <test-text variant="label">References</test-text> -->
+      <test-chip-group>
+        <test-chip href="https://material.io/components/menus" target="_blank">
+          MD menu
+          <test-icon slot="suffix" name="arrow-up-right-circle-solid"></test-icon>
+        </test-chip>
+        <test-chip
+          href="https://developer.apple.com/design/human-interface-guidelines/components/menus-and-actions/pull-down-buttons"
+        >
+          MD pull down button
+          <test-icon slot="suffix" name="arrow-up-right-circle-solid"></test-icon>
+        </test-chip>
+        <test-chip
+          href="https://developer.apple.com/design/human-interface-guidelines/ios/controls/pull-down-menus/"
+          target="_blank"
+        >
+          HIG pull down menu
+          <test-icon slot="suffix" name="arrow-up-right-circle-solid"></test-icon>
+        </test-chip>
+        <test-chip
+          href="https://developer.android.com/reference/com/google/android/material/chip/ChipGroup"
+          target="_blank"
+        >
+          MD chip group
+          <test-icon slot="suffix" name="arrow-up-right-circle-solid"></test-icon>
+        </test-chip>
+      </test-chip-group>
+    </address>
   </article>
 </main>

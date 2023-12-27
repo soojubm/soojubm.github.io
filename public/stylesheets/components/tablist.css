@@ -9,6 +9,9 @@
   --tab-size: 48px;
 
   display: flex;
+  width: fit-content;
+  padding: var(--space-1);
+
   border-radius: var(--radius);
   background:var(--tablist-background);
   position: relative;
@@ -25,17 +28,18 @@
   border-bottom: var(--border);
 }
 
-::slotted([slot=tab]) {
+/* ::slotted([slot=tab]) {
   flex: auto;
-}
+} */
 
 .tab {
   display:flex;align-items:center;justify-content:center;
-  flex:auto;
   width: 100%;
   height:var(--size-medium);
+  padding: 0 var(--space-3);
   color:var(--color-text-light);
-  position:relative;z-index:var(--zindex-default);
+  position:relative;
+  z-index:var(--zindex-default);
 
   /* // reset */
   border: 1px solid transparent;

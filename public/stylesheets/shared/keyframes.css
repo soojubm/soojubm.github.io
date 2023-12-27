@@ -10,17 +10,16 @@
   100% {box-shadow: 0px 0px 0px .2rem rgba(0, 0, 0, 0);}
 }
 
-
 @keyframes marquee {
   0% {transform: translateX(0);}
-  // 100% {transform: translateX(calc(-2000px - (1.5rem * 10)));}
 	100% {transform:translateX(-100%)}
-	// linear-gradient( to left,var(--white),var(--whiteNoOpacity) )
+  /* // 100% {transform: translateX(calc(-2000px - (1.5rem * 10)));} */
+	/* // linear-gradient( to left,var(--white),var(--whiteNoOpacity) )
 	// content: "";
   //   height: 100%;
   //   width: 40px;
   //   position: absolute;
-  //   top: 0px;
+  //   top: 0px; */
 }
 
 @keyframes rotation {
@@ -33,7 +32,7 @@
 	to {opacity: 1;}
 }
 
-// animation-fill-mode:backwards;transform:matrix(1, 0, 0, 1, 0, 40);
+/* // animation-fill-mode:backwards;transform:matrix(1, 0, 0, 1, 0, 40); */
 @keyframes fadeup {
 	0% {opacity:0;transform:translateY(1rem);}
 	100% {opacity:1;transform:translateY(0px);}
@@ -52,7 +51,6 @@
 	100%{transform:scaleY(0);transform-origin:0 0}
 }
 
-// scroll indicator
 @keyframes bounce {
 	0% {transform:translate(-50%,0px);}
 	100% {transform:translate(-50%,2px);}
@@ -63,13 +61,11 @@
 	100% {transform:translateY(1rem);}
 }
 
-// pulse
+/* // pulse */
 @keyframes scaleout {
 	0% {transform:scale(0);}
 	100% {transform:scale(1.0);}
 }
-
-
 
 @keyframes shake {
 	from {
@@ -81,11 +77,9 @@
 	}
 }
 
-
-// scaleUp
+/* // scaleUp
 //   '0%': { transform: 'scale(1)' },
-//   '100%': { transform: 'scale(1.5)' },
-
+//   '100%': { transform: 'scale(1.5)' }, */
 
 @keyframes slide-down {
   0% {
@@ -105,8 +99,12 @@
 }
 
 
-
-
+/* skeleton */
+/* @keyframes shine {
+  to {
+    background-position-x: -200%;
+  }
+}
 .is-loading {}
 .image,
 h2,
@@ -116,12 +114,8 @@ p {
 	border-radius: 5px;
 	background-size: 200% 100%;
 	animation: 1.5s shine linear infinite;
-}
-@keyframes shine {
-  to {
-    background-position-x: -200%;
-  }
-}
+} */
+
 
 
 

@@ -10,7 +10,6 @@ img {
 .avatar {
   margin: 0 !important;
   
-  /* box-shadow: var(--color-background) 0px 0px 0px 2px; */
   --avatar-size: var(--size-medium);
   --avatar-background-color: #fff;
   --avatar-border: var(--border);
@@ -26,6 +25,7 @@ img {
   background-size: 80%;
   background-color: var(--color-background-weak);
   border-radius: var(--radius);
+  box-shadow: var(--color-background) 0px 0px 0px 2px;
   box-sizing: border-box;
   position: relative;
 
@@ -87,6 +87,10 @@ img {
   position: absolute;
   left: var(--space-1-minus);
   top: var(--space-1-minus);
+}
+
+.entity[data-size=medium] {
+  
 }
 
 test-text[variant=subhead] {

@@ -251,7 +251,6 @@ main,
 .user {display:block;color:var(--color-text);position:relative;@mixin clearfix;}
 .user-name {display:block;@mixin text-subhead;margin:var(--space-2) 0 0 0;}
 .user-id {margin:-.125rem 0 0 0;}
-.user-myinfo {@mixin link-outside;margin:.25rem 0 0;}
 .user-footer a {font-size:var(--font-size-small);color:var(--color-text-light);}
 
 .notification-item-avatar {@mixin avatar-large;position:absolute;left:0;top:0;}

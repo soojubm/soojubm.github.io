@@ -30,16 +30,6 @@
       class="textbox-toolbar"
       style="width: max-content; position: absolute; top: var(--space-1); left: var(--space-1)"
     >
-      <!-- <div class="chip" style="margin: 0 var(--space-2) 0 0">
-            <select
-              class="chip-label"
-              id="select2"
-              style="background: none; border: none; padding: 0 var(--space-4) 0 0; font: inherit; color: var(--color-text)"
-            >
-              <option value="select-option1">나눔고딕</option>
-            </select>
-            <span class="chip-indicator" role="img"><span class="material-symbols-outlined"> arrow_drop_down </span></span>
-          </div> -->
       <test-chip class="textbox-toolbar-bold">
         <test-icon slot="icon" name="bold"></test-icon>
       </test-chip>
@@ -74,58 +64,29 @@
   <p>loading state/dfn/abbr</p>
   https://material.io/design/interaction/states.html
 
-  <div class="js-tab">
-    <nav
-      class="tablist type-sc"
-      role="tablist"
-      aria-label="sample tabs"
-      style="max-width: 11rem; margin: 0.5rem auto"
-    >
-      <button
-        class="tablist-tab"
-        role="tab"
-        aria-selected="true"
-        aria-controls="panel-1"
-        id="tab-1"
-        tabindex="0"
-        style="padding-top: 3px"
-      >
-        Style
-      </button>
-      <button
-        class="tablist-tab"
-        role="tab"
-        aria-selected="false"
-        aria-controls="panel-2"
-        id="tab-2"
-        tabindex="-1"
-        style="padding-top: 3px"
-      >
-        Role
-      </button>
-      <i class="tablist-indicator" style="width: 50%"></i>
-    </nav>
-  </div>
-
   <article class="article js-observer js-scrollspy-section">
     <test-text variant="title">Paginations</test-text>
     <test-text variant="body-large">작성 중.</test-text>
 
     <section class="component-example">
       <nav class="pagination" role="navigation" aria-label="pagination">
-        <a class="pagination-previous" href="#" title="앞 페이지로 이동" aria-label="">이전</a>
-        <a class="pagination-next" href="#" title="뒷 페이지로 이동">다음</a>
-        <a class="pagination-link" href="#" title="맨 앞 페이지로 이동">1</a>
-        <i class="pagination-ellipsis" title="맨 앞 페이지로 이동">...</i>
-        <a class="pagination-link" href="#" title="1 페이지로 이동">5</a>
-        <a class="pagination-link" href="#" title="1 페이지로 이동">6</a>
-        <a class="pagination-link is-current" href="#" title="1 페이지로 이동" aria-current="true"
-          >7</a
+        <test-chip class="pagination-previous" aria-label="앞 페이지로 이동"> 이전 </test-chip>
+        <test-chip class="pagination-next" aria-label="뒷 페이지로 이동">다음</test-chip>
+        <test-chip class="pagination-link" aria-label="맨 앞 페이지로 이동">1</test-chip>
+        <i class="pagination-ellipsis" aria-label="맨 앞 페이지로 이동">...</i>
+        <test-chip class="pagination-link" href="#" aria-label="1 페이지로 이동">5</test-chip>
+        <test-chip class="pagination-link" href="#" aria-label="1 페이지로 이동">6</test-chip>
+        <test-chip
+          class="pagination-link is-current"
+          aria-label="1 페이지로 이동"
+          aria-current="true"
         >
-        <a class="pagination-link" href="#" title="1 페이지로 이동">8</a>
-        <a class="pagination-link" href="#" title="1 페이지로 이동">9</a>
-        <i class="pagination-ellipsis" title="맨 앞 페이지로 이동">...</i>
-        <a class="pagination-link" href="#" title="맨 뒤 페이지로 이동">50</a>
+          7
+        </test-chip>
+        <test-chip class="pagination-link" href="#" aria-label="1 페이지로 이동">8</test-chip>
+        <test-chip class="pagination-link" href="#" aria-label="1 페이지로 이동">9</test-chip>
+        <i class="pagination-ellipsis" aria-label="맨 앞 페이지로 이동">...</i>
+        <test-chip class="pagination-link" aria-label="맨 뒤 페이지로 이동">50</test-chip>
       </nav>
       <aside>
         <small>숙소 300개 이상 중 281 – 300 (airbnb)</small>
@@ -194,6 +155,11 @@
   <article class="article js-observer js-scrollspy-section">
     <test-text variant="title">Carousel</test-text>
     <test-text variant="body-large">작성 중.</test-text>
+    <p>aka. carousel, slider</p>
+    <p>
+      -webkit-appearance: slider-vertical slider<br />CSS 속성에서 사용하기 때문에 slider보다
+      carousel로 명명하는 것이 더 좋음. input type="range" 형태를 slider 또는 stepper로 명명하기도.
+    </p>
     <p>https://web.dev/carousel-best-practices/</p>
     <p><b>block</b> -> inline / font-size: 0</p>
     <p><b>flex</b> -> block + min-width</p>
@@ -257,14 +223,6 @@
       </section>
       <test-separator></test-separator>
       <!-- data-scroll="vertical" -->
-      <nav role="tablist">
-        <button class="story" role="tab" aria-selected="true" data-index="1">
-          <figure class="avatar" data-size="huge">
-            <span>+</span>
-          </figure>
-          <span class="story-name">추가</span>
-        </button>
-      </nav>
     </section>
 
     <ul>
@@ -308,6 +266,40 @@
             <span role="cell" style="flex: auto">2KB</span>
           </div>
         </section>
+
+        <br /><br />
+
+        <div class="album-track">
+          <header class="album-track-label" role="row">
+            <span class="album-track-label-item" role="columnheader">#</span>
+            <span class="album-track-label-item">제목</span>
+            <span class="album-track-label-item">Gengre</span>
+            <span class="album-track-label-item">Progress</span>
+            <span class="album-track-label-item">Status</span>
+            <span class="album-track-label-item">러닝타임</span>
+            <span class="album-track-label-item" title=" date added(sort)">Date</span>
+          </header>
+          <div class="album-track-row" role="row">
+            <span class="album-track-row-column" data-cell="number">1</span>
+            <span class="album-track-row-column">
+              <test-menu-item label="Dancing in the Dark" description="Bruce Springsteen">
+                <test-avatar slot="avatar"></test-avatar>
+              </test-menu-item>
+            </span>
+            <span class="album-track-row-column stack"
+              ><test-tag>hiphop</test-tag><test-tag>rap</test-tag></span
+            >
+            <span class="album-track-row-column">In Review --</span>
+            <span class="album-track-row-column"
+              ><em
+                class="badge"
+                style="height: auto; margin-right: 0.5rem; background: gold; padding: 3px"
+              ></em>
+              Error</span
+            >
+            <span class="album-track-row-column">7 : 02</span>
+          </div>
+        </div>
 
         <br />
         <br />
@@ -395,6 +387,27 @@
           </tr>
         </table>
       </div>
+
+      <br /><br />
+
+      <table style="font-size: 12px">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>container</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>content</td>
+            <td>이미지, 텍스트, 아이콘, 이모지를 포함할 수 있습니다.</td>
+          </tr>
+        </tbody>
+      </table>
     </section>
   </article>
 
@@ -621,38 +634,6 @@
       <test-chip>View Job</test-chip>
     </test-tile>
 
-    <div class="album-track">
-      <header class="album-track-label" role="row">
-        <span class="album-track-label-item" role="columnheader">#</span>
-        <span class="album-track-label-item">제목</span>
-        <span class="album-track-label-item">Gengre</span>
-        <span class="album-track-label-item">Progress</span>
-        <span class="album-track-label-item">Status</span>
-        <span class="album-track-label-item">러닝타임</span>
-        <span class="album-track-label-item" title=" date added(sort)">Date</span>
-      </header>
-      <div class="album-track-row" role="row">
-        <span class="album-track-row-column" data-cell="number">1</span>
-        <span class="album-track-row-column">
-          <test-menu-item label="Dancing in the Dark" description="Bruce Springsteen">
-            <test-avatar slot="avatar"></test-avatar>
-          </test-menu-item>
-        </span>
-        <span class="album-track-row-column stack"
-          ><test-tag>hiphop</test-tag><test-tag>rap</test-tag></span
-        >
-        <span class="album-track-row-column">In Review --</span>
-        <span class="album-track-row-column"
-          ><em
-            class="badge"
-            style="height: auto; margin-right: 0.5rem; background: gold; padding: 3px"
-          ></em>
-          Error</span
-        >
-        <span class="album-track-row-column">7 : 02</span>
-      </div>
-    </div>
-
     <section>
       <test-textfield label="임시" placeholder="you@gamil.com">
         <test-icon slot="prefix" name="mail"></test-icon>
@@ -729,20 +710,15 @@
     <br />
 
     <test-tile>
-      <q
-        >I'm impressed by how GitHub Copilot seems to know exactly what I want to type next. GitHub
+      <q>
+        I'm impressed by how GitHub Copilot seems to know exactly what I want to type next. GitHub
         Copilot is particularly helpful when working on React components, where it makes eerily
         accurate predictions. GitHub Copilot has become an indispensable part of my programmer
-        toolbelt.</q
-      >
+        toolbelt.
+      </q>
       <figcaption style="margin: var(--space-3) 0 0 0; color: var(--color-text-light)">
         Byline
       </figcaption>
-    </test-tile>
-
-    <test-tile style="text-align: center">
-      최근 3개월간 네이버플러스 멤버십으로<br />
-      <em>15,799원 추가 적립 혜택</em>이 생겼어요!
     </test-tile>
 
     <aside

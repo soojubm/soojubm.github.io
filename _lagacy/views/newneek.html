@@ -20,7 +20,7 @@ body {
 .intro-head-title {
   padding: 1rem 0;
   border-bottom: 1px solid #000;
-  font-size: 3rem;
+  font-size: var(--font-size-huge);
 }
 
 .intro-head-subhead {
@@ -164,6 +164,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 1rem;
     width: 100%;
     padding: .5rem 0;
     border-top: 1px solid #000;
@@ -231,7 +232,6 @@ body {
     }
 </style>
 
-
 <aside class="modal newneek" role="presentation">
 
   <article class="modal-dialog" role="dialog">
@@ -243,12 +243,8 @@ body {
 
     <section class="modal-body">
       <section style="max-width:480px;margin:0 auto;">
-
-        
         <div class="chat">
-          <figure class="chat-avatar">
-            🧔
-          </figure>
+          <figure class="chat-avatar">🧔</figure>
           <div>
             <h5 class="chat-username">신규방문자</h5>
             <!-- <time class="chat-time">12:00 am</time> -->
@@ -280,14 +276,14 @@ body {
           <div class="chat-bubble">
             <p>뉴닉이 어떻게 쉽고 재미있게 풀어줬더라?</p>
           </div>
-
-          <div class="stack" style="margin-top:.75rem;font-size:var(--font-size-small);">
-            <span class="chip"><span class="chip-label">최신 콘텐츠 탐색</span></span>
-            <span class="chip"><span class="chip-label">관심 분야로 탐색</span></span>
-            <span class="chip"><span class="chip-label">큐레이션 콘텐츠 탐색</span></span>
-            <span class="chip"><b class="chip-label">이슈나 인물로 검색</b></span>
-            <span class="chip"><span class="chip-label">관심 콘텐츠 저장</span></span>
-          </div>
+          <div style="height:var(--space-4);"></div>
+          <test-chip-group>
+            <test-chip>최신 콘텐츠 탐색</test-chip>
+            <test-chip>관심 분야로 탐색</test-chip>
+            <test-chip>큐레이션 콘텐츠 탐색</test-chip>
+            <test-chip><b class="chip-label">이슈나 인물로 검색</b></test-chip>
+            <test-chip>관심 콘텐츠 저장</test-chip>
+          </test-chip-group>
         </div>
       </section>
 
@@ -350,15 +346,17 @@ body {
               <img class="mangrove2" src="/public/images/newneek/home-mangrove2.png" alt="" />
             </div>
             <div class="mangrove-foot">
-              <span style="margin-right:1rem;">고슴이는 집을 찾을 수 있을까요? </span>
+              <b>고슴이는 집을 찾을 수 있을까요? </b>
               <div class="cta-arrow"><div class="line"></div></div>
             </div>
           </div>
         </section>
       </div>
 
-      <div class="subscribe-gosum">
-        <img src="https://newneek.co/static/media/gosum-home.7b7f5b6b.png" alt=""></div>
+      <br />
+
+      <section class="subscribe-gosum">
+        <img src="https://newneek.co/static/media/gosum-home.7b7f5b6b.png" alt=""></section>
         <h1 class="intro-head-title">
           특보! <span role="img" aria-label="">🗞️</span> 우리가 시간이 없지, <span class="mobile-block">세상이 안 궁금하냐!</span>
         </h1>

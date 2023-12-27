@@ -82,6 +82,7 @@ input[type=search]::-webkit-search-results-decoration {display:none;}
   width:100%;
   height:var(--textfield-height);
   padding:var(--space-2) var(--space-4);
+  box-sizing: border-box;
   border-radius:var(--radius);
   background:var(--color-background-weak);
   color: var(--color-text);
@@ -108,7 +109,6 @@ input[type=search]::-webkit-search-results-decoration {display:none;}
   position:absolute;top:var(--size-small);right:0;
 }
 
-slot[name=prefix] ~ .textfield-input {padding-left:48px !important;}
 
 .textfield-prefix,
 ::slotted([slot=prefix]) {
@@ -117,6 +117,9 @@ slot[name=prefix] ~ .textfield-input {padding-left:48px !important;}
   height: var(--textfield-height);
   position:absolute;top:var(--size-small);left:var(--space-4);
 }
+
+::slotted([slot=prefix]) ~ .textfield-input {padding-left:48px !important;}
+
 
 .textfield-suffix ~ .textfield-input {padding-right:4rem;}
 

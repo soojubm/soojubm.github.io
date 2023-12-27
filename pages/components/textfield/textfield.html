@@ -1,4 +1,13 @@
 <main class="component">
+  <style>
+    /* TODO */
+    .component-case > * {
+      display: flex;
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+  </style>
   <!-- <form action="">
     <input type="checkbox" />
     <input type="radio" />
@@ -134,14 +143,13 @@
 
     <ul>
       <li>
-        Searchfield / Commentfield / counterField / PriceField... label, validation, helper를
-        포함하지 않는 케이스와 구분해보기. 기본 Textfield를 확장하여 NumberField, DateField,
-        DateRangeField, SearchField, EmailField, PasswordField??
+        Searchfield / Commentfield / counterField / PriceField...
+      </li>
+      <li>
+        optional :: label, validation, helper
       </li>
       <li>fieldset variant=checkbox-group horizontal / flex=1</li>
       <li>TODO 유틸함수 만들기. 앞자리 0 제거. 숫자만입력3자리마다콤마. 소숫점 컨트롤.</li>
-      <!-- <input type="text" inputmode="numeric" pattern="[0-9]*" />
-      <small id="" class="textfield-helper" aria-live="assertive">pattern="[0-9]+"</small> -->
       <li>
         url field. www 및 https://<br />
         required indicator / optional indicator / validations / masked / validation feedback 기본
@@ -181,28 +189,21 @@
         넘버필드는 작은 사이즈인데 결국 두 개의 사이즈로? 수량 뿐 아니라 숫자만 입력할 수 있는 필드.
         헬퍼 텍스트(위/아래). label :: line-height: 24px
       </test-text>
+      <test-text>
+        groupable은 속성. 그래서 컴포넌트 이름은 form layout / fieldset / fieldgroup
+      </test-text>
       <!--
       <test-text variant="body"> 일반 텍스트필드와 특수한? 텍스트필드 구별을 위한 시각적인 단서를 제공하세요. 검색 아이콘 등 </test-text> -->
     </section>
 
-    <test-text variant="subhead">Groupable (patterns)</test-text>
+    <test-text variant="subhead">Fieldgroup</test-text>
     <test-text variant="body">서비스 이용에 필수적인 필드는 그루핑 하지마요마요. ?? </test-text>
     <section class="component-case">
       <fieldset class="textfield-group" style="width: 100%; max-width: 400px">
         <test-textfield label="Length" placeholder="cm unit"></test-textfield>
-        <test-icon
-          name="delete-circle"
-          style="padding: 0 var(--space-1); color: var(--color-text-light); line-height: 48px"
-        >
-          close
-        </test-icon>
+        <test-icon name="xmark"></test-icon>
         <test-textfield label="Width" placeholder="x means"></test-textfield>
-        <test-icon
-          name="delete-circle"
-          style="padding: 0 var(--space-1); color: var(--color-text-light); line-height: 48px"
-        >
-          close
-        </test-icon>
+        <test-icon name="xmark"></test-icon>
         <test-textfield label="Height" placeholder="cm"></test-textfield>
       </fieldset>
     </section>
@@ -214,10 +215,13 @@
       </test-textfield>
     </section>
 
-    <test-text variant="subhead">SearchField</test-text>
+    <test-text variant="subhead">EmailField</test-text>
     <section class="component-case">
       <test-searchfield label="서치필드 테스트"></test-searchfield>
-      <hr />
+    </section>
+
+    <test-text variant="subhead">SearchField</test-text>
+    <section class="component-case">
       <form class="searchfield" style="max-width: 400px">
         <label class="searchfield-prefix">
           <test-icon name="search"></test-icon>
@@ -237,6 +241,8 @@
     </section>
 
     <test-text variant="subhead">NumberField</test-text>
+    <!-- <input type="text" inputmode="numeric" pattern="[0-9]*" />
+    <small id="" class="textfield-helper" aria-live="assertive">pattern="[0-9]+"</small> --></test-text>
     <section class="component-case">
       <test-textfield
         type="number"
@@ -246,7 +252,7 @@
         oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
       ></test-textfield>
     </section>
-    <test-text variant="subhead">DateRangeField</test-text>
+    <test-text variant="subhead">DateRangeField / DateField</test-text>
     <section class="component-case">
       <fieldset class="textfield-group" style="width: 100%; max-width: 400px">
         <test-textfield type="date" name="date-start" label="체크인" placeholder="YYYY. MM. DD.">
@@ -274,7 +280,8 @@
         >
           <test-icon slot="icon" name="minus"></test-icon>
         </test-chip>
-        <input
+        <test-textfield size="small" value="20"></test-textfield>
+        <!-- <input
           class="counter-input reset-input textfield-input js-counter-input js-number-input"
           type="number"
           name="counter1"
@@ -282,8 +289,7 @@
           min="5"
           max="20"
           value="0"
-          style="text-align: center"
-        />
+        /> -->
         <test-chip class="counter-increment js-counter-increment" tabindex="-1">
           <test-icon slot="icon" name="plus"></test-icon>
         </test-chip>
@@ -313,7 +319,7 @@
 
     <test-text variant="subhead">Textarea</test-text>
     <section class="component-case">
-      <div class="textfield">
+      <div class="textfield" style="display:block;">
         <label class="textfield-label" for="search1">레이블</label>
         <small class="textfield-byte"><b>0 KB</b> / 100 KB</small>
         <textarea

@@ -182,6 +182,12 @@
     
     <test-card variant="flat" class="share">
       <div slot="entire">
+        <test-titlebar heading="공개 대상 선택">
+          <test-chip slot="back" variant="plain">
+            <test-icon slot="icon" name="arrow-left"></test-icon>
+          </test-chip>
+        </test-titlebar>
+        <test-separator></test-separator>
         <test-text variant="subhead" class="share-title">가족이나 친구와<br />함께 보세요!</test-text>
         <br />
         <test-menu-group>
@@ -243,6 +249,22 @@
           </test-menuitem>
         </test-group>
       </div>
+    </test-card>
+
+    <test-menuitem size="large">
+      <test-avatar slot="avatar" size="huge"></test-avatar>
+      <div slot="text" style="margin-top: -0.25rem">
+        <test-text variant="body">사진 및 동영상 백업</test-text>
+        <test-avatar-group>
+          <test-avatar size="small"></test-avatar>
+          <test-avatar size="small"></test-avatar>
+          <test-avatar size="small"></test-avatar>
+          <test-avatar size="small"></test-avatar>
+        </test-avatar-group>
+      </div>
+      <test-text slot="description">멤바 45명</test-text>
+      <test-chip slot="action">추가</test-chip>
+    </test-menuitem>
 
       <br /><br />
 
@@ -256,8 +278,8 @@
       <br />
       <!-- <a class="link-outside" href="#">모두 보기</a> -->
       <test-group style="margin:0 0 var(--space-3)">
-        <test-chip label="모두" status="active"></test-chip>
-        <test-chip label="바보만"></test-chip>
+        <test-chip status="active">모두</test-chip>
+        <test-chip>바보만</test-chip>
       </test-group>
       <test-menu-group>
         <test-menuitem label="Gyeongsoo I" description="유아이 디자이너">
@@ -318,15 +340,6 @@
         </select>
         <test-icon name="nav-arrow-down" class="textfield-suffix"></test-icon>
       </div>
-      <test-tile>
-        <span class="chip" style="width: 200px">
-          <select class="chip-label" id="select2" style="pointer-events: auto">
-            <option value="select2-1">Choose an option long long texts</option>
-            <option value="select2-2">option2</option>
-          </select>
-          <test-icon name="nav-arrow-down" class="chip-icon"></test-icon>
-        </span>
-      </test-tile>
     </section>
 
     <section class="component-props">
@@ -347,30 +360,6 @@
     </section>
 
     <section class="component-guide">
-      <test-menuitem size="large">
-        <test-avatar slot="avatar" size="large"></test-avatar>
-        <div slot="text" style="margin-top: -0.25rem">
-          <test-text variant="body">사진 및 동영상 백업</test-text>
-          <test-avatar-group>
-            <test-avatar size="small"></test-avatar>
-            <test-avatar size="small"></test-avatar>
-            <test-avatar size="small"></test-avatar>
-            <test-avatar size="small"></test-avatar>
-          </test-avatar-group>
-        </div>
-        <test-text slot="description">멤바 45명</test-text>
-        <test-chip slot="action">추가</test-chip>
-      </test-menuitem>
-  
-      <br />
-  
-      <test-callout icon="📌">
-        제품의 초기 단계에서는 native select와 dropdown을 함께 가져갈 필요가 있나. native select는
-        모바일 사용성이 좋고 초기 구축이 쉽다. 그러나 제품 또는 제품 개발 과정이 궤도에 올라왔을 때는
-        일정 수준의 컴포넌트가 확보되어 있을 것이기 때문. naming select / width / input bar(google
-        font)
-      </test-callout>
-  
       <test-text variant="subhead">Best practices</test-text>
       <ul>
         <li>
@@ -405,6 +394,7 @@
   <article class="article">
     <test-text variant="title">Entity</test-text>
     <test-text variant="body-large">개체. menu item과 구별이 되나?</test-text>
+    <test-text variant="body-large">분류. bottom nav item, icon button with label, user(entity huge). icon button vertical horizontal label이 박스 위 안에 있나 밖에 있나. 슬롯을 써도 그것은 결국 컴포넌트에서 일회성으로 이루어지는 것이기 때문에 공통 아이콘 요소는 슬롯으로 가는 것이 어떨까.</test-text>
 
     <section class="component-example">
       <test-group alignment="vertical">
@@ -416,6 +406,23 @@
         >
           <test-avatar slot="avatar" size="huge" variant="secondary"></test-avatar>
         </test-entity>
+        <test-entity description="공유 TODO bottom nav">
+          <test-avatar slot="avatar" size="large" variant="secondary" fallback=" ">
+            <test-icon slot="icon" name="share-ios" size="large"></test-icon>
+          </test-avatar>
+        </test-entity>
+        <test-group>
+          <test-entity description="더보기">
+            <test-avatar slot="avatar" size="large" variant="secondary" fallback=" ">
+              <test-icon slot="icon" name="more-horiz-circle" size="large"></test-icon>
+            </test-avatar>
+          </test-entity>
+          <test-entity description="툴">
+            <test-avatar slot="avatar" size="large" variant="secondary" fallback=" ">
+              <test-icon slot="icon" name="share-ios" size="large"></test-icon>
+            </test-avatar>
+          </test-entity>
+        </test-group>
         <test-menuitem size="large" label="EntityLarge" description="individual, user">
           <test-avatar slot="avatar" size="large"></test-avatar>
         </test-menuitem>
@@ -438,56 +445,11 @@
       <li>학습이 필요없는 보편 케이스와 도메인에 종속적인 특수 케이스를 구분하기.</li>
     </ul>
 
-  </article>
-  
-  <article class="article">
-    <test-text variant="title">Entity</test-text>
-    <test-text variant="body-large">개체. menu item과 구별이 되나?</test-text>
-
-    <section class="component-example">
-      <test-group alignment="vertical">
-        <test-entity
-          size="huge"
-          label="이거 subhead는 형태이고 name은 역할인데."
-          description="list로 사용할 때 maxWidth"
-          description2="description area2."
-        >
-          <test-avatar slot="avatar" size="huge" variant="secondary"></test-avatar>
-        </test-entity>
-        <test-menuitem size="large" label="EntityLarge" description="individual, user">
-          <test-avatar slot="avatar" size="large"></test-avatar>
-        </test-menuitem>
-        <test-menuitem label="EntityMedium" time="36.4만">
-          <test-avatar slot="avatar"></test-avatar>
-          <test-chip slot="action" class="item-delete"></test-chip>
-        </test-menuitem>
-        <test-menuitem size="small" label="EntitySmall">
-          <test-avatar slot="avatar" size="small"></test-avatar>
-        </test-menuitem>
-      </test-group>
-    </section>
-
-    <test-text variant="subhead">Best practices</test-text>
-    <ul>
-      <li>
-        크기 별로 특정 컨테이너의 주체가 나뉜다. 예를 들면 huge는 페이지 레벨의 정보 주체가 될 수
-        있음.
-      </li>
-      <li>학습이 필요없는 보편 케이스와 도메인에 종속적인 특수 케이스를 구분하기.</li>
-    </ul>
-
-    <test-text variant="subhead">Related</test-text>
-    <ul>
-      <li>Avatar</li>
-      <li>Action - Chip</li>
-      <li>Text - name / description / description2</li>
-      <li>Utility - Truncated text</li>
-    </ul>
   </article>
 
   <section
     style="
-      margin: 4rem 0 -8rem;
+      margin: 4rem 0 0;
       padding: 2rem var(--grid-margin) 4rem;
       background: var(--color-background-weak);
     "
@@ -505,10 +467,10 @@
     <br /><br />
     <test-text variant="subhead">User item</test-text>
     <test-text variant="body"
-      >다수의 유저 목록을 표현. 또는 <mark>아티클 레벨</mark> 정보의 주체.</test-text
+      >다수의 유저 목록을 표현. 또는 <mark>아티클 레벨</mark> 정보의 주체. 피드 등에서 사용하는.</test-text
     >
     <test-tile size="small" style="margin: 1rem 0 0 0">
-      <test-menuitem label="github">
+      <test-menuitem label="수줍이">
         <test-avatar slot="avatar">
           <i class="iconoir-github-circle"></i>
         </test-avatar>
@@ -519,28 +481,18 @@
 
     <test-text variant="subhead">Share item</test-text>
     <test-text variant="body">페이지 공유. 소셜 미디어 링크.</test-text>
-    <!-- class="social-link social-github"
-  role="menuitem"
-  href="https://github.com/soojubm"
-  target="_blank"
-  rel="noopener noreferrer" -->
-  </section>
-
-  <!-- data-scroll="vertical" -->
-  <nav
+ <test-tile>
+    <nav
     style="
       display: flex;
       gap: var(--space-4);
-      margin: 1.25rem 0 0 0;
-      text-align: center;
+      padding: var(--space-4) 0;
       overflow: hidden;
     "
     role="tablist"
   >
-    <button class="story" role="tab" aria-selected="true" data-index="1">
-      <figure class="avatar" data-size="huge" style="background-image: none">
-        <span class="material-symbols-outlined">+</span>
-      </figure>
+    <button class="story">
+      <test-avatar slot="avatar" size="huge" fallback="+"></test-avatar>
       <span class="story-name">추가</span>
     </button>
     <test-entity description="공유하기" data-index="keyword">
@@ -553,4 +505,11 @@
       <test-avatar slot="avatar" size="huge" fallback="🍔"></test-avatar>
     </test-entity>
   </nav>
+ </test-tile>
+    <!-- class="social-link social-github"
+  role="menuitem"
+  href="https://github.com/soojubm"
+  target="_blank"
+  rel="noopener noreferrer" -->
+  </section>
 </main>

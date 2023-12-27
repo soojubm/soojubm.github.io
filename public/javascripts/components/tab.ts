@@ -12,7 +12,7 @@ class Tab extends HTMLElement {
   }
 
   get selected() {
-    return this.getAttribute('aria-selected')
+    return this.getAttribute('selected')
   }
 
   connectedCallback() {
@@ -21,7 +21,7 @@ class Tab extends HTMLElement {
     const container = document.createElement('button')
     container.role = 'tab'
     container.classList.add('tab')
-    container.setAttribute('aria-selected', this.selected || 'false')
+    container.ariaSelected = this.selected || 'false'
 
     const label = document.createElement('span')
     label.classList.add('tab-label')
@@ -48,8 +48,6 @@ export default Tab
 // static get observedAttributes() {
 //   return ["color", "size"];
 // }
-
-
 
 // this.shadowRoot.appendChild(template.content);
 

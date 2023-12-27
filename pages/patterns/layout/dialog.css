@@ -1,0 +1,20 @@
+/* // todo buttongroup column과 그냥 column 달르다. */
+.dialog {max-width:400px;border:var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:1rem;background:var(--color-background);box-sizing:border-box;}
+
+.dialog-head {display:flex;justify-content:space-between;}
+.dialog-head-title {margin:0 auto;@mixin text-subhead;}
+
+.dialog-title {@mixin text-subhead;}
+.dialog-description {margin:.5rem 0 1.5rem;}
+
+.dialog-head {}
+.dialog-foot {}
+
+.dialog-foot {
+  display:flex;
+  justify-content: flex-end;
+  /* justify-content:space-between;flex-direction:row-reverse; */
+  margin:1.5rem 0 0;
+}
+
+.dialog-close {@mixin chip;position:absolute;right:.5rem;top:.5rem;}

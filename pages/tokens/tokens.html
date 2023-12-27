@@ -1,8 +1,15 @@
 <main class="tokens">
+  <style>
+    .token-item test-group,
+    .token-item > div {
+      display: block;
+      margin: var(--space-2) 0 0;
+    }
+  </style>
   <section class="tokens-body">
-    <test-group>
+    <!-- <test-group>
       <test-chip class="js-scrollspy-trigger" status="active">Palette</test-chip>
-      <test-chip class="js-scrollspy-trigger">Typography</test-chip>
+      <test-chip class="js-scrollspy-trigger">Text</test-chip>
       <test-chip class="js-scrollspy-trigger">Sizing</test-chip>
       <test-chip class="js-scrollspy-trigger">Spacing</test-chip>
       <test-chip class="js-scrollspy-trigger">Layouts</test-chip>
@@ -11,7 +18,7 @@
       <test-chip class="js-scrollspy-trigger">Opacity</test-chip>
       <test-chip class="js-scrollspy-trigger">Animation</test-chip>
       <test-chip class="js-scrollspy-trigger">Optical Adjustment</test-chip>
-    </test-group>
+    </test-group> -->
 
     <article class="article js-scrollspy-section">
       <blockquote>
@@ -80,11 +87,10 @@
         </div>
       </blockquote>
 
-      <test-text variant="title">Color</test-text>
+      <test-text variant="title">Color - background/border/text/status</test-text>
       <test-text variant="body-large">
         The use of color in an experience helps define communication, meaning, brand, and roles,
         making it easier for users to interact, search, and differentiate elements.
-        background/border/text/status
       </test-text>
       <test-text variant="body-large">
         The primary blue swatches reinforce Dell’s brand while unifying touchpoints and
@@ -95,82 +101,80 @@
 
       <br />
 
-      <!-- <test-text variant="subhead">background/border/text/status</test-text> -->
       <div class="token-group">
         <article class="token-item is-gray000">
           <figure class="token-item-avatar"></figure>
           <b>--gray0: #fff</b>
-          <div>
-            <p>--color-background</p>
-          </div>
+          <test-group>
+            <test-tag variant="hashtag">color-background</test-tag>
+          </test-group>
         </article>
         <article class="token-item is-gray100">
           <figure class="token-item-avatar"></figure>
           <b>--gray100: #f5f8f5</b>
-          <div>
-            <p>--color-background-weak</p>
+          <test-group>
+            <test-tag variant="hashtag">color-background-weak</test-tag>
             <!-- <p>--button-border-color</p> -->
-            <!-- <p>--textfield-background-color</p> -->
-          </div>
+          </test-group>
         </article>
         <article class="token-item is-gray200">
           <figure class="token-item-avatar"></figure>
           <b>--gray200: #e0e2e1</b>
-          <div>
-            <p>--color-border</p>
+          <test-group>
+            <test-tag variant="hashtag">color-border</test-tag>
             <!-- <p>--color-hover-background: var(--gray200)</p> -->
-          </div>
+          </test-group>
         </article>
         <article class="token-item is-gray400">
           <figure class="token-item-avatar"></figure>
           <b>--gray400: #979d9a</b>
-          <div>
-            <p>--color-text-light</p>
+          <test-group>
+            <test-tag variant="hashtag">color-text-light</test-tag>
             <!-- <p>--color-text-disabled</p> -->
-          </div>
+          </test-group>
         </article>
         <article class="token-item is-gray800">
           <figure class="token-item-avatar"></figure>
           <b>--gray800: #343c38</b>
-          <div>
-            <p>--color-text</p>
-            <p>--color-backgound-strong</p>
-          </div>
+          <test-group>
+            <test-tag variant="hashtag">color-text</test-tag>
+            <test-tag variant="hashtag">color-background-strong</test-tag>
+          </test-group>
         </article>
         <article class="token-item is-primary100">
           <figure class="token-item-avatar"></figure>
           <b>--green100: rgba(10, 160, 80, 0.1)</b>
-          <div>
-            <p>--color-primary-light</p>
-          </div>
+          <test-group>
+            <test-tag variant="hashtag">color-primary-light</test-tag>
+          </test-group>
         </article>
         <article class="token-item is-primary200">
           <figure class="token-item-avatar"></figure>
           <b>--green800: #1b995c</b>
-          <div>
-            <p>--color-primary</p>
-          </div>
+          <test-group>
+            <test-tag variant="hashtag">color-primary</test-tag>
+          </test-group>
         </article>
         <article class="token-item is-red800">
           <figure class="token-item-avatar" style="background: rgba(243, 68, 97, 0.06)"></figure>
           <b>--red100: rgba(243, 68, 97, .06)</b>
-          <div>
-            <p>--color-danger-light</p>
-          </div>
+          <test-group>
+            <test-tag variant="hashtag">color-danger-light</test-tag>
+          </test-group>
         </article>
         <article class="token-item is-red800">
           <figure class="token-item-avatar"></figure>
           <b>--red800: #f02849</b>
-          <div>
-            <p>--color-danger</p>
-          </div>
+          <test-group>
+            <test-tag variant="hashtag">color-danger</test-tag>
+          </test-gro>
         </article>
         <article class="token-item">
           <figure class="token-item-avatar" style="background: var(--color-accent)"></figure>
           <b>--yellow800: gold</b>
-          <div>
-            <p>--color-accent</p>
-          </div>
+          <test-group>
+            <test-tag variant="hashtag">color-accent</test-tag>
+          </test-group>
         </article>
         <article class="token-item">
           <figure class="token-item-avatar color-skeleton"></figure>
@@ -181,16 +185,32 @@
           <b>todo Transparent gradient</b>
         </article>
       </div>
+      <test-separator></test-separator>
+      <div class="token-group">
+        <article class="token-item is-primary200">
+          <figure class="token-item-avatar"></figure>
+          <b>--color-primary: var(--green800)</b>
+          <test-group>
+            <test-tag variant="hashtag">color-primary</test-tag>
+          </test-group>
+        </article>
+      </div>
     </article>
 
     <article class="article js-scrollspy-section">
-      <test-text variant="title">Radius & Elevations / Shapes (md3)</test-text>
+      <test-text variant="title">Shapes - Radius & Elevations</test-text>
       <test-text variant="body-large">
-        그림자를 이용한 시각적 상승 효과elevated는 주변 요소 대비 강조. 사용자는 시각적 단어로
-        우선순위를 인식하고 인터렉션. 시각적 우선순위는 그림자로만 줄 수 있는 것은 아님. 시각적
-        우선순위와 맥락의 구분. tooltip / popover. 더 높은 우선순위를 위한 높은 고도. 하지만
-        overay등으로 우선순위를 설정할 수도 있음. 인터렉션하지 않는 요소에 그림자를 사용하는 것을
-        조심. 예를 들면 hover.
+        그림자를 이용한 시각적 상승 효과. 사용자는 시각적 단어로
+        우선순위를 인식하고 인터렉션.
+      </test-text>
+
+      <test-text variant="body-large">
+        elevated는 주변 요소 대비 강조. 따라서 단일 요소에 사용하지 말 것.  더 높은 우선순위를 위한 높은 고도. 시각적 우선순위는 그림자로만 줄 수 있는 것은 아님. 시각적
+          우선순위와 맥락의 구분. 하지만 overay등으로 우선순위를 설정할 수도 있음.
+      </test-text>
+
+      <test-text variant="body-large">
+        인터렉션 없는 요소에 그림자를 사용하는 것을 조심. 4px => 6px 로 변경. tiny size에서는 4px
       </test-text>
 
       <section class="">
@@ -224,7 +244,6 @@
             ></em> -->
             </figure>
             <b>--radius: 6px</b>
-            <span>4px => 6px 로 변경. tiny size에서는 4px</span>
           </article>
           <article class="token-item is-gray000">
             <figure
@@ -245,14 +264,28 @@
           <article class="token-item is-elevation" title="Surface or Elevation">
             <figure class="token-item-avatar"></figure>
             <b>--shadow: 0 0 .5rem rgb(0 0 0 / 7.5%)</b>
+            <test-group>
+              <test-tag variant="hashtag">tooltip</test-tag>
+              <test-tag variant="hashtag">popover</test-tag>
+            </test-group>
           </article>
         </div>
       </section>
     </article>
 
     <article class="article typography js-scrollspy-section">
-      <test-text variant="title">Typography</test-text>
+      <test-text variant="title">Text</test-text>
       <test-text variant="body-large">활자의 위계와 배치. 정보 계층.</test-text>
+
+      <test-tile variant="elevated" size="small">
+        <test-menuitem label="시스템 폰트로 보기" class="js-default-font">
+          <test-avatar slot="avatar">
+            <test-icon slot="icon" name="font-question"></test-icon>
+          </test-avatar>
+        </test-menuitem>
+      </test-tile>
+
+      <test-separator></test-separator>
 
       <section class="">
         <!-- <a href="">link to texts pattern</a> -->
@@ -262,11 +295,6 @@
             <b>--font-family: 'Quattrocento Sans', 'Gothic A1', sans-serif;</b>
           </div>
         </div>
-        <test-tile variant="elevated" size="small">
-          <test-menuitem label="시스템 폰트로 보기" class="js-default-font">
-            <test-avatar slot="avatar">✨</test-avatar>
-          </test-menuitem>
-        </test-tile>
 
         <test-text variant="subhead">
           Sizes <sup><del>5</del> 3</sup>
@@ -312,70 +340,14 @@
           </div>
         </div>
 
-        <!-- <test-text variant="subhead">Compositions 🔥 Utilities</test-text>
+        <test-text variant="subhead">Compositions 🔥 Utilities</test-text>
         <div class="token-group">
-          <div class="token-item">
-            <b>@mixin text-title</b>
-            <div>
-              <p>--font-size-large</p>
-              <p>--font-weight-bold</p>
-            </div>
-            <div>
-              <p>@media (--small) {1.5rem}</p>
-            </div>
-          </div>
-          <div class="token-item">
-            <b>@mixin text-subhead</b>
-            <div>
-              <p>--font-size-medium</p>
-              <p>--font-weight-bold</p>
-            </div>
-          </div>
-          <div class="token-item">
-            <b>@mixin text-body</b>
-            <div>
-              <p>--font-size-small</p>
-            </div>
-          </div>
-          <div class="token-item">
-            <b>@mixin text-body-large</b>
-            <div>
-              <p>--font-size-medium</p>
-            </div>
-          </div>
-          <div class="token-item">
-            <b>@mixin text-label</b>
-            <div>
-              <p>--font-size-small</p>
-              <p>--color-text-weak</p>
-            </div>
-          </div>
-          <div class="token-item">
-            <b>@mixin text-body-caption</b>
-            <div>
-              <p>--font-size-tiny</p>
-            </div>
-          </div>
           <div class="token-item">
             <b>@mixin truncate</b>
           </div>
           <div class="token-item">
             <b>@mixin truncate-multiple</b>
           </div>
-        </div>z -->
-
-        <div>
-          <test-text variant="title">Title</test-text>
-          <div class="space" style="height: var(--space-after-title)">
-            <span>space-after-title</span>
-          </div>
-          <test-text variant="body-large">kicker</test-text>
-          <test-separator></test-separator>
-          <test-text variant="subhead">subhead</test-text>
-          <div class="space" style="height: var(--space-after-subhead)">
-            <span>space-after-subhead</span>
-          </div>
-          <test-text variant="body">body</test-text>
         </div>
       </section>
 
@@ -394,44 +366,45 @@
           <div class="token-item">
             <figure class="token-item-avatar size-huge"></figure>
             <b>--size-huge: 5rem</b>
-            <div>
-              <p>--avatar-huge: var(--size-large)</p>
-            </div>
+            <test-group>
+              <test-tag variant="hashtag">avatar-huge: var(--size-large)</test-tag>
+            </test-group>
           </div>
           <div class="token-item">
             <figure class="token-item-avatar size-large"></figure>
             <b>--size-large: 3rem / 48px</b>
-            <div>
-              <p>--avatar-large</p>
-              <p>--button-height</p>
-              <p>--textfield-height</p>
-            </div>
+            <test-group>
+              <test-tag variant="hashtag">avatar-large</test-tag>
+              <test-tag variant="hashtag">button-height</test-tag>
+              <test-tag variant="hashtag">textfield-height</test-tag>
+            </test-group>
           </div>
           <div class="token-item">
             <figure class="token-item-avatar size-medium"></figure>
             <b>--size-medium: 2rem / 32px</b>
-            <div>
-              <p>--avatar-medium</p>
-              <p>--chip-height</p>
-            </div>
+            <test-group>
+              <test-tag variant="hashtag">avatar-medium</test-tag>
+              <test-tag variant="hashtag">chip-height</test-tag>
+            </test-group>
           </div>
           <div class="token-item">
             <figure class="token-item-avatar size-small"></figure>
             <b>--size-small: 1.5rem</b>
-            <div>
-              <p>--avatar-small</p>
-              <p>--tag-height</p>
-              <p>--indicator-height</p>
-            </div>
+            <test-group>
+              <test-tag variant="hashtag">avatar-small</test-tag>
+              <test-tag variant="hashtag">tag-height</test-tag>
+              <test-tag variant="hashtag">indicator-height</test-tag>
+            </test-group>
           </div>
           <div class="token-item">
             <figure class="token-item-avatar size-tiny"></figure>
             <b>--size-tiny: 1rem</b>
-            <div>
-              <p>--checkbox-height</p>
-              <p>--radio-height</p>
-              <p>--switch-height</p>
-            </div>
+            <test-group>
+              <test-tag variant="hashtag">avatar-tiny</test-tag>
+              <test-tag variant="hashtag">checkbox-height</test-tag>
+              <test-tag variant="hashtag">radio-height</test-tag>
+              <test-tag variant="hashtag">switch-height</test-tag>
+            </test-group>
           </div>
         </div>
       </section>
@@ -448,43 +421,47 @@
       <section class="">
         <div class="token-group">
           <div class="token-item">
-            <figure style="width: var(--space-05); background: var(--green100)"></figure>
-            <b>--space-05: .125rem</b>
+            <figure style="width: var(--space-05);"></figure>
+            <test-group>
+              <test-tag variant="hashtag">space-05: .125rem</test-tag>
+            </test-group>
             <!-- <small>주로 시각보정에 사용.</small> -->
           </div>
           <div class="token-item">
-            <figure style="width: var(--space-1); background: var(--green100)"></figure>
+            <figure style="width: var(--space-1);"></figure>
             <b>--space-1: .25rem</b>
-            <div>
-              <p>--space-outer-item</p>
-            </div>
+            <test-group>
+              <test-tag variant="hashtag">space-outer-item</test-tag>
+            </test-group>
           </div>
           <div class="token-item">
-            <figure style="width: var(--space-2); background: var(--green100)"></figure>
+            <figure style="width: var(--space-2);"></figure>
             <b>--space-2: .5rem</b>
-            <div>
-              <p>--space-inset-small</p>
-            </div>
+            <test-group>
+              <test-tag variant="hashtag">space-inset-small</test-tag>
+            </test-group>
           </div>
           <div class="token-item">
-            <figure style="width: var(--space-3); background: var(--green100)"></figure>
-            <b>--space-3: .75rem</b>
+            <figure style="width: var(--space-3);"></figure>
+            <test-group>
+              <test-tag variant="hashtag">space-3: .75rem</test-tag>
+            </test-group>
           </div>
           <div class="token-item">
-            <figure style="width: var(--space-4); background: var(--green100)"></figure>
+            <figure style="width: var(--space-4);"></figure>
             <b>--space-4: 1rem</b>
-            <div>
-              <p>--space-after-subhead</p>
-              <p>--space-after-description</p>
-              <p>--space-inset</p>
-            </div>
+            <test-group>
+              <test-tag variant="hashtag">space-after-subhead</test-tag>
+              <test-tag variant="hashtag">space-after-description</test-tag>
+              <test-tag variant="hashtag">space-inset</test-tag>
+            </test-group>
           </div>
           <div class="token-item">
-            <figure style="width: var(--space-8); background: var(--green100)"></figure>
+            <figure style="width: var(--space-8);"></figure>
             <b>--space-8: 2rem</b>
-            <div>
-              <p>--space-section</p>
-            </div>
+            <test-group>
+              <test-tag variant="hashtag">space-section</test-tag>
+            </test-group>
           </div>
         </div>
 
@@ -594,6 +571,20 @@
           </div>
           <time class="typography-caption">10 January, 2020 (버튼 그룹이 올 수 있습니다.)</time>
         </div>
+        <test-separator></test-separator>
+        <div>
+          <test-text variant="title">Title</test-text>
+          <div class="space" style="height: var(--space-after-title)">
+            <span>space-after-title</span>
+          </div>
+          <test-text variant="body-large">kicker</test-text>
+          <test-separator></test-separator>
+          <test-text variant="subhead">subhead</test-text>
+          <div class="space" style="height: var(--space-after-subhead)">
+            <span>space-after-subhead</span>
+          </div>
+          <test-text variant="body">body</test-text>
+        </div>
       </section>
     </article>
 
@@ -613,8 +604,10 @@
       </test-text>
       <test-text variant="body">
         <b>프레젠테이션 패턴. </b>섹션, 아티클 그리고 모달, 드롭다운 등의 컴포넌트도 작은 화면에서는
-        페이지 맥락이 될 수 있음을 고려합니다. => 결국 모바일 퍼스트 맥락.
+        페이지 맥락이 될 수 있음을 고려합니다. => 결국 모바일 퍼스트 foundation.
       </test-text>
+
+      <br /><br />
 
       <section class="">
         <test-text variant="subhead">Media queries</test-text>
@@ -639,16 +632,26 @@
         <test-text variant="subhead">Width</test-text>
         <div class="token-group">
           <div class="token-item">
+            <b>TODO :: --layout-width-extra-narrow: 200</b>
+            <test-group>
+              <test-tag variant="hashtag">dropdown</test-tag>
+              <test-tag variant="hashtag">popover</test-tag>
+            </test-group>
+          </div>
+          <div class="token-item">
             <b>--layout-width-narrow: 480px</b>
-            <div>
-              <p>signup, login</p>
-            </div>
+            <test-group>
+              <test-tag variant="hashtag">signup</test-tag>
+              <test-tag variant="hashtag">login</test-tag>
+            </test-group>
           </div>
           <div class="token-item">
             <b>--layout-width-medium: 640px</b>
-            <div>
-              <p>post, password, setting</p>
-            </div>
+            <test-group>
+              <test-tag variant="hashtag">post</test-tag>
+              <test-tag variant="hashtag">password</test-tag>
+              <test-tag variant="hashtag">setting</test-tag>
+            </test-group>
           </div>
           <div class="token-item">
             <b>--layout-width-wide: 1200px</b>
@@ -734,7 +737,9 @@
           </div>
           <div class="token-item">
             <b style="margin: 0">--zindex-skipmenu: 10</b>
-            <small>최고 존엄</small>
+            <div>
+              <p>최고 존엄</p>
+            </div>
           </div>
         </div>
       </section>
@@ -751,32 +756,38 @@
 
     <article class="article js-scrollspy-section">
       <test-text variant="title">Animation</test-text>
-      <test-text variant="body-large">작성 중. 유틸리티 성격.</test-text>
+      <test-text variant="body-large">작성 중. 유틸리티.</test-text>
 
       <section class="">
-        <test-text variant="subhead">Style / Delay ??</test-text>
+        <test-text variant="subhead">Style</test-text>
         <div class="token-group">
           <div class="token-item">
             <b>--bazier: cubic-bezier(0.455, 0.03, 0.515, 0.955)</b>
           </div>
+        </div>
+
+        <test-text variant="subhead">Delay</test-text>
+        <test-text variant="body">duration이 지정된 하나의 덩어리에서는 사용할 수 없다.</test-text>
+        <div class="token-group">
           <div class="token-item">
             <section style="display: flex; gap: var(--space-2)">
               <figure class="animation-fadeup"></figure>
               <figure class="animation-fadeup delay-second"></figure>
               <figure class="animation-fadeup delay-third"></figure>
             </section>
-            <p>--animation-delay-first: 0s</p>
-            <p>--animation-delay-second: .2s</p>
-            <p>--animation-delay-third: .4s</p>
-            <p>duration이 지정된 하나의 덩어리에서는 사용할 수 없다.</p>
+            <test-group>
+              <test-tag variant="hashtag">--animation-delay-first: 0s</test-tag>
+              <test-tag variant="hashtag">--animation-delay-second: .2s</test-tag>
+              <test-tag variant="hashtag">--animation-delay-third: .4s</test-tag>
+            </test-group>
           </div>
         </div>
 
         <test-text variant="subhead">Duration</test-text>
-        <blockquote>
+        <test-text variant="body">
           콘텐츠보다 액션이 강조되지 않도록 뷰포트 내에서 delay를 최대 3개로 제한합니다. inactive로
           변경될 때(닫기 등) 즉시(instantly) 실행 합니다.
-        </blockquote>
+        </test-text>
         <div class="token-group">
           <div class="token-item" style="overflow: auto">
             <p>--duration: .4s</p>

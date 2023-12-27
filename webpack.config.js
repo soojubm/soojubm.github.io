@@ -26,6 +26,7 @@ const path = require('path')
 const HTML_TEMPLATE = './index.html'
 
 const patterns = [
+  'layout',
   'dialog',
   'result',
   'searching',
@@ -42,6 +43,7 @@ const patterns = [
   'auth',
   'pagehead',
   'product',
+  'checkout',
   'cake',
   'class',
 ]

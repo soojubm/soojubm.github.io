@@ -21,11 +21,31 @@
 
     <section class="component-example">
       <div>
-        <test-titlebar heading="쇼핑 탭" class="js-titlebar" role="navigation">
-          <test-chip slot="action" label="장바구니"></test-chip>
+        <test-titlebar heading="" class="js-titlebar" role="navigation">
+          <!-- <div class="titlebar-background"></div> -->
+          <test-text variant="subhead">쇼핑</test-text>
+          <test-chip slot="action" label="장바구니">
+            <test-icon slot="icon" name="cart"></test-icon>
+          </test-chip>
         </test-titlebar>
         <!-- <div class="titlebar-backdrop js-header"></div> -->
       </div>
+      <test-separator></test-separator>
+      <test-titlebar class="js-titlebar" heading="Back to Blahblah Page">
+        <test-chip slot="back">
+          <test-icon slot="icon" name="arrow-left"></test-icon>
+        </test-chip>
+      </test-titlebar>
+      <test-separator></test-separator>
+      <test-titlebar class="js-titlebar" role="navigation" data-size="large" style="padding: 0">
+        <h1 class="titlebar-title js-page-title" title="page title">Large Case</h1>
+        <test-group slot="action">
+          <test-chip label="저장"></test-chip>
+          <test-chip class="titlebar-back" onclick="javascript:window.location.href='/';">
+            <test-icon slot="icon" name="more-vert"></test-icon>
+          </test-chip>
+        </test-group>
+      </test-titlebar>
     </section>
     <section class="component-props">
       <test-text variant="subhead">Props</test-text>
@@ -54,43 +74,11 @@
         <dd>() => void</dd>
       </dl>
     </section>
-    <section class="component-case">
-      <test-titlebar heading="페이지 타이틀">
-        <div class="titlebar-background"></div>
-        <test-chip slot="action">
-          <test-icon slot="icon" name="settings"></test-icon>
-        </test-chip>
-      </test-titlebar>
-    </section>
-    <section class="component-case">
-      <test-titlebar class="js-titlebar" heading="Back to Blahblah Page">
-        <test-chip slot="back">
-          <test-icon slot="icon" name="arrow-left"></test-icon>
-        </test-chip>
-      </test-titlebar>
-    </section>
-    <section class="component-case">
-      <test-titlebar
-        class="titlebar js-titlebar"
-        role="navigation"
-        data-size="large"
-        style="padding: 0"
-      >
-        <h1 class="titlebar-title js-page-title" title="page title">Large Case</h1>
-        <test-group slot="action">
-          <test-chip label="저장"></test-chip>
-          <test-chip class="titlebar-back" onclick="javascript:window.location.href='/';">
-            <test-icon slot="icon" name="more-vert"></test-icon>
-          </test-chip>
-        </test-group>
-      </test-titlebar>
-    </section>
-
     <div class="component-references">
       <test-text variant="subhead">References</test-text>
-      <a href="https://m3.material.io/components/top-app-bar/overview" target="_blank"
-        >MD3 top app bar</a
-      >
+      <a href="https://m3.material.io/components/top-app-bar/overview" target="_blank">
+        MD3 top app bar
+      </a>
     </div>
   </article>
 
@@ -125,6 +113,15 @@
           <span class="bottombar-item-label">설정</span>
         </a>
       </nav>
+    </section>
+
+    <section class="component-props">
+      <test-text variant="subhead">Props</test-text>
+      <dl>
+        <dt>test<attr>?</attr></dt>
+        <dd>test</dd>
+        <dd>TODO</dd>
+      </dl>
     </section>
 
     <ul>
