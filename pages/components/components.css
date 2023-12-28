@@ -129,13 +129,6 @@ p + [variant="subhead"],
 
 .article ul, .article dl {max-width: 720px;}
 
-.article-kicker {
-display: block;
-max-width: 720px;
-margin: 2rem 0;font-size:var(--font-size-large);color:var(--color-text);line-height:var(--font-line-height-large);}
-.article-kicker b {margin-right:var(--space-3);font-weight: var(--font-weight-bold);}
-.article-kicker + .article-kicker {margin-top: -1.5rem;} 
-
 .article-dont {padding:1rem;border-radius:var(--radius);background:var(--red100);}
 
 

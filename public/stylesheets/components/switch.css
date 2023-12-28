@@ -2,15 +2,14 @@
 .switch {
   --switch-width: 40px;
   --switch-height: var(--size-tiny);
+  
+  --switch-radius: var(--radius);
 
   display:block;
   height: var(--switch-height);
   position:relative;
 }
-.switch input {
-  inline-size: 100%;
-}
-/* common임 사실. */
+
 .switch input {
   opacity: 0;
   inline-size: 100%;
@@ -19,15 +18,35 @@
   right: -.5rem;
   top: -.5rem;
   bottom: -.5rem;
+
+  inline-size: 100%;
 }
 
-.switch input + label {display:flex;gap:var(--space-2);line-height:var(--size-tiny);cursor:pointer;}
-.switch input + label:before {content:'';display:block;width:var(--switch-width);height:var(--switch-height);
-  padding-left: 1.2rem;font-size: 10px;color:var(--color-text-light);text-transform:uppercase;font-weight:var(--font-weight-bold);
-  border:none;border-radius:var(--radius);box-sizing:border-box;background:var(--gray200);transition:background-color .2s;transition:all .4s;}
-.switch input + label:after {content:'';display:block;width:var(--switch-height);height:var(--switch-height);border:var(--border);box-sizing:border-box;border-radius:var(--radius);background:#fff;box-shadow:var(--shadow);position:absolute;left:0;top:0;transition:left .2s;transform:rotate(0deg);}
+.switch input + label {display:flex;gap:var(--space-2);line-height:var(--switch-height);cursor:pointer;}
+.switch input + label:before {
+  content:'';display:block;
+  width:var(--switch-width);height:var(--switch-height);
+  border-radius:var(--radius);
+  box-sizing:border-box;
+  background:var(--gray200);
+  transition:background-color .125s;
+  transition:all .25s;
+}
+.switch input + label:after {
+  content:'';display:block;
+  width:var(--switch-height);
+  height:var(--switch-height);
+  border-radius:var(--radius);
+  box-sizing:border-box;
+  background:var(--color-background);
+  box-shadow:var(--shadow);
+  position:absolute;left:0;top:0;
+  transition:transform .2s;}
 .switch input:checked + label {}
-.switch input:checked + label:before {content:'';padding:0 0 0 .4rem;background:var(--color-primary);color:var(--gray0);}
-.switch input:checked + label:after {left:calc(var(--switch-width) - 16px);}
+.switch input:checked + label:before {content:'';background:var(--color-primary);}
+.switch input:checked + label:after {transform:translateX(calc(var(--switch-width) - 16px));}
 .switch input:disabled {}
 .switch input:disabled + label {cursor:not-allowed;opacity:.5;}
+.switch:focus-within label:before {
+  outline: 3px solid var(--color-point);
+}

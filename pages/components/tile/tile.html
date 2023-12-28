@@ -174,5 +174,39 @@
       src="elva-fairy-800w.jpg"
       alt="요정 옷을 입은 엘바"
     />
+
+    <test-card variant="flat" style="max-width: 400px; text-align: center">
+      <article slot="entire" class="onboarding">
+        <figure
+          class="card-thumbnail"
+          style="
+            object-fit: cover;
+            border-radius: var(--radius);
+            overflow: hidden;
+            background-color: yellowgreen;
+          "
+        >
+          <img src="/public/images/springsteen.jpg" alt="" style="max-height: fit-content" />
+        </figure>
+        <h3 class="card-title" style="font-weight: bold; padding: var(--space-3) 0 0.25rem 0">
+          Welcome to...
+        </h3>
+        <p
+          class="card-text"
+          style="
+            width: 90%;
+            margin: 0 auto;
+            font-size: var(--font-size-medium);
+            line-height: var(--font-line-height);
+          "
+        >
+          Onboarding card. 디스크립션. PrevButton 이라면 secondary vs tertiary
+        </p>
+        <test-group class="onboarding-control">
+          <test-button variant="primary" class="onboarding-control-next button">Next</test-button>
+          <test-button variant="tertiary" class="onboarding-control-skip button">Skip</test-button>
+        </test-group>
+      </article>
+    </test-card>
   </article>
 </main>

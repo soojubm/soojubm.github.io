@@ -129,9 +129,6 @@
 .statistic[data-size=small] .statistic-item {display: flex;align-items: center;}
 .statistic[data-size=small] .statistic-value {margin: 0 0 0 var(--space-1);font-size: var(--font-size-medium);}
 
-@media (--tiny) {
-	.feature-item {max-width:100%;}
-}
 
 .hero {padding:4rem var(--grid-margin) 6rem;position:relative;z-index:var(--zindex-default);}
 .hero-background {@mixin bleeding;background:inherit;}

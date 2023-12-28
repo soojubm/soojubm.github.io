@@ -170,26 +170,26 @@
           <div style="margin:var(--space-2) 0 0;">
             <test-chip>내 프로필 관리</test-chip>
           </div>
-          <div style="position:absolute;right:var(--space-4);top:var(--space-4);">
+          <!-- <div style="position:absolute;right:var(--space-4);top:var(--space-4);">
             <test-avatar variant="secondary" size="large" fallback=" ">🐸</test-avatar>
-          </div>
+          </div> -->
           <test-separator></test-separator>
           <test-menu-group>
             <test-menuitem label="어둡게 보기" class="js-darkmode" aria-label="change theme">
-              <test-avatar slot="avatar" fallback=" ">
+              <test-avatar slot="avatar" variant="tertiary" fallback=" ">
                 <test-icon slot="icon" name="half-moon"></test-icon>
               </test-avatar>
               <test-switch slot="action"></test-switch>
             </test-menuitem>
             <test-menuitem label="고객센터 및 도움말">
-              <test-avatar slot="avatar" fallback=" ">
+              <test-avatar slot="avatar" variant="tertiary" fallback=" ">
                 <test-icon slot="icon" name="megaphone"></test-icon>
               </test-avatar>
             </test-menuitem>
           </test-menu-group>
           <test-separator></test-separator>
           <test-menuitem label="로그아웃">
-            <test-avatar slot="avatar" fallback=" "><test-icon slot="avatar" name="log-out"></test-icon></test-avatar>
+            <test-avatar slot="avatar" variant="tertiary" fallback=" "><test-icon slot="avatar" name="log-out"></test-icon></test-avatar>
           </test-menuitem>
           <test-separator></test-separator>
           <test-group class="user-footer">

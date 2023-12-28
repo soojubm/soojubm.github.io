@@ -1,9 +1,4 @@
-.subscribe {}
-.subscribe-title {@mixin text-subhead;}
-.subscribe-description {margin:var(--space-after-subhead) 0 var(--space-after-description) 0;}
-.subscribe-field {}
-.subscribe-submit {@mixin button-primary;width:50%;margin-top:var(--space-after-button);}
-.subscribe-helper {display:block;margin:.25rem 0 0 0;font-size:var(--font-size-small);}
+
 
 .sitemap {display:flex;padding:4rem var(--grid-margin);position:relative;z-index:var(--zindex-default);}
 .sitemap-background {
@@ -44,7 +39,6 @@
 .is-opened-menu .footer {margin-left:calc(var(--width-sidemenu) + var(--grid-margin) + 2rem);}
 
 @media (--small) {
-	.subscribe-field {width:100%;}
 
 	.sitemap {flex-direction: column;}
 	.sitemap-item {width:100%;margin:0 0 2rem 0;}
