@@ -69,6 +69,57 @@
         <li>타임라인과 구분. 타임라인은 히스토리 맥락으로 스텝의 역순. 확장, 링크, indentation</li>
       </ul>
     </section>
+
+    <test-card flat="flat" size="medium">
+      <div slot="entire">
+        <test-group class="order-item-head">
+          <test-tag class="order-item-head-type" style="width: var(--size-large)">포장</test-tag>
+          <time class="order-item-head-time">2022. 12. 05. 15:32</time>
+          <b class="order-item-head-status" style="margin-left: auto">배달완료</b>
+        </test-group>
+        <div style="height: var(--space-after-subhead)"></div>
+        <test-menuitem>
+          <test-avatar slot="avatar" size="large">
+            <span class="avatar-badge"></span>
+          </test-avatar>
+          <div slot="text" class="item-description">
+            <b>쩜순이네닭강정 요기요st</b>
+            <p style="display: flex; align-items: center; color: var(--color-text-light)">
+              <span>떡볶이</span>
+              <span style="font-size: var(--font-size-small); margin-top: -1px"> x </span>
+              <span>5</span>
+              <span> 외 1건</span>
+            </p>
+          </div>
+        </test-menuitem>
+        <div style="height: var(--space-4)"></div>
+        <div class="step">
+          <div class="step-item is-active">
+            <span class="step-item-icon">1</span>
+            <h3 class="step-item-label">주문확인</h3>
+          </div>
+          <div class="step-item">
+            <span class="step-item-icon">2</span>
+            <h3 class="step-item-label">조리중</h3>
+          </div>
+          <div class="step-item">
+            <span class="step-item-icon">3</span>
+            <h3 class="step-item-label">배달중</h3>
+          </div>
+          <div class="step-item">
+            <span class="step-item-icon">4</span>
+            <h3 class="step-item-label">배달완료</h3>
+          </div>
+        </div>
+        <div style="height: var(--space-4)"></div>
+        <test-group class="order-item-foot">
+          <test-chip>재주문</test-chip>
+          <test-chip>후기작성</test-chip>
+        </test-group>
+        <div style="height: 1rem"></div>
+        <!-- <test-tag>네이버 쇼핑은 왜 주문 내역을 숨길 수 있나?</test-tag> -->
+      </div>
+    </test-card>
     <!-- <p>클릭하고 싶지 않은 형태로 변경 2021.10</p> -->
   </article>
 </main>

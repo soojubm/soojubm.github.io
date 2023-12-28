@@ -81,7 +81,7 @@ table tbody[role=rowgroup] tr th + th {width:auto;}
 
 ul {padding-left:var(--space-4);}
 ul li {line-height:var(--font-line-height);}
-ul li::marker {}
+ul li::marker {font-size:var(--font-size-small);}
 ul li + li {margin:var(--space-2) 0 0 0;}
 
 ol {padding-left:var(--space-4)}

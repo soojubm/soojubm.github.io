@@ -30,7 +30,6 @@ https://www.albertgao.xyz/2019/09/07/reuse-react-router-routes-constants-with-ho
       </div>
     </div>
 
-    <article class="article js-scrollspy-section">
       <test-text variant="title">Layout</test-text>
       <test-text variant="body-large">
         사용자의 화면 크기를 한정하지 마세요. 새로운 플랫폼이나 새로운 디바이스가 출시되더라도 빠르게
@@ -87,7 +86,6 @@ https://www.albertgao.xyz/2019/09/07/reuse-react-router-routes-constants-with-ho
           디자인시스템으로 불린다.
         </b>
       </p>
-    </article>
 
     <test-text variant="subhead">플랫폼 규칙</test-text>
     <ul>
@@ -98,7 +96,7 @@ https://www.albertgao.xyz/2019/09/07/reuse-react-router-routes-constants-with-ho
       사용하다 -> 제공하다 / 사용자 관점으로. 도큐멘터이션의 사용자가 아닌 서비스의 사용자 관점의 문서 작성
       </li>
       <li>모든 시각정보는 non-clickable. 모든 인터렉션은 clickable.</li>
-        구성이 우선순위가 지정되지 않으면 디자이너와 개발자 사이에 많은 마찰이 있을 뿐만 아니라 토큰 아키텍처를 통해 피할 수 있는 많은 스타일 불일치가
+        <li>구성이 우선순위가 지정되지 않으면 디자이너와 개발자 사이에 많은 마찰이 있을 뿐만 아니라 토큰 아키텍처를 통해 피할 수 있는 많은 스타일 불일치가
         있을 것입니다.</li>
       <li>방향(left, right)으로 명명하지 마세요. 레이아웃은 변경 가능성이 높은 인터페이스 요소.</li>
     </ul>
@@ -122,10 +120,24 @@ https://www.albertgao.xyz/2019/09/07/reuse-react-router-routes-constants-with-ho
     <ul>
       <li>초기 선언은 항상 margin:0 0 0 0. 재할당의 암시를 위해 방향을 풀어서 margin-left.
       </li>
-      <li>position fixed를 제거할 때 static 대신 relative를 사용하기. z-index 보전.</li>
+      <li>position fixed. z-index 보전을 위해 static이 아닌 relative로
+        초기화하세요.</li>
       <li>반응형 이미지 사용법. 일단 그냥 2배수로 크기 조절. 가장 간단.</li>
-  
-      <li>특정 스타일로 클래스 네이밍하지 마세요. 스타일(gui)는 언제나 변경될 수 있습니다.</li>
+        <li>
+          Styling hooks follows a specific naming convention to promote predictability and
+          consistency.
+        </li>
+        <li>
+          값을 직접적으로 이름에 포함하지 마세요. 20 - 20px. tailwind의 단점. 디자인 토큰에서 얻을 수
+          있는 추상화 및 기타 이점이 무효화. 값을 조정하기 쉽도록 추상화.. 1 unit을 .25rem으로 모두
+          네이밍 할 수 있나.
+        </li>
+      </ul>
+
+      <test-text variant="subhead">네이밍 규칙</test-text>
+
+      <ul>
+      <li>특정 스타일로 클래스 네이밍하지 마세요.</li>
       <li>naming: -s vs - list / action vs control vs foot</li>
       <li>두 개 - 2개</li>
       <li>
@@ -137,7 +149,6 @@ https://www.albertgao.xyz/2019/09/07/reuse-react-router-routes-constants-with-ho
         익숙함. 하기 / 취소 / 다음에
       </li>
     </ul>
-  
   
     Presentation style="modal | toast | sheet" ... 이렇게 되면 윈도우 사이즈가 변경될 때 props를 변경해주어야 함.
     Actions: remove, select, check/uncheck, add, link, action? toggle?, submit'
@@ -301,63 +312,6 @@ https://www.albertgao.xyz/2019/09/07/reuse-react-router-routes-constants-with-ho
         </article>
       </test-card>
   
-      <test-card flat="flat" size="medium">
-        <div slot="entire">
-          <test-group class="order-item-head">
-            <test-tag class="order-item-head-type" style="width:var(--size-large)">포장</test-tag>
-            <time class="order-item-head-time">2022. 12. 05. 15:32</time>
-            <b class="order-item-head-status" style="margin-left:auto;">배달완료</b>
-          </test-group>
-          <div style="height:var(--space-after-subhead)"></div>
-          <test-menuitem>
-            <test-avatar slot="avatar" size="large">
-              <span class="avatar-badge"></span>
-            </test-avatar>
-            <div slot="text" class="item-description">
-              <b>쩜순이네닭강정 요기요st</b>
-              <p style="display: flex; align-items: center;color:var(--color-text-light);">
-                <span>떡볶이</span>
-                <span style="font-size: var(--font-size-small); margin-top: -1px"> x </span>
-                <span>5</span>
-                <span> 외 1건</span>
-              </p>
-            </div>
-          </test-menuitem>
-          <div style="height:var(--space-4);"></div>
-          <div class="step">
-            <div class="step-item is-active">
-              <span class="step-item-icon">1</span>
-              <h3 class="step-item-label">주문확인</h3>
-            </div>
-            <div class="step-item">
-              <span class="step-item-icon">2</span>
-              <h3 class="step-item-label">조리중</h3>
-            </div>
-            <div class="step-item">
-              <span class="step-item-icon">3</span>
-              <h3 class="step-item-label">배달중</h3>
-            </div>
-            <div class="step-item">
-              <span class="step-item-icon">4</span>
-              <h3 class="step-item-label">배달완료</h3>
-            </div>
-          </div>
-          <div style="height:var(--space-4)"></div>
-          <test-group class="order-item-foot">
-            <test-chip>재주문</test-chip>
-            <test-chip>후기작성</test-chip>
-          </test-group>
-          <div style="height:1rem;"></div>
-          <!-- <test-tag>네이버 쇼핑은 왜 주문 내역을 숨길 수 있나?</test-tag> -->
-        </div>
-      </test-card>
-  
-  </article>
-  
-  
-  
-  
-  
     <!-- Apple은 탄소 중립을 실천합니다. 그리고 같은 기준을 2030년까지 모든 제품에 대해서도 적용할
     예정입니다. 모든 Apple 제품과 포장재에 100% 재활용 및 재생 가능 소재만이 사용되는 그날을 위해 헌신적인 노력을 기울이고 있습니다. 또한, 모든
     제품을 탄소 발자국을 남기지 않고 청정 에너지로 생산할 예정이죠. -->
@@ -367,14 +321,14 @@ https://www.albertgao.xyz/2019/09/07/reuse-react-router-routes-constants-with-ho
       <div class="circle" style="width: 6rem; height: 6rem; background: blue; border-radius: 50%; position: absolute; right: 18rem; top: 6rem"></div>
       <div class="circle" style="width: 2rem; height: 2rem; background: gold; border-radius: 50%; position: absolute; right: 25rem; top: 14rem"></div> -->
   
-      <section style="background: var(--color-primary);padding: 4rem var(--grid-margin) 6rem;">
-        <test-text variant="subhead" style="margin: 0 0 1.5rem 0; color: var(--gray0)">blah blah?<br />Everyone is welcome!</test-text>
-        <test-text>최근 기여자</test-text>
-        <test-avatar-group>
-          <test-avatar label="🦆 오리"></test-avatar>
-        </test-avatar-group>
-        <test-button variant="tertiary" onclick="javascript:alert('샘플')">디자인 시스템에 기여하기 🌵</test-button>
-      </section>
+    <section style="background: var(--color-primary);padding: 4rem var(--grid-margin) 6rem;">
+      <test-text variant="subhead" style="margin: 0 0 1.5rem 0; color: var(--gray0)">blah blah?<br />Everyone is welcome!</test-text>
+      <test-text>최근 기여자</test-text>
+      <test-avatar-group>
+        <test-avatar label="🦆 오리"></test-avatar>
+      </test-avatar-group>
+      <test-button variant="tertiary" onclick="javascript:alert('샘플')">디자인 시스템에 기여하기 🌵</test-button>
+    </section>
   
   
     <section class="design-bookmarks">
@@ -457,6 +411,7 @@ https://www.albertgao.xyz/2019/09/07/reuse-react-router-routes-constants-with-ho
       clearly by the screen reader. For example: Don't use dashes if you can avoid it. Instead of writing 5–7, write 5 to 7. Expand abbreviations —
       instead of writing Jan, write January. Expand acronyms, at least once or twice, then use the tag to describe them.
     </p>
+  </article>
   </main>
   
   
