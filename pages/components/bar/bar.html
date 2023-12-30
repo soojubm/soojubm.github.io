@@ -17,7 +17,11 @@
 
   <article class="article js-observer js-scrollspy-section">
     <test-text variant="title">Title Bar</test-text>
-    <test-text variant="body-large"> - </test-text>
+    <test-text variant="body-large">
+      뒤로가기 버튼이 chip과 달라야 콘텐츠와 제목 영역의 위계가 잡힘. 그래서 슬롯 대신. 구분선이나
+      배경색도 없어서.
+    </test-text>
+    <test-text variant="body-large"> 231230 backSlot 제거 </test-text>
 
     <section class="component-example">
       <div>
@@ -32,11 +36,7 @@
         <!-- <div class="titlebar-backdrop js-header"></div> -->
       </div>
       <test-separator></test-separator>
-      <test-titlebar class="js-titlebar" heading="Back to Blahblah Page">
-        <test-chip slot="back">
-          <test-icon slot="icon" name="arrow-left"></test-icon>
-        </test-chip>
-      </test-titlebar>
+      <test-titlebar class="js-titlebar" heading="Back to Blahblah Page"></test-titlebar>
       <test-separator></test-separator>
       <test-titlebar class="js-titlebar" role="navigation" data-size="large" style="padding: 0">
         <h1 class="titlebar-title js-page-title" title="page title">Large Case</h1>

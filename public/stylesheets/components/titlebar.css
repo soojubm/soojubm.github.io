@@ -2,10 +2,12 @@
   display:flex;
   align-items:center;
   gap:var(--space-3);
+  margin: 0 -.25rem;
   position:relative;
 }
 .titlebar-background {@mixin bleeding;background-color:var(--color-background);}
-.titlebar-title {font-size:var(--font-size-medium);font-weight:var(--font-weight-bold);
+.titlebar-title {
+  font-size:var(--font-size-medium);font-weight:var(--font-weight-bold);
   /* position:absolute;left:50%;transform:translateX(-50%); */
 }
 .titlebar-back {}

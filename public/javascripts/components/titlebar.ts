@@ -6,20 +6,26 @@ class TitleBar extends HTMLElement {
     const shadow = this.attachShadow({ mode: 'open' })
 
     const container = document.createElement('header')
-    const actionSlot = document.createElement('slot')
-    const backSlot = document.createElement('slot')
-    const title = document.createElement('span')
-
     container.classList.add('titlebar')
-    title.classList.add('titlebar-title')
 
+    const title = document.createElement('span')
+    title.classList.add('titlebar-title')
     title.innerText = this.heading || ''
 
+    const back = document.createElement('test-chip')
+    back.ariaLabel = '이전 페이지로'
+
+    const icon = document.createElement('test-icon')
+    icon.setAttribute('slot', 'icon')
+    icon.setAttribute('name', 'arrow-left')
+
+    const actionSlot = document.createElement('slot')
     actionSlot.name = 'action'
-    backSlot.name = 'back'
+
+    back.append(icon)
 
     shadow.appendChild(container)
-    container.append(backSlot, title, actionSlot, makeStyleSheet('titlebar'))
+    container.append(back, title, actionSlot, makeStyleSheet('titlebar'))
   }
 
   // get hasBack() {

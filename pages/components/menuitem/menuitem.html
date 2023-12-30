@@ -182,12 +182,8 @@
     
     <test-card variant="flat" class="share">
       <div slot="entire">
-        <test-titlebar heading="공개 대상 선택">
-          <test-chip slot="back" variant="plain">
-            <test-icon slot="icon" name="arrow-left"></test-icon>
-          </test-chip>
-        </test-titlebar>
-        <test-separator></test-separator>
+        <test-titlebar heading="공개 대상 선택"></test-titlebar>
+        <br />
         <test-text variant="subhead" class="share-title">가족이나 친구와<br />함께 보세요!</test-text>
         <br />
         <test-menu-group>
@@ -220,11 +216,7 @@
 
     <test-card variant="flat">
       <div slot="entire" class="access">
-        <test-titlebar heading="공개 대상 선택">
-          <test-chip slot="back" variant="plain">
-            <test-icon slot="icon" name="arrow-left"></test-icon>
-          </test-chip>
-        </test-titlebar>
+        <test-titlebar heading="공개 대상 선택"></test-titlebar>
         <br />
         <test-group alignment="vertical">
           <test-menuitem ize="large" label="전체 공개" description="Facebook 안팎의 모든 사람">
@@ -252,7 +244,7 @@
     </test-card>
 
     <test-menuitem size="large">
-      <test-avatar slot="avatar" size="huge"></test-avatar>
+      <test-avatar slot="avatar" size="large"></test-avatar>
       <div slot="text" style="margin-top: -0.25rem">
         <test-text variant="body">사진 및 동영상 백업</test-text>
         <test-avatar-group>
@@ -269,11 +261,8 @@
       <br /><br />
 
     <test-tile variant="flat" class="userlist" style="width:100%;max-width: 400px; overflow: hidden; z-index: 1">
-      <test-titlebar heading="팔로우하는 사람" style="width:100%;max-width:100%;">
+      <test-titlebar heading="팔로우하는 사람">
         <!-- todo aria-label for icon button (chip) -->
-        <test-chip slot="back" aria-label="이전 페이지로">
-          <test-icon slot="icon" name="arrow-left"></test-icon>
-        </test-chip>
       </test-titlebar>
       <br />
       <!-- <a class="link-outside" href="#">모두 보기</a> -->
@@ -284,11 +273,11 @@
       <test-menu-group>
         <test-menuitem label="Gyeongsoo I" description="유아이 디자이너">
           <test-avatar slot="avatar" class="is-secondary"></test-avatar>
-          <test-chip slot="action" status="active" label="팔로우"></test-chip>
+          <test-chip slot="action" status="active">팔로우</test-chip>
         </test-menuitem>
         <test-menuitem label="Gyeongsoo I" description="">
           <test-avatar slot="avatar" class="is-secondary"></test-avatar>
-          <test-chip slot="action" label="팔로우 중"></test-chip>
+          <test-chip slot="action">팔로우 중</test-chip>
         </test-menuitem>
         <test-tile variant="flat" size="small">
           <test-menuitem label="더 많은 친구를 찾아보세요!" description="">
@@ -301,9 +290,6 @@
     <br /><br />
     <div style="width:100%;max-width:400px;">
       <test-titlebar heading="See this post in">
-        <test-chip slot="back" aria-label="이전 페이지로">
-          <test-icon slot="icon" name="arrow-left"></test-icon>
-        </test-chip>
         <test-link slot="action">적용</test-link>
       </test-titlebar>
       <br />
