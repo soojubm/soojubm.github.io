@@ -4,11 +4,8 @@
     <test-text variant="body-large">
       예측 가능한 사용자 인터렉션으로 서비스와 사용자 사이의 신뢰 구축.
     </test-text>
-    <test-text variant="body-large">
-      icons and... 기표로 정의하지 않은 아이콘을 단순 장식적인 용도로 사용하지 마세요.
-    </test-text>
-    <p>Use only universally recognized icons to represent actions or options.</p>
-    <div>
+
+    <section class="component-references">
       <a
         href="https://developer.apple.com/design/human-interface-guidelines/components/layout-and-organization/disclosure-controls"
         target="_blank"
@@ -20,10 +17,11 @@
       <a href="https://m3.material.io/foundations/interaction-states" target="_blank"
         >MD interaction-states</a
       >
-    </div>
+    </section>
 
     <ul>
-      <li>icon :: actionIcon / labelIcom 인풋 레이블/아이콘 같은 역할</li>
+      <li>Use only universally recognized icons to represent actions or options.</li>
+      <li>icons and... 기표로 정의하지 않은 아이콘을 단순 장식적인 용도로 사용하지 마세요.</li>
       <li>addable / expandable.</li>
       <li>done / check / positive</li>
       <li>bold text를 clickable로 사용? (단락 더 보기 등에서 사용되는 패턴)</li>
@@ -51,17 +49,17 @@
     </section>
 
     <!-- <test-text variant="body-large">Action indicator</p> -->
-    <test-text variant="subhead">Indicator Icons</test-text>
+    <test-text variant="subhead">Indicator(Label) Icons</test-text>
     <section class="token-group">
       <div class="token-item">
         <test-chip>
-          <test-icon slot="icon" name=""></test-icon>
+          <test-icon slot="prefix" name=""></test-icon>
         </test-chip>
         <b>Expandable & Collapsible (vertical)</b>
       </div>
       <div class="token-item">
         <test-chip>
-          <test-icon slot="icon" name="nav-arrow-down"></test-icon>
+          <test-icon slot="prefix" name="nav-arrow-down"></test-icon>
           Expandable & Collapsible (horizental)
         </test-chip>
       </div>
@@ -104,21 +102,21 @@
     <test-text variant="subhead">Navigation Icons</test-text>
     <section class="token-group">
       <div class="token-item">
-        <test-chip><test-icon slot="icon" name="arrow-left"></test-icon>to back</test-chip>
+        <test-chip><test-icon slot="prefix" name="arrow-left"></test-icon>to back</test-chip>
         <small>iOS에서 뒤로가기(이전 페이지)는 chevron.</small>
       </div>
       <div class="token-item">
         <test-chip>
-          <test-icon slot="icon" name="arrow-up-right"></test-icon>
-          External Link
-        </test-chip>
-      </div>
-      <div class="token-item">
-        <test-chip>
-          <test-icon slot="icon" name="arrow-right"></test-icon>
+          <test-icon slot="prefix" name="arrow-right"></test-icon>
           Internal Link
         </test-chip>
         <b>(ex: view all)</b>
+      </div>
+      <div class="token-item">
+        <test-chip>
+          <test-icon slot="prefix" name="arrow-up-right"></test-icon>
+          External Link
+        </test-chip>
       </div>
       <!-- <div class="token-item">
         <test-chip>
@@ -126,6 +124,35 @@
         </test-chip>
         <b>Popover</b>
       </div> -->
+    </section>
+
+    <test-text variant="subhead">Action Icons</test-text>
+    <section class="token-group">
+      <div class="token-item">
+        <test-chip>
+          <test-icon slot="prefix" name="search"></test-icon>
+          Search
+        </test-chip>
+      </div>
+      <div class="token-item">
+        <test-chip>
+          <test-icon slot="prefix" name="xmark"></test-icon>
+          Remove / Close / Clear
+        </test-chip>
+      </div>
+      <div class="token-item">
+        <test-chip>
+          <test-icon slot="prefix" name="plus"></test-icon>
+          Plus
+        </test-chip>
+      </div>
+      <div class="token-item">
+        <test-chip>
+          <test-icon slot="prefix" name="check"></test-icon>
+          Checked / Uncheck
+        </test-chip>
+      </div>
+
       <div class="token-item">
         <test-chip>
           <span class="material-symbols-outlined">light_mode</span>
@@ -150,34 +177,6 @@
           <span class="material-symbols-outlined">settings</span>
         </test-chip>
         <b>setting</b>
-      </div>
-    </section>
-
-    <test-text variant="subhead">Action Icons</test-text>
-    <section class="token-group">
-      <div class="token-item">
-        <test-chip>
-          <test-icon slot="icon" name="search"></test-icon>
-          Search
-        </test-chip>
-      </div>
-      <div class="token-item">
-        <test-chip>
-          <test-icon slot="icon" name="xmark"></test-icon>
-          Remove / Close / Clear
-        </test-chip>
-      </div>
-      <div class="token-item">
-        <test-chip>
-          <test-icon slot="icon" name="plus"></test-icon>
-          Plus
-        </test-chip>
-      </div>
-      <div class="token-item">
-        <test-chip>
-          <test-icon slot="icon" name="check"></test-icon>
-          Checked / Uncheck
-        </test-chip>
       </div>
 
       <div class="token-item">

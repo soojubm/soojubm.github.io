@@ -1,37 +1,16 @@
 <style>
 
-body {
+:root {
   --chat-bubble-border: 1px solid #000;
-}
-.subscribe-gosum {
-  position: absolute;
-  top: 5rem;
-  left: 50%;
-  width: 100%;
-  max-width: 480px;
-  margin-left: 60px;
+  --border-color: #000;
+  --color-primary: var(--color-newneek);
+  --button-background: #000;
+  --radius: 0;
 }
 
 .intro-head {
   overflow: hidden;
   position: relative
-}
-
-.intro-head-title {
-  padding: 1rem 0;
-  border-bottom: 1px solid #000;
-  font-size: var(--font-size-huge);
-}
-
-.intro-head-subhead {
-  display: block;
-  font-size: var(--font-size-large);
-  position: relative;
-  z-index: 1
-}
-
-.intro-head-subhead b {
-  font-weight: var(--font-weight-bold);
 }
 
 .intro-head-description {
@@ -66,42 +45,7 @@ body {
   z-index: 1;
 }
 
-.subscribe-field-cta {
-  display: inline-block;
-  min-width: 104px;
-  background: #fb7800;
-  padding: 10px 1.5rem 11px;
-  border-radius: 0;
-  text-align: center;
-  cursor: pointer;
-  position: relative;
-  background: #161616;
-  border: 1px solid #161616;
-  color: #fff;
-  background: #161616;
-  margin: 1rem 0 0;
-  padding-right: 1.75rem;
-}
-
 @media (max-width:1080px) {
-  .intro-head-title {
-    background: #ebebeb;
-    border-top: 1px solid #161616;
-    margin-top: -10rem;
-    font-size: var(--font-size-huge);
-    text-align: center;
-    position: relative;
-    z-index: 6
-  }
-
-  .subscribe-gosum {
-    width: 75%;
-    left: auto;
-    top: auto;
-    margin: -2rem auto auto;
-    position: relative;
-    z-index: 6
-  }
 
   .intro-head-description {
     position: relative;
@@ -240,7 +184,7 @@ body {
     <section class="modal-body">
       <section style="max-width:480px;margin:0 auto;">
         <div class="chat">
-          <figure class="chat-avatar">🧔</figure>
+          <figure class="chat-avatar">🧔</figure class="chat-avatar">
           <div>
             <h5 class="chat-username">신규방문자</h5>
             <!-- <time class="chat-time">12:00 am</time> -->
@@ -259,7 +203,7 @@ body {
         <div class="chat">
           <figure class="chat-avatar">
             🧔
-          </figure>
+          </figure class="chat-avatar">
           <div>
             <h5 class="chat-username">뉴스레터 구독자</h5>
             <!-- <time class="chat-time">12:00 am</time> -->
@@ -289,7 +233,7 @@ body {
         <div class="chat is-mine">
           <figure class="chat-avatar" hidden>
             <img src="/public/images/springsteen.jpg" alt="" />
-          </figure>
+          </figure class="chat-avatar">
           <div>
             <h5 class="chat-username">디자이너</h5>
           </div>
@@ -303,7 +247,7 @@ body {
         <div class="chat">
           <figure class="chat-avatar">
             🧔
-          </figure>
+          </figure class="chat-avatar">
           <div>
             <h5 class="chat-username">찐뉴니커</h5>
             <!-- <time class="chat-time">12:00 am</time> -->
@@ -318,7 +262,7 @@ body {
         <div class="chat is-mine">
           <figure class="chat-avatar" hidden>
             <img src="/public/images/springsteen.jpg" alt="" />
-          </figure>
+          </figure class="chat-avatar">
           <div>
             <h5 class="chat-username">디자이너</h5>
           </div>
@@ -349,39 +293,35 @@ body {
         </section>
       </div>
 
-      <br />
+      <br /><br />
 
       <section class="subscribe-gosum">
         <img src="https://newneek.co/static/media/gosum-home.7b7f5b6b.png" alt=""></section>
-        <h1 class="intro-head-title">
+        <test-text variant="title" class="intro-head-title">
           특보! <span role="img" aria-label="">🗞️</span> 우리가 시간이 없지, <span class="mobile-block">세상이 안 궁금하냐!</span>
-        </h1>
+        </test-text>
         <div class="intro-head-description">
-          <p class="intro-head-subhead tomorrow"><span role="img" aria-label="">🚀</span> 지금 구독하면 <b>내일 아침</b>에 읽을 수 있어요!</p>
-          <p class="intro-head-subhead">✨<b>305,408명</b>이 뉴닉을 읽고 있어요.</p>
-          <p style="margin-top: 1rem;">
+          <test-text variant="body"><span role="img">🚀</span> 지금 구독하면 <b>내일 아침</b>에 읽을 수 있어요!</test-text>
+          <test-text variant="body">✨<b>305,408명</b>이 뉴닉을 읽고 있어요.</test-text>
+          <br />
+          <test-text variant="body">
             세상 돌아가는 소식, 알고는 싶지만 신문 볼 새 없이 바쁜 게 우리 탓은 아니잖아요!&nbsp;<span class="linebreak-desktop">월/수/금 아침마다 세상 돌아가는 소식을 메일로 받아보세요.</span>
-          </p>
-          <div class="textfield">
-            <input type="text" name="email" class="textfield-input" placeholder="이메일 주소" value="">
-          </div>
-          <div class="textfield">
-            <input type="text" name="name" class="textfield-input" placeholder="닉네임" value="">
-          </div>
+          </test-text>
+          <test-textfield placeholder="이메일 주소"></test-textfield>
+          <test-textfield placeholder="닉네임"></test-textfield>
           <div style="margin: 0.5rem 0px 0px;"></div>
           <test-checkbox>
-            <input type="checkbox" id="subscribeAgree" name="subscribeAgree">
-            <label for="subscribeAgree"><a rel="noopener noreferrer" style="display: inline; position: static; left: auto; cursor: pointer;color:inherit;text-decoration:underline;">
+            <a rel="noopener noreferrer" style="display: inline; position: static; left: auto; cursor: pointer;color:inherit;text-decoration:underline;">
             개인정보 수집·이용</a>에 동의합니다</label>
-          </div>
-          <button class="subscribe-field-cta">뉴스레터 무료로 구독하기</button>
+          </test-checkbox>
+          <test-button variant="primary">뉴스레터 무료로 구독하기</test-button>
         </div>
 
       <section style="max-width:480px;margin:4rem auto;">
         <div class="chat is-mine">
           <figure class="chat-avatar" hidden>
             <img src="/public/images/springsteen.jpg" alt="" />
-          </figure>
+          </figure class="chat-avatar">
           <div>
             <h5 class="chat-username">디자이너</h5>
           </div>
@@ -393,7 +333,7 @@ body {
         </div>
         
         <div class="chat">
-          <figure class="chat-avatar">🦔</figure>
+          <figure class="chat-avatar">🦔</figure class="chat-avatar">
           <div>
             <h5 class="chat-username">고슴이</h5>
           </div>
@@ -417,7 +357,7 @@ body {
         <div class="chat is-mine">
           <figure class="chat-avatar" hidden>
             <img src="/public/images/springsteen.jpg" alt="" />
-          </figure>
+          </figure class="chat-avatar">
           <div>
             <h5 class="chat-username">디자이너</h5>
           </div>

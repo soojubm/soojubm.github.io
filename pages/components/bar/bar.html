@@ -12,6 +12,23 @@
           <test-icon slot="icon" name="more-vert"></test-icon>
         </test-chip>
       </menu>
+
+      <test-separator></test-separator>
+      <test-chip-group>
+        <test-searchfield size="small" placeholder="검색꾸">
+          <test-icon slot="prefix" name="search" size="small"></test-icon>
+        </test-searchfield>
+        <test-chip name="Filter">
+          <test-icon slot="suffix" name="nav-arrow-down"></test-icon>
+          Created by anyone
+        </test-chip>
+        <div style="margin-left: auto">
+          <test-chip variant="plain" name="Sort">
+            Last modified
+            <test-icon slot="suffix" name="nav-arrow-down"></test-icon>
+          </test-chip>
+        </div>
+      </test-chip-group>
     </section>
   </article>
 
@@ -25,18 +42,15 @@
 
     <section class="component-example">
       <div>
-        <test-titlebar heading="" class="js-titlebar" role="navigation">
-          <!-- <div class="titlebar-background"></div> -->
+        <test-titlebar heading="Page Title" class="js-titlebar" role="navigation">
           <test-text variant="subhead">쇼핑</test-text>
           <test-chip slot="action">
-            <test-icon slot="icon" name="cart"></test-icon>
+            <test-icon slot="prefix" name="cart"></test-icon>
             장바구니
           </test-chip>
         </test-titlebar>
         <!-- <div class="titlebar-backdrop js-header"></div> -->
       </div>
-      <test-separator></test-separator>
-      <test-titlebar class="js-titlebar" heading="Back to Blahblah Page"></test-titlebar>
       <test-separator></test-separator>
       <test-titlebar class="js-titlebar" role="navigation" data-size="large" style="padding: 0">
         <h1 class="titlebar-title js-page-title" title="page title">Large Case</h1>

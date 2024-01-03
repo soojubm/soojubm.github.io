@@ -5,7 +5,6 @@ import main from './post.html'
 import './post.css'
 
 import '/public/stylesheets/shared.css'
-import '/public/stylesheets/components/textfield.css'
 import '/pages/components/components.css'
 
 document.addEventListener('DOMContentLoaded', () => {

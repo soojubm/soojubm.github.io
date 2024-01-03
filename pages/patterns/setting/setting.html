@@ -89,7 +89,7 @@
           <div slot="text">
             <em class="avatar-badge"></em>
             <test-text variant="label">이메일 주소</test-text>
-            <div>soojubm@gmail.com</div>
+            <test-text variant="body">soojubm@gmail.com</test-text>
           </div>
           <div></div>
           <test-icon slot="action" name="arrow-right"></test-icon>
@@ -100,7 +100,7 @@
           <div slot="text">
             <em class="avatar-badge"></em>
             <test-text variant="label">배송지</test-text>
-            <div>배송지를 관리하고 기본 배송지를 설정하세요.</div>
+            <test-text variant="body">배송지를 관리하고 기본 배송지를 설정하세요.</test-text>
           </div>
           <test-icon slot="action" name="arrow-right"></test-icon>
         </test-menuitem>
@@ -115,7 +115,7 @@
         <test-menuitem>
           <div slot="text">
             <test-text variant="label">닉네임</test-text>
-            <div class="setting-item-value">수줍이</div>
+            <test-text variant="body">수줍이</test-text>
           </div>
           <test-icon slot="action" name="arrow-right"></test-icon>
         </test-menuitem>
@@ -128,7 +128,7 @@
         <test-menuitem>
           <div slot="text">
             <test-text variant="label">이모지</test-text>
-            <div>🐻</div>
+            <test-text variant="body">🐻</test-text>
           </div>
           <test-icon slot="action" name="arrow-right"></test-icon>
         </test-menuitem>
@@ -137,7 +137,7 @@
         <test-menuitem>
           <div slot="text">
             <test-text variant="label">관심분야</test-text>
-            <div>문화/예술, 인권, 환경</div>
+            <test-text variant="body">문화/예술, 인권, 환경</test-text>
           </div>
           <test-icon slot="action" name="arrow-right"></test-icon>
         </test-menuitem>
@@ -232,8 +232,8 @@
     <test-tile>
       <test-menuitem>
         <div slot="text">
-          <test-text>비밀번호 변경</test-text>
-          <test-text>강력한 비밀번호로 보안을 강화하세요.</test-text>
+          <test-text variant="label">비밀번호 변경</test-text>
+          <test-text variant="body">강력한 비밀번호로 보안을 강화하세요.</test-text>
         </div>
         <test-icon slot="action" name="arrow-right"></test-icon>
       </test-menuitem>
@@ -243,8 +243,8 @@
     <test-tile>
       <test-menuitem>
         <div slot="text">
-          <span class="setting-item-label">계정 비활성화</span>
-          <div class="setting-item-value"><a href="">비활성화 페이지</a>에서 할 수 있습니다.</div>
+          <test-text variant="label">계정 비활성화</test-text>
+          <test-text variant="body"><a href="">비활성화 페이지</a>에서 할 수 있습니다.</test-text>
         </div>
         <test-chip slot="action">비활성화</test-chip>
       </test-menuitem>
@@ -278,9 +278,9 @@
         <test-separator></test-separator>
         <test-group alignment="vertical" role="radiogroup">
           <legend hidden>radiogroup</legend>
-          <test-radio name="gender" value="">기타</test-radio>
-          <test-radio name="gender" value="">여성</test-radio>
-          <test-radio name="gender" value="">남성</test-radio>
+          <test-radio name="gender">기타</test-radio>
+          <test-radio name="gender">여성</test-radio>
+          <test-radio name="gender">남성</test-radio>
         </test-group>
       </div>
     </div>

@@ -17,6 +17,29 @@
         <test-button variant="destructive" aria-label="danger">destructive</test-button>
         <test-button variant="text">Flat</test-button>
       </test-group>
+      <test-separator></test-separator>
+      <test-group temp="vertical">
+        <test-button variant="tertiary" status="hover">hovered</test-button>
+        <test-button variant="tertiary" status="focus">focused</test-button>
+        <test-button variant="tertiary" status="disabled" disabled>disabled</test-button>
+      </test-group>
+      <test-separator></test-separator>
+      <test-group>
+        <test-button data-variant="tertiary">
+          <!-- TODO 아이콘 하나로 제한되면 slot의 순서만 챙기고 그냥 slot='icon' 하나로? 아니면 label -->
+          <test-icon slot="prefix" name="star"></test-icon>
+          with prefix icon
+        </test-button>
+        <test-button data-variant="tertiary">
+          with suffix icon
+          <test-icon slot="suffix" name="star"></test-icon>
+        </test-button>
+      </test-group>
+      <test-separator></test-separator>
+      <test-group>
+        <test-button variant="primary" size="large">large</test-button>
+        <test-button variant="tertiary">medium</test-button>
+      </test-group>
     </section>
 
     <section class="component-props">
@@ -56,33 +79,6 @@
     </section>
 
     <!-- 참고: 버튼 네이밍. 'link' | 'subtle' | 'primary' / 'solid' | 'outline' | 'plain' |'text' -->
-
-    <test-text variant="subhead" aria-label="예측 가능해야 합니다.">Sizes</test-text>
-    <section class="component-case">
-      <test-group>
-        <test-button variant="primary" size="large">large</test-button>
-        <test-button variant="tertiary">medium</test-button>
-      </test-group>
-    </section>
-    <test-text variant="subhead" aria-label="예측 가능해야 합니다.">Statuses</test-text>
-    <section class="component-case">
-      <test-group temp="vertical">
-        <test-button variant="tertiary" status="hover">hovered</test-button>
-        <test-button variant="tertiary" status="focus">focused</test-button>
-        <test-button variant="tertiary" status="disabled" disabled>disabled</test-button>
-      </test-group>
-    </section>
-    <section class="component-case" style="display: flex; gap: 0.75rem">
-      <test-button data-variant="tertiary">
-        <!-- TODO 아이콘 하나로 제한되면 slot의 순서만 챙기고 그냥 slot='icon' 하나로? 아니면 label -->
-        <test-icon slot="prefix" name="star"></test-icon>
-        with icon
-      </test-button>
-      <test-button data-variant="tertiary">
-        with icon
-        <test-icon slot="suffix" name="star"></test-icon>
-      </test-button>
-    </section>
     <test-group alignment="vertical">
       <test-tile variant="elevated">
         <test-text variant="body-bold">Elevated Button</test-text>

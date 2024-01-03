@@ -154,7 +154,7 @@ p + [variant="subhead"],
 
 
 
-.album-track {padding:9rem 0 0 0;color:var(--color-text);}
+.album-track {}
 .album-track-title {margin:0 0 .5rem 0;font-size:var(--font-size-large);color:inherit;}
 .album-track-label {display:flex;}
 .album-track-label-item {width:10%;font-size:var(--font-size-small);font-weight:var(--font-weight-bold);color:var(--color-text-light);}

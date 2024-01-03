@@ -46,6 +46,7 @@ document.addEventListener('click', toggleTheme)
 
 document.addEventListener('DOMContentLoaded', () => {
   stopAnimation()
+
   // lockbody
   // 여러 개 묶여 있음.
   // event.positionSticky({ selector: '.js-titlebar', addClass: 'is-sticky-titlebar', isPassed: false })

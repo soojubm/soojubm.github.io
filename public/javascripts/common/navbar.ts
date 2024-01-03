@@ -53,7 +53,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('.sidebar-menu a').forEach(item => {
     // console.log(item.getAttribute('href'), pathname)
-    if (pathname.includes(item.getAttribute('href') || ''))
+
+    let temp = 0
+    if (pathname.includes(item.getAttribute('href') || '')) {
       item.setAttribute('aria-current', 'page')
+    }
+
+    const a = document.querySelector('.sidebar-menu')
+
+    item.addEventListener('click', () => {
+      localStorage.setItem('tttt', String(a?.scrollTop))
+    })
+
+    console.log(document.querySelector('[aria-current=page'))
+    if (a) {
+      // a.scrollTo(0, document.querySelector('[aria-current=page')?.clientTop || 0)
+      a.scrollTo(0, Number(localStorage.getItem('tttt')))
+    }
   })
 })

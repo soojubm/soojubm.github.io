@@ -243,10 +243,14 @@
       </div>
     </test-card>
 
+    <test-separator></test-separator>
+
+
     <test-menuitem size="large">
       <test-avatar slot="avatar" size="large"></test-avatar>
-      <div slot="text" style="margin-top: -0.25rem">
-        <test-text variant="body">사진 및 동영상 백업</test-text>
+      <div slot="text" style="display:flex;flex-direction:column;justify-content:space-between;height:48px;margin-top: -0.125rem;
+      ">
+        <test-text variant="body-bold">사진 및 동영상 백업</test-text>
         <test-avatar-group>
           <test-avatar size="small"></test-avatar>
           <test-avatar size="small"></test-avatar>
@@ -279,7 +283,7 @@
           <test-avatar slot="avatar" class="is-secondary"></test-avatar>
           <test-chip slot="action">팔로우 중</test-chip>
         </test-menuitem>
-        <test-tile variant="flat" size="small">
+        <test-tile variant="elevated" size="small">
           <test-menuitem label="더 많은 친구를 찾아보세요!" description="">
             <test-avatar slot="avatar"></test-avatar>
           </test-menuitem>
@@ -398,11 +402,11 @@
           </test-avatar>
         </test-entity>
         <test-group>
-          <test-entity description="더보기">
+          <test-menuitem alignment="vertical" label="더보기">
             <test-avatar slot="avatar" size="large" variant="secondary" fallback=" ">
               <test-icon slot="icon" name="more-horiz-circle" size="large"></test-icon>
             </test-avatar>
-          </test-entity>
+          </test-menuitem>
           <test-entity description="툴">
             <test-avatar slot="avatar" size="large" variant="secondary" fallback=" ">
               <test-icon slot="icon" name="share-ios" size="large"></test-icon>
