@@ -23,6 +23,12 @@
   border:none;background:var(--red100);
 }
 
+.callout[data-variant=warning] {
+  --callout-text-color: sienna;
+  border:none;
+  background:cornsilk;
+}
+
 figure {margin: 0;padding:0;}
 h3, p {margin: 0;}
 

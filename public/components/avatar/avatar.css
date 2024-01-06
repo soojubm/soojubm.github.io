@@ -92,15 +92,3 @@ img {
 .entity[data-size=medium] {
   
 }
-
-test-text[variant=subhead] {
-  display: block;
-  margin: var(--space-2) 0 0 0;
-}
-test-text[variant=body] {
-  line-height: var(--size-small);
-
-}
-test-text[variant=body] + test-text[variant=body] {
-  color: var(--color-text-light);
-}

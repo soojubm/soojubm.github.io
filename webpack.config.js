@@ -16,6 +16,8 @@ var WebpackObfuscator = require('webpack-obfuscator')
 const CompressionPlugin = require('compression-webpack-plugin')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
+const { BundleStatsWebpackPlugin } = require('bundle-stats-webpack-plugin')
+
 const postcssPresetEnv = require('postcss-preset-env')
 
 const path = require('path')
@@ -46,11 +48,14 @@ const patterns = [
   'checkout',
   'cake',
   'class',
+
+  'signifier',
+  'tokens',
+
+  'utilites',
 ]
 const components = [
   'breadcrumb',
-  'signifier',
-  'utilites',
 
   'avatar',
 
@@ -79,11 +84,6 @@ const components = [
   'books',
 ]
 
-// let t = {}
-// const temp = components.forEach(item => {
-//   t = [item] = [`./pages/components/${item}/${item}.ts`, './public/javascripts/common/navbar.ts', './index.ts']
-// })
-
 const setPages = data =>
   data.map(item => {
     return new HtmlWebpackPlugin({
@@ -97,11 +97,7 @@ let test = {}
 components.forEach(item => {
   test = {
     ...test,
-    [item]: [
-      `./pages/components/${item}/${item}.ts`,
-      './public/javascripts/common/navbar.ts',
-      './index.ts',
-    ],
+    [item]: [`./pages/components/${item}/${item}.ts`, './index.ts'],
   }
 })
 
@@ -109,11 +105,7 @@ let test2 = {}
 patterns.forEach(item => {
   test2 = {
     ...test2,
-    [item]: [
-      `./pages/patterns/${item}/${item}.ts`,
-      './public/javascripts/common/navbar.ts',
-      './index.ts',
-    ],
+    [item]: [`./pages/patterns/${item}/${item}.ts`, './index.ts'],
   }
 })
 
@@ -124,12 +116,6 @@ module.exports = {
   devtool: 'inline-source-map',
   entry: {
     index: ['./pages/home/home.ts', './public/javascripts/common/navbar.ts', './index.ts'],
-    tokens: ['./pages/tokens/tokens.ts', './public/javascripts/common/navbar.ts', './index.ts'],
-    components: [
-      './pages/components/components.ts',
-      './public/javascripts/common/navbar.ts',
-      './index.ts',
-    ],
     ...test,
     ...test2,
   },
@@ -142,6 +128,23 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
+  },
+
+  // 용량. 속도 기하급수적 증가; + navbar 뺀까 번들 용량 오히려 커짐.
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+    },
+  },
+
+  stats: {
+    // required
+    assets: true,
+    chunks: true,
+    modules: true,
+    // optional
+    builtAt: true,
+    hash: true,
   },
 
   plugins: [
@@ -157,28 +160,24 @@ module.exports = {
       filename: 'index.html',
       chunks: ['index'],
     }),
-    new HtmlWebpackPlugin({
-      template: HTML_TEMPLATE,
-      filename: 'tokens.html',
-      chunks: ['tokens'],
-    }),
-    new HtmlWebpackPlugin({
-      template: HTML_TEMPLATE,
-      filename: 'components.html',
-      chunks: ['components'],
-      // main: './pages/tokens.html',
-      // inject: true,
-      // minify: {
-      //   collapseWhitespace: true,
-      //   removeComments: true,
-      // },
-    }),
+    // new HtmlWebpackPlugin({
+    //   template: HTML_TEMPLATE,
+    //   filename: 'components.html',
+    //   chunks: ['components'],
+    //   main: './pages/tokens.html',
+    //   inject: true,
+    //   minify: {
+    //     collapseWhitespace: true,
+    //     removeComments: true,
+    //   },
+    // }),
 
     ...setPages(patterns),
     ...setPages(components),
 
     new WebpackObfuscator({ rotateStringArray: true }, ['excluded_bundle_name.js']),
     new BundleAnalyzerPlugin(),
+    new BundleStatsWebpackPlugin(),
     // new CompressionPlugin({}),
     // new FriendlyErrorsWebpackPlugin(),
   ],
@@ -224,10 +223,6 @@ module.exports = {
   },
 
   // optimization: {
-
-  //   splitChunks: {
-  //     chunks: 'all',
-  //   },
   //   minimize: true,
   //   minimizer: [
   //     new TerserPlugin({
