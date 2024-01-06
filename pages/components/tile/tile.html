@@ -75,18 +75,6 @@
       </ul>
     </section>
 
-    <test-tile>
-      <figure>
-        <img
-          src="/public/images/AlbumArt_{B5020207-474E-4720-B8A7-C6073790C400}_Large.jpg"
-          alt=""
-          style="width: 100%; margin: 0; border-radius: var(--radius)"
-        />
-        <figcaption></figcaption>
-      </figure>
-      <b>flat with media</b>
-    </test-tile>
-
     <div
       class="quote"
       style="
@@ -121,21 +109,20 @@
     <br />
 
     <test-card variant="nuded" role="listitem" style="max-width: 400px; z-index: 1">
-      <figure slot="thumbnail" style="border-radius: var(--radius)">
+      <figure slot="thumbnail">
         <img src="/public/images/springsteen.jpg" alt="" />
       </figure>
       <test-tag slot="category" variant="primary">카테고리</test-tag>
       <!-- <figure class="card-avatar">🍊</figure> -->
       <test-text slot="heading" variant="subhead">카드 유아이</test-text>
-      <p class="card-text">
+      <test-text variant="body">
         텍스트는 최대 두 줄 무야호 따봉 북마크 장바구니 등의 액션이 있을 수 있고 내부 외부 가이드를
         만들어야해
-      </p>
+      </test-text>
+      <!-- TODO: menuitem이 애매한 네이밍 -->
       <test-menuitem slot="byline" label="수줍이" description="2년 전">
-        <!-- <test-avatar slot="avatar" size="small"><img src="/public/images/springsteen.jpg" alt="" /></test-avatar> -->
         <test-avatar slot="avatar" size="small"></test-avatar>
       </test-menuitem>
-
       <test-chip slot="action">
         <test-icon slot="icon" name="more-vert"></test-icon>
       </test-chip>
@@ -153,6 +140,21 @@
     </test-card>
 
     <br />
+
+    <test-tile variant="flat" style="max-width: 400px; text-align: center">
+      <figure class="card-thumbnail">
+        <img src="/public/images/AlbumArt_{B5020207-474E-4720-B8A7-C6073790C400}_Large.jpg alt=""
+        style="max-height: fit-content" />
+      </figure>
+      <test-text variant="subhead">Welcome to...</test-text>
+      <p class="card-text" style="width: 90%; margin: 0 auto; line-height: var(--font-line-height)">
+        Onboarding card. 디스크립션. PrevButton 이라면 secondary vs tertiary
+      </p>
+      <test-group alignment="center" style="margin: 1.5rem 0 0 0">
+        <test-button variant="primary">Next</test-button>
+        <test-button variant="tertiary">Skip</test-button>
+      </test-group>
+    </test-tile>
 
     <picture>
       <source
@@ -173,39 +175,5 @@
       src="elva-fairy-800w.jpg"
       alt="요정 옷을 입은 엘바"
     />
-
-    <test-card variant="flat" style="max-width: 400px; text-align: center">
-      <article slot="entire" class="onboarding">
-        <figure
-          class="card-thumbnail"
-          style="
-            object-fit: cover;
-            border-radius: var(--radius);
-            overflow: hidden;
-            background-color: yellowgreen;
-          "
-        >
-          <img src="/public/images/springsteen.jpg" alt="" style="max-height: fit-content" />
-        </figure>
-        <h3 class="card-title" style="font-weight: bold; padding: var(--space-3) 0 0.25rem 0">
-          Welcome to...
-        </h3>
-        <p
-          class="card-text"
-          style="
-            width: 90%;
-            margin: 0 auto;
-            font-size: var(--font-size-medium);
-            line-height: var(--font-line-height);
-          "
-        >
-          Onboarding card. 디스크립션. PrevButton 이라면 secondary vs tertiary
-        </p>
-        <test-group class="onboarding-control">
-          <test-button variant="primary" class="onboarding-control-next button">Next</test-button>
-          <test-button variant="tertiary" class="onboarding-control-skip button">Skip</test-button>
-        </test-group>
-      </article>
-    </test-card>
   </article>
 </main>

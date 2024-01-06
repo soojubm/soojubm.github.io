@@ -171,9 +171,6 @@ main,
 .greeting {}
 .greeting-avatar {@mixin avatar-container-large;float:right;margin:0 0 0 var(--space-4);position:relative;}
 
-.onboarding-control {@mixin group-button;margin:var(--space-4) 0 0 0;}
-.onboarding-control-next {@mixin button-primary;width:var(--grid-column);}
-.onboarding-control-skip {@mixin button-tertiary;width:var(--grid-column);} */
 /*
 
 .payment-method-list {@mixin stack;}
