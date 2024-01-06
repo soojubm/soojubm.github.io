@@ -43,7 +43,6 @@ const patterns = [
   'timeline',
   'notification',
   'auth',
-  'pagehead',
   'product',
   'checkout',
   'cake',
