@@ -19,10 +19,15 @@ class Group extends HTMLElement {
     if (this.bleeding) this.dataset.bleeding = 'true'
 
     container.dataset.temp = this.temp || ''
+    if (this.variant) container.dataset.variant = this.variant
     // if (this.variant) container.setAttribute('data-variant', this.variant)
 
     shadow.appendChild(container)
     container.append(...this.childNodes, makeStyleSheet('group'))
+  }
+
+  get variant() {
+    return this.getAttribute('variant')
   }
 
   get temp() {

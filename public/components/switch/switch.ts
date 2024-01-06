@@ -15,7 +15,7 @@ class Switch extends HTMLElement {
     input.setAttribute('type', 'checkbox')
     input.role = 'switch'
 
-    label.textContent = this.label
+    label.textContent = this.textContent || ''
     label.setAttribute('for', this.name || '')
     input.setAttribute('id', this.name || '')
     input.setAttribute('name', this.name || '')
@@ -35,10 +35,6 @@ class Switch extends HTMLElement {
 
   get size() {
     return this.getAttribute('size')
-  }
-
-  get label() {
-    return this.getAttribute('label')
   }
 
   get checked() {

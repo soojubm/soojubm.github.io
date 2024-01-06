@@ -52,7 +52,7 @@
   background:var(--color-background);
   box-shadow: var(--shadow);
   box-sizing: border-box;
-  font-weight: var(--font-weight-bold);
+  /* font-weight: var(--font-weight-bold); */
   color:var(--color-text);
 }
 
