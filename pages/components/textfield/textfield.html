@@ -263,6 +263,16 @@
         </test-textfield>
       </fieldset>
     </section>
+    <section class="component-case">
+      <fieldset class="textfield-group" style="width: 100%; max-width: 400px; flex-direction:column;">
+        <test-textfield type="date" name="date-start" placeholder="YYYY. MM. DD.">
+          <test-icon slot="suffix" name="calendar"></test-icon>
+        </test-textfield>
+        <test-textfield type="date" name="date-end" placeholder="YYYY. MM. DD.">
+          <test-icon slot="suffix" name="calendar"></test-icon>
+        </test-textfield>
+      </fieldset>
+    </section>
     <test-text variant="subhead">Counter</test-text>
     <ul>
       <li>props: minValue, maxValue, value, onDecreseClick, onIncreseClick</li>

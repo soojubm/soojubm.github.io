@@ -1,15 +1,12 @@
 import footer from '/public/components/footer/footer.html'
 import navbar from '/public/components/navbar/navbar.html'
 
-import main from './pagehead.html'
-
-import '/public/stylesheets/shared/webfonts.css'
-import '/public/stylesheets/shared/variables.css'
-import '/public/stylesheets/shared/reset.css'
-
-import '/public/components/navbar/navbar.css'
-import '/public/components/footer/footer.css'
+import main from './signifier.html'
 import '/pages/components/components.css'
+import '/pages/patterns/tokens/tokens.css'
+// TODO : 웹팩 등에서 경로가 수정되었을 때 그런데 왜 여기서 토큰 css를 가져옴 애초에? 공통된 css를 ㅂㄴ리`
+
+import '/public/stylesheets/shared.css'
 
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelector('main')!.innerHTML = navbar + main + footer

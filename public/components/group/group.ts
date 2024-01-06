@@ -13,6 +13,9 @@ class Group extends HTMLElement {
     const alignment = this.getAttribute('alignment')
     container.dataset.alignment = alignment || ''
 
+    // TODO : alignment -> direction / align
+    if (this.align) container.dataset.align = this.align
+
     const style = this.getAttribute('style')
     container.setAttribute('style', style || '')
 
@@ -36,6 +39,10 @@ class Group extends HTMLElement {
 
   get bleeding() {
     return this.getAttribute('bleeding')
+  }
+
+  get align() {
+    return this.getAttribute('align')
   }
 
   connectedCallback() {}

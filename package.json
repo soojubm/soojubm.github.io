@@ -9,7 +9,8 @@
     "start": "webpack serve --open --mode=development",
     "build": "webpack --mode=production",
     "remove": "rm -r node_modules",
-    "webhint": "hint -- http://localhost:8080"
+    "webhint": "hint -- http://localhost:8080",
+    "stat": "npx webpack --mode production --json artifacts/webpack-stats.json"
   },
   "repository": {
     "type": "git",
@@ -69,6 +70,8 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.6.0",
+    "bundle-stats": "^4.8.4",
+    "bundle-stats-webpack-plugin": "^4.8.4",
     "handlebars": "^4.7.7",
     "handlebars-loader": "^1.7.3",
     "sass": "^1.56.1",

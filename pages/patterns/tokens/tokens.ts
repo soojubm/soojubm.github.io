@@ -5,9 +5,7 @@ import tokens from './tokens.html'
 
 import '/public/stylesheets/shared.css'
 
-// import '/public/stylesheets/components/tiles.css'
-
-import '../components/components.css'
+import '/pages/components/components.css'
 import './tokens.css'
 
 document.addEventListener('DOMContentLoaded', () => {

@@ -1,5 +1,6 @@
 /* TODO 가운데 정렬된 목록의 가로 스크롤 방법 */
 /* // stack과 grid */
+/* group과 row */
 
 .group {
   display:flex;flex-wrap:wrap;
@@ -24,8 +25,15 @@
   width: 100%;
 }
 
+/* TODO: align 은 네이티브 값과 충돌할 수 있어서? 빨갛게 뜸? */
+.group[data-alignment=center] {
+  justify-content: center;
+}
+
 .group[data-direction=row] {}
 .group[data-direction=column] {}
+
+
 .group[data-alignment=right] {}
 
 .group[data-alignment=bleeding-vertical] {
@@ -40,12 +48,4 @@
   scroll-behavior: smooth;
   > * {min-width:auto;}
   &::-webkit-scrollbar {display:none;}
-}
-
-.row[data-bleeding=true] {}
-.row[data-align=center] {
-  text-align: center;
-  > * {
-    display: inline-block;
-  }
 }

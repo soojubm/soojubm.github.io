@@ -144,15 +144,7 @@ mark {color:inherit;} mark::before {content: " [강조 시작] ";opacity:0;posit
 // ol li ol li:before {content: counter(sub-list-item,lower-alpha) '.';}
 */
 
-test-text[variant=title] + test-text[variant=body-large] {
-  display: block;
-  margin: var(--space-after-title) 0 2rem;
-}
 
-+ test-text[variant=body] + test-text[variant=subhead] {
-  display: block;
-  margin: 2rem 0 0 0;
-}
 
 .marquee {
   display: flex;
