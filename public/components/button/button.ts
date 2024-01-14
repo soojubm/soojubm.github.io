@@ -102,3 +102,23 @@ class Button extends HTMLElement {
 }
 
 export default Button
+
+// TODO:
+// class BlueBuy extends HTMLElement {
+//   static get observedAttributes() {
+//     return ['sku'];
+//   }
+//   connectedCallback() {
+//     this.render();
+//   }
+//   render() {
+//     const sku = this.getAttribute('sku');
+//     const price = prices[sku];
+//     this.innerHTML = `<button type="button">buy for ${price}</button>`;
+//   }
+//   attributeChangedCallback(attr, oldValue, newValue) {
+//     this.render();
+//   }
+//   disconnectedCallback() {...}
+// }
+// window.customElements.define('blue-buy', BlueBuy);

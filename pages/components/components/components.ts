@@ -2,7 +2,7 @@ import footer from '/public/components/footer/footer.html'
 import navbar from '/public/components/navbar/navbar.html'
 
 import main from './components.html'
-import './components.css'
+import '../components.css'
 
 import '/public/stylesheets/shared.css'
 import '/public/stylesheets/components/form.css'

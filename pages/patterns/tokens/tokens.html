@@ -6,6 +6,8 @@
       margin: var(--space-1) 0 0;
     }
   </style>
+  <a href="https://design-tokens.github.io/community-group/format">token module</a>
+  <a href="https://docs.specifyapp.com/concepts/token-types">token json</a>
   <section class="tokens-body">
     <!-- <test-group>
       <test-chip class="js-scrollspy-trigger" status="active">Palette</test-chip>
@@ -32,23 +34,22 @@
             컴포넌트 토큰은 상대적으로 변경 가능성이 높고 범용성이 낮기 때문에 컴포넌트 스코프에서만
             정의. 컴포넌트 토큰을 정의하면 형태 기반의 컴포넌트를 정의 최소화할 수 있다.
           </li>
-          <li>일관된 시각 경험. 크로스 플랫폼. 서비스 확장과 유지 보수.</li>
+          <li>SCSS/LESS: kebab-case / JS: PascalCase / Android: snake_case / iOS: PascalCase</li>
         </ul>
 
         <test-text variant="subhead">Platform problems</test-text>
         <ul>
-          <li>프로덕션이 아니기 때문에 namespace를 생략. 서드파티 라이브러리와 충돌을 방지용.</li>
+          <li>
+            --[namespace]-[component / category]-[attribute]-[status] 프로덕션이 아니기 때문에
+            namespace를 생략. 서드파티 라이브러리와 충돌을 방지용.
+          </li>
           <li>
             3가지 이상 케이스에서 사용될 때 토큰으로 정의합니다. 1회~2회는 예외 케이스로 정의하거나
             컴포넌트 스코프에서 보충합니다.
           </li>
-          <li>규칙 최소화. 크기와 비례해서 radius와 shadow 조정이 필요하지만 규칙을 최소화.</li>
           <li>
             theme. 인버트 컬러셋을 추가로 정의하지 않습니다. 하나의 컬러셋으로 다크 테마에
             대응합니다. 어렵고 또는 불필요한 규칙. 초기 토큰 세팅 허들을 넘으면 테마 대응은 쉬워짐.
-          </li>
-          <li>
-            radius. pill과 non-pill은 양자택일. 인물 아바타를 특정하기 위해 circle은 허용할 수 있다.
           </li>
         </ul>
         <li>small-scale layout (polaris 참고) 아바타 유무 - 없어짐</li>
@@ -159,7 +160,6 @@
           <b>todo Transparent gradient</b>
         </article>
       </div>
-      <test-separator></test-separator>
       <div class="token-group">
         <article class="token-item is-primary200">
           <figure class="token-item-avatar"></figure>
@@ -172,20 +172,20 @@
     </article>
 
     <article class="article js-scrollspy-section">
-      <test-text variant="title">Shapes - Radius & Elevations</test-text>
-      <test-text variant="body-large">
-        그림자를 이용한 시각적 상승 효과. 사용자는 시각적 단어로 우선순위를 인식하고 인터렉션.
-      </test-text>
-
-      <test-text variant="body-large">
-        elevated는 주변 요소 대비 강조. 따라서 단일 요소에 사용하지 말 것. 더 높은 우선순위를 위한
-        높은 고도. 시각적 우선순위는 그림자로만 줄 수 있는 것은 아님. 시각적 우선순위와 맥락의 구분.
-        하지만 overay등으로 우선순위를 설정할 수도 있음.
-      </test-text>
-
-      <test-text variant="body-large">
-        인터렉션 없는 요소에 그림자를 사용하는 것을 조심. 4px => 6px 로 변경. tiny size에서는 4px
-      </test-text>
+      <test-text variant="subhead">Shapes - Radius & Elevations</test-text>
+      <div style="display: flex; flex-direction: column; gap: 1rem; margin: 1.25rem 0">
+        <test-text variant="body">
+          그림자를 이용한 시각적 상승 효과. 사용자는 시각적 단어로 우선순위를 인식하고 인터렉션.
+        </test-text>
+        <test-text variant="body">
+          elevated는 주변 요소 대비 강조. 따라서 단일 요소에 사용하지 말 것. 더 높은 우선순위를 위한
+          높은 고도. 시각적 우선순위는 그림자로만 줄 수 있는 것은 아님. 시각적 우선순위와 맥락의
+          구분. 하지만 overay등으로 우선순위를 설정할 수도 있음.
+        </test-text>
+        <test-text variant="body">
+          인터렉션 없는 요소에 그림자를 사용하는 것을 조심. 4px => 6px 로 변경. tiny size에서는 4px
+        </test-text>
+      </div>
 
       <section class="">
         <div class="token-group">
@@ -245,102 +245,13 @@
           </article>
         </div>
       </section>
-    </article>
 
-    <article class="article typography js-scrollspy-section">
-      <test-text variant="title">Text</test-text>
-      <test-text variant="body-large">활자의 위계와 배치. 정보 계층.</test-text>
+      <test-text variant="subhead">Sizing</test-text>
+      <test-text variant="body">
+        요소의 너비와 높이. 브라우저 크기가 변경되어도 사이즈 토큰은 변하지 않아야 합니다.
+      </test-text>
 
-      <blockquote>
-        폰트가 변경되면 폰트마다 baseline이 달라서 텍스트의 상하 간격이 안 맞을 수 있다.
-        텍스트노드(레이블 역할)의 패딩용 변수를 활용.
-      </blockquote>
-
-      <test-tile variant="elevated" size="small">
-        <test-menuitem label="시스템 폰트로 보기" class="js-default-font">
-          <test-avatar slot="avatar">
-            <test-icon slot="icon" name="font-question"></test-icon>
-          </test-avatar>
-        </test-menuitem>
-      </test-tile>
-
-      <test-separator></test-separator>
-
-      <section class="">
-        <!-- <a href="">link to texts pattern</a> -->
-        <test-text variant="subhead">Typefaces <sup>2</sup></test-text>
-        <div class="token-group">
-          <div class="token-item">
-            <b>--font-family: 'Quattrocento Sans', 'Gothic A1', sans-serif;</b>
-          </div>
-        </div>
-
-        <test-text variant="subhead">
-          Sizes <sup><del>5</del> 3</sup>
-        </test-text>
-        <div class="token-group">
-          <div class="token-item">
-            <!-- <figure class="token-item-avatar" style="background-image: none; font-size: var(--font-size-huge)">수줍</figure> -->
-            <b>--font-size-huge: 2rem</b>
-          </div>
-          <div class="token-item">
-            <!-- <figure class="token-item-avatar" style="background-image: none; font-size: var(--font-size-large)">수줍</figure> -->
-            <b>--font-size-large: 1.125rem</b>
-          </div>
-          <div class="token-item">
-            <!-- <figure class="token-item-avatar" style="background-image: none; font-size: var(--font-size-medium)">수줍</figure> -->
-            <b>--font-size-medium: .875rem</b>
-          </div>
-          <div class="token-item">
-            <del><b>--font-size-?: 3rem</b></del>
-          </div>
-          <div class="token-item">
-            <del><b>--font-size-?: .75rem</b></del>
-          </div>
-        </div>
-
-        <test-text variant="subhead">Weights <sup>2</sup></test-text>
-        <div class="token-group">
-          <div class="token-item">
-            <b>--font-weight-normal: 400</b>
-          </div>
-          <div class="token-item">
-            <b>--font-weight-bold: 800</b>
-          </div>
-        </div>
-
-        <test-text variant="subhead">Line heights <sup>2</sup></test-text>
-        <div class="token-group">
-          <div class="token-item">
-            <b>--font-line-height-large: 1.8</b>
-          </div>
-          <div class="token-item">
-            <b>--font-line-height: 1.4</b>
-          </div>
-        </div>
-
-        <test-text variant="subhead">Compositions 🔥 Utilities</test-text>
-        <div class="token-group">
-          <div class="token-item">
-            <b>@mixin truncate</b>
-          </div>
-          <div class="token-item">
-            <b>@mixin truncate-multiple</b>
-          </div>
-        </div>
-      </section>
-
-      <!-- <p><a href="">Link to text components</a></p> -->
-    </article>
-
-    <article class="article js-scrollspy-section">
-      <test-text variant="title">Sizing</test-text>
-      <test-text variant="body-large"
-        >요소의 너비와 높이. 브라우저 크기가 변경되어도 사이즈 토큰은 변하지 않아야
-        합니다.</test-text
-      >
-
-      <section class="">
+      <section class="" style="margin: 1.25rem 0">
         <div class="token-group">
           <div class="token-item">
             <figure class="token-item-avatar size-huge"></figure>
@@ -394,6 +305,82 @@
       <p>switch height: 20px</p> -->
     </article>
 
+    <article class="article typography js-scrollspy-section">
+      <test-text variant="title">Text</test-text>
+      <test-text variant="body-large">활자의 위계와 배치. 정보 계층.</test-text>
+
+      <blockquote>
+        폰트가 변경되면 폰트마다 baseline이 달라서 텍스트의 상하 간격이 안 맞을 수 있다.
+        텍스트노드(레이블 역할)의 패딩용 변수를 활용.
+      </blockquote>
+
+      <test-tile variant="elevated" size="small">
+        <test-menuitem label="시스템 폰트로 보기" class="js-default-font">
+          <test-avatar slot="avatar">
+            <test-icon slot="icon" name="font-question"></test-icon>
+          </test-avatar>
+        </test-menuitem>
+      </test-tile>
+
+      <test-separator></test-separator>
+
+      <section class="">
+        <!-- <a href="">link to texts pattern</a> -->
+        <test-text variant="body-bold">Typefaces <sup>2</sup></test-text>
+        <div class="token-group">
+          <div class="token-item">
+            <b>--font-family: 'Quattrocento Sans', 'Gothic A1', sans-serif;</b>
+          </div>
+        </div>
+
+        <test-text variant="body-bold">
+          Sizes <sup><del>5</del> 3</sup>
+        </test-text>
+        <div class="token-group">
+          <div class="token-item">
+            <!-- <figure class="token-item-avatar" style="background-image: none; font-size: var(--font-size-huge)">수줍</figure> -->
+            <b>--font-size-huge: 2rem</b>
+          </div>
+          <div class="token-item">
+            <!-- <figure class="token-item-avatar" style="background-image: none; font-size: var(--font-size-large)">수줍</figure> -->
+            <b>--font-size-large: 1.125rem</b>
+          </div>
+          <div class="token-item">
+            <!-- <figure class="token-item-avatar" style="background-image: none; font-size: var(--font-size-medium)">수줍</figure> -->
+            <b>--font-size-medium: .875rem</b>
+          </div>
+          <div class="token-item">
+            <del><b>--font-size-?: 3rem</b></del>
+          </div>
+          <div class="token-item">
+            <del><b>--font-size-?: .75rem</b></del>
+          </div>
+        </div>
+
+        <test-text variant="body-bold">Weights <sup>2</sup></test-text>
+        <div class="token-group">
+          <div class="token-item">
+            <b>--font-weight-normal: 400</b>
+          </div>
+          <div class="token-item">
+            <b>--font-weight-bold: 800</b>
+          </div>
+          <div class="token-item">
+            <b>--font-line-height-large: 1.8</b>
+          </div>
+          <div class="token-item">
+            <b>--font-line-height: 1.4</b>
+          </div>
+        </div>
+        <!-- <test-text variant="body-bold">Line heights <sup>2</sup></test-text> -->
+      </section>
+
+      <!-- <p><a href="">Link to text components</a></p> -->
+    </article>
+
+    <!-- <article class="article js-scrollspy-section">
+    </article> -->
+
     <article class="article js-scrollspy-section">
       <test-text variant="title">Spacing</test-text>
       <test-text variant="body-large"
@@ -444,10 +431,6 @@
               <test-tag variant="hashtag">space-section</test-tag>
             </test-group>
           </div>
-        </div>
-
-        <test-text variant="subhead">Grid</test-text>
-        <div class="token-group">
           <div class="token-item">
             <b>--grid-margin: 5vw</b>
           </div>
@@ -457,6 +440,8 @@
           <div class="token-item">
             <b>--grid-gutter: null</b>
           </div>
+
+          <!-- <test-text variant="subhead">Grid</test-text> -->
         </div>
 
         <div

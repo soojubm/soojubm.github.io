@@ -30,6 +30,8 @@ class Entity extends HTMLElement {
     avatarSlot.name = 'avatar'
     tagSlot.name = 'tag'
 
+    container.dataset.alignment = this.alignment || ''
+
     labelElement.classList.add('entity-label')
 
     description.setAttribute('variant', 'caption')
@@ -73,6 +75,10 @@ class Entity extends HTMLElement {
   }
   get description3() {
     return this.getAttribute('description3')
+  }
+
+  get alignment() {
+    return this.getAttribute('alignment')
   }
 
   set label(value) {

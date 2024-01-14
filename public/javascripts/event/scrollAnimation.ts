@@ -1,12 +1,15 @@
-const scrollAnimation = ({ selector: selector }) => {
-  const ANIMATED_CLASSNAME = 'is-observed'
-  const elements = Array.from(document.querySelectorAll(selector))
+const ANIMATED_CLASSNAME = 'is-observed'
 
+const scrollAnimation = ({ selector: selector }) => {
+  if (!('IntersectionObserver' in window)) return
+
+  const elements = Array.from(document.querySelectorAll(selector))
   const options: IntersectionObserverInit = {
     root: null,
     rootMargin: '-100px 0px',
     threshold: [0],
   }
+
   function callback(entries: IntersectionObserverEntry[], observer) {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return

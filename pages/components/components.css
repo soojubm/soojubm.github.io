@@ -69,9 +69,11 @@
 .component-guide {
   margin:3.5rem 0 4rem;
 }
-.component-guide [variant=body] + [variant=body-bold] {display:block;margin:var(--space-3) 0 0;}
+.component-guide [variant=body] + [variant=body-bold] {display:block;margin:var(--space-4) 0 0;}
 /* 일반적인 규칙임 */
 .component-guide [variant=body] + [variant=body] {display:block;margin:var(--space-3) 0 0;}
+
+
 
 .component-references {
   display: flex;
@@ -100,6 +102,12 @@
 .article + .article {padding-top:6rem;}
 
 
+
+[variant=subhead] + [variant=body] {
+  display: block;
+  margin: var(--space-after-subhead) 0 0 0;
+}
+
 p + [variant="subhead"],
 [variant=body] + [variant="subhead"] {display:block;margin-top: 2.5rem;}
 [variant="subhead"] + p {margin: 0 0 var(--space-after-subhead) 0;}
@@ -122,8 +130,7 @@ p + [variant="subhead"],
 
 .article ul, .article dl {max-width: 720px;}
 
-.article-dont {padding:1rem;border-radius:var(--radius);background:var(--red100);}
-
+.component-guide test-text[variant=subhead] {display:block;margin-top:3rem;}
 
 .spacing-card {padding:var(--space-inset-tile);overflow:hidden;position:relative;}
 .space {display:flex;align-items:center;justify-content:center;height:100%;border-radius:var(--radius);background:var(--green100);position:relative;}

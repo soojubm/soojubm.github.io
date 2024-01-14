@@ -81,6 +81,8 @@ const components = [
 
   'films',
   'books',
+
+  'components',
 ]
 
 const setPages = data =>

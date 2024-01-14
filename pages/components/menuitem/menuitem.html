@@ -2,7 +2,7 @@
   <article class="article js-observer js-scrollspy-section">
     <test-text variant="title">MenuItem</test-text>
     <test-text variant="body-large">
-      사용자가 수행할 수 있는 행동 목록. 목록이 아닌 단독으로 쓰일 수 있다.
+      사용자가 수행할 수 있는 행동 목록. 단독으로 쓸 수 있다.
     </test-text>
 
     <!-- a11ym menu - group - menuitem -->
@@ -44,9 +44,7 @@
         </test-menuitem>
         <test-menuitem label="메뉴아이템 라디오" role="menuitemradio">
           <test-avatar slot="avatar"></test-avatar>
-          <test-radio slot="check" id="radio1" name="radio1" value="" checked="true"
-            >샘플</test-radio
-          >
+          <test-radio slot="check" id="radio1" name="radio1" value="" checked="true"></test-radio>
         </test-menuitem>
         <test-menuitem label="windows 패턴">
           <test-avatar slot="avatar"></test-avatar>
@@ -225,7 +223,7 @@
               <test-icon slot="icon" name="group"></test-icon>
             </test-avatar>
           </test-menuitem>
-          <test-menuitem class="is-active is-hoverable" size="large" label="친구만" description="회원님의 Facebook 친구">
+          <test-menuitem class="is-active" size="large" label="친구만" description="회원님의 Facebook 친구">
             <test-radio slot="check"></test-radio>
             <test-avatar slot="avatar" size="large" fallback=" ">
               <test-icon slot="icon" name="group"></test-icon>
@@ -242,6 +240,44 @@
         </test-group>
       </div>
     </test-card>
+
+    <test-separator></test-separator>
+
+
+
+    <test-tile style="width: 100%; max-width: 400px">
+      <div slot="entire">
+        <test-tile>
+          <b>Personal License</b>
+          <b
+            class="item-price"
+            style="position: absolute; right: var(--space-3); top: var(--space-3)"
+            >18,800 KRW</b
+          >
+          <small style="display: block; color: var(--color-text-light)">1 user</small>
+        </test-tile>
+        <test-menuitem>
+          <test-avatar
+            slot="avatar"
+            size="large"
+            fallback="🎅🏻"
+            src="/public/images/springsteen.jpg"
+          ></test-avatar>
+          <div slot="text">
+            <b class="item-name">Widgefy iOS Widgets</b>
+            <p style="color: var(--color-text-light); line-height: 24px">떡볶이</p>
+          </div>
+          <div slot="action" style="text-align: right">
+            <p class="item-price">18,800 KRW</p>
+            <span style="color: var(--color-text-light)">6410</span>
+          </div>
+        </test-menuitem>
+        <footer style="margin: 1rem 0 0">
+          <test-button variant="primary">Buy now</test-button>
+        </footer>
+      </div>
+    </test-tile>
+
 
     <test-separator></test-separator>
 

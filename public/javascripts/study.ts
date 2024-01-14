@@ -43,68 +43,6 @@ function validateForm(inputProps) {
 
   return verifyInputName[inputName](inputProps)
 }
-/**
- * Create an intersection observer
- * @param  {Node}     elem     The element to observe
- * @param  {Function} callback The callback function to run
- * @param  {Object}   options  The options, if any
- */
-function createIntersectionObserver(elem, callback, options) {
-  let observer = new IntersectionObserver(callback, options || {})
-  observer.observe(elem)
-  return observer
-}
-
-function createIntersectionObserver2(selectors, callback, options) {
-  if (
-    'IntersectionObserver' in window &&
-    'IntersectionObserverEntry' in window &&
-    'intersectionRatio' in window.IntersectionObserverEntry.prototype
-  ) {
-    const elements = [].slice.call(document.querySelectorAll(selectors))
-    const options = {
-      root: null,
-      rootMargin: '0px 0px 0px 0px',
-      threshold: 0.1,
-    }
-    let observer = new IntersectionObserver(callback, options)
-
-    elements.forEach(element => observer.observe(element))
-  }
-}
-
-// Setup our observer options
-let options = {
-  rootMargin: '150px',
-}
-
-// The elements to observe
-let div1 = document.querySelector('#div-1')
-let div2 = document.querySelector('#div-2')
-
-// Create an observer for each one
-createIntersectionObserver(div1, log, options)
-
-// This uses the same callback, but no options
-createIntersectionObserver(div2, log)
-
-// Create an immutable copy
-let evenMoreSandwiches = Array.from(sandwiches)
-
-// Add a few sandwiches
-sandwiches.push('italian', 'blt')
-
-console.log(sandwiches)
-console.log(evenMoreSandwiches)
-
-// Create an immutable copy
-let evenMoreLunch = Object.assign({}, lunch)
-
-// Add a snack
-lunch.snack = 'cookies'
-
-console.log(lunch)
-console.log(evenMoreLunch)
 
 const history = createBrowserHistory()
 
@@ -560,3 +498,13 @@ renderArticles(document.querySelector('#articles'), [
     description: "That's a very silly name, is it even a real thing?",
   },
 ])
+
+// wesbos.com/javascript/10-harder-practice-exercises/57-shopping-form-with-custom-events-delegation-and-localstorage/
+https: function handleSumit(e) {
+  const item = {
+    id: Date.now(),
+    name: e.target.item.value,
+    complete: false,
+  }
+  isTemplateSpan.push(item)
+}

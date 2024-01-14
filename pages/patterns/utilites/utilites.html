@@ -1,55 +1,60 @@
 <main class="component">
   <!-- ChangeEvent / FormEvent -->
   <article class="article js-scrollspy-section">
-    <test-text variant="title">CSS</test-text>
+    <test-text variant="title">Utilities</test-text>
     <test-text variant="body-large">작성 중.</test-text>
 
-    https://simplicable.com/new/visual-information
+    <section class="component-guide">
+      <test-text variant="subhead">Date Formatting</test-text>
+      <test-text variant="body">getFormattedDate(20220610) / getFormattedCurrency(30000)</test-text>
 
-    <h3>getFormattedDate(20220610) / getFormattedCurrency(30000)</h3>
-    <p>30,000원 / 30,000 won / ₩ 30,000</p>
+      <ul>
+        <li>서비스가 출시 환경이 웹온리(웹/태블릿+모바일) 웹+모바일앱(웹+태블릿/모바일)</li>
+        <li>
+          컨테이너 컴포넌트. 리스트 컴포넌트. 형태 정보를 가질 수 있고 아이템의 간격을 갖는다.
+          그리고 기능적인 부분들.
+        </li>
+        <li>naming: data-index 보다 name name을 숫자로 주면 됨.</li>
+        <li>role로 스타일링 하면 수정이 어려움. aria로 상태 표현은 좋다.</li>
+      </ul>
 
-    <li>서비스가 출시 환경이 웹온리(웹/태블릿+모바일) vs 웹+모바일앱(웹+태블릿/모바일)</li>
+      <test-text variant="body-bold">event handler naming.</test-text>
+      <test-text variant="body-bold">early return.</test-text>
 
-    <li>
-      컨테이너 컴포넌트. 리스트 컴포넌트. 형태 정보를 가질 수 있고 아이템의 간격을 갖는다. 그리고
-      기능적인 부분들.
-    </li>
-    <li>--[namespace]-[component / category]-[attribute]-[status]</li>
-    <li>
-      naming: data-index 보다 name name을 숫자로 주면 됨. 수정을 위해. 롤에 스타일을 주지 않기.
-      aria로 상태 표현은 좋다.
-    </li>
+      <test-text variant="subhead">Types</test-text>
+      <test-text variant="body">OptionType = { label: '', value: '' } </test-text>
 
-    <li>SCSS/LESS: kebab-case</li>
-    <li>JS: PascalCase</li>
-    <li>Android: snake_case</li>
-    <li>iOS: PascalCase</li>
+      <br />
+      <test-text variant="subhead">금액 표기법</test-text>
+      <test-text variant="body">30,000원 / ₩ 30,000</test-text>
+      <test-text variant="body"><del>30,000 won</del></test-text>
 
-    OptionType = { label: '', value: '' } linebreaker-desktop linebreaker-mobile
-    animation-stopper-resize hidden
+      <test-text variant="subhead">CSS</test-text>
+      <test-text variant="body-bold">linebreaker-desktop / linebreaker-mobile</test-text>
+      <test-text variant="body-bold">animation-stopper-resize hidden</test-text>
 
-    <p>event handler naming.</p>
-    <p>early return.</p>
-    <p>isTrue. boolean.</p>
+      <test-text variant="body">
+        querySelector([aria-expanded]).addEventListener('click', (event) => {<br />
+        const controls = event.getAttribute('aria-controls') || target.ariaControls
+      </test-text>
 
-    <test-separator></test-separator>
+      <p>isTrue. boolean.</p>
 
-    <test-text variant="body">
-      querySelector([aria-expanded]).addEventListener('click', (event) => {<br />
-      const controls = event.getAttribute('aria-controls') || target.ariaControls
-      querySelector([aria-controls=controls]).blblblb }) querySelector([aria-haspopup])
-    </test-text>
-    <div>
-      <label for="username">Username</label>
-      <input id="username" name="username" aria-describedby="username-desc" />
-      <button aria-expanded="false" aria-controls="username-desc" aria-label="Help about username">
-        <span aria-hidden="true">?</span>
-        test
-      </button>
-      <p id="username-desc" hidden>
-        Your username is the name that you use to log in to this service.
-      </p>
-    </div>
+      <div>
+        <label for="username">Username</label>
+        <input id="username" name="username" aria-describedby="username-desc" />
+        <button
+          aria-expanded="false"
+          aria-controls="username-desc"
+          aria-label="Help about username"
+        >
+          <span aria-hidden="true">?</span>
+          test
+        </button>
+        <p id="username-desc" hidden>
+          Your username is the name that you use to log in to this service.
+        </p>
+      </div>
+    </section>
   </article>
 </main>

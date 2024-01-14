@@ -25,7 +25,7 @@ img {
   background-size: 80%;
   background-color: var(--color-background-weak);
   border-radius: var(--radius);
-  box-shadow: var(--color-background) 0px 0px 0px 2px;
+  box-shadow: var(--color-background) 0px 0px 0px 1px;
   box-sizing: border-box;
   position: relative;
 
@@ -81,8 +81,9 @@ img {
 .avatar-group {display:flex;}
 .avatar-group > * + * {margin-left:-.5rem;}
 
-.entity {position: relative;}
-.entity-label {font-size:var(--font-size-medium);font-weight:var(--font-weight-bold);}
+.entity {}
+.entity[data-alignment=center] {text-align: center;}
+.entity-label {display:block;margin:.25rem 0 0;font-size:var(--font-size-medium);font-weight:var(--font-weight-bold);}
 .entity ::slotted([slot=tag]) {
   position: absolute;
   left: var(--space-1-minus);

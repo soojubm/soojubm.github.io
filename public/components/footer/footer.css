@@ -10,7 +10,7 @@
 .sitemap-item-link {display:block;margin:var(--space-2) 0;color:var(--color-text);}
 .sitemap-item-link:hover {@mixin hover-text;}
 
-.footer {padding:2rem var(--grid-margin);position:relative;z-index:var(--zindex-default);}
+.footer {margin:4rem 0 0 0;padding:2rem var(--grid-margin);position:relative;z-index:var(--zindex-default);}
 .footer-background {
 	/* @mixin bleeding; */
 	margin: 0 -50vw;
@@ -38,6 +38,10 @@
 
 .is-opened-menu .footer {margin-left:calc(var(--width-sidemenu) + var(--grid-margin) + 2rem);}
 
+.footer.is-observed {
+	/* background:gold;transition:all .8 ease; */
+}
+
 @media (--small) {
 
 	.sitemap {flex-direction: column;}
@@ -56,7 +60,5 @@
 		max-width: var(--width-tiny);
 		margin: var(--space-2) 0;
 		position: relative;
-		@mixin text-subhead;
-		&:hover {@mixin hover-item;}
 	}
 }

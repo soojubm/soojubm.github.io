@@ -2,7 +2,10 @@
 .chat {
   --chat-bubble-border: var(--border);
 
-  margin:1.5rem auto;padding:0 0 0 calc(var(--size-medium) + var(--space-after-avatar-medium));box-sizing:border-box;position:relative;}
+  padding:0 0 0 calc(var(--size-medium) + var(--space-after-avatar-medium));
+  box-sizing:border-box;
+  position:relative;
+}
 .chat-avatar {
   border-radius: 50%;
   border-top-left-radius: var(--radius);
@@ -41,23 +44,5 @@
 .is-mine .chat-bubble p {color:var(--gray0);}
 
 
-.animation-chatting {display:flex;gap:var(--space-1);}
-.animation-chatting span {
-	display:block;
-	width: 4px;
-	height:4px;
-	border-radius: 50%;
-	background: var(--color-background-strong);
-  animation: chatting .6s 0s ease infinite;
-}
-.animation-chatting span:nth-of-type(1) {}
-.animation-chatting span:nth-of-type(2) {animation-delay:var(--animation-delay-first);}
-.animation-chatting span:nth-of-type(3) {animation-delay:var(--animation-delay-second);}
-@keyframes chatting {
-  0% {transform:translateY(0)}
-  50% {transform:translateY(.125rem)}
-  100% {transform:translateY(0)}
-}
 
-
-.chat-date {margin:1rem var(--grid-margin);text-align:center;}
+.chat-date {text-align:center;}

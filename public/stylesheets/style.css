@@ -8,8 +8,6 @@
 
 @import 'pages/component.css';
 
-
-
 /*
 
 .scroll {position: fixed;bottom: 1rem;right: 1rem;z-index: var(--z-index-default);}
@@ -304,7 +302,6 @@ main,
 }
 
 /* // item in card component // active */
-@define-mixin hover-text {text-decoration:underline;}
 @define-mixin hover-item {
   --hover-outline: calc(var(--space-3) / 2 * -1);
   cursor: pointer;
@@ -322,20 +319,6 @@ main,
   figure {box-shadow:var(--shadow) !important;}
 }
 
-/* // hover-item */
-.is-hoverable {
-  --hover-outline: calc(var(--space-3) / 2 * -1);
-  cursor: pointer;
-}
-.is-hoverable::before {
-  content:'';
-  display:block;
-  background-color:var(--color-background-weak);
-  border-radius:var(--radius);
-  position:absolute;
-  left:var(--hover-outline);right:var(--hover-outline);top:var(--hover-outline);bottom:var(--hover-outline);
-  z-index: -1;
-}
 
 /* @define-mixin position-left-top {position:absolute;left:var(--space-1);top:var(--space-1);}
 @define-mixin position-right-top {position:absolute;right:var(--space-2);top:var(--space-2);}
@@ -508,3 +491,6 @@ main,
 //     --_travel-distance: 5vh;
 //   }
 // }
+
+
+

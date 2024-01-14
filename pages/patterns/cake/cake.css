@@ -15,9 +15,7 @@
 
 .cake-info {padding:2rem 0 2.25rem;position:relative;}
 .cake-info h2 {margin:0 0 var(--space-after-subhead);@mixin text-subhead;}
-.cake-info p {}
 .cake-info footer {margin-top:var(--space-4);}
-.cake-info footer a {@mixin link-outside;}
 
 .cake .tablist {margin-top:6rem;}
 

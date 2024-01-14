@@ -1,10 +1,4 @@
 /* // ! text-heading-medium / text-heading-small */
-@define-mixin text-title {font-size:var(--font-size-huge);font-weight:var(--font-weight-bold);line-height:var(--font-line-height);color:var(--color-text);}
-@define-mixin text-subhead {font-size:var(--font-size-large);font-weight:var(--font-weight-bold);color:var(--color-text);}
-@define-mixin text-body {font-size:.875rem;font-weight:var(--font-weight-normal);}
-@define-mixin text-body-large {font-size:var(--font-size-large);font-weight:var(--font-weight-normal);}
-@define-mixin text-label {font-size:var(--font-size-medium);font-weight:var(--font-weight-normal);color:var(--color-text-light);}
-@define-mixin text-caption {font-size:var(--font-size-small);font-weight:var(--font-weight-bold);}
 
 /* // utilities */
 @define-mixin truncate {white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
@@ -39,12 +33,21 @@ p {}
 .text[data-variant=subhead] {
   /* // 단독으로 쓰이지 않음 */
   /* TODO 단독으로 쓰일 때 아바타의 이름 */
-  margin: 0 0 var(--space-after-subhead) 0;
   line-height: var(--line-height);
   font-size:var(--font-size-large);
   font-weight:var(--font-weight-bold);
   color: var(--color-text);
 }
+.text[data-variant=subhead] + .text[data-variant=body] {
+  display: block;
+  margin: var(--space-after-subhead) 0 0;
+}
+
+.text[data-variant=subhead] + .text[data-variant=body] + .test[data-variant=body-bold] {
+  display: block;
+  margin: var(--space-after-subhead) 0 2rem;
+}
+
 
 
 .text[data-variant=body] {

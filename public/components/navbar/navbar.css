@@ -5,7 +5,7 @@
 .navbar-logo {
   width:var(--size-medium);height:var(--size-medium);
   margin: 0 0 0 var(--space-1);
-  outline: 3px solid var(--yellow800);
+  box-shadow: 0 0 3px var(--yellow800);
   background:url('/public/images/soojubm.png') no-repeat 64% 60%;background-size:80%;background-color:var(--color-background-strong) !important;border-radius:50%;
 }
 .navbar-burger {margin:0 var(--space-2) 0 0;z-index:calc(var(--zindex-menu) + 1);}
@@ -159,3 +159,32 @@
 .menu {position:relative;z-index:1;}
 .menu-heading {}
 .menu-link {display:flex;align-items:center;height:var(--size-medium);margin:var(--space-2) 0;}
+
+
+
+
+/* prioriy navigation patterns */
+/* ul {
+  display: flex;
+  height: 3rem;
+  overflow: hidden;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  width: 80%;
+}
+li {
+  a {
+    display: block;
+    padding: 1rem 0.5rem;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+}
+&.open {
+  ul {
+    height: auto;
+    display: block;
+  }
+}
+} */

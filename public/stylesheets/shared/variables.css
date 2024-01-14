@@ -167,6 +167,7 @@
   --shadow: 0 0.0625rem 0.125rem rgba(0,0,0,.15);
   --shadow-tile: 0 2px 0.3125rem rgba(23,24,24,.05),0 0.0625rem 0.125rem rgba(0,0,0,.15);
   --shadow-active: null;
+  --shadow-tile: 0px 0px 1rem rgba(0, 0, 0, 0.125);
 
   /* --shadow: 0 0 .25rem rgb(0 0 0 / 7.5%); */
   /* --shadow-tile: 0 0 0 1px rgb(0 0 0/5%),0 2px 2px rgb(0 0 0/4%); */
