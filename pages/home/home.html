@@ -1,3 +1,4 @@
+t
 <main class="component">
   <article class="article">
     <!-- <div class="stamp" style="position: absolute; right: 10%; top: 12rem">
@@ -12,43 +13,49 @@
       </div>
     </div> -->
 
-    <test-text variant="body-bold">
-      제품으로서의 디자인 시스템 문서. 가능한 모든 경우의 수를 나열하지 마세요. 디자인 시스템은
-      유아이 라이브러리가 아닙니다.
-    </test-text>
-    <test-text variant="body"> - 우리의 제품에 이렇게 많은 컬러 쉐이드가 필요한가요? </test-text>
+    <!-- <li>
+      radius. pill과 non-pill은 양자택일. 인물 아바타를 특정하기 위해 circle은 허용할 수 있다.
+    </li> -->
+
+    <style>
+      sup {
+        color: var(--color-text-light);
+      }
+    </style>
+
     <test-text variant="body">
-      - 다이얼로그에서 버튼 그룹을 두 가지 방식으로 정렬할 필요가 있나요?
+      모두를 위한 서비스, 접속 환경 등의 제약없이 서비스를 사용할 수 있어야 한다.
     </test-text>
 
-    <br />
-    <test-text variant="body-bold"
-      >모바일 퍼스트(또는 모바일 온리)로 시작하여, 확장. 유연성flexibility - 지속 가능성 - 단순성 의
-      삼위일체 (?!)</test-text
-    >
-    <li>색각 이상자를 위해 색상 외의 시각 언어로 상태 정보를 표현하세요.</li>
-    <li>상태를 표현하는 시각 언어는 일부 컴포넌트에 종속되지 않고 제품 전체에 일관됩니다.</li>
-    <li>'여기', '클릭', '확장' 등 시각에 의존한 어휘로 작성하지 마세요.</li>
-    <li>일관된 시각 경험. 크로스 플랫폼. 서비스 확장과 유지 보수.</li>
+    <test-text variant="subhead">Principles</test-text>
+    <test-text variant="body-bold">Make a Constraints</test-text>
     <li>규칙 최소화. 크기와 비례해서 radius와 shadow 조정이 필요하지만 규칙을 최소화.</li>
     <li>
-      radius. pill과 non-pill은 양자택일. 인물 아바타를 특정하기 위해 circle은 허용할 수 있다.
+      Signifiy. 상태를 표현하는 시각 언어는 일부 컴포넌트에 종속되지 않고 제품 전체에 일관됩니다.
     </li>
+    <li>TODO 사실 접근성. 색각 이상자를 위해 색상 외의 시각 언어로 상태 정보를 표현하세요.</li>
+
+    <li>
+      제품으로서의 디자인 시스템 문서. 가능한 모든 경우의 수를 나열하지 마세요. 디자인 시스템은
+      유아이 라이브러리가 아닙니다.
+    </li>
+    <li>- 우리의 제품에 이렇게 많은 컬러 쉐이드가 필요한가요?</li>
+    <li>- 다이얼로그에서 버튼 그룹을 두 가지 방식으로 정렬할 필요가 있나요?</li>
+
     <test-text variant="body-bold">Easy to read</test-text>
     <test-text variant="body">
       나이, 성별, 연령, 학습 수준에 구애없이 누구나 읽을 수 있어야 한다. 두괄식. 외국어 지양. 간결한
       문장.
     </test-text>
-    <br />
-    <test-text variant="body-bold">규칙 또는 컴포넌트를 정의하는 기준</test-text>
-    <test-text variant="body">2회 이상 사용</test-text>
+
+    <test-text variant="body-bold">Mobile First</test-text>
     <test-text variant="body">
-      데스크탑 환경에서나 유효한 hover 형태를 디자인하는 데에 많은 시간을 들일 필요가 없습니다. 시각
-      이상자를 위한 형태. 크기, 깊이, 테두리의 제한된 규칙(제약Constraints)은 오히려 제품 개발
-      속도를 높일 수 있습니다.
+      모바일 퍼스트(또는 모바일 온리)로 시작하여, 확장. 유연성flexibility - 지속 가능성 - 단순성 의
+      삼위일체 (?!)
     </test-text>
-    <br />
-    <test-text variant="subhead">문서를 작성하는 방법</test-text>
+    <test-text variant="body">일관된 시각 경험. 크로스 플랫폼. 서비스 확장과 유지 보수.</test-text>
+
+    <test-text variant="subhead">Documentation</test-text>
     <test-text variant="body">
       dos / don'ts 케이스는 이미지 없이 간결하게 서술합니다. 유아이는 계속 변경되는데 이미지로 인한
       문서 관리 비용을 관리.
@@ -58,8 +65,26 @@
       않나요? 목록을 열거하거나 가짓수를 보충하는 등 무의미한 정보를 제공하고 있지는 않나요? 일어날
       법 하지 않는 don't 케이스를 가정하고 있지는 않나요?
     </test-text>
+    <test-text variant="body-bold">규칙 또는 컴포넌트를 정의하는 기준</test-text>
+    <test-text variant="body">2회 이상 사용</test-text>
+    <test-text variant="body">
+      데스크탑 환경에서나 유효한 hover 형태를 디자인하는 데에 많은 시간을 들일 필요가 없습니다. 시각
+      이상자를 위한 형태. 크기, 깊이, 테두리의 제한된 규칙(제약Constraints)은 오히려 제품 개발
+      속도를 높일 수 있습니다.
+    </test-text>
+
     <br />
     <test-text variant="subhead">Dictionary</test-text>
+    <li>
+      이상 혹은 이하를 표기할 때 >를 사용하지 않습니다. 액션 인디케이터와 혼동이 될 수 있어서. 이상,
+      이하 한글로 명확하게 전달하시오!
+    </li>
+    <test-text variant="body"
+      >Actions: remove, select, check/uncheck, add, link, action? toggle?, submit'</test-text
+    >
+    <test-text variant="body"
+      >- '여기', '클릭', '확장' 등 시각에 의존한 어휘로 작성하지 마세요.</test-text
+    >
     <test-text variant="body">
       - 목록의 나머지를 더 보여줄 때는 [모두보기], 미리보기 형식의 텍스트를 더 보여줄 때는
       [전체보기]
@@ -80,20 +105,17 @@
     </test-text>
     <test-text variant="body">동일한 행동에 대해 하나의 단어를 사용하고 있는가.</test-text>
 
-    <a href="https://www.radix-ui.com/themes/playground">radix playground</a>
-    <a href="https://library.relume.io/components">relumle library</a>
-    <a href="https://ui.shadcn.com/examples/cards">shadcn library</a>
-    <a href="https://ui8.net/">ui8</a>
-    <test-text variant="subhead">플랫폼 규칙</test-text>
+    <section class="component-references">
+      <a href="https://www.radix-ui.com/themes/playground">radix playground</a>
+      <a href="https://library.relume.io/components">relumle library</a>
+      <a href="https://ui.shadcn.com/examples/cards">shadcn library</a>
+      <a href="https://ui8.net/">ui8</a>
+    </section>
     <ul>
       <li>모든 시각정보는 non-clickable. 모든 인터렉션은 clickable.</li>
       <li>
         구성이 우선순위가 지정되지 않으면 디자이너와 개발자 사이에 많은 마찰이 있을 뿐만 아니라 토큰
         아키텍처를 통해 피할 수 있는 많은 스타일 불일치가 있을 것입니다.
-      </li>
-      <li>
-        이상 혹은 이하를 표기할 때 >를 사용하지 않습니다. 액션 인디케이터와 혼동이 될 수 있어서.
-        이상, 이하 한글로 명확하게 전달하시오!
       </li>
     </ul>
 
@@ -115,7 +137,7 @@
 
     <test-text variant="subhead">Naming conventions</test-text>
     <ul>
-      <li>특정 스타일로 클래스 네이밍하지 마세요.</li>
+      <li>특정 형태를 유추할 수 있는 클래스 네이밍하지 마세요.</li>
       <li>
         방향(left, right)으로 명명하지 마세요. 레이아웃은 변경 가능성이 높은 인터페이스 요소입니다.
       </li>
@@ -124,14 +146,16 @@
         아이템이 3개 이하일 때 제목 우측에 모두보기 버튼을 위치할 수 있지만, 아이템이 4개 이상이라면
         아이템의 아래에 모두보기 버튼을 배치. 가로 스크롤인 경우 스크롤의 가장 우측에 배치할 수도.
       </li>
-      <li>Actions: remove, select, check/uncheck, add, link, action? toggle?, submit'</li>
+      <li>
+        Presentation style="modal | toast | sheet" ... 이렇게 되면 윈도우 사이즈가 변경될 때 props를
+        변경해주어야 함.
+      </li>
     </ul>
 
-    Presentation style="modal | toast | sheet" ... 이렇게 되면 윈도우 사이즈가 변경될 때 props를
-    변경해주어야 함.
-
     <div class="feature">
-      <test-text variant="title">문서를 작성하는 방법</test-text>
+      <header style="width: 100%">
+        <test-text variant="subhead">문서를 작성하는 방법</test-text>
+      </header>
       <div class="feature-item" data-variant="simple">
         <test-text variant="subhead">타겟의 명료 / Meaningful and Trustworthy</test-text>
         <test-text variant="body"
@@ -181,73 +205,46 @@
         </test-text>
       </header>
       <div class="feature-item">
-        <figure class="feature-item-avatar">🐄</figure>
-        <test-text
-          variant="subhead"
-          class="feature-item-title"
-          data-temp=" minimum viable experience"
-        >
-          웹 표준
-          <sup>Web standards</sup>
-        </test-text>
-      </div>
-      <div class="feature-item">
-        <figure class="feature-item-avatar">🐄</figure>
-        <test-text variant="subhead">접근성</test-text>
-        <test-text variant="body">
-          모두를 위한 서비스, 접속 환경 등의 제약없이 서비스를 사용할 수 있어야 한다.
-        </test-text>
-      </div>
-      <div class="feature-item">
-        <figure class="feature-item-avatar">🐄</figure>
-        <test-text
-          variant="subhead"
-          class="feature-item-title"
-          data-temp=" minimum viable experience"
-        >
+        <test-avatar variant="secondary" size="large" fallback=" ">🐄</test-avatar>
+        <test-text variant="subhead" data-temp=" minimum viable experience">
           모바일 퍼스트
-          <sup>Mobile first</sup>
         </test-text>
-        <test-text class="feature-item-description"
-          >모두를 위한 서비스, 접속 환경 등의 제약없이 없이. 우리가 궁극적으로 해결하려는 문제는
-          유저 인터페이스가 아니다.
+        <sup>Mobile first</sup>
+        <test-text variant="body">
+          모두를 위한 서비스, 접속 환경 등의 제약없이 없이. 우리가 궁극적으로 해결하려는 문제는 유저
+          인터페이스가 아니다.
         </test-text>
       </div>
-      <div class="feature-item">
+      <!-- <div class="feature-item">
         <figure class="feature-item-avatar">🐏</figure>
         <test-text variant="subhead" class="feature-item-title">Single source of truth</test-text>
         <test-text class="feature-item-description"
           >디자인 툴이 SSOT가 될 수 없다. 그것은 단순 스타일 가이드.</test-text
         >
+      </div> -->
+      <div class="feature-item">
+        <test-avatar variant="secondary" size="large" fallback=" ">🐐</test-avatar>
+        <test-text variant="subhead" data-temp=" minimum viable experience">
+          점진적 개선
+        </test-text>
+        <sup>Progressive enhancement</sup>
+        <test-text variant="body">
+          시각 언어를 확장해가며 디자인 디테일을 높이고 코드 환경에서 유효한 최적의 컴포넌트 사례를
+          만듭니다.
+        </test-text>
       </div>
       <div class="feature-item">
-        <figure class="feature-item-avatar">🦘</figure>
-        <test-text variant="subhead" class="feature-item-title"
-          >예측가능한 경험
-          <sup>Trustworthy <span hidden>Visual</span> cue</sup>
-        </test-text>
-        <test-text class="feature-item-description">
+        <test-avatar variant="secondary" size="large" fallback=" ">🦘</test-avatar>
+        <test-text variant="subhead"> 예측가능한 경험 </test-text>
+        <sup>Trustworthy <span hidden>Visual</span> cue</sup>
+        <test-text variant="body">
           UI는 사용자의 추가적인 학습을 최소화할 정도로 보편타당해야. 제품 스코프에서도 친숙하고
           신뢰할 수 있는 서비스 경험을 위해 예측 가능하고 일관된 기표.
         </test-text>
         <test-link class="feature-item-link" href="#">숙소 등록</test-link>
       </div>
-      <div class="feature-item">
-        <figure class="feature-item-avatar">🐐</figure>
-        <test-text
-          variant="subhead"
-          class="feature-item-title"
-          data-temp=" minimum viable experience"
-        >
-          점진적 개선
-          <sup>Progressive enhancement</sup>
-        </test-text>
-        <test-text class="feature-item-description">
-          시각 언어를 확장해가며 디자인 디테일을 높이고 코드 환경에서 유효한 최적의 컴포넌트 사례를
-          만듭니다.
-        </test-text>
-      </div>
     </section>
+
     <!-- Apple은 탄소 중립을 실천합니다. 그리고 같은 기준을 2030년까지 모든 제품에 대해서도 적용할
     예정입니다. 모든 Apple 제품과 포장재에 100% 재활용 및 재생 가능 소재만이 사용되는 그날을 위해 헌신적인 노력을 기울이고 있습니다. 또한, 모든
     제품을 탄소 발자국을 남기지 않고 청정 에너지로 생산할 예정이죠. -->
