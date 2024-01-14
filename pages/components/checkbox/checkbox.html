@@ -88,7 +88,7 @@
 
     <test-text variant="subhead">Use cases</test-text>
     <section class="component-case">
-      <test-group slot="entire" alignment="vertical" style="max-width: 400px">
+      <test-group variant="checkbox" style="max-width: 400px">
         <test-checkbox
           size="medium"
           class="js-checkall"
@@ -97,16 +97,14 @@
           data-indeterminate="true"
           indeterminate
         >
-          <em style="font-style: normal; font-weight: var(--font-weight-bold)">
-            모두 동의합니다
-          </em>
+          <em style="font-style: normal"> 모두 동의합니다 </em>
         </test-checkbox>
         <test-checkbox name="interest" value="other"> 기타 </test-checkbox>
         <test-checkbox name="interest" value="other"> 기타 </test-checkbox>
       </test-group>
     </section>
     <section class="component-case">
-      <test-group slot="entire" alignment="vertical">
+      <test-group variant="checkbox">
         <test-text variant="body-bold">콘텐츠 필터링</test-text>
         <test-checkbox name="interest" value="other">옵션 하나</test-checkbox>
         <test-checkbox name="interest" value="other">옵션 둘</test-checkbox>
@@ -117,7 +115,7 @@
       </test-group>
     </section>
     <section class="component-case">
-      <test-checkbox slot="entire">포토리뷰만 보기</test-checkbox>
+      <test-checkbox>포토리뷰만 보기</test-checkbox>
     </section>
     <!-- <test-text variant="body">쿠키 관련 util</test-text> -->
     <section class="component-case">

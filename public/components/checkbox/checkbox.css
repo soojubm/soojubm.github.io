@@ -3,11 +3,12 @@
 // height 테이블 내에서 세로 정렬에 필요. 2줄 이상 레이블
 // nextjs + css module에서 type selector 이슈 */
 
-:host,
 .checkbox {
   --checkbox-size: var(--size-tiny);
   --checkbox-radius: 4px;
+  --checkbox-inset: var(--space-2);
 
+  padding: var(--checkbox-inset) 0;
   position: relative;
 }
 
@@ -29,6 +30,7 @@
   display: flex;
   align-items: center;
   gap: var(--space-2);
+
   line-height: var(--checkbox-size);
   position: relative;
 }
@@ -51,7 +53,8 @@
   border-bottom:1px solid;
   border-color:var(--gray200);
   position:absolute;
-  left:4px;top:6px;
+  left:4px;
+  top:6px;
   transform:rotate(-50deg) scale(0);
 }
 

@@ -9,7 +9,7 @@ class Radio extends HTMLElement {
     container.classList.add('radio')
 
     const label = document.createElement('label')
-    label.textContent = this.textContent
+    label.textContent = this.textContent || ''
     label.setAttribute('for', this.id_temp || '')
 
     const input = document.createElement('input')
@@ -40,10 +40,6 @@ class Radio extends HTMLElement {
 
   get helper() {
     return this.getAttribute('helper')
-  }
-
-  set label(value) {
-    if (value) this.setAttribute('label', value)
   }
 
   get value() {
