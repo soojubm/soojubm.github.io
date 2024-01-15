@@ -137,7 +137,7 @@
 .is-opened-menu .tokens,
 .is-opened-menu .pattern,
 .is-opened-menu .foundation {
-  padding-left: calc(var(--width-sidemenu) + var(--grid-margin) + 2rem);
+  padding-left: calc(var(--width-sidemenu) + var(--grid-margin) + 1rem);
 }
 
 .is-opened-menu .navbar-logo {

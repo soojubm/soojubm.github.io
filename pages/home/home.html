@@ -1,197 +1,17 @@
 t
 <main class="component">
   <article class="article">
-    <!-- <div class="stamp" style="position: absolute; right: 10%; top: 12rem">
-      <div class="circle" style="background: var(--color-accent)">
-        <p>Under<br />Construction</p>
-        <p id="circle-content">
-          <span class="char1">U</span>
-          <span class="char2">N</span>
-          <span class="char3">D</span>
-          <span class="char4">E</span>
-        </p>
-      </div>
-    </div> -->
-
-    <!-- <li>
-      radius. pill과 non-pill은 양자택일. 인물 아바타를 특정하기 위해 circle은 허용할 수 있다.
-    </li> -->
-
-    <style>
-      sup {
-        color: var(--color-text-light);
-      }
-    </style>
-
-    <test-text variant="body">
-      모두를 위한 서비스, 접속 환경 등의 제약없이 서비스를 사용할 수 있어야 한다.
-    </test-text>
-
-    <test-text variant="subhead">Principles</test-text>
-    <test-text variant="body-bold">Make a Constraints</test-text>
-    <li>규칙 최소화. 크기와 비례해서 radius와 shadow 조정이 필요하지만 규칙을 최소화.</li>
-    <li>
-      Signifiy. 상태를 표현하는 시각 언어는 일부 컴포넌트에 종속되지 않고 제품 전체에 일관됩니다.
-    </li>
-    <li>TODO 사실 접근성. 색각 이상자를 위해 색상 외의 시각 언어로 상태 정보를 표현하세요.</li>
-
-    <li>
-      제품으로서의 디자인 시스템 문서. 가능한 모든 경우의 수를 나열하지 마세요. 디자인 시스템은
-      유아이 라이브러리가 아닙니다.
-    </li>
-    <li>- 우리의 제품에 이렇게 많은 컬러 쉐이드가 필요한가요?</li>
-    <li>- 다이얼로그에서 버튼 그룹을 두 가지 방식으로 정렬할 필요가 있나요?</li>
-
-    <test-text variant="body-bold">Easy to read</test-text>
-    <test-text variant="body">
-      나이, 성별, 연령, 학습 수준에 구애없이 누구나 읽을 수 있어야 한다. 두괄식. 외국어 지양. 간결한
-      문장.
-    </test-text>
-
-    <test-text variant="body-bold">Mobile First</test-text>
-    <test-text variant="body">
-      모바일 퍼스트(또는 모바일 온리)로 시작하여, 확장. 유연성flexibility - 지속 가능성 - 단순성 의
-      삼위일체 (?!)
-    </test-text>
-    <test-text variant="body">일관된 시각 경험. 크로스 플랫폼. 서비스 확장과 유지 보수.</test-text>
-
-    <test-text variant="subhead">Documentation</test-text>
-    <test-text variant="body">
-      dos / don'ts 케이스는 이미지 없이 간결하게 서술합니다. 유아이는 계속 변경되는데 이미지로 인한
-      문서 관리 비용을 관리.
-    </test-text>
-    <test-text variant="body">
-      너무 기본적인 내용을 서술하고 있지는 않나요? 용법을 특정할 수 없는 용어를 사용하고 있지는
-      않나요? 목록을 열거하거나 가짓수를 보충하는 등 무의미한 정보를 제공하고 있지는 않나요? 일어날
-      법 하지 않는 don't 케이스를 가정하고 있지는 않나요?
-    </test-text>
-    <test-text variant="body-bold">규칙 또는 컴포넌트를 정의하는 기준</test-text>
-    <test-text variant="body">2회 이상 사용</test-text>
-    <test-text variant="body">
-      데스크탑 환경에서나 유효한 hover 형태를 디자인하는 데에 많은 시간을 들일 필요가 없습니다. 시각
-      이상자를 위한 형태. 크기, 깊이, 테두리의 제한된 규칙(제약Constraints)은 오히려 제품 개발
-      속도를 높일 수 있습니다.
-    </test-text>
-
-    <br />
-    <test-text variant="subhead">Dictionary</test-text>
-    <li>
-      이상 혹은 이하를 표기할 때 >를 사용하지 않습니다. 액션 인디케이터와 혼동이 될 수 있어서. 이상,
-      이하 한글로 명확하게 전달하시오!
-    </li>
-    <test-text variant="body"
-      >Actions: remove, select, check/uncheck, add, link, action? toggle?, submit'</test-text
-    >
-    <test-text variant="body"
-      >- '여기', '클릭', '확장' 등 시각에 의존한 어휘로 작성하지 마세요.</test-text
-    >
-    <test-text variant="body">
-      - 목록의 나머지를 더 보여줄 때는 [모두보기], 미리보기 형식의 텍스트를 더 보여줄 때는
-      [전체보기]
-    </test-text>
-    <test-text variant="body">
-      - 사용하다 -> 제공하다 / 사용자 관점으로. 도큐멘터이션의 사용자가 아닌 서비스의 사용자 관점의
-      문서 작성
-    </test-text>
-    <test-text variant="body">
-      - 긍정조. 명령조나 부정적인 어조를 사용하지 마세요. 한자어 지양.
-    </test-text>
-    <test-text variant="body"> - -적 '-때', '경우', '사용' 을 대체할 수 없나. </test-text>
-    <test-text variant="body"> - 하세요와 할 수 있습니다 / 합니다 입니다. </test-text>
-    <test-text variant="body">- 두 개 - 2개</test-text>
-    <test-text variant="body">
-      결제가 완료되었습니다 => 상품이 결제되었습니다 ? 주문 목록에서 f깅할 때 결제완료, 결제대기가
-      익숙함. 하기 / 취소 / 다음에
-    </test-text>
-    <test-text variant="body">동일한 행동에 대해 하나의 단어를 사용하고 있는가.</test-text>
-
-    <section class="component-references">
-      <a href="https://www.radix-ui.com/themes/playground">radix playground</a>
-      <a href="https://library.relume.io/components">relumle library</a>
-      <a href="https://ui.shadcn.com/examples/cards">shadcn library</a>
-      <a href="https://ui8.net/">ui8</a>
+    <section class="hero" style="max-width: 560px">
+      <test-text variant="title">Hero heading</test-text>
+      <test-text variant="body-large" class="article-description">
+        이런 생각을 한 건 다들 식탁에 앉은 후였고, 나는 재미있는 고래잡이 이야기를 들을 기대에
+        부풀었다. 그런데 이거 참 놀랍게도 거의 모두가 깊은 침묵에 잠겼다.
+      </test-text>
+      <footer class="hero-actions" style="margin: 1.5rem 0 0">
+        <test-button variant="primary" href="#components">Call to action</test-button>
+        <test-button variant="text">더 알아보기</test-button>
+      </footer>
     </section>
-    <ul>
-      <li>모든 시각정보는 non-clickable. 모든 인터렉션은 clickable.</li>
-      <li>
-        구성이 우선순위가 지정되지 않으면 디자이너와 개발자 사이에 많은 마찰이 있을 뿐만 아니라 토큰
-        아키텍처를 통해 피할 수 있는 많은 스타일 불일치가 있을 것입니다.
-      </li>
-    </ul>
-
-    <test-text variant="subhead">Styling</test-text>
-    <ul>
-      <li>초기 선언은 항상 margin:0 0 0 0. 재할당의 암시를 위해 방향을 풀어서 margin-left.</li>
-      <li>position fixed. z-index 보전을 위해 static이 아닌 relative로 초기화하세요.</li>
-      <li>반응형 이미지 사용법. 일단 그냥 2배수로 크기 조절. 가장 간단.</li>
-      <li>
-        Styling hooks follows a specific naming convention to promote predictability and
-        consistency.
-      </li>
-      <li>
-        값을 직접적으로 이름에 포함하지 마세요. 20 - 20px. tailwind의 단점. 디자인 토큰에서 얻을 수
-        있는 추상화 및 기타 이점이 무효화. 값을 조정하기 쉽도록 추상화.. 1 unit을 .25rem으로 모두
-        네이밍 할 수 있나.
-      </li>
-    </ul>
-
-    <test-text variant="subhead">Naming conventions</test-text>
-    <ul>
-      <li>특정 형태를 유추할 수 있는 클래스 네이밍하지 마세요.</li>
-      <li>
-        방향(left, right)으로 명명하지 마세요. 레이아웃은 변경 가능성이 높은 인터페이스 요소입니다.
-      </li>
-      <li>naming: -s vs - list / action vs control vs foot</li>
-      <li>
-        아이템이 3개 이하일 때 제목 우측에 모두보기 버튼을 위치할 수 있지만, 아이템이 4개 이상이라면
-        아이템의 아래에 모두보기 버튼을 배치. 가로 스크롤인 경우 스크롤의 가장 우측에 배치할 수도.
-      </li>
-      <li>
-        Presentation style="modal | toast | sheet" ... 이렇게 되면 윈도우 사이즈가 변경될 때 props를
-        변경해주어야 함.
-      </li>
-    </ul>
-
-    <div class="feature">
-      <header style="width: 100%">
-        <test-text variant="subhead">문서를 작성하는 방법</test-text>
-      </header>
-      <div class="feature-item" data-variant="simple">
-        <test-text variant="subhead">타겟의 명료 / Meaningful and Trustworthy</test-text>
-        <test-text variant="body"
-          >기본적인 내용을 서술하지 마세요. 이 문서를 읽는 사람은 체크박스와 라디오의 차이를
-          이해하고 있습니다.</test-text
-        >
-      </div>
-      <div class="feature-item" data-variant="simple">
-        <test-text variant="subhead">용도의 분명</test-text>
-        <test-text variant="body"
-          >경우에따라.상황에따라.목적에맞게 등 용도를 특정할 수 없는 사하지 마세요. 기능과 역할을
-          분명히.</test-text
-        >
-      </div>
-      <div class="feature-item" data-variant="simple">
-        <test-text variant="subhead">규모의 약속</test-text>
-        <test-text variant="body">
-          모든 세부사항을 정의하지 마세요. 예를 들면, border width는 border 스코프에서 디펜던시가
-          있고, 일괄 변경이 쉽기 때문에 토큰을 정의하지 않는 것이 좋습니다. 규칙을 정의하는 일 만큼
-          문제 해결을 위한 도구의 복잡도를 관리도 중요합니다.
-        </test-text>
-      </div>
-      <div class="feature-item" data-variant="simple">
-        <test-text variant="subhead">내용의 간결</test-text>
-        <test-text variant="body"
-          >목록을 열거하거나 가짓수를 보충하는 등의 단순한 정보를 반복하지 마세요.</test-text
-        >
-      </div>
-      <div class="feature-item" data-variant="simple">
-        <test-text variant="subhead">정보의 당위</test-text>
-        <test-text variant="body"
-          >일어날 법 하지 않는 don't 케이스를 작성하여 문서를 장황하게 만들지 마세요. 컴포넌트와
-          문서는 계속해서 개선되고 변화한다는 원칙에 연동.</test-text
-        >
-      </div>
-    </div>
 
     <section class="feature" style="max-width: 1200px">
       <header class="feature-head">
@@ -244,12 +64,259 @@ t
         <test-link class="feature-item-link" href="#">숙소 등록</test-link>
       </div>
     </section>
+    <!-- <div class="stamp" style="position: absolute; right: 10%; top: 12rem">
+      <div class="circle" style="background: var(--color-accent)">
+        <p>Under<br />Construction</p>
+        <p id="circle-content">
+          <span class="char1">U</span>
+          <span class="char2">N</span>
+          <span class="char3">D</span>
+          <span class="char4">E</span>
+        </p>
+      </div>
+    </div> -->
+
+    <!-- <li>
+      radius. pill과 non-pill은 양자택일. 인물 아바타를 특정하기 위해 circle은 허용할 수 있다.
+    </li> -->
+
+    <style>
+      sup {
+        display: block;
+        margin-bottom: 0.75rem;
+        color: var(--color-text-light);
+      }
+    </style>
+
+    <blockquote>
+      <test-text variant="subhead">Meta problems</test-text>
+      <ul>
+        <li>
+          core: give a name to a raw value to enable theming and make improve maintainability /
+          semantic / component. 개별 토큰에 디스크립션이 필요하지 않도록 명명.
+        </li>
+        <li>
+          컴포넌트 토큰은 상대적으로 변경 가능성이 높고 범용성이 낮기 때문에 컴포넌트 스코프에서만
+          정의. 컴포넌트 토큰을 정의하면 형태 기반의 컴포넌트를 정의 최소화할 수 있다.
+        </li>
+        <li>SCSS/LESS: kebab-case / JS: PascalCase / Android: snake_case / iOS: PascalCase</li>
+      </ul>
+
+      <test-text variant="subhead">Platform problems</test-text>
+      <ul>
+        <li>
+          --[namespace]-[component / category]-[attribute]-[status] 프로덕션이 아니기 때문에
+          namespace를 생략. 서드파티 라이브러리와 충돌을 방지용.
+        </li>
+        <li>
+          3가지 이상 케이스에서 사용될 때 토큰으로 정의합니다. 1회~2회는 예외 케이스로 정의하거나
+          컴포넌트 스코프에서 보충합니다.
+        </li>
+        <li>
+          theme. 인버트 컬러셋을 추가로 정의하지 않습니다. 하나의 컬러셋으로 다크 테마에 대응합니다.
+          어렵고 또는 불필요한 규칙. 초기 토큰 세팅 허들을 넘으면 테마 대응은 쉬워짐.
+        </li>
+      </ul>
+      <li>small-scale layout (polaris 참고) 아바타 유무 - 없어짐</li>
+    </blockquote>
+
+    <test-text variant="body">
+      <b>유연한 그리드 시스템. </b>12 column grid 등 엄격한 그리드 시스템을 정의하지 마세요. 디지털
+      최적화가 어렵다. 칼럼의 너비와 갯수를 정의하고 가로 스크롤을 활용합니다.
+    </test-text>
+    <test-text variant="body">
+      <b>페이지 모듈의 대비.</b>
+      페이지의 맥락을 구분하기 위해 레이아웃 모듈이나 배경색의 대비를 활용할 수 있습니다. 컨테이너
+      너비(비밀번호찾기와 로그인/회원가입)와 배경색(설정, 글쓰기, 소개 등).
+    </test-text>
+    <test-text variant="body">
+      <b>프레젠테이션 패턴.</b>섹션, 아티클 그리고 모달, 드롭다운 등의 컴포넌트도 작은 화면에서는
+      페이지 맥락이 될 수 있음을 고려합니다. => 결국 모바일 퍼스트 foundation.
+    </test-text>
+
+    <test-text variant="body">
+      모두를 위한 서비스, 접속 환경 등의 제약없이 서비스를 사용할 수 있어야 한다.
+    </test-text>
+
+    <test-separator></test-separator>
+    <test-text variant="subhead">Principles</test-text>
+    <test-text variant="body-bold">Make a Constraints</test-text>
+    <li>규칙 최소화. 크기와 비례해서 radius와 shadow 조정이 필요하지만 규칙을 최소화.</li>
+    <li>
+      Signifiy. 상태를 표현하는 시각 언어는 일부 컴포넌트에 종속되지 않고 제품 전체에 일관됩니다.
+    </li>
+    <li>TODO 사실 접근성. 색각 이상자를 위해 색상 외의 시각 언어로 상태 정보를 표현하세요.</li>
+
+    <li>
+      제품으로서의 디자인 시스템 문서. 가능한 모든 경우의 수를 나열하지 마세요. 디자인 시스템은
+      유아이 라이브러리가 아닙니다.
+    </li>
+    <li>- 우리의 제품에 이렇게 많은 컬러 쉐이드가 필요한가요?</li>
+    <li>- 다이얼로그에서 버튼 그룹을 두 가지 방식으로 정렬할 필요가 있나요?</li>
+
+    <test-text variant="body-bold">Easy to read</test-text>
+    <test-text variant="body">
+      나이, 성별, 연령, 학습 수준에 구애없이 누구나 읽을 수 있어야 한다. 두괄식. 외국어 지양. 간결한
+      문장.
+    </test-text>
+
+    <test-text variant="body-bold">Mobile First</test-text>
+    <test-text variant="body">
+      모바일 퍼스트(또는 모바일 온리)로 시작하여, 확장. 유연성flexibility - 지속 가능성 - 단순성 의
+      삼위일체 (?!)
+    </test-text>
+    <test-text variant="body">일관된 시각 경험. 크로스 플랫폼. 서비스 확장과 유지 보수.</test-text>
+
+    <test-text variant="subhead">Documentation</test-text>
+    <test-text variant="body">
+      dos / don'ts 케이스는 이미지 없이 간결하게 서술합니다. 유아이는 계속 변경되는데 이미지로 인한
+      문서 관리 비용을 관리.
+    </test-text>
+    <test-text variant="body">
+      너무 기본적인 내용을 서술하고 있지는 않나요? 용법을 특정할 수 없는 용어를 사용하고 있지는
+      않나요? 목록을 열거하거나 가짓수를 보충하는 등 무의미한 정보를 제공하고 있지는 않나요? 일어날
+      법 하지 않는 don't 케이스를 가정하고 있지는 않나요?
+    </test-text>
+    <test-text variant="body-bold">규칙 또는 컴포넌트를 정의하는 기준</test-text>
+    <test-text variant="body">2회 이상 사용</test-text>
+    <test-text variant="body">
+      데스크탑 환경에서나 유효한 hover 형태를 디자인하는 데에 많은 시간을 들일 필요가 없습니다. 시각
+      이상자를 위한 형태. 크기, 깊이, 테두리의 제한된 규칙(제약Constraints)은 오히려 제품 개발
+      속도를 높일 수 있습니다.
+    </test-text>
+
+    <br />
+    <test-text variant="subhead">Dictionary / Content guide</test-text>
+    <li>
+      이상 혹은 이하를 표기할 때 >를 사용하지 않습니다. 액션 인디케이터와 혼동이 될 수 있어서. 이상,
+      이하 한글로 명확하게 전달하시오!
+    </li>
+    <test-text variant="body"
+      >Actions: remove, select, check/uncheck, add, link, action? toggle?, submit'</test-text
+    >
+    <test-text variant="body"
+      >- '여기', '클릭', '확장' 등 시각에 의존한 어휘로 작성하지 마세요.</test-text
+    >
+    <test-text variant="body">
+      - 목록의 나머지를 더 보여줄 때는 [모두보기], 미리보기 형식의 텍스트를 더 보여줄 때는
+      [전체보기]
+    </test-text>
+    <test-text variant="body">
+      - 사용하다 -> 제공하다 / 사용자 관점으로. 도큐멘터이션의 사용자가 아닌 서비스의 사용자 관점의
+      문서 작성
+    </test-text>
+    <test-text variant="body">
+      - 긍정조. 명령조나 부정적인 어조를 사용하지 마세요. 한자어 지양.
+    </test-text>
+    <test-text variant="body"> - -적 '-때', '경우', '사용' 을 대체할 수 없나. </test-text>
+    <test-text variant="body"> - 하세요와 할 수 있습니다 / 합니다 입니다. </test-text>
+    <test-text variant="body">- 두 개 - 2개</test-text>
+    <test-text variant="body">
+      결제가 완료되었습니다 => 상품이 결제되었습니다 ? 주문 목록에서 f깅할 때 결제완료, 결제대기가
+      익숙함. 하기 / 취소 / 다음에
+    </test-text>
+    <test-text variant="body">동일한 행동에 대해 하나의 단어를 사용하고 있는가.</test-text>
+
+    <ul>
+      <li>모든 시각정보는 non-clickable. 모든 인터렉션은 clickable.</li>
+      <li>
+        구성이 우선순위가 지정되지 않으면 디자이너와 개발자 사이에 많은 마찰이 있을 뿐만 아니라 토큰
+        아키텍처를 통해 피할 수 있는 많은 스타일 불일치가 있을 것입니다.
+      </li>
+    </ul>
+
+    <test-text variant="subhead">Styling</test-text>
+    <ul>
+      <li>초기 선언은 항상 margin:0 0 0 0. 재할당의 암시를 위해 방향을 풀어서 margin-left.</li>
+      <li>position fixed. z-index 보전을 위해 static이 아닌 relative로 초기화하세요.</li>
+      <li>반응형 이미지 사용법. 일단 그냥 2배수로 크기 조절. 가장 간단.</li>
+      <li>
+        Styling hooks follows a specific naming convention to promote predictability and
+        consistency.
+      </li>
+      <li>
+        값을 직접적으로 이름에 포함하지 마세요. 20 - 20px. tailwind의 단점. 디자인 토큰에서 얻을 수
+        있는 추상화 및 기타 이점이 무효화. 값을 조정하기 쉽도록 추상화.. 1 unit을 .25rem으로 모두
+        네이밍 할 수 있나.
+      </li>
+    </ul>
+
+    <test-text variant="subhead">Naming conventions</test-text>
+    <ul>
+      <li>특정 형태를 유추할 수 있는 클래스 네이밍하지 마세요.</li>
+      <li>
+        방향(left, right)으로 명명하지 마세요. 레이아웃은 변경 가능성이 높은 인터페이스 요소입니다.
+      </li>
+      <li>naming: -s vs - list / action vs control vs foot</li>
+      <li>
+        아이템이 3개 이하일 때 제목 우측에 모두보기 버튼을 위치할 수 있지만, 아이템이 4개 이상이라면
+        아이템의 아래에 모두보기 버튼을 배치. 가로 스크롤인 경우 스크롤의 가장 우측에 배치할 수도.
+      </li>
+      <li>
+        Presentation style="modal | toast | sheet" ... 이렇게 되면 윈도우 사이즈가 변경될 때 props를
+        변경해주어야 함.
+      </li>
+    </ul>
+
+    <div class="feature" style="gap: 2rem">
+      <header style="width: 100%">
+        <test-text variant="subhead">문서를 작성하는 방법</test-text>
+      </header>
+      <div class="feature-item">
+        <test-text variant="body-bold">타겟의 명료 / Meaningful and Trustworthy</test-text>
+        <test-text variant="body"
+          >기본적인 내용을 서술하지 마세요. 이 문서를 읽는 사람은 체크박스와 라디오의 차이를
+          이해하고 있습니다.</test-text
+        >
+      </div>
+      <div class="feature-item">
+        <test-text variant="body-bold">용도의 분명</test-text>
+        <test-text variant="body"
+          >경우에따라.상황에따라.목적에맞게 등 용도를 특정할 수 없는 사하지 마세요. 기능과 역할을
+          분명히.</test-text
+        >
+      </div>
+      <div class="feature-item">
+        <test-text variant="body-bold">규모의 약속</test-text>
+        <test-text variant="body">
+          모든 세부사항을 정의하지 마세요. 예를 들면, border width는 border 스코프에서 디펜던시가
+          있고, 일괄 변경이 쉽기 때문에 토큰을 정의하지 않는 것이 좋습니다. 규칙을 정의하는 일 만큼
+          문제 해결을 위한 도구의 복잡도를 관리도 중요합니다.
+        </test-text>
+      </div>
+      <div class="feature-item">
+        <test-text variant="body-bold">내용의 간결</test-text>
+        <test-text variant="body"
+          >목록을 열거하거나 가짓수를 보충하는 등의 단순한 정보를 반복하지 마세요.</test-text
+        >
+      </div>
+      <div class="feature-item">
+        <test-text variant="body-bold">정보의 당위</test-text>
+        <test-text variant="body"
+          >일어날 법 하지 않는 don't 케이스를 작성하여 문서를 장황하게 만들지 마세요. 컴포넌트와
+          문서는 계속해서 개선되고 변화한다는 원칙에 연동.</test-text
+        >
+      </div>
+    </div>
 
     <!-- Apple은 탄소 중립을 실천합니다. 그리고 같은 기준을 2030년까지 모든 제품에 대해서도 적용할
     예정입니다. 모든 Apple 제품과 포장재에 100% 재활용 및 재생 가능 소재만이 사용되는 그날을 위해 헌신적인 노력을 기울이고 있습니다. 또한, 모든
     제품을 탄소 발자국을 남기지 않고 청정 에너지로 생산할 예정이죠. -->
+    <section class="component-references">
+      <a href="https://www.delldesignsystem.com/foundations/elevation/">dell elevation</a>
+      <a href="https://atlassian.design/components/tokens/all-tokens">test</a>
+      <a href="https://www.wedesignx.com/knowledge/design-system">test2</a>
+      <a href="https://medium.com/eightshapes-llc/size-in-design-systems-64f234aec519">test3</a>
+    </section>
 
-    <section class="compponent-references">
+    <section class="component-references">
+      <a href="https://www.radix-ui.com/themes/playground">radix playground</a>
+      <a href="https://library.relume.io/components">relumle library</a>
+      <a href="https://ui.shadcn.com/examples/cards">shadcn library</a>
+      <a href="https://ui8.net/">ui8</a>
+    </section>
+
+    <section class="component-references">
       <a href="https://developer.apple.com/documentation/technologies" target="_blank">
         Apple technologies
       </a>
@@ -267,91 +334,26 @@ t
     <!-- To simplify is to clarify -->
     <!-- overall consistency and design and development efficiency -->
 
+    <p>The goal isn't "all or nothing".</p>
     <p>
-      서버로의 네트워크 왕복 시간 (전파 지연 시간)은 100ms입니다. 서버 응답 시간은 HTML 문서의 경우
-      100ms, 기타 모든 파일의 경우 10ms입니다. HTML 콘텐츠를 사용할 수 있게 되면 브라우저가 바이트를
-      파싱하여 토큰으로 변환한 후 DOM 트리를 빌드합니다. 이미지는 페이지의 초기 렌더링을 차단하지
-      않지만 가능한 한 빨리 이미지를 그려야 합니다. onload 이벤트는 페이지에 필요한 모든 리소스가
-      다운로드되고 처리된 지점을 표시합니다. 이 시점에서 로딩 스피너가 브라우저에서 회전을 멈출 수
-      있습니다 (워터폴의 빨간색 세로선). 일반 HTML 예와 달리 CSSOM을 생성하기 위해 CSS 파일을
-      가져오고 파싱해야 하며, 렌더링 트리를 빌드하기 위해 DOM 및 CSSOM이 모두 필요합니다. 페이지에는
-      파서 차단 JavaScript 파일도 포함되어 있으므로 CSS 파일이 다운로드되고 파싱될 때까지
-      domContentLoaded 이벤트가 차단됩니다. JavaScript가 CSSOM을 쿼리할 수 있으므로 JavaScript를
-      실행하려면 다운로드될 때까지 CSS 파일을 차단해야 합니다. 브라우저가 스크립트 태그에 도달하는
-      즉시 차단하고 CSSOM이 생성될 때까지 대기하기 때문입니다. 첫째, 모든 인라인 스크립트는 파서를
-      차단하지만 외부 스크립트의 경우 'async' 키워드를 추가하여 파서 차단을 해제할 수 있습니다.
-      인라인 처리를 취소하고 시도해 보겠습니다. domContentLoaded 시간은 이전 예와 사실상 동일합니다.
-      JavaScript를 비동기로 표시하는 대신 CSS와 JS를 모두 페이지 자체에 인라인 처리했습니다. 이로
-      인해 HTML 페이지가 훨씬 커지지만 장점은 페이지가 외부 리소스를 가져오기 위해 기다릴 필요가
-      없다는 것입니다. 페이지에 모든 것이 바로 있습니다. CSS와 자바스크립트를 병렬로 전송할 수 있기
-      때문입니다. 주요 렌더링 경로의 특성을 파악하면 주요 리소스를 식별하고 브라우저가 이에 대한
-      가져오기를 예약하는 방식을 이해할 수 있습니다. 예시를 계속 살펴보겠습니다. 사이트 개발자와
-      채팅한 결과, 페이지에 포함한 JavaScript를 차단할 필요가 없다는 것을 알게 되었습니다. 페이지
-      렌더링을 차단할 필요가 없는 몇 가지 분석 및 기타 코드가 있습니다. 이렇게 하면 'async' 속성을
-      스크립트 태그에 추가하여 파서 차단을 해제할 수 있습니다. 비동기 스크립트에는 다음과 같은 여러
-      장점이 있습니다. 스크립트가 더 이상 파서를 차단하지 않으며 주요 렌더링 경로의 일부가 아닙니다.
-      다른 중요한 스크립트가 없으므로 CSS에서 domContentLoaded 이벤트를 차단할 필요가 없습니다.
-      domContentLoaded 이벤트가 빨리 실행될수록 다른 애플리케이션 로직도 빨리 실행될 수 있습니다.
-    </p>
-
-    <p>ux 부채. 점진적 상환. 시장 출시 속도와 사용자 인식이나 미래의 문제 해결 비용을 대조.</p>
-    <p>
-      a/b test의 결과. 일시적이고 의도적이므로 이러한 유형의 불일치는 UX 부채로 간주되어서는 안
-      됩니다. 디자인 시스템으로 확장.
+      every improvement you can make will help the cause of accessibility. Using clear language The
+      language you use can also affect accessibility. In general, you should use clear language that
+      is not overly complex and doesn't use unnecessary jargon or slang terms. This not only
+      benefits people with cognitive or other disabilities; it benefits readers for whom the text is
+      not written in their first language, younger people…, everyone, in fact!
     </p>
     <p>
-      제품 경험을 가장 많이 향상시키는 것은 무엇입니까? 새로운 기능입니까, 아니면 기존 기능을 사용할
-      수 있게 만드는 것입니까? 사람들이 사용할 수 없는 기능은 존재하지 않는 것과 같기 때문에 후자의
-      선택이 가장 좋은 경우가 많습니다. 따라서 사용자에게 적합하지 않은 것을 수정하는 것은 고객이
-      실제로 사용하게 되는 측면에서 새로운 기능을 추가하는 것과 동일한 효과를 갖습니다. 따라서 기존
-      기능의 UX 문제는 새로운 기능보다 더 높은 우선순위를 할당받을 수 있으며 종종 할당되어야 합니다.
-      더욱이 기능은 일반적으로 기대되는 이점의 순서로 구현되므로 기존 기능만 사용자에게 작동하도록
-      만들 수 있다면 기존 기능은 새로운 기능보다 본질적으로 더 가치가 있을 가능성이 높습니다.
-    </p>
-    <p>
-      사용자 관점에서 문제에 대한 설명(이 문제가 사용자에게 어떤 영향을 미치나요?) 경험 중 발생하는
-      위치(인식, 고려, 전환) 발생 빈도(얼마나 자주 발생합니까?) 누가 문제를 보고했나요? (사용자, 팀,
-      이해관계자) 문제를 해결하는 데 필요한 UX 및 개발 노력 수준(낮음, 중간 또는 높음)
-    </p>
-    <p>
-      ux부채와 기술부채의 컨트롤. 함께 발생하는 케이스. 스프린트에 의무적으로 한 두개의 스토리를
-      의무화할 수도 있다. 하루 몰빵하는 치즈 데이를 가질 수도 있다.
-    </p>
-    <p>얼리 어답터는 기술 부채의 리스크</p>
-
-    <ul>
-      <li>사용자 인터페이스user</li>
-      <li>인터랙션 디자인</li>
-      <li>카피, 콘텐츠, 메시지coyp, content, messaging</li>
-      <li>정보 아키텍쳐(탐색 구조 및 콘텐츠 분류)</li>
-      <ul>
-        접근성 요소(contrast, visual focus indicators, text alternatives, etc.)
-      </ul>
-      <li>고객 여정의 일관성customer journey consistency</li>
-      <li>옴니채널 원활성omnichannel seamlessness</li>
-
-      <li>pull to refresh VS refresh button</li>
-    </ul>
-
-    <p>
-      The goal isn't "all or nothing"; every improvement you can make will help the cause of
-      accessibility. Using clear language The language you use can also affect accessibility. In
-      general, you should use clear language that is not overly complex and doesn't use unnecessary
-      jargon or slang terms. This not only benefits people with cognitive or other disabilities; it
-      benefits readers for whom the text is not written in their first language, younger people…,
-      everyone, in fact! Apart from this, you should try to avoid using language and characters that
-      don't get read out clearly by the screen reader. For example: Don't use dashes if you can
-      avoid it. Instead of writing 5–7, write 5 to 7. Expand abbreviations — instead of writing Jan,
-      write January. Expand acronyms, at least once or twice, then use the tag to describe them.
+      For example: Don't use dashes if you can avoid it. Instead of writing 5–7, write 5 to 7.
+      Expand abbreviations — instead of writing Jan, write January.
     </p>
   </article>
 
-  <section style="background: var(--green100); padding: 4rem var(--grid-margin) 6rem">
-    <!-- <div class="hero-obj">
-      <div class="hero-obj1"></div>
-      <div class="hero-obj2"></div>
-      <div class="hero-obj3"></div>
-    </div> -->
+  <!-- <div class="hero-obj">
+    <div class="hero-obj1"></div>
+    <div class="hero-obj2"></div>
+    <div class="hero-obj3"></div>
+  </div> -->
+  <!-- <div style="position: relative">
     <div
       class="circle"
       style="width: 20rem; height: 20rem; background: red; border-radius: 50%"
@@ -393,21 +395,13 @@ t
         top: 14rem;
       "
     ></div>
-    <test-text variant="title"> blah blah?<br />Everyone is welcome! </test-text>
-    <test-text>최근 기여자</test-text>
-    <test-avatar-group>
-      <test-avatar label="🦆 오리"></test-avatar>
-    </test-avatar-group>
-    <test-button variant="primary" onclick="javascript:alert('샘플')">
-      디자인 시스템에 기여하기 🌵
-    </test-button>
-  </section>
-
-  <form class="subscribe">
-    <test-text variant="title">수줍이 뉴스레터</test-text>
-    <test-text variant="body-large">
+  </div> -->
+  <!-- <form class="subscribe">
+    <test-text variant="subhead">수줍이 뉴스레터</test-text>
+    <test-text variant="body">
       섭스크라이브 유아이 콤포넌트 입니다. <br />두 줄 단락을 위해 쓰고 있습니다.
     </test-text>
+    <br />
     <test-textfield placeholder="Enter Your Email..">
       <test-icon slot="leading" name="mail"></test-icon>
     </test-textfield>
@@ -418,31 +412,10 @@ t
     </test-checkbox>
     <br />
     <test-button variant="secondary" type="submit">뉴스레터 구독</test-button>
-
     <test-text variant="caption">
-      샘플 텍스트. 걱정하지 마세요. 스팸은 없습니다! 귀하의 정보는 web.dev 및 Chrome 관련
-      업데이트에만 사용되며 당사에서 보내는 이메일은 일반적으로 한 달에 1-2회를 넘지 않습니다.
-      언제든지 구독을 취소할 수 있습니다.
+      걱정하지 마세요. 스팸은 없습니다! 귀하의 정보는 web.dev 및 Chrome 관련 업데이트에만 사용되며
+      당사에서 보내는 이메일은 일반적으로 한 달에 1-2회를 넘지 않습니다. 언제든지 구독을 취소할 수
+      있습니다.
     </test-text>
-
-    <test-separator></test-separator>
-
-    <section class="faq-contact">
-      <test-text variant="subhead">개인정보 수집·이용에 대한 안내</test-text>
-      <test-text variant="body">
-        문의를 접수하고 회신하기 위해 최소한의 개인정보(이메일과 문의내용)를 수집하며 후속조치를
-        위해 1년간 보관합니다. 개인정보 수집·이용을 거부할 수 있으며, 이 경우 답변이 제한됩니다.
-        자세한 내용은 개인정보처리방침을 참고하시기 바랍니다.
-      </test-text>
-      <test-text variant="body">
-        <strong>
-          목적 : 고객문의 및 상담요청에 대한 회신 / 상담을 위한 서비스 이용기록 조회
-        </strong>
-      </test-text>
-      <test-checkbox label="동의합니다"></test-checkbox>
-      <footer>
-        <test-button variant="secondary">문의하기</test-button>
-      </footer>
-    </section>
-  </form>
+  </form> -->
 </main>

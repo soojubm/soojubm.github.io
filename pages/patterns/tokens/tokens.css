@@ -13,9 +13,10 @@
   margin: var(--space-after-subhead) 0 2.5rem 0;
 }
 .token-item {
-  border: var(--border);
   padding: var(--space-3);
+  border: var(--border);
   border-radius: var(--radius);
+  background: var(--color-background);
 }
 .token-item figure {
   width:var(--size-medium);

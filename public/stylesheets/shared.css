@@ -7,14 +7,14 @@
 @import '/public/components/footer/footer.css'; */
 
 
-.feature {display:flex;flex-wrap:wrap;justify-content:space-between;}
+.feature {display:flex;flex-wrap:wrap;gap:2rem;}
 
 .feature-head {width:100%;margin:0 auto 2rem;}
 .feature-head-title {word-break:keep-all;}
 
 .feature-title {width:100%;margin:0 0 var(--space-after-title) 0;@mixin text-subhead;}
 
-.feature-item {width:100%;max-width:360px;margin:2rem 0;position:relative;z-index:1;}
+.feature-item {width:100%;max-width:320px;margin:2rem 0;position:relative;z-index:1;}
 .feature-item test-avatar {display:block;margin:0 0 .5rem 0;}
 /* .feature-item-avatar {display:block;margin:0 0 var(--space-1) 0;font-size:2rem;position:relative;}
 .feature-item-avatar:before {
