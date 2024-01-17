@@ -1,1683 +1,130 @@
 [
   {
-    "titlekorean": "글짜씨 16 : 타입 디자인",
-    "etc": "디자인"
-  },
-  {
-    "releasedate": 1969,
-    "titlekorean": "제 5 도살장",
-    "titleenglish": "Slaughterhouse-Five, or The Children's Crusade: A Duty-Dance with Death",
-    "director": "커트 보니것",
-    "country": "미국"
-  },
-  {
-    "releasedate": 1949,
-    "titlekorean": "가면의 고백",
-    "titleenglish": "仮面の告白",
-    "director": "미시마 유키오",
-    "country": "일본"
-  },
-  {
-    "releasedate": 1927,
-    "titlekorean": "눈부신 그 사람",
-    "titleenglish": "The Young Glory of Him",
-    "director": "랭스턴 휴즈",
-    "country": "미국"
-  },
-  {
-    "releasedate": 1946,
-    "titlekorean": "제라늄",
-    "titleenglish": "The Geranium",
-    "director": "플래너리 오코너",
-    "country": "미국"
-  },
-  {
-    "releasedate": 1982,
-    "titlekorean": "비트겐슈타인의 조카",
-    "titleenglish": "Wittgensteins Neffe: eine Freundschaft",
-    "director": "토마스 베른하르트",
-    "country": "오스트리아"
-  },
-  {
-    "releasedate": 2000,
-    "titlekorean": "철콘 근크리트",
-    "titleenglish": "鉄コン筋クリート Tekkon kinkreet",
-    "director": "마츠모토 타이요",
-    "country": "일본",
-    "etc": "만화"
-  },
-  {
-    "releasedate": 2016,
-    "titlekorean": "홀",
-    "titleenglish": "The Hole",
-    "director": "편혜영",
-    "country": "한국"
-  },
-  {
-    "titlekorean": "모델",
-    "titleenglish": "The Model",
-    "director": "조이스 캐럴 오츠",
-    "country": "미국"
-  },
-  {
-    "releasedate": 1941,
-    "titlekorean": "장삼이사",
-    "titleenglish": "張三李四",
-    "director": "최명익",
-    "country": "한국",
-    "etc": "누락돼서 임시 위치"
-  },
-  {
-    "releasedate": 1931,
-    "titlekorean": "요시노 구즈",
-    "titleenglish": "Arrowroot; 吉野葛Yoshino Kuzu",
-    "director": "다니자키 준이치로",
-    "country": "일본"
-  },
-  {
-    "releasedate": 1980,
-    "titlekorean": "유년의 뜰",
-    "titleenglish": "        ",
-    "director": "오정희",
-    "country": "한국"
-  },
-  {
-    "releasedate": 1989,
-    "titlekorean": "나사의 회전",
-    "titleenglish": "The Turn of the Screw",
-    "director": "헨리 제임스",
-    "country": "영국"
-  },
-  {
-    "releasedate": 1911,
-    "titlekorean": "기러기",
-    "titleenglish": "The Wild Geese",
-    "director": "모리 오가이",
-    "country": "일본"
-  },
-  {
-    "releasedate": 2001,
-    "titlekorean": "죽어가는 짐승",
-    "titleenglish": "The Dying Animal",
-    "director": "필립 로스",
-    "country": "미국"
-  },
-  {
-    "releasedate": 1983,
-    "titlekorean": "붓다",
-    "titleenglish": "Buddha",
-    "director": "데즈카 오사무",
-    "country": "일본"
-  },
-  {
-    "releasedate": 1954,
-    "titlekorean": "생활적",
-    "titleenglish": "生活的",
-    "director": "손창섭",
-    "country": "한국"
-  },
-  {
-    "releasedate": 1811,
-    "titlekorean": "이성과 감성",
-    "titleenglish": "Sense and Sensibility",
-    "director": "제인 오스틴",
-    "country": "영국"
-  },
-  {
-    "releasedate": 1955,
-    "titlekorean": "참전 용사",
-    "titleenglish": "War Veteran",
-    "director": "필립 K. 딕",
-    "country": "미국"
-  },
-  {
-    "releasedate": 2018,
-    "titlekorean": "중국산 모조 비아그라와 제제, 어디에도 고이지 못하는 소변에 대한 짧은 농담",
-    "director": "박상영",
-    "country": "한국"
-  },
-  {
-    "releasedate": 1961,
-    "titlekorean": "미친 노인의 일기",
-    "titleenglish": "Diary of a Mad Old Man, 瘋癲老人日記 Fūten Rōjin Nikki",
-    "director": "다니자키 준이치로",
-    "country": "일본"
-  },
-  {
-    "releasedate": 1991,
-    "titlekorean": "존재의 세가지 거짓말, 50년 간의 고독 / 세 번째 거짓말",
-    "titleenglish": "Le Troisieme Mensonge",
-    "director": "아고타 크리스토프",
-    "country": "헝가리",
-    "etc": "프랑스"
-  },
-  {
-    "releasedate": 2015,
-    "titlekorean": "조중균의 세계",
-    "director": "김금희",
-    "country": "한국"
-  },
-  {
-    "releasedate": 1929,
-    "titlekorean": "알렉시 혹은 공허한 투쟁에 관하여",
-    "titleenglish": "Alexis ou le Traité du Vain Combat suivi de Le Coup de",
-    "director": "마르그리트 유르스나르",
-    "country": "프랑스"
-  },
-  {
-    "titlekorean": "분배",
-    "titleenglish": "分配",
-    "director": "시마자키 도손",
-    "country": "일본"
-  },
-  {
-    "releasedate": 2015,
-    "titlekorean": "하느님 이 아이를 도우소서",
-    "titleenglish": "God Help the Child",
-    "director": "토니 모리슨",
-    "country": "미국"
-  },
-  {
-    "releasedate": 1921,
-    "titlekorean": "에리히 잔의 연주",
-    "titleenglish": "The Music of Erich Zann",
-    "director": "하워드 필립스 러브크래프트",
-    "country": "미국"
-  },
-  {
-    "releasedate": 1954,
-    "titlekorean": "사기꾼이 사기꾼을 만났을 때",
-    "titleenglish": "When Greek Meets Greek",
-    "director": "그레이엄 그린",
-    "country": "영국"
-  },
-  {
-    "releasedate": 1869,
-    "titlekorean": "감정교육",
-    "titleenglish": "L'Education Sentimentale",
-    "director": "귀스타프 플로베르",
-    "country": "프랑스"
-  },
-  {
-    "releasedate": 1962,
-    "titlekorean": "이반 데니소비치, 수용소의 하루",
-    "titleenglish": "Odin Den' Ivana Denisovicha, One Day in the Life of Ivan Denisovich",
-    "director": "솔제니친",
-    "country": "러시아"
-  },
-  {
-    "releasedate": 2014,
-    "titlekorean": "루카",
-    "titleenglish": "Luka",
-    "director": "윤이형",
-    "country": "한국"
-  },
-  {
-    "releasedate": 1959,
-    "titlekorean": "존재하지 않는 기사",
-    "titleenglish": "Il cavaliere inesistente, The Nonexistent Knight",
-    "director": "이탈로 칼비노",
-    "country": "이탈리아"
-  },
-  {
-    "releasedate": 1927,
-    "titlekorean": "야곱의 사다리",
-    "titleenglish": "Jacob's Letter",
-    "director": "프렌시스 스콧 피츠제럴드",
-    "country": "미국"
-  },
-  {
-    "releasedate": 1879,
-    "titlekorean": "시몽의 아빠",
-    "titleenglish": "Le Papa de Simon",
-    "director": "기 드 모파상",
-    "country": "프랑스"
-  },
-  {
-    "releasedate": 1926,
-    "titlekorean": "토요일",
-    "titleenglish": "Half Holiday",
-    "director": "올더스 헉슬리",
-    "country": "영국"
-  },
-  {
-    "releasedate": 1912,
-    "titlekorean": "춘분 지나고까지",
-    "titleenglish": "To the Spring Equinox and Beyond, 彼岸過迄Higan Sugi Made\t",
-    "director": "나쓰메 소세키",
-    "country": "일본"
-  },
-  {
-    "releasedate": 1939,
-    "titlekorean": "준동",
-    "titleenglish": "蠢動",
-    "director": "정인택",
-    "country": "한국"
-  },
-  {
-    "releasedate": 1952,
-    "titlekorean": "4월의 마녀",
-    "titleenglish": "The April Witch",
-    "director": "레이 브레드버리",
-    "country": "미국"
-  },
-  {
-    "releasedate": 1997,
-    "titlekorean": "소년 시절",
-    "titleenglish": "Boyhood: Scenes from Provincial Life",
-    "director": "존 맥스웰 쿳시",
-    "country": "남아프리카공화국",
-    "etc": "영어"
-  },
-  {
-    "releasedate": 1888,
-    "titlekorean": "백 가지 슬픔의 문",
-    "titleenglish": "The Gate of the Hundred Sorrows",
-    "director": "조지프 러디어드 키플링",
-    "country": "영국"
-  },
-  {
-    "releasedate": 1946,
-    "titlekorean": "존경할 만한 창부",
-    "titleenglish": "La putin respectuese",
-    "director": "장 폴 사르트르",
-    "country": "프랑스",
-    "etc": "희곡"
-  },
-  {
-    "titlekorean": "탁자",
-    "titleenglish": "The Table",
-    "director": "윌리엄 트레버",
-    "country": "아일랜드"
-  },
-  {
-    "releasedate": 1941,
-    "titlekorean": "내가 안개마을에 있을 때",
-    "titleenglish": "Wo zai Xia cun de shihou / When I Was in Xia Village",
-    "director": "딩링",
-    "country": "중국"
-  },
-  {
-    "releasedate": 1983,
-    "titlekorean": "얼간이 윌슨",
-    "titleenglish": "Pudd'nhead Wilson",
-    "director": "마크 트웨인",
-    "country": "미국"
-  },
-  {
-    "releasedate": 1978,
-    "titlekorean": "첫사랑의 이름",
-    "titleenglish": "Soumchi",
-    "director": "아모스 오즈",
-    "country": "이스라엘"
-  },
-  {
-    "director": "마루야마 겐지",
-    "country": "일본"
-  },
-  {
-    "releasedate": 1936,
-    "titlekorean": "방란장 주인",
-    "titleenglish": "芳蘭莊主人",
-    "director": "박태원",
-    "country": "한국"
-  },
-  {
-    "releasedate": 1909,
-    "titlekorean": "스테이크 한 장",
-    "titleenglish": "A Piece of Steak",
-    "director": "잭 런던",
-    "country": "미국"
-  },
-  {
-    "releasedate": 1894,
-    "titlekorean": "퇴짜맞은 제인",
-    "titleenglish": "The Jilting of Jane",
-    "director": "허버드 조지 웰스",
-    "country": "영국"
-  },
-  {
-    "releasedate": 1904,
-    "titlekorean": "자매",
-    "titleenglish": "The Sisters",
-    "director": "제임스 조이스",
-    "country": "아일랜드"
-  },
-  {
-    "releasedate": 1836,
-    "titlekorean": "보이체크",
-    "titleenglish": "Woyzeck",
-    "director": "게오르크 뷔히너",
-    "country": "독일",
-    "etc": "희곡, 1913 초연"
-  },
-  {
-    "releasedate": 1964,
-    "titlekorean": "개인적인 체험",
-    "titleenglish": "Kojinteki na taiken, – A Personal Matter ",
-    "director": "오에 겐자부로",
-    "country": "일본"
-  },
-  {
-    "releasedate": 2008,
-    "titlekorean": "길들지 않은 땅 in 그저 좋은 사람",
-    "titleenglish": "Unaccustomed Earth",
-    "director": "줌파 라히리",
-    "country": "인도",
-    "etc": "미국"
-  },
-  {
-    "titlekorean": "달빛을 베다",
-    "director": "모옌",
-    "country": "중국"
-  },
-  {
-    "releasedate": 1910,
-    "titlekorean": "영원한 아담",
-    "titleenglish": "L'Éternel Adam / Edom",
-    "director": "쥘 베른",
-    "country": "프랑스",
-    "etc": "공상과학"
-  },
-  {
-    "releasedate": 2014,
-    "titlekorean": "여름의 정오",
-    "director": "백수린",
-    "country": "한국"
-  },
-  {
-    "releasedate": 1927,
-    "titlekorean": "이제 내 몸을 누이며",
-    "titleenglish": "Now I Lay Me in Men Without Women",
-    "director": "어니스트 헤밍웨이",
-    "country": "미국"
-  },
-  {
-    "releasedate": 2008,
-    "titlekorean": "불공평하고 불완전한 네덜란드 디자인 여행",
-    "director": "최성민 최슬기",
-    "country": "한국",
-    "etc": "디자인"
-  },
-  {
-    "releasedate": 1927,
-    "titlekorean": "홍염",
-    "titleenglish": "紅焰",
-    "director": "최서해",
-    "country": "한국"
-  },
-  {
-    "releasedate": 1990,
-    "titlekorean": "해귀선",
-    "titleenglish": "Tropic of the Sea (海帰線)\t",
-    "director": "곤 사토시",
-    "country": "일본",
-    "etc": "만화"
-  },
-  {
-    "releasedate": 1974,
-    "titlekorean": "그로칼랭",
-    "titleenglish": "Gros-Câlin",
-    "director": "로맹 가리",
-    "country": "프랑스"
-  },
-  {
-    "releasedate": 1846,
-    "titlekorean": "아몬티야도 술통",
-    "titleenglish": "The Cask of Amontillado",
+    "releasedate": 1986,
+    "titlekorean": "Metzengerstein",
+    "titleenglish": "Metzengerstein",
     "director": "에드가 앨런 포",
-    "country": "미국"
-  },
-  {
-    "titlekorean": "산사나이의 사월"
-  },
-  {
-    "releasedate": 1927,
-    "titlekorean": "낙동강",
-    "titleenglish": "洛東江",
-    "director": "조명희",
-    "country": "한국"
-  },
-  {
-    "releasedate": 1950,
-    "titlekorean": "해변의 거울",
-    "titleenglish": "Plajdaki Ayna",
-    "director": "사이트 파이크 아바스야느크",
-    "country": "터키"
-  },
-  {
-    "releasedate": 1908,
-    "titlekorean": "두 줄기의 피",
-    "director": "이시카와 다쿠보쿠",
-    "country": "일본"
-  },
-  {
-    "releasedate": 1934,
-    "titlekorean": "어둠 속의 항해",
-    "titleenglish": "Voyage in the Dark",
-    "director": "진 리스",
-    "country": "도미니키광화국",
-    "etc": "영국"
-  },
-  {
-    "releasedate": 2017,
-    "titlekorean": "여름, 스피드",
-    "titleenglish": "Summer, Speed ?",
-    "director": "김봉곤",
-    "country": "한국"
-  },
-  {
-    "releasedate": 1947,
-    "titlekorean": "이발사",
-    "titleenglish": "The Barber",
-    "director": "플레너리 오코너",
-    "country": "미국"
-  },
-  {
-    "releasedate": 1926,
-    "titlekorean": "이즈의 무희",
-    "titleenglish": "The Dancing Girl of Izu伊豆の踊子",
-    "director": "가와바타 야스나리",
-    "country": "일본"
-  },
-  {
-    "releasedate": 2018,
-    "titlekorean": "일의 기쁨과 슬픔",
-    "director": "장류진",
-    "country": "한국"
-  },
-  {
-    "releasedate": 1930,
-    "titlekorean": "전화 한 통",
-    "titleenglish": "A Telephone Call",
-    "director": "도로시 파커",
-    "country": "미국"
-  },
-  {
-    "releasedate": 1948,
-    "titlekorean": "신의 광대 어거스트",
-    "titleenglish": "The Smile at the Foot of the Ladder",
-    "director": "헨리 밀러",
-    "country": "미국"
-  },
-  {
-    "releasedate": 1850,
-    "titlekorean": "주홍글씨",
-    "titleenglish": "The Scalette Letter",
-    "director": "너새니얼 호손",
-    "country": "미국"
-  },
-  {
-    "releasedate": 2015,
-    "titlekorean": "건축이냐 혁명이냐",
-    "director": "정지돈",
-    "country": "한국"
-  },
-  {
-    "titlekorean": "집",
-    "director": "라이너 마리아 릴케",
-    "country": "독일"
-  },
-  {
-    "releasedate": 1932,
-    "titlekorean": "어둠 속의 웃음 소리",
-    "titleenglish": "Laughter in the Dark/ Камера обскура, Camera obscura",
-    "director": "블라디미르 나보코프",
-    "country": "러시아",
-    "etc": "미국"
-  },
-  {
-    "titlekorean": "자리 잡기",
-    "titleenglish": "Installation",
-    "director": "알퐁스 도데",
-    "country": "프랑스"
-  },
-  {
-    "titlekorean": "밀고자",
-    "director": "레이먼드 챈들러",
-    "country": "미국"
-  },
-  {
-    "releasedate": 1997,
-    "titlekorean": "부끄러움",
-    "titleenglish": "Shame / La Honte",
-    "director": "아니 에르노",
-    "country": "프랑스"
-  },
-  {
-    "releasedate": 1939,
-    "titlekorean": "광란의 40번대 구역에 꽃핀 로맨스",
-    "titleenglish": "Romance in the Roaring Forties in \nMore Than Somewhat",
-    "director": "데이먼 러니언",
-    "country": "미국"
-  },
-  {
-    "releasedate": 1950,
-    "titlekorean": "시간의 화살",
-    "titleenglish": "Time's Arrow",
-    "director": "아서 클라크",
     "country": "미국",
-    "etc": "SF"
+    "etc": "단편"
   },
   {
-    "releasedate": 1925,
-    "titlekorean": "레몬",
-    "titleenglish": "檸檬",
-    "director": "가지이 모토지로",
-    "country": "일본"
-  },
-  {
-    "releasedate": 1911,
-    "titlekorean": "이선 프롬",
-    "titleenglish": "Ethan Frome",
-    "director": "이디스 워튼",
-    "country": "미국"
-  },
-  {
-    "releasedate": 1838,
-    "titlekorean": "점등원",
-    "titleenglish": "The Lamplighter",
-    "director": "찰스 디킨스",
-    "country": "영국"
-  },
-  {
-    "releasedate": 1895,
-    "titlekorean": "갈매기",
-    "titleenglish": "The Seagull Чайка",
-    "director": "안톤 체호프",
-    "country": "러시아",
-    "etc": "희곡"
-  },
-  {
-    "titlekorean": "왈튼 씨 부인이 죽은 한 죽음",
-    "director": "박상륭",
-    "country": "한국"
-  },
-  {
-    "releasedate": 1994,
-    "titlekorean": "악어노트",
-    "titleenglish": "Notes of a Crocodile 鰐魚手記",
-    "director": "구묘진",
-    "country": "대만"
-  },
-  {
-    "releasedate": 1965,
-    "titlekorean": "성소녀",
-    "titleenglish": "聖少女",
-    "director": "쿠라하시 유미코",
-    "country": "일본"
-  },
-  {
-    "releasedate": 1929,
-    "titlekorean": "앙팡 떼리블",
-    "titleenglish": "Les Enfants terribles",
-    "director": "장 콕토",
-    "country": "프랑스"
-  },
-  {
-    "releasedate": 2017,
-    "titlekorean": "몸하다",
-    "director": "정보라",
+    "releasedate": 1986,
+    "titlekorean": "나는 울 때마다 엄마 얼굴이 된다",
+    "titleenglish": "The Assistant",
+    "director": "이슬아",
     "country": "한국",
-    "etc": "저주토끼"
+    "etc": ""
   },
   {
-    "releasedate": 1929,
-    "titlekorean": "붉은 수확",
-    "titleenglish": "Red Harvest",
-    "director": "대실 해밋",
-    "country": "미국"
+    "releasedate": 1986,
+    "titlekorean": "점심의 연애",
+    "titleenglish": "The Assistant",
+    "director": "신주희",
+    "country": "한국",
+    "etc": "단편"
   },
   {
-    "releasedate": 1884,
-    "titlekorean": "시체 도둑",
-    "titleenglish": "The Body Snatcher",
-    "director": "로버트 루이스 스티븐슨",
-    "country": "영국"
+    "releasedate": 1986,
+    "titlekorean": "혼자인 사람은 방랑자",
+    "titleenglish": "The Assistant",
+    "director": "제임스 서버",
+    "country": "독일",
+    "etc": "단편"
   },
   {
-    "releasedate": 1847,
-    "titlekorean": "사촌 퐁츠",
-    "titleenglish": "Le Cousin Pons",
-    "director": "오노레 드 발자크",
-    "country": "프랑스"
-  },
-  {
-    "releasedate": 2013,
-    "titlekorean": "양의 미래",
-    "titleenglish": "아무도 아닌",
-    "director": "황정은",
-    "country": "한국"
-  },
-  {
-    "releasedate": 1970,
-    "titlekorean": "요오꼬",
-    "titleenglish": "Yoko",
-    "director": "후루이 요시끼찌",
-    "country": "일본"
-  },
-  {
-    "releasedate": 1952,
-    "titlekorean": "천사는 침묵했다",
-    "titleenglish": "Der Engel schwieg",
+    "releasedate": 1986,
+    "titlekorean": "하얀 개",
+    "titleenglish": "The Assistant",
     "director": "하인리히 뵐",
-    "country": "독일"
+    "country": "독일",
+    "etc": "단편"
   },
   {
-    "titlekorean": "눈 속에서 불타기 전 아이는 어떤 꿈을 꾸었나",
-    "director": "배수아",
-    "country": "한국",
-    "etc": "뱀과 물"
+    "releasedate": 1986,
+    "titlekorean": "그림의 이면(캉랑팝)",
+    "titleenglish": "The Assistant",
+    "director": "씨부리파",
+    "country": "태국",
+    "etc": ""
   },
   {
-    "releasedate": 1915,
-    "titlekorean": "한눈팔기",
-    "titleenglish": "道草/みちくさ",
-    "director": "나쓰메 소세키",
-    "country": "일본"
-  },
-  {
-    "releasedate": 1894,
-    "titlekorean": "참사회 사제 알베릭의 수집책",
-    "titleenglish": "Canon Alberic's Scrap-book",
-    "director": "몬터규 로즈 제임스",
-    "country": "영국"
-  },
-  {
-    "releasedate": 1920,
-    "titlekorean": "미생의 믿음",
-    "director": "아쿠타가와 류노스케",
-    "country": "일본"
-  },
-  {
-    "releasedate": 1910,
-    "titlekorean": "앤 부인의 침묵",
-    "titleenglish": "The Reticence of Lady Anne",
-    "director": "사키",
-    "country": "영국",
-    "etc": "Reginald in Russia"
-  },
-  {
-    "releasedate": 2018,
-    "titlekorean": "카밀라",
-    "titleenglish": "사랑을 멈추지 말아요",
-    "director": "강화길",
-    "country": "한국"
-  },
-  {
-    "releasedate": 2002,
-    "titlekorean": "다락방",
-    "titleenglish": "The Room on the Roof",
-    "director": "반다나 싱",
-    "country": "인도",
-    "etc": "The Woman Who Thought She Was a Planet"
-  },
-  {
-    "titlekorean": "미로: 어느 연대年代의 기록",
-    "director": "정인택",
-    "country": "한국"
-  },
-  {
-    "releasedate": 1928,
-    "titlekorean": "여명",
-    "titleenglish": "La Naissance du jour / Break of Day",
-    "director": "시도니가브리엘 콜레트",
-    "country": "프랑스"
-  },
-  {
-    "releasedate": 1938,
-    "titlekorean": "청랑정기",
-    "director": "유진오",
-    "country": "한국"
-  },
-  {
-    "releasedate": 2014,
-    "titlekorean": "솔티니스",
-    "director": "후루야 미노루",
-    "country": "일본",
-    "etc": "만화"
-  },
-  {
-    "releasedate": 1937,
-    "titlekorean": "위건 부두로 가는 길",
-    "titleenglish": "The Road to Wigan Pier",
-    "director": "조지 오웰",
-    "country": "영국"
-  },
-  {
-    "releasedate": 1928,
-    "titlekorean": "유리병 속 지옥",
-    "titleenglish": "Binzume Jigoku",
-    "director": "유메노 큐사쿠",
-    "country": "일본"
-  },
-  {
-    "titlekorean": "흉가",
-    "director": "조이스 캐롤 오츠",
-    "country": "미국"
-  },
-  {
-    "releasedate": 1960,
-    "titlekorean": "휴전",
-    "titleenglish": "La tregua",
-    "director": "마리오 베네데티",
-    "country": "우루과이"
-  },
-  {
-    "releasedate": 2019,
-    "titlekorean": "여름, 교토",
-    "director": "최성희",
+    "releasedate": 1986,
+    "titlekorean": "여행자와 달빛",
+    "titleenglish": "The Assistant",
+    "director": "세브르 언털",
     "country": "한국",
     "etc": "에세이"
   },
   {
-    "releasedate": 1932,
-    "titlekorean": "질소비료공장",
-    "director": "이북명",
-    "country": "한국"
-  },
-  {
-    "releasedate": 1925,
-    "titlekorean": "사랑의 사막",
-    "titleenglish": "Le Désert de l'amour (The Desert of Love)",
-    "director": "프랑수아 모리아크",
-    "country": "프랑스"
-  },
-  {
-    "releasedate": 2013,
-    "titlekorean": "여름의 맛",
-    "director": "하성란",
-    "country": "한국"
-  },
-  {
-    "releasedate": 1938,
-    "titlekorean": "아주 정직한 사내",
-    "titleenglish": "A Very Honourable Guy in Futhermore",
-    "director": "데이먼 러니언",
-    "country": "미국"
-  },
-  {
-    "titlekorean": "어느 젊은 여인의 몽상과 취기",
-    "director": "클라리시 리스펙토르",
-    "country": "우크라이나"
-  },
-  {
-    "releasedate": 1925,
-    "titlekorean": "인간 의자",
-    "titleenglish": "人間椅子(んげんいす)",
-    "director": "에도가와 란포",
-    "country": "일본"
-  },
-  {
-    "titlekorean": "관계",
-    "director": "오정희",
-    "country": "한국"
-  },
-  {
-    "releasedate": 1982,
-    "titlekorean": "양을 쫓는 모험",
-    "titleenglish": "A Wild Sheep Chase",
-    "director": "무라카미 하루키",
-    "country": "일본",
-    "etc": "羊をめぐる冒険"
-  },
-  {
-    "releasedate": 1927,
-    "titlekorean": "꼬마 숫총각",
-    "titleenglish": "The Little Virgin",
-    "director": "랭스턴 휴스",
-    "country": "미국"
-  },
-  {
-    "releasedate": 1867,
-    "titlekorean": "노름꾼",
-    "titleenglish": "The Gambler",
-    "director": "표도르 도스토예프스키",
-    "country": "러시아"
-  },
-  {
-    "releasedate": 1869,
-    "titlekorean": "해저 2만리",
-    "titleenglish": "Twenty Thousand Leagues Under The Sea",
-    "director": "쥘 베른",
-    "country": "프랑스"
-  },
-  {
-    "releasedate": 1931,
-    "titlekorean": "파금",
-    "director": "강경애"
-  },
-  {
-    "releasedate": 1983,
-    "titlekorean": "내가 전화를 거는 곳",
-    "titleenglish": "Where I'm Calling From",
-    "director": "레이먼드 카버",
-    "country": "미국"
-  },
-  {
-    "releasedate": 2017,
-    "titlekorean": "손톱",
-    "director": "권여선",
-    "country": "한국"
-  },
-  {
-    "titlekorean": "저 너머에서",
-    "titleenglish": "From Beyond",
-    "director": "하워드 필립스 러브크래프트"
-  },
-  {
-    "releasedate": 2018,
-    "titlekorean": "경애의 마음",
-    "director": "김금희",
-    "country": "한국"
-  },
-  {
-    "director": "하야시 후미코",
-    "country": "일본"
-  },
-  {
-    "releasedate": 1978,
-    "titlekorean": "두완샹",
-    "titleenglish": "Du Wanxiang",
-    "director": "딩링",
-    "country": "중국"
-  },
-  {
-    "director": "이주란"
-  },
-  {
-    "titlekorean": "잘 살겠습니다",
-    "director": "장류진",
-    "country": "한국"
-  },
-  {
-    "releasedate": 2012,
-    "titlekorean": "장수탕 선녀님",
-    "director": "백희나",
-    "country": "한국"
-  },
-  {
-    "releasedate": 1951,
-    "titlekorean": "크랜포드",
-    "titleenglish": "Cranford",
-    "director": "엘리자베스 클레그헌 개스켈",
-    "country": "영국"
-  },
-  {
-    "director": "사무엘 베케트",
-    "country": "프랑스"
-  },
-  {
-    "releasedate": 1980,
-    "titlekorean": "야만인을 기다리며",
-    "titleenglish": "Waiting for the Barbarians",
-    "director": "J. M. 쿳시",
-    "country": "남아프리카공화국"
-  },
-  {
-    "releasedate": 2017,
-    "titlekorean": "알려지지 않은 예술가의 눈물과 자이툰 파스타",
-    "director": "박상영",
-    "country": "한국"
-  },
-  {
-    "releasedate": 1996,
-    "titlekorean": "먼 별",
-    "titleenglish": "El secreto del mal",
-    "director": "로베르토 볼라뇨",
-    "country": "칠레"
-  },
-  {
-    "releasedate": 1949,
-    "titlekorean": "시게모토 소장의 어머니",
-    "titleenglish": "少将滋幹の母 Captain Shigemoto's Mother / Shōshō Shigemoto no haha",
-    "director": "다니자키 준이치로",
-    "country": "일본"
-  },
-  {
-    "titlekorean": "비옷",
-    "director": "토마스 베른하르트",
-    "country": "오스트리아"
-  },
-  {
-    "releasedate": 1909,
-    "titlekorean": "깜박 잊은 지명",
-    "titleenglish": "The Lost Sanjak",
-    "director": "사키"
-  },
-  {
-    "releasedate": 2020,
-    "titlekorean": "아이디어 불패의 법칙: 구글 최고의 혁신 전문가가 찾아낸 비즈니스 설계와 검증의 방법론",
-    "director": "알베르토 사보이아",
-    "etc": "비지니스"
-  },
-  {
-    "releasedate": 1921,
-    "titlekorean": "곤충 극장",
-    "titleenglish": "Pictures from the Insects' Life (Ze života hmyzu",
-    "director": "카렐 차페크",
-    "country": "체코",
-    "etc": "희곡"
-  },
-  {
-    "director": "손창섭",
-    "country": "한국"
-  },
-  {
-    "releasedate": 1957,
-    "titlekorean": "바다와 독약",
-    "titleenglish": "海と毒薬 The Sea and Poison",
-    "director": "엔도 슈우사쿠",
-    "country": "일본"
-  },
-  {
-    "titlekorean": "브랜드 마케터들의 이야기",
-    "etc": "디자인"
-  },
-  {
-    "releasedate": 1931,
-    "titlekorean": "야간비행",
-    "titleenglish": "Night Flight",
-    "director": "앙투안 드 생텍쥐페리",
-    "country": "프랑스"
-  },
-  {
-    "releasedate": 2018,
-    "titlekorean": "시간의 궤적",
-    "director": "백수린",
+    "releasedate": 1986,
+    "titlekorean": "하지 않는 삶",
+    "titleenglish": "The Assistant",
+    "director": "히조",
     "country": "한국",
-    "etc": "2019 젊은작가상 수상작품집"
-  },
-  {
-    "releasedate": 1939,
-    "titlekorean": "빅 슬립",
-    "titleenglish": "The Big Sleep",
-    "director": "레이먼드 챈들러",
-    "country": "미국"
-  },
-  {
-    "releasedate": 1920,
-    "titlekorean": "한송이 포도",
-    "titleenglish": "一房の葡萄 (A Bunch of Grapes)",
-    "director": "아리시마 다케오",
-    "country": "일본"
-  },
-  {
-    "releasedate": 2020,
-    "titlekorean": "그림자 놀이",
-    "director": "천선란",
-    "country": "한국"
-  },
-  {
-    "releasedate": 1953,
-    "titlekorean": "타키니아의 작은 말들",
-    "titleenglish": "Les petits chevaux de Tarquinia / The Little Horses of Tarquinia",
-    "director": "마르그리트 뒤라스",
-    "country": "프랑스"
-  },
-  {
-    "releasedate": 2004,
-    "titlekorean": "은하수에 대한 세 가지 이야기: 성간 여행 시대의 신화들",
-    "titleenglish": "Three Tales from Sky River: Myths for a Starfaring Age",
-    "director": "반다나 싱",
-    "country": "인도"
+    "etc": "에세이"
   },
   {
     "releasedate": 1986,
-    "titlekorean": "부유하는 세상의 화가",
-    "titleenglish": "An Artist of the Floating World",
-    "director": "가즈오 이시구로",
-    "country": "미국",
-    "etc": "일본"
+    "titlekorean": "악의 길",
+    "titleenglish": "The Assistant",
+    "director": "그라치아 델레다",
+    "country": "이탈리아",
+    "etc": ""
   },
   {
-    "releasedate": 1962,
-    "titlekorean": "절름발이가 먼저 온다",
-    "titleenglish": "The Lame Shall Enter First",
-    "director": "플레너리 오 코너",
-    "etc": "Everything That Rises Must Converge"
-  },
-  {
-    "releasedate": 1892,
-    "titlekorean": "꽃 속에 잠겨",
-    "titleenglish": "Yamizakura (闇桜, Flowers at Dusk",
-    "director": "히구치 이치요",
-    "country": "일본"
-  },
-  {
-    "releasedate": 1948,
-    "titlekorean": "더러운 손",
-    "titleenglish": "Dirty Hands",
-    "director": "장 폴 사르트르",
-    "country": "프랑스",
-    "etc": "히괵"
-  },
-  {
-    "titlekorean": "장미원의 그림자",
-    "director": "데이비드 허버트 로렌스",
-    "etc": "오디오북"
-  },
-  {
-    "releasedate": 1987,
-    "titlekorean": "러프",
-    "titleenglish": "Rough",
-    "director": "아다치 미츠루",
-    "country": "일본",
-    "etc": "만화"
-  },
-  {
-    "releasedate": 2008,
-    "titlekorean": "울분",
-    "titleenglish": "Indignation",
-    "director": "필립 로스",
+    "releasedate": 1986,
+    "titlekorean": "점원",
+    "titleenglish": "The Assistant",
+    "director": "버나드 멜리머드",
     "country": "미국"
   },
   {
-    "titlekorean": "내가 뭘 했다고 번아웃일까요",
-    "director": "모리 오가이",
+    "releasedate": 1986,
+    "titlekorean": "골짜기의 백합",
+    "titleenglish": "",
+    "director": "우메오 카즈오 - 만화 단편",
     "country": "일본"
   },
   {
-    "releasedate": 2018,
-    "titlekorean": "제수",
-    "director": "김남숙",
-    "country": "한국"
+    "releasedate": 1881,
+    "titlekorean": "베르가모의 페스트",
+    "titleenglish": "",
+    "director": "옌스 페테르 야콥센",
+    "country": "스칸다나비아"
   },
   {
-    "releasedate": 1996,
-    "titlekorean": "슬픈 짐승",
-    "titleenglish": "Animal Triste",
-    "director": "모니카 마론",
-    "country": "독일"
-  },
-  {
-    "releasedate": 1922,
-    "titlekorean": "행복의 나락",
-    "titleenglish": "The Lees of Happiness",
-    "director": "프랜시스 스콧 피츠제럴드",
-    "country": "미국"
-  },
-  {
-    "releasedate": 1932,
-    "titlekorean": "장님 이야기",
-    "titleenglish": "盲目物語",
-    "director": "다니자키 준이치로",
-    "country": "일본"
-  },
-  {
-    "releasedate": 1816,
-    "titlekorean": "모래 사나이",
-    "titleenglish": "Der Sandmann in Nachtstücke",
-    "director": "에른스트 호프만",
-    "country": "독일"
-  },
-  {
-    "titlekorean": "유미의 인연",
-    "director": "이서영",
-    "country": "한국"
-  },
-  {
-    "releasedate": 1960,
-    "titlekorean": "여름 밤 열시 반",
-    "titleenglish": "Ten-Thirty on a Summer Night / dix heures et demie du soir en été",
-    "director": "마르그리트 뒤라스",
-    "country": "프랑스"
-  },
-  {
-    "releasedate": 1981,
-    "titlekorean": "제자",
-    "titleenglish": "The Pupil",
-    "director": "헨리 제임스",
-    "country": "영국"
-  },
-  {
-    "releasedate": 1974,
-    "titlekorean": "이별의 김포공항",
-    "director": "박완서",
-    "country": "한국"
-  },
-  {
-    "releasedate": 1957,
-    "titlekorean": "어느 잔잔한 날에",
-    "titleenglish": "In a Season of Calm Weather",
-    "director": "레이 브래드버리",
-    "country": "미국"
-  },
-  {
-    "releasedate": 1997,
-    "titlekorean": "굴 소년의 우울한 죽음",
-    "titleenglish": "Oyster Boy & Other Stories",
-    "director": "팀 버튼"
-  },
-  {
-    "releasedate": 2013,
-    "titlekorean": "기린이 아닌 모든 것에 대한 이야기",
-    "director": "이장욱",
-    "country": "한국",
-    "etc": "창비"
-  },
-  {
-    "releasedate": 1831,
-    "titlekorean": "나귀 가죽",
-    "titleenglish": "La Peau de chagrin",
+    "releasedate": 1830,
+    "titlekorean": "사라진",
+    "titleenglish": "",
     "director": "오노레 드 발자크",
-    "country": "프랑스"
-  },
-  {
-    "releasedate": 1943,
-    "titlekorean": "나무의 일생",
-    "director": "정인택",
-    "country": "한국",
-    "etc": "단편"
-  },
-  {
-    "titlekorean": "사치와 고요",
-    "director": "기준영"
-  },
-  {
-    "releasedate": 1849,
-    "titlekorean": "임멘 호수",
-    "titleenglish": "Immensee",
-    "director": "테오도어 스토름"
-  },
-  {
-    "titlekorean": "인조 검둥이",
-    "director": "플레너리 오 코너"
-  },
-  {
-    "releasedate": 1977,
-    "titlekorean": "100만 번 산 고양이",
-    "director": "사노 요코"
-  },
-  {
-    "titlekorean": "사용자 스토리 맵 만들기"
-  },
-  {
-    "releasedate": 1937,
-    "titlekorean": "페르디두르케",
-    "titleenglish": "Ferdydurke",
-    "director": "비톨드 곰브로비치",
-    "country": "폴란드"
-  },
-  {
-    "titlekorean": "우리의 사람들 중 단편",
-    "director": "박솔뫼",
-    "country": "한국"
-  },
-  {
-    "releasedate": 1994,
-    "titlekorean": "페레이라가 주장하다",
-    "titleenglish": "Sostiene Pereira",
-    "director": "안토니오 타부키",
-    "country": "이탈리아 / 포르투갈"
-  },
-  {
-    "titlekorean": "물망초",
-    "director": "요시야 노부코",
-    "country": "일본"
-  },
-  {
-    "releasedate": 1963,
-    "titlekorean": "괴물들이 사는 나라",
-    "titleenglish": "Where the Wild Things Are",
-    "director": "모리스 센닥",
     "country": "미국"
   },
   {
-    "releasedate": 197,
-    "titlekorean": "원인",
-    "titleenglish": "Die Ursache",
-    "director": "토마스 베른하르트",
-    "country": "오스트리아"
+    "releasedate": 1986,
+    "titlekorean": "태양은 가득히",
+    "titleenglish": "",
+    "director": "가네시로 가즈키",
+    "country": "일본"
   },
   {
-    "titleenglish": "다자이 단편 ??"
-  },
-  {
-    "releasedate": 1971,
-    "titlekorean": "세모 / 부끄러움을 가르칩니다",
-    "titleenglish": "歲暮",
-    "director": "박완서",
-    "country": "단편"
-  },
-  {
-    "titlekorean": "숨겨진 삶",
-    "titleenglish": "완전한 하루 기준영 사치와 고요"
-  },
-  {
-    "releasedate": 1989,
-    "titlekorean": "페어플레이",
-    "titleenglish": "Rent spel / Fair Play",
-    "director": "토베 얀"
-  },
-  {
-    "releasedate": 2002,
-    "titlekorean": "비 오는 날 집 보기",
-    "titleenglish": "Rain and rainfall",
-    "director": "이와사키 치히로",
-    "country": "일본",
-    "etc": "아동"
-  },
-  {
-    "releasedate": 2000,
-    "titlekorean": "휴먼 스테인",
-    "titleenglish": "The Human Stain",
-    "director": "필립 로스",
+    "releasedate": 1897,
+    "titlekorean": "어릿광대",
+    "titleenglish": "Der Bajazzo",
+    "director": "토마스 만",
     "country": "미국"
   },
   {
-    "releasedate": 2005,
-    "titlekorean": "용의자 X의 헌신",
-    "titleenglish": "容疑者Xの献身 요기샤엣쿠스노켄",
-    "director": "히가시노 게이고",
-    "country": "일본"
-  },
-  {
-    "releasedate": 1947,
-    "titlekorean": "사양",
-    "titleenglish": "斜陽",
-    "director": "다자이 오사무",
-    "country": "일본"
-  },
-  {
-    "titlekorean": "픽션들 1"
-  },
-  {
-    "titlekorean": "타이포그래피 첫 원칙"
-  },
-  {
-    "titlekorean": "금강경 : 무량공덕사경"
-  },
-  {
-    "titlekorean": "회색 눈사람",
-    "director": "최윤",
-    "country": "한국"
-  },
-  {
-    "releasedate": 1908,
-    "titlekorean": "산시로",
-    "director": "나쓰메 소세키",
-    "country": "일본"
-  },
-  {
-    "releasedate": 1990,
-    "titlekorean": "태어난 아니",
-    "titleenglish": "うまれてきた子ども",
-    "director": "사노 요코",
-    "country": "일본",
-    "etc": "아동"
-  },
-  {
-    "releasedate": 2017,
-    "titlekorean": "오늘도 아무 생각 없이 페달을 밟습니다",
-    "titleenglish": "You & a Bike & a Road",
-    "director": "엘리너 데이비스",
-    "country": "미국",
-    "etc": "그래픽노"
-  },
-  {
-    "titlekorean": "탱고"
-  },
-  {
-    "titlekorean": "피터레빗 시리즈 1"
-  },
-  {
-    "releasedate": 2011,
-    "titlekorean": "이방인의 아이",
-    "titleenglish": "The Stranger's Child",
-    "director": "앨런 홀링허스트",
-    "country": "영국"
-  },
-  {
-    "titlekorean": "영생의 묘약 ",
-    "director": "오노레 드 발자크",
-    "country": "프랑스"
-  },
-  {
-    "releasedate": 2005,
-    "titlekorean": "칼로의 유쾌한 악마들",
-    "director": "이장욱",
-    "country": "한국"
-  },
-  {
-    "titlekorean": "두 갈래 길",
-    "director": "라울 니에토 구리디",
-    "country": "그림책"
-  },
-  {
-    "releasedate": 1759,
-    "titlekorean": "캉디드 혹은 낙관주의",
-    "titleenglish": "Candide ou l'optimisme",
-    "director": "볼테르",
-    "country": "프랑스"
-  },
-  {
-    "releasedate": 1958,
-    "titlekorean": "새싹 뽑기, 어린 짐승 쏘기",
-    "titleenglish": "Nip the Buds, Shoot the Kids",
-    "director": "오에 겐자부로",
-    "country": "일본"
-  },
-  {
-    "titlekorean": "잃어버린 심장",
-    "titleenglish": "전에 참사회읽은",
-    "director": "몬데규 로즈 제임스",
-    "country": 220610
-  },
-  {
-    "releasedate": 1979,
-    "titlekorean": "바람의 노래를 들어라",
-    "titleenglish": "風の歌を聴け",
-    "director": "무라카미 하루키"
-  },
-  {
-    "releasedate": 1973,
-    "titlekorean": "술라",
-    "titleenglish": "Sula",
-    "director": "토니 모리슨",
-    "country": "미국",
-    "etc": 2
-  },
-  {
-    "titlekorean": "헤어지는 길 ? 가는 구름 중 하나",
-    "director": "히구치 이치요",
-    "country": "일본"
-  },
-  {
-    "releasedate": 1862,
-    "titlekorean": "산책",
-    "titleenglish": "Walking",
-    "director": "헨리 데이비드 소로",
+    "releasedate": 1986,
+    "titlekorean": "핏빛 자오선",
+    "titleenglish": "Blood Meridian",
+    "director": "코맥 맥카시",
     "country": "미국"
-  },
-  {
-    "releasedate": 1987,
-    "titlekorean": "영아 유기",
-    "director": "모옌",
-    "country": "중국"
-  },
-  {
-    "titlekorean": "도리언 그레이의 초상",
-    "director": "오스카 와일드",
-    "country": "영국"
-  },
-  {
-    "releasedate": 1983,
-    "titlekorean": "밤이 오기 전에",
-    "director": "마르셸 프루스트",
-    "country": "프랑스"
-  },
-  {
-    "titlekorean": "눈의 시",
-    "director": "아주라 다고스티노, 에스테파니아 브라보",
-    "country": "그림책"
-  },
-  {
-    "releasedate": 1913,
-    "titlekorean": "메마른 9월",
-    "titleenglish": "Dry September",
-    "director": "윌리엄 포크너",
-    "country": "미"
-  },
-  {
-    "releasedate": 1953,
-    "titlekorean": "명옥이",
-    "director": "한무숙"
-  },
-  {
-    "releasedate": 1975,
-    "titlekorean": "빈터의 서커스",
-    "titleenglish": "Wasteground Circus",
-    "director": "찰스 키",
-    "country": "아동"
-  },
-  {
-    "releasedate": 2001,
-    "titlekorean": "생각하는 개구리",
-    "titleenglish": "A Frog In Reflection",
-    "director": "이와무라 카즈오",
-    "country": "그림책"
-  },
-  {
-    "releasedate": 1924,
-    "titlekorean": "술집에서",
-    "director": "루쉰",
-    "country": "중국"
-  },
-  {
-    "titlekorean": "본능의 기쁨",
-    "titleenglish": "Les joies de la nature",
-    "director": "로맹 가리"
-  },
-  {
-    "releasedate": 1961,
-    "titlekorean": "솔라리스",
-    "titleenglish": "Soláris",
-    "director": "스타니스와프 램",
-    "country": "폴란드",
-    "etc": "SF"
-  },
-  {
-    "releasedate": 1982,
-    "titlekorean": "이 얼마나 천국 같은가",
-    "titleenglish": "Oh What a paradise it Seems",
-    "director": "존 치버",
-    "country": "미국"
-  },
-  {
-    "releasedate": 1927,
-    "titlekorean": "갓파",
-    "titleenglish": "河童",
-    "director": "아쿠타가와 류노스케",
-    "country": "일본",
-    "etc": "단편"
-  },
-  {
-    "releasedate": 1975,
-    "titlekorean": "운명",
-    "titleenglish": "Fateless or Fatelessness",
-    "director": "임례 케르케스",
-    "country": "헝가"
-  },
-  {
-    "releasedate": 1967,
-    "titlekorean": "어둠의 축제",
-    "director": "김원일",
-    "country": "한국"
-  },
-  {
-    "releasedate": 1940,
-    "titlekorean": "모렐의 발명",
-    "titleenglish": "La Invencion de Morel",
-    "director": "아돌포 비오이 카사레스",
-    "country": "아르헨티나"
-  },
-  {
-    "releasedate": 1942,
-    "titlekorean": "행복",
-    "director": "정인택",
-    "country": "한국",
-    "etc": "단편"
-  },
-  {
-    "releasedate": 2000,
-    "titlekorean": "칠레의 밤",
-    "director": "로베르토 볼라뇨",
-    "country": "칠레"
-  },
-  {
-    "director": "제임스 설터"
-  },
-  {
-    "releasedate": 2011,
-    "titlekorean": "폴리나",
-    "titleenglish": "Polina",
-    "director": "바스티앙 비베스",
-    "country": "프랑스"
-  },
-  {
-    "releasedate": 1964,
-    "titlekorean": "그래도 우리의 나날",
-    "director": "시바타 쇼",
-    "country": "일본",
-    "etc": "아쿠타가와상 51"
-  },
-  {
-    "releasedate": 2021,
-    "titlekorean": "크래프톤 웨이"
-  },
-  {
-    "releasedate": 1924,
-    "titlekorean": "점심",
-    "titleenglish": "The Luncheon",
-    "director": "서머싯 몸",
-    "country": "영국"
-  },
-  {
-    "titlekorean": "허공에 떠도는 한밤의 소리",
-    "director": "볼프강 보르헤르트",
-    "country": "독일"
-  },
-  {
-    "releasedate": 1996,
-    "titlekorean": "새",
-    "director": "오정희",
-    "country": "한국"
-  },
-  {
-    "titlekorean": "세계가 시작되는 곳",
-    "titleenglish": "The Early Stories of Truman Capote ",
-    "director": "트루먼 카포티",
-    "country": "미국"
-  },
-  {
-    "titlekorean": "퇴근 후, 카페여행"
-  },
-  {
-    "releasedate": 2019,
-    "titlekorean": "우리들",
-    "director": "정영수",
-    "country": "한국"
-  },
-  {
-    "releasedate": 1994,
-    "titlekorean": "낙원",
-    "titleenglish": "Paradise",
-    "director": "압둘라자크 구르나",
-    "country": "영국"
-  },
-  {
-    "releasedate": 1995,
-    "titlekorean": "토성의 고리",
-    "titleenglish": "The Rings of Saturn",
-    "director": "W.G 제발트",
-    "country": "독일"
-  },
-  {
-    "releasedate": 2021,
-    "titlekorean": "아기 다람쥐의 크리스마스",
-    "titleenglish": "こりすのクリスマス",
-    "director": "도요후쿠 마키코 ",
-    "country": "일본",
-    "etc": "그림책"
-  },
-  {
-    "titlekorean": "어떤 정염",
-    "director": "기 드 모파상",
-    "country": "프랑스",
-    "etc": "단편"
-  },
-  {
-    "releasedate": 1934,
-    "titlekorean": "평범한 인생",
-    "titleenglish": "An Ordinary Life (Obyčejný život) – Third part of the \"Noetic Trilogy\"",
-    "director": "카렐 차페크",
-    "country": "체코"
-  },
-  {
-    "releasedate": 2021,
-    "titlekorean": "키오스크",
-    "titleenglish": "Kiosks",
-    "director": "아네테 멜레세",
-    "country": "라트비아",
-    "etc": "피터팬상 그림책"
-  },
-  {
-    "releasedate": 2017,
-    "titlekorean": "영리: 그림자의 뒤편",
-    "titleenglish": "Eiri (影裏)",
-    "director": "누마타 신스케",
-    "country": "일본",
-    "etc": "아쿠타가와상 157"
-  },
-  {
-    "releasedate": 2021,
-    "titlekorean": "수연 : 인연을 따라가는 어느 가족 이야기",
-    "director": "소윤경",
-    "country": "한국",
-    "etc": "그림책"
-  },
-  {
-    "releasedate": 1958,
-    "titlekorean": "금테 안경",
-    "titleenglish": "The Gold-rimmed Spectacles (Gli occhiali d'oro)",
-    "director": "조르조 바사니",
-    "country": "이탈리아"
-  },
-  {
-    "releasedate": 1925,
-    "titlekorean": "동경",
-    "director": "한설야",
-    "country": "한국"
-  },
-  {
-    "releasedate": 0,
-    "titlekorean": "모든 열정이 다하고",
-    "titleenglish": 0,
-    "director": "비타 색빌웨스트",
-    "country": "일본",
-    "etc": "여기맞나"
   },
   {
     "releasedate": 0,
     "titlekorean": 0,
     "titleenglish": 0,
-    "director": "나쓰메 소세키",
-    "country": "일본",
-    "etc": "단편"
-  },
-  {
-    "releasedate": 1991,
-    "titlekorean": "투쟁 영역의 확장",
-    "titleenglish": "H. P. Lovecraft: Against the World, Against Life",
-    "director": "미셸 우엘벡",
-    "country": "프랑스"
-  },
-  {
-    "releasedate": 0,
-    "titlekorean": "눈먼 부엉이",
-    "director": "사데크 헤다야트",
-    "country": "이란"
-  },
-  {
-    "releasedate": 0,
-    "titlekorean": "개 신랑 들이기",
-    "director": "다와다 요코"
-  },
-  {
-    "releasedate": 1976,
-    "titlekorean": "너무 시끄러운 고독",
-    "director": "보후밀 흐라발",
-    "country": "체코"
-  },
-  {
-    "releasedate": 0,
-    "director": "류드밀라 페트루솁스카야",
-    "country": "러시아"
-  },
-  {
-    "releasedate": 0,
-    "titlekorean": "정인택",
+    "director": "이장욱",
     "country": "한국"
   },
   {
@@ -1689,58 +136,6387 @@
   },
   {
     "releasedate": 0,
+    "titlekorean": "정인택",
+    "country": "한국"
+  },
+  {
+    "releasedate": 0,
+    "director": "류드밀라 페트루솁스카야",
+    "country": "러시아"
+  },
+  {
+    "releasedate": 1976,
+    "titlekorean": "너무 시끄러운 고독",
+    "director": "보후밀 흐라발",
+    "country": "체코"
+  },
+  {
+    "releasedate": 0,
+    "titlekorean": "개 신랑 들이기",
+    "director": "다와다 요코"
+  },
+  {
+    "releasedate": 0,
+    "titlekorean": "눈먼 부엉이",
+    "director": "사데크 헤다야트",
+    "country": "이란"
+  },
+  {
+    "releasedate": 1991,
+    "titlekorean": "투쟁 영역의 확장",
+    "titleenglish": "H. P. Lovecraft: Against the World, Against Life",
+    "director": "미셸 우엘벡",
+    "country": "프랑스"
+  },
+  {
+    "releasedate": 0,
     "titlekorean": 0,
     "titleenglish": 0,
+    "director": "나쓰메 소세키",
+    "country": "일본",
+    "etc": "단편"
+  },
+  {
+    "releasedate": 0,
+    "titlekorean": "모든 열정이 다하고",
+    "titleenglish": 0,
+    "director": "비타 색빌웨스트",
+    "country": "일본",
+    "etc": "여기맞나"
+  },
+  {
+    "releasedate": 1925,
+    "titlekorean": "동경",
+    "director": "한설야",
+    "country": "한국"
+  },
+  {
+    "releasedate": 1958,
+    "titlekorean": "금테 안경",
+    "titleenglish": "The Gold-rimmed Spectacles (Gli occhiali d'oro)",
+    "director": "조르조 바사니",
+    "country": "이탈리아"
+  },
+  {
+    "releasedate": 2021,
+    "titlekorean": "수연 : 인연을 따라가는 어느 가족 이야기",
+    "director": "소윤경",
+    "country": "한국",
+    "etc": "그림책"
+  },
+  {
+    "releasedate": 2017,
+    "titlekorean": "영리: 그림자의 뒤편",
+    "titleenglish": "Eiri (影裏)",
+    "director": "누마타 신스케",
+    "country": "일본",
+    "etc": "아쿠타가와상 157"
+  },
+  {
+    "releasedate": 2021,
+    "titlekorean": "키오스크",
+    "titleenglish": "Kiosks",
+    "director": "아네테 멜레세",
+    "country": "라트비아",
+    "etc": "피터팬상 그림책"
+  },
+  {
+    "releasedate": 1934,
+    "titlekorean": "평범한 인생",
+    "titleenglish": "An Ordinary Life (Obyčejný život) – Third part of the \"Noetic Trilogy\"",
+    "director": "카렐 차페크",
+    "country": "체코"
+  },
+  {
+    "titlekorean": "어떤 정염",
+    "director": "기 드 모파상",
+    "country": "프랑스",
+    "etc": "단편"
+  },
+  {
+    "releasedate": 2021,
+    "titlekorean": "아기 다람쥐의 크리스마스",
+    "titleenglish": "こりすのクリスマス",
+    "director": "도요후쿠 마키코 ",
+    "country": "일본",
+    "etc": "그림책"
+  },
+  {
+    "releasedate": 1995,
+    "titlekorean": "토성의 고리",
+    "titleenglish": "The Rings of Saturn",
+    "director": "W.G 제발트",
+    "country": "독일"
+  },
+  {
+    "releasedate": 1994,
+    "titlekorean": "낙원",
+    "titleenglish": "Paradise",
+    "director": "압둘라자크 구르나",
+    "country": "영국"
+  },
+  {
+    "releasedate": 2019,
+    "titlekorean": "우리들",
+    "director": "정영수",
+    "country": "한국"
+  },
+  {
+    "titlekorean": "퇴근 후, 카페여행"
+  },
+  {
+    "titlekorean": "세계가 시작되는 곳",
+    "titleenglish": "The Early Stories of Truman Capote ",
+    "director": "트루먼 카포티",
+    "country": "미국"
+  },
+  {
+    "releasedate": 1996,
+    "titlekorean": "새",
+    "director": "오정희",
+    "country": "한국"
+  },
+  {
+    "titlekorean": "허공에 떠도는 한밤의 소리",
+    "director": "볼프강 보르헤르트",
+    "country": "독일"
+  },
+  {
+    "releasedate": 1924,
+    "titlekorean": "점심",
+    "titleenglish": "The Luncheon",
+    "director": "서머싯 몸",
+    "country": "영국"
+  },
+  {
+    "releasedate": 2021,
+    "titlekorean": "크래프톤 웨이"
+  },
+  {
+    "releasedate": 1964,
+    "titlekorean": "그래도 우리의 나날",
+    "director": "시바타 쇼",
+    "country": "일본",
+    "etc": "아쿠타가와상 51"
+  },
+  {
+    "releasedate": 2011,
+    "titlekorean": "폴리나",
+    "titleenglish": "Polina",
+    "director": "바스티앙 비베스",
+    "country": "프랑스"
+  },
+  {
+    "director": "제임스 설터"
+  },
+  {
+    "releasedate": 2000,
+    "titlekorean": "칠레의 밤",
+    "director": "로베르토 볼라뇨",
+    "country": "칠레"
+  },
+  {
+    "releasedate": 1942,
+    "titlekorean": "행복",
+    "director": "정인택",
+    "country": "한국",
+    "etc": "단편"
+  },
+  {
+    "releasedate": 1940,
+    "titlekorean": "모렐의 발명",
+    "titleenglish": "La Invencion de Morel",
+    "director": "아돌포 비오이 카사레스",
+    "country": "아르헨티나"
+  },
+  {
+    "releasedate": 1967,
+    "titlekorean": "어둠의 축제",
+    "director": "김원일",
+    "country": "한국"
+  },
+  {
+    "releasedate": 1975,
+    "titlekorean": "운명",
+    "titleenglish": "Fateless or Fatelessness",
+    "director": "임례 케르케스",
+    "country": "헝가"
+  },
+  {
+    "releasedate": 1927,
+    "titlekorean": "갓파",
+    "titleenglish": "河童",
+    "director": "아쿠타가와 류노스케",
+    "country": "일본",
+    "etc": "단편"
+  },
+  {
+    "releasedate": 1982,
+    "titlekorean": "이 얼마나 천국 같은가",
+    "titleenglish": "Oh What a paradise it Seems",
+    "director": "존 치버",
+    "country": "미국"
+  },
+  {
+    "releasedate": 1961,
+    "titlekorean": "솔라리스",
+    "titleenglish": "Soláris",
+    "director": "스타니스와프 램",
+    "country": "폴란드",
+    "etc": "SF"
+  },
+  {
+    "titlekorean": "본능의 기쁨",
+    "titleenglish": "Les joies de la nature",
+    "director": "로맹 가리"
+  },
+  {
+    "releasedate": 1924,
+    "titlekorean": "술집에서",
+    "director": "루쉰",
+    "country": "중국"
+  },
+  {
+    "releasedate": 2001,
+    "titlekorean": "생각하는 개구리",
+    "titleenglish": "A Frog In Reflection",
+    "director": "이와무라 카즈오",
+    "country": "그림책"
+  },
+  {
+    "releasedate": 1975,
+    "titlekorean": "빈터의 서커스",
+    "titleenglish": "Wasteground Circus",
+    "director": "찰스 키",
+    "country": "아동"
+  },
+  {
+    "releasedate": 1953,
+    "titlekorean": "명옥이",
+    "director": "한무숙"
+  },
+  {
+    "releasedate": 1913,
+    "titlekorean": "메마른 9월",
+    "titleenglish": "Dry September",
+    "director": "윌리엄 포크너",
+    "country": "미"
+  },
+  {
+    "titlekorean": "눈의 시",
+    "director": "아주라 다고스티노, 에스테파니아 브라보",
+    "country": "그림책"
+  },
+  {
+    "releasedate": 1983,
+    "titlekorean": "밤이 오기 전에",
+    "director": "마르셸 프루스트",
+    "country": "프랑스"
+  },
+  {
+    "titlekorean": "도리언 그레이의 초상",
+    "director": "오스카 와일드",
+    "country": "영국"
+  },
+  {
+    "releasedate": 1987,
+    "titlekorean": "영아 유기",
+    "director": "모옌",
+    "country": "중국"
+  },
+  {
+    "releasedate": 1862,
+    "titlekorean": "산책",
+    "titleenglish": "Walking",
+    "director": "헨리 데이비드 소로",
+    "country": "미국"
+  },
+  {
+    "titlekorean": "헤어지는 길 ? 가는 구름 중 하나",
+    "director": "히구치 이치요",
+    "country": "일본"
+  },
+  {
+    "releasedate": 1973,
+    "titlekorean": "술라",
+    "titleenglish": "Sula",
+    "director": "토니 모리슨",
+    "country": "미국",
+    "etc": 2
+  },
+  {
+    "releasedate": 1979,
+    "titlekorean": "바람의 노래를 들어라",
+    "titleenglish": "風の歌を聴け",
+    "director": "무라카미 하루키"
+  },
+  {
+    "titlekorean": "잃어버린 심장",
+    "titleenglish": "전에 참사회읽은",
+    "director": "몬데규 로즈 제임스",
+    "country": 220610
+  },
+  {
+    "releasedate": 1958,
+    "titlekorean": "새싹 뽑기, 어린 짐승 쏘기",
+    "titleenglish": "Nip the Buds, Shoot the Kids",
+    "director": "오에 겐자부로",
+    "country": "일본"
+  },
+  {
+    "releasedate": 1759,
+    "titlekorean": "캉디드 혹은 낙관주의",
+    "titleenglish": "Candide ou l'optimisme",
+    "director": "볼테르",
+    "country": "프랑스"
+  },
+  {
+    "titlekorean": "두 갈래 길",
+    "director": "라울 니에토 구리디",
+    "country": "그림책"
+  },
+  {
+    "releasedate": 2005,
+    "titlekorean": "칼로의 유쾌한 악마들",
     "director": "이장욱",
     "country": "한국"
   },
   {
-    "releasedate": 1986,
-    "titlekorean": "핏빛 자오선",
-    "titleenglish": "Blood Meridian",
-    "director": "코맥 맥카시",
-    "country": "미국"
-  },
-  {
-    "releasedate": 1897,
-    "titlekorean": "어릿광대",
-    "titleenglish": "Der Bajazzo",
-    "director": "토마스 만",
-    "country": "미국"
-  },
-  {
-    "releasedate": 1986,
-    "titlekorean": "태양은 가득히",
-    "titleenglish": "",
-    "director": "가네시로 가즈키",
-    "country": "일본"
-  },
-  {
-    "releasedate": 1830,
-    "titlekorean": "사라진",
-    "titleenglish": "",
+    "titlekorean": "영생의 묘약 ",
     "director": "오노레 드 발자크",
-    "country": "미국"
+    "country": "프랑스"
   },
   {
-    "releasedate": 1881,
-    "titlekorean": "베르가모의 페스트",
-    "titleenglish": "",
-    "director": "옌스 페테르 야콥센",
-    "country": "스칸다나비아"
+    "releasedate": 2011,
+    "titlekorean": "이방인의 아이",
+    "titleenglish": "The Stranger's Child",
+    "director": "앨런 홀링허스트",
+    "country": "영국"
   },
   {
-    "releasedate": 1986,
-    "titlekorean": "골짜기의 백합",
-    "titleenglish": "",
-    "director": "우메오 카즈오 - 만화 단편",
+    "titlekorean": "피터레빗 시리즈 1"
+  },
+  {
+    "titlekorean": "탱고"
+  },
+  {
+    "releasedate": 2017,
+    "titlekorean": "오늘도 아무 생각 없이 페달을 밟습니다",
+    "titleenglish": "You & a Bike & a Road",
+    "director": "엘리너 데이비스",
+    "country": "미국",
+    "etc": "그래픽노"
+  },
+  {
+    "releasedate": 1990,
+    "titlekorean": "태어난 아니",
+    "titleenglish": "うまれてきた子ども",
+    "director": "사노 요코",
+    "country": "일본",
+    "etc": "아동"
+  },
+  {
+    "releasedate": 1908,
+    "titlekorean": "산시로",
+    "director": "나쓰메 소세키",
     "country": "일본"
   },
   {
-    "releasedate": 1986,
-    "titlekorean": "점원",
-    "titleenglish": "The Assistant",
-    "director": "버나드 멜리머드",
+    "titlekorean": "회색 눈사람",
+    "director": "최윤",
+    "country": "한국"
+  },
+  {
+    "titlekorean": "금강경 : 무량공덕사경"
+  },
+  {
+    "titlekorean": "타이포그래피 첫 원칙"
+  },
+  {
+    "titlekorean": "픽션들 1"
+  },
+  {
+    "releasedate": 1947,
+    "titlekorean": "사양",
+    "titleenglish": "斜陽",
+    "director": "다자이 오사무",
+    "country": "일본"
+  },
+  {
+    "releasedate": 2005,
+    "titlekorean": "용의자 X의 헌신",
+    "titleenglish": "容疑者Xの献身 요기샤엣쿠스노켄",
+    "director": "히가시노 게이고",
+    "country": "일본"
+  },
+  {
+    "releasedate": 2000,
+    "titlekorean": "휴먼 스테인",
+    "titleenglish": "The Human Stain",
+    "director": "필립 로스",
     "country": "미국"
+  },
+  {
+    "releasedate": 2002,
+    "titlekorean": "비 오는 날 집 보기",
+    "titleenglish": "Rain and rainfall",
+    "director": "이와사키 치히로",
+    "country": "일본",
+    "etc": "아동"
+  },
+  {
+    "releasedate": 1989,
+    "titlekorean": "페어플레이",
+    "titleenglish": "Rent spel / Fair Play",
+    "director": "토베 얀"
+  },
+  {
+    "titlekorean": "숨겨진 삶",
+    "titleenglish": "완전한 하루 기준영 사치와 고요"
+  },
+  {
+    "releasedate": 1971,
+    "titlekorean": "세모 / 부끄러움을 가르칩니다",
+    "titleenglish": "歲暮",
+    "director": "박완서",
+    "country": "단편"
+  },
+  {
+    "titleenglish": "다자이 단편 ??"
+  },
+  {
+    "releasedate": 197,
+    "titlekorean": "원인",
+    "titleenglish": "Die Ursache",
+    "director": "토마스 베른하르트",
+    "country": "오스트리아"
+  },
+  {
+    "releasedate": 1963,
+    "titlekorean": "괴물들이 사는 나라",
+    "titleenglish": "Where the Wild Things Are",
+    "director": "모리스 센닥",
+    "country": "미국"
+  },
+  {
+    "titlekorean": "물망초",
+    "director": "요시야 노부코",
+    "country": "일본"
+  },
+  {
+    "releasedate": 1994,
+    "titlekorean": "페레이라가 주장하다",
+    "titleenglish": "Sostiene Pereira",
+    "director": "안토니오 타부키",
+    "country": "이탈리아 / 포르투갈"
+  },
+  {
+    "titlekorean": "우리의 사람들 중 단편",
+    "director": "박솔뫼",
+    "country": "한국"
+  },
+  {
+    "releasedate": 1937,
+    "titlekorean": "페르디두르케",
+    "titleenglish": "Ferdydurke",
+    "director": "비톨드 곰브로비치",
+    "country": "폴란드"
+  },
+  {
+    "titlekorean": "사용자 스토리 맵 만들기"
+  },
+  {
+    "releasedate": 1977,
+    "titlekorean": "100만 번 산 고양이",
+    "director": "사노 요코"
+  },
+  {
+    "titlekorean": "인조 검둥이",
+    "director": "플레너리 오 코너"
+  },
+  {
+    "releasedate": 1849,
+    "titlekorean": "임멘 호수",
+    "titleenglish": "Immensee",
+    "director": "테오도어 스토름"
+  },
+  {
+    "titlekorean": "사치와 고요",
+    "director": "기준영"
+  },
+  {
+    "releasedate": 1943,
+    "titlekorean": "나무의 일생",
+    "director": "정인택",
+    "country": "한국",
+    "etc": "단편"
+  },
+  {
+    "releasedate": 1831,
+    "titlekorean": "나귀 가죽",
+    "titleenglish": "La Peau de chagrin",
+    "director": "오노레 드 발자크",
+    "country": "프랑스"
+  },
+  {
+    "releasedate": 2013,
+    "titlekorean": "기린이 아닌 모든 것에 대한 이야기",
+    "director": "이장욱",
+    "country": "한국",
+    "etc": "창비"
+  },
+  {
+    "releasedate": 1997,
+    "titlekorean": "굴 소년의 우울한 죽음",
+    "titleenglish": "Oyster Boy & Other Stories",
+    "director": "팀 버튼"
+  },
+  {
+    "releasedate": 1957,
+    "titlekorean": "어느 잔잔한 날에",
+    "titleenglish": "In a Season of Calm Weather",
+    "director": "레이 브래드버리",
+    "country": "미국"
+  },
+  {
+    "releasedate": 1974,
+    "titlekorean": "이별의 김포공항",
+    "director": "박완서",
+    "country": "한국"
+  },
+  {
+    "releasedate": 1981,
+    "titlekorean": "제자",
+    "titleenglish": "The Pupil",
+    "director": "헨리 제임스",
+    "country": "영국"
+  },
+  {
+    "releasedate": 1960,
+    "titlekorean": "여름 밤 열시 반",
+    "titleenglish": "Ten-Thirty on a Summer Night / dix heures et demie du soir en été",
+    "director": "마르그리트 뒤라스",
+    "country": "프랑스"
+  },
+  {
+    "titlekorean": "유미의 인연",
+    "director": "이서영",
+    "country": "한국"
+  },
+  {
+    "releasedate": 1816,
+    "titlekorean": "모래 사나이",
+    "titleenglish": "Der Sandmann in Nachtstücke",
+    "director": "에른스트 호프만",
+    "country": "독일"
+  },
+  {
+    "releasedate": 1932,
+    "titlekorean": "장님 이야기",
+    "titleenglish": "盲目物語",
+    "director": "다니자키 준이치로",
+    "country": "일본"
+  },
+  {
+    "releasedate": 1922,
+    "titlekorean": "행복의 나락",
+    "titleenglish": "The Lees of Happiness",
+    "director": "프랜시스 스콧 피츠제럴드",
+    "country": "미국"
+  },
+  {
+    "releasedate": 1996,
+    "titlekorean": "슬픈 짐승",
+    "titleenglish": "Animal Triste",
+    "director": "모니카 마론",
+    "country": "독일"
+  },
+  {
+    "releasedate": 2018,
+    "titlekorean": "제수",
+    "director": "김남숙",
+    "country": "한국"
+  },
+  {
+    "titlekorean": "내가 뭘 했다고 번아웃일까요",
+    "director": "모리 오가이",
+    "country": "일본"
+  },
+  {
+    "releasedate": 2008,
+    "titlekorean": "울분",
+    "titleenglish": "Indignation",
+    "director": "필립 로스",
+    "country": "미국"
+  },
+  {
+    "releasedate": 1987,
+    "titlekorean": "러프",
+    "titleenglish": "Rough",
+    "director": "아다치 미츠루",
+    "country": "일본",
+    "etc": "만화"
+  },
+  {
+    "titlekorean": "장미원의 그림자",
+    "director": "데이비드 허버트 로렌스",
+    "etc": "오디오북"
+  },
+  {
+    "releasedate": 1948,
+    "titlekorean": "더러운 손",
+    "titleenglish": "Dirty Hands",
+    "director": "장 폴 사르트르",
+    "country": "프랑스",
+    "etc": "히괵"
+  },
+  {
+    "releasedate": 1892,
+    "titlekorean": "꽃 속에 잠겨",
+    "titleenglish": "Yamizakura (闇桜, Flowers at Dusk",
+    "director": "히구치 이치요",
+    "country": "일본"
+  },
+  {
+    "releasedate": 1962,
+    "titlekorean": "절름발이가 먼저 온다",
+    "titleenglish": "The Lame Shall Enter First",
+    "director": "플레너리 오 코너",
+    "etc": "Everything That Rises Must Converge"
+  },
+  {
+    "releasedate": 1986,
+    "titlekorean": "부유하는 세상의 화가",
+    "titleenglish": "An Artist of the Floating World",
+    "director": "가즈오 이시구로",
+    "country": "미국",
+    "etc": "일본"
+  },
+  {
+    "releasedate": 2004,
+    "titlekorean": "은하수에 대한 세 가지 이야기: 성간 여행 시대의 신화들",
+    "titleenglish": "Three Tales from Sky River: Myths for a Starfaring Age",
+    "director": "반다나 싱",
+    "country": "인도"
+  },
+  {
+    "releasedate": 1953,
+    "titlekorean": "타키니아의 작은 말들",
+    "titleenglish": "Les petits chevaux de Tarquinia / The Little Horses of Tarquinia",
+    "director": "마르그리트 뒤라스",
+    "country": "프랑스"
+  },
+  {
+    "releasedate": 2020,
+    "titlekorean": "그림자 놀이",
+    "director": "천선란",
+    "country": "한국"
+  },
+  {
+    "releasedate": 1920,
+    "titlekorean": "한송이 포도",
+    "titleenglish": "一房の葡萄 (A Bunch of Grapes)",
+    "director": "아리시마 다케오",
+    "country": "일본"
+  },
+  {
+    "releasedate": 1939,
+    "titlekorean": "빅 슬립",
+    "titleenglish": "The Big Sleep",
+    "director": "레이먼드 챈들러",
+    "country": "미국"
+  },
+  {
+    "releasedate": 2018,
+    "titlekorean": "시간의 궤적",
+    "director": "백수린",
+    "country": "한국",
+    "etc": "2019 젊은작가상 수상작품집"
+  },
+  {
+    "releasedate": 1931,
+    "titlekorean": "야간비행",
+    "titleenglish": "Night Flight",
+    "director": "앙투안 드 생텍쥐페리",
+    "country": "프랑스"
+  },
+  {
+    "titlekorean": "브랜드 마케터들의 이야기",
+    "etc": "디자인"
+  },
+  {
+    "releasedate": 1957,
+    "titlekorean": "바다와 독약",
+    "titleenglish": "海と毒薬 The Sea and Poison",
+    "director": "엔도 슈우사쿠",
+    "country": "일본"
+  },
+  {
+    "director": "손창섭",
+    "country": "한국"
+  },
+  {
+    "releasedate": 1921,
+    "titlekorean": "곤충 극장",
+    "titleenglish": "Pictures from the Insects' Life (Ze života hmyzu",
+    "director": "카렐 차페크",
+    "country": "체코",
+    "etc": "희곡"
+  },
+  {
+    "releasedate": 2020,
+    "titlekorean": "아이디어 불패의 법칙: 구글 최고의 혁신 전문가가 찾아낸 비즈니스 설계와 검증의 방법론",
+    "director": "알베르토 사보이아",
+    "etc": "비지니스"
+  },
+  {
+    "releasedate": 1909,
+    "titlekorean": "깜박 잊은 지명",
+    "titleenglish": "The Lost Sanjak",
+    "director": "사키"
+  },
+  {
+    "titlekorean": "비옷",
+    "director": "토마스 베른하르트",
+    "country": "오스트리아"
+  },
+  {
+    "releasedate": 1949,
+    "titlekorean": "시게모토 소장의 어머니",
+    "titleenglish": "少将滋幹の母 Captain Shigemoto's Mother / Shōshō Shigemoto no haha",
+    "director": "다니자키 준이치로",
+    "country": "일본"
+  },
+  {
+    "releasedate": 1996,
+    "titlekorean": "먼 별",
+    "titleenglish": "El secreto del mal",
+    "director": "로베르토 볼라뇨",
+    "country": "칠레"
+  },
+  {
+    "releasedate": 2017,
+    "titlekorean": "알려지지 않은 예술가의 눈물과 자이툰 파스타",
+    "director": "박상영",
+    "country": "한국"
+  },
+  {
+    "releasedate": 1980,
+    "titlekorean": "야만인을 기다리며",
+    "titleenglish": "Waiting for the Barbarians",
+    "director": "J. M. 쿳시",
+    "country": "남아프리카공화국"
+  },
+  {
+    "director": "사무엘 베케트",
+    "country": "프랑스"
+  },
+  {
+    "releasedate": 1951,
+    "titlekorean": "크랜포드",
+    "titleenglish": "Cranford",
+    "director": "엘리자베스 클레그헌 개스켈",
+    "country": "영국"
+  },
+  {
+    "releasedate": 2012,
+    "titlekorean": "장수탕 선녀님",
+    "director": "백희나",
+    "country": "한국"
+  },
+  {
+    "titlekorean": "잘 살겠습니다",
+    "director": "장류진",
+    "country": "한국"
+  },
+  {
+    "director": "이주란"
+  },
+  {
+    "releasedate": 1978,
+    "titlekorean": "두완샹",
+    "titleenglish": "Du Wanxiang",
+    "director": "딩링",
+    "country": "중국"
+  },
+  {
+    "director": "하야시 후미코",
+    "country": "일본"
+  },
+  {
+    "releasedate": 2018,
+    "titlekorean": "경애의 마음",
+    "director": "김금희",
+    "country": "한국"
+  },
+  {
+    "titlekorean": "저 너머에서",
+    "titleenglish": "From Beyond",
+    "director": "하워드 필립스 러브크래프트"
+  },
+  {
+    "releasedate": 2017,
+    "titlekorean": "손톱",
+    "director": "권여선",
+    "country": "한국"
+  },
+  {
+    "releasedate": 1983,
+    "titlekorean": "내가 전화를 거는 곳",
+    "titleenglish": "Where I'm Calling From",
+    "director": "레이먼드 카버",
+    "country": "미국"
+  },
+  {
+    "releasedate": 1931,
+    "titlekorean": "파금",
+    "director": "강경애"
+  },
+  {
+    "releasedate": 1869,
+    "titlekorean": "해저 2만리",
+    "titleenglish": "Twenty Thousand Leagues Under The Sea",
+    "director": "쥘 베른",
+    "country": "프랑스"
+  },
+  {
+    "releasedate": 1867,
+    "titlekorean": "노름꾼",
+    "titleenglish": "The Gambler",
+    "director": "표도르 도스토예프스키",
+    "country": "러시아"
+  },
+  {
+    "releasedate": 1927,
+    "titlekorean": "꼬마 숫총각",
+    "titleenglish": "The Little Virgin",
+    "director": "랭스턴 휴스",
+    "country": "미국"
+  },
+  {
+    "releasedate": 1982,
+    "titlekorean": "양을 쫓는 모험",
+    "titleenglish": "A Wild Sheep Chase",
+    "director": "무라카미 하루키",
+    "country": "일본",
+    "etc": "羊をめぐる冒険"
+  },
+  {
+    "titlekorean": "관계",
+    "director": "오정희",
+    "country": "한국"
+  },
+  {
+    "releasedate": 1925,
+    "titlekorean": "인간 의자",
+    "titleenglish": "人間椅子(んげんいす)",
+    "director": "에도가와 란포",
+    "country": "일본"
+  },
+  {
+    "titlekorean": "어느 젊은 여인의 몽상과 취기",
+    "director": "클라리시 리스펙토르",
+    "country": "우크라이나"
+  },
+  {
+    "releasedate": 1938,
+    "titlekorean": "아주 정직한 사내",
+    "titleenglish": "A Very Honourable Guy in Futhermore",
+    "director": "데이먼 러니언",
+    "country": "미국"
+  },
+  {
+    "releasedate": 2013,
+    "titlekorean": "여름의 맛",
+    "director": "하성란",
+    "country": "한국"
+  },
+  {
+    "releasedate": 1925,
+    "titlekorean": "사랑의 사막",
+    "titleenglish": "Le Désert de l'amour (The Desert of Love)",
+    "director": "프랑수아 모리아크",
+    "country": "프랑스"
+  },
+  {
+    "releasedate": 1932,
+    "titlekorean": "질소비료공장",
+    "director": "이북명",
+    "country": "한국"
+  },
+  {
+    "releasedate": 2019,
+    "titlekorean": "여름, 교토",
+    "director": "최성희",
+    "country": "한국",
+    "etc": "에세이"
+  },
+  {
+    "releasedate": 1960,
+    "titlekorean": "휴전",
+    "titleenglish": "La tregua",
+    "director": "마리오 베네데티",
+    "country": "우루과이"
+  },
+  {
+    "titlekorean": "흉가",
+    "director": "조이스 캐롤 오츠",
+    "country": "미국"
+  },
+  {
+    "releasedate": 1928,
+    "titlekorean": "유리병 속 지옥",
+    "titleenglish": "Binzume Jigoku",
+    "director": "유메노 큐사쿠",
+    "country": "일본"
+  },
+  {
+    "releasedate": 1937,
+    "titlekorean": "위건 부두로 가는 길",
+    "titleenglish": "The Road to Wigan Pier",
+    "director": "조지 오웰",
+    "country": "영국"
+  },
+  {
+    "releasedate": 2014,
+    "titlekorean": "솔티니스",
+    "director": "후루야 미노루",
+    "country": "일본",
+    "etc": "만화"
+  },
+  {
+    "releasedate": 1938,
+    "titlekorean": "청랑정기",
+    "director": "유진오",
+    "country": "한국"
+  },
+  {
+    "releasedate": 1928,
+    "titlekorean": "여명",
+    "titleenglish": "La Naissance du jour / Break of Day",
+    "director": "시도니가브리엘 콜레트",
+    "country": "프랑스"
+  },
+  {
+    "titlekorean": "미로: 어느 연대年代의 기록",
+    "director": "정인택",
+    "country": "한국"
+  },
+  {
+    "releasedate": 2002,
+    "titlekorean": "다락방",
+    "titleenglish": "The Room on the Roof",
+    "director": "반다나 싱",
+    "country": "인도",
+    "etc": "The Woman Who Thought She Was a Planet"
+  },
+  {
+    "releasedate": 2018,
+    "titlekorean": "카밀라",
+    "titleenglish": "사랑을 멈추지 말아요",
+    "director": "강화길",
+    "country": "한국"
+  },
+  {
+    "releasedate": 1910,
+    "titlekorean": "앤 부인의 침묵",
+    "titleenglish": "The Reticence of Lady Anne",
+    "director": "사키",
+    "country": "영국",
+    "etc": "Reginald in Russia"
+  },
+  {
+    "releasedate": 1920,
+    "titlekorean": "미생의 믿음",
+    "director": "아쿠타가와 류노스케",
+    "country": "일본"
+  },
+  {
+    "releasedate": 1894,
+    "titlekorean": "참사회 사제 알베릭의 수집책",
+    "titleenglish": "Canon Alberic's Scrap-book",
+    "director": "몬터규 로즈 제임스",
+    "country": "영국"
+  },
+  {
+    "releasedate": 1915,
+    "titlekorean": "한눈팔기",
+    "titleenglish": "道草/みちくさ",
+    "director": "나쓰메 소세키",
+    "country": "일본"
+  },
+  {
+    "titlekorean": "눈 속에서 불타기 전 아이는 어떤 꿈을 꾸었나",
+    "director": "배수아",
+    "country": "한국",
+    "etc": "뱀과 물"
+  },
+  {
+    "releasedate": 1952,
+    "titlekorean": "천사는 침묵했다",
+    "titleenglish": "Der Engel schwieg",
+    "director": "하인리히 뵐",
+    "country": "독일"
+  },
+  {
+    "releasedate": 1970,
+    "titlekorean": "요오꼬",
+    "titleenglish": "Yoko",
+    "director": "후루이 요시끼찌",
+    "country": "일본"
+  },
+  {
+    "releasedate": 2013,
+    "titlekorean": "양의 미래",
+    "titleenglish": "아무도 아닌",
+    "director": "황정은",
+    "country": "한국"
+  },
+  {
+    "releasedate": 1847,
+    "titlekorean": "사촌 퐁츠",
+    "titleenglish": "Le Cousin Pons",
+    "director": "오노레 드 발자크",
+    "country": "프랑스"
+  },
+  {
+    "releasedate": 1884,
+    "titlekorean": "시체 도둑",
+    "titleenglish": "The Body Snatcher",
+    "director": "로버트 루이스 스티븐슨",
+    "country": "영국"
+  },
+  {
+    "releasedate": 1929,
+    "titlekorean": "붉은 수확",
+    "titleenglish": "Red Harvest",
+    "director": "대실 해밋",
+    "country": "미국"
+  },
+  {
+    "releasedate": 2017,
+    "titlekorean": "몸하다",
+    "director": "정보라",
+    "country": "한국",
+    "etc": "저주토끼"
+  },
+  {
+    "releasedate": 1929,
+    "titlekorean": "앙팡 떼리블",
+    "titleenglish": "Les Enfants terribles",
+    "director": "장 콕토",
+    "country": "프랑스"
+  },
+  {
+    "releasedate": 1965,
+    "titlekorean": "성소녀",
+    "titleenglish": "聖少女",
+    "director": "쿠라하시 유미코",
+    "country": "일본"
+  },
+  {
+    "releasedate": 1994,
+    "titlekorean": "악어노트",
+    "titleenglish": "Notes of a Crocodile 鰐魚手記",
+    "director": "구묘진",
+    "country": "대만"
+  },
+  {
+    "titlekorean": "왈튼 씨 부인이 죽은 한 죽음",
+    "director": "박상륭",
+    "country": "한국"
+  },
+  {
+    "releasedate": 1895,
+    "titlekorean": "갈매기",
+    "titleenglish": "The Seagull Чайка",
+    "director": "안톤 체호프",
+    "country": "러시아",
+    "etc": "희곡"
+  },
+  {
+    "releasedate": 1838,
+    "titlekorean": "점등원",
+    "titleenglish": "The Lamplighter",
+    "director": "찰스 디킨스",
+    "country": "영국"
+  },
+  {
+    "releasedate": 1911,
+    "titlekorean": "이선 프롬",
+    "titleenglish": "Ethan Frome",
+    "director": "이디스 워튼",
+    "country": "미국"
+  },
+  {
+    "releasedate": 1925,
+    "titlekorean": "레몬",
+    "titleenglish": "檸檬",
+    "director": "가지이 모토지로",
+    "country": "일본"
+  },
+  {
+    "releasedate": 1950,
+    "titlekorean": "시간의 화살",
+    "titleenglish": "Time's Arrow",
+    "director": "아서 클라크",
+    "country": "미국",
+    "etc": "SF"
+  },
+  {
+    "releasedate": 1939,
+    "titlekorean": "광란의 40번대 구역에 꽃핀 로맨스",
+    "titleenglish": "Romance in the Roaring Forties in \nMore Than Somewhat",
+    "director": "데이먼 러니언",
+    "country": "미국"
+  },
+  {
+    "releasedate": 1997,
+    "titlekorean": "부끄러움",
+    "titleenglish": "Shame / La Honte",
+    "director": "아니 에르노",
+    "country": "프랑스"
+  },
+  {
+    "titlekorean": "밀고자",
+    "director": "레이먼드 챈들러",
+    "country": "미국"
+  },
+  {
+    "titlekorean": "자리 잡기",
+    "titleenglish": "Installation",
+    "director": "알퐁스 도데",
+    "country": "프랑스"
+  },
+  {
+    "releasedate": 1932,
+    "titlekorean": "어둠 속의 웃음 소리",
+    "titleenglish": "Laughter in the Dark/ Камера обскура, Camera obscura",
+    "director": "블라디미르 나보코프",
+    "country": "러시아",
+    "etc": "미국"
+  },
+  {
+    "titlekorean": "집",
+    "director": "라이너 마리아 릴케",
+    "country": "독일"
+  },
+  {
+    "releasedate": 2015,
+    "titlekorean": "건축이냐 혁명이냐",
+    "director": "정지돈",
+    "country": "한국"
+  },
+  {
+    "releasedate": 1850,
+    "titlekorean": "주홍글씨",
+    "titleenglish": "The Scalette Letter",
+    "director": "너새니얼 호손",
+    "country": "미국"
+  },
+  {
+    "releasedate": 1948,
+    "titlekorean": "신의 광대 어거스트",
+    "titleenglish": "The Smile at the Foot of the Ladder",
+    "director": "헨리 밀러",
+    "country": "미국"
+  },
+  {
+    "releasedate": 1930,
+    "titlekorean": "전화 한 통",
+    "titleenglish": "A Telephone Call",
+    "director": "도로시 파커",
+    "country": "미국"
+  },
+  {
+    "releasedate": 2018,
+    "titlekorean": "일의 기쁨과 슬픔",
+    "director": "장류진",
+    "country": "한국"
+  },
+  {
+    "releasedate": 1926,
+    "titlekorean": "이즈의 무희",
+    "titleenglish": "The Dancing Girl of Izu伊豆の踊子",
+    "director": "가와바타 야스나리",
+    "country": "일본"
+  },
+  {
+    "releasedate": 1947,
+    "titlekorean": "이발사",
+    "titleenglish": "The Barber",
+    "director": "플레너리 오코너",
+    "country": "미국"
+  },
+  {
+    "releasedate": 2017,
+    "titlekorean": "여름, 스피드",
+    "titleenglish": "Summer, Speed ?",
+    "director": "김봉곤",
+    "country": "한국"
+  },
+  {
+    "releasedate": 1934,
+    "titlekorean": "어둠 속의 항해",
+    "titleenglish": "Voyage in the Dark",
+    "director": "진 리스",
+    "country": "도미니키광화국",
+    "etc": "영국"
+  },
+  {
+    "releasedate": 1908,
+    "titlekorean": "두 줄기의 피",
+    "director": "이시카와 다쿠보쿠",
+    "country": "일본"
+  },
+  {
+    "releasedate": 1950,
+    "titlekorean": "해변의 거울",
+    "titleenglish": "Plajdaki Ayna",
+    "director": "사이트 파이크 아바스야느크",
+    "country": "터키"
+  },
+  {
+    "releasedate": 1927,
+    "titlekorean": "낙동강",
+    "titleenglish": "洛東江",
+    "director": "조명희",
+    "country": "한국"
+  },
+  {
+    "titlekorean": "산사나이의 사월"
+  },
+  {
+    "releasedate": 1846,
+    "titlekorean": "아몬티야도 술통",
+    "titleenglish": "The Cask of Amontillado",
+    "director": "에드가 앨런 포",
+    "country": "미국"
+  },
+  {
+    "releasedate": 1974,
+    "titlekorean": "그로칼랭",
+    "titleenglish": "Gros-Câlin",
+    "director": "로맹 가리",
+    "country": "프랑스"
+  },
+  {
+    "releasedate": 1990,
+    "titlekorean": "해귀선",
+    "titleenglish": "Tropic of the Sea (海帰線)\t",
+    "director": "곤 사토시",
+    "country": "일본",
+    "etc": "만화"
+  },
+  {
+    "releasedate": 1927,
+    "titlekorean": "홍염",
+    "titleenglish": "紅焰",
+    "director": "최서해",
+    "country": "한국"
+  },
+  {
+    "releasedate": 2008,
+    "titlekorean": "불공평하고 불완전한 네덜란드 디자인 여행",
+    "director": "최성민 최슬기",
+    "country": "한국",
+    "etc": "디자인"
+  },
+  {
+    "releasedate": 1927,
+    "titlekorean": "이제 내 몸을 누이며",
+    "titleenglish": "Now I Lay Me in Men Without Women",
+    "director": "어니스트 헤밍웨이",
+    "country": "미국"
+  },
+  {
+    "releasedate": 2014,
+    "titlekorean": "여름의 정오",
+    "director": "백수린",
+    "country": "한국"
+  },
+  {
+    "releasedate": 1910,
+    "titlekorean": "영원한 아담",
+    "titleenglish": "L'Éternel Adam / Edom",
+    "director": "쥘 베른",
+    "country": "프랑스",
+    "etc": "공상과학"
+  },
+  {
+    "titlekorean": "달빛을 베다",
+    "director": "모옌",
+    "country": "중국"
+  },
+  {
+    "releasedate": 2008,
+    "titlekorean": "길들지 않은 땅 in 그저 좋은 사람",
+    "titleenglish": "Unaccustomed Earth",
+    "director": "줌파 라히리",
+    "country": "인도",
+    "etc": "미국"
+  },
+  {
+    "releasedate": 1964,
+    "titlekorean": "개인적인 체험",
+    "titleenglish": "Kojinteki na taiken, – A Personal Matter ",
+    "director": "오에 겐자부로",
+    "country": "일본"
+  },
+  {
+    "releasedate": 1836,
+    "titlekorean": "보이체크",
+    "titleenglish": "Woyzeck",
+    "director": "게오르크 뷔히너",
+    "country": "독일",
+    "etc": "희곡, 1913 초연"
+  },
+  {
+    "releasedate": 1904,
+    "titlekorean": "자매",
+    "titleenglish": "The Sisters",
+    "director": "제임스 조이스",
+    "country": "아일랜드"
+  },
+  {
+    "releasedate": 1894,
+    "titlekorean": "퇴짜맞은 제인",
+    "titleenglish": "The Jilting of Jane",
+    "director": "허버드 조지 웰스",
+    "country": "영국"
+  },
+  {
+    "releasedate": 1909,
+    "titlekorean": "스테이크 한 장",
+    "titleenglish": "A Piece of Steak",
+    "director": "잭 런던",
+    "country": "미국"
+  },
+  {
+    "releasedate": 1936,
+    "titlekorean": "방란장 주인",
+    "titleenglish": "芳蘭莊主人",
+    "director": "박태원",
+    "country": "한국"
+  },
+  {
+    "director": "마루야마 겐지",
+    "country": "일본"
+  },
+  {
+    "releasedate": 1978,
+    "titlekorean": "첫사랑의 이름",
+    "titleenglish": "Soumchi",
+    "director": "아모스 오즈",
+    "country": "이스라엘"
+  },
+  {
+    "releasedate": 1983,
+    "titlekorean": "얼간이 윌슨",
+    "titleenglish": "Pudd'nhead Wilson",
+    "director": "마크 트웨인",
+    "country": "미국"
+  },
+  {
+    "releasedate": 1941,
+    "titlekorean": "내가 안개마을에 있을 때",
+    "titleenglish": "Wo zai Xia cun de shihou / When I Was in Xia Village",
+    "director": "딩링",
+    "country": "중국"
+  },
+  {
+    "titlekorean": "탁자",
+    "titleenglish": "The Table",
+    "director": "윌리엄 트레버",
+    "country": "아일랜드"
+  },
+  {
+    "releasedate": 1946,
+    "titlekorean": "존경할 만한 창부",
+    "titleenglish": "La putin respectuese",
+    "director": "장 폴 사르트르",
+    "country": "프랑스",
+    "etc": "희곡"
+  },
+  {
+    "releasedate": 1888,
+    "titlekorean": "백 가지 슬픔의 문",
+    "titleenglish": "The Gate of the Hundred Sorrows",
+    "director": "조지프 러디어드 키플링",
+    "country": "영국"
+  },
+  {
+    "releasedate": 1997,
+    "titlekorean": "소년 시절",
+    "titleenglish": "Boyhood: Scenes from Provincial Life",
+    "director": "존 맥스웰 쿳시",
+    "country": "남아프리카공화국",
+    "etc": "영어"
+  },
+  {
+    "releasedate": 1952,
+    "titlekorean": "4월의 마녀",
+    "titleenglish": "The April Witch",
+    "director": "레이 브레드버리",
+    "country": "미국"
+  },
+  {
+    "releasedate": 1939,
+    "titlekorean": "준동",
+    "titleenglish": "蠢動",
+    "director": "정인택",
+    "country": "한국"
+  },
+  {
+    "releasedate": 1912,
+    "titlekorean": "춘분 지나고까지",
+    "titleenglish": "To the Spring Equinox and Beyond, 彼岸過迄Higan Sugi Made\t",
+    "director": "나쓰메 소세키",
+    "country": "일본"
+  },
+  {
+    "releasedate": 1926,
+    "titlekorean": "토요일",
+    "titleenglish": "Half Holiday",
+    "director": "올더스 헉슬리",
+    "country": "영국"
+  },
+  {
+    "releasedate": 1879,
+    "titlekorean": "시몽의 아빠",
+    "titleenglish": "Le Papa de Simon",
+    "director": "기 드 모파상",
+    "country": "프랑스"
+  },
+  {
+    "releasedate": 1927,
+    "titlekorean": "야곱의 사다리",
+    "titleenglish": "Jacob's Letter",
+    "director": "프렌시스 스콧 피츠제럴드",
+    "country": "미국"
+  },
+  {
+    "releasedate": 1959,
+    "titlekorean": "존재하지 않는 기사",
+    "titleenglish": "Il cavaliere inesistente, The Nonexistent Knight",
+    "director": "이탈로 칼비노",
+    "country": "이탈리아"
+  },
+  {
+    "releasedate": 2014,
+    "titlekorean": "루카",
+    "titleenglish": "Luka",
+    "director": "윤이형",
+    "country": "한국"
+  },
+  {
+    "releasedate": 1962,
+    "titlekorean": "이반 데니소비치, 수용소의 하루",
+    "titleenglish": "Odin Den' Ivana Denisovicha, One Day in the Life of Ivan Denisovich",
+    "director": "솔제니친",
+    "country": "러시아"
+  },
+  {
+    "releasedate": 1869,
+    "titlekorean": "감정교육",
+    "titleenglish": "L'Education Sentimentale",
+    "director": "귀스타프 플로베르",
+    "country": "프랑스"
+  },
+  {
+    "releasedate": 1954,
+    "titlekorean": "사기꾼이 사기꾼을 만났을 때",
+    "titleenglish": "When Greek Meets Greek",
+    "director": "그레이엄 그린",
+    "country": "영국"
+  },
+  {
+    "releasedate": 1921,
+    "titlekorean": "에리히 잔의 연주",
+    "titleenglish": "The Music of Erich Zann",
+    "director": "하워드 필립스 러브크래프트",
+    "country": "미국"
+  },
+  {
+    "releasedate": 2015,
+    "titlekorean": "하느님 이 아이를 도우소서",
+    "titleenglish": "God Help the Child",
+    "director": "토니 모리슨",
+    "country": "미국"
+  },
+  {
+    "titlekorean": "분배",
+    "titleenglish": "分配",
+    "director": "시마자키 도손",
+    "country": "일본"
+  },
+  {
+    "releasedate": 1929,
+    "titlekorean": "알렉시 혹은 공허한 투쟁에 관하여",
+    "titleenglish": "Alexis ou le Traité du Vain Combat suivi de Le Coup de",
+    "director": "마르그리트 유르스나르",
+    "country": "프랑스"
+  },
+  {
+    "releasedate": 2015,
+    "titlekorean": "조중균의 세계",
+    "director": "김금희",
+    "country": "한국"
+  },
+  {
+    "releasedate": 1991,
+    "titlekorean": "존재의 세가지 거짓말, 50년 간의 고독 / 세 번째 거짓말",
+    "titleenglish": "Le Troisieme Mensonge",
+    "director": "아고타 크리스토프",
+    "country": "헝가리",
+    "etc": "프랑스"
+  },
+  {
+    "releasedate": 1961,
+    "titlekorean": "미친 노인의 일기",
+    "titleenglish": "Diary of a Mad Old Man, 瘋癲老人日記 Fūten Rōjin Nikki",
+    "director": "다니자키 준이치로",
+    "country": "일본"
+  },
+  {
+    "releasedate": 2018,
+    "titlekorean": "중국산 모조 비아그라와 제제, 어디에도 고이지 못하는 소변에 대한 짧은 농담",
+    "director": "박상영",
+    "country": "한국"
+  },
+  {
+    "releasedate": 1955,
+    "titlekorean": "참전 용사",
+    "titleenglish": "War Veteran",
+    "director": "필립 K. 딕",
+    "country": "미국"
+  },
+  {
+    "releasedate": 1811,
+    "titlekorean": "이성과 감성",
+    "titleenglish": "Sense and Sensibility",
+    "director": "제인 오스틴",
+    "country": "영국"
+  },
+  {
+    "releasedate": 1954,
+    "titlekorean": "생활적",
+    "titleenglish": "生活的",
+    "director": "손창섭",
+    "country": "한국"
+  },
+  {
+    "releasedate": 1983,
+    "titlekorean": "붓다",
+    "titleenglish": "Buddha",
+    "director": "데즈카 오사무",
+    "country": "일본"
+  },
+  {
+    "releasedate": 2001,
+    "titlekorean": "죽어가는 짐승",
+    "titleenglish": "The Dying Animal",
+    "director": "필립 로스",
+    "country": "미국"
+  },
+  {
+    "releasedate": 1911,
+    "titlekorean": "기러기",
+    "titleenglish": "The Wild Geese",
+    "director": "모리 오가이",
+    "country": "일본"
+  },
+  {
+    "releasedate": 1989,
+    "titlekorean": "나사의 회전",
+    "titleenglish": "The Turn of the Screw",
+    "director": "헨리 제임스",
+    "country": "영국"
+  },
+  {
+    "releasedate": 1980,
+    "titlekorean": "유년의 뜰",
+    "titleenglish": "        ",
+    "director": "오정희",
+    "country": "한국"
+  },
+  {
+    "releasedate": 1931,
+    "titlekorean": "요시노 구즈",
+    "titleenglish": "Arrowroot; 吉野葛Yoshino Kuzu",
+    "director": "다니자키 준이치로",
+    "country": "일본"
+  },
+  {
+    "releasedate": 1941,
+    "titlekorean": "장삼이사",
+    "titleenglish": "張三李四",
+    "director": "최명익",
+    "country": "한국",
+    "etc": "누락돼서 임시 위치"
+  },
+  {
+    "titlekorean": "모델",
+    "titleenglish": "The Model",
+    "director": "조이스 캐럴 오츠",
+    "country": "미국"
+  },
+  {
+    "releasedate": 2016,
+    "titlekorean": "홀",
+    "titleenglish": "The Hole",
+    "director": "편혜영",
+    "country": "한국"
+  },
+  {
+    "releasedate": 2000,
+    "titlekorean": "철콘 근크리트",
+    "titleenglish": "鉄コン筋クリート Tekkon kinkreet",
+    "director": "마츠모토 타이요",
+    "country": "일본",
+    "etc": "만화"
+  },
+  {
+    "releasedate": 1982,
+    "titlekorean": "비트겐슈타인의 조카",
+    "titleenglish": "Wittgensteins Neffe: eine Freundschaft",
+    "director": "토마스 베른하르트",
+    "country": "오스트리아"
+  },
+  {
+    "releasedate": 1946,
+    "titlekorean": "제라늄",
+    "titleenglish": "The Geranium",
+    "director": "플래너리 오코너",
+    "country": "미국"
+  },
+  {
+    "releasedate": 1927,
+    "titlekorean": "눈부신 그 사람",
+    "titleenglish": "The Young Glory of Him",
+    "director": "랭스턴 휴즈",
+    "country": "미국"
+  },
+  {
+    "releasedate": 1949,
+    "titlekorean": "가면의 고백",
+    "titleenglish": "仮面の告白",
+    "director": "미시마 유키오",
+    "country": "일본"
+  },
+  {
+    "releasedate": 1969,
+    "titlekorean": "제 5 도살장",
+    "titleenglish": "Slaughterhouse-Five, or The Children's Crusade: A Duty-Dance with Death",
+    "director": "커트 보니것",
+    "country": "미국"
+  },
+  {
+    "titlekorean": "글짜씨 16 : 타입 디자인",
+    "etc": "디자인"
+  },
+  {
+    "releasedate": "1931",
+    "titlekorean": "기러기",
+    "titleenglish": "Arrowroot; 吉野葛Yoshino kuzu",
+    "director": "다니자키 준이치로\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1931",
+    "titlekorean": "나사의 회전",
+    "titleenglish": "Arrowroot; 吉野葛Yoshino kuzu",
+    "director": "다니자키 준이치로\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1931",
+    "titlekorean": "유년의 뜰",
+    "titleenglish": "Arrowroot; 吉野葛Yoshino kuzu",
+    "director": "다니자키 준이치로\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1931",
+    "titlekorean": "요시노 구즈",
+    "titleenglish": "Arrowroot; 吉野葛Yoshino kuzu",
+    "director": "다니자키 준이치로\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2016",
+    "titlekorean": "모델",
+    "titleenglish": "The Model",
+    "director": "조이스 캐럴 오츠\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2016",
+    "titlekorean": "홀",
+    "titleenglish": "The Hole",
+    "director": "편혜영\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2000",
+    "titlekorean": "철콘 근크리트",
+    "titleenglish": "出書房",
+    "director": "마츠모토 타이요\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1982",
+    "titlekorean": "비트겐슈타인의 조카",
+    "titleenglish": "Wittgensteins Neffe: eine Freundschaft",
+    "director": "토마스 베른하르트\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1946",
+    "titlekorean": "제라늄",
+    "titleenglish": "The Geranium in The Complete Stories",
+    "director": "\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1927",
+    "titlekorean": "눈부신 그 사람",
+    "titleenglish": "The Young Glory of Him",
+    "director": "랭스턴 휴즈\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1949",
+    "titlekorean": "가면의 고백",
+    "titleenglish": "出書房",
+    "director": "미시마 유키오\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1969",
+    "titlekorean": "제 5도살장",
+    "titleenglish": "Slaughterhouse-Five, or The Children's Crusade: A Duty-Dance with Death",
+    "director": "커트 보니것\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "0000",
+    "titlekorean": "그들 중 하나, 혹은 가면의 영혼",
+    "titleenglish": "",
+    "director": "장 로랭\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "0000",
+    "titlekorean": "우울증",
+    "titleenglish": "憂鬱症",
+    "director": "정인택\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1897",
+    "titlekorean": "무사시노",
+    "titleenglish": "Musashino武蔵野",
+    "director": "구니키다 돗포\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1925",
+    "titlekorean": "댈러웨이 부인",
+    "titleenglish": "Mrs. Dalloway",
+    "director": "버지니아 울프\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2016",
+    "titlekorean": "쇼코의 미소",
+    "titleenglish": "",
+    "director": "최은영\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1901",
+    "titlekorean": "부덴브로크가의 사람들",
+    "titleenglish": "Buddenbrooks",
+    "director": "토마스 만\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1946",
+    "titlekorean": "백치",
+    "titleenglish": "白痴",
+    "director": "사카구치 안고\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1994",
+    "titlekorean": "베테르부르크의 대가",
+    "titleenglish": "The Master of Petersberg",
+    "director": "J. M 쿳시\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1939",
+    "titlekorean": "녹성당",
+    "titleenglish": "",
+    "director": "김남천\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1959",
+    "titlekorean": "굿바이 콜럼버스",
+    "titleenglish": "Goodbye, Columbus",
+    "director": "필립 로스\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1927",
+    "titlekorean": "달빛 아래의 몸뚱이들",
+    "titleenglish": "Bodies in the Moonlight",
+    "director": "랭스턴 휴즈\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1954",
+    "titlekorean": "슬픔이여, 안녕",
+    "titleenglish": "Bonjour Tristesse",
+    "director": "프랑수아즈 사강\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1928",
+    "titlekorean": "도시와 유령",
+    "titleenglish": "都市─幽靈",
+    "director": "이효석\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1961",
+    "titlekorean": "모스크바에서의 오해",
+    "titleenglish": "Misunderstanding in Moscow",
+    "director": "시몬 드 보부아르\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1961",
+    "titlekorean": "모든 것",
+    "titleenglish": "Alles in Das dreißigste Jahr",
+    "director": "잉게보르크 바흐만\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1972",
+    "titlekorean": "다른 방식으로 보기",
+    "titleenglish": "The Way of Seeing",
+    "director": "존 버거\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1931",
+    "titlekorean": "만",
+    "titleenglish": "卍, まんじ",
+    "director": "다니자키 준이치로\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1982",
+    "titlekorean": "호흡",
+    "titleenglish": "Der Atem",
+    "director": "토마스 베른하르트\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2004",
+    "titlekorean": "가수들 (일는 중)",
+    "titleenglish": "",
+    "director": "이반 투르게네프\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2004",
+    "titlekorean": "네가 길을 잃어버리지 않게",
+    "titleenglish": "So You Don't Get Lost in the Neighborhood; Pour que tu ne te perdes pas dans le\n      quartier",
+    "director": "파트릭 모디아노\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1969",
+    "titlekorean": "욜의 추억",
+    "titleenglish": "Memories of Youghal",
+    "director": "윌리엄 프레버\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1933",
+    "titlekorean": "물",
+    "titleenglish": "",
+    "director": "김남천\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1880",
+    "titlekorean": "나나",
+    "titleenglish": "Les Rougon-Macquart: Nana",
+    "director": "에밀 졸라\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1941",
+    "titlekorean": "부상관의 봄",
+    "titleenglish": "扶桑館",
+    "director": "정인택\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1939",
+    "titlekorean": "후지 산 백경",
+    "titleenglish": "ふがくひゃっけい: 富嶽百景",
+    "director": "다자이 오사무\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1920",
+    "titlekorean": "랜돌프 카터의 진술",
+    "titleenglish": "The Statement of Randolph Carter",
+    "director": "하워드 필립스 러브크래프트\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1975",
+    "titlekorean": "팩토텀",
+    "titleenglish": "Factotum",
+    "director": "찰스 부코스키\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1923",
+    "titlekorean": "배신의 거미줄",
+    "titleenglish": "Zigzags of Treachery",
+    "director": "대실 해밋\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1955",
+    "titlekorean": "썩은 잎",
+    "titleenglish": "La hojarasca",
+    "director": "가브리엘 가르시아 마르께스\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1977",
+    "titlekorean": "불의 강",
+    "titleenglish": "",
+    "director": "오정희\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1851",
+    "titlekorean": "모비 딕",
+    "titleenglish": "Moby Dick",
+    "director": "허먼 멜빌\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1925",
+    "titlekorean": "오몽녀",
+    "titleenglish": "五夢女",
+    "director": "이태준\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1951",
+    "titlekorean": "악마와 선한 신",
+    "titleenglish": "Le Diable et le Bon Dieu",
+    "director": " 장 폴\n  사르트르\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1918",
+    "titlekorean": "지코쿠헹",
+    "titleenglish": "地獄変",
+    "director": "아쿠타가와 류노스케\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1980",
+    "titlekorean": "이 글을 읽는 사람에게 영원한 저주를",
+    "titleenglish": "Maldición eterna a quien lea estas páginas",
+    "director": "마누엘푸익\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1949",
+    "titlekorean": "스기우라 고헤이 잡지 디자인 반세기",
+    "titleenglish": "",
+    "director": "\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2012",
+    "titlekorean": "파라솔이 접힌 오후",
+    "titleenglish": "",
+    "director": "오한기\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1951",
+    "titlekorean": "아담, 너는 어디에 있었느냐",
+    "titleenglish": "Wo Warst Du, Adam?",
+    "director": "하인리히 뵐\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1980",
+    "titlekorean": "핑거 스미스",
+    "titleenglish": "Fingersmith",
+    "director": "사라 워터스 / 1부만\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1949",
+    "titlekorean": "고통스럽고 아름다운 여름",
+    "titleenglish": "",
+    "director": "하라 다미키\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2012",
+    "titlekorean": "팜비치",
+    "titleenglish": "",
+    "director": "최정화\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1963",
+    "titlekorean": "나는 입이 없다 그리고 나는 비명을 질러야 한다",
+    "titleenglish": "I Have No Mouth, and I Must Scream",
+    "director": "할란 엘리슨\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1941",
+    "titlekorean": "유치장에서 만난 사나이",
+    "titleenglish": "",
+    "director": "김사량\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1936",
+    "titlekorean": "기술복제시대의 예술작품(제 2판)",
+    "titleenglish": "Das Kunstwerk im Zeitalter seiner technischen Reproduzierbarkeit",
+    "director": "발터 벤야민\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1941",
+    "titlekorean": "투도 - 전작중편소설 자화상 제 2화",
+    "titleenglish": "偸盜",
+    "director": "박태원\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1983",
+    "titlekorean": "마이클 K",
+    "titleenglish": "The Life and Times of Michael K",
+    "director": "J. M. 쿳시\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2015",
+    "titlekorean": "목련정전",
+    "titleenglish": "目連正傳",
+    "director": "최은미\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1909",
+    "titlekorean": "벤야멘타 하인학교 - 야콥 폰 군텐 이야기",
+    "titleenglish": "Jakob von Gunten",
+    "director": "로베르트 발저\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1964",
+    "titlekorean": "진흙발의 오르페우스",
+    "titleenglish": "Orpheus with Clay Feet",
+    "director": "필립 K. 딕\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1905",
+    "titlekorean": "나는 고양이로소이다",
+    "titleenglish": "吾輩は猫である",
+    "director": "나쓰메 소세키\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1897",
+    "titlekorean": "죽은 자는 말이 없다",
+    "titleenglish": "Die Toten schweigen",
+    "director": "아르투어 슈니츨러\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2014",
+    "titlekorean": "한글 레터링 자료집 1950-1985",
+    "titleenglish": "",
+    "director": "프로파간다\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2012",
+    "titlekorean": "헬무트 뉴튼 사진집",
+    "titleenglish": "Helmut Newton Work",
+    "director": "헬무트 뉴튼\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1921",
+    "titlekorean": "표본실의 청개구리",
+    "titleenglish": "標本室─靑─",
+    "director": "염상섭\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1971",
+    "titlekorean": "지금 돌아보지 마",
+    "titleenglish": "Not After Midnight AKA Don't Look Now",
+    "director": "대프니 듀 모리에\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1981",
+    "titlekorean": "이제껏 배운 그래픽 디자인 규칙은 다 잊어라. 이 책에 실린 것까지.",
+    "titleenglish": "Forget All the Rules You Ever Learned About Graphic Design, Including the Ones in this\n      Book",
+    "director": "밥 길 / 레이아웃보다 아이디어\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1902",
+    "titlekorean": "반도덕주의자",
+    "titleenglish": "L'lmmoraliste",
+    "director": "앙드레 지드\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1951",
+    "titlekorean": "몰로이",
+    "titleenglish": "Molloy",
+    "director": "사무엘 베케트\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1978",
+    "titlekorean": "사다리의 마지막 단",
+    "titleenglish": "The Last Rung On The Ladder in NIGHT SHIFT",
+    "director": "스티븐 킹\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2017",
+    "titlekorean": "한글 타이포그래피 한글 서체 디자인 전문지 2350, ISSUE #1 Oct. 2017",
+    "titleenglish": "",
+    "director": "2350press\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1936",
+    "titlekorean": "촉루",
+    "titleenglish": "髑髏",
+    "director": "정인택\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1989",
+    "titlekorean": "울리지 않는 심금",
+    "titleenglish": "If You Touched My Heart in THE STORY OF EVA LUNA",
+    "director": "이사벨 아옌데\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1950",
+    "titlekorean": "벽속의 아프리카",
+    "titleenglish": "The Veldt: The World the Children Made",
+    "director": "레이 브래드버리\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1937",
+    "titlekorean": "무성격자",
+    "titleenglish": "無性格者",
+    "director": "최명익\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1996",
+    "titlekorean": "아무도 내 이름을 몰라",
+    "titleenglish": "Nobody Knows My Name in The Corn Maiden and Other Nightmares",
+    "director": "조이스 캐럴 오츠\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1976",
+    "titlekorean": "한없이 투명에 가까운 블루",
+    "titleenglish": "限りなく透明に近いブル-",
+    "director": "무라카미 류\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1951",
+    "titlekorean": "내 문장이 그렇게 이상한가요? - 내가 쓴 글, 내가 다듬는 법",
+    "titleenglish": "",
+    "director": "김정선\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2005",
+    "titlekorean": "영이",
+    "titleenglish": "",
+    "director": "김사과\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1906",
+    "titlekorean": "존 마틴 부인의 일기",
+    "titleenglish": "The Journal of Mistress Joan Martyn",
+    "director": "버지니아 울프\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1894",
+    "titlekorean": "타락",
+    "titleenglish": "Gefallen",
+    "director": "토마스 만\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2015",
+    "titlekorean": "보통의 시절",
+    "titleenglish": "",
+    "director": "김금희\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2015",
+    "titlekorean": "타이포잔치 2017, 5회 국제 타이포그래피 비엔날레 - 몸과 타이포그래피",
+    "titleenglish": "Typojanchi 2017, The 5th International Typography Biennale - Body and Typography",
+    "director": "타이포잔치\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1958",
+    "titlekorean": "우주복 있음, 출장 가능",
+    "titleenglish": "Have Space Suit - Will Travel",
+    "director": "로버트 A. 하인리히\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1981",
+    "titlekorean": "한글의 글자표현",
+    "titleenglish": "",
+    "director": "김진평\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1877",
+    "titlekorean": "순박한 마음",
+    "titleenglish": "Un cœur simple or Le perroquet, A Simple Heart in Three Tales",
+    "director": "귀스타프 플로베르\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2016",
+    "titlekorean": "모리사와 최정호 폰트: 한글 폰트의 DNA",
+    "titleenglish": "Morisawa Choi Jeong-ho Fonts: DNA of Hangul Fonts",
+    "director": "(주) 모리사와\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1921",
+    "titlekorean": "조콘다의 미소",
+    "titleenglish": "The Gioconda Smile in Mortal Coils",
+    "director": "올더스 헉슬리\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1993",
+    "titlekorean": "카프카를 읽는 밤",
+    "titleenglish": "",
+    "director": "구효서\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2013",
+    "titlekorean": "그래픽 26호 2013.3 한글 타입과 레터링",
+    "titleenglish": "",
+    "director": "프로파간다\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1964",
+    "titlekorean": "말",
+    "titleenglish": "Le Mots",
+    "director": "장 폴 사르트르\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "0000",
+    "titlekorean": "한글 디자인 교과서",
+    "titleenglish": "",
+    "director": "이용제, 안상수,\n  한재준\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1986",
+    "titlekorean": "나는 신고",
+    "titleenglish": "わたしは真悟: My Name is Shingo",
+    "director": "우메즈 카즈오\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1966",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1958",
+    "titlekorean": "다르마 행려",
+    "titleenglish": "The Dharma Bums",
+    "director": "잭 케루악\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2005",
+    "titlekorean": "마이크로 타이포그래피",
+    "titleenglish": "Das Detail in der Typografie",
+    "director": "요스트 호훌리, 워크룸 프레스 김형진\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1958",
+    "titlekorean": "잉여인간",
+    "titleenglish": "剩餘人間",
+    "director": "손창섭\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1942",
+    "titlekorean": "곰",
+    "titleenglish": "The Bear",
+    "director": "윌리엄 포크너\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1967",
+    "titlekorean": "아우레크",
+    "titleenglish": "Jauregg",
+    "director": "토마스 베른하르트\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1906",
+    "titlekorean": "생도 퇴를레스의 혼란",
+    "titleenglish": "Die Verwirrungen des Zöglings Törleß, The Confusions of Young Torless",
+    "director": "로베르트 무질\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1961",
+    "titlekorean": "우국",
+    "titleenglish": "憂国",
+    "director": "미시마 유키오\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1895",
+    "titlekorean": "어느 가을날",
+    "titleenglish": "Once in Autumn, Однажды осенью",
+    "director": "막심 고리끼\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1982",
+    "titlekorean": "호밀빵 햄 샌드위치",
+    "titleenglish": "Ham on Rye",
+    "director": "찰스 부코스키\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2007",
+    "titlekorean": "모자",
+    "titleenglish": "",
+    "director": "황정은\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2013",
+    "titlekorean": "미래를 도모하는 방식 가운데",
+    "titleenglish": "",
+    "director": "김엄지\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1888",
+    "titlekorean": "환상을 쫒는 여인",
+    "titleenglish": "An Imaginative Woman in WESSEX TALES",
+    "director": "토마스 하디\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1922",
+    "titlekorean": "싯다르타",
+    "titleenglish": "Siddhartha",
+    "director": "헤르만 헤세\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1999",
+    "titlekorean": "잠시 동안의 일",
+    "titleenglish": "A Temporary Matter in Interpreter of Maladies",
+    "director": "줌파 라히리\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1977",
+    "titlekorean": "서울의 달빛 0장",
+    "titleenglish": "",
+    "director": "김승옥\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1976",
+    "titlekorean": "이백살을 맞은 사나이",
+    "titleenglish": "The Bicentennial Man",
+    "director": "아이작 아시모프\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1971",
+    "titlekorean": "당신도 내 입장이 되어 봐",
+    "titleenglish": "Put Yourself in My Shoes in Will You Please Be quiet, Please?",
+    "director": "레이먼드 카버\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1988",
+    "titlekorean": "존재의 세 가지 거짓말 - 타인의 증거",
+    "titleenglish": "La Preuve",
+    "director": "아고타 크리스토프\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1914",
+    "titlekorean": "애러비",
+    "titleenglish": "Araby in Dubliners",
+    "director": "제임스 조이스\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2014",
+    "titlekorean": "시각디자인: 좋은 것에 담긴 감각과 생각",
+    "titleenglish": "Critica portatile al visual design. Da Gutenberg ai social network",
+    "director": "리카르도 팔치넬리, 윤병언\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1960",
+    "titlekorean": "영원으로 가는 긴 산책",
+    "titleenglish": "Long Walk to Forever",
+    "director": "커트 보네거트\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2014",
+    "titlekorean": "자신을 브랜딩하는 방법 - 크리에이터의 가치를 높이는 사용 설명서",
+    "titleenglish": "",
+    "director": "CA\n  편집부, 이지은\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1802",
+    "titlekorean": "의자 고치는 여인",
+    "titleenglish": "René",
+    "director": "기 드 모파상\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1802",
+    "titlekorean": "르네",
+    "titleenglish": "René",
+    "director": "프랑스와 르네 드 샤또브리앙\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1968",
+    "titlekorean": "제인 에어",
+    "titleenglish": "Jane Eyre",
+    "director": "샬롯 브론테\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2016",
+    "titlekorean": "토요일의 특별활동",
+    "titleenglish": "",
+    "director": "정지향\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2017",
+    "titlekorean": "모임꼴 2호",
+    "titleenglish": "",
+    "director": "활자공간\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2017",
+    "titlekorean": "유예",
+    "titleenglish": "",
+    "director": "이수진\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1968",
+    "titlekorean": "나의 미카엘",
+    "titleenglish": "מיכאל שלי: My Michael",
+    "director": "아모스 오즈\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2010",
+    "titlekorean": "차가운 혀",
+    "titleenglish": "",
+    "director": "박솔뫼\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2003",
+    "titlekorean": "에세이스트의 책상",
+    "titleenglish": "",
+    "director": "배수아\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1922",
+    "titlekorean": "오! 적갈색 머리카락 마녀",
+    "titleenglish": "Oh Russet Witch! in Tales of the Jazz Age",
+    "director": "프랜시스 스콧 피츠제럴드\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1969",
+    "titlekorean": "주자",
+    "titleenglish": "走者",
+    "director": "오정희\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1963",
+    "titlekorean": "인형",
+    "titleenglish": "The Dummy (in I, etcetera)",
+    "director": "수잔 손택\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2016",
+    "titlekorean": "섞어짜기 - 나만의 타이포그래피",
+    "titleenglish": "",
+    "director": "문장현,\n  정재완, 심우진, 이경수, 최성민\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1937",
+    "titlekorean": "동해",
+    "titleenglish": "童骸",
+    "director": "이상\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1988",
+    "titlekorean": "다섯째 아이",
+    "titleenglish": "The Fifth Child",
+    "director": "도리스 레싱\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2016",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1937",
+    "titlekorean": "키 작은 프레데만씨",
+    "titleenglish": "聖誕祭",
+    "director": "토마스 만\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1937",
+    "titlekorean": "성탄제",
+    "titleenglish": "聖誕祭",
+    "director": "박태원\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1945",
+    "titlekorean": "타인의 피",
+    "titleenglish": "Le Sang des Autres",
+    "director": "시몬 드 보부아르\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2007",
+    "titlekorean": "채식주의자",
+    "titleenglish": "The Vegetarian",
+    "director": "한강\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2016",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1951",
+    "titlekorean": "이 세상의 마지막 밤",
+    "titleenglish": "The Last Night of the World",
+    "director": "레이 브래드버리\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1989",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1986",
+    "titlekorean": "존재의 세 가지 거짓말 - 비밀 노트",
+    "titleenglish": "Le Grand Cahier",
+    "director": "아고타 크리스토프\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1961",
+    "titlekorean": "삼십세",
+    "titleenglish": "Das dreißigste Jahr in Das dreißigste Jahr",
+    "director": "잉게보르크 바흐만\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1927",
+    "titlekorean": "패배를 거부하는 남자",
+    "titleenglish": "The Undefeated in Men Without Women",
+    "director": "어니스트 헤밍웨이\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1996",
+    "titlekorean": "나는 나를 파괴할 권리가 있다",
+    "titleenglish": "I Have the Right of Destroying Myself",
+    "director": "김영하\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1981",
+    "titlekorean": "다들 어디 있지?",
+    "titleenglish": "Where is Everyone? in Beginners",
+    "director": "레이먼드 카버\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1816",
+    "titlekorean": "설득",
+    "titleenglish": "Persuasion",
+    "director": "제인 오스틴\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2010",
+    "titlekorean": "비넬리의 디자인 원칙",
+    "titleenglish": "The Vignelli Canon",
+    "director": "마시모 비넬리, 박효신 / 객관화된 주관을 듣고 싶었기에 너무 고마운 책이었다.\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1996",
+    "titlekorean": "허삼관 매혈기",
+    "titleenglish": "许三观卖血记",
+    "director": "위화\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2011",
+    "titlekorean": "그래픽 디자인의 요소",
+    "titleenglish": "The Elements of Graphic Design",
+    "director": "알렉스 화이트, 안상락, 윤지선\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1982",
+    "titlekorean": "지하실, 하나의 탈출",
+    "titleenglish": "Der Keller",
+    "director": "토마스 베른하르트\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2012",
+    "titlekorean": "로고 라이프 - 로고는 살아있다. 세계 100대 로고의 탄생과 성장 스토리",
+    "titleenglish": "Logo Life",
+    "director": "론 판 데르 플루흐트\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1995",
+    "titlekorean": "로이가 산 한 삶 - 세상 얘기 한 자리",
+    "titleenglish": "",
+    "director": "박상륭\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1971",
+    "titlekorean": "우체국",
+    "titleenglish": "Post Office",
+    "director": "찰스 부코스키\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2005",
+    "titlekorean": "비주얼 그래머",
+    "titleenglish": "Visual Grammar",
+    "director": "크리스티안 르보\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1903",
+    "titlekorean": "무도회가 끝난 뒤",
+    "titleenglish": "После бала: After the Ball",
+    "director": "레프 톨스토이\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1969",
+    "titlekorean": "포트노이의 불평",
+    "titleenglish": "Portnoy's Complaint",
+    "director": "필립 로스\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2016",
+    "titlekorean": "씬짜오, 씬짜오 (in 쇼코의 미소)",
+    "titleenglish": "",
+    "director": "최은영\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2013",
+    "titlekorean": "색채가 없는 다자키 쓰쿠루와 그가 순례를 떠난 해",
+    "titleenglish": "色彩を持たない多崎つくると,彼の巡澧の年",
+    "director": "무라카미 하루키\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1975",
+    "titlekorean": "슬픈 빌라",
+    "titleenglish": "Villa triste",
+    "director": "파트릭 모디아노\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2011",
+    "titlekorean": "폰트의 비밀 - 브랜드의 로고는 왜 고급스러워 보일까?",
+    "titleenglish": "??????????",
+    "director": "고바야시 아키라\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1968",
+    "titlekorean": "세상에서 제일 잘생긴 익사체",
+    "titleenglish": "El ahogado más hermoso del mundo: The Handsomest Drowned Man in the World",
+    "director": "가브리엘 가르시아 마르께스\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "????",
+    "titlekorean": "마리의 외출",
+    "titleenglish": "????",
+    "director": "조르주 바타유\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2015",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2015",
+    "titlekorean": "마이크로인터랙션, 디테일에 강한 인터랙션 디자인",
+    "titleenglish": "Microinteractions",
+    "director": "댄 새퍼, 정승녁, 인사이트\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1930",
+    "titlekorean": "왕도로 가는 길",
+    "titleenglish": "La Voie Royale",
+    "director": "앙드레 말로\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "0000",
+    "titlekorean": "옆집 여자",
+    "titleenglish": "",
+    "director": "박태원\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2015",
+    "titlekorean": "나는 언제나 옳다",
+    "titleenglish": "The Grownup",
+    "director": "길리언 플린\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1939",
+    "titlekorean": "심문",
+    "titleenglish": "心紋",
+    "director": "최명익\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1924",
+    "titlekorean": "마의 산",
+    "titleenglish": "Der Zauberberg",
+    "director": "토마스 만\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2013",
+    "titlekorean": "고, 칩 키드의 그래픽 디자인 가이드",
+    "titleenglish": "Go: A Kidd's Guide to Graphic Design",
+    "director": "칩 키드, 이종 출판사\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1954",
+    "titlekorean": "동물 농장",
+    "titleenglish": "Animal Farm",
+    "director": "조지 오웰\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1982",
+    "titlekorean": "편집 디자인",
+    "titleenglish": "Editing by design, 2nd Edition",
+    "director": "잰 화이트\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1835",
+    "titlekorean": "웨이크필드",
+    "titleenglish": "Wakefield",
+    "director": "너대니얼 호손\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1958",
+    "titlekorean": "모데라토 칸타빌레",
+    "titleenglish": "Moderato Cantabile",
+    "director": "마르그리트 뒤라스 / 7장 지린다\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2016",
+    "titlekorean": "미지의 세계",
+    "titleenglish": "mijinosekai",
+    "director": "이자혜\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2015",
+    "titlekorean": "텍스트와 타이포그래피",
+    "titleenglish": "Shaping Text",
+    "director": "얀 미덴도르프\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "19??",
+    "titlekorean": "모두를 하나로",
+    "titleenglish": "??",
+    "director": "라이너 마리아 릴케\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "197?",
+    "titlekorean": "겨울의 끝",
+    "titleenglish": " ",
+    "director": "기형도\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1869",
+    "titlekorean": "파리의 우울",
+    "titleenglish": "Le Spleen de Paris",
+    "director": "샤를 피에르 보들레르\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1957",
+    "titlekorean": "나무 위의 남작",
+    "titleenglish": "il Barone Rampante",
+    "director": "이탈로 칼비노\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1921",
+    "titlekorean": "술 권하는 사회",
+    "titleenglish": "勸社會",
+    "director": "현진건\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1977",
+    "titlekorean": "여자의 빛",
+    "titleenglish": "Clair de femme",
+    "director": "로맹 가리\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1956",
+    "titlekorean": "어떤 미소",
+    "titleenglish": "Un Certain Sourire",
+    "director": "프랑수아즈 사강\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2010",
+    "titlekorean": "백의 그림자",
+    "titleenglish": "白",
+    "director": "황정은\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1960",
+    "titlekorean": "달려라 토끼",
+    "titleenglish": "Rabbit, Run",
+    "director": "존 업다이크\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1936",
+    "titlekorean": "봉별기",
+    "titleenglish": "逢別記",
+    "director": "이상\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1957",
+    "titlekorean": "기묘한 아르바이트",
+    "titleenglish": "奇妙な仕事: The Strange Work",
+    "director": "오에 겐자부로\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1919",
+    "titlekorean": "전원교향악",
+    "titleenglish": "La Symphonie pastorale",
+    "director": "앙드레 지드\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1994",
+    "titlekorean": "페르난두 페소아의 마지막 사흘",
+    "titleenglish": "Gli ultimi tre giorni di Fernando Pessoa",
+    "director": "안토니오 타부키\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1968",
+    "titlekorean": "완구점 여인",
+    "titleenglish": " ",
+    "director": "오정희\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1967",
+    "titlekorean": "잠자는 남자",
+    "titleenglish": "Un homme qui dort",
+    "director": "조르주 페렉\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1934",
+    "titlekorean": "내가 연주하는 블루스",
+    "titleenglish": "The Blues I'm Playing",
+    "director": "랭스턴 휴즈\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1844",
+    "titlekorean": "도둑맞은 편지",
+    "titleenglish": "The Purloined Letter",
+    "director": "에드가 앨런 포 / 포가 이런 거도 썼구나..\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1930",
+    "titlekorean": "적멸",
+    "titleenglish": "寂滅",
+    "director": "박태원\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1931",
+    "titlekorean": "메마른 9월",
+    "titleenglish": "Dry September",
+    "director": "윌리엄 포크너\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1940",
+    "titlekorean": "누구를 위하여 종은 울리나",
+    "titleenglish": "For Whom The Bell Trolls",
+    "director": "어니스트 헤밍웨이\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1891",
+    "titlekorean": "모범적인 백만장자",
+    "titleenglish": "The Model Millionaire in Lord Arther Savile's Crime and Other Stories",
+    "director": "오스카 와일드\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2000",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1872",
+    "titlekorean": "악령",
+    "titleenglish": "Бесы",
+    "director": "표도르 도스토옙스키\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1903",
+    "titlekorean": "트리스탄",
+    "titleenglish": "Tristan",
+    "director": "토마스 만\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1898",
+    "titlekorean": "들길을 가는 사내에게 건배",
+    "titleenglish": "To the Man on Trail",
+    "director": "잭 런던\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1934",
+    "titlekorean": "그는 예전의 그가 아니다",
+    "titleenglish": "He is not what he was",
+    "director": "다자이 오사무\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2015",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1949",
+    "titlekorean": "금은탑",
+    "titleenglish": "金銀塔 (조선일보 연재소설 1938 '우맹') ",
+    "director": "박태원\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1886",
+    "titlekorean": "지킬 박사와 하이드",
+    "titleenglish": "Strange Case of Dr.Jekyll and Mr.Hyde",
+    "director": "로버트 루이스 스티븐슨\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1873",
+    "titlekorean": "말하는 떡갈나무",
+    "titleenglish": "Le Chêne Parlant in Contes d’une grand’mère Vol.2",
+    "director": "조르주 상드\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1933",
+    "titlekorean": "세라 브라운 양 이야기",
+    "titleenglish": "The Idyll Of Miss Sarah Brown",
+    "director": "데이먼 러니언\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1992",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2013",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1929",
+    "titlekorean": "소리와 분노",
+    "titleenglish": "The Sound And The Fury",
+    "director": "윌리엄 포크너 / 바빠서 다 못 읽을 것 같다. 퀜틴 섹션까지만 읽도록..\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2013",
+    "titlekorean": "디자인력",
+    "titleenglish": "デザインセンスを身につける",
+    "director": "우지 도모코\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1935",
+    "titlekorean": "피로",
+    "titleenglish": "疲勞",
+    "director": "박태원\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1898",
+    "titlekorean": "기적을 행하는 남자",
+    "titleenglish": "The Man Who Could Work Miracles (in The Illustrated London News)",
+    "director": "허버트 조지 웰스 / 포더링게이\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2015",
+    "titlekorean": "커버, 북디자이너의 표지 이야기",
+    "titleenglish": "COVER",
+    "director": "피터 멘델선드\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1975",
+    "titlekorean": "그리고 아무 말도 하지 않았다",
+    "titleenglish": "",
+    "director": "전혜린\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1912",
+    "titlekorean": "베네치아에서의 죽음",
+    "titleenglish": "Der Tod in Venedig",
+    "director": "토마스 만\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1847",
+    "titlekorean": "아그네스 그레이",
+    "titleenglish": "Argnes Grey",
+    "director": "앤 브론테 / 음 좋아. 나는 참 소녀취향인가봐\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1936",
+    "titlekorean": "이런 음악회",
+    "titleenglish": "",
+    "director": "김유정\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2014",
+    "titlekorean": "시작, 인포그래픽: pictogram x diagram = infographic",
+    "titleenglish": "たのしい インフォグラフィック入門",
+    "director": "사쿠라다 준\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1981",
+    "titlekorean": "젊은날의 초상",
+    "titleenglish": "Portrait Of The Days Of Youth",
+    "director": "이문열\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2009",
+    "titlekorean": "타이포그래피 불변의 법칙 100가지",
+    "titleenglish": "Typography essentials : 100 design principles for working with type",
+    "director": "아이나 살츠\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1912",
+    "titlekorean": "실종자",
+    "titleenglish": "Der Verschollene",
+    "director": "프란츠 카프카\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1882",
+    "titlekorean": "왕자와 거지",
+    "titleenglish": "The Prince and the Pauper",
+    "director": "마크 트웨인\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2010",
+    "titlekorean": "타이포그래피 들여다보기",
+    "titleenglish": "Thinking with type, rivised edition",
+    "director": "앨런 립튼 / 김성학 옮김\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2010",
+    "titlekorean": "타이포그래피의 탄생",
+    "titleenglish": "From Gutenberg to Opentype",
+    "director": "로빈 도드\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1897",
+    "titlekorean": "바아냐 아저씨",
+    "titleenglish": "Дядя Ваня",
+    "director": "안톤 체호프\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2010",
+    "titlekorean": "허브 루발린: 아트디렉터, 타이포그래피, 그래픽 디자이너",
+    "titleenglish": "Herb Lubalin: Art Director, Graphic Designer and Typographer",
+    "director": "앨런 페콜릭\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1906",
+    "titlekorean": "도련님",
+    "titleenglish": "坊っちゃん",
+    "director": "나쓰메 소세키\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2014",
+    "titlekorean": "디자이너의 흥미로운 물건들, 취향",
+    "titleenglish": "DESIGNER'S FAVORITE STUFF",
+    "director": "김선미, 장민\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2009",
+    "titlekorean": "수전 손택의 일기와 노트",
+    "titleenglish": "",
+    "director": "수전 손택,\n  데이비드 리프 / 못 읽겠다. 읽다가 말았당\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2009",
+    "titlekorean": "디자이너가 꼭 알아야 할 타이포그래피",
+    "titleenglish": "Type rules! : the designer's guide to professional typography\n    ",
+    "director": "아이린 스트리즈버 / 디자인하우스\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1934",
+    "titlekorean": "밤은 부드러워",
+    "titleenglish": "Tender Is The Night",
+    "director": "F. 스콧 피츠제럴드\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1887",
+    "titlekorean": "아서 세빌 경의 범죄",
+    "titleenglish": "Lord Arthur Savile's Crime (in Lord Arthur Savile's Crime and Other Stories)",
+    "director": "오스카 와일드\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2014",
+    "titlekorean": "인포그래픽 사용 설명서",
+    "titleenglish": "",
+    "director": "우석진\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1968",
+    "titlekorean": "작업실",
+    "titleenglish": "The Office (in Dance of the Happy Shades)",
+    "director": "앨리스 먼로\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2010",
+    "titlekorean": "7번국도 Revisited",
+    "titleenglish": "",
+    "director": "김연수\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2013",
+    "titlekorean": "크리에이터의 즐겨찾기",
+    "titleenglish": "Creator's Bookmarks",
+    "director": "지콜론북 편집부\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1986",
+    "titlekorean": "팔월의 일요일들",
+    "titleenglish": "Dimanches d'aout",
+    "director": "파트릭 모디아노\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1853",
+    "titlekorean": "꼬끼오! 혹은 고귀한 수탉 베네벤타노의 노래",
+    "titleenglish": "Cock-A-Doodle-Doo! or, The Crowing of the Nobel Cock Beneventano",
+    "director": "허먼 멜빌\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1924",
+    "titlekorean": "새 드레스",
+    "titleenglish": "The New Dress",
+    "director": "버지니아 울프\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1939",
+    "titlekorean": "딱한 사람들",
+    "titleenglish": "",
+    "director": "박태원\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2008",
+    "titlekorean": "얀 치홀트, 타이포그래피의 거장. 그의 삶과 작품 그리고 유산",
+    "titleenglish": "JAN TSCHICHOLD, Structure and Content for Screenwriters",
+    "director": "시즈 드 종, 알스톤 퍼바스, 마틴 르 콜트레, 리처드 B. 더블데이, 한스 라이하르트\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1925",
+    "titlekorean": "인생의 베일",
+    "titleenglish": "The Painted Veil",
+    "director": "W. 서머셋 몸\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2005",
+    "titlekorean": "영혼을 잃지 않는 디자이너 되기",
+    "titleenglish": "How to be a graphic designer, without losing your soul",
+    "director": "아드리안 쇼네시 / 김형진 유진민 옮김\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1832",
+    "titlekorean": "루이 랑베르",
+    "titleenglish": "Louis Lambert",
+    "director": "오노레 드 발자크\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1960",
+    "titlekorean": "로우랜드",
+    "titleenglish": "Low-lands",
+    "director": "토마스 핀천 / 단편집 Slow Learner(1984) 중\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1975",
+    "titlekorean": "이 경계를 지나면 당신의 승차권은 유효하지 않다",
+    "titleenglish": "Au-delà de cette limite votre ticket n'est plus valable",
+    "director": "로맹 가리\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2008",
+    "titlekorean": "그리드",
+    "titleenglish": "Grids",
+    "director": "개빈 앰브로즈, 폴 해리스\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2008",
+    "titlekorean": "그래픽 디자인 새로운 기초",
+    "titleenglish": "Graphic Design: The New Basics",
+    "director": "엘런 럽튼, 제니퍼 콜 필립스 / 원유홍 옮김\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1985",
+    "titlekorean": "퀴어",
+    "titleenglish": "Queer",
+    "director": "윌리엄 S. 버로스\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1880",
+    "titlekorean": "비곗덩어리",
+    "titleenglish": "Boule de suif",
+    "director": " 기 드 모파상\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1896",
+    "titlekorean": "행복에의 의지",
+    "titleenglish": "Der Wille zum Glück",
+    "director": " 토마스 만\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1948",
+    "titlekorean": "문장강화",
+    "titleenglish": "文章講話 ",
+    "director": " 이태준\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1954",
+    "titlekorean": "파리대왕",
+    "titleenglish": "Lord of the Flies",
+    "director": " 윌리엄 골딩\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2004",
+    "titlekorean": "타이포그래피 천일야화",
+    "titleenglish": "",
+    "director": " 원유홍, 서승연\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1879",
+    "titlekorean": "데이지 밀러",
+    "titleenglish": "Daisy Miller",
+    "director": " 헨리 제임스\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1869",
+    "titlekorean": "백치",
+    "titleenglish": "Идиот",
+    "director": " 도스토옙스키\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1937",
+    "titlekorean": "공포의 기록",
+    "titleenglish": "",
+    "director": "이상\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1993",
+    "titlekorean": "느림",
+    "titleenglish": "La Lenteur",
+    "director": "밀란 쿤데라\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1877",
+    "titlekorean": "줄리엥 성인전",
+    "titleenglish": "La légende de Saint-Julien l'hospitalier (in Trois Contes)",
+    "director": "귀스타프 플로베르\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1930",
+    "titlekorean": "나르치스와 골드문트",
+    "titleenglish": "Narziß und Goldmund",
+    "director": "헤르만 헤세\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1944",
+    "titlekorean": "무서록",
+    "titleenglish": "無序錄",
+    "director": " 이태준\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1939",
+    "titlekorean": "벽",
+    "titleenglish": "Le Mur",
+    "director": "장 폴 사르트르\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1924",
+    "titlekorean": "초상화",
+    "titleenglish": "The Portrait (Little Mexican)",
+    "director": "올더스 헉슬리\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "0000",
+    "titlekorean": "여자의 빛",
+    "titleenglish": "",
+    "director": " 로맹 가리\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1924",
+    "titlekorean": "여가수 요제피네 혹은 쥐들의 종족",
+    "titleenglish": "Josefine, die Sängerin oder das Volk der Mäuse",
+    "director": "\n  프란츠 카프카\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1891",
+    "titlekorean": "테스",
+    "titleenglish": "Tess of the d’Urbervilles",
+    "director": " 토머스 하디\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1843",
+    "titlekorean": "크리스마스 캐럴",
+    "titleenglish": "A Christmas Carol",
+    "director": " 찰스 디킨스\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1939",
+    "titlekorean": "분노의 포도",
+    "titleenglish": "The Grapes of Wrath",
+    "director": " 존 스타인벡\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2013",
+    "titlekorean": "드라이브 마이 카",
+    "titleenglish": "Drive My Car",
+    "director": " 무라카미 하루키\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1936",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "0000",
+    "titlekorean": "약혼",
+    "titleenglish": "",
+    "director": " 헤르만 헤세\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2007",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1731",
+    "titlekorean": "마농 레스코",
+    "titleenglish": "Manon Lescaut",
+    "director": " 아베 프레보/ abbé Prévost\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1944",
+    "titlekorean": "닫힌 방",
+    "titleenglish": "Huis Slos",
+    "director": " 장 폴 사르트르\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "0000",
+    "titlekorean": "목수들아, 대들보를 높이 올려라",
+    "titleenglish": "",
+    "director": " 제롬 데이비드 샐린저 // 다시 읽음.\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2004",
+    "titlekorean": "내 슬픈 창녀들의 추억",
+    "titleenglish": "Memoria de mis putas triste",
+    "director": " 가브리엘 가르시아\n  마르케스\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1941",
+    "titlekorean": "천국의 열쇠",
+    "titleenglish": "The Keys of the Kingdom",
+    "director": " A.J 크로닌\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1888",
+    "titlekorean": "선로지기 틸",
+    "titleenglish": "Bahnwärter Thiel",
+    "director": " 게르하르트 하우프트만\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1877",
+    "titlekorean": "목로주점",
+    "titleenglish": "Les Rougon-Macquart: L'Assommoir",
+    "director": "에밀 졸라\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1981",
+    "titlekorean": "붉은 고양이",
+    "titleenglish": "Die rote Katze",
+    "director": " 루이제 린저\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1952",
+    "titlekorean": "센바즈루",
+    "titleenglish": "千羽鶴",
+    "director": " 가와바타 야스나리\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1994",
+    "titlekorean": "한번은, 빔 벤더스의 사진 그리고 이야기들",
+    "titleenglish": "Einmal",
+    "director": " 빔\n  벤더스\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1936",
+    "titlekorean": "프랜시스 매콤버의 짧고 행복한 인생",
+    "titleenglish": "The Short Happy Life of Francis Macomber",
+    "director": "\n  어니스트 헤밍웨이\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1987",
+    "titlekorean": "비둘기",
+    "titleenglish": "Die Taube",
+    "director": " 파트리크 쥐스킨트\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1975",
+    "titlekorean": "카리아티드",
+    "titleenglish": "Les Cariatides",
+    "director": " 로제 그르니에 / Le Miroir\n  des eaux\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1920",
+    "titlekorean": "달걀의 승리",
+    "titleenglish": "Triumph of the Egg",
+    "director": " 셔우드 앤더슨\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1936",
+    "titlekorean": "행복한 죽음",
+    "titleenglish": "La mort heureuse",
+    "director": " 알베르 까뮈\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1941",
+    "titlekorean": "달려라 메로스",
+    "titleenglish": "L走れメロス",
+    "director": " 다자이 오사무\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1935",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1892",
+    "titlekorean": "누런 벽지",
+    "titleenglish": "The Yellow Wallpaper",
+    "director": " 샬롯 퍼킨스 길먼\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1981",
+    "titlekorean": "타이포그래피",
+    "titleenglish": "Typographie",
+    "director": " 에밀 루더\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "0000",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1974",
+    "titlekorean": "카타리나 블룸의 잃어버린 명예",
+    "titleenglish": "Die verlorene Ehre der Katharina Blum oder",
+    "director": "\n  하인리히 뵐\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1974",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1983",
+    "titlekorean": "대성당",
+    "titleenglish": "Cathedral",
+    "director": "레이먼드 카버\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1836",
+    "titlekorean": "감찰관",
+    "titleenglish": "Revizor",
+    "director": "니콜라이 고골\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "0000",
+    "titlekorean": "타이포그래피 에세이",
+    "titleenglish": "Stop Stealing Sheep & Find Out How Type Works",
+    "director": "\n  에릭 슈피커만 & E, M 진저\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "0000",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1925",
+    "titlekorean": "베이비 파티",
+    "titleenglish": "The Baby Party",
+    "director": " 프랜시스 스콧 피츠제럴드\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1968",
+    "titlekorean": "위기의 여자",
+    "titleenglish": "La Femme Rompue",
+    "director": " 시몬 드 보부아르\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1838",
+    "titlekorean": "리지아",
+    "titleenglish": "Ligeia",
+    "director": " 에드거 앨런 포\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1854",
+    "titlekorean": "무무",
+    "titleenglish": "Mumu",
+    "director": " 이반 투르게네프\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1959",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "0000",
+    "titlekorean": "세월의 거품",
+    "titleenglish": "L'écume des Jours",
+    "director": " 보리스 비앙 / 다시 읽음\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1937",
+    "titlekorean": "등롱",
+    "titleenglish": "燈籠",
+    "director": " 다자이 오사무\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1924",
+    "titlekorean": "단식 광대",
+    "titleenglish": "Ein Hungerkünstler",
+    "director": " 프란츠 카프카\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1957",
+    "titlekorean": "길 위에서",
+    "titleenglish": "On the Road",
+    "director": " 잭 캐루악\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "0000",
+    "titlekorean": "도대체 순수는 어디에",
+    "titleenglish": "J'ai soif d'innocence",
+    "director": " 로맹 가리\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1938",
+    "titlekorean": "의사를 방문한 떼레즈",
+    "titleenglish": "Thérèse chez le docteur",
+    "director": " 프랑수아\n  모리악\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1930",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "0000",
+    "titlekorean": "겨울 꿈",
+    "titleenglish": "",
+    "director": " 프랜시스 스콧 피츠제럴드\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1933",
+    "titlekorean": "인간의 조건",
+    "titleenglish": "La Condition Humaine",
+    "director": " 앙드레 말로\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1839",
+    "titlekorean": "어셔 가의 몰락",
+    "titleenglish": "The Fall of the House of Usher",
+    "director": " 에드거\n  앨런 포\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1930",
+    "titlekorean": "에밀리에게 장미를",
+    "titleenglish": "A Rose For Emily",
+    "director": " 윌리엄 포크너\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2014",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1967",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1953",
+    "titlekorean": "정키",
+    "titleenglish": "Junkie",
+    "director": " 윌리엄 S. 버로스\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1927",
+    "titlekorean": "떼레즈 데께루",
+    "titleenglish": "Thérèse Desqueyroux",
+    "director": " 프랑수아 모리악\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2013",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1925",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1935",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "0000",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1929",
+    "titlekorean": "자기만의 방",
+    "titleenglish": "A Room of One's Own",
+    "director": " 버지니아 울프\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1893",
+    "titlekorean": "살로메",
+    "titleenglish": "Salome",
+    "director": " 오스카 와일드\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1917",
+    "titlekorean": "병사의 집",
+    "titleenglish": "Soldier's Home",
+    "director": " 어니스트 헤밍웨이\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2010",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "0000",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1933",
+    "titlekorean": "세상의 빛",
+    "titleenglish": "The light of the World",
+    "director": " 어니스트 헤밍웨이\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1995",
+    "titlekorean": "눈먼 자들의 도시",
+    "titleenglish": "Ensaio sobre a cegueira",
+    "director": " 주제\n  사라마구\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1843",
+    "titlekorean": "검은 고양이",
+    "titleenglish": "The Black Cat",
+    "director": "에드거 앨런 포\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2002",
+    "titlekorean": "인연",
+    "titleenglish": "因緣",
+    "director": " 피천득\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2004",
+    "titlekorean": "그리드 디자인: 효율적인 타이포그래피 레이아웃의 원리",
+    "titleenglish": "Grid Systems: Principles of Organizing Type",
+    "director": "\n  킴벌리 일램\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1835",
+    "titlekorean": "광인일기",
+    "titleenglish": "Zapiski sumasshedshevo",
+    "director": " 니콜라이 고골\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2013",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1927",
+    "titlekorean": "황야의 늑대",
+    "titleenglish": "Der Steppenwolf",
+    "director": " 헤르만 헤세\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1969",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1956",
+    "titlekorean": "생의 한가운데",
+    "titleenglish": "Mitte des Lebens",
+    "director": " 루이제 린저\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "0000",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1965",
+    "titlekorean": "사물들",
+    "titleenglish": "Les Choses: Une histoire des années soixante",
+    "director": " 조르주 페렉\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1990",
+    "titlekorean": "불멸",
+    "titleenglish": "I'mmortalite",
+    "director": " 밀란 쿤데라\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1952",
+    "titlekorean": "드 스미스 도미에의 청색시대",
+    "titleenglish": "De Daumier-Smith's Blue Period",
+    "director": " J.D 샐린저\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1955",
+    "titlekorean": "롤리타",
+    "titleenglish": "Lolita",
+    "director": " 블라디미르 나보코프\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1934",
+    "titlekorean": "8월",
+    "titleenglish": "August",
+    "director": " 브루노 슐츠 / The Street of Crocodiles\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1883",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1916",
+    "titlekorean": "젊은 예술가의 초상",
+    "titleenglish": "A Portrait of the Artist as a Young Man",
+    "director": " 제임스\n  조이스\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1867",
+    "titlekorean": "캘레바래스 군의 명물, 뜀뛰는 개구리",
+    "titleenglish": "The Celebrated Jumping Frog of Calaveras County",
+    "director": "\n  마크 트웨인 // 하하하!\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1897",
+    "titlekorean": "소형 보트",
+    "titleenglish": "The Open Boat",
+    "director": " 스티븐 크레인\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1977",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1971",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2005",
+    "titlekorean": "사랑을 생각하다",
+    "titleenglish": "Ueber liebe und Tod",
+    "director": "파트리크 쥐스킨트\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1934",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2007",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1864",
+    "titlekorean": "지하생활자의 수기",
+    "titleenglish": "Zapiski iz podpol'ya",
+    "director": " 도스토옙스키\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2007",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2007",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2007",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1948",
+    "titlekorean": "설국",
+    "titleenglish": "雪國",
+    "director": " 가와바타 야스나리\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1963",
+    "titlekorean": "벨 자",
+    "titleenglish": "The Bell Jar",
+    "director": " 실비아 플라스\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1977",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1910",
+    "titlekorean": "게르트루트",
+    "titleenglish": "Gertrude",
+    "director": " 헤르만 헤세\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1930",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1925",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1964",
+    "titlekorean": "중독",
+    "titleenglish": "Toxique",
+    "director": " 프랑수아즈 사강, 베르나르 뷔페\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1936",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "0000",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1935",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1899",
+    "titlekorean": "스물여섯 명의 사내와 한 처녀",
+    "titleenglish": "Двадцать шесть и одна",
+    "director": " 막심 고리키\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1919",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1932",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1833",
+    "titlekorean": "병 속에서 발견된 수기",
+    "titleenglish": "MS. Found in a Bottle",
+    "director": " 에드거\n  앨런 포\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "0000",
+    "titlekorean": "The Girl on the Bus",
+    "titleenglish": "The Girl on the Bus",
+    "director": "윌리엄 샌섬\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "BC00",
+    "titlekorean": "아이네이스",
+    "titleenglish": "Aeneas",
+    "director": " 베르길리우스\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1984",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1903",
+    "titlekorean": "토니오 트뢰거",
+    "titleenglish": "Tonio Kröger",
+    "director": " 토마스 만\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1853",
+    "titlekorean": "필경사 바틀비",
+    "titleenglish": "Bartleby, The Scrivener - A Story Of Wallstreet",
+    "director": " 허먼 멜빌\n  / I would prefer not to\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1820",
+    "titlekorean": "립 밴 윙클",
+    "titleenglish": "Rip Van Winkle",
+    "director": " 워싱턴 어빙\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1926",
+    "titlekorean": "태양은 다시 떠오른다",
+    "titleenglish": "The Sun Also Rises",
+    "director": " 어니스트\n  헤밍웨이\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1847",
+    "titlekorean": "폭풍의 언덕",
+    "titleenglish": "Wuthering Heights",
+    "director": " 에밀리 브론테\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1920",
+    "titlekorean": "주먹 네 방",
+    "titleenglish": "The Four Fists",
+    "director": " F. 스콧 피츠제럴드 /\n  Flappers and Philosophers\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1891",
+    "titlekorean": "비밀없는 스핑크스",
+    "titleenglish": "Sphinx Without A Secret",
+    "director": " 오스카\n  와일드 / Lord Saville’s Crimes and Other Stories\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1958",
+    "titlekorean": "레이디 엘",
+    "titleenglish": "Lady L",
+    "director": " 로맹 가리\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "0000",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1813",
+    "titlekorean": "오만과 편견",
+    "titleenglish": "Pride and Prejudice",
+    "director": " 제인 오스틴\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1991",
+    "titlekorean": "좀머씨 이야기",
+    "titleenglish": "Die Geschichte von Herrn Sommer",
+    "director": " 파트리크 쥐스킨트, 장\n  자크 상뻬\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1892",
+    "titlekorean": "진품",
+    "titleenglish": "The Real Thing",
+    "director": " 헨리 제임스\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1835",
+    "titlekorean": "젊은 굿맨 브라운",
+    "titleenglish": "Young Goodman Brown",
+    "director": " 너대니얼 호손\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "0000",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1964",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1970",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1978",
+    "titlekorean": "어린 여행자 몽도",
+    "titleenglish": "Mondo",
+    "director": " J. M. G. 르 클레지오 / Mondo\n  and Other Stories\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1991",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1930",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1926",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1983",
+    "titlekorean": "몰락하는 자",
+    "titleenglish": "Der Untergeher",
+    "director": " 토마스 베른하르트 /\n  의식의흐름, 생각, 반복\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1938",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1931",
+    "titlekorean": "고통",
+    "titleenglish": "La Douleur",
+    "director": " 앙드레 드 리쇼\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1930",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1936",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1984",
+    "titlekorean": "연인",
+    "titleenglish": "L'Amant",
+    "director": " 마르그리트 뒤라스\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1947",
+    "titlekorean": "세월의 거품",
+    "titleenglish": "L'écume des jours",
+    "director": " 보리스 비앙\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1884",
+    "titlekorean": "허클베리 핀의 모험",
+    "titleenglish": "Adventures of Huckleberry Finn",
+    "director": " 마크 트웨인 /\n  톰소여의원칙과모험심에실소\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1920",
+    "titlekorean": "클링조어의 마지막 여름",
+    "titleenglish": "Klingsors Letzter Sommer",
+    "director": " 헤르만 헤세\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1960",
+    "titlekorean": "포르노그라피아",
+    "titleenglish": "Pornografia",
+    "director": " 비톨트 곰브로비치\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1964",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1962",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1964",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1962",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1959",
+    "titlekorean": "브람스를 좋아하세요...",
+    "titleenglish": "Aimez-vous Brahms...",
+    "director": " 프랑수아즈 사강\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1965",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1934",
+    "titlekorean": "달밤",
+    "titleenglish": "",
+    "director": " 이태준 /그의 은근한 순정의 열매를 먹듯 한 알을 가지고도 오래\n  입안에 굴려보며 먹었다. /달밤은 그에게도 유감한 듯 하였다.\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1961",
+    "titlekorean": "프래니와 주이",
+    "titleenglish": "Franny and Zooey",
+    "director": " J.D 샐린저 / you're my\n  jesus.\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1963",
+    "titlekorean": "어느 어릿광대의 견해",
+    "titleenglish": "Ansichten eines Clowns",
+    "director": " 하인리히\n  뵐\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1903",
+    "titlekorean": "야성의 부름",
+    "titleenglish": "The Call of the Wild",
+    "director": " 잭 런던\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1972",
+    "titlekorean": "소망 없는 불행",
+    "titleenglish": "Wunschloses Unglück",
+    "director": " 페터 한트케 /\n  하나도 기억안남\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2005",
+    "titlekorean": "첫 문장 못 쓰는 남자",
+    "titleenglish": "L'Angoisse de la première phrase",
+    "director": " 베르나르 키리니\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1987",
+    "titlekorean": "세상의 모든 딸들",
+    "titleenglish": "Reindeer Moon",
+    "director": " 엘리자베스 M. 토마스\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1955",
+    "titlekorean": "목수들아 대들보를 높이 올려라",
+    "titleenglish": "Raise High the Roof-Beam Carpenters",
+    "director": " J.D\n  샐린저\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1991",
+    "titlekorean": "단순한 열정",
+    "titleenglish": "Simple Passion",
+    "director": " 아니 에르노\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2004",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2001",
+    "titlekorean": "적의 화장법",
+    "titleenglish": "Cosmétique de l'ennemi",
+    "director": " 아멜리 노통\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1997",
+    "titlekorean": "도라 부르더",
+    "titleenglish": "Dora Bruder",
+    "director": " 파트릭 모디아노\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2000",
+    "titlekorean": "적",
+    "titleenglish": "L'Adversaire",
+    "director": " 엠마뉘엘 카레르\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1857",
+    "titlekorean": "루진",
+    "titleenglish": "Rudin",
+    "director": " 이반 세르게예비치 뚜르게네프\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1888",
+    "titlekorean": "삐에르와 장",
+    "titleenglish": "Pierre et Jean",
+    "director": " 기 드 모파상\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1920",
+    "titlekorean": "메이데이",
+    "titleenglish": "May Day",
+    "director": " F. 스콧 피츠제럴드 // Tales of the\n  Jazz Age\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1922",
+    "titlekorean": "리츠칼튼호텔만 한 다이아몬드",
+    "titleenglish": "The Diamond as Big as the Ritz",
+    "director": " F. 스콧\n  피츠제럴드 // Tales of the Jazz Age\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1922",
+    "titlekorean": "벤자민버튼의 시간은 거꾸러 간다",
+    "titleenglish": "The Curious Case of Benjamin Button",
+    "director": " F.\n  스콧 피츠제럴드 // Tales of the Jazz Age\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2013",
+    "titlekorean": "펑크록스타일 빨대 디자인에 관한 연구",
+    "titleenglish": "",
+    "director": " 송지현 // 동아일보 신춘문예\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1891",
+    "titlekorean": "도리언 그레이의 초상",
+    "titleenglish": "The Picture of Dorian Gray",
+    "director": " 오스카 와일드\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1867",
+    "titlekorean": "테레즈 라캥",
+    "titleenglish": "Thérèse Raquin",
+    "director": " 에밀 졸라\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1933",
+    "titlekorean": "파리와 런던 거리의 성자들",
+    "titleenglish": "Down and Out in Paris and London",
+    "director": " 조지 오웰\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1970",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1945",
+    "titlekorean": "중요한 것은 절대 사라지지 않아 or 유럽의 교육",
+    "titleenglish": "Education européenne",
+    "director": " 로맹\n  가리\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1970",
+    "titlekorean": "페널티킥 앞에 선 골키퍼의 불안",
+    "titleenglish": "Die Angst des Tormanns beim Elfmeter",
+    "director": "\n  페터 한트케\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1984",
+    "titlekorean": "참을 수 없는 존재의 가벼움",
+    "titleenglish": "L'insoutenable légèreté de l'être",
+    "director": " 밀란\n  쿤데라 // 1982\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1952",
+    "titlekorean": "고도를 기다리며",
+    "titleenglish": "En attendant Godot",
+    "director": " 사무엘 베케트\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1915",
+    "titlekorean": "크눌프",
+    "titleenglish": "Knulp. Drei Geschichten aus dem Leben Knulps",
+    "director": " 헤르만 헤세\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1985",
+    "titlekorean": "향수",
+    "titleenglish": "Das Parfum",
+    "director": " 파트리크 쥐스킨트\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1984",
+    "titlekorean": "콘트라베이스",
+    "titleenglish": "Der Kontrabass",
+    "director": " 파트리크 쥐스킨트\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1929",
+    "titlekorean": "무기여 잘 있거라",
+    "titleenglish": "A Farewell to Arms",
+    "director": " 어니스트 헤밍웨이\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1935",
+    "titlekorean": "타이포그라픽 디자인",
+    "titleenglish": "Typographische Gestaltung",
+    "director": " 얀 치홀트\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1881",
+    "titlekorean": "왼손잡이",
+    "titleenglish": "Левша",
+    "director": " 니콜라이 레스코프 // The Tale of\n  Cross-eyed Lefty from Tula and the Steel Flea\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "0000",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1898",
+    "titlekorean": "사랑에 관하여",
+    "titleenglish": "О любви",
+    "director": " 안톤 체호프\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1898",
+    "titlekorean": "산딸기",
+    "titleenglish": "рыжовник",
+    "director": " 안톤 체호프\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1898",
+    "titlekorean": "상자속의 사나이",
+    "titleenglish": "Человек в футляре",
+    "director": " 안톤 체호프 // The\n  Little Trilogy\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1997",
+    "titlekorean": "어두운 밤 나는 적막한 집을 나섰다",
+    "titleenglish": "In Einer Dunklen Nacht Ging Ich Aus Meinem Stillen Haus",
+    "director": "\n  페터 한트케\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1920",
+    "titlekorean": "낙타의 뒷부분",
+    "titleenglish": "The Camel's Back",
+    "director": " F. 스콧 피츠제럴드 //\n  Tales of the Jazz Age\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1920",
+    "titlekorean": "얼음궁전",
+    "titleenglish": "The Ice Palace",
+    "director": " F. 스콧 피츠제럴드 //\n  Flappers and Philosophers\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1920",
+    "titlekorean": "댈리림플 나쁜 길로 빠지다",
+    "titleenglish": "Dalyrimple Goes Wrong",
+    "director": " F.\n  스콧 피츠제럴드 // Flappers and Philosophers\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1920",
+    "titlekorean": "앞바다의 해적",
+    "titleenglish": "The Offshore Pirate",
+    "director": " F. 스콧 피츠제럴드\n  // Flappers and Philosophers\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "0000",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1953",
+    "titlekorean": "테디",
+    "titleenglish": "Teddy",
+    "director": " J.D 샐린저\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1952",
+    "titlekorean": "드 도미에 스미스의 청색 시대",
+    "titleenglish": "De Daumier-Smith's Blue Period",
+    "director": "\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1951",
+    "titlekorean": "예쁜 입과 초록빛 나의 눈동자",
+    "titleenglish": "Pretty Mouth and Green My Eyes",
+    "director": "\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1950",
+    "titlekorean": "에스메를 위하여, 사랑 그리고 비참함으로",
+    "titleenglish": "For Esmé – with Love and Squalor",
+    "director": "\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1949",
+    "titlekorean": "작은 보트에서",
+    "titleenglish": "Down at the Dinghy",
+    "director": " J.D 샐린저\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1949",
+    "titlekorean": "웃는 남자",
+    "titleenglish": "The Laughing Man",
+    "director": " J.D 샐린저\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1948",
+    "titlekorean": "에스키모와의 전쟁 직전",
+    "titleenglish": "Just Before the War with the Eskimos",
+    "director": "\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1948",
+    "titlekorean": "코네티컷의 비칠비칠 아저씨",
+    "titleenglish": "Uncle Wiggily in Connecticu",
+    "director": "t\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1948",
+    "titlekorean": "바나나피시를 위한 완벽한 날",
+    "titleenglish": "A Perfect Day for Bananafish",
+    "director": "\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1914",
+    "titlekorean": "마음",
+    "titleenglish": "こゝろ",
+    "director": " 나쓰메 소세키\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1920",
+    "titlekorean": "컷글라스 그릇",
+    "titleenglish": "The Cut-Glass Bowl",
+    "director": " F. 스콧 피츠제럴드\n  // Flappers and Philosophers\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1916",
+    "titlekorean": "코",
+    "titleenglish": "鼻",
+    "director": " 아쿠타가와 류노스케\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1947",
+    "titlekorean": "만개한 벚꽃나무 숲 아래",
+    "titleenglish": "櫻の森の滿開の下",
+    "director": " 사카구치\n  안고\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1929",
+    "titlekorean": "젊은 시인에게 보내는 편지",
+    "titleenglish": "Briefe an einen jungen Dichter",
+    "director": " Rainer Maria\n  Rilke\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1943",
+    "titlekorean": "반점",
+    "titleenglish": "The Birth-Mark",
+    "director": " 너대니얼 호손 // Mosses from an\n  Old Manse\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1792",
+    "titlekorean": "가련한 리자",
+    "titleenglish": "Бедная Лиза",
+    "director": " 카람진\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1922",
+    "titlekorean": "젤리빈",
+    "titleenglish": "The Jelly-Bean",
+    "director": " F. 스콧 피츠제럴드 // Tales of\n  the Jazz Age\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1916",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1878",
+    "titlekorean": "안나 카레니나",
+    "titleenglish": "Анна Каренина",
+    "director": " 톨스토이\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1936",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1883",
+    "titlekorean": "자살",
+    "titleenglish": "Suicides",
+    "director": " 기 드 모파상\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1884",
+    "titlekorean": "목걸이",
+    "titleenglish": "La Parure",
+    "director": " 기 드 모파상\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1967",
+    "titlekorean": "백년 동안의 고독",
+    "titleenglish": "Cien años de soledad Gabriel",
+    "director": " Garcia\n  Márquez\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1932",
+    "titlekorean": "비둘기 시민",
+    "titleenglish": "Citoyen pigeon",
+    "director": " 로맹 가리\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "0000",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1997",
+    "titlekorean": "정체성",
+    "titleenglish": "L'Identite",
+    "director": " 밀란 쿤데라\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1985",
+    "titlekorean": "잃어버린 거리",
+    "titleenglish": "Quartier Perdu",
+    "director": " 파트릭 모디아노\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1975",
+    "titlekorean": "첫사랑, 마지막 의식",
+    "titleenglish": "First Love, Last Rites",
+    "director": " 이언\n  매큐언\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1978",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2001",
+    "titlekorean": "작은 보석",
+    "titleenglish": "La petite Bijou",
+    "director": " 파트릭 모디아노\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1921",
+    "titlekorean": "아Q정전",
+    "titleenglish": "阿Q正傳",
+    "director": " 루쉰\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1918",
+    "titlekorean": "광인일기",
+    "titleenglish": "狂人日記",
+    "director": " 루쉰\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1999",
+    "titlekorean": "신원 미상 여자",
+    "titleenglish": "Des inconnues",
+    "director": " 파트릭 모디아노\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2007",
+    "titlekorean": "체실 비치에서",
+    "titleenglish": "On Chesil Beach",
+    "director": " 이언 매큐언\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2000",
+    "titlekorean": "튜브의 형이상학",
+    "titleenglish": "Métaphysique des tubes",
+    "director": " 아멜리 노통 //\n  이토록 아름다운 세 살\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1999",
+    "titlekorean": "두려움과 떨림",
+    "titleenglish": "Stupeur et tremblements",
+    "director": " 아멜리 노통\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "0000",
+    "titlekorean": "당연한 의심",
+    "titleenglish": "War er es",
+    "director": " 슈테판 츠바이크1935~1940\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1933",
+    "titlekorean": "이별여행",
+    "titleenglish": "Die Reise in die Vergangenheit",
+    "director": " 슈테판\n  츠바이크\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1946",
+    "titlekorean": "그리스인 조르바",
+    "titleenglish": "Βίος και Πολιτεία του Αλέξη Ζορμπά",
+    "director": " 니코스 카잔차키스\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1965",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1906",
+    "titlekorean": "수레바퀴 아래서",
+    "titleenglish": "Unterm Rad",
+    "director": " 헤르만 헤세\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1975",
+    "titlekorean": "자기 앞의 생",
+    "titleenglish": "La Vie Devant Soi",
+    "director": " 에밀 아자르\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1995",
+    "titlekorean": "자전거를 못 타는 아이",
+    "titleenglish": "une bicyclette à propos de son père",
+    "director": " 장 자끄 상뻬\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1889",
+    "titlekorean": "악마",
+    "titleenglish": "Dyavol",
+    "director": " 톨스토이\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1888",
+    "titlekorean": "홀스토메르 - 어느 말의 이야기",
+    "titleenglish": "Kholstomer",
+    "director": " 톨스토이\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1884",
+    "titlekorean": "이반 일리치의 죽음",
+    "titleenglish": "Smert' Ivana Ilyicha",
+    "director": " 톨스토이\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1926",
+    "titlekorean": "위폐범들",
+    "titleenglish": "Les Faux-Monnayeurs",
+    "director": " 앙드레 지드\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1956",
+    "titlekorean": "오늘을 잡아라",
+    "titleenglish": "Seize the Day",
+    "director": " 솔 벨로\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1946",
+    "titlekorean": "면도날",
+    "titleenglish": "The Razor's Edg",
+    "director": " W. 서머셋 몸\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1861",
+    "titlekorean": "상처받은 사람들",
+    "titleenglish": "Unizhennye i oskorblyonnye",
+    "director": " 도스토옙스키\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1934",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1936",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1905",
+    "titlekorean": "크리스마스 선물",
+    "titleenglish": "The Gift of the Magi",
+    "director": " 오 헨리\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1924",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1967",
+    "titlekorean": "농담",
+    "titleenglish": "La Plaisanterie",
+    "director": " 밀란 쿤데라\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1914",
+    "titlekorean": "뜻밖의 만남",
+    "titleenglish": "An Encounter in Dubliners",
+    "director": " 제임스 조이스\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1959",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1885",
+    "titlekorean": "벨아미",
+    "titleenglish": "Bel-Ami",
+    "director": " 기 드 모파상\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1978",
+    "titlekorean": "어두운 상점들의 거리",
+    "titleenglish": "Rue des boutiques obscures",
+    "director": " 파트릭 모디아노\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "0000",
+    "titlekorean": "사랑",
+    "titleenglish": "Amor",
+    "director": " 앙드레 지드 // 시학사.\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1888",
+    "titlekorean": "행복한 왕자와 다른 이야기들",
+    "titleenglish": "The Happy Prince and Other Tales",
+    "director": "오스카 와일드\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1899",
+    "titlekorean": "부활",
+    "titleenglish": "Voskreseniye",
+    "director": " 톨스토이\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1927",
+    "titlekorean": "감정의 혼란",
+    "titleenglish": "Verwirrung der Gefühle",
+    "director": " 슈테판 츠바이크\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1860",
+    "titlekorean": "첫사랑",
+    "titleenglish": "Pervaia Liubov",
+    "director": " 이반 투르게네프\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "0000",
+    "titlekorean": "달밤의 뒷골목",
+    "titleenglish": "Die Mondscheingasse",
+    "director": " 슈테판 츠바이크\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1922",
+    "titlekorean": "나를 알지 못하는 당신에게",
+    "titleenglish": "Brief einer Unbekannten",
+    "director": " 슈테판 츠바이크 //\n  낯선 여인의 편지\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1876",
+    "titlekorean": "톰 소여의 모험",
+    "titleenglish": "The Adventures of Tom Sawyer",
+    "director": " 마크\n  트웨인\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1880",
+    "titlekorean": "까라마조프 씨네 형제들",
+    "titleenglish": "Brat'ya Karamazovy",
+    "director": " 도스토옙스키\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1924",
+    "titlekorean": "마의 산",
+    "titleenglish": "Der Zauberberg",
+    "director": " 토마스 만\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1854",
+    "titlekorean": "월든",
+    "titleenglish": "Walden",
+    "director": " 헨리 데이비드 소로\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1932",
+    "titlekorean": "독을 품은 뱀",
+    "titleenglish": "Le Noeud de Vipères",
+    "director": " 프랑수아 모리악\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1835",
+    "titlekorean": "고리오 영감",
+    "titleenglish": "Le Père Goriot",
+    "director": " 오노레 드 발자크\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1926",
+    "titlekorean": "성",
+    "titleenglish": "Das Schloss",
+    "director": " 프란츠 카프카\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1966",
+    "titlekorean": "절망",
+    "titleenglish": "Despair",
+    "director": " 블라디미르 나보코프\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1830",
+    "titlekorean": "적과 흑",
+    "titleenglish": "Le Rouge et le Noir",
+    "director": " 스탕달 // 쥘리엥 ㅠㅠ\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2010",
+    "titlekorean": "우리 기억 속의 색",
+    "titleenglish": "Les couleurs de nos souvenirs",
+    "director": " 미셸\n  파스투로\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1998",
+    "titlekorean": "아득한 기억의 저편",
+    "titleenglish": "Du Plus Loin de L'Oubli",
+    "director": " 파트릭\n  모디아노\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1969",
+    "titlekorean": "얼굴 빨개지는 아이",
+    "titleenglish": "",
+    "director": " 장 자크 상뻬\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1866",
+    "titlekorean": "죄와 벌",
+    "titleenglish": "Prestuplenie i nakazanie",
+    "director": " 도스토옙스키\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1981",
+    "titlekorean": "청춘 시절",
+    "titleenglish": "Une Jeunesse",
+    "director": " 파트릭 모디아노\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1956",
+    "titlekorean": "전락",
+    "titleenglish": "La Chute",
+    "director": " 알베르 까뮈\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1942",
+    "titlekorean": "체스",
+    "titleenglish": "SchachnovelleBuenos Aires",
+    "director": " 슈테판 츠바이크\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1925",
+    "titlekorean": "소송",
+    "titleenglish": "Der Prozess",
+    "director": " 프란츠 카프카\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1949",
+    "titlekorean": "1984년",
+    "titleenglish": "Nineteen Eighty-Four",
+    "director": " 조지 오웰\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1948",
+    "titlekorean": "인간실격",
+    "titleenglish": "人間失格",
+    "director": " 다자이 오사무\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1947",
+    "titlekorean": "페스트",
+    "titleenglish": "Le Peste",
+    "director": " 알베르 까뮈\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "0000",
+    "titlekorean": "개를 데리고 다니는 여자",
+    "titleenglish": "",
+    "director": " 안톤 체호프\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1787",
+    "titlekorean": "미덕의 불운",
+    "titleenglish": "Les Infortunes de la vertu",
+    "director": " 마르키 드 사드\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1969",
+    "titlekorean": "",
+    "titleenglish": "",
+    "director": "",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1938",
+    "titlekorean": "구토",
+    "titleenglish": "La Nausée",
+    "director": " 장 폴 사르트르 // 토할뻔\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1962",
+    "titlekorean": "아우라",
+    "titleenglish": "Aura",
+    "director": " 카를로스 푸엔테스\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1904",
+    "titlekorean": "페터 카멘친트",
+    "titleenglish": "Peter Camenzind",
+    "director": " 헤르만 헤세\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1919",
+    "titlekorean": "달과 6펜스",
+    "titleenglish": "The Moon and Sixpence",
+    "director": " W. 서머셋 몸\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1932",
+    "titlekorean": "파비안",
+    "titleenglish": "Fabian. Die Geschichte eines Moralisten",
+    "director": " 에리히\n  캐스트너\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1857",
+    "titlekorean": "보바리 부인",
+    "titleenglish": "Madame Bovary",
+    "director": " 귀스타프 플로베르\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1899",
+    "titlekorean": "귀여운 여인",
+    "titleenglish": "Душечка",
+    "director": " 안톤 체호프\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1842",
+    "titlekorean": "외투",
+    "titleenglish": "Шинель",
+    "director": " 니콜라이 고골\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1909",
+    "titlekorean": "좁은 문",
+    "titleenglish": "La porte étroite",
+    "director": " 앙드레 지드\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1836",
+    "titlekorean": "코",
+    "titleenglish": "Нос",
+    "director": " 니콜라이 고골\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1987",
+    "titlekorean": "상실의 시대",
+    "titleenglish": "ノルウェイの森",
+    "director": " 무라카미 하루키\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1994",
+    "titlekorean": "공중곡예사",
+    "titleenglish": "Mr. Vertigo",
+    "director": " 폴 오스터\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2002",
+    "titlekorean": "환상의 책",
+    "titleenglish": "The Book of Illusions",
+    "director": " 폴 오스터\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1956",
+    "titlekorean": "사고",
+    "titleenglish": "Die Panne",
+    "director": " 프리드리히 뒤렌마트\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1889",
+    "titlekorean": "결혼",
+    "titleenglish": "Крейцерова соната",
+    "director": " 톨스토이\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1774",
+    "titlekorean": "젊은 베르테르의 슬픔",
+    "titleenglish": "Die Leiden des jungen Werthers",
+    "director": " 괴테\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1998",
+    "titlekorean": "베로니카, 죽기로 결심하다",
+    "titleenglish": "Veronika Decide Morrer",
+    "director": " 파울로 코엘료\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1951",
+    "titlekorean": "호밀 밭의 파수꾼",
+    "titleenglish": "The Catcher in the Rye",
+    "director": " J. D. 샐린저\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2008",
+    "titlekorean": "어둠 속의 남자",
+    "titleenglish": "Man in the Dark",
+    "director": " 폴 오스터\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1953",
+    "titlekorean": "그리고 아무 말도 하지 않았다",
+    "titleenglish": "Und sagte kein einziges Wort",
+    "director": " 하인리히 뵐\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1932",
+    "titlekorean": "멋진 신세계",
+    "titleenglish": "Brave New World",
+    "director": " 올더스 헉슬리\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1991",
+    "titlekorean": "프라하 거리에서 울고 다니는 여자",
+    "titleenglish": "La Pleurante des rues de Prague",
+    "director": " 실비\n  제르맹\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1952",
+    "titlekorean": "노인과 바다",
+    "titleenglish": "The Old Man and the Sea",
+    "director": " 어니스트 헤밍웨이\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1942",
+    "titlekorean": "이방인",
+    "titleenglish": "L’Étranger",
+    "director": " 알베르 까뮈\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1967",
+    "titlekorean": "아웃사이더",
+    "titleenglish": "The Outsiders",
+    "director": " S. E. 힌튼\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1915",
+    "titlekorean": "변신",
+    "titleenglish": "Die Verwandlung",
+    "director": " 프란츠 카프카\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1912",
+    "titlekorean": "선고",
+    "titleenglish": "Das Urteil",
+    "director": " 프란츠 카프카\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1989",
+    "titlekorean": "어느 작가의 오후",
+    "titleenglish": "The Afternoon of a Writer",
+    "director": " 페터\n  한트케\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1925",
+    "titlekorean": "위대한 개츠비",
+    "titleenglish": "The Great Gatsby",
+    "director": " F. 스콧 피츠제럴드\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1862",
+    "titlekorean": "아버지와 아들",
+    "titleenglish": "Otzy i deti",
+    "director": " 투르게네프\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1995",
+    "titlekorean": "하이 피델리티",
+    "titleenglish": "High Fidelity",
+    "director": " 닉 혼비\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1974",
+    "titlekorean": "레이스뜨는 여자",
+    "titleenglish": "La Dentellière",
+    "director": " 파스칼 레네\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2005",
+    "titlekorean": "죽음의 중지",
+    "titleenglish": "As Intermitências da Morte",
+    "director": " 주제 사라마구\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1963",
+    "titlekorean": "조서",
+    "titleenglish": "Le Procès-Verbal",
+    "director": " J. M. G. 르 클레지오\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1991",
+    "titlekorean": "달콤한 내세",
+    "titleenglish": "The Sweet Hereafter",
+    "director": " 러셀 뱅크스\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1919",
+    "titlekorean": "데미안",
+    "titleenglish": "Die Geschichte von Emil Sinclairs Jugend",
+    "director": " 헤르만 헤세\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1952",
+    "titlekorean": "반쪼가리 자작",
+    "titleenglish": "Il visconte dimezzato",
+    "director": " 이탈로 칼비노\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2001",
+    "titlekorean": "스무살, 도쿄",
+    "titleenglish": "東京物語",
+    "director": " 오쿠다 히데오\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1859",
+    "titlekorean": "아저씨의 꿈",
+    "titleenglish": "Dyadyushkin son",
+    "director": " 도스토옙스키\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1849",
+    "titlekorean": "네또츠까 네즈바노바",
+    "titleenglish": "Netochka Nezvanova",
+    "director": " 도스토옙스키\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1848",
+    "titlekorean": "백야",
+    "titleenglish": "Belye nochi",
+    "director": " 도스토옙스키\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1847",
+    "titlekorean": "아홉 통의 편지로 된 소설",
+    "titleenglish": "Roman v devyati pis'mah",
+    "director": " 도스토옙스키\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1846",
+    "titlekorean": "쁘로하르친 씨",
+    "titleenglish": "Gospodin Prokharchin",
+    "director": " 도스토옙스키\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1846",
+    "titlekorean": "분신",
+    "titleenglish": "Dvoynik: Peterburgskaya poema",
+    "director": " 도스토옙스키\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1846",
+    "titlekorean": "가난한 사람들",
+    "titleenglish": "Bednye lyudi",
+    "director": " 도스토옙스키\n",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1931",
+    "titlekorean": "대지",
+    "titleenglish": "The Good Earth",
+    "director": " 펄 S. 벅\n",
+    "country": "임시미국",
+    "etc": ""
   }
 ]
