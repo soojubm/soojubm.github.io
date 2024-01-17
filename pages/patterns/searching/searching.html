@@ -1,9 +1,5 @@
 <main class="pattern" role="" aria-label="site">
   <article class="article">
-    <div class="">
-      <h1>#ThisIsTagPage</h1>
-      <p>조회수(틱톡)/이카테고리에글쓰기(미디엄)/카테고리팔로우(개인화)</p>
-    </div>
     <test-text variant="title">Searching</test-text>
     <test-text variant="body-large">현재 일반적인 검색 패턴 위주로 정리.</test-text>
     <p>검색의 범위? 규모?를 우선 정의해야 한다.</p>
@@ -30,6 +26,28 @@
             <span class="material-symbols-outlined">취소</span>
           </button> -->
         </form>
+
+        <section class="search-recent" style="max-width:400px;margin:-1rem -1rem 0;padding:2rem 1rem 1rem;border:var(--border);box-shadow:var(--shadow);">
+          <test-group style="align-items:center;justify-content:space-between;">
+            <test-text variant="body-bold">최근 검색</test-text>
+            <test-link>모두보기</test-link>
+          </test-group>
+          <div style="height:var(--space-after-subhead);"></div>
+          <test-menu-group>
+            <test-menuitem label="고슴이">
+              <test-avatar slot="avatar" fallback="🦔"  style="background:beige"></test-avatar>
+              <!-- <test-chip slot=""> -->
+                <test-icon slot="action" name="xmark"></test-icon>
+              <!-- </test-chip> -->
+            </test-menuitem>
+            <test-menuitem label="개구리">
+              <test-avatar slot="avatar" fallback="🐸" style="background:var(--green100)"></test-avatar>
+              <!-- <test-chip slot=""> -->
+                <test-icon slot="action" name="xmark"></test-icon>
+              <!-- </test-chip> -->
+            </test-menuitem>
+          </test-menu-group>
+        </section>
 
         <test-group style="margin:var(--space-3) 0 1.5rem;">
           <test-chip>로얄테넌바움</test-chip>
@@ -66,30 +84,20 @@
     </section>
 
 
+  <test-text variant="subhead">검색 기표</test-text>
+  <section class="component-case">
+    <test-group>
+      <test-chip>
+        <test-icon slot="icon" name="search"></test-icon>
+      </test-chip>
+      <test-chip>키워드</test-chip>
+      <span class="hashtag">해시태그</span>
+    </test-group>
+  </section>
+
   <test-text variant="subhead">최근 검색 내역</test-text>
   <section class="component-case">
-    <section class="search-recent" style="max-width:400px;">
-      <test-group style="align-items:center;justify-content:space-between;">
-        <test-text variant="body-bold">최근 검색</test-text>
-        <test-link>모두보기</test-link>
-      </test-group>
-      <div style="height:var(--space-after-subhead);"></div>
-      <test-menu-group>
-        <test-menuitem label="고슴이">
-          <test-avatar slot="avatar" fallback="🦔"  style="background:beige"></test-avatar>
-          <!-- <test-chip slot=""> -->
-            <test-icon slot="action" name="xmark"></test-icon>
-          <!-- </test-chip> -->
-        </test-menuitem>
-        <test-menuitem label="개구리">
-          <test-avatar slot="avatar" fallback="🐸" style="background:var(--green100)"></test-avatar>
-          <!-- <test-chip slot=""> -->
-            <test-icon slot="action" name="xmark"></test-icon>
-          <!-- </test-chip> -->
-        </test-menuitem>
-      </test-menu-group>
-    </section>
-  </section>
+
   <ul>
     <li>개별 내역의 삭제. 휘발성이 높은 정보라 편집 모듈 없이 삭제 버튼으로 제공한다.</li>
     <li>
@@ -98,9 +106,10 @@
     </li>
     <li>최근 검색 내역이 없으면 아무 것도 보여주지 않는다. 내역이 없다는 상태 컴포넌트도 필요 없다.</li>
   </ul>
+  </section>
 
   <test-text variant="subhead">검색어 자동완성</test-text>
-  <test-text variant="body-large">enter key로 검색할 때 한정. 입력할 때 마다 검색을 요청할 때는 항상 하나 이상의 결과</test-text>
+  <test-text variant="body">enter key로 검색할 때 한정. 입력할 때 마다 검색을 요청할 때는 항상 하나 이상의 결과</test-text>
   <section class="component-case">
     <test-tile variant="nuded" style="max-width:400px;">
       <test-menu-group class="search-suggestion">
@@ -145,17 +154,6 @@
     </test-tile>
   </section>
 
-
-  <test-text variant="subhead">검색 기표</test-text>
-  <section class="component-case">
-    <test-group>
-      <test-chip>
-        <test-icon slot="icon" name="search"></test-icon>
-      </test-chip>
-      <test-chip>키워드</test-chip>
-      <span class="hashtag">해시태그</span>
-    </test-group>
-  </section>
   <test-text variant="subhead">페이지 탐색 중 검색 결과로 이동</test-text>
   <ul>
     <li>해시태그 또는 카테고리 등 인기/추천 키워드로 결과 페이지로 이동</li>
@@ -169,18 +167,11 @@
 
   <test-text variant="subhead">iOS / Android 패턴</test-text>
   <section class="component-case">
-    <!-- <label class="textfield-label" for="search">검색(시각적으로숨겨야함)</label> -->
-    <!-- <div class="textfield searchfield is-focused">
-      <button class="textfield-prefix searchfield-prefix"><span class="material-symbols-outlined">search</span></button>
-      <input class="textfield-input searchfield-input" type="search" id="search" placeholder="iOS pattern : focus에서 취소 노출. 취소로 blur" />
-      <test-chip class="searchfield-clear"><span class="material-symbols-outlined">close</span></test-chip>
-      <test-button variant="text" class="searchfield-cancel">취소</test-button>
-    </div> -->
-    <form class="searchfield" style="max-width:400px;">
+    <form class="searchfield ios" style="max-width:400px;">
       <label class="searchfield-prefix">
         <test-icon name="search"></test-icon>
       </label>
-      <input class="searchfield-input" type="search" placeholder="궁금한 인물이나 이슈가 있나요?" />
+      <input class="searchfield-input" type="search" placeholder="iOS pattern" />
       <button class="searchfield-clear" aria-label="clear keyword">
         <test-icon slot="icon" name="xmark"></test-icon>
       </button>
@@ -248,7 +239,10 @@
       <li>글로벌 검색 패턴과 로컬 검색(검색 필터를 포함) 패턴의 차이. searchfield small. right alignment.</li>
     </ul>
 
-
+    <div class="">
+      <h1>#ThisIsTagPage</h1>
+      <p>조회수(틱톡)/이카테고리에글쓰기(미디엄)/카테고리팔로우(개인화)</p>
+    </div>
 
     <table>
       <thead>

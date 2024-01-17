@@ -400,3 +400,39 @@ mark {color:inherit;} mark::before {content: " [강조 시작] ";opacity:0;posit
   50% {transform:translateY(.125rem)}
   100% {transform:translateY(0)}
 }
+
+
+
+
+
+
+/* // 검색필드는 레이블이 없다. label ~로 하면 되긴 함. */
+.searchfield {position:relative;}
+.searchfield-input {
+  width: 100%;
+  height:var(--size-large);
+  padding:var(--space-2) var(--size-large);
+  border: 0;
+  border-radius: var(--radius);
+  background: var(--color-background-weak);
+  overflow: hidden;
+
+  transition: all .2s ease;
+  position: relative;
+  z-index: 1;
+}
+.ios .searchfield-input:focus {
+  width: 90%;
+}
+.searchfield-input:focus ~ .searchfield-cancel {right: 0;}
+.searchfield-prefix {
+  display:flex;align-items:center;justify-content:center;width:var(--size-large);height:var(--size-large);
+  /* height:46px; */
+  position:absolute;left:0;top:0;z-index:2;}
+.searchfield-prefix ~ .searchfield-input {padding-left:calc(var(--size-medium) + var(--space-after-avatar-medium) + .5rem);}
+.searchfield-clear {width:var(--size-large);height:var(--size-large);position:absolute;right:0;top:0;display:none;}
+.searchfield-cancel {right:calc(var(--size-medium) + var(--space-after-avatar-medium) + var(--space-3));height:var(--size-large);position:absolute;right:var(--size-large);top:0;transition:all .2s ease;}
+
+/* // android pattern */
+.is-focused .searchfield-input {display:block;width:calc(100% - var(--size-medium) - var(--space-after-avatar-medium));}
+.is-focused .searchfield-cancel {right:0;}

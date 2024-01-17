@@ -1,6 +1,47 @@
-t
 <main class="component">
   <article class="article">
+    <style>
+      input:focus {
+        background-color: blue;
+        /* Some exciting button focus styles */
+      }
+      input:focus:not(:focus-visible) {
+        /* Undo all the above focused button styles
+           if the button has focus but the browser wouldn't normally
+           show default focus styles */
+        background-color: green;
+      }
+      input:focus-visible {
+        background-color: red;
+        /* Some even *more* exciting button focus styles */
+      }
+      button:focus {
+        outline: none;
+        background: #ffdd00; /* gold */
+      }
+
+      button:focus:not(:focus-visible) {
+        background: red; /* undo gold */
+      }
+      /* button:focus {
+        outline: none;
+        background: #ffdd00;
+      }
+
+      button:focus:not(:focus-visible) {
+        background: white;
+      } */
+      /* input:active {
+              background-color: blue;
+            }
+            input:target {
+            }
+            input:hover {
+              border: 1px solid red;
+            } */
+    </style>
+    <input type="text" />
+    <button>12345</button>
     <section class="feature" style="max-width: 1200px">
       <header class="feature-head">
         <test-text variant="title" class="feature-head-title"

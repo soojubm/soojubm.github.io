@@ -56,14 +56,20 @@
       <dd>Input</dd>
     </dl>
     <section class="component-example">
-      <div style="max-width: 400px">
+      <div style="display:flex;flex-direction:column;gap:1rem;max-width: 400px">
+        <test-textfield
+          size="small"
+          placeholder="Textarea small Placeholder..."
+        ></test-textfield>
         <test-textfield
           type="text"
-          label="Default"
-          placeholder="Placeholder..."
-          isOptional
+          placeholder="Default..."
         ></test-textfield>
-        <hr />
+        <test-textfield
+          type="text"
+          placeholder="Disabled..."
+          disabled
+        ></test-textfield>
         <test-textfield
           type="email"
           label="Invalid"
@@ -74,29 +80,14 @@
           aria-errormessage="msgID"
           helper="이미 등록된 이메일입니다."
         ></test-textfield>
-        <hr />
-        <test-textfield
-          type="text"
-          label="Disabled"
-          placeholder="Placeholder..."
-          disabled
-        ></test-textfield>
-        <hr />
-        <test-textfield type="text" label="with Prefix" placeholder="Placeholder...">
+        <test-textfield type="text" label="" labeling="false" placeholder="Placeholder...">
           <test-icon slot="prefix" name="xray-view"></test-icon>
         </test-textfield>
-        <hr />
-        <test-textfield type="email" label="with Suffix" placeholder="Placeholder...">
+        <test-textfield type="email" label="" labeling="false" placeholder="with Suffix...">
           <test-icon slot="suffix" name="xray-view"></test-icon>
         </test-textfield>
         <!-- <p>unit, choose/enter</p> -->
         <!-- <abbr title="필수입력">*</abbr> -->
-        <test-separator></test-separator>
-        <test-textfield
-          size="small"
-          label="Smaller label"
-          placeholder="Textarea small Placeholder..."
-        ></test-textfield>
       </div>
     </section>
 
@@ -141,36 +132,38 @@
       </dl>
     </section>
 
-    <ul>
-      <li>
-        Searchfield / Commentfield / counterField / PriceField...
-      </li>
-      <li>
-        optional :: label, validation, helper
-      </li>
-      <li>fieldset variant=checkbox-group horizontal / flex=1</li>
-      <li>TODO 유틸함수 만들기. 앞자리 0 제거. 숫자만입력3자리마다콤마. 소숫점 컨트롤.</li>
-      <li>
-        url field. www 및 https://<br />
-        required indicator / optional indicator / validations / masked / validation feedback 기본
-        입력 일반 텍스트필드와 특수한? 텍스트필드 구별을 위한 시각적인 단서를 제공하세요. 예시 ::
-        검색 아이콘,
-      </li>
-      <li>
-        form 컴포넌트는 간격에 대한 구조 컴포넌트. form patterns. FormField label / TextInput 으로
-        나누는 방안. 그러면 searchField 등의 대안이 될 수 있나?
-      </li>
-      <li>
-        FormLabel checkbox-label와 input-label을 똑같이 할 수 있나? field label : fieldset legend,
-        label - input/textarea
-      </li>
-      <li>
-        helper(help message)와 feedback(feedback message)을 구분하기. aria-assertive. field feedback
-        / fieldset feedback - checkbox group, login
-      </li>
-    </ul>
 
     <section class="component-guide">
+
+      <ul>
+        <li>
+          Searchfield / Commentfield / counterField / PriceField...
+        </li>
+        <li>
+          optional :: label, validation, helper
+        </li>
+        <li>fieldset variant=checkbox-group horizontal / flex=1</li>
+        <li>TODO 유틸함수 만들기. 앞자리 0 제거. 숫자만입력3자리마다콤마. 소숫점 컨트롤.</li>
+        <li>
+          url field. www 및 https://<br />
+          required indicator / optional indicator / validations / masked / validation feedback 기본
+          입력 일반 텍스트필드와 특수한? 텍스트필드 구별을 위한 시각적인 단서를 제공하세요. 예시 ::
+          검색 아이콘,
+        </li>
+        <li>
+          form 컴포넌트는 간격에 대한 구조 컴포넌트. form patterns. FormField label / TextInput 으로
+          나누는 방안. 그러면 searchField 등의 대안이 될 수 있나?
+        </li>
+        <li>
+          FormLabel checkbox-label와 input-label을 똑같이 할 수 있나? field label : fieldset legend,
+          label - input/textarea
+        </li>
+        <li>
+          helper(help message)와 feedback(feedback message)을 구분하기. aria-assertive. field feedback
+          / fieldset feedback - checkbox group, login
+        </li>
+      </ul>
+
       <test-text variant="subhead">Visual Style</test-text>
       <test-text variant="body"> 레이블을 텍스트필드 왼쪽에 배치하지 마세요. </test-text>
       <test-text variant="body">
@@ -217,7 +210,7 @@
 
     <test-text variant="subhead">EmailField</test-text>
     <section class="component-case">
-      <test-searchfield label="서치필드 테스트"></test-searchfield>
+      <test-textfield label="서치필드 테스트"></test-textfield>
     </section>
 
     <test-text variant="subhead">SearchField</test-text>

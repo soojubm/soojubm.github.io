@@ -9,7 +9,6 @@ import AvatarGroup from './avatarGroup'
 
 import Tile from '../../components/tile/tile'
 import Textfield from '../../components/textfield/textfield'
-import Searchfield from '../../components/searchfield/searchfield'
 
 import Checkbox from '../../components/checkbox/checkbox'
 import Switch from '../../components/switch/switch'
@@ -60,7 +59,6 @@ export function defineCustomElement() {
     customElements.define('test-result', Result)
 
     customElements.define('test-textfield', Textfield)
-    customElements.define('test-searchfield', Searchfield)
 
     customElements.define('test-checkbox', Checkbox)
     customElements.define('test-switch', Switch)
